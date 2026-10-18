@@ -1,0 +1,157 @@
+{
+  "batch": "BATCH14",
+  "subtask": "BATCH14b",
+  "source_ids": [
+    "MD-7.9.1-TripleCommutatorPrinted"
+  ],
+  "input_sha256": {
+    "Blueprint/Ch07.lean": "de3b0d06f5c52195cef1f387d3accff3b77dc46c95969466a8acf032276018e6",
+    "blueprint/ch07/ch07_source.json": "4ab0addff8ecca8f9d48c6ff03f24f3931e3251f0a67180827f908c77eebfcff",
+    "BATCH14b_PAGES.pdf": "9098a7d857a49fa75faf01ca0fb2a28873badb6cc87bd2c56fdc06fb46dd2563"
+  },
+  "page_mapping": [
+    {
+      "attachment_page": 1,
+      "original_pdf_page": 320,
+      "printed_page": 299
+    }
+  ],
+  "definition_excerpts": [
+    {
+      "full_name": "MD.Ch07.V",
+      "kind": "abbrev",
+      "path": "Blueprint/Ch07.lean",
+      "line": 172,
+      "code_sha256": "7ab0ad90462b274b03f5b929b5f09417c0b397b6cb908fa6e7bd56677a314027"
+    },
+    {
+      "full_name": "MD.Ch07.Phase",
+      "kind": "abbrev",
+      "path": "Blueprint/Ch07.lean",
+      "line": 173,
+      "code_sha256": "ef1520e3b22ac1c99a30a989deafe8d3da44a9f2a3e5b6c2cd3220218b88513e"
+    },
+    {
+      "full_name": "MD.Ch07.coordDerivative",
+      "kind": "def",
+      "path": "Blueprint/Ch07.lean",
+      "line": 221,
+      "code_sha256": "e782d789a13f5db6817e2c995f141805e81ac75720125b846f8ee14ba3833a4b"
+    },
+    {
+      "full_name": "MD.Ch07.gradient",
+      "kind": "def",
+      "path": "Blueprint/Ch07.lean",
+      "line": 250,
+      "code_sha256": "540c6af25c09d3a58da531bc32056ff1a1c070facc58d34c96b6653d781fba6f"
+    },
+    {
+      "full_name": "MD.Ch07.aForward",
+      "kind": "def",
+      "path": "Blueprint/Ch07.lean",
+      "line": 306,
+      "code_sha256": "67309b12bc7b3e2e6bfcfbca542f16a51bda44d4c8b26224e227a6edd17748d7"
+    },
+    {
+      "full_name": "MD.Ch07.bForward",
+      "kind": "def",
+      "path": "Blueprint/Ch07.lean",
+      "line": 308,
+      "code_sha256": "ea071fbd1968df8265232f2001ee9f5cef582b129edbf2a09a407fa3b7aaeb72"
+    },
+    {
+      "full_name": "MD.Ch07.mechanicalHamiltonian",
+      "kind": "def",
+      "path": "Blueprint/Ch07.lean",
+      "line": 939,
+      "code_sha256": "62d2e0a30b1f75b8d94db47d5f10585188510cf0bd5827e56eafaa0b12b507aa"
+    },
+    {
+      "full_name": "MD.Ch07.gibbsWeight",
+      "kind": "def",
+      "path": "Blueprint/Ch07.lean",
+      "line": 941,
+      "code_sha256": "f25e4e3ead34a06695f3b9d9b5f607bc68063a1d6f159ec2c97866d0ac9b2e38"
+    },
+    {
+      "full_name": "MD.Ch07.phaseComm",
+      "kind": "def",
+      "path": "Blueprint/Ch07.lean",
+      "line": 973,
+      "code_sha256": "a5a2960267977438213c364501b9671e300e350bf85246872a0d4871e8d2d3e2"
+    },
+    {
+      "full_name": "MD.Ch07.hessianU",
+      "kind": "def",
+      "path": "Blueprint/Ch07.lean",
+      "line": 1074,
+      "code_sha256": "8c2605253d3d70a39369a2c08eb2c758793a9cc41934f1f97c967d5eb2c776ee"
+    },
+    {
+      "full_name": "MD.Ch07.thirdU",
+      "kind": "def",
+      "path": "Blueprint/Ch07.lean",
+      "line": 1075,
+      "code_sha256": "a26772b3051be729532f532b20e2d6eccac37ea5c8a368d8bcb5f58c0e62f71f"
+    },
+    {
+      "full_name": "MD.Ch07.hessianGrad",
+      "kind": "def",
+      "path": "Blueprint/Ch07.lean",
+      "line": 1076,
+      "code_sha256": "adcfa820f24c6af34da55c81e5ff046d273c228a6e8485f8fdc896a8c388cea6"
+    },
+    {
+      "full_name": "MD.Ch07.cubicThird",
+      "kind": "def",
+      "path": "Blueprint/Ch07.lean",
+      "line": 1077,
+      "code_sha256": "0c71c49f77ab81e212802875d1cf11e3e062490ad6151e821c9998e35b46c165"
+    },
+    {
+      "full_name": "MD.Ch07.tripleCommutatorPrinted",
+      "kind": "def",
+      "path": "Blueprint/Ch07.lean",
+      "line": 1078,
+      "code_sha256": "54d343b360a24c3f4fd732e7d37556631f2b6b7cd33a71b354e740ee36b2fdfb"
+    },
+    {
+      "full_name": "MD.Ch07.tripleCommutatorPrinted_corrected",
+      "kind": "def",
+      "path": "Blueprint/Ch07.lean",
+      "line": 1080,
+      "code_sha256": "70f087da2f658a69bee015bb310d5dd693591ce538ed14b93e0435b111f38d07"
+    },
+    {
+      "full_name": "MD.Ch07.tripleCommutator_corrected",
+      "kind": "theorem",
+      "path": "Blueprint/Ch07.lean",
+      "line": 1082,
+      "code_sha256": "0d20fe84fa2942fa1542f7e5f9feef7f3a6c3183ff228e95e3dd614469a0ac1b"
+    },
+    {
+      "full_name": "MD.Ch07.tripleCommutator_factor_counterexample",
+      "kind": "theorem",
+      "path": "Blueprint/Ch07.lean",
+      "line": 1089,
+      "code_sha256": "1b781be3f1e4b299b3471fd46481875250f01d75e300dccdbbd7b4ec16485a94"
+    }
+  ],
+  "validation": {
+    "project_constant_closure": "PASS",
+    "missing_project_definitions": [],
+    "full_page_render_equality_dpi": 72,
+    "website_submitted": false
+  },
+  "files": {
+    "PASTE.txt": {
+      "bytes": 11524,
+      "sha256": "b0bc07fcea66617e843f5d8b7ba265313eefaa9d90cb01e2772fd8d6cec2fe62"
+    },
+    "BATCH14b_PAGES.pdf": {
+      "bytes": 84445,
+      "sha256": "9098a7d857a49fa75faf01ca0fb2a28873badb6cc87bd2c56fdc06fb46dd2563"
+    }
+  },
+  "total_task_bytes": 101020
+}

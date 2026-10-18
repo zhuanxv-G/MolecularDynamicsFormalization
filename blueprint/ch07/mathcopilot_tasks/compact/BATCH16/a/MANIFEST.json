@@ -1,0 +1,108 @@
+{
+  "batch": "BATCH16",
+  "subtask": "BATCH16a",
+  "source_ids": [
+    "MD-7.9.3-SuperconvergenceScope"
+  ],
+  "input_sha256": {
+    "Blueprint/Ch07.lean": "de3b0d06f5c52195cef1f387d3accff3b77dc46c95969466a8acf032276018e6",
+    "blueprint/ch07/ch07_source.json": "4ab0addff8ecca8f9d48c6ff03f24f3931e3251f0a67180827f908c77eebfcff",
+    "BATCH16a_PAGES.pdf": "a1a8b906e0fb9761b91236791d944ea0d8e9b7a5d026815ef987ab08934bff8d"
+  },
+  "page_mapping": [
+    {
+      "attachment_page": 1,
+      "original_pdf_page": 327,
+      "printed_page": 306
+    }
+  ],
+  "definition_excerpts": [
+    {
+      "full_name": "MD.Ch07.V",
+      "kind": "abbrev",
+      "path": "Blueprint/Ch07.lean",
+      "line": 172,
+      "code_sha256": "7ab0ad90462b274b03f5b929b5f09417c0b397b6cb908fa6e7bd56677a314027"
+    },
+    {
+      "full_name": "MD.Ch07.coordDerivative",
+      "kind": "def",
+      "path": "Blueprint/Ch07.lean",
+      "line": 221,
+      "code_sha256": "e782d789a13f5db6817e2c995f141805e81ac75720125b846f8ee14ba3833a4b"
+    },
+    {
+      "full_name": "MD.Ch07.gradient",
+      "kind": "def",
+      "path": "Blueprint/Ch07.lean",
+      "line": 250,
+      "code_sha256": "540c6af25c09d3a58da531bc32056ff1a1c070facc58d34c96b6653d781fba6f"
+    },
+    {
+      "full_name": "MD.Ch07.positionGibbs",
+      "kind": "def",
+      "path": "Blueprint/Ch07.lean",
+      "line": 991,
+      "code_sha256": "82bb55e66a80fed509916dd4534bcc354cc9bd8df28c6b30af7e5a2e29632202"
+    },
+    {
+      "full_name": "MD.Ch07.hessianU",
+      "kind": "def",
+      "path": "Blueprint/Ch07.lean",
+      "line": 1074,
+      "code_sha256": "8c2605253d3d70a39369a2c08eb2c758793a9cc41934f1f97c967d5eb2c776ee"
+    },
+    {
+      "full_name": "MD.Ch07.gradNormSq",
+      "kind": "def",
+      "path": "Blueprint/Ch07.lean",
+      "line": 1119,
+      "code_sha256": "4ac74933a6c274ae1355fc8b7cdd3820a81dec13cacd2c6e39768e45795792df"
+    },
+    {
+      "full_name": "MD.Ch07.laplacian",
+      "kind": "def",
+      "path": "Blueprint/Ch07.lean",
+      "line": 1156,
+      "code_sha256": "34815bde240a9d093117da74ea9ce745ee5f13888a61c42c94cfcecfc623a421"
+    },
+    {
+      "full_name": "MD.Ch07.highFrictionOABAO",
+      "kind": "def",
+      "path": "Blueprint/Ch07.lean",
+      "line": 1195,
+      "code_sha256": "a13e000bdcfee605e2261531ed7d396865be2ed9d54b7a27059c2eeab2db1cd9"
+    },
+    {
+      "full_name": "MD.Ch07.oabaoPositionCancellation",
+      "kind": "theorem",
+      "path": "Blueprint/Ch07.lean",
+      "line": 1237,
+      "code_sha256": "13d51e336c9338287471bc622a4212c463f24fd4b0ecab93c5affee8612da85c"
+    },
+    {
+      "full_name": "MD.Ch07.superconvergence_fromBound",
+      "kind": "theorem",
+      "path": "Blueprint/Ch07.lean",
+      "line": 1246,
+      "code_sha256": "1b47d2917964d3f1b0d67ba5923353fb4e292f09f05e0e03bc86f6a25af75ec4"
+    }
+  ],
+  "validation": {
+    "project_constant_closure": "PASS",
+    "missing_project_definitions": [],
+    "full_page_render_equality_dpi": 72,
+    "website_submitted": false
+  },
+  "files": {
+    "PASTE.txt": {
+      "bytes": 8645,
+      "sha256": "b2d2890822ada5a92eb37d3953029c33582fc6e26f0e2a46dc370d876411833d"
+    },
+    "BATCH16a_PAGES.pdf": {
+      "bytes": 93352,
+      "sha256": "a1a8b906e0fb9761b91236791d944ea0d8e9b7a5d026815ef987ab08934bff8d"
+    }
+  },
+  "total_task_bytes": 105419
+}

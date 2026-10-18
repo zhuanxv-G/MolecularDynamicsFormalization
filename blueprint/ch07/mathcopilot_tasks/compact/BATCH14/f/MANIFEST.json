@@ -1,0 +1,162 @@
+{
+  "batch": "BATCH14",
+  "subtask": "BATCH14f",
+  "source_ids": [
+    "MD-7.9.2-ReciprocalFrictionExpansion"
+  ],
+  "input_sha256": {
+    "Blueprint/Ch07.lean": "de3b0d06f5c52195cef1f387d3accff3b77dc46c95969466a8acf032276018e6",
+    "blueprint/ch07/ch07_source.json": "4ab0addff8ecca8f9d48c6ff03f24f3931e3251f0a67180827f908c77eebfcff",
+    "BATCH14f_PAGES.pdf": "22596b9375ae6cb974066711d0e30f96bf0b5f7d058cb9c9adae55ff0a7e86bd"
+  },
+  "page_mapping": [
+    {
+      "attachment_page": 1,
+      "original_pdf_page": 322,
+      "printed_page": 301
+    },
+    {
+      "attachment_page": 2,
+      "original_pdf_page": 323,
+      "printed_page": 302
+    }
+  ],
+  "definition_excerpts": [
+    {
+      "full_name": "MD.Ch07.V",
+      "kind": "abbrev",
+      "path": "Blueprint/Ch07.lean",
+      "line": 172,
+      "code_sha256": "7ab0ad90462b274b03f5b929b5f09417c0b397b6cb908fa6e7bd56677a314027"
+    },
+    {
+      "full_name": "MD.Ch07.Phase",
+      "kind": "abbrev",
+      "path": "Blueprint/Ch07.lean",
+      "line": 173,
+      "code_sha256": "ef1520e3b22ac1c99a30a989deafe8d3da44a9f2a3e5b6c2cd3220218b88513e"
+    },
+    {
+      "full_name": "MD.Ch07.coordDerivative",
+      "kind": "def",
+      "path": "Blueprint/Ch07.lean",
+      "line": 221,
+      "code_sha256": "e782d789a13f5db6817e2c995f141805e81ac75720125b846f8ee14ba3833a4b"
+    },
+    {
+      "full_name": "MD.Ch07.ouForward",
+      "kind": "def",
+      "path": "Blueprint/Ch07.lean",
+      "line": 224,
+      "code_sha256": "ada8fa685075ac3ed7161cba49ec5ecfe0edd30b3dc8d4f60a04214f8d375f3a"
+    },
+    {
+      "full_name": "MD.Ch07.gradient",
+      "kind": "def",
+      "path": "Blueprint/Ch07.lean",
+      "line": 250,
+      "code_sha256": "540c6af25c09d3a58da531bc32056ff1a1c070facc58d34c96b6653d781fba6f"
+    },
+    {
+      "full_name": "MD.Ch07.aForward",
+      "kind": "def",
+      "path": "Blueprint/Ch07.lean",
+      "line": 306,
+      "code_sha256": "67309b12bc7b3e2e6bfcfbca542f16a51bda44d4c8b26224e227a6edd17748d7"
+    },
+    {
+      "full_name": "MD.Ch07.bForward",
+      "kind": "def",
+      "path": "Blueprint/Ch07.lean",
+      "line": 308,
+      "code_sha256": "ea071fbd1968df8265232f2001ee9f5cef582b129edbf2a09a407fa3b7aaeb72"
+    },
+    {
+      "full_name": "MD.Ch07.mechanicalHamiltonian",
+      "kind": "def",
+      "path": "Blueprint/Ch07.lean",
+      "line": 939,
+      "code_sha256": "62d2e0a30b1f75b8d94db47d5f10585188510cf0bd5827e56eafaa0b12b507aa"
+    },
+    {
+      "full_name": "MD.Ch07.gibbsWeight",
+      "kind": "def",
+      "path": "Blueprint/Ch07.lean",
+      "line": 941,
+      "code_sha256": "f25e4e3ead34a06695f3b9d9b5f607bc68063a1d6f159ec2c97866d0ac9b2e38"
+    },
+    {
+      "full_name": "MD.Ch07.phaseO",
+      "kind": "def",
+      "path": "Blueprint/Ch07.lean",
+      "line": 945,
+      "code_sha256": "b752c7d36edbc3a3c5ebe1f512411652587250d3883672146862196dd5a49140"
+    },
+    {
+      "full_name": "MD.Ch07.hessianU",
+      "kind": "def",
+      "path": "Blueprint/Ch07.lean",
+      "line": 1074,
+      "code_sha256": "8c2605253d3d70a39369a2c08eb2c758793a9cc41934f1f97c967d5eb2c776ee"
+    },
+    {
+      "full_name": "MD.Ch07.thirdU",
+      "kind": "def",
+      "path": "Blueprint/Ch07.lean",
+      "line": 1075,
+      "code_sha256": "a26772b3051be729532f532b20e2d6eccac37ea5c8a368d8bcb5f58c0e62f71f"
+    },
+    {
+      "full_name": "MD.Ch07.hessianGrad",
+      "kind": "def",
+      "path": "Blueprint/Ch07.lean",
+      "line": 1076,
+      "code_sha256": "adcfa820f24c6af34da55c81e5ff046d273c228a6e8485f8fdc896a8c388cea6"
+    },
+    {
+      "full_name": "MD.Ch07.cubicThird",
+      "kind": "def",
+      "path": "Blueprint/Ch07.lean",
+      "line": 1077,
+      "code_sha256": "0c71c49f77ab81e212802875d1cf11e3e062490ad6151e821c9998e35b46c165"
+    },
+    {
+      "full_name": "MD.Ch07.symmetricRHS",
+      "kind": "def",
+      "path": "Blueprint/Ch07.lean",
+      "line": 1093,
+      "code_sha256": "3a337496e8c4068618cbc066b79e249b37c993aa56cd576d0ee1875abd17b0b5"
+    },
+    {
+      "full_name": "MD.Ch07.phaseH",
+      "kind": "def",
+      "path": "Blueprint/Ch07.lean",
+      "line": 1135,
+      "code_sha256": "b3576b4b3bf13eb97d14dcaca92a48f1f093856c9a0870f03d5b52fc173ca65e"
+    },
+    {
+      "full_name": "MD.Ch07.reciprocalHierarchy",
+      "kind": "def",
+      "path": "Blueprint/Ch07.lean",
+      "line": 1136,
+      "code_sha256": "cb7590a5e71d1e946cc7e6f9dd9cac4903e7e06fd4ade0ab2e89116b92667530"
+    }
+  ],
+  "validation": {
+    "project_constant_closure": "PASS",
+    "missing_project_definitions": [],
+    "full_page_render_equality_dpi": 72,
+    "website_submitted": false
+  },
+  "files": {
+    "PASTE.txt": {
+      "bytes": 11034,
+      "sha256": "3d51ec14c9f46d4201e6a91533cbb2bdb1c35602bd2d6195399ed37ee1f6063d"
+    },
+    "BATCH14f_PAGES.pdf": {
+      "bytes": 89802,
+      "sha256": "22596b9375ae6cb974066711d0e30f96bf0b5f7d058cb9c9adae55ff0a7e86bd"
+    }
+  },
+  "total_task_bytes": 105909
+}

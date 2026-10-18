@@ -1,7 +1,7 @@
 {
-  "batches": 13,
-  "subtasks": 76,
-  "covered_entries": 76,
+  "batches": 16,
+  "subtasks": 91,
+  "covered_entries": 91,
   "checks": [
     {
       "source_id": "MD-7.1-Bias",
@@ -381,6 +381,81 @@
     {
       "source_id": "MD-7.8.2-BiasedDoubleWellExact",
       "project_constants": 6,
+      "missing": []
+    },
+    {
+      "source_id": "MD-7.9-Proposition71",
+      "project_constants": 58,
+      "missing": []
+    },
+    {
+      "source_id": "MD-7.9-EvenDensityPerturbation",
+      "project_constants": 4,
+      "missing": []
+    },
+    {
+      "source_id": "MD-7.9.1-OYZYOInhomogeneity",
+      "project_constants": 53,
+      "missing": []
+    },
+    {
+      "source_id": "MD-7.9.1-TripleCommutatorPrinted",
+      "project_constants": 17,
+      "missing": []
+    },
+    {
+      "source_id": "MD-7.9.1-SymmetricRHS",
+      "project_constants": 14,
+      "missing": []
+    },
+    {
+      "source_id": "MD-7.9.1-Lemma71",
+      "project_constants": 3,
+      "missing": []
+    },
+    {
+      "source_id": "MD-7.9.1-ConjugateSymmetricCorrections",
+      "project_constants": 11,
+      "missing": []
+    },
+    {
+      "source_id": "MD-7.9.2-ReciprocalFrictionExpansion",
+      "project_constants": 17,
+      "missing": []
+    },
+    {
+      "source_id": "MD-7.9.2-OUKernelQualification",
+      "project_constants": 10,
+      "missing": []
+    },
+    {
+      "source_id": "MD-7.9.2-OUHermiteIdentities",
+      "project_constants": 20,
+      "missing": []
+    },
+    {
+      "source_id": "MD-7.9.2-FirstReciprocalCorrection",
+      "project_constants": 24,
+      "missing": []
+    },
+    {
+      "source_id": "MD-7.9.2-OverdampedSolvabilityOperators",
+      "project_constants": 10,
+      "missing": []
+    },
+    {
+      "source_id": "MD-7.9.2-HighFrictionCorrectionTable",
+      "project_constants": 15,
+      "missing": []
+    },
+    {
+      "source_id": "MD-7.9.3-BAOABMarginalCancellation",
+      "project_constants": 16,
+      "missing": []
+    },
+    {
+      "source_id": "MD-7.9.3-SuperconvergenceScope",
+      "project_constants": 10,
       "missing": []
     }
   ],

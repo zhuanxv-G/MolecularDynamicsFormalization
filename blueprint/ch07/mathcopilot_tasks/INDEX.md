@@ -1,6 +1,6 @@
 # 第7章待用户提交的首轮任务包
 
-13批、76子包，覆盖76条；尚未提交网站。
+16批、91子包，覆盖91条；尚未提交网站。
 
 - BATCH01：MD-7.1-Bias, MD-7.2-ScalarSDE, MD-7.2-EulerMaruyama, MD-7.2-SDEIncrement, MD-7.2-StrongError, MD-7.2-MeanErrorExpectation
 - BATCH02：MD-7.2-StrongOrder, MD-7.2-WeakError, MD-7.2-StrongWeakComparison, MD-7.2-CanonicalAverage, MD-7.2-PartitionPrinted, MD-7.2-AverageNotationBias
@@ -14,4 +14,7 @@
 - BATCH10：MD-7.7.1-ExactABOPropagators, MD-7.7.1-OperatorOrderReversal, MD-7.7.1-StationaryModifiedPDE, MD-7.7.1-TwoOperatorBCH, MD-7.7.1-TaylorRemainder, MD-7.7.2-ThreeOperatorBCH
 - BATCH11：MD-7.7.2-ScalarForwardOperators, MD-7.7.2-CommutatorAB, MD-7.7.2-CommutatorsAOBO, MD-7.7.2-OBAModifiedOperator, MD-7.7.2-SpectralQualification, MD-7.7.3-PerturbationCoefficientEquation
 - BATCH12：MD-7.7.3-ObservableCorrectionExpansion, MD-7.7.3-PerturbativeSolvabilityCaution, MD-7.8-FirstOrderOperator, MD-7.8-HomogeneousNormalization, MD-7.8.1-CommutatorPermutationRelations, MD-7.8.1-GibbsDerivativeIdentities
-- BATCH13：MD-7.8.1-FirstCorrectionTablePrinted, MD-7.8.1-PositionMomentumCorrections, MD-7.8.1-OverdampedFirstOrderCaution, MD-7.8.2-BiasedDoubleWellExact
+- BATCH13：MD-7.8.1-FirstCorrectionTablePrinted, MD-7.8.1-PositionMomentumCorrections, MD-7.8.1-OverdampedFirstOrderCaution, MD-7.8.2-BiasedDoubleWellExact, MD-7.9-Proposition71, MD-7.9-EvenDensityPerturbation
+- BATCH14：MD-7.9.1-OYZYOInhomogeneity, MD-7.9.1-TripleCommutatorPrinted, MD-7.9.1-SymmetricRHS, MD-7.9.1-Lemma71, MD-7.9.1-ConjugateSymmetricCorrections, MD-7.9.2-ReciprocalFrictionExpansion
+- BATCH15：MD-7.9.2-OUKernelQualification, MD-7.9.2-OUHermiteIdentities, MD-7.9.2-FirstReciprocalCorrection, MD-7.9.2-OverdampedSolvabilityOperators, MD-7.9.2-HighFrictionCorrectionTable, MD-7.9.3-BAOABMarginalCancellation
+- BATCH16：MD-7.9.3-SuperconvergenceScope

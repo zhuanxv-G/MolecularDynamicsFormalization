@@ -1,0 +1,188 @@
+以附件/PASTE 为准，忽略 /workspace 旧文件；Mathlib 定义按标准含义采信。
+本任务只审本条：原文转录、对象资格、定义体、量词、全部结论及[EXTRA]是否一致；Lean编译不代替语义审阅。
+Lean/Mathlib均4.34.0。原页PDF映射：[323]；印刷页=[302].
+input_sha256请原样回显：
+{
+  "Blueprint/Ch07.lean": "de3b0d06f5c52195cef1f387d3accff3b77dc46c95969466a8acf032276018e6",
+  "blueprint/ch07/ch07_source.json": "4ab0addff8ecca8f9d48c6ff03f24f3931e3251f0a67180827f908c77eebfcff",
+  "BATCH15a_PAGES.pdf": "b2756d94e437802ef18c5c90428183acdd9c2db0c2795f622356e28beffcba2e"
+}
+用代码将JSON对象(batch,input_sha256,items)写到 /workspace/.mathcopilot/reviews/ch07/BATCH15a_review.json；items仅含本source_id。
+items字段：source_id、verdict(PASS/FAIL/NEEDS_HUMAN)、transcription、semantic_review、counterexample、suggested_fix、printed_version、corrected_version。逐版区分原文疑误和修正版结论；缺材料必须具体指出，不猜测。写后json.loads自检，最后仅回复路径及统计。
+
+## 原文JSON
+```json
+{
+  "source_id": "MD-7.9.2-OUKernelQualification",
+  "kind": "unnumbered_claim",
+  "label": null,
+  "section": "7.9.2",
+  "printed_page": "302",
+  "pdf_page": "323",
+  "statement_latex": "The first equation at order one tells us that $f_{2,0,[OABAO]}(q,p)$ must be a function of position only, as the kernel of $\\overline{\\mathcal L}_O^\\dagger$ is the set of functions that are constant with respect to $p$. Hence we shall denote $f_{2,0,[OABAO]}(q,p)=\\nu(q)$, where $\\langle\\nu\\rangle=0$.",
+  "proof_latex": null,
+  "proof_note": "原书未给独立完整证明。",
+  "context_notation": [],
+  "extra_assumptions": [
+    "修正版明确实际Gaussian L²域和光滑性；原文目标定义保留但不证明。零均值仅限制ν常数方向，不由OU核自动给出。"
+  ],
+  "issues": [
+    "已目视核对PDF323：前向OU生成元的核实际是Gaussian密度倍数；对ρβf共轭后，合适L²域中的f才对p为常数。原文此句缺少共轭与定义域限定。"
+  ],
+  "statement_scope": "本条逐字引用的全部数学对象与公式；未纳入的上下文另列。",
+  "lean_decl": "MD.Ch07.ouKernelPrinted",
+  "lean_declarations": [
+    "MD.Ch07.ouKernelPrinted",
+    "MD.Ch07.ouKernelPrinted_corrected"
+  ],
+  "source_page_verification": "见source_page_checks.json；必须已目视核对本条原页。",
+  "repair_log": [],
+  "documented_priors": []
+}
+```
+
+## 完整本条Lean
+```lean
+def ouKernelPrinted (β : ℝ) : Prop :=
+  ∀ f : V n → ℝ, ouForward (fun _ ↦ 1) 1 β⁻¹ f = 0 → ∃ c : ℝ, f = fun _ ↦ c
+theorem ouKernelPrinted_corrected (U : V n → ℝ) (β : ℝ) (f : Phase n → ℝ)
+    (hβ : 0 < β) (hf : ContDiff ℝ ⊤ f)
+    (hL2 : ∀ q, MemLp (fun p ↦ f (q,p)) 2 (momentumGibbs (fun _ ↦ 1) β))
+    (hzero : phaseO (fun _ ↦ 1) 1 β (gibbsWeight (fun _ ↦ 1) U β*f) = 0) :
+    ∃ ν : V n → ℝ, ∀ q p, f (q,p) = ν q := by
+  sorry
+```
+
+## 项目依赖定义体及选择规格
+以下def/abbrev/structure完整保留；定理列出完整类型，Mathlib标准定义无需摘录。
+
+### MD.Ch07.V (Blueprint/Ch07.lean:172)
+原文件上下文：
+```lean
+open Set Filter MeasureTheory ProbabilityTheory MolecularDynamics
+open scoped BigOperators Topology ContDiff ENNReal NNReal
+variable {Ω : Type*} [MeasurableSpace Ω]
+variable {n : ℕ}
+```
+```lean
+abbrev V (n : ℕ) := Fin n → ℝ
+```
+
+### MD.Ch07.Phase (Blueprint/Ch07.lean:173)
+原文件上下文：
+```lean
+open Set Filter MeasureTheory ProbabilityTheory MolecularDynamics
+open scoped BigOperators Topology ContDiff ENNReal NNReal
+variable {Ω : Type*} [MeasurableSpace Ω]
+variable {n : ℕ}
+```
+```lean
+abbrev Phase (n : ℕ) := V n × V n
+```
+
+### MD.Ch07.coordDerivative (Blueprint/Ch07.lean:221)
+原文件上下文：
+```lean
+open Set Filter MeasureTheory ProbabilityTheory MolecularDynamics
+open scoped BigOperators Topology ContDiff ENNReal NNReal
+variable {Ω : Type*} [MeasurableSpace Ω]
+variable {n : ℕ}
+```
+```lean
+def coordDerivative (f : V n → ℝ) (x : V n) (i : Fin n) : ℝ :=
+  deriv (fun z ↦ f (Function.update x i z)) (x i)
+```
+
+### MD.Ch07.ouForward (Blueprint/Ch07.lean:224)
+原文件上下文：
+```lean
+open Set Filter MeasureTheory ProbabilityTheory MolecularDynamics
+open scoped BigOperators Topology ContDiff ENNReal NNReal
+variable {Ω : Type*} [MeasurableSpace Ω]
+variable {n : ℕ}
+```
+```lean
+def ouForward (m : V n) (γ θ : ℝ) (f : V n → ℝ) (p : V n) : ℝ :=
+  γ * (∑ i, coordDerivative (fun x ↦ x i*f x) p i) +
+    γ*θ * ∑ i, m i * coordDerivative (fun x ↦ coordDerivative f x i) p i
+```
+
+### MD.Ch07.mechanicalHamiltonian (Blueprint/Ch07.lean:939)
+原文件上下文：
+```lean
+open Set Filter MeasureTheory ProbabilityTheory MolecularDynamics
+open scoped BigOperators Topology ContDiff ENNReal NNReal
+variable {Ω : Type*} [MeasurableSpace Ω]
+variable {n : ℕ}
+```
+```lean
+def mechanicalHamiltonian (m : V n) (U : V n → ℝ) (x : Phase n) : ℝ :=
+  (∑ i, x.2 i^2/(2*m i))+U x.1
+```
+
+### MD.Ch07.gibbsWeight (Blueprint/Ch07.lean:941)
+原文件上下文：
+```lean
+open Set Filter MeasureTheory ProbabilityTheory MolecularDynamics
+open scoped BigOperators Topology ContDiff ENNReal NNReal
+variable {Ω : Type*} [MeasurableSpace Ω]
+variable {n : ℕ}
+```
+```lean
+def gibbsWeight (m : V n) (U : V n → ℝ) (β : ℝ) (x : Phase n) : ℝ :=
+  Real.exp (-β*mechanicalHamiltonian m U x)
+```
+
+### MD.Ch07.phaseO (Blueprint/Ch07.lean:945)
+原文件上下文：
+```lean
+open Set Filter MeasureTheory ProbabilityTheory MolecularDynamics
+open scoped BigOperators Topology ContDiff ENNReal NNReal
+variable {Ω : Type*} [MeasurableSpace Ω]
+variable {n : ℕ}
+```
+```lean
+def phaseO (m : V n) (γ β : ℝ) (ρ : Phase n → ℝ) (x : Phase n) : ℝ :=
+  ouForward m γ β⁻¹ (fun p ↦ ρ (x.1,p)) x.2
+```
+
+### MD.Ch07.momentumGibbs (Blueprint/Ch07.lean:993)
+原文件上下文：
+```lean
+open Set Filter MeasureTheory ProbabilityTheory MolecularDynamics
+open scoped BigOperators Topology ContDiff ENNReal NNReal
+variable {Ω : Type*} [MeasurableSpace Ω]
+variable {n : ℕ}
+```
+```lean
+def momentumGibbs (m : V n) (β : ℝ) : Measure (V n) := Measure.pi (fun i ↦ gaussianReal 0 (Real.toNNReal (m i/β)))
+```
+
+### MD.Ch07.ouKernelPrinted (Blueprint/Ch07.lean:1145)
+原文件上下文：
+```lean
+open Set Filter MeasureTheory ProbabilityTheory MolecularDynamics
+open scoped BigOperators Topology ContDiff ENNReal NNReal
+variable {Ω : Type*} [MeasurableSpace Ω]
+variable {n : ℕ}
+```
+```lean
+def ouKernelPrinted (β : ℝ) : Prop :=
+  ∀ f : V n → ℝ, ouForward (fun _ ↦ 1) 1 β⁻¹ f = 0 → ∃ c : ℝ, f = fun _ ↦ c
+```
+
+### MD.Ch07.ouKernelPrinted_corrected (Blueprint/Ch07.lean:1147)
+原文件上下文：
+```lean
+open Set Filter MeasureTheory ProbabilityTheory MolecularDynamics
+open scoped BigOperators Topology ContDiff ENNReal NNReal
+variable {Ω : Type*} [MeasurableSpace Ω]
+variable {n : ℕ}
+```
+```lean
+theorem ouKernelPrinted_corrected (U : V n → ℝ) (β : ℝ) (f : Phase n → ℝ)
+    (hβ : 0 < β) (hf : ContDiff ℝ ⊤ f)
+    (hL2 : ∀ q, MemLp (fun p ↦ f (q,p)) 2 (momentumGibbs (fun _ ↦ 1) β))
+    (hzero : phaseO (fun _ ↦ 1) 1 β (gibbsWeight (fun _ ↦ 1) U β*f) = 0) :
+    ∃ ν : V n → ℝ, ∀ q p, f (q,p) = ν q
+```

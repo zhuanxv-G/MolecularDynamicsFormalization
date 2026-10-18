@@ -75,7 +75,11 @@ We can see immediately that the Fredholm alternative holds in both cases, as bot
   β/24*(if flip then 2*cubicThird U x-6*hessianGrad U x else 6*hessianGrad U x-cubicThird U x)
 theorem symmetricRHS_odd (flip : Bool) (U : V n → ℝ) (β : ℝ) (x : Phase n) :
     symmetricRHS flip U β (x.1,-x.2) = -symmetricRHS flip U β x := by
-  simp [symmetricRHS,cubicThird,hessianGrad,Finset.mul_sum,Finset.sum_mul,← Finset.sum_neg_distrib]
+  have hG : hessianGrad U (x.1,-x.2) = -hessianGrad U x := by
+    simp [hessianGrad,Finset.sum_neg_distrib]
+  have hT : cubicThird U (x.1,-x.2) = -cubicThird U x := by
+    simp [cubicThird,Finset.sum_neg_distrib]
+  cases flip <;> simp [symmetricRHS,hG,hT] <;> ring
 theorem symmetricRHS_zeroMean (flip : Bool) (U : V n → ℝ) (β : ℝ)
     (hint : Integrable (symmetricRHS flip U β) (productGibbs (fun _ ↦ 1) U β)) :
     (∫ x, symmetricRHS flip U β x ∂productGibbs (fun _ ↦ 1) U β) = 0 := by

@@ -1,0 +1,189 @@
+以附件/PASTE 为准，忽略 /workspace 旧文件；Mathlib 定义按标准含义采信。
+本任务只审本条：原文转录、对象资格、定义体、量词、全部结论及[EXTRA]是否一致；Lean编译不代替语义审阅。
+Lean/Mathlib均4.34.0。原页PDF映射：[325]；印刷页=[304].
+input_sha256请原样回显：
+{
+  "Blueprint/Ch07.lean": "de3b0d06f5c52195cef1f387d3accff3b77dc46c95969466a8acf032276018e6",
+  "blueprint/ch07/ch07_source.json": "4ab0addff8ecca8f9d48c6ff03f24f3931e3251f0a67180827f908c77eebfcff",
+  "BATCH15d_PAGES.pdf": "a739a5168063d130c3241f061d3d7e8c2d5334e8aae570f8516c853921d46661"
+}
+用代码将JSON对象(batch,input_sha256,items)写到 /workspace/.mathcopilot/reviews/ch07/BATCH15d_review.json；items仅含本source_id。
+items字段：source_id、verdict(PASS/FAIL/NEEDS_HUMAN)、transcription、semantic_review、counterexample、suggested_fix、printed_version、corrected_version。逐版区分原文疑误和修正版结论；缺材料必须具体指出，不猜测。写后json.loads自检，最后仅回复路径及统计。
+
+## 原文JSON
+```json
+{
+  "source_id": "MD-7.9.2-OverdampedSolvabilityOperators",
+  "kind": "unnumbered_claim",
+  "label": null,
+  "section": "7.9.2",
+  "printed_page": "304",
+  "pdf_page": "325",
+  "statement_latex": "We abbreviate\n\\[\\mathcal M\\psi(q)=\\overline\\pi\\mathcal L_H^\\dagger\\mathcal L_A^\\dagger\\psi(q)\n=\\overline\\pi((\\mathcal L_A^\\dagger)^2+\\mathcal L_B^\\dagger\\mathcal L_A^\\dagger)\\psi(q)\n=\\beta^{-1}\\Delta_q\\psi(q)-\\nabla U\\cdot\\nabla_q\\psi(q),\\]\n\\[\\mathcal N\\psi(q)=\\overline\\pi\\mathcal L_H^\\dagger(\\mathcal L_A^\\dagger)^3\\psi(q)\n=\\overline\\pi((\\mathcal L_A^\\dagger)^4+\\mathcal L_B^\\dagger(\\mathcal L_A^\\dagger)^3)\\psi(q)\n=\\tfrac3\\beta\\mathcal M(\\Delta_q\\psi(q)).\\]\nThus we have\n\\[\\overline\\pi\\mathcal L_H^\\dagger\\rho_\\beta f_{2,1,[OABAO]}=\\tfrac\\beta8\\mathcal M(|\\nabla U|^2-\\beta^{-1}\\Delta_qU)+\\mathcal M\\nu,\\]\nand hence by (7.36) we finally obtain $\\nu(q)=\\tfrac18(\\Delta_qU-\\beta|\\nabla U|^2)$, where $\\langle\\nu\\rangle=0$.",
+  "proof_latex": null,
+  "proof_note": "原书未给独立完整证明。",
+  "context_notation": [],
+  "extra_assumptions": [
+    "M,N记录所印右端微分表达式；π̄与前向算符须用条件Gaussian平均和Gibbs共轭修正后才能证明左侧识别，详见前条。",
+    "只证明ν候选的代数改写；Mν相容方程、核常数唯一性、零均值须积分分部与定义域桥，不把候选定义当成解已证。"
+  ],
+  "issues": [],
+  "statement_scope": "M,N及ν全部显式公式和ν代数识别；平均算符等价与可解性未证明。",
+  "lean_decl": "MD.Ch07.overdampedM",
+  "lean_declarations": [
+    "MD.Ch07.overdampedM",
+    "MD.Ch07.overdampedN",
+    "MD.Ch07.highFrictionOABAO",
+    "MD.Ch07.overdampedSolvability_choice"
+  ],
+  "source_page_verification": "见source_page_checks.json；必须已目视核对本条原页。",
+  "repair_log": [],
+  "documented_priors": []
+}
+```
+
+## 完整本条Lean
+```lean
+def overdampedM (U ψ : V n → ℝ) (β : ℝ) (q : V n) : ℝ :=
+  β⁻¹*laplacian ψ q-(∑ i, gradient U q i*gradient ψ q i)
+def overdampedN (U ψ : V n → ℝ) (β : ℝ) (q : V n) : ℝ :=
+  3/β*overdampedM U (laplacian ψ) β q
+def highFrictionOABAO (U : V n → ℝ) (β : ℝ) (q : V n) : ℝ :=
+  (laplacian U q-β*gradNormSq U q)/8
+theorem overdampedSolvability_choice (U : V n → ℝ) (β : ℝ) (hβ : β ≠ 0) :
+    ∀ q, highFrictionOABAO U β q =
+      -β/8*(gradNormSq U q-β⁻¹*laplacian U q) := by
+  intro q
+  dsimp [highFrictionOABAO]
+  field_simp
+  <;> ring
+```
+
+## 项目依赖定义体及选择规格
+以下def/abbrev/structure完整保留；定理列出完整类型，Mathlib标准定义无需摘录。
+
+### MD.Ch07.V (Blueprint/Ch07.lean:172)
+原文件上下文：
+```lean
+open Set Filter MeasureTheory ProbabilityTheory MolecularDynamics
+open scoped BigOperators Topology ContDiff ENNReal NNReal
+variable {Ω : Type*} [MeasurableSpace Ω]
+variable {n : ℕ}
+```
+```lean
+abbrev V (n : ℕ) := Fin n → ℝ
+```
+
+### MD.Ch07.coordDerivative (Blueprint/Ch07.lean:221)
+原文件上下文：
+```lean
+open Set Filter MeasureTheory ProbabilityTheory MolecularDynamics
+open scoped BigOperators Topology ContDiff ENNReal NNReal
+variable {Ω : Type*} [MeasurableSpace Ω]
+variable {n : ℕ}
+```
+```lean
+def coordDerivative (f : V n → ℝ) (x : V n) (i : Fin n) : ℝ :=
+  deriv (fun z ↦ f (Function.update x i z)) (x i)
+```
+
+### MD.Ch07.gradient (Blueprint/Ch07.lean:250)
+原文件上下文：
+```lean
+open Set Filter MeasureTheory ProbabilityTheory MolecularDynamics
+open scoped BigOperators Topology ContDiff ENNReal NNReal
+variable {Ω : Type*} [MeasurableSpace Ω]
+variable {n : ℕ}
+```
+```lean
+def gradient (U : V n → ℝ) (q : V n) : V n := fun i ↦ coordDerivative U q i
+```
+
+### MD.Ch07.hessianU (Blueprint/Ch07.lean:1074)
+原文件上下文：
+```lean
+open Set Filter MeasureTheory ProbabilityTheory MolecularDynamics
+open scoped BigOperators Topology ContDiff ENNReal NNReal
+variable {Ω : Type*} [MeasurableSpace Ω]
+variable {n : ℕ}
+```
+```lean
+def hessianU (U : V n → ℝ) (q : V n) (i j : Fin n) : ℝ := coordDerivative (fun y ↦ gradient U y j) q i
+```
+
+### MD.Ch07.gradNormSq (Blueprint/Ch07.lean:1119)
+原文件上下文：
+```lean
+open Set Filter MeasureTheory ProbabilityTheory MolecularDynamics
+open scoped BigOperators Topology ContDiff ENNReal NNReal
+variable {Ω : Type*} [MeasurableSpace Ω]
+variable {n : ℕ}
+```
+```lean
+def gradNormSq (U : V n → ℝ) (q : V n) : ℝ := ∑ i, gradient U q i^2
+```
+
+### MD.Ch07.laplacian (Blueprint/Ch07.lean:1156)
+原文件上下文：
+```lean
+open Set Filter MeasureTheory ProbabilityTheory MolecularDynamics
+open scoped BigOperators Topology ContDiff ENNReal NNReal
+variable {Ω : Type*} [MeasurableSpace Ω]
+variable {n : ℕ}
+```
+```lean
+def laplacian (U : V n → ℝ) (q : V n) : ℝ := ∑ i, hessianU U q i i
+```
+
+### MD.Ch07.overdampedM (Blueprint/Ch07.lean:1191)
+原文件上下文：
+```lean
+open Set Filter MeasureTheory ProbabilityTheory MolecularDynamics
+open scoped BigOperators Topology ContDiff ENNReal NNReal
+variable {Ω : Type*} [MeasurableSpace Ω]
+variable {n : ℕ}
+```
+```lean
+def overdampedM (U ψ : V n → ℝ) (β : ℝ) (q : V n) : ℝ :=
+  β⁻¹*laplacian ψ q-(∑ i, gradient U q i*gradient ψ q i)
+```
+
+### MD.Ch07.overdampedN (Blueprint/Ch07.lean:1193)
+原文件上下文：
+```lean
+open Set Filter MeasureTheory ProbabilityTheory MolecularDynamics
+open scoped BigOperators Topology ContDiff ENNReal NNReal
+variable {Ω : Type*} [MeasurableSpace Ω]
+variable {n : ℕ}
+```
+```lean
+def overdampedN (U ψ : V n → ℝ) (β : ℝ) (q : V n) : ℝ :=
+  3/β*overdampedM U (laplacian ψ) β q
+```
+
+### MD.Ch07.highFrictionOABAO (Blueprint/Ch07.lean:1195)
+原文件上下文：
+```lean
+open Set Filter MeasureTheory ProbabilityTheory MolecularDynamics
+open scoped BigOperators Topology ContDiff ENNReal NNReal
+variable {Ω : Type*} [MeasurableSpace Ω]
+variable {n : ℕ}
+```
+```lean
+def highFrictionOABAO (U : V n → ℝ) (β : ℝ) (q : V n) : ℝ :=
+  (laplacian U q-β*gradNormSq U q)/8
+```
+
+### MD.Ch07.overdampedSolvability_choice (Blueprint/Ch07.lean:1197)
+原文件上下文：
+```lean
+open Set Filter MeasureTheory ProbabilityTheory MolecularDynamics
+open scoped BigOperators Topology ContDiff ENNReal NNReal
+variable {Ω : Type*} [MeasurableSpace Ω]
+variable {n : ℕ}
+```
+```lean
+theorem overdampedSolvability_choice (U : V n → ℝ) (β : ℝ) (hβ : β ≠ 0) :
+    ∀ q, highFrictionOABAO U β q =
+      -β/8*(gradNormSq U q-β⁻¹*laplacian U q)
+```

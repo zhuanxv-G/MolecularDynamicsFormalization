@@ -1,0 +1,236 @@
+以附件/PASTE 为准，忽略 /workspace 旧文件；Mathlib 定义按标准含义采信。
+本任务只审本条：原文转录、对象资格、定义体、量词、全部结论及[EXTRA]是否一致；Lean编译不代替语义审阅。
+Lean/Mathlib均4.34.0。原页PDF映射：[320]；印刷页=[299].
+input_sha256请原样回显：
+{
+  "Blueprint/Ch07.lean": "de3b0d06f5c52195cef1f387d3accff3b77dc46c95969466a8acf032276018e6",
+  "blueprint/ch07/ch07_source.json": "4ab0addff8ecca8f9d48c6ff03f24f3931e3251f0a67180827f908c77eebfcff",
+  "BATCH14c_PAGES.pdf": "09453478f8aab75ec4b835e86a751c60db2df1808c5d53c6b1fac9083bc26a8c"
+}
+用代码将JSON对象(batch,input_sha256,items)写到 /workspace/.mathcopilot/reviews/ch07/BATCH14c_review.json；items仅含本source_id。
+items字段：source_id、verdict(PASS/FAIL/NEEDS_HUMAN)、transcription、semantic_review、counterexample、suggested_fix、printed_version、corrected_version。逐版区分原文疑误和修正版结论；缺材料必须具体指出，不猜测。写后json.loads自检，最后仅回复路径及统计。
+
+## 原文JSON
+```json
+{
+  "source_id": "MD-7.9.1-SymmetricRHS",
+  "kind": "unnumbered_claim",
+  "label": null,
+  "section": "7.9.1",
+  "printed_page": "299",
+  "pdf_page": "320",
+  "statement_latex": "\\[\\mathcal L_{LD}^\\dagger(\\rho_\\beta f_{2,[OABAO]})=\\frac\\beta{24}(6p^T(\\nabla^2U)\\nabla U-\\nabla^3U:p\\otimes p\\otimes p)\\rho_\\beta,\\]\n\\[\\mathcal L_{LD}^\\dagger(\\rho_\\beta f_{2,[OBABO]})=\\frac\\beta{24}(2\\nabla^3U:p\\otimes p\\otimes p-6p^T(\\nabla^2U)\\nabla U)\\rho_\\beta.\\]\nWe can see immediately that the Fredholm alternative holds in both cases, as both equations have right-hand sides that are of odd order in $p$, and hence will average to 0.",
+  "proof_latex": null,
+  "proof_note": "原书未给独立完整证明。",
+  "context_notation": [],
+  "extra_assumptions": [
+    "右端去掉共同正Gibbs权，改用真实乘积Gibbs测度积分；奇性与零均值不等于完整Fredholm充分可解性。PDE左端与L2识别另需三重交换子桥。"
+  ],
+  "issues": [],
+  "statement_scope": "本条逐字引用的全部数学对象与公式；未纳入的上下文另列。",
+  "lean_decl": "MD.Ch07.symmetricRHS",
+  "lean_declarations": [
+    "MD.Ch07.symmetricRHS",
+    "MD.Ch07.symmetricRHS_odd",
+    "MD.Ch07.symmetricRHS_zeroMean"
+  ],
+  "source_page_verification": "见source_page_checks.json；必须已目视核对本条原页。",
+  "repair_log": [],
+  "documented_priors": []
+}
+```
+
+## 完整本条Lean
+```lean
+def symmetricRHS (flip : Bool) (U : V n → ℝ) (β : ℝ) (x : Phase n) : ℝ :=
+  β/24*(if flip then 2*cubicThird U x-6*hessianGrad U x else 6*hessianGrad U x-cubicThird U x)
+theorem symmetricRHS_odd (flip : Bool) (U : V n → ℝ) (β : ℝ) (x : Phase n) :
+    symmetricRHS flip U β (x.1,-x.2) = -symmetricRHS flip U β x := by
+  have hG : hessianGrad U (x.1,-x.2) = -hessianGrad U x := by
+    simp [hessianGrad,Finset.sum_neg_distrib]
+  have hT : cubicThird U (x.1,-x.2) = -cubicThird U x := by
+    simp [cubicThird,Finset.sum_neg_distrib]
+  cases flip <;> simp [symmetricRHS,hG,hT] <;> ring
+theorem symmetricRHS_zeroMean (flip : Bool) (U : V n → ℝ) (β : ℝ)
+    (hint : Integrable (symmetricRHS flip U β) (productGibbs (fun _ ↦ 1) U β)) :
+    (∫ x, symmetricRHS flip U β x ∂productGibbs (fun _ ↦ 1) U β) = 0 := by
+  sorry
+```
+
+## 项目依赖定义体及选择规格
+以下def/abbrev/structure完整保留；定理列出完整类型，Mathlib标准定义无需摘录。
+
+### MD.Ch07.V (Blueprint/Ch07.lean:172)
+原文件上下文：
+```lean
+open Set Filter MeasureTheory ProbabilityTheory MolecularDynamics
+open scoped BigOperators Topology ContDiff ENNReal NNReal
+variable {Ω : Type*} [MeasurableSpace Ω]
+variable {n : ℕ}
+```
+```lean
+abbrev V (n : ℕ) := Fin n → ℝ
+```
+
+### MD.Ch07.Phase (Blueprint/Ch07.lean:173)
+原文件上下文：
+```lean
+open Set Filter MeasureTheory ProbabilityTheory MolecularDynamics
+open scoped BigOperators Topology ContDiff ENNReal NNReal
+variable {Ω : Type*} [MeasurableSpace Ω]
+variable {n : ℕ}
+```
+```lean
+abbrev Phase (n : ℕ) := V n × V n
+```
+
+### MD.Ch07.coordDerivative (Blueprint/Ch07.lean:221)
+原文件上下文：
+```lean
+open Set Filter MeasureTheory ProbabilityTheory MolecularDynamics
+open scoped BigOperators Topology ContDiff ENNReal NNReal
+variable {Ω : Type*} [MeasurableSpace Ω]
+variable {n : ℕ}
+```
+```lean
+def coordDerivative (f : V n → ℝ) (x : V n) (i : Fin n) : ℝ :=
+  deriv (fun z ↦ f (Function.update x i z)) (x i)
+```
+
+### MD.Ch07.gradient (Blueprint/Ch07.lean:250)
+原文件上下文：
+```lean
+open Set Filter MeasureTheory ProbabilityTheory MolecularDynamics
+open scoped BigOperators Topology ContDiff ENNReal NNReal
+variable {Ω : Type*} [MeasurableSpace Ω]
+variable {n : ℕ}
+```
+```lean
+def gradient (U : V n → ℝ) (q : V n) : V n := fun i ↦ coordDerivative U q i
+```
+
+### MD.Ch07.positionGibbs (Blueprint/Ch07.lean:991)
+原文件上下文：
+```lean
+open Set Filter MeasureTheory ProbabilityTheory MolecularDynamics
+open scoped BigOperators Topology ContDiff ENNReal NNReal
+variable {Ω : Type*} [MeasurableSpace Ω]
+variable {n : ℕ}
+```
+```lean
+def positionGibbs (U : V n → ℝ) (β : ℝ) : Measure (V n) :=
+  volume.withDensity (fun q ↦ ENNReal.ofReal (Real.exp (-β*U q)/(∫ y, Real.exp (-β*U y))))
+```
+
+### MD.Ch07.momentumGibbs (Blueprint/Ch07.lean:993)
+原文件上下文：
+```lean
+open Set Filter MeasureTheory ProbabilityTheory MolecularDynamics
+open scoped BigOperators Topology ContDiff ENNReal NNReal
+variable {Ω : Type*} [MeasurableSpace Ω]
+variable {n : ℕ}
+```
+```lean
+def momentumGibbs (m : V n) (β : ℝ) : Measure (V n) := Measure.pi (fun i ↦ gaussianReal 0 (Real.toNNReal (m i/β)))
+```
+
+### MD.Ch07.productGibbs (Blueprint/Ch07.lean:994)
+原文件上下文：
+```lean
+open Set Filter MeasureTheory ProbabilityTheory MolecularDynamics
+open scoped BigOperators Topology ContDiff ENNReal NNReal
+variable {Ω : Type*} [MeasurableSpace Ω]
+variable {n : ℕ}
+```
+```lean
+def productGibbs (m : V n) (U : V n → ℝ) (β : ℝ) : Measure (Phase n) :=
+  (positionGibbs U β).prod (momentumGibbs m β)
+```
+
+### MD.Ch07.hessianU (Blueprint/Ch07.lean:1074)
+原文件上下文：
+```lean
+open Set Filter MeasureTheory ProbabilityTheory MolecularDynamics
+open scoped BigOperators Topology ContDiff ENNReal NNReal
+variable {Ω : Type*} [MeasurableSpace Ω]
+variable {n : ℕ}
+```
+```lean
+def hessianU (U : V n → ℝ) (q : V n) (i j : Fin n) : ℝ := coordDerivative (fun y ↦ gradient U y j) q i
+```
+
+### MD.Ch07.thirdU (Blueprint/Ch07.lean:1075)
+原文件上下文：
+```lean
+open Set Filter MeasureTheory ProbabilityTheory MolecularDynamics
+open scoped BigOperators Topology ContDiff ENNReal NNReal
+variable {Ω : Type*} [MeasurableSpace Ω]
+variable {n : ℕ}
+```
+```lean
+def thirdU (U : V n → ℝ) (q : V n) (i j k : Fin n) : ℝ := coordDerivative (fun y ↦ hessianU U y j k) q i
+```
+
+### MD.Ch07.hessianGrad (Blueprint/Ch07.lean:1076)
+原文件上下文：
+```lean
+open Set Filter MeasureTheory ProbabilityTheory MolecularDynamics
+open scoped BigOperators Topology ContDiff ENNReal NNReal
+variable {Ω : Type*} [MeasurableSpace Ω]
+variable {n : ℕ}
+```
+```lean
+def hessianGrad (U : V n → ℝ) (x : Phase n) : ℝ := ∑ i, ∑ j, x.2 i*hessianU U x.1 i j*gradient U x.1 j
+```
+
+### MD.Ch07.cubicThird (Blueprint/Ch07.lean:1077)
+原文件上下文：
+```lean
+open Set Filter MeasureTheory ProbabilityTheory MolecularDynamics
+open scoped BigOperators Topology ContDiff ENNReal NNReal
+variable {Ω : Type*} [MeasurableSpace Ω]
+variable {n : ℕ}
+```
+```lean
+def cubicThird (U : V n → ℝ) (x : Phase n) : ℝ := ∑ i, ∑ j, ∑ k, thirdU U x.1 i j k*x.2 i*x.2 j*x.2 k
+```
+
+### MD.Ch07.symmetricRHS (Blueprint/Ch07.lean:1093)
+原文件上下文：
+```lean
+open Set Filter MeasureTheory ProbabilityTheory MolecularDynamics
+open scoped BigOperators Topology ContDiff ENNReal NNReal
+variable {Ω : Type*} [MeasurableSpace Ω]
+variable {n : ℕ}
+```
+```lean
+def symmetricRHS (flip : Bool) (U : V n → ℝ) (β : ℝ) (x : Phase n) : ℝ :=
+  β/24*(if flip then 2*cubicThird U x-6*hessianGrad U x else 6*hessianGrad U x-cubicThird U x)
+```
+
+### MD.Ch07.symmetricRHS_odd (Blueprint/Ch07.lean:1095)
+原文件上下文：
+```lean
+open Set Filter MeasureTheory ProbabilityTheory MolecularDynamics
+open scoped BigOperators Topology ContDiff ENNReal NNReal
+variable {Ω : Type*} [MeasurableSpace Ω]
+variable {n : ℕ}
+```
+```lean
+theorem symmetricRHS_odd (flip : Bool) (U : V n → ℝ) (β : ℝ) (x : Phase n) :
+    symmetricRHS flip U β (x.1,-x.2) = -symmetricRHS flip U β x
+```
+
+### MD.Ch07.symmetricRHS_zeroMean (Blueprint/Ch07.lean:1102)
+原文件上下文：
+```lean
+open Set Filter MeasureTheory ProbabilityTheory MolecularDynamics
+open scoped BigOperators Topology ContDiff ENNReal NNReal
+variable {Ω : Type*} [MeasurableSpace Ω]
+variable {n : ℕ}
+```
+```lean
+theorem symmetricRHS_zeroMean (flip : Bool) (U : V n → ℝ) (β : ℝ)
+    (hint : Integrable (symmetricRHS flip U β) (productGibbs (fun _ ↦ 1) U β)) :
+    (∫ x, symmetricRHS flip U β x ∂productGibbs (fun _ ↦ 1) U β) = 0
+```

@@ -1,0 +1,47 @@
+{
+  "batch": "BATCH15",
+  "subtasks": [
+    {
+      "subtask": "BATCH15a",
+      "source_id": "MD-7.9.2-OUKernelQualification",
+      "path": "blueprint/ch07/mathcopilot_tasks/compact/BATCH15/a",
+      "bytes": 84291,
+      "manifest_sha256": "66e18c990a7ebca13e2768d89fb94745a3e9e6effd1c91c52c043f6c6b85c5b3"
+    },
+    {
+      "subtask": "BATCH15b",
+      "source_id": "MD-7.9.2-OUHermiteIdentities",
+      "path": "blueprint/ch07/mathcopilot_tasks/compact/BATCH15/b",
+      "bytes": 91745,
+      "manifest_sha256": "255b7ad7dd62eb6f6f5f560f92864ce6262f82061d3057d02d082eb81d85cc17"
+    },
+    {
+      "subtask": "BATCH15c",
+      "source_id": "MD-7.9.2-FirstReciprocalCorrection",
+      "path": "blueprint/ch07/mathcopilot_tasks/compact/BATCH15/c",
+      "bytes": 104396,
+      "manifest_sha256": "542f19604b199e56d70b4b8dd403157c693758f890bf61fb01187ed0cdac5221"
+    },
+    {
+      "subtask": "BATCH15d",
+      "source_id": "MD-7.9.2-OverdampedSolvabilityOperators",
+      "path": "blueprint/ch07/mathcopilot_tasks/compact/BATCH15/d",
+      "bytes": 86030,
+      "manifest_sha256": "87c63d07cbbff5d3f53aded41d62453c7e7b50fcda14a98fb47aaa9800715952"
+    },
+    {
+      "subtask": "BATCH15e",
+      "source_id": "MD-7.9.2-HighFrictionCorrectionTable",
+      "path": "blueprint/ch07/mathcopilot_tasks/compact/BATCH15/e",
+      "bytes": 107424,
+      "manifest_sha256": "835c9e990f107509c6c70e61389fca31688e16cd9a99ca5c3b1af000ba75dc88"
+    },
+    {
+      "subtask": "BATCH15f",
+      "source_id": "MD-7.9.3-BAOABMarginalCancellation",
+      "path": "blueprint/ch07/mathcopilot_tasks/compact/BATCH15/f",
+      "bytes": 100140,
+      "manifest_sha256": "af629c9ad9e0495f1b18a9a022cf5715f307f2f2f1a6453ecb74dd45285930cd"
+    }
+  ]
+}

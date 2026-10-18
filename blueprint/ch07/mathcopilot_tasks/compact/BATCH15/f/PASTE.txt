@@ -1,0 +1,260 @@
+以附件/PASTE 为准，忽略 /workspace 旧文件；Mathlib 定义按标准含义采信。
+本任务只审本条：原文转录、对象资格、定义体、量词、全部结论及[EXTRA]是否一致；Lean编译不代替语义审阅。
+Lean/Mathlib均4.34.0。原页PDF映射：[326]；印刷页=[305].
+input_sha256请原样回显：
+{
+  "Blueprint/Ch07.lean": "de3b0d06f5c52195cef1f387d3accff3b77dc46c95969466a8acf032276018e6",
+  "blueprint/ch07/ch07_source.json": "4ab0addff8ecca8f9d48c6ff03f24f3931e3251f0a67180827f908c77eebfcff",
+  "BATCH15f_PAGES.pdf": "ba8b2555aec74feb51b7faf2a1e1bcf08bb3f6afd215e1b2ea3bbb2aac704ec2"
+}
+用代码将JSON对象(batch,input_sha256,items)写到 /workspace/.mathcopilot/reviews/ch07/BATCH15f_review.json；items仅含本source_id。
+items字段：source_id、verdict(PASS/FAIL/NEEDS_HUMAN)、transcription、semantic_review、counterexample、suggested_fix、printed_version、corrected_version。逐版区分原文疑误和修正版结论；缺材料必须具体指出，不猜测。写后json.loads自检，最后仅回复路径及统计。
+
+## 原文JSON
+```json
+{
+  "source_id": "MD-7.9.3-BAOABMarginalCancellation",
+  "kind": "unnumbered_claim",
+  "label": "(7.37)",
+  "section": "7.9.3",
+  "printed_page": "305",
+  "pdf_page": "326",
+  "statement_latex": "\\[\\langle\\vartheta\\rangle=\\langle\\vartheta\\rangle_h-h^2\\langle\\vartheta f_{2,0}\\rangle+O(h^2/\\gamma+h^4).\\tag{7.37}\\]\nThe $[BAOAB]$ scheme has leading order correction\n\\[f_{2,0,[BAOAB]}(q,p)=\\tfrac18(\\Delta U-\\beta p^T\\nabla^2U(q)p),\\]\nwhich has the interesting property that its marginal average with respect to momentum is zero:\n\\[\\overline\\pi f_{2,0,[BAOAB]}=\\int_{\\mathcal P}f_{2,0,[BAOAB]}(q,p)\\rho_\\beta(q,p)d\\omega_p=0.\\]\n\\[\\langle\\vartheta(q)f_{2,0,[BAOAB]}\\rangle=\\int_{\\mathcal Q}\\vartheta(q)\\int_{\\mathcal P}f_{2,0,[BAOAB]}\\rho_\\beta d\\omega_p d\\omega_q=0.\\]",
+  "proof_latex": "Integrate first over the Gaussian momenta; the quadratic Gaussian moment contracts the Hessian to β⁻¹ΔU. Then use Fubini.",
+  "proof_note": "按所列原页转录原书证明。",
+  "context_notation": [],
+  "extra_assumptions": [
+    "归一条件Gaussian平均为零即推出原文带位置权的平均为零；两个零积分结论均为实际测度。双渐近余项的有效性须另外证明，不由形式消项自动给出。"
+  ],
+  "issues": [],
+  "statement_scope": "本条逐字引用的全部数学对象与公式；未纳入的上下文另列。",
+  "lean_decl": "MD.Ch07.baoabMarginalCancellation",
+  "lean_declarations": [
+    "MD.Ch07.baoabMarginalCancellation",
+    "MD.Ch07.baoabConfigurationalCancellation"
+  ],
+  "source_page_verification": "见source_page_checks.json；必须已目视核对本条原页。",
+  "repair_log": [],
+  "documented_priors": []
+}
+```
+
+## 完整本条Lean
+```lean
+theorem baoabMarginalCancellation (U : V n → ℝ) (β : ℝ) (q : V n) (hβ : 0 < β) :
+    momentumAverage β (highFrictionCorrection 3 U β 0) q = 0 := by
+  sorry
+theorem baoabConfigurationalCancellation (U φ : V n → ℝ) (β : ℝ) (hβ : 0 < β)
+    (hint : Integrable (fun x ↦ φ x.1*highFrictionCorrection 3 U β 0 x)
+      (productGibbs (fun _ ↦ 1) U β)) :
+    (∫ x, φ x.1*highFrictionCorrection 3 U β 0 x ∂productGibbs (fun _ ↦ 1) U β) = 0 := by
+  sorry
+```
+
+## 项目依赖定义体及选择规格
+以下def/abbrev/structure完整保留；定理列出完整类型，Mathlib标准定义无需摘录。
+
+### MD.Ch07.V (Blueprint/Ch07.lean:172)
+原文件上下文：
+```lean
+open Set Filter MeasureTheory ProbabilityTheory MolecularDynamics
+open scoped BigOperators Topology ContDiff ENNReal NNReal
+variable {Ω : Type*} [MeasurableSpace Ω]
+variable {n : ℕ}
+```
+```lean
+abbrev V (n : ℕ) := Fin n → ℝ
+```
+
+### MD.Ch07.Phase (Blueprint/Ch07.lean:173)
+原文件上下文：
+```lean
+open Set Filter MeasureTheory ProbabilityTheory MolecularDynamics
+open scoped BigOperators Topology ContDiff ENNReal NNReal
+variable {Ω : Type*} [MeasurableSpace Ω]
+variable {n : ℕ}
+```
+```lean
+abbrev Phase (n : ℕ) := V n × V n
+```
+
+### MD.Ch07.coordDerivative (Blueprint/Ch07.lean:221)
+原文件上下文：
+```lean
+open Set Filter MeasureTheory ProbabilityTheory MolecularDynamics
+open scoped BigOperators Topology ContDiff ENNReal NNReal
+variable {Ω : Type*} [MeasurableSpace Ω]
+variable {n : ℕ}
+```
+```lean
+def coordDerivative (f : V n → ℝ) (x : V n) (i : Fin n) : ℝ :=
+  deriv (fun z ↦ f (Function.update x i z)) (x i)
+```
+
+### MD.Ch07.gradient (Blueprint/Ch07.lean:250)
+原文件上下文：
+```lean
+open Set Filter MeasureTheory ProbabilityTheory MolecularDynamics
+open scoped BigOperators Topology ContDiff ENNReal NNReal
+variable {Ω : Type*} [MeasurableSpace Ω]
+variable {n : ℕ}
+```
+```lean
+def gradient (U : V n → ℝ) (q : V n) : V n := fun i ↦ coordDerivative U q i
+```
+
+### MD.Ch07.positionGibbs (Blueprint/Ch07.lean:991)
+原文件上下文：
+```lean
+open Set Filter MeasureTheory ProbabilityTheory MolecularDynamics
+open scoped BigOperators Topology ContDiff ENNReal NNReal
+variable {Ω : Type*} [MeasurableSpace Ω]
+variable {n : ℕ}
+```
+```lean
+def positionGibbs (U : V n → ℝ) (β : ℝ) : Measure (V n) :=
+  volume.withDensity (fun q ↦ ENNReal.ofReal (Real.exp (-β*U q)/(∫ y, Real.exp (-β*U y))))
+```
+
+### MD.Ch07.momentumGibbs (Blueprint/Ch07.lean:993)
+原文件上下文：
+```lean
+open Set Filter MeasureTheory ProbabilityTheory MolecularDynamics
+open scoped BigOperators Topology ContDiff ENNReal NNReal
+variable {Ω : Type*} [MeasurableSpace Ω]
+variable {n : ℕ}
+```
+```lean
+def momentumGibbs (m : V n) (β : ℝ) : Measure (V n) := Measure.pi (fun i ↦ gaussianReal 0 (Real.toNNReal (m i/β)))
+```
+
+### MD.Ch07.productGibbs (Blueprint/Ch07.lean:994)
+原文件上下文：
+```lean
+open Set Filter MeasureTheory ProbabilityTheory MolecularDynamics
+open scoped BigOperators Topology ContDiff ENNReal NNReal
+variable {Ω : Type*} [MeasurableSpace Ω]
+variable {n : ℕ}
+```
+```lean
+def productGibbs (m : V n) (U : V n → ℝ) (β : ℝ) : Measure (Phase n) :=
+  (positionGibbs U β).prod (momentumGibbs m β)
+```
+
+### MD.Ch07.hessianU (Blueprint/Ch07.lean:1074)
+原文件上下文：
+```lean
+open Set Filter MeasureTheory ProbabilityTheory MolecularDynamics
+open scoped BigOperators Topology ContDiff ENNReal NNReal
+variable {Ω : Type*} [MeasurableSpace Ω]
+variable {n : ℕ}
+```
+```lean
+def hessianU (U : V n → ℝ) (q : V n) (i j : Fin n) : ℝ := coordDerivative (fun y ↦ gradient U y j) q i
+```
+
+### MD.Ch07.gradNormSq (Blueprint/Ch07.lean:1119)
+原文件上下文：
+```lean
+open Set Filter MeasureTheory ProbabilityTheory MolecularDynamics
+open scoped BigOperators Topology ContDiff ENNReal NNReal
+variable {Ω : Type*} [MeasurableSpace Ω]
+variable {n : ℕ}
+```
+```lean
+def gradNormSq (U : V n → ℝ) (q : V n) : ℝ := ∑ i, gradient U q i^2
+```
+
+### MD.Ch07.hessianQuadratic (Blueprint/Ch07.lean:1120)
+原文件上下文：
+```lean
+open Set Filter MeasureTheory ProbabilityTheory MolecularDynamics
+open scoped BigOperators Topology ContDiff ENNReal NNReal
+variable {Ω : Type*} [MeasurableSpace Ω]
+variable {n : ℕ}
+```
+```lean
+def hessianQuadratic (U : V n → ℝ) (x : Phase n) : ℝ := ∑ i, ∑ j, x.2 i*hessianU U x.1 i j*x.2 j
+```
+
+### MD.Ch07.laplacian (Blueprint/Ch07.lean:1156)
+原文件上下文：
+```lean
+open Set Filter MeasureTheory ProbabilityTheory MolecularDynamics
+open scoped BigOperators Topology ContDiff ENNReal NNReal
+variable {Ω : Type*} [MeasurableSpace Ω]
+variable {n : ℕ}
+```
+```lean
+def laplacian (U : V n → ℝ) (q : V n) : ℝ := ∑ i, hessianU U q i i
+```
+
+### MD.Ch07.momentumAverage (Blueprint/Ch07.lean:1177)
+原文件上下文：
+```lean
+open Set Filter MeasureTheory ProbabilityTheory MolecularDynamics
+open scoped BigOperators Topology ContDiff ENNReal NNReal
+variable {Ω : Type*} [MeasurableSpace Ω]
+variable {n : ℕ}
+```
+```lean
+def momentumAverage (β : ℝ) (f : Phase n → ℝ) (q : V n) : ℝ :=
+  ∫ p, f (q,p) ∂momentumGibbs (fun _ ↦ 1) β
+```
+
+### MD.Ch07.highFrictionOABAO (Blueprint/Ch07.lean:1195)
+原文件上下文：
+```lean
+open Set Filter MeasureTheory ProbabilityTheory MolecularDynamics
+open scoped BigOperators Topology ContDiff ENNReal NNReal
+variable {Ω : Type*} [MeasurableSpace Ω]
+variable {n : ℕ}
+```
+```lean
+def highFrictionOABAO (U : V n → ℝ) (β : ℝ) (q : V n) : ℝ :=
+  (laplacian U q-β*gradNormSq U q)/8
+```
+
+### MD.Ch07.highFrictionCorrection (Blueprint/Ch07.lean:1208)
+原文件上下文：
+```lean
+open Set Filter MeasureTheory ProbabilityTheory MolecularDynamics
+open scoped BigOperators Topology ContDiff ENNReal NNReal
+variable {Ω : Type*} [MeasurableSpace Ω]
+variable {n : ℕ}
+```
+```lean
+def highFrictionCorrection (s : Fin 4) (U : V n → ℝ) (β c : ℝ) (x : Phase n) : ℝ :=
+  if s = 0 then highFrictionOABAO U β x.1
+  else if s = 1 then (β*gradNormSq U x.1-2*laplacian U x.1+c)/8
+  else if s = 2 then (β*hessianQuadratic U x-2*laplacian U x.1+c)/8
+  else (laplacian U x.1-β*hessianQuadratic U x)/8
+```
+
+### MD.Ch07.baoabMarginalCancellation (Blueprint/Ch07.lean:1225)
+原文件上下文：
+```lean
+open Set Filter MeasureTheory ProbabilityTheory MolecularDynamics
+open scoped BigOperators Topology ContDiff ENNReal NNReal
+variable {Ω : Type*} [MeasurableSpace Ω]
+variable {n : ℕ}
+```
+```lean
+theorem baoabMarginalCancellation (U : V n → ℝ) (β : ℝ) (q : V n) (hβ : 0 < β) :
+    momentumAverage β (highFrictionCorrection 3 U β 0) q = 0
+```
+
+### MD.Ch07.baoabConfigurationalCancellation (Blueprint/Ch07.lean:1228)
+原文件上下文：
+```lean
+open Set Filter MeasureTheory ProbabilityTheory MolecularDynamics
+open scoped BigOperators Topology ContDiff ENNReal NNReal
+variable {Ω : Type*} [MeasurableSpace Ω]
+variable {n : ℕ}
+```
+```lean
+theorem baoabConfigurationalCancellation (U φ : V n → ℝ) (β : ℝ) (hβ : 0 < β)
+    (hint : Integrable (fun x ↦ φ x.1*highFrictionCorrection 3 U β 0 x)
+      (productGibbs (fun _ ↦ 1) U β)) :
+    (∫ x, φ x.1*highFrictionCorrection 3 U β 0 x ∂productGibbs (fun _ ↦ 1) U β) = 0
+```

@@ -1,0 +1,64 @@
+{
+  "batch": "BATCH14",
+  "subtask": "BATCH14d",
+  "source_ids": [
+    "MD-7.9.1-Lemma71"
+  ],
+  "input_sha256": {
+    "Blueprint/Ch07.lean": "de3b0d06f5c52195cef1f387d3accff3b77dc46c95969466a8acf032276018e6",
+    "blueprint/ch07/ch07_source.json": "4ab0addff8ecca8f9d48c6ff03f24f3931e3251f0a67180827f908c77eebfcff",
+    "BATCH14d_PAGES.pdf": "e20d81268e8716a769e62af5ce810dcf9c44f8e5c5137b52da7719424c8dd261"
+  },
+  "page_mapping": [
+    {
+      "attachment_page": 1,
+      "original_pdf_page": 320,
+      "printed_page": 299
+    },
+    {
+      "attachment_page": 2,
+      "original_pdf_page": 321,
+      "printed_page": 300
+    }
+  ],
+  "definition_excerpts": [
+    {
+      "full_name": "MD.Ch07.lemma71",
+      "kind": "theorem",
+      "path": "Blueprint/Ch07.lean",
+      "line": 1109,
+      "code_sha256": "1077d2b276ec9885603f670694e1914f15a7d48466f40330a481974ffe64fb8e"
+    },
+    {
+      "full_name": "MolecularDynamics.textbookUniqueInvariantProbability",
+      "kind": "def",
+      "path": "MolecularDynamics/Chapter07/InvariantDistributionSwap.lean",
+      "line": 16,
+      "code_sha256": "1b7eaa182bdcecd4a4eecb59dbfab78f8f93448ecc10db0343e590c35f254c6d"
+    },
+    {
+      "full_name": "MolecularDynamics.textbookInvariantDistributionSwap",
+      "kind": "theorem",
+      "path": "MolecularDynamics/Chapter07/InvariantDistributionSwap.lean",
+      "line": 64,
+      "code_sha256": "e032628ca2b4e5116369ca971f3821308ff027493fe03ddba479265e8206bdd9"
+    }
+  ],
+  "validation": {
+    "project_constant_closure": "PASS",
+    "missing_project_definitions": [],
+    "full_page_render_equality_dpi": 72,
+    "website_submitted": false
+  },
+  "files": {
+    "PASTE.txt": {
+      "bytes": 5393,
+      "sha256": "e9ebe60a7ee433f44fbf55bc5e4e2acb22fa932399ca7c67be03a3d240eb9dfa"
+    },
+    "BATCH14d_PAGES.pdf": {
+      "bytes": 100542,
+      "sha256": "e20d81268e8716a769e62af5ce810dcf9c44f8e5c5137b52da7719424c8dd261"
+    }
+  },
+  "total_task_bytes": 107966
+}

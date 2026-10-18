@@ -1977,5 +1977,410 @@
     "source_page_verification": "见source_page_checks.json；必须已目视核对本条原页。",
     "repair_log": [],
     "documented_priors": []
+  },
+  {
+    "source_id": "MD-7.9-Proposition71",
+    "kind": "proposition",
+    "label": "Proposition 7.1 / (7.26)",
+    "section": "7.9",
+    "printed_page": "297",
+    "pdf_page": "318",
+    "statement_latex": "Proposition 7.1 Let $\\mathcal L_X^\\dagger$, $\\mathcal L_Y^\\dagger$ and $\\mathcal L_Z^\\dagger$ be general operators to which BCH can be applied, then defining\n\\[e^{h\\widehat{\\mathcal L}^\\dagger}=e^{\\frac h2\\mathcal L_X^\\dagger}e^{\\frac h2\\mathcal L_Y^\\dagger}e^{h\\mathcal L_Z^\\dagger}e^{\\frac h2\\mathcal L_Y^\\dagger}e^{\\frac h2\\mathcal L_X^\\dagger},\\tag{7.26}\\]\ngives $\\widehat{\\mathcal L}^\\dagger=\\mathcal L_0^\\dagger+h^2\\mathcal L_2^\\dagger+O(h^4)$, where\n\\[\\mathcal L_0^\\dagger=\\mathcal L_X^\\dagger+\\mathcal L_Y^\\dagger+\\mathcal L_Z^\\dagger,\\]\n\\[\\mathcal L_2^\\dagger=\\frac1{12}([\\mathcal L_Z^\\dagger,\\mathcal L_Z^\\dagger,\\mathcal L_Y^\\dagger]+[\\mathcal L_Y^\\dagger+\\mathcal L_Z^\\dagger,\\mathcal L_Y^\\dagger+\\mathcal L_Z^\\dagger,\\mathcal L_X^\\dagger])\n-\\frac1{24}([\\mathcal L_Y^\\dagger,\\mathcal L_Y^\\dagger,\\mathcal L_Z^\\dagger]+[\\mathcal L_X^\\dagger,\\mathcal L_X^\\dagger,\\mathcal L_Y^\\dagger+\\mathcal L_Z^\\dagger]).\\]",
+    "proof_latex": null,
+    "proof_note": "原书未给独立完整证明。",
+    "context_notation": [],
+    "extra_assumptions": [
+      "桥接正式库已证的实际非交换形式log/exp及完整对称修正定义体；余项为h⁴形式因子，未声称无界算符级数收敛。"
+    ],
+    "issues": [],
+    "statement_scope": "本条逐字引用的全部数学对象与公式；未纳入的上下文另列。",
+    "lean_decl": "MD.Ch07.proposition71",
+    "lean_declarations": [
+      "MD.Ch07.proposition71",
+      "MD.Ch07.symmetricOddCorrections"
+    ],
+    "source_page_verification": "见source_page_checks.json；必须已目视核对本条原页。",
+    "repair_log": [],
+    "documented_priors": [
+      "MolecularDynamics.textbookSymmetricOperatorCorrection",
+      "MolecularDynamics.textbookSymmetricModifiedGenerator_formal_proposition71"
+    ]
+  },
+  {
+    "source_id": "MD-7.9-EvenDensityPerturbation",
+    "kind": "unnumbered_claim",
+    "label": "(7.27)–(7.28)",
+    "section": "7.9",
+    "printed_page": "298",
+    "pdf_page": "319",
+    "statement_latex": "If we suppose that the odd order correction functions are zero, then we are left with\n\\[\\widehat\\rho=\\rho_\\beta(1+h^2f_2+h^4f_4+\\cdots),\\tag{7.27}\\]\nwhere each $\\langle f_i\\rangle=0$ as usual. Equating the second order terms we obtain\n\\[\\mathcal L_{LD}^\\dagger(\\rho_\\beta f_2)=-\\mathcal L_2^\\dagger\\rho_\\beta.\\tag{7.28}\\]\nThe condition on the existence of such a solution requires us to use the Fredholm alternative, which requires us to verify that the inhomogeneous term $\\mathcal L_2^\\dagger\\rho_\\beta$ integrates to zero.",
+    "proof_latex": null,
+    "proof_note": "原书未给独立完整证明。",
+    "context_notation": [],
+    "extra_assumptions": [
+      "系数相消得到必要方程；Fredholm可解性的充分性需核、余核、函数空间和域的闭值域资格，本条不证明。原书将奇阶修正零作为假设，本条保留。"
+    ],
+    "issues": [],
+    "statement_scope": "本条逐字引用的全部数学对象与公式；未纳入的上下文另列。",
+    "lean_decl": "MD.Ch07.evenDensityExpansion",
+    "lean_declarations": [
+      "MD.Ch07.evenDensityExpansion",
+      "MD.Ch07.evenPerturbationEquation"
+    ],
+    "source_page_verification": "见source_page_checks.json；必须已目视核对本条原页。",
+    "repair_log": [],
+    "documented_priors": []
+  },
+  {
+    "source_id": "MD-7.9.1-OYZYOInhomogeneity",
+    "kind": "unnumbered_claim",
+    "label": "(7.29)",
+    "section": "7.9.1",
+    "printed_page": "298–299",
+    "pdf_page": "319–320",
+    "statement_latex": "For methods $[OYZYO]$, substituting $\\mathcal L_X^\\dagger=\\mathcal L_O^\\dagger$, $\\mathcal L_Y^\\dagger+\\mathcal L_Z^\\dagger=\\mathcal L_A^\\dagger+\\mathcal L_B^\\dagger=\\mathcal L_H^\\dagger$ simplifies the computation to\n\\[\\mathcal L_{2,[OYZYO]}^\\dagger\\rho_\\beta=\\frac1{12}[\\mathcal L_Z^\\dagger,\\mathcal L_Z^\\dagger,\\mathcal L_Y^\\dagger]\\rho_\\beta-\\frac1{24}[\\mathcal L_Y^\\dagger,\\mathcal L_Y^\\dagger,\\mathcal L_Z^\\dagger]\\rho_\\beta.\\tag{7.29}\\]",
+    "proof_latex": null,
+    "proof_note": "原书未给独立完整证明。",
+    "context_notation": [],
+    "extra_assumptions": [],
+    "issues": [],
+    "statement_scope": "本条逐字引用的全部数学对象与公式；未纳入的上下文另列。",
+    "lean_decl": "MD.Ch07.oyzyoInhomogeneity",
+    "lean_declarations": [
+      "MD.Ch07.oyzyoInhomogeneity"
+    ],
+    "source_page_verification": "见source_page_checks.json；必须已目视核对本条原页。",
+    "repair_log": [],
+    "documented_priors": []
+  },
+  {
+    "source_id": "MD-7.9.1-TripleCommutatorPrinted",
+    "kind": "unnumbered_claim",
+    "label": null,
+    "section": "7.9.1",
+    "printed_page": "299",
+    "pdf_page": "320",
+    "statement_latex": "\\[[\\mathcal L_A^\\dagger,\\mathcal L_A^\\dagger,\\mathcal L_B^\\dagger]\\rho_\\beta=(2\\beta p^T(\\nabla^2U)\\nabla U-\\nabla^3U:p\\otimes p\\otimes p)\\rho_\\beta,\\]\n\\[[\\mathcal L_B^\\dagger,\\mathcal L_B^\\dagger,\\mathcal L_A^\\dagger]\\rho_\\beta=-(2\\beta p^T(\\nabla^2U)\\nabla U)\\rho_\\beta.\\]",
+    "proof_latex": null,
+    "proof_note": "原书未给独立完整证明。",
+    "context_notation": [],
+    "extra_assumptions": [
+      "M=I；Hessian、三阶张量及张量缩并均为实际坐标导数；原文版仅定义，不证明。反例先给系数代数区别，完整势函数测度反例未构造。"
+    ],
+    "issues": [
+      "已目视核对PDF320／印刷299：首条三重交换子的三阶导数项未带β；后面的PDE却把β乘整个括号，且直接微分给出共同β。原文版与补β修正版独立保留。"
+    ],
+    "statement_scope": "本条逐字引用的全部数学对象与公式；未纳入的上下文另列。",
+    "lean_decl": "MD.Ch07.hessianU",
+    "lean_declarations": [
+      "MD.Ch07.hessianU",
+      "MD.Ch07.thirdU",
+      "MD.Ch07.hessianGrad",
+      "MD.Ch07.cubicThird",
+      "MD.Ch07.tripleCommutatorPrinted",
+      "MD.Ch07.tripleCommutatorPrinted_corrected",
+      "MD.Ch07.tripleCommutator_corrected",
+      "MD.Ch07.tripleCommutator_factor_counterexample"
+    ],
+    "source_page_verification": "见source_page_checks.json；必须已目视核对本条原页。",
+    "repair_log": [],
+    "documented_priors": []
+  },
+  {
+    "source_id": "MD-7.9.1-SymmetricRHS",
+    "kind": "unnumbered_claim",
+    "label": null,
+    "section": "7.9.1",
+    "printed_page": "299",
+    "pdf_page": "320",
+    "statement_latex": "\\[\\mathcal L_{LD}^\\dagger(\\rho_\\beta f_{2,[OABAO]})=\\frac\\beta{24}(6p^T(\\nabla^2U)\\nabla U-\\nabla^3U:p\\otimes p\\otimes p)\\rho_\\beta,\\]\n\\[\\mathcal L_{LD}^\\dagger(\\rho_\\beta f_{2,[OBABO]})=\\frac\\beta{24}(2\\nabla^3U:p\\otimes p\\otimes p-6p^T(\\nabla^2U)\\nabla U)\\rho_\\beta.\\]\nWe can see immediately that the Fredholm alternative holds in both cases, as both equations have right-hand sides that are of odd order in $p$, and hence will average to 0.",
+    "proof_latex": null,
+    "proof_note": "原书未给独立完整证明。",
+    "context_notation": [],
+    "extra_assumptions": [
+      "右端去掉共同正Gibbs权，改用真实乘积Gibbs测度积分；奇性与零均值不等于完整Fredholm充分可解性。PDE左端与L2识别另需三重交换子桥。"
+    ],
+    "issues": [],
+    "statement_scope": "本条逐字引用的全部数学对象与公式；未纳入的上下文另列。",
+    "lean_decl": "MD.Ch07.symmetricRHS",
+    "lean_declarations": [
+      "MD.Ch07.symmetricRHS",
+      "MD.Ch07.symmetricRHS_odd",
+      "MD.Ch07.symmetricRHS_zeroMean"
+    ],
+    "source_page_verification": "见source_page_checks.json；必须已目视核对本条原页。",
+    "repair_log": [],
+    "documented_priors": []
+  },
+  {
+    "source_id": "MD-7.9.1-Lemma71",
+    "kind": "lemma",
+    "label": "Lemma 7.1",
+    "section": "7.9.1",
+    "printed_page": "299–300",
+    "pdf_page": "320–321",
+    "statement_latex": "Lemma 7.1 Consider two numerical schemes with associated operators governing the evolution of measure $ST$ and $TS$, with unique associated invariant distributions $\\widehat\\rho_{ST}$ and $\\widehat\\rho_{TS}$ respectively, such that\n\\[ST\\widehat\\rho_{ST}=\\widehat\\rho_{ST},\\qquad TS\\widehat\\rho_{TS}=\\widehat\\rho_{TS}.\\]\nUnder suitable ergodicity assumptions (such that in the long-time limit, all distributions converge to the invariant distribution), we have\n\\[\\widehat\\rho_{ST}=S\\widehat\\rho_{TS},\\qquad\\widehat\\rho_{TS}=T\\widehat\\rho_{ST}.\\]",
+    "proof_latex": "If we assume that $\\lim_{n\\to\\infty}(ST)^n\\rho=\\widehat\\rho_{ST}$, for any initial distribution $\\rho$, then we have\n$\\widehat\\rho_{ST}=\\lim_{n\\to\\infty}(ST)^n\\widehat\\rho_{ST}=\\lim_{n\\to\\infty}S(TS)^{n-1}T\\widehat\\rho_{ST}=S\\widehat\\rho_{TS}$.\nA similar statement holds for $\\widehat\\rho_{ST}$.",
+    "proof_note": "按所列原页转录原书证明。",
+    "context_notation": [],
+    "extra_assumptions": [
+      "真实Markov核、真实概率与不变概率的唯一性完整；借助不变性和唯一性即足够，不要求额外极限交换。保留原书证明文本，Lean采用已证更弱假设路线。"
+    ],
+    "issues": [],
+    "statement_scope": "本条逐字引用的全部数学对象与公式；未纳入的上下文另列。",
+    "lean_decl": "MD.Ch07.lemma71",
+    "lean_declarations": [
+      "MD.Ch07.lemma71"
+    ],
+    "source_page_verification": "见source_page_checks.json；必须已目视核对本条原页。",
+    "repair_log": [],
+    "documented_priors": [
+      "MolecularDynamics.textbookUniqueInvariantProbability",
+      "MolecularDynamics.textbookInvariantDistributionSwap"
+    ]
+  },
+  {
+    "source_id": "MD-7.9.1-ConjugateSymmetricCorrections",
+    "kind": "unnumbered_claim",
+    "label": "(7.30a)–(7.30b)",
+    "section": "7.9.1",
+    "printed_page": "300–301",
+    "pdf_page": "321–322",
+    "statement_latex": "\\[\\widehat\\rho_{[ZYOYZ]}=\\exp((h/2)\\mathcal L_Z^\\dagger)\\exp((h/2)\\mathcal L_Y^\\dagger)\\exp((h/2)\\mathcal L_O^\\dagger)\\widehat\\rho_{[OYZYO]}.\\]\n\\[f_{2,[ZYOYZ]}\\rho_\\beta=f_{2,[OYZYO]}\\rho_\\beta+\\tfrac14\\mathcal L_{1,[OYZ]}^\\dagger\\rho_\\beta.\\]\n\\[\\mathcal L_{1,[OAB]}^\\dagger\\rho_\\beta=\\tfrac12\\mathcal L_H^\\dagger(g\\rho_\\beta),\\qquad\n\\mathcal L_{1,[OBA]}^\\dagger\\rho_\\beta=-\\tfrac12\\mathcal L_H^\\dagger(g\\rho_\\beta),\\]\n\\[\\mathcal L_H^\\dagger(g\\rho_\\beta)=\\beta(|\\nabla U|^2-p^T\\nabla^2Up)\\rho_\\beta,\\]\n\\[f_{2,[ABOBA]}=f_{2,[OBABO]}-\\tfrac\\beta8(|\\nabla U|^2-p^T\\nabla^2Up),\\tag{7.30a}\\]\n\\[f_{2,[BAOAB]}=f_{2,[OABAO]}+\\tfrac\\beta8(|\\nabla U|^2-p^T\\nabla^2Up).\\tag{7.30b}\\]",
+    "proof_latex": null,
+    "proof_note": "原书未给独立完整证明。",
+    "context_notation": [],
+    "extra_assumptions": [
+      "Lean证明给定真实二阶传递系数的消项，(7.30)完整作为两关系的命题定义；ST/TS指数系数识别、Hamiltonian微分及实际两组修正系数识别仍列缺口。"
+    ],
+    "issues": [
+      "已目视核对PDF321：所印传播子展开末项为(h²/2)L_LD，按exp的二阶展开应为(h²/8)(L_LD)²；该项作用ρβ为零，不改变后续修正关系。"
+    ],
+    "statement_scope": "形式传递系数的消项及(7.30)全部目标；未证明从具体分裂映射导出这些系数。",
+    "lean_decl": "MD.Ch07.gradNormSq",
+    "lean_declarations": [
+      "MD.Ch07.gradNormSq",
+      "MD.Ch07.hessianQuadratic",
+      "MD.Ch07.conjugateCorrectionChange",
+      "MD.Ch07.conjugateCorrections",
+      "MD.Ch07.conjugateCorrection_coefficient"
+    ],
+    "source_page_verification": "见source_page_checks.json；必须已目视核对本条原页。",
+    "repair_log": [],
+    "documented_priors": []
+  },
+  {
+    "source_id": "MD-7.9.2-ReciprocalFrictionExpansion",
+    "kind": "definition",
+    "label": "(7.31) / (7.32)",
+    "section": "7.9.2",
+    "printed_page": "301–302",
+    "pdf_page": "322–323",
+    "statement_latex": "We will denote\n\\[f_2(q,p)=f_{2,0}(q,p)+\\epsilon f_{2,1}(q,p)+\\epsilon^2f_{2,2}(q,p)+\\cdots,\\tag{7.31}\\]\nwith each $\\langle f_{2,i}\\rangle=0$. Dividing by the friction in (7.28) we obtain\n\\[(\\overline{\\mathcal L}_O^\\dagger+\\epsilon\\mathcal L_H^\\dagger)(f_2\\rho_\\beta)=-\\epsilon\\mathcal L_2^\\dagger\\rho_\\beta,\\]\nwhere $\\overline{\\mathcal L}_O^\\dagger\\vartheta=\\epsilon\\mathcal L_O^\\dagger\\vartheta=\\nabla_p\\cdot(p\\vartheta)+\\beta^{-1}\\Delta_p\\vartheta$.\n\\[w(q,p)=-\\tfrac\\beta{24}(6p^T(\\nabla^2U)\\nabla U-\\nabla^3U:p\\otimes p\\otimes p).\\]\nEquating powers gives\n\\[\\overline{\\mathcal L}_O^\\dagger(\\rho_\\beta f_{2,0})=0,\\quad\n\\mathcal L_H^\\dagger(\\rho_\\beta f_{2,0})+\\overline{\\mathcal L}_O^\\dagger(\\rho_\\beta f_{2,1})=-w\\rho_\\beta,\\]\n\\[\\mathcal L_H^\\dagger(\\rho_\\beta f_{2,1})+\\overline{\\mathcal L}_O^\\dagger(\\rho_\\beta f_{2,2})=0,\\quad\n\\mathcal L_H^\\dagger(\\rho_\\beta f_{2,2})+\\overline{\\mathcal L}_O^\\dagger(\\rho_\\beta f_{2,3})=0.\\]",
+    "proof_latex": null,
+    "proof_note": "原书未给独立完整证明。",
+    "context_notation": [],
+    "extra_assumptions": [
+      "ε=1/γ；使用真实偏导、单位质量、β>0；形式层级包含所有后续阶。各阶零均值及归一性需另加centeredCorrections，不把其当作已证。"
+    ],
+    "issues": [],
+    "statement_scope": "本条逐字引用的全部数学对象与公式；未纳入的上下文另列。",
+    "lean_decl": "MD.Ch07.phaseH",
+    "lean_declarations": [
+      "MD.Ch07.phaseH",
+      "MD.Ch07.reciprocalHierarchy"
+    ],
+    "source_page_verification": "见source_page_checks.json；必须已目视核对本条原页。",
+    "repair_log": [],
+    "documented_priors": []
+  },
+  {
+    "source_id": "MD-7.9.2-OUKernelQualification",
+    "kind": "unnumbered_claim",
+    "label": null,
+    "section": "7.9.2",
+    "printed_page": "302",
+    "pdf_page": "323",
+    "statement_latex": "The first equation at order one tells us that $f_{2,0,[OABAO]}(q,p)$ must be a function of position only, as the kernel of $\\overline{\\mathcal L}_O^\\dagger$ is the set of functions that are constant with respect to $p$. Hence we shall denote $f_{2,0,[OABAO]}(q,p)=\\nu(q)$, where $\\langle\\nu\\rangle=0$.",
+    "proof_latex": null,
+    "proof_note": "原书未给独立完整证明。",
+    "context_notation": [],
+    "extra_assumptions": [
+      "修正版明确实际Gaussian L²域和光滑性；原文目标定义保留但不证明。零均值仅限制ν常数方向，不由OU核自动给出。"
+    ],
+    "issues": [
+      "已目视核对PDF323：前向OU生成元的核实际是Gaussian密度倍数；对ρβf共轭后，合适L²域中的f才对p为常数。原文此句缺少共轭与定义域限定。"
+    ],
+    "statement_scope": "本条逐字引用的全部数学对象与公式；未纳入的上下文另列。",
+    "lean_decl": "MD.Ch07.ouKernelPrinted",
+    "lean_declarations": [
+      "MD.Ch07.ouKernelPrinted",
+      "MD.Ch07.ouKernelPrinted_corrected"
+    ],
+    "source_page_verification": "见source_page_checks.json；必须已目视核对本条原页。",
+    "repair_log": [],
+    "documented_priors": []
+  },
+  {
+    "source_id": "MD-7.9.2-OUHermiteIdentities",
+    "kind": "unnumbered_claim",
+    "label": "(7.33)–(7.34)",
+    "section": "7.9.2",
+    "printed_page": "302",
+    "pdf_page": "323",
+    "statement_latex": "\\[\\overline{\\mathcal L}_O^\\dagger(\\rho_\\beta\\nabla^3U:p\\otimes p\\otimes p)=-3\\rho_\\beta\\nabla^3U:p\\otimes p\\otimes p+\\tfrac{6\\rho_\\beta}{\\beta}p^T\\nabla_q\\Delta_qU,\\]\n\\[\\overline{\\mathcal L}_O^\\dagger(\\rho_\\beta p^T\\nabla_q\\Delta_qU)=-\\rho_\\beta p^T\\nabla_q\\Delta_qU,\\]\n\\[\\overline{\\mathcal L}_O^\\dagger(\\rho_\\beta p^T(\\nabla^2U)\\nabla U)=-\\rho_\\beta p^T(\\nabla^2U)\\nabla U.\\]\n\\[w\\rho_\\beta=\\tfrac\\beta{24}\\overline{\\mathcal L}_O^\\dagger([6p^T(\\nabla^2U)\\nabla U-\\tfrac13\\nabla^3U:p\\otimes p\\otimes p-\\tfrac2\\beta p^T\\nabla_q\\Delta_qU]\\rho_\\beta).\\tag{7.33}\\]\n\\[\\mathcal L_H^\\dagger(\\rho_\\beta\\nu)=-p^T\\nabla\\nu\\rho_\\beta=\\overline{\\mathcal L}_O^\\dagger([p^T\\nabla\\nu+\\mu(q)]\\rho_\\beta).\\tag{7.34}\\]",
+    "proof_latex": null,
+    "proof_note": "原书未给独立完整证明。",
+    "context_notation": [],
+    "extra_assumptions": [
+      "OU仅对p微分，μ(q)不需对p额外正则；U,ν光滑且β>0。全部三个Hermite式和两个合成恒等式都在Lean结论中。"
+    ],
+    "issues": [],
+    "statement_scope": "本条逐字引用的全部数学对象与公式；未纳入的上下文另列。",
+    "lean_decl": "MD.Ch07.laplacian",
+    "lean_declarations": [
+      "MD.Ch07.laplacian",
+      "MD.Ch07.pGradLaplacian",
+      "MD.Ch07.hermitePrimitive",
+      "MD.Ch07.ouHermiteIdentities"
+    ],
+    "source_page_verification": "见source_page_checks.json；必须已目视核对本条原页。",
+    "repair_log": [],
+    "documented_priors": []
+  },
+  {
+    "source_id": "MD-7.9.2-FirstReciprocalCorrection",
+    "kind": "unnumbered_claim",
+    "label": "(7.35)–(7.36)",
+    "section": "7.9.2",
+    "printed_page": "303–304",
+    "pdf_page": "324–325",
+    "statement_latex": "\\[f_{2,1,[OABAO]}=-\\tfrac\\beta{24}(6p^T(\\nabla^2U)\\nabla U-\\tfrac13\\nabla^3U:p\\otimes p\\otimes p-\\tfrac2\\beta p^T\\nabla_q\\Delta_qU)-p^T\\nabla\\nu-\\mu.\\]\n\\[\\overline{\\mathcal L}_O^\\dagger(\\rho_\\beta f_{2,2,[OABAO]})=-\\mathcal L_H^\\dagger(\\rho_\\beta f_{2,1,[OABAO]}).\\tag{7.35}\\]\n\\[\\int_{\\mathcal P}\\overline{\\mathcal L}_O^\\dagger(\\rho_\\beta f_{2,2,[OABAO]})d\\omega_p=0,\\qquad\n\\int_{\\mathcal P}\\mathcal L_H^\\dagger(\\rho_\\beta f_{2,1,[OABAO]})d\\omega_p=\\overline\\pi\\mathcal L_H^\\dagger f_{2,1,[OABAO]}=0,\\tag{7.36}\\]\nwhere $(\\overline\\pi f)(q)=\\int_{\\mathcal P}f(q,p)\\rho_\\beta d\\omega_p$.",
+    "proof_latex": null,
+    "proof_note": "原书未给独立完整证明。",
+    "context_notation": [],
+    "extra_assumptions": [
+      "给出全部f2,1公式并陈述其一阶PDE；二阶可解相容性需OU积分通量消失及实际域条件，尚未证明。"
+    ],
+    "issues": [
+      "已目视核对PDF324–325：π̄定义带联合ρβ权，后续M公式却使用归一条件动量平均并隐含ρβ共轭。本文区分原文加权积分与修正的条件Gaussian平均，避免遗漏位置密度因子。"
+    ],
+    "statement_scope": "本条逐字引用的全部数学对象与公式；未纳入的上下文另列。",
+    "lean_decl": "MD.Ch07.firstReciprocalCorrection",
+    "lean_declarations": [
+      "MD.Ch07.firstReciprocalCorrection",
+      "MD.Ch07.momentumAverage",
+      "MD.Ch07.momentumAveragePrinted",
+      "MD.Ch07.firstReciprocalCorrection_pde"
+    ],
+    "source_page_verification": "见source_page_checks.json；必须已目视核对本条原页。",
+    "repair_log": [],
+    "documented_priors": []
+  },
+  {
+    "source_id": "MD-7.9.2-OverdampedSolvabilityOperators",
+    "kind": "unnumbered_claim",
+    "label": null,
+    "section": "7.9.2",
+    "printed_page": "304",
+    "pdf_page": "325",
+    "statement_latex": "We abbreviate\n\\[\\mathcal M\\psi(q)=\\overline\\pi\\mathcal L_H^\\dagger\\mathcal L_A^\\dagger\\psi(q)\n=\\overline\\pi((\\mathcal L_A^\\dagger)^2+\\mathcal L_B^\\dagger\\mathcal L_A^\\dagger)\\psi(q)\n=\\beta^{-1}\\Delta_q\\psi(q)-\\nabla U\\cdot\\nabla_q\\psi(q),\\]\n\\[\\mathcal N\\psi(q)=\\overline\\pi\\mathcal L_H^\\dagger(\\mathcal L_A^\\dagger)^3\\psi(q)\n=\\overline\\pi((\\mathcal L_A^\\dagger)^4+\\mathcal L_B^\\dagger(\\mathcal L_A^\\dagger)^3)\\psi(q)\n=\\tfrac3\\beta\\mathcal M(\\Delta_q\\psi(q)).\\]\nThus we have\n\\[\\overline\\pi\\mathcal L_H^\\dagger\\rho_\\beta f_{2,1,[OABAO]}=\\tfrac\\beta8\\mathcal M(|\\nabla U|^2-\\beta^{-1}\\Delta_qU)+\\mathcal M\\nu,\\]\nand hence by (7.36) we finally obtain $\\nu(q)=\\tfrac18(\\Delta_qU-\\beta|\\nabla U|^2)$, where $\\langle\\nu\\rangle=0$.",
+    "proof_latex": null,
+    "proof_note": "原书未给独立完整证明。",
+    "context_notation": [],
+    "extra_assumptions": [
+      "M,N记录所印右端微分表达式；π̄与前向算符须用条件Gaussian平均和Gibbs共轭修正后才能证明左侧识别，详见前条。",
+      "只证明ν候选的代数改写；Mν相容方程、核常数唯一性、零均值须积分分部与定义域桥，不把候选定义当成解已证。"
+    ],
+    "issues": [],
+    "statement_scope": "M,N及ν全部显式公式和ν代数识别；平均算符等价与可解性未证明。",
+    "lean_decl": "MD.Ch07.overdampedM",
+    "lean_declarations": [
+      "MD.Ch07.overdampedM",
+      "MD.Ch07.overdampedN",
+      "MD.Ch07.highFrictionOABAO",
+      "MD.Ch07.overdampedSolvability_choice"
+    ],
+    "source_page_verification": "见source_page_checks.json；必须已目视核对本条原页。",
+    "repair_log": [],
+    "documented_priors": []
+  },
+  {
+    "source_id": "MD-7.9.2-HighFrictionCorrectionTable",
+    "kind": "unnumbered_claim",
+    "label": null,
+    "section": "7.9.2",
+    "printed_page": "304–305",
+    "pdf_page": "325–326",
+    "statement_latex": "\\[f_{2,0,[OABAO]}=\\tfrac18(\\Delta_qU-\\beta|\\nabla U|^2),\\]\n\\[f_{2,0,[OBABO]}=\\tfrac18(\\beta|\\nabla U|^2-2\\Delta_qU+c),\\]\nwhere $c=\\langle\\Delta U\\rangle$ is a constant chosen to ensure zero average.\n\\[f_{2,0,[ABOBA]}=\\tfrac18(\\beta p^T\\nabla^2U(q)p-2\\Delta_qU+c),\\]\n\\[f_{2,0,[BAOAB]}=\\tfrac18(\\Delta U-\\beta p^T\\nabla^2U(q)p).\\]\n\\[\\langle\\vartheta\\rangle_h=\\langle\\vartheta\\rangle+h^2\\langle\\vartheta f_{2,0}\\rangle+O(\\epsilon h^2+h^4).\\]",
+    "proof_latex": null,
+    "proof_note": "原书未给独立完整证明。",
+    "context_notation": [],
+    "extra_assumptions": [
+      "算法编号OABAO,OBABO,ABOBA,BAOAB；保留全部四个候选、c选择和双渐近余项命题。",
+      "候选的代数共轭关系可单独证明；其为实际平稳误差系数、零均值及严格双渐近界均未获证明。"
+    ],
+    "issues": [],
+    "statement_scope": "本条逐字引用的全部数学对象与公式；未纳入的上下文另列。",
+    "lean_decl": "MD.Ch07.highFrictionCorrection",
+    "lean_declarations": [
+      "MD.Ch07.highFrictionCorrection",
+      "MD.Ch07.doublyAsymptoticAverage",
+      "MD.Ch07.highFrictionCorrection_conjugacy"
+    ],
+    "source_page_verification": "见source_page_checks.json；必须已目视核对本条原页。",
+    "repair_log": [],
+    "documented_priors": []
+  },
+  {
+    "source_id": "MD-7.9.3-BAOABMarginalCancellation",
+    "kind": "unnumbered_claim",
+    "label": "(7.37)",
+    "section": "7.9.3",
+    "printed_page": "305",
+    "pdf_page": "326",
+    "statement_latex": "\\[\\langle\\vartheta\\rangle=\\langle\\vartheta\\rangle_h-h^2\\langle\\vartheta f_{2,0}\\rangle+O(h^2/\\gamma+h^4).\\tag{7.37}\\]\nThe $[BAOAB]$ scheme has leading order correction\n\\[f_{2,0,[BAOAB]}(q,p)=\\tfrac18(\\Delta U-\\beta p^T\\nabla^2U(q)p),\\]\nwhich has the interesting property that its marginal average with respect to momentum is zero:\n\\[\\overline\\pi f_{2,0,[BAOAB]}=\\int_{\\mathcal P}f_{2,0,[BAOAB]}(q,p)\\rho_\\beta(q,p)d\\omega_p=0.\\]\n\\[\\langle\\vartheta(q)f_{2,0,[BAOAB]}\\rangle=\\int_{\\mathcal Q}\\vartheta(q)\\int_{\\mathcal P}f_{2,0,[BAOAB]}\\rho_\\beta d\\omega_p d\\omega_q=0.\\]",
+    "proof_latex": "Integrate first over the Gaussian momenta; the quadratic Gaussian moment contracts the Hessian to β⁻¹ΔU. Then use Fubini.",
+    "proof_note": "按所列原页转录原书证明。",
+    "context_notation": [],
+    "extra_assumptions": [
+      "归一条件Gaussian平均为零即推出原文带位置权的平均为零；两个零积分结论均为实际测度。双渐近余项的有效性须另外证明，不由形式消项自动给出。"
+    ],
+    "issues": [],
+    "statement_scope": "本条逐字引用的全部数学对象与公式；未纳入的上下文另列。",
+    "lean_decl": "MD.Ch07.baoabMarginalCancellation",
+    "lean_declarations": [
+      "MD.Ch07.baoabMarginalCancellation",
+      "MD.Ch07.baoabConfigurationalCancellation"
+    ],
+    "source_page_verification": "见source_page_checks.json；必须已目视核对本条原页。",
+    "repair_log": [],
+    "documented_priors": []
+  },
+  {
+    "source_id": "MD-7.9.3-SuperconvergenceScope",
+    "kind": "unnumbered_claim",
+    "label": null,
+    "section": "7.9.3",
+    "printed_page": "306",
+    "pdf_page": "327",
+    "statement_latex": "Thus we expect that the $[BAOAB]$ scheme recovers $O(h^4)$ configurational averages in the limit of infinite friction.\nIts conjugate method, the $[OABAO]$ scheme, has the property\n\\[\\int_{\\mathcal Q}f_{2,0,[OABAO]}(q,p)\\rho_\\beta(q,p)d\\omega_q=0,\\]\nimplying that we obtain high-order averages for functions purely of the momenta in the limit of infinite friction.\nIt is important to note that this superconvergence property is only present in the limit of large time, i.e. this is an attribute of the invariant distribution of the discretization schemes $\\widehat\\rho$. As such, there are no bonuses to the weak or strong order of the superconvergent schemes.",
+    "proof_latex": null,
+    "proof_note": "原书未给独立完整证明。",
+    "context_notation": [],
+    "extra_assumptions": [
+      "显式归一Gibbs构型边界通量消失和积分可积条件；此处只给OABAO积分消项。",
+      "四阶推论仅在已有有效h⁴余项界下成立，不能从固定有限γ的h²/γ余项直接推出；弱/强有限时间阶数不因此提高。"
+    ],
+    "issues": [],
+    "statement_scope": "本条逐字引用的全部数学对象与公式；未纳入的上下文另列。",
+    "lean_decl": "MD.Ch07.oabaoPositionCancellation",
+    "lean_declarations": [
+      "MD.Ch07.oabaoPositionCancellation",
+      "MD.Ch07.superconvergence_fromBound"
+    ],
+    "source_page_verification": "见source_page_checks.json；必须已目视核对本条原页。",
+    "repair_log": [],
+    "documented_priors": []
   }
 ]

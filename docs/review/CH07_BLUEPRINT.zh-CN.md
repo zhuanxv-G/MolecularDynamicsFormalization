@@ -1,6 +1,6 @@
 # 第7章 Lean Blueprint 本地审阅材料
 
-当前已整理76条；网站尚未审阅。正文范围为印刷261–326页（PDF282–347），末页仅取Exercises之前的正文。
+当前已整理91条；网站尚未审阅。正文范围为印刷261–326页（PDF282–347），末页仅取Exercises之前的正文。
 
 ## 1. MD-7.1-Bias · definition · 印刷p.263 / PDFp.284
 
@@ -3332,7 +3332,7 @@ def correctionEquation {E : Type*} [AddCommGroup E] [Module ℝ E]
 ### 7. 状态与证明位置
 
 未证陈述；单文件编译与逐声明公理核对通过。
-本条未登记待证缺项。
+未证原因：直接系数归约的短路线超过时间盒；保留未证。
 位置：Blueprint/Ch07.lean；MD.Ch07.firstOrderOperator, MD.Ch07.firstOrderOperator_coefficient, MD.Ch07.correctionEquation。
 
 ## 1. MD-7.8-HomogeneousNormalization · unnumbered_claim · 印刷p.291 / PDFp.312
@@ -3720,4 +3720,768 @@ theorem doubleWellCritical (β : ℝ) : (2-(2 : ℝ))/(2*β) = 0 := by ring
 未证陈述；单文件编译与逐声明公理核对通过。
 未证原因：需要四次势Gibbs权可积性、积分分部与Gaussian矩的桥；不建设通用弱误差理论。
 位置：Blueprint/Ch07.lean；MD.Ch07.biasedDoubleWell, MD.Ch07.doubleWellObservable, MD.Ch07.doubleWellGibbs, MD.Ch07.doubleWellBOACorrection, MD.Ch07.doubleWellExact, MD.Ch07.doubleWellCritical。
+
+## 1. MD-7.9-Proposition71 · Proposition 7.1 / (7.26) · 印刷p.297 / PDFp.318
+
+### 2. 原文陈述
+
+Proposition 7.1 Let $\mathcal L_X^\dagger$, $\mathcal L_Y^\dagger$ and $\mathcal L_Z^\dagger$ be general operators to which BCH can be applied, then defining
+\[e^{h\widehat{\mathcal L}^\dagger}=e^{\frac h2\mathcal L_X^\dagger}e^{\frac h2\mathcal L_Y^\dagger}e^{h\mathcal L_Z^\dagger}e^{\frac h2\mathcal L_Y^\dagger}e^{\frac h2\mathcal L_X^\dagger},\tag{7.26}\]
+gives $\widehat{\mathcal L}^\dagger=\mathcal L_0^\dagger+h^2\mathcal L_2^\dagger+O(h^4)$, where
+\[\mathcal L_0^\dagger=\mathcal L_X^\dagger+\mathcal L_Y^\dagger+\mathcal L_Z^\dagger,\]
+\[\mathcal L_2^\dagger=\frac1{12}([\mathcal L_Z^\dagger,\mathcal L_Z^\dagger,\mathcal L_Y^\dagger]+[\mathcal L_Y^\dagger+\mathcal L_Z^\dagger,\mathcal L_Y^\dagger+\mathcal L_Z^\dagger,\mathcal L_X^\dagger])
+-\frac1{24}([\mathcal L_Y^\dagger,\mathcal L_Y^\dagger,\mathcal L_Z^\dagger]+[\mathcal L_X^\dagger,\mathcal L_X^\dagger,\mathcal L_Y^\dagger+\mathcal L_Z^\dagger]).\]
+
+### 3. 原文证明
+
+原书未给独立完整证明。
+
+### 4. 完整当前Lean（原文与修正版独立列出）
+
+```lean
+theorem proposition71 {R : Type*} [Ring R] [Algebra ℝ R] (X Y Z : R) :
+    ∃ Q : PowerSeries R, MolecularDynamics.textbookSymmetricModifiedGenerator X Y Z =
+      PowerSeries.C (X+Y+Z)+
+      PowerSeries.C (MolecularDynamics.textbookSymmetricOperatorCorrection X Y Z)*PowerSeries.X^2+
+      PowerSeries.X^4*Q := MolecularDynamics.textbookSymmetricModifiedGenerator_formal_proposition71 X Y Z
+theorem symmetricOddCorrections {R : Type*} [Ring R] [Algebra ℝ R] (X Y Z : R) (k : ℕ) :
+    PowerSeries.coeff (2*k+1) (MolecularDynamics.textbookSymmetricModifiedGenerator X Y Z) = 0 :=
+  MolecularDynamics.textbookSymmetricModifiedGenerator_odd_coeff_zero X Y Z k
+```
+
+### 5. 对照表
+
+| 原文成分 | Lean对应 | 说明 |
+|---|---|---|
+| 本条引用的对象与公式 | MD.Ch07.proposition71, MD.Ch07.symmetricOddCorrections | 本条逐字引用的全部数学对象与公式；未纳入的上下文另列。 |
+
+[EXTRA] 桥接正式库已证的实际非交换形式log/exp及完整对称修正定义体；余项为h⁴形式因子，未声称无界算符级数收敛。
+记号与上下文：见所列原文与Lean量化变量。
+
+### 6. 审计结论
+
+本地：已对照目视原页核对对象、量词、技术资格和所列覆盖范围；网站尚未审阅。
+疑点：本条暂未发现需单列的原书疑误。
+网站：尚未送审。
+
+### 7. 状态与证明位置
+
+已证；单文件编译与逐声明公理核对通过。
+本条未登记待证缺项。
+位置：Blueprint/Ch07.lean；MD.Ch07.proposition71, MD.Ch07.symmetricOddCorrections。
+
+## 1. MD-7.9-EvenDensityPerturbation · (7.27)–(7.28) · 印刷p.298 / PDFp.319
+
+### 2. 原文陈述
+
+If we suppose that the odd order correction functions are zero, then we are left with
+\[\widehat\rho=\rho_\beta(1+h^2f_2+h^4f_4+\cdots),\tag{7.27}\]
+where each $\langle f_i\rangle=0$ as usual. Equating the second order terms we obtain
+\[\mathcal L_{LD}^\dagger(\rho_\beta f_2)=-\mathcal L_2^\dagger\rho_\beta.\tag{7.28}\]
+The condition on the existence of such a solution requires us to use the Fredholm alternative, which requires us to verify that the inhomogeneous term $\mathcal L_2^\dagger\rho_\beta$ integrates to zero.
+
+### 3. 原文证明
+
+原书未给独立完整证明。
+
+### 4. 完整当前Lean（原文与修正版独立列出）
+
+```lean
+def evenDensityExpansion (ρ : Ω → ℝ) (f : ℕ → Ω → ℝ) (k : ℕ) : Ω → ℝ :=
+  if k = 0 then ρ else if Even k then fun x ↦ ρ x*f k x else 0
+theorem evenPerturbationEquation {E : Type*} [AddCommGroup E] [Module ℝ E]
+    (L : ℕ → Module.End ℝ E) (ρ : ℕ → E)
+    (hL1 : L 1 = 0) (hρ1 : ρ 1 = 0) (h2 : actionCoefficient L ρ 2 = 0) :
+    L 0 (ρ 2) = -L 2 (ρ 0) := by
+  have he : L 0 (ρ 2)+L 2 (ρ 0) = 0 := by
+    simpa [actionCoefficient,Finset.sum_range_succ,hL1,hρ1] using h2
+  exact eq_neg_of_add_eq_zero_left he
+```
+
+### 5. 对照表
+
+| 原文成分 | Lean对应 | 说明 |
+|---|---|---|
+| 本条引用的对象与公式 | MD.Ch07.evenDensityExpansion, MD.Ch07.evenPerturbationEquation | 本条逐字引用的全部数学对象与公式；未纳入的上下文另列。 |
+
+[EXTRA] 系数相消得到必要方程；Fredholm可解性的充分性需核、余核、函数空间和域的闭值域资格，本条不证明。原书将奇阶修正零作为假设，本条保留。
+记号与上下文：见所列原文与Lean量化变量。
+
+### 6. 审计结论
+
+本地：已对照目视原页核对对象、量词、技术资格和所列覆盖范围；网站尚未审阅。
+疑点：本条暂未发现需单列的原书疑误。
+网站：尚未送审。
+
+### 7. 状态与证明位置
+
+已证；单文件编译与逐声明公理核对通过。
+本条未登记待证缺项。
+位置：Blueprint/Ch07.lean；MD.Ch07.evenDensityExpansion, MD.Ch07.evenPerturbationEquation。
+
+## 1. MD-7.9.1-OYZYOInhomogeneity · (7.29) · 印刷p.298–299 / PDFp.319–320
+
+### 2. 原文陈述
+
+For methods $[OYZYO]$, substituting $\mathcal L_X^\dagger=\mathcal L_O^\dagger$, $\mathcal L_Y^\dagger+\mathcal L_Z^\dagger=\mathcal L_A^\dagger+\mathcal L_B^\dagger=\mathcal L_H^\dagger$ simplifies the computation to
+\[\mathcal L_{2,[OYZYO]}^\dagger\rho_\beta=\frac1{12}[\mathcal L_Z^\dagger,\mathcal L_Z^\dagger,\mathcal L_Y^\dagger]\rho_\beta-\frac1{24}[\mathcal L_Y^\dagger,\mathcal L_Y^\dagger,\mathcal L_Z^\dagger]\rho_\beta.\tag{7.29}\]
+
+### 3. 原文证明
+
+原书未给独立完整证明。
+
+### 4. 完整当前Lean（原文与修正版独立列出）
+
+```lean
+theorem oyzyoInhomogeneity {E : Type*} [AddCommGroup E] [Module ℝ E]
+    (O Y Z : Module.End ℝ E) (ρ : E) (hO : O ρ = 0) (hH : (Y+Z) ρ = 0) :
+    MolecularDynamics.textbookSymmetricOperatorCorrection O Y Z ρ =
+      (1/12 : ℝ) • comm Z (comm Z Y) ρ-(1/24 : ℝ) • comm Y (comm Y Z) ρ := by
+  sorry
+```
+
+### 5. 对照表
+
+| 原文成分 | Lean对应 | 说明 |
+|---|---|---|
+| 本条引用的对象与公式 | MD.Ch07.oyzyoInhomogeneity | 本条逐字引用的全部数学对象与公式；未纳入的上下文另列。 |
+
+[EXTRA] 本条没有另加数学前提。
+记号与上下文：见所列原文与Lean量化变量。
+
+### 6. 审计结论
+
+本地：已对照目视原页核对对象、量词、技术资格和所列覆盖范围；网站尚未审阅。
+疑点：本条暂未发现需单列的原书疑误。
+网站：尚未送审。
+
+### 7. 状态与证明位置
+
+未证陈述；单文件编译与逐声明公理核对通过。
+未证原因：需展开两个含O和H的嵌套交换子在共同核上的相消短桥；保留未证。
+位置：Blueprint/Ch07.lean；MD.Ch07.oyzyoInhomogeneity。
+
+## 1. MD-7.9.1-TripleCommutatorPrinted · unnumbered_claim · 印刷p.299 / PDFp.320
+
+### 2. 原文陈述
+
+\[[\mathcal L_A^\dagger,\mathcal L_A^\dagger,\mathcal L_B^\dagger]\rho_\beta=(2\beta p^T(\nabla^2U)\nabla U-\nabla^3U:p\otimes p\otimes p)\rho_\beta,\]
+\[[\mathcal L_B^\dagger,\mathcal L_B^\dagger,\mathcal L_A^\dagger]\rho_\beta=-(2\beta p^T(\nabla^2U)\nabla U)\rho_\beta.\]
+
+### 3. 原文证明
+
+原书未给独立完整证明。
+
+### 4. 完整当前Lean（原文与修正版独立列出）
+
+```lean
+def hessianU (U : V n → ℝ) (q : V n) (i j : Fin n) : ℝ := coordDerivative (fun y ↦ gradient U y j) q i
+def thirdU (U : V n → ℝ) (q : V n) (i j k : Fin n) : ℝ := coordDerivative (fun y ↦ hessianU U y j k) q i
+def hessianGrad (U : V n → ℝ) (x : Phase n) : ℝ := ∑ i, ∑ j, x.2 i*hessianU U x.1 i j*gradient U x.1 j
+def cubicThird (U : V n → ℝ) (x : Phase n) : ℝ := ∑ i, ∑ j, ∑ k, thirdU U x.1 i j k*x.2 i*x.2 j*x.2 k
+def tripleCommutatorPrinted (U : V n → ℝ) (β : ℝ) (x : Phase n) : ℝ :=
+  (2*β*hessianGrad U x-cubicThird U x)*gibbsWeight (fun _ ↦ 1) U β x
+def tripleCommutatorPrinted_corrected (U : V n → ℝ) (β : ℝ) (x : Phase n) : ℝ :=
+  β*(2*hessianGrad U x-cubicThird U x)*gibbsWeight (fun _ ↦ 1) U β x
+theorem tripleCommutator_corrected (U : V n → ℝ) (β : ℝ) (hβ : 0 < β) (hU : ContDiff ℝ ⊤ U) :
+    let m : V n := fun _ ↦ 1
+    let ρ := gibbsWeight m U β
+    phaseComm (aForward m) (phaseComm (aForward m) (bForward U)) ρ = tripleCommutatorPrinted_corrected U β ∧
+    phaseComm (bForward U) (phaseComm (bForward U) (aForward m)) ρ =
+      (fun x ↦ -2*β*hessianGrad U x*ρ x) := by
+  sorry
+theorem tripleCommutator_factor_counterexample : (2*(2 : ℝ)*0-1) ≠ 2*(2*0-1) := by norm_num
+```
+
+### 5. 对照表
+
+| 原文成分 | Lean对应 | 说明 |
+|---|---|---|
+| 本条引用的对象与公式 | MD.Ch07.hessianU, MD.Ch07.thirdU, MD.Ch07.hessianGrad, MD.Ch07.cubicThird, MD.Ch07.tripleCommutatorPrinted, MD.Ch07.tripleCommutatorPrinted_corrected, MD.Ch07.tripleCommutator_corrected, MD.Ch07.tripleCommutator_factor_counterexample | 本条逐字引用的全部数学对象与公式；未纳入的上下文另列。 |
+
+[EXTRA] M=I；Hessian、三阶张量及张量缩并均为实际坐标导数；原文版仅定义，不证明。反例先给系数代数区别，完整势函数测度反例未构造。
+记号与上下文：见所列原文与Lean量化变量。
+
+### 6. 审计结论
+
+本地：已对照目视原页核对对象、量词、技术资格和所列覆盖范围；网站尚未审阅。
+疑点：已目视核对PDF320／印刷299：首条三重交换子的三阶导数项未带β；后面的PDE却把β乘整个括号，且直接微分给出共同β。原文版与补β修正版独立保留。
+网站：尚未送审。
+
+### 7. 状态与证明位置
+
+未证陈述；单文件编译与逐声明公理核对通过。
+未证原因：需要多维三阶Gibbs微分与交换子展开；不建设通用算符理论。
+位置：Blueprint/Ch07.lean；MD.Ch07.hessianU, MD.Ch07.thirdU, MD.Ch07.hessianGrad, MD.Ch07.cubicThird, MD.Ch07.tripleCommutatorPrinted, MD.Ch07.tripleCommutatorPrinted_corrected, MD.Ch07.tripleCommutator_corrected, MD.Ch07.tripleCommutator_factor_counterexample。
+
+## 1. MD-7.9.1-SymmetricRHS · unnumbered_claim · 印刷p.299 / PDFp.320
+
+### 2. 原文陈述
+
+\[\mathcal L_{LD}^\dagger(\rho_\beta f_{2,[OABAO]})=\frac\beta{24}(6p^T(\nabla^2U)\nabla U-\nabla^3U:p\otimes p\otimes p)\rho_\beta,\]
+\[\mathcal L_{LD}^\dagger(\rho_\beta f_{2,[OBABO]})=\frac\beta{24}(2\nabla^3U:p\otimes p\otimes p-6p^T(\nabla^2U)\nabla U)\rho_\beta.\]
+We can see immediately that the Fredholm alternative holds in both cases, as both equations have right-hand sides that are of odd order in $p$, and hence will average to 0.
+
+### 3. 原文证明
+
+原书未给独立完整证明。
+
+### 4. 完整当前Lean（原文与修正版独立列出）
+
+```lean
+def symmetricRHS (flip : Bool) (U : V n → ℝ) (β : ℝ) (x : Phase n) : ℝ :=
+  β/24*(if flip then 2*cubicThird U x-6*hessianGrad U x else 6*hessianGrad U x-cubicThird U x)
+theorem symmetricRHS_odd (flip : Bool) (U : V n → ℝ) (β : ℝ) (x : Phase n) :
+    symmetricRHS flip U β (x.1,-x.2) = -symmetricRHS flip U β x := by
+  have hG : hessianGrad U (x.1,-x.2) = -hessianGrad U x := by
+    simp [hessianGrad,Finset.sum_neg_distrib]
+  have hT : cubicThird U (x.1,-x.2) = -cubicThird U x := by
+    simp [cubicThird,Finset.sum_neg_distrib]
+  cases flip <;> simp [symmetricRHS,hG,hT] <;> ring
+theorem symmetricRHS_zeroMean (flip : Bool) (U : V n → ℝ) (β : ℝ)
+    (hint : Integrable (symmetricRHS flip U β) (productGibbs (fun _ ↦ 1) U β)) :
+    (∫ x, symmetricRHS flip U β x ∂productGibbs (fun _ ↦ 1) U β) = 0 := by
+  sorry
+```
+
+### 5. 对照表
+
+| 原文成分 | Lean对应 | 说明 |
+|---|---|---|
+| 本条引用的对象与公式 | MD.Ch07.symmetricRHS, MD.Ch07.symmetricRHS_odd, MD.Ch07.symmetricRHS_zeroMean | 本条逐字引用的全部数学对象与公式；未纳入的上下文另列。 |
+
+[EXTRA] 右端去掉共同正Gibbs权，改用真实乘积Gibbs测度积分；奇性与零均值不等于完整Fredholm充分可解性。PDE左端与L2识别另需三重交换子桥。
+记号与上下文：见所列原文与Lean量化变量。
+
+### 6. 审计结论
+
+本地：已对照目视原页核对对象、量词、技术资格和所列覆盖范围；网站尚未审阅。
+疑点：本条暂未发现需单列的原书疑误。
+网站：尚未送审。
+
+### 7. 状态与证明位置
+
+未证陈述；单文件编译与逐声明公理核对通过。
+未证原因：需Gaussian乘积测度在p↦-p下不变与可积奇函数积分为零的短桥；不建设Fredholm理论。
+位置：Blueprint/Ch07.lean；MD.Ch07.symmetricRHS, MD.Ch07.symmetricRHS_odd, MD.Ch07.symmetricRHS_zeroMean。
+
+## 1. MD-7.9.1-Lemma71 · Lemma 7.1 · 印刷p.299–300 / PDFp.320–321
+
+### 2. 原文陈述
+
+Lemma 7.1 Consider two numerical schemes with associated operators governing the evolution of measure $ST$ and $TS$, with unique associated invariant distributions $\widehat\rho_{ST}$ and $\widehat\rho_{TS}$ respectively, such that
+\[ST\widehat\rho_{ST}=\widehat\rho_{ST},\qquad TS\widehat\rho_{TS}=\widehat\rho_{TS}.\]
+Under suitable ergodicity assumptions (such that in the long-time limit, all distributions converge to the invariant distribution), we have
+\[\widehat\rho_{ST}=S\widehat\rho_{TS},\qquad\widehat\rho_{TS}=T\widehat\rho_{ST}.\]
+
+### 3. 原文证明
+
+If we assume that $\lim_{n\to\infty}(ST)^n\rho=\widehat\rho_{ST}$, for any initial distribution $\rho$, then we have
+$\widehat\rho_{ST}=\lim_{n\to\infty}(ST)^n\widehat\rho_{ST}=\lim_{n\to\infty}S(TS)^{n-1}T\widehat\rho_{ST}=S\widehat\rho_{TS}$.
+A similar statement holds for $\widehat\rho_{ST}$.
+
+### 4. 完整当前Lean（原文与修正版独立列出）
+
+```lean
+theorem lemma71 (S T : Kernel Ω Ω) [IsMarkovKernel S] [IsMarkovKernel T]
+    (ρST ρTS : Measure Ω)
+    (hST : MolecularDynamics.textbookUniqueInvariantProbability (S ∘ₖ T) ρST)
+    (hTS : MolecularDynamics.textbookUniqueInvariantProbability (T ∘ₖ S) ρTS) :
+    ρST = S ∘ₘ ρTS ∧ ρTS = T ∘ₘ ρST :=
+  MolecularDynamics.textbookInvariantDistributionSwap S T hST hTS
+```
+
+### 5. 对照表
+
+| 原文成分 | Lean对应 | 说明 |
+|---|---|---|
+| 本条引用的对象与公式 | MD.Ch07.lemma71 | 本条逐字引用的全部数学对象与公式；未纳入的上下文另列。 |
+
+[EXTRA] 真实Markov核、真实概率与不变概率的唯一性完整；借助不变性和唯一性即足够，不要求额外极限交换。保留原书证明文本，Lean采用已证更弱假设路线。
+记号与上下文：见所列原文与Lean量化变量。
+
+### 6. 审计结论
+
+本地：已对照目视原页核对对象、量词、技术资格和所列覆盖范围；网站尚未审阅。
+疑点：本条暂未发现需单列的原书疑误。
+网站：尚未送审。
+
+### 7. 状态与证明位置
+
+已证；单文件编译与逐声明公理核对通过。
+本条未登记待证缺项。
+位置：Blueprint/Ch07.lean；MD.Ch07.lemma71。
+
+## 1. MD-7.9.1-ConjugateSymmetricCorrections · (7.30a)–(7.30b) · 印刷p.300–301 / PDFp.321–322
+
+### 2. 原文陈述
+
+\[\widehat\rho_{[ZYOYZ]}=\exp((h/2)\mathcal L_Z^\dagger)\exp((h/2)\mathcal L_Y^\dagger)\exp((h/2)\mathcal L_O^\dagger)\widehat\rho_{[OYZYO]}.\]
+\[f_{2,[ZYOYZ]}\rho_\beta=f_{2,[OYZYO]}\rho_\beta+\tfrac14\mathcal L_{1,[OYZ]}^\dagger\rho_\beta.\]
+\[\mathcal L_{1,[OAB]}^\dagger\rho_\beta=\tfrac12\mathcal L_H^\dagger(g\rho_\beta),\qquad
+\mathcal L_{1,[OBA]}^\dagger\rho_\beta=-\tfrac12\mathcal L_H^\dagger(g\rho_\beta),\]
+\[\mathcal L_H^\dagger(g\rho_\beta)=\beta(|\nabla U|^2-p^T\nabla^2Up)\rho_\beta,\]
+\[f_{2,[ABOBA]}=f_{2,[OBABO]}-\tfrac\beta8(|\nabla U|^2-p^T\nabla^2Up),\tag{7.30a}\]
+\[f_{2,[BAOAB]}=f_{2,[OABAO]}+\tfrac\beta8(|\nabla U|^2-p^T\nabla^2Up).\tag{7.30b}\]
+
+### 3. 原文证明
+
+原书未给独立完整证明。
+
+### 4. 完整当前Lean（原文与修正版独立列出）
+
+```lean
+def gradNormSq (U : V n → ℝ) (q : V n) : ℝ := ∑ i, gradient U q i^2
+def hessianQuadratic (U : V n → ℝ) (x : Phase n) : ℝ := ∑ i, ∑ j, x.2 i*hessianU U x.1 i j*x.2 j
+def conjugateCorrectionChange (U : V n → ℝ) (β : ℝ) (x : Phase n) : ℝ :=
+  β/8*(gradNormSq U x.1-hessianQuadratic U x)
+def conjugateCorrections (U : V n → ℝ) (β : ℝ) (fABOBA fOBABO fBAOAB fOABAO : Phase n → ℝ) : Prop :=
+  fABOBA = fOBABO-conjugateCorrectionChange U β ∧ fBAOAB = fOABAO+conjugateCorrectionChange U β
+theorem conjugateCorrection_coefficient {E : Type*} [AddCommGroup E] [Module ℝ E]
+    (L0 L1 : Module.End ℝ E) (p : ℕ → E) (q2 : E)
+    (hL : L0 (p 0) = 0) (hp : p 1 = 0)
+    (htransfer : q2 = p 2+(1/2 : ℝ) • L0 (p 1)+
+      (1/4 : ℝ) • L1 (p 0)+(1/8 : ℝ) • (L0*L0) (p 0)) :
+    q2 = p 2+(1/4 : ℝ) • L1 (p 0) := by
+  simpa [hp,hL,Module.End.mul_apply] using htransfer
+```
+
+### 5. 对照表
+
+| 原文成分 | Lean对应 | 说明 |
+|---|---|---|
+| 本条引用的对象与公式 | MD.Ch07.gradNormSq, MD.Ch07.hessianQuadratic, MD.Ch07.conjugateCorrectionChange, MD.Ch07.conjugateCorrections, MD.Ch07.conjugateCorrection_coefficient | 形式传递系数的消项及(7.30)全部目标；未证明从具体分裂映射导出这些系数。 |
+
+[EXTRA] Lean证明给定真实二阶传递系数的消项，(7.30)完整作为两关系的命题定义；ST/TS指数系数识别、Hamiltonian微分及实际两组修正系数识别仍列缺口。
+记号与上下文：见所列原文与Lean量化变量。
+
+### 6. 审计结论
+
+本地：已对照目视原页核对对象、量词、技术资格和所列覆盖范围；网站尚未审阅。
+疑点：已目视核对PDF321：所印传播子展开末项为(h²/2)L_LD，按exp的二阶展开应为(h²/8)(L_LD)²；该项作用ρβ为零，不改变后续修正关系。
+网站：尚未送审。
+
+### 7. 状态与证明位置
+
+已证；单文件编译与逐声明公理核对通过。
+本条未登记待证缺项。
+位置：Blueprint/Ch07.lean；MD.Ch07.gradNormSq, MD.Ch07.hessianQuadratic, MD.Ch07.conjugateCorrectionChange, MD.Ch07.conjugateCorrections, MD.Ch07.conjugateCorrection_coefficient。
+
+## 1. MD-7.9.2-ReciprocalFrictionExpansion · (7.31) / (7.32) · 印刷p.301–302 / PDFp.322–323
+
+### 2. 原文陈述
+
+We will denote
+\[f_2(q,p)=f_{2,0}(q,p)+\epsilon f_{2,1}(q,p)+\epsilon^2f_{2,2}(q,p)+\cdots,\tag{7.31}\]
+with each $\langle f_{2,i}\rangle=0$. Dividing by the friction in (7.28) we obtain
+\[(\overline{\mathcal L}_O^\dagger+\epsilon\mathcal L_H^\dagger)(f_2\rho_\beta)=-\epsilon\mathcal L_2^\dagger\rho_\beta,\]
+where $\overline{\mathcal L}_O^\dagger\vartheta=\epsilon\mathcal L_O^\dagger\vartheta=\nabla_p\cdot(p\vartheta)+\beta^{-1}\Delta_p\vartheta$.
+\[w(q,p)=-\tfrac\beta{24}(6p^T(\nabla^2U)\nabla U-\nabla^3U:p\otimes p\otimes p).\]
+Equating powers gives
+\[\overline{\mathcal L}_O^\dagger(\rho_\beta f_{2,0})=0,\quad
+\mathcal L_H^\dagger(\rho_\beta f_{2,0})+\overline{\mathcal L}_O^\dagger(\rho_\beta f_{2,1})=-w\rho_\beta,\]
+\[\mathcal L_H^\dagger(\rho_\beta f_{2,1})+\overline{\mathcal L}_O^\dagger(\rho_\beta f_{2,2})=0,\quad
+\mathcal L_H^\dagger(\rho_\beta f_{2,2})+\overline{\mathcal L}_O^\dagger(\rho_\beta f_{2,3})=0.\]
+
+### 3. 原文证明
+
+原书未给独立完整证明。
+
+### 4. 完整当前Lean（原文与修正版独立列出）
+
+```lean
+def phaseH (U : V n → ℝ) (ρ : Phase n → ℝ) : Phase n → ℝ := aForward (fun _ ↦ 1) ρ+bForward U ρ
+def reciprocalHierarchy (U : V n → ℝ) (β : ℝ) (f : ℕ → Phase n → ℝ) : Prop :=
+  let ρ := gibbsWeight (fun _ ↦ 1) U β
+  phaseO (fun _ ↦ 1) 1 β (ρ*f 0) = 0 ∧
+  phaseH U (ρ*f 0)+phaseO (fun _ ↦ 1) 1 β (ρ*f 1) = (fun x ↦ -(-symmetricRHS false U β x)*ρ x) ∧
+  ∀ k, 0 < k → phaseH U (ρ*f k)+phaseO (fun _ ↦ 1) 1 β (ρ*f (k+1)) = 0
+```
+
+### 5. 对照表
+
+| 原文成分 | Lean对应 | 说明 |
+|---|---|---|
+| 本条引用的对象与公式 | MD.Ch07.phaseH, MD.Ch07.reciprocalHierarchy | 本条逐字引用的全部数学对象与公式；未纳入的上下文另列。 |
+
+[EXTRA] ε=1/γ；使用真实偏导、单位质量、β>0；形式层级包含所有后续阶。各阶零均值及归一性需另加centeredCorrections，不把其当作已证。
+记号与上下文：见所列原文与Lean量化变量。
+
+### 6. 审计结论
+
+本地：已对照目视原页核对对象、量词、技术资格和所列覆盖范围；网站尚未审阅。
+疑点：本条暂未发现需单列的原书疑误。
+网站：尚未送审。
+
+### 7. 状态与证明位置
+
+定义；单文件编译与逐声明公理核对通过。
+本条未登记待证缺项。
+位置：Blueprint/Ch07.lean；MD.Ch07.phaseH, MD.Ch07.reciprocalHierarchy。
+
+## 1. MD-7.9.2-OUKernelQualification · unnumbered_claim · 印刷p.302 / PDFp.323
+
+### 2. 原文陈述
+
+The first equation at order one tells us that $f_{2,0,[OABAO]}(q,p)$ must be a function of position only, as the kernel of $\overline{\mathcal L}_O^\dagger$ is the set of functions that are constant with respect to $p$. Hence we shall denote $f_{2,0,[OABAO]}(q,p)=\nu(q)$, where $\langle\nu\rangle=0$.
+
+### 3. 原文证明
+
+原书未给独立完整证明。
+
+### 4. 完整当前Lean（原文与修正版独立列出）
+
+```lean
+def ouKernelPrinted (β : ℝ) : Prop :=
+  ∀ f : V n → ℝ, ouForward (fun _ ↦ 1) 1 β⁻¹ f = 0 → ∃ c : ℝ, f = fun _ ↦ c
+theorem ouKernelPrinted_corrected (U : V n → ℝ) (β : ℝ) (f : Phase n → ℝ)
+    (hβ : 0 < β) (hf : ContDiff ℝ ⊤ f)
+    (hL2 : ∀ q, MemLp (fun p ↦ f (q,p)) 2 (momentumGibbs (fun _ ↦ 1) β))
+    (hzero : phaseO (fun _ ↦ 1) 1 β (gibbsWeight (fun _ ↦ 1) U β*f) = 0) :
+    ∃ ν : V n → ℝ, ∀ q p, f (q,p) = ν q := by
+  sorry
+```
+
+### 5. 对照表
+
+| 原文成分 | Lean对应 | 说明 |
+|---|---|---|
+| 本条引用的对象与公式 | MD.Ch07.ouKernelPrinted, MD.Ch07.ouKernelPrinted_corrected | 本条逐字引用的全部数学对象与公式；未纳入的上下文另列。 |
+
+[EXTRA] 修正版明确实际Gaussian L²域和光滑性；原文目标定义保留但不证明。零均值仅限制ν常数方向，不由OU核自动给出。
+记号与上下文：见所列原文与Lean量化变量。
+
+### 6. 审计结论
+
+本地：已对照目视原页核对对象、量词、技术资格和所列覆盖范围；网站尚未审阅。
+疑点：已目视核对PDF323：前向OU生成元的核实际是Gaussian密度倍数；对ρβf共轭后，合适L²域中的f才对p为常数。原文此句缺少共轭与定义域限定。
+网站：尚未送审。
+
+### 7. 状态与证明位置
+
+未证陈述；单文件编译与逐声明公理核对通过。
+未证原因：需要OU生成元加权Dirichlet型、域闭包及核刻画理论，本轮不建设。
+位置：Blueprint/Ch07.lean；MD.Ch07.ouKernelPrinted, MD.Ch07.ouKernelPrinted_corrected。
+
+## 1. MD-7.9.2-OUHermiteIdentities · (7.33)–(7.34) · 印刷p.302 / PDFp.323
+
+### 2. 原文陈述
+
+\[\overline{\mathcal L}_O^\dagger(\rho_\beta\nabla^3U:p\otimes p\otimes p)=-3\rho_\beta\nabla^3U:p\otimes p\otimes p+\tfrac{6\rho_\beta}{\beta}p^T\nabla_q\Delta_qU,\]
+\[\overline{\mathcal L}_O^\dagger(\rho_\beta p^T\nabla_q\Delta_qU)=-\rho_\beta p^T\nabla_q\Delta_qU,\]
+\[\overline{\mathcal L}_O^\dagger(\rho_\beta p^T(\nabla^2U)\nabla U)=-\rho_\beta p^T(\nabla^2U)\nabla U.\]
+\[w\rho_\beta=\tfrac\beta{24}\overline{\mathcal L}_O^\dagger([6p^T(\nabla^2U)\nabla U-\tfrac13\nabla^3U:p\otimes p\otimes p-\tfrac2\beta p^T\nabla_q\Delta_qU]\rho_\beta).\tag{7.33}\]
+\[\mathcal L_H^\dagger(\rho_\beta\nu)=-p^T\nabla\nu\rho_\beta=\overline{\mathcal L}_O^\dagger([p^T\nabla\nu+\mu(q)]\rho_\beta).\tag{7.34}\]
+
+### 3. 原文证明
+
+原书未给独立完整证明。
+
+### 4. 完整当前Lean（原文与修正版独立列出）
+
+```lean
+def laplacian (U : V n → ℝ) (q : V n) : ℝ := ∑ i, hessianU U q i i
+def pGradLaplacian (U : V n → ℝ) (x : Phase n) : ℝ := ∑ i, x.2 i*gradient (laplacian U) x.1 i
+def hermitePrimitive (U : V n → ℝ) (β : ℝ) (x : Phase n) : ℝ :=
+  6*hessianGrad U x-(1/3)*cubicThird U x-2/β*pGradLaplacian U x
+theorem ouHermiteIdentities (U ν μ : V n → ℝ) (β : ℝ) (hβ : 0 < β)
+    (hU : ContDiff ℝ ⊤ U) (hν : ContDiff ℝ ⊤ ν) :
+    let ρ := gibbsWeight (fun _ ↦ 1) U β
+    let O := phaseO (fun _ ↦ 1) 1 β
+    O (ρ*cubicThird U) = (fun x ↦ -3*ρ x*cubicThird U x+6*ρ x/β*pGradLaplacian U x) ∧
+    O (ρ*pGradLaplacian U) = -(ρ*pGradLaplacian U) ∧
+    O (ρ*hessianGrad U) = -(ρ*hessianGrad U) ∧
+    (fun x ↦ -symmetricRHS false U β x*ρ x) = (fun x ↦ β/24*O (hermitePrimitive U β*ρ) x) ∧
+    phaseH U (fun x ↦ ρ x*ν x.1) =
+      O (fun x ↦ ((∑ i, x.2 i*gradient ν x.1 i)+μ x.1)*ρ x) := by
+  sorry
+```
+
+### 5. 对照表
+
+| 原文成分 | Lean对应 | 说明 |
+|---|---|---|
+| 本条引用的对象与公式 | MD.Ch07.laplacian, MD.Ch07.pGradLaplacian, MD.Ch07.hermitePrimitive, MD.Ch07.ouHermiteIdentities | 本条逐字引用的全部数学对象与公式；未纳入的上下文另列。 |
+
+[EXTRA] OU仅对p微分，μ(q)不需对p额外正则；U,ν光滑且β>0。全部三个Hermite式和两个合成恒等式都在Lean结论中。
+记号与上下文：见所列原文与Lean量化变量。
+
+### 6. 审计结论
+
+本地：已对照目视原页核对对象、量词、技术资格和所列覆盖范围；网站尚未审阅。
+疑点：本条暂未发现需单列的原书疑误。
+网站：尚未送审。
+
+### 7. 状态与证明位置
+
+未证陈述；单文件编译与逐声明公理核对通过。
+未证原因：需三阶张量的Gaussian共轭微分与混合导数交换；保留未证，不发展一般Hermite谱理论。
+位置：Blueprint/Ch07.lean；MD.Ch07.laplacian, MD.Ch07.pGradLaplacian, MD.Ch07.hermitePrimitive, MD.Ch07.ouHermiteIdentities。
+
+## 1. MD-7.9.2-FirstReciprocalCorrection · (7.35)–(7.36) · 印刷p.303–304 / PDFp.324–325
+
+### 2. 原文陈述
+
+\[f_{2,1,[OABAO]}=-\tfrac\beta{24}(6p^T(\nabla^2U)\nabla U-\tfrac13\nabla^3U:p\otimes p\otimes p-\tfrac2\beta p^T\nabla_q\Delta_qU)-p^T\nabla\nu-\mu.\]
+\[\overline{\mathcal L}_O^\dagger(\rho_\beta f_{2,2,[OABAO]})=-\mathcal L_H^\dagger(\rho_\beta f_{2,1,[OABAO]}).\tag{7.35}\]
+\[\int_{\mathcal P}\overline{\mathcal L}_O^\dagger(\rho_\beta f_{2,2,[OABAO]})d\omega_p=0,\qquad
+\int_{\mathcal P}\mathcal L_H^\dagger(\rho_\beta f_{2,1,[OABAO]})d\omega_p=\overline\pi\mathcal L_H^\dagger f_{2,1,[OABAO]}=0,\tag{7.36}\]
+where $(\overline\pi f)(q)=\int_{\mathcal P}f(q,p)\rho_\beta d\omega_p$.
+
+### 3. 原文证明
+
+原书未给独立完整证明。
+
+### 4. 完整当前Lean（原文与修正版独立列出）
+
+```lean
+def firstReciprocalCorrection (U ν μ : V n → ℝ) (β : ℝ) (x : Phase n) : ℝ :=
+  -β/24*hermitePrimitive U β x-(∑ i, x.2 i*gradient ν x.1 i)-μ x.1
+def momentumAverage (β : ℝ) (f : Phase n → ℝ) (q : V n) : ℝ :=
+  ∫ p, f (q,p) ∂momentumGibbs (fun _ ↦ 1) β
+def momentumAveragePrinted (U : V n → ℝ) (β : ℝ) (f : Phase n → ℝ) (q : V n) : ℝ :=
+  ∫ p, f (q,p)*gibbsWeight (fun _ ↦ 1) U β (q,p)
+theorem firstReciprocalCorrection_pde (U ν μ : V n → ℝ) (β : ℝ) (hβ : 0 < β)
+    (hU : ContDiff ℝ ⊤ U) (hν : ContDiff ℝ ⊤ ν) :
+    let ρ := gibbsWeight (fun _ ↦ 1) U β
+    phaseO (fun _ ↦ 1) 1 β (ρ*firstReciprocalCorrection U ν μ β)+
+      phaseH U (fun x ↦ ρ x*ν x.1) = (fun x ↦ symmetricRHS false U β x*ρ x) := by
+  sorry
+```
+
+### 5. 对照表
+
+| 原文成分 | Lean对应 | 说明 |
+|---|---|---|
+| 本条引用的对象与公式 | MD.Ch07.firstReciprocalCorrection, MD.Ch07.momentumAverage, MD.Ch07.momentumAveragePrinted, MD.Ch07.firstReciprocalCorrection_pde | 本条逐字引用的全部数学对象与公式；未纳入的上下文另列。 |
+
+[EXTRA] 给出全部f2,1公式并陈述其一阶PDE；二阶可解相容性需OU积分通量消失及实际域条件，尚未证明。
+记号与上下文：见所列原文与Lean量化变量。
+
+### 6. 审计结论
+
+本地：已对照目视原页核对对象、量词、技术资格和所列覆盖范围；网站尚未审阅。
+疑点：已目视核对PDF324–325：π̄定义带联合ρβ权，后续M公式却使用归一条件动量平均并隐含ρβ共轭。本文区分原文加权积分与修正的条件Gaussian平均，避免遗漏位置密度因子。
+网站：尚未送审。
+
+### 7. 状态与证明位置
+
+未证陈述；单文件编译与逐声明公理核对通过。
+未证原因：需要OU线性、Hermite恒等式应用和边界通量桥接；不建设Fredholm替代理论。
+位置：Blueprint/Ch07.lean；MD.Ch07.firstReciprocalCorrection, MD.Ch07.momentumAverage, MD.Ch07.momentumAveragePrinted, MD.Ch07.firstReciprocalCorrection_pde。
+
+## 1. MD-7.9.2-OverdampedSolvabilityOperators · unnumbered_claim · 印刷p.304 / PDFp.325
+
+### 2. 原文陈述
+
+We abbreviate
+\[\mathcal M\psi(q)=\overline\pi\mathcal L_H^\dagger\mathcal L_A^\dagger\psi(q)
+=\overline\pi((\mathcal L_A^\dagger)^2+\mathcal L_B^\dagger\mathcal L_A^\dagger)\psi(q)
+=\beta^{-1}\Delta_q\psi(q)-\nabla U\cdot\nabla_q\psi(q),\]
+\[\mathcal N\psi(q)=\overline\pi\mathcal L_H^\dagger(\mathcal L_A^\dagger)^3\psi(q)
+=\overline\pi((\mathcal L_A^\dagger)^4+\mathcal L_B^\dagger(\mathcal L_A^\dagger)^3)\psi(q)
+=\tfrac3\beta\mathcal M(\Delta_q\psi(q)).\]
+Thus we have
+\[\overline\pi\mathcal L_H^\dagger\rho_\beta f_{2,1,[OABAO]}=\tfrac\beta8\mathcal M(|\nabla U|^2-\beta^{-1}\Delta_qU)+\mathcal M\nu,\]
+and hence by (7.36) we finally obtain $\nu(q)=\tfrac18(\Delta_qU-\beta|\nabla U|^2)$, where $\langle\nu\rangle=0$.
+
+### 3. 原文证明
+
+原书未给独立完整证明。
+
+### 4. 完整当前Lean（原文与修正版独立列出）
+
+```lean
+def overdampedM (U ψ : V n → ℝ) (β : ℝ) (q : V n) : ℝ :=
+  β⁻¹*laplacian ψ q-(∑ i, gradient U q i*gradient ψ q i)
+def overdampedN (U ψ : V n → ℝ) (β : ℝ) (q : V n) : ℝ :=
+  3/β*overdampedM U (laplacian ψ) β q
+def highFrictionOABAO (U : V n → ℝ) (β : ℝ) (q : V n) : ℝ :=
+  (laplacian U q-β*gradNormSq U q)/8
+theorem overdampedSolvability_choice (U : V n → ℝ) (β : ℝ) (hβ : β ≠ 0) :
+    ∀ q, highFrictionOABAO U β q =
+      -β/8*(gradNormSq U q-β⁻¹*laplacian U q) := by
+  intro q
+  dsimp [highFrictionOABAO]
+  field_simp
+  <;> ring
+```
+
+### 5. 对照表
+
+| 原文成分 | Lean对应 | 说明 |
+|---|---|---|
+| 本条引用的对象与公式 | MD.Ch07.overdampedM, MD.Ch07.overdampedN, MD.Ch07.highFrictionOABAO, MD.Ch07.overdampedSolvability_choice | M,N及ν全部显式公式和ν代数识别；平均算符等价与可解性未证明。 |
+
+[EXTRA] M,N记录所印右端微分表达式；π̄与前向算符须用条件Gaussian平均和Gibbs共轭修正后才能证明左侧识别，详见前条。；只证明ν候选的代数改写；Mν相容方程、核常数唯一性、零均值须积分分部与定义域桥，不把候选定义当成解已证。
+记号与上下文：见所列原文与Lean量化变量。
+
+### 6. 审计结论
+
+本地：已对照目视原页核对对象、量词、技术资格和所列覆盖范围；网站尚未审阅。
+疑点：本条暂未发现需单列的原书疑误。
+网站：尚未送审。
+
+### 7. 状态与证明位置
+
+已证；单文件编译与逐声明公理核对通过。
+本条未登记待证缺项。
+位置：Blueprint/Ch07.lean；MD.Ch07.overdampedM, MD.Ch07.overdampedN, MD.Ch07.highFrictionOABAO, MD.Ch07.overdampedSolvability_choice。
+
+## 1. MD-7.9.2-HighFrictionCorrectionTable · unnumbered_claim · 印刷p.304–305 / PDFp.325–326
+
+### 2. 原文陈述
+
+\[f_{2,0,[OABAO]}=\tfrac18(\Delta_qU-\beta|\nabla U|^2),\]
+\[f_{2,0,[OBABO]}=\tfrac18(\beta|\nabla U|^2-2\Delta_qU+c),\]
+where $c=\langle\Delta U\rangle$ is a constant chosen to ensure zero average.
+\[f_{2,0,[ABOBA]}=\tfrac18(\beta p^T\nabla^2U(q)p-2\Delta_qU+c),\]
+\[f_{2,0,[BAOAB]}=\tfrac18(\Delta U-\beta p^T\nabla^2U(q)p).\]
+\[\langle\vartheta\rangle_h=\langle\vartheta\rangle+h^2\langle\vartheta f_{2,0}\rangle+O(\epsilon h^2+h^4).\]
+
+### 3. 原文证明
+
+原书未给独立完整证明。
+
+### 4. 完整当前Lean（原文与修正版独立列出）
+
+```lean
+def highFrictionCorrection (s : Fin 4) (U : V n → ℝ) (β c : ℝ) (x : Phase n) : ℝ :=
+  if s = 0 then highFrictionOABAO U β x.1
+  else if s = 1 then (β*gradNormSq U x.1-2*laplacian U x.1+c)/8
+  else if s = 2 then (β*hessianQuadratic U x-2*laplacian U x.1+c)/8
+  else (laplacian U x.1-β*hessianQuadratic U x)/8
+def doublyAsymptoticAverage (A : ℝ → ℝ → ℝ) (exact correction : ℝ) : Prop :=
+  Asymptotics.IsBigO positivePairLimit
+    (fun z ↦ A z.1 z.2-exact-z.2^2*correction) (fun z ↦ z.1*z.2^2+z.2^4)
+theorem highFrictionCorrection_conjugacy (U : V n → ℝ) (β c : ℝ) :
+    conjugateCorrections U β (highFrictionCorrection 2 U β c) (highFrictionCorrection 1 U β c)
+      (highFrictionCorrection 3 U β c) (highFrictionCorrection 0 U β c) := by
+  constructor <;> funext x <;>
+    norm_num [conjugateCorrections,highFrictionCorrection,highFrictionOABAO,conjugateCorrectionChange]
+    <;> ring
+```
+
+### 5. 对照表
+
+| 原文成分 | Lean对应 | 说明 |
+|---|---|---|
+| 本条引用的对象与公式 | MD.Ch07.highFrictionCorrection, MD.Ch07.doublyAsymptoticAverage, MD.Ch07.highFrictionCorrection_conjugacy | 本条逐字引用的全部数学对象与公式；未纳入的上下文另列。 |
+
+[EXTRA] 算法编号OABAO,OBABO,ABOBA,BAOAB；保留全部四个候选、c选择和双渐近余项命题。；候选的代数共轭关系可单独证明；其为实际平稳误差系数、零均值及严格双渐近界均未获证明。
+记号与上下文：见所列原文与Lean量化变量。
+
+### 6. 审计结论
+
+本地：已对照目视原页核对对象、量词、技术资格和所列覆盖范围；网站尚未审阅。
+疑点：本条暂未发现需单列的原书疑误。
+网站：尚未送审。
+
+### 7. 状态与证明位置
+
+已证；单文件编译与逐声明公理核对通过。
+本条未登记待证缺项。
+位置：Blueprint/Ch07.lean；MD.Ch07.highFrictionCorrection, MD.Ch07.doublyAsymptoticAverage, MD.Ch07.highFrictionCorrection_conjugacy。
+
+## 1. MD-7.9.3-BAOABMarginalCancellation · (7.37) · 印刷p.305 / PDFp.326
+
+### 2. 原文陈述
+
+\[\langle\vartheta\rangle=\langle\vartheta\rangle_h-h^2\langle\vartheta f_{2,0}\rangle+O(h^2/\gamma+h^4).\tag{7.37}\]
+The $[BAOAB]$ scheme has leading order correction
+\[f_{2,0,[BAOAB]}(q,p)=\tfrac18(\Delta U-\beta p^T\nabla^2U(q)p),\]
+which has the interesting property that its marginal average with respect to momentum is zero:
+\[\overline\pi f_{2,0,[BAOAB]}=\int_{\mathcal P}f_{2,0,[BAOAB]}(q,p)\rho_\beta(q,p)d\omega_p=0.\]
+\[\langle\vartheta(q)f_{2,0,[BAOAB]}\rangle=\int_{\mathcal Q}\vartheta(q)\int_{\mathcal P}f_{2,0,[BAOAB]}\rho_\beta d\omega_p d\omega_q=0.\]
+
+### 3. 原文证明
+
+Integrate first over the Gaussian momenta; the quadratic Gaussian moment contracts the Hessian to β⁻¹ΔU. Then use Fubini.
+
+### 4. 完整当前Lean（原文与修正版独立列出）
+
+```lean
+theorem baoabMarginalCancellation (U : V n → ℝ) (β : ℝ) (q : V n) (hβ : 0 < β) :
+    momentumAverage β (highFrictionCorrection 3 U β 0) q = 0 := by
+  sorry
+theorem baoabConfigurationalCancellation (U φ : V n → ℝ) (β : ℝ) (hβ : 0 < β)
+    (hint : Integrable (fun x ↦ φ x.1*highFrictionCorrection 3 U β 0 x)
+      (productGibbs (fun _ ↦ 1) U β)) :
+    (∫ x, φ x.1*highFrictionCorrection 3 U β 0 x ∂productGibbs (fun _ ↦ 1) U β) = 0 := by
+  sorry
+```
+
+### 5. 对照表
+
+| 原文成分 | Lean对应 | 说明 |
+|---|---|---|
+| 本条引用的对象与公式 | MD.Ch07.baoabMarginalCancellation, MD.Ch07.baoabConfigurationalCancellation | 本条逐字引用的全部数学对象与公式；未纳入的上下文另列。 |
+
+[EXTRA] 归一条件Gaussian平均为零即推出原文带位置权的平均为零；两个零积分结论均为实际测度。双渐近余项的有效性须另外证明，不由形式消项自动给出。
+记号与上下文：见所列原文与Lean量化变量。
+
+### 6. 审计结论
+
+本地：已对照目视原页核对对象、量词、技术资格和所列覆盖范围；网站尚未审阅。
+疑点：本条暂未发现需单列的原书疑误。
+网站：尚未送审。
+
+### 7. 状态与证明位置
+
+未证陈述；单文件编译与逐声明公理核对通过。
+未证原因：需Gaussian协方差矩阵、Hessian缩并与乘积Fubini桥；不发展Talay–Tubaro余项理论。
+位置：Blueprint/Ch07.lean；MD.Ch07.baoabMarginalCancellation, MD.Ch07.baoabConfigurationalCancellation。
+
+## 1. MD-7.9.3-SuperconvergenceScope · unnumbered_claim · 印刷p.306 / PDFp.327
+
+### 2. 原文陈述
+
+Thus we expect that the $[BAOAB]$ scheme recovers $O(h^4)$ configurational averages in the limit of infinite friction.
+Its conjugate method, the $[OABAO]$ scheme, has the property
+\[\int_{\mathcal Q}f_{2,0,[OABAO]}(q,p)\rho_\beta(q,p)d\omega_q=0,\]
+implying that we obtain high-order averages for functions purely of the momenta in the limit of infinite friction.
+It is important to note that this superconvergence property is only present in the limit of large time, i.e. this is an attribute of the invariant distribution of the discretization schemes $\widehat\rho$. As such, there are no bonuses to the weak or strong order of the superconvergent schemes.
+
+### 3. 原文证明
+
+原书未给独立完整证明。
+
+### 4. 完整当前Lean（原文与修正版独立列出）
+
+```lean
+theorem oabaoPositionCancellation (U : V n → ℝ) (β : ℝ) (hβ : 0 < β)
+    (hU : ContDiff ℝ ⊤ U)
+    (hweight : Integrable (fun q ↦ Real.exp (-β*U q)) volume)
+    (hgrad : ∀ i, Integrable (fun q ↦ (hessianU U q i i-β*gradient U q i^2)*Real.exp (-β*U q)) volume)
+    (hboundary : ∀ q i, Filter.Tendsto
+      (fun r : ℝ ↦ gradient U (Function.update q i r) i*Real.exp (-β*U (Function.update q i r))) Filter.atTop (𝓝 0) ∧
+      Filter.Tendsto (fun r : ℝ ↦ gradient U (Function.update q i r) i*Real.exp (-β*U (Function.update q i r))) Filter.atBot (𝓝 0)) :
+    (∫ q, highFrictionOABAO U β q ∂positionGibbs U β) = 0 := by
+  sorry
+theorem superconvergence_fromBound (A : ℝ → ℝ) (exact : ℝ)
+    (hA : Asymptotics.IsBigO (𝓝 (0 : ℝ)) (fun h ↦ A h-exact-h^2*(0 : ℝ)) (fun h ↦ h^4)) :
+    Asymptotics.IsBigO (𝓝 (0 : ℝ)) (fun h ↦ A h-exact) (fun h ↦ h^4) := by
+  simpa using hA
+```
+
+### 5. 对照表
+
+| 原文成分 | Lean对应 | 说明 |
+|---|---|---|
+| 本条引用的对象与公式 | MD.Ch07.oabaoPositionCancellation, MD.Ch07.superconvergence_fromBound | 本条逐字引用的全部数学对象与公式；未纳入的上下文另列。 |
+
+[EXTRA] 显式归一Gibbs构型边界通量消失和积分可积条件；此处只给OABAO积分消项。；四阶推论仅在已有有效h⁴余项界下成立，不能从固定有限γ的h²/γ余项直接推出；弱/强有限时间阶数不因此提高。
+记号与上下文：见所列原文与Lean量化变量。
+
+### 6. 审计结论
+
+本地：已对照目视原页核对对象、量词、技术资格和所列覆盖范围；网站尚未审阅。
+疑点：本条暂未发现需单列的原书疑误。
+网站：尚未送审。
+
+### 7. 状态与证明位置
+
+未证陈述；单文件编译与逐声明公理核对通过。
+未证原因：需要逐坐标积分分部及Fubini边界桥；不建设一般无限时间弱展开。
+位置：Blueprint/Ch07.lean；MD.Ch07.oabaoPositionCancellation, MD.Ch07.superconvergence_fromBound。
 

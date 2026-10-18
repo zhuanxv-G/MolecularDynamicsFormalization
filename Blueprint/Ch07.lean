@@ -1038,4 +1038,214 @@ theorem doubleWellExact (β γ : ℝ) (hβ : 0 < β) :
   sorry
 theorem doubleWellCritical (β : ℝ) : (2-(2 : ℝ))/(2*β) = 0 := by ring
 
+/-- source_id: MD-7.9-Proposition71 · 印刷p.297 / PDFp.318
+[EXTRA] 桥接正式库已证的实际非交换形式log/exp及完整对称修正定义体；余项为h⁴形式因子，未声称无界算符级数收敛。 -/
+theorem proposition71 {R : Type*} [Ring R] [Algebra ℝ R] (X Y Z : R) :
+    ∃ Q : PowerSeries R, MolecularDynamics.textbookSymmetricModifiedGenerator X Y Z =
+      PowerSeries.C (X+Y+Z)+
+      PowerSeries.C (MolecularDynamics.textbookSymmetricOperatorCorrection X Y Z)*PowerSeries.X^2+
+      PowerSeries.X^4*Q := MolecularDynamics.textbookSymmetricModifiedGenerator_formal_proposition71 X Y Z
+theorem symmetricOddCorrections {R : Type*} [Ring R] [Algebra ℝ R] (X Y Z : R) (k : ℕ) :
+    PowerSeries.coeff (2*k+1) (MolecularDynamics.textbookSymmetricModifiedGenerator X Y Z) = 0 :=
+  MolecularDynamics.textbookSymmetricModifiedGenerator_odd_coeff_zero X Y Z k
+
+/-- source_id: MD-7.9-EvenDensityPerturbation · 印刷p.298 / PDFp.319
+[EXTRA] 系数相消得到必要方程；Fredholm可解性的充分性需核、余核、函数空间和域的闭值域资格，本条不证明。原书将奇阶修正零作为假设，本条保留。 -/
+def evenDensityExpansion (ρ : Ω → ℝ) (f : ℕ → Ω → ℝ) (k : ℕ) : Ω → ℝ :=
+  if k = 0 then ρ else if Even k then fun x ↦ ρ x*f k x else 0
+theorem evenPerturbationEquation {E : Type*} [AddCommGroup E] [Module ℝ E]
+    (L : ℕ → Module.End ℝ E) (ρ : ℕ → E)
+    (hL1 : L 1 = 0) (hρ1 : ρ 1 = 0) (h2 : actionCoefficient L ρ 2 = 0) :
+    L 0 (ρ 2) = -L 2 (ρ 0) := by
+  have he : L 0 (ρ 2)+L 2 (ρ 0) = 0 := by
+    simpa [actionCoefficient,Finset.sum_range_succ,hL1,hρ1] using h2
+  exact eq_neg_of_add_eq_zero_left he
+
+/-- source_id: MD-7.9.1-OYZYOInhomogeneity · 印刷p.298–299 / PDFp.319–320 -/
+theorem oyzyoInhomogeneity {E : Type*} [AddCommGroup E] [Module ℝ E]
+    (O Y Z : Module.End ℝ E) (ρ : E) (hO : O ρ = 0) (hH : (Y+Z) ρ = 0) :
+    MolecularDynamics.textbookSymmetricOperatorCorrection O Y Z ρ =
+      (1/12 : ℝ) • comm Z (comm Z Y) ρ-(1/24 : ℝ) • comm Y (comm Y Z) ρ := by
+  sorry
+
+/-- source_id: MD-7.9.1-TripleCommutatorPrinted · 印刷p.299 / PDFp.320
+[EXTRA] M=I；Hessian、三阶张量及张量缩并均为实际坐标导数；原文版仅定义，不证明。反例先给系数代数区别，完整势函数测度反例未构造。
+[ERRATUM?] 已目视核对PDF320／印刷299：首条三重交换子的三阶导数项未带β；后面的PDE却把β乘整个括号，且直接微分给出共同β。原文版与补β修正版独立保留。 -/
+def hessianU (U : V n → ℝ) (q : V n) (i j : Fin n) : ℝ := coordDerivative (fun y ↦ gradient U y j) q i
+def thirdU (U : V n → ℝ) (q : V n) (i j k : Fin n) : ℝ := coordDerivative (fun y ↦ hessianU U y j k) q i
+def hessianGrad (U : V n → ℝ) (x : Phase n) : ℝ := ∑ i, ∑ j, x.2 i*hessianU U x.1 i j*gradient U x.1 j
+def cubicThird (U : V n → ℝ) (x : Phase n) : ℝ := ∑ i, ∑ j, ∑ k, thirdU U x.1 i j k*x.2 i*x.2 j*x.2 k
+def tripleCommutatorPrinted (U : V n → ℝ) (β : ℝ) (x : Phase n) : ℝ :=
+  (2*β*hessianGrad U x-cubicThird U x)*gibbsWeight (fun _ ↦ 1) U β x
+def tripleCommutatorPrinted_corrected (U : V n → ℝ) (β : ℝ) (x : Phase n) : ℝ :=
+  β*(2*hessianGrad U x-cubicThird U x)*gibbsWeight (fun _ ↦ 1) U β x
+theorem tripleCommutator_corrected (U : V n → ℝ) (β : ℝ) (hβ : 0 < β) (hU : ContDiff ℝ ⊤ U) :
+    let m : V n := fun _ ↦ 1
+    let ρ := gibbsWeight m U β
+    phaseComm (aForward m) (phaseComm (aForward m) (bForward U)) ρ = tripleCommutatorPrinted_corrected U β ∧
+    phaseComm (bForward U) (phaseComm (bForward U) (aForward m)) ρ =
+      (fun x ↦ -2*β*hessianGrad U x*ρ x) := by
+  sorry
+theorem tripleCommutator_factor_counterexample : (2*(2 : ℝ)*0-1) ≠ 2*(2*0-1) := by norm_num
+
+/-- source_id: MD-7.9.1-SymmetricRHS · 印刷p.299 / PDFp.320
+[EXTRA] 右端去掉共同正Gibbs权，改用真实乘积Gibbs测度积分；奇性与零均值不等于完整Fredholm充分可解性。PDE左端与L2识别另需三重交换子桥。 -/
+def symmetricRHS (flip : Bool) (U : V n → ℝ) (β : ℝ) (x : Phase n) : ℝ :=
+  β/24*(if flip then 2*cubicThird U x-6*hessianGrad U x else 6*hessianGrad U x-cubicThird U x)
+theorem symmetricRHS_odd (flip : Bool) (U : V n → ℝ) (β : ℝ) (x : Phase n) :
+    symmetricRHS flip U β (x.1,-x.2) = -symmetricRHS flip U β x := by
+  have hG : hessianGrad U (x.1,-x.2) = -hessianGrad U x := by
+    simp [hessianGrad,Finset.sum_neg_distrib]
+  have hT : cubicThird U (x.1,-x.2) = -cubicThird U x := by
+    simp [cubicThird,Finset.sum_neg_distrib]
+  cases flip <;> simp [symmetricRHS,hG,hT] <;> ring
+theorem symmetricRHS_zeroMean (flip : Bool) (U : V n → ℝ) (β : ℝ)
+    (hint : Integrable (symmetricRHS flip U β) (productGibbs (fun _ ↦ 1) U β)) :
+    (∫ x, symmetricRHS flip U β x ∂productGibbs (fun _ ↦ 1) U β) = 0 := by
+  sorry
+
+/-- source_id: MD-7.9.1-Lemma71 · 印刷p.299–300 / PDFp.320–321
+[EXTRA] 真实Markov核、真实概率与不变概率的唯一性完整；借助不变性和唯一性即足够，不要求额外极限交换。保留原书证明文本，Lean采用已证更弱假设路线。 -/
+theorem lemma71 (S T : Kernel Ω Ω) [IsMarkovKernel S] [IsMarkovKernel T]
+    (ρST ρTS : Measure Ω)
+    (hST : MolecularDynamics.textbookUniqueInvariantProbability (S ∘ₖ T) ρST)
+    (hTS : MolecularDynamics.textbookUniqueInvariantProbability (T ∘ₖ S) ρTS) :
+    ρST = S ∘ₘ ρTS ∧ ρTS = T ∘ₘ ρST :=
+  MolecularDynamics.textbookInvariantDistributionSwap S T hST hTS
+
+/-- source_id: MD-7.9.1-ConjugateSymmetricCorrections · 印刷p.300–301 / PDFp.321–322
+[EXTRA] Lean证明给定真实二阶传递系数的消项，(7.30)完整作为两关系的命题定义；ST/TS指数系数识别、Hamiltonian微分及实际两组修正系数识别仍列缺口。
+[ERRATUM?] 已目视核对PDF321：所印传播子展开末项为(h²/2)L_LD，按exp的二阶展开应为(h²/8)(L_LD)²；该项作用ρβ为零，不改变后续修正关系。 -/
+def gradNormSq (U : V n → ℝ) (q : V n) : ℝ := ∑ i, gradient U q i^2
+def hessianQuadratic (U : V n → ℝ) (x : Phase n) : ℝ := ∑ i, ∑ j, x.2 i*hessianU U x.1 i j*x.2 j
+def conjugateCorrectionChange (U : V n → ℝ) (β : ℝ) (x : Phase n) : ℝ :=
+  β/8*(gradNormSq U x.1-hessianQuadratic U x)
+def conjugateCorrections (U : V n → ℝ) (β : ℝ) (fABOBA fOBABO fBAOAB fOABAO : Phase n → ℝ) : Prop :=
+  fABOBA = fOBABO-conjugateCorrectionChange U β ∧ fBAOAB = fOABAO+conjugateCorrectionChange U β
+theorem conjugateCorrection_coefficient {E : Type*} [AddCommGroup E] [Module ℝ E]
+    (L0 L1 : Module.End ℝ E) (p : ℕ → E) (q2 : E)
+    (hL : L0 (p 0) = 0) (hp : p 1 = 0)
+    (htransfer : q2 = p 2+(1/2 : ℝ) • L0 (p 1)+
+      (1/4 : ℝ) • L1 (p 0)+(1/8 : ℝ) • (L0*L0) (p 0)) :
+    q2 = p 2+(1/4 : ℝ) • L1 (p 0) := by
+  simpa [hp,hL,Module.End.mul_apply] using htransfer
+
+/-- source_id: MD-7.9.2-ReciprocalFrictionExpansion · 印刷p.301–302 / PDFp.322–323
+[EXTRA] ε=1/γ；使用真实偏导、单位质量、β>0；形式层级包含所有后续阶。各阶零均值及归一性需另加centeredCorrections，不把其当作已证。 -/
+def phaseH (U : V n → ℝ) (ρ : Phase n → ℝ) : Phase n → ℝ := aForward (fun _ ↦ 1) ρ+bForward U ρ
+def reciprocalHierarchy (U : V n → ℝ) (β : ℝ) (f : ℕ → Phase n → ℝ) : Prop :=
+  let ρ := gibbsWeight (fun _ ↦ 1) U β
+  phaseO (fun _ ↦ 1) 1 β (ρ*f 0) = 0 ∧
+  phaseH U (ρ*f 0)+phaseO (fun _ ↦ 1) 1 β (ρ*f 1) = (fun x ↦ -(-symmetricRHS false U β x)*ρ x) ∧
+  ∀ k, 0 < k → phaseH U (ρ*f k)+phaseO (fun _ ↦ 1) 1 β (ρ*f (k+1)) = 0
+
+/-- source_id: MD-7.9.2-OUKernelQualification · 印刷p.302 / PDFp.323
+[EXTRA] 修正版明确实际Gaussian L²域和光滑性；原文目标定义保留但不证明。零均值仅限制ν常数方向，不由OU核自动给出。
+[ERRATUM?] 已目视核对PDF323：前向OU生成元的核实际是Gaussian密度倍数；对ρβf共轭后，合适L²域中的f才对p为常数。原文此句缺少共轭与定义域限定。 -/
+def ouKernelPrinted (β : ℝ) : Prop :=
+  ∀ f : V n → ℝ, ouForward (fun _ ↦ 1) 1 β⁻¹ f = 0 → ∃ c : ℝ, f = fun _ ↦ c
+theorem ouKernelPrinted_corrected (U : V n → ℝ) (β : ℝ) (f : Phase n → ℝ)
+    (hβ : 0 < β) (hf : ContDiff ℝ ⊤ f)
+    (hL2 : ∀ q, MemLp (fun p ↦ f (q,p)) 2 (momentumGibbs (fun _ ↦ 1) β))
+    (hzero : phaseO (fun _ ↦ 1) 1 β (gibbsWeight (fun _ ↦ 1) U β*f) = 0) :
+    ∃ ν : V n → ℝ, ∀ q p, f (q,p) = ν q := by
+  sorry
+
+/-- source_id: MD-7.9.2-OUHermiteIdentities · 印刷p.302 / PDFp.323
+[EXTRA] OU仅对p微分，μ(q)不需对p额外正则；U,ν光滑且β>0。全部三个Hermite式和两个合成恒等式都在Lean结论中。 -/
+def laplacian (U : V n → ℝ) (q : V n) : ℝ := ∑ i, hessianU U q i i
+def pGradLaplacian (U : V n → ℝ) (x : Phase n) : ℝ := ∑ i, x.2 i*gradient (laplacian U) x.1 i
+def hermitePrimitive (U : V n → ℝ) (β : ℝ) (x : Phase n) : ℝ :=
+  6*hessianGrad U x-(1/3)*cubicThird U x-2/β*pGradLaplacian U x
+theorem ouHermiteIdentities (U ν μ : V n → ℝ) (β : ℝ) (hβ : 0 < β)
+    (hU : ContDiff ℝ ⊤ U) (hν : ContDiff ℝ ⊤ ν) :
+    let ρ := gibbsWeight (fun _ ↦ 1) U β
+    let O := phaseO (fun _ ↦ 1) 1 β
+    O (ρ*cubicThird U) = (fun x ↦ -3*ρ x*cubicThird U x+6*ρ x/β*pGradLaplacian U x) ∧
+    O (ρ*pGradLaplacian U) = -(ρ*pGradLaplacian U) ∧
+    O (ρ*hessianGrad U) = -(ρ*hessianGrad U) ∧
+    (fun x ↦ -symmetricRHS false U β x*ρ x) = (fun x ↦ β/24*O (hermitePrimitive U β*ρ) x) ∧
+    phaseH U (fun x ↦ ρ x*ν x.1) =
+      O (fun x ↦ ((∑ i, x.2 i*gradient ν x.1 i)+μ x.1)*ρ x) := by
+  sorry
+
+/-- source_id: MD-7.9.2-FirstReciprocalCorrection · 印刷p.303–304 / PDFp.324–325
+[EXTRA] 给出全部f2,1公式并陈述其一阶PDE；二阶可解相容性需OU积分通量消失及实际域条件，尚未证明。
+[ERRATUM?] 已目视核对PDF324–325：π̄定义带联合ρβ权，后续M公式却使用归一条件动量平均并隐含ρβ共轭。本文区分原文加权积分与修正的条件Gaussian平均，避免遗漏位置密度因子。 -/
+def firstReciprocalCorrection (U ν μ : V n → ℝ) (β : ℝ) (x : Phase n) : ℝ :=
+  -β/24*hermitePrimitive U β x-(∑ i, x.2 i*gradient ν x.1 i)-μ x.1
+def momentumAverage (β : ℝ) (f : Phase n → ℝ) (q : V n) : ℝ :=
+  ∫ p, f (q,p) ∂momentumGibbs (fun _ ↦ 1) β
+def momentumAveragePrinted (U : V n → ℝ) (β : ℝ) (f : Phase n → ℝ) (q : V n) : ℝ :=
+  ∫ p, f (q,p)*gibbsWeight (fun _ ↦ 1) U β (q,p)
+theorem firstReciprocalCorrection_pde (U ν μ : V n → ℝ) (β : ℝ) (hβ : 0 < β)
+    (hU : ContDiff ℝ ⊤ U) (hν : ContDiff ℝ ⊤ ν) :
+    let ρ := gibbsWeight (fun _ ↦ 1) U β
+    phaseO (fun _ ↦ 1) 1 β (ρ*firstReciprocalCorrection U ν μ β)+
+      phaseH U (fun x ↦ ρ x*ν x.1) = (fun x ↦ symmetricRHS false U β x*ρ x) := by
+  sorry
+
+/-- source_id: MD-7.9.2-OverdampedSolvabilityOperators · 印刷p.304 / PDFp.325
+[EXTRA] M,N记录所印右端微分表达式；π̄与前向算符须用条件Gaussian平均和Gibbs共轭修正后才能证明左侧识别，详见前条。
+[EXTRA] 只证明ν候选的代数改写；Mν相容方程、核常数唯一性、零均值须积分分部与定义域桥，不把候选定义当成解已证。 -/
+def overdampedM (U ψ : V n → ℝ) (β : ℝ) (q : V n) : ℝ :=
+  β⁻¹*laplacian ψ q-(∑ i, gradient U q i*gradient ψ q i)
+def overdampedN (U ψ : V n → ℝ) (β : ℝ) (q : V n) : ℝ :=
+  3/β*overdampedM U (laplacian ψ) β q
+def highFrictionOABAO (U : V n → ℝ) (β : ℝ) (q : V n) : ℝ :=
+  (laplacian U q-β*gradNormSq U q)/8
+theorem overdampedSolvability_choice (U : V n → ℝ) (β : ℝ) (hβ : β ≠ 0) :
+    ∀ q, highFrictionOABAO U β q =
+      -β/8*(gradNormSq U q-β⁻¹*laplacian U q) := by
+  intro q
+  dsimp [highFrictionOABAO]
+  field_simp
+  <;> ring
+
+/-- source_id: MD-7.9.2-HighFrictionCorrectionTable · 印刷p.304–305 / PDFp.325–326
+[EXTRA] 算法编号OABAO,OBABO,ABOBA,BAOAB；保留全部四个候选、c选择和双渐近余项命题。
+[EXTRA] 候选的代数共轭关系可单独证明；其为实际平稳误差系数、零均值及严格双渐近界均未获证明。 -/
+def highFrictionCorrection (s : Fin 4) (U : V n → ℝ) (β c : ℝ) (x : Phase n) : ℝ :=
+  if s = 0 then highFrictionOABAO U β x.1
+  else if s = 1 then (β*gradNormSq U x.1-2*laplacian U x.1+c)/8
+  else if s = 2 then (β*hessianQuadratic U x-2*laplacian U x.1+c)/8
+  else (laplacian U x.1-β*hessianQuadratic U x)/8
+def doublyAsymptoticAverage (A : ℝ → ℝ → ℝ) (exact correction : ℝ) : Prop :=
+  Asymptotics.IsBigO positivePairLimit
+    (fun z ↦ A z.1 z.2-exact-z.2^2*correction) (fun z ↦ z.1*z.2^2+z.2^4)
+theorem highFrictionCorrection_conjugacy (U : V n → ℝ) (β c : ℝ) :
+    conjugateCorrections U β (highFrictionCorrection 2 U β c) (highFrictionCorrection 1 U β c)
+      (highFrictionCorrection 3 U β c) (highFrictionCorrection 0 U β c) := by
+  constructor <;> funext x <;>
+    norm_num [conjugateCorrections,highFrictionCorrection,highFrictionOABAO,conjugateCorrectionChange]
+    <;> ring
+
+/-- source_id: MD-7.9.3-BAOABMarginalCancellation · 印刷p.305 / PDFp.326
+[EXTRA] 归一条件Gaussian平均为零即推出原文带位置权的平均为零；两个零积分结论均为实际测度。双渐近余项的有效性须另外证明，不由形式消项自动给出。 -/
+theorem baoabMarginalCancellation (U : V n → ℝ) (β : ℝ) (q : V n) (hβ : 0 < β) :
+    momentumAverage β (highFrictionCorrection 3 U β 0) q = 0 := by
+  sorry
+theorem baoabConfigurationalCancellation (U φ : V n → ℝ) (β : ℝ) (hβ : 0 < β)
+    (hint : Integrable (fun x ↦ φ x.1*highFrictionCorrection 3 U β 0 x)
+      (productGibbs (fun _ ↦ 1) U β)) :
+    (∫ x, φ x.1*highFrictionCorrection 3 U β 0 x ∂productGibbs (fun _ ↦ 1) U β) = 0 := by
+  sorry
+
+/-- source_id: MD-7.9.3-SuperconvergenceScope · 印刷p.306 / PDFp.327
+[EXTRA] 显式归一Gibbs构型边界通量消失和积分可积条件；此处只给OABAO积分消项。
+[EXTRA] 四阶推论仅在已有有效h⁴余项界下成立，不能从固定有限γ的h²/γ余项直接推出；弱/强有限时间阶数不因此提高。 -/
+theorem oabaoPositionCancellation (U : V n → ℝ) (β : ℝ) (hβ : 0 < β)
+    (hU : ContDiff ℝ ⊤ U)
+    (hweight : Integrable (fun q ↦ Real.exp (-β*U q)) volume)
+    (hgrad : ∀ i, Integrable (fun q ↦ (hessianU U q i i-β*gradient U q i^2)*Real.exp (-β*U q)) volume)
+    (hboundary : ∀ q i, Filter.Tendsto
+      (fun r : ℝ ↦ gradient U (Function.update q i r) i*Real.exp (-β*U (Function.update q i r))) Filter.atTop (𝓝 0) ∧
+      Filter.Tendsto (fun r : ℝ ↦ gradient U (Function.update q i r) i*Real.exp (-β*U (Function.update q i r))) Filter.atBot (𝓝 0)) :
+    (∫ q, highFrictionOABAO U β q ∂positionGibbs U β) = 0 := by
+  sorry
+theorem superconvergence_fromBound (A : ℝ → ℝ) (exact : ℝ)
+    (hA : Asymptotics.IsBigO (𝓝 (0 : ℝ)) (fun h ↦ A h-exact-h^2*(0 : ℝ)) (fun h ↦ h^4)) :
+    Asymptotics.IsBigO (𝓝 (0 : ℝ)) (fun h ↦ A h-exact) (fun h ↦ h^4) := by
+  simpa using hA
+
 end MD.Ch07

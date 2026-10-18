@@ -1,0 +1,136 @@
+{
+  "batch": "BATCH14",
+  "subtask": "BATCH14c",
+  "source_ids": [
+    "MD-7.9.1-SymmetricRHS"
+  ],
+  "input_sha256": {
+    "Blueprint/Ch07.lean": "de3b0d06f5c52195cef1f387d3accff3b77dc46c95969466a8acf032276018e6",
+    "blueprint/ch07/ch07_source.json": "4ab0addff8ecca8f9d48c6ff03f24f3931e3251f0a67180827f908c77eebfcff",
+    "BATCH14c_PAGES.pdf": "09453478f8aab75ec4b835e86a751c60db2df1808c5d53c6b1fac9083bc26a8c"
+  },
+  "page_mapping": [
+    {
+      "attachment_page": 1,
+      "original_pdf_page": 320,
+      "printed_page": 299
+    }
+  ],
+  "definition_excerpts": [
+    {
+      "full_name": "MD.Ch07.V",
+      "kind": "abbrev",
+      "path": "Blueprint/Ch07.lean",
+      "line": 172,
+      "code_sha256": "7ab0ad90462b274b03f5b929b5f09417c0b397b6cb908fa6e7bd56677a314027"
+    },
+    {
+      "full_name": "MD.Ch07.Phase",
+      "kind": "abbrev",
+      "path": "Blueprint/Ch07.lean",
+      "line": 173,
+      "code_sha256": "ef1520e3b22ac1c99a30a989deafe8d3da44a9f2a3e5b6c2cd3220218b88513e"
+    },
+    {
+      "full_name": "MD.Ch07.coordDerivative",
+      "kind": "def",
+      "path": "Blueprint/Ch07.lean",
+      "line": 221,
+      "code_sha256": "e782d789a13f5db6817e2c995f141805e81ac75720125b846f8ee14ba3833a4b"
+    },
+    {
+      "full_name": "MD.Ch07.gradient",
+      "kind": "def",
+      "path": "Blueprint/Ch07.lean",
+      "line": 250,
+      "code_sha256": "540c6af25c09d3a58da531bc32056ff1a1c070facc58d34c96b6653d781fba6f"
+    },
+    {
+      "full_name": "MD.Ch07.positionGibbs",
+      "kind": "def",
+      "path": "Blueprint/Ch07.lean",
+      "line": 991,
+      "code_sha256": "82bb55e66a80fed509916dd4534bcc354cc9bd8df28c6b30af7e5a2e29632202"
+    },
+    {
+      "full_name": "MD.Ch07.momentumGibbs",
+      "kind": "def",
+      "path": "Blueprint/Ch07.lean",
+      "line": 993,
+      "code_sha256": "37890e88a0521fb73fdcd58c2c02631a375383f9542a51cd2521500fb8692207"
+    },
+    {
+      "full_name": "MD.Ch07.productGibbs",
+      "kind": "def",
+      "path": "Blueprint/Ch07.lean",
+      "line": 994,
+      "code_sha256": "a6ad2d129b80649e4904fb1e07f2591a5e7db814b84c01b8c47a02537a602ae8"
+    },
+    {
+      "full_name": "MD.Ch07.hessianU",
+      "kind": "def",
+      "path": "Blueprint/Ch07.lean",
+      "line": 1074,
+      "code_sha256": "8c2605253d3d70a39369a2c08eb2c758793a9cc41934f1f97c967d5eb2c776ee"
+    },
+    {
+      "full_name": "MD.Ch07.thirdU",
+      "kind": "def",
+      "path": "Blueprint/Ch07.lean",
+      "line": 1075,
+      "code_sha256": "a26772b3051be729532f532b20e2d6eccac37ea5c8a368d8bcb5f58c0e62f71f"
+    },
+    {
+      "full_name": "MD.Ch07.hessianGrad",
+      "kind": "def",
+      "path": "Blueprint/Ch07.lean",
+      "line": 1076,
+      "code_sha256": "adcfa820f24c6af34da55c81e5ff046d273c228a6e8485f8fdc896a8c388cea6"
+    },
+    {
+      "full_name": "MD.Ch07.cubicThird",
+      "kind": "def",
+      "path": "Blueprint/Ch07.lean",
+      "line": 1077,
+      "code_sha256": "0c71c49f77ab81e212802875d1cf11e3e062490ad6151e821c9998e35b46c165"
+    },
+    {
+      "full_name": "MD.Ch07.symmetricRHS",
+      "kind": "def",
+      "path": "Blueprint/Ch07.lean",
+      "line": 1093,
+      "code_sha256": "3a337496e8c4068618cbc066b79e249b37c993aa56cd576d0ee1875abd17b0b5"
+    },
+    {
+      "full_name": "MD.Ch07.symmetricRHS_odd",
+      "kind": "theorem",
+      "path": "Blueprint/Ch07.lean",
+      "line": 1095,
+      "code_sha256": "f14681a9b92ffa1f18dda9ca3ac9970cc665a1f1f3b47cf752f2d2e8f4dd5f25"
+    },
+    {
+      "full_name": "MD.Ch07.symmetricRHS_zeroMean",
+      "kind": "theorem",
+      "path": "Blueprint/Ch07.lean",
+      "line": 1102,
+      "code_sha256": "6762e7aa94f6dfa6c0716e021687651a91de1968c2b9680ee63aa156104fe01c"
+    }
+  ],
+  "validation": {
+    "project_constant_closure": "PASS",
+    "missing_project_definitions": [],
+    "full_page_render_equality_dpi": 72,
+    "website_submitted": false
+  },
+  "files": {
+    "PASTE.txt": {
+      "bytes": 9448,
+      "sha256": "ece7935ce6f5a2180c3dd677dc3d6220be78821af6603f832a8f0ecc7cca0b03"
+    },
+    "BATCH14c_PAGES.pdf": {
+      "bytes": 84445,
+      "sha256": "09453478f8aab75ec4b835e86a751c60db2df1808c5d53c6b1fac9083bc26a8c"
+    }
+  },
+  "total_task_bytes": 98192
+}

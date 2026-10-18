@@ -190,7 +190,7 @@
     "decision": "缺大型理论时直接记录缺项；否则最多三条短路线。"
   },
   "MD-7.8-FirstOrderOperator": {
-    "reason": null,
+    "reason": "直接系数归约的短路线超过时间盒；保留未证。",
     "category": "时间盒止",
     "routes": [
       {
@@ -221,6 +221,54 @@
   },
   "MD-7.8.2-BiasedDoubleWellExact": {
     "reason": "需要四次势Gibbs权可积性、积分分部与Gaussian矩的桥；不建设通用弱误差理论。",
+    "category": "缺大型理论",
+    "routes": [],
+    "decision": "缺大型理论时直接记录缺项；否则最多三条短路线。"
+  },
+  "MD-7.9.1-OYZYOInhomogeneity": {
+    "reason": "需展开两个含O和H的嵌套交换子在共同核上的相消短桥；保留未证。",
+    "category": "缺大型理论",
+    "routes": [],
+    "decision": "缺大型理论时直接记录缺项；否则最多三条短路线。"
+  },
+  "MD-7.9.1-TripleCommutatorPrinted": {
+    "reason": "需要多维三阶Gibbs微分与交换子展开；不建设通用算符理论。",
+    "category": "原书疑误不证",
+    "routes": [],
+    "decision": "缺大型理论时直接记录缺项；否则最多三条短路线。"
+  },
+  "MD-7.9.1-SymmetricRHS": {
+    "reason": "需Gaussian乘积测度在p↦-p下不变与可积奇函数积分为零的短桥；不建设Fredholm理论。",
+    "category": "缺大型理论",
+    "routes": [],
+    "decision": "缺大型理论时直接记录缺项；否则最多三条短路线。"
+  },
+  "MD-7.9.2-OUKernelQualification": {
+    "reason": "需要OU生成元加权Dirichlet型、域闭包及核刻画理论，本轮不建设。",
+    "category": "原书疑误不证",
+    "routes": [],
+    "decision": "缺大型理论时直接记录缺项；否则最多三条短路线。"
+  },
+  "MD-7.9.2-OUHermiteIdentities": {
+    "reason": "需三阶张量的Gaussian共轭微分与混合导数交换；保留未证，不发展一般Hermite谱理论。",
+    "category": "缺大型理论",
+    "routes": [],
+    "decision": "缺大型理论时直接记录缺项；否则最多三条短路线。"
+  },
+  "MD-7.9.2-FirstReciprocalCorrection": {
+    "reason": "需要OU线性、Hermite恒等式应用和边界通量桥接；不建设Fredholm替代理论。",
+    "category": "原书疑误不证",
+    "routes": [],
+    "decision": "缺大型理论时直接记录缺项；否则最多三条短路线。"
+  },
+  "MD-7.9.3-BAOABMarginalCancellation": {
+    "reason": "需Gaussian协方差矩阵、Hessian缩并与乘积Fubini桥；不发展Talay–Tubaro余项理论。",
+    "category": "缺大型理论",
+    "routes": [],
+    "decision": "缺大型理论时直接记录缺项；否则最多三条短路线。"
+  },
+  "MD-7.9.3-SuperconvergenceScope": {
+    "reason": "需要逐坐标积分分部及Fubini边界桥；不建设一般无限时间弱展开。",
     "category": "缺大型理论",
     "routes": [],
     "decision": "缺大型理论时直接记录缺项；否则最多三条短路线。"

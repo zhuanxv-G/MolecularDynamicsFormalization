@@ -6,28 +6,42 @@
       "source_id": "MD-7.8.1-FirstCorrectionTablePrinted",
       "path": "blueprint/ch07/mathcopilot_tasks/compact/BATCH13/a",
       "bytes": 101905,
-      "manifest_sha256": "542bb7d2cab7e55c0c1cfcee4a9b013916f6829b3f9cfd82eecc10ae634fea0e"
+      "manifest_sha256": "b28f535024b824c857a16675d4c01eae64077f17fb4d0acf4a125ccd3205ede5"
     },
     {
       "subtask": "BATCH13b",
       "source_id": "MD-7.8.1-PositionMomentumCorrections",
       "path": "blueprint/ch07/mathcopilot_tasks/compact/BATCH13/b",
       "bytes": 98856,
-      "manifest_sha256": "44a29d40fc4a6871b46f683b8484f964257fc9d943eb542386d5b1b494a08ad5"
+      "manifest_sha256": "1b8e8aba77716ecccb2c53fc2f5ed71eb1ea61d19fbbc92034733b5c8ffbb3bb"
     },
     {
       "subtask": "BATCH13c",
       "source_id": "MD-7.8.1-OverdampedFirstOrderCaution",
       "path": "blueprint/ch07/mathcopilot_tasks/compact/BATCH13/c",
       "bytes": 89999,
-      "manifest_sha256": "e2a37102e54838bac2fdde493aec5691df9f2be0bbc4e609e31e7cef0f91aca4"
+      "manifest_sha256": "7a85c40e190f9d6600caa04b8e5f5f879b85d7c32e12e373f2e18cbaa0d1c420"
     },
     {
       "subtask": "BATCH13d",
       "source_id": "MD-7.8.2-BiasedDoubleWellExact",
       "path": "blueprint/ch07/mathcopilot_tasks/compact/BATCH13/d",
       "bytes": 180448,
-      "manifest_sha256": "01cc63526a87ffbd04a9f34cabf32cc679c107828482a684463438391a01a834"
+      "manifest_sha256": "5fd573b277d0e51165ca6dca96a3da89598daa02b47c74e83b0f35255df7bed9"
+    },
+    {
+      "subtask": "BATCH13e",
+      "source_id": "MD-7.9-Proposition71",
+      "path": "blueprint/ch07/mathcopilot_tasks/compact/BATCH13/e",
+      "bytes": 148765,
+      "manifest_sha256": "39171e51cd834b6a98515bbba841ec99484fff38637d84de605bf73825ee9dfc"
+    },
+    {
+      "subtask": "BATCH13f",
+      "source_id": "MD-7.9-EvenDensityPerturbation",
+      "path": "blueprint/ch07/mathcopilot_tasks/compact/BATCH13/f",
+      "bytes": 81122,
+      "manifest_sha256": "cdfe038ab9c4d8a773b9c01706d3a94acccf26c30bc5493640025a3dcc9998bf"
     }
   ]
 }

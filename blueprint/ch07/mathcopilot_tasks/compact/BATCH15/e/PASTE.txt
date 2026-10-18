@@ -1,0 +1,256 @@
+以附件/PASTE 为准，忽略 /workspace 旧文件；Mathlib 定义按标准含义采信。
+本任务只审本条：原文转录、对象资格、定义体、量词、全部结论及[EXTRA]是否一致；Lean编译不代替语义审阅。
+Lean/Mathlib均4.34.0。原页PDF映射：[325, 326]；印刷页=[304, 305].
+input_sha256请原样回显：
+{
+  "Blueprint/Ch07.lean": "de3b0d06f5c52195cef1f387d3accff3b77dc46c95969466a8acf032276018e6",
+  "blueprint/ch07/ch07_source.json": "4ab0addff8ecca8f9d48c6ff03f24f3931e3251f0a67180827f908c77eebfcff",
+  "BATCH15e_PAGES.pdf": "883f6dd8ffd578a7407c709c75d99b416d5013ccc869fa9b9744388a63efdc23"
+}
+用代码将JSON对象(batch,input_sha256,items)写到 /workspace/.mathcopilot/reviews/ch07/BATCH15e_review.json；items仅含本source_id。
+items字段：source_id、verdict(PASS/FAIL/NEEDS_HUMAN)、transcription、semantic_review、counterexample、suggested_fix、printed_version、corrected_version。逐版区分原文疑误和修正版结论；缺材料必须具体指出，不猜测。写后json.loads自检，最后仅回复路径及统计。
+
+## 原文JSON
+```json
+{
+  "source_id": "MD-7.9.2-HighFrictionCorrectionTable",
+  "kind": "unnumbered_claim",
+  "label": null,
+  "section": "7.9.2",
+  "printed_page": "304–305",
+  "pdf_page": "325–326",
+  "statement_latex": "\\[f_{2,0,[OABAO]}=\\tfrac18(\\Delta_qU-\\beta|\\nabla U|^2),\\]\n\\[f_{2,0,[OBABO]}=\\tfrac18(\\beta|\\nabla U|^2-2\\Delta_qU+c),\\]\nwhere $c=\\langle\\Delta U\\rangle$ is a constant chosen to ensure zero average.\n\\[f_{2,0,[ABOBA]}=\\tfrac18(\\beta p^T\\nabla^2U(q)p-2\\Delta_qU+c),\\]\n\\[f_{2,0,[BAOAB]}=\\tfrac18(\\Delta U-\\beta p^T\\nabla^2U(q)p).\\]\n\\[\\langle\\vartheta\\rangle_h=\\langle\\vartheta\\rangle+h^2\\langle\\vartheta f_{2,0}\\rangle+O(\\epsilon h^2+h^4).\\]",
+  "proof_latex": null,
+  "proof_note": "原书未给独立完整证明。",
+  "context_notation": [],
+  "extra_assumptions": [
+    "算法编号OABAO,OBABO,ABOBA,BAOAB；保留全部四个候选、c选择和双渐近余项命题。",
+    "候选的代数共轭关系可单独证明；其为实际平稳误差系数、零均值及严格双渐近界均未获证明。"
+  ],
+  "issues": [],
+  "statement_scope": "本条逐字引用的全部数学对象与公式；未纳入的上下文另列。",
+  "lean_decl": "MD.Ch07.highFrictionCorrection",
+  "lean_declarations": [
+    "MD.Ch07.highFrictionCorrection",
+    "MD.Ch07.doublyAsymptoticAverage",
+    "MD.Ch07.highFrictionCorrection_conjugacy"
+  ],
+  "source_page_verification": "见source_page_checks.json；必须已目视核对本条原页。",
+  "repair_log": [],
+  "documented_priors": []
+}
+```
+
+## 完整本条Lean
+```lean
+def highFrictionCorrection (s : Fin 4) (U : V n → ℝ) (β c : ℝ) (x : Phase n) : ℝ :=
+  if s = 0 then highFrictionOABAO U β x.1
+  else if s = 1 then (β*gradNormSq U x.1-2*laplacian U x.1+c)/8
+  else if s = 2 then (β*hessianQuadratic U x-2*laplacian U x.1+c)/8
+  else (laplacian U x.1-β*hessianQuadratic U x)/8
+def doublyAsymptoticAverage (A : ℝ → ℝ → ℝ) (exact correction : ℝ) : Prop :=
+  Asymptotics.IsBigO positivePairLimit
+    (fun z ↦ A z.1 z.2-exact-z.2^2*correction) (fun z ↦ z.1*z.2^2+z.2^4)
+theorem highFrictionCorrection_conjugacy (U : V n → ℝ) (β c : ℝ) :
+    conjugateCorrections U β (highFrictionCorrection 2 U β c) (highFrictionCorrection 1 U β c)
+      (highFrictionCorrection 3 U β c) (highFrictionCorrection 0 U β c) := by
+  constructor <;> funext x <;>
+    norm_num [conjugateCorrections,highFrictionCorrection,highFrictionOABAO,conjugateCorrectionChange]
+    <;> ring
+```
+
+## 项目依赖定义体及选择规格
+以下def/abbrev/structure完整保留；定理列出完整类型，Mathlib标准定义无需摘录。
+
+### MD.Ch07.V (Blueprint/Ch07.lean:172)
+原文件上下文：
+```lean
+open Set Filter MeasureTheory ProbabilityTheory MolecularDynamics
+open scoped BigOperators Topology ContDiff ENNReal NNReal
+variable {Ω : Type*} [MeasurableSpace Ω]
+variable {n : ℕ}
+```
+```lean
+abbrev V (n : ℕ) := Fin n → ℝ
+```
+
+### MD.Ch07.Phase (Blueprint/Ch07.lean:173)
+原文件上下文：
+```lean
+open Set Filter MeasureTheory ProbabilityTheory MolecularDynamics
+open scoped BigOperators Topology ContDiff ENNReal NNReal
+variable {Ω : Type*} [MeasurableSpace Ω]
+variable {n : ℕ}
+```
+```lean
+abbrev Phase (n : ℕ) := V n × V n
+```
+
+### MD.Ch07.coordDerivative (Blueprint/Ch07.lean:221)
+原文件上下文：
+```lean
+open Set Filter MeasureTheory ProbabilityTheory MolecularDynamics
+open scoped BigOperators Topology ContDiff ENNReal NNReal
+variable {Ω : Type*} [MeasurableSpace Ω]
+variable {n : ℕ}
+```
+```lean
+def coordDerivative (f : V n → ℝ) (x : V n) (i : Fin n) : ℝ :=
+  deriv (fun z ↦ f (Function.update x i z)) (x i)
+```
+
+### MD.Ch07.gradient (Blueprint/Ch07.lean:250)
+原文件上下文：
+```lean
+open Set Filter MeasureTheory ProbabilityTheory MolecularDynamics
+open scoped BigOperators Topology ContDiff ENNReal NNReal
+variable {Ω : Type*} [MeasurableSpace Ω]
+variable {n : ℕ}
+```
+```lean
+def gradient (U : V n → ℝ) (q : V n) : V n := fun i ↦ coordDerivative U q i
+```
+
+### MD.Ch07.positivePairLimit (Blueprint/Ch07.lean:635)
+原文件上下文：
+```lean
+open Set Filter MeasureTheory ProbabilityTheory MolecularDynamics
+open scoped BigOperators Topology ContDiff ENNReal NNReal
+variable {Ω : Type*} [MeasurableSpace Ω]
+variable {n : ℕ}
+```
+```lean
+def positivePairLimit : Filter (ℝ × ℝ) :=
+  𝓝[Set.Ioi (0 : ℝ) ×ˢ Set.Ioi (0 : ℝ)] (0,0)
+```
+
+### MD.Ch07.hessianU (Blueprint/Ch07.lean:1074)
+原文件上下文：
+```lean
+open Set Filter MeasureTheory ProbabilityTheory MolecularDynamics
+open scoped BigOperators Topology ContDiff ENNReal NNReal
+variable {Ω : Type*} [MeasurableSpace Ω]
+variable {n : ℕ}
+```
+```lean
+def hessianU (U : V n → ℝ) (q : V n) (i j : Fin n) : ℝ := coordDerivative (fun y ↦ gradient U y j) q i
+```
+
+### MD.Ch07.gradNormSq (Blueprint/Ch07.lean:1119)
+原文件上下文：
+```lean
+open Set Filter MeasureTheory ProbabilityTheory MolecularDynamics
+open scoped BigOperators Topology ContDiff ENNReal NNReal
+variable {Ω : Type*} [MeasurableSpace Ω]
+variable {n : ℕ}
+```
+```lean
+def gradNormSq (U : V n → ℝ) (q : V n) : ℝ := ∑ i, gradient U q i^2
+```
+
+### MD.Ch07.hessianQuadratic (Blueprint/Ch07.lean:1120)
+原文件上下文：
+```lean
+open Set Filter MeasureTheory ProbabilityTheory MolecularDynamics
+open scoped BigOperators Topology ContDiff ENNReal NNReal
+variable {Ω : Type*} [MeasurableSpace Ω]
+variable {n : ℕ}
+```
+```lean
+def hessianQuadratic (U : V n → ℝ) (x : Phase n) : ℝ := ∑ i, ∑ j, x.2 i*hessianU U x.1 i j*x.2 j
+```
+
+### MD.Ch07.conjugateCorrectionChange (Blueprint/Ch07.lean:1121)
+原文件上下文：
+```lean
+open Set Filter MeasureTheory ProbabilityTheory MolecularDynamics
+open scoped BigOperators Topology ContDiff ENNReal NNReal
+variable {Ω : Type*} [MeasurableSpace Ω]
+variable {n : ℕ}
+```
+```lean
+def conjugateCorrectionChange (U : V n → ℝ) (β : ℝ) (x : Phase n) : ℝ :=
+  β/8*(gradNormSq U x.1-hessianQuadratic U x)
+```
+
+### MD.Ch07.conjugateCorrections (Blueprint/Ch07.lean:1123)
+原文件上下文：
+```lean
+open Set Filter MeasureTheory ProbabilityTheory MolecularDynamics
+open scoped BigOperators Topology ContDiff ENNReal NNReal
+variable {Ω : Type*} [MeasurableSpace Ω]
+variable {n : ℕ}
+```
+```lean
+def conjugateCorrections (U : V n → ℝ) (β : ℝ) (fABOBA fOBABO fBAOAB fOABAO : Phase n → ℝ) : Prop :=
+  fABOBA = fOBABO-conjugateCorrectionChange U β ∧ fBAOAB = fOABAO+conjugateCorrectionChange U β
+```
+
+### MD.Ch07.laplacian (Blueprint/Ch07.lean:1156)
+原文件上下文：
+```lean
+open Set Filter MeasureTheory ProbabilityTheory MolecularDynamics
+open scoped BigOperators Topology ContDiff ENNReal NNReal
+variable {Ω : Type*} [MeasurableSpace Ω]
+variable {n : ℕ}
+```
+```lean
+def laplacian (U : V n → ℝ) (q : V n) : ℝ := ∑ i, hessianU U q i i
+```
+
+### MD.Ch07.highFrictionOABAO (Blueprint/Ch07.lean:1195)
+原文件上下文：
+```lean
+open Set Filter MeasureTheory ProbabilityTheory MolecularDynamics
+open scoped BigOperators Topology ContDiff ENNReal NNReal
+variable {Ω : Type*} [MeasurableSpace Ω]
+variable {n : ℕ}
+```
+```lean
+def highFrictionOABAO (U : V n → ℝ) (β : ℝ) (q : V n) : ℝ :=
+  (laplacian U q-β*gradNormSq U q)/8
+```
+
+### MD.Ch07.highFrictionCorrection (Blueprint/Ch07.lean:1208)
+原文件上下文：
+```lean
+open Set Filter MeasureTheory ProbabilityTheory MolecularDynamics
+open scoped BigOperators Topology ContDiff ENNReal NNReal
+variable {Ω : Type*} [MeasurableSpace Ω]
+variable {n : ℕ}
+```
+```lean
+def highFrictionCorrection (s : Fin 4) (U : V n → ℝ) (β c : ℝ) (x : Phase n) : ℝ :=
+  if s = 0 then highFrictionOABAO U β x.1
+  else if s = 1 then (β*gradNormSq U x.1-2*laplacian U x.1+c)/8
+  else if s = 2 then (β*hessianQuadratic U x-2*laplacian U x.1+c)/8
+  else (laplacian U x.1-β*hessianQuadratic U x)/8
+```
+
+### MD.Ch07.doublyAsymptoticAverage (Blueprint/Ch07.lean:1213)
+原文件上下文：
+```lean
+open Set Filter MeasureTheory ProbabilityTheory MolecularDynamics
+open scoped BigOperators Topology ContDiff ENNReal NNReal
+variable {Ω : Type*} [MeasurableSpace Ω]
+variable {n : ℕ}
+```
+```lean
+def doublyAsymptoticAverage (A : ℝ → ℝ → ℝ) (exact correction : ℝ) : Prop :=
+  Asymptotics.IsBigO positivePairLimit
+    (fun z ↦ A z.1 z.2-exact-z.2^2*correction) (fun z ↦ z.1*z.2^2+z.2^4)
+```
+
+### MD.Ch07.highFrictionCorrection_conjugacy (Blueprint/Ch07.lean:1216)
+原文件上下文：
+```lean
+open Set Filter MeasureTheory ProbabilityTheory MolecularDynamics
+open scoped BigOperators Topology ContDiff ENNReal NNReal
+variable {Ω : Type*} [MeasurableSpace Ω]
+variable {n : ℕ}
+```
+```lean
+theorem highFrictionCorrection_conjugacy (U : V n → ℝ) (β c : ℝ) :
+    conjugateCorrections U β (highFrictionCorrection 2 U β c) (highFrictionCorrection 1 U β c)
+      (highFrictionCorrection 3 U β c) (highFrictionCorrection 0 U β c)
+```

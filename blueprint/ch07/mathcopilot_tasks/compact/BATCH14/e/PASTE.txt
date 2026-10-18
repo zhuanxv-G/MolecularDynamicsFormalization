@@ -1,0 +1,203 @@
+以附件/PASTE 为准，忽略 /workspace 旧文件；Mathlib 定义按标准含义采信。
+本任务只审本条：原文转录、对象资格、定义体、量词、全部结论及[EXTRA]是否一致；Lean编译不代替语义审阅。
+Lean/Mathlib均4.34.0。原页PDF映射：[321, 322]；印刷页=[300, 301].
+input_sha256请原样回显：
+{
+  "Blueprint/Ch07.lean": "de3b0d06f5c52195cef1f387d3accff3b77dc46c95969466a8acf032276018e6",
+  "blueprint/ch07/ch07_source.json": "4ab0addff8ecca8f9d48c6ff03f24f3931e3251f0a67180827f908c77eebfcff",
+  "BATCH14e_PAGES.pdf": "65371ca6f2a82c7d57ff6d3cdabbe8f4f6fc2f1d4fb2d8bbcf99bc0825c7800c"
+}
+用代码将JSON对象(batch,input_sha256,items)写到 /workspace/.mathcopilot/reviews/ch07/BATCH14e_review.json；items仅含本source_id。
+items字段：source_id、verdict(PASS/FAIL/NEEDS_HUMAN)、transcription、semantic_review、counterexample、suggested_fix、printed_version、corrected_version。逐版区分原文疑误和修正版结论；缺材料必须具体指出，不猜测。写后json.loads自检，最后仅回复路径及统计。
+
+## 原文JSON
+```json
+{
+  "source_id": "MD-7.9.1-ConjugateSymmetricCorrections",
+  "kind": "unnumbered_claim",
+  "label": "(7.30a)–(7.30b)",
+  "section": "7.9.1",
+  "printed_page": "300–301",
+  "pdf_page": "321–322",
+  "statement_latex": "\\[\\widehat\\rho_{[ZYOYZ]}=\\exp((h/2)\\mathcal L_Z^\\dagger)\\exp((h/2)\\mathcal L_Y^\\dagger)\\exp((h/2)\\mathcal L_O^\\dagger)\\widehat\\rho_{[OYZYO]}.\\]\n\\[f_{2,[ZYOYZ]}\\rho_\\beta=f_{2,[OYZYO]}\\rho_\\beta+\\tfrac14\\mathcal L_{1,[OYZ]}^\\dagger\\rho_\\beta.\\]\n\\[\\mathcal L_{1,[OAB]}^\\dagger\\rho_\\beta=\\tfrac12\\mathcal L_H^\\dagger(g\\rho_\\beta),\\qquad\n\\mathcal L_{1,[OBA]}^\\dagger\\rho_\\beta=-\\tfrac12\\mathcal L_H^\\dagger(g\\rho_\\beta),\\]\n\\[\\mathcal L_H^\\dagger(g\\rho_\\beta)=\\beta(|\\nabla U|^2-p^T\\nabla^2Up)\\rho_\\beta,\\]\n\\[f_{2,[ABOBA]}=f_{2,[OBABO]}-\\tfrac\\beta8(|\\nabla U|^2-p^T\\nabla^2Up),\\tag{7.30a}\\]\n\\[f_{2,[BAOAB]}=f_{2,[OABAO]}+\\tfrac\\beta8(|\\nabla U|^2-p^T\\nabla^2Up).\\tag{7.30b}\\]",
+  "proof_latex": null,
+  "proof_note": "原书未给独立完整证明。",
+  "context_notation": [],
+  "extra_assumptions": [
+    "Lean证明给定真实二阶传递系数的消项，(7.30)完整作为两关系的命题定义；ST/TS指数系数识别、Hamiltonian微分及实际两组修正系数识别仍列缺口。"
+  ],
+  "issues": [
+    "已目视核对PDF321：所印传播子展开末项为(h²/2)L_LD，按exp的二阶展开应为(h²/8)(L_LD)²；该项作用ρβ为零，不改变后续修正关系。"
+  ],
+  "statement_scope": "形式传递系数的消项及(7.30)全部目标；未证明从具体分裂映射导出这些系数。",
+  "lean_decl": "MD.Ch07.gradNormSq",
+  "lean_declarations": [
+    "MD.Ch07.gradNormSq",
+    "MD.Ch07.hessianQuadratic",
+    "MD.Ch07.conjugateCorrectionChange",
+    "MD.Ch07.conjugateCorrections",
+    "MD.Ch07.conjugateCorrection_coefficient"
+  ],
+  "source_page_verification": "见source_page_checks.json；必须已目视核对本条原页。",
+  "repair_log": [],
+  "documented_priors": []
+}
+```
+
+## 完整本条Lean
+```lean
+def gradNormSq (U : V n → ℝ) (q : V n) : ℝ := ∑ i, gradient U q i^2
+def hessianQuadratic (U : V n → ℝ) (x : Phase n) : ℝ := ∑ i, ∑ j, x.2 i*hessianU U x.1 i j*x.2 j
+def conjugateCorrectionChange (U : V n → ℝ) (β : ℝ) (x : Phase n) : ℝ :=
+  β/8*(gradNormSq U x.1-hessianQuadratic U x)
+def conjugateCorrections (U : V n → ℝ) (β : ℝ) (fABOBA fOBABO fBAOAB fOABAO : Phase n → ℝ) : Prop :=
+  fABOBA = fOBABO-conjugateCorrectionChange U β ∧ fBAOAB = fOABAO+conjugateCorrectionChange U β
+theorem conjugateCorrection_coefficient {E : Type*} [AddCommGroup E] [Module ℝ E]
+    (L0 L1 : Module.End ℝ E) (p : ℕ → E) (q2 : E)
+    (hL : L0 (p 0) = 0) (hp : p 1 = 0)
+    (htransfer : q2 = p 2+(1/2 : ℝ) • L0 (p 1)+
+      (1/4 : ℝ) • L1 (p 0)+(1/8 : ℝ) • (L0*L0) (p 0)) :
+    q2 = p 2+(1/4 : ℝ) • L1 (p 0) := by
+  simpa [hp,hL,Module.End.mul_apply] using htransfer
+```
+
+## 项目依赖定义体及选择规格
+以下def/abbrev/structure完整保留；定理列出完整类型，Mathlib标准定义无需摘录。
+
+### MD.Ch07.V (Blueprint/Ch07.lean:172)
+原文件上下文：
+```lean
+open Set Filter MeasureTheory ProbabilityTheory MolecularDynamics
+open scoped BigOperators Topology ContDiff ENNReal NNReal
+variable {Ω : Type*} [MeasurableSpace Ω]
+variable {n : ℕ}
+```
+```lean
+abbrev V (n : ℕ) := Fin n → ℝ
+```
+
+### MD.Ch07.Phase (Blueprint/Ch07.lean:173)
+原文件上下文：
+```lean
+open Set Filter MeasureTheory ProbabilityTheory MolecularDynamics
+open scoped BigOperators Topology ContDiff ENNReal NNReal
+variable {Ω : Type*} [MeasurableSpace Ω]
+variable {n : ℕ}
+```
+```lean
+abbrev Phase (n : ℕ) := V n × V n
+```
+
+### MD.Ch07.coordDerivative (Blueprint/Ch07.lean:221)
+原文件上下文：
+```lean
+open Set Filter MeasureTheory ProbabilityTheory MolecularDynamics
+open scoped BigOperators Topology ContDiff ENNReal NNReal
+variable {Ω : Type*} [MeasurableSpace Ω]
+variable {n : ℕ}
+```
+```lean
+def coordDerivative (f : V n → ℝ) (x : V n) (i : Fin n) : ℝ :=
+  deriv (fun z ↦ f (Function.update x i z)) (x i)
+```
+
+### MD.Ch07.gradient (Blueprint/Ch07.lean:250)
+原文件上下文：
+```lean
+open Set Filter MeasureTheory ProbabilityTheory MolecularDynamics
+open scoped BigOperators Topology ContDiff ENNReal NNReal
+variable {Ω : Type*} [MeasurableSpace Ω]
+variable {n : ℕ}
+```
+```lean
+def gradient (U : V n → ℝ) (q : V n) : V n := fun i ↦ coordDerivative U q i
+```
+
+### MD.Ch07.hessianU (Blueprint/Ch07.lean:1074)
+原文件上下文：
+```lean
+open Set Filter MeasureTheory ProbabilityTheory MolecularDynamics
+open scoped BigOperators Topology ContDiff ENNReal NNReal
+variable {Ω : Type*} [MeasurableSpace Ω]
+variable {n : ℕ}
+```
+```lean
+def hessianU (U : V n → ℝ) (q : V n) (i j : Fin n) : ℝ := coordDerivative (fun y ↦ gradient U y j) q i
+```
+
+### MD.Ch07.gradNormSq (Blueprint/Ch07.lean:1119)
+原文件上下文：
+```lean
+open Set Filter MeasureTheory ProbabilityTheory MolecularDynamics
+open scoped BigOperators Topology ContDiff ENNReal NNReal
+variable {Ω : Type*} [MeasurableSpace Ω]
+variable {n : ℕ}
+```
+```lean
+def gradNormSq (U : V n → ℝ) (q : V n) : ℝ := ∑ i, gradient U q i^2
+```
+
+### MD.Ch07.hessianQuadratic (Blueprint/Ch07.lean:1120)
+原文件上下文：
+```lean
+open Set Filter MeasureTheory ProbabilityTheory MolecularDynamics
+open scoped BigOperators Topology ContDiff ENNReal NNReal
+variable {Ω : Type*} [MeasurableSpace Ω]
+variable {n : ℕ}
+```
+```lean
+def hessianQuadratic (U : V n → ℝ) (x : Phase n) : ℝ := ∑ i, ∑ j, x.2 i*hessianU U x.1 i j*x.2 j
+```
+
+### MD.Ch07.conjugateCorrectionChange (Blueprint/Ch07.lean:1121)
+原文件上下文：
+```lean
+open Set Filter MeasureTheory ProbabilityTheory MolecularDynamics
+open scoped BigOperators Topology ContDiff ENNReal NNReal
+variable {Ω : Type*} [MeasurableSpace Ω]
+variable {n : ℕ}
+```
+```lean
+def conjugateCorrectionChange (U : V n → ℝ) (β : ℝ) (x : Phase n) : ℝ :=
+  β/8*(gradNormSq U x.1-hessianQuadratic U x)
+```
+
+### MD.Ch07.conjugateCorrections (Blueprint/Ch07.lean:1123)
+原文件上下文：
+```lean
+open Set Filter MeasureTheory ProbabilityTheory MolecularDynamics
+open scoped BigOperators Topology ContDiff ENNReal NNReal
+variable {Ω : Type*} [MeasurableSpace Ω]
+variable {n : ℕ}
+```
+```lean
+def conjugateCorrections (U : V n → ℝ) (β : ℝ) (fABOBA fOBABO fBAOAB fOABAO : Phase n → ℝ) : Prop :=
+  fABOBA = fOBABO-conjugateCorrectionChange U β ∧ fBAOAB = fOABAO+conjugateCorrectionChange U β
+```
+
+### MD.Ch07.conjugateCorrection_coefficient (Blueprint/Ch07.lean:1125)
+原文件上下文：
+```lean
+open Set Filter MeasureTheory ProbabilityTheory MolecularDynamics
+open scoped BigOperators Topology ContDiff ENNReal NNReal
+variable {Ω : Type*} [MeasurableSpace Ω]
+variable {n : ℕ}
+```
+```lean
+theorem conjugateCorrection_coefficient {E : Type*} [AddCommGroup E] [Module ℝ E]
+    (L0 L1 : Module.End ℝ E) (p : ℕ → E) (q2 : E)
+    (hL : L0 (p 0) = 0) (hp : p 1 = 0)
+    (htransfer : q2 = p 2+(1/2 : ℝ) • L0 (p 1)+
+      (1/4 : ℝ) • L1 (p 0)+(1/8 : ℝ) • (L0*L0) (p 0)) :
+    q2 = p 2+(1/4 : ℝ) • L1 (p 0)
+```
+
+### MolecularDynamics.Chapter05Review.E (MolecularDynamics/Chapter05/ReviewDefinitions.lean:18)
+原文件上下文：
+```lean
+open Set Filter MeasureTheory Matrix
+open scoped BigOperators Topology ENNReal
+```
+```lean
+abbrev E (n : ℕ) := EuclideanSpace ℝ (Fin n)
+```

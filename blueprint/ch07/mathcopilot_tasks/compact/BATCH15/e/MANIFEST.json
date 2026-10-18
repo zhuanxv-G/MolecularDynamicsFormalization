@@ -1,0 +1,148 @@
+{
+  "batch": "BATCH15",
+  "subtask": "BATCH15e",
+  "source_ids": [
+    "MD-7.9.2-HighFrictionCorrectionTable"
+  ],
+  "input_sha256": {
+    "Blueprint/Ch07.lean": "de3b0d06f5c52195cef1f387d3accff3b77dc46c95969466a8acf032276018e6",
+    "blueprint/ch07/ch07_source.json": "4ab0addff8ecca8f9d48c6ff03f24f3931e3251f0a67180827f908c77eebfcff",
+    "BATCH15e_PAGES.pdf": "883f6dd8ffd578a7407c709c75d99b416d5013ccc869fa9b9744388a63efdc23"
+  },
+  "page_mapping": [
+    {
+      "attachment_page": 1,
+      "original_pdf_page": 325,
+      "printed_page": 304
+    },
+    {
+      "attachment_page": 2,
+      "original_pdf_page": 326,
+      "printed_page": 305
+    }
+  ],
+  "definition_excerpts": [
+    {
+      "full_name": "MD.Ch07.V",
+      "kind": "abbrev",
+      "path": "Blueprint/Ch07.lean",
+      "line": 172,
+      "code_sha256": "7ab0ad90462b274b03f5b929b5f09417c0b397b6cb908fa6e7bd56677a314027"
+    },
+    {
+      "full_name": "MD.Ch07.Phase",
+      "kind": "abbrev",
+      "path": "Blueprint/Ch07.lean",
+      "line": 173,
+      "code_sha256": "ef1520e3b22ac1c99a30a989deafe8d3da44a9f2a3e5b6c2cd3220218b88513e"
+    },
+    {
+      "full_name": "MD.Ch07.coordDerivative",
+      "kind": "def",
+      "path": "Blueprint/Ch07.lean",
+      "line": 221,
+      "code_sha256": "e782d789a13f5db6817e2c995f141805e81ac75720125b846f8ee14ba3833a4b"
+    },
+    {
+      "full_name": "MD.Ch07.gradient",
+      "kind": "def",
+      "path": "Blueprint/Ch07.lean",
+      "line": 250,
+      "code_sha256": "540c6af25c09d3a58da531bc32056ff1a1c070facc58d34c96b6653d781fba6f"
+    },
+    {
+      "full_name": "MD.Ch07.positivePairLimit",
+      "kind": "def",
+      "path": "Blueprint/Ch07.lean",
+      "line": 635,
+      "code_sha256": "6f314fcb05c29bfc941b01b143cf3e0630297b816b86d8dec0f4d970032f7b4d"
+    },
+    {
+      "full_name": "MD.Ch07.hessianU",
+      "kind": "def",
+      "path": "Blueprint/Ch07.lean",
+      "line": 1074,
+      "code_sha256": "8c2605253d3d70a39369a2c08eb2c758793a9cc41934f1f97c967d5eb2c776ee"
+    },
+    {
+      "full_name": "MD.Ch07.gradNormSq",
+      "kind": "def",
+      "path": "Blueprint/Ch07.lean",
+      "line": 1119,
+      "code_sha256": "4ac74933a6c274ae1355fc8b7cdd3820a81dec13cacd2c6e39768e45795792df"
+    },
+    {
+      "full_name": "MD.Ch07.hessianQuadratic",
+      "kind": "def",
+      "path": "Blueprint/Ch07.lean",
+      "line": 1120,
+      "code_sha256": "a6a3143b1913df6460ab70c1909c2d7201e4434efc287c2634a325c9281a5215"
+    },
+    {
+      "full_name": "MD.Ch07.conjugateCorrectionChange",
+      "kind": "def",
+      "path": "Blueprint/Ch07.lean",
+      "line": 1121,
+      "code_sha256": "fe1848dccc25d5ff845e497f7b18c0707efa9f21a8f623a25ea387588cfd584b"
+    },
+    {
+      "full_name": "MD.Ch07.conjugateCorrections",
+      "kind": "def",
+      "path": "Blueprint/Ch07.lean",
+      "line": 1123,
+      "code_sha256": "94ce7fcd6f434273f0998719189ebdca859694b687351ae0e62bb0b311b81337"
+    },
+    {
+      "full_name": "MD.Ch07.laplacian",
+      "kind": "def",
+      "path": "Blueprint/Ch07.lean",
+      "line": 1156,
+      "code_sha256": "34815bde240a9d093117da74ea9ce745ee5f13888a61c42c94cfcecfc623a421"
+    },
+    {
+      "full_name": "MD.Ch07.highFrictionOABAO",
+      "kind": "def",
+      "path": "Blueprint/Ch07.lean",
+      "line": 1195,
+      "code_sha256": "a13e000bdcfee605e2261531ed7d396865be2ed9d54b7a27059c2eeab2db1cd9"
+    },
+    {
+      "full_name": "MD.Ch07.highFrictionCorrection",
+      "kind": "def",
+      "path": "Blueprint/Ch07.lean",
+      "line": 1208,
+      "code_sha256": "2c4fdb65659cb32bc88c5580ab6d9dfc69ee1d5abbe7782dbcb368b6c9c3c512"
+    },
+    {
+      "full_name": "MD.Ch07.doublyAsymptoticAverage",
+      "kind": "def",
+      "path": "Blueprint/Ch07.lean",
+      "line": 1213,
+      "code_sha256": "d3a6d5bfbebf0c7d1e4a3411cc783a44b04eaa4112882c76332419ef4ed7ec43"
+    },
+    {
+      "full_name": "MD.Ch07.highFrictionCorrection_conjugacy",
+      "kind": "theorem",
+      "path": "Blueprint/Ch07.lean",
+      "line": 1216,
+      "code_sha256": "680def3a432f1fa446c0c70567b4180402d58b269fc164b0d758ccfd04811e80"
+    }
+  ],
+  "validation": {
+    "project_constant_closure": "PASS",
+    "missing_project_definitions": [],
+    "full_page_render_equality_dpi": 72,
+    "website_submitted": false
+  },
+  "files": {
+    "PASTE.txt": {
+      "bytes": 10300,
+      "sha256": "aedf44e56d3ac2f8990c0b00f29c360e795c8359e72382c650f233cea185254d"
+    },
+    "BATCH15e_PAGES.pdf": {
+      "bytes": 92412,
+      "sha256": "883f6dd8ffd578a7407c709c75d99b416d5013ccc869fa9b9744388a63efdc23"
+    }
+  },
+  "total_task_bytes": 107424
+}

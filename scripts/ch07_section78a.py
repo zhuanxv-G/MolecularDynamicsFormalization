@@ -15,7 +15,7 @@ theorem firstOrderOperator_coefficient {R : Type*} [Ring R] [Algebra ℝ R] (X Y
     PowerSeries.coeff 1 (formalModifiedGenerator (threeStage X Y Z)) = firstOrderOperator X Y Z := by
   sorry
 def correctionEquation {E : Type*} [AddCommGroup E] [Module ℝ E]
-    (L L1 : Module.End ℝ E) (ρ ρf : E) : Prop := L ρf = -L1 ρ''',label='(7.20)–(7.21)',
+    (L L1 : Module.End ℝ E) (ρ ρf : E) : Prop := L ρf = -L1 ρ''',label='(7.20)–(7.21)',missing='直接系数归约的短路线超过时间盒；保留未证。',
 extra=['前向组合采用Z,Y,X顺序；正式级数系数推论覆盖所有六个排列，L0为三者和。修正方程为必要形式方程，可解性独立。'])
 
 add('HomogeneousNormalization','7.8',291,

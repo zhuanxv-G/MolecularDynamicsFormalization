@@ -1,6 +1,6 @@
 # 第7章逐条进度
 
-当前正文落盘：76条。全部正文完成：否。章末完整check：未执行。
+当前正文落盘：91条。全部正文完成：否。章末完整check：未执行。
 
 | source_id | 原页PDF | 本地对照 | 编译/公理 | 数学状态 | 网站 |
 |---|---|---|---|---|---|
@@ -80,3 +80,18 @@
 | MD-7.8.1-PositionMomentumCorrections | 315–316 | PASS | 通过 | 未证陈述 | 待审 |
 | MD-7.8.1-OverdampedFirstOrderCaution | 316 | PASS | 通过 | 未证陈述 | 待审 |
 | MD-7.8.2-BiasedDoubleWellExact | 316–318 | PASS | 通过 | 未证陈述 | 待审 |
+| MD-7.9-Proposition71 | 318 | PASS | 通过 | 已证 | 待审 |
+| MD-7.9-EvenDensityPerturbation | 319 | PASS | 通过 | 已证 | 待审 |
+| MD-7.9.1-OYZYOInhomogeneity | 319–320 | PASS | 通过 | 未证陈述 | 待审 |
+| MD-7.9.1-TripleCommutatorPrinted | 320 | NEEDS_HUMAN | 通过 | 未证陈述 | 待审 |
+| MD-7.9.1-SymmetricRHS | 320 | PASS | 通过 | 未证陈述 | 待审 |
+| MD-7.9.1-Lemma71 | 320–321 | PASS | 通过 | 已证 | 待审 |
+| MD-7.9.1-ConjugateSymmetricCorrections | 321–322 | NEEDS_HUMAN | 通过 | 已证 | 待审 |
+| MD-7.9.2-ReciprocalFrictionExpansion | 322–323 | PASS | 通过 | 定义 | 待审 |
+| MD-7.9.2-OUKernelQualification | 323 | NEEDS_HUMAN | 通过 | 未证陈述 | 待审 |
+| MD-7.9.2-OUHermiteIdentities | 323 | PASS | 通过 | 未证陈述 | 待审 |
+| MD-7.9.2-FirstReciprocalCorrection | 324–325 | NEEDS_HUMAN | 通过 | 未证陈述 | 待审 |
+| MD-7.9.2-OverdampedSolvabilityOperators | 325 | PASS | 通过 | 已证 | 待审 |
+| MD-7.9.2-HighFrictionCorrectionTable | 325–326 | PASS | 通过 | 已证 | 待审 |
+| MD-7.9.3-BAOABMarginalCancellation | 326 | PASS | 通过 | 未证陈述 | 待审 |
+| MD-7.9.3-SuperconvergenceScope | 327 | PASS | 通过 | 未证陈述 | 待审 |
