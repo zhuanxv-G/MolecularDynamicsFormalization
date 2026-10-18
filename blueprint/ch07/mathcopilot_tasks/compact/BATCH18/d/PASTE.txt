@@ -1,0 +1,261 @@
+以附件/PASTE 为准，忽略 /workspace 旧文件；Mathlib 定义按标准含义采信。
+本任务只审本条：原文转录、对象资格、定义体、量词、全部结论及[EXTRA]是否一致；Lean编译不代替语义审阅。
+Lean/Mathlib均4.34.0。原页PDF映射：[341]；印刷页=[320].
+input_sha256请原样回显：
+{
+  "Blueprint/Ch07.lean": "03e34bf86a5b27e03cce8552bb21fc0fea40514cd87faa953bf09a6a0a27f3c2",
+  "blueprint/ch07/ch07_source.json": "27e402f2a8b9c511106df901d6cc8472e1dae783cdf739f657879ffcf297462a",
+  "BATCH18d_PAGES.pdf": "800edf49e6e56ffcb08dc75fd87d804f27da0b727026e9c3f66f3c1df7c8ec6a"
+}
+用代码将JSON对象(batch,input_sha256,items)写到 /workspace/.mathcopilot/reviews/ch07/BATCH18d_review.json；items仅含本source_id。
+items字段：source_id、verdict(PASS/FAIL/NEEDS_HUMAN)、transcription、semantic_review、counterexample、suggested_fix、printed_version、corrected_version。逐版区分原文疑误和修正版结论；缺材料必须具体指出，不猜测。写后json.loads自检，最后仅回复路径及统计。
+
+## 原文JSON
+```json
+{
+  "source_id": "MD-7.12.1-ConstrainedBAOABAlgorithm",
+  "kind": "definition",
+  "label": null,
+  "section": "7.12.1",
+  "printed_page": "320",
+  "pdf_page": "341",
+  "statement_latex": "c-$[BAOAB]$\n\\[p_{n+1/5}=p_n-\\tfrac h2\\nabla U(q_n)-g'(q_n)^T\\lambda_{n+1/3},\\quad g'(q_n)M^{-1}p_{n+1/5}=0.\\]\nSolve the geodesic flow $A_c$ for $h/2$, and map $[q_n,p_{n+1/5}]\\to[q_{n+1/2},p_{n+2/5}]$.\n\\[p_{n+3/5}=e^{-\\gamma h}p_{n+2/5}+\\sqrt{(1-e^{-2\\gamma h})k_BTM}R_n-g'(q_{n+1/2})^T\\lambda_{n+2/3},\\quad g'(q_{n+1/2})M^{-1}p_{n+3/5}=0.\\]\nSolve the geodesic flow $A_c$ for $h/2$, and map $[q_{n+1/2},p_{n+3/5}]\\to[q_{n+1},p_{n+4/5}]$.\n\\[p_{n+1}=p_{n+4/5}-\\tfrac h2\\nabla U(q_{n+1})-g'(q_{n+1})^T\\lambda_{n+1},\\quad g'(q_{n+1})M^{-1}p_{n+1}=0.\\]",
+  "proof_latex": null,
+  "proof_note": "原书未给独立完整证明。",
+  "context_notation": [],
+  "extra_assumptions": [
+    "完整五段关系、全部中间变量与隐约束；仅证明成功求解后的终点资格，不证明隐式解存在、唯一或概率不变性。网站包须同时摘录geodesicConstraintFlow、两求解关系和选择规格。"
+  ],
+  "issues": [],
+  "statement_scope": "本条逐字引用的全部数学对象与公式；未纳入的上下文另列。",
+  "lean_decl": "MD.Ch07.constrainedBAOABRelation",
+  "lean_declarations": [
+    "MD.Ch07.constrainedBAOABRelation",
+    "MD.Ch07.constrainedBAOAB_constraint"
+  ],
+  "source_page_verification": "见source_page_checks.json；必须已目视核对本条原页。",
+  "repair_log": [],
+  "documented_priors": []
+}
+```
+
+## 完整本条Lean
+```lean
+def constrainedBAOABRelation {l : ℕ} (m : V n) (g : V n → V l) (U : V n → ℝ)
+    (F : ℝ → Phase n → Phase n) (γ θ h : ℝ) (R : V n) (x out : Phase n) : Prop :=
+  geodesicConstraintFlow m g F ∧ ∃ b o : Phase n,
+    constrainedKickRelation m U g (h/2) x b ∧
+    constrainedExactORelation m g γ θ h R (F (h/2) b) o ∧
+    constrainedKickRelation m U g (h/2) (F (h/2) o) out
+theorem constrainedBAOAB_constraint {l : ℕ} (m : V n) (g : V n → V l) (U : V n → ℝ)
+    (F : ℝ → Phase n → Phase n) (γ θ h : ℝ) (R : V n) (x out : Phase n)
+    (hs : constrainedBAOABRelation m g U F γ θ h R x out) : out ∈ cotangentConstraint m g := by
+  obtain ⟨_,b,o,_,_,hout⟩ := hs
+  exact hout.2.choose_spec.2
+```
+
+## 项目依赖定义体及选择规格
+以下def/abbrev/structure完整保留；定理列出完整类型，Mathlib标准定义无需摘录。
+
+### MD.Ch07.V (Blueprint/Ch07.lean:172)
+原文件上下文：
+```lean
+open Set Filter MeasureTheory ProbabilityTheory MolecularDynamics
+open scoped BigOperators Topology ContDiff ENNReal NNReal
+variable {Ω : Type*} [MeasurableSpace Ω]
+variable {n : ℕ}
+```
+```lean
+abbrev V (n : ℕ) := Fin n → ℝ
+```
+
+### MD.Ch07.Phase (Blueprint/Ch07.lean:173)
+原文件上下文：
+```lean
+open Set Filter MeasureTheory ProbabilityTheory MolecularDynamics
+open scoped BigOperators Topology ContDiff ENNReal NNReal
+variable {Ω : Type*} [MeasurableSpace Ω]
+variable {n : ℕ}
+```
+```lean
+abbrev Phase (n : ℕ) := V n × V n
+```
+
+### MD.Ch07.ouMomentum (Blueprint/Ch07.lean:198)
+原文件上下文：
+```lean
+open Set Filter MeasureTheory ProbabilityTheory MolecularDynamics
+open scoped BigOperators Topology ContDiff ENNReal NNReal
+variable {Ω : Type*} [MeasurableSpace Ω]
+variable {n : ℕ}
+```
+```lean
+def ouMomentum (m : V n) (γ θ h : ℝ) (p R : V n) : V n :=
+  fun i ↦ Real.exp (-γ*h)*p i + Real.sqrt (θ*(1-Real.exp (-2*γ*h))) * Real.sqrt (m i) * R i
+```
+
+### MD.Ch07.coordDerivative (Blueprint/Ch07.lean:221)
+原文件上下文：
+```lean
+open Set Filter MeasureTheory ProbabilityTheory MolecularDynamics
+open scoped BigOperators Topology ContDiff ENNReal NNReal
+variable {Ω : Type*} [MeasurableSpace Ω]
+variable {n : ℕ}
+```
+```lean
+def coordDerivative (f : V n → ℝ) (x : V n) (i : Fin n) : ℝ :=
+  deriv (fun z ↦ f (Function.update x i z)) (x i)
+```
+
+### MD.Ch07.gradient (Blueprint/Ch07.lean:250)
+原文件上下文：
+```lean
+open Set Filter MeasureTheory ProbabilityTheory MolecularDynamics
+open scoped BigOperators Topology ContDiff ENNReal NNReal
+variable {Ω : Type*} [MeasurableSpace Ω]
+variable {n : ℕ}
+```
+```lean
+def gradient (U : V n → ℝ) (q : V n) : V n := fun i ↦ coordDerivative U q i
+```
+
+### MD.Ch07.constraintJacobian (Blueprint/Ch07.lean:1362)
+原文件上下文：
+```lean
+open Set Filter MeasureTheory ProbabilityTheory MolecularDynamics
+open scoped BigOperators Topology ContDiff ENNReal NNReal
+variable {Ω : Type*} [MeasurableSpace Ω]
+variable {n : ℕ}
+```
+```lean
+def constraintJacobian {l : ℕ} (g : V n → V l) (q : V n) (j : Fin l) (i : Fin n) : ℝ :=
+  coordDerivative (fun x ↦ g x j) q i
+```
+
+### MD.Ch07.constraintReaction (Blueprint/Ch07.lean:1364)
+原文件上下文：
+```lean
+open Set Filter MeasureTheory ProbabilityTheory MolecularDynamics
+open scoped BigOperators Topology ContDiff ENNReal NNReal
+variable {Ω : Type*} [MeasurableSpace Ω]
+variable {n : ℕ}
+```
+```lean
+def constraintReaction {l : ℕ} (g : V n → V l) (q : V n) (multiplier : V l) : V n :=
+  fun i ↦ ∑ j, constraintJacobian g q j i*multiplier j
+```
+
+### MD.Ch07.hiddenConstraint (Blueprint/Ch07.lean:1366)
+原文件上下文：
+```lean
+open Set Filter MeasureTheory ProbabilityTheory MolecularDynamics
+open scoped BigOperators Topology ContDiff ENNReal NNReal
+variable {Ω : Type*} [MeasurableSpace Ω]
+variable {n : ℕ}
+```
+```lean
+def hiddenConstraint {l : ℕ} (m : V n) (g : V n → V l) (x : Phase n) : Prop :=
+  ∀ j, (∑ i, constraintJacobian g x.1 j i*(x.2 i/m i)) = 0
+```
+
+### MD.Ch07.cotangentConstraint (Blueprint/Ch07.lean:1368)
+原文件上下文：
+```lean
+open Set Filter MeasureTheory ProbabilityTheory MolecularDynamics
+open scoped BigOperators Topology ContDiff ENNReal NNReal
+variable {Ω : Type*} [MeasurableSpace Ω]
+variable {n : ℕ}
+```
+```lean
+def cotangentConstraint {l : ℕ} (m : V n) (g : V n → V l) : Set (Phase n) :=
+  {x | g x.1 = 0 ∧ hiddenConstraint m g x}
+```
+
+### MD.Ch07.constrainedAField (Blueprint/Ch07.lean:1458)
+原文件上下文：
+```lean
+open Set Filter MeasureTheory ProbabilityTheory MolecularDynamics
+open scoped BigOperators Topology ContDiff ENNReal NNReal
+variable {Ω : Type*} [MeasurableSpace Ω]
+variable {n : ℕ}
+```
+```lean
+def constrainedAField {l : ℕ} (m : V n) (g : V n → V l) (multiplier : V l) (x : Phase n) : Phase n :=
+  (fun i ↦ x.2 i/m i,fun i ↦ -constraintReaction g x.1 multiplier i)
+```
+
+### MD.Ch07.geodesicConstraintFlow (Blueprint/Ch07.lean:1462)
+原文件上下文：
+```lean
+open Set Filter MeasureTheory ProbabilityTheory MolecularDynamics
+open scoped BigOperators Topology ContDiff ENNReal NNReal
+variable {Ω : Type*} [MeasurableSpace Ω]
+variable {n : ℕ}
+```
+```lean
+def geodesicConstraintFlow {l : ℕ} (m : V n) (g : V n → V l) (F : ℝ → Phase n → Phase n) : Prop :=
+  (∀ x, F 0 x = x) ∧ (∀ s t x, F (s+t) x = F s (F t x)) ∧
+  ∀ x ∈ cotangentConstraint m g, ∃ multiplier : ℝ → V l, ∀ t,
+    F t x ∈ cotangentConstraint m g ∧ HasDerivAt (fun s ↦ F s x) (constrainedAField m g (multiplier t) (F t x)) t
+```
+
+### MD.Ch07.constrainedKickRelation (Blueprint/Ch07.lean:1466)
+原文件上下文：
+```lean
+open Set Filter MeasureTheory ProbabilityTheory MolecularDynamics
+open scoped BigOperators Topology ContDiff ENNReal NNReal
+variable {Ω : Type*} [MeasurableSpace Ω]
+variable {n : ℕ}
+```
+```lean
+def constrainedKickRelation {l : ℕ} (m : V n) (U : V n → ℝ) (g : V n → V l)
+    (h : ℝ) (x out : Phase n) : Prop :=
+  out.1 = x.1 ∧ ∃ multiplier : V l, (∀ i, out.2 i = x.2 i-h*gradient U x.1 i-constraintReaction g x.1 multiplier i) ∧
+    out ∈ cotangentConstraint m g
+```
+
+### MD.Ch07.constrainedExactORelation (Blueprint/Ch07.lean:1470)
+原文件上下文：
+```lean
+open Set Filter MeasureTheory ProbabilityTheory MolecularDynamics
+open scoped BigOperators Topology ContDiff ENNReal NNReal
+variable {Ω : Type*} [MeasurableSpace Ω]
+variable {n : ℕ}
+```
+```lean
+def constrainedExactORelation {l : ℕ} (m : V n) (g : V n → V l) (γ θ h : ℝ)
+    (R : V n) (x out : Phase n) : Prop :=
+  out.1 = x.1 ∧ ∃ multiplier : V l, (∀ i, out.2 i = ouMomentum m γ θ h x.2 R i-constraintReaction g x.1 multiplier i) ∧
+    out ∈ cotangentConstraint m g
+```
+
+### MD.Ch07.constrainedBAOABRelation (Blueprint/Ch07.lean:1477)
+原文件上下文：
+```lean
+open Set Filter MeasureTheory ProbabilityTheory MolecularDynamics
+open scoped BigOperators Topology ContDiff ENNReal NNReal
+variable {Ω : Type*} [MeasurableSpace Ω]
+variable {n : ℕ}
+```
+```lean
+def constrainedBAOABRelation {l : ℕ} (m : V n) (g : V n → V l) (U : V n → ℝ)
+    (F : ℝ → Phase n → Phase n) (γ θ h : ℝ) (R : V n) (x out : Phase n) : Prop :=
+  geodesicConstraintFlow m g F ∧ ∃ b o : Phase n,
+    constrainedKickRelation m U g (h/2) x b ∧
+    constrainedExactORelation m g γ θ h R (F (h/2) b) o ∧
+    constrainedKickRelation m U g (h/2) (F (h/2) o) out
+```
+
+### MD.Ch07.constrainedBAOAB_constraint (Blueprint/Ch07.lean:1483)
+原文件上下文：
+```lean
+open Set Filter MeasureTheory ProbabilityTheory MolecularDynamics
+open scoped BigOperators Topology ContDiff ENNReal NNReal
+variable {Ω : Type*} [MeasurableSpace Ω]
+variable {n : ℕ}
+```
+```lean
+theorem constrainedBAOAB_constraint {l : ℕ} (m : V n) (g : V n → V l) (U : V n → ℝ)
+    (F : ℝ → Phase n → Phase n) (γ θ h : ℝ) (R : V n) (x out : Phase n)
+    (hs : constrainedBAOABRelation m g U F γ θ h R x out) : out ∈ cotangentConstraint m g
+```

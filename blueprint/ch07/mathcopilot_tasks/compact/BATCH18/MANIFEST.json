@@ -1,0 +1,40 @@
+{
+  "batch": "BATCH18",
+  "subtasks": [
+    {
+      "subtask": "BATCH18a",
+      "source_id": "MD-7.12-MEVMEAlgorithm",
+      "path": "blueprint/ch07/mathcopilot_tasks/compact/BATCH18/a",
+      "bytes": 116469,
+      "manifest_sha256": "566cb665d7e7a94b1d9f335d8dbcddfd502bc60a81065beefe98014238842b86"
+    },
+    {
+      "subtask": "BATCH18b",
+      "source_id": "MD-7.12-MidpointStabilityPrinted",
+      "path": "blueprint/ch07/mathcopilot_tasks/compact/BATCH18/b",
+      "bytes": 101573,
+      "manifest_sha256": "fe2dc1fd1d6d43b774f2191f880837828093e7869667144feb2672ded0ac3d04"
+    },
+    {
+      "subtask": "BATCH18c",
+      "source_id": "MD-7.12.1-ConstrainedABOSplitting",
+      "path": "blueprint/ch07/mathcopilot_tasks/compact/BATCH18/c",
+      "bytes": 116720,
+      "manifest_sha256": "5e340db4711805197021b8233879a008ce6b1d95efe8cee5d4613e5590456e63"
+    },
+    {
+      "subtask": "BATCH18d",
+      "source_id": "MD-7.12.1-ConstrainedBAOABAlgorithm",
+      "path": "blueprint/ch07/mathcopilot_tasks/compact/BATCH18/d",
+      "bytes": 111268,
+      "manifest_sha256": "6c07b5c2f38eafa271899fcaa1ad90a31ae371fe685a130d666abe7545bd98de"
+    },
+    {
+      "subtask": "BATCH18e",
+      "source_id": "MD-7.12.1-ApproximateGeodesicOrder",
+      "path": "blueprint/ch07/mathcopilot_tasks/compact/BATCH18/e",
+      "bytes": 101942,
+      "manifest_sha256": "08db7e8bc47baf60ed6705c949b3e67560a93ba2fe391e9532b0bfcbdfa12b05"
+    }
+  ]
+}

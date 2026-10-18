@@ -1,6 +1,6 @@
 # 第7章 Lean Blueprint 本地审阅材料
 
-当前已整理99条；网站尚未审阅。正文范围为印刷261–326页（PDF282–347），末页仅取Exercises之前的正文。
+当前已整理107条；网站尚未审阅。正文范围为印刷261–326页（PDF282–347），末页仅取Exercises之前的正文。
 
 ## 1. MD-7.1-Bias · definition · 印刷p.263 / PDFp.284
 
@@ -4867,4 +4867,426 @@ theorem autocorrelation_rescale (P : Measure Ω) (v : ℝ → Ω → V n) (c t :
 定义；单文件编译与逐声明公理核对通过。
 本条未登记待证缺项。
 位置：Blueprint/Ch07.lean；MD.Ch07.velocityAutocorrelation, MD.Ch07.greenKuboDiffusion, MD.Ch07.autocorrelation_rescale。
+
+## 1. MD-7.12-ConstrainedLangevin · (7.43)–(7.45) · 印刷p.317 / PDFp.338
+
+### 2. 原文陈述
+
+\[dq=M^{-1}pdt,\tag{7.43}\]
+\[dp=-\nabla U(q)dt-\gamma pdt+\sqrt{2\gamma k_BTM}dW-g'(q)^T\lambda dt,\tag{7.44}\]
+\[0=g(q).\tag{7.45}\]
+The vector of $l$ constraints is given by $g:\mathbb R^{N_c}\to\mathbb R^l$ and $\lambda$ is an $l$-dimensional vector of Lagrange multipliers. $W$ is a vector of standard Wiener processes, with the usual friction parameter $\gamma>0$. Permissible phase points lie in the co-tangent bundle defined by the constraint and hidden constraint
+\[g(q)=0,\qquad g'(q)M^{-1}p=0.\]
+
+### 3. 原文证明
+
+原书未给独立完整证明。
+
+### 4. 完整当前Lean（原文与修正版独立列出）
+
+```lean
+def constraintJacobian {l : ℕ} (g : V n → V l) (q : V n) (j : Fin l) (i : Fin n) : ℝ :=
+  coordDerivative (fun x ↦ g x j) q i
+def constraintReaction {l : ℕ} (g : V n → V l) (q : V n) (multiplier : V l) : V n :=
+  fun i ↦ ∑ j, constraintJacobian g q j i*multiplier j
+def hiddenConstraint {l : ℕ} (m : V n) (g : V n → V l) (x : Phase n) : Prop :=
+  ∀ j, (∑ i, constraintJacobian g x.1 j i*(x.2 i/m i)) = 0
+def cotangentConstraint {l : ℕ} (m : V n) (g : V n → V l) : Set (Phase n) :=
+  {x | g x.1 = 0 ∧ hiddenConstraint m g x}
+def constrainedLangevin {l : ℕ} (P : Measure Ω) (m : V n) (g : V n → V l) (U : V n → ℝ)
+    (γ θ : ℝ) (W : ℝ → Ω → V n) (X : ℝ → Ω → Phase n) (Λ : ℝ → Ω → V l)
+    (x0 : Phase n) : Prop :=
+  vectorWiener P W ∧ (∀ i, 0 < m i) ∧ 0 < γ ∧ 0 < θ ∧ ContDiff ℝ 2 g ∧
+  x0 ∈ cotangentConstraint m g ∧
+  (∀ t : ℝ, 0 ≤ t → Measurable[MeasurableSpace.comap
+    (fun (sample : Ω) (s : Icc (0 : ℝ) t) ↦ W s sample) inferInstance] (X t) ∧
+    Measurable[MeasurableSpace.comap (fun (sample : Ω) (s : Icc (0 : ℝ) t) ↦ W s sample) inferInstance] (Λ t)) ∧
+  (∀ᵐ sample ∂P, ContinuousOn (fun t ↦ X t sample) (Ici 0) ∧ X 0 sample = x0) ∧
+  (∀ sample i T, 0 ≤ T →
+    IntervalIntegrable (fun s ↦ (X s sample).2 i/m i) volume 0 T ∧
+    IntervalIntegrable (fun s ↦ -gradient U (X s sample).1 i-γ*(X s sample).2 i-
+      constraintReaction g (X s sample).1 (Λ s sample) i) volume 0 T) ∧
+  ∀ t, 0 ≤ t → ∀ᵐ sample ∂P,
+    X t sample ∈ cotangentConstraint m g ∧
+    (∀ i, (X t sample).1 i = x0.1 i+∫ s in (0 : ℝ)..t, (X s sample).2 i/m i) ∧
+    (∀ i, (X t sample).2 i = x0.2 i+
+      (∫ s in (0 : ℝ)..t, -gradient U (X s sample).1 i-γ*(X s sample).2 i-
+        constraintReaction g (X s sample).1 (Λ s sample) i)+
+      Real.sqrt (2*γ*θ*m i)*(W t sample i-W 0 sample i))
+```
+
+### 5. 对照表
+
+| 原文成分 | Lean对应 | 说明 |
+|---|---|---|
+| 本条引用的对象与公式 | MD.Ch07.constraintJacobian, MD.Ch07.constraintReaction, MD.Ch07.hiddenConstraint, MD.Ch07.cotangentConstraint, MD.Ch07.constrainedLangevin | 全部约束积分方程及隐约束资格；适应性作为解资格显式保留，存在唯一性未证明。 |
+
+[EXTRA] 实际多维Wiener坐标独立、正质量/温度/摩擦、C²约束、积分可积明示；常系数噪声用真实W增量。；定义保留存在给定乘子过程的积分解，不证明一般约束SDE存在唯一。状态及乘子适应W自然历史，状态路径连续与初值完整；一般强解存在唯一仍未证明。
+记号与上下文：见所列原文与Lean量化变量。
+
+### 6. 审计结论
+
+本地：已对照目视原页核对对象、量词、技术资格和所列覆盖范围；网站尚未审阅。
+疑点：本条暂未发现需单列的原书疑误。
+网站：尚未送审。
+
+### 7. 状态与证明位置
+
+定义；单文件编译与逐声明公理核对通过。
+本条未登记待证缺项。
+位置：Blueprint/Ch07.lean；MD.Ch07.constraintJacobian, MD.Ch07.constraintReaction, MD.Ch07.hiddenConstraint, MD.Ch07.cotangentConstraint, MD.Ch07.constrainedLangevin。
+
+## 1. MD-7.12-ConstrainedCanonicalErgodicity · definition · 印刷p.317 / PDFp.338
+
+### 2. 原文陈述
+
+In the infinite time limit, we have that solution trajectories of constrained Langevin (7.43)–(7.45) sample $\widetilde\rho_\beta$ ergodically, such that
+\[\lim_{T\to\infty}\frac1T\int_0^T\phi(q(t),p(t))dt=\int_{\mathcal D}\phi(q,p)\widetilde\rho_\beta d\omega,\]
+where $\widetilde\rho_\beta$ is the normalized constrained canonical distribution
+\[\widetilde\rho_\beta=Z^{-1}\exp(-\beta H(q,p))\delta[g(q)]\delta[g'(q)M^{-1}p],\]
+for normalizing constant $Z$ and where $\delta[z]:=\prod_i\delta[z_i]$ for a vector $z$.
+
+### 3. 原文证明
+
+原书未给独立完整证明。
+
+### 4. 完整当前Lean（原文与修正版独立列出）
+
+```lean
+def constrainedCanonical (ν : Measure (Phase n)) (m : V n) (U : V n → ℝ) (β : ℝ) : Measure (Phase n) :=
+  ν.withDensity (fun x ↦ ENNReal.ofReal (gibbsWeight m U β x/(∫ y, gibbsWeight m U β y ∂ν)))
+def constrainedReference {l : ℕ} (ν : Measure (Phase n)) (m : V n) (g : V n → V l) : Prop :=
+  ν (cotangentConstraint m g)ᶜ = 0 ∧
+  ∀ φ : Phase n → ℝ, Continuous φ → HasCompactSupport φ →
+    Filter.Tendsto (fun ε : ℝ ↦ ∫ x, φ x*(Real.pi*ε)^(-(l : ℝ))*
+      Real.exp (-((∑ j, (g x.1 j)^2)+
+        (∑ j, (∑ i, constraintJacobian g x.1 j i*(x.2 i/m i))^2))/ε))
+      (𝓝[Set.Ioi (0 : ℝ)] 0) (𝓝 (∫ x, φ x ∂ν))
+def constrainedErgodicAverages (P : Measure Ω) (X : ℝ → Ω → Phase n) (μ : Measure (Phase n)) : Prop :=
+  IsProbabilityMeasure P ∧ IsProbabilityMeasure μ ∧
+  ∀ φ : Phase n → ℝ, Integrable φ μ →
+    ∀ᵐ sample ∂P, Filter.Tendsto (fun T : ℝ ↦ T⁻¹*∫ t in (0 : ℝ)..T, φ (X t sample)) Filter.atTop (𝓝 (∫ x, φ x ∂μ))
+```
+
+### 5. 对照表
+
+| 原文成分 | Lean对应 | 说明 |
+|---|---|---|
+| 本条引用的对象与公式 | MD.Ch07.constrainedCanonical, MD.Ch07.constrainedReference, MD.Ch07.constrainedErgodicAverages | 全部分布及遍历平均目标的测度定义；约束参考测度存在与具体过程的遍历定理仍缺。 |
+
+[EXTRA] δ不是普通Lebesgue密度；用有支撑测度ν和正则化δ的弱积分极限规定其含义，不能用任意面测度替代而省略Jacobian因子。；实际概率要求配分积分正有限；遍历性还需连通性、正则满秩约束、势增长及不可约等条件。原书省略这些条件，本条仅记录目标，不宣称无条件遍历定理。
+记号与上下文：见所列原文与Lean量化变量。
+
+### 6. 审计结论
+
+本地：已对照目视原页核对对象、量词、技术资格和所列覆盖范围；网站尚未审阅。
+疑点：本条暂未发现需单列的原书疑误。
+网站：尚未送审。
+
+### 7. 状态与证明位置
+
+定义；单文件编译与逐声明公理核对通过。
+本条未登记待证缺项。
+位置：Blueprint/Ch07.lean；MD.Ch07.constrainedCanonical, MD.Ch07.constrainedReference, MD.Ch07.constrainedErgodicAverages。
+
+## 1. MD-7.12-ConstrainedHOSplitting · definition · 印刷p.318 / PDFp.339
+
+### 2. 原文陈述
+
+We could instead consider splitting the dynamics up and performing the integration using a splitting method. One uses
+\[H_c:\quad dq=M^{-1}pdt,\quad dp=-\nabla U(q)dt-g'(q)^T\lambda dt,\quad g(q)=0,\]
+\[O_c:\quad dq=0,\quad dp=-\gamma pdt+\sqrt{2\gamma k_BTM}dW-g'(q)^T\lambda dt,\quad g(q)=0.\]
+We solve these two pieces symmetrically, where the constrained Hamiltonian part is solved over a step $h$, in between two solves of the Ornstein-Uhlenbeck SDE with stepsize $h/2$.
+
+### 3. 原文证明
+
+原书未给独立完整证明。
+
+### 4. 完整当前Lean（原文与修正版独立列出）
+
+```lean
+def constrainedHField {l : ℕ} (m : V n) (U : V n → ℝ) (g : V n → V l) (multiplier : V l) (x : Phase n) : Phase n :=
+  (fun i ↦ x.2 i/m i,fun i ↦ -gradient U x.1 i-constraintReaction g x.1 multiplier i)
+def constrainedOField {l : ℕ} (g : V n → V l) (γ : ℝ) (multiplier : V l) (x : Phase n) : Phase n :=
+  (0,fun i ↦ -γ*x.2 i-constraintReaction g x.1 multiplier i)
+def constrainedHOComposition {E : Type*} (H O : ℝ → E → E) (h : ℝ) : E → E := O (h/2) ∘ H h ∘ O (h/2)
+```
+
+### 5. 对照表
+
+| 原文成分 | Lean对应 | 说明 |
+|---|---|---|
+| 本条引用的对象与公式 | MD.Ch07.constrainedHField, MD.Ch07.constrainedOField, MD.Ch07.constrainedHOComposition | 本条逐字引用的全部数学对象与公式；未纳入的上下文另列。 |
+
+[EXTRA] Hc、Oc分别使用各自乘子，不能将相同multiplier在求和中重复扣除；Oc噪声为前条真实Wiener常扩散项，向量场仅记录漂移。；每段都应满足cotangentConstraint，实际流或核、Oc半群律及约束Gaussian不变性尚未证明。
+记号与上下文：见所列原文与Lean量化变量。
+
+### 6. 审计结论
+
+本地：已对照目视原页核对对象、量词、技术资格和所列覆盖范围；网站尚未审阅。
+疑点：本条暂未发现需单列的原书疑误。
+网站：尚未送审。
+
+### 7. 状态与证明位置
+
+定义；单文件编译与逐声明公理核对通过。
+本条未登记待证缺项。
+位置：Blueprint/Ch07.lean；MD.Ch07.constrainedHField, MD.Ch07.constrainedOField, MD.Ch07.constrainedHOComposition。
+
+## 1. MD-7.12-MEVMEAlgorithm · definition · 印刷p.318–319 / PDFp.339–340
+
+### 2. 原文陈述
+
+Midpoint Euler - Verlet - Midpoint Euler (see [232])
+\[p_{n+1/4}=p_n-\tfrac{h\gamma}4(p_n+p_{n+1/4})+\sqrt{h\gamma k_BTM}R_n-g'(q_n)^T\lambda_{n+1/4},\quad g'(q_n)M^{-1}p_{n+1/4}=0.\]
+\[p_{n+1/2}=p_{n+1/4}-\tfrac h2\nabla U(q_n)-g'(q_n)^T\lambda_{n+1/2},\quad q_{n+1}=q_n+hM^{-1}p_{n+1/2},\]
+\[p_{n+3/4}=p_{n+1/2}-\tfrac h2\nabla U(q_{n+1})-g'(q_{n+1})^T\lambda_{n+3/4},\quad g'(q_{n+1})M^{-1}p_{n+3/4}=0,\quad g(q_{n+1})=0.\]
+\[p_{n+1}=p_{n+3/4}-\tfrac{h\gamma}4(p_{n+3/4}+p_{n+1})+\sqrt{h\gamma k_BTM}R_{n+1/2}-g'(q_{n+1})^T\lambda_{n+1},\quad g'(q_{n+1})M^{-1}p_{n+1}=0.\]
+
+### 3. 原文证明
+
+原书未给独立完整证明。
+
+### 4. 完整当前Lean（原文与修正版独立列出）
+
+```lean
+def midpointConstrainedORelation {l : ℕ} (m : V n) (g : V n → V l) (γ θ h : ℝ)
+    (q p R out : V n) (multiplier : V l) : Prop :=
+  (∀ i, out i = p i-h*γ/4*(p i+out i)+Real.sqrt (h*γ*θ*m i)*R i-constraintReaction g q multiplier i) ∧
+  hiddenConstraint m g (q,out)
+def constrainedVerletRelation {l : ℕ} (m : V n) (g : V n → V l) (U : V n → ℝ) (h : ℝ)
+    (x out : Phase n) (ph : V n) (multiplier μ : V l) : Prop :=
+  (∀ i, ph i = x.2 i-h/2*gradient U x.1 i-constraintReaction g x.1 multiplier i) ∧
+  (∀ i, out.1 i = x.1 i+h/m i*ph i) ∧
+  (∀ i, out.2 i = ph i-h/2*gradient U out.1 i-constraintReaction g out.1 μ i) ∧
+  out ∈ cotangentConstraint m g
+def mevmeRelation {l : ℕ} (m : V n) (g : V n → V l) (U : V n → ℝ) (γ θ h : ℝ)
+    (R S : V n) (x out : Phase n) : Prop :=
+  ∃ pa ph pb : V n, ∃ multipliera multiplierb multiplierc multiplierd : V l,
+    midpointConstrainedORelation m g γ θ h x.1 x.2 R pa multipliera ∧
+    constrainedVerletRelation m g U h (x.1,pa) (out.1,pb) ph multiplierb multiplierc ∧
+    midpointConstrainedORelation m g γ θ h out.1 pb S out.2 multiplierd
+```
+
+### 5. 对照表
+
+| 原文成分 | Lean对应 | 说明 |
+|---|---|---|
+| 本条引用的对象与公式 | MD.Ch07.midpointConstrainedORelation, MD.Ch07.constrainedVerletRelation, MD.Ch07.mevmeRelation | 本条逐字引用的全部数学对象与公式；未纳入的上下文另列。 |
+
+[EXTRA] 完整记录全部中间动量、乘子和位置/隐约束；隐式关系不声称求解器存在唯一。R,S为独立标准Gaussian向量的资格由使用时另加vectorNormalSequence。
+记号与上下文：见所列原文与Lean量化变量。
+
+### 6. 审计结论
+
+本地：已对照目视原页核对对象、量词、技术资格和所列覆盖范围；网站尚未审阅。
+疑点：本条暂未发现需单列的原书疑误。
+网站：尚未送审。
+
+### 7. 状态与证明位置
+
+定义；单文件编译与逐声明公理核对通过。
+本条未登记待证缺项。
+位置：Blueprint/Ch07.lean；MD.Ch07.midpointConstrainedORelation, MD.Ch07.constrainedVerletRelation, MD.Ch07.mevmeRelation。
+
+## 1. MD-7.12-MidpointStabilityPrinted · (7.46) · 印刷p.319 / PDFp.340
+
+### 2. 原文陈述
+
+The Lagrange multiplier $\lambda_{n+1/4}$ (and likewise $\lambda_{n+1}$) can be obtained by solving the linear system
+\[g'(q_n)M^{-1}[(1-h\gamma/4)p_n+\sqrt{h\gamma k_BTM}R_n-g'(q_n)^T\lambda_{n+1/4}]=0,\]
+which is easily computed once the $R_n$ vector is evaluated in the step, and gives us a stability criterion
+\[\gamma h<4.\tag{7.46}\]
+
+### 3. 原文证明
+
+原书未给独立完整证明。
+
+### 4. 完整当前Lean（原文与修正版独立列出）
+
+```lean
+def multiplierLinearSystem {l : ℕ} (m : V n) (g : V n → V l) (γ θ h : ℝ)
+    (q p R : V n) (multiplier : V l) : Prop :=
+  hiddenConstraint m g (q,fun i ↦ (1-h*γ/4)*p i+Real.sqrt (h*γ*θ*m i)*R i-constraintReaction g q multiplier i)
+def midpointAmplification (a : ℝ) : ℝ := (1-a/4)/(1+a/4)
+def midpointStabilityPrinted (a : ℝ) : Prop := a < 4
+theorem midpointStabilityPrinted_corrected (a : ℝ) (ha : 0 ≤ a) : |midpointAmplification a| ≤ 1 := by
+  unfold midpointAmplification
+  rw [abs_le]
+  constructor
+  · apply (le_div_iff₀ (by positivity : 0 < 1+a/4)).2
+    nlinarith
+  · apply (div_le_iff₀ (by positivity : 0 < 1+a/4)).2
+    nlinarith
+theorem midpointStability_counterexample : |midpointAmplification 8| ≤ 1 ∧ ¬ (8 : ℝ) < 4 := by
+  norm_num [midpointAmplification]
+```
+
+### 5. 对照表
+
+| 原文成分 | Lean对应 | 说明 |
+|---|---|---|
+| 本条引用的对象与公式 | MD.Ch07.multiplierLinearSystem, MD.Ch07.midpointAmplification, MD.Ch07.midpointStabilityPrinted, MD.Ch07.midpointStabilityPrinted_corrected, MD.Ch07.midpointStability_counterexample | 本条逐字引用的全部数学对象与公式；未纳入的上下文另列。 |
+
+[EXTRA] 原文版仅保留γh<4条件，不增添充要关系；补充结论仅针对中点OU衰减模态。a=8说明γh<4不是该单独模态稳定的必要条件，不反驳原书整套算法的充分条件。
+记号与上下文：见所列原文与Lean量化变量。
+
+### 6. 审计结论
+
+本地：已对照目视原页核对对象、量词、技术资格和所列覆盖范围；网站尚未审阅。
+疑点：已目视核对PDF340／印刷319：所印γh<4保留为原书给出的限制。它保证中点OU放大因子为正；OU线性绝对稳定性本身对γh≥0均成立。原文没有写充要关系，不能把本条当作已确认的原书错误。完整耦合Verlet仍有独立步长限制。
+网站：尚未送审。
+
+### 7. 状态与证明位置
+
+已证；单文件编译与逐声明公理核对通过。
+本条未登记待证缺项。
+位置：Blueprint/Ch07.lean；MD.Ch07.multiplierLinearSystem, MD.Ch07.midpointAmplification, MD.Ch07.midpointStabilityPrinted, MD.Ch07.midpointStabilityPrinted_corrected, MD.Ch07.midpointStability_counterexample。
+
+## 1. MD-7.12.1-ConstrainedABOSplitting · definition · 印刷p.319–320 / PDFp.340–341
+
+### 2. 原文陈述
+
+\[A_c:\quad dq=M^{-1}pdt,\quad dp=-g'(q)^T\lambda dt,\quad g(q)=0,\]
+\[B_c:\quad dq=0,\quad dp=-\nabla U(q)dt-g'(q)^T\lambda dt,\quad g(q)=0,\]
+\[O_c:\quad dq=0,\quad dp=-\gamma pdt+\sqrt{2\gamma k_BTM}dW-g'(q)^T\lambda dt,\quad g(q)=0.\]
+Observe that the holonomic constraint (as well as the hidden constraint) is maintained in each part, changing the usual A piece into a geodesic drift along the manifold defined by $g(q)=0$.
+
+### 3. 原文证明
+
+原书未给独立完整证明。
+
+### 4. 完整当前Lean（原文与修正版独立列出）
+
+```lean
+def constrainedAField {l : ℕ} (m : V n) (g : V n → V l) (multiplier : V l) (x : Phase n) : Phase n :=
+  (fun i ↦ x.2 i/m i,fun i ↦ -constraintReaction g x.1 multiplier i)
+def constrainedBField {l : ℕ} (U : V n → ℝ) (g : V n → V l) (multiplier : V l) (x : Phase n) : Phase n :=
+  (0,fun i ↦ -gradient U x.1 i-constraintReaction g x.1 multiplier i)
+def geodesicConstraintFlow {l : ℕ} (m : V n) (g : V n → V l) (F : ℝ → Phase n → Phase n) : Prop :=
+  (∀ x, F 0 x = x) ∧ (∀ s t x, F (s+t) x = F s (F t x)) ∧
+  ∀ x ∈ cotangentConstraint m g, ∃ multiplier : ℝ → V l, ∀ t,
+    F t x ∈ cotangentConstraint m g ∧ HasDerivAt (fun s ↦ F s x) (constrainedAField m g (multiplier t) (F t x)) t
+def constrainedKickRelation {l : ℕ} (m : V n) (U : V n → ℝ) (g : V n → V l)
+    (h : ℝ) (x out : Phase n) : Prop :=
+  out.1 = x.1 ∧ ∃ multiplier : V l, (∀ i, out.2 i = x.2 i-h*gradient U x.1 i-constraintReaction g x.1 multiplier i) ∧
+    out ∈ cotangentConstraint m g
+def constrainedExactORelation {l : ℕ} (m : V n) (g : V n → V l) (γ θ h : ℝ)
+    (R : V n) (x out : Phase n) : Prop :=
+  out.1 = x.1 ∧ ∃ multiplier : V l, (∀ i, out.2 i = ouMomentum m γ θ h x.2 R i-constraintReaction g x.1 multiplier i) ∧
+    out ∈ cotangentConstraint m g
+```
+
+### 5. 对照表
+
+| 原文成分 | Lean对应 | 说明 |
+|---|---|---|
+| 本条引用的对象与公式 | MD.Ch07.constrainedAField, MD.Ch07.constrainedBField, MD.Ch07.geodesicConstraintFlow, MD.Ch07.constrainedKickRelation, MD.Ch07.constrainedExactORelation | 本条逐字引用的全部数学对象与公式；未纳入的上下文另列。 |
+
+[EXTRA] Ac为已存在的完整光滑约束流，F0=id及流合成律完整；Bc/Oc为乘子线性求解关系。规则保持约束写在关系中，不把乘子求解存在性计为已证。；正质量、约束Jacobian满秩和γ≥0,θ>0,h≥0由求解器应用时另加；Oc噪声R必须独立标准Gaussian。
+记号与上下文：见所列原文与Lean量化变量。
+
+### 6. 审计结论
+
+本地：已对照目视原页核对对象、量词、技术资格和所列覆盖范围；网站尚未审阅。
+疑点：本条暂未发现需单列的原书疑误。
+网站：尚未送审。
+
+### 7. 状态与证明位置
+
+定义；单文件编译与逐声明公理核对通过。
+本条未登记待证缺项。
+位置：Blueprint/Ch07.lean；MD.Ch07.constrainedAField, MD.Ch07.constrainedBField, MD.Ch07.geodesicConstraintFlow, MD.Ch07.constrainedKickRelation, MD.Ch07.constrainedExactORelation。
+
+## 1. MD-7.12.1-ConstrainedBAOABAlgorithm · definition · 印刷p.320 / PDFp.341
+
+### 2. 原文陈述
+
+c-$[BAOAB]$
+\[p_{n+1/5}=p_n-\tfrac h2\nabla U(q_n)-g'(q_n)^T\lambda_{n+1/3},\quad g'(q_n)M^{-1}p_{n+1/5}=0.\]
+Solve the geodesic flow $A_c$ for $h/2$, and map $[q_n,p_{n+1/5}]\to[q_{n+1/2},p_{n+2/5}]$.
+\[p_{n+3/5}=e^{-\gamma h}p_{n+2/5}+\sqrt{(1-e^{-2\gamma h})k_BTM}R_n-g'(q_{n+1/2})^T\lambda_{n+2/3},\quad g'(q_{n+1/2})M^{-1}p_{n+3/5}=0.\]
+Solve the geodesic flow $A_c$ for $h/2$, and map $[q_{n+1/2},p_{n+3/5}]\to[q_{n+1},p_{n+4/5}]$.
+\[p_{n+1}=p_{n+4/5}-\tfrac h2\nabla U(q_{n+1})-g'(q_{n+1})^T\lambda_{n+1},\quad g'(q_{n+1})M^{-1}p_{n+1}=0.\]
+
+### 3. 原文证明
+
+原书未给独立完整证明。
+
+### 4. 完整当前Lean（原文与修正版独立列出）
+
+```lean
+def constrainedBAOABRelation {l : ℕ} (m : V n) (g : V n → V l) (U : V n → ℝ)
+    (F : ℝ → Phase n → Phase n) (γ θ h : ℝ) (R : V n) (x out : Phase n) : Prop :=
+  geodesicConstraintFlow m g F ∧ ∃ b o : Phase n,
+    constrainedKickRelation m U g (h/2) x b ∧
+    constrainedExactORelation m g γ θ h R (F (h/2) b) o ∧
+    constrainedKickRelation m U g (h/2) (F (h/2) o) out
+theorem constrainedBAOAB_constraint {l : ℕ} (m : V n) (g : V n → V l) (U : V n → ℝ)
+    (F : ℝ → Phase n → Phase n) (γ θ h : ℝ) (R : V n) (x out : Phase n)
+    (hs : constrainedBAOABRelation m g U F γ θ h R x out) : out ∈ cotangentConstraint m g := by
+  obtain ⟨_,b,o,_,_,hout⟩ := hs
+  exact hout.2.choose_spec.2
+```
+
+### 5. 对照表
+
+| 原文成分 | Lean对应 | 说明 |
+|---|---|---|
+| 本条引用的对象与公式 | MD.Ch07.constrainedBAOABRelation, MD.Ch07.constrainedBAOAB_constraint | 本条逐字引用的全部数学对象与公式；未纳入的上下文另列。 |
+
+[EXTRA] 完整五段关系、全部中间变量与隐约束；仅证明成功求解后的终点资格，不证明隐式解存在、唯一或概率不变性。网站包须同时摘录geodesicConstraintFlow、两求解关系和选择规格。
+记号与上下文：见所列原文与Lean量化变量。
+
+### 6. 审计结论
+
+本地：已对照目视原页核对对象、量词、技术资格和所列覆盖范围；网站尚未审阅。
+疑点：本条暂未发现需单列的原书疑误。
+网站：尚未送审。
+
+### 7. 状态与证明位置
+
+定义；单文件编译与逐声明公理核对通过。
+本条未登记待证缺项。
+位置：Blueprint/Ch07.lean；MD.Ch07.constrainedBAOABRelation, MD.Ch07.constrainedBAOAB_constraint。
+
+## 1. MD-7.12.1-ApproximateGeodesicOrder · definition · 印刷p.320 / PDFp.341
+
+### 2. 原文陈述
+
+We do not necessarily need to solve the geodesic flow exactly in practice, though for the purposes of analysis we shall assume we do. If we are considering a second order scheme, then solving the $A_c$ piece to at least second order would be sufficient to preserve the overall order of the scheme, although a scheme may have potentially better accuracy and stability properties if a higher order solve is used.
+
+### 3. 原文证明
+
+原书未给独立完整证明。
+
+### 4. 完整当前Lean（原文与修正版独立列出）
+
+```lean
+def localMapErrorBound {E : Type*} [NormedAddCommGroup E] (F G : ℝ → E → E) (D : Set E) (r : ℕ) : Prop :=
+  ∃ C ≥ 0, ∃ δ > 0, ∀ h ∈ Set.Ioo 0 δ, ∀ x ∈ D, ‖F h x-G h x‖ ≤ C*h^(r+1)
+def geodesicReplacementSecondOrder {E : Type*} [NormedAddCommGroup E]
+    (exact approx : ℝ → E → E) (D : Set E) : Prop := localMapErrorBound exact approx D 2
+```
+
+### 5. 对照表
+
+| 原文成分 | Lean对应 | 说明 |
+|---|---|---|
+| 本条引用的对象与公式 | MD.Ch07.localMapErrorBound, MD.Ch07.geodesicReplacementSecondOrder | 局部二阶替换的目标资格；从该资格推出随机全局/不变分布阶数尚未陈述完整定理。 |
+
+[EXTRA] 用实际范数误差与统一C,δ明确二阶局部替换资格。完整对称随机组合需稳定性、Lipschitz、矩界及采用强阶/弱阶的区分，原段未列齐；此处不把定义当作保阶定理。
+记号与上下文：见所列原文与Lean量化变量。
+
+### 6. 审计结论
+
+本地：已对照目视原页核对对象、量词、技术资格和所列覆盖范围；网站尚未审阅。
+疑点：本条暂未发现需单列的原书疑误。
+网站：尚未送审。
+
+### 7. 状态与证明位置
+
+定义；单文件编译与逐声明公理核对通过。
+本条未登记待证缺项。
+位置：Blueprint/Ch07.lean；MD.Ch07.localMapErrorBound, MD.Ch07.geodesicReplacementSecondOrder。
 

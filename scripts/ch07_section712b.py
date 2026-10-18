@@ -9,7 +9,7 @@ which is easily computed once the $R_n$ vector is evaluated in the step, and giv
     (q p R : V n) (multiplier : V l) : Prop :=
   hiddenConstraint m g (q,fun i ↦ (1-h*γ/4)*p i+Real.sqrt (h*γ*θ*m i)*R i-constraintReaction g q multiplier i)
 def midpointAmplification (a : ℝ) : ℝ := (1-a/4)/(1+a/4)
-def midpointStabilityPrinted (a : ℝ) : Prop := |midpointAmplification a| ≤ 1 ↔ a < 4
+def midpointStabilityPrinted (a : ℝ) : Prop := a < 4
 theorem midpointStabilityPrinted_corrected (a : ℝ) (ha : 0 ≤ a) : |midpointAmplification a| ≤ 1 := by
   unfold midpointAmplification
   rw [abs_le]
@@ -20,8 +20,8 @@ theorem midpointStabilityPrinted_corrected (a : ℝ) (ha : 0 ≤ a) : |midpointA
     nlinarith
 theorem midpointStability_counterexample : |midpointAmplification 8| ≤ 1 ∧ ¬ (8 : ℝ) < 4 := by
   norm_num [midpointAmplification]''',label='(7.46)',
-issues=['已目视核对PDF340／印刷319：所印γh<4是中点OU放大因子非负的条件，而非线性绝对稳定性的必要条件。隐式中点OU对γh≥0满足|r|≤1；γh=8给反例。完整耦合Verlet仍有其独立步长限制。'],
-extra=['原文版以声称的稳定充要式单列目标且不证明；修正版仅针对中点OU衰减模态，不把它推广为完整MEVME无条件稳定。'],verdict='NEEDS_HUMAN')
+issues=['已目视核对PDF340／印刷319：所印γh<4保留为原书给出的限制。它保证中点OU放大因子为正；OU线性绝对稳定性本身对γh≥0均成立。原文没有写充要关系，不能把本条当作已确认的原书错误。完整耦合Verlet仍有独立步长限制。'],
+extra=['原文版仅保留γh<4条件，不增添充要关系；补充结论仅针对中点OU衰减模态。a=8说明γh<4不是该单独模态稳定的必要条件，不反驳原书整套算法的充分条件。'],verdict='NEEDS_HUMAN')
 
 add('ConstrainedABOSplitting','7.12.1','319–320',
 r'''\[A_c:\quad dq=M^{-1}pdt,\quad dp=-g'(q)^T\lambda dt,\quad g(q)=0,\]

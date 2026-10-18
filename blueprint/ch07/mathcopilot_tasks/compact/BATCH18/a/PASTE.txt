@@ -1,0 +1,214 @@
+以附件/PASTE 为准，忽略 /workspace 旧文件；Mathlib 定义按标准含义采信。
+本任务只审本条：原文转录、对象资格、定义体、量词、全部结论及[EXTRA]是否一致；Lean编译不代替语义审阅。
+Lean/Mathlib均4.34.0。原页PDF映射：[339, 340]；印刷页=[318, 319].
+input_sha256请原样回显：
+{
+  "Blueprint/Ch07.lean": "03e34bf86a5b27e03cce8552bb21fc0fea40514cd87faa953bf09a6a0a27f3c2",
+  "blueprint/ch07/ch07_source.json": "27e402f2a8b9c511106df901d6cc8472e1dae783cdf739f657879ffcf297462a",
+  "BATCH18a_PAGES.pdf": "ea92948c48081d4464e0f808511229b3b1138989f61f12381dc94cb503a01909"
+}
+用代码将JSON对象(batch,input_sha256,items)写到 /workspace/.mathcopilot/reviews/ch07/BATCH18a_review.json；items仅含本source_id。
+items字段：source_id、verdict(PASS/FAIL/NEEDS_HUMAN)、transcription、semantic_review、counterexample、suggested_fix、printed_version、corrected_version。逐版区分原文疑误和修正版结论；缺材料必须具体指出，不猜测。写后json.loads自检，最后仅回复路径及统计。
+
+## 原文JSON
+```json
+{
+  "source_id": "MD-7.12-MEVMEAlgorithm",
+  "kind": "definition",
+  "label": null,
+  "section": "7.12",
+  "printed_page": "318–319",
+  "pdf_page": "339–340",
+  "statement_latex": "Midpoint Euler - Verlet - Midpoint Euler (see [232])\n\\[p_{n+1/4}=p_n-\\tfrac{h\\gamma}4(p_n+p_{n+1/4})+\\sqrt{h\\gamma k_BTM}R_n-g'(q_n)^T\\lambda_{n+1/4},\\quad g'(q_n)M^{-1}p_{n+1/4}=0.\\]\n\\[p_{n+1/2}=p_{n+1/4}-\\tfrac h2\\nabla U(q_n)-g'(q_n)^T\\lambda_{n+1/2},\\quad q_{n+1}=q_n+hM^{-1}p_{n+1/2},\\]\n\\[p_{n+3/4}=p_{n+1/2}-\\tfrac h2\\nabla U(q_{n+1})-g'(q_{n+1})^T\\lambda_{n+3/4},\\quad g'(q_{n+1})M^{-1}p_{n+3/4}=0,\\quad g(q_{n+1})=0.\\]\n\\[p_{n+1}=p_{n+3/4}-\\tfrac{h\\gamma}4(p_{n+3/4}+p_{n+1})+\\sqrt{h\\gamma k_BTM}R_{n+1/2}-g'(q_{n+1})^T\\lambda_{n+1},\\quad g'(q_{n+1})M^{-1}p_{n+1}=0.\\]",
+  "proof_latex": null,
+  "proof_note": "原书未给独立完整证明。",
+  "context_notation": [],
+  "extra_assumptions": [
+    "完整记录全部中间动量、乘子和位置/隐约束；隐式关系不声称求解器存在唯一。R,S为独立标准Gaussian向量的资格由使用时另加vectorNormalSequence。"
+  ],
+  "issues": [],
+  "statement_scope": "本条逐字引用的全部数学对象与公式；未纳入的上下文另列。",
+  "lean_decl": "MD.Ch07.midpointConstrainedORelation",
+  "lean_declarations": [
+    "MD.Ch07.midpointConstrainedORelation",
+    "MD.Ch07.constrainedVerletRelation",
+    "MD.Ch07.mevmeRelation"
+  ],
+  "source_page_verification": "见source_page_checks.json；必须已目视核对本条原页。",
+  "repair_log": [],
+  "documented_priors": []
+}
+```
+
+## 完整本条Lean
+```lean
+def midpointConstrainedORelation {l : ℕ} (m : V n) (g : V n → V l) (γ θ h : ℝ)
+    (q p R out : V n) (multiplier : V l) : Prop :=
+  (∀ i, out i = p i-h*γ/4*(p i+out i)+Real.sqrt (h*γ*θ*m i)*R i-constraintReaction g q multiplier i) ∧
+  hiddenConstraint m g (q,out)
+def constrainedVerletRelation {l : ℕ} (m : V n) (g : V n → V l) (U : V n → ℝ) (h : ℝ)
+    (x out : Phase n) (ph : V n) (multiplier μ : V l) : Prop :=
+  (∀ i, ph i = x.2 i-h/2*gradient U x.1 i-constraintReaction g x.1 multiplier i) ∧
+  (∀ i, out.1 i = x.1 i+h/m i*ph i) ∧
+  (∀ i, out.2 i = ph i-h/2*gradient U out.1 i-constraintReaction g out.1 μ i) ∧
+  out ∈ cotangentConstraint m g
+def mevmeRelation {l : ℕ} (m : V n) (g : V n → V l) (U : V n → ℝ) (γ θ h : ℝ)
+    (R S : V n) (x out : Phase n) : Prop :=
+  ∃ pa ph pb : V n, ∃ multipliera multiplierb multiplierc multiplierd : V l,
+    midpointConstrainedORelation m g γ θ h x.1 x.2 R pa multipliera ∧
+    constrainedVerletRelation m g U h (x.1,pa) (out.1,pb) ph multiplierb multiplierc ∧
+    midpointConstrainedORelation m g γ θ h out.1 pb S out.2 multiplierd
+```
+
+## 项目依赖定义体及选择规格
+以下def/abbrev/structure完整保留；定理列出完整类型，Mathlib标准定义无需摘录。
+
+### MD.Ch07.V (Blueprint/Ch07.lean:172)
+原文件上下文：
+```lean
+open Set Filter MeasureTheory ProbabilityTheory MolecularDynamics
+open scoped BigOperators Topology ContDiff ENNReal NNReal
+variable {Ω : Type*} [MeasurableSpace Ω]
+variable {n : ℕ}
+```
+```lean
+abbrev V (n : ℕ) := Fin n → ℝ
+```
+
+### MD.Ch07.Phase (Blueprint/Ch07.lean:173)
+原文件上下文：
+```lean
+open Set Filter MeasureTheory ProbabilityTheory MolecularDynamics
+open scoped BigOperators Topology ContDiff ENNReal NNReal
+variable {Ω : Type*} [MeasurableSpace Ω]
+variable {n : ℕ}
+```
+```lean
+abbrev Phase (n : ℕ) := V n × V n
+```
+
+### MD.Ch07.coordDerivative (Blueprint/Ch07.lean:221)
+原文件上下文：
+```lean
+open Set Filter MeasureTheory ProbabilityTheory MolecularDynamics
+open scoped BigOperators Topology ContDiff ENNReal NNReal
+variable {Ω : Type*} [MeasurableSpace Ω]
+variable {n : ℕ}
+```
+```lean
+def coordDerivative (f : V n → ℝ) (x : V n) (i : Fin n) : ℝ :=
+  deriv (fun z ↦ f (Function.update x i z)) (x i)
+```
+
+### MD.Ch07.gradient (Blueprint/Ch07.lean:250)
+原文件上下文：
+```lean
+open Set Filter MeasureTheory ProbabilityTheory MolecularDynamics
+open scoped BigOperators Topology ContDiff ENNReal NNReal
+variable {Ω : Type*} [MeasurableSpace Ω]
+variable {n : ℕ}
+```
+```lean
+def gradient (U : V n → ℝ) (q : V n) : V n := fun i ↦ coordDerivative U q i
+```
+
+### MD.Ch07.constraintJacobian (Blueprint/Ch07.lean:1362)
+原文件上下文：
+```lean
+open Set Filter MeasureTheory ProbabilityTheory MolecularDynamics
+open scoped BigOperators Topology ContDiff ENNReal NNReal
+variable {Ω : Type*} [MeasurableSpace Ω]
+variable {n : ℕ}
+```
+```lean
+def constraintJacobian {l : ℕ} (g : V n → V l) (q : V n) (j : Fin l) (i : Fin n) : ℝ :=
+  coordDerivative (fun x ↦ g x j) q i
+```
+
+### MD.Ch07.constraintReaction (Blueprint/Ch07.lean:1364)
+原文件上下文：
+```lean
+open Set Filter MeasureTheory ProbabilityTheory MolecularDynamics
+open scoped BigOperators Topology ContDiff ENNReal NNReal
+variable {Ω : Type*} [MeasurableSpace Ω]
+variable {n : ℕ}
+```
+```lean
+def constraintReaction {l : ℕ} (g : V n → V l) (q : V n) (multiplier : V l) : V n :=
+  fun i ↦ ∑ j, constraintJacobian g q j i*multiplier j
+```
+
+### MD.Ch07.hiddenConstraint (Blueprint/Ch07.lean:1366)
+原文件上下文：
+```lean
+open Set Filter MeasureTheory ProbabilityTheory MolecularDynamics
+open scoped BigOperators Topology ContDiff ENNReal NNReal
+variable {Ω : Type*} [MeasurableSpace Ω]
+variable {n : ℕ}
+```
+```lean
+def hiddenConstraint {l : ℕ} (m : V n) (g : V n → V l) (x : Phase n) : Prop :=
+  ∀ j, (∑ i, constraintJacobian g x.1 j i*(x.2 i/m i)) = 0
+```
+
+### MD.Ch07.cotangentConstraint (Blueprint/Ch07.lean:1368)
+原文件上下文：
+```lean
+open Set Filter MeasureTheory ProbabilityTheory MolecularDynamics
+open scoped BigOperators Topology ContDiff ENNReal NNReal
+variable {Ω : Type*} [MeasurableSpace Ω]
+variable {n : ℕ}
+```
+```lean
+def cotangentConstraint {l : ℕ} (m : V n) (g : V n → V l) : Set (Phase n) :=
+  {x | g x.1 = 0 ∧ hiddenConstraint m g x}
+```
+
+### MD.Ch07.midpointConstrainedORelation (Blueprint/Ch07.lean:1419)
+原文件上下文：
+```lean
+open Set Filter MeasureTheory ProbabilityTheory MolecularDynamics
+open scoped BigOperators Topology ContDiff ENNReal NNReal
+variable {Ω : Type*} [MeasurableSpace Ω]
+variable {n : ℕ}
+```
+```lean
+def midpointConstrainedORelation {l : ℕ} (m : V n) (g : V n → V l) (γ θ h : ℝ)
+    (q p R out : V n) (multiplier : V l) : Prop :=
+  (∀ i, out i = p i-h*γ/4*(p i+out i)+Real.sqrt (h*γ*θ*m i)*R i-constraintReaction g q multiplier i) ∧
+  hiddenConstraint m g (q,out)
+```
+
+### MD.Ch07.constrainedVerletRelation (Blueprint/Ch07.lean:1423)
+原文件上下文：
+```lean
+open Set Filter MeasureTheory ProbabilityTheory MolecularDynamics
+open scoped BigOperators Topology ContDiff ENNReal NNReal
+variable {Ω : Type*} [MeasurableSpace Ω]
+variable {n : ℕ}
+```
+```lean
+def constrainedVerletRelation {l : ℕ} (m : V n) (g : V n → V l) (U : V n → ℝ) (h : ℝ)
+    (x out : Phase n) (ph : V n) (multiplier μ : V l) : Prop :=
+  (∀ i, ph i = x.2 i-h/2*gradient U x.1 i-constraintReaction g x.1 multiplier i) ∧
+  (∀ i, out.1 i = x.1 i+h/m i*ph i) ∧
+  (∀ i, out.2 i = ph i-h/2*gradient U out.1 i-constraintReaction g out.1 μ i) ∧
+  out ∈ cotangentConstraint m g
+```
+
+### MD.Ch07.mevmeRelation (Blueprint/Ch07.lean:1429)
+原文件上下文：
+```lean
+open Set Filter MeasureTheory ProbabilityTheory MolecularDynamics
+open scoped BigOperators Topology ContDiff ENNReal NNReal
+variable {Ω : Type*} [MeasurableSpace Ω]
+variable {n : ℕ}
+```
+```lean
+def mevmeRelation {l : ℕ} (m : V n) (g : V n → V l) (U : V n → ℝ) (γ θ h : ℝ)
+    (R S : V n) (x out : Phase n) : Prop :=
+  ∃ pa ph pb : V n, ∃ multipliera multiplierb multiplierc multiplierd : V l,
+    midpointConstrainedORelation m g γ θ h x.1 x.2 R pa multipliera ∧
+    constrainedVerletRelation m g U h (x.1,pa) (out.1,pb) ph multiplierb multiplierc ∧
+    midpointConstrainedORelation m g γ θ h out.1 pb S out.2 multiplierd
+```

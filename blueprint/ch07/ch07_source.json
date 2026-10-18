@@ -2598,5 +2598,223 @@
     "source_page_verification": "见source_page_checks.json；必须已目视核对本条原页。",
     "repair_log": [],
     "documented_priors": []
+  },
+  {
+    "source_id": "MD-7.12-ConstrainedLangevin",
+    "kind": "definition",
+    "label": "(7.43)–(7.45)",
+    "section": "7.12",
+    "printed_page": "317",
+    "pdf_page": "338",
+    "statement_latex": "\\[dq=M^{-1}pdt,\\tag{7.43}\\]\n\\[dp=-\\nabla U(q)dt-\\gamma pdt+\\sqrt{2\\gamma k_BTM}dW-g'(q)^T\\lambda dt,\\tag{7.44}\\]\n\\[0=g(q).\\tag{7.45}\\]\nThe vector of $l$ constraints is given by $g:\\mathbb R^{N_c}\\to\\mathbb R^l$ and $\\lambda$ is an $l$-dimensional vector of Lagrange multipliers. $W$ is a vector of standard Wiener processes, with the usual friction parameter $\\gamma>0$. Permissible phase points lie in the co-tangent bundle defined by the constraint and hidden constraint\n\\[g(q)=0,\\qquad g'(q)M^{-1}p=0.\\]",
+    "proof_latex": null,
+    "proof_note": "原书未给独立完整证明。",
+    "context_notation": [],
+    "extra_assumptions": [
+      "实际多维Wiener坐标独立、正质量/温度/摩擦、C²约束、积分可积明示；常系数噪声用真实W增量。",
+      "定义保留存在给定乘子过程的积分解，不证明一般约束SDE存在唯一。状态及乘子适应W自然历史，状态路径连续与初值完整；一般强解存在唯一仍未证明。"
+    ],
+    "issues": [],
+    "statement_scope": "全部约束积分方程及隐约束资格；适应性作为解资格显式保留，存在唯一性未证明。",
+    "lean_decl": "MD.Ch07.constraintJacobian",
+    "lean_declarations": [
+      "MD.Ch07.constraintJacobian",
+      "MD.Ch07.constraintReaction",
+      "MD.Ch07.hiddenConstraint",
+      "MD.Ch07.cotangentConstraint",
+      "MD.Ch07.constrainedLangevin"
+    ],
+    "source_page_verification": "见source_page_checks.json；必须已目视核对本条原页。",
+    "repair_log": [],
+    "documented_priors": []
+  },
+  {
+    "source_id": "MD-7.12-ConstrainedCanonicalErgodicity",
+    "kind": "definition",
+    "label": null,
+    "section": "7.12",
+    "printed_page": "317",
+    "pdf_page": "338",
+    "statement_latex": "In the infinite time limit, we have that solution trajectories of constrained Langevin (7.43)–(7.45) sample $\\widetilde\\rho_\\beta$ ergodically, such that\n\\[\\lim_{T\\to\\infty}\\frac1T\\int_0^T\\phi(q(t),p(t))dt=\\int_{\\mathcal D}\\phi(q,p)\\widetilde\\rho_\\beta d\\omega,\\]\nwhere $\\widetilde\\rho_\\beta$ is the normalized constrained canonical distribution\n\\[\\widetilde\\rho_\\beta=Z^{-1}\\exp(-\\beta H(q,p))\\delta[g(q)]\\delta[g'(q)M^{-1}p],\\]\nfor normalizing constant $Z$ and where $\\delta[z]:=\\prod_i\\delta[z_i]$ for a vector $z$.",
+    "proof_latex": null,
+    "proof_note": "原书未给独立完整证明。",
+    "context_notation": [],
+    "extra_assumptions": [
+      "δ不是普通Lebesgue密度；用有支撑测度ν和正则化δ的弱积分极限规定其含义，不能用任意面测度替代而省略Jacobian因子。",
+      "实际概率要求配分积分正有限；遍历性还需连通性、正则满秩约束、势增长及不可约等条件。原书省略这些条件，本条仅记录目标，不宣称无条件遍历定理。"
+    ],
+    "issues": [],
+    "statement_scope": "全部分布及遍历平均目标的测度定义；约束参考测度存在与具体过程的遍历定理仍缺。",
+    "lean_decl": "MD.Ch07.constrainedCanonical",
+    "lean_declarations": [
+      "MD.Ch07.constrainedCanonical",
+      "MD.Ch07.constrainedReference",
+      "MD.Ch07.constrainedErgodicAverages"
+    ],
+    "source_page_verification": "见source_page_checks.json；必须已目视核对本条原页。",
+    "repair_log": [],
+    "documented_priors": []
+  },
+  {
+    "source_id": "MD-7.12-ConstrainedHOSplitting",
+    "kind": "definition",
+    "label": null,
+    "section": "7.12",
+    "printed_page": "318",
+    "pdf_page": "339",
+    "statement_latex": "We could instead consider splitting the dynamics up and performing the integration using a splitting method. One uses\n\\[H_c:\\quad dq=M^{-1}pdt,\\quad dp=-\\nabla U(q)dt-g'(q)^T\\lambda dt,\\quad g(q)=0,\\]\n\\[O_c:\\quad dq=0,\\quad dp=-\\gamma pdt+\\sqrt{2\\gamma k_BTM}dW-g'(q)^T\\lambda dt,\\quad g(q)=0.\\]\nWe solve these two pieces symmetrically, where the constrained Hamiltonian part is solved over a step $h$, in between two solves of the Ornstein-Uhlenbeck SDE with stepsize $h/2$.",
+    "proof_latex": null,
+    "proof_note": "原书未给独立完整证明。",
+    "context_notation": [],
+    "extra_assumptions": [
+      "Hc、Oc分别使用各自乘子，不能将相同multiplier在求和中重复扣除；Oc噪声为前条真实Wiener常扩散项，向量场仅记录漂移。",
+      "每段都应满足cotangentConstraint，实际流或核、Oc半群律及约束Gaussian不变性尚未证明。"
+    ],
+    "issues": [],
+    "statement_scope": "本条逐字引用的全部数学对象与公式；未纳入的上下文另列。",
+    "lean_decl": "MD.Ch07.constrainedHField",
+    "lean_declarations": [
+      "MD.Ch07.constrainedHField",
+      "MD.Ch07.constrainedOField",
+      "MD.Ch07.constrainedHOComposition"
+    ],
+    "source_page_verification": "见source_page_checks.json；必须已目视核对本条原页。",
+    "repair_log": [],
+    "documented_priors": []
+  },
+  {
+    "source_id": "MD-7.12-MEVMEAlgorithm",
+    "kind": "definition",
+    "label": null,
+    "section": "7.12",
+    "printed_page": "318–319",
+    "pdf_page": "339–340",
+    "statement_latex": "Midpoint Euler - Verlet - Midpoint Euler (see [232])\n\\[p_{n+1/4}=p_n-\\tfrac{h\\gamma}4(p_n+p_{n+1/4})+\\sqrt{h\\gamma k_BTM}R_n-g'(q_n)^T\\lambda_{n+1/4},\\quad g'(q_n)M^{-1}p_{n+1/4}=0.\\]\n\\[p_{n+1/2}=p_{n+1/4}-\\tfrac h2\\nabla U(q_n)-g'(q_n)^T\\lambda_{n+1/2},\\quad q_{n+1}=q_n+hM^{-1}p_{n+1/2},\\]\n\\[p_{n+3/4}=p_{n+1/2}-\\tfrac h2\\nabla U(q_{n+1})-g'(q_{n+1})^T\\lambda_{n+3/4},\\quad g'(q_{n+1})M^{-1}p_{n+3/4}=0,\\quad g(q_{n+1})=0.\\]\n\\[p_{n+1}=p_{n+3/4}-\\tfrac{h\\gamma}4(p_{n+3/4}+p_{n+1})+\\sqrt{h\\gamma k_BTM}R_{n+1/2}-g'(q_{n+1})^T\\lambda_{n+1},\\quad g'(q_{n+1})M^{-1}p_{n+1}=0.\\]",
+    "proof_latex": null,
+    "proof_note": "原书未给独立完整证明。",
+    "context_notation": [],
+    "extra_assumptions": [
+      "完整记录全部中间动量、乘子和位置/隐约束；隐式关系不声称求解器存在唯一。R,S为独立标准Gaussian向量的资格由使用时另加vectorNormalSequence。"
+    ],
+    "issues": [],
+    "statement_scope": "本条逐字引用的全部数学对象与公式；未纳入的上下文另列。",
+    "lean_decl": "MD.Ch07.midpointConstrainedORelation",
+    "lean_declarations": [
+      "MD.Ch07.midpointConstrainedORelation",
+      "MD.Ch07.constrainedVerletRelation",
+      "MD.Ch07.mevmeRelation"
+    ],
+    "source_page_verification": "见source_page_checks.json；必须已目视核对本条原页。",
+    "repair_log": [],
+    "documented_priors": []
+  },
+  {
+    "source_id": "MD-7.12-MidpointStabilityPrinted",
+    "kind": "unnumbered_claim",
+    "label": "(7.46)",
+    "section": "7.12",
+    "printed_page": "319",
+    "pdf_page": "340",
+    "statement_latex": "The Lagrange multiplier $\\lambda_{n+1/4}$ (and likewise $\\lambda_{n+1}$) can be obtained by solving the linear system\n\\[g'(q_n)M^{-1}[(1-h\\gamma/4)p_n+\\sqrt{h\\gamma k_BTM}R_n-g'(q_n)^T\\lambda_{n+1/4}]=0,\\]\nwhich is easily computed once the $R_n$ vector is evaluated in the step, and gives us a stability criterion\n\\[\\gamma h<4.\\tag{7.46}\\]",
+    "proof_latex": null,
+    "proof_note": "原书未给独立完整证明。",
+    "context_notation": [],
+    "extra_assumptions": [
+      "原文版仅保留γh<4条件，不增添充要关系；补充结论仅针对中点OU衰减模态。a=8说明γh<4不是该单独模态稳定的必要条件，不反驳原书整套算法的充分条件。"
+    ],
+    "issues": [
+      "已目视核对PDF340／印刷319：所印γh<4保留为原书给出的限制。它保证中点OU放大因子为正；OU线性绝对稳定性本身对γh≥0均成立。原文没有写充要关系，不能把本条当作已确认的原书错误。完整耦合Verlet仍有独立步长限制。"
+    ],
+    "statement_scope": "本条逐字引用的全部数学对象与公式；未纳入的上下文另列。",
+    "lean_decl": "MD.Ch07.multiplierLinearSystem",
+    "lean_declarations": [
+      "MD.Ch07.multiplierLinearSystem",
+      "MD.Ch07.midpointAmplification",
+      "MD.Ch07.midpointStabilityPrinted",
+      "MD.Ch07.midpointStabilityPrinted_corrected",
+      "MD.Ch07.midpointStability_counterexample"
+    ],
+    "source_page_verification": "见source_page_checks.json；必须已目视核对本条原页。",
+    "repair_log": [],
+    "documented_priors": []
+  },
+  {
+    "source_id": "MD-7.12.1-ConstrainedABOSplitting",
+    "kind": "definition",
+    "label": null,
+    "section": "7.12.1",
+    "printed_page": "319–320",
+    "pdf_page": "340–341",
+    "statement_latex": "\\[A_c:\\quad dq=M^{-1}pdt,\\quad dp=-g'(q)^T\\lambda dt,\\quad g(q)=0,\\]\n\\[B_c:\\quad dq=0,\\quad dp=-\\nabla U(q)dt-g'(q)^T\\lambda dt,\\quad g(q)=0,\\]\n\\[O_c:\\quad dq=0,\\quad dp=-\\gamma pdt+\\sqrt{2\\gamma k_BTM}dW-g'(q)^T\\lambda dt,\\quad g(q)=0.\\]\nObserve that the holonomic constraint (as well as the hidden constraint) is maintained in each part, changing the usual A piece into a geodesic drift along the manifold defined by $g(q)=0$.",
+    "proof_latex": null,
+    "proof_note": "原书未给独立完整证明。",
+    "context_notation": [],
+    "extra_assumptions": [
+      "Ac为已存在的完整光滑约束流，F0=id及流合成律完整；Bc/Oc为乘子线性求解关系。规则保持约束写在关系中，不把乘子求解存在性计为已证。",
+      "正质量、约束Jacobian满秩和γ≥0,θ>0,h≥0由求解器应用时另加；Oc噪声R必须独立标准Gaussian。"
+    ],
+    "issues": [],
+    "statement_scope": "本条逐字引用的全部数学对象与公式；未纳入的上下文另列。",
+    "lean_decl": "MD.Ch07.constrainedAField",
+    "lean_declarations": [
+      "MD.Ch07.constrainedAField",
+      "MD.Ch07.constrainedBField",
+      "MD.Ch07.geodesicConstraintFlow",
+      "MD.Ch07.constrainedKickRelation",
+      "MD.Ch07.constrainedExactORelation"
+    ],
+    "source_page_verification": "见source_page_checks.json；必须已目视核对本条原页。",
+    "repair_log": [],
+    "documented_priors": []
+  },
+  {
+    "source_id": "MD-7.12.1-ConstrainedBAOABAlgorithm",
+    "kind": "definition",
+    "label": null,
+    "section": "7.12.1",
+    "printed_page": "320",
+    "pdf_page": "341",
+    "statement_latex": "c-$[BAOAB]$\n\\[p_{n+1/5}=p_n-\\tfrac h2\\nabla U(q_n)-g'(q_n)^T\\lambda_{n+1/3},\\quad g'(q_n)M^{-1}p_{n+1/5}=0.\\]\nSolve the geodesic flow $A_c$ for $h/2$, and map $[q_n,p_{n+1/5}]\\to[q_{n+1/2},p_{n+2/5}]$.\n\\[p_{n+3/5}=e^{-\\gamma h}p_{n+2/5}+\\sqrt{(1-e^{-2\\gamma h})k_BTM}R_n-g'(q_{n+1/2})^T\\lambda_{n+2/3},\\quad g'(q_{n+1/2})M^{-1}p_{n+3/5}=0.\\]\nSolve the geodesic flow $A_c$ for $h/2$, and map $[q_{n+1/2},p_{n+3/5}]\\to[q_{n+1},p_{n+4/5}]$.\n\\[p_{n+1}=p_{n+4/5}-\\tfrac h2\\nabla U(q_{n+1})-g'(q_{n+1})^T\\lambda_{n+1},\\quad g'(q_{n+1})M^{-1}p_{n+1}=0.\\]",
+    "proof_latex": null,
+    "proof_note": "原书未给独立完整证明。",
+    "context_notation": [],
+    "extra_assumptions": [
+      "完整五段关系、全部中间变量与隐约束；仅证明成功求解后的终点资格，不证明隐式解存在、唯一或概率不变性。网站包须同时摘录geodesicConstraintFlow、两求解关系和选择规格。"
+    ],
+    "issues": [],
+    "statement_scope": "本条逐字引用的全部数学对象与公式；未纳入的上下文另列。",
+    "lean_decl": "MD.Ch07.constrainedBAOABRelation",
+    "lean_declarations": [
+      "MD.Ch07.constrainedBAOABRelation",
+      "MD.Ch07.constrainedBAOAB_constraint"
+    ],
+    "source_page_verification": "见source_page_checks.json；必须已目视核对本条原页。",
+    "repair_log": [],
+    "documented_priors": []
+  },
+  {
+    "source_id": "MD-7.12.1-ApproximateGeodesicOrder",
+    "kind": "definition",
+    "label": null,
+    "section": "7.12.1",
+    "printed_page": "320",
+    "pdf_page": "341",
+    "statement_latex": "We do not necessarily need to solve the geodesic flow exactly in practice, though for the purposes of analysis we shall assume we do. If we are considering a second order scheme, then solving the $A_c$ piece to at least second order would be sufficient to preserve the overall order of the scheme, although a scheme may have potentially better accuracy and stability properties if a higher order solve is used.",
+    "proof_latex": null,
+    "proof_note": "原书未给独立完整证明。",
+    "context_notation": [],
+    "extra_assumptions": [
+      "用实际范数误差与统一C,δ明确二阶局部替换资格。完整对称随机组合需稳定性、Lipschitz、矩界及采用强阶/弱阶的区分，原段未列齐；此处不把定义当作保阶定理。"
+    ],
+    "issues": [],
+    "statement_scope": "局部二阶替换的目标资格；从该资格推出随机全局/不变分布阶数尚未陈述完整定理。",
+    "lean_decl": "MD.Ch07.localMapErrorBound",
+    "lean_declarations": [
+      "MD.Ch07.localMapErrorBound",
+      "MD.Ch07.geodesicReplacementSecondOrder"
+    ],
+    "source_page_verification": "见source_page_checks.json；必须已目视核对本条原页。",
+    "repair_log": [],
+    "documented_priors": []
   }
 ]

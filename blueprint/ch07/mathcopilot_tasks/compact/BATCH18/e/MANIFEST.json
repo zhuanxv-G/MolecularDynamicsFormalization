@@ -1,0 +1,59 @@
+{
+  "batch": "BATCH18",
+  "subtask": "BATCH18e",
+  "source_ids": [
+    "MD-7.12.1-ApproximateGeodesicOrder"
+  ],
+  "input_sha256": {
+    "Blueprint/Ch07.lean": "03e34bf86a5b27e03cce8552bb21fc0fea40514cd87faa953bf09a6a0a27f3c2",
+    "blueprint/ch07/ch07_source.json": "27e402f2a8b9c511106df901d6cc8472e1dae783cdf739f657879ffcf297462a",
+    "BATCH18e_PAGES.pdf": "925823992dfc0e21b2e222aadf3f9e1bd25e67b09ddbb944ebacaa3ac3d347f1"
+  },
+  "page_mapping": [
+    {
+      "attachment_page": 1,
+      "original_pdf_page": 341,
+      "printed_page": 320
+    }
+  ],
+  "definition_excerpts": [
+    {
+      "full_name": "MD.Ch07.localMapErrorBound",
+      "kind": "def",
+      "path": "Blueprint/Ch07.lean",
+      "line": 1491,
+      "code_sha256": "3ebfd7630141b12798fc2e17fa1a8e2d7c46ac7418dfa7d37e8e170347c3080c"
+    },
+    {
+      "full_name": "MD.Ch07.geodesicReplacementSecondOrder",
+      "kind": "def",
+      "path": "Blueprint/Ch07.lean",
+      "line": 1493,
+      "code_sha256": "28a69cb8ad406d1d7e21c4917af3ae17733e18930d4c06ef6d4a6252f7eff472"
+    },
+    {
+      "full_name": "MolecularDynamics.Chapter05Review.E",
+      "kind": "abbrev",
+      "path": "MolecularDynamics/Chapter05/ReviewDefinitions.lean",
+      "line": 18,
+      "code_sha256": "b497c8ba7f01b62a3147d9ae65652772ff3f81e57aa19b116f1283fef7a3cc60"
+    }
+  ],
+  "validation": {
+    "project_constant_closure": "PASS",
+    "missing_project_definitions": [],
+    "full_page_render_equality_dpi": 72,
+    "website_submitted": false
+  },
+  "files": {
+    "PASTE.txt": {
+      "bytes": 4398,
+      "sha256": "02846fbc11d21597cd2f33be0363d9fb8e10e2280b42bdb7d4e33806de0720cf"
+    },
+    "BATCH18e_PAGES.pdf": {
+      "bytes": 95669,
+      "sha256": "925823992dfc0e21b2e222aadf3f9e1bd25e67b09ddbb944ebacaa3ac3d347f1"
+    }
+  },
+  "total_task_bytes": 101942
+}

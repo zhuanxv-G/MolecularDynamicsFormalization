@@ -1,6 +1,6 @@
 # 第7章逐条进度
 
-当前正文落盘：99条。全部正文完成：否。章末完整check：未执行。
+当前正文落盘：107条。全部正文完成：否。章末完整check：未执行。
 
 | source_id | 原页PDF | 本地对照 | 编译/公理 | 数学状态 | 网站 |
 |---|---|---|---|---|---|
@@ -103,3 +103,11 @@
 | MD-7.9.3-ZeroFrictionVerlet | 327 | PASS | 通过 | 未证陈述 | 待审 |
 | MD-7.11.1-TemperatureObservables | 331 | PASS | 通过 | 未证陈述 | 待审 |
 | MD-7.11.1-VelocityAutocorrelationDefinition | 331 | PASS | 通过 | 定义 | 待审 |
+| MD-7.12-ConstrainedLangevin | 338 | PASS | 通过 | 定义 | 待审 |
+| MD-7.12-ConstrainedCanonicalErgodicity | 338 | NEEDS_HUMAN | 通过 | 定义 | 待审 |
+| MD-7.12-ConstrainedHOSplitting | 339 | PASS | 通过 | 定义 | 待审 |
+| MD-7.12-MEVMEAlgorithm | 339–340 | PASS | 通过 | 定义 | 待审 |
+| MD-7.12-MidpointStabilityPrinted | 340 | NEEDS_HUMAN | 通过 | 已证 | 待审 |
+| MD-7.12.1-ConstrainedABOSplitting | 340–341 | PASS | 通过 | 定义 | 待审 |
+| MD-7.12.1-ConstrainedBAOABAlgorithm | 341 | PASS | 通过 | 定义 | 待审 |
+| MD-7.12.1-ApproximateGeodesicOrder | 341 | NEEDS_HUMAN | 通过 | 定义 | 待审 |

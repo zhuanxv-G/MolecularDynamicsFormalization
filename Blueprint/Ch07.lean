@@ -1356,4 +1356,141 @@ theorem autocorrelation_rescale (P : Measure Ω) (v : ℝ → Ω → V n) (c t :
   simp_rw [heq]
   rw [integral_const_mul]
 
+/-- source_id: MD-7.12-ConstrainedLangevin · 印刷p.317 / PDFp.338
+[EXTRA] 实际多维Wiener坐标独立、正质量/温度/摩擦、C²约束、积分可积明示；常系数噪声用真实W增量。
+[EXTRA] 定义保留存在给定乘子过程的积分解，不证明一般约束SDE存在唯一。状态及乘子适应W自然历史，状态路径连续与初值完整；一般强解存在唯一仍未证明。 -/
+def constraintJacobian {l : ℕ} (g : V n → V l) (q : V n) (j : Fin l) (i : Fin n) : ℝ :=
+  coordDerivative (fun x ↦ g x j) q i
+def constraintReaction {l : ℕ} (g : V n → V l) (q : V n) (multiplier : V l) : V n :=
+  fun i ↦ ∑ j, constraintJacobian g q j i*multiplier j
+def hiddenConstraint {l : ℕ} (m : V n) (g : V n → V l) (x : Phase n) : Prop :=
+  ∀ j, (∑ i, constraintJacobian g x.1 j i*(x.2 i/m i)) = 0
+def cotangentConstraint {l : ℕ} (m : V n) (g : V n → V l) : Set (Phase n) :=
+  {x | g x.1 = 0 ∧ hiddenConstraint m g x}
+def constrainedLangevin {l : ℕ} (P : Measure Ω) (m : V n) (g : V n → V l) (U : V n → ℝ)
+    (γ θ : ℝ) (W : ℝ → Ω → V n) (X : ℝ → Ω → Phase n) (Λ : ℝ → Ω → V l)
+    (x0 : Phase n) : Prop :=
+  vectorWiener P W ∧ (∀ i, 0 < m i) ∧ 0 < γ ∧ 0 < θ ∧ ContDiff ℝ 2 g ∧
+  x0 ∈ cotangentConstraint m g ∧
+  (∀ t : ℝ, 0 ≤ t → Measurable[MeasurableSpace.comap
+    (fun (sample : Ω) (s : Icc (0 : ℝ) t) ↦ W s sample) inferInstance] (X t) ∧
+    Measurable[MeasurableSpace.comap (fun (sample : Ω) (s : Icc (0 : ℝ) t) ↦ W s sample) inferInstance] (Λ t)) ∧
+  (∀ᵐ sample ∂P, ContinuousOn (fun t ↦ X t sample) (Ici 0) ∧ X 0 sample = x0) ∧
+  (∀ sample i T, 0 ≤ T →
+    IntervalIntegrable (fun s ↦ (X s sample).2 i/m i) volume 0 T ∧
+    IntervalIntegrable (fun s ↦ -gradient U (X s sample).1 i-γ*(X s sample).2 i-
+      constraintReaction g (X s sample).1 (Λ s sample) i) volume 0 T) ∧
+  ∀ t, 0 ≤ t → ∀ᵐ sample ∂P,
+    X t sample ∈ cotangentConstraint m g ∧
+    (∀ i, (X t sample).1 i = x0.1 i+∫ s in (0 : ℝ)..t, (X s sample).2 i/m i) ∧
+    (∀ i, (X t sample).2 i = x0.2 i+
+      (∫ s in (0 : ℝ)..t, -gradient U (X s sample).1 i-γ*(X s sample).2 i-
+        constraintReaction g (X s sample).1 (Λ s sample) i)+
+      Real.sqrt (2*γ*θ*m i)*(W t sample i-W 0 sample i))
+
+/-- source_id: MD-7.12-ConstrainedCanonicalErgodicity · 印刷p.317 / PDFp.338
+[EXTRA] δ不是普通Lebesgue密度；用有支撑测度ν和正则化δ的弱积分极限规定其含义，不能用任意面测度替代而省略Jacobian因子。
+[EXTRA] 实际概率要求配分积分正有限；遍历性还需连通性、正则满秩约束、势增长及不可约等条件。原书省略这些条件，本条仅记录目标，不宣称无条件遍历定理。 -/
+def constrainedCanonical (ν : Measure (Phase n)) (m : V n) (U : V n → ℝ) (β : ℝ) : Measure (Phase n) :=
+  ν.withDensity (fun x ↦ ENNReal.ofReal (gibbsWeight m U β x/(∫ y, gibbsWeight m U β y ∂ν)))
+def constrainedReference {l : ℕ} (ν : Measure (Phase n)) (m : V n) (g : V n → V l) : Prop :=
+  ν (cotangentConstraint m g)ᶜ = 0 ∧
+  ∀ φ : Phase n → ℝ, Continuous φ → HasCompactSupport φ →
+    Filter.Tendsto (fun ε : ℝ ↦ ∫ x, φ x*(Real.pi*ε)^(-(l : ℝ))*
+      Real.exp (-((∑ j, (g x.1 j)^2)+
+        (∑ j, (∑ i, constraintJacobian g x.1 j i*(x.2 i/m i))^2))/ε))
+      (𝓝[Set.Ioi (0 : ℝ)] 0) (𝓝 (∫ x, φ x ∂ν))
+def constrainedErgodicAverages (P : Measure Ω) (X : ℝ → Ω → Phase n) (μ : Measure (Phase n)) : Prop :=
+  IsProbabilityMeasure P ∧ IsProbabilityMeasure μ ∧
+  ∀ φ : Phase n → ℝ, Integrable φ μ →
+    ∀ᵐ sample ∂P, Filter.Tendsto (fun T : ℝ ↦ T⁻¹*∫ t in (0 : ℝ)..T, φ (X t sample)) Filter.atTop (𝓝 (∫ x, φ x ∂μ))
+
+/-- source_id: MD-7.12-ConstrainedHOSplitting · 印刷p.318 / PDFp.339
+[EXTRA] Hc、Oc分别使用各自乘子，不能将相同multiplier在求和中重复扣除；Oc噪声为前条真实Wiener常扩散项，向量场仅记录漂移。
+[EXTRA] 每段都应满足cotangentConstraint，实际流或核、Oc半群律及约束Gaussian不变性尚未证明。 -/
+def constrainedHField {l : ℕ} (m : V n) (U : V n → ℝ) (g : V n → V l) (multiplier : V l) (x : Phase n) : Phase n :=
+  (fun i ↦ x.2 i/m i,fun i ↦ -gradient U x.1 i-constraintReaction g x.1 multiplier i)
+def constrainedOField {l : ℕ} (g : V n → V l) (γ : ℝ) (multiplier : V l) (x : Phase n) : Phase n :=
+  (0,fun i ↦ -γ*x.2 i-constraintReaction g x.1 multiplier i)
+def constrainedHOComposition {E : Type*} (H O : ℝ → E → E) (h : ℝ) : E → E := O (h/2) ∘ H h ∘ O (h/2)
+
+/-- source_id: MD-7.12-MEVMEAlgorithm · 印刷p.318–319 / PDFp.339–340
+[EXTRA] 完整记录全部中间动量、乘子和位置/隐约束；隐式关系不声称求解器存在唯一。R,S为独立标准Gaussian向量的资格由使用时另加vectorNormalSequence。 -/
+def midpointConstrainedORelation {l : ℕ} (m : V n) (g : V n → V l) (γ θ h : ℝ)
+    (q p R out : V n) (multiplier : V l) : Prop :=
+  (∀ i, out i = p i-h*γ/4*(p i+out i)+Real.sqrt (h*γ*θ*m i)*R i-constraintReaction g q multiplier i) ∧
+  hiddenConstraint m g (q,out)
+def constrainedVerletRelation {l : ℕ} (m : V n) (g : V n → V l) (U : V n → ℝ) (h : ℝ)
+    (x out : Phase n) (ph : V n) (multiplier μ : V l) : Prop :=
+  (∀ i, ph i = x.2 i-h/2*gradient U x.1 i-constraintReaction g x.1 multiplier i) ∧
+  (∀ i, out.1 i = x.1 i+h/m i*ph i) ∧
+  (∀ i, out.2 i = ph i-h/2*gradient U out.1 i-constraintReaction g out.1 μ i) ∧
+  out ∈ cotangentConstraint m g
+def mevmeRelation {l : ℕ} (m : V n) (g : V n → V l) (U : V n → ℝ) (γ θ h : ℝ)
+    (R S : V n) (x out : Phase n) : Prop :=
+  ∃ pa ph pb : V n, ∃ multipliera multiplierb multiplierc multiplierd : V l,
+    midpointConstrainedORelation m g γ θ h x.1 x.2 R pa multipliera ∧
+    constrainedVerletRelation m g U h (x.1,pa) (out.1,pb) ph multiplierb multiplierc ∧
+    midpointConstrainedORelation m g γ θ h out.1 pb S out.2 multiplierd
+
+/-- source_id: MD-7.12-MidpointStabilityPrinted · 印刷p.319 / PDFp.340
+[EXTRA] 原文版仅保留γh<4条件，不增添充要关系；补充结论仅针对中点OU衰减模态。a=8说明γh<4不是该单独模态稳定的必要条件，不反驳原书整套算法的充分条件。
+[ERRATUM?] 已目视核对PDF340／印刷319：所印γh<4保留为原书给出的限制。它保证中点OU放大因子为正；OU线性绝对稳定性本身对γh≥0均成立。原文没有写充要关系，不能把本条当作已确认的原书错误。完整耦合Verlet仍有独立步长限制。 -/
+def multiplierLinearSystem {l : ℕ} (m : V n) (g : V n → V l) (γ θ h : ℝ)
+    (q p R : V n) (multiplier : V l) : Prop :=
+  hiddenConstraint m g (q,fun i ↦ (1-h*γ/4)*p i+Real.sqrt (h*γ*θ*m i)*R i-constraintReaction g q multiplier i)
+def midpointAmplification (a : ℝ) : ℝ := (1-a/4)/(1+a/4)
+def midpointStabilityPrinted (a : ℝ) : Prop := a < 4
+theorem midpointStabilityPrinted_corrected (a : ℝ) (ha : 0 ≤ a) : |midpointAmplification a| ≤ 1 := by
+  unfold midpointAmplification
+  rw [abs_le]
+  constructor
+  · apply (le_div_iff₀ (by positivity : 0 < 1+a/4)).2
+    nlinarith
+  · apply (div_le_iff₀ (by positivity : 0 < 1+a/4)).2
+    nlinarith
+theorem midpointStability_counterexample : |midpointAmplification 8| ≤ 1 ∧ ¬ (8 : ℝ) < 4 := by
+  norm_num [midpointAmplification]
+
+/-- source_id: MD-7.12.1-ConstrainedABOSplitting · 印刷p.319–320 / PDFp.340–341
+[EXTRA] Ac为已存在的完整光滑约束流，F0=id及流合成律完整；Bc/Oc为乘子线性求解关系。规则保持约束写在关系中，不把乘子求解存在性计为已证。
+[EXTRA] 正质量、约束Jacobian满秩和γ≥0,θ>0,h≥0由求解器应用时另加；Oc噪声R必须独立标准Gaussian。 -/
+def constrainedAField {l : ℕ} (m : V n) (g : V n → V l) (multiplier : V l) (x : Phase n) : Phase n :=
+  (fun i ↦ x.2 i/m i,fun i ↦ -constraintReaction g x.1 multiplier i)
+def constrainedBField {l : ℕ} (U : V n → ℝ) (g : V n → V l) (multiplier : V l) (x : Phase n) : Phase n :=
+  (0,fun i ↦ -gradient U x.1 i-constraintReaction g x.1 multiplier i)
+def geodesicConstraintFlow {l : ℕ} (m : V n) (g : V n → V l) (F : ℝ → Phase n → Phase n) : Prop :=
+  (∀ x, F 0 x = x) ∧ (∀ s t x, F (s+t) x = F s (F t x)) ∧
+  ∀ x ∈ cotangentConstraint m g, ∃ multiplier : ℝ → V l, ∀ t,
+    F t x ∈ cotangentConstraint m g ∧ HasDerivAt (fun s ↦ F s x) (constrainedAField m g (multiplier t) (F t x)) t
+def constrainedKickRelation {l : ℕ} (m : V n) (U : V n → ℝ) (g : V n → V l)
+    (h : ℝ) (x out : Phase n) : Prop :=
+  out.1 = x.1 ∧ ∃ multiplier : V l, (∀ i, out.2 i = x.2 i-h*gradient U x.1 i-constraintReaction g x.1 multiplier i) ∧
+    out ∈ cotangentConstraint m g
+def constrainedExactORelation {l : ℕ} (m : V n) (g : V n → V l) (γ θ h : ℝ)
+    (R : V n) (x out : Phase n) : Prop :=
+  out.1 = x.1 ∧ ∃ multiplier : V l, (∀ i, out.2 i = ouMomentum m γ θ h x.2 R i-constraintReaction g x.1 multiplier i) ∧
+    out ∈ cotangentConstraint m g
+
+/-- source_id: MD-7.12.1-ConstrainedBAOABAlgorithm · 印刷p.320 / PDFp.341
+[EXTRA] 完整五段关系、全部中间变量与隐约束；仅证明成功求解后的终点资格，不证明隐式解存在、唯一或概率不变性。网站包须同时摘录geodesicConstraintFlow、两求解关系和选择规格。 -/
+def constrainedBAOABRelation {l : ℕ} (m : V n) (g : V n → V l) (U : V n → ℝ)
+    (F : ℝ → Phase n → Phase n) (γ θ h : ℝ) (R : V n) (x out : Phase n) : Prop :=
+  geodesicConstraintFlow m g F ∧ ∃ b o : Phase n,
+    constrainedKickRelation m U g (h/2) x b ∧
+    constrainedExactORelation m g γ θ h R (F (h/2) b) o ∧
+    constrainedKickRelation m U g (h/2) (F (h/2) o) out
+theorem constrainedBAOAB_constraint {l : ℕ} (m : V n) (g : V n → V l) (U : V n → ℝ)
+    (F : ℝ → Phase n → Phase n) (γ θ h : ℝ) (R : V n) (x out : Phase n)
+    (hs : constrainedBAOABRelation m g U F γ θ h R x out) : out ∈ cotangentConstraint m g := by
+  obtain ⟨_,b,o,_,_,hout⟩ := hs
+  exact hout.2.choose_spec.2
+
+/-- source_id: MD-7.12.1-ApproximateGeodesicOrder · 印刷p.320 / PDFp.341
+[EXTRA] 用实际范数误差与统一C,δ明确二阶局部替换资格。完整对称随机组合需稳定性、Lipschitz、矩界及采用强阶/弱阶的区分，原段未列齐；此处不把定义当作保阶定理。 -/
+def localMapErrorBound {E : Type*} [NormedAddCommGroup E] (F G : ℝ → E → E) (D : Set E) (r : ℕ) : Prop :=
+  ∃ C ≥ 0, ∃ δ > 0, ∀ h ∈ Set.Ioo 0 δ, ∀ x ∈ D, ‖F h x-G h x‖ ≤ C*h^(r+1)
+def geodesicReplacementSecondOrder {E : Type*} [NormedAddCommGroup E]
+    (exact approx : ℝ → E → E) (D : Set E) : Prop := localMapErrorBound exact approx D 2
+
 end MD.Ch07

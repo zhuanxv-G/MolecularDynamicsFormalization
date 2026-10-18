@@ -1,7 +1,7 @@
 {
-  "batches": 17,
-  "subtasks": 99,
-  "covered_entries": 99,
+  "batches": 18,
+  "subtasks": 107,
+  "covered_entries": 107,
   "checks": [
     {
       "source_id": "MD-7.1-Bias",
@@ -496,6 +496,46 @@
     {
       "source_id": "MD-7.11.1-VelocityAutocorrelationDefinition",
       "project_constants": 4,
+      "missing": []
+    },
+    {
+      "source_id": "MD-7.12-ConstrainedLangevin",
+      "project_constants": 11,
+      "missing": []
+    },
+    {
+      "source_id": "MD-7.12-ConstrainedCanonicalErgodicity",
+      "project_constants": 11,
+      "missing": []
+    },
+    {
+      "source_id": "MD-7.12-ConstrainedHOSplitting",
+      "project_constants": 10,
+      "missing": []
+    },
+    {
+      "source_id": "MD-7.12-MEVMEAlgorithm",
+      "project_constants": 11,
+      "missing": []
+    },
+    {
+      "source_id": "MD-7.12-MidpointStabilityPrinted",
+      "project_constants": 11,
+      "missing": []
+    },
+    {
+      "source_id": "MD-7.12.1-ConstrainedABOSplitting",
+      "project_constants": 14,
+      "missing": []
+    },
+    {
+      "source_id": "MD-7.12.1-ConstrainedBAOABAlgorithm",
+      "project_constants": 15,
+      "missing": []
+    },
+    {
+      "source_id": "MD-7.12.1-ApproximateGeodesicOrder",
+      "project_constants": 3,
       "missing": []
     }
   ],
