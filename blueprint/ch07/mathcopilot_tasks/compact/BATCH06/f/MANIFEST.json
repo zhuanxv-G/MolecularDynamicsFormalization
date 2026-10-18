@@ -1,0 +1,101 @@
+{
+  "batch": "BATCH06",
+  "subtask": "BATCH06f",
+  "source_ids": [
+    "MD-7.4.1-StationaryMomentSystem"
+  ],
+  "input_sha256": {
+    "Blueprint/Ch07.lean": "2c8a4521d9e655e5690fd5f8a5642ba56b8124fddb5f761ab0548d6df9f0c56b",
+    "blueprint/ch07/ch07_source.json": "4cdae77a46bd167b78ab95f2928b72e80c919529316d8848bf882c6187db6599",
+    "BATCH06f_PAGES.pdf": "3542a6686c7b21763440b76ac90a45ef9ec9f6db72ae330e2192b7e122279eba"
+  },
+  "page_mapping": [
+    {
+      "attachment_page": 1,
+      "original_pdf_page": 296,
+      "printed_page": 275
+    }
+  ],
+  "definition_excerpts": [
+    {
+      "full_name": "MD.Ch07.linearUpdate",
+      "kind": "def",
+      "path": "Blueprint/Ch07.lean",
+      "line": 413,
+      "code_sha256": "558b204b07407282c73bfff06ee8e00e7740c8ce89db2fc60e1af80a69a36392"
+    },
+    {
+      "full_name": "MD.Ch07.momentQ",
+      "kind": "def",
+      "path": "Blueprint/Ch07.lean",
+      "line": 415,
+      "code_sha256": "3a1f882d971889b4d4dff8c89259d586f56734fe1cf50aeb1b8abea63f47d6ff"
+    },
+    {
+      "full_name": "MD.Ch07.momentP",
+      "kind": "def",
+      "path": "Blueprint/Ch07.lean",
+      "line": 416,
+      "code_sha256": "4cb4723e6914995473ede9722248cfc4b5b618ea790f419bdfbb19424d4a135d"
+    },
+    {
+      "full_name": "MD.Ch07.momentQP",
+      "kind": "def",
+      "path": "Blueprint/Ch07.lean",
+      "line": 417,
+      "code_sha256": "051ca8fc390feef9f6489319a6dfc46fb03db30d8a2af731b46ccb4b26e97292"
+    },
+    {
+      "full_name": "MD.Ch07.momentSystem",
+      "kind": "def",
+      "path": "Blueprint/Ch07.lean",
+      "line": 445,
+      "code_sha256": "7e6266bb4891069f4ab610a6b5d069c356a589d8a842a3248572bee9ceeb107a"
+    },
+    {
+      "full_name": "MD.Ch07.invariantLinearLaw",
+      "kind": "def",
+      "path": "Blueprint/Ch07.lean",
+      "line": 450,
+      "code_sha256": "6ae6371e1a5c142701e6ad2355af717b264eef9274801fb6ca5f34759d4fc4f0"
+    },
+    {
+      "full_name": "MD.Ch07.stationaryMomentSystem",
+      "kind": "theorem",
+      "path": "Blueprint/Ch07.lean",
+      "line": 454,
+      "code_sha256": "dd05e016b6b57802f181002ae0176d14ce8c36e5698f543f44a654da39efd29c"
+    },
+    {
+      "full_name": "MolecularDynamics.Chapter02Review.Q",
+      "kind": "abbrev",
+      "path": "MolecularDynamics/Chapter02/ReviewDefinitions.lean",
+      "line": 17,
+      "code_sha256": "d01d4518aed3668e7c982afee1cd3820fb858a94438e5b8960aa0557f5a57ef1"
+    },
+    {
+      "full_name": "MolecularDynamics.Chapter04Review.Q",
+      "kind": "abbrev",
+      "path": "MolecularDynamics/Chapter04/ReviewDefinitions.lean",
+      "line": 15,
+      "code_sha256": "d01d4518aed3668e7c982afee1cd3820fb858a94438e5b8960aa0557f5a57ef1"
+    }
+  ],
+  "validation": {
+    "project_constant_closure": "PASS",
+    "missing_project_definitions": [],
+    "full_page_render_equality_dpi": 72,
+    "website_submitted": false
+  },
+  "files": {
+    "PASTE.txt": {
+      "bytes": 7596,
+      "sha256": "ba9f5d6a33051ce2b91ba35f04b9484306efbb99bddd0444f0eac30588bd6177"
+    },
+    "BATCH06f_PAGES.pdf": {
+      "bytes": 79485,
+      "sha256": "3542a6686c7b21763440b76ac90a45ef9ec9f6db72ae330e2192b7e122279eba"
+    }
+  },
+  "total_task_bytes": 90348
+}

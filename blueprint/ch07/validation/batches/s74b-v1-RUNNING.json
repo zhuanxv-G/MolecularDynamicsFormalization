@@ -1,0 +1,17 @@
+{
+  "command": [
+    "lake",
+    "env",
+    "lean",
+    "blueprint\\ch07\\validation\\batches\\s74b-v1.lean"
+  ],
+  "input_sha256": "ab0b8f755fdb92907858aca0c229315695ba7d5fc15203fd430f8a21a7561275",
+  "parent_pid": 18848,
+  "parent_create_time": 1792303480.364059,
+  "compiler_pid": 9108,
+  "compiler_create_time": 1792303481.885442,
+  "started_at": "2026-10-18T14:04:41.888809",
+  "status": "completed",
+  "exit_code": 0,
+  "completed_at": "2026-10-18T14:04:55.054294"
+}

@@ -1,0 +1,45 @@
+{
+  "batch": "BATCH07",
+  "subtask": "BATCH07f",
+  "source_ids": [
+    "MD-7.4.2-BBKStarCorrelations"
+  ],
+  "input_sha256": {
+    "Blueprint/Ch07.lean": "2c8a4521d9e655e5690fd5f8a5642ba56b8124fddb5f761ab0548d6df9f0c56b",
+    "blueprint/ch07/ch07_source.json": "4cdae77a46bd167b78ab95f2928b72e80c919529316d8848bf882c6187db6599",
+    "BATCH07f_PAGES.pdf": "b2bc10ab568755a8f2abb6d50a4dbe48eca6e739710d44887e5eff24679360c2"
+  },
+  "page_mapping": [
+    {
+      "attachment_page": 1,
+      "original_pdf_page": 299,
+      "printed_page": 278
+    }
+  ],
+  "definition_excerpts": [
+    {
+      "full_name": "MD.Ch07.bbkStarCorrelations",
+      "kind": "theorem",
+      "path": "Blueprint/Ch07.lean",
+      "line": 556,
+      "code_sha256": "f3151021513c2f7b210d809c2bb67a101e6db03a28612639615754fb5df04745"
+    }
+  ],
+  "validation": {
+    "project_constant_closure": "PASS",
+    "missing_project_definitions": [],
+    "full_page_render_equality_dpi": 72,
+    "website_submitted": false
+  },
+  "files": {
+    "PASTE.txt": {
+      "bytes": 5080,
+      "sha256": "29a14cf646a5db7ca16e1d819d3740613793e974ca4d2d6d342d1e2d83c114f6"
+    },
+    "BATCH07f_PAGES.pdf": {
+      "bytes": 65960,
+      "sha256": "b2bc10ab568755a8f2abb6d50a4dbe48eca6e739710d44887e5eff24679360c2"
+    }
+  },
+  "total_task_bytes": 72389
+}

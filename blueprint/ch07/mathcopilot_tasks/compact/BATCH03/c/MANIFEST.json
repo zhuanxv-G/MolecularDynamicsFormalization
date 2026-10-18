@@ -1,0 +1,143 @@
+{
+  "batch": "BATCH03",
+  "subtask": "BATCH03c",
+  "source_ids": [
+    "MD-7.3-OUExactUpdate"
+  ],
+  "input_sha256": {
+    "Blueprint/Ch07.lean": "2c8a4521d9e655e5690fd5f8a5642ba56b8124fddb5f761ab0548d6df9f0c56b",
+    "blueprint/ch07/ch07_source.json": "4cdae77a46bd167b78ab95f2928b72e80c919529316d8848bf882c6187db6599",
+    "BATCH03c_PAGES.pdf": "ef7e791e362c3bc09c09dd3408a09b0383345a1654f38b323e1aade5188376a7"
+  },
+  "page_mapping": [
+    {
+      "attachment_page": 1,
+      "original_pdf_page": 289,
+      "printed_page": 268
+    }
+  ],
+  "definition_excerpts": [
+    {
+      "full_name": "MD.Ch07.scalarSDE",
+      "kind": "def",
+      "path": "Blueprint/Ch07.lean",
+      "line": 20,
+      "code_sha256": "325d5e8f1e66b666c42a7abb02bdc2a495ff0976a8f9b1bccb55858862ee3f4c"
+    },
+    {
+      "full_name": "MD.Ch07.V",
+      "kind": "abbrev",
+      "path": "Blueprint/Ch07.lean",
+      "line": 172,
+      "code_sha256": "7ab0ad90462b274b03f5b929b5f09417c0b397b6cb908fa6e7bd56677a314027"
+    },
+    {
+      "full_name": "MD.Ch07.vectorWiener",
+      "kind": "def",
+      "path": "Blueprint/Ch07.lean",
+      "line": 175,
+      "code_sha256": "a24b0b3d4e3f48ea3c5384e0ec083b953b2b03d743d1687b43010c41ccaebf93"
+    },
+    {
+      "full_name": "MD.Ch07.momentumOU",
+      "kind": "def",
+      "path": "Blueprint/Ch07.lean",
+      "line": 179,
+      "code_sha256": "576a8e46c2943e18d265f7c31882c77d4f6c16988d77943c3070bc43da5d5103"
+    },
+    {
+      "full_name": "MD.Ch07.ouMomentum",
+      "kind": "def",
+      "path": "Blueprint/Ch07.lean",
+      "line": 198,
+      "code_sha256": "df5a3511ac6e0986b8293d21de91ddb40de94195595495bc71fa780b2962b8ae"
+    },
+    {
+      "full_name": "MD.Ch07.ouTransitionLaw",
+      "kind": "theorem",
+      "path": "Blueprint/Ch07.lean",
+      "line": 201,
+      "code_sha256": "adfba8d0ccdbcb8b0628f485a0cc8827608f668495d8d9797a74093382cb6da8"
+    },
+    {
+      "full_name": "MolecularDynamics.Chapter02Review.Q",
+      "kind": "abbrev",
+      "path": "MolecularDynamics/Chapter02/ReviewDefinitions.lean",
+      "line": 17,
+      "code_sha256": "d01d4518aed3668e7c982afee1cd3820fb858a94438e5b8960aa0557f5a57ef1"
+    },
+    {
+      "full_name": "MolecularDynamics.Chapter02Review.Z",
+      "kind": "abbrev",
+      "path": "MolecularDynamics/Chapter02/ReviewDefinitions.lean",
+      "line": 18,
+      "code_sha256": "5c03b9b4c74d753cfe2d9b89534d4a9a6c9c137e38273514b8c3e6d35f4c4af1"
+    },
+    {
+      "full_name": "MolecularDynamics.Chapter04Review.Q",
+      "kind": "abbrev",
+      "path": "MolecularDynamics/Chapter04/ReviewDefinitions.lean",
+      "line": 15,
+      "code_sha256": "d01d4518aed3668e7c982afee1cd3820fb858a94438e5b8960aa0557f5a57ef1"
+    },
+    {
+      "full_name": "MolecularDynamics.Chapter04Review.Z",
+      "kind": "abbrev",
+      "path": "MolecularDynamics/Chapter04/ReviewDefinitions.lean",
+      "line": 16,
+      "code_sha256": "5c03b9b4c74d753cfe2d9b89534d4a9a6c9c137e38273514b8c3e6d35f4c4af1"
+    },
+    {
+      "full_name": "MolecularDynamics.Chapter06Review.itoLeftSum",
+      "kind": "def",
+      "path": "MolecularDynamics/Chapter06/ReviewDefinitions.lean",
+      "line": 54,
+      "code_sha256": "e1cd64bf3b4edeae8a7d1bf292e844323267f948a2846db1110c7f024f55e746"
+    },
+    {
+      "full_name": "MolecularDynamics.Chapter06Review.isItoIntegral",
+      "kind": "def",
+      "path": "MolecularDynamics/Chapter06/ReviewDefinitions.lean",
+      "line": 57,
+      "code_sha256": "a533a177fa00a15d2bd1870688eeabaf464bd4a25efaab58b40573a650f958e1"
+    },
+    {
+      "full_name": "MolecularDynamics.Chapter06Review.scalarSDE",
+      "kind": "def",
+      "path": "MolecularDynamics/Chapter06/ReviewDefinitions.lean",
+      "line": 68,
+      "code_sha256": "7b7468799a5eabe1f20b7d4da4980076de4a158ecc1ee5c668f6d853339ae35f"
+    },
+    {
+      "full_name": "MolecularDynamics.Chapter06Review.adaptedSquareIntegrand",
+      "kind": "def",
+      "path": "MolecularDynamics/Chapter06/ReviewDefinitions.lean",
+      "line": 73,
+      "code_sha256": "e0925840a6b277a247707e296796fd1371886e2a3a193850c2e0cc98cfe001a0"
+    },
+    {
+      "full_name": "MolecularDynamics.textbookIsWienerVector",
+      "kind": "structure",
+      "path": "MolecularDynamics/Chapter06/WienerVectorSupport.lean",
+      "line": 13,
+      "code_sha256": "030040a9146ab99e095c5a3e84fa3feed1dc8f0dd916643d371a0bb7e6efb622"
+    }
+  ],
+  "validation": {
+    "project_constant_closure": "PASS",
+    "missing_project_definitions": [],
+    "full_page_render_equality_dpi": 72,
+    "website_submitted": false
+  },
+  "files": {
+    "PASTE.txt": {
+      "bytes": 11042,
+      "sha256": "260938aa30ee865df6ae07a2bcdb03ee2204b5eb597aefcfb5e50fb1d8ea2f64"
+    },
+    "BATCH03c_PAGES.pdf": {
+      "bytes": 85329,
+      "sha256": "ef7e791e362c3bc09c09dd3408a09b0383345a1654f38b323e1aade5188376a7"
+    }
+  },
+  "total_task_bytes": 101366
+}

@@ -1,0 +1,126 @@
+{
+  "MD-7.2-SDEIncrement": {
+    "reason": "需对第6章L²积分定义补区间可加性及积分几乎处处组合桥接；本轮不建立一般随机积分理论。",
+    "category": "缺大型理论",
+    "routes": [],
+    "decision": "缺大型理论时直接记录缺项；否则最多三条短路线。"
+  },
+  "MD-7.2-StrongWeakComparison": {
+    "reason": "反向反例还需两点概率测度的积分化简；下一批限三条短路线。",
+    "category": "缺大型理论",
+    "routes": [],
+    "decision": "缺大型理论时直接记录缺项；否则最多三条短路线。"
+  },
+  "MD-7.2-PartitionPrinted": {
+    "reason": "原文倒数关系导致归一化错误，原文版不证明；修正版正常证明。",
+    "category": "原书疑误不证",
+    "routes": [],
+    "decision": "缺大型理论时直接记录缺项；否则最多三条短路线。"
+  },
+  "MD-7.3-OUIntegratingFactor": {
+    "reason": "需要第6章Itô积分定义与积分因子法的桥接；不新建一般随机乘积法则。",
+    "category": "缺大型理论",
+    "routes": [],
+    "decision": "缺大型理论时直接记录缺项；否则最多三条短路线。"
+  },
+  "MD-7.3-OUExactUpdate": {
+    "reason": "需要加权Wiener增量的联合Gaussian分布及相对过去的独立性；不建设一般SDE转移核理论。",
+    "category": "缺大型理论",
+    "routes": [],
+    "decision": "缺大型理论时直接记录缺项；否则最多三条短路线。"
+  },
+  "MD-7.3-OUForward": {
+    "reason": "需要任意有限维逐坐标两次分部积分；本轮仅陈述，不为此建设大型算子域理论。",
+    "category": "缺大型理论",
+    "routes": [],
+    "decision": "缺大型理论时直接记录缺项；否则最多三条短路线。"
+  },
+  "MD-7.3-OUGaussianInvariant": {
+    "reason": "需实际独立Gaussian向量线性变换与指数/方差恒等式的桥接；不建立一般随机核理论。",
+    "category": "缺大型理论",
+    "routes": [],
+    "decision": "缺大型理论时直接记录缺项；否则最多三条短路线。"
+  },
+  "MD-7.3.1-HamiltonianGibbs": {
+    "reason": "需map与withDensity的测度输运短桥；现有Hamiltonian体积保持可作为流资格，不新建流存在理论。",
+    "category": "缺大型理论",
+    "routes": [],
+    "decision": "缺大型理论时直接记录缺项；否则最多三条短路线。"
+  },
+  "MD-7.3.1-ABExactFlows": {
+    "reason": "kickStep导数三条短路线均未通过；停止该条，保留陈述。",
+    "category": "时间盒止",
+    "routes": [
+      {
+        "route": 1,
+        "receipt": "validation/batches/s73b-v1.json",
+        "failure": "simpa函数实例不匹配与乘除结合"
+      },
+      {
+        "route": 2,
+        "receipt": "validation/batches/s73b-v2.json",
+        "failure": "simpa补Pi.sub_apply仍实例不匹配"
+      },
+      {
+        "route": 3,
+        "receipt": "validation/batches/s73b-v3.json",
+        "failure": "convert!剩余导数代数目标"
+      }
+    ],
+    "decision": "缺大型理论时直接记录缺项；否则最多三条短路线。"
+  },
+  "MD-7.3.2-SPVLargeFriction": {
+    "reason": "指数衰减及除以γ的实极限短桥尚待尝试，不建立采样收敛理论。",
+    "category": "缺大型理论",
+    "routes": [],
+    "decision": "缺大型理论时直接记录缺项；否则最多三条短路线。"
+  },
+  "MD-7.4-HarmonicMoments": {
+    "reason": "需要正态二阶矩和乘积测度积分的完整短桥；不重建Gaussian理论。",
+    "category": "缺大型理论",
+    "routes": [],
+    "decision": "缺大型理论时直接记录缺项；否则最多三条短路线。"
+  },
+  "MD-7.4.1-StationaryMomentSystem": {
+    "reason": "需乘积测度、可积多项式与推前矩计算的桥接；不建立一般Markov链遍历理论。",
+    "category": "缺大型理论",
+    "routes": [],
+    "decision": "缺大型理论时直接记录缺项；否则最多三条短路线。"
+  },
+  "MD-7.4.1-ABOHarmonic": {
+    "reason": "需推前期望方程与二元线性系统短桥；不建立Markov遍历性。",
+    "category": "缺大型理论",
+    "routes": [],
+    "decision": "缺大型理论时直接记录缺项；否则最多三条短路线。"
+  },
+  "MD-7.4.1-ABOVariance": {
+    "reason": "需实际平稳矩方程求解及三阶Taylor余项；各路线超出短桥，保留未证。",
+    "category": "缺大型理论",
+    "routes": [],
+    "decision": "缺大型理论时直接记录缺项；否则最多三条短路线。"
+  },
+  "MD-7.4.1-Table71": {
+    "reason": "四种真实分裂映射的Gaussian矩输运与线性方程求解；不建立一般离散遍历理论。",
+    "category": "缺大型理论",
+    "routes": [],
+    "decision": "缺大型理论时直接记录缺项；否则最多三条短路线。"
+  },
+  "MD-7.4.1-NonsymmetricExactMoments": {
+    "reason": "需要真实平稳矩输运及代数求解；不建立通用弱误差理论。",
+    "category": "缺大型理论",
+    "routes": [],
+    "decision": "缺大型理论时直接记录缺项；否则最多三条短路线。"
+  },
+  "MD-7.4.2-BBKStarCorrelations": {
+    "reason": "需要实际独立随机变量的乘积积分和Gaussian矩展开；不建设历史扩展Markov链理论。",
+    "category": "缺大型理论",
+    "routes": [],
+    "decision": "缺大型理论时直接记录缺项；否则最多三条短路线。"
+  },
+  "MD-7.4.2-BBKStarStationary": {
+    "reason": "含平方根的非退化线性系统求解超过本轮短证明；保留未证。",
+    "category": "缺大型理论",
+    "routes": [],
+    "decision": "缺大型理论时直接记录缺项；否则最多三条短路线。"
+  }
+}

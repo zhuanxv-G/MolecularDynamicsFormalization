@@ -1,0 +1,66 @@
+{
+  "batch": "BATCH06",
+  "subtask": "BATCH06c",
+  "source_ids": [
+    "MD-7.4-LinearIteration"
+  ],
+  "input_sha256": {
+    "Blueprint/Ch07.lean": "2c8a4521d9e655e5690fd5f8a5642ba56b8124fddb5f761ab0548d6df9f0c56b",
+    "blueprint/ch07/ch07_source.json": "4cdae77a46bd167b78ab95f2928b72e80c919529316d8848bf882c6187db6599",
+    "BATCH06c_PAGES.pdf": "0cee9f43fb4cffa41b521ae762cc670d25157eb57c2b3c070a3bbc0015e9d555"
+  },
+  "page_mapping": [
+    {
+      "attachment_page": 1,
+      "original_pdf_page": 295,
+      "printed_page": 274
+    }
+  ],
+  "definition_excerpts": [
+    {
+      "full_name": "MD.Ch07.linearUpdate",
+      "kind": "def",
+      "path": "Blueprint/Ch07.lean",
+      "line": 413,
+      "code_sha256": "558b204b07407282c73bfff06ee8e00e7740c8ce89db2fc60e1af80a69a36392"
+    },
+    {
+      "full_name": "MD.Ch07.momentQ",
+      "kind": "def",
+      "path": "Blueprint/Ch07.lean",
+      "line": 415,
+      "code_sha256": "3a1f882d971889b4d4dff8c89259d586f56734fe1cf50aeb1b8abea63f47d6ff"
+    },
+    {
+      "full_name": "MD.Ch07.momentP",
+      "kind": "def",
+      "path": "Blueprint/Ch07.lean",
+      "line": 416,
+      "code_sha256": "4cb4723e6914995473ede9722248cfc4b5b618ea790f419bdfbb19424d4a135d"
+    },
+    {
+      "full_name": "MD.Ch07.momentQP",
+      "kind": "def",
+      "path": "Blueprint/Ch07.lean",
+      "line": 417,
+      "code_sha256": "051ca8fc390feef9f6489319a6dfc46fb03db30d8a2af731b46ccb4b26e97292"
+    }
+  ],
+  "validation": {
+    "project_constant_closure": "PASS",
+    "missing_project_definitions": [],
+    "full_page_render_equality_dpi": 72,
+    "website_submitted": false
+  },
+  "files": {
+    "PASTE.txt": {
+      "bytes": 4469,
+      "sha256": "b4fe5d36e9008ed87879369d71bef412d8dbf7d2a352e84d1fc5a17ada6e8dbd"
+    },
+    "BATCH06c_PAGES.pdf": {
+      "bytes": 63629,
+      "sha256": "0cee9f43fb4cffa41b521ae762cc670d25157eb57c2b3c070a3bbc0015e9d555"
+    }
+  },
+  "total_task_bytes": 70100
+}

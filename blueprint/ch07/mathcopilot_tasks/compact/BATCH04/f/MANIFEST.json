@@ -1,0 +1,108 @@
+{
+  "batch": "BATCH04",
+  "subtask": "BATCH04f",
+  "source_ids": [
+    "MD-7.3.1-ABOBABO"
+  ],
+  "input_sha256": {
+    "Blueprint/Ch07.lean": "2c8a4521d9e655e5690fd5f8a5642ba56b8124fddb5f761ab0548d6df9f0c56b",
+    "blueprint/ch07/ch07_source.json": "4cdae77a46bd167b78ab95f2928b72e80c919529316d8848bf882c6187db6599",
+    "BATCH04f_PAGES.pdf": "3afa0d7c7e654df89418484291bad1c5ac7560658a01db07c1ef193f171455a1"
+  },
+  "page_mapping": [
+    {
+      "attachment_page": 1,
+      "original_pdf_page": 291,
+      "printed_page": 270
+    }
+  ],
+  "definition_excerpts": [
+    {
+      "full_name": "MD.Ch07.V",
+      "kind": "abbrev",
+      "path": "Blueprint/Ch07.lean",
+      "line": 172,
+      "code_sha256": "7ab0ad90462b274b03f5b929b5f09417c0b397b6cb908fa6e7bd56677a314027"
+    },
+    {
+      "full_name": "MD.Ch07.Phase",
+      "kind": "abbrev",
+      "path": "Blueprint/Ch07.lean",
+      "line": 173,
+      "code_sha256": "ef1520e3b22ac1c99a30a989deafe8d3da44a9f2a3e5b6c2cd3220218b88513e"
+    },
+    {
+      "full_name": "MD.Ch07.ouMomentum",
+      "kind": "def",
+      "path": "Blueprint/Ch07.lean",
+      "line": 198,
+      "code_sha256": "df5a3511ac6e0986b8293d21de91ddb40de94195595495bc71fa780b2962b8ae"
+    },
+    {
+      "full_name": "MD.Ch07.ouStep",
+      "kind": "def",
+      "path": "Blueprint/Ch07.lean",
+      "line": 211,
+      "code_sha256": "0f9aad04567b33cc7067304661e170a91deec512fcb772c226c1095acf25ffb5"
+    },
+    {
+      "full_name": "MD.Ch07.coordDerivative",
+      "kind": "def",
+      "path": "Blueprint/Ch07.lean",
+      "line": 221,
+      "code_sha256": "e782d789a13f5db6817e2c995f141805e81ac75720125b846f8ee14ba3833a4b"
+    },
+    {
+      "full_name": "MD.Ch07.gradient",
+      "kind": "def",
+      "path": "Blueprint/Ch07.lean",
+      "line": 250,
+      "code_sha256": "540c6af25c09d3a58da531bc32056ff1a1c070facc58d34c96b6653d781fba6f"
+    },
+    {
+      "full_name": "MD.Ch07.driftStep",
+      "kind": "def",
+      "path": "Blueprint/Ch07.lean",
+      "line": 279,
+      "code_sha256": "600d3de37df6b9ef23628e1495de886583ba0ded7bc74fa5eb3ce43ed25daa6c"
+    },
+    {
+      "full_name": "MD.Ch07.kickStep",
+      "kind": "def",
+      "path": "Blueprint/Ch07.lean",
+      "line": 282,
+      "code_sha256": "475506583d95af613a8e1c58ad474dbd3fc0c0cfc22ab985f0c251cb1567db37"
+    },
+    {
+      "full_name": "MD.Ch07.abo",
+      "kind": "def",
+      "path": "Blueprint/Ch07.lean",
+      "line": 313,
+      "code_sha256": "b8c05ec41fba0168583da28f1cfb20ed2ea72ea105c2b3341be38d315bed2bbd"
+    },
+    {
+      "full_name": "MD.Ch07.babo",
+      "kind": "def",
+      "path": "Blueprint/Ch07.lean",
+      "line": 315,
+      "code_sha256": "fb227fbe6fa777cef106a86930ac9cacfdac1f4b3aabe3306978fcdb1deb9d4a"
+    }
+  ],
+  "validation": {
+    "project_constant_closure": "PASS",
+    "missing_project_definitions": [],
+    "full_page_render_equality_dpi": 72,
+    "website_submitted": false
+  },
+  "files": {
+    "PASTE.txt": {
+      "bytes": 6854,
+      "sha256": "963aed400e17021e64f6a961fbfcf70f01ba4d645aa0a4398f54227a071a0874"
+    },
+    "BATCH04f_PAGES.pdf": {
+      "bytes": 92920,
+      "sha256": "3afa0d7c7e654df89418484291bad1c5ac7560658a01db07c1ef193f171455a1"
+    }
+  },
+  "total_task_bytes": 103108
+}

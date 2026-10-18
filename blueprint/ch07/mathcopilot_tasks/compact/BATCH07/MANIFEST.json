@@ -1,0 +1,47 @@
+{
+  "batch": "BATCH07",
+  "subtasks": [
+    {
+      "subtask": "BATCH07a",
+      "source_id": "MD-7.4.1-ABOHarmonic",
+      "path": "blueprint/ch07/mathcopilot_tasks/compact/BATCH07/a",
+      "bytes": 104052,
+      "manifest_sha256": "174c442aed8eb7142b0963bbc83658f1a1cad338898e49e6a2cfec433ef724b5"
+    },
+    {
+      "subtask": "BATCH07b",
+      "source_id": "MD-7.4.1-ABOVariance",
+      "path": "blueprint/ch07/mathcopilot_tasks/compact/BATCH07/b",
+      "bytes": 101259,
+      "manifest_sha256": "ce3405a431189ca05e10753d3447a2594f2ff151e32cd90bf54315a935b01aa2"
+    },
+    {
+      "subtask": "BATCH07c",
+      "source_id": "MD-7.4.1-Table71",
+      "path": "blueprint/ch07/mathcopilot_tasks/compact/BATCH07/c",
+      "bytes": 106766,
+      "manifest_sha256": "d252a358f765e990b24006800ddc03a884a329899fc9a49e4f05b55b5863463c"
+    },
+    {
+      "subtask": "BATCH07d",
+      "source_id": "MD-7.4.1-NonsymmetricExactMoments",
+      "path": "blueprint/ch07/mathcopilot_tasks/compact/BATCH07/d",
+      "bytes": 101489,
+      "manifest_sha256": "007685eca717bb2bef6844693d0f794ef711e9a263c2927e09b4a86c70d73bda"
+    },
+    {
+      "subtask": "BATCH07e",
+      "source_id": "MD-7.4.2-BBKStar",
+      "path": "blueprint/ch07/mathcopilot_tasks/compact/BATCH07/e",
+      "bytes": 111402,
+      "manifest_sha256": "31835b0e567d1d42f4ee8aef6f646a23f70cabb0cb3ecbbc5ca0f541ce3b06c9"
+    },
+    {
+      "subtask": "BATCH07f",
+      "source_id": "MD-7.4.2-BBKStarCorrelations",
+      "path": "blueprint/ch07/mathcopilot_tasks/compact/BATCH07/f",
+      "bytes": 72389,
+      "manifest_sha256": "f991f5c0f04906ba22cb71b6b806d2154bb55131ffed23d08efeb3a8866ea81f"
+    }
+  ]
+}

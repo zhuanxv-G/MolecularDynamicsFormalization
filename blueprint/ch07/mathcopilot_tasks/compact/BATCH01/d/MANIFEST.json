@@ -1,0 +1,80 @@
+{
+  "batch": "BATCH01",
+  "subtask": "BATCH01d",
+  "source_ids": [
+    "MD-7.2-SDEIncrement"
+  ],
+  "input_sha256": {
+    "Blueprint/Ch07.lean": "2c8a4521d9e655e5690fd5f8a5642ba56b8124fddb5f761ab0548d6df9f0c56b",
+    "blueprint/ch07/ch07_source.json": "4cdae77a46bd167b78ab95f2928b72e80c919529316d8848bf882c6187db6599",
+    "BATCH01d_PAGES.pdf": "9f0495743c09c2da4ab5feda6900d78228c6b004c646dacbfe8d99e2aa381538"
+  },
+  "page_mapping": [
+    {
+      "attachment_page": 1,
+      "original_pdf_page": 285,
+      "printed_page": 264
+    }
+  ],
+  "definition_excerpts": [
+    {
+      "full_name": "MD.Ch07.scalarSDE",
+      "kind": "def",
+      "path": "Blueprint/Ch07.lean",
+      "line": 20,
+      "code_sha256": "325d5e8f1e66b666c42a7abb02bdc2a495ff0976a8f9b1bccb55858862ee3f4c"
+    },
+    {
+      "full_name": "MD.Ch07.sdeIncrement",
+      "kind": "theorem",
+      "path": "Blueprint/Ch07.lean",
+      "line": 46,
+      "code_sha256": "042890721d4ac0a5db7c8cb6c155fc9c8662d30ebfa3ec91025ffe3652b53c82"
+    },
+    {
+      "full_name": "MolecularDynamics.Chapter06Review.itoLeftSum",
+      "kind": "def",
+      "path": "MolecularDynamics/Chapter06/ReviewDefinitions.lean",
+      "line": 54,
+      "code_sha256": "e1cd64bf3b4edeae8a7d1bf292e844323267f948a2846db1110c7f024f55e746"
+    },
+    {
+      "full_name": "MolecularDynamics.Chapter06Review.isItoIntegral",
+      "kind": "def",
+      "path": "MolecularDynamics/Chapter06/ReviewDefinitions.lean",
+      "line": 57,
+      "code_sha256": "a533a177fa00a15d2bd1870688eeabaf464bd4a25efaab58b40573a650f958e1"
+    },
+    {
+      "full_name": "MolecularDynamics.Chapter06Review.scalarSDE",
+      "kind": "def",
+      "path": "MolecularDynamics/Chapter06/ReviewDefinitions.lean",
+      "line": 68,
+      "code_sha256": "7b7468799a5eabe1f20b7d4da4980076de4a158ecc1ee5c668f6d853339ae35f"
+    },
+    {
+      "full_name": "MolecularDynamics.Chapter06Review.adaptedSquareIntegrand",
+      "kind": "def",
+      "path": "MolecularDynamics/Chapter06/ReviewDefinitions.lean",
+      "line": 73,
+      "code_sha256": "e0925840a6b277a247707e296796fd1371886e2a3a193850c2e0cc98cfe001a0"
+    }
+  ],
+  "validation": {
+    "project_constant_closure": "PASS",
+    "missing_project_definitions": [],
+    "full_page_render_equality_dpi": 72,
+    "website_submitted": false
+  },
+  "files": {
+    "PASTE.txt": {
+      "bytes": 7537,
+      "sha256": "b90de75eca11da431b84ab798506782d42260f65fcf4ddb5751528920ba2c70e"
+    },
+    "BATCH01d_PAGES.pdf": {
+      "bytes": 74818,
+      "sha256": "9f0495743c09c2da4ab5feda6900d78228c6b004c646dacbfe8d99e2aa381538"
+    }
+  },
+  "total_task_bytes": 85053
+}

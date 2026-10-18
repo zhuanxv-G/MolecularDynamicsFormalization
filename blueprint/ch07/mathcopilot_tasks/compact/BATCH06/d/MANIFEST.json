@@ -1,0 +1,52 @@
+{
+  "batch": "BATCH06",
+  "subtask": "BATCH06d",
+  "source_ids": [
+    "MD-7.4-BBKLinearForm"
+  ],
+  "input_sha256": {
+    "Blueprint/Ch07.lean": "2c8a4521d9e655e5690fd5f8a5642ba56b8124fddb5f761ab0548d6df9f0c56b",
+    "blueprint/ch07/ch07_source.json": "4cdae77a46bd167b78ab95f2928b72e80c919529316d8848bf882c6187db6599",
+    "BATCH06d_PAGES.pdf": "c05555a9bf15994c7d7f439d3ee028688e8980ca1166910068c97a478569e00c"
+  },
+  "page_mapping": [
+    {
+      "attachment_page": 1,
+      "original_pdf_page": 295,
+      "printed_page": 274
+    }
+  ],
+  "definition_excerpts": [
+    {
+      "full_name": "MD.Ch07.bbkMatrix",
+      "kind": "def",
+      "path": "Blueprint/Ch07.lean",
+      "line": 421,
+      "code_sha256": "87723c4b0eeb776fe30047a13e2cabd3c2cb57ed5f2788dc51cebee78930e0c8"
+    },
+    {
+      "full_name": "MD.Ch07.bbkNoise",
+      "kind": "def",
+      "path": "Blueprint/Ch07.lean",
+      "line": 425,
+      "code_sha256": "44876705c2e99b71cd31cb12039486e27ac95473134d54f267a143839f8f8a83"
+    }
+  ],
+  "validation": {
+    "project_constant_closure": "PASS",
+    "missing_project_definitions": [],
+    "full_page_render_equality_dpi": 72,
+    "website_submitted": false
+  },
+  "files": {
+    "PASTE.txt": {
+      "bytes": 3925,
+      "sha256": "c6209928caa114729bc5264c71d5f1b3276be9107bc79a7d7be635fa26b4a10e"
+    },
+    "BATCH06d_PAGES.pdf": {
+      "bytes": 63629,
+      "sha256": "c05555a9bf15994c7d7f439d3ee028688e8980ca1166910068c97a478569e00c"
+    }
+  },
+  "total_task_bytes": 69105
+}

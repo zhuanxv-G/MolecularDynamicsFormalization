@@ -1,0 +1,47 @@
+{
+  "batch": "BATCH05",
+  "subtasks": [
+    {
+      "subtask": "BATCH05a",
+      "source_id": "MD-7.3.1-WordConvention",
+      "path": "blueprint/ch07/mathcopilot_tasks/compact/BATCH05/a",
+      "bytes": 105333,
+      "manifest_sha256": "6b88d779a0a69fd9887060c2ad83d41f7a8ff39ae443dec98edb20a39d639df8"
+    },
+    {
+      "subtask": "BATCH05b",
+      "source_id": "MD-7.3.1-SixSchemes",
+      "path": "blueprint/ch07/mathcopilot_tasks/compact/BATCH05/b",
+      "bytes": 103988,
+      "manifest_sha256": "e465731e4a7f966d1acac10aef1e6cba11dd1d0c87814b80c2c81b1333a3b83c"
+    },
+    {
+      "subtask": "BATCH05c",
+      "source_id": "MD-7.3.1-ConjugateIteration",
+      "path": "blueprint/ch07/mathcopilot_tasks/compact/BATCH05/c",
+      "bytes": 106069,
+      "manifest_sha256": "e96b48cae2eed91f0a39e3765a21c5b15169df2b2b6d7c495ca57b1e31e49084"
+    },
+    {
+      "subtask": "BATCH05d",
+      "source_id": "MD-7.3.2-SPVPrinted",
+      "path": "blueprint/ch07/mathcopilot_tasks/compact/BATCH05/d",
+      "bytes": 105013,
+      "manifest_sha256": "1fa7a99244384396e56fc4e70be411032708ad16363ee9dcc49c7dc2f0a6e3c5"
+    },
+    {
+      "subtask": "BATCH05e",
+      "source_id": "MD-7.3.2-SPVLargeFriction",
+      "path": "blueprint/ch07/mathcopilot_tasks/compact/BATCH05/e",
+      "bytes": 109465,
+      "manifest_sha256": "2a03812eafa1bcad041380fbfefa21e882b4ee5338604333091dc485a046e856"
+    },
+    {
+      "subtask": "BATCH05f",
+      "source_id": "MD-7.3.2-BBK",
+      "path": "blueprint/ch07/mathcopilot_tasks/compact/BATCH05/f",
+      "bytes": 90396,
+      "manifest_sha256": "ae87013ad23fadf5f2f9db7b57e09a9a7fc94220411fa2adeffe7d996d933eec"
+    }
+  ]
+}

@@ -1,0 +1,78 @@
+{
+  "batch": "BATCH08",
+  "subtask": "BATCH08a",
+  "source_ids": [
+    "MD-7.4.2-BBKStarMomentSystemPrinted"
+  ],
+  "input_sha256": {
+    "Blueprint/Ch07.lean": "2c8a4521d9e655e5690fd5f8a5642ba56b8124fddb5f761ab0548d6df9f0c56b",
+    "blueprint/ch07/ch07_source.json": "4cdae77a46bd167b78ab95f2928b72e80c919529316d8848bf882c6187db6599",
+    "BATCH08a_PAGES.pdf": "9cc0fd1d1346908ce1f2e5815dd9ecac5bd5568c43e5953aa946b121be319f2c"
+  },
+  "page_mapping": [
+    {
+      "attachment_page": 1,
+      "original_pdf_page": 299,
+      "printed_page": 278
+    },
+    {
+      "attachment_page": 2,
+      "original_pdf_page": 300,
+      "printed_page": 279
+    }
+  ],
+  "definition_excerpts": [
+    {
+      "full_name": "MD.Ch07.bbkStarMomentSystemPrinted",
+      "kind": "def",
+      "path": "Blueprint/Ch07.lean",
+      "line": 577,
+      "code_sha256": "aeb055b7e40e709ba266db7828291406fb4ec3f5e4510630bcac6950e16507cd"
+    },
+    {
+      "full_name": "MD.Ch07.bbkStarMomentSystemPrinted_corrected",
+      "kind": "def",
+      "path": "Blueprint/Ch07.lean",
+      "line": 582,
+      "code_sha256": "7c1abd4ec6e551d64f893b9e6b168a784f6e6b3f0a68a8a7bc0946d16009e07e"
+    },
+    {
+      "full_name": "MD.Ch07.bbkStarExtraFactor_counterexample",
+      "kind": "theorem",
+      "path": "Blueprint/Ch07.lean",
+      "line": 587,
+      "code_sha256": "5714a688c12baec701115f750ca70b6d8d008aeb248b673c5d509b4a6b6fdbd5"
+    },
+    {
+      "full_name": "MolecularDynamics.Chapter02Review.Q",
+      "kind": "abbrev",
+      "path": "MolecularDynamics/Chapter02/ReviewDefinitions.lean",
+      "line": 17,
+      "code_sha256": "d01d4518aed3668e7c982afee1cd3820fb858a94438e5b8960aa0557f5a57ef1"
+    },
+    {
+      "full_name": "MolecularDynamics.Chapter04Review.Q",
+      "kind": "abbrev",
+      "path": "MolecularDynamics/Chapter04/ReviewDefinitions.lean",
+      "line": 15,
+      "code_sha256": "d01d4518aed3668e7c982afee1cd3820fb858a94438e5b8960aa0557f5a57ef1"
+    }
+  ],
+  "validation": {
+    "project_constant_closure": "PASS",
+    "missing_project_definitions": [],
+    "full_page_render_equality_dpi": 72,
+    "website_submitted": false
+  },
+  "files": {
+    "PASTE.txt": {
+      "bytes": 5643,
+      "sha256": "ccfe2b150c0cf9a60edcf9c27d421c07e16973de00b6f0b1ac5a7d0743f7e1c7"
+    },
+    "BATCH08a_PAGES.pdf": {
+      "bytes": 81135,
+      "sha256": "9cc0fd1d1346908ce1f2e5815dd9ecac5bd5568c43e5953aa946b121be319f2c"
+    }
+  },
+  "total_task_bytes": 89298
+}

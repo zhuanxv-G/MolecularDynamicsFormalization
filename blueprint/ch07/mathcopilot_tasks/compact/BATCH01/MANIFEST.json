@@ -1,0 +1,47 @@
+{
+  "batch": "BATCH01",
+  "subtasks": [
+    {
+      "subtask": "BATCH01a",
+      "source_id": "MD-7.1-Bias",
+      "path": "blueprint/ch07/mathcopilot_tasks/compact/BATCH01/a",
+      "bytes": 127195,
+      "manifest_sha256": "e72da4012b0432c21afd5785e0ca59510215cb23d4fda1dca8a975d3a7f186bf"
+    },
+    {
+      "subtask": "BATCH01b",
+      "source_id": "MD-7.2-ScalarSDE",
+      "path": "blueprint/ch07/mathcopilot_tasks/compact/BATCH01/b",
+      "bytes": 83983,
+      "manifest_sha256": "fff975b627ec5eafda31f67c9824a07c811ad0d50c68eca39ab392e735101100"
+    },
+    {
+      "subtask": "BATCH01c",
+      "source_id": "MD-7.2-EulerMaruyama",
+      "path": "blueprint/ch07/mathcopilot_tasks/compact/BATCH01/c",
+      "bytes": 80993,
+      "manifest_sha256": "9d1da7998a7093abc158f32c987d31be9a1d2d8bbdb72f5d5bedb6fc32d04c73"
+    },
+    {
+      "subtask": "BATCH01d",
+      "source_id": "MD-7.2-SDEIncrement",
+      "path": "blueprint/ch07/mathcopilot_tasks/compact/BATCH01/d",
+      "bytes": 85053,
+      "manifest_sha256": "6a99e030b6412df2fa5aff51c6bdc2766912366edf0ccd03b0973f115f9d5275"
+    },
+    {
+      "subtask": "BATCH01e",
+      "source_id": "MD-7.2-StrongError",
+      "path": "blueprint/ch07/mathcopilot_tasks/compact/BATCH01/e",
+      "bytes": 79344,
+      "manifest_sha256": "c64dd416bfd0a37be9a0d96e840dab89c8aae6a4e96a5fc55acfd613f0c884df"
+    },
+    {
+      "subtask": "BATCH01f",
+      "source_id": "MD-7.2-MeanErrorExpectation",
+      "path": "blueprint/ch07/mathcopilot_tasks/compact/BATCH01/f",
+      "bytes": 80225,
+      "manifest_sha256": "9ff678d579cbdf5d0c0e19f0a79eb04411c3e251dd7bc627f79b34129d0ab893"
+    }
+  ]
+}

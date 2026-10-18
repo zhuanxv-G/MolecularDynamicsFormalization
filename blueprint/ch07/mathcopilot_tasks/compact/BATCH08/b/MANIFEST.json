@@ -1,0 +1,73 @@
+{
+  "batch": "BATCH08",
+  "subtask": "BATCH08b",
+  "source_ids": [
+    "MD-7.4.2-BBKStarStationary"
+  ],
+  "input_sha256": {
+    "Blueprint/Ch07.lean": "2c8a4521d9e655e5690fd5f8a5642ba56b8124fddb5f761ab0548d6df9f0c56b",
+    "blueprint/ch07/ch07_source.json": "4cdae77a46bd167b78ab95f2928b72e80c919529316d8848bf882c6187db6599",
+    "BATCH08b_PAGES.pdf": "d6d7a66c31793ad763d73c7d66196475888c3a85607f00bc2ac93c4a9b85888f"
+  },
+  "page_mapping": [
+    {
+      "attachment_page": 1,
+      "original_pdf_page": 300,
+      "printed_page": 279
+    }
+  ],
+  "definition_excerpts": [
+    {
+      "full_name": "MD.Ch07.bbkMatrix",
+      "kind": "def",
+      "path": "Blueprint/Ch07.lean",
+      "line": 421,
+      "code_sha256": "87723c4b0eeb776fe30047a13e2cabd3c2cb57ed5f2788dc51cebee78930e0c8"
+    },
+    {
+      "full_name": "MD.Ch07.bbkStarMomentSystemPrinted_corrected",
+      "kind": "def",
+      "path": "Blueprint/Ch07.lean",
+      "line": 582,
+      "code_sha256": "7c1abd4ec6e551d64f893b9e6b168a784f6e6b3f0a68a8a7bc0946d16009e07e"
+    },
+    {
+      "full_name": "MD.Ch07.bbkStarStationaryAlgebra",
+      "kind": "theorem",
+      "path": "Blueprint/Ch07.lean",
+      "line": 591,
+      "code_sha256": "6711331e4c575c75d4e2364d48a8d98a289f0affed12dd61babd94c9a0603367"
+    },
+    {
+      "full_name": "MolecularDynamics.Chapter02Review.Q",
+      "kind": "abbrev",
+      "path": "MolecularDynamics/Chapter02/ReviewDefinitions.lean",
+      "line": 17,
+      "code_sha256": "d01d4518aed3668e7c982afee1cd3820fb858a94438e5b8960aa0557f5a57ef1"
+    },
+    {
+      "full_name": "MolecularDynamics.Chapter04Review.Q",
+      "kind": "abbrev",
+      "path": "MolecularDynamics/Chapter04/ReviewDefinitions.lean",
+      "line": 15,
+      "code_sha256": "d01d4518aed3668e7c982afee1cd3820fb858a94438e5b8960aa0557f5a57ef1"
+    }
+  ],
+  "validation": {
+    "project_constant_closure": "PASS",
+    "missing_project_definitions": [],
+    "full_page_render_equality_dpi": 72,
+    "website_submitted": false
+  },
+  "files": {
+    "PASTE.txt": {
+      "bytes": 5538,
+      "sha256": "1c374a3a9ab387658af69d3dddca8a4aacd047883ec7ebfb6d889a5fe9124334"
+    },
+    "BATCH08b_PAGES.pdf": {
+      "bytes": 74934,
+      "sha256": "d6d7a66c31793ad763d73c7d66196475888c3a85607f00bc2ac93c4a9b85888f"
+    }
+  },
+  "total_task_bytes": 82853
+}

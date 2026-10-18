@@ -1,0 +1,52 @@
+{
+  "batch": "BATCH06",
+  "subtask": "BATCH06e",
+  "source_ids": [
+    "MD-7.4-QuadraticProducts"
+  ],
+  "input_sha256": {
+    "Blueprint/Ch07.lean": "2c8a4521d9e655e5690fd5f8a5642ba56b8124fddb5f761ab0548d6df9f0c56b",
+    "blueprint/ch07/ch07_source.json": "4cdae77a46bd167b78ab95f2928b72e80c919529316d8848bf882c6187db6599",
+    "BATCH06e_PAGES.pdf": "11e5aeccf565f1aa169c49cdac6fe6a3e4118fa9c1a0bc2abbb1b5d3f14abeea"
+  },
+  "page_mapping": [
+    {
+      "attachment_page": 1,
+      "original_pdf_page": 295,
+      "printed_page": 274
+    }
+  ],
+  "definition_excerpts": [
+    {
+      "full_name": "MD.Ch07.linearUpdate",
+      "kind": "def",
+      "path": "Blueprint/Ch07.lean",
+      "line": 413,
+      "code_sha256": "558b204b07407282c73bfff06ee8e00e7740c8ce89db2fc60e1af80a69a36392"
+    },
+    {
+      "full_name": "MD.Ch07.quadraticProducts",
+      "kind": "theorem",
+      "path": "Blueprint/Ch07.lean",
+      "line": 430,
+      "code_sha256": "fc53ed1ab7ce835f11f261f6240a1fd9fe53334a1afe4028391263dffb70bfd8"
+    }
+  ],
+  "validation": {
+    "project_constant_closure": "PASS",
+    "missing_project_definitions": [],
+    "full_page_render_equality_dpi": 72,
+    "website_submitted": false
+  },
+  "files": {
+    "PASTE.txt": {
+      "bytes": 4441,
+      "sha256": "9b02fa2388895b767d7fc1565aaabb0e9b3c510ddb6f8b68a25d6f25c7778d9e"
+    },
+    "BATCH06e_PAGES.pdf": {
+      "bytes": 63629,
+      "sha256": "11e5aeccf565f1aa169c49cdac6fe6a3e4118fa9c1a0bc2abbb1b5d3f14abeea"
+    }
+  },
+  "total_task_bytes": 69641
+}

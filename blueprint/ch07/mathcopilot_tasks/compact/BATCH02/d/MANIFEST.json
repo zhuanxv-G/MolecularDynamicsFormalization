@@ -1,0 +1,87 @@
+{
+  "batch": "BATCH02",
+  "subtask": "BATCH02d",
+  "source_ids": [
+    "MD-7.2-CanonicalAverage"
+  ],
+  "input_sha256": {
+    "Blueprint/Ch07.lean": "2c8a4521d9e655e5690fd5f8a5642ba56b8124fddb5f761ab0548d6df9f0c56b",
+    "blueprint/ch07/ch07_source.json": "4cdae77a46bd167b78ab95f2928b72e80c919529316d8848bf882c6187db6599",
+    "BATCH02d_PAGES.pdf": "a2ee26d6b296e1e31f5645b102682f4a38f68d1665a5af40640d8e826f40e6ee"
+  },
+  "page_mapping": [
+    {
+      "attachment_page": 1,
+      "original_pdf_page": 287,
+      "printed_page": 266
+    }
+  ],
+  "definition_excerpts": [
+    {
+      "full_name": "MD.Ch07.densityWithPartition",
+      "kind": "def",
+      "path": "Blueprint/Ch07.lean",
+      "line": 129,
+      "code_sha256": "c471b5e6366c6ee4863b9b3ec51a9f3ad95e13c11f14a8b6037c39e95edaa771"
+    },
+    {
+      "full_name": "MD.Ch07.canonicalAverage",
+      "kind": "def",
+      "path": "Blueprint/Ch07.lean",
+      "line": 132,
+      "code_sha256": "9fe4fe58acd8c9340290996d81fb2dddb84733c98445b5164e37549feea6d560"
+    },
+    {
+      "full_name": "MD.Ch07.probabilityDensity",
+      "kind": "def",
+      "path": "Blueprint/Ch07.lean",
+      "line": 135,
+      "code_sha256": "a377dd2234000b3b704f2192e37b9af7982d3c172b1255bbc3c9b91a8dc21a1c"
+    },
+    {
+      "full_name": "MolecularDynamics.Chapter02Review.Q",
+      "kind": "abbrev",
+      "path": "MolecularDynamics/Chapter02/ReviewDefinitions.lean",
+      "line": 17,
+      "code_sha256": "d01d4518aed3668e7c982afee1cd3820fb858a94438e5b8960aa0557f5a57ef1"
+    },
+    {
+      "full_name": "MolecularDynamics.Chapter02Review.Z",
+      "kind": "abbrev",
+      "path": "MolecularDynamics/Chapter02/ReviewDefinitions.lean",
+      "line": 18,
+      "code_sha256": "5c03b9b4c74d753cfe2d9b89534d4a9a6c9c137e38273514b8c3e6d35f4c4af1"
+    },
+    {
+      "full_name": "MolecularDynamics.Chapter04Review.Q",
+      "kind": "abbrev",
+      "path": "MolecularDynamics/Chapter04/ReviewDefinitions.lean",
+      "line": 15,
+      "code_sha256": "d01d4518aed3668e7c982afee1cd3820fb858a94438e5b8960aa0557f5a57ef1"
+    },
+    {
+      "full_name": "MolecularDynamics.Chapter04Review.Z",
+      "kind": "abbrev",
+      "path": "MolecularDynamics/Chapter04/ReviewDefinitions.lean",
+      "line": 16,
+      "code_sha256": "5c03b9b4c74d753cfe2d9b89534d4a9a6c9c137e38273514b8c3e6d35f4c4af1"
+    }
+  ],
+  "validation": {
+    "project_constant_closure": "PASS",
+    "missing_project_definitions": [],
+    "full_page_render_equality_dpi": 72,
+    "website_submitted": false
+  },
+  "files": {
+    "PASTE.txt": {
+      "bytes": 5432,
+      "sha256": "d58596a3f17348fa46541b63efefe58b153abc77b6332040630687d36a5dd2d4"
+    },
+    "BATCH02d_PAGES.pdf": {
+      "bytes": 78120,
+      "sha256": "a2ee26d6b296e1e31f5645b102682f4a38f68d1665a5af40640d8e826f40e6ee"
+    }
+  },
+  "total_task_bytes": 86463
+}

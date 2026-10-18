@@ -1,0 +1,50 @@
+{
+  "batch": "BATCH05",
+  "subtask": "BATCH05e",
+  "source_ids": [
+    "MD-7.3.2-SPVLargeFriction"
+  ],
+  "input_sha256": {
+    "Blueprint/Ch07.lean": "2c8a4521d9e655e5690fd5f8a5642ba56b8124fddb5f761ab0548d6df9f0c56b",
+    "blueprint/ch07/ch07_source.json": "4cdae77a46bd167b78ab95f2928b72e80c919529316d8848bf882c6187db6599",
+    "BATCH05e_PAGES.pdf": "8b5b23c2e33d2bc4383a2899fa49d625c1115ed45ceeb2584ecaf7cf382af656"
+  },
+  "page_mapping": [
+    {
+      "attachment_page": 1,
+      "original_pdf_page": 293,
+      "printed_page": 272
+    },
+    {
+      "attachment_page": 2,
+      "original_pdf_page": 294,
+      "printed_page": 273
+    }
+  ],
+  "definition_excerpts": [
+    {
+      "full_name": "MD.Ch07.spvEtaLimit",
+      "kind": "theorem",
+      "path": "Blueprint/Ch07.lean",
+      "line": 381,
+      "code_sha256": "091002974e708a752b2aaffbdf925da1fb85c72e3f46bdba622bbe1b1fdbe6b9"
+    }
+  ],
+  "validation": {
+    "project_constant_closure": "PASS",
+    "missing_project_definitions": [],
+    "full_page_render_equality_dpi": 72,
+    "website_submitted": false
+  },
+  "files": {
+    "PASTE.txt": {
+      "bytes": 3084,
+      "sha256": "57bbcd674e613b64b07f8493337ef0c16f827ece2a0cdc0cbc14833a18cc503a"
+    },
+    "BATCH05e_PAGES.pdf": {
+      "bytes": 104937,
+      "sha256": "8b5b23c2e33d2bc4383a2899fa49d625c1115ed45ceeb2584ecaf7cf382af656"
+    }
+  },
+  "total_task_bytes": 109465
+}

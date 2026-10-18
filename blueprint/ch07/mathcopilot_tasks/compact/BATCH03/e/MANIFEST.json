@@ -1,0 +1,73 @@
+{
+  "batch": "BATCH03",
+  "subtask": "BATCH03e",
+  "source_ids": [
+    "MD-7.3-OUForward"
+  ],
+  "input_sha256": {
+    "Blueprint/Ch07.lean": "2c8a4521d9e655e5690fd5f8a5642ba56b8124fddb5f761ab0548d6df9f0c56b",
+    "blueprint/ch07/ch07_source.json": "4cdae77a46bd167b78ab95f2928b72e80c919529316d8848bf882c6187db6599",
+    "BATCH03e_PAGES.pdf": "f0be74595e8616c8b757bcf37eacb30b25ccee24e69701281d633082759330f7"
+  },
+  "page_mapping": [
+    {
+      "attachment_page": 1,
+      "original_pdf_page": 289,
+      "printed_page": 268
+    }
+  ],
+  "definition_excerpts": [
+    {
+      "full_name": "MD.Ch07.V",
+      "kind": "abbrev",
+      "path": "Blueprint/Ch07.lean",
+      "line": 172,
+      "code_sha256": "7ab0ad90462b274b03f5b929b5f09417c0b397b6cb908fa6e7bd56677a314027"
+    },
+    {
+      "full_name": "MD.Ch07.coordDerivative",
+      "kind": "def",
+      "path": "Blueprint/Ch07.lean",
+      "line": 221,
+      "code_sha256": "e782d789a13f5db6817e2c995f141805e81ac75720125b846f8ee14ba3833a4b"
+    },
+    {
+      "full_name": "MD.Ch07.ouForward",
+      "kind": "def",
+      "path": "Blueprint/Ch07.lean",
+      "line": 224,
+      "code_sha256": "ada8fa685075ac3ed7161cba49ec5ecfe0edd30b3dc8d4f60a04214f8d375f3a"
+    },
+    {
+      "full_name": "MD.Ch07.ouBackward",
+      "kind": "def",
+      "path": "Blueprint/Ch07.lean",
+      "line": 228,
+      "code_sha256": "11ddd0398496c704beb048855658c7febd1d9e4973131e4222d78a89c04d528b"
+    },
+    {
+      "full_name": "MD.Ch07.ouForward_adjoint",
+      "kind": "theorem",
+      "path": "Blueprint/Ch07.lean",
+      "line": 232,
+      "code_sha256": "135c81c0b9a084d7b2bdfc04edac66a2c04b6ab59f897c3e92d13f1a88976e87"
+    }
+  ],
+  "validation": {
+    "project_constant_closure": "PASS",
+    "missing_project_definitions": [],
+    "full_page_render_equality_dpi": 72,
+    "website_submitted": false
+  },
+  "files": {
+    "PASTE.txt": {
+      "bytes": 5664,
+      "sha256": "6857d5625a53dfe4bec7ac581c2824845e592bea5802951b969f7eb31d2ef583"
+    },
+    "BATCH03e_PAGES.pdf": {
+      "bytes": 85329,
+      "sha256": "f0be74595e8616c8b757bcf37eacb30b25ccee24e69701281d633082759330f7"
+    }
+  },
+  "total_task_bytes": 93230
+}

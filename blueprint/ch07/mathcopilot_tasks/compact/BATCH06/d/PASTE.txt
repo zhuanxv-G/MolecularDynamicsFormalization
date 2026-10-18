@@ -1,0 +1,83 @@
+以附件/PASTE 为准，忽略 /workspace 旧文件；Mathlib 定义按标准含义采信。
+本任务只审本条：原文转录、对象资格、定义体、量词、全部结论及[EXTRA]是否一致；Lean编译不代替语义审阅。
+Lean/Mathlib均4.34.0。原页PDF映射：[295]；印刷页=[274].
+input_sha256请原样回显：
+{
+  "Blueprint/Ch07.lean": "2c8a4521d9e655e5690fd5f8a5642ba56b8124fddb5f761ab0548d6df9f0c56b",
+  "blueprint/ch07/ch07_source.json": "4cdae77a46bd167b78ab95f2928b72e80c919529316d8848bf882c6187db6599",
+  "BATCH06d_PAGES.pdf": "c05555a9bf15994c7d7f439d3ee028688e8980ca1166910068c97a478569e00c"
+}
+用代码将JSON对象(batch,input_sha256,items)写到 /workspace/.mathcopilot/reviews/ch07/BATCH06d_review.json；items仅含本source_id。
+items字段：source_id、verdict(PASS/FAIL/NEEDS_HUMAN)、transcription、semantic_review、counterexample、suggested_fix、printed_version、corrected_version。逐版区分原文疑误和修正版结论；缺材料必须具体指出，不猜测。写后json.loads自检，最后仅回复路径及统计。
+
+## 原文JSON
+```json
+{
+  "source_id": "MD-7.4-BBKLinearForm",
+  "kind": "definition",
+  "label": null,
+  "section": "7.4",
+  "printed_page": "274",
+  "pdf_page": "295",
+  "statement_latex": "For example, in the BBK method we can compute directly from its update scheme that\n\\[\\Psi^{\\rm BBK}=\\begin{bmatrix}1-\\frac{h^2\\Omega^2}{2m}&\\frac hm(1-\\frac{\\gamma h}2)\\\\\n\\frac{h\\Omega^2}{2m}\\frac{h^2\\Omega^2-4m}{2+\\gamma h}&\\frac{(2-\\gamma h)(2m-h^2\\Omega^2)}{2m(2+\\gamma h)}\\end{bmatrix},\\]\n\\[\\mu_n^{\\rm BBK}=\\begin{bmatrix}\\sqrt{\\frac{k_BT\\gamma h^3}{2m}}R_n\\\\\n\\frac{\\sqrt{2k_BT\\gamma hm}}{2+\\gamma h}[(1-\\frac{h^2\\Omega^2}{2m})R_n+R'_n]\\end{bmatrix}.\\]",
+  "proof_latex": null,
+  "proof_note": "原书未给独立完整证明。",
+  "context_notation": [],
+  "extra_assumptions": [
+    "完整记录所印矩阵与噪声；从BBK更新代入谐势的代数识别暂未证明，不以定义计为已证识别。"
+  ],
+  "issues": [],
+  "statement_scope": "本条逐字引用的全部数学对象与公式；未纳入的上下文另列。",
+  "lean_decl": "MD.Ch07.bbkMatrix",
+  "lean_declarations": [
+    "MD.Ch07.bbkMatrix",
+    "MD.Ch07.bbkNoise"
+  ],
+  "source_page_verification": "见source_page_checks.json；必须已目视核对本条原页。",
+  "repair_log": [],
+  "documented_priors": []
+}
+```
+
+## 完整本条Lean
+```lean
+def bbkMatrix (m Ω γ h : ℝ) : ℝ × ℝ × ℝ × ℝ :=
+  (1-h^2*Ω^2/(2*m), h/m*(1-γ*h/2),
+    h*Ω^2/(2*m)*((h^2*Ω^2-4*m)/(2+γ*h)),
+    (2-γ*h)*(2*m-h^2*Ω^2)/(2*m*(2+γ*h)))
+def bbkNoise (m Ω γ θ h R S : ℝ) : ℝ × ℝ :=
+  (Real.sqrt (θ*γ*h^3/(2*m))*R,
+    Real.sqrt (2*θ*γ*h*m)/(2+γ*h)*((1-h^2*Ω^2/(2*m))*R+S))
+```
+
+## 项目依赖定义体及选择规格
+以下def/abbrev/structure完整保留；定理列出完整类型，Mathlib标准定义无需摘录。
+
+### MD.Ch07.bbkMatrix (Blueprint/Ch07.lean:421)
+原文件上下文：
+```lean
+open Set Filter MeasureTheory ProbabilityTheory MolecularDynamics
+open scoped BigOperators Topology ContDiff ENNReal NNReal
+variable {Ω : Type*} [MeasurableSpace Ω]
+variable {n : ℕ}
+```
+```lean
+def bbkMatrix (m Ω γ h : ℝ) : ℝ × ℝ × ℝ × ℝ :=
+  (1-h^2*Ω^2/(2*m), h/m*(1-γ*h/2),
+    h*Ω^2/(2*m)*((h^2*Ω^2-4*m)/(2+γ*h)),
+    (2-γ*h)*(2*m-h^2*Ω^2)/(2*m*(2+γ*h)))
+```
+
+### MD.Ch07.bbkNoise (Blueprint/Ch07.lean:425)
+原文件上下文：
+```lean
+open Set Filter MeasureTheory ProbabilityTheory MolecularDynamics
+open scoped BigOperators Topology ContDiff ENNReal NNReal
+variable {Ω : Type*} [MeasurableSpace Ω]
+variable {n : ℕ}
+```
+```lean
+def bbkNoise (m Ω γ θ h R S : ℝ) : ℝ × ℝ :=
+  (Real.sqrt (θ*γ*h^3/(2*m))*R,
+    Real.sqrt (2*θ*γ*h*m)/(2+γ*h)*((1-h^2*Ω^2/(2*m))*R+S))
+```

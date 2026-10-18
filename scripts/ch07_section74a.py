@@ -5,7 +5,7 @@ r'''Recall that the one-dimensional harmonic oscillator with spring constant $\O
 where $(q,p)\in\mathbb R^2$ represent a particle's position and momentum, and $m>0$ is the particle's mass.''',
 '''def harmonicHamiltonian (m Ω : ℝ) (x : ℝ × ℝ) : ℝ := x.2^2/(2*m)+Ω^2*x.1^2/2
 def harmonicLaw (m Ω θ : ℝ) : Measure (ℝ × ℝ) :=
-  (gaussianReal 0 (NNReal.ofReal (θ/Ω^2))).prod (gaussianReal 0 (NNReal.ofReal (θ*m)))''',kind='definition',label='(7.6)',extra=['正m、正θ、Ω≠0时为可归一化的正则谐振子Gibbs分布；θ=k_BT。'])
+  (gaussianReal 0 (Real.toNNReal (θ/Ω^2))).prod (gaussianReal 0 (Real.toNNReal (θ*m)))''',kind='definition',label='(7.6)',extra=['正m、正θ、Ω≠0时为可归一化的正则谐振子Gibbs分布；θ=k_BT。'])
 add('HarmonicMoments','7.4','273–274',
 r'''In this setting, the canonical distribution $\rho_\beta$ is the product of two Gaussian distributions, where we have invariant (stationary) averages
 \[\langle q\rangle=\langle p\rangle=0,\qquad\langle\Omega^2q^2\rangle=\langle p^2/m\rangle=k_BT,\qquad\langle qp\rangle=0.\]''',

@@ -1,0 +1,19 @@
+{
+  "batch": "BATCH08",
+  "subtasks": [
+    {
+      "subtask": "BATCH08a",
+      "source_id": "MD-7.4.2-BBKStarMomentSystemPrinted",
+      "path": "blueprint/ch07/mathcopilot_tasks/compact/BATCH08/a",
+      "bytes": 89298,
+      "manifest_sha256": "deff0637d18304d57d64c7edf44ddc4b748f8e903692b2f82dc122a3095130a7"
+    },
+    {
+      "subtask": "BATCH08b",
+      "source_id": "MD-7.4.2-BBKStarStationary",
+      "path": "blueprint/ch07/mathcopilot_tasks/compact/BATCH08/b",
+      "bytes": 82853,
+      "manifest_sha256": "460a549911726d6b9f453379824ee35b8be8325bc9b7667c6ad3eb0703d2d4d0"
+    }
+  ]
+}

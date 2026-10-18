@@ -1,0 +1,87 @@
+{
+  "batch": "BATCH04",
+  "subtask": "BATCH04a",
+  "source_ids": [
+    "MD-7.3.1-Langevin"
+  ],
+  "input_sha256": {
+    "Blueprint/Ch07.lean": "2c8a4521d9e655e5690fd5f8a5642ba56b8124fddb5f761ab0548d6df9f0c56b",
+    "blueprint/ch07/ch07_source.json": "4cdae77a46bd167b78ab95f2928b72e80c919529316d8848bf882c6187db6599",
+    "BATCH04a_PAGES.pdf": "92c1903bc13eec35d12bd8464e1e4b8dd1d1333e18f72936d51ba090ec57d90e"
+  },
+  "page_mapping": [
+    {
+      "attachment_page": 1,
+      "original_pdf_page": 289,
+      "printed_page": 268
+    }
+  ],
+  "definition_excerpts": [
+    {
+      "full_name": "MD.Ch07.V",
+      "kind": "abbrev",
+      "path": "Blueprint/Ch07.lean",
+      "line": 172,
+      "code_sha256": "7ab0ad90462b274b03f5b929b5f09417c0b397b6cb908fa6e7bd56677a314027"
+    },
+    {
+      "full_name": "MD.Ch07.Phase",
+      "kind": "abbrev",
+      "path": "Blueprint/Ch07.lean",
+      "line": 173,
+      "code_sha256": "ef1520e3b22ac1c99a30a989deafe8d3da44a9f2a3e5b6c2cd3220218b88513e"
+    },
+    {
+      "full_name": "MD.Ch07.vectorWiener",
+      "kind": "def",
+      "path": "Blueprint/Ch07.lean",
+      "line": 175,
+      "code_sha256": "a24b0b3d4e3f48ea3c5384e0ec083b953b2b03d743d1687b43010c41ccaebf93"
+    },
+    {
+      "full_name": "MD.Ch07.coordDerivative",
+      "kind": "def",
+      "path": "Blueprint/Ch07.lean",
+      "line": 221,
+      "code_sha256": "e782d789a13f5db6817e2c995f141805e81ac75720125b846f8ee14ba3833a4b"
+    },
+    {
+      "full_name": "MD.Ch07.gradient",
+      "kind": "def",
+      "path": "Blueprint/Ch07.lean",
+      "line": 250,
+      "code_sha256": "540c6af25c09d3a58da531bc32056ff1a1c070facc58d34c96b6653d781fba6f"
+    },
+    {
+      "full_name": "MD.Ch07.langevin",
+      "kind": "def",
+      "path": "Blueprint/Ch07.lean",
+      "line": 252,
+      "code_sha256": "24f5a5e4ffaf8476e6ba5421115d1cfe510f2917c971244c845ecf7dcc03ec9e"
+    },
+    {
+      "full_name": "MolecularDynamics.textbookIsWienerVector",
+      "kind": "structure",
+      "path": "MolecularDynamics/Chapter06/WienerVectorSupport.lean",
+      "line": 13,
+      "code_sha256": "030040a9146ab99e095c5a3e84fa3feed1dc8f0dd916643d371a0bb7e6efb622"
+    }
+  ],
+  "validation": {
+    "project_constant_closure": "PASS",
+    "missing_project_definitions": [],
+    "full_page_render_equality_dpi": 72,
+    "website_submitted": false
+  },
+  "files": {
+    "PASTE.txt": {
+      "bytes": 7241,
+      "sha256": "c626851491035027234914937dafea451beafee06b306ad9ad0a56a9e985d481"
+    },
+    "BATCH04a_PAGES.pdf": {
+      "bytes": 85329,
+      "sha256": "92c1903bc13eec35d12bd8464e1e4b8dd1d1333e18f72936d51ba090ec57d90e"
+    }
+  },
+  "total_task_bytes": 95306
+}

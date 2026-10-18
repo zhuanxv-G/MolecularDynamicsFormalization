@@ -1,6 +1,6 @@
 # 第7章 Lean Blueprint 本地审阅材料
 
-当前已整理30条；网站尚未审阅。正文范围为印刷261–326页（PDF282–347），末页仅取Exercises之前的正文。
+当前已整理44条；网站尚未审阅。正文范围为印刷261–326页（PDF282–347），末页仅取Exercises之前的正文。
 
 ## 1. MD-7.1-Bias · definition · 印刷p.263 / PDFp.284
 
@@ -1430,4 +1430,715 @@ def bbkSameNoise (m : V n) (U : V n → ℝ) (γ θ h : ℝ) (R : V n) := bbk m 
 定义；单文件编译与逐声明公理核对通过。
 本条未登记待证缺项。
 位置：Blueprint/Ch07.lean；MD.Ch07.bbk, MD.Ch07.bbkSameNoise。
+
+## 1. MD-7.4-HarmonicHamiltonian · (7.6) · 印刷p.273 / PDFp.294
+
+### 2. 原文陈述
+
+Recall that the one-dimensional harmonic oscillator with spring constant $\Omega^2$ has potential energy function $U(q)=\Omega^2q^2/2$, with Hamiltonian
+\[H(q,p)=\frac{p^2}{2m}+\frac{\Omega^2q^2}{2},\tag{7.6}\]
+where $(q,p)\in\mathbb R^2$ represent a particle's position and momentum, and $m>0$ is the particle's mass.
+
+### 3. 原文证明
+
+原书未给独立完整证明。
+
+### 4. 完整当前Lean（原文与修正版独立列出）
+
+```lean
+def harmonicHamiltonian (m Ω : ℝ) (x : ℝ × ℝ) : ℝ := x.2^2/(2*m)+Ω^2*x.1^2/2
+def harmonicLaw (m Ω θ : ℝ) : Measure (ℝ × ℝ) :=
+  (gaussianReal 0 (Real.toNNReal (θ/Ω^2))).prod (gaussianReal 0 (Real.toNNReal (θ*m)))
+```
+
+### 5. 对照表
+
+| 原文成分 | Lean对应 | 说明 |
+|---|---|---|
+| 本条引用的对象与公式 | MD.Ch07.harmonicHamiltonian, MD.Ch07.harmonicLaw | 本条逐字引用的全部数学对象与公式；未纳入的上下文另列。 |
+
+[EXTRA] 正m、正θ、Ω≠0时为可归一化的正则谐振子Gibbs分布；θ=k_BT。
+记号与上下文：见所列原文与Lean量化变量。
+
+### 6. 审计结论
+
+本地：已对照目视原页核对对象、量词、技术资格和所列覆盖范围；网站尚未审阅。
+疑点：本条暂未发现需单列的原书疑误。
+网站：尚未送审。
+
+### 7. 状态与证明位置
+
+定义；单文件编译与逐声明公理核对通过。
+本条未登记待证缺项。
+位置：Blueprint/Ch07.lean；MD.Ch07.harmonicHamiltonian, MD.Ch07.harmonicLaw。
+
+## 1. MD-7.4-HarmonicMoments · unnumbered_claim · 印刷p.273–274 / PDFp.294–295
+
+### 2. 原文陈述
+
+In this setting, the canonical distribution $\rho_\beta$ is the product of two Gaussian distributions, where we have invariant (stationary) averages
+\[\langle q\rangle=\langle p\rangle=0,\qquad\langle\Omega^2q^2\rangle=\langle p^2/m\rangle=k_BT,\qquad\langle qp\rangle=0.\]
+
+### 3. 原文证明
+
+原书未给独立完整证明。
+
+### 4. 完整当前Lean（原文与修正版独立列出）
+
+```lean
+theorem harmonicMoments (m Ω θ : ℝ) (hm : 0 < m) (hΩ : Ω ≠ 0) (hθ : 0 < θ) :
+    (∫ x, x.1 ∂harmonicLaw m Ω θ) = 0 ∧
+    (∫ x, x.2 ∂harmonicLaw m Ω θ) = 0 ∧
+    (∫ x, Ω^2*x.1^2 ∂harmonicLaw m Ω θ) = θ ∧
+    (∫ x, x.2^2/m ∂harmonicLaw m Ω θ) = θ ∧
+    (∫ x, x.1*x.2 ∂harmonicLaw m Ω θ) = 0 := by
+  sorry
+```
+
+### 5. 对照表
+
+| 原文成分 | Lean对应 | 说明 |
+|---|---|---|
+| 本条引用的对象与公式 | MD.Ch07.harmonicMoments | 实际正态乘积的全部五个矩；其Lebesgue密度等于归一Gibbs权的识别未另作定理。 |
+
+[EXTRA] harmonicLaw给出实际正态乘积，未把所需各矩值作为假设；与Hamiltonian的密度识别另列覆盖缺口。
+记号与上下文：见所列原文与Lean量化变量。
+
+### 6. 审计结论
+
+本地：已对照目视原页核对对象、量词、技术资格和所列覆盖范围；网站尚未审阅。
+疑点：本条暂未发现需单列的原书疑误。
+网站：尚未送审。
+
+### 7. 状态与证明位置
+
+未证陈述；单文件编译与逐声明公理核对通过。
+未证原因：需要正态二阶矩和乘积测度积分的完整短桥；不重建Gaussian理论。
+位置：Blueprint/Ch07.lean；MD.Ch07.harmonicMoments。
+
+## 1. MD-7.4-LinearIteration · (7.7) · 印刷p.274 / PDFp.295
+
+### 2. 原文陈述
+
+Thus, denoting the iteration index as a subscript, we may explicitly write one iteration of a general numerical method for evolving the dynamics as
+\[\binom{q_{n+1}}{p_{n+1}}=\Psi\binom{q_n}{p_n}+\mu_n,\tag{7.7}\]
+where $\Psi$ is a constant matrix that depends on the stepsize $h$, the friction coefficient $\gamma$, the particle mass $m$ and the spring constant $\Omega$. Additionally $\mu_n$ is a vector of stochastic processes.
+
+### 3. 原文证明
+
+原书未给独立完整证明。
+
+### 4. 完整当前Lean（原文与修正版独立列出）
+
+```lean
+def linearUpdate (a b c d : ℝ) (x noise : ℝ × ℝ) : ℝ × ℝ :=
+  (a*x.1+b*x.2+noise.1,c*x.1+d*x.2+noise.2)
+def momentQ (μ : Measure (ℝ × ℝ)) : ℝ := ∫ x, x.1^2 ∂μ
+def momentP (μ : Measure (ℝ × ℝ)) : ℝ := ∫ x, x.2^2 ∂μ
+def momentQP (μ : Measure (ℝ × ℝ)) : ℝ := ∫ x, x.1*x.2 ∂μ
+```
+
+### 5. 对照表
+
+| 原文成分 | Lean对应 | 说明 |
+|---|---|---|
+| 本条引用的对象与公式 | MD.Ch07.linearUpdate, MD.Ch07.momentQ, MD.Ch07.momentP, MD.Ch07.momentQP | 本条逐字引用的全部数学对象与公式；未纳入的上下文另列。 |
+
+[EXTRA] 具体2×2矩阵用四个真实系数，噪声不假定自动独立；后续陈述分别补独立或相关结构。
+记号与上下文：见所列原文与Lean量化变量。
+
+### 6. 审计结论
+
+本地：已对照目视原页核对对象、量词、技术资格和所列覆盖范围；网站尚未审阅。
+疑点：本条暂未发现需单列的原书疑误。
+网站：尚未送审。
+
+### 7. 状态与证明位置
+
+定义；单文件编译与逐声明公理核对通过。
+本条未登记待证缺项。
+位置：Blueprint/Ch07.lean；MD.Ch07.linearUpdate, MD.Ch07.momentQ, MD.Ch07.momentP, MD.Ch07.momentQP。
+
+## 1. MD-7.4-BBKLinearForm · definition · 印刷p.274 / PDFp.295
+
+### 2. 原文陈述
+
+For example, in the BBK method we can compute directly from its update scheme that
+\[\Psi^{\rm BBK}=\begin{bmatrix}1-\frac{h^2\Omega^2}{2m}&\frac hm(1-\frac{\gamma h}2)\\
+\frac{h\Omega^2}{2m}\frac{h^2\Omega^2-4m}{2+\gamma h}&\frac{(2-\gamma h)(2m-h^2\Omega^2)}{2m(2+\gamma h)}\end{bmatrix},\]
+\[\mu_n^{\rm BBK}=\begin{bmatrix}\sqrt{\frac{k_BT\gamma h^3}{2m}}R_n\\
+\frac{\sqrt{2k_BT\gamma hm}}{2+\gamma h}[(1-\frac{h^2\Omega^2}{2m})R_n+R'_n]\end{bmatrix}.\]
+
+### 3. 原文证明
+
+原书未给独立完整证明。
+
+### 4. 完整当前Lean（原文与修正版独立列出）
+
+```lean
+def bbkMatrix (m Ω γ h : ℝ) : ℝ × ℝ × ℝ × ℝ :=
+  (1-h^2*Ω^2/(2*m), h/m*(1-γ*h/2),
+    h*Ω^2/(2*m)*((h^2*Ω^2-4*m)/(2+γ*h)),
+    (2-γ*h)*(2*m-h^2*Ω^2)/(2*m*(2+γ*h)))
+def bbkNoise (m Ω γ θ h R S : ℝ) : ℝ × ℝ :=
+  (Real.sqrt (θ*γ*h^3/(2*m))*R,
+    Real.sqrt (2*θ*γ*h*m)/(2+γ*h)*((1-h^2*Ω^2/(2*m))*R+S))
+```
+
+### 5. 对照表
+
+| 原文成分 | Lean对应 | 说明 |
+|---|---|---|
+| 本条引用的对象与公式 | MD.Ch07.bbkMatrix, MD.Ch07.bbkNoise | 本条逐字引用的全部数学对象与公式；未纳入的上下文另列。 |
+
+[EXTRA] 完整记录所印矩阵与噪声；从BBK更新代入谐势的代数识别暂未证明，不以定义计为已证识别。
+记号与上下文：见所列原文与Lean量化变量。
+
+### 6. 审计结论
+
+本地：已对照目视原页核对对象、量词、技术资格和所列覆盖范围；网站尚未审阅。
+疑点：本条暂未发现需单列的原书疑误。
+网站：尚未送审。
+
+### 7. 状态与证明位置
+
+定义；单文件编译与逐声明公理核对通过。
+本条未登记待证缺项。
+位置：Blueprint/Ch07.lean；MD.Ch07.bbkMatrix, MD.Ch07.bbkNoise。
+
+## 1. MD-7.4-QuadraticProducts · (7.8)–(7.10) · 印刷p.274 / PDFp.295
+
+### 2. 原文陈述
+
+More generally, if we define the components of $\Psi$ as $\psi_{ij}$ and denote $\mu_n=[\mu_{n,1},\mu_{n,2}]^T$ we can take products of the update equations defined by (7.7) to obtain
+\[q_{n+1}^2=\psi_{11}^2q_n^2+\psi_{12}^2p_n^2+\mu_{n,1}^2+2\psi_{11}\psi_{12}q_np_n+2\psi_{11}\mu_{n,1}q_n+2\psi_{12}\mu_{n,1}p_n,\tag{7.8}\]
+\[p_{n+1}^2=\psi_{21}^2q_n^2+\psi_{22}^2p_n^2+\mu_{n,2}^2+2\psi_{21}\psi_{22}q_np_n+2\psi_{21}\mu_{n,2}q_n+2\psi_{22}\mu_{n,2}p_n,\tag{7.9}\]
+\[q_{n+1}p_{n+1}=\psi_{11}\psi_{21}q_n^2+\psi_{12}\psi_{22}p_n^2+\mu_{n,1}\mu_{n,2}+(\psi_{11}\psi_{22}+\psi_{12}\psi_{21})q_np_n
++(\psi_{11}\mu_{n,2}+\psi_{21}\mu_{n,1})q_n+(\psi_{22}\mu_{n,1}+\psi_{12}\mu_{n,2})p_n.\tag{7.10}\]
+
+### 3. 原文证明
+
+Take products of the update equations defined by (7.7).
+
+### 4. 完整当前Lean（原文与修正版独立列出）
+
+```lean
+theorem quadraticProducts (a b c d q p r s : ℝ) :
+    (linearUpdate a b c d (q,p) (r,s)).1^2 =
+      a^2*q^2+b^2*p^2+r^2+2*a*b*q*p+2*a*r*q+2*b*r*p ∧
+    (linearUpdate a b c d (q,p) (r,s)).2^2 =
+      c^2*q^2+d^2*p^2+s^2+2*c*d*q*p+2*c*s*q+2*d*s*p ∧
+    (linearUpdate a b c d (q,p) (r,s)).1*(linearUpdate a b c d (q,p) (r,s)).2 =
+      a*c*q^2+b*d*p^2+r*s+(a*d+b*c)*q*p+(a*s+c*r)*q+(d*r+b*s)*p := by
+  dsimp [linearUpdate]
+  constructor
+  · ring
+  constructor <;> ring
+```
+
+### 5. 对照表
+
+| 原文成分 | Lean对应 | 说明 |
+|---|---|---|
+| 本条引用的对象与公式 | MD.Ch07.quadraticProducts | 本条逐字引用的全部数学对象与公式；未纳入的上下文另列。 |
+
+[EXTRA] 本条没有另加数学前提。
+记号与上下文：见所列原文与Lean量化变量。
+
+### 6. 审计结论
+
+本地：已对照目视原页核对对象、量词、技术资格和所列覆盖范围；网站尚未审阅。
+疑点：本条暂未发现需单列的原书疑误。
+网站：尚未送审。
+
+### 7. 状态与证明位置
+
+已证；单文件编译与逐声明公理核对通过。
+本条未登记待证缺项。
+位置：Blueprint/Ch07.lean；MD.Ch07.quadraticProducts。
+
+## 1. MD-7.4.1-StationaryMomentSystem · (7.11) · 印刷p.275 / PDFp.296
+
+### 2. 原文陈述
+
+Hence we have $\mathbb E(\mu_{n,i}q_n)=\mathbb E(\mu_{n,i}p_n)=0$, for any $i$ and $n$. Thus, taking expectations of (7.8)–(7.10) for such schemes, and then considering the limit $n\to\infty$ we obtain a closed, linear system of equations
+\[Q=\psi_{11}^2Q+\psi_{12}^2P+2\psi_{11}\psi_{12}C+\bar\mu_{11},\]
+\[P=\psi_{21}^2Q+\psi_{22}^2P+2\psi_{21}\psi_{22}C+\bar\mu_{22},\]
+\[C=\psi_{11}\psi_{21}Q+\psi_{12}\psi_{22}P+(\psi_{11}\psi_{22}+\psi_{12}\psi_{21})C+\bar\mu_{12},\tag{7.11}\]
+where $\bar\mu_{11}=\mathbb E(\mu_{n,1}^2)$, $\bar\mu_{12}=\mathbb E(\mu_{n,1}\mu_{n,2})$, $\bar\mu_{22}=\mathbb E(\mu_{n,2}^2)$.
+
+### 3. 原文证明
+
+原书未给独立完整证明。
+
+### 4. 完整当前Lean（原文与修正版独立列出）
+
+```lean
+def momentSystem (a b c d u v w Q P C : ℝ) : Prop :=
+  Q = a^2*Q+b^2*P+2*a*b*C+u ∧
+  P = c^2*Q+d^2*P+2*c*d*C+w ∧
+  C = a*c*Q+b*d*P+(a*d+b*c)*C+v
+
+def invariantLinearLaw (μ η : Measure (ℝ × ℝ)) (a b c d : ℝ) : Prop :=
+  IsProbabilityMeasure μ ∧ IsProbabilityMeasure η ∧
+  Measure.map (fun z ↦ linearUpdate a b c d z.1 z.2) (μ.prod η) = μ
+
+theorem stationaryMomentSystem (μ η : Measure (ℝ × ℝ)) (a b c d : ℝ)
+    (hinv : invariantLinearLaw μ η a b c d)
+    (hq : MemLp (fun x ↦ x.1) 2 μ) (hp : MemLp (fun x ↦ x.2) 2 μ)
+    (hr : MemLp (fun x ↦ x.1) 2 η) (hs : MemLp (fun x ↦ x.2) 2 η)
+    (hmean : (∫ x, x.1 ∂η) = 0 ∧ (∫ x, x.2 ∂η) = 0) :
+    momentSystem a b c d (momentQ η) (momentQP η) (momentP η)
+      (momentQ μ) (momentP μ) (momentQP μ) := by
+  sorry
+```
+
+### 5. 对照表
+
+| 原文成分 | Lean对应 | 说明 |
+|---|---|---|
+| 本条引用的对象与公式 | MD.Ch07.momentSystem, MD.Ch07.invariantLinearLaw, MD.Ch07.stationaryMomentSystem | 本条逐字引用的全部数学对象与公式；未纳入的上下文另列。 |
+
+[EXTRA] 使用独立乘积μ.prodη及实际推前不变性，不把所求矩方程当作该定理假设；所有坐标L²、噪声中心化明示。；只讨论已存在的平稳分布矩，初值分布趋平稳及长时间平均的遍历收敛未证明。
+记号与上下文：见所列原文与Lean量化变量。
+
+### 6. 审计结论
+
+本地：已对照目视原页核对对象、量词、技术资格和所列覆盖范围；网站尚未审阅。
+疑点：本条暂未发现需单列的原书疑误。
+网站：尚未送审。
+
+### 7. 状态与证明位置
+
+未证陈述；单文件编译与逐声明公理核对通过。
+未证原因：需乘积测度、可积多项式与推前矩计算的桥接；不建立一般Markov链遍历理论。
+位置：Blueprint/Ch07.lean；MD.Ch07.momentSystem, MD.Ch07.invariantLinearLaw, MD.Ch07.stationaryMomentSystem。
+
+## 1. MD-7.4.1-ABOHarmonic · Example 7.1 / (7.12) · 印刷p.275–276 / PDFp.296–297
+
+### 2. 原文陈述
+
+Example 7.1 Consider the scheme coded $[ABO]$.
+In the case of the one-dimensional harmonic oscillator, we have $U'(q)=\Omega^2q$, yielding the compact form of one iteration as
+\[\binom{q_{n+1}}{p_{n+1}}=\begin{bmatrix}1&h/m\\-\Omega^2he^{-h\gamma}&(1-\Omega^2h^2/m)e^{-h\gamma}\end{bmatrix}\binom{q_n}{p_n}+\binom0{\zeta m^{1/2}R_n}.\tag{7.12}\]
+Taking expectations of (7.12) and then taking the limit as $n\to\infty$, we see immediately that
+$\langle q\rangle_h^{[ABO]}=\langle p\rangle_h^{[ABO]}=0$, as $\mathbb E(R_n)=0$.
+
+### 3. 原文证明
+
+原书未给独立完整证明。
+
+### 4. 完整当前Lean（原文与修正版独立列出）
+
+```lean
+def aboHarmonic (m Ω γ θ h R : ℝ) (x : ℝ × ℝ) : ℝ × ℝ :=
+  linearUpdate 1 (h/m) (-Ω^2*h*Real.exp (-h*γ)) ((1-Ω^2*h^2/m)*Real.exp (-h*γ)) x
+    (0, Real.sqrt (θ*(1-Real.exp (-2*γ*h)))*Real.sqrt m*R)
+
+theorem aboStationaryMean (m Ω γ θ h : ℝ) (μ : Measure (ℝ × ℝ))
+    (hm : 0 < m) (hΩ : Ω ≠ 0) (hγ : 0 < γ) (hh : 0 < h)
+    (hμ : IsProbabilityMeasure μ) (hq : Integrable (fun x ↦ x.1) μ) (hp : Integrable (fun x ↦ x.2) μ)
+    (hinv : Measure.map (fun z ↦ aboHarmonic m Ω γ θ h z.2 z.1) (μ.prod (gaussianReal 0 1)) = μ) :
+    (∫ x, x.1 ∂μ) = 0 ∧ (∫ x, x.2 ∂μ) = 0 := by
+  sorry
+```
+
+### 5. 对照表
+
+| 原文成分 | Lean对应 | 说明 |
+|---|---|---|
+| 本条引用的对象与公式 | MD.Ch07.aboHarmonic, MD.Ch07.aboStationaryMean | 本条逐字引用的全部数学对象与公式；未纳入的上下文另列。 |
+
+[EXTRA] 原文长时间极限前提改为已存在的实际平稳概率分布及一阶矩可积；趋平稳结论不在本条覆盖。
+记号与上下文：见所列原文与Lean量化变量。
+
+### 6. 审计结论
+
+本地：已对照目视原页核对对象、量词、技术资格和所列覆盖范围；网站尚未审阅。
+疑点：本条暂未发现需单列的原书疑误。
+网站：尚未送审。
+
+### 7. 状态与证明位置
+
+未证陈述；单文件编译与逐声明公理核对通过。
+未证原因：需推前期望方程与二元线性系统短桥；不建立Markov遍历性。
+位置：Blueprint/Ch07.lean；MD.Ch07.aboHarmonic, MD.Ch07.aboStationaryMean。
+
+## 1. MD-7.4.1-ABOVariance · unnumbered_claim · 印刷p.276 / PDFp.297
+
+### 2. 原文陈述
+
+For example, the relative increase in the variance of position is computed for the $[ABO]$ scheme as
+\[\frac{\langle q^2\rangle_h^{[ABO]}}{\langle q^2\rangle}=\frac{e^{h\gamma}m(1+e^{-h\gamma})^2}{2m(1+e^{-h\gamma})-h^2\Omega^2e^{-h\gamma}}
+=1+\gamma h/2+(\Omega^2+\gamma^2m)h^2/(4m)+O(h^3).\]
+
+### 3. 原文证明
+
+原书未给独立完整证明。
+
+### 4. 完整当前Lean（原文与修正版独立列出）
+
+```lean
+def aboVarianceRatio (m Ω γ h : ℝ) : ℝ :=
+  Real.exp (h*γ)*m*(1+Real.exp (-h*γ))^2 /
+    (2*m*(1+Real.exp (-h*γ))-h^2*Ω^2*Real.exp (-h*γ))
+
+theorem aboVarianceRatio_expansion (m Ω γ : ℝ) (hm : 0 < m) :
+    Asymptotics.IsBigO (𝓝 (0 : ℝ))
+      (fun h ↦ aboVarianceRatio m Ω γ h - (1+γ*h/2+(Ω^2+γ^2*m)*h^2/(4*m)))
+      (fun h ↦ h^3) := by
+  sorry
+
+theorem aboStationaryVariance (m Ω γ θ h : ℝ) (μ : Measure (ℝ × ℝ))
+    (hm : 0 < m) (hΩ : Ω ≠ 0) (hγ : 0 < γ) (hθ : 0 < θ) (hh : 0 < h)
+    (hμ : IsProbabilityMeasure μ) (hq : MemLp (fun x ↦ x.1) 2 μ) (hp : MemLp (fun x ↦ x.2) 2 μ)
+    (hden : 0 < 2*m*(1+Real.exp (-h*γ))-h^2*Ω^2*Real.exp (-h*γ))
+    (hinv : Measure.map (fun z ↦ aboHarmonic m Ω γ θ h z.2 z.1) (μ.prod (gaussianReal 0 1)) = μ) :
+    momentQ μ / (θ/Ω^2) = aboVarianceRatio m Ω γ h := by
+  sorry
+```
+
+### 5. 对照表
+
+| 原文成分 | Lean对应 | 说明 |
+|---|---|---|
+| 本条引用的对象与公式 | MD.Ch07.aboVarianceRatio, MD.Ch07.aboVarianceRatio_expansion, MD.Ch07.aboStationaryVariance | 本条逐字引用的全部数学对象与公式；未纳入的上下文另列。 |
+
+[EXTRA] 完整保留方差有理式与Taylor展开；实际平稳概率、L²及稳定区分母为正明示，不假设目标方差公式。
+记号与上下文：见所列原文与Lean量化变量。
+
+### 6. 审计结论
+
+本地：已对照目视原页核对对象、量词、技术资格和所列覆盖范围；网站尚未审阅。
+疑点：本条暂未发现需单列的原书疑误。
+网站：尚未送审。
+
+### 7. 状态与证明位置
+
+未证陈述；单文件编译与逐声明公理核对通过。
+未证原因：需实际平稳矩方程求解及三阶Taylor余项；各路线超出短桥，保留未证。
+位置：Blueprint/Ch07.lean；MD.Ch07.aboVarianceRatio, MD.Ch07.aboVarianceRatio_expansion, MD.Ch07.aboStationaryVariance。
+
+## 1. MD-7.4.1-Table71 · Table 7.1 · 印刷p.277 / PDFp.298
+
+### 2. 原文陈述
+
+Table 7.1 The expected long-time computed average using the given second-order Langevin dynamics discretization scheme
+\[\begin{array}{c|ccc}
+\text{Scheme}&\langle q^2\rangle_h/\langle q^2\rangle&\langle p^2\rangle_h/\langle p^2\rangle&\langle qp\rangle\\
+[ABOBA]&1&[1-h^2\Omega^2/(4m)]^{-1}&0\\
+[OBABO]&[1-h^2\Omega^2/(4m)]^{-1}&1&0\\
+[BAOAB]&1&1-h^2\Omega^2/(4m)&0\\
+[OABAO]&1-h^2\Omega^2/(4m)&1&0
+\end{array}\]
+
+### 3. 原文证明
+
+原书未给独立完整证明。
+
+### 4. 完整当前Lean（原文与修正版独立列出）
+
+```lean
+def scalarLift (F : Phase 1 → Phase 1) (x : ℝ × ℝ) : ℝ × ℝ :=
+  let y := F ((fun _ ↦ x.1),(fun _ ↦ x.2))
+  (y.1 0,y.2 0)
+
+def symmetricHarmonicStep (scheme : Fin 4) (m Ω γ θ h : ℝ) (R S : ℝ) : (ℝ × ℝ) → (ℝ × ℝ) :=
+  let masses : V 1 := fun _ ↦ m
+  let U : V 1 → ℝ := fun q ↦ Ω^2*(q 0)^2/2
+  scalarLift (if scheme = 0 then aboba masses U γ θ h (fun _ ↦ R)
+    else if scheme = 1 then obabo masses U γ θ h (fun _ ↦ R) (fun _ ↦ S)
+    else if scheme = 2 then baoab masses U γ θ h (fun _ ↦ R)
+    else oabao masses U γ θ h (fun _ ↦ R) (fun _ ↦ S))
+
+def symmetricInvariant (scheme : Fin 4) (m Ω γ θ h : ℝ) (μ : Measure (ℝ × ℝ)) : Prop :=
+  IsProbabilityMeasure μ ∧ MemLp (fun x ↦ x.1) 2 μ ∧ MemLp (fun x ↦ x.2) 2 μ ∧
+  Measure.map (fun z : (ℝ × ℝ) × (ℝ × ℝ) ↦ symmetricHarmonicStep scheme m Ω γ θ h z.2.1 z.2.2 z.1)
+    (μ.prod ((gaussianReal 0 1).prod (gaussianReal 0 1))) = μ
+
+theorem table71 (scheme : Fin 4) (m Ω γ θ h : ℝ) (μ : Measure (ℝ × ℝ))
+    (hm : 0 < m) (hΩ : Ω ≠ 0) (hγ : 0 < γ) (hθ : 0 < θ) (hh : 0 < h)
+    (hstable : h^2*Ω^2 < 4*m) (hinv : symmetricInvariant scheme m Ω γ θ h μ) :
+    momentQ μ/(θ/Ω^2) = (if scheme = 1 then (1-h^2*Ω^2/(4*m))⁻¹
+      else if scheme = 3 then 1-h^2*Ω^2/(4*m) else 1) ∧
+    momentP μ/(θ*m) = (if scheme = 0 then (1-h^2*Ω^2/(4*m))⁻¹
+      else if scheme = 2 then 1-h^2*Ω^2/(4*m) else 1) ∧ momentQP μ = 0 := by
+  sorry
+```
+
+### 5. 对照表
+
+| 原文成分 | Lean对应 | 说明 |
+|---|---|---|
+| 本条引用的对象与公式 | MD.Ch07.scalarLift, MD.Ch07.symmetricHarmonicStep, MD.Ch07.symmetricInvariant, MD.Ch07.table71 | 本条逐字引用的全部数学对象与公式；未纳入的上下文另列。 |
+
+[EXTRA] 表7.1是由矩方程推导的精确数学公式，保留为待证；与数值实验观测表区分。；4个算法均使用本章完整定义、独立标准正态乘积与实际平稳推前；不把所需矩值写成假设。；只陈述已存在平稳概率的矩；长期收敛和遍历解释另列缺口。
+记号与上下文：见所列原文与Lean量化变量。
+
+### 6. 审计结论
+
+本地：已对照目视原页核对对象、量词、技术资格和所列覆盖范围；网站尚未审阅。
+疑点：本条暂未发现需单列的原书疑误。
+网站：尚未送审。
+
+### 7. 状态与证明位置
+
+未证陈述；单文件编译与逐声明公理核对通过。
+未证原因：四种真实分裂映射的Gaussian矩输运与线性方程求解；不建立一般离散遍历理论。
+位置：Blueprint/Ch07.lean；MD.Ch07.scalarLift, MD.Ch07.symmetricHarmonicStep, MD.Ch07.symmetricInvariant, MD.Ch07.table71。
+
+## 1. MD-7.4.1-NonsymmetricExactMoments · unnumbered_claim · 印刷p.277 / PDFp.298
+
+### 2. 原文陈述
+
+For example, analysis shows that the schemes denoted $[AOAB]$ or $[BAOA]$ both exhibit a first order error in the covariance $\langle qp\rangle_h=O(h)$, however they give exact results for both $\langle q^2\rangle_h$ and $\langle p^2\rangle_h$.
+
+### 3. 原文证明
+
+原书未给独立完整证明。
+
+### 4. 完整当前Lean（原文与修正版独立列出）
+
+```lean
+def nonsymmetricHarmonicStep (flip : Bool) (m Ω γ θ h R : ℝ) : (ℝ × ℝ) → (ℝ × ℝ) :=
+  let masses : V 1 := fun _ ↦ m
+  let U : V 1 → ℝ := fun q ↦ Ω^2*(q 0)^2/2
+  scalarLift (if flip then kickStep U h ∘ driftStep masses (h/2) ∘ ouStep masses γ θ h (fun _ ↦ R) ∘ driftStep masses (h/2)
+    else driftStep masses (h/2) ∘ ouStep masses γ θ h (fun _ ↦ R) ∘ driftStep masses (h/2) ∘ kickStep U h)
+
+theorem nonsymmetricExactMoments (flip : Bool) (m Ω γ θ h : ℝ) (μ : Measure (ℝ × ℝ))
+    (hm : 0 < m) (hΩ : Ω ≠ 0) (hγ : 0 < γ) (hθ : 0 < θ) (hh : 0 < h)
+    (hstable : h^2*Ω^2 < 4*m) (hμ : IsProbabilityMeasure μ)
+    (hq : MemLp (fun x ↦ x.1) 2 μ) (hp : MemLp (fun x ↦ x.2) 2 μ)
+    (hinv : Measure.map (fun z ↦ nonsymmetricHarmonicStep flip m Ω γ θ h z.2 z.1)
+      (μ.prod (gaussianReal 0 1)) = μ) :
+    momentQ μ = θ/Ω^2 ∧ momentP μ = θ*m := by
+  sorry
+```
+
+### 5. 对照表
+
+| 原文成分 | Lean对应 | 说明 |
+|---|---|---|
+| 本条引用的对象与公式 | MD.Ch07.nonsymmetricHarmonicStep, MD.Ch07.nonsymmetricExactMoments | 两个非对称算法精确位置/动量二阶矩；协方差阶数暂缺。 |
+
+[EXTRA] AOAB和BAOA按字母总时间h定义；实际平稳概率、L²、稳定参数显式。；本条仅覆盖两个精确方差；O(h)协方差及其随h统一常数未陈述，列入覆盖缺口。
+记号与上下文：见所列原文与Lean量化变量。
+
+### 6. 审计结论
+
+本地：已对照目视原页核对对象、量词、技术资格和所列覆盖范围；网站尚未审阅。
+疑点：本条暂未发现需单列的原书疑误。
+网站：尚未送审。
+
+### 7. 状态与证明位置
+
+未证陈述；单文件编译与逐声明公理核对通过。
+未证原因：需要真实平稳矩输运及代数求解；不建立通用弱误差理论。
+位置：Blueprint/Ch07.lean；MD.Ch07.nonsymmetricHarmonicStep, MD.Ch07.nonsymmetricExactMoments。
+
+## 1. MD-7.4.2-BBKStar · Example 7.2 · 印刷p.277–278 / PDFp.298–299
+
+### 2. 原文陈述
+
+Example 7.2 Consider the variant of the BBK integrator that recycles the random number between steps:
+Brünger-Brooks-Karplus with post-step re-use of random number (BBK*)
+\[p_{n+1/2}=(1-h\gamma/2)p_n-(h/2)\nabla U(q_n)+\tfrac12\sqrt{2k_BTh\gamma}M^{1/2}R_n,\]
+\[q_{n+1}=q_n+hM^{-1}p_{n+1/2},\qquad
+p_{n+1}=[p_{n+1/2}-(h/2)\nabla U(q_{n+1})+\tfrac12\sqrt{2k_BTh\gamma}M^{1/2}R_{n+1}]/(1+h\gamma/2),\]
+where $R_n$ is a vector of normal random numbers with zero mean and unit variance.
+
+### 3. 原文证明
+
+原书未给独立完整证明。
+
+### 4. 完整当前Lean（原文与修正版独立列出）
+
+```lean
+def bbkStarTrajectory (m : V n) (U : V n → ℝ) (γ θ h : ℝ)
+    (R : ℕ → V n) (x0 : Phase n) : ℕ → Phase n
+  | 0 => x0
+  | k+1 => bbk m U γ θ h (R k) (R (k+1)) (bbkStarTrajectory m U γ θ h R x0 k)
+
+def bbkStarNoise (κ1 κ2 κ3 R S : ℝ) : ℝ × ℝ := (κ1*R,κ2*R+κ3*S)
+```
+
+### 5. 对照表
+
+| 原文成分 | Lean对应 | 说明 |
+|---|---|---|
+| 本条引用的对象与公式 | MD.Ch07.bbkStarTrajectory, MD.Ch07.bbkStarNoise | 本条逐字引用的全部数学对象与公式；未纳入的上下文另列。 |
+
+[EXTRA] R序列需独立同分布标准正态；状态与当前R因上一步重用相关，不再假设独立。矩阵及κ常数由BBKLinearForm给出。
+记号与上下文：见所列原文与Lean量化变量。
+
+### 6. 审计结论
+
+本地：已对照目视原页核对对象、量词、技术资格和所列覆盖范围；网站尚未审阅。
+疑点：本条暂未发现需单列的原书疑误。
+网站：尚未送审。
+
+### 7. 状态与证明位置
+
+定义；单文件编译与逐声明公理核对通过。
+本条未登记待证缺项。
+位置：Blueprint/Ch07.lean；MD.Ch07.bbkStarTrajectory, MD.Ch07.bbkStarNoise。
+
+## 1. MD-7.4.2-BBKStarCorrelations · unnumbered_claim · 印刷p.278 / PDFp.299
+
+### 2. 原文陈述
+
+Denoting the entries of $\Psi^{\rm BBK*}$ by $\psi_{ij}$ we have
+\[\mathbb E(\mu_{n,2}p_n)=\mathbb E((\kappa_2R_n+\kappa_3R_{n+1})(\psi_{21}q_{n-1}+\psi_{22}p_{n-1}+\kappa_2R_{n-1}+\kappa_3R_n))=\kappa_2\kappa_3.\]
+Additionally it is easily shown that
+\[\mathbb E(\mu_{n,1}q_n)=\mathbb E(\mu_{n,2}q_n)=0,\quad \mathbb E(\mu_{n,1}p_n)=\kappa_1\kappa_3,\]
+with $\mathbb E(\mu_{n,1}^2)=\kappa_1^2$, $\mathbb E(\mu_{n,1}\mu_{n,2})=\kappa_1\kappa_2$, $\mathbb E(\mu_{n,2}^2)=\kappa_2^2+\kappa_3^2$.
+
+### 3. 原文证明
+
+原书未给独立完整证明。
+
+### 4. 完整当前Lean（原文与修正版独立列出）
+
+```lean
+theorem bbkStarCorrelations (P : Measure Ω) [IsProbabilityMeasure P]
+    (R S Qold Pold : Ω → ℝ) (a b c d κ1 κ2 κ3 : ℝ)
+    (hR : HasLaw R (gaussianReal 0 1) P) (hS : HasLaw S (gaussianReal 0 1) P)
+    (hind : IndepFun (fun sample ↦ (Qold sample,Pold sample)) (fun sample ↦ (R sample,S sample)) P)
+    (hRS : IndepFun R S P) (hq : MemLp Qold 2 P) (hp : MemLp Pold 2 P) :
+    let q := fun sample ↦ a*Qold sample+b*Pold sample
+    let p := fun sample ↦ c*Qold sample+d*Pold sample+κ3*R sample
+    let u := fun sample ↦ κ1*R sample
+    let v := fun sample ↦ κ2*R sample+κ3*S sample
+    (∫ sample, v sample*p sample ∂P) = κ2*κ3 ∧
+    (∫ sample, u sample*q sample ∂P) = 0 ∧
+    (∫ sample, v sample*q sample ∂P) = 0 ∧
+    (∫ sample, u sample*p sample ∂P) = κ1*κ3 ∧
+    (∫ sample, (u sample)^2 ∂P) = κ1^2 ∧
+    (∫ sample, u sample*v sample ∂P) = κ1*κ2 ∧
+    (∫ sample, (v sample)^2 ∂P) = κ2^2+κ3^2 := by
+  sorry
+```
+
+### 5. 对照表
+
+| 原文成分 | Lean对应 | 说明 |
+|---|---|---|
+| 本条引用的对象与公式 | MD.Ch07.bbkStarCorrelations | 本条逐字引用的全部数学对象与公式；未纳入的上下文另列。 |
+
+[EXTRA] Qold/Pold代表吸收R_{n-1}后仍独立于未来R_n,R_{n+1}的旧状态组合；不把当前p与R_n假设独立。；所有分量L²和未来独立资格明示；此抽象局部模型覆盖所列七个相关矩。
+记号与上下文：见所列原文与Lean量化变量。
+
+### 6. 审计结论
+
+本地：已对照目视原页核对对象、量词、技术资格和所列覆盖范围；网站尚未审阅。
+疑点：本条暂未发现需单列的原书疑误。
+网站：尚未送审。
+
+### 7. 状态与证明位置
+
+未证陈述；单文件编译与逐声明公理核对通过。
+未证原因：需要实际独立随机变量的乘积积分和Gaussian矩展开；不建设历史扩展Markov链理论。
+位置：Blueprint/Ch07.lean；MD.Ch07.bbkStarCorrelations。
+
+## 1. MD-7.4.2-BBKStarMomentSystemPrinted · definition · 印刷p.278–279 / PDFp.299–300
+
+### 2. 原文陈述
+
+Thus taking expectations of (7.8)–(7.10) and substituting in the constants gives
+\[Q=\psi_{11}^2Q+\psi_{12}^2P+2\psi_{11}\psi_{12}C+2\psi_{12}\kappa_1 2\psi_{12}\kappa_1\kappa_3+\kappa_1^2,\]
+\[P=\psi_{21}^2Q+\psi_{22}^2P+2\psi_{21}\psi_{22}C+2\psi_{22}\kappa_2 2\psi_{22}\kappa_2\kappa_3+\kappa_2^2+\kappa_3^2,\]
+\[C=\psi_{11}\psi_{21}Q+\psi_{12}\psi_{22}P+(\psi_{11}\psi_{22}+\psi_{12}\psi_{21})C+\kappa_1\kappa_2+\psi_{12}\kappa_2\kappa_3+\psi_{22}\kappa_1\kappa_3.\]
+
+### 3. 原文证明
+
+原书未给独立完整证明。
+
+### 4. 完整当前Lean（原文与修正版独立列出）
+
+```lean
+def bbkStarMomentSystemPrinted (a b c d κ1 κ2 κ3 Q P C : ℝ) : Prop :=
+  Q=a^2*Q+b^2*P+2*a*b*C+2*b*κ1*2*b*κ1*κ3+κ1^2 ∧
+  P=c^2*Q+d^2*P+2*c*d*C+2*d*κ2*2*d*κ2*κ3+κ2^2+κ3^2 ∧
+  C=a*c*Q+b*d*P+(a*d+b*c)*C+κ1*κ2+b*κ2*κ3+d*κ1*κ3
+
+def bbkStarMomentSystemPrinted_corrected (a b c d κ1 κ2 κ3 Q P C : ℝ) : Prop :=
+  Q=a^2*Q+b^2*P+2*a*b*C+2*b*κ1*κ3+κ1^2 ∧
+  P=c^2*Q+d^2*P+2*c*d*C+2*d*κ2*κ3+κ2^2+κ3^2 ∧
+  C=a*c*Q+b*d*P+(a*d+b*c)*C+κ1*κ2+b*κ2*κ3+d*κ1*κ3
+
+theorem bbkStarExtraFactor_counterexample : (2*(1:ℝ)*1*2*1*1*1) ≠ 2*1*1*1 := by norm_num
+```
+
+### 5. 对照表
+
+| 原文成分 | Lean对应 | 说明 |
+|---|---|---|
+| 本条引用的对象与公式 | MD.Ch07.bbkStarMomentSystemPrinted, MD.Ch07.bbkStarMomentSystemPrinted_corrected, MD.Ch07.bbkStarExtraFactor_counterexample | 本条逐字引用的全部数学对象与公式；未纳入的上下文另列。 |
+
+[EXTRA] PDF300续接第三条方程；此处定义保留方程组全部三式，不把修正方程定义计作概率推导已证。
+记号与上下文：见所列原文与Lean量化变量。
+
+### 6. 审计结论
+
+本地：已对照目视原页核对对象、量词、技术资格和所列覆盖范围；网站尚未审阅。
+疑点：已目视核对PDF299／印刷278：前两条方程交叉项重复印出2ψ12κ1与2ψ22κ2；按前面已列相关矩，应分别为2ψ12κ1κ3和2ψ22κ2κ3。原文与修正方程均保留。
+网站：尚未送审。
+
+### 7. 状态与证明位置
+
+定义；单文件编译与逐声明公理核对通过。
+本条未登记待证缺项。
+位置：Blueprint/Ch07.lean；MD.Ch07.bbkStarMomentSystemPrinted, MD.Ch07.bbkStarMomentSystemPrinted_corrected, MD.Ch07.bbkStarExtraFactor_counterexample。
+
+## 1. MD-7.4.2-BBKStarStationary · unnumbered_claim · 印刷p.279 / PDFp.300
+
+### 2. 原文陈述
+
+Finally, solving the simultaneous equations gives the stationary observed averages as
+\[\langle q^2\rangle_h^{\rm BBK*}=\frac{k_BT}{\Omega^2}(1-\frac{\Omega^2h^2}{4m})^{-1},\qquad
+\langle p^2\rangle_h^{\rm BBK*}=k_BTm(1+\frac{\gamma h}2)^{-1},\qquad
+\langle qp\rangle_h^{\rm BBK*}=0.\]
+
+### 3. 原文证明
+
+原书未给独立完整证明。
+
+### 4. 完整当前Lean（原文与修正版独立列出）
+
+```lean
+theorem bbkStarStationaryAlgebra (m Ω γ θ h Q P C : ℝ)
+    (hm : 0 < m) (hΩ : Ω ≠ 0) (hγ : 0 < γ) (hθ : 0 < θ) (hh : 0 < h)
+    (hstable : h^2*Ω^2 < 4*m)
+    (hsys : bbkStarMomentSystemPrinted_corrected
+      (bbkMatrix m Ω γ h).1 (bbkMatrix m Ω γ h).2.1
+      (bbkMatrix m Ω γ h).2.2.1 (bbkMatrix m Ω γ h).2.2.2
+      (Real.sqrt (θ*γ*h^3/(2*m)))
+      (Real.sqrt (2*θ*γ*h*m)/(2+γ*h)*(1-h^2*Ω^2/(2*m)))
+      (Real.sqrt (2*θ*γ*h*m)/(2+γ*h)) Q P C) :
+    Q = θ/Ω^2*(1-Ω^2*h^2/(4*m))⁻¹ ∧
+    P = θ*m*(1+γ*h/2)⁻¹ ∧ C = 0 := by
+  sorry
+```
+
+### 5. 对照表
+
+| 原文成分 | Lean对应 | 说明 |
+|---|---|---|
+| 本条引用的对象与公式 | MD.Ch07.bbkStarStationaryAlgebra | 给定正确矩方程的代数求解及全部三矩值；未证明BBK*长期收敛。 |
+
+[EXTRA] 只陈述修正后的矩方程组求解；一般平稳分布导出此方程需BBKStarCorrelations及历史模型，未声称整条分布理论完成。
+记号与上下文：见所列原文与Lean量化变量。
+
+### 6. 审计结论
+
+本地：已对照目视原页核对对象、量词、技术资格和所列覆盖范围；网站尚未审阅。
+疑点：本条暂未发现需单列的原书疑误。
+网站：尚未送审。
+
+### 7. 状态与证明位置
+
+未证陈述；单文件编译与逐声明公理核对通过。
+未证原因：含平方根的非退化线性系统求解超过本轮短证明；保留未证。
+位置：Blueprint/Ch07.lean；MD.Ch07.bbkStarStationaryAlgebra。
 

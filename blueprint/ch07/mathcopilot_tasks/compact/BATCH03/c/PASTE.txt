@@ -1,0 +1,262 @@
+以附件/PASTE 为准，忽略 /workspace 旧文件；Mathlib 定义按标准含义采信。
+本任务只审本条：原文转录、对象资格、定义体、量词、全部结论及[EXTRA]是否一致；Lean编译不代替语义审阅。
+Lean/Mathlib均4.34.0。原页PDF映射：[289]；印刷页=[268].
+input_sha256请原样回显：
+{
+  "Blueprint/Ch07.lean": "2c8a4521d9e655e5690fd5f8a5642ba56b8124fddb5f761ab0548d6df9f0c56b",
+  "blueprint/ch07/ch07_source.json": "4cdae77a46bd167b78ab95f2928b72e80c919529316d8848bf882c6187db6599",
+  "BATCH03c_PAGES.pdf": "ef7e791e362c3bc09c09dd3408a09b0383345a1654f38b323e1aade5188376a7"
+}
+用代码将JSON对象(batch,input_sha256,items)写到 /workspace/.mathcopilot/reviews/ch07/BATCH03c_review.json；items仅含本source_id。
+items字段：source_id、verdict(PASS/FAIL/NEEDS_HUMAN)、transcription、semantic_review、counterexample、suggested_fix、printed_version、corrected_version。逐版区分原文疑误和修正版结论；缺材料必须具体指出，不猜测。写后json.loads自检，最后仅回复路径及统计。
+
+## 原文JSON
+```json
+{
+  "source_id": "MD-7.3-OUExactUpdate",
+  "kind": "unnumbered_claim",
+  "label": "(7.3)",
+  "section": "7.3",
+  "printed_page": "268",
+  "pdf_page": "289",
+  "statement_latex": "Integrating from $t$ to $t+h$ and multiplying by $\\exp(-\\gamma t)$, we arrive at the solution\n\\[p(t+h)=e^{-\\gamma h}p(t)+\\sqrt{k_BT(1-e^{-2\\gamma h})}M^{1/2}Z,\\tag{7.3}\\]\nwhere $Z$ is a vector of independent, standard normal random variables.",
+  "proof_latex": null,
+  "proof_note": "原书未给独立完整证明。",
+  "context_notation": [],
+  "extra_assumptions": [
+    "等式解释为存在与过去动量独立的标准正态向量的随机表示；不是沿用同一Z表示所有时刻。",
+    "独立性要求使用W自然历史的适应解，见scalarSDE；θ=k_BT，M正对角。"
+  ],
+  "issues": [],
+  "statement_scope": "本条逐字引用的全部数学对象与公式；未纳入的上下文另列。",
+  "lean_decl": "MD.Ch07.ouMomentum",
+  "lean_declarations": [
+    "MD.Ch07.ouMomentum",
+    "MD.Ch07.ouTransitionLaw"
+  ],
+  "source_page_verification": "见source_page_checks.json；必须已目视核对本条原页。",
+  "repair_log": [],
+  "documented_priors": []
+}
+```
+
+## 完整本条Lean
+```lean
+def ouMomentum (m : V n) (γ θ h : ℝ) (p R : V n) : V n :=
+  fun i ↦ Real.exp (-γ*h)*p i + Real.sqrt (θ*(1-Real.exp (-2*γ*h))) * Real.sqrt (m i) * R i
+
+theorem ouTransitionLaw (P : Measure Ω) (W p : ℝ → Ω → V n)
+    (m : V n) (γ θ : ℝ) (p0 : V n) (hp : momentumOU P W p m γ θ p0)
+    (t h : ℝ) (ht : 0 ≤ t) (hh : 0 < h) :
+    ∃ Z : Ω → V n, HasLaw Z (Measure.pi (fun _ : Fin n ↦ gaussianReal 0 1)) P ∧
+      IndepFun (p t) Z P ∧ ∀ᵐ sample ∂P,
+        p (t+h) sample = ouMomentum m γ θ h (p t sample) (Z sample) := by
+  sorry
+```
+
+## 项目依赖定义体及选择规格
+以下def/abbrev/structure完整保留；定理列出完整类型，Mathlib标准定义无需摘录。
+
+### MD.Ch07.scalarSDE (Blueprint/Ch07.lean:20)
+原文件上下文：
+```lean
+open Set Filter MeasureTheory ProbabilityTheory MolecularDynamics
+open scoped BigOperators Topology ContDiff ENNReal NNReal
+variable {Ω : Type*} [MeasurableSpace Ω]
+variable {n : ℕ}
+```
+```lean
+def scalarSDE (P : Measure Ω) (W X : ℝ → Ω → ℝ)
+    (a b : ℝ → ℝ) (x0 : ℝ) : Prop :=
+  IsProbabilityMeasure P ∧ IsBrownianReal (fun t sample ↦ W t sample) P ∧
+  (∀ t : ℝ, 0 ≤ t → Measurable[MeasurableSpace.comap
+    (fun (sample : Ω) (s : Icc (0 : ℝ) t) ↦ W s sample) inferInstance] (X t)) ∧
+  (∀ T : ℝ, 0 ≤ T → ∀ᵐ sample ∂P, IntervalIntegrable (fun s ↦ a (X s sample)) volume 0 T) ∧
+  MolecularDynamics.Chapter06Review.adaptedSquareIntegrand P W
+    (fun t sample ↦ b (X t sample)) ∧
+  MolecularDynamics.Chapter06Review.scalarSDE P W X
+    (fun x _ ↦ a x) (fun x _ ↦ b x) x0
+```
+
+### MD.Ch07.V (Blueprint/Ch07.lean:172)
+原文件上下文：
+```lean
+open Set Filter MeasureTheory ProbabilityTheory MolecularDynamics
+open scoped BigOperators Topology ContDiff ENNReal NNReal
+variable {Ω : Type*} [MeasurableSpace Ω]
+variable {n : ℕ}
+```
+```lean
+abbrev V (n : ℕ) := Fin n → ℝ
+```
+
+### MD.Ch07.vectorWiener (Blueprint/Ch07.lean:175)
+原文件上下文：
+```lean
+open Set Filter MeasureTheory ProbabilityTheory MolecularDynamics
+open scoped BigOperators Topology ContDiff ENNReal NNReal
+variable {Ω : Type*} [MeasurableSpace Ω]
+variable {n : ℕ}
+```
+```lean
+def vectorWiener (P : Measure Ω) (W : ℝ → Ω → V n) : Prop :=
+  IsProbabilityMeasure P ∧ textbookIsWienerVector (fun t sample ↦ W t sample) P ∧
+  iIndepFun (fun i sample t ↦ W t sample i) P
+```
+
+### MD.Ch07.momentumOU (Blueprint/Ch07.lean:179)
+原文件上下文：
+```lean
+open Set Filter MeasureTheory ProbabilityTheory MolecularDynamics
+open scoped BigOperators Topology ContDiff ENNReal NNReal
+variable {Ω : Type*} [MeasurableSpace Ω]
+variable {n : ℕ}
+```
+```lean
+def momentumOU (P : Measure Ω) (W p : ℝ → Ω → V n)
+    (m : V n) (γ θ : ℝ) (p0 : V n) : Prop :=
+  vectorWiener P W ∧ (∀ i, 0 < m i) ∧ 0 ≤ γ ∧ 0 < θ ∧
+  ∀ i, scalarSDE P (fun t sample ↦ W t sample i) (fun t sample ↦ p t sample i)
+    (fun x ↦ -γ*x) (fun _ ↦ Real.sqrt (2*γ*θ*m i)) (p0 i)
+```
+
+### MD.Ch07.ouMomentum (Blueprint/Ch07.lean:198)
+原文件上下文：
+```lean
+open Set Filter MeasureTheory ProbabilityTheory MolecularDynamics
+open scoped BigOperators Topology ContDiff ENNReal NNReal
+variable {Ω : Type*} [MeasurableSpace Ω]
+variable {n : ℕ}
+```
+```lean
+def ouMomentum (m : V n) (γ θ h : ℝ) (p R : V n) : V n :=
+  fun i ↦ Real.exp (-γ*h)*p i + Real.sqrt (θ*(1-Real.exp (-2*γ*h))) * Real.sqrt (m i) * R i
+```
+
+### MD.Ch07.ouTransitionLaw (Blueprint/Ch07.lean:201)
+原文件上下文：
+```lean
+open Set Filter MeasureTheory ProbabilityTheory MolecularDynamics
+open scoped BigOperators Topology ContDiff ENNReal NNReal
+variable {Ω : Type*} [MeasurableSpace Ω]
+variable {n : ℕ}
+```
+```lean
+theorem ouTransitionLaw (P : Measure Ω) (W p : ℝ → Ω → V n)
+    (m : V n) (γ θ : ℝ) (p0 : V n) (hp : momentumOU P W p m γ θ p0)
+    (t h : ℝ) (ht : 0 ≤ t) (hh : 0 < h) :
+    ∃ Z : Ω → V n, HasLaw Z (Measure.pi (fun _ : Fin n ↦ gaussianReal 0 1)) P ∧
+      IndepFun (p t) Z P ∧ ∀ᵐ sample ∂P,
+        p (t+h) sample = ouMomentum m γ θ h (p t sample) (Z sample)
+```
+
+### MolecularDynamics.Chapter02Review.Q (MolecularDynamics/Chapter02/ReviewDefinitions.lean:17)
+原文件上下文：
+```lean
+open Set Filter Matrix
+open scoped BigOperators Topology
+```
+```lean
+abbrev Q (n : ℕ) := Fin n → ℝ
+```
+
+### MolecularDynamics.Chapter02Review.Z (MolecularDynamics/Chapter02/ReviewDefinitions.lean:18)
+原文件上下文：
+```lean
+open Set Filter Matrix
+open scoped BigOperators Topology
+```
+```lean
+abbrev Z (n : ℕ) := Q n × Q n
+```
+
+### MolecularDynamics.Chapter04Review.Q (MolecularDynamics/Chapter04/ReviewDefinitions.lean:15)
+原文件上下文：
+```lean
+open Set Matrix
+open scoped BigOperators Topology Matrix.Norms.Elementwise
+```
+```lean
+abbrev Q (n : ℕ) := Fin n → ℝ
+```
+
+### MolecularDynamics.Chapter04Review.Z (MolecularDynamics/Chapter04/ReviewDefinitions.lean:16)
+原文件上下文：
+```lean
+open Set Matrix
+open scoped BigOperators Topology Matrix.Norms.Elementwise
+```
+```lean
+abbrev Z (n : ℕ) := Q n × Q n
+```
+
+### MolecularDynamics.Chapter06Review.itoLeftSum (MolecularDynamics/Chapter06/ReviewDefinitions.lean:54)
+原文件上下文：
+```lean
+open Set Filter MeasureTheory ProbabilityTheory
+open scoped BigOperators Topology ContDiff ENNReal NNReal
+local instance : MeasureSpace UnitAddCircle := ⟨AddCircle.haarAddCircle⟩
+```
+```lean
+def itoLeftSum {Ω : Type*} (W g : ℝ → Ω → ℝ) (T : ℝ) (K : ℕ) (sample : Ω) : ℝ :=
+  ∑ k ∈ Finset.range K, g ((k : ℝ) * T / K) sample *
+    (W (((k : ℝ)+1) * T / K) sample - W ((k : ℝ) * T / K) sample)
+```
+
+### MolecularDynamics.Chapter06Review.isItoIntegral (MolecularDynamics/Chapter06/ReviewDefinitions.lean:57)
+原文件上下文：
+```lean
+open Set Filter MeasureTheory ProbabilityTheory
+open scoped BigOperators Topology ContDiff ENNReal NNReal
+local instance : MeasureSpace UnitAddCircle := ⟨AddCircle.haarAddCircle⟩
+```
+```lean
+def isItoIntegral {Ω : Type*} [MeasurableSpace Ω] (P : Measure Ω)
+    (W g : ℝ → Ω → ℝ) (T : ℝ) (Y : Ω → ℝ) : Prop :=
+  MemLp Y 2 P ∧ Tendsto (fun K : ℕ ↦ ∫ sample, (itoLeftSum W g T K sample - Y sample)^2 ∂P) atTop (𝓝 0)
+```
+
+### MolecularDynamics.Chapter06Review.scalarSDE (MolecularDynamics/Chapter06/ReviewDefinitions.lean:68)
+原文件上下文：
+```lean
+open Set Filter MeasureTheory ProbabilityTheory
+open scoped BigOperators Topology ContDiff ENNReal NNReal
+local instance : MeasureSpace UnitAddCircle := ⟨AddCircle.haarAddCircle⟩
+```
+```lean
+def scalarSDE {Ω : Type*} [MeasurableSpace Ω] (P : Measure Ω)
+    (W X : ℝ → Ω → ℝ) (a b : ℝ → ℝ → ℝ) (x0 : ℝ) : Prop :=
+  (∀ᵐ sample ∂P, ContinuousOn (fun t ↦ X t sample) (Ici 0) ∧ X 0 sample = x0) ∧
+  ∀ T : ℝ, 0 ≤ T → isItoIntegral P W (fun s sample ↦ b (X s sample) s) T
+    (fun sample ↦ X T sample - x0 - ∫ s in 0..T, a (X s sample) s)
+```
+
+### MolecularDynamics.Chapter06Review.adaptedSquareIntegrand (MolecularDynamics/Chapter06/ReviewDefinitions.lean:73)
+原文件上下文：
+```lean
+open Set Filter MeasureTheory ProbabilityTheory
+open scoped BigOperators Topology ContDiff ENNReal NNReal
+local instance : MeasureSpace UnitAddCircle := ⟨AddCircle.haarAddCircle⟩
+```
+```lean
+def adaptedSquareIntegrand {Ω : Type*} [MeasurableSpace Ω] (P : Measure Ω)
+    (W g : ℝ → Ω → ℝ) : Prop :=
+  (∀ t : ℝ, 0 ≤ t → Measurable[MeasurableSpace.comap (fun (sample : Ω) (s : Icc (0 : ℝ) t) ↦ W s sample) inferInstance]
+    (g t)) ∧ ∀ T : ℝ, 0 ≤ T → Integrable (fun s ↦ ∫ sample, (g s sample)^2 ∂P) (volume.restrict (Icc 0 T))
+```
+
+### MolecularDynamics.textbookIsWienerVector (MolecularDynamics/Chapter06/WienerVectorSupport.lean:13)
+原文件上下文：
+```lean
+open Set Filter MeasureTheory ProbabilityTheory
+open scoped Topology NNReal ENNReal
+```
+```lean
+structure textbookIsWienerVector {Nc : ℕ} {Ω : Type*} [MeasurableSpace Ω]
+    (B : ℝ≥0 → Ω → (Fin Nc → ℝ)) (P : Measure Ω) : Prop where
+  gaussian : IsGaussianProcess (fun z : (_ : Fin Nc) × ℝ≥0 ↦ fun ω ↦ B z.2 ω z.1) P
+  mean : ∀ i t, P[fun ω ↦ B t ω i] = 0
+  covariance : ∀ i j s t, cov[fun ω ↦ B s ω i, fun ω ↦ B t ω j; P] =
+    if i = j then ((min s t : ℝ≥0) : ℝ) else 0
+  cont : ∀ᵐ ω ∂P, Continuous (fun t ↦ B t ω)
+```

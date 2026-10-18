@@ -1,0 +1,83 @@
+以附件/PASTE 为准，忽略 /workspace 旧文件；Mathlib 定义按标准含义采信。
+本任务只审本条：原文转录、对象资格、定义体、量词、全部结论及[EXTRA]是否一致；Lean编译不代替语义审阅。
+Lean/Mathlib均4.34.0。原页PDF映射：[294, 295]；印刷页=[273, 274].
+input_sha256请原样回显：
+{
+  "Blueprint/Ch07.lean": "2c8a4521d9e655e5690fd5f8a5642ba56b8124fddb5f761ab0548d6df9f0c56b",
+  "blueprint/ch07/ch07_source.json": "4cdae77a46bd167b78ab95f2928b72e80c919529316d8848bf882c6187db6599",
+  "BATCH06b_PAGES.pdf": "cc508853566eb07576d5fdd4b7129a7bd71e513365d3544cb05accc40a5e751e"
+}
+用代码将JSON对象(batch,input_sha256,items)写到 /workspace/.mathcopilot/reviews/ch07/BATCH06b_review.json；items仅含本source_id。
+items字段：source_id、verdict(PASS/FAIL/NEEDS_HUMAN)、transcription、semantic_review、counterexample、suggested_fix、printed_version、corrected_version。逐版区分原文疑误和修正版结论；缺材料必须具体指出，不猜测。写后json.loads自检，最后仅回复路径及统计。
+
+## 原文JSON
+```json
+{
+  "source_id": "MD-7.4-HarmonicMoments",
+  "kind": "unnumbered_claim",
+  "label": null,
+  "section": "7.4",
+  "printed_page": "273–274",
+  "pdf_page": "294–295",
+  "statement_latex": "In this setting, the canonical distribution $\\rho_\\beta$ is the product of two Gaussian distributions, where we have invariant (stationary) averages\n\\[\\langle q\\rangle=\\langle p\\rangle=0,\\qquad\\langle\\Omega^2q^2\\rangle=\\langle p^2/m\\rangle=k_BT,\\qquad\\langle qp\\rangle=0.\\]",
+  "proof_latex": null,
+  "proof_note": "原书未给独立完整证明。",
+  "context_notation": [],
+  "extra_assumptions": [
+    "harmonicLaw给出实际正态乘积，未把所需各矩值作为假设；与Hamiltonian的密度识别另列覆盖缺口。"
+  ],
+  "issues": [],
+  "statement_scope": "实际正态乘积的全部五个矩；其Lebesgue密度等于归一Gibbs权的识别未另作定理。",
+  "lean_decl": "MD.Ch07.harmonicMoments",
+  "lean_declarations": [
+    "MD.Ch07.harmonicMoments"
+  ],
+  "source_page_verification": "见source_page_checks.json；必须已目视核对本条原页。",
+  "repair_log": [],
+  "documented_priors": []
+}
+```
+
+## 完整本条Lean
+```lean
+theorem harmonicMoments (m Ω θ : ℝ) (hm : 0 < m) (hΩ : Ω ≠ 0) (hθ : 0 < θ) :
+    (∫ x, x.1 ∂harmonicLaw m Ω θ) = 0 ∧
+    (∫ x, x.2 ∂harmonicLaw m Ω θ) = 0 ∧
+    (∫ x, Ω^2*x.1^2 ∂harmonicLaw m Ω θ) = θ ∧
+    (∫ x, x.2^2/m ∂harmonicLaw m Ω θ) = θ ∧
+    (∫ x, x.1*x.2 ∂harmonicLaw m Ω θ) = 0 := by
+  sorry
+```
+
+## 项目依赖定义体及选择规格
+以下def/abbrev/structure完整保留；定理列出完整类型，Mathlib标准定义无需摘录。
+
+### MD.Ch07.harmonicLaw (Blueprint/Ch07.lean:398)
+原文件上下文：
+```lean
+open Set Filter MeasureTheory ProbabilityTheory MolecularDynamics
+open scoped BigOperators Topology ContDiff ENNReal NNReal
+variable {Ω : Type*} [MeasurableSpace Ω]
+variable {n : ℕ}
+```
+```lean
+def harmonicLaw (m Ω θ : ℝ) : Measure (ℝ × ℝ) :=
+  (gaussianReal 0 (Real.toNNReal (θ/Ω^2))).prod (gaussianReal 0 (Real.toNNReal (θ*m)))
+```
+
+### MD.Ch07.harmonicMoments (Blueprint/Ch07.lean:403)
+原文件上下文：
+```lean
+open Set Filter MeasureTheory ProbabilityTheory MolecularDynamics
+open scoped BigOperators Topology ContDiff ENNReal NNReal
+variable {Ω : Type*} [MeasurableSpace Ω]
+variable {n : ℕ}
+```
+```lean
+theorem harmonicMoments (m Ω θ : ℝ) (hm : 0 < m) (hΩ : Ω ≠ 0) (hθ : 0 < θ) :
+    (∫ x, x.1 ∂harmonicLaw m Ω θ) = 0 ∧
+    (∫ x, x.2 ∂harmonicLaw m Ω θ) = 0 ∧
+    (∫ x, Ω^2*x.1^2 ∂harmonicLaw m Ω θ) = θ ∧
+    (∫ x, x.2^2/m ∂harmonicLaw m Ω θ) = θ ∧
+    (∫ x, x.1*x.2 ∂harmonicLaw m Ω θ) = 0
+```

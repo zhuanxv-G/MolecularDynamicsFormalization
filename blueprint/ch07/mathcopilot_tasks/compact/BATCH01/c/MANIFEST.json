@@ -1,0 +1,59 @@
+{
+  "batch": "BATCH01",
+  "subtask": "BATCH01c",
+  "source_ids": [
+    "MD-7.2-EulerMaruyama"
+  ],
+  "input_sha256": {
+    "Blueprint/Ch07.lean": "2c8a4521d9e655e5690fd5f8a5642ba56b8124fddb5f761ab0548d6df9f0c56b",
+    "blueprint/ch07/ch07_source.json": "4cdae77a46bd167b78ab95f2928b72e80c919529316d8848bf882c6187db6599",
+    "BATCH01c_PAGES.pdf": "35227377c589dae0a2b1e88bdb0cbdc8c6d6c839075e89b6b1bab24f3863c986"
+  },
+  "page_mapping": [
+    {
+      "attachment_page": 1,
+      "original_pdf_page": 285,
+      "printed_page": 264
+    }
+  ],
+  "definition_excerpts": [
+    {
+      "full_name": "MD.Ch07.eulerMaruyamaStep",
+      "kind": "def",
+      "path": "Blueprint/Ch07.lean",
+      "line": 33,
+      "code_sha256": "19c44017a9072dabcad7dea2d8a72081052c7b0a6594339789a8eb5399db8092"
+    },
+    {
+      "full_name": "MD.Ch07.standardNormalSequence",
+      "kind": "def",
+      "path": "Blueprint/Ch07.lean",
+      "line": 36,
+      "code_sha256": "1a6ddf1552af6f0059c4ddde2bb7ca70f93e833876b7ee3e06f7a2f351ef2aa8"
+    },
+    {
+      "full_name": "MD.Ch07.eulerMaruyama",
+      "kind": "def",
+      "path": "Blueprint/Ch07.lean",
+      "line": 40,
+      "code_sha256": "34135a765504928d7d0cf292754ae2d6466dae7bc412985bf4b6859cd3f9834d"
+    }
+  ],
+  "validation": {
+    "project_constant_closure": "PASS",
+    "missing_project_definitions": [],
+    "full_page_render_equality_dpi": 72,
+    "website_submitted": false
+  },
+  "files": {
+    "PASTE.txt": {
+      "bytes": 4376,
+      "sha256": "e6fcad7ab5b5c29454c187a2a723f6e652c15105bc32cfb689655444580f0fda"
+    },
+    "BATCH01c_PAGES.pdf": {
+      "bytes": 74818,
+      "sha256": "35227377c589dae0a2b1e88bdb0cbdc8c6d6c839075e89b6b1bab24f3863c986"
+    }
+  },
+  "total_task_bytes": 80993
+}

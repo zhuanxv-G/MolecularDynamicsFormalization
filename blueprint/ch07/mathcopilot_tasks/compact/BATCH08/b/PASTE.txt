@@ -1,0 +1,130 @@
+以附件/PASTE 为准，忽略 /workspace 旧文件；Mathlib 定义按标准含义采信。
+本任务只审本条：原文转录、对象资格、定义体、量词、全部结论及[EXTRA]是否一致；Lean编译不代替语义审阅。
+Lean/Mathlib均4.34.0。原页PDF映射：[300]；印刷页=[279].
+input_sha256请原样回显：
+{
+  "Blueprint/Ch07.lean": "2c8a4521d9e655e5690fd5f8a5642ba56b8124fddb5f761ab0548d6df9f0c56b",
+  "blueprint/ch07/ch07_source.json": "4cdae77a46bd167b78ab95f2928b72e80c919529316d8848bf882c6187db6599",
+  "BATCH08b_PAGES.pdf": "d6d7a66c31793ad763d73c7d66196475888c3a85607f00bc2ac93c4a9b85888f"
+}
+用代码将JSON对象(batch,input_sha256,items)写到 /workspace/.mathcopilot/reviews/ch07/BATCH08b_review.json；items仅含本source_id。
+items字段：source_id、verdict(PASS/FAIL/NEEDS_HUMAN)、transcription、semantic_review、counterexample、suggested_fix、printed_version、corrected_version。逐版区分原文疑误和修正版结论；缺材料必须具体指出，不猜测。写后json.loads自检，最后仅回复路径及统计。
+
+## 原文JSON
+```json
+{
+  "source_id": "MD-7.4.2-BBKStarStationary",
+  "kind": "unnumbered_claim",
+  "label": null,
+  "section": "7.4.2",
+  "printed_page": "279",
+  "pdf_page": "300",
+  "statement_latex": "Finally, solving the simultaneous equations gives the stationary observed averages as\n\\[\\langle q^2\\rangle_h^{\\rm BBK*}=\\frac{k_BT}{\\Omega^2}(1-\\frac{\\Omega^2h^2}{4m})^{-1},\\qquad\n\\langle p^2\\rangle_h^{\\rm BBK*}=k_BTm(1+\\frac{\\gamma h}2)^{-1},\\qquad\n\\langle qp\\rangle_h^{\\rm BBK*}=0.\\]",
+  "proof_latex": null,
+  "proof_note": "原书未给独立完整证明。",
+  "context_notation": [],
+  "extra_assumptions": [
+    "只陈述修正后的矩方程组求解；一般平稳分布导出此方程需BBKStarCorrelations及历史模型，未声称整条分布理论完成。"
+  ],
+  "issues": [],
+  "statement_scope": "给定正确矩方程的代数求解及全部三矩值；未证明BBK*长期收敛。",
+  "lean_decl": "MD.Ch07.bbkStarStationaryAlgebra",
+  "lean_declarations": [
+    "MD.Ch07.bbkStarStationaryAlgebra"
+  ],
+  "source_page_verification": "见source_page_checks.json；必须已目视核对本条原页。",
+  "repair_log": [],
+  "documented_priors": []
+}
+```
+
+## 完整本条Lean
+```lean
+theorem bbkStarStationaryAlgebra (m Ω γ θ h Q P C : ℝ)
+    (hm : 0 < m) (hΩ : Ω ≠ 0) (hγ : 0 < γ) (hθ : 0 < θ) (hh : 0 < h)
+    (hstable : h^2*Ω^2 < 4*m)
+    (hsys : bbkStarMomentSystemPrinted_corrected
+      (bbkMatrix m Ω γ h).1 (bbkMatrix m Ω γ h).2.1
+      (bbkMatrix m Ω γ h).2.2.1 (bbkMatrix m Ω γ h).2.2.2
+      (Real.sqrt (θ*γ*h^3/(2*m)))
+      (Real.sqrt (2*θ*γ*h*m)/(2+γ*h)*(1-h^2*Ω^2/(2*m)))
+      (Real.sqrt (2*θ*γ*h*m)/(2+γ*h)) Q P C) :
+    Q = θ/Ω^2*(1-Ω^2*h^2/(4*m))⁻¹ ∧
+    P = θ*m*(1+γ*h/2)⁻¹ ∧ C = 0 := by
+  sorry
+```
+
+## 项目依赖定义体及选择规格
+以下def/abbrev/structure完整保留；定理列出完整类型，Mathlib标准定义无需摘录。
+
+### MD.Ch07.bbkMatrix (Blueprint/Ch07.lean:421)
+原文件上下文：
+```lean
+open Set Filter MeasureTheory ProbabilityTheory MolecularDynamics
+open scoped BigOperators Topology ContDiff ENNReal NNReal
+variable {Ω : Type*} [MeasurableSpace Ω]
+variable {n : ℕ}
+```
+```lean
+def bbkMatrix (m Ω γ h : ℝ) : ℝ × ℝ × ℝ × ℝ :=
+  (1-h^2*Ω^2/(2*m), h/m*(1-γ*h/2),
+    h*Ω^2/(2*m)*((h^2*Ω^2-4*m)/(2+γ*h)),
+    (2-γ*h)*(2*m-h^2*Ω^2)/(2*m*(2+γ*h)))
+```
+
+### MD.Ch07.bbkStarMomentSystemPrinted_corrected (Blueprint/Ch07.lean:582)
+原文件上下文：
+```lean
+open Set Filter MeasureTheory ProbabilityTheory MolecularDynamics
+open scoped BigOperators Topology ContDiff ENNReal NNReal
+variable {Ω : Type*} [MeasurableSpace Ω]
+variable {n : ℕ}
+```
+```lean
+def bbkStarMomentSystemPrinted_corrected (a b c d κ1 κ2 κ3 Q P C : ℝ) : Prop :=
+  Q=a^2*Q+b^2*P+2*a*b*C+2*b*κ1*κ3+κ1^2 ∧
+  P=c^2*Q+d^2*P+2*c*d*C+2*d*κ2*κ3+κ2^2+κ3^2 ∧
+  C=a*c*Q+b*d*P+(a*d+b*c)*C+κ1*κ2+b*κ2*κ3+d*κ1*κ3
+```
+
+### MD.Ch07.bbkStarStationaryAlgebra (Blueprint/Ch07.lean:591)
+原文件上下文：
+```lean
+open Set Filter MeasureTheory ProbabilityTheory MolecularDynamics
+open scoped BigOperators Topology ContDiff ENNReal NNReal
+variable {Ω : Type*} [MeasurableSpace Ω]
+variable {n : ℕ}
+```
+```lean
+theorem bbkStarStationaryAlgebra (m Ω γ θ h Q P C : ℝ)
+    (hm : 0 < m) (hΩ : Ω ≠ 0) (hγ : 0 < γ) (hθ : 0 < θ) (hh : 0 < h)
+    (hstable : h^2*Ω^2 < 4*m)
+    (hsys : bbkStarMomentSystemPrinted_corrected
+      (bbkMatrix m Ω γ h).1 (bbkMatrix m Ω γ h).2.1
+      (bbkMatrix m Ω γ h).2.2.1 (bbkMatrix m Ω γ h).2.2.2
+      (Real.sqrt (θ*γ*h^3/(2*m)))
+      (Real.sqrt (2*θ*γ*h*m)/(2+γ*h)*(1-h^2*Ω^2/(2*m)))
+      (Real.sqrt (2*θ*γ*h*m)/(2+γ*h)) Q P C) :
+    Q = θ/Ω^2*(1-Ω^2*h^2/(4*m))⁻¹ ∧
+    P = θ*m*(1+γ*h/2)⁻¹ ∧ C = 0
+```
+
+### MolecularDynamics.Chapter02Review.Q (MolecularDynamics/Chapter02/ReviewDefinitions.lean:17)
+原文件上下文：
+```lean
+open Set Filter Matrix
+open scoped BigOperators Topology
+```
+```lean
+abbrev Q (n : ℕ) := Fin n → ℝ
+```
+
+### MolecularDynamics.Chapter04Review.Q (MolecularDynamics/Chapter04/ReviewDefinitions.lean:15)
+原文件上下文：
+```lean
+open Set Matrix
+open scoped BigOperators Topology Matrix.Norms.Elementwise
+```
+```lean
+abbrev Q (n : ℕ) := Fin n → ℝ
+```

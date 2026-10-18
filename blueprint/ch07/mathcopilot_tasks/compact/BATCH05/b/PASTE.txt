@@ -1,0 +1,228 @@
+以附件/PASTE 为准，忽略 /workspace 旧文件；Mathlib 定义按标准含义采信。
+本任务只审本条：原文转录、对象资格、定义体、量词、全部结论及[EXTRA]是否一致；Lean编译不代替语义审阅。
+Lean/Mathlib均4.34.0。原页PDF映射：[292]；印刷页=[271].
+input_sha256请原样回显：
+{
+  "Blueprint/Ch07.lean": "2c8a4521d9e655e5690fd5f8a5642ba56b8124fddb5f761ab0548d6df9f0c56b",
+  "blueprint/ch07/ch07_source.json": "4cdae77a46bd167b78ab95f2928b72e80c919529316d8848bf882c6187db6599",
+  "BATCH05b_PAGES.pdf": "e1d14053aa5d552013e057ed5a7ec85d7f56bd78e49f3b6b368621a354c40135"
+}
+用代码将JSON对象(batch,input_sha256,items)写到 /workspace/.mathcopilot/reviews/ch07/BATCH05b_review.json；items仅含本source_id。
+items字段：source_id、verdict(PASS/FAIL/NEEDS_HUMAN)、transcription、semantic_review、counterexample、suggested_fix、printed_version、corrected_version。逐版区分原文疑误和修正版结论；缺材料必须具体指出，不猜测。写后json.loads自检，最后仅回复路径及统计。
+
+## 原文JSON
+```json
+{
+  "source_id": "MD-7.3.1-SixSchemes",
+  "kind": "definition",
+  "label": null,
+  "section": "7.3.1",
+  "printed_page": "271",
+  "pdf_page": "292",
+  "statement_latex": "For reference and to remove any ambiguity, we write out some of these algorithms below as single timestep maps.\n\\[\\begin{array}{ll}\n[ABAO]:&q_{n+1/2}=q_n+(h/2)M^{-1}p_n,\\quad p_{n+1/2}=p_n-h\\nabla U(q_{n+1/2}),\\\\\n&q_{n+1}=q_{n+1/2}+(h/2)M^{-1}p_{n+1/2},\\quad p_{n+1}=e^{-h\\gamma}p_{n+1/2}+\\zeta_2M^{1/2}R_n;\\\\\n[BABO]:&p_{n+1/2}=p_n-(h/2)\\nabla U(q_n),\\quad q_{n+1}=q_n+hM^{-1}p_{n+1/2},\\\\\n&\\hat p_{n+1/2}=p_{n+1/2}-(h/2)\\nabla U(q_{n+1}),\\quad p_{n+1}=e^{-h\\gamma}\\hat p_{n+1/2}+\\zeta_2M^{1/2}R_n;\\\\\n[ABOBA]:&q_{n+1/2}=q_n+(h/2)M^{-1}p_n,\\quad p_{n+1/2}=p_n-(h/2)\\nabla U(q_{n+1/2}),\\\\\n&\\hat p_{n+1/2}=e^{-h\\gamma}p_{n+1/2}+\\zeta_2M^{1/2}R_n,\\\\\n&p_{n+1}=\\hat p_{n+1/2}-(h/2)\\nabla U(q_{n+1/2}),\\quad q_{n+1}=q_{n+1/2}+(h/2)M^{-1}p_{n+1};\\\\\n[BAOAB]:&p_{n+1/2}=p_n-(h/2)\\nabla U(q_n),\\quad q_{n+1/2}=q_n+(h/2)M^{-1}p_{n+1/2},\\\\\n&\\hat p_{n+1/2}=e^{-h\\gamma}p_{n+1/2}+\\zeta_2M^{1/2}R_n,\\\\\n&q_{n+1}=q_{n+1/2}+(h/2)M^{-1}\\hat p_{n+1/2},\\quad p_{n+1}=\\hat p_{n+1/2}-(h/2)\\nabla U(q_{n+1});\\\\\n[OABAO]:&p_{n+1/2}=e^{-h\\gamma/2}p_n+\\zeta_1M^{1/2}R_n,\\\\\n&q_{n+1/2}=q_n+(h/2)M^{-1}p_{n+1/2},\\quad\\hat p_{n+1/2}=p_{n+1/2}-h\\nabla U(q_{n+1/2}),\\\\\n&q_{n+1}=q_{n+1/2}+(h/2)M^{-1}\\hat p_{n+1/2},\\quad p_{n+1}=e^{-h\\gamma/2}\\hat p_{n+1/2}+\\zeta_1M^{1/2}R_{n+1/2};\\\\\n[OBABO]:&p_{n+1/2}=e^{-h\\gamma/2}p_n+\\zeta_1M^{1/2}R_n,\\quad\\hat p_{n+1/2}=p_{n+1/2}-(h/2)\\nabla U(q_n),\\\\\n&q_{n+1}=q_n+hM^{-1}\\hat p_{n+1/2},\\quad\\hat p_{n+1}=\\hat p_{n+1/2}-(h/2)\\nabla U(q_{n+1}),\\\\\n&p_{n+1}=e^{-h\\gamma/2}\\hat p_{n+1}+\\zeta_1M^{1/2}R_{n+1/2},\n\\end{array}\\]\nwhere $\\zeta_j=[k_BT(1-e^{-j\\gamma h})]^{1/2}$, and $R_n,R_{n+1/2}$ are $N_d$ vectors of standard independent $\\mathcal N(0,1)$ random variables, resampled at each step.",
+  "proof_latex": null,
+  "proof_note": "原书未给独立完整证明。",
+  "context_notation": [],
+  "extra_assumptions": [
+    "BABO已定义于ABOBABO；其余5个完整复合依次对应所列中间步。",
+    "R与S为同一步两次O的独立标准正态向量；跨步也独立，用vectorNormalSequence提供资格。",
+    "原文最后“single evaluation”使用跨步缓存；实现成本不列为待证数学命题。"
+  ],
+  "issues": [],
+  "statement_scope": "本条逐字引用的全部数学对象与公式；未纳入的上下文另列。",
+  "lean_decl": "MD.Ch07.abao",
+  "lean_declarations": [
+    "MD.Ch07.abao",
+    "MD.Ch07.aboba",
+    "MD.Ch07.baoab",
+    "MD.Ch07.oabao",
+    "MD.Ch07.obabo"
+  ],
+  "source_page_verification": "见source_page_checks.json；必须已目视核对本条原页。",
+  "repair_log": [],
+  "documented_priors": []
+}
+```
+
+## 完整本条Lean
+```lean
+def abao (m : V n) (U : V n → ℝ) (γ θ h : ℝ) (R : V n) : Phase n → Phase n :=
+  ouStep m γ θ h R ∘ driftStep m (h/2) ∘ kickStep U h ∘ driftStep m (h/2)
+def aboba (m : V n) (U : V n → ℝ) (γ θ h : ℝ) (R : V n) : Phase n → Phase n :=
+  driftStep m (h/2) ∘ kickStep U (h/2) ∘ ouStep m γ θ h R ∘ kickStep U (h/2) ∘ driftStep m (h/2)
+def baoab (m : V n) (U : V n → ℝ) (γ θ h : ℝ) (R : V n) : Phase n → Phase n :=
+  kickStep U (h/2) ∘ driftStep m (h/2) ∘ ouStep m γ θ h R ∘ driftStep m (h/2) ∘ kickStep U (h/2)
+def oabao (m : V n) (U : V n → ℝ) (γ θ h : ℝ) (R S : V n) : Phase n → Phase n :=
+  ouStep m γ θ (h/2) S ∘ driftStep m (h/2) ∘ kickStep U h ∘ driftStep m (h/2) ∘ ouStep m γ θ (h/2) R
+def obabo (m : V n) (U : V n → ℝ) (γ θ h : ℝ) (R S : V n) : Phase n → Phase n :=
+  ouStep m γ θ (h/2) S ∘ kickStep U (h/2) ∘ driftStep m h ∘ kickStep U (h/2) ∘ ouStep m γ θ (h/2) R
+```
+
+## 项目依赖定义体及选择规格
+以下def/abbrev/structure完整保留；定理列出完整类型，Mathlib标准定义无需摘录。
+
+### MD.Ch07.V (Blueprint/Ch07.lean:172)
+原文件上下文：
+```lean
+open Set Filter MeasureTheory ProbabilityTheory MolecularDynamics
+open scoped BigOperators Topology ContDiff ENNReal NNReal
+variable {Ω : Type*} [MeasurableSpace Ω]
+variable {n : ℕ}
+```
+```lean
+abbrev V (n : ℕ) := Fin n → ℝ
+```
+
+### MD.Ch07.Phase (Blueprint/Ch07.lean:173)
+原文件上下文：
+```lean
+open Set Filter MeasureTheory ProbabilityTheory MolecularDynamics
+open scoped BigOperators Topology ContDiff ENNReal NNReal
+variable {Ω : Type*} [MeasurableSpace Ω]
+variable {n : ℕ}
+```
+```lean
+abbrev Phase (n : ℕ) := V n × V n
+```
+
+### MD.Ch07.ouMomentum (Blueprint/Ch07.lean:198)
+原文件上下文：
+```lean
+open Set Filter MeasureTheory ProbabilityTheory MolecularDynamics
+open scoped BigOperators Topology ContDiff ENNReal NNReal
+variable {Ω : Type*} [MeasurableSpace Ω]
+variable {n : ℕ}
+```
+```lean
+def ouMomentum (m : V n) (γ θ h : ℝ) (p R : V n) : V n :=
+  fun i ↦ Real.exp (-γ*h)*p i + Real.sqrt (θ*(1-Real.exp (-2*γ*h))) * Real.sqrt (m i) * R i
+```
+
+### MD.Ch07.ouStep (Blueprint/Ch07.lean:211)
+原文件上下文：
+```lean
+open Set Filter MeasureTheory ProbabilityTheory MolecularDynamics
+open scoped BigOperators Topology ContDiff ENNReal NNReal
+variable {Ω : Type*} [MeasurableSpace Ω]
+variable {n : ℕ}
+```
+```lean
+def ouStep (m : V n) (γ θ h : ℝ) (R : V n) (x : Phase n) : Phase n :=
+  (x.1, ouMomentum m γ θ h x.2 R)
+```
+
+### MD.Ch07.coordDerivative (Blueprint/Ch07.lean:221)
+原文件上下文：
+```lean
+open Set Filter MeasureTheory ProbabilityTheory MolecularDynamics
+open scoped BigOperators Topology ContDiff ENNReal NNReal
+variable {Ω : Type*} [MeasurableSpace Ω]
+variable {n : ℕ}
+```
+```lean
+def coordDerivative (f : V n → ℝ) (x : V n) (i : Fin n) : ℝ :=
+  deriv (fun z ↦ f (Function.update x i z)) (x i)
+```
+
+### MD.Ch07.gradient (Blueprint/Ch07.lean:250)
+原文件上下文：
+```lean
+open Set Filter MeasureTheory ProbabilityTheory MolecularDynamics
+open scoped BigOperators Topology ContDiff ENNReal NNReal
+variable {Ω : Type*} [MeasurableSpace Ω]
+variable {n : ℕ}
+```
+```lean
+def gradient (U : V n → ℝ) (q : V n) : V n := fun i ↦ coordDerivative U q i
+```
+
+### MD.Ch07.driftStep (Blueprint/Ch07.lean:279)
+原文件上下文：
+```lean
+open Set Filter MeasureTheory ProbabilityTheory MolecularDynamics
+open scoped BigOperators Topology ContDiff ENNReal NNReal
+variable {Ω : Type*} [MeasurableSpace Ω]
+variable {n : ℕ}
+```
+```lean
+def driftStep (m : V n) (h : ℝ) (x : Phase n) : Phase n :=
+  (fun i ↦ x.1 i + h * x.2 i / m i, x.2)
+```
+
+### MD.Ch07.kickStep (Blueprint/Ch07.lean:282)
+原文件上下文：
+```lean
+open Set Filter MeasureTheory ProbabilityTheory MolecularDynamics
+open scoped BigOperators Topology ContDiff ENNReal NNReal
+variable {Ω : Type*} [MeasurableSpace Ω]
+variable {n : ℕ}
+```
+```lean
+def kickStep (U : V n → ℝ) (h : ℝ) (x : Phase n) : Phase n :=
+  (x.1, fun i ↦ x.2 i - h * gradient U x.1 i)
+```
+
+### MD.Ch07.abao (Blueprint/Ch07.lean:340)
+原文件上下文：
+```lean
+open Set Filter MeasureTheory ProbabilityTheory MolecularDynamics
+open scoped BigOperators Topology ContDiff ENNReal NNReal
+variable {Ω : Type*} [MeasurableSpace Ω]
+variable {n : ℕ}
+```
+```lean
+def abao (m : V n) (U : V n → ℝ) (γ θ h : ℝ) (R : V n) : Phase n → Phase n :=
+  ouStep m γ θ h R ∘ driftStep m (h/2) ∘ kickStep U h ∘ driftStep m (h/2)
+```
+
+### MD.Ch07.aboba (Blueprint/Ch07.lean:342)
+原文件上下文：
+```lean
+open Set Filter MeasureTheory ProbabilityTheory MolecularDynamics
+open scoped BigOperators Topology ContDiff ENNReal NNReal
+variable {Ω : Type*} [MeasurableSpace Ω]
+variable {n : ℕ}
+```
+```lean
+def aboba (m : V n) (U : V n → ℝ) (γ θ h : ℝ) (R : V n) : Phase n → Phase n :=
+  driftStep m (h/2) ∘ kickStep U (h/2) ∘ ouStep m γ θ h R ∘ kickStep U (h/2) ∘ driftStep m (h/2)
+```
+
+### MD.Ch07.baoab (Blueprint/Ch07.lean:344)
+原文件上下文：
+```lean
+open Set Filter MeasureTheory ProbabilityTheory MolecularDynamics
+open scoped BigOperators Topology ContDiff ENNReal NNReal
+variable {Ω : Type*} [MeasurableSpace Ω]
+variable {n : ℕ}
+```
+```lean
+def baoab (m : V n) (U : V n → ℝ) (γ θ h : ℝ) (R : V n) : Phase n → Phase n :=
+  kickStep U (h/2) ∘ driftStep m (h/2) ∘ ouStep m γ θ h R ∘ driftStep m (h/2) ∘ kickStep U (h/2)
+```
+
+### MD.Ch07.oabao (Blueprint/Ch07.lean:346)
+原文件上下文：
+```lean
+open Set Filter MeasureTheory ProbabilityTheory MolecularDynamics
+open scoped BigOperators Topology ContDiff ENNReal NNReal
+variable {Ω : Type*} [MeasurableSpace Ω]
+variable {n : ℕ}
+```
+```lean
+def oabao (m : V n) (U : V n → ℝ) (γ θ h : ℝ) (R S : V n) : Phase n → Phase n :=
+  ouStep m γ θ (h/2) S ∘ driftStep m (h/2) ∘ kickStep U h ∘ driftStep m (h/2) ∘ ouStep m γ θ (h/2) R
+```
+
+### MD.Ch07.obabo (Blueprint/Ch07.lean:348)
+原文件上下文：
+```lean
+open Set Filter MeasureTheory ProbabilityTheory MolecularDynamics
+open scoped BigOperators Topology ContDiff ENNReal NNReal
+variable {Ω : Type*} [MeasurableSpace Ω]
+variable {n : ℕ}
+```
+```lean
+def obabo (m : V n) (U : V n → ℝ) (γ θ h : ℝ) (R S : V n) : Phase n → Phase n :=
+  ouStep m γ θ (h/2) S ∘ kickStep U (h/2) ∘ driftStep m h ∘ kickStep U (h/2) ∘ ouStep m γ θ (h/2) R
+```

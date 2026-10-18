@@ -1,0 +1,80 @@
+{
+  "batch": "BATCH07",
+  "subtask": "BATCH07b",
+  "source_ids": [
+    "MD-7.4.1-ABOVariance"
+  ],
+  "input_sha256": {
+    "Blueprint/Ch07.lean": "2c8a4521d9e655e5690fd5f8a5642ba56b8124fddb5f761ab0548d6df9f0c56b",
+    "blueprint/ch07/ch07_source.json": "4cdae77a46bd167b78ab95f2928b72e80c919529316d8848bf882c6187db6599",
+    "BATCH07b_PAGES.pdf": "caec287cac297dcc3d55d3486bea29d2f31d34c5eceff5a7bdfd8da44e8731c2"
+  },
+  "page_mapping": [
+    {
+      "attachment_page": 1,
+      "original_pdf_page": 297,
+      "printed_page": 276
+    }
+  ],
+  "definition_excerpts": [
+    {
+      "full_name": "MD.Ch07.linearUpdate",
+      "kind": "def",
+      "path": "Blueprint/Ch07.lean",
+      "line": 413,
+      "code_sha256": "558b204b07407282c73bfff06ee8e00e7740c8ce89db2fc60e1af80a69a36392"
+    },
+    {
+      "full_name": "MD.Ch07.momentQ",
+      "kind": "def",
+      "path": "Blueprint/Ch07.lean",
+      "line": 415,
+      "code_sha256": "3a1f882d971889b4d4dff8c89259d586f56734fe1cf50aeb1b8abea63f47d6ff"
+    },
+    {
+      "full_name": "MD.Ch07.aboHarmonic",
+      "kind": "def",
+      "path": "Blueprint/Ch07.lean",
+      "line": 465,
+      "code_sha256": "e6884e6c3dac9c37d74fc29fc2d0172c4597d6a628d207047f5f371f55f2ba74"
+    },
+    {
+      "full_name": "MD.Ch07.aboVarianceRatio",
+      "kind": "def",
+      "path": "Blueprint/Ch07.lean",
+      "line": 478,
+      "code_sha256": "a2a7219221708d5696798f6e31f44ae08ab2a953f6d6dca8837a8ca8be590ed8"
+    },
+    {
+      "full_name": "MD.Ch07.aboVarianceRatio_expansion",
+      "kind": "theorem",
+      "path": "Blueprint/Ch07.lean",
+      "line": 482,
+      "code_sha256": "f2d38b62893ab8e291d5121f2b8ccc72a1bb43f689097190679fb0b292fdb9c6"
+    },
+    {
+      "full_name": "MD.Ch07.aboStationaryVariance",
+      "kind": "theorem",
+      "path": "Blueprint/Ch07.lean",
+      "line": 488,
+      "code_sha256": "5e41ba0804e6a44910fcb0c163e3aba8bd662672f0bbb706c4ea6ded8ca4ddee"
+    }
+  ],
+  "validation": {
+    "project_constant_closure": "PASS",
+    "missing_project_definitions": [],
+    "full_page_render_equality_dpi": 72,
+    "website_submitted": false
+  },
+  "files": {
+    "PASTE.txt": {
+      "bytes": 6511,
+      "sha256": "f70f159831c2394393a271648eaa8dcee544c44abba1a0e7958a595fc3275090"
+    },
+    "BATCH07b_PAGES.pdf": {
+      "bytes": 92248,
+      "sha256": "caec287cac297dcc3d55d3486bea29d2f31d34c5eceff5a7bdfd8da44e8731c2"
+    }
+  },
+  "total_task_bytes": 101259
+}

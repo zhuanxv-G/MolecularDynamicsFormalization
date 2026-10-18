@@ -1,0 +1,47 @@
+{
+  "batch": "BATCH03",
+  "subtasks": [
+    {
+      "subtask": "BATCH03a",
+      "source_id": "MD-7.3-VectorOU",
+      "path": "blueprint/ch07/mathcopilot_tasks/compact/BATCH03/a",
+      "bytes": 225162,
+      "manifest_sha256": "a7764f81abeabe75533ba1751822e5e3714964799cf5b0659afe0c6d9045eacb"
+    },
+    {
+      "subtask": "BATCH03b",
+      "source_id": "MD-7.3-OUIntegratingFactor",
+      "path": "blueprint/ch07/mathcopilot_tasks/compact/BATCH03/b",
+      "bytes": 225276,
+      "manifest_sha256": "5ef535d43b2ff06e79050f55241517ffc9be235016b58d498b8a77df70743b3c"
+    },
+    {
+      "subtask": "BATCH03c",
+      "source_id": "MD-7.3-OUExactUpdate",
+      "path": "blueprint/ch07/mathcopilot_tasks/compact/BATCH03/c",
+      "bytes": 101366,
+      "manifest_sha256": "a182afe1f5409a20e0f770970ecce33c85c121ae0ff4ee7913b6125cbfe6e3a0"
+    },
+    {
+      "subtask": "BATCH03d",
+      "source_id": "MD-7.3-OUPhaseIteration",
+      "path": "blueprint/ch07/mathcopilot_tasks/compact/BATCH03/d",
+      "bytes": 92416,
+      "manifest_sha256": "7015c54c4eb49c22bf7ce29b086a10d1ec04f9af224285addc1b8d7233487310"
+    },
+    {
+      "subtask": "BATCH03e",
+      "source_id": "MD-7.3-OUForward",
+      "path": "blueprint/ch07/mathcopilot_tasks/compact/BATCH03/e",
+      "bytes": 93230,
+      "manifest_sha256": "77fc5bd7aa132ed970a6ebb9f1b3abc79e7b3b60eb14aacce71a30d2cceba2cd"
+    },
+    {
+      "subtask": "BATCH03f",
+      "source_id": "MD-7.3-OUGaussianInvariant",
+      "path": "blueprint/ch07/mathcopilot_tasks/compact/BATCH03/f",
+      "bytes": 91567,
+      "manifest_sha256": "31ff4400c4475a2d019f50d60649febdc80a00a4de9dfbafde117bdef553804e"
+    }
+  ]
+}

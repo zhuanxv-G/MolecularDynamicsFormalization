@@ -1,0 +1,52 @@
+{
+  "batch": "BATCH02",
+  "subtask": "BATCH02b",
+  "source_ids": [
+    "MD-7.2-WeakError"
+  ],
+  "input_sha256": {
+    "Blueprint/Ch07.lean": "2c8a4521d9e655e5690fd5f8a5642ba56b8124fddb5f761ab0548d6df9f0c56b",
+    "blueprint/ch07/ch07_source.json": "4cdae77a46bd167b78ab95f2928b72e80c919529316d8848bf882c6187db6599",
+    "BATCH02b_PAGES.pdf": "b4a9f08b8bcdbc861d76e020fedc100e13bcf5d343812128ac1e91c11029b699"
+  },
+  "page_mapping": [
+    {
+      "attachment_page": 1,
+      "original_pdf_page": 286,
+      "printed_page": 265
+    }
+  ],
+  "definition_excerpts": [
+    {
+      "full_name": "MD.Ch07.weakError",
+      "kind": "def",
+      "path": "Blueprint/Ch07.lean",
+      "line": 89,
+      "code_sha256": "1356b1749de430ce48e00dae06f620f424212081e5839116388a3bb84261bf90"
+    },
+    {
+      "full_name": "MD.Ch07.hasWeakOrder",
+      "kind": "def",
+      "path": "Blueprint/Ch07.lean",
+      "line": 94,
+      "code_sha256": "7ee6ae8d4aa3928450ac124c1895b0a54b139fa562fff6eaf4bf4894f1ab03d6"
+    }
+  ],
+  "validation": {
+    "project_constant_closure": "PASS",
+    "missing_project_definitions": [],
+    "full_page_render_equality_dpi": 72,
+    "website_submitted": false
+  },
+  "files": {
+    "PASTE.txt": {
+      "bytes": 4754,
+      "sha256": "08d3a7be1db1746c23a1339ac65cf6931957ba20ecd794236acb614000ca2409"
+    },
+    "BATCH02b_PAGES.pdf": {
+      "bytes": 61515,
+      "sha256": "b4a9f08b8bcdbc861d76e020fedc100e13bcf5d343812128ac1e91c11029b699"
+    }
+  },
+  "total_task_bytes": 67818
+}

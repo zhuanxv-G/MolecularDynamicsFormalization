@@ -1,0 +1,228 @@
+{
+  "batches": 8,
+  "subtasks": 44,
+  "covered_entries": 44,
+  "checks": [
+    {
+      "source_id": "MD-7.1-Bias",
+      "project_constants": 1,
+      "missing": []
+    },
+    {
+      "source_id": "MD-7.2-ScalarSDE",
+      "project_constants": 5,
+      "missing": []
+    },
+    {
+      "source_id": "MD-7.2-EulerMaruyama",
+      "project_constants": 3,
+      "missing": []
+    },
+    {
+      "source_id": "MD-7.2-SDEIncrement",
+      "project_constants": 6,
+      "missing": []
+    },
+    {
+      "source_id": "MD-7.2-StrongError",
+      "project_constants": 1,
+      "missing": []
+    },
+    {
+      "source_id": "MD-7.2-MeanErrorExpectation",
+      "project_constants": 2,
+      "missing": []
+    },
+    {
+      "source_id": "MD-7.2-StrongOrder",
+      "project_constants": 2,
+      "missing": []
+    },
+    {
+      "source_id": "MD-7.2-WeakError",
+      "project_constants": 2,
+      "missing": []
+    },
+    {
+      "source_id": "MD-7.2-StrongWeakComparison",
+      "project_constants": 3,
+      "missing": []
+    },
+    {
+      "source_id": "MD-7.2-CanonicalAverage",
+      "project_constants": 7,
+      "missing": []
+    },
+    {
+      "source_id": "MD-7.2-PartitionPrinted",
+      "project_constants": 9,
+      "missing": []
+    },
+    {
+      "source_id": "MD-7.2-AverageNotationBias",
+      "project_constants": 9,
+      "missing": []
+    },
+    {
+      "source_id": "MD-7.3-VectorOU",
+      "project_constants": 10,
+      "missing": []
+    },
+    {
+      "source_id": "MD-7.3-OUIntegratingFactor",
+      "project_constants": 10,
+      "missing": []
+    },
+    {
+      "source_id": "MD-7.3-OUExactUpdate",
+      "project_constants": 15,
+      "missing": []
+    },
+    {
+      "source_id": "MD-7.3-OUPhaseIteration",
+      "project_constants": 5,
+      "missing": []
+    },
+    {
+      "source_id": "MD-7.3-OUForward",
+      "project_constants": 5,
+      "missing": []
+    },
+    {
+      "source_id": "MD-7.3-OUGaussianInvariant",
+      "project_constants": 3,
+      "missing": []
+    },
+    {
+      "source_id": "MD-7.3.1-Langevin",
+      "project_constants": 7,
+      "missing": []
+    },
+    {
+      "source_id": "MD-7.3.1-HamiltonianGibbs",
+      "project_constants": 1,
+      "missing": []
+    },
+    {
+      "source_id": "MD-7.3.1-ABOPieces",
+      "project_constants": 10,
+      "missing": []
+    },
+    {
+      "source_id": "MD-7.3.1-ABExactFlows",
+      "project_constants": 8,
+      "missing": []
+    },
+    {
+      "source_id": "MD-7.3.1-ABForward",
+      "project_constants": 6,
+      "missing": []
+    },
+    {
+      "source_id": "MD-7.3.1-ABOBABO",
+      "project_constants": 10,
+      "missing": []
+    },
+    {
+      "source_id": "MD-7.3.1-WordConvention",
+      "project_constants": 11,
+      "missing": []
+    },
+    {
+      "source_id": "MD-7.3.1-SixSchemes",
+      "project_constants": 13,
+      "missing": []
+    },
+    {
+      "source_id": "MD-7.3.1-ConjugateIteration",
+      "project_constants": 10,
+      "missing": []
+    },
+    {
+      "source_id": "MD-7.3.2-SPVPrinted",
+      "project_constants": 8,
+      "missing": []
+    },
+    {
+      "source_id": "MD-7.3.2-SPVLargeFriction",
+      "project_constants": 1,
+      "missing": []
+    },
+    {
+      "source_id": "MD-7.3.2-BBK",
+      "project_constants": 7,
+      "missing": []
+    },
+    {
+      "source_id": "MD-7.4-HarmonicHamiltonian",
+      "project_constants": 2,
+      "missing": []
+    },
+    {
+      "source_id": "MD-7.4-HarmonicMoments",
+      "project_constants": 2,
+      "missing": []
+    },
+    {
+      "source_id": "MD-7.4-LinearIteration",
+      "project_constants": 4,
+      "missing": []
+    },
+    {
+      "source_id": "MD-7.4-BBKLinearForm",
+      "project_constants": 2,
+      "missing": []
+    },
+    {
+      "source_id": "MD-7.4-QuadraticProducts",
+      "project_constants": 2,
+      "missing": []
+    },
+    {
+      "source_id": "MD-7.4.1-StationaryMomentSystem",
+      "project_constants": 9,
+      "missing": []
+    },
+    {
+      "source_id": "MD-7.4.1-ABOHarmonic",
+      "project_constants": 3,
+      "missing": []
+    },
+    {
+      "source_id": "MD-7.4.1-ABOVariance",
+      "project_constants": 6,
+      "missing": []
+    },
+    {
+      "source_id": "MD-7.4.1-Table71",
+      "project_constants": 19,
+      "missing": []
+    },
+    {
+      "source_id": "MD-7.4.1-NonsymmetricExactMoments",
+      "project_constants": 13,
+      "missing": []
+    },
+    {
+      "source_id": "MD-7.4.2-BBKStar",
+      "project_constants": 8,
+      "missing": []
+    },
+    {
+      "source_id": "MD-7.4.2-BBKStarCorrelations",
+      "project_constants": 1,
+      "missing": []
+    },
+    {
+      "source_id": "MD-7.4.2-BBKStarMomentSystemPrinted",
+      "project_constants": 5,
+      "missing": []
+    },
+    {
+      "source_id": "MD-7.4.2-BBKStarStationary",
+      "project_constants": 5,
+      "missing": []
+    }
+  ],
+  "website_submitted": false
+}

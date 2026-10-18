@@ -1,0 +1,84 @@
+以附件/PASTE 为准，忽略 /workspace 旧文件；Mathlib 定义按标准含义采信。
+本任务只审本条：原文转录、对象资格、定义体、量词、全部结论及[EXTRA]是否一致；Lean编译不代替语义审阅。
+Lean/Mathlib均4.34.0。原页PDF映射：[285]；印刷页=[264].
+input_sha256请原样回显：
+{
+  "Blueprint/Ch07.lean": "2c8a4521d9e655e5690fd5f8a5642ba56b8124fddb5f761ab0548d6df9f0c56b",
+  "blueprint/ch07/ch07_source.json": "4cdae77a46bd167b78ab95f2928b72e80c919529316d8848bf882c6187db6599",
+  "BATCH01f_PAGES.pdf": "6478c6a9087f47209a443bab17e1aa8931a3bdb7e550754ea1b11df8ca92b1b9"
+}
+用代码将JSON对象(batch,input_sha256,items)写到 /workspace/.mathcopilot/reviews/ch07/BATCH01f_review.json；items仅含本source_id。
+items字段：source_id、verdict(PASS/FAIL/NEEDS_HUMAN)、transcription、semantic_review、counterexample、suggested_fix、printed_version、corrected_version。逐版区分原文疑误和修正版结论；缺材料必须具体指出，不猜测。写后json.loads自检，最后仅回复路径及统计。
+
+## 原文JSON
+```json
+{
+  "source_id": "MD-7.2-MeanErrorExpectation",
+  "kind": "unnumbered_claim",
+  "label": null,
+  "section": "7.2",
+  "printed_page": "264",
+  "pdf_page": "285",
+  "statement_latex": "For $\\alpha=1$ this implies convergence of expectation. The more natural choice from the probabilistic point of view is $\\alpha=2$ (mean square convergence).",
+  "proof_latex": null,
+  "proof_note": "原书未给独立完整证明。",
+  "context_notation": [],
+  "extra_assumptions": [
+    "期望可积；不以数值方法的收敛为假设重新宣布同一收敛，只给使收敛传递成立的定量不等式。"
+  ],
+  "issues": [],
+  "statement_scope": "α=1所需期望误差不等式，及α=2均方误差的记号；网格极限通过此界立即归约。",
+  "lean_decl": "MD.Ch07.meanErrorExpectation",
+  "lean_declarations": [
+    "MD.Ch07.meanErrorExpectation",
+    "MD.Ch07.meanSquareError"
+  ],
+  "source_page_verification": "见source_page_checks.json；必须已目视核对本条原页。",
+  "repair_log": [],
+  "documented_priors": []
+}
+```
+
+## 完整本条Lean
+```lean
+theorem meanErrorExpectation (P : Measure Ω) (X Y : Ω → ℝ)
+    (hX : Integrable X P) (hY : Integrable Y P) :
+    |(∫ sample, X sample ∂P) - ∫ sample, Y sample ∂P| ≤
+      ∫ sample, |X sample - Y sample| ∂P := by
+  rw [← integral_sub hX hY]
+  simpa only [Real.norm_eq_abs] using norm_integral_le_integral_norm (fun sample ↦ X sample - Y sample)
+
+def meanSquareError (P : Measure Ω) (X Y : Ω → ℝ) : ℝ :=
+  Real.sqrt (∫ sample, (X sample - Y sample)^2 ∂P)
+```
+
+## 项目依赖定义体及选择规格
+以下def/abbrev/structure完整保留；定理列出完整类型，Mathlib标准定义无需摘录。
+
+### MD.Ch07.meanErrorExpectation (Blueprint/Ch07.lean:67)
+原文件上下文：
+```lean
+open Set Filter MeasureTheory ProbabilityTheory MolecularDynamics
+open scoped BigOperators Topology ContDiff ENNReal NNReal
+variable {Ω : Type*} [MeasurableSpace Ω]
+variable {n : ℕ}
+```
+```lean
+theorem meanErrorExpectation (P : Measure Ω) (X Y : Ω → ℝ)
+    (hX : Integrable X P) (hY : Integrable Y P) :
+    |(∫ sample, X sample ∂P) - ∫ sample, Y sample ∂P| ≤
+      ∫ sample, |X sample - Y sample| ∂P
+```
+
+### MD.Ch07.meanSquareError (Blueprint/Ch07.lean:74)
+原文件上下文：
+```lean
+open Set Filter MeasureTheory ProbabilityTheory MolecularDynamics
+open scoped BigOperators Topology ContDiff ENNReal NNReal
+variable {Ω : Type*} [MeasurableSpace Ω]
+variable {n : ℕ}
+```
+```lean
+def meanSquareError (P : Measure Ω) (X Y : Ω → ℝ) : ℝ :=
+  Real.sqrt (∫ sample, (X sample - Y sample)^2 ∂P)
+```

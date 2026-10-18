@@ -1,0 +1,52 @@
+{
+  "batch": "BATCH06",
+  "subtask": "BATCH06a",
+  "source_ids": [
+    "MD-7.4-HarmonicHamiltonian"
+  ],
+  "input_sha256": {
+    "Blueprint/Ch07.lean": "2c8a4521d9e655e5690fd5f8a5642ba56b8124fddb5f761ab0548d6df9f0c56b",
+    "blueprint/ch07/ch07_source.json": "4cdae77a46bd167b78ab95f2928b72e80c919529316d8848bf882c6187db6599",
+    "BATCH06a_PAGES.pdf": "297cf8308a502e5fbfa5c259ac176f5c5b301285638dae48c2c83bcd87b09afa"
+  },
+  "page_mapping": [
+    {
+      "attachment_page": 1,
+      "original_pdf_page": 294,
+      "printed_page": 273
+    }
+  ],
+  "definition_excerpts": [
+    {
+      "full_name": "MD.Ch07.harmonicHamiltonian",
+      "kind": "def",
+      "path": "Blueprint/Ch07.lean",
+      "line": 397,
+      "code_sha256": "ad91b2a2792041e74463a0e2c5cbc7f5be0a3acb97e717586c0427217613d612"
+    },
+    {
+      "full_name": "MD.Ch07.harmonicLaw",
+      "kind": "def",
+      "path": "Blueprint/Ch07.lean",
+      "line": 398,
+      "code_sha256": "07fa7874b75e91dfd87c8de2e7119e740b96b04d608c450b7839bc8c94bb1990"
+    }
+  ],
+  "validation": {
+    "project_constant_closure": "PASS",
+    "missing_project_definitions": [],
+    "full_page_render_equality_dpi": 72,
+    "website_submitted": false
+  },
+  "files": {
+    "PASTE.txt": {
+      "bytes": 3547,
+      "sha256": "58c2adec2f78697d0c6bd1c74300f868315d4a25acacccac798a2e95aa330f9f"
+    },
+    "BATCH06a_PAGES.pdf": {
+      "bytes": 81649,
+      "sha256": "297cf8308a502e5fbfa5c259ac176f5c5b301285638dae48c2c83bcd87b09afa"
+    }
+  },
+  "total_task_bytes": 86766
+}

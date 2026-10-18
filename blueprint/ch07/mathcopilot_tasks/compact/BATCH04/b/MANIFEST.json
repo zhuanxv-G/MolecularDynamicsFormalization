@@ -1,0 +1,45 @@
+{
+  "batch": "BATCH04",
+  "subtask": "BATCH04b",
+  "source_ids": [
+    "MD-7.3.1-HamiltonianGibbs"
+  ],
+  "input_sha256": {
+    "Blueprint/Ch07.lean": "2c8a4521d9e655e5690fd5f8a5642ba56b8124fddb5f761ab0548d6df9f0c56b",
+    "blueprint/ch07/ch07_source.json": "4cdae77a46bd167b78ab95f2928b72e80c919529316d8848bf882c6187db6599",
+    "BATCH04b_PAGES.pdf": "0e54a5e6ad37512918581bc094c1a719d20590e396645159aa48344506118b80"
+  },
+  "page_mapping": [
+    {
+      "attachment_page": 1,
+      "original_pdf_page": 290,
+      "printed_page": 269
+    }
+  ],
+  "definition_excerpts": [
+    {
+      "full_name": "MD.Ch07.hamiltonianGibbs",
+      "kind": "theorem",
+      "path": "Blueprint/Ch07.lean",
+      "line": 268,
+      "code_sha256": "e218f1938f521d2f77b4b9a509c6282e3a8a9782f66b0ee25f913980cc409165"
+    }
+  ],
+  "validation": {
+    "project_constant_closure": "PASS",
+    "missing_project_definitions": [],
+    "full_page_render_equality_dpi": 72,
+    "website_submitted": false
+  },
+  "files": {
+    "PASTE.txt": {
+      "bytes": 4026,
+      "sha256": "34266060e85dd6871db385c8cc3b85a6c03f97c37aae9f945679db7a5f13a092"
+    },
+    "BATCH04b_PAGES.pdf": {
+      "bytes": 98555,
+      "sha256": "0e54a5e6ad37512918581bc094c1a719d20590e396645159aa48344506118b80"
+    }
+  },
+  "total_task_bytes": 103925
+}

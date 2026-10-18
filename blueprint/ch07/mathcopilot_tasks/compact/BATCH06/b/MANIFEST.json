@@ -1,0 +1,57 @@
+{
+  "batch": "BATCH06",
+  "subtask": "BATCH06b",
+  "source_ids": [
+    "MD-7.4-HarmonicMoments"
+  ],
+  "input_sha256": {
+    "Blueprint/Ch07.lean": "2c8a4521d9e655e5690fd5f8a5642ba56b8124fddb5f761ab0548d6df9f0c56b",
+    "blueprint/ch07/ch07_source.json": "4cdae77a46bd167b78ab95f2928b72e80c919529316d8848bf882c6187db6599",
+    "BATCH06b_PAGES.pdf": "cc508853566eb07576d5fdd4b7129a7bd71e513365d3544cb05accc40a5e751e"
+  },
+  "page_mapping": [
+    {
+      "attachment_page": 1,
+      "original_pdf_page": 294,
+      "printed_page": 273
+    },
+    {
+      "attachment_page": 2,
+      "original_pdf_page": 295,
+      "printed_page": 274
+    }
+  ],
+  "definition_excerpts": [
+    {
+      "full_name": "MD.Ch07.harmonicLaw",
+      "kind": "def",
+      "path": "Blueprint/Ch07.lean",
+      "line": 398,
+      "code_sha256": "07fa7874b75e91dfd87c8de2e7119e740b96b04d608c450b7839bc8c94bb1990"
+    },
+    {
+      "full_name": "MD.Ch07.harmonicMoments",
+      "kind": "theorem",
+      "path": "Blueprint/Ch07.lean",
+      "line": 403,
+      "code_sha256": "5261b4961e47bb7a1aa0e21aa18f3b8c6c067e750675cd134ac026be948e36a8"
+    }
+  ],
+  "validation": {
+    "project_constant_closure": "PASS",
+    "missing_project_definitions": [],
+    "full_page_render_equality_dpi": 72,
+    "website_submitted": false
+  },
+  "files": {
+    "PASTE.txt": {
+      "bytes": 3933,
+      "sha256": "32185db4de9bae767e091d957698d55754986a31864b855eeb17a1d07ab5d1df"
+    },
+    "BATCH06b_PAGES.pdf": {
+      "bytes": 93181,
+      "sha256": "cc508853566eb07576d5fdd4b7129a7bd71e513365d3544cb05accc40a5e751e"
+    }
+  },
+  "total_task_bytes": 98784
+}

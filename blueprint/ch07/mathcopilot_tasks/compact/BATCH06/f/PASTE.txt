@@ -1,0 +1,182 @@
+以附件/PASTE 为准，忽略 /workspace 旧文件；Mathlib 定义按标准含义采信。
+本任务只审本条：原文转录、对象资格、定义体、量词、全部结论及[EXTRA]是否一致；Lean编译不代替语义审阅。
+Lean/Mathlib均4.34.0。原页PDF映射：[296]；印刷页=[275].
+input_sha256请原样回显：
+{
+  "Blueprint/Ch07.lean": "2c8a4521d9e655e5690fd5f8a5642ba56b8124fddb5f761ab0548d6df9f0c56b",
+  "blueprint/ch07/ch07_source.json": "4cdae77a46bd167b78ab95f2928b72e80c919529316d8848bf882c6187db6599",
+  "BATCH06f_PAGES.pdf": "3542a6686c7b21763440b76ac90a45ef9ec9f6db72ae330e2192b7e122279eba"
+}
+用代码将JSON对象(batch,input_sha256,items)写到 /workspace/.mathcopilot/reviews/ch07/BATCH06f_review.json；items仅含本source_id。
+items字段：source_id、verdict(PASS/FAIL/NEEDS_HUMAN)、transcription、semantic_review、counterexample、suggested_fix、printed_version、corrected_version。逐版区分原文疑误和修正版结论；缺材料必须具体指出，不猜测。写后json.loads自检，最后仅回复路径及统计。
+
+## 原文JSON
+```json
+{
+  "source_id": "MD-7.4.1-StationaryMomentSystem",
+  "kind": "unnumbered_claim",
+  "label": "(7.11)",
+  "section": "7.4.1",
+  "printed_page": "275",
+  "pdf_page": "296",
+  "statement_latex": "Hence we have $\\mathbb E(\\mu_{n,i}q_n)=\\mathbb E(\\mu_{n,i}p_n)=0$, for any $i$ and $n$. Thus, taking expectations of (7.8)–(7.10) for such schemes, and then considering the limit $n\\to\\infty$ we obtain a closed, linear system of equations\n\\[Q=\\psi_{11}^2Q+\\psi_{12}^2P+2\\psi_{11}\\psi_{12}C+\\bar\\mu_{11},\\]\n\\[P=\\psi_{21}^2Q+\\psi_{22}^2P+2\\psi_{21}\\psi_{22}C+\\bar\\mu_{22},\\]\n\\[C=\\psi_{11}\\psi_{21}Q+\\psi_{12}\\psi_{22}P+(\\psi_{11}\\psi_{22}+\\psi_{12}\\psi_{21})C+\\bar\\mu_{12},\\tag{7.11}\\]\nwhere $\\bar\\mu_{11}=\\mathbb E(\\mu_{n,1}^2)$, $\\bar\\mu_{12}=\\mathbb E(\\mu_{n,1}\\mu_{n,2})$, $\\bar\\mu_{22}=\\mathbb E(\\mu_{n,2}^2)$.",
+  "proof_latex": null,
+  "proof_note": "原书未给独立完整证明。",
+  "context_notation": [],
+  "extra_assumptions": [
+    "使用独立乘积μ.prodη及实际推前不变性，不把所求矩方程当作该定理假设；所有坐标L²、噪声中心化明示。",
+    "只讨论已存在的平稳分布矩，初值分布趋平稳及长时间平均的遍历收敛未证明。"
+  ],
+  "issues": [],
+  "statement_scope": "本条逐字引用的全部数学对象与公式；未纳入的上下文另列。",
+  "lean_decl": "MD.Ch07.momentSystem",
+  "lean_declarations": [
+    "MD.Ch07.momentSystem",
+    "MD.Ch07.invariantLinearLaw",
+    "MD.Ch07.stationaryMomentSystem"
+  ],
+  "source_page_verification": "见source_page_checks.json；必须已目视核对本条原页。",
+  "repair_log": [],
+  "documented_priors": []
+}
+```
+
+## 完整本条Lean
+```lean
+def momentSystem (a b c d u v w Q P C : ℝ) : Prop :=
+  Q = a^2*Q+b^2*P+2*a*b*C+u ∧
+  P = c^2*Q+d^2*P+2*c*d*C+w ∧
+  C = a*c*Q+b*d*P+(a*d+b*c)*C+v
+
+def invariantLinearLaw (μ η : Measure (ℝ × ℝ)) (a b c d : ℝ) : Prop :=
+  IsProbabilityMeasure μ ∧ IsProbabilityMeasure η ∧
+  Measure.map (fun z ↦ linearUpdate a b c d z.1 z.2) (μ.prod η) = μ
+
+theorem stationaryMomentSystem (μ η : Measure (ℝ × ℝ)) (a b c d : ℝ)
+    (hinv : invariantLinearLaw μ η a b c d)
+    (hq : MemLp (fun x ↦ x.1) 2 μ) (hp : MemLp (fun x ↦ x.2) 2 μ)
+    (hr : MemLp (fun x ↦ x.1) 2 η) (hs : MemLp (fun x ↦ x.2) 2 η)
+    (hmean : (∫ x, x.1 ∂η) = 0 ∧ (∫ x, x.2 ∂η) = 0) :
+    momentSystem a b c d (momentQ η) (momentQP η) (momentP η)
+      (momentQ μ) (momentP μ) (momentQP μ) := by
+  sorry
+```
+
+## 项目依赖定义体及选择规格
+以下def/abbrev/structure完整保留；定理列出完整类型，Mathlib标准定义无需摘录。
+
+### MD.Ch07.linearUpdate (Blueprint/Ch07.lean:413)
+原文件上下文：
+```lean
+open Set Filter MeasureTheory ProbabilityTheory MolecularDynamics
+open scoped BigOperators Topology ContDiff ENNReal NNReal
+variable {Ω : Type*} [MeasurableSpace Ω]
+variable {n : ℕ}
+```
+```lean
+def linearUpdate (a b c d : ℝ) (x noise : ℝ × ℝ) : ℝ × ℝ :=
+  (a*x.1+b*x.2+noise.1,c*x.1+d*x.2+noise.2)
+```
+
+### MD.Ch07.momentQ (Blueprint/Ch07.lean:415)
+原文件上下文：
+```lean
+open Set Filter MeasureTheory ProbabilityTheory MolecularDynamics
+open scoped BigOperators Topology ContDiff ENNReal NNReal
+variable {Ω : Type*} [MeasurableSpace Ω]
+variable {n : ℕ}
+```
+```lean
+def momentQ (μ : Measure (ℝ × ℝ)) : ℝ := ∫ x, x.1^2 ∂μ
+```
+
+### MD.Ch07.momentP (Blueprint/Ch07.lean:416)
+原文件上下文：
+```lean
+open Set Filter MeasureTheory ProbabilityTheory MolecularDynamics
+open scoped BigOperators Topology ContDiff ENNReal NNReal
+variable {Ω : Type*} [MeasurableSpace Ω]
+variable {n : ℕ}
+```
+```lean
+def momentP (μ : Measure (ℝ × ℝ)) : ℝ := ∫ x, x.2^2 ∂μ
+```
+
+### MD.Ch07.momentQP (Blueprint/Ch07.lean:417)
+原文件上下文：
+```lean
+open Set Filter MeasureTheory ProbabilityTheory MolecularDynamics
+open scoped BigOperators Topology ContDiff ENNReal NNReal
+variable {Ω : Type*} [MeasurableSpace Ω]
+variable {n : ℕ}
+```
+```lean
+def momentQP (μ : Measure (ℝ × ℝ)) : ℝ := ∫ x, x.1*x.2 ∂μ
+```
+
+### MD.Ch07.momentSystem (Blueprint/Ch07.lean:445)
+原文件上下文：
+```lean
+open Set Filter MeasureTheory ProbabilityTheory MolecularDynamics
+open scoped BigOperators Topology ContDiff ENNReal NNReal
+variable {Ω : Type*} [MeasurableSpace Ω]
+variable {n : ℕ}
+```
+```lean
+def momentSystem (a b c d u v w Q P C : ℝ) : Prop :=
+  Q = a^2*Q+b^2*P+2*a*b*C+u ∧
+  P = c^2*Q+d^2*P+2*c*d*C+w ∧
+  C = a*c*Q+b*d*P+(a*d+b*c)*C+v
+```
+
+### MD.Ch07.invariantLinearLaw (Blueprint/Ch07.lean:450)
+原文件上下文：
+```lean
+open Set Filter MeasureTheory ProbabilityTheory MolecularDynamics
+open scoped BigOperators Topology ContDiff ENNReal NNReal
+variable {Ω : Type*} [MeasurableSpace Ω]
+variable {n : ℕ}
+```
+```lean
+def invariantLinearLaw (μ η : Measure (ℝ × ℝ)) (a b c d : ℝ) : Prop :=
+  IsProbabilityMeasure μ ∧ IsProbabilityMeasure η ∧
+  Measure.map (fun z ↦ linearUpdate a b c d z.1 z.2) (μ.prod η) = μ
+```
+
+### MD.Ch07.stationaryMomentSystem (Blueprint/Ch07.lean:454)
+原文件上下文：
+```lean
+open Set Filter MeasureTheory ProbabilityTheory MolecularDynamics
+open scoped BigOperators Topology ContDiff ENNReal NNReal
+variable {Ω : Type*} [MeasurableSpace Ω]
+variable {n : ℕ}
+```
+```lean
+theorem stationaryMomentSystem (μ η : Measure (ℝ × ℝ)) (a b c d : ℝ)
+    (hinv : invariantLinearLaw μ η a b c d)
+    (hq : MemLp (fun x ↦ x.1) 2 μ) (hp : MemLp (fun x ↦ x.2) 2 μ)
+    (hr : MemLp (fun x ↦ x.1) 2 η) (hs : MemLp (fun x ↦ x.2) 2 η)
+    (hmean : (∫ x, x.1 ∂η) = 0 ∧ (∫ x, x.2 ∂η) = 0) :
+    momentSystem a b c d (momentQ η) (momentQP η) (momentP η)
+      (momentQ μ) (momentP μ) (momentQP μ)
+```
+
+### MolecularDynamics.Chapter02Review.Q (MolecularDynamics/Chapter02/ReviewDefinitions.lean:17)
+原文件上下文：
+```lean
+open Set Filter Matrix
+open scoped BigOperators Topology
+```
+```lean
+abbrev Q (n : ℕ) := Fin n → ℝ
+```
+
+### MolecularDynamics.Chapter04Review.Q (MolecularDynamics/Chapter04/ReviewDefinitions.lean:15)
+原文件上下文：
+```lean
+open Set Matrix
+open scoped BigOperators Topology Matrix.Norms.Elementwise
+```
+```lean
+abbrev Q (n : ℕ) := Fin n → ℝ
+```
