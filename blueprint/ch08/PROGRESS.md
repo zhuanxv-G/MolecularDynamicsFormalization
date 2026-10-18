@@ -1,6 +1,6 @@
 # 第8章逐条进度
 
-当前正文落盘：39条。全部正文完成：否。章末完整check：未完成。
+当前正文落盘：44条。全部正文完成：否。章末完整check：未完成。
 
 | source_id | 原页PDF | 本地对照 | 编译/公理 | 数学状态 | 网站 |
 |---|---|---|---|---|---|
@@ -43,3 +43,8 @@
 | MD-8.4.4-VelocityRescaling | 376 | PASS | 通过 | 未证陈述 | 待审 |
 | MD-8.4.4-RescalingStationary | 376 | PASS | 通过 | 未证陈述 | 待审 |
 | MD-8.4.5-ThermostatEfficiency | 377–378 | PASS | 通过 | 定义 | 待审 |
+| MD-8.5-SLS | 378–379 | PASS | 通过 | 定义 | 待审 |
+| MD-8.5-SLSBracketPrinted | 379 | NEEDS_HUMAN | 通过 | 未证陈述 | 待审 |
+| MD-8.5-SLSHormander | 378–379 | PASS | 通过 | 未证陈述 | 待审 |
+| MD-8.5-SLSConservation | 379 | PASS | 通过 | 未证陈述 | 待审 |
+| MD-8.5-SLSLeapfrog | 379–380 | PASS | 通过 | 定义 | 待审 |

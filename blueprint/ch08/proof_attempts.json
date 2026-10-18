@@ -106,5 +106,23 @@
     "category": "缺大型理论",
     "routes": [],
     "decision": "缺大型理论时直接记录缺项；否则最多三条短路线。"
+  },
+  "MD-8.5-SLSBracketPrinted": {
+    "reason": "Printed括号符号疑误不证；修正版需实际方向导数计算。",
+    "category": "原书疑误不证",
+    "routes": [],
+    "decision": "缺大型理论时直接记录缺项；否则最多三条短路线。"
+  },
+  "MD-8.5-SLSHormander": {
+    "reason": "实际向量场二重括号与点态张成闭包。",
+    "category": "缺大型理论",
+    "routes": [],
+    "decision": "缺大型理论时直接记录缺项；否则最多三条短路线。"
+  },
+  "MD-8.5-SLSConservation": {
+    "reason": "一般U的方向能量守恒与实际散度计算。",
+    "category": "缺大型理论",
+    "routes": [],
+    "decision": "缺大型理论时直接记录缺项；否则最多三条短路线。"
   }
 }

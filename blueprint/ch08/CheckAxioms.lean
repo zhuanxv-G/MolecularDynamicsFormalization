@@ -117,3 +117,17 @@ import Blueprint.Ch08
 #print axioms MD.Ch08.rescalingErrorEstimate
 #print axioms MD.Ch08.nhlRateEstimate
 #print axioms MD.Ch08.nhlErrorEstimate
+#print axioms MD.Ch08.slsDrift
+#print axioms MD.Ch08.slsNoise
+#print axioms MD.Ch08.isSLSSolution
+#print axioms MD.Ch08.slsDeterministic
+#print axioms MD.Ch08.slsBathNoise
+#print axioms MD.Ch08.slsBracketPrinted
+#print axioms MD.Ch08.slsBracket_corrected
+#print axioms MD.Ch08.slsHormander
+#print axioms MD.Ch08.slsDeterministic_stationary
+#print axioms MD.Ch08.slsDeterministic_divergence
+#print axioms MD.Ch08.slsBathKick
+#print axioms MD.Ch08.slsDriftStep
+#print axioms MD.Ch08.slsLeapfrog
+#print axioms MD.Ch08.slsCoordinateField

@@ -13,7 +13,7 @@ for name in ['AGENTS.md','docs/handoff/CURRENT_STATE.zh-CN.md']:
 with (ROOT/'docs/handoff/WORK_LOG.zh-CN.md').open('a',encoding='utf-8') as f:
     f.write('\n## 2026-10-18 第28号§'+args.section+'检查点\n'+message+'\n下一步：'+args.next+'；网站尚未审阅，不做附加章节。\n')
 (BASE/'LOCAL_PIPELINE.md').write_text('# 第8章本地五步流程\n\n'+message+'\n下一步：'+args.next+'。\n原文JSON → Lean陈述 → 目视原页逐条对照 → 单文件与逐声明公理 → 文档。\n',encoding='utf-8')
-files=['AGENTS.md','docs/handoff/CURRENT_STATE.zh-CN.md','docs/handoff/RESUME_PROMPT.zh-CN.md','docs/handoff/WORK_LOG.zh-CN.md','Blueprint/Ch08.lean','blueprint/ch08','docs/review/CH07_BLUEPRINT.zh-CN.md']
+files=['AGENTS.md','docs/handoff/CURRENT_STATE.zh-CN.md','docs/handoff/RESUME_PROMPT.zh-CN.md','docs/handoff/WORK_LOG.zh-CN.md','Blueprint/Ch08.lean','blueprint/ch08','docs/review/CH08_BLUEPRINT.zh-CN.md']
 files += [p.relative_to(ROOT).as_posix() for p in (ROOT/'scripts').glob('ch08_*.py')]
 # Normalize only chapter-8 metadata index paths on the case-insensitive filesystem.
 for line in subprocess.check_output(['git','ls-files','--stage'],cwd=ROOT,text=True).splitlines():

@@ -82,7 +82,7 @@ def render():
           '未证原因：'+r['missing'] if r['missing'] else '本条未登记待证缺项。',
           '位置：Blueprint/Ch08.lean；'+', '.join(r['lean_declarations'])+'。','']
     (BASE/'PROGRESS.md').write_text('\n'.join(progress)+'\n',encoding='utf-8')
-    (ROOT/'docs/review/CH07_BLUEPRINT.zh-CN.md').write_text('\n'.join(doc)+'\n',encoding='utf-8')
+    (ROOT/'docs/review/CH08_BLUEPRINT.zh-CN.md').write_text('\n'.join(doc)+'\n',encoding='utf-8')
 
 def batch(label):
     source,audit=generate();folder=BASE/'validation/batches';folder.mkdir(parents=True,exist_ok=True)
