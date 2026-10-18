@@ -1,6 +1,6 @@
 # 第8章 Lean Blueprint 本地审阅材料
 
-当前已整理21条；网站尚未审阅。正文范围为印刷329–399页（PDF350–420），末页仅取Exercises之前的正文；PDF423起附录不在本轮范围。
+当前已整理39条；网站尚未审阅。正文范围为印刷329–399页（PDF350–420），末页仅取Exercises之前的正文；PDF423起附录不在本轮范围。
 
 ## 1. MD-8.1-CanonicalCorrelation · definition · 印刷p.329–330 / PDFp.350–351
 
@@ -1005,4 +1005,875 @@ theorem arrheniusRate_nonneg (A ΔE kB T : ℝ) (hA : 0 ≤ A) :
 定义；Lean陈述可检查，证明完整性按本条状态区分。
 本条未登记待证缺项。
 位置：Blueprint/Ch08.lean；MD.Ch08.arrheniusRate, MD.Ch08.arrheniusRate_nonneg。
+
+## 1. MD-8.4-AdditiveThermostatSDE · definition · 印刷p.342–343 / PDFp.363–364
+
+### 2. 原文陈述
+
+dq=M⁻¹pdt; dp=-∇Udt-Φ(ξ,z)-Γpdt+√(2k_BT)M^{1/2}Γ^{1/2}dW; dξ=gdt-Γ̂ξdt+√(2k_BT)M̂^{1/2}Γ̂^{1/2}dŴ. All Wiener coordinates are independent.
+
+### 3. 原文证明
+
+对应原页推导逐字保存在statement_verbatim/original_page_text；排版以原页PDF为准。
+
+原页文字及推导保存在原文JSON的original_page_text；网站子包附对应完整原页PDF。
+
+### 4. 完整当前Lean（原文与修正版独立列出）
+
+```lean
+def independentWiener (P : Measure Ω) (k : ℕ) (W : ℝ → Ω → Vec k) : Prop :=
+  IsProbabilityMeasure P ∧ (∀ j, IsBrownianReal (fun t sample ↦ W t sample j) P) ∧
+    iIndepFun (fun j sample ↦ fun t : ℝ ↦ W t sample j) P
+def additiveSDE {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E] [MeasurableSpace E]
+    (P : Measure Ω) (k : ℕ) (W : ℝ → Ω → Vec k)
+    (X : ℝ → Ω → E) (x0 : E) (a : E → E) (B : Fin k → E) : Prop :=
+  independentWiener P k W ∧ (∀ᵐ sample ∂P, Continuous (fun t ↦ X t sample)) ∧
+  (∀ t : ℝ, 0 ≤ t → Measurable[MeasurableSpace.comap
+    (fun (sample : Ω) (s : Icc (0 : ℝ) t) ↦ W s sample) inferInstance] (X t)) ∧
+  ∀ t : ℝ, 0 ≤ t →
+    (∀ᵐ sample ∂P, IntervalIntegrable (fun s ↦ a (X s sample)) volume 0 t) ∧
+    ∀ᵐ sample ∂P, X t sample = x0 + (∫ s in 0..t, a (X s sample)) +
+      ∑ j, (W t sample j-W 0 sample j) • B j
+def stochasticThermostatDrift {k : ℕ} (invm : Vec n) (U : Vec n → ℝ)
+    (Φ : Phase n × Vec k → Vec n) (g : Phase n × Vec k → Vec k)
+    (Γ : Matrix (Fin n) (Fin n) ℝ) (Γhat : Matrix (Fin k) (Fin k) ℝ)
+    (z : Phase n × Vec k) : Phase n × Vec k :=
+  ((fun i ↦ invm i*z.1.2 i, fun i ↦ -gradient U z.1.1 i-Φ z i-(Γ *ᵥ z.1.2) i),
+   g z - Γhat *ᵥ z.2)
+def fluctuationDissipation (M Γ B : Matrix (Fin n) (Fin n) ℝ) (β : ℝ) : Prop :=
+  0 < β ∧ M.PosDef ∧ Γ.PosSemidef ∧ B*B.transpose = (2/β) • (Γ*M)
+```
+
+### 5. 对照表
+
+| 原文成分 | Lean对应 | 说明 |
+|---|---|---|
+| 本条引用的对象与公式 | MD.Ch08.independentWiener, MD.Ch08.additiveSDE, MD.Ch08.stochasticThermostatDrift, MD.Ch08.fluctuationDissipation | 一般漂移、常噪声SDE与协方差关系；未构造矩阵平方根。 |
+
+[EXTRA] 加性噪声用独立Wiener路径增量的精确积分方程；漂移可积、路径连续且适应自然历史。完整矩阵噪声给因子B和涨落耗散资格，物理/热浴两组坐标共同独立。
+记号与上下文：见所列原文与Lean量化变量。
+
+### 6. 审计结论
+
+本地：已对照目视原页核对对象、量词、技术资格和所列覆盖范围；网站尚未审阅。
+疑点：本条暂未发现需单列的原书疑误。
+网站：尚未送审。
+
+### 7. 状态与证明位置
+
+定义；Lean陈述可检查，证明完整性按本条状态区分。
+本条未登记待证缺项。
+位置：Blueprint/Ch08.lean；MD.Ch08.independentWiener, MD.Ch08.additiveSDE, MD.Ch08.stochasticThermostatDrift, MD.Ch08.fluctuationDissipation。
+
+## 1. MD-8.4-OUStationarityPrinted · unnumbered_claim · 印刷p.343–344 / PDFp.364–365
+
+### 2. 原文陈述
+
+The OU momentum process with drift -Γp and noise √(2k_BT) M^{1/2}Γ^{1/2} preserves exp(-βpᵀM⁻¹p/2). The displayed diffusion term is β⁻¹Tr(Γ^{1/2}M^{1/2}[βM⁻¹ppᵀM⁻¹-M⁻¹]M^{1/2}Γ^{1/2})ρ̄=-drift.
+
+### 3. 原文证明
+
+对应原页推导逐字保存在statement_verbatim/original_page_text；排版以原页PDF为准。
+
+原页文字及推导保存在原文JSON的original_page_text；网站子包附对应完整原页PDF。
+
+### 4. 完整当前Lean（原文与修正版独立列出）
+
+```lean
+def ouFokkerPlanck (A C : Matrix (Fin n) (Fin n) ℝ) (ρ : Vec n → ℝ) (p : Vec n) : ℝ :=
+  textbookDivergence (fun x ↦ ρ x • (A *ᵥ x)) p +
+    (∑ i, ∑ j, C i j * fderiv ℝ (fun x ↦ gradient ρ x j) p (Pi.single i 1))/2
+theorem ouStationarity_corrected (M Γ B : Matrix (Fin n) (Fin n) ℝ) (β : ℝ)
+    (hf : fluctuationDissipation M Γ B β) :
+    ∀ p, ouFokkerPlanck Γ (B*B.transpose)
+      (fun x ↦ Real.exp (-β * dot x (M⁻¹ *ᵥ x)/2)) p = 0 := by
+  sorry
+theorem diffusionPrinted (β : ℝ) (hβ : 0 < β) : (1/β)*(-1) = -(1 : ℝ) := by
+  sorry
+theorem diffusionPrinted_counterexample : ¬ ((1/(2:ℝ))*(-1) = -(1:ℝ)) := by norm_num
+```
+
+### 5. 对照表
+
+| 原文成分 | Lean对应 | 说明 |
+|---|---|---|
+| 本条引用的对象与公式 | MD.Ch08.ouFokkerPlanck, MD.Ch08.ouStationarity_corrected, MD.Ch08.diffusionPrinted, MD.Ch08.diffusionPrinted_counterexample | 本条列出的数学对象与结论全部；上下文见逐字原页。 |
+
+[EXTRA] Printed保留显示抵消式的M=Γ=1,p=0标量特例；修正版为完整匹配协方差后的OU驻定式；不将转移分布存在性作为已证。
+记号与上下文：见所列原文与Lean量化变量。
+
+### 6. 审计结论
+
+本地：已对照目视原页核对对象、量词、技术资格和所列覆盖范围；网站尚未审阅。
+疑点：已目视核对原页PDF364–365：一般M与Γ仅对称不足保证原噪声协方差匹配，应加ΓM=MΓ或直接给涨落耗散关系；PDF365将Hessian的β提取后仍留β⁻¹，标量β=2,p=0已反例。
+网站：尚未送审。
+
+### 7. 状态与证明位置
+
+未证陈述；Lean陈述可检查，证明完整性按本条状态区分。
+未证原因：Printed代数疑误不证；修正版需Gaussian梯度/Hessian矩阵计算。
+位置：Blueprint/Ch08.lean；MD.Ch08.ouFokkerPlanck, MD.Ch08.ouStationarity_corrected, MD.Ch08.diffusionPrinted, MD.Ch08.diffusionPrinted_counterexample。
+
+## 1. MD-8.4-LiftedThermostat · definition · 印刷p.344–345 / PDFp.365–366
+
+### 2. 原文陈述
+
+dz=F(z)dt+ξG(z)dt, dξ=g(z)dt-γξdt+σdW. The lifted fields are b₀=(F+ξG,g-γξ), b₁=(0,σ).
+
+### 3. 原文证明
+
+对应原页推导逐字保存在statement_verbatim/original_page_text；排版以原页PDF为准。
+
+原页文字及推导保存在原文JSON的original_page_text；网站子包附对应完整原页PDF。
+
+### 4. 完整当前Lean（原文与修正版独立列出）
+
+```lean
+def liftedThermostat (F G : Vec n → Vec n) (g : Vec n → ℝ) (γ σ : ℝ)
+    (P : Measure Ω) (W : ℝ → Ω → Vec 1) (X : ℝ → Ω → Vec n × ℝ)
+    (x0 : Vec n × ℝ) : Prop :=
+  additiveSDE P 1 W X x0 (textbookThermostatDrift F G g γ)
+    (fun _ ↦ (0, σ))
+```
+
+### 5. 对照表
+
+| 原文成分 | Lean对应 | 说明 |
+|---|---|---|
+| 本条引用的对象与公式 | MD.Ch08.liftedThermostat | 本条列出的数学对象与结论全部；上下文见逐字原页。 |
+
+[EXTRA] 真实Wiener、适应性和可积性由additiveSDE给出；σ≠0在Hörmander结论中单列。
+记号与上下文：见所列原文与Lean量化变量。
+
+### 6. 审计结论
+
+本地：已对照目视原页核对对象、量词、技术资格和所列覆盖范围；网站尚未审阅。
+疑点：本条暂未发现需单列的原书疑误。
+网站：尚未送审。
+
+### 7. 状态与证明位置
+
+定义；Lean陈述可检查，证明完整性按本条状态区分。
+本条未登记待证缺项。
+位置：Blueprint/Ch08.lean；MD.Ch08.liftedThermostat。
+
+## 1. MD-8.4-Proposition82 · Proposition 8.2 · 印刷p.344–345 / PDFp.365–366
+
+### 2. 原文陈述
+
+If the Lie algebra generated by F and G in (8.25) spans R^m, then the Hörmander condition holds for (8.25)–(8.26).
+
+### 3. 原文证明
+
+对应原页推导逐字保存在statement_verbatim/original_page_text；排版以原页PDF为准。
+
+原页文字及推导保存在原文JSON的original_page_text；网站子包附对应完整原页PDF。
+
+### 4. 完整当前Lean（原文与修正版独立列出）
+
+```lean
+theorem proposition82Printed (F G : Vec n → Vec n) (g : Vec n → ℝ) (γ σ : ℝ)
+    (hF : ContDiff ℝ ∞ F) (hG : ContDiff ℝ ∞ G) (hg : ContDiff ℝ ∞ g)
+    (w : Vec n × ℝ) (hspan : textbookHormanderAt {F,G} w.1) :
+    textbookHormanderAt (textbookThermostatSeed F G g γ σ) w := by
+  sorry
+theorem proposition82_corrected (F G : Vec n → Vec n) (g : Vec n → ℝ) (γ σ : ℝ)
+    (hF : ContDiff ℝ ∞ F) (hG : ContDiff ℝ ∞ G) (hg : ContDiff ℝ ∞ g)
+    (hσ : σ ≠ 0) (w : Vec n × ℝ) (hspan : textbookHormanderAt {F,G} w.1) :
+    textbookHormanderAt (textbookThermostatSeed F G g γ σ) w := by
+  exact textbookThermostatHormanderLift F G g γ σ hF hG hg hσ w hspan
+```
+
+### 5. 对照表
+
+| 原文成分 | Lean对应 | 说明 |
+|---|---|---|
+| 本条引用的对象与公式 | MD.Ch08.proposition82Printed, MD.Ch08.proposition82_corrected | 本条列出的数学对象与结论全部；上下文见逐字原页。 |
+
+[EXTRA] Printed版保留未要求非零σ的原文强度，不证明；修正版完整使用真实迭代Lie括号张成定义。
+记号与上下文：见所列原文与Lean量化变量。
+
+### 6. 审计结论
+
+本地：已对照目视原页核对对象、量词、技术资格和所列覆盖范围；网站尚未审阅。
+疑点：已目视核对原页PDF365–366：证明除以σ，定理需σ≠0；光滑向量场资格明确补足。
+网站：尚未送审。
+
+### 7. 状态与证明位置
+
+未证陈述；Lean陈述可检查，证明完整性按本条状态区分。
+未证原因：Printed缺非零噪声不证；修正版完整桥接。
+位置：Blueprint/Ch08.lean；MD.Ch08.proposition82Printed, MD.Ch08.proposition82_corrected。
+
+## 1. MD-8.4.1-NHL · definition · 印刷p.345–346 / PDFp.366–367
+
+### 2. 原文陈述
+
+dq=M⁻¹pdt, dp=-∇Udt-ξpdt, dξ=μ⁻¹[pᵀM⁻¹p-N_dk_BT]dt-γξdt+√(2k_BTγμ⁻¹)dW. Quadratic specialization: U=qᵀAq/2, M=I.
+
+### 3. 原文证明
+
+对应原页推导逐字保存在statement_verbatim/original_page_text；排版以原页PDF为准。
+
+原页文字及推导保存在原文JSON的original_page_text；网站子包附对应完整原页PDF。
+
+### 4. 完整当前Lean（原文与修正版独立列出）
+
+```lean
+def nhlDrift (invm : Vec n) (U : Vec n → ℝ) (β Q γ : ℝ) (z : Phase n × ℝ) : Phase n × ℝ :=
+  (nhField invm U β Q z).1 |> fun physical ↦ (physical, (nhField invm U β Q z).2-γ*z.2)
+def isNHLSolution (invm : Vec n) (U : Vec n → ℝ) (β Q γ : ℝ)
+    (P : Measure Ω) (W : ℝ → Ω → Vec 1) (X : ℝ → Ω → Phase n × ℝ)
+    (x0 : Phase n × ℝ) : Prop :=
+  thermostatParameters invm β Q ∧ 0 < γ ∧
+    additiveSDE P 1 W X x0 (nhlDrift invm U β Q γ)
+      (fun _ ↦ (0, Real.sqrt (2*γ/(β*Q))))
+def harmonicPotential (A : Matrix (Fin n) (Fin n) ℝ) (q : Vec n) : ℝ := dot q (A *ᵥ q)/2
+```
+
+### 5. 对照表
+
+| 原文成分 | Lean对应 | 说明 |
+|---|---|---|
+| 本条引用的对象与公式 | MD.Ch08.nhlDrift, MD.Ch08.isNHLSolution, MD.Ch08.harmonicPotential | NHL全SDE与二次势；一般质量重缩放和NHL概率不变性在其他条目/缺口中列。 |
+
+[EXTRA] Q>0、β>0、γ>0及单独立Wiener；二次系统A对称正定、M=I；高维无约束自由度n。
+记号与上下文：见所列原文与Lean量化变量。
+
+### 6. 审计结论
+
+本地：已对照目视原页核对对象、量词、技术资格和所列覆盖范围；网站尚未审阅。
+疑点：本条暂未发现需单列的原书疑误。
+网站：尚未送审。
+
+### 7. 状态与证明位置
+
+定义；Lean陈述可检查，证明完整性按本条状态区分。
+本条未登记待证缺项。
+位置：Blueprint/Ch08.lean；MD.Ch08.nhlDrift, MD.Ch08.isNHLSolution, MD.Ch08.harmonicPotential。
+
+## 1. MD-8.4.1-Lemma81 · Lemma 8.1 · 印刷p.347 / PDFp.368
+
+### 2. 原文陈述
+
+C_k=(A^{k-1}p,A^kq), D_k=(A^kq,-A^kp) belong to the Lie algebra generated by F=(p,-Aq), G=(0,p), k=1,2,...
+
+### 3. 原文证明
+
+The proof of this is straightforward by induction on k. (See exercises.)
+
+原页文字及推导保存在原文JSON的original_page_text；网站子包附对应完整原页PDF。
+
+### 4. 完整当前Lean（原文与修正版独立列出）
+
+```lean
+theorem lemma81 (A : Matrix (Fin n) (Fin n) ℝ) (k : ℕ) :
+    textbookThermostatC A k ∈ textbookThermostatLieSpan A ∧
+    textbookThermostatD A k ∈ textbookThermostatLieSpan A := by
+  exact textbookThermostat_C_D_mem_lieSpan A k
+```
+
+### 5. 对照表
+
+| 原文成分 | Lean对应 | 说明 |
+|---|---|---|
+| 本条引用的对象与公式 | MD.Ch08.lemma81 | 本条列出的数学对象与结论全部；上下文见逐字原页。 |
+
+[EXTRA] Lean索引k=0对应原文k=1；完整实际线性场、导数括号与End括号约定均摘录；生成子代数在相反括号下相同。
+记号与上下文：见所列原文与Lean量化变量。
+
+### 6. 审计结论
+
+本地：已对照目视原页核对对象、量词、技术资格和所列覆盖范围；网站尚未审阅。
+疑点：本条暂未发现需单列的原书疑误。
+网站：尚未送审。
+
+### 7. 状态与证明位置
+
+已证；Lean陈述可检查，证明完整性按本条状态区分。
+本条未登记待证缺项。
+位置：Blueprint/Ch08.lean；MD.Ch08.lemma81。
+
+## 1. MD-8.4.1-Proposition83 · Proposition 8.3 · 印刷p.347–348 / PDFp.368–369
+
+### 2. 原文陈述
+
+If A is symmetric positive definite with distinct eigenvalues, the 2N_c vectors C₁,D₁,...,C_Nc,D_Nc are linearly independent on D=R^{2Nc}\⋃V_k.
+
+### 3. 原文证明
+
+对应原页推导逐字保存在statement_verbatim/original_page_text；排版以原页PDF为准。
+
+原页文字及推导保存在原文JSON的original_page_text；网站子包附对应完整原页PDF。
+
+### 4. 完整当前Lean（原文与修正版独立列出）
+
+```lean
+theorem proposition83 (A : Matrix (Fin n) (Fin n) ℝ) (hA : A.PosDef)
+    (hdist : Function.Injective hA.1.eigenvalues) (z : textbookThermostatPhase n)
+    (hz : z ∈ textbookThermostatModeDomain hA.1) :
+    LinearIndependent ℝ (textbookThermostatFamily A z) := by
+  exact textbookThermostatFamily_linearIndependent A hA hdist z hz
+```
+
+### 5. 对照表
+
+| 原文成分 | Lean对应 | 说明 |
+|---|---|---|
+| 本条引用的对象与公式 | MD.Ch08.proposition83 | 本条列出的数学对象与结论全部；上下文见逐字原页。 |
+
+[EXTRA] D的每个特征模态中q、p不能同时为0；有限族用Fin n⊕Fin n索引；完整证明消去两组系数。
+记号与上下文：见所列原文与Lean量化变量。
+
+### 6. 审计结论
+
+本地：已对照目视原页核对对象、量词、技术资格和所列覆盖范围；网站尚未审阅。
+疑点：本条暂未发现需单列的原书疑误。
+网站：尚未送审。
+
+### 7. 状态与证明位置
+
+已证；Lean陈述可检查，证明完整性按本条状态区分。
+本条未登记待证缺项。
+位置：Blueprint/Ch08.lean；MD.Ch08.proposition83。
+
+## 1. MD-8.4.1-Theorem81 · Theorem 8.1 · 印刷p.346–348 / PDFp.367–369
+
+### 2. 原文陈述
+
+If A is symmetric positive definite with distinct eigenvalues, (8.30)–(8.32) satisfies the Hörmander condition on D×R.
+
+### 3. 原文证明
+
+对应原页推导逐字保存在statement_verbatim/original_page_text；排版以原页PDF为准。
+
+原页文字及推导保存在原文JSON的original_page_text；网站子包附对应完整原页PDF。
+
+### 4. 完整当前Lean（原文与修正版独立列出）
+
+```lean
+theorem theorem81Printed (A : Matrix (Fin n) (Fin n) ℝ) (hA : A.PosDef)
+    (hdist : Function.Injective hA.1.eigenvalues) (Q θ γ σ : ℝ)
+    (w : textbookThermostatPhase n × ℝ) (hw : w.1 ∈ textbookThermostatModeDomain hA.1) :
+    textbookHormanderAt {textbookNHLDrift A Q θ γ, textbookThermostatNoise σ} w := by
+  sorry
+theorem theorem81_corrected (A : Matrix (Fin n) (Fin n) ℝ) (hA : A.PosDef)
+    (hdist : Function.Injective hA.1.eigenvalues) (Q θ γ σ : ℝ) (hQ : 0 < Q)
+    (hθ : 0 < θ) (hγ : 0 < γ) (hσ : σ ≠ 0)
+    (w : textbookThermostatPhase n × ℝ) (hw : w.1 ∈ textbookThermostatModeDomain hA.1) :
+    textbookHormanderAt {textbookNHLDrift A Q θ γ, textbookThermostatNoise σ} w := by
+  exact textbookNHL_hormander A hA hdist Q θ γ σ hσ w hw
+```
+
+### 5. 对照表
+
+| 原文成分 | Lean对应 | 说明 |
+|---|---|---|
+| 本条引用的对象与公式 | MD.Ch08.theorem81Printed, MD.Ch08.theorem81_corrected | 本条列出的数学对象与结论全部；上下文见逐字原页。 |
+
+[EXTRA] D严格采用每个特征模态q、p不同时为零；正温度、质量、摩擦及非零噪声明确写出。
+记号与上下文：见所列原文与Lean量化变量。
+
+### 6. 审计结论
+
+本地：已对照目视原页核对对象、量词、技术资格和所列覆盖范围；网站尚未审阅。
+疑点：已目视核对原页PDF367–369：继承Proposition8.2证明，必须排除σ=0；只证明Hörmander张成，不自动获得全局几何遍历性。
+网站：尚未送审。
+
+### 7. 状态与证明位置
+
+未证陈述；Lean陈述可检查，证明完整性按本条状态区分。
+未证原因：原文未明确σ≠0的强版本不证；修正版完整桥接。
+位置：Blueprint/Ch08.lean；MD.Ch08.theorem81Printed, MD.Ch08.theorem81_corrected。
+
+## 1. MD-8.4.1-ZeroModeInvariant · unnumbered_claim · 印刷p.346 / PDFp.367
+
+### 2. 原文陈述
+
+V_k={ (q,p) | u_k·q=0, u_k·p=0 } is an invariant submanifold. D=R^{2Nc}\⋃V_k.
+
+### 3. 原文证明
+
+对应原页推导逐字保存在statement_verbatim/original_page_text；排版以原页PDF为准。
+
+原页文字及推导保存在原文JSON的original_page_text；网站子包附对应完整原页PDF。
+
+### 4. 完整当前Lean（原文与修正版独立列出）
+
+```lean
+theorem modeDomain_complement {A : Matrix (Fin n) (Fin n) ℝ} (hA : A.IsHermitian) :
+    textbookThermostatModeDomain hA = (⋃ i, textbookNHLZeroMode hA i)ᶜ :=
+  textbookThermostatModeDomain_eq_compl_zeroModes hA
+theorem zeroMode_invariant {A : Matrix (Fin n) (Fin n) ℝ} (hA : A.IsHermitian)
+    (i : Fin n) {a b : ℝ} (q p : ℝ → Vec n) (ξ : ℝ → ℝ)
+    (hcq : ContinuousOn q (Icc a b)) (hcp : ContinuousOn p (Icc a b))
+    (hξ : ContinuousOn ξ (Icc a b))
+    (hq : ∀ t ∈ Ico a b, HasDerivWithinAt q (p t) (Ici t) t)
+    (hp : ∀ t ∈ Ico a b, HasDerivWithinAt p (-(A *ᵥ q t)-ξ t • p t) (Ici t) t)
+    (hzero : (q a,p a) ∈ textbookNHLZeroMode hA i) :
+    ∀ t ∈ Icc a b, (q t,p t) ∈ textbookNHLZeroMode hA i := by
+  exact textbookNHL_zeroMode_invariant hA i q p ξ hcq hcp hξ hq hp hzero
+```
+
+### 5. 对照表
+
+| 原文成分 | Lean对应 | 说明 |
+|---|---|---|
+| 本条引用的对象与公式 | MD.Ch08.modeDomain_complement, MD.Ch08.zeroMode_invariant | 本条列出的数学对象与结论全部；上下文见逐字原页。 |
+
+[EXTRA] 任意紧时间区间上的实际模态ODE；连续随机热浴路径可逐路径应用，不额外声称SDE解存在。
+记号与上下文：见所列原文与Lean量化变量。
+
+### 6. 审计结论
+
+本地：已对照目视原页核对对象、量词、技术资格和所列覆盖范围；网站尚未审阅。
+疑点：本条暂未发现需单列的原书疑误。
+网站：尚未送审。
+
+### 7. 状态与证明位置
+
+已证；Lean陈述可检查，证明完整性按本条状态区分。
+本条未登记待证缺项。
+位置：Blueprint/Ch08.lean；MD.Ch08.modeDomain_complement, MD.Ch08.zeroMode_invariant。
+
+## 1. MD-8.4.1-NHLGenerator · definition · 印刷p.348 / PDFp.369
+
+### 2. 原文陈述
+
+L_NHL f=M⁻¹p·∇qf-∇U·∇pf-ξp·∇pf+[μ⁻¹(pᵀM⁻¹p-N_dk_BT)-γξ]∂ξf+k_BTγμ⁻¹∂ξ²f.
+
+### 3. 原文证明
+
+对应原页推导逐字保存在statement_verbatim/original_page_text；排版以原页PDF为准。
+
+原页文字及推导保存在原文JSON的original_page_text；网站子包附对应完整原页PDF。
+
+### 4. 完整当前Lean（原文与修正版独立列出）
+
+```lean
+def additiveGenerator {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
+    (F : E → E) (B : E) (f : E → ℝ) (z : E) : ℝ :=
+  fderiv ℝ f z (F z) + fderiv ℝ (fun x ↦ fderiv ℝ f x B) z B / 2
+def nhlGenerator (invm : Vec n) (U : Vec n → ℝ) (β Q γ : ℝ)
+    (f : Phase n × ℝ → ℝ) (z : Phase n × ℝ) : ℝ :=
+  additiveGenerator (nhlDrift invm U β Q γ) (0, Real.sqrt (2*γ/(β*Q))) f z
+def nhlLyapunov (U : Vec n → ℝ) (Q a : ℝ) (z : Phase n × ℝ) : ℝ :=
+  (∑ i, z.1.2 i^2)/2 + U z.1.1 + Q*(z.2-a)^2/2
+def geometricDriftBound {E : Type*} (L : (E → ℝ) → E → ℝ) (V : E → ℝ) : Prop :=
+  (∀ z, 0 < V z) ∧ ∃ α δ : ℝ, 0 < α ∧ 0 < δ ∧ ∀ z, L V z ≤ -α*V z+δ
+```
+
+### 5. 对照表
+
+| 原文成分 | Lean对应 | 说明 |
+|---|---|---|
+| 本条引用的对象与公式 | MD.Ch08.additiveGenerator, MD.Ch08.nhlGenerator, MD.Ch08.nhlLyapunov, MD.Ch08.geometricDriftBound | 本条列出的数学对象与结论全部；上下文见逐字原页。 |
+
+[EXTRA] 采用实际一阶、二阶Fréchet导数；原文省略f的-ξp·∇p理解为作用于f；Q,β,γ须正。
+记号与上下文：见所列原文与Lean量化变量。
+
+### 6. 审计结论
+
+本地：已对照目视原页核对对象、量词、技术资格和所列覆盖范围；网站尚未审阅。
+疑点：本条暂未发现需单列的原书疑误。
+网站：尚未送审。
+
+### 7. 状态与证明位置
+
+定义；Lean陈述可检查，证明完整性按本条状态区分。
+本条未登记待证缺项。
+位置：Blueprint/Ch08.lean；MD.Ch08.additiveGenerator, MD.Ch08.nhlGenerator, MD.Ch08.nhlLyapunov, MD.Ch08.geometricDriftBound。
+
+## 1. MD-8.4.1-LyapunovCalculation · unnumbered_claim · 印刷p.348–349 / PDFp.369–370
+
+### 2. 原文陈述
+
+For M=I, φ=‖p‖²/2+U+μ(ξ-a)²/2, Lφ=-a‖p‖²-γμξ(ξ-a)-N_dk_BT(ξ-a)+k_BTγ.
+
+### 3. 原文证明
+
+对应原页推导逐字保存在statement_verbatim/original_page_text；排版以原页PDF为准。
+
+原页文字及推导保存在原文JSON的original_page_text；网站子包附对应完整原页PDF。
+
+### 4. 完整当前Lean（原文与修正版独立列出）
+
+```lean
+def nhlLyapunovExpression (P2 U ξ Q θ γ a N : ℝ) : ℝ :=
+  -a*P2-γ*Q*ξ*(ξ-a)-N*θ*(ξ-a)+θ*γ
+theorem nhlLyapunov_calculation (U : Vec n → ℝ) (β Q γ a : ℝ)
+    (hU : ContDiff ℝ 2 U) (hβ : 0 < β) (hQ : 0 < Q) (hγ : 0 < γ)
+    (z : Phase n × ℝ) :
+    nhlGenerator (fun _ ↦ 1) U β Q γ (nhlLyapunov U Q a) z =
+      nhlLyapunovExpression (∑ i, z.1.2 i^2) (U z.1.1) z.2 Q (1/β) γ a n := by
+  sorry
+theorem shiftedSquare_bound (ξ a : ℝ) : -ξ^2-a^2 ≤ -(ξ-a)^2/2 := by
+  nlinarith [sq_nonneg (ξ+a)]
+```
+
+### 5. 对照表
+
+| 原文成分 | Lean对应 | 说明 |
+|---|---|---|
+| 本条引用的对象与公式 | MD.Ch08.nhlLyapunovExpression, MD.Ch08.nhlLyapunov_calculation, MD.Ch08.shiftedSquare_bound | 本条列出的数学对象与结论全部；上下文见逐字原页。 |
+
+[EXTRA] U下界>1且上界有限用于后续Lyapunov正性/漂移估计；本条计算本身只需C²。
+记号与上下文：见所列原文与Lean量化变量。
+
+### 6. 审计结论
+
+本地：已对照目视原页核对对象、量词、技术资格和所列覆盖范围；网站尚未审阅。
+疑点：本条暂未发现需单列的原书疑误。
+网站：尚未送审。
+
+### 7. 状态与证明位置
+
+未证陈述；Lean陈述可检查，证明完整性按本条状态区分。
+未证原因：实际扩散生成元作用于二次能量的链式法则。
+位置：Blueprint/Ch08.lean；MD.Ch08.nhlLyapunovExpression, MD.Ch08.nhlLyapunov_calculation, MD.Ch08.shiftedSquare_bound。
+
+## 1. MD-8.4.1-LyapunovRatePrinted · unnumbered_claim · 印刷p.349 / PDFp.370
+
+### 2. 原文陈述
+
+Choose aγμ-N_dk_BT=0, α=min(2a,γμ), δ=αU_max+γμa²+aN_dk_BT+k_BTγ; then Lφ≤-αφ+δ.
+
+### 3. 原文证明
+
+对应原页推导逐字保存在statement_verbatim/original_page_text；排版以原页PDF为准。
+
+原页文字及推导保存在原文JSON的original_page_text；网站子包附对应完整原页PDF。
+
+### 4. 完整当前Lean（原文与修正版独立列出）
+
+```lean
+def lyapunovAlphaPrinted (a γ Q : ℝ) : ℝ := min (2*a) (γ*Q)
+def lyapunovAlpha_corrected (a γ : ℝ) : ℝ := min (2*a) γ
+theorem lyapunovRatePrinted (P2 U Umax ξ Q θ γ a N : ℝ)
+    (hP : 0 ≤ P2) (hU : U ≤ Umax) (hQ : 0 < Q) (hθ : 0 < θ)
+    (hγ : 0 < γ) (ha : 0 < a) (hbalance : a*γ*Q=N*θ) :
+    nhlLyapunovExpression P2 U ξ Q θ γ a N ≤
+      -lyapunovAlphaPrinted a γ Q * (P2/2+U+Q*(ξ-a)^2/2) +
+      (lyapunovAlphaPrinted a γ Q*Umax+γ*Q*a^2+a*N*θ+θ*γ) := by
+  sorry
+theorem lyapunovRate_counterexample :
+    ¬ (nhlLyapunovExpression 0 2 10 4 1 1 2 8 ≤
+      -lyapunovAlphaPrinted 2 1 4 * ((0:ℝ)/2+2+4*(10-2)^2/2) +
+      (lyapunovAlphaPrinted 2 1 4*2+1*4*2^2+2*8*1+1*1)) := by
+  norm_num [nhlLyapunovExpression, lyapunovAlphaPrinted]
+theorem lyapunovRate_corrected (P2 U Umax ξ Q θ γ a N : ℝ)
+    (hP : 0 ≤ P2) (hU : U ≤ Umax) (hQ : 0 < Q) (hθ : 0 < θ)
+    (hγ : 0 < γ) (ha : 0 < a) (hbalance : a*γ*Q=N*θ) :
+    nhlLyapunovExpression P2 U ξ Q θ γ a N ≤
+      -lyapunovAlpha_corrected a γ * (P2/2+U+Q*(ξ-a)^2/2) +
+      (lyapunovAlpha_corrected a γ*Umax+γ*Q*a^2+a*N*θ+θ*γ) := by
+  sorry
+```
+
+### 5. 对照表
+
+| 原文成分 | Lean对应 | 说明 |
+|---|---|---|
+| 本条引用的对象与公式 | MD.Ch08.lyapunovAlphaPrinted, MD.Ch08.lyapunovAlpha_corrected, MD.Ch08.lyapunovRatePrinted, MD.Ch08.lyapunovRate_counterexample, MD.Ch08.lyapunovRate_corrected | 本条列出的数学对象与结论全部；上下文见逐字原页。 |
+
+[EXTRA] 修正为min(2a,γ)，仅修正漂移代数估计；几何遍历还需完整概率半群、小集条件和解理论，未声称已证。
+记号与上下文：见所列原文与Lean量化变量。
+
+### 6. 审计结论
+
+本地：已对照目视原页核对对象、量词、技术资格和所列覆盖范围；网站尚未审阅。
+疑点：已目视核对原页PDF370：与φ热浴项μ(ξ-a)²/2比较时衰减系数应≤γ，所印min(2a,γμ)对一般μ不足；正参数数值反例已列。
+网站：尚未送审。
+
+### 7. 状态与证明位置
+
+未证陈述；Lean陈述可检查，证明完整性按本条状态区分。
+未证原因：Printed有反例不证；修正版代数二次型估计待短证。
+位置：Blueprint/Ch08.lean；MD.Ch08.lyapunovAlphaPrinted, MD.Ch08.lyapunovAlpha_corrected, MD.Ch08.lyapunovRatePrinted, MD.Ch08.lyapunovRate_counterexample, MD.Ch08.lyapunovRate_corrected。
+
+## 1. MD-8.4.2-NHLTimestep · definition · 印刷p.350 / PDFp.371
+
+### 2. 原文陈述
+
+The symmetric NHL splitting uses kick, drift, feedback, damping, exact OU, damping, feedback, drift, kick. ζ=√(k_BTμ⁻¹(1-e^{-2γh})).
+
+### 3. 原文证明
+
+对应原页推导逐字保存在statement_verbatim/original_page_text；排版以原页PDF为准。
+
+原页文字及推导保存在原文JSON的original_page_text；网站子包附对应完整原页PDF。
+
+### 4. 完整当前Lean（原文与修正版独立列出）
+
+```lean
+def nhlOU (β Q γ h R : ℝ) (z : Phase n × ℝ) : Phase n × ℝ :=
+  (z.1, Real.exp (-γ*h)*z.2 + Real.sqrt ((1-Real.exp (-2*γ*h))/(β*Q))*R)
+def forceKick (U : Vec n → ℝ) (h : ℝ) (z : Phase n × ℝ) : Phase n × ℝ :=
+  ((z.1.1, fun i ↦ z.1.2 i-h*gradient U z.1.1 i), z.2)
+def bathDamping (h : ℝ) (z : Phase n × ℝ) : Phase n × ℝ :=
+  ((z.1.1, fun i ↦ Real.exp (-h*z.2)*z.1.2 i), z.2)
+def nhlStep (invm : Vec n) (U : Vec n → ℝ) (β Q γ h R : ℝ) : Phase n × ℝ → Phase n × ℝ :=
+  forceKick U (h/2) ∘ nhDrift invm (h/2) ∘ nhFeedback invm β Q (h/2) ∘ bathDamping (h/2) ∘
+  nhlOU β Q γ h R ∘ bathDamping (h/2) ∘ nhFeedback invm β Q (h/2) ∘ nhDrift invm (h/2) ∘ forceKick U (h/2)
+def standardNormalSequence (P : Measure Ω) (R : ℕ → Ω → ℝ) : Prop :=
+  IsProbabilityMeasure P ∧ iIndepFun R P ∧ ∀ k, HasLaw (R k) (gaussianReal 0 1) P
+```
+
+### 5. 对照表
+
+| 原文成分 | Lean对应 | 说明 |
+|---|---|---|
+| 本条引用的对象与公式 | MD.Ch08.nhlOU, MD.Ch08.forceKick, MD.Ch08.bathDamping, MD.Ch08.nhlStep, MD.Ch08.standardNormalSequence | 本条列出的数学对象与结论全部；上下文见逐字原页。 |
+
+[EXTRA] R_n独立标准正态；h≥0、β,Q>0、γ≥0用于OU噪声解释；所谓无限摩擦稳定性没有扩大成完整算法无条件稳定定理。
+记号与上下文：见所列原文与Lean量化变量。
+
+### 6. 审计结论
+
+本地：已对照目视原页核对对象、量词、技术资格和所列覆盖范围；网站尚未审阅。
+疑点：本条暂未发现需单列的原书疑误。
+网站：尚未送审。
+
+### 7. 状态与证明位置
+
+定义；Lean陈述可检查，证明完整性按本条状态区分。
+本条未登记待证缺项。
+位置：Blueprint/Ch08.lean；MD.Ch08.nhlOU, MD.Ch08.forceKick, MD.Ch08.bathDamping, MD.Ch08.nhlStep, MD.Ch08.standardNormalSequence。
+
+## 1. MD-8.4.1-NHLWeakStationary · unnumbered_claim · 印刷p.345–346 / PDFp.366–367
+
+### 2. 原文陈述
+
+The NHL method preserves the extended canonical distribution ρ_β exp(-βμξ²/2), by adding an OU thermostat in ξ.
+
+### 3. 原文证明
+
+对应原页推导逐字保存在statement_verbatim/original_page_text；排版以原页PDF为准。
+
+原页文字及推导保存在原文JSON的original_page_text；网站子包附对应完整原页PDF。
+
+### 4. 完整当前Lean（原文与修正版独立列出）
+
+```lean
+def weakStationaryNHL (invm : Vec n) (U : Vec n → ℝ) (β Q γ : ℝ)
+    (ρ : Phase n × ℝ → ℝ) : Prop :=
+  probabilityDensity volume ρ ∧ ∀ f : Phase n × ℝ → ℝ,
+    ContDiff ℝ ∞ f → HasCompactSupport f →
+    (∫ z, nhlGenerator invm U β Q γ f z * ρ z) = 0
+theorem nhlWeakStationary (invm : Vec n) (U : Vec n → ℝ) (β Q γ Z : ℝ)
+    (hp : thermostatParameters invm β Q) (hγ : 0 < γ) (hZ : 0 < Z)
+    (hU : ContDiff ℝ 2 U) (hi : Integrable (nhWeight invm U β Q))
+    (hpart : ∫ z, nhWeight invm U β Q z = Z) :
+    weakStationaryNHL invm U β Q γ (fun z ↦ nhWeight invm U β Q z/Z) := by
+  sorry
+```
+
+### 5. 对照表
+
+| 原文成分 | Lean对应 | 说明 |
+|---|---|---|
+| 本条引用的对象与公式 | MD.Ch08.weakStationaryNHL, MD.Ch08.nhlWeakStationary | 本条列出的数学对象与结论全部；上下文见逐字原页。 |
+
+[EXTRA] 只覆盖归一概率密度的弱驻定积分式；Markov半群不变性、唯一性及遍历结论需要额外解理论，明确列覆盖缺口。
+记号与上下文：见所列原文与Lean量化变量。
+
+### 6. 审计结论
+
+本地：已对照目视原页核对对象、量词、技术资格和所列覆盖范围；网站尚未审阅。
+疑点：本条暂未发现需单列的原书疑误。
+网站：尚未送审。
+
+### 7. 状态与证明位置
+
+未证陈述；Lean陈述可检查，证明完整性按本条状态区分。
+未证原因：Gibbs积分分部及OU对称性，未将局部生成元式冒充保测流或遍历定理。
+位置：Blueprint/Ch08.lean；MD.Ch08.weakStationaryNHL, MD.Ch08.nhlWeakStationary。
+
+## 1. MD-8.4.3-PreEquilibriumMeans · definition · 印刷p.354–355 / PDFp.375–376
+
+### 2. 原文陈述
+
+θ̄(t)=∫2Kρ(q,p,ξ,t)dωdξ, ξ̄(t)=∫ξρ(q,p,ξ,t)dωdξ, with normalized pre-equilibrium density ρ.
+
+### 3. 原文证明
+
+对应原页推导逐字保存在statement_verbatim/original_page_text；排版以原页PDF为准。
+
+原页文字及推导保存在原文JSON的original_page_text；网站子包附对应完整原页PDF。
+
+### 4. 完整当前Lean（原文与修正版独立列出）
+
+```lean
+def meanKineticTwice (invm : Vec n) (ρ : ℝ → Phase n × ℝ → ℝ) (t : ℝ) : ℝ :=
+  ∫ z, kineticTwice invm z.1.2 * ρ t z
+def meanBath (ρ : ℝ → Phase n × ℝ → ℝ) (t : ℝ) : ℝ := ∫ z, z.2 * ρ t z
+def preEquilibriumDensity (ρ : ℝ → Phase n × ℝ → ℝ) : Prop :=
+  ∀ t, 0 ≤ t → probabilityDensity volume (ρ t)
+```
+
+### 5. 对照表
+
+| 原文成分 | Lean对应 | 说明 |
+|---|---|---|
+| 本条引用的对象与公式 | MD.Ch08.meanKineticTwice, MD.Ch08.meanBath, MD.Ch08.preEquilibriumDensity | 本条列出的数学对象与结论全部；上下文见逐字原页。 |
+
+[EXTRA] ρ非负、可积且归一；外引局部稳定性分析未给闭合方程，列覆盖缺口。
+记号与上下文：见所列原文与Lean量化变量。
+
+### 6. 审计结论
+
+本地：已对照目视原页核对对象、量词、技术资格和所列覆盖范围；网站尚未审阅。
+疑点：本条暂未发现需单列的原书疑误。
+网站：尚未送审。
+
+### 7. 状态与证明位置
+
+定义；Lean陈述可检查，证明完整性按本条状态区分。
+本条未登记待证缺项。
+位置：Blueprint/Ch08.lean；MD.Ch08.meanKineticTwice, MD.Ch08.meanBath, MD.Ch08.preEquilibriumDensity。
+
+## 1. MD-8.4.4-VelocityRescaling · unnumbered_claim · 印刷p.355 / PDFp.376
+
+### 2. 原文陈述
+
+dq=pdt, dp=-∇Udt-Ψ(K)pdt+√(2k_BTΦ(K))p dW; Ψ=(2K-(1+N_d)k_BT)Φ-2k_BTKΦ′. Φ(K)=γ_VR/(2K).
+
+### 3. 原文证明
+
+对应原页推导逐字保存在statement_verbatim/original_page_text；排版以原页PDF为准。
+
+原页文字及推导保存在原文JSON的original_page_text；网站子包附对应完整原页PDF。
+
+### 4. 完整当前Lean（原文与修正版独立列出）
+
+```lean
+def rescalingPsi (Φ : ℝ → ℝ) (θ K : ℝ) : ℝ :=
+  (2*K-((n:ℝ)+1)*θ)*Φ K-2*θ*K*deriv Φ K
+def rescalingDrift (U : Vec n → ℝ) (Φ : ℝ → ℝ) (θ : ℝ) (z : Phase n) : Phase n :=
+  (z.2, fun i ↦ -gradient U z.1 i-rescalingPsi (n:=n) Φ θ ((∑ j, z.2 j^2)/2)*z.2 i)
+def rescalingNoise (Φ : ℝ → ℝ) (θ : ℝ) (z : Phase n) : Phase n :=
+  (0, fun i ↦ Real.sqrt (2*θ*Φ ((∑ j, z.2 j^2)/2))*z.2 i)
+def originalRescalingPhi (γ K : ℝ) : ℝ := γ/(2*K)
+def rescalingAdmissible (Φ : ℝ → ℝ) : Prop :=
+  ContDiffOn ℝ ∞ Φ (Ioi 0) ∧ (∀ K, 0 < K → 0 < Φ K) ∧
+  (∃ C ε : ℝ, 0 < ε ∧ ∀ K, 0 < K → K < ε → |K*Φ K| ≤ C) ∧
+  ∃ C : ℝ, ∃ m : ℕ, ∀ K, 1 ≤ K → |Φ K| ≤ C*K^m
+theorem rescalingPsi_original (γ θ K : ℝ) (hK : K ≠ 0) :
+    rescalingPsi (n:=n) (originalRescalingPhi γ) θ K =
+      (1-((n:ℝ)-1)*θ/(2*K))*γ := by
+  sorry
+```
+
+### 5. 对照表
+
+| 原文成分 | Lean对应 | 说明 |
+|---|---|---|
+| 本条引用的对象与公式 | MD.Ch08.rescalingPsi, MD.Ch08.rescalingDrift, MD.Ch08.rescalingNoise, MD.Ch08.originalRescalingPhi, MD.Ch08.rescalingAdmissible, MD.Ch08.rescalingPsi_original | 本条列出的数学对象与结论全部；上下文见逐字原页。 |
+
+[EXTRA] Φ在K>0光滑正，KΦ在0附近有界且多项式增长；原始Φ在K=0奇异，未声称全空间光滑扩散或遍历性。
+记号与上下文：见所列原文与Lean量化变量。
+
+### 6. 审计结论
+
+本地：已对照目视原页核对对象、量词、技术资格和所列覆盖范围；网站尚未审阅。
+疑点：本条暂未发现需单列的原书疑误。
+网站：尚未送审。
+
+### 7. 状态与证明位置
+
+未证陈述；Lean陈述可检查，证明完整性按本条状态区分。
+未证原因：导数γ/(2K)的商法则短桥接。
+位置：Blueprint/Ch08.lean；MD.Ch08.rescalingPsi, MD.Ch08.rescalingDrift, MD.Ch08.rescalingNoise, MD.Ch08.originalRescalingPhi, MD.Ch08.rescalingAdmissible, MD.Ch08.rescalingPsi_original。
+
+## 1. MD-8.4.4-RescalingStationary · unnumbered_claim · 印刷p.355 / PDFp.376
+
+### 2. 原文陈述
+
+With these definitions, the method preserves the canonical probability density ρ_β. The book does not prove ergodicity.
+
+### 3. 原文证明
+
+对应原页推导逐字保存在statement_verbatim/original_page_text；排版以原页PDF为准。
+
+原页文字及推导保存在原文JSON的original_page_text；网站子包附对应完整原页PDF。
+
+### 4. 完整当前Lean（原文与修正版独立列出）
+
+```lean
+theorem rescalingStationary (U : Vec n → ℝ) (Φ : ℝ → ℝ) (θ Z : ℝ)
+    (hU : ContDiff ℝ 2 U) (hΦ : rescalingAdmissible Φ) (hθ : 0 < θ) (hZ : 0 < Z)
+    (hρ : probabilityDensity volume (fun z : Phase n ↦
+      Real.exp (-(kineticTwice (fun _ ↦ 1) z.2/2+U z.1)/θ)/Z))
+    (f : Phase n → ℝ) (hf : ContDiff ℝ ∞ f) (hc : HasCompactSupport f)
+    (havoid : ∀ z ∈ Function.support f, z.2 ≠ 0) :
+    (∫ z, (fderiv ℝ f z (rescalingDrift U Φ θ z) +
+      fderiv ℝ (fun x ↦ fderiv ℝ f x (rescalingNoise Φ θ z)) z (rescalingNoise Φ θ z)/2) *
+      (Real.exp (-(kineticTwice (fun _ ↦ 1) z.2/2+U z.1)/θ)/Z)) = 0 := by
+  sorry
+```
+
+### 5. 对照表
+
+| 原文成分 | Lean对应 | 说明 |
+|---|---|---|
+| 本条引用的对象与公式 | MD.Ch08.rescalingStationary | 本条列出的数学对象与结论全部；上下文见逐字原页。 |
+
+[EXTRA] 测试函数支撑远离K=0，覆盖弱驻定式；完整随机解与半群不变性列缺口。二阶项冻结f的一阶微分求导，表示Itô Hessian而不混入Stratonovich漂移。
+记号与上下文：见所列原文与Lean量化变量。
+
+### 6. 审计结论
+
+本地：已对照目视原页核对对象、量词、技术资格和所列覆盖范围；网站尚未审阅。
+疑点：本条暂未发现需单列的原书疑误。
+网站：尚未送审。
+
+### 7. 状态与证明位置
+
+未证陈述；Lean陈述可检查，证明完整性按本条状态区分。
+未证原因：退化乘性扩散的Gibbs积分分部；不建设一般Fokker–Planck与遍历理论。
+位置：Blueprint/Ch08.lean；MD.Ch08.rescalingStationary。
+
+## 1. MD-8.4.5-ThermostatEfficiency · definition · 印刷p.356–357 / PDFp.377–378
+
+### 2. 原文陈述
+
+efficiency = rate of convergence to equilibrium / rate of growth of perturbation of dynamics. Table 8.1 gives analytic lowest-order estimates; NHL has initially quadratic error.
+
+### 3. 原文证明
+
+对应原页推导逐字保存在statement_verbatim/original_page_text；排版以原页PDF为准。
+
+原页文字及推导保存在原文JSON的original_page_text；网站子包附对应完整原页PDF。
+
+### 4. 完整当前Lean（原文与修正版独立列出）
+
+```lean
+def thermostatEfficiency (convergence perturbation : ℝ) : ℝ := convergence/perturbation
+def langevinErrorEstimate (γ t : ℝ) : ℝ := γ*t
+def rescalingRateEstimate (meanK2Phi θ : ℝ) (N : ℕ) : ℝ := 4*meanK2Phi/(θ*N)
+def rescalingErrorEstimate (meanKPhi : ℝ) (N : ℕ) (t : ℝ) : ℝ := 2*meanKPhi/(N:ℝ)*t
+def nhlRateEstimate (N : ℕ) (θ Q : ℝ) : ℝ := Real.sqrt ((N:ℝ)*θ/Q)
+def nhlErrorEstimate (θ Q t : ℝ) : ℝ := θ/(2*Q)*t^2
+```
+
+### 5. 对照表
+
+| 原文成分 | Lean对应 | 说明 |
+|---|---|---|
+| 本条引用的对象与公式 | MD.Ch08.thermostatEfficiency, MD.Ch08.langevinErrorEstimate, MD.Ch08.rescalingRateEstimate, MD.Ch08.rescalingErrorEstimate, MD.Ch08.nhlRateEstimate, MD.Ch08.nhlErrorEstimate | 效率记号与表8.1的主要解析速率/误差公式；经验曲线逐项排除。 |
+
+[EXTRA] 表8.1解析估计作为公式定义保留；其外引渐近推导、谱隙与误差阶不是已证定理，列覆盖缺口。
+记号与上下文：见所列原文与Lean量化变量。
+
+### 6. 审计结论
+
+本地：已对照目视原页核对对象、量词、技术资格和所列覆盖范围；网站尚未审阅。
+疑点：本条暂未发现需单列的原书疑误。
+网站：尚未送审。
+
+### 7. 状态与证明位置
+
+定义；Lean陈述可检查，证明完整性按本条状态区分。
+本条未登记待证缺项。
+位置：Blueprint/Ch08.lean；MD.Ch08.thermostatEfficiency, MD.Ch08.langevinErrorEstimate, MD.Ch08.rescalingRateEstimate, MD.Ch08.rescalingErrorEstimate, MD.Ch08.nhlRateEstimate, MD.Ch08.nhlErrorEstimate。
 

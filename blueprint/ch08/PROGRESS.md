@@ -1,6 +1,6 @@
 # 第8章逐条进度
 
-当前正文落盘：21条。全部正文完成：否。章末完整check：未完成。
+当前正文落盘：39条。全部正文完成：否。章末完整check：未完成。
 
 | source_id | 原页PDF | 本地对照 | 编译/公理 | 数学状态 | 网站 |
 |---|---|---|---|---|---|
@@ -25,3 +25,21 @@
 | MD-8.2.1-Proposition81 | 359–360 | PASS | 通过 | 已证 | 待审 |
 | MD-8.2.2-NHChains | 360–361 | PASS | 通过 | 未证陈述 | 待审 |
 | MD-8.3-ArrheniusRate | 363 | PASS | 通过 | 定义 | 待审 |
+| MD-8.4-AdditiveThermostatSDE | 363–364 | PASS | 通过 | 定义 | 待审 |
+| MD-8.4-OUStationarityPrinted | 364–365 | NEEDS_HUMAN | 通过 | 未证陈述 | 待审 |
+| MD-8.4-LiftedThermostat | 365–366 | PASS | 通过 | 定义 | 待审 |
+| MD-8.4-Proposition82 | 365–366 | NEEDS_HUMAN | 通过 | 未证陈述 | 待审 |
+| MD-8.4.1-NHL | 366–367 | PASS | 通过 | 定义 | 待审 |
+| MD-8.4.1-Lemma81 | 368 | PASS | 通过 | 已证 | 待审 |
+| MD-8.4.1-Proposition83 | 368–369 | PASS | 通过 | 已证 | 待审 |
+| MD-8.4.1-Theorem81 | 367–369 | NEEDS_HUMAN | 通过 | 未证陈述 | 待审 |
+| MD-8.4.1-ZeroModeInvariant | 367 | PASS | 通过 | 已证 | 待审 |
+| MD-8.4.1-NHLGenerator | 369 | PASS | 通过 | 定义 | 待审 |
+| MD-8.4.1-LyapunovCalculation | 369–370 | PASS | 通过 | 未证陈述 | 待审 |
+| MD-8.4.1-LyapunovRatePrinted | 370 | NEEDS_HUMAN | 通过 | 未证陈述 | 待审 |
+| MD-8.4.2-NHLTimestep | 371 | PASS | 通过 | 定义 | 待审 |
+| MD-8.4.1-NHLWeakStationary | 366–367 | PASS | 通过 | 未证陈述 | 待审 |
+| MD-8.4.3-PreEquilibriumMeans | 375–376 | PASS | 通过 | 定义 | 待审 |
+| MD-8.4.4-VelocityRescaling | 376 | PASS | 通过 | 未证陈述 | 待审 |
+| MD-8.4.4-RescalingStationary | 376 | PASS | 通过 | 未证陈述 | 待审 |
+| MD-8.4.5-ThermostatEfficiency | 377–378 | PASS | 通过 | 定义 | 待审 |

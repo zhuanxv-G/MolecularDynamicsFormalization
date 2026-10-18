@@ -41,7 +41,7 @@ add('RescalingStationary','8.4.4',355,r'''With these definitions, the method pre
     (f : Phase n → ℝ) (hf : ContDiff ℝ ∞ f) (hc : HasCompactSupport f)
     (havoid : ∀ z ∈ Function.support f, z.2 ≠ 0) :
     (∫ z, (fderiv ℝ f z (rescalingDrift U Φ θ z) +
-      fderiv ℝ (fun x ↦ fderiv ℝ f z (rescalingNoise Φ θ x)) z (rescalingNoise Φ θ z)/2) *
+      fderiv ℝ (fun x ↦ fderiv ℝ f x (rescalingNoise Φ θ z)) z (rescalingNoise Φ θ z)/2) *
       (Real.exp (-(kineticTwice (fun _ ↦ 1) z.2/2+U z.1)/θ)/Z)) = 0 := by
   sorry''',extra=['测试函数支撑远离K=0，覆盖弱驻定式；完整随机解与半群不变性列缺口。二阶项冻结f的一阶微分求导，表示Itô Hessian而不混入Stratonovich漂移。'],missing='退化乘性扩散的Gibbs积分分部；不建设一般Fokker–Planck与遍历理论。')
 add('ThermostatEfficiency','8.4.5','356–357',r'''efficiency = rate of convergence to equilibrium / rate of growth of perturbation of dynamics. Table 8.1 gives analytic lowest-order estimates; NHL has initially quadratic error.''',

@@ -58,5 +58,53 @@
     "category": "缺大型理论",
     "routes": [],
     "decision": "缺大型理论时直接记录缺项；否则最多三条短路线。"
+  },
+  "MD-8.4-OUStationarityPrinted": {
+    "reason": "Printed代数疑误不证；修正版需Gaussian梯度/Hessian矩阵计算。",
+    "category": "原书疑误不证",
+    "routes": [],
+    "decision": "缺大型理论时直接记录缺项；否则最多三条短路线。"
+  },
+  "MD-8.4-Proposition82": {
+    "reason": "Printed缺非零噪声不证；修正版完整桥接。",
+    "category": "原书疑误不证",
+    "routes": [],
+    "decision": "缺大型理论时直接记录缺项；否则最多三条短路线。"
+  },
+  "MD-8.4.1-Theorem81": {
+    "reason": "原文未明确σ≠0的强版本不证；修正版完整桥接。",
+    "category": "原书疑误不证",
+    "routes": [],
+    "decision": "缺大型理论时直接记录缺项；否则最多三条短路线。"
+  },
+  "MD-8.4.1-LyapunovCalculation": {
+    "reason": "实际扩散生成元作用于二次能量的链式法则。",
+    "category": "缺大型理论",
+    "routes": [],
+    "decision": "缺大型理论时直接记录缺项；否则最多三条短路线。"
+  },
+  "MD-8.4.1-LyapunovRatePrinted": {
+    "reason": "Printed有反例不证；修正版代数二次型估计待短证。",
+    "category": "原书疑误不证",
+    "routes": [],
+    "decision": "缺大型理论时直接记录缺项；否则最多三条短路线。"
+  },
+  "MD-8.4.1-NHLWeakStationary": {
+    "reason": "Gibbs积分分部及OU对称性，未将局部生成元式冒充保测流或遍历定理。",
+    "category": "缺大型理论",
+    "routes": [],
+    "decision": "缺大型理论时直接记录缺项；否则最多三条短路线。"
+  },
+  "MD-8.4.4-VelocityRescaling": {
+    "reason": "导数γ/(2K)的商法则短桥接。",
+    "category": "缺大型理论",
+    "routes": [],
+    "decision": "缺大型理论时直接记录缺项；否则最多三条短路线。"
+  },
+  "MD-8.4.4-RescalingStationary": {
+    "reason": "退化乘性扩散的Gibbs积分分部；不建设一般Fokker–Planck与遍历理论。",
+    "category": "缺大型理论",
+    "routes": [],
+    "decision": "缺大型理论时直接记录缺项；否则最多三条短路线。"
   }
 }
