@@ -1,6 +1,6 @@
 # 第7章逐条进度
 
-当前正文落盘：68条。全部正文完成：否。章末完整check：未执行。
+当前正文落盘：76条。全部正文完成：否。章末完整check：未执行。
 
 | source_id | 原页PDF | 本地对照 | 编译/公理 | 数学状态 | 网站 |
 |---|---|---|---|---|---|
@@ -72,3 +72,11 @@
 | MD-7.7.3-PerturbationCoefficientEquation | 310–311 | PASS | 通过 | 已证 | 待审 |
 | MD-7.7.3-ObservableCorrectionExpansion | 311 | PASS | 通过 | 已证 | 待审 |
 | MD-7.7.3-PerturbativeSolvabilityCaution | 311 | NEEDS_HUMAN | 通过 | 定义 | 待审 |
+| MD-7.8-FirstOrderOperator | 312 | PASS | 通过 | 未证陈述 | 待审 |
+| MD-7.8-HomogeneousNormalization | 312 | PASS | 通过 | 已证 | 待审 |
+| MD-7.8.1-CommutatorPermutationRelations | 313 | PASS | 通过 | 未证陈述 | 待审 |
+| MD-7.8.1-GibbsDerivativeIdentities | 313–314 | PASS | 通过 | 未证陈述 | 待审 |
+| MD-7.8.1-FirstCorrectionTablePrinted | 314–315 | NEEDS_HUMAN | 通过 | 未证陈述 | 待审 |
+| MD-7.8.1-PositionMomentumCorrections | 315–316 | PASS | 通过 | 未证陈述 | 待审 |
+| MD-7.8.1-OverdampedFirstOrderCaution | 316 | PASS | 通过 | 未证陈述 | 待审 |
+| MD-7.8.2-BiasedDoubleWellExact | 316–318 | PASS | 通过 | 未证陈述 | 待审 |

@@ -897,4 +897,145 @@ theorem observableCorrectionExpansion (ν : Measure Ω) (φ ρ f1 f2 : Ω → �
 def correctionSolvable {E : Type*} [AddCommGroup E] [Module ℝ E]
     (L : Module.End ℝ E) (rhs : E) : Prop := ∃ u : E, L u = rhs
 
+/-- source_id: MD-7.8-FirstOrderOperator · 印刷p.291 / PDFp.312
+[EXTRA] 前向组合采用Z,Y,X顺序；正式级数系数推论覆盖所有六个排列，L0为三者和。修正方程为必要形式方程，可解性独立。 -/
+def firstOrderOperator {R : Type*} [Ring R] [Algebra ℝ R] (X Y Z : R) : R :=
+  (-1/2 : ℝ) • (comm X Y+comm X Z+comm Y Z)
+theorem firstOrderOperator_coefficient {R : Type*} [Ring R] [Algebra ℝ R] (X Y Z : R) :
+    PowerSeries.coeff 1 (formalModifiedGenerator (threeStage X Y Z)) = firstOrderOperator X Y Z := by
+  sorry
+def correctionEquation {E : Type*} [AddCommGroup E] [Module ℝ E]
+    (L L1 : Module.End ℝ E) (ρ ρf : E) : Prop := L ρf = -L1 ρ
+
+/-- source_id: MD-7.8-HomogeneousNormalization · 印刷p.291 / PDFp.312
+[EXTRA] 核恰为ρ的一维空间是明确前提；不把Langevin核唯一性当作已证明。第二条为实际概率归一化的中心化恒等式。 -/
+theorem homogeneousNormalization {E : Type*} [AddCommGroup E] [Module ℝ E]
+    (L : Module.End ℝ E) (ρ u v rhs : E)
+    (hker : ∀ w, L w = 0 → ∃ c : ℝ, w = c • ρ)
+    (hu : L u = rhs) (hv : L v = rhs) : ∃ c : ℝ, u = v+c • ρ := by
+  obtain ⟨c,hc⟩ := hker (u-v) (by rw [map_sub,hu,hv,sub_self])
+  exact ⟨c,by rw [← hc]; abel⟩
+theorem centeredParticular (μ : Measure Ω) [IsProbabilityMeasure μ] (f : Ω → ℝ)
+    (hf : Integrable f μ) : (∫ x, f x-(∫ y, f y ∂μ) ∂μ) = 0 := by
+  rw [integral_sub hf (integrable_const _)]
+  simp
+
+/-- source_id: MD-7.8.1-CommutatorPermutationRelations · 印刷p.292 / PDFp.313
+[EXTRA] 实际线性作用与Oρ=0,(A+B)ρ=0明示。修正函数的符号关系还需统一零均值和核唯一性；本条只证明/陈述交换子与右端项关系，函数关系列缺口。 -/
+theorem commutatorPermutationRelations {E : Type*} [AddCommGroup E] [Module ℝ E]
+    (A B O : Module.End ℝ E) (ρ : E) (hO : O ρ = 0) (hH : (A+B) ρ = 0) :
+    (comm O A+comm O B) ρ = 0 ∧
+    firstOrderOperator A B O ρ = firstOrderOperator O A B ρ ∧
+    firstOrderOperator A B O ρ = -firstOrderOperator O B A ρ ∧
+    firstOrderOperator A B O ρ = -firstOrderOperator B A O ρ ∧
+    firstOrderOperator A B O ρ = (-1/2 : ℝ) • comm A B ρ ∧
+    firstOrderOperator A O B ρ = -firstOrderOperator B O A ρ ∧
+    firstOrderOperator A O B ρ = (-1/2 : ℝ) • comm (A-B) O ρ+firstOrderOperator A B O ρ := by
+  sorry
+
+/-- source_id: MD-7.8.1-GibbsDerivativeIdentities · 印刷p.292–293 / PDFp.313–314
+[EXTRA] ρ为未归一Gibbs权，所有微分等式对常数归一化同样成立；实际概率还要正有限配分积分。所有质量正、β>0、光滑资格明示。
+[EXTRA] 覆盖g、A/B作用、纯位置ψ作用及O(gρ)两种等价写法；交换子作用与中间OU共轭式在原文登记但另列覆盖缺口。 -/
+def mechanicalHamiltonian (m : V n) (U : V n → ℝ) (x : Phase n) : ℝ :=
+  (∑ i, x.2 i^2/(2*m i))+U x.1
+def gibbsWeight (m : V n) (U : V n → ℝ) (β : ℝ) (x : Phase n) : ℝ :=
+  Real.exp (-β*mechanicalHamiltonian m U x)
+def gFunction (m : V n) (U : V n → ℝ) (β : ℝ) (x : Phase n) : ℝ :=
+  β*∑ i, x.2 i/m i*gradient U x.1 i
+def phaseO (m : V n) (γ β : ℝ) (ρ : Phase n → ℝ) (x : Phase n) : ℝ :=
+  ouForward m γ β⁻¹ (fun p ↦ ρ (x.1,p)) x.2
+def phaseLD (m : V n) (U : V n → ℝ) (γ β : ℝ) (ρ : Phase n → ℝ) : Phase n → ℝ :=
+  aForward m ρ+bForward U ρ+phaseO m γ β ρ
+theorem gibbsDerivativeIdentities (m : V n) (U ψ : V n → ℝ) (β γ : ℝ)
+    (hm : ∀ i, 0 < m i) (hβ : 0 < β) (hU : ContDiff ℝ ⊤ U) (hψ : ContDiff ℝ ⊤ ψ) :
+    let ρ := gibbsWeight m U β
+    let g := gFunction m U β
+    aForward m ρ = g*ρ ∧ bForward U ρ = -(g*ρ) ∧
+    phaseLD m U γ β (fun x ↦ ψ x.1*ρ x) =
+      (fun x ↦ -(∑ i, x.2 i/m i*gradient ψ x.1 i)*ρ x) ∧
+    phaseO m γ β (g*ρ) = (fun x ↦ -γ*g x*ρ x) ∧
+    phaseO m γ β (g*ρ) = (fun x ↦ γ*β*phaseLD m U γ β (fun y ↦ U y.1*ρ y) x) := by
+  sorry
+
+/-- source_id: MD-7.8.1-FirstCorrectionTablePrinted · 印刷p.293–294 / PDFp.314–315
+[EXTRA] 六个排列分别编码ABO,OAB,OBA,BAO,AOB,BOA；原文版不证明，修正版陈述实际PDE。c任意常数时PDE不变，零均值另行规定c=γ〈U〉。
+[ERRATUM?] 已目视核对PDF315／印刷294：(7.25c)中动量梯度项印为负号，与同页上一段推导给出的正号及f_AOB=-f_BOA矛盾；修正为括号内正号。 -/
+def firstCorrectionTablePrinted (s : Fin 6) (m : V n) (U : V n → ℝ) (β γ c : ℝ) (x : Phase n) : ℝ :=
+  let v := ∑ i, x.2 i/m i*gradient U x.1 i
+  if s = 0 ∨ s = 1 then β/2*(γ*U x.1-v-c)
+  else if s = 2 ∨ s = 3 ∨ s = 4 then -β/2*(γ*U x.1-v-c)
+  else β/2*(γ*U x.1+v-c)
+def firstCorrectionTablePrinted_corrected (s : Fin 6) (m : V n) (U : V n → ℝ) (β γ c : ℝ) (x : Phase n) : ℝ :=
+  if s = 4 then -β/2*(γ*U x.1+(∑ i, x.2 i/m i*gradient U x.1 i)-c)
+  else firstCorrectionTablePrinted s m U β γ c x
+theorem firstCorrection_sign_counterexample :
+    (-(1 : ℝ)/2*(1-1-0)) ≠ -(1 : ℝ)/2*(1+1-0) := by norm_num
+def phaseComm (A B : (Phase n → ℝ) → Phase n → ℝ) (ρ : Phase n → ℝ) : Phase n → ℝ := A (B ρ)-B (A ρ)
+def firstCorrectionRHS (s : Fin 6) (m : V n) (U : V n → ℝ) (β γ : ℝ) (ρ : Phase n → ℝ) : Phase n → ℝ :=
+  let A := aForward m
+  let B := bForward U
+  let O := phaseO m γ β
+  let ops := if s = 0 then (A,B,O) else if s = 1 then (O,A,B)
+    else if s = 2 then (O,B,A) else if s = 3 then (B,A,O)
+    else if s = 4 then (A,O,B) else (B,O,A)
+  fun x ↦ (1/2)*(phaseComm ops.1 ops.2.1 ρ x+phaseComm ops.1 ops.2.2 ρ x+phaseComm ops.2.1 ops.2.2 ρ x)
+theorem firstCorrectionTable_pde (s : Fin 6) (m : V n) (U : V n → ℝ) (β γ c : ℝ)
+    (hm : ∀ i, 0 < m i) (hβ : 0 < β) (hU : ContDiff ℝ ⊤ U) :
+    phaseLD m U γ β (fun x ↦ firstCorrectionTablePrinted_corrected s m U β γ c x*gibbsWeight m U β x) =
+      firstCorrectionRHS s m U β γ (gibbsWeight m U β) := by
+  sorry
+
+/-- source_id: MD-7.8.1-PositionMomentumCorrections · 印刷p.294–295 / PDFp.315–316
+[EXTRA] 产品Gibbs实际含位置概率及独立中心Gaussian动量；所有显示期望需可积，未把待求修正值作为假设。
+[EXTRA] 六个算法分别给符号；大摩擦O(γ)的解释来自明确线性γ项，随γ,h的统一误差界未证明。 -/
+def positionGibbs (U : V n → ℝ) (β : ℝ) : Measure (V n) :=
+  volume.withDensity (fun q ↦ ENNReal.ofReal (Real.exp (-β*U q)/(∫ y, Real.exp (-β*U y))))
+def momentumGibbs (m : V n) (β : ℝ) : Measure (V n) := Measure.pi (fun i ↦ gaussianReal 0 (Real.toNNReal (m i/β)))
+def productGibbs (m : V n) (U : V n → ℝ) (β : ℝ) : Measure (Phase n) :=
+  (positionGibbs U β).prod (momentumGibbs m β)
+theorem positionMomentumCorrections (m : V n) (U ψ χ : V n → ℝ) (β γ : ℝ)
+    (hm : ∀ i, 0 < m i) (hβ : 0 < β)
+    (hprob : IsProbabilityMeasure (positionGibbs U β))
+    (hU : Integrable U (positionGibbs U β))
+    (hψ : Integrable ψ (positionGibbs U β)) (hχ : Integrable χ (momentumGibbs m β))
+    (hgrad : ∀ i, Integrable (fun q ↦ gradient U q i) (positionGibbs U β))
+    (hint : ∀ s : Fin 6,
+      Integrable (fun x ↦ ψ x.1*firstCorrectionTablePrinted_corrected s m U β γ (γ*∫ q, U q ∂positionGibbs U β) x) (productGibbs m U β) ∧
+      Integrable (fun x ↦ χ x.2*firstCorrectionTablePrinted_corrected s m U β γ (γ*∫ q, U q ∂positionGibbs U β) x) (productGibbs m U β)) :
+    ∀ s : Fin 6, let sign : ℝ := if s = 0 ∨ s = 1 ∨ s = 5 then 1 else -1
+    let vsign : ℝ := if s = 0 ∨ s = 1 ∨ s = 4 then -1 else 1
+    (∫ x, ψ x.1*firstCorrectionTablePrinted_corrected s m U β γ (γ*∫ q, U q ∂positionGibbs U β) x ∂productGibbs m U β) =
+      sign*γ*β/2*∫ q, (U q-(∫ y, U y ∂positionGibbs U β))*ψ q ∂positionGibbs U β ∧
+    (∫ x, χ x.2*firstCorrectionTablePrinted_corrected s m U β γ (γ*∫ q, U q ∂positionGibbs U β) x ∂productGibbs m U β) =
+      vsign*β/2*∫ x, (∑ i, x.2 i/m i*gradient U x.1 i)*χ x.2 ∂productGibbs m U β := by
+  sorry
+
+/-- source_id: MD-7.8.1-OverdampedFirstOrderCaution · 印刷p.295 / PDFp.316
+[EXTRA] 覆盖AOAB全部更新与固定噪声/固定h下的摩擦极限；不把摩擦极限本身称作过阻尼一致性证明。六个XYZ不一致及AOAB有效时间重标度的一致性仍是明确覆盖缺口。 -/
+def aoab (m : V n) (U : V n → ℝ) (γ θ h : ℝ) (R : V n) : Phase n → Phase n :=
+  kickStep U h ∘ driftStep m (h/2) ∘ ouStep m γ θ h R ∘ driftStep m (h/2)
+def aoabInfiniteFriction (m : V n) (U : V n → ℝ) (θ h : ℝ) (R : V n) : Phase n → Phase n :=
+  kickStep U h ∘ driftStep m (h/2) ∘ (fun x ↦ (x.1,fun i ↦ Real.sqrt θ*Real.sqrt (m i)*R i)) ∘ driftStep m (h/2)
+theorem aoabFrictionLimit (m : V n) (U : V n → ℝ) (θ h : ℝ) (R : V n) (x : Phase n)
+    (hh : 0 < h) (hθ : 0 < θ) (hU : ContDiff ℝ 1 U) :
+    Filter.Tendsto (fun γ : ℝ ↦ aoab m U γ θ h R x) Filter.atTop (𝓝 (aoabInfiniteFriction m U θ h R x)) := by
+  sorry
+
+/-- source_id: MD-7.8.2-BiasedDoubleWellExact · 印刷p.295–297 / PDFp.316–318
+[EXTRA] 保留数值例中的精确数学积分和解析消项；原文虽起初β=1，推导中保留β，本条正β形式需同样积分分部理论。
+[EXTRA] 中间〈qUU′〉公式及γ=2实际误差O(h²)需先有严格弱展开，本条不声称已获该余项。 -/
+def biasedDoubleWell (q : ℝ) : ℝ := (q^2-1)^2+q/2
+def doubleWellObservable (x : ℝ × ℝ) : ℝ := x.2^2-x.1*deriv biasedDoubleWell x.1+2*x.1*x.2
+def doubleWellGibbs (β : ℝ) : Measure (ℝ × ℝ) :=
+  let w := fun x : ℝ × ℝ ↦ Real.exp (-β*(x.2^2/2+biasedDoubleWell x.1))
+  volume.withDensity (fun x ↦ ENNReal.ofReal (w x/(∫ y, w y)))
+def doubleWellBOACorrection (β γ : ℝ) (x : ℝ × ℝ) : ℝ :=
+  β/2*(x.2*deriv biasedDoubleWell x.1+γ*biasedDoubleWell x.1-
+    γ*(∫ y, biasedDoubleWell y.1 ∂doubleWellGibbs β))
+theorem doubleWellExact (β γ : ℝ) (hβ : 0 < β) :
+    (∫ x, doubleWellObservable x ∂doubleWellGibbs β) = 0 ∧
+    (∫ x, doubleWellObservable x*doubleWellBOACorrection β γ x ∂doubleWellGibbs β) = (2-γ)/(2*β) := by
+  sorry
+theorem doubleWellCritical (β : ℝ) : (2-(2 : ℝ))/(2*β) = 0 := by ring
+
 end MD.Ch07

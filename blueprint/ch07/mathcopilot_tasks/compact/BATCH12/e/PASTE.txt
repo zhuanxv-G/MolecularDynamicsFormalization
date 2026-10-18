@@ -1,0 +1,151 @@
+以附件/PASTE 为准，忽略 /workspace 旧文件；Mathlib 定义按标准含义采信。
+本任务只审本条：原文转录、对象资格、定义体、量词、全部结论及[EXTRA]是否一致；Lean编译不代替语义审阅。
+Lean/Mathlib均4.34.0。原页PDF映射：[313]；印刷页=[292].
+input_sha256请原样回显：
+{
+  "Blueprint/Ch07.lean": "ce6b0890e635f2baebb25d007bdf7277208183cc905aa260b833b6737451fa1c",
+  "blueprint/ch07/ch07_source.json": "fd04a4e3fd4c16510dfae44978b8baa88b8150e8efb4cba1a2280a226dd4243e",
+  "BATCH12e_PAGES.pdf": "aa79ab9285bb60d1108bac2c5c902fc21c27586a94ac9a0ed08b10bee3aae21d"
+}
+用代码将JSON对象(batch,input_sha256,items)写到 /workspace/.mathcopilot/reviews/ch07/BATCH12e_review.json；items仅含本source_id。
+items字段：source_id、verdict(PASS/FAIL/NEEDS_HUMAN)、transcription、semantic_review、counterexample、suggested_fix、printed_version、corrected_version。逐版区分原文疑误和修正版结论；缺材料必须具体指出，不猜测。写后json.loads自检，最后仅回复路径及统计。
+
+## 原文JSON
+```json
+{
+  "source_id": "MD-7.8.1-CommutatorPermutationRelations",
+  "kind": "unnumbered_claim",
+  "label": "(7.22)–(7.24)",
+  "section": "7.8.1",
+  "printed_page": "292",
+  "pdf_page": "313",
+  "statement_latex": "\\[([\\mathcal L_O^\\dagger,\\mathcal L_A^\\dagger]+[\\mathcal L_O^\\dagger,\\mathcal L_B^\\dagger])\\rho_\\beta=[\\mathcal L_O^\\dagger,\\mathcal L_A^\\dagger+\\mathcal L_B^\\dagger]\\rho_\\beta=0.\\]\n\\[\\mathcal L_{1,[ABO]}^\\dagger\\rho_\\beta=\\mathcal L_{1,[OAB]}^\\dagger\\rho_\\beta=-\\mathcal L_{1,[OBA]}^\\dagger\\rho_\\beta=-\\mathcal L_{1,[BAO]}^\\dagger\\rho_\\beta=-\\frac12[\\mathcal L_A^\\dagger,\\mathcal L_B^\\dagger]\\rho_\\beta.\\tag{7.22}\\]\n\\[f_{1,[ABO]}=f_{1,[OAB]}=-f_{1,[OBA]}=-f_{1,[BAO]}.\\tag{7.23}\\]\n\\[\\mathcal L_{1,[AOB]}^\\dagger\\rho_\\beta=-\\mathcal L_{1,[BOA]}^\\dagger\\rho_\\beta=-\\frac12[\\mathcal L_A^\\dagger-\\mathcal L_B^\\dagger,\\mathcal L_O^\\dagger]\\rho_\\beta+\\mathcal L_{1,[ABO]}^\\dagger\\rho_\\beta.\\tag{7.24}\\]",
+  "proof_latex": null,
+  "proof_note": "原书未给独立完整证明。",
+  "context_notation": [],
+  "extra_assumptions": [
+    "实际线性作用与Oρ=0,(A+B)ρ=0明示。修正函数的符号关系还需统一零均值和核唯一性；本条只证明/陈述交换子与右端项关系，函数关系列缺口。"
+  ],
+  "issues": [],
+  "statement_scope": "首式及(7.22),(7.24)全部算符作用关系；(7.23)需归一解唯一性桥，未另作Lean定理。",
+  "lean_decl": "MD.Ch07.commutatorPermutationRelations",
+  "lean_declarations": [
+    "MD.Ch07.commutatorPermutationRelations"
+  ],
+  "source_page_verification": "见source_page_checks.json；必须已目视核对本条原页。",
+  "repair_log": [],
+  "documented_priors": []
+}
+```
+
+## 完整本条Lean
+```lean
+theorem commutatorPermutationRelations {E : Type*} [AddCommGroup E] [Module ℝ E]
+    (A B O : Module.End ℝ E) (ρ : E) (hO : O ρ = 0) (hH : (A+B) ρ = 0) :
+    (comm O A+comm O B) ρ = 0 ∧
+    firstOrderOperator A B O ρ = firstOrderOperator O A B ρ ∧
+    firstOrderOperator A B O ρ = -firstOrderOperator O B A ρ ∧
+    firstOrderOperator A B O ρ = -firstOrderOperator B A O ρ ∧
+    firstOrderOperator A B O ρ = (-1/2 : ℝ) • comm A B ρ ∧
+    firstOrderOperator A O B ρ = -firstOrderOperator B O A ρ ∧
+    firstOrderOperator A O B ρ = (-1/2 : ℝ) • comm (A-B) O ρ+firstOrderOperator A B O ρ := by
+  sorry
+```
+
+## 项目依赖定义体及选择规格
+以下def/abbrev/structure完整保留；定理列出完整类型，Mathlib标准定义无需摘录。
+
+### MD.Ch07.comm (Blueprint/Ch07.lean:779)
+原文件上下文：
+```lean
+open Set Filter MeasureTheory ProbabilityTheory MolecularDynamics
+open scoped BigOperators Topology ContDiff ENNReal NNReal
+variable {Ω : Type*} [MeasurableSpace Ω]
+variable {n : ℕ}
+```
+```lean
+def comm {R : Type*} [Ring R] (X Y : R) : R := X*Y-Y*X
+```
+
+### MD.Ch07.firstOrderOperator (Blueprint/Ch07.lean:902)
+原文件上下文：
+```lean
+open Set Filter MeasureTheory ProbabilityTheory MolecularDynamics
+open scoped BigOperators Topology ContDiff ENNReal NNReal
+variable {Ω : Type*} [MeasurableSpace Ω]
+variable {n : ℕ}
+```
+```lean
+def firstOrderOperator {R : Type*} [Ring R] [Algebra ℝ R] (X Y Z : R) : R :=
+  (-1/2 : ℝ) • (comm X Y+comm X Z+comm Y Z)
+```
+
+### MD.Ch07.commutatorPermutationRelations (Blueprint/Ch07.lean:925)
+原文件上下文：
+```lean
+open Set Filter MeasureTheory ProbabilityTheory MolecularDynamics
+open scoped BigOperators Topology ContDiff ENNReal NNReal
+variable {Ω : Type*} [MeasurableSpace Ω]
+variable {n : ℕ}
+```
+```lean
+theorem commutatorPermutationRelations {E : Type*} [AddCommGroup E] [Module ℝ E]
+    (A B O : Module.End ℝ E) (ρ : E) (hO : O ρ = 0) (hH : (A+B) ρ = 0) :
+    (comm O A+comm O B) ρ = 0 ∧
+    firstOrderOperator A B O ρ = firstOrderOperator O A B ρ ∧
+    firstOrderOperator A B O ρ = -firstOrderOperator O B A ρ ∧
+    firstOrderOperator A B O ρ = -firstOrderOperator B A O ρ ∧
+    firstOrderOperator A B O ρ = (-1/2 : ℝ) • comm A B ρ ∧
+    firstOrderOperator A O B ρ = -firstOrderOperator B O A ρ ∧
+    firstOrderOperator A O B ρ = (-1/2 : ℝ) • comm (A-B) O ρ+firstOrderOperator A B O ρ
+```
+
+### MolecularDynamics.Chapter02Review.Q (MolecularDynamics/Chapter02/ReviewDefinitions.lean:17)
+原文件上下文：
+```lean
+open Set Filter Matrix
+open scoped BigOperators Topology
+```
+```lean
+abbrev Q (n : ℕ) := Fin n → ℝ
+```
+
+### MolecularDynamics.Chapter02Review.Z (MolecularDynamics/Chapter02/ReviewDefinitions.lean:18)
+原文件上下文：
+```lean
+open Set Filter Matrix
+open scoped BigOperators Topology
+```
+```lean
+abbrev Z (n : ℕ) := Q n × Q n
+```
+
+### MolecularDynamics.Chapter04Review.Q (MolecularDynamics/Chapter04/ReviewDefinitions.lean:15)
+原文件上下文：
+```lean
+open Set Matrix
+open scoped BigOperators Topology Matrix.Norms.Elementwise
+```
+```lean
+abbrev Q (n : ℕ) := Fin n → ℝ
+```
+
+### MolecularDynamics.Chapter04Review.Z (MolecularDynamics/Chapter04/ReviewDefinitions.lean:16)
+原文件上下文：
+```lean
+open Set Matrix
+open scoped BigOperators Topology Matrix.Norms.Elementwise
+```
+```lean
+abbrev Z (n : ℕ) := Q n × Q n
+```
+
+### MolecularDynamics.Chapter05Review.E (MolecularDynamics/Chapter05/ReviewDefinitions.lean:18)
+原文件上下文：
+```lean
+open Set Filter MeasureTheory Matrix
+open scoped BigOperators Topology ENNReal
+```
+```lean
+abbrev E (n : ℕ) := EuclideanSpace ℝ (Fin n)
+```

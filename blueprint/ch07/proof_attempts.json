@@ -176,5 +176,53 @@
     "category": "缺大型理论",
     "routes": [],
     "decision": "缺大型理论时直接记录缺项；否则最多三条短路线。"
+  },
+  "MD-7.8.1-CommutatorPermutationRelations": {
+    "reason": "线性算符非交换代数作用桥接；本轮保留未证，不建设一般弱误差理论。",
+    "category": "缺大型理论",
+    "routes": [],
+    "decision": "缺大型理论时直接记录缺项；否则最多三条短路线。"
+  },
+  "MD-7.8.1-GibbsDerivativeIdentities": {
+    "reason": "实际多维Gibbs指数微分、二阶OU乘积法则与求和桥，超过短证明；不建SDE解或遍历理论。",
+    "category": "缺大型理论",
+    "routes": [],
+    "decision": "缺大型理论时直接记录缺项；否则最多三条短路线。"
+  },
+  "MD-7.8-FirstOrderOperator": {
+    "reason": null,
+    "category": "时间盒止",
+    "routes": [
+      {
+        "route": "由三阶段BCH的1阶系数重写后module归约",
+        "result": "编译进程运行超过短证明时间盒且内存增长；终止该进程，保留s78a-v1失败证据。",
+        "receipt": "validation/batches/s78a-v1.json"
+      }
+    ],
+    "decision": "缺大型理论时直接记录缺项；否则最多三条短路线。"
+  },
+  "MD-7.8.1-FirstCorrectionTablePrinted": {
+    "reason": "完整多维指数微分及二阶算符乘积展开需较大桥接；保留PDE未证。",
+    "category": "原书疑误不证",
+    "routes": [],
+    "decision": "缺大型理论时直接记录缺项；否则最多三条短路线。"
+  },
+  "MD-7.8.1-PositionMomentumCorrections": {
+    "reason": "需乘积积分和Gaussian奇矩归零的多维短桥；不建设Talay–Tubaro理论。",
+    "category": "缺大型理论",
+    "routes": [],
+    "decision": "缺大型理论时直接记录缺项；否则最多三条短路线。"
+  },
+  "MD-7.8.1-OverdampedFirstOrderCaution": {
+    "reason": "OU指数衰减、sqrt连续及∇U连续的有限维极限短桥；过阻尼时间重标度理论不新建。",
+    "category": "缺大型理论",
+    "routes": [],
+    "decision": "缺大型理论时直接记录缺项；否则最多三条短路线。"
+  },
+  "MD-7.8.2-BiasedDoubleWellExact": {
+    "reason": "需要四次势Gibbs权可积性、积分分部与Gaussian矩的桥；不建设通用弱误差理论。",
+    "category": "缺大型理论",
+    "routes": [],
+    "decision": "缺大型理论时直接记录缺项；否则最多三条短路线。"
   }
 }

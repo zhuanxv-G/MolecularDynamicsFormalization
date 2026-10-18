@@ -1,6 +1,6 @@
 # 第7章 Lean Blueprint 本地审阅材料
 
-当前已整理68条；网站尚未审阅。正文范围为印刷261–326页（PDF282–347），末页仅取Exercises之前的正文。
+当前已整理76条；网站尚未审阅。正文范围为印刷261–326页（PDF282–347），末页仅取Exercises之前的正文。
 
 ## 1. MD-7.1-Bias · definition · 印刷p.263 / PDFp.284
 
@@ -3284,4 +3284,440 @@ def correctionSolvable {E : Type*} [AddCommGroup E] [Module ℝ E]
 定义；单文件编译与逐声明公理核对通过。
 本条未登记待证缺项。
 位置：Blueprint/Ch07.lean；MD.Ch07.correctionSolvable。
+
+## 1. MD-7.8-FirstOrderOperator · (7.20)–(7.21) · 印刷p.291 / PDFp.312
+
+### 2. 原文陈述
+
+By composing the semigroup operators
+\[\exp(h\widehat{\mathcal L}_{[XYZ]}^\dagger)=\exp(h\mathcal L_Z^\dagger)\exp(h\mathcal L_Y^\dagger)\exp(h\mathcal L_X^\dagger),\]
+and computing the terms in the BCH expansion, we have
+\[\widehat{\mathcal L}_{[XYZ]}^\dagger=\mathcal L_{LD}^\dagger+h\mathcal L_{1,[XYZ]}^\dagger+O(h^2),\]
+where
+\[\mathcal L_{1,[XYZ]}^\dagger=-\frac12([\mathcal L_X^\dagger,\mathcal L_Y^\dagger]+[\mathcal L_X^\dagger,\mathcal L_Z^\dagger]+[\mathcal L_Y^\dagger,\mathcal L_Z^\dagger]).\tag{7.20}\]
+The first order correction function for this scheme is then given by the particular solution to the PDE,
+\[\mathcal L_{LD}^\dagger(f_{1,[XYZ]}\rho_\beta)=-\mathcal L_{1,[XYZ]}^\dagger\rho_\beta.\tag{7.21}\]
+
+### 3. 原文证明
+
+原书未给独立完整证明。
+
+### 4. 完整当前Lean（原文与修正版独立列出）
+
+```lean
+def firstOrderOperator {R : Type*} [Ring R] [Algebra ℝ R] (X Y Z : R) : R :=
+  (-1/2 : ℝ) • (comm X Y+comm X Z+comm Y Z)
+theorem firstOrderOperator_coefficient {R : Type*} [Ring R] [Algebra ℝ R] (X Y Z : R) :
+    PowerSeries.coeff 1 (formalModifiedGenerator (threeStage X Y Z)) = firstOrderOperator X Y Z := by
+  sorry
+def correctionEquation {E : Type*} [AddCommGroup E] [Module ℝ E]
+    (L L1 : Module.End ℝ E) (ρ ρf : E) : Prop := L ρf = -L1 ρ
+```
+
+### 5. 对照表
+
+| 原文成分 | Lean对应 | 说明 |
+|---|---|---|
+| 本条引用的对象与公式 | MD.Ch07.firstOrderOperator, MD.Ch07.firstOrderOperator_coefficient, MD.Ch07.correctionEquation | 本条逐字引用的全部数学对象与公式；未纳入的上下文另列。 |
+
+[EXTRA] 前向组合采用Z,Y,X顺序；正式级数系数推论覆盖所有六个排列，L0为三者和。修正方程为必要形式方程，可解性独立。
+记号与上下文：见所列原文与Lean量化变量。
+
+### 6. 审计结论
+
+本地：已对照目视原页核对对象、量词、技术资格和所列覆盖范围；网站尚未审阅。
+疑点：本条暂未发现需单列的原书疑误。
+网站：尚未送审。
+
+### 7. 状态与证明位置
+
+未证陈述；单文件编译与逐声明公理核对通过。
+本条未登记待证缺项。
+位置：Blueprint/Ch07.lean；MD.Ch07.firstOrderOperator, MD.Ch07.firstOrderOperator_coefficient, MD.Ch07.correctionEquation。
+
+## 1. MD-7.8-HomogeneousNormalization · unnumbered_claim · 印刷p.291 / PDFp.312
+
+### 2. 原文陈述
+
+The general solution of (7.21) will consist of the sum of the homogeneous solution $f_{1,[XYZ]}^{[HS]}(q,p)$ and particular solution $f_{1,[XYZ]}^{[PS]}(q,p)$ in the usual way. However, since $\mathcal L_{LD}^\dagger\vartheta=0$ has as its only solution $\vartheta\propto\rho_\beta$, the homogeneous solution of (7.21) is $f_{1,[XYZ]}^{[HS]}(q,p)=c$, for some constant $c$. Our assumption that $\langle f_{1,[XYZ]}\rangle=0$ means that $c=-\langle f_{1,[XYZ]}^{[PS]}\rangle$.
+
+### 3. 原文证明
+
+原书未给独立完整证明。
+
+### 4. 完整当前Lean（原文与修正版独立列出）
+
+```lean
+theorem homogeneousNormalization {E : Type*} [AddCommGroup E] [Module ℝ E]
+    (L : Module.End ℝ E) (ρ u v rhs : E)
+    (hker : ∀ w, L w = 0 → ∃ c : ℝ, w = c • ρ)
+    (hu : L u = rhs) (hv : L v = rhs) : ∃ c : ℝ, u = v+c • ρ := by
+  obtain ⟨c,hc⟩ := hker (u-v) (by rw [map_sub,hu,hv,sub_self])
+  exact ⟨c,by rw [← hc]; abel⟩
+theorem centeredParticular (μ : Measure Ω) [IsProbabilityMeasure μ] (f : Ω → ℝ)
+    (hf : Integrable f μ) : (∫ x, f x-(∫ y, f y ∂μ) ∂μ) = 0 := by
+  rw [integral_sub hf (integrable_const _)]
+  simp
+```
+
+### 5. 对照表
+
+| 原文成分 | Lean对应 | 说明 |
+|---|---|---|
+| 本条引用的对象与公式 | MD.Ch07.homogeneousNormalization, MD.Ch07.centeredParticular | 本条逐字引用的全部数学对象与公式；未纳入的上下文另列。 |
+
+[EXTRA] 核恰为ρ的一维空间是明确前提；不把Langevin核唯一性当作已证明。第二条为实际概率归一化的中心化恒等式。
+记号与上下文：见所列原文与Lean量化变量。
+
+### 6. 审计结论
+
+本地：已对照目视原页核对对象、量词、技术资格和所列覆盖范围；网站尚未审阅。
+疑点：本条暂未发现需单列的原书疑误。
+网站：尚未送审。
+
+### 7. 状态与证明位置
+
+已证；单文件编译与逐声明公理核对通过。
+本条未登记待证缺项。
+位置：Blueprint/Ch07.lean；MD.Ch07.homogeneousNormalization, MD.Ch07.centeredParticular。
+
+## 1. MD-7.8.1-CommutatorPermutationRelations · (7.22)–(7.24) · 印刷p.292 / PDFp.313
+
+### 2. 原文陈述
+
+\[([\mathcal L_O^\dagger,\mathcal L_A^\dagger]+[\mathcal L_O^\dagger,\mathcal L_B^\dagger])\rho_\beta=[\mathcal L_O^\dagger,\mathcal L_A^\dagger+\mathcal L_B^\dagger]\rho_\beta=0.\]
+\[\mathcal L_{1,[ABO]}^\dagger\rho_\beta=\mathcal L_{1,[OAB]}^\dagger\rho_\beta=-\mathcal L_{1,[OBA]}^\dagger\rho_\beta=-\mathcal L_{1,[BAO]}^\dagger\rho_\beta=-\frac12[\mathcal L_A^\dagger,\mathcal L_B^\dagger]\rho_\beta.\tag{7.22}\]
+\[f_{1,[ABO]}=f_{1,[OAB]}=-f_{1,[OBA]}=-f_{1,[BAO]}.\tag{7.23}\]
+\[\mathcal L_{1,[AOB]}^\dagger\rho_\beta=-\mathcal L_{1,[BOA]}^\dagger\rho_\beta=-\frac12[\mathcal L_A^\dagger-\mathcal L_B^\dagger,\mathcal L_O^\dagger]\rho_\beta+\mathcal L_{1,[ABO]}^\dagger\rho_\beta.\tag{7.24}\]
+
+### 3. 原文证明
+
+原书未给独立完整证明。
+
+### 4. 完整当前Lean（原文与修正版独立列出）
+
+```lean
+theorem commutatorPermutationRelations {E : Type*} [AddCommGroup E] [Module ℝ E]
+    (A B O : Module.End ℝ E) (ρ : E) (hO : O ρ = 0) (hH : (A+B) ρ = 0) :
+    (comm O A+comm O B) ρ = 0 ∧
+    firstOrderOperator A B O ρ = firstOrderOperator O A B ρ ∧
+    firstOrderOperator A B O ρ = -firstOrderOperator O B A ρ ∧
+    firstOrderOperator A B O ρ = -firstOrderOperator B A O ρ ∧
+    firstOrderOperator A B O ρ = (-1/2 : ℝ) • comm A B ρ ∧
+    firstOrderOperator A O B ρ = -firstOrderOperator B O A ρ ∧
+    firstOrderOperator A O B ρ = (-1/2 : ℝ) • comm (A-B) O ρ+firstOrderOperator A B O ρ := by
+  sorry
+```
+
+### 5. 对照表
+
+| 原文成分 | Lean对应 | 说明 |
+|---|---|---|
+| 本条引用的对象与公式 | MD.Ch07.commutatorPermutationRelations | 首式及(7.22),(7.24)全部算符作用关系；(7.23)需归一解唯一性桥，未另作Lean定理。 |
+
+[EXTRA] 实际线性作用与Oρ=0,(A+B)ρ=0明示。修正函数的符号关系还需统一零均值和核唯一性；本条只证明/陈述交换子与右端项关系，函数关系列缺口。
+记号与上下文：见所列原文与Lean量化变量。
+
+### 6. 审计结论
+
+本地：已对照目视原页核对对象、量词、技术资格和所列覆盖范围；网站尚未审阅。
+疑点：本条暂未发现需单列的原书疑误。
+网站：尚未送审。
+
+### 7. 状态与证明位置
+
+未证陈述；单文件编译与逐声明公理核对通过。
+未证原因：线性算符非交换代数作用桥接；本轮保留未证，不建设一般弱误差理论。
+位置：Blueprint/Ch07.lean；MD.Ch07.commutatorPermutationRelations。
+
+## 1. MD-7.8.1-GibbsDerivativeIdentities · unnumbered_claim · 印刷p.292–293 / PDFp.313–314
+
+### 2. 原文陈述
+
+If we define the function $g(q,p)$ as $g(q,p)=\beta p^TM^{-1}\nabla U(q)$, then through simple computation we have
+\[\mathcal L_A^\dagger\rho_\beta=-\mathcal L_B^\dagger\rho_\beta=g(q,p)\rho_\beta.\]
+\[[\mathcal L_A^\dagger,\mathcal L_B^\dagger]\rho_\beta=-(\mathcal L_A^\dagger+\mathcal L_B^\dagger)(g\rho_\beta)=(\mathcal L_O^\dagger-\mathcal L_{LD}^\dagger)(g\rho_\beta).\]
+For a function $\psi(q)$ purely of position, we have
+\[\mathcal L_{LD}^\dagger(\psi(q)\rho_\beta)=-(p^TM^{-1}\nabla\psi(q))\rho_\beta(q,p),\]
+and hence we can compute
+\[\mathcal L_O^\dagger(g(q,p)\rho_\beta)=\gamma\rho_\beta(-p\cdot\nabla_pg+\beta^{-1}\nabla_p\cdot M\nabla_pg)
+=-\gamma g\rho_\beta=\gamma\beta\mathcal L_{LD}^\dagger(U(q)\rho_\beta).\]
+
+### 3. 原文证明
+
+原书未给独立完整证明。
+
+### 4. 完整当前Lean（原文与修正版独立列出）
+
+```lean
+def mechanicalHamiltonian (m : V n) (U : V n → ℝ) (x : Phase n) : ℝ :=
+  (∑ i, x.2 i^2/(2*m i))+U x.1
+def gibbsWeight (m : V n) (U : V n → ℝ) (β : ℝ) (x : Phase n) : ℝ :=
+  Real.exp (-β*mechanicalHamiltonian m U x)
+def gFunction (m : V n) (U : V n → ℝ) (β : ℝ) (x : Phase n) : ℝ :=
+  β*∑ i, x.2 i/m i*gradient U x.1 i
+def phaseO (m : V n) (γ β : ℝ) (ρ : Phase n → ℝ) (x : Phase n) : ℝ :=
+  ouForward m γ β⁻¹ (fun p ↦ ρ (x.1,p)) x.2
+def phaseLD (m : V n) (U : V n → ℝ) (γ β : ℝ) (ρ : Phase n → ℝ) : Phase n → ℝ :=
+  aForward m ρ+bForward U ρ+phaseO m γ β ρ
+theorem gibbsDerivativeIdentities (m : V n) (U ψ : V n → ℝ) (β γ : ℝ)
+    (hm : ∀ i, 0 < m i) (hβ : 0 < β) (hU : ContDiff ℝ ⊤ U) (hψ : ContDiff ℝ ⊤ ψ) :
+    let ρ := gibbsWeight m U β
+    let g := gFunction m U β
+    aForward m ρ = g*ρ ∧ bForward U ρ = -(g*ρ) ∧
+    phaseLD m U γ β (fun x ↦ ψ x.1*ρ x) =
+      (fun x ↦ -(∑ i, x.2 i/m i*gradient ψ x.1 i)*ρ x) ∧
+    phaseO m γ β (g*ρ) = (fun x ↦ -γ*g x*ρ x) ∧
+    phaseO m γ β (g*ρ) = (fun x ↦ γ*β*phaseLD m U γ β (fun y ↦ U y.1*ρ y) x) := by
+  sorry
+```
+
+### 5. 对照表
+
+| 原文成分 | Lean对应 | 说明 |
+|---|---|---|
+| 本条引用的对象与公式 | MD.Ch07.mechanicalHamiltonian, MD.Ch07.gibbsWeight, MD.Ch07.gFunction, MD.Ch07.phaseO, MD.Ch07.phaseLD, MD.Ch07.gibbsDerivativeIdentities | 本条逐字引用的全部数学对象与公式；未纳入的上下文另列。 |
+
+[EXTRA] ρ为未归一Gibbs权，所有微分等式对常数归一化同样成立；实际概率还要正有限配分积分。所有质量正、β>0、光滑资格明示。；覆盖g、A/B作用、纯位置ψ作用及O(gρ)两种等价写法；交换子作用与中间OU共轭式在原文登记但另列覆盖缺口。
+记号与上下文：见所列原文与Lean量化变量。
+
+### 6. 审计结论
+
+本地：已对照目视原页核对对象、量词、技术资格和所列覆盖范围；网站尚未审阅。
+疑点：本条暂未发现需单列的原书疑误。
+网站：尚未送审。
+
+### 7. 状态与证明位置
+
+未证陈述；单文件编译与逐声明公理核对通过。
+未证原因：实际多维Gibbs指数微分、二阶OU乘积法则与求和桥，超过短证明；不建SDE解或遍历理论。
+位置：Blueprint/Ch07.lean；MD.Ch07.mechanicalHamiltonian, MD.Ch07.gibbsWeight, MD.Ch07.gFunction, MD.Ch07.phaseO, MD.Ch07.phaseLD, MD.Ch07.gibbsDerivativeIdentities。
+
+## 1. MD-7.8.1-FirstCorrectionTablePrinted · (7.25a)–(7.25d) · 印刷p.293–294 / PDFp.314–315
+
+### 2. 原文陈述
+
+In summary, we find that
+\[f_{1,[ABO]}(q,p)=f_{1,[OAB]}(q,p)=\frac\beta2(\gamma U(q)-p^TM^{-1}\nabla U(q)-c),\tag{7.25a}\]
+\[f_{1,[OBA]}(q,p)=f_{1,[BAO]}(q,p)=-\frac\beta2(\gamma U(q)-p^TM^{-1}\nabla U(q)-c),\tag{7.25b}\]
+\[f_{1,[AOB]}(q,p)=-\frac\beta2(\gamma U(q)-p^TM^{-1}\nabla U(q)-c),\tag{7.25c}\]
+\[f_{1,[BOA]}(q,p)=\frac\beta2(\gamma U(q)+p^TM^{-1}\nabla U(q)-c),\tag{7.25d}\]
+where the constant $c$ is chosen to ensure each correction function has average 0, giving $c=\gamma\langle U(q)\rangle$.
+
+### 3. 原文证明
+
+原书未给独立完整证明。
+
+### 4. 完整当前Lean（原文与修正版独立列出）
+
+```lean
+def firstCorrectionTablePrinted (s : Fin 6) (m : V n) (U : V n → ℝ) (β γ c : ℝ) (x : Phase n) : ℝ :=
+  let v := ∑ i, x.2 i/m i*gradient U x.1 i
+  if s = 0 ∨ s = 1 then β/2*(γ*U x.1-v-c)
+  else if s = 2 ∨ s = 3 ∨ s = 4 then -β/2*(γ*U x.1-v-c)
+  else β/2*(γ*U x.1+v-c)
+def firstCorrectionTablePrinted_corrected (s : Fin 6) (m : V n) (U : V n → ℝ) (β γ c : ℝ) (x : Phase n) : ℝ :=
+  if s = 4 then -β/2*(γ*U x.1+(∑ i, x.2 i/m i*gradient U x.1 i)-c)
+  else firstCorrectionTablePrinted s m U β γ c x
+theorem firstCorrection_sign_counterexample :
+    (-(1 : ℝ)/2*(1-1-0)) ≠ -(1 : ℝ)/2*(1+1-0) := by norm_num
+def phaseComm (A B : (Phase n → ℝ) → Phase n → ℝ) (ρ : Phase n → ℝ) : Phase n → ℝ := A (B ρ)-B (A ρ)
+def firstCorrectionRHS (s : Fin 6) (m : V n) (U : V n → ℝ) (β γ : ℝ) (ρ : Phase n → ℝ) : Phase n → ℝ :=
+  let A := aForward m
+  let B := bForward U
+  let O := phaseO m γ β
+  let ops := if s = 0 then (A,B,O) else if s = 1 then (O,A,B)
+    else if s = 2 then (O,B,A) else if s = 3 then (B,A,O)
+    else if s = 4 then (A,O,B) else (B,O,A)
+  fun x ↦ (1/2)*(phaseComm ops.1 ops.2.1 ρ x+phaseComm ops.1 ops.2.2 ρ x+phaseComm ops.2.1 ops.2.2 ρ x)
+theorem firstCorrectionTable_pde (s : Fin 6) (m : V n) (U : V n → ℝ) (β γ c : ℝ)
+    (hm : ∀ i, 0 < m i) (hβ : 0 < β) (hU : ContDiff ℝ ⊤ U) :
+    phaseLD m U γ β (fun x ↦ firstCorrectionTablePrinted_corrected s m U β γ c x*gibbsWeight m U β x) =
+      firstCorrectionRHS s m U β γ (gibbsWeight m U β) := by
+  sorry
+```
+
+### 5. 对照表
+
+| 原文成分 | Lean对应 | 说明 |
+|---|---|---|
+| 本条引用的对象与公式 | MD.Ch07.firstCorrectionTablePrinted, MD.Ch07.firstCorrectionTablePrinted_corrected, MD.Ch07.firstCorrection_sign_counterexample, MD.Ch07.phaseComm, MD.Ch07.firstCorrectionRHS, MD.Ch07.firstCorrectionTable_pde | 本条逐字引用的全部数学对象与公式；未纳入的上下文另列。 |
+
+[EXTRA] 六个排列分别编码ABO,OAB,OBA,BAO,AOB,BOA；原文版不证明，修正版陈述实际PDE。c任意常数时PDE不变，零均值另行规定c=γ〈U〉。
+记号与上下文：见所列原文与Lean量化变量。
+
+### 6. 审计结论
+
+本地：已对照目视原页核对对象、量词、技术资格和所列覆盖范围；网站尚未审阅。
+疑点：已目视核对PDF315／印刷294：(7.25c)中动量梯度项印为负号，与同页上一段推导给出的正号及f_AOB=-f_BOA矛盾；修正为括号内正号。
+网站：尚未送审。
+
+### 7. 状态与证明位置
+
+未证陈述；单文件编译与逐声明公理核对通过。
+未证原因：完整多维指数微分及二阶算符乘积展开需较大桥接；保留PDE未证。
+位置：Blueprint/Ch07.lean；MD.Ch07.firstCorrectionTablePrinted, MD.Ch07.firstCorrectionTablePrinted_corrected, MD.Ch07.firstCorrection_sign_counterexample, MD.Ch07.phaseComm, MD.Ch07.firstCorrectionRHS, MD.Ch07.firstCorrectionTable_pde。
+
+## 1. MD-7.8.1-PositionMomentumCorrections · unnumbered_claim · 印刷p.294–295 / PDFp.315–316
+
+### 2. 原文陈述
+
+If $\vartheta=\vartheta_1(p)$ then this $O(\gamma)$ term will not trouble us, as
+\[\langle\vartheta_1(p)f_1(q,p)\rangle=\pm\frac\beta2\langle(\gamma U(q)-c)\vartheta_1(p)\pm p^TM^{-1}\nabla U(q)\vartheta_1(p)\rangle
+=\pm\frac\beta2\langle p^TM^{-1}\nabla U(q)\vartheta_1(p)\rangle.\]
+However, if we instead set $\vartheta=\vartheta_2(q)$, then
+\[\langle\vartheta_2(q)f_1(q,p)\rangle=\pm\frac{\gamma\beta}{2}\langle(U(q)-\langle U(q)\rangle)\vartheta_2(q)\rangle.\]
+
+### 3. 原文证明
+
+原书未给独立完整证明。
+
+### 4. 完整当前Lean（原文与修正版独立列出）
+
+```lean
+def positionGibbs (U : V n → ℝ) (β : ℝ) : Measure (V n) :=
+  volume.withDensity (fun q ↦ ENNReal.ofReal (Real.exp (-β*U q)/(∫ y, Real.exp (-β*U y))))
+def momentumGibbs (m : V n) (β : ℝ) : Measure (V n) := Measure.pi (fun i ↦ gaussianReal 0 (Real.toNNReal (m i/β)))
+def productGibbs (m : V n) (U : V n → ℝ) (β : ℝ) : Measure (Phase n) :=
+  (positionGibbs U β).prod (momentumGibbs m β)
+theorem positionMomentumCorrections (m : V n) (U ψ χ : V n → ℝ) (β γ : ℝ)
+    (hm : ∀ i, 0 < m i) (hβ : 0 < β)
+    (hprob : IsProbabilityMeasure (positionGibbs U β))
+    (hU : Integrable U (positionGibbs U β))
+    (hψ : Integrable ψ (positionGibbs U β)) (hχ : Integrable χ (momentumGibbs m β))
+    (hgrad : ∀ i, Integrable (fun q ↦ gradient U q i) (positionGibbs U β))
+    (hint : ∀ s : Fin 6,
+      Integrable (fun x ↦ ψ x.1*firstCorrectionTablePrinted_corrected s m U β γ (γ*∫ q, U q ∂positionGibbs U β) x) (productGibbs m U β) ∧
+      Integrable (fun x ↦ χ x.2*firstCorrectionTablePrinted_corrected s m U β γ (γ*∫ q, U q ∂positionGibbs U β) x) (productGibbs m U β)) :
+    ∀ s : Fin 6, let sign : ℝ := if s = 0 ∨ s = 1 ∨ s = 5 then 1 else -1
+    let vsign : ℝ := if s = 0 ∨ s = 1 ∨ s = 4 then -1 else 1
+    (∫ x, ψ x.1*firstCorrectionTablePrinted_corrected s m U β γ (γ*∫ q, U q ∂positionGibbs U β) x ∂productGibbs m U β) =
+      sign*γ*β/2*∫ q, (U q-(∫ y, U y ∂positionGibbs U β))*ψ q ∂positionGibbs U β ∧
+    (∫ x, χ x.2*firstCorrectionTablePrinted_corrected s m U β γ (γ*∫ q, U q ∂positionGibbs U β) x ∂productGibbs m U β) =
+      vsign*β/2*∫ x, (∑ i, x.2 i/m i*gradient U x.1 i)*χ x.2 ∂productGibbs m U β := by
+  sorry
+```
+
+### 5. 对照表
+
+| 原文成分 | Lean对应 | 说明 |
+|---|---|---|
+| 本条引用的对象与公式 | MD.Ch07.positionGibbs, MD.Ch07.momentumGibbs, MD.Ch07.productGibbs, MD.Ch07.positionMomentumCorrections | 本条逐字引用的全部数学对象与公式；未纳入的上下文另列。 |
+
+[EXTRA] 产品Gibbs实际含位置概率及独立中心Gaussian动量；所有显示期望需可积，未把待求修正值作为假设。；六个算法分别给符号；大摩擦O(γ)的解释来自明确线性γ项，随γ,h的统一误差界未证明。
+记号与上下文：见所列原文与Lean量化变量。
+
+### 6. 审计结论
+
+本地：已对照目视原页核对对象、量词、技术资格和所列覆盖范围；网站尚未审阅。
+疑点：本条暂未发现需单列的原书疑误。
+网站：尚未送审。
+
+### 7. 状态与证明位置
+
+未证陈述；单文件编译与逐声明公理核对通过。
+未证原因：需乘积积分和Gaussian奇矩归零的多维短桥；不建设Talay–Tubaro理论。
+位置：Blueprint/Ch07.lean；MD.Ch07.positionGibbs, MD.Ch07.momentumGibbs, MD.Ch07.productGibbs, MD.Ch07.positionMomentumCorrections。
+
+## 1. MD-7.8.1-OverdampedFirstOrderCaution · unnumbered_claim · 印刷p.295 / PDFp.316
+
+### 2. 原文陈述
+
+When considering the limit of infinite friction in the $[XYZ]$ schemes we obtain an inconsistent discretization. Hence these first-order schemes will be unsuitable for the integration of overdamped Langevin dynamics.
+This is not always the case for first order schemes, however. For example the scheme denoted $[AOAB]$ is consistent with the dynamics, and may be used for integrating the overdamped ($\gamma=\infty$) Langevin equation.
+
+### 3. 原文证明
+
+原书未给独立完整证明。
+
+### 4. 完整当前Lean（原文与修正版独立列出）
+
+```lean
+def aoab (m : V n) (U : V n → ℝ) (γ θ h : ℝ) (R : V n) : Phase n → Phase n :=
+  kickStep U h ∘ driftStep m (h/2) ∘ ouStep m γ θ h R ∘ driftStep m (h/2)
+def aoabInfiniteFriction (m : V n) (U : V n → ℝ) (θ h : ℝ) (R : V n) : Phase n → Phase n :=
+  kickStep U h ∘ driftStep m (h/2) ∘ (fun x ↦ (x.1,fun i ↦ Real.sqrt θ*Real.sqrt (m i)*R i)) ∘ driftStep m (h/2)
+theorem aoabFrictionLimit (m : V n) (U : V n → ℝ) (θ h : ℝ) (R : V n) (x : Phase n)
+    (hh : 0 < h) (hθ : 0 < θ) (hU : ContDiff ℝ 1 U) :
+    Filter.Tendsto (fun γ : ℝ ↦ aoab m U γ θ h R x) Filter.atTop (𝓝 (aoabInfiniteFriction m U θ h R x)) := by
+  sorry
+```
+
+### 5. 对照表
+
+| 原文成分 | Lean对应 | 说明 |
+|---|---|---|
+| 本条引用的对象与公式 | MD.Ch07.aoab, MD.Ch07.aoabInfiniteFriction, MD.Ch07.aoabFrictionLimit | 本条逐字引用的全部数学对象与公式；未纳入的上下文另列。 |
+
+[EXTRA] 覆盖AOAB全部更新与固定噪声/固定h下的摩擦极限；不把摩擦极限本身称作过阻尼一致性证明。六个XYZ不一致及AOAB有效时间重标度的一致性仍是明确覆盖缺口。
+记号与上下文：见所列原文与Lean量化变量。
+
+### 6. 审计结论
+
+本地：已对照目视原页核对对象、量词、技术资格和所列覆盖范围；网站尚未审阅。
+疑点：本条暂未发现需单列的原书疑误。
+网站：尚未送审。
+
+### 7. 状态与证明位置
+
+未证陈述；单文件编译与逐声明公理核对通过。
+未证原因：OU指数衰减、sqrt连续及∇U连续的有限维极限短桥；过阻尼时间重标度理论不新建。
+位置：Blueprint/Ch07.lean；MD.Ch07.aoab, MD.Ch07.aoabInfiniteFriction, MD.Ch07.aoabFrictionLimit。
+
+## 1. MD-7.8.2-BiasedDoubleWellExact · unnumbered_claim · 印刷p.295–297 / PDFp.316–318
+
+### 2. 原文陈述
+
+Let $M=\beta=1$ and define the biased double-well potential as
+\[U(q)=(q^2-1)^2+q/2.\]
+We choose the observable
+\[\vartheta(q,p)=p^2-qU'(q)+2qp,\qquad\langle\vartheta\rangle=0.\]
+The first order correction term for the $[BOA]$ scheme is given by the formula
+\[\langle\vartheta f_{1,[BOA]}\rangle=\frac\beta2\int_{\mathcal D}(p^2-qU'(q)+2qp)(pU'(q)+\gamma U(q)-c)\rho_\beta d\omega
+=\frac1\beta+\frac\gamma2\langle U\rangle-\frac{\gamma\beta}{2}\langle qUU'\rangle=\frac{2-\gamma}{2\beta}.\]
+Hence for the critical value of $\gamma=2$, the leading order correction will be zero, giving
+\[\langle\vartheta\rangle_h^{[BOA]}=\langle\vartheta\rangle+O(h^2).\]
+
+### 3. 原文证明
+
+原书未给独立完整证明。
+
+### 4. 完整当前Lean（原文与修正版独立列出）
+
+```lean
+def biasedDoubleWell (q : ℝ) : ℝ := (q^2-1)^2+q/2
+def doubleWellObservable (x : ℝ × ℝ) : ℝ := x.2^2-x.1*deriv biasedDoubleWell x.1+2*x.1*x.2
+def doubleWellGibbs (β : ℝ) : Measure (ℝ × ℝ) :=
+  let w := fun x : ℝ × ℝ ↦ Real.exp (-β*(x.2^2/2+biasedDoubleWell x.1))
+  volume.withDensity (fun x ↦ ENNReal.ofReal (w x/(∫ y, w y)))
+def doubleWellBOACorrection (β γ : ℝ) (x : ℝ × ℝ) : ℝ :=
+  β/2*(x.2*deriv biasedDoubleWell x.1+γ*biasedDoubleWell x.1-
+    γ*(∫ y, biasedDoubleWell y.1 ∂doubleWellGibbs β))
+theorem doubleWellExact (β γ : ℝ) (hβ : 0 < β) :
+    (∫ x, doubleWellObservable x ∂doubleWellGibbs β) = 0 ∧
+    (∫ x, doubleWellObservable x*doubleWellBOACorrection β γ x ∂doubleWellGibbs β) = (2-γ)/(2*β) := by
+  sorry
+theorem doubleWellCritical (β : ℝ) : (2-(2 : ℝ))/(2*β) = 0 := by ring
+```
+
+### 5. 对照表
+
+| 原文成分 | Lean对应 | 说明 |
+|---|---|---|
+| 本条引用的对象与公式 | MD.Ch07.biasedDoubleWell, MD.Ch07.doubleWellObservable, MD.Ch07.doubleWellGibbs, MD.Ch07.doubleWellBOACorrection, MD.Ch07.doubleWellExact, MD.Ch07.doubleWellCritical | 本条逐字引用的全部数学对象与公式；未纳入的上下文另列。 |
+
+[EXTRA] 保留数值例中的精确数学积分和解析消项；原文虽起初β=1，推导中保留β，本条正β形式需同样积分分部理论。；中间〈qUU′〉公式及γ=2实际误差O(h²)需先有严格弱展开，本条不声称已获该余项。
+记号与上下文：见所列原文与Lean量化变量。
+
+### 6. 审计结论
+
+本地：已对照目视原页核对对象、量词、技术资格和所列覆盖范围；网站尚未审阅。
+疑点：本条暂未发现需单列的原书疑误。
+网站：尚未送审。
+
+### 7. 状态与证明位置
+
+未证陈述；单文件编译与逐声明公理核对通过。
+未证原因：需要四次势Gibbs权可积性、积分分部与Gaussian矩的桥；不建设通用弱误差理论。
+位置：Blueprint/Ch07.lean；MD.Ch07.biasedDoubleWell, MD.Ch07.doubleWellObservable, MD.Ch07.doubleWellGibbs, MD.Ch07.doubleWellBOACorrection, MD.Ch07.doubleWellExact, MD.Ch07.doubleWellCritical。
 

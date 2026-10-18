@@ -1,0 +1,143 @@
+以附件/PASTE 为准，忽略 /workspace 旧文件；Mathlib 定义按标准含义采信。
+本任务只审本条：原文转录、对象资格、定义体、量词、全部结论及[EXTRA]是否一致；Lean编译不代替语义审阅。
+Lean/Mathlib均4.34.0。原页PDF映射：[316, 317, 318]；印刷页=[295, 296, 297].
+input_sha256请原样回显：
+{
+  "Blueprint/Ch07.lean": "ce6b0890e635f2baebb25d007bdf7277208183cc905aa260b833b6737451fa1c",
+  "blueprint/ch07/ch07_source.json": "fd04a4e3fd4c16510dfae44978b8baa88b8150e8efb4cba1a2280a226dd4243e",
+  "BATCH13d_PAGES.pdf": "e9a27170477e0340c0d1ec899c68be019a0c5cb6dfe1d0fcdf6234b7e8c4a4ea"
+}
+用代码将JSON对象(batch,input_sha256,items)写到 /workspace/.mathcopilot/reviews/ch07/BATCH13d_review.json；items仅含本source_id。
+items字段：source_id、verdict(PASS/FAIL/NEEDS_HUMAN)、transcription、semantic_review、counterexample、suggested_fix、printed_version、corrected_version。逐版区分原文疑误和修正版结论；缺材料必须具体指出，不猜测。写后json.loads自检，最后仅回复路径及统计。
+
+## 原文JSON
+```json
+{
+  "source_id": "MD-7.8.2-BiasedDoubleWellExact",
+  "kind": "unnumbered_claim",
+  "label": null,
+  "section": "7.8.2",
+  "printed_page": "295–297",
+  "pdf_page": "316–318",
+  "statement_latex": "Let $M=\\beta=1$ and define the biased double-well potential as\n\\[U(q)=(q^2-1)^2+q/2.\\]\nWe choose the observable\n\\[\\vartheta(q,p)=p^2-qU'(q)+2qp,\\qquad\\langle\\vartheta\\rangle=0.\\]\nThe first order correction term for the $[BOA]$ scheme is given by the formula\n\\[\\langle\\vartheta f_{1,[BOA]}\\rangle=\\frac\\beta2\\int_{\\mathcal D}(p^2-qU'(q)+2qp)(pU'(q)+\\gamma U(q)-c)\\rho_\\beta d\\omega\n=\\frac1\\beta+\\frac\\gamma2\\langle U\\rangle-\\frac{\\gamma\\beta}{2}\\langle qUU'\\rangle=\\frac{2-\\gamma}{2\\beta}.\\]\nHence for the critical value of $\\gamma=2$, the leading order correction will be zero, giving\n\\[\\langle\\vartheta\\rangle_h^{[BOA]}=\\langle\\vartheta\\rangle+O(h^2).\\]",
+  "proof_latex": null,
+  "proof_note": "原书未给独立完整证明。",
+  "context_notation": [],
+  "extra_assumptions": [
+    "保留数值例中的精确数学积分和解析消项；原文虽起初β=1，推导中保留β，本条正β形式需同样积分分部理论。",
+    "中间〈qUU′〉公式及γ=2实际误差O(h²)需先有严格弱展开，本条不声称已获该余项。"
+  ],
+  "issues": [],
+  "statement_scope": "本条逐字引用的全部数学对象与公式；未纳入的上下文另列。",
+  "lean_decl": "MD.Ch07.biasedDoubleWell",
+  "lean_declarations": [
+    "MD.Ch07.biasedDoubleWell",
+    "MD.Ch07.doubleWellObservable",
+    "MD.Ch07.doubleWellGibbs",
+    "MD.Ch07.doubleWellBOACorrection",
+    "MD.Ch07.doubleWellExact",
+    "MD.Ch07.doubleWellCritical"
+  ],
+  "source_page_verification": "见source_page_checks.json；必须已目视核对本条原页。",
+  "repair_log": [],
+  "documented_priors": []
+}
+```
+
+## 完整本条Lean
+```lean
+def biasedDoubleWell (q : ℝ) : ℝ := (q^2-1)^2+q/2
+def doubleWellObservable (x : ℝ × ℝ) : ℝ := x.2^2-x.1*deriv biasedDoubleWell x.1+2*x.1*x.2
+def doubleWellGibbs (β : ℝ) : Measure (ℝ × ℝ) :=
+  let w := fun x : ℝ × ℝ ↦ Real.exp (-β*(x.2^2/2+biasedDoubleWell x.1))
+  volume.withDensity (fun x ↦ ENNReal.ofReal (w x/(∫ y, w y)))
+def doubleWellBOACorrection (β γ : ℝ) (x : ℝ × ℝ) : ℝ :=
+  β/2*(x.2*deriv biasedDoubleWell x.1+γ*biasedDoubleWell x.1-
+    γ*(∫ y, biasedDoubleWell y.1 ∂doubleWellGibbs β))
+theorem doubleWellExact (β γ : ℝ) (hβ : 0 < β) :
+    (∫ x, doubleWellObservable x ∂doubleWellGibbs β) = 0 ∧
+    (∫ x, doubleWellObservable x*doubleWellBOACorrection β γ x ∂doubleWellGibbs β) = (2-γ)/(2*β) := by
+  sorry
+theorem doubleWellCritical (β : ℝ) : (2-(2 : ℝ))/(2*β) = 0 := by ring
+```
+
+## 项目依赖定义体及选择规格
+以下def/abbrev/structure完整保留；定理列出完整类型，Mathlib标准定义无需摘录。
+
+### MD.Ch07.biasedDoubleWell (Blueprint/Ch07.lean:1027)
+原文件上下文：
+```lean
+open Set Filter MeasureTheory ProbabilityTheory MolecularDynamics
+open scoped BigOperators Topology ContDiff ENNReal NNReal
+variable {Ω : Type*} [MeasurableSpace Ω]
+variable {n : ℕ}
+```
+```lean
+def biasedDoubleWell (q : ℝ) : ℝ := (q^2-1)^2+q/2
+```
+
+### MD.Ch07.doubleWellObservable (Blueprint/Ch07.lean:1028)
+原文件上下文：
+```lean
+open Set Filter MeasureTheory ProbabilityTheory MolecularDynamics
+open scoped BigOperators Topology ContDiff ENNReal NNReal
+variable {Ω : Type*} [MeasurableSpace Ω]
+variable {n : ℕ}
+```
+```lean
+def doubleWellObservable (x : ℝ × ℝ) : ℝ := x.2^2-x.1*deriv biasedDoubleWell x.1+2*x.1*x.2
+```
+
+### MD.Ch07.doubleWellGibbs (Blueprint/Ch07.lean:1029)
+原文件上下文：
+```lean
+open Set Filter MeasureTheory ProbabilityTheory MolecularDynamics
+open scoped BigOperators Topology ContDiff ENNReal NNReal
+variable {Ω : Type*} [MeasurableSpace Ω]
+variable {n : ℕ}
+```
+```lean
+def doubleWellGibbs (β : ℝ) : Measure (ℝ × ℝ) :=
+  let w := fun x : ℝ × ℝ ↦ Real.exp (-β*(x.2^2/2+biasedDoubleWell x.1))
+  volume.withDensity (fun x ↦ ENNReal.ofReal (w x/(∫ y, w y)))
+```
+
+### MD.Ch07.doubleWellBOACorrection (Blueprint/Ch07.lean:1032)
+原文件上下文：
+```lean
+open Set Filter MeasureTheory ProbabilityTheory MolecularDynamics
+open scoped BigOperators Topology ContDiff ENNReal NNReal
+variable {Ω : Type*} [MeasurableSpace Ω]
+variable {n : ℕ}
+```
+```lean
+def doubleWellBOACorrection (β γ : ℝ) (x : ℝ × ℝ) : ℝ :=
+  β/2*(x.2*deriv biasedDoubleWell x.1+γ*biasedDoubleWell x.1-
+    γ*(∫ y, biasedDoubleWell y.1 ∂doubleWellGibbs β))
+```
+
+### MD.Ch07.doubleWellExact (Blueprint/Ch07.lean:1035)
+原文件上下文：
+```lean
+open Set Filter MeasureTheory ProbabilityTheory MolecularDynamics
+open scoped BigOperators Topology ContDiff ENNReal NNReal
+variable {Ω : Type*} [MeasurableSpace Ω]
+variable {n : ℕ}
+```
+```lean
+theorem doubleWellExact (β γ : ℝ) (hβ : 0 < β) :
+    (∫ x, doubleWellObservable x ∂doubleWellGibbs β) = 0 ∧
+    (∫ x, doubleWellObservable x*doubleWellBOACorrection β γ x ∂doubleWellGibbs β) = (2-γ)/(2*β)
+```
+
+### MD.Ch07.doubleWellCritical (Blueprint/Ch07.lean:1039)
+原文件上下文：
+```lean
+open Set Filter MeasureTheory ProbabilityTheory MolecularDynamics
+open scoped BigOperators Topology ContDiff ENNReal NNReal
+variable {Ω : Type*} [MeasurableSpace Ω]
+variable {n : ℕ}
+```
+```lean
+theorem doubleWellCritical (β : ℝ) : (2-(2 : ℝ))/(2*β) = 0
+```

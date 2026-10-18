@@ -1757,5 +1757,225 @@
     "source_page_verification": "见source_page_checks.json；必须已目视核对本条原页。",
     "repair_log": [],
     "documented_priors": []
+  },
+  {
+    "source_id": "MD-7.8-FirstOrderOperator",
+    "kind": "unnumbered_claim",
+    "label": "(7.20)–(7.21)",
+    "section": "7.8",
+    "printed_page": "291",
+    "pdf_page": "312",
+    "statement_latex": "By composing the semigroup operators\n\\[\\exp(h\\widehat{\\mathcal L}_{[XYZ]}^\\dagger)=\\exp(h\\mathcal L_Z^\\dagger)\\exp(h\\mathcal L_Y^\\dagger)\\exp(h\\mathcal L_X^\\dagger),\\]\nand computing the terms in the BCH expansion, we have\n\\[\\widehat{\\mathcal L}_{[XYZ]}^\\dagger=\\mathcal L_{LD}^\\dagger+h\\mathcal L_{1,[XYZ]}^\\dagger+O(h^2),\\]\nwhere\n\\[\\mathcal L_{1,[XYZ]}^\\dagger=-\\frac12([\\mathcal L_X^\\dagger,\\mathcal L_Y^\\dagger]+[\\mathcal L_X^\\dagger,\\mathcal L_Z^\\dagger]+[\\mathcal L_Y^\\dagger,\\mathcal L_Z^\\dagger]).\\tag{7.20}\\]\nThe first order correction function for this scheme is then given by the particular solution to the PDE,\n\\[\\mathcal L_{LD}^\\dagger(f_{1,[XYZ]}\\rho_\\beta)=-\\mathcal L_{1,[XYZ]}^\\dagger\\rho_\\beta.\\tag{7.21}\\]",
+    "proof_latex": null,
+    "proof_note": "原书未给独立完整证明。",
+    "context_notation": [],
+    "extra_assumptions": [
+      "前向组合采用Z,Y,X顺序；正式级数系数推论覆盖所有六个排列，L0为三者和。修正方程为必要形式方程，可解性独立。"
+    ],
+    "issues": [],
+    "statement_scope": "本条逐字引用的全部数学对象与公式；未纳入的上下文另列。",
+    "lean_decl": "MD.Ch07.firstOrderOperator",
+    "lean_declarations": [
+      "MD.Ch07.firstOrderOperator",
+      "MD.Ch07.firstOrderOperator_coefficient",
+      "MD.Ch07.correctionEquation"
+    ],
+    "source_page_verification": "见source_page_checks.json；必须已目视核对本条原页。",
+    "repair_log": [],
+    "documented_priors": []
+  },
+  {
+    "source_id": "MD-7.8-HomogeneousNormalization",
+    "kind": "unnumbered_claim",
+    "label": null,
+    "section": "7.8",
+    "printed_page": "291",
+    "pdf_page": "312",
+    "statement_latex": "The general solution of (7.21) will consist of the sum of the homogeneous solution $f_{1,[XYZ]}^{[HS]}(q,p)$ and particular solution $f_{1,[XYZ]}^{[PS]}(q,p)$ in the usual way. However, since $\\mathcal L_{LD}^\\dagger\\vartheta=0$ has as its only solution $\\vartheta\\propto\\rho_\\beta$, the homogeneous solution of (7.21) is $f_{1,[XYZ]}^{[HS]}(q,p)=c$, for some constant $c$. Our assumption that $\\langle f_{1,[XYZ]}\\rangle=0$ means that $c=-\\langle f_{1,[XYZ]}^{[PS]}\\rangle$.",
+    "proof_latex": null,
+    "proof_note": "原书未给独立完整证明。",
+    "context_notation": [],
+    "extra_assumptions": [
+      "核恰为ρ的一维空间是明确前提；不把Langevin核唯一性当作已证明。第二条为实际概率归一化的中心化恒等式。"
+    ],
+    "issues": [],
+    "statement_scope": "本条逐字引用的全部数学对象与公式；未纳入的上下文另列。",
+    "lean_decl": "MD.Ch07.homogeneousNormalization",
+    "lean_declarations": [
+      "MD.Ch07.homogeneousNormalization",
+      "MD.Ch07.centeredParticular"
+    ],
+    "source_page_verification": "见source_page_checks.json；必须已目视核对本条原页。",
+    "repair_log": [],
+    "documented_priors": []
+  },
+  {
+    "source_id": "MD-7.8.1-CommutatorPermutationRelations",
+    "kind": "unnumbered_claim",
+    "label": "(7.22)–(7.24)",
+    "section": "7.8.1",
+    "printed_page": "292",
+    "pdf_page": "313",
+    "statement_latex": "\\[([\\mathcal L_O^\\dagger,\\mathcal L_A^\\dagger]+[\\mathcal L_O^\\dagger,\\mathcal L_B^\\dagger])\\rho_\\beta=[\\mathcal L_O^\\dagger,\\mathcal L_A^\\dagger+\\mathcal L_B^\\dagger]\\rho_\\beta=0.\\]\n\\[\\mathcal L_{1,[ABO]}^\\dagger\\rho_\\beta=\\mathcal L_{1,[OAB]}^\\dagger\\rho_\\beta=-\\mathcal L_{1,[OBA]}^\\dagger\\rho_\\beta=-\\mathcal L_{1,[BAO]}^\\dagger\\rho_\\beta=-\\frac12[\\mathcal L_A^\\dagger,\\mathcal L_B^\\dagger]\\rho_\\beta.\\tag{7.22}\\]\n\\[f_{1,[ABO]}=f_{1,[OAB]}=-f_{1,[OBA]}=-f_{1,[BAO]}.\\tag{7.23}\\]\n\\[\\mathcal L_{1,[AOB]}^\\dagger\\rho_\\beta=-\\mathcal L_{1,[BOA]}^\\dagger\\rho_\\beta=-\\frac12[\\mathcal L_A^\\dagger-\\mathcal L_B^\\dagger,\\mathcal L_O^\\dagger]\\rho_\\beta+\\mathcal L_{1,[ABO]}^\\dagger\\rho_\\beta.\\tag{7.24}\\]",
+    "proof_latex": null,
+    "proof_note": "原书未给独立完整证明。",
+    "context_notation": [],
+    "extra_assumptions": [
+      "实际线性作用与Oρ=0,(A+B)ρ=0明示。修正函数的符号关系还需统一零均值和核唯一性；本条只证明/陈述交换子与右端项关系，函数关系列缺口。"
+    ],
+    "issues": [],
+    "statement_scope": "首式及(7.22),(7.24)全部算符作用关系；(7.23)需归一解唯一性桥，未另作Lean定理。",
+    "lean_decl": "MD.Ch07.commutatorPermutationRelations",
+    "lean_declarations": [
+      "MD.Ch07.commutatorPermutationRelations"
+    ],
+    "source_page_verification": "见source_page_checks.json；必须已目视核对本条原页。",
+    "repair_log": [],
+    "documented_priors": []
+  },
+  {
+    "source_id": "MD-7.8.1-GibbsDerivativeIdentities",
+    "kind": "unnumbered_claim",
+    "label": null,
+    "section": "7.8.1",
+    "printed_page": "292–293",
+    "pdf_page": "313–314",
+    "statement_latex": "If we define the function $g(q,p)$ as $g(q,p)=\\beta p^TM^{-1}\\nabla U(q)$, then through simple computation we have\n\\[\\mathcal L_A^\\dagger\\rho_\\beta=-\\mathcal L_B^\\dagger\\rho_\\beta=g(q,p)\\rho_\\beta.\\]\n\\[[\\mathcal L_A^\\dagger,\\mathcal L_B^\\dagger]\\rho_\\beta=-(\\mathcal L_A^\\dagger+\\mathcal L_B^\\dagger)(g\\rho_\\beta)=(\\mathcal L_O^\\dagger-\\mathcal L_{LD}^\\dagger)(g\\rho_\\beta).\\]\nFor a function $\\psi(q)$ purely of position, we have\n\\[\\mathcal L_{LD}^\\dagger(\\psi(q)\\rho_\\beta)=-(p^TM^{-1}\\nabla\\psi(q))\\rho_\\beta(q,p),\\]\nand hence we can compute\n\\[\\mathcal L_O^\\dagger(g(q,p)\\rho_\\beta)=\\gamma\\rho_\\beta(-p\\cdot\\nabla_pg+\\beta^{-1}\\nabla_p\\cdot M\\nabla_pg)\n=-\\gamma g\\rho_\\beta=\\gamma\\beta\\mathcal L_{LD}^\\dagger(U(q)\\rho_\\beta).\\]",
+    "proof_latex": null,
+    "proof_note": "原书未给独立完整证明。",
+    "context_notation": [],
+    "extra_assumptions": [
+      "ρ为未归一Gibbs权，所有微分等式对常数归一化同样成立；实际概率还要正有限配分积分。所有质量正、β>0、光滑资格明示。",
+      "覆盖g、A/B作用、纯位置ψ作用及O(gρ)两种等价写法；交换子作用与中间OU共轭式在原文登记但另列覆盖缺口。"
+    ],
+    "issues": [],
+    "statement_scope": "本条逐字引用的全部数学对象与公式；未纳入的上下文另列。",
+    "lean_decl": "MD.Ch07.mechanicalHamiltonian",
+    "lean_declarations": [
+      "MD.Ch07.mechanicalHamiltonian",
+      "MD.Ch07.gibbsWeight",
+      "MD.Ch07.gFunction",
+      "MD.Ch07.phaseO",
+      "MD.Ch07.phaseLD",
+      "MD.Ch07.gibbsDerivativeIdentities"
+    ],
+    "source_page_verification": "见source_page_checks.json；必须已目视核对本条原页。",
+    "repair_log": [],
+    "documented_priors": []
+  },
+  {
+    "source_id": "MD-7.8.1-FirstCorrectionTablePrinted",
+    "kind": "unnumbered_claim",
+    "label": "(7.25a)–(7.25d)",
+    "section": "7.8.1",
+    "printed_page": "293–294",
+    "pdf_page": "314–315",
+    "statement_latex": "In summary, we find that\n\\[f_{1,[ABO]}(q,p)=f_{1,[OAB]}(q,p)=\\frac\\beta2(\\gamma U(q)-p^TM^{-1}\\nabla U(q)-c),\\tag{7.25a}\\]\n\\[f_{1,[OBA]}(q,p)=f_{1,[BAO]}(q,p)=-\\frac\\beta2(\\gamma U(q)-p^TM^{-1}\\nabla U(q)-c),\\tag{7.25b}\\]\n\\[f_{1,[AOB]}(q,p)=-\\frac\\beta2(\\gamma U(q)-p^TM^{-1}\\nabla U(q)-c),\\tag{7.25c}\\]\n\\[f_{1,[BOA]}(q,p)=\\frac\\beta2(\\gamma U(q)+p^TM^{-1}\\nabla U(q)-c),\\tag{7.25d}\\]\nwhere the constant $c$ is chosen to ensure each correction function has average 0, giving $c=\\gamma\\langle U(q)\\rangle$.",
+    "proof_latex": null,
+    "proof_note": "原书未给独立完整证明。",
+    "context_notation": [],
+    "extra_assumptions": [
+      "六个排列分别编码ABO,OAB,OBA,BAO,AOB,BOA；原文版不证明，修正版陈述实际PDE。c任意常数时PDE不变，零均值另行规定c=γ〈U〉。"
+    ],
+    "issues": [
+      "已目视核对PDF315／印刷294：(7.25c)中动量梯度项印为负号，与同页上一段推导给出的正号及f_AOB=-f_BOA矛盾；修正为括号内正号。"
+    ],
+    "statement_scope": "本条逐字引用的全部数学对象与公式；未纳入的上下文另列。",
+    "lean_decl": "MD.Ch07.firstCorrectionTablePrinted",
+    "lean_declarations": [
+      "MD.Ch07.firstCorrectionTablePrinted",
+      "MD.Ch07.firstCorrectionTablePrinted_corrected",
+      "MD.Ch07.firstCorrection_sign_counterexample",
+      "MD.Ch07.phaseComm",
+      "MD.Ch07.firstCorrectionRHS",
+      "MD.Ch07.firstCorrectionTable_pde"
+    ],
+    "source_page_verification": "见source_page_checks.json；必须已目视核对本条原页。",
+    "repair_log": [],
+    "documented_priors": []
+  },
+  {
+    "source_id": "MD-7.8.1-PositionMomentumCorrections",
+    "kind": "unnumbered_claim",
+    "label": null,
+    "section": "7.8.1",
+    "printed_page": "294–295",
+    "pdf_page": "315–316",
+    "statement_latex": "If $\\vartheta=\\vartheta_1(p)$ then this $O(\\gamma)$ term will not trouble us, as\n\\[\\langle\\vartheta_1(p)f_1(q,p)\\rangle=\\pm\\frac\\beta2\\langle(\\gamma U(q)-c)\\vartheta_1(p)\\pm p^TM^{-1}\\nabla U(q)\\vartheta_1(p)\\rangle\n=\\pm\\frac\\beta2\\langle p^TM^{-1}\\nabla U(q)\\vartheta_1(p)\\rangle.\\]\nHowever, if we instead set $\\vartheta=\\vartheta_2(q)$, then\n\\[\\langle\\vartheta_2(q)f_1(q,p)\\rangle=\\pm\\frac{\\gamma\\beta}{2}\\langle(U(q)-\\langle U(q)\\rangle)\\vartheta_2(q)\\rangle.\\]",
+    "proof_latex": null,
+    "proof_note": "原书未给独立完整证明。",
+    "context_notation": [],
+    "extra_assumptions": [
+      "产品Gibbs实际含位置概率及独立中心Gaussian动量；所有显示期望需可积，未把待求修正值作为假设。",
+      "六个算法分别给符号；大摩擦O(γ)的解释来自明确线性γ项，随γ,h的统一误差界未证明。"
+    ],
+    "issues": [],
+    "statement_scope": "本条逐字引用的全部数学对象与公式；未纳入的上下文另列。",
+    "lean_decl": "MD.Ch07.positionGibbs",
+    "lean_declarations": [
+      "MD.Ch07.positionGibbs",
+      "MD.Ch07.momentumGibbs",
+      "MD.Ch07.productGibbs",
+      "MD.Ch07.positionMomentumCorrections"
+    ],
+    "source_page_verification": "见source_page_checks.json；必须已目视核对本条原页。",
+    "repair_log": [],
+    "documented_priors": []
+  },
+  {
+    "source_id": "MD-7.8.1-OverdampedFirstOrderCaution",
+    "kind": "unnumbered_claim",
+    "label": null,
+    "section": "7.8.1",
+    "printed_page": "295",
+    "pdf_page": "316",
+    "statement_latex": "When considering the limit of infinite friction in the $[XYZ]$ schemes we obtain an inconsistent discretization. Hence these first-order schemes will be unsuitable for the integration of overdamped Langevin dynamics.\nThis is not always the case for first order schemes, however. For example the scheme denoted $[AOAB]$ is consistent with the dynamics, and may be used for integrating the overdamped ($\\gamma=\\infty$) Langevin equation.",
+    "proof_latex": null,
+    "proof_note": "原书未给独立完整证明。",
+    "context_notation": [],
+    "extra_assumptions": [
+      "覆盖AOAB全部更新与固定噪声/固定h下的摩擦极限；不把摩擦极限本身称作过阻尼一致性证明。六个XYZ不一致及AOAB有效时间重标度的一致性仍是明确覆盖缺口。"
+    ],
+    "issues": [],
+    "statement_scope": "本条逐字引用的全部数学对象与公式；未纳入的上下文另列。",
+    "lean_decl": "MD.Ch07.aoab",
+    "lean_declarations": [
+      "MD.Ch07.aoab",
+      "MD.Ch07.aoabInfiniteFriction",
+      "MD.Ch07.aoabFrictionLimit"
+    ],
+    "source_page_verification": "见source_page_checks.json；必须已目视核对本条原页。",
+    "repair_log": [],
+    "documented_priors": []
+  },
+  {
+    "source_id": "MD-7.8.2-BiasedDoubleWellExact",
+    "kind": "unnumbered_claim",
+    "label": null,
+    "section": "7.8.2",
+    "printed_page": "295–297",
+    "pdf_page": "316–318",
+    "statement_latex": "Let $M=\\beta=1$ and define the biased double-well potential as\n\\[U(q)=(q^2-1)^2+q/2.\\]\nWe choose the observable\n\\[\\vartheta(q,p)=p^2-qU'(q)+2qp,\\qquad\\langle\\vartheta\\rangle=0.\\]\nThe first order correction term for the $[BOA]$ scheme is given by the formula\n\\[\\langle\\vartheta f_{1,[BOA]}\\rangle=\\frac\\beta2\\int_{\\mathcal D}(p^2-qU'(q)+2qp)(pU'(q)+\\gamma U(q)-c)\\rho_\\beta d\\omega\n=\\frac1\\beta+\\frac\\gamma2\\langle U\\rangle-\\frac{\\gamma\\beta}{2}\\langle qUU'\\rangle=\\frac{2-\\gamma}{2\\beta}.\\]\nHence for the critical value of $\\gamma=2$, the leading order correction will be zero, giving\n\\[\\langle\\vartheta\\rangle_h^{[BOA]}=\\langle\\vartheta\\rangle+O(h^2).\\]",
+    "proof_latex": null,
+    "proof_note": "原书未给独立完整证明。",
+    "context_notation": [],
+    "extra_assumptions": [
+      "保留数值例中的精确数学积分和解析消项；原文虽起初β=1，推导中保留β，本条正β形式需同样积分分部理论。",
+      "中间〈qUU′〉公式及γ=2实际误差O(h²)需先有严格弱展开，本条不声称已获该余项。"
+    ],
+    "issues": [],
+    "statement_scope": "本条逐字引用的全部数学对象与公式；未纳入的上下文另列。",
+    "lean_decl": "MD.Ch07.biasedDoubleWell",
+    "lean_declarations": [
+      "MD.Ch07.biasedDoubleWell",
+      "MD.Ch07.doubleWellObservable",
+      "MD.Ch07.doubleWellGibbs",
+      "MD.Ch07.doubleWellBOACorrection",
+      "MD.Ch07.doubleWellExact",
+      "MD.Ch07.doubleWellCritical"
+    ],
+    "source_page_verification": "见source_page_checks.json；必须已目视核对本条原页。",
+    "repair_log": [],
+    "documented_priors": []
   }
 ]

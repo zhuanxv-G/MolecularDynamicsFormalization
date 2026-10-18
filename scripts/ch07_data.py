@@ -50,3 +50,5 @@ import ch07_section76
 import ch07_section77a
 import ch07_section77b
 import ch07_section77c
+import ch07_section78a
+import ch07_section78b

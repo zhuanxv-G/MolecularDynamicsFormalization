@@ -1,0 +1,162 @@
+{
+  "batch": "BATCH13",
+  "subtask": "BATCH13a",
+  "source_ids": [
+    "MD-7.8.1-FirstCorrectionTablePrinted"
+  ],
+  "input_sha256": {
+    "Blueprint/Ch07.lean": "ce6b0890e635f2baebb25d007bdf7277208183cc905aa260b833b6737451fa1c",
+    "blueprint/ch07/ch07_source.json": "fd04a4e3fd4c16510dfae44978b8baa88b8150e8efb4cba1a2280a226dd4243e",
+    "BATCH13a_PAGES.pdf": "9b3871175af7033a178200384ad9f60c25fdfd4886fca92e106e6dc58faa44ee"
+  },
+  "page_mapping": [
+    {
+      "attachment_page": 1,
+      "original_pdf_page": 314,
+      "printed_page": 293
+    },
+    {
+      "attachment_page": 2,
+      "original_pdf_page": 315,
+      "printed_page": 294
+    }
+  ],
+  "definition_excerpts": [
+    {
+      "full_name": "MD.Ch07.V",
+      "kind": "abbrev",
+      "path": "Blueprint/Ch07.lean",
+      "line": 172,
+      "code_sha256": "7ab0ad90462b274b03f5b929b5f09417c0b397b6cb908fa6e7bd56677a314027"
+    },
+    {
+      "full_name": "MD.Ch07.Phase",
+      "kind": "abbrev",
+      "path": "Blueprint/Ch07.lean",
+      "line": 173,
+      "code_sha256": "ef1520e3b22ac1c99a30a989deafe8d3da44a9f2a3e5b6c2cd3220218b88513e"
+    },
+    {
+      "full_name": "MD.Ch07.coordDerivative",
+      "kind": "def",
+      "path": "Blueprint/Ch07.lean",
+      "line": 221,
+      "code_sha256": "e782d789a13f5db6817e2c995f141805e81ac75720125b846f8ee14ba3833a4b"
+    },
+    {
+      "full_name": "MD.Ch07.ouForward",
+      "kind": "def",
+      "path": "Blueprint/Ch07.lean",
+      "line": 224,
+      "code_sha256": "ada8fa685075ac3ed7161cba49ec5ecfe0edd30b3dc8d4f60a04214f8d375f3a"
+    },
+    {
+      "full_name": "MD.Ch07.gradient",
+      "kind": "def",
+      "path": "Blueprint/Ch07.lean",
+      "line": 250,
+      "code_sha256": "540c6af25c09d3a58da531bc32056ff1a1c070facc58d34c96b6653d781fba6f"
+    },
+    {
+      "full_name": "MD.Ch07.aForward",
+      "kind": "def",
+      "path": "Blueprint/Ch07.lean",
+      "line": 306,
+      "code_sha256": "67309b12bc7b3e2e6bfcfbca542f16a51bda44d4c8b26224e227a6edd17748d7"
+    },
+    {
+      "full_name": "MD.Ch07.bForward",
+      "kind": "def",
+      "path": "Blueprint/Ch07.lean",
+      "line": 308,
+      "code_sha256": "ea071fbd1968df8265232f2001ee9f5cef582b129edbf2a09a407fa3b7aaeb72"
+    },
+    {
+      "full_name": "MD.Ch07.mechanicalHamiltonian",
+      "kind": "def",
+      "path": "Blueprint/Ch07.lean",
+      "line": 939,
+      "code_sha256": "62d2e0a30b1f75b8d94db47d5f10585188510cf0bd5827e56eafaa0b12b507aa"
+    },
+    {
+      "full_name": "MD.Ch07.gibbsWeight",
+      "kind": "def",
+      "path": "Blueprint/Ch07.lean",
+      "line": 941,
+      "code_sha256": "f25e4e3ead34a06695f3b9d9b5f607bc68063a1d6f159ec2c97866d0ac9b2e38"
+    },
+    {
+      "full_name": "MD.Ch07.phaseO",
+      "kind": "def",
+      "path": "Blueprint/Ch07.lean",
+      "line": 945,
+      "code_sha256": "b752c7d36edbc3a3c5ebe1f512411652587250d3883672146862196dd5a49140"
+    },
+    {
+      "full_name": "MD.Ch07.phaseLD",
+      "kind": "def",
+      "path": "Blueprint/Ch07.lean",
+      "line": 947,
+      "code_sha256": "a938d9580765a245f97b627d9f8b42ca57d63a0137008871356c138ecbb543b5"
+    },
+    {
+      "full_name": "MD.Ch07.firstCorrectionTablePrinted",
+      "kind": "def",
+      "path": "Blueprint/Ch07.lean",
+      "line": 963,
+      "code_sha256": "01dc20e188266e8293324ea6328e66ea80601dfa1d0b2de2f73c5430b0558ca5"
+    },
+    {
+      "full_name": "MD.Ch07.firstCorrectionTablePrinted_corrected",
+      "kind": "def",
+      "path": "Blueprint/Ch07.lean",
+      "line": 968,
+      "code_sha256": "a6d613b882f52fef00c75084093c5a59afd17e23da38930e7ee71cb69de46c06"
+    },
+    {
+      "full_name": "MD.Ch07.firstCorrection_sign_counterexample",
+      "kind": "theorem",
+      "path": "Blueprint/Ch07.lean",
+      "line": 971,
+      "code_sha256": "84f70038bd445a6706afd09df2f976d71f3836724f4615ef011580ee5e81aeb2"
+    },
+    {
+      "full_name": "MD.Ch07.phaseComm",
+      "kind": "def",
+      "path": "Blueprint/Ch07.lean",
+      "line": 973,
+      "code_sha256": "a5a2960267977438213c364501b9671e300e350bf85246872a0d4871e8d2d3e2"
+    },
+    {
+      "full_name": "MD.Ch07.firstCorrectionRHS",
+      "kind": "def",
+      "path": "Blueprint/Ch07.lean",
+      "line": 974,
+      "code_sha256": "85d8e067da55c92469a07d3be6b189a84f950e6ac5ac26675080de724ffbba25"
+    },
+    {
+      "full_name": "MD.Ch07.firstCorrectionTable_pde",
+      "kind": "theorem",
+      "path": "Blueprint/Ch07.lean",
+      "line": 982,
+      "code_sha256": "1db722203ffe0c7ab56e2d3e494de57838102f1173d62dcaff58d92ca0a826c3"
+    }
+  ],
+  "validation": {
+    "project_constant_closure": "PASS",
+    "missing_project_definitions": [],
+    "full_page_render_equality_dpi": 72,
+    "website_submitted": false
+  },
+  "files": {
+    "PASTE.txt": {
+      "bytes": 12720,
+      "sha256": "4d85cd456ffdbbee3ebe8e5e813d62e65c30153e42e1779a8b2856e08e759962"
+    },
+    "BATCH13a_PAGES.pdf": {
+      "bytes": 84026,
+      "sha256": "9b3871175af7033a178200384ad9f60c25fdfd4886fca92e106e6dc58faa44ee"
+    }
+  },
+  "total_task_bytes": 101905
+}

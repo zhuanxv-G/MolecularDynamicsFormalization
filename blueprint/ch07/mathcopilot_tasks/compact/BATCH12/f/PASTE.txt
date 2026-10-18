@@ -1,0 +1,246 @@
+以附件/PASTE 为准，忽略 /workspace 旧文件；Mathlib 定义按标准含义采信。
+本任务只审本条：原文转录、对象资格、定义体、量词、全部结论及[EXTRA]是否一致；Lean编译不代替语义审阅。
+Lean/Mathlib均4.34.0。原页PDF映射：[313, 314]；印刷页=[292, 293].
+input_sha256请原样回显：
+{
+  "Blueprint/Ch07.lean": "ce6b0890e635f2baebb25d007bdf7277208183cc905aa260b833b6737451fa1c",
+  "blueprint/ch07/ch07_source.json": "fd04a4e3fd4c16510dfae44978b8baa88b8150e8efb4cba1a2280a226dd4243e",
+  "BATCH12f_PAGES.pdf": "c6d5515eabacba938c7dd0678517aa2f789e7aa911d634111dceeb20c86ea46b"
+}
+用代码将JSON对象(batch,input_sha256,items)写到 /workspace/.mathcopilot/reviews/ch07/BATCH12f_review.json；items仅含本source_id。
+items字段：source_id、verdict(PASS/FAIL/NEEDS_HUMAN)、transcription、semantic_review、counterexample、suggested_fix、printed_version、corrected_version。逐版区分原文疑误和修正版结论；缺材料必须具体指出，不猜测。写后json.loads自检，最后仅回复路径及统计。
+
+## 原文JSON
+```json
+{
+  "source_id": "MD-7.8.1-GibbsDerivativeIdentities",
+  "kind": "unnumbered_claim",
+  "label": null,
+  "section": "7.8.1",
+  "printed_page": "292–293",
+  "pdf_page": "313–314",
+  "statement_latex": "If we define the function $g(q,p)$ as $g(q,p)=\\beta p^TM^{-1}\\nabla U(q)$, then through simple computation we have\n\\[\\mathcal L_A^\\dagger\\rho_\\beta=-\\mathcal L_B^\\dagger\\rho_\\beta=g(q,p)\\rho_\\beta.\\]\n\\[[\\mathcal L_A^\\dagger,\\mathcal L_B^\\dagger]\\rho_\\beta=-(\\mathcal L_A^\\dagger+\\mathcal L_B^\\dagger)(g\\rho_\\beta)=(\\mathcal L_O^\\dagger-\\mathcal L_{LD}^\\dagger)(g\\rho_\\beta).\\]\nFor a function $\\psi(q)$ purely of position, we have\n\\[\\mathcal L_{LD}^\\dagger(\\psi(q)\\rho_\\beta)=-(p^TM^{-1}\\nabla\\psi(q))\\rho_\\beta(q,p),\\]\nand hence we can compute\n\\[\\mathcal L_O^\\dagger(g(q,p)\\rho_\\beta)=\\gamma\\rho_\\beta(-p\\cdot\\nabla_pg+\\beta^{-1}\\nabla_p\\cdot M\\nabla_pg)\n=-\\gamma g\\rho_\\beta=\\gamma\\beta\\mathcal L_{LD}^\\dagger(U(q)\\rho_\\beta).\\]",
+  "proof_latex": null,
+  "proof_note": "原书未给独立完整证明。",
+  "context_notation": [],
+  "extra_assumptions": [
+    "ρ为未归一Gibbs权，所有微分等式对常数归一化同样成立；实际概率还要正有限配分积分。所有质量正、β>0、光滑资格明示。",
+    "覆盖g、A/B作用、纯位置ψ作用及O(gρ)两种等价写法；交换子作用与中间OU共轭式在原文登记但另列覆盖缺口。"
+  ],
+  "issues": [],
+  "statement_scope": "本条逐字引用的全部数学对象与公式；未纳入的上下文另列。",
+  "lean_decl": "MD.Ch07.mechanicalHamiltonian",
+  "lean_declarations": [
+    "MD.Ch07.mechanicalHamiltonian",
+    "MD.Ch07.gibbsWeight",
+    "MD.Ch07.gFunction",
+    "MD.Ch07.phaseO",
+    "MD.Ch07.phaseLD",
+    "MD.Ch07.gibbsDerivativeIdentities"
+  ],
+  "source_page_verification": "见source_page_checks.json；必须已目视核对本条原页。",
+  "repair_log": [],
+  "documented_priors": []
+}
+```
+
+## 完整本条Lean
+```lean
+def mechanicalHamiltonian (m : V n) (U : V n → ℝ) (x : Phase n) : ℝ :=
+  (∑ i, x.2 i^2/(2*m i))+U x.1
+def gibbsWeight (m : V n) (U : V n → ℝ) (β : ℝ) (x : Phase n) : ℝ :=
+  Real.exp (-β*mechanicalHamiltonian m U x)
+def gFunction (m : V n) (U : V n → ℝ) (β : ℝ) (x : Phase n) : ℝ :=
+  β*∑ i, x.2 i/m i*gradient U x.1 i
+def phaseO (m : V n) (γ β : ℝ) (ρ : Phase n → ℝ) (x : Phase n) : ℝ :=
+  ouForward m γ β⁻¹ (fun p ↦ ρ (x.1,p)) x.2
+def phaseLD (m : V n) (U : V n → ℝ) (γ β : ℝ) (ρ : Phase n → ℝ) : Phase n → ℝ :=
+  aForward m ρ+bForward U ρ+phaseO m γ β ρ
+theorem gibbsDerivativeIdentities (m : V n) (U ψ : V n → ℝ) (β γ : ℝ)
+    (hm : ∀ i, 0 < m i) (hβ : 0 < β) (hU : ContDiff ℝ ⊤ U) (hψ : ContDiff ℝ ⊤ ψ) :
+    let ρ := gibbsWeight m U β
+    let g := gFunction m U β
+    aForward m ρ = g*ρ ∧ bForward U ρ = -(g*ρ) ∧
+    phaseLD m U γ β (fun x ↦ ψ x.1*ρ x) =
+      (fun x ↦ -(∑ i, x.2 i/m i*gradient ψ x.1 i)*ρ x) ∧
+    phaseO m γ β (g*ρ) = (fun x ↦ -γ*g x*ρ x) ∧
+    phaseO m γ β (g*ρ) = (fun x ↦ γ*β*phaseLD m U γ β (fun y ↦ U y.1*ρ y) x) := by
+  sorry
+```
+
+## 项目依赖定义体及选择规格
+以下def/abbrev/structure完整保留；定理列出完整类型，Mathlib标准定义无需摘录。
+
+### MD.Ch07.V (Blueprint/Ch07.lean:172)
+原文件上下文：
+```lean
+open Set Filter MeasureTheory ProbabilityTheory MolecularDynamics
+open scoped BigOperators Topology ContDiff ENNReal NNReal
+variable {Ω : Type*} [MeasurableSpace Ω]
+variable {n : ℕ}
+```
+```lean
+abbrev V (n : ℕ) := Fin n → ℝ
+```
+
+### MD.Ch07.Phase (Blueprint/Ch07.lean:173)
+原文件上下文：
+```lean
+open Set Filter MeasureTheory ProbabilityTheory MolecularDynamics
+open scoped BigOperators Topology ContDiff ENNReal NNReal
+variable {Ω : Type*} [MeasurableSpace Ω]
+variable {n : ℕ}
+```
+```lean
+abbrev Phase (n : ℕ) := V n × V n
+```
+
+### MD.Ch07.coordDerivative (Blueprint/Ch07.lean:221)
+原文件上下文：
+```lean
+open Set Filter MeasureTheory ProbabilityTheory MolecularDynamics
+open scoped BigOperators Topology ContDiff ENNReal NNReal
+variable {Ω : Type*} [MeasurableSpace Ω]
+variable {n : ℕ}
+```
+```lean
+def coordDerivative (f : V n → ℝ) (x : V n) (i : Fin n) : ℝ :=
+  deriv (fun z ↦ f (Function.update x i z)) (x i)
+```
+
+### MD.Ch07.ouForward (Blueprint/Ch07.lean:224)
+原文件上下文：
+```lean
+open Set Filter MeasureTheory ProbabilityTheory MolecularDynamics
+open scoped BigOperators Topology ContDiff ENNReal NNReal
+variable {Ω : Type*} [MeasurableSpace Ω]
+variable {n : ℕ}
+```
+```lean
+def ouForward (m : V n) (γ θ : ℝ) (f : V n → ℝ) (p : V n) : ℝ :=
+  γ * (∑ i, coordDerivative (fun x ↦ x i*f x) p i) +
+    γ*θ * ∑ i, m i * coordDerivative (fun x ↦ coordDerivative f x i) p i
+```
+
+### MD.Ch07.gradient (Blueprint/Ch07.lean:250)
+原文件上下文：
+```lean
+open Set Filter MeasureTheory ProbabilityTheory MolecularDynamics
+open scoped BigOperators Topology ContDiff ENNReal NNReal
+variable {Ω : Type*} [MeasurableSpace Ω]
+variable {n : ℕ}
+```
+```lean
+def gradient (U : V n → ℝ) (q : V n) : V n := fun i ↦ coordDerivative U q i
+```
+
+### MD.Ch07.aForward (Blueprint/Ch07.lean:306)
+原文件上下文：
+```lean
+open Set Filter MeasureTheory ProbabilityTheory MolecularDynamics
+open scoped BigOperators Topology ContDiff ENNReal NNReal
+variable {Ω : Type*} [MeasurableSpace Ω]
+variable {n : ℕ}
+```
+```lean
+def aForward (m : V n) (f : Phase n → ℝ) (x : Phase n) : ℝ :=
+  -∑ i, x.2 i / m i * coordDerivative (fun q ↦ f (q,x.2)) x.1 i
+```
+
+### MD.Ch07.bForward (Blueprint/Ch07.lean:308)
+原文件上下文：
+```lean
+open Set Filter MeasureTheory ProbabilityTheory MolecularDynamics
+open scoped BigOperators Topology ContDiff ENNReal NNReal
+variable {Ω : Type*} [MeasurableSpace Ω]
+variable {n : ℕ}
+```
+```lean
+def bForward (U : V n → ℝ) (f : Phase n → ℝ) (x : Phase n) : ℝ :=
+  ∑ i, gradient U x.1 i * coordDerivative (fun p ↦ f (x.1,p)) x.2 i
+```
+
+### MD.Ch07.mechanicalHamiltonian (Blueprint/Ch07.lean:939)
+原文件上下文：
+```lean
+open Set Filter MeasureTheory ProbabilityTheory MolecularDynamics
+open scoped BigOperators Topology ContDiff ENNReal NNReal
+variable {Ω : Type*} [MeasurableSpace Ω]
+variable {n : ℕ}
+```
+```lean
+def mechanicalHamiltonian (m : V n) (U : V n → ℝ) (x : Phase n) : ℝ :=
+  (∑ i, x.2 i^2/(2*m i))+U x.1
+```
+
+### MD.Ch07.gibbsWeight (Blueprint/Ch07.lean:941)
+原文件上下文：
+```lean
+open Set Filter MeasureTheory ProbabilityTheory MolecularDynamics
+open scoped BigOperators Topology ContDiff ENNReal NNReal
+variable {Ω : Type*} [MeasurableSpace Ω]
+variable {n : ℕ}
+```
+```lean
+def gibbsWeight (m : V n) (U : V n → ℝ) (β : ℝ) (x : Phase n) : ℝ :=
+  Real.exp (-β*mechanicalHamiltonian m U x)
+```
+
+### MD.Ch07.gFunction (Blueprint/Ch07.lean:943)
+原文件上下文：
+```lean
+open Set Filter MeasureTheory ProbabilityTheory MolecularDynamics
+open scoped BigOperators Topology ContDiff ENNReal NNReal
+variable {Ω : Type*} [MeasurableSpace Ω]
+variable {n : ℕ}
+```
+```lean
+def gFunction (m : V n) (U : V n → ℝ) (β : ℝ) (x : Phase n) : ℝ :=
+  β*∑ i, x.2 i/m i*gradient U x.1 i
+```
+
+### MD.Ch07.phaseO (Blueprint/Ch07.lean:945)
+原文件上下文：
+```lean
+open Set Filter MeasureTheory ProbabilityTheory MolecularDynamics
+open scoped BigOperators Topology ContDiff ENNReal NNReal
+variable {Ω : Type*} [MeasurableSpace Ω]
+variable {n : ℕ}
+```
+```lean
+def phaseO (m : V n) (γ β : ℝ) (ρ : Phase n → ℝ) (x : Phase n) : ℝ :=
+  ouForward m γ β⁻¹ (fun p ↦ ρ (x.1,p)) x.2
+```
+
+### MD.Ch07.phaseLD (Blueprint/Ch07.lean:947)
+原文件上下文：
+```lean
+open Set Filter MeasureTheory ProbabilityTheory MolecularDynamics
+open scoped BigOperators Topology ContDiff ENNReal NNReal
+variable {Ω : Type*} [MeasurableSpace Ω]
+variable {n : ℕ}
+```
+```lean
+def phaseLD (m : V n) (U : V n → ℝ) (γ β : ℝ) (ρ : Phase n → ℝ) : Phase n → ℝ :=
+  aForward m ρ+bForward U ρ+phaseO m γ β ρ
+```
+
+### MD.Ch07.gibbsDerivativeIdentities (Blueprint/Ch07.lean:949)
+原文件上下文：
+```lean
+open Set Filter MeasureTheory ProbabilityTheory MolecularDynamics
+open scoped BigOperators Topology ContDiff ENNReal NNReal
+variable {Ω : Type*} [MeasurableSpace Ω]
+variable {n : ℕ}
+```
+```lean
+theorem gibbsDerivativeIdentities (m : V n) (U ψ : V n → ℝ) (β γ : ℝ)
+    (hm : ∀ i, 0 < m i) (hβ : 0 < β) (hU : ContDiff ℝ ⊤ U) (hψ : ContDiff ℝ ⊤ ψ) :
+    let ρ := gibbsWeight m U β
+    let g := gFunction m U β
+    aForward m ρ = g*ρ ∧ bForward U ρ = -(g*ρ) ∧
+    phaseLD m U γ β (fun x ↦ ψ x.1*ρ x) =
+      (fun x ↦ -(∑ i, x.2 i/m i*gradient ψ x.1 i)*ρ x) ∧
+    phaseO m γ β (g*ρ) = (fun x ↦ -γ*g x*ρ x) ∧
+    phaseO m γ β (g*ρ) = (fun x ↦ γ*β*phaseLD m U γ β (fun y ↦ U y.1*ρ y) x)
+```

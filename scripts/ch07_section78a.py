@@ -13,9 +13,7 @@ The first order correction function for this scheme is then given by the particu
   (-1/2 : ℝ) • (comm X Y+comm X Z+comm Y Z)
 theorem firstOrderOperator_coefficient {R : Type*} [Ring R] [Algebra ℝ R] (X Y Z : R) :
     PowerSeries.coeff 1 (formalModifiedGenerator (threeStage X Y Z)) = firstOrderOperator X Y Z := by
-  rw [(threeOperatorBCH X Y Z).2.1]
-  dsimp [firstOrderOperator, comm]
-  module
+  sorry
 def correctionEquation {E : Type*} [AddCommGroup E] [Module ℝ E]
     (L L1 : Module.End ℝ E) (ρ ρf : E) : Prop := L ρf = -L1 ρ''',label='(7.20)–(7.21)',
 extra=['前向组合采用Z,Y,X顺序；正式级数系数推论覆盖所有六个排列，L0为三者和。修正方程为必要形式方程，可解性独立。'])

@@ -1,0 +1,95 @@
+以附件/PASTE 为准，忽略 /workspace 旧文件；Mathlib 定义按标准含义采信。
+本任务只审本条：原文转录、对象资格、定义体、量词、全部结论及[EXTRA]是否一致；Lean编译不代替语义审阅。
+Lean/Mathlib均4.34.0。原页PDF映射：[312]；印刷页=[291].
+input_sha256请原样回显：
+{
+  "Blueprint/Ch07.lean": "ce6b0890e635f2baebb25d007bdf7277208183cc905aa260b833b6737451fa1c",
+  "blueprint/ch07/ch07_source.json": "fd04a4e3fd4c16510dfae44978b8baa88b8150e8efb4cba1a2280a226dd4243e",
+  "BATCH12d_PAGES.pdf": "51bc85d4a654c59c04159c0f8df6f66b7b5e6d2ae696c8cd4f661fb4495e2f21"
+}
+用代码将JSON对象(batch,input_sha256,items)写到 /workspace/.mathcopilot/reviews/ch07/BATCH12d_review.json；items仅含本source_id。
+items字段：source_id、verdict(PASS/FAIL/NEEDS_HUMAN)、transcription、semantic_review、counterexample、suggested_fix、printed_version、corrected_version。逐版区分原文疑误和修正版结论；缺材料必须具体指出，不猜测。写后json.loads自检，最后仅回复路径及统计。
+
+## 原文JSON
+```json
+{
+  "source_id": "MD-7.8-HomogeneousNormalization",
+  "kind": "unnumbered_claim",
+  "label": null,
+  "section": "7.8",
+  "printed_page": "291",
+  "pdf_page": "312",
+  "statement_latex": "The general solution of (7.21) will consist of the sum of the homogeneous solution $f_{1,[XYZ]}^{[HS]}(q,p)$ and particular solution $f_{1,[XYZ]}^{[PS]}(q,p)$ in the usual way. However, since $\\mathcal L_{LD}^\\dagger\\vartheta=0$ has as its only solution $\\vartheta\\propto\\rho_\\beta$, the homogeneous solution of (7.21) is $f_{1,[XYZ]}^{[HS]}(q,p)=c$, for some constant $c$. Our assumption that $\\langle f_{1,[XYZ]}\\rangle=0$ means that $c=-\\langle f_{1,[XYZ]}^{[PS]}\\rangle$.",
+  "proof_latex": null,
+  "proof_note": "原书未给独立完整证明。",
+  "context_notation": [],
+  "extra_assumptions": [
+    "核恰为ρ的一维空间是明确前提；不把Langevin核唯一性当作已证明。第二条为实际概率归一化的中心化恒等式。"
+  ],
+  "issues": [],
+  "statement_scope": "本条逐字引用的全部数学对象与公式；未纳入的上下文另列。",
+  "lean_decl": "MD.Ch07.homogeneousNormalization",
+  "lean_declarations": [
+    "MD.Ch07.homogeneousNormalization",
+    "MD.Ch07.centeredParticular"
+  ],
+  "source_page_verification": "见source_page_checks.json；必须已目视核对本条原页。",
+  "repair_log": [],
+  "documented_priors": []
+}
+```
+
+## 完整本条Lean
+```lean
+theorem homogeneousNormalization {E : Type*} [AddCommGroup E] [Module ℝ E]
+    (L : Module.End ℝ E) (ρ u v rhs : E)
+    (hker : ∀ w, L w = 0 → ∃ c : ℝ, w = c • ρ)
+    (hu : L u = rhs) (hv : L v = rhs) : ∃ c : ℝ, u = v+c • ρ := by
+  obtain ⟨c,hc⟩ := hker (u-v) (by rw [map_sub,hu,hv,sub_self])
+  exact ⟨c,by rw [← hc]; abel⟩
+theorem centeredParticular (μ : Measure Ω) [IsProbabilityMeasure μ] (f : Ω → ℝ)
+    (hf : Integrable f μ) : (∫ x, f x-(∫ y, f y ∂μ) ∂μ) = 0 := by
+  rw [integral_sub hf (integrable_const _)]
+  simp
+```
+
+## 项目依赖定义体及选择规格
+以下def/abbrev/structure完整保留；定理列出完整类型，Mathlib标准定义无需摘录。
+
+### MD.Ch07.homogeneousNormalization (Blueprint/Ch07.lean:912)
+原文件上下文：
+```lean
+open Set Filter MeasureTheory ProbabilityTheory MolecularDynamics
+open scoped BigOperators Topology ContDiff ENNReal NNReal
+variable {Ω : Type*} [MeasurableSpace Ω]
+variable {n : ℕ}
+```
+```lean
+theorem homogeneousNormalization {E : Type*} [AddCommGroup E] [Module ℝ E]
+    (L : Module.End ℝ E) (ρ u v rhs : E)
+    (hker : ∀ w, L w = 0 → ∃ c : ℝ, w = c • ρ)
+    (hu : L u = rhs) (hv : L v = rhs) : ∃ c : ℝ, u = v+c • ρ
+```
+
+### MD.Ch07.centeredParticular (Blueprint/Ch07.lean:918)
+原文件上下文：
+```lean
+open Set Filter MeasureTheory ProbabilityTheory MolecularDynamics
+open scoped BigOperators Topology ContDiff ENNReal NNReal
+variable {Ω : Type*} [MeasurableSpace Ω]
+variable {n : ℕ}
+```
+```lean
+theorem centeredParticular (μ : Measure Ω) [IsProbabilityMeasure μ] (f : Ω → ℝ)
+    (hf : Integrable f μ) : (∫ x, f x-(∫ y, f y ∂μ) ∂μ) = 0
+```
+
+### MolecularDynamics.Chapter05Review.E (MolecularDynamics/Chapter05/ReviewDefinitions.lean:18)
+原文件上下文：
+```lean
+open Set Filter MeasureTheory Matrix
+open scoped BigOperators Topology ENNReal
+```
+```lean
+abbrev E (n : ℕ) := EuclideanSpace ℝ (Fin n)
+```

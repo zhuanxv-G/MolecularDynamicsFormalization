@@ -1,6 +1,6 @@
 # 第7章待用户提交的首轮任务包
 
-12批、68子包，覆盖68条；尚未提交网站。
+13批、76子包，覆盖76条；尚未提交网站。
 
 - BATCH01：MD-7.1-Bias, MD-7.2-ScalarSDE, MD-7.2-EulerMaruyama, MD-7.2-SDEIncrement, MD-7.2-StrongError, MD-7.2-MeanErrorExpectation
 - BATCH02：MD-7.2-StrongOrder, MD-7.2-WeakError, MD-7.2-StrongWeakComparison, MD-7.2-CanonicalAverage, MD-7.2-PartitionPrinted, MD-7.2-AverageNotationBias
@@ -13,4 +13,5 @@
 - BATCH09：MD-7.6-DivergenceFreeInvariant, MD-7.6-GeMarsdenRestriction, MD-7.6-JSplitting, MD-7.6-CoordinateJSplitting, MD-7.7-ModifiedGenerator, MD-7.7-InvariantDensityExpansion
 - BATCH10：MD-7.7.1-ExactABOPropagators, MD-7.7.1-OperatorOrderReversal, MD-7.7.1-StationaryModifiedPDE, MD-7.7.1-TwoOperatorBCH, MD-7.7.1-TaylorRemainder, MD-7.7.2-ThreeOperatorBCH
 - BATCH11：MD-7.7.2-ScalarForwardOperators, MD-7.7.2-CommutatorAB, MD-7.7.2-CommutatorsAOBO, MD-7.7.2-OBAModifiedOperator, MD-7.7.2-SpectralQualification, MD-7.7.3-PerturbationCoefficientEquation
-- BATCH12：MD-7.7.3-ObservableCorrectionExpansion, MD-7.7.3-PerturbativeSolvabilityCaution
+- BATCH12：MD-7.7.3-ObservableCorrectionExpansion, MD-7.7.3-PerturbativeSolvabilityCaution, MD-7.8-FirstOrderOperator, MD-7.8-HomogeneousNormalization, MD-7.8.1-CommutatorPermutationRelations, MD-7.8.1-GibbsDerivativeIdentities
+- BATCH13：MD-7.8.1-FirstCorrectionTablePrinted, MD-7.8.1-PositionMomentumCorrections, MD-7.8.1-OverdampedFirstOrderCaution, MD-7.8.2-BiasedDoubleWellExact

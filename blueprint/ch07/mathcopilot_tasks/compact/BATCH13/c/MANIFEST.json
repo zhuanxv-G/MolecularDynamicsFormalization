@@ -1,0 +1,115 @@
+{
+  "batch": "BATCH13",
+  "subtask": "BATCH13c",
+  "source_ids": [
+    "MD-7.8.1-OverdampedFirstOrderCaution"
+  ],
+  "input_sha256": {
+    "Blueprint/Ch07.lean": "ce6b0890e635f2baebb25d007bdf7277208183cc905aa260b833b6737451fa1c",
+    "blueprint/ch07/ch07_source.json": "fd04a4e3fd4c16510dfae44978b8baa88b8150e8efb4cba1a2280a226dd4243e",
+    "BATCH13c_PAGES.pdf": "96b617356d9a5e47ace3534e6ca0891d5939de4dcfc536484abe798d95715686"
+  },
+  "page_mapping": [
+    {
+      "attachment_page": 1,
+      "original_pdf_page": 316,
+      "printed_page": 295
+    }
+  ],
+  "definition_excerpts": [
+    {
+      "full_name": "MD.Ch07.V",
+      "kind": "abbrev",
+      "path": "Blueprint/Ch07.lean",
+      "line": 172,
+      "code_sha256": "7ab0ad90462b274b03f5b929b5f09417c0b397b6cb908fa6e7bd56677a314027"
+    },
+    {
+      "full_name": "MD.Ch07.Phase",
+      "kind": "abbrev",
+      "path": "Blueprint/Ch07.lean",
+      "line": 173,
+      "code_sha256": "ef1520e3b22ac1c99a30a989deafe8d3da44a9f2a3e5b6c2cd3220218b88513e"
+    },
+    {
+      "full_name": "MD.Ch07.ouMomentum",
+      "kind": "def",
+      "path": "Blueprint/Ch07.lean",
+      "line": 198,
+      "code_sha256": "df5a3511ac6e0986b8293d21de91ddb40de94195595495bc71fa780b2962b8ae"
+    },
+    {
+      "full_name": "MD.Ch07.ouStep",
+      "kind": "def",
+      "path": "Blueprint/Ch07.lean",
+      "line": 211,
+      "code_sha256": "0f9aad04567b33cc7067304661e170a91deec512fcb772c226c1095acf25ffb5"
+    },
+    {
+      "full_name": "MD.Ch07.coordDerivative",
+      "kind": "def",
+      "path": "Blueprint/Ch07.lean",
+      "line": 221,
+      "code_sha256": "e782d789a13f5db6817e2c995f141805e81ac75720125b846f8ee14ba3833a4b"
+    },
+    {
+      "full_name": "MD.Ch07.gradient",
+      "kind": "def",
+      "path": "Blueprint/Ch07.lean",
+      "line": 250,
+      "code_sha256": "540c6af25c09d3a58da531bc32056ff1a1c070facc58d34c96b6653d781fba6f"
+    },
+    {
+      "full_name": "MD.Ch07.driftStep",
+      "kind": "def",
+      "path": "Blueprint/Ch07.lean",
+      "line": 279,
+      "code_sha256": "600d3de37df6b9ef23628e1495de886583ba0ded7bc74fa5eb3ce43ed25daa6c"
+    },
+    {
+      "full_name": "MD.Ch07.kickStep",
+      "kind": "def",
+      "path": "Blueprint/Ch07.lean",
+      "line": 282,
+      "code_sha256": "475506583d95af613a8e1c58ad474dbd3fc0c0cfc22ab985f0c251cb1567db37"
+    },
+    {
+      "full_name": "MD.Ch07.aoab",
+      "kind": "def",
+      "path": "Blueprint/Ch07.lean",
+      "line": 1015,
+      "code_sha256": "f7516ed35485be2f5670e895d1b545fe22fcedd8b55f10f73d47ef7f3b13c53d"
+    },
+    {
+      "full_name": "MD.Ch07.aoabInfiniteFriction",
+      "kind": "def",
+      "path": "Blueprint/Ch07.lean",
+      "line": 1017,
+      "code_sha256": "c4abca2bfb4736b122caa5e00a8f01da762710142a11e031bcba04dd4f7c1894"
+    },
+    {
+      "full_name": "MD.Ch07.aoabFrictionLimit",
+      "kind": "theorem",
+      "path": "Blueprint/Ch07.lean",
+      "line": 1019,
+      "code_sha256": "12760c8f2f30cf6c248f73986ae571ea32d5c074368b38e5f8de276f9fb42df5"
+    }
+  ],
+  "validation": {
+    "project_constant_closure": "PASS",
+    "missing_project_definitions": [],
+    "full_page_render_equality_dpi": 72,
+    "website_submitted": false
+  },
+  "files": {
+    "PASTE.txt": {
+      "bytes": 8080,
+      "sha256": "5f902504766f4474b7af2cfd1d232b83f5d818f92e3941d32086a1ca2df4acf1"
+    },
+    "BATCH13c_PAGES.pdf": {
+      "bytes": 78309,
+      "sha256": "96b617356d9a5e47ace3534e6ca0891d5939de4dcfc536484abe798d95715686"
+    }
+  },
+  "total_task_bytes": 89999
+}

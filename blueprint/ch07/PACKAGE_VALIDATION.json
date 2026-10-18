@@ -1,7 +1,7 @@
 {
-  "batches": 12,
-  "subtasks": 68,
-  "covered_entries": 68,
+  "batches": 13,
+  "subtasks": 76,
+  "covered_entries": 76,
   "checks": [
     {
       "source_id": "MD-7.1-Bias",
@@ -341,6 +341,46 @@
     {
       "source_id": "MD-7.7.3-PerturbativeSolvabilityCaution",
       "project_constants": 2,
+      "missing": []
+    },
+    {
+      "source_id": "MD-7.8-FirstOrderOperator",
+      "project_constants": 57,
+      "missing": []
+    },
+    {
+      "source_id": "MD-7.8-HomogeneousNormalization",
+      "project_constants": 3,
+      "missing": []
+    },
+    {
+      "source_id": "MD-7.8.1-CommutatorPermutationRelations",
+      "project_constants": 8,
+      "missing": []
+    },
+    {
+      "source_id": "MD-7.8.1-GibbsDerivativeIdentities",
+      "project_constants": 13,
+      "missing": []
+    },
+    {
+      "source_id": "MD-7.8.1-FirstCorrectionTablePrinted",
+      "project_constants": 17,
+      "missing": []
+    },
+    {
+      "source_id": "MD-7.8.1-PositionMomentumCorrections",
+      "project_constants": 10,
+      "missing": []
+    },
+    {
+      "source_id": "MD-7.8.1-OverdampedFirstOrderCaution",
+      "project_constants": 11,
+      "missing": []
+    },
+    {
+      "source_id": "MD-7.8.2-BiasedDoubleWellExact",
+      "project_constants": 6,
       "missing": []
     }
   ],

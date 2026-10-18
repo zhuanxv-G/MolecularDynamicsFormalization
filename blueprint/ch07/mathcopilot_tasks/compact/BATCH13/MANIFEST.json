@@ -1,0 +1,33 @@
+{
+  "batch": "BATCH13",
+  "subtasks": [
+    {
+      "subtask": "BATCH13a",
+      "source_id": "MD-7.8.1-FirstCorrectionTablePrinted",
+      "path": "blueprint/ch07/mathcopilot_tasks/compact/BATCH13/a",
+      "bytes": 101905,
+      "manifest_sha256": "542bb7d2cab7e55c0c1cfcee4a9b013916f6829b3f9cfd82eecc10ae634fea0e"
+    },
+    {
+      "subtask": "BATCH13b",
+      "source_id": "MD-7.8.1-PositionMomentumCorrections",
+      "path": "blueprint/ch07/mathcopilot_tasks/compact/BATCH13/b",
+      "bytes": 98856,
+      "manifest_sha256": "44a29d40fc4a6871b46f683b8484f964257fc9d943eb542386d5b1b494a08ad5"
+    },
+    {
+      "subtask": "BATCH13c",
+      "source_id": "MD-7.8.1-OverdampedFirstOrderCaution",
+      "path": "blueprint/ch07/mathcopilot_tasks/compact/BATCH13/c",
+      "bytes": 89999,
+      "manifest_sha256": "e2a37102e54838bac2fdde493aec5691df9f2be0bbc4e609e31e7cef0f91aca4"
+    },
+    {
+      "subtask": "BATCH13d",
+      "source_id": "MD-7.8.2-BiasedDoubleWellExact",
+      "path": "blueprint/ch07/mathcopilot_tasks/compact/BATCH13/d",
+      "bytes": 180448,
+      "manifest_sha256": "01cc63526a87ffbd04a9f34cabf32cc679c107828482a684463438391a01a834"
+    }
+  ]
+}

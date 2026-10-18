@@ -1,0 +1,59 @@
+{
+  "batch": "BATCH12",
+  "subtask": "BATCH12d",
+  "source_ids": [
+    "MD-7.8-HomogeneousNormalization"
+  ],
+  "input_sha256": {
+    "Blueprint/Ch07.lean": "ce6b0890e635f2baebb25d007bdf7277208183cc905aa260b833b6737451fa1c",
+    "blueprint/ch07/ch07_source.json": "fd04a4e3fd4c16510dfae44978b8baa88b8150e8efb4cba1a2280a226dd4243e",
+    "BATCH12d_PAGES.pdf": "51bc85d4a654c59c04159c0f8df6f66b7b5e6d2ae696c8cd4f661fb4495e2f21"
+  },
+  "page_mapping": [
+    {
+      "attachment_page": 1,
+      "original_pdf_page": 312,
+      "printed_page": 291
+    }
+  ],
+  "definition_excerpts": [
+    {
+      "full_name": "MD.Ch07.homogeneousNormalization",
+      "kind": "theorem",
+      "path": "Blueprint/Ch07.lean",
+      "line": 912,
+      "code_sha256": "a9cecbd31dee1766c91135e0f3e7be96539998d10d5fc3ee62c9cd1a8459e3bd"
+    },
+    {
+      "full_name": "MD.Ch07.centeredParticular",
+      "kind": "theorem",
+      "path": "Blueprint/Ch07.lean",
+      "line": 918,
+      "code_sha256": "2be3dfc8377603d19795edba3350711139236092da966f82c69e16e1d81410e2"
+    },
+    {
+      "full_name": "MolecularDynamics.Chapter05Review.E",
+      "kind": "abbrev",
+      "path": "MolecularDynamics/Chapter05/ReviewDefinitions.lean",
+      "line": 18,
+      "code_sha256": "b497c8ba7f01b62a3147d9ae65652772ff3f81e57aa19b116f1283fef7a3cc60"
+    }
+  ],
+  "validation": {
+    "project_constant_closure": "PASS",
+    "missing_project_definitions": [],
+    "full_page_render_equality_dpi": 72,
+    "website_submitted": false
+  },
+  "files": {
+    "PASTE.txt": {
+      "bytes": 4602,
+      "sha256": "510ca526a11cf527d7797dfad82385741dd4fdcd990b2bc4f0ded7b58e49f3dd"
+    },
+    "BATCH12d_PAGES.pdf": {
+      "bytes": 83982,
+      "sha256": "51bc85d4a654c59c04159c0f8df6f66b7b5e6d2ae696c8cd4f661fb4495e2f21"
+    }
+  },
+  "total_task_bytes": 90455
+}
