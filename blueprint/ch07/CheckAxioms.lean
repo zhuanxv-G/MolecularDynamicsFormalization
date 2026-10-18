@@ -97,3 +97,15 @@ import Blueprint.Ch07
 #print axioms MD.Ch07.bbkStarMomentSystemPrinted_corrected
 #print axioms MD.Ch07.bbkStarExtraFactor_counterexample
 #print axioms MD.Ch07.bbkStarStationaryAlgebra
+#print axioms MD.Ch07.perturbedPotential
+#print axioms MD.Ch07.perturbedHamiltonian
+#print axioms MD.Ch07.perturbedGibbs
+#print axioms MD.Ch07.perturbedStep
+#print axioms MD.Ch07.perturbedStationary
+#print axioms MD.Ch07.perturbedLeading
+#print axioms MD.Ch07.perturbedRemainder
+#print axioms MD.Ch07.positivePairLimit
+#print axioms MD.Ch07.perturbedErrorExpansion
+#print axioms MD.Ch07.perturbedErrorScale
+#print axioms MD.Ch07.perturbedErrorOrders
+#print axioms MD.Ch07.baoabLeading_largeFriction

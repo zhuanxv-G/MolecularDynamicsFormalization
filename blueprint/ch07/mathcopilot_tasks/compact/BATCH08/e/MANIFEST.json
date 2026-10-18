@@ -1,0 +1,199 @@
+{
+  "batch": "BATCH08",
+  "subtask": "BATCH08e",
+  "source_ids": [
+    "MD-7.5-PerturbedErrorOrders"
+  ],
+  "input_sha256": {
+    "Blueprint/Ch07.lean": "b264fa86a78494948e906f84e59edda946252a4afe82eda891f5fe0617ffeeec",
+    "blueprint/ch07/ch07_source.json": "3fcdf455ab2df150a94e32fae9810de776de923c97ebddc7015253651ad4e632",
+    "BATCH08e_PAGES.pdf": "b5b81f3b0dc5aa2751df50f8fbbeefb5abe71ab87e18a7c75ebf85c9dd2da00c"
+  },
+  "page_mapping": [
+    {
+      "attachment_page": 1,
+      "original_pdf_page": 301,
+      "printed_page": 280
+    }
+  ],
+  "definition_excerpts": [
+    {
+      "full_name": "MD.Ch07.V",
+      "kind": "abbrev",
+      "path": "Blueprint/Ch07.lean",
+      "line": 172,
+      "code_sha256": "7ab0ad90462b274b03f5b929b5f09417c0b397b6cb908fa6e7bd56677a314027"
+    },
+    {
+      "full_name": "MD.Ch07.Phase",
+      "kind": "abbrev",
+      "path": "Blueprint/Ch07.lean",
+      "line": 173,
+      "code_sha256": "ef1520e3b22ac1c99a30a989deafe8d3da44a9f2a3e5b6c2cd3220218b88513e"
+    },
+    {
+      "full_name": "MD.Ch07.ouMomentum",
+      "kind": "def",
+      "path": "Blueprint/Ch07.lean",
+      "line": 198,
+      "code_sha256": "df5a3511ac6e0986b8293d21de91ddb40de94195595495bc71fa780b2962b8ae"
+    },
+    {
+      "full_name": "MD.Ch07.ouStep",
+      "kind": "def",
+      "path": "Blueprint/Ch07.lean",
+      "line": 211,
+      "code_sha256": "0f9aad04567b33cc7067304661e170a91deec512fcb772c226c1095acf25ffb5"
+    },
+    {
+      "full_name": "MD.Ch07.coordDerivative",
+      "kind": "def",
+      "path": "Blueprint/Ch07.lean",
+      "line": 221,
+      "code_sha256": "e782d789a13f5db6817e2c995f141805e81ac75720125b846f8ee14ba3833a4b"
+    },
+    {
+      "full_name": "MD.Ch07.gradient",
+      "kind": "def",
+      "path": "Blueprint/Ch07.lean",
+      "line": 250,
+      "code_sha256": "540c6af25c09d3a58da531bc32056ff1a1c070facc58d34c96b6653d781fba6f"
+    },
+    {
+      "full_name": "MD.Ch07.driftStep",
+      "kind": "def",
+      "path": "Blueprint/Ch07.lean",
+      "line": 279,
+      "code_sha256": "600d3de37df6b9ef23628e1495de886583ba0ded7bc74fa5eb3ce43ed25daa6c"
+    },
+    {
+      "full_name": "MD.Ch07.kickStep",
+      "kind": "def",
+      "path": "Blueprint/Ch07.lean",
+      "line": 282,
+      "code_sha256": "475506583d95af613a8e1c58ad474dbd3fc0c0cfc22ab985f0c251cb1567db37"
+    },
+    {
+      "full_name": "MD.Ch07.aboba",
+      "kind": "def",
+      "path": "Blueprint/Ch07.lean",
+      "line": 342,
+      "code_sha256": "af70ab853d759ba00da0b13bf2f485e89c00402fba1e53bfd8b4bbe8b2165066"
+    },
+    {
+      "full_name": "MD.Ch07.baoab",
+      "kind": "def",
+      "path": "Blueprint/Ch07.lean",
+      "line": 344,
+      "code_sha256": "99da0f3d787e8252ad607d79d6b5ed6b8a09cebdb779bc439e74633cc75972f4"
+    },
+    {
+      "full_name": "MD.Ch07.oabao",
+      "kind": "def",
+      "path": "Blueprint/Ch07.lean",
+      "line": 346,
+      "code_sha256": "1d4c7cc7ffee6fdb913811e6ca29a3fdf23fe21f1866aa92745739c55c976f58"
+    },
+    {
+      "full_name": "MD.Ch07.obabo",
+      "kind": "def",
+      "path": "Blueprint/Ch07.lean",
+      "line": 348,
+      "code_sha256": "d2957022eb3e976968e7799cea2952c53c638cb9ecaec56b5cd51fb9d34849e0"
+    },
+    {
+      "full_name": "MD.Ch07.momentQ",
+      "kind": "def",
+      "path": "Blueprint/Ch07.lean",
+      "line": 415,
+      "code_sha256": "3a1f882d971889b4d4dff8c89259d586f56734fe1cf50aeb1b8abea63f47d6ff"
+    },
+    {
+      "full_name": "MD.Ch07.scalarLift",
+      "kind": "def",
+      "path": "Blueprint/Ch07.lean",
+      "line": 500,
+      "code_sha256": "08e8232eba4af8a83ee16ee71730aa6d86fbe250365ceddbea305d14869295ea"
+    },
+    {
+      "full_name": "MD.Ch07.perturbedPotential",
+      "kind": "def",
+      "path": "Blueprint/Ch07.lean",
+      "line": 607,
+      "code_sha256": "8075e3aad2d250ac228cb5ec5800c50059851c91243fcd9e1062ce6bdcd57443"
+    },
+    {
+      "full_name": "MD.Ch07.perturbedHamiltonian",
+      "kind": "def",
+      "path": "Blueprint/Ch07.lean",
+      "line": 608,
+      "code_sha256": "d90ae21020485484d645a800006d4b753c7b114a785032f7ee55f6527bc70c6f"
+    },
+    {
+      "full_name": "MD.Ch07.perturbedGibbs",
+      "kind": "def",
+      "path": "Blueprint/Ch07.lean",
+      "line": 609,
+      "code_sha256": "41e5332a6b0534b627ae5a888faed8f8c4b64e26ed4840c197d4c36fac1a3d7a"
+    },
+    {
+      "full_name": "MD.Ch07.perturbedStep",
+      "kind": "def",
+      "path": "Blueprint/Ch07.lean",
+      "line": 612,
+      "code_sha256": "8094c9bed79299b05930a8056f8bced6790b36066ab4b29aa90ccbeda54effb0"
+    },
+    {
+      "full_name": "MD.Ch07.perturbedStationary",
+      "kind": "def",
+      "path": "Blueprint/Ch07.lean",
+      "line": 619,
+      "code_sha256": "8184efeb936da7b7875ff4cf286871066d5ca3780737a60c024710d1c859340d"
+    },
+    {
+      "full_name": "MD.Ch07.positivePairLimit",
+      "kind": "def",
+      "path": "Blueprint/Ch07.lean",
+      "line": 635,
+      "code_sha256": "6f314fcb05c29bfc941b01b143cf3e0630297b816b86d8dec0f4d970032f7b4d"
+    },
+    {
+      "full_name": "MD.Ch07.perturbedErrorScale",
+      "kind": "def",
+      "path": "Blueprint/Ch07.lean",
+      "line": 647,
+      "code_sha256": "f91128d5c7b5ab26f81dd2386c2fecccf37210b12c5f5a281925280ab00ff0ff"
+    },
+    {
+      "full_name": "MD.Ch07.perturbedErrorOrders",
+      "kind": "theorem",
+      "path": "Blueprint/Ch07.lean",
+      "line": 649,
+      "code_sha256": "b2b68dd3574e9ea0e8f5c7933b6414401774428941828f3eb897f4be7dc79d3b"
+    },
+    {
+      "full_name": "MD.Ch07.baoabLeading_largeFriction",
+      "kind": "theorem",
+      "path": "Blueprint/Ch07.lean",
+      "line": 656,
+      "code_sha256": "4de77a9a8a5d434fb0ee0a73c577a4c607a21557c0fb5472393a3e236f5d246d"
+    }
+  ],
+  "validation": {
+    "project_constant_closure": "PASS",
+    "missing_project_definitions": [],
+    "full_page_render_equality_dpi": 72,
+    "website_submitted": false
+  },
+  "files": {
+    "PASTE.txt": {
+      "bytes": 14096,
+      "sha256": "acf1a82bd86ff74ba8c574b30d84de093acf01f0d72931dd306732f3b6538635"
+    },
+    "BATCH08e_PAGES.pdf": {
+      "bytes": 67687,
+      "sha256": "b5b81f3b0dc5aa2751df50f8fbbeefb5abe71ab87e18a7c75ebf85c9dd2da00c"
+    }
+  },
+  "total_task_bytes": 88140
+}

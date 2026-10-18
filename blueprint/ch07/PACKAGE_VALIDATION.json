@@ -1,7 +1,7 @@
 {
   "batches": 8,
-  "subtasks": 44,
-  "covered_entries": 44,
+  "subtasks": 47,
+  "covered_entries": 47,
   "checks": [
     {
       "source_id": "MD-7.1-Bias",
@@ -221,6 +221,21 @@
     {
       "source_id": "MD-7.4.2-BBKStarStationary",
       "project_constants": 5,
+      "missing": []
+    },
+    {
+      "source_id": "MD-7.5-PerturbedHamiltonian",
+      "project_constants": 18,
+      "missing": []
+    },
+    {
+      "source_id": "MD-7.5-PerturbedErrorExpansion",
+      "project_constants": 23,
+      "missing": []
+    },
+    {
+      "source_id": "MD-7.5-PerturbedErrorOrders",
+      "project_constants": 23,
       "missing": []
     }
   ],

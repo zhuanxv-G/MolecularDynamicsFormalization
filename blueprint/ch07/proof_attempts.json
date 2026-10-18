@@ -122,5 +122,17 @@
     "category": "缺大型理论",
     "routes": [],
     "decision": "缺大型理论时直接记录缺项；否则最多三条短路线。"
+  },
+  "MD-7.5-PerturbedErrorExpansion": {
+    "reason": "需要非线性平稳矩层级截断及一致余项控制的大型理论；本轮不建设。",
+    "category": "缺大型理论",
+    "routes": [],
+    "decision": "缺大型理论时直接记录缺项；否则最多三条短路线。"
+  },
+  "MD-7.5-PerturbedErrorOrders": {
+    "reason": "首项衰减需有理函数极限短桥；四个误差阶需要非线性平稳弱误差与一致余项理论。",
+    "category": "缺大型理论",
+    "routes": [],
+    "decision": "缺大型理论时直接记录缺项；否则最多三条短路线。"
   }
 }

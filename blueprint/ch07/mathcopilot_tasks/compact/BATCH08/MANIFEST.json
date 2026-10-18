@@ -6,14 +6,35 @@
       "source_id": "MD-7.4.2-BBKStarMomentSystemPrinted",
       "path": "blueprint/ch07/mathcopilot_tasks/compact/BATCH08/a",
       "bytes": 89298,
-      "manifest_sha256": "deff0637d18304d57d64c7edf44ddc4b748f8e903692b2f82dc122a3095130a7"
+      "manifest_sha256": "cbf4a0fbdb18a481043a6ca8af456428633c54d71cadf292d4e223616ef7737a"
     },
     {
       "subtask": "BATCH08b",
       "source_id": "MD-7.4.2-BBKStarStationary",
       "path": "blueprint/ch07/mathcopilot_tasks/compact/BATCH08/b",
       "bytes": 82853,
-      "manifest_sha256": "460a549911726d6b9f453379824ee35b8be8325bc9b7667c6ad3eb0703d2d4d0"
+      "manifest_sha256": "bf68bfd64115fd5fbff388438dcc17eda3cc291d37de8298ef56d955bc5de1f0"
+    },
+    {
+      "subtask": "BATCH08c",
+      "source_id": "MD-7.5-PerturbedHamiltonian",
+      "path": "blueprint/ch07/mathcopilot_tasks/compact/BATCH08/c",
+      "bytes": 91957,
+      "manifest_sha256": "0622db467a9cc0b38fc53191b073619d541bd6e2bf3eddce2a8f1df168710f5e"
+    },
+    {
+      "subtask": "BATCH08d",
+      "source_id": "MD-7.5-PerturbedErrorExpansion",
+      "path": "blueprint/ch07/mathcopilot_tasks/compact/BATCH08/d",
+      "bytes": 89132,
+      "manifest_sha256": "c0de44e54852a8e4c613343075f54a5965be005d99d4e8be42e1513fa2a4f583"
+    },
+    {
+      "subtask": "BATCH08e",
+      "source_id": "MD-7.5-PerturbedErrorOrders",
+      "path": "blueprint/ch07/mathcopilot_tasks/compact/BATCH08/e",
+      "bytes": 88140,
+      "manifest_sha256": "45a302fc350dc9188485bfe9059efbc565c752594d633cd4fb921b64611196a1"
     }
   ]
 }

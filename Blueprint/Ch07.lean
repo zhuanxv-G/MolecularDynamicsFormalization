@@ -601,4 +601,60 @@ theorem bbkStarStationaryAlgebra (m Ω γ θ h Q P C : ℝ)
     P = θ*m*(1+γ*h/2)⁻¹ ∧ C = 0 := by
   sorry
 
+/-- source_id: MD-7.5-PerturbedHamiltonian · 印刷p.279 / PDFp.300
+[EXTRA] 后面所印系数取单位温度θ=1与单位质量；原段未显式写温度依赖，其他温度不声称覆盖。
+[EXTRA] 分布是实际归一Gibbs权；ε>0时的可积归一性及动量独立Gaussian识别另列待证。 -/
+def perturbedPotential (ε q : ℝ) : ℝ := q^2/2+ε*q^4/4
+def perturbedHamiltonian (ε : ℝ) (x : ℝ × ℝ) : ℝ := x.2^2/2+perturbedPotential ε x.1
+def perturbedGibbs (ε : ℝ) : Measure (ℝ × ℝ) :=
+  let w := fun x : ℝ × ℝ ↦ Real.exp (-perturbedHamiltonian ε x)
+  volume.withDensity (fun x ↦ ENNReal.ofReal (w x/(∫ y, w y)))
+def perturbedStep (s : Fin 4) (ε γ h R S : ℝ) : (ℝ × ℝ) → (ℝ × ℝ) :=
+  let m : V 1 := fun _ ↦ 1
+  let U : V 1 → ℝ := fun q ↦ perturbedPotential ε (q 0)
+  scalarLift (if s = 0 then aboba m U γ 1 h (fun _ ↦ R)
+    else if s = 1 then baoab m U γ 1 h (fun _ ↦ R)
+    else if s = 2 then obabo m U γ 1 h (fun _ ↦ R) (fun _ ↦ S)
+    else oabao m U γ 1 h (fun _ ↦ R) (fun _ ↦ S))
+def perturbedStationary (s : Fin 4) (ε γ h : ℝ) (μ : Measure (ℝ × ℝ)) : Prop :=
+  IsProbabilityMeasure μ ∧ MemLp (fun x ↦ x.1) 2 μ ∧ MemLp (fun x ↦ x.2) 2 μ ∧
+  Measure.map (fun z : (ℝ × ℝ) × (ℝ × ℝ) ↦ perturbedStep s ε γ h z.2.1 z.2.2 z.1)
+    (μ.prod ((gaussianReal 0 1).prod (gaussianReal 0 1))) = μ
+
+/-- source_id: MD-7.5-PerturbedErrorExpansion · 印刷p.280 / PDFp.301
+[EXTRA] 原书以形式截断推得系数；本条把正ε、正h趋零的余项写成明确待证估计，不声称形式截断已给出严格证明。
+[EXTRA] 实际平稳分布、坐标L²、独立Gaussian噪声及γ>0均写入前提；没有把待求平均或展开作为假设。 -/
+def perturbedLeading (s : Fin 4) (γ ε h : ℝ) : ℝ :=
+  if s = 0 then 3*h^2*ε*(48*ε-4+3*γ^2*(9*ε-1))/(12*γ^2+16)
+  else if s = 1 then -9*h^2*ε^2/(6*γ^2+8)-3*h^4*ε^2*(6*γ^4+19*γ^2+16)/(8*(3*γ^2+4)^2)
+  else if s = 2 then h^2*(1/4+ε*(144*ε+81*ε*γ^2-9*γ^2-12)/(12*γ^2+16))
+  else -h^2*(1/4+18*ε^2/(12*γ^2+16))
+def perturbedRemainder (s : Fin 4) (ε h : ℝ) : ℝ :=
+  if s = 0 then ε*h^4+ε^3*h^2
+  else if s = 1 then ε^2*h^6+ε^3*h^2 else h^4+ε^3*h^2
+def positivePairLimit : Filter (ℝ × ℝ) :=
+  𝓝[Set.Ioi (0 : ℝ) ×ˢ Set.Ioi (0 : ℝ)] (0,0)
+theorem perturbedErrorExpansion (s : Fin 4) (γ : ℝ) (hγ : 0 < γ)
+    (μ : ℝ → ℝ → Measure (ℝ × ℝ))
+    (hinv : ∀ᶠ z in positivePairLimit, perturbedStationary s z.1 γ z.2 (μ z.1 z.2)) :
+    Asymptotics.IsBigO positivePairLimit
+      (fun z ↦ momentQ (μ z.1 z.2)-momentQ (perturbedGibbs z.1)-perturbedLeading s γ z.1 z.2)
+      (fun z ↦ perturbedRemainder s z.1 z.2) := by
+  sorry
+
+/-- source_id: MD-7.5-PerturbedErrorOrders · 印刷p.280 / PDFp.301
+[EXTRA] 双参数正向极限已明确；γ固定的常数不等于γ一致误差界。原书(7.14)的ε³h²余项不足以单独推出BAOAB的ε²h²+ε²h⁴界，需要额外结构；保留为待证。 -/
+def perturbedErrorScale (s : Fin 4) (γ ε h : ℝ) : ℝ :=
+  if s = 0 then ε*h^2 else if s = 1 then ε^2*h^2/(1+γ^2)+ε^2*h^4 else h^2
+theorem perturbedErrorOrders (s : Fin 4) (γ : ℝ) (hγ : 0 < γ)
+    (μ : ℝ → ℝ → Measure (ℝ × ℝ))
+    (hinv : ∀ᶠ z in positivePairLimit, perturbedStationary s z.1 γ z.2 (μ z.1 z.2)) :
+    Asymptotics.IsBigO positivePairLimit
+      (fun z ↦ |momentQ (μ z.1 z.2)-momentQ (perturbedGibbs z.1)|)
+      (fun z ↦ perturbedErrorScale s γ z.1 z.2) := by
+  sorry
+theorem baoabLeading_largeFriction (ε h : ℝ) :
+    Filter.Tendsto (fun γ : ℝ ↦ -9*h^2*ε^2/(6*γ^2+8)) Filter.atTop (𝓝 0) := by
+  sorry
+
 end MD.Ch07

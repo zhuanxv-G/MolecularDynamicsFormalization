@@ -40,7 +40,7 @@ def positivePairLimit : Filter (ℝ × ℝ) :=
   𝓝[Set.Ioi (0 : ℝ) ×ˢ Set.Ioi (0 : ℝ)] (0,0)
 theorem perturbedErrorExpansion (s : Fin 4) (γ : ℝ) (hγ : 0 < γ)
     (μ : ℝ → ℝ → Measure (ℝ × ℝ))
-    (hinv : ∀ ε h, 0 < ε → 0 < h → perturbedStationary s ε γ h (μ ε h)) :
+    (hinv : ∀ᶠ z in positivePairLimit, perturbedStationary s z.1 γ z.2 (μ z.1 z.2)) :
     Asymptotics.IsBigO positivePairLimit
       (fun z ↦ momentQ (μ z.1 z.2)-momentQ (perturbedGibbs z.1)-perturbedLeading s γ z.1 z.2)
       (fun z ↦ perturbedRemainder s z.1 z.2) := by
@@ -59,7 +59,7 @@ The twofold surprising result though, is that (a) the leading error of the $[BAO
   if s = 0 then ε*h^2 else if s = 1 then ε^2*h^2/(1+γ^2)+ε^2*h^4 else h^2
 theorem perturbedErrorOrders (s : Fin 4) (γ : ℝ) (hγ : 0 < γ)
     (μ : ℝ → ℝ → Measure (ℝ × ℝ))
-    (hinv : ∀ ε h, 0 < ε → 0 < h → perturbedStationary s ε γ h (μ ε h)) :
+    (hinv : ∀ᶠ z in positivePairLimit, perturbedStationary s z.1 γ z.2 (μ z.1 z.2)) :
     Asymptotics.IsBigO positivePairLimit
       (fun z ↦ |momentQ (μ z.1 z.2)-momentQ (perturbedGibbs z.1)|)
       (fun z ↦ perturbedErrorScale s γ z.1 z.2) := by

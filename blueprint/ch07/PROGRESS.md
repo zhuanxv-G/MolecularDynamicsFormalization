@@ -1,6 +1,6 @@
 # 第7章逐条进度
 
-当前正文落盘：44条。全部正文完成：否。章末完整check：未执行。
+当前正文落盘：47条。全部正文完成：否。章末完整check：未执行。
 
 | source_id | 原页PDF | 本地对照 | 编译/公理 | 数学状态 | 网站 |
 |---|---|---|---|---|---|
@@ -48,3 +48,6 @@
 | MD-7.4.2-BBKStarCorrelations | 299 | PASS | 通过 | 未证陈述 | 待审 |
 | MD-7.4.2-BBKStarMomentSystemPrinted | 299–300 | NEEDS_HUMAN | 通过 | 定义 | 待审 |
 | MD-7.4.2-BBKStarStationary | 300 | PASS | 通过 | 未证陈述 | 待审 |
+| MD-7.5-PerturbedHamiltonian | 300 | PASS | 通过 | 定义 | 待审 |
+| MD-7.5-PerturbedErrorExpansion | 301 | PASS | 通过 | 未证陈述 | 待审 |
+| MD-7.5-PerturbedErrorOrders | 301 | PASS | 通过 | 未证陈述 | 待审 |
