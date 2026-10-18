@@ -1,0 +1,53 @@
+7.7
+The Evolution of the Distribution Using a Numerical Method
+287
+for some ﬁnite truncation index n 2 f1; 2; 3; : : :g. The remainder term at order hnC1
+will involve the integration of ﬁnitely many derivatives of its argument. Hence for
+observables of sufﬁcient smoothness with compact support, this remainder term will
+remain bounded (see [223]).
+7.7.2
+First Order Operator Expansion
+As we consider schemes involving compositions of three splitting pieces, the
+minimum number of stages to our methods (in order for it to be consistent) will
+be three. The perturbed Fokker-Planck operator for a splitting method with three
+stages will be computed as
+exp.hS/ D exp.hZ/ exp.hY/ exp.hX/;
+(7.18)
+where X, Y and Z are one of L
+A, L
+B and L
+O. Let us work the ﬁrst terms of this
+expansion out, retaining terms involving triple products only
+exp.hY/ exp.hX/ D exp
+ 
+h
+ 
+.Y C X/ C h
+2ŒY; X	 C h2
+12 .ŒY; Y; X	 C ŒX; X; Y	/ C : : :
+!!
+;
+where the notation ŒA; B; C	 is notation for ŒA; ŒB; C		. Applying this formula one
+more time in (7.18), we ﬁnd
+S D X C Y C Z C h
+2ŒY; X	 C h2
+12 .ŒY; ŒY; X		 C ŒX; ŒX; Y		/
+C h
+2
+
+Z; Y C X C h
+2ŒY; X	
+
+C h2
+12 .ŒZ; ŒZ; Y C X		  ŒY C X; ŒZ; Y C X		/ C : : :
+D X C Y C Z C h
+2.ŒZ; Y	 C ŒZ; X	 C ŒY; X	/ C h2
+4 ŒZ; Y; X	
+C h2
+12 .ŒY; Y; X	 C ŒX; X; Y	 C ŒZ; Z; Y	 C ŒZ; Z; X	
+CŒY C X; Y C X; Z	/ C : : :
+In general the terms in this expansion will lead to complicated expansions. In the
+case of deterministic systems, the operators are always ﬁrst order due to equality
+of mixed partials (the 2nd order derivatives are cancelled). Due to the second
+derivatives present in the L
+O operator, derivatives of all orders will appear in the

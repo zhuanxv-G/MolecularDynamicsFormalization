@@ -1,0 +1,89 @@
+7.11
+Applying the Schemes to a Biomolecule
+313
+BAOAB
+ABOBA
+OBABO
+OABAO
+BBK
+SPV
+Bond Energy
+Total Potential
+Energy
+Configurational
+Temperature
+Kinetic
+Temperature
+Friction (1/ps)
+10
+-2
+10
+0
+10
+2
+10
+-2
+10
+0
+10
+2
+10
+-2
+10
+0
+10
+2
+10
+-2
+10
+0
+10
+2
+10
+-2
+10
+0
+10
+2
+10
+-2
+10
+0
+10
+2
+Friction (1/ps)
+Friction (1/ps)
+Friction (1/ps)
+Friction (1/ps)
+Friction (1/ps)
+Timestep (fs)
+2.25
+1.5
+1
+3
+Timestep (fs)
+2.25
+1.5
+1
+3
+Timestep (fs)
+2.25
+1.5
+1
+3
+Timestep (fs)
+2.25
+1.5
+1
+3
+1%
+10%
+100%
+Fig. 7.7 Each pixel of the above grids gives the relative error in computed averages calculated
+in a vacuum simulation of alanine dipeptide at T D 300 K for 2.5 ns, where trajectories were
+computed using one of the Langevin dynamics discretization schemes listed. Each experiment
+corresponds to a particular friction and timestep parameter set. Though sampling error is still
+evident, it is clear that discretization error causes many of the schemes signiﬁcant problems at
+large stepsizes. Notably, despite not working in the high-friction regime, the BAOAB scheme
+demonstrates excellent results for conﬁgurational sampling. Figure reprinted with permission from
+[222]. Copyright 2013, AIP Publishing LLC

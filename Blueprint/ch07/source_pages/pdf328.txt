@@ -1,0 +1,47 @@
+7.10
+The Limit Method
+307
+observable averages diverge and we do not recover correct sampling in the limit
+of zero stepsize.
+The symmetric schemes considered in the previous section are consistent
+however, each with their own limiting schemes corresponding to taking the limit
+of inﬁnite friction in their update equations. As the momenta are continually
+redrawn from a normal distribution, we focus on the evolution of the conﬁgurations
+themselves. For the method denoted OBABO, we have the limiting scheme
+pnC1=2 D
+p
+kBTM1=2Rn;
+OpnC1=2 D pnC1=2  .h=2/rU.qn/;
+qnC1 D qn C hM1OpnC1=2;
+OpnC1 D OpnC1=2  .h=2/rU.qnC1/;
+pnC1 D
+p
+kBTM1=2RnC1=2;
+where Rn and RnC1=2 are independent normal random vectors with mean zero and
+unit variance. It is clear that if our only desire is to make use of the position data q,
+then the ﬁnal two steps are redundant in this algorithm, as we update the momentum
+vector only to redraw it at the beginning of the next iteration. Any information about
+the initial momentum vector pn is unused in the scheme, making it simple to rewrite
+solely in terms of the position vector, giving us
+qnC1 D qn  h2
+2 M1rU.qn/ C h
+p
+kBTM1=2Rn:
+(7.38)
+Denoting  D h2=2, the update scheme (7.38) becomes the Euler-Maruyama
+scheme
+qnC1 D qn  M1rU.qn/ C
+p
+2kBTM1=2Rn;
+(7.39)
+which is known to give an error in long-time averages O./ D O.h2/, just as our
+analysis suggests.
+If we instead consider the BAOAB scheme we ﬁnd that unlike the OBABO
+scheme we no longer have redundant steps:
+pnC1=2 D pn  .h=2/rU.qn/;
+qnC1=2 D qn C .h=2/M1pnC1=2;
+OpnC1=2 D
+p
+kBTM1=2Rn;
+qnC1 D qnC1=2 C .h=2/M1OpnC1=2;
+pnC1 D OpnC1=2  .h=2/rU.qnC1/;

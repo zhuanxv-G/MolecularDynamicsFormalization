@@ -1,0 +1,91 @@
+294
+7
+Numerical Methods for Stochastic Molecular Dynamics
+And hence we have
+L
+LD
+
+f1;AOBˇ
+
+D L
+LD
+
+f1;ABOˇ
+
+ 
+ˇL
+LD
+
+U.q/ˇ
+
+;
+giving the general solution
+f1;AOB D ˇ
+2
+
+
+U.q/ C pTM1rU.q/  c
+
+;
+for the same choice of c.
+Hence using the symmetry in the commutators we are able to solve for the leading
+order corrections for each of the schemes of the form XYZ. In summary, we ﬁnd
+that
+f1;ABO.q; p/ D f1;OAB.q; p/ D ˇ
+2
+
+
+U.q/  pTM1rU.q/  c
+
+;
+(7.25a)
+f1;OBA.q; p/ D f1;BAO.q; p/ D ˇ
+2
+
+
+U.q/  pTM1rU.q/  c
+
+;
+(7.25b)
+f1;AOB.q; p/ D ˇ
+2
+
+
+U.q/ C pTM1rU.q/  c
+
+;
+(7.25c)
+f1;BOA.q; p/ D ˇ
+2
+
+
+U.q/ C pTM1rU.q/  c
+
+;
+(7.25d)
+where the constant c is chosen to ensure each correction function has average 0,
+giving c D 
+hU.q/i. If required, we may continue this procedure in order to ﬁnd
+correction functions for higher orders, though the added complexity means that we
+cannot always solve to ﬁnd an explicit solution.
+The results of our analysis suggest that to leading order the error scales linearly
+with the reciprocal temperature ˇ, but more importantly a non-constant term appears
+which is of order 
+. As our correction is of the form h#f1i we can see that if # D
+#1.p/ then this O.
+/ term will not trouble us, as
+h#1.p/f1.q; p/i D ˙ˇ
+2
+˝
+.
+U.q/  c/#1.p/ ˙ pTM1rU.q/#1.p/
+˛
+D ˙ˇ
+2
+˝
+pTM1rU.q/#1.p/
+˛
+;
+where the sign depends on the particular scheme used (which governs the form of
+f1). Thus in the case of a function of pure momentum the order 
+ term does not

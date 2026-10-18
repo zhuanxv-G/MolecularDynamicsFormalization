@@ -1,0 +1,24 @@
+328
+7
+Numerical Methods for Stochastic Molecular Dynamics
+7. [Computer Investigation] Consider canonically sampling the planar system
+with Hamiltonian
+H.x; y; px; py/ D p2
+x=2 C p2
+y=2 C .x2  1/2=4 C .y2  1/2=4 C xy;
+at inverse temperature ˇ D 1.
+a. Verify that hx2 C y2i  3:043, by either using a discretization scheme with
+small discretization parameter, or using a high-accuracy numerical solver (e.g.
+MAPLE or Mathematica).
+b. Use the Euler-Maruyama scheme (7.39) to compute hx2 C y2i for several
+values of the stepsize  2 .0; 0:2	.
+c. Run the same experiment as part (b) using the (7.40) instead. Compare the
+errors in the computed averages for both schemes, as well as the overall
+stability of the methods.
+d. In the limit 
+ ! 1, the OBABO scheme converges to Euler-Maruyama,
+while the BAOAB scheme converges to the scheme (7.40). Implement
+OBABO and OBABO in your language of choice and investigate their
+behavior in this limit (i.e. repeat parts (b) and (c) for ﬁxed small, medium and
+large values of 
+).

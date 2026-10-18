@@ -1,0 +1,92 @@
+300
+7
+Numerical Methods for Stochastic Molecular Dynamics
+Proof The proof is very simple, and follows almost directly from our ergodicity
+assumption. If we assume that
+lim
+n!1 .ST /n  D OST;
+for any initial distribution , then we have
+OST D lim
+n!1 .ST /n OST D lim
+n!1 S .T S/n1 T OST D S OTS:
+A similar statement holds for OST.
+
+If we return to our scheme OYZYO, which has a simple inhomogeneity, then
+we can relate its invariant distribution to invariant distributions of schemes with a
+central OU update by writing its evolution operator as
+eh OL
+OYZYO D e.h=2/L
+Oe.h=2/L
+Ye.h=2/L
+Z
+„
+ƒ‚
+…
+S
+e.h=2/L
+Ze.h=2/L
+Ye.h=2/L
+O
+„
+ƒ‚
+…
+T
+D ST :
+By applying Lemma 7.1, we can equate the invariant distributions directly as
+OZYOYZ D exp..h=2/L
+Z/ exp..h=2/L
+Y/ exp..h=2/L
+O/ OOYZYO:
+Rewriting our ansatz (7.27) in place of the distributions, and expanding the
+exponential series gives
+ˇ
+
+1 C h2f2;ZYOYZ C : : :
+
+D
+
+IdCh
+2L
+LDCh2
+4 L
+1;OYZ C h2
+2 L
+LD C : : :
+	 
+ˇ
+
+1 C h2f2;OYZYO C : : :
+
+;
+and hence equating powers we have
+f2;ZYOYZˇ D f2;OYZYOˇ C 1
+4L
+1;OYZˇ:
+By virtue of (7.20), we have
+L
+1;OABˇ D 1
+2L
+H
+
+gˇ
+
+L
+1;OBAˇ D 1
+2L
+H
+
+gˇ
+
+;
+where recall g.q; p/ˇ D L
+Aˇ D ˇpTM1rU.q/ˇ. Computing
+L
+H
+
+gˇ
+
+D ˇ
+
+jrU.q/j2  pTr2U.q/p
+
+ˇ;

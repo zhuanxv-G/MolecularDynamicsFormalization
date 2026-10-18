@@ -1,0 +1,76 @@
+7.13
+Multiple Timestepping
+325
+We consider the case with 
+  ˝, allowing us to write  D iO for O 2 R, and
+ˇˇˇˇˇˇ
+cos
+ Oh
+2  atanh
+h
+O
+		 s
+1 C h2
+O2
+ˇˇˇˇˇˇ
+	 cosh
+
+h
+2
+	
+:
+The term on the left hand side of the inequality is oscillatory in h, while the term on
+the right hand side uniformly grows with step size. This implies that for any suitable
+
+ > 0, we can ﬁnd small pocket regions of the step size where the left hand side is
+sufﬁciently minimized in order to give stability. However, just as in the deterministic
+case, these island stability regions are difﬁcult to predict the location of in a more
+general system.
+The oscillatory cosine term is bounded between ˙1, implying that we have
+stability for all step sizes provided the condition
+s
+1 C h2
+O2 	 cosh
+
+h
+2
+	
+;
+(7.49)
+holds. We expect there to exist stability regions for smaller values of the friction
+where this condition is violated, but these will be interposed between unstable
+regions coming from the oscillatory term. We have guaranteed stability where (7.49)
+holds, which we can simplify to
+h
+p
+4˝2  
+2 	 sinh
+
+h
+2
+	
+:
+For a ﬁxed value of the friction, if we increase the step size the right hand side will
+grow exponentially compared to the linear growth on the left hand side, so it would
+seem that for large h we actually need a smaller friction in order to be stable. Hence
+the minimum required friction for stability can be found by considering the case of
+small timestep. This gives a bound
+1
+p
+4˝2  
+2 	 
+2 ;
+which gives a stability condition for all step sizes h as long as
+
+  ˝
+q
+2  2
+p
+1  ˝4 
+p
+2=˝:
+Therefore we expect that the minimum friction value required for stability for all
+timesteps h > 0, scales with the value of inverse ˝. Unlike the deterministic case,
+we are able to remove linear resonance effects with a sufﬁciently large friction term.
+We illustrate this numerically in Fig. 7.13, by applying the splitting scheme (7.48)
+using various timesteps and frictions. Each gridpoint marks an independent simula-

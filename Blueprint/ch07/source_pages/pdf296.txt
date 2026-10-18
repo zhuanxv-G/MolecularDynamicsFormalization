@@ -1,0 +1,39 @@
+7.4
+Error Results for Harmonic Problems
+275
+Assuming that the discretization schemes preserve the ergodic property of
+Langevin dynamics, taking the expectation of these equations and considering the
+limit as n goes to inﬁnity allows us to compute the invariant average of the schemes,
+and thus to evaluate the perfect sampling bias introduced by the discretization.
+7.4.1
+Invariant Averages for Schemes Using the A, B and O
+Splitting
+The analysis of schemes using the splitting strategy coded with the A, B and O
+pieces is particularly simple, as we use a new random number for each stochastic
+update meaning that the random numbers and state variables are not correlated
+between steps. Hence we have
+E.n;iqn/ D E.n;ipn/ D 0;
+for any i and n. Thus, taking expectations of (7.8)–(7.10) for such schemes, and then
+considering the limit n ! 1 we obtain a closed, linear system of equations
+hq2ih D 2
+11hq2ih C 2
+12hp2ih C 2 11 12hqpih C N11;
+hp2ih D 2
+21hq2ih C 2
+22hp2ih C 2 21 22hqpih C N22;
+hqpih D 11 21hq2ih C 12 22hp2ih C . 11 22 C 12 21/hqpih C N12;
+(7.11)
+where we have constants
+N11 D E.2
+n;1/;
+N12 D E.n;1n;2/;
+N22 D E.2
+n;2/:
+We can solve this linear system to ﬁnd the invariant averages computed by the
+chosen discretization scheme for the harmonic oscillator with Hamiltonian (7.6).
+Example 7.1 Consider the scheme coded ABO, where
+ABO
+qnC1 D qn C hM1pn
+pnC1=2 D pn  hrU.qnC1/
+pnC1 D eh
+pnC1=2 C M1=2Rn

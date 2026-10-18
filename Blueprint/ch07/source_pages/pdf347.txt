@@ -1,0 +1,62 @@
+326
+7
+Numerical Methods for Stochastic Molecular Dynamics
+0
+5
+10
+15
+0
+0.1
+0.2
+0.3
+0.4
+0.5
+0.6
+10-1
+10-2
+10-3
+1
+Friction 
+Timestep 
+Fig. 7.13 We consider the stability of a multiple timestepping scheme incorporating Langevin
+dynamics, with potential energy function (7.47) choosing ˝ D 3. Each pixel represents a
+simulation undertaken with parameters .; 
+/, for  D ˝h. The color of a pixel indicating the
+absolute error in
+˝
+q2˛
+h where white pixels indicate instability of the method. The plotted line gives
+the boundary to the region in parameter space where (7.49) is satisﬁed
+tion of 108 steps using ˝ D 3 with the given values of 
+ and  (where  D ˝h).
+The plotted line marks the boundary of the region where (7.49) is satisﬁed, which
+matches the experimental stability limit. For small friction, the stability limit occurs
+at  D , which is commensurate with the deterministic case (
+ D 0) presented in
+Chap. 4.
+The island regions of instability vanish as expected for large values of friction,
+while choosing 
+ D
+p
+2=˝  0:471 in this example is plainly sufﬁcient to give
+stability for all visible step sizes.
+It is important to emphasize the tremendous complexity of molecular dynamics in
+relation to the simple model scenario presented here. In [22, 29], multiple timestep-
+ping was used effectively to treat large scale systems where the force splitting
+is deﬁned in the context of particle-mesh Ewald long-ranged force computations.
+We also point out that where additional constraints are present, the prospects for
+multiple timestepping may be signiﬁcantly better, as, in the previously mentioned
+work [118] and in Sect. 8.6 of the next chapter, where isokinetic constraints are used
+to stabilize the system.
+Exercises
+1. If we use R0
+n D RnC1 in the BBK scheme, then we arrive at the BBK* scheme
+encountered in Example 7.2. Compute the value of hq2ih for the variants of the
+BBK scheme where H D p2=2 C q2=2 with the choices of
+a. R0
+n D Rn,
+b. R0
+n D Rn1,
+c. R0
+n D RnC1=2, (here R0
+n and Rn will be independent).

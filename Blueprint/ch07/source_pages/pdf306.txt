@@ -1,0 +1,69 @@
+7.7
+The Evolution of the Distribution Using a Numerical Method
+285
+7.7.1
+Expansion of the Operator OL
+Consider a Langevin splitting method using the A, B and O splitting pieces, where
+we compose exact solves of each of the vector ﬁelds in a prescribed sequence to
+deﬁne our discretization scheme. Because we solve each piece exactly, we are able
+to write down the action of each individual solve on the initial distribution in terms
+of the vector ﬁeld’s evolution operator (using the respective generators for each
+piece as in [99]), where
+
+etLA
+
+.q; p/ D .q C tM1p; p/;
+
+etLB
+
+.q; p/ D .q; p  trU.q//;
+
+etLO
+
+.q; p/ D
+Z
+P
+
+
+q; e
+tp C M1=2x
+ ejxj2=2
+.2/Nc=2 dx;
+where  D
+
+kBT
+
+1  e2
+t1=2. The overall generator for an associated Langevin
+splitting method
+OL can be computed by composing each individual operator
+associated to the terms in the splitting. For example, for the method labelled by
+the string ABAO, we have
+exp.h OLABAO/ D exp..h=2/LA/ exp.hLB/ exp..h=2/LA/ exp.hLO/;
+where importantly note the apparent reversal of the sequence of products, known
+as the vertauschungssatz (see the discussion in [164, Section III.5.1]), which is a
+consequence of the relation
+.U f1
+t .z// D
+
+etLf1
+
+.z/;
+for some vector ﬁeld f1 with associated ﬂow map U f1
+t
+and generator Lf1, where the
+choice of .z/ D U f2
+t .z/ D .etLf2Id/.z/ demonstrates this reversal.
+We will ﬁnd it more convenient to work with the adjoint of the perturbed
+generator, denoted OL, which we may compute as
+exp.h OL
+ABAO/ D exp.hL
+O/ exp..h=2/L
+A/ exp.hL
+B/ exp..h=2/L
+A/:
+Under the propagation of the numerical scheme (or the discretized dynamics),
+the Fokker-Planck equation gives us that the evolution of a density of points  is
+given by
+@
+@t.z; t/ D OL;

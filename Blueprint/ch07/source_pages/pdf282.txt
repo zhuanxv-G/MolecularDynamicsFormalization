@@ -1,0 +1,37 @@
+Chapter 7
+Numerical Methods for Stochastic Molecular
+Dynamics
+In this chapter, we discuss principles for the design of algorithms for canonical
+sampling, based on the numerical discretization of stochastic dynamics models
+(such as Langevin dynamics) introduced in the previous chapter. Before we begin
+our discussion, let us consider the motivation for computing stationary averages
+using molecular dynamics.
+One often views molecular sampling as exploration of the basins associated
+to local minima of the potential energy (or a free energy function, which would
+incorporate the effects of solvent degrees of freedom such as a bath of water). As
+a simpliﬁcation, consider a system of N atoms interacting in a uniform pairwise
+potential energy function such as Lennard-Jones. It is estimated that the number
+of local minima of the potential is O.eN2/ [178], a spectacularly large number. Of
+course many of these will only be visited rarely, and the possibility of obtaining
+an average to a reasonable accuracy depends very much on the shape of the
+potential (e.g. the numbers of local minima accessible at a given temperature and the
+heights of the barriers between them), the sampling strategy, and even the particular
+observable being calculated. The large number of local minima, and the size of the
+sample space, make sampling a challenging problem, as methods such as Langevin
+dynamics must be run for a long time to generate a set of states which independently
+sample the various basins.
+In fact, we might ask the question, “why use trajectories to calculate averages?”
+It seems that the task has little to do with the dynamics per se. We are simply
+computing the expectation of some function with respect to a given probability
+density, i.e. an integral on a large dimensional space. Although there may be
+stochastic differential equations available to us whose Fokker-Planck solutions are
+known to converge to the stationary distribution (for example Langevin dynamics),
+it is not obvious that computing trajectories provides the best way to sample it.
+Non-dynamical alternatives, such as Metropolis Monte-Carlo (see Appendix C), are
+available for the purpose and one might think that this is a more direct approach
+to the problem.
+In a Monte-Carlo method there is no direct way to calculate
+© Springer International Publishing Switzerland 2015
+B. Leimkuhler, C. Matthews, Molecular Dynamics, Interdisciplinary Applied
+Mathematics 39, DOI 10.1007/978-3-319-16375-8_7
+261

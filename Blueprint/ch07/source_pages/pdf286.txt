@@ -1,0 +1,47 @@
+7.2
+Error in Methods for Stochastic Differential Equations
+265
+The weak error is usually deﬁned with reference to suitable test functions
+(observables) .x/ by
+Errweak
+h;; D
+max
+nD0;1;2;:::; jE.Xn/  E.X.nh//j ;
+and we say that a method has weak order r if Errweak
+h;; < D./hr for some D./, for
+all members of the chosen class of observables. It is easy to see that methods with
+high strong order give us high weak order too, but the converse is generally false.
+As the focus of this chapter is on the computation of averages, the concept of
+weak order is more appropriate in evaluating methods.1 Yet, even the weak order of
+convergence may not be suitable in molecular dynamics applications, or rather, we
+are interested in the very long term behavior of the weak error which is governed by
+the coefﬁcient D./ as  ! 1 [270, 356].
+The standard approach to analyze the weak error would be based on computing a
+recurrence relation for jE.Xn/E.X.nh//j by use of the SDE and the methods of
+stochastic analysis. This approach mirrors the forward convergenceanalysis of ODE
+methods discussed in Chap. 2. It tends, however, to overestimate the magnitude of
+the quantity D./. In what follows, we show that, when the emphasis is on stationary
+averages, a more direct approach can be used to gain insight into the error based on
+an asymptotic expansion. In some cases, we are able to resolve explicitly the leading
+error term of computed averages in this long-time limit. The approach used here is
+analogous in many ways to the backward error analysis of deterministic problems
+presented in Chap. 3.
+The sampling error is an additional error term that results from the ﬁniteness of
+our trajectory: both in our inability to sample over an inﬁnite time (for Langevin
+dynamics, we recover our averages only in the limit of  ! 1) and our generation
+of only a ﬁnite number of points (averages are calculated from our discretized
+trajectory of  steps). In large, high-dimensional systems (such as many relevant
+biomolecular applications) often the computational resource required to sample
+long enough in time to recover good averages is not available—the challenge then
+can be viewed as an exploration problem. Obtaining a complete sampling of the
+phase space in a system with rare transitions is extremely difﬁcult, and is the most
+important challenge in molecular simulation [401].
+However, we emphasize in this chapter that the discretization error (or perfect
+sampling bias) is also a very important contribution to the overall error, and in
+some cases may dominate the sampling error (for example, in systems where
+local resolution of the measure is more important than the global search). This
+discretization bias cannot be removed by considering a longer simulation time, so
+in some sense it is akin to a modelling error. Indeed as computing power increases
+and new algorithms are utilized, it is likely that trajectory generation will always be
+1In practice all the methods presented here are convergent in the strong sense, but their strong
+convergence orders may be low, typically r D 1=2.

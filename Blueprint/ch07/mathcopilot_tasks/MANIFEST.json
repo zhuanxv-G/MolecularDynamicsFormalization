@@ -1,0 +1,17 @@
+[
+  {
+    "batch": "BATCH01",
+    "source_ids": [
+      "MD-7.1-Bias"
+    ],
+    "subtasks": [
+      {
+        "subtask": "BATCH01a",
+        "source_id": "MD-7.1-Bias",
+        "path": "blueprint/ch07/mathcopilot_tasks/compact/BATCH01/a",
+        "bytes": 127195,
+        "manifest_sha256": "23860a68ad1269a307de327b5e4f19e9e020032f8b5f51bae5596e8c13a034d3"
+      }
+    ]
+  }
+]

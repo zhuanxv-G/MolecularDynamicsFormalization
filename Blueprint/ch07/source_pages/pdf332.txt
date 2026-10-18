@@ -1,0 +1,85 @@
+7.11
+Applying the Schemes to a Biomolecule
+311
+BAOAB
+ABOBA
+OBABO
+OABAO
+BBK
+SPV
+Friction (1/ps)
+10-2
+100
+102
+10-2
+100
+102
+Timestep (fs)
+2.25
+1.5
+1
+3
+Observed number of recrossings
+Auto-diffusion coefficient (m2/s)
+0
+600
+1200
+10-8
+10-9
+10-7
+Friction (1/ps)
+Timestep (fs)
+2.25
+1.5
+1
+3
+Timestep (fs)
+2.25
+1.5
+1
+3
+Timestep (fs)
+2.25
+1.5
+1
+3
+Timestep (fs)
+2.25
+1.5
+1
+3
+Timestep (fs)
+2.25
+1.5
+1
+3
+Fig. 7.6 Each pixel of the above grids gives the result of one experiment with the given friction
+and timestep parameters. We color the pixels according to the results from simulation of alanine
+dipeptide at 300 K in a vacuum for 2.5 ns, estimating the rate of traversal through the space by
+counting the number of changes in orientation (top set) as well as calculating the resulting diffusion
+coefﬁcient (bottom set) for each experiment. It is clear that all of the schemes have similar behavior,
+with the rate of exploration substantially decreasing as the friction increases above 2/ps. Figure
+reprinted with permission from [222]. Copyright 2013, AIP Publishing LLC
+explicit solutions for the correction functions that govern the leading order error
+behavior.
+In order to examine the behavior of all of the schemes across a wide parameter
+set, we shall divide the .
+; h/ parameter space into a 50  50 grid of points, using
+a logarithmic scale. We consider 
+ 2 Œ102; 102	 inverse picoseconds (1=ps) and
+h 2 Œ1; 3:2	 femtoseconds (fs). For each gridpoint in parameterspace we run an
+experiment for the corresponding parameter set, which gives us a fair idea of the
+behavior of the methods as we vary these experimental parameters.
+In order to examine the consequences of increasing the friction in our simulation,
+we estimate the rate of exploration through the phase space at each parameter
+set, plotted in Fig. 7.6. We color pixels of the grids by their corresponding
+exploration rate, quantifying this in two ways: we compute the diffusion coefﬁcient
+by integrating the velocity autocorrelation function, as well as counting the number
+of times the alanine dipeptide molecule ﬂips its orientation in experiment. White
+pixels in the grid indicate a method’s instability, showing that in general there is a
+small stability threshold increase for the large-friction case.
+From the results, it is clear that the large friction regime is not a practical choice
+for sampling large systems, as the rate of barrier crossings signiﬁcantly diminishes.
+This is unfortunate for the BAOAB scheme, as we will likely not be able to
+take advantage of the superconvergence property in simulation, unless we wish to
+decrease our rate of exploration through the space.

@@ -1,0 +1,45 @@
+312
+7
+Numerical Methods for Stochastic Molecular Dynamics
+7.11.2
+Results for Conﬁgurational Sampling
+We compute the relative error in several average quantities, for each experiment
+shown in Fig. 7.6. These computed errors are relative to a baseline solution,
+computed using the Stochastic Position Verlet scheme, at 
+ D 1/ps and h D 0:5 fs.
+The timestep for the baseline scheme is small enough that discretization effects will
+be negligible.
+In Fig. 7.7 we plot grids giving the errors for the average total bond energy, and
+total potential energy of the molecule in each simulation. It is clear that, although
+sampling error is present, the dominant form of error for the BBK, OBABO and
+OABAO schemes is discretization error. If we use these schemes at large stepsizes,
+then on average the molecule accesses signiﬁcantly higher energies than it should
+do at the given temperature. However, these schemes give excellent results for the
+average kinetic temperature (7.41), underlining the fact that one cannot infer the
+quality of sampling of position data using momentum data.
+One salient feature of the results of Fig. 7.7, is that for the BAOAB scheme
+there is consistently less than a 1 % error in the computed conﬁgurational temper-
+ature (for moderate friction) across all step sizes, even the largest stable timesteps
+tested. The relative errors obtained were so small that no discernable trend (with
+step size) can be shown (due to the sampling error), whereas the other schemes
+tested show an error consistent with second-order discretization.
+The similarity in results between the ABOBA and SPV schemes is unsurpris-
+ing, as the SPV scheme effectively integrates a BCO splitting piece as its central
+step, whereas the ABOBA scheme performs a leapfrog integration of the B and
+O pieces. The difference between the two methods will depend on the choice of the
+friction, as for small 
+ we would expect similar behavior, but in the high friction
+regime SPV is no longer consistent. We do not increase the friction sufﬁciently
+in order to observe this difference in our experiment, and hence the two schemes
+exhibit very similar behavior.
+7.11.2.1
+Solvated Alanine Dipeptide
+In order to provide a more realistic comparison to practical molecular dynamics
+simulation, we immerse the alanine dipeptide molecule in a sphere of ﬂexible TIP3P
+water (10 Å radius, total system contains 424 atoms, see Fig. 7.8) and equilibrate
+for 1 ns at 300 K to generate an initial conﬁguration. Simulations were completed
+with each scheme considered in the unsolvated case, using a 10 Å cutoff for the
+electrostatic and van der Waals potentials.
+Given the signiﬁcant increase in dimensionality of the system, we consider only
+measuring the effect of varying the stepsize on the computed averages. We choose
+a moderate value for the friction (we ﬁx it at 1=ps in all simulations) which gave

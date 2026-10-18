@@ -1,0 +1,79 @@
+7.3
+Sampling Iterations
+269
+choice of splitting strategy (given by the deﬁnition of the splitting pieces) along with
+a prescribed sequence of updates deﬁnes a splitting method.
+There are a great number of plausible splitting strategies for Langevin dynamics.
+For example we may split the equations into purely deterministic and stochastic
+parts, break the stochastic terms into dissipative and random components, or choose
+to decompose the vector ﬁeld into Nc one-dimensional problems that can be solved
+to high-accuracy. For some potential energy functions, it may be beneﬁcial to
+decompose the potential into many terms U.q/ D U1.q/ C U2.q/ C : : :, and use
+each term in a separate splitting piece in order to give a scheme improved stability
+or computational properties. In any case, it is not obvious a priori which splitting
+strategies will have more favorable sampling properties.
+As propagating the Ornstein-Uhlenbeck process exactly will preserve the canon-
+ical distribution ˇ, it is reasonable to assume that this is a good choice for one
+of the building blocks in a general splitting scheme. As the exact solution of the
+OU process is deﬁned for any value of 
+  0, we may hope that our discretization
+scheme will be tolerant for extremely large frictions, although there is no guarantee
+that the resulting discretization remains consistent in the limiting case.
+Other than the Ornstein-Uhlenbeck process, the remaining piece of the splitting
+corresponds to Newtonian constant-energy (microcanonical) Hamiltonian dynam-
+ics. Since Hamiltonian dynamics leaves invariant any function of the energy, its
+corresponding Fokker-Planck operator (in this case the Liouvillian, L
+H D LH)
+will preserve distributions that are functions of the Hamiltonian H. This implies in
+particular that it preserves ˇ, which is proportional to exp.ˇH/. Thus the forward
+propagator associated to the Hamiltonian system automatically preserves the Gibbs
+distribution, and we have
+etL
+Hˇ D ˇ:
+Formally, we could combine the ﬂow map F H
+h of Hamiltonian dynamics with an
+exact solve of the OU process to create a sampling iteration which preserves ˇ, as
+we also have
+etL
+Oˇ D ˇ:
+To make this practical in the general case, where the Hamiltonian system is not
+integrable (and we cannot explicitly compute its ﬂow map), we need to be able to
+compute (or approximate) the maps involved.
+This suggests to further split the Hamiltonian system, as we have done in deriving
+symplectic integrators in Chaps. 2 and 3.
+We therefore consider dividing the Langevin system (7.4) into parts
+d
+q
+p
+
+D
+ M1p
+0
+
+dt
+„
+ƒ‚
+…
+A
+C
+
+0
+rU.q/
+
+dt
+„
+ƒ‚
+…
+B
+C
+
+0
+
+pdt C M1=2dW
+
+;
+„
+ƒ‚
+…
+O
+(7.5)

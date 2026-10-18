@@ -1,0 +1,46 @@
+284
+7
+Numerical Methods for Stochastic Molecular Dynamics
+expansion of the vector ﬁeld, and therefore a similar expansion of the Liouvillian
+operator.
+We begin by deﬁning the generator OL associated to the propagation of averages
+under the numerical method for an SDE. We think of this generator as a perturbation
+of the exact Langevin dynamics generator LLD, or
+OL D LLD C hL1 C h2L2 C h3L3 C O.h4/:
+(7.16)
+However, the operators involved are not equivalent to the operators that would arise
+from any stochastic differential equation (see [403]), so we must give up the direct
+analogy between the formal series and continuous SDE models (which is available
+in the deterministic setting). Nonetheless, it is possible to analyze the resulting
+operator expansion in a formal way.
+We shall similarly consider the invariant (or native) distribution O. We write this
+invariant distribution as a perturbation of the (target) canonical distribution
+O D ˇ
+
+1 C hf1 C h2f2 C h3f3 C O.h4/
+
+;
+(7.17)
+with each correction function fk.q; p/ satisfying
+Z
+D
+fk.q; p/ˇ.q; p/d! D 0;
+ensuring a useful equivalence in the partition function
+Z
+D
+O.q; p/d! D
+Z
+D
+ˇ.q; p/d!:
+Our computed average is therefore
+hih
+def
+D
+Z
+D
+.q; p/ O.q; p/d!:
+The invariant distribution can, itself, be calculated by a formal expansion in powers
+of h, although in general this requires the solution of partial differential equations
+for the terms fk. In some limiting cases it is possible to write down the solutions
+explicitly and to obtain, therefore, an understanding of the error induced in an
+average computed using a numerical method.

@@ -1,0 +1,75 @@
+7.3
+Sampling Iterations
+271
+method is to treat the Newtonian part of Langevin dynamics by a symplectic method,
+and follow this by an Ornstein-Uhlenbeck exact solve; this is just what is done in the
+schemes denoted BABO and ABAO. Thus we could give these two methods the
+alternate (and more descriptive) names Geometric Langevin (Velocity-Verlet) and
+Geometric Langevin (Position-Verlet) respectively.
+Building on these schemes, the OU solves can instead be placed in the center of
+the step, or we may choose to have more than one OU solve distributed through the
+iteration. As it happens, some of these methods are of particular interest. We refer
+to the method obtained by inserting the OU solve in the middle of the Verlet method
+either by the strings ABOBA (Position-Verlet version) and BAOAB (Velocity-
+Verlet version) or by the more pronounceable names Symmetric Langevin Position-
+Verlet or Symmetric Langevin Velocity-Verlet, respectively.
+For reference and to remove any ambiguity, we write out some of these
+algorithms below as single timestep maps (sample implementations in MATLAB
+are available at http://www.MolecularDynamics.info).
+ABAO
+BABO
+qnC1=2 D qn C .h=2/M1pn,
+pnC1=2 D pn  .h=2/rU.qn/,
+pnC1=2 D pn  hrU.qnC1=2/,
+qnC1 D qn C hM1pnC1=2,
+qnC1 D qnC1=2 C .h=2/M1pnC1=2,
+OpnC1=2 D pnC1=2  .h=2/rU.qnC1/,
+pnC1 D eh
+pnC1=2 C 2M1=2Rn,
+pnC1 D eh
+ OpnC1=2 C 2M1=2Rn,
+ABOBA
+BAOAB
+qnC1=2 D qn C .h=2/M1pn,
+pnC1=2 D pn  .h=2/rU.qn/,
+pnC1=2 D pn  .h=2/rU.qnC1=2/,
+qnC1=2 D qn C .h=2/M1pnC1=2,
+OpnC1=2 D eh
+pnC1=2 C 2M1=2Rn,
+OpnC1=2 D eh
+pnC1=2 C 2M1=2Rn,
+pnC1 D OpnC1=2  .h=2/rU.qnC1=2/,
+qnC1 D qnC1=2 C .h=2/M1OpnC1=2,
+qnC1 D qnC1=2 C .h=2/M1pnC1,
+pnC1 D OpnC1=2  .h=2/rU.qnC1/,
+OABAO
+OBABO
+pnC1=2 D eh
+=2pn C 1M1=2Rn,
+pnC1=2 D eh
+=2pn C 1M1=2Rn,
+qnC1=2 D qn C .h=2/M1pnC1=2,
+OpnC1=2 D pnC1=2  .h=2/rU.qn/,
+OpnC1=2 D pnC1=2  hrU.qnC1=2/,
+qnC1 D qn C hM1OpnC1=2,
+qnC1 D qnC1=2 C .h=2/M1OpnC1=2,
+OpnC1 D OpnC1=2  .h=2/rU.qnC1/,
+pnC1 D eh
+=2OpnC1=2 C 1M1=2RnC1=2,
+pnC1Deh
+=2OpnC1 C 1M1=2RnC1=2,
+where j
+D
+
+kBT
+
+1  ej
+h1=2, and Rn; RnC1=2 are Nd vectors of standard
+independent N.0; 1/ random variables, resampled at each step. Note that, as in the
+Velocity-Verlet method, the two apparent evaluations of the force F D rU in the
+methods labelled BABO, BAOAB and OBABO actually require only a single
+evaluation at each timestep, since the second evaluation at one step may be reused at
+the ﬁrst stage of the following step. Thus all of the above methods require only one
+force evaluation per timestep, and hence we can think of them having exactly the
+same computational cost as the evaluation of the force is the principle computational
+expense.

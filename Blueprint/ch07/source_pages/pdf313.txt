@@ -1,0 +1,65 @@
+292
+7
+Numerical Methods for Stochastic Molecular Dynamics
+7.8.1
+Computing the Correction Functions f1.q; p/
+At this point we may plow ahead and compute the PDE for each corresponding
+scheme, but a more efﬁcient route is offered by working with the structure of the
+inhomogeneity in (7.21). We may make use of the identity
+
+ŒL
+O; L
+A	 C ŒL
+O; L
+B	
+
+ˇ D
+
+ŒL
+O; L
+A C L
+B	
+
+ˇ D 0;
+as of course L
+H D L
+A C L
+B is the Liouvillian of our Hamiltonian system,
+which preserves any function of the energy. Thus, by the skew-symmetry of the
+commutator (ŒP; Q	 D ŒQ; P	) we can relate four of the six methods as
+L
+1;ABOˇ D L
+1;OABˇ D L
+1;OBAˇ D L
+1;BAOˇ D 1
+2ŒL
+A; L
+B	ˇ;
+(7.22)
+by virtue of (7.20). Hence the leading order correction functions of the schemes are
+related through
+f1;ABO D f1;OAB D f1;OBA D f1;BAO:
+(7.23)
+The remaining two permutations of the possible XYZ schemes have a similar
+relationship, with
+L
+1;AOBˇ D L
+1;BOAˇ D 1
+2ŒL
+A  L
+B; L
+O	ˇ C L
+1;ABOˇ:
+(7.24)
+This reduces our workload as we can ﬁnd the leading order behavior for all six
+methods by computing the solution to two PDEs. This is not necessarily trivial, but
+it turns out that the structure of the equations is simple enough that we can ﬁnd exact
+solutions. We work now to compute the right-hand side of the governing PDE given
+in (7.21).
+In order to solve (7.21) for the ABO scheme, we need to compute the right
+hand side of (7.22). First, note that if we deﬁne the function g.q; p/ as
+g.q; p/ D ˇpTM1rU.q/;
+then through simple computation we have
+L
+Aˇ D L
+Bˇ D g.q; p/ˇ:

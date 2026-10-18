@@ -1,0 +1,56 @@
+7.11
+Applying the Schemes to a Biomolecule
+309
+C
+H
+H
+H
+C
+H
+H
+H
+N
+H
+C
+N
+H
+C
+H
+H
+H
+O
+O
+H
+C
+C
+Fig. 7.5 The structure of the alanine dipeptide protein is shown (left) with a visualization of the
+molecule in simulation (right)
+All of the methods we consider require one force evaluation per iteration, and we
+consider them as having the same computational cost. The performance of a scheme
+will be judged on the error we observe in conﬁgurational averages, obtained through
+the computation of Langevin dynamics trajectories. In molecular dynamics, we are
+very often interested in comparing accuracy of methods for the largest stepsizes for
+which averages can be stably computed.
+Our experiments use a classic test case for molecular dynamics: the alanine
+dipeptide molecule (Fig. 7.5). This is a relatively small molecule, comprising 22
+atoms with bonds modelled by a harmonic potential as well as angle bond and
+dihedral bending potentials to maintain its structure. Potential energy functions
+modelling the van der Waals and electronic forces are also present, making the
+model complicated enough to be interesting but simple enough to allow extensive
+simulation in a short time. The structural properties of the molecule give it two
+distinct orientations, described by its internal dihedral angles. More complicated
+molecules have a much greater number of native conﬁgurations to be sampled, so
+considering a molecule with only two major conformational states allows us to
+check that our algorithms promote barrier crossings at similar rates. As our goal
+will be to compare the discretization error introduced by a numerical scheme, we
+can run a large number of repeat simulations to drive down the sampling error.
+We implement each of the methods in the NAMD-lite package [170, 302], and
+observe the effect of discretization error (if any) on computed averages. We initially
+consider the alanine dipeptide molecule in a vacuum, without boundary conditions,
+at T D 300 K for a ﬁxed time interval of 2.5 ns. The CHARMM22 forceﬁeld [246]
+(giving parameters for the governing potential energy functions) is used to compute
+force interactions.
+7.11.1
+Choosing the Friction Parameter
+One of the most important features of a numerical method for ergodic dynamics
+(such as Langevin dynamics) is its preservation of the theoretical global phase space

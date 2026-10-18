@@ -1,0 +1,90 @@
+7.9
+Error Expansion for Symmetric Langevin Methods
+303
+for some function of position .q/. Plugging (7.33) and (7.34) into the PDE (7.32)
+gives
+NL
+O
+
+ˇf2;1;OABAO
+
+D w.q; p/ˇ  L
+H
+
+ˇ
+
+;
+D  ˇ
+24
+NL
+O
+
+6pT 
+r2U
+
+rU  1
+3r3U W p ˝ p ˝ p
+ 2
+ˇ pTrqqU
+
+ˇ
+	
+ NL
+O
+
+pTr C 
+
+ˇ
+
+;
+and hence
+f2;1;OABAO D  ˇ
+24
+
+6pT 
+r2U
+
+rU  1
+3r3U W p ˝ p ˝ p  2
+ˇ pTrqqU
+	
+ pTr  :
+At this point, we might consider abandoning the prospect of determining the leading
+order correction altogether, as we now have two arbitrary functions of position .q/
+and .q/ creeping into our solution. However, the form of .q/ is determined by
+considering the next order PDE at "2:
+NL
+O
+ˇf2;2;OABAO
+ D L
+H
+ˇf2;1;OABAO
+ :
+(7.35)
+We are spared solving this equation by virtue of a solvability condition. Integrating
+the left hand side of (7.35) with respect to the momenta, we ﬁnd
+Z
+P
+NL
+O
+
+ˇf2;2;OABAO
+
+d!p D 0;
+by simple computation. Hence we also require the average of the right-hand side
+of (7.35) to be zero with respect to the momentum, or
+Z
+P
+L
+H
+
+ˇf2;1;OABAO
+
+d!p D NL
+Hf2;1;OABAO D 0;
+(7.36)
+where N is the averaging operator
+. Nf/ .q/ D
+Z
+P
+f.q; p/ˇd!p:

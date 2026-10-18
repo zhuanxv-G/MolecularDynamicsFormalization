@@ -1,0 +1,51 @@
+7.12
+Constrained Langevin Dynamics
+317
+7.12
+Constrained Langevin Dynamics
+We may use a splitting approach to develop discretization algorithms for other forms
+of dynamics. In Chap. 4, we included holonomic constraints to the ODEs deﬁning
+constant-energy Hamiltonian dynamics, as a way to increase the stability of our
+algorithms and increase the usable timestep. We can add constraints to the Langevin
+dynamics SDEs similarly as
+dq D M1pdt;
+(7.43)
+dp D rU.q/dt  
+pdt C
+p
+2
+kBTMdW  g0.q/Tdt;
+(7.44)
+0 D g.q/;
+(7.45)
+where the vector of l constraints is given by g W RNc ! Rl and  is an l-dimensional
+vector of Lagrange multipliers. W is a vector of standard Wiener processes, with
+the usual friction parameter 
+ > 0. As in the constant energy dynamics, permissible
+phase points lie in the co-tangent bundle deﬁned by the constraint and hidden
+constraint
+g.q/ D 0;
+g0.q/M1p D 0;
+while in the inﬁnite time limit, we have that solution trajectories of constrained
+Langevin (7.43)–(7.45) sample Qˇ ergodically, such that
+lim
+T!1
+1
+T
+T
+Z
+0
+.q.t/; p.t//dt D
+Z
+D
+.q; p/ Qˇd!;
+where Qˇ is the normalized constrained canonical distribution
+Qˇ D Z1 exp.ˇH.q; p//ıŒg.q/	ıŒg0.q/M1p	;
+for normalizing constant Z and where ıŒz	 :D Q
+i ıŒzi	 for a vector z. The goal is
+now to ﬁnd solutions to the constrained dynamics, in order to sample the target
+distribution.
+One approach for algorithms is simply to evolve unconstrained Langevin dynam-
+ics using any algorithm of choice, then follow each step by a step of the SHAKE
+algorithm (see Chapter 4 or [322]) to pull the system back on to the manifold
+satisfying the holonomic constraints.

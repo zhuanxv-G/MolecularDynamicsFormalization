@@ -1,0 +1,62 @@
+7.4
+Error Results for Harmonic Problems
+277
+Table 7.1 The expected long-time computed average using the given second-order Langevin
+dynamics discretization scheme
+Scheme
+hq2ih=hq2i
+hp2ih=hp2i
+hqpi
+ABOBA
+1
+Œ1  h2˝2=.4m/	1
+0
+OBABO
+Œ1  h2˝2=.4m/	1
+1
+0
+BAOAB
+1
+1  h2˝2=.4m/
+0
+OABAO
+1  h2˝2=.4m/
+1
+0
+schemes, we are able to compute the exact expected average by solving the linear
+equations. The results are summarized in Table 7.1, where we have not considered
+the AOBOA and BOAOB schemes due to their inconsistency at large friction
+(this does not preclude the analysis, but limits each those method’s usefulness in
+simulation). Similar analysis can be conducted for more complicated composition
+schemes involving multiple force evaluations.
+The mentioned splitting schemes give a second-order error in the computed
+averages, but surprisingly each gives an exact result for computed averages of either
+position or momentum. The exactness property is not born out of the symmetry of
+the method, but rather of the speciﬁc order of terms and choice of splitting “building
+blocks”. Even non-symmetric ﬁrst-order schemes can exhibit similar qualities. For
+example, analysis shows that the schemes denoted AOAB or BAOA both exhibit
+a ﬁrst order error in the covariance hqpih D O.h/, however they give exact results
+for both hq2ih and hp2ih.
+7.4.2
+More General Schemes
+We can conduct a similar analysis for any integrator that we can express in the
+form (7.7), simply by plugging in the relevant constants and solving a linear
+equation. The difﬁculty lies when random numbers are reused, leading to correlation
+between steps. This requires careful treatment to compute the expectation.
+Example 7.2 Consider the variant of the BBK integrator that recycles the random
+number between steps:
+Brünger-Brooks-Karplus with post-step re-use of random number (BBK*)
+pnC1=2 D .1  h
+=2/pn  .h=2/rU.qn/ C 1
+2
+p2kBTh
+M1=2Rn
+qnC1 D qn C hM1pnC1=2
+pnC1 D ŒpnC1=2  .h=2/rU.qnC1/ C 1
+2
+p2kBTh
+M1=2RnC1	=.1 C h
+=2/,
+where Rn is a vector of normal random numbers with zero mean and unit variance.
+In some systems, it can be computationally expensive to generate normal random
+numbers for each degree of freedom, hence algorithms may re-use the random

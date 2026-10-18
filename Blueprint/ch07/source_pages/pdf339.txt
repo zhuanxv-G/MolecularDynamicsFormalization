@@ -1,0 +1,83 @@
+318
+7
+Numerical Methods for Stochastic Molecular Dynamics
+We could instead consider splitting the dynamics up and performing the integra-
+tion using a splitting method. Such a splitting strategy is considered in [232] where
+one uses
+2
+4
+dq
+dp
+0
+3
+5 D
+2
+4
+M1pdt
+rU.q/dt  g0.q/Tdt
+g.q/
+3
+5
+„
+ƒ‚
+…
+Hc
+C
+2
+4
+0
+
+pdt C
+p
+2
+kBTMdW  g0.q/Tdt
+g.q/
+3
+5
+„
+ƒ‚
+…
+Oc
+;
+splitting the dynamics into two pieces: the constrained Hamiltonian (NVE) equa-
+tions, and a constrained Ornstein-Uhlenbeck piece.
+We solve these two pieces symmetrically, where the constrained Hamiltonian
+part is solved over a step h, in between two solves of the Ornstein-Uhlenbeck
+SDE with stepsize h=2. The SHAKE (or RATTLE) algorithm can be used to solve
+the constrained Hamiltonian part to a high degree of accuracy, while solving the
+Ornstein-Uhlenbeck piece along the manifold amounts to ﬁnding the solution of a
+linear system. We observe the constraint in both solutions, so that the computed
+points lie in the co-tangent bundle of the constraint manifold. Instead of solving the
+Ornstein-Uhlenbeck exactly, we discretize using a midpoint Euler scheme, yielding
+the following scheme:
+Midpoint Euler - Verlet - Midpoint Euler (see [232])
+Solve
+(
+pnC1=4 D pn  h
+4 .pn C pnC1=4/ C ph
+kBTMRn  g0.qn/TnC1=4
+Such that g0.qn/M1pnC1=4 D 0
+Solve
+8
+ˆˆˆ<
+ˆˆˆ:
+pnC1=2 D pnC1=4  h
+2rU.qn/  g0.qn/TnC1=2
+qnC1 D qn C hM1pnC1=2
+pnC3=4 D pnC1=2  h
+2rU.qnC1/  g0.qnC1/TnC3=4
+Such that g0.qnC1/M1pnC3=4 D 0 and g.qnC1/ D 0:
+Solve
+(
+pnC1 D pnC3=4  h
+4 .pnC3=4 C pnC1/ C ph
+kBTMRnC1=2  g0.qnC1/TnC1
+Such that g0.qnC1/M1pnC1 D 0
+The vectors Rn and RnC1=2 are vectors of N.0; 1/ i.i.d. random numbers, with 
+  0
+the usual Langevin dynamics friction parameter. Setting 
+ D 0 reduces the scheme
+to the usual RATTLE scheme for solving holonomically constrained Hamiltonian
+equations of motion, whereas if 
+ is chosen large then this will be expected to
+cause instability in the scheme, as we are not solving the OU process exactly. The

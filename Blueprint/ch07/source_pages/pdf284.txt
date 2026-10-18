@@ -1,0 +1,44 @@
+7.1
+Bias
+263
+long term (invariant measure) conservation properties; in this way they can provide
+a rational and ﬂexible framework for designing stable algorithms.
+Once a stochastic molecular dynamics-based framework is developed it is
+possible to modify it or use it as a building block in order to enhance sampling
+efﬁciency. One can for example incorporate these methods into kinetic Monte-Carlo,
+other metropolized schemes, or various advanced “path sampling” techniques. Thus
+the design of good molecular SDE methods is the cornerstone of much of modern
+molecular modelling.
+7.1
+Bias
+In this chapter, the focus is on sampling strategies based on approximating Langevin
+dynamics (6.32)–(6.33). As will be seen, these methods offer a great deal of
+ﬂexibility and, most importantly, reliability and robustness in the approximation of
+the canonical measure. All standard methods based on discretizing SDEs introduce
+some stepsize-dependent error in computed averages, which we shall refer to as
+bias (related to the truncation error of the discretization scheme). This bias can be
+corrected for using certain ‘rebiasing’ algorithms, for example using a Metropolis
+(accept-reject) condition [44, 47], however there may be signiﬁcant computational
+overhead in employing these schemes leading to inefﬁciency compared to standard
+MD, in spite of the introduced error.
+An illustration of the sampling bias (i.e., due to discretization error) is shown in
+Fig. 7.1. As the stepsize is increased, the error in sampling is increased as well,
+limiting the effectiveness of numerical methods. This bias can be dramatically
+different for different numerical methods. As we shall show, with the right choice
+of numerical method it is often possible to substantially reduce this error, and it is
+also possible to calculate (under some assumptions) the perturbation introduced by
+the numerical method, and to correct for its presence.
+h=0.005
+h=0.02
+h=0.025
+h=0.03
+h=0.035
+h=0.04
+Fig. 7.1 We illustrate computed (canonical) distributions of q D .x; y/ for a planar potential
+energy function with two distinct basins connected by a narrow transition corridor, where high/low
+intensity is colored red/blue respectively. Each distribution is computed through simulations using
+a different stepsize parameter—no other properties are changed between the simulations. The
+differences between the distributions are the result of discretization error. At simulations with a
+larger timestep we can see a qualitative change in the sampled landscape, with the bridge between
+the two regions disappearing. Figure reprinted with permission from [222]. Copyright 2013, AIP
+Publishing LLC

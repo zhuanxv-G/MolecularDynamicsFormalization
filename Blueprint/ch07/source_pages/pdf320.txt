@@ -1,0 +1,94 @@
+7.9
+Error Expansion for Symmetric Langevin Methods
+299
+simplifying the computation to
+L
+2;OYZYOˇ D 1
+12
+h
+L
+Z; L
+Z; L
+Y
+i
+ˇ  1
+24ŒL
+Y; L
+Y; L
+Z	ˇ:
+(7.29)
+The inhomogeneity for the schemes OABAO and OBABO is hence a combina-
+tion of the two commutator terms
+h
+L
+A; L
+A; L
+B
+i
+ˇ D
+
+2ˇpT 
+r2U
+
+rU  r3U W p ˝ p ˝ p
+
+ˇ;
+h
+L
+B; L
+B; L
+A
+i
+ˇ D  2ˇpT r2U rU ˇ;
+giving overall equations to solve
+L
+LD
+
+ˇf2;OABAO
+
+D L
+2;OABAOˇ
+D ˇ
+24
+
+6pT 
+r2U
+
+rU  r3U W p ˝ p ˝ p
+
+ˇ;
+L
+LD
+
+ˇf2;OBABO
+
+D L
+2;OBABOˇ
+D ˇ
+24
+
+2r3U W p ˝ p ˝ p  6pT 
+r2U
+
+rU
+
+ˇ:
+We can see immediately that the Fredholm alternative holds in both cases, as both
+equations have right-hand sides that are of odd order in p, and hence will average
+to 0.
+If we instead consider schemes which use a central Ornstein-Uhlenbeck update,
+then the inhomogeneous term becomes signiﬁcantly more complex, as we no
+longer have a signiﬁcant number of cancellations in L
+2ˇ. Instead, we shall avoid
+computing the right-hand side for these schemes altogether, in favor of utilizing the
+following lemma [223]:
+Lemma 7.1 Consider two numerical schemes with associated operators governing
+the evolution of measure ST and T S, with unique associated invariant distributions
+OST and OTS respectively, such that
+ST OST D OST;
+T S OTS D OTS:
+Under suitable ergodicity assumptions (such that in the long-time limit, all distribu-
+tions converge to the invariant distribution), we have
+OST D S OTS;
+and
+OTS D T OST:

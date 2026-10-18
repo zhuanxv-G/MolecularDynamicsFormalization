@@ -1,0 +1,48 @@
+262
+7
+Numerical Methods for Stochastic Molecular Dynamics
+dynamics information, but this may or may not be essential to the problem at hand:
+we often only wish to know the average of a given function .q/ with respect the
+conﬁgurational density exp.ˇU.q//, where U is the potential energy function of a
+molecular system. Nevertheless, Metropolis Monte-Carlo can encounter additional
+problems in the setting of molecular modelling. Where steep potentials (Lennard-
+Jones potentials, for example) and stiff bonds are present, Monte-Carlo methods
+may experience a high rejection rate. From another perspective, the “interesting
+region” for sampling a Gibbs distribution is an extremely small portion of the
+accessible phase space, since the measure of phase space is highly concentrated
+and localized by the inherent geometric constraints of the problem and/or steep
+potentials. As the dimensionality increases, the accessible phase space becomes
+thinner. A sampling algorithm must be guided from place to place in a large
+dimensional phase space riddled with steep barriers, and blind search typically leads
+to a lot of wasted effort. For this reason molecular dynamics, which beneﬁts from
+acceleration information (the forces) to guide timestepping, and for which every
+step is accepted, is often superior to crude Monte-Carlo for molecular sampling.
+For a comparative discussion of Monte-Carlo and molecular dynamics methods, see
+[6, 278].
+We hasten to add that there are many situations in which Monte-Carlo methods
+have the advantage. For example, we might have speciﬁc knowledge of a catalog
+of large scale structural “moves” that would allow our algorithm to scale energetic
+barriers without drastically biasing the sampling outcome. An example is when an
+assembly consisting of several component macromolecules is moved by rearranging
+the pieces, since it may take atomistic MD a very long time to make such moves. In
+those cases we would likely wish to make use of the system-speciﬁc knowledge that
+we have in order to accelerate the sampling. An alternative to assuming, a priori,
+a detailed book of moves, is to consider methods that adaptively construct good
+proposals, for example taking advantage of parallel computing methods. At the very
+least, one would expect that such methods need to take into consideration the local
+forces to avoid wasted steps. A practical way to do this is the Hybrid Monte-Carlo
+method mentioned in Appendix C.
+Note that deterministic methods (e.g. Hamiltonian dynamics itself) can some-
+times be used for molecular sampling, but without stochastic perturbation, such
+methods are not rigorously ergodic, since the Liouvillian operator does not possess
+a spectral gap and does not provide a unique stationary solution. The stochastic
+methods of this chapter are general purpose techniques that require little in the
+way of system-speciﬁc knowledge. They are workhorse methods which provide
+rigorous control of the canonical distribution. The challenge in using Langevin
+dynamics is to design maximally efﬁcient methods that provide accurate averages
+for a wide range of observables using as large stepsizes as possible, and which
+converge as rapidly as possible. It is possible—even very easy—to build schemes
+that are wasteful, for example subject to unnecessarily stringent numerical stability
+barriers, and eliminating such mistakes is essential. This can be achieved by
+careful attention to the principles by which integrators are designed. Well designed
+stochastic differential equation approaches introduce dissipation without destroying

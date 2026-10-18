@@ -1,0 +1,96 @@
+296
+7
+Numerical Methods for Stochastic Molecular Dynamics
+100
+10-1
+10-2
+10-3
+100
+10-1
+10-2
+10-3
+Absolute error
+Timestep
+0.05
+0.1
+0.2
+Absolute error
+Timestep
+0.05
+0.1
+0.2
+Timestep
+0.05
+0.1
+0.2
+Timestep
+0.05
+0.1
+0.2
+Observed average
+-0.6
+-0.4
+-0.2
+0
+0.2
+0.4
+0.6
+Observed average
+-0.6
+-0.4
+-0.2
+0
+0.2
+0.4
+0.6
+ABO
+BAO
+OBA
+OAB
+AOB
+BOA
+Second-order line
+First-order lines
+=1
+=1
+=2
+=2
+Fig. 7.4 We plot the absolute error in the computed value of h#ih (left) and the observed value of
+h#ih (right) as symbols, while our prediction computed using (7.25) is plotted as a solid line. For
+
+ D 1 we ﬁnd ﬁrst order behavior (as expected), but for 
+ D 2 two methods exhibit higher order
+behavior. This is a special case for this observable that can be understood through our analysis
+prediction extremely well, though at large stepsize there is evidence of higher order
+behavior O.h2/ having an effect on the computed average, evident by the divergence
+away from our prediction line.
+The AOB and BOA schemes also demonstrate a surprising second order
+behavior for the experiments at 
+ D 2, that we would not necessarily expect. This
+is due to a felicitous choice of our observable, where the leading order correction
+can be shown to be zero. The fact that both of these schemes share this property is
+unsurprising, as f1;AOB D f1;BOA, although for a general observable we would
+not expect second order averages for these methods. We could similarly construct
+special cases for other observables that would give higher order behavior for other
+schemes.
+The ﬁrst order correction term for the BOA scheme is given by the formula
+h#f1;BOAi D ˇ
+2
+Z
+D
+
+p2  qU0.q/ C 2qp
+
+pU0.q/ C 
+U.q/  c
+
+ˇd!;
+D 1
+ˇ C 
+2 hUi  
+ˇ
+2 hqUU0i;
+D .2  
+/
+2ˇ
+:

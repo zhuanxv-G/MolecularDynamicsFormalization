@@ -1,0 +1,126 @@
+7.8
+First Order Schemes
+293
+This is particularly useful as
+ŒL
+A; L
+B	ˇ D
+
+L
+AL
+B  L
+BL
+A
+
+ˇ D 
+
+L
+A C L
+B
+ 
+g.q; p/ˇ
+
+D
+
+L
+O  L
+LD
+ 
+g.q; p/ˇ
+
+:
+Now notice that for a function .q/ purely of position, we have
+L
+LD
+
+ .q/ˇ
+
+D 
+
+pTM1r .q/
+
+ˇ.q; p/;
+and hence we can compute
+L
+O
+
+g.q; p/ˇ
+
+D 
+ˇ
+
+p  rpg.q; p/ C ˇ1rp  Mrpg.q; p/
+
+;
+D 
+g.q; p/ˇ;
+D 
+ˇL
+LD
+
+U.q/ˇ
+
+:
+This means that
+L
+1;ABOˇ D 1
+2ŒL
+A; L
+B	ˇ D 1
+2L
+LD
+
+Œ
+ˇU.q/  g.q; p/	 ˇ
+
+:
+Hence, we can combine this equation with (7.21) to yield
+L
+LDf1;ABOˇ D 1
+2L
+LD
+
+Œ
+ˇU.q/  g.q; p/	 ˇ
+
+;
+with the general solution
+f1;ABO D ˇ
+2
+
+
+U.q/  pTM1rU.q/  c
+
+;
+where c D 
+hU.q/i is a constant, chosen to ensure that the average of the correction
+function is zero. This solution gives the leading order correction for the three related
+schemes in (7.23).
+For the ﬁnal two schemes, we can compute the correction function through the
+use of (7.24). Our previous work has computed the second term on the right hand
+side already, so we are left with the initial term. However, its expression reduces
+quite easily, as
+ŒL
+A  L
+B; L
+O	ˇ D L
+O
+
+L
+A  L
+B
+
+ˇ;
+D 2L
+O
+
+g.q; p/ˇ
+
+;
+D 2
+ˇL
+LD
+
+U.q/ˇ
+
+:

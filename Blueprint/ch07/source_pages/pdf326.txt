@@ -1,0 +1,53 @@
+7.9
+Error Expansion for Symmetric Langevin Methods
+305
+Owing to our ansatz, we would expect that the computed average of some
+observable has behavior like
+h#ih D h#i C h2h#f2;0i C O."h2 C h4/:
+At sufﬁciently small values of " (and hence, large values of the friction coefﬁcient
+
+) we would expect that the O.h2/ remainder will not be visible to us in our
+experiments, and we will be able to correct our average to O.h4/. The symmetric
+discretization schemes we have considered here will all be consistent in the
+overdamped (
+ ! 1) limit, and we would expect the correction function for the
+corresponding limiting schemes to be given by f2;0.
+7.9.3
+Superconvergence of the BAOAB Scheme
+In the regime of sufﬁciently large 
+ and small h, our doubly-asymptotic ansatz for
+the leading order correction to a function #.q; p/ is
+h#i D h#ih  h2h#f2;0i C O
+h2
+
+ C h4
+	
+;
+(7.37)
+where f2;0 is method-dependent.The BAOAB scheme has leading order correction
+f2;0;BAOAB.q; p/ D 1
+8
+
+U  ˇpTr2U.q/p
+
+;
+which has the interesting property that its marginal average with respect to
+momentum is zero:
+Nf2;0;BAOAB D
+Z
+P
+f2;0;BAOAB.q; p/ˇ.q; p/d!p D 0:
+This is a very favorable quality for conﬁgurational sampling, where we consider
+averages of functions solely of position, as we can split up the integral such that
+h#.q/f2;0;BAOABi D
+Z
+D
+#.q/f2;0;BAOABˇd!;
+D
+Z
+Q
+#.q/
+Z
+P
+f2;0;BAOABˇd!pd!q;
+D 0:

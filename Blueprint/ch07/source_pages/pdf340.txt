@@ -1,0 +1,87 @@
+7.12
+Constrained Langevin Dynamics
+319
+Lagrange multiplier nC1=4 (and likewise nC1) can be obtained by solving the
+linear system
+g0.qn/M1
+
+1  h
+4
+	
+pn C
+p
+h
+kBTMRn  g0.qn/TnC1=4
+
+D 0;
+which is easily computed once the Rn vector is evaluated in the step, and gives us a
+stability criterion
+
+h < 4:
+(7.46)
+A similar calculation and linear solve is needed to compute nC3=4 in order to
+maintain the hidden constraint for pnC3=4, whereas the Lagrange multiplier nC1=2
+is responsible for ensuring that g.qnC1/ D 0, and is typically found using an implicit
+solve.
+There are many other ways we could choose to combine traditional molecular
+dynamics discretization schemes with constrained solvers such as variants of the
+SHAKE algorithm (see, for example [81, 383, 396]). The following section presents
+an alternative based upon the work on splitting methods in this chapter so far.
+7.12.1
+A “Geodesic Integrator”
+We may consider alternative splittings of the dynamics in order to build a library of
+available schemes, just as we did in the unconstrained case in Sect. 7.3.1. Solving
+the constrained OU part exactly would allieviate the condition (7.46), while we
+may hope to reduce discretization error in the spirit of the success of the BAOAB
+scheme in Sect. 7.9.3. The natural splitting template to consider would be to again
+split into potential and kinetic energies, with the constrained Ornstein-Uhlenbeck
+piece:
+2
+4
+dq
+dp
+0
+3
+5 D
+2
+4
+M1pdt
+g0.q/Tdt
+g.q/
+3
+5
+„
+ƒ‚
+…
+Ac
+C
+2
+4
+0
+rU.q/dt  g0.q/Tdt
+g.q/
+3
+5
+„
+ƒ‚
+…
+Bc
+C
+2
+4
+0
+
+pdt C
+p
+2
+kBTMdW  g0.q/Tdt
+g.q/
+3
+5
+„
+ƒ‚
+…
+Oc
+:
+Observe that the holonomic constraint (as well as the hidden constraint) is main-
+tained in each part, changing the usual A piece into a geodesic drift along the

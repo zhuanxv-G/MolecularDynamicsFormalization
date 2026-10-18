@@ -1,0 +1,104 @@
+324
+7
+Numerical Methods for Stochastic Molecular Dynamics
+where R is a column vector of two i.i.d. random normal numbers distributed as
+N.0; 1/, and
+BtBT
+t D 2
+ˇ
+t
+Z
+0
+exp.F.t  s//
+ 0 0
+0 1
+
+exp.FT.t  s//ds:
+The solution to the slow part of our splitting is just
+q.t/
+p.t/
+
+D
+ 1 0
+t 1
+  q.0/
+p.0/
+
+:
+Thus for a method taking one step of the fast system followed by a step of the
+slow system, using ﬁxed step size h > 0, we can write the update scheme for z D
+Œq; p	T as
+znC1 D Xzn C YRn;
+for
+X D
+ 1 0
+h 1
+
+exp.hF/;
+Y D
+ 1 0
+h 1
+
+Bh:
+The stability of the method therefore depends solely on the spectral radius of the
+matrix X. Denoting  D
+p
+
+2  4˝2, then we compute
+det.X/ D e
+h;
+tr.X/ D   h
+
+e.
+/h=2 C  C h
+
+e.
+/h=2;
+giving a stability condition
+ˇˇˇˇ
+  h
+
+e.
+/h=2 C  C h
+
+e.
+/h=2
+ˇˇˇˇ 	 1 C e
+h:
+Multiplying by e
+h=2 gives
+ˇˇˇˇcosh
+h
+2
+	
+C h
+ sinh
+
+h
+2
+	ˇˇˇˇ 	 cosh
+
+h
+2
+	
+;
+which reduces to the deterministic stability condition as expected in the limit 
+ D 0.
+For 
+ > 0, we can simplify to
+ˇˇˇˇˇˇ
+cosh
+h
+2  atanh
+h
+
+		 s
+1  h2
+2
+ˇˇˇˇˇˇ
+	 cosh
+
+h
+2
+	
+:

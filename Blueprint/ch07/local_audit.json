@@ -1,0 +1,28 @@
+{
+  "template": "C",
+  "items": {
+    "MD-7.1-Bias": {
+      "verdict": "PASS",
+      "block_sha256": "9379b2023224de49efd2c0973ce1f42b80ddf08c504eff1d57e4fa7152c03649",
+      "checked": true,
+      "declaration_axioms": {
+        "MD.Ch07.bias": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ]
+      },
+      "direct_placeholder": false,
+      "missing": null,
+      "issues": [],
+      "website": "待网站审计",
+      "statement_scope": "离散平均值偏差的定义；本段关于标准方法的概述不作为普遍量化结论。",
+      "extra_assumptions": [
+        "将本段bias记号具体写为后文印刷p.266所给的绝对平均误差；不把“所有标准方法”量化成无条件定理。"
+      ],
+      "source_pages": "284",
+      "semantic_review": "已对照目视原页核对对象、量词、技术资格和所列覆盖范围；网站尚未审阅。",
+      "compile_receipt": "blueprint/ch07/validation/batches/s71-v1.json"
+    }
+  }
+}

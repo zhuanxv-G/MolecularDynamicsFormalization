@@ -1,0 +1,64 @@
+7.3
+Sampling Iterations
+267
+105
+104
+103
+102
+101
+0.05
+0.1
+0.2
+0.3
+Stepsize
+Number of force evaluations
+Op
+Op
+Optitimu
+mum ststststep
+ep
+ep
+epsisisize
+ze
+ze
+ze
+Large
+Error
+Small
+Error
+Fig. 7.2 We plot the error in the distribution of q 2 R for U.q/ D .q2  1/2. The error in
+the computed distribution is a function of both the number of force evaluations and the stepsize
+used, with the optimal choice of stepsize for a given number of force evaluations shown by the
+white guideline. Due to discretization bias, choosing the maximum stepsize is not always the best
+strategy
+ﬁgure: while increasing the stepsize means we more rapidly converge with each
+step, the distribution that the discretization scheme converges to is incorrect. For
+small stepsizes, this error due to discretization may be negligible when compared to
+the sampling error, but we converge more slowly towards the ﬁnal distribution. As
+the stepsize is increased, the discretization error may dominate the overall error in
+calculation.
+7.3
+Sampling Iterations
+By way of illustration of what we mean by a numerical sampling method, consider
+the system of independent Ornstein-Uhlenbeck (OU) processes
+dp D 
+pdt C
+p
+2kBT
+M1=2dW:
+(7.2)
+Following the argument of Sect. 6.3.2 in the previous chapter,
+dŒexp.
+t/p	 D 
+ exp.
+t/pdt C exp.
+t/Œ
+pdt C
+p
+2kBT
+M1=2dW	
+D exp.
+t/
+p
+2kBT
+M1=2dW:

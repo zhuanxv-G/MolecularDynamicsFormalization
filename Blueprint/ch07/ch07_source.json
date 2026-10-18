@@ -1,0 +1,26 @@
+[
+  {
+    "source_id": "MD-7.1-Bias",
+    "kind": "definition",
+    "label": null,
+    "section": "7.1",
+    "printed_page": "263",
+    "pdf_page": "284",
+    "statement_latex": "All standard methods based on discretizing SDEs introduce some stepsize-dependent error in computed averages, which we shall refer to as bias (related to the truncation error of the discretization scheme).",
+    "proof_latex": null,
+    "proof_note": "原书未给独立完整证明。",
+    "context_notation": [],
+    "extra_assumptions": [
+      "将本段bias记号具体写为后文印刷p.266所给的绝对平均误差；不把“所有标准方法”量化成无条件定理。"
+    ],
+    "issues": [],
+    "statement_scope": "离散平均值偏差的定义；本段关于标准方法的概述不作为普遍量化结论。",
+    "lean_decl": "MD.Ch07.bias",
+    "lean_declarations": [
+      "MD.Ch07.bias"
+    ],
+    "source_page_verification": "见source_page_checks.json；必须已目视核对本条原页。",
+    "repair_log": [],
+    "documented_priors": []
+  }
+]

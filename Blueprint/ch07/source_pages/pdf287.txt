@@ -1,0 +1,47 @@
+266
+7
+Numerical Methods for Stochastic Molecular Dynamics
+at the core of sampling in molecular dynamics. Hence we are motivated to ﬁnd
+schemes that minimize this sampling bias introduced to the long-time averages,
+without signiﬁcant increase to the method’s computational cost.
+Recall that for canonical sampling, the (stationary or invariant) average of an
+observable .q; p/ is given as
+Avˇ./ D
+Z
+D
+.q; p/ˇ.q; p/d!;
+(7.1)
+where ˇ is the canonical measure
+ˇ.q; p/ D Z1
+can exp .ˇH.q; p// ;
+and Zcan is the canonical partition function
+Z1
+can D
+Z
+D
+exp .ˇH.q; p// d!;
+ensuring the integral of ˇ is unity. In this chapter, we will abbreviate the exact
+average of the observable  to
+hi
+def
+D Avˇ./;
+and write the observed average computed in experiment (using a discretization
+method with step size h) as hih. The error in the average of  due to the perfect
+sampling bias can be evaluated as
+Error due to discretization D jhi  hihj :
+We assume that the observed value of hih is corrupted as a result of our discretiza-
+tion, ignoring all other sources of error in our simulation. It is this sampling bias
+we would like to calculate (in order to correct our computed averages), or develop
+numerical sampling methods that naturally minimize this error.
+In Fig. 7.2 we quantify the difference between the computed distribution of
+q 2 R and the canonical distribution, for the one-dimensional double well potential
+U.q/ D .q2  1/2, using Langevin dynamics with parameters M D 
+ D ˇ D 1.
+The dynamics are discretized using a standard Langevin dynamics second-order
+algorithm taken from [62], where we sample the distribution of q along our
+discretized trajectory. Each step of the algorithm requires one force evaluation, so
+we may think of the vertical axis in Fig. 7.2 representing the total computational
+work.
+If we were able to solve the Langevin dynamics SDE exactly, then as we
+evolve the system in time the distribution will converge towards the canonical
+distribution, however the effects of numerical discretization are apparent in the

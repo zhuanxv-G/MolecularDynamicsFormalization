@@ -1,0 +1,54 @@
+320
+7
+Numerical Methods for Stochastic Molecular Dynamics
+manifold deﬁned by g.q/ D 0. We will denote schemes using this splitting in a
+similar fashion to the unconstrained case, but precede the schemes with “c-” to label
+the constrained form (for example c-BAOAB rather than the more cumbersome
+notation BcAcOcAcBc). Such a constrained scheme would be:
+c-BAOAB
+Solve
+ pnC1=5 D pn  h
+2rU.qn/  g0.qn/TnC1=3
+Such that g0.qn/M1pnC1=5 D 0
+Solve the geodesic ﬂow Ac for h=2, and map Œqn; pnC1=5	 ! ŒqnC1=2; pnC2=5	
+Solve
+ pnC3=5 D e
+hpnC2=5 C
+p
+.1  e2
+h/kBTMRn  g0.qnC1=2/TnC2=3
+Such that g0.qnC1=2/M1pnC3=5 D 0
+Solve the geodesic ﬂow Ac for h=2, and map ŒqnC1=2; pnC3=5	 ! ŒqnC1; pnC4=5	
+Solve
+ pnC1 D pnC4=5  h
+2rU.qnC1/  g0.qnC1/TnC1
+Such that g0.qnC1/M1pnC1 D 0;
+where Rn is a vector of i.i.d N.0; 1/ random numbers and the Lagrange multipliers
+, ensuring that the hidden constraint is satisﬁed, can be computed through a linear
+solve. We do not necessarily need to solve the geodesic ﬂow exactly in practice,
+though for the purposes of analysis we shall assume we do. If we are considering
+a second order scheme, then solving the Ac piece to at least second order would be
+sufﬁcient to preserve the overall order of the scheme, although a scheme may have
+potentially better accuracy and stability properties if a higher order solve is used.
+In practice, we can solve the Ac piece using any constraint algorithm for constant
+energy dynamics (see Sect. 4.3.6) and subsituting zero force. A more accurate
+solution is obtained for the geodesic drift by either using a number of small steps
+to integrate over the total time, or composing steps in a certain order to obtain a
+higher order solution (see Sect. 3.3.3). Relative to the force calculation, solving the
+geodesic drift step (even to high accuracy) can, in typical molecular systems, be
+considered computationally cheap. Given these splitting pieces, one may write down
+constrained equivalents of any of the schemes described in Sect. 7.3.1.
+We then ask how to analyze such schemes using the algebraic machinery
+developed throughout this chapter. As we solve each vector ﬁeld on the constraint
+manifold, it is natural to consider the associated Lie derivatives on these manifolds
+and solve the corresponding Fokker-Planck equation for the discretization to ﬁnd an
+invariant distribution, just as we did in the unconstrained case. This is a complicated
+programme and we do not develop this in detail here.
+To compare the performance of the various schemes we perform a numerical
+experiment to quantify the discretization error caused by the schemes. We imple-
+ment the c-BAOAB and c-OBABO schemes into the NAMD-lite [170, 302]
+package and consider 233 TIP3P water molecules in a periodic box with dimensions
+20  20  20 Angstroms at 300 K. We constrain the angles and bond lengths
+of each molecule so that the only forces felt are due to the van der Waals and
+electronic interations, parameterized by the CHARMM22 forceﬁeld [246] with an
+8-Angstrom cutoff. The system was simulated for a ﬁxed total time of 3ns, after a

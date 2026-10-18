@@ -1,0 +1,3645 @@
+Chapter 7
+Numerical Methods for Stochastic Molecular
+Dynamics
+
+
+
+
+In this chapter, we discuss principles for the design of algorithms for canonical
+sampling, based on the numerical discretization of stochastic dynamics models
+(such as Langevin dynamics) introduced in the previous chapter. Before we begin
+our discussion, let us consider the motivation for computing stationary averages
+using molecular dynamics.
+    One often views molecular sampling as exploration of the basins associated
+to local minima of the potential energy (or a free energy function, which would
+incorporate the effects of solvent degrees of freedom such as a bath of water). As
+a simplification, consider a system of N atoms interacting in a uniform pairwise
+potential energy function such as Lennard-Jones. It is estimated that the number
+                                          2
+of local minima of the potential is O.eN / [178], a spectacularly large number. Of
+course many of these will only be visited rarely, and the possibility of obtaining
+an average to a reasonable accuracy depends very much on the shape of the
+potential (e.g. the numbers of local minima accessible at a given temperature and the
+heights of the barriers between them), the sampling strategy, and even the particular
+observable being calculated. The large number of local minima, and the size of the
+sample space, make sampling a challenging problem, as methods such as Langevin
+dynamics must be run for a long time to generate a set of states which independently
+sample the various basins.
+    In fact, we might ask the question, “why use trajectories to calculate averages?”
+It seems that the task has little to do with the dynamics per se. We are simply
+computing the expectation of some function with respect to a given probability
+density, i.e. an integral on a large dimensional space. Although there may be
+stochastic differential equations available to us whose Fokker-Planck solutions are
+known to converge to the stationary distribution (for example Langevin dynamics),
+it is not obvious that computing trajectories provides the best way to sample it.
+Non-dynamical alternatives, such as Metropolis Monte-Carlo (see Appendix C), are
+available for the purpose and one might think that this is a more direct approach
+to the problem. In a Monte-Carlo method there is no direct way to calculate
+
+© Springer International Publishing Switzerland 2015                             261
+B. Leimkuhler, C. Matthews, Molecular Dynamics, Interdisciplinary Applied
+Mathematics 39, DOI 10.1007/978-3-319-16375-8_7
+262                              7 Numerical Methods for Stochastic Molecular Dynamics
+
+
+dynamics information, but this may or may not be essential to the problem at hand:
+we often only wish to know the average of a given function .q/ with respect the
+configurational density exp.ˇU.q//, where U is the potential energy function of a
+molecular system. Nevertheless, Metropolis Monte-Carlo can encounter additional
+problems in the setting of molecular modelling. Where steep potentials (Lennard-
+Jones potentials, for example) and stiff bonds are present, Monte-Carlo methods
+may experience a high rejection rate. From another perspective, the “interesting
+region” for sampling a Gibbs distribution is an extremely small portion of the
+accessible phase space, since the measure of phase space is highly concentrated
+and localized by the inherent geometric constraints of the problem and/or steep
+potentials. As the dimensionality increases, the accessible phase space becomes
+thinner. A sampling algorithm must be guided from place to place in a large
+dimensional phase space riddled with steep barriers, and blind search typically leads
+to a lot of wasted effort. For this reason molecular dynamics, which benefits from
+acceleration information (the forces) to guide timestepping, and for which every
+step is accepted, is often superior to crude Monte-Carlo for molecular sampling.
+For a comparative discussion of Monte-Carlo and molecular dynamics methods, see
+[6, 278].
+   We hasten to add that there are many situations in which Monte-Carlo methods
+have the advantage. For example, we might have specific knowledge of a catalog
+of large scale structural “moves” that would allow our algorithm to scale energetic
+barriers without drastically biasing the sampling outcome. An example is when an
+assembly consisting of several component macromolecules is moved by rearranging
+the pieces, since it may take atomistic MD a very long time to make such moves. In
+those cases we would likely wish to make use of the system-specific knowledge that
+we have in order to accelerate the sampling. An alternative to assuming, a priori,
+a detailed book of moves, is to consider methods that adaptively construct good
+proposals, for example taking advantage of parallel computing methods. At the very
+least, one would expect that such methods need to take into consideration the local
+forces to avoid wasted steps. A practical way to do this is the Hybrid Monte-Carlo
+method mentioned in Appendix C.
+   Note that deterministic methods (e.g. Hamiltonian dynamics itself) can some-
+times be used for molecular sampling, but without stochastic perturbation, such
+methods are not rigorously ergodic, since the Liouvillian operator does not possess
+a spectral gap and does not provide a unique stationary solution. The stochastic
+methods of this chapter are general purpose techniques that require little in the
+way of system-specific knowledge. They are workhorse methods which provide
+rigorous control of the canonical distribution. The challenge in using Langevin
+dynamics is to design maximally efficient methods that provide accurate averages
+for a wide range of observables using as large stepsizes as possible, and which
+converge as rapidly as possible. It is possible—even very easy—to build schemes
+that are wasteful, for example subject to unnecessarily stringent numerical stability
+barriers, and eliminating such mistakes is essential. This can be achieved by
+careful attention to the principles by which integrators are designed. Well designed
+stochastic differential equation approaches introduce dissipation without destroying
+7.1 Bias                                                                                        263
+
+
+long term (invariant measure) conservation properties; in this way they can provide
+a rational and flexible framework for designing stable algorithms.
+    Once a stochastic molecular dynamics-based framework is developed it is
+possible to modify it or use it as a building block in order to enhance sampling
+efficiency. One can for example incorporate these methods into kinetic Monte-Carlo,
+other metropolized schemes, or various advanced “path sampling” techniques. Thus
+the design of good molecular SDE methods is the cornerstone of much of modern
+molecular modelling.
+
+
+
+7.1 Bias
+
+In this chapter, the focus is on sampling strategies based on approximating Langevin
+dynamics (6.32)–(6.33). As will be seen, these methods offer a great deal of
+flexibility and, most importantly, reliability and robustness in the approximation of
+the canonical measure. All standard methods based on discretizing SDEs introduce
+some stepsize-dependent error in computed averages, which we shall refer to as
+bias (related to the truncation error of the discretization scheme). This bias can be
+corrected for using certain ‘rebiasing’ algorithms, for example using a Metropolis
+(accept-reject) condition [44, 47], however there may be significant computational
+overhead in employing these schemes leading to inefficiency compared to standard
+MD, in spite of the introduced error.
+    An illustration of the sampling bias (i.e., due to discretization error) is shown in
+Fig. 7.1. As the stepsize is increased, the error in sampling is increased as well,
+limiting the effectiveness of numerical methods. This bias can be dramatically
+different for different numerical methods. As we shall show, with the right choice
+of numerical method it is often possible to substantially reduce this error, and it is
+also possible to calculate (under some assumptions) the perturbation introduced by
+the numerical method, and to correct for its presence.
+
+
+
+
+   h=0.005          h=0.02          h= 0.025         h=0.03          h=0.035           h=0.04
+
+Fig. 7.1 We illustrate computed (canonical) distributions of q D .x; y/ for a planar potential
+energy function with two distinct basins connected by a narrow transition corridor, where high/low
+intensity is colored red/blue respectively. Each distribution is computed through simulations using
+a different stepsize parameter—no other properties are changed between the simulations. The
+differences between the distributions are the result of discretization error. At simulations with a
+larger timestep we can see a qualitative change in the sampled landscape, with the bridge between
+the two regions disappearing. Figure reprinted with permission from [222]. Copyright 2013, AIP
+Publishing LLC
+264                                 7 Numerical Methods for Stochastic Molecular Dynamics
+
+
+7.2 Error in Methods for Stochastic Differential Equations
+
+We briefly present some standard material on the development of numerical schemes
+for SDEs. The interested reader is pointed to the standard textbooks [200, 270] for a
+more thorough discussion of foundational concepts. Let us begin with a discussion
+of the first order stochastic differential equation
+
+                                 dX D a.X/dt C b.X/dW;
+
+where W defines a standard scalar Wiener process. The natural extension of the
+Euler method for SDEs like this one takes the form
+                                                   p
+                       XnC1 D Xn C ha.Xn / C b.Xn / hRn ;
+
+where Rn is a normal random variable with zero mean and unit variance. This
+method is referred to as the Euler-Maruyama method.
+  Note that from the definition of the SDE, we may write
+
+                                 ZtCh            ZtCh
+               X.t C h/ D X.t/ C     a.X.s//ds C     b.X.s//dW.s/:
+                                       t                  t
+
+Just as in the deterministic case, we may build a numerical method by approximating
+these integrals over a small timestep h. However, when designing a numerical
+scheme it is important to keep in mind the goal of the discretization itself. For
+example, as we have considered Langevin dynamics as a tool for studying the
+canonical distribution, do we always need methods to give us good approximations
+of X.t C h/? If we seek to compute averages with respect to the canonical
+distribution, then the answer is no: we simply require that the average over the
+discretized trajectory is accurate.
+   The numerical analysis of stochastic differential equations is traditionally based
+on the concepts of weak and strong accuracy. Let a numerical method be given for
+solving an SDE in the form of a discrete stochastic process XnC1 D ˚.Xn ; h/ for
+n D 0; 1; : : : ;   1, where h D  is fixed. We denote the stochastic solution of the
+SDE by X.t/. In the case of strong accuracy, our measure of the global error is the
+quantity [200]
+
+                                                                    1=˛
+                                                  E jXn  X.nh/j˛
+                        strong
+                    Errh; I˛ D      max                                  :
+                                  nD0;1;2;:::;
+
+
+For ˛ D 1 this implies convergence of expectation. The more natural choice from
+the probabilistic point of view is ˛ D 2 (mean square convergence). Having settled
+                                                                strong
+on a choice of ˛, we say that a method has strong order r if Errh; < C./hr for
+some coefficient C./ depending on the time interval.
+7.2 Error in Methods for Stochastic Differential Equations                                  265
+
+
+   The weak error is usually defined with reference to suitable test functions
+(observables) .x/ by
+
+                        h;; D
+                     Errweak         max          jE.Xn /  E.X.nh//j ;
+                                  nD0;1;2;:::;
+
+
+and we say that a method has weak order r if Errweak h;; < D./h for some D./, for
+                                                                   r
+
+all members of the chosen class of observables. It is easy to see that methods with
+high strong order give us high weak order too, but the converse is generally false.
+    As the focus of this chapter is on the computation of averages, the concept of
+weak order is more appropriate in evaluating methods.1 Yet, even the weak order of
+convergence may not be suitable in molecular dynamics applications, or rather, we
+are interested in the very long term behavior of the weak error which is governed by
+the coefficient D./ as  ! 1 [270, 356].
+    The standard approach to analyze the weak error would be based on computing a
+recurrence relation for jE.Xn /E.X.nh//j by use of the SDE and the methods of
+stochastic analysis. This approach mirrors the forward convergence analysis of ODE
+methods discussed in Chap. 2. It tends, however, to overestimate the magnitude of
+the quantity D./. In what follows, we show that, when the emphasis is on stationary
+averages, a more direct approach can be used to gain insight into the error based on
+an asymptotic expansion. In some cases, we are able to resolve explicitly the leading
+error term of computed averages in this long-time limit. The approach used here is
+analogous in many ways to the backward error analysis of deterministic problems
+presented in Chap. 3.
+    The sampling error is an additional error term that results from the finiteness of
+our trajectory: both in our inability to sample over an infinite time (for Langevin
+dynamics, we recover our averages only in the limit of  ! 1) and our generation
+of only a finite number of points (averages are calculated from our discretized
+trajectory of  steps). In large, high-dimensional systems (such as many relevant
+biomolecular applications) often the computational resource required to sample
+long enough in time to recover good averages is not available—the challenge then
+can be viewed as an exploration problem. Obtaining a complete sampling of the
+phase space in a system with rare transitions is extremely difficult, and is the most
+important challenge in molecular simulation [401].
+    However, we emphasize in this chapter that the discretization error (or perfect
+sampling bias) is also a very important contribution to the overall error, and in
+some cases may dominate the sampling error (for example, in systems where
+local resolution of the measure is more important than the global search). This
+discretization bias cannot be removed by considering a longer simulation time, so
+in some sense it is akin to a modelling error. Indeed as computing power increases
+and new algorithms are utilized, it is likely that trajectory generation will always be
+
+
+
+1
+ In practice all the methods presented here are convergent in the strong sense, but their strong
+convergence orders may be low, typically r D 1=2.
+266                              7 Numerical Methods for Stochastic Molecular Dynamics
+
+
+at the core of sampling in molecular dynamics. Hence we are motivated to find
+schemes that minimize this sampling bias introduced to the long-time averages,
+without significant increase to the method’s computational cost.
+   Recall that for canonical sampling, the (stationary or invariant) average of an
+observable .q; p/ is given as
+                                       Z
+                          Avˇ ./ D         .q; p/ˇ .q; p/d!;                  (7.1)
+                                       D
+
+where ˇ is the canonical measure
+                                      1
+                         ˇ .q; p/ D Zcan exp .ˇH.q; p// ;
+
+and Zcan is the canonical partition function
+                                   Z
+                           1
+                          Zcan D       exp .ˇH.q; p// d!;
+                                   D
+
+ensuring the integral of ˇ is unity. In this chapter, we will abbreviate the exact
+average of the observable  to
+
+                                           def
+                                   hi D Avˇ ./;
+
+and write the observed average computed in experiment (using a discretization
+method with step size h) as hih . The error in the average of  due to the perfect
+sampling bias can be evaluated as
+
+                    Error due to discretization D jhi  hih j :
+
+We assume that the observed value of hih is corrupted as a result of our discretiza-
+tion, ignoring all other sources of error in our simulation. It is this sampling bias
+we would like to calculate (in order to correct our computed averages), or develop
+numerical sampling methods that naturally minimize this error.
+   In Fig. 7.2 we quantify the difference between the computed distribution of
+q 2 R and the canonical distribution, for the one-dimensional double well potential
+U.q/ D .q2  1/2 , using Langevin dynamics with parameters M D D ˇ D 1.
+The dynamics are discretized using a standard Langevin dynamics second-order
+algorithm taken from [62], where we sample the distribution of q along our
+discretized trajectory. Each step of the algorithm requires one force evaluation, so
+we may think of the vertical axis in Fig. 7.2 representing the total computational
+work.
+   If we were able to solve the Langevin dynamics SDE exactly, then as we
+evolve the system in time the distribution will converge towards the canonical
+distribution, however the effects of numerical discretization are apparent in the
+7.3 Sampling Iterations                                                                                             267
+
+
+                                      105
+                                                                                                           Large
+                                                                                                           Error
+        Number of force evaluations
+                                      104
+
+
+                                                                   Opt
+                                                                      imu
+                                      103
+                                                                          m   step
+                                                                                   size
+
+
+                                      102
+
+
+
+                                                                                                           Small
+                                      101                                                                  Error
+                                            0.05             0.1                          0.2       0.3
+                                                                      Stepsize
+
+Fig. 7.2 We plot the error in the distribution of q 2 R for U.q/ D .q2  1/2 . The error in
+the computed distribution is a function of both the number of force evaluations and the stepsize
+used, with the optimal choice of stepsize for a given number of force evaluations shown by the
+white guideline. Due to discretization bias, choosing the maximum stepsize is not always the best
+strategy
+
+
+figure: while increasing the stepsize means we more rapidly converge with each
+step, the distribution that the discretization scheme converges to is incorrect. For
+small stepsizes, this error due to discretization may be negligible when compared to
+the sampling error, but we converge more slowly towards the final distribution. As
+the stepsize is increased, the discretization error may dominate the overall error in
+calculation.
+
+
+
+7.3 Sampling Iterations
+
+By way of illustration of what we mean by a numerical sampling method, consider
+the system of independent Ornstein-Uhlenbeck (OU) processes
+                                                                        p
+                                                      dp D  pdt C       2kB T M1=2 dW:                            (7.2)
+
+Following the argument of Sect. 6.3.2 in the previous chapter,
+                                                                                                p
+           dŒexp. t/p D                                exp. t/pdt C exp. t/Œ pdt C              2kB T M1=2 dW
+                                                            p
+                                                   D exp. t/ 2kB T M1=2 dW:
+268                               7 Numerical Methods for Stochastic Molecular Dynamics
+
+
+Integrating from t to t C h and multiplying by exp. t/, we arrive at the solution
+                                           p
+                  p.t C h/ D e h p.t/ C    kB T.1  e2 h /M1=2 Z;               (7.3)
+
+where Z is a vector of independent, standard normal random variables. Alterna-
+tively, we may write this as a discrete iteration in terms of a random map:
+                                       p
+                    pnC1 D e h pn C    kB T.1  e2 h /M1=2 Rn ;
+
+with normally distributed R. For later purposes, we will think of this update as acting
+on both q and p, leaving q unchanged, i.e.
+                                                p
+             .qnC1 ; pnC1 / D .qn ; e h pn C    kB T.1  e2 h /M1=2 Rn /:
+
+The Fokker-Planck operator for the OU system (7.2) can be computed directly as
+                     
+                    LO .q; p/ D rp  .p/ C kB Trp  Mrp :
+
+
+    The Ornstein-Uhlenbeck process models the momentum of a Brownian particle,
+and in deriving it we thought of as being associated to the collisional frequency
+with the particles of the bath. Alternatively, if we ignore the physical origin of this
+parameter, we can think of as an arbitrary coefficient; the sampling of the invariant
+measure does not depend on this choice. Thus we have a family of sampling
+iterations for the Gaussian distribution, defined for different choices of .
+
+
+
+7.3.1 Splitting Methods for Langevin Dynamics
+
+We will now consider a family of iterations for molecular systems which are con-
+structed from simple building blocks based on the splitting of an SDE, specifically
+Langevin dynamics:
+
+                   dq D M1 pdt;
+                                                   p                              (7.4)
+                   dp D rU.q/dt  pdt C            2 kB TM1=2 dW:
+
+Just as in the deterministic setting (for Newton’s equations of motion) we construct
+such splitting methods by way of an additive decomposition of the vector field,
+where the differential equations corresponding to any individual piece can be solved
+exactly. Methods are built from a sequence of updates corresponding to an exact
+solve of each piece. By “exact solve” we here mean the construction of a method of
+exactly sampling the distribution generated by the corresponding component. The
+7.3 Sampling Iterations                                                              269
+
+
+choice of splitting strategy (given by the definition of the splitting pieces) along with
+a prescribed sequence of updates defines a splitting method.
+   There are a great number of plausible splitting strategies for Langevin dynamics.
+For example we may split the equations into purely deterministic and stochastic
+parts, break the stochastic terms into dissipative and random components, or choose
+to decompose the vector field into Nc one-dimensional problems that can be solved
+to high-accuracy. For some potential energy functions, it may be beneficial to
+decompose the potential into many terms U.q/ D U1 .q/ C U2 .q/ C : : :, and use
+each term in a separate splitting piece in order to give a scheme improved stability
+or computational properties. In any case, it is not obvious a priori which splitting
+strategies will have more favorable sampling properties.
+   As propagating the Ornstein-Uhlenbeck process exactly will preserve the canon-
+ical distribution ˇ , it is reasonable to assume that this is a good choice for one
+of the building blocks in a general splitting scheme. As the exact solution of the
+OU process is defined for any value of  0, we may hope that our discretization
+scheme will be tolerant for extremely large frictions, although there is no guarantee
+that the resulting discretization remains consistent in the limiting case.
+   Other than the Ornstein-Uhlenbeck process, the remaining piece of the splitting
+corresponds to Newtonian constant-energy (microcanonical) Hamiltonian dynam-
+ics. Since Hamiltonian dynamics leaves invariant any function of the energy, its
+                                                                             
+corresponding Fokker-Planck operator (in this case the Liouvillian, LH D LH )
+will preserve distributions that are functions of the Hamiltonian H. This implies in
+particular that it preserves ˇ , which is proportional to exp.ˇH/. Thus the forward
+propagator associated to the Hamiltonian system automatically preserves the Gibbs
+distribution, and we have
+                                          
+                                     etLH ˇ D ˇ :
+
+Formally, we could combine the flow map FhH of Hamiltonian dynamics with an
+exact solve of the OU process to create a sampling iteration which preserves ˇ , as
+we also have
+                                          
+                                     etLO ˇ D ˇ :
+
+To make this practical in the general case, where the Hamiltonian system is not
+integrable (and we cannot explicitly compute its flow map), we need to be able to
+compute (or approximate) the maps involved.
+   This suggests to further split the Hamiltonian system, as we have done in deriving
+symplectic integrators in Chaps. 2 and 3.
+   We therefore consider dividing the Langevin system (7.4) into parts
+           1                                       
+         q    M p           0                    0
+    d      D       dt C            dt C                      ;                     (7.5)
+         p     0          rU.q/           pdt C M1=2 dW
+             „ ƒ‚ … „       ƒ‚     … „           ƒ‚         …
+                     A                B                       O
+270                                   7 Numerical Methods for Stochastic Molecular Dynamics
+
+
+which we label A, B and O, where each of the three parts may be solved “exactly”,
+with individual updates given as
+
+                UhA .q; p/ D .q C hM1 p; p/;
+                UhB .q; p/ D .q; p  hrU.q//;
+                                         p
+                UhO .q; p/ D .q; e h p C kB T .1  e2 h /M1=2 R/;
+
+where R is a vector of i.i.d. normal random numbers. For the deterministic pieces
+A and B, the updates correspond to their flow maps, while the update for the O
+piece corresponds to the solution derived in (7.3). The relevant forward propagators
+for each piece of the Hamiltonian part are computed through the adjoint of the Lie
+derivative as
+                                                   
+                      LA D M1 p  rq ;           LB D rU.q/  rp :
+
+Using this splitting strategy, we can define a family of schemes by the desired
+sequence of updates, codified as a string using the alphabet “ABO”. For example,
+the method denoted ABO (acting from left to right) has a resulting update
+
+                                  ABO
+                                 Uh       D UhO ı UhB ı UhA :
+
+This corresponds to using the adjoint symplectic Euler scheme to solve the
+Newtonian part of the Langevin dynamics SDE, followed by an exact OU solve. An
+alternative is to use velocity Verlet for the Hamiltonian part, resulting in a scheme
+denoted BABO with associated map
+
+                             BABO
+                            Uh        D UhO ı Uh=2
+                                                B
+                                                   ı UhA ı Uh=2
+                                                             B
+                                                                :
+
+Note that the presence of two B characters in the string results in halving the
+corresponding piece’s time step length. As we need the method to be consistent,
+we require that the each of the A, B and O pieces are propagated in time for a
+total time of h. As a result we use the convention that if a letter appears k times in a
+method’s string, then each individual update piece uses a timestep h=k. For example,
+the scheme denoted OABOAOBAO has an update
+
+      OABOAOBAO
+ Uh                 D Uh=4
+                        O
+                           ı Uh=3
+                               A
+                                  ı Uh=2
+                                      B
+                                         ı Uh=4
+                                             O
+                                                ı Uh=3
+                                                    A
+                                                       ı Uh=4
+                                                           O
+                                                              ı Uh=2
+                                                                  B
+                                                                     ı Uh=3
+                                                                         A
+                                                                            ı Uh=4
+                                                                                O
+                                                                                   ;
+
+where the random numbers used in each O update are independent. This scheme will
+require a total of 4Nc normal random numbers and two force evaluations per step
+(the force must be recomputed at the first B step following an A step; the number of
+force evaluations required is not directly related to the length of the string).
+   A class of methods like those considered above were discussed in [46] and given
+the general title of “Geometric” Langevin Algorithm (GLA). The idea of a GLA
+7.3 Sampling Iterations                                                              271
+
+
+method is to treat the Newtonian part of Langevin dynamics by a symplectic method,
+and follow this by an Ornstein-Uhlenbeck exact solve; this is just what is done in the
+schemes denoted BABO and ABAO. Thus we could give these two methods the
+alternate (and more descriptive) names Geometric Langevin (Velocity-Verlet) and
+Geometric Langevin (Position-Verlet) respectively.
+    Building on these schemes, the OU solves can instead be placed in the center of
+the step, or we may choose to have more than one OU solve distributed through the
+iteration. As it happens, some of these methods are of particular interest. We refer
+to the method obtained by inserting the OU solve in the middle of the Verlet method
+either by the strings ABOBA (Position-Verlet version) and BAOAB (Velocity-
+Verlet version) or by the more pronounceable names Symmetric Langevin Position-
+Verlet or Symmetric Langevin Velocity-Verlet, respectively.
+    For reference and to remove any ambiguity, we write out some of these
+algorithms below as single timestep maps (sample implementations in MATLAB
+are available at http://www.MolecularDynamics.info).
+                ABAO                                      BABO
+  qnC1=2 D qn C .h=2/M1 pn ,                 pnC1=2 D pn  .h=2/rU.qn /,
+  pnC1=2 D pn  hrU.qnC1=2 /,                 qnC1 D qn C hM1 pnC1=2 ,
+  qnC1 D qnC1=2 C .h=2/M1 pnC1=2 ,           pO nC1=2 D pnC1=2  .h=2/rU.qnC1 /,
+  pnC1 D eh pnC1=2 C 2 M1=2 Rn ,            pnC1 D eh pO nC1=2 C 2 M1=2 Rn ,
+
+                 ABOBA                                    BAOAB
+  qnC1=2 D qn C .h=2/M1 pn ,                 pnC1=2 D pn  .h=2/rU.qn /,
+  pnC1=2 D pn  .h=2/rU.qnC1=2 /,             qnC1=2 D qn C .h=2/M1 pnC1=2 ,
+  pO nC1=2 D eh pnC1=2 C 2 M1=2 Rn ,        pO nC1=2 D eh pnC1=2 C 2 M1=2 Rn ,
+  pnC1 D pO nC1=2  .h=2/rU.qnC1=2 /,         qnC1 D qnC1=2 C .h=2/M1 pO nC1=2 ,
+  qnC1 D qnC1=2 C .h=2/M1 pnC1 ,             pnC1 D pO nC1=2  .h=2/rU.qnC1 /,
+
+                   OABAO                                       OBABO
+                                  1=2
+  pnC1=2 D e  h =2
+                       p n C  1 M Rn ,           pnC1=2 D e   h =2
+                                                                     pn C 1 M1=2 Rn ,
+  qnC1=2 D qn C .h=2/M1 pnC1=2 ,                 pO nC1=2 D pnC1=2  .h=2/rU.qn /,
+  pO nC1=2 D pnC1=2  hrU.qnC1=2 /,               qnC1 D qn C hM1 pO nC1=2 ,
+  qnC1 D qnC1=2 C .h=2/M1 pO nC1=2 ,             pO nC1 D pO nC1=2  .h=2/rU.qnC1 /,
+  pnC1 D e   h =2                   1=2
+                   pO nC1=2 C 1 M RnC1=2 , pnC1 Deh =2 pO nC1 C 1 M1=2 RnC1=2 ,
+                                     1=2
+where j D kB T 1  ej h                  , and Rn ; RnC1=2 are Nd vectors of standard
+independent N .0; 1/ random variables, resampled at each step. Note that, as in the
+Velocity-Verlet method, the two apparent evaluations of the force F D rU in the
+methods labelled BABO, BAOAB and OBABO actually require only a single
+evaluation at each timestep, since the second evaluation at one step may be reused at
+the first stage of the following step. Thus all of the above methods require only one
+force evaluation per timestep, and hence we can think of them having exactly the
+same computational cost as the evaluation of the force is the principle computational
+expense.
+272                                7 Numerical Methods for Stochastic Molecular Dynamics
+
+
+   When iterated n C 1 times, we can see the scheme OABA produces a mapping
+of the form
+                                            
+           OABA nC1                   BAOAB n
+         Uh           D Uh=2
+                          A
+                             ı Uh=2
+                                 B
+                                    ı Uh          ı Uh=2
+                                                      B
+                                                         ı Uh=2
+                                                             A
+                                                                ı UhO ;
+
+therefore through a coordinate transformation the OABA method can be morphed
+into the BAOAB scheme. To put this another way, if we compute an iteration using
+OABA and simply evaluate it at different points within the step, we can recover
+the same results as the BAOAB method would provide. Another term to describe
+this relationship is to say that one method is conjugate to the other.
+
+
+
+7.3.2 Other Langevin Integrators
+
+We may use our alphabet of A, B and O splitting pieces to create a wide variety
+of methods other than those given in the previous section (some requiring multiple
+force evaluations). However, it is not obvious that there is any gain in increasing the
+complexity of the splitting scheme (in terms of the length of its codifying string).
+Some popular methods can be rewritten in terms of this splitting, for example the
+scheme considered in [62] is equivalent to OBABO. Examples of methods based
+on this type of splitting were also proposed by De Fabritiis et al [96] and Thalmann
+and Farago [363], in the context of dissipative particle dynamics (see Chapter 8).
+   Other Langevin dynamics splitting schemes in common use utilize a different
+additive decomposition of the SDE vector field. For example, the Stochastic Position
+Verlet (SPV) method of [265] relies on the splitting strategy
+                 1                                   
+               q   M p                     0
+            d    D       dt C                                :
+               p    0           rU.q/dt  pdt C M 1=2 dW
+
+To solve the splitting piece including the stochastic dW term, we note that q does not
+change through its integration, and hence we may treat F D rU as constant during
+this part of the step. The exact solution is hence given through the usual Ornstein-
+Uhlenbeck formula, where the scheme itself derives from a symmetric integration
+of the two parts:
+                          Stochastic Position Verlet (SPV)
+                         qnC1=2 D qn C .h=2/M1 pn
+                         pnC1 D eh pn  rU.qn / C M1=2 Rn
+                         qnC1 D qnC1=2 C .h=2/M1 pnC1
+                                                 1=2
+where  D .1eh /= ,  D kB T 1  e2 h               . It is important to note that in the
+limit of infinite friction, we have  ! 0 independent of the timestep h. This suggests
+that this splitting strategy is unsuitable for large choices of the parameter as the
+7.4 Error Results for Harmonic Problems                                           273
+
+
+sampling will become inconsistent: the force will be dominated by the stochastic
+term, leaving the dynamics to evolve as a random walk.
+   Similar behavior is exhibited using the splitting strategy in (7.5), when interpos-
+ing the kick term B between two O steps, such as in the schemes AOBOA or
+BOAOB. By avoiding “OBO” updates, we can derive schemes that are consistent
+even at infinite friction (the BAOAB and ABOBA schemes are examples of such
+methods).
+   The Brünger-Brooks-Karplus (BBK) Langevin integrator [55] is one of the most
+popular and widely-implemented schemes.
+                       Brünger-Brooks-Karplus (BBK)
+                                               p
+      pnC1=2 D .1  h =2/pn  .h=2/rU.qn / C 12 2kB Th M1=2 Rn
+      qnC1 D qn C hM1 pnC1=2
+                                          p
+      pnC1 D ŒpnC1=2  .h=2/rU.qnC1 / C 12 2kB Th M1=2 R0n =.1 C h =2/
+ Often R0 is chosen such that R0n D RnC1 , so the random vector would be reused at
+the start of the following timestep, however there are many variants of this scheme
+that incorporate the redraw of random numbers differently. In other variants of BBK
+we take R0n D Rn , reusing the random number within the step. We may also consider
+independent R0n and Rn , however when using independent noise processes we must
+modify the algorithm as it will not sample canonically (see Exercise 1).
+
+
+
+7.4 Error Results for Harmonic Problems
+
+For general systems it can be very challenging to give a complete description of
+the weak error in averages computed from trajectories evolved through a Langevin
+dynamics discretization scheme. However, using a linear model problem signifi-
+cantly reduces the complexity, while using small dimensional test problems allows
+us to effectively annihilate sampling error in demonstrative numerical experiments.
+   As such, we return now to the harmonic oscillator, which as well as being the
+simplest molecular model is also one of the most relevant for molecular dynamics
+applications, as many issues of stability and timestep in molecular dynamics
+simulations arise due to harmonic potentials used to model covalent bonds (such
+as in crystalline solids and biomolecules). The canonical distributions of position
+and momentum are also of a simple form (Gaussians), making such oscillators
+particularly amenable to analysis.
+   Recall that the one-dimensional harmonic oscillator with spring constant ˝ 2 has
+potential energy function U.q/ D ˝ 2 q2 =2, with Hamiltonian
+
+                                           p2   ˝ 2 q2
+                               H.q; p/ D      C        ;                         (7.6)
+                                           2m    2
+
+where .q; p/ 2 R2 represent a particle’s position and momentum, and m > 0 is the
+particle’s mass. In this setting, the canonical distribution ˇ is the product of two
+274                                         7 Numerical Methods for Stochastic Molecular Dynamics
+
+
+Gaussian distributions, where we have invariant (stationary) averages
+
+                                             hqi D hpi D 0;
+
+and
+
+                         h˝ 2 q2 i D hp2 =mi D kB T;                     hqpi D 0:
+
+We expect that the discretization schemes that we employ will introduce errors in
+the computed values of the invariant (long-time) averages. In the large-time limit,
+these averages will converge towards their invariant value, which we can find using
+the procedure outlined in [59].
+   For the harmonic oscillator, the force U 0 .q/ will be linear, and therefore we
+would expect that any update step in an algorithm will be linear in the state variables
+q and p. Thus, denoting the iteration index as a subscript, we may explicitly write
+one iteration of a general numerical method for evolving the dynamics as
+                                                                
+                                       qnC1                     qn
+                                                   D                 C n ;                                (7.7)
+                                       pnC1                     pn
+
+where is a constant matrix that depends on the stepsize h, the friction coefficient
+  , the particle mass m and the spring constant ˝. Additionally n is a vector of
+stochastic processes. For example, in the BBK method we can compute directly
+from its update scheme that
+                                  2                2   2
+                                                                                3
+                                                ˝                  h
+                                         1  h 2m         m 1 2
+                                                          h
+                        BBK
+                              D4        2
+                                           2 2
+                                                      
+                                                        .2 h/.2mh2 ˝ 2 /
+                                                                           5;
+                                      h˝      h ˝ 4m
+                                       2m       2C h        2m.2C h/
+                                  2                    q                               3
+                                        kB T h3
+                                                Rn
+                        BBK 4
+                       n D p2k T hm    2m                5:
+                                            h2 ˝ 2         0
+                               B
+                              2C h
+                                       1    2m
+                                                     Rn C Rn
+
+
+   More generally, if we define the components of          as ij and denote n D
+Œn;1 ; n;2 T we can take products of the update equations defined by (7.7) to obtain
+
+      q2nC1 D     2 2
+                  11 qn C
+                              2 2      2
+                              12 pn C n;1 C 2             11    12 qn pn C 2    11 n;1 qn C 2     12 n;1 pn ;
+                                                                                                           (7.8)
+      p2nC1 D     2 2
+                  21 qn C
+                              2 2      2
+                              22 pn C n;2 C 2             21    22 qn pn C 2    21 n;2 qn C 2     22 n;2 pn ;
+                                                                                                           (7.9)
+                            2               2
+ qnC1 pnC1 D      11    21 qn C   12    22 pn C n;1 n;2 C . 11                22 C    12    21 /qn pn
+
+                C . 11 n;2 C         21 n;1 /qn C . 22 n;1 C               12 n;2 /pn :               (7.10)
+7.4 Error Results for Harmonic Problems                                                      275
+
+
+   Assuming that the discretization schemes preserve the ergodic property of
+Langevin dynamics, taking the expectation of these equations and considering the
+limit as n goes to infinity allows us to compute the invariant average of the schemes,
+and thus to evaluate the perfect sampling bias introduced by the discretization.
+
+
+
+7.4.1 Invariant Averages for Schemes Using the A, B and O
+      Splitting
+
+The analysis of schemes using the splitting strategy coded with the A, B and O
+pieces is particularly simple, as we use a new random number for each stochastic
+update meaning that the random numbers and state variables are not correlated
+between steps. Hence we have
+
+                               E.n;i qn / D E.n;i pn / D 0;
+
+for any i and n. Thus, taking expectations of (7.8)–(7.10) for such schemes, and then
+considering the limit n ! 1 we obtain a closed, linear system of equations
+
+      hq2 ih D   2    2
+                 11 hq ih C
+                                2    2
+                                12 hp ih C 2   11              N 11 ;
+                                                    12 hqpih C 
+
+      hp2 ih D   2    2
+                 21 hq ih C
+                                2    2
+                                22 hp ih C 2   21              N 22 ;
+                                                    22 hqpih C 
+
+                           2                 2
+     hqpih D     11   21 hq ih C   12   22 hp ih C . 11     22 C   12   21 /hqpih C 
+                                                                                    N 12 ;
+                                                                                        (7.11)
+where we have constants
+
+              N 11 D E.2n;1 /;   N 12 D E.n;1 n;2 /;     N 22 D E.2n;2 /:
+
+We can solve this linear system to find the invariant averages computed by the
+chosen discretization scheme for the harmonic oscillator with Hamiltonian (7.6).
+Example 7.1 Consider the scheme coded ABO, where
+                                          ABO
+                              qnC1 D qn C hM1 pn
+                              pnC1=2 D pn  hrU.qnC1 /
+                              pnC1 D eh pnC1=2 C M1=2 Rn
+276                                          7 Numerical Methods for Stochastic Molecular Dynamics
+
+                          1=2
+with  D kB T 1  e2 h         , and Rn a vector of unit normal random numbers.
+We can write this update scheme succinctly as
+
+                      qnC1 D qn C hM1 pn ;
+                      pnC1 D eh pn  heh rU.qn C hM1 pn / C M1=2 Rn :
+
+In the case of the one-dimensional harmonic oscillator, we have U 0 .q/ D ˝ 2 q,
+yielding the compact form of one iteration as
+                                                                               
+          qnC1             1            h=m                           qn        0
+                     D                                                    C             :   (7.12)
+          pnC1         ˝ 2 heh .1  ˝ 2 h2 =m/eh                   pn     m1=2 Rn
+
+Taking expectations of (7.12) and then taking the limit as n ! 1, we see
+immediately that
+
+                                             ABO          ABO
+                                         hqih        D hpih          D 0;
+
+as E.Rn / D 0. Plugging the values for                 ij into (7.11), with
+
+
+                                       N 11 D N 12 D 0;     N 22 D m 2 ;
+
+we can solve to find the exact value of the method’s stationary averages. For
+example, the relative increase in the variance of position is computed for the ABO
+scheme as
+                           ABO
+                     hq2 ih                eh m.1 C eh /2
+                                   D
+                        hq2 i          2m.1 C eh /  h2 ˝ 2 eh
+                                   D 1 C h=2 C .˝ 2 C            2
+                                                                     m/h2 =.4m/ C O.h3 /:
+
+Hence we can see that the ABO scheme gives a first-order error in the variance
+of q. For significantly small friction (relative to h), the leading order term will be
+dominated by the term at order h2 , potentially giving us greater accuracy than we
+would expect from a first order scheme.
+   However, we see that the error grows exponentially as gets large. We can
+explain this by returning to the definition of the scheme, which has an O step
+(stochastic fluctuation) immediately preceding the only A step (drift), wiping out
+all force information for infinite friction. In practice, playing with the friction
+coefficient can affect the rate at which averages converge towards the invariant
+average.
+   From the work in Chap. 3, we may expect that performing the integration
+steps symmetrically (by using a Strang splitting) could provide desirable higher
+order behavior. Computing the coefficients in (7.11) for the each of the symmetric
+7.4 Error Results for Harmonic Problems                                               277
+
+
+Table 7.1 The expected long-time computed average using the given second-order Langevin
+dynamics discretization scheme
+ Scheme                hq2 ih =hq2 i                hp2 ih =hp2 i                 hqpi
+ ABOBA               1                            Œ1  h2 ˝ 2 =.4m/ 1          0
+                              2   2       1
+ OBABO               Œ1  h ˝ =.4m/               1                             0
+                                                          2   2
+ BAOAB               1                            1  h ˝ =.4m/                 0
+                             2    2
+ OABAO               1  h ˝ =.4m/                1                             0
+
+
+
+schemes, we are able to compute the exact expected average by solving the linear
+equations. The results are summarized in Table 7.1, where we have not considered
+the AOBOA and BOAOB schemes due to their inconsistency at large friction
+(this does not preclude the analysis, but limits each those method’s usefulness in
+simulation). Similar analysis can be conducted for more complicated composition
+schemes involving multiple force evaluations.
+    The mentioned splitting schemes give a second-order error in the computed
+averages, but surprisingly each gives an exact result for computed averages of either
+position or momentum. The exactness property is not born out of the symmetry of
+the method, but rather of the specific order of terms and choice of splitting “building
+blocks”. Even non-symmetric first-order schemes can exhibit similar qualities. For
+example, analysis shows that the schemes denoted AOAB or BAOA both exhibit
+a first order error in the covariance hqpih D O.h/, however they give exact results
+for both hq2 ih and hp2 ih .
+
+
+
+7.4.2 More General Schemes
+
+We can conduct a similar analysis for any integrator that we can express in the
+form (7.7), simply by plugging in the relevant constants and solving a linear
+equation. The difficulty lies when random numbers are reused, leading to correlation
+between steps. This requires careful treatment to compute the expectation.
+Example 7.2 Consider the variant of the BBK integrator that recycles the random
+number between steps:
+ Brünger-Brooks-Karplus with post-step re-use of random number (BBK*)
+                                          p
+ pnC1=2 D .1  h =2/pn  .h=2/rU.qn / C 12 2kB Th M1=2 Rn
+ qnC1 D qn C hM1 pnC1=2
+                                     p
+ pnC1 D ŒpnC1=2  .h=2/rU.qnC1 / C 12 2kB Th M1=2 RnC1 =.1 C h =2/,
+where Rn is a vector of normal random numbers with zero mean and unit variance.
+In some systems, it can be computationally expensive to generate normal random
+numbers for each degree of freedom, hence algorithms may re-use the random
+278                                         7 Numerical Methods for Stochastic Molecular Dynamics
+
+
+numbers between iterations to give a small computational saving. We can see that
+only one vector of random numbers is generated per iteration, with the new vector of
+random numbers being used in the following iteration. This gives some correlation
+between steps that complicates our analysis a little.
+   If we wish to find the perfect sampling bias in the case of the one-dimensional
+harmonic oscillator, we can apply this technique to find the invariant averages under
+this scheme. We have
+                2           2˝2
+                                                3
+                                              h
+                      1  h 2m       h
+                                         1  2
+        BBK*
+             D4 2 2 2            m
+                                   .2 h/.2mh2 ˝ 2 /
+                                                      5;
+                   h˝    h ˝ 4m
+                         2m         2C h         2m.2C h/
+                   2                       q                       3
+                                 kB T h3                                  
+                                         Rn                        1 Rn
+        BBK* D 4 p              2m
+                                     2˝2
+                                                     5 D                   ;
+                                                             2 Rn C 3 RnC1
+         n         2kB T hm
+                    2C h       1  h 2m    Rn C RnC1
+
+using the notation in (7.7). Taking expectations of the resulting equations, we can
+compute the values of the constants in (7.8)–(7.10) and solve to find the long-
+time averages. Care must be taken however, as unlike the schemes using the ABO
+splitting we must include some correlation between steps. Denoting the entries of
+  BBK*
+        by ij we have
+
+      E.n;2 pn / D E .. 2 Rn C        3 RnC1 / . 21 qn1 C      22 pn1 C     2 Rn1 C     3 Rn // ;
+
+                D      2 3:
+
+
+This additional quantity will slightly change the expectation of (7.9) compared to the
+standard BBK method, and hence the overall averages of the scheme. Additionally
+it is easily shown that
+
+                    E.n;1 qn / D E.n;2 qn / D 0;          E.n;1 pn / D      1 3;
+
+
+with
+
+              E.2n;1 / D      2
+                               1;     E.n;1 n;2 / D    1 2;    E.2n;2 / D    2
+                                                                                2 C
+                                                                                       2
+                                                                                       3:
+
+
+Thus taking expectations of (7.8)–(7.10) and substituting in the constants gives
+
+ hq2 iBBK*
+      h    D       2    2 BBK*
+                   11 hq ih    C           2    2 BBK*
+                                           12 hp ih    C2   11   12 hqpih
+                                                                        BBK*
+                                                                             C2       12 1 2   12 1 3
+                    2
+               C    1;
+
+ hp2 iBBK*
+      h    D       2    2 BBK*
+                   21 hq ih    C           2    2 BBK*
+                                           22 hp ih    C2   21   22 hqpih
+                                                                        BBK*
+                                                                             C2       22 2 2   22 2 3
+                    2         2
+               C    2 C       3;
+7.5 Errors in Configurational Quantities for the Perturbed Harmonic Oscillator                     279
+
+                             2 BBK*                 2 BBK*
+ hqpiBBK*
+     h    D        11   21 hq ih    C    12    22 hp ih    C . 11     22 C     12   21 /hqpih
+                                                                                            BBK*
+
+
+               C    1 2C      12 2 3 C        22 1 3 :
+
+
+Finally, solving the simultaneous equations gives the stationary observed aver-
+ages as
+                                             1                                       1
+                  kB T        ˝ 2 h2                                              h
+       hq2 iBBK* D 2       1                      ;     hp2 iBBK* D kB Tm    1C             ;
+            h
+                        ˝      4m                             h
+                                                                                 2
+                                         hqpiBBK*
+                                             h    D 0:
+
+   For more general methods requiring multiple correlated random numbers, a
+further history than just one step is required to evaluate the expectation correctly.
+
+
+
+7.5 Errors in Configurational Quantities for the Perturbed
+    Harmonic Oscillator
+
+We can consider applying the analysis of Sect. 7.4 to a more complicated example,
+however in general for nonlinear systems we cannot adopt the same strategy by
+taking expectations of the update equations, as we do not end up with a closed
+system of linear equations to solve (the force term now involves terms of higher
+orders). However, if the nonlinear terms in the force are preceded by a small
+constant, we can truncate the equations to provide an approximation to the invariant
+behavior. We consider sampling canonically the Hamiltonian
+
+                             H.q; p/ D p2 =2 C q2 =2 C "q4 =4;                                   (7.13)
+
+using Langevin dynamics, where q; p 2 R, with a small nonlinearity parameter
+" > 0. As the canonical momentum distribution is always Gaussian (and hence
+trivial to sample), we will be far more concerned with the behavior of the (more
+interesting) distribution of position. The system can be thought of as the harmonic
+oscillator with a small nonlinear perturbation term, so the canonical configurational
+distribution will remain “close” to a Gaussian in some sense (this potential energy
+function is equivalent to an unforced Duffing Oscillator with no damping). In the
+limit as " ! 0, we would expect the averages to converge to the results of Table 7.1.
+    We consider estimating the value of hq2 ih by truncating the equations governing
+the evolution of the averages in powers of " (to ensure closure of the resulting
+simultaneous equations). We examine the expected behavior of the average in the
+case of the four second-order schemes listed in Table 7.1, although we may conduct
+this analysis for any similar scheme.
+280                                 7 Numerical Methods for Stochastic Molecular Dynamics
+
+
+   We find that truncating the update equations to O."3 / is sufficient to explicitly
+resolve the leading order behavior of the error for these discretization schemes, and
+we give the differences between observed numerical averages and exact averages
+below:
+
+      ABOBA               3h2 " 48"  4 C 3 2 .9"  1/
+hq2 ih           hq2 i D                                C O."h4 C "3 h2 /;
+                                     12 2 C 16
+      BAOAB             9h2 "2    3h4 "2 6 4 C 19 2 C 16
+hq2 ih           hq2 i D                          2
+                                                              C O."2 h6 C "3 h2 /;
+                         6 2C8                 2
+                                           8 .3 C 4/
+                                                             !
+  2 OBABO      2      2 1      " 144" C 81" 2  9 2  12
+hq ih         hq i D h      C                                   C O.h4 C "3 h2 /;
+                           4              12 2 C 16
+                           
+     OABAO                 1       18"2
+hq2 ih        hq2 i D h2      C              C O.h4 C "3 h2 /:
+                             4    12 2 C 16
+                                                                          (7.14)
+The behavior of the methods can thus be summarized as
+                  ˇ                   ˇ      
+                  ˇ 2 ABOBA         ˇ
+                  ˇhq ih        hq2 iˇ D O "h2 ;
+                  ˇ                   ˇ      2 2
+                  ˇ 2 BAOAB         ˇ       " h
+                  ˇhq ih        hq2 iˇ D O         C "2 h4 ;
+                                             1C 2                                 (7.15)
+                  ˇ                   ˇ      
+                  ˇ 2 OBABO         ˇ
+                  ˇhq ih        hq2 iˇ D O h2 ;
+                  ˇ                   ˇ      
+                  ˇ 2 OABAO         ˇ
+                  ˇhq ih        hq2 iˇ D O h2 :
+
+We would expect that both the ABOBA and BAOAB schemes would have a
+leading error term proportional to ", given that it was shown in Table 7.1 that in the
+pure harmonic case (at " D 0) these methods give perfect sampling. The twofold
+surprising result though, is that (a) the leading error of the BAOAB scheme has
+behavior proportional to "2 , while (b) the leading order term of the BAOAB
+scheme is annihilated for large .
+   It would seem that by ordering the A, B and O update terms favourably in an
+algorithm we are able to achieve significant sampling improvements on systems
+that are “nearly harmonic”, at no extra cost (in terms of force evaluations).
+   To illustrate this numerically, we use each of the four given second order methods
+to compute the absolute error in hq2 ih using the one dimensional perturbed harmonic
+oscillator with Hamiltonian given in (7.13) at a range of timesteps h 2 Œ0:1; 2 and
+nonlinearity parameters " 2 Œ0:0001; 1 . We choose ˇ D D 1 for all experiments,
+and run the schemes using each parameter set for a fixed time window of length 108 .
+The results are shown in Fig. 7.3, and qualitatively agree with the results of (7.15).
+7.6 An Exact Gibbs Sampling Method                                                                          281
+
+
+                 1                                                     1
+                                              ABOBA                                                 BAOAB
+
+               10   -1
+                                                                     10-1                                   1
+
+
+
+
+                                                      Nonlinearity
+Nonlinearity
+
+
+
+
+               10-2                                                  10-2
+
+
+               10-3                                                  10-3                                   10-1
+
+               10-4                                                  10-4
+                   0.1   0.2      0.5     1       2                      0.1   0.2      0.5     1       2
+                               Timestep                                              Timestep
+                                                                                                            10-2
+                 1                                                     1
+                                              OBABO                                                 OABAO
+
+               10-1                                                  10-1
+Nonlinearity
+
+
+
+
+                                                      Nonlinearity
+               10-2                                                                                         10-3
+                                                                     10-2
+
+               10-3                                                  10-3
+
+               10-4                                                  10-4                                   10-4
+                   0.1   0.2      0.5     1       2                      0.1   0.2      0.5     1       2
+                               Timestep                                              Timestep
+
+Fig. 7.3 Each pixel in the above grids marks the result of a numerical experiment using one of the
+four second order (in stepsize) symmetric Langevin discretization schemes. A pixel’s color denotes
+the absolute error of hq2 ih from an experiment conducted at the given stepsize h (horizontal)
+and nonlinearity parameter " (vertical) defining the potential energy in (7.13), with white pixels
+indicating instability. Experiments were taken over a sufficiently long time interval such that the
+observed errors are the result of discretization error, rather than sampling error
+
+
+   The BAOAB scheme performs extremely well in this example, even in regimes
+of large " and stepsize where our formal analysis is no longer valid. Though
+Table 7.1 demonstrates that both the ABOBA and BAOAB schemes give exact
+results at " D 0, there remains qualitative difference between the two for positive ",
+owing to the order "2 leading term in the latter scheme. If we are willing to accept an
+error of around 102 in our computed average, then in this example the BAOAB
+scheme allows us to use a timestep considerably larger (even an order of magnitude
+larger at small ") than the OBABO or OABAO schemes, for any value of "
+tested.
+
+
+
+7.6 An Exact Gibbs Sampling Method
+
+The previous examples give some insight into the behavior of long-time averages
+for schemes applied to small models with simple oscillators, whereas in general for
+much larger systems with the full spectrum of molecular forces, it is much more
+difficult to offer concrete estimates on the efficacy of one method in comparison
+to another. Consider the splitting of Langevin dynamics into just two parts: the
+282                                   7 Numerical Methods for Stochastic Molecular Dynamics
+
+
+deterministic Hamiltonian system taken first, followed by the Ornstein-Uhlenbeck
+equation for p. The flows of each of these systems individually preserves the Gibbs
+                                                                                  
+distribution: denoting the Fokker-Planck operators associated to these flows by LH
+       
+and LO we have
+
+                                                   
+                             LH ˇ D 0;           LO ˇ D 0;
+
+and hence
+                                                    
+                          exp.tLH /ˇ D exp.tLO /ˇ D ˇ :
+
+We can consider the propagation of measure resulting from a numerical discretiza-
+tion defined by the composition of these two pieces. For a scheme HO, we have
+the distribution first propagated under Hamiltonian dynamics, and then the momenta
+are evolved as the solution to the Ornstein-Uhlenbeck process, which clearly will
+preserve the Gibbs measure
+                                      
+                                              
+                  exp.hLO / exp.hLH /ˇ D exp.hLO /ˇ D ˇ :
+
+The problem with this “method” is of course that it requires the exact flow map
+of the Hamiltonian system. However, this requirement can be relaxed. Given any
+divergence free vector field f , we have
+
+                                  r  .f / D f  r;
+
+thus
+                                          
+                                        Lf  D Lf :
+
+If Lf preserves a first integral I, then Lf preserves any distribution which is a
+function of I. It follows that any energy-preserving, divergence free vector field
+will always preserve the Gibbs distribution.
+   All symplectic methods preserve the volume, but for a system with no first
+integrals except the energy, it is known from a theorem of Ge and Marsden [400]
+that a symplectic method cannot preserve the system energy exactly (unless the
+symplectic method is itself a time-reparameterization of the exact solution). The
+options for volume preserving non-symplectic discretization methods that conserve
+energy exactly are limited (standard form schemes that rely on calculation of the
+vector field at a few points cannot achieve this [380]).
+   A class of methods that do provide the necessary features can be found in the
+work of Feng Kang [133], referred to as J-splitting by McLachlan and Quispel [261].
+Let J be the skew-symmetric canonical symplectic structure matrix. The idea is to
+consider a splitting of J into a finite number K of skew-symmetric matrices Ji ,
+i D 1; : : : ; K. This induces a splitting of the Hamiltonian vector field into K vector
+7.7 The Evolution of the Distribution Using a Numerical Method                                  283
+
+
+fields f i D Ji rH. Each of these vector fields preserves H and, because they are
+themselves Hamiltonian, their flows are also volume-preserving. Assuming each
+such vector field is exactly integrable, the system dynamics may be approximated
+by composing the flow maps for each vector field.
+    As an example of such a J-splitting, we may take K D Nc with each Ji to be
+defined by the components of the canonical symplectic structure matrix having to
+do with the ith position and momentum pair, thus the equations of motion for the ith
+vector field become
+
+                         pi           @U
+                qP i D      ; pP i D  .Nq1 ; : : : ; qN i1 ; qi ; qN iC1 ; : : : ; qN Nc /;
+                         mi           @qi
+
+where components with a bar over them are fixed during the calculation. This is,
+itself, a Hamiltonian system with a single degree of freedom qi and the potential
+UO i .qi / obtained by freezing all other components in the original potential function.
+Any such 1-dof Hamiltonian system is formally integrable (albeit in quadratures).
+Thus, if we are willing to solve a system using quadrature, we have a numerical
+method for the Hamiltonian system which preserves volume and energy. We solve
+each such dynamics from i D 1 to Nc , updating the values of each .qi ; pi / in
+sequence (the temporally contiguous nature of the updates rules it out as a strategy
+for parallel computation).
+      Although this method can be applied to molecular systems, its implementation
+is challenging and it is not recommended for general computation. Some systems
+may have a structure amenable to exploitation via this splitting strategy, or it could
+potentially serve as a starting point in some special purpose methods. For another
+use of J-splitting in the setting of Metropolis correction of deterministic methods,
+see [48].
+
+
+
+7.7 The Evolution of the Distribution Using a Numerical
+    Method
+
+In this section, we shall give an approach that allows the computation of the errors
+introduced by the discretization of Langevin dynamics for more general potential
+energy functions. The discretization schemes we shall consider will be those created
+by composition of the A, B and O splitting pieces described earlier in this chapter,
+but in principle we can apply this analysis to a wider class of SDE methods.
+We outline the basic approach for determining the leading order behavior of the
+discretization error introduced by our SDE integration scheme (see [221–223]),
+based on expansions due to Talay and Tubaro [357, 358].
+   In Chap. 3 we employed an asymptotic expansion of the conserved energy-like
+quantity of a numerical method in powers of the stepsize. By positing such an
+expansion we are able to calculate the term of any order directly, using a recursive
+approach. Given such an expansion of the Hamiltonian, we have a corresponding
+284                                 7 Numerical Methods for Stochastic Molecular Dynamics
+
+
+expansion of the vector field, and therefore a similar expansion of the Liouvillian
+operator.
+   We begin by defining the generator LO associated to the propagation of averages
+under the numerical method for an SDE. We think of this generator as a perturbation
+of the exact Langevin dynamics generator LLD , or
+
+                     LO D LLD C hL1 C h2 L2 C h3 L3 C O.h4 /:                     (7.16)
+
+However, the operators involved are not equivalent to the operators that would arise
+from any stochastic differential equation (see [403]), so we must give up the direct
+analogy between the formal series and continuous SDE models (which is available
+in the deterministic setting). Nonetheless, it is possible to analyze the resulting
+operator expansion in a formal way.
+   We shall similarly consider the invariant (or native) distribution .O We write this
+invariant distribution as a perturbation of the (target) canonical distribution
+
+                     O D ˇ 1 C hf1 C h2 f2 C h3 f3 C O.h4 / ;                   (7.17)
+
+with each correction function fk .q; p/ satisfying
+                               Z
+                                   fk .q; p/ˇ .q; p/d! D 0;
+                               D
+
+ensuring a useful equivalence in the partition function
+                           Z                     Z
+                               O p/d! D
+                               .q;                  ˇ .q; p/d!:
+                           D                     D
+
+Our computed average is therefore
+                                          Z
+                                    def
+                            hih D                   O p/d!:
+                                              .q; p/.q;
+                                          D
+
+The invariant distribution can, itself, be calculated by a formal expansion in powers
+of h, although in general this requires the solution of partial differential equations
+for the terms fk . In some limiting cases it is possible to write down the solutions
+explicitly and to obtain, therefore, an understanding of the error induced in an
+average computed using a numerical method.
+7.7 The Evolution of the Distribution Using a Numerical Method                    285
+
+
+7.7.1 Expansion of the Operator LO
+
+Consider a Langevin splitting method using the A, B and O splitting pieces, where
+we compose exact solves of each of the vector fields in a prescribed sequence to
+define our discretization scheme. Because we solve each piece exactly, we are able
+to write down the action of each individual solve on the initial distribution in terms
+of the vector field’s evolution operator (using the respective generators for each
+piece as in [99]), where
+               tLA 
+               e  .q; p/ D .q C tM1 p; p/;
+               tLB 
+               e  .q; p/ D .q; p  trU.q//;
+                            Z                     ejxj2 =2
+               tL                    t     1=2
+               e  .q; p/ D  q; e p C M x
+                  O
+                                                              dx;
+                                                   .2/Nc =2
+                                 P
+
+                           1=2
+where  D kB T 1  e2 t         . The overall generator for an associated Langevin
+splitting method LO can be computed by composing each individual operator
+associated to the terms in the splitting. For example, for the method labelled by
+the string ABAO, we have
+
+        exp.hLO ABAO / D exp..h=2/LA/ exp.hLB / exp..h=2/LA/ exp.hLO /;
+
+where importantly note the apparent reversal of the sequence of products, known
+as the vertauschungssatz (see the discussion in [164, Section III.5.1]), which is a
+consequence of the relation
+                                                    
+                               .Ut f1 .z// D etLf1  .z/;
+
+for some vector field f1 with associated flow map Ut f1 and generator Lf1 , where the
+choice of .z/ D Ut f2 .z/ D .etLf2 Id/.z/ demonstrates this reversal.
+   We will find it more convenient to work with the adjoint of the perturbed
+generator, denoted LO  , which we may compute as
+                                                                       
+        exp.hLO ABAO / D exp.hLO / exp..h=2/LA/ exp.hLB / exp..h=2/LA/:
+
+Under the propagation of the numerical scheme (or the discretized dynamics),
+the Fokker-Planck equation gives us that the evolution of a density of points  is
+given by
+
+                                     @
+                                        .z; t/ D LO ;
+                                     @t
+286                               7 Numerical Methods for Stochastic Molecular Dynamics
+
+
+with the important case of its invariant distribution satisfying the partial differential
+equation
+
+                                          LO O D 0:
+
+Our goal in the following section is to find LO  and solve the PDE for the
+distribution O by using our ansatz (7.17). The solution gives us the corrupted
+invariant distribution sampled by our numerical scheme, allowing us to correct
+our observed averages to achieve more accurate results. It also gives us a way of
+evaluating which schemes are best for sampling, by evaluating the error introduced
+by the discretization.
+   The terms of the perturbation expansion for LO  can be computed using the Baker-
+Campbell-Hausdorff (BCH) expansion already introduced in Chap. 3. Recall that for
+linear operators X and Y, we can write the composition of their exponentials as
+
+                            exp .hX/ exp .hY/ D exp .hZ/ ;
+
+where we have the expansion
+
+                     h        h2
+          Z D X C Y C ŒX; Y C    .ŒX; ŒX; Y C ŒY; ŒY; X / C O.h3 /:
+                     2        12
+                      def
+The notation ŒX; Y D XY  YX represents the commutator of the operators X
+and Y. By repeated application of the BCH formula, we can obtain such an
+expansion for any splitting-based method, however the terms grow in complexity
+at successive powers of h, requiring commutators of increasing length that make
+computation cumbersome. Additionally any careful mathematician should question
+the convergence of this sequence when computing L,   O as we deal only with formal
+series that offer no guidance on the boundedness of the resulting terms, which will
+involve high order derivatives in both q and p.
+   To offer some reassurance, let us define the evolution operator for our numerical
+method as
+                                      O
+                             Pt D etL D etL1 etL2 : : : etLk ;
+
+where the numerical method has k-many stages with each Li proportional to one of
+LA , LB and LO . We can make use of Taylor’s theorem to write the identity
+
+                 ˇ                       ˇ        Z1                     ˇ
+            dPt ˇˇ             hn dn Pt ˇˇ   hnC1            n d
+                                                                 nC1
+                                                                     Pt ˇˇ
+Ph D P0 C h          C : : : C             C         .1  /                d;
+             dt ˇtD0           nŠ dtn ˇtD0    nŠ                dtnC1 ˇtDh
+                                                            0
+7.7 The Evolution of the Distribution Using a Numerical Method                     287
+
+
+for some finite truncation index n 2 f1; 2; 3; : : :g. The remainder term at order hnC1
+will involve the integration of finitely many derivatives of its argument. Hence for
+observables of sufficient smoothness with compact support, this remainder term will
+remain bounded (see [223]).
+
+
+
+7.7.2 First Order Operator Expansion
+
+As we consider schemes involving compositions of three splitting pieces, the
+minimum number of stages to our methods (in order for it to be consistent) will
+be three. The perturbed Fokker-Planck operator for a splitting method with three
+stages will be computed as
+
+                         exp.hS/ D exp.hZ/ exp.hY/ exp.hX/;                     (7.18)
+                                               
+where X, Y and Z are one of LA , LB and LO . Let us work the first terms of this
+expansion out, retaining terms involving triple products only
+
+                                                                               !!
+                                    h         h2
+  exp.hY/ exp.hX/ D exp h .Y C X/ C   ŒY; X C    .ŒY; Y; X C ŒX; X; Y / C : : :   ;
+                                    2         12
+
+where the notation ŒA; B; C is notation for ŒA; ŒB; C . Applying this formula one
+more time in (7.18), we find
+
+                             h        h2
+            S D X C Y C Z C ŒY; X C      .ŒY; ŒY; X C ŒX; ŒX; Y /
+                             2        12
+                                      
+                   h            h
+                C     Z; Y C X C ŒY; X
+                   2            2
+                      h2
+                  C      .ŒZ; ŒZ; Y C X  ŒY C X; ŒZ; Y C X / C : : :
+                      12
+                           h                          h2
+              D X C Y C Z C .ŒZ; Y C ŒZ; X C ŒY; X / C ŒZ; Y; X
+                           2                          4
+                      h2
+                  C      .ŒY; Y; X C ŒX; X; Y C ŒZ; Z; Y C ŒZ; Z; X
+                      12
+                  CŒY C X; Y C X; Z / C : : :
+
+In general the terms in this expansion will lead to complicated expansions. In the
+case of deterministic systems, the operators are always first order due to equality
+of mixed partials (the 2nd order derivatives are cancelled). Due to the second
+                             
+derivatives present in the LO operator, derivatives of all orders will appear in the
+288                                  7 Numerical Methods for Stochastic Molecular Dynamics
+
+
+expansion of the SDE method. The series expansion is therefore not particularly
+informative on its own, but only in relation to its action on some particular
+distribution.
+   A simple first order example of a Langevin dynamics integrator is the method
+obtained by composing one of the Symplectic Euler variants with an Ornstein-
+Uhlenbeck step. To get a feel for how the expansion goes, let us work out its terms
+for such a splitting scheme in the case of a one degree of freedom model with unit
+mass: H D p2 =2 C U.q/. To be explicit, let us say our numerical method first solves
+exactly the OU process, then evaluates the impulse due to the force U 0 .q/ and
+lastly drifts in position space according to the momentum. This method is denoted in
+our notation as OBA, where the evolution of measure in one step can be computed
+by writing
+                                                                 
+                 exp.hLO OBA / D exp.hLA / exp.hLB / exp.hLO /:
+
+In this one dimensional example, we substitute
+
+                               @                      @
+                    Z D LA D p   ;    Y D LB D U 0 .q/ ;
+                               @q                      @p
+                                 
+                                         @      2 @2
+                      X D LO D     Id C p     C        ;
+                                          @p    2 @p2
+                          p
+into (7.18), where  D 2 kB T. This gives us an expansion for the Kolmogorov
+operator for our discretized map
+
+                           h                        
+                                                                
+  LOOBA D S D LA C LB C LO C   ŒLA ; LB C ŒLA ; LO C ŒLB ; LO C : : :
+                               2
+
+It is clear that even writing out the O.h2 / terms considerably increases the
+complexity of the right hand side.
+   The commutators are best considered in relation to their action on a function (or
+rather, their action on a density) .q; p/. For example, we may compute directly
+                                                         
+                        @              @             @     @
+          ŒLA ; LB  D p        U 0 .q/            0
+                                                U .q/     p
+                             @q          @p            @p     @q
+                    D p.U 0 .q/p /q C U 0 .q/.pq /p ;
+                    D pU 00 .q/p  pU 0 .q/pq C U 0 .q/q C U 0 .q/pqp :
+
+As this is the commutator of two 1st order differential operators, the mixed partial
+term vanishes, leaving
+                                
+                       ŒLA ; LB  D pU 00 .q/p C U 0 .q/q :
+7.7 The Evolution of the Distribution Using a Numerical Method                   289
+
+
+Similar computations give
+                                       
+                              ŒLA ; LO  D pq C  2 qp ;
+                                       
+                              ŒLB ; LO  D U 0 .q/p :
+
+To first order, the discretization map corresponding to scheme OBA alters the
+phase space density at each step as if it were solving the time dependent PDE
+
+                                                t D LO  ;
+
+where
+
+               h
+ LO  DLLD  C   pU 00 .q/p C U 0 .q/q C pq C  2 qp C U 0 .q/p C O.h2 /:
+                2
+The validity of this sort of expansion, even for small h, should be considered
+carefully. Defining
+                                                            
+                                LLD D LA C LB C LO
+
+as the Kolmogorov operator for Langevin dynamics, the assumption of validity
+                                                     
+becomes more credible as we find that the operator LLD has a compact resolvent and
+therefore a discrete spectrum, i.e. simple eigenvalues, as discussed in the previous
+chapter. It will have one zero eigenvalue corresponding to the invariant density ˇ
+and all the remaining eigenvalues lie in the negative half plane. Of course it is not
+just this operator whose properties are important, but also all the other operators
+                                                              
+arising in the expansion, and bounding these in relation to LLD is not a simple task
+(particularly for higher orders).
+
+
+
+7.7.3 Perturbation Technique
+
+Suppose we are able to derive a series expansion for LO  of the form
+                                              
+                         LO  D LLD C hL1 C h2 L2 C O.h3 /;
+
+                                            
+for some perturbation operators Li . We assume that the invariant density has a
+similar expansion in powers of the stepsize, of the form given in (7.17). Inserting
+this ansatz into the stationary Fokker-Planck equation
+
+                                                LO  O D 0;
+290                                      7 Numerical Methods for Stochastic Molecular Dynamics
+
+
+we obtain
+                                                             
+                       
+         LLD C hL1 C h2 L2 C O.h3 / ˇ Œ1 C hf1 C h2 f2 C O.h3 / D 0:
+
+Combining like powers, we have at zero’th order, the equation
+                                              
+                                             LLD ˇ D 0;
+
+which we know to hold since Langevin dynamics preserves the canonical ensemble.
+At first order we obtain
+                                                      
+                                   LLD .ˇ f1 / C L1 ˇ D 0:                                  (7.19)
+
+      
+If L1 is known, we can calculate its action on ˇ , giving an inhomogeneity for
+the above partial differential equation. It will be difficult to solve the perturbation
+                                                                          
+equation (7.19) in general, although its linearity and the fact that LLD (with our
+assumptions) has a compact resolvent (and therefore a discrete spectrum) together
+imply that if the perturbation can be bounded, then it should be possible to solve for
+the correction function. We expect that this solution should be stable with respect
+to perturbation (and exponentially attracting). This also implies global existence
+(for all positive time) of the semigroup defining the solution of the time-dependent
+problem. We do not provide such a rigorous result here but simply plunge ahead,
+in the best tradition of applied mathematics, to obtain a perturbative expansion;
+verification of our results must therefore be obtained by numerical experiment, a
+posteriori.
+   The leading order errors can be computed in simulation by exploiting the specific
+form of our ansatz for the invariant measure associated to the discretized dynamics.
+For some observable #.q; p/, we have that
+                   Z
+          h#ih D              O p/d!;
+                       #.q; p/.q;
+                   D
+                   Z
+              D        #.q; p/ˇ .q; p/.1 C hf1 .q; p/ C h2 f2 .q; p/ C : : :/d!;
+                   D
+                   Z                              Z
+              D        #.q; p/ˇ .q; p/d! C h         #.q; p/f1 .q; p/ˇ .q; p/d! C : : : ;
+                   D                              D
+                                         2
+              D h#i C hh#f1 i C h h#f2 i C : : : :
+
+Hence by obtaining the correction functions fi , we are able to apply a modification
+to our computed expectation in order to recover the true canonical average.
+7.8 First Order Schemes                                                              291
+
+
+7.8 First Order Schemes
+
+Let us consider a scheme of the form XYZ, where each letter in the string is
+distinct and corresponds to one of the A, B or O Langevin splitting pieces (giving six
+possible schemes). Given the simple structure of the scheme, we expect to recover a
+first order error in our invariant (long-time) averages. By composing the semigroup
+operators
+                                                               
+                  exp.hLXYZ / D exp.hLZ / exp.hLY / exp.hLX /;
+
+and computing the terms in the BCH expansion, we have
+                                          
+                          LOXYZ D LLD C hL1;XYZ C O.h2 /;
+
+where
+
+                           1                        
+                                                             
+           L1;XYZ D        ŒLX ; LY C ŒLX ; LZ C ŒLY ; LZ :                   (7.20)
+                            2
+The first order correction function for this scheme is then given by the particular
+solution to the PDE,
+                                            
+                           LLD f1;XYZ ˇ D L1;XYZ ˇ :                      (7.21)
+
+The general solution of (7.21) will consist of the sum of the homogeneous solution
+ ŒHS                                     ŒPS
+f1;XYZ .q; p/ and particular solution f1;XYZ .q; p/ in the usual way. However, since
+ 
+LLD # D 0 has as its only solution # / ˇ , the homogeneous solution of (7.21) is
+
+                                    ŒHS
+                                   f1;XYZ .q; p/ D c;
+
+                                                                               ŒPS
+for some constant c. Our assumption that hf1;XYZ i D 0 means that c D hf1;XYZ i,
+                                                    ŒPS
+and hence we only require a particular solution f1;XYZ .q; p/.
+   Thus for any first order scheme our line of attack will be to compute the
+                        
+perturbation operator L1 , plug it into the right hand side and solve the PDE to find
+the suitable correction function. It turns out that this is not so difficult at leading
+order, for simple first order schemes such as this. However at higher orders the
+complexity of the terms often limits our progress.
+292                                7 Numerical Methods for Stochastic Molecular Dynamics
+
+
+7.8.1 Computing the Correction Functions f1 .q; p/
+
+At this point we may plow ahead and compute the PDE for each corresponding
+scheme, but a more efficient route is offered by working with the structure of the
+inhomogeneity in (7.21). We may make use of the identity
+                                                    
+                                               
+                ŒLO ; LA C ŒLO ; LB ˇ D ŒLO ; LA C LB ˇ D 0;
+
+                                 
+as of course LH D LA C LB is the Liouvillian of our Hamiltonian system,
+which preserves any function of the energy. Thus, by the skew-symmetry of the
+commutator (ŒP; Q D ŒQ; P ) we can relate four of the six methods as
+
+                                                          1  
+   L1;ABO ˇ D L1;OAB ˇ D L1;OBA ˇ D L1;BAO ˇ D  ŒLA ; LB ˇ ;
+                                                              2
+                                                                        (7.22)
+by virtue of (7.20). Hence the leading order correction functions of the schemes are
+related through
+
+                     f1;ABO D f1;OAB D f1;OBA D f1;BAO :               (7.23)
+
+The remaining two permutations of the possible XYZ schemes have a similar
+relationship, with
+
+                                  1                 
+      L1;AOB ˇ D L1;BOA ˇ D  ŒLA  LB ; LO ˇ C L1;ABO ˇ :            (7.24)
+                                    2
+This reduces our workload as we can find the leading order behavior for all six
+methods by computing the solution to two PDEs. This is not necessarily trivial, but
+it turns out that the structure of the equations is simple enough that we can find exact
+solutions. We work now to compute the right-hand side of the governing PDE given
+in (7.21).
+    In order to solve (7.21) for the ABO scheme, we need to compute the right
+hand side of (7.22). First, note that if we define the function g.q; p/ as
+
+                               g.q; p/ D ˇpT M1 rU.q/;
+
+then through simple computation we have
+                                         
+                              LA ˇ D LB ˇ D g.q; p/ˇ :
+7.8 First Order Schemes                                                             293
+
+
+This is particularly useful as
+                                                
+                                                     
+         ŒLA ; LB ˇ D LA LB  LB LA ˇ D  LA C LB g.q; p/ˇ
+                                      
+                             
+                     D LO  LLD g.q; p/ˇ :
+
+Now notice that for a function      .q/ purely of position, we have
+                                                 
+                    LLD        .q/ˇ D  pT M1 r .q/ ˇ .q; p/;
+
+and hence we can compute
+                                                               
+          LO g.q; p/ˇ D ˇ p  rp g.q; p/ C ˇ 1 rp  Mrp g.q; p/ ;
+                               D  g.q; p/ˇ ;
+                                             
+                               D ˇLLD U.q/ˇ :
+
+This means that
+
+                      1             1                      
+        L1;ABO ˇ D  ŒLA ; LB ˇ D  LLD Œ ˇU.q/  g.q; p/ ˇ :
+                       2               2
+Hence, we can combine this equation with (7.21) to yield
+
+                                     1                       
+                  LLD f1;ABO ˇ D     LLD Œ ˇU.q/  g.q; p/ ˇ ;
+                                      2
+with the general solution
+
+                                   ˇ                        
+                    f1;ABO D        U.q/  pT M1 rU.q/  c ;
+                                   2
+
+where c D hU.q/i is a constant, chosen to ensure that the average of the correction
+function is zero. This solution gives the leading order correction for the three related
+schemes in (7.23).
+   For the final two schemes, we can compute the correction function through the
+use of (7.24). Our previous work has computed the second term on the right hand
+side already, so we are left with the initial term. However, its expression reduces
+quite easily, as
+                                                     
+                                               
+                       ŒLA  LB ; LO ˇ D LO LA  LB ˇ ;
+                                                       
+                                         D 2LO g.q; p/ˇ ;
+                                                          
+                                         D 2 ˇLLD U.q/ˇ :
+294                               7 Numerical Methods for Stochastic Molecular Dynamics
+
+
+And hence we have
+                                                   
+            LLD f1;AOB ˇ D LLD f1;ABO ˇ  ˇLLD U.q/ˇ ;
+
+giving the general solution
+
+                                  ˇ                        
+                   f1;AOB D       U.q/ C pT M1 rU.q/  c ;
+                                  2
+for the same choice of c.
+   Hence using the symmetry in the commutators we are able to solve for the leading
+order corrections for each of the schemes of the form XYZ. In summary, we find
+that
+
+                                      ˇ                          
+  f1;ABO .q; p/ D f1;OAB .q; p/ D     U.q/  pT M1 rU.q/  c ;            (7.25a)
+                                      2
+                                        ˇ                          
+  f1;OBA .q; p/ D f1;BAO .q; p/ D     U.q/  pT M1 rU.q/  c ;           (7.25b)
+                                        2
+                                        ˇ                          
+                    f1;AOB .q; p/ D     U.q/ C pT M1 rU.q/  c ;           (7.25c)
+                                        2
+                                      ˇ                          
+                    f1;BOA .q; p/ D     U.q/ C pT M 1 rU.q/  c ;           (7.25d)
+                                      2
+where the constant c is chosen to ensure each correction function has average 0,
+giving c D hU.q/i. If required, we may continue this procedure in order to find
+correction functions for higher orders, though the added complexity means that we
+cannot always solve to find an explicit solution.
+    The results of our analysis suggest that to leading order the error scales linearly
+with the reciprocal temperature ˇ, but more importantly a non-constant term appears
+which is of order . As our correction is of the form h#f1 i we can see that if # D
+#1 .p/ then this O. / term will not trouble us, as
+
+                            ˇ˝                                        ˛
+         h#1 .p/f1 .q; p/i D ˙ . U.q/  c/#1 .p/ ˙ pT M1 rU.q/#1 .p/
+                            2
+                            ˇ˝                    ˛
+                         D ˙ pT M1 rU.q/#1 .p/ ;
+                            2
+where the sign depends on the particular scheme used (which governs the form of
+f1 ). Thus in the case of a function of pure momentum the order term does not
+7.8 First Order Schemes                                                           295
+
+
+appear. However, if we instead set # D #2 .q/, then
+
+                             ˇ˝                                        ˛
+         h#2 .q/f1 .q; p/i D ˙  . U.q/  c/#2 .q/ ˙ pT M1 rU.q/#2 .q/
+                             2
+                              ˇ
+                          D˙     h.U.q/  hU.q/i/#2 .q/i ;
+                              2
+
+in which case our correction becomes O. /. This is potentially disastrous if we
+choose the friction to be large (consider          h1 ), as the error introduced
+through discretization will dominate the true average to be sampled. Examining
+the algorithms themselves this is unsurprising, as although we have integrated
+the Ornstein-Uhlenbeck process exactly, when considering the limit of infinite
+friction in the XYZ schemes we obtain an inconsistent discretization. Hence these
+first-order schemes will be unsuitable for the integration of overdamped Langevin
+dynamics.
+    This is not always the case for first order schemes, however. For example the
+scheme denoted AOAB is consistent with the dynamics, and may be used for
+integrating the overdamped ( D 1) Langevin equation.
+
+
+
+7.8.2 Numerical Experiment
+
+Let us consider testing the computed first order corrections on a one dimensional
+example. Let M D ˇ D 1 and define the biased double-well potential as
+
+                              U.q/ D .q2  1/2 C q=2:
+
+We shall consider computing the average of a specific observable #.q; p/, and
+estimating the error due to discretization using the correction functions given
+in (7.25), where we choose the observable
+
+                    #.q; p/ D p2  qU 0 .q/ C 2qp;       h#i D 0:
+
+The low dimensionality of the problem and the simplicity of the observable and
+potential energy function make resolving the perfect sampling bias to leading order
+an easy task, allowing us to give a good estimate (to order h2 ) of the discretization
+error. In Fig. 7.4 we plot the results of h#ih computed via numerical experiment,
+using each of the six first order schemes at either D 1 or D 2, and compare
+them to our first order prediction
+
+                                 h#ih  h#i C hhf1 #i:
+
+The numerical experiment at each timestep is averaged from 16 independent
+experiments, each running over a time interval of 108 . The results match our
+296                                                       7 Numerical Methods for Stochastic Molecular Dynamics
+
+
+                         100                                                       0.6
+                                  =1                                                        =1
+                                                                                   0.4
+                                                                                                                  ABO
+
+
+
+
+                                                                Observed average
+        Absolute error
+                                                                                                                  BAO
+                         10-1                      nes                             0.2
+                                        rder li                                                                   OBA
+                                 First-o                                             0                            OAB
+                         10-2                                                      -0.2                           AOB
+                                                                                   -0.4                           BOA
+                         10-3                                                      -0.6
+                                0.05           0.1       0.2                              0.05    0.1       0.2
+                                           Timestep                                              Timestep
+
+                         100                                                       0.6
+                                  =2                                                        =2
+                                                                                   0.4
+                                                                Observed average
+        Absolute error
+
+
+
+
+                         10-1                                                      0.2
+
+                                                           ne                        0
+                                                       r li
+                         10-2                     -orde                            -0.2
+                                               ond
+                                            Sec                                    -0.4
+                         10-3                                                      -0.6
+                                0.05        0.1          0.2                              0.05    0.1       0.2
+                                           Timestep                                              Timestep
+
+Fig. 7.4 We plot the absolute error in the computed value of h#ih (left) and the observed value of
+h#ih (right) as symbols, while our prediction computed using (7.25) is plotted as a solid line. For
+  D 1 we find first order behavior (as expected), but for D 2 two methods exhibit higher order
+behavior. This is a special case for this observable that can be understood through our analysis
+
+
+prediction extremely well, though at large stepsize there is evidence of higher order
+behavior O.h2 / having an effect on the computed average, evident by the divergence
+away from our prediction line.
+   The AOB and BOA schemes also demonstrate a surprising second order
+behavior for the experiments at D 2, that we would not necessarily expect. This
+is due to a felicitous choice of our observable, where the leading order correction
+can be shown to be zero. The fact that both of these schemes share this property is
+unsurprising, as f1;AOB D f1;BOA , although for a general observable we would
+not expect second order averages for these methods. We could similarly construct
+special cases for other observables that would give higher order behavior for other
+schemes.
+   The first order correction term for the BOA scheme is given by the formula
+                                               Z
+                                           ˇ          2                                  
+       h#f1;BOA i D                                 p  qU 0 .q/ C 2qp pU 0 .q/ C U.q/  c ˇ d!;
+                                           2
+                                               D
+
+                                           1         ˇ
+                                       D     C hUi    hqUU 0 i;
+                                           ˇ  2      2
+                                           .2  /
+                                       D          :
+                                             2ˇ
+7.9 Error Expansion for Symmetric Langevin Methods                                   297
+
+
+Hence for the critical value of           D 2, the leading order correction will be zero,
+giving
+
+                                       BOA
+                                   h#ih               D h#i C O.h2 /:
+
+This is exactly the behavior we see in Fig. 7.4.
+
+
+
+7.9 Error Expansion for Symmetric Langevin Methods
+
+Of particular interest for sampling the canonical distribution are symmetric
+Langevin methods. We believe these are likely to be the most useful class of
+methods for practitioners, as by symmetrizing the expansion the odd order terms
+in (7.16) vanish identically using the Jacobi identity in the BCH expansions. This
+implies that a symmetric scheme gives a second order error in computed averages.
+Many symmetric methods can be constructed that require only one evaluation of the
+force per iteration (effectively making them as inexpensive as a first order method).
+   In order to simplify the algebra, we will use M D I throughout this section,
+which will not alter the major results and amounts to a linear change of variables.
+We shall consider general symmetric schemes of the form XYZYX, and perform
+a similar analysis to the previous section. The terms appearing in the expansions
+will be significantly more complex than those encountered in first order methods.
+We make use of the following proposition for symmetric compositions:
+                                                
+Proposition 7.1 Let LX , LY and LZ be general operators to which BCH can be
+applied, then defining
+
+                                  O      h          h         h      h   
+                               ehL D e 2 LX e 2 LY ehLZ e 2 LY e 2 LX ;            (7.26)
+
+gives
+                                                
+                                  LO D L0 C h2 L2 C O.h4 /;
+
+where
+                                           
+               L0 DLX C LY C LZ ;
+                   1                                   
+                                                                  
+               L2 D      ŒLZ ; LZ ; LY C ŒLY C LZ ; LY C LZ ; LX
+                    12
+                        1                             
+                                                               
+                          ŒLY ; LY ; LZ C ŒLX ; LX ; LY C LZ :
+                       24
+298                              7 Numerical Methods for Stochastic Molecular Dynamics
+
+
+   For a scheme XYZYX, we assume that each of the X, Y and Z characters in
+the string are distinct, and correspond to one of the A, B or O pieces of our splitting
+                                 
+strategy. Thus we have L0 D LLD .
+   Evidently, the scheme’s associated Fokker-Planck operator LO  no longer has a
+leading order term that is linear in the stepsize, so it makes sense to revise our
+assumption on the form of the scheme’s corresponding invariant measure, and
+replace it with a series with solely even order terms. If we suppose that the odd
+order correction functions are zero, then we are left with
+
+                          O D ˇ .1 C h2 f2 C h4 f4 C : : :/;                  (7.27)
+
+where each hfi i D 0 as usual. Thus the stationarity equation LO O D 0 becomes
+                                                         
+                            
+                   LLD C h2 L2 C : : : ˇ C h2 ˇ f2 C : : : D 0:
+
+The equation is satisfied at zeroth order, and equating the second order terms we
+obtain
+                                           
+                                LLD ˇ f2 D L2 ˇ :                            (7.28)
+
+The procedure then follows just as in the case of the first order schemes. The
+                                
+form of the right-hand side L2 ˇ will be dependent on the choice of the update
+scheme, and can be computed using the BCH formula using Proposition 7.1. More
+complicated symmetric schemes involving more than five stages can be utilized,
+but these schemes may require more than one force evaluation per iteration, while
+increasing the complexity of the PDE to solve.
+   The condition on the existence of such a solution requires us to use the Fredholm
+                                                                       
+alternative, which requires us to verify that the inhomogeneous term L2 ˇ integrates
+to zero.
+
+
+
+7.9.1 Calculation of the Inhomogeneous Term
+
+The computation of the right hand side in (7.28) is required in order to solve the
+corresponding partial differential equation and obtain the leading order correction
+                                                                        
+function for our symmetric scheme XYZYX. From the form of the L2 operator in
+Proposition 7.1, we can see that our life is made considerably easier if we initially
+consider methods OYZYO, which substitutes
+
+                                                           
+                   LX D LO ;        LY C LZ D LA C LB D LH ;
+7.9 Error Expansion for Symmetric Langevin Methods                                299
+
+
+simplifying the computation to
+
+                         1 h   i          1   
+        L2;OYZYO ˇ D      LZ ; LZ ; LY ˇ  ŒLY ; LY ; LZ ˇ :              (7.29)
+                          12                  24
+
+The inhomogeneity for the schemes OABAO and OBABO is hence a combina-
+tion of the two commutator terms
+           h              i                                  
+                      
+             LA ; LA ; LB ˇ D 2ˇpT r 2 U rU  r 3 U W p ˝ p ˝ p ˇ ;
+           h              i                
+                      
+             LB ; LB ; LA ˇ D  2ˇpT r 2 U rU ˇ ;
+
+giving overall equations to solve
+                          
+       LLD ˇ f2;OABAO D L2;OABAO ˇ
+                                 ˇ  T 2                       
+                             D      6p r U rU  r 3 U W p ˝ p ˝ p ˇ ;
+                                 24
+                          
+       LLD ˇ f2;OBABO D L2;OBABO ˇ
+                                 ˇ  3                           
+                             D      2r U W p ˝ p ˝ p  6pT r 2 U rU ˇ :
+                                 24
+We can see immediately that the Fredholm alternative holds in both cases, as both
+equations have right-hand sides that are of odd order in p, and hence will average
+to 0.
+   If we instead consider schemes which use a central Ornstein-Uhlenbeck update,
+then the inhomogeneous term becomes significantly more complex, as we no
+                                                       
+longer have a significant number of cancellations in L2 ˇ . Instead, we shall avoid
+computing the right-hand side for these schemes altogether, in favor of utilizing the
+following lemma [223]:
+Lemma 7.1 Consider two numerical schemes with associated operators governing
+the evolution of measure ST and T S, with unique associated invariant distributions
+OST and OTS respectively, such that
+
+                          ST OST D OST ;       T S OTS D OTS :
+
+Under suitable ergodicity assumptions (such that in the long-time limit, all distribu-
+tions converge to the invariant distribution), we have
+
+                          OST D S OTS ;    and OTS D T OST :
+300                                7 Numerical Methods for Stochastic Molecular Dynamics
+
+
+Proof The proof is very simple, and follows almost directly from our ergodicity
+assumption. If we assume that
+
+                                  lim .ST /n  D OST ;
+                                  n!1
+
+for any initial distribution , then we have
+
+                OST D lim .ST /n OST D lim S .T S/n1 T OST D S OTS :
+                      n!1                     n!1
+
+
+A similar statement holds for OST .                                                 
+If we return to our scheme OYZYO, which has a simple inhomogeneity, then
+we can relate its invariant distribution to invariant distributions of schemes with a
+central OU update by writing its evolution operator as
+
+           O                                                      
+        ehLOYZYO D „
+                     e.h=2/LO e.h=2/L
+                                ƒ‚ e
+                                      Y .h=2/LZ e.h=2/LZ e.h=2/LY e.h=2/LO D ST :
+                                              …„            ƒ‚           …
+                                  S                         T
+
+By applying Lemma 7.1, we can equate the invariant distributions directly as
+                                                                  
+         OZYOYZ D exp..h=2/LZ / exp..h=2/LY / exp..h=2/LO/OOYZYO :
+
+Rewriting our ansatz (7.27) in place of the distributions, and expanding the
+exponential series gives
+                            
+ˇ 1 C h2 f2;ZYOYZ C : : :
+      
+              h     h2       h2                               
+    D IdC LLD C L1;OYZ C LLD C : : : ˇ 1 C h2 f2;OYZYO C : : : ;
+              2       4        2
+
+and hence equating powers we have
+
+                                                     1 
+                      f2;ZYOYZ ˇ D f2;OYZYO ˇ C L1;OYZ ˇ :
+                                                     4
+By virtue of (7.20), we have
+
+                            1                             1    
+            L1;OAB ˇ D      LH gˇ           L1;OBA ˇ D  LH gˇ ;
+                             2                                 2
+                              
+where recall g.q; p/ˇ D LA ˇ D ˇpT M1 rU.q/ˇ . Computing
+
+                                                    
+                      LH gˇ D ˇ jrU.q/j2  pT r 2 U.q/p ˇ ;
+7.9 Error Expansion for Symmetric Langevin Methods                                    301
+
+
+the correction for the schemes with a central O update can be expressed as
+
+                                       ˇ                     
+             f2;ABOBA D f2;OBABO    jrU.q/j2  pT r 2 Up ;                   (7.30a)
+                                       8
+                                       ˇ                     
+             f2;BAOAB D f2;OABAO C    jrU.q/j2  pT r 2 Up :                  (7.30b)
+                                       8
+Thus we need only compute the solutions to the simpler PDE (7.29), in order to
+relate the solutions of the conjugate schemes with centralized OU update. However,
+although this simplifies our task greatly, finding the general solution to (7.29) is still
+very challenging, and obtaining a closed form expression for the correction function
+is nontrivial.
+
+
+
+7.9.2 Expansion in Powers of  1
+
+Although we do not give the general analytical solution to the partial differential
+equation of (7.28) for each of the four symmetric Langevin schemes we are
+considering, we can easily find a solution in an important limiting case: the high
+friction regime. We consider expanding f2 into a series involving the reciprocal
+friction " D 1= , and assume that for large friction our ansatz remains sensible.
+We will denote
+
+              f2 .q; p/ D f2;0 .q; p/ C "f2;1 .q; p/ C "2 f2;2 .q; p/ C : : :      (7.31)
+
+with each hf2;i i D 0. Dividing by the friction in (7.28) we obtain
+                                        
+                                                 
+                                LNO C "LH f2 ˇ D "L2 ˇ ;
+
+         
+where LNO is independent of the friction
+
+                                                      1
+                            LN O # D "LO # D rp  .p#/ C p #:
+                                                        ˇ
+
+From our earlier computation in (7.29), we can write
+                                    
+                                  L2;OABAO ˇ D w.q; p/ˇ ;
+
+for w.q; p/ independent of the friction
+
+                                 ˇ  T 2                       
+                 w.q; p/ D         6p r U rU  r 3 U W p ˝ p ˝ p :
+                                 24
+302                                 7 Numerical Methods for Stochastic Molecular Dynamics
+
+
+Hence we have
+          
+                                                               
+  LNO C "LH ˇ .f2;0;OABAO .q; p/ C "f2;1;OABAO .q; p/C : : :/ D  "w.q; p/ˇ ;
+
+and equating powers of the reciprocal friction " gives us a sequence of equations to
+solve
+                                                       
+Order 1:                             LNO ˇ f2;0;OABAO D 0;
+                                                    
+Order ":        LH ˇ f2;0;OABAO C LNO ˇ f2;1;OABAO D w.q; p/ˇ ;
+                                                    
+Order "2 :      LH ˇ f2;1;OABAO C LN O ˇ f2;2;OABAO D 0;
+                                                    
+Order "3 :      LH ˇ f2;2;OABAO C LNO ˇ f2;3;OABAO D 0;
+                                          ::
+                                           :
+
+The first equation at order one tells us that f2;0;OABAO .q; p/ must be a function of
+                                  
+position only, as the kernel of LNO is the set of functions that are constant with respect
+to p. Hence we shall denote
+
+                                 f2;0;OABAO .q; p/ D .q/;
+
+where we our goal is now to explicitly find .q/. Unfortunately, .q/ is not explicitly
+determined at this point, we only know that it is a function of position only such that
+hi D 0. This function will be determined as we solve the higher order equations.
+   In order to determine .q/, we will have to solve the next PDE at order ",
+                                               
+           LN O ˇ f2;1;OABAO C LH ˇ f2;0;OABAO D w.q; p/ˇ ;                (7.32)
+
+where we will make use of the formulas
+
+                                                       6ˇ T
+      LNO ˇ r 3 U W p ˝ p ˝ p D 3ˇ r 3 U W p ˝ p ˝ p C    p rq q U;
+                                                           ˇ
+                              
+              LN O ˇ pT rq q U D ˇ pT rq q U;
+                                          
+         LN O ˇ pT r 2 U rU D ˇ pT r 2 U rU;
+
+to write
+                                                                        
+                 ˇ                      1                   2
+  w.q; p/ˇ D      LN        6pT r 2 U rU  r 3 U W p ˝ p ˝ p  pT rq q U ˇ :
+                 24 O                      3                   ˇ
+                                                                                   (7.33)
+
+Additionally, for .q/ we have the identity
+                                                
+             LH ˇ  D pT rˇ D LNO pT r C .q/ ˇ ;                            (7.34)
+7.9 Error Expansion for Symmetric Langevin Methods                               303
+
+
+for some function of position .q/. Plugging (7.33) and (7.34) into the PDE (7.32)
+gives
+                                            
+     LNO ˇ f2;1;OABAO D w.q; p/ˇ  LH ˇ  ;
+                                  
+                             ˇ                      1
+                          D  LN O 6pT r 2 U rU  r 3 U W p ˝ p ˝ p
+                             24                        3
+                                        
+                             2                               
+                             pT rq q U ˇ  LN O pT r C  ˇ ;
+                             ˇ
+
+and hence
+                         
+                      ˇ               1                   2
+   f2;1;OABAO D        6pT r 2 U rU  r 3 U W p ˝ p ˝ p  pT rq q U
+                      24                3                   ˇ
+                    pT r  :
+
+At this point, we might consider abandoning the prospect of determining the leading
+order correction altogether, as we now have two arbitrary functions of position .q/
+and .q/ creeping into our solution. However, the form of .q/ is determined by
+considering the next order PDE at "2 :
+                                                        
+                    LNO ˇ f2;2;OABAO D LH ˇ f2;1;OABAO :               (7.35)
+
+We are spared solving this equation by virtue of a solvability condition. Integrating
+the left hand side of (7.35) with respect to the momenta, we find
+                          Z
+                                                
+                              LN O ˇ f2;2;OABAO d!p D 0;
+                          P
+
+by simple computation. Hence we also require the average of the right-hand side
+of (7.35) to be zero with respect to the momentum, or
+            Z
+                                        
+                LH ˇ f2;1;OABAO d!p D L
+                                         N H f2;1;OABAO D 0;                (7.36)
+            P
+
+where N is the averaging operator
+                                           Z
+                               N / .q/ D
+                              .f              f .q; p/ˇ d!p :
+                                           P
+304                                 7 Numerical Methods for Stochastic Molecular Dynamics
+
+
+Hence by rewriting the correction function as
+                          
+                       ˇ              1   3 2          
+      f2;1;OABAO D       3LA jrUj2     LA U  LA q U C LA   ;
+                       24              3        ˇ
+
+we have
+                                
+                            ˇ            1     2
+        N H f2;1;OABAO D
+        L                       3MjrUj2  N U  Mq U C M;
+                             24           3     ˇ
+
+where we abbreviate
+                                               1
+                               
+       N H LA .q/DN .LA /2 C LB LA
+M .q/DL                                 .q/ D q .q/  rU  rq .q/;
+                                                 ˇ
+                                                      3       
+                                      
+        N H .LA /3 .q/ D N .LA /4 C LB .LA /3
+N .q/ D L                                         .q/ D M q .q/ :
+                                                        ˇ
+
+Thus we have
+                                              
+                                    ˇ                1
+                N H ˇ f2;1;OABAO D M
+                L                             jrUj2  q U C M;
+                                        8             ˇ
+
+and hence by (7.36) we finally obtain
+
+                                        1              
+                             .q/ D        q U  ˇjrUj2 ;
+                                        8
+
+where it is easily verified that hi D 0. This gives us our leading order solution
+
+                                            1             
+                         f2;0;OABAO D       q U  ˇjrUj2 :
+                                            8
+
+Applying the same procedure for the OBABO scheme yields
+
+                                        1                  
+                       f2;0;OBABO D     ˇjrUj2  2q U C c ;
+                                        8
+
+where c D hUi is a constant chosen to ensure zero average. We can relate these
+schemes to their conjugate schemes with centralized OU update via Lemma 7.1 and
+Eq. (7.30), to give
+
+                                  1 T 2                   
+                   f2;0;ABOBA D    ˇp r U.q/p  2q U C c ;
+                                  8
+                                  1                   
+                   f2;0;BAOAB D    U  ˇpT r 2 U.q/p :
+                                  8
+7.9 Error Expansion for Symmetric Langevin Methods                                   305
+
+
+Owing to our ansatz, we would expect that the computed average of some
+observable has behavior like
+
+                      h#ih D h#i C h2 h#f2;0 i C O."h2 C h4 /:
+
+At sufficiently small values of " (and hence, large values of the friction coefficient
+ ) we would expect that the O.h2 / remainder will not be visible to us in our
+experiments, and we will be able to correct our average to O.h4 /. The symmetric
+discretization schemes we have considered here will all be consistent in the
+overdamped ( ! 1) limit, and we would expect the correction function for the
+corresponding limiting schemes to be given by f2;0 .
+
+
+
+7.9.3 Superconvergence of the BAOAB Scheme
+
+In the regime of sufficiently large and small h, our doubly-asymptotic ansatz for
+the leading order correction to a function #.q; p/ is
+                                                           2
+                                                           h
+                     h#i D h#ih  h2 h#f2;0 i C O               C h4 ;             (7.37)
+
+where f2;0 is method-dependent. The BAOAB scheme has leading order correction
+
+                                            1                  
+                   f2;0;BAOAB .q; p/ D      U  ˇpT r 2 U.q/p ;
+                                            8
+which has the interesting property that its marginal average with respect to
+momentum is zero:
+                            Z
+             N 2;0;BAOAB D f2;0;BAOAB .q; p/ˇ .q; p/d!p D 0:
+             f
+                                P
+
+This is a very favorable quality for configurational sampling, where we consider
+averages of functions solely of position, as we can split up the integral such that
+                                        Z
+              h#.q/f2;0;BAOAB i D         #.q/f2;0;BAOAB ˇ d!;
+                                        D
+                                        Z          Z
+                                    D       #.q/       f2;0;BAOAB ˇ d!p d!q ;
+                                        Q          P
+
+                                    D 0:
+306                               7 Numerical Methods for Stochastic Molecular Dynamics
+
+
+Thus we expect that the BAOAB scheme recovers O.h4 / configurational averages
+in the limit of infinite friction. This scheme requires no extra force evaluations, and
+this particular feature appears to simply be a serendipitous result of the form of the
+correction function.
+    This is a property common to no other Langevin splitting scheme that we are
+aware of. Though curiously its conjugate method, the OABAO scheme, has the
+property
+                        Z
+                            f2;0;OABAO .q; p/ˇ .q; p/d!q D 0;
+                        Q
+
+implying that we obtain high-order averages for functions purely of the momenta
+in the limit of infinite friction. However, as the momenta are always Gaussian
+distributed in canonical sampling, we are far more interested in functions of position
+to high accuracy (and sampling exp.ˇU.q// rather than the Gaussian-distributed
+momenta).
+   It is important to note that this superconvergence property is only present in
+the limit of large time, i.e. this is an attribute of the invariant distribution of the
+discretization schemes .O As such, there are no bonuses to the weak or strong order
+of the superconvergent schemes, though equally there is no added cost to using the
+methods.
+   All of the symmetric splitting schemes discussed are very easy to implement
+relative to other popular Langevin integrators, as many codes already implement
+the standard velocity Verlet BAB style integration. An exact Ornstein-Uhlenbeck
+solve can be added where it is required in the scheme in order to effectively integrate
+Langevin dynamics: then setting D 0 reduces the integrator to a standard Verlet
+scheme, integrating deterministic Newtonian dynamics.
+
+
+
+7.10 The Limit Method
+
+We now consider schemes in the limit ! 1, where the exact solution of the
+vector OU process
+             p      reduces to redrawing momenta from the canonical distribution,
+so pnC1 D kB TM1=2 R, where R is a vector of i.i.d. normal random numbers.
+Alternatively, we could consider the limit of the particle mass going to 0, although
+this requires a reformulation of Langevin dynamics (7.4) so that the friction is
+proportional to the velocity instead of the momentum [233]. Whichever limit
+is taken, we would expect the ultimate result to be the same. (Here we have
+reintroduced the masses in order to present the method, since they may be useful
+scaling parameters in simulation.)
+   The first order schemes of the form XYZ, as well as schemes such as
+XOYOX are not consistent in this overdamped limit: the errors in computed
+7.10 The Limit Method                                                                307
+
+
+observable averages diverge and we do not recover correct sampling in the limit
+of zero stepsize.
+   The symmetric schemes considered in the previous section are consistent
+however, each with their own limiting schemes corresponding to taking the limit
+of infinite friction in their update equations. As the momenta are continually
+redrawn from a normal distribution, we focus on the evolution of the configurations
+themselves. For the method denoted OBABO, we have the limiting scheme
+                                    p
+                         pnC1=2 D    kB TM1=2 Rn ;
+                         pO nC1=2 D pnC1=2  .h=2/rU.qn /;
+                           qnC1 D qn C hM1 pO nC1=2 ;
+                           pO nC1 D pO nC1=2  .h=2/rU.qnC1 /;
+                                    p
+                           pnC1 D kB TM1=2 RnC1=2 ;
+
+where Rn and RnC1=2 are independent normal random vectors with mean zero and
+unit variance. It is clear that if our only desire is to make use of the position data q,
+then the final two steps are redundant in this algorithm, as we update the momentum
+vector only to redraw it at the beginning of the next iteration. Any information about
+the initial momentum vector pn is unused in the scheme, making it simple to rewrite
+solely in terms of the position vector, giving us
+
+                            h2 1          p
+             qnC1 D qn       M rU.qn / C h kB TM 1=2 Rn :                       (7.38)
+                            2
+
+Denoting  D h2 =2, the update scheme (7.38) becomes the Euler-Maruyama
+scheme
+                                      p
+           qnC1 D qn  M 1 rU.qn / C 2kB TM1=2 Rn ;           (7.39)
+
+which is known to give an error in long-time averages O./ D O.h2 /, just as our
+analysis suggests.
+   If we instead consider the BAOAB scheme we find that unlike the OBABO
+scheme we no longer have redundant steps:
+
+                        pnC1=2 D pn  .h=2/rU.qn /;
+                        qnC1=2 D qn C .h=2/M1 pnC1=2 ;
+                                  p
+                        pO nC1=2 D kB TM 1=2 Rn ;
+                          qnC1 D qnC1=2 C .h=2/M1 pO nC1=2 ;
+                          pnC1 D pO nC1=2  .h=2/rU.qnC1 /;
+308                               7 Numerical Methods for Stochastic Molecular Dynamics
+
+
+where Rn is an independent normal random vector with mean zero and unit variance.
+Expressing this as an update solely for the configurations, we obtain
+
+                          h2 1         hp
+           qnC1 D qn       M rU.qn / C   kB TM1=2 .Rn C Rn1 / ;
+                          2             2
+
+and substituting  D h2 =2 gives the BAOAB Limit Method (Leimkuhler-Matthews
+method) [221]
+                              p            
+                        1             1=2 Rn C Rn1
+      qnC1 D qn  M rU.qn / C 2kB TM                                 :         (7.40)
+                                                2
+
+As we are in the overdamped regime, we would expect that this scheme should
+have an O.h4 / D O. 2 / error in configurational averages, while inheriting the
+other properties of the BAOAB scheme for the harmonic and perturbed harmonic
+models considered in Sects. 7.4 and 7.5. Moreover, since we completely remove the
+second order term in the Langevin dynamics configurational density expansion, we
+expect to observe this behavior across all values of h and . This is quite a surprising
+result, given the qualitative similarity between Eqs. (7.39) and (7.40).
+   The benefit of (7.40) over the Euler-Maruyama scheme is that we can get second
+order accuracy in averages with only a single evaluation of the force at each
+timestep. However, our analysis presented here is only for the infinite time case.
+For averages computed in finite time, work in [224] has shown that (7.40) does
+indeed give a first order error, albeit one that vanishes exponentially fast in time as
+the simulation progresses. Hence for suitably long simulations, the observed error
+will be O.h2 /.
+   We can think of the noise process in (7.40) as corresponding to a colored noise
+which has characteristics that directly depend on the stepsize, although the noise
+decorrelates in just a couple of timesteps. This is therefore no longer a Markov
+process, however it can be reformulated as such if one considers the appropriate
+extended space (or keeping the momenta pn ).
+
+
+
+7.11 Applying the Schemes to a Biomolecule
+
+Numerical analysis of a scheme should always be supported (and informed by)
+thorough numerical testing. Often salient features of a discretization method can be
+missed because of a shallow scope of experimentation. Our goal will be to evaluate
+the efficacy of the numerical schemes for Langevin dynamics presented thus far. We
+shall look at the invariant (long-time) averages resulting from computations using
+the four symmetric Langevin integrators that we derived using our splitting, for
+which results for the harmonic oscillator are detailed in (7.15), and for which a more
+general error analysis was considered in Sect. 7.9.2. Additionally we will compare
+their results to the performance of the standard SPV and BBK schemes considered
+in Sect. 7.3.2.
+7.11 Applying the Schemes to a Biomolecule                                                     309
+
+
+                                H
+
+
+         H      O       H       C       H      H       H
+
+
+ H       C       C      N       C       C      N       C       H
+
+
+         H              H       H       O              H
+
+
+Fig. 7.5 The structure of the alanine dipeptide protein is shown (left) with a visualization of the
+molecule in simulation (right)
+
+
+   All of the methods we consider require one force evaluation per iteration, and we
+consider them as having the same computational cost. The performance of a scheme
+will be judged on the error we observe in configurational averages, obtained through
+the computation of Langevin dynamics trajectories. In molecular dynamics, we are
+very often interested in comparing accuracy of methods for the largest stepsizes for
+which averages can be stably computed.
+   Our experiments use a classic test case for molecular dynamics: the alanine
+dipeptide molecule (Fig. 7.5). This is a relatively small molecule, comprising 22
+atoms with bonds modelled by a harmonic potential as well as angle bond and
+dihedral bending potentials to maintain its structure. Potential energy functions
+modelling the van der Waals and electronic forces are also present, making the
+model complicated enough to be interesting but simple enough to allow extensive
+simulation in a short time. The structural properties of the molecule give it two
+distinct orientations, described by its internal dihedral angles. More complicated
+molecules have a much greater number of native configurations to be sampled, so
+considering a molecule with only two major conformational states allows us to
+check that our algorithms promote barrier crossings at similar rates. As our goal
+will be to compare the discretization error introduced by a numerical scheme, we
+can run a large number of repeat simulations to drive down the sampling error.
+   We implement each of the methods in the NAMD-lite package [170, 302], and
+observe the effect of discretization error (if any) on computed averages. We initially
+consider the alanine dipeptide molecule in a vacuum, without boundary conditions,
+at T D 300 K for a fixed time interval of 2.5 ns. The CHARMM22 forcefield [246]
+(giving parameters for the governing potential energy functions) is used to compute
+force interactions.
+
+
+
+7.11.1 Choosing the Friction Parameter
+
+One of the most important features of a numerical method for ergodic dynamics
+(such as Langevin dynamics) is its preservation of the theoretical global phase space
+310                              7 Numerical Methods for Stochastic Molecular Dynamics
+
+                                                           
+exploration rate. The spectral properties of the operator LLD guarantee that we will
+explore the entire phase space (ergodicity), while the relatively small perturbations
+to the operator induced by numerical discretization are hoped not to significantly
+alter the rate of search. Ultimately, pushing the timestep up is the only way to
+breach timescale gaps when computing trajectories, although this comes at the cost
+of corruption of the long-time averages.
+   The self-diffusion coefficient gives a metric quantifying the diffusion rate. It is
+often used as a way to compare the rate of phase space exploration between methods,
+and is typically calculated using the integral of the velocity auto-correlation
+function. However, in theory one can construct arbitrary methods to artificially scale
+the velocity auto-correlation function, hence giving inaccurate diffusion constants:
+the momentum sampled may not be the momentum we use to propagate the position
+with.
+   Indeed, calculating the temperature of the system from an average of kinetic
+energy by
+                                        ˝        ˛
+                               Nd kB T D pT M1 p ;                            (7.41)
+
+gives a similar problem. Using Proposition 6.1 we may formulate many alternative
+functions whose averages are proportional to the system temperature [193, 211,
+319]. Such observables are normally based on the periodic forces of the system
+in order to work in periodic boundary conditions; in the following experiments we
+shall use the configurational temperature
+
+                               Nd kB T D hq  rU.q/i:                          (7.42)
+
+Were one able to solve the dynamics exactly, the kinetic and configurational
+temperatures would of course be equal. However, using a numerical method in the
+large-timestep regime we instead sample expectations with respect to the perturbed
+         O that may introduce discrepancies between configurational and kinetic
+density ,
+temperatures. Often configuration-based temperature calculation is more useful and
+relevant for assessing the quality of configurational sampling methods.
+   In a similar way, the speed of exploration of the space should not be determined
+solely from functions of momentum. Far more reliable is to compute configurational
+quantities such as barrier crossing rates, passage times to reach some target region
+of phase space or the diffusion constant through an Einstein relation (which uses the
+position data).
+   The friction parameter is free in Langevin dynamics when it is used purely as
+a sampling method; we know that for any > 0 we will obtain states from an
+approximate canonical distribution, though it is unclear what value of we should
+choose in our simulation. From our analysis in Sect. 7.9.3, we have seen that the
+BAOAB scheme has a superconvergence property in the limit of large friction,
+giving us higher accuracy O.h4 / configurational averages. However, it is unclear
+what the scheme’s behavior is in the middle-to-low friction limit, as we did not give
+7.11 Applying the Schemes to a Biomolecule                                                                                        311
+
+
+                              BAOAB            ABOBA            OBABO                 OABAO             BBK              SPV
+                  102
+Friction (1/ps)
+
+
+
+
+                  100
+
+
+                  10-2
+                         Observed number of recrossings                 0                            600                        1200
+
+                         Auto-diffusion coefficient (m2/s)                     10-9                  10-8                10-7
+                  102
+Friction (1/ps)
+
+
+
+
+                  100
+
+
+                  10-2
+                         1     1.5 2.25 3 1     1.5 2.25 3 1     1.5 2.25 3 1         1.5 2.25 3 1     1.5 2.25 3 1     1.5 2.25 3
+                             Timestep (fs)    Timestep (fs)    Timestep (fs)     Timestep (fs)       Timestep (fs)    Timestep (fs)
+
+Fig. 7.6 Each pixel of the above grids gives the result of one experiment with the given friction
+and timestep parameters. We color the pixels according to the results from simulation of alanine
+dipeptide at 300 K in a vacuum for 2.5 ns, estimating the rate of traversal through the space by
+counting the number of changes in orientation (top set) as well as calculating the resulting diffusion
+coefficient (bottom set) for each experiment. It is clear that all of the schemes have similar behavior,
+with the rate of exploration substantially decreasing as the friction increases above 2/ps. Figure
+reprinted with permission from [222]. Copyright 2013, AIP Publishing LLC
+
+
+explicit solutions for the correction functions that govern the leading order error
+behavior.
+   In order to examine the behavior of all of the schemes across a wide parameter
+set, we shall divide the . ; h/ parameter space into a 50  50 grid of points, using
+a logarithmic scale. We consider 2 Œ102 ; 102 inverse picoseconds (1=ps) and
+h 2 Œ1; 3:2 femtoseconds (fs). For each gridpoint in parameterspace we run an
+experiment for the corresponding parameter set, which gives us a fair idea of the
+behavior of the methods as we vary these experimental parameters.
+   In order to examine the consequences of increasing the friction in our simulation,
+we estimate the rate of exploration through the phase space at each parameter
+set, plotted in Fig. 7.6. We color pixels of the grids by their corresponding
+exploration rate, quantifying this in two ways: we compute the diffusion coefficient
+by integrating the velocity autocorrelation function, as well as counting the number
+of times the alanine dipeptide molecule flips its orientation in experiment. White
+pixels in the grid indicate a method’s instability, showing that in general there is a
+small stability threshold increase for the large-friction case.
+   From the results, it is clear that the large friction regime is not a practical choice
+for sampling large systems, as the rate of barrier crossings significantly diminishes.
+This is unfortunate for the BAOAB scheme, as we will likely not be able to
+take advantage of the superconvergence property in simulation, unless we wish to
+decrease our rate of exploration through the space.
+312                              7 Numerical Methods for Stochastic Molecular Dynamics
+
+
+7.11.2 Results for Configurational Sampling
+
+We compute the relative error in several average quantities, for each experiment
+shown in Fig. 7.6. These computed errors are relative to a baseline solution,
+computed using the Stochastic Position Verlet scheme, at D 1/ps and h D 0:5 fs.
+The timestep for the baseline scheme is small enough that discretization effects will
+be negligible.
+    In Fig. 7.7 we plot grids giving the errors for the average total bond energy, and
+total potential energy of the molecule in each simulation. It is clear that, although
+sampling error is present, the dominant form of error for the BBK, OBABO and
+OABAO schemes is discretization error. If we use these schemes at large stepsizes,
+then on average the molecule accesses significantly higher energies than it should
+do at the given temperature. However, these schemes give excellent results for the
+average kinetic temperature (7.41), underlining the fact that one cannot infer the
+quality of sampling of position data using momentum data.
+    One salient feature of the results of Fig. 7.7, is that for the BAOAB scheme
+there is consistently less than a 1 % error in the computed configurational temper-
+ature (for moderate friction) across all step sizes, even the largest stable timesteps
+tested. The relative errors obtained were so small that no discernable trend (with
+step size) can be shown (due to the sampling error), whereas the other schemes
+tested show an error consistent with second-order discretization.
+    The similarity in results between the ABOBA and SPV schemes is unsurpris-
+ing, as the SPV scheme effectively integrates a BCO splitting piece as its central
+step, whereas the ABOBA scheme performs a leapfrog integration of the B and
+O pieces. The difference between the two methods will depend on the choice of the
+friction, as for small we would expect similar behavior, but in the high friction
+regime SPV is no longer consistent. We do not increase the friction sufficiently
+in order to observe this difference in our experiment, and hence the two schemes
+exhibit very similar behavior.
+
+
+7.11.2.1 Solvated Alanine Dipeptide
+
+In order to provide a more realistic comparison to practical molecular dynamics
+simulation, we immerse the alanine dipeptide molecule in a sphere of flexible TIP3P
+water (10 Å radius, total system contains 424 atoms, see Fig. 7.8) and equilibrate
+for 1 ns at 300 K to generate an initial configuration. Simulations were completed
+with each scheme considered in the unsolvated case, using a 10 Å cutoff for the
+electrostatic and van der Waals potentials.
+   Given the significant increase in dimensionality of the system, we consider only
+measuring the effect of varying the stepsize on the computed averages. We choose
+a moderate value for the friction (we fix it at 1=ps in all simulations) which gave
+7.11 Applying the Schemes to a Biomolecule                                                                             313
+
+
+                                                          Total Potential Configurational              Kinetic
+                                     Bond Energy             Energy        Temperature               Temperature
+                          102
+        Friction (1/ps)
+BAOAB
+
+
+
+
+                          100
+                                                                                                                      100%
+
+                          10-2
+                          102
+        Friction (1/ps)
+ABOBA
+
+
+
+
+                          100
+
+
+
+                          10-2                                                                                        10%
+                          102
+        Friction (1/ps)
+OBABO
+
+
+
+
+                          100
+
+
+
+                          10-2
+                          102
+        Friction (1/ps)
+
+
+
+
+                                                                                                                      1%
+OABAO
+
+
+
+
+                          100
+
+
+
+                          10-2
+                          102
+        Friction (1/ps)
+BBK
+
+
+
+
+                          100
+
+
+
+                          10-2
+                          102
+        Friction (1/ps)
+SPV
+
+
+
+
+                          100
+
+
+
+                          10-2
+                                 1     1.5   2.25 3   1      1.5   2.25 3   1     1.5   2.25 3   1     1.5   2.25 3
+                                     Timestep (fs)         Timestep (fs)        Timestep (fs)        Timestep (fs)
+
+Fig. 7.7 Each pixel of the above grids gives the relative error in computed averages calculated
+in a vacuum simulation of alanine dipeptide at T D 300 K for 2.5 ns, where trajectories were
+computed using one of the Langevin dynamics discretization schemes listed. Each experiment
+corresponds to a particular friction and timestep parameter set. Though sampling error is still
+evident, it is clear that discretization error causes many of the schemes significant problems at
+large stepsizes. Notably, despite not working in the high-friction regime, the BAOAB scheme
+demonstrates excellent results for configurational sampling. Figure reprinted with permission from
+[222]. Copyright 2013, AIP Publishing LLC
+314                                     7 Numerical Methods for Stochastic Molecular Dynamics
+
+
+
+
+Fig. 7.8 Alanine dipeptide in solvent
+
+
+reasonable results for all previous simulations in vacuum. We consider a range
+of timesteps, starting from h D 1 fs, with subsequent simulations increasing the
+step size by 5 %, until reaching a step size where all of the methods fail. This was
+found after 22 such increments in the timestep, giving a maximum stable step size
+of approximately 2:8 fs for this model. Note that this is a smaller maximum stepsize
+than we found in the vacuum case (where some schemes were stable at over 3 fs),
+due to the high frequency H-O bonds found in the water molecules.
+   Each simulation was run for 5 ns at 300 K using spherical (harmonically
+restrained) boundary conditions to maintain the shape of the droplet. The boundary
+conditions have no effect unless atoms stray out of the 10 Å droplet, at which point
+a harmonic force pulls them back in. These boundary conditions are considered
+gentle enough to not significantly alter the behavior of the schemes (the restraining
+energy was very small in all simulations). It should be noted that, in a realistic
+molecular dynamics simulation, periodic boundary conditions are implemented,
+requiring some special treatment of the force calculation to account (for example)
+for long ranged interactions from the periodic images. Using spherical boundary
+conditions instead provides a compromise between making the system complex
+enough to be interesting (and relevant), while keeping it simple enough to allow for
+highly resolved statistics.
+   We compute a histogram of the distribution of potential energy for each
+simulation, by dividing the interval Œ1;500; 1;000 (kcal/mol) into 150 bins and
+normalizing the resulting distribution. We compare the computed distributions with
+a baseline distribution computed using a SPV simulation at h D 0:5 fs. We plot all
+of the resulting histograms in Fig. 7.9, coloring the results according to the step size
+used to obtain them (increasing step size is marked from blue to red), overlaying the
+exact distribution in black.
+   The ABOBA and SPV schemes perform very well, with only a noticeable
+difference from the exact distribution as the step size approaches its stability limit.
+Some schemes, such as BBK or OABAO perform very poorly, with even the
+smallest step sizes tested giving a visible difference between the distributions. This
+indicates that the system is able to access much higher energy states than it would
+do in exact sampling. At the highest step sizes the exact and observed distributions
+have very little overlap, suggesting a complete failure to sample the system.
+7.11 Applying the Schemes to a Biomolecule                                                    315
+
+
+                     BAOAB                             ABOBA                            OBABO
+
+
+
+
+-1375    -1275   -1175    -1075   -1375    -1275    -1175   -1075   -1375   -1275   -1175    -1075
+
+  Potential energy (kcal/mol)       Potential energy (kcal/mol)      Potential energy (kcal/mol)
+                     OABAO                                  BBK                             SPV
+
+
+
+
+-1375    -1275    -1175   -1075   -1375    -1275   -1175    -1075   -1375   -1275   -1175    -1075
+
+  Potential energy (kcal/mol)       Potential energy (kcal/mol)      Potential energy (kcal/mol)
+
+Fig. 7.9 Computed distributions of potential energy are overlaid for 22 experiments of solvated
+alanine dipeptide using the given discretization scheme. The distributions are colored by the
+stepsize used to generate them: from h D 1 fs (blue) to h D 2:8 fs (red), where the common
+black dashed distribution marks the baseline result
+
+
+    The distributions generated from trajectories computed using the BAOAB
+scheme deviate by only a very small amount, even at the highest step sizes tested.
+Comparing the energy breakdown, primarily the average bond and dihedral energy
+terms are responsible for the errors in average potential energy. From the results of
+the perturbed harmonic analysis in Eq. (7.15), the annihilation of the leading term
+in the error series (at order ") appears to lead to the behavior of the BAOAB
+scheme. The parallel success of the ABOBA and SPV schemes (which share a
+similar update strategy, especially at small friction) support this observation, as such
+schemes also give excellent configurational sampling properties in (7.15).
+    In Fig. 7.10 we plot a more quantitative examination of the behavior of the
+Langevin dynamics scheme. Despite the presence of sampling error, it is clear that
+for configurational averages, in the large timestep regime, the BAOAB scheme
+outperforms the other schemes by a significant margin.
+    Noticeably the BAOAB scheme provides an order of magnitude improvement
+in the configurational temperature results at all step sizes tested. However, the
+results for its average kinetic temperature are rather poor, especially compared to
+its conjugate method OABAO produced from shuffling the terms around. This
+emphasizes the potentially misleading assumption of equivalence between the two
+316                                                            7 Numerical Methods for Stochastic Molecular Dynamics
+
+
+                         Total potential energy                                      100%    Bond energy                               BAOAB
+                  10%
+                                                                                                                                       ABOBA
+                                                                                                                                       OBABO
+Relative error
+
+
+
+
+                                                                    Relative error
+                   1%                                                                 10%                                              OABAO
+                                                                                                                                       BBK
+                 0.1%                                                                                                                  SPV
+                                                                                       1%
+
+
+                 0.01%
+                                                                                     0.1%
+
+                         1       1.3         1.7        2.2   2.8                            1       1.3        1.7        2.2   2.8
+
+                                        Timestep (fs)                                                      Timestep (fs)
+                 100%
+                                                                                     100%
+                         Configurational temperature                                         Kinetic temperature
+                  10%                                                                 10%
+Relative error
+
+
+
+
+                                                                    Relative error
+
+                   1%                                                                  1%
+
+
+
+                 0.1%                                                                0.1%
+
+
+                         (High accuracy)                                                     (High accuracy)
+                 0.01%                                                               0.01%
+                         1        1.3        1.7        2.2   2.8                            1       1.3        1.7        2.2   2.8
+
+                                        Timestep (fs)                                                      Timestep (fs)
+
+Fig. 7.10 We plot the relative error in computed averages for the a solvated alanine dipeptide
+model using D 1=ps at 300 K, for various Langevin dynamics integrators
+
+
+types of sampling: configurational sampling is of primary concern, and cannot be
+inferred from the sampling of momenta.
+    The success of the BAOAB scheme, even at modest friction, suggests that large
+improvements could be made to any methods that use Langevin dynamics as a tool
+for trajectory generation. Improving a method’s efficiency (e.g. allowing the use of a
+larger basic timestep in simulation) thus has a knock-on effect on the efficiency of all
+the methods that rely on such trajectories. Improvements of just a few percentages in
+efficiency could merit a minor change in software implementation, the analysis we
+present here suggests a dramatic difference among various methods, in particular for
+problems which are dominated by harmonic components (e.g fully flexible atomistic
+systems).
+    The contribution of error coming from the restraining boundary condition energy
+was extremely small, suggesting that the properties of the bulk water in the model
+are responsible for the differences in efficiency seen here. Hence we would expect
+the observed corruption of averages to be generalizable to any simulations involving
+other boundary conditions, or other simulations involving water. Note that we would
+not expect similar results had we looked at the momentum distribution, but instead
+this behavior is unique to configurational sampling.
+7.12 Constrained Langevin Dynamics                                              317
+
+
+7.12 Constrained Langevin Dynamics
+
+We may use a splitting approach to develop discretization algorithms for other forms
+of dynamics. In Chap. 4, we included holonomic constraints to the ODEs defining
+constant-energy Hamiltonian dynamics, as a way to increase the stability of our
+algorithms and increase the usable timestep. We can add constraints to the Langevin
+dynamics SDEs similarly as
+
+         dq D M1 pdt;                                                       (7.43)
+                              p
+         dp D rU.q/dt  pdt C 2 kB TMdW  g0 .q/T dt;                       (7.44)
+          0 D g.q/;                                                          (7.45)
+
+where the vector of l constraints is given by g W RNc ! Rl and is an l-dimensional
+vector of Lagrange multipliers. W is a vector of standard Wiener processes, with
+the usual friction parameter > 0. As in the constant energy dynamics, permissible
+phase points lie in the co-tangent bundle defined by the constraint and hidden
+constraint
+
+                          g.q/ D 0;        g0 .q/M1 p D 0;
+
+while in the infinite time limit, we have that solution trajectories of constrained
+Langevin (7.43)–(7.45) sample Qˇ ergodically, such that
+
+                            ZT                       Z
+                        1
+                    lim          .q.t/; p.t//dt D       .q; p/Qˇ d!;
+                   T!1 T
+                            0                        D
+
+
+where Qˇ is the normalized constrained canonical distribution
+
+                 Qˇ D Z 1 exp.ˇH.q; p//ıŒg.q/ ıŒg0 .q/M1 p ;
+                                                Q
+for normalizing constant Z and where ıŒz :D i ıŒzi for a vector z. The goal is
+now to find solutions to the constrained dynamics, in order to sample the target
+distribution.
+   One approach for algorithms is simply to evolve unconstrained Langevin dynam-
+ics using any algorithm of choice, then follow each step by a step of the SHAKE
+algorithm (see Chapter 4 or [322]) to pull the system back on to the manifold
+satisfying the holonomic constraints.
+318                                 7 Numerical Methods for Stochastic Molecular Dynamics
+
+
+   We could instead consider splitting the dynamics up and performing the integra-
+tion using a splitting method. Such a splitting strategy is considered in [232] where
+one uses
+                 2    3 2                         3
+                   dq            M1 pdt
+                 4 dp 5 D 4 rU.q/dt  g0 .q/T dt 5
+                   0               g.q/
+                          „        ƒ‚             …
+                                         Hc
+                              2                                      3
+                                          p         0
+                            C 4  pdt C       2 kB TMdW  g0 .q/T dt 5;
+                                                  g.q/
+                              „                    ƒ‚                …
+                                                   Oc
+
+
+splitting the dynamics into two pieces: the constrained Hamiltonian (NVE) equa-
+tions, and a constrained Ornstein-Uhlenbeck piece.
+   We solve these two pieces symmetrically, where the constrained Hamiltonian
+part is solved over a step h, in between two solves of the Ornstein-Uhlenbeck
+SDE with stepsize h=2. The SHAKE (or RATTLE) algorithm can be used to solve
+the constrained Hamiltonian part to a high degree of accuracy, while solving the
+Ornstein-Uhlenbeck piece along the manifold amounts to finding the solution of a
+linear system. We observe the constraint in both solutions, so that the computed
+points lie in the co-tangent bundle of the constraint manifold. Instead of solving the
+Ornstein-Uhlenbeck exactly, we discretize using a midpoint Euler scheme, yielding
+the following scheme:
+                     Midpoint Euler - Verlet - Midpoint Euler (see [232])
+          (                                     p
+              pnC1=4 D pn  4 .pn C pnC1=4 / C h kB TMRn  g0 .qn /T nC1=4
+                                h
+  Solve
+              Such that g0 .qn /M 1 pnC1=4 D 0
+        8
+        ˆ
+        ˆ  pnC1=2 D pnC1=4  h2 rU.qn /  g0 .qn /T nC1=2
+        ˆ
+        <
+           qnC1 D qn C hM1 pnC1=2
+  Solve
+        ˆ                                          0
+        ˆ pnC3=4 D pnC1=2  2 rU.qnC1 /  g .qnC1 / nC3=4
+                                  h                        T
+        :̂            0            1
+        (  Such that g  .q nC1 /M     p nC3=4 D 0 and g.q nC1 / D 0:
+                                                       p
+           pnC1 D pnC3=4  4 .pnC3=4 C pnC1 / C h kB TMRnC1=2  g0 .qnC1 /T
+                                h
+                                                                                 nC1
+  Solve
+           Such that g0 .qnC1 /M1 pnC1 D 0
+
+The vectors Rn and RnC1=2 are vectors of N .0; 1/ i.i.d. random numbers, with  0
+the usual Langevin dynamics friction parameter. Setting D 0 reduces the scheme
+to the usual RATTLE scheme for solving holonomically constrained Hamiltonian
+equations of motion, whereas if is chosen large then this will be expected to
+cause instability in the scheme, as we are not solving the OU process exactly. The
+7.12 Constrained Langevin Dynamics                                                    319
+
+
+Lagrange multiplier     nC1=4 (and likewise    nC1 ) can be obtained by solving the
+linear system
+                                                                       
+                           h            p
+        g0 .qn /M1     1       pn C    h kB TMRn  g0 .qn /T   nC1=4       D 0;
+                            4
+
+which is easily computed once the Rn vector is evaluated in the step, and gives us a
+stability criterion
+
+                                         h < 4:                                     (7.46)
+
+A similar calculation and linear solve is needed to compute nC3=4 in order to
+maintain the hidden constraint for pnC3=4 , whereas the Lagrange multiplier nC1=2
+is responsible for ensuring that g.qnC1 / D 0, and is typically found using an implicit
+solve.
+    There are many other ways we could choose to combine traditional molecular
+dynamics discretization schemes with constrained solvers such as variants of the
+SHAKE algorithm (see, for example [81, 383, 396]). The following section presents
+an alternative based upon the work on splitting methods in this chapter so far.
+
+
+
+7.12.1 A “Geodesic Integrator”
+
+We may consider alternative splittings of the dynamics in order to build a library of
+available schemes, just as we did in the unconstrained case in Sect. 7.3.1. Solving
+the constrained OU part exactly would allieviate the condition (7.46), while we
+may hope to reduce discretization error in the spirit of the success of the BAOAB
+scheme in Sect. 7.9.3. The natural splitting template to consider would be to again
+split into potential and kinetic energies, with the constrained Ornstein-Uhlenbeck
+piece:
+             2    3 2               3 2                         3
+               dq        M1 pdt                   0
+             4 dp 5 D 4 g0 .q/T dt 5 C 4 rU.q/dt  g0 .q/T dt 5
+               0            g.q/                 g.q/
+                      „      ƒ‚     … „          ƒ‚             …
+                                Ac                       Bc
+                          2                                3
+                                   p      0
+                        C 4  pdt C 2 kB TMdW  g0 .q/T dt 5 :
+                                        g.q/
+                          „              ƒ‚                …
+                                                  Oc
+
+
+Observe that the holonomic constraint (as well as the hidden constraint) is main-
+tained in each part, changing the usual A piece into a geodesic drift along the
+320                              7 Numerical Methods for Stochastic Molecular Dynamics
+
+
+manifold defined by g.q/ D 0. We will denote schemes using this splitting in a
+similar fashion to the unconstrained case, but precede the schemes with “c-” to label
+the constrained form (for example c-BAOAB rather than the more cumbersome
+notation Bc Ac Oc Ac Bc ). Such a constrained scheme would be:
+                                    c-BAOAB
+          pnC1=5 D pn  h2 rU.qn /  g0 .qn /T   nC1=3
+ Solve
+          Such that g0 .qn /M1 pnC1=5 D 0
+  Solve the geodesic flow Ac for h=2, and map Œqn ; pnC1=5 ! ŒqnC1=2 ; pnC2=5
+                                 p
+         pnC3=5 D e h pnC2=5 C .1  e2 h /kB TMRn  g0 .qnC1=2 /T nC2=3
+ Solve
+         Such that g0 .qnC1=2 /M1 pnC3=5 D 0
+  Solve the geodesic flow Ac for h=2, and map ŒqnC1=2 ; pnC3=5 ! ŒqnC1 ; pnC4=5
+          pnC1 D pnC4=5  h2 rU.qnC1 /  g0 .qnC1 /T     nC1
+ Solve
+          Such that g0 .qnC1 /M1 pnC1 D 0;
+
+where Rn is a vector of i.i.d N .0; 1/ random numbers and the Lagrange multipliers
+  , ensuring that the hidden constraint is satisfied, can be computed through a linear
+solve. We do not necessarily need to solve the geodesic flow exactly in practice,
+though for the purposes of analysis we shall assume we do. If we are considering
+a second order scheme, then solving the Ac piece to at least second order would be
+sufficient to preserve the overall order of the scheme, although a scheme may have
+potentially better accuracy and stability properties if a higher order solve is used.
+    In practice, we can solve the Ac piece using any constraint algorithm for constant
+energy dynamics (see Sect. 4.3.6) and subsituting zero force. A more accurate
+solution is obtained for the geodesic drift by either using a number of small steps
+to integrate over the total time, or composing steps in a certain order to obtain a
+higher order solution (see Sect. 3.3.3). Relative to the force calculation, solving the
+geodesic drift step (even to high accuracy) can, in typical molecular systems, be
+considered computationally cheap. Given these splitting pieces, one may write down
+constrained equivalents of any of the schemes described in Sect. 7.3.1.
+    We then ask how to analyze such schemes using the algebraic machinery
+developed throughout this chapter. As we solve each vector field on the constraint
+manifold, it is natural to consider the associated Lie derivatives on these manifolds
+and solve the corresponding Fokker-Planck equation for the discretization to find an
+invariant distribution, just as we did in the unconstrained case. This is a complicated
+programme and we do not develop this in detail here.
+    To compare the performance of the various schemes we perform a numerical
+experiment to quantify the discretization error caused by the schemes. We imple-
+ment the c-BAOAB and c-OBABO schemes into the NAMD-lite [170, 302]
+package and consider 233 TIP3P water molecules in a periodic box with dimensions
+20  20  20 Angstroms at 300 K. We constrain the angles and bond lengths
+of each molecule so that the only forces felt are due to the van der Waals and
+electronic interations, parameterized by the CHARMM22 forcefield [246] with an
+8-Angstrom cutoff. The system was simulated for a fixed total time of 3ns, after a
+7.12 Constrained Langevin Dynamics                                                   321
+
+
+1ns equilibration period. Full electrostatics were computed using the native NAMD
+MGRID force routines, while the corresponding geodesic drift step (the ‘A’ step)
+was computed using the built-in SETTLE algorithm [274]. We would not expect
+any differences from using a RATTLE-style algorithm to compute the drift instead.
+   We would expect the c-OBABO scheme to give very similar results to the
+‘Midpoint Euler - Verlet - Midpoint Euler’ (MEVME) algorithm in [232], as
+both schemes follow the same symmetric update form: ‘fluctuate-kick-drift-kick-
+fluctuate’. However, as the ‘fluctuate’ step (Ornstein-Uhlenbeck process) is solved
+exactly in the c-OBABO scheme, at large friction values we would expect that
+the MEVME scheme would give inferior sampling while being constrained by the
+stability condition (7.46). There is an additional subtle difference in that we do
+not solve a geodesic drift in the MEVME scheme, but adjust the momentum in
+the preceding kick step to remain on the constraint manifold. While it is difficult
+to quantify what difference this would make to the overall results, modifying a
+scheme to include a geodesic solve should never reduce the accuracy of the scheme.
+Hence we would expect the c-OBABO method to give equivalent, if not superior,
+sampling to MEVME.
+   As in the unconstrained experiment reported in Fig. 7.10, we compute the
+averages of kinetic and potential energy functions, averaged over five independent
+runs, at friction parameters 0:2=ps and 5=ps, using ten different stepsizes with the
+lowest 2:5 fs and increasing by 17 % up to 10:3 fs (note that this range of stepsizes is
+much increased from the unconstrained tests). Computed averages are compared to
+baseline results averaged over five runs using the c-BAOAB scheme with stepsize
+h D 1fs and D 1=ps.
+   In Fig. 7.11 we plot the computed averages of potential and kinetic energies using
+either the c-OBABO scheme, or the c-BAOAB scheme. Surprisingly for such a
+short experiment, we are able to resolve the second order behavior of either potential
+or kinetic energy for each method due to the dominance in discretization error. The
+results also mirror the flexible case: the c-BAOAB scheme gives a strong second
+order result for kinetic energy, while the c-OBABO scheme is second order for
+the potential energy. However, as expected we are unable to resolve the higher
+order behavior due possibly to the presence of statistical noise, and can only show
+a dramatic difference between the methods in terms of the evident error. Due to the
+poor resolution, it is difficult to see clear differences in the results as we change the
+Langevin dynamics friction parameter , although it is evident in the c-BAOAB
+case that increasing friction offers a small increase in stepsize. The only significant
+difference was noted at the largest stepsize tested, where the c-BAOAB scheme
+performed markedly better at larger friction.
+   It is clear that the c-BAOAB scheme gives a superior calculation of the average
+of potential energy (the computed distributions are plotted in Fig. 7.12), with an
+apparent order of magnitude improvement in the error compared to c-OBABO.
+Additionally it allows for a significant improvement in stability between the two
+322                                                                        7 Numerical Methods for Stochastic Molecular Dynamics
+
+
+                 10-1
+                        Average Potential Energy                                                              Average Kinetic Energy
+                                                                                                       10-1
+                                        O
+                 10-2              BAB
+                               c- O                 rder
+                                                nd o                                                                                                  er
+                                         Seco                                                                                                     ord
+                                                                                                                               AB           ond
+                                                                                                                                         Sec
+Relative error
+
+
+
+
+                                                                                      Relative error
+                                                                                                                           O
+                                                                                                                        BA
+                 10-3                                                          5/ps                    10-2        c-
+                                                                           : γ=                                                                 c- OBABO : γ=0.2/ps
+                                                                    O AB
+                                                            c  - BA
+                 10-4                                                                                                                              c- OBABO : γ=5/ps
+
+                                                                                                       10-3
+                 10-5
+                                                       c- BAOAB : γ=0.2/ps
+
+                 10-6                                                                                  10-4
+                        2         3         4          5   6     7      8 9 10                                2          3           4      5     6     7   8 9 10
+                                            Stepsize (fs)                                                                            Stepsize (fs)
+
+Fig. 7.11 The error in the computed average kinetic and potential energies for a box of 233
+rigid water molecules is compared for the two schemes using varying stepsizes. The c-OBABO
+scheme clearly provides superior averages of the kinetic energy, while the c-BAOAB scheme
+gives considerably improved results for the average potential energy
+
+                  c- BAOAB                                                                                c- OBABO
+                 γ=0.2/ps                                                                                γ=0.2/ps
+
+
+
+
+-2250                   -2200         -2150        -2100             -2050        -2000 -2250                     -2200             -2150       -2100        -2050     -2000
+                            Potential Energy (kCal/mol)                                                            Potential Energy (kCal/mol)
+
+                  c- BAOAB                                                                                c- OBABO
+                 γ=5/ps                                                                                  γ=5/ps
+
+
+
+
+-2250                   -2200         -2150        -2100             -2050        -2000 -2250                     -2200             -2150       -2100        -2050     -2000
+                            Potential Energy (kCal/mol)                                                            Potential Energy (kCal/mol)
+
+Fig. 7.12 We plot the normalized potential energy distributions for simulations of water using the
+schemes (c-BAOAB left, c-OBABO right) and friction parameters ( D 0:2=ps top, D 5=ps
+bottom) with distributions colored by increasing step size (2:5 fs in blue to 10:3 fs in red) with
+successive lines indicating a 17 % increase in the step size. The baseline distribution is plotted as a
+black dashed line
+
+
+schemes; the c-OBABO scheme became unstable around h D 7 fs, while we were
+able to increase the timestep for the c-BAOAB to beyond h D 9 fs without obvious
+reprecussions.
+7.13 Multiple Timestepping                                                       323
+
+
+7.13 Multiple Timestepping
+
+Recall the r-RESPA multiple timestepping scheme introduced in Sect. 4.2, designed
+to propagate systems which have a fast highly oscillatory motion, as well as a slower
+long-ranged force term. Splitting the potential energy function into fast and slow
+components in the deterministic setting provided only a small gain in the stability
+threshold, as we encountered linear resonance phenomena at step sizes that were
+integer multiples of half a period. In systems where the timescale gap is very
+large, the r-RESPA scheme does not give significant improvement, with the stability
+threshold scaling identically to the Symplectic Euler method.
+   Our hope would be that using Langevin dynamics to add stochasticity would
+disrupt resonance effects and permit larger usable timesteps. While some consider-
+able efficiency improvements have been demonstrated using multiple timestepping
+methods for Langevin dynamics with constraints [118], we shall investigate the
+simpler fast/slow splitting demonstrated in previous chapters.
+   We consider propagating a system with Hamiltonian
+
+                H.q; p/ D p2 =2 C U.q/;         U.q/ D UF .q/ C US .q/;
+
+where q; p 2 R and US and UF denote the slow and fast components of the
+potential energy respectively. For the purposes of analysis, we shall model these
+with harmonic potentials, with
+
+                       US .q/ D q2 =2;         UF .q/ D ˝ 2 q2 =2;            (7.47)
+
+where ˝      1. The question we shall be interested in is whether using Langevin
+dynamics with a multiple timestepping algorithm gives us any extra stability
+compared to the deterministic case. Let us consider splitting the dynamics into
+                                                     
+             dq                   p dt p             0
+                 D                               C         ;                  (7.48)
+             dp      ˝ 2 q dt  p dt C 2 =ˇ dW     q dt
+                   „              ƒ‚            … „ ƒ‚ …
+                                     Fast                        Slow
+
+and proceed as in the case of the r-RESPA scheme. As before, we consider the case
+where we are able to solve the fast part exactly (in practice we use several small
+timesteps as the fast parts are considered computationally “cheap”). Writing
+                                                     
+                                              0 1
+                                   FD                     ;
+                                             ˝ 2 
+
+we can write down the solution to the fast dynamics as
+                                                  
+                             q.t/               q.0/
+                                    D exp.Ft/          C Bt R;
+                             p.t/               p.0/
+324                                   7 Numerical Methods for Stochastic Molecular Dynamics
+
+
+where R is a column vector of two i.i.d. random normal numbers distributed as
+N .0; 1/, and
+
+                               Zt                   
+                        2                         00
+               Bt BTt D             exp.F.t  s//      exp.FT .t  s//ds:
+                         ˇ                        01
+                               0
+
+The solution to the slow part of our splitting is just
+                                                    
+                              q.t/         1 0      q.0/
+                                    D                      :
+                              p.t/        t 1      p.0/
+
+Thus for a method taking one step of the fast system followed by a step of the
+slow system, using fixed step size h > 0, we can write the update scheme for z D
+Œq; p T as
+
+                                     znC1 D Xzn C YRn ;
+
+for
+                                                                   
+                              1 0                                 1 0
+                    XD              exp.hF/;          YD                Bh :
+                             h 1                                h 1
+
+                         p therefore depends solely on the spectral radius of the
+The stability of the method
+matrix X. Denoting  D      2  4˝ 2 , then we compute
+
+
+                                                h . /h=2  C h . /h=2
+          det.X/ D e h ;           tr.X/ D        e        C     e          ;
+                                                              
+
+giving a stability condition
+                  ˇ                                ˇ
+                  ˇ   h . /h=2  C h . /h=2 ˇ
+                  ˇ               C                ˇ               1 C e h :
+                  ˇ  e              
+                                        e          ˇ
+
+Multiplying by e h=2 gives
+                   ˇ                                ˇ             
+                   ˇ                                  ˇ
+                   ˇcosh h          h
+                                    C sinh 
+                                             h       ˇ      cosh
+                                                                          h
+                                                                            ;
+                   ˇ      2                 2        ˇ                  2
+
+which reduces to the deterministic stability condition as expected in the limit       D 0.
+For > 0, we can simplify to
+                ˇ                               s        ˇ
+                ˇ                                      ˇ               
+                ˇ                                     h2 ˇ
+                ˇcosh h  atanh h                1  2 ˇˇ        cosh
+                                                                              h
+                                                                                :
+                ˇ      2                             ˇ                     2
+                ˇ
+7.13 Multiple Timestepping                                                          325
+
+
+We consider the case with      ˝, allowing us to write  D iO for O 2 R, and
+               ˇ                       s           ˇ
+               ˇ                                 ˇ      
+               ˇ     h
+                     O             h           h 2ˇ            h
+               ˇcos       atanh         1 C       ˇ cosh          :
+               ˇ      2            O            2
+                                               O ˇˇ          2
+               ˇ
+
+The term on the left hand side of the inequality is oscillatory in h, while the term on
+the right hand side uniformly grows with step size. This implies that for any suitable
+   > 0, we can find small pocket regions of the step size where the left hand side is
+sufficiently minimized in order to give stability. However, just as in the deterministic
+case, these island stability regions are difficult to predict the location of in a more
+general system.
+   The oscillatory cosine term is bounded between ˙1, implying that we have
+stability for all step sizes provided the condition
+                              s                     
+                                    h2                   h
+                                  1C 2       cosh          ;                     (7.49)
+                                    O                  2
+
+holds. We expect there to exist stability regions for smaller values of the friction
+where this condition is violated, but these will be interposed between unstable
+regions coming from the oscillatory term. We have guaranteed stability where (7.49)
+holds, which we can simplify to
+                                                     
+                                    h                        h
+                             p                sinh             :
+                              4˝ 2      2                  2
+
+For a fixed value of the friction, if we increase the step size the right hand side will
+grow exponentially compared to the linear growth on the left hand side, so it would
+seem that for large h we actually need a smaller friction in order to be stable. Hence
+the minimum required friction for stability can be found by considering the case of
+small timestep. This gives a bound
+
+                                      1
+                                   p                        ;
+                                    4˝ 2     2         2
+
+which gives a stability condition for all step sizes h as long as
+                                  q
+                                        p          p
+                             ˝    2  2 1  ˝ 4  2=˝:
+
+Therefore we expect that the minimum friction value required for stability for all
+timesteps h > 0, scales with the value of inverse ˝. Unlike the deterministic case,
+we are able to remove linear resonance effects with a sufficiently large friction term.
+   We illustrate this numerically in Fig. 7.13, by applying the splitting scheme (7.48)
+using various timesteps and frictions. Each gridpoint marks an independent simula-
+326                                       7 Numerical Methods for Stochastic Molecular Dynamics
+
+
+           0.6                                                                                  1
+
+           0.5
+
+           0.4                                                                                  10-1
+Friction
+
+
+
+
+           0.3
+
+           0.2                                                                                  10-2
+
+           0.1
+
+             0                                                                                  10-3
+                 0                    5                        10                         15
+                                               Timestep
+
+Fig. 7.13 We consider the stability of a multiple timestepping scheme incorporating Langevin
+dynamics, with potential energy function (7.47) choosing ˝ D 3. Each pixel represents a
+                 ˝ ˛ with parameters .; /, for  D ˝h. The color of a pixel indicating the
+simulation undertaken
+absolute error in q2 h where white pixels indicate instability of the method. The plotted line gives
+the boundary to the region in parameter space where (7.49) is satisfied
+
+
+
+tion of 108 steps using ˝ D 3 with the given values of and  (where  D ˝h).
+The plotted line marks the boundary of the region where (7.49) is satisfied, which
+matches the experimental stability limit. For small friction, the stability limit occurs
+at  D , which is commensurate with the deterministic case ( D 0) presented in
+Chap. 4.
+   The island regions p   of instability vanish as expected for large values of friction,
+while choosing D 2=˝  0:471 in this example is plainly sufficient to give
+stability for all visible step sizes.
+   It is important to emphasize the tremendous complexity of molecular dynamics in
+relation to the simple model scenario presented here. In [22, 29], multiple timestep-
+ping was used effectively to treat large scale systems where the force splitting
+is defined in the context of particle-mesh Ewald long-ranged force computations.
+We also point out that where additional constraints are present, the prospects for
+multiple timestepping may be significantly better, as, in the previously mentioned
+work [118] and in Sect. 8.6 of the next chapter, where isokinetic constraints are used
+to stabilize the system.
+
+
+
+Exercises
+
+1. If we use R0n D RnC1 in the BBK scheme, then we arrive at the BBK* scheme
+   encountered in Example 7.2. Compute the value of hq2 ih for the variants of the
+   BBK scheme where H D p2 =2 C q2 =2 with the choices of
+           a. R0n D Rn ,
+           b. R0n D Rn1 ,
+           c. R0n D RnC1=2 , (here R0n and Rn will be independent).
+7.13 Multiple Timestepping                                                         327
+
+
+   When choosing the two noises to be independent, the BBK scheme will produce
+   an error independent of stepsize h. Modifying the given noise processes in (c)
+   such that ER2nC1=2 D ER2n D , find a  > 0 that recovers canonical sampling
+   when h is small.
+2. Consider the Stochastic Position Verlet (SPV) splitting method defined in
+   Sect. 7.3.2.
+   a. For the one dimensional harmonic oscillator, find the values of hq2 ih , hp2 ih
+      and hqpih when using the SPV scheme.
+   b. Find the leading order error in hq2 ih for the perturbed harmonic oscillator with
+      potential energy function U.q/ D q2 =2 C "q4 =4.
+3. We were able to use Lemma 7.1 to relate the schemes with central OU update
+   to those with OU updates at the ends, however we could have continued to solve
+   the original PDEs instead.
+                                    
+   a. Compute L2;ABOBA ˇ and L2;BAOAB ˇ .
+   b. Verify that the Fredholm alternative is satisfied.
+4. Consider the GLA schemes of the form OXYX, making the ansatz that the
+   invariant distribution is
+
+              O D ˇ .1 C hf1;OXYX C h2 f2;OXYX C h3 f3;OXYX C : : :/:
+
+
+
+   a. Verify that f1;OABA D f1;OBAB D 0.
+   b. Using the results of Lemma 7.1, find f2;OABA and f2;OBAB in terms of
+      f2;OABAO and f2;OABAO .
+   c. Find the third order correction f3;OABA and f3;OBAB in terms of f2;OABAO
+      and f2;OABAO .
+5. Write out the limiting schemes for the OAB and OBA methods and verify
+   that they are inconsistent with the dynamics by comparing them to the Euler-
+   Maruyama scheme.
+6. Consider the Langevin dynamics splitting strategy
+          1                                         
+        q    M p          0            0              0
+     d    D       dt C         dt C         dt C p              dW :
+        p     0          rU           p          2 kB TM1=2
+            „ ƒ‚ … „ ƒ‚ … „ ƒ‚ … „                      ƒ‚       …
+                      A              B              C                   D
+
+
+                     
+   a. Find LC and LD .
+                                                                          
+   b. Write down the scheme corresponding to ABCD, and compute LABCD to
+      first order for q and p 2 R.
+   c. Using your answer to (b.), compute the first order correction function for the
+                                                        
+      method ABCD by considering the solution to LABCD  D 0.
+   d. What behavior do you expect in the limit of large friction ?
+328                              7 Numerical Methods for Stochastic Molecular Dynamics
+
+
+7. [Computer Investigation] Consider canonically sampling the planar system
+   with Hamiltonian
+
+         H.x; y; px ; py / D p2x =2 C p2y =2 C .x2  1/2 =4 C .y2  1/2 =4 C xy;
+
+  at inverse temperature ˇ D 1.
+  a. Verify that hx2 C y2 i  3:043, by either using a discretization scheme with
+     small discretization parameter, or using a high-accuracy numerical solver (e.g.
+     MAPLE or Mathematica).
+  b. Use the Euler-Maruyama scheme (7.39) to compute hx2 C y2 i for several
+     values of the stepsize  2 .0; 0:2 .
+  c. Run the same experiment as part (b) using the (7.40) instead. Compare the
+     errors in the computed averages for both schemes, as well as the overall
+     stability of the methods.
+  d. In the limit ! 1, the OBABO scheme converges to Euler-Maruyama,
+     while the BAOAB scheme converges to the scheme (7.40). Implement
+     OBABO and OBABO in your language of choice and investigate their
+     behavior in this limit (i.e. repeat parts (b) and (c) for fixed small, medium and
+     large values of ).
+Chapter 8
+Extended Variable Methods
+
+
+
+
+In the previous chapter we described numerical methods for solving the equations
+of Langevin dynamics, a system of stochastic differential equations that sample the
+canonical ensemble. The methods allow us to compute averages of the form
+                                           R
+                                            D .q;
+                                              R
+                                                   p/ˇ .q; p/d!
+                        Avˇ ..q; p// D                              ;
+                                                D ˇ .q; p/d!
+
+where ˇ D exp.ˇH/, and H is the system Hamiltonian. In this chapter we
+extend the range of systems that can be used to accomplish this task using methods
+based on the incorporation of auxiliary variables. We also consider schemes for
+sampling alternative thermodynamic ensembles, for example those defined by
+constant number of atoms N, pressure P and temperature T. In some of the methods,
+based on purely deterministic models, the ergodic property may be compromised, so
+an important issue is to design schemes that restore this. We will focus on methods
+that introduce random processes in direct contact with the auxiliary variables.
+   Besides canonical or configurational sampling, another common purpose of
+molecular simulation is the calculation of a dynamical (time-dependent) quantity
+such as the rearrangement of a molecular group over time or a diffusion rate. The
+only dynamical calculations that make sense in the context of molecular modelling,
+where trajectories are chaotic, are those that involve some sort of average. We
+consider this average in a thermodynamic sense and assume that the calculation can
+be formulated as the determination of the canonically weighted correlation between
+two quantities evaluated at different times, for example
+                                    R
+                                      D RA.z/  B.F .z//ˇ d!
+                                                   H
+                         Cˇ ./ D                                :
+                                         D A.z/  B.z/ˇ d!
+
+
+
+
+© Springer International Publishing Switzerland 2015                           329
+B. Leimkuhler, C. Matthews, Molecular Dynamics, Interdisciplinary Applied
+Mathematics 39, DOI 10.1007/978-3-319-16375-8_8
+

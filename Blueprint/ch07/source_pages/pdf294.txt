@@ -1,0 +1,57 @@
+7.4
+Error Results for Harmonic Problems
+273
+sampling will become inconsistent: the force will be dominated by the stochastic
+term, leaving the dynamics to evolve as a random walk.
+Similar behavior is exhibited using the splitting strategy in (7.5), when interpos-
+ing the kick term B between two O steps, such as in the schemes AOBOA or
+BOAOB. By avoiding “OBO” updates, we can derive schemes that are consistent
+even at inﬁnite friction (the BAOAB and ABOBA schemes are examples of such
+methods).
+The Brünger-Brooks-Karplus (BBK) Langevin integrator [55] is one of the most
+popular and widely-implemented schemes.
+Brünger-Brooks-Karplus (BBK)
+pnC1=2 D .1  h
+=2/pn  .h=2/rU.qn/ C 1
+2
+p2kBTh
+M1=2Rn
+qnC1 D qn C hM1pnC1=2
+pnC1 D ŒpnC1=2  .h=2/rU.qnC1/ C 1
+2
+p2kBTh
+M1=2R0
+n	=.1 C h
+=2/
+Often R0 is chosen such that R0
+n D RnC1, so the random vector would be reused at
+the start of the following timestep, however there are many variants of this scheme
+that incorporate the redraw of random numbers differently. In other variants of BBK
+we take R0
+n D Rn, reusing the random number within the step. We may also consider
+independent R0
+n and Rn, however when using independent noise processes we must
+modify the algorithm as it will not sample canonically (see Exercise 1).
+7.4
+Error Results for Harmonic Problems
+For general systems it can be very challenging to give a complete description of
+the weak error in averages computed from trajectories evolved through a Langevin
+dynamics discretization scheme. However, using a linear model problem signiﬁ-
+cantly reduces the complexity, while using small dimensional test problems allows
+us to effectively annihilate sampling error in demonstrative numerical experiments.
+As such, we return now to the harmonic oscillator, which as well as being the
+simplest molecular model is also one of the most relevant for molecular dynamics
+applications, as many issues of stability and timestep in molecular dynamics
+simulations arise due to harmonic potentials used to model covalent bonds (such
+as in crystalline solids and biomolecules). The canonical distributions of position
+and momentum are also of a simple form (Gaussians), making such oscillators
+particularly amenable to analysis.
+Recall that the one-dimensional harmonic oscillator with spring constant ˝2 has
+potential energy function U.q/ D ˝2q2=2, with Hamiltonian
+H.q; p/ D p2
+2m C ˝2q2
+2
+;
+(7.6)
+where .q; p/ 2 R2 represent a particle’s position and momentum, and m > 0 is the
+particle’s mass. In this setting, the canonical distribution ˇ is the product of two

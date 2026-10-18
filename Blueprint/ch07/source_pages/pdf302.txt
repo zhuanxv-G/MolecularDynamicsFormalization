@@ -1,0 +1,84 @@
+7.6
+An Exact Gibbs Sampling Method
+281
+ 
+ 
+OBABO
+OABAO
+ABOBA
+BAOAB
+Timestep
+1
+10-1
+10-2
+10-3
+10-4
+1
+2
+0.5
+0.2
+0.1
+10-4
+10-3
+10-2
+10-1
+10-4
+10-3
+10-2
+10-1
+10-4
+10-3
+10-2
+10-1
+10-4
+10-3
+10-2
+10-1
+1
+Timestep
+1
+2
+0.5
+0.2
+0.1
+1
+1
+1
+Timestep
+1
+2
+0.5
+0.2
+0.1
+Timestep
+1
+2
+0.5
+0.2
+0.1
+Nonlinearity 
+Nonlinearity 
+Nonlinearity 
+Nonlinearity 
+Fig. 7.3 Each pixel in the above grids marks the result of a numerical experiment using one of the
+four second order (in stepsize) symmetric Langevin discretization schemes. A pixel’s color denotes
+the absolute error of hq2ih from an experiment conducted at the given stepsize h (horizontal)
+and nonlinearity parameter " (vertical) deﬁning the potential energy in (7.13), with white pixels
+indicating instability. Experiments were taken over a sufﬁciently long time interval such that the
+observed errors are the result of discretization error, rather than sampling error
+The BAOAB scheme performs extremely well in this example, even in regimes
+of large " and stepsize where our formal analysis is no longer valid. Though
+Table 7.1 demonstrates that both the ABOBA and BAOAB schemes give exact
+results at " D 0, there remains qualitative difference between the two for positive ",
+owing to the order "2 leading term in the latter scheme. If we are willing to accept an
+error of around 102 in our computed average, then in this example the BAOAB
+scheme allows us to use a timestep considerably larger (even an order of magnitude
+larger at small ") than the OBABO or OABAO schemes, for any value of "
+tested.
+7.6
+An Exact Gibbs Sampling Method
+The previous examples give some insight into the behavior of long-time averages
+for schemes applied to small models with simple oscillators, whereas in general for
+much larger systems with the full spectrum of molecular forces, it is much more
+difﬁcult to offer concrete estimates on the efﬁcacy of one method in comparison
+to another. Consider the splitting of Langevin dynamics into just two parts: the

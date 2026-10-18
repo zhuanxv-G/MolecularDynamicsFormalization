@@ -1,0 +1,48 @@
+7.8
+First Order Schemes
+295
+appear. However, if we instead set # D #2.q/, then
+h#2.q/f1.q; p/i D ˙ˇ
+2
+˝
+.
+U.q/  c/#2.q/ ˙ pTM1rU.q/#2.q/
+˛
+D ˙
+ˇ
+2 h.U.q/  hU.q/i/#2.q/i ;
+in which case our correction becomes O.
+/. This is potentially disastrous if we
+choose the friction to be large (consider 
+ h1), as the error introduced
+through discretization will dominate the true average to be sampled. Examining
+the algorithms themselves this is unsurprising, as although we have integrated
+the Ornstein-Uhlenbeck process exactly, when considering the limit of inﬁnite
+friction in the XYZ schemes we obtain an inconsistent discretization. Hence these
+ﬁrst-order schemes will be unsuitable for the integration of overdamped Langevin
+dynamics.
+This is not always the case for ﬁrst order schemes, however. For example the
+scheme denoted AOAB is consistent with the dynamics, and may be used for
+integrating the overdamped (
+ D 1) Langevin equation.
+7.8.2
+Numerical Experiment
+Let us consider testing the computed ﬁrst order corrections on a one dimensional
+example. Let M D ˇ D 1 and deﬁne the biased double-well potential as
+U.q/ D .q2  1/2 C q=2:
+We shall consider computing the average of a speciﬁc observable #.q; p/, and
+estimating the error due to discretization using the correction functions given
+in (7.25), where we choose the observable
+#.q; p/ D p2  qU0.q/ C 2qp;
+h#i D 0:
+The low dimensionality of the problem and the simplicity of the observable and
+potential energy function make resolving the perfect sampling bias to leading order
+an easy task, allowing us to give a good estimate (to order h2) of the discretization
+error. In Fig. 7.4 we plot the results of h#ih computed via numerical experiment,
+using each of the six ﬁrst order schemes at either 
+ D 1 or 
+ D 2, and compare
+them to our ﬁrst order prediction
+h#ih  h#i C hhf1#i:
+The numerical experiment at each timestep is averaged from 16 independent
+experiments, each running over a time interval of 108. The results match our

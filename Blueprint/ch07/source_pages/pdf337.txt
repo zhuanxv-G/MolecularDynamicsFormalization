@@ -1,0 +1,82 @@
+316
+7
+Numerical Methods for Stochastic Molecular Dynamics
+100%
+10%
+1%
+0.1%
+10%
+1%
+0.01%
+0.1%
+100%
+10%
+1%
+0.1%
+0.01%
+100%
+10%
+1%
+0.1%
+0.01%
+Relative error
+Relative error
+Relative error
+Relative error
+1
+1.3
+1.7
+2.2
+2.8
+Timestep (fs)
+1
+1.3
+1.7
+2.2
+2.8
+Timestep (fs)
+1
+1.3
+1.7
+2.2
+2.8
+Timestep (fs)
+1
+1.3
+1.7
+2.2
+2.8
+Timestep (fs)
+Total potential energy
+Bond energy
+Configurational temperature
+Kinetic temperature
+BAOAB
+ABOBA
+OBABO
+OABAO
+BBK
+SPV
+(High accuracy)
+(High accuracy)
+Fig. 7.10 We plot the relative error in computed averages for the a solvated alanine dipeptide
+model using 
+ D 1=ps at 300 K, for various Langevin dynamics integrators
+types of sampling: conﬁgurational sampling is of primary concern, and cannot be
+inferred from the sampling of momenta.
+The success of the BAOAB scheme, even at modest friction, suggests that large
+improvements could be made to any methods that use Langevin dynamics as a tool
+for trajectory generation. Improving a method’s efﬁciency (e.g. allowing the use of a
+larger basic timestep in simulation) thus has a knock-on effect on the efﬁciency of all
+the methods that rely on such trajectories. Improvements of just a few percentages in
+efﬁciency could merit a minor change in software implementation, the analysis we
+present here suggests a dramatic difference among various methods, in particular for
+problems which are dominated by harmonic components (e.g fully ﬂexible atomistic
+systems).
+The contribution of error coming from the restraining boundary condition energy
+was extremely small, suggesting that the properties of the bulk water in the model
+are responsible for the differences in efﬁciency seen here. Hence we would expect
+the observed corruption of averages to be generalizable to any simulations involving
+other boundary conditions, or other simulations involving water. Note that we would
+not expect similar results had we looked at the momentum distribution, but instead
+this behavior is unique to conﬁgurational sampling.

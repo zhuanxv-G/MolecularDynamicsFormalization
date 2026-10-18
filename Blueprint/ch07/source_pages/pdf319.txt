@@ -1,0 +1,60 @@
+298
+7
+Numerical Methods for Stochastic Molecular Dynamics
+For a scheme XYZYX, we assume that each of the X, Y and Z characters in
+the string are distinct, and correspond to one of the A, B or O pieces of our splitting
+strategy. Thus we have L
+0 D L
+LD.
+Evidently, the scheme’s associated Fokker-Planck operator OL no longer has a
+leading order term that is linear in the stepsize, so it makes sense to revise our
+assumption on the form of the scheme’s corresponding invariant measure, and
+replace it with a series with solely even order terms. If we suppose that the odd
+order correction functions are zero, then we are left with
+O D ˇ.1 C h2f2 C h4f4 C : : :/;
+(7.27)
+where each hfii D 0 as usual. Thus the stationarity equation OL O D 0 becomes
+
+L
+LD C h2L
+2 C : : :
+ 
+ˇ C h2ˇf2 C : : :
+
+D 0:
+The equation is satisﬁed at zeroth order, and equating the second order terms we
+obtain
+L
+LD
+ˇf2
+ D L
+2ˇ:
+(7.28)
+The procedure then follows just as in the case of the ﬁrst order schemes. The
+form of the right-hand side L
+2ˇ will be dependent on the choice of the update
+scheme, and can be computed using the BCH formula using Proposition 7.1. More
+complicated symmetric schemes involving more than ﬁve stages can be utilized,
+but these schemes may require more than one force evaluation per iteration, while
+increasing the complexity of the PDE to solve.
+The condition on the existence of such a solution requires us to use the Fredholm
+alternative, which requires us to verify that the inhomogeneous term L
+2ˇ integrates
+to zero.
+7.9.1
+Calculation of the Inhomogeneous Term
+The computation of the right hand side in (7.28) is required in order to solve the
+corresponding partial differential equation and obtain the leading order correction
+function for our symmetric scheme XYZYX. From the form of the L
+2 operator in
+Proposition 7.1, we can see that our life is made considerably easier if we initially
+consider methods OYZYO, which substitutes
+L
+X D L
+O;
+L
+Y C L
+Z D L
+A C L
+B D L
+H;

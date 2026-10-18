@@ -1,0 +1,82 @@
+7.9
+Error Expansion for Symmetric Langevin Methods
+297
+Hence for the critical value of 
+ D 2, the leading order correction will be zero,
+giving
+h#iBOA
+h
+D h#i C O.h2/:
+This is exactly the behavior we see in Fig. 7.4.
+7.9
+Error Expansion for Symmetric Langevin Methods
+Of particular interest for sampling the canonical distribution are symmetric
+Langevin methods. We believe these are likely to be the most useful class of
+methods for practitioners, as by symmetrizing the expansion the odd order terms
+in (7.16) vanish identically using the Jacobi identity in the BCH expansions. This
+implies that a symmetric scheme gives a second order error in computed averages.
+Many symmetric methods can be constructed that require only one evaluation of the
+force per iteration (effectively making them as inexpensive as a ﬁrst order method).
+In order to simplify the algebra, we will use M D I throughout this section,
+which will not alter the major results and amounts to a linear change of variables.
+We shall consider general symmetric schemes of the form XYZYX, and perform
+a similar analysis to the previous section. The terms appearing in the expansions
+will be signiﬁcantly more complex than those encountered in ﬁrst order methods.
+We make use of the following proposition for symmetric compositions:
+Proposition 7.1 Let L
+X, L
+Y and L
+Z be general operators to which BCH can be
+applied, then deﬁning
+eh OL D e
+h
+2 L
+Xe
+h
+2 L
+YehL
+Ze
+h
+2 L
+Ye
+h
+2 L
+X;
+(7.26)
+gives
+OL D L
+0 C h2L
+2 C O.h4/;
+where
+L
+0 DL
+X C L
+Y C L
+Z;
+L
+2 D 1
+12
+
+ŒL
+Z; L
+Z; L
+Y	 C ŒL
+Y C L
+Z; L
+Y C L
+Z; L
+X	
+
+ 1
+24
+
+ŒL
+Y; L
+Y; L
+Z	 C ŒL
+X; L
+X; L
+Y C L
+Z	
+
+:

@@ -1,0 +1,99 @@
+304
+7
+Numerical Methods for Stochastic Molecular Dynamics
+Hence by rewriting the correction function as
+f2;1;OABAO D ˇ
+24
+
+3L
+AjrUj2  1
+3
+
+L
+A
+3
+U  2
+ˇ L
+AqU
+	
+C L
+A  ;
+we have
+NL
+Hf2;1;OABAO D ˇ
+24
+
+3MjrUj2  1
+3NU  2
+ˇ MqU
+	
+C M;
+where we abbreviate
+M .q/D NL
+HL
+A .q/D N
+
+.L
+A/2 C L
+BL
+A
+
+ .q/ D 1
+ˇ q .q/  rU  rq .q/;
+N .q/ D NL
+H.L
+A/3 .q/ D N
+
+.L
+A/4 C L
+B.L
+A/3
+ .q/ D 3
+ˇ M
+
+q .q/
+
+:
+Thus we have
+NL
+Hˇf2;1;OABAO D ˇ
+8 M
+
+jrUj2  1
+ˇ qU
+	
+C M;
+and hence by (7.36) we ﬁnally obtain
+.q/ D 1
+8
+
+qU  ˇjrUj2
+;
+where it is easily veriﬁed that hi D 0. This gives us our leading order solution
+f2;0;OABAO D 1
+8
+
+qU  ˇjrUj2
+:
+Applying the same procedure for the OBABO scheme yields
+f2;0;OBABO D 1
+8
+
+ˇjrUj2  2qU C c
+
+;
+where c D hUi is a constant chosen to ensure zero average. We can relate these
+schemes to their conjugate schemes with centralized OU update via Lemma 7.1 and
+Eq. (7.30), to give
+f2;0;ABOBA D 1
+8
+
+ˇpTr2U.q/p  2qU C c
+
+;
+f2;0;BAOAB D 1
+8
+
+U  ˇpTr2U.q/p
+
+:

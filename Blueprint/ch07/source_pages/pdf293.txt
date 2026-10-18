@@ -1,0 +1,74 @@
+272
+7
+Numerical Methods for Stochastic Molecular Dynamics
+When iterated n C 1 times, we can see the scheme OABA produces a mapping
+of the form
+
+U OABA
+h
+nC1
+D U A
+h=2 ı U B
+h=2 ı
+
+U BAOAB
+h
+n
+ı U B
+h=2 ı U A
+h=2 ı U O
+h ;
+therefore through a coordinate transformation the OABA method can be morphed
+into the BAOAB scheme. To put this another way, if we compute an iteration using
+OABA and simply evaluate it at different points within the step, we can recover
+the same results as the BAOAB method would provide. Another term to describe
+this relationship is to say that one method is conjugate to the other.
+7.3.2
+Other Langevin Integrators
+We may use our alphabet of A, B and O splitting pieces to create a wide variety
+of methods other than those given in the previous section (some requiring multiple
+force evaluations). However, it is not obvious that there is any gain in increasing the
+complexity of the splitting scheme (in terms of the length of its codifying string).
+Some popular methods can be rewritten in terms of this splitting, for example the
+scheme considered in [62] is equivalent to OBABO. Examples of methods based
+on this type of splitting were also proposed by De Fabritiis et al [96] and Thalmann
+and Farago [363], in the context of dissipative particle dynamics (see Chapter 8).
+Other Langevin dynamics splitting schemes in common use utilize a different
+additive decomposition of the SDE vector ﬁeld. For example, the Stochastic Position
+Verlet (SPV) method of [265] relies on the splitting strategy
+d
+q
+p
+
+D
+ M1p
+0
+
+dt C
+
+0
+rU.q/dt  
+pdt C M1=2dW
+
+:
+To solve the splitting piece including the stochastic dW term, we note that q does not
+change through its integration, and hence we may treat F D rU as constant during
+this part of the step. The exact solution is hence given through the usual Ornstein-
+Uhlenbeck formula, where the scheme itself derives from a symmetric integration
+of the two parts:
+Stochastic Position Verlet (SPV)
+qnC1=2 D qn C .h=2/M1pn
+pnC1 D eh
+pn  rU.qn/ C M1=2Rn
+qnC1 D qnC1=2 C .h=2/M1pnC1
+where  D .1eh
+/=
+,  D
+
+kBT
+
+1  e2
+h1=2. It is important to note that in the
+limit of inﬁnite friction, we have  ! 0 independent of the timestep h. This suggests
+that this splitting strategy is unsuitable for large choices of the parameter 
+ as the

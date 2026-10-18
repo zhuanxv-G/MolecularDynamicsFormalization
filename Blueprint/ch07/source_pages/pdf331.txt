@@ -1,0 +1,52 @@
+310
+7
+Numerical Methods for Stochastic Molecular Dynamics
+exploration rate. The spectral properties of the operator L
+LD guarantee that we will
+explore the entire phase space (ergodicity), while the relatively small perturbations
+to the operator induced by numerical discretization are hoped not to signiﬁcantly
+alter the rate of search. Ultimately, pushing the timestep up is the only way to
+breach timescale gaps when computing trajectories, although this comes at the cost
+of corruption of the long-time averages.
+The self-diffusion coefﬁcient gives a metric quantifying the diffusion rate. It is
+often used as a way to compare the rate of phase space exploration between methods,
+and is typically calculated using the integral of the velocity auto-correlation
+function. However, in theory one can construct arbitrary methods to artiﬁcially scale
+the velocity auto-correlation function, hence giving inaccurate diffusion constants:
+the momentum sampled may not be the momentum we use to propagate the position
+with.
+Indeed, calculating the temperature of the system from an average of kinetic
+energy by
+NdkBT D
+˝
+pTM1p
+˛
+;
+(7.41)
+gives a similar problem. Using Proposition 6.1 we may formulate many alternative
+functions whose averages are proportional to the system temperature [193, 211,
+319]. Such observables are normally based on the periodic forces of the system
+in order to work in periodic boundary conditions; in the following experiments we
+shall use the conﬁgurational temperature
+NdkBT D hq  rU.q/i:
+(7.42)
+Were one able to solve the dynamics exactly, the kinetic and conﬁgurational
+temperatures would of course be equal. However, using a numerical method in the
+large-timestep regime we instead sample expectations with respect to the perturbed
+density O, that may introduce discrepancies between conﬁgurational and kinetic
+temperatures. Often conﬁguration-based temperature calculation is more useful and
+relevant for assessing the quality of conﬁgurational sampling methods.
+In a similar way, the speed of exploration of the space should not be determined
+solely from functions of momentum. Far more reliable is to compute conﬁgurational
+quantities such as barrier crossing rates, passage times to reach some target region
+of phase space or the diffusion constant through an Einstein relation (which uses the
+position data).
+The friction parameter is free in Langevin dynamics when it is used purely as
+a sampling method; we know that for any 
+ > 0 we will obtain states from an
+approximate canonical distribution, though it is unclear what value of 
+ we should
+choose in our simulation. From our analysis in Sect. 7.9.3, we have seen that the
+BAOAB scheme has a superconvergence property in the limit of large friction,
+giving us higher accuracy O.h4/ conﬁgurational averages. However, it is unclear
+what the scheme’s behavior is in the middle-to-low friction limit, as we did not give

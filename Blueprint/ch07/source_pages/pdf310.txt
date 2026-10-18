@@ -1,0 +1,54 @@
+7.7
+The Evolution of the Distribution Using a Numerical Method
+289
+Similar computations give
+ŒL
+A; L
+O	 D 
+pq C 2qp;
+ŒL
+B; L
+O	 D 
+U0.q/p:
+To ﬁrst order, the discretization map corresponding to scheme OBA alters the
+phase space density at each step as if it were solving the time dependent PDE
+t D OL;
+where
+OLDL
+LD C h
+2
+
+pU00.q/p C U0.q/qC
+pq C 2qp C 
+U0.q/p
+
+C O.h2/:
+The validity of this sort of expansion, even for small h, should be considered
+carefully. Deﬁning
+L
+LD D L
+A C L
+B C L
+O
+as the Kolmogorov operator for Langevin dynamics, the assumption of validity
+becomes more credible as we ﬁnd that the operator L
+LD has a compact resolvent and
+therefore a discrete spectrum, i.e. simple eigenvalues, as discussed in the previous
+chapter. It will have one zero eigenvalue corresponding to the invariant density ˇ
+and all the remaining eigenvalues lie in the negative half plane. Of course it is not
+just this operator whose properties are important, but also all the other operators
+arising in the expansion, and bounding these in relation to L
+LD is not a simple task
+(particularly for higher orders).
+7.7.3
+Perturbation Technique
+Suppose we are able to derive a series expansion for OL of the form
+OL D L
+LD C hL
+1 C h2L
+2 C O.h3/;
+for some perturbation operators L
+i . We assume that the invariant density has a
+similar expansion in powers of the stepsize, of the form given in (7.17). Inserting
+this ansatz into the stationary Fokker-Planck equation
+OL O D 0;

@@ -1,0 +1,63 @@
+7.8
+First Order Schemes
+291
+7.8
+First Order Schemes
+Let us consider a scheme of the form XYZ, where each letter in the string is
+distinct and corresponds to one of the A, B or O Langevin splitting pieces (giving six
+possible schemes). Given the simple structure of the scheme, we expect to recover a
+ﬁrst order error in our invariant (long-time) averages. By composing the semigroup
+operators
+exp.hL
+XYZ/ D exp.hL
+Z/ exp.hL
+Y/ exp.hL
+X/;
+and computing the terms in the BCH expansion, we have
+OL
+XYZ D L
+LD C hL
+1;XYZ C O.h2/;
+where
+L
+1;XYZ D 1
+2
+
+ŒL
+X; L
+Y	 C ŒL
+X; L
+Z	 C ŒL
+Y; L
+Z	
+
+:
+(7.20)
+The ﬁrst order correction function for this scheme is then given by the particular
+solution to the PDE,
+L
+LD
+
+f1;XYZˇ
+
+D L
+1;XYZˇ:
+(7.21)
+The general solution of (7.21) will consist of the sum of the homogeneous solution
+f ŒHS	
+1;XYZ.q; p/ and particular solution f ŒPS	
+1;XYZ.q; p/ in the usual way. However, since
+L
+LD# D 0 has as its only solution # / ˇ, the homogeneous solution of (7.21) is
+f ŒHS	
+1;XYZ.q; p/ D c;
+for some constant c. Our assumption that hf1;XYZi D 0 means that c D hf ŒPS	
+1;XYZi,
+and hence we only require a particular solution f ŒPS	
+1;XYZ.q; p/.
+Thus for any ﬁrst order scheme our line of attack will be to compute the
+perturbation operator L
+1, plug it into the right hand side and solve the PDE to ﬁnd
+the suitable correction function. It turns out that this is not so difﬁcult at leading
+order, for simple ﬁrst order schemes such as this. However at higher orders the
+complexity of the terms often limits our progress.

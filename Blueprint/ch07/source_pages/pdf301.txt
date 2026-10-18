@@ -1,0 +1,103 @@
+280
+7
+Numerical Methods for Stochastic Molecular Dynamics
+We ﬁnd that truncating the update equations to O."3/ is sufﬁcient to explicitly
+resolve the leading order behavior of the error for these discretization schemes, and
+we give the differences between observed numerical averages and exact averages
+below:
+hq2iABOBA
+h
+ hq2i D 3h2"
+
+48"  4 C 3
+2.9"  1/
+
+12
+2 C 16
+C O."h4 C "3h2/;
+hq2iBAOAB
+h
+ hq2i D  9h2"2
+6
+2 C 8  3h4"2 
+6
+4 C 19
+2 C 16
+8 .3
+2 C 4/2
+C O."2h6 C "3h2/;
+hq2iOBABO
+h
+ hq2i D h2
+ 
+1
+4 C "
+
+144" C 81"
+2  9
+2  12
+
+12
+2 C 16
+!
+C O.h4 C "3h2/;
+hq2iOABAO
+h
+ hq2i D h2
+1
+4 C
+18"2
+12
+2 C 16
+	
+C O.h4 C "3h2/:
+(7.14)
+The behavior of the methods can thus be summarized as
+ˇˇˇhq2iABOBA
+h
+ hq2i
+ˇˇˇ D O
+
+"h2
+;
+ˇˇˇhq2iBAOAB
+h
+ hq2i
+ˇˇˇ D O
+ "2h2
+1 C 
+2 C "2h4
+	
+;
+ˇˇˇhq2iOBABO
+h
+ hq2i
+ˇˇˇ D O
+
+h2
+;
+ˇˇˇhq2iOABAO
+h
+ hq2i
+ˇˇˇ D O
+
+h2
+:
+(7.15)
+We would expect that both the ABOBA and BAOAB schemes would have a
+leading error term proportional to ", given that it was shown in Table 7.1 that in the
+pure harmonic case (at " D 0) these methods give perfect sampling. The twofold
+surprising result though, is that (a) the leading error of the BAOAB scheme has
+behavior proportional to "2, while (b) the leading order term of the BAOAB
+scheme is annihilated for large 
+.
+It would seem that by ordering the A, B and O update terms favourably in an
+algorithm we are able to achieve signiﬁcant sampling improvements on systems
+that are “nearly harmonic”, at no extra cost (in terms of force evaluations).
+To illustrate this numerically, we use each of the four given second order methods
+to compute the absolute error in hq2ih using the one dimensional perturbed harmonic
+oscillator with Hamiltonian given in (7.13) at a range of timesteps h 2 Œ0:1; 2	 and
+nonlinearity parameters " 2 Œ0:0001; 1	. We choose ˇ D 
+ D 1 for all experiments,
+and run the schemes using each parameter set for a ﬁxed time window of length 108.
+The results are shown in Fig. 7.3, and qualitatively agree with the results of (7.15).

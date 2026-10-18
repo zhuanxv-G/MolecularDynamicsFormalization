@@ -1,0 +1,52 @@
+282
+7
+Numerical Methods for Stochastic Molecular Dynamics
+deterministic Hamiltonian system taken ﬁrst, followed by the Ornstein-Uhlenbeck
+equation for p. The ﬂows of each of these systems individually preserves the Gibbs
+distribution: denoting the Fokker-Planck operators associated to these ﬂows by L
+H
+and L
+O we have
+L
+Hˇ D 0;
+L
+Oˇ D 0;
+and hence
+exp.tL
+H/ˇ D exp.tL
+O/ˇ D ˇ:
+We can consider the propagation of measure resulting from a numerical discretiza-
+tion deﬁned by the composition of these two pieces. For a scheme HO, we have
+the distribution ﬁrst propagated under Hamiltonian dynamics, and then the momenta
+are evolved as the solution to the Ornstein-Uhlenbeck process, which clearly will
+preserve the Gibbs measure
+exp.hL
+O/
+
+exp.hL
+H/ˇ
+
+D exp.hL
+O/ˇ D ˇ:
+The problem with this “method” is of course that it requires the exact ﬂow map
+of the Hamiltonian system. However, this requirement can be relaxed. Given any
+divergence free vector ﬁeld f, we have
+r  .f/ D f  r;
+thus
+L
+f  D Lf:
+If Lf preserves a ﬁrst integral I, then Lf preserves any distribution which is a
+function of I. It follows that any energy-preserving, divergence free vector ﬁeld
+will always preserve the Gibbs distribution.
+All symplectic methods preserve the volume, but for a system with no ﬁrst
+integrals except the energy, it is known from a theorem of Ge and Marsden [400]
+that a symplectic method cannot preserve the system energy exactly (unless the
+symplectic method is itself a time-reparameterization of the exact solution). The
+options for volume preserving non-symplectic discretization methods that conserve
+energy exactly are limited (standard form schemes that rely on calculation of the
+vector ﬁeld at a few points cannot achieve this [380]).
+A class of methods that do provide the necessary features can be found in the
+work of Feng Kang [133], referred to as J-splitting by McLachlan and Quispel [261].
+Let J be the skew-symmetric canonical symplectic structure matrix. The idea is to
+consider a splitting of J into a ﬁnite number K of skew-symmetric matrices Ji,
+i D 1; : : : ; K. This induces a splitting of the Hamiltonian vector ﬁeld into K vector

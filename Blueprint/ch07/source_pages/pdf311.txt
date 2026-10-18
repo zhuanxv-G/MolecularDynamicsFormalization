@@ -1,0 +1,57 @@
+290
+7
+Numerical Methods for Stochastic Molecular Dynamics
+we obtain
+
+L
+LD C hL
+1 C h2L
+2 C O.h3/
+ 
+ˇŒ1 C hf1 C h2f2 C O.h3/	
+
+D 0:
+Combining like powers, we have at zero’th order, the equation
+L
+LDˇ D 0;
+which we know to hold since Langevin dynamics preserves the canonical ensemble.
+At ﬁrst order we obtain
+L
+LD.ˇf1/ C L
+1ˇ D 0:
+(7.19)
+If L
+1 is known, we can calculate its action on ˇ, giving an inhomogeneity for
+the above partial differential equation. It will be difﬁcult to solve the perturbation
+equation (7.19) in general, although its linearity and the fact that L
+LD (with our
+assumptions) has a compact resolvent (and therefore a discrete spectrum) together
+imply that if the perturbation can be bounded, then it should be possible to solve for
+the correction function. We expect that this solution should be stable with respect
+to perturbation (and exponentially attracting). This also implies global existence
+(for all positive time) of the semigroup deﬁning the solution of the time-dependent
+problem. We do not provide such a rigorous result here but simply plunge ahead,
+in the best tradition of applied mathematics, to obtain a perturbative expansion;
+veriﬁcation of our results must therefore be obtained by numerical experiment, a
+posteriori.
+The leading order errors can be computed in simulation by exploiting the speciﬁc
+form of our ansatz for the invariant measure associated to the discretized dynamics.
+For some observable #.q; p/, we have that
+h#ih D
+Z
+D
+#.q; p/ O.q; p/d!;
+D
+Z
+D
+#.q; p/ˇ.q; p/.1 C hf1.q; p/ C h2f2.q; p/ C : : :/d!;
+D
+Z
+D
+#.q; p/ˇ.q; p/d! C h
+Z
+D
+#.q; p/f1.q; p/ˇ.q; p/d! C : : : ;
+D h#i C hh#f1i C h2h#f2i C : : : :
+Hence by obtaining the correction functions fi, we are able to apply a modiﬁcation
+to our computed expectation in order to recover the true canonical average.

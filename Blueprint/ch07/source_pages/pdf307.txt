@@ -1,0 +1,56 @@
+286
+7
+Numerical Methods for Stochastic Molecular Dynamics
+with the important case of its invariant distribution satisfying the partial differential
+equation
+OL O D 0:
+Our goal in the following section is to ﬁnd
+OL and solve the PDE for the
+distribution O by using our ansatz (7.17). The solution gives us the corrupted
+invariant distribution sampled by our numerical scheme, allowing us to correct
+our observed averages to achieve more accurate results. It also gives us a way of
+evaluating which schemes are best for sampling, by evaluating the error introduced
+by the discretization.
+The terms of the perturbation expansion for OL can be computed using the Baker-
+Campbell-Hausdorff(BCH) expansion already introduced in Chap. 3. Recall that for
+linear operators X and Y, we can write the composition of their exponentials as
+exp .hX/ exp .hY/ D exp .hZ/ ;
+where we have the expansion
+Z D X C Y C h
+2ŒX; Y	 C h2
+12 .ŒX; ŒX; Y		 C ŒY; ŒY; X		/ C O.h3/:
+The notation ŒX; Y	
+def
+D XY  YX represents the commutator of the operators X
+and Y. By repeated application of the BCH formula, we can obtain such an
+expansion for any splitting-based method, however the terms grow in complexity
+at successive powers of h, requiring commutators of increasing length that make
+computation cumbersome. Additionally any careful mathematician should question
+the convergence of this sequence when computing OL, as we deal only with formal
+series that offer no guidance on the boundedness of the resulting terms, which will
+involve high order derivatives in both q and p.
+To offer some reassurance, let us deﬁne the evolution operator for our numerical
+method as
+Pt D et OL D etL1etL2 : : : etLk;
+where the numerical method has k-many stages with each Li proportional to one of
+LA, LB and LO. We can make use of Taylor’s theorem to write the identity
+Ph D P0 C h dPt
+dt
+ˇˇˇˇ
+tD0
+C : : : C hn
+nŠ
+dnPt
+dtn
+ˇˇˇˇ
+tD0
+C hnC1
+nŠ
+1
+Z
+0
+.1  /n dnC1Pt
+dtnC1
+ˇˇˇˇ
+tDh
+d;

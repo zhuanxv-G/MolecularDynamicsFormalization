@@ -1,0 +1,91 @@
+7.13
+Multiple Timestepping
+327
+When choosing the two noises to be independent, the BBK scheme will produce
+an error independent of stepsize h. Modifying the given noise processes in (c)
+such that ER2
+nC1=2 D ER2
+n D , ﬁnd a  > 0 that recovers canonical sampling
+when h is small.
+2. Consider the Stochastic Position Verlet (SPV) splitting method deﬁned in
+Sect. 7.3.2.
+a. For the one dimensional harmonic oscillator, ﬁnd the values of hq2ih , hp2ih
+and hqpih when using the SPV scheme.
+b. Find the leading order error in hq2ih for the perturbed harmonic oscillator with
+potential energy function U.q/ D q2=2 C "q4=4.
+3. We were able to use Lemma 7.1 to relate the schemes with central OU update
+to those with OU updates at the ends, however we could have continued to solve
+the original PDEs instead.
+a. Compute L
+2;ABOBAˇ and L
+2;BAOABˇ.
+b. Verify that the Fredholm alternative is satisﬁed.
+4. Consider the GLA schemes of the form OXYX, making the ansatz that the
+invariant distribution is
+O D ˇ.1 C hf1;OXYX C h2f2;OXYX C h3f3;OXYX C : : :/:
+a. Verify that f1;OABA D f1;OBAB D 0.
+b. Using the results of Lemma 7.1, ﬁnd f2;OABA and f2;OBAB in terms of
+f2;OABAO and f2;OABAO.
+c. Find the third order correction f3;OABA and f3;OBAB in terms of f2;OABAO
+and f2;OABAO.
+5. Write out the limiting schemes for the OAB and OBA methods and verify
+that they are inconsistent with the dynamics by comparing them to the Euler-
+Maruyama scheme.
+6. Consider the Langevin dynamics splitting strategy
+d
+q
+p
+
+D
+ M1p
+0
+
+dt
+„
+ƒ‚
+…
+A
+C
+
+0
+rU
+
+dt
+„
+ƒ‚
+…
+B
+C
+
+0
+
+p
+
+dt
+„
+ƒ‚
+…
+C
+C
+
+0
+p2
+kBTM1=2
+
+dW
+„
+ƒ‚
+…
+D
+:
+a. Find L
+C and L
+D.
+b. Write down the scheme corresponding to ABCD, and compute L
+ABCD to
+ﬁrst order for q and p 2 R.
+c. Using your answer to (b.), compute the ﬁrst order correction function for the
+method ABCD by considering the solution to L
+ABCD D 0.
+d. What behavior do you expect in the limit of large friction 
+?

@@ -1,0 +1,74 @@
+276
+7
+Numerical Methods for Stochastic Molecular Dynamics
+with  D
+
+kBT
+
+1  e2
+h1=2, and Rn a vector of unit normal random numbers.
+We can write this update scheme succinctly as
+qnC1 D qn C hM1pn;
+pnC1 D eh
+pn  heh
+rU.qn C hM1pn/ C M1=2Rn:
+In the case of the one-dimensional harmonic oscillator, we have U0.q/ D ˝2q,
+yielding the compact form of one iteration as
+ qnC1
+pnC1
+
+D
+
+1
+h=m
+˝2heh
+ .1  ˝2h2=m/eh
+  qn
+pn
+
+C
+
+0
+m1=2Rn
+
+:
+(7.12)
+Taking expectations of (7.12) and then taking the limit as n ! 1, we see
+immediately that
+hqiABO
+h
+D hpiABO
+h
+D 0;
+as E.Rn/ D 0. Plugging the values for ij into (7.11), with
+N11 D N12 D 0;
+N22 D m2;
+we can solve to ﬁnd the exact value of the method’s stationary averages. For
+example, the relative increase in the variance of position is computed for the ABO
+scheme as
+hq2iABO
+h
+hq2i
+D
+eh
+m.1 C eh
+/2
+2m.1 C eh
+/  h2˝2eh
+D 1 C 
+h=2 C .˝2 C 
+2m/h2=.4m/ C O.h3/:
+Hence we can see that the ABO scheme gives a ﬁrst-order error in the variance
+of q. For signiﬁcantly small friction (relative to h), the leading order term will be
+dominated by the term at order h2, potentially giving us greater accuracy than we
+would expect from a ﬁrst order scheme.
+However, we see that the error grows exponentially as 
+ gets large. We can
+explain this by returning to the deﬁnition of the scheme, which has an O step
+(stochastic ﬂuctuation) immediately preceding the only A step (drift), wiping out
+all force information for inﬁnite friction. In practice, playing with the friction
+coefﬁcient can affect the rate at which averages converge towards the invariant
+average.
+From the work in Chap.3, we may expect that performing the integration
+steps symmetrically (by using a Strang splitting) could provide desirable higher
+order behavior. Computing the coefﬁcients in (7.11) for the each of the symmetric

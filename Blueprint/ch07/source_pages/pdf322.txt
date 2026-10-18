@@ -1,0 +1,61 @@
+7.9
+Error Expansion for Symmetric Langevin Methods
+301
+the correction for the schemes with a central O update can be expressed as
+f2;ABOBA D f2;OBABO  ˇ
+8
+
+jrU.q/j2  pTr2Up
+
+;
+(7.30a)
+f2;BAOAB D f2;OABAO C ˇ
+8
+jrU.q/j2  pTr2Up :
+(7.30b)
+Thus we need only compute the solutions to the simpler PDE (7.29), in order to
+relate the solutions of the conjugate schemes with centralized OU update. However,
+although this simpliﬁes our task greatly, ﬁnding the general solution to (7.29) is still
+very challenging, and obtaining a closed form expression for the correction function
+is nontrivial.
+7.9.2
+Expansion in Powers of 1
+Although we do not give the general analytical solution to the partial differential
+equation of
+(7.28) for each of the four symmetric Langevin schemes we are
+considering, we can easily ﬁnd a solution in an important limiting case: the high
+friction regime. We consider expanding f2 into a series involving the reciprocal
+friction " D 1=
+, and assume that for large friction our ansatz remains sensible.
+We will denote
+f2.q; p/ D f2;0.q; p/ C "f2;1.q; p/ C "2f2;2.q; p/ C : : :
+(7.31)
+with each hf2;ii D 0. Dividing by the friction in (7.28) we obtain
+
+NL
+O C "L
+H
+ 
+f2ˇ
+
+D "L
+2ˇ;
+where NL
+O is independent of the friction
+NL
+O# D "L
+O# D rp  .p#/ C 1
+ˇ p#:
+From our earlier computation in (7.29), we can write
+L
+2;OABAOˇ D w.q; p/ˇ;
+for w.q; p/ independent of the friction
+w.q; p/ D  ˇ
+24
+
+6pT 
+r2U
+
+rU  r3U W p ˝ p ˝ p
+
+:

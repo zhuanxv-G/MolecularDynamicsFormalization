@@ -1,0 +1,130 @@
+302
+7
+Numerical Methods for Stochastic Molecular Dynamics
+Hence we have
+
+NL
+O C "L
+H
+ 
+ˇ.f2;0;OABAO.q; p/ C "f2;1;OABAO.q; p/C : : :/
+
+D  "w.q; p/ˇ;
+and equating powers of the reciprocal friction " gives us a sequence of equations to
+solve
+Order 1:
+NL
+O
+
+ˇf2;0;OABAO
+
+D 0;
+Order ":
+L
+H
+
+ˇf2;0;OABAO
+
+C NL
+O
+
+ˇf2;1;OABAO
+
+D w.q; p/ˇ;
+Order "2:
+L
+H
+
+ˇf2;1;OABAO
+
+C NL
+O
+
+ˇf2;2;OABAO
+
+D 0;
+Order "3:
+L
+H
+
+ˇf2;2;OABAO
+
+C NL
+O
+
+ˇf2;3;OABAO
+
+D 0;
+:::
+The ﬁrst equation at order one tells us that f2;0;OABAO.q; p/ must be a function of
+position only, as the kernel of NL
+O is the set of functions that are constant with respect
+to p. Hence we shall denote
+f2;0;OABAO.q; p/ D .q/;
+where we our goal is now to explicitly ﬁnd .q/. Unfortunately, .q/ is not explicitly
+determined at this point, we only know that it is a function of position only such that
+hi D 0. This function will be determined as we solve the higher order equations.
+In order to determine .q/, we will have to solve the next PDE at order ",
+NL
+O
+ˇf2;1;OABAO
+ C L
+H
+ˇf2;0;OABAO
+ D w.q; p/ˇ;
+(7.32)
+where we will make use of the formulas
+NL
+O
+
+ˇr3U W p ˝ p ˝ p
+
+D 3ˇr3U W p ˝ p ˝ p C 6ˇ
+ˇ pTrqqU;
+NL
+O
+
+ˇpTrqqU
+
+D ˇpTrqqU;
+NL
+O
+
+ˇpT 
+r2U
+
+rU
+
+D ˇpT 
+r2U
+
+rU;
+to write
+w.q; p/ˇ D ˇ
+24
+NL
+O
+
+6pT r2U rU  1
+3r3U W p ˝ p ˝ p  2
+ˇ pTrqqU
+
+ˇ
+	
+:
+(7.33)
+Additionally, for .q/ we have the identity
+L
+H
+
+ˇ
+
+D pTrˇ D NL
+O
+
+pTr C .q/
+
+ˇ
+
+;
+(7.34)

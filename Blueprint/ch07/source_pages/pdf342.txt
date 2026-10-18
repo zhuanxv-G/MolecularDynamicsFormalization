@@ -1,0 +1,48 @@
+7.12
+Constrained Langevin Dynamics
+321
+1ns equilibration period. Full electrostatics were computed using the native NAMD
+MGRID force routines, while the corresponding geodesic drift step (the ‘A’ step)
+was computed using the built-in SETTLE algorithm [274]. We would not expect
+any differences from using a RATTLE-style algorithm to compute the drift instead.
+We would expect the c-OBABO scheme to give very similar results to the
+‘Midpoint Euler - Verlet - Midpoint Euler’ (MEVME) algorithm in [232], as
+both schemes follow the same symmetric update form: ‘ﬂuctuate-kick-drift-kick-
+ﬂuctuate’. However, as the ‘ﬂuctuate’ step (Ornstein-Uhlenbeck process) is solved
+exactly in the c-OBABO scheme, at large friction values 
+ we would expect that
+the MEVME scheme would give inferior sampling while being constrained by the
+stability condition (7.46). There is an additional subtle difference in that we do
+not solve a geodesic drift in the MEVME scheme, but adjust the momentum in
+the preceding kick step to remain on the constraint manifold. While it is difﬁcult
+to quantify what difference this would make to the overall results, modifying a
+scheme to include a geodesic solve should never reduce the accuracy of the scheme.
+Hence we would expect the c-OBABO method to give equivalent, if not superior,
+sampling to MEVME.
+As in the unconstrained experiment reported in Fig. 7.10, we compute the
+averages of kinetic and potential energy functions, averaged over ﬁve independent
+runs, at friction parameters 0:2=ps and 5=ps, using ten different stepsizes with the
+lowest 2:5 fs and increasing by 17 % up to 10:3 fs (note that this range of stepsizes is
+much increased from the unconstrained tests). Computed averages are compared to
+baseline results averaged over ﬁve runs using the c-BAOAB scheme with stepsize
+h D 1fs and 
+ D 1=ps.
+In Fig. 7.11 we plot the computed averages of potential and kinetic energies using
+either the c-OBABO scheme, or the c-BAOAB scheme. Surprisingly for such a
+short experiment, we are able to resolve the second order behavior of either potential
+or kinetic energy for each method due to the dominance in discretization error. The
+results also mirror the ﬂexible case: the c-BAOAB scheme gives a strong second
+order result for kinetic energy, while the c-OBABO scheme is second order for
+the potential energy. However, as expected we are unable to resolve the higher
+order behavior due possibly to the presence of statistical noise, and can only show
+a dramatic difference between the methods in terms of the evident error. Due to the
+poor resolution, it is difﬁcult to see clear differences in the results as we change the
+Langevin dynamics friction parameter 
+, although it is evident in the c-BAOAB
+case that increasing friction offers a small increase in stepsize. The only signiﬁcant
+difference was noted at the largest stepsize tested, where the c-BAOAB scheme
+performed markedly better at larger friction.
+It is clear that the c-BAOAB scheme gives a superior calculation of the average
+of potential energy (the computed distributions are plotted in Fig. 7.12), with an
+apparent order of magnitude improvement in the error compared to c-OBABO.
+Additionally it allows for a signiﬁcant improvement in stability between the two

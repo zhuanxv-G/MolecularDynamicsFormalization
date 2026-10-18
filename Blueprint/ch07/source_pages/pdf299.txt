@@ -1,0 +1,110 @@
+278
+7
+Numerical Methods for Stochastic Molecular Dynamics
+numbers between iterations to give a small computational saving. We can see that
+only one vector of random numbers is generated per iteration, with the new vector of
+random numbers being used in the following iteration. This gives some correlation
+between steps that complicates our analysis a little.
+If we wish to ﬁnd the perfect sampling bias in the case of the one-dimensional
+harmonic oscillator, we can apply this technique to ﬁnd the invariant averages under
+this scheme. We have
+ BBK* D
+2
+4
+1  h2˝2
+2m
+h
+m
+
+1  
+h
+2
+
+h˝2
+2m
+
+h2˝24m
+2C
+h
+ .2
+h/.2mh2˝2/
+2m.2C
+h/
+3
+5 ;
+BBK*
+n
+D
+2
+4
+q
+kBT
+h3
+2m
+Rn
+p2kBT
+hm
+2C
+h
+
+1  h2˝2
+2m
+
+Rn C RnC1
+
+3
+5 D
+
+1Rn
+2Rn C 3RnC1
+
+;
+using the notation in (7.7). Taking expectations of the resulting equations, we can
+compute the values of the constants in (7.8)–(7.10) and solve to ﬁnd the long-
+time averages. Care must be taken however, as unlike the schemes using the ABO
+splitting we must include some correlation between steps. Denoting the entries of
+ BBK* by ij we have
+E.n;2pn/ D E ..2Rn C 3RnC1/ . 21qn1 C 22pn1 C 2Rn1 C 3Rn// ;
+D 23:
+This additional quantity will slightly change the expectation of (7.9) compared to the
+standard BBK method, and hence the overall averages of the scheme. Additionally
+it is easily shown that
+E.n;1qn/ D E.n;2qn/ D 0;
+E.n;1pn/ D 13;
+with
+E.2
+n;1/ D 2
+1;
+E.n;1n;2/ D 12;
+E.2
+n;2/ D 2
+2 C 2
+3:
+Thus taking expectations of (7.8)–(7.10) and substituting in the constants gives
+hq2iBBK*
+h
+D 2
+11hq2iBBK*
+h
+C 2
+12hp2iBBK*
+h
+C 2 11 12hqpiBBK*
+h
+C 2 1212 1213
+C 2
+1;
+hp2iBBK*
+h
+D 2
+21hq2iBBK*
+h
+C 2
+22hp2iBBK*
+h
+C 2 21 22hqpiBBK*
+h
+C 2 2222 2223
+C 2
+2 C 2
+3;

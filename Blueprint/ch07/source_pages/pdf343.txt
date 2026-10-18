@@ -1,0 +1,97 @@
+322
+7
+Numerical Methods for Stochastic Molecular Dynamics
+Average Potential Energy
+Average Kinetic Energy
+Stepsize (fs)
+Relative error
+3
+5
+8
+4
+6
+7
+9 10
+2
+10-2
+10-3
+10-4
+10-5
+10-1
+10-2
+10-3
+10-4
+10-1
+10-6
+Stepsize (fs)
+3
+5
+8
+4
+6
+7
+9 10
+2
+Relative error
+Second order
+Second order
+γ=0.2/ps
+γ=5/ps
+γ=0.2/ps
+γ=5/ps
+c- BAOAB
+c- BAOAB :
+c- BAOAB :
+c- OBABO
+c- OBABO :
+c- OBABO :
+Fig. 7.11 The error in the computed average kinetic and potential energies for a box of 233
+rigid water molecules is compared for the two schemes using varying stepsizes. The c-OBABO
+scheme clearly provides superior averages of the kinetic energy, while the c-BAOAB scheme
+gives considerably improved results for the average potential energy
+Potential Energy (kCal/mol)
+-2250
+-2200
+-2150
+-2100
+-2050
+-2000
+Potential Energy (kCal/mol)
+-2250
+-2200
+-2150
+-2100
+-2050
+-2000
+Potential Energy (kCal/mol)
+-2250
+-2200
+-2150
+-2100
+-2050
+-2000
+Potential Energy (kCal/mol)
+-2250
+-2200
+-2150
+-2100
+-2050
+-2000
+γ=0.2/ps
+γ=5/ps
+γ=0.2/ps
+γ=5/ps
+c- BAOAB
+c- BAOAB
+c- OBABO
+c- OBABO
+Fig. 7.12 We plot the normalized potential energy distributions for simulations of water using the
+schemes (c-BAOAB left, c-OBABO right) and friction parameters (
+ D 0:2=ps top, 
+ D 5=ps
+bottom) with distributions colored by increasing step size (2:5 fs in blue to 10:3 fs in red) with
+successive lines indicating a 17 % increase in the step size. The baseline distribution is plotted as a
+black dashed line
+schemes; the c-OBABO scheme became unstable around h D 7 fs, while we were
+able to increase the timestep for the c-BAOAB to beyond h D 9 fs without obvious
+reprecussions.

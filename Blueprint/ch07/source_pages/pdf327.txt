@@ -1,0 +1,44 @@
+306
+7
+Numerical Methods for Stochastic Molecular Dynamics
+Thus we expect that the BAOAB scheme recovers O.h4/ conﬁgurational averages
+in the limit of inﬁnite friction. This scheme requires no extra force evaluations, and
+this particular feature appears to simply be a serendipitous result of the form of the
+correction function.
+This is a property common to no other Langevin splitting scheme that we are
+aware of. Though curiously its conjugate method, the OABAO scheme, has the
+property
+Z
+Q
+f2;0;OABAO.q; p/ˇ.q; p/d!q D 0;
+implying that we obtain high-order averages for functions purely of the momenta
+in the limit of inﬁnite friction. However, as the momenta are always Gaussian
+distributed in canonical sampling, we are far more interested in functions of position
+to high accuracy (and sampling exp.ˇU.q// rather than the Gaussian-distributed
+momenta).
+It is important to note that this superconvergence property is only present in
+the limit of large time, i.e. this is an attribute of the invariant distribution of the
+discretization schemes O. As such, there are no bonuses to the weak or strong order
+of the superconvergent schemes, though equally there is no added cost to using the
+methods.
+All of the symmetric splitting schemes discussed are very easy to implement
+relative to other popular Langevin integrators, as many codes already implement
+the standard velocity Verlet BAB style integration. An exact Ornstein-Uhlenbeck
+solve can be added where it is required in the scheme in order to effectively integrate
+Langevin dynamics: then setting 
+ D 0 reduces the integrator to a standard Verlet
+scheme, integrating deterministic Newtonian dynamics.
+7.10
+The Limit Method
+We now consider schemes in the limit 
+ ! 1, where the exact solution of the
+vector OU process reduces to redrawing momenta from the canonical distribution,
+so pnC1 D pkBTM1=2R, where R is a vector of i.i.d. normal random numbers.
+Alternatively, we could consider the limit of the particle mass going to 0, although
+this requires a reformulation of Langevin dynamics (7.4) so that the friction is
+proportional to the velocity instead of the momentum [233]. Whichever limit
+is taken, we would expect the ultimate result to be the same. (Here we have
+reintroduced the masses in order to present the method, since they may be useful
+scaling parameters in simulation.)
+The ﬁrst order schemes of the form XYZ, as well as schemes such as
+XOYOX are not consistent in this overdamped limit: the errors in computed

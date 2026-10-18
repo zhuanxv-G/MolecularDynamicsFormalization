@@ -1,0 +1,81 @@
+288
+7
+Numerical Methods for Stochastic Molecular Dynamics
+expansion of the SDE method. The series expansion is therefore not particularly
+informative on its own, but only in relation to its action on some particular
+distribution.
+A simple ﬁrst order example of a Langevin dynamics integrator is the method
+obtained by composing one of the Symplectic Euler variants with an Ornstein-
+Uhlenbeck step. To get a feel for how the expansion goes, let us work out its terms
+for such a splitting scheme in the case of a one degree of freedom model with unit
+mass: H D p2=2 CU.q/. To be explicit, let us say our numerical method ﬁrst solves
+exactly the OU process, then evaluates the impulse due to the force U0.q/ and
+lastly drifts in position space according to the momentum. This method is denoted in
+our notation as OBA, where the evolution of measure in one step can be computed
+by writing
+exp.h OL
+OBA/ D exp.hL
+A/ exp.hL
+B/ exp.hL
+O/:
+In this one dimensional example, we substitute
+Z D L
+A D p @
+@q;
+Y D L
+B D U0.q/ @
+@p;
+X D L
+O D 
+
+Id C p @
+@p
+	
+C 2
+2
+@2
+@p2 ;
+into (7.18), where  D p2
+kBT. This gives us an expansion for the Kolmogorov
+operator for our discretized map
+OL
+OBA D S D L
+A C L
+B C L
+O C h
+2
+
+ŒL
+A; L
+B	 C ŒL
+A; L
+O	 C ŒL
+B; L
+O	
+
+C : : :
+It is clear that even writing out the O.h2/ terms considerably increases the
+complexity of the right hand side.
+The commutators are best considered in relation to their action on a function (or
+rather, their action on a density) .q; p/. For example, we may compute directly
+ŒL
+A; L
+B	 D p @
+@q
+
+U0.q/@
+@p
+	
+ U0.q/ @
+@p
+
+p@
+@q
+	
+D p.U0.q/p/q C U0.q/.pq/p;
+D pU00.q/p  pU0.q/pq C U0.q/q C U0.q/pqp:
+As this is the commutator of two 1st order differential operators, the mixed partial
+term vanishes, leaving
+ŒL
+A; L
+B	 D pU00.q/p C U0.q/q:

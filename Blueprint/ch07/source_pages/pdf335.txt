@@ -1,0 +1,37 @@
+314
+7
+Numerical Methods for Stochastic Molecular Dynamics
+Fig. 7.8 Alanine dipeptide in solvent
+reasonable results for all previous simulations in vacuum. We consider a range
+of timesteps, starting from h D 1 fs, with subsequent simulations increasing the
+step size by 5 %, until reaching a step size where all of the methods fail. This was
+found after 22 such increments in the timestep, giving a maximum stable step size
+of approximately 2:8 fs for this model. Note that this is a smaller maximum stepsize
+than we found in the vacuum case (where some schemes were stable at over 3 fs),
+due to the high frequency H-O bonds found in the water molecules.
+Each simulation was run for 5 ns at 300 K using spherical (harmonically
+restrained) boundary conditions to maintain the shape of the droplet. The boundary
+conditions have no effect unless atoms stray out of the 10 Å droplet, at which point
+a harmonic force pulls them back in. These boundary conditions are considered
+gentle enough to not signiﬁcantly alter the behavior of the schemes (the restraining
+energy was very small in all simulations). It should be noted that, in a realistic
+molecular dynamics simulation, periodic boundary conditions are implemented,
+requiring some special treatment of the force calculation to account (for example)
+for long ranged interactions from the periodic images. Using spherical boundary
+conditions instead provides a compromise between making the system complex
+enough to be interesting (and relevant), while keeping it simple enough to allow for
+highly resolved statistics.
+We compute a histogram of the distribution of potential energy for each
+simulation, by dividing the interval Œ1;500; 1;000	 (kcal/mol) into 150 bins and
+normalizing the resulting distribution. We compare the computed distributions with
+a baseline distribution computed using a SPV simulation at h D 0:5 fs. We plot all
+of the resulting histograms in Fig. 7.9, coloring the results according to the step size
+used to obtain them (increasing step size is marked from blue to red), overlaying the
+exact distribution in black.
+The ABOBA and SPV schemes perform very well, with only a noticeable
+difference from the exact distribution as the step size approaches its stability limit.
+Some schemes, such as BBK or OABAO perform very poorly, with even the
+smallest step sizes tested giving a visible difference between the distributions. This
+indicates that the system is able to access much higher energy states than it would
+do in exact sampling. At the highest step sizes the exact and observed distributions
+have very little overlap, suggesting a complete failure to sample the system.

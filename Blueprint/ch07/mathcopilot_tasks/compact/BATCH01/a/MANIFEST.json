@@ -1,0 +1,45 @@
+{
+  "batch": "BATCH01",
+  "subtask": "BATCH01a",
+  "source_ids": [
+    "MD-7.1-Bias"
+  ],
+  "input_sha256": {
+    "Blueprint/Ch07.lean": "7e7fe31c5416515d30db22c5e3aeadf5717d82fdff4f0cf5f1055cd9e4b7bcad",
+    "blueprint/ch07/ch07_source.json": "3735f5583fd7446ae6bffa22f18e34bf503b59f7727811bacf75c32d83a1b298",
+    "BATCH01a_PAGES.pdf": "50b66d3359f6af0af9b02f7da97ba2ab9cd8e645cf73a33e247790bbb2c4c984"
+  },
+  "page_mapping": [
+    {
+      "attachment_page": 1,
+      "original_pdf_page": 284,
+      "printed_page": 263
+    }
+  ],
+  "definition_excerpts": [
+    {
+      "full_name": "MD.Ch07.bias",
+      "kind": "def",
+      "path": "Blueprint/Ch07.lean",
+      "line": 15,
+      "code_sha256": "9379b2023224de49efd2c0973ce1f42b80ddf08c504eff1d57e4fa7152c03649"
+    }
+  ],
+  "validation": {
+    "project_constant_closure": "PASS",
+    "missing_project_definitions": [],
+    "full_page_render_equality_dpi": 72,
+    "website_submitted": false
+  },
+  "files": {
+    "PASTE.txt": {
+      "bytes": 2749,
+      "sha256": "43bf4c96b5f65a4aae9c53f6f789a6a80da7d0e88b79bc1b42c87289604d9367"
+    },
+    "BATCH01a_PAGES.pdf": {
+      "bytes": 123132,
+      "sha256": "50b66d3359f6af0af9b02f7da97ba2ab9cd8e645cf73a33e247790bbb2c4c984"
+    }
+  },
+  "total_task_bytes": 127195
+}

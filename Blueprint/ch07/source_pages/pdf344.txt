@@ -1,0 +1,75 @@
+7.13
+Multiple Timestepping
+323
+7.13
+Multiple Timestepping
+Recall the r-RESPA multiple timestepping scheme introduced in Sect. 4.2, designed
+to propagate systems which have a fast highly oscillatory motion, as well as a slower
+long-ranged force term. Splitting the potential energy function into fast and slow
+components in the deterministic setting provided only a small gain in the stability
+threshold, as we encountered linear resonance phenomena at step sizes that were
+integer multiples of half a period. In systems where the timescale gap is very
+large, the r-RESPA scheme does not give signiﬁcant improvement, with the stability
+threshold scaling identically to the Symplectic Euler method.
+Our hope would be that using Langevin dynamics to add stochasticity would
+disrupt resonance effects and permit larger usable timesteps. While some consider-
+able efﬁciency improvements have been demonstrated using multiple timestepping
+methods for Langevin dynamics with constraints [118], we shall investigate the
+simpler fast/slow splitting demonstrated in previous chapters.
+We consider propagating a system with Hamiltonian
+H.q; p/ D p2=2 C U.q/;
+U.q/ D UF.q/ C US.q/;
+where q; p 2 R and US and UF denote the slow and fast components of the
+potential energy respectively. For the purposes of analysis, we shall model these
+with harmonic potentials, with
+US.q/ D q2=2;
+UF.q/ D ˝2q2=2;
+(7.47)
+where ˝ 
+ 1. The question we shall be interested in is whether using Langevin
+dynamics with a multiple timestepping algorithm gives us any extra stability
+compared to the deterministic case. Let us consider splitting the dynamics into
+dq
+dp
+
+D
+
+p dt
+˝2q dt  
+p dt C
+p
+2
+=ˇ dW
+
+„
+ƒ‚
+…
+Fast
+C
+
+0
+q dt
+
+„ ƒ‚ …
+Slow
+;
+(7.48)
+and proceed as in the case of the r-RESPA scheme. As before, we consider the case
+where we are able to solve the fast part exactly (in practice we use several small
+timesteps as the fast parts are considered computationally “cheap”). Writing
+F D
+
+0
+1
+˝2 
+
+;
+we can write down the solution to the fast dynamics as
+q.t/
+p.t/
+
+D exp.Ft/
+ q.0/
+p.0/
+
+C BtR;

@@ -1,0 +1,53 @@
+264
+7
+Numerical Methods for Stochastic Molecular Dynamics
+7.2
+Error in Methods for Stochastic Differential Equations
+We brieﬂy present some standard material on the development of numerical schemes
+for SDEs. The interested reader is pointed to the standard textbooks [200, 270] for a
+more thorough discussion of foundational concepts. Let us begin with a discussion
+of the ﬁrst order stochastic differential equation
+dX D a.X/dt C b.X/dW;
+where W deﬁnes a standard scalar Wiener process. The natural extension of the
+Euler method for SDEs like this one takes the form
+XnC1 D Xn C ha.Xn/ C b.Xn/
+p
+hRn;
+where Rn is a normal random variable with zero mean and unit variance. This
+method is referred to as the Euler-Maruyama method.
+Note that from the deﬁnition of the SDE, we may write
+X.t C h/ D X.t/ C
+tCh
+Z
+t
+a.X.s//ds C
+tCh
+Z
+t
+b.X.s//dW.s/:
+Just as in the deterministic case, we may build a numerical method by approximating
+these integrals over a small timestep h. However, when designing a numerical
+scheme it is important to keep in mind the goal of the discretization itself. For
+example, as we have considered Langevin dynamics as a tool for studying the
+canonical distribution, do we always need methods to give us good approximations
+of X.t C h/? If we seek to compute averages with respect to the canonical
+distribution, then the answer is no: we simply require that the average over the
+discretized trajectory is accurate.
+The numerical analysis of stochastic differential equations is traditionally based
+on the concepts of weak and strong accuracy. Let a numerical method be given for
+solving an SDE in the form of a discrete stochastic process XnC1 D ˚.Xn; h/ for
+n D 0; 1; : : : ;   1, where h D  is ﬁxed. We denote the stochastic solution of the
+SDE by X.t/. In the case of strong accuracy, our measure of the global error is the
+quantity [200]
+Errstrong
+h;I˛ D
+max
+nD0;1;2;:::;
+
+E jXn  X.nh/j˛1=˛ :
+For ˛ D 1 this implies convergence of expectation. The more natural choice from
+the probabilistic point of view is ˛ D 2 (mean square convergence). Having settled
+on a choice of ˛, we say that a method has strong order r if Errstrong
+h;
+< C./hr for
+some coefﬁcient C./ depending on the time interval.

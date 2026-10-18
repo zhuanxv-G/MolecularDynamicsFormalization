@@ -1,0 +1,61 @@
+7.11
+Applying the Schemes to a Biomolecule
+315
+-1375
+-1275
+-1175
+-1075
+Potential energy (kcal/mol)
+-1375
+-1275
+-1175
+-1075
+Potential energy (kcal/mol)
+-1375
+-1275
+-1175
+-1075
+Potential energy (kcal/mol)
+-1375
+-1275
+-1175
+-1075
+-1375
+-1275
+-1175
+-1075
+-1375
+-1275
+-1175
+-1075
+BAOAB
+ABOBA
+OBABO
+OABAO
+BBK
+SPV
+Potential energy (kcal/mol)
+Potential energy (kcal/mol)
+Potential energy (kcal/mol)
+Fig. 7.9 Computed distributions of potential energy are overlaid for 22 experiments of solvated
+alanine dipeptide using the given discretization scheme. The distributions are colored by the
+stepsize used to generate them: from h D 1 fs (blue) to h D 2:8 fs (red), where the common
+black dashed distribution marks the baseline result
+The distributions generated from trajectories computed using the BAOAB
+scheme deviate by only a very small amount, even at the highest step sizes tested.
+Comparing the energy breakdown, primarily the average bond and dihedral energy
+terms are responsible for the errors in average potential energy. From the results of
+the perturbed harmonic analysis in Eq.(7.15), the annihilation of the leading term
+in the error series (at order ") appears to lead to the behavior of the BAOAB
+scheme. The parallel success of the ABOBA and SPV schemes (which share a
+similar update strategy, especially at small friction) support this observation, as such
+schemes also give excellent conﬁgurational sampling properties in (7.15).
+In Fig. 7.10 we plot a more quantitative examination of the behavior of the
+Langevin dynamics scheme. Despite the presence of sampling error, it is clear that
+for conﬁgurational averages, in the large timestep regime, the BAOAB scheme
+outperforms the other schemes by a signiﬁcant margin.
+Noticeably the BAOAB scheme provides an order of magnitude improvement
+in the conﬁgurational temperature results at all step sizes tested. However, the
+results for its average kinetic temperature are rather poor, especially compared to
+its conjugate method OABAO produced from shufﬂing the terms around. This
+emphasizes the potentially misleading assumption of equivalence between the two

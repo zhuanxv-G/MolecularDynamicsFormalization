@@ -1,0 +1,51 @@
+308
+7
+Numerical Methods for Stochastic Molecular Dynamics
+where Rnis an independent normal random vector with mean zero and unit variance.
+Expressing this as an update solely for the conﬁgurations, we obtain
+qnC1 D qn  h2
+2 M1rU.qn/ C h
+2
+p
+kBTM1=2 .Rn C Rn1/ ;
+and substituting  D h2=2 gives the BAOAB Limit Method (Leimkuhler-Matthews
+method) [221]
+qnC1 D qn  M1rU.qn/ C
+p
+2kBTM1=2
+Rn C Rn1
+2
+	
+:
+(7.40)
+As we are in the overdamped regime, we would expect that this scheme should
+have an O.h4/ D O.2/ error in conﬁgurational averages, while inheriting the
+other properties of the BAOAB scheme for the harmonic and perturbed harmonic
+models considered in Sects. 7.4 and 7.5. Moreover, since we completely remove the
+second order term in the Langevin dynamics conﬁgurational density expansion, we
+expect to observe this behavior across all values of h and . This is quite a surprising
+result, given the qualitative similarity between Eqs. (7.39) and (7.40).
+The beneﬁt of (7.40) over the Euler-Maruyama scheme is that we can get second
+order accuracy in averages with only a single evaluation of the force at each
+timestep. However, our analysis presented here is only for the inﬁnite time case.
+For averages computed in ﬁnite time, work in [224] has shown that (7.40) does
+indeed give a ﬁrst order error, albeit one that vanishes exponentially fast in time as
+the simulation progresses. Hence for suitably long simulations, the observed error
+will be O.h2/.
+We can think of the noise process in (7.40) as corresponding to a colored noise
+which has characteristics that directly depend on the stepsize, although the noise
+decorrelates in just a couple of timesteps. This is therefore no longer a Markov
+process, however it can be reformulated as such if one considers the appropriate
+extended space (or keeping the momenta pn).
+7.11
+Applying the Schemes to a Biomolecule
+Numerical analysis of a scheme should always be supported (and informed by)
+thorough numerical testing. Often salient features of a discretization method can be
+missed because of a shallow scope of experimentation. Our goal will be to evaluate
+the efﬁcacy of the numerical schemes for Langevin dynamics presented thus far. We
+shall look at the invariant (long-time) averages resulting from computations using
+the four symmetric Langevin integrators that we derived using our splitting, for
+which results for the harmonic oscillator are detailed in (7.15), and for which a more
+general error analysis was considered in Sect. 7.9.2. Additionally we will compare
+their results to the performance of the standard SPV and BBK schemes considered
+in Sect. 7.3.2.

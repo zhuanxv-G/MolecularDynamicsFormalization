@@ -1,0 +1,68 @@
+270
+7
+Numerical Methods for Stochastic Molecular Dynamics
+which we label A, B and O, where each of the three parts may be solved “exactly”,
+with individual updates given as
+U A
+h .q; p/ D .q C hM1p; p/;
+U B
+h .q; p/ D .q; p  hrU.q//;
+U O
+h .q; p/ D .q; e
+hp C
+p
+kBT .1  e2
+h/M1=2R/;
+where R is a vector of i.i.d. normal random numbers. For the deterministic pieces
+A and B, the updates correspond to their ﬂow maps, while the update for the O
+piece corresponds to the solution derived in (7.3). The relevant forward propagators
+for each piece of the Hamiltonian part are computed through the adjoint of the Lie
+derivative as
+L
+A D M1p  rq;
+L
+B D rU.q/  rp:
+Using this splitting strategy, we can deﬁne a family of schemes by the desired
+sequence of updates, codiﬁed as a string using the alphabet “ABO”. For example,
+the method denoted ABO (acting from left to right) has a resulting update
+U ABO
+h
+D U O
+h ı U B
+h ı U A
+h :
+This corresponds to using the adjoint symplectic Euler scheme to solve the
+Newtonian part of the Langevin dynamics SDE, followed by an exact OU solve. An
+alternative is to use velocity Verlet for the Hamiltonian part, resulting in a scheme
+denoted BABO with associated map
+U BABO
+h
+D U O
+h ı U B
+h=2 ı U A
+h ı U B
+h=2:
+Note that the presence of two B characters in the string results in halving the
+corresponding piece’s time step length. As we need the method to be consistent,
+we require that the each of the A, B and O pieces are propagated in time for a
+total time of h. As a result we use the convention that if a letter appears k times in a
+method’s string, then each individual update piece uses a timestep h=k. For example,
+the scheme denoted OABOAOBAO has an update
+U OABOAOBAO
+h
+D U O
+h=4 ı U A
+h=3 ı U B
+h=2 ı U O
+h=4 ı U A
+h=3 ı U O
+h=4 ı U B
+h=2 ı U A
+h=3 ı U O
+h=4;
+where the random numbers used in each O update are independent. This scheme will
+require a total of 4Nc normal random numbers and two force evaluations per step
+(the force must be recomputed at the ﬁrst B step following an A step; the number of
+force evaluations required is not directly related to the length of the string).
+A class of methods like those considered above were discussed in [46] and given
+the general title of “Geometric” Langevin Algorithm (GLA). The idea of a GLA
