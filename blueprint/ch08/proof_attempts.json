@@ -34,5 +34,29 @@
     "category": "缺大型理论",
     "routes": [],
     "decision": "缺大型理论时直接记录缺项；否则最多三条短路线。"
+  },
+  "MD-8.2.1-ThermostatCriterion": {
+    "reason": "一般高维Gaussian链式法则、常反对称矩阵的零散度和变量分裂。",
+    "category": "缺大型理论",
+    "routes": [],
+    "decision": "缺大型理论时直接记录缺项；否则最多三条短路线。"
+  },
+  "MD-8.2.1-Examples81and82": {
+    "reason": "Bulgac–Kusnezov一般散度抵消计算。",
+    "category": "缺大型理论",
+    "routes": [],
+    "decision": "缺大型理论时直接记录缺项；否则最多三条短路线。"
+  },
+  "MD-8.2.1-TemperatureIdentity": {
+    "reason": "高维散度定理与Gibbs权重积分分部。",
+    "category": "缺大型理论",
+    "routes": [],
+    "decision": "缺大型理论时直接记录缺项；否则最多三条短路线。"
+  },
+  "MD-8.2.2-NHChains": {
+    "reason": "任意链长的散度抵消与有限和组合；不建确定性遍历理论。",
+    "category": "缺大型理论",
+    "routes": [],
+    "decision": "缺大型理论时直接记录缺项；否则最多三条短路线。"
   }
 }

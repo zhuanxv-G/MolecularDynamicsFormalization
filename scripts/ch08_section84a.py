@@ -3,7 +3,7 @@ add('AdditiveThermostatSDE','8.4','342–343',r'''dq=M⁻¹pdt; dp=-∇Udt-Φ(ξ
 '''def independentWiener (P : Measure Ω) (k : ℕ) (W : ℝ → Ω → Vec k) : Prop :=
   IsProbabilityMeasure P ∧ (∀ j, IsBrownianReal (fun t sample ↦ W t sample j) P) ∧
     iIndepFun (fun j sample ↦ fun t : ℝ ↦ W t sample j) P
-def additiveSDE {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
+def additiveSDE {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E] [MeasurableSpace E]
     (P : Measure Ω) (k : ℕ) (W : ℝ → Ω → Vec k)
     (X : ℝ → Ω → E) (x0 : E) (a : E → E) (B : Fin k → E) : Prop :=
   independentWiener P k W ∧ (∀ᵐ sample ∂P, Continuous (fun t ↦ X t sample)) ∧

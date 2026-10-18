@@ -29,5 +29,5 @@ staged=subprocess.check_output(['git','diff','--cached','--name-only'],cwd=ROOT,
 for name in staged:
     assert name.casefold() in {p.casefold() for p in files} or name.casefold().startswith('blueprint/ch08/'),('Unrelated staged file',name)
 subprocess.run(['git','commit','-m',f'ch08: section {args.section} local checkpoint ({len(RECORDS)} items)'],cwd=ROOT,check=True)
-subprocess.run(['git','push','-u','origin','chapter07-blueprint'],cwd=ROOT,check=True)
+subprocess.run(['git','push','-u','origin','chapter08-blueprint'],cwd=ROOT,check=True)
 print('COMMITTED AND PUSHED',args.section,flush=True)
