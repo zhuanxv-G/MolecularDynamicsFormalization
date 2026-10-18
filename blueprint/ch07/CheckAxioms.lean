@@ -109,3 +109,17 @@ import Blueprint.Ch07
 #print axioms MD.Ch07.perturbedErrorScale
 #print axioms MD.Ch07.perturbedErrorOrders
 #print axioms MD.Ch07.baoabLeading_largeFriction
+#print axioms MD.Ch07.gibbsComposition
+#print axioms MD.Ch07.lieField
+#print axioms MD.Ch07.divergenceField
+#print axioms MD.Ch07.forwardField
+#print axioms MD.Ch07.divergenceFreeInvariant
+#print axioms MD.Ch07.firstIntegral_density
+#print axioms MD.Ch07.onlyEnergyIntegrals
+#print axioms MD.Ch07.timeReparametrizes
+#print axioms MD.Ch07.geMarsdenConclusion
+#print axioms MD.Ch07.jField
+#print axioms MD.Ch07.jSplitting_energy
+#print axioms MD.Ch07.composition_preservesEnergy
+#print axioms MD.Ch07.coordinateJField
+#print axioms MD.Ch07.frozenPotential

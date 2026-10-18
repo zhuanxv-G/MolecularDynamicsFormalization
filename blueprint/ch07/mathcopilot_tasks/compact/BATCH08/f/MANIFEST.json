@@ -1,0 +1,66 @@
+{
+  "batch": "BATCH08",
+  "subtask": "BATCH08f",
+  "source_ids": [
+    "MD-7.6-GibbsComposition"
+  ],
+  "input_sha256": {
+    "Blueprint/Ch07.lean": "bc63b3199ca37d5e777999f7d6eab11c6721ec34dd0da776d11d9c39dafa3f36",
+    "blueprint/ch07/ch07_source.json": "1273237aa7bd644f6c9ba0e460915f294d0d869bbdd9843c213e74e4fc6ac947",
+    "BATCH08f_PAGES.pdf": "8bce63e919f78fdf7ef339a37b4c8d70c31587a793d4be385b727f5b213b1a15"
+  },
+  "page_mapping": [
+    {
+      "attachment_page": 1,
+      "original_pdf_page": 303,
+      "printed_page": 282
+    }
+  ],
+  "definition_excerpts": [
+    {
+      "full_name": "MD.Ch07.gibbsComposition",
+      "kind": "theorem",
+      "path": "Blueprint/Ch07.lean",
+      "line": 662,
+      "code_sha256": "576e4c055267e8c529f093a70c9fafb13666e336e41712380855f215681c3b8c"
+    },
+    {
+      "full_name": "MolecularDynamics.Chapter02Review.Q",
+      "kind": "abbrev",
+      "path": "MolecularDynamics/Chapter02/ReviewDefinitions.lean",
+      "line": 17,
+      "code_sha256": "d01d4518aed3668e7c982afee1cd3820fb858a94438e5b8960aa0557f5a57ef1"
+    },
+    {
+      "full_name": "MolecularDynamics.Chapter04Review.Q",
+      "kind": "abbrev",
+      "path": "MolecularDynamics/Chapter04/ReviewDefinitions.lean",
+      "line": 15,
+      "code_sha256": "d01d4518aed3668e7c982afee1cd3820fb858a94438e5b8960aa0557f5a57ef1"
+    },
+    {
+      "full_name": "MolecularDynamics.Chapter05Review.E",
+      "kind": "abbrev",
+      "path": "MolecularDynamics/Chapter05/ReviewDefinitions.lean",
+      "line": 18,
+      "code_sha256": "b497c8ba7f01b62a3147d9ae65652772ff3f81e57aa19b116f1283fef7a3cc60"
+    }
+  ],
+  "validation": {
+    "project_constant_closure": "PASS",
+    "missing_project_definitions": [],
+    "full_page_render_equality_dpi": 72,
+    "website_submitted": false
+  },
+  "files": {
+    "PASTE.txt": {
+      "bytes": 4220,
+      "sha256": "1f1f0afa1b1221acf614b0fbe965ccb8c819232b28c0b9666c0555c63e43bde3"
+    },
+    "BATCH08f_PAGES.pdf": {
+      "bytes": 73957,
+      "sha256": "8bce63e919f78fdf7ef339a37b4c8d70c31587a793d4be385b727f5b213b1a15"
+    }
+  },
+  "total_task_bytes": 80346
+}

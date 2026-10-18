@@ -1,0 +1,80 @@
+{
+  "batch": "BATCH09",
+  "subtask": "BATCH09d",
+  "source_ids": [
+    "MD-7.6-CoordinateJSplitting"
+  ],
+  "input_sha256": {
+    "Blueprint/Ch07.lean": "bc63b3199ca37d5e777999f7d6eab11c6721ec34dd0da776d11d9c39dafa3f36",
+    "blueprint/ch07/ch07_source.json": "1273237aa7bd644f6c9ba0e460915f294d0d869bbdd9843c213e74e4fc6ac947",
+    "BATCH09d_PAGES.pdf": "999a8295ca413c1f55f48345a0477f64096ed2ca322908dcf2a3acd0458206c7"
+  },
+  "page_mapping": [
+    {
+      "attachment_page": 1,
+      "original_pdf_page": 304,
+      "printed_page": 283
+    }
+  ],
+  "definition_excerpts": [
+    {
+      "full_name": "MD.Ch07.V",
+      "kind": "abbrev",
+      "path": "Blueprint/Ch07.lean",
+      "line": 172,
+      "code_sha256": "7ab0ad90462b274b03f5b929b5f09417c0b397b6cb908fa6e7bd56677a314027"
+    },
+    {
+      "full_name": "MD.Ch07.Phase",
+      "kind": "abbrev",
+      "path": "Blueprint/Ch07.lean",
+      "line": 173,
+      "code_sha256": "ef1520e3b22ac1c99a30a989deafe8d3da44a9f2a3e5b6c2cd3220218b88513e"
+    },
+    {
+      "full_name": "MD.Ch07.coordDerivative",
+      "kind": "def",
+      "path": "Blueprint/Ch07.lean",
+      "line": 221,
+      "code_sha256": "e782d789a13f5db6817e2c995f141805e81ac75720125b846f8ee14ba3833a4b"
+    },
+    {
+      "full_name": "MD.Ch07.gradient",
+      "kind": "def",
+      "path": "Blueprint/Ch07.lean",
+      "line": 250,
+      "code_sha256": "540c6af25c09d3a58da531bc32056ff1a1c070facc58d34c96b6653d781fba6f"
+    },
+    {
+      "full_name": "MD.Ch07.coordinateJField",
+      "kind": "def",
+      "path": "Blueprint/Ch07.lean",
+      "line": 719,
+      "code_sha256": "17bd78a11691b3e0f7e77739e73a498441e118eb4de9c2bb7f774ac79ec5c600"
+    },
+    {
+      "full_name": "MD.Ch07.frozenPotential",
+      "kind": "def",
+      "path": "Blueprint/Ch07.lean",
+      "line": 722,
+      "code_sha256": "47ed6678ccadf1dc94c623d03ca0c8c25273a37ade9821eb33c7935e0887da00"
+    }
+  ],
+  "validation": {
+    "project_constant_closure": "PASS",
+    "missing_project_definitions": [],
+    "full_page_render_equality_dpi": 72,
+    "website_submitted": false
+  },
+  "files": {
+    "PASTE.txt": {
+      "bytes": 5428,
+      "sha256": "36d35a5881d70374a1f3adab72f687b66f930aeba0acf1d249fde7fe0fffec1e"
+    },
+    "BATCH09d_PAGES.pdf": {
+      "bytes": 76880,
+      "sha256": "999a8295ca413c1f55f48345a0477f64096ed2ca322908dcf2a3acd0458206c7"
+    }
+  },
+  "total_task_bytes": 84779
+}

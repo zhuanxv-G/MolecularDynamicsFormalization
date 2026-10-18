@@ -1,7 +1,7 @@
 {
-  "batches": 8,
-  "subtasks": 47,
-  "covered_entries": 47,
+  "batches": 9,
+  "subtasks": 52,
+  "covered_entries": 52,
   "checks": [
     {
       "source_id": "MD-7.1-Bias",
@@ -236,6 +236,31 @@
     {
       "source_id": "MD-7.5-PerturbedErrorOrders",
       "project_constants": 23,
+      "missing": []
+    },
+    {
+      "source_id": "MD-7.6-GibbsComposition",
+      "project_constants": 4,
+      "missing": []
+    },
+    {
+      "source_id": "MD-7.6-DivergenceFreeInvariant",
+      "project_constants": 7,
+      "missing": []
+    },
+    {
+      "source_id": "MD-7.6-GeMarsdenRestriction",
+      "project_constants": 14,
+      "missing": []
+    },
+    {
+      "source_id": "MD-7.6-JSplitting",
+      "project_constants": 9,
+      "missing": []
+    },
+    {
+      "source_id": "MD-7.6-CoordinateJSplitting",
+      "project_constants": 6,
       "missing": []
     }
   ],

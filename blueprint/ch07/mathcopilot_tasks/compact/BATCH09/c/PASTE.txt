@@ -1,0 +1,174 @@
+以附件/PASTE 为准，忽略 /workspace 旧文件；Mathlib 定义按标准含义采信。
+本任务只审本条：原文转录、对象资格、定义体、量词、全部结论及[EXTRA]是否一致；Lean编译不代替语义审阅。
+Lean/Mathlib均4.34.0。原页PDF映射：[303, 304]；印刷页=[282, 283].
+input_sha256请原样回显：
+{
+  "Blueprint/Ch07.lean": "bc63b3199ca37d5e777999f7d6eab11c6721ec34dd0da776d11d9c39dafa3f36",
+  "blueprint/ch07/ch07_source.json": "1273237aa7bd644f6c9ba0e460915f294d0d869bbdd9843c213e74e4fc6ac947",
+  "BATCH09c_PAGES.pdf": "ebdb932945684085675d6dc0ffebfef001e323442effc048ebe29f1ba802caf2"
+}
+用代码将JSON对象(batch,input_sha256,items)写到 /workspace/.mathcopilot/reviews/ch07/BATCH09c_review.json；items仅含本source_id。
+items字段：source_id、verdict(PASS/FAIL/NEEDS_HUMAN)、transcription、semantic_review、counterexample、suggested_fix、printed_version、corrected_version。逐版区分原文疑误和修正版结论；缺材料必须具体指出，不猜测。写后json.loads自检，最后仅回复路径及统计。
+
+## 原文JSON
+```json
+{
+  "source_id": "MD-7.6-JSplitting",
+  "kind": "unnumbered_claim",
+  "label": null,
+  "section": "7.6",
+  "printed_page": "282–283",
+  "pdf_page": "303–304",
+  "statement_latex": "Let $J$ be the skew-symmetric canonical symplectic structure matrix. The idea is to consider a splitting of $J$ into a finite number $K$ of skew-symmetric matrices $J_i$, $i=1,\\ldots,K$. This induces a splitting of the Hamiltonian vector field into $K$ vector fields $f_i=J_i\\nabla H$. Each of these vector fields preserves $H$ and, because they are themselves Hamiltonian, their flows are also volume-preserving. Assuming each such vector field is exactly integrable, the system dynamics may be approximated by composing the flow maps for each vector field.",
+  "proof_latex": null,
+  "proof_note": "原书未给独立完整证明。",
+  "context_notation": [],
+  "extra_assumptions": [
+    "Ji取常系数反对称矩阵，H为C²；一般退化Ji并非标准坐标辛矩阵，但能量/散度两个实际导数结论仍有意义。",
+    "体积保持需要已存在的完整光滑流；本条不新建流存在及Liouville理论。"
+  ],
+  "issues": [],
+  "statement_scope": "本条逐字引用的全部数学对象与公式；未纳入的上下文另列。",
+  "lean_decl": "MD.Ch07.jField",
+  "lean_declarations": [
+    "MD.Ch07.jField",
+    "MD.Ch07.jSplitting_energy",
+    "MD.Ch07.composition_preservesEnergy"
+  ],
+  "source_page_verification": "见source_page_checks.json；必须已目视核对本条原页。",
+  "repair_log": [],
+  "documented_priors": []
+}
+```
+
+## 完整本条Lean
+```lean
+def jField (J : Matrix (Fin n) (Fin n) ℝ) (H : V n → ℝ) (x : V n) : V n :=
+  fun i ↦ ∑ j, J i j * gradient H x j
+theorem jSplitting_energy (J : Matrix (Fin n) (Fin n) ℝ) (H : V n → ℝ)
+    (hJ : ∀ i j, J i j = -J j i) (hH : ContDiff ℝ 2 H) :
+    ∀ x, lieField (jField J H) H x = 0 ∧ divergenceField (jField J H) x = 0 := by
+  sorry
+theorem composition_preservesEnergy {E : Type*} (F G : E → E) (H : E → ℝ)
+    (hF : ∀ x, H (F x) = H x) (hG : ∀ x, H (G x) = H x) :
+    ∀ x, H ((F ∘ G) x) = H x := by
+  intro x
+  rw [Function.comp_apply, hF, hG]
+```
+
+## 项目依赖定义体及选择规格
+以下def/abbrev/structure完整保留；定理列出完整类型，Mathlib标准定义无需摘录。
+
+### MD.Ch07.V (Blueprint/Ch07.lean:172)
+原文件上下文：
+```lean
+open Set Filter MeasureTheory ProbabilityTheory MolecularDynamics
+open scoped BigOperators Topology ContDiff ENNReal NNReal
+variable {Ω : Type*} [MeasurableSpace Ω]
+variable {n : ℕ}
+```
+```lean
+abbrev V (n : ℕ) := Fin n → ℝ
+```
+
+### MD.Ch07.coordDerivative (Blueprint/Ch07.lean:221)
+原文件上下文：
+```lean
+open Set Filter MeasureTheory ProbabilityTheory MolecularDynamics
+open scoped BigOperators Topology ContDiff ENNReal NNReal
+variable {Ω : Type*} [MeasurableSpace Ω]
+variable {n : ℕ}
+```
+```lean
+def coordDerivative (f : V n → ℝ) (x : V n) (i : Fin n) : ℝ :=
+  deriv (fun z ↦ f (Function.update x i z)) (x i)
+```
+
+### MD.Ch07.gradient (Blueprint/Ch07.lean:250)
+原文件上下文：
+```lean
+open Set Filter MeasureTheory ProbabilityTheory MolecularDynamics
+open scoped BigOperators Topology ContDiff ENNReal NNReal
+variable {Ω : Type*} [MeasurableSpace Ω]
+variable {n : ℕ}
+```
+```lean
+def gradient (U : V n → ℝ) (q : V n) : V n := fun i ↦ coordDerivative U q i
+```
+
+### MD.Ch07.lieField (Blueprint/Ch07.lean:669)
+原文件上下文：
+```lean
+open Set Filter MeasureTheory ProbabilityTheory MolecularDynamics
+open scoped BigOperators Topology ContDiff ENNReal NNReal
+variable {Ω : Type*} [MeasurableSpace Ω]
+variable {n : ℕ}
+```
+```lean
+def lieField (f : V n → V n) (ρ : V n → ℝ) (x : V n) : ℝ :=
+  (fderiv ℝ ρ x) (f x)
+```
+
+### MD.Ch07.divergenceField (Blueprint/Ch07.lean:671)
+原文件上下文：
+```lean
+open Set Filter MeasureTheory ProbabilityTheory MolecularDynamics
+open scoped BigOperators Topology ContDiff ENNReal NNReal
+variable {Ω : Type*} [MeasurableSpace Ω]
+variable {n : ℕ}
+```
+```lean
+def divergenceField (f : V n → V n) (x : V n) : ℝ :=
+  ∑ i, coordDerivative (fun y ↦ f y i) x i
+```
+
+### MD.Ch07.jField (Blueprint/Ch07.lean:705)
+原文件上下文：
+```lean
+open Set Filter MeasureTheory ProbabilityTheory MolecularDynamics
+open scoped BigOperators Topology ContDiff ENNReal NNReal
+variable {Ω : Type*} [MeasurableSpace Ω]
+variable {n : ℕ}
+```
+```lean
+def jField (J : Matrix (Fin n) (Fin n) ℝ) (H : V n → ℝ) (x : V n) : V n :=
+  fun i ↦ ∑ j, J i j * gradient H x j
+```
+
+### MD.Ch07.jSplitting_energy (Blueprint/Ch07.lean:707)
+原文件上下文：
+```lean
+open Set Filter MeasureTheory ProbabilityTheory MolecularDynamics
+open scoped BigOperators Topology ContDiff ENNReal NNReal
+variable {Ω : Type*} [MeasurableSpace Ω]
+variable {n : ℕ}
+```
+```lean
+theorem jSplitting_energy (J : Matrix (Fin n) (Fin n) ℝ) (H : V n → ℝ)
+    (hJ : ∀ i j, J i j = -J j i) (hH : ContDiff ℝ 2 H) :
+    ∀ x, lieField (jField J H) H x = 0 ∧ divergenceField (jField J H) x = 0
+```
+
+### MD.Ch07.composition_preservesEnergy (Blueprint/Ch07.lean:711)
+原文件上下文：
+```lean
+open Set Filter MeasureTheory ProbabilityTheory MolecularDynamics
+open scoped BigOperators Topology ContDiff ENNReal NNReal
+variable {Ω : Type*} [MeasurableSpace Ω]
+variable {n : ℕ}
+```
+```lean
+theorem composition_preservesEnergy {E : Type*} (F G : E → E) (H : E → ℝ)
+    (hF : ∀ x, H (F x) = H x) (hG : ∀ x, H (G x) = H x) :
+    ∀ x, H ((F ∘ G) x) = H x
+```
+
+### MolecularDynamics.Chapter05Review.E (MolecularDynamics/Chapter05/ReviewDefinitions.lean:18)
+原文件上下文：
+```lean
+open Set Filter MeasureTheory Matrix
+open scoped BigOperators Topology ENNReal
+```
+```lean
+abbrev E (n : ℕ) := EuclideanSpace ℝ (Fin n)
+```

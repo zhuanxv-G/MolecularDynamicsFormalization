@@ -232,3 +232,36 @@ theorem baoabLeading_largeFriction (ε h : ℝ) :
     Filter.Tendsto (fun γ : ℝ ↦ -9*h^2*ε^2/(6*γ^2+8)) Filter.atTop (𝓝 0) := by
   sorry
 ```
+
+## MD-7.6-GibbsComposition
+```json
+{
+  "source_id": "MD-7.6-GibbsComposition",
+  "kind": "unnumbered_claim",
+  "label": null,
+  "section": "7.6",
+  "printed_page": "282",
+  "pdf_page": "303",
+  "statement_latex": "The flows of each of these systems individually preserves the Gibbs distribution: denoting the Fokker-Planck operators associated to these flows by $\\mathcal L_H^\\dagger$ and $\\mathcal L_O^\\dagger$ we have\n\\[\\mathcal L_H^\\dagger\\rho_\\beta=0,\\qquad\\mathcal L_O^\\dagger\\rho_\\beta=0,\\]\nand hence\n\\[\\exp(t\\mathcal L_H^\\dagger)\\rho_\\beta=\\exp(t\\mathcal L_O^\\dagger)\\rho_\\beta=\\rho_\\beta.\\]\nFor a scheme $[HO]$, we have\n\\[\\exp(h\\mathcal L_O^\\dagger)[\\exp(h\\mathcal L_H^\\dagger)\\rho_\\beta]=\\exp(h\\mathcal L_O^\\dagger)\\rho_\\beta=\\rho_\\beta.\\]",
+  "proof_latex": null,
+  "proof_note": "原书未给独立完整证明。",
+  "context_notation": [],
+  "extra_assumptions": [
+    "只覆盖末尾不变对象的组合恒等式；P/Q可取实际测度推前或已定义的传播子。H/O各自Gibbs不变性由前面独立陈述承担，生成元零蕴含半群固定点还需半群域理论。"
+  ],
+  "issues": [],
+  "statement_scope": "传播子共同固定点的组合推论；前两条生成元及半群识别未新增证明。",
+  "lean_decl": "MD.Ch07.gibbsComposition",
+  "lean_declarations": [
+    "MD.Ch07.gibbsComposition"
+  ],
+  "source_page_verification": "见source_page_checks.json；必须已目视核对本条原页。",
+  "repair_log": [],
+  "documented_priors": []
+}
+```
+```lean
+theorem gibbsComposition {E : Type*} (P Q : E → E) (ρ : E)
+    (hP : P ρ = ρ) (hQ : Q ρ = ρ) : (Q ∘ P) ρ = ρ := by
+  simp only [Function.comp_apply, hP, hQ]
+```

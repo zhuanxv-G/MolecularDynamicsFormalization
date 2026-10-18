@@ -657,4 +657,69 @@ theorem baoabLeading_largeFriction (ε h : ℝ) :
     Filter.Tendsto (fun γ : ℝ ↦ -9*h^2*ε^2/(6*γ^2+8)) Filter.atTop (𝓝 0) := by
   sorry
 
+/-- source_id: MD-7.6-GibbsComposition · 印刷p.282 / PDFp.303
+[EXTRA] 只覆盖末尾不变对象的组合恒等式；P/Q可取实际测度推前或已定义的传播子。H/O各自Gibbs不变性由前面独立陈述承担，生成元零蕴含半群固定点还需半群域理论。 -/
+theorem gibbsComposition {E : Type*} (P Q : E → E) (ρ : E)
+    (hP : P ρ = ρ) (hQ : Q ρ = ρ) : (Q ∘ P) ρ = ρ := by
+  simp only [Function.comp_apply, hP, hQ]
+
+/-- source_id: MD-7.6-DivergenceFreeInvariant · 印刷p.282 / PDFp.303
+[EXTRA] 微分对象C¹，第一积分和散度为实际导数；密度非负及归一化需g另行满足，此微分恒等式不把任意g都称概率密度。
+[EXTRA] 不变生成元到全局流不变测度仍需完整流/输运桥，见HamiltonianGibbs。 -/
+def lieField (f : V n → V n) (ρ : V n → ℝ) (x : V n) : ℝ :=
+  (fderiv ℝ ρ x) (f x)
+def divergenceField (f : V n → V n) (x : V n) : ℝ :=
+  ∑ i, coordDerivative (fun y ↦ f y i) x i
+def forwardField (f : V n → V n) (ρ : V n → ℝ) (x : V n) : ℝ :=
+  -∑ i, coordDerivative (fun y ↦ f y i*ρ y) x i
+theorem divergenceFreeInvariant (f : V n → V n) (ρ : V n → ℝ)
+    (hf : ContDiff ℝ 1 f) (hρ : ContDiff ℝ 1 ρ)
+    (hdiv : ∀ x, divergenceField f x = 0) : ∀ x, forwardField f ρ x = -lieField f ρ x := by
+  sorry
+theorem firstIntegral_density (f : V n → V n) (I : V n → ℝ) (g : ℝ → ℝ)
+    (hI : Differentiable ℝ I) (hg : Differentiable ℝ g)
+    (hfirst : ∀ x, lieField f I x = 0) : ∀ x, lieField f (g ∘ I) x = 0 := by
+  intro x
+  rw [lieField, fderiv_comp x (hg (I x)) (hI x)]
+  simp only [ContinuousLinearMap.comp_apply]
+  change (fderiv ℝ g (I x)) (lieField f I x) = 0
+  rw [hfirst x, map_zero]
+
+/-- source_id: MD-7.6-GeMarsdenRestriction · 印刷p.282 / PDFp.303
+[EXTRA] 原文引用的Ge–Marsden定理未列非可积性、局部性及精确流的全部技术条件；仅定义其非可积性和结论形式，未把geMarsdenConclusion宣称为真。
+[EXTRA] 辛映射体积保持和Ge–Marsden结论均列入本条覆盖缺口，不能把该定义当成定理已证。 -/
+def onlyEnergyIntegrals (H : V n → ℝ) (f : V n → V n) : Prop :=
+  ∀ I : V n → ℝ, ContDiff ℝ ⊤ I → (∀ x, lieField f I x = 0) →
+    ∃ g : ℝ → ℝ, I = g ∘ H
+def timeReparametrizes {E : Type*} (G flow : ℝ → E → E) : Prop :=
+  ∃ τ : ℝ → E → ℝ, ∀ h x, G h x = flow (τ h x) x
+def geMarsdenConclusion {k : ℕ}
+    (H : MolecularDynamics.SymplecticCoordinates k → ℝ)
+    (G flow : ℝ → MolecularDynamics.SymplecticCoordinates k → MolecularDynamics.SymplecticCoordinates k) : Prop :=
+  MolecularDynamics.Chapter02Review.symplecticIntegrator G →
+  (∀ h x, H (G h x) = H x) → timeReparametrizes G flow
+
+/-- source_id: MD-7.6-JSplitting · 印刷p.282–283 / PDFp.303–304
+[EXTRA] Ji取常系数反对称矩阵，H为C²；一般退化Ji并非标准坐标辛矩阵，但能量/散度两个实际导数结论仍有意义。
+[EXTRA] 体积保持需要已存在的完整光滑流；本条不新建流存在及Liouville理论。 -/
+def jField (J : Matrix (Fin n) (Fin n) ℝ) (H : V n → ℝ) (x : V n) : V n :=
+  fun i ↦ ∑ j, J i j * gradient H x j
+theorem jSplitting_energy (J : Matrix (Fin n) (Fin n) ℝ) (H : V n → ℝ)
+    (hJ : ∀ i j, J i j = -J j i) (hH : ContDiff ℝ 2 H) :
+    ∀ x, lieField (jField J H) H x = 0 ∧ divergenceField (jField J H) x = 0 := by
+  sorry
+theorem composition_preservesEnergy {E : Type*} (F G : E → E) (H : E → ℝ)
+    (hF : ∀ x, H (F x) = H x) (hG : ∀ x, H (G x) = H x) :
+    ∀ x, H ((F ∘ G) x) = H x := by
+  intro x
+  rw [Function.comp_apply, hF, hG]
+
+/-- source_id: MD-7.6-CoordinateJSplitting · 印刷p.283 / PDFp.304
+[EXTRA] 完整记录冻结坐标的一自由度向量场；形式quadrature可积性的分支、转折点及积分反演尚未形式化，明确列入覆盖缺口。 -/
+def coordinateJField (m : V n) (U : V n → ℝ) (i : Fin n) (x : Phase n) : Phase n :=
+  (fun j ↦ if j = i then x.2 i/m i else 0,
+   fun j ↦ if j = i then -gradient U x.1 i else 0)
+def frozenPotential (U : V n → ℝ) (q : V n) (i : Fin n) (r : ℝ) : ℝ :=
+  U (Function.update q i r)
+
 end MD.Ch07

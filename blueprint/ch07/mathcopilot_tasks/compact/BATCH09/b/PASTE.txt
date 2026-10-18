@@ -1,0 +1,228 @@
+以附件/PASTE 为准，忽略 /workspace 旧文件；Mathlib 定义按标准含义采信。
+本任务只审本条：原文转录、对象资格、定义体、量词、全部结论及[EXTRA]是否一致；Lean编译不代替语义审阅。
+Lean/Mathlib均4.34.0。原页PDF映射：[303]；印刷页=[282].
+input_sha256请原样回显：
+{
+  "Blueprint/Ch07.lean": "bc63b3199ca37d5e777999f7d6eab11c6721ec34dd0da776d11d9c39dafa3f36",
+  "blueprint/ch07/ch07_source.json": "1273237aa7bd644f6c9ba0e460915f294d0d869bbdd9843c213e74e4fc6ac947",
+  "BATCH09b_PAGES.pdf": "4ef90223b057fea744cc4e599f143caeac69b5009ecfda46877d423ddc302ed8"
+}
+用代码将JSON对象(batch,input_sha256,items)写到 /workspace/.mathcopilot/reviews/ch07/BATCH09b_review.json；items仅含本source_id。
+items字段：source_id、verdict(PASS/FAIL/NEEDS_HUMAN)、transcription、semantic_review、counterexample、suggested_fix、printed_version、corrected_version。逐版区分原文疑误和修正版结论；缺材料必须具体指出，不猜测。写后json.loads自检，最后仅回复路径及统计。
+
+## 原文JSON
+```json
+{
+  "source_id": "MD-7.6-GeMarsdenRestriction",
+  "kind": "definition",
+  "label": null,
+  "section": "7.6",
+  "printed_page": "282",
+  "pdf_page": "303",
+  "statement_latex": "All symplectic methods preserve the volume, but for a system with no first integrals except the energy, it is known from a theorem of Ge and Marsden [400] that a symplectic method cannot preserve the system energy exactly (unless the symplectic method is itself a time-reparameterization of the exact solution).",
+  "proof_latex": null,
+  "proof_note": "原书未给独立完整证明。",
+  "context_notation": [],
+  "extra_assumptions": [
+    "原文引用的Ge–Marsden定理未列非可积性、局部性及精确流的全部技术条件；仅定义其非可积性和结论形式，未把geMarsdenConclusion宣称为真。",
+    "辛映射体积保持和Ge–Marsden结论均列入本条覆盖缺口，不能把该定义当成定理已证。"
+  ],
+  "issues": [],
+  "statement_scope": "原文数学主张已登记；Lean给出结论形式和第一积分资格，尚缺可核定的完整定理前提与定理陈述。",
+  "lean_decl": "MD.Ch07.onlyEnergyIntegrals",
+  "lean_declarations": [
+    "MD.Ch07.onlyEnergyIntegrals",
+    "MD.Ch07.timeReparametrizes",
+    "MD.Ch07.geMarsdenConclusion"
+  ],
+  "source_page_verification": "见source_page_checks.json；必须已目视核对本条原页。",
+  "repair_log": [],
+  "documented_priors": []
+}
+```
+
+## 完整本条Lean
+```lean
+def onlyEnergyIntegrals (H : V n → ℝ) (f : V n → V n) : Prop :=
+  ∀ I : V n → ℝ, ContDiff ℝ ⊤ I → (∀ x, lieField f I x = 0) →
+    ∃ g : ℝ → ℝ, I = g ∘ H
+def timeReparametrizes {E : Type*} (G flow : ℝ → E → E) : Prop :=
+  ∃ τ : ℝ → E → ℝ, ∀ h x, G h x = flow (τ h x) x
+def geMarsdenConclusion {k : ℕ}
+    (H : MolecularDynamics.SymplecticCoordinates k → ℝ)
+    (G flow : ℝ → MolecularDynamics.SymplecticCoordinates k → MolecularDynamics.SymplecticCoordinates k) : Prop :=
+  MolecularDynamics.Chapter02Review.symplecticIntegrator G →
+  (∀ h x, H (G h x) = H x) → timeReparametrizes G flow
+```
+
+## 项目依赖定义体及选择规格
+以下def/abbrev/structure完整保留；定理列出完整类型，Mathlib标准定义无需摘录。
+
+### MD.Ch07.V (Blueprint/Ch07.lean:172)
+原文件上下文：
+```lean
+open Set Filter MeasureTheory ProbabilityTheory MolecularDynamics
+open scoped BigOperators Topology ContDiff ENNReal NNReal
+variable {Ω : Type*} [MeasurableSpace Ω]
+variable {n : ℕ}
+```
+```lean
+abbrev V (n : ℕ) := Fin n → ℝ
+```
+
+### MD.Ch07.lieField (Blueprint/Ch07.lean:669)
+原文件上下文：
+```lean
+open Set Filter MeasureTheory ProbabilityTheory MolecularDynamics
+open scoped BigOperators Topology ContDiff ENNReal NNReal
+variable {Ω : Type*} [MeasurableSpace Ω]
+variable {n : ℕ}
+```
+```lean
+def lieField (f : V n → V n) (ρ : V n → ℝ) (x : V n) : ℝ :=
+  (fderiv ℝ ρ x) (f x)
+```
+
+### MD.Ch07.onlyEnergyIntegrals (Blueprint/Ch07.lean:691)
+原文件上下文：
+```lean
+open Set Filter MeasureTheory ProbabilityTheory MolecularDynamics
+open scoped BigOperators Topology ContDiff ENNReal NNReal
+variable {Ω : Type*} [MeasurableSpace Ω]
+variable {n : ℕ}
+```
+```lean
+def onlyEnergyIntegrals (H : V n → ℝ) (f : V n → V n) : Prop :=
+  ∀ I : V n → ℝ, ContDiff ℝ ⊤ I → (∀ x, lieField f I x = 0) →
+    ∃ g : ℝ → ℝ, I = g ∘ H
+```
+
+### MD.Ch07.timeReparametrizes (Blueprint/Ch07.lean:694)
+原文件上下文：
+```lean
+open Set Filter MeasureTheory ProbabilityTheory MolecularDynamics
+open scoped BigOperators Topology ContDiff ENNReal NNReal
+variable {Ω : Type*} [MeasurableSpace Ω]
+variable {n : ℕ}
+```
+```lean
+def timeReparametrizes {E : Type*} (G flow : ℝ → E → E) : Prop :=
+  ∃ τ : ℝ → E → ℝ, ∀ h x, G h x = flow (τ h x) x
+```
+
+### MD.Ch07.geMarsdenConclusion (Blueprint/Ch07.lean:696)
+原文件上下文：
+```lean
+open Set Filter MeasureTheory ProbabilityTheory MolecularDynamics
+open scoped BigOperators Topology ContDiff ENNReal NNReal
+variable {Ω : Type*} [MeasurableSpace Ω]
+variable {n : ℕ}
+```
+```lean
+def geMarsdenConclusion {k : ℕ}
+    (H : MolecularDynamics.SymplecticCoordinates k → ℝ)
+    (G flow : ℝ → MolecularDynamics.SymplecticCoordinates k → MolecularDynamics.SymplecticCoordinates k) : Prop :=
+  MolecularDynamics.Chapter02Review.symplecticIntegrator G →
+  (∀ h x, H (G h x) = H x) → timeReparametrizes G flow
+```
+
+### MolecularDynamics.Chapter02Review.symplecticIntegrator (MolecularDynamics/Chapter02/ReviewDefinitions.lean:93)
+原文件上下文：
+```lean
+open Set Filter Matrix
+open scoped BigOperators Topology
+```
+```lean
+def symplecticIntegrator {n : ℕ} (G : ℝ → SymplecticCoordinates n → SymplecticCoordinates n) : Prop :=
+  ∀ h, IsTextbookSymplecticMap (G h)
+```
+
+### MolecularDynamics.SymplecticCoordinates (MolecularDynamics/Chapter02/SymplecticForm.lean:25)
+原文件上下文：
+```lean
+open Matrix
+open scoped BigOperators Matrix
+```
+```lean
+abbrev SymplecticCoordinates (Nc : ℕ) := (Fin Nc ⊕ Fin Nc) → ℝ
+```
+
+### MolecularDynamics.SymplecticCoordinateMatrix (MolecularDynamics/Chapter02/SymplecticForm.lean:27)
+原文件上下文：
+```lean
+open Matrix
+open scoped BigOperators Matrix
+```
+```lean
+abbrev SymplecticCoordinateMatrix (Nc : ℕ) :=
+  Matrix (Fin Nc ⊕ Fin Nc) (Fin Nc ⊕ Fin Nc) ℝ
+```
+
+### MolecularDynamics.textbookJ (MolecularDynamics/Chapter02/SymplecticForm.lean:31)
+原文件上下文：
+```lean
+open Matrix
+open scoped BigOperators Matrix
+```
+```lean
+noncomputable def textbookJ (Nc : ℕ) : SymplecticCoordinateMatrix Nc :=
+  Matrix.fromBlocks 0 1 (-1) 0
+```
+
+### MolecularDynamics.IsTextbookSymplectic (MolecularDynamics/Chapter02/SymplecticForm.lean:130)
+原文件上下文：
+```lean
+open Matrix
+open scoped BigOperators Matrix
+```
+```lean
+def IsTextbookSymplectic {Nc : ℕ} (A : SymplecticCoordinateMatrix Nc) : Prop :=
+  Aᵀ * textbookJ Nc * A = textbookJ Nc
+```
+
+### MolecularDynamics.textbookJacobian (MolecularDynamics/Chapter02/SymplecticMaps.lean:21)
+原文件上下文：
+```lean
+open Matrix
+open scoped Matrix
+```
+```lean
+noncomputable def textbookJacobian {Nc : ℕ}
+    (Φ : SymplecticCoordinates Nc → SymplecticCoordinates Nc) (z : SymplecticCoordinates Nc) :
+    SymplecticCoordinateMatrix Nc :=
+  LinearMap.toMatrix' (fderiv ℝ Φ z).toLinearMap
+```
+
+### MolecularDynamics.IsTextbookSymplecticMap (MolecularDynamics/Chapter02/SymplecticMaps.lean:55)
+原文件上下文：
+```lean
+open Matrix
+open scoped Matrix
+```
+```lean
+def IsTextbookSymplecticMap {Nc : ℕ}
+    (Φ : SymplecticCoordinates Nc → SymplecticCoordinates Nc) : Prop :=
+  ContDiff ℝ 1 Φ ∧ ∀ z, IsTextbookSymplectic (textbookJacobian Φ z)
+```
+
+### MolecularDynamics.Chapter05Review.E (MolecularDynamics/Chapter05/ReviewDefinitions.lean:18)
+原文件上下文：
+```lean
+open Set Filter MeasureTheory Matrix
+open scoped BigOperators Topology ENNReal
+```
+```lean
+abbrev E (n : ℕ) := EuclideanSpace ℝ (Fin n)
+```
+
+### MolecularDynamics.Chapter05Review.flow (MolecularDynamics/Chapter05/ReviewDefinitions.lean:23)
+原文件上下文：
+```lean
+open Set Filter MeasureTheory Matrix
+open scoped BigOperators Topology ENNReal
+```
+```lean
+def flow {n : ℕ} (f : E n → E n) (Φ : ℝ → E n → E n) : Prop :=
+  (∀ z, Φ 0 z=z) ∧ (∀ s t z, Φ (s+t) z=Φ s (Φ t z)) ∧
+  ∀ t z, HasDerivAt (fun s => Φ s z) (f (Φ t z)) t
+```

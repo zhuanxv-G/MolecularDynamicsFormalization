@@ -1,0 +1,87 @@
+{
+  "batch": "BATCH09",
+  "subtask": "BATCH09a",
+  "source_ids": [
+    "MD-7.6-DivergenceFreeInvariant"
+  ],
+  "input_sha256": {
+    "Blueprint/Ch07.lean": "bc63b3199ca37d5e777999f7d6eab11c6721ec34dd0da776d11d9c39dafa3f36",
+    "blueprint/ch07/ch07_source.json": "1273237aa7bd644f6c9ba0e460915f294d0d869bbdd9843c213e74e4fc6ac947",
+    "BATCH09a_PAGES.pdf": "f7db14bb26a901c4cce5b267965bd0128aa95992542c120f75f3f4c38098f39c"
+  },
+  "page_mapping": [
+    {
+      "attachment_page": 1,
+      "original_pdf_page": 303,
+      "printed_page": 282
+    }
+  ],
+  "definition_excerpts": [
+    {
+      "full_name": "MD.Ch07.V",
+      "kind": "abbrev",
+      "path": "Blueprint/Ch07.lean",
+      "line": 172,
+      "code_sha256": "7ab0ad90462b274b03f5b929b5f09417c0b397b6cb908fa6e7bd56677a314027"
+    },
+    {
+      "full_name": "MD.Ch07.coordDerivative",
+      "kind": "def",
+      "path": "Blueprint/Ch07.lean",
+      "line": 221,
+      "code_sha256": "e782d789a13f5db6817e2c995f141805e81ac75720125b846f8ee14ba3833a4b"
+    },
+    {
+      "full_name": "MD.Ch07.lieField",
+      "kind": "def",
+      "path": "Blueprint/Ch07.lean",
+      "line": 669,
+      "code_sha256": "fffca9712c7ef38e6b643a620917c274ffd6a8715c52af40909759512091e818"
+    },
+    {
+      "full_name": "MD.Ch07.divergenceField",
+      "kind": "def",
+      "path": "Blueprint/Ch07.lean",
+      "line": 671,
+      "code_sha256": "13fa90c87d5f2c3e14b7417a33040e84f5af9c5266af0e9d5f8bf44f921124ed"
+    },
+    {
+      "full_name": "MD.Ch07.forwardField",
+      "kind": "def",
+      "path": "Blueprint/Ch07.lean",
+      "line": 673,
+      "code_sha256": "4ece4f4db2d88364616892bb34d32f911b36b9f54a4a86d0ae55a98ee200f3f8"
+    },
+    {
+      "full_name": "MD.Ch07.divergenceFreeInvariant",
+      "kind": "theorem",
+      "path": "Blueprint/Ch07.lean",
+      "line": 675,
+      "code_sha256": "c7adfd8d8945d8fe34129fa1221bfc49781133a7d3c31ac996be7d2789c2b391"
+    },
+    {
+      "full_name": "MD.Ch07.firstIntegral_density",
+      "kind": "theorem",
+      "path": "Blueprint/Ch07.lean",
+      "line": 679,
+      "code_sha256": "6ef0800378c2f48ae5d60212d74503a072d1bbb65976cea9eedebebc0d763d78"
+    }
+  ],
+  "validation": {
+    "project_constant_closure": "PASS",
+    "missing_project_definitions": [],
+    "full_page_render_equality_dpi": 72,
+    "website_submitted": false
+  },
+  "files": {
+    "PASTE.txt": {
+      "bytes": 6798,
+      "sha256": "d70756fcf850b38e2d1f33c0edbc6c03ab00bc11ac0bfdfcbebf6b142d45f8d4"
+    },
+    "BATCH09a_PAGES.pdf": {
+      "bytes": 73957,
+      "sha256": "f7db14bb26a901c4cce5b267965bd0128aa95992542c120f75f3f4c38098f39c"
+    }
+  },
+  "total_task_bytes": 83485
+}

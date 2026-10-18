@@ -134,5 +134,17 @@
     "category": "缺大型理论",
     "routes": [],
     "decision": "缺大型理论时直接记录缺项；否则最多三条短路线。"
+  },
+  "MD-7.6-DivergenceFreeInvariant": {
+    "reason": "散度乘积法则与坐标导数求和需短桥；全局流测度输运另列。",
+    "category": "缺大型理论",
+    "routes": [],
+    "decision": "缺大型理论时直接记录缺项；否则最多三条短路线。"
+  },
+  "MD-7.6-JSplitting": {
+    "reason": "反对称二次型为零、混合偏导对称与坐标散度的短桥；全局流体积保持另列。",
+    "category": "缺大型理论",
+    "routes": [],
+    "decision": "缺大型理论时直接记录缺项；否则最多三条短路线。"
   }
 }

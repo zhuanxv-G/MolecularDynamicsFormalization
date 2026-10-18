@@ -1,0 +1,136 @@
+{
+  "batch": "BATCH09",
+  "subtask": "BATCH09b",
+  "source_ids": [
+    "MD-7.6-GeMarsdenRestriction"
+  ],
+  "input_sha256": {
+    "Blueprint/Ch07.lean": "bc63b3199ca37d5e777999f7d6eab11c6721ec34dd0da776d11d9c39dafa3f36",
+    "blueprint/ch07/ch07_source.json": "1273237aa7bd644f6c9ba0e460915f294d0d869bbdd9843c213e74e4fc6ac947",
+    "BATCH09b_PAGES.pdf": "4ef90223b057fea744cc4e599f143caeac69b5009ecfda46877d423ddc302ed8"
+  },
+  "page_mapping": [
+    {
+      "attachment_page": 1,
+      "original_pdf_page": 303,
+      "printed_page": 282
+    }
+  ],
+  "definition_excerpts": [
+    {
+      "full_name": "MD.Ch07.V",
+      "kind": "abbrev",
+      "path": "Blueprint/Ch07.lean",
+      "line": 172,
+      "code_sha256": "7ab0ad90462b274b03f5b929b5f09417c0b397b6cb908fa6e7bd56677a314027"
+    },
+    {
+      "full_name": "MD.Ch07.lieField",
+      "kind": "def",
+      "path": "Blueprint/Ch07.lean",
+      "line": 669,
+      "code_sha256": "fffca9712c7ef38e6b643a620917c274ffd6a8715c52af40909759512091e818"
+    },
+    {
+      "full_name": "MD.Ch07.onlyEnergyIntegrals",
+      "kind": "def",
+      "path": "Blueprint/Ch07.lean",
+      "line": 691,
+      "code_sha256": "c67bf733805bb2a1e15f4fe1698e92392f189e01d17e1ce39bb49fc45125e6b9"
+    },
+    {
+      "full_name": "MD.Ch07.timeReparametrizes",
+      "kind": "def",
+      "path": "Blueprint/Ch07.lean",
+      "line": 694,
+      "code_sha256": "0ae25b042430fbea4bf088e1dce290870a256f7a8f7fed38f63f7341c617ff88"
+    },
+    {
+      "full_name": "MD.Ch07.geMarsdenConclusion",
+      "kind": "def",
+      "path": "Blueprint/Ch07.lean",
+      "line": 696,
+      "code_sha256": "535e159d6733220282422e8b0ff213cc522fd8a4962a68d23e705528498aa371"
+    },
+    {
+      "full_name": "MolecularDynamics.Chapter02Review.symplecticIntegrator",
+      "kind": "def",
+      "path": "MolecularDynamics/Chapter02/ReviewDefinitions.lean",
+      "line": 93,
+      "code_sha256": "190d1e6f0bfb20def95057ffbd58bd6f6a0a4b5c29fb621521a323428e966760"
+    },
+    {
+      "full_name": "MolecularDynamics.SymplecticCoordinates",
+      "kind": "abbrev",
+      "path": "MolecularDynamics/Chapter02/SymplecticForm.lean",
+      "line": 25,
+      "code_sha256": "d801b1ef7d571d0b96c22167cbd9c508f58aeba9e8793a8caaddb87888fc252e"
+    },
+    {
+      "full_name": "MolecularDynamics.SymplecticCoordinateMatrix",
+      "kind": "abbrev",
+      "path": "MolecularDynamics/Chapter02/SymplecticForm.lean",
+      "line": 27,
+      "code_sha256": "f11e8c230eb2e2caa77c5d8ff83b56b846ee34e6d0347e62c39dea2ffa50f12c"
+    },
+    {
+      "full_name": "MolecularDynamics.textbookJ",
+      "kind": "def",
+      "path": "MolecularDynamics/Chapter02/SymplecticForm.lean",
+      "line": 31,
+      "code_sha256": "c7944ade4b768d7f5c7755bc8d2b34c927db678ea6d001a3deb85cc2318f8304"
+    },
+    {
+      "full_name": "MolecularDynamics.IsTextbookSymplectic",
+      "kind": "def",
+      "path": "MolecularDynamics/Chapter02/SymplecticForm.lean",
+      "line": 130,
+      "code_sha256": "6642b20035e535f764e24183b8b3fd564c65f367b80a24c79a394d8a4d55056f"
+    },
+    {
+      "full_name": "MolecularDynamics.textbookJacobian",
+      "kind": "def",
+      "path": "MolecularDynamics/Chapter02/SymplecticMaps.lean",
+      "line": 21,
+      "code_sha256": "de22cc68d29839d120350e99f4983537ef9e72385df49f475c8e3396754dcdbe"
+    },
+    {
+      "full_name": "MolecularDynamics.IsTextbookSymplecticMap",
+      "kind": "def",
+      "path": "MolecularDynamics/Chapter02/SymplecticMaps.lean",
+      "line": 55,
+      "code_sha256": "7563019e4b4160d2583955860a10898409a2b10b6eb8f48ee27ca77e8efc5c9a"
+    },
+    {
+      "full_name": "MolecularDynamics.Chapter05Review.E",
+      "kind": "abbrev",
+      "path": "MolecularDynamics/Chapter05/ReviewDefinitions.lean",
+      "line": 18,
+      "code_sha256": "b497c8ba7f01b62a3147d9ae65652772ff3f81e57aa19b116f1283fef7a3cc60"
+    },
+    {
+      "full_name": "MolecularDynamics.Chapter05Review.flow",
+      "kind": "def",
+      "path": "MolecularDynamics/Chapter05/ReviewDefinitions.lean",
+      "line": 23,
+      "code_sha256": "cd47fe07b629a7f5aa0bdc126758e9528093d227aaebc2097a541fd177a6a961"
+    }
+  ],
+  "validation": {
+    "project_constant_closure": "PASS",
+    "missing_project_definitions": [],
+    "full_page_render_equality_dpi": 72,
+    "website_submitted": false
+  },
+  "files": {
+    "PASTE.txt": {
+      "bytes": 8788,
+      "sha256": "4b45f876eb897b98d867879da7ad2344d32469965d7ebae2657e8f316263a1d9"
+    },
+    "BATCH09b_PAGES.pdf": {
+      "bytes": 73957,
+      "sha256": "4ef90223b057fea744cc4e599f143caeac69b5009ecfda46877d423ddc302ed8"
+    }
+  },
+  "total_task_bytes": 87486
+}

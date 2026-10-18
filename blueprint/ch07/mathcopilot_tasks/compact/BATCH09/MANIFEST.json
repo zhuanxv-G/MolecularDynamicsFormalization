@@ -1,0 +1,33 @@
+{
+  "batch": "BATCH09",
+  "subtasks": [
+    {
+      "subtask": "BATCH09a",
+      "source_id": "MD-7.6-DivergenceFreeInvariant",
+      "path": "blueprint/ch07/mathcopilot_tasks/compact/BATCH09/a",
+      "bytes": 83485,
+      "manifest_sha256": "be82a405367e2ccd93aa84ddbdb551397c97c8ae237b93b3c8a8c05611d495d9"
+    },
+    {
+      "subtask": "BATCH09b",
+      "source_id": "MD-7.6-GeMarsdenRestriction",
+      "path": "blueprint/ch07/mathcopilot_tasks/compact/BATCH09/b",
+      "bytes": 87486,
+      "manifest_sha256": "e92a6eab4c2a0bda4cefbc26c6f27ba0430954bf082ca99d22ffa9ea1db4eb5f"
+    },
+    {
+      "subtask": "BATCH09c",
+      "source_id": "MD-7.6-JSplitting",
+      "path": "blueprint/ch07/mathcopilot_tasks/compact/BATCH09/c",
+      "bytes": 104433,
+      "manifest_sha256": "ee8fd3c54d2505131230c7329ae0f8cde991af97b494a538e6681663c97295ba"
+    },
+    {
+      "subtask": "BATCH09d",
+      "source_id": "MD-7.6-CoordinateJSplitting",
+      "path": "blueprint/ch07/mathcopilot_tasks/compact/BATCH09/d",
+      "bytes": 84779,
+      "manifest_sha256": "0ae76d3e09e70b9ffa50cc5d3923fa1c9d0a3957a47c3785312c0f9398beecea"
+    }
+  ]
+}
