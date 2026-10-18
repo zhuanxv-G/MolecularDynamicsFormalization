@@ -74,8 +74,8 @@ missing='需独立Gaussian一二阶矩的全部相邻/不相邻组合积分；�
 add('LimitMethodAccuracy','7.10',308,
 r'''We would expect that this scheme should have an $O(h^4)=O(\tau^2)$ error in configurational averages. For averages computed in finite time, work in [224] has shown that (7.40) does indeed give a first order error, albeit one that vanishes exponentially fast in time as the simulation progresses. Hence for suitably long simulations, the observed error will be $O(h^2)$.''',
 '''def lmTransientErrorBound (error : ℝ → ℝ → ℝ) : Prop :=
-  ∃ C > 0, ∃ λ > 0, ∃ δ > 0, ∀ τ ∈ Set.Ioo 0 δ, ∀ T ≥ 0,
-    |error τ T| ≤ C*(Real.exp (-λ*T)*τ+τ^2)
+  ∃ C > 0, ∃ multiplier > 0, ∃ δ > 0, ∀ τ ∈ Set.Ioo 0 δ, ∀ T ≥ 0,
+    |error τ T| ≤ C*(Real.exp (-multiplier*T)*τ+τ^2)
 theorem limitAccuracy_rescale (h : ℝ) : (h^2/2)^2 = h^4/4 := by ring''',kind='definition',
 issues=['已目视核对PDF329：本段前面以τ为实际过阻尼步长并称长期二阶，末句却写O(h²)。若仍沿用τ=h²/2，应区分长期O(τ²)=O(h⁴)和有限时一阶O(τ)=O(h²)；原文符号存在歧义。'],
 extra=['用显式瞬态上界命题保留指数衰减的一阶项和二阶项，不宣称该命题已对任意势成立；其成立所需的增长/耗散与正则条件及真实分布误差识别尚缺。','原文称all values of h and τ亦不能由局部渐近展开推出全步长阶数结论。'],

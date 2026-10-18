@@ -8,8 +8,8 @@ The vector of $l$ constraints is given by $g:\mathbb R^{N_c}\to\mathbb R^l$ and 
 \[g(q)=0,\qquad g'(q)M^{-1}p=0.\]''',
 '''def constraintJacobian {l : ℕ} (g : V n → V l) (q : V n) (j : Fin l) (i : Fin n) : ℝ :=
   coordDerivative (fun x ↦ g x j) q i
-def constraintReaction {l : ℕ} (g : V n → V l) (q : V n) (λ : V l) : V n :=
-  fun i ↦ ∑ j, constraintJacobian g q j i*λ j
+def constraintReaction {l : ℕ} (g : V n → V l) (q : V n) (multiplier : V l) : V n :=
+  fun i ↦ ∑ j, constraintJacobian g q j i*multiplier j
 def hiddenConstraint {l : ℕ} (m : V n) (g : V n → V l) (x : Phase n) : Prop :=
   ∀ j, (∑ i, constraintJacobian g x.1 j i*(x.2 i/m i)) = 0
 def cotangentConstraint {l : ℕ} (m : V n) (g : V n → V l) : Set (Phase n) :=
@@ -64,12 +64,12 @@ r'''We could instead consider splitting the dynamics up and performing the integ
 \[H_c:\quad dq=M^{-1}pdt,\quad dp=-\nabla U(q)dt-g'(q)^T\lambda dt,\quad g(q)=0,\]
 \[O_c:\quad dq=0,\quad dp=-\gamma pdt+\sqrt{2\gamma k_BTM}dW-g'(q)^T\lambda dt,\quad g(q)=0.\]
 We solve these two pieces symmetrically, where the constrained Hamiltonian part is solved over a step $h$, in between two solves of the Ornstein-Uhlenbeck SDE with stepsize $h/2$.''',
-'''def constrainedHField {l : ℕ} (m : V n) (U : V n → ℝ) (g : V n → V l) (λ : V l) (x : Phase n) : Phase n :=
-  (fun i ↦ x.2 i/m i,fun i ↦ -gradient U x.1 i-constraintReaction g x.1 λ i)
-def constrainedOField {l : ℕ} (g : V n → V l) (γ : ℝ) (λ : V l) (x : Phase n) : Phase n :=
-  (0,fun i ↦ -γ*x.2 i-constraintReaction g x.1 λ i)
+'''def constrainedHField {l : ℕ} (m : V n) (U : V n → ℝ) (g : V n → V l) (multiplier : V l) (x : Phase n) : Phase n :=
+  (fun i ↦ x.2 i/m i,fun i ↦ -gradient U x.1 i-constraintReaction g x.1 multiplier i)
+def constrainedOField {l : ℕ} (g : V n → V l) (γ : ℝ) (multiplier : V l) (x : Phase n) : Phase n :=
+  (0,fun i ↦ -γ*x.2 i-constraintReaction g x.1 multiplier i)
 def constrainedHOComposition {E : Type*} (H O : ℝ → E → E) (h : ℝ) : E → E := O (h/2) ∘ H h ∘ O (h/2)''',kind='definition',
-extra=['Hc、Oc分别使用各自乘子，不能将相同λ在求和中重复扣除；Oc噪声为前条真实Wiener常扩散项，向量场仅记录漂移。','每段都应满足cotangentConstraint，实际流或核、Oc半群律及约束Gaussian不变性尚未证明。'])
+extra=['Hc、Oc分别使用各自乘子，不能将相同multiplier在求和中重复扣除；Oc噪声为前条真实Wiener常扩散项，向量场仅记录漂移。','每段都应满足cotangentConstraint，实际流或核、Oc半群律及约束Gaussian不变性尚未证明。'])
 
 add('MEVMEAlgorithm','7.12','318–319',
 r'''Midpoint Euler - Verlet - Midpoint Euler (see [232])
@@ -78,19 +78,19 @@ r'''Midpoint Euler - Verlet - Midpoint Euler (see [232])
 \[p_{n+3/4}=p_{n+1/2}-\tfrac h2\nabla U(q_{n+1})-g'(q_{n+1})^T\lambda_{n+3/4},\quad g'(q_{n+1})M^{-1}p_{n+3/4}=0,\quad g(q_{n+1})=0.\]
 \[p_{n+1}=p_{n+3/4}-\tfrac{h\gamma}4(p_{n+3/4}+p_{n+1})+\sqrt{h\gamma k_BTM}R_{n+1/2}-g'(q_{n+1})^T\lambda_{n+1},\quad g'(q_{n+1})M^{-1}p_{n+1}=0.\]''',
 '''def midpointConstrainedORelation {l : ℕ} (m : V n) (g : V n → V l) (γ θ h : ℝ)
-    (q p R out : V n) (λ : V l) : Prop :=
-  (∀ i, out i = p i-h*γ/4*(p i+out i)+Real.sqrt (h*γ*θ*m i)*R i-constraintReaction g q λ i) ∧
+    (q p R out : V n) (multiplier : V l) : Prop :=
+  (∀ i, out i = p i-h*γ/4*(p i+out i)+Real.sqrt (h*γ*θ*m i)*R i-constraintReaction g q multiplier i) ∧
   hiddenConstraint m g (q,out)
 def constrainedVerletRelation {l : ℕ} (m : V n) (g : V n → V l) (U : V n → ℝ) (h : ℝ)
-    (x out : Phase n) (ph : V n) (λ μ : V l) : Prop :=
-  (∀ i, ph i = x.2 i-h/2*gradient U x.1 i-constraintReaction g x.1 λ i) ∧
+    (x out : Phase n) (ph : V n) (multiplier μ : V l) : Prop :=
+  (∀ i, ph i = x.2 i-h/2*gradient U x.1 i-constraintReaction g x.1 multiplier i) ∧
   (∀ i, out.1 i = x.1 i+h/m i*ph i) ∧
   (∀ i, out.2 i = ph i-h/2*gradient U out.1 i-constraintReaction g out.1 μ i) ∧
   out ∈ cotangentConstraint m g
 def mevmeRelation {l : ℕ} (m : V n) (g : V n → V l) (U : V n → ℝ) (γ θ h : ℝ)
     (R S : V n) (x out : Phase n) : Prop :=
-  ∃ pa ph pb : V n, ∃ λa λb λc λd : V l,
-    midpointConstrainedORelation m g γ θ h x.1 x.2 R pa λa ∧
-    constrainedVerletRelation m g U h (x.1,pa) (out.1,pb) ph λb λc ∧
-    midpointConstrainedORelation m g γ θ h out.1 pb S out.2 λd''',kind='definition',
+  ∃ pa ph pb : V n, ∃ multipliera multiplierb multiplierc multiplierd : V l,
+    midpointConstrainedORelation m g γ θ h x.1 x.2 R pa multipliera ∧
+    constrainedVerletRelation m g U h (x.1,pa) (out.1,pb) ph multiplierb multiplierc ∧
+    midpointConstrainedORelation m g γ θ h out.1 pb S out.2 multiplierd''',kind='definition',
 extra=['完整记录全部中间动量、乘子和位置/隐约束；隐式关系不声称求解器存在唯一。R,S为独立标准Gaussian向量的资格由使用时另加vectorNormalSequence。'])

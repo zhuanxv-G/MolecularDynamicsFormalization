@@ -1,6 +1,6 @@
 # 第7章待用户提交的首轮任务包
 
-16批、91子包，覆盖91条；尚未提交网站。
+17批、97子包，覆盖97条；尚未提交网站。
 
 - BATCH01：MD-7.1-Bias, MD-7.2-ScalarSDE, MD-7.2-EulerMaruyama, MD-7.2-SDEIncrement, MD-7.2-StrongError, MD-7.2-MeanErrorExpectation
 - BATCH02：MD-7.2-StrongOrder, MD-7.2-WeakError, MD-7.2-StrongWeakComparison, MD-7.2-CanonicalAverage, MD-7.2-PartitionPrinted, MD-7.2-AverageNotationBias
@@ -17,4 +17,5 @@
 - BATCH13：MD-7.8.1-FirstCorrectionTablePrinted, MD-7.8.1-PositionMomentumCorrections, MD-7.8.1-OverdampedFirstOrderCaution, MD-7.8.2-BiasedDoubleWellExact, MD-7.9-Proposition71, MD-7.9-EvenDensityPerturbation
 - BATCH14：MD-7.9.1-OYZYOInhomogeneity, MD-7.9.1-TripleCommutatorPrinted, MD-7.9.1-SymmetricRHS, MD-7.9.1-Lemma71, MD-7.9.1-ConjugateSymmetricCorrections, MD-7.9.2-ReciprocalFrictionExpansion
 - BATCH15：MD-7.9.2-OUKernelQualification, MD-7.9.2-OUHermiteIdentities, MD-7.9.2-FirstReciprocalCorrection, MD-7.9.2-OverdampedSolvabilityOperators, MD-7.9.2-HighFrictionCorrectionTable, MD-7.9.3-BAOABMarginalCancellation
-- BATCH16：MD-7.9.3-SuperconvergenceScope
+- BATCH16：MD-7.9.3-SuperconvergenceScope, MD-7.10-MomentumRedrawLimit, MD-7.10-OBABOOverdampedEuler, MD-7.10-BAOABLimitMethod, MD-7.10-ColoredNoiseAndExtension, MD-7.10-LimitMethodAccuracy
+- BATCH17：MD-7.9.3-ZeroFrictionVerlet

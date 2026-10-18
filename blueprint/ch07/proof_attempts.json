@@ -272,5 +272,29 @@
     "category": "缺大型理论",
     "routes": [],
     "decision": "缺大型理论时直接记录缺项；否则最多三条短路线。"
+  },
+  "MD-7.10-MomentumRedrawLimit": {
+    "reason": "指数衰减、sqrt连续与有限维逐坐标极限短桥；不建立Smoluchowski–Kramers理论。",
+    "category": "缺大型理论",
+    "routes": [],
+    "decision": "缺大型理论时直接记录缺项；否则最多三条短路线。"
+  },
+  "MD-7.10-OBABOOverdampedEuler": {
+    "reason": "时间尺度替换需实平方根、质量正性与根号乘积的短桥。",
+    "category": "缺大型理论",
+    "routes": [],
+    "decision": "缺大型理论时直接记录缺项；否则最多三条短路线。"
+  },
+  "MD-7.10-ColoredNoiseAndExtension": {
+    "reason": "需独立Gaussian一二阶矩的全部相邻/不相邻组合积分；不建一般时间序列理论。",
+    "category": "缺大型理论",
+    "routes": [],
+    "decision": "缺大型理论时直接记录缺项；否则最多三条短路线。"
+  },
+  "MD-7.9.3-ZeroFrictionVerlet": {
+    "reason": "两个A半步合并及函数组合化简的短桥尚未完成。",
+    "category": "缺大型理论",
+    "routes": [],
+    "decision": "缺大型理论时直接记录缺项；否则最多三条短路线。"
   }
 }

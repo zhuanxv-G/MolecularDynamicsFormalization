@@ -6,7 +6,42 @@
       "source_id": "MD-7.9.3-SuperconvergenceScope",
       "path": "blueprint/ch07/mathcopilot_tasks/compact/BATCH16/a",
       "bytes": 105419,
-      "manifest_sha256": "1c20c9859e1197008e7c7df6dd169c375879f123f443b9033e3c75c210079265"
+      "manifest_sha256": "515ed7d90a4248d8865d8d5756093ae1cc864fd952dbff42672ca924d75553e9"
+    },
+    {
+      "subtask": "BATCH16b",
+      "source_id": "MD-7.10-MomentumRedrawLimit",
+      "path": "blueprint/ch07/mathcopilot_tasks/compact/BATCH16/b",
+      "bytes": 101219,
+      "manifest_sha256": "bb9d81fef0f42cac5cfe402cd5dc679f8fbdf6043d7690c74679c48595bb9283"
+    },
+    {
+      "subtask": "BATCH16c",
+      "source_id": "MD-7.10-OBABOOverdampedEuler",
+      "path": "blueprint/ch07/mathcopilot_tasks/compact/BATCH16/c",
+      "bytes": 100451,
+      "manifest_sha256": "6e1e277be2a051e4d3817b2485b282c67ecaa04ea06d6de2bcf00b2ff031f2e1"
+    },
+    {
+      "subtask": "BATCH16d",
+      "source_id": "MD-7.10-BAOABLimitMethod",
+      "path": "blueprint/ch07/mathcopilot_tasks/compact/BATCH16/d",
+      "bytes": 106618,
+      "manifest_sha256": "2100211dc32f284ecfc40a114f50a50df444c6108363a6d292be82f661417ea5"
+    },
+    {
+      "subtask": "BATCH16e",
+      "source_id": "MD-7.10-ColoredNoiseAndExtension",
+      "path": "blueprint/ch07/mathcopilot_tasks/compact/BATCH16/e",
+      "bytes": 97490,
+      "manifest_sha256": "5eef7420f6e303e8cc6a50719bf91bb1977d8031a94cd14546ba02701011a028"
+    },
+    {
+      "subtask": "BATCH16f",
+      "source_id": "MD-7.10-LimitMethodAccuracy",
+      "path": "blueprint/ch07/mathcopilot_tasks/compact/BATCH16/f",
+      "bytes": 94132,
+      "manifest_sha256": "bbc1a6813a8a768b0c75ba2be989472139a086b8c69aef248a5e758ddaeda11a"
     }
   ]
 }

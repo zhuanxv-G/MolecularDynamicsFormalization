@@ -6,14 +6,18 @@ r'''The Lagrange multiplier $\lambda_{n+1/4}$ (and likewise $\lambda_{n+1}$) can
 which is easily computed once the $R_n$ vector is evaluated in the step, and gives us a stability criterion
 \[\gamma h<4.\tag{7.46}\]''',
 '''def multiplierLinearSystem {l : ℕ} (m : V n) (g : V n → V l) (γ θ h : ℝ)
-    (q p R : V n) (λ : V l) : Prop :=
-  hiddenConstraint m g (q,fun i ↦ (1-h*γ/4)*p i+Real.sqrt (h*γ*θ*m i)*R i-constraintReaction g q λ i)
+    (q p R : V n) (multiplier : V l) : Prop :=
+  hiddenConstraint m g (q,fun i ↦ (1-h*γ/4)*p i+Real.sqrt (h*γ*θ*m i)*R i-constraintReaction g q multiplier i)
 def midpointAmplification (a : ℝ) : ℝ := (1-a/4)/(1+a/4)
 def midpointStabilityPrinted (a : ℝ) : Prop := |midpointAmplification a| ≤ 1 ↔ a < 4
 theorem midpointStabilityPrinted_corrected (a : ℝ) (ha : 0 ≤ a) : |midpointAmplification a| ≤ 1 := by
   unfold midpointAmplification
   rw [abs_le]
-  constructor <;> (apply (le_div_iff₀ (by positivity : 0 < 1+a/4)).2 <;> nlinarith)
+  constructor
+  · apply (le_div_iff₀ (by positivity : 0 < 1+a/4)).2
+    nlinarith
+  · apply (div_le_iff₀ (by positivity : 0 < 1+a/4)).2
+    nlinarith
 theorem midpointStability_counterexample : |midpointAmplification 8| ≤ 1 ∧ ¬ (8 : ℝ) < 4 := by
   norm_num [midpointAmplification]''',label='(7.46)',
 issues=['已目视核对PDF340／印刷319：所印γh<4是中点OU放大因子非负的条件，而非线性绝对稳定性的必要条件。隐式中点OU对γh≥0满足|r|≤1；γh=8给反例。完整耦合Verlet仍有其独立步长限制。'],
@@ -24,21 +28,21 @@ r'''\[A_c:\quad dq=M^{-1}pdt,\quad dp=-g'(q)^T\lambda dt,\quad g(q)=0,\]
 \[B_c:\quad dq=0,\quad dp=-\nabla U(q)dt-g'(q)^T\lambda dt,\quad g(q)=0,\]
 \[O_c:\quad dq=0,\quad dp=-\gamma pdt+\sqrt{2\gamma k_BTM}dW-g'(q)^T\lambda dt,\quad g(q)=0.\]
 Observe that the holonomic constraint (as well as the hidden constraint) is maintained in each part, changing the usual A piece into a geodesic drift along the manifold defined by $g(q)=0$.''',
-'''def constrainedAField {l : ℕ} (m : V n) (g : V n → V l) (λ : V l) (x : Phase n) : Phase n :=
-  (fun i ↦ x.2 i/m i,fun i ↦ -constraintReaction g x.1 λ i)
-def constrainedBField {l : ℕ} (U : V n → ℝ) (g : V n → V l) (λ : V l) (x : Phase n) : Phase n :=
-  (0,fun i ↦ -gradient U x.1 i-constraintReaction g x.1 λ i)
+'''def constrainedAField {l : ℕ} (m : V n) (g : V n → V l) (multiplier : V l) (x : Phase n) : Phase n :=
+  (fun i ↦ x.2 i/m i,fun i ↦ -constraintReaction g x.1 multiplier i)
+def constrainedBField {l : ℕ} (U : V n → ℝ) (g : V n → V l) (multiplier : V l) (x : Phase n) : Phase n :=
+  (0,fun i ↦ -gradient U x.1 i-constraintReaction g x.1 multiplier i)
 def geodesicConstraintFlow {l : ℕ} (m : V n) (g : V n → V l) (F : ℝ → Phase n → Phase n) : Prop :=
   (∀ x, F 0 x = x) ∧ (∀ s t x, F (s+t) x = F s (F t x)) ∧
-  ∀ x ∈ cotangentConstraint m g, ∃ λ : ℝ → V l, ∀ t,
-    F t x ∈ cotangentConstraint m g ∧ HasDerivAt (fun s ↦ F s x) (constrainedAField m g (λ t) (F t x)) t
+  ∀ x ∈ cotangentConstraint m g, ∃ multiplier : ℝ → V l, ∀ t,
+    F t x ∈ cotangentConstraint m g ∧ HasDerivAt (fun s ↦ F s x) (constrainedAField m g (multiplier t) (F t x)) t
 def constrainedKickRelation {l : ℕ} (m : V n) (U : V n → ℝ) (g : V n → V l)
     (h : ℝ) (x out : Phase n) : Prop :=
-  out.1 = x.1 ∧ ∃ λ : V l, (∀ i, out.2 i = x.2 i-h*gradient U x.1 i-constraintReaction g x.1 λ i) ∧
+  out.1 = x.1 ∧ ∃ multiplier : V l, (∀ i, out.2 i = x.2 i-h*gradient U x.1 i-constraintReaction g x.1 multiplier i) ∧
     out ∈ cotangentConstraint m g
 def constrainedExactORelation {l : ℕ} (m : V n) (g : V n → V l) (γ θ h : ℝ)
     (R : V n) (x out : Phase n) : Prop :=
-  out.1 = x.1 ∧ ∃ λ : V l, (∀ i, out.2 i = ouMomentum m γ θ h x.2 R i-constraintReaction g x.1 λ i) ∧
+  out.1 = x.1 ∧ ∃ multiplier : V l, (∀ i, out.2 i = ouMomentum m γ θ h x.2 R i-constraintReaction g x.1 multiplier i) ∧
     out ∈ cotangentConstraint m g''',kind='definition',
 extra=['Ac为已存在的完整光滑约束流，F0=id及流合成律完整；Bc/Oc为乘子线性求解关系。规则保持约束写在关系中，不把乘子求解存在性计为已证。','正质量、约束Jacobian满秩和γ≥0,θ>0,h≥0由求解器应用时另加；Oc噪声R必须独立标准Gaussian。'])
 

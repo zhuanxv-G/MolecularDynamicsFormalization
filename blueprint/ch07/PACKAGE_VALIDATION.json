@@ -1,7 +1,7 @@
 {
-  "batches": 16,
-  "subtasks": 91,
-  "covered_entries": 91,
+  "batches": 17,
+  "subtasks": 97,
+  "covered_entries": 97,
   "checks": [
     {
       "source_id": "MD-7.1-Bias",
@@ -456,6 +456,36 @@
     {
       "source_id": "MD-7.9.3-SuperconvergenceScope",
       "project_constants": 10,
+      "missing": []
+    },
+    {
+      "source_id": "MD-7.10-MomentumRedrawLimit",
+      "project_constants": 6,
+      "missing": []
+    },
+    {
+      "source_id": "MD-7.10-OBABOOverdampedEuler",
+      "project_constants": 13,
+      "missing": []
+    },
+    {
+      "source_id": "MD-7.10-BAOABLimitMethod",
+      "project_constants": 12,
+      "missing": []
+    },
+    {
+      "source_id": "MD-7.10-ColoredNoiseAndExtension",
+      "project_constants": 7,
+      "missing": []
+    },
+    {
+      "source_id": "MD-7.10-LimitMethodAccuracy",
+      "project_constants": 2,
+      "missing": []
+    },
+    {
+      "source_id": "MD-7.9.3-ZeroFrictionVerlet",
+      "project_constants": 11,
       "missing": []
     }
   ],

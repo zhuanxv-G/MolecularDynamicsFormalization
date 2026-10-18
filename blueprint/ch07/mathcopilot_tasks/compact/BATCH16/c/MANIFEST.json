@@ -1,0 +1,129 @@
+{
+  "batch": "BATCH16",
+  "subtask": "BATCH16c",
+  "source_ids": [
+    "MD-7.10-OBABOOverdampedEuler"
+  ],
+  "input_sha256": {
+    "Blueprint/Ch07.lean": "6559223155a454d42857e6266a414e7c29d8118c59be6f66abbe88ff9b335b98",
+    "blueprint/ch07/ch07_source.json": "f1f80be637c90a7dc02f76552bd1ec8b0f31eae282a38febfe9b8635d9d01ecb",
+    "BATCH16c_PAGES.pdf": "85910d02cf751078669045280cbc188b6406f36645f88737da8b1a25d8f632f3"
+  },
+  "page_mapping": [
+    {
+      "attachment_page": 1,
+      "original_pdf_page": 328,
+      "printed_page": 307
+    }
+  ],
+  "definition_excerpts": [
+    {
+      "full_name": "MD.Ch07.V",
+      "kind": "abbrev",
+      "path": "Blueprint/Ch07.lean",
+      "line": 172,
+      "code_sha256": "7ab0ad90462b274b03f5b929b5f09417c0b397b6cb908fa6e7bd56677a314027"
+    },
+    {
+      "full_name": "MD.Ch07.Phase",
+      "kind": "abbrev",
+      "path": "Blueprint/Ch07.lean",
+      "line": 173,
+      "code_sha256": "ef1520e3b22ac1c99a30a989deafe8d3da44a9f2a3e5b6c2cd3220218b88513e"
+    },
+    {
+      "full_name": "MD.Ch07.coordDerivative",
+      "kind": "def",
+      "path": "Blueprint/Ch07.lean",
+      "line": 221,
+      "code_sha256": "e782d789a13f5db6817e2c995f141805e81ac75720125b846f8ee14ba3833a4b"
+    },
+    {
+      "full_name": "MD.Ch07.gradient",
+      "kind": "def",
+      "path": "Blueprint/Ch07.lean",
+      "line": 250,
+      "code_sha256": "540c6af25c09d3a58da531bc32056ff1a1c070facc58d34c96b6653d781fba6f"
+    },
+    {
+      "full_name": "MD.Ch07.driftStep",
+      "kind": "def",
+      "path": "Blueprint/Ch07.lean",
+      "line": 279,
+      "code_sha256": "600d3de37df6b9ef23628e1495de886583ba0ded7bc74fa5eb3ce43ed25daa6c"
+    },
+    {
+      "full_name": "MD.Ch07.kickStep",
+      "kind": "def",
+      "path": "Blueprint/Ch07.lean",
+      "line": 282,
+      "code_sha256": "475506583d95af613a8e1c58ad474dbd3fc0c0cfc22ab985f0c251cb1567db37"
+    },
+    {
+      "full_name": "MD.Ch07.redrawMomentum",
+      "kind": "def",
+      "path": "Blueprint/Ch07.lean",
+      "line": 1253,
+      "code_sha256": "53bc68097ec7590b04b8658f34c1928a46e5713a64e327aa4dd6aaae0b7dbeef"
+    },
+    {
+      "full_name": "MD.Ch07.redrawStep",
+      "kind": "def",
+      "path": "Blueprint/Ch07.lean",
+      "line": 1254,
+      "code_sha256": "69a118a321e602e701f287bae9576b431eb8e1d46331221e6c8932a413097df5"
+    },
+    {
+      "full_name": "MD.Ch07.obaboInfinite",
+      "kind": "def",
+      "path": "Blueprint/Ch07.lean",
+      "line": 1261,
+      "code_sha256": "d51be3f8c6af7a54d975db44cb6ba05359720fb81d3ce3bc3eae31fd079f8f84"
+    },
+    {
+      "full_name": "MD.Ch07.overdampedEulerH",
+      "kind": "def",
+      "path": "Blueprint/Ch07.lean",
+      "line": 1263,
+      "code_sha256": "3450c47a12ecf5d7052c41c46f2c2421ac6c430c30db4217d1df494f5048f890"
+    },
+    {
+      "full_name": "MD.Ch07.overdampedEuler",
+      "kind": "def",
+      "path": "Blueprint/Ch07.lean",
+      "line": 1265,
+      "code_sha256": "35131a5219cce5695df057b701d32034f028cb83e0c6ddbf5d48b9235e3e49c1"
+    },
+    {
+      "full_name": "MD.Ch07.obaboInfinite_position",
+      "kind": "theorem",
+      "path": "Blueprint/Ch07.lean",
+      "line": 1267,
+      "code_sha256": "30c5c95d46f70b3b4723a6cf7533c73967cbcab8aa6b82db96ea123aef7b4a3a"
+    },
+    {
+      "full_name": "MD.Ch07.overdampedEuler_rescale",
+      "kind": "theorem",
+      "path": "Blueprint/Ch07.lean",
+      "line": 1272,
+      "code_sha256": "e672dffd7df53adafa7f629638169a274cce29886387b7711c617ea5601f4812"
+    }
+  ],
+  "validation": {
+    "project_constant_closure": "PASS",
+    "missing_project_definitions": [],
+    "full_page_render_equality_dpi": 72,
+    "website_submitted": false
+  },
+  "files": {
+    "PASTE.txt": {
+      "bytes": 9430,
+      "sha256": "10ba33cb955f992d6421d10eb892345cbae804b5fba2be2737be9714036b816b"
+    },
+    "BATCH16c_PAGES.pdf": {
+      "bytes": 86922,
+      "sha256": "85910d02cf751078669045280cbc188b6406f36645f88737da8b1a25d8f632f3"
+    }
+  },
+  "total_task_bytes": 100451
+}

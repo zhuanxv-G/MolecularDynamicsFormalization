@@ -1,6 +1,6 @@
 # 第7章逐条进度
 
-当前正文落盘：91条。全部正文完成：否。章末完整check：未执行。
+当前正文落盘：97条。全部正文完成：否。章末完整check：未执行。
 
 | source_id | 原页PDF | 本地对照 | 编译/公理 | 数学状态 | 网站 |
 |---|---|---|---|---|---|
@@ -95,3 +95,9 @@
 | MD-7.9.2-HighFrictionCorrectionTable | 325–326 | PASS | 通过 | 已证 | 待审 |
 | MD-7.9.3-BAOABMarginalCancellation | 326 | PASS | 通过 | 未证陈述 | 待审 |
 | MD-7.9.3-SuperconvergenceScope | 327 | PASS | 通过 | 未证陈述 | 待审 |
+| MD-7.10-MomentumRedrawLimit | 327 | PASS | 通过 | 未证陈述 | 待审 |
+| MD-7.10-OBABOOverdampedEuler | 328 | PASS | 通过 | 未证陈述 | 待审 |
+| MD-7.10-BAOABLimitMethod | 328–329 | PASS | 通过 | 已证 | 待审 |
+| MD-7.10-ColoredNoiseAndExtension | 329 | PASS | 通过 | 未证陈述 | 待审 |
+| MD-7.10-LimitMethodAccuracy | 329 | NEEDS_HUMAN | 通过 | 定义 | 待审 |
+| MD-7.9.3-ZeroFrictionVerlet | 327 | PASS | 通过 | 未证陈述 | 待审 |

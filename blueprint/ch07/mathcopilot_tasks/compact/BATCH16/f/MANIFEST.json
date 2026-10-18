@@ -1,0 +1,52 @@
+{
+  "batch": "BATCH16",
+  "subtask": "BATCH16f",
+  "source_ids": [
+    "MD-7.10-LimitMethodAccuracy"
+  ],
+  "input_sha256": {
+    "Blueprint/Ch07.lean": "6559223155a454d42857e6266a414e7c29d8118c59be6f66abbe88ff9b335b98",
+    "blueprint/ch07/ch07_source.json": "f1f80be637c90a7dc02f76552bd1ec8b0f31eae282a38febfe9b8635d9d01ecb",
+    "BATCH16f_PAGES.pdf": "bab357c6301460ff7936a3278522f93b03e51323a157131859b53d263542f1db"
+  },
+  "page_mapping": [
+    {
+      "attachment_page": 1,
+      "original_pdf_page": 329,
+      "printed_page": 308
+    }
+  ],
+  "definition_excerpts": [
+    {
+      "full_name": "MD.Ch07.lmTransientErrorBound",
+      "kind": "def",
+      "path": "Blueprint/Ch07.lean",
+      "line": 1308,
+      "code_sha256": "5c477c8f0a072aaf436f7a5d3364177df814b2ca866e82e3c4671a48318c045e"
+    },
+    {
+      "full_name": "MD.Ch07.limitAccuracy_rescale",
+      "kind": "theorem",
+      "path": "Blueprint/Ch07.lean",
+      "line": 1311,
+      "code_sha256": "d3525892802b8c61183346c3bed34703e8fc0d062383855bc8ecec5684b28f41"
+    }
+  ],
+  "validation": {
+    "project_constant_closure": "PASS",
+    "missing_project_definitions": [],
+    "full_page_render_equality_dpi": 72,
+    "website_submitted": false
+  },
+  "files": {
+    "PASTE.txt": {
+      "bytes": 4135,
+      "sha256": "5941e528efbccb852a10c0b0ba85d2bef869837c316e37415bb5c3d2318ffe25"
+    },
+    "BATCH16f_PAGES.pdf": {
+      "bytes": 88408,
+      "sha256": "bab357c6301460ff7936a3278522f93b03e51323a157131859b53d263542f1db"
+    }
+  },
+  "total_task_bytes": 94132
+}

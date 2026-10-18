@@ -1,0 +1,127 @@
+{
+  "batch": "BATCH16",
+  "subtask": "BATCH16d",
+  "source_ids": [
+    "MD-7.10-BAOABLimitMethod"
+  ],
+  "input_sha256": {
+    "Blueprint/Ch07.lean": "6559223155a454d42857e6266a414e7c29d8118c59be6f66abbe88ff9b335b98",
+    "blueprint/ch07/ch07_source.json": "f1f80be637c90a7dc02f76552bd1ec8b0f31eae282a38febfe9b8635d9d01ecb",
+    "BATCH16d_PAGES.pdf": "b00a99c2739b8943d3872c637bb96d2eaa8303b45810c6094751b2f66d35662b"
+  },
+  "page_mapping": [
+    {
+      "attachment_page": 1,
+      "original_pdf_page": 328,
+      "printed_page": 307
+    },
+    {
+      "attachment_page": 2,
+      "original_pdf_page": 329,
+      "printed_page": 308
+    }
+  ],
+  "definition_excerpts": [
+    {
+      "full_name": "MD.Ch07.V",
+      "kind": "abbrev",
+      "path": "Blueprint/Ch07.lean",
+      "line": 172,
+      "code_sha256": "7ab0ad90462b274b03f5b929b5f09417c0b397b6cb908fa6e7bd56677a314027"
+    },
+    {
+      "full_name": "MD.Ch07.Phase",
+      "kind": "abbrev",
+      "path": "Blueprint/Ch07.lean",
+      "line": 173,
+      "code_sha256": "ef1520e3b22ac1c99a30a989deafe8d3da44a9f2a3e5b6c2cd3220218b88513e"
+    },
+    {
+      "full_name": "MD.Ch07.coordDerivative",
+      "kind": "def",
+      "path": "Blueprint/Ch07.lean",
+      "line": 221,
+      "code_sha256": "e782d789a13f5db6817e2c995f141805e81ac75720125b846f8ee14ba3833a4b"
+    },
+    {
+      "full_name": "MD.Ch07.gradient",
+      "kind": "def",
+      "path": "Blueprint/Ch07.lean",
+      "line": 250,
+      "code_sha256": "540c6af25c09d3a58da531bc32056ff1a1c070facc58d34c96b6653d781fba6f"
+    },
+    {
+      "full_name": "MD.Ch07.driftStep",
+      "kind": "def",
+      "path": "Blueprint/Ch07.lean",
+      "line": 279,
+      "code_sha256": "600d3de37df6b9ef23628e1495de886583ba0ded7bc74fa5eb3ce43ed25daa6c"
+    },
+    {
+      "full_name": "MD.Ch07.kickStep",
+      "kind": "def",
+      "path": "Blueprint/Ch07.lean",
+      "line": 282,
+      "code_sha256": "475506583d95af613a8e1c58ad474dbd3fc0c0cfc22ab985f0c251cb1567db37"
+    },
+    {
+      "full_name": "MD.Ch07.redrawMomentum",
+      "kind": "def",
+      "path": "Blueprint/Ch07.lean",
+      "line": 1253,
+      "code_sha256": "53bc68097ec7590b04b8658f34c1928a46e5713a64e327aa4dd6aaae0b7dbeef"
+    },
+    {
+      "full_name": "MD.Ch07.redrawStep",
+      "kind": "def",
+      "path": "Blueprint/Ch07.lean",
+      "line": 1254,
+      "code_sha256": "69a118a321e602e701f287bae9576b431eb8e1d46331221e6c8932a413097df5"
+    },
+    {
+      "full_name": "MD.Ch07.baoabInfinite",
+      "kind": "def",
+      "path": "Blueprint/Ch07.lean",
+      "line": 1280,
+      "code_sha256": "86c6f12f16e92fe0f85f56d978982b5bc1291f881141938ff8e0f0c97403b2ca"
+    },
+    {
+      "full_name": "MD.Ch07.lmStepH",
+      "kind": "def",
+      "path": "Blueprint/Ch07.lean",
+      "line": 1282,
+      "code_sha256": "96450cb1d49c93a699f24562bc92527eaf9330ec3284c73914206551269781c0"
+    },
+    {
+      "full_name": "MD.Ch07.lmStep",
+      "kind": "def",
+      "path": "Blueprint/Ch07.lean",
+      "line": 1284,
+      "code_sha256": "ab7623c00b633a7e810ae93208fd469c71ad2d6a430419933d03204097920b45"
+    },
+    {
+      "full_name": "MD.Ch07.baoabInfinite_position",
+      "kind": "theorem",
+      "path": "Blueprint/Ch07.lean",
+      "line": 1286,
+      "code_sha256": "e862305a04b3052c50a2b9fde6f2849da22a70fb13afae71f563c2d1c7378fd0"
+    }
+  ],
+  "validation": {
+    "project_constant_closure": "PASS",
+    "missing_project_definitions": [],
+    "full_page_render_equality_dpi": 72,
+    "website_submitted": false
+  },
+  "files": {
+    "PASTE.txt": {
+      "bytes": 8875,
+      "sha256": "df5a1d819436747156636761e38479b4f862c47662b84a0c292a5f2268b3b93c"
+    },
+    "BATCH16d_PAGES.pdf": {
+      "bytes": 93806,
+      "sha256": "b00a99c2739b8943d3872c637bb96d2eaa8303b45810c6094751b2f66d35662b"
+    }
+  },
+  "total_task_bytes": 106618
+}
