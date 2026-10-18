@@ -5,9 +5,9 @@
     "MD-7.4-LinearIteration"
   ],
   "input_sha256": {
-    "Blueprint/Ch07.lean": "03e34bf86a5b27e03cce8552bb21fc0fea40514cd87faa953bf09a6a0a27f3c2",
-    "blueprint/ch07/ch07_source.json": "27e402f2a8b9c511106df901d6cc8472e1dae783cdf739f657879ffcf297462a",
-    "BATCH06c_PAGES.pdf": "ee9342c8aa49edfe548e17d31dd192ef34b99d773b2109bf111e036607ca8968"
+    "Blueprint/Ch07.lean": "f30ea154ebfb07ae85c0b806ff74b35808d5a0c3dcaa647c0c3cc80a78239e37",
+    "blueprint/ch07/ch07_source.json": "c434892ebf63b06f7cadcdfa7af408c2c12d7b645d35db431d1855224163ba19",
+    "BATCH06c_PAGES.pdf": "4c413f96b94fb7f5f4e5a133624fb0c484955abeebd756e4dea94a9f27a47e3a"
   },
   "page_mapping": [
     {
@@ -21,28 +21,28 @@
       "full_name": "MD.Ch07.linearUpdate",
       "kind": "def",
       "path": "Blueprint/Ch07.lean",
-      "line": 413,
+      "line": 429,
       "code_sha256": "558b204b07407282c73bfff06ee8e00e7740c8ce89db2fc60e1af80a69a36392"
     },
     {
       "full_name": "MD.Ch07.momentQ",
       "kind": "def",
       "path": "Blueprint/Ch07.lean",
-      "line": 415,
+      "line": 431,
       "code_sha256": "3a1f882d971889b4d4dff8c89259d586f56734fe1cf50aeb1b8abea63f47d6ff"
     },
     {
       "full_name": "MD.Ch07.momentP",
       "kind": "def",
       "path": "Blueprint/Ch07.lean",
-      "line": 416,
+      "line": 432,
       "code_sha256": "4cb4723e6914995473ede9722248cfc4b5b618ea790f419bdfbb19424d4a135d"
     },
     {
       "full_name": "MD.Ch07.momentQP",
       "kind": "def",
       "path": "Blueprint/Ch07.lean",
-      "line": 417,
+      "line": 433,
       "code_sha256": "051ca8fc390feef9f6489319a6dfc46fb03db30d8a2af731b46ccb4b26e97292"
     }
   ],
@@ -54,13 +54,13 @@
   },
   "files": {
     "PASTE.txt": {
-      "bytes": 4469,
-      "sha256": "01012790736b8b398f9a0ccad45803431154afc7814ba77ac2d612181184c7b2"
+      "bytes": 6931,
+      "sha256": "70412839154fb533acf2ba20e3e944057cda687e7d7502e105888961c3fb847a"
     },
     "BATCH06c_PAGES.pdf": {
       "bytes": 63629,
-      "sha256": "ee9342c8aa49edfe548e17d31dd192ef34b99d773b2109bf111e036607ca8968"
+      "sha256": "4c413f96b94fb7f5f4e5a133624fb0c484955abeebd756e4dea94a9f27a47e3a"
     }
   },
-  "total_task_bytes": 70100
+  "total_task_bytes": 72562
 }

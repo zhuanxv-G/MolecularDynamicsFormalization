@@ -3,9 +3,9 @@
 Lean/Mathlib均4.34.0。原页PDF映射：[313, 314]；印刷页=[292, 293].
 input_sha256请原样回显：
 {
-  "Blueprint/Ch07.lean": "03e34bf86a5b27e03cce8552bb21fc0fea40514cd87faa953bf09a6a0a27f3c2",
-  "blueprint/ch07/ch07_source.json": "27e402f2a8b9c511106df901d6cc8472e1dae783cdf739f657879ffcf297462a",
-  "BATCH12f_PAGES.pdf": "7a6087b8aee032c9e4ec9ced89bc21feecac65f0e64b79be91294a38d29b615e"
+  "Blueprint/Ch07.lean": "f30ea154ebfb07ae85c0b806ff74b35808d5a0c3dcaa647c0c3cc80a78239e37",
+  "blueprint/ch07/ch07_source.json": "c434892ebf63b06f7cadcdfa7af408c2c12d7b645d35db431d1855224163ba19",
+  "BATCH12f_PAGES.pdf": "fc8644a71bf570c72f042d96bb111ef40281924ff934aba61b9fea77fe60cc55"
 }
 用代码将JSON对象(batch,input_sha256,items)写到 /workspace/.mathcopilot/reviews/ch07/BATCH12f_review.json；items仅含本source_id。
 items字段：source_id、verdict(PASS/FAIL/NEEDS_HUMAN)、transcription、semantic_review、counterexample、suggested_fix、printed_version、corrected_version。逐版区分原文疑误和修正版结论；缺材料必须具体指出，不猜测。写后json.loads自检，最后仅回复路径及统计。
@@ -21,7 +21,21 @@ items字段：source_id、verdict(PASS/FAIL/NEEDS_HUMAN)、transcription、seman
   "pdf_page": "313–314",
   "statement_latex": "If we define the function $g(q,p)$ as $g(q,p)=\\beta p^TM^{-1}\\nabla U(q)$, then through simple computation we have\n\\[\\mathcal L_A^\\dagger\\rho_\\beta=-\\mathcal L_B^\\dagger\\rho_\\beta=g(q,p)\\rho_\\beta.\\]\n\\[[\\mathcal L_A^\\dagger,\\mathcal L_B^\\dagger]\\rho_\\beta=-(\\mathcal L_A^\\dagger+\\mathcal L_B^\\dagger)(g\\rho_\\beta)=(\\mathcal L_O^\\dagger-\\mathcal L_{LD}^\\dagger)(g\\rho_\\beta).\\]\nFor a function $\\psi(q)$ purely of position, we have\n\\[\\mathcal L_{LD}^\\dagger(\\psi(q)\\rho_\\beta)=-(p^TM^{-1}\\nabla\\psi(q))\\rho_\\beta(q,p),\\]\nand hence we can compute\n\\[\\mathcal L_O^\\dagger(g(q,p)\\rho_\\beta)=\\gamma\\rho_\\beta(-p\\cdot\\nabla_pg+\\beta^{-1}\\nabla_p\\cdot M\\nabla_pg)\n=-\\gamma g\\rho_\\beta=\\gamma\\beta\\mathcal L_{LD}^\\dagger(U(q)\\rho_\\beta).\\]",
   "proof_latex": null,
-  "proof_note": "原书未给独立完整证明。",
+  "proof_outline": null,
+  "proof_note": "原页推导与上下文全文见original_page_text；数学符号的排版以随附原页PDF为准。",
+  "original_page_text": [
+    {
+      "pdf_page": 313,
+      "printed_page": 292,
+      "text": "292\n7\nNumerical Methods for Stochastic Molecular Dynamics\n7.8.1\nComputing the Correction Functions f1.q; p/\nAt this point we may plow ahead and compute the PDE for each corresponding\nscheme, but a more efﬁcient route is offered by working with the structure of the\ninhomogeneity in (7.21). We may make use of the identity\n\u0006\nŒL\u0004\nO; L\u0004\nA\t C ŒL\u0004\nO; L\u0004\nB\t\n\u0007\n\u0005ˇ D\n\u0006\nŒL\u0004\nO; L\u0004\nA C L\u0004\nB\t\n\u0007\n\u0005ˇ D 0;\nas of course L\u0004\nH D L\u0004\nA C L\u0004\nB is the Liouvillian of our Hamiltonian system,\nwhich preserves any function of the energy. Thus, by the skew-symmetry of the\ncommutator (ŒP; Q\t D \u0003ŒQ; P\t) we can relate four of the six methods as\nL\u0004\n1;\u0002ABO\u0003\u0005ˇ D L\u0004\n1;\u0002OAB\u0003\u0005ˇ D \u0003L\u0004\n1;\u0002OBA\u0003\u0005ˇ D \u0003L\u0004\n1;\u0002BAO\u0003\u0005ˇ D \u00031\n2ŒL\u0004\nA; L\u0004\nB\t\u0005ˇ;\n(7.22)\nby virtue of (7.20). Hence the leading order correction functions of the schemes are\nrelated through\nf1;\u0002ABO\u0003 D f1;\u0002OAB\u0003 D \u0003f1;\u0002OBA\u0003 D \u0003f1;\u0002BAO\u0003:\n(7.23)\nThe remaining two permutations of the possible \u0002XYZ\u0003 schemes have a similar\nrelationship, with\nL\u0004\n1;\u0002AOB\u0003\u0005ˇ D \u0003L\u0004\n1;\u0002BOA\u0003\u0005ˇ D \u00031\n2ŒL\u0004\nA \u0003 L\u0004\nB; L\u0004\nO\t\u0005ˇ C L\u0004\n1;\u0002ABO\u0003\u0005ˇ:\n(7.24)\nThis reduces our workload as we can ﬁnd the leading order behavior for all six\nmethods by computing the solution to two PDEs. This is not necessarily trivial, but\nit turns out that the structure of the equations is simple enough that we can ﬁnd exact\nsolutions. We work now to compute the right-hand side of the governing PDE given\nin (7.21).\nIn order to solve (7.21) for the \u0002ABO\u0003 scheme, we need to compute the right\nhand side of (7.22). First, note that if we deﬁne the function g.q; p/ as\ng.q; p/ D ˇpTM\u00021rU.q/;\nthen through simple computation we have\nL\u0004\nA\u0005ˇ D \u0003L\u0004\nB\u0005ˇ D g.q; p/\u0005ˇ:\n"
+    },
+    {
+      "pdf_page": 314,
+      "printed_page": 293,
+      "text": "7.8\nFirst Order Schemes\n293\nThis is particularly useful as\nŒL\u0004\nA; L\u0004\nB\t\u0005ˇ D\n\u0006\nL\u0004\nAL\u0004\nB \u0003 L\u0004\nBL\u0004\nA\n\u0007\n\u0005ˇ D \u0003\n\u0006\nL\u0004\nA C L\u0004\nB\n\u0007 \u0004\ng.q; p/\u0005ˇ\n\u0005\nD\n\u0006\nL\u0004\nO \u0003 L\u0004\nLD\n\u0007 \u0004\ng.q; p/\u0005ˇ\n\u0005\n:\nNow notice that for a function .q/ purely of position, we have\nL\u0004\nLD\n\u0004\n .q/\u0005ˇ\n\u0005\nD \u0003\n\u0004\npTM\u00021r .q/\n\u0005\n\u0005ˇ.q; p/;\nand hence we can compute\nL\u0004\nO\n\u0004\ng.q; p/\u0005ˇ\n\u0005\nD \n\u0005ˇ\n\u0004\n\u0003p \u0002 rpg.q; p/ C ˇ\u00021rp \u0002 Mrpg.q; p/\n\u0005\n;\nD \u0003\ng.q; p/\u0005ˇ;\nD \nˇL\u0004\nLD\n\u0004\nU.q/\u0005ˇ\n\u0005\n:\nThis means that\nL\u0004\n1;\u0002ABO\u0003\u0005ˇ D \u00031\n2ŒL\u0004\nA; L\u0004\nB\t\u0005ˇ D \u00031\n2L\u0004\nLD\n\u0004\nŒ\nˇU.q/ \u0003 g.q; p/\t \u0005ˇ\n\u0005\n:\nHence, we can combine this equation with (7.21) to yield\nL\u0004\nLDf1;\u0002ABO\u0003\u0005ˇ D 1\n2L\u0004\nLD\n\u0004\nŒ\nˇU.q/ \u0003 g.q; p/\t \u0005ˇ\n\u0005\n;\nwith the general solution\nf1;\u0002ABO\u0003 D ˇ\n2\n\u0004\n\nU.q/ \u0003 pTM\u00021rU.q/ \u0003 c\n\u0005\n;\nwhere c D \nhU.q/i is a constant, chosen to ensure that the average of the correction\nfunction is zero. This solution gives the leading order correction for the three related\nschemes in (7.23).\nFor the ﬁnal two schemes, we can compute the correction function through the\nuse of (7.24). Our previous work has computed the second term on the right hand\nside already, so we are left with the initial term. However, its expression reduces\nquite easily, as\nŒL\u0004\nA \u0003 L\u0004\nB; L\u0004\nO\t\u0005ˇ D \u0003L\u0004\nO\n\u0006\nL\u0004\nA \u0003 L\u0004\nB\n\u0007\n\u0005ˇ;\nD \u00032L\u0004\nO\n\u0004\ng.q; p/\u0005ˇ\n\u0005\n;\nD \u00032\nˇL\u0004\nLD\n\u0004\nU.q/\u0005ˇ\n\u0005\n:\n"
+    }
+  ],
+  "transcription_note": "PDF文字层原样保留，陈述中的数学排版转写为LaTeX；文字层有特殊字形编码时以目视原页为准。PDF347的Exercises之后不在正文范围内。",
   "context_notation": [],
   "extra_assumptions": [
     "ρ为未归一Gibbs权，所有微分等式对常数归一化同样成立；实际概率还要正有限配分积分。所有质量正、β>0、光滑资格明示。",
@@ -71,11 +85,11 @@ theorem gibbsDerivativeIdentities (m : V n) (U ψ : V n → ℝ) (β γ : ℝ)
 ## 项目依赖定义体及选择规格
 以下def/abbrev/structure完整保留；定理列出完整类型，Mathlib标准定义无需摘录。
 
-### MD.Ch07.V (Blueprint/Ch07.lean:172)
+### MD.Ch07.V (Blueprint/Ch07.lean:188)
 原文件上下文：
 ```lean
 open Set Filter MeasureTheory ProbabilityTheory MolecularDynamics
-open scoped BigOperators Topology ContDiff ENNReal NNReal
+open scoped BigOperators Topology ContDiff ENNReal NNReal Matrix
 variable {Ω : Type*} [MeasurableSpace Ω]
 variable {n : ℕ}
 ```
@@ -83,11 +97,11 @@ variable {n : ℕ}
 abbrev V (n : ℕ) := Fin n → ℝ
 ```
 
-### MD.Ch07.Phase (Blueprint/Ch07.lean:173)
+### MD.Ch07.Phase (Blueprint/Ch07.lean:189)
 原文件上下文：
 ```lean
 open Set Filter MeasureTheory ProbabilityTheory MolecularDynamics
-open scoped BigOperators Topology ContDiff ENNReal NNReal
+open scoped BigOperators Topology ContDiff ENNReal NNReal Matrix
 variable {Ω : Type*} [MeasurableSpace Ω]
 variable {n : ℕ}
 ```
@@ -95,11 +109,11 @@ variable {n : ℕ}
 abbrev Phase (n : ℕ) := V n × V n
 ```
 
-### MD.Ch07.coordDerivative (Blueprint/Ch07.lean:221)
+### MD.Ch07.coordDerivative (Blueprint/Ch07.lean:237)
 原文件上下文：
 ```lean
 open Set Filter MeasureTheory ProbabilityTheory MolecularDynamics
-open scoped BigOperators Topology ContDiff ENNReal NNReal
+open scoped BigOperators Topology ContDiff ENNReal NNReal Matrix
 variable {Ω : Type*} [MeasurableSpace Ω]
 variable {n : ℕ}
 ```
@@ -108,11 +122,11 @@ def coordDerivative (f : V n → ℝ) (x : V n) (i : Fin n) : ℝ :=
   deriv (fun z ↦ f (Function.update x i z)) (x i)
 ```
 
-### MD.Ch07.ouForward (Blueprint/Ch07.lean:224)
+### MD.Ch07.ouForward (Blueprint/Ch07.lean:240)
 原文件上下文：
 ```lean
 open Set Filter MeasureTheory ProbabilityTheory MolecularDynamics
-open scoped BigOperators Topology ContDiff ENNReal NNReal
+open scoped BigOperators Topology ContDiff ENNReal NNReal Matrix
 variable {Ω : Type*} [MeasurableSpace Ω]
 variable {n : ℕ}
 ```
@@ -122,11 +136,11 @@ def ouForward (m : V n) (γ θ : ℝ) (f : V n → ℝ) (p : V n) : ℝ :=
     γ*θ * ∑ i, m i * coordDerivative (fun x ↦ coordDerivative f x i) p i
 ```
 
-### MD.Ch07.gradient (Blueprint/Ch07.lean:250)
+### MD.Ch07.gradient (Blueprint/Ch07.lean:266)
 原文件上下文：
 ```lean
 open Set Filter MeasureTheory ProbabilityTheory MolecularDynamics
-open scoped BigOperators Topology ContDiff ENNReal NNReal
+open scoped BigOperators Topology ContDiff ENNReal NNReal Matrix
 variable {Ω : Type*} [MeasurableSpace Ω]
 variable {n : ℕ}
 ```
@@ -134,11 +148,11 @@ variable {n : ℕ}
 def gradient (U : V n → ℝ) (q : V n) : V n := fun i ↦ coordDerivative U q i
 ```
 
-### MD.Ch07.aForward (Blueprint/Ch07.lean:306)
+### MD.Ch07.aForward (Blueprint/Ch07.lean:322)
 原文件上下文：
 ```lean
 open Set Filter MeasureTheory ProbabilityTheory MolecularDynamics
-open scoped BigOperators Topology ContDiff ENNReal NNReal
+open scoped BigOperators Topology ContDiff ENNReal NNReal Matrix
 variable {Ω : Type*} [MeasurableSpace Ω]
 variable {n : ℕ}
 ```
@@ -147,11 +161,11 @@ def aForward (m : V n) (f : Phase n → ℝ) (x : Phase n) : ℝ :=
   -∑ i, x.2 i / m i * coordDerivative (fun q ↦ f (q,x.2)) x.1 i
 ```
 
-### MD.Ch07.bForward (Blueprint/Ch07.lean:308)
+### MD.Ch07.bForward (Blueprint/Ch07.lean:324)
 原文件上下文：
 ```lean
 open Set Filter MeasureTheory ProbabilityTheory MolecularDynamics
-open scoped BigOperators Topology ContDiff ENNReal NNReal
+open scoped BigOperators Topology ContDiff ENNReal NNReal Matrix
 variable {Ω : Type*} [MeasurableSpace Ω]
 variable {n : ℕ}
 ```
@@ -160,11 +174,11 @@ def bForward (U : V n → ℝ) (f : Phase n → ℝ) (x : Phase n) : ℝ :=
   ∑ i, gradient U x.1 i * coordDerivative (fun p ↦ f (x.1,p)) x.2 i
 ```
 
-### MD.Ch07.mechanicalHamiltonian (Blueprint/Ch07.lean:939)
+### MD.Ch07.mechanicalHamiltonian (Blueprint/Ch07.lean:963)
 原文件上下文：
 ```lean
 open Set Filter MeasureTheory ProbabilityTheory MolecularDynamics
-open scoped BigOperators Topology ContDiff ENNReal NNReal
+open scoped BigOperators Topology ContDiff ENNReal NNReal Matrix
 variable {Ω : Type*} [MeasurableSpace Ω]
 variable {n : ℕ}
 ```
@@ -173,11 +187,11 @@ def mechanicalHamiltonian (m : V n) (U : V n → ℝ) (x : Phase n) : ℝ :=
   (∑ i, x.2 i^2/(2*m i))+U x.1
 ```
 
-### MD.Ch07.gibbsWeight (Blueprint/Ch07.lean:941)
+### MD.Ch07.gibbsWeight (Blueprint/Ch07.lean:965)
 原文件上下文：
 ```lean
 open Set Filter MeasureTheory ProbabilityTheory MolecularDynamics
-open scoped BigOperators Topology ContDiff ENNReal NNReal
+open scoped BigOperators Topology ContDiff ENNReal NNReal Matrix
 variable {Ω : Type*} [MeasurableSpace Ω]
 variable {n : ℕ}
 ```
@@ -186,11 +200,11 @@ def gibbsWeight (m : V n) (U : V n → ℝ) (β : ℝ) (x : Phase n) : ℝ :=
   Real.exp (-β*mechanicalHamiltonian m U x)
 ```
 
-### MD.Ch07.gFunction (Blueprint/Ch07.lean:943)
+### MD.Ch07.gFunction (Blueprint/Ch07.lean:967)
 原文件上下文：
 ```lean
 open Set Filter MeasureTheory ProbabilityTheory MolecularDynamics
-open scoped BigOperators Topology ContDiff ENNReal NNReal
+open scoped BigOperators Topology ContDiff ENNReal NNReal Matrix
 variable {Ω : Type*} [MeasurableSpace Ω]
 variable {n : ℕ}
 ```
@@ -199,11 +213,11 @@ def gFunction (m : V n) (U : V n → ℝ) (β : ℝ) (x : Phase n) : ℝ :=
   β*∑ i, x.2 i/m i*gradient U x.1 i
 ```
 
-### MD.Ch07.phaseO (Blueprint/Ch07.lean:945)
+### MD.Ch07.phaseO (Blueprint/Ch07.lean:969)
 原文件上下文：
 ```lean
 open Set Filter MeasureTheory ProbabilityTheory MolecularDynamics
-open scoped BigOperators Topology ContDiff ENNReal NNReal
+open scoped BigOperators Topology ContDiff ENNReal NNReal Matrix
 variable {Ω : Type*} [MeasurableSpace Ω]
 variable {n : ℕ}
 ```
@@ -212,11 +226,11 @@ def phaseO (m : V n) (γ β : ℝ) (ρ : Phase n → ℝ) (x : Phase n) : ℝ :=
   ouForward m γ β⁻¹ (fun p ↦ ρ (x.1,p)) x.2
 ```
 
-### MD.Ch07.phaseLD (Blueprint/Ch07.lean:947)
+### MD.Ch07.phaseLD (Blueprint/Ch07.lean:971)
 原文件上下文：
 ```lean
 open Set Filter MeasureTheory ProbabilityTheory MolecularDynamics
-open scoped BigOperators Topology ContDiff ENNReal NNReal
+open scoped BigOperators Topology ContDiff ENNReal NNReal Matrix
 variable {Ω : Type*} [MeasurableSpace Ω]
 variable {n : ℕ}
 ```
@@ -225,11 +239,11 @@ def phaseLD (m : V n) (U : V n → ℝ) (γ β : ℝ) (ρ : Phase n → ℝ) : P
   aForward m ρ+bForward U ρ+phaseO m γ β ρ
 ```
 
-### MD.Ch07.gibbsDerivativeIdentities (Blueprint/Ch07.lean:949)
+### MD.Ch07.gibbsDerivativeIdentities (Blueprint/Ch07.lean:973)
 原文件上下文：
 ```lean
 open Set Filter MeasureTheory ProbabilityTheory MolecularDynamics
-open scoped BigOperators Topology ContDiff ENNReal NNReal
+open scoped BigOperators Topology ContDiff ENNReal NNReal Matrix
 variable {Ω : Type*} [MeasurableSpace Ω]
 variable {n : ℕ}
 ```

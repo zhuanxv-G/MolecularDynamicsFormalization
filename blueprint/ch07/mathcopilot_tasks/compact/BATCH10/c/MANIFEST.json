@@ -5,9 +5,9 @@
     "MD-7.7.1-StationaryModifiedPDE"
   ],
   "input_sha256": {
-    "Blueprint/Ch07.lean": "03e34bf86a5b27e03cce8552bb21fc0fea40514cd87faa953bf09a6a0a27f3c2",
-    "blueprint/ch07/ch07_source.json": "27e402f2a8b9c511106df901d6cc8472e1dae783cdf739f657879ffcf297462a",
-    "BATCH10c_PAGES.pdf": "dcb4371b3185a07e7a8b966b0e56c71888205ca4a48bfab7a55bc7859b598ebe"
+    "Blueprint/Ch07.lean": "f30ea154ebfb07ae85c0b806ff74b35808d5a0c3dcaa647c0c3cc80a78239e37",
+    "blueprint/ch07/ch07_source.json": "c434892ebf63b06f7cadcdfa7af408c2c12d7b645d35db431d1855224163ba19",
+    "BATCH10c_PAGES.pdf": "1a37c4fa789cc3c72095868878389eaad38989cbd084b556da57b4a3acbe5aaf"
   },
   "page_mapping": [
     {
@@ -26,14 +26,14 @@
       "full_name": "MD.Ch07.formalDensityEvolution",
       "kind": "def",
       "path": "Blueprint/Ch07.lean",
-      "line": 772,
+      "line": 788,
       "code_sha256": "de594c5a326563848505d13e8ae22f657501fe52cc47b21fc551a354f0d6d45e"
     },
     {
       "full_name": "MD.Ch07.stationaryModifiedDensity",
       "kind": "def",
       "path": "Blueprint/Ch07.lean",
-      "line": 774,
+      "line": 790,
       "code_sha256": "f5be35f9c61615e4c64d2233d323d4511600121936dda39e2da3c53c1ed6c19c"
     },
     {
@@ -52,13 +52,13 @@
   },
   "files": {
     "PASTE.txt": {
-      "bytes": 4315,
-      "sha256": "f4acc62e2793dd87a948aba3e6947be1149d5355efddf5a32832e29002b5e50f"
+      "bytes": 8973,
+      "sha256": "ce1448624d6ca4fe00907fc297b94aa6b3bca76ca754fc247f91b5d3e0e92d93"
     },
     "BATCH10c_PAGES.pdf": {
       "bytes": 99069,
-      "sha256": "dcb4371b3185a07e7a8b966b0e56c71888205ca4a48bfab7a55bc7859b598ebe"
+      "sha256": "1a37c4fa789cc3c72095868878389eaad38989cbd084b556da57b4a3acbe5aaf"
     }
   },
-  "total_task_bytes": 105356
+  "total_task_bytes": 110014
 }

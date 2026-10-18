@@ -3,9 +3,9 @@
 Lean/Mathlib均4.34.0。原页PDF映射：[296, 297]；印刷页=[275, 276].
 input_sha256请原样回显：
 {
-  "Blueprint/Ch07.lean": "03e34bf86a5b27e03cce8552bb21fc0fea40514cd87faa953bf09a6a0a27f3c2",
-  "blueprint/ch07/ch07_source.json": "27e402f2a8b9c511106df901d6cc8472e1dae783cdf739f657879ffcf297462a",
-  "BATCH07a_PAGES.pdf": "2d779cbb53fd042a56c53842e6679986b70433861c5ee50acac6726840193f33"
+  "Blueprint/Ch07.lean": "f30ea154ebfb07ae85c0b806ff74b35808d5a0c3dcaa647c0c3cc80a78239e37",
+  "blueprint/ch07/ch07_source.json": "c434892ebf63b06f7cadcdfa7af408c2c12d7b645d35db431d1855224163ba19",
+  "BATCH07a_PAGES.pdf": "06110035ccbfea4546e9f28610b44198aff014071d1c44bd689c4fe8107a1fbd"
 }
 用代码将JSON对象(batch,input_sha256,items)写到 /workspace/.mathcopilot/reviews/ch07/BATCH07a_review.json；items仅含本source_id。
 items字段：source_id、verdict(PASS/FAIL/NEEDS_HUMAN)、transcription、semantic_review、counterexample、suggested_fix、printed_version、corrected_version。逐版区分原文疑误和修正版结论；缺材料必须具体指出，不猜测。写后json.loads自检，最后仅回复路径及统计。
@@ -21,7 +21,21 @@ items字段：source_id、verdict(PASS/FAIL/NEEDS_HUMAN)、transcription、seman
   "pdf_page": "296–297",
   "statement_latex": "Example 7.1 Consider the scheme coded $[ABO]$.\nIn the case of the one-dimensional harmonic oscillator, we have $U'(q)=\\Omega^2q$, yielding the compact form of one iteration as\n\\[\\binom{q_{n+1}}{p_{n+1}}=\\begin{bmatrix}1&h/m\\\\-\\Omega^2he^{-h\\gamma}&(1-\\Omega^2h^2/m)e^{-h\\gamma}\\end{bmatrix}\\binom{q_n}{p_n}+\\binom0{\\zeta m^{1/2}R_n}.\\tag{7.12}\\]\nTaking expectations of (7.12) and then taking the limit as $n\\to\\infty$, we see immediately that\n$\\langle q\\rangle_h^{[ABO]}=\\langle p\\rangle_h^{[ABO]}=0$, as $\\mathbb E(R_n)=0$.",
   "proof_latex": null,
-  "proof_note": "原书未给独立完整证明。",
+  "proof_outline": null,
+  "proof_note": "原页推导与上下文全文见original_page_text；数学符号的排版以随附原页PDF为准。",
+  "original_page_text": [
+    {
+      "pdf_page": 296,
+      "printed_page": 275,
+      "text": "7.4\nError Results for Harmonic Problems\n275\nAssuming that the discretization schemes preserve the ergodic property of\nLangevin dynamics, taking the expectation of these equations and considering the\nlimit as n goes to inﬁnity allows us to compute the invariant average of the schemes,\nand thus to evaluate the perfect sampling bias introduced by the discretization.\n7.4.1\nInvariant Averages for Schemes Using the A, B and O\nSplitting\nThe analysis of schemes using the splitting strategy coded with the A, B and O\npieces is particularly simple, as we use a new random number for each stochastic\nupdate meaning that the random numbers and state variables are not correlated\nbetween steps. Hence we have\nE.\u0006n;iqn/ D E.\u0006n;ipn/ D 0;\nfor any i and n. Thus, taking expectations of (7.8)–(7.10) for such schemes, and then\nconsidering the limit n ! 1 we obtain a closed, linear system of equations\nhq2ih D 2\n11hq2ih C 2\n12hp2ih C 2 11 12hqpih C N\u000611;\nhp2ih D 2\n21hq2ih C 2\n22hp2ih C 2 21 22hqpih C N\u000622;\nhqpih D 11 21hq2ih C 12 22hp2ih C . 11 22 C 12 21/hqpih C N\u000612;\n(7.11)\nwhere we have constants\nN\u000611 D E.\u00062\nn;1/;\nN\u000612 D E.\u0006n;1\u0006n;2/;\nN\u000622 D E.\u00062\nn;2/:\nWe can solve this linear system to ﬁnd the invariant averages computed by the\nchosen discretization scheme for the harmonic oscillator with Hamiltonian (7.6).\nExample 7.1 Consider the scheme coded \u0002ABO\u0003, where\n\u0002ABO\u0003\nqnC1 D qn C hM\u00021pn\npnC1=2 D pn \u0003 hrU.qnC1/\npnC1 D e\u0002h\npnC1=2 C \u0018M1=2Rn\n"
+    },
+    {
+      "pdf_page": 297,
+      "printed_page": 276,
+      "text": "276\n7\nNumerical Methods for Stochastic Molecular Dynamics\nwith \u0018 D\n\nkBT\n\u0004\n1 \u0003 e\u00022\nh\u0005\u000b1=2, and Rn a vector of unit normal random numbers.\nWe can write this update scheme succinctly as\nqnC1 D qn C hM\u00021pn;\npnC1 D e\u0002h\npn \u0003 he\u0002h\nrU.qn C hM\u00021pn/ C \u0018M1=2Rn:\nIn the case of the one-dimensional harmonic oscillator, we have U0.q/ D ˝2q,\nyielding the compact form of one iteration as\n\u0002 qnC1\npnC1\n\u0003\nD\n\u0002\n1\nh=m\n\u0003˝2he\u0002h\n .1 \u0003 ˝2h2=m/e\u0002h\n\u0003 \u0002 qn\npn\n\u0003\nC\n\u0002\n0\n\u0018m1=2Rn\n\u0003\n:\n(7.12)\nTaking expectations of (7.12) and then taking the limit as n ! 1, we see\nimmediately that\nhqi\u0002ABO\u0003\nh\nD hpi\u0002ABO\u0003\nh\nD 0;\nas E.Rn/ D 0. Plugging the values for ij into (7.11), with\nN\u000611 D N\u000612 D 0;\nN\u000622 D m\u00182;\nwe can solve to ﬁnd the exact value of the method’s stationary averages. For\nexample, the relative increase in the variance of position is computed for the \u0002ABO\u0003\nscheme as\nhq2i\u0002ABO\u0003\nh\nhq2i\nD\neh\nm.1 C e\u0002h\n/2\n2m.1 C e\u0002h\n/ \u0003 h2˝2e\u0002h\nD 1 C \nh=2 C .˝2 C \n2m/h2=.4m/ C O.h3/:\nHence we can see that the \u0002ABO\u0003 scheme gives a ﬁrst-order error in the variance\nof q. For signiﬁcantly small friction (relative to h), the leading order term will be\ndominated by the term at order h2, potentially giving us greater accuracy than we\nwould expect from a ﬁrst order scheme.\nHowever, we see that the error grows exponentially as \n gets large. We can\nexplain this by returning to the deﬁnition of the scheme, which has an O step\n(stochastic ﬂuctuation) immediately preceding the only A step (drift), wiping out\nall force information for inﬁnite friction. In practice, playing with the friction\ncoefﬁcient can affect the rate at which averages converge towards the invariant\naverage.\nFrom the work in Chap.3, we may expect that performing the integration\nsteps symmetrically (by using a Strang splitting) could provide desirable higher\norder behavior. Computing the coefﬁcients in (7.11) for the each of the symmetric\n"
+    }
+  ],
+  "transcription_note": "PDF文字层原样保留，陈述中的数学排版转写为LaTeX；文字层有特殊字形编码时以目视原页为准。PDF347的Exercises之后不在正文范围内。",
   "context_notation": [],
   "extra_assumptions": [
     "原文长时间极限前提改为已存在的实际平稳概率分布及一阶矩可积；趋平稳结论不在本条覆盖。"
@@ -56,11 +70,11 @@ theorem aboStationaryMean (m Ω γ θ h : ℝ) (μ : Measure (ℝ × ℝ))
 ## 项目依赖定义体及选择规格
 以下def/abbrev/structure完整保留；定理列出完整类型，Mathlib标准定义无需摘录。
 
-### MD.Ch07.linearUpdate (Blueprint/Ch07.lean:413)
+### MD.Ch07.linearUpdate (Blueprint/Ch07.lean:429)
 原文件上下文：
 ```lean
 open Set Filter MeasureTheory ProbabilityTheory MolecularDynamics
-open scoped BigOperators Topology ContDiff ENNReal NNReal
+open scoped BigOperators Topology ContDiff ENNReal NNReal Matrix
 variable {Ω : Type*} [MeasurableSpace Ω]
 variable {n : ℕ}
 ```
@@ -69,11 +83,11 @@ def linearUpdate (a b c d : ℝ) (x noise : ℝ × ℝ) : ℝ × ℝ :=
   (a*x.1+b*x.2+noise.1,c*x.1+d*x.2+noise.2)
 ```
 
-### MD.Ch07.aboHarmonic (Blueprint/Ch07.lean:465)
+### MD.Ch07.aboHarmonic (Blueprint/Ch07.lean:481)
 原文件上下文：
 ```lean
 open Set Filter MeasureTheory ProbabilityTheory MolecularDynamics
-open scoped BigOperators Topology ContDiff ENNReal NNReal
+open scoped BigOperators Topology ContDiff ENNReal NNReal Matrix
 variable {Ω : Type*} [MeasurableSpace Ω]
 variable {n : ℕ}
 ```
@@ -83,11 +97,11 @@ def aboHarmonic (m Ω γ θ h R : ℝ) (x : ℝ × ℝ) : ℝ × ℝ :=
     (0, Real.sqrt (θ*(1-Real.exp (-2*γ*h)))*Real.sqrt m*R)
 ```
 
-### MD.Ch07.aboStationaryMean (Blueprint/Ch07.lean:469)
+### MD.Ch07.aboStationaryMean (Blueprint/Ch07.lean:485)
 原文件上下文：
 ```lean
 open Set Filter MeasureTheory ProbabilityTheory MolecularDynamics
-open scoped BigOperators Topology ContDiff ENNReal NNReal
+open scoped BigOperators Topology ContDiff ENNReal NNReal Matrix
 variable {Ω : Type*} [MeasurableSpace Ω]
 variable {n : ℕ}
 ```

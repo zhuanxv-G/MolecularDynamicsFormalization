@@ -1,0 +1,17 @@
+{
+  "command": [
+    "lake",
+    "env",
+    "lean",
+    "blueprint\\ch07\\validation\\batches\\shortproof-v3.lean"
+  ],
+  "input_sha256": "d12629425f7d16bdf67d84099cd9e9cf9be5a3c762395b07d0400e65ef38d681",
+  "parent_pid": 2908,
+  "parent_create_time": 1792307126.465044,
+  "compiler_pid": 29592,
+  "compiler_create_time": 1792307127.9398956,
+  "started_at": "2026-10-18T15:05:27.942840",
+  "status": "completed",
+  "exit_code": 0,
+  "completed_at": "2026-10-18T15:05:43.620630"
+}

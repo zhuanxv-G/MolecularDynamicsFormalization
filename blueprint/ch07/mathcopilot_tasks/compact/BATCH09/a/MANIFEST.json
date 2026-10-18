@@ -5,9 +5,9 @@
     "MD-7.6-DivergenceFreeInvariant"
   ],
   "input_sha256": {
-    "Blueprint/Ch07.lean": "03e34bf86a5b27e03cce8552bb21fc0fea40514cd87faa953bf09a6a0a27f3c2",
-    "blueprint/ch07/ch07_source.json": "27e402f2a8b9c511106df901d6cc8472e1dae783cdf739f657879ffcf297462a",
-    "BATCH09a_PAGES.pdf": "3d19499f2b487d0e0e90a3a74f6151a6f7c1dd9a2174c51e15545fa82cc653d3"
+    "Blueprint/Ch07.lean": "f30ea154ebfb07ae85c0b806ff74b35808d5a0c3dcaa647c0c3cc80a78239e37",
+    "blueprint/ch07/ch07_source.json": "c434892ebf63b06f7cadcdfa7af408c2c12d7b645d35db431d1855224163ba19",
+    "BATCH09a_PAGES.pdf": "237a70597e7de118acff717fcc511c9c0edc69ecf5d2e662b7888253250700c5"
   },
   "page_mapping": [
     {
@@ -21,49 +21,49 @@
       "full_name": "MD.Ch07.V",
       "kind": "abbrev",
       "path": "Blueprint/Ch07.lean",
-      "line": 172,
+      "line": 188,
       "code_sha256": "7ab0ad90462b274b03f5b929b5f09417c0b397b6cb908fa6e7bd56677a314027"
     },
     {
       "full_name": "MD.Ch07.coordDerivative",
       "kind": "def",
       "path": "Blueprint/Ch07.lean",
-      "line": 221,
+      "line": 237,
       "code_sha256": "e782d789a13f5db6817e2c995f141805e81ac75720125b846f8ee14ba3833a4b"
     },
     {
       "full_name": "MD.Ch07.lieField",
       "kind": "def",
       "path": "Blueprint/Ch07.lean",
-      "line": 669,
+      "line": 685,
       "code_sha256": "fffca9712c7ef38e6b643a620917c274ffd6a8715c52af40909759512091e818"
     },
     {
       "full_name": "MD.Ch07.divergenceField",
       "kind": "def",
       "path": "Blueprint/Ch07.lean",
-      "line": 671,
+      "line": 687,
       "code_sha256": "13fa90c87d5f2c3e14b7417a33040e84f5af9c5266af0e9d5f8bf44f921124ed"
     },
     {
       "full_name": "MD.Ch07.forwardField",
       "kind": "def",
       "path": "Blueprint/Ch07.lean",
-      "line": 673,
+      "line": 689,
       "code_sha256": "4ece4f4db2d88364616892bb34d32f911b36b9f54a4a86d0ae55a98ee200f3f8"
     },
     {
       "full_name": "MD.Ch07.divergenceFreeInvariant",
       "kind": "theorem",
       "path": "Blueprint/Ch07.lean",
-      "line": 675,
+      "line": 691,
       "code_sha256": "c7adfd8d8945d8fe34129fa1221bfc49781133a7d3c31ac996be7d2789c2b391"
     },
     {
       "full_name": "MD.Ch07.firstIntegral_density",
       "kind": "theorem",
       "path": "Blueprint/Ch07.lean",
-      "line": 679,
+      "line": 695,
       "code_sha256": "6ef0800378c2f48ae5d60212d74503a072d1bbb65976cea9eedebebc0d763d78"
     }
   ],
@@ -75,13 +75,13 @@
   },
   "files": {
     "PASTE.txt": {
-      "bytes": 6798,
-      "sha256": "7e326af81d0649f53af92f04fa2b84b1c5658a51e50991ba9ce5eab13b5efbd2"
+      "bytes": 9689,
+      "sha256": "3ea3c83092127c662ec20599d38e1cfed2d9d86016b37640c1dfd10f6da52bdf"
     },
     "BATCH09a_PAGES.pdf": {
       "bytes": 73957,
-      "sha256": "3d19499f2b487d0e0e90a3a74f6151a6f7c1dd9a2174c51e15545fa82cc653d3"
+      "sha256": "237a70597e7de118acff717fcc511c9c0edc69ecf5d2e662b7888253250700c5"
     }
   },
-  "total_task_bytes": 83485
+  "total_task_bytes": 86376
 }

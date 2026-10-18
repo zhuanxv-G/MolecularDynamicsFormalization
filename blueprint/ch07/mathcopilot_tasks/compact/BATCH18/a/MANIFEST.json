@@ -5,9 +5,9 @@
     "MD-7.12-MEVMEAlgorithm"
   ],
   "input_sha256": {
-    "Blueprint/Ch07.lean": "03e34bf86a5b27e03cce8552bb21fc0fea40514cd87faa953bf09a6a0a27f3c2",
-    "blueprint/ch07/ch07_source.json": "27e402f2a8b9c511106df901d6cc8472e1dae783cdf739f657879ffcf297462a",
-    "BATCH18a_PAGES.pdf": "ea92948c48081d4464e0f808511229b3b1138989f61f12381dc94cb503a01909"
+    "Blueprint/Ch07.lean": "f30ea154ebfb07ae85c0b806ff74b35808d5a0c3dcaa647c0c3cc80a78239e37",
+    "blueprint/ch07/ch07_source.json": "c434892ebf63b06f7cadcdfa7af408c2c12d7b645d35db431d1855224163ba19",
+    "BATCH18a_PAGES.pdf": "b543182bb2acda2f38fe0170336c5094f1219a26f79a82b47b4e31101b8665b4"
   },
   "page_mapping": [
     {
@@ -26,77 +26,77 @@
       "full_name": "MD.Ch07.V",
       "kind": "abbrev",
       "path": "Blueprint/Ch07.lean",
-      "line": 172,
+      "line": 188,
       "code_sha256": "7ab0ad90462b274b03f5b929b5f09417c0b397b6cb908fa6e7bd56677a314027"
     },
     {
       "full_name": "MD.Ch07.Phase",
       "kind": "abbrev",
       "path": "Blueprint/Ch07.lean",
-      "line": 173,
+      "line": 189,
       "code_sha256": "ef1520e3b22ac1c99a30a989deafe8d3da44a9f2a3e5b6c2cd3220218b88513e"
     },
     {
       "full_name": "MD.Ch07.coordDerivative",
       "kind": "def",
       "path": "Blueprint/Ch07.lean",
-      "line": 221,
+      "line": 237,
       "code_sha256": "e782d789a13f5db6817e2c995f141805e81ac75720125b846f8ee14ba3833a4b"
     },
     {
       "full_name": "MD.Ch07.gradient",
       "kind": "def",
       "path": "Blueprint/Ch07.lean",
-      "line": 250,
+      "line": 266,
       "code_sha256": "540c6af25c09d3a58da531bc32056ff1a1c070facc58d34c96b6653d781fba6f"
     },
     {
       "full_name": "MD.Ch07.constraintJacobian",
       "kind": "def",
       "path": "Blueprint/Ch07.lean",
-      "line": 1362,
+      "line": 1408,
       "code_sha256": "b188cb797f84cc7aefa1f40fde389d28727a10452b1c9405e5f82d3db8e33aee"
     },
     {
       "full_name": "MD.Ch07.constraintReaction",
       "kind": "def",
       "path": "Blueprint/Ch07.lean",
-      "line": 1364,
+      "line": 1410,
       "code_sha256": "7e6ff0331529b1edc72fedfd2725f8763477c4b3afa8cd315c30c75bb7a95bc9"
     },
     {
       "full_name": "MD.Ch07.hiddenConstraint",
       "kind": "def",
       "path": "Blueprint/Ch07.lean",
-      "line": 1366,
+      "line": 1412,
       "code_sha256": "8113d82f13f1f574ed323d7f8494c4ca0771060a74bbe144135ec562e00ec3a2"
     },
     {
       "full_name": "MD.Ch07.cotangentConstraint",
       "kind": "def",
       "path": "Blueprint/Ch07.lean",
-      "line": 1368,
+      "line": 1414,
       "code_sha256": "63be0b3c75b6519689be70bc700da574682eedd2a2fe553decf3dfabf4f9472f"
     },
     {
       "full_name": "MD.Ch07.midpointConstrainedORelation",
       "kind": "def",
       "path": "Blueprint/Ch07.lean",
-      "line": 1419,
+      "line": 1465,
       "code_sha256": "2e2d293ffe1d4fb9cba16c2f1d6cf1e40a6658d127d427df8bb2896333ef459e"
     },
     {
       "full_name": "MD.Ch07.constrainedVerletRelation",
       "kind": "def",
       "path": "Blueprint/Ch07.lean",
-      "line": 1423,
+      "line": 1469,
       "code_sha256": "0d247a5b925eb21e98d3caa72baeb2499e7145f3ee365cc2d1935c8dbf6e337d"
     },
     {
       "full_name": "MD.Ch07.mevmeRelation",
       "kind": "def",
       "path": "Blueprint/Ch07.lean",
-      "line": 1429,
+      "line": 1475,
       "code_sha256": "d70ff0ba3d58a0a5d41a565cf161a4336d0a35e0d4bd3c35e7ea9fb89149ed63"
     }
   ],
@@ -108,13 +108,13 @@
   },
   "files": {
     "PASTE.txt": {
-      "bytes": 9377,
-      "sha256": "542e373abd84ac4867e2715bb612280e263a1542cf1745cd129679148d5f49b1"
+      "bytes": 14089,
+      "sha256": "ff80ec27abc08ca04f4fc3abd064a80bb1005102ce0e2f167fc90816008c4f42"
     },
     "BATCH18a_PAGES.pdf": {
       "bytes": 103327,
-      "sha256": "ea92948c48081d4464e0f808511229b3b1138989f61f12381dc94cb503a01909"
+      "sha256": "b543182bb2acda2f38fe0170336c5094f1219a26f79a82b47b4e31101b8665b4"
     }
   },
-  "total_task_bytes": 116469
+  "total_task_bytes": 121182
 }

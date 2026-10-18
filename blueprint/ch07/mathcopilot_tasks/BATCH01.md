@@ -11,7 +11,16 @@
   "pdf_page": "284",
   "statement_latex": "All standard methods based on discretizing SDEs introduce some stepsize-dependent error in computed averages, which we shall refer to as bias (related to the truncation error of the discretization scheme).",
   "proof_latex": null,
-  "proof_note": "原书未给独立完整证明。",
+  "proof_outline": null,
+  "proof_note": "原页推导与上下文全文见original_page_text；数学符号的排版以随附原页PDF为准。",
+  "original_page_text": [
+    {
+      "pdf_page": 284,
+      "printed_page": 263,
+      "text": "7.1\nBias\n263\nlong term (invariant measure) conservation properties; in this way they can provide\na rational and ﬂexible framework for designing stable algorithms.\nOnce a stochastic molecular dynamics-based framework is developed it is\npossible to modify it or use it as a building block in order to enhance sampling\nefﬁciency. One can for example incorporate these methods into kinetic Monte-Carlo,\nother metropolized schemes, or various advanced “path sampling” techniques. Thus\nthe design of good molecular SDE methods is the cornerstone of much of modern\nmolecular modelling.\n7.1\nBias\nIn this chapter, the focus is on sampling strategies based on approximating Langevin\ndynamics (6.32)–(6.33). As will be seen, these methods offer a great deal of\nﬂexibility and, most importantly, reliability and robustness in the approximation of\nthe canonical measure. All standard methods based on discretizing SDEs introduce\nsome stepsize-dependent error in computed averages, which we shall refer to as\nbias (related to the truncation error of the discretization scheme). This bias can be\ncorrected for using certain ‘rebiasing’ algorithms, for example using a Metropolis\n(accept-reject) condition [44, 47], however there may be signiﬁcant computational\noverhead in employing these schemes leading to inefﬁciency compared to standard\nMD, in spite of the introduced error.\nAn illustration of the sampling bias (i.e., due to discretization error) is shown in\nFig. 7.1. As the stepsize is increased, the error in sampling is increased as well,\nlimiting the effectiveness of numerical methods. This bias can be dramatically\ndifferent for different numerical methods. As we shall show, with the right choice\nof numerical method it is often possible to substantially reduce this error, and it is\nalso possible to calculate (under some assumptions) the perturbation introduced by\nthe numerical method, and to correct for its presence.\nh=0.005\nh=0.02\nh=0.025\nh=0.03\nh=0.035\nh=0.04\nFig. 7.1 We illustrate computed (canonical) distributions of q D .x; y/ for a planar potential\nenergy function with two distinct basins connected by a narrow transition corridor, where high/low\nintensity is colored red/blue respectively. Each distribution is computed through simulations using\na different stepsize parameter—no other properties are changed between the simulations. The\ndifferences between the distributions are the result of discretization error. At simulations with a\nlarger timestep we can see a qualitative change in the sampled landscape, with the bridge between\nthe two regions disappearing. Figure reprinted with permission from [222]. Copyright 2013, AIP\nPublishing LLC\n"
+    }
+  ],
+  "transcription_note": "PDF文字层原样保留，陈述中的数学排版转写为LaTeX；文字层有特殊字形编码时以目视原页为准。PDF347的Exercises之后不在正文范围内。",
   "context_notation": [],
   "extra_assumptions": [
     "将本段bias记号具体写为后文印刷p.266所给的绝对平均误差；不把“所有标准方法”量化成无条件定理。"
@@ -42,7 +51,16 @@ def bias (exact computed : ℝ) : ℝ := |exact - computed|
   "pdf_page": "285",
   "statement_latex": "Let us begin with a discussion of the first order stochastic differential equation\n\\[dX=a(X)dt+b(X)dW,\\]\nwhere $W$ defines a standard scalar Wiener process.",
   "proof_latex": null,
-  "proof_note": "原书未给独立完整证明。",
+  "proof_outline": null,
+  "proof_note": "原页推导与上下文全文见original_page_text；数学符号的排版以随附原页PDF为准。",
+  "original_page_text": [
+    {
+      "pdf_page": 285,
+      "printed_page": 264,
+      "text": "264\n7\nNumerical Methods for Stochastic Molecular Dynamics\n7.2\nError in Methods for Stochastic Differential Equations\nWe brieﬂy present some standard material on the development of numerical schemes\nfor SDEs. The interested reader is pointed to the standard textbooks [200, 270] for a\nmore thorough discussion of foundational concepts. Let us begin with a discussion\nof the ﬁrst order stochastic differential equation\ndX D a.X/dt C b.X/dW;\nwhere W deﬁnes a standard scalar Wiener process. The natural extension of the\nEuler method for SDEs like this one takes the form\nXnC1 D Xn C ha.Xn/ C b.Xn/\np\nhRn;\nwhere Rn is a normal random variable with zero mean and unit variance. This\nmethod is referred to as the Euler-Maruyama method.\nNote that from the deﬁnition of the SDE, we may write\nX.t C h/ D X.t/ C\ntCh\nZ\nt\na.X.s//ds C\ntCh\nZ\nt\nb.X.s//dW.s/:\nJust as in the deterministic case, we may build a numerical method by approximating\nthese integrals over a small timestep h. However, when designing a numerical\nscheme it is important to keep in mind the goal of the discretization itself. For\nexample, as we have considered Langevin dynamics as a tool for studying the\ncanonical distribution, do we always need methods to give us good approximations\nof X.t C h/? If we seek to compute averages with respect to the canonical\ndistribution, then the answer is no: we simply require that the average over the\ndiscretized trajectory is accurate.\nThe numerical analysis of stochastic differential equations is traditionally based\non the concepts of weak and strong accuracy. Let a numerical method be given for\nsolving an SDE in the form of a discrete stochastic process XnC1 D ˚.Xn; h/ for\nn D 0; 1; : : : ; \u0003 \u0003 1, where \u0003h D \u0002 is ﬁxed. We denote the stochastic solution of the\nSDE by X.t/. In the case of strong accuracy, our measure of the global error is the\nquantity [200]\nErrstrong\nh;\u0002I˛ D\nmax\nnD0;1;2;:::;\u0003\n\nE jXn \u0003 X.nh/j˛\u000b1=˛ :\nFor ˛ D 1 this implies convergence of expectation. The more natural choice from\nthe probabilistic point of view is ˛ D 2 (mean square convergence). Having settled\non a choice of ˛, we say that a method has strong order r if Errstrong\nh;\u0002\n< C.\u0002/hr for\nsome coefﬁcient C.\u0002/ depending on the time interval.\n"
+    }
+  ],
+  "transcription_note": "PDF文字层原样保留，陈述中的数学排版转写为LaTeX；文字层有特殊字形编码时以目视原页为准。PDF347的Exercises之后不在正文范围内。",
   "context_notation": [],
   "extra_assumptions": [
     "明确概率空间与标准连续Wiener过程；Itô积分采用第6章网格左和L²定义，扩散项适应自然历史且时间平方可积。",
@@ -83,7 +101,16 @@ def scalarSDE (P : Measure Ω) (W X : ℝ → Ω → ℝ)
   "pdf_page": "285",
   "statement_latex": "The natural extension of the Euler method for SDEs like this one takes the form\n\\[X_{n+1}=X_n+ha(X_n)+b(X_n)\\sqrt h R_n,\\]\nwhere $R_n$ is a normal random variable with zero mean and unit variance. This method is referred to as the Euler-Maruyama method.",
   "proof_latex": null,
-  "proof_note": "原书未给独立完整证明。",
+  "proof_outline": null,
+  "proof_note": "原页推导与上下文全文见original_page_text；数学符号的排版以随附原页PDF为准。",
+  "original_page_text": [
+    {
+      "pdf_page": 285,
+      "printed_page": 264,
+      "text": "264\n7\nNumerical Methods for Stochastic Molecular Dynamics\n7.2\nError in Methods for Stochastic Differential Equations\nWe brieﬂy present some standard material on the development of numerical schemes\nfor SDEs. The interested reader is pointed to the standard textbooks [200, 270] for a\nmore thorough discussion of foundational concepts. Let us begin with a discussion\nof the ﬁrst order stochastic differential equation\ndX D a.X/dt C b.X/dW;\nwhere W deﬁnes a standard scalar Wiener process. The natural extension of the\nEuler method for SDEs like this one takes the form\nXnC1 D Xn C ha.Xn/ C b.Xn/\np\nhRn;\nwhere Rn is a normal random variable with zero mean and unit variance. This\nmethod is referred to as the Euler-Maruyama method.\nNote that from the deﬁnition of the SDE, we may write\nX.t C h/ D X.t/ C\ntCh\nZ\nt\na.X.s//ds C\ntCh\nZ\nt\nb.X.s//dW.s/:\nJust as in the deterministic case, we may build a numerical method by approximating\nthese integrals over a small timestep h. However, when designing a numerical\nscheme it is important to keep in mind the goal of the discretization itself. For\nexample, as we have considered Langevin dynamics as a tool for studying the\ncanonical distribution, do we always need methods to give us good approximations\nof X.t C h/? If we seek to compute averages with respect to the canonical\ndistribution, then the answer is no: we simply require that the average over the\ndiscretized trajectory is accurate.\nThe numerical analysis of stochastic differential equations is traditionally based\non the concepts of weak and strong accuracy. Let a numerical method be given for\nsolving an SDE in the form of a discrete stochastic process XnC1 D ˚.Xn; h/ for\nn D 0; 1; : : : ; \u0003 \u0003 1, where \u0003h D \u0002 is ﬁxed. We denote the stochastic solution of the\nSDE by X.t/. In the case of strong accuracy, our measure of the global error is the\nquantity [200]\nErrstrong\nh;\u0002I˛ D\nmax\nnD0;1;2;:::;\u0003\n\nE jXn \u0003 X.nh/j˛\u000b1=˛ :\nFor ˛ D 1 this implies convergence of expectation. The more natural choice from\nthe probabilistic point of view is ˛ D 2 (mean square convergence). Having settled\non a choice of ˛, we say that a method has strong order r if Errstrong\nh;\u0002\n< C.\u0002/hr for\nsome coefﬁcient C.\u0002/ depending on the time interval.\n"
+    }
+  ],
+  "transcription_note": "PDF文字层原样保留，陈述中的数学排版转写为LaTeX；文字层有特殊字形编码时以目视原页为准。PDF347的Exercises之后不在正文范围内。",
   "context_notation": [],
   "extra_assumptions": [
     "步长h>0用于数值解释；单步映射本身为总函数；跨步独立正态资格另由standardNormalSequence明确给出。"
@@ -125,7 +152,16 @@ def eulerMaruyama (a b : ℝ → ℝ) (h x0 : ℝ) (R : ℕ → Ω → ℝ) : �
   "pdf_page": "285",
   "statement_latex": "Note that from the definition of the SDE, we may write\n\\[X(t+h)=X(t)+\\int_t^{t+h}a(X(s))ds+\\int_t^{t+h}b(X(s))dW(s).\\]",
   "proof_latex": null,
-  "proof_note": "原书未给独立完整证明。",
+  "proof_outline": null,
+  "proof_note": "原页推导与上下文全文见original_page_text；数学符号的排版以随附原页PDF为准。",
+  "original_page_text": [
+    {
+      "pdf_page": 285,
+      "printed_page": 264,
+      "text": "264\n7\nNumerical Methods for Stochastic Molecular Dynamics\n7.2\nError in Methods for Stochastic Differential Equations\nWe brieﬂy present some standard material on the development of numerical schemes\nfor SDEs. The interested reader is pointed to the standard textbooks [200, 270] for a\nmore thorough discussion of foundational concepts. Let us begin with a discussion\nof the ﬁrst order stochastic differential equation\ndX D a.X/dt C b.X/dW;\nwhere W deﬁnes a standard scalar Wiener process. The natural extension of the\nEuler method for SDEs like this one takes the form\nXnC1 D Xn C ha.Xn/ C b.Xn/\np\nhRn;\nwhere Rn is a normal random variable with zero mean and unit variance. This\nmethod is referred to as the Euler-Maruyama method.\nNote that from the deﬁnition of the SDE, we may write\nX.t C h/ D X.t/ C\ntCh\nZ\nt\na.X.s//ds C\ntCh\nZ\nt\nb.X.s//dW.s/:\nJust as in the deterministic case, we may build a numerical method by approximating\nthese integrals over a small timestep h. However, when designing a numerical\nscheme it is important to keep in mind the goal of the discretization itself. For\nexample, as we have considered Langevin dynamics as a tool for studying the\ncanonical distribution, do we always need methods to give us good approximations\nof X.t C h/? If we seek to compute averages with respect to the canonical\ndistribution, then the answer is no: we simply require that the average over the\ndiscretized trajectory is accurate.\nThe numerical analysis of stochastic differential equations is traditionally based\non the concepts of weak and strong accuracy. Let a numerical method be given for\nsolving an SDE in the form of a discrete stochastic process XnC1 D ˚.Xn; h/ for\nn D 0; 1; : : : ; \u0003 \u0003 1, where \u0003h D \u0002 is ﬁxed. We denote the stochastic solution of the\nSDE by X.t/. In the case of strong accuracy, our measure of the global error is the\nquantity [200]\nErrstrong\nh;\u0002I˛ D\nmax\nnD0;1;2;:::;\u0003\n\nE jXn \u0003 X.nh/j˛\u000b1=˛ :\nFor ˛ D 1 this implies convergence of expectation. The more natural choice from\nthe probabilistic point of view is ˛ D 2 (mean square convergence). Having settled\non a choice of ˛, we say that a method has strong order r if Errstrong\nh;\u0002\n< C.\u0002/hr for\nsome coefﬁcient C.\u0002/ depending on the time interval.\n"
+    }
+  ],
+  "transcription_note": "PDF文字层原样保留，陈述中的数学排版转写为LaTeX；文字层有特殊字形编码时以目视原页为准。PDF347的Exercises之后不在正文范围内。",
   "context_notation": [],
   "extra_assumptions": [
     "区间Itô积分用两个从0开始的L²积分值之差表示；t,h非负，漂移在整个区间可积；不另造未规定的随机积分。"
@@ -166,7 +202,16 @@ theorem sdeIncrement (P : Measure Ω) (W X : ℝ → Ω → ℝ)
   "pdf_page": "285",
   "statement_latex": "In the case of strong accuracy, our measure of the global error is the quantity [200]\n\\[\\mathrm{Err}_{h,\\tau;\\alpha}^{\\rm strong}=\\max_{n=0,1,2,\\ldots,\\nu}\n\\left[\\mathbb E|X_n-X(nh)|^\\alpha\\right]^{1/\\alpha}.\\]",
   "proof_latex": null,
-  "proof_note": "原书未给独立完整证明。",
+  "proof_outline": null,
+  "proof_note": "原页推导与上下文全文见original_page_text；数学符号的排版以随附原页PDF为准。",
+  "original_page_text": [
+    {
+      "pdf_page": 285,
+      "printed_page": 264,
+      "text": "264\n7\nNumerical Methods for Stochastic Molecular Dynamics\n7.2\nError in Methods for Stochastic Differential Equations\nWe brieﬂy present some standard material on the development of numerical schemes\nfor SDEs. The interested reader is pointed to the standard textbooks [200, 270] for a\nmore thorough discussion of foundational concepts. Let us begin with a discussion\nof the ﬁrst order stochastic differential equation\ndX D a.X/dt C b.X/dW;\nwhere W deﬁnes a standard scalar Wiener process. The natural extension of the\nEuler method for SDEs like this one takes the form\nXnC1 D Xn C ha.Xn/ C b.Xn/\np\nhRn;\nwhere Rn is a normal random variable with zero mean and unit variance. This\nmethod is referred to as the Euler-Maruyama method.\nNote that from the deﬁnition of the SDE, we may write\nX.t C h/ D X.t/ C\ntCh\nZ\nt\na.X.s//ds C\ntCh\nZ\nt\nb.X.s//dW.s/:\nJust as in the deterministic case, we may build a numerical method by approximating\nthese integrals over a small timestep h. However, when designing a numerical\nscheme it is important to keep in mind the goal of the discretization itself. For\nexample, as we have considered Langevin dynamics as a tool for studying the\ncanonical distribution, do we always need methods to give us good approximations\nof X.t C h/? If we seek to compute averages with respect to the canonical\ndistribution, then the answer is no: we simply require that the average over the\ndiscretized trajectory is accurate.\nThe numerical analysis of stochastic differential equations is traditionally based\non the concepts of weak and strong accuracy. Let a numerical method be given for\nsolving an SDE in the form of a discrete stochastic process XnC1 D ˚.Xn; h/ for\nn D 0; 1; : : : ; \u0003 \u0003 1, where \u0003h D \u0002 is ﬁxed. We denote the stochastic solution of the\nSDE by X.t/. In the case of strong accuracy, our measure of the global error is the\nquantity [200]\nErrstrong\nh;\u0002I˛ D\nmax\nnD0;1;2;:::;\u0003\n\nE jXn \u0003 X.nh/j˛\u000b1=˛ :\nFor ˛ D 1 this implies convergence of expectation. The more natural choice from\nthe probabilistic point of view is ˛ D 2 (mean square convergence). Having settled\non a choice of ˛, we say that a method has strong order r if Errstrong\nh;\u0002\n< C.\u0002/hr for\nsome coefﬁcient C.\u0002/ depending on the time interval.\n"
+    }
+  ],
+  "transcription_note": "PDF文字层原样保留，陈述中的数学排版转写为LaTeX；文字层有特殊字形编码时以目视原页为准。PDF347的Exercises之后不在正文范围内。",
   "context_notation": [
     "τ=νh固定；Xh与X在同一概率空间耦合。"
   ],
@@ -202,7 +247,16 @@ def strongError (P : Measure Ω) (Xh : ℕ → Ω → ℝ) (X : ℝ → Ω → �
   "pdf_page": "285",
   "statement_latex": "For $\\alpha=1$ this implies convergence of expectation. The more natural choice from the probabilistic point of view is $\\alpha=2$ (mean square convergence).",
   "proof_latex": null,
-  "proof_note": "原书未给独立完整证明。",
+  "proof_outline": null,
+  "proof_note": "原页推导与上下文全文见original_page_text；数学符号的排版以随附原页PDF为准。",
+  "original_page_text": [
+    {
+      "pdf_page": 285,
+      "printed_page": 264,
+      "text": "264\n7\nNumerical Methods for Stochastic Molecular Dynamics\n7.2\nError in Methods for Stochastic Differential Equations\nWe brieﬂy present some standard material on the development of numerical schemes\nfor SDEs. The interested reader is pointed to the standard textbooks [200, 270] for a\nmore thorough discussion of foundational concepts. Let us begin with a discussion\nof the ﬁrst order stochastic differential equation\ndX D a.X/dt C b.X/dW;\nwhere W deﬁnes a standard scalar Wiener process. The natural extension of the\nEuler method for SDEs like this one takes the form\nXnC1 D Xn C ha.Xn/ C b.Xn/\np\nhRn;\nwhere Rn is a normal random variable with zero mean and unit variance. This\nmethod is referred to as the Euler-Maruyama method.\nNote that from the deﬁnition of the SDE, we may write\nX.t C h/ D X.t/ C\ntCh\nZ\nt\na.X.s//ds C\ntCh\nZ\nt\nb.X.s//dW.s/:\nJust as in the deterministic case, we may build a numerical method by approximating\nthese integrals over a small timestep h. However, when designing a numerical\nscheme it is important to keep in mind the goal of the discretization itself. For\nexample, as we have considered Langevin dynamics as a tool for studying the\ncanonical distribution, do we always need methods to give us good approximations\nof X.t C h/? If we seek to compute averages with respect to the canonical\ndistribution, then the answer is no: we simply require that the average over the\ndiscretized trajectory is accurate.\nThe numerical analysis of stochastic differential equations is traditionally based\non the concepts of weak and strong accuracy. Let a numerical method be given for\nsolving an SDE in the form of a discrete stochastic process XnC1 D ˚.Xn; h/ for\nn D 0; 1; : : : ; \u0003 \u0003 1, where \u0003h D \u0002 is ﬁxed. We denote the stochastic solution of the\nSDE by X.t/. In the case of strong accuracy, our measure of the global error is the\nquantity [200]\nErrstrong\nh;\u0002I˛ D\nmax\nnD0;1;2;:::;\u0003\n\nE jXn \u0003 X.nh/j˛\u000b1=˛ :\nFor ˛ D 1 this implies convergence of expectation. The more natural choice from\nthe probabilistic point of view is ˛ D 2 (mean square convergence). Having settled\non a choice of ˛, we say that a method has strong order r if Errstrong\nh;\u0002\n< C.\u0002/hr for\nsome coefﬁcient C.\u0002/ depending on the time interval.\n"
+    }
+  ],
+  "transcription_note": "PDF文字层原样保留，陈述中的数学排版转写为LaTeX；文字层有特殊字形编码时以目视原页为准。PDF347的Exercises之后不在正文范围内。",
   "context_notation": [],
   "extra_assumptions": [
     "期望可积；不以数值方法的收敛为假设重新宣布同一收敛，只给使收敛传递成立的定量不等式。"

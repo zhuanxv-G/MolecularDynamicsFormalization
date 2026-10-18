@@ -5,9 +5,9 @@
     "MD-7.4.2-BBKStarCorrelations"
   ],
   "input_sha256": {
-    "Blueprint/Ch07.lean": "03e34bf86a5b27e03cce8552bb21fc0fea40514cd87faa953bf09a6a0a27f3c2",
-    "blueprint/ch07/ch07_source.json": "27e402f2a8b9c511106df901d6cc8472e1dae783cdf739f657879ffcf297462a",
-    "BATCH07f_PAGES.pdf": "eaa3fcadce5f1f1c04d94d9bb53a31c6d033417cf7d83a8bab93b89018fbd726"
+    "Blueprint/Ch07.lean": "f30ea154ebfb07ae85c0b806ff74b35808d5a0c3dcaa647c0c3cc80a78239e37",
+    "blueprint/ch07/ch07_source.json": "c434892ebf63b06f7cadcdfa7af408c2c12d7b645d35db431d1855224163ba19",
+    "BATCH07f_PAGES.pdf": "6dba11989af13c8f010ffc0499e3171ca84583675b7e98906581471b2007a080"
   },
   "page_mapping": [
     {
@@ -21,7 +21,7 @@
       "full_name": "MD.Ch07.bbkStarCorrelations",
       "kind": "theorem",
       "path": "Blueprint/Ch07.lean",
-      "line": 556,
+      "line": 572,
       "code_sha256": "f3151021513c2f7b210d809c2bb67a101e6db03a28612639615754fb5df04745"
     }
   ],
@@ -33,13 +33,13 @@
   },
   "files": {
     "PASTE.txt": {
-      "bytes": 5080,
-      "sha256": "5490885c0bc0e7530e62be04cc5478a2508e895d198b8c31327475d665525918"
+      "bytes": 7532,
+      "sha256": "2961b26187bba4e639e5b061c0a53fbe5bb923cf1e2d3a3cb5ea7958249938d1"
     },
     "BATCH07f_PAGES.pdf": {
       "bytes": 65960,
-      "sha256": "eaa3fcadce5f1f1c04d94d9bb53a31c6d033417cf7d83a8bab93b89018fbd726"
+      "sha256": "6dba11989af13c8f010ffc0499e3171ca84583675b7e98906581471b2007a080"
     }
   },
-  "total_task_bytes": 72389
+  "total_task_bytes": 74841
 }

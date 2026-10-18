@@ -5,9 +5,9 @@
     "MD-7.3-OUGaussianInvariant"
   ],
   "input_sha256": {
-    "Blueprint/Ch07.lean": "03e34bf86a5b27e03cce8552bb21fc0fea40514cd87faa953bf09a6a0a27f3c2",
-    "blueprint/ch07/ch07_source.json": "27e402f2a8b9c511106df901d6cc8472e1dae783cdf739f657879ffcf297462a",
-    "BATCH03f_PAGES.pdf": "3e884cb448f328463ab713e8ba2f385dab4f4089378ba26d111a9ee6bc0349a8"
+    "Blueprint/Ch07.lean": "f30ea154ebfb07ae85c0b806ff74b35808d5a0c3dcaa647c0c3cc80a78239e37",
+    "blueprint/ch07/ch07_source.json": "c434892ebf63b06f7cadcdfa7af408c2c12d7b645d35db431d1855224163ba19",
+    "BATCH03f_PAGES.pdf": "092f08982dfa28003ffeb5a412cf41222914fcd13308f37f25801f7d215a9451"
   },
   "page_mapping": [
     {
@@ -21,21 +21,21 @@
       "full_name": "MD.Ch07.V",
       "kind": "abbrev",
       "path": "Blueprint/Ch07.lean",
-      "line": 172,
+      "line": 188,
       "code_sha256": "7ab0ad90462b274b03f5b929b5f09417c0b397b6cb908fa6e7bd56677a314027"
     },
     {
       "full_name": "MD.Ch07.ouMomentum",
       "kind": "def",
       "path": "Blueprint/Ch07.lean",
-      "line": 198,
+      "line": 214,
       "code_sha256": "df5a3511ac6e0986b8293d21de91ddb40de94195595495bc71fa780b2962b8ae"
     },
     {
       "full_name": "MD.Ch07.ouGaussianInvariant",
       "kind": "theorem",
       "path": "Blueprint/Ch07.lean",
-      "line": 240,
+      "line": 256,
       "code_sha256": "5cbb195730ba2cfd658c6c2c9dac7728ae96defa8ba7fef539f561510a3b686b"
     }
   ],
@@ -47,13 +47,13 @@
   },
   "files": {
     "PASTE.txt": {
-      "bytes": 4445,
-      "sha256": "62f83f86dcaa2d213e1b5fa975e6e68646efc13400c6604bff2356cf24fc122d"
+      "bytes": 6990,
+      "sha256": "72e591f5933aaf12c6ac8a7c9722efa03f9d0803bc84c24a3ac16a60d48c393a"
     },
     "BATCH03f_PAGES.pdf": {
       "bytes": 85329,
-      "sha256": "3e884cb448f328463ab713e8ba2f385dab4f4089378ba26d111a9ee6bc0349a8"
+      "sha256": "092f08982dfa28003ffeb5a412cf41222914fcd13308f37f25801f7d215a9451"
     }
   },
-  "total_task_bytes": 91567
+  "total_task_bytes": 94112
 }

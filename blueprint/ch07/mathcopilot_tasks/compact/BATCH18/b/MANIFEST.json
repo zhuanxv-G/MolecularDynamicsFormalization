@@ -5,9 +5,9 @@
     "MD-7.12-MidpointStabilityPrinted"
   ],
   "input_sha256": {
-    "Blueprint/Ch07.lean": "03e34bf86a5b27e03cce8552bb21fc0fea40514cd87faa953bf09a6a0a27f3c2",
-    "blueprint/ch07/ch07_source.json": "27e402f2a8b9c511106df901d6cc8472e1dae783cdf739f657879ffcf297462a",
-    "BATCH18b_PAGES.pdf": "c37b78c629954291185a789b2bc3a0ebc4b0d5b005529c9e64a1b7431f7d6d40"
+    "Blueprint/Ch07.lean": "f30ea154ebfb07ae85c0b806ff74b35808d5a0c3dcaa647c0c3cc80a78239e37",
+    "blueprint/ch07/ch07_source.json": "c434892ebf63b06f7cadcdfa7af408c2c12d7b645d35db431d1855224163ba19",
+    "BATCH18b_PAGES.pdf": "bc7b64cebb28289f96588383191130815e08717568c8acddf010dcd975c4809a"
   },
   "page_mapping": [
     {
@@ -21,77 +21,77 @@
       "full_name": "MD.Ch07.V",
       "kind": "abbrev",
       "path": "Blueprint/Ch07.lean",
-      "line": 172,
+      "line": 188,
       "code_sha256": "7ab0ad90462b274b03f5b929b5f09417c0b397b6cb908fa6e7bd56677a314027"
     },
     {
       "full_name": "MD.Ch07.Phase",
       "kind": "abbrev",
       "path": "Blueprint/Ch07.lean",
-      "line": 173,
+      "line": 189,
       "code_sha256": "ef1520e3b22ac1c99a30a989deafe8d3da44a9f2a3e5b6c2cd3220218b88513e"
     },
     {
       "full_name": "MD.Ch07.coordDerivative",
       "kind": "def",
       "path": "Blueprint/Ch07.lean",
-      "line": 221,
+      "line": 237,
       "code_sha256": "e782d789a13f5db6817e2c995f141805e81ac75720125b846f8ee14ba3833a4b"
     },
     {
       "full_name": "MD.Ch07.constraintJacobian",
       "kind": "def",
       "path": "Blueprint/Ch07.lean",
-      "line": 1362,
+      "line": 1408,
       "code_sha256": "b188cb797f84cc7aefa1f40fde389d28727a10452b1c9405e5f82d3db8e33aee"
     },
     {
       "full_name": "MD.Ch07.constraintReaction",
       "kind": "def",
       "path": "Blueprint/Ch07.lean",
-      "line": 1364,
+      "line": 1410,
       "code_sha256": "7e6ff0331529b1edc72fedfd2725f8763477c4b3afa8cd315c30c75bb7a95bc9"
     },
     {
       "full_name": "MD.Ch07.hiddenConstraint",
       "kind": "def",
       "path": "Blueprint/Ch07.lean",
-      "line": 1366,
+      "line": 1412,
       "code_sha256": "8113d82f13f1f574ed323d7f8494c4ca0771060a74bbe144135ec562e00ec3a2"
     },
     {
       "full_name": "MD.Ch07.multiplierLinearSystem",
       "kind": "def",
       "path": "Blueprint/Ch07.lean",
-      "line": 1439,
+      "line": 1485,
       "code_sha256": "5e544c397efd0ed29ed3e6f845cc64507fa593b3213f3ecd170efc06bd0fe374"
     },
     {
       "full_name": "MD.Ch07.midpointAmplification",
       "kind": "def",
       "path": "Blueprint/Ch07.lean",
-      "line": 1442,
+      "line": 1488,
       "code_sha256": "f44b0338291e5fdd7f58a318b80eeaae252c0616a879177fe58bfd98bcc81aec"
     },
     {
       "full_name": "MD.Ch07.midpointStabilityPrinted",
       "kind": "def",
       "path": "Blueprint/Ch07.lean",
-      "line": 1443,
+      "line": 1489,
       "code_sha256": "5dd8a7dab5a3776754333b09d6d8f9d1829909e506bb99ae89f1681fc9a8de46"
     },
     {
       "full_name": "MD.Ch07.midpointStabilityPrinted_corrected",
       "kind": "theorem",
       "path": "Blueprint/Ch07.lean",
-      "line": 1444,
+      "line": 1490,
       "code_sha256": "071d73e052f47c5aff5dcd960808e09fe28c01d1d18aa677e0bdc6d20160edef"
     },
     {
       "full_name": "MD.Ch07.midpointStability_counterexample",
       "kind": "theorem",
       "path": "Blueprint/Ch07.lean",
-      "line": 1452,
+      "line": 1498,
       "code_sha256": "a38193d79c5ca123eb3331b85d257c36ec16cd06bf402715d1bfd39254257f4e"
     }
   ],
@@ -103,13 +103,13 @@
   },
   "files": {
     "PASTE.txt": {
-      "bytes": 8440,
-      "sha256": "c9ecc0fd9d0de14480c0e8694fe8b7b7c6f71b7f01756a9e1a7c9b4cb8ee17c1"
+      "bytes": 10872,
+      "sha256": "e4012139ec49aa0bc68d6fb35a8d94bbed863c02d23e04f2436315264fc7c246"
     },
     "BATCH18b_PAGES.pdf": {
       "bytes": 89414,
-      "sha256": "c37b78c629954291185a789b2bc3a0ebc4b0d5b005529c9e64a1b7431f7d6d40"
+      "sha256": "bc7b64cebb28289f96588383191130815e08717568c8acddf010dcd975c4809a"
     }
   },
-  "total_task_bytes": 101573
+  "total_task_bytes": 104006
 }

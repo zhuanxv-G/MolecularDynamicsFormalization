@@ -5,9 +5,9 @@
     "MD-7.7.2-ThreeOperatorBCH"
   ],
   "input_sha256": {
-    "Blueprint/Ch07.lean": "03e34bf86a5b27e03cce8552bb21fc0fea40514cd87faa953bf09a6a0a27f3c2",
-    "blueprint/ch07/ch07_source.json": "27e402f2a8b9c511106df901d6cc8472e1dae783cdf739f657879ffcf297462a",
-    "BATCH10f_PAGES.pdf": "33af83ac7e1214e3b17b84af0f4033f1b9f8ba2c8c967fc16de4128c0c7b649d"
+    "Blueprint/Ch07.lean": "f30ea154ebfb07ae85c0b806ff74b35808d5a0c3dcaa647c0c3cc80a78239e37",
+    "blueprint/ch07/ch07_source.json": "c434892ebf63b06f7cadcdfa7af408c2c12d7b645d35db431d1855224163ba19",
+    "BATCH10f_PAGES.pdf": "14474203f3a7ce8ddfdd1d8faefb432527c9b71a3ff125315c22aee2475ff1bd"
   },
   "page_mapping": [
     {
@@ -21,28 +21,28 @@
       "full_name": "MD.Ch07.formalModifiedGenerator",
       "kind": "def",
       "path": "Blueprint/Ch07.lean",
-      "line": 727,
+      "line": 743,
       "code_sha256": "669eb08559f110c7d96f9be121ad603a21addd069e9005c015d479edc8936d7e"
     },
     {
       "full_name": "MD.Ch07.comm",
       "kind": "def",
       "path": "Blueprint/Ch07.lean",
-      "line": 779,
+      "line": 795,
       "code_sha256": "b6c563e8cb91cb486da6bfb5f26e3dd94c0588818d31f0ed58028346af78d534"
     },
     {
       "full_name": "MD.Ch07.threeStage",
       "kind": "def",
       "path": "Blueprint/Ch07.lean",
-      "line": 803,
+      "line": 819,
       "code_sha256": "ee19a0a7ca96e43bfe5358e723096066bf70b237c7f68725d05c79e399be7eba"
     },
     {
       "full_name": "MD.Ch07.threeOperatorBCH",
       "kind": "theorem",
       "path": "Blueprint/Ch07.lean",
-      "line": 806,
+      "line": 822,
       "code_sha256": "14c89aa5704f5882277cf8579db685d5bd77a739471b077616f93e61c1f602bf"
     },
     {
@@ -404,13 +404,13 @@
   },
   "files": {
     "PASTE.txt": {
-      "bytes": 37396,
-      "sha256": "9e24ab1610c442f9a513f1450baf989f30026c6a2332e0b4329b0b57062155ba"
+      "bytes": 39654,
+      "sha256": "76e388e9cf50a46cc89449e953fdf8078dc9d99fc8de2c63769686aea247da94"
     },
     "BATCH10f_PAGES.pdf": {
       "bytes": 75520,
-      "sha256": "33af83ac7e1214e3b17b84af0f4033f1b9f8ba2c8c967fc16de4128c0c7b649d"
+      "sha256": "14474203f3a7ce8ddfdd1d8faefb432527c9b71a3ff125315c22aee2475ff1bd"
     }
   },
-  "total_task_bytes": 129406
+  "total_task_bytes": 131664
 }

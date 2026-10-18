@@ -3,9 +3,9 @@
 Lean/Mathlib均4.34.0。原页PDF映射：[320]；印刷页=[299].
 input_sha256请原样回显：
 {
-  "Blueprint/Ch07.lean": "03e34bf86a5b27e03cce8552bb21fc0fea40514cd87faa953bf09a6a0a27f3c2",
-  "blueprint/ch07/ch07_source.json": "27e402f2a8b9c511106df901d6cc8472e1dae783cdf739f657879ffcf297462a",
-  "BATCH14b_PAGES.pdf": "c5413ebd410379fa0e32a60d517c244c682d8453034348248bdcca31100f6ca5"
+  "Blueprint/Ch07.lean": "f30ea154ebfb07ae85c0b806ff74b35808d5a0c3dcaa647c0c3cc80a78239e37",
+  "blueprint/ch07/ch07_source.json": "c434892ebf63b06f7cadcdfa7af408c2c12d7b645d35db431d1855224163ba19",
+  "BATCH14b_PAGES.pdf": "981dd07210cbd25ce06896f611bb405066793ef06ebeda4bb3e646b60663d2bf"
 }
 用代码将JSON对象(batch,input_sha256,items)写到 /workspace/.mathcopilot/reviews/ch07/BATCH14b_review.json；items仅含本source_id。
 items字段：source_id、verdict(PASS/FAIL/NEEDS_HUMAN)、transcription、semantic_review、counterexample、suggested_fix、printed_version、corrected_version。逐版区分原文疑误和修正版结论；缺材料必须具体指出，不猜测。写后json.loads自检，最后仅回复路径及统计。
@@ -21,7 +21,16 @@ items字段：source_id、verdict(PASS/FAIL/NEEDS_HUMAN)、transcription、seman
   "pdf_page": "320",
   "statement_latex": "\\[[\\mathcal L_A^\\dagger,\\mathcal L_A^\\dagger,\\mathcal L_B^\\dagger]\\rho_\\beta=(2\\beta p^T(\\nabla^2U)\\nabla U-\\nabla^3U:p\\otimes p\\otimes p)\\rho_\\beta,\\]\n\\[[\\mathcal L_B^\\dagger,\\mathcal L_B^\\dagger,\\mathcal L_A^\\dagger]\\rho_\\beta=-(2\\beta p^T(\\nabla^2U)\\nabla U)\\rho_\\beta.\\]",
   "proof_latex": null,
-  "proof_note": "原书未给独立完整证明。",
+  "proof_outline": null,
+  "proof_note": "原页推导与上下文全文见original_page_text；数学符号的排版以随附原页PDF为准。",
+  "original_page_text": [
+    {
+      "pdf_page": 320,
+      "printed_page": 299,
+      "text": "7.9\nError Expansion for Symmetric Langevin Methods\n299\nsimplifying the computation to\nL\u0004\n2;\u0002OYZYO\u0003\u0005ˇ D 1\n12\nh\nL\u0004\nZ; L\u0004\nZ; L\u0004\nY\ni\n\u0005ˇ \u0003 1\n24ŒL\u0004\nY; L\u0004\nY; L\u0004\nZ\t\u0005ˇ:\n(7.29)\nThe inhomogeneity for the schemes \u0002OABAO\u0003 and \u0002OBABO\u0003 is hence a combina-\ntion of the two commutator terms\nh\nL\u0004\nA; L\u0004\nA; L\u0004\nB\ni\n\u0005ˇ D\n\u0004\n2ˇpT \u0004\nr2U\n\u0005\nrU \u0003 r3U W p ˝ p ˝ p\n\u0005\n\u0005ˇ;\nh\nL\u0004\nB; L\u0004\nB; L\u0004\nA\ni\n\u0005ˇ D \u0003 \u00042ˇpT \u0004r2U\u0005 rU\u0005 \u0005ˇ;\ngiving overall equations to solve\nL\u0004\nLD\n\u0004\n\u0005ˇf2;\u0002OABAO\u0003\n\u0005\nD \u0003L\u0004\n2;\u0002OABAO\u0003\u0005ˇ\nD ˇ\n24\n\u0004\n6pT \u0004\nr2U\n\u0005\nrU \u0003 r3U W p ˝ p ˝ p\n\u0005\n\u0005ˇ;\nL\u0004\nLD\n\u0004\n\u0005ˇf2;\u0002OBABO\u0003\n\u0005\nD \u0003L\u0004\n2;\u0002OBABO\u0003\u0005ˇ\nD ˇ\n24\n\u0004\n2r3U W p ˝ p ˝ p \u0003 6pT \u0004\nr2U\n\u0005\nrU\n\u0005\n\u0005ˇ:\nWe can see immediately that the Fredholm alternative holds in both cases, as both\nequations have right-hand sides that are of odd order in p, and hence will average\nto 0.\nIf we instead consider schemes which use a central Ornstein-Uhlenbeck update,\nthen the inhomogeneous term becomes signiﬁcantly more complex, as we no\nlonger have a signiﬁcant number of cancellations in L\u0004\n2\u0005ˇ. Instead, we shall avoid\ncomputing the right-hand side for these schemes altogether, in favor of utilizing the\nfollowing lemma [223]:\nLemma 7.1 Consider two numerical schemes with associated operators governing\nthe evolution of measure ST and T S, with unique associated invariant distributions\nO\u0005ST and O\u0005TS respectively, such that\nST O\u0005ST D O\u0005ST;\nT S O\u0005TS D O\u0005TS:\nUnder suitable ergodicity assumptions (such that in the long-time limit, all distribu-\ntions converge to the invariant distribution), we have\nO\u0005ST D S O\u0005TS;\nand\nO\u0005TS D T O\u0005ST:\n"
+    }
+  ],
+  "transcription_note": "PDF文字层原样保留，陈述中的数学排版转写为LaTeX；文字层有特殊字形编码时以目视原页为准。PDF347的Exercises之后不在正文范围内。",
   "context_notation": [],
   "extra_assumptions": [
     "M=I；Hessian、三阶张量及张量缩并均为实际坐标导数；原文版仅定义，不证明。反例先给系数代数区别，完整势函数测度反例未构造。"
@@ -70,11 +79,11 @@ theorem tripleCommutator_factor_counterexample : (2*(2 : ℝ)*0-1) ≠ 2*(2*0-1)
 ## 项目依赖定义体及选择规格
 以下def/abbrev/structure完整保留；定理列出完整类型，Mathlib标准定义无需摘录。
 
-### MD.Ch07.V (Blueprint/Ch07.lean:172)
+### MD.Ch07.V (Blueprint/Ch07.lean:188)
 原文件上下文：
 ```lean
 open Set Filter MeasureTheory ProbabilityTheory MolecularDynamics
-open scoped BigOperators Topology ContDiff ENNReal NNReal
+open scoped BigOperators Topology ContDiff ENNReal NNReal Matrix
 variable {Ω : Type*} [MeasurableSpace Ω]
 variable {n : ℕ}
 ```
@@ -82,11 +91,11 @@ variable {n : ℕ}
 abbrev V (n : ℕ) := Fin n → ℝ
 ```
 
-### MD.Ch07.Phase (Blueprint/Ch07.lean:173)
+### MD.Ch07.Phase (Blueprint/Ch07.lean:189)
 原文件上下文：
 ```lean
 open Set Filter MeasureTheory ProbabilityTheory MolecularDynamics
-open scoped BigOperators Topology ContDiff ENNReal NNReal
+open scoped BigOperators Topology ContDiff ENNReal NNReal Matrix
 variable {Ω : Type*} [MeasurableSpace Ω]
 variable {n : ℕ}
 ```
@@ -94,11 +103,11 @@ variable {n : ℕ}
 abbrev Phase (n : ℕ) := V n × V n
 ```
 
-### MD.Ch07.coordDerivative (Blueprint/Ch07.lean:221)
+### MD.Ch07.coordDerivative (Blueprint/Ch07.lean:237)
 原文件上下文：
 ```lean
 open Set Filter MeasureTheory ProbabilityTheory MolecularDynamics
-open scoped BigOperators Topology ContDiff ENNReal NNReal
+open scoped BigOperators Topology ContDiff ENNReal NNReal Matrix
 variable {Ω : Type*} [MeasurableSpace Ω]
 variable {n : ℕ}
 ```
@@ -107,11 +116,11 @@ def coordDerivative (f : V n → ℝ) (x : V n) (i : Fin n) : ℝ :=
   deriv (fun z ↦ f (Function.update x i z)) (x i)
 ```
 
-### MD.Ch07.gradient (Blueprint/Ch07.lean:250)
+### MD.Ch07.gradient (Blueprint/Ch07.lean:266)
 原文件上下文：
 ```lean
 open Set Filter MeasureTheory ProbabilityTheory MolecularDynamics
-open scoped BigOperators Topology ContDiff ENNReal NNReal
+open scoped BigOperators Topology ContDiff ENNReal NNReal Matrix
 variable {Ω : Type*} [MeasurableSpace Ω]
 variable {n : ℕ}
 ```
@@ -119,11 +128,11 @@ variable {n : ℕ}
 def gradient (U : V n → ℝ) (q : V n) : V n := fun i ↦ coordDerivative U q i
 ```
 
-### MD.Ch07.aForward (Blueprint/Ch07.lean:306)
+### MD.Ch07.aForward (Blueprint/Ch07.lean:322)
 原文件上下文：
 ```lean
 open Set Filter MeasureTheory ProbabilityTheory MolecularDynamics
-open scoped BigOperators Topology ContDiff ENNReal NNReal
+open scoped BigOperators Topology ContDiff ENNReal NNReal Matrix
 variable {Ω : Type*} [MeasurableSpace Ω]
 variable {n : ℕ}
 ```
@@ -132,11 +141,11 @@ def aForward (m : V n) (f : Phase n → ℝ) (x : Phase n) : ℝ :=
   -∑ i, x.2 i / m i * coordDerivative (fun q ↦ f (q,x.2)) x.1 i
 ```
 
-### MD.Ch07.bForward (Blueprint/Ch07.lean:308)
+### MD.Ch07.bForward (Blueprint/Ch07.lean:324)
 原文件上下文：
 ```lean
 open Set Filter MeasureTheory ProbabilityTheory MolecularDynamics
-open scoped BigOperators Topology ContDiff ENNReal NNReal
+open scoped BigOperators Topology ContDiff ENNReal NNReal Matrix
 variable {Ω : Type*} [MeasurableSpace Ω]
 variable {n : ℕ}
 ```
@@ -145,11 +154,11 @@ def bForward (U : V n → ℝ) (f : Phase n → ℝ) (x : Phase n) : ℝ :=
   ∑ i, gradient U x.1 i * coordDerivative (fun p ↦ f (x.1,p)) x.2 i
 ```
 
-### MD.Ch07.mechanicalHamiltonian (Blueprint/Ch07.lean:939)
+### MD.Ch07.mechanicalHamiltonian (Blueprint/Ch07.lean:963)
 原文件上下文：
 ```lean
 open Set Filter MeasureTheory ProbabilityTheory MolecularDynamics
-open scoped BigOperators Topology ContDiff ENNReal NNReal
+open scoped BigOperators Topology ContDiff ENNReal NNReal Matrix
 variable {Ω : Type*} [MeasurableSpace Ω]
 variable {n : ℕ}
 ```
@@ -158,11 +167,11 @@ def mechanicalHamiltonian (m : V n) (U : V n → ℝ) (x : Phase n) : ℝ :=
   (∑ i, x.2 i^2/(2*m i))+U x.1
 ```
 
-### MD.Ch07.gibbsWeight (Blueprint/Ch07.lean:941)
+### MD.Ch07.gibbsWeight (Blueprint/Ch07.lean:965)
 原文件上下文：
 ```lean
 open Set Filter MeasureTheory ProbabilityTheory MolecularDynamics
-open scoped BigOperators Topology ContDiff ENNReal NNReal
+open scoped BigOperators Topology ContDiff ENNReal NNReal Matrix
 variable {Ω : Type*} [MeasurableSpace Ω]
 variable {n : ℕ}
 ```
@@ -171,11 +180,11 @@ def gibbsWeight (m : V n) (U : V n → ℝ) (β : ℝ) (x : Phase n) : ℝ :=
   Real.exp (-β*mechanicalHamiltonian m U x)
 ```
 
-### MD.Ch07.phaseComm (Blueprint/Ch07.lean:973)
+### MD.Ch07.phaseComm (Blueprint/Ch07.lean:997)
 原文件上下文：
 ```lean
 open Set Filter MeasureTheory ProbabilityTheory MolecularDynamics
-open scoped BigOperators Topology ContDiff ENNReal NNReal
+open scoped BigOperators Topology ContDiff ENNReal NNReal Matrix
 variable {Ω : Type*} [MeasurableSpace Ω]
 variable {n : ℕ}
 ```
@@ -183,11 +192,11 @@ variable {n : ℕ}
 def phaseComm (A B : (Phase n → ℝ) → Phase n → ℝ) (ρ : Phase n → ℝ) : Phase n → ℝ := A (B ρ)-B (A ρ)
 ```
 
-### MD.Ch07.hessianU (Blueprint/Ch07.lean:1074)
+### MD.Ch07.hessianU (Blueprint/Ch07.lean:1098)
 原文件上下文：
 ```lean
 open Set Filter MeasureTheory ProbabilityTheory MolecularDynamics
-open scoped BigOperators Topology ContDiff ENNReal NNReal
+open scoped BigOperators Topology ContDiff ENNReal NNReal Matrix
 variable {Ω : Type*} [MeasurableSpace Ω]
 variable {n : ℕ}
 ```
@@ -195,11 +204,11 @@ variable {n : ℕ}
 def hessianU (U : V n → ℝ) (q : V n) (i j : Fin n) : ℝ := coordDerivative (fun y ↦ gradient U y j) q i
 ```
 
-### MD.Ch07.thirdU (Blueprint/Ch07.lean:1075)
+### MD.Ch07.thirdU (Blueprint/Ch07.lean:1099)
 原文件上下文：
 ```lean
 open Set Filter MeasureTheory ProbabilityTheory MolecularDynamics
-open scoped BigOperators Topology ContDiff ENNReal NNReal
+open scoped BigOperators Topology ContDiff ENNReal NNReal Matrix
 variable {Ω : Type*} [MeasurableSpace Ω]
 variable {n : ℕ}
 ```
@@ -207,11 +216,11 @@ variable {n : ℕ}
 def thirdU (U : V n → ℝ) (q : V n) (i j k : Fin n) : ℝ := coordDerivative (fun y ↦ hessianU U y j k) q i
 ```
 
-### MD.Ch07.hessianGrad (Blueprint/Ch07.lean:1076)
+### MD.Ch07.hessianGrad (Blueprint/Ch07.lean:1100)
 原文件上下文：
 ```lean
 open Set Filter MeasureTheory ProbabilityTheory MolecularDynamics
-open scoped BigOperators Topology ContDiff ENNReal NNReal
+open scoped BigOperators Topology ContDiff ENNReal NNReal Matrix
 variable {Ω : Type*} [MeasurableSpace Ω]
 variable {n : ℕ}
 ```
@@ -219,11 +228,11 @@ variable {n : ℕ}
 def hessianGrad (U : V n → ℝ) (x : Phase n) : ℝ := ∑ i, ∑ j, x.2 i*hessianU U x.1 i j*gradient U x.1 j
 ```
 
-### MD.Ch07.cubicThird (Blueprint/Ch07.lean:1077)
+### MD.Ch07.cubicThird (Blueprint/Ch07.lean:1101)
 原文件上下文：
 ```lean
 open Set Filter MeasureTheory ProbabilityTheory MolecularDynamics
-open scoped BigOperators Topology ContDiff ENNReal NNReal
+open scoped BigOperators Topology ContDiff ENNReal NNReal Matrix
 variable {Ω : Type*} [MeasurableSpace Ω]
 variable {n : ℕ}
 ```
@@ -231,11 +240,11 @@ variable {n : ℕ}
 def cubicThird (U : V n → ℝ) (x : Phase n) : ℝ := ∑ i, ∑ j, ∑ k, thirdU U x.1 i j k*x.2 i*x.2 j*x.2 k
 ```
 
-### MD.Ch07.tripleCommutatorPrinted (Blueprint/Ch07.lean:1078)
+### MD.Ch07.tripleCommutatorPrinted (Blueprint/Ch07.lean:1102)
 原文件上下文：
 ```lean
 open Set Filter MeasureTheory ProbabilityTheory MolecularDynamics
-open scoped BigOperators Topology ContDiff ENNReal NNReal
+open scoped BigOperators Topology ContDiff ENNReal NNReal Matrix
 variable {Ω : Type*} [MeasurableSpace Ω]
 variable {n : ℕ}
 ```
@@ -244,11 +253,11 @@ def tripleCommutatorPrinted (U : V n → ℝ) (β : ℝ) (x : Phase n) : ℝ :=
   (2*β*hessianGrad U x-cubicThird U x)*gibbsWeight (fun _ ↦ 1) U β x
 ```
 
-### MD.Ch07.tripleCommutatorPrinted_corrected (Blueprint/Ch07.lean:1080)
+### MD.Ch07.tripleCommutatorPrinted_corrected (Blueprint/Ch07.lean:1104)
 原文件上下文：
 ```lean
 open Set Filter MeasureTheory ProbabilityTheory MolecularDynamics
-open scoped BigOperators Topology ContDiff ENNReal NNReal
+open scoped BigOperators Topology ContDiff ENNReal NNReal Matrix
 variable {Ω : Type*} [MeasurableSpace Ω]
 variable {n : ℕ}
 ```
@@ -257,11 +266,11 @@ def tripleCommutatorPrinted_corrected (U : V n → ℝ) (β : ℝ) (x : Phase n)
   β*(2*hessianGrad U x-cubicThird U x)*gibbsWeight (fun _ ↦ 1) U β x
 ```
 
-### MD.Ch07.tripleCommutator_corrected (Blueprint/Ch07.lean:1082)
+### MD.Ch07.tripleCommutator_corrected (Blueprint/Ch07.lean:1106)
 原文件上下文：
 ```lean
 open Set Filter MeasureTheory ProbabilityTheory MolecularDynamics
-open scoped BigOperators Topology ContDiff ENNReal NNReal
+open scoped BigOperators Topology ContDiff ENNReal NNReal Matrix
 variable {Ω : Type*} [MeasurableSpace Ω]
 variable {n : ℕ}
 ```
@@ -274,11 +283,11 @@ theorem tripleCommutator_corrected (U : V n → ℝ) (β : ℝ) (hβ : 0 < β) (
       (fun x ↦ -2*β*hessianGrad U x*ρ x)
 ```
 
-### MD.Ch07.tripleCommutator_factor_counterexample (Blueprint/Ch07.lean:1089)
+### MD.Ch07.tripleCommutator_factor_counterexample (Blueprint/Ch07.lean:1113)
 原文件上下文：
 ```lean
 open Set Filter MeasureTheory ProbabilityTheory MolecularDynamics
-open scoped BigOperators Topology ContDiff ENNReal NNReal
+open scoped BigOperators Topology ContDiff ENNReal NNReal Matrix
 variable {Ω : Type*} [MeasurableSpace Ω]
 variable {n : ℕ}
 ```

@@ -5,9 +5,9 @@
     "MD-7.3.2-SPVLargeFriction"
   ],
   "input_sha256": {
-    "Blueprint/Ch07.lean": "03e34bf86a5b27e03cce8552bb21fc0fea40514cd87faa953bf09a6a0a27f3c2",
-    "blueprint/ch07/ch07_source.json": "27e402f2a8b9c511106df901d6cc8472e1dae783cdf739f657879ffcf297462a",
-    "BATCH05e_PAGES.pdf": "3b1377ca66257ea48c81c6320c7ea69ce28681b0023de25143dc5f6fcbc6635f"
+    "Blueprint/Ch07.lean": "f30ea154ebfb07ae85c0b806ff74b35808d5a0c3dcaa647c0c3cc80a78239e37",
+    "blueprint/ch07/ch07_source.json": "c434892ebf63b06f7cadcdfa7af408c2c12d7b645d35db431d1855224163ba19",
+    "BATCH05e_PAGES.pdf": "5937cd5448e17fad55f5bb0693c001d5d92cd3b7eeb9702c8d2969c2ee62ef6b"
   },
   "page_mapping": [
     {
@@ -26,7 +26,7 @@
       "full_name": "MD.Ch07.spvEtaLimit",
       "kind": "theorem",
       "path": "Blueprint/Ch07.lean",
-      "line": 381,
+      "line": 397,
       "code_sha256": "091002974e708a752b2aaffbdf925da1fb85c72e3f46bdba622bbe1b1fdbe6b9"
     }
   ],
@@ -38,13 +38,13 @@
   },
   "files": {
     "PASTE.txt": {
-      "bytes": 3084,
-      "sha256": "bd65620c5b2486013d0ecf7116787712cb253d3c9ba92113a39d1727acdbdb18"
+      "bytes": 8964,
+      "sha256": "73e186813cb18e476b8b44dd76ba9c0d0446c4fe4eab03bf6041d34f0ba9ec28"
     },
     "BATCH05e_PAGES.pdf": {
       "bytes": 104937,
-      "sha256": "3b1377ca66257ea48c81c6320c7ea69ce28681b0023de25143dc5f6fcbc6635f"
+      "sha256": "5937cd5448e17fad55f5bb0693c001d5d92cd3b7eeb9702c8d2969c2ee62ef6b"
     }
   },
-  "total_task_bytes": 109465
+  "total_task_bytes": 115345
 }

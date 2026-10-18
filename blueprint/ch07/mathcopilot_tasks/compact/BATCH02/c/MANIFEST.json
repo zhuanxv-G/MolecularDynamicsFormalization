@@ -5,9 +5,9 @@
     "MD-7.2-StrongWeakComparison"
   ],
   "input_sha256": {
-    "Blueprint/Ch07.lean": "03e34bf86a5b27e03cce8552bb21fc0fea40514cd87faa953bf09a6a0a27f3c2",
-    "blueprint/ch07/ch07_source.json": "27e402f2a8b9c511106df901d6cc8472e1dae783cdf739f657879ffcf297462a",
-    "BATCH02c_PAGES.pdf": "a18d235d6224bedb84ca278e2e47cae8e66c76548fe9037da53b3ff93e9d3873"
+    "Blueprint/Ch07.lean": "f30ea154ebfb07ae85c0b806ff74b35808d5a0c3dcaa647c0c3cc80a78239e37",
+    "blueprint/ch07/ch07_source.json": "c434892ebf63b06f7cadcdfa7af408c2c12d7b645d35db431d1855224163ba19",
+    "BATCH02c_PAGES.pdf": "6f07365a3ae2c645b96cc51be45eec40396eb32171041558bc5a3aa5ec3ff83c"
   },
   "page_mapping": [
     {
@@ -21,21 +21,21 @@
       "full_name": "MD.Ch07.meanErrorExpectation",
       "kind": "theorem",
       "path": "Blueprint/Ch07.lean",
-      "line": 67,
+      "line": 69,
       "code_sha256": "76079941b1d97e33b58772103d17b4d7d302139ffe05b480f9aeedde1df41ec7"
     },
     {
       "full_name": "MD.Ch07.strongWeakLipschitz",
       "kind": "theorem",
       "path": "Blueprint/Ch07.lean",
-      "line": 106,
+      "line": 108,
       "code_sha256": "0f617d27e6ff79623c43d0a3939f6eff1d1e919f596e765bdc7f110466543501"
     },
     {
       "full_name": "MD.Ch07.weakDoesNotImplyStrong",
       "kind": "theorem",
       "path": "Blueprint/Ch07.lean",
-      "line": 121,
+      "line": 123,
       "code_sha256": "1e7d4b65357d91b437c6193ef60b62488dadbe0d02a1d9ab9cb64c9a714c20fc"
     }
   ],
@@ -47,13 +47,13 @@
   },
   "files": {
     "PASTE.txt": {
-      "bytes": 5352,
-      "sha256": "28be4992da516813d6c4791c7ac3e5478b9c1852ee58f346859704375f264f4c"
+      "bytes": 9802,
+      "sha256": "639c68d9543137a93d47bf3872107683707fcb6b1e67c0676fdf6b87127ea838"
     },
     "BATCH02c_PAGES.pdf": {
       "bytes": 61515,
-      "sha256": "a18d235d6224bedb84ca278e2e47cae8e66c76548fe9037da53b3ff93e9d3873"
+      "sha256": "6f07365a3ae2c645b96cc51be45eec40396eb32171041558bc5a3aa5ec3ff83c"
     }
   },
-  "total_task_bytes": 68696
+  "total_task_bytes": 73146
 }

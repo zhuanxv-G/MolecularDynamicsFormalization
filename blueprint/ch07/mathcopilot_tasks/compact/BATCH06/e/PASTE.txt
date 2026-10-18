@@ -3,9 +3,9 @@
 Lean/Mathlib均4.34.0。原页PDF映射：[295]；印刷页=[274].
 input_sha256请原样回显：
 {
-  "Blueprint/Ch07.lean": "03e34bf86a5b27e03cce8552bb21fc0fea40514cd87faa953bf09a6a0a27f3c2",
-  "blueprint/ch07/ch07_source.json": "27e402f2a8b9c511106df901d6cc8472e1dae783cdf739f657879ffcf297462a",
-  "BATCH06e_PAGES.pdf": "b9a00ec3aa89075c4bd4d1b0a6624eb95c07e8a46c926e7d73308e7d7529e549"
+  "Blueprint/Ch07.lean": "f30ea154ebfb07ae85c0b806ff74b35808d5a0c3dcaa647c0c3cc80a78239e37",
+  "blueprint/ch07/ch07_source.json": "c434892ebf63b06f7cadcdfa7af408c2c12d7b645d35db431d1855224163ba19",
+  "BATCH06e_PAGES.pdf": "aaabcf1838f2f7a305a3bd2c102781fa2b0e498de7f9100620149e459e0dd28f"
 }
 用代码将JSON对象(batch,input_sha256,items)写到 /workspace/.mathcopilot/reviews/ch07/BATCH06e_review.json；items仅含本source_id。
 items字段：source_id、verdict(PASS/FAIL/NEEDS_HUMAN)、transcription、semantic_review、counterexample、suggested_fix、printed_version、corrected_version。逐版区分原文疑误和修正版结论；缺材料必须具体指出，不猜测。写后json.loads自检，最后仅回复路径及统计。
@@ -20,8 +20,17 @@ items字段：source_id、verdict(PASS/FAIL/NEEDS_HUMAN)、transcription、seman
   "printed_page": "274",
   "pdf_page": "295",
   "statement_latex": "More generally, if we define the components of $\\Psi$ as $\\psi_{ij}$ and denote $\\mu_n=[\\mu_{n,1},\\mu_{n,2}]^T$ we can take products of the update equations defined by (7.7) to obtain\n\\[q_{n+1}^2=\\psi_{11}^2q_n^2+\\psi_{12}^2p_n^2+\\mu_{n,1}^2+2\\psi_{11}\\psi_{12}q_np_n+2\\psi_{11}\\mu_{n,1}q_n+2\\psi_{12}\\mu_{n,1}p_n,\\tag{7.8}\\]\n\\[p_{n+1}^2=\\psi_{21}^2q_n^2+\\psi_{22}^2p_n^2+\\mu_{n,2}^2+2\\psi_{21}\\psi_{22}q_np_n+2\\psi_{21}\\mu_{n,2}q_n+2\\psi_{22}\\mu_{n,2}p_n,\\tag{7.9}\\]\n\\[q_{n+1}p_{n+1}=\\psi_{11}\\psi_{21}q_n^2+\\psi_{12}\\psi_{22}p_n^2+\\mu_{n,1}\\mu_{n,2}+(\\psi_{11}\\psi_{22}+\\psi_{12}\\psi_{21})q_np_n\n+(\\psi_{11}\\mu_{n,2}+\\psi_{21}\\mu_{n,1})q_n+(\\psi_{22}\\mu_{n,1}+\\psi_{12}\\mu_{n,2})p_n.\\tag{7.10}\\]",
-  "proof_latex": "Take products of the update equations defined by (7.7).",
-  "proof_note": "按所列原页转录原书证明。",
+  "proof_latex": null,
+  "proof_outline": "Take products of the update equations defined by (7.7).",
+  "proof_note": "原页推导与上下文全文见original_page_text；数学符号的排版以随附原页PDF为准。",
+  "original_page_text": [
+    {
+      "pdf_page": 295,
+      "printed_page": 274,
+      "text": "274\n7\nNumerical Methods for Stochastic Molecular Dynamics\nGaussian distributions, where we have invariant (stationary) averages\nhqi D hpi D 0;\nand\nh˝2q2i D hp2=mi D kBT;\nhqpi D 0:\nWe expect that the discretization schemes that we employ will introduce errors in\nthe computed values of the invariant (long-time) averages. In the large-time limit,\nthese averages will converge towards their invariant value, which we can ﬁnd using\nthe procedure outlined in [59].\nFor the harmonic oscillator, the force \u0003U0.q/ will be linear, and therefore we\nwould expect that any update step in an algorithm will be linear in the state variables\nq and p. Thus, denoting the iteration index as a subscript, we may explicitly write\none iteration of a general numerical method for evolving the dynamics as\n\u0002 qnC1\npnC1\n\u0003\nD \f\n\u0002qn\npn\n\u0003\nC \u0006n;\n(7.7)\nwhere \f is a constant matrix that depends on the stepsize h, the friction coefﬁcient\n\n, the particle mass m and the spring constant ˝. Additionally \u0006n is a vector of\nstochastic processes. For example, in the BBK method we can compute directly\nfrom its update scheme that\n\f BBK D\n2\n4\n1 \u0003 h2˝2\n2m\nh\nm\n\u0006\n1 \u0003 \nh\n2\n\u0007\nh˝2\n2m\n\u0006\nh2˝2\u00024m\n2C\nh\n\u0007 .2\u0002\nh/.2m\u0002h2˝2/\n2m.2C\nh/\n3\n5 ;\n\u0006BBK\nn\nD\n2\n4\nq\nkBT\nh3\n2m\nRn\np2kBT\nhm\n2C\nh\n\u0006\u0006\n1 \u0003 h2˝2\n2m\n\u0007\nRn C R0\nn\n\u0007\n3\n5 :\nMore generally, if we deﬁne the components of \f as ij and denote \u0006n D\nŒ\u0006n;1; \u0006n;2\tT we can take products of the update equations deﬁned by (7.7) to obtain\nq2\nnC1 D 2\n11q2\nn C 2\n12p2\nn C \u00062\nn;1 C 2 11 12qnpn C 2 11\u0006n;1qn C 2 12\u0006n;1pn;\n(7.8)\np2\nnC1 D 2\n21q2\nn C 2\n22p2\nn C \u00062\nn;2 C 2 21 22qnpn C 2 21\u0006n;2qn C 2 22\u0006n;2pn;\n(7.9)\nqnC1pnC1 D 11 21q2\nn C 12 22p2\nn C \u0006n;1\u0006n;2 C . 11 22 C 12 21/qnpn\nC . 11\u0006n;2 C 21\u0006n;1/qn C . 22\u0006n;1 C 12\u0006n;2/pn:\n(7.10)\n"
+    }
+  ],
+  "transcription_note": "PDF文字层原样保留，陈述中的数学排版转写为LaTeX；文字层有特殊字形编码时以目视原页为准。PDF347的Exercises之后不在正文范围内。",
   "context_notation": [],
   "extra_assumptions": [],
   "issues": [],
@@ -54,11 +63,11 @@ theorem quadraticProducts (a b c d q p r s : ℝ) :
 ## 项目依赖定义体及选择规格
 以下def/abbrev/structure完整保留；定理列出完整类型，Mathlib标准定义无需摘录。
 
-### MD.Ch07.linearUpdate (Blueprint/Ch07.lean:413)
+### MD.Ch07.linearUpdate (Blueprint/Ch07.lean:429)
 原文件上下文：
 ```lean
 open Set Filter MeasureTheory ProbabilityTheory MolecularDynamics
-open scoped BigOperators Topology ContDiff ENNReal NNReal
+open scoped BigOperators Topology ContDiff ENNReal NNReal Matrix
 variable {Ω : Type*} [MeasurableSpace Ω]
 variable {n : ℕ}
 ```
@@ -67,11 +76,11 @@ def linearUpdate (a b c d : ℝ) (x noise : ℝ × ℝ) : ℝ × ℝ :=
   (a*x.1+b*x.2+noise.1,c*x.1+d*x.2+noise.2)
 ```
 
-### MD.Ch07.quadraticProducts (Blueprint/Ch07.lean:430)
+### MD.Ch07.quadraticProducts (Blueprint/Ch07.lean:446)
 原文件上下文：
 ```lean
 open Set Filter MeasureTheory ProbabilityTheory MolecularDynamics
-open scoped BigOperators Topology ContDiff ENNReal NNReal
+open scoped BigOperators Topology ContDiff ENNReal NNReal Matrix
 variable {Ω : Type*} [MeasurableSpace Ω]
 variable {n : ℕ}
 ```

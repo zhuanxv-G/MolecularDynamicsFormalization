@@ -5,9 +5,9 @@
     "MD-7.3.1-Langevin"
   ],
   "input_sha256": {
-    "Blueprint/Ch07.lean": "03e34bf86a5b27e03cce8552bb21fc0fea40514cd87faa953bf09a6a0a27f3c2",
-    "blueprint/ch07/ch07_source.json": "27e402f2a8b9c511106df901d6cc8472e1dae783cdf739f657879ffcf297462a",
-    "BATCH04a_PAGES.pdf": "3cff56d33a8f652bc831051152438717d82d17e0720c36b5480ed3c2b7c9610b"
+    "Blueprint/Ch07.lean": "f30ea154ebfb07ae85c0b806ff74b35808d5a0c3dcaa647c0c3cc80a78239e37",
+    "blueprint/ch07/ch07_source.json": "c434892ebf63b06f7cadcdfa7af408c2c12d7b645d35db431d1855224163ba19",
+    "BATCH04a_PAGES.pdf": "74cf8e6e50d41748344365fb176d51f352e4e3c59f1405639f6966c337d08f59"
   },
   "page_mapping": [
     {
@@ -21,42 +21,42 @@
       "full_name": "MD.Ch07.V",
       "kind": "abbrev",
       "path": "Blueprint/Ch07.lean",
-      "line": 172,
+      "line": 188,
       "code_sha256": "7ab0ad90462b274b03f5b929b5f09417c0b397b6cb908fa6e7bd56677a314027"
     },
     {
       "full_name": "MD.Ch07.Phase",
       "kind": "abbrev",
       "path": "Blueprint/Ch07.lean",
-      "line": 173,
+      "line": 189,
       "code_sha256": "ef1520e3b22ac1c99a30a989deafe8d3da44a9f2a3e5b6c2cd3220218b88513e"
     },
     {
       "full_name": "MD.Ch07.vectorWiener",
       "kind": "def",
       "path": "Blueprint/Ch07.lean",
-      "line": 175,
+      "line": 191,
       "code_sha256": "a24b0b3d4e3f48ea3c5384e0ec083b953b2b03d743d1687b43010c41ccaebf93"
     },
     {
       "full_name": "MD.Ch07.coordDerivative",
       "kind": "def",
       "path": "Blueprint/Ch07.lean",
-      "line": 221,
+      "line": 237,
       "code_sha256": "e782d789a13f5db6817e2c995f141805e81ac75720125b846f8ee14ba3833a4b"
     },
     {
       "full_name": "MD.Ch07.gradient",
       "kind": "def",
       "path": "Blueprint/Ch07.lean",
-      "line": 250,
+      "line": 266,
       "code_sha256": "540c6af25c09d3a58da531bc32056ff1a1c070facc58d34c96b6653d781fba6f"
     },
     {
       "full_name": "MD.Ch07.langevin",
       "kind": "def",
       "path": "Blueprint/Ch07.lean",
-      "line": 252,
+      "line": 268,
       "code_sha256": "24f5a5e4ffaf8476e6ba5421115d1cfe510f2917c971244c845ecf7dcc03ec9e"
     },
     {
@@ -75,13 +75,13 @@
   },
   "files": {
     "PASTE.txt": {
-      "bytes": 7241,
-      "sha256": "e3ede26e7aef928ece319a05dc9beee61544d8ddf16b92e7b41ccba2a9022291"
+      "bytes": 9807,
+      "sha256": "1695c43c8e24827e2af3f859b13667c91ef0bf6b5298ffeaa8c9eba3a8a58ee4"
     },
     "BATCH04a_PAGES.pdf": {
       "bytes": 85329,
-      "sha256": "3cff56d33a8f652bc831051152438717d82d17e0720c36b5480ed3c2b7c9610b"
+      "sha256": "74cf8e6e50d41748344365fb176d51f352e4e3c59f1405639f6966c337d08f59"
     }
   },
-  "total_task_bytes": 95306
+  "total_task_bytes": 97872
 }

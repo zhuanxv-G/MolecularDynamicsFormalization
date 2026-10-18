@@ -5,9 +5,9 @@
     "MD-7.6-CoordinateJSplitting"
   ],
   "input_sha256": {
-    "Blueprint/Ch07.lean": "03e34bf86a5b27e03cce8552bb21fc0fea40514cd87faa953bf09a6a0a27f3c2",
-    "blueprint/ch07/ch07_source.json": "27e402f2a8b9c511106df901d6cc8472e1dae783cdf739f657879ffcf297462a",
-    "BATCH09d_PAGES.pdf": "47d4a076e621b99fe651bd59f9d549fc7da72080a182d132535b38e74e32dbce"
+    "Blueprint/Ch07.lean": "f30ea154ebfb07ae85c0b806ff74b35808d5a0c3dcaa647c0c3cc80a78239e37",
+    "blueprint/ch07/ch07_source.json": "c434892ebf63b06f7cadcdfa7af408c2c12d7b645d35db431d1855224163ba19",
+    "BATCH09d_PAGES.pdf": "e5dcdd0960afca283ab872f196be791e845f29d4c659df3faa8253ba7a001d75"
   },
   "page_mapping": [
     {
@@ -21,42 +21,42 @@
       "full_name": "MD.Ch07.V",
       "kind": "abbrev",
       "path": "Blueprint/Ch07.lean",
-      "line": 172,
+      "line": 188,
       "code_sha256": "7ab0ad90462b274b03f5b929b5f09417c0b397b6cb908fa6e7bd56677a314027"
     },
     {
       "full_name": "MD.Ch07.Phase",
       "kind": "abbrev",
       "path": "Blueprint/Ch07.lean",
-      "line": 173,
+      "line": 189,
       "code_sha256": "ef1520e3b22ac1c99a30a989deafe8d3da44a9f2a3e5b6c2cd3220218b88513e"
     },
     {
       "full_name": "MD.Ch07.coordDerivative",
       "kind": "def",
       "path": "Blueprint/Ch07.lean",
-      "line": 221,
+      "line": 237,
       "code_sha256": "e782d789a13f5db6817e2c995f141805e81ac75720125b846f8ee14ba3833a4b"
     },
     {
       "full_name": "MD.Ch07.gradient",
       "kind": "def",
       "path": "Blueprint/Ch07.lean",
-      "line": 250,
+      "line": 266,
       "code_sha256": "540c6af25c09d3a58da531bc32056ff1a1c070facc58d34c96b6653d781fba6f"
     },
     {
       "full_name": "MD.Ch07.coordinateJField",
       "kind": "def",
       "path": "Blueprint/Ch07.lean",
-      "line": 719,
+      "line": 735,
       "code_sha256": "17bd78a11691b3e0f7e77739e73a498441e118eb4de9c2bb7f774ac79ec5c600"
     },
     {
       "full_name": "MD.Ch07.frozenPotential",
       "kind": "def",
       "path": "Blueprint/Ch07.lean",
-      "line": 722,
+      "line": 738,
       "code_sha256": "47ed6678ccadf1dc94c623d03ca0c8c25273a37ade9821eb33c7935e0887da00"
     }
   ],
@@ -68,13 +68,13 @@
   },
   "files": {
     "PASTE.txt": {
-      "bytes": 5428,
-      "sha256": "0e6f248589b85bdddd5c726935dab4ccb551a511aeb009f39e9d1146b4a9bc1e"
+      "bytes": 8751,
+      "sha256": "954c482ee87e27b53d91582f8f80d4835d545eefd04e9573c010a11e9eb9bb3c"
     },
     "BATCH09d_PAGES.pdf": {
       "bytes": 76880,
-      "sha256": "47d4a076e621b99fe651bd59f9d549fc7da72080a182d132535b38e74e32dbce"
+      "sha256": "e5dcdd0960afca283ab872f196be791e845f29d4c659df3faa8253ba7a001d75"
     }
   },
-  "total_task_bytes": 84779
+  "total_task_bytes": 88102
 }

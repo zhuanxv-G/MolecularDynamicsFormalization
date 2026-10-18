@@ -5,9 +5,9 @@
     "MD-7.9.3-BAOABMarginalCancellation"
   ],
   "input_sha256": {
-    "Blueprint/Ch07.lean": "03e34bf86a5b27e03cce8552bb21fc0fea40514cd87faa953bf09a6a0a27f3c2",
-    "blueprint/ch07/ch07_source.json": "27e402f2a8b9c511106df901d6cc8472e1dae783cdf739f657879ffcf297462a",
-    "BATCH15f_PAGES.pdf": "d32e680be1e7bdb2247b17409f66f5ee9074b29538d367df7d6b07f9a55d9811"
+    "Blueprint/Ch07.lean": "f30ea154ebfb07ae85c0b806ff74b35808d5a0c3dcaa647c0c3cc80a78239e37",
+    "blueprint/ch07/ch07_source.json": "c434892ebf63b06f7cadcdfa7af408c2c12d7b645d35db431d1855224163ba19",
+    "BATCH15f_PAGES.pdf": "dee0c1017df3a855701479a5d8b7a60ab9c029a20c2a879d90e8cd36e842f72b"
   },
   "page_mapping": [
     {
@@ -21,112 +21,112 @@
       "full_name": "MD.Ch07.V",
       "kind": "abbrev",
       "path": "Blueprint/Ch07.lean",
-      "line": 172,
+      "line": 188,
       "code_sha256": "7ab0ad90462b274b03f5b929b5f09417c0b397b6cb908fa6e7bd56677a314027"
     },
     {
       "full_name": "MD.Ch07.Phase",
       "kind": "abbrev",
       "path": "Blueprint/Ch07.lean",
-      "line": 173,
+      "line": 189,
       "code_sha256": "ef1520e3b22ac1c99a30a989deafe8d3da44a9f2a3e5b6c2cd3220218b88513e"
     },
     {
       "full_name": "MD.Ch07.coordDerivative",
       "kind": "def",
       "path": "Blueprint/Ch07.lean",
-      "line": 221,
+      "line": 237,
       "code_sha256": "e782d789a13f5db6817e2c995f141805e81ac75720125b846f8ee14ba3833a4b"
     },
     {
       "full_name": "MD.Ch07.gradient",
       "kind": "def",
       "path": "Blueprint/Ch07.lean",
-      "line": 250,
+      "line": 266,
       "code_sha256": "540c6af25c09d3a58da531bc32056ff1a1c070facc58d34c96b6653d781fba6f"
     },
     {
       "full_name": "MD.Ch07.positionGibbs",
       "kind": "def",
       "path": "Blueprint/Ch07.lean",
-      "line": 991,
+      "line": 1015,
       "code_sha256": "82bb55e66a80fed509916dd4534bcc354cc9bd8df28c6b30af7e5a2e29632202"
     },
     {
       "full_name": "MD.Ch07.momentumGibbs",
       "kind": "def",
       "path": "Blueprint/Ch07.lean",
-      "line": 993,
+      "line": 1017,
       "code_sha256": "37890e88a0521fb73fdcd58c2c02631a375383f9542a51cd2521500fb8692207"
     },
     {
       "full_name": "MD.Ch07.productGibbs",
       "kind": "def",
       "path": "Blueprint/Ch07.lean",
-      "line": 994,
+      "line": 1018,
       "code_sha256": "a6ad2d129b80649e4904fb1e07f2591a5e7db814b84c01b8c47a02537a602ae8"
     },
     {
       "full_name": "MD.Ch07.hessianU",
       "kind": "def",
       "path": "Blueprint/Ch07.lean",
-      "line": 1074,
+      "line": 1098,
       "code_sha256": "8c2605253d3d70a39369a2c08eb2c758793a9cc41934f1f97c967d5eb2c776ee"
     },
     {
       "full_name": "MD.Ch07.gradNormSq",
       "kind": "def",
       "path": "Blueprint/Ch07.lean",
-      "line": 1119,
+      "line": 1143,
       "code_sha256": "4ac74933a6c274ae1355fc8b7cdd3820a81dec13cacd2c6e39768e45795792df"
     },
     {
       "full_name": "MD.Ch07.hessianQuadratic",
       "kind": "def",
       "path": "Blueprint/Ch07.lean",
-      "line": 1120,
+      "line": 1144,
       "code_sha256": "a6a3143b1913df6460ab70c1909c2d7201e4434efc287c2634a325c9281a5215"
     },
     {
       "full_name": "MD.Ch07.laplacian",
       "kind": "def",
       "path": "Blueprint/Ch07.lean",
-      "line": 1156,
+      "line": 1188,
       "code_sha256": "34815bde240a9d093117da74ea9ce745ee5f13888a61c42c94cfcecfc623a421"
     },
     {
       "full_name": "MD.Ch07.momentumAverage",
       "kind": "def",
       "path": "Blueprint/Ch07.lean",
-      "line": 1177,
+      "line": 1209,
       "code_sha256": "029603720be2e70dcd6e7ba8314456dc87368ecad39507b81040d923db2ab02f"
     },
     {
       "full_name": "MD.Ch07.highFrictionOABAO",
       "kind": "def",
       "path": "Blueprint/Ch07.lean",
-      "line": 1195,
+      "line": 1230,
       "code_sha256": "a13e000bdcfee605e2261531ed7d396865be2ed9d54b7a27059c2eeab2db1cd9"
     },
     {
       "full_name": "MD.Ch07.highFrictionCorrection",
       "kind": "def",
       "path": "Blueprint/Ch07.lean",
-      "line": 1208,
+      "line": 1243,
       "code_sha256": "2c4fdb65659cb32bc88c5580ab6d9dfc69ee1d5abbe7782dbcb368b6c9c3c512"
     },
     {
       "full_name": "MD.Ch07.baoabMarginalCancellation",
       "kind": "theorem",
       "path": "Blueprint/Ch07.lean",
-      "line": 1225,
+      "line": 1260,
       "code_sha256": "5a693224f117eed0a05b31f7c0872572b7cd0ba497997a05b1d87dddc00c6e26"
     },
     {
       "full_name": "MD.Ch07.baoabConfigurationalCancellation",
       "kind": "theorem",
       "path": "Blueprint/Ch07.lean",
-      "line": 1228,
+      "line": 1263,
       "code_sha256": "24c71d11dc4e639735073297badcf827f58b3f784c1fd21a618ee3e9ba475606"
     }
   ],
@@ -138,13 +138,13 @@
   },
   "files": {
     "PASTE.txt": {
-      "bytes": 10390,
-      "sha256": "d954fd1436333facfbbb3054bdf99148b1f6d6b48f9b92269b6c7fbcad37535f"
+      "bytes": 12513,
+      "sha256": "edaafa7fabd0ec683b70280ccedf29189aa104ae8b7ffe9fb502b3819cde17f5"
     },
     "BATCH15f_PAGES.pdf": {
       "bytes": 84932,
-      "sha256": "d32e680be1e7bdb2247b17409f66f5ee9074b29538d367df7d6b07f9a55d9811"
+      "sha256": "dee0c1017df3a855701479a5d8b7a60ab9c029a20c2a879d90e8cd36e842f72b"
     }
   },
-  "total_task_bytes": 100140
+  "total_task_bytes": 102266
 }

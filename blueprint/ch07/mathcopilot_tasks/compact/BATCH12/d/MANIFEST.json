@@ -5,9 +5,9 @@
     "MD-7.8-HomogeneousNormalization"
   ],
   "input_sha256": {
-    "Blueprint/Ch07.lean": "03e34bf86a5b27e03cce8552bb21fc0fea40514cd87faa953bf09a6a0a27f3c2",
-    "blueprint/ch07/ch07_source.json": "27e402f2a8b9c511106df901d6cc8472e1dae783cdf739f657879ffcf297462a",
-    "BATCH12d_PAGES.pdf": "76007c4c5d6e35adc471a5a74ee08cde1eb4e8c950cd09c6ab5a89f31929b080"
+    "Blueprint/Ch07.lean": "f30ea154ebfb07ae85c0b806ff74b35808d5a0c3dcaa647c0c3cc80a78239e37",
+    "blueprint/ch07/ch07_source.json": "c434892ebf63b06f7cadcdfa7af408c2c12d7b645d35db431d1855224163ba19",
+    "BATCH12d_PAGES.pdf": "c3a4990c71ff89b2dfd487de1400a09ddad85a44324ec884bf0e67dc5762f531"
   },
   "page_mapping": [
     {
@@ -21,14 +21,14 @@
       "full_name": "MD.Ch07.homogeneousNormalization",
       "kind": "theorem",
       "path": "Blueprint/Ch07.lean",
-      "line": 912,
+      "line": 936,
       "code_sha256": "a9cecbd31dee1766c91135e0f3e7be96539998d10d5fc3ee62c9cd1a8459e3bd"
     },
     {
       "full_name": "MD.Ch07.centeredParticular",
       "kind": "theorem",
       "path": "Blueprint/Ch07.lean",
-      "line": 918,
+      "line": 942,
       "code_sha256": "2be3dfc8377603d19795edba3350711139236092da966f82c69e16e1d81410e2"
     },
     {
@@ -47,13 +47,13 @@
   },
   "files": {
     "PASTE.txt": {
-      "bytes": 4602,
-      "sha256": "4d0394e248e28034589dacc2e2a7deddf743717bdaec191be57b95ca63c554e1"
+      "bytes": 6991,
+      "sha256": "bbc43c4d5560e13c679d7c99c255ab9ecffa59db196df8930041cc5c94bd9713"
     },
     "BATCH12d_PAGES.pdf": {
       "bytes": 83982,
-      "sha256": "76007c4c5d6e35adc471a5a74ee08cde1eb4e8c950cd09c6ab5a89f31929b080"
+      "sha256": "c3a4990c71ff89b2dfd487de1400a09ddad85a44324ec884bf0e67dc5762f531"
     }
   },
-  "total_task_bytes": 90455
+  "total_task_bytes": 92844
 }

@@ -1,0 +1,66 @@
+{
+  "batch": "BATCH20",
+  "subtask": "BATCH20a",
+  "source_ids": [
+    "MD-7.13-StabilityEnvelope"
+  ],
+  "input_sha256": {
+    "Blueprint/Ch07.lean": "f30ea154ebfb07ae85c0b806ff74b35808d5a0c3dcaa647c0c3cc80a78239e37",
+    "blueprint/ch07/ch07_source.json": "c434892ebf63b06f7cadcdfa7af408c2c12d7b645d35db431d1855224163ba19",
+    "BATCH20a_PAGES.pdf": "1e1d401a8c5878915fdbc0b226c5272bd1c8307e97c1aca23785806abc4eb21b"
+  },
+  "page_mapping": [
+    {
+      "attachment_page": 1,
+      "original_pdf_page": 346,
+      "printed_page": 325
+    }
+  ],
+  "definition_excerpts": [
+    {
+      "full_name": "MD.Ch07.underdampedPhasePrinted_corrected",
+      "kind": "def",
+      "path": "Blueprint/Ch07.lean",
+      "line": 1622,
+      "code_sha256": "408652b33b70a9738787ba98c0732664e83c99bcfa96f405bddbb6e7bdc920ac"
+    },
+    {
+      "full_name": "MD.Ch07.stabilityEnvelope",
+      "kind": "def",
+      "path": "Blueprint/Ch07.lean",
+      "line": 1633,
+      "code_sha256": "3e86b354c5c0af9ce9167ca71d9269905e7fcbabac6f36baf76622442be74e96"
+    },
+    {
+      "full_name": "MD.Ch07.stabilityEnvelope_sufficient",
+      "kind": "theorem",
+      "path": "Blueprint/Ch07.lean",
+      "line": 1634,
+      "code_sha256": "9649a83d858dd938fb82323c02ca398c68189c68665d2ceb3f3e2b589e8dca95"
+    },
+    {
+      "full_name": "MD.Ch07.stabilityEnvelope_iff",
+      "kind": "theorem",
+      "path": "Blueprint/Ch07.lean",
+      "line": 1643,
+      "code_sha256": "435394a066228b1c032552d57d7ff732ce8b2f93e72519069ba597f072fa9e36"
+    }
+  ],
+  "validation": {
+    "project_constant_closure": "PASS",
+    "missing_project_definitions": [],
+    "full_page_render_equality_dpi": 72,
+    "website_submitted": false
+  },
+  "files": {
+    "PASTE.txt": {
+      "bytes": 7914,
+      "sha256": "0ed0cba3ddb6e0e99f9f9b6e853eb8e8afcc426c8e4bf0c39bca531897fad936"
+    },
+    "BATCH20a_PAGES.pdf": {
+      "bytes": 65486,
+      "sha256": "1e1d401a8c5878915fdbc0b226c5272bd1c8307e97c1aca23785806abc4eb21b"
+    }
+  },
+  "total_task_bytes": 75482
+}

@@ -2,9 +2,11 @@ import MolecularDynamics.Chapter06.ReviewDefinitions
 import MolecularDynamics.Chapter07.FormalOperatorFunctionalCalculus
 import MolecularDynamics.Chapter07.InvariantDistributionSwap
 import Mathlib.Tactic
+import Mathlib.Analysis.Normed.Algebra.MatrixExponential
+import Mathlib.Analysis.SpecialFunctions.Artanh
 
 open Set Filter MeasureTheory ProbabilityTheory MolecularDynamics
-open scoped BigOperators Topology ContDiff ENNReal NNReal
+open scoped BigOperators Topology ContDiff ENNReal NNReal Matrix
 noncomputable section
 namespace MD.Ch07
 variable {Ω : Type*} [MeasurableSpace Ω]
@@ -122,7 +124,21 @@ theorem weakDoesNotImplyStrong : ∃ (P : Measure ℝ) (X Y : ℝ → ℝ),
     IsProbabilityMeasure P ∧
     (∀ f : ℝ → ℝ, (∫ sample, f (X sample) ∂P) = ∫ sample, f (Y sample) ∂P) ∧
     0 < ∫ sample, |X sample-Y sample| ∂P := by
-  sorry
+  let P : Measure ℝ := (1/2 : ℝ≥0) • Measure.dirac (-1)+(1/2 : ℝ≥0) • Measure.dirac 1
+  have hi (f : ℝ → ℝ) (a : ℝ) : Integrable f ((1/2 : ℝ≥0) • Measure.dirac a) :=
+    (integrable_dirac (by simp)).smul_measure_nnreal
+  refine ⟨P,id,Neg.neg,?_,?_,?_⟩
+  · constructor
+    simp only [P,Measure.add_apply,Measure.smul_apply,Measure.dirac_apply_of_mem (Set.mem_univ _),ENNReal.smul_def,smul_eq_mul,mul_one]
+    exact_mod_cast (by norm_num : (1/2 : ℝ≥0)+(1/2 : ℝ≥0) = 1)
+  · intro f
+    dsimp [P]
+    rw [integral_add_measure (hi _ _) (hi _ _),integral_add_measure (hi _ _) (hi _ _)]
+    simp [integral_smul_nnreal_measure,add_comm]
+  · dsimp [P]
+    rw [integral_add_measure (hi _ _) (hi _ _)]
+    norm_num [integral_smul_nnreal_measure]
+
 
 /-- source_id: MD-7.2-CanonicalAverage · 印刷p.266 / PDFp.287
 [EXTRA] 该公式先保留显式Z参数；只有probabilityDensity成立才称概率密度。正有限配分积分及其归一化见修正版，不把原页倒数疑误带入默认定义。 -/
@@ -862,6 +878,14 @@ def printedSpectralConclusion {E : Type*} [AddCommGroup E] [Module ℂ E]
   ρ ≠ 0 ∧ L ρ = 0 ∧ ∀ eigen : ℂ, (∃ v : E, v ≠ 0 ∧ L v = eigen • v) →
     simpleEigenvalue L eigen ∧ (eigen = 0 ∨ eigen.re < 0)
 
+def spectralConclusionPrinted {E : Type*} [AddCommGroup E] [Module ℂ E]
+    (L : Module.End ℂ E) (ρ : E) : Prop := printedSpectralConclusion L ρ
+
+def spectralConclusionPrinted_corrected {E : Type*} [AddCommGroup E] [Module ℂ E]
+    (L : Module.End ℂ E) (ρ : E) : Prop :=
+  ρ ≠ 0 ∧ L ρ = 0 ∧ ∀ eigen : ℂ, (∃ v : E, v ≠ 0 ∧ L v = eigen • v) →
+    FiniteDimensional ℂ (Module.End.eigenspace L eigen) ∧ (eigen = 0 ∨ eigen.re < 0)
+
 /-- source_id: MD-7.7.3-PerturbationCoefficientEquation · 印刷p.289–290 / PDFp.310–311
 [EXTRA] 在真实线性作用的形式系数卷积上推导0阶和1阶必要方程；并未由这些必要方程证明原离散链存在不变分布。 -/
 def actionCoefficient {E : Type*} [AddCommGroup E] [Module ℝ E]
@@ -1130,6 +1154,14 @@ theorem conjugateCorrection_coefficient {E : Type*} [AddCommGroup E] [Module ℝ
     q2 = p 2+(1/4 : ℝ) • L1 (p 0) := by
   simpa [hp,hL,Module.End.mul_apply] using htransfer
 
+def conjugateExpansionPrinted {E : Type*} [AddCommGroup E] [Module ℝ E]
+    (L0 L1 : Module.End ℝ E) (h : ℝ) : Module.End ℝ E :=
+  1+(h/2) • L0+(h^2/4) • L1+(h^2/2) • L0
+
+def conjugateExpansionPrinted_corrected {E : Type*} [AddCommGroup E] [Module ℝ E]
+    (L0 L1 : Module.End ℝ E) (h : ℝ) : Module.End ℝ E :=
+  1+(h/2) • L0+(h^2/4) • L1+(h^2/8) • (L0*L0)
+
 /-- source_id: MD-7.9.2-ReciprocalFrictionExpansion · 印刷p.301–302 / PDFp.322–323
 [EXTRA] ε=1/γ；使用真实偏导、单位质量、β>0；形式层级包含所有后续阶。各阶零均值及归一性需另加centeredCorrections，不把其当作已证。 -/
 def phaseH (U : V n → ℝ) (ρ : Phase n → ℝ) : Phase n → ℝ := aForward (fun _ ↦ 1) ρ+bForward U ρ
@@ -1176,6 +1208,9 @@ def firstReciprocalCorrection (U ν μ : V n → ℝ) (β : ℝ) (x : Phase n) :
   -β/24*hermitePrimitive U β x-(∑ i, x.2 i*gradient ν x.1 i)-μ x.1
 def momentumAverage (β : ℝ) (f : Phase n → ℝ) (q : V n) : ℝ :=
   ∫ p, f (q,p) ∂momentumGibbs (fun _ ↦ 1) β
+def momentumAveragePrinted_corrected (β : ℝ) (f : Phase n → ℝ) (q : V n) : ℝ :=
+  momentumAverage β f q
+
 def momentumAveragePrinted (U : V n → ℝ) (β : ℝ) (f : Phase n → ℝ) (q : V n) : ℝ :=
   ∫ p, f (q,p)*gibbsWeight (fun _ ↦ 1) U β (q,p)
 theorem firstReciprocalCorrection_pde (U ν μ : V n → ℝ) (β : ℝ) (hβ : 0 < β)
@@ -1308,6 +1343,12 @@ def lmExtendedStep (m : V n) (U : V n → ℝ) (θ τ : ℝ) (R : V n) (x : V n 
 def lmTransientErrorBound (error : ℝ → ℝ → ℝ) : Prop :=
   ∃ C > 0, ∃ multiplier > 0, ∃ δ > 0, ∀ τ ∈ Set.Ioo 0 δ, ∀ T ≥ 0,
     |error τ T| ≤ C*(Real.exp (-multiplier*T)*τ+τ^2)
+def limitAccuracyPrinted (error : ℝ → ℝ) : Prop :=
+  Asymptotics.IsBigO (𝓝[Set.Ioi (0 : ℝ)] 0) error (fun h ↦ h^2)
+
+def limitAccuracyPrinted_corrected (error : ℝ → ℝ) : Prop :=
+  Asymptotics.IsBigO (𝓝[Set.Ioi (0 : ℝ)] 0) error (fun h ↦ h^4)
+
 theorem limitAccuracy_rescale (h : ℝ) : (h^2/2)^2 = h^4/4 := by ring
 
 /-- source_id: MD-7.9.3-ZeroFrictionVerlet · 印刷p.306 / PDFp.327
@@ -1316,7 +1357,12 @@ theorem zeroFrictionOU (m : V n) (θ h : ℝ) (R : V n) (x : Phase n) : ouStep m
   ext i <;> simp [ouStep,ouMomentum]
 theorem zeroFrictionBAOAB (m : V n) (U : V n → ℝ) (θ h : ℝ) (R : V n) :
     baoab m U 0 θ h R = kickStep U (h/2) ∘ driftStep m h ∘ kickStep U (h/2) := by
-  sorry
+  funext x
+  have ha : driftStep m (h/2) (driftStep m (h/2) (kickStep U (h/2) x)) =
+      driftStep m h (kickStep U (h/2) x) := by
+    ext i <;> dsimp [driftStep] <;> ring
+  simp only [baoab,Function.comp_apply,zeroFrictionOU]
+  rw [ha]
 
 /-- source_id: MD-7.11.1-TemperatureObservables · 印刷p.310 / PDFp.331
 [EXTRA] 无约束n个独立坐标时Nd=n，θ=1/β；约束减少自由度时不能直接用此n公式。
@@ -1492,5 +1538,161 @@ def localMapErrorBound {E : Type*} [NormedAddCommGroup E] (F G : ℝ → E → E
   ∃ C ≥ 0, ∃ δ > 0, ∀ h ∈ Set.Ioo 0 δ, ∀ x ∈ D, ‖F h x-G h x‖ ≤ C*h^(r+1)
 def geodesicReplacementSecondOrder {E : Type*} [NormedAddCommGroup E]
     (exact approx : ℝ → E → E) (D : Set E) : Prop := localMapErrorBound exact approx D 2
+
+/-- source_id: MD-7.13-FastSlowHarmonicModel · 印刷p.323 / PDFp.344
+[EXTRA] 单位质量、实际标准Wiener、状态适应、正β及完整积分方程由langevin定义体保留；Ω≫1在定量结论中分别改成明确不等式。 -/
+abbrev Mat2 := Matrix (Fin 2) (Fin 2) ℝ
+def fastPotential (Ω q : ℝ) : ℝ := Ω^2*q^2/2
+def slowPotential (q : ℝ) : ℝ := q^2/2
+def fastMatrix (Ω γ : ℝ) : Mat2 := !![0,1;-Ω^2,-γ]
+def slowMatrix (h : ℝ) : Mat2 := !![1,0;-h,1]
+def fastLangevin (P : Measure Ω) (W : ℝ → Ω → V 1) (X : ℝ → Ω → Phase 1)
+    (frequency γ β : ℝ) (x0 : Phase 1) : Prop :=
+  0 < frequency ∧ 0 < β ∧ langevin P W X (fun q ↦ fastPotential frequency (q 0)) (fun _ ↦ 1) γ β⁻¹ x0
+
+/-- source_id: MD-7.13-ExactFastGaussianLaw · 印刷p.323–324 / PDFp.344–345
+[EXTRA] 陈述真实过程的转移分布，不将强解等于一组新独立R假设成结论。Bt只需给定平方根因子；正半定矩阵平方根存在性未另证明。 -/
+def fastExponential (Ω γ t : ℝ) : Mat2 := NormedSpace.exp (t • fastMatrix Ω γ)
+def fastCovariance (Ω γ β t : ℝ) : Mat2 := fun i j ↦ 2*γ/β*∫ s in (0 : ℝ)..t,
+  (fastExponential Ω γ (t-s)* (!![0,0;0,1] : Mat2)*(fastExponential Ω γ (t-s))ᵀ) i j
+theorem exactFastGaussianLaw (P : Measure Ω) (W : ℝ → Ω → V 1) (X : ℝ → Ω → Phase 1)
+    (frequency γ β t : ℝ) (x0 : Phase 1) (B : Mat2)
+    (hX : fastLangevin P W X frequency γ β x0) (ht : 0 ≤ t)
+    (hB : B*Bᵀ = fastCovariance frequency γ β t) :
+    HasLaw (fun sample ↦ (![ (X t sample).1 0, (X t sample).2 0] : Fin 2 → ℝ))
+      (Measure.map (fun R : Fin 2 → ℝ ↦
+        fastExponential frequency γ t *ᵥ (![x0.1 0,x0.2 0] : Fin 2 → ℝ)+B*ᵥ R)
+        (Measure.pi (fun _ : Fin 2 ↦ gaussianReal 0 1))) P := by
+  sorry
+
+/-- source_id: MD-7.13-MultipleTimestepUpdate · 印刷p.324 / PDFp.345
+[EXTRA] Rn为每步独立标准二维Gaussian；稳定分布分析仍要求真实独立序列及有限协方差，不能只以更新定义宣称存在平稳解。 -/
+def multipleX (Ω γ h : ℝ) : Mat2 := slowMatrix h*fastExponential Ω γ h
+def multipleY (h : ℝ) (B : Mat2) : Mat2 := slowMatrix h*B
+def multipleStep (Ω γ h : ℝ) (B : Mat2) (R z : Fin 2 → ℝ) : Fin 2 → ℝ :=
+  multipleX Ω γ h *ᵥ z+multipleY h B *ᵥ R
+theorem multipleStep_composition (Ω γ h : ℝ) (B : Mat2) (R z : Fin 2 → ℝ) :
+    multipleStep Ω γ h B R z = slowMatrix h *ᵥ (fastExponential Ω γ h *ᵥ z+B*ᵥ R) := by
+  simp [multipleStep,multipleX,multipleY,Matrix.mulVec_add,Matrix.mulVec_mulVec]
+
+/-- source_id: MD-7.13-DeterminantTrace · 印刷p.324 / PDFp.345
+[EXTRA] η允许纯虚数；显式排除临界η=0，避免除零假公式。临界阻尼应取连续极限，另列覆盖缺口。 -/
+def traceFormula (γ h : ℝ) (η : ℂ) : ℂ :=
+  (η-(h : ℂ))/η*Complex.exp ((η-(γ : ℂ))*(h : ℂ)/2)+
+  (η+(h : ℂ))/η*Complex.exp ((-η-(γ : ℂ))*(h : ℂ)/2)
+theorem determinantTrace (Ω γ h : ℝ) (η : ℂ) (hη : η^2 = (γ : ℂ)^2-4*(Ω : ℂ)^2) (hne : η ≠ 0) :
+    Matrix.det (multipleX Ω γ h) = Real.exp (-γ*h) ∧
+    ((Matrix.trace (multipleX Ω γ h) : ℝ) : ℂ) = traceFormula γ h η := by
+  sorry
+
+/-- source_id: MD-7.13-SpectralRadiusStability · 印刷p.324 / PDFp.345
+[EXTRA] 只陈述谱半径≤1的确定性边界资格；有非退化随机驱动时平稳二阶矩一般要求严格谱半径<1，等号并不自动给随机长期稳定。
+[EXTRA] 正摩擦正h给0<det<1；γ=0、Jordan边界、临界η=0均需另审。trace到双曲式的代数/指数桥未证明。 -/
+def characteristicUnitDisk (X : Mat2) : Prop :=
+  ∀ z : ℂ, z^2-((Matrix.trace X : ℝ) : ℂ)*z+((Matrix.det X : ℝ) : ℂ) = 0 → ‖z‖ ≤ 1
+theorem spectralRadiusStability (X : Mat2) (hd : 0 < Matrix.det X) (hd1 : Matrix.det X < 1) :
+    characteristicUnitDisk X ↔ |Matrix.trace X| ≤ 1+Matrix.det X := by
+  sorry
+def hyperbolicStability (γ h : ℝ) (η : ℂ) : Prop :=
+  ‖Complex.cosh (η*(h : ℂ)/2)+(h : ℂ)/η*Complex.sinh (-η*(h : ℂ)/2)‖ ≤ Real.cosh (γ*h/2)
+
+/-- source_id: MD-7.13-HyperbolicPhaseTransform · 印刷p.324 / PDFp.345
+[EXTRA] 实η版本必须补|h/η|<1，γ>0本身不足；复η需选择sqrt/artanh分支，原文未说明。只覆盖明确实域上的等式，不把所有γ>0都纳入。 -/
+def hyperbolicPhase (η h : ℝ) : ℝ :=
+  Real.cosh (η*h/2-Real.artanh (h/η))*Real.sqrt (1-h^2/η^2)
+theorem hyperbolicPhase_identity (η h : ℝ) (hη : η ≠ 0) (hr : |h/η| < 1) :
+    hyperbolicPhase η h = Real.cosh (η*h/2)-h/η*Real.sinh (η*h/2) := by
+  have hh : h/η ∈ Set.Ioo (-1 : ℝ) 1 := abs_lt.mp hr
+  have hs : Real.sqrt (1-(h/η)^2) ≠ 0 := by
+    apply ne_of_gt
+    apply Real.sqrt_pos.2
+    have hsq : (h/η)^2 < 1 := (sq_lt_one_iff_abs_lt_one (h/η)).2 hr
+    linarith
+  simp only [hyperbolicPhase,Real.cosh_sub,Real.cosh_artanh hh,Real.sinh_artanh hh]
+  rw [← div_pow]
+  calc
+    _ = (Real.cosh (η*h/2)-(h/η)*Real.sinh (η*h/2))/Real.sqrt (1-(h/η)^2)*Real.sqrt (1-(h/η)^2) := by ring
+    _ = _ := div_mul_cancel₀ _ hs
+
+/-- source_id: MD-7.13-UnderdampedPhasePrinted · 印刷p.325 / PDFp.346
+[EXTRA] 原文版与修正版分别定义，原文版不证明；直接用幅相恒等式绕过复函数分支。η̂=√(4Ω²-γ²)>0需要明确欠阻尼条件。
+[ERRATUM?] 已目视核对PDF346／印刷325：从η=iη̂化为实余弦时应使用+arctan(h/η̂)，所印-atanh(h/η̂)的函数与符号均不符。修正版从cos(a)-r sin(a)的标准幅相恒等式得到。 -/
+def underdampedPhasePrinted (η h : ℝ) : ℝ :=
+  Real.cos (η*h/2-Real.artanh (h/η))*Real.sqrt (1+h^2/η^2)
+def underdampedPhasePrinted_corrected (η h : ℝ) : ℝ :=
+  Real.sqrt (1+(h/η)^2)*Real.cos (η*h/2+Real.arctan (h/η))
+theorem underdampedPhase_identity (a r : ℝ) :
+    Real.cos a-r*Real.sin a = Real.sqrt (1+r^2)*Real.cos (a+Real.arctan r) := by
+  rw [Real.cos_add,Real.cos_arctan,Real.sin_arctan]
+  have hs : Real.sqrt (1+r^2) ≠ 0 := ne_of_gt (Real.sqrt_pos.2 (by positivity))
+  field_simp
+  <;> ring
+
+/-- source_id: MD-7.13-StabilityEnvelope · 印刷p.325 / PDFp.346
+[EXTRA] “所有步长”指对每个h满足该条件；一次h的包络条件不能声称自动覆盖所有h。仍仅为谱模不超过1的充分条件，严格随机平稳性另需严格不等式。 -/
+def stabilityEnvelope (η γ h : ℝ) : Prop := Real.sqrt (1+h^2/η^2) ≤ Real.cosh (γ*h/2)
+theorem stabilityEnvelope_sufficient (η γ h : ℝ) (he : stabilityEnvelope η γ h) :
+    |underdampedPhasePrinted_corrected η h| ≤ Real.cosh (γ*h/2) := by
+  dsimp [underdampedPhasePrinted_corrected]
+  calc
+    _ ≤ Real.sqrt (1+(h/η)^2)*1 := by
+      rw [abs_mul,abs_of_nonneg (Real.sqrt_nonneg _)]
+      exact mul_le_mul_of_nonneg_left (Real.abs_cos_le_one _) (Real.sqrt_nonneg _)
+    _ = Real.sqrt (1+h^2/η^2) := by rw [div_pow,mul_one]
+    _ ≤ _ := he
+theorem stabilityEnvelope_iff (η γ h : ℝ) (hη : 0 < η) (hγ : 0 ≤ γ) (hh : 0 ≤ h) :
+    stabilityEnvelope η γ h ↔ h/η ≤ Real.sinh (γ*h/2) := by
+  sorry
+
+/-- source_id: MD-7.13-FrictionThresholdPrinted · 印刷p.325 / PDFp.346
+[EXTRA] 保留原精确根式，它本身与有理化修正版相同；疑误在后续比较方向/系数。欠阻尼上界γ<2Ω显式，不把该范围内的代数条件推广到任意大γ。
+[EXTRA] 所有h包络由sinh x≥x推出，严格稳定与随机矩界仍需另证。反例给出有理平方数值，完整根式代入识别未另证明。
+[ERRATUM?] 已目视核对PDF346：最后链式下界√2/Ω不成立。将精确阈值有理化得√(2/(Ω²+√(Ω⁴-1)))，大Ω时约1/Ω；√2/Ω可作更保守的充分选择而非精确阈值下界。Ω²=5/4时精确阈值平方=1，小于2/Ω²=8/5。 -/
+def frictionThresholdPrinted (Ω : ℝ) : ℝ := Ω*Real.sqrt (2-2*Real.sqrt (1-Ω⁻¹^4))
+def frictionThresholdPrinted_corrected (Ω : ℝ) : ℝ := Real.sqrt (2/(Ω^2+Real.sqrt (Ω^4-1)))
+def frictionBoundPrinted (Ω γ : ℝ) : Prop :=
+  frictionThresholdPrinted Ω ≤ γ ∧ Real.sqrt 2/Ω ≤ frictionThresholdPrinted Ω
+
+def frictionBoundPrinted_corrected (Ω γ : ℝ) : Prop :=
+  0 < γ ∧ γ < 2*Ω ∧ 1/Real.sqrt (4*Ω^2-γ^2) ≤ γ/2
+
+theorem frictionThreshold_rationalized (Ω : ℝ) (hΩ : 1 ≤ Ω) :
+    frictionThresholdPrinted Ω = frictionThresholdPrinted_corrected Ω := by
+  sorry
+theorem frictionThreshold_allSteps (Ω γ : ℝ) (hΩ : 1 ≤ Ω) (hγ : 0 < γ) (hu : γ < 2*Ω)
+    (hb : 1/Real.sqrt (4*Ω^2-γ^2) ≤ γ/2) :
+    ∀ h, 0 ≤ h → stabilityEnvelope (Real.sqrt (4*Ω^2-γ^2)) γ h := by
+  sorry
+theorem frictionThreshold_asymptotic :
+    Filter.Tendsto (fun Ω : ℝ ↦ Ω*frictionThresholdPrinted_corrected Ω) Filter.atTop (𝓝 1) := by
+  sorry
+theorem frictionThreshold_squared_counterexample : (1 : ℝ) < 2/(5/4 : ℝ) := by norm_num
+
+/-- source_id: MD-7.1-ConfigurationalSampling · 印刷p.262 / PDFp.283
+[EXTRA] 原文省略归一常数；positionGibbs定义体保留实际配分积分。可积性与概率归一资格单列，不把未归一指数直接视为概率密度。 -/
+def configurationalSamplingAverage (U φ : V n → ℝ) (β : ℝ) : ℝ :=
+  ∫ q, φ q ∂positionGibbs U β
+
+def configurationalSamplingQualified (U φ : V n → ℝ) (β : ℝ) : Prop :=
+  0 < β ∧ IsProbabilityMeasure (positionGibbs U β) ∧ Integrable φ (positionGibbs U β)
+
+/-- source_id: MD-7.1-HamiltonianSamplingObstruction · 印刷p.262 / PDFp.283
+[EXTRA] 本条只证明保能流的能量子水平集不变；结合非平凡概率质量可形成遍历性障碍。能量壳上的遍历性不能由原句否定。
+[EXTRA] 原句未指定Liouvillian定义域、函数空间与参考概率。谱隙缺失和多个平稳解的完整算子陈述列为覆盖缺口，不把子水平集恒等式标作整段谱理论的证明。 -/
+def energyConservingFlow (H : Phase n → ℝ) (F : ℝ → Phase n → Phase n) : Prop :=
+  (∀ x, F 0 x = x) ∧ (∀ s t x, F (s+t) x = F s (F t x)) ∧ ∀ t x, H (F t x) = H x
+
+theorem energySublevel_invariant (H : Phase n → ℝ) (F : ℝ → Phase n → Phase n)
+    (hf : energyConservingFlow H F) (a t : ℝ) :
+    (F t) ⁻¹' {x | H x ≤ a} = {x | H x ≤ a} := by
+  ext x
+  change H (F t x) ≤ a ↔ H x ≤ a
+  rw [hf.2.2 t x]
+
+def energyObstructionQualified (μ : Measure (Phase n)) (H : Phase n → ℝ)
+    (F : ℝ → Phase n → Phase n) : Prop :=
+  IsProbabilityMeasure μ ∧ energyConservingFlow H F ∧
+    (∀ t, MeasurePreserving (F t) μ μ) ∧
+    ∃ a, MeasurableSet {x | H x ≤ a} ∧ 0 < μ {x | H x ≤ a} ∧ μ {x | H x ≤ a} < 1
 
 end MD.Ch07

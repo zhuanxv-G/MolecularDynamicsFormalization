@@ -5,9 +5,9 @@
     "MD-7.10-MomentumRedrawLimit"
   ],
   "input_sha256": {
-    "Blueprint/Ch07.lean": "03e34bf86a5b27e03cce8552bb21fc0fea40514cd87faa953bf09a6a0a27f3c2",
-    "blueprint/ch07/ch07_source.json": "27e402f2a8b9c511106df901d6cc8472e1dae783cdf739f657879ffcf297462a",
-    "BATCH16b_PAGES.pdf": "9619173321594be73515561f15b748db00088a51247ddc4760f6f9bd1b17f6c3"
+    "Blueprint/Ch07.lean": "f30ea154ebfb07ae85c0b806ff74b35808d5a0c3dcaa647c0c3cc80a78239e37",
+    "blueprint/ch07/ch07_source.json": "c434892ebf63b06f7cadcdfa7af408c2c12d7b645d35db431d1855224163ba19",
+    "BATCH16b_PAGES.pdf": "aae9e0940505db81f32105dc0c87dde3b7e164c7461cd13e9e324ab533a42464"
   },
   "page_mapping": [
     {
@@ -21,42 +21,42 @@
       "full_name": "MD.Ch07.V",
       "kind": "abbrev",
       "path": "Blueprint/Ch07.lean",
-      "line": 172,
+      "line": 188,
       "code_sha256": "7ab0ad90462b274b03f5b929b5f09417c0b397b6cb908fa6e7bd56677a314027"
     },
     {
       "full_name": "MD.Ch07.Phase",
       "kind": "abbrev",
       "path": "Blueprint/Ch07.lean",
-      "line": 173,
+      "line": 189,
       "code_sha256": "ef1520e3b22ac1c99a30a989deafe8d3da44a9f2a3e5b6c2cd3220218b88513e"
     },
     {
       "full_name": "MD.Ch07.ouMomentum",
       "kind": "def",
       "path": "Blueprint/Ch07.lean",
-      "line": 198,
+      "line": 214,
       "code_sha256": "df5a3511ac6e0986b8293d21de91ddb40de94195595495bc71fa780b2962b8ae"
     },
     {
       "full_name": "MD.Ch07.redrawMomentum",
       "kind": "def",
       "path": "Blueprint/Ch07.lean",
-      "line": 1253,
+      "line": 1288,
       "code_sha256": "53bc68097ec7590b04b8658f34c1928a46e5713a64e327aa4dd6aaae0b7dbeef"
     },
     {
       "full_name": "MD.Ch07.redrawStep",
       "kind": "def",
       "path": "Blueprint/Ch07.lean",
-      "line": 1254,
+      "line": 1289,
       "code_sha256": "69a118a321e602e701f287bae9576b431eb8e1d46331221e6c8932a413097df5"
     },
     {
       "full_name": "MD.Ch07.momentumRedrawLimit",
       "kind": "theorem",
       "path": "Blueprint/Ch07.lean",
-      "line": 1255,
+      "line": 1290,
       "code_sha256": "8f4fd83e9dc1a2a34de9e82d2d4376510ab2f72392214b9c6418e081a6333034"
     }
   ],
@@ -68,13 +68,13 @@
   },
   "files": {
     "PASTE.txt": {
-      "bytes": 5389,
-      "sha256": "ab98e6095c1a4dd4519aa31a15cad1a0daa2b1140a036a9c3fade029d6e8c36a"
+      "bytes": 8478,
+      "sha256": "d4948ae1f017f58b77fe78d22f12e0cdfaaa5224f06a70f39a40a35bb0cb3430"
     },
     "BATCH16b_PAGES.pdf": {
       "bytes": 93352,
-      "sha256": "9619173321594be73515561f15b748db00088a51247ddc4760f6f9bd1b17f6c3"
+      "sha256": "aae9e0940505db81f32105dc0c87dde3b7e164c7461cd13e9e324ab533a42464"
     }
   },
-  "total_task_bytes": 101219
+  "total_task_bytes": 104308
 }

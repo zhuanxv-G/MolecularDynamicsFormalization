@@ -5,9 +5,9 @@
     "MD-7.3.1-HamiltonianGibbs"
   ],
   "input_sha256": {
-    "Blueprint/Ch07.lean": "03e34bf86a5b27e03cce8552bb21fc0fea40514cd87faa953bf09a6a0a27f3c2",
-    "blueprint/ch07/ch07_source.json": "27e402f2a8b9c511106df901d6cc8472e1dae783cdf739f657879ffcf297462a",
-    "BATCH04b_PAGES.pdf": "c84d82bca837895743ae21cdf0f73fdb82d60b6f1da62cfeaddbd60c6e27dcf9"
+    "Blueprint/Ch07.lean": "f30ea154ebfb07ae85c0b806ff74b35808d5a0c3dcaa647c0c3cc80a78239e37",
+    "blueprint/ch07/ch07_source.json": "c434892ebf63b06f7cadcdfa7af408c2c12d7b645d35db431d1855224163ba19",
+    "BATCH04b_PAGES.pdf": "c0e9420275abfe496ee97c24fb5214aa92e1f194b297ad641b07ccc4d6952556"
   },
   "page_mapping": [
     {
@@ -21,7 +21,7 @@
       "full_name": "MD.Ch07.hamiltonianGibbs",
       "kind": "theorem",
       "path": "Blueprint/Ch07.lean",
-      "line": 268,
+      "line": 284,
       "code_sha256": "e218f1938f521d2f77b4b9a509c6282e3a8a9782f66b0ee25f913980cc409165"
     }
   ],
@@ -33,13 +33,13 @@
   },
   "files": {
     "PASTE.txt": {
-      "bytes": 4026,
-      "sha256": "acbd10946dbf28cf5b12b43a7dc265729ff11d9eb38fb122d11ab94dae66b490"
+      "bytes": 7365,
+      "sha256": "fc4d84e65fc870b09640ceaba5eae5e8f6ecb90c13eb540a3750eb0fab1362b7"
     },
     "BATCH04b_PAGES.pdf": {
       "bytes": 98555,
-      "sha256": "c84d82bca837895743ae21cdf0f73fdb82d60b6f1da62cfeaddbd60c6e27dcf9"
+      "sha256": "c0e9420275abfe496ee97c24fb5214aa92e1f194b297ad641b07ccc4d6952556"
     }
   },
-  "total_task_bytes": 103925
+  "total_task_bytes": 107264
 }

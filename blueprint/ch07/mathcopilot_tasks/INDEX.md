@@ -1,6 +1,6 @@
 # 第7章待用户提交的首轮任务包
 
-18批、107子包，覆盖107条；尚未提交网站。
+20批、118子包，覆盖118条；尚未提交网站。
 
 - BATCH01：MD-7.1-Bias, MD-7.2-ScalarSDE, MD-7.2-EulerMaruyama, MD-7.2-SDEIncrement, MD-7.2-StrongError, MD-7.2-MeanErrorExpectation
 - BATCH02：MD-7.2-StrongOrder, MD-7.2-WeakError, MD-7.2-StrongWeakComparison, MD-7.2-CanonicalAverage, MD-7.2-PartitionPrinted, MD-7.2-AverageNotationBias
@@ -19,4 +19,6 @@
 - BATCH15：MD-7.9.2-OUKernelQualification, MD-7.9.2-OUHermiteIdentities, MD-7.9.2-FirstReciprocalCorrection, MD-7.9.2-OverdampedSolvabilityOperators, MD-7.9.2-HighFrictionCorrectionTable, MD-7.9.3-BAOABMarginalCancellation
 - BATCH16：MD-7.9.3-SuperconvergenceScope, MD-7.10-MomentumRedrawLimit, MD-7.10-OBABOOverdampedEuler, MD-7.10-BAOABLimitMethod, MD-7.10-ColoredNoiseAndExtension, MD-7.10-LimitMethodAccuracy
 - BATCH17：MD-7.9.3-ZeroFrictionVerlet, MD-7.11.1-TemperatureObservables, MD-7.11.1-VelocityAutocorrelationDefinition, MD-7.12-ConstrainedLangevin, MD-7.12-ConstrainedCanonicalErgodicity, MD-7.12-ConstrainedHOSplitting
-- BATCH18：MD-7.12-MEVMEAlgorithm, MD-7.12-MidpointStabilityPrinted, MD-7.12.1-ConstrainedABOSplitting, MD-7.12.1-ConstrainedBAOABAlgorithm, MD-7.12.1-ApproximateGeodesicOrder
+- BATCH18：MD-7.12-MEVMEAlgorithm, MD-7.12-MidpointStabilityPrinted, MD-7.12.1-ConstrainedABOSplitting, MD-7.12.1-ConstrainedBAOABAlgorithm, MD-7.12.1-ApproximateGeodesicOrder, MD-7.13-FastSlowHarmonicModel
+- BATCH19：MD-7.13-ExactFastGaussianLaw, MD-7.13-MultipleTimestepUpdate, MD-7.13-DeterminantTrace, MD-7.13-SpectralRadiusStability, MD-7.13-HyperbolicPhaseTransform, MD-7.13-UnderdampedPhasePrinted
+- BATCH20：MD-7.13-StabilityEnvelope, MD-7.13-FrictionThresholdPrinted, MD-7.1-ConfigurationalSampling, MD-7.1-HamiltonianSamplingObstruction

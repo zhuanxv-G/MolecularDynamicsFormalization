@@ -5,9 +5,9 @@
     "MD-7.2-PartitionPrinted"
   ],
   "input_sha256": {
-    "Blueprint/Ch07.lean": "03e34bf86a5b27e03cce8552bb21fc0fea40514cd87faa953bf09a6a0a27f3c2",
-    "blueprint/ch07/ch07_source.json": "27e402f2a8b9c511106df901d6cc8472e1dae783cdf739f657879ffcf297462a",
-    "BATCH02e_PAGES.pdf": "357ad4c9776026e5d6fbd729a67f168051449c81b1a633f3859c37c43ef79ced"
+    "Blueprint/Ch07.lean": "f30ea154ebfb07ae85c0b806ff74b35808d5a0c3dcaa647c0c3cc80a78239e37",
+    "blueprint/ch07/ch07_source.json": "c434892ebf63b06f7cadcdfa7af408c2c12d7b645d35db431d1855224163ba19",
+    "BATCH02e_PAGES.pdf": "7cab8edb14f362fb61bd8ecee370df37136908c2596a69481446e4af006c549e"
   },
   "page_mapping": [
     {
@@ -21,35 +21,35 @@
       "full_name": "MD.Ch07.densityWithPartition",
       "kind": "def",
       "path": "Blueprint/Ch07.lean",
-      "line": 129,
+      "line": 145,
       "code_sha256": "c471b5e6366c6ee4863b9b3ec51a9f3ad95e13c11f14a8b6037c39e95edaa771"
     },
     {
       "full_name": "MD.Ch07.probabilityDensity",
       "kind": "def",
       "path": "Blueprint/Ch07.lean",
-      "line": 135,
+      "line": 151,
       "code_sha256": "a377dd2234000b3b704f2192e37b9af7982d3c172b1255bbc3c9b91a8dc21a1c"
     },
     {
       "full_name": "MD.Ch07.partitionPrinted",
       "kind": "theorem",
       "path": "Blueprint/Ch07.lean",
-      "line": 142,
+      "line": 158,
       "code_sha256": "6d74e633f0fc98ea4b922b108a671a6c983252f6157122ecdcdbab86fd34e2ce"
     },
     {
       "full_name": "MD.Ch07.partitionPrinted_counterexample",
       "kind": "theorem",
       "path": "Blueprint/Ch07.lean",
-      "line": 149,
+      "line": 165,
       "code_sha256": "30e5061adb4ac5c08cdd9a1f9653d599ad685927064ac8a834bb8ca87cdb3e31"
     },
     {
       "full_name": "MD.Ch07.partitionPrinted_corrected",
       "kind": "theorem",
       "path": "Blueprint/Ch07.lean",
-      "line": 152,
+      "line": 168,
       "code_sha256": "1bfd1529a66af3a3af552bec62278328896679ed9e5842598a1f0d98d2cbf8ef"
     },
     {
@@ -89,13 +89,13 @@
   },
   "files": {
     "PASTE.txt": {
-      "bytes": 7200,
-      "sha256": "52138a415791cf1467ba29c631f26e04caf9b32516e23087253b4f824895271e"
+      "bytes": 9831,
+      "sha256": "e29f66835a787d7710f13593a409d6199e718a6c4199690dca36ce0a6ef84349"
     },
     "BATCH02e_PAGES.pdf": {
       "bytes": 78120,
-      "sha256": "357ad4c9776026e5d6fbd729a67f168051449c81b1a633f3859c37c43ef79ced"
+      "sha256": "7cab8edb14f362fb61bd8ecee370df37136908c2596a69481446e4af006c549e"
     }
   },
-  "total_task_bytes": 88732
+  "total_task_bytes": 91363
 }

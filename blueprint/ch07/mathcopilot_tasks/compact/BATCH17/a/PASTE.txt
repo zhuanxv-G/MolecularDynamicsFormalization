@@ -3,9 +3,9 @@
 Lean/Mathlib均4.34.0。原页PDF映射：[327]；印刷页=[306].
 input_sha256请原样回显：
 {
-  "Blueprint/Ch07.lean": "03e34bf86a5b27e03cce8552bb21fc0fea40514cd87faa953bf09a6a0a27f3c2",
-  "blueprint/ch07/ch07_source.json": "27e402f2a8b9c511106df901d6cc8472e1dae783cdf739f657879ffcf297462a",
-  "BATCH17a_PAGES.pdf": "342f49ad857ac77a4dab0025218f60f68cf8cc1bca9ee1ae19ab69438246f66c"
+  "Blueprint/Ch07.lean": "f30ea154ebfb07ae85c0b806ff74b35808d5a0c3dcaa647c0c3cc80a78239e37",
+  "blueprint/ch07/ch07_source.json": "c434892ebf63b06f7cadcdfa7af408c2c12d7b645d35db431d1855224163ba19",
+  "BATCH17a_PAGES.pdf": "219f1237648362b05bcfcbdb2c8642e273367c96bc9522994765772b660efa69"
 }
 用代码将JSON对象(batch,input_sha256,items)写到 /workspace/.mathcopilot/reviews/ch07/BATCH17a_review.json；items仅含本source_id。
 items字段：source_id、verdict(PASS/FAIL/NEEDS_HUMAN)、transcription、semantic_review、counterexample、suggested_fix、printed_version、corrected_version。逐版区分原文疑误和修正版结论；缺材料必须具体指出，不猜测。写后json.loads自检，最后仅回复路径及统计。
@@ -21,7 +21,16 @@ items字段：source_id、verdict(PASS/FAIL/NEEDS_HUMAN)、transcription、seman
   "pdf_page": "327",
   "statement_latex": "An exact Ornstein-Uhlenbeck solve can be added where it is required in the scheme in order to effectively integrate Langevin dynamics: then setting $\\gamma=0$ reduces the integrator to a standard Verlet scheme, integrating deterministic Newtonian dynamics.",
   "proof_latex": null,
-  "proof_note": "原书未给独立完整证明。",
+  "proof_outline": null,
+  "proof_note": "原页推导与上下文全文见original_page_text；数学符号的排版以随附原页PDF为准。",
+  "original_page_text": [
+    {
+      "pdf_page": 327,
+      "printed_page": 306,
+      "text": "306\n7\nNumerical Methods for Stochastic Molecular Dynamics\nThus we expect that the \u0002BAOAB\u0003 scheme recovers O.h4/ conﬁgurational averages\nin the limit of inﬁnite friction. This scheme requires no extra force evaluations, and\nthis particular feature appears to simply be a serendipitous result of the form of the\ncorrection function.\nThis is a property common to no other Langevin splitting scheme that we are\naware of. Though curiously its conjugate method, the \u0002OABAO\u0003 scheme, has the\nproperty\nZ\nQ\nf2;0;\u0002OABAO\u0003.q; p/\u0005ˇ.q; p/d!q D 0;\nimplying that we obtain high-order averages for functions purely of the momenta\nin the limit of inﬁnite friction. However, as the momenta are always Gaussian\ndistributed in canonical sampling, we are far more interested in functions of position\nto high accuracy (and sampling exp.\u0003ˇU.q// rather than the Gaussian-distributed\nmomenta).\nIt is important to note that this superconvergence property is only present in\nthe limit of large time, i.e. this is an attribute of the invariant distribution of the\ndiscretization schemes O\u0005. As such, there are no bonuses to the weak or strong order\nof the superconvergent schemes, though equally there is no added cost to using the\nmethods.\nAll of the symmetric splitting schemes discussed are very easy to implement\nrelative to other popular Langevin integrators, as many codes already implement\nthe standard velocity Verlet \u0002BAB\u0003 style integration. An exact Ornstein-Uhlenbeck\nsolve can be added where it is required in the scheme in order to effectively integrate\nLangevin dynamics: then setting \n D 0 reduces the integrator to a standard Verlet\nscheme, integrating deterministic Newtonian dynamics.\n7.10\nThe Limit Method\nWe now consider schemes in the limit \n ! 1, where the exact solution of the\nvector OU process reduces to redrawing momenta from the canonical distribution,\nso pnC1 D pkBTM1=2R, where R is a vector of i.i.d. normal random numbers.\nAlternatively, we could consider the limit of the particle mass going to 0, although\nthis requires a reformulation of Langevin dynamics (7.4) so that the friction is\nproportional to the velocity instead of the momentum [233]. Whichever limit\nis taken, we would expect the ultimate result to be the same. (Here we have\nreintroduced the masses in order to present the method, since they may be useful\nscaling parameters in simulation.)\nThe ﬁrst order schemes of the form \u0002XYZ\u0003, as well as schemes such as\n\u0002XOYOX\u0003 are not consistent in this overdamped limit: the errors in computed\n"
+    }
+  ],
+  "transcription_note": "PDF文字层原样保留，陈述中的数学排版转写为LaTeX；文字层有特殊字形编码时以目视原页为准。PDF347的Exercises之后不在正文范围内。",
   "context_notation": [],
   "extra_assumptions": [
     "OU为恒等映射及BAOAB合并成BAB的函数恒等式；其他字母排列得到ABA或BAB，不一概声称同一种Verlet。"
@@ -45,17 +54,22 @@ theorem zeroFrictionOU (m : V n) (θ h : ℝ) (R : V n) (x : Phase n) : ouStep m
   ext i <;> simp [ouStep,ouMomentum]
 theorem zeroFrictionBAOAB (m : V n) (U : V n → ℝ) (θ h : ℝ) (R : V n) :
     baoab m U 0 θ h R = kickStep U (h/2) ∘ driftStep m h ∘ kickStep U (h/2) := by
-  sorry
+  funext x
+  have ha : driftStep m (h/2) (driftStep m (h/2) (kickStep U (h/2) x)) =
+      driftStep m h (kickStep U (h/2) x) := by
+    ext i <;> dsimp [driftStep] <;> ring
+  simp only [baoab,Function.comp_apply,zeroFrictionOU]
+  rw [ha]
 ```
 
 ## 项目依赖定义体及选择规格
 以下def/abbrev/structure完整保留；定理列出完整类型，Mathlib标准定义无需摘录。
 
-### MD.Ch07.V (Blueprint/Ch07.lean:172)
+### MD.Ch07.V (Blueprint/Ch07.lean:188)
 原文件上下文：
 ```lean
 open Set Filter MeasureTheory ProbabilityTheory MolecularDynamics
-open scoped BigOperators Topology ContDiff ENNReal NNReal
+open scoped BigOperators Topology ContDiff ENNReal NNReal Matrix
 variable {Ω : Type*} [MeasurableSpace Ω]
 variable {n : ℕ}
 ```
@@ -63,11 +77,11 @@ variable {n : ℕ}
 abbrev V (n : ℕ) := Fin n → ℝ
 ```
 
-### MD.Ch07.Phase (Blueprint/Ch07.lean:173)
+### MD.Ch07.Phase (Blueprint/Ch07.lean:189)
 原文件上下文：
 ```lean
 open Set Filter MeasureTheory ProbabilityTheory MolecularDynamics
-open scoped BigOperators Topology ContDiff ENNReal NNReal
+open scoped BigOperators Topology ContDiff ENNReal NNReal Matrix
 variable {Ω : Type*} [MeasurableSpace Ω]
 variable {n : ℕ}
 ```
@@ -75,11 +89,11 @@ variable {n : ℕ}
 abbrev Phase (n : ℕ) := V n × V n
 ```
 
-### MD.Ch07.ouMomentum (Blueprint/Ch07.lean:198)
+### MD.Ch07.ouMomentum (Blueprint/Ch07.lean:214)
 原文件上下文：
 ```lean
 open Set Filter MeasureTheory ProbabilityTheory MolecularDynamics
-open scoped BigOperators Topology ContDiff ENNReal NNReal
+open scoped BigOperators Topology ContDiff ENNReal NNReal Matrix
 variable {Ω : Type*} [MeasurableSpace Ω]
 variable {n : ℕ}
 ```
@@ -88,11 +102,11 @@ def ouMomentum (m : V n) (γ θ h : ℝ) (p R : V n) : V n :=
   fun i ↦ Real.exp (-γ*h)*p i + Real.sqrt (θ*(1-Real.exp (-2*γ*h))) * Real.sqrt (m i) * R i
 ```
 
-### MD.Ch07.ouStep (Blueprint/Ch07.lean:211)
+### MD.Ch07.ouStep (Blueprint/Ch07.lean:227)
 原文件上下文：
 ```lean
 open Set Filter MeasureTheory ProbabilityTheory MolecularDynamics
-open scoped BigOperators Topology ContDiff ENNReal NNReal
+open scoped BigOperators Topology ContDiff ENNReal NNReal Matrix
 variable {Ω : Type*} [MeasurableSpace Ω]
 variable {n : ℕ}
 ```
@@ -101,11 +115,11 @@ def ouStep (m : V n) (γ θ h : ℝ) (R : V n) (x : Phase n) : Phase n :=
   (x.1, ouMomentum m γ θ h x.2 R)
 ```
 
-### MD.Ch07.coordDerivative (Blueprint/Ch07.lean:221)
+### MD.Ch07.coordDerivative (Blueprint/Ch07.lean:237)
 原文件上下文：
 ```lean
 open Set Filter MeasureTheory ProbabilityTheory MolecularDynamics
-open scoped BigOperators Topology ContDiff ENNReal NNReal
+open scoped BigOperators Topology ContDiff ENNReal NNReal Matrix
 variable {Ω : Type*} [MeasurableSpace Ω]
 variable {n : ℕ}
 ```
@@ -114,11 +128,11 @@ def coordDerivative (f : V n → ℝ) (x : V n) (i : Fin n) : ℝ :=
   deriv (fun z ↦ f (Function.update x i z)) (x i)
 ```
 
-### MD.Ch07.gradient (Blueprint/Ch07.lean:250)
+### MD.Ch07.gradient (Blueprint/Ch07.lean:266)
 原文件上下文：
 ```lean
 open Set Filter MeasureTheory ProbabilityTheory MolecularDynamics
-open scoped BigOperators Topology ContDiff ENNReal NNReal
+open scoped BigOperators Topology ContDiff ENNReal NNReal Matrix
 variable {Ω : Type*} [MeasurableSpace Ω]
 variable {n : ℕ}
 ```
@@ -126,11 +140,11 @@ variable {n : ℕ}
 def gradient (U : V n → ℝ) (q : V n) : V n := fun i ↦ coordDerivative U q i
 ```
 
-### MD.Ch07.driftStep (Blueprint/Ch07.lean:279)
+### MD.Ch07.driftStep (Blueprint/Ch07.lean:295)
 原文件上下文：
 ```lean
 open Set Filter MeasureTheory ProbabilityTheory MolecularDynamics
-open scoped BigOperators Topology ContDiff ENNReal NNReal
+open scoped BigOperators Topology ContDiff ENNReal NNReal Matrix
 variable {Ω : Type*} [MeasurableSpace Ω]
 variable {n : ℕ}
 ```
@@ -139,11 +153,11 @@ def driftStep (m : V n) (h : ℝ) (x : Phase n) : Phase n :=
   (fun i ↦ x.1 i + h * x.2 i / m i, x.2)
 ```
 
-### MD.Ch07.kickStep (Blueprint/Ch07.lean:282)
+### MD.Ch07.kickStep (Blueprint/Ch07.lean:298)
 原文件上下文：
 ```lean
 open Set Filter MeasureTheory ProbabilityTheory MolecularDynamics
-open scoped BigOperators Topology ContDiff ENNReal NNReal
+open scoped BigOperators Topology ContDiff ENNReal NNReal Matrix
 variable {Ω : Type*} [MeasurableSpace Ω]
 variable {n : ℕ}
 ```
@@ -152,11 +166,11 @@ def kickStep (U : V n → ℝ) (h : ℝ) (x : Phase n) : Phase n :=
   (x.1, fun i ↦ x.2 i - h * gradient U x.1 i)
 ```
 
-### MD.Ch07.baoab (Blueprint/Ch07.lean:344)
+### MD.Ch07.baoab (Blueprint/Ch07.lean:360)
 原文件上下文：
 ```lean
 open Set Filter MeasureTheory ProbabilityTheory MolecularDynamics
-open scoped BigOperators Topology ContDiff ENNReal NNReal
+open scoped BigOperators Topology ContDiff ENNReal NNReal Matrix
 variable {Ω : Type*} [MeasurableSpace Ω]
 variable {n : ℕ}
 ```
@@ -165,11 +179,11 @@ def baoab (m : V n) (U : V n → ℝ) (γ θ h : ℝ) (R : V n) : Phase n → Ph
   kickStep U (h/2) ∘ driftStep m (h/2) ∘ ouStep m γ θ h R ∘ driftStep m (h/2) ∘ kickStep U (h/2)
 ```
 
-### MD.Ch07.zeroFrictionOU (Blueprint/Ch07.lean:1315)
+### MD.Ch07.zeroFrictionOU (Blueprint/Ch07.lean:1356)
 原文件上下文：
 ```lean
 open Set Filter MeasureTheory ProbabilityTheory MolecularDynamics
-open scoped BigOperators Topology ContDiff ENNReal NNReal
+open scoped BigOperators Topology ContDiff ENNReal NNReal Matrix
 variable {Ω : Type*} [MeasurableSpace Ω]
 variable {n : ℕ}
 ```
@@ -177,11 +191,11 @@ variable {n : ℕ}
 theorem zeroFrictionOU (m : V n) (θ h : ℝ) (R : V n) (x : Phase n) : ouStep m 0 θ h R x = x
 ```
 
-### MD.Ch07.zeroFrictionBAOAB (Blueprint/Ch07.lean:1317)
+### MD.Ch07.zeroFrictionBAOAB (Blueprint/Ch07.lean:1358)
 原文件上下文：
 ```lean
 open Set Filter MeasureTheory ProbabilityTheory MolecularDynamics
-open scoped BigOperators Topology ContDiff ENNReal NNReal
+open scoped BigOperators Topology ContDiff ENNReal NNReal Matrix
 variable {Ω : Type*} [MeasurableSpace Ω]
 variable {n : ℕ}
 ```

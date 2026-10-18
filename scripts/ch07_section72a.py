@@ -118,7 +118,21 @@ theorem weakDoesNotImplyStrong : ∃ (P : Measure ℝ) (X Y : ℝ → ℝ),
     IsProbabilityMeasure P ∧
     (∀ f : ℝ → ℝ, (∫ sample, f (X sample) ∂P) = ∫ sample, f (Y sample) ∂P) ∧
     0 < ∫ sample, |X sample-Y sample| ∂P := by
-  sorry''',
+  let P : Measure ℝ := (1/2 : ℝ≥0) • Measure.dirac (-1)+(1/2 : ℝ≥0) • Measure.dirac 1
+  have hi (f : ℝ → ℝ) (a : ℝ) : Integrable f ((1/2 : ℝ≥0) • Measure.dirac a) :=
+    (integrable_dirac (by simp)).smul_measure_nnreal
+  refine ⟨P,id,Neg.neg,?_,?_,?_⟩
+  · constructor
+    simp only [P,Measure.add_apply,Measure.smul_apply,Measure.dirac_apply_of_mem (Set.mem_univ _),ENNReal.smul_def,smul_eq_mul,mul_one]
+    exact_mod_cast (by norm_num : (1/2 : ℝ≥0)+(1/2 : ℝ≥0) = 1)
+  · intro f
+    dsimp [P]
+    rw [integral_add_measure (hi _ _) (hi _ _),integral_add_measure (hi _ _) (hi _ _)]
+    simp [integral_smul_nnreal_measure,add_comm]
+  · dsimp [P]
+    rw [integral_add_measure (hi _ _) (hi _ _)]
+    norm_num [integral_smul_nnreal_measure]
+''',
 extra=['正向结论明确限制为全局Lipschitz可观测量及可积误差；对一般无界测试函数需额外矩条件，列为覆盖缺口。','反向用两点分布上交换X、Y的反例表达；同分布但耦合强误差不为零。'],
 scope='Lipschitz测试函数的逐步定量界与反向不成立的存在性；未证明一般多项式增长测试类的阶数传递。',
-missing='反向反例还需两点概率测度的积分化简；下一批限三条短路线。')
+missing=None)

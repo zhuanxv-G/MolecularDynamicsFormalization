@@ -5,9 +5,9 @@
     "MD-7.9-EvenDensityPerturbation"
   ],
   "input_sha256": {
-    "Blueprint/Ch07.lean": "03e34bf86a5b27e03cce8552bb21fc0fea40514cd87faa953bf09a6a0a27f3c2",
-    "blueprint/ch07/ch07_source.json": "27e402f2a8b9c511106df901d6cc8472e1dae783cdf739f657879ffcf297462a",
-    "BATCH13f_PAGES.pdf": "690623e54bca5fec2771710fd5f8576f0fe650761acdc3475b19283a0078d037"
+    "Blueprint/Ch07.lean": "f30ea154ebfb07ae85c0b806ff74b35808d5a0c3dcaa647c0c3cc80a78239e37",
+    "blueprint/ch07/ch07_source.json": "c434892ebf63b06f7cadcdfa7af408c2c12d7b645d35db431d1855224163ba19",
+    "BATCH13f_PAGES.pdf": "2d31dd374c5d8afb1c23cbb2529d009b0a01c51e6c34127bb63b5cf6da173fc9"
   },
   "page_mapping": [
     {
@@ -21,21 +21,21 @@
       "full_name": "MD.Ch07.actionCoefficient",
       "kind": "def",
       "path": "Blueprint/Ch07.lean",
-      "line": 867,
+      "line": 891,
       "code_sha256": "bf68f102bca2ca022764cda0a017ca0e4b5d8214e81c10e531acae45c9a50159"
     },
     {
       "full_name": "MD.Ch07.evenDensityExpansion",
       "kind": "def",
       "path": "Blueprint/Ch07.lean",
-      "line": 1054,
+      "line": 1078,
       "code_sha256": "ab9c30398e08604ff9b04a399dc165b4132d9aa2341b77cab6ed0784a2414b2c"
     },
     {
       "full_name": "MD.Ch07.evenPerturbationEquation",
       "kind": "theorem",
       "path": "Blueprint/Ch07.lean",
-      "line": 1056,
+      "line": 1080,
       "code_sha256": "92ff61e8c31e30700c20597414873511ca837acdba52a59c9186db2036f119a4"
     },
     {
@@ -54,13 +54,13 @@
   },
   "files": {
     "PASTE.txt": {
-      "bytes": 5183,
-      "sha256": "d86758ed255cfbe602426c335007d1e8ebc18c04ed8ffeeedbde2d06754ea006"
+      "bytes": 7918,
+      "sha256": "32ece9cb3bf2a2e0ab021c96986da8a016d448e5913d62f6e7fa0c0e51279174"
     },
     "BATCH13f_PAGES.pdf": {
       "bytes": 73836,
-      "sha256": "690623e54bca5fec2771710fd5f8576f0fe650761acdc3475b19283a0078d037"
+      "sha256": "2d31dd374c5d8afb1c23cbb2529d009b0a01c51e6c34127bb63b5cf6da173fc9"
     }
   },
-  "total_task_bytes": 81122
+  "total_task_bytes": 83857
 }

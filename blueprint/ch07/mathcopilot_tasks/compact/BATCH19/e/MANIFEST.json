@@ -1,0 +1,52 @@
+{
+  "batch": "BATCH19",
+  "subtask": "BATCH19e",
+  "source_ids": [
+    "MD-7.13-HyperbolicPhaseTransform"
+  ],
+  "input_sha256": {
+    "Blueprint/Ch07.lean": "f30ea154ebfb07ae85c0b806ff74b35808d5a0c3dcaa647c0c3cc80a78239e37",
+    "blueprint/ch07/ch07_source.json": "c434892ebf63b06f7cadcdfa7af408c2c12d7b645d35db431d1855224163ba19",
+    "BATCH19e_PAGES.pdf": "d7e13cc8d95345a15e682c055277f0289e44b3535d8ffeca24bd551959a69a3e"
+  },
+  "page_mapping": [
+    {
+      "attachment_page": 1,
+      "original_pdf_page": 345,
+      "printed_page": 324
+    }
+  ],
+  "definition_excerpts": [
+    {
+      "full_name": "MD.Ch07.hyperbolicPhase",
+      "kind": "def",
+      "path": "Blueprint/Ch07.lean",
+      "line": 1601,
+      "code_sha256": "2713ee55ec6ea12af4c115e9ef0eff2b48a4fdca30f055d69edd5a44021a2491"
+    },
+    {
+      "full_name": "MD.Ch07.hyperbolicPhase_identity",
+      "kind": "theorem",
+      "path": "Blueprint/Ch07.lean",
+      "line": 1603,
+      "code_sha256": "439c9696bd91e17935745a18136c057fb4a53deb83d91ae93762ca213949f5a8"
+    }
+  ],
+  "validation": {
+    "project_constant_closure": "PASS",
+    "missing_project_definitions": [],
+    "full_page_render_equality_dpi": 72,
+    "website_submitted": false
+  },
+  "files": {
+    "PASTE.txt": {
+      "bytes": 6024,
+      "sha256": "409a55d3dd829944ebe97335b508b5a87f191f7526ed6c393736fb3fca172705"
+    },
+    "BATCH19e_PAGES.pdf": {
+      "bytes": 81291,
+      "sha256": "d7e13cc8d95345a15e682c055277f0289e44b3535d8ffeca24bd551959a69a3e"
+    }
+  },
+  "total_task_bytes": 88906
+}

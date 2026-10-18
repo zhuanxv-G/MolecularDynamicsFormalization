@@ -1,0 +1,47 @@
+{
+  "batch": "BATCH19",
+  "subtasks": [
+    {
+      "subtask": "BATCH19a",
+      "source_id": "MD-7.13-ExactFastGaussianLaw",
+      "path": "blueprint/ch07/mathcopilot_tasks/compact/BATCH19/a",
+      "bytes": 111800,
+      "manifest_sha256": "7b69c96d92a399f021166be03893e3d3b8b5d18b988c6958922c9aa361f5ee62"
+    },
+    {
+      "subtask": "BATCH19b",
+      "source_id": "MD-7.13-MultipleTimestepUpdate",
+      "path": "blueprint/ch07/mathcopilot_tasks/compact/BATCH19/b",
+      "bytes": 92538,
+      "manifest_sha256": "f1f305f580e98d1342044ef421837b2f21d86342db442d788db65ec057966131"
+    },
+    {
+      "subtask": "BATCH19c",
+      "source_id": "MD-7.13-DeterminantTrace",
+      "path": "blueprint/ch07/mathcopilot_tasks/compact/BATCH19/c",
+      "bytes": 91628,
+      "manifest_sha256": "c0a84c36eeba07e13871255d6396ac73d93be54441106168b65b09f51ec8c577"
+    },
+    {
+      "subtask": "BATCH19d",
+      "source_id": "MD-7.13-SpectralRadiusStability",
+      "path": "blueprint/ch07/mathcopilot_tasks/compact/BATCH19/d",
+      "bytes": 90334,
+      "manifest_sha256": "7b50a516778167e0ee6ee92f920be6587350cdb5592e6685800633ed8ee85884"
+    },
+    {
+      "subtask": "BATCH19e",
+      "source_id": "MD-7.13-HyperbolicPhaseTransform",
+      "path": "blueprint/ch07/mathcopilot_tasks/compact/BATCH19/e",
+      "bytes": 88906,
+      "manifest_sha256": "b50ac5d93071c4debf03c3f641cd9fb383eb52af7679af69f0b37e7119755ad1"
+    },
+    {
+      "subtask": "BATCH19f",
+      "source_id": "MD-7.13-UnderdampedPhasePrinted",
+      "path": "blueprint/ch07/mathcopilot_tasks/compact/BATCH19/f",
+      "bytes": 74649,
+      "manifest_sha256": "f80fd25d8c463976b69146911780f1d5b49c187879774040418d3c392968d6d3"
+    }
+  ]
+}

@@ -5,9 +5,9 @@
     "MD-7.12-ConstrainedHOSplitting"
   ],
   "input_sha256": {
-    "Blueprint/Ch07.lean": "03e34bf86a5b27e03cce8552bb21fc0fea40514cd87faa953bf09a6a0a27f3c2",
-    "blueprint/ch07/ch07_source.json": "27e402f2a8b9c511106df901d6cc8472e1dae783cdf739f657879ffcf297462a",
-    "BATCH17f_PAGES.pdf": "e74066da4eecf1636fbc6cb2bb9f2a31bc8aa8b4a20ca2aa57e57731d3299bc9"
+    "Blueprint/Ch07.lean": "f30ea154ebfb07ae85c0b806ff74b35808d5a0c3dcaa647c0c3cc80a78239e37",
+    "blueprint/ch07/ch07_source.json": "c434892ebf63b06f7cadcdfa7af408c2c12d7b645d35db431d1855224163ba19",
+    "BATCH17f_PAGES.pdf": "e6cf6fca6a8f2f7d6583b412818069d45a0a03f7e0dcdd67d9a697bd72beeab6"
   },
   "page_mapping": [
     {
@@ -21,63 +21,63 @@
       "full_name": "MD.Ch07.V",
       "kind": "abbrev",
       "path": "Blueprint/Ch07.lean",
-      "line": 172,
+      "line": 188,
       "code_sha256": "7ab0ad90462b274b03f5b929b5f09417c0b397b6cb908fa6e7bd56677a314027"
     },
     {
       "full_name": "MD.Ch07.Phase",
       "kind": "abbrev",
       "path": "Blueprint/Ch07.lean",
-      "line": 173,
+      "line": 189,
       "code_sha256": "ef1520e3b22ac1c99a30a989deafe8d3da44a9f2a3e5b6c2cd3220218b88513e"
     },
     {
       "full_name": "MD.Ch07.coordDerivative",
       "kind": "def",
       "path": "Blueprint/Ch07.lean",
-      "line": 221,
+      "line": 237,
       "code_sha256": "e782d789a13f5db6817e2c995f141805e81ac75720125b846f8ee14ba3833a4b"
     },
     {
       "full_name": "MD.Ch07.gradient",
       "kind": "def",
       "path": "Blueprint/Ch07.lean",
-      "line": 250,
+      "line": 266,
       "code_sha256": "540c6af25c09d3a58da531bc32056ff1a1c070facc58d34c96b6653d781fba6f"
     },
     {
       "full_name": "MD.Ch07.constraintJacobian",
       "kind": "def",
       "path": "Blueprint/Ch07.lean",
-      "line": 1362,
+      "line": 1408,
       "code_sha256": "b188cb797f84cc7aefa1f40fde389d28727a10452b1c9405e5f82d3db8e33aee"
     },
     {
       "full_name": "MD.Ch07.constraintReaction",
       "kind": "def",
       "path": "Blueprint/Ch07.lean",
-      "line": 1364,
+      "line": 1410,
       "code_sha256": "7e6ff0331529b1edc72fedfd2725f8763477c4b3afa8cd315c30c75bb7a95bc9"
     },
     {
       "full_name": "MD.Ch07.constrainedHField",
       "kind": "def",
       "path": "Blueprint/Ch07.lean",
-      "line": 1411,
+      "line": 1457,
       "code_sha256": "17737ec4fc1bf6192642dd642611e2b4465365db7558b02bd0f62cf265e1d502"
     },
     {
       "full_name": "MD.Ch07.constrainedOField",
       "kind": "def",
       "path": "Blueprint/Ch07.lean",
-      "line": 1413,
+      "line": 1459,
       "code_sha256": "31fd37488dd13e9fddb3cc43742ecfbf4abb5b9910fb168e420b35457beb6080"
     },
     {
       "full_name": "MD.Ch07.constrainedHOComposition",
       "kind": "def",
       "path": "Blueprint/Ch07.lean",
-      "line": 1415,
+      "line": 1461,
       "code_sha256": "0fc504ca9a0c3fdfdc5fca2a5fb4290ab445b4c10def588feb2adc05e2e3875b"
     },
     {
@@ -96,13 +96,13 @@
   },
   "files": {
     "PASTE.txt": {
-      "bytes": 7412,
-      "sha256": "bcd5501edaf2665b12cbf7f3de44a26a9322bc1ea094e6b4e04e4eef4545af8d"
+      "bytes": 10084,
+      "sha256": "763d49b899b52310b3449d137c7b1cecd9be11e9cde97d075a8a18cd2a632526"
     },
     "BATCH17f_PAGES.pdf": {
       "bytes": 95593,
-      "sha256": "e74066da4eecf1636fbc6cb2bb9f2a31bc8aa8b4a20ca2aa57e57731d3299bc9"
+      "sha256": "e6cf6fca6a8f2f7d6583b412818069d45a0a03f7e0dcdd67d9a697bd72beeab6"
     }
   },
-  "total_task_bytes": 106472
+  "total_task_bytes": 109145
 }

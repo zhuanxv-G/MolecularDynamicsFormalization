@@ -5,9 +5,9 @@
     "MD-7.12.1-ApproximateGeodesicOrder"
   ],
   "input_sha256": {
-    "Blueprint/Ch07.lean": "03e34bf86a5b27e03cce8552bb21fc0fea40514cd87faa953bf09a6a0a27f3c2",
-    "blueprint/ch07/ch07_source.json": "27e402f2a8b9c511106df901d6cc8472e1dae783cdf739f657879ffcf297462a",
-    "BATCH18e_PAGES.pdf": "925823992dfc0e21b2e222aadf3f9e1bd25e67b09ddbb944ebacaa3ac3d347f1"
+    "Blueprint/Ch07.lean": "f30ea154ebfb07ae85c0b806ff74b35808d5a0c3dcaa647c0c3cc80a78239e37",
+    "blueprint/ch07/ch07_source.json": "c434892ebf63b06f7cadcdfa7af408c2c12d7b645d35db431d1855224163ba19",
+    "BATCH18e_PAGES.pdf": "3e19d587df2dedeffac65964f09541b6a33a5db3e7a327654d2f2d8c703fed2f"
   },
   "page_mapping": [
     {
@@ -21,14 +21,14 @@
       "full_name": "MD.Ch07.localMapErrorBound",
       "kind": "def",
       "path": "Blueprint/Ch07.lean",
-      "line": 1491,
+      "line": 1537,
       "code_sha256": "3ebfd7630141b12798fc2e17fa1a8e2d7c46ac7418dfa7d37e8e170347c3080c"
     },
     {
       "full_name": "MD.Ch07.geodesicReplacementSecondOrder",
       "kind": "def",
       "path": "Blueprint/Ch07.lean",
-      "line": 1493,
+      "line": 1539,
       "code_sha256": "28a69cb8ad406d1d7e21c4917af3ae17733e18930d4c06ef6d4a6252f7eff472"
     },
     {
@@ -47,13 +47,13 @@
   },
   "files": {
     "PASTE.txt": {
-      "bytes": 4398,
-      "sha256": "02846fbc11d21597cd2f33be0363d9fb8e10e2280b42bdb7d4e33806de0720cf"
+      "bytes": 8135,
+      "sha256": "18a007ac94406cbb7f78c4547d0cce5793f98e1b7c3e0e2838fb5a908cb2b965"
     },
     "BATCH18e_PAGES.pdf": {
       "bytes": 95669,
-      "sha256": "925823992dfc0e21b2e222aadf3f9e1bd25e67b09ddbb944ebacaa3ac3d347f1"
+      "sha256": "3e19d587df2dedeffac65964f09541b6a33a5db3e7a327654d2f2d8c703fed2f"
     }
   },
-  "total_task_bytes": 101942
+  "total_task_bytes": 105679
 }

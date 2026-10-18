@@ -5,9 +5,9 @@
     "MD-7.7.2-ScalarForwardOperators"
   ],
   "input_sha256": {
-    "Blueprint/Ch07.lean": "03e34bf86a5b27e03cce8552bb21fc0fea40514cd87faa953bf09a6a0a27f3c2",
-    "blueprint/ch07/ch07_source.json": "27e402f2a8b9c511106df901d6cc8472e1dae783cdf739f657879ffcf297462a",
-    "BATCH11a_PAGES.pdf": "39bc8a65bb4ccc211bf78631c7a17659b1e1d3c491f4b912170aee8e576a17df"
+    "Blueprint/Ch07.lean": "f30ea154ebfb07ae85c0b806ff74b35808d5a0c3dcaa647c0c3cc80a78239e37",
+    "blueprint/ch07/ch07_source.json": "c434892ebf63b06f7cadcdfa7af408c2c12d7b645d35db431d1855224163ba19",
+    "BATCH11a_PAGES.pdf": "70f04d205f8a722878d594ce720cc3c935220f9043cde0820b66d2f0ca2d8529"
   },
   "page_mapping": [
     {
@@ -21,56 +21,56 @@
       "full_name": "MD.Ch07.Density1",
       "kind": "abbrev",
       "path": "Blueprint/Ch07.lean",
-      "line": 818,
+      "line": 834,
       "code_sha256": "f5a1e313efb2108d7bf2a46ede4a1e29e9d9977a0aa8e7760a31a0b61956ec54"
     },
     {
       "full_name": "MD.Ch07.dq",
       "kind": "def",
       "path": "Blueprint/Ch07.lean",
-      "line": 819,
+      "line": 835,
       "code_sha256": "64e560195b9f1a3526cf0742346a36be3b5aa96fb25a28533856122c9fb801a7"
     },
     {
       "full_name": "MD.Ch07.dp",
       "kind": "def",
       "path": "Blueprint/Ch07.lean",
-      "line": 820,
+      "line": 836,
       "code_sha256": "81e7aa274ae0a5969d26875d7d258acd2db1b10153220dea6ce712c9239be0d2"
     },
     {
       "full_name": "MD.Ch07.opA",
       "kind": "def",
       "path": "Blueprint/Ch07.lean",
-      "line": 821,
+      "line": 837,
       "code_sha256": "471e19e9d488e6a1f1bd5529e1f9f2b54221189682414d1d7110bf4608c28d4e"
     },
     {
       "full_name": "MD.Ch07.opB",
       "kind": "def",
       "path": "Blueprint/Ch07.lean",
-      "line": 822,
+      "line": 838,
       "code_sha256": "933efc2d9c9df9412058cfbd9b381378a87dc48c6331d7a81f1b39e1df8fe1db"
     },
     {
       "full_name": "MD.Ch07.opO",
       "kind": "def",
       "path": "Blueprint/Ch07.lean",
-      "line": 823,
+      "line": 839,
       "code_sha256": "9c253a2b1cec8df7b64254f901420d4ea2fbbef59a479428813f25a53ce0e6af"
     },
     {
       "full_name": "MD.Ch07.opLD",
       "kind": "def",
       "path": "Blueprint/Ch07.lean",
-      "line": 824,
+      "line": 840,
       "code_sha256": "bc01792526b41a1dd1840164886afd92f1f4a28b40813a781d567ade38341d75"
     },
     {
       "full_name": "MD.Ch07.opComm",
       "kind": "def",
       "path": "Blueprint/Ch07.lean",
-      "line": 825,
+      "line": 841,
       "code_sha256": "38afeeec2a8eee3f826ec20cfd731e30bb7f05650516ef556190b0476a6f6c4e"
     }
   ],
@@ -82,13 +82,13 @@
   },
   "files": {
     "PASTE.txt": {
-      "bytes": 6256,
-      "sha256": "37058ed80e159531aab93605b06bc57d4b557601d9e177f4f669a81a9a4bb779"
+      "bytes": 8937,
+      "sha256": "23069f44e549ccba225933182ddebf07ce936e7fb45d624990925bafde7fdbca"
     },
     "BATCH11a_PAGES.pdf": {
       "bytes": 71385,
-      "sha256": "39bc8a65bb4ccc211bf78631c7a17659b1e1d3c491f4b912170aee8e576a17df"
+      "sha256": "70f04d205f8a722878d594ce720cc3c935220f9043cde0820b66d2f0ca2d8529"
     }
   },
-  "total_task_bytes": 80516
+  "total_task_bytes": 83197
 }

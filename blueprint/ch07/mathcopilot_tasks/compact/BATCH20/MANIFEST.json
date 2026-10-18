@@ -1,0 +1,33 @@
+{
+  "batch": "BATCH20",
+  "subtasks": [
+    {
+      "subtask": "BATCH20a",
+      "source_id": "MD-7.13-StabilityEnvelope",
+      "path": "blueprint/ch07/mathcopilot_tasks/compact/BATCH20/a",
+      "bytes": 75482,
+      "manifest_sha256": "6baf563cd83b95eba98942fc5cc7222ffc7f44c4cbda2588390cd947864de6fa"
+    },
+    {
+      "subtask": "BATCH20b",
+      "source_id": "MD-7.13-FrictionThresholdPrinted",
+      "path": "blueprint/ch07/mathcopilot_tasks/compact/BATCH20/b",
+      "bytes": 80014,
+      "manifest_sha256": "e64744b5ac879921b4844b8d44cc118a71f4a2c93b95d9846b129e30f4024bb3"
+    },
+    {
+      "subtask": "BATCH20c",
+      "source_id": "MD-7.1-ConfigurationalSampling",
+      "path": "blueprint/ch07/mathcopilot_tasks/compact/BATCH20/c",
+      "bytes": 74258,
+      "manifest_sha256": "9ee8ae8702d93a4eaddb18e692d75aa389b410f68278cd1dc3c0b94dc2ba349f"
+    },
+    {
+      "subtask": "BATCH20d",
+      "source_id": "MD-7.1-HamiltonianSamplingObstruction",
+      "path": "blueprint/ch07/mathcopilot_tasks/compact/BATCH20/d",
+      "bytes": 75978,
+      "manifest_sha256": "5424c6b6c9368e7f039de6f67b21412970b68a9351d8ac1da41e35dec9bbfe26"
+    }
+  ]
+}

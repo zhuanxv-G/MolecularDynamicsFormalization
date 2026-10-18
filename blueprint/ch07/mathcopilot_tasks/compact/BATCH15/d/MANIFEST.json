@@ -5,9 +5,9 @@
     "MD-7.9.2-OverdampedSolvabilityOperators"
   ],
   "input_sha256": {
-    "Blueprint/Ch07.lean": "03e34bf86a5b27e03cce8552bb21fc0fea40514cd87faa953bf09a6a0a27f3c2",
-    "blueprint/ch07/ch07_source.json": "27e402f2a8b9c511106df901d6cc8472e1dae783cdf739f657879ffcf297462a",
-    "BATCH15d_PAGES.pdf": "83dafa964fa9673fcacdd3658cb07a542552e1bae09f58ac4eaf4d221eac4716"
+    "Blueprint/Ch07.lean": "f30ea154ebfb07ae85c0b806ff74b35808d5a0c3dcaa647c0c3cc80a78239e37",
+    "blueprint/ch07/ch07_source.json": "c434892ebf63b06f7cadcdfa7af408c2c12d7b645d35db431d1855224163ba19",
+    "BATCH15d_PAGES.pdf": "d25519addccc298ad0f9e59392de0e909f1ee3927402714dcb2411a0294941c1"
   },
   "page_mapping": [
     {
@@ -21,70 +21,70 @@
       "full_name": "MD.Ch07.V",
       "kind": "abbrev",
       "path": "Blueprint/Ch07.lean",
-      "line": 172,
+      "line": 188,
       "code_sha256": "7ab0ad90462b274b03f5b929b5f09417c0b397b6cb908fa6e7bd56677a314027"
     },
     {
       "full_name": "MD.Ch07.coordDerivative",
       "kind": "def",
       "path": "Blueprint/Ch07.lean",
-      "line": 221,
+      "line": 237,
       "code_sha256": "e782d789a13f5db6817e2c995f141805e81ac75720125b846f8ee14ba3833a4b"
     },
     {
       "full_name": "MD.Ch07.gradient",
       "kind": "def",
       "path": "Blueprint/Ch07.lean",
-      "line": 250,
+      "line": 266,
       "code_sha256": "540c6af25c09d3a58da531bc32056ff1a1c070facc58d34c96b6653d781fba6f"
     },
     {
       "full_name": "MD.Ch07.hessianU",
       "kind": "def",
       "path": "Blueprint/Ch07.lean",
-      "line": 1074,
+      "line": 1098,
       "code_sha256": "8c2605253d3d70a39369a2c08eb2c758793a9cc41934f1f97c967d5eb2c776ee"
     },
     {
       "full_name": "MD.Ch07.gradNormSq",
       "kind": "def",
       "path": "Blueprint/Ch07.lean",
-      "line": 1119,
+      "line": 1143,
       "code_sha256": "4ac74933a6c274ae1355fc8b7cdd3820a81dec13cacd2c6e39768e45795792df"
     },
     {
       "full_name": "MD.Ch07.laplacian",
       "kind": "def",
       "path": "Blueprint/Ch07.lean",
-      "line": 1156,
+      "line": 1188,
       "code_sha256": "34815bde240a9d093117da74ea9ce745ee5f13888a61c42c94cfcecfc623a421"
     },
     {
       "full_name": "MD.Ch07.overdampedM",
       "kind": "def",
       "path": "Blueprint/Ch07.lean",
-      "line": 1191,
+      "line": 1226,
       "code_sha256": "6246d7ed1633f817586766dbdd673ed0d698bb65511c7078125582aa78865a6d"
     },
     {
       "full_name": "MD.Ch07.overdampedN",
       "kind": "def",
       "path": "Blueprint/Ch07.lean",
-      "line": 1193,
+      "line": 1228,
       "code_sha256": "65c2f1b37512c3fb2c707470a5e94726640ec719a552bde2c3d09f5b80340100"
     },
     {
       "full_name": "MD.Ch07.highFrictionOABAO",
       "kind": "def",
       "path": "Blueprint/Ch07.lean",
-      "line": 1195,
+      "line": 1230,
       "code_sha256": "a13e000bdcfee605e2261531ed7d396865be2ed9d54b7a27059c2eeab2db1cd9"
     },
     {
       "full_name": "MD.Ch07.overdampedSolvability_choice",
       "kind": "theorem",
       "path": "Blueprint/Ch07.lean",
-      "line": 1197,
+      "line": 1232,
       "code_sha256": "8af5da46fa78c412c9d86bea3f1e1b1066c8dcb7411577693e016ddf9319326c"
     }
   ],
@@ -96,13 +96,13 @@
   },
   "files": {
     "PASTE.txt": {
-      "bytes": 7865,
-      "sha256": "66ba003ca76227270acac5addfe471e08e191e4ffe7516a1f0ef79f02aeb46dd"
+      "bytes": 9968,
+      "sha256": "d079c11ac1ccb2d23223e3c97f0091650a790f4fb47b11b23543ba980012e76c"
     },
     "BATCH15d_PAGES.pdf": {
       "bytes": 74752,
-      "sha256": "83dafa964fa9673fcacdd3658cb07a542552e1bae09f58ac4eaf4d221eac4716"
+      "sha256": "d25519addccc298ad0f9e59392de0e909f1ee3927402714dcb2411a0294941c1"
     }
   },
-  "total_task_bytes": 86030
+  "total_task_bytes": 88133
 }

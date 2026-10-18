@@ -5,9 +5,9 @@
     "MD-7.9.1-OYZYOInhomogeneity"
   ],
   "input_sha256": {
-    "Blueprint/Ch07.lean": "03e34bf86a5b27e03cce8552bb21fc0fea40514cd87faa953bf09a6a0a27f3c2",
-    "blueprint/ch07/ch07_source.json": "27e402f2a8b9c511106df901d6cc8472e1dae783cdf739f657879ffcf297462a",
-    "BATCH14a_PAGES.pdf": "9b1f924193c97eb7577bfb8d5a3ede030736ef984d867c27f0d144df300d0a91"
+    "Blueprint/Ch07.lean": "f30ea154ebfb07ae85c0b806ff74b35808d5a0c3dcaa647c0c3cc80a78239e37",
+    "blueprint/ch07/ch07_source.json": "c434892ebf63b06f7cadcdfa7af408c2c12d7b645d35db431d1855224163ba19",
+    "BATCH14a_PAGES.pdf": "d8a46583f0561cb7446a6c5f56f054def0fd84f7e1cb16667a2bc2330e47e715"
   },
   "page_mapping": [
     {
@@ -26,14 +26,14 @@
       "full_name": "MD.Ch07.comm",
       "kind": "def",
       "path": "Blueprint/Ch07.lean",
-      "line": 779,
+      "line": 795,
       "code_sha256": "b6c563e8cb91cb486da6bfb5f26e3dd94c0588818d31f0ed58028346af78d534"
     },
     {
       "full_name": "MD.Ch07.oyzyoInhomogeneity",
       "kind": "theorem",
       "path": "Blueprint/Ch07.lean",
-      "line": 1065,
+      "line": 1089,
       "code_sha256": "de6e371b04c1bbbde3805dae05177a8ce7c3e032d9eecf11e8fedfbdfd06658a"
     },
     {
@@ -402,13 +402,13 @@
   },
   "files": {
     "PASTE.txt": {
-      "bytes": 35950,
-      "sha256": "951d59bc68fec5dc4055f05c27e6193383dbd34da46a1a21044d22cdcc890abf"
+      "bytes": 40827,
+      "sha256": "4b473942d697617844f4f93ee3ec520d0207ad2a9ea1eac0c5c00334ab964520"
     },
     "BATCH14a_PAGES.pdf": {
       "bytes": 90129,
-      "sha256": "9b1f924193c97eb7577bfb8d5a3ede030736ef984d867c27f0d144df300d0a91"
+      "sha256": "d8a46583f0561cb7446a6c5f56f054def0fd84f7e1cb16667a2bc2330e47e715"
     }
   },
-  "total_task_bytes": 142486
+  "total_task_bytes": 147363
 }

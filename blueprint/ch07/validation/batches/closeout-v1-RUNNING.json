@@ -1,0 +1,17 @@
+{
+  "command": [
+    "lake",
+    "env",
+    "lean",
+    "blueprint\\ch07\\validation\\batches\\closeout-v1.lean"
+  ],
+  "input_sha256": "b14d837b13438281ab572836916102b618c088b1a849e59b74577db8b69fed8b",
+  "parent_pid": 1968,
+  "parent_create_time": 1792306705.6095133,
+  "compiler_pid": 17064,
+  "compiler_create_time": 1792306707.2705328,
+  "started_at": "2026-10-18T14:58:27.274032",
+  "status": "completed",
+  "exit_code": 0,
+  "completed_at": "2026-10-18T14:58:43.414079"
+}

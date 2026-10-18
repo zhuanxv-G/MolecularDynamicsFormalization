@@ -5,9 +5,9 @@
     "MD-7.11.1-VelocityAutocorrelationDefinition"
   ],
   "input_sha256": {
-    "Blueprint/Ch07.lean": "03e34bf86a5b27e03cce8552bb21fc0fea40514cd87faa953bf09a6a0a27f3c2",
-    "blueprint/ch07/ch07_source.json": "27e402f2a8b9c511106df901d6cc8472e1dae783cdf739f657879ffcf297462a",
-    "BATCH17c_PAGES.pdf": "d84a2c295799fd54a2ff977f649cbaf504140a7725c98aca0be31639f4d4c323"
+    "Blueprint/Ch07.lean": "f30ea154ebfb07ae85c0b806ff74b35808d5a0c3dcaa647c0c3cc80a78239e37",
+    "blueprint/ch07/ch07_source.json": "c434892ebf63b06f7cadcdfa7af408c2c12d7b645d35db431d1855224163ba19",
+    "BATCH17c_PAGES.pdf": "ec1bc97e74c910e4ded1c3947a68e915ba1f2dd3ea4812623adda78089f3a41f"
   },
   "page_mapping": [
     {
@@ -21,28 +21,28 @@
       "full_name": "MD.Ch07.V",
       "kind": "abbrev",
       "path": "Blueprint/Ch07.lean",
-      "line": 172,
+      "line": 188,
       "code_sha256": "7ab0ad90462b274b03f5b929b5f09417c0b397b6cb908fa6e7bd56677a314027"
     },
     {
       "full_name": "MD.Ch07.velocityAutocorrelation",
       "kind": "def",
       "path": "Blueprint/Ch07.lean",
-      "line": 1343,
+      "line": 1389,
       "code_sha256": "f61028e62fdefe93b9ea9467bf47a2151935cbf494a62222594b792732ab2aee"
     },
     {
       "full_name": "MD.Ch07.greenKuboDiffusion",
       "kind": "def",
       "path": "Blueprint/Ch07.lean",
-      "line": 1345,
+      "line": 1391,
       "code_sha256": "1bfa98c3f55b8ccdc0e59a9aa602c622f90055e89cd153cb7624eea33d7785fb"
     },
     {
       "full_name": "MD.Ch07.autocorrelation_rescale",
       "kind": "theorem",
       "path": "Blueprint/Ch07.lean",
-      "line": 1347,
+      "line": 1393,
       "code_sha256": "6e910175d526f7ed070aa1b74f7b77ef25af1eddb395cf215e6d7c506e7ab811"
     }
   ],
@@ -54,13 +54,13 @@
   },
   "files": {
     "PASTE.txt": {
-      "bytes": 5519,
-      "sha256": "6d33adebe9e040c557b4676a036daf1171b2b1d5c258c52c4e7fb17281ff954d"
+      "bytes": 8978,
+      "sha256": "db1e6ed0da92fdf8e6b0e80445627ceee8e25ab05a7f9d3bb17178a6929fea07"
     },
     "BATCH17c_PAGES.pdf": {
       "bytes": 78895,
-      "sha256": "d84a2c295799fd54a2ff977f649cbaf504140a7725c98aca0be31639f4d4c323"
+      "sha256": "ec1bc97e74c910e4ded1c3947a68e915ba1f2dd3ea4812623adda78089f3a41f"
     }
   },
-  "total_task_bytes": 86478
+  "total_task_bytes": 89937
 }

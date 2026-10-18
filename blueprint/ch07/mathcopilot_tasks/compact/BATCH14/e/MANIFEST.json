@@ -5,9 +5,9 @@
     "MD-7.9.1-ConjugateSymmetricCorrections"
   ],
   "input_sha256": {
-    "Blueprint/Ch07.lean": "03e34bf86a5b27e03cce8552bb21fc0fea40514cd87faa953bf09a6a0a27f3c2",
-    "blueprint/ch07/ch07_source.json": "27e402f2a8b9c511106df901d6cc8472e1dae783cdf739f657879ffcf297462a",
-    "BATCH14e_PAGES.pdf": "2f18b716de583f26acdeee391ae5224f6a9fcb68de9e3fec8ce02076d6e05ec5"
+    "Blueprint/Ch07.lean": "f30ea154ebfb07ae85c0b806ff74b35808d5a0c3dcaa647c0c3cc80a78239e37",
+    "blueprint/ch07/ch07_source.json": "c434892ebf63b06f7cadcdfa7af408c2c12d7b645d35db431d1855224163ba19",
+    "BATCH14e_PAGES.pdf": "ccc1149d18fda0166ca06f64a312e4574d07d069042e3e613a3bdd70e2c636a8"
   },
   "page_mapping": [
     {
@@ -26,71 +26,85 @@
       "full_name": "MD.Ch07.V",
       "kind": "abbrev",
       "path": "Blueprint/Ch07.lean",
-      "line": 172,
+      "line": 188,
       "code_sha256": "7ab0ad90462b274b03f5b929b5f09417c0b397b6cb908fa6e7bd56677a314027"
     },
     {
       "full_name": "MD.Ch07.Phase",
       "kind": "abbrev",
       "path": "Blueprint/Ch07.lean",
-      "line": 173,
+      "line": 189,
       "code_sha256": "ef1520e3b22ac1c99a30a989deafe8d3da44a9f2a3e5b6c2cd3220218b88513e"
     },
     {
       "full_name": "MD.Ch07.coordDerivative",
       "kind": "def",
       "path": "Blueprint/Ch07.lean",
-      "line": 221,
+      "line": 237,
       "code_sha256": "e782d789a13f5db6817e2c995f141805e81ac75720125b846f8ee14ba3833a4b"
     },
     {
       "full_name": "MD.Ch07.gradient",
       "kind": "def",
       "path": "Blueprint/Ch07.lean",
-      "line": 250,
+      "line": 266,
       "code_sha256": "540c6af25c09d3a58da531bc32056ff1a1c070facc58d34c96b6653d781fba6f"
     },
     {
       "full_name": "MD.Ch07.hessianU",
       "kind": "def",
       "path": "Blueprint/Ch07.lean",
-      "line": 1074,
+      "line": 1098,
       "code_sha256": "8c2605253d3d70a39369a2c08eb2c758793a9cc41934f1f97c967d5eb2c776ee"
     },
     {
       "full_name": "MD.Ch07.gradNormSq",
       "kind": "def",
       "path": "Blueprint/Ch07.lean",
-      "line": 1119,
+      "line": 1143,
       "code_sha256": "4ac74933a6c274ae1355fc8b7cdd3820a81dec13cacd2c6e39768e45795792df"
     },
     {
       "full_name": "MD.Ch07.hessianQuadratic",
       "kind": "def",
       "path": "Blueprint/Ch07.lean",
-      "line": 1120,
+      "line": 1144,
       "code_sha256": "a6a3143b1913df6460ab70c1909c2d7201e4434efc287c2634a325c9281a5215"
     },
     {
       "full_name": "MD.Ch07.conjugateCorrectionChange",
       "kind": "def",
       "path": "Blueprint/Ch07.lean",
-      "line": 1121,
+      "line": 1145,
       "code_sha256": "fe1848dccc25d5ff845e497f7b18c0707efa9f21a8f623a25ea387588cfd584b"
     },
     {
       "full_name": "MD.Ch07.conjugateCorrections",
       "kind": "def",
       "path": "Blueprint/Ch07.lean",
-      "line": 1123,
+      "line": 1147,
       "code_sha256": "94ce7fcd6f434273f0998719189ebdca859694b687351ae0e62bb0b311b81337"
     },
     {
       "full_name": "MD.Ch07.conjugateCorrection_coefficient",
       "kind": "theorem",
       "path": "Blueprint/Ch07.lean",
-      "line": 1125,
+      "line": 1149,
       "code_sha256": "8488497dde1c1c57f7e30632e0c5cd4f3e564b199b76c8f1de0eac37d00ea379"
+    },
+    {
+      "full_name": "MD.Ch07.conjugateExpansionPrinted",
+      "kind": "def",
+      "path": "Blueprint/Ch07.lean",
+      "line": 1157,
+      "code_sha256": "14bdcd2d8a24b79d25ed9d4b3222facc0420372a93273fafbe2932ed9bf8a0df"
+    },
+    {
+      "full_name": "MD.Ch07.conjugateExpansionPrinted_corrected",
+      "kind": "def",
+      "path": "Blueprint/Ch07.lean",
+      "line": 1161,
+      "code_sha256": "e34b6bbb843da7b482f6e7a7bc42c6b7d1f3613424ba7b02cd697f732f4ba41a"
     },
     {
       "full_name": "MolecularDynamics.Chapter05Review.E",
@@ -108,13 +122,13 @@
   },
   "files": {
     "PASTE.txt": {
-      "bytes": 8815,
-      "sha256": "e020a2e15ca9f445bc1ef91b1156ca4121c502ecac07956e9596b18c961eff98"
+      "bytes": 14556,
+      "sha256": "d703a1eb27b5e7004ba35577dc0c70df38728f9b9302c70c9000c751051fe32e"
     },
     "BATCH14e_PAGES.pdf": {
       "bytes": 99860,
-      "sha256": "2f18b716de583f26acdeee391ae5224f6a9fcb68de9e3fec8ce02076d6e05ec5"
+      "sha256": "ccc1149d18fda0166ca06f64a312e4574d07d069042e3e613a3bdd70e2c636a8"
     }
   },
-  "total_task_bytes": 112491
+  "total_task_bytes": 118727
 }

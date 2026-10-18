@@ -5,9 +5,9 @@
     "MD-7.8.2-BiasedDoubleWellExact"
   ],
   "input_sha256": {
-    "Blueprint/Ch07.lean": "03e34bf86a5b27e03cce8552bb21fc0fea40514cd87faa953bf09a6a0a27f3c2",
-    "blueprint/ch07/ch07_source.json": "27e402f2a8b9c511106df901d6cc8472e1dae783cdf739f657879ffcf297462a",
-    "BATCH13d_PAGES.pdf": "2665520179b2376bd5190f7f872bdbd54740a598c0765158f7ca417bc6ed2a4a"
+    "Blueprint/Ch07.lean": "f30ea154ebfb07ae85c0b806ff74b35808d5a0c3dcaa647c0c3cc80a78239e37",
+    "blueprint/ch07/ch07_source.json": "c434892ebf63b06f7cadcdfa7af408c2c12d7b645d35db431d1855224163ba19",
+    "BATCH13d_PAGES.pdf": "61fb0bb7aa397fa97372ffa6f0f4044ffc8cfb2ba097e90c131915ede79bc6a3"
   },
   "page_mapping": [
     {
@@ -31,42 +31,42 @@
       "full_name": "MD.Ch07.biasedDoubleWell",
       "kind": "def",
       "path": "Blueprint/Ch07.lean",
-      "line": 1027,
+      "line": 1051,
       "code_sha256": "952242d19d57e710ab5863449898a1795b78252b9493f53770fd9fe108b3a119"
     },
     {
       "full_name": "MD.Ch07.doubleWellObservable",
       "kind": "def",
       "path": "Blueprint/Ch07.lean",
-      "line": 1028,
+      "line": 1052,
       "code_sha256": "d527a1c857f15e5bcbd9ff59dc3b1037613bc06734da34cad1ad9e8d5db6c516"
     },
     {
       "full_name": "MD.Ch07.doubleWellGibbs",
       "kind": "def",
       "path": "Blueprint/Ch07.lean",
-      "line": 1029,
+      "line": 1053,
       "code_sha256": "322389dafdaff58aea6632bce5d33f543898865ca0aac9f2b9c699ab5689a26c"
     },
     {
       "full_name": "MD.Ch07.doubleWellBOACorrection",
       "kind": "def",
       "path": "Blueprint/Ch07.lean",
-      "line": 1032,
+      "line": 1056,
       "code_sha256": "ebb2a8042e75b05d06d0a2bd40e6030eb73ce43a42de5c0037a324b134f9c2d9"
     },
     {
       "full_name": "MD.Ch07.doubleWellExact",
       "kind": "theorem",
       "path": "Blueprint/Ch07.lean",
-      "line": 1035,
+      "line": 1059,
       "code_sha256": "219647f29a11c2963a3de1f8699d2644a13c4e542e4a258879a2a6c1b48867d9"
     },
     {
       "full_name": "MD.Ch07.doubleWellCritical",
       "kind": "theorem",
       "path": "Blueprint/Ch07.lean",
-      "line": 1039,
+      "line": 1063,
       "code_sha256": "53a62d8ab3fe91b60ca7f5b904dd93948c63490fed9deaddc01509cd2e903b55"
     }
   ],
@@ -78,13 +78,13 @@
   },
   "files": {
     "PASTE.txt": {
-      "bytes": 6758,
-      "sha256": "1f703db2413521f11e5a9a25f4909454ba7182ecd5f5d3c4ae783e3e34c2a492"
+      "bytes": 13443,
+      "sha256": "0a5852e1f0b878c3b0e2e018314811e778757b2706b5d97b2cff8e96693afdba"
     },
     "BATCH13d_PAGES.pdf": {
       "bytes": 170951,
-      "sha256": "2665520179b2376bd5190f7f872bdbd54740a598c0765158f7ca417bc6ed2a4a"
+      "sha256": "61fb0bb7aa397fa97372ffa6f0f4044ffc8cfb2ba097e90c131915ede79bc6a3"
     }
   },
-  "total_task_bytes": 180448
+  "total_task_bytes": 187134
 }

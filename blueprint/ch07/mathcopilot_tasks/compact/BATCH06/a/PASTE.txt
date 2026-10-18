@@ -3,9 +3,9 @@
 Lean/Mathlib均4.34.0。原页PDF映射：[294]；印刷页=[273].
 input_sha256请原样回显：
 {
-  "Blueprint/Ch07.lean": "03e34bf86a5b27e03cce8552bb21fc0fea40514cd87faa953bf09a6a0a27f3c2",
-  "blueprint/ch07/ch07_source.json": "27e402f2a8b9c511106df901d6cc8472e1dae783cdf739f657879ffcf297462a",
-  "BATCH06a_PAGES.pdf": "56132fd4a1c569815f607e7c1b2bbe922822f6bba298b4f9d7915fe49f8c2548"
+  "Blueprint/Ch07.lean": "f30ea154ebfb07ae85c0b806ff74b35808d5a0c3dcaa647c0c3cc80a78239e37",
+  "blueprint/ch07/ch07_source.json": "c434892ebf63b06f7cadcdfa7af408c2c12d7b645d35db431d1855224163ba19",
+  "BATCH06a_PAGES.pdf": "94eab49d53df11156a7db3c221d4deba4f072befed15610e796d72c61c43c155"
 }
 用代码将JSON对象(batch,input_sha256,items)写到 /workspace/.mathcopilot/reviews/ch07/BATCH06a_review.json；items仅含本source_id。
 items字段：source_id、verdict(PASS/FAIL/NEEDS_HUMAN)、transcription、semantic_review、counterexample、suggested_fix、printed_version、corrected_version。逐版区分原文疑误和修正版结论；缺材料必须具体指出，不猜测。写后json.loads自检，最后仅回复路径及统计。
@@ -21,7 +21,16 @@ items字段：source_id、verdict(PASS/FAIL/NEEDS_HUMAN)、transcription、seman
   "pdf_page": "294",
   "statement_latex": "Recall that the one-dimensional harmonic oscillator with spring constant $\\Omega^2$ has potential energy function $U(q)=\\Omega^2q^2/2$, with Hamiltonian\n\\[H(q,p)=\\frac{p^2}{2m}+\\frac{\\Omega^2q^2}{2},\\tag{7.6}\\]\nwhere $(q,p)\\in\\mathbb R^2$ represent a particle's position and momentum, and $m>0$ is the particle's mass.",
   "proof_latex": null,
-  "proof_note": "原书未给独立完整证明。",
+  "proof_outline": null,
+  "proof_note": "原页推导与上下文全文见original_page_text；数学符号的排版以随附原页PDF为准。",
+  "original_page_text": [
+    {
+      "pdf_page": 294,
+      "printed_page": 273,
+      "text": "7.4\nError Results for Harmonic Problems\n273\nsampling will become inconsistent: the force will be dominated by the stochastic\nterm, leaving the dynamics to evolve as a random walk.\nSimilar behavior is exhibited using the splitting strategy in (7.5), when interpos-\ning the kick term B between two O steps, such as in the schemes \u0002AOBOA\u0003 or\n\u0002BOAOB\u0003. By avoiding “OBO” updates, we can derive schemes that are consistent\neven at inﬁnite friction (the \u0002BAOAB\u0003 and \u0002ABOBA\u0003 schemes are examples of such\nmethods).\nThe Brünger-Brooks-Karplus (BBK) Langevin integrator [55] is one of the most\npopular and widely-implemented schemes.\nBrünger-Brooks-Karplus (BBK)\npnC1=2 D .1 \u0003 h\n=2/pn \u0003 .h=2/rU.qn/ C 1\n2\np2kBTh\nM1=2Rn\nqnC1 D qn C hM\u00021pnC1=2\npnC1 D ŒpnC1=2 \u0003 .h=2/rU.qnC1/ C 1\n2\np2kBTh\nM1=2R0\nn\t=.1 C h\n=2/\nOften R0 is chosen such that R0\nn D RnC1, so the random vector would be reused at\nthe start of the following timestep, however there are many variants of this scheme\nthat incorporate the redraw of random numbers differently. In other variants of BBK\nwe take R0\nn D Rn, reusing the random number within the step. We may also consider\nindependent R0\nn and Rn, however when using independent noise processes we must\nmodify the algorithm as it will not sample canonically (see Exercise 1).\n7.4\nError Results for Harmonic Problems\nFor general systems it can be very challenging to give a complete description of\nthe weak error in averages computed from trajectories evolved through a Langevin\ndynamics discretization scheme. However, using a linear model problem signiﬁ-\ncantly reduces the complexity, while using small dimensional test problems allows\nus to effectively annihilate sampling error in demonstrative numerical experiments.\nAs such, we return now to the harmonic oscillator, which as well as being the\nsimplest molecular model is also one of the most relevant for molecular dynamics\napplications, as many issues of stability and timestep in molecular dynamics\nsimulations arise due to harmonic potentials used to model covalent bonds (such\nas in crystalline solids and biomolecules). The canonical distributions of position\nand momentum are also of a simple form (Gaussians), making such oscillators\nparticularly amenable to analysis.\nRecall that the one-dimensional harmonic oscillator with spring constant ˝2 has\npotential energy function U.q/ D ˝2q2=2, with Hamiltonian\nH.q; p/ D p2\n2m C ˝2q2\n2\n;\n(7.6)\nwhere .q; p/ 2 R2 represent a particle’s position and momentum, and m > 0 is the\nparticle’s mass. In this setting, the canonical distribution \u0005ˇ is the product of two\n"
+    }
+  ],
+  "transcription_note": "PDF文字层原样保留，陈述中的数学排版转写为LaTeX；文字层有特殊字形编码时以目视原页为准。PDF347的Exercises之后不在正文范围内。",
   "context_notation": [],
   "extra_assumptions": [
     "正m、正θ、Ω≠0时为可归一化的正则谐振子Gibbs分布；θ=k_BT。"
@@ -49,11 +58,11 @@ def harmonicLaw (m Ω θ : ℝ) : Measure (ℝ × ℝ) :=
 ## 项目依赖定义体及选择规格
 以下def/abbrev/structure完整保留；定理列出完整类型，Mathlib标准定义无需摘录。
 
-### MD.Ch07.harmonicHamiltonian (Blueprint/Ch07.lean:397)
+### MD.Ch07.harmonicHamiltonian (Blueprint/Ch07.lean:413)
 原文件上下文：
 ```lean
 open Set Filter MeasureTheory ProbabilityTheory MolecularDynamics
-open scoped BigOperators Topology ContDiff ENNReal NNReal
+open scoped BigOperators Topology ContDiff ENNReal NNReal Matrix
 variable {Ω : Type*} [MeasurableSpace Ω]
 variable {n : ℕ}
 ```
@@ -61,11 +70,11 @@ variable {n : ℕ}
 def harmonicHamiltonian (m Ω : ℝ) (x : ℝ × ℝ) : ℝ := x.2^2/(2*m)+Ω^2*x.1^2/2
 ```
 
-### MD.Ch07.harmonicLaw (Blueprint/Ch07.lean:398)
+### MD.Ch07.harmonicLaw (Blueprint/Ch07.lean:414)
 原文件上下文：
 ```lean
 open Set Filter MeasureTheory ProbabilityTheory MolecularDynamics
-open scoped BigOperators Topology ContDiff ENNReal NNReal
+open scoped BigOperators Topology ContDiff ENNReal NNReal Matrix
 variable {Ω : Type*} [MeasurableSpace Ω]
 variable {n : ℕ}
 ```

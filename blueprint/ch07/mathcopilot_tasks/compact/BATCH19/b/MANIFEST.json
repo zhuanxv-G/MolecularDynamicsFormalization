@@ -1,0 +1,94 @@
+{
+  "batch": "BATCH19",
+  "subtask": "BATCH19b",
+  "source_ids": [
+    "MD-7.13-MultipleTimestepUpdate"
+  ],
+  "input_sha256": {
+    "Blueprint/Ch07.lean": "f30ea154ebfb07ae85c0b806ff74b35808d5a0c3dcaa647c0c3cc80a78239e37",
+    "blueprint/ch07/ch07_source.json": "c434892ebf63b06f7cadcdfa7af408c2c12d7b645d35db431d1855224163ba19",
+    "BATCH19b_PAGES.pdf": "ab46d84694137259f44ba64e67138552344bbb7a62062a928b476471ac09330e"
+  },
+  "page_mapping": [
+    {
+      "attachment_page": 1,
+      "original_pdf_page": 345,
+      "printed_page": 324
+    }
+  ],
+  "definition_excerpts": [
+    {
+      "full_name": "MD.Ch07.Mat2",
+      "kind": "abbrev",
+      "path": "Blueprint/Ch07.lean",
+      "line": 1544,
+      "code_sha256": "b59a57ba7657676ba8267131b9fbc6b6f308017bb0aa3cde6fe6918bdb410f7e"
+    },
+    {
+      "full_name": "MD.Ch07.fastMatrix",
+      "kind": "def",
+      "path": "Blueprint/Ch07.lean",
+      "line": 1547,
+      "code_sha256": "fdfa7a59fe54847eae35d50bb0b5bba0ae9e1a507f54d95c3c8d37259943480b"
+    },
+    {
+      "full_name": "MD.Ch07.slowMatrix",
+      "kind": "def",
+      "path": "Blueprint/Ch07.lean",
+      "line": 1548,
+      "code_sha256": "848536920828e83ab1711b3004c6207c5a2a94ced0202237aed0d1ba2a85baa6"
+    },
+    {
+      "full_name": "MD.Ch07.fastExponential",
+      "kind": "def",
+      "path": "Blueprint/Ch07.lean",
+      "line": 1555,
+      "code_sha256": "60666624ba49fec7c76c3939e3ceac986b31c99b88c9e9a6ea5842577e7aca55"
+    },
+    {
+      "full_name": "MD.Ch07.multipleX",
+      "kind": "def",
+      "path": "Blueprint/Ch07.lean",
+      "line": 1570,
+      "code_sha256": "74fb0eb9df44c4e62be50f79b27411ab3f9cc1ba9ded7c4a50a2df074e887b1d"
+    },
+    {
+      "full_name": "MD.Ch07.multipleY",
+      "kind": "def",
+      "path": "Blueprint/Ch07.lean",
+      "line": 1571,
+      "code_sha256": "143456db1acc98a0bd43b6b1f43dbeda165436a6d963b18511b8d25d0afb98b2"
+    },
+    {
+      "full_name": "MD.Ch07.multipleStep",
+      "kind": "def",
+      "path": "Blueprint/Ch07.lean",
+      "line": 1572,
+      "code_sha256": "0b16ef715bb2430f9ccf8f25bedc719c57745a242d7b69d38041c257a873a183"
+    },
+    {
+      "full_name": "MD.Ch07.multipleStep_composition",
+      "kind": "theorem",
+      "path": "Blueprint/Ch07.lean",
+      "line": 1574,
+      "code_sha256": "5e0796fb2066051e4043e6c94fa08807653ccb7643409488f7ca091fa74e4078"
+    }
+  ],
+  "validation": {
+    "project_constant_closure": "PASS",
+    "missing_project_definitions": [],
+    "full_page_render_equality_dpi": 72,
+    "website_submitted": false
+  },
+  "files": {
+    "PASTE.txt": {
+      "bytes": 8295,
+      "sha256": "cdfa1649b293428f61e1c2d2279366617232db2b9c6a425bc821259e2040305f"
+    },
+    "BATCH19b_PAGES.pdf": {
+      "bytes": 81295,
+      "sha256": "ab46d84694137259f44ba64e67138552344bbb7a62062a928b476471ac09330e"
+    }
+  },
+  "total_task_bytes": 92538
+}

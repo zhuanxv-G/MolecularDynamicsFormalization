@@ -5,9 +5,9 @@
     "MD-7.4.2-BBKStar"
   ],
   "input_sha256": {
-    "Blueprint/Ch07.lean": "03e34bf86a5b27e03cce8552bb21fc0fea40514cd87faa953bf09a6a0a27f3c2",
-    "blueprint/ch07/ch07_source.json": "27e402f2a8b9c511106df901d6cc8472e1dae783cdf739f657879ffcf297462a",
-    "BATCH07e_PAGES.pdf": "9066bc3891d6f073003a4a8166e505c0e8d7fc2c076bb0f605ead12a4efa5ac3"
+    "Blueprint/Ch07.lean": "f30ea154ebfb07ae85c0b806ff74b35808d5a0c3dcaa647c0c3cc80a78239e37",
+    "blueprint/ch07/ch07_source.json": "c434892ebf63b06f7cadcdfa7af408c2c12d7b645d35db431d1855224163ba19",
+    "BATCH07e_PAGES.pdf": "7e28de86f0a8dc4c3d5e38c61477943d3636e762c00bbdaf3d1a42458ed03fb2"
   },
   "page_mapping": [
     {
@@ -26,56 +26,56 @@
       "full_name": "MD.Ch07.V",
       "kind": "abbrev",
       "path": "Blueprint/Ch07.lean",
-      "line": 172,
+      "line": 188,
       "code_sha256": "7ab0ad90462b274b03f5b929b5f09417c0b397b6cb908fa6e7bd56677a314027"
     },
     {
       "full_name": "MD.Ch07.Phase",
       "kind": "abbrev",
       "path": "Blueprint/Ch07.lean",
-      "line": 173,
+      "line": 189,
       "code_sha256": "ef1520e3b22ac1c99a30a989deafe8d3da44a9f2a3e5b6c2cd3220218b88513e"
     },
     {
       "full_name": "MD.Ch07.coordDerivative",
       "kind": "def",
       "path": "Blueprint/Ch07.lean",
-      "line": 221,
+      "line": 237,
       "code_sha256": "e782d789a13f5db6817e2c995f141805e81ac75720125b846f8ee14ba3833a4b"
     },
     {
       "full_name": "MD.Ch07.gradient",
       "kind": "def",
       "path": "Blueprint/Ch07.lean",
-      "line": 250,
+      "line": 266,
       "code_sha256": "540c6af25c09d3a58da531bc32056ff1a1c070facc58d34c96b6653d781fba6f"
     },
     {
       "full_name": "MD.Ch07.driftStep",
       "kind": "def",
       "path": "Blueprint/Ch07.lean",
-      "line": 279,
+      "line": 295,
       "code_sha256": "600d3de37df6b9ef23628e1495de886583ba0ded7bc74fa5eb3ce43ed25daa6c"
     },
     {
       "full_name": "MD.Ch07.bbk",
       "kind": "def",
       "path": "Blueprint/Ch07.lean",
-      "line": 387,
+      "line": 403,
       "code_sha256": "d93dd45be4e39ff1b14ebafa032d7062362e84ba4cd11c5e2a674b08794083a6"
     },
     {
       "full_name": "MD.Ch07.bbkStarTrajectory",
       "kind": "def",
       "path": "Blueprint/Ch07.lean",
-      "line": 546,
+      "line": 562,
       "code_sha256": "f8816dcd82c9c54f4faa1bdc5e019b0a7edcdc189a5932935e2baa0632f0f1c7"
     },
     {
       "full_name": "MD.Ch07.bbkStarNoise",
       "kind": "def",
       "path": "Blueprint/Ch07.lean",
-      "line": 551,
+      "line": 567,
       "code_sha256": "a4e939870fa2488f25e3f7e2e9f5878424a2b24544bb79adcc4359d17443f977"
     }
   ],
@@ -87,13 +87,13 @@
   },
   "files": {
     "PASTE.txt": {
-      "bytes": 6403,
-      "sha256": "12833afc4e7c08c61073024417712d3f684077327eb9e6a9ca83d8e8038ac3f9"
+      "bytes": 11454,
+      "sha256": "bf244fb78e39f8a382666aa15355660b00464fee7d305efbb93efda673ea7b98"
     },
     "BATCH07e_PAGES.pdf": {
       "bytes": 101991,
-      "sha256": "9066bc3891d6f073003a4a8166e505c0e8d7fc2c076bb0f605ead12a4efa5ac3"
+      "sha256": "7e28de86f0a8dc4c3d5e38c61477943d3636e762c00bbdaf3d1a42458ed03fb2"
     }
   },
-  "total_task_bytes": 111402
+  "total_task_bytes": 116454
 }

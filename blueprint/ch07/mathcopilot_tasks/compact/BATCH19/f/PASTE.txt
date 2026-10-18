@@ -1,0 +1,108 @@
+以附件/PASTE 为准，忽略 /workspace 旧文件；Mathlib 定义按标准含义采信。
+本任务只审本条：原文转录、对象资格、定义体、量词、全部结论及[EXTRA]是否一致；Lean编译不代替语义审阅。
+Lean/Mathlib均4.34.0。原页PDF映射：[346]；印刷页=[325].
+input_sha256请原样回显：
+{
+  "Blueprint/Ch07.lean": "f30ea154ebfb07ae85c0b806ff74b35808d5a0c3dcaa647c0c3cc80a78239e37",
+  "blueprint/ch07/ch07_source.json": "c434892ebf63b06f7cadcdfa7af408c2c12d7b645d35db431d1855224163ba19",
+  "BATCH19f_PAGES.pdf": "db1e6cb33629c82782dead3635e1fb618e838b27b9e55cabf7b1ba970a536ed6"
+}
+用代码将JSON对象(batch,input_sha256,items)写到 /workspace/.mathcopilot/reviews/ch07/BATCH19f_review.json；items仅含本source_id。
+items字段：source_id、verdict(PASS/FAIL/NEEDS_HUMAN)、transcription、semantic_review、counterexample、suggested_fix、printed_version、corrected_version。逐版区分原文疑误和修正版结论；缺材料必须具体指出，不猜测。写后json.loads自检，最后仅回复路径及统计。
+
+## 原文JSON
+```json
+{
+  "source_id": "MD-7.13-UnderdampedPhasePrinted",
+  "kind": "unnumbered_claim",
+  "label": null,
+  "section": "7.13",
+  "printed_page": "325",
+  "pdf_page": "346",
+  "statement_latex": "We consider the case with $\\gamma\\ll\\Omega$, allowing us to write $\\eta=i\\widehat\\eta$ for $\\widehat\\eta\\in\\mathbb R$, and\n\\[\\left|\\cos\\left(\\frac{\\widehat\\eta h}{2}-\\operatorname{atanh}\\left(\\frac h{\\widehat\\eta}\\right)\\right)\\sqrt{1+\\frac{h^2}{\\widehat\\eta^2}}\\right|\\le\\cosh(\\gamma h/2).\\]",
+  "proof_latex": null,
+  "proof_outline": null,
+  "proof_note": "原页推导与上下文全文见original_page_text；数学符号的排版以随附原页PDF为准。",
+  "original_page_text": [
+    {
+      "pdf_page": 346,
+      "printed_page": 325,
+      "text": "7.13\nMultiple Timestepping\n325\nWe consider the case with \n \f ˝, allowing us to write \u000f D iO\u000f for O\u000f 2 R, and\nˇˇˇˇˇˇ\ncos\n\b O\u000fh\n2 \u0003 atanh\n\bh\nO\u000f\n\t\t s\n1 C h2\nO\u000f2\nˇˇˇˇˇˇ\n\t cosh\n\b\nh\n2\n\t\n:\nThe term on the left hand side of the inequality is oscillatory in h, while the term on\nthe right hand side uniformly grows with step size. This implies that for any suitable\n\n > 0, we can ﬁnd small pocket regions of the step size where the left hand side is\nsufﬁciently minimized in order to give stability. However, just as in the deterministic\ncase, these island stability regions are difﬁcult to predict the location of in a more\ngeneral system.\nThe oscillatory cosine term is bounded between ˙1, implying that we have\nstability for all step sizes provided the condition\ns\n1 C h2\nO\u000f2 \t cosh\n\b\nh\n2\n\t\n;\n(7.49)\nholds. We expect there to exist stability regions for smaller values of the friction\nwhere this condition is violated, but these will be interposed between unstable\nregions coming from the oscillatory term. We have guaranteed stability where (7.49)\nholds, which we can simplify to\nh\np\n4˝2 \u0003 \n2 \t sinh\n\b\nh\n2\n\t\n:\nFor a ﬁxed value of the friction, if we increase the step size the right hand side will\ngrow exponentially compared to the linear growth on the left hand side, so it would\nseem that for large h we actually need a smaller friction in order to be stable. Hence\nthe minimum required friction for stability can be found by considering the case of\nsmall timestep. This gives a bound\n1\np\n4˝2 \u0003 \n2 \t \n2 ;\nwhich gives a stability condition for all step sizes h as long as\n\n \b ˝\nq\n2 \u0003 2\np\n1 \u0003 ˝\u00024 \b\np\n2=˝:\nTherefore we expect that the minimum friction value required for stability for all\ntimesteps h > 0, scales with the value of inverse ˝. Unlike the deterministic case,\nwe are able to remove linear resonance effects with a sufﬁciently large friction term.\nWe illustrate this numerically in Fig. 7.13, by applying the splitting scheme (7.48)\nusing various timesteps and frictions. Each gridpoint marks an independent simula-\n"
+    }
+  ],
+  "transcription_note": "PDF文字层原样保留，陈述中的数学排版转写为LaTeX；文字层有特殊字形编码时以目视原页为准。PDF347的Exercises之后不在正文范围内。",
+  "context_notation": [],
+  "extra_assumptions": [
+    "原文版与修正版分别定义，原文版不证明；直接用幅相恒等式绕过复函数分支。η̂=√(4Ω²-γ²)>0需要明确欠阻尼条件。"
+  ],
+  "issues": [
+    "已目视核对PDF346／印刷325：从η=iη̂化为实余弦时应使用+arctan(h/η̂)，所印-atanh(h/η̂)的函数与符号均不符。修正版从cos(a)-r sin(a)的标准幅相恒等式得到。"
+  ],
+  "statement_scope": "本条逐字引用的全部数学对象与公式；未纳入的上下文另列。",
+  "lean_decl": "MD.Ch07.underdampedPhasePrinted",
+  "lean_declarations": [
+    "MD.Ch07.underdampedPhasePrinted",
+    "MD.Ch07.underdampedPhasePrinted_corrected",
+    "MD.Ch07.underdampedPhase_identity"
+  ],
+  "source_page_verification": "见source_page_checks.json；必须已目视核对本条原页。",
+  "repair_log": [],
+  "documented_priors": []
+}
+```
+
+## 完整本条Lean
+```lean
+def underdampedPhasePrinted (η h : ℝ) : ℝ :=
+  Real.cos (η*h/2-Real.artanh (h/η))*Real.sqrt (1+h^2/η^2)
+def underdampedPhasePrinted_corrected (η h : ℝ) : ℝ :=
+  Real.sqrt (1+(h/η)^2)*Real.cos (η*h/2+Real.arctan (h/η))
+theorem underdampedPhase_identity (a r : ℝ) :
+    Real.cos a-r*Real.sin a = Real.sqrt (1+r^2)*Real.cos (a+Real.arctan r) := by
+  rw [Real.cos_add,Real.cos_arctan,Real.sin_arctan]
+  have hs : Real.sqrt (1+r^2) ≠ 0 := ne_of_gt (Real.sqrt_pos.2 (by positivity))
+  field_simp
+  <;> ring
+```
+
+## 项目依赖定义体及选择规格
+以下def/abbrev/structure完整保留；定理列出完整类型，Mathlib标准定义无需摘录。
+
+### MD.Ch07.underdampedPhasePrinted (Blueprint/Ch07.lean:1620)
+原文件上下文：
+```lean
+open Set Filter MeasureTheory ProbabilityTheory MolecularDynamics
+open scoped BigOperators Topology ContDiff ENNReal NNReal Matrix
+variable {Ω : Type*} [MeasurableSpace Ω]
+variable {n : ℕ}
+```
+```lean
+def underdampedPhasePrinted (η h : ℝ) : ℝ :=
+  Real.cos (η*h/2-Real.artanh (h/η))*Real.sqrt (1+h^2/η^2)
+```
+
+### MD.Ch07.underdampedPhasePrinted_corrected (Blueprint/Ch07.lean:1622)
+原文件上下文：
+```lean
+open Set Filter MeasureTheory ProbabilityTheory MolecularDynamics
+open scoped BigOperators Topology ContDiff ENNReal NNReal Matrix
+variable {Ω : Type*} [MeasurableSpace Ω]
+variable {n : ℕ}
+```
+```lean
+def underdampedPhasePrinted_corrected (η h : ℝ) : ℝ :=
+  Real.sqrt (1+(h/η)^2)*Real.cos (η*h/2+Real.arctan (h/η))
+```
+
+### MD.Ch07.underdampedPhase_identity (Blueprint/Ch07.lean:1624)
+原文件上下文：
+```lean
+open Set Filter MeasureTheory ProbabilityTheory MolecularDynamics
+open scoped BigOperators Topology ContDiff ENNReal NNReal Matrix
+variable {Ω : Type*} [MeasurableSpace Ω]
+variable {n : ℕ}
+```
+```lean
+theorem underdampedPhase_identity (a r : ℝ) :
+    Real.cos a-r*Real.sin a = Real.sqrt (1+r^2)*Real.cos (a+Real.arctan r)
+```

@@ -1,6 +1,6 @@
 # 第7章逐条进度
 
-当前正文落盘：107条。全部正文完成：否。章末完整check：未执行。
+当前正文落盘：118条。全部正文完成：是。章末完整check：通过。
 
 | source_id | 原页PDF | 本地对照 | 编译/公理 | 数学状态 | 网站 |
 |---|---|---|---|---|---|
@@ -12,7 +12,7 @@
 | MD-7.2-MeanErrorExpectation | 285 | PASS | 通过 | 已证 | 待审 |
 | MD-7.2-StrongOrder | 285 | PASS | 通过 | 定义 | 待审 |
 | MD-7.2-WeakError | 286 | PASS | 通过 | 定义 | 待审 |
-| MD-7.2-StrongWeakComparison | 286 | PASS | 通过 | 未证陈述 | 待审 |
+| MD-7.2-StrongWeakComparison | 286 | PASS | 通过 | 已证 | 待审 |
 | MD-7.2-CanonicalAverage | 287 | PASS | 通过 | 定义 | 待审 |
 | MD-7.2-PartitionPrinted | 287 | NEEDS_HUMAN | 通过 | 未证陈述 | 待审 |
 | MD-7.2-AverageNotationBias | 287 | PASS | 通过 | 定义 | 待审 |
@@ -100,7 +100,7 @@
 | MD-7.10-BAOABLimitMethod | 328–329 | PASS | 通过 | 已证 | 待审 |
 | MD-7.10-ColoredNoiseAndExtension | 329 | PASS | 通过 | 未证陈述 | 待审 |
 | MD-7.10-LimitMethodAccuracy | 329 | NEEDS_HUMAN | 通过 | 定义 | 待审 |
-| MD-7.9.3-ZeroFrictionVerlet | 327 | PASS | 通过 | 未证陈述 | 待审 |
+| MD-7.9.3-ZeroFrictionVerlet | 327 | PASS | 通过 | 已证 | 待审 |
 | MD-7.11.1-TemperatureObservables | 331 | PASS | 通过 | 未证陈述 | 待审 |
 | MD-7.11.1-VelocityAutocorrelationDefinition | 331 | PASS | 通过 | 定义 | 待审 |
 | MD-7.12-ConstrainedLangevin | 338 | PASS | 通过 | 定义 | 待审 |
@@ -111,3 +111,14 @@
 | MD-7.12.1-ConstrainedABOSplitting | 340–341 | PASS | 通过 | 定义 | 待审 |
 | MD-7.12.1-ConstrainedBAOABAlgorithm | 341 | PASS | 通过 | 定义 | 待审 |
 | MD-7.12.1-ApproximateGeodesicOrder | 341 | NEEDS_HUMAN | 通过 | 定义 | 待审 |
+| MD-7.13-FastSlowHarmonicModel | 344 | PASS | 通过 | 定义 | 待审 |
+| MD-7.13-ExactFastGaussianLaw | 344–345 | PASS | 通过 | 未证陈述 | 待审 |
+| MD-7.13-MultipleTimestepUpdate | 345 | PASS | 通过 | 定义 | 待审 |
+| MD-7.13-DeterminantTrace | 345 | PASS | 通过 | 未证陈述 | 待审 |
+| MD-7.13-SpectralRadiusStability | 345 | PASS | 通过 | 未证陈述 | 待审 |
+| MD-7.13-HyperbolicPhaseTransform | 345 | PASS | 通过 | 已证 | 待审 |
+| MD-7.13-UnderdampedPhasePrinted | 346 | NEEDS_HUMAN | 通过 | 已证 | 待审 |
+| MD-7.13-StabilityEnvelope | 346 | PASS | 通过 | 未证陈述 | 待审 |
+| MD-7.13-FrictionThresholdPrinted | 346 | NEEDS_HUMAN | 通过 | 未证陈述 | 待审 |
+| MD-7.1-ConfigurationalSampling | 283 | PASS | 通过 | 定义 | 待审 |
+| MD-7.1-HamiltonianSamplingObstruction | 283 | NEEDS_HUMAN | 通过 | 已证 | 待审 |

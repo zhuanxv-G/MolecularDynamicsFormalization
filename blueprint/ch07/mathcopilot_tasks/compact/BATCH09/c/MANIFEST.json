@@ -5,9 +5,9 @@
     "MD-7.6-JSplitting"
   ],
   "input_sha256": {
-    "Blueprint/Ch07.lean": "03e34bf86a5b27e03cce8552bb21fc0fea40514cd87faa953bf09a6a0a27f3c2",
-    "blueprint/ch07/ch07_source.json": "27e402f2a8b9c511106df901d6cc8472e1dae783cdf739f657879ffcf297462a",
-    "BATCH09c_PAGES.pdf": "eff3524bd67b40a753087e3d0cf0af2a2020af6f482b95b7827b58d0a07fb961"
+    "Blueprint/Ch07.lean": "f30ea154ebfb07ae85c0b806ff74b35808d5a0c3dcaa647c0c3cc80a78239e37",
+    "blueprint/ch07/ch07_source.json": "c434892ebf63b06f7cadcdfa7af408c2c12d7b645d35db431d1855224163ba19",
+    "BATCH09c_PAGES.pdf": "adb2cfb7e811da6067bd8d2c4bb38115012cb36c7f2aaf68e374de380bb2e585"
   },
   "page_mapping": [
     {
@@ -26,56 +26,56 @@
       "full_name": "MD.Ch07.V",
       "kind": "abbrev",
       "path": "Blueprint/Ch07.lean",
-      "line": 172,
+      "line": 188,
       "code_sha256": "7ab0ad90462b274b03f5b929b5f09417c0b397b6cb908fa6e7bd56677a314027"
     },
     {
       "full_name": "MD.Ch07.coordDerivative",
       "kind": "def",
       "path": "Blueprint/Ch07.lean",
-      "line": 221,
+      "line": 237,
       "code_sha256": "e782d789a13f5db6817e2c995f141805e81ac75720125b846f8ee14ba3833a4b"
     },
     {
       "full_name": "MD.Ch07.gradient",
       "kind": "def",
       "path": "Blueprint/Ch07.lean",
-      "line": 250,
+      "line": 266,
       "code_sha256": "540c6af25c09d3a58da531bc32056ff1a1c070facc58d34c96b6653d781fba6f"
     },
     {
       "full_name": "MD.Ch07.lieField",
       "kind": "def",
       "path": "Blueprint/Ch07.lean",
-      "line": 669,
+      "line": 685,
       "code_sha256": "fffca9712c7ef38e6b643a620917c274ffd6a8715c52af40909759512091e818"
     },
     {
       "full_name": "MD.Ch07.divergenceField",
       "kind": "def",
       "path": "Blueprint/Ch07.lean",
-      "line": 671,
+      "line": 687,
       "code_sha256": "13fa90c87d5f2c3e14b7417a33040e84f5af9c5266af0e9d5f8bf44f921124ed"
     },
     {
       "full_name": "MD.Ch07.jField",
       "kind": "def",
       "path": "Blueprint/Ch07.lean",
-      "line": 705,
+      "line": 721,
       "code_sha256": "39b9eaad5d8737dd80386e25c695efd331d2e75f3fc3bbbe7d4e719526adbb23"
     },
     {
       "full_name": "MD.Ch07.jSplitting_energy",
       "kind": "theorem",
       "path": "Blueprint/Ch07.lean",
-      "line": 707,
+      "line": 723,
       "code_sha256": "203977a73a6c3f7095b2ce0049c3b9f79a801235c459de3d6dd38799f0a0f781"
     },
     {
       "full_name": "MD.Ch07.composition_preservesEnergy",
       "kind": "theorem",
       "path": "Blueprint/Ch07.lean",
-      "line": 711,
+      "line": 727,
       "code_sha256": "5dff5b5c98269b69ec5d9faeae7e8e00077aaa67f4b57cdd8f42553bb61f1c08"
     },
     {
@@ -94,13 +94,13 @@
   },
   "files": {
     "PASTE.txt": {
-      "bytes": 7109,
-      "sha256": "31ebe6caf49238d12404543852ccd76f6abbb84bf05ad80f6f7341b62ed2874a"
+      "bytes": 12959,
+      "sha256": "5d8364d6967374ec129b02ae11f74861968fd5289a70c0b4980f07601adfed8c"
     },
     "BATCH09c_PAGES.pdf": {
-      "bytes": 94008,
-      "sha256": "eff3524bd67b40a753087e3d0cf0af2a2020af6f482b95b7827b58d0a07fb961"
+      "bytes": 94007,
+      "sha256": "adb2cfb7e811da6067bd8d2c4bb38115012cb36c7f2aaf68e374de380bb2e585"
     }
   },
-  "total_task_bytes": 104433
+  "total_task_bytes": 110283
 }

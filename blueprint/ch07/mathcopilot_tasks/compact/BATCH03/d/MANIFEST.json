@@ -5,9 +5,9 @@
     "MD-7.3-OUPhaseIteration"
   ],
   "input_sha256": {
-    "Blueprint/Ch07.lean": "03e34bf86a5b27e03cce8552bb21fc0fea40514cd87faa953bf09a6a0a27f3c2",
-    "blueprint/ch07/ch07_source.json": "27e402f2a8b9c511106df901d6cc8472e1dae783cdf739f657879ffcf297462a",
-    "BATCH03d_PAGES.pdf": "5aed8f60b4b5cd9814ba50c81ece33b9716d0ad2d5ca6d761044d6df21a27c50"
+    "Blueprint/Ch07.lean": "f30ea154ebfb07ae85c0b806ff74b35808d5a0c3dcaa647c0c3cc80a78239e37",
+    "blueprint/ch07/ch07_source.json": "c434892ebf63b06f7cadcdfa7af408c2c12d7b645d35db431d1855224163ba19",
+    "BATCH03d_PAGES.pdf": "b830cffa3865082d50a12c539a6d4cfb0b0b57b3630f99e06d037504433877aa"
   },
   "page_mapping": [
     {
@@ -21,35 +21,35 @@
       "full_name": "MD.Ch07.V",
       "kind": "abbrev",
       "path": "Blueprint/Ch07.lean",
-      "line": 172,
+      "line": 188,
       "code_sha256": "7ab0ad90462b274b03f5b929b5f09417c0b397b6cb908fa6e7bd56677a314027"
     },
     {
       "full_name": "MD.Ch07.Phase",
       "kind": "abbrev",
       "path": "Blueprint/Ch07.lean",
-      "line": 173,
+      "line": 189,
       "code_sha256": "ef1520e3b22ac1c99a30a989deafe8d3da44a9f2a3e5b6c2cd3220218b88513e"
     },
     {
       "full_name": "MD.Ch07.ouMomentum",
       "kind": "def",
       "path": "Blueprint/Ch07.lean",
-      "line": 198,
+      "line": 214,
       "code_sha256": "df5a3511ac6e0986b8293d21de91ddb40de94195595495bc71fa780b2962b8ae"
     },
     {
       "full_name": "MD.Ch07.ouStep",
       "kind": "def",
       "path": "Blueprint/Ch07.lean",
-      "line": 211,
+      "line": 227,
       "code_sha256": "0f9aad04567b33cc7067304661e170a91deec512fcb772c226c1095acf25ffb5"
     },
     {
       "full_name": "MD.Ch07.vectorNormalSequence",
       "kind": "def",
       "path": "Blueprint/Ch07.lean",
-      "line": 214,
+      "line": 230,
       "code_sha256": "e59c2576bf4e07eb9914c2a94f2ace591a6a39d4f4841df27c9e4fcd41169a5e"
     }
   ],
@@ -61,13 +61,13 @@
   },
   "files": {
     "PASTE.txt": {
-      "bytes": 4854,
-      "sha256": "7ee1d135f4f375bca136766bdca496a128aeafb6544212b9d5a01df7180bef6d"
+      "bytes": 7413,
+      "sha256": "603319c3026d3ec6a7f89fcac923320d293ac654191fd77acfa08820bd9b7d57"
     },
     "BATCH03d_PAGES.pdf": {
       "bytes": 85329,
-      "sha256": "5aed8f60b4b5cd9814ba50c81ece33b9716d0ad2d5ca6d761044d6df21a27c50"
+      "sha256": "b830cffa3865082d50a12c539a6d4cfb0b0b57b3630f99e06d037504433877aa"
     }
   },
-  "total_task_bytes": 92416
+  "total_task_bytes": 94975
 }

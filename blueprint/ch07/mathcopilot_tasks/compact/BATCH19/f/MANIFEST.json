@@ -1,0 +1,59 @@
+{
+  "batch": "BATCH19",
+  "subtask": "BATCH19f",
+  "source_ids": [
+    "MD-7.13-UnderdampedPhasePrinted"
+  ],
+  "input_sha256": {
+    "Blueprint/Ch07.lean": "f30ea154ebfb07ae85c0b806ff74b35808d5a0c3dcaa647c0c3cc80a78239e37",
+    "blueprint/ch07/ch07_source.json": "c434892ebf63b06f7cadcdfa7af408c2c12d7b645d35db431d1855224163ba19",
+    "BATCH19f_PAGES.pdf": "db1e6cb33629c82782dead3635e1fb618e838b27b9e55cabf7b1ba970a536ed6"
+  },
+  "page_mapping": [
+    {
+      "attachment_page": 1,
+      "original_pdf_page": 346,
+      "printed_page": 325
+    }
+  ],
+  "definition_excerpts": [
+    {
+      "full_name": "MD.Ch07.underdampedPhasePrinted",
+      "kind": "def",
+      "path": "Blueprint/Ch07.lean",
+      "line": 1620,
+      "code_sha256": "70890a66185f5e919b57195bb6dee4d9173eab35c0757b2a7fb0108d65811f01"
+    },
+    {
+      "full_name": "MD.Ch07.underdampedPhasePrinted_corrected",
+      "kind": "def",
+      "path": "Blueprint/Ch07.lean",
+      "line": 1622,
+      "code_sha256": "408652b33b70a9738787ba98c0732664e83c99bcfa96f405bddbb6e7bdc920ac"
+    },
+    {
+      "full_name": "MD.Ch07.underdampedPhase_identity",
+      "kind": "theorem",
+      "path": "Blueprint/Ch07.lean",
+      "line": 1624,
+      "code_sha256": "f231ac339a02febb273fa34741db86f0dfb515df4ae6adc0044794a18414933a"
+    }
+  ],
+  "validation": {
+    "project_constant_closure": "PASS",
+    "missing_project_definitions": [],
+    "full_page_render_equality_dpi": 72,
+    "website_submitted": false
+  },
+  "files": {
+    "PASTE.txt": {
+      "bytes": 7314,
+      "sha256": "a68d065db55ff62d917e66a09a6385421833107a839f51ad4c916158030e1e52"
+    },
+    "BATCH19f_PAGES.pdf": {
+      "bytes": 65486,
+      "sha256": "db1e6cb33629c82782dead3635e1fb618e838b27b9e55cabf7b1ba970a536ed6"
+    }
+  },
+  "total_task_bytes": 74649
+}

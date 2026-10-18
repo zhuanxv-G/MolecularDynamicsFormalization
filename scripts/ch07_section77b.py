@@ -81,7 +81,15 @@ r'''The assumption of validity becomes more credible as we find that the operato
 def printedSpectralConclusion {E : Type*} [AddCommGroup E] [Module ℂ E]
     (L : Module.End ℂ E) (ρ : E) : Prop :=
   ρ ≠ 0 ∧ L ρ = 0 ∧ ∀ eigen : ℂ, (∃ v : E, v ≠ 0 ∧ L v = eigen • v) →
-    simpleEigenvalue L eigen ∧ (eigen = 0 ∨ eigen.re < 0)''',kind='definition',
+    simpleEigenvalue L eigen ∧ (eigen = 0 ∨ eigen.re < 0)
+
+def spectralConclusionPrinted {E : Type*} [AddCommGroup E] [Module ℂ E]
+    (L : Module.End ℂ E) (ρ : E) : Prop := printedSpectralConclusion L ρ
+
+def spectralConclusionPrinted_corrected {E : Type*} [AddCommGroup E] [Module ℂ E]
+    (L : Module.End ℂ E) (ρ : E) : Prop :=
+  ρ ≠ 0 ∧ L ρ = 0 ∧ ∀ eigen : ℂ, (∃ v : E, v ≠ 0 ∧ L v = eigen • v) →
+    FiniteDimensional ℂ (Module.End.eigenspace L eigen) ∧ (eigen = 0 ∨ eigen.re < 0)''',kind='definition',
 issues=['已目视核对PDF310：原文将discrete spectrum释为simple eigenvalues，这并非一般蕴含。紧预解式至多给离散谱及有限重数，不能直接给单重谱；Langevin谱还需前章所列势函数/空间条件。'],
 extra=['只记录原文谱结论的精确目标命题，不宣称为定理；一般闭无界Langevin生成元、定义域及紧预解式资格未覆盖。'],
 scope='原文谱断言已登记，Lean定义其点谱目标；尚缺无界算符对象和完整限定定理。',verdict='NEEDS_HUMAN')

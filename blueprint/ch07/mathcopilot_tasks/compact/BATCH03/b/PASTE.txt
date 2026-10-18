@@ -3,9 +3,9 @@
 Lean/Mathlib均4.34.0。原页PDF映射：[288]；印刷页=[267].
 input_sha256请原样回显：
 {
-  "Blueprint/Ch07.lean": "03e34bf86a5b27e03cce8552bb21fc0fea40514cd87faa953bf09a6a0a27f3c2",
-  "blueprint/ch07/ch07_source.json": "27e402f2a8b9c511106df901d6cc8472e1dae783cdf739f657879ffcf297462a",
-  "BATCH03b_PAGES.pdf": "290f07322be323251a761017a1360362c83b1835a26c42fad0e1e3c4eed1c4dd"
+  "Blueprint/Ch07.lean": "f30ea154ebfb07ae85c0b806ff74b35808d5a0c3dcaa647c0c3cc80a78239e37",
+  "blueprint/ch07/ch07_source.json": "c434892ebf63b06f7cadcdfa7af408c2c12d7b645d35db431d1855224163ba19",
+  "BATCH03b_PAGES.pdf": "f504bb570230b36b1c96bbf94b1bdbe8549c26e192261c15ab6e75c3bc60b2fb"
 }
 用代码将JSON对象(batch,input_sha256,items)写到 /workspace/.mathcopilot/reviews/ch07/BATCH03b_review.json；items仅含本source_id。
 items字段：source_id、verdict(PASS/FAIL/NEEDS_HUMAN)、transcription、semantic_review、counterexample、suggested_fix、printed_version、corrected_version。逐版区分原文疑误和修正版结论；缺材料必须具体指出，不猜测。写后json.loads自检，最后仅回复路径及统计。
@@ -21,7 +21,16 @@ items字段：source_id、verdict(PASS/FAIL/NEEDS_HUMAN)、transcription、seman
   "pdf_page": "288",
   "statement_latex": "Following the argument of Sect. 6.3.2 in the previous chapter,\n\\[d[\\exp(\\gamma t)p]=\\gamma\\exp(\\gamma t)pdt+\\exp(\\gamma t)[-\\gamma pdt+\\sqrt{2k_BT\\gamma}M^{1/2}dW]\n=\\exp(\\gamma t)\\sqrt{2k_BT\\gamma}M^{1/2}dW.\\]",
   "proof_latex": null,
-  "proof_note": "原书未给独立完整证明。",
+  "proof_outline": null,
+  "proof_note": "原页推导与上下文全文见original_page_text；数学符号的排版以随附原页PDF为准。",
+  "original_page_text": [
+    {
+      "pdf_page": 288,
+      "printed_page": 267,
+      "text": "7.3\nSampling Iterations\n267\n105\n104\n103\n102\n101\n0.05\n0.1\n0.2\n0.3\nStepsize\nNumber of force evaluations\nOp\nOp\nOptitimu\nmum ststststep\nep\nep\nepsisisize\nze\nze\nze\nLarge\nError\nSmall\nError\nFig. 7.2 We plot the error in the distribution of q 2 R for U.q/ D .q2 \u0002 1/2. The error in\nthe computed distribution is a function of both the number of force evaluations and the stepsize\nused, with the optimal choice of stepsize for a given number of force evaluations shown by the\nwhite guideline. Due to discretization bias, choosing the maximum stepsize is not always the best\nstrategy\nﬁgure: while increasing the stepsize means we more rapidly converge with each\nstep, the distribution that the discretization scheme converges to is incorrect. For\nsmall stepsizes, this error due to discretization may be negligible when compared to\nthe sampling error, but we converge more slowly towards the ﬁnal distribution. As\nthe stepsize is increased, the discretization error may dominate the overall error in\ncalculation.\n7.3\nSampling Iterations\nBy way of illustration of what we mean by a numerical sampling method, consider\nthe system of independent Ornstein-Uhlenbeck (OU) processes\ndp D \u0003\npdt C\np\n2kBT\nM1=2dW:\n(7.2)\nFollowing the argument of Sect. 6.3.2 in the previous chapter,\ndŒexp.\nt/p\t D \n exp.\nt/pdt C exp.\nt/Œ\u0003\npdt C\np\n2kBT\nM1=2dW\t\nD exp.\nt/\np\n2kBT\nM1=2dW:\n"
+    }
+  ],
+  "transcription_note": "PDF文字层原样保留，陈述中的数学排版转写为LaTeX；文字层有特殊字形编码时以目视原页为准。PDF347的Exercises之后不在正文范围内。",
   "context_notation": [],
   "extra_assumptions": [
     "把随机微分乘积法则陈述为从0到t的确定性加权Itô积分等式；有限时间和L²解资格由momentumOU明确。"
@@ -52,11 +61,11 @@ theorem ouIntegratingFactor (P : Measure Ω) (W p : ℝ → Ω → V n)
 ## 项目依赖定义体及选择规格
 以下def/abbrev/structure完整保留；定理列出完整类型，Mathlib标准定义无需摘录。
 
-### MD.Ch07.scalarSDE (Blueprint/Ch07.lean:20)
+### MD.Ch07.scalarSDE (Blueprint/Ch07.lean:22)
 原文件上下文：
 ```lean
 open Set Filter MeasureTheory ProbabilityTheory MolecularDynamics
-open scoped BigOperators Topology ContDiff ENNReal NNReal
+open scoped BigOperators Topology ContDiff ENNReal NNReal Matrix
 variable {Ω : Type*} [MeasurableSpace Ω]
 variable {n : ℕ}
 ```
@@ -73,11 +82,11 @@ def scalarSDE (P : Measure Ω) (W X : ℝ → Ω → ℝ)
     (fun x _ ↦ a x) (fun x _ ↦ b x) x0
 ```
 
-### MD.Ch07.V (Blueprint/Ch07.lean:172)
+### MD.Ch07.V (Blueprint/Ch07.lean:188)
 原文件上下文：
 ```lean
 open Set Filter MeasureTheory ProbabilityTheory MolecularDynamics
-open scoped BigOperators Topology ContDiff ENNReal NNReal
+open scoped BigOperators Topology ContDiff ENNReal NNReal Matrix
 variable {Ω : Type*} [MeasurableSpace Ω]
 variable {n : ℕ}
 ```
@@ -85,11 +94,11 @@ variable {n : ℕ}
 abbrev V (n : ℕ) := Fin n → ℝ
 ```
 
-### MD.Ch07.vectorWiener (Blueprint/Ch07.lean:175)
+### MD.Ch07.vectorWiener (Blueprint/Ch07.lean:191)
 原文件上下文：
 ```lean
 open Set Filter MeasureTheory ProbabilityTheory MolecularDynamics
-open scoped BigOperators Topology ContDiff ENNReal NNReal
+open scoped BigOperators Topology ContDiff ENNReal NNReal Matrix
 variable {Ω : Type*} [MeasurableSpace Ω]
 variable {n : ℕ}
 ```
@@ -99,11 +108,11 @@ def vectorWiener (P : Measure Ω) (W : ℝ → Ω → V n) : Prop :=
   iIndepFun (fun i sample t ↦ W t sample i) P
 ```
 
-### MD.Ch07.momentumOU (Blueprint/Ch07.lean:179)
+### MD.Ch07.momentumOU (Blueprint/Ch07.lean:195)
 原文件上下文：
 ```lean
 open Set Filter MeasureTheory ProbabilityTheory MolecularDynamics
-open scoped BigOperators Topology ContDiff ENNReal NNReal
+open scoped BigOperators Topology ContDiff ENNReal NNReal Matrix
 variable {Ω : Type*} [MeasurableSpace Ω]
 variable {n : ℕ}
 ```
@@ -115,11 +124,11 @@ def momentumOU (P : Measure Ω) (W p : ℝ → Ω → V n)
     (fun x ↦ -γ*x) (fun _ ↦ Real.sqrt (2*γ*θ*m i)) (p0 i)
 ```
 
-### MD.Ch07.ouIntegratingFactor (Blueprint/Ch07.lean:187)
+### MD.Ch07.ouIntegratingFactor (Blueprint/Ch07.lean:203)
 原文件上下文：
 ```lean
 open Set Filter MeasureTheory ProbabilityTheory MolecularDynamics
-open scoped BigOperators Topology ContDiff ENNReal NNReal
+open scoped BigOperators Topology ContDiff ENNReal NNReal Matrix
 variable {Ω : Type*} [MeasurableSpace Ω]
 variable {n : ℕ}
 ```

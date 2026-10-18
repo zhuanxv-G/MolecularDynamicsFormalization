@@ -5,9 +5,9 @@
     "MD-7.8-FirstOrderOperator"
   ],
   "input_sha256": {
-    "Blueprint/Ch07.lean": "03e34bf86a5b27e03cce8552bb21fc0fea40514cd87faa953bf09a6a0a27f3c2",
-    "blueprint/ch07/ch07_source.json": "27e402f2a8b9c511106df901d6cc8472e1dae783cdf739f657879ffcf297462a",
-    "BATCH12c_PAGES.pdf": "a9b0e1599f5336f3389b54e3ce1686254939826570adef50cf9499cf2842ea63"
+    "Blueprint/Ch07.lean": "f30ea154ebfb07ae85c0b806ff74b35808d5a0c3dcaa647c0c3cc80a78239e37",
+    "blueprint/ch07/ch07_source.json": "c434892ebf63b06f7cadcdfa7af408c2c12d7b645d35db431d1855224163ba19",
+    "BATCH12c_PAGES.pdf": "750af902bccbbd27480b3fef9cfa824cf35fc5f62e32b6d8efc62b0f1538dab0"
   },
   "page_mapping": [
     {
@@ -21,42 +21,42 @@
       "full_name": "MD.Ch07.formalModifiedGenerator",
       "kind": "def",
       "path": "Blueprint/Ch07.lean",
-      "line": 727,
+      "line": 743,
       "code_sha256": "669eb08559f110c7d96f9be121ad603a21addd069e9005c015d479edc8936d7e"
     },
     {
       "full_name": "MD.Ch07.comm",
       "kind": "def",
       "path": "Blueprint/Ch07.lean",
-      "line": 779,
+      "line": 795,
       "code_sha256": "b6c563e8cb91cb486da6bfb5f26e3dd94c0588818d31f0ed58028346af78d534"
     },
     {
       "full_name": "MD.Ch07.threeStage",
       "kind": "def",
       "path": "Blueprint/Ch07.lean",
-      "line": 803,
+      "line": 819,
       "code_sha256": "ee19a0a7ca96e43bfe5358e723096066bf70b237c7f68725d05c79e399be7eba"
     },
     {
       "full_name": "MD.Ch07.firstOrderOperator",
       "kind": "def",
       "path": "Blueprint/Ch07.lean",
-      "line": 902,
+      "line": 926,
       "code_sha256": "3c352c2129a7fc5f639c506cebe23490c313f6ef83dfb5fbddc75fc56dca421c"
     },
     {
       "full_name": "MD.Ch07.firstOrderOperator_coefficient",
       "kind": "theorem",
       "path": "Blueprint/Ch07.lean",
-      "line": 904,
+      "line": 928,
       "code_sha256": "ca17858bbab819de3c6ceed6d60f1b7e49ce33fdb1082efe76ae6ab98c95e536"
     },
     {
       "full_name": "MD.Ch07.correctionEquation",
       "kind": "def",
       "path": "Blueprint/Ch07.lean",
-      "line": 907,
+      "line": 931,
       "code_sha256": "437f3f445dfaaca8b31c89f09fdeb1529c9dfa9c4ce230cf7e41609ffc53cd09"
     },
     {
@@ -425,13 +425,13 @@
   },
   "files": {
     "PASTE.txt": {
-      "bytes": 38380,
-      "sha256": "43232cb9b82cf54eed9a21630a94cb810e21bc9e69075dce2d21f73acd2914a0"
+      "bytes": 40797,
+      "sha256": "8332ada9e3f9f6a91edee7df165df8885f8a3efb5f1ccc6e39de0911ebf78df6"
     },
     "BATCH12c_PAGES.pdf": {
       "bytes": 83982,
-      "sha256": "a9b0e1599f5336f3389b54e3ce1686254939826570adef50cf9499cf2842ea63"
+      "sha256": "750af902bccbbd27480b3fef9cfa824cf35fc5f62e32b6d8efc62b0f1538dab0"
     }
   },
-  "total_task_bytes": 139610
+  "total_task_bytes": 142027
 }

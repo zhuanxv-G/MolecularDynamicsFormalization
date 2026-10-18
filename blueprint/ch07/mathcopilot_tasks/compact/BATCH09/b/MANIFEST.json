@@ -5,9 +5,9 @@
     "MD-7.6-GeMarsdenRestriction"
   ],
   "input_sha256": {
-    "Blueprint/Ch07.lean": "03e34bf86a5b27e03cce8552bb21fc0fea40514cd87faa953bf09a6a0a27f3c2",
-    "blueprint/ch07/ch07_source.json": "27e402f2a8b9c511106df901d6cc8472e1dae783cdf739f657879ffcf297462a",
-    "BATCH09b_PAGES.pdf": "8b56f1f81ff1031f47569a1f22d504d15ee4b511eb3bddfcc10b1185842e6469"
+    "Blueprint/Ch07.lean": "f30ea154ebfb07ae85c0b806ff74b35808d5a0c3dcaa647c0c3cc80a78239e37",
+    "blueprint/ch07/ch07_source.json": "c434892ebf63b06f7cadcdfa7af408c2c12d7b645d35db431d1855224163ba19",
+    "BATCH09b_PAGES.pdf": "015064754d6b38ce0639b7aec2d36b9c175015bd0b5e5d8f690ef364e8f06757"
   },
   "page_mapping": [
     {
@@ -21,35 +21,35 @@
       "full_name": "MD.Ch07.V",
       "kind": "abbrev",
       "path": "Blueprint/Ch07.lean",
-      "line": 172,
+      "line": 188,
       "code_sha256": "7ab0ad90462b274b03f5b929b5f09417c0b397b6cb908fa6e7bd56677a314027"
     },
     {
       "full_name": "MD.Ch07.lieField",
       "kind": "def",
       "path": "Blueprint/Ch07.lean",
-      "line": 669,
+      "line": 685,
       "code_sha256": "fffca9712c7ef38e6b643a620917c274ffd6a8715c52af40909759512091e818"
     },
     {
       "full_name": "MD.Ch07.onlyEnergyIntegrals",
       "kind": "def",
       "path": "Blueprint/Ch07.lean",
-      "line": 691,
+      "line": 707,
       "code_sha256": "c67bf733805bb2a1e15f4fe1698e92392f189e01d17e1ce39bb49fc45125e6b9"
     },
     {
       "full_name": "MD.Ch07.timeReparametrizes",
       "kind": "def",
       "path": "Blueprint/Ch07.lean",
-      "line": 694,
+      "line": 710,
       "code_sha256": "0ae25b042430fbea4bf088e1dce290870a256f7a8f7fed38f63f7341c617ff88"
     },
     {
       "full_name": "MD.Ch07.geMarsdenConclusion",
       "kind": "def",
       "path": "Blueprint/Ch07.lean",
-      "line": 696,
+      "line": 712,
       "code_sha256": "535e159d6733220282422e8b0ff213cc522fd8a4962a68d23e705528498aa371"
     },
     {
@@ -124,13 +124,13 @@
   },
   "files": {
     "PASTE.txt": {
-      "bytes": 8788,
-      "sha256": "00e889dca927136873bfdc376fc6413f582d0cf01e67dd9cc40fec0c2746cb4b"
+      "bytes": 11665,
+      "sha256": "eb233469fceb11241a78a354c517eb3b32c8904f084e1bc5a89f6aa6f4cd8306"
     },
     "BATCH09b_PAGES.pdf": {
       "bytes": 73957,
-      "sha256": "8b56f1f81ff1031f47569a1f22d504d15ee4b511eb3bddfcc10b1185842e6469"
+      "sha256": "015064754d6b38ce0639b7aec2d36b9c175015bd0b5e5d8f690ef364e8f06757"
     }
   },
-  "total_task_bytes": 87486
+  "total_task_bytes": 90364
 }

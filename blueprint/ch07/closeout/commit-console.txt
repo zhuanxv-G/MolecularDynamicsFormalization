@@ -1,0 +1,91 @@
+warning: in the working copy of 'docs/handoff/WORK_LOG.zh-CN.md', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'scripts/ch07_commit_closeout.py', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'scripts/ch07_finish.py', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'scripts/ch07_section71_supplement.py', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'blueprint/ch07/validation/batches/closeout-v1.log', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'blueprint/ch07/validation/batches/finalcoverage-v1.log', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'blueprint/ch07/validation/batches/s713a-v1.log', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'blueprint/ch07/validation/batches/s713a-v2.log', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'blueprint/ch07/validation/batches/s713b-v1.log', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'blueprint/ch07/validation/batches/shortproof-v1.log', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'blueprint/ch07/validation/batches/shortproof-v2.log', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'blueprint/ch07/validation/batches/shortproof-v3.log', LF will be replaced by CRLF the next time Git touches it
+blueprint/ch07/closeout/full/blueprint_fresh_Ch02.log:166: trailing whitespace.
++  
+blueprint/ch07/closeout/full/blueprint_fresh_Ch02.log:168: trailing whitespace.
++    
+blueprint/ch07/closeout/full/lake_build.log:167: trailing whitespace.
++  
+blueprint/ch07/closeout/full/lake_build.log:169: trailing whitespace.
++    
+blueprint/ch07/closeout/full/lake_build.log:1423: trailing whitespace.
++  
+blueprint/ch07/closeout/full/lake_build.log:1425: trailing whitespace.
++    
+blueprint/ch07/closeout/full/lake_build.log:1533: trailing whitespace.
++warning: Blueprint/Ch05.lean:1982:2: Try this: 
+blueprint/ch07/closeout/full/lake_build.log:1544: trailing whitespace.
++warning: Blueprint/Ch05.lean:2053:2: Try this: 
+blueprint/ch07/closeout/full/lake_build.log:1554: trailing whitespace.
++  
+blueprint/ch07/closeout/full/lake_build.log:1556: trailing whitespace.
++    
+blueprint/ch07/closeout/full/lake_build.log:1567: trailing whitespace.
++warning: Blueprint/Ch05.lean:2263:2: Try this: 
+blueprint/ch07/closeout/full/lake_build.log:1578: trailing whitespace.
++warning: Blueprint/Ch05.lean:2377:2: Try this: 
+blueprint/ch07/closeout/full/lake_build.log:1586: trailing whitespace.
++warning: Blueprint/Ch05.lean:2419:2: Try this: 
+blueprint/ch07/closeout/full/lake_build.log:2602: trailing whitespace.
++  
+blueprint/ch07/closeout/full/lake_build.log:2604: trailing whitespace.
++    
+blueprint/ch07/closeout/full/lake_build.log:2609: trailing whitespace.
++  
+blueprint/ch07/closeout/full/lake_build.log:2611: trailing whitespace.
++    
+blueprint/ch07/closeout/full/lake_build.log:2615: trailing whitespace.
++  
+blueprint/ch07/closeout/full/lake_build.log:2617: trailing whitespace.
++    
+blueprint/ch07/closeout/full/lake_build.log:2622: trailing whitespace.
++  
+blueprint/ch07/closeout/full/lake_build.log:2624: trailing whitespace.
++    
+blueprint/ch07/closeout/full/lake_build.log:2628: trailing whitespace.
++  
+blueprint/ch07/closeout/full/lake_build.log:2630: trailing whitespace.
++    
+blueprint/ch07/closeout/full/lake_build.log:2635: trailing whitespace.
++warning: Blueprint/Ch06.lean:82:2: Try this: 
+blueprint/ch07/closeout/full/lake_build.log:2643: trailing whitespace.
++warning: Blueprint/Ch06.lean:83:2: Try this: 
+blueprint/ch07/closeout/full/lake_build.log:2853: trailing whitespace.
++warning: Blueprint/Ch06.lean:3388:2: Try this: 
+blueprint/ch07/closeout/full/lake_build.log:2861: trailing whitespace.
++warning: Blueprint/Ch06.lean:3389:2: Try this: 
+blueprint/ch07/closeout/full/lake_build.log:2887: trailing whitespace.
++warning: Blueprint/Ch06.lean:3426:2: Try this: 
+blueprint/ch07/closeout/full/lake_build.log:2895: trailing whitespace.
++warning: Blueprint/Ch06.lean:3427:2: Try this: 
+blueprint/ch07/validation/batches/shortproof-v1.log:97: trailing whitespace.
++  
+blueprint/ch07/validation/batches/shortproof-v1.log:99: trailing whitespace.
++    
+blueprint/ch07/validation/batches/shortproof-v1.log:128: trailing whitespace.
++  
+blueprint/ch07/validation/batches/shortproof-v1.log:130: trailing whitespace.
++    
+blueprint/ch07/validation/batches/shortproof-v2.log:103: trailing whitespace.
++  
+blueprint/ch07/validation/batches/shortproof-v2.log:105: trailing whitespace.
++    
+docs/review/CH07_ERRATA.zh-CN.md:386: new blank line at EOF.
+Traceback (most recent call last):
+  File "C:\Users\ustc\Desktop\formal math\MolecularDynamicsFormalization\scripts\ch07_commit_closeout.py", line 19, in <module>
+    subprocess.run(['git','diff','--cached','--check'],cwd=ROOT,check=True)
+    ~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Python313\Lib\subprocess.py", line 577, in run
+    raise CalledProcessError(retcode, process.args,
+                             output=stdout, stderr=stderr)
+subprocess.CalledProcessError: Command '['git', 'diff', '--cached', '--check']' returned non-zero exit status 2.

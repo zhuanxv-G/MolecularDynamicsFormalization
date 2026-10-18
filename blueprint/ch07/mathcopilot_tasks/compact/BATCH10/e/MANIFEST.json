@@ -5,9 +5,9 @@
     "MD-7.7.1-TaylorRemainder"
   ],
   "input_sha256": {
-    "Blueprint/Ch07.lean": "03e34bf86a5b27e03cce8552bb21fc0fea40514cd87faa953bf09a6a0a27f3c2",
-    "blueprint/ch07/ch07_source.json": "27e402f2a8b9c511106df901d6cc8472e1dae783cdf739f657879ffcf297462a",
-    "BATCH10e_PAGES.pdf": "7d216203b45b8b510043d8f27850fc1840fd5c11fcbe2719b8e1fc92fed4a861"
+    "Blueprint/Ch07.lean": "f30ea154ebfb07ae85c0b806ff74b35808d5a0c3dcaa647c0c3cc80a78239e37",
+    "blueprint/ch07/ch07_source.json": "c434892ebf63b06f7cadcdfa7af408c2c12d7b645d35db431d1855224163ba19",
+    "BATCH10e_PAGES.pdf": "3ae62c65ee974716d9ca9d959e12bcbdc633d1bd1e3b88ebeeef60a3b05abf3b"
   },
   "page_mapping": [
     {
@@ -26,14 +26,14 @@
       "full_name": "MD.Ch07.taylorRemainder",
       "kind": "theorem",
       "path": "Blueprint/Ch07.lean",
-      "line": 791,
+      "line": 807,
       "code_sha256": "c95d6c314ee1e516c42a45fa2a08e74197e85cb4408d51ae9e1d628569fc0812"
     },
     {
       "full_name": "MD.Ch07.taylorRemainder_bound",
       "kind": "theorem",
       "path": "Blueprint/Ch07.lean",
-      "line": 795,
+      "line": 811,
       "code_sha256": "819b68485b06f090dc5f3a4424192db23e3bd15921d0256f96deef6ed11f0819"
     }
   ],
@@ -45,13 +45,13 @@
   },
   "files": {
     "PASTE.txt": {
-      "bytes": 4477,
-      "sha256": "b9a41c4ffafbabef990d29b4a70804b1e9f7a6470dfca8b9ff53789a4d2db7bb"
+      "bytes": 8900,
+      "sha256": "181d37e1a34d99b683d33066ff97a9d9841a7dedfd70ff8c4b97ea78c20dbaea"
     },
     "BATCH10e_PAGES.pdf": {
       "bytes": 83876,
-      "sha256": "7d216203b45b8b510043d8f27850fc1840fd5c11fcbe2719b8e1fc92fed4a861"
+      "sha256": "3ae62c65ee974716d9ca9d959e12bcbdc633d1bd1e3b88ebeeef60a3b05abf3b"
     }
   },
-  "total_task_bytes": 90039
+  "total_task_bytes": 94462
 }

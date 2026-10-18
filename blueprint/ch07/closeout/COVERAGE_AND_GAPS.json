@@ -1,0 +1,3060 @@
+{
+  "body_sections": "7.1–7.13",
+  "body_pdf_pages": [
+    282,
+    347
+  ],
+  "excluded": "Exercises及参考文献；实验图表和经验数值结果见excluded_qualitative.json",
+  "all_source_items_registered": true,
+  "all_mathematical_claims_fully_proved": false,
+  "formula_numbers": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10,
+    11,
+    12,
+    13,
+    14,
+    15,
+    16,
+    17,
+    18,
+    19,
+    20,
+    21,
+    22,
+    23,
+    24,
+    25,
+    26,
+    27,
+    28,
+    29,
+    30,
+    31,
+    32,
+    33,
+    34,
+    35,
+    36,
+    37,
+    38,
+    39,
+    40,
+    41,
+    42,
+    43,
+    44,
+    45,
+    46,
+    47,
+    48,
+    49
+  ],
+  "declarations": [
+    {
+      "source_id": "MD-7.1-Bias",
+      "name": "MD.Ch07.bias",
+      "kind": "def",
+      "status": "定义或记号"
+    },
+    {
+      "source_id": "MD-7.2-ScalarSDE",
+      "name": "MD.Ch07.scalarSDE",
+      "kind": "def",
+      "status": "定义或记号"
+    },
+    {
+      "source_id": "MD-7.2-EulerMaruyama",
+      "name": "MD.Ch07.eulerMaruyamaStep",
+      "kind": "def",
+      "status": "定义或记号"
+    },
+    {
+      "source_id": "MD-7.2-EulerMaruyama",
+      "name": "MD.Ch07.standardNormalSequence",
+      "kind": "def",
+      "status": "定义或记号"
+    },
+    {
+      "source_id": "MD-7.2-EulerMaruyama",
+      "name": "MD.Ch07.eulerMaruyama",
+      "kind": "def",
+      "status": "定义或记号"
+    },
+    {
+      "source_id": "MD-7.2-SDEIncrement",
+      "name": "MD.Ch07.sdeIncrement",
+      "kind": "theorem",
+      "status": "未证"
+    },
+    {
+      "source_id": "MD-7.2-StrongError",
+      "name": "MD.Ch07.strongError",
+      "kind": "def",
+      "status": "定义或记号"
+    },
+    {
+      "source_id": "MD-7.2-MeanErrorExpectation",
+      "name": "MD.Ch07.meanErrorExpectation",
+      "kind": "theorem",
+      "status": "已证"
+    },
+    {
+      "source_id": "MD-7.2-MeanErrorExpectation",
+      "name": "MD.Ch07.meanSquareError",
+      "kind": "def",
+      "status": "定义或记号"
+    },
+    {
+      "source_id": "MD-7.2-StrongOrder",
+      "name": "MD.Ch07.hasStrongOrder",
+      "kind": "def",
+      "status": "定义或记号"
+    },
+    {
+      "source_id": "MD-7.2-WeakError",
+      "name": "MD.Ch07.weakError",
+      "kind": "def",
+      "status": "定义或记号"
+    },
+    {
+      "source_id": "MD-7.2-WeakError",
+      "name": "MD.Ch07.hasWeakOrder",
+      "kind": "def",
+      "status": "定义或记号"
+    },
+    {
+      "source_id": "MD-7.2-StrongWeakComparison",
+      "name": "MD.Ch07.strongWeakLipschitz",
+      "kind": "theorem",
+      "status": "已证"
+    },
+    {
+      "source_id": "MD-7.2-StrongWeakComparison",
+      "name": "MD.Ch07.weakDoesNotImplyStrong",
+      "kind": "theorem",
+      "status": "已证"
+    },
+    {
+      "source_id": "MD-7.2-CanonicalAverage",
+      "name": "MD.Ch07.densityWithPartition",
+      "kind": "def",
+      "status": "定义或记号"
+    },
+    {
+      "source_id": "MD-7.2-CanonicalAverage",
+      "name": "MD.Ch07.canonicalAverage",
+      "kind": "def",
+      "status": "定义或记号"
+    },
+    {
+      "source_id": "MD-7.2-CanonicalAverage",
+      "name": "MD.Ch07.probabilityDensity",
+      "kind": "def",
+      "status": "定义或记号"
+    },
+    {
+      "source_id": "MD-7.2-PartitionPrinted",
+      "name": "MD.Ch07.partitionPrinted",
+      "kind": "theorem",
+      "status": "未证"
+    },
+    {
+      "source_id": "MD-7.2-PartitionPrinted",
+      "name": "MD.Ch07.partitionPrinted_counterexample",
+      "kind": "theorem",
+      "status": "已证"
+    },
+    {
+      "source_id": "MD-7.2-PartitionPrinted",
+      "name": "MD.Ch07.partitionPrinted_corrected",
+      "kind": "theorem",
+      "status": "已证"
+    },
+    {
+      "source_id": "MD-7.2-AverageNotationBias",
+      "name": "MD.Ch07.observableBias",
+      "kind": "def",
+      "status": "定义或记号"
+    },
+    {
+      "source_id": "MD-7.2-AverageNotationBias",
+      "name": "MD.Ch07.bias_nonnegative",
+      "kind": "theorem",
+      "status": "已证"
+    },
+    {
+      "source_id": "MD-7.3-VectorOU",
+      "name": "MD.Ch07.V",
+      "kind": "abbrev",
+      "status": "定义或记号"
+    },
+    {
+      "source_id": "MD-7.3-VectorOU",
+      "name": "MD.Ch07.Phase",
+      "kind": "abbrev",
+      "status": "定义或记号"
+    },
+    {
+      "source_id": "MD-7.3-VectorOU",
+      "name": "MD.Ch07.vectorWiener",
+      "kind": "def",
+      "status": "定义或记号"
+    },
+    {
+      "source_id": "MD-7.3-VectorOU",
+      "name": "MD.Ch07.momentumOU",
+      "kind": "def",
+      "status": "定义或记号"
+    },
+    {
+      "source_id": "MD-7.3-OUIntegratingFactor",
+      "name": "MD.Ch07.ouIntegratingFactor",
+      "kind": "theorem",
+      "status": "未证"
+    },
+    {
+      "source_id": "MD-7.3-OUExactUpdate",
+      "name": "MD.Ch07.ouMomentum",
+      "kind": "def",
+      "status": "定义或记号"
+    },
+    {
+      "source_id": "MD-7.3-OUExactUpdate",
+      "name": "MD.Ch07.ouTransitionLaw",
+      "kind": "theorem",
+      "status": "未证"
+    },
+    {
+      "source_id": "MD-7.3-OUPhaseIteration",
+      "name": "MD.Ch07.ouStep",
+      "kind": "def",
+      "status": "定义或记号"
+    },
+    {
+      "source_id": "MD-7.3-OUPhaseIteration",
+      "name": "MD.Ch07.vectorNormalSequence",
+      "kind": "def",
+      "status": "定义或记号"
+    },
+    {
+      "source_id": "MD-7.3-OUForward",
+      "name": "MD.Ch07.coordDerivative",
+      "kind": "def",
+      "status": "定义或记号"
+    },
+    {
+      "source_id": "MD-7.3-OUForward",
+      "name": "MD.Ch07.ouForward",
+      "kind": "def",
+      "status": "定义或记号"
+    },
+    {
+      "source_id": "MD-7.3-OUForward",
+      "name": "MD.Ch07.ouBackward",
+      "kind": "def",
+      "status": "定义或记号"
+    },
+    {
+      "source_id": "MD-7.3-OUForward",
+      "name": "MD.Ch07.ouForward_adjoint",
+      "kind": "theorem",
+      "status": "未证"
+    },
+    {
+      "source_id": "MD-7.3-OUGaussianInvariant",
+      "name": "MD.Ch07.ouGaussianInvariant",
+      "kind": "theorem",
+      "status": "未证"
+    },
+    {
+      "source_id": "MD-7.3.1-Langevin",
+      "name": "MD.Ch07.gradient",
+      "kind": "def",
+      "status": "定义或记号"
+    },
+    {
+      "source_id": "MD-7.3.1-Langevin",
+      "name": "MD.Ch07.langevin",
+      "kind": "def",
+      "status": "定义或记号"
+    },
+    {
+      "source_id": "MD-7.3.1-HamiltonianGibbs",
+      "name": "MD.Ch07.hamiltonianGibbs",
+      "kind": "theorem",
+      "status": "未证"
+    },
+    {
+      "source_id": "MD-7.3.1-ABOPieces",
+      "name": "MD.Ch07.driftStep",
+      "kind": "def",
+      "status": "定义或记号"
+    },
+    {
+      "source_id": "MD-7.3.1-ABOPieces",
+      "name": "MD.Ch07.kickStep",
+      "kind": "def",
+      "status": "定义或记号"
+    },
+    {
+      "source_id": "MD-7.3.1-ABOPieces",
+      "name": "MD.Ch07.aField",
+      "kind": "def",
+      "status": "定义或记号"
+    },
+    {
+      "source_id": "MD-7.3.1-ABOPieces",
+      "name": "MD.Ch07.bField",
+      "kind": "def",
+      "status": "定义或记号"
+    },
+    {
+      "source_id": "MD-7.3.1-ABOPieces",
+      "name": "MD.Ch07.oDrift",
+      "kind": "def",
+      "status": "定义或记号"
+    },
+    {
+      "source_id": "MD-7.3.1-ABOPieces",
+      "name": "MD.Ch07.splittingDrift",
+      "kind": "theorem",
+      "status": "已证"
+    },
+    {
+      "source_id": "MD-7.3.1-ABExactFlows",
+      "name": "MD.Ch07.driftStep_derivative",
+      "kind": "theorem",
+      "status": "已证"
+    },
+    {
+      "source_id": "MD-7.3.1-ABExactFlows",
+      "name": "MD.Ch07.kickStep_derivative",
+      "kind": "theorem",
+      "status": "未证"
+    },
+    {
+      "source_id": "MD-7.3.1-ABForward",
+      "name": "MD.Ch07.aForward",
+      "kind": "def",
+      "status": "定义或记号"
+    },
+    {
+      "source_id": "MD-7.3.1-ABForward",
+      "name": "MD.Ch07.bForward",
+      "kind": "def",
+      "status": "定义或记号"
+    },
+    {
+      "source_id": "MD-7.3.1-ABOBABO",
+      "name": "MD.Ch07.abo",
+      "kind": "def",
+      "status": "定义或记号"
+    },
+    {
+      "source_id": "MD-7.3.1-ABOBABO",
+      "name": "MD.Ch07.babo",
+      "kind": "def",
+      "status": "定义或记号"
+    },
+    {
+      "source_id": "MD-7.3.1-WordConvention",
+      "name": "MD.Ch07.oabaobaoPrinted",
+      "kind": "def",
+      "status": "定义或记号"
+    },
+    {
+      "source_id": "MD-7.3.1-WordConvention",
+      "name": "MD.Ch07.oabaobaoPrinted_corrected",
+      "kind": "def",
+      "status": "定义或记号"
+    },
+    {
+      "source_id": "MD-7.3.1-WordConvention",
+      "name": "MD.Ch07.oabaobaoCount",
+      "kind": "theorem",
+      "status": "已证"
+    },
+    {
+      "source_id": "MD-7.3.1-SixSchemes",
+      "name": "MD.Ch07.abao",
+      "kind": "def",
+      "status": "定义或记号"
+    },
+    {
+      "source_id": "MD-7.3.1-SixSchemes",
+      "name": "MD.Ch07.aboba",
+      "kind": "def",
+      "status": "定义或记号"
+    },
+    {
+      "source_id": "MD-7.3.1-SixSchemes",
+      "name": "MD.Ch07.baoab",
+      "kind": "def",
+      "status": "定义或记号"
+    },
+    {
+      "source_id": "MD-7.3.1-SixSchemes",
+      "name": "MD.Ch07.oabao",
+      "kind": "def",
+      "status": "定义或记号"
+    },
+    {
+      "source_id": "MD-7.3.1-SixSchemes",
+      "name": "MD.Ch07.obabo",
+      "kind": "def",
+      "status": "定义或记号"
+    },
+    {
+      "source_id": "MD-7.3.1-ConjugateIteration",
+      "name": "MD.Ch07.compositionIterate",
+      "kind": "theorem",
+      "status": "已证"
+    },
+    {
+      "source_id": "MD-7.3.1-ConjugateIteration",
+      "name": "MD.Ch07.oaba",
+      "kind": "def",
+      "status": "定义或记号"
+    },
+    {
+      "source_id": "MD-7.3.2-SPVPrinted",
+      "name": "MD.Ch07.spvPrinted",
+      "kind": "def",
+      "status": "定义或记号"
+    },
+    {
+      "source_id": "MD-7.3.2-SPVPrinted",
+      "name": "MD.Ch07.spvPrinted_corrected",
+      "kind": "def",
+      "status": "定义或记号"
+    },
+    {
+      "source_id": "MD-7.3.2-SPVLargeFriction",
+      "name": "MD.Ch07.spvEtaLimit",
+      "kind": "theorem",
+      "status": "未证"
+    },
+    {
+      "source_id": "MD-7.3.2-BBK",
+      "name": "MD.Ch07.bbk",
+      "kind": "def",
+      "status": "定义或记号"
+    },
+    {
+      "source_id": "MD-7.3.2-BBK",
+      "name": "MD.Ch07.bbkSameNoise",
+      "kind": "def",
+      "status": "定义或记号"
+    },
+    {
+      "source_id": "MD-7.4-HarmonicHamiltonian",
+      "name": "MD.Ch07.harmonicHamiltonian",
+      "kind": "def",
+      "status": "定义或记号"
+    },
+    {
+      "source_id": "MD-7.4-HarmonicHamiltonian",
+      "name": "MD.Ch07.harmonicLaw",
+      "kind": "def",
+      "status": "定义或记号"
+    },
+    {
+      "source_id": "MD-7.4-HarmonicMoments",
+      "name": "MD.Ch07.harmonicMoments",
+      "kind": "theorem",
+      "status": "未证"
+    },
+    {
+      "source_id": "MD-7.4-LinearIteration",
+      "name": "MD.Ch07.linearUpdate",
+      "kind": "def",
+      "status": "定义或记号"
+    },
+    {
+      "source_id": "MD-7.4-LinearIteration",
+      "name": "MD.Ch07.momentQ",
+      "kind": "def",
+      "status": "定义或记号"
+    },
+    {
+      "source_id": "MD-7.4-LinearIteration",
+      "name": "MD.Ch07.momentP",
+      "kind": "def",
+      "status": "定义或记号"
+    },
+    {
+      "source_id": "MD-7.4-LinearIteration",
+      "name": "MD.Ch07.momentQP",
+      "kind": "def",
+      "status": "定义或记号"
+    },
+    {
+      "source_id": "MD-7.4-BBKLinearForm",
+      "name": "MD.Ch07.bbkMatrix",
+      "kind": "def",
+      "status": "定义或记号"
+    },
+    {
+      "source_id": "MD-7.4-BBKLinearForm",
+      "name": "MD.Ch07.bbkNoise",
+      "kind": "def",
+      "status": "定义或记号"
+    },
+    {
+      "source_id": "MD-7.4-QuadraticProducts",
+      "name": "MD.Ch07.quadraticProducts",
+      "kind": "theorem",
+      "status": "已证"
+    },
+    {
+      "source_id": "MD-7.4.1-StationaryMomentSystem",
+      "name": "MD.Ch07.momentSystem",
+      "kind": "def",
+      "status": "定义或记号"
+    },
+    {
+      "source_id": "MD-7.4.1-StationaryMomentSystem",
+      "name": "MD.Ch07.invariantLinearLaw",
+      "kind": "def",
+      "status": "定义或记号"
+    },
+    {
+      "source_id": "MD-7.4.1-StationaryMomentSystem",
+      "name": "MD.Ch07.stationaryMomentSystem",
+      "kind": "theorem",
+      "status": "未证"
+    },
+    {
+      "source_id": "MD-7.4.1-ABOHarmonic",
+      "name": "MD.Ch07.aboHarmonic",
+      "kind": "def",
+      "status": "定义或记号"
+    },
+    {
+      "source_id": "MD-7.4.1-ABOHarmonic",
+      "name": "MD.Ch07.aboStationaryMean",
+      "kind": "theorem",
+      "status": "未证"
+    },
+    {
+      "source_id": "MD-7.4.1-ABOVariance",
+      "name": "MD.Ch07.aboVarianceRatio",
+      "kind": "def",
+      "status": "定义或记号"
+    },
+    {
+      "source_id": "MD-7.4.1-ABOVariance",
+      "name": "MD.Ch07.aboVarianceRatio_expansion",
+      "kind": "theorem",
+      "status": "未证"
+    },
+    {
+      "source_id": "MD-7.4.1-ABOVariance",
+      "name": "MD.Ch07.aboStationaryVariance",
+      "kind": "theorem",
+      "status": "未证"
+    },
+    {
+      "source_id": "MD-7.4.1-Table71",
+      "name": "MD.Ch07.scalarLift",
+      "kind": "def",
+      "status": "定义或记号"
+    },
+    {
+      "source_id": "MD-7.4.1-Table71",
+      "name": "MD.Ch07.symmetricHarmonicStep",
+      "kind": "def",
+      "status": "定义或记号"
+    },
+    {
+      "source_id": "MD-7.4.1-Table71",
+      "name": "MD.Ch07.symmetricInvariant",
+      "kind": "def",
+      "status": "定义或记号"
+    },
+    {
+      "source_id": "MD-7.4.1-Table71",
+      "name": "MD.Ch07.table71",
+      "kind": "theorem",
+      "status": "未证"
+    },
+    {
+      "source_id": "MD-7.4.1-NonsymmetricExactMoments",
+      "name": "MD.Ch07.nonsymmetricHarmonicStep",
+      "kind": "def",
+      "status": "定义或记号"
+    },
+    {
+      "source_id": "MD-7.4.1-NonsymmetricExactMoments",
+      "name": "MD.Ch07.nonsymmetricExactMoments",
+      "kind": "theorem",
+      "status": "未证"
+    },
+    {
+      "source_id": "MD-7.4.2-BBKStar",
+      "name": "MD.Ch07.bbkStarTrajectory",
+      "kind": "def",
+      "status": "定义或记号"
+    },
+    {
+      "source_id": "MD-7.4.2-BBKStar",
+      "name": "MD.Ch07.bbkStarNoise",
+      "kind": "def",
+      "status": "定义或记号"
+    },
+    {
+      "source_id": "MD-7.4.2-BBKStarCorrelations",
+      "name": "MD.Ch07.bbkStarCorrelations",
+      "kind": "theorem",
+      "status": "未证"
+    },
+    {
+      "source_id": "MD-7.4.2-BBKStarMomentSystemPrinted",
+      "name": "MD.Ch07.bbkStarMomentSystemPrinted",
+      "kind": "def",
+      "status": "定义或记号"
+    },
+    {
+      "source_id": "MD-7.4.2-BBKStarMomentSystemPrinted",
+      "name": "MD.Ch07.bbkStarMomentSystemPrinted_corrected",
+      "kind": "def",
+      "status": "定义或记号"
+    },
+    {
+      "source_id": "MD-7.4.2-BBKStarMomentSystemPrinted",
+      "name": "MD.Ch07.bbkStarExtraFactor_counterexample",
+      "kind": "theorem",
+      "status": "已证"
+    },
+    {
+      "source_id": "MD-7.4.2-BBKStarStationary",
+      "name": "MD.Ch07.bbkStarStationaryAlgebra",
+      "kind": "theorem",
+      "status": "未证"
+    },
+    {
+      "source_id": "MD-7.5-PerturbedHamiltonian",
+      "name": "MD.Ch07.perturbedPotential",
+      "kind": "def",
+      "status": "定义或记号"
+    },
+    {
+      "source_id": "MD-7.5-PerturbedHamiltonian",
+      "name": "MD.Ch07.perturbedHamiltonian",
+      "kind": "def",
+      "status": "定义或记号"
+    },
+    {
+      "source_id": "MD-7.5-PerturbedHamiltonian",
+      "name": "MD.Ch07.perturbedGibbs",
+      "kind": "def",
+      "status": "定义或记号"
+    },
+    {
+      "source_id": "MD-7.5-PerturbedHamiltonian",
+      "name": "MD.Ch07.perturbedStep",
+      "kind": "def",
+      "status": "定义或记号"
+    },
+    {
+      "source_id": "MD-7.5-PerturbedHamiltonian",
+      "name": "MD.Ch07.perturbedStationary",
+      "kind": "def",
+      "status": "定义或记号"
+    },
+    {
+      "source_id": "MD-7.5-PerturbedErrorExpansion",
+      "name": "MD.Ch07.perturbedLeading",
+      "kind": "def",
+      "status": "定义或记号"
+    },
+    {
+      "source_id": "MD-7.5-PerturbedErrorExpansion",
+      "name": "MD.Ch07.perturbedRemainder",
+      "kind": "def",
+      "status": "定义或记号"
+    },
+    {
+      "source_id": "MD-7.5-PerturbedErrorExpansion",
+      "name": "MD.Ch07.positivePairLimit",
+      "kind": "def",
+      "status": "定义或记号"
+    },
+    {
+      "source_id": "MD-7.5-PerturbedErrorExpansion",
+      "name": "MD.Ch07.perturbedErrorExpansion",
+      "kind": "theorem",
+      "status": "未证"
+    },
+    {
+      "source_id": "MD-7.5-PerturbedErrorOrders",
+      "name": "MD.Ch07.perturbedErrorScale",
+      "kind": "def",
+      "status": "定义或记号"
+    },
+    {
+      "source_id": "MD-7.5-PerturbedErrorOrders",
+      "name": "MD.Ch07.perturbedErrorOrders",
+      "kind": "theorem",
+      "status": "未证"
+    },
+    {
+      "source_id": "MD-7.5-PerturbedErrorOrders",
+      "name": "MD.Ch07.baoabLeading_largeFriction",
+      "kind": "theorem",
+      "status": "未证"
+    },
+    {
+      "source_id": "MD-7.6-GibbsComposition",
+      "name": "MD.Ch07.gibbsComposition",
+      "kind": "theorem",
+      "status": "已证"
+    },
+    {
+      "source_id": "MD-7.6-DivergenceFreeInvariant",
+      "name": "MD.Ch07.lieField",
+      "kind": "def",
+      "status": "定义或记号"
+    },
+    {
+      "source_id": "MD-7.6-DivergenceFreeInvariant",
+      "name": "MD.Ch07.divergenceField",
+      "kind": "def",
+      "status": "定义或记号"
+    },
+    {
+      "source_id": "MD-7.6-DivergenceFreeInvariant",
+      "name": "MD.Ch07.forwardField",
+      "kind": "def",
+      "status": "定义或记号"
+    },
+    {
+      "source_id": "MD-7.6-DivergenceFreeInvariant",
+      "name": "MD.Ch07.divergenceFreeInvariant",
+      "kind": "theorem",
+      "status": "未证"
+    },
+    {
+      "source_id": "MD-7.6-DivergenceFreeInvariant",
+      "name": "MD.Ch07.firstIntegral_density",
+      "kind": "theorem",
+      "status": "已证"
+    },
+    {
+      "source_id": "MD-7.6-GeMarsdenRestriction",
+      "name": "MD.Ch07.onlyEnergyIntegrals",
+      "kind": "def",
+      "status": "定义或记号"
+    },
+    {
+      "source_id": "MD-7.6-GeMarsdenRestriction",
+      "name": "MD.Ch07.timeReparametrizes",
+      "kind": "def",
+      "status": "定义或记号"
+    },
+    {
+      "source_id": "MD-7.6-GeMarsdenRestriction",
+      "name": "MD.Ch07.geMarsdenConclusion",
+      "kind": "def",
+      "status": "定义或记号"
+    },
+    {
+      "source_id": "MD-7.6-JSplitting",
+      "name": "MD.Ch07.jField",
+      "kind": "def",
+      "status": "定义或记号"
+    },
+    {
+      "source_id": "MD-7.6-JSplitting",
+      "name": "MD.Ch07.jSplitting_energy",
+      "kind": "theorem",
+      "status": "未证"
+    },
+    {
+      "source_id": "MD-7.6-JSplitting",
+      "name": "MD.Ch07.composition_preservesEnergy",
+      "kind": "theorem",
+      "status": "已证"
+    },
+    {
+      "source_id": "MD-7.6-CoordinateJSplitting",
+      "name": "MD.Ch07.coordinateJField",
+      "kind": "def",
+      "status": "定义或记号"
+    },
+    {
+      "source_id": "MD-7.6-CoordinateJSplitting",
+      "name": "MD.Ch07.frozenPotential",
+      "kind": "def",
+      "status": "定义或记号"
+    },
+    {
+      "source_id": "MD-7.7-ModifiedGenerator",
+      "name": "MD.Ch07.formalModifiedGenerator",
+      "kind": "def",
+      "status": "定义或记号"
+    },
+    {
+      "source_id": "MD-7.7-ModifiedGenerator",
+      "name": "MD.Ch07.formalGeneratorExpansion",
+      "kind": "def",
+      "status": "定义或记号"
+    },
+    {
+      "source_id": "MD-7.7-InvariantDensityExpansion",
+      "name": "MD.Ch07.densityExpansion",
+      "kind": "def",
+      "status": "定义或记号"
+    },
+    {
+      "source_id": "MD-7.7-InvariantDensityExpansion",
+      "name": "MD.Ch07.centeredCorrections",
+      "kind": "def",
+      "status": "定义或记号"
+    },
+    {
+      "source_id": "MD-7.7-InvariantDensityExpansion",
+      "name": "MD.Ch07.computedAverage",
+      "kind": "def",
+      "status": "定义或记号"
+    },
+    {
+      "source_id": "MD-7.7-InvariantDensityExpansion",
+      "name": "MD.Ch07.densityExpansion_zeroMass",
+      "kind": "theorem",
+      "status": "已证"
+    },
+    {
+      "source_id": "MD-7.7.1-ExactABOPropagators",
+      "name": "MD.Ch07.propagateA",
+      "kind": "def",
+      "status": "定义或记号"
+    },
+    {
+      "source_id": "MD-7.7.1-ExactABOPropagators",
+      "name": "MD.Ch07.propagateB",
+      "kind": "def",
+      "status": "定义或记号"
+    },
+    {
+      "source_id": "MD-7.7.1-ExactABOPropagators",
+      "name": "MD.Ch07.propagateO",
+      "kind": "def",
+      "status": "定义或记号"
+    },
+    {
+      "source_id": "MD-7.7.1-OperatorOrderReversal",
+      "name": "MD.Ch07.pullback_order",
+      "kind": "theorem",
+      "status": "已证"
+    },
+    {
+      "source_id": "MD-7.7.1-OperatorOrderReversal",
+      "name": "MD.Ch07.abaoBackward",
+      "kind": "def",
+      "status": "定义或记号"
+    },
+    {
+      "source_id": "MD-7.7.1-StationaryModifiedPDE",
+      "name": "MD.Ch07.formalDensityEvolution",
+      "kind": "def",
+      "status": "定义或记号"
+    },
+    {
+      "source_id": "MD-7.7.1-StationaryModifiedPDE",
+      "name": "MD.Ch07.stationaryModifiedDensity",
+      "kind": "def",
+      "status": "定义或记号"
+    },
+    {
+      "source_id": "MD-7.7.1-TwoOperatorBCH",
+      "name": "MD.Ch07.comm",
+      "kind": "def",
+      "status": "定义或记号"
+    },
+    {
+      "source_id": "MD-7.7.1-TwoOperatorBCH",
+      "name": "MD.Ch07.twoStage",
+      "kind": "def",
+      "status": "定义或记号"
+    },
+    {
+      "source_id": "MD-7.7.1-TwoOperatorBCH",
+      "name": "MD.Ch07.twoOperatorBCH",
+      "kind": "theorem",
+      "status": "未证"
+    },
+    {
+      "source_id": "MD-7.7.1-TaylorRemainder",
+      "name": "MD.Ch07.taylorRemainder",
+      "kind": "theorem",
+      "status": "未证"
+    },
+    {
+      "source_id": "MD-7.7.1-TaylorRemainder",
+      "name": "MD.Ch07.taylorRemainder_bound",
+      "kind": "theorem",
+      "status": "未证"
+    },
+    {
+      "source_id": "MD-7.7.2-ThreeOperatorBCH",
+      "name": "MD.Ch07.threeStage",
+      "kind": "def",
+      "status": "定义或记号"
+    },
+    {
+      "source_id": "MD-7.7.2-ThreeOperatorBCH",
+      "name": "MD.Ch07.threeOperatorBCH",
+      "kind": "theorem",
+      "status": "未证"
+    },
+    {
+      "source_id": "MD-7.7.2-ScalarForwardOperators",
+      "name": "MD.Ch07.Density1",
+      "kind": "abbrev",
+      "status": "定义或记号"
+    },
+    {
+      "source_id": "MD-7.7.2-ScalarForwardOperators",
+      "name": "MD.Ch07.dq",
+      "kind": "def",
+      "status": "定义或记号"
+    },
+    {
+      "source_id": "MD-7.7.2-ScalarForwardOperators",
+      "name": "MD.Ch07.dp",
+      "kind": "def",
+      "status": "定义或记号"
+    },
+    {
+      "source_id": "MD-7.7.2-ScalarForwardOperators",
+      "name": "MD.Ch07.opA",
+      "kind": "def",
+      "status": "定义或记号"
+    },
+    {
+      "source_id": "MD-7.7.2-ScalarForwardOperators",
+      "name": "MD.Ch07.opB",
+      "kind": "def",
+      "status": "定义或记号"
+    },
+    {
+      "source_id": "MD-7.7.2-ScalarForwardOperators",
+      "name": "MD.Ch07.opO",
+      "kind": "def",
+      "status": "定义或记号"
+    },
+    {
+      "source_id": "MD-7.7.2-ScalarForwardOperators",
+      "name": "MD.Ch07.opLD",
+      "kind": "def",
+      "status": "定义或记号"
+    },
+    {
+      "source_id": "MD-7.7.2-ScalarForwardOperators",
+      "name": "MD.Ch07.opComm",
+      "kind": "def",
+      "status": "定义或记号"
+    },
+    {
+      "source_id": "MD-7.7.2-CommutatorAB",
+      "name": "MD.Ch07.commutatorAB",
+      "kind": "theorem",
+      "status": "未证"
+    },
+    {
+      "source_id": "MD-7.7.2-CommutatorsAOBO",
+      "name": "MD.Ch07.commutatorsAOBO",
+      "kind": "theorem",
+      "status": "未证"
+    },
+    {
+      "source_id": "MD-7.7.2-OBAModifiedOperator",
+      "name": "MD.Ch07.obaFirstCorrection",
+      "kind": "def",
+      "status": "定义或记号"
+    },
+    {
+      "source_id": "MD-7.7.2-OBAModifiedOperator",
+      "name": "MD.Ch07.obaFirstCorrection_commutators",
+      "kind": "theorem",
+      "status": "未证"
+    },
+    {
+      "source_id": "MD-7.7.2-SpectralQualification",
+      "name": "MD.Ch07.simpleEigenvalue",
+      "kind": "def",
+      "status": "定义或记号"
+    },
+    {
+      "source_id": "MD-7.7.2-SpectralQualification",
+      "name": "MD.Ch07.printedSpectralConclusion",
+      "kind": "def",
+      "status": "定义或记号"
+    },
+    {
+      "source_id": "MD-7.7.2-SpectralQualification",
+      "name": "MD.Ch07.spectralConclusionPrinted",
+      "kind": "def",
+      "status": "定义或记号"
+    },
+    {
+      "source_id": "MD-7.7.2-SpectralQualification",
+      "name": "MD.Ch07.spectralConclusionPrinted_corrected",
+      "kind": "def",
+      "status": "定义或记号"
+    },
+    {
+      "source_id": "MD-7.7.3-PerturbationCoefficientEquation",
+      "name": "MD.Ch07.actionCoefficient",
+      "kind": "def",
+      "status": "定义或记号"
+    },
+    {
+      "source_id": "MD-7.7.3-PerturbationCoefficientEquation",
+      "name": "MD.Ch07.perturbationCoefficientEquation",
+      "kind": "theorem",
+      "status": "已证"
+    },
+    {
+      "source_id": "MD-7.7.3-ObservableCorrectionExpansion",
+      "name": "MD.Ch07.observableCorrectionExpansion",
+      "kind": "theorem",
+      "status": "已证"
+    },
+    {
+      "source_id": "MD-7.7.3-PerturbativeSolvabilityCaution",
+      "name": "MD.Ch07.correctionSolvable",
+      "kind": "def",
+      "status": "定义或记号"
+    },
+    {
+      "source_id": "MD-7.8-FirstOrderOperator",
+      "name": "MD.Ch07.firstOrderOperator",
+      "kind": "def",
+      "status": "定义或记号"
+    },
+    {
+      "source_id": "MD-7.8-FirstOrderOperator",
+      "name": "MD.Ch07.firstOrderOperator_coefficient",
+      "kind": "theorem",
+      "status": "未证"
+    },
+    {
+      "source_id": "MD-7.8-FirstOrderOperator",
+      "name": "MD.Ch07.correctionEquation",
+      "kind": "def",
+      "status": "定义或记号"
+    },
+    {
+      "source_id": "MD-7.8-HomogeneousNormalization",
+      "name": "MD.Ch07.homogeneousNormalization",
+      "kind": "theorem",
+      "status": "已证"
+    },
+    {
+      "source_id": "MD-7.8-HomogeneousNormalization",
+      "name": "MD.Ch07.centeredParticular",
+      "kind": "theorem",
+      "status": "已证"
+    },
+    {
+      "source_id": "MD-7.8.1-CommutatorPermutationRelations",
+      "name": "MD.Ch07.commutatorPermutationRelations",
+      "kind": "theorem",
+      "status": "未证"
+    },
+    {
+      "source_id": "MD-7.8.1-GibbsDerivativeIdentities",
+      "name": "MD.Ch07.mechanicalHamiltonian",
+      "kind": "def",
+      "status": "定义或记号"
+    },
+    {
+      "source_id": "MD-7.8.1-GibbsDerivativeIdentities",
+      "name": "MD.Ch07.gibbsWeight",
+      "kind": "def",
+      "status": "定义或记号"
+    },
+    {
+      "source_id": "MD-7.8.1-GibbsDerivativeIdentities",
+      "name": "MD.Ch07.gFunction",
+      "kind": "def",
+      "status": "定义或记号"
+    },
+    {
+      "source_id": "MD-7.8.1-GibbsDerivativeIdentities",
+      "name": "MD.Ch07.phaseO",
+      "kind": "def",
+      "status": "定义或记号"
+    },
+    {
+      "source_id": "MD-7.8.1-GibbsDerivativeIdentities",
+      "name": "MD.Ch07.phaseLD",
+      "kind": "def",
+      "status": "定义或记号"
+    },
+    {
+      "source_id": "MD-7.8.1-GibbsDerivativeIdentities",
+      "name": "MD.Ch07.gibbsDerivativeIdentities",
+      "kind": "theorem",
+      "status": "未证"
+    },
+    {
+      "source_id": "MD-7.8.1-FirstCorrectionTablePrinted",
+      "name": "MD.Ch07.firstCorrectionTablePrinted",
+      "kind": "def",
+      "status": "定义或记号"
+    },
+    {
+      "source_id": "MD-7.8.1-FirstCorrectionTablePrinted",
+      "name": "MD.Ch07.firstCorrectionTablePrinted_corrected",
+      "kind": "def",
+      "status": "定义或记号"
+    },
+    {
+      "source_id": "MD-7.8.1-FirstCorrectionTablePrinted",
+      "name": "MD.Ch07.firstCorrection_sign_counterexample",
+      "kind": "theorem",
+      "status": "已证"
+    },
+    {
+      "source_id": "MD-7.8.1-FirstCorrectionTablePrinted",
+      "name": "MD.Ch07.phaseComm",
+      "kind": "def",
+      "status": "定义或记号"
+    },
+    {
+      "source_id": "MD-7.8.1-FirstCorrectionTablePrinted",
+      "name": "MD.Ch07.firstCorrectionRHS",
+      "kind": "def",
+      "status": "定义或记号"
+    },
+    {
+      "source_id": "MD-7.8.1-FirstCorrectionTablePrinted",
+      "name": "MD.Ch07.firstCorrectionTable_pde",
+      "kind": "theorem",
+      "status": "未证"
+    },
+    {
+      "source_id": "MD-7.8.1-PositionMomentumCorrections",
+      "name": "MD.Ch07.positionGibbs",
+      "kind": "def",
+      "status": "定义或记号"
+    },
+    {
+      "source_id": "MD-7.8.1-PositionMomentumCorrections",
+      "name": "MD.Ch07.momentumGibbs",
+      "kind": "def",
+      "status": "定义或记号"
+    },
+    {
+      "source_id": "MD-7.8.1-PositionMomentumCorrections",
+      "name": "MD.Ch07.productGibbs",
+      "kind": "def",
+      "status": "定义或记号"
+    },
+    {
+      "source_id": "MD-7.8.1-PositionMomentumCorrections",
+      "name": "MD.Ch07.positionMomentumCorrections",
+      "kind": "theorem",
+      "status": "未证"
+    },
+    {
+      "source_id": "MD-7.8.1-OverdampedFirstOrderCaution",
+      "name": "MD.Ch07.aoab",
+      "kind": "def",
+      "status": "定义或记号"
+    },
+    {
+      "source_id": "MD-7.8.1-OverdampedFirstOrderCaution",
+      "name": "MD.Ch07.aoabInfiniteFriction",
+      "kind": "def",
+      "status": "定义或记号"
+    },
+    {
+      "source_id": "MD-7.8.1-OverdampedFirstOrderCaution",
+      "name": "MD.Ch07.aoabFrictionLimit",
+      "kind": "theorem",
+      "status": "未证"
+    },
+    {
+      "source_id": "MD-7.8.2-BiasedDoubleWellExact",
+      "name": "MD.Ch07.biasedDoubleWell",
+      "kind": "def",
+      "status": "定义或记号"
+    },
+    {
+      "source_id": "MD-7.8.2-BiasedDoubleWellExact",
+      "name": "MD.Ch07.doubleWellObservable",
+      "kind": "def",
+      "status": "定义或记号"
+    },
+    {
+      "source_id": "MD-7.8.2-BiasedDoubleWellExact",
+      "name": "MD.Ch07.doubleWellGibbs",
+      "kind": "def",
+      "status": "定义或记号"
+    },
+    {
+      "source_id": "MD-7.8.2-BiasedDoubleWellExact",
+      "name": "MD.Ch07.doubleWellBOACorrection",
+      "kind": "def",
+      "status": "定义或记号"
+    },
+    {
+      "source_id": "MD-7.8.2-BiasedDoubleWellExact",
+      "name": "MD.Ch07.doubleWellExact",
+      "kind": "theorem",
+      "status": "未证"
+    },
+    {
+      "source_id": "MD-7.8.2-BiasedDoubleWellExact",
+      "name": "MD.Ch07.doubleWellCritical",
+      "kind": "theorem",
+      "status": "已证"
+    },
+    {
+      "source_id": "MD-7.9-Proposition71",
+      "name": "MD.Ch07.proposition71",
+      "kind": "theorem",
+      "status": "已证"
+    },
+    {
+      "source_id": "MD-7.9-Proposition71",
+      "name": "MD.Ch07.symmetricOddCorrections",
+      "kind": "theorem",
+      "status": "已证"
+    },
+    {
+      "source_id": "MD-7.9-EvenDensityPerturbation",
+      "name": "MD.Ch07.evenDensityExpansion",
+      "kind": "def",
+      "status": "定义或记号"
+    },
+    {
+      "source_id": "MD-7.9-EvenDensityPerturbation",
+      "name": "MD.Ch07.evenPerturbationEquation",
+      "kind": "theorem",
+      "status": "已证"
+    },
+    {
+      "source_id": "MD-7.9.1-OYZYOInhomogeneity",
+      "name": "MD.Ch07.oyzyoInhomogeneity",
+      "kind": "theorem",
+      "status": "未证"
+    },
+    {
+      "source_id": "MD-7.9.1-TripleCommutatorPrinted",
+      "name": "MD.Ch07.hessianU",
+      "kind": "def",
+      "status": "定义或记号"
+    },
+    {
+      "source_id": "MD-7.9.1-TripleCommutatorPrinted",
+      "name": "MD.Ch07.thirdU",
+      "kind": "def",
+      "status": "定义或记号"
+    },
+    {
+      "source_id": "MD-7.9.1-TripleCommutatorPrinted",
+      "name": "MD.Ch07.hessianGrad",
+      "kind": "def",
+      "status": "定义或记号"
+    },
+    {
+      "source_id": "MD-7.9.1-TripleCommutatorPrinted",
+      "name": "MD.Ch07.cubicThird",
+      "kind": "def",
+      "status": "定义或记号"
+    },
+    {
+      "source_id": "MD-7.9.1-TripleCommutatorPrinted",
+      "name": "MD.Ch07.tripleCommutatorPrinted",
+      "kind": "def",
+      "status": "定义或记号"
+    },
+    {
+      "source_id": "MD-7.9.1-TripleCommutatorPrinted",
+      "name": "MD.Ch07.tripleCommutatorPrinted_corrected",
+      "kind": "def",
+      "status": "定义或记号"
+    },
+    {
+      "source_id": "MD-7.9.1-TripleCommutatorPrinted",
+      "name": "MD.Ch07.tripleCommutator_corrected",
+      "kind": "theorem",
+      "status": "未证"
+    },
+    {
+      "source_id": "MD-7.9.1-TripleCommutatorPrinted",
+      "name": "MD.Ch07.tripleCommutator_factor_counterexample",
+      "kind": "theorem",
+      "status": "已证"
+    },
+    {
+      "source_id": "MD-7.9.1-SymmetricRHS",
+      "name": "MD.Ch07.symmetricRHS",
+      "kind": "def",
+      "status": "定义或记号"
+    },
+    {
+      "source_id": "MD-7.9.1-SymmetricRHS",
+      "name": "MD.Ch07.symmetricRHS_odd",
+      "kind": "theorem",
+      "status": "已证"
+    },
+    {
+      "source_id": "MD-7.9.1-SymmetricRHS",
+      "name": "MD.Ch07.symmetricRHS_zeroMean",
+      "kind": "theorem",
+      "status": "未证"
+    },
+    {
+      "source_id": "MD-7.9.1-Lemma71",
+      "name": "MD.Ch07.lemma71",
+      "kind": "theorem",
+      "status": "已证"
+    },
+    {
+      "source_id": "MD-7.9.1-ConjugateSymmetricCorrections",
+      "name": "MD.Ch07.gradNormSq",
+      "kind": "def",
+      "status": "定义或记号"
+    },
+    {
+      "source_id": "MD-7.9.1-ConjugateSymmetricCorrections",
+      "name": "MD.Ch07.hessianQuadratic",
+      "kind": "def",
+      "status": "定义或记号"
+    },
+    {
+      "source_id": "MD-7.9.1-ConjugateSymmetricCorrections",
+      "name": "MD.Ch07.conjugateCorrectionChange",
+      "kind": "def",
+      "status": "定义或记号"
+    },
+    {
+      "source_id": "MD-7.9.1-ConjugateSymmetricCorrections",
+      "name": "MD.Ch07.conjugateCorrections",
+      "kind": "def",
+      "status": "定义或记号"
+    },
+    {
+      "source_id": "MD-7.9.1-ConjugateSymmetricCorrections",
+      "name": "MD.Ch07.conjugateCorrection_coefficient",
+      "kind": "theorem",
+      "status": "已证"
+    },
+    {
+      "source_id": "MD-7.9.1-ConjugateSymmetricCorrections",
+      "name": "MD.Ch07.conjugateExpansionPrinted",
+      "kind": "def",
+      "status": "定义或记号"
+    },
+    {
+      "source_id": "MD-7.9.1-ConjugateSymmetricCorrections",
+      "name": "MD.Ch07.conjugateExpansionPrinted_corrected",
+      "kind": "def",
+      "status": "定义或记号"
+    },
+    {
+      "source_id": "MD-7.9.2-ReciprocalFrictionExpansion",
+      "name": "MD.Ch07.phaseH",
+      "kind": "def",
+      "status": "定义或记号"
+    },
+    {
+      "source_id": "MD-7.9.2-ReciprocalFrictionExpansion",
+      "name": "MD.Ch07.reciprocalHierarchy",
+      "kind": "def",
+      "status": "定义或记号"
+    },
+    {
+      "source_id": "MD-7.9.2-OUKernelQualification",
+      "name": "MD.Ch07.ouKernelPrinted",
+      "kind": "def",
+      "status": "定义或记号"
+    },
+    {
+      "source_id": "MD-7.9.2-OUKernelQualification",
+      "name": "MD.Ch07.ouKernelPrinted_corrected",
+      "kind": "theorem",
+      "status": "未证"
+    },
+    {
+      "source_id": "MD-7.9.2-OUHermiteIdentities",
+      "name": "MD.Ch07.laplacian",
+      "kind": "def",
+      "status": "定义或记号"
+    },
+    {
+      "source_id": "MD-7.9.2-OUHermiteIdentities",
+      "name": "MD.Ch07.pGradLaplacian",
+      "kind": "def",
+      "status": "定义或记号"
+    },
+    {
+      "source_id": "MD-7.9.2-OUHermiteIdentities",
+      "name": "MD.Ch07.hermitePrimitive",
+      "kind": "def",
+      "status": "定义或记号"
+    },
+    {
+      "source_id": "MD-7.9.2-OUHermiteIdentities",
+      "name": "MD.Ch07.ouHermiteIdentities",
+      "kind": "theorem",
+      "status": "未证"
+    },
+    {
+      "source_id": "MD-7.9.2-FirstReciprocalCorrection",
+      "name": "MD.Ch07.firstReciprocalCorrection",
+      "kind": "def",
+      "status": "定义或记号"
+    },
+    {
+      "source_id": "MD-7.9.2-FirstReciprocalCorrection",
+      "name": "MD.Ch07.momentumAverage",
+      "kind": "def",
+      "status": "定义或记号"
+    },
+    {
+      "source_id": "MD-7.9.2-FirstReciprocalCorrection",
+      "name": "MD.Ch07.momentumAveragePrinted_corrected",
+      "kind": "def",
+      "status": "定义或记号"
+    },
+    {
+      "source_id": "MD-7.9.2-FirstReciprocalCorrection",
+      "name": "MD.Ch07.momentumAveragePrinted",
+      "kind": "def",
+      "status": "定义或记号"
+    },
+    {
+      "source_id": "MD-7.9.2-FirstReciprocalCorrection",
+      "name": "MD.Ch07.firstReciprocalCorrection_pde",
+      "kind": "theorem",
+      "status": "未证"
+    },
+    {
+      "source_id": "MD-7.9.2-OverdampedSolvabilityOperators",
+      "name": "MD.Ch07.overdampedM",
+      "kind": "def",
+      "status": "定义或记号"
+    },
+    {
+      "source_id": "MD-7.9.2-OverdampedSolvabilityOperators",
+      "name": "MD.Ch07.overdampedN",
+      "kind": "def",
+      "status": "定义或记号"
+    },
+    {
+      "source_id": "MD-7.9.2-OverdampedSolvabilityOperators",
+      "name": "MD.Ch07.highFrictionOABAO",
+      "kind": "def",
+      "status": "定义或记号"
+    },
+    {
+      "source_id": "MD-7.9.2-OverdampedSolvabilityOperators",
+      "name": "MD.Ch07.overdampedSolvability_choice",
+      "kind": "theorem",
+      "status": "已证"
+    },
+    {
+      "source_id": "MD-7.9.2-HighFrictionCorrectionTable",
+      "name": "MD.Ch07.highFrictionCorrection",
+      "kind": "def",
+      "status": "定义或记号"
+    },
+    {
+      "source_id": "MD-7.9.2-HighFrictionCorrectionTable",
+      "name": "MD.Ch07.doublyAsymptoticAverage",
+      "kind": "def",
+      "status": "定义或记号"
+    },
+    {
+      "source_id": "MD-7.9.2-HighFrictionCorrectionTable",
+      "name": "MD.Ch07.highFrictionCorrection_conjugacy",
+      "kind": "theorem",
+      "status": "已证"
+    },
+    {
+      "source_id": "MD-7.9.3-BAOABMarginalCancellation",
+      "name": "MD.Ch07.baoabMarginalCancellation",
+      "kind": "theorem",
+      "status": "未证"
+    },
+    {
+      "source_id": "MD-7.9.3-BAOABMarginalCancellation",
+      "name": "MD.Ch07.baoabConfigurationalCancellation",
+      "kind": "theorem",
+      "status": "未证"
+    },
+    {
+      "source_id": "MD-7.9.3-SuperconvergenceScope",
+      "name": "MD.Ch07.oabaoPositionCancellation",
+      "kind": "theorem",
+      "status": "未证"
+    },
+    {
+      "source_id": "MD-7.9.3-SuperconvergenceScope",
+      "name": "MD.Ch07.superconvergence_fromBound",
+      "kind": "theorem",
+      "status": "已证"
+    },
+    {
+      "source_id": "MD-7.10-MomentumRedrawLimit",
+      "name": "MD.Ch07.redrawMomentum",
+      "kind": "def",
+      "status": "定义或记号"
+    },
+    {
+      "source_id": "MD-7.10-MomentumRedrawLimit",
+      "name": "MD.Ch07.redrawStep",
+      "kind": "def",
+      "status": "定义或记号"
+    },
+    {
+      "source_id": "MD-7.10-MomentumRedrawLimit",
+      "name": "MD.Ch07.momentumRedrawLimit",
+      "kind": "theorem",
+      "status": "未证"
+    },
+    {
+      "source_id": "MD-7.10-OBABOOverdampedEuler",
+      "name": "MD.Ch07.obaboInfinite",
+      "kind": "def",
+      "status": "定义或记号"
+    },
+    {
+      "source_id": "MD-7.10-OBABOOverdampedEuler",
+      "name": "MD.Ch07.overdampedEulerH",
+      "kind": "def",
+      "status": "定义或记号"
+    },
+    {
+      "source_id": "MD-7.10-OBABOOverdampedEuler",
+      "name": "MD.Ch07.overdampedEuler",
+      "kind": "def",
+      "status": "定义或记号"
+    },
+    {
+      "source_id": "MD-7.10-OBABOOverdampedEuler",
+      "name": "MD.Ch07.obaboInfinite_position",
+      "kind": "theorem",
+      "status": "已证"
+    },
+    {
+      "source_id": "MD-7.10-OBABOOverdampedEuler",
+      "name": "MD.Ch07.overdampedEuler_rescale",
+      "kind": "theorem",
+      "status": "未证"
+    },
+    {
+      "source_id": "MD-7.10-BAOABLimitMethod",
+      "name": "MD.Ch07.baoabInfinite",
+      "kind": "def",
+      "status": "定义或记号"
+    },
+    {
+      "source_id": "MD-7.10-BAOABLimitMethod",
+      "name": "MD.Ch07.lmStepH",
+      "kind": "def",
+      "status": "定义或记号"
+    },
+    {
+      "source_id": "MD-7.10-BAOABLimitMethod",
+      "name": "MD.Ch07.lmStep",
+      "kind": "def",
+      "status": "定义或记号"
+    },
+    {
+      "source_id": "MD-7.10-BAOABLimitMethod",
+      "name": "MD.Ch07.baoabInfinite_position",
+      "kind": "theorem",
+      "status": "已证"
+    },
+    {
+      "source_id": "MD-7.10-ColoredNoiseAndExtension",
+      "name": "MD.Ch07.coloredNoise",
+      "kind": "def",
+      "status": "定义或记号"
+    },
+    {
+      "source_id": "MD-7.10-ColoredNoiseAndExtension",
+      "name": "MD.Ch07.coloredNoise_covariance",
+      "kind": "theorem",
+      "status": "未证"
+    },
+    {
+      "source_id": "MD-7.10-ColoredNoiseAndExtension",
+      "name": "MD.Ch07.lmExtendedStep",
+      "kind": "def",
+      "status": "定义或记号"
+    },
+    {
+      "source_id": "MD-7.10-LimitMethodAccuracy",
+      "name": "MD.Ch07.lmTransientErrorBound",
+      "kind": "def",
+      "status": "定义或记号"
+    },
+    {
+      "source_id": "MD-7.10-LimitMethodAccuracy",
+      "name": "MD.Ch07.limitAccuracyPrinted",
+      "kind": "def",
+      "status": "定义或记号"
+    },
+    {
+      "source_id": "MD-7.10-LimitMethodAccuracy",
+      "name": "MD.Ch07.limitAccuracyPrinted_corrected",
+      "kind": "def",
+      "status": "定义或记号"
+    },
+    {
+      "source_id": "MD-7.10-LimitMethodAccuracy",
+      "name": "MD.Ch07.limitAccuracy_rescale",
+      "kind": "theorem",
+      "status": "已证"
+    },
+    {
+      "source_id": "MD-7.9.3-ZeroFrictionVerlet",
+      "name": "MD.Ch07.zeroFrictionOU",
+      "kind": "theorem",
+      "status": "已证"
+    },
+    {
+      "source_id": "MD-7.9.3-ZeroFrictionVerlet",
+      "name": "MD.Ch07.zeroFrictionBAOAB",
+      "kind": "theorem",
+      "status": "已证"
+    },
+    {
+      "source_id": "MD-7.11.1-TemperatureObservables",
+      "name": "MD.Ch07.kineticTemperatureObservable",
+      "kind": "def",
+      "status": "定义或记号"
+    },
+    {
+      "source_id": "MD-7.11.1-TemperatureObservables",
+      "name": "MD.Ch07.configurationTemperatureObservable",
+      "kind": "def",
+      "status": "定义或记号"
+    },
+    {
+      "source_id": "MD-7.11.1-TemperatureObservables",
+      "name": "MD.Ch07.kineticTemperature",
+      "kind": "theorem",
+      "status": "未证"
+    },
+    {
+      "source_id": "MD-7.11.1-TemperatureObservables",
+      "name": "MD.Ch07.configurationTemperature",
+      "kind": "theorem",
+      "status": "未证"
+    },
+    {
+      "source_id": "MD-7.11.1-VelocityAutocorrelationDefinition",
+      "name": "MD.Ch07.velocityAutocorrelation",
+      "kind": "def",
+      "status": "定义或记号"
+    },
+    {
+      "source_id": "MD-7.11.1-VelocityAutocorrelationDefinition",
+      "name": "MD.Ch07.greenKuboDiffusion",
+      "kind": "def",
+      "status": "定义或记号"
+    },
+    {
+      "source_id": "MD-7.11.1-VelocityAutocorrelationDefinition",
+      "name": "MD.Ch07.autocorrelation_rescale",
+      "kind": "theorem",
+      "status": "已证"
+    },
+    {
+      "source_id": "MD-7.12-ConstrainedLangevin",
+      "name": "MD.Ch07.constraintJacobian",
+      "kind": "def",
+      "status": "定义或记号"
+    },
+    {
+      "source_id": "MD-7.12-ConstrainedLangevin",
+      "name": "MD.Ch07.constraintReaction",
+      "kind": "def",
+      "status": "定义或记号"
+    },
+    {
+      "source_id": "MD-7.12-ConstrainedLangevin",
+      "name": "MD.Ch07.hiddenConstraint",
+      "kind": "def",
+      "status": "定义或记号"
+    },
+    {
+      "source_id": "MD-7.12-ConstrainedLangevin",
+      "name": "MD.Ch07.cotangentConstraint",
+      "kind": "def",
+      "status": "定义或记号"
+    },
+    {
+      "source_id": "MD-7.12-ConstrainedLangevin",
+      "name": "MD.Ch07.constrainedLangevin",
+      "kind": "def",
+      "status": "定义或记号"
+    },
+    {
+      "source_id": "MD-7.12-ConstrainedCanonicalErgodicity",
+      "name": "MD.Ch07.constrainedCanonical",
+      "kind": "def",
+      "status": "定义或记号"
+    },
+    {
+      "source_id": "MD-7.12-ConstrainedCanonicalErgodicity",
+      "name": "MD.Ch07.constrainedReference",
+      "kind": "def",
+      "status": "定义或记号"
+    },
+    {
+      "source_id": "MD-7.12-ConstrainedCanonicalErgodicity",
+      "name": "MD.Ch07.constrainedErgodicAverages",
+      "kind": "def",
+      "status": "定义或记号"
+    },
+    {
+      "source_id": "MD-7.12-ConstrainedHOSplitting",
+      "name": "MD.Ch07.constrainedHField",
+      "kind": "def",
+      "status": "定义或记号"
+    },
+    {
+      "source_id": "MD-7.12-ConstrainedHOSplitting",
+      "name": "MD.Ch07.constrainedOField",
+      "kind": "def",
+      "status": "定义或记号"
+    },
+    {
+      "source_id": "MD-7.12-ConstrainedHOSplitting",
+      "name": "MD.Ch07.constrainedHOComposition",
+      "kind": "def",
+      "status": "定义或记号"
+    },
+    {
+      "source_id": "MD-7.12-MEVMEAlgorithm",
+      "name": "MD.Ch07.midpointConstrainedORelation",
+      "kind": "def",
+      "status": "定义或记号"
+    },
+    {
+      "source_id": "MD-7.12-MEVMEAlgorithm",
+      "name": "MD.Ch07.constrainedVerletRelation",
+      "kind": "def",
+      "status": "定义或记号"
+    },
+    {
+      "source_id": "MD-7.12-MEVMEAlgorithm",
+      "name": "MD.Ch07.mevmeRelation",
+      "kind": "def",
+      "status": "定义或记号"
+    },
+    {
+      "source_id": "MD-7.12-MidpointStabilityPrinted",
+      "name": "MD.Ch07.multiplierLinearSystem",
+      "kind": "def",
+      "status": "定义或记号"
+    },
+    {
+      "source_id": "MD-7.12-MidpointStabilityPrinted",
+      "name": "MD.Ch07.midpointAmplification",
+      "kind": "def",
+      "status": "定义或记号"
+    },
+    {
+      "source_id": "MD-7.12-MidpointStabilityPrinted",
+      "name": "MD.Ch07.midpointStabilityPrinted",
+      "kind": "def",
+      "status": "定义或记号"
+    },
+    {
+      "source_id": "MD-7.12-MidpointStabilityPrinted",
+      "name": "MD.Ch07.midpointStabilityPrinted_corrected",
+      "kind": "theorem",
+      "status": "已证"
+    },
+    {
+      "source_id": "MD-7.12-MidpointStabilityPrinted",
+      "name": "MD.Ch07.midpointStability_counterexample",
+      "kind": "theorem",
+      "status": "已证"
+    },
+    {
+      "source_id": "MD-7.12.1-ConstrainedABOSplitting",
+      "name": "MD.Ch07.constrainedAField",
+      "kind": "def",
+      "status": "定义或记号"
+    },
+    {
+      "source_id": "MD-7.12.1-ConstrainedABOSplitting",
+      "name": "MD.Ch07.constrainedBField",
+      "kind": "def",
+      "status": "定义或记号"
+    },
+    {
+      "source_id": "MD-7.12.1-ConstrainedABOSplitting",
+      "name": "MD.Ch07.geodesicConstraintFlow",
+      "kind": "def",
+      "status": "定义或记号"
+    },
+    {
+      "source_id": "MD-7.12.1-ConstrainedABOSplitting",
+      "name": "MD.Ch07.constrainedKickRelation",
+      "kind": "def",
+      "status": "定义或记号"
+    },
+    {
+      "source_id": "MD-7.12.1-ConstrainedABOSplitting",
+      "name": "MD.Ch07.constrainedExactORelation",
+      "kind": "def",
+      "status": "定义或记号"
+    },
+    {
+      "source_id": "MD-7.12.1-ConstrainedBAOABAlgorithm",
+      "name": "MD.Ch07.constrainedBAOABRelation",
+      "kind": "def",
+      "status": "定义或记号"
+    },
+    {
+      "source_id": "MD-7.12.1-ConstrainedBAOABAlgorithm",
+      "name": "MD.Ch07.constrainedBAOAB_constraint",
+      "kind": "theorem",
+      "status": "已证"
+    },
+    {
+      "source_id": "MD-7.12.1-ApproximateGeodesicOrder",
+      "name": "MD.Ch07.localMapErrorBound",
+      "kind": "def",
+      "status": "定义或记号"
+    },
+    {
+      "source_id": "MD-7.12.1-ApproximateGeodesicOrder",
+      "name": "MD.Ch07.geodesicReplacementSecondOrder",
+      "kind": "def",
+      "status": "定义或记号"
+    },
+    {
+      "source_id": "MD-7.13-FastSlowHarmonicModel",
+      "name": "MD.Ch07.Mat2",
+      "kind": "abbrev",
+      "status": "定义或记号"
+    },
+    {
+      "source_id": "MD-7.13-FastSlowHarmonicModel",
+      "name": "MD.Ch07.fastPotential",
+      "kind": "def",
+      "status": "定义或记号"
+    },
+    {
+      "source_id": "MD-7.13-FastSlowHarmonicModel",
+      "name": "MD.Ch07.slowPotential",
+      "kind": "def",
+      "status": "定义或记号"
+    },
+    {
+      "source_id": "MD-7.13-FastSlowHarmonicModel",
+      "name": "MD.Ch07.fastMatrix",
+      "kind": "def",
+      "status": "定义或记号"
+    },
+    {
+      "source_id": "MD-7.13-FastSlowHarmonicModel",
+      "name": "MD.Ch07.slowMatrix",
+      "kind": "def",
+      "status": "定义或记号"
+    },
+    {
+      "source_id": "MD-7.13-FastSlowHarmonicModel",
+      "name": "MD.Ch07.fastLangevin",
+      "kind": "def",
+      "status": "定义或记号"
+    },
+    {
+      "source_id": "MD-7.13-ExactFastGaussianLaw",
+      "name": "MD.Ch07.fastExponential",
+      "kind": "def",
+      "status": "定义或记号"
+    },
+    {
+      "source_id": "MD-7.13-ExactFastGaussianLaw",
+      "name": "MD.Ch07.fastCovariance",
+      "kind": "def",
+      "status": "定义或记号"
+    },
+    {
+      "source_id": "MD-7.13-ExactFastGaussianLaw",
+      "name": "MD.Ch07.exactFastGaussianLaw",
+      "kind": "theorem",
+      "status": "未证"
+    },
+    {
+      "source_id": "MD-7.13-MultipleTimestepUpdate",
+      "name": "MD.Ch07.multipleX",
+      "kind": "def",
+      "status": "定义或记号"
+    },
+    {
+      "source_id": "MD-7.13-MultipleTimestepUpdate",
+      "name": "MD.Ch07.multipleY",
+      "kind": "def",
+      "status": "定义或记号"
+    },
+    {
+      "source_id": "MD-7.13-MultipleTimestepUpdate",
+      "name": "MD.Ch07.multipleStep",
+      "kind": "def",
+      "status": "定义或记号"
+    },
+    {
+      "source_id": "MD-7.13-MultipleTimestepUpdate",
+      "name": "MD.Ch07.multipleStep_composition",
+      "kind": "theorem",
+      "status": "已证"
+    },
+    {
+      "source_id": "MD-7.13-DeterminantTrace",
+      "name": "MD.Ch07.traceFormula",
+      "kind": "def",
+      "status": "定义或记号"
+    },
+    {
+      "source_id": "MD-7.13-DeterminantTrace",
+      "name": "MD.Ch07.determinantTrace",
+      "kind": "theorem",
+      "status": "未证"
+    },
+    {
+      "source_id": "MD-7.13-SpectralRadiusStability",
+      "name": "MD.Ch07.characteristicUnitDisk",
+      "kind": "def",
+      "status": "定义或记号"
+    },
+    {
+      "source_id": "MD-7.13-SpectralRadiusStability",
+      "name": "MD.Ch07.spectralRadiusStability",
+      "kind": "theorem",
+      "status": "未证"
+    },
+    {
+      "source_id": "MD-7.13-SpectralRadiusStability",
+      "name": "MD.Ch07.hyperbolicStability",
+      "kind": "def",
+      "status": "定义或记号"
+    },
+    {
+      "source_id": "MD-7.13-HyperbolicPhaseTransform",
+      "name": "MD.Ch07.hyperbolicPhase",
+      "kind": "def",
+      "status": "定义或记号"
+    },
+    {
+      "source_id": "MD-7.13-HyperbolicPhaseTransform",
+      "name": "MD.Ch07.hyperbolicPhase_identity",
+      "kind": "theorem",
+      "status": "已证"
+    },
+    {
+      "source_id": "MD-7.13-UnderdampedPhasePrinted",
+      "name": "MD.Ch07.underdampedPhasePrinted",
+      "kind": "def",
+      "status": "定义或记号"
+    },
+    {
+      "source_id": "MD-7.13-UnderdampedPhasePrinted",
+      "name": "MD.Ch07.underdampedPhasePrinted_corrected",
+      "kind": "def",
+      "status": "定义或记号"
+    },
+    {
+      "source_id": "MD-7.13-UnderdampedPhasePrinted",
+      "name": "MD.Ch07.underdampedPhase_identity",
+      "kind": "theorem",
+      "status": "已证"
+    },
+    {
+      "source_id": "MD-7.13-StabilityEnvelope",
+      "name": "MD.Ch07.stabilityEnvelope",
+      "kind": "def",
+      "status": "定义或记号"
+    },
+    {
+      "source_id": "MD-7.13-StabilityEnvelope",
+      "name": "MD.Ch07.stabilityEnvelope_sufficient",
+      "kind": "theorem",
+      "status": "已证"
+    },
+    {
+      "source_id": "MD-7.13-StabilityEnvelope",
+      "name": "MD.Ch07.stabilityEnvelope_iff",
+      "kind": "theorem",
+      "status": "未证"
+    },
+    {
+      "source_id": "MD-7.13-FrictionThresholdPrinted",
+      "name": "MD.Ch07.frictionThresholdPrinted",
+      "kind": "def",
+      "status": "定义或记号"
+    },
+    {
+      "source_id": "MD-7.13-FrictionThresholdPrinted",
+      "name": "MD.Ch07.frictionThresholdPrinted_corrected",
+      "kind": "def",
+      "status": "定义或记号"
+    },
+    {
+      "source_id": "MD-7.13-FrictionThresholdPrinted",
+      "name": "MD.Ch07.frictionBoundPrinted",
+      "kind": "def",
+      "status": "定义或记号"
+    },
+    {
+      "source_id": "MD-7.13-FrictionThresholdPrinted",
+      "name": "MD.Ch07.frictionBoundPrinted_corrected",
+      "kind": "def",
+      "status": "定义或记号"
+    },
+    {
+      "source_id": "MD-7.13-FrictionThresholdPrinted",
+      "name": "MD.Ch07.frictionThreshold_rationalized",
+      "kind": "theorem",
+      "status": "未证"
+    },
+    {
+      "source_id": "MD-7.13-FrictionThresholdPrinted",
+      "name": "MD.Ch07.frictionThreshold_allSteps",
+      "kind": "theorem",
+      "status": "未证"
+    },
+    {
+      "source_id": "MD-7.13-FrictionThresholdPrinted",
+      "name": "MD.Ch07.frictionThreshold_asymptotic",
+      "kind": "theorem",
+      "status": "未证"
+    },
+    {
+      "source_id": "MD-7.13-FrictionThresholdPrinted",
+      "name": "MD.Ch07.frictionThreshold_squared_counterexample",
+      "kind": "theorem",
+      "status": "已证"
+    },
+    {
+      "source_id": "MD-7.1-ConfigurationalSampling",
+      "name": "MD.Ch07.configurationalSamplingAverage",
+      "kind": "def",
+      "status": "定义或记号"
+    },
+    {
+      "source_id": "MD-7.1-ConfigurationalSampling",
+      "name": "MD.Ch07.configurationalSamplingQualified",
+      "kind": "def",
+      "status": "定义或记号"
+    },
+    {
+      "source_id": "MD-7.1-HamiltonianSamplingObstruction",
+      "name": "MD.Ch07.energyConservingFlow",
+      "kind": "def",
+      "status": "定义或记号"
+    },
+    {
+      "source_id": "MD-7.1-HamiltonianSamplingObstruction",
+      "name": "MD.Ch07.energySublevel_invariant",
+      "kind": "theorem",
+      "status": "已证"
+    },
+    {
+      "source_id": "MD-7.1-HamiltonianSamplingObstruction",
+      "name": "MD.Ch07.energyObstructionQualified",
+      "kind": "def",
+      "status": "定义或记号"
+    }
+  ],
+  "scope_and_gaps": [
+    {
+      "source_id": "MD-7.1-Bias",
+      "statement_scope": "离散平均值偏差的定义；本段关于标准方法的概述不作为普遍量化结论。",
+      "extra": [
+        "将本段bias记号具体写为后文印刷p.266所给的绝对平均误差；不把“所有标准方法”量化成无条件定理。"
+      ],
+      "missing": null
+    },
+    {
+      "source_id": "MD-7.2-ScalarSDE",
+      "statement_scope": "本条逐字引用的全部数学对象与公式；未纳入的上下文另列。",
+      "extra": [
+        "明确概率空间与标准连续Wiener过程；Itô积分采用第6章网格左和L²定义，扩散项适应自然历史且时间平方可积。",
+        "X的初值、几乎处处路径连续性和积分方程在第6章定义体中全部保留；未声称一般弱解与本L²表示等价。"
+      ],
+      "missing": null
+    },
+    {
+      "source_id": "MD-7.2-EulerMaruyama",
+      "statement_scope": "本条逐字引用的全部数学对象与公式；未纳入的上下文另列。",
+      "extra": [
+        "步长h>0用于数值解释；单步映射本身为总函数；跨步独立正态资格另由standardNormalSequence明确给出。"
+      ],
+      "missing": null
+    },
+    {
+      "source_id": "MD-7.2-SDEIncrement",
+      "statement_scope": "本条逐字引用的全部数学对象与公式；未纳入的上下文另列。",
+      "extra": [
+        "区间Itô积分用两个从0开始的L²积分值之差表示；t,h非负，漂移在整个区间可积；不另造未规定的随机积分。"
+      ],
+      "missing": "需对第6章L²积分定义补区间可加性及积分几乎处处组合桥接；本轮不建立一般随机积分理论。"
+    },
+    {
+      "source_id": "MD-7.2-StrongError",
+      "statement_scope": "本条逐字引用的全部数学对象与公式；未纳入的上下文另列。",
+      "extra": [
+        "α>0且各网格误差的α次矩可积时具有误差解释；有限非空网格的sSup表示最大值；Real.rpow为实指数幂。"
+      ],
+      "missing": null
+    },
+    {
+      "source_id": "MD-7.2-MeanErrorExpectation",
+      "statement_scope": "α=1所需期望误差不等式，及α=2均方误差的记号；网格极限通过此界立即归约。",
+      "extra": [
+        "期望可积；不以数值方法的收敛为假设重新宣布同一收敛，只给使收敛传递成立的定量不等式。"
+      ],
+      "missing": null
+    },
+    {
+      "source_id": "MD-7.2-StrongOrder",
+      "statement_scope": "本条逐字引用的全部数学对象与公式；未纳入的上下文另列。",
+      "extra": [
+        "显式h=T/N趋零及统一常数的量词；正α、r和时间；有限矩资格作为方法适用条件不隐去。"
+      ],
+      "missing": null
+    },
+    {
+      "source_id": "MD-7.2-WeakError",
+      "statement_scope": "本条逐字引用的全部数学对象与公式；未纳入的上下文另列。",
+      "extra": [
+        "测试函数类明确量化；D允许依赖测试函数；积分只有在可积时解释为期望，后续误差定理显式要求可积。"
+      ],
+      "missing": null
+    },
+    {
+      "source_id": "MD-7.2-StrongWeakComparison",
+      "statement_scope": "Lipschitz测试函数的逐步定量界与反向不成立的存在性；未证明一般多项式增长测试类的阶数传递。",
+      "extra": [
+        "正向结论明确限制为全局Lipschitz可观测量及可积误差；对一般无界测试函数需额外矩条件，列为覆盖缺口。",
+        "反向用两点分布上交换X、Y的反例表达；同分布但耦合强误差不为零。"
+      ],
+      "missing": null
+    },
+    {
+      "source_id": "MD-7.2-CanonicalAverage",
+      "statement_scope": "本条逐字引用的全部数学对象与公式；未纳入的上下文另列。",
+      "extra": [
+        "该公式先保留显式Z参数；只有probabilityDensity成立才称概率密度。正有限配分积分及其归一化见修正版，不把原页倒数疑误带入默认定义。"
+      ],
+      "missing": null
+    },
+    {
+      "source_id": "MD-7.2-PartitionPrinted",
+      "statement_scope": "本条逐字引用的全部数学对象与公式；未纳入的上下文另列。",
+      "extra": [
+        "原文版严格保留倒数关系；修正版取Z_can=配分积分，并补正性、可积性。",
+        "反例的代数核心：取一点评价空间总质量1/2、H=0，则原式强制Z=2，密度积分为1/4；counterexample声明给出1/4≠1，测度实现的积分化简未另作声明。"
+      ],
+      "missing": "原文倒数关系导致归一化错误，原文版不证明；修正版正常证明。"
+    },
+    {
+      "source_id": "MD-7.2-AverageNotationBias",
+      "statement_scope": "本条逐字引用的全部数学对象与公式；未纳入的上下文另列。",
+      "extra": [
+        "computed代表步长h下的不变平均，按原文忽略有限采样误差；正确Z和密度概率资格见CanonicalAverage及修正版。"
+      ],
+      "missing": null
+    },
+    {
+      "source_id": "MD-7.3-VectorOU",
+      "statement_scope": "本条逐字引用的全部数学对象与公式；未纳入的上下文另列。",
+      "extra": [
+        "显式标准多维Wiener及整个坐标路径独立，正质量、温度与非负摩擦；各坐标用真实Itô积分方程。"
+      ],
+      "missing": null
+    },
+    {
+      "source_id": "MD-7.3-OUIntegratingFactor",
+      "statement_scope": "本条逐字引用的全部数学对象与公式；未纳入的上下文另列。",
+      "extra": [
+        "把随机微分乘积法则陈述为从0到t的确定性加权Itô积分等式；有限时间和L²解资格由momentumOU明确。"
+      ],
+      "missing": "需要第6章Itô积分定义与积分因子法的桥接；不新建一般随机乘积法则。"
+    },
+    {
+      "source_id": "MD-7.3-OUExactUpdate",
+      "statement_scope": "本条逐字引用的全部数学对象与公式；未纳入的上下文另列。",
+      "extra": [
+        "等式解释为存在与过去动量独立的标准正态向量的随机表示；不是沿用同一Z表示所有时刻。",
+        "独立性要求使用W自然历史的适应解，见scalarSDE；θ=k_BT，M正对角。"
+      ],
+      "missing": "需要加权Wiener增量的联合Gaussian分布及相对过去的独立性；不建设一般SDE转移核理论。"
+    },
+    {
+      "source_id": "MD-7.3-OUPhaseIteration",
+      "statement_scope": "本条逐字引用的全部数学对象与公式；未纳入的上下文另列。",
+      "extra": [
+        "独立标准正态的完整概率资格由vectorNormalSequence规定；ouStep只是总化单步函数。"
+      ],
+      "missing": null
+    },
+    {
+      "source_id": "MD-7.3-OUForward",
+      "statement_scope": "本条逐字引用的全部数学对象与公式；未纳入的上下文另列。",
+      "extra": [
+        "partial为真实单坐标导数；给出前向表达式与后向生成元在紧支撑C²测试函数上的伴随恒等式。",
+        "仅p变量，q是固定参数；未声称已构造OU Markov半群的强生成元域。"
+      ],
+      "missing": "需要任意有限维逐坐标两次分部积分；本轮仅陈述，不为此建设大型算子域理论。"
+    },
+    {
+      "source_id": "MD-7.3-OUGaussianInvariant",
+      "statement_scope": "本条逐字引用的全部数学对象与公式；未纳入的上下文另列。",
+      "extra": [
+        "γ=0允许恒等更新，仍保留Gaussian不变性；不把此时的不变性说成遍历采样收敛。"
+      ],
+      "missing": "需实际独立Gaussian向量线性变换与指数/方差恒等式的桥接；不建立一般随机核理论。"
+    },
+    {
+      "source_id": "MD-7.3.1-Langevin",
+      "statement_scope": "本条逐字引用的全部数学对象与公式；未纳入的上下文另列。",
+      "extra": [
+        "用真实坐标偏导与完整位置/动量积分方程表达；常扩散的Itô项即W增量乘系数；显式状态适应W自然历史、漂移可积。"
+      ],
+      "missing": null
+    },
+    {
+      "source_id": "MD-7.3.1-HamiltonianGibbs",
+      "statement_scope": "本条逐字引用的全部数学对象与公式；未纳入的上下文另列。",
+      "extra": [
+        "F为已存在的实际Hamiltonian流的固定时刻映射；显式体积保持与能量保持，结论为实际加权测度不变性。",
+        "本文未重证明一般Hamiltonian流存在；若需归一化为概率，须另补配分积分正有限。"
+      ],
+      "missing": "需map与withDensity的测度输运短桥；现有Hamiltonian体积保持可作为流资格，不新建流存在理论。"
+    },
+    {
+      "source_id": "MD-7.3.1-ABOPieces",
+      "statement_scope": "本条逐字引用的全部数学对象与公式；未纳入的上下文另列。",
+      "extra": [
+        "M为正对角质量；σ=√(2γk_BT)；OU单步及独立正态资格已在OUPhaseIteration写全。",
+        "仅最后短定理证明漂移相加；A/B确定性精确流与O分布精确性各自另列，不用漂移恒等式替代。"
+      ],
+      "missing": null
+    },
+    {
+      "source_id": "MD-7.3.1-ABExactFlows",
+      "statement_scope": "A/B非恒定坐标的精确微分关系；O部分见MD-7.3-OUExactUpdate。",
+      "extra": [
+        "逐坐标A位置/B动量真实时间导数；另一个分量由更新定义恒定；O精确性引用OUTransitionLaw未证陈述，不冒称全部已证。"
+      ],
+      "missing": "kickStep导数三条短路线均未通过；停止该条，保留陈述。"
+    },
+    {
+      "source_id": "MD-7.3.1-ABForward",
+      "statement_scope": "本条逐字引用的全部数学对象与公式；未纳入的上下文另列。",
+      "extra": [
+        "以真实偏导定义所印微分表达式；形式伴随解释要求足够光滑及边界通量消失，未声称一般强算子域。"
+      ],
+      "missing": null
+    },
+    {
+      "source_id": "MD-7.3.1-ABOBABO",
+      "statement_scope": "本条逐字引用的全部数学对象与公式；未纳入的上下文另列。",
+      "extra": [
+        "字母从左到右执行，函数复合从右到左；随机变量独立资格由vectorNormalSequence约束。"
+      ],
+      "missing": null
+    },
+    {
+      "source_id": "MD-7.3.1-WordConvention",
+      "statement_scope": "完整复合图式、O计数及时间分配修正；力求值说明列于上下文，不声称已证明计算成本。",
+      "extra": [
+        "原文图式照录3个h/4的O；修正版改3个h/3和3N_c随机数。力求值次数为实现说明，未形式化成本模型。",
+        "每个O的向量噪声需联合独立标准正态；字母计数结论独立证明。"
+      ],
+      "missing": null
+    },
+    {
+      "source_id": "MD-7.3.1-SixSchemes",
+      "statement_scope": "本条逐字引用的全部数学对象与公式；未纳入的上下文另列。",
+      "extra": [
+        "BABO已定义于ABOBABO；其余5个完整复合依次对应所列中间步。",
+        "R与S为同一步两次O的独立标准正态向量；跨步也独立，用vectorNormalSequence提供资格。",
+        "原文最后“single evaluation”使用跨步缓存；实现成本不列为待证数学命题。"
+      ],
+      "missing": null
+    },
+    {
+      "source_id": "MD-7.3.1-ConjugateIteration",
+      "statement_scope": "有限复合恒等式及OABA单步映射；独立随机序列上的共轭解释未形式化。",
+      "extra": [
+        "compositionIterate是任意确定性映射的真实复合恒等式；实际随机迭代应在扩展噪声序列空间中使用更新映射，不能把固定R重复使用当独立重抽样。",
+        "对所印OABA与BAOAB的随机分布/路径共轭仍需噪声移位包装，列入覆盖缺口；未把一般S,T恒等式冒称整段已覆盖。"
+      ],
+      "missing": null
+    },
+    {
+      "source_id": "MD-7.3.2-SPVPrinted",
+      "statement_scope": "本条逐字引用的全部数学对象与公式；未纳入的上下文另列。",
+      "extra": [
+        "γ>0使用原印η商；γ=0的连续延拓η=h另需定义，不用实数除零总化声称正确。"
+      ],
+      "missing": null
+    },
+    {
+      "source_id": "MD-7.3.2-SPVLargeFriction",
+      "statement_scope": "固定正h的η→0；随后的数值方法失效说明登记为适用范围讨论。",
+      "extra": [
+        "只表达明确的η极限；采样不一致的定性判断缺统一模型、时标与测试函数量化，不作为已证结论。"
+      ],
+      "missing": "指数衰减及除以γ的实极限短桥尚待尝试，不建立采样收敛理论。"
+    },
+    {
+      "source_id": "MD-7.3.2-BBK",
+      "statement_scope": "本条逐字引用的全部数学对象与公式；未纳入的上下文另列。",
+      "extra": [
+        "h>0、γ≥0、θ>0、m_i>0时分母非零及噪声方差有效；不同R′耦合方案分别处理，不把独立与重用噪声混为一谈。"
+      ],
+      "missing": null
+    },
+    {
+      "source_id": "MD-7.4-HarmonicHamiltonian",
+      "statement_scope": "本条逐字引用的全部数学对象与公式；未纳入的上下文另列。",
+      "extra": [
+        "正m、正θ、Ω≠0时为可归一化的正则谐振子Gibbs分布；θ=k_BT。"
+      ],
+      "missing": null
+    },
+    {
+      "source_id": "MD-7.4-HarmonicMoments",
+      "statement_scope": "实际正态乘积的全部五个矩；其Lebesgue密度等于归一Gibbs权的识别未另作定理。",
+      "extra": [
+        "harmonicLaw给出实际正态乘积，未把所需各矩值作为假设；与Hamiltonian的密度识别另列覆盖缺口。"
+      ],
+      "missing": "需要正态二阶矩和乘积测度积分的完整短桥；不重建Gaussian理论。"
+    },
+    {
+      "source_id": "MD-7.4-LinearIteration",
+      "statement_scope": "本条逐字引用的全部数学对象与公式；未纳入的上下文另列。",
+      "extra": [
+        "具体2×2矩阵用四个真实系数，噪声不假定自动独立；后续陈述分别补独立或相关结构。"
+      ],
+      "missing": null
+    },
+    {
+      "source_id": "MD-7.4-BBKLinearForm",
+      "statement_scope": "本条逐字引用的全部数学对象与公式；未纳入的上下文另列。",
+      "extra": [
+        "完整记录所印矩阵与噪声；从BBK更新代入谐势的代数识别暂未证明，不以定义计为已证识别。"
+      ],
+      "missing": null
+    },
+    {
+      "source_id": "MD-7.4.1-StationaryMomentSystem",
+      "statement_scope": "本条逐字引用的全部数学对象与公式；未纳入的上下文另列。",
+      "extra": [
+        "使用独立乘积μ.prodη及实际推前不变性，不把所求矩方程当作该定理假设；所有坐标L²、噪声中心化明示。",
+        "只讨论已存在的平稳分布矩，初值分布趋平稳及长时间平均的遍历收敛未证明。"
+      ],
+      "missing": "需乘积测度、可积多项式与推前矩计算的桥接；不建立一般Markov链遍历理论。"
+    },
+    {
+      "source_id": "MD-7.4.1-ABOHarmonic",
+      "statement_scope": "本条逐字引用的全部数学对象与公式；未纳入的上下文另列。",
+      "extra": [
+        "原文长时间极限前提改为已存在的实际平稳概率分布及一阶矩可积；趋平稳结论不在本条覆盖。"
+      ],
+      "missing": "需推前期望方程与二元线性系统短桥；不建立Markov遍历性。"
+    },
+    {
+      "source_id": "MD-7.4.1-ABOVariance",
+      "statement_scope": "本条逐字引用的全部数学对象与公式；未纳入的上下文另列。",
+      "extra": [
+        "完整保留方差有理式与Taylor展开；实际平稳概率、L²及稳定区分母为正明示，不假设目标方差公式。"
+      ],
+      "missing": "需实际平稳矩方程求解及三阶Taylor余项；各路线超出短桥，保留未证。"
+    },
+    {
+      "source_id": "MD-7.4.1-Table71",
+      "statement_scope": "本条逐字引用的全部数学对象与公式；未纳入的上下文另列。",
+      "extra": [
+        "表7.1是由矩方程推导的精确数学公式，保留为待证；与数值实验观测表区分。",
+        "4个算法均使用本章完整定义、独立标准正态乘积与实际平稳推前；不把所需矩值写成假设。",
+        "只陈述已存在平稳概率的矩；长期收敛和遍历解释另列缺口。"
+      ],
+      "missing": "四种真实分裂映射的Gaussian矩输运与线性方程求解；不建立一般离散遍历理论。"
+    },
+    {
+      "source_id": "MD-7.4.1-NonsymmetricExactMoments",
+      "statement_scope": "两个非对称算法精确位置/动量二阶矩；协方差阶数暂缺。",
+      "extra": [
+        "AOAB和BAOA按字母总时间h定义；实际平稳概率、L²、稳定参数显式。",
+        "本条仅覆盖两个精确方差；O(h)协方差及其随h统一常数未陈述，列入覆盖缺口。"
+      ],
+      "missing": "需要真实平稳矩输运及代数求解；不建立通用弱误差理论。"
+    },
+    {
+      "source_id": "MD-7.4.2-BBKStar",
+      "statement_scope": "本条逐字引用的全部数学对象与公式；未纳入的上下文另列。",
+      "extra": [
+        "R序列需独立同分布标准正态；状态与当前R因上一步重用相关，不再假设独立。矩阵及κ常数由BBKLinearForm给出。"
+      ],
+      "missing": null
+    },
+    {
+      "source_id": "MD-7.4.2-BBKStarCorrelations",
+      "statement_scope": "本条逐字引用的全部数学对象与公式；未纳入的上下文另列。",
+      "extra": [
+        "Qold/Pold代表吸收R_{n-1}后仍独立于未来R_n,R_{n+1}的旧状态组合；不把当前p与R_n假设独立。",
+        "所有分量L²和未来独立资格明示；此抽象局部模型覆盖所列七个相关矩。"
+      ],
+      "missing": "需要实际独立随机变量的乘积积分和Gaussian矩展开；不建设历史扩展Markov链理论。"
+    },
+    {
+      "source_id": "MD-7.4.2-BBKStarMomentSystemPrinted",
+      "statement_scope": "本条逐字引用的全部数学对象与公式；未纳入的上下文另列。",
+      "extra": [
+        "PDF300续接第三条方程；此处定义保留方程组全部三式，不把修正方程定义计作概率推导已证。"
+      ],
+      "missing": null
+    },
+    {
+      "source_id": "MD-7.4.2-BBKStarStationary",
+      "statement_scope": "给定正确矩方程的代数求解及全部三矩值；未证明BBK*长期收敛。",
+      "extra": [
+        "只陈述修正后的矩方程组求解；一般平稳分布导出此方程需BBKStarCorrelations及历史模型，未声称整条分布理论完成。"
+      ],
+      "missing": "含平方根的非退化线性系统求解超过本轮短证明；保留未证。"
+    },
+    {
+      "source_id": "MD-7.5-PerturbedHamiltonian",
+      "statement_scope": "本条逐字引用的全部数学对象与公式；未纳入的上下文另列。",
+      "extra": [
+        "后面所印系数取单位温度θ=1与单位质量；原段未显式写温度依赖，其他温度不声称覆盖。",
+        "分布是实际归一Gibbs权；ε>0时的可积归一性及动量独立Gaussian识别另列待证。"
+      ],
+      "missing": null
+    },
+    {
+      "source_id": "MD-7.5-PerturbedErrorExpansion",
+      "statement_scope": "本条逐字引用的全部数学对象与公式；未纳入的上下文另列。",
+      "extra": [
+        "原书以形式截断推得系数；本条把正ε、正h趋零的余项写成明确待证估计，不声称形式截断已给出严格证明。",
+        "实际平稳分布、坐标L²、独立Gaussian噪声及γ>0均写入前提；没有把待求平均或展开作为假设。"
+      ],
+      "missing": "需要非线性平稳矩层级截断及一致余项控制的大型理论；本轮不建设。"
+    },
+    {
+      "source_id": "MD-7.5-PerturbedErrorOrders",
+      "statement_scope": "本条逐字引用的全部数学对象与公式；未纳入的上下文另列。",
+      "extra": [
+        "双参数正向极限已明确；γ固定的常数不等于γ一致误差界。原书(7.14)的ε³h²余项不足以单独推出BAOAB的ε²h²+ε²h⁴界，需要额外结构；保留为待证。"
+      ],
+      "missing": "首项衰减需有理函数极限短桥；四个误差阶需要非线性平稳弱误差与一致余项理论。"
+    },
+    {
+      "source_id": "MD-7.6-GibbsComposition",
+      "statement_scope": "传播子共同固定点的组合推论；前两条生成元及半群识别未新增证明。",
+      "extra": [
+        "只覆盖末尾不变对象的组合恒等式；P/Q可取实际测度推前或已定义的传播子。H/O各自Gibbs不变性由前面独立陈述承担，生成元零蕴含半群固定点还需半群域理论。"
+      ],
+      "missing": null
+    },
+    {
+      "source_id": "MD-7.6-DivergenceFreeInvariant",
+      "statement_scope": "本条逐字引用的全部数学对象与公式；未纳入的上下文另列。",
+      "extra": [
+        "微分对象C¹，第一积分和散度为实际导数；密度非负及归一化需g另行满足，此微分恒等式不把任意g都称概率密度。",
+        "不变生成元到全局流不变测度仍需完整流/输运桥，见HamiltonianGibbs。"
+      ],
+      "missing": "散度乘积法则与坐标导数求和需短桥；全局流测度输运另列。"
+    },
+    {
+      "source_id": "MD-7.6-GeMarsdenRestriction",
+      "statement_scope": "原文数学主张已登记；Lean给出结论形式和第一积分资格，尚缺可核定的完整定理前提与定理陈述。",
+      "extra": [
+        "原文引用的Ge–Marsden定理未列非可积性、局部性及精确流的全部技术条件；仅定义其非可积性和结论形式，未把geMarsdenConclusion宣称为真。",
+        "辛映射体积保持和Ge–Marsden结论均列入本条覆盖缺口，不能把该定义当成定理已证。"
+      ],
+      "missing": null
+    },
+    {
+      "source_id": "MD-7.6-JSplitting",
+      "statement_scope": "本条逐字引用的全部数学对象与公式；未纳入的上下文另列。",
+      "extra": [
+        "Ji取常系数反对称矩阵，H为C²；一般退化Ji并非标准坐标辛矩阵，但能量/散度两个实际导数结论仍有意义。",
+        "体积保持需要已存在的完整光滑流；本条不新建流存在及Liouville理论。"
+      ],
+      "missing": "反对称二次型为零、混合偏导对称与坐标散度的短桥；全局流体积保持另列。"
+    },
+    {
+      "source_id": "MD-7.6-CoordinateJSplitting",
+      "statement_scope": "本条逐字引用的全部数学对象与公式；未纳入的上下文另列。",
+      "extra": [
+        "完整记录冻结坐标的一自由度向量场；形式quadrature可积性的分支、转折点及积分反演尚未形式化，明确列入覆盖缺口。"
+      ],
+      "missing": null
+    },
+    {
+      "source_id": "MD-7.7-ModifiedGenerator",
+      "statement_scope": "本条逐字引用的全部数学对象与公式；未纳入的上下文另列。",
+      "extra": [
+        "只取形式幂级数系数；O(h⁴)在此意为0–3阶系数相等，不宣称无界算符级数收敛，也不声称是另一SDE的生成元。"
+      ],
+      "missing": null
+    },
+    {
+      "source_id": "MD-7.7-InvariantDensityExpansion",
+      "statement_scope": "本条逐字引用的全部数学对象与公式；未纳入的上下文另列。",
+      "extra": [
+        "系数零质量不等于任意h的截断密度非负；概率密度仍须非负、可积且归一。余项质量也为零或完整级数可交换积分时才推出精确总质量一致。",
+        "此处证明所有形式系数的质量约束；未把有限截断表达式假称实际不变概率。"
+      ],
+      "missing": null
+    },
+    {
+      "source_id": "MD-7.7.1-ExactABOPropagators",
+      "statement_scope": "本条逐字引用的全部数学对象与公式；未纳入的上下文另列。",
+      "extra": [
+        "O用实际独立标准正态乘积测度；θ>0、γ≥0、t≥0、正质量时对应OU噪声。期望用于可积φ，未把不可积函数的默认积分当物理期望。",
+        "半群律及实际SDE生成元识别需OU转移律与Markov理论，本条只定义固定时刻传播子。"
+      ],
+      "missing": null
+    },
+    {
+      "source_id": "MD-7.7.1-OperatorOrderReversal",
+      "statement_scope": "确定性拉回顺序及ABAO后向传播定义；无界算符指数/伴随识别尚缺。",
+      "extra": [
+        "覆盖反向拉回组合恒等式和ABAO的全部四段期望传播式；其与前面随机abao映射期望相等仍需推前积分桥。",
+        "伴随前向传播子的四段顺序记录在原文；独立定义实际密度伴随的函数空间和边界条件列为覆盖缺口。"
+      ],
+      "missing": null
+    },
+    {
+      "source_id": "MD-7.7.1-StationaryModifiedPDE",
+      "statement_scope": "本条逐字引用的全部数学对象与公式；未纳入的上下文另列。",
+      "extra": [
+        "真实离散转移一般不嵌入连续Markov半群，修改方程仅为形式分析；不宣称任意离散SDE方法有上述真实Fokker–Planck演化。",
+        "Markov半群资格、密度正性归一、无界生成元定义域及嵌入性尚缺；此处仅明确定义方程，不证明等价。"
+      ],
+      "missing": null
+    },
+    {
+      "source_id": "MD-7.7.1-TwoOperatorBCH",
+      "statement_scope": "本条逐字引用的全部数学对象与公式；未纳入的上下文另列。",
+      "extra": [
+        "任意实代数中的非交换形式幂级数；不要求无界算符指数收敛。本条完整记录所印0–2阶。"
+      ],
+      "missing": "已有log与exp低阶系数，但非交换乘积展开到三阶的桥接仍未证明；不建立一般BCH理论。"
+    },
+    {
+      "source_id": "MD-7.7.1-TaylorRemainder",
+      "statement_scope": "本条逐字引用的全部数学对象与公式；未纳入的上下文另列。",
+      "extra": [
+        "只覆盖作用于单个可观测量和点后的标量C^(n+1) Taylor恒等式及局部余项界；把ABO无界算符组合在紧支撑光滑测试函数上归约到这些假设仍是覆盖缺口。"
+      ],
+      "missing": "需要Mathlib实函数Taylor积分余项桥；不建立通用弱误差展开。"
+    },
+    {
+      "source_id": "MD-7.7.2-ThreeOperatorBCH",
+      "statement_scope": "本条逐字引用的全部数学对象与公式；未纳入的上下文另列。",
+      "extra": [
+        "完整记录最终0–2阶系数；中间未合并式作为原文推导说明，不另假装是完整精确算符相等。"
+      ],
+      "missing": "需三重形式指数乘积的低阶log系数展开；不建设无界算符BCH收敛理论。"
+    },
+    {
+      "source_id": "MD-7.7.2-ScalarForwardOperators",
+      "statement_scope": "本条逐字引用的全部数学对象与公式；未纳入的上下文另列。",
+      "extra": [
+        "所有偏导都是实际deriv，单位质量、θ=k_BT；用于光滑密度与γ≥0,θ>0。这里不把未规定定义域的微分表达式直接称闭算符。"
+      ],
+      "missing": null
+    },
+    {
+      "source_id": "MD-7.7.2-CommutatorAB",
+      "statement_scope": "本条逐字引用的全部数学对象与公式；未纳入的上下文另列。",
+      "extra": [],
+      "missing": "需实二变量偏导乘积与混合偏导交换的短桥；不重建一般微分算符理论。"
+    },
+    {
+      "source_id": "MD-7.7.2-CommutatorsAOBO",
+      "statement_scope": "本条逐字引用的全部数学对象与公式；未纳入的上下文另列。",
+      "extra": [],
+      "missing": "需三阶偏导乘积展开与交换桥接；最多短路线，不建大型算符理论。"
+    },
+    {
+      "source_id": "MD-7.7.2-OBAModifiedOperator",
+      "statement_scope": "本条逐字引用的全部数学对象与公式；未纳入的上下文另列。",
+      "extra": [
+        "只证明三个真实交换子表达式与所印一阶修正一致；整体离散传播子的余项界需Taylor/弱展开桥，不声称完成。"
+      ],
+      "missing": null
+    },
+    {
+      "source_id": "MD-7.7.2-SpectralQualification",
+      "statement_scope": "原文谱断言已登记，Lean定义其点谱目标；尚缺无界算符对象和完整限定定理。",
+      "extra": [
+        "只记录原文谱结论的精确目标命题，不宣称为定理；一般闭无界Langevin生成元、定义域及紧预解式资格未覆盖。"
+      ],
+      "missing": null
+    },
+    {
+      "source_id": "MD-7.7.3-PerturbationCoefficientEquation",
+      "statement_scope": "本条逐字引用的全部数学对象与公式；未纳入的上下文另列。",
+      "extra": [
+        "在真实线性作用的形式系数卷积上推导0阶和1阶必要方程；并未由这些必要方程证明原离散链存在不变分布。"
+      ],
+      "missing": null
+    },
+    {
+      "source_id": "MD-7.7.3-ObservableCorrectionExpansion",
+      "statement_scope": "本条逐字引用的全部数学对象与公式；未纳入的上下文另列。",
+      "extra": [
+        "完整覆盖0–2阶有限截断积分；无限级数交换与实际误差余项仍需支配收敛及弱展开理论，明确不声称已证。"
+      ],
+      "missing": null
+    },
+    {
+      "source_id": "MD-7.7.3-PerturbativeSolvabilityCaution",
+      "statement_scope": "可解性目标与原书未证明的预期已登记；指数稳定和全局半群存在不作为已获定理。",
+      "extra": [
+        "原书明确未给严格可解性/指数吸引/半群全局存在定理；保留其全部原文主张并定义可解性目标。",
+        "不能由紧预解式和有界扰动单独推出任意rhs可解；核方向的Fredholm相容条件、定义域与谱隙均是覆盖缺口。"
+      ],
+      "missing": null
+    },
+    {
+      "source_id": "MD-7.8-FirstOrderOperator",
+      "statement_scope": "本条逐字引用的全部数学对象与公式；未纳入的上下文另列。",
+      "extra": [
+        "前向组合采用Z,Y,X顺序；正式级数系数推论覆盖所有六个排列，L0为三者和。修正方程为必要形式方程，可解性独立。"
+      ],
+      "missing": "直接系数归约的短路线超过时间盒；保留未证。"
+    },
+    {
+      "source_id": "MD-7.8-HomogeneousNormalization",
+      "statement_scope": "本条逐字引用的全部数学对象与公式；未纳入的上下文另列。",
+      "extra": [
+        "核恰为ρ的一维空间是明确前提；不把Langevin核唯一性当作已证明。第二条为实际概率归一化的中心化恒等式。"
+      ],
+      "missing": null
+    },
+    {
+      "source_id": "MD-7.8.1-CommutatorPermutationRelations",
+      "statement_scope": "首式及(7.22),(7.24)全部算符作用关系；(7.23)需归一解唯一性桥，未另作Lean定理。",
+      "extra": [
+        "实际线性作用与Oρ=0,(A+B)ρ=0明示。修正函数的符号关系还需统一零均值和核唯一性；本条只证明/陈述交换子与右端项关系，函数关系列缺口。"
+      ],
+      "missing": "线性算符非交换代数作用桥接；本轮保留未证，不建设一般弱误差理论。"
+    },
+    {
+      "source_id": "MD-7.8.1-GibbsDerivativeIdentities",
+      "statement_scope": "本条逐字引用的全部数学对象与公式；未纳入的上下文另列。",
+      "extra": [
+        "ρ为未归一Gibbs权，所有微分等式对常数归一化同样成立；实际概率还要正有限配分积分。所有质量正、β>0、光滑资格明示。",
+        "覆盖g、A/B作用、纯位置ψ作用及O(gρ)两种等价写法；交换子作用与中间OU共轭式在原文登记但另列覆盖缺口。"
+      ],
+      "missing": "实际多维Gibbs指数微分、二阶OU乘积法则与求和桥，超过短证明；不建SDE解或遍历理论。"
+    },
+    {
+      "source_id": "MD-7.8.1-FirstCorrectionTablePrinted",
+      "statement_scope": "本条逐字引用的全部数学对象与公式；未纳入的上下文另列。",
+      "extra": [
+        "六个排列分别编码ABO,OAB,OBA,BAO,AOB,BOA；原文版不证明，修正版陈述实际PDE。c任意常数时PDE不变，零均值另行规定c=γ〈U〉。"
+      ],
+      "missing": "完整多维指数微分及二阶算符乘积展开需较大桥接；保留PDE未证。"
+    },
+    {
+      "source_id": "MD-7.8.1-PositionMomentumCorrections",
+      "statement_scope": "本条逐字引用的全部数学对象与公式；未纳入的上下文另列。",
+      "extra": [
+        "产品Gibbs实际含位置概率及独立中心Gaussian动量；所有显示期望需可积，未把待求修正值作为假设。",
+        "六个算法分别给符号；大摩擦O(γ)的解释来自明确线性γ项，随γ,h的统一误差界未证明。"
+      ],
+      "missing": "需乘积积分和Gaussian奇矩归零的多维短桥；不建设Talay–Tubaro理论。"
+    },
+    {
+      "source_id": "MD-7.8.1-OverdampedFirstOrderCaution",
+      "statement_scope": "本条逐字引用的全部数学对象与公式；未纳入的上下文另列。",
+      "extra": [
+        "覆盖AOAB全部更新与固定噪声/固定h下的摩擦极限；不把摩擦极限本身称作过阻尼一致性证明。六个XYZ不一致及AOAB有效时间重标度的一致性仍是明确覆盖缺口。"
+      ],
+      "missing": "OU指数衰减、sqrt连续及∇U连续的有限维极限短桥；过阻尼时间重标度理论不新建。"
+    },
+    {
+      "source_id": "MD-7.8.2-BiasedDoubleWellExact",
+      "statement_scope": "本条逐字引用的全部数学对象与公式；未纳入的上下文另列。",
+      "extra": [
+        "保留数值例中的精确数学积分和解析消项；原文虽起初β=1，推导中保留β，本条正β形式需同样积分分部理论。",
+        "中间〈qUU′〉公式及γ=2实际误差O(h²)需先有严格弱展开，本条不声称已获该余项。"
+      ],
+      "missing": "需要四次势Gibbs权可积性、积分分部与Gaussian矩的桥；不建设通用弱误差理论。"
+    },
+    {
+      "source_id": "MD-7.9-Proposition71",
+      "statement_scope": "本条逐字引用的全部数学对象与公式；未纳入的上下文另列。",
+      "extra": [
+        "桥接正式库已证的实际非交换形式log/exp及完整对称修正定义体；余项为h⁴形式因子，未声称无界算符级数收敛。"
+      ],
+      "missing": null
+    },
+    {
+      "source_id": "MD-7.9-EvenDensityPerturbation",
+      "statement_scope": "本条逐字引用的全部数学对象与公式；未纳入的上下文另列。",
+      "extra": [
+        "系数相消得到必要方程；Fredholm可解性的充分性需核、余核、函数空间和域的闭值域资格，本条不证明。原书将奇阶修正零作为假设，本条保留。"
+      ],
+      "missing": null
+    },
+    {
+      "source_id": "MD-7.9.1-OYZYOInhomogeneity",
+      "statement_scope": "本条逐字引用的全部数学对象与公式；未纳入的上下文另列。",
+      "extra": [],
+      "missing": "需展开两个含O和H的嵌套交换子在共同核上的相消短桥；保留未证。"
+    },
+    {
+      "source_id": "MD-7.9.1-TripleCommutatorPrinted",
+      "statement_scope": "本条逐字引用的全部数学对象与公式；未纳入的上下文另列。",
+      "extra": [
+        "M=I；Hessian、三阶张量及张量缩并均为实际坐标导数；原文版仅定义，不证明。反例先给系数代数区别，完整势函数测度反例未构造。"
+      ],
+      "missing": "需要多维三阶Gibbs微分与交换子展开；不建设通用算符理论。"
+    },
+    {
+      "source_id": "MD-7.9.1-SymmetricRHS",
+      "statement_scope": "本条逐字引用的全部数学对象与公式；未纳入的上下文另列。",
+      "extra": [
+        "右端去掉共同正Gibbs权，改用真实乘积Gibbs测度积分；奇性与零均值不等于完整Fredholm充分可解性。PDE左端与L2识别另需三重交换子桥。"
+      ],
+      "missing": "需Gaussian乘积测度在p↦-p下不变与可积奇函数积分为零的短桥；不建设Fredholm理论。"
+    },
+    {
+      "source_id": "MD-7.9.1-Lemma71",
+      "statement_scope": "本条逐字引用的全部数学对象与公式；未纳入的上下文另列。",
+      "extra": [
+        "真实Markov核、真实概率与不变概率的唯一性完整；借助不变性和唯一性即足够，不要求额外极限交换。保留原书证明文本，Lean采用已证更弱假设路线。"
+      ],
+      "missing": null
+    },
+    {
+      "source_id": "MD-7.9.1-ConjugateSymmetricCorrections",
+      "statement_scope": "形式传递系数的消项及(7.30)全部目标；未证明从具体分裂映射导出这些系数。",
+      "extra": [
+        "Lean证明给定真实二阶传递系数的消项，(7.30)完整作为两关系的命题定义；ST/TS指数系数识别、Hamiltonian微分及实际两组修正系数识别仍列缺口。"
+      ],
+      "missing": null
+    },
+    {
+      "source_id": "MD-7.9.2-ReciprocalFrictionExpansion",
+      "statement_scope": "本条逐字引用的全部数学对象与公式；未纳入的上下文另列。",
+      "extra": [
+        "ε=1/γ；使用真实偏导、单位质量、β>0；形式层级包含所有后续阶。各阶零均值及归一性需另加centeredCorrections，不把其当作已证。"
+      ],
+      "missing": null
+    },
+    {
+      "source_id": "MD-7.9.2-OUKernelQualification",
+      "statement_scope": "本条逐字引用的全部数学对象与公式；未纳入的上下文另列。",
+      "extra": [
+        "修正版明确实际Gaussian L²域和光滑性；原文目标定义保留但不证明。零均值仅限制ν常数方向，不由OU核自动给出。"
+      ],
+      "missing": "需要OU生成元加权Dirichlet型、域闭包及核刻画理论，本轮不建设。"
+    },
+    {
+      "source_id": "MD-7.9.2-OUHermiteIdentities",
+      "statement_scope": "本条逐字引用的全部数学对象与公式；未纳入的上下文另列。",
+      "extra": [
+        "OU仅对p微分，μ(q)不需对p额外正则；U,ν光滑且β>0。全部三个Hermite式和两个合成恒等式都在Lean结论中。"
+      ],
+      "missing": "需三阶张量的Gaussian共轭微分与混合导数交换；保留未证，不发展一般Hermite谱理论。"
+    },
+    {
+      "source_id": "MD-7.9.2-FirstReciprocalCorrection",
+      "statement_scope": "本条逐字引用的全部数学对象与公式；未纳入的上下文另列。",
+      "extra": [
+        "给出全部f2,1公式并陈述其一阶PDE；二阶可解相容性需OU积分通量消失及实际域条件，尚未证明。"
+      ],
+      "missing": "需要OU线性、Hermite恒等式应用和边界通量桥接；不建设Fredholm替代理论。"
+    },
+    {
+      "source_id": "MD-7.9.2-OverdampedSolvabilityOperators",
+      "statement_scope": "M,N及ν全部显式公式和ν代数识别；平均算符等价与可解性未证明。",
+      "extra": [
+        "M,N记录所印右端微分表达式；π̄与前向算符须用条件Gaussian平均和Gibbs共轭修正后才能证明左侧识别，详见前条。",
+        "只证明ν候选的代数改写；Mν相容方程、核常数唯一性、零均值须积分分部与定义域桥，不把候选定义当成解已证。"
+      ],
+      "missing": null
+    },
+    {
+      "source_id": "MD-7.9.2-HighFrictionCorrectionTable",
+      "statement_scope": "本条逐字引用的全部数学对象与公式；未纳入的上下文另列。",
+      "extra": [
+        "算法编号OABAO,OBABO,ABOBA,BAOAB；保留全部四个候选、c选择和双渐近余项命题。",
+        "候选的代数共轭关系可单独证明；其为实际平稳误差系数、零均值及严格双渐近界均未获证明。"
+      ],
+      "missing": null
+    },
+    {
+      "source_id": "MD-7.9.3-BAOABMarginalCancellation",
+      "statement_scope": "本条逐字引用的全部数学对象与公式；未纳入的上下文另列。",
+      "extra": [
+        "归一条件Gaussian平均为零即推出原文带位置权的平均为零；两个零积分结论均为实际测度。双渐近余项的有效性须另外证明，不由形式消项自动给出。"
+      ],
+      "missing": "需Gaussian协方差矩阵、Hessian缩并与乘积Fubini桥；不发展Talay–Tubaro余项理论。"
+    },
+    {
+      "source_id": "MD-7.9.3-SuperconvergenceScope",
+      "statement_scope": "本条逐字引用的全部数学对象与公式；未纳入的上下文另列。",
+      "extra": [
+        "显式归一Gibbs构型边界通量消失和积分可积条件；此处只给OABAO积分消项。",
+        "四阶推论仅在已有有效h⁴余项界下成立，不能从固定有限γ的h²/γ余项直接推出；弱/强有限时间阶数不因此提高。"
+      ],
+      "missing": "需要逐坐标积分分部及Fubini边界桥；不建设一般无限时间弱展开。"
+    },
+    {
+      "source_id": "MD-7.10-MomentumRedrawLimit",
+      "statement_scope": "本条逐字引用的全部数学对象与公式；未纳入的上下文另列。",
+      "extra": [
+        "固定正h和实际独立Gaussian R的逐噪声路径极限；分布收敛可由连续映射桥得到，未额外宣称。质量趋零与速度摩擦的不同极限仅原文提示，相关重标度定理尚缺。"
+      ],
+      "missing": "指数衰减、sqrt连续与有限维逐坐标极限短桥；不建立Smoluchowski–Kramers理论。"
+    },
+    {
+      "source_id": "MD-7.10-OBABOOverdampedEuler",
+      "statement_scope": "本条逐字引用的全部数学对象与公式；未纳入的上下文另列。",
+      "extra": [
+        "完整保留五段极限更新和位置消元；τ=h²/2。长期平均O(τ)=O(h²)另需稳定势和遍历弱误差理论，未由代数消元得到。"
+      ],
+      "missing": "时间尺度替换需实平方根、质量正性与根号乘积的短桥。"
+    },
+    {
+      "source_id": "MD-7.10-BAOABLimitMethod",
+      "statement_scope": "本条逐字引用的全部数学对象与公式；未纳入的上下文另列。",
+      "extra": [
+        "消元需当前p已满足上一步尾kick关系；此初始关系显式，不能对任意初始动量声称位置闭合。",
+        "完整五段更新、h形式及τ形式都定义；两种根号系数识别参见上条重标度，尚未另证明。"
+      ],
+      "missing": null
+    },
+    {
+      "source_id": "MD-7.10-ColoredNoiseAndExtension",
+      "statement_scope": "本条逐字引用的全部数学对象与公式；未纳入的上下文另列。",
+      "extra": [
+        "MA(1)噪声以相邻两独立Gaussian平均定义；定义扩展状态(q,R旧)的完整一步映射。非Markov性的普遍表述依赖具体势和初值，未把任意位置过程都判非Markov；扩展Markov核与半群律仍是覆盖缺口。"
+      ],
+      "missing": "需独立Gaussian一二阶矩的全部相邻/不相邻组合积分；不建一般时间序列理论。"
+    },
+    {
+      "source_id": "MD-7.10-LimitMethodAccuracy",
+      "statement_scope": "误差界目标和步长幂次转换；尚缺LM算法到该界的完整定理。",
+      "extra": [
+        "用显式瞬态上界命题保留指数衰减的一阶项和二阶项，不宣称该命题已对任意势成立；其成立所需的增长/耗散与正则条件及真实分布误差识别尚缺。",
+        "原文称all values of h and τ亦不能由局部渐近展开推出全步长阶数结论。"
+      ],
+      "missing": null
+    },
+    {
+      "source_id": "MD-7.9.3-ZeroFrictionVerlet",
+      "statement_scope": "本条逐字引用的全部数学对象与公式；未纳入的上下文另列。",
+      "extra": [
+        "OU为恒等映射及BAOAB合并成BAB的函数恒等式；其他字母排列得到ABA或BAB，不一概声称同一种Verlet。"
+      ],
+      "missing": null
+    },
+    {
+      "source_id": "MD-7.11.1-TemperatureObservables",
+      "statement_scope": "本条逐字引用的全部数学对象与公式；未纳入的上下文另列。",
+      "extra": [
+        "无约束n个独立坐标时Nd=n，θ=1/β；约束减少自由度时不能直接用此n公式。",
+        "构型温度需真实归一位置Gibbs、可积和边界通量条件；数值分布下两种温度不必一致，不声称该等式对离散链自动成立。"
+      ],
+      "missing": "需Gaussian二阶矩和多维Gibbs积分分部桥；不新建遍历性理论。"
+    },
+    {
+      "source_id": "MD-7.11.1-VelocityAutocorrelationDefinition",
+      "statement_scope": "本条逐字引用的全部数学对象与公式；未纳入的上下文另列。",
+      "extra": [
+        "原文未给常数因子的显式Green–Kubo式；此处按各向同性n维标准归一记录1/n，仅在P概率、速度平稳、中心化且自相关可积等资格下解释为物理扩散率。",
+        "已证的缩放恒等式说明动量观测被缩放时自相关改变；扩散系数与Einstein关系的等价仍需混合与积分极限理论，未证明。"
+      ],
+      "missing": null
+    },
+    {
+      "source_id": "MD-7.12-ConstrainedLangevin",
+      "statement_scope": "全部约束积分方程及隐约束资格；适应性作为解资格显式保留，存在唯一性未证明。",
+      "extra": [
+        "实际多维Wiener坐标独立、正质量/温度/摩擦、C²约束、积分可积明示；常系数噪声用真实W增量。",
+        "定义保留存在给定乘子过程的积分解，不证明一般约束SDE存在唯一。状态及乘子适应W自然历史，状态路径连续与初值完整；一般强解存在唯一仍未证明。"
+      ],
+      "missing": null
+    },
+    {
+      "source_id": "MD-7.12-ConstrainedCanonicalErgodicity",
+      "statement_scope": "全部分布及遍历平均目标的测度定义；约束参考测度存在与具体过程的遍历定理仍缺。",
+      "extra": [
+        "δ不是普通Lebesgue密度；用有支撑测度ν和正则化δ的弱积分极限规定其含义，不能用任意面测度替代而省略Jacobian因子。",
+        "实际概率要求配分积分正有限；遍历性还需连通性、正则满秩约束、势增长及不可约等条件。原书省略这些条件，本条仅记录目标，不宣称无条件遍历定理。"
+      ],
+      "missing": null
+    },
+    {
+      "source_id": "MD-7.12-ConstrainedHOSplitting",
+      "statement_scope": "本条逐字引用的全部数学对象与公式；未纳入的上下文另列。",
+      "extra": [
+        "Hc、Oc分别使用各自乘子，不能将相同multiplier在求和中重复扣除；Oc噪声为前条真实Wiener常扩散项，向量场仅记录漂移。",
+        "每段都应满足cotangentConstraint，实际流或核、Oc半群律及约束Gaussian不变性尚未证明。"
+      ],
+      "missing": null
+    },
+    {
+      "source_id": "MD-7.12-MEVMEAlgorithm",
+      "statement_scope": "本条逐字引用的全部数学对象与公式；未纳入的上下文另列。",
+      "extra": [
+        "完整记录全部中间动量、乘子和位置/隐约束；隐式关系不声称求解器存在唯一。R,S为独立标准Gaussian向量的资格由使用时另加vectorNormalSequence。"
+      ],
+      "missing": null
+    },
+    {
+      "source_id": "MD-7.12-MidpointStabilityPrinted",
+      "statement_scope": "本条逐字引用的全部数学对象与公式；未纳入的上下文另列。",
+      "extra": [
+        "原文版仅保留γh<4条件，不增添充要关系；补充结论仅针对中点OU衰减模态。a=8说明γh<4不是该单独模态稳定的必要条件，不反驳原书整套算法的充分条件。"
+      ],
+      "missing": null
+    },
+    {
+      "source_id": "MD-7.12.1-ConstrainedABOSplitting",
+      "statement_scope": "本条逐字引用的全部数学对象与公式；未纳入的上下文另列。",
+      "extra": [
+        "Ac为已存在的完整光滑约束流，F0=id及流合成律完整；Bc/Oc为乘子线性求解关系。规则保持约束写在关系中，不把乘子求解存在性计为已证。",
+        "正质量、约束Jacobian满秩和γ≥0,θ>0,h≥0由求解器应用时另加；Oc噪声R必须独立标准Gaussian。"
+      ],
+      "missing": null
+    },
+    {
+      "source_id": "MD-7.12.1-ConstrainedBAOABAlgorithm",
+      "statement_scope": "本条逐字引用的全部数学对象与公式；未纳入的上下文另列。",
+      "extra": [
+        "完整五段关系、全部中间变量与隐约束；仅证明成功求解后的终点资格，不证明隐式解存在、唯一或概率不变性。网站包须同时摘录geodesicConstraintFlow、两求解关系和选择规格。"
+      ],
+      "missing": null
+    },
+    {
+      "source_id": "MD-7.12.1-ApproximateGeodesicOrder",
+      "statement_scope": "局部二阶替换的目标资格；从该资格推出随机全局/不变分布阶数尚未陈述完整定理。",
+      "extra": [
+        "用实际范数误差与统一C,δ明确二阶局部替换资格。完整对称随机组合需稳定性、Lipschitz、矩界及采用强阶/弱阶的区分，原段未列齐；此处不把定义当作保阶定理。"
+      ],
+      "missing": null
+    },
+    {
+      "source_id": "MD-7.13-FastSlowHarmonicModel",
+      "statement_scope": "本条逐字引用的全部数学对象与公式；未纳入的上下文另列。",
+      "extra": [
+        "单位质量、实际标准Wiener、状态适应、正β及完整积分方程由langevin定义体保留；Ω≫1在定量结论中分别改成明确不等式。"
+      ],
+      "missing": null
+    },
+    {
+      "source_id": "MD-7.13-ExactFastGaussianLaw",
+      "statement_scope": "本条逐字引用的全部数学对象与公式；未纳入的上下文另列。",
+      "extra": [
+        "陈述真实过程的转移分布，不将强解等于一组新独立R假设成结论。Bt只需给定平方根因子；正半定矩阵平方根存在性未另证明。"
+      ],
+      "missing": "需要线性SDE变分常数、确定积分Gaussian律及矩阵协方差理论；本轮不建设。"
+    },
+    {
+      "source_id": "MD-7.13-MultipleTimestepUpdate",
+      "statement_scope": "本条逐字引用的全部数学对象与公式；未纳入的上下文另列。",
+      "extra": [
+        "Rn为每步独立标准二维Gaussian；稳定分布分析仍要求真实独立序列及有限协方差，不能只以更新定义宣称存在平稳解。"
+      ],
+      "missing": null
+    },
+    {
+      "source_id": "MD-7.13-DeterminantTrace",
+      "statement_scope": "本条逐字引用的全部数学对象与公式；未纳入的上下文另列。",
+      "extra": [
+        "η允许纯虚数；显式排除临界η=0，避免除零假公式。临界阻尼应取连续极限，另列覆盖缺口。"
+      ],
+      "missing": "真实矩阵指数的特征分解/二阶Cayley–Hamilton闭式与det/trace桥；不建设一般线性SDE理论。"
+    },
+    {
+      "source_id": "MD-7.13-SpectralRadiusStability",
+      "statement_scope": "本条逐字引用的全部数学对象与公式；未纳入的上下文另列。",
+      "extra": [
+        "只陈述谱半径≤1的确定性边界资格；有非退化随机驱动时平稳二阶矩一般要求严格谱半径<1，等号并不自动给随机长期稳定。",
+        "正摩擦正h给0<det<1；γ=0、Jordan边界、临界η=0均需另审。trace到双曲式的代数/指数桥未证明。"
+      ],
+      "missing": "需实二次特征多项式的Schur/Jury判据与复根模长分类；不建设通用随机稳定性理论。"
+    },
+    {
+      "source_id": "MD-7.13-HyperbolicPhaseTransform",
+      "statement_scope": "本条逐字引用的全部数学对象与公式；未纳入的上下文另列。",
+      "extra": [
+        "实η版本必须补|h/η|<1，γ>0本身不足；复η需选择sqrt/artanh分支，原文未说明。只覆盖明确实域上的等式，不把所有γ>0都纳入。"
+      ],
+      "missing": null
+    },
+    {
+      "source_id": "MD-7.13-UnderdampedPhasePrinted",
+      "statement_scope": "本条逐字引用的全部数学对象与公式；未纳入的上下文另列。",
+      "extra": [
+        "原文版与修正版分别定义，原文版不证明；直接用幅相恒等式绕过复函数分支。η̂=√(4Ω²-γ²)>0需要明确欠阻尼条件。"
+      ],
+      "missing": null
+    },
+    {
+      "source_id": "MD-7.13-StabilityEnvelope",
+      "statement_scope": "本条逐字引用的全部数学对象与公式；未纳入的上下文另列。",
+      "extra": [
+        "“所有步长”指对每个h满足该条件；一次h的包络条件不能声称自动覆盖所有h。仍仅为谱模不超过1的充分条件，严格随机平稳性另需严格不等式。"
+      ],
+      "missing": "包络等价需cosh/sinh正性及实平方根平方的短桥。"
+    },
+    {
+      "source_id": "MD-7.13-FrictionThresholdPrinted",
+      "statement_scope": "本条逐字引用的全部数学对象与公式；未纳入的上下文另列。",
+      "extra": [
+        "保留原精确根式，它本身与有理化修正版相同；疑误在后续比较方向/系数。欠阻尼上界γ<2Ω显式，不把该范围内的代数条件推广到任意大γ。",
+        "所有h包络由sinh x≥x推出，严格稳定与随机矩界仍需另证。反例给出有理平方数值，完整根式代入识别未另证明。"
+      ],
+      "missing": "阈值有理化与大参数根式极限需短桥；所有h包络需sinh下界和前条平方等价。"
+    },
+    {
+      "source_id": "MD-7.1-ConfigurationalSampling",
+      "statement_scope": "本条逐字引用的全部数学对象与公式；未纳入的上下文另列。",
+      "extra": [
+        "原文省略归一常数；positionGibbs定义体保留实际配分积分。可积性与概率归一资格单列，不把未归一指数直接视为概率密度。"
+      ],
+      "missing": null
+    },
+    {
+      "source_id": "MD-7.1-HamiltonianSamplingObstruction",
+      "statement_scope": "保能流、非平凡不变集资格及不变集恒等式；原文的谱隙与平稳解主张仅逐字登记，尚缺明确函数空间后的完整陈述。",
+      "extra": [
+        "本条只证明保能流的能量子水平集不变；结合非平凡概率质量可形成遍历性障碍。能量壳上的遍历性不能由原句否定。",
+        "原句未指定Liouvillian定义域、函数空间与参考概率。谱隙缺失和多个平稳解的完整算子陈述列为覆盖缺口，不把子水平集恒等式标作整段谱理论的证明。"
+      ],
+      "missing": null
+    }
+  ]
+}

@@ -1,0 +1,66 @@
+{
+  "batch": "BATCH20",
+  "subtask": "BATCH20c",
+  "source_ids": [
+    "MD-7.1-ConfigurationalSampling"
+  ],
+  "input_sha256": {
+    "Blueprint/Ch07.lean": "f30ea154ebfb07ae85c0b806ff74b35808d5a0c3dcaa647c0c3cc80a78239e37",
+    "blueprint/ch07/ch07_source.json": "c434892ebf63b06f7cadcdfa7af408c2c12d7b645d35db431d1855224163ba19",
+    "BATCH20c_PAGES.pdf": "9f6f5edf7d38f4c749b866c28b6e2623c940b5dff32b25e7f37fbf3e71c7c0bf"
+  },
+  "page_mapping": [
+    {
+      "attachment_page": 1,
+      "original_pdf_page": 283,
+      "printed_page": 262
+    }
+  ],
+  "definition_excerpts": [
+    {
+      "full_name": "MD.Ch07.V",
+      "kind": "abbrev",
+      "path": "Blueprint/Ch07.lean",
+      "line": 188,
+      "code_sha256": "7ab0ad90462b274b03f5b929b5f09417c0b397b6cb908fa6e7bd56677a314027"
+    },
+    {
+      "full_name": "MD.Ch07.positionGibbs",
+      "kind": "def",
+      "path": "Blueprint/Ch07.lean",
+      "line": 1015,
+      "code_sha256": "82bb55e66a80fed509916dd4534bcc354cc9bd8df28c6b30af7e5a2e29632202"
+    },
+    {
+      "full_name": "MD.Ch07.configurationalSamplingAverage",
+      "kind": "def",
+      "path": "Blueprint/Ch07.lean",
+      "line": 1673,
+      "code_sha256": "db4fe6cf6579738c45e4e3f84e720d90d41dfe748328fa05b27171408aa996f9"
+    },
+    {
+      "full_name": "MD.Ch07.configurationalSamplingQualified",
+      "kind": "def",
+      "path": "Blueprint/Ch07.lean",
+      "line": 1676,
+      "code_sha256": "e39dc81c404cf692d50e7c9a19bbe075df8839c9c0d101e8e0b79de82a8c2365"
+    }
+  ],
+  "validation": {
+    "project_constant_closure": "PASS",
+    "missing_project_definitions": [],
+    "full_page_render_equality_dpi": 72,
+    "website_submitted": false
+  },
+  "files": {
+    "PASTE.txt": {
+      "bytes": 8565,
+      "sha256": "5e01aa6a8ed63d77eedd2c6492ae0025ae2ea8dc1bf0384ec17408b75d7befeb"
+    },
+    "BATCH20c_PAGES.pdf": {
+      "bytes": 63635,
+      "sha256": "9f6f5edf7d38f4c749b866c28b6e2623c940b5dff32b25e7f37fbf3e71c7c0bf"
+    }
+  },
+  "total_task_bytes": 74258
+}

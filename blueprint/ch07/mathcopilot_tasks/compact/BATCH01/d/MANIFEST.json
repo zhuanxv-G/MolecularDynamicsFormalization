@@ -5,9 +5,9 @@
     "MD-7.2-SDEIncrement"
   ],
   "input_sha256": {
-    "Blueprint/Ch07.lean": "03e34bf86a5b27e03cce8552bb21fc0fea40514cd87faa953bf09a6a0a27f3c2",
-    "blueprint/ch07/ch07_source.json": "27e402f2a8b9c511106df901d6cc8472e1dae783cdf739f657879ffcf297462a",
-    "BATCH01d_PAGES.pdf": "c4242bdd48e46332f400a70a6374c768883410d8150a977c94fa7ec600344123"
+    "Blueprint/Ch07.lean": "f30ea154ebfb07ae85c0b806ff74b35808d5a0c3dcaa647c0c3cc80a78239e37",
+    "blueprint/ch07/ch07_source.json": "c434892ebf63b06f7cadcdfa7af408c2c12d7b645d35db431d1855224163ba19",
+    "BATCH01d_PAGES.pdf": "067e3d5657b0d8d9989211d8594c5c2e8cf3510b535c47c26267ad9b2a1e2a89"
   },
   "page_mapping": [
     {
@@ -21,14 +21,14 @@
       "full_name": "MD.Ch07.scalarSDE",
       "kind": "def",
       "path": "Blueprint/Ch07.lean",
-      "line": 20,
+      "line": 22,
       "code_sha256": "325d5e8f1e66b666c42a7abb02bdc2a495ff0976a8f9b1bccb55858862ee3f4c"
     },
     {
       "full_name": "MD.Ch07.sdeIncrement",
       "kind": "theorem",
       "path": "Blueprint/Ch07.lean",
-      "line": 46,
+      "line": 48,
       "code_sha256": "042890721d4ac0a5db7c8cb6c155fc9c8662d30ebfa3ec91025ffe3652b53c82"
     },
     {
@@ -68,13 +68,13 @@
   },
   "files": {
     "PASTE.txt": {
-      "bytes": 7537,
-      "sha256": "75471ecb923809ef551866c63b94fda6490b6cee660477c54242d7641b91e20b"
+      "bytes": 10321,
+      "sha256": "8dfd7a5ad41febd8d89be3ef9d49035ec44af5143bb29e61dc966f4cc21a508d"
     },
     "BATCH01d_PAGES.pdf": {
       "bytes": 74818,
-      "sha256": "c4242bdd48e46332f400a70a6374c768883410d8150a977c94fa7ec600344123"
+      "sha256": "067e3d5657b0d8d9989211d8594c5c2e8cf3510b535c47c26267ad9b2a1e2a89"
     }
   },
-  "total_task_bytes": 85053
+  "total_task_bytes": 87838
 }

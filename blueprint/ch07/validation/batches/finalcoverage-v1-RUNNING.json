@@ -1,0 +1,17 @@
+{
+  "command": [
+    "lake",
+    "env",
+    "lean",
+    "blueprint\\ch07\\validation\\batches\\finalcoverage-v1.lean"
+  ],
+  "input_sha256": "37ac96dee58c01362d434a247aa495cd243c6553fd93bfcb3a61e87d5de4da9c",
+  "parent_pid": 14228,
+  "parent_create_time": 1792306583.7056243,
+  "compiler_pid": 26740,
+  "compiler_create_time": 1792306585.2135816,
+  "started_at": "2026-10-18T14:56:25.220079",
+  "status": "completed",
+  "exit_code": 0,
+  "completed_at": "2026-10-18T14:56:40.819441"
+}

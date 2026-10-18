@@ -5,9 +5,9 @@
     "MD-7.2-AverageNotationBias"
   ],
   "input_sha256": {
-    "Blueprint/Ch07.lean": "03e34bf86a5b27e03cce8552bb21fc0fea40514cd87faa953bf09a6a0a27f3c2",
-    "blueprint/ch07/ch07_source.json": "27e402f2a8b9c511106df901d6cc8472e1dae783cdf739f657879ffcf297462a",
-    "BATCH02f_PAGES.pdf": "0a94f0cc077c932c50f7041a50219389cbb20b97910ebfeb3350f70f53154357"
+    "Blueprint/Ch07.lean": "f30ea154ebfb07ae85c0b806ff74b35808d5a0c3dcaa647c0c3cc80a78239e37",
+    "blueprint/ch07/ch07_source.json": "c434892ebf63b06f7cadcdfa7af408c2c12d7b645d35db431d1855224163ba19",
+    "BATCH02f_PAGES.pdf": "fd3ff6a6c8a445f56136ac9899d96d93475be961ff5722c1a3cfeef37666d624"
   },
   "page_mapping": [
     {
@@ -21,35 +21,35 @@
       "full_name": "MD.Ch07.bias",
       "kind": "def",
       "path": "Blueprint/Ch07.lean",
-      "line": 15,
+      "line": 17,
       "code_sha256": "9379b2023224de49efd2c0973ce1f42b80ddf08c504eff1d57e4fa7152c03649"
     },
     {
       "full_name": "MD.Ch07.densityWithPartition",
       "kind": "def",
       "path": "Blueprint/Ch07.lean",
-      "line": 129,
+      "line": 145,
       "code_sha256": "c471b5e6366c6ee4863b9b3ec51a9f3ad95e13c11f14a8b6037c39e95edaa771"
     },
     {
       "full_name": "MD.Ch07.canonicalAverage",
       "kind": "def",
       "path": "Blueprint/Ch07.lean",
-      "line": 132,
+      "line": 148,
       "code_sha256": "9fe4fe58acd8c9340290996d81fb2dddb84733c98445b5164e37549feea6d560"
     },
     {
       "full_name": "MD.Ch07.observableBias",
       "kind": "def",
       "path": "Blueprint/Ch07.lean",
-      "line": 164,
+      "line": 180,
       "code_sha256": "4f2a6d8829341716ebf4d6082cbcb4e8459d840c3dd358da4dd536dd5ef6fdc3"
     },
     {
       "full_name": "MD.Ch07.bias_nonnegative",
       "kind": "theorem",
       "path": "Blueprint/Ch07.lean",
-      "line": 168,
+      "line": 184,
       "code_sha256": "6d1f74faf30d4faf6a7ce75eef145c021e2ed5320bbfce07c4724eae6bd3bd62"
     },
     {
@@ -89,13 +89,13 @@
   },
   "files": {
     "PASTE.txt": {
-      "bytes": 6028,
-      "sha256": "3b53e8b4929e0ef0917a9504bb955d05b64570685eec1fed5a5414f2076f1dc5"
+      "bytes": 8659,
+      "sha256": "2cafa265fc472a3398fcc6da48b25686c6d52b8a6982eeaa33eec58cef2f6b90"
     },
     "BATCH02f_PAGES.pdf": {
       "bytes": 78120,
-      "sha256": "0a94f0cc077c932c50f7041a50219389cbb20b97910ebfeb3350f70f53154357"
+      "sha256": "fd3ff6a6c8a445f56136ac9899d96d93475be961ff5722c1a3cfeef37666d624"
     }
   },
-  "total_task_bytes": 87513
+  "total_task_bytes": 90144
 }

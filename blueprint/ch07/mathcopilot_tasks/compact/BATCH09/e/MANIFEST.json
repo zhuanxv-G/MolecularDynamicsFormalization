@@ -5,9 +5,9 @@
     "MD-7.7-ModifiedGenerator"
   ],
   "input_sha256": {
-    "Blueprint/Ch07.lean": "03e34bf86a5b27e03cce8552bb21fc0fea40514cd87faa953bf09a6a0a27f3c2",
-    "blueprint/ch07/ch07_source.json": "27e402f2a8b9c511106df901d6cc8472e1dae783cdf739f657879ffcf297462a",
-    "BATCH09e_PAGES.pdf": "9b3d67de5a20077e46155be1b3e398ca60809a672c3e8529616e05b481a8fb29"
+    "Blueprint/Ch07.lean": "f30ea154ebfb07ae85c0b806ff74b35808d5a0c3dcaa647c0c3cc80a78239e37",
+    "blueprint/ch07/ch07_source.json": "c434892ebf63b06f7cadcdfa7af408c2c12d7b645d35db431d1855224163ba19",
+    "BATCH09e_PAGES.pdf": "9627f1987d825e495dede6b576a008cd133778f11287b562301e8975159eaed0"
   },
   "page_mapping": [
     {
@@ -21,14 +21,14 @@
       "full_name": "MD.Ch07.formalModifiedGenerator",
       "kind": "def",
       "path": "Blueprint/Ch07.lean",
-      "line": 727,
+      "line": 743,
       "code_sha256": "669eb08559f110c7d96f9be121ad603a21addd069e9005c015d479edc8936d7e"
     },
     {
       "full_name": "MD.Ch07.formalGeneratorExpansion",
       "kind": "def",
       "path": "Blueprint/Ch07.lean",
-      "line": 730,
+      "line": 746,
       "code_sha256": "5562556e0e053ff3f4b64861969366b12219ee132490c18d07d021b79825b951"
     },
     {
@@ -369,13 +369,13 @@
   },
   "files": {
     "PASTE.txt": {
-      "bytes": 35290,
-      "sha256": "c7138fb4475b0a6ffb4e221265d0ab87287d534732352e937280e35dacb2ad5c"
+      "bytes": 37423,
+      "sha256": "0954f7ce3ceaeeae2e486bb78ccaf7610d7e7a4aef52fb6e8e726372b145a8c0"
     },
     "BATCH09e_PAGES.pdf": {
       "bytes": 74642,
-      "sha256": "9b3d67de5a20077e46155be1b3e398ca60809a672c3e8529616e05b481a8fb29"
+      "sha256": "9627f1987d825e495dede6b576a008cd133778f11287b562301e8975159eaed0"
     }
   },
-  "total_task_bytes": 125135
+  "total_task_bytes": 127268
 }

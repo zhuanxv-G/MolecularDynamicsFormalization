@@ -1,0 +1,87 @@
+{
+  "batch": "BATCH19",
+  "subtask": "BATCH19c",
+  "source_ids": [
+    "MD-7.13-DeterminantTrace"
+  ],
+  "input_sha256": {
+    "Blueprint/Ch07.lean": "f30ea154ebfb07ae85c0b806ff74b35808d5a0c3dcaa647c0c3cc80a78239e37",
+    "blueprint/ch07/ch07_source.json": "c434892ebf63b06f7cadcdfa7af408c2c12d7b645d35db431d1855224163ba19",
+    "BATCH19c_PAGES.pdf": "3a36afc6537a611dc227b9cfd269b6365ca880920b61853de4dc19a261e27c1d"
+  },
+  "page_mapping": [
+    {
+      "attachment_page": 1,
+      "original_pdf_page": 345,
+      "printed_page": 324
+    }
+  ],
+  "definition_excerpts": [
+    {
+      "full_name": "MD.Ch07.Mat2",
+      "kind": "abbrev",
+      "path": "Blueprint/Ch07.lean",
+      "line": 1544,
+      "code_sha256": "b59a57ba7657676ba8267131b9fbc6b6f308017bb0aa3cde6fe6918bdb410f7e"
+    },
+    {
+      "full_name": "MD.Ch07.fastMatrix",
+      "kind": "def",
+      "path": "Blueprint/Ch07.lean",
+      "line": 1547,
+      "code_sha256": "fdfa7a59fe54847eae35d50bb0b5bba0ae9e1a507f54d95c3c8d37259943480b"
+    },
+    {
+      "full_name": "MD.Ch07.slowMatrix",
+      "kind": "def",
+      "path": "Blueprint/Ch07.lean",
+      "line": 1548,
+      "code_sha256": "848536920828e83ab1711b3004c6207c5a2a94ced0202237aed0d1ba2a85baa6"
+    },
+    {
+      "full_name": "MD.Ch07.fastExponential",
+      "kind": "def",
+      "path": "Blueprint/Ch07.lean",
+      "line": 1555,
+      "code_sha256": "60666624ba49fec7c76c3939e3ceac986b31c99b88c9e9a6ea5842577e7aca55"
+    },
+    {
+      "full_name": "MD.Ch07.multipleX",
+      "kind": "def",
+      "path": "Blueprint/Ch07.lean",
+      "line": 1570,
+      "code_sha256": "74fb0eb9df44c4e62be50f79b27411ab3f9cc1ba9ded7c4a50a2df074e887b1d"
+    },
+    {
+      "full_name": "MD.Ch07.traceFormula",
+      "kind": "def",
+      "path": "Blueprint/Ch07.lean",
+      "line": 1580,
+      "code_sha256": "fd2d3c757320450a2a7525bc172f2d81623ce54487107d091907e28fb7720099"
+    },
+    {
+      "full_name": "MD.Ch07.determinantTrace",
+      "kind": "theorem",
+      "path": "Blueprint/Ch07.lean",
+      "line": 1583,
+      "code_sha256": "d4fb248b0a386012497b6878f899be6c212327a307681067d8383c2d50c08a76"
+    }
+  ],
+  "validation": {
+    "project_constant_closure": "PASS",
+    "missing_project_definitions": [],
+    "full_page_render_equality_dpi": 72,
+    "website_submitted": false
+  },
+  "files": {
+    "PASTE.txt": {
+      "bytes": 7625,
+      "sha256": "565d7bc9c0811772c6a8140d2239db092353b4df168b7ed4d44e4deed27e5071"
+    },
+    "BATCH19c_PAGES.pdf": {
+      "bytes": 81295,
+      "sha256": "3a36afc6537a611dc227b9cfd269b6365ca880920b61853de4dc19a261e27c1d"
+    }
+  },
+  "total_task_bytes": 91628
+}

@@ -5,9 +5,9 @@
     "MD-7.2-WeakError"
   ],
   "input_sha256": {
-    "Blueprint/Ch07.lean": "03e34bf86a5b27e03cce8552bb21fc0fea40514cd87faa953bf09a6a0a27f3c2",
-    "blueprint/ch07/ch07_source.json": "27e402f2a8b9c511106df901d6cc8472e1dae783cdf739f657879ffcf297462a",
-    "BATCH02b_PAGES.pdf": "c05d4f1db806e556e3bcbe9943f324fda25ce780316eec6e8174e1e38d340a80"
+    "Blueprint/Ch07.lean": "f30ea154ebfb07ae85c0b806ff74b35808d5a0c3dcaa647c0c3cc80a78239e37",
+    "blueprint/ch07/ch07_source.json": "c434892ebf63b06f7cadcdfa7af408c2c12d7b645d35db431d1855224163ba19",
+    "BATCH02b_PAGES.pdf": "41673794f46b570f2a804e69eb4b2d3cdba97f3522ef2694baa5826ade9ccf80"
   },
   "page_mapping": [
     {
@@ -21,14 +21,14 @@
       "full_name": "MD.Ch07.weakError",
       "kind": "def",
       "path": "Blueprint/Ch07.lean",
-      "line": 89,
+      "line": 91,
       "code_sha256": "1356b1749de430ce48e00dae06f620f424212081e5839116388a3bb84261bf90"
     },
     {
       "full_name": "MD.Ch07.hasWeakOrder",
       "kind": "def",
       "path": "Blueprint/Ch07.lean",
-      "line": 94,
+      "line": 96,
       "code_sha256": "7ee6ae8d4aa3928450ac124c1895b0a54b139fa562fff6eaf4bf4894f1ab03d6"
     }
   ],
@@ -40,13 +40,13 @@
   },
   "files": {
     "PASTE.txt": {
-      "bytes": 4754,
-      "sha256": "ad78b59056101e8a25a5a5ec9a330f813e54d2f81aa5b34ec7ab3da5f365f828"
+      "bytes": 8412,
+      "sha256": "5774ddfca750f6d6afeb84647e194be92f3f89b963cb531b5104d99b57e55d24"
     },
     "BATCH02b_PAGES.pdf": {
       "bytes": 61515,
-      "sha256": "c05d4f1db806e556e3bcbe9943f324fda25ce780316eec6e8174e1e38d340a80"
+      "sha256": "41673794f46b570f2a804e69eb4b2d3cdba97f3522ef2694baa5826ade9ccf80"
     }
   },
-  "total_task_bytes": 67818
+  "total_task_bytes": 71476
 }

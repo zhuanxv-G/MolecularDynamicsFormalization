@@ -9,9 +9,11 @@ HEADER='''import MolecularDynamics.Chapter06.ReviewDefinitions
 import MolecularDynamics.Chapter07.FormalOperatorFunctionalCalculus
 import MolecularDynamics.Chapter07.InvariantDistributionSwap
 import Mathlib.Tactic
+import Mathlib.Analysis.Normed.Algebra.MatrixExponential
+import Mathlib.Analysis.SpecialFunctions.Artanh
 
 open Set Filter MeasureTheory ProbabilityTheory MolecularDynamics
-open scoped BigOperators Topology ContDiff ENNReal NNReal
+open scoped BigOperators Topology ContDiff ENNReal NNReal Matrix
 noncomputable section
 namespace MD.Ch07
 variable {Ω : Type*} [MeasurableSpace Ω]
@@ -24,9 +26,15 @@ def add(key,section,page,text,code,*,kind='unnumbered_claim',label=None,proof=No
     nums=[int(x) for x in re.findall(r'\d+',str(page))]
     names=re.findall(r'(?m)^(?:noncomputable )?(?:def|abbrev|theorem|lemma|structure)\s+(\w+)',code)
     assert names,(key,code)
+    pages=list(range(nums[0]+21,nums[-1]+22))
+    original=[dict(pdf_page=p,printed_page=p-21,text=(BASE/f'source_pages/pdf{p}.txt').read_text(encoding='utf-8')) for p in pages]
+    verbatim_proof=proof if key=='Lemma71' else None
     RECORDS.append(dict(source_id=f'MD-{section}-{key}',kind=kind,label=label,section=section,
         printed_page=str(page),pdf_page='–'.join(str(p+21) for p in nums),statement_latex=text,
-        proof_latex=proof,proof_note='原书未给独立完整证明。' if proof is None else '按所列原页转录原书证明。',
+        proof_latex=verbatim_proof,proof_outline=None if verbatim_proof else proof,
+        proof_note='原页推导与上下文全文见original_page_text；数学符号的排版以随附原页PDF为准。',
+        original_page_text=original,
+        transcription_note='PDF文字层原样保留，陈述中的数学排版转写为LaTeX；文字层有特殊字形编码时以目视原页为准。PDF347的Exercises之后不在正文范围内。',
         context_notation=list(context),extra_assumptions=list(extra),issues=list(issues),
         statement_scope=scope or '本条逐字引用的全部数学对象与公式；未纳入的上下文另列。',
         lean_decl='MD.Ch07.'+names[0],lean_declarations=['MD.Ch07.'+x for x in names],
@@ -59,3 +67,6 @@ import ch07_section710
 import ch07_section711
 import ch07_section712a
 import ch07_section712b
+import ch07_section713a
+import ch07_section713b
+import ch07_section71_supplement

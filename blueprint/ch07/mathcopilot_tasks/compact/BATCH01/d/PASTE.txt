@@ -3,9 +3,9 @@
 Lean/Mathlib均4.34.0。原页PDF映射：[285]；印刷页=[264].
 input_sha256请原样回显：
 {
-  "Blueprint/Ch07.lean": "03e34bf86a5b27e03cce8552bb21fc0fea40514cd87faa953bf09a6a0a27f3c2",
-  "blueprint/ch07/ch07_source.json": "27e402f2a8b9c511106df901d6cc8472e1dae783cdf739f657879ffcf297462a",
-  "BATCH01d_PAGES.pdf": "c4242bdd48e46332f400a70a6374c768883410d8150a977c94fa7ec600344123"
+  "Blueprint/Ch07.lean": "f30ea154ebfb07ae85c0b806ff74b35808d5a0c3dcaa647c0c3cc80a78239e37",
+  "blueprint/ch07/ch07_source.json": "c434892ebf63b06f7cadcdfa7af408c2c12d7b645d35db431d1855224163ba19",
+  "BATCH01d_PAGES.pdf": "067e3d5657b0d8d9989211d8594c5c2e8cf3510b535c47c26267ad9b2a1e2a89"
 }
 用代码将JSON对象(batch,input_sha256,items)写到 /workspace/.mathcopilot/reviews/ch07/BATCH01d_review.json；items仅含本source_id。
 items字段：source_id、verdict(PASS/FAIL/NEEDS_HUMAN)、transcription、semantic_review、counterexample、suggested_fix、printed_version、corrected_version。逐版区分原文疑误和修正版结论；缺材料必须具体指出，不猜测。写后json.loads自检，最后仅回复路径及统计。
@@ -21,7 +21,16 @@ items字段：source_id、verdict(PASS/FAIL/NEEDS_HUMAN)、transcription、seman
   "pdf_page": "285",
   "statement_latex": "Note that from the definition of the SDE, we may write\n\\[X(t+h)=X(t)+\\int_t^{t+h}a(X(s))ds+\\int_t^{t+h}b(X(s))dW(s).\\]",
   "proof_latex": null,
-  "proof_note": "原书未给独立完整证明。",
+  "proof_outline": null,
+  "proof_note": "原页推导与上下文全文见original_page_text；数学符号的排版以随附原页PDF为准。",
+  "original_page_text": [
+    {
+      "pdf_page": 285,
+      "printed_page": 264,
+      "text": "264\n7\nNumerical Methods for Stochastic Molecular Dynamics\n7.2\nError in Methods for Stochastic Differential Equations\nWe brieﬂy present some standard material on the development of numerical schemes\nfor SDEs. The interested reader is pointed to the standard textbooks [200, 270] for a\nmore thorough discussion of foundational concepts. Let us begin with a discussion\nof the ﬁrst order stochastic differential equation\ndX D a.X/dt C b.X/dW;\nwhere W deﬁnes a standard scalar Wiener process. The natural extension of the\nEuler method for SDEs like this one takes the form\nXnC1 D Xn C ha.Xn/ C b.Xn/\np\nhRn;\nwhere Rn is a normal random variable with zero mean and unit variance. This\nmethod is referred to as the Euler-Maruyama method.\nNote that from the deﬁnition of the SDE, we may write\nX.t C h/ D X.t/ C\ntCh\nZ\nt\na.X.s//ds C\ntCh\nZ\nt\nb.X.s//dW.s/:\nJust as in the deterministic case, we may build a numerical method by approximating\nthese integrals over a small timestep h. However, when designing a numerical\nscheme it is important to keep in mind the goal of the discretization itself. For\nexample, as we have considered Langevin dynamics as a tool for studying the\ncanonical distribution, do we always need methods to give us good approximations\nof X.t C h/? If we seek to compute averages with respect to the canonical\ndistribution, then the answer is no: we simply require that the average over the\ndiscretized trajectory is accurate.\nThe numerical analysis of stochastic differential equations is traditionally based\non the concepts of weak and strong accuracy. Let a numerical method be given for\nsolving an SDE in the form of a discrete stochastic process XnC1 D ˚.Xn; h/ for\nn D 0; 1; : : : ; \u0003 \u0003 1, where \u0003h D \u0002 is ﬁxed. We denote the stochastic solution of the\nSDE by X.t/. In the case of strong accuracy, our measure of the global error is the\nquantity [200]\nErrstrong\nh;\u0002I˛ D\nmax\nnD0;1;2;:::;\u0003\n\nE jXn \u0003 X.nh/j˛\u000b1=˛ :\nFor ˛ D 1 this implies convergence of expectation. The more natural choice from\nthe probabilistic point of view is ˛ D 2 (mean square convergence). Having settled\non a choice of ˛, we say that a method has strong order r if Errstrong\nh;\u0002\n< C.\u0002/hr for\nsome coefﬁcient C.\u0002/ depending on the time interval.\n"
+    }
+  ],
+  "transcription_note": "PDF文字层原样保留，陈述中的数学排版转写为LaTeX；文字层有特殊字形编码时以目视原页为准。PDF347的Exercises之后不在正文范围内。",
   "context_notation": [],
   "extra_assumptions": [
     "区间Itô积分用两个从0开始的L²积分值之差表示；t,h非负，漂移在整个区间可积；不另造未规定的随机积分。"
@@ -56,11 +65,11 @@ theorem sdeIncrement (P : Measure Ω) (W X : ℝ → Ω → ℝ)
 ## 项目依赖定义体及选择规格
 以下def/abbrev/structure完整保留；定理列出完整类型，Mathlib标准定义无需摘录。
 
-### MD.Ch07.scalarSDE (Blueprint/Ch07.lean:20)
+### MD.Ch07.scalarSDE (Blueprint/Ch07.lean:22)
 原文件上下文：
 ```lean
 open Set Filter MeasureTheory ProbabilityTheory MolecularDynamics
-open scoped BigOperators Topology ContDiff ENNReal NNReal
+open scoped BigOperators Topology ContDiff ENNReal NNReal Matrix
 variable {Ω : Type*} [MeasurableSpace Ω]
 variable {n : ℕ}
 ```
@@ -77,11 +86,11 @@ def scalarSDE (P : Measure Ω) (W X : ℝ → Ω → ℝ)
     (fun x _ ↦ a x) (fun x _ ↦ b x) x0
 ```
 
-### MD.Ch07.sdeIncrement (Blueprint/Ch07.lean:46)
+### MD.Ch07.sdeIncrement (Blueprint/Ch07.lean:48)
 原文件上下文：
 ```lean
 open Set Filter MeasureTheory ProbabilityTheory MolecularDynamics
-open scoped BigOperators Topology ContDiff ENNReal NNReal
+open scoped BigOperators Topology ContDiff ENNReal NNReal Matrix
 variable {Ω : Type*} [MeasurableSpace Ω]
 variable {n : ℕ}
 ```

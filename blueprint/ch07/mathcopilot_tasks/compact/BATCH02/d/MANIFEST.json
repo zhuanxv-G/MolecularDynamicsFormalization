@@ -5,9 +5,9 @@
     "MD-7.2-CanonicalAverage"
   ],
   "input_sha256": {
-    "Blueprint/Ch07.lean": "03e34bf86a5b27e03cce8552bb21fc0fea40514cd87faa953bf09a6a0a27f3c2",
-    "blueprint/ch07/ch07_source.json": "27e402f2a8b9c511106df901d6cc8472e1dae783cdf739f657879ffcf297462a",
-    "BATCH02d_PAGES.pdf": "a6f68a79a71214ad2681b3bd1dee899f0b3c1e942366895e034523bd97649917"
+    "Blueprint/Ch07.lean": "f30ea154ebfb07ae85c0b806ff74b35808d5a0c3dcaa647c0c3cc80a78239e37",
+    "blueprint/ch07/ch07_source.json": "c434892ebf63b06f7cadcdfa7af408c2c12d7b645d35db431d1855224163ba19",
+    "BATCH02d_PAGES.pdf": "1537c26c7933ab6446723bf457f96d6619c8103e2f3403567c20c1ee9ca26673"
   },
   "page_mapping": [
     {
@@ -21,21 +21,21 @@
       "full_name": "MD.Ch07.densityWithPartition",
       "kind": "def",
       "path": "Blueprint/Ch07.lean",
-      "line": 129,
+      "line": 145,
       "code_sha256": "c471b5e6366c6ee4863b9b3ec51a9f3ad95e13c11f14a8b6037c39e95edaa771"
     },
     {
       "full_name": "MD.Ch07.canonicalAverage",
       "kind": "def",
       "path": "Blueprint/Ch07.lean",
-      "line": 132,
+      "line": 148,
       "code_sha256": "9fe4fe58acd8c9340290996d81fb2dddb84733c98445b5164e37549feea6d560"
     },
     {
       "full_name": "MD.Ch07.probabilityDensity",
       "kind": "def",
       "path": "Blueprint/Ch07.lean",
-      "line": 135,
+      "line": 151,
       "code_sha256": "a377dd2234000b3b704f2192e37b9af7982d3c172b1255bbc3c9b91a8dc21a1c"
     },
     {
@@ -75,13 +75,13 @@
   },
   "files": {
     "PASTE.txt": {
-      "bytes": 5432,
-      "sha256": "9405830b61678a0b990d4f1ba9f5feabd5ffd852fbbf7a478341a79c9b24fcce"
+      "bytes": 8049,
+      "sha256": "ac33b44fb6c035288283eadee25b6284034147cfb667fb6a9ac5d123f16487b8"
     },
     "BATCH02d_PAGES.pdf": {
       "bytes": 78120,
-      "sha256": "a6f68a79a71214ad2681b3bd1dee899f0b3c1e942366895e034523bd97649917"
+      "sha256": "1537c26c7933ab6446723bf457f96d6619c8103e2f3403567c20c1ee9ca26673"
     }
   },
-  "total_task_bytes": 86463
+  "total_task_bytes": 89080
 }

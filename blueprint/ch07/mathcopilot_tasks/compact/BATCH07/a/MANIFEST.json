@@ -5,9 +5,9 @@
     "MD-7.4.1-ABOHarmonic"
   ],
   "input_sha256": {
-    "Blueprint/Ch07.lean": "03e34bf86a5b27e03cce8552bb21fc0fea40514cd87faa953bf09a6a0a27f3c2",
-    "blueprint/ch07/ch07_source.json": "27e402f2a8b9c511106df901d6cc8472e1dae783cdf739f657879ffcf297462a",
-    "BATCH07a_PAGES.pdf": "2d779cbb53fd042a56c53842e6679986b70433861c5ee50acac6726840193f33"
+    "Blueprint/Ch07.lean": "f30ea154ebfb07ae85c0b806ff74b35808d5a0c3dcaa647c0c3cc80a78239e37",
+    "blueprint/ch07/ch07_source.json": "c434892ebf63b06f7cadcdfa7af408c2c12d7b645d35db431d1855224163ba19",
+    "BATCH07a_PAGES.pdf": "06110035ccbfea4546e9f28610b44198aff014071d1c44bd689c4fe8107a1fbd"
   },
   "page_mapping": [
     {
@@ -26,21 +26,21 @@
       "full_name": "MD.Ch07.linearUpdate",
       "kind": "def",
       "path": "Blueprint/Ch07.lean",
-      "line": 413,
+      "line": 429,
       "code_sha256": "558b204b07407282c73bfff06ee8e00e7740c8ce89db2fc60e1af80a69a36392"
     },
     {
       "full_name": "MD.Ch07.aboHarmonic",
       "kind": "def",
       "path": "Blueprint/Ch07.lean",
-      "line": 465,
+      "line": 481,
       "code_sha256": "e6884e6c3dac9c37d74fc29fc2d0172c4597d6a628d207047f5f371f55f2ba74"
     },
     {
       "full_name": "MD.Ch07.aboStationaryMean",
       "kind": "theorem",
       "path": "Blueprint/Ch07.lean",
-      "line": 469,
+      "line": 485,
       "code_sha256": "ab02df98e71ea814d624820734f27a09eb3752730616b4333a5a4753586388eb"
     }
   ],
@@ -52,13 +52,13 @@
   },
   "files": {
     "PASTE.txt": {
-      "bytes": 5060,
-      "sha256": "abc3689639835dbc5facc8e3da3d99a246dbdccef1157827ca3dc4f78fe20c75"
+      "bytes": 9337,
+      "sha256": "7bbf43b257d82152514341f091c3e748c658b348412dc33a0bbe377ec70a111f"
     },
     "BATCH07a_PAGES.pdf": {
       "bytes": 97093,
-      "sha256": "2d779cbb53fd042a56c53842e6679986b70433861c5ee50acac6726840193f33"
+      "sha256": "06110035ccbfea4546e9f28610b44198aff014071d1c44bd689c4fe8107a1fbd"
     }
   },
-  "total_task_bytes": 104052
+  "total_task_bytes": 108329
 }

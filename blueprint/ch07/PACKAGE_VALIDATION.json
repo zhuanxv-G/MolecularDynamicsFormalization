@@ -1,7 +1,7 @@
 {
-  "batches": 18,
-  "subtasks": 107,
-  "covered_entries": 107,
+  "batches": 20,
+  "subtasks": 118,
+  "covered_entries": 118,
   "checks": [
     {
       "source_id": "MD-7.1-Bias",
@@ -325,7 +325,7 @@
     },
     {
       "source_id": "MD-7.7.2-SpectralQualification",
-      "project_constants": 3,
+      "project_constants": 5,
       "missing": []
     },
     {
@@ -415,7 +415,7 @@
     },
     {
       "source_id": "MD-7.9.1-ConjugateSymmetricCorrections",
-      "project_constants": 11,
+      "project_constants": 13,
       "missing": []
     },
     {
@@ -435,7 +435,7 @@
     },
     {
       "source_id": "MD-7.9.2-FirstReciprocalCorrection",
-      "project_constants": 24,
+      "project_constants": 25,
       "missing": []
     },
     {
@@ -480,7 +480,7 @@
     },
     {
       "source_id": "MD-7.10-LimitMethodAccuracy",
-      "project_constants": 2,
+      "project_constants": 4,
       "missing": []
     },
     {
@@ -536,6 +536,61 @@
     {
       "source_id": "MD-7.12.1-ApproximateGeodesicOrder",
       "project_constants": 3,
+      "missing": []
+    },
+    {
+      "source_id": "MD-7.13-FastSlowHarmonicModel",
+      "project_constants": 13,
+      "missing": []
+    },
+    {
+      "source_id": "MD-7.13-ExactFastGaussianLaw",
+      "project_constants": 14,
+      "missing": []
+    },
+    {
+      "source_id": "MD-7.13-MultipleTimestepUpdate",
+      "project_constants": 8,
+      "missing": []
+    },
+    {
+      "source_id": "MD-7.13-DeterminantTrace",
+      "project_constants": 7,
+      "missing": []
+    },
+    {
+      "source_id": "MD-7.13-SpectralRadiusStability",
+      "project_constants": 4,
+      "missing": []
+    },
+    {
+      "source_id": "MD-7.13-HyperbolicPhaseTransform",
+      "project_constants": 2,
+      "missing": []
+    },
+    {
+      "source_id": "MD-7.13-UnderdampedPhasePrinted",
+      "project_constants": 3,
+      "missing": []
+    },
+    {
+      "source_id": "MD-7.13-StabilityEnvelope",
+      "project_constants": 4,
+      "missing": []
+    },
+    {
+      "source_id": "MD-7.13-FrictionThresholdPrinted",
+      "project_constants": 9,
+      "missing": []
+    },
+    {
+      "source_id": "MD-7.1-ConfigurationalSampling",
+      "project_constants": 4,
+      "missing": []
+    },
+    {
+      "source_id": "MD-7.1-HamiltonianSamplingObstruction",
+      "project_constants": 5,
       "missing": []
     }
   ],

@@ -5,9 +5,9 @@
     "MD-7.7.3-PerturbativeSolvabilityCaution"
   ],
   "input_sha256": {
-    "Blueprint/Ch07.lean": "03e34bf86a5b27e03cce8552bb21fc0fea40514cd87faa953bf09a6a0a27f3c2",
-    "blueprint/ch07/ch07_source.json": "27e402f2a8b9c511106df901d6cc8472e1dae783cdf739f657879ffcf297462a",
-    "BATCH12b_PAGES.pdf": "8fdb6063898ddfc2ca5580dfb27bd60488db7f9edfc71c6b262ee1a269e34306"
+    "Blueprint/Ch07.lean": "f30ea154ebfb07ae85c0b806ff74b35808d5a0c3dcaa647c0c3cc80a78239e37",
+    "blueprint/ch07/ch07_source.json": "c434892ebf63b06f7cadcdfa7af408c2c12d7b645d35db431d1855224163ba19",
+    "BATCH12b_PAGES.pdf": "e67f533366d8f60faf2f36b7b4743913ad70178cb233e30ae6245236030b22d6"
   },
   "page_mapping": [
     {
@@ -21,7 +21,7 @@
       "full_name": "MD.Ch07.correctionSolvable",
       "kind": "def",
       "path": "Blueprint/Ch07.lean",
-      "line": 897,
+      "line": 921,
       "code_sha256": "a082bcf2a011232b4bbff3d9a123b42a80aaa1e14a6d20c908febd63ee88b8c5"
     },
     {
@@ -40,13 +40,13 @@
   },
   "files": {
     "PASTE.txt": {
-      "bytes": 4037,
-      "sha256": "2655490903ac3128dd57ce85fd97eb87a24447824071d6dac687426dada07f3a"
+      "bytes": 6485,
+      "sha256": "ef975d73bba5c00787501ab7582faa0eb73f377c5181d53068cf26269ca69ec9"
     },
     "BATCH12b_PAGES.pdf": {
       "bytes": 75195,
-      "sha256": "8fdb6063898ddfc2ca5580dfb27bd60488db7f9edfc71c6b262ee1a269e34306"
+      "sha256": "e67f533366d8f60faf2f36b7b4743913ad70178cb233e30ae6245236030b22d6"
     }
   },
-  "total_task_bytes": 80863
+  "total_task_bytes": 83311
 }

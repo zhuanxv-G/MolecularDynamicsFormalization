@@ -1,0 +1,101 @@
+{
+  "batch": "BATCH20",
+  "subtask": "BATCH20b",
+  "source_ids": [
+    "MD-7.13-FrictionThresholdPrinted"
+  ],
+  "input_sha256": {
+    "Blueprint/Ch07.lean": "f30ea154ebfb07ae85c0b806ff74b35808d5a0c3dcaa647c0c3cc80a78239e37",
+    "blueprint/ch07/ch07_source.json": "c434892ebf63b06f7cadcdfa7af408c2c12d7b645d35db431d1855224163ba19",
+    "BATCH20b_PAGES.pdf": "04c366e966b06f365cbf0f592eb988f26753c66c9a938fc38bd35c401448ee45"
+  },
+  "page_mapping": [
+    {
+      "attachment_page": 1,
+      "original_pdf_page": 346,
+      "printed_page": 325
+    }
+  ],
+  "definition_excerpts": [
+    {
+      "full_name": "MD.Ch07.stabilityEnvelope",
+      "kind": "def",
+      "path": "Blueprint/Ch07.lean",
+      "line": 1633,
+      "code_sha256": "3e86b354c5c0af9ce9167ca71d9269905e7fcbabac6f36baf76622442be74e96"
+    },
+    {
+      "full_name": "MD.Ch07.frictionThresholdPrinted",
+      "kind": "def",
+      "path": "Blueprint/Ch07.lean",
+      "line": 1651,
+      "code_sha256": "8e5e5e3584045c5035dbdecd36680895417231cba7b116710d3bc5ff01c174ef"
+    },
+    {
+      "full_name": "MD.Ch07.frictionThresholdPrinted_corrected",
+      "kind": "def",
+      "path": "Blueprint/Ch07.lean",
+      "line": 1652,
+      "code_sha256": "be127c8fc6a08d3c83dcb71fdd75592b2718c5a0ba026d9c5972fdd67a026e23"
+    },
+    {
+      "full_name": "MD.Ch07.frictionBoundPrinted",
+      "kind": "def",
+      "path": "Blueprint/Ch07.lean",
+      "line": 1653,
+      "code_sha256": "2dec6fa9b37bec01f4c76ae01cdd85edf75e2d709d34ec7f991b192f7a07706c"
+    },
+    {
+      "full_name": "MD.Ch07.frictionBoundPrinted_corrected",
+      "kind": "def",
+      "path": "Blueprint/Ch07.lean",
+      "line": 1656,
+      "code_sha256": "7967af31bb9506054a1cd6971642dee752c34e7a59b943afbade44f483f73ee8"
+    },
+    {
+      "full_name": "MD.Ch07.frictionThreshold_rationalized",
+      "kind": "theorem",
+      "path": "Blueprint/Ch07.lean",
+      "line": 1659,
+      "code_sha256": "73725571a4849a50a17d17ac7208cc00146887a8fa9795d5a159de567f28eb7e"
+    },
+    {
+      "full_name": "MD.Ch07.frictionThreshold_allSteps",
+      "kind": "theorem",
+      "path": "Blueprint/Ch07.lean",
+      "line": 1662,
+      "code_sha256": "2629e1643b177c3ebcfe5233e3ec7775e88e84da0980dc2908811a6e69bf2d53"
+    },
+    {
+      "full_name": "MD.Ch07.frictionThreshold_asymptotic",
+      "kind": "theorem",
+      "path": "Blueprint/Ch07.lean",
+      "line": 1666,
+      "code_sha256": "d9cc18ba86bd23767cd1fbb11761e231d9934028b77d982f02ef22d996b1d548"
+    },
+    {
+      "full_name": "MD.Ch07.frictionThreshold_squared_counterexample",
+      "kind": "theorem",
+      "path": "Blueprint/Ch07.lean",
+      "line": 1669,
+      "code_sha256": "296e56b310071180495a148a943307bc8aae758a8265244b2fd17110c2ea60f2"
+    }
+  ],
+  "validation": {
+    "project_constant_closure": "PASS",
+    "missing_project_definitions": [],
+    "full_page_render_equality_dpi": 72,
+    "website_submitted": false
+  },
+  "files": {
+    "PASTE.txt": {
+      "bytes": 11195,
+      "sha256": "77f52b20a5976c604a9a62b0eccb916d241d54ffc9bd7a95d85fa2e4884b6523"
+    },
+    "BATCH20b_PAGES.pdf": {
+      "bytes": 65486,
+      "sha256": "04c366e966b06f365cbf0f592eb988f26753c66c9a938fc38bd35c401448ee45"
+    }
+  },
+  "total_task_bytes": 80014
+}

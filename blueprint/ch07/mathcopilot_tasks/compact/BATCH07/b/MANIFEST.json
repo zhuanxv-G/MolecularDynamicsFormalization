@@ -5,9 +5,9 @@
     "MD-7.4.1-ABOVariance"
   ],
   "input_sha256": {
-    "Blueprint/Ch07.lean": "03e34bf86a5b27e03cce8552bb21fc0fea40514cd87faa953bf09a6a0a27f3c2",
-    "blueprint/ch07/ch07_source.json": "27e402f2a8b9c511106df901d6cc8472e1dae783cdf739f657879ffcf297462a",
-    "BATCH07b_PAGES.pdf": "1105c76cb85debfc7e4ae8dfa464c9a37c57f6f4e4ef7cef4e264fdd837fd768"
+    "Blueprint/Ch07.lean": "f30ea154ebfb07ae85c0b806ff74b35808d5a0c3dcaa647c0c3cc80a78239e37",
+    "blueprint/ch07/ch07_source.json": "c434892ebf63b06f7cadcdfa7af408c2c12d7b645d35db431d1855224163ba19",
+    "BATCH07b_PAGES.pdf": "47fa34872194cfbb3af3ff929d76e14ead38886253bebafe60cb3311b4c27afc"
   },
   "page_mapping": [
     {
@@ -21,42 +21,42 @@
       "full_name": "MD.Ch07.linearUpdate",
       "kind": "def",
       "path": "Blueprint/Ch07.lean",
-      "line": 413,
+      "line": 429,
       "code_sha256": "558b204b07407282c73bfff06ee8e00e7740c8ce89db2fc60e1af80a69a36392"
     },
     {
       "full_name": "MD.Ch07.momentQ",
       "kind": "def",
       "path": "Blueprint/Ch07.lean",
-      "line": 415,
+      "line": 431,
       "code_sha256": "3a1f882d971889b4d4dff8c89259d586f56734fe1cf50aeb1b8abea63f47d6ff"
     },
     {
       "full_name": "MD.Ch07.aboHarmonic",
       "kind": "def",
       "path": "Blueprint/Ch07.lean",
-      "line": 465,
+      "line": 481,
       "code_sha256": "e6884e6c3dac9c37d74fc29fc2d0172c4597d6a628d207047f5f371f55f2ba74"
     },
     {
       "full_name": "MD.Ch07.aboVarianceRatio",
       "kind": "def",
       "path": "Blueprint/Ch07.lean",
-      "line": 478,
+      "line": 494,
       "code_sha256": "a2a7219221708d5696798f6e31f44ae08ab2a953f6d6dca8837a8ca8be590ed8"
     },
     {
       "full_name": "MD.Ch07.aboVarianceRatio_expansion",
       "kind": "theorem",
       "path": "Blueprint/Ch07.lean",
-      "line": 482,
+      "line": 498,
       "code_sha256": "f2d38b62893ab8e291d5121f2b8ccc72a1bb43f689097190679fb0b292fdb9c6"
     },
     {
       "full_name": "MD.Ch07.aboStationaryVariance",
       "kind": "theorem",
       "path": "Blueprint/Ch07.lean",
-      "line": 488,
+      "line": 504,
       "code_sha256": "5e41ba0804e6a44910fcb0c163e3aba8bd662672f0bbb706c4ea6ded8ca4ddee"
     }
   ],
@@ -68,13 +68,13 @@
   },
   "files": {
     "PASTE.txt": {
-      "bytes": 6511,
-      "sha256": "45ddf710d30e45236dfe359d939cb1220f6bc85ca4bb84ad6d81821cc168ee98"
+      "bytes": 9146,
+      "sha256": "1996aa669a9dc37367e640b5698cfb15becdb1e24a6d9d4c821c07f26f057a0e"
     },
     "BATCH07b_PAGES.pdf": {
       "bytes": 92248,
-      "sha256": "1105c76cb85debfc7e4ae8dfa464c9a37c57f6f4e4ef7cef4e264fdd837fd768"
+      "sha256": "47fa34872194cfbb3af3ff929d76e14ead38886253bebafe60cb3311b4c27afc"
     }
   },
-  "total_task_bytes": 101259
+  "total_task_bytes": 103894
 }

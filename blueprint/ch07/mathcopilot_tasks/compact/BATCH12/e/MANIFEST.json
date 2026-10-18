@@ -5,9 +5,9 @@
     "MD-7.8.1-CommutatorPermutationRelations"
   ],
   "input_sha256": {
-    "Blueprint/Ch07.lean": "03e34bf86a5b27e03cce8552bb21fc0fea40514cd87faa953bf09a6a0a27f3c2",
-    "blueprint/ch07/ch07_source.json": "27e402f2a8b9c511106df901d6cc8472e1dae783cdf739f657879ffcf297462a",
-    "BATCH12e_PAGES.pdf": "9986b1c00c748c0629ced2962bae37122a94ab17c20397330b91bee759f377bc"
+    "Blueprint/Ch07.lean": "f30ea154ebfb07ae85c0b806ff74b35808d5a0c3dcaa647c0c3cc80a78239e37",
+    "blueprint/ch07/ch07_source.json": "c434892ebf63b06f7cadcdfa7af408c2c12d7b645d35db431d1855224163ba19",
+    "BATCH12e_PAGES.pdf": "ab06dbcabb1f11e9f7fc8dc7f9676e7b1e76f8b49b41dc40782a98598c240efb"
   },
   "page_mapping": [
     {
@@ -21,21 +21,21 @@
       "full_name": "MD.Ch07.comm",
       "kind": "def",
       "path": "Blueprint/Ch07.lean",
-      "line": 779,
+      "line": 795,
       "code_sha256": "b6c563e8cb91cb486da6bfb5f26e3dd94c0588818d31f0ed58028346af78d534"
     },
     {
       "full_name": "MD.Ch07.firstOrderOperator",
       "kind": "def",
       "path": "Blueprint/Ch07.lean",
-      "line": 902,
+      "line": 926,
       "code_sha256": "3c352c2129a7fc5f639c506cebe23490c313f6ef83dfb5fbddc75fc56dca421c"
     },
     {
       "full_name": "MD.Ch07.commutatorPermutationRelations",
       "kind": "theorem",
       "path": "Blueprint/Ch07.lean",
-      "line": 925,
+      "line": 949,
       "code_sha256": "6997b85f603a1bd114ce67196fd2b92fa7e753168708bb843abe9e6f8988a4dc"
     },
     {
@@ -82,13 +82,13 @@
   },
   "files": {
     "PASTE.txt": {
-      "bytes": 6734,
-      "sha256": "2354cb9e02a32a53943e932c58cfcb49d24d7897fac63274447a92ba36d946f3"
+      "bytes": 9287,
+      "sha256": "093cf06dc698926f3647c07ee36248c724c565096c9ee1b25e0a4f569930654e"
     },
     "BATCH12e_PAGES.pdf": {
       "bytes": 85953,
-      "sha256": "9986b1c00c748c0629ced2962bae37122a94ab17c20397330b91bee759f377bc"
+      "sha256": "ab06dbcabb1f11e9f7fc8dc7f9676e7b1e76f8b49b41dc40782a98598c240efb"
     }
   },
-  "total_task_bytes": 95892
+  "total_task_bytes": 98445
 }

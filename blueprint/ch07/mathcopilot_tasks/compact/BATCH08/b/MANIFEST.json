@@ -5,9 +5,9 @@
     "MD-7.4.2-BBKStarStationary"
   ],
   "input_sha256": {
-    "Blueprint/Ch07.lean": "03e34bf86a5b27e03cce8552bb21fc0fea40514cd87faa953bf09a6a0a27f3c2",
-    "blueprint/ch07/ch07_source.json": "27e402f2a8b9c511106df901d6cc8472e1dae783cdf739f657879ffcf297462a",
-    "BATCH08b_PAGES.pdf": "cf9fdbbd2614fde9757556a94049c361dcbadade4ec4b1aa7ebb304f68947978"
+    "Blueprint/Ch07.lean": "f30ea154ebfb07ae85c0b806ff74b35808d5a0c3dcaa647c0c3cc80a78239e37",
+    "blueprint/ch07/ch07_source.json": "c434892ebf63b06f7cadcdfa7af408c2c12d7b645d35db431d1855224163ba19",
+    "BATCH08b_PAGES.pdf": "92a5f5b8e951c8925b63fb3871c6877fcfa56356eb309b5448ed840e42256122"
   },
   "page_mapping": [
     {
@@ -21,21 +21,21 @@
       "full_name": "MD.Ch07.bbkMatrix",
       "kind": "def",
       "path": "Blueprint/Ch07.lean",
-      "line": 421,
+      "line": 437,
       "code_sha256": "87723c4b0eeb776fe30047a13e2cabd3c2cb57ed5f2788dc51cebee78930e0c8"
     },
     {
       "full_name": "MD.Ch07.bbkStarMomentSystemPrinted_corrected",
       "kind": "def",
       "path": "Blueprint/Ch07.lean",
-      "line": 582,
+      "line": 598,
       "code_sha256": "7c1abd4ec6e551d64f893b9e6b168a784f6e6b3f0a68a8a7bc0946d16009e07e"
     },
     {
       "full_name": "MD.Ch07.bbkStarStationaryAlgebra",
       "kind": "theorem",
       "path": "Blueprint/Ch07.lean",
-      "line": 591,
+      "line": 607,
       "code_sha256": "6711331e4c575c75d4e2364d48a8d98a289f0affed12dd61babd94c9a0603367"
     },
     {
@@ -61,13 +61,13 @@
   },
   "files": {
     "PASTE.txt": {
-      "bytes": 5538,
-      "sha256": "9d366a9d561d0cf34ffbd1407f7ad72e4f5f8c063e7c8011394f1200079fc76b"
+      "bytes": 8274,
+      "sha256": "2236837c3a26c411912e83907ea1043c0afe67d68a468c392e9e4f3b843417ac"
     },
     "BATCH08b_PAGES.pdf": {
       "bytes": 74934,
-      "sha256": "cf9fdbbd2614fde9757556a94049c361dcbadade4ec4b1aa7ebb304f68947978"
+      "sha256": "92a5f5b8e951c8925b63fb3871c6877fcfa56356eb309b5448ed840e42256122"
     }
   },
-  "total_task_bytes": 82853
+  "total_task_bytes": 85589
 }

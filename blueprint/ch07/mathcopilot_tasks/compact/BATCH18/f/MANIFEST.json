@@ -1,0 +1,129 @@
+{
+  "batch": "BATCH18",
+  "subtask": "BATCH18f",
+  "source_ids": [
+    "MD-7.13-FastSlowHarmonicModel"
+  ],
+  "input_sha256": {
+    "Blueprint/Ch07.lean": "f30ea154ebfb07ae85c0b806ff74b35808d5a0c3dcaa647c0c3cc80a78239e37",
+    "blueprint/ch07/ch07_source.json": "c434892ebf63b06f7cadcdfa7af408c2c12d7b645d35db431d1855224163ba19",
+    "BATCH18f_PAGES.pdf": "45232ed86492c202d6c82ad3b6b3be22934acea4d279a41f397f05be009fa309"
+  },
+  "page_mapping": [
+    {
+      "attachment_page": 1,
+      "original_pdf_page": 344,
+      "printed_page": 323
+    }
+  ],
+  "definition_excerpts": [
+    {
+      "full_name": "MD.Ch07.V",
+      "kind": "abbrev",
+      "path": "Blueprint/Ch07.lean",
+      "line": 188,
+      "code_sha256": "7ab0ad90462b274b03f5b929b5f09417c0b397b6cb908fa6e7bd56677a314027"
+    },
+    {
+      "full_name": "MD.Ch07.Phase",
+      "kind": "abbrev",
+      "path": "Blueprint/Ch07.lean",
+      "line": 189,
+      "code_sha256": "ef1520e3b22ac1c99a30a989deafe8d3da44a9f2a3e5b6c2cd3220218b88513e"
+    },
+    {
+      "full_name": "MD.Ch07.vectorWiener",
+      "kind": "def",
+      "path": "Blueprint/Ch07.lean",
+      "line": 191,
+      "code_sha256": "a24b0b3d4e3f48ea3c5384e0ec083b953b2b03d743d1687b43010c41ccaebf93"
+    },
+    {
+      "full_name": "MD.Ch07.coordDerivative",
+      "kind": "def",
+      "path": "Blueprint/Ch07.lean",
+      "line": 237,
+      "code_sha256": "e782d789a13f5db6817e2c995f141805e81ac75720125b846f8ee14ba3833a4b"
+    },
+    {
+      "full_name": "MD.Ch07.gradient",
+      "kind": "def",
+      "path": "Blueprint/Ch07.lean",
+      "line": 266,
+      "code_sha256": "540c6af25c09d3a58da531bc32056ff1a1c070facc58d34c96b6653d781fba6f"
+    },
+    {
+      "full_name": "MD.Ch07.langevin",
+      "kind": "def",
+      "path": "Blueprint/Ch07.lean",
+      "line": 268,
+      "code_sha256": "24f5a5e4ffaf8476e6ba5421115d1cfe510f2917c971244c845ecf7dcc03ec9e"
+    },
+    {
+      "full_name": "MD.Ch07.Mat2",
+      "kind": "abbrev",
+      "path": "Blueprint/Ch07.lean",
+      "line": 1544,
+      "code_sha256": "b59a57ba7657676ba8267131b9fbc6b6f308017bb0aa3cde6fe6918bdb410f7e"
+    },
+    {
+      "full_name": "MD.Ch07.fastPotential",
+      "kind": "def",
+      "path": "Blueprint/Ch07.lean",
+      "line": 1545,
+      "code_sha256": "6fed2a9d67c622b81edb37dd9b0b588a2fdff3c1d6463f28374954bdd3d07336"
+    },
+    {
+      "full_name": "MD.Ch07.slowPotential",
+      "kind": "def",
+      "path": "Blueprint/Ch07.lean",
+      "line": 1546,
+      "code_sha256": "c2a7e248c097a1b8009013998be8e3a9d76b8e8de209e309edca022910257ce1"
+    },
+    {
+      "full_name": "MD.Ch07.fastMatrix",
+      "kind": "def",
+      "path": "Blueprint/Ch07.lean",
+      "line": 1547,
+      "code_sha256": "fdfa7a59fe54847eae35d50bb0b5bba0ae9e1a507f54d95c3c8d37259943480b"
+    },
+    {
+      "full_name": "MD.Ch07.slowMatrix",
+      "kind": "def",
+      "path": "Blueprint/Ch07.lean",
+      "line": 1548,
+      "code_sha256": "848536920828e83ab1711b3004c6207c5a2a94ced0202237aed0d1ba2a85baa6"
+    },
+    {
+      "full_name": "MD.Ch07.fastLangevin",
+      "kind": "def",
+      "path": "Blueprint/Ch07.lean",
+      "line": 1549,
+      "code_sha256": "3808fae6bee1689ab677b8616660b5e074871996d806fe8bdd63ab5f7f6c57c8"
+    },
+    {
+      "full_name": "MolecularDynamics.textbookIsWienerVector",
+      "kind": "structure",
+      "path": "MolecularDynamics/Chapter06/WienerVectorSupport.lean",
+      "line": 13,
+      "code_sha256": "030040a9146ab99e095c5a3e84fa3feed1dc8f0dd916643d371a0bb7e6efb622"
+    }
+  ],
+  "validation": {
+    "project_constant_closure": "PASS",
+    "missing_project_definitions": [],
+    "full_page_render_equality_dpi": 72,
+    "website_submitted": false
+  },
+  "files": {
+    "PASTE.txt": {
+      "bytes": 12081,
+      "sha256": "57eb8294cbe069e82316f2424fdd5d872c82e6bded110cf74bfb17fd52da3493"
+    },
+    "BATCH18f_PAGES.pdf": {
+      "bytes": 79143,
+      "sha256": "45232ed86492c202d6c82ad3b6b3be22934acea4d279a41f397f05be009fa309"
+    }
+  },
+  "total_task_bytes": 95340
+}

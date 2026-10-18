@@ -58,7 +58,7 @@ r'''Denoting $\eta=\sqrt{\gamma^2-4\Omega^2}$, then we compute
   (η+(h : ℂ))/η*Complex.exp ((-η-(γ : ℂ))*(h : ℂ)/2)
 theorem determinantTrace (Ω γ h : ℝ) (η : ℂ) (hη : η^2 = (γ : ℂ)^2-4*(Ω : ℂ)^2) (hne : η ≠ 0) :
     Matrix.det (multipleX Ω γ h) = Real.exp (-γ*h) ∧
-    (Matrix.trace (multipleX Ω γ h) : ℂ) = traceFormula γ h η := by
+    ((Matrix.trace (multipleX Ω γ h) : ℝ) : ℂ) = traceFormula γ h η := by
   sorry''',
 extra=['η允许纯虚数；显式排除临界η=0，避免除零假公式。临界阻尼应取连续极限，另列覆盖缺口。'],
 missing='真实矩阵指数的特征分解/二阶Cayley–Hamilton闭式与det/trace桥；不建设一般线性SDE理论。')
@@ -69,7 +69,7 @@ r'''The stability of the method therefore depends solely on the spectral radius 
 Multiplying by $e^{\gamma h/2}$ gives
 \[|\cosh(\eta h/2)+(h/\eta)\sinh(-\eta h/2)|\le\cosh(\gamma h/2).\]''',
 '''def characteristicUnitDisk (X : Mat2) : Prop :=
-  ∀ z : ℂ, z^2-(Matrix.trace X : ℂ)*z+(Matrix.det X : ℂ) = 0 → ‖z‖ ≤ 1
+  ∀ z : ℂ, z^2-((Matrix.trace X : ℝ) : ℂ)*z+((Matrix.det X : ℝ) : ℂ) = 0 → ‖z‖ ≤ 1
 theorem spectralRadiusStability (X : Mat2) (hd : 0 < Matrix.det X) (hd1 : Matrix.det X < 1) :
     characteristicUnitDisk X ↔ |Matrix.trace X| ≤ 1+Matrix.det X := by
   sorry

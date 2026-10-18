@@ -3,9 +3,9 @@
 Lean/Mathlib均4.34.0。原页PDF映射：[320, 321]；印刷页=[299, 300].
 input_sha256请原样回显：
 {
-  "Blueprint/Ch07.lean": "03e34bf86a5b27e03cce8552bb21fc0fea40514cd87faa953bf09a6a0a27f3c2",
-  "blueprint/ch07/ch07_source.json": "27e402f2a8b9c511106df901d6cc8472e1dae783cdf739f657879ffcf297462a",
-  "BATCH14d_PAGES.pdf": "1de85f12e786994bea3c6eba26215c2468bf496defdd23b06d9e5f99095b0fc0"
+  "Blueprint/Ch07.lean": "f30ea154ebfb07ae85c0b806ff74b35808d5a0c3dcaa647c0c3cc80a78239e37",
+  "blueprint/ch07/ch07_source.json": "c434892ebf63b06f7cadcdfa7af408c2c12d7b645d35db431d1855224163ba19",
+  "BATCH14d_PAGES.pdf": "302fed3beb6e564b2f196a7360f493b13c0e54acb764505733ad272d69e90be4"
 }
 用代码将JSON对象(batch,input_sha256,items)写到 /workspace/.mathcopilot/reviews/ch07/BATCH14d_review.json；items仅含本source_id。
 items字段：source_id、verdict(PASS/FAIL/NEEDS_HUMAN)、transcription、semantic_review、counterexample、suggested_fix、printed_version、corrected_version。逐版区分原文疑误和修正版结论；缺材料必须具体指出，不猜测。写后json.loads自检，最后仅回复路径及统计。
@@ -21,7 +21,21 @@ items字段：source_id、verdict(PASS/FAIL/NEEDS_HUMAN)、transcription、seman
   "pdf_page": "320–321",
   "statement_latex": "Lemma 7.1 Consider two numerical schemes with associated operators governing the evolution of measure $ST$ and $TS$, with unique associated invariant distributions $\\widehat\\rho_{ST}$ and $\\widehat\\rho_{TS}$ respectively, such that\n\\[ST\\widehat\\rho_{ST}=\\widehat\\rho_{ST},\\qquad TS\\widehat\\rho_{TS}=\\widehat\\rho_{TS}.\\]\nUnder suitable ergodicity assumptions (such that in the long-time limit, all distributions converge to the invariant distribution), we have\n\\[\\widehat\\rho_{ST}=S\\widehat\\rho_{TS},\\qquad\\widehat\\rho_{TS}=T\\widehat\\rho_{ST}.\\]",
   "proof_latex": "If we assume that $\\lim_{n\\to\\infty}(ST)^n\\rho=\\widehat\\rho_{ST}$, for any initial distribution $\\rho$, then we have\n$\\widehat\\rho_{ST}=\\lim_{n\\to\\infty}(ST)^n\\widehat\\rho_{ST}=\\lim_{n\\to\\infty}S(TS)^{n-1}T\\widehat\\rho_{ST}=S\\widehat\\rho_{TS}$.\nA similar statement holds for $\\widehat\\rho_{ST}$.",
-  "proof_note": "按所列原页转录原书证明。",
+  "proof_outline": null,
+  "proof_note": "原页推导与上下文全文见original_page_text；数学符号的排版以随附原页PDF为准。",
+  "original_page_text": [
+    {
+      "pdf_page": 320,
+      "printed_page": 299,
+      "text": "7.9\nError Expansion for Symmetric Langevin Methods\n299\nsimplifying the computation to\nL\u0004\n2;\u0002OYZYO\u0003\u0005ˇ D 1\n12\nh\nL\u0004\nZ; L\u0004\nZ; L\u0004\nY\ni\n\u0005ˇ \u0003 1\n24ŒL\u0004\nY; L\u0004\nY; L\u0004\nZ\t\u0005ˇ:\n(7.29)\nThe inhomogeneity for the schemes \u0002OABAO\u0003 and \u0002OBABO\u0003 is hence a combina-\ntion of the two commutator terms\nh\nL\u0004\nA; L\u0004\nA; L\u0004\nB\ni\n\u0005ˇ D\n\u0004\n2ˇpT \u0004\nr2U\n\u0005\nrU \u0003 r3U W p ˝ p ˝ p\n\u0005\n\u0005ˇ;\nh\nL\u0004\nB; L\u0004\nB; L\u0004\nA\ni\n\u0005ˇ D \u0003 \u00042ˇpT \u0004r2U\u0005 rU\u0005 \u0005ˇ;\ngiving overall equations to solve\nL\u0004\nLD\n\u0004\n\u0005ˇf2;\u0002OABAO\u0003\n\u0005\nD \u0003L\u0004\n2;\u0002OABAO\u0003\u0005ˇ\nD ˇ\n24\n\u0004\n6pT \u0004\nr2U\n\u0005\nrU \u0003 r3U W p ˝ p ˝ p\n\u0005\n\u0005ˇ;\nL\u0004\nLD\n\u0004\n\u0005ˇf2;\u0002OBABO\u0003\n\u0005\nD \u0003L\u0004\n2;\u0002OBABO\u0003\u0005ˇ\nD ˇ\n24\n\u0004\n2r3U W p ˝ p ˝ p \u0003 6pT \u0004\nr2U\n\u0005\nrU\n\u0005\n\u0005ˇ:\nWe can see immediately that the Fredholm alternative holds in both cases, as both\nequations have right-hand sides that are of odd order in p, and hence will average\nto 0.\nIf we instead consider schemes which use a central Ornstein-Uhlenbeck update,\nthen the inhomogeneous term becomes signiﬁcantly more complex, as we no\nlonger have a signiﬁcant number of cancellations in L\u0004\n2\u0005ˇ. Instead, we shall avoid\ncomputing the right-hand side for these schemes altogether, in favor of utilizing the\nfollowing lemma [223]:\nLemma 7.1 Consider two numerical schemes with associated operators governing\nthe evolution of measure ST and T S, with unique associated invariant distributions\nO\u0005ST and O\u0005TS respectively, such that\nST O\u0005ST D O\u0005ST;\nT S O\u0005TS D O\u0005TS:\nUnder suitable ergodicity assumptions (such that in the long-time limit, all distribu-\ntions converge to the invariant distribution), we have\nO\u0005ST D S O\u0005TS;\nand\nO\u0005TS D T O\u0005ST:\n"
+    },
+    {
+      "pdf_page": 321,
+      "printed_page": 300,
+      "text": "300\n7\nNumerical Methods for Stochastic Molecular Dynamics\nProof The proof is very simple, and follows almost directly from our ergodicity\nassumption. If we assume that\nlim\nn!1 .ST /n \u0005 D O\u0005ST;\nfor any initial distribution \u0005, then we have\nO\u0005ST D lim\nn!1 .ST /n O\u0005ST D lim\nn!1 S .T S/n\u00021 T O\u0005ST D S O\u0005TS:\nA similar statement holds for O\u0005ST.\n\u0002\nIf we return to our scheme \u0002OYZYO\u0003, which has a simple inhomogeneity, then\nwe can relate its invariant distribution to invariant distributions of schemes with a\ncentral OU update by writing its evolution operator as\neh OL\u0004\n\u0002OYZYO\u0003 D e.h=2/L\u0004\nOe.h=2/L\u0004\nYe.h=2/L\u0004\nZ\n„\nƒ‚\n…\nS\ne.h=2/L\u0004\nZe.h=2/L\u0004\nYe.h=2/L\u0004\nO\n„\nƒ‚\n…\nT\nD ST :\nBy applying Lemma 7.1, we can equate the invariant distributions directly as\nO\u0005\u0002ZYOYZ\u0003 D exp..h=2/L\u0004\nZ/ exp..h=2/L\u0004\nY/ exp..h=2/L\u0004\nO/ O\u0005\u0002OYZYO\u0003:\nRewriting our ansatz (7.27) in place of the distributions, and expanding the\nexponential series gives\n\u0005ˇ\n\u0004\n1 C h2f2;\u0002ZYOYZ\u0003 C : : :\n\u0005\nD\n\b\nIdCh\n2L\u0004\nLDCh2\n4 L\u0004\n1;\u0002OYZ\u0003 C h2\n2 L\u0004\nLD C : : :\n\t \u0004\n\u0005ˇ\n\u0004\n1 C h2f2;\u0002OYZYO\u0003 C : : :\n\u0005\u0005\n;\nand hence equating powers we have\nf2;\u0002ZYOYZ\u0003\u0005ˇ D f2;\u0002OYZYO\u0003\u0005ˇ C 1\n4L\u0004\n1;\u0002OYZ\u0003\u0005ˇ:\nBy virtue of (7.20), we have\nL\u0004\n1;\u0002OAB\u0003\u0005ˇ D 1\n2L\u0004\nH\n\u0004\ng\u0005ˇ\n\u0005\nL\u0004\n1;\u0002OBA\u0003\u0005ˇ D \u00031\n2L\u0004\nH\n\u0004\ng\u0005ˇ\n\u0005\n;\nwhere recall g.q; p/\u0005ˇ D L\u0004\nA\u0005ˇ D ˇpTM\u00021rU.q/\u0005ˇ. Computing\nL\u0004\nH\n\u0004\ng\u0005ˇ\n\u0005\nD ˇ\n\u0004\njrU.q/j2 \u0003 pTr2U.q/p\n\u0005\n\u0005ˇ;\n"
+    }
+  ],
+  "transcription_note": "PDF文字层原样保留，陈述中的数学排版转写为LaTeX；文字层有特殊字形编码时以目视原页为准。PDF347的Exercises之后不在正文范围内。",
   "context_notation": [],
   "extra_assumptions": [
     "真实Markov核、真实概率与不变概率的唯一性完整；借助不变性和唯一性即足够，不要求额外极限交换。保留原书证明文本，Lean采用已证更弱假设路线。"
@@ -54,11 +68,11 @@ theorem lemma71 (S T : Kernel Ω Ω) [IsMarkovKernel S] [IsMarkovKernel T]
 ## 项目依赖定义体及选择规格
 以下def/abbrev/structure完整保留；定理列出完整类型，Mathlib标准定义无需摘录。
 
-### MD.Ch07.lemma71 (Blueprint/Ch07.lean:1109)
+### MD.Ch07.lemma71 (Blueprint/Ch07.lean:1133)
 原文件上下文：
 ```lean
 open Set Filter MeasureTheory ProbabilityTheory MolecularDynamics
-open scoped BigOperators Topology ContDiff ENNReal NNReal
+open scoped BigOperators Topology ContDiff ENNReal NNReal Matrix
 variable {Ω : Type*} [MeasurableSpace Ω]
 variable {n : ℕ}
 ```

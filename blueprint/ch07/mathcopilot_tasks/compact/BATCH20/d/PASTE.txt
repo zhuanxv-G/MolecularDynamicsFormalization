@@ -1,0 +1,140 @@
+以附件/PASTE 为准，忽略 /workspace 旧文件；Mathlib 定义按标准含义采信。
+本任务只审本条：原文转录、对象资格、定义体、量词、全部结论及[EXTRA]是否一致；Lean编译不代替语义审阅。
+Lean/Mathlib均4.34.0。原页PDF映射：[283]；印刷页=[262].
+input_sha256请原样回显：
+{
+  "Blueprint/Ch07.lean": "f30ea154ebfb07ae85c0b806ff74b35808d5a0c3dcaa647c0c3cc80a78239e37",
+  "blueprint/ch07/ch07_source.json": "c434892ebf63b06f7cadcdfa7af408c2c12d7b645d35db431d1855224163ba19",
+  "BATCH20d_PAGES.pdf": "4a67bd421826afd8ffbbcf2287bdde2401678a92e13b9e4a49110586850e54cb"
+}
+用代码将JSON对象(batch,input_sha256,items)写到 /workspace/.mathcopilot/reviews/ch07/BATCH20d_review.json；items仅含本source_id。
+items字段：source_id、verdict(PASS/FAIL/NEEDS_HUMAN)、transcription、semantic_review、counterexample、suggested_fix、printed_version、corrected_version。逐版区分原文疑误和修正版结论；缺材料必须具体指出，不猜测。写后json.loads自检，最后仅回复路径及统计。
+
+## 原文JSON
+```json
+{
+  "source_id": "MD-7.1-HamiltonianSamplingObstruction",
+  "kind": "unnumbered_claim",
+  "label": null,
+  "section": "7.1",
+  "printed_page": "262",
+  "pdf_page": "283",
+  "statement_latex": "Note that deterministic methods (e.g. Hamiltonian dynamics itself) can sometimes be used for molecular sampling, but without stochastic perturbation, such methods are not rigorously ergodic, since the Liouvillian operator does not possess a spectral gap and does not provide a unique stationary solution.",
+  "proof_latex": null,
+  "proof_outline": null,
+  "proof_note": "原页推导与上下文全文见original_page_text；数学符号的排版以随附原页PDF为准。",
+  "original_page_text": [
+    {
+      "pdf_page": 283,
+      "printed_page": 262,
+      "text": "262\n7\nNumerical Methods for Stochastic Molecular Dynamics\ndynamics information, but this may or may not be essential to the problem at hand:\nwe often only wish to know the average of a given function \b.q/ with respect the\nconﬁgurational density exp.\u0003ˇU.q//, where U is the potential energy function of a\nmolecular system. Nevertheless, Metropolis Monte-Carlo can encounter additional\nproblems in the setting of molecular modelling. Where steep potentials (Lennard-\nJones potentials, for example) and stiff bonds are present, Monte-Carlo methods\nmay experience a high rejection rate. From another perspective, the “interesting\nregion” for sampling a Gibbs distribution is an extremely small portion of the\naccessible phase space, since the measure of phase space is highly concentrated\nand localized by the inherent geometric constraints of the problem and/or steep\npotentials. As the dimensionality increases, the accessible phase space becomes\nthinner. A sampling algorithm must be guided from place to place in a large\ndimensional phase space riddled with steep barriers, and blind search typically leads\nto a lot of wasted effort. For this reason molecular dynamics, which beneﬁts from\nacceleration information (the forces) to guide timestepping, and for which every\nstep is accepted, is often superior to crude Monte-Carlo for molecular sampling.\nFor a comparative discussion of Monte-Carlo and molecular dynamics methods, see\n[6, 278].\nWe hasten to add that there are many situations in which Monte-Carlo methods\nhave the advantage. For example, we might have speciﬁc knowledge of a catalog\nof large scale structural “moves” that would allow our algorithm to scale energetic\nbarriers without drastically biasing the sampling outcome. An example is when an\nassembly consisting of several component macromolecules is moved by rearranging\nthe pieces, since it may take atomistic MD a very long time to make such moves. In\nthose cases we would likely wish to make use of the system-speciﬁc knowledge that\nwe have in order to accelerate the sampling. An alternative to assuming, a priori,\na detailed book of moves, is to consider methods that adaptively construct good\nproposals, for example taking advantage of parallel computing methods. At the very\nleast, one would expect that such methods need to take into consideration the local\nforces to avoid wasted steps. A practical way to do this is the Hybrid Monte-Carlo\nmethod mentioned in Appendix C.\nNote that deterministic methods (e.g. Hamiltonian dynamics itself) can some-\ntimes be used for molecular sampling, but without stochastic perturbation, such\nmethods are not rigorously ergodic, since the Liouvillian operator does not possess\na spectral gap and does not provide a unique stationary solution. The stochastic\nmethods of this chapter are general purpose techniques that require little in the\nway of system-speciﬁc knowledge. They are workhorse methods which provide\nrigorous control of the canonical distribution. The challenge in using Langevin\ndynamics is to design maximally efﬁcient methods that provide accurate averages\nfor a wide range of observables using as large stepsizes as possible, and which\nconverge as rapidly as possible. It is possible—even very easy—to build schemes\nthat are wasteful, for example subject to unnecessarily stringent numerical stability\nbarriers, and eliminating such mistakes is essential. This can be achieved by\ncareful attention to the principles by which integrators are designed. Well designed\nstochastic differential equation approaches introduce dissipation without destroying\n"
+    }
+  ],
+  "transcription_note": "PDF文字层原样保留，陈述中的数学排版转写为LaTeX；文字层有特殊字形编码时以目视原页为准。PDF347的Exercises之后不在正文范围内。",
+  "context_notation": [],
+  "extra_assumptions": [
+    "本条只证明保能流的能量子水平集不变；结合非平凡概率质量可形成遍历性障碍。能量壳上的遍历性不能由原句否定。",
+    "原句未指定Liouvillian定义域、函数空间与参考概率。谱隙缺失和多个平稳解的完整算子陈述列为覆盖缺口，不把子水平集恒等式标作整段谱理论的证明。"
+  ],
+  "issues": [],
+  "statement_scope": "保能流、非平凡不变集资格及不变集恒等式；原文的谱隙与平稳解主张仅逐字登记，尚缺明确函数空间后的完整陈述。",
+  "lean_decl": "MD.Ch07.energyConservingFlow",
+  "lean_declarations": [
+    "MD.Ch07.energyConservingFlow",
+    "MD.Ch07.energySublevel_invariant",
+    "MD.Ch07.energyObstructionQualified"
+  ],
+  "source_page_verification": "见source_page_checks.json；必须已目视核对本条原页。",
+  "repair_log": [],
+  "documented_priors": []
+}
+```
+
+## 完整本条Lean
+```lean
+def energyConservingFlow (H : Phase n → ℝ) (F : ℝ → Phase n → Phase n) : Prop :=
+  (∀ x, F 0 x = x) ∧ (∀ s t x, F (s+t) x = F s (F t x)) ∧ ∀ t x, H (F t x) = H x
+
+theorem energySublevel_invariant (H : Phase n → ℝ) (F : ℝ → Phase n → Phase n)
+    (hf : energyConservingFlow H F) (a t : ℝ) :
+    (F t) ⁻¹' {x | H x ≤ a} = {x | H x ≤ a} := by
+  ext x
+  change H (F t x) ≤ a ↔ H x ≤ a
+  rw [hf.2.2 t x]
+
+def energyObstructionQualified (μ : Measure (Phase n)) (H : Phase n → ℝ)
+    (F : ℝ → Phase n → Phase n) : Prop :=
+  IsProbabilityMeasure μ ∧ energyConservingFlow H F ∧
+    (∀ t, MeasurePreserving (F t) μ μ) ∧
+    ∃ a, MeasurableSet {x | H x ≤ a} ∧ 0 < μ {x | H x ≤ a} ∧ μ {x | H x ≤ a} < 1
+```
+
+## 项目依赖定义体及选择规格
+以下def/abbrev/structure完整保留；定理列出完整类型，Mathlib标准定义无需摘录。
+
+### MD.Ch07.V (Blueprint/Ch07.lean:188)
+原文件上下文：
+```lean
+open Set Filter MeasureTheory ProbabilityTheory MolecularDynamics
+open scoped BigOperators Topology ContDiff ENNReal NNReal Matrix
+variable {Ω : Type*} [MeasurableSpace Ω]
+variable {n : ℕ}
+```
+```lean
+abbrev V (n : ℕ) := Fin n → ℝ
+```
+
+### MD.Ch07.Phase (Blueprint/Ch07.lean:189)
+原文件上下文：
+```lean
+open Set Filter MeasureTheory ProbabilityTheory MolecularDynamics
+open scoped BigOperators Topology ContDiff ENNReal NNReal Matrix
+variable {Ω : Type*} [MeasurableSpace Ω]
+variable {n : ℕ}
+```
+```lean
+abbrev Phase (n : ℕ) := V n × V n
+```
+
+### MD.Ch07.energyConservingFlow (Blueprint/Ch07.lean:1682)
+原文件上下文：
+```lean
+open Set Filter MeasureTheory ProbabilityTheory MolecularDynamics
+open scoped BigOperators Topology ContDiff ENNReal NNReal Matrix
+variable {Ω : Type*} [MeasurableSpace Ω]
+variable {n : ℕ}
+```
+```lean
+def energyConservingFlow (H : Phase n → ℝ) (F : ℝ → Phase n → Phase n) : Prop :=
+  (∀ x, F 0 x = x) ∧ (∀ s t x, F (s+t) x = F s (F t x)) ∧ ∀ t x, H (F t x) = H x
+```
+
+### MD.Ch07.energySublevel_invariant (Blueprint/Ch07.lean:1685)
+原文件上下文：
+```lean
+open Set Filter MeasureTheory ProbabilityTheory MolecularDynamics
+open scoped BigOperators Topology ContDiff ENNReal NNReal Matrix
+variable {Ω : Type*} [MeasurableSpace Ω]
+variable {n : ℕ}
+```
+```lean
+theorem energySublevel_invariant (H : Phase n → ℝ) (F : ℝ → Phase n → Phase n)
+    (hf : energyConservingFlow H F) (a t : ℝ) :
+    (F t) ⁻¹' {x | H x ≤ a} = {x | H x ≤ a}
+```
+
+### MD.Ch07.energyObstructionQualified (Blueprint/Ch07.lean:1692)
+原文件上下文：
+```lean
+open Set Filter MeasureTheory ProbabilityTheory MolecularDynamics
+open scoped BigOperators Topology ContDiff ENNReal NNReal Matrix
+variable {Ω : Type*} [MeasurableSpace Ω]
+variable {n : ℕ}
+```
+```lean
+def energyObstructionQualified (μ : Measure (Phase n)) (H : Phase n → ℝ)
+    (F : ℝ → Phase n → Phase n) : Prop :=
+  IsProbabilityMeasure μ ∧ energyConservingFlow H F ∧
+    (∀ t, MeasurePreserving (F t) μ μ) ∧
+    ∃ a, MeasurableSet {x | H x ≤ a} ∧ 0 < μ {x | H x ≤ a} ∧ μ {x | H x ≤ a} < 1
+```

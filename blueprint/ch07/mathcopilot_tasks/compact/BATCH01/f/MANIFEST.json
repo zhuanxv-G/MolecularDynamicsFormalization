@@ -5,9 +5,9 @@
     "MD-7.2-MeanErrorExpectation"
   ],
   "input_sha256": {
-    "Blueprint/Ch07.lean": "03e34bf86a5b27e03cce8552bb21fc0fea40514cd87faa953bf09a6a0a27f3c2",
-    "blueprint/ch07/ch07_source.json": "27e402f2a8b9c511106df901d6cc8472e1dae783cdf739f657879ffcf297462a",
-    "BATCH01f_PAGES.pdf": "f8493e91ea6078e48000ddb4c26bce79d79c67052a131012518cb7933258dcd1"
+    "Blueprint/Ch07.lean": "f30ea154ebfb07ae85c0b806ff74b35808d5a0c3dcaa647c0c3cc80a78239e37",
+    "blueprint/ch07/ch07_source.json": "c434892ebf63b06f7cadcdfa7af408c2c12d7b645d35db431d1855224163ba19",
+    "BATCH01f_PAGES.pdf": "b95a252c71821ec2f3d4ac9e5733011b3e67e6b1a1c48e9c40dd944c2fa504a8"
   },
   "page_mapping": [
     {
@@ -21,14 +21,14 @@
       "full_name": "MD.Ch07.meanErrorExpectation",
       "kind": "theorem",
       "path": "Blueprint/Ch07.lean",
-      "line": 67,
+      "line": 69,
       "code_sha256": "76079941b1d97e33b58772103d17b4d7d302139ffe05b480f9aeedde1df41ec7"
     },
     {
       "full_name": "MD.Ch07.meanSquareError",
       "kind": "def",
       "path": "Blueprint/Ch07.lean",
-      "line": 74,
+      "line": 76,
       "code_sha256": "2b7706ff7c01f2815719b7c9c13103a22b8014e00faf92d8c6c5c6977d47029a"
     }
   ],
@@ -40,13 +40,13 @@
   },
   "files": {
     "PASTE.txt": {
-      "bytes": 3829,
-      "sha256": "b3b7f389ff5481a86309668b9fb4fb684e71d56410f4feb3afa6a8db49acedb0"
+      "bytes": 6613,
+      "sha256": "4bb5e049c8098c7d37e36dd9fa822c65bf4fbd89eb4f0752ddbf187863423cf7"
     },
     "BATCH01f_PAGES.pdf": {
       "bytes": 74818,
-      "sha256": "f8493e91ea6078e48000ddb4c26bce79d79c67052a131012518cb7933258dcd1"
+      "sha256": "b95a252c71821ec2f3d4ac9e5733011b3e67e6b1a1c48e9c40dd944c2fa504a8"
     }
   },
-  "total_task_bytes": 80225
+  "total_task_bytes": 83009
 }

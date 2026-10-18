@@ -3,9 +3,9 @@
 Lean/Mathlib均4.34.0。原页PDF映射：[292]；印刷页=[271].
 input_sha256请原样回显：
 {
-  "Blueprint/Ch07.lean": "03e34bf86a5b27e03cce8552bb21fc0fea40514cd87faa953bf09a6a0a27f3c2",
-  "blueprint/ch07/ch07_source.json": "27e402f2a8b9c511106df901d6cc8472e1dae783cdf739f657879ffcf297462a",
-  "BATCH05b_PAGES.pdf": "00c1d25d275517468e510da1e3f0741ac08bc9596397764ee2431888a39c0cca"
+  "Blueprint/Ch07.lean": "f30ea154ebfb07ae85c0b806ff74b35808d5a0c3dcaa647c0c3cc80a78239e37",
+  "blueprint/ch07/ch07_source.json": "c434892ebf63b06f7cadcdfa7af408c2c12d7b645d35db431d1855224163ba19",
+  "BATCH05b_PAGES.pdf": "35699a686e608891177e4ad519705a8b20dfe39b6b1833d15cdf64202eb832aa"
 }
 用代码将JSON对象(batch,input_sha256,items)写到 /workspace/.mathcopilot/reviews/ch07/BATCH05b_review.json；items仅含本source_id。
 items字段：source_id、verdict(PASS/FAIL/NEEDS_HUMAN)、transcription、semantic_review、counterexample、suggested_fix、printed_version、corrected_version。逐版区分原文疑误和修正版结论；缺材料必须具体指出，不猜测。写后json.loads自检，最后仅回复路径及统计。
@@ -21,7 +21,16 @@ items字段：source_id、verdict(PASS/FAIL/NEEDS_HUMAN)、transcription、seman
   "pdf_page": "292",
   "statement_latex": "For reference and to remove any ambiguity, we write out some of these algorithms below as single timestep maps.\n\\[\\begin{array}{ll}\n[ABAO]:&q_{n+1/2}=q_n+(h/2)M^{-1}p_n,\\quad p_{n+1/2}=p_n-h\\nabla U(q_{n+1/2}),\\\\\n&q_{n+1}=q_{n+1/2}+(h/2)M^{-1}p_{n+1/2},\\quad p_{n+1}=e^{-h\\gamma}p_{n+1/2}+\\zeta_2M^{1/2}R_n;\\\\\n[BABO]:&p_{n+1/2}=p_n-(h/2)\\nabla U(q_n),\\quad q_{n+1}=q_n+hM^{-1}p_{n+1/2},\\\\\n&\\hat p_{n+1/2}=p_{n+1/2}-(h/2)\\nabla U(q_{n+1}),\\quad p_{n+1}=e^{-h\\gamma}\\hat p_{n+1/2}+\\zeta_2M^{1/2}R_n;\\\\\n[ABOBA]:&q_{n+1/2}=q_n+(h/2)M^{-1}p_n,\\quad p_{n+1/2}=p_n-(h/2)\\nabla U(q_{n+1/2}),\\\\\n&\\hat p_{n+1/2}=e^{-h\\gamma}p_{n+1/2}+\\zeta_2M^{1/2}R_n,\\\\\n&p_{n+1}=\\hat p_{n+1/2}-(h/2)\\nabla U(q_{n+1/2}),\\quad q_{n+1}=q_{n+1/2}+(h/2)M^{-1}p_{n+1};\\\\\n[BAOAB]:&p_{n+1/2}=p_n-(h/2)\\nabla U(q_n),\\quad q_{n+1/2}=q_n+(h/2)M^{-1}p_{n+1/2},\\\\\n&\\hat p_{n+1/2}=e^{-h\\gamma}p_{n+1/2}+\\zeta_2M^{1/2}R_n,\\\\\n&q_{n+1}=q_{n+1/2}+(h/2)M^{-1}\\hat p_{n+1/2},\\quad p_{n+1}=\\hat p_{n+1/2}-(h/2)\\nabla U(q_{n+1});\\\\\n[OABAO]:&p_{n+1/2}=e^{-h\\gamma/2}p_n+\\zeta_1M^{1/2}R_n,\\\\\n&q_{n+1/2}=q_n+(h/2)M^{-1}p_{n+1/2},\\quad\\hat p_{n+1/2}=p_{n+1/2}-h\\nabla U(q_{n+1/2}),\\\\\n&q_{n+1}=q_{n+1/2}+(h/2)M^{-1}\\hat p_{n+1/2},\\quad p_{n+1}=e^{-h\\gamma/2}\\hat p_{n+1/2}+\\zeta_1M^{1/2}R_{n+1/2};\\\\\n[OBABO]:&p_{n+1/2}=e^{-h\\gamma/2}p_n+\\zeta_1M^{1/2}R_n,\\quad\\hat p_{n+1/2}=p_{n+1/2}-(h/2)\\nabla U(q_n),\\\\\n&q_{n+1}=q_n+hM^{-1}\\hat p_{n+1/2},\\quad\\hat p_{n+1}=\\hat p_{n+1/2}-(h/2)\\nabla U(q_{n+1}),\\\\\n&p_{n+1}=e^{-h\\gamma/2}\\hat p_{n+1}+\\zeta_1M^{1/2}R_{n+1/2},\n\\end{array}\\]\nwhere $\\zeta_j=[k_BT(1-e^{-j\\gamma h})]^{1/2}$, and $R_n,R_{n+1/2}$ are $N_d$ vectors of standard independent $\\mathcal N(0,1)$ random variables, resampled at each step.",
   "proof_latex": null,
-  "proof_note": "原书未给独立完整证明。",
+  "proof_outline": null,
+  "proof_note": "原页推导与上下文全文见original_page_text；数学符号的排版以随附原页PDF为准。",
+  "original_page_text": [
+    {
+      "pdf_page": 292,
+      "printed_page": 271,
+      "text": "7.3\nSampling Iterations\n271\nmethod is to treat the Newtonian part of Langevin dynamics by a symplectic method,\nand follow this by an Ornstein-Uhlenbeck exact solve; this is just what is done in the\nschemes denoted \u0002BABO\u0003 and \u0002ABAO\u0003. Thus we could give these two methods the\nalternate (and more descriptive) names Geometric Langevin (Velocity-Verlet) and\nGeometric Langevin (Position-Verlet) respectively.\nBuilding on these schemes, the OU solves can instead be placed in the center of\nthe step, or we may choose to have more than one OU solve distributed through the\niteration. As it happens, some of these methods are of particular interest. We refer\nto the method obtained by inserting the OU solve in the middle of the Verlet method\neither by the strings \u0002ABOBA\u0003 (Position-Verlet version) and \u0002BAOAB\u0003 (Velocity-\nVerlet version) or by the more pronounceable names Symmetric Langevin Position-\nVerlet or Symmetric Langevin Velocity-Verlet, respectively.\nFor reference and to remove any ambiguity, we write out some of these\nalgorithms below as single timestep maps (sample implementations in MATLAB\nare available at http://www.MolecularDynamics.info).\n\u0002ABAO\u0003\n\u0002BABO\u0003\nqnC1=2 D qn C .h=2/M\u00021pn,\npnC1=2 D pn \u0003 .h=2/rU.qn/,\npnC1=2 D pn \u0003 hrU.qnC1=2/,\nqnC1 D qn C hM\u00021pnC1=2,\nqnC1 D qnC1=2 C .h=2/M\u00021pnC1=2,\nOpnC1=2 D pnC1=2 \u0003 .h=2/rU.qnC1/,\npnC1 D e\u0002h\npnC1=2 C \u00182M1=2Rn,\npnC1 D e\u0002h\n OpnC1=2 C \u00182M1=2Rn,\n\u0002ABOBA\u0003\n\u0002BAOAB\u0003\nqnC1=2 D qn C .h=2/M\u00021pn,\npnC1=2 D pn \u0003 .h=2/rU.qn/,\npnC1=2 D pn \u0003 .h=2/rU.qnC1=2/,\nqnC1=2 D qn C .h=2/M\u00021pnC1=2,\nOpnC1=2 D e\u0002h\npnC1=2 C \u00182M1=2Rn,\nOpnC1=2 D e\u0002h\npnC1=2 C \u00182M1=2Rn,\npnC1 D OpnC1=2 \u0003 .h=2/rU.qnC1=2/,\nqnC1 D qnC1=2 C .h=2/M\u00021OpnC1=2,\nqnC1 D qnC1=2 C .h=2/M\u00021pnC1,\npnC1 D OpnC1=2 \u0003 .h=2/rU.qnC1/,\n\u0002OABAO\u0003\n\u0002OBABO\u0003\npnC1=2 D e\u0002h\n=2pn C \u00181M1=2Rn,\npnC1=2 D e\u0002h\n=2pn C \u00181M1=2Rn,\nqnC1=2 D qn C .h=2/M\u00021pnC1=2,\nOpnC1=2 D pnC1=2 \u0003 .h=2/rU.qn/,\nOpnC1=2 D pnC1=2 \u0003 hrU.qnC1=2/,\nqnC1 D qn C hM\u00021OpnC1=2,\nqnC1 D qnC1=2 C .h=2/M\u00021OpnC1=2,\nOpnC1 D OpnC1=2 \u0003 .h=2/rU.qnC1/,\npnC1 D e\u0002h\n=2OpnC1=2 C \u00181M1=2RnC1=2,\npnC1De\u0002h\n=2OpnC1 C \u00181M1=2RnC1=2,\nwhere \u0018j\nD\n\nkBT\n\u0004\n1 \u0003 e\u0002j\nh\u0005\u000b1=2, and Rn; RnC1=2 are Nd vectors of standard\nindependent N.0; 1/ random variables, resampled at each step. Note that, as in the\nVelocity-Verlet method, the two apparent evaluations of the force F D \u0003rU in the\nmethods labelled \u0002BABO\u0003, \u0002BAOAB\u0003 and \u0002OBABO\u0003 actually require only a single\nevaluation at each timestep, since the second evaluation at one step may be reused at\nthe ﬁrst stage of the following step. Thus all of the above methods require only one\nforce evaluation per timestep, and hence we can think of them having exactly the\nsame computational cost as the evaluation of the force is the principle computational\nexpense.\n"
+    }
+  ],
+  "transcription_note": "PDF文字层原样保留，陈述中的数学排版转写为LaTeX；文字层有特殊字形编码时以目视原页为准。PDF347的Exercises之后不在正文范围内。",
   "context_notation": [],
   "extra_assumptions": [
     "BABO已定义于ABOBABO；其余5个完整复合依次对应所列中间步。",
@@ -61,11 +70,11 @@ def obabo (m : V n) (U : V n → ℝ) (γ θ h : ℝ) (R S : V n) : Phase n → 
 ## 项目依赖定义体及选择规格
 以下def/abbrev/structure完整保留；定理列出完整类型，Mathlib标准定义无需摘录。
 
-### MD.Ch07.V (Blueprint/Ch07.lean:172)
+### MD.Ch07.V (Blueprint/Ch07.lean:188)
 原文件上下文：
 ```lean
 open Set Filter MeasureTheory ProbabilityTheory MolecularDynamics
-open scoped BigOperators Topology ContDiff ENNReal NNReal
+open scoped BigOperators Topology ContDiff ENNReal NNReal Matrix
 variable {Ω : Type*} [MeasurableSpace Ω]
 variable {n : ℕ}
 ```
@@ -73,11 +82,11 @@ variable {n : ℕ}
 abbrev V (n : ℕ) := Fin n → ℝ
 ```
 
-### MD.Ch07.Phase (Blueprint/Ch07.lean:173)
+### MD.Ch07.Phase (Blueprint/Ch07.lean:189)
 原文件上下文：
 ```lean
 open Set Filter MeasureTheory ProbabilityTheory MolecularDynamics
-open scoped BigOperators Topology ContDiff ENNReal NNReal
+open scoped BigOperators Topology ContDiff ENNReal NNReal Matrix
 variable {Ω : Type*} [MeasurableSpace Ω]
 variable {n : ℕ}
 ```
@@ -85,11 +94,11 @@ variable {n : ℕ}
 abbrev Phase (n : ℕ) := V n × V n
 ```
 
-### MD.Ch07.ouMomentum (Blueprint/Ch07.lean:198)
+### MD.Ch07.ouMomentum (Blueprint/Ch07.lean:214)
 原文件上下文：
 ```lean
 open Set Filter MeasureTheory ProbabilityTheory MolecularDynamics
-open scoped BigOperators Topology ContDiff ENNReal NNReal
+open scoped BigOperators Topology ContDiff ENNReal NNReal Matrix
 variable {Ω : Type*} [MeasurableSpace Ω]
 variable {n : ℕ}
 ```
@@ -98,11 +107,11 @@ def ouMomentum (m : V n) (γ θ h : ℝ) (p R : V n) : V n :=
   fun i ↦ Real.exp (-γ*h)*p i + Real.sqrt (θ*(1-Real.exp (-2*γ*h))) * Real.sqrt (m i) * R i
 ```
 
-### MD.Ch07.ouStep (Blueprint/Ch07.lean:211)
+### MD.Ch07.ouStep (Blueprint/Ch07.lean:227)
 原文件上下文：
 ```lean
 open Set Filter MeasureTheory ProbabilityTheory MolecularDynamics
-open scoped BigOperators Topology ContDiff ENNReal NNReal
+open scoped BigOperators Topology ContDiff ENNReal NNReal Matrix
 variable {Ω : Type*} [MeasurableSpace Ω]
 variable {n : ℕ}
 ```
@@ -111,11 +120,11 @@ def ouStep (m : V n) (γ θ h : ℝ) (R : V n) (x : Phase n) : Phase n :=
   (x.1, ouMomentum m γ θ h x.2 R)
 ```
 
-### MD.Ch07.coordDerivative (Blueprint/Ch07.lean:221)
+### MD.Ch07.coordDerivative (Blueprint/Ch07.lean:237)
 原文件上下文：
 ```lean
 open Set Filter MeasureTheory ProbabilityTheory MolecularDynamics
-open scoped BigOperators Topology ContDiff ENNReal NNReal
+open scoped BigOperators Topology ContDiff ENNReal NNReal Matrix
 variable {Ω : Type*} [MeasurableSpace Ω]
 variable {n : ℕ}
 ```
@@ -124,11 +133,11 @@ def coordDerivative (f : V n → ℝ) (x : V n) (i : Fin n) : ℝ :=
   deriv (fun z ↦ f (Function.update x i z)) (x i)
 ```
 
-### MD.Ch07.gradient (Blueprint/Ch07.lean:250)
+### MD.Ch07.gradient (Blueprint/Ch07.lean:266)
 原文件上下文：
 ```lean
 open Set Filter MeasureTheory ProbabilityTheory MolecularDynamics
-open scoped BigOperators Topology ContDiff ENNReal NNReal
+open scoped BigOperators Topology ContDiff ENNReal NNReal Matrix
 variable {Ω : Type*} [MeasurableSpace Ω]
 variable {n : ℕ}
 ```
@@ -136,11 +145,11 @@ variable {n : ℕ}
 def gradient (U : V n → ℝ) (q : V n) : V n := fun i ↦ coordDerivative U q i
 ```
 
-### MD.Ch07.driftStep (Blueprint/Ch07.lean:279)
+### MD.Ch07.driftStep (Blueprint/Ch07.lean:295)
 原文件上下文：
 ```lean
 open Set Filter MeasureTheory ProbabilityTheory MolecularDynamics
-open scoped BigOperators Topology ContDiff ENNReal NNReal
+open scoped BigOperators Topology ContDiff ENNReal NNReal Matrix
 variable {Ω : Type*} [MeasurableSpace Ω]
 variable {n : ℕ}
 ```
@@ -149,11 +158,11 @@ def driftStep (m : V n) (h : ℝ) (x : Phase n) : Phase n :=
   (fun i ↦ x.1 i + h * x.2 i / m i, x.2)
 ```
 
-### MD.Ch07.kickStep (Blueprint/Ch07.lean:282)
+### MD.Ch07.kickStep (Blueprint/Ch07.lean:298)
 原文件上下文：
 ```lean
 open Set Filter MeasureTheory ProbabilityTheory MolecularDynamics
-open scoped BigOperators Topology ContDiff ENNReal NNReal
+open scoped BigOperators Topology ContDiff ENNReal NNReal Matrix
 variable {Ω : Type*} [MeasurableSpace Ω]
 variable {n : ℕ}
 ```
@@ -162,11 +171,11 @@ def kickStep (U : V n → ℝ) (h : ℝ) (x : Phase n) : Phase n :=
   (x.1, fun i ↦ x.2 i - h * gradient U x.1 i)
 ```
 
-### MD.Ch07.abao (Blueprint/Ch07.lean:340)
+### MD.Ch07.abao (Blueprint/Ch07.lean:356)
 原文件上下文：
 ```lean
 open Set Filter MeasureTheory ProbabilityTheory MolecularDynamics
-open scoped BigOperators Topology ContDiff ENNReal NNReal
+open scoped BigOperators Topology ContDiff ENNReal NNReal Matrix
 variable {Ω : Type*} [MeasurableSpace Ω]
 variable {n : ℕ}
 ```
@@ -175,11 +184,11 @@ def abao (m : V n) (U : V n → ℝ) (γ θ h : ℝ) (R : V n) : Phase n → Pha
   ouStep m γ θ h R ∘ driftStep m (h/2) ∘ kickStep U h ∘ driftStep m (h/2)
 ```
 
-### MD.Ch07.aboba (Blueprint/Ch07.lean:342)
+### MD.Ch07.aboba (Blueprint/Ch07.lean:358)
 原文件上下文：
 ```lean
 open Set Filter MeasureTheory ProbabilityTheory MolecularDynamics
-open scoped BigOperators Topology ContDiff ENNReal NNReal
+open scoped BigOperators Topology ContDiff ENNReal NNReal Matrix
 variable {Ω : Type*} [MeasurableSpace Ω]
 variable {n : ℕ}
 ```
@@ -188,11 +197,11 @@ def aboba (m : V n) (U : V n → ℝ) (γ θ h : ℝ) (R : V n) : Phase n → Ph
   driftStep m (h/2) ∘ kickStep U (h/2) ∘ ouStep m γ θ h R ∘ kickStep U (h/2) ∘ driftStep m (h/2)
 ```
 
-### MD.Ch07.baoab (Blueprint/Ch07.lean:344)
+### MD.Ch07.baoab (Blueprint/Ch07.lean:360)
 原文件上下文：
 ```lean
 open Set Filter MeasureTheory ProbabilityTheory MolecularDynamics
-open scoped BigOperators Topology ContDiff ENNReal NNReal
+open scoped BigOperators Topology ContDiff ENNReal NNReal Matrix
 variable {Ω : Type*} [MeasurableSpace Ω]
 variable {n : ℕ}
 ```
@@ -201,11 +210,11 @@ def baoab (m : V n) (U : V n → ℝ) (γ θ h : ℝ) (R : V n) : Phase n → Ph
   kickStep U (h/2) ∘ driftStep m (h/2) ∘ ouStep m γ θ h R ∘ driftStep m (h/2) ∘ kickStep U (h/2)
 ```
 
-### MD.Ch07.oabao (Blueprint/Ch07.lean:346)
+### MD.Ch07.oabao (Blueprint/Ch07.lean:362)
 原文件上下文：
 ```lean
 open Set Filter MeasureTheory ProbabilityTheory MolecularDynamics
-open scoped BigOperators Topology ContDiff ENNReal NNReal
+open scoped BigOperators Topology ContDiff ENNReal NNReal Matrix
 variable {Ω : Type*} [MeasurableSpace Ω]
 variable {n : ℕ}
 ```
@@ -214,11 +223,11 @@ def oabao (m : V n) (U : V n → ℝ) (γ θ h : ℝ) (R S : V n) : Phase n → 
   ouStep m γ θ (h/2) S ∘ driftStep m (h/2) ∘ kickStep U h ∘ driftStep m (h/2) ∘ ouStep m γ θ (h/2) R
 ```
 
-### MD.Ch07.obabo (Blueprint/Ch07.lean:348)
+### MD.Ch07.obabo (Blueprint/Ch07.lean:364)
 原文件上下文：
 ```lean
 open Set Filter MeasureTheory ProbabilityTheory MolecularDynamics
-open scoped BigOperators Topology ContDiff ENNReal NNReal
+open scoped BigOperators Topology ContDiff ENNReal NNReal Matrix
 variable {Ω : Type*} [MeasurableSpace Ω]
 variable {n : ℕ}
 ```

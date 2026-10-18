@@ -5,9 +5,9 @@
     "MD-7.7.3-PerturbationCoefficientEquation"
   ],
   "input_sha256": {
-    "Blueprint/Ch07.lean": "03e34bf86a5b27e03cce8552bb21fc0fea40514cd87faa953bf09a6a0a27f3c2",
-    "blueprint/ch07/ch07_source.json": "27e402f2a8b9c511106df901d6cc8472e1dae783cdf739f657879ffcf297462a",
-    "BATCH11f_PAGES.pdf": "c444c9532a70e05743ba281aab9d162564ae95adc98195eb0b9fd66a77f0e7d8"
+    "Blueprint/Ch07.lean": "f30ea154ebfb07ae85c0b806ff74b35808d5a0c3dcaa647c0c3cc80a78239e37",
+    "blueprint/ch07/ch07_source.json": "c434892ebf63b06f7cadcdfa7af408c2c12d7b645d35db431d1855224163ba19",
+    "BATCH11f_PAGES.pdf": "1d8441d1d6f942f5e73fb79a008423dd60f1579561cf0b5ccfeb478b2ff175cd"
   },
   "page_mapping": [
     {
@@ -26,14 +26,14 @@
       "full_name": "MD.Ch07.actionCoefficient",
       "kind": "def",
       "path": "Blueprint/Ch07.lean",
-      "line": 867,
+      "line": 891,
       "code_sha256": "bf68f102bca2ca022764cda0a017ca0e4b5d8214e81c10e531acae45c9a50159"
     },
     {
       "full_name": "MD.Ch07.perturbationCoefficientEquation",
       "kind": "theorem",
       "path": "Blueprint/Ch07.lean",
-      "line": 870,
+      "line": 894,
       "code_sha256": "692a7e0c4a8bff20cdf572728b49e8b4efe8ccdd1b8e3d6ba807ca35e39ea0b1"
     },
     {
@@ -52,13 +52,13 @@
   },
   "files": {
     "PASTE.txt": {
-      "bytes": 4769,
-      "sha256": "ca2169c268df8618a821a99b730e1a7cea5499e929badc7777922d0207e79c82"
+      "bytes": 9094,
+      "sha256": "47251333ad7394efe31e26434d623c608b3da975854bb52ac089a3e9f6c12c8a"
     },
     "BATCH11f_PAGES.pdf": {
       "bytes": 86572,
-      "sha256": "c444c9532a70e05743ba281aab9d162564ae95adc98195eb0b9fd66a77f0e7d8"
+      "sha256": "1d8441d1d6f942f5e73fb79a008423dd60f1579561cf0b5ccfeb478b2ff175cd"
     }
   },
-  "total_task_bytes": 93327
+  "total_task_bytes": 97652
 }

@@ -5,9 +5,9 @@
     "MD-7.4-BBKLinearForm"
   ],
   "input_sha256": {
-    "Blueprint/Ch07.lean": "03e34bf86a5b27e03cce8552bb21fc0fea40514cd87faa953bf09a6a0a27f3c2",
-    "blueprint/ch07/ch07_source.json": "27e402f2a8b9c511106df901d6cc8472e1dae783cdf739f657879ffcf297462a",
-    "BATCH06d_PAGES.pdf": "8de985b019da338e057cc4975722f4fe3712a55e90006bc5f698f2149dbc2ced"
+    "Blueprint/Ch07.lean": "f30ea154ebfb07ae85c0b806ff74b35808d5a0c3dcaa647c0c3cc80a78239e37",
+    "blueprint/ch07/ch07_source.json": "c434892ebf63b06f7cadcdfa7af408c2c12d7b645d35db431d1855224163ba19",
+    "BATCH06d_PAGES.pdf": "703ae838c32e0212f3ac8df1feddca2acce9786ed3844509d0773fbaaae8049c"
   },
   "page_mapping": [
     {
@@ -21,14 +21,14 @@
       "full_name": "MD.Ch07.bbkMatrix",
       "kind": "def",
       "path": "Blueprint/Ch07.lean",
-      "line": 421,
+      "line": 437,
       "code_sha256": "87723c4b0eeb776fe30047a13e2cabd3c2cb57ed5f2788dc51cebee78930e0c8"
     },
     {
       "full_name": "MD.Ch07.bbkNoise",
       "kind": "def",
       "path": "Blueprint/Ch07.lean",
-      "line": 425,
+      "line": 441,
       "code_sha256": "44876705c2e99b71cd31cb12039486e27ac95473134d54f267a143839f8f8a83"
     }
   ],
@@ -40,13 +40,13 @@
   },
   "files": {
     "PASTE.txt": {
-      "bytes": 3925,
-      "sha256": "ce6f37b2c1d3a358b32b7aa0765b236f0d2d38d375769ea594f2e7e18024e526"
+      "bytes": 6373,
+      "sha256": "3d3b9f83c0e462d36017734af240acbcef359f451d79021f1f2605110a1b385d"
     },
     "BATCH06d_PAGES.pdf": {
       "bytes": 63629,
-      "sha256": "8de985b019da338e057cc4975722f4fe3712a55e90006bc5f698f2149dbc2ced"
+      "sha256": "703ae838c32e0212f3ac8df1feddca2acce9786ed3844509d0773fbaaae8049c"
     }
   },
-  "total_task_bytes": 69105
+  "total_task_bytes": 71553
 }

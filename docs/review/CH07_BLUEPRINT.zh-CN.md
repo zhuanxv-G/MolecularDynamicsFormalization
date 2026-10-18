@@ -1,6 +1,6 @@
 # 第7章 Lean Blueprint 本地审阅材料
 
-当前已整理107条；网站尚未审阅。正文范围为印刷261–326页（PDF282–347），末页仅取Exercises之前的正文。
+当前已整理118条；网站尚未审阅。正文范围为印刷261–326页（PDF282–347），末页仅取Exercises之前的正文。
 
 ## 1. MD-7.1-Bias · definition · 印刷p.263 / PDFp.284
 
@@ -10,7 +10,9 @@ All standard methods based on discretizing SDEs introduce some stepsize-dependen
 
 ### 3. 原文证明
 
-原书未给独立完整证明。
+原页推导与上下文全文见original_page_text；数学符号的排版以随附原页PDF为准。
+
+原页文字及推导保存在原文JSON的original_page_text；网站子包附对应完整原页PDF。
 
 ### 4. 完整当前Lean（原文与修正版独立列出）
 
@@ -35,7 +37,7 @@ def bias (exact computed : ℝ) : ℝ := |exact - computed|
 
 ### 7. 状态与证明位置
 
-定义；单文件编译与逐声明公理核对通过。
+定义；Lean陈述可检查，证明完整性按本条状态区分。
 本条未登记待证缺项。
 位置：Blueprint/Ch07.lean；MD.Ch07.bias。
 
@@ -49,7 +51,9 @@ where $W$ defines a standard scalar Wiener process.
 
 ### 3. 原文证明
 
-原书未给独立完整证明。
+原页推导与上下文全文见original_page_text；数学符号的排版以随附原页PDF为准。
+
+原页文字及推导保存在原文JSON的original_page_text；网站子包附对应完整原页PDF。
 
 ### 4. 完整当前Lean（原文与修正版独立列出）
 
@@ -83,7 +87,7 @@ def scalarSDE (P : Measure Ω) (W X : ℝ → Ω → ℝ)
 
 ### 7. 状态与证明位置
 
-定义；单文件编译与逐声明公理核对通过。
+定义；Lean陈述可检查，证明完整性按本条状态区分。
 本条未登记待证缺项。
 位置：Blueprint/Ch07.lean；MD.Ch07.scalarSDE。
 
@@ -97,7 +101,9 @@ where $R_n$ is a normal random variable with zero mean and unit variance. This m
 
 ### 3. 原文证明
 
-原书未给独立完整证明。
+原页推导与上下文全文见original_page_text；数学符号的排版以随附原页PDF为准。
+
+原页文字及推导保存在原文JSON的original_page_text；网站子包附对应完整原页PDF。
 
 ### 4. 完整当前Lean（原文与修正版独立列出）
 
@@ -131,7 +137,7 @@ def eulerMaruyama (a b : ℝ → ℝ) (h x0 : ℝ) (R : ℕ → Ω → ℝ) : �
 
 ### 7. 状态与证明位置
 
-定义；单文件编译与逐声明公理核对通过。
+定义；Lean陈述可检查，证明完整性按本条状态区分。
 本条未登记待证缺项。
 位置：Blueprint/Ch07.lean；MD.Ch07.eulerMaruyamaStep, MD.Ch07.standardNormalSequence, MD.Ch07.eulerMaruyama。
 
@@ -144,7 +150,9 @@ Note that from the definition of the SDE, we may write
 
 ### 3. 原文证明
 
-原书未给独立完整证明。
+原页推导与上下文全文见original_page_text；数学符号的排版以随附原页PDF为准。
+
+原页文字及推导保存在原文JSON的original_page_text；网站子包附对应完整原页PDF。
 
 ### 4. 完整当前Lean（原文与修正版独立列出）
 
@@ -179,7 +187,7 @@ theorem sdeIncrement (P : Measure Ω) (W X : ℝ → Ω → ℝ)
 
 ### 7. 状态与证明位置
 
-未证陈述；单文件编译与逐声明公理核对通过。
+未证陈述；Lean陈述可检查，证明完整性按本条状态区分。
 未证原因：需对第6章L²积分定义补区间可加性及积分几乎处处组合桥接；本轮不建立一般随机积分理论。
 位置：Blueprint/Ch07.lean；MD.Ch07.sdeIncrement。
 
@@ -193,7 +201,9 @@ In the case of strong accuracy, our measure of the global error is the quantity 
 
 ### 3. 原文证明
 
-原书未给独立完整证明。
+原页推导与上下文全文见original_page_text；数学符号的排版以随附原页PDF为准。
+
+原页文字及推导保存在原文JSON的original_page_text；网站子包附对应完整原页PDF。
 
 ### 4. 完整当前Lean（原文与修正版独立列出）
 
@@ -221,7 +231,7 @@ def strongError (P : Measure Ω) (Xh : ℕ → Ω → ℝ) (X : ℝ → Ω → �
 
 ### 7. 状态与证明位置
 
-定义；单文件编译与逐声明公理核对通过。
+定义；Lean陈述可检查，证明完整性按本条状态区分。
 本条未登记待证缺项。
 位置：Blueprint/Ch07.lean；MD.Ch07.strongError。
 
@@ -233,7 +243,9 @@ For $\alpha=1$ this implies convergence of expectation. The more natural choice 
 
 ### 3. 原文证明
 
-原书未给独立完整证明。
+原页推导与上下文全文见original_page_text；数学符号的排版以随附原页PDF为准。
+
+原页文字及推导保存在原文JSON的original_page_text；网站子包附对应完整原页PDF。
 
 ### 4. 完整当前Lean（原文与修正版独立列出）
 
@@ -266,7 +278,7 @@ def meanSquareError (P : Measure Ω) (X Y : Ω → ℝ) : ℝ :=
 
 ### 7. 状态与证明位置
 
-已证；单文件编译与逐声明公理核对通过。
+已证；Lean陈述可检查，证明完整性按本条状态区分。
 本条未登记待证缺项。
 位置：Blueprint/Ch07.lean；MD.Ch07.meanErrorExpectation, MD.Ch07.meanSquareError。
 
@@ -279,7 +291,9 @@ $\mathrm{Err}_{h,\tau}^{\rm strong}<C(\tau)h^r$ for some coefficient $C(\tau)$ d
 
 ### 3. 原文证明
 
-原书未给独立完整证明。
+原页推导与上下文全文见original_page_text；数学符号的排版以随附原页PDF为准。
+
+原页文字及推导保存在原文JSON的original_page_text；网站子包附对应完整原页PDF。
 
 ### 4. 完整当前Lean（原文与修正版独立列出）
 
@@ -310,7 +324,7 @@ def hasStrongOrder (P : Measure Ω) (Xh : ℝ → ℕ → Ω → ℝ)
 
 ### 7. 状态与证明位置
 
-定义；单文件编译与逐声明公理核对通过。
+定义；Lean陈述可检查，证明完整性按本条状态区分。
 本条未登记待证缺项。
 位置：Blueprint/Ch07.lean；MD.Ch07.hasStrongOrder。
 
@@ -324,7 +338,9 @@ and we say that a method has weak order $r$ if $\mathrm{Err}^{\rm weak}_{h,\tau,
 
 ### 3. 原文证明
 
-原书未给独立完整证明。
+原页推导与上下文全文见original_page_text；数学符号的排版以随附原页PDF为准。
+
+原页文字及推导保存在原文JSON的original_page_text；网站子包附对应完整原页PDF。
 
 ### 4. 完整当前Lean（原文与修正版独立列出）
 
@@ -361,7 +377,7 @@ def hasWeakOrder (P : Measure Ω) (Xh : ℝ → ℕ → Ω → ℝ)
 
 ### 7. 状态与证明位置
 
-定义；单文件编译与逐声明公理核对通过。
+定义；Lean陈述可检查，证明完整性按本条状态区分。
 本条未登记待证缺项。
 位置：Blueprint/Ch07.lean；MD.Ch07.weakError, MD.Ch07.hasWeakOrder。
 
@@ -373,7 +389,9 @@ It is easy to see that methods with high strong order give us high weak order to
 
 ### 3. 原文证明
 
-原书未给独立完整证明。
+原页推导与上下文全文见original_page_text；数学符号的排版以随附原页PDF为准。
+
+原页文字及推导保存在原文JSON的original_page_text；网站子包附对应完整原页PDF。
 
 ### 4. 完整当前Lean（原文与修正版独立列出）
 
@@ -397,7 +415,21 @@ theorem weakDoesNotImplyStrong : ∃ (P : Measure ℝ) (X Y : ℝ → ℝ),
     IsProbabilityMeasure P ∧
     (∀ f : ℝ → ℝ, (∫ sample, f (X sample) ∂P) = ∫ sample, f (Y sample) ∂P) ∧
     0 < ∫ sample, |X sample-Y sample| ∂P := by
-  sorry
+  let P : Measure ℝ := (1/2 : ℝ≥0) • Measure.dirac (-1)+(1/2 : ℝ≥0) • Measure.dirac 1
+  have hi (f : ℝ → ℝ) (a : ℝ) : Integrable f ((1/2 : ℝ≥0) • Measure.dirac a) :=
+    (integrable_dirac (by simp)).smul_measure_nnreal
+  refine ⟨P,id,Neg.neg,?_,?_,?_⟩
+  · constructor
+    simp only [P,Measure.add_apply,Measure.smul_apply,Measure.dirac_apply_of_mem (Set.mem_univ _),ENNReal.smul_def,smul_eq_mul,mul_one]
+    exact_mod_cast (by norm_num : (1/2 : ℝ≥0)+(1/2 : ℝ≥0) = 1)
+  · intro f
+    dsimp [P]
+    rw [integral_add_measure (hi _ _) (hi _ _),integral_add_measure (hi _ _) (hi _ _)]
+    simp [integral_smul_nnreal_measure,add_comm]
+  · dsimp [P]
+    rw [integral_add_measure (hi _ _) (hi _ _)]
+    norm_num [integral_smul_nnreal_measure]
+
 ```
 
 ### 5. 对照表
@@ -417,8 +449,8 @@ theorem weakDoesNotImplyStrong : ∃ (P : Measure ℝ) (X Y : ℝ → ℝ),
 
 ### 7. 状态与证明位置
 
-未证陈述；单文件编译与逐声明公理核对通过。
-未证原因：反向反例还需两点概率测度的积分化简；下一批限三条短路线。
+已证；Lean陈述可检查，证明完整性按本条状态区分。
+本条未登记待证缺项。
 位置：Blueprint/Ch07.lean；MD.Ch07.strongWeakLipschitz, MD.Ch07.weakDoesNotImplyStrong。
 
 ## 1. MD-7.2-CanonicalAverage · (7.1) · 印刷p.266 / PDFp.287
@@ -432,7 +464,9 @@ where $\rho_\beta$ is the canonical measure
 
 ### 3. 原文证明
 
-原书未给独立完整证明。
+原页推导与上下文全文见original_page_text；数学符号的排版以随附原页PDF为准。
+
+原页文字及推导保存在原文JSON的original_page_text；网站子包附对应完整原页PDF。
 
 ### 4. 完整当前Lean（原文与修正版独立列出）
 
@@ -464,7 +498,7 @@ def probabilityDensity {D : Type*} [MeasurableSpace D] (ν : Measure D) (ρ : D 
 
 ### 7. 状态与证明位置
 
-定义；单文件编译与逐声明公理核对通过。
+定义；Lean陈述可检查，证明完整性按本条状态区分。
 本条未登记待证缺项。
 位置：Blueprint/Ch07.lean；MD.Ch07.densityWithPartition, MD.Ch07.canonicalAverage, MD.Ch07.probabilityDensity。
 
@@ -478,7 +512,9 @@ ensuring the integral of $\rho_\beta$ is unity.
 
 ### 3. 原文证明
 
-原书未给独立完整证明。
+原页推导与上下文全文见original_page_text；数学符号的排版以随附原页PDF为准。
+
+原页文字及推导保存在原文JSON的original_page_text；网站子包附对应完整原页PDF。
 
 ### 4. 完整当前Lean（原文与修正版独立列出）
 
@@ -521,7 +557,7 @@ theorem partitionPrinted_corrected {D : Type*} [MeasurableSpace D] (ν : Measure
 
 ### 7. 状态与证明位置
 
-未证陈述；单文件编译与逐声明公理核对通过。
+未证陈述；Lean陈述可检查，证明完整性按本条状态区分。
 未证原因：原文倒数关系导致归一化错误，原文版不证明；修正版正常证明。
 位置：Blueprint/Ch07.lean；MD.Ch07.partitionPrinted, MD.Ch07.partitionPrinted_counterexample, MD.Ch07.partitionPrinted_corrected。
 
@@ -536,7 +572,9 @@ and write the observed average computed in experiment (using a discretization me
 
 ### 3. 原文证明
 
-原书未给独立完整证明。
+原页推导与上下文全文见original_page_text；数学符号的排版以随附原页PDF为准。
+
+原页文字及推导保存在原文JSON的original_page_text；网站子包附对应完整原页PDF。
 
 ### 4. 完整当前Lean（原文与修正版独立列出）
 
@@ -565,7 +603,7 @@ theorem bias_nonnegative (exact computed : ℝ) : 0 ≤ bias exact computed := a
 
 ### 7. 状态与证明位置
 
-定义；单文件编译与逐声明公理核对通过。
+定义；Lean陈述可检查，证明完整性按本条状态区分。
 本条未登记待证缺项。
 位置：Blueprint/Ch07.lean；MD.Ch07.observableBias, MD.Ch07.bias_nonnegative。
 
@@ -578,7 +616,9 @@ By way of illustration of what we mean by a numerical sampling method, consider 
 
 ### 3. 原文证明
 
-原书未给独立完整证明。
+原页推导与上下文全文见original_page_text；数学符号的排版以随附原页PDF为准。
+
+原页文字及推导保存在原文JSON的original_page_text；网站子包附对应完整原页PDF。
 
 ### 4. 完整当前Lean（原文与修正版独立列出）
 
@@ -614,7 +654,7 @@ def momentumOU (P : Measure Ω) (W p : ℝ → Ω → V n)
 
 ### 7. 状态与证明位置
 
-定义；单文件编译与逐声明公理核对通过。
+定义；Lean陈述可检查，证明完整性按本条状态区分。
 本条未登记待证缺项。
 位置：Blueprint/Ch07.lean；MD.Ch07.V, MD.Ch07.Phase, MD.Ch07.vectorWiener, MD.Ch07.momentumOU。
 
@@ -628,7 +668,9 @@ Following the argument of Sect. 6.3.2 in the previous chapter,
 
 ### 3. 原文证明
 
-原书未给独立完整证明。
+原页推导与上下文全文见original_page_text；数学符号的排版以随附原页PDF为准。
+
+原页文字及推导保存在原文JSON的original_page_text；网站子包附对应完整原页PDF。
 
 ### 4. 完整当前Lean（原文与修正版独立列出）
 
@@ -659,7 +701,7 @@ theorem ouIntegratingFactor (P : Measure Ω) (W p : ℝ → Ω → V n)
 
 ### 7. 状态与证明位置
 
-未证陈述；单文件编译与逐声明公理核对通过。
+未证陈述；Lean陈述可检查，证明完整性按本条状态区分。
 未证原因：需要第6章Itô积分定义与积分因子法的桥接；不新建一般随机乘积法则。
 位置：Blueprint/Ch07.lean；MD.Ch07.ouIntegratingFactor。
 
@@ -673,7 +715,9 @@ where $Z$ is a vector of independent, standard normal random variables.
 
 ### 3. 原文证明
 
-原书未给独立完整证明。
+原页推导与上下文全文见original_page_text；数学符号的排版以随附原页PDF为准。
+
+原页文字及推导保存在原文JSON的original_page_text；网站子包附对应完整原页PDF。
 
 ### 4. 完整当前Lean（原文与修正版独立列出）
 
@@ -707,7 +751,7 @@ theorem ouTransitionLaw (P : Measure Ω) (W p : ℝ → Ω → V n)
 
 ### 7. 状态与证明位置
 
-未证陈述；单文件编译与逐声明公理核对通过。
+未证陈述；Lean陈述可检查，证明完整性按本条状态区分。
 未证原因：需要加权Wiener增量的联合Gaussian分布及相对过去的独立性；不建设一般SDE转移核理论。
 位置：Blueprint/Ch07.lean；MD.Ch07.ouMomentum, MD.Ch07.ouTransitionLaw。
 
@@ -722,7 +766,9 @@ with normally distributed $R$. For later purposes, we will think of this update 
 
 ### 3. 原文证明
 
-原书未给独立完整证明。
+原页推导与上下文全文见original_page_text；数学符号的排版以随附原页PDF为准。
+
+原页文字及推导保存在原文JSON的original_page_text；网站子包附对应完整原页PDF。
 
 ### 4. 完整当前Lean（原文与修正版独立列出）
 
@@ -752,7 +798,7 @@ def vectorNormalSequence (P : Measure Ω) (R : ℕ → Ω → V n) : Prop :=
 
 ### 7. 状态与证明位置
 
-定义；单文件编译与逐声明公理核对通过。
+定义；Lean陈述可检查，证明完整性按本条状态区分。
 本条未登记待证缺项。
 位置：Blueprint/Ch07.lean；MD.Ch07.ouStep, MD.Ch07.vectorNormalSequence。
 
@@ -765,7 +811,9 @@ The Fokker-Planck operator for the OU system (7.2) can be computed directly as
 
 ### 3. 原文证明
 
-原书未给独立完整证明。
+原页推导与上下文全文见original_page_text；数学符号的排版以随附原页PDF为准。
+
+原页文字及推导保存在原文JSON的original_page_text；网站子包附对应完整原页PDF。
 
 ### 4. 完整当前Lean（原文与修正版独立列出）
 
@@ -805,7 +853,7 @@ theorem ouForward_adjoint (m : V n) (γ θ : ℝ) (f g : V n → ℝ)
 
 ### 7. 状态与证明位置
 
-未证陈述；单文件编译与逐声明公理核对通过。
+未证陈述；Lean陈述可检查，证明完整性按本条状态区分。
 未证原因：需要任意有限维逐坐标两次分部积分；本轮仅陈述，不为此建设大型算子域理论。
 位置：Blueprint/Ch07.lean；MD.Ch07.coordDerivative, MD.Ch07.ouForward, MD.Ch07.ouBackward, MD.Ch07.ouForward_adjoint。
 
@@ -817,7 +865,9 @@ Alternatively, if we ignore the physical origin of this parameter, we can think 
 
 ### 3. 原文证明
 
-原书未给独立完整证明。
+原页推导与上下文全文见original_page_text；数学符号的排版以随附原页PDF为准。
+
+原页文字及推导保存在原文JSON的original_page_text；网站子包附对应完整原页PDF。
 
 ### 4. 完整当前Lean（原文与修正版独立列出）
 
@@ -848,7 +898,7 @@ theorem ouGaussianInvariant (m : V n) (γ θ h : ℝ)
 
 ### 7. 状态与证明位置
 
-未证陈述；单文件编译与逐声明公理核对通过。
+未证陈述；Lean陈述可检查，证明完整性按本条状态区分。
 未证原因：需实际独立Gaussian向量线性变换与指数/方差恒等式的桥接；不建立一般随机核理论。
 位置：Blueprint/Ch07.lean；MD.Ch07.ouGaussianInvariant。
 
@@ -861,7 +911,9 @@ Langevin dynamics:
 
 ### 3. 原文证明
 
-原书未给独立完整证明。
+原页推导与上下文全文见original_page_text；数学符号的排版以随附原页PDF为准。
+
+原页文字及推导保存在原文JSON的original_page_text；网站子包附对应完整原页PDF。
 
 ### 4. 完整当前Lean（原文与修正版独立列出）
 
@@ -899,7 +951,7 @@ def langevin (P : Measure Ω) (W : ℝ → Ω → V n) (X : ℝ → Ω → Phase
 
 ### 7. 状态与证明位置
 
-定义；单文件编译与逐声明公理核对通过。
+定义；Lean陈述可检查，证明完整性按本条状态区分。
 本条未登记待证缺项。
 位置：Blueprint/Ch07.lean；MD.Ch07.gradient, MD.Ch07.langevin。
 
@@ -912,7 +964,9 @@ Since Hamiltonian dynamics leaves invariant any function of the energy, its corr
 
 ### 3. 原文证明
 
-原书未给独立完整证明。
+原页推导与上下文全文见original_page_text；数学符号的排版以随附原页PDF为准。
+
+原页文字及推导保存在原文JSON的original_page_text；网站子包附对应完整原页PDF。
 
 ### 4. 完整当前Lean（原文与修正版独立列出）
 
@@ -943,7 +997,7 @@ theorem hamiltonianGibbs {D : Type*} [MeasurableSpace D] (ν : Measure D)
 
 ### 7. 状态与证明位置
 
-未证陈述；单文件编译与逐声明公理核对通过。
+未证陈述；Lean陈述可检查，证明完整性按本条状态区分。
 未证原因：需map与withDensity的测度输运短桥；现有Hamiltonian体积保持可作为流资格，不新建流存在理论。
 位置：Blueprint/Ch07.lean；MD.Ch07.hamiltonianGibbs。
 
@@ -961,7 +1015,9 @@ where $R$ is a vector of i.i.d. normal random numbers.
 
 ### 3. 原文证明
 
-原书未给独立完整证明。
+原页推导与上下文全文见original_page_text；数学符号的排版以随附原页PDF为准。
+
+原页文字及推导保存在原文JSON的original_page_text；网站子包附对应完整原页PDF。
 
 ### 4. 完整当前Lean（原文与修正版独立列出）
 
@@ -999,7 +1055,7 @@ theorem splittingDrift (m : V n) (U : V n → ℝ) (γ : ℝ) (x : Phase n) :
 
 ### 7. 状态与证明位置
 
-定义；单文件编译与逐声明公理核对通过。
+定义；Lean陈述可检查，证明完整性按本条状态区分。
 本条未登记待证缺项。
 位置：Blueprint/Ch07.lean；MD.Ch07.driftStep, MD.Ch07.kickStep, MD.Ch07.aField, MD.Ch07.bField, MD.Ch07.oDrift, MD.Ch07.splittingDrift。
 
@@ -1011,7 +1067,9 @@ For the deterministic pieces A and B, the updates correspond to their flow maps,
 
 ### 3. 原文证明
 
-原书未给独立完整证明。
+原页推导与上下文全文见original_page_text；数学符号的排版以随附原页PDF为准。
+
+原页文字及推导保存在原文JSON的original_page_text；网站子包附对应完整原页PDF。
 
 ### 4. 完整当前Lean（原文与修正版独立列出）
 
@@ -1042,7 +1100,7 @@ theorem kickStep_derivative (U : V n → ℝ) (x : Phase n) (t : ℝ) (i : Fin n
 
 ### 7. 状态与证明位置
 
-未证陈述；单文件编译与逐声明公理核对通过。
+未证陈述；Lean陈述可检查，证明完整性按本条状态区分。
 未证原因：kickStep导数三条短路线均未通过；停止该条，保留陈述。
 位置：Blueprint/Ch07.lean；MD.Ch07.driftStep_derivative, MD.Ch07.kickStep_derivative。
 
@@ -1056,7 +1114,9 @@ The relevant forward propagators for each piece of the Hamiltonian part are comp
 
 ### 3. 原文证明
 
-原书未给独立完整证明。
+原页推导与上下文全文见original_page_text；数学符号的排版以随附原页PDF为准。
+
+原页文字及推导保存在原文JSON的original_page_text；网站子包附对应完整原页PDF。
 
 ### 4. 完整当前Lean（原文与修正版独立列出）
 
@@ -1084,7 +1144,7 @@ def bForward (U : V n → ℝ) (f : Phase n → ℝ) (x : Phase n) : ℝ :=
 
 ### 7. 状态与证明位置
 
-定义；单文件编译与逐声明公理核对通过。
+定义；Lean陈述可检查，证明完整性按本条状态区分。
 本条未登记待证缺项。
 位置：Blueprint/Ch07.lean；MD.Ch07.aForward, MD.Ch07.bForward。
 
@@ -1099,7 +1159,9 @@ An alternative is to use velocity Verlet for the Hamiltonian part, resulting in 
 
 ### 3. 原文证明
 
-原书未给独立完整证明。
+原页推导与上下文全文见original_page_text；数学符号的排版以随附原页PDF为准。
+
+原页文字及推导保存在原文JSON的original_page_text；网站子包附对应完整原页PDF。
 
 ### 4. 完整当前Lean（原文与修正版独立列出）
 
@@ -1127,7 +1189,7 @@ def babo (m : V n) (U : V n → ℝ) (γ θ h : ℝ) (R : V n) : Phase n → Pha
 
 ### 7. 状态与证明位置
 
-定义；单文件编译与逐声明公理核对通过。
+定义；Lean陈述可检查，证明完整性按本条状态区分。
 本条未登记待证缺项。
 位置：Blueprint/Ch07.lean；MD.Ch07.abo, MD.Ch07.babo。
 
@@ -1141,7 +1203,9 @@ where the random numbers used in each O update are independent. This scheme will
 
 ### 3. 原文证明
 
-原书未给独立完整证明。
+原页推导与上下文全文见original_page_text；数学符号的排版以随附原页PDF为准。
+
+原页文字及推导保存在原文JSON的original_page_text；网站子包附对应完整原页PDF。
 
 ### 4. 完整当前Lean（原文与修正版独立列出）
 
@@ -1178,7 +1242,7 @@ theorem oabaobaoCount : (["O","A","B","A","O","B","A","O"] : List String).count 
 
 ### 7. 状态与证明位置
 
-定义；单文件编译与逐声明公理核对通过。
+定义；Lean陈述可检查，证明完整性按本条状态区分。
 本条未登记待证缺项。
 位置：Blueprint/Ch07.lean；MD.Ch07.oabaobaoPrinted, MD.Ch07.oabaobaoPrinted_corrected, MD.Ch07.oabaobaoCount。
 
@@ -1209,7 +1273,9 @@ where $\zeta_j=[k_BT(1-e^{-j\gamma h})]^{1/2}$, and $R_n,R_{n+1/2}$ are $N_d$ ve
 
 ### 3. 原文证明
 
-原书未给独立完整证明。
+原页推导与上下文全文见original_page_text；数学符号的排版以随附原页PDF为准。
+
+原页文字及推导保存在原文JSON的original_page_text；网站子包附对应完整原页PDF。
 
 ### 4. 完整当前Lean（原文与修正版独立列出）
 
@@ -1243,7 +1309,7 @@ def obabo (m : V n) (U : V n → ℝ) (γ θ h : ℝ) (R S : V n) : Phase n → 
 
 ### 7. 状态与证明位置
 
-定义；单文件编译与逐声明公理核对通过。
+定义；Lean陈述可检查，证明完整性按本条状态区分。
 本条未登记待证缺项。
 位置：Blueprint/Ch07.lean；MD.Ch07.abao, MD.Ch07.aboba, MD.Ch07.baoab, MD.Ch07.oabao, MD.Ch07.obabo。
 
@@ -1257,7 +1323,9 @@ therefore through a coordinate transformation the $[OABA]$ method can be morphed
 
 ### 3. 原文证明
 
-原书未给独立完整证明。
+原页推导与上下文全文见original_page_text；数学符号的排版以随附原页PDF为准。
+
+原页文字及推导保存在原文JSON的original_page_text；网站子包附对应完整原页PDF。
 
 ### 4. 完整当前Lean（原文与修正版独立列出）
 
@@ -1292,7 +1360,7 @@ def oaba (m : V n) (U : V n → ℝ) (γ θ h : ℝ) (R : V n) : Phase n → Pha
 
 ### 7. 状态与证明位置
 
-已证；单文件编译与逐声明公理核对通过。
+已证；Lean陈述可检查，证明完整性按本条状态区分。
 本条未登记待证缺项。
 位置：Blueprint/Ch07.lean；MD.Ch07.compositionIterate, MD.Ch07.oaba。
 
@@ -1308,7 +1376,9 @@ where $\eta=(1-e^{-h\gamma})/\gamma$, $\zeta=[k_BT(1-e^{-2\gamma h})]^{1/2}$.
 
 ### 3. 原文证明
 
-原书未给独立完整证明。
+原页推导与上下文全文见original_page_text；数学符号的排版以随附原页PDF为准。
+
+原页文字及推导保存在原文JSON的original_page_text；网站子包附对应完整原页PDF。
 
 ### 4. 完整当前Lean（原文与修正版独立列出）
 
@@ -1341,7 +1411,7 @@ def spvPrinted_corrected (m : V n) (U : V n → ℝ) (γ θ h : ℝ) (R : V n) (
 
 ### 7. 状态与证明位置
 
-定义；单文件编译与逐声明公理核对通过。
+定义；Lean陈述可检查，证明完整性按本条状态区分。
 本条未登记待证缺项。
 位置：Blueprint/Ch07.lean；MD.Ch07.spvPrinted, MD.Ch07.spvPrinted_corrected。
 
@@ -1353,7 +1423,9 @@ It is important to note that in the limit of infinite friction, we have $\eta\to
 
 ### 3. 原文证明
 
-原书未给独立完整证明。
+原页推导与上下文全文见original_page_text；数学符号的排版以随附原页PDF为准。
+
+原页文字及推导保存在原文JSON的original_page_text；网站子包附对应完整原页PDF。
 
 ### 4. 完整当前Lean（原文与修正版独立列出）
 
@@ -1380,7 +1452,7 @@ theorem spvEtaLimit (h : ℝ) (hh : 0 < h) :
 
 ### 7. 状态与证明位置
 
-未证陈述；单文件编译与逐声明公理核对通过。
+未证陈述；Lean陈述可检查，证明完整性按本条状态区分。
 未证原因：指数衰减及除以γ的实极限短桥尚待尝试，不建立采样收敛理论。
 位置：Blueprint/Ch07.lean；MD.Ch07.spvEtaLimit。
 
@@ -1396,7 +1468,9 @@ Often $R'$ is chosen such that $R'_n=R_{n+1}$, so the random vector would be reu
 
 ### 3. 原文证明
 
-原书未给独立完整证明。
+原页推导与上下文全文见original_page_text；数学符号的排版以随附原页PDF为准。
+
+原页文字及推导保存在原文JSON的original_page_text；网站子包附对应完整原页PDF。
 
 ### 4. 完整当前Lean（原文与修正版独立列出）
 
@@ -1427,7 +1501,7 @@ def bbkSameNoise (m : V n) (U : V n → ℝ) (γ θ h : ℝ) (R : V n) := bbk m 
 
 ### 7. 状态与证明位置
 
-定义；单文件编译与逐声明公理核对通过。
+定义；Lean陈述可检查，证明完整性按本条状态区分。
 本条未登记待证缺项。
 位置：Blueprint/Ch07.lean；MD.Ch07.bbk, MD.Ch07.bbkSameNoise。
 
@@ -1441,7 +1515,9 @@ where $(q,p)\in\mathbb R^2$ represent a particle's position and momentum, and $m
 
 ### 3. 原文证明
 
-原书未给独立完整证明。
+原页推导与上下文全文见original_page_text；数学符号的排版以随附原页PDF为准。
+
+原页文字及推导保存在原文JSON的original_page_text；网站子包附对应完整原页PDF。
 
 ### 4. 完整当前Lean（原文与修正版独立列出）
 
@@ -1468,7 +1544,7 @@ def harmonicLaw (m Ω θ : ℝ) : Measure (ℝ × ℝ) :=
 
 ### 7. 状态与证明位置
 
-定义；单文件编译与逐声明公理核对通过。
+定义；Lean陈述可检查，证明完整性按本条状态区分。
 本条未登记待证缺项。
 位置：Blueprint/Ch07.lean；MD.Ch07.harmonicHamiltonian, MD.Ch07.harmonicLaw。
 
@@ -1481,7 +1557,9 @@ In this setting, the canonical distribution $\rho_\beta$ is the product of two G
 
 ### 3. 原文证明
 
-原书未给独立完整证明。
+原页推导与上下文全文见original_page_text；数学符号的排版以随附原页PDF为准。
+
+原页文字及推导保存在原文JSON的original_page_text；网站子包附对应完整原页PDF。
 
 ### 4. 完整当前Lean（原文与修正版独立列出）
 
@@ -1512,7 +1590,7 @@ theorem harmonicMoments (m Ω θ : ℝ) (hm : 0 < m) (hΩ : Ω ≠ 0) (hθ : 0 <
 
 ### 7. 状态与证明位置
 
-未证陈述；单文件编译与逐声明公理核对通过。
+未证陈述；Lean陈述可检查，证明完整性按本条状态区分。
 未证原因：需要正态二阶矩和乘积测度积分的完整短桥；不重建Gaussian理论。
 位置：Blueprint/Ch07.lean；MD.Ch07.harmonicMoments。
 
@@ -1526,7 +1604,9 @@ where $\Psi$ is a constant matrix that depends on the stepsize $h$, the friction
 
 ### 3. 原文证明
 
-原书未给独立完整证明。
+原页推导与上下文全文见original_page_text；数学符号的排版以随附原页PDF为准。
+
+原页文字及推导保存在原文JSON的original_page_text；网站子包附对应完整原页PDF。
 
 ### 4. 完整当前Lean（原文与修正版独立列出）
 
@@ -1555,7 +1635,7 @@ def momentQP (μ : Measure (ℝ × ℝ)) : ℝ := ∫ x, x.1*x.2 ∂μ
 
 ### 7. 状态与证明位置
 
-定义；单文件编译与逐声明公理核对通过。
+定义；Lean陈述可检查，证明完整性按本条状态区分。
 本条未登记待证缺项。
 位置：Blueprint/Ch07.lean；MD.Ch07.linearUpdate, MD.Ch07.momentQ, MD.Ch07.momentP, MD.Ch07.momentQP。
 
@@ -1571,7 +1651,9 @@ For example, in the BBK method we can compute directly from its update scheme th
 
 ### 3. 原文证明
 
-原书未给独立完整证明。
+原页推导与上下文全文见original_page_text；数学符号的排版以随附原页PDF为准。
+
+原页文字及推导保存在原文JSON的original_page_text；网站子包附对应完整原页PDF。
 
 ### 4. 完整当前Lean（原文与修正版独立列出）
 
@@ -1602,7 +1684,7 @@ def bbkNoise (m Ω γ θ h R S : ℝ) : ℝ × ℝ :=
 
 ### 7. 状态与证明位置
 
-定义；单文件编译与逐声明公理核对通过。
+定义；Lean陈述可检查，证明完整性按本条状态区分。
 本条未登记待证缺项。
 位置：Blueprint/Ch07.lean；MD.Ch07.bbkMatrix, MD.Ch07.bbkNoise。
 
@@ -1618,7 +1700,9 @@ More generally, if we define the components of $\Psi$ as $\psi_{ij}$ and denote 
 
 ### 3. 原文证明
 
-Take products of the update equations defined by (7.7).
+原页推导与上下文全文见original_page_text；数学符号的排版以随附原页PDF为准。
+证明思路提要（不是原文引句）：Take products of the update equations defined by (7.7).
+原页文字及推导保存在原文JSON的original_page_text；网站子包附对应完整原页PDF。
 
 ### 4. 完整当前Lean（原文与修正版独立列出）
 
@@ -1653,7 +1737,7 @@ theorem quadraticProducts (a b c d q p r s : ℝ) :
 
 ### 7. 状态与证明位置
 
-已证；单文件编译与逐声明公理核对通过。
+已证；Lean陈述可检查，证明完整性按本条状态区分。
 本条未登记待证缺项。
 位置：Blueprint/Ch07.lean；MD.Ch07.quadraticProducts。
 
@@ -1669,7 +1753,9 @@ where $\bar\mu_{11}=\mathbb E(\mu_{n,1}^2)$, $\bar\mu_{12}=\mathbb E(\mu_{n,1}\m
 
 ### 3. 原文证明
 
-原书未给独立完整证明。
+原页推导与上下文全文见original_page_text；数学符号的排版以随附原页PDF为准。
+
+原页文字及推导保存在原文JSON的original_page_text；网站子包附对应完整原页PDF。
 
 ### 4. 完整当前Lean（原文与修正版独立列出）
 
@@ -1710,7 +1796,7 @@ theorem stationaryMomentSystem (μ η : Measure (ℝ × ℝ)) (a b c d : ℝ)
 
 ### 7. 状态与证明位置
 
-未证陈述；单文件编译与逐声明公理核对通过。
+未证陈述；Lean陈述可检查，证明完整性按本条状态区分。
 未证原因：需乘积测度、可积多项式与推前矩计算的桥接；不建立一般Markov链遍历理论。
 位置：Blueprint/Ch07.lean；MD.Ch07.momentSystem, MD.Ch07.invariantLinearLaw, MD.Ch07.stationaryMomentSystem。
 
@@ -1726,7 +1812,9 @@ $\langle q\rangle_h^{[ABO]}=\langle p\rangle_h^{[ABO]}=0$, as $\mathbb E(R_n)=0$
 
 ### 3. 原文证明
 
-原书未给独立完整证明。
+原页推导与上下文全文见original_page_text；数学符号的排版以随附原页PDF为准。
+
+原页文字及推导保存在原文JSON的original_page_text；网站子包附对应完整原页PDF。
 
 ### 4. 完整当前Lean（原文与修正版独立列出）
 
@@ -1760,7 +1848,7 @@ theorem aboStationaryMean (m Ω γ θ h : ℝ) (μ : Measure (ℝ × ℝ))
 
 ### 7. 状态与证明位置
 
-未证陈述；单文件编译与逐声明公理核对通过。
+未证陈述；Lean陈述可检查，证明完整性按本条状态区分。
 未证原因：需推前期望方程与二元线性系统短桥；不建立Markov遍历性。
 位置：Blueprint/Ch07.lean；MD.Ch07.aboHarmonic, MD.Ch07.aboStationaryMean。
 
@@ -1774,7 +1862,9 @@ For example, the relative increase in the variance of position is computed for t
 
 ### 3. 原文证明
 
-原书未给独立完整证明。
+原页推导与上下文全文见original_page_text；数学符号的排版以随附原页PDF为准。
+
+原页文字及推导保存在原文JSON的original_page_text；网站子包附对应完整原页PDF。
 
 ### 4. 完整当前Lean（原文与修正版独立列出）
 
@@ -1815,7 +1905,7 @@ theorem aboStationaryVariance (m Ω γ θ h : ℝ) (μ : Measure (ℝ × ℝ))
 
 ### 7. 状态与证明位置
 
-未证陈述；单文件编译与逐声明公理核对通过。
+未证陈述；Lean陈述可检查，证明完整性按本条状态区分。
 未证原因：需实际平稳矩方程求解及三阶Taylor余项；各路线超出短桥，保留未证。
 位置：Blueprint/Ch07.lean；MD.Ch07.aboVarianceRatio, MD.Ch07.aboVarianceRatio_expansion, MD.Ch07.aboStationaryVariance。
 
@@ -1834,7 +1924,9 @@ Table 7.1 The expected long-time computed average using the given second-order L
 
 ### 3. 原文证明
 
-原书未给独立完整证明。
+原页推导与上下文全文见original_page_text；数学符号的排版以随附原页PDF为准。
+
+原页文字及推导保存在原文JSON的original_page_text；网站子包附对应完整原页PDF。
 
 ### 4. 完整当前Lean（原文与修正版独立列出）
 
@@ -1883,7 +1975,7 @@ theorem table71 (scheme : Fin 4) (m Ω γ θ h : ℝ) (μ : Measure (ℝ × ℝ)
 
 ### 7. 状态与证明位置
 
-未证陈述；单文件编译与逐声明公理核对通过。
+未证陈述；Lean陈述可检查，证明完整性按本条状态区分。
 未证原因：四种真实分裂映射的Gaussian矩输运与线性方程求解；不建立一般离散遍历理论。
 位置：Blueprint/Ch07.lean；MD.Ch07.scalarLift, MD.Ch07.symmetricHarmonicStep, MD.Ch07.symmetricInvariant, MD.Ch07.table71。
 
@@ -1895,7 +1987,9 @@ For example, analysis shows that the schemes denoted $[AOAB]$ or $[BAOA]$ both e
 
 ### 3. 原文证明
 
-原书未给独立完整证明。
+原页推导与上下文全文见original_page_text；数学符号的排版以随附原页PDF为准。
+
+原页文字及推导保存在原文JSON的original_page_text；网站子包附对应完整原页PDF。
 
 ### 4. 完整当前Lean（原文与修正版独立列出）
 
@@ -1933,7 +2027,7 @@ theorem nonsymmetricExactMoments (flip : Bool) (m Ω γ θ h : ℝ) (μ : Measur
 
 ### 7. 状态与证明位置
 
-未证陈述；单文件编译与逐声明公理核对通过。
+未证陈述；Lean陈述可检查，证明完整性按本条状态区分。
 未证原因：需要真实平稳矩输运及代数求解；不建立通用弱误差理论。
 位置：Blueprint/Ch07.lean；MD.Ch07.nonsymmetricHarmonicStep, MD.Ch07.nonsymmetricExactMoments。
 
@@ -1950,7 +2044,9 @@ where $R_n$ is a vector of normal random numbers with zero mean and unit varianc
 
 ### 3. 原文证明
 
-原书未给独立完整证明。
+原页推导与上下文全文见original_page_text；数学符号的排版以随附原页PDF为准。
+
+原页文字及推导保存在原文JSON的original_page_text；网站子包附对应完整原页PDF。
 
 ### 4. 完整当前Lean（原文与修正版独立列出）
 
@@ -1980,7 +2076,7 @@ def bbkStarNoise (κ1 κ2 κ3 R S : ℝ) : ℝ × ℝ := (κ1*R,κ2*R+κ3*S)
 
 ### 7. 状态与证明位置
 
-定义；单文件编译与逐声明公理核对通过。
+定义；Lean陈述可检查，证明完整性按本条状态区分。
 本条未登记待证缺项。
 位置：Blueprint/Ch07.lean；MD.Ch07.bbkStarTrajectory, MD.Ch07.bbkStarNoise。
 
@@ -1996,7 +2092,9 @@ with $\mathbb E(\mu_{n,1}^2)=\kappa_1^2$, $\mathbb E(\mu_{n,1}\mu_{n,2})=\kappa_
 
 ### 3. 原文证明
 
-原书未给独立完整证明。
+原页推导与上下文全文见original_page_text；数学符号的排版以随附原页PDF为准。
+
+原页文字及推导保存在原文JSON的original_page_text；网站子包附对应完整原页PDF。
 
 ### 4. 完整当前Lean（原文与修正版独立列出）
 
@@ -2037,7 +2135,7 @@ theorem bbkStarCorrelations (P : Measure Ω) [IsProbabilityMeasure P]
 
 ### 7. 状态与证明位置
 
-未证陈述；单文件编译与逐声明公理核对通过。
+未证陈述；Lean陈述可检查，证明完整性按本条状态区分。
 未证原因：需要实际独立随机变量的乘积积分和Gaussian矩展开；不建设历史扩展Markov链理论。
 位置：Blueprint/Ch07.lean；MD.Ch07.bbkStarCorrelations。
 
@@ -2052,7 +2150,9 @@ Thus taking expectations of (7.8)–(7.10) and substituting in the constants giv
 
 ### 3. 原文证明
 
-原书未给独立完整证明。
+原页推导与上下文全文见original_page_text；数学符号的排版以随附原页PDF为准。
+
+原页文字及推导保存在原文JSON的original_page_text；网站子包附对应完整原页PDF。
 
 ### 4. 完整当前Lean（原文与修正版独立列出）
 
@@ -2087,7 +2187,7 @@ theorem bbkStarExtraFactor_counterexample : (2*(1:ℝ)*1*2*1*1*1) ≠ 2*1*1*1 :=
 
 ### 7. 状态与证明位置
 
-定义；单文件编译与逐声明公理核对通过。
+定义；Lean陈述可检查，证明完整性按本条状态区分。
 本条未登记待证缺项。
 位置：Blueprint/Ch07.lean；MD.Ch07.bbkStarMomentSystemPrinted, MD.Ch07.bbkStarMomentSystemPrinted_corrected, MD.Ch07.bbkStarExtraFactor_counterexample。
 
@@ -2102,7 +2202,9 @@ Finally, solving the simultaneous equations gives the stationary observed averag
 
 ### 3. 原文证明
 
-原书未给独立完整证明。
+原页推导与上下文全文见original_page_text；数学符号的排版以随附原页PDF为准。
+
+原页文字及推导保存在原文JSON的original_page_text；网站子包附对应完整原页PDF。
 
 ### 4. 完整当前Lean（原文与修正版独立列出）
 
@@ -2138,7 +2240,7 @@ theorem bbkStarStationaryAlgebra (m Ω γ θ h Q P C : ℝ)
 
 ### 7. 状态与证明位置
 
-未证陈述；单文件编译与逐声明公理核对通过。
+未证陈述；Lean陈述可检查，证明完整性按本条状态区分。
 未证原因：含平方根的非退化线性系统求解超过本轮短证明；保留未证。
 位置：Blueprint/Ch07.lean；MD.Ch07.bbkStarStationaryAlgebra。
 
@@ -2152,7 +2254,9 @@ using Langevin dynamics, where $q,p\in\mathbb R$, with a small nonlinearity para
 
 ### 3. 原文证明
 
-原书未给独立完整证明。
+原页推导与上下文全文见original_page_text；数学符号的排版以随附原页PDF为准。
+
+原页文字及推导保存在原文JSON的original_page_text；网站子包附对应完整原页PDF。
 
 ### 4. 完整当前Lean（原文与修正版独立列出）
 
@@ -2192,7 +2296,7 @@ def perturbedStationary (s : Fin 4) (ε γ h : ℝ) (μ : Measure (ℝ × ℝ)) 
 
 ### 7. 状态与证明位置
 
-定义；单文件编译与逐声明公理核对通过。
+定义；Lean陈述可检查，证明完整性按本条状态区分。
 本条未登记待证缺项。
 位置：Blueprint/Ch07.lean；MD.Ch07.perturbedPotential, MD.Ch07.perturbedHamiltonian, MD.Ch07.perturbedGibbs, MD.Ch07.perturbedStep, MD.Ch07.perturbedStationary。
 
@@ -2208,7 +2312,9 @@ We find that truncating the update equations to $O(\epsilon^3)$ is sufficient to
 
 ### 3. 原文证明
 
-原书未给独立完整证明。
+原页推导与上下文全文见original_page_text；数学符号的排版以随附原页PDF为准。
+
+原页文字及推导保存在原文JSON的original_page_text；网站子包附对应完整原页PDF。
 
 ### 4. 完整当前Lean（原文与修正版独立列出）
 
@@ -2249,7 +2355,7 @@ theorem perturbedErrorExpansion (s : Fin 4) (γ : ℝ) (hγ : 0 < γ)
 
 ### 7. 状态与证明位置
 
-未证陈述；单文件编译与逐声明公理核对通过。
+未证陈述；Lean陈述可检查，证明完整性按本条状态区分。
 未证原因：需要非线性平稳矩层级截断及一致余项控制的大型理论；本轮不建设。
 位置：Blueprint/Ch07.lean；MD.Ch07.perturbedLeading, MD.Ch07.perturbedRemainder, MD.Ch07.positivePairLimit, MD.Ch07.perturbedErrorExpansion。
 
@@ -2266,7 +2372,9 @@ The twofold surprising result though, is that (a) the leading error of the $[BAO
 
 ### 3. 原文证明
 
-原书未给独立完整证明。
+原页推导与上下文全文见original_page_text；数学符号的排版以随附原页PDF为准。
+
+原页文字及推导保存在原文JSON的original_page_text；网站子包附对应完整原页PDF。
 
 ### 4. 完整当前Lean（原文与修正版独立列出）
 
@@ -2302,7 +2410,7 @@ theorem baoabLeading_largeFriction (ε h : ℝ) :
 
 ### 7. 状态与证明位置
 
-未证陈述；单文件编译与逐声明公理核对通过。
+未证陈述；Lean陈述可检查，证明完整性按本条状态区分。
 未证原因：首项衰减需有理函数极限短桥；四个误差阶需要非线性平稳弱误差与一致余项理论。
 位置：Blueprint/Ch07.lean；MD.Ch07.perturbedErrorScale, MD.Ch07.perturbedErrorOrders, MD.Ch07.baoabLeading_largeFriction。
 
@@ -2319,7 +2427,9 @@ For a scheme $[HO]$, we have
 
 ### 3. 原文证明
 
-原书未给独立完整证明。
+原页推导与上下文全文见original_page_text；数学符号的排版以随附原页PDF为准。
+
+原页文字及推导保存在原文JSON的original_page_text；网站子包附对应完整原页PDF。
 
 ### 4. 完整当前Lean（原文与修正版独立列出）
 
@@ -2346,7 +2456,7 @@ theorem gibbsComposition {E : Type*} (P Q : E → E) (ρ : E)
 
 ### 7. 状态与证明位置
 
-已证；单文件编译与逐声明公理核对通过。
+已证；Lean陈述可检查，证明完整性按本条状态区分。
 本条未登记待证缺项。
 位置：Blueprint/Ch07.lean；MD.Ch07.gibbsComposition。
 
@@ -2361,7 +2471,9 @@ If $\mathcal L_f$ preserves a first integral $I$, then $\mathcal L_f$ preserves 
 
 ### 3. 原文证明
 
-原书未给独立完整证明。
+原页推导与上下文全文见original_page_text；数学符号的排版以随附原页PDF为准。
+
+原页文字及推导保存在原文JSON的original_page_text；网站子包附对应完整原页PDF。
 
 ### 4. 完整当前Lean（原文与修正版独立列出）
 
@@ -2403,7 +2515,7 @@ theorem firstIntegral_density (f : V n → V n) (I : V n → ℝ) (g : ℝ → �
 
 ### 7. 状态与证明位置
 
-未证陈述；单文件编译与逐声明公理核对通过。
+未证陈述；Lean陈述可检查，证明完整性按本条状态区分。
 未证原因：散度乘积法则与坐标导数求和需短桥；全局流测度输运另列。
 位置：Blueprint/Ch07.lean；MD.Ch07.lieField, MD.Ch07.divergenceField, MD.Ch07.forwardField, MD.Ch07.divergenceFreeInvariant, MD.Ch07.firstIntegral_density。
 
@@ -2415,7 +2527,9 @@ All symplectic methods preserve the volume, but for a system with no first integ
 
 ### 3. 原文证明
 
-原书未给独立完整证明。
+原页推导与上下文全文见original_page_text；数学符号的排版以随附原页PDF为准。
+
+原页文字及推导保存在原文JSON的original_page_text；网站子包附对应完整原页PDF。
 
 ### 4. 完整当前Lean（原文与修正版独立列出）
 
@@ -2449,7 +2563,7 @@ def geMarsdenConclusion {k : ℕ}
 
 ### 7. 状态与证明位置
 
-定义；单文件编译与逐声明公理核对通过。
+定义；Lean陈述可检查，证明完整性按本条状态区分。
 本条未登记待证缺项。
 位置：Blueprint/Ch07.lean；MD.Ch07.onlyEnergyIntegrals, MD.Ch07.timeReparametrizes, MD.Ch07.geMarsdenConclusion。
 
@@ -2461,7 +2575,9 @@ Let $J$ be the skew-symmetric canonical symplectic structure matrix. The idea is
 
 ### 3. 原文证明
 
-原书未给独立完整证明。
+原页推导与上下文全文见original_page_text；数学符号的排版以随附原页PDF为准。
+
+原页文字及推导保存在原文JSON的original_page_text；网站子包附对应完整原页PDF。
 
 ### 4. 完整当前Lean（原文与修正版独立列出）
 
@@ -2496,7 +2612,7 @@ theorem composition_preservesEnergy {E : Type*} (F G : E → E) (H : E → ℝ)
 
 ### 7. 状态与证明位置
 
-未证陈述；单文件编译与逐声明公理核对通过。
+未证陈述；Lean陈述可检查，证明完整性按本条状态区分。
 未证原因：反对称二次型为零、混合偏导对称与坐标散度的短桥；全局流体积保持另列。
 位置：Blueprint/Ch07.lean；MD.Ch07.jField, MD.Ch07.jSplitting_energy, MD.Ch07.composition_preservesEnergy。
 
@@ -2510,7 +2626,9 @@ where components with a bar over them are fixed during the calculation. Any such
 
 ### 3. 原文证明
 
-原书未给独立完整证明。
+原页推导与上下文全文见original_page_text；数学符号的排版以随附原页PDF为准。
+
+原页文字及推导保存在原文JSON的original_page_text；网站子包附对应完整原页PDF。
 
 ### 4. 完整当前Lean（原文与修正版独立列出）
 
@@ -2539,7 +2657,7 @@ def frozenPotential (U : V n → ℝ) (q : V n) (i : Fin n) (r : ℝ) : ℝ :=
 
 ### 7. 状态与证明位置
 
-定义；单文件编译与逐声明公理核对通过。
+定义；Lean陈述可检查，证明完整性按本条状态区分。
 本条未登记待证缺项。
 位置：Blueprint/Ch07.lean；MD.Ch07.coordinateJField, MD.Ch07.frozenPotential。
 
@@ -2553,7 +2671,9 @@ However, the operators involved are not equivalent to the operators that would a
 
 ### 3. 原文证明
 
-原书未给独立完整证明。
+原页推导与上下文全文见original_page_text；数学符号的排版以随附原页PDF为准。
+
+原页文字及推导保存在原文JSON的original_page_text；网站子包附对应完整原页PDF。
 
 ### 4. 完整当前Lean（原文与修正版独立列出）
 
@@ -2584,7 +2704,7 @@ def formalGeneratorExpansion {R : Type*} [Ring R] [Algebra ℝ R]
 
 ### 7. 状态与证明位置
 
-定义；单文件编译与逐声明公理核对通过。
+定义；Lean陈述可检查，证明完整性按本条状态区分。
 本条未登记待证缺项。
 位置：Blueprint/Ch07.lean；MD.Ch07.formalModifiedGenerator, MD.Ch07.formalGeneratorExpansion。
 
@@ -2602,7 +2722,9 @@ Our computed average is therefore $\langle\phi\rangle_h\stackrel{\rm def}=\int_{
 
 ### 3. 原文证明
 
-原书未给独立完整证明。
+原页推导与上下文全文见original_page_text；数学符号的排版以随附原页PDF为准。
+
+原页文字及推导保存在原文JSON的original_page_text；网站子包附对应完整原页PDF。
 
 ### 4. 完整当前Lean（原文与修正版独立列出）
 
@@ -2640,7 +2762,7 @@ theorem densityExpansion_zeroMass (ν : Measure Ω) (ρ : Ω → ℝ) (f : ℕ �
 
 ### 7. 状态与证明位置
 
-定义；单文件编译与逐声明公理核对通过。
+定义；Lean陈述可检查，证明完整性按本条状态区分。
 本条未登记待证缺项。
 位置：Blueprint/Ch07.lean；MD.Ch07.densityExpansion, MD.Ch07.centeredCorrections, MD.Ch07.computedAverage, MD.Ch07.densityExpansion_zeroMass。
 
@@ -2655,7 +2777,9 @@ where $\zeta=[k_BT(1-e^{-2\gamma t})]^{1/2}$.
 
 ### 3. 原文证明
 
-原书未给独立完整证明。
+原页推导与上下文全文见original_page_text；数学符号的排版以随附原页PDF为准。
+
+原页文字及推导保存在原文JSON的original_page_text；网站子包附对应完整原页PDF。
 
 ### 4. 完整当前Lean（原文与修正版独立列出）
 
@@ -2683,7 +2807,7 @@ def propagateO (m : V n) (γ θ t : ℝ) (φ : Phase n → ℝ) (x : Phase n) : 
 
 ### 7. 状态与证明位置
 
-定义；单文件编译与逐声明公理核对通过。
+定义；Lean陈述可检查，证明完整性按本条状态区分。
 本条未登记待证缺项。
 位置：Blueprint/Ch07.lean；MD.Ch07.propagateA, MD.Ch07.propagateB, MD.Ch07.propagateO。
 
@@ -2698,7 +2822,9 @@ where importantly note the apparent reversal of the sequence of products, known 
 
 ### 3. 原文证明
 
-原书未给独立完整证明。
+原页推导与上下文全文见original_page_text；数学符号的排版以随附原页PDF为准。
+
+原页文字及推导保存在原文JSON的original_page_text；网站子包附对应完整原页PDF。
 
 ### 4. 完整当前Lean（原文与修正版独立列出）
 
@@ -2726,7 +2852,7 @@ def abaoBackward (m : V n) (U : V n → ℝ) (γ θ h : ℝ) (φ : Phase n → �
 
 ### 7. 状态与证明位置
 
-已证；单文件编译与逐声明公理核对通过。
+已证；Lean陈述可检查，证明完整性按本条状态区分。
 本条未登记待证缺项。
 位置：Blueprint/Ch07.lean；MD.Ch07.pullback_order, MD.Ch07.abaoBackward。
 
@@ -2741,7 +2867,9 @@ with the important case of its invariant distribution satisfying the partial dif
 
 ### 3. 原文证明
 
-原书未给独立完整证明。
+原页推导与上下文全文见original_page_text；数学符号的排版以随附原页PDF为准。
+
+原页文字及推导保存在原文JSON的original_page_text；网站子包附对应完整原页PDF。
 
 ### 4. 完整当前Lean（原文与修正版独立列出）
 
@@ -2769,7 +2897,7 @@ def stationaryModifiedDensity {E : Type*} [AddCommGroup E] [Module ℝ E]
 
 ### 7. 状态与证明位置
 
-定义；单文件编译与逐声明公理核对通过。
+定义；Lean陈述可检查，证明完整性按本条状态区分。
 本条未登记待证缺项。
 位置：Blueprint/Ch07.lean；MD.Ch07.formalDensityEvolution, MD.Ch07.stationaryModifiedDensity。
 
@@ -2785,7 +2913,9 @@ The notation $[X,Y]\stackrel{\rm def}=XY-YX$ represents the commutator of the op
 
 ### 3. 原文证明
 
-原书未给独立完整证明。
+原页推导与上下文全文见original_page_text；数学符号的排版以随附原页PDF为准。
+
+原页文字及推导保存在原文JSON的original_page_text；网站子包附对应完整原页PDF。
 
 ### 4. 完整当前Lean（原文与修正版独立列出）
 
@@ -2818,7 +2948,7 @@ theorem twoOperatorBCH {R : Type*} [Ring R] [Algebra ℝ R] (X Y : R) :
 
 ### 7. 状态与证明位置
 
-未证陈述；单文件编译与逐声明公理核对通过。
+未证陈述；Lean陈述可检查，证明完整性按本条状态区分。
 未证原因：已有log与exp低阶系数，但非交换乘积展开到三阶的桥接仍未证明；不建立一般BCH理论。
 位置：Blueprint/Ch07.lean；MD.Ch07.comm, MD.Ch07.twoStage, MD.Ch07.twoOperatorBCH。
 
@@ -2833,7 +2963,9 @@ for some finite truncation index $n\in\{1,2,3,\ldots\}$. Hence for observables o
 
 ### 3. 原文证明
 
-原书未给独立完整证明。
+原页推导与上下文全文见original_page_text；数学符号的排版以随附原页PDF为准。
+
+原页文字及推导保存在原文JSON的original_page_text；网站子包附对应完整原页PDF。
 
 ### 4. 完整当前Lean（原文与修正版独立列出）
 
@@ -2866,7 +2998,7 @@ theorem taylorRemainder_bound (F : ℝ → ℝ) (k : ℕ) (hF : ContDiff ℝ (k+
 
 ### 7. 状态与证明位置
 
-未证陈述；单文件编译与逐声明公理核对通过。
+未证陈述；Lean陈述可检查，证明完整性按本条状态区分。
 未证原因：需要Mathlib实函数Taylor积分余项桥；不建立通用弱误差展开。
 位置：Blueprint/Ch07.lean；MD.Ch07.taylorRemainder, MD.Ch07.taylorRemainder_bound。
 
@@ -2881,7 +3013,9 @@ where the notation $[A,B,C]$ is notation for $[A,[B,C]]$.
 
 ### 3. 原文证明
 
-Apply the two-operator BCH formula first to exp(hY)exp(hX), and then to exp(hZ)exp(h(Y+X+...)); combine equal powers of h.
+原页推导与上下文全文见original_page_text；数学符号的排版以随附原页PDF为准。
+证明思路提要（不是原文引句）：Apply the two-operator BCH formula first to exp(hY)exp(hX), and then to exp(hZ)exp(h(Y+X+...)); combine equal powers of h.
+原页文字及推导保存在原文JSON的original_page_text；网站子包附对应完整原页PDF。
 
 ### 4. 完整当前Lean（原文与修正版独立列出）
 
@@ -2917,7 +3051,7 @@ theorem threeOperatorBCH {R : Type*} [Ring R] [Algebra ℝ R] (X Y Z : R) :
 
 ### 7. 状态与证明位置
 
-未证陈述；单文件编译与逐声明公理核对通过。
+未证陈述；Lean陈述可检查，证明完整性按本条状态区分。
 未证原因：需三重形式指数乘积的低阶log系数展开；不建设无界算符BCH收敛理论。
 位置：Blueprint/Ch07.lean；MD.Ch07.threeStage, MD.Ch07.threeOperatorBCH。
 
@@ -2932,7 +3066,9 @@ where $\sigma=\sqrt{2\gamma k_BT}$.
 
 ### 3. 原文证明
 
-原书未给独立完整证明。
+原页推导与上下文全文见original_page_text；数学符号的排版以随附原页PDF为准。
+
+原页文字及推导保存在原文JSON的original_page_text；网站子包附对应完整原页PDF。
 
 ### 4. 完整当前Lean（原文与修正版独立列出）
 
@@ -2964,7 +3100,7 @@ def opComm (A B : Density1 → Density1) (f : Density1) : Density1 := A (B f)-B 
 
 ### 7. 状态与证明位置
 
-定义；单文件编译与逐声明公理核对通过。
+定义；Lean陈述可检查，证明完整性按本条状态区分。
 本条未登记待证缺项。
 位置：Blueprint/Ch07.lean；MD.Ch07.Density1, MD.Ch07.dq, MD.Ch07.dp, MD.Ch07.opA, MD.Ch07.opB, MD.Ch07.opO, MD.Ch07.opLD, MD.Ch07.opComm。
 
@@ -2979,7 +3115,9 @@ As this is the commutator of two 1st order differential operators, the mixed par
 
 ### 3. 原文证明
 
-Expand both product derivatives and cancel the mixed partials using equality of mixed partials.
+原页推导与上下文全文见original_page_text；数学符号的排版以随附原页PDF为准。
+证明思路提要（不是原文引句）：Expand both product derivatives and cancel the mixed partials using equality of mixed partials.
+原页文字及推导保存在原文JSON的original_page_text；网站子包附对应完整原页PDF。
 
 ### 4. 完整当前Lean（原文与修正版独立列出）
 
@@ -3007,7 +3145,7 @@ theorem commutatorAB (U : ℝ → ℝ) (ρ : Density1)
 
 ### 7. 状态与证明位置
 
-未证陈述；单文件编译与逐声明公理核对通过。
+未证陈述；Lean陈述可检查，证明完整性按本条状态区分。
 未证原因：需实二变量偏导乘积与混合偏导交换的短桥；不重建一般微分算符理论。
 位置：Blueprint/Ch07.lean；MD.Ch07.commutatorAB。
 
@@ -3021,7 +3159,9 @@ Similar computations give
 
 ### 3. 原文证明
 
-原书未给独立完整证明。
+原页推导与上下文全文见original_page_text；数学符号的排版以随附原页PDF为准。
+
+原页文字及推导保存在原文JSON的original_page_text；网站子包附对应完整原页PDF。
 
 ### 4. 完整当前Lean（原文与修正版独立列出）
 
@@ -3050,7 +3190,7 @@ theorem commutatorsAOBO (U : ℝ → ℝ) (ρ : Density1) (γ θ : ℝ)
 
 ### 7. 状态与证明位置
 
-未证陈述；单文件编译与逐声明公理核对通过。
+未证陈述；Lean陈述可检查，证明完整性按本条状态区分。
 未证原因：需三阶偏导乘积展开与交换桥接；最多短路线，不建大型算符理论。
 位置：Blueprint/Ch07.lean；MD.Ch07.commutatorsAOBO。
 
@@ -3063,7 +3203,9 @@ theorem commutatorsAOBO (U : ℝ → ℝ) (ρ : Density1) (γ θ : ℝ)
 
 ### 3. 原文证明
 
-原书未给独立完整证明。
+原页推导与上下文全文见original_page_text；数学符号的排版以随附原页PDF为准。
+
+原页文字及推导保存在原文JSON的original_page_text；网站子包附对应完整原页PDF。
 
 ### 4. 完整当前Lean（原文与修正版独立列出）
 
@@ -3099,7 +3241,7 @@ theorem obaFirstCorrection_commutators (U : ℝ → ℝ) (γ θ : ℝ) (ρ : Den
 
 ### 7. 状态与证明位置
 
-未证陈述；单文件编译与逐声明公理核对通过。
+未证陈述；Lean陈述可检查，证明完整性按本条状态区分。
 本条未登记待证缺项。
 位置：Blueprint/Ch07.lean；MD.Ch07.obaFirstCorrection, MD.Ch07.obaFirstCorrection_commutators。
 
@@ -3111,7 +3253,9 @@ The assumption of validity becomes more credible as we find that the operator $\
 
 ### 3. 原文证明
 
-原书未给独立完整证明。
+原页推导与上下文全文见original_page_text；数学符号的排版以随附原页PDF为准。
+
+原页文字及推导保存在原文JSON的original_page_text；网站子包附对应完整原页PDF。
 
 ### 4. 完整当前Lean（原文与修正版独立列出）
 
@@ -3122,13 +3266,21 @@ def printedSpectralConclusion {E : Type*} [AddCommGroup E] [Module ℂ E]
     (L : Module.End ℂ E) (ρ : E) : Prop :=
   ρ ≠ 0 ∧ L ρ = 0 ∧ ∀ eigen : ℂ, (∃ v : E, v ≠ 0 ∧ L v = eigen • v) →
     simpleEigenvalue L eigen ∧ (eigen = 0 ∨ eigen.re < 0)
+
+def spectralConclusionPrinted {E : Type*} [AddCommGroup E] [Module ℂ E]
+    (L : Module.End ℂ E) (ρ : E) : Prop := printedSpectralConclusion L ρ
+
+def spectralConclusionPrinted_corrected {E : Type*} [AddCommGroup E] [Module ℂ E]
+    (L : Module.End ℂ E) (ρ : E) : Prop :=
+  ρ ≠ 0 ∧ L ρ = 0 ∧ ∀ eigen : ℂ, (∃ v : E, v ≠ 0 ∧ L v = eigen • v) →
+    FiniteDimensional ℂ (Module.End.eigenspace L eigen) ∧ (eigen = 0 ∨ eigen.re < 0)
 ```
 
 ### 5. 对照表
 
 | 原文成分 | Lean对应 | 说明 |
 |---|---|---|
-| 本条引用的对象与公式 | MD.Ch07.simpleEigenvalue, MD.Ch07.printedSpectralConclusion | 原文谱断言已登记，Lean定义其点谱目标；尚缺无界算符对象和完整限定定理。 |
+| 本条引用的对象与公式 | MD.Ch07.simpleEigenvalue, MD.Ch07.printedSpectralConclusion, MD.Ch07.spectralConclusionPrinted, MD.Ch07.spectralConclusionPrinted_corrected | 原文谱断言已登记，Lean定义其点谱目标；尚缺无界算符对象和完整限定定理。 |
 
 [EXTRA] 只记录原文谱结论的精确目标命题，不宣称为定理；一般闭无界Langevin生成元、定义域及紧预解式资格未覆盖。
 记号与上下文：见所列原文与Lean量化变量。
@@ -3141,9 +3293,9 @@ def printedSpectralConclusion {E : Type*} [AddCommGroup E] [Module ℂ E]
 
 ### 7. 状态与证明位置
 
-定义；单文件编译与逐声明公理核对通过。
+定义；Lean陈述可检查，证明完整性按本条状态区分。
 本条未登记待证缺项。
-位置：Blueprint/Ch07.lean；MD.Ch07.simpleEigenvalue, MD.Ch07.printedSpectralConclusion。
+位置：Blueprint/Ch07.lean；MD.Ch07.simpleEigenvalue, MD.Ch07.printedSpectralConclusion, MD.Ch07.spectralConclusionPrinted, MD.Ch07.spectralConclusionPrinted_corrected。
 
 ## 1. MD-7.7.3-PerturbationCoefficientEquation · (7.19) · 印刷p.289–290 / PDFp.310–311
 
@@ -3157,7 +3309,9 @@ At first order we obtain
 
 ### 3. 原文证明
 
-Insert the two formal series into the stationary equation and combine like powers of h.
+原页推导与上下文全文见original_page_text；数学符号的排版以随附原页PDF为准。
+证明思路提要（不是原文引句）：Insert the two formal series into the stationary equation and combine like powers of h.
+原页文字及推导保存在原文JSON的original_page_text；网站子包附对应完整原页PDF。
 
 ### 4. 完整当前Lean（原文与修正版独立列出）
 
@@ -3191,7 +3345,7 @@ theorem perturbationCoefficientEquation {E : Type*} [AddCommGroup E] [Module ℝ
 
 ### 7. 状态与证明位置
 
-已证；单文件编译与逐声明公理核对通过。
+已证；Lean陈述可检查，证明完整性按本条状态区分。
 本条未登记待证缺项。
 位置：Blueprint/Ch07.lean；MD.Ch07.actionCoefficient, MD.Ch07.perturbationCoefficientEquation。
 
@@ -3206,7 +3360,9 @@ For some observable $\vartheta(q,p)$, we have that
 
 ### 3. 原文证明
 
-Distribute the product and use linearity of integration at each finite order.
+原页推导与上下文全文见original_page_text；数学符号的排版以随附原页PDF为准。
+证明思路提要（不是原文引句）：Distribute the product and use linearity of integration at each finite order.
+原页文字及推导保存在原文JSON的original_page_text；网站子包附对应完整原页PDF。
 
 ### 4. 完整当前Lean（原文与修正版独立列出）
 
@@ -3243,7 +3399,7 @@ theorem observableCorrectionExpansion (ν : Measure Ω) (φ ρ f1 f2 : Ω → �
 
 ### 7. 状态与证明位置
 
-已证；单文件编译与逐声明公理核对通过。
+已证；Lean陈述可检查，证明完整性按本条状态区分。
 本条未登记待证缺项。
 位置：Blueprint/Ch07.lean；MD.Ch07.observableCorrectionExpansion。
 
@@ -3255,7 +3411,9 @@ It will be difficult to solve the perturbation equation (7.19) in general, altho
 
 ### 3. 原文证明
 
-原书未给独立完整证明。
+原页推导与上下文全文见original_page_text；数学符号的排版以随附原页PDF为准。
+
+原页文字及推导保存在原文JSON的original_page_text；网站子包附对应完整原页PDF。
 
 ### 4. 完整当前Lean（原文与修正版独立列出）
 
@@ -3281,7 +3439,7 @@ def correctionSolvable {E : Type*} [AddCommGroup E] [Module ℝ E]
 
 ### 7. 状态与证明位置
 
-定义；单文件编译与逐声明公理核对通过。
+定义；Lean陈述可检查，证明完整性按本条状态区分。
 本条未登记待证缺项。
 位置：Blueprint/Ch07.lean；MD.Ch07.correctionSolvable。
 
@@ -3300,7 +3458,9 @@ The first order correction function for this scheme is then given by the particu
 
 ### 3. 原文证明
 
-原书未给独立完整证明。
+原页推导与上下文全文见original_page_text；数学符号的排版以随附原页PDF为准。
+
+原页文字及推导保存在原文JSON的original_page_text；网站子包附对应完整原页PDF。
 
 ### 4. 完整当前Lean（原文与修正版独立列出）
 
@@ -3331,7 +3491,7 @@ def correctionEquation {E : Type*} [AddCommGroup E] [Module ℝ E]
 
 ### 7. 状态与证明位置
 
-未证陈述；单文件编译与逐声明公理核对通过。
+未证陈述；Lean陈述可检查，证明完整性按本条状态区分。
 未证原因：直接系数归约的短路线超过时间盒；保留未证。
 位置：Blueprint/Ch07.lean；MD.Ch07.firstOrderOperator, MD.Ch07.firstOrderOperator_coefficient, MD.Ch07.correctionEquation。
 
@@ -3343,7 +3503,9 @@ The general solution of (7.21) will consist of the sum of the homogeneous soluti
 
 ### 3. 原文证明
 
-原书未给独立完整证明。
+原页推导与上下文全文见original_page_text；数学符号的排版以随附原页PDF为准。
+
+原页文字及推导保存在原文JSON的original_page_text；网站子包附对应完整原页PDF。
 
 ### 4. 完整当前Lean（原文与修正版独立列出）
 
@@ -3377,7 +3539,7 @@ theorem centeredParticular (μ : Measure Ω) [IsProbabilityMeasure μ] (f : Ω �
 
 ### 7. 状态与证明位置
 
-已证；单文件编译与逐声明公理核对通过。
+已证；Lean陈述可检查，证明完整性按本条状态区分。
 本条未登记待证缺项。
 位置：Blueprint/Ch07.lean；MD.Ch07.homogeneousNormalization, MD.Ch07.centeredParticular。
 
@@ -3392,7 +3554,9 @@ theorem centeredParticular (μ : Measure Ω) [IsProbabilityMeasure μ] (f : Ω �
 
 ### 3. 原文证明
 
-原书未给独立完整证明。
+原页推导与上下文全文见original_page_text；数学符号的排版以随附原页PDF为准。
+
+原页文字及推导保存在原文JSON的original_page_text；网站子包附对应完整原页PDF。
 
 ### 4. 完整当前Lean（原文与修正版独立列出）
 
@@ -3426,7 +3590,7 @@ theorem commutatorPermutationRelations {E : Type*} [AddCommGroup E] [Module ℝ 
 
 ### 7. 状态与证明位置
 
-未证陈述；单文件编译与逐声明公理核对通过。
+未证陈述；Lean陈述可检查，证明完整性按本条状态区分。
 未证原因：线性算符非交换代数作用桥接；本轮保留未证，不建设一般弱误差理论。
 位置：Blueprint/Ch07.lean；MD.Ch07.commutatorPermutationRelations。
 
@@ -3445,7 +3609,9 @@ and hence we can compute
 
 ### 3. 原文证明
 
-原书未给独立完整证明。
+原页推导与上下文全文见original_page_text；数学符号的排版以随附原页PDF为准。
+
+原页文字及推导保存在原文JSON的original_page_text；网站子包附对应完整原页PDF。
 
 ### 4. 完整当前Lean（原文与修正版独立列出）
 
@@ -3489,7 +3655,7 @@ theorem gibbsDerivativeIdentities (m : V n) (U ψ : V n → ℝ) (β γ : ℝ)
 
 ### 7. 状态与证明位置
 
-未证陈述；单文件编译与逐声明公理核对通过。
+未证陈述；Lean陈述可检查，证明完整性按本条状态区分。
 未证原因：实际多维Gibbs指数微分、二阶OU乘积法则与求和桥，超过短证明；不建SDE解或遍历理论。
 位置：Blueprint/Ch07.lean；MD.Ch07.mechanicalHamiltonian, MD.Ch07.gibbsWeight, MD.Ch07.gFunction, MD.Ch07.phaseO, MD.Ch07.phaseLD, MD.Ch07.gibbsDerivativeIdentities。
 
@@ -3506,7 +3672,9 @@ where the constant $c$ is chosen to ensure each correction function has average 
 
 ### 3. 原文证明
 
-原书未给独立完整证明。
+原页推导与上下文全文见original_page_text；数学符号的排版以随附原页PDF为准。
+
+原页文字及推导保存在原文JSON的original_page_text；网站子包附对应完整原页PDF。
 
 ### 4. 完整当前Lean（原文与修正版独立列出）
 
@@ -3554,7 +3722,7 @@ theorem firstCorrectionTable_pde (s : Fin 6) (m : V n) (U : V n → ℝ) (β γ 
 
 ### 7. 状态与证明位置
 
-未证陈述；单文件编译与逐声明公理核对通过。
+未证陈述；Lean陈述可检查，证明完整性按本条状态区分。
 未证原因：完整多维指数微分及二阶算符乘积展开需较大桥接；保留PDE未证。
 位置：Blueprint/Ch07.lean；MD.Ch07.firstCorrectionTablePrinted, MD.Ch07.firstCorrectionTablePrinted_corrected, MD.Ch07.firstCorrection_sign_counterexample, MD.Ch07.phaseComm, MD.Ch07.firstCorrectionRHS, MD.Ch07.firstCorrectionTable_pde。
 
@@ -3570,7 +3738,9 @@ However, if we instead set $\vartheta=\vartheta_2(q)$, then
 
 ### 3. 原文证明
 
-原书未给独立完整证明。
+原页推导与上下文全文见original_page_text；数学符号的排版以随附原页PDF为准。
+
+原页文字及推导保存在原文JSON的original_page_text；网站子包附对应完整原页PDF。
 
 ### 4. 完整当前Lean（原文与修正版独立列出）
 
@@ -3615,7 +3785,7 @@ theorem positionMomentumCorrections (m : V n) (U ψ χ : V n → ℝ) (β γ : �
 
 ### 7. 状态与证明位置
 
-未证陈述；单文件编译与逐声明公理核对通过。
+未证陈述；Lean陈述可检查，证明完整性按本条状态区分。
 未证原因：需乘积积分和Gaussian奇矩归零的多维短桥；不建设Talay–Tubaro理论。
 位置：Blueprint/Ch07.lean；MD.Ch07.positionGibbs, MD.Ch07.momentumGibbs, MD.Ch07.productGibbs, MD.Ch07.positionMomentumCorrections。
 
@@ -3628,7 +3798,9 @@ This is not always the case for first order schemes, however. For example the sc
 
 ### 3. 原文证明
 
-原书未给独立完整证明。
+原页推导与上下文全文见original_page_text；数学符号的排版以随附原页PDF为准。
+
+原页文字及推导保存在原文JSON的original_page_text；网站子包附对应完整原页PDF。
 
 ### 4. 完整当前Lean（原文与修正版独立列出）
 
@@ -3660,7 +3832,7 @@ theorem aoabFrictionLimit (m : V n) (U : V n → ℝ) (θ h : ℝ) (R : V n) (x 
 
 ### 7. 状态与证明位置
 
-未证陈述；单文件编译与逐声明公理核对通过。
+未证陈述；Lean陈述可检查，证明完整性按本条状态区分。
 未证原因：OU指数衰减、sqrt连续及∇U连续的有限维极限短桥；过阻尼时间重标度理论不新建。
 位置：Blueprint/Ch07.lean；MD.Ch07.aoab, MD.Ch07.aoabInfiniteFriction, MD.Ch07.aoabFrictionLimit。
 
@@ -3680,7 +3852,9 @@ Hence for the critical value of $\gamma=2$, the leading order correction will be
 
 ### 3. 原文证明
 
-原书未给独立完整证明。
+原页推导与上下文全文见original_page_text；数学符号的排版以随附原页PDF为准。
+
+原页文字及推导保存在原文JSON的original_page_text；网站子包附对应完整原页PDF。
 
 ### 4. 完整当前Lean（原文与修正版独立列出）
 
@@ -3717,7 +3891,7 @@ theorem doubleWellCritical (β : ℝ) : (2-(2 : ℝ))/(2*β) = 0 := by ring
 
 ### 7. 状态与证明位置
 
-未证陈述；单文件编译与逐声明公理核对通过。
+未证陈述；Lean陈述可检查，证明完整性按本条状态区分。
 未证原因：需要四次势Gibbs权可积性、积分分部与Gaussian矩的桥；不建设通用弱误差理论。
 位置：Blueprint/Ch07.lean；MD.Ch07.biasedDoubleWell, MD.Ch07.doubleWellObservable, MD.Ch07.doubleWellGibbs, MD.Ch07.doubleWellBOACorrection, MD.Ch07.doubleWellExact, MD.Ch07.doubleWellCritical。
 
@@ -3734,7 +3908,9 @@ gives $\widehat{\mathcal L}^\dagger=\mathcal L_0^\dagger+h^2\mathcal L_2^\dagger
 
 ### 3. 原文证明
 
-原书未给独立完整证明。
+原页推导与上下文全文见original_page_text；数学符号的排版以随附原页PDF为准。
+
+原页文字及推导保存在原文JSON的original_page_text；网站子包附对应完整原页PDF。
 
 ### 4. 完整当前Lean（原文与修正版独立列出）
 
@@ -3766,7 +3942,7 @@ theorem symmetricOddCorrections {R : Type*} [Ring R] [Algebra ℝ R] (X Y Z : R)
 
 ### 7. 状态与证明位置
 
-已证；单文件编译与逐声明公理核对通过。
+已证；Lean陈述可检查，证明完整性按本条状态区分。
 本条未登记待证缺项。
 位置：Blueprint/Ch07.lean；MD.Ch07.proposition71, MD.Ch07.symmetricOddCorrections。
 
@@ -3782,7 +3958,9 @@ The condition on the existence of such a solution requires us to use the Fredhol
 
 ### 3. 原文证明
 
-原书未给独立完整证明。
+原页推导与上下文全文见original_page_text；数学符号的排版以随附原页PDF为准。
+
+原页文字及推导保存在原文JSON的original_page_text；网站子包附对应完整原页PDF。
 
 ### 4. 完整当前Lean（原文与修正版独立列出）
 
@@ -3815,7 +3993,7 @@ theorem evenPerturbationEquation {E : Type*} [AddCommGroup E] [Module ℝ E]
 
 ### 7. 状态与证明位置
 
-已证；单文件编译与逐声明公理核对通过。
+已证；Lean陈述可检查，证明完整性按本条状态区分。
 本条未登记待证缺项。
 位置：Blueprint/Ch07.lean；MD.Ch07.evenDensityExpansion, MD.Ch07.evenPerturbationEquation。
 
@@ -3828,7 +4006,9 @@ For methods $[OYZYO]$, substituting $\mathcal L_X^\dagger=\mathcal L_O^\dagger$,
 
 ### 3. 原文证明
 
-原书未给独立完整证明。
+原页推导与上下文全文见original_page_text；数学符号的排版以随附原页PDF为准。
+
+原页文字及推导保存在原文JSON的original_page_text；网站子包附对应完整原页PDF。
 
 ### 4. 完整当前Lean（原文与修正版独立列出）
 
@@ -3857,7 +4037,7 @@ theorem oyzyoInhomogeneity {E : Type*} [AddCommGroup E] [Module ℝ E]
 
 ### 7. 状态与证明位置
 
-未证陈述；单文件编译与逐声明公理核对通过。
+未证陈述；Lean陈述可检查，证明完整性按本条状态区分。
 未证原因：需展开两个含O和H的嵌套交换子在共同核上的相消短桥；保留未证。
 位置：Blueprint/Ch07.lean；MD.Ch07.oyzyoInhomogeneity。
 
@@ -3870,7 +4050,9 @@ theorem oyzyoInhomogeneity {E : Type*} [AddCommGroup E] [Module ℝ E]
 
 ### 3. 原文证明
 
-原书未给独立完整证明。
+原页推导与上下文全文见original_page_text；数学符号的排版以随附原页PDF为准。
+
+原页文字及推导保存在原文JSON的original_page_text；网站子包附对应完整原页PDF。
 
 ### 4. 完整当前Lean（原文与修正版独立列出）
 
@@ -3910,7 +4092,7 @@ theorem tripleCommutator_factor_counterexample : (2*(2 : ℝ)*0-1) ≠ 2*(2*0-1)
 
 ### 7. 状态与证明位置
 
-未证陈述；单文件编译与逐声明公理核对通过。
+未证陈述；Lean陈述可检查，证明完整性按本条状态区分。
 未证原因：需要多维三阶Gibbs微分与交换子展开；不建设通用算符理论。
 位置：Blueprint/Ch07.lean；MD.Ch07.hessianU, MD.Ch07.thirdU, MD.Ch07.hessianGrad, MD.Ch07.cubicThird, MD.Ch07.tripleCommutatorPrinted, MD.Ch07.tripleCommutatorPrinted_corrected, MD.Ch07.tripleCommutator_corrected, MD.Ch07.tripleCommutator_factor_counterexample。
 
@@ -3924,7 +4106,9 @@ We can see immediately that the Fredholm alternative holds in both cases, as bot
 
 ### 3. 原文证明
 
-原书未给独立完整证明。
+原页推导与上下文全文见original_page_text；数学符号的排版以随附原页PDF为准。
+
+原页文字及推导保存在原文JSON的original_page_text；网站子包附对应完整原页PDF。
 
 ### 4. 完整当前Lean（原文与修正版独立列出）
 
@@ -3961,7 +4145,7 @@ theorem symmetricRHS_zeroMean (flip : Bool) (U : V n → ℝ) (β : ℝ)
 
 ### 7. 状态与证明位置
 
-未证陈述；单文件编译与逐声明公理核对通过。
+未证陈述；Lean陈述可检查，证明完整性按本条状态区分。
 未证原因：需Gaussian乘积测度在p↦-p下不变与可积奇函数积分为零的短桥；不建设Fredholm理论。
 位置：Blueprint/Ch07.lean；MD.Ch07.symmetricRHS, MD.Ch07.symmetricRHS_odd, MD.Ch07.symmetricRHS_zeroMean。
 
@@ -3979,6 +4163,8 @@ Under suitable ergodicity assumptions (such that in the long-time limit, all dis
 If we assume that $\lim_{n\to\infty}(ST)^n\rho=\widehat\rho_{ST}$, for any initial distribution $\rho$, then we have
 $\widehat\rho_{ST}=\lim_{n\to\infty}(ST)^n\widehat\rho_{ST}=\lim_{n\to\infty}S(TS)^{n-1}T\widehat\rho_{ST}=S\widehat\rho_{TS}$.
 A similar statement holds for $\widehat\rho_{ST}$.
+
+原页文字及推导保存在原文JSON的original_page_text；网站子包附对应完整原页PDF。
 
 ### 4. 完整当前Lean（原文与修正版独立列出）
 
@@ -4008,7 +4194,7 @@ theorem lemma71 (S T : Kernel Ω Ω) [IsMarkovKernel S] [IsMarkovKernel T]
 
 ### 7. 状态与证明位置
 
-已证；单文件编译与逐声明公理核对通过。
+已证；Lean陈述可检查，证明完整性按本条状态区分。
 本条未登记待证缺项。
 位置：Blueprint/Ch07.lean；MD.Ch07.lemma71。
 
@@ -4026,7 +4212,9 @@ theorem lemma71 (S T : Kernel Ω Ω) [IsMarkovKernel S] [IsMarkovKernel T]
 
 ### 3. 原文证明
 
-原书未给独立完整证明。
+原页推导与上下文全文见original_page_text；数学符号的排版以随附原页PDF为准。
+
+原页文字及推导保存在原文JSON的original_page_text；网站子包附对应完整原页PDF。
 
 ### 4. 完整当前Lean（原文与修正版独立列出）
 
@@ -4044,13 +4232,21 @@ theorem conjugateCorrection_coefficient {E : Type*} [AddCommGroup E] [Module ℝ
       (1/4 : ℝ) • L1 (p 0)+(1/8 : ℝ) • (L0*L0) (p 0)) :
     q2 = p 2+(1/4 : ℝ) • L1 (p 0) := by
   simpa [hp,hL,Module.End.mul_apply] using htransfer
+
+def conjugateExpansionPrinted {E : Type*} [AddCommGroup E] [Module ℝ E]
+    (L0 L1 : Module.End ℝ E) (h : ℝ) : Module.End ℝ E :=
+  1+(h/2) • L0+(h^2/4) • L1+(h^2/2) • L0
+
+def conjugateExpansionPrinted_corrected {E : Type*} [AddCommGroup E] [Module ℝ E]
+    (L0 L1 : Module.End ℝ E) (h : ℝ) : Module.End ℝ E :=
+  1+(h/2) • L0+(h^2/4) • L1+(h^2/8) • (L0*L0)
 ```
 
 ### 5. 对照表
 
 | 原文成分 | Lean对应 | 说明 |
 |---|---|---|
-| 本条引用的对象与公式 | MD.Ch07.gradNormSq, MD.Ch07.hessianQuadratic, MD.Ch07.conjugateCorrectionChange, MD.Ch07.conjugateCorrections, MD.Ch07.conjugateCorrection_coefficient | 形式传递系数的消项及(7.30)全部目标；未证明从具体分裂映射导出这些系数。 |
+| 本条引用的对象与公式 | MD.Ch07.gradNormSq, MD.Ch07.hessianQuadratic, MD.Ch07.conjugateCorrectionChange, MD.Ch07.conjugateCorrections, MD.Ch07.conjugateCorrection_coefficient, MD.Ch07.conjugateExpansionPrinted, MD.Ch07.conjugateExpansionPrinted_corrected | 形式传递系数的消项及(7.30)全部目标；未证明从具体分裂映射导出这些系数。 |
 
 [EXTRA] Lean证明给定真实二阶传递系数的消项，(7.30)完整作为两关系的命题定义；ST/TS指数系数识别、Hamiltonian微分及实际两组修正系数识别仍列缺口。
 记号与上下文：见所列原文与Lean量化变量。
@@ -4063,9 +4259,9 @@ theorem conjugateCorrection_coefficient {E : Type*} [AddCommGroup E] [Module ℝ
 
 ### 7. 状态与证明位置
 
-已证；单文件编译与逐声明公理核对通过。
+已证；Lean陈述可检查，证明完整性按本条状态区分。
 本条未登记待证缺项。
-位置：Blueprint/Ch07.lean；MD.Ch07.gradNormSq, MD.Ch07.hessianQuadratic, MD.Ch07.conjugateCorrectionChange, MD.Ch07.conjugateCorrections, MD.Ch07.conjugateCorrection_coefficient。
+位置：Blueprint/Ch07.lean；MD.Ch07.gradNormSq, MD.Ch07.hessianQuadratic, MD.Ch07.conjugateCorrectionChange, MD.Ch07.conjugateCorrections, MD.Ch07.conjugateCorrection_coefficient, MD.Ch07.conjugateExpansionPrinted, MD.Ch07.conjugateExpansionPrinted_corrected。
 
 ## 1. MD-7.9.2-ReciprocalFrictionExpansion · (7.31) / (7.32) · 印刷p.301–302 / PDFp.322–323
 
@@ -4079,13 +4275,15 @@ where $\overline{\mathcal L}_O^\dagger\vartheta=\epsilon\mathcal L_O^\dagger\var
 \[w(q,p)=-\tfrac\beta{24}(6p^T(\nabla^2U)\nabla U-\nabla^3U:p\otimes p\otimes p).\]
 Equating powers gives
 \[\overline{\mathcal L}_O^\dagger(\rho_\beta f_{2,0})=0,\quad
-\mathcal L_H^\dagger(\rho_\beta f_{2,0})+\overline{\mathcal L}_O^\dagger(\rho_\beta f_{2,1})=-w\rho_\beta,\]
+\mathcal L_H^\dagger(\rho_\beta f_{2,0})+\overline{\mathcal L}_O^\dagger(\rho_\beta f_{2,1})=-w\rho_\beta,\tag{7.32}\]
 \[\mathcal L_H^\dagger(\rho_\beta f_{2,1})+\overline{\mathcal L}_O^\dagger(\rho_\beta f_{2,2})=0,\quad
 \mathcal L_H^\dagger(\rho_\beta f_{2,2})+\overline{\mathcal L}_O^\dagger(\rho_\beta f_{2,3})=0.\]
 
 ### 3. 原文证明
 
-原书未给独立完整证明。
+原页推导与上下文全文见original_page_text；数学符号的排版以随附原页PDF为准。
+
+原页文字及推导保存在原文JSON的original_page_text；网站子包附对应完整原页PDF。
 
 ### 4. 完整当前Lean（原文与修正版独立列出）
 
@@ -4115,7 +4313,7 @@ def reciprocalHierarchy (U : V n → ℝ) (β : ℝ) (f : ℕ → Phase n → �
 
 ### 7. 状态与证明位置
 
-定义；单文件编译与逐声明公理核对通过。
+定义；Lean陈述可检查，证明完整性按本条状态区分。
 本条未登记待证缺项。
 位置：Blueprint/Ch07.lean；MD.Ch07.phaseH, MD.Ch07.reciprocalHierarchy。
 
@@ -4127,7 +4325,9 @@ The first equation at order one tells us that $f_{2,0,[OABAO]}(q,p)$ must be a f
 
 ### 3. 原文证明
 
-原书未给独立完整证明。
+原页推导与上下文全文见original_page_text；数学符号的排版以随附原页PDF为准。
+
+原页文字及推导保存在原文JSON的original_page_text；网站子包附对应完整原页PDF。
 
 ### 4. 完整当前Lean（原文与修正版独立列出）
 
@@ -4159,7 +4359,7 @@ theorem ouKernelPrinted_corrected (U : V n → ℝ) (β : ℝ) (f : Phase n → 
 
 ### 7. 状态与证明位置
 
-未证陈述；单文件编译与逐声明公理核对通过。
+未证陈述；Lean陈述可检查，证明完整性按本条状态区分。
 未证原因：需要OU生成元加权Dirichlet型、域闭包及核刻画理论，本轮不建设。
 位置：Blueprint/Ch07.lean；MD.Ch07.ouKernelPrinted, MD.Ch07.ouKernelPrinted_corrected。
 
@@ -4175,7 +4375,9 @@ theorem ouKernelPrinted_corrected (U : V n → ℝ) (β : ℝ) (f : Phase n → 
 
 ### 3. 原文证明
 
-原书未给独立完整证明。
+原页推导与上下文全文见original_page_text；数学符号的排版以随附原页PDF为准。
+
+原页文字及推导保存在原文JSON的original_page_text；网站子包附对应完整原页PDF。
 
 ### 4. 完整当前Lean（原文与修正版独立列出）
 
@@ -4214,7 +4416,7 @@ theorem ouHermiteIdentities (U ν μ : V n → ℝ) (β : ℝ) (hβ : 0 < β)
 
 ### 7. 状态与证明位置
 
-未证陈述；单文件编译与逐声明公理核对通过。
+未证陈述；Lean陈述可检查，证明完整性按本条状态区分。
 未证原因：需三阶张量的Gaussian共轭微分与混合导数交换；保留未证，不发展一般Hermite谱理论。
 位置：Blueprint/Ch07.lean；MD.Ch07.laplacian, MD.Ch07.pGradLaplacian, MD.Ch07.hermitePrimitive, MD.Ch07.ouHermiteIdentities。
 
@@ -4230,7 +4432,9 @@ where $(\overline\pi f)(q)=\int_{\mathcal P}f(q,p)\rho_\beta d\omega_p$.
 
 ### 3. 原文证明
 
-原书未给独立完整证明。
+原页推导与上下文全文见original_page_text；数学符号的排版以随附原页PDF为准。
+
+原页文字及推导保存在原文JSON的original_page_text；网站子包附对应完整原页PDF。
 
 ### 4. 完整当前Lean（原文与修正版独立列出）
 
@@ -4239,6 +4443,9 @@ def firstReciprocalCorrection (U ν μ : V n → ℝ) (β : ℝ) (x : Phase n) :
   -β/24*hermitePrimitive U β x-(∑ i, x.2 i*gradient ν x.1 i)-μ x.1
 def momentumAverage (β : ℝ) (f : Phase n → ℝ) (q : V n) : ℝ :=
   ∫ p, f (q,p) ∂momentumGibbs (fun _ ↦ 1) β
+def momentumAveragePrinted_corrected (β : ℝ) (f : Phase n → ℝ) (q : V n) : ℝ :=
+  momentumAverage β f q
+
 def momentumAveragePrinted (U : V n → ℝ) (β : ℝ) (f : Phase n → ℝ) (q : V n) : ℝ :=
   ∫ p, f (q,p)*gibbsWeight (fun _ ↦ 1) U β (q,p)
 theorem firstReciprocalCorrection_pde (U ν μ : V n → ℝ) (β : ℝ) (hβ : 0 < β)
@@ -4253,7 +4460,7 @@ theorem firstReciprocalCorrection_pde (U ν μ : V n → ℝ) (β : ℝ) (hβ : 
 
 | 原文成分 | Lean对应 | 说明 |
 |---|---|---|
-| 本条引用的对象与公式 | MD.Ch07.firstReciprocalCorrection, MD.Ch07.momentumAverage, MD.Ch07.momentumAveragePrinted, MD.Ch07.firstReciprocalCorrection_pde | 本条逐字引用的全部数学对象与公式；未纳入的上下文另列。 |
+| 本条引用的对象与公式 | MD.Ch07.firstReciprocalCorrection, MD.Ch07.momentumAverage, MD.Ch07.momentumAveragePrinted_corrected, MD.Ch07.momentumAveragePrinted, MD.Ch07.firstReciprocalCorrection_pde | 本条逐字引用的全部数学对象与公式；未纳入的上下文另列。 |
 
 [EXTRA] 给出全部f2,1公式并陈述其一阶PDE；二阶可解相容性需OU积分通量消失及实际域条件，尚未证明。
 记号与上下文：见所列原文与Lean量化变量。
@@ -4266,9 +4473,9 @@ theorem firstReciprocalCorrection_pde (U ν μ : V n → ℝ) (β : ℝ) (hβ : 
 
 ### 7. 状态与证明位置
 
-未证陈述；单文件编译与逐声明公理核对通过。
+未证陈述；Lean陈述可检查，证明完整性按本条状态区分。
 未证原因：需要OU线性、Hermite恒等式应用和边界通量桥接；不建设Fredholm替代理论。
-位置：Blueprint/Ch07.lean；MD.Ch07.firstReciprocalCorrection, MD.Ch07.momentumAverage, MD.Ch07.momentumAveragePrinted, MD.Ch07.firstReciprocalCorrection_pde。
+位置：Blueprint/Ch07.lean；MD.Ch07.firstReciprocalCorrection, MD.Ch07.momentumAverage, MD.Ch07.momentumAveragePrinted_corrected, MD.Ch07.momentumAveragePrinted, MD.Ch07.firstReciprocalCorrection_pde。
 
 ## 1. MD-7.9.2-OverdampedSolvabilityOperators · unnumbered_claim · 印刷p.304 / PDFp.325
 
@@ -4287,7 +4494,9 @@ and hence by (7.36) we finally obtain $\nu(q)=\tfrac18(\Delta_qU-\beta|\nabla U|
 
 ### 3. 原文证明
 
-原书未给独立完整证明。
+原页推导与上下文全文见original_page_text；数学符号的排版以随附原页PDF为准。
+
+原页文字及推导保存在原文JSON的original_page_text；网站子包附对应完整原页PDF。
 
 ### 4. 完整当前Lean（原文与修正版独立列出）
 
@@ -4324,7 +4533,7 @@ theorem overdampedSolvability_choice (U : V n → ℝ) (β : ℝ) (hβ : β ≠ 
 
 ### 7. 状态与证明位置
 
-已证；单文件编译与逐声明公理核对通过。
+已证；Lean陈述可检查，证明完整性按本条状态区分。
 本条未登记待证缺项。
 位置：Blueprint/Ch07.lean；MD.Ch07.overdampedM, MD.Ch07.overdampedN, MD.Ch07.highFrictionOABAO, MD.Ch07.overdampedSolvability_choice。
 
@@ -4341,7 +4550,9 @@ where $c=\langle\Delta U\rangle$ is a constant chosen to ensure zero average.
 
 ### 3. 原文证明
 
-原书未给独立完整证明。
+原页推导与上下文全文见original_page_text；数学符号的排版以随附原页PDF为准。
+
+原页文字及推导保存在原文JSON的original_page_text；网站子包附对应完整原页PDF。
 
 ### 4. 完整当前Lean（原文与修正版独立列出）
 
@@ -4379,7 +4590,7 @@ theorem highFrictionCorrection_conjugacy (U : V n → ℝ) (β c : ℝ) :
 
 ### 7. 状态与证明位置
 
-已证；单文件编译与逐声明公理核对通过。
+已证；Lean陈述可检查，证明完整性按本条状态区分。
 本条未登记待证缺项。
 位置：Blueprint/Ch07.lean；MD.Ch07.highFrictionCorrection, MD.Ch07.doublyAsymptoticAverage, MD.Ch07.highFrictionCorrection_conjugacy。
 
@@ -4396,7 +4607,9 @@ which has the interesting property that its marginal average with respect to mom
 
 ### 3. 原文证明
 
-Integrate first over the Gaussian momenta; the quadratic Gaussian moment contracts the Hessian to β⁻¹ΔU. Then use Fubini.
+原页推导与上下文全文见original_page_text；数学符号的排版以随附原页PDF为准。
+证明思路提要（不是原文引句）：Integrate first over the Gaussian momenta; the quadratic Gaussian moment contracts the Hessian to β⁻¹ΔU. Then use Fubini.
+原页文字及推导保存在原文JSON的original_page_text；网站子包附对应完整原页PDF。
 
 ### 4. 完整当前Lean（原文与修正版独立列出）
 
@@ -4428,7 +4641,7 @@ theorem baoabConfigurationalCancellation (U φ : V n → ℝ) (β : ℝ) (hβ : 
 
 ### 7. 状态与证明位置
 
-未证陈述；单文件编译与逐声明公理核对通过。
+未证陈述；Lean陈述可检查，证明完整性按本条状态区分。
 未证原因：需Gaussian协方差矩阵、Hessian缩并与乘积Fubini桥；不发展Talay–Tubaro余项理论。
 位置：Blueprint/Ch07.lean；MD.Ch07.baoabMarginalCancellation, MD.Ch07.baoabConfigurationalCancellation。
 
@@ -4444,7 +4657,9 @@ It is important to note that this superconvergence property is only present in t
 
 ### 3. 原文证明
 
-原书未给独立完整证明。
+原页推导与上下文全文见original_page_text；数学符号的排版以随附原页PDF为准。
+
+原页文字及推导保存在原文JSON的original_page_text；网站子包附对应完整原页PDF。
 
 ### 4. 完整当前Lean（原文与修正版独立列出）
 
@@ -4481,7 +4696,7 @@ theorem superconvergence_fromBound (A : ℝ → ℝ) (exact : ℝ)
 
 ### 7. 状态与证明位置
 
-未证陈述；单文件编译与逐声明公理核对通过。
+未证陈述；Lean陈述可检查，证明完整性按本条状态区分。
 未证原因：需要逐坐标积分分部及Fubini边界桥；不建设一般无限时间弱展开。
 位置：Blueprint/Ch07.lean；MD.Ch07.oabaoPositionCancellation, MD.Ch07.superconvergence_fromBound。
 
@@ -4493,7 +4708,9 @@ We now consider schemes in the limit $\gamma\to\infty$, where the exact solution
 
 ### 3. 原文证明
 
-原书未给独立完整证明。
+原页推导与上下文全文见original_page_text；数学符号的排版以随附原页PDF为准。
+
+原页文字及推导保存在原文JSON的original_page_text；网站子包附对应完整原页PDF。
 
 ### 4. 完整当前Lean（原文与修正版独立列出）
 
@@ -4522,7 +4739,7 @@ theorem momentumRedrawLimit (m : V n) (θ h : ℝ) (p R : V n) (hh : 0 < h) (hθ
 
 ### 7. 状态与证明位置
 
-未证陈述；单文件编译与逐声明公理核对通过。
+未证陈述；Lean陈述可检查，证明完整性按本条状态区分。
 未证原因：指数衰减、sqrt连续与有限维逐坐标极限短桥；不建立Smoluchowski–Kramers理论。
 位置：Blueprint/Ch07.lean；MD.Ch07.redrawMomentum, MD.Ch07.redrawStep, MD.Ch07.momentumRedrawLimit。
 
@@ -4540,7 +4757,9 @@ Denoting $\tau=h^2/2$, the update scheme (7.38) becomes the Euler-Maruyama schem
 
 ### 3. 原文证明
 
-原书未给独立完整证明。
+原页推导与上下文全文见original_page_text；数学符号的排版以随附原页PDF为准。
+
+原页文字及推导保存在原文JSON的original_page_text；网站子包附对应完整原页PDF。
 
 ### 4. 完整当前Lean（原文与修正版独立列出）
 
@@ -4579,7 +4798,7 @@ theorem overdampedEuler_rescale (m : V n) (U : V n → ℝ) (θ h : ℝ) (R q : 
 
 ### 7. 状态与证明位置
 
-未证陈述；单文件编译与逐声明公理核对通过。
+未证陈述；Lean陈述可检查，证明完整性按本条状态区分。
 未证原因：时间尺度替换需实平方根、质量正性与根号乘积的短桥。
 位置：Blueprint/Ch07.lean；MD.Ch07.obaboInfinite, MD.Ch07.overdampedEulerH, MD.Ch07.overdampedEuler, MD.Ch07.obaboInfinite_position, MD.Ch07.overdampedEuler_rescale。
 
@@ -4597,7 +4816,9 @@ and substituting $\tau=h^2/2$ gives the BAOAB Limit Method (Leimkuhler-Matthews 
 
 ### 3. 原文证明
 
-原书未给独立完整证明。
+原页推导与上下文全文见original_page_text；数学符号的排版以随附原页PDF为准。
+
+原页文字及推导保存在原文JSON的original_page_text；网站子包附对应完整原页PDF。
 
 ### 4. 完整当前Lean（原文与修正版独立列出）
 
@@ -4633,7 +4854,7 @@ theorem baoabInfinite_position (m : V n) (U : V n → ℝ) (θ h : ℝ) (R S q :
 
 ### 7. 状态与证明位置
 
-已证；单文件编译与逐声明公理核对通过。
+已证；Lean陈述可检查，证明完整性按本条状态区分。
 本条未登记待证缺项。
 位置：Blueprint/Ch07.lean；MD.Ch07.baoabInfinite, MD.Ch07.lmStepH, MD.Ch07.lmStep, MD.Ch07.baoabInfinite_position。
 
@@ -4645,7 +4866,9 @@ We can think of the noise process in (7.40) as corresponding to a colored noise 
 
 ### 3. 原文证明
 
-原书未给独立完整证明。
+原页推导与上下文全文见original_page_text；数学符号的排版以随附原页PDF为准。
+
+原页文字及推导保存在原文JSON的original_page_text；网站子包附对应完整原页PDF。
 
 ### 4. 完整当前Lean（原文与修正版独立列出）
 
@@ -4677,7 +4900,7 @@ def lmExtendedStep (m : V n) (U : V n → ℝ) (θ τ : ℝ) (R : V n) (x : V n 
 
 ### 7. 状态与证明位置
 
-未证陈述；单文件编译与逐声明公理核对通过。
+未证陈述；Lean陈述可检查，证明完整性按本条状态区分。
 未证原因：需独立Gaussian一二阶矩的全部相邻/不相邻组合积分；不建一般时间序列理论。
 位置：Blueprint/Ch07.lean；MD.Ch07.coloredNoise, MD.Ch07.coloredNoise_covariance, MD.Ch07.lmExtendedStep。
 
@@ -4689,7 +4912,9 @@ We would expect that this scheme should have an $O(h^4)=O(\tau^2)$ error in conf
 
 ### 3. 原文证明
 
-原书未给独立完整证明。
+原页推导与上下文全文见original_page_text；数学符号的排版以随附原页PDF为准。
+
+原页文字及推导保存在原文JSON的original_page_text；网站子包附对应完整原页PDF。
 
 ### 4. 完整当前Lean（原文与修正版独立列出）
 
@@ -4697,6 +4922,12 @@ We would expect that this scheme should have an $O(h^4)=O(\tau^2)$ error in conf
 def lmTransientErrorBound (error : ℝ → ℝ → ℝ) : Prop :=
   ∃ C > 0, ∃ multiplier > 0, ∃ δ > 0, ∀ τ ∈ Set.Ioo 0 δ, ∀ T ≥ 0,
     |error τ T| ≤ C*(Real.exp (-multiplier*T)*τ+τ^2)
+def limitAccuracyPrinted (error : ℝ → ℝ) : Prop :=
+  Asymptotics.IsBigO (𝓝[Set.Ioi (0 : ℝ)] 0) error (fun h ↦ h^2)
+
+def limitAccuracyPrinted_corrected (error : ℝ → ℝ) : Prop :=
+  Asymptotics.IsBigO (𝓝[Set.Ioi (0 : ℝ)] 0) error (fun h ↦ h^4)
+
 theorem limitAccuracy_rescale (h : ℝ) : (h^2/2)^2 = h^4/4 := by ring
 ```
 
@@ -4704,7 +4935,7 @@ theorem limitAccuracy_rescale (h : ℝ) : (h^2/2)^2 = h^4/4 := by ring
 
 | 原文成分 | Lean对应 | 说明 |
 |---|---|---|
-| 本条引用的对象与公式 | MD.Ch07.lmTransientErrorBound, MD.Ch07.limitAccuracy_rescale | 误差界目标和步长幂次转换；尚缺LM算法到该界的完整定理。 |
+| 本条引用的对象与公式 | MD.Ch07.lmTransientErrorBound, MD.Ch07.limitAccuracyPrinted, MD.Ch07.limitAccuracyPrinted_corrected, MD.Ch07.limitAccuracy_rescale | 误差界目标和步长幂次转换；尚缺LM算法到该界的完整定理。 |
 
 [EXTRA] 用显式瞬态上界命题保留指数衰减的一阶项和二阶项，不宣称该命题已对任意势成立；其成立所需的增长/耗散与正则条件及真实分布误差识别尚缺。；原文称all values of h and τ亦不能由局部渐近展开推出全步长阶数结论。
 记号与上下文：见所列原文与Lean量化变量。
@@ -4717,9 +4948,9 @@ theorem limitAccuracy_rescale (h : ℝ) : (h^2/2)^2 = h^4/4 := by ring
 
 ### 7. 状态与证明位置
 
-定义；单文件编译与逐声明公理核对通过。
+定义；Lean陈述可检查，证明完整性按本条状态区分。
 本条未登记待证缺项。
-位置：Blueprint/Ch07.lean；MD.Ch07.lmTransientErrorBound, MD.Ch07.limitAccuracy_rescale。
+位置：Blueprint/Ch07.lean；MD.Ch07.lmTransientErrorBound, MD.Ch07.limitAccuracyPrinted, MD.Ch07.limitAccuracyPrinted_corrected, MD.Ch07.limitAccuracy_rescale。
 
 ## 1. MD-7.9.3-ZeroFrictionVerlet · unnumbered_claim · 印刷p.306 / PDFp.327
 
@@ -4729,7 +4960,9 @@ An exact Ornstein-Uhlenbeck solve can be added where it is required in the schem
 
 ### 3. 原文证明
 
-原书未给独立完整证明。
+原页推导与上下文全文见original_page_text；数学符号的排版以随附原页PDF为准。
+
+原页文字及推导保存在原文JSON的original_page_text；网站子包附对应完整原页PDF。
 
 ### 4. 完整当前Lean（原文与修正版独立列出）
 
@@ -4738,7 +4971,12 @@ theorem zeroFrictionOU (m : V n) (θ h : ℝ) (R : V n) (x : Phase n) : ouStep m
   ext i <;> simp [ouStep,ouMomentum]
 theorem zeroFrictionBAOAB (m : V n) (U : V n → ℝ) (θ h : ℝ) (R : V n) :
     baoab m U 0 θ h R = kickStep U (h/2) ∘ driftStep m h ∘ kickStep U (h/2) := by
-  sorry
+  funext x
+  have ha : driftStep m (h/2) (driftStep m (h/2) (kickStep U (h/2) x)) =
+      driftStep m h (kickStep U (h/2) x) := by
+    ext i <;> dsimp [driftStep] <;> ring
+  simp only [baoab,Function.comp_apply,zeroFrictionOU]
+  rw [ha]
 ```
 
 ### 5. 对照表
@@ -4758,8 +4996,8 @@ theorem zeroFrictionBAOAB (m : V n) (U : V n → ℝ) (θ h : ℝ) (R : V n) :
 
 ### 7. 状态与证明位置
 
-未证陈述；单文件编译与逐声明公理核对通过。
-未证原因：两个A半步合并及函数组合化简的短桥尚未完成。
+已证；Lean陈述可检查，证明完整性按本条状态区分。
+本条未登记待证缺项。
 位置：Blueprint/Ch07.lean；MD.Ch07.zeroFrictionOU, MD.Ch07.zeroFrictionBAOAB。
 
 ## 1. MD-7.11.1-TemperatureObservables · (7.41)–(7.42) · 印刷p.310 / PDFp.331
@@ -4774,7 +5012,9 @@ Were one able to solve the dynamics exactly, the kinetic and configurational tem
 
 ### 3. 原文证明
 
-原书未给独立完整证明。
+原页推导与上下文全文见original_page_text；数学符号的排版以随附原页PDF为准。
+
+原页文字及推导保存在原文JSON的original_page_text；网站子包附对应完整原页PDF。
 
 ### 4. 完整当前Lean（原文与修正版独立列出）
 
@@ -4813,7 +5053,7 @@ theorem configurationTemperature (U : V n → ℝ) (β : ℝ) (hβ : 0 < β)
 
 ### 7. 状态与证明位置
 
-未证陈述；单文件编译与逐声明公理核对通过。
+未证陈述；Lean陈述可检查，证明完整性按本条状态区分。
 未证原因：需Gaussian二阶矩和多维Gibbs积分分部桥；不新建遍历性理论。
 位置：Blueprint/Ch07.lean；MD.Ch07.kineticTemperatureObservable, MD.Ch07.configurationTemperatureObservable, MD.Ch07.kineticTemperature, MD.Ch07.configurationTemperature。
 
@@ -4825,7 +5065,9 @@ The self-diffusion coefficient gives a metric quantifying the diffusion rate. It
 
 ### 3. 原文证明
 
-原书未给独立完整证明。
+原页推导与上下文全文见original_page_text；数学符号的排版以随附原页PDF为准。
+
+原页文字及推导保存在原文JSON的original_page_text；网站子包附对应完整原页PDF。
 
 ### 4. 完整当前Lean（原文与修正版独立列出）
 
@@ -4864,7 +5106,7 @@ theorem autocorrelation_rescale (P : Measure Ω) (v : ℝ → Ω → V n) (c t :
 
 ### 7. 状态与证明位置
 
-定义；单文件编译与逐声明公理核对通过。
+定义；Lean陈述可检查，证明完整性按本条状态区分。
 本条未登记待证缺项。
 位置：Blueprint/Ch07.lean；MD.Ch07.velocityAutocorrelation, MD.Ch07.greenKuboDiffusion, MD.Ch07.autocorrelation_rescale。
 
@@ -4880,7 +5122,9 @@ The vector of $l$ constraints is given by $g:\mathbb R^{N_c}\to\mathbb R^l$ and 
 
 ### 3. 原文证明
 
-原书未给独立完整证明。
+原页推导与上下文全文见original_page_text；数学符号的排版以随附原页PDF为准。
+
+原页文字及推导保存在原文JSON的original_page_text；网站子包附对应完整原页PDF。
 
 ### 4. 完整当前Lean（原文与修正版独立列出）
 
@@ -4932,7 +5176,7 @@ def constrainedLangevin {l : ℕ} (P : Measure Ω) (m : V n) (g : V n → V l) (
 
 ### 7. 状态与证明位置
 
-定义；单文件编译与逐声明公理核对通过。
+定义；Lean陈述可检查，证明完整性按本条状态区分。
 本条未登记待证缺项。
 位置：Blueprint/Ch07.lean；MD.Ch07.constraintJacobian, MD.Ch07.constraintReaction, MD.Ch07.hiddenConstraint, MD.Ch07.cotangentConstraint, MD.Ch07.constrainedLangevin。
 
@@ -4948,7 +5192,9 @@ for normalizing constant $Z$ and where $\delta[z]:=\prod_i\delta[z_i]$ for a vec
 
 ### 3. 原文证明
 
-原书未给独立完整证明。
+原页推导与上下文全文见original_page_text；数学符号的排版以随附原页PDF为准。
+
+原页文字及推导保存在原文JSON的original_page_text；网站子包附对应完整原页PDF。
 
 ### 4. 完整当前Lean（原文与修正版独立列出）
 
@@ -4985,7 +5231,7 @@ def constrainedErgodicAverages (P : Measure Ω) (X : ℝ → Ω → Phase n) (μ
 
 ### 7. 状态与证明位置
 
-定义；单文件编译与逐声明公理核对通过。
+定义；Lean陈述可检查，证明完整性按本条状态区分。
 本条未登记待证缺项。
 位置：Blueprint/Ch07.lean；MD.Ch07.constrainedCanonical, MD.Ch07.constrainedReference, MD.Ch07.constrainedErgodicAverages。
 
@@ -5000,7 +5246,9 @@ We solve these two pieces symmetrically, where the constrained Hamiltonian part 
 
 ### 3. 原文证明
 
-原书未给独立完整证明。
+原页推导与上下文全文见original_page_text；数学符号的排版以随附原页PDF为准。
+
+原页文字及推导保存在原文JSON的original_page_text；网站子包附对应完整原页PDF。
 
 ### 4. 完整当前Lean（原文与修正版独立列出）
 
@@ -5029,7 +5277,7 @@ def constrainedHOComposition {E : Type*} (H O : ℝ → E → E) (h : ℝ) : E �
 
 ### 7. 状态与证明位置
 
-定义；单文件编译与逐声明公理核对通过。
+定义；Lean陈述可检查，证明完整性按本条状态区分。
 本条未登记待证缺项。
 位置：Blueprint/Ch07.lean；MD.Ch07.constrainedHField, MD.Ch07.constrainedOField, MD.Ch07.constrainedHOComposition。
 
@@ -5045,7 +5293,9 @@ Midpoint Euler - Verlet - Midpoint Euler (see [232])
 
 ### 3. 原文证明
 
-原书未给独立完整证明。
+原页推导与上下文全文见original_page_text；数学符号的排版以随附原页PDF为准。
+
+原页文字及推导保存在原文JSON的original_page_text；网站子包附对应完整原页PDF。
 
 ### 4. 完整当前Lean（原文与修正版独立列出）
 
@@ -5085,7 +5335,7 @@ def mevmeRelation {l : ℕ} (m : V n) (g : V n → V l) (U : V n → ℝ) (γ θ
 
 ### 7. 状态与证明位置
 
-定义；单文件编译与逐声明公理核对通过。
+定义；Lean陈述可检查，证明完整性按本条状态区分。
 本条未登记待证缺项。
 位置：Blueprint/Ch07.lean；MD.Ch07.midpointConstrainedORelation, MD.Ch07.constrainedVerletRelation, MD.Ch07.mevmeRelation。
 
@@ -5100,7 +5350,9 @@ which is easily computed once the $R_n$ vector is evaluated in the step, and giv
 
 ### 3. 原文证明
 
-原书未给独立完整证明。
+原页推导与上下文全文见original_page_text；数学符号的排版以随附原页PDF为准。
+
+原页文字及推导保存在原文JSON的original_page_text；网站子包附对应完整原页PDF。
 
 ### 4. 完整当前Lean（原文与修正版独立列出）
 
@@ -5139,7 +5391,7 @@ theorem midpointStability_counterexample : |midpointAmplification 8| ≤ 1 ∧ �
 
 ### 7. 状态与证明位置
 
-已证；单文件编译与逐声明公理核对通过。
+已证；Lean陈述可检查，证明完整性按本条状态区分。
 本条未登记待证缺项。
 位置：Blueprint/Ch07.lean；MD.Ch07.multiplierLinearSystem, MD.Ch07.midpointAmplification, MD.Ch07.midpointStabilityPrinted, MD.Ch07.midpointStabilityPrinted_corrected, MD.Ch07.midpointStability_counterexample。
 
@@ -5154,7 +5406,9 @@ Observe that the holonomic constraint (as well as the hidden constraint) is main
 
 ### 3. 原文证明
 
-原书未给独立完整证明。
+原页推导与上下文全文见original_page_text；数学符号的排版以随附原页PDF为准。
+
+原页文字及推导保存在原文JSON的original_page_text；网站子包附对应完整原页PDF。
 
 ### 4. 完整当前Lean（原文与修正版独立列出）
 
@@ -5194,7 +5448,7 @@ def constrainedExactORelation {l : ℕ} (m : V n) (g : V n → V l) (γ θ h : �
 
 ### 7. 状态与证明位置
 
-定义；单文件编译与逐声明公理核对通过。
+定义；Lean陈述可检查，证明完整性按本条状态区分。
 本条未登记待证缺项。
 位置：Blueprint/Ch07.lean；MD.Ch07.constrainedAField, MD.Ch07.constrainedBField, MD.Ch07.geodesicConstraintFlow, MD.Ch07.constrainedKickRelation, MD.Ch07.constrainedExactORelation。
 
@@ -5211,7 +5465,9 @@ Solve the geodesic flow $A_c$ for $h/2$, and map $[q_{n+1/2},p_{n+3/5}]\to[q_{n+
 
 ### 3. 原文证明
 
-原书未给独立完整证明。
+原页推导与上下文全文见original_page_text；数学符号的排版以随附原页PDF为准。
+
+原页文字及推导保存在原文JSON的original_page_text；网站子包附对应完整原页PDF。
 
 ### 4. 完整当前Lean（原文与修正版独立列出）
 
@@ -5246,7 +5502,7 @@ theorem constrainedBAOAB_constraint {l : ℕ} (m : V n) (g : V n → V l) (U : V
 
 ### 7. 状态与证明位置
 
-定义；单文件编译与逐声明公理核对通过。
+定义；Lean陈述可检查，证明完整性按本条状态区分。
 本条未登记待证缺项。
 位置：Blueprint/Ch07.lean；MD.Ch07.constrainedBAOABRelation, MD.Ch07.constrainedBAOAB_constraint。
 
@@ -5258,7 +5514,9 @@ We do not necessarily need to solve the geodesic flow exactly in practice, thoug
 
 ### 3. 原文证明
 
-原书未给独立完整证明。
+原页推导与上下文全文见original_page_text；数学符号的排版以随附原页PDF为准。
+
+原页文字及推导保存在原文JSON的original_page_text；网站子包附对应完整原页PDF。
 
 ### 4. 完整当前Lean（原文与修正版独立列出）
 
@@ -5286,7 +5544,566 @@ def geodesicReplacementSecondOrder {E : Type*} [NormedAddCommGroup E]
 
 ### 7. 状态与证明位置
 
-定义；单文件编译与逐声明公理核对通过。
+定义；Lean陈述可检查，证明完整性按本条状态区分。
 本条未登记待证缺项。
 位置：Blueprint/Ch07.lean；MD.Ch07.localMapErrorBound, MD.Ch07.geodesicReplacementSecondOrder。
+
+## 1. MD-7.13-FastSlowHarmonicModel · (7.47)–(7.48) · 印刷p.323 / PDFp.344
+
+### 2. 原文陈述
+
+\[H(q,p)=p^2/2+U(q),\qquad U(q)=U_F(q)+U_S(q),\]
+\[U_S(q)=q^2/2,\qquad U_F(q)=\Omega^2q^2/2,\tag{7.47}\]
+where $\Omega\gg1$.
+\[\binom{dq}{dp}=\underbrace{\binom{pdt}{-\Omega^2qdt-\gamma pdt+\sqrt{2\gamma/\beta}dW}}_{\rm Fast}+\underbrace{\binom0{-qdt}}_{\rm Slow}.\tag{7.48}\]
+
+### 3. 原文证明
+
+原页推导与上下文全文见original_page_text；数学符号的排版以随附原页PDF为准。
+
+原页文字及推导保存在原文JSON的original_page_text；网站子包附对应完整原页PDF。
+
+### 4. 完整当前Lean（原文与修正版独立列出）
+
+```lean
+abbrev Mat2 := Matrix (Fin 2) (Fin 2) ℝ
+def fastPotential (Ω q : ℝ) : ℝ := Ω^2*q^2/2
+def slowPotential (q : ℝ) : ℝ := q^2/2
+def fastMatrix (Ω γ : ℝ) : Mat2 := !![0,1;-Ω^2,-γ]
+def slowMatrix (h : ℝ) : Mat2 := !![1,0;-h,1]
+def fastLangevin (P : Measure Ω) (W : ℝ → Ω → V 1) (X : ℝ → Ω → Phase 1)
+    (frequency γ β : ℝ) (x0 : Phase 1) : Prop :=
+  0 < frequency ∧ 0 < β ∧ langevin P W X (fun q ↦ fastPotential frequency (q 0)) (fun _ ↦ 1) γ β⁻¹ x0
+```
+
+### 5. 对照表
+
+| 原文成分 | Lean对应 | 说明 |
+|---|---|---|
+| 本条引用的对象与公式 | MD.Ch07.Mat2, MD.Ch07.fastPotential, MD.Ch07.slowPotential, MD.Ch07.fastMatrix, MD.Ch07.slowMatrix, MD.Ch07.fastLangevin | 本条逐字引用的全部数学对象与公式；未纳入的上下文另列。 |
+
+[EXTRA] 单位质量、实际标准Wiener、状态适应、正β及完整积分方程由langevin定义体保留；Ω≫1在定量结论中分别改成明确不等式。
+记号与上下文：见所列原文与Lean量化变量。
+
+### 6. 审计结论
+
+本地：已对照目视原页核对对象、量词、技术资格和所列覆盖范围；网站尚未审阅。
+疑点：本条暂未发现需单列的原书疑误。
+网站：尚未送审。
+
+### 7. 状态与证明位置
+
+定义；Lean陈述可检查，证明完整性按本条状态区分。
+本条未登记待证缺项。
+位置：Blueprint/Ch07.lean；MD.Ch07.Mat2, MD.Ch07.fastPotential, MD.Ch07.slowPotential, MD.Ch07.fastMatrix, MD.Ch07.slowMatrix, MD.Ch07.fastLangevin。
+
+## 1. MD-7.13-ExactFastGaussianLaw · unnumbered_claim · 印刷p.323–324 / PDFp.344–345
+
+### 2. 原文陈述
+
+Writing $F=\begin{bmatrix}0&1\\-\Omega^2&-\gamma\end{bmatrix}$, we can write down the solution to the fast dynamics as
+\[\binom{q(t)}{p(t)}=\exp(Ft)\binom{q(0)}{p(0)}+B_tR,\]
+where $R$ is a column vector of two i.i.d. random normal numbers distributed as $\mathcal N(0,1)$, and
+\[B_tB_t^T=\frac{2\gamma}\beta\int_0^t\exp(F(t-s))\begin{bmatrix}0&0\\0&1\end{bmatrix}\exp(F^T(t-s))ds.\]
+
+### 3. 原文证明
+
+原页推导与上下文全文见original_page_text；数学符号的排版以随附原页PDF为准。
+
+原页文字及推导保存在原文JSON的original_page_text；网站子包附对应完整原页PDF。
+
+### 4. 完整当前Lean（原文与修正版独立列出）
+
+```lean
+def fastExponential (Ω γ t : ℝ) : Mat2 := NormedSpace.exp (t • fastMatrix Ω γ)
+def fastCovariance (Ω γ β t : ℝ) : Mat2 := fun i j ↦ 2*γ/β*∫ s in (0 : ℝ)..t,
+  (fastExponential Ω γ (t-s)* (!![0,0;0,1] : Mat2)*(fastExponential Ω γ (t-s))ᵀ) i j
+theorem exactFastGaussianLaw (P : Measure Ω) (W : ℝ → Ω → V 1) (X : ℝ → Ω → Phase 1)
+    (frequency γ β t : ℝ) (x0 : Phase 1) (B : Mat2)
+    (hX : fastLangevin P W X frequency γ β x0) (ht : 0 ≤ t)
+    (hB : B*Bᵀ = fastCovariance frequency γ β t) :
+    HasLaw (fun sample ↦ (![ (X t sample).1 0, (X t sample).2 0] : Fin 2 → ℝ))
+      (Measure.map (fun R : Fin 2 → ℝ ↦
+        fastExponential frequency γ t *ᵥ (![x0.1 0,x0.2 0] : Fin 2 → ℝ)+B*ᵥ R)
+        (Measure.pi (fun _ : Fin 2 ↦ gaussianReal 0 1))) P := by
+  sorry
+```
+
+### 5. 对照表
+
+| 原文成分 | Lean对应 | 说明 |
+|---|---|---|
+| 本条引用的对象与公式 | MD.Ch07.fastExponential, MD.Ch07.fastCovariance, MD.Ch07.exactFastGaussianLaw | 本条逐字引用的全部数学对象与公式；未纳入的上下文另列。 |
+
+[EXTRA] 陈述真实过程的转移分布，不将强解等于一组新独立R假设成结论。Bt只需给定平方根因子；正半定矩阵平方根存在性未另证明。
+记号与上下文：见所列原文与Lean量化变量。
+
+### 6. 审计结论
+
+本地：已对照目视原页核对对象、量词、技术资格和所列覆盖范围；网站尚未审阅。
+疑点：本条暂未发现需单列的原书疑误。
+网站：尚未送审。
+
+### 7. 状态与证明位置
+
+未证陈述；Lean陈述可检查，证明完整性按本条状态区分。
+未证原因：需要线性SDE变分常数、确定积分Gaussian律及矩阵协方差理论；本轮不建设。
+位置：Blueprint/Ch07.lean；MD.Ch07.fastExponential, MD.Ch07.fastCovariance, MD.Ch07.exactFastGaussianLaw。
+
+## 1. MD-7.13-MultipleTimestepUpdate · definition · 印刷p.324 / PDFp.345
+
+### 2. 原文陈述
+
+The solution to the slow part of our splitting is just
+\[\binom{q(t)}{p(t)}=\begin{bmatrix}1&0\\-t&1\end{bmatrix}\binom{q(0)}{p(0)}.\]
+For a method taking one step of the fast system followed by a step of the slow system, using fixed step size $h>0$, we can write the update scheme for $z=[q,p]^T$ as
+\[z_{n+1}=Xz_n+YR_n,\qquad X=\begin{bmatrix}1&0\\-h&1\end{bmatrix}\exp(hF),\quad Y=\begin{bmatrix}1&0\\-h&1\end{bmatrix}B_h.\]
+
+### 3. 原文证明
+
+原页推导与上下文全文见original_page_text；数学符号的排版以随附原页PDF为准。
+
+原页文字及推导保存在原文JSON的original_page_text；网站子包附对应完整原页PDF。
+
+### 4. 完整当前Lean（原文与修正版独立列出）
+
+```lean
+def multipleX (Ω γ h : ℝ) : Mat2 := slowMatrix h*fastExponential Ω γ h
+def multipleY (h : ℝ) (B : Mat2) : Mat2 := slowMatrix h*B
+def multipleStep (Ω γ h : ℝ) (B : Mat2) (R z : Fin 2 → ℝ) : Fin 2 → ℝ :=
+  multipleX Ω γ h *ᵥ z+multipleY h B *ᵥ R
+theorem multipleStep_composition (Ω γ h : ℝ) (B : Mat2) (R z : Fin 2 → ℝ) :
+    multipleStep Ω γ h B R z = slowMatrix h *ᵥ (fastExponential Ω γ h *ᵥ z+B*ᵥ R) := by
+  simp [multipleStep,multipleX,multipleY,Matrix.mulVec_add,Matrix.mulVec_mulVec]
+```
+
+### 5. 对照表
+
+| 原文成分 | Lean对应 | 说明 |
+|---|---|---|
+| 本条引用的对象与公式 | MD.Ch07.multipleX, MD.Ch07.multipleY, MD.Ch07.multipleStep, MD.Ch07.multipleStep_composition | 本条逐字引用的全部数学对象与公式；未纳入的上下文另列。 |
+
+[EXTRA] Rn为每步独立标准二维Gaussian；稳定分布分析仍要求真实独立序列及有限协方差，不能只以更新定义宣称存在平稳解。
+记号与上下文：见所列原文与Lean量化变量。
+
+### 6. 审计结论
+
+本地：已对照目视原页核对对象、量词、技术资格和所列覆盖范围；网站尚未审阅。
+疑点：本条暂未发现需单列的原书疑误。
+网站：尚未送审。
+
+### 7. 状态与证明位置
+
+定义；Lean陈述可检查，证明完整性按本条状态区分。
+本条未登记待证缺项。
+位置：Blueprint/Ch07.lean；MD.Ch07.multipleX, MD.Ch07.multipleY, MD.Ch07.multipleStep, MD.Ch07.multipleStep_composition。
+
+## 1. MD-7.13-DeterminantTrace · unnumbered_claim · 印刷p.324 / PDFp.345
+
+### 2. 原文陈述
+
+Denoting $\eta=\sqrt{\gamma^2-4\Omega^2}$, then we compute
+\[\det(X)=e^{-\gamma h},\qquad
+\operatorname{tr}(X)=\frac{\eta-h}{\eta}e^{(\eta-\gamma)h/2}+\frac{\eta+h}{\eta}e^{(-\eta-\gamma)h/2}.\]
+
+### 3. 原文证明
+
+原页推导与上下文全文见original_page_text；数学符号的排版以随附原页PDF为准。
+
+原页文字及推导保存在原文JSON的original_page_text；网站子包附对应完整原页PDF。
+
+### 4. 完整当前Lean（原文与修正版独立列出）
+
+```lean
+def traceFormula (γ h : ℝ) (η : ℂ) : ℂ :=
+  (η-(h : ℂ))/η*Complex.exp ((η-(γ : ℂ))*(h : ℂ)/2)+
+  (η+(h : ℂ))/η*Complex.exp ((-η-(γ : ℂ))*(h : ℂ)/2)
+theorem determinantTrace (Ω γ h : ℝ) (η : ℂ) (hη : η^2 = (γ : ℂ)^2-4*(Ω : ℂ)^2) (hne : η ≠ 0) :
+    Matrix.det (multipleX Ω γ h) = Real.exp (-γ*h) ∧
+    ((Matrix.trace (multipleX Ω γ h) : ℝ) : ℂ) = traceFormula γ h η := by
+  sorry
+```
+
+### 5. 对照表
+
+| 原文成分 | Lean对应 | 说明 |
+|---|---|---|
+| 本条引用的对象与公式 | MD.Ch07.traceFormula, MD.Ch07.determinantTrace | 本条逐字引用的全部数学对象与公式；未纳入的上下文另列。 |
+
+[EXTRA] η允许纯虚数；显式排除临界η=0，避免除零假公式。临界阻尼应取连续极限，另列覆盖缺口。
+记号与上下文：见所列原文与Lean量化变量。
+
+### 6. 审计结论
+
+本地：已对照目视原页核对对象、量词、技术资格和所列覆盖范围；网站尚未审阅。
+疑点：本条暂未发现需单列的原书疑误。
+网站：尚未送审。
+
+### 7. 状态与证明位置
+
+未证陈述；Lean陈述可检查，证明完整性按本条状态区分。
+未证原因：真实矩阵指数的特征分解/二阶Cayley–Hamilton闭式与det/trace桥；不建设一般线性SDE理论。
+位置：Blueprint/Ch07.lean；MD.Ch07.traceFormula, MD.Ch07.determinantTrace。
+
+## 1. MD-7.13-SpectralRadiusStability · unnumbered_claim · 印刷p.324 / PDFp.345
+
+### 2. 原文陈述
+
+The stability of the method therefore depends solely on the spectral radius of the matrix $X$. This gives a stability condition
+\[\left|\frac{\eta-h}{\eta}e^{(\eta-\gamma)h/2}+\frac{\eta+h}{\eta}e^{(-\eta-\gamma)h/2}\right|\le1+e^{-\gamma h}.\]
+Multiplying by $e^{\gamma h/2}$ gives
+\[|\cosh(\eta h/2)+(h/\eta)\sinh(-\eta h/2)|\le\cosh(\gamma h/2).\]
+
+### 3. 原文证明
+
+原页推导与上下文全文见original_page_text；数学符号的排版以随附原页PDF为准。
+
+原页文字及推导保存在原文JSON的original_page_text；网站子包附对应完整原页PDF。
+
+### 4. 完整当前Lean（原文与修正版独立列出）
+
+```lean
+def characteristicUnitDisk (X : Mat2) : Prop :=
+  ∀ z : ℂ, z^2-((Matrix.trace X : ℝ) : ℂ)*z+((Matrix.det X : ℝ) : ℂ) = 0 → ‖z‖ ≤ 1
+theorem spectralRadiusStability (X : Mat2) (hd : 0 < Matrix.det X) (hd1 : Matrix.det X < 1) :
+    characteristicUnitDisk X ↔ |Matrix.trace X| ≤ 1+Matrix.det X := by
+  sorry
+def hyperbolicStability (γ h : ℝ) (η : ℂ) : Prop :=
+  ‖Complex.cosh (η*(h : ℂ)/2)+(h : ℂ)/η*Complex.sinh (-η*(h : ℂ)/2)‖ ≤ Real.cosh (γ*h/2)
+```
+
+### 5. 对照表
+
+| 原文成分 | Lean对应 | 说明 |
+|---|---|---|
+| 本条引用的对象与公式 | MD.Ch07.characteristicUnitDisk, MD.Ch07.spectralRadiusStability, MD.Ch07.hyperbolicStability | 本条逐字引用的全部数学对象与公式；未纳入的上下文另列。 |
+
+[EXTRA] 只陈述谱半径≤1的确定性边界资格；有非退化随机驱动时平稳二阶矩一般要求严格谱半径<1，等号并不自动给随机长期稳定。；正摩擦正h给0<det<1；γ=0、Jordan边界、临界η=0均需另审。trace到双曲式的代数/指数桥未证明。
+记号与上下文：见所列原文与Lean量化变量。
+
+### 6. 审计结论
+
+本地：已对照目视原页核对对象、量词、技术资格和所列覆盖范围；网站尚未审阅。
+疑点：本条暂未发现需单列的原书疑误。
+网站：尚未送审。
+
+### 7. 状态与证明位置
+
+未证陈述；Lean陈述可检查，证明完整性按本条状态区分。
+未证原因：需实二次特征多项式的Schur/Jury判据与复根模长分类；不建设通用随机稳定性理论。
+位置：Blueprint/Ch07.lean；MD.Ch07.characteristicUnitDisk, MD.Ch07.spectralRadiusStability, MD.Ch07.hyperbolicStability。
+
+## 1. MD-7.13-HyperbolicPhaseTransform · unnumbered_claim · 印刷p.324 / PDFp.345
+
+### 2. 原文陈述
+
+For $\gamma>0$, we can simplify to
+\[\left|\cosh\left(\frac{\eta h}{2}-\operatorname{atanh}\left(\frac h\eta\right)\right)\sqrt{1-\frac{h^2}{\eta^2}}\right|\le\cosh(\gamma h/2).\]
+
+### 3. 原文证明
+
+原页推导与上下文全文见original_page_text；数学符号的排版以随附原页PDF为准。
+
+原页文字及推导保存在原文JSON的original_page_text；网站子包附对应完整原页PDF。
+
+### 4. 完整当前Lean（原文与修正版独立列出）
+
+```lean
+def hyperbolicPhase (η h : ℝ) : ℝ :=
+  Real.cosh (η*h/2-Real.artanh (h/η))*Real.sqrt (1-h^2/η^2)
+theorem hyperbolicPhase_identity (η h : ℝ) (hη : η ≠ 0) (hr : |h/η| < 1) :
+    hyperbolicPhase η h = Real.cosh (η*h/2)-h/η*Real.sinh (η*h/2) := by
+  have hh : h/η ∈ Set.Ioo (-1 : ℝ) 1 := abs_lt.mp hr
+  have hs : Real.sqrt (1-(h/η)^2) ≠ 0 := by
+    apply ne_of_gt
+    apply Real.sqrt_pos.2
+    have hsq : (h/η)^2 < 1 := (sq_lt_one_iff_abs_lt_one (h/η)).2 hr
+    linarith
+  simp only [hyperbolicPhase,Real.cosh_sub,Real.cosh_artanh hh,Real.sinh_artanh hh]
+  rw [← div_pow]
+  calc
+    _ = (Real.cosh (η*h/2)-(h/η)*Real.sinh (η*h/2))/Real.sqrt (1-(h/η)^2)*Real.sqrt (1-(h/η)^2) := by ring
+    _ = _ := div_mul_cancel₀ _ hs
+```
+
+### 5. 对照表
+
+| 原文成分 | Lean对应 | 说明 |
+|---|---|---|
+| 本条引用的对象与公式 | MD.Ch07.hyperbolicPhase, MD.Ch07.hyperbolicPhase_identity | 本条逐字引用的全部数学对象与公式；未纳入的上下文另列。 |
+
+[EXTRA] 实η版本必须补|h/η|<1，γ>0本身不足；复η需选择sqrt/artanh分支，原文未说明。只覆盖明确实域上的等式，不把所有γ>0都纳入。
+记号与上下文：见所列原文与Lean量化变量。
+
+### 6. 审计结论
+
+本地：已对照目视原页核对对象、量词、技术资格和所列覆盖范围；网站尚未审阅。
+疑点：本条暂未发现需单列的原书疑误。
+网站：尚未送审。
+
+### 7. 状态与证明位置
+
+已证；Lean陈述可检查，证明完整性按本条状态区分。
+本条未登记待证缺项。
+位置：Blueprint/Ch07.lean；MD.Ch07.hyperbolicPhase, MD.Ch07.hyperbolicPhase_identity。
+
+## 1. MD-7.13-UnderdampedPhasePrinted · unnumbered_claim · 印刷p.325 / PDFp.346
+
+### 2. 原文陈述
+
+We consider the case with $\gamma\ll\Omega$, allowing us to write $\eta=i\widehat\eta$ for $\widehat\eta\in\mathbb R$, and
+\[\left|\cos\left(\frac{\widehat\eta h}{2}-\operatorname{atanh}\left(\frac h{\widehat\eta}\right)\right)\sqrt{1+\frac{h^2}{\widehat\eta^2}}\right|\le\cosh(\gamma h/2).\]
+
+### 3. 原文证明
+
+原页推导与上下文全文见original_page_text；数学符号的排版以随附原页PDF为准。
+
+原页文字及推导保存在原文JSON的original_page_text；网站子包附对应完整原页PDF。
+
+### 4. 完整当前Lean（原文与修正版独立列出）
+
+```lean
+def underdampedPhasePrinted (η h : ℝ) : ℝ :=
+  Real.cos (η*h/2-Real.artanh (h/η))*Real.sqrt (1+h^2/η^2)
+def underdampedPhasePrinted_corrected (η h : ℝ) : ℝ :=
+  Real.sqrt (1+(h/η)^2)*Real.cos (η*h/2+Real.arctan (h/η))
+theorem underdampedPhase_identity (a r : ℝ) :
+    Real.cos a-r*Real.sin a = Real.sqrt (1+r^2)*Real.cos (a+Real.arctan r) := by
+  rw [Real.cos_add,Real.cos_arctan,Real.sin_arctan]
+  have hs : Real.sqrt (1+r^2) ≠ 0 := ne_of_gt (Real.sqrt_pos.2 (by positivity))
+  field_simp
+  <;> ring
+```
+
+### 5. 对照表
+
+| 原文成分 | Lean对应 | 说明 |
+|---|---|---|
+| 本条引用的对象与公式 | MD.Ch07.underdampedPhasePrinted, MD.Ch07.underdampedPhasePrinted_corrected, MD.Ch07.underdampedPhase_identity | 本条逐字引用的全部数学对象与公式；未纳入的上下文另列。 |
+
+[EXTRA] 原文版与修正版分别定义，原文版不证明；直接用幅相恒等式绕过复函数分支。η̂=√(4Ω²-γ²)>0需要明确欠阻尼条件。
+记号与上下文：见所列原文与Lean量化变量。
+
+### 6. 审计结论
+
+本地：已对照目视原页核对对象、量词、技术资格和所列覆盖范围；网站尚未审阅。
+疑点：已目视核对PDF346／印刷325：从η=iη̂化为实余弦时应使用+arctan(h/η̂)，所印-atanh(h/η̂)的函数与符号均不符。修正版从cos(a)-r sin(a)的标准幅相恒等式得到。
+网站：尚未送审。
+
+### 7. 状态与证明位置
+
+已证；Lean陈述可检查，证明完整性按本条状态区分。
+本条未登记待证缺项。
+位置：Blueprint/Ch07.lean；MD.Ch07.underdampedPhasePrinted, MD.Ch07.underdampedPhasePrinted_corrected, MD.Ch07.underdampedPhase_identity。
+
+## 1. MD-7.13-StabilityEnvelope · (7.49) · 印刷p.325 / PDFp.346
+
+### 2. 原文陈述
+
+The oscillatory cosine term is bounded between $\pm1$, implying that we have stability for all step sizes provided the condition
+\[\sqrt{1+h^2/\widehat\eta^2}\le\cosh(\gamma h/2),\tag{7.49}\]
+holds. We have guaranteed stability where (7.49) holds, which we can simplify to
+\[\frac h{\sqrt{4\Omega^2-\gamma^2}}\le\sinh(\gamma h/2).\]
+
+### 3. 原文证明
+
+原页推导与上下文全文见original_page_text；数学符号的排版以随附原页PDF为准。
+证明思路提要（不是原文引句）：Bound the cosine by one; square nonnegative quantities and use cosh²-sinh²=1.
+原页文字及推导保存在原文JSON的original_page_text；网站子包附对应完整原页PDF。
+
+### 4. 完整当前Lean（原文与修正版独立列出）
+
+```lean
+def stabilityEnvelope (η γ h : ℝ) : Prop := Real.sqrt (1+h^2/η^2) ≤ Real.cosh (γ*h/2)
+theorem stabilityEnvelope_sufficient (η γ h : ℝ) (he : stabilityEnvelope η γ h) :
+    |underdampedPhasePrinted_corrected η h| ≤ Real.cosh (γ*h/2) := by
+  dsimp [underdampedPhasePrinted_corrected]
+  calc
+    _ ≤ Real.sqrt (1+(h/η)^2)*1 := by
+      rw [abs_mul,abs_of_nonneg (Real.sqrt_nonneg _)]
+      exact mul_le_mul_of_nonneg_left (Real.abs_cos_le_one _) (Real.sqrt_nonneg _)
+    _ = Real.sqrt (1+h^2/η^2) := by rw [div_pow,mul_one]
+    _ ≤ _ := he
+theorem stabilityEnvelope_iff (η γ h : ℝ) (hη : 0 < η) (hγ : 0 ≤ γ) (hh : 0 ≤ h) :
+    stabilityEnvelope η γ h ↔ h/η ≤ Real.sinh (γ*h/2) := by
+  sorry
+```
+
+### 5. 对照表
+
+| 原文成分 | Lean对应 | 说明 |
+|---|---|---|
+| 本条引用的对象与公式 | MD.Ch07.stabilityEnvelope, MD.Ch07.stabilityEnvelope_sufficient, MD.Ch07.stabilityEnvelope_iff | 本条逐字引用的全部数学对象与公式；未纳入的上下文另列。 |
+
+[EXTRA] “所有步长”指对每个h满足该条件；一次h的包络条件不能声称自动覆盖所有h。仍仅为谱模不超过1的充分条件，严格随机平稳性另需严格不等式。
+记号与上下文：见所列原文与Lean量化变量。
+
+### 6. 审计结论
+
+本地：已对照目视原页核对对象、量词、技术资格和所列覆盖范围；网站尚未审阅。
+疑点：本条暂未发现需单列的原书疑误。
+网站：尚未送审。
+
+### 7. 状态与证明位置
+
+未证陈述；Lean陈述可检查，证明完整性按本条状态区分。
+未证原因：包络等价需cosh/sinh正性及实平方根平方的短桥。
+位置：Blueprint/Ch07.lean；MD.Ch07.stabilityEnvelope, MD.Ch07.stabilityEnvelope_sufficient, MD.Ch07.stabilityEnvelope_iff。
+
+## 1. MD-7.13-FrictionThresholdPrinted · unnumbered_claim · 印刷p.325 / PDFp.346
+
+### 2. 原文陈述
+
+The minimum required friction for stability can be found by considering the case of small timestep. This gives a bound
+\[\frac1{\sqrt{4\Omega^2-\gamma^2}}\le\frac\gamma2,\]
+which gives a stability condition for all step sizes $h$ as long as
+\[\gamma\ge\Omega\sqrt{2-2\sqrt{1-\Omega^{-4}}}\ge\sqrt2/\Omega.\]
+Therefore we expect that the minimum friction value required for stability for all timesteps $h>0$, scales with the value of inverse $\Omega$.
+
+### 3. 原文证明
+
+原页推导与上下文全文见original_page_text；数学符号的排版以随附原页PDF为准。
+
+原页文字及推导保存在原文JSON的original_page_text；网站子包附对应完整原页PDF。
+
+### 4. 完整当前Lean（原文与修正版独立列出）
+
+```lean
+def frictionThresholdPrinted (Ω : ℝ) : ℝ := Ω*Real.sqrt (2-2*Real.sqrt (1-Ω⁻¹^4))
+def frictionThresholdPrinted_corrected (Ω : ℝ) : ℝ := Real.sqrt (2/(Ω^2+Real.sqrt (Ω^4-1)))
+def frictionBoundPrinted (Ω γ : ℝ) : Prop :=
+  frictionThresholdPrinted Ω ≤ γ ∧ Real.sqrt 2/Ω ≤ frictionThresholdPrinted Ω
+
+def frictionBoundPrinted_corrected (Ω γ : ℝ) : Prop :=
+  0 < γ ∧ γ < 2*Ω ∧ 1/Real.sqrt (4*Ω^2-γ^2) ≤ γ/2
+
+theorem frictionThreshold_rationalized (Ω : ℝ) (hΩ : 1 ≤ Ω) :
+    frictionThresholdPrinted Ω = frictionThresholdPrinted_corrected Ω := by
+  sorry
+theorem frictionThreshold_allSteps (Ω γ : ℝ) (hΩ : 1 ≤ Ω) (hγ : 0 < γ) (hu : γ < 2*Ω)
+    (hb : 1/Real.sqrt (4*Ω^2-γ^2) ≤ γ/2) :
+    ∀ h, 0 ≤ h → stabilityEnvelope (Real.sqrt (4*Ω^2-γ^2)) γ h := by
+  sorry
+theorem frictionThreshold_asymptotic :
+    Filter.Tendsto (fun Ω : ℝ ↦ Ω*frictionThresholdPrinted_corrected Ω) Filter.atTop (𝓝 1) := by
+  sorry
+theorem frictionThreshold_squared_counterexample : (1 : ℝ) < 2/(5/4 : ℝ) := by norm_num
+```
+
+### 5. 对照表
+
+| 原文成分 | Lean对应 | 说明 |
+|---|---|---|
+| 本条引用的对象与公式 | MD.Ch07.frictionThresholdPrinted, MD.Ch07.frictionThresholdPrinted_corrected, MD.Ch07.frictionBoundPrinted, MD.Ch07.frictionBoundPrinted_corrected, MD.Ch07.frictionThreshold_rationalized, MD.Ch07.frictionThreshold_allSteps, MD.Ch07.frictionThreshold_asymptotic, MD.Ch07.frictionThreshold_squared_counterexample | 本条逐字引用的全部数学对象与公式；未纳入的上下文另列。 |
+
+[EXTRA] 保留原精确根式，它本身与有理化修正版相同；疑误在后续比较方向/系数。欠阻尼上界γ<2Ω显式，不把该范围内的代数条件推广到任意大γ。；所有h包络由sinh x≥x推出，严格稳定与随机矩界仍需另证。反例给出有理平方数值，完整根式代入识别未另证明。
+记号与上下文：见所列原文与Lean量化变量。
+
+### 6. 审计结论
+
+本地：已对照目视原页核对对象、量词、技术资格和所列覆盖范围；网站尚未审阅。
+疑点：已目视核对PDF346：最后链式下界√2/Ω不成立。将精确阈值有理化得√(2/(Ω²+√(Ω⁴-1)))，大Ω时约1/Ω；√2/Ω可作更保守的充分选择而非精确阈值下界。Ω²=5/4时精确阈值平方=1，小于2/Ω²=8/5。
+网站：尚未送审。
+
+### 7. 状态与证明位置
+
+未证陈述；Lean陈述可检查，证明完整性按本条状态区分。
+未证原因：阈值有理化与大参数根式极限需短桥；所有h包络需sinh下界和前条平方等价。
+位置：Blueprint/Ch07.lean；MD.Ch07.frictionThresholdPrinted, MD.Ch07.frictionThresholdPrinted_corrected, MD.Ch07.frictionBoundPrinted, MD.Ch07.frictionBoundPrinted_corrected, MD.Ch07.frictionThreshold_rationalized, MD.Ch07.frictionThreshold_allSteps, MD.Ch07.frictionThreshold_asymptotic, MD.Ch07.frictionThreshold_squared_counterexample。
+
+## 1. MD-7.1-ConfigurationalSampling · definition · 印刷p.262 / PDFp.283
+
+### 2. 原文陈述
+
+we often only wish to know the average of a given function $\phi(q)$ with respect the configurational density $\exp(-\beta U(q))$, where $U$ is the potential energy function of a molecular system.
+
+### 3. 原文证明
+
+原页推导与上下文全文见original_page_text；数学符号的排版以随附原页PDF为准。
+
+原页文字及推导保存在原文JSON的original_page_text；网站子包附对应完整原页PDF。
+
+### 4. 完整当前Lean（原文与修正版独立列出）
+
+```lean
+def configurationalSamplingAverage (U φ : V n → ℝ) (β : ℝ) : ℝ :=
+  ∫ q, φ q ∂positionGibbs U β
+
+def configurationalSamplingQualified (U φ : V n → ℝ) (β : ℝ) : Prop :=
+  0 < β ∧ IsProbabilityMeasure (positionGibbs U β) ∧ Integrable φ (positionGibbs U β)
+```
+
+### 5. 对照表
+
+| 原文成分 | Lean对应 | 说明 |
+|---|---|---|
+| 本条引用的对象与公式 | MD.Ch07.configurationalSamplingAverage, MD.Ch07.configurationalSamplingQualified | 本条逐字引用的全部数学对象与公式；未纳入的上下文另列。 |
+
+[EXTRA] 原文省略归一常数；positionGibbs定义体保留实际配分积分。可积性与概率归一资格单列，不把未归一指数直接视为概率密度。
+记号与上下文：见所列原文与Lean量化变量。
+
+### 6. 审计结论
+
+本地：已对照目视原页核对对象、量词、技术资格和所列覆盖范围；网站尚未审阅。
+疑点：本条暂未发现需单列的原书疑误。
+网站：尚未送审。
+
+### 7. 状态与证明位置
+
+定义；Lean陈述可检查，证明完整性按本条状态区分。
+本条未登记待证缺项。
+位置：Blueprint/Ch07.lean；MD.Ch07.configurationalSamplingAverage, MD.Ch07.configurationalSamplingQualified。
+
+## 1. MD-7.1-HamiltonianSamplingObstruction · unnumbered_claim · 印刷p.262 / PDFp.283
+
+### 2. 原文陈述
+
+Note that deterministic methods (e.g. Hamiltonian dynamics itself) can sometimes be used for molecular sampling, but without stochastic perturbation, such methods are not rigorously ergodic, since the Liouvillian operator does not possess a spectral gap and does not provide a unique stationary solution.
+
+### 3. 原文证明
+
+原页推导与上下文全文见original_page_text；数学符号的排版以随附原页PDF为准。
+
+原页文字及推导保存在原文JSON的original_page_text；网站子包附对应完整原页PDF。
+
+### 4. 完整当前Lean（原文与修正版独立列出）
+
+```lean
+def energyConservingFlow (H : Phase n → ℝ) (F : ℝ → Phase n → Phase n) : Prop :=
+  (∀ x, F 0 x = x) ∧ (∀ s t x, F (s+t) x = F s (F t x)) ∧ ∀ t x, H (F t x) = H x
+
+theorem energySublevel_invariant (H : Phase n → ℝ) (F : ℝ → Phase n → Phase n)
+    (hf : energyConservingFlow H F) (a t : ℝ) :
+    (F t) ⁻¹' {x | H x ≤ a} = {x | H x ≤ a} := by
+  ext x
+  change H (F t x) ≤ a ↔ H x ≤ a
+  rw [hf.2.2 t x]
+
+def energyObstructionQualified (μ : Measure (Phase n)) (H : Phase n → ℝ)
+    (F : ℝ → Phase n → Phase n) : Prop :=
+  IsProbabilityMeasure μ ∧ energyConservingFlow H F ∧
+    (∀ t, MeasurePreserving (F t) μ μ) ∧
+    ∃ a, MeasurableSet {x | H x ≤ a} ∧ 0 < μ {x | H x ≤ a} ∧ μ {x | H x ≤ a} < 1
+```
+
+### 5. 对照表
+
+| 原文成分 | Lean对应 | 说明 |
+|---|---|---|
+| 本条引用的对象与公式 | MD.Ch07.energyConservingFlow, MD.Ch07.energySublevel_invariant, MD.Ch07.energyObstructionQualified | 保能流、非平凡不变集资格及不变集恒等式；原文的谱隙与平稳解主张仅逐字登记，尚缺明确函数空间后的完整陈述。 |
+
+[EXTRA] 本条只证明保能流的能量子水平集不变；结合非平凡概率质量可形成遍历性障碍。能量壳上的遍历性不能由原句否定。；原句未指定Liouvillian定义域、函数空间与参考概率。谱隙缺失和多个平稳解的完整算子陈述列为覆盖缺口，不把子水平集恒等式标作整段谱理论的证明。
+记号与上下文：见所列原文与Lean量化变量。
+
+### 6. 审计结论
+
+本地：已对照目视原页核对对象、量词、技术资格和所列覆盖范围；网站尚未审阅。
+疑点：本条暂未发现需单列的原书疑误。
+网站：尚未送审。
+
+### 7. 状态与证明位置
+
+已证；Lean陈述可检查，证明完整性按本条状态区分。
+本条未登记待证缺项。
+位置：Blueprint/Ch07.lean；MD.Ch07.energyConservingFlow, MD.Ch07.energySublevel_invariant, MD.Ch07.energyObstructionQualified。
 

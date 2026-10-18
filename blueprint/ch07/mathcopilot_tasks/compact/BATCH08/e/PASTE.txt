@@ -3,9 +3,9 @@
 Lean/Mathlib均4.34.0。原页PDF映射：[301]；印刷页=[280].
 input_sha256请原样回显：
 {
-  "Blueprint/Ch07.lean": "03e34bf86a5b27e03cce8552bb21fc0fea40514cd87faa953bf09a6a0a27f3c2",
-  "blueprint/ch07/ch07_source.json": "27e402f2a8b9c511106df901d6cc8472e1dae783cdf739f657879ffcf297462a",
-  "BATCH08e_PAGES.pdf": "8490429a1d357aec6955aeb17824073f3bc697f16026a2682e3c05ae7252bbcf"
+  "Blueprint/Ch07.lean": "f30ea154ebfb07ae85c0b806ff74b35808d5a0c3dcaa647c0c3cc80a78239e37",
+  "blueprint/ch07/ch07_source.json": "c434892ebf63b06f7cadcdfa7af408c2c12d7b645d35db431d1855224163ba19",
+  "BATCH08e_PAGES.pdf": "9133439a5cc46292aee42b36bc4d5ac84fde06a068b2843ba11594f88cf349e3"
 }
 用代码将JSON对象(batch,input_sha256,items)写到 /workspace/.mathcopilot/reviews/ch07/BATCH08e_review.json；items仅含本source_id。
 items字段：source_id、verdict(PASS/FAIL/NEEDS_HUMAN)、transcription、semantic_review、counterexample、suggested_fix、printed_version、corrected_version。逐版区分原文疑误和修正版结论；缺材料必须具体指出，不猜测。写后json.loads自检，最后仅回复路径及统计。
@@ -21,7 +21,16 @@ items字段：source_id、verdict(PASS/FAIL/NEEDS_HUMAN)、transcription、seman
   "pdf_page": "301",
   "statement_latex": "The behavior of the methods can thus be summarized as\n\\[|\\langle q^2\\rangle_h^{[ABOBA]}-\\langle q^2\\rangle|=O(\\epsilon h^2),\\qquad\n|\\langle q^2\\rangle_h^{[BAOAB]}-\\langle q^2\\rangle|=O\\left(\\frac{\\epsilon^2h^2}{1+\\gamma^2}+\\epsilon^2h^4\\right),\\]\n\\[|\\langle q^2\\rangle_h^{[OBABO]}-\\langle q^2\\rangle|=O(h^2),\\qquad\n|\\langle q^2\\rangle_h^{[OABAO]}-\\langle q^2\\rangle|=O(h^2).\\tag{7.15}\\]\nThe twofold surprising result though, is that (a) the leading error of the $[BAOAB]$ scheme has behavior proportional to $\\epsilon^2$, while (b) the leading order term of the $[BAOAB]$ scheme is annihilated for large $\\gamma$.",
   "proof_latex": null,
-  "proof_note": "原书未给独立完整证明。",
+  "proof_outline": null,
+  "proof_note": "原页推导与上下文全文见original_page_text；数学符号的排版以随附原页PDF为准。",
+  "original_page_text": [
+    {
+      "pdf_page": 301,
+      "printed_page": 280,
+      "text": "280\n7\nNumerical Methods for Stochastic Molecular Dynamics\nWe ﬁnd that truncating the update equations to O.\"3/ is sufﬁcient to explicitly\nresolve the leading order behavior of the error for these discretization schemes, and\nwe give the differences between observed numerical averages and exact averages\nbelow:\nhq2i\u0002ABOBA\u0003\nh\n\u0003 hq2i D 3h2\"\n\n48\" \u0003 4 C 3\n2.9\" \u0003 1/\n\u000b\n12\n2 C 16\nC O.\"h4 C \"3h2/;\nhq2i\u0002BAOAB\u0003\nh\n\u0003 hq2i D \u0003 9h2\"2\n6\n2 C 8 \u0003 3h4\"2 \n6\n4 C 19\n2 C 16\u000b\n8 .3\n2 C 4/2\nC O.\"2h6 C \"3h2/;\nhq2i\u0002OBABO\u0003\nh\n\u0003 hq2i D h2\n \n1\n4 C \"\n\n144\" C 81\"\n2 \u0003 9\n2 \u0003 12\n\u000b\n12\n2 C 16\n!\nC O.h4 C \"3h2/;\nhq2i\u0002OABAO\u0003\nh\n\u0003 hq2i D \u0003h2\n\b1\n4 C\n18\"2\n12\n2 C 16\n\t\nC O.h4 C \"3h2/:\n(7.14)\nThe behavior of the methods can thus be summarized as\nˇˇˇhq2i\u0002ABOBA\u0003\nh\n\u0003 hq2i\nˇˇˇ D O\n\u0004\n\"h2\u0005\n;\nˇˇˇhq2i\u0002BAOAB\u0003\nh\n\u0003 hq2i\nˇˇˇ D O\n\b \"2h2\n1 C \n2 C \"2h4\n\t\n;\nˇˇˇhq2i\u0002OBABO\u0003\nh\n\u0003 hq2i\nˇˇˇ D O\n\u0004\nh2\u0005\n;\nˇˇˇhq2i\u0002OABAO\u0003\nh\n\u0003 hq2i\nˇˇˇ D O\n\u0004\nh2\u0005\n:\n(7.15)\nWe would expect that both the \u0002ABOBA\u0003 and \u0002BAOAB\u0003 schemes would have a\nleading error term proportional to \", given that it was shown in Table 7.1 that in the\npure harmonic case (at \" D 0) these methods give perfect sampling. The twofold\nsurprising result though, is that (a) the leading error of the \u0002BAOAB\u0003 scheme has\nbehavior proportional to \"2, while (b) the leading order term of the \u0002BAOAB\u0003\nscheme is annihilated for large \n.\nIt would seem that by ordering the A, B and O update terms favourably in an\nalgorithm we are able to achieve signiﬁcant sampling improvements on systems\nthat are “nearly harmonic”, at no extra cost (in terms of force evaluations).\nTo illustrate this numerically, we use each of the four given second order methods\nto compute the absolute error in hq2ih using the one dimensional perturbed harmonic\noscillator with Hamiltonian given in (7.13) at a range of timesteps h 2 Œ0:1; 2\t and\nnonlinearity parameters \" 2 Œ0:0001; 1\t. We choose ˇ D \n D 1 for all experiments,\nand run the schemes using each parameter set for a ﬁxed time window of length 108.\nThe results are shown in Fig. 7.3, and qualitatively agree with the results of (7.15).\n"
+    }
+  ],
+  "transcription_note": "PDF文字层原样保留，陈述中的数学排版转写为LaTeX；文字层有特殊字形编码时以目视原页为准。PDF347的Exercises之后不在正文范围内。",
   "context_notation": [],
   "extra_assumptions": [
     "双参数正向极限已明确；γ固定的常数不等于γ一致误差界。原书(7.14)的ε³h²余项不足以单独推出BAOAB的ε²h²+ε²h⁴界，需要额外结构；保留为待证。"
@@ -59,11 +68,11 @@ theorem baoabLeading_largeFriction (ε h : ℝ) :
 ## 项目依赖定义体及选择规格
 以下def/abbrev/structure完整保留；定理列出完整类型，Mathlib标准定义无需摘录。
 
-### MD.Ch07.V (Blueprint/Ch07.lean:172)
+### MD.Ch07.V (Blueprint/Ch07.lean:188)
 原文件上下文：
 ```lean
 open Set Filter MeasureTheory ProbabilityTheory MolecularDynamics
-open scoped BigOperators Topology ContDiff ENNReal NNReal
+open scoped BigOperators Topology ContDiff ENNReal NNReal Matrix
 variable {Ω : Type*} [MeasurableSpace Ω]
 variable {n : ℕ}
 ```
@@ -71,11 +80,11 @@ variable {n : ℕ}
 abbrev V (n : ℕ) := Fin n → ℝ
 ```
 
-### MD.Ch07.Phase (Blueprint/Ch07.lean:173)
+### MD.Ch07.Phase (Blueprint/Ch07.lean:189)
 原文件上下文：
 ```lean
 open Set Filter MeasureTheory ProbabilityTheory MolecularDynamics
-open scoped BigOperators Topology ContDiff ENNReal NNReal
+open scoped BigOperators Topology ContDiff ENNReal NNReal Matrix
 variable {Ω : Type*} [MeasurableSpace Ω]
 variable {n : ℕ}
 ```
@@ -83,11 +92,11 @@ variable {n : ℕ}
 abbrev Phase (n : ℕ) := V n × V n
 ```
 
-### MD.Ch07.ouMomentum (Blueprint/Ch07.lean:198)
+### MD.Ch07.ouMomentum (Blueprint/Ch07.lean:214)
 原文件上下文：
 ```lean
 open Set Filter MeasureTheory ProbabilityTheory MolecularDynamics
-open scoped BigOperators Topology ContDiff ENNReal NNReal
+open scoped BigOperators Topology ContDiff ENNReal NNReal Matrix
 variable {Ω : Type*} [MeasurableSpace Ω]
 variable {n : ℕ}
 ```
@@ -96,11 +105,11 @@ def ouMomentum (m : V n) (γ θ h : ℝ) (p R : V n) : V n :=
   fun i ↦ Real.exp (-γ*h)*p i + Real.sqrt (θ*(1-Real.exp (-2*γ*h))) * Real.sqrt (m i) * R i
 ```
 
-### MD.Ch07.ouStep (Blueprint/Ch07.lean:211)
+### MD.Ch07.ouStep (Blueprint/Ch07.lean:227)
 原文件上下文：
 ```lean
 open Set Filter MeasureTheory ProbabilityTheory MolecularDynamics
-open scoped BigOperators Topology ContDiff ENNReal NNReal
+open scoped BigOperators Topology ContDiff ENNReal NNReal Matrix
 variable {Ω : Type*} [MeasurableSpace Ω]
 variable {n : ℕ}
 ```
@@ -109,11 +118,11 @@ def ouStep (m : V n) (γ θ h : ℝ) (R : V n) (x : Phase n) : Phase n :=
   (x.1, ouMomentum m γ θ h x.2 R)
 ```
 
-### MD.Ch07.coordDerivative (Blueprint/Ch07.lean:221)
+### MD.Ch07.coordDerivative (Blueprint/Ch07.lean:237)
 原文件上下文：
 ```lean
 open Set Filter MeasureTheory ProbabilityTheory MolecularDynamics
-open scoped BigOperators Topology ContDiff ENNReal NNReal
+open scoped BigOperators Topology ContDiff ENNReal NNReal Matrix
 variable {Ω : Type*} [MeasurableSpace Ω]
 variable {n : ℕ}
 ```
@@ -122,11 +131,11 @@ def coordDerivative (f : V n → ℝ) (x : V n) (i : Fin n) : ℝ :=
   deriv (fun z ↦ f (Function.update x i z)) (x i)
 ```
 
-### MD.Ch07.gradient (Blueprint/Ch07.lean:250)
+### MD.Ch07.gradient (Blueprint/Ch07.lean:266)
 原文件上下文：
 ```lean
 open Set Filter MeasureTheory ProbabilityTheory MolecularDynamics
-open scoped BigOperators Topology ContDiff ENNReal NNReal
+open scoped BigOperators Topology ContDiff ENNReal NNReal Matrix
 variable {Ω : Type*} [MeasurableSpace Ω]
 variable {n : ℕ}
 ```
@@ -134,11 +143,11 @@ variable {n : ℕ}
 def gradient (U : V n → ℝ) (q : V n) : V n := fun i ↦ coordDerivative U q i
 ```
 
-### MD.Ch07.driftStep (Blueprint/Ch07.lean:279)
+### MD.Ch07.driftStep (Blueprint/Ch07.lean:295)
 原文件上下文：
 ```lean
 open Set Filter MeasureTheory ProbabilityTheory MolecularDynamics
-open scoped BigOperators Topology ContDiff ENNReal NNReal
+open scoped BigOperators Topology ContDiff ENNReal NNReal Matrix
 variable {Ω : Type*} [MeasurableSpace Ω]
 variable {n : ℕ}
 ```
@@ -147,11 +156,11 @@ def driftStep (m : V n) (h : ℝ) (x : Phase n) : Phase n :=
   (fun i ↦ x.1 i + h * x.2 i / m i, x.2)
 ```
 
-### MD.Ch07.kickStep (Blueprint/Ch07.lean:282)
+### MD.Ch07.kickStep (Blueprint/Ch07.lean:298)
 原文件上下文：
 ```lean
 open Set Filter MeasureTheory ProbabilityTheory MolecularDynamics
-open scoped BigOperators Topology ContDiff ENNReal NNReal
+open scoped BigOperators Topology ContDiff ENNReal NNReal Matrix
 variable {Ω : Type*} [MeasurableSpace Ω]
 variable {n : ℕ}
 ```
@@ -160,11 +169,11 @@ def kickStep (U : V n → ℝ) (h : ℝ) (x : Phase n) : Phase n :=
   (x.1, fun i ↦ x.2 i - h * gradient U x.1 i)
 ```
 
-### MD.Ch07.aboba (Blueprint/Ch07.lean:342)
+### MD.Ch07.aboba (Blueprint/Ch07.lean:358)
 原文件上下文：
 ```lean
 open Set Filter MeasureTheory ProbabilityTheory MolecularDynamics
-open scoped BigOperators Topology ContDiff ENNReal NNReal
+open scoped BigOperators Topology ContDiff ENNReal NNReal Matrix
 variable {Ω : Type*} [MeasurableSpace Ω]
 variable {n : ℕ}
 ```
@@ -173,11 +182,11 @@ def aboba (m : V n) (U : V n → ℝ) (γ θ h : ℝ) (R : V n) : Phase n → Ph
   driftStep m (h/2) ∘ kickStep U (h/2) ∘ ouStep m γ θ h R ∘ kickStep U (h/2) ∘ driftStep m (h/2)
 ```
 
-### MD.Ch07.baoab (Blueprint/Ch07.lean:344)
+### MD.Ch07.baoab (Blueprint/Ch07.lean:360)
 原文件上下文：
 ```lean
 open Set Filter MeasureTheory ProbabilityTheory MolecularDynamics
-open scoped BigOperators Topology ContDiff ENNReal NNReal
+open scoped BigOperators Topology ContDiff ENNReal NNReal Matrix
 variable {Ω : Type*} [MeasurableSpace Ω]
 variable {n : ℕ}
 ```
@@ -186,11 +195,11 @@ def baoab (m : V n) (U : V n → ℝ) (γ θ h : ℝ) (R : V n) : Phase n → Ph
   kickStep U (h/2) ∘ driftStep m (h/2) ∘ ouStep m γ θ h R ∘ driftStep m (h/2) ∘ kickStep U (h/2)
 ```
 
-### MD.Ch07.oabao (Blueprint/Ch07.lean:346)
+### MD.Ch07.oabao (Blueprint/Ch07.lean:362)
 原文件上下文：
 ```lean
 open Set Filter MeasureTheory ProbabilityTheory MolecularDynamics
-open scoped BigOperators Topology ContDiff ENNReal NNReal
+open scoped BigOperators Topology ContDiff ENNReal NNReal Matrix
 variable {Ω : Type*} [MeasurableSpace Ω]
 variable {n : ℕ}
 ```
@@ -199,11 +208,11 @@ def oabao (m : V n) (U : V n → ℝ) (γ θ h : ℝ) (R S : V n) : Phase n → 
   ouStep m γ θ (h/2) S ∘ driftStep m (h/2) ∘ kickStep U h ∘ driftStep m (h/2) ∘ ouStep m γ θ (h/2) R
 ```
 
-### MD.Ch07.obabo (Blueprint/Ch07.lean:348)
+### MD.Ch07.obabo (Blueprint/Ch07.lean:364)
 原文件上下文：
 ```lean
 open Set Filter MeasureTheory ProbabilityTheory MolecularDynamics
-open scoped BigOperators Topology ContDiff ENNReal NNReal
+open scoped BigOperators Topology ContDiff ENNReal NNReal Matrix
 variable {Ω : Type*} [MeasurableSpace Ω]
 variable {n : ℕ}
 ```
@@ -212,11 +221,11 @@ def obabo (m : V n) (U : V n → ℝ) (γ θ h : ℝ) (R S : V n) : Phase n → 
   ouStep m γ θ (h/2) S ∘ kickStep U (h/2) ∘ driftStep m h ∘ kickStep U (h/2) ∘ ouStep m γ θ (h/2) R
 ```
 
-### MD.Ch07.momentQ (Blueprint/Ch07.lean:415)
+### MD.Ch07.momentQ (Blueprint/Ch07.lean:431)
 原文件上下文：
 ```lean
 open Set Filter MeasureTheory ProbabilityTheory MolecularDynamics
-open scoped BigOperators Topology ContDiff ENNReal NNReal
+open scoped BigOperators Topology ContDiff ENNReal NNReal Matrix
 variable {Ω : Type*} [MeasurableSpace Ω]
 variable {n : ℕ}
 ```
@@ -224,11 +233,11 @@ variable {n : ℕ}
 def momentQ (μ : Measure (ℝ × ℝ)) : ℝ := ∫ x, x.1^2 ∂μ
 ```
 
-### MD.Ch07.scalarLift (Blueprint/Ch07.lean:500)
+### MD.Ch07.scalarLift (Blueprint/Ch07.lean:516)
 原文件上下文：
 ```lean
 open Set Filter MeasureTheory ProbabilityTheory MolecularDynamics
-open scoped BigOperators Topology ContDiff ENNReal NNReal
+open scoped BigOperators Topology ContDiff ENNReal NNReal Matrix
 variable {Ω : Type*} [MeasurableSpace Ω]
 variable {n : ℕ}
 ```
@@ -238,11 +247,11 @@ def scalarLift (F : Phase 1 → Phase 1) (x : ℝ × ℝ) : ℝ × ℝ :=
   (y.1 0,y.2 0)
 ```
 
-### MD.Ch07.perturbedPotential (Blueprint/Ch07.lean:607)
+### MD.Ch07.perturbedPotential (Blueprint/Ch07.lean:623)
 原文件上下文：
 ```lean
 open Set Filter MeasureTheory ProbabilityTheory MolecularDynamics
-open scoped BigOperators Topology ContDiff ENNReal NNReal
+open scoped BigOperators Topology ContDiff ENNReal NNReal Matrix
 variable {Ω : Type*} [MeasurableSpace Ω]
 variable {n : ℕ}
 ```
@@ -250,11 +259,11 @@ variable {n : ℕ}
 def perturbedPotential (ε q : ℝ) : ℝ := q^2/2+ε*q^4/4
 ```
 
-### MD.Ch07.perturbedHamiltonian (Blueprint/Ch07.lean:608)
+### MD.Ch07.perturbedHamiltonian (Blueprint/Ch07.lean:624)
 原文件上下文：
 ```lean
 open Set Filter MeasureTheory ProbabilityTheory MolecularDynamics
-open scoped BigOperators Topology ContDiff ENNReal NNReal
+open scoped BigOperators Topology ContDiff ENNReal NNReal Matrix
 variable {Ω : Type*} [MeasurableSpace Ω]
 variable {n : ℕ}
 ```
@@ -262,11 +271,11 @@ variable {n : ℕ}
 def perturbedHamiltonian (ε : ℝ) (x : ℝ × ℝ) : ℝ := x.2^2/2+perturbedPotential ε x.1
 ```
 
-### MD.Ch07.perturbedGibbs (Blueprint/Ch07.lean:609)
+### MD.Ch07.perturbedGibbs (Blueprint/Ch07.lean:625)
 原文件上下文：
 ```lean
 open Set Filter MeasureTheory ProbabilityTheory MolecularDynamics
-open scoped BigOperators Topology ContDiff ENNReal NNReal
+open scoped BigOperators Topology ContDiff ENNReal NNReal Matrix
 variable {Ω : Type*} [MeasurableSpace Ω]
 variable {n : ℕ}
 ```
@@ -276,11 +285,11 @@ def perturbedGibbs (ε : ℝ) : Measure (ℝ × ℝ) :=
   volume.withDensity (fun x ↦ ENNReal.ofReal (w x/(∫ y, w y)))
 ```
 
-### MD.Ch07.perturbedStep (Blueprint/Ch07.lean:612)
+### MD.Ch07.perturbedStep (Blueprint/Ch07.lean:628)
 原文件上下文：
 ```lean
 open Set Filter MeasureTheory ProbabilityTheory MolecularDynamics
-open scoped BigOperators Topology ContDiff ENNReal NNReal
+open scoped BigOperators Topology ContDiff ENNReal NNReal Matrix
 variable {Ω : Type*} [MeasurableSpace Ω]
 variable {n : ℕ}
 ```
@@ -294,11 +303,11 @@ def perturbedStep (s : Fin 4) (ε γ h R S : ℝ) : (ℝ × ℝ) → (ℝ × ℝ
     else oabao m U γ 1 h (fun _ ↦ R) (fun _ ↦ S))
 ```
 
-### MD.Ch07.perturbedStationary (Blueprint/Ch07.lean:619)
+### MD.Ch07.perturbedStationary (Blueprint/Ch07.lean:635)
 原文件上下文：
 ```lean
 open Set Filter MeasureTheory ProbabilityTheory MolecularDynamics
-open scoped BigOperators Topology ContDiff ENNReal NNReal
+open scoped BigOperators Topology ContDiff ENNReal NNReal Matrix
 variable {Ω : Type*} [MeasurableSpace Ω]
 variable {n : ℕ}
 ```
@@ -309,11 +318,11 @@ def perturbedStationary (s : Fin 4) (ε γ h : ℝ) (μ : Measure (ℝ × ℝ)) 
     (μ.prod ((gaussianReal 0 1).prod (gaussianReal 0 1))) = μ
 ```
 
-### MD.Ch07.positivePairLimit (Blueprint/Ch07.lean:635)
+### MD.Ch07.positivePairLimit (Blueprint/Ch07.lean:651)
 原文件上下文：
 ```lean
 open Set Filter MeasureTheory ProbabilityTheory MolecularDynamics
-open scoped BigOperators Topology ContDiff ENNReal NNReal
+open scoped BigOperators Topology ContDiff ENNReal NNReal Matrix
 variable {Ω : Type*} [MeasurableSpace Ω]
 variable {n : ℕ}
 ```
@@ -322,11 +331,11 @@ def positivePairLimit : Filter (ℝ × ℝ) :=
   𝓝[Set.Ioi (0 : ℝ) ×ˢ Set.Ioi (0 : ℝ)] (0,0)
 ```
 
-### MD.Ch07.perturbedErrorScale (Blueprint/Ch07.lean:647)
+### MD.Ch07.perturbedErrorScale (Blueprint/Ch07.lean:663)
 原文件上下文：
 ```lean
 open Set Filter MeasureTheory ProbabilityTheory MolecularDynamics
-open scoped BigOperators Topology ContDiff ENNReal NNReal
+open scoped BigOperators Topology ContDiff ENNReal NNReal Matrix
 variable {Ω : Type*} [MeasurableSpace Ω]
 variable {n : ℕ}
 ```
@@ -335,11 +344,11 @@ def perturbedErrorScale (s : Fin 4) (γ ε h : ℝ) : ℝ :=
   if s = 0 then ε*h^2 else if s = 1 then ε^2*h^2/(1+γ^2)+ε^2*h^4 else h^2
 ```
 
-### MD.Ch07.perturbedErrorOrders (Blueprint/Ch07.lean:649)
+### MD.Ch07.perturbedErrorOrders (Blueprint/Ch07.lean:665)
 原文件上下文：
 ```lean
 open Set Filter MeasureTheory ProbabilityTheory MolecularDynamics
-open scoped BigOperators Topology ContDiff ENNReal NNReal
+open scoped BigOperators Topology ContDiff ENNReal NNReal Matrix
 variable {Ω : Type*} [MeasurableSpace Ω]
 variable {n : ℕ}
 ```
@@ -352,11 +361,11 @@ theorem perturbedErrorOrders (s : Fin 4) (γ : ℝ) (hγ : 0 < γ)
       (fun z ↦ perturbedErrorScale s γ z.1 z.2)
 ```
 
-### MD.Ch07.baoabLeading_largeFriction (Blueprint/Ch07.lean:656)
+### MD.Ch07.baoabLeading_largeFriction (Blueprint/Ch07.lean:672)
 原文件上下文：
 ```lean
 open Set Filter MeasureTheory ProbabilityTheory MolecularDynamics
-open scoped BigOperators Topology ContDiff ENNReal NNReal
+open scoped BigOperators Topology ContDiff ENNReal NNReal Matrix
 variable {Ω : Type*} [MeasurableSpace Ω]
 variable {n : ℕ}
 ```

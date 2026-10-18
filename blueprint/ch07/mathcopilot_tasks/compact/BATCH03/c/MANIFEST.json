@@ -5,9 +5,9 @@
     "MD-7.3-OUExactUpdate"
   ],
   "input_sha256": {
-    "Blueprint/Ch07.lean": "03e34bf86a5b27e03cce8552bb21fc0fea40514cd87faa953bf09a6a0a27f3c2",
-    "blueprint/ch07/ch07_source.json": "27e402f2a8b9c511106df901d6cc8472e1dae783cdf739f657879ffcf297462a",
-    "BATCH03c_PAGES.pdf": "d623a28f405853dbe1b22e7d58643891dec98aea7f12db19dc29b988ea792147"
+    "Blueprint/Ch07.lean": "f30ea154ebfb07ae85c0b806ff74b35808d5a0c3dcaa647c0c3cc80a78239e37",
+    "blueprint/ch07/ch07_source.json": "c434892ebf63b06f7cadcdfa7af408c2c12d7b645d35db431d1855224163ba19",
+    "BATCH03c_PAGES.pdf": "0cd9f01322632c0ca3a0c179c1744ee6a2ccd0abadd11446de72820d97812fbb"
   },
   "page_mapping": [
     {
@@ -21,42 +21,42 @@
       "full_name": "MD.Ch07.scalarSDE",
       "kind": "def",
       "path": "Blueprint/Ch07.lean",
-      "line": 20,
+      "line": 22,
       "code_sha256": "325d5e8f1e66b666c42a7abb02bdc2a495ff0976a8f9b1bccb55858862ee3f4c"
     },
     {
       "full_name": "MD.Ch07.V",
       "kind": "abbrev",
       "path": "Blueprint/Ch07.lean",
-      "line": 172,
+      "line": 188,
       "code_sha256": "7ab0ad90462b274b03f5b929b5f09417c0b397b6cb908fa6e7bd56677a314027"
     },
     {
       "full_name": "MD.Ch07.vectorWiener",
       "kind": "def",
       "path": "Blueprint/Ch07.lean",
-      "line": 175,
+      "line": 191,
       "code_sha256": "a24b0b3d4e3f48ea3c5384e0ec083b953b2b03d743d1687b43010c41ccaebf93"
     },
     {
       "full_name": "MD.Ch07.momentumOU",
       "kind": "def",
       "path": "Blueprint/Ch07.lean",
-      "line": 179,
+      "line": 195,
       "code_sha256": "576a8e46c2943e18d265f7c31882c77d4f6c16988d77943c3070bc43da5d5103"
     },
     {
       "full_name": "MD.Ch07.ouMomentum",
       "kind": "def",
       "path": "Blueprint/Ch07.lean",
-      "line": 198,
+      "line": 214,
       "code_sha256": "df5a3511ac6e0986b8293d21de91ddb40de94195595495bc71fa780b2962b8ae"
     },
     {
       "full_name": "MD.Ch07.ouTransitionLaw",
       "kind": "theorem",
       "path": "Blueprint/Ch07.lean",
-      "line": 201,
+      "line": 217,
       "code_sha256": "adfba8d0ccdbcb8b0628f485a0cc8827608f668495d8d9797a74093382cb6da8"
     },
     {
@@ -131,13 +131,13 @@
   },
   "files": {
     "PASTE.txt": {
-      "bytes": 11042,
-      "sha256": "0d1835abea6470197bb994604a41250dfc10a65eb707f8ee9b727e900df4b456"
+      "bytes": 13608,
+      "sha256": "186916912d4a0b7cec9601d679c7a119483d9882b43dd23f9e07b2ce18a948c3"
     },
     "BATCH03c_PAGES.pdf": {
       "bytes": 85329,
-      "sha256": "d623a28f405853dbe1b22e7d58643891dec98aea7f12db19dc29b988ea792147"
+      "sha256": "0cd9f01322632c0ca3a0c179c1744ee6a2ccd0abadd11446de72820d97812fbb"
     }
   },
-  "total_task_bytes": 101366
+  "total_task_bytes": 103932
 }

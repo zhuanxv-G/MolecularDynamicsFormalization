@@ -5,9 +5,9 @@
     "MD-7.10-ColoredNoiseAndExtension"
   ],
   "input_sha256": {
-    "Blueprint/Ch07.lean": "03e34bf86a5b27e03cce8552bb21fc0fea40514cd87faa953bf09a6a0a27f3c2",
-    "blueprint/ch07/ch07_source.json": "27e402f2a8b9c511106df901d6cc8472e1dae783cdf739f657879ffcf297462a",
-    "BATCH16e_PAGES.pdf": "91682503e09c4792bc66c0eaadabc31cefcc858817f1be3486750b85b7b513ca"
+    "Blueprint/Ch07.lean": "f30ea154ebfb07ae85c0b806ff74b35808d5a0c3dcaa647c0c3cc80a78239e37",
+    "blueprint/ch07/ch07_source.json": "c434892ebf63b06f7cadcdfa7af408c2c12d7b645d35db431d1855224163ba19",
+    "BATCH16e_PAGES.pdf": "cb97adce7aa372dbbb73c2af1da783faeab095784b230538ca88b52da25d5ec0"
   },
   "page_mapping": [
     {
@@ -21,49 +21,49 @@
       "full_name": "MD.Ch07.V",
       "kind": "abbrev",
       "path": "Blueprint/Ch07.lean",
-      "line": 172,
+      "line": 188,
       "code_sha256": "7ab0ad90462b274b03f5b929b5f09417c0b397b6cb908fa6e7bd56677a314027"
     },
     {
       "full_name": "MD.Ch07.coordDerivative",
       "kind": "def",
       "path": "Blueprint/Ch07.lean",
-      "line": 221,
+      "line": 237,
       "code_sha256": "e782d789a13f5db6817e2c995f141805e81ac75720125b846f8ee14ba3833a4b"
     },
     {
       "full_name": "MD.Ch07.gradient",
       "kind": "def",
       "path": "Blueprint/Ch07.lean",
-      "line": 250,
+      "line": 266,
       "code_sha256": "540c6af25c09d3a58da531bc32056ff1a1c070facc58d34c96b6653d781fba6f"
     },
     {
       "full_name": "MD.Ch07.lmStep",
       "kind": "def",
       "path": "Blueprint/Ch07.lean",
-      "line": 1284,
+      "line": 1319,
       "code_sha256": "ab7623c00b633a7e810ae93208fd469c71ad2d6a430419933d03204097920b45"
     },
     {
       "full_name": "MD.Ch07.coloredNoise",
       "kind": "def",
       "path": "Blueprint/Ch07.lean",
-      "line": 1295,
+      "line": 1330,
       "code_sha256": "98e2234b5df6524972003467adc0b6362a50ecf15fdbfd3f15755a70443c5436"
     },
     {
       "full_name": "MD.Ch07.coloredNoise_covariance",
       "kind": "theorem",
       "path": "Blueprint/Ch07.lean",
-      "line": 1296,
+      "line": 1331,
       "code_sha256": "cee29b15ec9c708a4da8de813a60e82396f8fc9d198b88fef9510525ad64806e"
     },
     {
       "full_name": "MD.Ch07.lmExtendedStep",
       "kind": "def",
       "path": "Blueprint/Ch07.lean",
-      "line": 1301,
+      "line": 1336,
       "code_sha256": "396001db4c1ae33c9fe71d726a6e9798c7257ca53f42c6b8c6a807e962efead1"
     }
   ],
@@ -75,13 +75,13 @@
   },
   "files": {
     "PASTE.txt": {
-      "bytes": 6366,
-      "sha256": "4e5ea3100560c2b3964354213d52dde8be541977482bc98a637af1d4a610b773"
+      "bytes": 9616,
+      "sha256": "f13a3b8cfdd4afdaad7db87c8fac8ef13b9c2e579260c0eb1a67c6c293bcb6b1"
     },
     "BATCH16e_PAGES.pdf": {
       "bytes": 88408,
-      "sha256": "91682503e09c4792bc66c0eaadabc31cefcc858817f1be3486750b85b7b513ca"
+      "sha256": "cb97adce7aa372dbbb73c2af1da783faeab095784b230538ca88b52da25d5ec0"
     }
   },
-  "total_task_bytes": 97490
+  "total_task_bytes": 100741
 }

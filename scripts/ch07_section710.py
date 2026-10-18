@@ -76,6 +76,12 @@ r'''We would expect that this scheme should have an $O(h^4)=O(\tau^2)$ error in 
 '''def lmTransientErrorBound (error : ℝ → ℝ → ℝ) : Prop :=
   ∃ C > 0, ∃ multiplier > 0, ∃ δ > 0, ∀ τ ∈ Set.Ioo 0 δ, ∀ T ≥ 0,
     |error τ T| ≤ C*(Real.exp (-multiplier*T)*τ+τ^2)
+def limitAccuracyPrinted (error : ℝ → ℝ) : Prop :=
+  Asymptotics.IsBigO (𝓝[Set.Ioi (0 : ℝ)] 0) error (fun h ↦ h^2)
+
+def limitAccuracyPrinted_corrected (error : ℝ → ℝ) : Prop :=
+  Asymptotics.IsBigO (𝓝[Set.Ioi (0 : ℝ)] 0) error (fun h ↦ h^4)
+
 theorem limitAccuracy_rescale (h : ℝ) : (h^2/2)^2 = h^4/4 := by ring''',kind='definition',
 issues=['已目视核对PDF329：本段前面以τ为实际过阻尼步长并称长期二阶，末句却写O(h²)。若仍沿用τ=h²/2，应区分长期O(τ²)=O(h⁴)和有限时一阶O(τ)=O(h²)；原文符号存在歧义。'],
 extra=['用显式瞬态上界命题保留指数衰减的一阶项和二阶项，不宣称该命题已对任意势成立；其成立所需的增长/耗散与正则条件及真实分布误差识别尚缺。','原文称all values of h and τ亦不能由局部渐近展开推出全步长阶数结论。'],
@@ -87,6 +93,11 @@ r'''An exact Ornstein-Uhlenbeck solve can be added where it is required in the s
   ext i <;> simp [ouStep,ouMomentum]
 theorem zeroFrictionBAOAB (m : V n) (U : V n → ℝ) (θ h : ℝ) (R : V n) :
     baoab m U 0 θ h R = kickStep U (h/2) ∘ driftStep m h ∘ kickStep U (h/2) := by
-  sorry''',
+  funext x
+  have ha : driftStep m (h/2) (driftStep m (h/2) (kickStep U (h/2) x)) =
+      driftStep m h (kickStep U (h/2) x) := by
+    ext i <;> dsimp [driftStep] <;> ring
+  simp only [baoab,Function.comp_apply,zeroFrictionOU]
+  rw [ha]''',
 extra=['OU为恒等映射及BAOAB合并成BAB的函数恒等式；其他字母排列得到ABA或BAB，不一概声称同一种Verlet。'],
-missing='两个A半步合并及函数组合化简的短桥尚未完成。')
+missing=None)

@@ -5,9 +5,9 @@
     "MD-7.8.1-GibbsDerivativeIdentities"
   ],
   "input_sha256": {
-    "Blueprint/Ch07.lean": "03e34bf86a5b27e03cce8552bb21fc0fea40514cd87faa953bf09a6a0a27f3c2",
-    "blueprint/ch07/ch07_source.json": "27e402f2a8b9c511106df901d6cc8472e1dae783cdf739f657879ffcf297462a",
-    "BATCH12f_PAGES.pdf": "7a6087b8aee032c9e4ec9ced89bc21feecac65f0e64b79be91294a38d29b615e"
+    "Blueprint/Ch07.lean": "f30ea154ebfb07ae85c0b806ff74b35808d5a0c3dcaa647c0c3cc80a78239e37",
+    "blueprint/ch07/ch07_source.json": "c434892ebf63b06f7cadcdfa7af408c2c12d7b645d35db431d1855224163ba19",
+    "BATCH12f_PAGES.pdf": "fc8644a71bf570c72f042d96bb111ef40281924ff934aba61b9fea77fe60cc55"
   },
   "page_mapping": [
     {
@@ -26,91 +26,91 @@
       "full_name": "MD.Ch07.V",
       "kind": "abbrev",
       "path": "Blueprint/Ch07.lean",
-      "line": 172,
+      "line": 188,
       "code_sha256": "7ab0ad90462b274b03f5b929b5f09417c0b397b6cb908fa6e7bd56677a314027"
     },
     {
       "full_name": "MD.Ch07.Phase",
       "kind": "abbrev",
       "path": "Blueprint/Ch07.lean",
-      "line": 173,
+      "line": 189,
       "code_sha256": "ef1520e3b22ac1c99a30a989deafe8d3da44a9f2a3e5b6c2cd3220218b88513e"
     },
     {
       "full_name": "MD.Ch07.coordDerivative",
       "kind": "def",
       "path": "Blueprint/Ch07.lean",
-      "line": 221,
+      "line": 237,
       "code_sha256": "e782d789a13f5db6817e2c995f141805e81ac75720125b846f8ee14ba3833a4b"
     },
     {
       "full_name": "MD.Ch07.ouForward",
       "kind": "def",
       "path": "Blueprint/Ch07.lean",
-      "line": 224,
+      "line": 240,
       "code_sha256": "ada8fa685075ac3ed7161cba49ec5ecfe0edd30b3dc8d4f60a04214f8d375f3a"
     },
     {
       "full_name": "MD.Ch07.gradient",
       "kind": "def",
       "path": "Blueprint/Ch07.lean",
-      "line": 250,
+      "line": 266,
       "code_sha256": "540c6af25c09d3a58da531bc32056ff1a1c070facc58d34c96b6653d781fba6f"
     },
     {
       "full_name": "MD.Ch07.aForward",
       "kind": "def",
       "path": "Blueprint/Ch07.lean",
-      "line": 306,
+      "line": 322,
       "code_sha256": "67309b12bc7b3e2e6bfcfbca542f16a51bda44d4c8b26224e227a6edd17748d7"
     },
     {
       "full_name": "MD.Ch07.bForward",
       "kind": "def",
       "path": "Blueprint/Ch07.lean",
-      "line": 308,
+      "line": 324,
       "code_sha256": "ea071fbd1968df8265232f2001ee9f5cef582b129edbf2a09a407fa3b7aaeb72"
     },
     {
       "full_name": "MD.Ch07.mechanicalHamiltonian",
       "kind": "def",
       "path": "Blueprint/Ch07.lean",
-      "line": 939,
+      "line": 963,
       "code_sha256": "62d2e0a30b1f75b8d94db47d5f10585188510cf0bd5827e56eafaa0b12b507aa"
     },
     {
       "full_name": "MD.Ch07.gibbsWeight",
       "kind": "def",
       "path": "Blueprint/Ch07.lean",
-      "line": 941,
+      "line": 965,
       "code_sha256": "f25e4e3ead34a06695f3b9d9b5f607bc68063a1d6f159ec2c97866d0ac9b2e38"
     },
     {
       "full_name": "MD.Ch07.gFunction",
       "kind": "def",
       "path": "Blueprint/Ch07.lean",
-      "line": 943,
+      "line": 967,
       "code_sha256": "cc30083175278bdc864a01514c94051a16795dec1d28cea6a644420cd7c2396c"
     },
     {
       "full_name": "MD.Ch07.phaseO",
       "kind": "def",
       "path": "Blueprint/Ch07.lean",
-      "line": 945,
+      "line": 969,
       "code_sha256": "b752c7d36edbc3a3c5ebe1f512411652587250d3883672146862196dd5a49140"
     },
     {
       "full_name": "MD.Ch07.phaseLD",
       "kind": "def",
       "path": "Blueprint/Ch07.lean",
-      "line": 947,
+      "line": 971,
       "code_sha256": "a938d9580765a245f97b627d9f8b42ca57d63a0137008871356c138ecbb543b5"
     },
     {
       "full_name": "MD.Ch07.gibbsDerivativeIdentities",
       "kind": "theorem",
       "path": "Blueprint/Ch07.lean",
-      "line": 949,
+      "line": 973,
       "code_sha256": "ef4166ea26f1dae000728d708e528c91fb9054e6809179f47c0b140708d06b6b"
     }
   ],
@@ -122,13 +122,13 @@
   },
   "files": {
     "PASTE.txt": {
-      "bytes": 10351,
-      "sha256": "e5ff626b4d18cda46ab8ab3342297b8cc5de098ab593f5bd9a67ba0d77b3218e"
+      "bytes": 14986,
+      "sha256": "6d5d8eae0e109f0e3ccbcf2a16a40a693a3265697473488eca1b71e9a442c05b"
     },
     "BATCH12f_PAGES.pdf": {
       "bytes": 90731,
-      "sha256": "7a6087b8aee032c9e4ec9ced89bc21feecac65f0e64b79be91294a38d29b615e"
+      "sha256": "fc8644a71bf570c72f042d96bb111ef40281924ff934aba61b9fea77fe60cc55"
     }
   },
-  "total_task_bytes": 105255
+  "total_task_bytes": 109890
 }

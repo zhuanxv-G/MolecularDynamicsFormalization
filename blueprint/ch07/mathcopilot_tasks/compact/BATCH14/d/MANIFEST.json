@@ -5,9 +5,9 @@
     "MD-7.9.1-Lemma71"
   ],
   "input_sha256": {
-    "Blueprint/Ch07.lean": "03e34bf86a5b27e03cce8552bb21fc0fea40514cd87faa953bf09a6a0a27f3c2",
-    "blueprint/ch07/ch07_source.json": "27e402f2a8b9c511106df901d6cc8472e1dae783cdf739f657879ffcf297462a",
-    "BATCH14d_PAGES.pdf": "1de85f12e786994bea3c6eba26215c2468bf496defdd23b06d9e5f99095b0fc0"
+    "Blueprint/Ch07.lean": "f30ea154ebfb07ae85c0b806ff74b35808d5a0c3dcaa647c0c3cc80a78239e37",
+    "blueprint/ch07/ch07_source.json": "c434892ebf63b06f7cadcdfa7af408c2c12d7b645d35db431d1855224163ba19",
+    "BATCH14d_PAGES.pdf": "302fed3beb6e564b2f196a7360f493b13c0e54acb764505733ad272d69e90be4"
   },
   "page_mapping": [
     {
@@ -26,7 +26,7 @@
       "full_name": "MD.Ch07.lemma71",
       "kind": "theorem",
       "path": "Blueprint/Ch07.lean",
-      "line": 1109,
+      "line": 1133,
       "code_sha256": "1077d2b276ec9885603f670694e1914f15a7d48466f40330a481974ffe64fb8e"
     },
     {
@@ -52,13 +52,13 @@
   },
   "files": {
     "PASTE.txt": {
-      "bytes": 5393,
-      "sha256": "21a16565a8fae33005f86eb29992d6688683cc0618c1b1c1c58b8ec2695fb4ca"
+      "bytes": 9831,
+      "sha256": "db905c0d98cf86ea1eb7652071db12a1686890e48e4649864f46fcf719a870b7"
     },
     "BATCH14d_PAGES.pdf": {
       "bytes": 100542,
-      "sha256": "1de85f12e786994bea3c6eba26215c2468bf496defdd23b06d9e5f99095b0fc0"
+      "sha256": "302fed3beb6e564b2f196a7360f493b13c0e54acb764505733ad272d69e90be4"
     }
   },
-  "total_task_bytes": 107966
+  "total_task_bytes": 112404
 }

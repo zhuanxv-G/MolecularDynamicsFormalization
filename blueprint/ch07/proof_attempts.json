@@ -6,10 +6,30 @@
     "decision": "缺大型理论时直接记录缺项；否则最多三条短路线。"
   },
   "MD-7.2-StrongWeakComparison": {
-    "reason": "反向反例还需两点概率测度的积分化简；下一批限三条短路线。",
-    "category": "缺大型理论",
-    "routes": [],
-    "decision": "缺大型理论时直接记录缺项；否则最多三条短路线。"
+    "reason": "约定的三条路线内已完成；失败路线保留，不再列作未证。",
+    "category": null,
+    "routes": [
+      {
+        "route": 1,
+        "outcome": "FAIL",
+        "reason": "两点概率质量归一与任意函数积分尚未化简",
+        "receipt": "validation/batches/shortproof-v1.json"
+      },
+      {
+        "route": 2,
+        "outcome": "FAIL",
+        "reason": "dirac可积性需要有限范数参数；NNReal标量归一需转ENNReal",
+        "receipt": "validation/batches/shortproof-v2.json"
+      },
+      {
+        "route": 3,
+        "outcome": "PASS",
+        "reason": "显式dirac可积性、测度求和积分及NNReal归一后通过",
+        "receipt": "validation/batches/shortproof-v3.json"
+      }
+    ],
+    "decision": "三条路线内已证；保留失败记录。",
+    "status": "resolved"
   },
   "MD-7.2-PartitionPrinted": {
     "reason": "原文倒数关系导致归一化错误，原文版不证明；修正版正常证明。",
@@ -292,14 +312,84 @@
     "decision": "缺大型理论时直接记录缺项；否则最多三条短路线。"
   },
   "MD-7.9.3-ZeroFrictionVerlet": {
-    "reason": "两个A半步合并及函数组合化简的短桥尚未完成。",
-    "category": "缺大型理论",
-    "routes": [],
-    "decision": "缺大型理论时直接记录缺项；否则最多三条短路线。"
+    "reason": "约定的三条路线内已完成；失败路线保留，不再列作未证。",
+    "category": null,
+    "routes": [
+      {
+        "route": 1,
+        "outcome": "FAIL",
+        "reason": "直接逐坐标ring未能识别梯度内两个等价位置函数",
+        "receipt": "validation/batches/shortproof-v1.json"
+      },
+      {
+        "route": 2,
+        "outcome": "PASS",
+        "reason": "先证明两个漂移半步合并，再代入OU恒等映射通过",
+        "receipt": "validation/batches/shortproof-v3.json"
+      }
+    ],
+    "decision": "三条路线内已证；保留失败记录。",
+    "status": "resolved"
   },
   "MD-7.11.1-TemperatureObservables": {
     "reason": "需Gaussian二阶矩和多维Gibbs积分分部桥；不新建遍历性理论。",
     "category": "缺大型理论",
+    "routes": [],
+    "decision": "缺大型理论时直接记录缺项；否则最多三条短路线。"
+  },
+  "MD-7.13-ExactFastGaussianLaw": {
+    "reason": "需要线性SDE变分常数、确定积分Gaussian律及矩阵协方差理论；本轮不建设。",
+    "category": "缺大型理论",
+    "routes": [],
+    "decision": "缺大型理论时直接记录缺项；否则最多三条短路线。"
+  },
+  "MD-7.13-DeterminantTrace": {
+    "reason": "真实矩阵指数的特征分解/二阶Cayley–Hamilton闭式与det/trace桥；不建设一般线性SDE理论。",
+    "category": "缺大型理论",
+    "routes": [],
+    "decision": "缺大型理论时直接记录缺项；否则最多三条短路线。"
+  },
+  "MD-7.13-SpectralRadiusStability": {
+    "reason": "需实二次特征多项式的Schur/Jury判据与复根模长分类；不建设通用随机稳定性理论。",
+    "category": "缺大型理论",
+    "routes": [],
+    "decision": "缺大型理论时直接记录缺项；否则最多三条短路线。"
+  },
+  "MD-7.13-HyperbolicPhaseTransform": {
+    "reason": "约定的三条路线内已完成；失败路线保留，不再列作未证。",
+    "category": null,
+    "routes": [
+      {
+        "route": 1,
+        "outcome": "FAIL",
+        "reason": "平方约束及根式分母化简失败",
+        "receipt": "validation/batches/shortproof-v1.json"
+      },
+      {
+        "route": 2,
+        "outcome": "FAIL",
+        "reason": "平方比较引理参数未显式给出；field_simp展开根式不匹配",
+        "receipt": "validation/batches/shortproof-v2.json"
+      },
+      {
+        "route": 3,
+        "outcome": "PASS",
+        "reason": "显式artanh公式与同一正平方根分母约消后通过",
+        "receipt": "validation/batches/shortproof-v3.json"
+      }
+    ],
+    "decision": "三条路线内已证；保留失败记录。",
+    "status": "resolved"
+  },
+  "MD-7.13-StabilityEnvelope": {
+    "reason": "包络等价需cosh/sinh正性及实平方根平方的短桥。",
+    "category": "缺大型理论",
+    "routes": [],
+    "decision": "缺大型理论时直接记录缺项；否则最多三条短路线。"
+  },
+  "MD-7.13-FrictionThresholdPrinted": {
+    "reason": "阈值有理化与大参数根式极限需短桥；所有h包络需sinh下界和前条平方等价。",
+    "category": "原书疑误不证",
     "routes": [],
     "decision": "缺大型理论时直接记录缺项；否则最多三条短路线。"
   }

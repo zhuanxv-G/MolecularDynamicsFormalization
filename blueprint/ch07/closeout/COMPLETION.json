@@ -1,0 +1,27 @@
+{
+  "machine_check_status": "passed",
+  "body_all_items_on_disk": true,
+  "final_full_check_passed": true,
+  "entries": 118,
+  "declarations": 337,
+  "declaration_status": {
+    "定义或记号": 231,
+    "未证": 58,
+    "已证": 48
+  },
+  "canonical_sha256": "f30ea154ebfb07ae85c0b806ff74b35808d5a0c3dcaa647c0c3cc80a78239e37",
+  "source_json_sha256": "c434892ebf63b06f7cadcdfa7af408c2c12d7b645d35db431d1855224163ba19",
+  "native_binding": "blueprint/ch07/validation/batches/shortproof-v3-binding.json",
+  "native_binding_sha256": "1d221f9e298041f1d045db9ff6a73e2faae3e80c0333ddda9ed0a60a774cf4cc",
+  "full_report": "blueprint/ch07/closeout/full/CHECK_REPORT.json",
+  "full_report_sha256": "72036d3367aae1669631d24966d11ab5d57abebd65f0a0fb7d13b9bf440a1f22",
+  "frozen_files": 15196,
+  "formal_source_files": 298,
+  "formal_sorry": 0,
+  "formal_axiom_declarations": 0,
+  "batches": 20,
+  "subtasks": 118,
+  "covered_entries": 118,
+  "website_submitted": false,
+  "scope": "全部正文条目已登记；限定陈述与未证部分逐条区分；没有进入第8章。"
+}

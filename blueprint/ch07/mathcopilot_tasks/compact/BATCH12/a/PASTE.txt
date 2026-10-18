@@ -3,9 +3,9 @@
 Lean/Mathlib均4.34.0。原页PDF映射：[311]；印刷页=[290].
 input_sha256请原样回显：
 {
-  "Blueprint/Ch07.lean": "03e34bf86a5b27e03cce8552bb21fc0fea40514cd87faa953bf09a6a0a27f3c2",
-  "blueprint/ch07/ch07_source.json": "27e402f2a8b9c511106df901d6cc8472e1dae783cdf739f657879ffcf297462a",
-  "BATCH12a_PAGES.pdf": "dd6eb777912faabccd0a385b5c4efe9b6080a19590f1dab6a25a694ca4a8f6c4"
+  "Blueprint/Ch07.lean": "f30ea154ebfb07ae85c0b806ff74b35808d5a0c3dcaa647c0c3cc80a78239e37",
+  "blueprint/ch07/ch07_source.json": "c434892ebf63b06f7cadcdfa7af408c2c12d7b645d35db431d1855224163ba19",
+  "BATCH12a_PAGES.pdf": "683b12b382bbe483785d4262e9e5a1677bdfa64aae472f0c7c67f8c14bdea1db"
 }
 用代码将JSON对象(batch,input_sha256,items)写到 /workspace/.mathcopilot/reviews/ch07/BATCH12a_review.json；items仅含本source_id。
 items字段：source_id、verdict(PASS/FAIL/NEEDS_HUMAN)、transcription、semantic_review、counterexample、suggested_fix、printed_version、corrected_version。逐版区分原文疑误和修正版结论；缺材料必须具体指出，不猜测。写后json.loads自检，最后仅回复路径及统计。
@@ -20,8 +20,17 @@ items字段：source_id、verdict(PASS/FAIL/NEEDS_HUMAN)、transcription、seman
   "printed_page": "290",
   "pdf_page": "311",
   "statement_latex": "For some observable $\\vartheta(q,p)$, we have that\n\\[\\langle\\vartheta\\rangle_h=\\int_{\\mathcal D}\\vartheta(q,p)\\widehat\\rho(q,p)d\\omega\n=\\int_{\\mathcal D}\\vartheta(q,p)\\rho_\\beta(q,p)(1+hf_1(q,p)+h^2f_2(q,p)+\\cdots)d\\omega\n=\\langle\\vartheta\\rangle+h\\langle\\vartheta f_1\\rangle+h^2\\langle\\vartheta f_2\\rangle+\\cdots.\\]",
-  "proof_latex": "Distribute the product and use linearity of integration at each finite order.",
-  "proof_note": "按所列原页转录原书证明。",
+  "proof_latex": null,
+  "proof_outline": "Distribute the product and use linearity of integration at each finite order.",
+  "proof_note": "原页推导与上下文全文见original_page_text；数学符号的排版以随附原页PDF为准。",
+  "original_page_text": [
+    {
+      "pdf_page": 311,
+      "printed_page": 290,
+      "text": "290\n7\nNumerical Methods for Stochastic Molecular Dynamics\nwe obtain\n\u0006\nL\u0004\nLD C hL\u0004\n1 C h2L\u0004\n2 C O.h3/\n\u0007 \u0004\n\u0005ˇŒ1 C hf1 C h2f2 C O.h3/\t\n\u0005\nD 0:\nCombining like powers, we have at zero’th order, the equation\nL\u0004\nLD\u0005ˇ D 0;\nwhich we know to hold since Langevin dynamics preserves the canonical ensemble.\nAt ﬁrst order we obtain\nL\u0004\nLD.\u0005ˇf1/ C L\u0004\n1\u0005ˇ D 0:\n(7.19)\nIf L\u0004\n1 is known, we can calculate its action on \u0005ˇ, giving an inhomogeneity for\nthe above partial differential equation. It will be difﬁcult to solve the perturbation\nequation (7.19) in general, although its linearity and the fact that L\u0004\nLD (with our\nassumptions) has a compact resolvent (and therefore a discrete spectrum) together\nimply that if the perturbation can be bounded, then it should be possible to solve for\nthe correction function. We expect that this solution should be stable with respect\nto perturbation (and exponentially attracting). This also implies global existence\n(for all positive time) of the semigroup deﬁning the solution of the time-dependent\nproblem. We do not provide such a rigorous result here but simply plunge ahead,\nin the best tradition of applied mathematics, to obtain a perturbative expansion;\nveriﬁcation of our results must therefore be obtained by numerical experiment, a\nposteriori.\nThe leading order errors can be computed in simulation by exploiting the speciﬁc\nform of our ansatz for the invariant measure associated to the discretized dynamics.\nFor some observable #.q; p/, we have that\nh#ih D\nZ\nD\n#.q; p/ O\u0005.q; p/d!;\nD\nZ\nD\n#.q; p/\u0005ˇ.q; p/.1 C hf1.q; p/ C h2f2.q; p/ C : : :/d!;\nD\nZ\nD\n#.q; p/\u0005ˇ.q; p/d! C h\nZ\nD\n#.q; p/f1.q; p/\u0005ˇ.q; p/d! C : : : ;\nD h#i C hh#f1i C h2h#f2i C : : : :\nHence by obtaining the correction functions fi, we are able to apply a modiﬁcation\nto our computed expectation in order to recover the true canonical average.\n"
+    }
+  ],
+  "transcription_note": "PDF文字层原样保留，陈述中的数学排版转写为LaTeX；文字层有特殊字形编码时以目视原页为准。PDF347的Exercises之后不在正文范围内。",
   "context_notation": [],
   "extra_assumptions": [
     "完整覆盖0–2阶有限截断积分；无限级数交换与实际误差余项仍需支配收敛及弱展开理论，明确不声称已证。"
@@ -58,11 +67,11 @@ theorem observableCorrectionExpansion (ν : Measure Ω) (φ ρ f1 f2 : Ω → �
 ## 项目依赖定义体及选择规格
 以下def/abbrev/structure完整保留；定理列出完整类型，Mathlib标准定义无需摘录。
 
-### MD.Ch07.observableCorrectionExpansion (Blueprint/Ch07.lean:880)
+### MD.Ch07.observableCorrectionExpansion (Blueprint/Ch07.lean:904)
 原文件上下文：
 ```lean
 open Set Filter MeasureTheory ProbabilityTheory MolecularDynamics
-open scoped BigOperators Topology ContDiff ENNReal NNReal
+open scoped BigOperators Topology ContDiff ENNReal NNReal Matrix
 variable {Ω : Type*} [MeasurableSpace Ω]
 variable {n : ℕ}
 ```

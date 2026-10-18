@@ -11,7 +11,16 @@
   "pdf_page": "288",
   "statement_latex": "By way of illustration of what we mean by a numerical sampling method, consider the system of independent Ornstein-Uhlenbeck (OU) processes\n\\[dp=-\\gamma pdt+\\sqrt{2k_BT\\gamma}\\,M^{1/2}dW.\\tag{7.2}\\]",
   "proof_latex": null,
-  "proof_note": "原书未给独立完整证明。",
+  "proof_outline": null,
+  "proof_note": "原页推导与上下文全文见original_page_text；数学符号的排版以随附原页PDF为准。",
+  "original_page_text": [
+    {
+      "pdf_page": 288,
+      "printed_page": 267,
+      "text": "7.3\nSampling Iterations\n267\n105\n104\n103\n102\n101\n0.05\n0.1\n0.2\n0.3\nStepsize\nNumber of force evaluations\nOp\nOp\nOptitimu\nmum ststststep\nep\nep\nepsisisize\nze\nze\nze\nLarge\nError\nSmall\nError\nFig. 7.2 We plot the error in the distribution of q 2 R for U.q/ D .q2 \u0002 1/2. The error in\nthe computed distribution is a function of both the number of force evaluations and the stepsize\nused, with the optimal choice of stepsize for a given number of force evaluations shown by the\nwhite guideline. Due to discretization bias, choosing the maximum stepsize is not always the best\nstrategy\nﬁgure: while increasing the stepsize means we more rapidly converge with each\nstep, the distribution that the discretization scheme converges to is incorrect. For\nsmall stepsizes, this error due to discretization may be negligible when compared to\nthe sampling error, but we converge more slowly towards the ﬁnal distribution. As\nthe stepsize is increased, the discretization error may dominate the overall error in\ncalculation.\n7.3\nSampling Iterations\nBy way of illustration of what we mean by a numerical sampling method, consider\nthe system of independent Ornstein-Uhlenbeck (OU) processes\ndp D \u0003\npdt C\np\n2kBT\nM1=2dW:\n(7.2)\nFollowing the argument of Sect. 6.3.2 in the previous chapter,\ndŒexp.\nt/p\t D \n exp.\nt/pdt C exp.\nt/Œ\u0003\npdt C\np\n2kBT\nM1=2dW\t\nD exp.\nt/\np\n2kBT\nM1=2dW:\n"
+    }
+  ],
+  "transcription_note": "PDF文字层原样保留，陈述中的数学排版转写为LaTeX；文字层有特殊字形编码时以目视原页为准。PDF347的Exercises之后不在正文范围内。",
   "context_notation": [
     "θ=k_BT；M为正对角质量矩阵，m i为其对角元。"
   ],
@@ -58,7 +67,16 @@ def momentumOU (P : Measure Ω) (W p : ℝ → Ω → V n)
   "pdf_page": "288",
   "statement_latex": "Following the argument of Sect. 6.3.2 in the previous chapter,\n\\[d[\\exp(\\gamma t)p]=\\gamma\\exp(\\gamma t)pdt+\\exp(\\gamma t)[-\\gamma pdt+\\sqrt{2k_BT\\gamma}M^{1/2}dW]\n=\\exp(\\gamma t)\\sqrt{2k_BT\\gamma}M^{1/2}dW.\\]",
   "proof_latex": null,
-  "proof_note": "原书未给独立完整证明。",
+  "proof_outline": null,
+  "proof_note": "原页推导与上下文全文见original_page_text；数学符号的排版以随附原页PDF为准。",
+  "original_page_text": [
+    {
+      "pdf_page": 288,
+      "printed_page": 267,
+      "text": "7.3\nSampling Iterations\n267\n105\n104\n103\n102\n101\n0.05\n0.1\n0.2\n0.3\nStepsize\nNumber of force evaluations\nOp\nOp\nOptitimu\nmum ststststep\nep\nep\nepsisisize\nze\nze\nze\nLarge\nError\nSmall\nError\nFig. 7.2 We plot the error in the distribution of q 2 R for U.q/ D .q2 \u0002 1/2. The error in\nthe computed distribution is a function of both the number of force evaluations and the stepsize\nused, with the optimal choice of stepsize for a given number of force evaluations shown by the\nwhite guideline. Due to discretization bias, choosing the maximum stepsize is not always the best\nstrategy\nﬁgure: while increasing the stepsize means we more rapidly converge with each\nstep, the distribution that the discretization scheme converges to is incorrect. For\nsmall stepsizes, this error due to discretization may be negligible when compared to\nthe sampling error, but we converge more slowly towards the ﬁnal distribution. As\nthe stepsize is increased, the discretization error may dominate the overall error in\ncalculation.\n7.3\nSampling Iterations\nBy way of illustration of what we mean by a numerical sampling method, consider\nthe system of independent Ornstein-Uhlenbeck (OU) processes\ndp D \u0003\npdt C\np\n2kBT\nM1=2dW:\n(7.2)\nFollowing the argument of Sect. 6.3.2 in the previous chapter,\ndŒexp.\nt/p\t D \n exp.\nt/pdt C exp.\nt/Œ\u0003\npdt C\np\n2kBT\nM1=2dW\t\nD exp.\nt/\np\n2kBT\nM1=2dW:\n"
+    }
+  ],
+  "transcription_note": "PDF文字层原样保留，陈述中的数学排版转写为LaTeX；文字层有特殊字形编码时以目视原页为准。PDF347的Exercises之后不在正文范围内。",
   "context_notation": [],
   "extra_assumptions": [
     "把随机微分乘积法则陈述为从0到t的确定性加权Itô积分等式；有限时间和L²解资格由momentumOU明确。"
@@ -95,7 +113,16 @@ theorem ouIntegratingFactor (P : Measure Ω) (W p : ℝ → Ω → V n)
   "pdf_page": "289",
   "statement_latex": "Integrating from $t$ to $t+h$ and multiplying by $\\exp(-\\gamma t)$, we arrive at the solution\n\\[p(t+h)=e^{-\\gamma h}p(t)+\\sqrt{k_BT(1-e^{-2\\gamma h})}M^{1/2}Z,\\tag{7.3}\\]\nwhere $Z$ is a vector of independent, standard normal random variables.",
   "proof_latex": null,
-  "proof_note": "原书未给独立完整证明。",
+  "proof_outline": null,
+  "proof_note": "原页推导与上下文全文见original_page_text；数学符号的排版以随附原页PDF为准。",
+  "original_page_text": [
+    {
+      "pdf_page": 289,
+      "printed_page": 268,
+      "text": "268\n7\nNumerical Methods for Stochastic Molecular Dynamics\nIntegrating from t to t C h and multiplying by exp.\u0003\nt/, we arrive at the solution\np.t C h/ D e\u0002\nhp.t/ C\np\nkBT.1 \u0003 e\u00022\nh/M1=2Z;\n(7.3)\nwhere Z is a vector of independent, standard normal random variables. Alterna-\ntively, we may write this as a discrete iteration in terms of a random map:\npnC1 D e\u0002\nhpn C\np\nkBT.1 \u0003 e\u00022\nh/M1=2Rn;\nwith normally distributed R. For later purposes, we will think of this update as acting\non both q and p, leaving q unchanged, i.e.\n.qnC1; pnC1/ D .qn; e\u0002\nhpn C\np\nkBT.1 \u0003 e\u00022\nh/M1=2Rn/:\nThe Fokker-Planck operator for the OU system (7.2) can be computed directly as\nL\u0004\nO\b.q; p/ D \nrp \u0002 .p\b/ C \nkBTrp \u0002 Mrp\b:\nThe Ornstein-Uhlenbeck process models the momentum of a Brownian particle,\nand in deriving it we thought of \n as being associated to the collisional frequency\nwith the particles of the bath. Alternatively, if we ignore the physical origin of this\nparameter, we can think of \n as an arbitrary coefﬁcient; the sampling of the invariant\nmeasure does not depend on this choice. Thus we have a family of sampling\niterations for the Gaussian distribution, deﬁned for different choices of \n.\n7.3.1\nSplitting Methods for Langevin Dynamics\nWe will now consider a family of iterations for molecular systems which are con-\nstructed from simple building blocks based on the splitting of an SDE, speciﬁcally\nLangevin dynamics:\ndq D M\u00021pdt;\ndp D \u0003rU.q/dt \u0003 \npdt C\np\n2\nkBTM1=2dW:\n(7.4)\nJust as in the deterministic setting (for Newton’s equations of motion) we construct\nsuch splitting methods by way of an additive decomposition of the vector ﬁeld,\nwhere the differential equations corresponding to any individual piece can be solved\nexactly. Methods are built from a sequence of updates corresponding to an exact\nsolve of each piece. By “exact solve” we here mean the construction of a method of\nexactly sampling the distribution generated by the corresponding component. The\n"
+    }
+  ],
+  "transcription_note": "PDF文字层原样保留，陈述中的数学排版转写为LaTeX；文字层有特殊字形编码时以目视原页为准。PDF347的Exercises之后不在正文范围内。",
   "context_notation": [],
   "extra_assumptions": [
     "等式解释为存在与过去动量独立的标准正态向量的随机表示；不是沿用同一Z表示所有时刻。",
@@ -137,7 +164,16 @@ theorem ouTransitionLaw (P : Measure Ω) (W p : ℝ → Ω → V n)
   "pdf_page": "289",
   "statement_latex": "Alternatively, we may write this as a discrete iteration in terms of a random map:\n\\[p_{n+1}=e^{-\\gamma h}p_n+\\sqrt{k_BT(1-e^{-2\\gamma h})}M^{1/2}R_n,\\]\nwith normally distributed $R$. For later purposes, we will think of this update as acting on both $q$ and $p$, leaving $q$ unchanged, i.e.\n\\[(q_{n+1},p_{n+1})=(q_n,e^{-\\gamma h}p_n+\\sqrt{k_BT(1-e^{-2\\gamma h})}M^{1/2}R_n).\\]",
   "proof_latex": null,
-  "proof_note": "原书未给独立完整证明。",
+  "proof_outline": null,
+  "proof_note": "原页推导与上下文全文见original_page_text；数学符号的排版以随附原页PDF为准。",
+  "original_page_text": [
+    {
+      "pdf_page": 289,
+      "printed_page": 268,
+      "text": "268\n7\nNumerical Methods for Stochastic Molecular Dynamics\nIntegrating from t to t C h and multiplying by exp.\u0003\nt/, we arrive at the solution\np.t C h/ D e\u0002\nhp.t/ C\np\nkBT.1 \u0003 e\u00022\nh/M1=2Z;\n(7.3)\nwhere Z is a vector of independent, standard normal random variables. Alterna-\ntively, we may write this as a discrete iteration in terms of a random map:\npnC1 D e\u0002\nhpn C\np\nkBT.1 \u0003 e\u00022\nh/M1=2Rn;\nwith normally distributed R. For later purposes, we will think of this update as acting\non both q and p, leaving q unchanged, i.e.\n.qnC1; pnC1/ D .qn; e\u0002\nhpn C\np\nkBT.1 \u0003 e\u00022\nh/M1=2Rn/:\nThe Fokker-Planck operator for the OU system (7.2) can be computed directly as\nL\u0004\nO\b.q; p/ D \nrp \u0002 .p\b/ C \nkBTrp \u0002 Mrp\b:\nThe Ornstein-Uhlenbeck process models the momentum of a Brownian particle,\nand in deriving it we thought of \n as being associated to the collisional frequency\nwith the particles of the bath. Alternatively, if we ignore the physical origin of this\nparameter, we can think of \n as an arbitrary coefﬁcient; the sampling of the invariant\nmeasure does not depend on this choice. Thus we have a family of sampling\niterations for the Gaussian distribution, deﬁned for different choices of \n.\n7.3.1\nSplitting Methods for Langevin Dynamics\nWe will now consider a family of iterations for molecular systems which are con-\nstructed from simple building blocks based on the splitting of an SDE, speciﬁcally\nLangevin dynamics:\ndq D M\u00021pdt;\ndp D \u0003rU.q/dt \u0003 \npdt C\np\n2\nkBTM1=2dW:\n(7.4)\nJust as in the deterministic setting (for Newton’s equations of motion) we construct\nsuch splitting methods by way of an additive decomposition of the vector ﬁeld,\nwhere the differential equations corresponding to any individual piece can be solved\nexactly. Methods are built from a sequence of updates corresponding to an exact\nsolve of each piece. By “exact solve” we here mean the construction of a method of\nexactly sampling the distribution generated by the corresponding component. The\n"
+    }
+  ],
+  "transcription_note": "PDF文字层原样保留，陈述中的数学排版转写为LaTeX；文字层有特殊字形编码时以目视原页为准。PDF347的Exercises之后不在正文范围内。",
   "context_notation": [],
   "extra_assumptions": [
     "独立标准正态的完整概率资格由vectorNormalSequence规定；ouStep只是总化单步函数。"
@@ -174,7 +210,16 @@ def vectorNormalSequence (P : Measure Ω) (R : ℕ → Ω → V n) : Prop :=
   "pdf_page": "289",
   "statement_latex": "The Fokker-Planck operator for the OU system (7.2) can be computed directly as\n\\[\\mathcal L_O^\\dagger\\phi(q,p)=\\gamma\\nabla_p\\cdot(p\\phi)+\\gamma k_BT\\nabla_p\\cdot M\\nabla_p\\phi.\\]",
   "proof_latex": null,
-  "proof_note": "原书未给独立完整证明。",
+  "proof_outline": null,
+  "proof_note": "原页推导与上下文全文见original_page_text；数学符号的排版以随附原页PDF为准。",
+  "original_page_text": [
+    {
+      "pdf_page": 289,
+      "printed_page": 268,
+      "text": "268\n7\nNumerical Methods for Stochastic Molecular Dynamics\nIntegrating from t to t C h and multiplying by exp.\u0003\nt/, we arrive at the solution\np.t C h/ D e\u0002\nhp.t/ C\np\nkBT.1 \u0003 e\u00022\nh/M1=2Z;\n(7.3)\nwhere Z is a vector of independent, standard normal random variables. Alterna-\ntively, we may write this as a discrete iteration in terms of a random map:\npnC1 D e\u0002\nhpn C\np\nkBT.1 \u0003 e\u00022\nh/M1=2Rn;\nwith normally distributed R. For later purposes, we will think of this update as acting\non both q and p, leaving q unchanged, i.e.\n.qnC1; pnC1/ D .qn; e\u0002\nhpn C\np\nkBT.1 \u0003 e\u00022\nh/M1=2Rn/:\nThe Fokker-Planck operator for the OU system (7.2) can be computed directly as\nL\u0004\nO\b.q; p/ D \nrp \u0002 .p\b/ C \nkBTrp \u0002 Mrp\b:\nThe Ornstein-Uhlenbeck process models the momentum of a Brownian particle,\nand in deriving it we thought of \n as being associated to the collisional frequency\nwith the particles of the bath. Alternatively, if we ignore the physical origin of this\nparameter, we can think of \n as an arbitrary coefﬁcient; the sampling of the invariant\nmeasure does not depend on this choice. Thus we have a family of sampling\niterations for the Gaussian distribution, deﬁned for different choices of \n.\n7.3.1\nSplitting Methods for Langevin Dynamics\nWe will now consider a family of iterations for molecular systems which are con-\nstructed from simple building blocks based on the splitting of an SDE, speciﬁcally\nLangevin dynamics:\ndq D M\u00021pdt;\ndp D \u0003rU.q/dt \u0003 \npdt C\np\n2\nkBTM1=2dW:\n(7.4)\nJust as in the deterministic setting (for Newton’s equations of motion) we construct\nsuch splitting methods by way of an additive decomposition of the vector ﬁeld,\nwhere the differential equations corresponding to any individual piece can be solved\nexactly. Methods are built from a sequence of updates corresponding to an exact\nsolve of each piece. By “exact solve” we here mean the construction of a method of\nexactly sampling the distribution generated by the corresponding component. The\n"
+    }
+  ],
+  "transcription_note": "PDF文字层原样保留，陈述中的数学排版转写为LaTeX；文字层有特殊字形编码时以目视原页为准。PDF347的Exercises之后不在正文范围内。",
   "context_notation": [],
   "extra_assumptions": [
     "partial为真实单坐标导数；给出前向表达式与后向生成元在紧支撑C²测试函数上的伴随恒等式。",
@@ -224,7 +269,16 @@ theorem ouForward_adjoint (m : V n) (γ θ : ℝ) (f g : V n → ℝ)
   "pdf_page": "289",
   "statement_latex": "Alternatively, if we ignore the physical origin of this parameter, we can think of $\\gamma$ as an arbitrary coefficient; the sampling of the invariant measure does not depend on this choice. Thus we have a family of sampling iterations for the Gaussian distribution, defined for different choices of $\\gamma$.",
   "proof_latex": null,
-  "proof_note": "原书未给独立完整证明。",
+  "proof_outline": null,
+  "proof_note": "原页推导与上下文全文见original_page_text；数学符号的排版以随附原页PDF为准。",
+  "original_page_text": [
+    {
+      "pdf_page": 289,
+      "printed_page": 268,
+      "text": "268\n7\nNumerical Methods for Stochastic Molecular Dynamics\nIntegrating from t to t C h and multiplying by exp.\u0003\nt/, we arrive at the solution\np.t C h/ D e\u0002\nhp.t/ C\np\nkBT.1 \u0003 e\u00022\nh/M1=2Z;\n(7.3)\nwhere Z is a vector of independent, standard normal random variables. Alterna-\ntively, we may write this as a discrete iteration in terms of a random map:\npnC1 D e\u0002\nhpn C\np\nkBT.1 \u0003 e\u00022\nh/M1=2Rn;\nwith normally distributed R. For later purposes, we will think of this update as acting\non both q and p, leaving q unchanged, i.e.\n.qnC1; pnC1/ D .qn; e\u0002\nhpn C\np\nkBT.1 \u0003 e\u00022\nh/M1=2Rn/:\nThe Fokker-Planck operator for the OU system (7.2) can be computed directly as\nL\u0004\nO\b.q; p/ D \nrp \u0002 .p\b/ C \nkBTrp \u0002 Mrp\b:\nThe Ornstein-Uhlenbeck process models the momentum of a Brownian particle,\nand in deriving it we thought of \n as being associated to the collisional frequency\nwith the particles of the bath. Alternatively, if we ignore the physical origin of this\nparameter, we can think of \n as an arbitrary coefﬁcient; the sampling of the invariant\nmeasure does not depend on this choice. Thus we have a family of sampling\niterations for the Gaussian distribution, deﬁned for different choices of \n.\n7.3.1\nSplitting Methods for Langevin Dynamics\nWe will now consider a family of iterations for molecular systems which are con-\nstructed from simple building blocks based on the splitting of an SDE, speciﬁcally\nLangevin dynamics:\ndq D M\u00021pdt;\ndp D \u0003rU.q/dt \u0003 \npdt C\np\n2\nkBTM1=2dW:\n(7.4)\nJust as in the deterministic setting (for Newton’s equations of motion) we construct\nsuch splitting methods by way of an additive decomposition of the vector ﬁeld,\nwhere the differential equations corresponding to any individual piece can be solved\nexactly. Methods are built from a sequence of updates corresponding to an exact\nsolve of each piece. By “exact solve” we here mean the construction of a method of\nexactly sampling the distribution generated by the corresponding component. The\n"
+    }
+  ],
+  "transcription_note": "PDF文字层原样保留，陈述中的数学排版转写为LaTeX；文字层有特殊字形编码时以目视原页为准。PDF347的Exercises之后不在正文范围内。",
   "context_notation": [],
   "extra_assumptions": [
     "γ=0允许恒等更新，仍保留Gaussian不变性；不把此时的不变性说成遍历采样收敛。"

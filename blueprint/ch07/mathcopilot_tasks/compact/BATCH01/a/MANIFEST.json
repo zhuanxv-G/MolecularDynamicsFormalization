@@ -5,9 +5,9 @@
     "MD-7.1-Bias"
   ],
   "input_sha256": {
-    "Blueprint/Ch07.lean": "03e34bf86a5b27e03cce8552bb21fc0fea40514cd87faa953bf09a6a0a27f3c2",
-    "blueprint/ch07/ch07_source.json": "27e402f2a8b9c511106df901d6cc8472e1dae783cdf739f657879ffcf297462a",
-    "BATCH01a_PAGES.pdf": "52cb36ebb59fd3d7a4891f75d98f23b82dc2a7f5159b3b1ca40b3b0bf5446a59"
+    "Blueprint/Ch07.lean": "f30ea154ebfb07ae85c0b806ff74b35808d5a0c3dcaa647c0c3cc80a78239e37",
+    "blueprint/ch07/ch07_source.json": "c434892ebf63b06f7cadcdfa7af408c2c12d7b645d35db431d1855224163ba19",
+    "BATCH01a_PAGES.pdf": "95f80ff7a57aa1e50e86e55f7b8c3723ae3104f113ed37afa5d1ff5539bddffc"
   },
   "page_mapping": [
     {
@@ -21,7 +21,7 @@
       "full_name": "MD.Ch07.bias",
       "kind": "def",
       "path": "Blueprint/Ch07.lean",
-      "line": 15,
+      "line": 17,
       "code_sha256": "9379b2023224de49efd2c0973ce1f42b80ddf08c504eff1d57e4fa7152c03649"
     }
   ],
@@ -33,13 +33,13 @@
   },
   "files": {
     "PASTE.txt": {
-      "bytes": 2749,
-      "sha256": "b88810d3ed4319b4aab5f25c33e3b13ac67a105a8e6c058ae275d4e0627e2061"
+      "bytes": 5895,
+      "sha256": "850eaa64e260eebdf8d817aa3b4e8ddc63a4d70517e8cc608be4bbc49781e9ee"
     },
     "BATCH01a_PAGES.pdf": {
       "bytes": 123132,
-      "sha256": "52cb36ebb59fd3d7a4891f75d98f23b82dc2a7f5159b3b1ca40b3b0bf5446a59"
+      "sha256": "95f80ff7a57aa1e50e86e55f7b8c3723ae3104f113ed37afa5d1ff5539bddffc"
     }
   },
-  "total_task_bytes": 127195
+  "total_task_bytes": 130341
 }

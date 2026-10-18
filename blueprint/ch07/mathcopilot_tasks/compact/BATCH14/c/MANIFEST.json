@@ -5,9 +5,9 @@
     "MD-7.9.1-SymmetricRHS"
   ],
   "input_sha256": {
-    "Blueprint/Ch07.lean": "03e34bf86a5b27e03cce8552bb21fc0fea40514cd87faa953bf09a6a0a27f3c2",
-    "blueprint/ch07/ch07_source.json": "27e402f2a8b9c511106df901d6cc8472e1dae783cdf739f657879ffcf297462a",
-    "BATCH14c_PAGES.pdf": "f8afa8b744da6de1925a79e625640441234e379ee818bb48e454a1a012016f5e"
+    "Blueprint/Ch07.lean": "f30ea154ebfb07ae85c0b806ff74b35808d5a0c3dcaa647c0c3cc80a78239e37",
+    "blueprint/ch07/ch07_source.json": "c434892ebf63b06f7cadcdfa7af408c2c12d7b645d35db431d1855224163ba19",
+    "BATCH14c_PAGES.pdf": "1d78b47c98943f933cc0156a03d913a9365670aff91374a9a20427176fecf4fb"
   },
   "page_mapping": [
     {
@@ -21,98 +21,98 @@
       "full_name": "MD.Ch07.V",
       "kind": "abbrev",
       "path": "Blueprint/Ch07.lean",
-      "line": 172,
+      "line": 188,
       "code_sha256": "7ab0ad90462b274b03f5b929b5f09417c0b397b6cb908fa6e7bd56677a314027"
     },
     {
       "full_name": "MD.Ch07.Phase",
       "kind": "abbrev",
       "path": "Blueprint/Ch07.lean",
-      "line": 173,
+      "line": 189,
       "code_sha256": "ef1520e3b22ac1c99a30a989deafe8d3da44a9f2a3e5b6c2cd3220218b88513e"
     },
     {
       "full_name": "MD.Ch07.coordDerivative",
       "kind": "def",
       "path": "Blueprint/Ch07.lean",
-      "line": 221,
+      "line": 237,
       "code_sha256": "e782d789a13f5db6817e2c995f141805e81ac75720125b846f8ee14ba3833a4b"
     },
     {
       "full_name": "MD.Ch07.gradient",
       "kind": "def",
       "path": "Blueprint/Ch07.lean",
-      "line": 250,
+      "line": 266,
       "code_sha256": "540c6af25c09d3a58da531bc32056ff1a1c070facc58d34c96b6653d781fba6f"
     },
     {
       "full_name": "MD.Ch07.positionGibbs",
       "kind": "def",
       "path": "Blueprint/Ch07.lean",
-      "line": 991,
+      "line": 1015,
       "code_sha256": "82bb55e66a80fed509916dd4534bcc354cc9bd8df28c6b30af7e5a2e29632202"
     },
     {
       "full_name": "MD.Ch07.momentumGibbs",
       "kind": "def",
       "path": "Blueprint/Ch07.lean",
-      "line": 993,
+      "line": 1017,
       "code_sha256": "37890e88a0521fb73fdcd58c2c02631a375383f9542a51cd2521500fb8692207"
     },
     {
       "full_name": "MD.Ch07.productGibbs",
       "kind": "def",
       "path": "Blueprint/Ch07.lean",
-      "line": 994,
+      "line": 1018,
       "code_sha256": "a6ad2d129b80649e4904fb1e07f2591a5e7db814b84c01b8c47a02537a602ae8"
     },
     {
       "full_name": "MD.Ch07.hessianU",
       "kind": "def",
       "path": "Blueprint/Ch07.lean",
-      "line": 1074,
+      "line": 1098,
       "code_sha256": "8c2605253d3d70a39369a2c08eb2c758793a9cc41934f1f97c967d5eb2c776ee"
     },
     {
       "full_name": "MD.Ch07.thirdU",
       "kind": "def",
       "path": "Blueprint/Ch07.lean",
-      "line": 1075,
+      "line": 1099,
       "code_sha256": "a26772b3051be729532f532b20e2d6eccac37ea5c8a368d8bcb5f58c0e62f71f"
     },
     {
       "full_name": "MD.Ch07.hessianGrad",
       "kind": "def",
       "path": "Blueprint/Ch07.lean",
-      "line": 1076,
+      "line": 1100,
       "code_sha256": "adcfa820f24c6af34da55c81e5ff046d273c228a6e8485f8fdc896a8c388cea6"
     },
     {
       "full_name": "MD.Ch07.cubicThird",
       "kind": "def",
       "path": "Blueprint/Ch07.lean",
-      "line": 1077,
+      "line": 1101,
       "code_sha256": "0c71c49f77ab81e212802875d1cf11e3e062490ad6151e821c9998e35b46c165"
     },
     {
       "full_name": "MD.Ch07.symmetricRHS",
       "kind": "def",
       "path": "Blueprint/Ch07.lean",
-      "line": 1093,
+      "line": 1117,
       "code_sha256": "3a337496e8c4068618cbc066b79e249b37c993aa56cd576d0ee1875abd17b0b5"
     },
     {
       "full_name": "MD.Ch07.symmetricRHS_odd",
       "kind": "theorem",
       "path": "Blueprint/Ch07.lean",
-      "line": 1095,
+      "line": 1119,
       "code_sha256": "f14681a9b92ffa1f18dda9ca3ac9970cc665a1f1f3b47cf752f2d2e8f4dd5f25"
     },
     {
       "full_name": "MD.Ch07.symmetricRHS_zeroMean",
       "kind": "theorem",
       "path": "Blueprint/Ch07.lean",
-      "line": 1102,
+      "line": 1126,
       "code_sha256": "6762e7aa94f6dfa6c0716e021687651a91de1968c2b9680ee63aa156104fe01c"
     }
   ],
@@ -124,13 +124,13 @@
   },
   "files": {
     "PASTE.txt": {
-      "bytes": 9448,
-      "sha256": "9d55a57d96c5f370f244f82453b7b1387897bed15ad378c8b884101e36bec79a"
+      "bytes": 12027,
+      "sha256": "820ed45a80bdd64b51fb812218a63ae49842a337d3a44a881744dddf0b76801a"
     },
     "BATCH14c_PAGES.pdf": {
       "bytes": 84445,
-      "sha256": "f8afa8b744da6de1925a79e625640441234e379ee818bb48e454a1a012016f5e"
+      "sha256": "1d78b47c98943f933cc0156a03d913a9365670aff91374a9a20427176fecf4fb"
     }
   },
-  "total_task_bytes": 98192
+  "total_task_bytes": 100776
 }

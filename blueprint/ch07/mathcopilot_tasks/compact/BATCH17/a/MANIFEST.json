@@ -5,9 +5,9 @@
     "MD-7.9.3-ZeroFrictionVerlet"
   ],
   "input_sha256": {
-    "Blueprint/Ch07.lean": "03e34bf86a5b27e03cce8552bb21fc0fea40514cd87faa953bf09a6a0a27f3c2",
-    "blueprint/ch07/ch07_source.json": "27e402f2a8b9c511106df901d6cc8472e1dae783cdf739f657879ffcf297462a",
-    "BATCH17a_PAGES.pdf": "342f49ad857ac77a4dab0025218f60f68cf8cc1bca9ee1ae19ab69438246f66c"
+    "Blueprint/Ch07.lean": "f30ea154ebfb07ae85c0b806ff74b35808d5a0c3dcaa647c0c3cc80a78239e37",
+    "blueprint/ch07/ch07_source.json": "c434892ebf63b06f7cadcdfa7af408c2c12d7b645d35db431d1855224163ba19",
+    "BATCH17a_PAGES.pdf": "219f1237648362b05bcfcbdb2c8642e273367c96bc9522994765772b660efa69"
   },
   "page_mapping": [
     {
@@ -21,77 +21,77 @@
       "full_name": "MD.Ch07.V",
       "kind": "abbrev",
       "path": "Blueprint/Ch07.lean",
-      "line": 172,
+      "line": 188,
       "code_sha256": "7ab0ad90462b274b03f5b929b5f09417c0b397b6cb908fa6e7bd56677a314027"
     },
     {
       "full_name": "MD.Ch07.Phase",
       "kind": "abbrev",
       "path": "Blueprint/Ch07.lean",
-      "line": 173,
+      "line": 189,
       "code_sha256": "ef1520e3b22ac1c99a30a989deafe8d3da44a9f2a3e5b6c2cd3220218b88513e"
     },
     {
       "full_name": "MD.Ch07.ouMomentum",
       "kind": "def",
       "path": "Blueprint/Ch07.lean",
-      "line": 198,
+      "line": 214,
       "code_sha256": "df5a3511ac6e0986b8293d21de91ddb40de94195595495bc71fa780b2962b8ae"
     },
     {
       "full_name": "MD.Ch07.ouStep",
       "kind": "def",
       "path": "Blueprint/Ch07.lean",
-      "line": 211,
+      "line": 227,
       "code_sha256": "0f9aad04567b33cc7067304661e170a91deec512fcb772c226c1095acf25ffb5"
     },
     {
       "full_name": "MD.Ch07.coordDerivative",
       "kind": "def",
       "path": "Blueprint/Ch07.lean",
-      "line": 221,
+      "line": 237,
       "code_sha256": "e782d789a13f5db6817e2c995f141805e81ac75720125b846f8ee14ba3833a4b"
     },
     {
       "full_name": "MD.Ch07.gradient",
       "kind": "def",
       "path": "Blueprint/Ch07.lean",
-      "line": 250,
+      "line": 266,
       "code_sha256": "540c6af25c09d3a58da531bc32056ff1a1c070facc58d34c96b6653d781fba6f"
     },
     {
       "full_name": "MD.Ch07.driftStep",
       "kind": "def",
       "path": "Blueprint/Ch07.lean",
-      "line": 279,
+      "line": 295,
       "code_sha256": "600d3de37df6b9ef23628e1495de886583ba0ded7bc74fa5eb3ce43ed25daa6c"
     },
     {
       "full_name": "MD.Ch07.kickStep",
       "kind": "def",
       "path": "Blueprint/Ch07.lean",
-      "line": 282,
+      "line": 298,
       "code_sha256": "475506583d95af613a8e1c58ad474dbd3fc0c0cfc22ab985f0c251cb1567db37"
     },
     {
       "full_name": "MD.Ch07.baoab",
       "kind": "def",
       "path": "Blueprint/Ch07.lean",
-      "line": 344,
+      "line": 360,
       "code_sha256": "99da0f3d787e8252ad607d79d6b5ed6b8a09cebdb779bc439e74633cc75972f4"
     },
     {
       "full_name": "MD.Ch07.zeroFrictionOU",
       "kind": "theorem",
       "path": "Blueprint/Ch07.lean",
-      "line": 1315,
+      "line": 1356,
       "code_sha256": "cad9707ca912a9cca4d31cb23ebf783dcb5925ca01409ad365c7d9b25e64a5e6"
     },
     {
       "full_name": "MD.Ch07.zeroFrictionBAOAB",
       "kind": "theorem",
       "path": "Blueprint/Ch07.lean",
-      "line": 1317,
+      "line": 1358,
       "code_sha256": "c9d29eb2356707702610d30406c081951bbe50482a978a6a34f399f78690fbbe"
     }
   ],
@@ -103,13 +103,13 @@
   },
   "files": {
     "PASTE.txt": {
-      "bytes": 7214,
-      "sha256": "84557af6d3674a0374f27fa232304f3d6271968b4df17362e85c4339e9cd46be"
+      "bytes": 10572,
+      "sha256": "59738d3e4459191ae382ad5226d97109eec35788e43c86c3c9be9991eb9ff8fe"
     },
     "BATCH17a_PAGES.pdf": {
       "bytes": 93352,
-      "sha256": "342f49ad857ac77a4dab0025218f60f68cf8cc1bca9ee1ae19ab69438246f66c"
+      "sha256": "219f1237648362b05bcfcbdb2c8642e273367c96bc9522994765772b660efa69"
     }
   },
-  "total_task_bytes": 104166
+  "total_task_bytes": 107525
 }

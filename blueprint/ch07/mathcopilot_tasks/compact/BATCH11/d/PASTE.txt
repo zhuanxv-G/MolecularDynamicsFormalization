@@ -3,9 +3,9 @@
 Lean/Mathlib均4.34.0。原页PDF映射：[309, 310]；印刷页=[288, 289].
 input_sha256请原样回显：
 {
-  "Blueprint/Ch07.lean": "03e34bf86a5b27e03cce8552bb21fc0fea40514cd87faa953bf09a6a0a27f3c2",
-  "blueprint/ch07/ch07_source.json": "27e402f2a8b9c511106df901d6cc8472e1dae783cdf739f657879ffcf297462a",
-  "BATCH11d_PAGES.pdf": "19510205428c47b98a66ae00b0bdb39a0d3d2fbc22c540a292566036022bd27f"
+  "Blueprint/Ch07.lean": "f30ea154ebfb07ae85c0b806ff74b35808d5a0c3dcaa647c0c3cc80a78239e37",
+  "blueprint/ch07/ch07_source.json": "c434892ebf63b06f7cadcdfa7af408c2c12d7b645d35db431d1855224163ba19",
+  "BATCH11d_PAGES.pdf": "da5b00adad485bdc506114c8133d94b861470359b31c018736a8305e2d3d91fd"
 }
 用代码将JSON对象(batch,input_sha256,items)写到 /workspace/.mathcopilot/reviews/ch07/BATCH11d_review.json；items仅含本source_id。
 items字段：source_id、verdict(PASS/FAIL/NEEDS_HUMAN)、transcription、semantic_review、counterexample、suggested_fix、printed_version、corrected_version。逐版区分原文疑误和修正版结论；缺材料必须具体指出，不猜测。写后json.loads自检，最后仅回复路径及统计。
@@ -21,7 +21,21 @@ items字段：source_id、verdict(PASS/FAIL/NEEDS_HUMAN)、transcription、seman
   "pdf_page": "309–310",
   "statement_latex": "\\[\\exp(h\\widehat{\\mathcal L}_{[OBA]}^\\dagger)=\\exp(h\\mathcal L_A^\\dagger)\\exp(h\\mathcal L_B^\\dagger)\\exp(h\\mathcal L_O^\\dagger).\\]\n\\[\\widehat{\\mathcal L}_{[OBA]}^\\dagger\\rho=\\mathcal L_{LD}^\\dagger\\rho+\\frac h2[-pU''(q)\\rho_p+U'(q)\\rho_q+\\gamma p\\rho_q+\\sigma^2\\rho_{qp}+\\gamma U'(q)\\rho_p]+O(h^2).\\]",
   "proof_latex": null,
-  "proof_note": "原书未给独立完整证明。",
+  "proof_outline": null,
+  "proof_note": "原页推导与上下文全文见original_page_text；数学符号的排版以随附原页PDF为准。",
+  "original_page_text": [
+    {
+      "pdf_page": 309,
+      "printed_page": 288,
+      "text": "288\n7\nNumerical Methods for Stochastic Molecular Dynamics\nexpansion of the SDE method. The series expansion is therefore not particularly\ninformative on its own, but only in relation to its action on some particular\ndistribution.\nA simple ﬁrst order example of a Langevin dynamics integrator is the method\nobtained by composing one of the Symplectic Euler variants with an Ornstein-\nUhlenbeck step. To get a feel for how the expansion goes, let us work out its terms\nfor such a splitting scheme in the case of a one degree of freedom model with unit\nmass: H D p2=2 CU.q/. To be explicit, let us say our numerical method ﬁrst solves\nexactly the OU process, then evaluates the impulse due to the force \u0003U0.q/ and\nlastly drifts in position space according to the momentum. This method is denoted in\nour notation as \u0002OBA\u0003, where the evolution of measure in one step can be computed\nby writing\nexp.h OL\u0004\n\u0002OBA\u0003/ D exp.hL\u0004\nA/ exp.hL\u0004\nB/ exp.hL\u0004\nO/:\nIn this one dimensional example, we substitute\nZ D L\u0004\nA D \u0003p @\n@q;\nY D L\u0004\nB D U0.q/ @\n@p;\nX D L\u0004\nO D \n\b\nId C p @\n@p\n\t\nC \u00072\n2\n@2\n@p2 ;\ninto (7.18), where \u0007 D p2\nkBT. This gives us an expansion for the Kolmogorov\noperator for our discretized map\nOL\u0004\n\u0002OBA\u0003 D S D L\u0004\nA C L\u0004\nB C L\u0004\nO C h\n2\n\u0006\nŒL\u0004\nA; L\u0004\nB\t C ŒL\u0004\nA; L\u0004\nO\t C ŒL\u0004\nB; L\u0004\nO\t\n\u0007\nC : : :\nIt is clear that even writing out the O.h2/ terms considerably increases the\ncomplexity of the right hand side.\nThe commutators are best considered in relation to their action on a function (or\nrather, their action on a density) \u0005.q; p/. For example, we may compute directly\nŒL\u0004\nA; L\u0004\nB\t\u0005 D \u0003p @\n@q\n\b\nU0.q/@\u0005\n@p\n\t\n\u0003 U0.q/ @\n@p\n\b\n\u0003p@\u0005\n@q\n\t\nD \u0003p.U0.q/\u0005p/q C U0.q/.p\u0005q/p;\nD \u0003pU00.q/\u0005p \u0003 pU0.q/\u0005pq C U0.q/\u0005q C U0.q/p\u0005qp:\nAs this is the commutator of two 1st order differential operators, the mixed partial\nterm vanishes, leaving\nŒL\u0004\nA; L\u0004\nB\t\u0005 D \u0003pU00.q/\u0005p C U0.q/\u0005q:\n"
+    },
+    {
+      "pdf_page": 310,
+      "printed_page": 289,
+      "text": "7.7\nThe Evolution of the Distribution Using a Numerical Method\n289\nSimilar computations give\nŒL\u0004\nA; L\u0004\nO\t\u0005 D \np\u0005q C \u00072\u0005qp;\nŒL\u0004\nB; L\u0004\nO\t\u0005 D \nU0.q/\u0005p:\nTo ﬁrst order, the discretization map corresponding to scheme \u0002OBA\u0003 alters the\nphase space density at each step as if it were solving the time dependent PDE\n\u0005t D OL\u0004\u0005;\nwhere\nOL\u0004\u0005DL\u0004\nLD\u0005 C h\n2\n\n\u0003pU00.q/\u0005p C U0.q/\u0005qC\np\u0005q C \u00072\u0005qp C \nU0.q/\u0005p\n\u000b\nC O.h2/:\nThe validity of this sort of expansion, even for small h, should be considered\ncarefully. Deﬁning\nL\u0004\nLD D L\u0004\nA C L\u0004\nB C L\u0004\nO\nas the Kolmogorov operator for Langevin dynamics, the assumption of validity\nbecomes more credible as we ﬁnd that the operator L\u0004\nLD has a compact resolvent and\ntherefore a discrete spectrum, i.e. simple eigenvalues, as discussed in the previous\nchapter. It will have one zero eigenvalue corresponding to the invariant density \u0005ˇ\nand all the remaining eigenvalues lie in the negative half plane. Of course it is not\njust this operator whose properties are important, but also all the other operators\narising in the expansion, and bounding these in relation to L\u0004\nLD is not a simple task\n(particularly for higher orders).\n7.7.3\nPerturbation Technique\nSuppose we are able to derive a series expansion for OL\u0004 of the form\nOL\u0004 D L\u0004\nLD C hL\u0004\n1 C h2L\u0004\n2 C O.h3/;\nfor some perturbation operators L\u0004\ni . We assume that the invariant density has a\nsimilar expansion in powers of the stepsize, of the form given in (7.17). Inserting\nthis ansatz into the stationary Fokker-Planck equation\nOL\u0004 O\u0005 D 0;\n"
+    }
+  ],
+  "transcription_note": "PDF文字层原样保留，陈述中的数学排版转写为LaTeX；文字层有特殊字形编码时以目视原页为准。PDF347的Exercises之后不在正文范围内。",
   "context_notation": [],
   "extra_assumptions": [
     "只证明三个真实交换子表达式与所印一阶修正一致；整体离散传播子的余项界需Taylor/弱展开桥，不声称完成。"
@@ -58,11 +72,11 @@ theorem obaFirstCorrection_commutators (U : ℝ → ℝ) (γ θ : ℝ) (ρ : Den
 ## 项目依赖定义体及选择规格
 以下def/abbrev/structure完整保留；定理列出完整类型，Mathlib标准定义无需摘录。
 
-### MD.Ch07.Density1 (Blueprint/Ch07.lean:818)
+### MD.Ch07.Density1 (Blueprint/Ch07.lean:834)
 原文件上下文：
 ```lean
 open Set Filter MeasureTheory ProbabilityTheory MolecularDynamics
-open scoped BigOperators Topology ContDiff ENNReal NNReal
+open scoped BigOperators Topology ContDiff ENNReal NNReal Matrix
 variable {Ω : Type*} [MeasurableSpace Ω]
 variable {n : ℕ}
 ```
@@ -70,11 +84,11 @@ variable {n : ℕ}
 abbrev Density1 := (ℝ × ℝ) → ℝ
 ```
 
-### MD.Ch07.dq (Blueprint/Ch07.lean:819)
+### MD.Ch07.dq (Blueprint/Ch07.lean:835)
 原文件上下文：
 ```lean
 open Set Filter MeasureTheory ProbabilityTheory MolecularDynamics
-open scoped BigOperators Topology ContDiff ENNReal NNReal
+open scoped BigOperators Topology ContDiff ENNReal NNReal Matrix
 variable {Ω : Type*} [MeasurableSpace Ω]
 variable {n : ℕ}
 ```
@@ -82,11 +96,11 @@ variable {n : ℕ}
 def dq (f : Density1) (x : ℝ × ℝ) : ℝ := deriv (fun q ↦ f (q,x.2)) x.1
 ```
 
-### MD.Ch07.dp (Blueprint/Ch07.lean:820)
+### MD.Ch07.dp (Blueprint/Ch07.lean:836)
 原文件上下文：
 ```lean
 open Set Filter MeasureTheory ProbabilityTheory MolecularDynamics
-open scoped BigOperators Topology ContDiff ENNReal NNReal
+open scoped BigOperators Topology ContDiff ENNReal NNReal Matrix
 variable {Ω : Type*} [MeasurableSpace Ω]
 variable {n : ℕ}
 ```
@@ -94,11 +108,11 @@ variable {n : ℕ}
 def dp (f : Density1) (x : ℝ × ℝ) : ℝ := deriv (fun p ↦ f (x.1,p)) x.2
 ```
 
-### MD.Ch07.opA (Blueprint/Ch07.lean:821)
+### MD.Ch07.opA (Blueprint/Ch07.lean:837)
 原文件上下文：
 ```lean
 open Set Filter MeasureTheory ProbabilityTheory MolecularDynamics
-open scoped BigOperators Topology ContDiff ENNReal NNReal
+open scoped BigOperators Topology ContDiff ENNReal NNReal Matrix
 variable {Ω : Type*} [MeasurableSpace Ω]
 variable {n : ℕ}
 ```
@@ -106,11 +120,11 @@ variable {n : ℕ}
 def opA (f : Density1) (x : ℝ × ℝ) : ℝ := -x.2*dq f x
 ```
 
-### MD.Ch07.opB (Blueprint/Ch07.lean:822)
+### MD.Ch07.opB (Blueprint/Ch07.lean:838)
 原文件上下文：
 ```lean
 open Set Filter MeasureTheory ProbabilityTheory MolecularDynamics
-open scoped BigOperators Topology ContDiff ENNReal NNReal
+open scoped BigOperators Topology ContDiff ENNReal NNReal Matrix
 variable {Ω : Type*} [MeasurableSpace Ω]
 variable {n : ℕ}
 ```
@@ -118,11 +132,11 @@ variable {n : ℕ}
 def opB (U : ℝ → ℝ) (f : Density1) (x : ℝ × ℝ) : ℝ := deriv U x.1*dp f x
 ```
 
-### MD.Ch07.opO (Blueprint/Ch07.lean:823)
+### MD.Ch07.opO (Blueprint/Ch07.lean:839)
 原文件上下文：
 ```lean
 open Set Filter MeasureTheory ProbabilityTheory MolecularDynamics
-open scoped BigOperators Topology ContDiff ENNReal NNReal
+open scoped BigOperators Topology ContDiff ENNReal NNReal Matrix
 variable {Ω : Type*} [MeasurableSpace Ω]
 variable {n : ℕ}
 ```
@@ -130,11 +144,11 @@ variable {n : ℕ}
 def opO (γ θ : ℝ) (f : Density1) (x : ℝ × ℝ) : ℝ := γ*(f x+x.2*dp f x)+γ*θ*dp (dp f) x
 ```
 
-### MD.Ch07.opComm (Blueprint/Ch07.lean:825)
+### MD.Ch07.opComm (Blueprint/Ch07.lean:841)
 原文件上下文：
 ```lean
 open Set Filter MeasureTheory ProbabilityTheory MolecularDynamics
-open scoped BigOperators Topology ContDiff ENNReal NNReal
+open scoped BigOperators Topology ContDiff ENNReal NNReal Matrix
 variable {Ω : Type*} [MeasurableSpace Ω]
 variable {n : ℕ}
 ```
@@ -142,11 +156,11 @@ variable {n : ℕ}
 def opComm (A B : Density1 → Density1) (f : Density1) : Density1 := A (B f)-B (A f)
 ```
 
-### MD.Ch07.commutatorAB (Blueprint/Ch07.lean:828)
+### MD.Ch07.commutatorAB (Blueprint/Ch07.lean:844)
 原文件上下文：
 ```lean
 open Set Filter MeasureTheory ProbabilityTheory MolecularDynamics
-open scoped BigOperators Topology ContDiff ENNReal NNReal
+open scoped BigOperators Topology ContDiff ENNReal NNReal Matrix
 variable {Ω : Type*} [MeasurableSpace Ω]
 variable {n : ℕ}
 ```
@@ -156,11 +170,11 @@ theorem commutatorAB (U : ℝ → ℝ) (ρ : Density1)
     opComm opA (opB U) ρ x = -x.2*deriv (deriv U) x.1*dp ρ x+deriv U x.1*dq ρ x
 ```
 
-### MD.Ch07.commutatorsAOBO (Blueprint/Ch07.lean:834)
+### MD.Ch07.commutatorsAOBO (Blueprint/Ch07.lean:850)
 原文件上下文：
 ```lean
 open Set Filter MeasureTheory ProbabilityTheory MolecularDynamics
-open scoped BigOperators Topology ContDiff ENNReal NNReal
+open scoped BigOperators Topology ContDiff ENNReal NNReal Matrix
 variable {Ω : Type*} [MeasurableSpace Ω]
 variable {n : ℕ}
 ```
@@ -171,11 +185,11 @@ theorem commutatorsAOBO (U : ℝ → ℝ) (ρ : Density1) (γ θ : ℝ)
     opComm (opB U) (opO γ θ) ρ x = γ*deriv U x.1*dp ρ x
 ```
 
-### MD.Ch07.obaFirstCorrection (Blueprint/Ch07.lean:842)
+### MD.Ch07.obaFirstCorrection (Blueprint/Ch07.lean:858)
 原文件上下文：
 ```lean
 open Set Filter MeasureTheory ProbabilityTheory MolecularDynamics
-open scoped BigOperators Topology ContDiff ENNReal NNReal
+open scoped BigOperators Topology ContDiff ENNReal NNReal Matrix
 variable {Ω : Type*} [MeasurableSpace Ω]
 variable {n : ℕ}
 ```
@@ -185,11 +199,11 @@ def obaFirstCorrection (U : ℝ → ℝ) (γ θ : ℝ) (ρ : Density1) (x : ℝ 
     γ*x.2*dq ρ x+2*γ*θ*dq (dp ρ) x+γ*deriv U x.1*dp ρ x)
 ```
 
-### MD.Ch07.obaFirstCorrection_commutators (Blueprint/Ch07.lean:845)
+### MD.Ch07.obaFirstCorrection_commutators (Blueprint/Ch07.lean:861)
 原文件上下文：
 ```lean
 open Set Filter MeasureTheory ProbabilityTheory MolecularDynamics
-open scoped BigOperators Topology ContDiff ENNReal NNReal
+open scoped BigOperators Topology ContDiff ENNReal NNReal Matrix
 variable {Ω : Type*} [MeasurableSpace Ω]
 variable {n : ℕ}
 ```

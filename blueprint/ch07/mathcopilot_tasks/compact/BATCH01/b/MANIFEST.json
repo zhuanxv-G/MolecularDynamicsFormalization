@@ -5,9 +5,9 @@
     "MD-7.2-ScalarSDE"
   ],
   "input_sha256": {
-    "Blueprint/Ch07.lean": "03e34bf86a5b27e03cce8552bb21fc0fea40514cd87faa953bf09a6a0a27f3c2",
-    "blueprint/ch07/ch07_source.json": "27e402f2a8b9c511106df901d6cc8472e1dae783cdf739f657879ffcf297462a",
-    "BATCH01b_PAGES.pdf": "937cded860c8de0aff93b14f0eaa2e86a69a3fb195f4f88e0a1ec7a2cb3bdc9a"
+    "Blueprint/Ch07.lean": "f30ea154ebfb07ae85c0b806ff74b35808d5a0c3dcaa647c0c3cc80a78239e37",
+    "blueprint/ch07/ch07_source.json": "c434892ebf63b06f7cadcdfa7af408c2c12d7b645d35db431d1855224163ba19",
+    "BATCH01b_PAGES.pdf": "e7c13fe934c727dd5953f283686dc56f3dedb0bb96bda4a8a92fcbb5404d874f"
   },
   "page_mapping": [
     {
@@ -21,7 +21,7 @@
       "full_name": "MD.Ch07.scalarSDE",
       "kind": "def",
       "path": "Blueprint/Ch07.lean",
-      "line": 20,
+      "line": 22,
       "code_sha256": "325d5e8f1e66b666c42a7abb02bdc2a495ff0976a8f9b1bccb55858862ee3f4c"
     },
     {
@@ -61,13 +61,13 @@
   },
   "files": {
     "PASTE.txt": {
-      "bytes": 6702,
-      "sha256": "ab99ea87f50a143b6775901697b032111cfa3ee11f21cc102439a1860d8badb9"
+      "bytes": 9479,
+      "sha256": "a59edc207a4556e675e9332e83895436ca371b2136bb11b341bfb1c454e7c75f"
     },
     "BATCH01b_PAGES.pdf": {
       "bytes": 74818,
-      "sha256": "937cded860c8de0aff93b14f0eaa2e86a69a3fb195f4f88e0a1ec7a2cb3bdc9a"
+      "sha256": "e7c13fe934c727dd5953f283686dc56f3dedb0bb96bda4a8a92fcbb5404d874f"
     }
   },
-  "total_task_bytes": 83984
+  "total_task_bytes": 86761
 }

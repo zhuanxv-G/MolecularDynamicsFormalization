@@ -5,9 +5,9 @@
     "MD-7.10-OBABOOverdampedEuler"
   ],
   "input_sha256": {
-    "Blueprint/Ch07.lean": "03e34bf86a5b27e03cce8552bb21fc0fea40514cd87faa953bf09a6a0a27f3c2",
-    "blueprint/ch07/ch07_source.json": "27e402f2a8b9c511106df901d6cc8472e1dae783cdf739f657879ffcf297462a",
-    "BATCH16c_PAGES.pdf": "d627dc11d5fa79aee33419b225fa76643dd6c77dd042c2f4c22a974f1bbdaef9"
+    "Blueprint/Ch07.lean": "f30ea154ebfb07ae85c0b806ff74b35808d5a0c3dcaa647c0c3cc80a78239e37",
+    "blueprint/ch07/ch07_source.json": "c434892ebf63b06f7cadcdfa7af408c2c12d7b645d35db431d1855224163ba19",
+    "BATCH16c_PAGES.pdf": "893e9cc0e8e59c6ce18af9862c054e433dc741873895ea52ce04080552a658ce"
   },
   "page_mapping": [
     {
@@ -21,91 +21,91 @@
       "full_name": "MD.Ch07.V",
       "kind": "abbrev",
       "path": "Blueprint/Ch07.lean",
-      "line": 172,
+      "line": 188,
       "code_sha256": "7ab0ad90462b274b03f5b929b5f09417c0b397b6cb908fa6e7bd56677a314027"
     },
     {
       "full_name": "MD.Ch07.Phase",
       "kind": "abbrev",
       "path": "Blueprint/Ch07.lean",
-      "line": 173,
+      "line": 189,
       "code_sha256": "ef1520e3b22ac1c99a30a989deafe8d3da44a9f2a3e5b6c2cd3220218b88513e"
     },
     {
       "full_name": "MD.Ch07.coordDerivative",
       "kind": "def",
       "path": "Blueprint/Ch07.lean",
-      "line": 221,
+      "line": 237,
       "code_sha256": "e782d789a13f5db6817e2c995f141805e81ac75720125b846f8ee14ba3833a4b"
     },
     {
       "full_name": "MD.Ch07.gradient",
       "kind": "def",
       "path": "Blueprint/Ch07.lean",
-      "line": 250,
+      "line": 266,
       "code_sha256": "540c6af25c09d3a58da531bc32056ff1a1c070facc58d34c96b6653d781fba6f"
     },
     {
       "full_name": "MD.Ch07.driftStep",
       "kind": "def",
       "path": "Blueprint/Ch07.lean",
-      "line": 279,
+      "line": 295,
       "code_sha256": "600d3de37df6b9ef23628e1495de886583ba0ded7bc74fa5eb3ce43ed25daa6c"
     },
     {
       "full_name": "MD.Ch07.kickStep",
       "kind": "def",
       "path": "Blueprint/Ch07.lean",
-      "line": 282,
+      "line": 298,
       "code_sha256": "475506583d95af613a8e1c58ad474dbd3fc0c0cfc22ab985f0c251cb1567db37"
     },
     {
       "full_name": "MD.Ch07.redrawMomentum",
       "kind": "def",
       "path": "Blueprint/Ch07.lean",
-      "line": 1253,
+      "line": 1288,
       "code_sha256": "53bc68097ec7590b04b8658f34c1928a46e5713a64e327aa4dd6aaae0b7dbeef"
     },
     {
       "full_name": "MD.Ch07.redrawStep",
       "kind": "def",
       "path": "Blueprint/Ch07.lean",
-      "line": 1254,
+      "line": 1289,
       "code_sha256": "69a118a321e602e701f287bae9576b431eb8e1d46331221e6c8932a413097df5"
     },
     {
       "full_name": "MD.Ch07.obaboInfinite",
       "kind": "def",
       "path": "Blueprint/Ch07.lean",
-      "line": 1261,
+      "line": 1296,
       "code_sha256": "d51be3f8c6af7a54d975db44cb6ba05359720fb81d3ce3bc3eae31fd079f8f84"
     },
     {
       "full_name": "MD.Ch07.overdampedEulerH",
       "kind": "def",
       "path": "Blueprint/Ch07.lean",
-      "line": 1263,
+      "line": 1298,
       "code_sha256": "3450c47a12ecf5d7052c41c46f2c2421ac6c430c30db4217d1df494f5048f890"
     },
     {
       "full_name": "MD.Ch07.overdampedEuler",
       "kind": "def",
       "path": "Blueprint/Ch07.lean",
-      "line": 1265,
+      "line": 1300,
       "code_sha256": "35131a5219cce5695df057b701d32034f028cb83e0c6ddbf5d48b9235e3e49c1"
     },
     {
       "full_name": "MD.Ch07.obaboInfinite_position",
       "kind": "theorem",
       "path": "Blueprint/Ch07.lean",
-      "line": 1267,
+      "line": 1302,
       "code_sha256": "30c5c95d46f70b3b4723a6cf7533c73967cbcab8aa6b82db96ea123aef7b4a3a"
     },
     {
       "full_name": "MD.Ch07.overdampedEuler_rescale",
       "kind": "theorem",
       "path": "Blueprint/Ch07.lean",
-      "line": 1272,
+      "line": 1307,
       "code_sha256": "e672dffd7df53adafa7f629638169a274cce29886387b7711c617ea5601f4812"
     }
   ],
@@ -117,13 +117,13 @@
   },
   "files": {
     "PASTE.txt": {
-      "bytes": 9430,
-      "sha256": "ca2e113f9682fb8629183f63a7e64a41ced8dcd2f52cddb98782c7b344015e87"
+      "bytes": 11758,
+      "sha256": "5e8935363f9aa4a6c5bc5d91b7de9f3e041c16f24cc6bab9a947de29aa1dc44b"
     },
     "BATCH16c_PAGES.pdf": {
       "bytes": 86922,
-      "sha256": "d627dc11d5fa79aee33419b225fa76643dd6c77dd042c2f4c22a974f1bbdaef9"
+      "sha256": "893e9cc0e8e59c6ce18af9862c054e433dc741873895ea52ce04080552a658ce"
     }
   },
-  "total_task_bytes": 100451
+  "total_task_bytes": 102780
 }

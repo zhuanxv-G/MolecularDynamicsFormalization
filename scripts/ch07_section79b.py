@@ -20,7 +20,15 @@ theorem conjugateCorrection_coefficient {E : Type*} [AddCommGroup E] [Module ℝ
     (htransfer : q2 = p 2+(1/2 : ℝ) • L0 (p 1)+
       (1/4 : ℝ) • L1 (p 0)+(1/8 : ℝ) • (L0*L0) (p 0)) :
     q2 = p 2+(1/4 : ℝ) • L1 (p 0) := by
-  simpa [hp,hL,Module.End.mul_apply] using htransfer''',label='(7.30a)–(7.30b)',
+  simpa [hp,hL,Module.End.mul_apply] using htransfer
+
+def conjugateExpansionPrinted {E : Type*} [AddCommGroup E] [Module ℝ E]
+    (L0 L1 : Module.End ℝ E) (h : ℝ) : Module.End ℝ E :=
+  1+(h/2) • L0+(h^2/4) • L1+(h^2/2) • L0
+
+def conjugateExpansionPrinted_corrected {E : Type*} [AddCommGroup E] [Module ℝ E]
+    (L0 L1 : Module.End ℝ E) (h : ℝ) : Module.End ℝ E :=
+  1+(h/2) • L0+(h^2/4) • L1+(h^2/8) • (L0*L0)''',label='(7.30a)–(7.30b)',
 issues=['已目视核对PDF321：所印传播子展开末项为(h²/2)L_LD，按exp的二阶展开应为(h²/8)(L_LD)²；该项作用ρβ为零，不改变后续修正关系。'],
 extra=['Lean证明给定真实二阶传递系数的消项，(7.30)完整作为两关系的命题定义；ST/TS指数系数识别、Hamiltonian微分及实际两组修正系数识别仍列缺口。'],
 scope='形式传递系数的消项及(7.30)全部目标；未证明从具体分裂映射导出这些系数。',verdict='NEEDS_HUMAN')
@@ -34,7 +42,7 @@ where $\overline{\mathcal L}_O^\dagger\vartheta=\epsilon\mathcal L_O^\dagger\var
 \[w(q,p)=-\tfrac\beta{24}(6p^T(\nabla^2U)\nabla U-\nabla^3U:p\otimes p\otimes p).\]
 Equating powers gives
 \[\overline{\mathcal L}_O^\dagger(\rho_\beta f_{2,0})=0,\quad
-\mathcal L_H^\dagger(\rho_\beta f_{2,0})+\overline{\mathcal L}_O^\dagger(\rho_\beta f_{2,1})=-w\rho_\beta,\]
+\mathcal L_H^\dagger(\rho_\beta f_{2,0})+\overline{\mathcal L}_O^\dagger(\rho_\beta f_{2,1})=-w\rho_\beta,\tag{7.32}\]
 \[\mathcal L_H^\dagger(\rho_\beta f_{2,1})+\overline{\mathcal L}_O^\dagger(\rho_\beta f_{2,2})=0,\quad
 \mathcal L_H^\dagger(\rho_\beta f_{2,2})+\overline{\mathcal L}_O^\dagger(\rho_\beta f_{2,3})=0.\]''',
 '''def phaseH (U : V n → ℝ) (ρ : Phase n → ℝ) : Phase n → ℝ := aForward (fun _ ↦ 1) ρ+bForward U ρ
@@ -93,6 +101,9 @@ where $(\overline\pi f)(q)=\int_{\mathcal P}f(q,p)\rho_\beta d\omega_p$.''',
   -β/24*hermitePrimitive U β x-(∑ i, x.2 i*gradient ν x.1 i)-μ x.1
 def momentumAverage (β : ℝ) (f : Phase n → ℝ) (q : V n) : ℝ :=
   ∫ p, f (q,p) ∂momentumGibbs (fun _ ↦ 1) β
+def momentumAveragePrinted_corrected (β : ℝ) (f : Phase n → ℝ) (q : V n) : ℝ :=
+  momentumAverage β f q
+
 def momentumAveragePrinted (U : V n → ℝ) (β : ℝ) (f : Phase n → ℝ) (q : V n) : ℝ :=
   ∫ p, f (q,p)*gibbsWeight (fun _ ↦ 1) U β (q,p)
 theorem firstReciprocalCorrection_pde (U ν μ : V n → ℝ) (β : ℝ) (hβ : 0 < β)

@@ -3,9 +3,9 @@
 Lean/Mathlib均4.34.0。原页PDF映射：[287]；印刷页=[266].
 input_sha256请原样回显：
 {
-  "Blueprint/Ch07.lean": "03e34bf86a5b27e03cce8552bb21fc0fea40514cd87faa953bf09a6a0a27f3c2",
-  "blueprint/ch07/ch07_source.json": "27e402f2a8b9c511106df901d6cc8472e1dae783cdf739f657879ffcf297462a",
-  "BATCH02f_PAGES.pdf": "0a94f0cc077c932c50f7041a50219389cbb20b97910ebfeb3350f70f53154357"
+  "Blueprint/Ch07.lean": "f30ea154ebfb07ae85c0b806ff74b35808d5a0c3dcaa647c0c3cc80a78239e37",
+  "blueprint/ch07/ch07_source.json": "c434892ebf63b06f7cadcdfa7af408c2c12d7b645d35db431d1855224163ba19",
+  "BATCH02f_PAGES.pdf": "fd3ff6a6c8a445f56136ac9899d96d93475be961ff5722c1a3cfeef37666d624"
 }
 用代码将JSON对象(batch,input_sha256,items)写到 /workspace/.mathcopilot/reviews/ch07/BATCH02f_review.json；items仅含本source_id。
 items字段：source_id、verdict(PASS/FAIL/NEEDS_HUMAN)、transcription、semantic_review、counterexample、suggested_fix、printed_version、corrected_version。逐版区分原文疑误和修正版结论；缺材料必须具体指出，不猜测。写后json.loads自检，最后仅回复路径及统计。
@@ -21,7 +21,16 @@ items字段：source_id、verdict(PASS/FAIL/NEEDS_HUMAN)、transcription、seman
   "pdf_page": "287",
   "statement_latex": "In this chapter, we will abbreviate the exact average of the observable $\\phi$ to\n\\[\\langle\\phi\\rangle\\overset{\\rm def}=\\operatorname{Av}_\\beta(\\phi),\\]\nand write the observed average computed in experiment (using a discretization method with step size $h$) as $\\langle\\phi\\rangle_h$. The error in the average of $\\phi$ due to the perfect sampling bias can be evaluated as\n\\[\\text{Error due to discretization}=|\\langle\\phi\\rangle-\\langle\\phi\\rangle_h|.\\]",
   "proof_latex": null,
-  "proof_note": "原书未给独立完整证明。",
+  "proof_outline": null,
+  "proof_note": "原页推导与上下文全文见original_page_text；数学符号的排版以随附原页PDF为准。",
+  "original_page_text": [
+    {
+      "pdf_page": 287,
+      "printed_page": 266,
+      "text": "266\n7\nNumerical Methods for Stochastic Molecular Dynamics\nat the core of sampling in molecular dynamics. Hence we are motivated to ﬁnd\nschemes that minimize this sampling bias introduced to the long-time averages,\nwithout signiﬁcant increase to the method’s computational cost.\nRecall that for canonical sampling, the (stationary or invariant) average of an\nobservable \b.q; p/ is given as\nAvˇ.\b/ D\nZ\nD\n\b.q; p/\u0005ˇ.q; p/d!;\n(7.1)\nwhere \u0005ˇ is the canonical measure\n\u0005ˇ.q; p/ D Z\u00021\ncan exp .\u0003ˇH.q; p// ;\nand Zcan is the canonical partition function\nZ\u00021\ncan D\nZ\nD\nexp .\u0003ˇH.q; p// d!;\nensuring the integral of \u0005ˇ is unity. In this chapter, we will abbreviate the exact\naverage of the observable \b to\nh\bi\ndef\nD Avˇ.\b/;\nand write the observed average computed in experiment (using a discretization\nmethod with step size h) as h\bih. The error in the average of \b due to the perfect\nsampling bias can be evaluated as\nError due to discretization D jh\bi \u0003 h\bihj :\nWe assume that the observed value of h\bih is corrupted as a result of our discretiza-\ntion, ignoring all other sources of error in our simulation. It is this sampling bias\nwe would like to calculate (in order to correct our computed averages), or develop\nnumerical sampling methods that naturally minimize this error.\nIn Fig. 7.2 we quantify the difference between the computed distribution of\nq 2 R and the canonical distribution, for the one-dimensional double well potential\nU.q/ D .q2 \u0003 1/2, using Langevin dynamics with parameters M D \n D ˇ D 1.\nThe dynamics are discretized using a standard Langevin dynamics second-order\nalgorithm taken from [62], where we sample the distribution of q along our\ndiscretized trajectory. Each step of the algorithm requires one force evaluation, so\nwe may think of the vertical axis in Fig. 7.2 representing the total computational\nwork.\nIf we were able to solve the Langevin dynamics SDE exactly, then as we\nevolve the system in time the distribution will converge towards the canonical\ndistribution, however the effects of numerical discretization are apparent in the\n"
+    }
+  ],
+  "transcription_note": "PDF文字层原样保留，陈述中的数学排版转写为LaTeX；文字层有特殊字形编码时以目视原页为准。PDF347的Exercises之后不在正文范围内。",
   "context_notation": [],
   "extra_assumptions": [
     "computed代表步长h下的不变平均，按原文忽略有限采样误差；正确Z和密度概率资格见CanonicalAverage及修正版。"
@@ -51,11 +60,11 @@ theorem bias_nonnegative (exact computed : ℝ) : 0 ≤ bias exact computed := a
 ## 项目依赖定义体及选择规格
 以下def/abbrev/structure完整保留；定理列出完整类型，Mathlib标准定义无需摘录。
 
-### MD.Ch07.bias (Blueprint/Ch07.lean:15)
+### MD.Ch07.bias (Blueprint/Ch07.lean:17)
 原文件上下文：
 ```lean
 open Set Filter MeasureTheory ProbabilityTheory MolecularDynamics
-open scoped BigOperators Topology ContDiff ENNReal NNReal
+open scoped BigOperators Topology ContDiff ENNReal NNReal Matrix
 variable {Ω : Type*} [MeasurableSpace Ω]
 variable {n : ℕ}
 ```
@@ -63,11 +72,11 @@ variable {n : ℕ}
 def bias (exact computed : ℝ) : ℝ := |exact - computed|
 ```
 
-### MD.Ch07.densityWithPartition (Blueprint/Ch07.lean:129)
+### MD.Ch07.densityWithPartition (Blueprint/Ch07.lean:145)
 原文件上下文：
 ```lean
 open Set Filter MeasureTheory ProbabilityTheory MolecularDynamics
-open scoped BigOperators Topology ContDiff ENNReal NNReal
+open scoped BigOperators Topology ContDiff ENNReal NNReal Matrix
 variable {Ω : Type*} [MeasurableSpace Ω]
 variable {n : ℕ}
 ```
@@ -76,11 +85,11 @@ def densityWithPartition {D : Type*} (H : D → ℝ) (β Z : ℝ) (x : D) : ℝ 
   Z⁻¹ * Real.exp (-β * H x)
 ```
 
-### MD.Ch07.canonicalAverage (Blueprint/Ch07.lean:132)
+### MD.Ch07.canonicalAverage (Blueprint/Ch07.lean:148)
 原文件上下文：
 ```lean
 open Set Filter MeasureTheory ProbabilityTheory MolecularDynamics
-open scoped BigOperators Topology ContDiff ENNReal NNReal
+open scoped BigOperators Topology ContDiff ENNReal NNReal Matrix
 variable {Ω : Type*} [MeasurableSpace Ω]
 variable {n : ℕ}
 ```
@@ -89,11 +98,11 @@ def canonicalAverage {D : Type*} [MeasurableSpace D] (ν : Measure D)
     (H f : D → ℝ) (β Z : ℝ) : ℝ := ∫ x, f x * densityWithPartition H β Z x ∂ν
 ```
 
-### MD.Ch07.observableBias (Blueprint/Ch07.lean:164)
+### MD.Ch07.observableBias (Blueprint/Ch07.lean:180)
 原文件上下文：
 ```lean
 open Set Filter MeasureTheory ProbabilityTheory MolecularDynamics
-open scoped BigOperators Topology ContDiff ENNReal NNReal
+open scoped BigOperators Topology ContDiff ENNReal NNReal Matrix
 variable {Ω : Type*} [MeasurableSpace Ω]
 variable {n : ℕ}
 ```
@@ -103,11 +112,11 @@ def observableBias {D : Type*} [MeasurableSpace D] (ν : Measure D)
   bias (canonicalAverage ν H f β Z) computed
 ```
 
-### MD.Ch07.bias_nonnegative (Blueprint/Ch07.lean:168)
+### MD.Ch07.bias_nonnegative (Blueprint/Ch07.lean:184)
 原文件上下文：
 ```lean
 open Set Filter MeasureTheory ProbabilityTheory MolecularDynamics
-open scoped BigOperators Topology ContDiff ENNReal NNReal
+open scoped BigOperators Topology ContDiff ENNReal NNReal Matrix
 variable {Ω : Type*} [MeasurableSpace Ω]
 variable {n : ℕ}
 ```

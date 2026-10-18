@@ -1,0 +1,244 @@
+以附件/PASTE 为准，忽略 /workspace 旧文件；Mathlib 定义按标准含义采信。
+本任务只审本条：原文转录、对象资格、定义体、量词、全部结论及[EXTRA]是否一致；Lean编译不代替语义审阅。
+Lean/Mathlib均4.34.0。原页PDF映射：[344]；印刷页=[323].
+input_sha256请原样回显：
+{
+  "Blueprint/Ch07.lean": "f30ea154ebfb07ae85c0b806ff74b35808d5a0c3dcaa647c0c3cc80a78239e37",
+  "blueprint/ch07/ch07_source.json": "c434892ebf63b06f7cadcdfa7af408c2c12d7b645d35db431d1855224163ba19",
+  "BATCH18f_PAGES.pdf": "45232ed86492c202d6c82ad3b6b3be22934acea4d279a41f397f05be009fa309"
+}
+用代码将JSON对象(batch,input_sha256,items)写到 /workspace/.mathcopilot/reviews/ch07/BATCH18f_review.json；items仅含本source_id。
+items字段：source_id、verdict(PASS/FAIL/NEEDS_HUMAN)、transcription、semantic_review、counterexample、suggested_fix、printed_version、corrected_version。逐版区分原文疑误和修正版结论；缺材料必须具体指出，不猜测。写后json.loads自检，最后仅回复路径及统计。
+
+## 原文JSON
+```json
+{
+  "source_id": "MD-7.13-FastSlowHarmonicModel",
+  "kind": "definition",
+  "label": "(7.47)–(7.48)",
+  "section": "7.13",
+  "printed_page": "323",
+  "pdf_page": "344",
+  "statement_latex": "\\[H(q,p)=p^2/2+U(q),\\qquad U(q)=U_F(q)+U_S(q),\\]\n\\[U_S(q)=q^2/2,\\qquad U_F(q)=\\Omega^2q^2/2,\\tag{7.47}\\]\nwhere $\\Omega\\gg1$.\n\\[\\binom{dq}{dp}=\\underbrace{\\binom{pdt}{-\\Omega^2qdt-\\gamma pdt+\\sqrt{2\\gamma/\\beta}dW}}_{\\rm Fast}+\\underbrace{\\binom0{-qdt}}_{\\rm Slow}.\\tag{7.48}\\]",
+  "proof_latex": null,
+  "proof_outline": null,
+  "proof_note": "原页推导与上下文全文见original_page_text；数学符号的排版以随附原页PDF为准。",
+  "original_page_text": [
+    {
+      "pdf_page": 344,
+      "printed_page": 323,
+      "text": "7.13\nMultiple Timestepping\n323\n7.13\nMultiple Timestepping\nRecall the r-RESPA multiple timestepping scheme introduced in Sect. 4.2, designed\nto propagate systems which have a fast highly oscillatory motion, as well as a slower\nlong-ranged force term. Splitting the potential energy function into fast and slow\ncomponents in the deterministic setting provided only a small gain in the stability\nthreshold, as we encountered linear resonance phenomena at step sizes that were\ninteger multiples of half a period. In systems where the timescale gap is very\nlarge, the r-RESPA scheme does not give signiﬁcant improvement, with the stability\nthreshold scaling identically to the Symplectic Euler method.\nOur hope would be that using Langevin dynamics to add stochasticity would\ndisrupt resonance effects and permit larger usable timesteps. While some consider-\nable efﬁciency improvements have been demonstrated using multiple timestepping\nmethods for Langevin dynamics with constraints [118], we shall investigate the\nsimpler fast/slow splitting demonstrated in previous chapters.\nWe consider propagating a system with Hamiltonian\nH.q; p/ D p2=2 C U.q/;\nU.q/ D UF.q/ C US.q/;\nwhere q; p 2 R and US and UF denote the slow and fast components of the\npotential energy respectively. For the purposes of analysis, we shall model these\nwith harmonic potentials, with\nUS.q/ D q2=2;\nUF.q/ D ˝2q2=2;\n(7.47)\nwhere ˝ \n 1. The question we shall be interested in is whether using Langevin\ndynamics with a multiple timestepping algorithm gives us any extra stability\ncompared to the deterministic case. Let us consider splitting the dynamics into\n\u0002dq\ndp\n\u0003\nD\n\u0002\np dt\n\u0003˝2q dt \u0003 \np dt C\np\n2\n=ˇ dW\n\u0003\n„\nƒ‚\n…\nFast\nC\n\u0002\n0\n\u0003q dt\n\u0003\n„ ƒ‚ …\nSlow\n;\n(7.48)\nand proceed as in the case of the r-RESPA scheme. As before, we consider the case\nwhere we are able to solve the fast part exactly (in practice we use several small\ntimesteps as the fast parts are considered computationally “cheap”). Writing\nF D\n\u0002\n0\n1\n\u0003˝2 \u0003\n\u0003\n;\nwe can write down the solution to the fast dynamics as\n\u0002q.t/\np.t/\n\u0003\nD exp.Ft/\n\u0002 q.0/\np.0/\n\u0003\nC BtR;\n"
+    }
+  ],
+  "transcription_note": "PDF文字层原样保留，陈述中的数学排版转写为LaTeX；文字层有特殊字形编码时以目视原页为准。PDF347的Exercises之后不在正文范围内。",
+  "context_notation": [],
+  "extra_assumptions": [
+    "单位质量、实际标准Wiener、状态适应、正β及完整积分方程由langevin定义体保留；Ω≫1在定量结论中分别改成明确不等式。"
+  ],
+  "issues": [],
+  "statement_scope": "本条逐字引用的全部数学对象与公式；未纳入的上下文另列。",
+  "lean_decl": "MD.Ch07.Mat2",
+  "lean_declarations": [
+    "MD.Ch07.Mat2",
+    "MD.Ch07.fastPotential",
+    "MD.Ch07.slowPotential",
+    "MD.Ch07.fastMatrix",
+    "MD.Ch07.slowMatrix",
+    "MD.Ch07.fastLangevin"
+  ],
+  "source_page_verification": "见source_page_checks.json；必须已目视核对本条原页。",
+  "repair_log": [],
+  "documented_priors": []
+}
+```
+
+## 完整本条Lean
+```lean
+abbrev Mat2 := Matrix (Fin 2) (Fin 2) ℝ
+def fastPotential (Ω q : ℝ) : ℝ := Ω^2*q^2/2
+def slowPotential (q : ℝ) : ℝ := q^2/2
+def fastMatrix (Ω γ : ℝ) : Mat2 := !![0,1;-Ω^2,-γ]
+def slowMatrix (h : ℝ) : Mat2 := !![1,0;-h,1]
+def fastLangevin (P : Measure Ω) (W : ℝ → Ω → V 1) (X : ℝ → Ω → Phase 1)
+    (frequency γ β : ℝ) (x0 : Phase 1) : Prop :=
+  0 < frequency ∧ 0 < β ∧ langevin P W X (fun q ↦ fastPotential frequency (q 0)) (fun _ ↦ 1) γ β⁻¹ x0
+```
+
+## 项目依赖定义体及选择规格
+以下def/abbrev/structure完整保留；定理列出完整类型，Mathlib标准定义无需摘录。
+
+### MD.Ch07.V (Blueprint/Ch07.lean:188)
+原文件上下文：
+```lean
+open Set Filter MeasureTheory ProbabilityTheory MolecularDynamics
+open scoped BigOperators Topology ContDiff ENNReal NNReal Matrix
+variable {Ω : Type*} [MeasurableSpace Ω]
+variable {n : ℕ}
+```
+```lean
+abbrev V (n : ℕ) := Fin n → ℝ
+```
+
+### MD.Ch07.Phase (Blueprint/Ch07.lean:189)
+原文件上下文：
+```lean
+open Set Filter MeasureTheory ProbabilityTheory MolecularDynamics
+open scoped BigOperators Topology ContDiff ENNReal NNReal Matrix
+variable {Ω : Type*} [MeasurableSpace Ω]
+variable {n : ℕ}
+```
+```lean
+abbrev Phase (n : ℕ) := V n × V n
+```
+
+### MD.Ch07.vectorWiener (Blueprint/Ch07.lean:191)
+原文件上下文：
+```lean
+open Set Filter MeasureTheory ProbabilityTheory MolecularDynamics
+open scoped BigOperators Topology ContDiff ENNReal NNReal Matrix
+variable {Ω : Type*} [MeasurableSpace Ω]
+variable {n : ℕ}
+```
+```lean
+def vectorWiener (P : Measure Ω) (W : ℝ → Ω → V n) : Prop :=
+  IsProbabilityMeasure P ∧ textbookIsWienerVector (fun t sample ↦ W t sample) P ∧
+  iIndepFun (fun i sample t ↦ W t sample i) P
+```
+
+### MD.Ch07.coordDerivative (Blueprint/Ch07.lean:237)
+原文件上下文：
+```lean
+open Set Filter MeasureTheory ProbabilityTheory MolecularDynamics
+open scoped BigOperators Topology ContDiff ENNReal NNReal Matrix
+variable {Ω : Type*} [MeasurableSpace Ω]
+variable {n : ℕ}
+```
+```lean
+def coordDerivative (f : V n → ℝ) (x : V n) (i : Fin n) : ℝ :=
+  deriv (fun z ↦ f (Function.update x i z)) (x i)
+```
+
+### MD.Ch07.gradient (Blueprint/Ch07.lean:266)
+原文件上下文：
+```lean
+open Set Filter MeasureTheory ProbabilityTheory MolecularDynamics
+open scoped BigOperators Topology ContDiff ENNReal NNReal Matrix
+variable {Ω : Type*} [MeasurableSpace Ω]
+variable {n : ℕ}
+```
+```lean
+def gradient (U : V n → ℝ) (q : V n) : V n := fun i ↦ coordDerivative U q i
+```
+
+### MD.Ch07.langevin (Blueprint/Ch07.lean:268)
+原文件上下文：
+```lean
+open Set Filter MeasureTheory ProbabilityTheory MolecularDynamics
+open scoped BigOperators Topology ContDiff ENNReal NNReal Matrix
+variable {Ω : Type*} [MeasurableSpace Ω]
+variable {n : ℕ}
+```
+```lean
+def langevin (P : Measure Ω) (W : ℝ → Ω → V n) (X : ℝ → Ω → Phase n)
+    (U : V n → ℝ) (m : V n) (γ θ : ℝ) (x0 : Phase n) : Prop :=
+  vectorWiener P W ∧ (∀ i, 0 < m i) ∧ 0 ≤ γ ∧ 0 < θ ∧
+  (∀ t : ℝ, 0 ≤ t → Measurable[MeasurableSpace.comap
+    (fun (sample : Ω) (s : Icc (0 : ℝ) t) ↦ W s sample) inferInstance] (X t)) ∧
+  (∀ᵐ sample ∂P, ContinuousOn (fun t ↦ X t sample) (Ici 0) ∧ X 0 sample = x0) ∧
+  ∀ᵐ sample ∂P, ∀ t : ℝ, 0 ≤ t → ∀ i,
+    IntervalIntegrable (fun s ↦ (X s sample).2 i / m i) volume 0 t ∧
+    IntervalIntegrable (fun s ↦ -gradient U (X s sample).1 i - γ*(X s sample).2 i) volume 0 t ∧
+    (X t sample).1 i = x0.1 i + (∫ s in 0..t, (X s sample).2 i / m i) ∧
+    (X t sample).2 i = x0.2 i + (∫ s in 0..t, -gradient U (X s sample).1 i - γ*(X s sample).2 i) +
+      Real.sqrt (2*γ*θ*m i) * (W t sample i - W 0 sample i)
+```
+
+### MD.Ch07.Mat2 (Blueprint/Ch07.lean:1544)
+原文件上下文：
+```lean
+open Set Filter MeasureTheory ProbabilityTheory MolecularDynamics
+open scoped BigOperators Topology ContDiff ENNReal NNReal Matrix
+variable {Ω : Type*} [MeasurableSpace Ω]
+variable {n : ℕ}
+```
+```lean
+abbrev Mat2 := Matrix (Fin 2) (Fin 2) ℝ
+```
+
+### MD.Ch07.fastPotential (Blueprint/Ch07.lean:1545)
+原文件上下文：
+```lean
+open Set Filter MeasureTheory ProbabilityTheory MolecularDynamics
+open scoped BigOperators Topology ContDiff ENNReal NNReal Matrix
+variable {Ω : Type*} [MeasurableSpace Ω]
+variable {n : ℕ}
+```
+```lean
+def fastPotential (Ω q : ℝ) : ℝ := Ω^2*q^2/2
+```
+
+### MD.Ch07.slowPotential (Blueprint/Ch07.lean:1546)
+原文件上下文：
+```lean
+open Set Filter MeasureTheory ProbabilityTheory MolecularDynamics
+open scoped BigOperators Topology ContDiff ENNReal NNReal Matrix
+variable {Ω : Type*} [MeasurableSpace Ω]
+variable {n : ℕ}
+```
+```lean
+def slowPotential (q : ℝ) : ℝ := q^2/2
+```
+
+### MD.Ch07.fastMatrix (Blueprint/Ch07.lean:1547)
+原文件上下文：
+```lean
+open Set Filter MeasureTheory ProbabilityTheory MolecularDynamics
+open scoped BigOperators Topology ContDiff ENNReal NNReal Matrix
+variable {Ω : Type*} [MeasurableSpace Ω]
+variable {n : ℕ}
+```
+```lean
+def fastMatrix (Ω γ : ℝ) : Mat2 := !![0,1;-Ω^2,-γ]
+```
+
+### MD.Ch07.slowMatrix (Blueprint/Ch07.lean:1548)
+原文件上下文：
+```lean
+open Set Filter MeasureTheory ProbabilityTheory MolecularDynamics
+open scoped BigOperators Topology ContDiff ENNReal NNReal Matrix
+variable {Ω : Type*} [MeasurableSpace Ω]
+variable {n : ℕ}
+```
+```lean
+def slowMatrix (h : ℝ) : Mat2 := !![1,0;-h,1]
+```
+
+### MD.Ch07.fastLangevin (Blueprint/Ch07.lean:1549)
+原文件上下文：
+```lean
+open Set Filter MeasureTheory ProbabilityTheory MolecularDynamics
+open scoped BigOperators Topology ContDiff ENNReal NNReal Matrix
+variable {Ω : Type*} [MeasurableSpace Ω]
+variable {n : ℕ}
+```
+```lean
+def fastLangevin (P : Measure Ω) (W : ℝ → Ω → V 1) (X : ℝ → Ω → Phase 1)
+    (frequency γ β : ℝ) (x0 : Phase 1) : Prop :=
+  0 < frequency ∧ 0 < β ∧ langevin P W X (fun q ↦ fastPotential frequency (q 0)) (fun _ ↦ 1) γ β⁻¹ x0
+```
+
+### MolecularDynamics.textbookIsWienerVector (MolecularDynamics/Chapter06/WienerVectorSupport.lean:13)
+原文件上下文：
+```lean
+open Set Filter MeasureTheory ProbabilityTheory
+open scoped Topology NNReal ENNReal
+```
+```lean
+structure textbookIsWienerVector {Nc : ℕ} {Ω : Type*} [MeasurableSpace Ω]
+    (B : ℝ≥0 → Ω → (Fin Nc → ℝ)) (P : Measure Ω) : Prop where
+  gaussian : IsGaussianProcess (fun z : (_ : Fin Nc) × ℝ≥0 ↦ fun ω ↦ B z.2 ω z.1) P
+  mean : ∀ i t, P[fun ω ↦ B t ω i] = 0
+  covariance : ∀ i j s t, cov[fun ω ↦ B s ω i, fun ω ↦ B t ω j; P] =
+    if i = j then ((min s t : ℝ≥0) : ℝ) else 0
+  cont : ∀ᵐ ω ∂P, Continuous (fun t ↦ B t ω)
+```

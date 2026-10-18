@@ -7,9 +7,19 @@ r'''For $\gamma>0$, we can simplify to
   Real.cosh (η*h/2-Real.artanh (h/η))*Real.sqrt (1-h^2/η^2)
 theorem hyperbolicPhase_identity (η h : ℝ) (hη : η ≠ 0) (hr : |h/η| < 1) :
     hyperbolicPhase η h = Real.cosh (η*h/2)-h/η*Real.sinh (η*h/2) := by
-  sorry''',
+  have hh : h/η ∈ Set.Ioo (-1 : ℝ) 1 := abs_lt.mp hr
+  have hs : Real.sqrt (1-(h/η)^2) ≠ 0 := by
+    apply ne_of_gt
+    apply Real.sqrt_pos.2
+    have hsq : (h/η)^2 < 1 := (sq_lt_one_iff_abs_lt_one (h/η)).2 hr
+    linarith
+  simp only [hyperbolicPhase,Real.cosh_sub,Real.cosh_artanh hh,Real.sinh_artanh hh]
+  rw [← div_pow]
+  calc
+    _ = (Real.cosh (η*h/2)-(h/η)*Real.sinh (η*h/2))/Real.sqrt (1-(h/η)^2)*Real.sqrt (1-(h/η)^2) := by ring
+    _ = _ := div_mul_cancel₀ _ hs''',
 extra=['实η版本必须补|h/η|<1，γ>0本身不足；复η需选择sqrt/artanh分支，原文未说明。只覆盖明确实域上的等式，不把所有γ>0都纳入。'],
-missing='需实artanh双曲函数恒等式与平方根分支短桥；不建设复分析分支理论。')
+missing=None)
 
 add('UnderdampedPhasePrinted','7.13',325,
 r'''We consider the case with $\gamma\ll\Omega$, allowing us to write $\eta=i\widehat\eta$ for $\widehat\eta\in\mathbb R$, and
@@ -57,6 +67,12 @@ which gives a stability condition for all step sizes $h$ as long as
 Therefore we expect that the minimum friction value required for stability for all timesteps $h>0$, scales with the value of inverse $\Omega$.''',
 '''def frictionThresholdPrinted (Ω : ℝ) : ℝ := Ω*Real.sqrt (2-2*Real.sqrt (1-Ω⁻¹^4))
 def frictionThresholdPrinted_corrected (Ω : ℝ) : ℝ := Real.sqrt (2/(Ω^2+Real.sqrt (Ω^4-1)))
+def frictionBoundPrinted (Ω γ : ℝ) : Prop :=
+  frictionThresholdPrinted Ω ≤ γ ∧ Real.sqrt 2/Ω ≤ frictionThresholdPrinted Ω
+
+def frictionBoundPrinted_corrected (Ω γ : ℝ) : Prop :=
+  0 < γ ∧ γ < 2*Ω ∧ 1/Real.sqrt (4*Ω^2-γ^2) ≤ γ/2
+
 theorem frictionThreshold_rationalized (Ω : ℝ) (hΩ : 1 ≤ Ω) :
     frictionThresholdPrinted Ω = frictionThresholdPrinted_corrected Ω := by
   sorry

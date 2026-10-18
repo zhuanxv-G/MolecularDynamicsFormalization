@@ -21,8 +21,7 @@
         "将本段bias记号具体写为后文印刷p.266所给的绝对平均误差；不把“所有标准方法”量化成无条件定理。"
       ],
       "source_pages": "284",
-      "semantic_review": "已对照目视原页核对对象、量词、技术资格和所列覆盖范围；网站尚未审阅。",
-      "compile_receipt": "blueprint/ch07/validation/batches/s712b-v1.json"
+      "semantic_review": "已对照目视原页核对对象、量词、技术资格和所列覆盖范围；网站尚未审阅。"
     },
     "MD-7.2-ScalarSDE": {
       "verdict": "PASS",
@@ -45,8 +44,7 @@
         "X的初值、几乎处处路径连续性和积分方程在第6章定义体中全部保留；未声称一般弱解与本L²表示等价。"
       ],
       "source_pages": "285",
-      "semantic_review": "已对照目视原页核对对象、量词、技术资格和所列覆盖范围；网站尚未审阅。",
-      "compile_receipt": "blueprint/ch07/validation/batches/s712b-v1.json"
+      "semantic_review": "已对照目视原页核对对象、量词、技术资格和所列覆盖范围；网站尚未审阅。"
     },
     "MD-7.2-EulerMaruyama": {
       "verdict": "PASS",
@@ -78,8 +76,7 @@
         "步长h>0用于数值解释；单步映射本身为总函数；跨步独立正态资格另由standardNormalSequence明确给出。"
       ],
       "source_pages": "285",
-      "semantic_review": "已对照目视原页核对对象、量词、技术资格和所列覆盖范围；网站尚未审阅。",
-      "compile_receipt": "blueprint/ch07/validation/batches/s712b-v1.json"
+      "semantic_review": "已对照目视原页核对对象、量词、技术资格和所列覆盖范围；网站尚未审阅。"
     },
     "MD-7.2-SDEIncrement": {
       "verdict": "PASS",
@@ -102,8 +99,7 @@
         "区间Itô积分用两个从0开始的L²积分值之差表示；t,h非负，漂移在整个区间可积；不另造未规定的随机积分。"
       ],
       "source_pages": "285",
-      "semantic_review": "已对照目视原页核对对象、量词、技术资格和所列覆盖范围；网站尚未审阅。",
-      "compile_receipt": "blueprint/ch07/validation/batches/s712b-v1.json"
+      "semantic_review": "已对照目视原页核对对象、量词、技术资格和所列覆盖范围；网站尚未审阅。"
     },
     "MD-7.2-StrongError": {
       "verdict": "PASS",
@@ -125,8 +121,7 @@
         "α>0且各网格误差的α次矩可积时具有误差解释；有限非空网格的sSup表示最大值；Real.rpow为实指数幂。"
       ],
       "source_pages": "285",
-      "semantic_review": "已对照目视原页核对对象、量词、技术资格和所列覆盖范围；网站尚未审阅。",
-      "compile_receipt": "blueprint/ch07/validation/batches/s712b-v1.json"
+      "semantic_review": "已对照目视原页核对对象、量词、技术资格和所列覆盖范围；网站尚未审阅。"
     },
     "MD-7.2-MeanErrorExpectation": {
       "verdict": "PASS",
@@ -153,8 +148,7 @@
         "期望可积；不以数值方法的收敛为假设重新宣布同一收敛，只给使收敛传递成立的定量不等式。"
       ],
       "source_pages": "285",
-      "semantic_review": "已对照目视原页核对对象、量词、技术资格和所列覆盖范围；网站尚未审阅。",
-      "compile_receipt": "blueprint/ch07/validation/batches/s712b-v1.json"
+      "semantic_review": "已对照目视原页核对对象、量词、技术资格和所列覆盖范围；网站尚未审阅。"
     },
     "MD-7.2-StrongOrder": {
       "verdict": "PASS",
@@ -176,8 +170,7 @@
         "显式h=T/N趋零及统一常数的量词；正α、r和时间；有限矩资格作为方法适用条件不隐去。"
       ],
       "source_pages": "285",
-      "semantic_review": "已对照目视原页核对对象、量词、技术资格和所列覆盖范围；网站尚未审阅。",
-      "compile_receipt": "blueprint/ch07/validation/batches/s712b-v1.json"
+      "semantic_review": "已对照目视原页核对对象、量词、技术资格和所列覆盖范围；网站尚未审阅。"
     },
     "MD-7.2-WeakError": {
       "verdict": "PASS",
@@ -204,12 +197,11 @@
         "测试函数类明确量化；D允许依赖测试函数；积分只有在可积时解释为期望，后续误差定理显式要求可积。"
       ],
       "source_pages": "286",
-      "semantic_review": "已对照目视原页核对对象、量词、技术资格和所列覆盖范围；网站尚未审阅。",
-      "compile_receipt": "blueprint/ch07/validation/batches/s712b-v1.json"
+      "semantic_review": "已对照目视原页核对对象、量词、技术资格和所列覆盖范围；网站尚未审阅。"
     },
     "MD-7.2-StrongWeakComparison": {
       "verdict": "PASS",
-      "block_sha256": "4749e1b6981e48349a66a7daf1291e26bd3a72760ec1d5dc70209052cbb7825b",
+      "block_sha256": "d5b64df342e49fc545cd9193f9a9a3881e813d71253cde449fd409f94342e2f7",
       "checked": true,
       "declaration_axioms": {
         "MD.Ch07.strongWeakLipschitz": [
@@ -219,13 +211,12 @@
         ],
         "MD.Ch07.weakDoesNotImplyStrong": [
           "propext",
-          "sorryAx",
           "Classical.choice",
           "Quot.sound"
         ]
       },
-      "direct_placeholder": true,
-      "missing": "反向反例还需两点概率测度的积分化简；下一批限三条短路线。",
+      "direct_placeholder": false,
+      "missing": null,
       "issues": [],
       "website": "待网站审计",
       "statement_scope": "Lipschitz测试函数的逐步定量界与反向不成立的存在性；未证明一般多项式增长测试类的阶数传递。",
@@ -234,8 +225,7 @@
         "反向用两点分布上交换X、Y的反例表达；同分布但耦合强误差不为零。"
       ],
       "source_pages": "286",
-      "semantic_review": "已对照目视原页核对对象、量词、技术资格和所列覆盖范围；网站尚未审阅。",
-      "compile_receipt": "blueprint/ch07/validation/batches/s712b-v1.json"
+      "semantic_review": "已对照目视原页核对对象、量词、技术资格和所列覆盖范围；网站尚未审阅。"
     },
     "MD-7.2-CanonicalAverage": {
       "verdict": "PASS",
@@ -267,8 +257,7 @@
         "该公式先保留显式Z参数；只有probabilityDensity成立才称概率密度。正有限配分积分及其归一化见修正版，不把原页倒数疑误带入默认定义。"
       ],
       "source_pages": "287",
-      "semantic_review": "已对照目视原页核对对象、量词、技术资格和所列覆盖范围；网站尚未审阅。",
-      "compile_receipt": "blueprint/ch07/validation/batches/s712b-v1.json"
+      "semantic_review": "已对照目视原页核对对象、量词、技术资格和所列覆盖范围；网站尚未审阅。"
     },
     "MD-7.2-PartitionPrinted": {
       "verdict": "NEEDS_HUMAN",
@@ -304,8 +293,7 @@
         "反例的代数核心：取一点评价空间总质量1/2、H=0，则原式强制Z=2，密度积分为1/4；counterexample声明给出1/4≠1，测度实现的积分化简未另作声明。"
       ],
       "source_pages": "287",
-      "semantic_review": "已对照目视原页核对对象、量词、技术资格和所列覆盖范围；网站尚未审阅。",
-      "compile_receipt": "blueprint/ch07/validation/batches/s712b-v1.json"
+      "semantic_review": "已对照目视原页核对对象、量词、技术资格和所列覆盖范围；网站尚未审阅。"
     },
     "MD-7.2-AverageNotationBias": {
       "verdict": "PASS",
@@ -332,8 +320,7 @@
         "computed代表步长h下的不变平均，按原文忽略有限采样误差；正确Z和密度概率资格见CanonicalAverage及修正版。"
       ],
       "source_pages": "287",
-      "semantic_review": "已对照目视原页核对对象、量词、技术资格和所列覆盖范围；网站尚未审阅。",
-      "compile_receipt": "blueprint/ch07/validation/batches/s712b-v1.json"
+      "semantic_review": "已对照目视原页核对对象、量词、技术资格和所列覆盖范围；网站尚未审阅。"
     },
     "MD-7.3-VectorOU": {
       "verdict": "PASS",
@@ -370,8 +357,7 @@
         "显式标准多维Wiener及整个坐标路径独立，正质量、温度与非负摩擦；各坐标用真实Itô积分方程。"
       ],
       "source_pages": "288",
-      "semantic_review": "已对照目视原页核对对象、量词、技术资格和所列覆盖范围；网站尚未审阅。",
-      "compile_receipt": "blueprint/ch07/validation/batches/s712b-v1.json"
+      "semantic_review": "已对照目视原页核对对象、量词、技术资格和所列覆盖范围；网站尚未审阅。"
     },
     "MD-7.3-OUIntegratingFactor": {
       "verdict": "PASS",
@@ -394,8 +380,7 @@
         "把随机微分乘积法则陈述为从0到t的确定性加权Itô积分等式；有限时间和L²解资格由momentumOU明确。"
       ],
       "source_pages": "288",
-      "semantic_review": "已对照目视原页核对对象、量词、技术资格和所列覆盖范围；网站尚未审阅。",
-      "compile_receipt": "blueprint/ch07/validation/batches/s712b-v1.json"
+      "semantic_review": "已对照目视原页核对对象、量词、技术资格和所列覆盖范围；网站尚未审阅。"
     },
     "MD-7.3-OUExactUpdate": {
       "verdict": "PASS",
@@ -424,8 +409,7 @@
         "独立性要求使用W自然历史的适应解，见scalarSDE；θ=k_BT，M正对角。"
       ],
       "source_pages": "289",
-      "semantic_review": "已对照目视原页核对对象、量词、技术资格和所列覆盖范围；网站尚未审阅。",
-      "compile_receipt": "blueprint/ch07/validation/batches/s712b-v1.json"
+      "semantic_review": "已对照目视原页核对对象、量词、技术资格和所列覆盖范围；网站尚未审阅。"
     },
     "MD-7.3-OUPhaseIteration": {
       "verdict": "PASS",
@@ -452,8 +436,7 @@
         "独立标准正态的完整概率资格由vectorNormalSequence规定；ouStep只是总化单步函数。"
       ],
       "source_pages": "289",
-      "semantic_review": "已对照目视原页核对对象、量词、技术资格和所列覆盖范围；网站尚未审阅。",
-      "compile_receipt": "blueprint/ch07/validation/batches/s712b-v1.json"
+      "semantic_review": "已对照目视原页核对对象、量词、技术资格和所列覆盖范围；网站尚未审阅。"
     },
     "MD-7.3-OUForward": {
       "verdict": "PASS",
@@ -492,8 +475,7 @@
         "仅p变量，q是固定参数；未声称已构造OU Markov半群的强生成元域。"
       ],
       "source_pages": "289",
-      "semantic_review": "已对照目视原页核对对象、量词、技术资格和所列覆盖范围；网站尚未审阅。",
-      "compile_receipt": "blueprint/ch07/validation/batches/s712b-v1.json"
+      "semantic_review": "已对照目视原页核对对象、量词、技术资格和所列覆盖范围；网站尚未审阅。"
     },
     "MD-7.3-OUGaussianInvariant": {
       "verdict": "PASS",
@@ -516,8 +498,7 @@
         "γ=0允许恒等更新，仍保留Gaussian不变性；不把此时的不变性说成遍历采样收敛。"
       ],
       "source_pages": "289",
-      "semantic_review": "已对照目视原页核对对象、量词、技术资格和所列覆盖范围；网站尚未审阅。",
-      "compile_receipt": "blueprint/ch07/validation/batches/s712b-v1.json"
+      "semantic_review": "已对照目视原页核对对象、量词、技术资格和所列覆盖范围；网站尚未审阅。"
     },
     "MD-7.3.1-Langevin": {
       "verdict": "PASS",
@@ -544,8 +525,7 @@
         "用真实坐标偏导与完整位置/动量积分方程表达；常扩散的Itô项即W增量乘系数；显式状态适应W自然历史、漂移可积。"
       ],
       "source_pages": "289",
-      "semantic_review": "已对照目视原页核对对象、量词、技术资格和所列覆盖范围；网站尚未审阅。",
-      "compile_receipt": "blueprint/ch07/validation/batches/s712b-v1.json"
+      "semantic_review": "已对照目视原页核对对象、量词、技术资格和所列覆盖范围；网站尚未审阅。"
     },
     "MD-7.3.1-HamiltonianGibbs": {
       "verdict": "PASS",
@@ -569,8 +549,7 @@
         "本文未重证明一般Hamiltonian流存在；若需归一化为概率，须另补配分积分正有限。"
       ],
       "source_pages": "290",
-      "semantic_review": "已对照目视原页核对对象、量词、技术资格和所列覆盖范围；网站尚未审阅。",
-      "compile_receipt": "blueprint/ch07/validation/batches/s712b-v1.json"
+      "semantic_review": "已对照目视原页核对对象、量词、技术资格和所列覆盖范围；网站尚未审阅。"
     },
     "MD-7.3.1-ABOPieces": {
       "verdict": "PASS",
@@ -618,8 +597,7 @@
         "仅最后短定理证明漂移相加；A/B确定性精确流与O分布精确性各自另列，不用漂移恒等式替代。"
       ],
       "source_pages": "290–291",
-      "semantic_review": "已对照目视原页核对对象、量词、技术资格和所列覆盖范围；网站尚未审阅。",
-      "compile_receipt": "blueprint/ch07/validation/batches/s712b-v1.json"
+      "semantic_review": "已对照目视原页核对对象、量词、技术资格和所列覆盖范围；网站尚未审阅。"
     },
     "MD-7.3.1-ABExactFlows": {
       "verdict": "PASS",
@@ -647,8 +625,7 @@
         "逐坐标A位置/B动量真实时间导数；另一个分量由更新定义恒定；O精确性引用OUTransitionLaw未证陈述，不冒称全部已证。"
       ],
       "source_pages": "291",
-      "semantic_review": "已对照目视原页核对对象、量词、技术资格和所列覆盖范围；网站尚未审阅。",
-      "compile_receipt": "blueprint/ch07/validation/batches/s712b-v1.json"
+      "semantic_review": "已对照目视原页核对对象、量词、技术资格和所列覆盖范围；网站尚未审阅。"
     },
     "MD-7.3.1-ABForward": {
       "verdict": "PASS",
@@ -675,8 +652,7 @@
         "以真实偏导定义所印微分表达式；形式伴随解释要求足够光滑及边界通量消失，未声称一般强算子域。"
       ],
       "source_pages": "291",
-      "semantic_review": "已对照目视原页核对对象、量词、技术资格和所列覆盖范围；网站尚未审阅。",
-      "compile_receipt": "blueprint/ch07/validation/batches/s712b-v1.json"
+      "semantic_review": "已对照目视原页核对对象、量词、技术资格和所列覆盖范围；网站尚未审阅。"
     },
     "MD-7.3.1-ABOBABO": {
       "verdict": "PASS",
@@ -703,8 +679,7 @@
         "字母从左到右执行，函数复合从右到左；随机变量独立资格由vectorNormalSequence约束。"
       ],
       "source_pages": "291",
-      "semantic_review": "已对照目视原页核对对象、量词、技术资格和所列覆盖范围；网站尚未审阅。",
-      "compile_receipt": "blueprint/ch07/validation/batches/s712b-v1.json"
+      "semantic_review": "已对照目视原页核对对象、量词、技术资格和所列覆盖范围；网站尚未审阅。"
     },
     "MD-7.3.1-WordConvention": {
       "verdict": "NEEDS_HUMAN",
@@ -735,8 +710,7 @@
         "每个O的向量噪声需联合独立标准正态；字母计数结论独立证明。"
       ],
       "source_pages": "291",
-      "semantic_review": "已对照目视原页核对对象、量词、技术资格和所列覆盖范围；网站尚未审阅。",
-      "compile_receipt": "blueprint/ch07/validation/batches/s712b-v1.json"
+      "semantic_review": "已对照目视原页核对对象、量词、技术资格和所列覆盖范围；网站尚未审阅。"
     },
     "MD-7.3.1-SixSchemes": {
       "verdict": "PASS",
@@ -780,8 +754,7 @@
         "原文最后“single evaluation”使用跨步缓存；实现成本不列为待证数学命题。"
       ],
       "source_pages": "292",
-      "semantic_review": "已对照目视原页核对对象、量词、技术资格和所列覆盖范围；网站尚未审阅。",
-      "compile_receipt": "blueprint/ch07/validation/batches/s712b-v1.json"
+      "semantic_review": "已对照目视原页核对对象、量词、技术资格和所列覆盖范围；网站尚未审阅。"
     },
     "MD-7.3.1-ConjugateIteration": {
       "verdict": "PASS",
@@ -808,8 +781,7 @@
         "对所印OABA与BAOAB的随机分布/路径共轭仍需噪声移位包装，列入覆盖缺口；未把一般S,T恒等式冒称整段已覆盖。"
       ],
       "source_pages": "293",
-      "semantic_review": "已对照目视原页核对对象、量词、技术资格和所列覆盖范围；网站尚未审阅。",
-      "compile_receipt": "blueprint/ch07/validation/batches/s712b-v1.json"
+      "semantic_review": "已对照目视原页核对对象、量词、技术资格和所列覆盖范围；网站尚未审阅。"
     },
     "MD-7.3.2-SPVPrinted": {
       "verdict": "NEEDS_HUMAN",
@@ -838,8 +810,7 @@
         "γ>0使用原印η商；γ=0的连续延拓η=h另需定义，不用实数除零总化声称正确。"
       ],
       "source_pages": "293",
-      "semantic_review": "已对照目视原页核对对象、量词、技术资格和所列覆盖范围；网站尚未审阅。",
-      "compile_receipt": "blueprint/ch07/validation/batches/s712b-v1.json"
+      "semantic_review": "已对照目视原页核对对象、量词、技术资格和所列覆盖范围；网站尚未审阅。"
     },
     "MD-7.3.2-SPVLargeFriction": {
       "verdict": "PASS",
@@ -862,8 +833,7 @@
         "只表达明确的η极限；采样不一致的定性判断缺统一模型、时标与测试函数量化，不作为已证结论。"
       ],
       "source_pages": "293–294",
-      "semantic_review": "已对照目视原页核对对象、量词、技术资格和所列覆盖范围；网站尚未审阅。",
-      "compile_receipt": "blueprint/ch07/validation/batches/s712b-v1.json"
+      "semantic_review": "已对照目视原页核对对象、量词、技术资格和所列覆盖范围；网站尚未审阅。"
     },
     "MD-7.3.2-BBK": {
       "verdict": "PASS",
@@ -890,8 +860,7 @@
         "h>0、γ≥0、θ>0、m_i>0时分母非零及噪声方差有效；不同R′耦合方案分别处理，不把独立与重用噪声混为一谈。"
       ],
       "source_pages": "294",
-      "semantic_review": "已对照目视原页核对对象、量词、技术资格和所列覆盖范围；网站尚未审阅。",
-      "compile_receipt": "blueprint/ch07/validation/batches/s712b-v1.json"
+      "semantic_review": "已对照目视原页核对对象、量词、技术资格和所列覆盖范围；网站尚未审阅。"
     },
     "MD-7.4-HarmonicHamiltonian": {
       "verdict": "PASS",
@@ -918,8 +887,7 @@
         "正m、正θ、Ω≠0时为可归一化的正则谐振子Gibbs分布；θ=k_BT。"
       ],
       "source_pages": "294",
-      "semantic_review": "已对照目视原页核对对象、量词、技术资格和所列覆盖范围；网站尚未审阅。",
-      "compile_receipt": "blueprint/ch07/validation/batches/s712b-v1.json"
+      "semantic_review": "已对照目视原页核对对象、量词、技术资格和所列覆盖范围；网站尚未审阅。"
     },
     "MD-7.4-HarmonicMoments": {
       "verdict": "PASS",
@@ -942,8 +910,7 @@
         "harmonicLaw给出实际正态乘积，未把所需各矩值作为假设；与Hamiltonian的密度识别另列覆盖缺口。"
       ],
       "source_pages": "294–295",
-      "semantic_review": "已对照目视原页核对对象、量词、技术资格和所列覆盖范围；网站尚未审阅。",
-      "compile_receipt": "blueprint/ch07/validation/batches/s712b-v1.json"
+      "semantic_review": "已对照目视原页核对对象、量词、技术资格和所列覆盖范围；网站尚未审阅。"
     },
     "MD-7.4-LinearIteration": {
       "verdict": "PASS",
@@ -980,8 +947,7 @@
         "具体2×2矩阵用四个真实系数，噪声不假定自动独立；后续陈述分别补独立或相关结构。"
       ],
       "source_pages": "295",
-      "semantic_review": "已对照目视原页核对对象、量词、技术资格和所列覆盖范围；网站尚未审阅。",
-      "compile_receipt": "blueprint/ch07/validation/batches/s712b-v1.json"
+      "semantic_review": "已对照目视原页核对对象、量词、技术资格和所列覆盖范围；网站尚未审阅。"
     },
     "MD-7.4-BBKLinearForm": {
       "verdict": "PASS",
@@ -1008,8 +974,7 @@
         "完整记录所印矩阵与噪声；从BBK更新代入谐势的代数识别暂未证明，不以定义计为已证识别。"
       ],
       "source_pages": "295",
-      "semantic_review": "已对照目视原页核对对象、量词、技术资格和所列覆盖范围；网站尚未审阅。",
-      "compile_receipt": "blueprint/ch07/validation/batches/s712b-v1.json"
+      "semantic_review": "已对照目视原页核对对象、量词、技术资格和所列覆盖范围；网站尚未审阅。"
     },
     "MD-7.4-QuadraticProducts": {
       "verdict": "PASS",
@@ -1029,8 +994,7 @@
       "statement_scope": "本条逐字引用的全部数学对象与公式；未纳入的上下文另列。",
       "extra_assumptions": [],
       "source_pages": "295",
-      "semantic_review": "已对照目视原页核对对象、量词、技术资格和所列覆盖范围；网站尚未审阅。",
-      "compile_receipt": "blueprint/ch07/validation/batches/s712b-v1.json"
+      "semantic_review": "已对照目视原页核对对象、量词、技术资格和所列覆盖范围；网站尚未审阅。"
     },
     "MD-7.4.1-StationaryMomentSystem": {
       "verdict": "PASS",
@@ -1064,8 +1028,7 @@
         "只讨论已存在的平稳分布矩，初值分布趋平稳及长时间平均的遍历收敛未证明。"
       ],
       "source_pages": "296",
-      "semantic_review": "已对照目视原页核对对象、量词、技术资格和所列覆盖范围；网站尚未审阅。",
-      "compile_receipt": "blueprint/ch07/validation/batches/s712b-v1.json"
+      "semantic_review": "已对照目视原页核对对象、量词、技术资格和所列覆盖范围；网站尚未审阅。"
     },
     "MD-7.4.1-ABOHarmonic": {
       "verdict": "PASS",
@@ -1093,8 +1056,7 @@
         "原文长时间极限前提改为已存在的实际平稳概率分布及一阶矩可积；趋平稳结论不在本条覆盖。"
       ],
       "source_pages": "296–297",
-      "semantic_review": "已对照目视原页核对对象、量词、技术资格和所列覆盖范围；网站尚未审阅。",
-      "compile_receipt": "blueprint/ch07/validation/batches/s712b-v1.json"
+      "semantic_review": "已对照目视原页核对对象、量词、技术资格和所列覆盖范围；网站尚未审阅。"
     },
     "MD-7.4.1-ABOVariance": {
       "verdict": "PASS",
@@ -1128,8 +1090,7 @@
         "完整保留方差有理式与Taylor展开；实际平稳概率、L²及稳定区分母为正明示，不假设目标方差公式。"
       ],
       "source_pages": "297",
-      "semantic_review": "已对照目视原页核对对象、量词、技术资格和所列覆盖范围；网站尚未审阅。",
-      "compile_receipt": "blueprint/ch07/validation/batches/s712b-v1.json"
+      "semantic_review": "已对照目视原页核对对象、量词、技术资格和所列覆盖范围；网站尚未审阅。"
     },
     "MD-7.4.1-Table71": {
       "verdict": "PASS",
@@ -1169,8 +1130,7 @@
         "只陈述已存在平稳概率的矩；长期收敛和遍历解释另列缺口。"
       ],
       "source_pages": "298",
-      "semantic_review": "已对照目视原页核对对象、量词、技术资格和所列覆盖范围；网站尚未审阅。",
-      "compile_receipt": "blueprint/ch07/validation/batches/s712b-v1.json"
+      "semantic_review": "已对照目视原页核对对象、量词、技术资格和所列覆盖范围；网站尚未审阅。"
     },
     "MD-7.4.1-NonsymmetricExactMoments": {
       "verdict": "PASS",
@@ -1199,8 +1159,7 @@
         "本条仅覆盖两个精确方差；O(h)协方差及其随h统一常数未陈述，列入覆盖缺口。"
       ],
       "source_pages": "298",
-      "semantic_review": "已对照目视原页核对对象、量词、技术资格和所列覆盖范围；网站尚未审阅。",
-      "compile_receipt": "blueprint/ch07/validation/batches/s712b-v1.json"
+      "semantic_review": "已对照目视原页核对对象、量词、技术资格和所列覆盖范围；网站尚未审阅。"
     },
     "MD-7.4.2-BBKStar": {
       "verdict": "PASS",
@@ -1227,8 +1186,7 @@
         "R序列需独立同分布标准正态；状态与当前R因上一步重用相关，不再假设独立。矩阵及κ常数由BBKLinearForm给出。"
       ],
       "source_pages": "298–299",
-      "semantic_review": "已对照目视原页核对对象、量词、技术资格和所列覆盖范围；网站尚未审阅。",
-      "compile_receipt": "blueprint/ch07/validation/batches/s712b-v1.json"
+      "semantic_review": "已对照目视原页核对对象、量词、技术资格和所列覆盖范围；网站尚未审阅。"
     },
     "MD-7.4.2-BBKStarCorrelations": {
       "verdict": "PASS",
@@ -1252,8 +1210,7 @@
         "所有分量L²和未来独立资格明示；此抽象局部模型覆盖所列七个相关矩。"
       ],
       "source_pages": "299",
-      "semantic_review": "已对照目视原页核对对象、量词、技术资格和所列覆盖范围；网站尚未审阅。",
-      "compile_receipt": "blueprint/ch07/validation/batches/s712b-v1.json"
+      "semantic_review": "已对照目视原页核对对象、量词、技术资格和所列覆盖范围；网站尚未审阅。"
     },
     "MD-7.4.2-BBKStarMomentSystemPrinted": {
       "verdict": "NEEDS_HUMAN",
@@ -1287,8 +1244,7 @@
         "PDF300续接第三条方程；此处定义保留方程组全部三式，不把修正方程定义计作概率推导已证。"
       ],
       "source_pages": "299–300",
-      "semantic_review": "已对照目视原页核对对象、量词、技术资格和所列覆盖范围；网站尚未审阅。",
-      "compile_receipt": "blueprint/ch07/validation/batches/s712b-v1.json"
+      "semantic_review": "已对照目视原页核对对象、量词、技术资格和所列覆盖范围；网站尚未审阅。"
     },
     "MD-7.4.2-BBKStarStationary": {
       "verdict": "PASS",
@@ -1311,8 +1267,7 @@
         "只陈述修正后的矩方程组求解；一般平稳分布导出此方程需BBKStarCorrelations及历史模型，未声称整条分布理论完成。"
       ],
       "source_pages": "300",
-      "semantic_review": "已对照目视原页核对对象、量词、技术资格和所列覆盖范围；网站尚未审阅。",
-      "compile_receipt": "blueprint/ch07/validation/batches/s712b-v1.json"
+      "semantic_review": "已对照目视原页核对对象、量词、技术资格和所列覆盖范围；网站尚未审阅。"
     },
     "MD-7.5-PerturbedHamiltonian": {
       "verdict": "PASS",
@@ -1355,8 +1310,7 @@
         "分布是实际归一Gibbs权；ε>0时的可积归一性及动量独立Gaussian识别另列待证。"
       ],
       "source_pages": "300",
-      "semantic_review": "已对照目视原页核对对象、量词、技术资格和所列覆盖范围；网站尚未审阅。",
-      "compile_receipt": "blueprint/ch07/validation/batches/s712b-v1.json"
+      "semantic_review": "已对照目视原页核对对象、量词、技术资格和所列覆盖范围；网站尚未审阅。"
     },
     "MD-7.5-PerturbedErrorExpansion": {
       "verdict": "PASS",
@@ -1395,8 +1349,7 @@
         "实际平稳分布、坐标L²、独立Gaussian噪声及γ>0均写入前提；没有把待求平均或展开作为假设。"
       ],
       "source_pages": "301",
-      "semantic_review": "已对照目视原页核对对象、量词、技术资格和所列覆盖范围；网站尚未审阅。",
-      "compile_receipt": "blueprint/ch07/validation/batches/s712b-v1.json"
+      "semantic_review": "已对照目视原页核对对象、量词、技术资格和所列覆盖范围；网站尚未审阅。"
     },
     "MD-7.5-PerturbedErrorOrders": {
       "verdict": "PASS",
@@ -1430,8 +1383,7 @@
         "双参数正向极限已明确；γ固定的常数不等于γ一致误差界。原书(7.14)的ε³h²余项不足以单独推出BAOAB的ε²h²+ε²h⁴界，需要额外结构；保留为待证。"
       ],
       "source_pages": "301",
-      "semantic_review": "已对照目视原页核对对象、量词、技术资格和所列覆盖范围；网站尚未审阅。",
-      "compile_receipt": "blueprint/ch07/validation/batches/s712b-v1.json"
+      "semantic_review": "已对照目视原页核对对象、量词、技术资格和所列覆盖范围；网站尚未审阅。"
     },
     "MD-7.6-GibbsComposition": {
       "verdict": "PASS",
@@ -1451,8 +1403,7 @@
         "只覆盖末尾不变对象的组合恒等式；P/Q可取实际测度推前或已定义的传播子。H/O各自Gibbs不变性由前面独立陈述承担，生成元零蕴含半群固定点还需半群域理论。"
       ],
       "source_pages": "303",
-      "semantic_review": "已对照目视原页核对对象、量词、技术资格和所列覆盖范围；网站尚未审阅。",
-      "compile_receipt": "blueprint/ch07/validation/batches/s712b-v1.json"
+      "semantic_review": "已对照目视原页核对对象、量词、技术资格和所列覆盖范围；网站尚未审阅。"
     },
     "MD-7.6-DivergenceFreeInvariant": {
       "verdict": "PASS",
@@ -1496,8 +1447,7 @@
         "不变生成元到全局流不变测度仍需完整流/输运桥，见HamiltonianGibbs。"
       ],
       "source_pages": "303",
-      "semantic_review": "已对照目视原页核对对象、量词、技术资格和所列覆盖范围；网站尚未审阅。",
-      "compile_receipt": "blueprint/ch07/validation/batches/s712b-v1.json"
+      "semantic_review": "已对照目视原页核对对象、量词、技术资格和所列覆盖范围；网站尚未审阅。"
     },
     "MD-7.6-GeMarsdenRestriction": {
       "verdict": "NEEDS_HUMAN",
@@ -1530,8 +1480,7 @@
         "辛映射体积保持和Ge–Marsden结论均列入本条覆盖缺口，不能把该定义当成定理已证。"
       ],
       "source_pages": "303",
-      "semantic_review": "已对照目视原页核对对象、量词、技术资格和所列覆盖范围；网站尚未审阅。",
-      "compile_receipt": "blueprint/ch07/validation/batches/s712b-v1.json"
+      "semantic_review": "已对照目视原页核对对象、量词、技术资格和所列覆盖范围；网站尚未审阅。"
     },
     "MD-7.6-JSplitting": {
       "verdict": "PASS",
@@ -1565,8 +1514,7 @@
         "体积保持需要已存在的完整光滑流；本条不新建流存在及Liouville理论。"
       ],
       "source_pages": "303–304",
-      "semantic_review": "已对照目视原页核对对象、量词、技术资格和所列覆盖范围；网站尚未审阅。",
-      "compile_receipt": "blueprint/ch07/validation/batches/s712b-v1.json"
+      "semantic_review": "已对照目视原页核对对象、量词、技术资格和所列覆盖范围；网站尚未审阅。"
     },
     "MD-7.6-CoordinateJSplitting": {
       "verdict": "PASS",
@@ -1593,8 +1541,7 @@
         "完整记录冻结坐标的一自由度向量场；形式quadrature可积性的分支、转折点及积分反演尚未形式化，明确列入覆盖缺口。"
       ],
       "source_pages": "304",
-      "semantic_review": "已对照目视原页核对对象、量词、技术资格和所列覆盖范围；网站尚未审阅。",
-      "compile_receipt": "blueprint/ch07/validation/batches/s712b-v1.json"
+      "semantic_review": "已对照目视原页核对对象、量词、技术资格和所列覆盖范围；网站尚未审阅。"
     },
     "MD-7.7-ModifiedGenerator": {
       "verdict": "PASS",
@@ -1621,8 +1568,7 @@
         "只取形式幂级数系数；O(h⁴)在此意为0–3阶系数相等，不宣称无界算符级数收敛，也不声称是另一SDE的生成元。"
       ],
       "source_pages": "305",
-      "semantic_review": "已对照目视原页核对对象、量词、技术资格和所列覆盖范围；网站尚未审阅。",
-      "compile_receipt": "blueprint/ch07/validation/batches/s712b-v1.json"
+      "semantic_review": "已对照目视原页核对对象、量词、技术资格和所列覆盖范围；网站尚未审阅。"
     },
     "MD-7.7-InvariantDensityExpansion": {
       "verdict": "PASS",
@@ -1660,8 +1606,7 @@
         "此处证明所有形式系数的质量约束；未把有限截断表达式假称实际不变概率。"
       ],
       "source_pages": "305",
-      "semantic_review": "已对照目视原页核对对象、量词、技术资格和所列覆盖范围；网站尚未审阅。",
-      "compile_receipt": "blueprint/ch07/validation/batches/s712b-v1.json"
+      "semantic_review": "已对照目视原页核对对象、量词、技术资格和所列覆盖范围；网站尚未审阅。"
     },
     "MD-7.7.1-ExactABOPropagators": {
       "verdict": "PASS",
@@ -1694,8 +1639,7 @@
         "半群律及实际SDE生成元识别需OU转移律与Markov理论，本条只定义固定时刻传播子。"
       ],
       "source_pages": "306",
-      "semantic_review": "已对照目视原页核对对象、量词、技术资格和所列覆盖范围；网站尚未审阅。",
-      "compile_receipt": "blueprint/ch07/validation/batches/s712b-v1.json"
+      "semantic_review": "已对照目视原页核对对象、量词、技术资格和所列覆盖范围；网站尚未审阅。"
     },
     "MD-7.7.1-OperatorOrderReversal": {
       "verdict": "PASS",
@@ -1719,8 +1663,7 @@
         "伴随前向传播子的四段顺序记录在原文；独立定义实际密度伴随的函数空间和边界条件列为覆盖缺口。"
       ],
       "source_pages": "306",
-      "semantic_review": "已对照目视原页核对对象、量词、技术资格和所列覆盖范围；网站尚未审阅。",
-      "compile_receipt": "blueprint/ch07/validation/batches/s712b-v1.json"
+      "semantic_review": "已对照目视原页核对对象、量词、技术资格和所列覆盖范围；网站尚未审阅。"
     },
     "MD-7.7.1-StationaryModifiedPDE": {
       "verdict": "PASS",
@@ -1748,8 +1691,7 @@
         "Markov半群资格、密度正性归一、无界生成元定义域及嵌入性尚缺；此处仅明确定义方程，不证明等价。"
       ],
       "source_pages": "306–307",
-      "semantic_review": "已对照目视原页核对对象、量词、技术资格和所列覆盖范围；网站尚未审阅。",
-      "compile_receipt": "blueprint/ch07/validation/batches/s712b-v1.json"
+      "semantic_review": "已对照目视原页核对对象、量词、技术资格和所列覆盖范围；网站尚未审阅。"
     },
     "MD-7.7.1-TwoOperatorBCH": {
       "verdict": "PASS",
@@ -1778,8 +1720,7 @@
         "任意实代数中的非交换形式幂级数；不要求无界算符指数收敛。本条完整记录所印0–2阶。"
       ],
       "source_pages": "307",
-      "semantic_review": "已对照目视原页核对对象、量词、技术资格和所列覆盖范围；网站尚未审阅。",
-      "compile_receipt": "blueprint/ch07/validation/batches/s712b-v1.json"
+      "semantic_review": "已对照目视原页核对对象、量词、技术资格和所列覆盖范围；网站尚未审阅。"
     },
     "MD-7.7.1-TaylorRemainder": {
       "verdict": "PASS",
@@ -1808,8 +1749,7 @@
         "只覆盖作用于单个可观测量和点后的标量C^(n+1) Taylor恒等式及局部余项界；把ABO无界算符组合在紧支撑光滑测试函数上归约到这些假设仍是覆盖缺口。"
       ],
       "source_pages": "307–308",
-      "semantic_review": "已对照目视原页核对对象、量词、技术资格和所列覆盖范围；网站尚未审阅。",
-      "compile_receipt": "blueprint/ch07/validation/batches/s712b-v1.json"
+      "semantic_review": "已对照目视原页核对对象、量词、技术资格和所列覆盖范围；网站尚未审阅。"
     },
     "MD-7.7.2-ThreeOperatorBCH": {
       "verdict": "PASS",
@@ -1837,8 +1777,7 @@
         "完整记录最终0–2阶系数；中间未合并式作为原文推导说明，不另假装是完整精确算符相等。"
       ],
       "source_pages": "308",
-      "semantic_review": "已对照目视原页核对对象、量词、技术资格和所列覆盖范围；网站尚未审阅。",
-      "compile_receipt": "blueprint/ch07/validation/batches/s712b-v1.json"
+      "semantic_review": "已对照目视原页核对对象、量词、技术资格和所列覆盖范围；网站尚未审阅。"
     },
     "MD-7.7.2-ScalarForwardOperators": {
       "verdict": "PASS",
@@ -1895,8 +1834,7 @@
         "所有偏导都是实际deriv，单位质量、θ=k_BT；用于光滑密度与γ≥0,θ>0。这里不把未规定定义域的微分表达式直接称闭算符。"
       ],
       "source_pages": "309",
-      "semantic_review": "已对照目视原页核对对象、量词、技术资格和所列覆盖范围；网站尚未审阅。",
-      "compile_receipt": "blueprint/ch07/validation/batches/s712b-v1.json"
+      "semantic_review": "已对照目视原页核对对象、量词、技术资格和所列覆盖范围；网站尚未审阅。"
     },
     "MD-7.7.2-CommutatorAB": {
       "verdict": "PASS",
@@ -1917,8 +1855,7 @@
       "statement_scope": "本条逐字引用的全部数学对象与公式；未纳入的上下文另列。",
       "extra_assumptions": [],
       "source_pages": "309",
-      "semantic_review": "已对照目视原页核对对象、量词、技术资格和所列覆盖范围；网站尚未审阅。",
-      "compile_receipt": "blueprint/ch07/validation/batches/s712b-v1.json"
+      "semantic_review": "已对照目视原页核对对象、量词、技术资格和所列覆盖范围；网站尚未审阅。"
     },
     "MD-7.7.2-CommutatorsAOBO": {
       "verdict": "PASS",
@@ -1939,8 +1876,7 @@
       "statement_scope": "本条逐字引用的全部数学对象与公式；未纳入的上下文另列。",
       "extra_assumptions": [],
       "source_pages": "310",
-      "semantic_review": "已对照目视原页核对对象、量词、技术资格和所列覆盖范围；网站尚未审阅。",
-      "compile_receipt": "blueprint/ch07/validation/batches/s712b-v1.json"
+      "semantic_review": "已对照目视原页核对对象、量词、技术资格和所列覆盖范围；网站尚未审阅。"
     },
     "MD-7.7.2-OBAModifiedOperator": {
       "verdict": "PASS",
@@ -1968,12 +1904,11 @@
         "只证明三个真实交换子表达式与所印一阶修正一致；整体离散传播子的余项界需Taylor/弱展开桥，不声称完成。"
       ],
       "source_pages": "309–310",
-      "semantic_review": "已对照目视原页核对对象、量词、技术资格和所列覆盖范围；网站尚未审阅。",
-      "compile_receipt": "blueprint/ch07/validation/batches/s712b-v1.json"
+      "semantic_review": "已对照目视原页核对对象、量词、技术资格和所列覆盖范围；网站尚未审阅。"
     },
     "MD-7.7.2-SpectralQualification": {
       "verdict": "NEEDS_HUMAN",
-      "block_sha256": "3da879c5810fb94d67ba81d7fbe10f6c1415c03fef86f270ff40ed21947d1486",
+      "block_sha256": "53cb6201d1ef5232d2d6fcfca6bfbf2a83061779cc0461b5d7ec57f666c50a45",
       "checked": true,
       "declaration_axioms": {
         "MD.Ch07.simpleEigenvalue": [
@@ -1982,6 +1917,16 @@
           "Quot.sound"
         ],
         "MD.Ch07.printedSpectralConclusion": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "MD.Ch07.spectralConclusionPrinted": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "MD.Ch07.spectralConclusionPrinted_corrected": [
           "propext",
           "Classical.choice",
           "Quot.sound"
@@ -1998,8 +1943,7 @@
         "只记录原文谱结论的精确目标命题，不宣称为定理；一般闭无界Langevin生成元、定义域及紧预解式资格未覆盖。"
       ],
       "source_pages": "310",
-      "semantic_review": "已对照目视原页核对对象、量词、技术资格和所列覆盖范围；网站尚未审阅。",
-      "compile_receipt": "blueprint/ch07/validation/batches/s712b-v1.json"
+      "semantic_review": "已对照目视原页核对对象、量词、技术资格和所列覆盖范围；网站尚未审阅。"
     },
     "MD-7.7.3-PerturbationCoefficientEquation": {
       "verdict": "PASS",
@@ -2026,8 +1970,7 @@
         "在真实线性作用的形式系数卷积上推导0阶和1阶必要方程；并未由这些必要方程证明原离散链存在不变分布。"
       ],
       "source_pages": "310–311",
-      "semantic_review": "已对照目视原页核对对象、量词、技术资格和所列覆盖范围；网站尚未审阅。",
-      "compile_receipt": "blueprint/ch07/validation/batches/s712b-v1.json"
+      "semantic_review": "已对照目视原页核对对象、量词、技术资格和所列覆盖范围；网站尚未审阅。"
     },
     "MD-7.7.3-ObservableCorrectionExpansion": {
       "verdict": "PASS",
@@ -2049,8 +1992,7 @@
         "完整覆盖0–2阶有限截断积分；无限级数交换与实际误差余项仍需支配收敛及弱展开理论，明确不声称已证。"
       ],
       "source_pages": "311",
-      "semantic_review": "已对照目视原页核对对象、量词、技术资格和所列覆盖范围；网站尚未审阅。",
-      "compile_receipt": "blueprint/ch07/validation/batches/s712b-v1.json"
+      "semantic_review": "已对照目视原页核对对象、量词、技术资格和所列覆盖范围；网站尚未审阅。"
     },
     "MD-7.7.3-PerturbativeSolvabilityCaution": {
       "verdict": "NEEDS_HUMAN",
@@ -2073,8 +2015,7 @@
         "不能由紧预解式和有界扰动单独推出任意rhs可解；核方向的Fredholm相容条件、定义域与谱隙均是覆盖缺口。"
       ],
       "source_pages": "311",
-      "semantic_review": "已对照目视原页核对对象、量词、技术资格和所列覆盖范围；网站尚未审阅。",
-      "compile_receipt": "blueprint/ch07/validation/batches/s712b-v1.json"
+      "semantic_review": "已对照目视原页核对对象、量词、技术资格和所列覆盖范围；网站尚未审阅。"
     },
     "MD-7.8-FirstOrderOperator": {
       "verdict": "PASS",
@@ -2107,8 +2048,7 @@
         "前向组合采用Z,Y,X顺序；正式级数系数推论覆盖所有六个排列，L0为三者和。修正方程为必要形式方程，可解性独立。"
       ],
       "source_pages": "312",
-      "semantic_review": "已对照目视原页核对对象、量词、技术资格和所列覆盖范围；网站尚未审阅。",
-      "compile_receipt": "blueprint/ch07/validation/batches/s712b-v1.json"
+      "semantic_review": "已对照目视原页核对对象、量词、技术资格和所列覆盖范围；网站尚未审阅。"
     },
     "MD-7.8-HomogeneousNormalization": {
       "verdict": "PASS",
@@ -2135,8 +2075,7 @@
         "核恰为ρ的一维空间是明确前提；不把Langevin核唯一性当作已证明。第二条为实际概率归一化的中心化恒等式。"
       ],
       "source_pages": "312",
-      "semantic_review": "已对照目视原页核对对象、量词、技术资格和所列覆盖范围；网站尚未审阅。",
-      "compile_receipt": "blueprint/ch07/validation/batches/s712b-v1.json"
+      "semantic_review": "已对照目视原页核对对象、量词、技术资格和所列覆盖范围；网站尚未审阅。"
     },
     "MD-7.8.1-CommutatorPermutationRelations": {
       "verdict": "PASS",
@@ -2159,8 +2098,7 @@
         "实际线性作用与Oρ=0,(A+B)ρ=0明示。修正函数的符号关系还需统一零均值和核唯一性；本条只证明/陈述交换子与右端项关系，函数关系列缺口。"
       ],
       "source_pages": "313",
-      "semantic_review": "已对照目视原页核对对象、量词、技术资格和所列覆盖范围；网站尚未审阅。",
-      "compile_receipt": "blueprint/ch07/validation/batches/s712b-v1.json"
+      "semantic_review": "已对照目视原页核对对象、量词、技术资格和所列覆盖范围；网站尚未审阅。"
     },
     "MD-7.8.1-GibbsDerivativeIdentities": {
       "verdict": "PASS",
@@ -2209,8 +2147,7 @@
         "覆盖g、A/B作用、纯位置ψ作用及O(gρ)两种等价写法；交换子作用与中间OU共轭式在原文登记但另列覆盖缺口。"
       ],
       "source_pages": "313–314",
-      "semantic_review": "已对照目视原页核对对象、量词、技术资格和所列覆盖范围；网站尚未审阅。",
-      "compile_receipt": "blueprint/ch07/validation/batches/s712b-v1.json"
+      "semantic_review": "已对照目视原页核对对象、量词、技术资格和所列覆盖范围；网站尚未审阅。"
     },
     "MD-7.8.1-FirstCorrectionTablePrinted": {
       "verdict": "NEEDS_HUMAN",
@@ -2260,8 +2197,7 @@
         "六个排列分别编码ABO,OAB,OBA,BAO,AOB,BOA；原文版不证明，修正版陈述实际PDE。c任意常数时PDE不变，零均值另行规定c=γ〈U〉。"
       ],
       "source_pages": "314–315",
-      "semantic_review": "已对照目视原页核对对象、量词、技术资格和所列覆盖范围；网站尚未审阅。",
-      "compile_receipt": "blueprint/ch07/validation/batches/s712b-v1.json"
+      "semantic_review": "已对照目视原页核对对象、量词、技术资格和所列覆盖范围；网站尚未审阅。"
     },
     "MD-7.8.1-PositionMomentumCorrections": {
       "verdict": "PASS",
@@ -2300,8 +2236,7 @@
         "六个算法分别给符号；大摩擦O(γ)的解释来自明确线性γ项，随γ,h的统一误差界未证明。"
       ],
       "source_pages": "315–316",
-      "semantic_review": "已对照目视原页核对对象、量词、技术资格和所列覆盖范围；网站尚未审阅。",
-      "compile_receipt": "blueprint/ch07/validation/batches/s712b-v1.json"
+      "semantic_review": "已对照目视原页核对对象、量词、技术资格和所列覆盖范围；网站尚未审阅。"
     },
     "MD-7.8.1-OverdampedFirstOrderCaution": {
       "verdict": "PASS",
@@ -2334,8 +2269,7 @@
         "覆盖AOAB全部更新与固定噪声/固定h下的摩擦极限；不把摩擦极限本身称作过阻尼一致性证明。六个XYZ不一致及AOAB有效时间重标度的一致性仍是明确覆盖缺口。"
       ],
       "source_pages": "316",
-      "semantic_review": "已对照目视原页核对对象、量词、技术资格和所列覆盖范围；网站尚未审阅。",
-      "compile_receipt": "blueprint/ch07/validation/batches/s712b-v1.json"
+      "semantic_review": "已对照目视原页核对对象、量词、技术资格和所列覆盖范围；网站尚未审阅。"
     },
     "MD-7.8.2-BiasedDoubleWellExact": {
       "verdict": "PASS",
@@ -2384,8 +2318,7 @@
         "中间〈qUU′〉公式及γ=2实际误差O(h²)需先有严格弱展开，本条不声称已获该余项。"
       ],
       "source_pages": "316–318",
-      "semantic_review": "已对照目视原页核对对象、量词、技术资格和所列覆盖范围；网站尚未审阅。",
-      "compile_receipt": "blueprint/ch07/validation/batches/s712b-v1.json"
+      "semantic_review": "已对照目视原页核对对象、量词、技术资格和所列覆盖范围；网站尚未审阅。"
     },
     "MD-7.9-Proposition71": {
       "verdict": "PASS",
@@ -2412,8 +2345,7 @@
         "桥接正式库已证的实际非交换形式log/exp及完整对称修正定义体；余项为h⁴形式因子，未声称无界算符级数收敛。"
       ],
       "source_pages": "318",
-      "semantic_review": "已对照目视原页核对对象、量词、技术资格和所列覆盖范围；网站尚未审阅。",
-      "compile_receipt": "blueprint/ch07/validation/batches/s712b-v1.json"
+      "semantic_review": "已对照目视原页核对对象、量词、技术资格和所列覆盖范围；网站尚未审阅。"
     },
     "MD-7.9-EvenDensityPerturbation": {
       "verdict": "PASS",
@@ -2440,8 +2372,7 @@
         "系数相消得到必要方程；Fredholm可解性的充分性需核、余核、函数空间和域的闭值域资格，本条不证明。原书将奇阶修正零作为假设，本条保留。"
       ],
       "source_pages": "319",
-      "semantic_review": "已对照目视原页核对对象、量词、技术资格和所列覆盖范围；网站尚未审阅。",
-      "compile_receipt": "blueprint/ch07/validation/batches/s712b-v1.json"
+      "semantic_review": "已对照目视原页核对对象、量词、技术资格和所列覆盖范围；网站尚未审阅。"
     },
     "MD-7.9.1-OYZYOInhomogeneity": {
       "verdict": "PASS",
@@ -2462,8 +2393,7 @@
       "statement_scope": "本条逐字引用的全部数学对象与公式；未纳入的上下文另列。",
       "extra_assumptions": [],
       "source_pages": "319–320",
-      "semantic_review": "已对照目视原页核对对象、量词、技术资格和所列覆盖范围；网站尚未审阅。",
-      "compile_receipt": "blueprint/ch07/validation/batches/s712b-v1.json"
+      "semantic_review": "已对照目视原页核对对象、量词、技术资格和所列覆盖范围；网站尚未审阅。"
     },
     "MD-7.9.1-TripleCommutatorPrinted": {
       "verdict": "NEEDS_HUMAN",
@@ -2523,8 +2453,7 @@
         "M=I；Hessian、三阶张量及张量缩并均为实际坐标导数；原文版仅定义，不证明。反例先给系数代数区别，完整势函数测度反例未构造。"
       ],
       "source_pages": "320",
-      "semantic_review": "已对照目视原页核对对象、量词、技术资格和所列覆盖范围；网站尚未审阅。",
-      "compile_receipt": "blueprint/ch07/validation/batches/s712b-v1.json"
+      "semantic_review": "已对照目视原页核对对象、量词、技术资格和所列覆盖范围；网站尚未审阅。"
     },
     "MD-7.9.1-SymmetricRHS": {
       "verdict": "PASS",
@@ -2557,8 +2486,7 @@
         "右端去掉共同正Gibbs权，改用真实乘积Gibbs测度积分；奇性与零均值不等于完整Fredholm充分可解性。PDE左端与L2识别另需三重交换子桥。"
       ],
       "source_pages": "320",
-      "semantic_review": "已对照目视原页核对对象、量词、技术资格和所列覆盖范围；网站尚未审阅。",
-      "compile_receipt": "blueprint/ch07/validation/batches/s712b-v1.json"
+      "semantic_review": "已对照目视原页核对对象、量词、技术资格和所列覆盖范围；网站尚未审阅。"
     },
     "MD-7.9.1-Lemma71": {
       "verdict": "PASS",
@@ -2580,12 +2508,11 @@
         "真实Markov核、真实概率与不变概率的唯一性完整；借助不变性和唯一性即足够，不要求额外极限交换。保留原书证明文本，Lean采用已证更弱假设路线。"
       ],
       "source_pages": "320–321",
-      "semantic_review": "已对照目视原页核对对象、量词、技术资格和所列覆盖范围；网站尚未审阅。",
-      "compile_receipt": "blueprint/ch07/validation/batches/s712b-v1.json"
+      "semantic_review": "已对照目视原页核对对象、量词、技术资格和所列覆盖范围；网站尚未审阅。"
     },
     "MD-7.9.1-ConjugateSymmetricCorrections": {
       "verdict": "NEEDS_HUMAN",
-      "block_sha256": "2f219ab723030e9de7815cd7b01a1a4ed253006d1110348882af1b7fa9a33e91",
+      "block_sha256": "5eceab350f9aeb3241a2492e2e04390bcd08edb3d8acb43b1a4e766d12590f59",
       "checked": true,
       "declaration_axioms": {
         "MD.Ch07.gradNormSq": [
@@ -2612,6 +2539,16 @@
           "propext",
           "Classical.choice",
           "Quot.sound"
+        ],
+        "MD.Ch07.conjugateExpansionPrinted": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "MD.Ch07.conjugateExpansionPrinted_corrected": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
         ]
       },
       "direct_placeholder": false,
@@ -2625,8 +2562,7 @@
         "Lean证明给定真实二阶传递系数的消项，(7.30)完整作为两关系的命题定义；ST/TS指数系数识别、Hamiltonian微分及实际两组修正系数识别仍列缺口。"
       ],
       "source_pages": "321–322",
-      "semantic_review": "已对照目视原页核对对象、量词、技术资格和所列覆盖范围；网站尚未审阅。",
-      "compile_receipt": "blueprint/ch07/validation/batches/s712b-v1.json"
+      "semantic_review": "已对照目视原页核对对象、量词、技术资格和所列覆盖范围；网站尚未审阅。"
     },
     "MD-7.9.2-ReciprocalFrictionExpansion": {
       "verdict": "PASS",
@@ -2653,8 +2589,7 @@
         "ε=1/γ；使用真实偏导、单位质量、β>0；形式层级包含所有后续阶。各阶零均值及归一性需另加centeredCorrections，不把其当作已证。"
       ],
       "source_pages": "322–323",
-      "semantic_review": "已对照目视原页核对对象、量词、技术资格和所列覆盖范围；网站尚未审阅。",
-      "compile_receipt": "blueprint/ch07/validation/batches/s712b-v1.json"
+      "semantic_review": "已对照目视原页核对对象、量词、技术资格和所列覆盖范围；网站尚未审阅。"
     },
     "MD-7.9.2-OUKernelQualification": {
       "verdict": "NEEDS_HUMAN",
@@ -2684,8 +2619,7 @@
         "修正版明确实际Gaussian L²域和光滑性；原文目标定义保留但不证明。零均值仅限制ν常数方向，不由OU核自动给出。"
       ],
       "source_pages": "323",
-      "semantic_review": "已对照目视原页核对对象、量词、技术资格和所列覆盖范围；网站尚未审阅。",
-      "compile_receipt": "blueprint/ch07/validation/batches/s712b-v1.json"
+      "semantic_review": "已对照目视原页核对对象、量词、技术资格和所列覆盖范围；网站尚未审阅。"
     },
     "MD-7.9.2-OUHermiteIdentities": {
       "verdict": "PASS",
@@ -2723,12 +2657,11 @@
         "OU仅对p微分，μ(q)不需对p额外正则；U,ν光滑且β>0。全部三个Hermite式和两个合成恒等式都在Lean结论中。"
       ],
       "source_pages": "323",
-      "semantic_review": "已对照目视原页核对对象、量词、技术资格和所列覆盖范围；网站尚未审阅。",
-      "compile_receipt": "blueprint/ch07/validation/batches/s712b-v1.json"
+      "semantic_review": "已对照目视原页核对对象、量词、技术资格和所列覆盖范围；网站尚未审阅。"
     },
     "MD-7.9.2-FirstReciprocalCorrection": {
       "verdict": "NEEDS_HUMAN",
-      "block_sha256": "cc7d566e157413b925900d10a79a1fe114d33e7c49665162386595738b33d326",
+      "block_sha256": "b05d41e30266280233da6dbc306ad7153b7e972ca8b4797e919f3bc5bd65802d",
       "checked": true,
       "declaration_axioms": {
         "MD.Ch07.firstReciprocalCorrection": [
@@ -2737,6 +2670,11 @@
           "Quot.sound"
         ],
         "MD.Ch07.momentumAverage": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "MD.Ch07.momentumAveragePrinted_corrected": [
           "propext",
           "Classical.choice",
           "Quot.sound"
@@ -2764,8 +2702,7 @@
         "给出全部f2,1公式并陈述其一阶PDE；二阶可解相容性需OU积分通量消失及实际域条件，尚未证明。"
       ],
       "source_pages": "324–325",
-      "semantic_review": "已对照目视原页核对对象、量词、技术资格和所列覆盖范围；网站尚未审阅。",
-      "compile_receipt": "blueprint/ch07/validation/batches/s712b-v1.json"
+      "semantic_review": "已对照目视原页核对对象、量词、技术资格和所列覆盖范围；网站尚未审阅。"
     },
     "MD-7.9.2-OverdampedSolvabilityOperators": {
       "verdict": "PASS",
@@ -2803,8 +2740,7 @@
         "只证明ν候选的代数改写；Mν相容方程、核常数唯一性、零均值须积分分部与定义域桥，不把候选定义当成解已证。"
       ],
       "source_pages": "325",
-      "semantic_review": "已对照目视原页核对对象、量词、技术资格和所列覆盖范围；网站尚未审阅。",
-      "compile_receipt": "blueprint/ch07/validation/batches/s712b-v1.json"
+      "semantic_review": "已对照目视原页核对对象、量词、技术资格和所列覆盖范围；网站尚未审阅。"
     },
     "MD-7.9.2-HighFrictionCorrectionTable": {
       "verdict": "PASS",
@@ -2837,8 +2773,7 @@
         "候选的代数共轭关系可单独证明；其为实际平稳误差系数、零均值及严格双渐近界均未获证明。"
       ],
       "source_pages": "325–326",
-      "semantic_review": "已对照目视原页核对对象、量词、技术资格和所列覆盖范围；网站尚未审阅。",
-      "compile_receipt": "blueprint/ch07/validation/batches/s712b-v1.json"
+      "semantic_review": "已对照目视原页核对对象、量词、技术资格和所列覆盖范围；网站尚未审阅。"
     },
     "MD-7.9.3-BAOABMarginalCancellation": {
       "verdict": "PASS",
@@ -2867,8 +2802,7 @@
         "归一条件Gaussian平均为零即推出原文带位置权的平均为零；两个零积分结论均为实际测度。双渐近余项的有效性须另外证明，不由形式消项自动给出。"
       ],
       "source_pages": "326",
-      "semantic_review": "已对照目视原页核对对象、量词、技术资格和所列覆盖范围；网站尚未审阅。",
-      "compile_receipt": "blueprint/ch07/validation/batches/s712b-v1.json"
+      "semantic_review": "已对照目视原页核对对象、量词、技术资格和所列覆盖范围；网站尚未审阅。"
     },
     "MD-7.9.3-SuperconvergenceScope": {
       "verdict": "PASS",
@@ -2897,8 +2831,7 @@
         "四阶推论仅在已有有效h⁴余项界下成立，不能从固定有限γ的h²/γ余项直接推出；弱/强有限时间阶数不因此提高。"
       ],
       "source_pages": "327",
-      "semantic_review": "已对照目视原页核对对象、量词、技术资格和所列覆盖范围；网站尚未审阅。",
-      "compile_receipt": "blueprint/ch07/validation/batches/s712b-v1.json"
+      "semantic_review": "已对照目视原页核对对象、量词、技术资格和所列覆盖范围；网站尚未审阅。"
     },
     "MD-7.10-MomentumRedrawLimit": {
       "verdict": "PASS",
@@ -2931,8 +2864,7 @@
         "固定正h和实际独立Gaussian R的逐噪声路径极限；分布收敛可由连续映射桥得到，未额外宣称。质量趋零与速度摩擦的不同极限仅原文提示，相关重标度定理尚缺。"
       ],
       "source_pages": "327",
-      "semantic_review": "已对照目视原页核对对象、量词、技术资格和所列覆盖范围；网站尚未审阅。",
-      "compile_receipt": "blueprint/ch07/validation/batches/s712b-v1.json"
+      "semantic_review": "已对照目视原页核对对象、量词、技术资格和所列覆盖范围；网站尚未审阅。"
     },
     "MD-7.10-OBABOOverdampedEuler": {
       "verdict": "PASS",
@@ -2975,8 +2907,7 @@
         "完整保留五段极限更新和位置消元；τ=h²/2。长期平均O(τ)=O(h²)另需稳定势和遍历弱误差理论，未由代数消元得到。"
       ],
       "source_pages": "328",
-      "semantic_review": "已对照目视原页核对对象、量词、技术资格和所列覆盖范围；网站尚未审阅。",
-      "compile_receipt": "blueprint/ch07/validation/batches/s712b-v1.json"
+      "semantic_review": "已对照目视原页核对对象、量词、技术资格和所列覆盖范围；网站尚未审阅。"
     },
     "MD-7.10-BAOABLimitMethod": {
       "verdict": "PASS",
@@ -3014,8 +2945,7 @@
         "完整五段更新、h形式及τ形式都定义；两种根号系数识别参见上条重标度，尚未另证明。"
       ],
       "source_pages": "328–329",
-      "semantic_review": "已对照目视原页核对对象、量词、技术资格和所列覆盖范围；网站尚未审阅。",
-      "compile_receipt": "blueprint/ch07/validation/batches/s712b-v1.json"
+      "semantic_review": "已对照目视原页核对对象、量词、技术资格和所列覆盖范围；网站尚未审阅。"
     },
     "MD-7.10-ColoredNoiseAndExtension": {
       "verdict": "PASS",
@@ -3048,15 +2978,24 @@
         "MA(1)噪声以相邻两独立Gaussian平均定义；定义扩展状态(q,R旧)的完整一步映射。非Markov性的普遍表述依赖具体势和初值，未把任意位置过程都判非Markov；扩展Markov核与半群律仍是覆盖缺口。"
       ],
       "source_pages": "329",
-      "semantic_review": "已对照目视原页核对对象、量词、技术资格和所列覆盖范围；网站尚未审阅。",
-      "compile_receipt": "blueprint/ch07/validation/batches/s712b-v1.json"
+      "semantic_review": "已对照目视原页核对对象、量词、技术资格和所列覆盖范围；网站尚未审阅。"
     },
     "MD-7.10-LimitMethodAccuracy": {
       "verdict": "NEEDS_HUMAN",
-      "block_sha256": "1aff975bab4ec66cff20cec04047ab15f90a3427886c0f6972cb3a2044ca088e",
+      "block_sha256": "cd13b4d5e7464c15beccb23b6ecd050bda0519db1c770356c2d3a891e663fa9d",
       "checked": true,
       "declaration_axioms": {
         "MD.Ch07.lmTransientErrorBound": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "MD.Ch07.limitAccuracyPrinted": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "MD.Ch07.limitAccuracyPrinted_corrected": [
           "propext",
           "Classical.choice",
           "Quot.sound"
@@ -3079,12 +3018,11 @@
         "原文称all values of h and τ亦不能由局部渐近展开推出全步长阶数结论。"
       ],
       "source_pages": "329",
-      "semantic_review": "已对照目视原页核对对象、量词、技术资格和所列覆盖范围；网站尚未审阅。",
-      "compile_receipt": "blueprint/ch07/validation/batches/s712b-v1.json"
+      "semantic_review": "已对照目视原页核对对象、量词、技术资格和所列覆盖范围；网站尚未审阅。"
     },
     "MD-7.9.3-ZeroFrictionVerlet": {
       "verdict": "PASS",
-      "block_sha256": "5274c02db302c99fb29b444821f37259bda4ab603c0544a7cdcc785f0a4cc588",
+      "block_sha256": "b2b2d31dcd75d9ac14a94b8c0a013f8e613e3659b6b19478ffe2f6b0237976bf",
       "checked": true,
       "declaration_axioms": {
         "MD.Ch07.zeroFrictionOU": [
@@ -3094,13 +3032,12 @@
         ],
         "MD.Ch07.zeroFrictionBAOAB": [
           "propext",
-          "sorryAx",
           "Classical.choice",
           "Quot.sound"
         ]
       },
-      "direct_placeholder": true,
-      "missing": "两个A半步合并及函数组合化简的短桥尚未完成。",
+      "direct_placeholder": false,
+      "missing": null,
       "issues": [],
       "website": "待网站审计",
       "statement_scope": "本条逐字引用的全部数学对象与公式；未纳入的上下文另列。",
@@ -3108,8 +3045,7 @@
         "OU为恒等映射及BAOAB合并成BAB的函数恒等式；其他字母排列得到ABA或BAB，不一概声称同一种Verlet。"
       ],
       "source_pages": "327",
-      "semantic_review": "已对照目视原页核对对象、量词、技术资格和所列覆盖范围；网站尚未审阅。",
-      "compile_receipt": "blueprint/ch07/validation/batches/s712b-v1.json"
+      "semantic_review": "已对照目视原页核对对象、量词、技术资格和所列覆盖范围；网站尚未审阅。"
     },
     "MD-7.11.1-TemperatureObservables": {
       "verdict": "PASS",
@@ -3149,8 +3085,7 @@
         "构型温度需真实归一位置Gibbs、可积和边界通量条件；数值分布下两种温度不必一致，不声称该等式对离散链自动成立。"
       ],
       "source_pages": "331",
-      "semantic_review": "已对照目视原页核对对象、量词、技术资格和所列覆盖范围；网站尚未审阅。",
-      "compile_receipt": "blueprint/ch07/validation/batches/s712b-v1.json"
+      "semantic_review": "已对照目视原页核对对象、量词、技术资格和所列覆盖范围；网站尚未审阅。"
     },
     "MD-7.11.1-VelocityAutocorrelationDefinition": {
       "verdict": "PASS",
@@ -3183,8 +3118,7 @@
         "已证的缩放恒等式说明动量观测被缩放时自相关改变；扩散系数与Einstein关系的等价仍需混合与积分极限理论，未证明。"
       ],
       "source_pages": "331",
-      "semantic_review": "已对照目视原页核对对象、量词、技术资格和所列覆盖范围；网站尚未审阅。",
-      "compile_receipt": "blueprint/ch07/validation/batches/s712b-v1.json"
+      "semantic_review": "已对照目视原页核对对象、量词、技术资格和所列覆盖范围；网站尚未审阅。"
     },
     "MD-7.12-ConstrainedLangevin": {
       "verdict": "PASS",
@@ -3227,8 +3161,7 @@
         "定义保留存在给定乘子过程的积分解，不证明一般约束SDE存在唯一。状态及乘子适应W自然历史，状态路径连续与初值完整；一般强解存在唯一仍未证明。"
       ],
       "source_pages": "338",
-      "semantic_review": "已对照目视原页核对对象、量词、技术资格和所列覆盖范围；网站尚未审阅。",
-      "compile_receipt": "blueprint/ch07/validation/batches/s712b-v1.json"
+      "semantic_review": "已对照目视原页核对对象、量词、技术资格和所列覆盖范围；网站尚未审阅。"
     },
     "MD-7.12-ConstrainedCanonicalErgodicity": {
       "verdict": "NEEDS_HUMAN",
@@ -3261,8 +3194,7 @@
         "实际概率要求配分积分正有限；遍历性还需连通性、正则满秩约束、势增长及不可约等条件。原书省略这些条件，本条仅记录目标，不宣称无条件遍历定理。"
       ],
       "source_pages": "338",
-      "semantic_review": "已对照目视原页核对对象、量词、技术资格和所列覆盖范围；网站尚未审阅。",
-      "compile_receipt": "blueprint/ch07/validation/batches/s712b-v1.json"
+      "semantic_review": "已对照目视原页核对对象、量词、技术资格和所列覆盖范围；网站尚未审阅。"
     },
     "MD-7.12-ConstrainedHOSplitting": {
       "verdict": "PASS",
@@ -3295,8 +3227,7 @@
         "每段都应满足cotangentConstraint，实际流或核、Oc半群律及约束Gaussian不变性尚未证明。"
       ],
       "source_pages": "339",
-      "semantic_review": "已对照目视原页核对对象、量词、技术资格和所列覆盖范围；网站尚未审阅。",
-      "compile_receipt": "blueprint/ch07/validation/batches/s712b-v1.json"
+      "semantic_review": "已对照目视原页核对对象、量词、技术资格和所列覆盖范围；网站尚未审阅。"
     },
     "MD-7.12-MEVMEAlgorithm": {
       "verdict": "PASS",
@@ -3328,8 +3259,7 @@
         "完整记录全部中间动量、乘子和位置/隐约束；隐式关系不声称求解器存在唯一。R,S为独立标准Gaussian向量的资格由使用时另加vectorNormalSequence。"
       ],
       "source_pages": "339–340",
-      "semantic_review": "已对照目视原页核对对象、量词、技术资格和所列覆盖范围；网站尚未审阅。",
-      "compile_receipt": "blueprint/ch07/validation/batches/s712b-v1.json"
+      "semantic_review": "已对照目视原页核对对象、量词、技术资格和所列覆盖范围；网站尚未审阅。"
     },
     "MD-7.12-MidpointStabilityPrinted": {
       "verdict": "NEEDS_HUMAN",
@@ -3373,8 +3303,7 @@
         "原文版仅保留γh<4条件，不增添充要关系；补充结论仅针对中点OU衰减模态。a=8说明γh<4不是该单独模态稳定的必要条件，不反驳原书整套算法的充分条件。"
       ],
       "source_pages": "340",
-      "semantic_review": "已对照目视原页核对对象、量词、技术资格和所列覆盖范围；网站尚未审阅。",
-      "compile_receipt": "blueprint/ch07/validation/batches/s712b-v1.json"
+      "semantic_review": "已对照目视原页核对对象、量词、技术资格和所列覆盖范围；网站尚未审阅。"
     },
     "MD-7.12.1-ConstrainedABOSplitting": {
       "verdict": "PASS",
@@ -3417,8 +3346,7 @@
         "正质量、约束Jacobian满秩和γ≥0,θ>0,h≥0由求解器应用时另加；Oc噪声R必须独立标准Gaussian。"
       ],
       "source_pages": "340–341",
-      "semantic_review": "已对照目视原页核对对象、量词、技术资格和所列覆盖范围；网站尚未审阅。",
-      "compile_receipt": "blueprint/ch07/validation/batches/s712b-v1.json"
+      "semantic_review": "已对照目视原页核对对象、量词、技术资格和所列覆盖范围；网站尚未审阅。"
     },
     "MD-7.12.1-ConstrainedBAOABAlgorithm": {
       "verdict": "PASS",
@@ -3445,8 +3373,7 @@
         "完整五段关系、全部中间变量与隐约束；仅证明成功求解后的终点资格，不证明隐式解存在、唯一或概率不变性。网站包须同时摘录geodesicConstraintFlow、两求解关系和选择规格。"
       ],
       "source_pages": "341",
-      "semantic_review": "已对照目视原页核对对象、量词、技术资格和所列覆盖范围；网站尚未审阅。",
-      "compile_receipt": "blueprint/ch07/validation/batches/s712b-v1.json"
+      "semantic_review": "已对照目视原页核对对象、量词、技术资格和所列覆盖范围；网站尚未审阅。"
     },
     "MD-7.12.1-ApproximateGeodesicOrder": {
       "verdict": "NEEDS_HUMAN",
@@ -3473,8 +3400,403 @@
         "用实际范数误差与统一C,δ明确二阶局部替换资格。完整对称随机组合需稳定性、Lipschitz、矩界及采用强阶/弱阶的区分，原段未列齐；此处不把定义当作保阶定理。"
       ],
       "source_pages": "341",
-      "semantic_review": "已对照目视原页核对对象、量词、技术资格和所列覆盖范围；网站尚未审阅。",
-      "compile_receipt": "blueprint/ch07/validation/batches/s712b-v1.json"
+      "semantic_review": "已对照目视原页核对对象、量词、技术资格和所列覆盖范围；网站尚未审阅。"
+    },
+    "MD-7.13-FastSlowHarmonicModel": {
+      "verdict": "PASS",
+      "block_sha256": "72016c2f3eff2ff04bb0d8c048a91c0466235ccfa9a23ab869b377e5a157e4fd",
+      "checked": true,
+      "declaration_axioms": {
+        "MD.Ch07.Mat2": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "MD.Ch07.fastPotential": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "MD.Ch07.slowPotential": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "MD.Ch07.fastMatrix": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "MD.Ch07.slowMatrix": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "MD.Ch07.fastLangevin": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ]
+      },
+      "direct_placeholder": false,
+      "missing": null,
+      "issues": [],
+      "website": "待网站审计",
+      "statement_scope": "本条逐字引用的全部数学对象与公式；未纳入的上下文另列。",
+      "extra_assumptions": [
+        "单位质量、实际标准Wiener、状态适应、正β及完整积分方程由langevin定义体保留；Ω≫1在定量结论中分别改成明确不等式。"
+      ],
+      "source_pages": "344",
+      "semantic_review": "已对照目视原页核对对象、量词、技术资格和所列覆盖范围；网站尚未审阅。"
+    },
+    "MD-7.13-ExactFastGaussianLaw": {
+      "verdict": "PASS",
+      "block_sha256": "c36f4888fad6576011eca6722760f213c3252ab2419742c2371e334d4370c3ed",
+      "checked": true,
+      "declaration_axioms": {
+        "MD.Ch07.fastExponential": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "MD.Ch07.fastCovariance": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "MD.Ch07.exactFastGaussianLaw": [
+          "propext",
+          "sorryAx",
+          "Classical.choice",
+          "Quot.sound"
+        ]
+      },
+      "direct_placeholder": true,
+      "missing": "需要线性SDE变分常数、确定积分Gaussian律及矩阵协方差理论；本轮不建设。",
+      "issues": [],
+      "website": "待网站审计",
+      "statement_scope": "本条逐字引用的全部数学对象与公式；未纳入的上下文另列。",
+      "extra_assumptions": [
+        "陈述真实过程的转移分布，不将强解等于一组新独立R假设成结论。Bt只需给定平方根因子；正半定矩阵平方根存在性未另证明。"
+      ],
+      "source_pages": "344–345",
+      "semantic_review": "已对照目视原页核对对象、量词、技术资格和所列覆盖范围；网站尚未审阅。"
+    },
+    "MD-7.13-MultipleTimestepUpdate": {
+      "verdict": "PASS",
+      "block_sha256": "6b383c596793f8fe17302b03f81fd6f8646a7b41775194359baf530bcffaa7b3",
+      "checked": true,
+      "declaration_axioms": {
+        "MD.Ch07.multipleX": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "MD.Ch07.multipleY": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "MD.Ch07.multipleStep": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "MD.Ch07.multipleStep_composition": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ]
+      },
+      "direct_placeholder": false,
+      "missing": null,
+      "issues": [],
+      "website": "待网站审计",
+      "statement_scope": "本条逐字引用的全部数学对象与公式；未纳入的上下文另列。",
+      "extra_assumptions": [
+        "Rn为每步独立标准二维Gaussian；稳定分布分析仍要求真实独立序列及有限协方差，不能只以更新定义宣称存在平稳解。"
+      ],
+      "source_pages": "345",
+      "semantic_review": "已对照目视原页核对对象、量词、技术资格和所列覆盖范围；网站尚未审阅。"
+    },
+    "MD-7.13-DeterminantTrace": {
+      "verdict": "PASS",
+      "block_sha256": "9da49638603fe8e1375237569772bb1926f273c34ccb13a49f3b981696470373",
+      "checked": true,
+      "declaration_axioms": {
+        "MD.Ch07.traceFormula": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "MD.Ch07.determinantTrace": [
+          "propext",
+          "sorryAx",
+          "Classical.choice",
+          "Quot.sound"
+        ]
+      },
+      "direct_placeholder": true,
+      "missing": "真实矩阵指数的特征分解/二阶Cayley–Hamilton闭式与det/trace桥；不建设一般线性SDE理论。",
+      "issues": [],
+      "website": "待网站审计",
+      "statement_scope": "本条逐字引用的全部数学对象与公式；未纳入的上下文另列。",
+      "extra_assumptions": [
+        "η允许纯虚数；显式排除临界η=0，避免除零假公式。临界阻尼应取连续极限，另列覆盖缺口。"
+      ],
+      "source_pages": "345",
+      "semantic_review": "已对照目视原页核对对象、量词、技术资格和所列覆盖范围；网站尚未审阅。"
+    },
+    "MD-7.13-SpectralRadiusStability": {
+      "verdict": "PASS",
+      "block_sha256": "9db2e4456c8583b42be8875330c6dc9c3488ba058707455b912c63e0f62e03b9",
+      "checked": true,
+      "declaration_axioms": {
+        "MD.Ch07.characteristicUnitDisk": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "MD.Ch07.spectralRadiusStability": [
+          "propext",
+          "sorryAx",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "MD.Ch07.hyperbolicStability": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ]
+      },
+      "direct_placeholder": true,
+      "missing": "需实二次特征多项式的Schur/Jury判据与复根模长分类；不建设通用随机稳定性理论。",
+      "issues": [],
+      "website": "待网站审计",
+      "statement_scope": "本条逐字引用的全部数学对象与公式；未纳入的上下文另列。",
+      "extra_assumptions": [
+        "只陈述谱半径≤1的确定性边界资格；有非退化随机驱动时平稳二阶矩一般要求严格谱半径<1，等号并不自动给随机长期稳定。",
+        "正摩擦正h给0<det<1；γ=0、Jordan边界、临界η=0均需另审。trace到双曲式的代数/指数桥未证明。"
+      ],
+      "source_pages": "345",
+      "semantic_review": "已对照目视原页核对对象、量词、技术资格和所列覆盖范围；网站尚未审阅。"
+    },
+    "MD-7.13-HyperbolicPhaseTransform": {
+      "verdict": "PASS",
+      "block_sha256": "0a0bda403efdb7933def0a6deb13e4a3fee29f107eac71740e2bdf7e2e8fef4c",
+      "checked": true,
+      "declaration_axioms": {
+        "MD.Ch07.hyperbolicPhase": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "MD.Ch07.hyperbolicPhase_identity": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ]
+      },
+      "direct_placeholder": false,
+      "missing": null,
+      "issues": [],
+      "website": "待网站审计",
+      "statement_scope": "本条逐字引用的全部数学对象与公式；未纳入的上下文另列。",
+      "extra_assumptions": [
+        "实η版本必须补|h/η|<1，γ>0本身不足；复η需选择sqrt/artanh分支，原文未说明。只覆盖明确实域上的等式，不把所有γ>0都纳入。"
+      ],
+      "source_pages": "345",
+      "semantic_review": "已对照目视原页核对对象、量词、技术资格和所列覆盖范围；网站尚未审阅。"
+    },
+    "MD-7.13-UnderdampedPhasePrinted": {
+      "verdict": "NEEDS_HUMAN",
+      "block_sha256": "ddda8d28cd856b6ea8698e9ae0fe3ebe1f173bd4f23549e9369c2d48a8ce4fb4",
+      "checked": true,
+      "declaration_axioms": {
+        "MD.Ch07.underdampedPhasePrinted": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "MD.Ch07.underdampedPhasePrinted_corrected": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "MD.Ch07.underdampedPhase_identity": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ]
+      },
+      "direct_placeholder": false,
+      "missing": null,
+      "issues": [
+        "已目视核对PDF346／印刷325：从η=iη̂化为实余弦时应使用+arctan(h/η̂)，所印-atanh(h/η̂)的函数与符号均不符。修正版从cos(a)-r sin(a)的标准幅相恒等式得到。"
+      ],
+      "website": "待网站审计",
+      "statement_scope": "本条逐字引用的全部数学对象与公式；未纳入的上下文另列。",
+      "extra_assumptions": [
+        "原文版与修正版分别定义，原文版不证明；直接用幅相恒等式绕过复函数分支。η̂=√(4Ω²-γ²)>0需要明确欠阻尼条件。"
+      ],
+      "source_pages": "346",
+      "semantic_review": "已对照目视原页核对对象、量词、技术资格和所列覆盖范围；网站尚未审阅。"
+    },
+    "MD-7.13-StabilityEnvelope": {
+      "verdict": "PASS",
+      "block_sha256": "44666749711bf7ea8dbc51fc65b9e26b4548c172959d2fba13847683b1cf8427",
+      "checked": true,
+      "declaration_axioms": {
+        "MD.Ch07.stabilityEnvelope": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "MD.Ch07.stabilityEnvelope_sufficient": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "MD.Ch07.stabilityEnvelope_iff": [
+          "propext",
+          "sorryAx",
+          "Classical.choice",
+          "Quot.sound"
+        ]
+      },
+      "direct_placeholder": true,
+      "missing": "包络等价需cosh/sinh正性及实平方根平方的短桥。",
+      "issues": [],
+      "website": "待网站审计",
+      "statement_scope": "本条逐字引用的全部数学对象与公式；未纳入的上下文另列。",
+      "extra_assumptions": [
+        "“所有步长”指对每个h满足该条件；一次h的包络条件不能声称自动覆盖所有h。仍仅为谱模不超过1的充分条件，严格随机平稳性另需严格不等式。"
+      ],
+      "source_pages": "346",
+      "semantic_review": "已对照目视原页核对对象、量词、技术资格和所列覆盖范围；网站尚未审阅。"
+    },
+    "MD-7.13-FrictionThresholdPrinted": {
+      "verdict": "NEEDS_HUMAN",
+      "block_sha256": "b4d238704b597f4a50c326d5c0472504730536e1197ad0e0f3eb8caf1bef3ac5",
+      "checked": true,
+      "declaration_axioms": {
+        "MD.Ch07.frictionThresholdPrinted": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "MD.Ch07.frictionThresholdPrinted_corrected": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "MD.Ch07.frictionBoundPrinted": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "MD.Ch07.frictionBoundPrinted_corrected": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "MD.Ch07.frictionThreshold_rationalized": [
+          "propext",
+          "sorryAx",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "MD.Ch07.frictionThreshold_allSteps": [
+          "propext",
+          "sorryAx",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "MD.Ch07.frictionThreshold_asymptotic": [
+          "propext",
+          "sorryAx",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "MD.Ch07.frictionThreshold_squared_counterexample": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ]
+      },
+      "direct_placeholder": true,
+      "missing": "阈值有理化与大参数根式极限需短桥；所有h包络需sinh下界和前条平方等价。",
+      "issues": [
+        "已目视核对PDF346：最后链式下界√2/Ω不成立。将精确阈值有理化得√(2/(Ω²+√(Ω⁴-1)))，大Ω时约1/Ω；√2/Ω可作更保守的充分选择而非精确阈值下界。Ω²=5/4时精确阈值平方=1，小于2/Ω²=8/5。"
+      ],
+      "website": "待网站审计",
+      "statement_scope": "本条逐字引用的全部数学对象与公式；未纳入的上下文另列。",
+      "extra_assumptions": [
+        "保留原精确根式，它本身与有理化修正版相同；疑误在后续比较方向/系数。欠阻尼上界γ<2Ω显式，不把该范围内的代数条件推广到任意大γ。",
+        "所有h包络由sinh x≥x推出，严格稳定与随机矩界仍需另证。反例给出有理平方数值，完整根式代入识别未另证明。"
+      ],
+      "source_pages": "346",
+      "semantic_review": "已对照目视原页核对对象、量词、技术资格和所列覆盖范围；网站尚未审阅。"
+    },
+    "MD-7.1-ConfigurationalSampling": {
+      "verdict": "PASS",
+      "block_sha256": "afa1ce3d55ec1dbde71fc46924aa1f642e86aebd7f606b490dbe2117ad0d8608",
+      "checked": true,
+      "declaration_axioms": {
+        "MD.Ch07.configurationalSamplingAverage": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "MD.Ch07.configurationalSamplingQualified": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ]
+      },
+      "direct_placeholder": false,
+      "missing": null,
+      "issues": [],
+      "website": "待网站审计",
+      "statement_scope": "本条逐字引用的全部数学对象与公式；未纳入的上下文另列。",
+      "extra_assumptions": [
+        "原文省略归一常数；positionGibbs定义体保留实际配分积分。可积性与概率归一资格单列，不把未归一指数直接视为概率密度。"
+      ],
+      "source_pages": "283",
+      "semantic_review": "已对照目视原页核对对象、量词、技术资格和所列覆盖范围；网站尚未审阅。"
+    },
+    "MD-7.1-HamiltonianSamplingObstruction": {
+      "verdict": "NEEDS_HUMAN",
+      "block_sha256": "e3682b72199bba100f60c9c3f3b6a76c31113a9c9addab899c9e0ae0f3055c67",
+      "checked": true,
+      "declaration_axioms": {
+        "MD.Ch07.energyConservingFlow": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "MD.Ch07.energySublevel_invariant": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "MD.Ch07.energyObstructionQualified": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ]
+      },
+      "direct_placeholder": false,
+      "missing": null,
+      "issues": [],
+      "website": "待网站审计",
+      "statement_scope": "保能流、非平凡不变集资格及不变集恒等式；原文的谱隙与平稳解主张仅逐字登记，尚缺明确函数空间后的完整陈述。",
+      "extra_assumptions": [
+        "本条只证明保能流的能量子水平集不变；结合非平凡概率质量可形成遍历性障碍。能量壳上的遍历性不能由原句否定。",
+        "原句未指定Liouvillian定义域、函数空间与参考概率。谱隙缺失和多个平稳解的完整算子陈述列为覆盖缺口，不把子水平集恒等式标作整段谱理论的证明。"
+      ],
+      "source_pages": "283",
+      "semantic_review": "已对照目视原页核对对象、量词、技术资格和所列覆盖范围；网站尚未审阅。"
     }
   }
 }

@@ -3,9 +3,9 @@
 Lean/Mathlib均4.34.0。原页PDF映射：[286]；印刷页=[265].
 input_sha256请原样回显：
 {
-  "Blueprint/Ch07.lean": "03e34bf86a5b27e03cce8552bb21fc0fea40514cd87faa953bf09a6a0a27f3c2",
-  "blueprint/ch07/ch07_source.json": "27e402f2a8b9c511106df901d6cc8472e1dae783cdf739f657879ffcf297462a",
-  "BATCH02b_PAGES.pdf": "c05d4f1db806e556e3bcbe9943f324fda25ce780316eec6e8174e1e38d340a80"
+  "Blueprint/Ch07.lean": "f30ea154ebfb07ae85c0b806ff74b35808d5a0c3dcaa647c0c3cc80a78239e37",
+  "blueprint/ch07/ch07_source.json": "c434892ebf63b06f7cadcdfa7af408c2c12d7b645d35db431d1855224163ba19",
+  "BATCH02b_PAGES.pdf": "41673794f46b570f2a804e69eb4b2d3cdba97f3522ef2694baa5826ade9ccf80"
 }
 用代码将JSON对象(batch,input_sha256,items)写到 /workspace/.mathcopilot/reviews/ch07/BATCH02b_review.json；items仅含本source_id。
 items字段：source_id、verdict(PASS/FAIL/NEEDS_HUMAN)、transcription、semantic_review、counterexample、suggested_fix、printed_version、corrected_version。逐版区分原文疑误和修正版结论；缺材料必须具体指出，不猜测。写后json.loads自检，最后仅回复路径及统计。
@@ -21,7 +21,16 @@ items字段：source_id、verdict(PASS/FAIL/NEEDS_HUMAN)、transcription、seman
   "pdf_page": "286",
   "statement_latex": "The weak error is usually defined with reference to suitable test functions (observables) $\\phi(x)$ by\n\\[\\mathrm{Err}^{\\rm weak}_{h,\\tau,\\phi}=\\max_{n=0,1,2,\\ldots,\\nu}|\\mathbb E\\phi(X_n)-\\mathbb E\\phi(X(nh))|,\\]\nand we say that a method has weak order $r$ if $\\mathrm{Err}^{\\rm weak}_{h,\\tau,\\phi}<D(\\tau)h^r$ for some $D(\\tau)$, for all members of the chosen class of observables.",
   "proof_latex": null,
-  "proof_note": "原书未给独立完整证明。",
+  "proof_outline": null,
+  "proof_note": "原页推导与上下文全文见original_page_text；数学符号的排版以随附原页PDF为准。",
+  "original_page_text": [
+    {
+      "pdf_page": 286,
+      "printed_page": 265,
+      "text": "7.2\nError in Methods for Stochastic Differential Equations\n265\nThe weak error is usually deﬁned with reference to suitable test functions\n(observables) \b.x/ by\nErrweak\nh;\u0002;\b D\nmax\nnD0;1;2;:::;\u0003 jE\b.Xn/ \u0003 E\b.X.nh//j ;\nand we say that a method has weak order r if Errweak\nh;\u0002;\b < D.\u0002/hr for some D.\u0002/, for\nall members of the chosen class of observables. It is easy to see that methods with\nhigh strong order give us high weak order too, but the converse is generally false.\nAs the focus of this chapter is on the computation of averages, the concept of\nweak order is more appropriate in evaluating methods.1 Yet, even the weak order of\nconvergence may not be suitable in molecular dynamics applications, or rather, we\nare interested in the very long term behavior of the weak error which is governed by\nthe coefﬁcient D.\u0002/ as \u0002 ! 1 [270, 356].\nThe standard approach to analyze the weak error would be based on computing a\nrecurrence relation for jE\b.Xn/\u0003E\b.X.nh//j by use of the SDE and the methods of\nstochastic analysis. This approach mirrors the forward convergenceanalysis of ODE\nmethods discussed in Chap. 2. It tends, however, to overestimate the magnitude of\nthe quantity D.\u0002/. In what follows, we show that, when the emphasis is on stationary\naverages, a more direct approach can be used to gain insight into the error based on\nan asymptotic expansion. In some cases, we are able to resolve explicitly the leading\nerror term of computed averages in this long-time limit. The approach used here is\nanalogous in many ways to the backward error analysis of deterministic problems\npresented in Chap. 3.\nThe sampling error is an additional error term that results from the ﬁniteness of\nour trajectory: both in our inability to sample over an inﬁnite time (for Langevin\ndynamics, we recover our averages only in the limit of \u0002 ! 1) and our generation\nof only a ﬁnite number of points (averages are calculated from our discretized\ntrajectory of \u0003 steps). In large, high-dimensional systems (such as many relevant\nbiomolecular applications) often the computational resource required to sample\nlong enough in time to recover good averages is not available—the challenge then\ncan be viewed as an exploration problem. Obtaining a complete sampling of the\nphase space in a system with rare transitions is extremely difﬁcult, and is the most\nimportant challenge in molecular simulation [401].\nHowever, we emphasize in this chapter that the discretization error (or perfect\nsampling bias) is also a very important contribution to the overall error, and in\nsome cases may dominate the sampling error (for example, in systems where\nlocal resolution of the measure is more important than the global search). This\ndiscretization bias cannot be removed by considering a longer simulation time, so\nin some sense it is akin to a modelling error. Indeed as computing power increases\nand new algorithms are utilized, it is likely that trajectory generation will always be\n1In practice all the methods presented here are convergent in the strong sense, but their strong\nconvergence orders may be low, typically r D 1=2.\n"
+    }
+  ],
+  "transcription_note": "PDF文字层原样保留，陈述中的数学排版转写为LaTeX；文字层有特殊字形编码时以目视原页为准。PDF347的Exercises之后不在正文范围内。",
   "context_notation": [],
   "extra_assumptions": [
     "测试函数类明确量化；D允许依赖测试函数；积分只有在可积时解释为期望，后续误差定理显式要求可积。"
@@ -59,11 +68,11 @@ def hasWeakOrder (P : Measure Ω) (Xh : ℝ → ℕ → Ω → ℝ)
 ## 项目依赖定义体及选择规格
 以下def/abbrev/structure完整保留；定理列出完整类型，Mathlib标准定义无需摘录。
 
-### MD.Ch07.weakError (Blueprint/Ch07.lean:89)
+### MD.Ch07.weakError (Blueprint/Ch07.lean:91)
 原文件上下文：
 ```lean
 open Set Filter MeasureTheory ProbabilityTheory MolecularDynamics
-open scoped BigOperators Topology ContDiff ENNReal NNReal
+open scoped BigOperators Topology ContDiff ENNReal NNReal Matrix
 variable {Ω : Type*} [MeasurableSpace Ω]
 variable {n : ℕ}
 ```
@@ -74,11 +83,11 @@ def weakError (P : Measure Ω) (Xh : ℕ → Ω → ℝ) (X : ℝ → Ω → ℝ
     v = |(∫ sample, f (Xh k sample) ∂P) - ∫ sample, f (X (k*h) sample) ∂P|}
 ```
 
-### MD.Ch07.hasWeakOrder (Blueprint/Ch07.lean:94)
+### MD.Ch07.hasWeakOrder (Blueprint/Ch07.lean:96)
 原文件上下文：
 ```lean
 open Set Filter MeasureTheory ProbabilityTheory MolecularDynamics
-open scoped BigOperators Topology ContDiff ENNReal NNReal
+open scoped BigOperators Topology ContDiff ENNReal NNReal Matrix
 variable {Ω : Type*} [MeasurableSpace Ω]
 variable {n : ℕ}
 ```
