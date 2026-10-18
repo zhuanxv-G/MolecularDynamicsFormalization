@@ -1,0 +1,80 @@
+{
+  "batch": "BATCH10",
+  "subtask": "BATCH10e",
+  "source_ids": [
+    "MD-8.6.3-SINNoseSubsplitting"
+  ],
+  "input_sha256": {
+    "Blueprint/Ch08.lean": "2800812fadd8e2557013f1941e4570401f7903d46f44baf07e23d5531da22a72",
+    "blueprint/ch08/ch08_source.json": "9b994b0f64cd22c85c2ad4123fbfdbd064bd7a6d070fe13b721794432f9f7a63",
+    "BATCH10e_PAGES.pdf": "e488633e226e80c93f8fca2291d14e58b9a9741fcdef10807f4647251388ec3c"
+  },
+  "page_mapping": [
+    {
+      "attachment_page": 1,
+      "original_pdf_page": 393,
+      "printed_page": 372
+    }
+  ],
+  "definition_excerpts": [
+    {
+      "full_name": "MD.Ch08.Vec",
+      "kind": "abbrev",
+      "path": "Blueprint/Ch08.lean",
+      "line": 17,
+      "code_sha256": "6f4b254a8a7cc4115fb35265b77caa663bdd18567cd1e664cc5bbd080d02fcff"
+    },
+    {
+      "full_name": "MD.Ch08.sinConstraint",
+      "kind": "def",
+      "path": "Blueprint/Ch08.lean",
+      "line": 714,
+      "code_sha256": "946319fb0e80a00db3e6955a9e26729cc0e57a8bdc9c927d226f4b2e068bc287"
+    },
+    {
+      "full_name": "MD.Ch08.sinNField",
+      "kind": "def",
+      "path": "Blueprint/Ch08.lean",
+      "line": 853,
+      "code_sha256": "2bab734eb7e19b531eb37d739ca3d14fd86ef05bf827cdf1d76c2dcb6ccdde49"
+    },
+    {
+      "full_name": "MD.Ch08.sinN1Field",
+      "kind": "def",
+      "path": "Blueprint/Ch08.lean",
+      "line": 892,
+      "code_sha256": "8bcb25a3a1879876d939d464eb91ac47dca999aa8af40e8ac648b78696d9ce33"
+    },
+    {
+      "full_name": "MD.Ch08.sinN2Field",
+      "kind": "def",
+      "path": "Blueprint/Ch08.lean",
+      "line": 895,
+      "code_sha256": "04c499f19115a9af321dc29159edba2df3c77121cec24a725dfdfd35497e491c"
+    },
+    {
+      "full_name": "MD.Ch08.sinN_split",
+      "kind": "theorem",
+      "path": "Blueprint/Ch08.lean",
+      "line": 896,
+      "code_sha256": "c10c59391bedfe6c263ec38790fbb9fd399d6dc0dc147ffb75a0bed760c7b405"
+    }
+  ],
+  "validation": {
+    "project_constant_closure": "PASS",
+    "missing_project_definitions": [],
+    "full_page_render_equality_dpi": 72,
+    "website_submitted": false
+  },
+  "files": {
+    "PASTE.txt": {
+      "bytes": 8157,
+      "sha256": "6252216de368b740e8bb5096bbe7932e3761705c88546ae48ad4d7b996e88828"
+    },
+    "BATCH10e_PAGES.pdf": {
+      "bytes": 60541,
+      "sha256": "e488633e226e80c93f8fca2291d14e58b9a9741fcdef10807f4647251388ec3c"
+    }
+  },
+  "total_task_bytes": 71165
+}

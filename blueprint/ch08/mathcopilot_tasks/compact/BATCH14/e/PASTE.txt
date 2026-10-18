@@ -1,0 +1,213 @@
+以附件/PASTE 为准，忽略 /workspace 旧文件；Mathlib 定义按标准含义采信。
+本任务只审本条：原文转录、对象资格、定义体、量词、全部结论及[EXTRA]是否一致；Lean编译不代替语义审阅。
+Lean/Mathlib均4.34.0。原页PDF映射：[406]；印刷页=[385].
+input_sha256请原样回显：
+{
+  "Blueprint/Ch08.lean": "2800812fadd8e2557013f1941e4570401f7903d46f44baf07e23d5531da22a72",
+  "blueprint/ch08/ch08_source.json": "9b994b0f64cd22c85c2ad4123fbfdbd064bd7a6d070fe13b721794432f9f7a63",
+  "BATCH14e_PAGES.pdf": "5b3f33428b812c2114d3928f7c011f5c99b41e3f146568d34890b96ba55ea6ae"
+}
+用代码将JSON对象(batch,input_sha256,items)写到 /workspace/.mathcopilot/reviews/ch08/BATCH14e_review.json；items仅含本source_id。
+items字段：source_id、verdict(PASS/FAIL/NEEDS_HUMAN)、transcription、semantic_review、counterexample、suggested_fix、printed_version、corrected_version。逐版区分原文疑误和修正版结论；缺材料必须具体指出，不猜测。写后json.loads自检，最后仅回复路径及统计。
+
+## 原文JSON
+```json
+{
+  "source_id": "MD-8.8.3-ParrinelloRahman",
+  "kind": "definition",
+  "label": null,
+  "section": "8.8.3",
+  "printed_page": "385",
+  "pdf_page": "406",
+  "statement_latex": "For cell matrix h=[a b c], V=det(h)=a·(b×c), qᵢ=hq̄ᵢ, G=hᵀh, L=(1/2)Σmᵢq̄̇ᵢᵀGq̄̇ᵢ−Ū(q̄)+(μ/2)Tr(ḣᵀḣ)−PV.",
+  "statement_verbatim": "8.8\nConstant Temperature and Pressure Molecular Dynamics\n385\n“breathing” mode. We would expect these ﬂuctuations to be especially long-lived in\nthe case of large values of \u0006. Decreasing the values of \u0006 will increase the frequency\nof the oscillations; if the frequency of the periodic motion is too high then the overall\nstability of the simulation will become threatened (a smaller timestep h may be\nrequired).\nChoosing \n D 0:1 or \n D 1 removes this artiﬁcial oscillatory behavior, with\nthe larger choice of \n giving faster dissipation of the periodic oscillation. Figure 8.7\ndemonstrates that when setting \n D 1 the temperature and volume rapidly stabilize\nand give small, random ﬂuctuations compared to the non-stochastic case. For some\nalternatives and more in-depth discussion of constant temperature and pressure\nstrategies, including numerical experiments, refer to [128, 194, 199, 238, 252].\n8.8.3\nAnisotropic Simulation Cell: The Method\nof Parrinello and Rahman\nNot all molecules are naturally simulated in a cubic unit cell and indeed the system\nmay undergo dramatic changes of shape during simulation. Parrinello and Rahman\n[296] explained how to extend the method of Andersen to allow for a system\nconﬁned to a cell with dimensions that are allowed to vary during simulation. Three\nvectors a, b and c deﬁne the sides of the simulation cell. Let h be the 3 \u0004 3 matrix\nwith these vectors as columns, then its volume is V D det.h/ D a \u0002 .b \u0004 c/, where\na, b, c and h are viewed as time-dependent variables.\nAny position vector may be decomposed into coordinates deﬁned by the matrix\nh, thus\nqi D hNqi D \u0012ia C \u000fib C \u0018ic;\n0 \t \u0012i; \u000fi; \u0018i \t 1:\nIntroducing the metric tensor G D hTh, the Lagrangian describing the system then\nbecomes\nL D 1\n2\nN\nX\niD1\nmiPNqT\ni GPNqi \u0003 NU.Nq/ C 1\n2\u0006Tr.Ph\nT Ph/ \u0003 PV;\nwhere \u0006 is an artiﬁcial “mass” parameter which can be adjusted to alter the tightness\nof the coupling of the barostat to the physical variables.\nThis system can then be coupled to a thermostat as in the Andersen or Hoover\nformulation [266].\nThe method works well as long as there are internal molecular structures that\nprevent a degeneracy (one cell dimension collapsing) as might happen, for example,\nif the scheme were applied to a simple liquid such as Lennard-Jonesium.\n",
+  "verbatim_scope": "完整对应原页文字层，逐字保留；本条数学成分由statement_latex及statement_scope定位。",
+  "proof_latex": null,
+  "proof_note": "对应原页推导逐字保存在statement_verbatim/original_page_text；排版以原页PDF为准。",
+  "original_page_text": [
+    {
+      "pdf_page": 406,
+      "printed_page": 385,
+      "text": "8.8\nConstant Temperature and Pressure Molecular Dynamics\n385\n“breathing” mode. We would expect these ﬂuctuations to be especially long-lived in\nthe case of large values of \u0006. Decreasing the values of \u0006 will increase the frequency\nof the oscillations; if the frequency of the periodic motion is too high then the overall\nstability of the simulation will become threatened (a smaller timestep h may be\nrequired).\nChoosing \n D 0:1 or \n D 1 removes this artiﬁcial oscillatory behavior, with\nthe larger choice of \n giving faster dissipation of the periodic oscillation. Figure 8.7\ndemonstrates that when setting \n D 1 the temperature and volume rapidly stabilize\nand give small, random ﬂuctuations compared to the non-stochastic case. For some\nalternatives and more in-depth discussion of constant temperature and pressure\nstrategies, including numerical experiments, refer to [128, 194, 199, 238, 252].\n8.8.3\nAnisotropic Simulation Cell: The Method\nof Parrinello and Rahman\nNot all molecules are naturally simulated in a cubic unit cell and indeed the system\nmay undergo dramatic changes of shape during simulation. Parrinello and Rahman\n[296] explained how to extend the method of Andersen to allow for a system\nconﬁned to a cell with dimensions that are allowed to vary during simulation. Three\nvectors a, b and c deﬁne the sides of the simulation cell. Let h be the 3 \u0004 3 matrix\nwith these vectors as columns, then its volume is V D det.h/ D a \u0002 .b \u0004 c/, where\na, b, c and h are viewed as time-dependent variables.\nAny position vector may be decomposed into coordinates deﬁned by the matrix\nh, thus\nqi D hNqi D \u0012ia C \u000fib C \u0018ic;\n0 \t \u0012i; \u000fi; \u0018i \t 1:\nIntroducing the metric tensor G D hTh, the Lagrangian describing the system then\nbecomes\nL D 1\n2\nN\nX\niD1\nmiPNqT\ni GPNqi \u0003 NU.Nq/ C 1\n2\u0006Tr.Ph\nT Ph/ \u0003 PV;\nwhere \u0006 is an artiﬁcial “mass” parameter which can be adjusted to alter the tightness\nof the coupling of the barostat to the physical variables.\nThis system can then be coupled to a thermostat as in the Andersen or Hoover\nformulation [266].\nThe method works well as long as there are internal molecular structures that\nprevent a degeneracy (one cell dimension collapsing) as might happen, for example,\nif the scheme were applied to a simple liquid such as Lennard-Jonesium.\n"
+    }
+  ],
+  "numbered_equations": [],
+  "transcription_note": "文字层逐字保留；数学排版另行转写，原页中的特殊字形编码不静默替换。PDF420仅取Exercises之前。",
+  "context_notation": [],
+  "extra_assumptions": [
+    "选定正定向非退化盒det(h)>0及正质量；U为缩放坐标势，必要时由实际h映射后势复合而得。",
+    "拉氏方程、与热浴耦合和防止盒塌缩均未在原页给完整条件，列覆盖缺口，不把内部结构的经验稳定性当定理。"
+  ],
+  "issues": [],
+  "statement_scope": "各向异性盒的体积/位置/度量/Lagrangian及标量三重积恒等式。",
+  "lean_decl": "MD.Ch08.cellVolume",
+  "lean_declarations": [
+    "MD.Ch08.cellVolume",
+    "MD.Ch08.cellMetric",
+    "MD.Ch08.cellPosition",
+    "MD.Ch08.cross3",
+    "MD.Ch08.cellVolume_triple",
+    "MD.Ch08.parrinelloRahmanLagrangian",
+    "MD.Ch08.cellQualification"
+  ],
+  "source_page_verification": "见source_page_checks.json，已目视核对本条原页。",
+  "repair_log": [],
+  "documented_priors": []
+}
+```
+
+## 完整本条Lean
+```lean
+def cellVolume (h : Matrix (Fin 3) (Fin 3) ℝ) : ℝ := Matrix.det h
+def cellMetric (h : Matrix (Fin 3) (Fin 3) ℝ) : Matrix (Fin 3) (Fin 3) ℝ := h.transpose*h
+def cellPosition (h : Matrix (Fin 3) (Fin 3) ℝ) (qbar : Vec 3) : Vec 3 := h *ᵥ qbar
+def cross3 (a b : Vec 3) : Vec 3 := ![a 1*b 2-a 2*b 1,a 2*b 0-a 0*b 2,a 0*b 1-a 1*b 0]
+theorem cellVolume_triple (h : Matrix (Fin 3) (Fin 3) ℝ) :
+    cellVolume h=dot (fun i ↦ h i 0) (cross3 (fun i ↦ h i 1) (fun i ↦ h i 2)) := by
+  simp [cellVolume,Matrix.det_fin_three,dot,Fin.sum_univ_succ,cross3]
+  ring
+def parrinelloRahmanLagrangian {N : ℕ} (m : Fin N → ℝ) (U : (Fin N → Vec 3) → ℝ)
+    (Q P : ℝ) (h hdot : Matrix (Fin 3) (Fin 3) ℝ) (qbar vbar : Fin N → Vec 3) : ℝ :=
+  (∑ i, m i/2*dot (vbar i) (cellMetric h *ᵥ vbar i))-U qbar+
+    Q/2*Matrix.trace (hdot.transpose*hdot)-P*cellVolume h
+def cellQualification {N : ℕ} (m : Fin N → ℝ) (Q : ℝ)
+    (h : Matrix (Fin 3) (Fin 3) ℝ) : Prop :=
+  (∀ i, 0 < m i) ∧ 0 < Q ∧ 0 < Matrix.det h
+```
+
+## 项目依赖定义体及选择规格
+以下def/abbrev/structure完整保留；定理列出完整类型，Mathlib标准定义无需摘录。
+
+### MD.Ch08.Vec (Blueprint/Ch08.lean:17)
+原文件上下文：
+```lean
+open Set Filter MeasureTheory ProbabilityTheory MolecularDynamics
+open scoped BigOperators Topology ContDiff ENNReal NNReal Matrix
+variable {Ω : Type*} [MeasurableSpace Ω]
+variable {n : ℕ}
+```
+```lean
+abbrev Vec (n : ℕ) := Fin n → ℝ
+```
+
+### MD.Ch08.dot (Blueprint/Ch08.lean:19)
+原文件上下文：
+```lean
+open Set Filter MeasureTheory ProbabilityTheory MolecularDynamics
+open scoped BigOperators Topology ContDiff ENNReal NNReal Matrix
+variable {Ω : Type*} [MeasurableSpace Ω]
+variable {n : ℕ}
+```
+```lean
+def dot (v w : Vec n) : ℝ := ∑ i, v i * w i
+```
+
+### MD.Ch08.cellVolume (Blueprint/Ch08.lean:1315)
+原文件上下文：
+```lean
+open Set Filter MeasureTheory ProbabilityTheory MolecularDynamics
+open scoped BigOperators Topology ContDiff ENNReal NNReal Matrix
+variable {Ω : Type*} [MeasurableSpace Ω]
+variable {n : ℕ}
+```
+```lean
+def cellVolume (h : Matrix (Fin 3) (Fin 3) ℝ) : ℝ := Matrix.det h
+```
+
+### MD.Ch08.cellMetric (Blueprint/Ch08.lean:1316)
+原文件上下文：
+```lean
+open Set Filter MeasureTheory ProbabilityTheory MolecularDynamics
+open scoped BigOperators Topology ContDiff ENNReal NNReal Matrix
+variable {Ω : Type*} [MeasurableSpace Ω]
+variable {n : ℕ}
+```
+```lean
+def cellMetric (h : Matrix (Fin 3) (Fin 3) ℝ) : Matrix (Fin 3) (Fin 3) ℝ := h.transpose*h
+```
+
+### MD.Ch08.cellPosition (Blueprint/Ch08.lean:1317)
+原文件上下文：
+```lean
+open Set Filter MeasureTheory ProbabilityTheory MolecularDynamics
+open scoped BigOperators Topology ContDiff ENNReal NNReal Matrix
+variable {Ω : Type*} [MeasurableSpace Ω]
+variable {n : ℕ}
+```
+```lean
+def cellPosition (h : Matrix (Fin 3) (Fin 3) ℝ) (qbar : Vec 3) : Vec 3 := h *ᵥ qbar
+```
+
+### MD.Ch08.cross3 (Blueprint/Ch08.lean:1318)
+原文件上下文：
+```lean
+open Set Filter MeasureTheory ProbabilityTheory MolecularDynamics
+open scoped BigOperators Topology ContDiff ENNReal NNReal Matrix
+variable {Ω : Type*} [MeasurableSpace Ω]
+variable {n : ℕ}
+```
+```lean
+def cross3 (a b : Vec 3) : Vec 3 := ![a 1*b 2-a 2*b 1,a 2*b 0-a 0*b 2,a 0*b 1-a 1*b 0]
+```
+
+### MD.Ch08.cellVolume_triple (Blueprint/Ch08.lean:1319)
+原文件上下文：
+```lean
+open Set Filter MeasureTheory ProbabilityTheory MolecularDynamics
+open scoped BigOperators Topology ContDiff ENNReal NNReal Matrix
+variable {Ω : Type*} [MeasurableSpace Ω]
+variable {n : ℕ}
+```
+```lean
+theorem cellVolume_triple (h : Matrix (Fin 3) (Fin 3) ℝ) :
+    cellVolume h=dot (fun i ↦ h i 0) (cross3 (fun i ↦ h i 1) (fun i ↦ h i 2))
+```
+
+### MD.Ch08.parrinelloRahmanLagrangian (Blueprint/Ch08.lean:1323)
+原文件上下文：
+```lean
+open Set Filter MeasureTheory ProbabilityTheory MolecularDynamics
+open scoped BigOperators Topology ContDiff ENNReal NNReal Matrix
+variable {Ω : Type*} [MeasurableSpace Ω]
+variable {n : ℕ}
+```
+```lean
+def parrinelloRahmanLagrangian {N : ℕ} (m : Fin N → ℝ) (U : (Fin N → Vec 3) → ℝ)
+    (Q P : ℝ) (h hdot : Matrix (Fin 3) (Fin 3) ℝ) (qbar vbar : Fin N → Vec 3) : ℝ :=
+  (∑ i, m i/2*dot (vbar i) (cellMetric h *ᵥ vbar i))-U qbar+
+    Q/2*Matrix.trace (hdot.transpose*hdot)-P*cellVolume h
+```
+
+### MD.Ch08.cellQualification (Blueprint/Ch08.lean:1327)
+原文件上下文：
+```lean
+open Set Filter MeasureTheory ProbabilityTheory MolecularDynamics
+open scoped BigOperators Topology ContDiff ENNReal NNReal Matrix
+variable {Ω : Type*} [MeasurableSpace Ω]
+variable {n : ℕ}
+```
+```lean
+def cellQualification {N : ℕ} (m : Fin N → ℝ) (Q : ℝ)
+    (h : Matrix (Fin 3) (Fin 3) ℝ) : Prop :=
+  (∀ i, 0 < m i) ∧ 0 < Q ∧ 0 < Matrix.det h
+```
+
+### MolecularDynamics.Chapter02Review.Q (MolecularDynamics/Chapter02/ReviewDefinitions.lean:17)
+原文件上下文：
+```lean
+open Set Filter Matrix
+open scoped BigOperators Topology
+```
+```lean
+abbrev Q (n : ℕ) := Fin n → ℝ
+```
+
+### MolecularDynamics.Chapter04Review.Q (MolecularDynamics/Chapter04/ReviewDefinitions.lean:15)
+原文件上下文：
+```lean
+open Set Matrix
+open scoped BigOperators Topology Matrix.Norms.Elementwise
+```
+```lean
+abbrev Q (n : ℕ) := Fin n → ℝ
+```

@@ -1,0 +1,226 @@
+以附件/PASTE 为准，忽略 /workspace 旧文件；Mathlib 定义按标准含义采信。
+本任务只审本条：原文转录、对象资格、定义体、量词、全部结论及[EXTRA]是否一致；Lean编译不代替语义审阅。
+Lean/Mathlib均4.34.0。原页PDF映射：[414]；印刷页=[393].
+input_sha256请原样回显：
+{
+  "Blueprint/Ch08.lean": "2800812fadd8e2557013f1941e4570401f7903d46f44baf07e23d5531da22a72",
+  "blueprint/ch08/ch08_source.json": "9b994b0f64cd22c85c2ad4123fbfdbd064bd7a6d070fe13b721794432f9f7a63",
+  "BATCH16e_PAGES.pdf": "9844bb6e709791c0bff8d548c9d35e401ff6ca3274d2d0ba869896439810ccfc"
+}
+用代码将JSON对象(batch,input_sha256,items)写到 /workspace/.mathcopilot/reviews/ch08/BATCH16e_review.json；items仅含本source_id。
+items字段：source_id、verdict(PASS/FAIL/NEEDS_HUMAN)、transcription、semantic_review、counterexample、suggested_fix、printed_version、corrected_version。逐版区分原文疑误和修正版结论；缺材料必须具体指出，不猜测。写后json.loads自检，最后仅回复路径及统计。
+
+## 原文JSON
+```json
+{
+  "source_id": "MD-8.9.2-DPDPairOUUpdate",
+  "kind": "unnumbered_claim",
+  "label": null,
+  "section": "8.9.2",
+  "printed_page": "393",
+  "pdf_page": "414",
+  "statement_latex": "mred=mi mj/(mi+mj); mred du=Fdt−γωᴰu dt+σωᴿdW. a=γωᴰ/mred. u(t)=F/(a mred)+exp(−at)(u0−F/(a mred))+√[θ(1−exp(−2at))/mred]R. Δu=u(t)−u0; pi+=mred Δu e, pj−=mred Δu e. (8.103)–(8.107).",
+  "statement_verbatim": "8.9\nMomentum-Conserving Thermostats and the Dissipative Particle. . .\n393\nwhere mij D mimj=.mi C mj/ is the “reduced mass”, vij D Oqij \u0002 vij and FC\nij .rij/ is the\nmagnitude of the conservative force (8.82). This equation is an Ornstein-Uhlenbeck\nprocess with the exact (in the sense of distributions) solution [200]\nvij.t/ D\nFC\nij\n\u0002mij\nC e\u0002\u0002t\n \nvij.0/ \u0003\nFC\nij\n\u0002mij\n!\nC\ns\nkBT.1 \u0003 e\u00022\u0002t/\nmij\nRij.t/;\n(8.104)\nfor i < j with \u0002 D \n!D=mij, where vij.0/ are the initial relative velocities and\nRij.t/ are normally distributed variables with zero mean and unit variance. Thus the\nincremental velocities are given by\n\u0003ij D vij.t/ \u0003 vij.0/ D\n \nvij.0/ \u0003\nFC\nij\n\u0002mij\n!\n.e\u0002\u0002t \u0003 1/ C\ns\nkBT.1 \u0003 e\u00022\u0002t/\nmij\nRij.t/:\n(8.105)\nThe momenta are then obtained from\npnC1\ni\nD pn\ni C mij\u0003ijOqn\nij;\n(8.106)\npnC1\nj\nD pn\nj \u0003 mij\u0003ijOqn\nij;\n(8.107)\nthus deﬁning the propagator ehLSi;j for each particle pair. The DPD-Trotter propaga-\ntor is then\nexp\n\u0006\nh OLDPD-Trotter\n\u0007\nD exp\n\bh\n2LS\n\t\nexp .hLA/ exp\n\bh\n2LS\n\t\n;\nwhere the momentum part is deﬁned by\nexp\n\bh\n2\nOLS\n\t\nD exp\n\bh\n2LSN\u00021;N\n\t\n\u0002 \u0002 \u0002 exp\n\bh\n2LS1;3\n\t\nexp\n\bh\n2LS1;2\n\t\n:\n8.9.3\nExtended Variable Momentum-Conserving Thermostats:\nPairwise Nosé-Hoover/Nosé-Hoover-Langevin Methods\nBecause of the form of the force laws, the number of interaction terms (and\ncomputational cost) involved in the three force terms in DPD are roughly balanced.\nIn this setting the computational time needed to generate the independent random\nnumber streams can be signiﬁcant (depending on the particle density and cutoff\nradius), particularly in very large systems solved in parallel where communication\nbetween cells can require a signiﬁcant amount of time [1, 301]. For this reason,\nAllen and Schmid [8] proposed a Nosé-Hoover type thermostatting scheme in\n",
+  "verbatim_scope": "完整对应原页文字层，逐字保留；本条数学成分由statement_latex及statement_scope定位。",
+  "proof_latex": null,
+  "proof_note": "对应原页推导逐字保存在statement_verbatim/original_page_text；排版以原页PDF为准。",
+  "original_page_text": [
+    {
+      "pdf_page": 414,
+      "printed_page": 393,
+      "text": "8.9\nMomentum-Conserving Thermostats and the Dissipative Particle. . .\n393\nwhere mij D mimj=.mi C mj/ is the “reduced mass”, vij D Oqij \u0002 vij and FC\nij .rij/ is the\nmagnitude of the conservative force (8.82). This equation is an Ornstein-Uhlenbeck\nprocess with the exact (in the sense of distributions) solution [200]\nvij.t/ D\nFC\nij\n\u0002mij\nC e\u0002\u0002t\n \nvij.0/ \u0003\nFC\nij\n\u0002mij\n!\nC\ns\nkBT.1 \u0003 e\u00022\u0002t/\nmij\nRij.t/;\n(8.104)\nfor i < j with \u0002 D \n!D=mij, where vij.0/ are the initial relative velocities and\nRij.t/ are normally distributed variables with zero mean and unit variance. Thus the\nincremental velocities are given by\n\u0003ij D vij.t/ \u0003 vij.0/ D\n \nvij.0/ \u0003\nFC\nij\n\u0002mij\n!\n.e\u0002\u0002t \u0003 1/ C\ns\nkBT.1 \u0003 e\u00022\u0002t/\nmij\nRij.t/:\n(8.105)\nThe momenta are then obtained from\npnC1\ni\nD pn\ni C mij\u0003ijOqn\nij;\n(8.106)\npnC1\nj\nD pn\nj \u0003 mij\u0003ijOqn\nij;\n(8.107)\nthus deﬁning the propagator ehLSi;j for each particle pair. The DPD-Trotter propaga-\ntor is then\nexp\n\u0006\nh OLDPD-Trotter\n\u0007\nD exp\n\bh\n2LS\n\t\nexp .hLA/ exp\n\bh\n2LS\n\t\n;\nwhere the momentum part is deﬁned by\nexp\n\bh\n2\nOLS\n\t\nD exp\n\bh\n2LSN\u00021;N\n\t\n\u0002 \u0002 \u0002 exp\n\bh\n2LS1;3\n\t\nexp\n\bh\n2LS1;2\n\t\n:\n8.9.3\nExtended Variable Momentum-Conserving Thermostats:\nPairwise Nosé-Hoover/Nosé-Hoover-Langevin Methods\nBecause of the form of the force laws, the number of interaction terms (and\ncomputational cost) involved in the three force terms in DPD are roughly balanced.\nIn this setting the computational time needed to generate the independent random\nnumber streams can be signiﬁcant (depending on the particle density and cutoff\nradius), particularly in very large systems solved in parallel where communication\nbetween cells can require a signiﬁcant amount of time [1, 301]. For this reason,\nAllen and Schmid [8] proposed a Nosé-Hoover type thermostatting scheme in\n"
+    }
+  ],
+  "numbered_equations": [
+    "8.103",
+    "8.104",
+    "8.105",
+    "8.106",
+    "8.107"
+  ],
+  "transcription_note": "文字层逐字保留；数学排版另行转写，原页中的特殊字形编码不静默替换。PDF420仅取Exercises之前。",
+  "context_notation": [],
+  "extra_assumptions": [
+    "原印转移律要求mr>0、a>0、θ>0、t≥0及R独立标准正态；F为冻结配置的成对保守力标量，FDT用于方差。",
+    "单对精确分布律及其随机积分推导未证明；已证明质量正性、零率值与逐对总动量代数守恒。"
+  ],
+  "issues": [
+    "已目视核对原页PDF414：原印F/(amred)须a>0；γ=0或截断外ωᴰ=0时需用积分系数连续延拓。修正版显式定义a=0为自由加速，噪声退化为零。"
+  ],
+  "statement_scope": "原印/零率延拓的OU转移公式、速度增量所用动量更新及总动量守恒。",
+  "lean_decl": "MD.Ch08.reducedMass8",
+  "lean_declarations": [
+    "MD.Ch08.reducedMass8",
+    "MD.Ch08.reducedMass8_pos",
+    "MD.Ch08.dpdPairOUPrinted",
+    "MD.Ch08.dpdPairOU_corrected",
+    "MD.Ch08.dpdPairOU_zeroRate",
+    "MD.Ch08.dpdPairMomentumStep",
+    "MD.Ch08.dpdPairMomentumStep_conserves"
+  ],
+  "source_page_verification": "见source_page_checks.json，已目视核对本条原页。",
+  "repair_log": [],
+  "documented_priors": []
+}
+```
+
+## 完整本条Lean
+```lean
+def reducedMass8 (mi mj : ℝ) : ℝ := mi*mj/(mi+mj)
+theorem reducedMass8_pos (mi mj : ℝ) (hi : 0 < mi) (hj : 0 < mj) : 0 < reducedMass8 mi mj :=
+  div_pos (mul_pos hi hj) (add_pos hi hj)
+def dpdPairOUPrinted (mr a F θ t u R : ℝ) : ℝ :=
+  F/(a*mr)+Real.exp (-a*t)*(u-F/(a*mr))+Real.sqrt (θ*(1-Real.exp (-2*a*t))/mr)*R
+def dpdPairOU_corrected (mr a F θ t u R : ℝ) : ℝ :=
+  Real.exp (-a*t)*u+(F/mr)*(if a=0 then t else (1-Real.exp (-a*t))/a)+
+    Real.sqrt (θ*(1-Real.exp (-2*a*t))/mr)*R
+theorem dpdPairOU_zeroRate (mr F θ t u R : ℝ) :
+    dpdPairOU_corrected mr 0 F θ t u R=u+(F/mr)*t := by simp [dpdPairOU_corrected]
+def dpdPairMomentumStep {N d : ℕ} (i j : Fin N) (e : Vec d) (mr du : ℝ)
+    (p : ParticleConfig N d) : ParticleConfig N d := p+pairImpulseVector i j ((mr*du) • e)
+theorem dpdPairMomentumStep_conserves {N d : ℕ} (i j : Fin N) (e : Vec d) (mr du : ℝ)
+    (p : ParticleConfig N d) : totalMomentum (dpdPairMomentumStep i j e mr du p)=totalMomentum p := by
+  simp [dpdPairMomentumStep,pairImpulseVector,totalMomentum,Finset.sum_add_distrib,Finset.sum_sub_distrib]
+```
+
+## 项目依赖定义体及选择规格
+以下def/abbrev/structure完整保留；定理列出完整类型，Mathlib标准定义无需摘录。
+
+### MD.Ch08.Vec (Blueprint/Ch08.lean:17)
+原文件上下文：
+```lean
+open Set Filter MeasureTheory ProbabilityTheory MolecularDynamics
+open scoped BigOperators Topology ContDiff ENNReal NNReal Matrix
+variable {Ω : Type*} [MeasurableSpace Ω]
+variable {n : ℕ}
+```
+```lean
+abbrev Vec (n : ℕ) := Fin n → ℝ
+```
+
+### MD.Ch08.ParticleConfig (Blueprint/Ch08.lean:1334)
+原文件上下文：
+```lean
+open Set Filter MeasureTheory ProbabilityTheory MolecularDynamics
+open scoped BigOperators Topology ContDiff ENNReal NNReal Matrix
+variable {Ω : Type*} [MeasurableSpace Ω]
+variable {n : ℕ}
+```
+```lean
+abbrev ParticleConfig (N d : ℕ) := Fin N → Vec d
+```
+
+### MD.Ch08.totalMomentum (Blueprint/Ch08.lean:1336)
+原文件上下文：
+```lean
+open Set Filter MeasureTheory ProbabilityTheory MolecularDynamics
+open scoped BigOperators Topology ContDiff ENNReal NNReal Matrix
+variable {Ω : Type*} [MeasurableSpace Ω]
+variable {n : ℕ}
+```
+```lean
+def totalMomentum {N d : ℕ} (p : ParticleConfig N d) : Vec d := ∑ i, p i
+```
+
+### MD.Ch08.pairImpulseVector (Blueprint/Ch08.lean:1382)
+原文件上下文：
+```lean
+open Set Filter MeasureTheory ProbabilityTheory MolecularDynamics
+open scoped BigOperators Topology ContDiff ENNReal NNReal Matrix
+variable {Ω : Type*} [MeasurableSpace Ω]
+variable {n : ℕ}
+```
+```lean
+def pairImpulseVector {N d : ℕ} (i j : Fin N) (v : Vec d) : ParticleConfig N d :=
+  Pi.single i v-Pi.single j v
+```
+
+### MD.Ch08.reducedMass8 (Blueprint/Ch08.lean:1561)
+原文件上下文：
+```lean
+open Set Filter MeasureTheory ProbabilityTheory MolecularDynamics
+open scoped BigOperators Topology ContDiff ENNReal NNReal Matrix
+variable {Ω : Type*} [MeasurableSpace Ω]
+variable {n : ℕ}
+```
+```lean
+def reducedMass8 (mi mj : ℝ) : ℝ := mi*mj/(mi+mj)
+```
+
+### MD.Ch08.reducedMass8_pos (Blueprint/Ch08.lean:1562)
+原文件上下文：
+```lean
+open Set Filter MeasureTheory ProbabilityTheory MolecularDynamics
+open scoped BigOperators Topology ContDiff ENNReal NNReal Matrix
+variable {Ω : Type*} [MeasurableSpace Ω]
+variable {n : ℕ}
+```
+```lean
+theorem reducedMass8_pos (mi mj : ℝ) (hi : 0 < mi) (hj : 0 < mj) : 0 < reducedMass8 mi mj
+```
+
+### MD.Ch08.dpdPairOUPrinted (Blueprint/Ch08.lean:1564)
+原文件上下文：
+```lean
+open Set Filter MeasureTheory ProbabilityTheory MolecularDynamics
+open scoped BigOperators Topology ContDiff ENNReal NNReal Matrix
+variable {Ω : Type*} [MeasurableSpace Ω]
+variable {n : ℕ}
+```
+```lean
+def dpdPairOUPrinted (mr a F θ t u R : ℝ) : ℝ :=
+  F/(a*mr)+Real.exp (-a*t)*(u-F/(a*mr))+Real.sqrt (θ*(1-Real.exp (-2*a*t))/mr)*R
+```
+
+### MD.Ch08.dpdPairOU_corrected (Blueprint/Ch08.lean:1566)
+原文件上下文：
+```lean
+open Set Filter MeasureTheory ProbabilityTheory MolecularDynamics
+open scoped BigOperators Topology ContDiff ENNReal NNReal Matrix
+variable {Ω : Type*} [MeasurableSpace Ω]
+variable {n : ℕ}
+```
+```lean
+def dpdPairOU_corrected (mr a F θ t u R : ℝ) : ℝ :=
+  Real.exp (-a*t)*u+(F/mr)*(if a=0 then t else (1-Real.exp (-a*t))/a)+
+    Real.sqrt (θ*(1-Real.exp (-2*a*t))/mr)*R
+```
+
+### MD.Ch08.dpdPairOU_zeroRate (Blueprint/Ch08.lean:1569)
+原文件上下文：
+```lean
+open Set Filter MeasureTheory ProbabilityTheory MolecularDynamics
+open scoped BigOperators Topology ContDiff ENNReal NNReal Matrix
+variable {Ω : Type*} [MeasurableSpace Ω]
+variable {n : ℕ}
+```
+```lean
+theorem dpdPairOU_zeroRate (mr F θ t u R : ℝ) :
+    dpdPairOU_corrected mr 0 F θ t u R=u+(F/mr)*t
+```
+
+### MD.Ch08.dpdPairMomentumStep (Blueprint/Ch08.lean:1571)
+原文件上下文：
+```lean
+open Set Filter MeasureTheory ProbabilityTheory MolecularDynamics
+open scoped BigOperators Topology ContDiff ENNReal NNReal Matrix
+variable {Ω : Type*} [MeasurableSpace Ω]
+variable {n : ℕ}
+```
+```lean
+def dpdPairMomentumStep {N d : ℕ} (i j : Fin N) (e : Vec d) (mr du : ℝ)
+    (p : ParticleConfig N d) : ParticleConfig N d := p+pairImpulseVector i j ((mr*du) • e)
+```
+
+### MD.Ch08.dpdPairMomentumStep_conserves (Blueprint/Ch08.lean:1573)
+原文件上下文：
+```lean
+open Set Filter MeasureTheory ProbabilityTheory MolecularDynamics
+open scoped BigOperators Topology ContDiff ENNReal NNReal Matrix
+variable {Ω : Type*} [MeasurableSpace Ω]
+variable {n : ℕ}
+```
+```lean
+theorem dpdPairMomentumStep_conserves {N d : ℕ} (i j : Fin N) (e : Vec d) (mr du : ℝ)
+    (p : ParticleConfig N d) : totalMomentum (dpdPairMomentumStep i j e mr du p)=totalMomentum p
+```

@@ -1,0 +1,275 @@
+以附件/PASTE 为准，忽略 /workspace 旧文件；Mathlib 定义按标准含义采信。
+本任务只审本条：原文转录、对象资格、定义体、量词、全部结论及[EXTRA]是否一致；Lean编译不代替语义审阅。
+Lean/Mathlib均4.34.0。原页PDF映射：[366, 367]；印刷页=[345, 346].
+input_sha256请原样回显：
+{
+  "Blueprint/Ch08.lean": "2800812fadd8e2557013f1941e4570401f7903d46f44baf07e23d5531da22a72",
+  "blueprint/ch08/ch08_source.json": "9b994b0f64cd22c85c2ad4123fbfdbd064bd7a6d070fe13b721794432f9f7a63",
+  "BATCH05b_PAGES.pdf": "62a00601ed59f82e6a1795d96a5304b72047b3504c42a7ddc7ee2727c5ea9a12"
+}
+用代码将JSON对象(batch,input_sha256,items)写到 /workspace/.mathcopilot/reviews/ch08/BATCH05b_review.json；items仅含本source_id。
+items字段：source_id、verdict(PASS/FAIL/NEEDS_HUMAN)、transcription、semantic_review、counterexample、suggested_fix、printed_version、corrected_version。逐版区分原文疑误和修正版结论；缺材料必须具体指出，不猜测。写后json.loads自检，最后仅回复路径及统计。
+
+## 原文JSON
+```json
+{
+  "source_id": "MD-8.4.1-NHL",
+  "kind": "definition",
+  "label": null,
+  "section": "8.4.1",
+  "printed_page": "345–346",
+  "pdf_page": "366–367",
+  "statement_latex": "dq=M⁻¹pdt, dp=-∇Udt-ξpdt, dξ=μ⁻¹[pᵀM⁻¹p-N_dk_BT]dt-γξdt+√(2k_BTγμ⁻¹)dW. Quadratic specialization: U=qᵀAq/2, M=I.",
+  "statement_verbatim": "8.4\nErgodic Stochastic-Dynamic Thermostats\n345\nThis means that we have built one of our two vectors. The second follows as a linear\ncombination of the others:\nQF D b0 \u0003 \u0012 QG \u0003 .g \u0003 \n\u0012/\u0007\u00021b1:\nut\nThe fact that the Hörmander condition holds is, as we know from Chap. 6, only\npart of the story. However based on known results for Langevin dynamics, we\nconjecture that ergodicity will hold if (i) the Hörmander condition holds, (ii) U\nis sufﬁciently smooth, and (iii) the conﬁgurational phase space is compact, e.g.\nperiodic boundary conditions are employed. However we stress that each possible\nmethod will ultimately need to be carefully and systematically checked to verify the\nergodic properties.\n8.4.1\nNosé-Hoover-Langevin: An Ergodic Weakly Coupled\nThermostat\nThe Nosé-Hoover-Langevin (NHL) method is based on a simple idea: replace the\n“chain” in the Nosé-Hoover Chain, whose sole purpose is to maintain a Gaussian\ndistribution in the auxiliary variable, by a stochastic Langevin-type thermostat. The\nmethod was ﬁrst proposed in [323]. The proof of ergodicity (more precisely the\nconﬁrmation of the Hörmander condition), for a problem with harmonic internal\ninteractions, was given in [226] and we roughly follow the treatment from this paper.\nThe Nosé-Hoover-Langevin equations are\ndq D M\u00021pdt;\n(8.27)\ndp D \u0003rU.q/dt \u0003 \u0012pdt;\n(8.28)\nd\u0012 D \u0006\u00021ŒpTM\u00021p \u0003 NdkBT\tdt \u0003 \n\u0012dt C\np\n2kBT\n\u0006\u00021dW;\n(8.29)\nwhere .q; p/ 2 D with \u0012 2 R. Let us emphasize that the principal features of this\nthermostat: (1) it is essentially Nosé-Hoover plus a perturbation, (2) it incorporates\na single Wiener process, (3) it has two free parameters \n and \u0006.\nLet us ﬁrst demonstrate that the Nosé-Hoover-Langevin method, is, in fact, a\nthermostat. We observe that we have already shown that the Nosé-Hoover method\npreserves the extended canonical distribution \u0005ˇ exp.\u0003ˇ\u0006\u00122=2/. Therefore, by the\nadditivity property, all that is needed is to show that the additional part\nd\u0012 D \u0003\n\u0012dt C\np\n2kBT\n\u0006\u00021dW\n\n346\n8\nExtended Variable Methods\npreserves O\u0005.\u0012/ D exp.\u0003ˇ\u0006\u00122=2/. However, this is obvious from our earlier\ninvestigations of Ornstein-Uhlenbeck equations.\nIn order to show that this thermostat is ergodic, we need to demonstrate that\nthe assumptions presented in Sect. 6.4.4 are valid. Assumption 1(ii) requires us to\nverify that a Hörmander condition (see Deﬁnition 6.1) holds for the Nosé-Hoover-\nLangevin system. Because of the complexity of the high order commutators, we\nwill work here with the assumption of a quadratic potential in the physical model.\nIn some sense this is the most difﬁcult case for a thermostat, but paradoxically, the\nassumption facilitates the mathematical analysis. We will assume throughout the\nfollowing that Nd D Nc, i.e. that there are no constraints in the system. Our potential\nwill therefore be assumed to be\nU.q/ D 1\n2qTAq;\nfor A a symmetric, positive deﬁnite Nc \u0004 Nc matrix, with\nrU.q/ D Aq:\nWe will further assume M D I. If this is not the case, then one may introduce the\nrescaling Qq D M\u00021=2q; Qp D M1=2p in order to rewrite the system in a form that does\nnot involve M. Thus the system under study is\ndq D pdt;\n(8.30)\ndp D \u0003Aqdt \u0003 \u0012pdt;\n(8.31)\nd\u0012 D \u0006\u00021Œkpk2 \u0003 NdkBT\tdt \u0003 \n\u0012dt C \u0007dW:\n(8.32)\nLet u1; u2; : : : ; uNc be the eigenvectors of A with \u00131; : : : ; \u0013Nc the corresponding\neigenvalues. Observe that if q0 \u0002uk D p0 \u0002uk D 0, then, using (8.30)–(8.31), we have\nat this point\nuk \u0002 p D 0;\nuk \u0002 Œ\u0003Aq \u0003 \u0012p\t D \u0003\u0013kuk \u0002 q D 0;\nwhich implies that Vk D f.q; p/juk \u0002 q D 0; uk \u0002 p D 0g is an invariant submanifold.\nTherefore we must require that uk \u0002 q and uk \u0002 p do not simultaneously vanish, that\nis, .q; p/ 2 D D R2Nc n SNc\nkD1 Vk.\nTheorem 8.1 If A is symmetric positive deﬁnite and has distinct eigenvalues, then\n(8.30)–(8.32) satisﬁes the Hörmander condition on D \u0004 R.\n",
+  "verbatim_scope": "完整对应原页文字层，逐字保留；本条数学成分由statement_latex及statement_scope定位。",
+  "proof_latex": null,
+  "proof_note": "对应原页推导逐字保存在statement_verbatim/original_page_text；排版以原页PDF为准。",
+  "original_page_text": [
+    {
+      "pdf_page": 366,
+      "printed_page": 345,
+      "text": "8.4\nErgodic Stochastic-Dynamic Thermostats\n345\nThis means that we have built one of our two vectors. The second follows as a linear\ncombination of the others:\nQF D b0 \u0003 \u0012 QG \u0003 .g \u0003 \n\u0012/\u0007\u00021b1:\nut\nThe fact that the Hörmander condition holds is, as we know from Chap. 6, only\npart of the story. However based on known results for Langevin dynamics, we\nconjecture that ergodicity will hold if (i) the Hörmander condition holds, (ii) U\nis sufﬁciently smooth, and (iii) the conﬁgurational phase space is compact, e.g.\nperiodic boundary conditions are employed. However we stress that each possible\nmethod will ultimately need to be carefully and systematically checked to verify the\nergodic properties.\n8.4.1\nNosé-Hoover-Langevin: An Ergodic Weakly Coupled\nThermostat\nThe Nosé-Hoover-Langevin (NHL) method is based on a simple idea: replace the\n“chain” in the Nosé-Hoover Chain, whose sole purpose is to maintain a Gaussian\ndistribution in the auxiliary variable, by a stochastic Langevin-type thermostat. The\nmethod was ﬁrst proposed in [323]. The proof of ergodicity (more precisely the\nconﬁrmation of the Hörmander condition), for a problem with harmonic internal\ninteractions, was given in [226] and we roughly follow the treatment from this paper.\nThe Nosé-Hoover-Langevin equations are\ndq D M\u00021pdt;\n(8.27)\ndp D \u0003rU.q/dt \u0003 \u0012pdt;\n(8.28)\nd\u0012 D \u0006\u00021ŒpTM\u00021p \u0003 NdkBT\tdt \u0003 \n\u0012dt C\np\n2kBT\n\u0006\u00021dW;\n(8.29)\nwhere .q; p/ 2 D with \u0012 2 R. Let us emphasize that the principal features of this\nthermostat: (1) it is essentially Nosé-Hoover plus a perturbation, (2) it incorporates\na single Wiener process, (3) it has two free parameters \n and \u0006.\nLet us ﬁrst demonstrate that the Nosé-Hoover-Langevin method, is, in fact, a\nthermostat. We observe that we have already shown that the Nosé-Hoover method\npreserves the extended canonical distribution \u0005ˇ exp.\u0003ˇ\u0006\u00122=2/. Therefore, by the\nadditivity property, all that is needed is to show that the additional part\nd\u0012 D \u0003\n\u0012dt C\np\n2kBT\n\u0006\u00021dW\n"
+    },
+    {
+      "pdf_page": 367,
+      "printed_page": 346,
+      "text": "346\n8\nExtended Variable Methods\npreserves O\u0005.\u0012/ D exp.\u0003ˇ\u0006\u00122=2/. However, this is obvious from our earlier\ninvestigations of Ornstein-Uhlenbeck equations.\nIn order to show that this thermostat is ergodic, we need to demonstrate that\nthe assumptions presented in Sect. 6.4.4 are valid. Assumption 1(ii) requires us to\nverify that a Hörmander condition (see Deﬁnition 6.1) holds for the Nosé-Hoover-\nLangevin system. Because of the complexity of the high order commutators, we\nwill work here with the assumption of a quadratic potential in the physical model.\nIn some sense this is the most difﬁcult case for a thermostat, but paradoxically, the\nassumption facilitates the mathematical analysis. We will assume throughout the\nfollowing that Nd D Nc, i.e. that there are no constraints in the system. Our potential\nwill therefore be assumed to be\nU.q/ D 1\n2qTAq;\nfor A a symmetric, positive deﬁnite Nc \u0004 Nc matrix, with\nrU.q/ D Aq:\nWe will further assume M D I. If this is not the case, then one may introduce the\nrescaling Qq D M\u00021=2q; Qp D M1=2p in order to rewrite the system in a form that does\nnot involve M. Thus the system under study is\ndq D pdt;\n(8.30)\ndp D \u0003Aqdt \u0003 \u0012pdt;\n(8.31)\nd\u0012 D \u0006\u00021Œkpk2 \u0003 NdkBT\tdt \u0003 \n\u0012dt C \u0007dW:\n(8.32)\nLet u1; u2; : : : ; uNc be the eigenvectors of A with \u00131; : : : ; \u0013Nc the corresponding\neigenvalues. Observe that if q0 \u0002uk D p0 \u0002uk D 0, then, using (8.30)–(8.31), we have\nat this point\nuk \u0002 p D 0;\nuk \u0002 Œ\u0003Aq \u0003 \u0012p\t D \u0003\u0013kuk \u0002 q D 0;\nwhich implies that Vk D f.q; p/juk \u0002 q D 0; uk \u0002 p D 0g is an invariant submanifold.\nTherefore we must require that uk \u0002 q and uk \u0002 p do not simultaneously vanish, that\nis, .q; p/ 2 D D R2Nc n SNc\nkD1 Vk.\nTheorem 8.1 If A is symmetric positive deﬁnite and has distinct eigenvalues, then\n(8.30)–(8.32) satisﬁes the Hörmander condition on D \u0004 R.\n"
+    }
+  ],
+  "numbered_equations": [
+    "8.27",
+    "8.28",
+    "8.29",
+    "8.30",
+    "8.31",
+    "8.32"
+  ],
+  "transcription_note": "文字层逐字保留；数学排版另行转写，原页中的特殊字形编码不静默替换。PDF420仅取Exercises之前。",
+  "context_notation": [],
+  "extra_assumptions": [
+    "Q>0、β>0、γ>0及单独立Wiener；二次系统A对称正定、M=I；高维无约束自由度n。"
+  ],
+  "issues": [],
+  "statement_scope": "NHL全SDE与二次势；一般质量重缩放和NHL概率不变性在其他条目/缺口中列。",
+  "lean_decl": "MD.Ch08.nhlDrift",
+  "lean_declarations": [
+    "MD.Ch08.nhlDrift",
+    "MD.Ch08.isNHLSolution",
+    "MD.Ch08.harmonicPotential"
+  ],
+  "source_page_verification": "见source_page_checks.json，已目视核对本条原页。",
+  "repair_log": [],
+  "documented_priors": []
+}
+```
+
+## 完整本条Lean
+```lean
+def nhlDrift (invm : Vec n) (U : Vec n → ℝ) (β Q γ : ℝ) (z : Phase n × ℝ) : Phase n × ℝ :=
+  (nhField invm U β Q z).1 |> fun physical ↦ (physical, (nhField invm U β Q z).2-γ*z.2)
+def isNHLSolution (invm : Vec n) (U : Vec n → ℝ) (β Q γ : ℝ)
+    (P : Measure Ω) (W : ℝ → Ω → Vec 1) (X : ℝ → Ω → Phase n × ℝ)
+    (x0 : Phase n × ℝ) : Prop :=
+  thermostatParameters invm β Q ∧ 0 < γ ∧
+    additiveSDE P 1 W X x0 (nhlDrift invm U β Q γ)
+      (fun _ ↦ (0, Real.sqrt (2*γ/(β*Q))))
+def harmonicPotential (A : Matrix (Fin n) (Fin n) ℝ) (q : Vec n) : ℝ := dot q (A *ᵥ q)/2
+```
+
+## 项目依赖定义体及选择规格
+以下def/abbrev/structure完整保留；定理列出完整类型，Mathlib标准定义无需摘录。
+
+### MD.Ch08.Vec (Blueprint/Ch08.lean:17)
+原文件上下文：
+```lean
+open Set Filter MeasureTheory ProbabilityTheory MolecularDynamics
+open scoped BigOperators Topology ContDiff ENNReal NNReal Matrix
+variable {Ω : Type*} [MeasurableSpace Ω]
+variable {n : ℕ}
+```
+```lean
+abbrev Vec (n : ℕ) := Fin n → ℝ
+```
+
+### MD.Ch08.Phase (Blueprint/Ch08.lean:18)
+原文件上下文：
+```lean
+open Set Filter MeasureTheory ProbabilityTheory MolecularDynamics
+open scoped BigOperators Topology ContDiff ENNReal NNReal Matrix
+variable {Ω : Type*} [MeasurableSpace Ω]
+variable {n : ℕ}
+```
+```lean
+abbrev Phase (n : ℕ) := Vec n × Vec n
+```
+
+### MD.Ch08.dot (Blueprint/Ch08.lean:19)
+原文件上下文：
+```lean
+open Set Filter MeasureTheory ProbabilityTheory MolecularDynamics
+open scoped BigOperators Topology ContDiff ENNReal NNReal Matrix
+variable {Ω : Type*} [MeasurableSpace Ω]
+variable {n : ℕ}
+```
+```lean
+def dot (v w : Vec n) : ℝ := ∑ i, v i * w i
+```
+
+### MD.Ch08.gradient (Blueprint/Ch08.lean:20)
+原文件上下文：
+```lean
+open Set Filter MeasureTheory ProbabilityTheory MolecularDynamics
+open scoped BigOperators Topology ContDiff ENNReal NNReal Matrix
+variable {Ω : Type*} [MeasurableSpace Ω]
+variable {n : ℕ}
+```
+```lean
+def gradient (U : Vec n → ℝ) (q : Vec n) : Vec n := fun i ↦ fderiv ℝ U q (Pi.single i 1)
+```
+
+### MD.Ch08.thermostatParameters (Blueprint/Ch08.lean:63)
+原文件上下文：
+```lean
+open Set Filter MeasureTheory ProbabilityTheory MolecularDynamics
+open scoped BigOperators Topology ContDiff ENNReal NNReal Matrix
+variable {Ω : Type*} [MeasurableSpace Ω]
+variable {n : ℕ}
+```
+```lean
+def thermostatParameters (invm : Vec n) (β Q : ℝ) : Prop :=
+  (∀ i, 0 < invm i) ∧ 0 < β ∧ 0 < Q
+```
+
+### MD.Ch08.kineticTwice (Blueprint/Ch08.lean:65)
+原文件上下文：
+```lean
+open Set Filter MeasureTheory ProbabilityTheory MolecularDynamics
+open scoped BigOperators Topology ContDiff ENNReal NNReal Matrix
+variable {Ω : Type*} [MeasurableSpace Ω]
+variable {n : ℕ}
+```
+```lean
+def kineticTwice (invm p : Vec n) : ℝ := ∑ i, invm i * p i ^ 2
+```
+
+### MD.Ch08.nhField (Blueprint/Ch08.lean:66)
+原文件上下文：
+```lean
+open Set Filter MeasureTheory ProbabilityTheory MolecularDynamics
+open scoped BigOperators Topology ContDiff ENNReal NNReal Matrix
+variable {Ω : Type*} [MeasurableSpace Ω]
+variable {n : ℕ}
+```
+```lean
+def nhField (invm : Vec n) (U : Vec n → ℝ) (β Q : ℝ)
+    (z : Phase n × ℝ) : Phase n × ℝ :=
+  ((fun i ↦ invm i * z.1.2 i, fun i ↦ -gradient U z.1.1 i - z.2 * z.1.2 i),
+   (kineticTwice invm z.1.2 - (n : ℝ)/β)/Q)
+```
+
+### MD.Ch08.independentWiener (Blueprint/Ch08.lean:307)
+原文件上下文：
+```lean
+open Set Filter MeasureTheory ProbabilityTheory MolecularDynamics
+open scoped BigOperators Topology ContDiff ENNReal NNReal Matrix
+variable {Ω : Type*} [MeasurableSpace Ω]
+variable {n : ℕ}
+```
+```lean
+def independentWiener (P : Measure Ω) (k : ℕ) (W : ℝ → Ω → Vec k) : Prop :=
+  IsProbabilityMeasure P ∧ (∀ j, IsBrownianReal (fun t sample ↦ W t sample j) P) ∧
+    iIndepFun (fun j sample ↦ fun t : ℝ ↦ W t sample j) P
+```
+
+### MD.Ch08.additiveSDE (Blueprint/Ch08.lean:310)
+原文件上下文：
+```lean
+open Set Filter MeasureTheory ProbabilityTheory MolecularDynamics
+open scoped BigOperators Topology ContDiff ENNReal NNReal Matrix
+variable {Ω : Type*} [MeasurableSpace Ω]
+variable {n : ℕ}
+```
+```lean
+def additiveSDE {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E] [MeasurableSpace E]
+    (P : Measure Ω) (k : ℕ) (W : ℝ → Ω → Vec k)
+    (X : ℝ → Ω → E) (x0 : E) (a : E → E) (B : Fin k → E) : Prop :=
+  independentWiener P k W ∧ (∀ᵐ sample ∂P, Continuous (fun t ↦ X t sample)) ∧
+  (∀ t : ℝ, 0 ≤ t → Measurable[MeasurableSpace.comap
+    (fun (sample : Ω) (s : Icc (0 : ℝ) t) ↦ W s sample) inferInstance] (X t)) ∧
+  ∀ t : ℝ, 0 ≤ t →
+    (∀ᵐ sample ∂P, IntervalIntegrable (fun s ↦ a (X s sample)) volume 0 t) ∧
+    ∀ᵐ sample ∂P, X t sample = x0 + (∫ s in 0..t, a (X s sample)) +
+      ∑ j, (W t sample j-W 0 sample j) • B j
+```
+
+### MD.Ch08.nhlDrift (Blueprint/Ch08.lean:372)
+原文件上下文：
+```lean
+open Set Filter MeasureTheory ProbabilityTheory MolecularDynamics
+open scoped BigOperators Topology ContDiff ENNReal NNReal Matrix
+variable {Ω : Type*} [MeasurableSpace Ω]
+variable {n : ℕ}
+```
+```lean
+def nhlDrift (invm : Vec n) (U : Vec n → ℝ) (β Q γ : ℝ) (z : Phase n × ℝ) : Phase n × ℝ :=
+  (nhField invm U β Q z).1 |> fun physical ↦ (physical, (nhField invm U β Q z).2-γ*z.2)
+```
+
+### MD.Ch08.isNHLSolution (Blueprint/Ch08.lean:374)
+原文件上下文：
+```lean
+open Set Filter MeasureTheory ProbabilityTheory MolecularDynamics
+open scoped BigOperators Topology ContDiff ENNReal NNReal Matrix
+variable {Ω : Type*} [MeasurableSpace Ω]
+variable {n : ℕ}
+```
+```lean
+def isNHLSolution (invm : Vec n) (U : Vec n → ℝ) (β Q γ : ℝ)
+    (P : Measure Ω) (W : ℝ → Ω → Vec 1) (X : ℝ → Ω → Phase n × ℝ)
+    (x0 : Phase n × ℝ) : Prop :=
+  thermostatParameters invm β Q ∧ 0 < γ ∧
+    additiveSDE P 1 W X x0 (nhlDrift invm U β Q γ)
+      (fun _ ↦ (0, Real.sqrt (2*γ/(β*Q))))
+```
+
+### MD.Ch08.harmonicPotential (Blueprint/Ch08.lean:380)
+原文件上下文：
+```lean
+open Set Filter MeasureTheory ProbabilityTheory MolecularDynamics
+open scoped BigOperators Topology ContDiff ENNReal NNReal Matrix
+variable {Ω : Type*} [MeasurableSpace Ω]
+variable {n : ℕ}
+```
+```lean
+def harmonicPotential (A : Matrix (Fin n) (Fin n) ℝ) (q : Vec n) : ℝ := dot q (A *ᵥ q)/2
+```
+
+### MolecularDynamics.Chapter02Review.Q (MolecularDynamics/Chapter02/ReviewDefinitions.lean:17)
+原文件上下文：
+```lean
+open Set Filter Matrix
+open scoped BigOperators Topology
+```
+```lean
+abbrev Q (n : ℕ) := Fin n → ℝ
+```
+
+### MolecularDynamics.Chapter04Review.Q (MolecularDynamics/Chapter04/ReviewDefinitions.lean:15)
+原文件上下文：
+```lean
+open Set Matrix
+open scoped BigOperators Topology Matrix.Norms.Elementwise
+```
+```lean
+abbrev Q (n : ℕ) := Fin n → ℝ
+```
+
+### MolecularDynamics.Chapter05Review.E (MolecularDynamics/Chapter05/ReviewDefinitions.lean:18)
+原文件上下文：
+```lean
+open Set Filter MeasureTheory Matrix
+open scoped BigOperators Topology ENNReal
+```
+```lean
+abbrev E (n : ℕ) := EuclideanSpace ℝ (Fin n)
+```

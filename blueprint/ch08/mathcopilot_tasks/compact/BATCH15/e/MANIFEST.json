@@ -1,0 +1,108 @@
+{
+  "batch": "BATCH15",
+  "subtask": "BATCH15e",
+  "source_ids": [
+    "MD-8.9.1-DPDCanonicalLeaf"
+  ],
+  "input_sha256": {
+    "Blueprint/Ch08.lean": "2800812fadd8e2557013f1941e4570401f7903d46f44baf07e23d5531da22a72",
+    "blueprint/ch08/ch08_source.json": "9b994b0f64cd22c85c2ad4123fbfdbd064bd7a6d070fe13b721794432f9f7a63",
+    "BATCH15e_PAGES.pdf": "c4e9f549df2f3537700b01d919abb1f960e96a362a7a675415b22342655a7799"
+  },
+  "page_mapping": [
+    {
+      "attachment_page": 1,
+      "original_pdf_page": 410,
+      "printed_page": 389
+    }
+  ],
+  "definition_excerpts": [
+    {
+      "full_name": "MD.Ch08.Vec",
+      "kind": "abbrev",
+      "path": "Blueprint/Ch08.lean",
+      "line": 17,
+      "code_sha256": "6f4b254a8a7cc4115fb35265b77caa663bdd18567cd1e664cc5bbd080d02fcff"
+    },
+    {
+      "full_name": "MD.Ch08.dot",
+      "kind": "def",
+      "path": "Blueprint/Ch08.lean",
+      "line": 19,
+      "code_sha256": "bb45cec5def0e642f7dde399650df8a6486048be491d116502106e187aa99348"
+    },
+    {
+      "full_name": "MD.Ch08.ParticleConfig",
+      "kind": "abbrev",
+      "path": "Blueprint/Ch08.lean",
+      "line": 1334,
+      "code_sha256": "c46ce65b6511b6a80adf81f99adccdc72de343aed0cedd1fcf09d0a9683ccf2e"
+    },
+    {
+      "full_name": "MD.Ch08.ParticlePhase",
+      "kind": "abbrev",
+      "path": "Blueprint/Ch08.lean",
+      "line": 1335,
+      "code_sha256": "c85eef16496630f1d2d793d7c1ec2a510d003438949acbd8ed3f9a959876fb44"
+    },
+    {
+      "full_name": "MD.Ch08.totalMomentum",
+      "kind": "def",
+      "path": "Blueprint/Ch08.lean",
+      "line": 1336,
+      "code_sha256": "6b3fdbfaee6b174232222bb9d9a58bbf3f6d9a3325cae5c3a3c2baf5b3cc250b"
+    },
+    {
+      "full_name": "MD.Ch08.dpdFluctuationDissipation",
+      "kind": "def",
+      "path": "Blueprint/Ch08.lean",
+      "line": 1446,
+      "code_sha256": "41d459eae3500c5d85d30f0a3ca36493754e15e777a1c2c0e140644e3bfe60d6"
+    },
+    {
+      "full_name": "MD.Ch08.momentumLeaf",
+      "kind": "def",
+      "path": "Blueprint/Ch08.lean",
+      "line": 1448,
+      "code_sha256": "b442eebe346d7538d9803b043daa9dfdb1b103767c8ad06b2ee6b1c241c369fa"
+    },
+    {
+      "full_name": "MD.Ch08.particleHamiltonian",
+      "kind": "def",
+      "path": "Blueprint/Ch08.lean",
+      "line": 1450,
+      "code_sha256": "63effd5fa3c7149f1320ac969070632af9954b51e3f03e9d5f2afec5cfd8c9e1"
+    },
+    {
+      "full_name": "MD.Ch08.momentumCanonical",
+      "kind": "def",
+      "path": "Blueprint/Ch08.lean",
+      "line": 1452,
+      "code_sha256": "a0597efb9c5fc5dc4750992f0ef67174d703138e6e19fddbbafbbf6a04de6df8"
+    },
+    {
+      "full_name": "MD.Ch08.momentumCanonicalQualification",
+      "kind": "def",
+      "path": "Blueprint/Ch08.lean",
+      "line": 1456,
+      "code_sha256": "3ebd83865217d8e63338abb4c25a106445766f8c2637daec958917a464435780"
+    }
+  ],
+  "validation": {
+    "project_constant_closure": "PASS",
+    "missing_project_definitions": [],
+    "full_page_render_equality_dpi": 72,
+    "website_submitted": false
+  },
+  "files": {
+    "PASTE.txt": {
+      "bytes": 13253,
+      "sha256": "ef5ceca3fd9da5986d32fbdbc3c11390dfc3e9e5210ad05be523250bfbfdc300"
+    },
+    "BATCH15e_PAGES.pdf": {
+      "bytes": 89442,
+      "sha256": "c4e9f549df2f3537700b01d919abb1f960e96a362a7a675415b22342655a7799"
+    }
+  },
+  "total_task_bytes": 106128
+}

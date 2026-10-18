@@ -1,0 +1,150 @@
+以附件/PASTE 为准，忽略 /workspace 旧文件；Mathlib 定义按标准含义采信。
+本任务只审本条：原文转录、对象资格、定义体、量词、全部结论及[EXTRA]是否一致；Lean编译不代替语义审阅。
+Lean/Mathlib均4.34.0。原页PDF映射：[357, 358]；印刷页=[336, 337].
+input_sha256请原样回显：
+{
+  "Blueprint/Ch08.lean": "2800812fadd8e2557013f1941e4570401f7903d46f44baf07e23d5531da22a72",
+  "blueprint/ch08/ch08_source.json": "9b994b0f64cd22c85c2ad4123fbfdbd064bd7a6d070fe13b721794432f9f7a63",
+  "BATCH03c_PAGES.pdf": "9776fb2dc30923255a4e2719be2b22146cf59f1a09f9b1c8f58ec3b37a66f47a"
+}
+用代码将JSON对象(batch,input_sha256,items)写到 /workspace/.mathcopilot/reviews/ch08/BATCH03c_review.json；items仅含本source_id。
+items字段：source_id、verdict(PASS/FAIL/NEEDS_HUMAN)、transcription、semantic_review、counterexample、suggested_fix、printed_version、corrected_version。逐版区分原文疑误和修正版结论；缺材料必须具体指出，不猜测。写后json.loads自检，最后仅回复路径及统计。
+
+## 原文JSON
+```json
+{
+  "source_id": "MD-8.2.1-ContinuityProductRule",
+  "kind": "unnumbered_claim",
+  "label": null,
+  "section": "8.2.1",
+  "printed_page": "336–337",
+  "pdf_page": "357–358",
+  "statement_latex": "∂tρ=-div_z[ρ(J∇H+Φ)]-div_ξ(ρg)=L†ρ; the product rule gives four terms W₁+W₂+W₃+W₄.",
+  "statement_verbatim": "336\n8\nExtended Variable Methods\n8.2\nMore General Deterministic Thermostats\nWe have now seen that it is possible to construct stochastic differential equations\nthat preserve the Gibbs distribution or to design deterministic perturbations of\nHamiltonian dynamics, in an extended phase space, that do the same thing.\nThe latter class of methods are not rigorously ergodic, but the dynamics based\nthermostatting technique adds a great deal of ﬂexibility. For example it is easy to\ncontrol the ensemble using dynamic perturbations introduced only in some special\nphase space directions. In this section, we show how to design distributional controls\nwhich blend deterministic dynamics with restricted stochastic perturbations, with,\nin some cases, provable ergodicity. We will present the methods of this section in\nsome generality.\nLet a system be provided with Hamiltonian (energy) function H D H.z/, z 2 Rm,\nand microcanonical dynamics\nPz D JrH;\n(8.14)\nwhere J is skew symmetric. In principle, J need not be constant, as long as it satisﬁes\ncertain constraints, but as the extra generality is not needed for our current purposes,\nwe restrict the case J constant. We describe dynamical and stochastic-dynamical\ntechniques for computing averages with respect to a smooth density, for simplicity\nthe Gibbsian one, \u0005ˇ / exp.\u0003ˇH/.\nWe ﬁrst consider methods that are based on perturbation of the conservative\nsystem (8.14), i.e.\nPz D JrH C ˚.\u0002; z/;\n(8.15)\nwhere \u0002 2 Rm is controlled by the dynamical system\nd\u0002\ndt D g.\u0002; z/:\n8.2.1\nContinuity Equation\nGiven a deterministic thermostatting method, the density will evolve under the\ncontinuity equation,\n@\u0005\n@t D \u0003rz \u0002 Œ\u0005.JrzH C ˚/\t \u0003 r\u0002 \u0002 .\u0005g.\u0002; z// DW L\u0004\u0005:\nWe have, using product rule,\nL\u0004\u0005 D \u0003.rz\u0005/ \u0002 .JrzH C ˚/ \u0003 \u0005rz \u0002 .JrzH C ˚/ \u0003 .r\u0002\u0005/ \u0002 g \u0003 \u0005r\u0002 \u0002 g:\n\n8.2\nMore General Deterministic Thermostats\n337\nWe divide this into four parts: L\u0004\u0005 D W1 C W2 C W3 C W4, where\nW1 D \u0003.rz\u0005/ \u0002 .JrzH C ˚/; W2 D \u0003\u0005rz \u0002 .JrzH C ˚/;\nW3 D \u0003.r\u0002\u0005/ \u0002 g;\nW4 D \u0003\u0005r\u0002 \u0002 g:\nWe seek perturbations of Hamiltonian dynamics with separable equilibria, i.e., such\nthat \u0005 D \u0005ˇ.H.z// O\u0005.\u0002/ is a stationary solution.\nTaking this as an ansatz, the ﬁrst term can be simpliﬁed as follows:\nW1 D \u0003 O\u0005.\u0002/\u00050\nˇ.H/rzH \u0002 .JrzH C ˚/\nD ˇ O\u0005.\u0002/\u0005ˇ.H/rzH \u0002 ˚ D ˇ\u0005rzH \u0002 ˚\nas J is skew-symmetric.\nUsing the volume preservation of Hamiltonian systems, the second term satisﬁes\nW2 D \u0003\u0005rz \u0002 .JrzH C ˚/ D \u0003\u0005rz \u0002 ˚;\nhence\nW1 C W2 D \u0003\u0005Œrz \u0003 ˇrzH\t \u0002 ˚:\nThere are many possibilities for the distribution of \u0002, of course, but we will\nassume this is Gaussian for simplicity: O\u0005.\u0002/\nD\nexp\n\u0004\n\u0003ˇ Pm\niD1 \u0006i\u00122\ni =2\n\u0005\nD\nexp.\u0003ˇ\u0002T\u0007\u00021\u0002=2/ to get\nW3 D \u0003.r\u0002\u0005/ \u0002 g.\u0002; z/ D ˇ\u0005\u0002T\u0007\u00021g:\nFinally, for an equilibrium solution we must have W1 C W2 C W3 C W4 D 0, so\n\u0003Œrz \u0003 ˇrzH\t \u0002 ˚ C ˇ\u0002T\u0007\u00021g \u0003 r\u0002 \u0002 g D 0:\nThis equation is the fundamental one for deterministic thermostats.\nExample 8.1 To recover Nosé-Hoover, assume an even dimensional phase space,\nz D .q; p/, Nd degrees of freedom, and \u0012 2 R,\n˚ D \u0003\u0012\n\u0002 0\np\n\u0003\n;\ng.z/ D \u0006\u00021.p \u0002 rpH \u0003 NdkBT/:\nExample 8.2 Slightly more generally, let\n˚ D \u0012G.z/;\ng.\u0012; z/ D g.z/ D \u0006\u00021ŒrzH \u0003 kBTrz\t \u0002 G.z/:\n",
+  "verbatim_scope": "完整对应原页文字层，逐字保留；本条数学成分由statement_latex及statement_scope定位。",
+  "proof_latex": null,
+  "proof_note": "对应原页推导逐字保存在statement_verbatim/original_page_text；排版以原页PDF为准。",
+  "original_page_text": [
+    {
+      "pdf_page": 357,
+      "printed_page": 336,
+      "text": "336\n8\nExtended Variable Methods\n8.2\nMore General Deterministic Thermostats\nWe have now seen that it is possible to construct stochastic differential equations\nthat preserve the Gibbs distribution or to design deterministic perturbations of\nHamiltonian dynamics, in an extended phase space, that do the same thing.\nThe latter class of methods are not rigorously ergodic, but the dynamics based\nthermostatting technique adds a great deal of ﬂexibility. For example it is easy to\ncontrol the ensemble using dynamic perturbations introduced only in some special\nphase space directions. In this section, we show how to design distributional controls\nwhich blend deterministic dynamics with restricted stochastic perturbations, with,\nin some cases, provable ergodicity. We will present the methods of this section in\nsome generality.\nLet a system be provided with Hamiltonian (energy) function H D H.z/, z 2 Rm,\nand microcanonical dynamics\nPz D JrH;\n(8.14)\nwhere J is skew symmetric. In principle, J need not be constant, as long as it satisﬁes\ncertain constraints, but as the extra generality is not needed for our current purposes,\nwe restrict the case J constant. We describe dynamical and stochastic-dynamical\ntechniques for computing averages with respect to a smooth density, for simplicity\nthe Gibbsian one, \u0005ˇ / exp.\u0003ˇH/.\nWe ﬁrst consider methods that are based on perturbation of the conservative\nsystem (8.14), i.e.\nPz D JrH C ˚.\u0002; z/;\n(8.15)\nwhere \u0002 2 Rm is controlled by the dynamical system\nd\u0002\ndt D g.\u0002; z/:\n8.2.1\nContinuity Equation\nGiven a deterministic thermostatting method, the density will evolve under the\ncontinuity equation,\n@\u0005\n@t D \u0003rz \u0002 Œ\u0005.JrzH C ˚/\t \u0003 r\u0002 \u0002 .\u0005g.\u0002; z// DW L\u0004\u0005:\nWe have, using product rule,\nL\u0004\u0005 D \u0003.rz\u0005/ \u0002 .JrzH C ˚/ \u0003 \u0005rz \u0002 .JrzH C ˚/ \u0003 .r\u0002\u0005/ \u0002 g \u0003 \u0005r\u0002 \u0002 g:\n"
+    },
+    {
+      "pdf_page": 358,
+      "printed_page": 337,
+      "text": "8.2\nMore General Deterministic Thermostats\n337\nWe divide this into four parts: L\u0004\u0005 D W1 C W2 C W3 C W4, where\nW1 D \u0003.rz\u0005/ \u0002 .JrzH C ˚/; W2 D \u0003\u0005rz \u0002 .JrzH C ˚/;\nW3 D \u0003.r\u0002\u0005/ \u0002 g;\nW4 D \u0003\u0005r\u0002 \u0002 g:\nWe seek perturbations of Hamiltonian dynamics with separable equilibria, i.e., such\nthat \u0005 D \u0005ˇ.H.z// O\u0005.\u0002/ is a stationary solution.\nTaking this as an ansatz, the ﬁrst term can be simpliﬁed as follows:\nW1 D \u0003 O\u0005.\u0002/\u00050\nˇ.H/rzH \u0002 .JrzH C ˚/\nD ˇ O\u0005.\u0002/\u0005ˇ.H/rzH \u0002 ˚ D ˇ\u0005rzH \u0002 ˚\nas J is skew-symmetric.\nUsing the volume preservation of Hamiltonian systems, the second term satisﬁes\nW2 D \u0003\u0005rz \u0002 .JrzH C ˚/ D \u0003\u0005rz \u0002 ˚;\nhence\nW1 C W2 D \u0003\u0005Œrz \u0003 ˇrzH\t \u0002 ˚:\nThere are many possibilities for the distribution of \u0002, of course, but we will\nassume this is Gaussian for simplicity: O\u0005.\u0002/\nD\nexp\n\u0004\n\u0003ˇ Pm\niD1 \u0006i\u00122\ni =2\n\u0005\nD\nexp.\u0003ˇ\u0002T\u0007\u00021\u0002=2/ to get\nW3 D \u0003.r\u0002\u0005/ \u0002 g.\u0002; z/ D ˇ\u0005\u0002T\u0007\u00021g:\nFinally, for an equilibrium solution we must have W1 C W2 C W3 C W4 D 0, so\n\u0003Œrz \u0003 ˇrzH\t \u0002 ˚ C ˇ\u0002T\u0007\u00021g \u0003 r\u0002 \u0002 g D 0:\nThis equation is the fundamental one for deterministic thermostats.\nExample 8.1 To recover Nosé-Hoover, assume an even dimensional phase space,\nz D .q; p/, Nd degrees of freedom, and \u0012 2 R,\n˚ D \u0003\u0012\n\u0002 0\np\n\u0003\n;\ng.z/ D \u0006\u00021.p \u0002 rpH \u0003 NdkBT/:\nExample 8.2 Slightly more generally, let\n˚ D \u0012G.z/;\ng.\u0012; z/ D g.z/ D \u0006\u00021ŒrzH \u0003 kBTrz\t \u0002 G.z/:\n"
+    }
+  ],
+  "numbered_equations": [],
+  "transcription_note": "文字层逐字保留；数学排版另行转写，原页中的特殊字形编码不静默替换。PDF420仅取Exercises之前。",
+  "context_notation": [],
+  "extra_assumptions": [
+    "覆盖总散度乘积公式；按z/ξ分拆四项的分量等式与完整连续性方程解理论另列缺口。"
+  ],
+  "issues": [],
+  "statement_scope": "实际Fréchet散度的乘积展开；未声称连续性方程解的存在唯一性。",
+  "lean_decl": "MD.Ch08.continuityRHS",
+  "lean_declarations": [
+    "MD.Ch08.continuityRHS",
+    "MD.Ch08.continuity_productRule"
+  ],
+  "source_page_verification": "见source_page_checks.json，已目视核对本条原页。",
+  "repair_log": [],
+  "documented_priors": []
+}
+```
+
+## 完整本条Lean
+```lean
+def continuityRHS {k : ℕ} (F : Vec n × Vec k → Vec n × Vec k)
+    (ρ : Vec n × Vec k → ℝ) (z : Vec n × Vec k) : ℝ :=
+  -textbookDivergence (fun x ↦ ρ x • F x) z
+theorem continuity_productRule {k : ℕ} (F : Vec n × Vec k → Vec n × Vec k)
+    (ρ : Vec n × Vec k → ℝ) (z : Vec n × Vec k)
+    (hF : DifferentiableAt ℝ F z) (hρ : DifferentiableAt ℝ ρ z) :
+    continuityRHS F ρ z = -(fderiv ℝ ρ z (F z)) - ρ z*textbookDivergence F z := by
+  rw [continuityRHS, textbookDivergence_density hρ hF]; ring
+```
+
+## 项目依赖定义体及选择规格
+以下def/abbrev/structure完整保留；定理列出完整类型，Mathlib标准定义无需摘录。
+
+### MD.Ch08.Vec (Blueprint/Ch08.lean:17)
+原文件上下文：
+```lean
+open Set Filter MeasureTheory ProbabilityTheory MolecularDynamics
+open scoped BigOperators Topology ContDiff ENNReal NNReal Matrix
+variable {Ω : Type*} [MeasurableSpace Ω]
+variable {n : ℕ}
+```
+```lean
+abbrev Vec (n : ℕ) := Fin n → ℝ
+```
+
+### MD.Ch08.continuityRHS (Blueprint/Ch08.lean:209)
+原文件上下文：
+```lean
+open Set Filter MeasureTheory ProbabilityTheory MolecularDynamics
+open scoped BigOperators Topology ContDiff ENNReal NNReal Matrix
+variable {Ω : Type*} [MeasurableSpace Ω]
+variable {n : ℕ}
+```
+```lean
+def continuityRHS {k : ℕ} (F : Vec n × Vec k → Vec n × Vec k)
+    (ρ : Vec n × Vec k → ℝ) (z : Vec n × Vec k) : ℝ :=
+  -textbookDivergence (fun x ↦ ρ x • F x) z
+```
+
+### MD.Ch08.continuity_productRule (Blueprint/Ch08.lean:212)
+原文件上下文：
+```lean
+open Set Filter MeasureTheory ProbabilityTheory MolecularDynamics
+open scoped BigOperators Topology ContDiff ENNReal NNReal Matrix
+variable {Ω : Type*} [MeasurableSpace Ω]
+variable {n : ℕ}
+```
+```lean
+theorem continuity_productRule {k : ℕ} (F : Vec n × Vec k → Vec n × Vec k)
+    (ρ : Vec n × Vec k → ℝ) (z : Vec n × Vec k)
+    (hF : DifferentiableAt ℝ F z) (hρ : DifferentiableAt ℝ ρ z) :
+    continuityRHS F ρ z = -(fderiv ℝ ρ z (F z)) - ρ z*textbookDivergence F z
+```
+
+### MolecularDynamics.Chapter05Review.E (MolecularDynamics/Chapter05/ReviewDefinitions.lean:18)
+原文件上下文：
+```lean
+open Set Filter MeasureTheory Matrix
+open scoped BigOperators Topology ENNReal
+```
+```lean
+abbrev E (n : ℕ) := EuclideanSpace ℝ (Fin n)
+```
+
+### MolecularDynamics.textbookDivergence (MolecularDynamics/Chapter08/ThermostatDensity.lean:18)
+原文件上下文：
+```lean
+open Matrix
+open scoped BigOperators Topology
+variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E] [FiniteDimensional ℝ E]
+variable {G : Type*} [NormedAddCommGroup G] [NormedSpace ℝ G] [FiniteDimensional ℝ G]
+```
+```lean
+noncomputable def textbookDivergence (F : E → E) (z : E) : ℝ :=
+  LinearMap.trace ℝ E (fderiv ℝ F z).toLinearMap
+```
+
+### MolecularDynamics.textbookDivergence_density (MolecularDynamics/Chapter08/ThermostatDensity.lean:25)
+原文件上下文：
+```lean
+open Matrix
+open scoped BigOperators Topology
+variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E] [FiniteDimensional ℝ E]
+variable {G : Type*} [NormedAddCommGroup G] [NormedSpace ℝ G] [FiniteDimensional ℝ G]
+```
+```lean
+theorem textbookDivergence_density {ρ : E → ℝ} {F : E → E} {z : E}
+    (hρ : DifferentiableAt ℝ ρ z) (hF : DifferentiableAt ℝ F z) :
+    textbookDivergence (fun x ↦ ρ x • F x) z =
+      (fderiv ℝ ρ z) (F z) + ρ z * textbookDivergence F z
+```

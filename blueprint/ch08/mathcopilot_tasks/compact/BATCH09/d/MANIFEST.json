@@ -1,0 +1,136 @@
+{
+  "batch": "BATCH09",
+  "subtask": "BATCH09d",
+  "source_ids": [
+    "MD-8.6.2-SINHarmonic"
+  ],
+  "input_sha256": {
+    "Blueprint/Ch08.lean": "2800812fadd8e2557013f1941e4570401f7903d46f44baf07e23d5531da22a72",
+    "blueprint/ch08/ch08_source.json": "9b994b0f64cd22c85c2ad4123fbfdbd064bd7a6d070fe13b721794432f9f7a63",
+    "BATCH09d_PAGES.pdf": "b403cd3282e767757de1edbd05518b2de02121b9cebfaea6224ef2ce130ad59b"
+  },
+  "page_mapping": [
+    {
+      "attachment_page": 1,
+      "original_pdf_page": 387,
+      "printed_page": 366
+    }
+  ],
+  "definition_excerpts": [
+    {
+      "full_name": "MD.Ch08.Vec",
+      "kind": "abbrev",
+      "path": "Blueprint/Ch08.lean",
+      "line": 17,
+      "code_sha256": "6f4b254a8a7cc4115fb35265b77caa663bdd18567cd1e664cc5bbd080d02fcff"
+    },
+    {
+      "full_name": "MD.Ch08.independentWiener",
+      "kind": "def",
+      "path": "Blueprint/Ch08.lean",
+      "line": 307,
+      "code_sha256": "244c6d2d9a686d3df1fc2abd2a1c945a448896d7397bd79928618c58bcc75f4d"
+    },
+    {
+      "full_name": "MD.Ch08.additiveSDE",
+      "kind": "def",
+      "path": "Blueprint/Ch08.lean",
+      "line": 310,
+      "code_sha256": "81838b29ec807319905a573d048fd44c90ff95cc891ddf131b6c3a2e73df657a"
+    },
+    {
+      "full_name": "MD.Ch08.sinConstraint",
+      "kind": "def",
+      "path": "Blueprint/Ch08.lean",
+      "line": 714,
+      "code_sha256": "946319fb0e80a00db3e6955a9e26729cc0e57a8bdc9c927d226f4b2e068bc287"
+    },
+    {
+      "full_name": "MD.Ch08.sinMultiplier",
+      "kind": "def",
+      "path": "Blueprint/Ch08.lean",
+      "line": 715,
+      "code_sha256": "cb1ee56c77ff03922f0486f068baf0690892755f2bddbd04b354b6818cf5c5e1"
+    },
+    {
+      "full_name": "MD.Ch08.sinDrift",
+      "kind": "def",
+      "path": "Blueprint/Ch08.lean",
+      "line": 717,
+      "code_sha256": "c5b14901922b2df83b4513df12d3a8e7988b8ee9d09689ef77261e0648db7724"
+    },
+    {
+      "full_name": "MD.Ch08.isSINSolution",
+      "kind": "def",
+      "path": "Blueprint/Ch08.lean",
+      "line": 720,
+      "code_sha256": "71cebdc72beaf010ad051f8ff1b1d3dfe6b8574af60ac3023e11a3bec9891d99"
+    },
+    {
+      "full_name": "MD.Ch08.sinHarmonicF",
+      "kind": "def",
+      "path": "Blueprint/Ch08.lean",
+      "line": 755,
+      "code_sha256": "46eb90f04da26d1f157f856de0e8225e71b859ac53970f3a59fb5375ec1da9a9"
+    },
+    {
+      "full_name": "MD.Ch08.sinHarmonicG",
+      "kind": "def",
+      "path": "Blueprint/Ch08.lean",
+      "line": 756,
+      "code_sha256": "f486859234d769d4ea938c2912ef845a9972bde73cfbd56e9a85d874a8a81b94"
+    },
+    {
+      "full_name": "MD.Ch08.isSINHarmonicSolution",
+      "kind": "def",
+      "path": "Blueprint/Ch08.lean",
+      "line": 757,
+      "code_sha256": "9d655299cadfdf28760e99a3e147e40af52ad4ba55792cbebd65e45d893d5738"
+    },
+    {
+      "full_name": "MD.Ch08.sinExceptional",
+      "kind": "def",
+      "path": "Blueprint/Ch08.lean",
+      "line": 760,
+      "code_sha256": "af871237e08b3328b6ad6e072918385517b0917676d46e360b57f0084d608013"
+    },
+    {
+      "full_name": "MD.Ch08.sinHalfCylinder",
+      "kind": "def",
+      "path": "Blueprint/Ch08.lean",
+      "line": 762,
+      "code_sha256": "d43a01d9d6984bf77faa64194571813b7817eb94ba7a50d0b7ea6ec7e573627a"
+    },
+    {
+      "full_name": "MD.Ch08.sinHalfCylinder_disjoint",
+      "kind": "theorem",
+      "path": "Blueprint/Ch08.lean",
+      "line": 764,
+      "code_sha256": "19565ac0d13e47d36817740e91af0a5a95f109e7ef544297803613a4d2e5620d"
+    },
+    {
+      "full_name": "MolecularDynamics.Chapter05Review.E",
+      "kind": "abbrev",
+      "path": "MolecularDynamics/Chapter05/ReviewDefinitions.lean",
+      "line": 18,
+      "code_sha256": "b497c8ba7f01b62a3147d9ae65652772ff3f81e57aa19b116f1283fef7a3cc60"
+    }
+  ],
+  "validation": {
+    "project_constant_closure": "PASS",
+    "missing_project_definitions": [],
+    "full_page_render_equality_dpi": 72,
+    "website_submitted": false
+  },
+  "files": {
+    "PASTE.txt": {
+      "bytes": 14591,
+      "sha256": "c1c36c39627633c9af35e8ab392f4967ea35c6ec37e4623cd4944a856725c673"
+    },
+    "BATCH09d_PAGES.pdf": {
+      "bytes": 76421,
+      "sha256": "b403cd3282e767757de1edbd05518b2de02121b9cebfaea6224ef2ce130ad59b"
+    }
+  },
+  "total_task_bytes": 95381
+}

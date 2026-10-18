@@ -1,0 +1,59 @@
+{
+  "batch": "BATCH15",
+  "subtask": "BATCH15f",
+  "source_ids": [
+    "MD-8.9.1-DPDMassOrderPrinted"
+  ],
+  "input_sha256": {
+    "Blueprint/Ch08.lean": "2800812fadd8e2557013f1941e4570401f7903d46f44baf07e23d5531da22a72",
+    "blueprint/ch08/ch08_source.json": "9b994b0f64cd22c85c2ad4123fbfdbd064bd7a6d070fe13b721794432f9f7a63",
+    "BATCH15f_PAGES.pdf": "860ff776f54d058f9c37536b1cbd80019827f12b82e1c97c8c7883bb02cb78e1"
+  },
+  "page_mapping": [
+    {
+      "attachment_page": 1,
+      "original_pdf_page": 410,
+      "printed_page": 389
+    }
+  ],
+  "definition_excerpts": [
+    {
+      "full_name": "MD.Ch08.dpdMatrixFDPrinted",
+      "kind": "def",
+      "path": "Blueprint/Ch08.lean",
+      "line": 1467,
+      "code_sha256": "506f1ed0fc2d33b6ee760f4e4a971ea967fe709511b027bfb6ab9efc916a1541"
+    },
+    {
+      "full_name": "MD.Ch08.dpdMatrixFD_corrected",
+      "kind": "def",
+      "path": "Blueprint/Ch08.lean",
+      "line": 1469,
+      "code_sha256": "53f92f8148ab2ccdf81e49feab32b6d1a677afa739602a91a2d2db2c2b348fce"
+    },
+    {
+      "full_name": "MD.Ch08.dpdMassOrder_counterexample",
+      "kind": "theorem",
+      "path": "Blueprint/Ch08.lean",
+      "line": 1471,
+      "code_sha256": "6a370a7e58260ef7e11b5391f7b22e57abbe4c529830a8b8ddacb4a9b7826eff"
+    }
+  ],
+  "validation": {
+    "project_constant_closure": "PASS",
+    "missing_project_definitions": [],
+    "full_page_render_equality_dpi": 72,
+    "website_submitted": false
+  },
+  "files": {
+    "PASTE.txt": {
+      "bytes": 9565,
+      "sha256": "139ad60086bf530d3724627bbb0f2d533dde97b9d57f988c92c678ad4b685d55"
+    },
+    "BATCH15f_PAGES.pdf": {
+      "bytes": 89442,
+      "sha256": "860ff776f54d058f9c37536b1cbd80019827f12b82e1c97c8c7883bb02cb78e1"
+    }
+  },
+  "total_task_bytes": 100839
+}

@@ -1,0 +1,312 @@
+以附件/PASTE 为准，忽略 /workspace 旧文件；Mathlib 定义按标准含义采信。
+本任务只审本条：原文转录、对象资格、定义体、量词、全部结论及[EXTRA]是否一致；Lean编译不代替语义审阅。
+Lean/Mathlib均4.34.0。原页PDF映射：[410, 411, 412]；印刷页=[389, 390, 391].
+input_sha256请原样回显：
+{
+  "Blueprint/Ch08.lean": "2800812fadd8e2557013f1941e4570401f7903d46f44baf07e23d5531da22a72",
+  "blueprint/ch08/ch08_source.json": "9b994b0f64cd22c85c2ad4123fbfdbd064bd7a6d070fe13b721794432f9f7a63",
+  "BATCH16a_PAGES.pdf": "1b96eea7a1b0a5c464201b6b3d34e6ae3348db786cbd9550c1615a4937670fe5"
+}
+用代码将JSON对象(batch,input_sha256,items)写到 /workspace/.mathcopilot/reviews/ch08/BATCH16a_review.json；items仅含本source_id。
+items字段：source_id、verdict(PASS/FAIL/NEEDS_HUMAN)、transcription、semantic_review、counterexample、suggested_fix、printed_version、corrected_version。逐版区分原文疑误和修正版结论；缺材料必须具体指出，不猜测。写后json.loads自检，最后仅回复路径及统计。
+
+## 原文JSON
+```json
+{
+  "source_id": "MD-8.9.2-DPDVelocityVerlet",
+  "kind": "algorithm",
+  "label": null,
+  "section": "8.9.2",
+  "printed_page": "389–391",
+  "pdf_page": "410–412",
+  "statement_latex": "p½=p+hFᶜ(q)/2+hFᴰ(q,p)/2+√h Fᴿ(q,Rold)/2; q'=q+hM⁻¹p½; p'=p½+hFᶜ(q')/2+hFᴰ(q',p½)/2+√h Fᴿ(q',Rnew)/2. Reuse Rnew next step. (8.91)–(8.93).",
+  "statement_verbatim": "8.9\nMomentum-Conserving Thermostats and the Dissipative Particle. . .\n389\nwhite-noise term with the following stochastic property\nh\u000eij.t/i D 0;\nh\u000eij.t/\u000ekl.t0/i D .ıikıjl C ıilıjk/ı.t \u0003 t0/;\n(8.88)\nand are independent for each pair of interacting particles at each time step.\nInvariance of the canonical distribution under these equations of motion follows if\n!D.rij/ D Œ!R.rij/\t2;\n\u00072 D 2\nkBT;\n(8.89)\nwhere kB is the Boltzmann constant and T the equilibrium temperature. Note that\nthe “canonical distribution” in the case of the DPD system or other momentum-\nconserving thermostat should have a density which is reduced to the leaves of\nconstant total momentum, i.e.\nO\u0005ˇ\ndef\nD Z\u00021e\u0002ˇH.q;p/ \u0004 ı\n\" N\nX\niD1\npi;x \u0003 \u0014x\n#\nı\n\" N\nX\niD1\npi;y \u0003 \u0014y\n#\nı\n\" N\nX\niD1\npi;z \u0003 \u0014z\n#\nwhere \u000f D .\u0014x; \u0014y; \u0014z/ is the total momentum vector.\nThe conservation of the total momentum is a direct result of the symmetric form\nof the various forces, thus DPD may be viewed as an isotropic Galilean-invariant\nthermostat which preserves hydrodynamics [8]. The ergodicity of DPD (i.e. that O\u0005ˇ\nis the unique measure sampled by the dynamics) has only been demonstrated in the\ncase of a high density of particles in one dimension [334].\nThe DPD system may be viewed as a special case of the generalized Langevin\ndynamics with equations\ndq D M\u00021pdt;\ndp D \u0003rU.q/dt \u0003 \u0006.q/pdt C ˙.q/dW;\n(8.90)\nwhere the potential U is given in (8.84), and the damping matrix \u0006 and stochastic\nmultiplier matrix ˙ are related by\n\u0006 D M\u00021\n2kBT˙˙ T:\nIn the next subsection we describe the numerical treatment of the DPD system.\nWe then take up the alternative scheme, the pairwise Nosé-Hoover-Langevin\n(PNHL) method, of [228] which also conserves momentum exactly. Other alter-\nnatives to the DPD system include the Peters thermostat [299], the Lowe-Andersen\nmethod [241], and the Nosé-Hoover-Lowe-Andersen thermostat [347]. We do not\ndiscuss these schemes here, but note that they are compared to DPD and some of\nthe other schemes introduced below in [228].\n\n390\n8\nExtended Variable Methods\n8.9.2\nNumerical Treatment of the DPD System\nIn comparing the DPD system to standard molecular dynamics, a key feature is the\n“soft” nature of the repulsive potential UDPD deﬁned by (8.84). The lack of any sort\nof stiff harmonic component or steep repulsive potentials such as those present in\ntypical molecular models means that the stepsize is not dominated by the stability\nrestriction, but rather by accuracy requirements. That is, DPD simulations may be\nstable for stepsizes which lead to very large errors in thermodynamic averages.\nMany efforts have been made to develop accurate integration schemes for the\nDPD system. With few exceptions, the methods used are variants of the velocity-\nVerlet integrator, owing to its long history in MD. Some early integration schemes\nare to be found in the papers of Groot and Warren [157], Gibson et al. [148], and\nBesold et al. [34, 385]. The latter work describes the so-called DPD-Velocity Verlet\n(DPD-VV) method. Unfortunately [34, 385], all of these methods exhibit signiﬁcant\nsimulation errors for large stepsize. Much of the error can be seen as the result of\nrequiring an explicit treatment of the dissipative terms, for reasons of computational\nefﬁciency. More accurate schemes are possible by using implicit (or semi-implicit)\nmethods such the self-consistent leap-frog integrator (see [34, 295]). However, these\nmethods are typically much slower than the simpler, explicit methods [73, 281], the\nconsequence being that the simpler DPD-VV is most often used (with a relatively\nsmall timestep). Further alternatives to the DPD-VV method include a scheme of\nden Otter and Clarke [101], splitting methods (Shardlow [333], De Fabritiis et al.\n[96] and Thalmann and Farago [363]), and multiple time step schemes of Jakobsen\net al. [191].\n8.9.2.1\nDPD Velocity-Verlet\nWith integration stepsize h, the DPD-VV method may be written as\npnC1=2 D pn C h\n2FC.qn/ C h\n2FD.qn; pn/ C\np\nh\n2 FR.qn/;\n(8.91)\nqnC1 D qn C hM\u00021pnC1=2;\n(8.92)\npnC1 D pnC1=2 C h\n2FC.qnC1/ C h\n2FD.qnC1; pnC1=2/ C\np\nh\n2 FR.qnC1/:\n(8.93)\nIn this scheme, the conservative forces are recalculated once per timestep (the\nconservative force computed may be re-used at the following timestep). The\ndissipative force must be computed twice, and the new random force used in (8.93)\nshould also be used in the subsequent step. This scheme is not symmetric for\n\n8.9\nMomentum-Conserving Thermostats and the Dissipative Particle. . .\n391\ndeterministic systems and would be expected to be only ﬁrst order accurate. It\ncould be made symmetric by a simple change, for example replacing pn in the force\ncomputation at the ﬁrst step by pnC1=2, but these changes would make the method\nimplicit.\n8.9.2.2\nShardlow’s Splitting Method\nShardlow [333] proposed splitting methods for DPD based on dividing the force\nﬁeld of the DPD system into its separate (conservative+dissipative+random) parts.\nSeveral integrators are then derived based on approximating the various terms. In\nthe most popular and efﬁcient variant, the scheme of Brünger, Brooks and Karplus\n(BBK) [55] is used to solve the dissipative+stochastic terms, with standard velocity\nVerlet applied to the conservative part.\nWe ﬁrst separate the system of stochastic differential equations for DPD (8.90)\ninto three pieces, which we label as A, B and O:\nd\n\u0002qi\npi\n\u0003\nD\n\u0002 m\u00021\ni pi\n0\n\u0003\ndt\n„\nƒ‚\n…\nA\nC\n\u0002 0\nFC\ni\n\u0003\ndt\n„ ƒ‚ …\nB\nC\n\u0002\n0\nFD\ni dt C \u0007Ri\n\u0003\n„\nƒ‚\n…\nO\n;\n(8.94)\nwhere Ri D P\nj¤i !R.rij/OqijdWij, for standard i.i.d. Wiener processes Wij.t/, such\nthat dWij D dWji. The generators for each part of the SDE may be written out as\nfollows:\nLA D\nX\ni\npi\nmi\n\u0002 rqi;\n(8.95)\nLB D\nX\ni\nFC\ni \u0002 rpi D \u0003\nX\ni\nrqiU.q/ \u0002 rpi;\n(8.96)\nLO D\nX\ni\nX\nj¤i\n\b\n\u0003\n!D.rij/.Oqij \u0002 vij/ C \u00072\n2 Œ!R.rij/\t2Oqij \u0002\n\u0002\nrpi \u0003 rpj\n\u0003\t\nOqij \u0002 rpi:\n(8.97)\nThus, the generator for the DPD system can be written as\nLDPD D LA C LB C LO;\n(8.98)\nand the ﬂow map may be written in the standard shorthand as\nFt D etLDPD:\nApproximations of Ft can be constructed as for Langevin dynamics.\n",
+  "verbatim_scope": "完整对应原页文字层，逐字保留；本条数学成分由statement_latex及statement_scope定位。",
+  "proof_latex": null,
+  "proof_note": "对应原页推导逐字保存在statement_verbatim/original_page_text；排版以原页PDF为准。",
+  "original_page_text": [
+    {
+      "pdf_page": 410,
+      "printed_page": 389,
+      "text": "8.9\nMomentum-Conserving Thermostats and the Dissipative Particle. . .\n389\nwhite-noise term with the following stochastic property\nh\u000eij.t/i D 0;\nh\u000eij.t/\u000ekl.t0/i D .ıikıjl C ıilıjk/ı.t \u0003 t0/;\n(8.88)\nand are independent for each pair of interacting particles at each time step.\nInvariance of the canonical distribution under these equations of motion follows if\n!D.rij/ D Œ!R.rij/\t2;\n\u00072 D 2\nkBT;\n(8.89)\nwhere kB is the Boltzmann constant and T the equilibrium temperature. Note that\nthe “canonical distribution” in the case of the DPD system or other momentum-\nconserving thermostat should have a density which is reduced to the leaves of\nconstant total momentum, i.e.\nO\u0005ˇ\ndef\nD Z\u00021e\u0002ˇH.q;p/ \u0004 ı\n\" N\nX\niD1\npi;x \u0003 \u0014x\n#\nı\n\" N\nX\niD1\npi;y \u0003 \u0014y\n#\nı\n\" N\nX\niD1\npi;z \u0003 \u0014z\n#\nwhere \u000f D .\u0014x; \u0014y; \u0014z/ is the total momentum vector.\nThe conservation of the total momentum is a direct result of the symmetric form\nof the various forces, thus DPD may be viewed as an isotropic Galilean-invariant\nthermostat which preserves hydrodynamics [8]. The ergodicity of DPD (i.e. that O\u0005ˇ\nis the unique measure sampled by the dynamics) has only been demonstrated in the\ncase of a high density of particles in one dimension [334].\nThe DPD system may be viewed as a special case of the generalized Langevin\ndynamics with equations\ndq D M\u00021pdt;\ndp D \u0003rU.q/dt \u0003 \u0006.q/pdt C ˙.q/dW;\n(8.90)\nwhere the potential U is given in (8.84), and the damping matrix \u0006 and stochastic\nmultiplier matrix ˙ are related by\n\u0006 D M\u00021\n2kBT˙˙ T:\nIn the next subsection we describe the numerical treatment of the DPD system.\nWe then take up the alternative scheme, the pairwise Nosé-Hoover-Langevin\n(PNHL) method, of [228] which also conserves momentum exactly. Other alter-\nnatives to the DPD system include the Peters thermostat [299], the Lowe-Andersen\nmethod [241], and the Nosé-Hoover-Lowe-Andersen thermostat [347]. We do not\ndiscuss these schemes here, but note that they are compared to DPD and some of\nthe other schemes introduced below in [228].\n"
+    },
+    {
+      "pdf_page": 411,
+      "printed_page": 390,
+      "text": "390\n8\nExtended Variable Methods\n8.9.2\nNumerical Treatment of the DPD System\nIn comparing the DPD system to standard molecular dynamics, a key feature is the\n“soft” nature of the repulsive potential UDPD deﬁned by (8.84). The lack of any sort\nof stiff harmonic component or steep repulsive potentials such as those present in\ntypical molecular models means that the stepsize is not dominated by the stability\nrestriction, but rather by accuracy requirements. That is, DPD simulations may be\nstable for stepsizes which lead to very large errors in thermodynamic averages.\nMany efforts have been made to develop accurate integration schemes for the\nDPD system. With few exceptions, the methods used are variants of the velocity-\nVerlet integrator, owing to its long history in MD. Some early integration schemes\nare to be found in the papers of Groot and Warren [157], Gibson et al. [148], and\nBesold et al. [34, 385]. The latter work describes the so-called DPD-Velocity Verlet\n(DPD-VV) method. Unfortunately [34, 385], all of these methods exhibit signiﬁcant\nsimulation errors for large stepsize. Much of the error can be seen as the result of\nrequiring an explicit treatment of the dissipative terms, for reasons of computational\nefﬁciency. More accurate schemes are possible by using implicit (or semi-implicit)\nmethods such the self-consistent leap-frog integrator (see [34, 295]). However, these\nmethods are typically much slower than the simpler, explicit methods [73, 281], the\nconsequence being that the simpler DPD-VV is most often used (with a relatively\nsmall timestep). Further alternatives to the DPD-VV method include a scheme of\nden Otter and Clarke [101], splitting methods (Shardlow [333], De Fabritiis et al.\n[96] and Thalmann and Farago [363]), and multiple time step schemes of Jakobsen\net al. [191].\n8.9.2.1\nDPD Velocity-Verlet\nWith integration stepsize h, the DPD-VV method may be written as\npnC1=2 D pn C h\n2FC.qn/ C h\n2FD.qn; pn/ C\np\nh\n2 FR.qn/;\n(8.91)\nqnC1 D qn C hM\u00021pnC1=2;\n(8.92)\npnC1 D pnC1=2 C h\n2FC.qnC1/ C h\n2FD.qnC1; pnC1=2/ C\np\nh\n2 FR.qnC1/:\n(8.93)\nIn this scheme, the conservative forces are recalculated once per timestep (the\nconservative force computed may be re-used at the following timestep). The\ndissipative force must be computed twice, and the new random force used in (8.93)\nshould also be used in the subsequent step. This scheme is not symmetric for\n"
+    },
+    {
+      "pdf_page": 412,
+      "printed_page": 391,
+      "text": "8.9\nMomentum-Conserving Thermostats and the Dissipative Particle. . .\n391\ndeterministic systems and would be expected to be only ﬁrst order accurate. It\ncould be made symmetric by a simple change, for example replacing pn in the force\ncomputation at the ﬁrst step by pnC1=2, but these changes would make the method\nimplicit.\n8.9.2.2\nShardlow’s Splitting Method\nShardlow [333] proposed splitting methods for DPD based on dividing the force\nﬁeld of the DPD system into its separate (conservative+dissipative+random) parts.\nSeveral integrators are then derived based on approximating the various terms. In\nthe most popular and efﬁcient variant, the scheme of Brünger, Brooks and Karplus\n(BBK) [55] is used to solve the dissipative+stochastic terms, with standard velocity\nVerlet applied to the conservative part.\nWe ﬁrst separate the system of stochastic differential equations for DPD (8.90)\ninto three pieces, which we label as A, B and O:\nd\n\u0002qi\npi\n\u0003\nD\n\u0002 m\u00021\ni pi\n0\n\u0003\ndt\n„\nƒ‚\n…\nA\nC\n\u0002 0\nFC\ni\n\u0003\ndt\n„ ƒ‚ …\nB\nC\n\u0002\n0\nFD\ni dt C \u0007Ri\n\u0003\n„\nƒ‚\n…\nO\n;\n(8.94)\nwhere Ri D P\nj¤i !R.rij/OqijdWij, for standard i.i.d. Wiener processes Wij.t/, such\nthat dWij D dWji. The generators for each part of the SDE may be written out as\nfollows:\nLA D\nX\ni\npi\nmi\n\u0002 rqi;\n(8.95)\nLB D\nX\ni\nFC\ni \u0002 rpi D \u0003\nX\ni\nrqiU.q/ \u0002 rpi;\n(8.96)\nLO D\nX\ni\nX\nj¤i\n\b\n\u0003\n!D.rij/.Oqij \u0002 vij/ C \u00072\n2 Œ!R.rij/\t2Oqij \u0002\n\u0002\nrpi \u0003 rpj\n\u0003\t\nOqij \u0002 rpi:\n(8.97)\nThus, the generator for the DPD system can be written as\nLDPD D LA C LB C LO;\n(8.98)\nand the ﬂow map may be written in the standard shorthand as\nFt D etLDPD:\nApproximations of Ft can be constructed as for Langevin dynamics.\n"
+    }
+  ],
+  "numbered_equations": [
+    "8.91",
+    "8.92",
+    "8.93"
+  ],
+  "transcription_note": "文字层逐字保留；数学排版另行转写，原页中的特殊字形编码不静默替换。PDF420仅取Exercises之前。",
+  "context_notation": [],
+  "extra_assumptions": [
+    "物理用法要求mᵢ>0、h≥0、无序对枚举、每步Rnew独立标准正态并与历史独立；本条确定性给定输入的扩展状态映射。",
+    "尚未证明书中预期的一阶弱收敛；未把随机输入映射称为对称确定性流。"
+  ],
+  "issues": [],
+  "statement_scope": "三条更新式和新噪声在下一步复用的状态机制。",
+  "lean_decl": "MD.Ch08.dpdRandomForce",
+  "lean_declarations": [
+    "MD.Ch08.dpdRandomForce",
+    "MD.Ch08.dpdVerlet",
+    "MD.Ch08.dpdVerlet_reuse"
+  ],
+  "source_page_verification": "见source_page_checks.json，已目视核对本条原页。",
+  "repair_log": [],
+  "documented_priors": []
+}
+```
+
+## 完整本条Lean
+```lean
+def dpdRandomForce {N d K : ℕ} (pairs : Fin K → Fin N × Fin N) (σ : ℝ)
+    (wR : ℝ → ℝ) (q : ParticleConfig N d) (R : Vec K) : ParticleConfig N d :=
+  ∑ k, R k • (dpdNoise pairs σ wR q k).2
+
+def dpdVerlet {N d K : ℕ} (pairs : Fin K → Fin N × Fin N) (m : Fin N → ℝ)
+    (α rc γ σ h : ℝ) (wD wR : ℝ → ℝ)
+    (state : ParticlePhase N d × Vec K) (Rnew : Vec K) : ParticlePhase N d × Vec K :=
+  let q := state.1.1
+  let p := state.1.2
+  let ph := p+(h/2) • dpdConservative α rc q+(h/2) • dpdDissipative m γ wD q p+
+    (Real.sqrt h/2) • dpdRandomForce pairs σ wR q state.2
+  let qn := fun i ↦ q i+(h/m i) • ph i
+  let pn := ph+(h/2) • dpdConservative α rc qn+(h/2) • dpdDissipative m γ wD qn ph+
+    (Real.sqrt h/2) • dpdRandomForce pairs σ wR qn Rnew
+  ((qn,pn),Rnew)
+
+theorem dpdVerlet_reuse {N d K : ℕ} (pairs : Fin K → Fin N × Fin N) (m : Fin N → ℝ)
+    (α rc γ σ h : ℝ) (wD wR : ℝ → ℝ) (z : ParticlePhase N d × Vec K) (R : Vec K) :
+    (dpdVerlet pairs m α rc γ σ h wD wR z R).2=R := rfl
+```
+
+## 项目依赖定义体及选择规格
+以下def/abbrev/structure完整保留；定理列出完整类型，Mathlib标准定义无需摘录。
+
+### MD.Ch08.Vec (Blueprint/Ch08.lean:17)
+原文件上下文：
+```lean
+open Set Filter MeasureTheory ProbabilityTheory MolecularDynamics
+open scoped BigOperators Topology ContDiff ENNReal NNReal Matrix
+variable {Ω : Type*} [MeasurableSpace Ω]
+variable {n : ℕ}
+```
+```lean
+abbrev Vec (n : ℕ) := Fin n → ℝ
+```
+
+### MD.Ch08.dot (Blueprint/Ch08.lean:19)
+原文件上下文：
+```lean
+open Set Filter MeasureTheory ProbabilityTheory MolecularDynamics
+open scoped BigOperators Topology ContDiff ENNReal NNReal Matrix
+variable {Ω : Type*} [MeasurableSpace Ω]
+variable {n : ℕ}
+```
+```lean
+def dot (v w : Vec n) : ℝ := ∑ i, v i * w i
+```
+
+### MD.Ch08.ParticleConfig (Blueprint/Ch08.lean:1334)
+原文件上下文：
+```lean
+open Set Filter MeasureTheory ProbabilityTheory MolecularDynamics
+open scoped BigOperators Topology ContDiff ENNReal NNReal Matrix
+variable {Ω : Type*} [MeasurableSpace Ω]
+variable {n : ℕ}
+```
+```lean
+abbrev ParticleConfig (N d : ℕ) := Fin N → Vec d
+```
+
+### MD.Ch08.ParticlePhase (Blueprint/Ch08.lean:1335)
+原文件上下文：
+```lean
+open Set Filter MeasureTheory ProbabilityTheory MolecularDynamics
+open scoped BigOperators Topology ContDiff ENNReal NNReal Matrix
+variable {Ω : Type*} [MeasurableSpace Ω]
+variable {n : ℕ}
+```
+```lean
+abbrev ParticlePhase (N d : ℕ) := ParticleConfig N d × ParticleConfig N d
+```
+
+### MD.Ch08.pairDistance (Blueprint/Ch08.lean:1349)
+原文件上下文：
+```lean
+open Set Filter MeasureTheory ProbabilityTheory MolecularDynamics
+open scoped BigOperators Topology ContDiff ENNReal NNReal Matrix
+variable {Ω : Type*} [MeasurableSpace Ω]
+variable {n : ℕ}
+```
+```lean
+def pairDistance {N d : ℕ} (q : ParticleConfig N d) (i j : Fin N) : ℝ :=
+  Real.sqrt (dot (q i-q j) (q i-q j))
+```
+
+### MD.Ch08.pairDirection (Blueprint/Ch08.lean:1351)
+原文件上下文：
+```lean
+open Set Filter MeasureTheory ProbabilityTheory MolecularDynamics
+open scoped BigOperators Topology ContDiff ENNReal NNReal Matrix
+variable {Ω : Type*} [MeasurableSpace Ω]
+variable {n : ℕ}
+```
+```lean
+def pairDirection {N d : ℕ} (q : ParticleConfig N d) (i j : Fin N) : Vec d :=
+  (pairDistance q i j)⁻¹ • (q i-q j)
+```
+
+### MD.Ch08.dpdPairConservative (Blueprint/Ch08.lean:1354)
+原文件上下文：
+```lean
+open Set Filter MeasureTheory ProbabilityTheory MolecularDynamics
+open scoped BigOperators Topology ContDiff ENNReal NNReal Matrix
+variable {Ω : Type*} [MeasurableSpace Ω]
+variable {n : ℕ}
+```
+```lean
+def dpdPairConservative {N d : ℕ} (α rc : ℝ) (q : ParticleConfig N d) (i j : Fin N) : Vec d :=
+  if pairDistance q i j < rc then (α*(1-pairDistance q i j/rc)) • pairDirection q i j else 0
+```
+
+### MD.Ch08.dpdConservative (Blueprint/Ch08.lean:1358)
+原文件上下文：
+```lean
+open Set Filter MeasureTheory ProbabilityTheory MolecularDynamics
+open scoped BigOperators Topology ContDiff ENNReal NNReal Matrix
+variable {Ω : Type*} [MeasurableSpace Ω]
+variable {n : ℕ}
+```
+```lean
+def dpdConservative {N d : ℕ} (α rc : ℝ) (q : ParticleConfig N d) : ParticleConfig N d :=
+  fun i ↦ ∑ j ∈ Finset.univ.filter (fun j ↦ j ≠ i), dpdPairConservative α rc q i j
+```
+
+### MD.Ch08.relativeVelocity (Blueprint/Ch08.lean:1372)
+原文件上下文：
+```lean
+open Set Filter MeasureTheory ProbabilityTheory MolecularDynamics
+open scoped BigOperators Topology ContDiff ENNReal NNReal Matrix
+variable {Ω : Type*} [MeasurableSpace Ω]
+variable {n : ℕ}
+```
+```lean
+def relativeVelocity {N d : ℕ} (m : Fin N → ℝ) (p : ParticleConfig N d) (i j : Fin N) : Vec d :=
+  (m i)⁻¹ • p i-(m j)⁻¹ • p j
+```
+
+### MD.Ch08.dpdPairDissipative (Blueprint/Ch08.lean:1374)
+原文件上下文：
+```lean
+open Set Filter MeasureTheory ProbabilityTheory MolecularDynamics
+open scoped BigOperators Topology ContDiff ENNReal NNReal Matrix
+variable {Ω : Type*} [MeasurableSpace Ω]
+variable {n : ℕ}
+```
+```lean
+def dpdPairDissipative {N d : ℕ} (m : Fin N → ℝ) (γ : ℝ) (wD : ℝ → ℝ)
+    (q p : ParticleConfig N d) (i j : Fin N) : Vec d :=
+  (-γ*wD (pairDistance q i j)*dot (pairDirection q i j) (relativeVelocity m p i j)) • pairDirection q i j
+```
+
+### MD.Ch08.dpdDissipative (Blueprint/Ch08.lean:1379)
+原文件上下文：
+```lean
+open Set Filter MeasureTheory ProbabilityTheory MolecularDynamics
+open scoped BigOperators Topology ContDiff ENNReal NNReal Matrix
+variable {Ω : Type*} [MeasurableSpace Ω]
+variable {n : ℕ}
+```
+```lean
+def dpdDissipative {N d : ℕ} (m : Fin N → ℝ) (γ : ℝ) (wD : ℝ → ℝ)
+    (q p : ParticleConfig N d) : ParticleConfig N d :=
+  fun i ↦ ∑ j ∈ Finset.univ.filter (fun j ↦ j ≠ i), dpdPairDissipative m γ wD q p i j
+```
+
+### MD.Ch08.pairImpulseVector (Blueprint/Ch08.lean:1382)
+原文件上下文：
+```lean
+open Set Filter MeasureTheory ProbabilityTheory MolecularDynamics
+open scoped BigOperators Topology ContDiff ENNReal NNReal Matrix
+variable {Ω : Type*} [MeasurableSpace Ω]
+variable {n : ℕ}
+```
+```lean
+def pairImpulseVector {N d : ℕ} (i j : Fin N) (v : Vec d) : ParticleConfig N d :=
+  Pi.single i v-Pi.single j v
+```
+
+### MD.Ch08.dpdNoise (Blueprint/Ch08.lean:1384)
+原文件上下文：
+```lean
+open Set Filter MeasureTheory ProbabilityTheory MolecularDynamics
+open scoped BigOperators Topology ContDiff ENNReal NNReal Matrix
+variable {Ω : Type*} [MeasurableSpace Ω]
+variable {n : ℕ}
+```
+```lean
+def dpdNoise {N d K : ℕ} (pairs : Fin K → Fin N × Fin N) (σ : ℝ) (wR : ℝ → ℝ)
+    (q : ParticleConfig N d) (k : Fin K) : ParticlePhase N d :=
+  (0,pairImpulseVector (pairs k).1 (pairs k).2
+    ((σ*wR (pairDistance q (pairs k).1 (pairs k).2)) • pairDirection q (pairs k).1 (pairs k).2))
+```
+
+### MD.Ch08.dpdRandomForce (Blueprint/Ch08.lean:1482)
+原文件上下文：
+```lean
+open Set Filter MeasureTheory ProbabilityTheory MolecularDynamics
+open scoped BigOperators Topology ContDiff ENNReal NNReal Matrix
+variable {Ω : Type*} [MeasurableSpace Ω]
+variable {n : ℕ}
+```
+```lean
+def dpdRandomForce {N d K : ℕ} (pairs : Fin K → Fin N × Fin N) (σ : ℝ)
+    (wR : ℝ → ℝ) (q : ParticleConfig N d) (R : Vec K) : ParticleConfig N d :=
+  ∑ k, R k • (dpdNoise pairs σ wR q k).2
+```
+
+### MD.Ch08.dpdVerlet (Blueprint/Ch08.lean:1486)
+原文件上下文：
+```lean
+open Set Filter MeasureTheory ProbabilityTheory MolecularDynamics
+open scoped BigOperators Topology ContDiff ENNReal NNReal Matrix
+variable {Ω : Type*} [MeasurableSpace Ω]
+variable {n : ℕ}
+```
+```lean
+def dpdVerlet {N d K : ℕ} (pairs : Fin K → Fin N × Fin N) (m : Fin N → ℝ)
+    (α rc γ σ h : ℝ) (wD wR : ℝ → ℝ)
+    (state : ParticlePhase N d × Vec K) (Rnew : Vec K) : ParticlePhase N d × Vec K :=
+  let q := state.1.1
+  let p := state.1.2
+  let ph := p+(h/2) • dpdConservative α rc q+(h/2) • dpdDissipative m γ wD q p+
+    (Real.sqrt h/2) • dpdRandomForce pairs σ wR q state.2
+  let qn := fun i ↦ q i+(h/m i) • ph i
+  let pn := ph+(h/2) • dpdConservative α rc qn+(h/2) • dpdDissipative m γ wD qn ph+
+    (Real.sqrt h/2) • dpdRandomForce pairs σ wR qn Rnew
+  ((qn,pn),Rnew)
+```
+
+### MD.Ch08.dpdVerlet_reuse (Blueprint/Ch08.lean:1498)
+原文件上下文：
+```lean
+open Set Filter MeasureTheory ProbabilityTheory MolecularDynamics
+open scoped BigOperators Topology ContDiff ENNReal NNReal Matrix
+variable {Ω : Type*} [MeasurableSpace Ω]
+variable {n : ℕ}
+```
+```lean
+theorem dpdVerlet_reuse {N d K : ℕ} (pairs : Fin K → Fin N × Fin N) (m : Fin N → ℝ)
+    (α rc γ σ h : ℝ) (wD wR : ℝ → ℝ) (z : ParticlePhase N d × Vec K) (R : Vec K) :
+    (dpdVerlet pairs m α rc γ σ h wD wR z R).2=R
+```

@@ -1,0 +1,101 @@
+{
+  "batch": "BATCH11",
+  "subtask": "BATCH11e",
+  "source_ids": [
+    "MD-8.7.1-PronyMemoryODE"
+  ],
+  "input_sha256": {
+    "Blueprint/Ch08.lean": "2800812fadd8e2557013f1941e4570401f7903d46f44baf07e23d5531da22a72",
+    "blueprint/ch08/ch08_source.json": "9b994b0f64cd22c85c2ad4123fbfdbd064bd7a6d070fe13b721794432f9f7a63",
+    "BATCH11e_PAGES.pdf": "33688367e358a553df8ba7431bac59e597cbe311f6109fcee85677e984f8f7ac"
+  },
+  "page_mapping": [
+    {
+      "attachment_page": 1,
+      "original_pdf_page": 396,
+      "printed_page": 375
+    }
+  ],
+  "definition_excerpts": [
+    {
+      "full_name": "MD.Ch08.Vec",
+      "kind": "abbrev",
+      "path": "Blueprint/Ch08.lean",
+      "line": 17,
+      "code_sha256": "6f4b254a8a7cc4115fb35265b77caa663bdd18567cd1e664cc5bbd080d02fcff"
+    },
+    {
+      "full_name": "MD.Ch08.memoryDrag",
+      "kind": "def",
+      "path": "Blueprint/Ch08.lean",
+      "line": 932,
+      "code_sha256": "afa7105fd2c2bc5db50baf4dd6fff4d870652dabf77778f8a84ecb8ef963fe23"
+    },
+    {
+      "full_name": "MD.Ch08.scalarMemoryMatrix",
+      "kind": "def",
+      "path": "Blueprint/Ch08.lean",
+      "line": 965,
+      "code_sha256": "8d16ffa04ffedb7933065c5c99eabd9bb02c7cab774bca8600dac39925f178e7"
+    },
+    {
+      "full_name": "MD.Ch08.pronyKernel",
+      "kind": "def",
+      "path": "Blueprint/Ch08.lean",
+      "line": 971,
+      "code_sha256": "a50311cecb81e9d109516049ad22beab5d1fb74caf5624dac2679488f92a49a3"
+    },
+    {
+      "full_name": "MD.Ch08.pronyQualification",
+      "kind": "def",
+      "path": "Blueprint/Ch08.lean",
+      "line": 973,
+      "code_sha256": "37b9e43562f98478210b96bbc77339a67eae0cb5338bd7db87d2f077a7dbdc08"
+    },
+    {
+      "full_name": "MD.Ch08.pronyMemory",
+      "kind": "def",
+      "path": "Blueprint/Ch08.lean",
+      "line": 984,
+      "code_sha256": "cef28ad7c6d6f3ffa6311f08b53ed8f073842e659577bb7c9e18452eab5d4515"
+    },
+    {
+      "full_name": "MD.Ch08.pronyMemory_derivative",
+      "kind": "theorem",
+      "path": "Blueprint/Ch08.lean",
+      "line": 986,
+      "code_sha256": "ad7ddf693dbf8911635a765970feee1d9ae1dfabb8dbcb839600db1e2e153ba9"
+    },
+    {
+      "full_name": "MD.Ch08.pronyMomentumDrift",
+      "kind": "def",
+      "path": "Blueprint/Ch08.lean",
+      "line": 990,
+      "code_sha256": "509b3c01f8c9868ec539077454793660b78777eb378639d5c2f0dacb89c315d0"
+    },
+    {
+      "full_name": "MD.Ch08.pronyMemory_sum",
+      "kind": "theorem",
+      "path": "Blueprint/Ch08.lean",
+      "line": 992,
+      "code_sha256": "8cd69785368415e1fc65e261e97f6b59d9cfb93474caee6692cd4055a129484f"
+    }
+  ],
+  "validation": {
+    "project_constant_closure": "PASS",
+    "missing_project_definitions": [],
+    "full_page_render_equality_dpi": 72,
+    "website_submitted": false
+  },
+  "files": {
+    "PASTE.txt": {
+      "bytes": 11283,
+      "sha256": "82115634d930ab15d8523c99d5b7b05d1b92ca05c4a2e41cc117e8e0118e6724"
+    },
+    "BATCH11e_PAGES.pdf": {
+      "bytes": 71465,
+      "sha256": "33688367e358a553df8ba7431bac59e597cbe311f6109fcee85677e984f8f7ac"
+    }
+  },
+  "total_task_bytes": 85934
+}

@@ -1,0 +1,113 @@
+{
+  "batch": "BATCH04",
+  "subtask": "BATCH04e",
+  "source_ids": [
+    "MD-8.4-OUStationarityPrinted"
+  ],
+  "input_sha256": {
+    "Blueprint/Ch08.lean": "2800812fadd8e2557013f1941e4570401f7903d46f44baf07e23d5531da22a72",
+    "blueprint/ch08/ch08_source.json": "9b994b0f64cd22c85c2ad4123fbfdbd064bd7a6d070fe13b721794432f9f7a63",
+    "BATCH04e_PAGES.pdf": "2c81cf713b48e641171c2c111873d76e11f241a242e428b7aad6d161f692245b"
+  },
+  "page_mapping": [
+    {
+      "attachment_page": 1,
+      "original_pdf_page": 364,
+      "printed_page": 343
+    },
+    {
+      "attachment_page": 2,
+      "original_pdf_page": 365,
+      "printed_page": 344
+    }
+  ],
+  "definition_excerpts": [
+    {
+      "full_name": "MD.Ch08.Vec",
+      "kind": "abbrev",
+      "path": "Blueprint/Ch08.lean",
+      "line": 17,
+      "code_sha256": "6f4b254a8a7cc4115fb35265b77caa663bdd18567cd1e664cc5bbd080d02fcff"
+    },
+    {
+      "full_name": "MD.Ch08.dot",
+      "kind": "def",
+      "path": "Blueprint/Ch08.lean",
+      "line": 19,
+      "code_sha256": "bb45cec5def0e642f7dde399650df8a6486048be491d116502106e187aa99348"
+    },
+    {
+      "full_name": "MD.Ch08.gradient",
+      "kind": "def",
+      "path": "Blueprint/Ch08.lean",
+      "line": 20,
+      "code_sha256": "a9a017b15c584dec720a71840d896ddb8d0e05e149030bce523362af481b101e"
+    },
+    {
+      "full_name": "MD.Ch08.fluctuationDissipation",
+      "kind": "def",
+      "path": "Blueprint/Ch08.lean",
+      "line": 326,
+      "code_sha256": "2a5efb6764b9762ce80603dcfbb8f8d6f6e207feddd3495b437844815f80be6a"
+    },
+    {
+      "full_name": "MD.Ch08.ouFokkerPlanck",
+      "kind": "def",
+      "path": "Blueprint/Ch08.lean",
+      "line": 333,
+      "code_sha256": "f866cdad8d5bb7f2fcfeb9c23a1d722ac4e29a8fa7d8012b5b442918c21ffbf1"
+    },
+    {
+      "full_name": "MD.Ch08.ouStationarity_corrected",
+      "kind": "theorem",
+      "path": "Blueprint/Ch08.lean",
+      "line": 336,
+      "code_sha256": "6c50066446ac27797aee3bcdb6faea180748861748ac71421de4f64298da17a0"
+    },
+    {
+      "full_name": "MD.Ch08.diffusionPrinted",
+      "kind": "theorem",
+      "path": "Blueprint/Ch08.lean",
+      "line": 341,
+      "code_sha256": "62c2f3b7bb927d633dcff1b591205353e080e8aa8bc776ec4749d45bf569ef91"
+    },
+    {
+      "full_name": "MD.Ch08.diffusionPrinted_counterexample",
+      "kind": "theorem",
+      "path": "Blueprint/Ch08.lean",
+      "line": 343,
+      "code_sha256": "b06609093c630ca7fc64e736da091f3468afa101aceae25a39a9a074cdaba186"
+    },
+    {
+      "full_name": "MolecularDynamics.Chapter05Review.E",
+      "kind": "abbrev",
+      "path": "MolecularDynamics/Chapter05/ReviewDefinitions.lean",
+      "line": 18,
+      "code_sha256": "b497c8ba7f01b62a3147d9ae65652772ff3f81e57aa19b116f1283fef7a3cc60"
+    },
+    {
+      "full_name": "MolecularDynamics.textbookDivergence",
+      "kind": "def",
+      "path": "MolecularDynamics/Chapter08/ThermostatDensity.lean",
+      "line": 18,
+      "code_sha256": "1b45cabec3bf68bd209da969759334d158c263b7e5a40ed527bd3a4f48e25c48"
+    }
+  ],
+  "validation": {
+    "project_constant_closure": "PASS",
+    "missing_project_definitions": [],
+    "full_page_render_equality_dpi": 72,
+    "website_submitted": false
+  },
+  "files": {
+    "PASTE.txt": {
+      "bytes": 15664,
+      "sha256": "54660ac64d31bef4512c60619d85ddd354eb45401a15f225819ff7ba2ca8a335"
+    },
+    "BATCH04e_PAGES.pdf": {
+      "bytes": 94547,
+      "sha256": "2c81cf713b48e641171c2c111873d76e11f241a242e428b7aad6d161f692245b"
+    }
+  },
+  "total_task_bytes": 113838
+}

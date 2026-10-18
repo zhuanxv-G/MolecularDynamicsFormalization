@@ -4,14 +4,17 @@ add('BerendsenRelaxation','8.10','396–397',r'''Ṫ(t)=γ_T(Ttarget−T(t)), γ
 '''def berendsenTemperature (θ T0 γ t : ℝ) : ℝ := θ+(T0-θ)*Real.exp (-γ*t)
 theorem berendsenTemperature_derivative (θ T0 γ t : ℝ) :
     HasDerivAt (berendsenTemperature θ T0 γ) (γ*(θ-berendsenTemperature θ T0 γ t)) t := by
-  convert (hasDerivAt_const t θ).add (((hasDerivAt_id t).const_mul (-γ)).exp.const_mul (T0-θ)) using 1 <;>
-    dsimp [berendsenTemperature] <;> ring
+  convert (hasDerivAt_const t θ).add (((hasDerivAt_id t).const_mul (-γ)).exp.const_mul (T0-θ)) using 1
+  · ext x
+    dsimp [berendsenTemperature]
+  · dsimp [berendsenTemperature]
+    ring
 def berendsenRadicand (nd θ γ h E : ℝ) : ℝ := 1+γ*h*(nd*θ/E-1)
 def berendsenScale {n : ℕ} (θ γ h : ℝ) (p : Vec n) : Vec n :=
   Real.sqrt (berendsenRadicand n θ γ h (dot p p)) • p
 def berendsenScaleQualification {n : ℕ} (θ γ h : ℝ) (p : Vec n) : Prop :=
   0 < n ∧ 0 < θ ∧ 0 < γ ∧ 0 ≤ h ∧ 0 < dot p p ∧ 0 ≤ berendsenRadicand n θ γ h (dot p p)
-theorem dot_smul_same {n : ℕ} (λ : ℝ) (p : Vec n) : dot (λ • p) (λ • p)=λ^2*dot p p := by
+theorem dot_smul_same {n : ℕ} (c : ℝ) (p : Vec n) : dot (c • p) (c • p)=c^2*dot p p := by
   simp only [dot,Pi.smul_apply,smul_eq_mul,Finset.mul_sum]
   apply Finset.sum_congr rfl
   intro i hi

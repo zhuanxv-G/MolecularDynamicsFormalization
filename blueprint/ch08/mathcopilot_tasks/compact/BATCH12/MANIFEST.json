@@ -1,0 +1,47 @@
+{
+  "batch": "BATCH12",
+  "subtasks": [
+    {
+      "subtask": "BATCH12a",
+      "source_id": "MD-8.7.1-CombinedPronyVariable",
+      "path": "blueprint/ch08/mathcopilot_tasks/compact/BATCH12/a",
+      "bytes": 79614,
+      "manifest_sha256": "e545856b145e93e004c76fefedf9881d90b11b8c94b388f1c32b4016bbfbe184"
+    },
+    {
+      "subtask": "BATCH12b",
+      "source_id": "MD-8.7.1-PronyLangevinLimit",
+      "path": "blueprint/ch08/mathcopilot_tasks/compact/BATCH12/b",
+      "bytes": 109404,
+      "manifest_sha256": "87095163915958d0fe5f91d896641a858750a081f834e676d48e07d69cd91901"
+    },
+    {
+      "subtask": "BATCH12c",
+      "source_id": "MD-8.7.1-GeneralizedLangevinIntegrator",
+      "path": "blueprint/ch08/mathcopilot_tasks/compact/BATCH12/c",
+      "bytes": 104849,
+      "manifest_sha256": "689c9c02dcceeee44c104b498ae6fd89adfdb5afab0b787391f04365f60906a2"
+    },
+    {
+      "subtask": "BATCH12d",
+      "source_id": "MD-8.7.1-GLEConsistentCoefficients",
+      "path": "blueprint/ch08/mathcopilot_tasks/compact/BATCH12/d",
+      "bytes": 102247,
+      "manifest_sha256": "6de0f4befd20534553b55e25b92e837b261a300103ef8f1e6673d90fa397a91c"
+    },
+    {
+      "subtask": "BATCH12e",
+      "source_id": "MD-8.8-NPTThermodynamics",
+      "path": "blueprint/ch08/mathcopilot_tasks/compact/BATCH12/e",
+      "bytes": 92895,
+      "manifest_sha256": "96d0c2fe02c4935d9d9276020fa1c3b6262bba4631b44e5a503e790f925a77c0"
+    },
+    {
+      "subtask": "BATCH12f",
+      "source_id": "MD-8.8-NPTBathTaylor",
+      "path": "blueprint/ch08/mathcopilot_tasks/compact/BATCH12/f",
+      "bytes": 92215,
+      "manifest_sha256": "97066c75f380268b21003cd22426372720c4284fb7e89f39e1320ab030b7fe66"
+    }
+  ]
+}

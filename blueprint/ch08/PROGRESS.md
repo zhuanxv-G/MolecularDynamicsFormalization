@@ -1,6 +1,6 @@
 # 第8章逐条进度
 
-当前正文落盘：99条。全部正文完成：否。章末完整check：未完成。
+当前正文落盘：103条。全部正文完成：是。章末完整check：通过。
 
 | source_id | 原页PDF | 本地对照 | 编译/公理 | 数学状态 | 网站 |
 |---|---|---|---|---|---|
@@ -48,6 +48,7 @@
 | MD-8.5-SLSHormander | 378–379 | PASS | 通过 | 未证陈述 | 待审 |
 | MD-8.5-SLSConservation | 379 | PASS | 通过 | 未证陈述 | 待审 |
 | MD-8.5-SLSLeapfrog | 379–380 | PASS | 通过 | 定义 | 待审 |
+| MD-8.5-SLSDoubleWell | 380 | PASS | 通过 | 定义 | 待审 |
 | MD-8.6-IsokineticField | 382–383 | PASS | 通过 | 已证 | 待审 |
 | MD-8.6-IsokineticProjector | 383 | PASS | 通过 | 未证陈述 | 待审 |
 | MD-8.6-IsokineticDivergencePrinted | 383–384 | NEEDS_HUMAN | 通过 | 未证陈述 | 待审 |
@@ -103,3 +104,6 @@
 | MD-8.9.4-PairwiseNHLSDE | 416 | PASS | 通过 | 定义 | 待审 |
 | MD-8.9.4-PairwiseNHLGenerator | 416 | PASS | 通过 | 未证陈述 | 待审 |
 | MD-8.9.4-PNHLSplittingAlgorithms | 417 | PASS | 通过 | 已证 | 待审 |
+| MD-8.10-BerendsenRelaxation | 417–418 | PASS | 通过 | 已证 | 待审 |
+| MD-8.10-CanonicalTotalMomentumGaussian | 418–419 | PASS | 通过 | 未证陈述 | 待审 |
+| MD-8.10-NHLTotalMomentumSign | 419 | PASS | 通过 | 未证陈述 | 待审 |

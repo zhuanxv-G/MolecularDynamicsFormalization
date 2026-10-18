@@ -1,0 +1,187 @@
+以附件/PASTE 为准，忽略 /workspace 旧文件；Mathlib 定义按标准含义采信。
+本任务只审本条：原文转录、对象资格、定义体、量词、全部结论及[EXTRA]是否一致；Lean编译不代替语义审阅。
+Lean/Mathlib均4.34.0。原页PDF映射：[386]；印刷页=[365].
+input_sha256请原样回显：
+{
+  "Blueprint/Ch08.lean": "2800812fadd8e2557013f1941e4570401f7903d46f44baf07e23d5531da22a72",
+  "blueprint/ch08/ch08_source.json": "9b994b0f64cd22c85c2ad4123fbfdbd064bd7a6d070fe13b721794432f9f7a63",
+  "BATCH09c_PAGES.pdf": "1e2c0e700f36dca1ff2125023462464e016b7deae04ef041764304a373b45687"
+}
+用代码将JSON对象(batch,input_sha256,items)写到 /workspace/.mathcopilot/reviews/ch08/BATCH09c_review.json；items仅含本source_id。
+items字段：source_id、verdict(PASS/FAIL/NEEDS_HUMAN)、transcription、semantic_review、counterexample、suggested_fix、printed_version、corrected_version。逐版区分原文疑误和修正版结论；缺材料必须具体指出，不猜测。写后json.loads自检，最后仅回复路径及统计。
+
+## 原文JSON
+```json
+{
+  "source_id": "MD-8.6.1-SINWeightPrinted",
+  "kind": "unnumbered_claim",
+  "label": null,
+  "section": "8.6.1",
+  "printed_page": "365",
+  "pdf_page": "386",
+  "statement_latex": "w=(U+ξ₂²/2)/(p²+μ₁ξ₁²/2); integration over the isokinetic surface gives the Gibbs configurational density.",
+  "statement_verbatim": "8.6\nIsokinetic Methods and Integration with Very Large Timestep\n365\nLet \u000f1 D pF \u0003 \u00061\u00122\n1\u00122=2, \u000f2 D p2 C \u00061\u00122\n1=2, so \u0013 D \u000f1=\u000f2, then calculate\nd\ndp\u0013 D .\u000f2F \u0003 2\u000f1p/=\u000f2\n2;\nd\nd\u00121\n\u0013 D .\u0003\u00061\u00121\u00122\u000f2 \u0003 \u00061\u00121\u000f1/=\u000f2\n2;\nto see that\npd\u0013\ndp C \u00121\nd\u0013\nd\u00121\nD .pF \u0003 \u00061\u00122\n1\u00122/\u000f2 \u0003 .2p2 C \u00061\u00122\n1/\u000f1\n\u000f2\n2\nD 2\n\u0002\n\u0003 pF\n2\u000f2\nC \u0013 \u0003 \u0013\n\u0003\nD \u0003pF\n\u000f2\n;\nhence\ndiv.f/ D pF\n\u000f2\n\u0003 2\u0013 \u0003 \u00122\nD pF \u0003 2.pF \u0003 \u00061\u00122\n1\u00122=2/\np2 C \u00061\u00122\n1=2\n\u0003 \u00122\nD \u0003pF C \u00061\u00122\n1\u00122\np2 C \u00061\u00122\n1=2 \u0003 \u00122:\nWe ﬁnd that a solution of the equation rw \u0002 f D div.f/ is then given by\nw D\nU C 1\n2\u00122\n2\np2 C 1\n2\u00061\u00122\n1\n:\nIntegrating over the isokinetic surface p2 C 1\n2\u00061\u00122\n1 D ˇ\u00021, and with respect to the\nvariable \u00122, yields the Gibbs conﬁgurational density.\nThe exciting prospect here is that we now have a new variable \u00122 which\nhas, in equilibrium, a Gaussian distribution. The Ornstein-Uhlenbeck terms are\ntherefore compatible with this extended distribution and can be incorporated (as\nin Nosé-Hoover-Langevin) to provide ergodicity and control of the convergence to\nequilibrium.\n",
+  "verbatim_scope": "完整对应原页文字层，逐字保留；本条数学成分由statement_latex及statement_scope定位。",
+  "proof_latex": null,
+  "proof_note": "对应原页推导逐字保存在statement_verbatim/original_page_text；排版以原页PDF为准。",
+  "original_page_text": [
+    {
+      "pdf_page": 386,
+      "printed_page": 365,
+      "text": "8.6\nIsokinetic Methods and Integration with Very Large Timestep\n365\nLet \u000f1 D pF \u0003 \u00061\u00122\n1\u00122=2, \u000f2 D p2 C \u00061\u00122\n1=2, so \u0013 D \u000f1=\u000f2, then calculate\nd\ndp\u0013 D .\u000f2F \u0003 2\u000f1p/=\u000f2\n2;\nd\nd\u00121\n\u0013 D .\u0003\u00061\u00121\u00122\u000f2 \u0003 \u00061\u00121\u000f1/=\u000f2\n2;\nto see that\npd\u0013\ndp C \u00121\nd\u0013\nd\u00121\nD .pF \u0003 \u00061\u00122\n1\u00122/\u000f2 \u0003 .2p2 C \u00061\u00122\n1/\u000f1\n\u000f2\n2\nD 2\n\u0002\n\u0003 pF\n2\u000f2\nC \u0013 \u0003 \u0013\n\u0003\nD \u0003pF\n\u000f2\n;\nhence\ndiv.f/ D pF\n\u000f2\n\u0003 2\u0013 \u0003 \u00122\nD pF \u0003 2.pF \u0003 \u00061\u00122\n1\u00122=2/\np2 C \u00061\u00122\n1=2\n\u0003 \u00122\nD \u0003pF C \u00061\u00122\n1\u00122\np2 C \u00061\u00122\n1=2 \u0003 \u00122:\nWe ﬁnd that a solution of the equation rw \u0002 f D div.f/ is then given by\nw D\nU C 1\n2\u00122\n2\np2 C 1\n2\u00061\u00122\n1\n:\nIntegrating over the isokinetic surface p2 C 1\n2\u00061\u00122\n1 D ˇ\u00021, and with respect to the\nvariable \u00122, yields the Gibbs conﬁgurational density.\nThe exciting prospect here is that we now have a new variable \u00122 which\nhas, in equilibrium, a Gaussian distribution. The Ornstein-Uhlenbeck terms are\ntherefore compatible with this extended distribution and can be incorporated (as\nin Nosé-Hoover-Langevin) to provide ergodicity and control of the convergence to\nequilibrium.\n"
+    }
+  ],
+  "numbered_equations": [],
+  "transcription_note": "文字层逐字保留；数学排版另行转写，原页中的特殊字形编码不静默替换。PDF420仅取Exercises之前。",
+  "context_notation": [],
+  "extra_assumptions": [
+    "仅证明正约束面处的实际通量散度陈述；曲面概率测度、边缘分布和遍历性列缺口。"
+  ],
+  "issues": [
+    "已目视核对原页PDF386：ξ₂方程含μ₂⁻¹，而w的ξ₂二次项缺μ₂；一般μ₂时应为μ₂ξ₂²/2。"
+  ],
+  "statement_scope": "原印及补热浴质量的权重、正约束面局部驻定目标；曲面边缘分布及遍历性未覆盖。",
+  "lean_decl": "MD.Ch08.sinWeightPrinted",
+  "lean_declarations": [
+    "MD.Ch08.sinWeightPrinted",
+    "MD.Ch08.sinWeight_corrected",
+    "MD.Ch08.sinWeight_stationary_corrected"
+  ],
+  "source_page_verification": "见source_page_checks.json，已目视核对本条原页。",
+  "repair_log": [],
+  "documented_priors": []
+}
+```
+
+## 完整本条Lean
+```lean
+def sinWeightPrinted (U : ℝ → ℝ) (Q1 : ℝ) (z : Vec 4) : ℝ :=
+  Real.exp (-(U (z 0)+z 3^2/2)/sinConstraint Q1 z)
+def sinWeight_corrected (U : ℝ → ℝ) (Q1 Q2 : ℝ) (z : Vec 4) : ℝ :=
+  Real.exp (-(U (z 0)+Q2*z 3^2/2)/sinConstraint Q1 z)
+theorem sinWeight_stationary_corrected (U : ℝ → ℝ) (Q1 Q2 θ : ℝ)
+    (hU : ContDiff ℝ 2 U) (hQ1 : 0 < Q1) (hQ2 : 0 < Q2) (hθ : 0 < θ)
+    (z : Vec 4) (hz : sinConstraint Q1 z=θ) :
+    textbookDivergence
+      (fun x ↦ sinWeight_corrected U Q1 Q2 x • sinDrift Q1 Q2 θ 0 (fun q ↦ -deriv U q) x) z = 0 := by
+  sorry
+```
+
+## 项目依赖定义体及选择规格
+以下def/abbrev/structure完整保留；定理列出完整类型，Mathlib标准定义无需摘录。
+
+### MD.Ch08.Vec (Blueprint/Ch08.lean:17)
+原文件上下文：
+```lean
+open Set Filter MeasureTheory ProbabilityTheory MolecularDynamics
+open scoped BigOperators Topology ContDiff ENNReal NNReal Matrix
+variable {Ω : Type*} [MeasurableSpace Ω]
+variable {n : ℕ}
+```
+```lean
+abbrev Vec (n : ℕ) := Fin n → ℝ
+```
+
+### MD.Ch08.sinConstraint (Blueprint/Ch08.lean:714)
+原文件上下文：
+```lean
+open Set Filter MeasureTheory ProbabilityTheory MolecularDynamics
+open scoped BigOperators Topology ContDiff ENNReal NNReal Matrix
+variable {Ω : Type*} [MeasurableSpace Ω]
+variable {n : ℕ}
+```
+```lean
+def sinConstraint (Q1 : ℝ) (z : Vec 4) : ℝ := z 1^2+Q1*z 2^2/2
+```
+
+### MD.Ch08.sinMultiplier (Blueprint/Ch08.lean:715)
+原文件上下文：
+```lean
+open Set Filter MeasureTheory ProbabilityTheory MolecularDynamics
+open scoped BigOperators Topology ContDiff ENNReal NNReal Matrix
+variable {Ω : Type*} [MeasurableSpace Ω]
+variable {n : ℕ}
+```
+```lean
+def sinMultiplier (Q1 : ℝ) (F : ℝ → ℝ) (z : Vec 4) : ℝ :=
+  (z 1*F (z 0)-Q1*z 2^2*z 3/2)/sinConstraint Q1 z
+```
+
+### MD.Ch08.sinDrift (Blueprint/Ch08.lean:717)
+原文件上下文：
+```lean
+open Set Filter MeasureTheory ProbabilityTheory MolecularDynamics
+open scoped BigOperators Topology ContDiff ENNReal NNReal Matrix
+variable {Ω : Type*} [MeasurableSpace Ω]
+variable {n : ℕ}
+```
+```lean
+def sinDrift (Q1 Q2 θ γ : ℝ) (F : ℝ → ℝ) (z : Vec 4) : Vec 4 :=
+  let lam := sinMultiplier Q1 F z
+  ![z 1, F (z 0)-lam*z 1, -lam*z 2-z 3*z 2, (Q1*z 2^2-θ)/Q2-γ*z 3]
+```
+
+### MD.Ch08.sinWeightPrinted (Blueprint/Ch08.lean:741)
+原文件上下文：
+```lean
+open Set Filter MeasureTheory ProbabilityTheory MolecularDynamics
+open scoped BigOperators Topology ContDiff ENNReal NNReal Matrix
+variable {Ω : Type*} [MeasurableSpace Ω]
+variable {n : ℕ}
+```
+```lean
+def sinWeightPrinted (U : ℝ → ℝ) (Q1 : ℝ) (z : Vec 4) : ℝ :=
+  Real.exp (-(U (z 0)+z 3^2/2)/sinConstraint Q1 z)
+```
+
+### MD.Ch08.sinWeight_corrected (Blueprint/Ch08.lean:743)
+原文件上下文：
+```lean
+open Set Filter MeasureTheory ProbabilityTheory MolecularDynamics
+open scoped BigOperators Topology ContDiff ENNReal NNReal Matrix
+variable {Ω : Type*} [MeasurableSpace Ω]
+variable {n : ℕ}
+```
+```lean
+def sinWeight_corrected (U : ℝ → ℝ) (Q1 Q2 : ℝ) (z : Vec 4) : ℝ :=
+  Real.exp (-(U (z 0)+Q2*z 3^2/2)/sinConstraint Q1 z)
+```
+
+### MD.Ch08.sinWeight_stationary_corrected (Blueprint/Ch08.lean:745)
+原文件上下文：
+```lean
+open Set Filter MeasureTheory ProbabilityTheory MolecularDynamics
+open scoped BigOperators Topology ContDiff ENNReal NNReal Matrix
+variable {Ω : Type*} [MeasurableSpace Ω]
+variable {n : ℕ}
+```
+```lean
+theorem sinWeight_stationary_corrected (U : ℝ → ℝ) (Q1 Q2 θ : ℝ)
+    (hU : ContDiff ℝ 2 U) (hQ1 : 0 < Q1) (hQ2 : 0 < Q2) (hθ : 0 < θ)
+    (z : Vec 4) (hz : sinConstraint Q1 z=θ) :
+    textbookDivergence
+      (fun x ↦ sinWeight_corrected U Q1 Q2 x • sinDrift Q1 Q2 θ 0 (fun q ↦ -deriv U q) x) z = 0
+```
+
+### MolecularDynamics.Chapter05Review.E (MolecularDynamics/Chapter05/ReviewDefinitions.lean:18)
+原文件上下文：
+```lean
+open Set Filter MeasureTheory Matrix
+open scoped BigOperators Topology ENNReal
+```
+```lean
+abbrev E (n : ℕ) := EuclideanSpace ℝ (Fin n)
+```
+
+### MolecularDynamics.textbookDivergence (MolecularDynamics/Chapter08/ThermostatDensity.lean:18)
+原文件上下文：
+```lean
+open Matrix
+open scoped BigOperators Topology
+variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E] [FiniteDimensional ℝ E]
+variable {G : Type*} [NormedAddCommGroup G] [NormedSpace ℝ G] [FiniteDimensional ℝ G]
+```
+```lean
+noncomputable def textbookDivergence (F : E → E) (z : E) : ℝ :=
+  LinearMap.trace ℝ E (fderiv ℝ F z).toLinearMap
+```

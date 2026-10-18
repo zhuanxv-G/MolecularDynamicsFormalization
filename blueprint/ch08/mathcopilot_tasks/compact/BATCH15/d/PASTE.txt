@@ -1,0 +1,383 @@
+以附件/PASTE 为准，忽略 /workspace 旧文件；Mathlib 定义按标准含义采信。
+本任务只审本条：原文转录、对象资格、定义体、量词、全部结论及[EXTRA]是否一致；Lean编译不代替语义审阅。
+Lean/Mathlib均4.34.0。原页PDF映射：[410]；印刷页=[389].
+input_sha256请原样回显：
+{
+  "Blueprint/Ch08.lean": "2800812fadd8e2557013f1941e4570401f7903d46f44baf07e23d5531da22a72",
+  "blueprint/ch08/ch08_source.json": "9b994b0f64cd22c85c2ad4123fbfdbd064bd7a6d070fe13b721794432f9f7a63",
+  "BATCH15d_PAGES.pdf": "cd84bc1ecb6c00d7dd8273a7287a8ca8e4a08fe1b5f434dd7822b4ef2703afb7"
+}
+用代码将JSON对象(batch,input_sha256,items)写到 /workspace/.mathcopilot/reviews/ch08/BATCH15d_review.json；items仅含本source_id。
+items字段：source_id、verdict(PASS/FAIL/NEEDS_HUMAN)、transcription、semantic_review、counterexample、suggested_fix、printed_version、corrected_version。逐版区分原文疑误和修正版结论；缺材料必须具体指出，不猜测。写后json.loads自检，最后仅回复路径及统计。
+
+## 原文JSON
+```json
+{
+  "source_id": "MD-8.9.1-DPDIntegralSystem",
+  "kind": "definition",
+  "label": null,
+  "section": "8.9.1",
+  "printed_page": "389",
+  "pdf_page": "410",
+  "statement_latex": "dq=M⁻¹pdt, dp=−∇Udt−Δ(q)pdt+Σ(q)dW. (8.90).",
+  "statement_verbatim": "8.9\nMomentum-Conserving Thermostats and the Dissipative Particle. . .\n389\nwhite-noise term with the following stochastic property\nh\u000eij.t/i D 0;\nh\u000eij.t/\u000ekl.t0/i D .ıikıjl C ıilıjk/ı.t \u0003 t0/;\n(8.88)\nand are independent for each pair of interacting particles at each time step.\nInvariance of the canonical distribution under these equations of motion follows if\n!D.rij/ D Œ!R.rij/\t2;\n\u00072 D 2\nkBT;\n(8.89)\nwhere kB is the Boltzmann constant and T the equilibrium temperature. Note that\nthe “canonical distribution” in the case of the DPD system or other momentum-\nconserving thermostat should have a density which is reduced to the leaves of\nconstant total momentum, i.e.\nO\u0005ˇ\ndef\nD Z\u00021e\u0002ˇH.q;p/ \u0004 ı\n\" N\nX\niD1\npi;x \u0003 \u0014x\n#\nı\n\" N\nX\niD1\npi;y \u0003 \u0014y\n#\nı\n\" N\nX\niD1\npi;z \u0003 \u0014z\n#\nwhere \u000f D .\u0014x; \u0014y; \u0014z/ is the total momentum vector.\nThe conservation of the total momentum is a direct result of the symmetric form\nof the various forces, thus DPD may be viewed as an isotropic Galilean-invariant\nthermostat which preserves hydrodynamics [8]. The ergodicity of DPD (i.e. that O\u0005ˇ\nis the unique measure sampled by the dynamics) has only been demonstrated in the\ncase of a high density of particles in one dimension [334].\nThe DPD system may be viewed as a special case of the generalized Langevin\ndynamics with equations\ndq D M\u00021pdt;\ndp D \u0003rU.q/dt \u0003 \u0006.q/pdt C ˙.q/dW;\n(8.90)\nwhere the potential U is given in (8.84), and the damping matrix \u0006 and stochastic\nmultiplier matrix ˙ are related by\n\u0006 D M\u00021\n2kBT˙˙ T:\nIn the next subsection we describe the numerical treatment of the DPD system.\nWe then take up the alternative scheme, the pairwise Nosé-Hoover-Langevin\n(PNHL) method, of [228] which also conserves momentum exactly. Other alter-\nnatives to the DPD system include the Peters thermostat [299], the Lowe-Andersen\nmethod [241], and the Nosé-Hoover-Lowe-Andersen thermostat [347]. We do not\ndiscuss these schemes here, but note that they are compared to DPD and some of\nthe other schemes introduced below in [228].\n",
+  "verbatim_scope": "完整对应原页文字层，逐字保留；本条数学成分由statement_latex及statement_scope定位。",
+  "proof_latex": null,
+  "proof_note": "对应原页推导逐字保存在statement_verbatim/original_page_text；排版以原页PDF为准。",
+  "original_page_text": [
+    {
+      "pdf_page": 410,
+      "printed_page": 389,
+      "text": "8.9\nMomentum-Conserving Thermostats and the Dissipative Particle. . .\n389\nwhite-noise term with the following stochastic property\nh\u000eij.t/i D 0;\nh\u000eij.t/\u000ekl.t0/i D .ıikıjl C ıilıjk/ı.t \u0003 t0/;\n(8.88)\nand are independent for each pair of interacting particles at each time step.\nInvariance of the canonical distribution under these equations of motion follows if\n!D.rij/ D Œ!R.rij/\t2;\n\u00072 D 2\nkBT;\n(8.89)\nwhere kB is the Boltzmann constant and T the equilibrium temperature. Note that\nthe “canonical distribution” in the case of the DPD system or other momentum-\nconserving thermostat should have a density which is reduced to the leaves of\nconstant total momentum, i.e.\nO\u0005ˇ\ndef\nD Z\u00021e\u0002ˇH.q;p/ \u0004 ı\n\" N\nX\niD1\npi;x \u0003 \u0014x\n#\nı\n\" N\nX\niD1\npi;y \u0003 \u0014y\n#\nı\n\" N\nX\niD1\npi;z \u0003 \u0014z\n#\nwhere \u000f D .\u0014x; \u0014y; \u0014z/ is the total momentum vector.\nThe conservation of the total momentum is a direct result of the symmetric form\nof the various forces, thus DPD may be viewed as an isotropic Galilean-invariant\nthermostat which preserves hydrodynamics [8]. The ergodicity of DPD (i.e. that O\u0005ˇ\nis the unique measure sampled by the dynamics) has only been demonstrated in the\ncase of a high density of particles in one dimension [334].\nThe DPD system may be viewed as a special case of the generalized Langevin\ndynamics with equations\ndq D M\u00021pdt;\ndp D \u0003rU.q/dt \u0003 \u0006.q/pdt C ˙.q/dW;\n(8.90)\nwhere the potential U is given in (8.84), and the damping matrix \u0006 and stochastic\nmultiplier matrix ˙ are related by\n\u0006 D M\u00021\n2kBT˙˙ T:\nIn the next subsection we describe the numerical treatment of the DPD system.\nWe then take up the alternative scheme, the pairwise Nosé-Hoover-Langevin\n(PNHL) method, of [228] which also conserves momentum exactly. Other alter-\nnatives to the DPD system include the Peters thermostat [299], the Lowe-Andersen\nmethod [241], and the Nosé-Hoover-Lowe-Andersen thermostat [347]. We do not\ndiscuss these schemes here, but note that they are compared to DPD and some of\nthe other schemes introduced below in [228].\n"
+    }
+  ],
+  "numbered_equations": [
+    "8.80",
+    "8.81",
+    "8.90"
+  ],
+  "transcription_note": "文字层逐字保留；数学排版另行转写，原页中的特殊字形编码不静默替换。PDF420仅取Exercises之前。",
+  "context_notation": [],
+  "extra_assumptions": [
+    "实际多维独立Wiener、共同自然历史适应、联合可测、路径连续、漂移可积、所有网格左和及积分代表L²均明示。",
+    "选择强L²、非碰撞解类；不声称与所有弱解等价，也不建立SDE存在唯一或Markov半群。"
+  ],
+  "issues": [],
+  "statement_scope": "配置依赖扩散的真实积分解规格及正质量/涨落耗散/无序噪声资格。",
+  "lean_decl": "MD.Ch08.strictItoIntegral8",
+  "lean_declarations": [
+    "MD.Ch08.strictItoIntegral8",
+    "MD.Ch08.multiplicativeSDE8",
+    "MD.Ch08.dpdDrift",
+    "MD.Ch08.isDPDSolution"
+  ],
+  "source_page_verification": "见source_page_checks.json，已目视核对本条原页。",
+  "repair_log": [],
+  "documented_priors": []
+}
+```
+
+## 完整本条Lean
+```lean
+def strictItoIntegral8 (P : Measure Ω) (W g : ℝ → Ω → ℝ) (T : ℝ) (Y : Ω → ℝ) : Prop :=
+  (∀ k, MemLp (MolecularDynamics.Chapter06Review.itoLeftSum W g T k) 2 P) ∧ MemLp Y 2 P ∧
+  Tendsto (fun k ↦ ∫ sample, (MolecularDynamics.Chapter06Review.itoLeftSum W g T k sample-Y sample)^2 ∂P)
+    atTop (𝓝 0)
+def multiplicativeSDE8 {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
+    [MeasurableSpace E] [BorelSpace E] (P : Measure Ω) (r : ℕ)
+    (W : ℝ → Ω → Vec r) (X : ℝ → Ω → E) (x0 : E) (a : E → E) (B : E → Fin r → E) : Prop :=
+  independentWiener P r W ∧ Measurable (Function.uncurry X) ∧ (∀ j, Measurable (fun x ↦ B x j)) ∧
+  (∀ᵐ sample ∂P, ContinuousOn (fun t ↦ X t sample) (Ici 0) ∧ X 0 sample=x0) ∧
+  (∀ t : ℝ, 0 ≤ t → Measurable[MeasurableSpace.comap
+    (fun (sample : Ω) (s : Icc (0 : ℝ) t) ↦ W s sample) inferInstance] (X t)) ∧
+  ∀ T, 0 ≤ T → (∀ᵐ sample ∂P, IntervalIntegrable (fun s ↦ a (X s sample)) volume 0 T) ∧
+    ∀ ell : E →L[ℝ] ℝ, ∃ Y : Fin r → Ω → ℝ,
+      (∀ j, strictItoIntegral8 P (fun s sample ↦ W s sample j)
+        (fun s sample ↦ ell (B (X s sample) j)) T (Y j)) ∧
+      ∀ᵐ sample ∂P, ell (X T sample-x0-(∫ s in (0 : ℝ)..T, a (X s sample)))=∑ j, Y j sample
+def dpdDrift {N d : ℕ} (m : Fin N → ℝ) (α rc γ : ℝ) (wD : ℝ → ℝ)
+    (z : ParticlePhase N d) : ParticlePhase N d :=
+  ((fun i ↦ (m i)⁻¹ • z.2 i),dpdConservative α rc z.1+dpdDissipative m γ wD z.1 z.2)
+def isDPDSolution {N d K : ℕ} (m : Fin N → ℝ) (α rc γ σ θ : ℝ) (wD wR : ℝ → ℝ)
+    (pairs : Fin K → Fin N × Fin N) (P : Measure Ω) (W : ℝ → Ω → Vec K)
+    (X : ℝ → Ω → ParticlePhase N d) (x0 : ParticlePhase N d) : Prop :=
+  0 < N ∧ 0 < d ∧ (∀ i, 0 < m i) ∧ 0 < rc ∧ 0 ≤ α ∧ 0 ≤ γ ∧ 0 < θ ∧
+  (∀ r, wD r=(wR r)^2) ∧ σ^2=2*γ*θ ∧ pairEnumeration pairs ∧
+  (∀ t, 0 ≤ t → ∀ᵐ sample ∂P, ∀ i j, i ≠ j → 0 < pairDistance (X t sample).1 i j) ∧
+  multiplicativeSDE8 P K W X x0 (dpdDrift m α rc γ wD)
+    (fun z ↦ dpdNoise pairs σ wR z.1)
+```
+
+## 项目依赖定义体及选择规格
+以下def/abbrev/structure完整保留；定理列出完整类型，Mathlib标准定义无需摘录。
+
+### MD.Ch08.Vec (Blueprint/Ch08.lean:17)
+原文件上下文：
+```lean
+open Set Filter MeasureTheory ProbabilityTheory MolecularDynamics
+open scoped BigOperators Topology ContDiff ENNReal NNReal Matrix
+variable {Ω : Type*} [MeasurableSpace Ω]
+variable {n : ℕ}
+```
+```lean
+abbrev Vec (n : ℕ) := Fin n → ℝ
+```
+
+### MD.Ch08.dot (Blueprint/Ch08.lean:19)
+原文件上下文：
+```lean
+open Set Filter MeasureTheory ProbabilityTheory MolecularDynamics
+open scoped BigOperators Topology ContDiff ENNReal NNReal Matrix
+variable {Ω : Type*} [MeasurableSpace Ω]
+variable {n : ℕ}
+```
+```lean
+def dot (v w : Vec n) : ℝ := ∑ i, v i * w i
+```
+
+### MD.Ch08.independentWiener (Blueprint/Ch08.lean:307)
+原文件上下文：
+```lean
+open Set Filter MeasureTheory ProbabilityTheory MolecularDynamics
+open scoped BigOperators Topology ContDiff ENNReal NNReal Matrix
+variable {Ω : Type*} [MeasurableSpace Ω]
+variable {n : ℕ}
+```
+```lean
+def independentWiener (P : Measure Ω) (k : ℕ) (W : ℝ → Ω → Vec k) : Prop :=
+  IsProbabilityMeasure P ∧ (∀ j, IsBrownianReal (fun t sample ↦ W t sample j) P) ∧
+    iIndepFun (fun j sample ↦ fun t : ℝ ↦ W t sample j) P
+```
+
+### MD.Ch08.ParticleConfig (Blueprint/Ch08.lean:1334)
+原文件上下文：
+```lean
+open Set Filter MeasureTheory ProbabilityTheory MolecularDynamics
+open scoped BigOperators Topology ContDiff ENNReal NNReal Matrix
+variable {Ω : Type*} [MeasurableSpace Ω]
+variable {n : ℕ}
+```
+```lean
+abbrev ParticleConfig (N d : ℕ) := Fin N → Vec d
+```
+
+### MD.Ch08.ParticlePhase (Blueprint/Ch08.lean:1335)
+原文件上下文：
+```lean
+open Set Filter MeasureTheory ProbabilityTheory MolecularDynamics
+open scoped BigOperators Topology ContDiff ENNReal NNReal Matrix
+variable {Ω : Type*} [MeasurableSpace Ω]
+variable {n : ℕ}
+```
+```lean
+abbrev ParticlePhase (N d : ℕ) := ParticleConfig N d × ParticleConfig N d
+```
+
+### MD.Ch08.pairDistance (Blueprint/Ch08.lean:1349)
+原文件上下文：
+```lean
+open Set Filter MeasureTheory ProbabilityTheory MolecularDynamics
+open scoped BigOperators Topology ContDiff ENNReal NNReal Matrix
+variable {Ω : Type*} [MeasurableSpace Ω]
+variable {n : ℕ}
+```
+```lean
+def pairDistance {N d : ℕ} (q : ParticleConfig N d) (i j : Fin N) : ℝ :=
+  Real.sqrt (dot (q i-q j) (q i-q j))
+```
+
+### MD.Ch08.pairDirection (Blueprint/Ch08.lean:1351)
+原文件上下文：
+```lean
+open Set Filter MeasureTheory ProbabilityTheory MolecularDynamics
+open scoped BigOperators Topology ContDiff ENNReal NNReal Matrix
+variable {Ω : Type*} [MeasurableSpace Ω]
+variable {n : ℕ}
+```
+```lean
+def pairDirection {N d : ℕ} (q : ParticleConfig N d) (i j : Fin N) : Vec d :=
+  (pairDistance q i j)⁻¹ • (q i-q j)
+```
+
+### MD.Ch08.dpdPairConservative (Blueprint/Ch08.lean:1354)
+原文件上下文：
+```lean
+open Set Filter MeasureTheory ProbabilityTheory MolecularDynamics
+open scoped BigOperators Topology ContDiff ENNReal NNReal Matrix
+variable {Ω : Type*} [MeasurableSpace Ω]
+variable {n : ℕ}
+```
+```lean
+def dpdPairConservative {N d : ℕ} (α rc : ℝ) (q : ParticleConfig N d) (i j : Fin N) : Vec d :=
+  if pairDistance q i j < rc then (α*(1-pairDistance q i j/rc)) • pairDirection q i j else 0
+```
+
+### MD.Ch08.dpdConservative (Blueprint/Ch08.lean:1358)
+原文件上下文：
+```lean
+open Set Filter MeasureTheory ProbabilityTheory MolecularDynamics
+open scoped BigOperators Topology ContDiff ENNReal NNReal Matrix
+variable {Ω : Type*} [MeasurableSpace Ω]
+variable {n : ℕ}
+```
+```lean
+def dpdConservative {N d : ℕ} (α rc : ℝ) (q : ParticleConfig N d) : ParticleConfig N d :=
+  fun i ↦ ∑ j ∈ Finset.univ.filter (fun j ↦ j ≠ i), dpdPairConservative α rc q i j
+```
+
+### MD.Ch08.relativeVelocity (Blueprint/Ch08.lean:1372)
+原文件上下文：
+```lean
+open Set Filter MeasureTheory ProbabilityTheory MolecularDynamics
+open scoped BigOperators Topology ContDiff ENNReal NNReal Matrix
+variable {Ω : Type*} [MeasurableSpace Ω]
+variable {n : ℕ}
+```
+```lean
+def relativeVelocity {N d : ℕ} (m : Fin N → ℝ) (p : ParticleConfig N d) (i j : Fin N) : Vec d :=
+  (m i)⁻¹ • p i-(m j)⁻¹ • p j
+```
+
+### MD.Ch08.dpdPairDissipative (Blueprint/Ch08.lean:1374)
+原文件上下文：
+```lean
+open Set Filter MeasureTheory ProbabilityTheory MolecularDynamics
+open scoped BigOperators Topology ContDiff ENNReal NNReal Matrix
+variable {Ω : Type*} [MeasurableSpace Ω]
+variable {n : ℕ}
+```
+```lean
+def dpdPairDissipative {N d : ℕ} (m : Fin N → ℝ) (γ : ℝ) (wD : ℝ → ℝ)
+    (q p : ParticleConfig N d) (i j : Fin N) : Vec d :=
+  (-γ*wD (pairDistance q i j)*dot (pairDirection q i j) (relativeVelocity m p i j)) • pairDirection q i j
+```
+
+### MD.Ch08.dpdDissipative (Blueprint/Ch08.lean:1379)
+原文件上下文：
+```lean
+open Set Filter MeasureTheory ProbabilityTheory MolecularDynamics
+open scoped BigOperators Topology ContDiff ENNReal NNReal Matrix
+variable {Ω : Type*} [MeasurableSpace Ω]
+variable {n : ℕ}
+```
+```lean
+def dpdDissipative {N d : ℕ} (m : Fin N → ℝ) (γ : ℝ) (wD : ℝ → ℝ)
+    (q p : ParticleConfig N d) : ParticleConfig N d :=
+  fun i ↦ ∑ j ∈ Finset.univ.filter (fun j ↦ j ≠ i), dpdPairDissipative m γ wD q p i j
+```
+
+### MD.Ch08.pairImpulseVector (Blueprint/Ch08.lean:1382)
+原文件上下文：
+```lean
+open Set Filter MeasureTheory ProbabilityTheory MolecularDynamics
+open scoped BigOperators Topology ContDiff ENNReal NNReal Matrix
+variable {Ω : Type*} [MeasurableSpace Ω]
+variable {n : ℕ}
+```
+```lean
+def pairImpulseVector {N d : ℕ} (i j : Fin N) (v : Vec d) : ParticleConfig N d :=
+  Pi.single i v-Pi.single j v
+```
+
+### MD.Ch08.dpdNoise (Blueprint/Ch08.lean:1384)
+原文件上下文：
+```lean
+open Set Filter MeasureTheory ProbabilityTheory MolecularDynamics
+open scoped BigOperators Topology ContDiff ENNReal NNReal Matrix
+variable {Ω : Type*} [MeasurableSpace Ω]
+variable {n : ℕ}
+```
+```lean
+def dpdNoise {N d K : ℕ} (pairs : Fin K → Fin N × Fin N) (σ : ℝ) (wR : ℝ → ℝ)
+    (q : ParticleConfig N d) (k : Fin K) : ParticlePhase N d :=
+  (0,pairImpulseVector (pairs k).1 (pairs k).2
+    ((σ*wR (pairDistance q (pairs k).1 (pairs k).2)) • pairDirection q (pairs k).1 (pairs k).2))
+```
+
+### MD.Ch08.pairEnumeration (Blueprint/Ch08.lean:1392)
+原文件上下文：
+```lean
+open Set Filter MeasureTheory ProbabilityTheory MolecularDynamics
+open scoped BigOperators Topology ContDiff ENNReal NNReal Matrix
+variable {Ω : Type*} [MeasurableSpace Ω]
+variable {n : ℕ}
+```
+```lean
+def pairEnumeration {N K : ℕ} (pairs : Fin K → Fin N × Fin N) : Prop :=
+  (∀ k, (pairs k).1 < (pairs k).2) ∧ Function.Injective pairs ∧
+  ∀ i j, i < j → ∃ k, pairs k=(i,j)
+```
+
+### MD.Ch08.strictItoIntegral8 (Blueprint/Ch08.lean:1414)
+原文件上下文：
+```lean
+open Set Filter MeasureTheory ProbabilityTheory MolecularDynamics
+open scoped BigOperators Topology ContDiff ENNReal NNReal Matrix
+variable {Ω : Type*} [MeasurableSpace Ω]
+variable {n : ℕ}
+```
+```lean
+def strictItoIntegral8 (P : Measure Ω) (W g : ℝ → Ω → ℝ) (T : ℝ) (Y : Ω → ℝ) : Prop :=
+  (∀ k, MemLp (MolecularDynamics.Chapter06Review.itoLeftSum W g T k) 2 P) ∧ MemLp Y 2 P ∧
+  Tendsto (fun k ↦ ∫ sample, (MolecularDynamics.Chapter06Review.itoLeftSum W g T k sample-Y sample)^2 ∂P)
+    atTop (𝓝 0)
+```
+
+### MD.Ch08.multiplicativeSDE8 (Blueprint/Ch08.lean:1418)
+原文件上下文：
+```lean
+open Set Filter MeasureTheory ProbabilityTheory MolecularDynamics
+open scoped BigOperators Topology ContDiff ENNReal NNReal Matrix
+variable {Ω : Type*} [MeasurableSpace Ω]
+variable {n : ℕ}
+```
+```lean
+def multiplicativeSDE8 {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
+    [MeasurableSpace E] [BorelSpace E] (P : Measure Ω) (r : ℕ)
+    (W : ℝ → Ω → Vec r) (X : ℝ → Ω → E) (x0 : E) (a : E → E) (B : E → Fin r → E) : Prop :=
+  independentWiener P r W ∧ Measurable (Function.uncurry X) ∧ (∀ j, Measurable (fun x ↦ B x j)) ∧
+  (∀ᵐ sample ∂P, ContinuousOn (fun t ↦ X t sample) (Ici 0) ∧ X 0 sample=x0) ∧
+  (∀ t : ℝ, 0 ≤ t → Measurable[MeasurableSpace.comap
+    (fun (sample : Ω) (s : Icc (0 : ℝ) t) ↦ W s sample) inferInstance] (X t)) ∧
+  ∀ T, 0 ≤ T → (∀ᵐ sample ∂P, IntervalIntegrable (fun s ↦ a (X s sample)) volume 0 T) ∧
+    ∀ ell : E →L[ℝ] ℝ, ∃ Y : Fin r → Ω → ℝ,
+      (∀ j, strictItoIntegral8 P (fun s sample ↦ W s sample j)
+        (fun s sample ↦ ell (B (X s sample) j)) T (Y j)) ∧
+      ∀ᵐ sample ∂P, ell (X T sample-x0-(∫ s in (0 : ℝ)..T, a (X s sample)))=∑ j, Y j sample
+```
+
+### MD.Ch08.dpdDrift (Blueprint/Ch08.lean:1430)
+原文件上下文：
+```lean
+open Set Filter MeasureTheory ProbabilityTheory MolecularDynamics
+open scoped BigOperators Topology ContDiff ENNReal NNReal Matrix
+variable {Ω : Type*} [MeasurableSpace Ω]
+variable {n : ℕ}
+```
+```lean
+def dpdDrift {N d : ℕ} (m : Fin N → ℝ) (α rc γ : ℝ) (wD : ℝ → ℝ)
+    (z : ParticlePhase N d) : ParticlePhase N d :=
+  ((fun i ↦ (m i)⁻¹ • z.2 i),dpdConservative α rc z.1+dpdDissipative m γ wD z.1 z.2)
+```
+
+### MD.Ch08.isDPDSolution (Blueprint/Ch08.lean:1433)
+原文件上下文：
+```lean
+open Set Filter MeasureTheory ProbabilityTheory MolecularDynamics
+open scoped BigOperators Topology ContDiff ENNReal NNReal Matrix
+variable {Ω : Type*} [MeasurableSpace Ω]
+variable {n : ℕ}
+```
+```lean
+def isDPDSolution {N d K : ℕ} (m : Fin N → ℝ) (α rc γ σ θ : ℝ) (wD wR : ℝ → ℝ)
+    (pairs : Fin K → Fin N × Fin N) (P : Measure Ω) (W : ℝ → Ω → Vec K)
+    (X : ℝ → Ω → ParticlePhase N d) (x0 : ParticlePhase N d) : Prop :=
+  0 < N ∧ 0 < d ∧ (∀ i, 0 < m i) ∧ 0 < rc ∧ 0 ≤ α ∧ 0 ≤ γ ∧ 0 < θ ∧
+  (∀ r, wD r=(wR r)^2) ∧ σ^2=2*γ*θ ∧ pairEnumeration pairs ∧
+  (∀ t, 0 ≤ t → ∀ᵐ sample ∂P, ∀ i j, i ≠ j → 0 < pairDistance (X t sample).1 i j) ∧
+  multiplicativeSDE8 P K W X x0 (dpdDrift m α rc γ wD)
+    (fun z ↦ dpdNoise pairs σ wR z.1)
+```
+
+### MolecularDynamics.Chapter05Review.E (MolecularDynamics/Chapter05/ReviewDefinitions.lean:18)
+原文件上下文：
+```lean
+open Set Filter MeasureTheory Matrix
+open scoped BigOperators Topology ENNReal
+```
+```lean
+abbrev E (n : ℕ) := EuclideanSpace ℝ (Fin n)
+```
+
+### MolecularDynamics.Chapter06Review.itoLeftSum (MolecularDynamics/Chapter06/ReviewDefinitions.lean:54)
+原文件上下文：
+```lean
+open Set Filter MeasureTheory ProbabilityTheory
+open scoped BigOperators Topology ContDiff ENNReal NNReal
+local instance : MeasureSpace UnitAddCircle := ⟨AddCircle.haarAddCircle⟩
+```
+```lean
+def itoLeftSum {Ω : Type*} (W g : ℝ → Ω → ℝ) (T : ℝ) (K : ℕ) (sample : Ω) : ℝ :=
+  ∑ k ∈ Finset.range K, g ((k : ℝ) * T / K) sample *
+    (W (((k : ℝ)+1) * T / K) sample - W ((k : ℝ) * T / K) sample)
+```

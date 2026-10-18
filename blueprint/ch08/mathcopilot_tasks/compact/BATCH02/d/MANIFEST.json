@@ -1,0 +1,101 @@
+{
+  "batch": "BATCH02",
+  "subtask": "BATCH02d",
+  "source_ids": [
+    "MD-8.1.2.1-NoseHamiltoniansPrinted"
+  ],
+  "input_sha256": {
+    "Blueprint/Ch08.lean": "2800812fadd8e2557013f1941e4570401f7903d46f44baf07e23d5531da22a72",
+    "blueprint/ch08/ch08_source.json": "9b994b0f64cd22c85c2ad4123fbfdbd064bd7a6d070fe13b721794432f9f7a63",
+    "BATCH02d_PAGES.pdf": "710c7b16c11761b8fa82e28f2cc1eb21ef07122c8b4353bf48b76bfdac77b0e6"
+  },
+  "page_mapping": [
+    {
+      "attachment_page": 1,
+      "original_pdf_page": 355,
+      "printed_page": 334
+    }
+  ],
+  "definition_excerpts": [
+    {
+      "full_name": "MD.Ch08.Vec",
+      "kind": "abbrev",
+      "path": "Blueprint/Ch08.lean",
+      "line": 17,
+      "code_sha256": "6f4b254a8a7cc4115fb35265b77caa663bdd18567cd1e664cc5bbd080d02fcff"
+    },
+    {
+      "full_name": "MD.Ch08.thermostatParameters",
+      "kind": "def",
+      "path": "Blueprint/Ch08.lean",
+      "line": 63,
+      "code_sha256": "e270d7f3278cd4087efb4fb6de4f2ba99959cae64baec460ebb813f9d01cc285"
+    },
+    {
+      "full_name": "MD.Ch08.kineticTwice",
+      "kind": "def",
+      "path": "Blueprint/Ch08.lean",
+      "line": 65,
+      "code_sha256": "74e9a17210c40ab25bfb4d66c78bf295ed45ebc01a50292e3e9961df7d0ced46"
+    },
+    {
+      "full_name": "MD.Ch08.noseHamiltonian",
+      "kind": "def",
+      "path": "Blueprint/Ch08.lean",
+      "line": 146,
+      "code_sha256": "0e2f75140b43c552665b5c1bc70f0ff69b19801e77faeb5513215a20e78bbc96"
+    },
+    {
+      "full_name": "MD.Ch08.npHamiltonian",
+      "kind": "def",
+      "path": "Blueprint/Ch08.lean",
+      "line": 149,
+      "code_sha256": "559e03768e0bd5e9ee808d76e3f0c8654fd5210345aceb89b1c249cf89c46136"
+    },
+    {
+      "full_name": "MD.Ch08.nosePoincarePrinted",
+      "kind": "theorem",
+      "path": "Blueprint/Ch08.lean",
+      "line": 152,
+      "code_sha256": "b7ad3b16f0eb14f2b62e7c5fc26cd852e35b9ff457f4afcf377112eedfe88aae"
+    },
+    {
+      "full_name": "MD.Ch08.nosePoincare_corrected",
+      "kind": "theorem",
+      "path": "Blueprint/Ch08.lean",
+      "line": 156,
+      "code_sha256": "6ef5e097547c67a01c895176f38c2a1fc7bbb101138262788cc18531bb7279a6"
+    },
+    {
+      "full_name": "MolecularDynamics.Chapter02Review.Q",
+      "kind": "abbrev",
+      "path": "MolecularDynamics/Chapter02/ReviewDefinitions.lean",
+      "line": 17,
+      "code_sha256": "d01d4518aed3668e7c982afee1cd3820fb858a94438e5b8960aa0557f5a57ef1"
+    },
+    {
+      "full_name": "MolecularDynamics.Chapter04Review.Q",
+      "kind": "abbrev",
+      "path": "MolecularDynamics/Chapter04/ReviewDefinitions.lean",
+      "line": 15,
+      "code_sha256": "d01d4518aed3668e7c982afee1cd3820fb858a94438e5b8960aa0557f5a57ef1"
+    }
+  ],
+  "validation": {
+    "project_constant_closure": "PASS",
+    "missing_project_definitions": [],
+    "full_page_render_equality_dpi": 72,
+    "website_submitted": false
+  },
+  "files": {
+    "PASTE.txt": {
+      "bytes": 12147,
+      "sha256": "000cdef0089f04375d4e8b583db9a5dc347b31f536a9db9b1dea34c3c5d64947"
+    },
+    "BATCH02d_PAGES.pdf": {
+      "bytes": 81214,
+      "sha256": "710c7b16c11761b8fa82e28f2cc1eb21ef07122c8b4353bf48b76bfdac77b0e6"
+    }
+  },
+  "total_task_bytes": 96654
+}

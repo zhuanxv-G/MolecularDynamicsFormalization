@@ -1,0 +1,193 @@
+以附件/PASTE 为准，忽略 /workspace 旧文件；Mathlib 定义按标准含义采信。
+本任务只审本条：原文转录、对象资格、定义体、量词、全部结论及[EXTRA]是否一致；Lean编译不代替语义审阅。
+Lean/Mathlib均4.34.0。原页PDF映射：[376]；印刷页=[355].
+input_sha256请原样回显：
+{
+  "Blueprint/Ch08.lean": "2800812fadd8e2557013f1941e4570401f7903d46f44baf07e23d5531da22a72",
+  "blueprint/ch08/ch08_source.json": "9b994b0f64cd22c85c2ad4123fbfdbd064bd7a6d070fe13b721794432f9f7a63",
+  "BATCH07a_PAGES.pdf": "35714674d083abb647ca6ff336d5e9820226a978c7c0704d40a70082b238b73a"
+}
+用代码将JSON对象(batch,input_sha256,items)写到 /workspace/.mathcopilot/reviews/ch08/BATCH07a_review.json；items仅含本source_id。
+items字段：source_id、verdict(PASS/FAIL/NEEDS_HUMAN)、transcription、semantic_review、counterexample、suggested_fix、printed_version、corrected_version。逐版区分原文疑误和修正版结论；缺材料必须具体指出，不猜测。写后json.loads自检，最后仅回复路径及统计。
+
+## 原文JSON
+```json
+{
+  "source_id": "MD-8.4.4-VelocityRescaling",
+  "kind": "unnumbered_claim",
+  "label": null,
+  "section": "8.4.4",
+  "printed_page": "355",
+  "pdf_page": "376",
+  "statement_latex": "dq=pdt, dp=-∇Udt-Ψ(K)pdt+√(2k_BTΦ(K))p dW; Ψ=(2K-(1+N_d)k_BT)Φ-2k_BTKΦ′. Φ(K)=γ_VR/(2K).",
+  "statement_verbatim": "8.4\nErgodic Stochastic-Dynamic Thermostats\n355\nwhere K is the kinetic energy, and the mean auxiliary variable \u0012\nN\u0012.t/ D\nZ\nD\u0003R\n\u0012\u0005.q; p; \u0012; t/d!d\u0012:\n\u0005 that appears here is the normalized pre-equilibrium density which evolves\naccording to the Fokker-Planck equation of the extended Nosé-Hoover-Langevin\nsystem.\nIt is then possible to perform a local stability analysis to characterize the\nconvergence to equilibrium of N\u000e and N\u0012 to the equilibrium .NdkBT; 0/. Although\nthe analysis makes certain stringent assumptions they are veriﬁed in [225] for a\nLennard-Jones molecular system.\n8.4.4\nVelocity Rescaling\nAn alternative stochastic-dynamical method for thermostatting molecular dynamics\nis the stochastic velocity rescaling method proposed by Bussi and collaborators [60,\n63] and somewhat generalized in [225]. The equations are (for the case M D I,\nconsidered for simplicity):\ndq D pdt\ndp D \u0003rU.q/ dt \u0003 \f.K/p dt C\np\n2kBT˚.K/pdW;\nwhere W.t/ is a single Wiener process, ˚ is an arbitrary smooth positive function\nand \f is deﬁned by\n\f.K/\ndef\nD .2K \u0003 .1 C Nd/kBT/˚.K/ \u0003 2kBTK d˚\ndK :\nWith these deﬁnitions, the method preserves the canonical probability density \u0005ˇ.\nWe do not prove the ergodicity of the method here, but expect that it would follow\nby an analysis similar to that given above for Nosé-Hoover-Langevin.\nThe original proposal of Bussi et al. had\n˚.K/ D \nVR\n2K ;\nso that\n\f.K/ D .1 \u0003 .Nd \u0003 1/kBT=2K/ \nVR;\nwhere \nVR is a positive constant.\nFor the more general case, the required conditions on ˚ are as follows:\nK˚.K/ is bounded as K ! 0;\n˚.K/ grows at most polynomially as K ! 1:\n",
+  "verbatim_scope": "完整对应原页文字层，逐字保留；本条数学成分由statement_latex及statement_scope定位。",
+  "proof_latex": null,
+  "proof_note": "对应原页推导逐字保存在statement_verbatim/original_page_text；排版以原页PDF为准。",
+  "original_page_text": [
+    {
+      "pdf_page": 376,
+      "printed_page": 355,
+      "text": "8.4\nErgodic Stochastic-Dynamic Thermostats\n355\nwhere K is the kinetic energy, and the mean auxiliary variable \u0012\nN\u0012.t/ D\nZ\nD\u0003R\n\u0012\u0005.q; p; \u0012; t/d!d\u0012:\n\u0005 that appears here is the normalized pre-equilibrium density which evolves\naccording to the Fokker-Planck equation of the extended Nosé-Hoover-Langevin\nsystem.\nIt is then possible to perform a local stability analysis to characterize the\nconvergence to equilibrium of N\u000e and N\u0012 to the equilibrium .NdkBT; 0/. Although\nthe analysis makes certain stringent assumptions they are veriﬁed in [225] for a\nLennard-Jones molecular system.\n8.4.4\nVelocity Rescaling\nAn alternative stochastic-dynamical method for thermostatting molecular dynamics\nis the stochastic velocity rescaling method proposed by Bussi and collaborators [60,\n63] and somewhat generalized in [225]. The equations are (for the case M D I,\nconsidered for simplicity):\ndq D pdt\ndp D \u0003rU.q/ dt \u0003 \f.K/p dt C\np\n2kBT˚.K/pdW;\nwhere W.t/ is a single Wiener process, ˚ is an arbitrary smooth positive function\nand \f is deﬁned by\n\f.K/\ndef\nD .2K \u0003 .1 C Nd/kBT/˚.K/ \u0003 2kBTK d˚\ndK :\nWith these deﬁnitions, the method preserves the canonical probability density \u0005ˇ.\nWe do not prove the ergodicity of the method here, but expect that it would follow\nby an analysis similar to that given above for Nosé-Hoover-Langevin.\nThe original proposal of Bussi et al. had\n˚.K/ D \nVR\n2K ;\nso that\n\f.K/ D .1 \u0003 .Nd \u0003 1/kBT=2K/ \nVR;\nwhere \nVR is a positive constant.\nFor the more general case, the required conditions on ˚ are as follows:\nK˚.K/ is bounded as K ! 0;\n˚.K/ grows at most polynomially as K ! 1:\n"
+    }
+  ],
+  "numbered_equations": [],
+  "transcription_note": "文字层逐字保留；数学排版另行转写，原页中的特殊字形编码不静默替换。PDF420仅取Exercises之前。",
+  "context_notation": [],
+  "extra_assumptions": [
+    "Φ在K>0光滑正，KΦ在0附近有界且多项式增长；原始Φ在K=0奇异，未声称全空间光滑扩散或遍历性。"
+  ],
+  "issues": [],
+  "statement_scope": "实际漂移扩散、Φ有效性和原始Φ对应Ψ的化简目标；没有完整乘性SDE解规格。",
+  "lean_decl": "MD.Ch08.rescalingPsi",
+  "lean_declarations": [
+    "MD.Ch08.rescalingPsi",
+    "MD.Ch08.rescalingDrift",
+    "MD.Ch08.rescalingNoise",
+    "MD.Ch08.originalRescalingPhi",
+    "MD.Ch08.rescalingAdmissible",
+    "MD.Ch08.rescalingPsi_original"
+  ],
+  "source_page_verification": "见source_page_checks.json，已目视核对本条原页。",
+  "repair_log": [],
+  "documented_priors": []
+}
+```
+
+## 完整本条Lean
+```lean
+def rescalingPsi (Φ : ℝ → ℝ) (θ K : ℝ) : ℝ :=
+  (2*K-((n:ℝ)+1)*θ)*Φ K-2*θ*K*deriv Φ K
+def rescalingDrift (U : Vec n → ℝ) (Φ : ℝ → ℝ) (θ : ℝ) (z : Phase n) : Phase n :=
+  (z.2, fun i ↦ -gradient U z.1 i-rescalingPsi (n:=n) Φ θ ((∑ j, z.2 j^2)/2)*z.2 i)
+def rescalingNoise (Φ : ℝ → ℝ) (θ : ℝ) (z : Phase n) : Phase n :=
+  (0, fun i ↦ Real.sqrt (2*θ*Φ ((∑ j, z.2 j^2)/2))*z.2 i)
+def originalRescalingPhi (γ K : ℝ) : ℝ := γ/(2*K)
+def rescalingAdmissible (Φ : ℝ → ℝ) : Prop :=
+  ContDiffOn ℝ ∞ Φ (Ioi 0) ∧ (∀ K, 0 < K → 0 < Φ K) ∧
+  (∃ C ε : ℝ, 0 < ε ∧ ∀ K, 0 < K → K < ε → |K*Φ K| ≤ C) ∧
+  ∃ C : ℝ, ∃ m : ℕ, ∀ K, 1 ≤ K → |Φ K| ≤ C*K^m
+theorem rescalingPsi_original (γ θ K : ℝ) (hK : K ≠ 0) :
+    rescalingPsi (n:=n) (originalRescalingPhi γ) θ K =
+      (1-((n:ℝ)-1)*θ/(2*K))*γ := by
+  sorry
+```
+
+## 项目依赖定义体及选择规格
+以下def/abbrev/structure完整保留；定理列出完整类型，Mathlib标准定义无需摘录。
+
+### MD.Ch08.Vec (Blueprint/Ch08.lean:17)
+原文件上下文：
+```lean
+open Set Filter MeasureTheory ProbabilityTheory MolecularDynamics
+open scoped BigOperators Topology ContDiff ENNReal NNReal Matrix
+variable {Ω : Type*} [MeasurableSpace Ω]
+variable {n : ℕ}
+```
+```lean
+abbrev Vec (n : ℕ) := Fin n → ℝ
+```
+
+### MD.Ch08.Phase (Blueprint/Ch08.lean:18)
+原文件上下文：
+```lean
+open Set Filter MeasureTheory ProbabilityTheory MolecularDynamics
+open scoped BigOperators Topology ContDiff ENNReal NNReal Matrix
+variable {Ω : Type*} [MeasurableSpace Ω]
+variable {n : ℕ}
+```
+```lean
+abbrev Phase (n : ℕ) := Vec n × Vec n
+```
+
+### MD.Ch08.gradient (Blueprint/Ch08.lean:20)
+原文件上下文：
+```lean
+open Set Filter MeasureTheory ProbabilityTheory MolecularDynamics
+open scoped BigOperators Topology ContDiff ENNReal NNReal Matrix
+variable {Ω : Type*} [MeasurableSpace Ω]
+variable {n : ℕ}
+```
+```lean
+def gradient (U : Vec n → ℝ) (q : Vec n) : Vec n := fun i ↦ fderiv ℝ U q (Pi.single i 1)
+```
+
+### MD.Ch08.rescalingPsi (Blueprint/Ch08.lean:527)
+原文件上下文：
+```lean
+open Set Filter MeasureTheory ProbabilityTheory MolecularDynamics
+open scoped BigOperators Topology ContDiff ENNReal NNReal Matrix
+variable {Ω : Type*} [MeasurableSpace Ω]
+variable {n : ℕ}
+```
+```lean
+def rescalingPsi (Φ : ℝ → ℝ) (θ K : ℝ) : ℝ :=
+  (2*K-((n:ℝ)+1)*θ)*Φ K-2*θ*K*deriv Φ K
+```
+
+### MD.Ch08.rescalingDrift (Blueprint/Ch08.lean:529)
+原文件上下文：
+```lean
+open Set Filter MeasureTheory ProbabilityTheory MolecularDynamics
+open scoped BigOperators Topology ContDiff ENNReal NNReal Matrix
+variable {Ω : Type*} [MeasurableSpace Ω]
+variable {n : ℕ}
+```
+```lean
+def rescalingDrift (U : Vec n → ℝ) (Φ : ℝ → ℝ) (θ : ℝ) (z : Phase n) : Phase n :=
+  (z.2, fun i ↦ -gradient U z.1 i-rescalingPsi (n:=n) Φ θ ((∑ j, z.2 j^2)/2)*z.2 i)
+```
+
+### MD.Ch08.rescalingNoise (Blueprint/Ch08.lean:531)
+原文件上下文：
+```lean
+open Set Filter MeasureTheory ProbabilityTheory MolecularDynamics
+open scoped BigOperators Topology ContDiff ENNReal NNReal Matrix
+variable {Ω : Type*} [MeasurableSpace Ω]
+variable {n : ℕ}
+```
+```lean
+def rescalingNoise (Φ : ℝ → ℝ) (θ : ℝ) (z : Phase n) : Phase n :=
+  (0, fun i ↦ Real.sqrt (2*θ*Φ ((∑ j, z.2 j^2)/2))*z.2 i)
+```
+
+### MD.Ch08.originalRescalingPhi (Blueprint/Ch08.lean:533)
+原文件上下文：
+```lean
+open Set Filter MeasureTheory ProbabilityTheory MolecularDynamics
+open scoped BigOperators Topology ContDiff ENNReal NNReal Matrix
+variable {Ω : Type*} [MeasurableSpace Ω]
+variable {n : ℕ}
+```
+```lean
+def originalRescalingPhi (γ K : ℝ) : ℝ := γ/(2*K)
+```
+
+### MD.Ch08.rescalingAdmissible (Blueprint/Ch08.lean:534)
+原文件上下文：
+```lean
+open Set Filter MeasureTheory ProbabilityTheory MolecularDynamics
+open scoped BigOperators Topology ContDiff ENNReal NNReal Matrix
+variable {Ω : Type*} [MeasurableSpace Ω]
+variable {n : ℕ}
+```
+```lean
+def rescalingAdmissible (Φ : ℝ → ℝ) : Prop :=
+  ContDiffOn ℝ ∞ Φ (Ioi 0) ∧ (∀ K, 0 < K → 0 < Φ K) ∧
+  (∃ C ε : ℝ, 0 < ε ∧ ∀ K, 0 < K → K < ε → |K*Φ K| ≤ C) ∧
+  ∃ C : ℝ, ∃ m : ℕ, ∀ K, 1 ≤ K → |Φ K| ≤ C*K^m
+```
+
+### MD.Ch08.rescalingPsi_original (Blueprint/Ch08.lean:538)
+原文件上下文：
+```lean
+open Set Filter MeasureTheory ProbabilityTheory MolecularDynamics
+open scoped BigOperators Topology ContDiff ENNReal NNReal Matrix
+variable {Ω : Type*} [MeasurableSpace Ω]
+variable {n : ℕ}
+```
+```lean
+theorem rescalingPsi_original (γ θ K : ℝ) (hK : K ≠ 0) :
+    rescalingPsi (n:=n) (originalRescalingPhi γ) θ K =
+      (1-((n:ℝ)-1)*θ/(2*K))*γ
+```

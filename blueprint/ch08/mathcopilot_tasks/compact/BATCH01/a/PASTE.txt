@@ -1,0 +1,222 @@
+以附件/PASTE 为准，忽略 /workspace 旧文件；Mathlib 定义按标准含义采信。
+本任务只审本条：原文转录、对象资格、定义体、量词、全部结论及[EXTRA]是否一致；Lean编译不代替语义审阅。
+Lean/Mathlib均4.34.0。原页PDF映射：[350, 351]；印刷页=[329, 330].
+input_sha256请原样回显：
+{
+  "Blueprint/Ch08.lean": "2800812fadd8e2557013f1941e4570401f7903d46f44baf07e23d5531da22a72",
+  "blueprint/ch08/ch08_source.json": "9b994b0f64cd22c85c2ad4123fbfdbd064bd7a6d070fe13b721794432f9f7a63",
+  "BATCH01a_PAGES.pdf": "3e9d857a277ac0891ceaf6ac03e63ac2bd7a5e9fb5cd8f9ab0944811d8497f7f"
+}
+用代码将JSON对象(batch,input_sha256,items)写到 /workspace/.mathcopilot/reviews/ch08/BATCH01a_review.json；items仅含本source_id。
+items字段：source_id、verdict(PASS/FAIL/NEEDS_HUMAN)、transcription、semantic_review、counterexample、suggested_fix、printed_version、corrected_version。逐版区分原文疑误和修正版结论；缺材料必须具体指出，不猜测。写后json.loads自检，最后仅回复路径及统计。
+
+## 原文JSON
+```json
+{
+  "source_id": "MD-8.1-CanonicalCorrelation",
+  "kind": "definition",
+  "label": null,
+  "section": "8.1",
+  "printed_page": "329–330",
+  "pdf_page": "350–351",
+  "statement_latex": "Av_β(φ)=∫φρ_β/∫ρ_β, ρ_β=exp(-βH); C_β(τ)=∫ A(z)·B(F^H_τ(z))ρ_β dω / ∫ A(z)·B(z)ρ_β dω. Thus C(0)=1.",
+  "statement_verbatim": "Chapter 8\nExtended Variable Methods\nIn the previous chapter we described numerical methods for solving the equations\nof Langevin dynamics, a system of stochastic differential equations that sample the\ncanonical ensemble. The methods allow us to compute averages of the form\nAvˇ.\b.q; p// D\nR\nD \b.q; p/\u0005ˇ.q; p/d!\nR\nD \u0005ˇ.q; p/d!\n;\nwhere \u0005ˇ D exp.\u0003ˇH/, and H is the system Hamiltonian. In this chapter we\nextend the range of systems that can be used to accomplish this task using methods\nbased on the incorporation of auxiliary variables. We also consider schemes for\nsampling alternative thermodynamic ensembles, for example those deﬁned by\nconstant number of atoms N, pressure P and temperature T. In some of the methods,\nbased on purely deterministic models, the ergodic property may be compromised, so\nan important issue is to design schemes that restore this. We will focus on methods\nthat introduce random processes in direct contact with the auxiliary variables.\nBesides canonical or conﬁgurational sampling, another common purpose of\nmolecular simulation is the calculation of a dynamical (time-dependent) quantity\nsuch as the rearrangement of a molecular group over time or a diffusion rate. The\nonly dynamical calculations that make sense in the context of molecular modelling,\nwhere trajectories are chaotic, are those that involve some sort of average. We\nconsider this average in a thermodynamic sense and assume that the calculation can\nbe formulated as the determination of the canonically weighted correlation between\ntwo quantities evaluated at different times, for example\nCˇ.\u0002/ D\nR\nD A.z/ \u0002 B.F H\n\u0002 .z//\u0005ˇd!\nR\nD A.z/ \u0002 B.z/\u0005ˇd!\n:\n© Springer International Publishing Switzerland 2015\nB. Leimkuhler, C. Matthews, Molecular Dynamics, Interdisciplinary Applied\nMathematics 39, DOI 10.1007/978-3-319-16375-8_8\n329\n\n330\n8\nExtended Variable Methods\nF H\nt represents the ﬂow map of Hamiltonian dynamics. Thus C.0/ D 1. At large \u0002,\nif the system is “mixing,” and loses memory of its starting point, hence\nAvˇ\n\nA.z/ \u0002 B.F H\n\u0002 .z//\n\u000b\n\u0007 Avˇ ŒA.z/\t \u0002 Avˇ ŒB.z/\t\nis approximately independent of \u0002. Thus the correlation should approximately\nvanish at large time, provided the scalar product of the average of A and the aver-\nage B vanishes. Computing an autocorrelation function Cˇ.\u0002/ normally involves\nperforming a stationary thermodynamic calculation in which the observable itself\ndepends on a Hamiltonian dynamics calculation.\nThere is no reason for taking the averages solely with respect to \u0005ˇ. We could\nin effect assume any prior distribution for the initial conditions. Our choice of\nGibbs statistics in deﬁning autocorrelation is made for purely practical reasons—\nit simpliﬁes the study of the problem by allowing us to bring to bear the common\ntechniques of thermodynamic sampling. In some cases, the Gibbs weight is ignored\nand the calculation is performed as an average two point correlation along a single\ntrajectory. In some cases this calculation is performed using a single thermostatted\nmolecular dynamics trajectory. Such a calculation is only justiﬁed when the\nthermostat is “weakly coupled” to the physical system. In this setup, the key to\naccurately computing averaged dynamics of molecular systems is to use thermostat\ntechniques that minimally perturb the physical dynamics. We will brieﬂy discuss\nhow this may be achieved while maintaining the ergodic property.\n8.1\nDynamics-Based Thermostat Techniques\nDeterministic trajectories can sometimes be used to sample the canonical measure.\nA very simple technique of this type is Hamiltonian dynamics itself.\nLet a Hamiltonian H.q; p/ be given and let L be its Liouvillian\nL D rpH \u0002 rq \u0003 rqH \u0002 rp:\nRecall from Chap. 5 that, as the dynamics automatically preserves functions of H,\nthe Liouvillian satisﬁes L'.H/ D 0. We also know that for Hamiltonian dynamics\nL is skew-adjoint, i.e., L\u0004 D \u0003L which implies that L\u0004 .H/ D 0. Hence any\ndensity which is a function of H will be preserved, and this includes the canonical\none .H/ D exp.\u0003ˇH/.\nIf we select a set of points at random from the canonical distribution, then\ninitiate trajectories of Hamiltonian dynamics from each of these points, the points\nwill remain Gibbs-distributed over time. If the paths themselves are ergodic on the\nsurfaces of constant energy H D E then the collection of paths may provide a usable\nsampling of the canonical distribution. Such a sampling technique relies on having\nthe means of choosing initial points from the canonical distribution; as this is the\n",
+  "verbatim_scope": "完整对应原页文字层，逐字保留；本条数学成分由statement_latex及statement_scope定位。",
+  "proof_latex": null,
+  "proof_note": "对应原页推导逐字保存在statement_verbatim/original_page_text；排版以原页PDF为准。",
+  "original_page_text": [
+    {
+      "pdf_page": 350,
+      "printed_page": 329,
+      "text": "Chapter 8\nExtended Variable Methods\nIn the previous chapter we described numerical methods for solving the equations\nof Langevin dynamics, a system of stochastic differential equations that sample the\ncanonical ensemble. The methods allow us to compute averages of the form\nAvˇ.\b.q; p// D\nR\nD \b.q; p/\u0005ˇ.q; p/d!\nR\nD \u0005ˇ.q; p/d!\n;\nwhere \u0005ˇ D exp.\u0003ˇH/, and H is the system Hamiltonian. In this chapter we\nextend the range of systems that can be used to accomplish this task using methods\nbased on the incorporation of auxiliary variables. We also consider schemes for\nsampling alternative thermodynamic ensembles, for example those deﬁned by\nconstant number of atoms N, pressure P and temperature T. In some of the methods,\nbased on purely deterministic models, the ergodic property may be compromised, so\nan important issue is to design schemes that restore this. We will focus on methods\nthat introduce random processes in direct contact with the auxiliary variables.\nBesides canonical or conﬁgurational sampling, another common purpose of\nmolecular simulation is the calculation of a dynamical (time-dependent) quantity\nsuch as the rearrangement of a molecular group over time or a diffusion rate. The\nonly dynamical calculations that make sense in the context of molecular modelling,\nwhere trajectories are chaotic, are those that involve some sort of average. We\nconsider this average in a thermodynamic sense and assume that the calculation can\nbe formulated as the determination of the canonically weighted correlation between\ntwo quantities evaluated at different times, for example\nCˇ.\u0002/ D\nR\nD A.z/ \u0002 B.F H\n\u0002 .z//\u0005ˇd!\nR\nD A.z/ \u0002 B.z/\u0005ˇd!\n:\n© Springer International Publishing Switzerland 2015\nB. Leimkuhler, C. Matthews, Molecular Dynamics, Interdisciplinary Applied\nMathematics 39, DOI 10.1007/978-3-319-16375-8_8\n329\n"
+    },
+    {
+      "pdf_page": 351,
+      "printed_page": 330,
+      "text": "330\n8\nExtended Variable Methods\nF H\nt represents the ﬂow map of Hamiltonian dynamics. Thus C.0/ D 1. At large \u0002,\nif the system is “mixing,” and loses memory of its starting point, hence\nAvˇ\n\nA.z/ \u0002 B.F H\n\u0002 .z//\n\u000b\n\u0007 Avˇ ŒA.z/\t \u0002 Avˇ ŒB.z/\t\nis approximately independent of \u0002. Thus the correlation should approximately\nvanish at large time, provided the scalar product of the average of A and the aver-\nage B vanishes. Computing an autocorrelation function Cˇ.\u0002/ normally involves\nperforming a stationary thermodynamic calculation in which the observable itself\ndepends on a Hamiltonian dynamics calculation.\nThere is no reason for taking the averages solely with respect to \u0005ˇ. We could\nin effect assume any prior distribution for the initial conditions. Our choice of\nGibbs statistics in deﬁning autocorrelation is made for purely practical reasons—\nit simpliﬁes the study of the problem by allowing us to bring to bear the common\ntechniques of thermodynamic sampling. In some cases, the Gibbs weight is ignored\nand the calculation is performed as an average two point correlation along a single\ntrajectory. In some cases this calculation is performed using a single thermostatted\nmolecular dynamics trajectory. Such a calculation is only justiﬁed when the\nthermostat is “weakly coupled” to the physical system. In this setup, the key to\naccurately computing averaged dynamics of molecular systems is to use thermostat\ntechniques that minimally perturb the physical dynamics. We will brieﬂy discuss\nhow this may be achieved while maintaining the ergodic property.\n8.1\nDynamics-Based Thermostat Techniques\nDeterministic trajectories can sometimes be used to sample the canonical measure.\nA very simple technique of this type is Hamiltonian dynamics itself.\nLet a Hamiltonian H.q; p/ be given and let L be its Liouvillian\nL D rpH \u0002 rq \u0003 rqH \u0002 rp:\nRecall from Chap. 5 that, as the dynamics automatically preserves functions of H,\nthe Liouvillian satisﬁes L'.H/ D 0. We also know that for Hamiltonian dynamics\nL is skew-adjoint, i.e., L\u0004 D \u0003L which implies that L\u0004 .H/ D 0. Hence any\ndensity which is a function of H will be preserved, and this includes the canonical\none .H/ D exp.\u0003ˇH/.\nIf we select a set of points at random from the canonical distribution, then\ninitiate trajectories of Hamiltonian dynamics from each of these points, the points\nwill remain Gibbs-distributed over time. If the paths themselves are ergodic on the\nsurfaces of constant energy H D E then the collection of paths may provide a usable\nsampling of the canonical distribution. Such a sampling technique relies on having\nthe means of choosing initial points from the canonical distribution; as this is the\n"
+    }
+  ],
+  "numbered_equations": [],
+  "transcription_note": "文字层逐字保留；数学排版另行转写，原页中的特殊字形编码不静默替换。PDF420仅取Exercises之前。",
+  "context_notation": [],
+  "extra_assumptions": [
+    "相关分母非零才有C(0)=1；向量观测的点积由标量乘积表示，其余分量情形未展开。"
+  ],
+  "issues": [],
+  "statement_scope": "规范平均、标量相关函数及零时归一；混合时的大时间极限定性说明另列。",
+  "lean_decl": "MD.Ch08.Vec",
+  "lean_declarations": [
+    "MD.Ch08.Vec",
+    "MD.Ch08.Phase",
+    "MD.Ch08.dot",
+    "MD.Ch08.gradient",
+    "MD.Ch08.gibbsWeight",
+    "MD.Ch08.canonicalAverage",
+    "MD.Ch08.probabilityDensity",
+    "MD.Ch08.correlation",
+    "MD.Ch08.correlation_zero"
+  ],
+  "source_page_verification": "见source_page_checks.json，已目视核对本条原页。",
+  "repair_log": [],
+  "documented_priors": []
+}
+```
+
+## 完整本条Lean
+```lean
+abbrev Vec (n : ℕ) := Fin n → ℝ
+abbrev Phase (n : ℕ) := Vec n × Vec n
+def dot (v w : Vec n) : ℝ := ∑ i, v i * w i
+def gradient (U : Vec n → ℝ) (q : Vec n) : Vec n := fun i ↦ fderiv ℝ U q (Pi.single i 1)
+def gibbsWeight {E : Type*} (H : E → ℝ) (β : ℝ) (z : E) : ℝ := Real.exp (-β * H z)
+def canonicalAverage {E : Type*} [MeasurableSpace E] (μ : Measure E)
+    (ρ g : E → ℝ) : ℝ := (∫ z, g z * ρ z ∂μ) / ∫ z, ρ z ∂μ
+def probabilityDensity {E : Type*} [MeasurableSpace E] (μ : Measure E) (ρ : E → ℝ) : Prop :=
+  (∀ z, 0 ≤ ρ z) ∧ Integrable ρ μ ∧ ∫ z, ρ z ∂μ = 1
+def correlation {E : Type*} [MeasurableSpace E] (μ : Measure E) (ρ A B : E → ℝ)
+    (flow : ℝ → E → E) (t : ℝ) : ℝ :=
+  (∫ z, A z * B (flow t z) * ρ z ∂μ) / ∫ z, A z * B z * ρ z ∂μ
+theorem correlation_zero {E : Type*} [MeasurableSpace E] (μ : Measure E)
+    (ρ A B : E → ℝ) (flow : ℝ → E → E) (h0 : flow 0 = id)
+    (hden : (∫ z, A z * B z * ρ z ∂μ) ≠ 0) : correlation μ ρ A B flow 0 = 1 := by
+  simp [correlation, h0, hden]
+```
+
+## 项目依赖定义体及选择规格
+以下def/abbrev/structure完整保留；定理列出完整类型，Mathlib标准定义无需摘录。
+
+### MD.Ch08.Vec (Blueprint/Ch08.lean:17)
+原文件上下文：
+```lean
+open Set Filter MeasureTheory ProbabilityTheory MolecularDynamics
+open scoped BigOperators Topology ContDiff ENNReal NNReal Matrix
+variable {Ω : Type*} [MeasurableSpace Ω]
+variable {n : ℕ}
+```
+```lean
+abbrev Vec (n : ℕ) := Fin n → ℝ
+```
+
+### MD.Ch08.Phase (Blueprint/Ch08.lean:18)
+原文件上下文：
+```lean
+open Set Filter MeasureTheory ProbabilityTheory MolecularDynamics
+open scoped BigOperators Topology ContDiff ENNReal NNReal Matrix
+variable {Ω : Type*} [MeasurableSpace Ω]
+variable {n : ℕ}
+```
+```lean
+abbrev Phase (n : ℕ) := Vec n × Vec n
+```
+
+### MD.Ch08.dot (Blueprint/Ch08.lean:19)
+原文件上下文：
+```lean
+open Set Filter MeasureTheory ProbabilityTheory MolecularDynamics
+open scoped BigOperators Topology ContDiff ENNReal NNReal Matrix
+variable {Ω : Type*} [MeasurableSpace Ω]
+variable {n : ℕ}
+```
+```lean
+def dot (v w : Vec n) : ℝ := ∑ i, v i * w i
+```
+
+### MD.Ch08.gradient (Blueprint/Ch08.lean:20)
+原文件上下文：
+```lean
+open Set Filter MeasureTheory ProbabilityTheory MolecularDynamics
+open scoped BigOperators Topology ContDiff ENNReal NNReal Matrix
+variable {Ω : Type*} [MeasurableSpace Ω]
+variable {n : ℕ}
+```
+```lean
+def gradient (U : Vec n → ℝ) (q : Vec n) : Vec n := fun i ↦ fderiv ℝ U q (Pi.single i 1)
+```
+
+### MD.Ch08.gibbsWeight (Blueprint/Ch08.lean:21)
+原文件上下文：
+```lean
+open Set Filter MeasureTheory ProbabilityTheory MolecularDynamics
+open scoped BigOperators Topology ContDiff ENNReal NNReal Matrix
+variable {Ω : Type*} [MeasurableSpace Ω]
+variable {n : ℕ}
+```
+```lean
+def gibbsWeight {E : Type*} (H : E → ℝ) (β : ℝ) (z : E) : ℝ := Real.exp (-β * H z)
+```
+
+### MD.Ch08.canonicalAverage (Blueprint/Ch08.lean:22)
+原文件上下文：
+```lean
+open Set Filter MeasureTheory ProbabilityTheory MolecularDynamics
+open scoped BigOperators Topology ContDiff ENNReal NNReal Matrix
+variable {Ω : Type*} [MeasurableSpace Ω]
+variable {n : ℕ}
+```
+```lean
+def canonicalAverage {E : Type*} [MeasurableSpace E] (μ : Measure E)
+    (ρ g : E → ℝ) : ℝ := (∫ z, g z * ρ z ∂μ) / ∫ z, ρ z ∂μ
+```
+
+### MD.Ch08.probabilityDensity (Blueprint/Ch08.lean:24)
+原文件上下文：
+```lean
+open Set Filter MeasureTheory ProbabilityTheory MolecularDynamics
+open scoped BigOperators Topology ContDiff ENNReal NNReal Matrix
+variable {Ω : Type*} [MeasurableSpace Ω]
+variable {n : ℕ}
+```
+```lean
+def probabilityDensity {E : Type*} [MeasurableSpace E] (μ : Measure E) (ρ : E → ℝ) : Prop :=
+  (∀ z, 0 ≤ ρ z) ∧ Integrable ρ μ ∧ ∫ z, ρ z ∂μ = 1
+```
+
+### MD.Ch08.correlation (Blueprint/Ch08.lean:26)
+原文件上下文：
+```lean
+open Set Filter MeasureTheory ProbabilityTheory MolecularDynamics
+open scoped BigOperators Topology ContDiff ENNReal NNReal Matrix
+variable {Ω : Type*} [MeasurableSpace Ω]
+variable {n : ℕ}
+```
+```lean
+def correlation {E : Type*} [MeasurableSpace E] (μ : Measure E) (ρ A B : E → ℝ)
+    (flow : ℝ → E → E) (t : ℝ) : ℝ :=
+  (∫ z, A z * B (flow t z) * ρ z ∂μ) / ∫ z, A z * B z * ρ z ∂μ
+```
+
+### MD.Ch08.correlation_zero (Blueprint/Ch08.lean:29)
+原文件上下文：
+```lean
+open Set Filter MeasureTheory ProbabilityTheory MolecularDynamics
+open scoped BigOperators Topology ContDiff ENNReal NNReal Matrix
+variable {Ω : Type*} [MeasurableSpace Ω]
+variable {n : ℕ}
+```
+```lean
+theorem correlation_zero {E : Type*} [MeasurableSpace E] (μ : Measure E)
+    (ρ A B : E → ℝ) (flow : ℝ → E → E) (h0 : flow 0 = id)
+    (hden : (∫ z, A z * B z * ρ z ∂μ) ≠ 0) : correlation μ ρ A B flow 0 = 1
+```
+
+### MolecularDynamics.Chapter05Review.E (MolecularDynamics/Chapter05/ReviewDefinitions.lean:18)
+原文件上下文：
+```lean
+open Set Filter MeasureTheory Matrix
+open scoped BigOperators Topology ENNReal
+```
+```lean
+abbrev E (n : ℕ) := EuclideanSpace ℝ (Fin n)
+```
+
+### MolecularDynamics.Chapter05Review.flow (MolecularDynamics/Chapter05/ReviewDefinitions.lean:23)
+原文件上下文：
+```lean
+open Set Filter MeasureTheory Matrix
+open scoped BigOperators Topology ENNReal
+```
+```lean
+def flow {n : ℕ} (f : E n → E n) (Φ : ℝ → E n → E n) : Prop :=
+  (∀ z, Φ 0 z=z) ∧ (∀ s t z, Φ (s+t) z=Φ s (Φ t z)) ∧
+  ∀ t z, HasDerivAt (fun s => Φ s z) (f (Φ t z)) t
+```

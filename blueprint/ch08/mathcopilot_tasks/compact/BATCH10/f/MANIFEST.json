@@ -1,0 +1,94 @@
+{
+  "batch": "BATCH10",
+  "subtask": "BATCH10f",
+  "source_ids": [
+    "MD-8.6.3-SINForceExactPrinted"
+  ],
+  "input_sha256": {
+    "Blueprint/Ch08.lean": "2800812fadd8e2557013f1941e4570401f7903d46f44baf07e23d5531da22a72",
+    "blueprint/ch08/ch08_source.json": "9b994b0f64cd22c85c2ad4123fbfdbd064bd7a6d070fe13b721794432f9f7a63",
+    "BATCH10f_PAGES.pdf": "0b5625a74cd4e9af1e24cff88b1783af2c1e4fbf4f5fc5b1349d265e2157500d"
+  },
+  "page_mapping": [
+    {
+      "attachment_page": 1,
+      "original_pdf_page": 393,
+      "printed_page": 372
+    }
+  ],
+  "definition_excerpts": [
+    {
+      "full_name": "MD.Ch08.Vec",
+      "kind": "abbrev",
+      "path": "Blueprint/Ch08.lean",
+      "line": 17,
+      "code_sha256": "6f4b254a8a7cc4115fb35265b77caa663bdd18567cd1e664cc5bbd080d02fcff"
+    },
+    {
+      "full_name": "MD.Ch08.sinConstraint",
+      "kind": "def",
+      "path": "Blueprint/Ch08.lean",
+      "line": 714,
+      "code_sha256": "946319fb0e80a00db3e6955a9e26729cc0e57a8bdc9c927d226f4b2e068bc287"
+    },
+    {
+      "full_name": "MD.Ch08.sinForceField",
+      "kind": "def",
+      "path": "Blueprint/Ch08.lean",
+      "line": 851,
+      "code_sha256": "56f6dcbea360fb924b253c764fd50291231ad5a5a80621e883188273d8e7063a"
+    },
+    {
+      "full_name": "MD.Ch08.sinForceAux",
+      "kind": "def",
+      "path": "Blueprint/Ch08.lean",
+      "line": 905,
+      "code_sha256": "bf8bead1a7fa8ea293b9864f0fd2f6eaaa774dc88b2ea997c869586958169177"
+    },
+    {
+      "full_name": "MD.Ch08.sinForceFlow",
+      "kind": "def",
+      "path": "Blueprint/Ch08.lean",
+      "line": 907,
+      "code_sha256": "518e8c5db26af77864aadaa46e6401e10a83163125a9b03a47312f5f4a8876db"
+    },
+    {
+      "full_name": "MD.Ch08.sinForceODEPrinted",
+      "kind": "def",
+      "path": "Blueprint/Ch08.lean",
+      "line": 911,
+      "code_sha256": "72bb07f7c5f41989c1f55130558223a4e70dddd498224416e212f51a71351e78"
+    },
+    {
+      "full_name": "MD.Ch08.sinForceODE_corrected",
+      "kind": "def",
+      "path": "Blueprint/Ch08.lean",
+      "line": 913,
+      "code_sha256": "9d92bc201e0fafd7bd9ec46e78f00fd2b82893a10af7bb9fb4a5c04775c2bed3"
+    },
+    {
+      "full_name": "MD.Ch08.sinForceFlow_solution_corrected",
+      "kind": "theorem",
+      "path": "Blueprint/Ch08.lean",
+      "line": 914,
+      "code_sha256": "c51109d1de1000874d2fcf2cf336cd38fee8f45afd52979a1f341573a9c87f3b"
+    }
+  ],
+  "validation": {
+    "project_constant_closure": "PASS",
+    "missing_project_definitions": [],
+    "full_page_render_equality_dpi": 72,
+    "website_submitted": false
+  },
+  "files": {
+    "PASTE.txt": {
+      "bytes": 10212,
+      "sha256": "89c13f7b87b513598335e716ebc057e006c379f68ce8d22bed951ab3fcc540d1"
+    },
+    "BATCH10f_PAGES.pdf": {
+      "bytes": 60541,
+      "sha256": "0b5625a74cd4e9af1e24cff88b1783af2c1e4fbf4f5fc5b1349d265e2157500d"
+    }
+  },
+  "total_task_bytes": 73721
+}

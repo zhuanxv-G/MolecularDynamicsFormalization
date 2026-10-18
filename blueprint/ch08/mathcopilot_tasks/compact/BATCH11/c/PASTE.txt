@@ -1,0 +1,146 @@
+以附件/PASTE 为准，忽略 /workspace 旧文件；Mathlib 定义按标准含义采信。
+本任务只审本条：原文转录、对象资格、定义体、量词、全部结论及[EXTRA]是否一致；Lean编译不代替语义审阅。
+Lean/Mathlib均4.34.0。原页PDF映射：[395]；印刷页=[374].
+input_sha256请原样回显：
+{
+  "Blueprint/Ch08.lean": "2800812fadd8e2557013f1941e4570401f7903d46f44baf07e23d5531da22a72",
+  "blueprint/ch08/ch08_source.json": "9b994b0f64cd22c85c2ad4123fbfdbd064bd7a6d070fe13b721794432f9f7a63",
+  "BATCH11c_PAGES.pdf": "86605d34be56d9cd2fb1bc40aa0c65ae0537968432e9b26917d90a7020c07d94"
+}
+用代码将JSON对象(batch,input_sha256,items)写到 /workspace/.mathcopilot/reviews/ch08/BATCH11c_review.json；items仅含本source_id。
+items字段：source_id、verdict(PASS/FAIL/NEEDS_HUMAN)、transcription、semantic_review、counterexample、suggested_fix、printed_version、corrected_version。逐版区分原文疑误和修正版结论；缺材料必须具体指出，不猜测。写后json.loads自检，最后仅回复路径及统计。
+
+## 原文JSON
+```json
+{
+  "source_id": "MD-8.7-GLEFluctuationDissipationPrinted",
+  "kind": "definition",
+  "label": null,
+  "section": "8.7",
+  "printed_page": "374",
+  "pdf_page": "395",
+  "statement_latex": "⟨Rᵢ(t+s)Rⱼ(t)⟩=k_BT γᵢⱼ(s)δᵢⱼ, s≥0. Γ(t)=γ(t)I in the scalar-kernel specialization. (8.59).",
+  "statement_verbatim": "374\n8\nExtended Variable Methods\nand have to be modelled as part of the simulation process. Our presentation of this\ntopic follows that of [19] and earlier works [69, 85, 204, 276] which treat the non-\nMarkovian Generalized Langevin equation as a Markov system in an extended phase\nspace.\nThe equations of Generalized Langevin dynamics are normally written in the\nform\ndq D M\u00021pdt;\n(8.57)\ndp D \u0003rU.q/dt \u0003\nt\nZ\n0\n\u0010 .t \u0003 s/p.s/dsdt C dB;\n(8.58)\nsubject to initial conditions q.0/ D q0, p.0/ D p0. Here \u0010 .t/ D .\nij.t// is a Nc \u0004 Nc\nmatrix-valued function of t which we refer to as the “memory kernel”. The term\nFd D \u0003\nt\nZ\n0\n\u0010 .t \u0003 s/p.s/dsdt\nrepresents a drag force acting on the system due to the interaction with the particles\nof the bath. dB is the increment of the colored-noise (non-Gaussian) stochastic\nprocess. Often this increment is treated formally as an impulse R.t/dt, where R\nis referred to as a “random force,” which calls to mind the origin of the stochastic\nterm as the model for interaction with a large (but ﬁnite) heat bath. We use this\nlanguage for consistency with the literature. The driving forces are correlated in a\nway that is described by the ﬂuctuation-dissipation theorem [202, 402]. This states\nthat at temperature T the components of the random forces satisfy\nhRi.t C s/Rj.t/i D kBT \nij.s/ıij;\ns \b 0:\n(8.59)\nHere, ıij is the Kronecker delta, and kB is Boltzmann’s constant.\nNumerical methods for treating (8.57)–(8.58) include calculation of the drag\nforce Fd which requires a convolution of the momenta with \u0010 .t/ and therefore\nstorage of some portion of the time-history of p. Typically we will compute a\ndiscrete sequence of p0; p1; : : : ; and so it will be necessary to store a collection\nof, say ` > 0, previous momentum vectors. This may be somewhat demanding in a\nlarge scale simulation setting. Moreover, computing R requires the generation of a\nsequence of random numbers with prescribed correlation, as speciﬁed in Eq. (8.59).\nBoth these issues may be addressed sensibly using the technique of Prony series and\nan extended variable representation\nIn the remainder of this discussion, for the purpose of simpliﬁed presentation, we\nconﬁne ourselves to the simple case of a scalar memory kernel, writing\n\u0010 .t/ D \n.t/I:\n",
+  "verbatim_scope": "完整对应原页文字层，逐字保留；本条数学成分由statement_latex及statement_scope定位。",
+  "proof_latex": null,
+  "proof_note": "对应原页推导逐字保存在statement_verbatim/original_page_text；排版以原页PDF为准。",
+  "original_page_text": [
+    {
+      "pdf_page": 395,
+      "printed_page": 374,
+      "text": "374\n8\nExtended Variable Methods\nand have to be modelled as part of the simulation process. Our presentation of this\ntopic follows that of [19] and earlier works [69, 85, 204, 276] which treat the non-\nMarkovian Generalized Langevin equation as a Markov system in an extended phase\nspace.\nThe equations of Generalized Langevin dynamics are normally written in the\nform\ndq D M\u00021pdt;\n(8.57)\ndp D \u0003rU.q/dt \u0003\nt\nZ\n0\n\u0010 .t \u0003 s/p.s/dsdt C dB;\n(8.58)\nsubject to initial conditions q.0/ D q0, p.0/ D p0. Here \u0010 .t/ D .\nij.t// is a Nc \u0004 Nc\nmatrix-valued function of t which we refer to as the “memory kernel”. The term\nFd D \u0003\nt\nZ\n0\n\u0010 .t \u0003 s/p.s/dsdt\nrepresents a drag force acting on the system due to the interaction with the particles\nof the bath. dB is the increment of the colored-noise (non-Gaussian) stochastic\nprocess. Often this increment is treated formally as an impulse R.t/dt, where R\nis referred to as a “random force,” which calls to mind the origin of the stochastic\nterm as the model for interaction with a large (but ﬁnite) heat bath. We use this\nlanguage for consistency with the literature. The driving forces are correlated in a\nway that is described by the ﬂuctuation-dissipation theorem [202, 402]. This states\nthat at temperature T the components of the random forces satisfy\nhRi.t C s/Rj.t/i D kBT \nij.s/ıij;\ns \b 0:\n(8.59)\nHere, ıij is the Kronecker delta, and kB is Boltzmann’s constant.\nNumerical methods for treating (8.57)–(8.58) include calculation of the drag\nforce Fd which requires a convolution of the momenta with \u0010 .t/ and therefore\nstorage of some portion of the time-history of p. Typically we will compute a\ndiscrete sequence of p0; p1; : : : ; and so it will be necessary to store a collection\nof, say ` > 0, previous momentum vectors. This may be somewhat demanding in a\nlarge scale simulation setting. Moreover, computing R requires the generation of a\nsequence of random numbers with prescribed correlation, as speciﬁed in Eq. (8.59).\nBoth these issues may be addressed sensibly using the technique of Prony series and\nan extended variable representation\nIn the remainder of this discussion, for the purpose of simpliﬁed presentation, we\nconﬁne ourselves to the simple case of a scalar memory kernel, writing\n\u0010 .t/ D \n.t/I:\n"
+    }
+  ],
+  "numbered_equations": [
+    "8.59"
+  ],
+  "transcription_note": "文字层逐字保留；数学排版另行转写，原页中的特殊字形编码不静默替换。PDF420仅取Exercises之前。",
+  "context_notation": [],
+  "extra_assumptions": [
+    "修正版作为单位质量下的一般矩阵协方差目标，不声称任意Γ均可实现为随机过程；正定协方差/核存在性列缺口。"
+  ],
+  "issues": [
+    "已目视核对原页PDF395：一般矩阵核后额外乘δᵢⱼ会消掉交叉相关，只在对角核/独立分量解释下成立；标量核特化没有此问题。颜色与非Gaussian不是同义条件。"
+  ],
+  "statement_scope": "Printed与一般矩阵协方差目标及标量核定义；不包含涨落耗散定理的物理推导。",
+  "lean_decl": "MD.Ch08.randomForceQualification",
+  "lean_declarations": [
+    "MD.Ch08.randomForceQualification",
+    "MD.Ch08.gleFDPrinted",
+    "MD.Ch08.gleFD_corrected",
+    "MD.Ch08.scalarMemoryMatrix"
+  ],
+  "source_page_verification": "见source_page_checks.json，已目视核对本条原页。",
+  "repair_log": [],
+  "documented_priors": []
+}
+```
+
+## 完整本条Lean
+```lean
+def randomForceQualification (P : Measure Ω) (R : ℝ → Ω → Vec n) : Prop :=
+  IsProbabilityMeasure P ∧ ∀ t, 0 ≤ t → ∀ i, MemLp (fun sample ↦ R t sample i) 2 P ∧
+    (∫ sample, R t sample i ∂P)=0
+def gleFDPrinted (P : Measure Ω) (R : ℝ → Ω → Vec n)
+    (Γ : ℝ → Matrix (Fin n) (Fin n) ℝ) (θ : ℝ) : Prop :=
+  0 < θ ∧ randomForceQualification P R ∧ ∀ t s, 0 ≤ t → 0 ≤ s → ∀ i j,
+    (∫ sample, R (t+s) sample i*R t sample j ∂P)=if i=j then θ*Γ s i j else 0
+def gleFD_corrected (P : Measure Ω) (R : ℝ → Ω → Vec n)
+    (Γ : ℝ → Matrix (Fin n) (Fin n) ℝ) (θ : ℝ) : Prop :=
+  0 < θ ∧ randomForceQualification P R ∧ ∀ t s, 0 ≤ t → 0 ≤ s → ∀ i j,
+    (∫ sample, R (t+s) sample i*R t sample j ∂P)=θ*Γ s i j
+def scalarMemoryMatrix (γ : ℝ → ℝ) (t : ℝ) : Matrix (Fin n) (Fin n) ℝ :=
+  Matrix.diagonal (fun _ ↦ γ t)
+```
+
+## 项目依赖定义体及选择规格
+以下def/abbrev/structure完整保留；定理列出完整类型，Mathlib标准定义无需摘录。
+
+### MD.Ch08.Vec (Blueprint/Ch08.lean:17)
+原文件上下文：
+```lean
+open Set Filter MeasureTheory ProbabilityTheory MolecularDynamics
+open scoped BigOperators Topology ContDiff ENNReal NNReal Matrix
+variable {Ω : Type*} [MeasurableSpace Ω]
+variable {n : ℕ}
+```
+```lean
+abbrev Vec (n : ℕ) := Fin n → ℝ
+```
+
+### MD.Ch08.randomForceQualification (Blueprint/Ch08.lean:954)
+原文件上下文：
+```lean
+open Set Filter MeasureTheory ProbabilityTheory MolecularDynamics
+open scoped BigOperators Topology ContDiff ENNReal NNReal Matrix
+variable {Ω : Type*} [MeasurableSpace Ω]
+variable {n : ℕ}
+```
+```lean
+def randomForceQualification (P : Measure Ω) (R : ℝ → Ω → Vec n) : Prop :=
+  IsProbabilityMeasure P ∧ ∀ t, 0 ≤ t → ∀ i, MemLp (fun sample ↦ R t sample i) 2 P ∧
+    (∫ sample, R t sample i ∂P)=0
+```
+
+### MD.Ch08.gleFDPrinted (Blueprint/Ch08.lean:957)
+原文件上下文：
+```lean
+open Set Filter MeasureTheory ProbabilityTheory MolecularDynamics
+open scoped BigOperators Topology ContDiff ENNReal NNReal Matrix
+variable {Ω : Type*} [MeasurableSpace Ω]
+variable {n : ℕ}
+```
+```lean
+def gleFDPrinted (P : Measure Ω) (R : ℝ → Ω → Vec n)
+    (Γ : ℝ → Matrix (Fin n) (Fin n) ℝ) (θ : ℝ) : Prop :=
+  0 < θ ∧ randomForceQualification P R ∧ ∀ t s, 0 ≤ t → 0 ≤ s → ∀ i j,
+    (∫ sample, R (t+s) sample i*R t sample j ∂P)=if i=j then θ*Γ s i j else 0
+```
+
+### MD.Ch08.gleFD_corrected (Blueprint/Ch08.lean:961)
+原文件上下文：
+```lean
+open Set Filter MeasureTheory ProbabilityTheory MolecularDynamics
+open scoped BigOperators Topology ContDiff ENNReal NNReal Matrix
+variable {Ω : Type*} [MeasurableSpace Ω]
+variable {n : ℕ}
+```
+```lean
+def gleFD_corrected (P : Measure Ω) (R : ℝ → Ω → Vec n)
+    (Γ : ℝ → Matrix (Fin n) (Fin n) ℝ) (θ : ℝ) : Prop :=
+  0 < θ ∧ randomForceQualification P R ∧ ∀ t s, 0 ≤ t → 0 ≤ s → ∀ i j,
+    (∫ sample, R (t+s) sample i*R t sample j ∂P)=θ*Γ s i j
+```
+
+### MD.Ch08.scalarMemoryMatrix (Blueprint/Ch08.lean:965)
+原文件上下文：
+```lean
+open Set Filter MeasureTheory ProbabilityTheory MolecularDynamics
+open scoped BigOperators Topology ContDiff ENNReal NNReal Matrix
+variable {Ω : Type*} [MeasurableSpace Ω]
+variable {n : ℕ}
+```
+```lean
+def scalarMemoryMatrix (γ : ℝ → ℝ) (t : ℝ) : Matrix (Fin n) (Fin n) ℝ :=
+  Matrix.diagonal (fun _ ↦ γ t)
+```

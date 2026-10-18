@@ -1,0 +1,148 @@
+{
+  "batch": "BATCH05",
+  "subtask": "BATCH05d",
+  "source_ids": [
+    "MD-8.4.1-Proposition83"
+  ],
+  "input_sha256": {
+    "Blueprint/Ch08.lean": "2800812fadd8e2557013f1941e4570401f7903d46f44baf07e23d5531da22a72",
+    "blueprint/ch08/ch08_source.json": "9b994b0f64cd22c85c2ad4123fbfdbd064bd7a6d070fe13b721794432f9f7a63",
+    "BATCH05d_PAGES.pdf": "3dde89aa0562a5d787f98ca0680eb187739248f935cbd470ce6b10e2fd11b788"
+  },
+  "page_mapping": [
+    {
+      "attachment_page": 1,
+      "original_pdf_page": 368,
+      "printed_page": 347
+    },
+    {
+      "attachment_page": 2,
+      "original_pdf_page": 369,
+      "printed_page": 348
+    }
+  ],
+  "definition_excerpts": [
+    {
+      "full_name": "MD.Ch08.proposition83",
+      "kind": "theorem",
+      "path": "Blueprint/Ch08.lean",
+      "line": 393,
+      "code_sha256": "d2754ecd9103765c38f1888ccbbbbb3954187957307cf0842bc8a55dae3d2c0e"
+    },
+    {
+      "full_name": "MolecularDynamics.SymplecticCoordinates",
+      "kind": "abbrev",
+      "path": "MolecularDynamics/Chapter02/SymplecticForm.lean",
+      "line": 25,
+      "code_sha256": "d801b1ef7d571d0b96c22167cbd9c508f58aeba9e8793a8caaddb87888fc252e"
+    },
+    {
+      "full_name": "MolecularDynamics.SymplecticCoordinateMatrix",
+      "kind": "abbrev",
+      "path": "MolecularDynamics/Chapter02/SymplecticForm.lean",
+      "line": 27,
+      "code_sha256": "f11e8c230eb2e2caa77c5d8ff83b56b846ee34e6d0347e62c39dea2ffa50f12c"
+    },
+    {
+      "full_name": "MolecularDynamics.textbookJ",
+      "kind": "def",
+      "path": "MolecularDynamics/Chapter02/SymplecticForm.lean",
+      "line": 31,
+      "code_sha256": "c7944ade4b768d7f5c7755bc8d2b34c927db678ea6d001a3deb85cc2318f8304"
+    },
+    {
+      "full_name": "MolecularDynamics.IsTextbookSymplectic",
+      "kind": "def",
+      "path": "MolecularDynamics/Chapter02/SymplecticForm.lean",
+      "line": 130,
+      "code_sha256": "6642b20035e535f764e24183b8b3fd564c65f367b80a24c79a394d8a4d55056f"
+    },
+    {
+      "full_name": "MolecularDynamics.textbookJacobian",
+      "kind": "def",
+      "path": "MolecularDynamics/Chapter02/SymplecticMaps.lean",
+      "line": 21,
+      "code_sha256": "de22cc68d29839d120350e99f4983537ef9e72385df49f475c8e3396754dcdbe"
+    },
+    {
+      "full_name": "MolecularDynamics.IsTextbookSymplecticMap",
+      "kind": "def",
+      "path": "MolecularDynamics/Chapter02/SymplecticMaps.lean",
+      "line": 55,
+      "code_sha256": "7563019e4b4160d2583955860a10898409a2b10b6eb8f48ee27ca77e8efc5c9a"
+    },
+    {
+      "full_name": "MolecularDynamics.IsTextbookSymplecticMap.comp",
+      "kind": "theorem",
+      "path": "MolecularDynamics/Chapter02/SymplecticMaps.lean",
+      "line": 86,
+      "code_sha256": "c50b4bc7e836e7f63b8b43b992458e7f6e06306e245a300ea8f72acc8c682f65"
+    },
+    {
+      "full_name": "MolecularDynamics.textbookThermostatPhase",
+      "kind": "abbrev",
+      "path": "MolecularDynamics/Chapter08/ThermostatLieFields.lean",
+      "line": 17,
+      "code_sha256": "4b300f9d7c5d7e128d14137ee7bee397cbd7d1637615dbe2d533f5e08b00adee"
+    },
+    {
+      "full_name": "MolecularDynamics.textbookThermostatC",
+      "kind": "def",
+      "path": "MolecularDynamics/Chapter08/ThermostatLieFields.lean",
+      "line": 31,
+      "code_sha256": "f8da2494fbc74ce97ee5c975f50e693b2b721a1d7d953ba286dc5d6c18e6d22b"
+    },
+    {
+      "full_name": "MolecularDynamics.textbookThermostatD",
+      "kind": "def",
+      "path": "MolecularDynamics/Chapter08/ThermostatLieFields.lean",
+      "line": 37,
+      "code_sha256": "9daf6d5ecdd609e11b27853e9cae948fca666757283f5087b22a7b91926f7cbe"
+    },
+    {
+      "full_name": "MolecularDynamics.textbookThermostatEigenCoordinates",
+      "kind": "def",
+      "path": "MolecularDynamics/Chapter08/ThermostatSpan.lean",
+      "line": 18,
+      "code_sha256": "3d31ef8d69083c6b5852c2c7b66e42e601faac963199a7a86f71491ad6e114e1"
+    },
+    {
+      "full_name": "MolecularDynamics.textbookThermostatModeDomain",
+      "kind": "def",
+      "path": "MolecularDynamics/Chapter08/ThermostatSpan.lean",
+      "line": 94,
+      "code_sha256": "188c218227140d2609f9f8fa7243b3295f6e79a37dae54944a732d25f395e06a"
+    },
+    {
+      "full_name": "MolecularDynamics.textbookThermostatFamily",
+      "kind": "def",
+      "path": "MolecularDynamics/Chapter08/ThermostatSpan.lean",
+      "line": 156,
+      "code_sha256": "9e4df89e6eb861eab89f218b155f4cf8217a7e158ae570f966678699194bb9f9"
+    },
+    {
+      "full_name": "MolecularDynamics.textbookThermostatFamily_linearIndependent",
+      "kind": "theorem",
+      "path": "MolecularDynamics/Chapter08/ThermostatSpan.lean",
+      "line": 162,
+      "code_sha256": "0f34eb21714b47fcb66dd12cabc0c0d0c07e754401975036e4a50ae86e3438f7"
+    }
+  ],
+  "validation": {
+    "project_constant_closure": "PASS",
+    "missing_project_definitions": [],
+    "full_page_render_equality_dpi": 72,
+    "website_submitted": false
+  },
+  "files": {
+    "PASTE.txt": {
+      "bytes": 16705,
+      "sha256": "a6fce14068687ee7f9f6b8dbfb497beb28955ecd54cd1e32fbcb7d404da7c8d6"
+    },
+    "BATCH05d_PAGES.pdf": {
+      "bytes": 103926,
+      "sha256": "3dde89aa0562a5d787f98ca0680eb187739248f935cbd470ce6b10e2fd11b788"
+    }
+  },
+  "total_task_bytes": 125984
+}

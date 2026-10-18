@@ -1,0 +1,148 @@
+{
+  "batch": "BATCH06",
+  "subtask": "BATCH06b",
+  "source_ids": [
+    "MD-8.4.1-LyapunovCalculation"
+  ],
+  "input_sha256": {
+    "Blueprint/Ch08.lean": "2800812fadd8e2557013f1941e4570401f7903d46f44baf07e23d5531da22a72",
+    "blueprint/ch08/ch08_source.json": "9b994b0f64cd22c85c2ad4123fbfdbd064bd7a6d070fe13b721794432f9f7a63",
+    "BATCH06b_PAGES.pdf": "9112d5427249d6d57d00533b2ee7d08e9212146d5979ad94b06a074ad1f28220"
+  },
+  "page_mapping": [
+    {
+      "attachment_page": 1,
+      "original_pdf_page": 369,
+      "printed_page": 348
+    },
+    {
+      "attachment_page": 2,
+      "original_pdf_page": 370,
+      "printed_page": 349
+    }
+  ],
+  "definition_excerpts": [
+    {
+      "full_name": "MD.Ch08.Vec",
+      "kind": "abbrev",
+      "path": "Blueprint/Ch08.lean",
+      "line": 17,
+      "code_sha256": "6f4b254a8a7cc4115fb35265b77caa663bdd18567cd1e664cc5bbd080d02fcff"
+    },
+    {
+      "full_name": "MD.Ch08.Phase",
+      "kind": "abbrev",
+      "path": "Blueprint/Ch08.lean",
+      "line": 18,
+      "code_sha256": "377b8086105169a0d2deaa2dd84218cb6ea1d04d27b576cd82794d54e5b84300"
+    },
+    {
+      "full_name": "MD.Ch08.gradient",
+      "kind": "def",
+      "path": "Blueprint/Ch08.lean",
+      "line": 20,
+      "code_sha256": "a9a017b15c584dec720a71840d896ddb8d0e05e149030bce523362af481b101e"
+    },
+    {
+      "full_name": "MD.Ch08.kineticTwice",
+      "kind": "def",
+      "path": "Blueprint/Ch08.lean",
+      "line": 65,
+      "code_sha256": "74e9a17210c40ab25bfb4d66c78bf295ed45ebc01a50292e3e9961df7d0ced46"
+    },
+    {
+      "full_name": "MD.Ch08.nhField",
+      "kind": "def",
+      "path": "Blueprint/Ch08.lean",
+      "line": 66,
+      "code_sha256": "f6402231f8f1b1e43957842a16438100aea4bbe61e714af2b90139f345498154"
+    },
+    {
+      "full_name": "MD.Ch08.nhlDrift",
+      "kind": "def",
+      "path": "Blueprint/Ch08.lean",
+      "line": 372,
+      "code_sha256": "a9be7815bc482e864f78fdc4f1c4fb0400f5de582fde955c3ef003d2bc41a32f"
+    },
+    {
+      "full_name": "MD.Ch08.additiveGenerator",
+      "kind": "def",
+      "path": "Blueprint/Ch08.lean",
+      "line": 434,
+      "code_sha256": "0b2de87656bba1dd40122d93877b55a6f00eaa25a5406ad709a8985216fb9a66"
+    },
+    {
+      "full_name": "MD.Ch08.nhlGenerator",
+      "kind": "def",
+      "path": "Blueprint/Ch08.lean",
+      "line": 437,
+      "code_sha256": "7034c12cb9ce33bdcaa409ebbfe5c686a0d86ef9e8958ca862e507300f1565da"
+    },
+    {
+      "full_name": "MD.Ch08.nhlLyapunov",
+      "kind": "def",
+      "path": "Blueprint/Ch08.lean",
+      "line": 440,
+      "code_sha256": "b06ddcc88611ad46e6dae428bab4aca0356e88cfb82f310db36d6beac0956359"
+    },
+    {
+      "full_name": "MD.Ch08.nhlLyapunovExpression",
+      "kind": "def",
+      "path": "Blueprint/Ch08.lean",
+      "line": 448,
+      "code_sha256": "40d75222cf8b5e8c4fde8e61bd854aaa4c5e1bb974f12a9027abc889ede2c390"
+    },
+    {
+      "full_name": "MD.Ch08.nhlLyapunov_calculation",
+      "kind": "theorem",
+      "path": "Blueprint/Ch08.lean",
+      "line": 450,
+      "code_sha256": "2b59feea1fa9ed7c42a465f7fff0fd0b14836fd5e15a42e3f7c68797b59905eb"
+    },
+    {
+      "full_name": "MD.Ch08.shiftedSquare_bound",
+      "kind": "theorem",
+      "path": "Blueprint/Ch08.lean",
+      "line": 456,
+      "code_sha256": "c0ee4bb614fce76d8c977c97351df777535ecd1f46e2b846789d1078c04bd2ec"
+    },
+    {
+      "full_name": "MolecularDynamics.Chapter02Review.Q",
+      "kind": "abbrev",
+      "path": "MolecularDynamics/Chapter02/ReviewDefinitions.lean",
+      "line": 17,
+      "code_sha256": "d01d4518aed3668e7c982afee1cd3820fb858a94438e5b8960aa0557f5a57ef1"
+    },
+    {
+      "full_name": "MolecularDynamics.Chapter04Review.Q",
+      "kind": "abbrev",
+      "path": "MolecularDynamics/Chapter04/ReviewDefinitions.lean",
+      "line": 15,
+      "code_sha256": "d01d4518aed3668e7c982afee1cd3820fb858a94438e5b8960aa0557f5a57ef1"
+    },
+    {
+      "full_name": "MolecularDynamics.Chapter05Review.E",
+      "kind": "abbrev",
+      "path": "MolecularDynamics/Chapter05/ReviewDefinitions.lean",
+      "line": 18,
+      "code_sha256": "b497c8ba7f01b62a3147d9ae65652772ff3f81e57aa19b116f1283fef7a3cc60"
+    }
+  ],
+  "validation": {
+    "project_constant_closure": "PASS",
+    "missing_project_definitions": [],
+    "full_page_render_equality_dpi": 72,
+    "website_submitted": false
+  },
+  "files": {
+    "PASTE.txt": {
+      "bytes": 17105,
+      "sha256": "e33163a200ed2170bb2c7f0862b7e2e23378acfeabaf6f31ac336b3842ef72fe"
+    },
+    "BATCH06b_PAGES.pdf": {
+      "bytes": 88051,
+      "sha256": "9112d5427249d6d57d00533b2ee7d08e9212146d5979ad94b06a074ad1f28220"
+    }
+  },
+  "total_task_bytes": 109947
+}

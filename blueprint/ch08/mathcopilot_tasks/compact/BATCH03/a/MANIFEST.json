@@ -1,0 +1,80 @@
+{
+  "batch": "BATCH03",
+  "subtask": "BATCH03a",
+  "source_ids": [
+    "MD-8.1.2.1-NPShadowDensity"
+  ],
+  "input_sha256": {
+    "Blueprint/Ch08.lean": "2800812fadd8e2557013f1941e4570401f7903d46f44baf07e23d5531da22a72",
+    "blueprint/ch08/ch08_source.json": "9b994b0f64cd22c85c2ad4123fbfdbd064bd7a6d070fe13b721794432f9f7a63",
+    "BATCH03a_PAGES.pdf": "8877fe01c77456a61f502fa04fffba0163af019b2b5bbe4f7f0fc37991020a26"
+  },
+  "page_mapping": [
+    {
+      "attachment_page": 1,
+      "original_pdf_page": 356,
+      "printed_page": 335
+    }
+  ],
+  "definition_excerpts": [
+    {
+      "full_name": "MD.Ch08.Vec",
+      "kind": "abbrev",
+      "path": "Blueprint/Ch08.lean",
+      "line": 17,
+      "code_sha256": "6f4b254a8a7cc4115fb35265b77caa663bdd18567cd1e664cc5bbd080d02fcff"
+    },
+    {
+      "full_name": "MD.Ch08.Phase",
+      "kind": "abbrev",
+      "path": "Blueprint/Ch08.lean",
+      "line": 18,
+      "code_sha256": "377b8086105169a0d2deaa2dd84218cb6ea1d04d27b576cd82794d54e5b84300"
+    },
+    {
+      "full_name": "MD.Ch08.fourthOrderRemainder",
+      "kind": "def",
+      "path": "Blueprint/Ch08.lean",
+      "line": 189,
+      "code_sha256": "742d68aaa670c6981bbd299378be0617eeaa0979a89f80431f948dd7409490c5"
+    },
+    {
+      "full_name": "MD.Ch08.correctedFiniteAverage",
+      "kind": "def",
+      "path": "Blueprint/Ch08.lean",
+      "line": 191,
+      "code_sha256": "7294fe91f1fdec24da7befcb0286af7048404ac752269a47b8e7942dcfe4dae7"
+    },
+    {
+      "full_name": "MD.Ch08.npShadowAnsatz",
+      "kind": "def",
+      "path": "Blueprint/Ch08.lean",
+      "line": 193,
+      "code_sha256": "223c714cec18682d8924c97a6a1b5274dcb8a27a8df3939cdfc58e0048d4612f"
+    },
+    {
+      "full_name": "MD.Ch08.npDensityAnsatz",
+      "kind": "def",
+      "path": "Blueprint/Ch08.lean",
+      "line": 195,
+      "code_sha256": "f8afe001cbb9696751fc696af6e3af4a420c1d526c39d831305639f8e5fcbdcd"
+    }
+  ],
+  "validation": {
+    "project_constant_closure": "PASS",
+    "missing_project_definitions": [],
+    "full_page_render_equality_dpi": 72,
+    "website_submitted": false
+  },
+  "files": {
+    "PASTE.txt": {
+      "bytes": 10813,
+      "sha256": "afa68bb9916425227464b328ac098f7b0f814bef4bd993e3707c67faec4b12cc"
+    },
+    "BATCH03a_PAGES.pdf": {
+      "bytes": 76694,
+      "sha256": "8877fe01c77456a61f502fa04fffba0163af019b2b5bbe4f7f0fc37991020a26"
+    }
+  },
+  "total_task_bytes": 89995
+}

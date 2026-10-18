@@ -1,0 +1,47 @@
+{
+  "batch": "BATCH13",
+  "subtasks": [
+    {
+      "subtask": "BATCH13a",
+      "source_id": "MD-8.8-NPTDensity",
+      "path": "blueprint/ch08/mathcopilot_tasks/compact/BATCH13/a",
+      "bytes": 105922,
+      "manifest_sha256": "14707d27b4e8c677e1087df5f1f816f6385e7d1df5cc9bd6b90f9b4579ae7e11"
+    },
+    {
+      "subtask": "BATCH13b",
+      "source_id": "MD-8.8-AndersenCoordinates",
+      "path": "blueprint/ch08/mathcopilot_tasks/compact/BATCH13/b",
+      "bytes": 97652,
+      "manifest_sha256": "3ddae3fa756932798af6375dd54fe7ce0e5a80296e35df0e58676ca5b5da99d0"
+    },
+    {
+      "subtask": "BATCH13c",
+      "source_id": "MD-8.8-AndersenKineticEnergy",
+      "path": "blueprint/ch08/mathcopilot_tasks/compact/BATCH13/c",
+      "bytes": 85345,
+      "manifest_sha256": "ee659de81abd8d02e32079c1f50cbad5ffd15dda1e52dda92b84936e3c1bd4ba"
+    },
+    {
+      "subtask": "BATCH13d",
+      "source_id": "MD-8.8-AndersenHamiltonianPrinted",
+      "path": "blueprint/ch08/mathcopilot_tasks/compact/BATCH13/d",
+      "bytes": 91253,
+      "manifest_sha256": "fdaa1484764c3a0f180caca8afa4a79addc6dc8e735fb42a827624fb8cb7c77b"
+    },
+    {
+      "subtask": "BATCH13e",
+      "source_id": "MD-8.8.1-NHLPistonEquations",
+      "path": "blueprint/ch08/mathcopilot_tasks/compact/BATCH13/e",
+      "bytes": 105474,
+      "manifest_sha256": "2afabbed8839e3e1155db474fb7031d23b8661b0f854b564d6ea35122784b3a2"
+    },
+    {
+      "subtask": "BATCH13f",
+      "source_id": "MD-8.8.1-PistonHamiltonianSubfield",
+      "path": "blueprint/ch08/mathcopilot_tasks/compact/BATCH13/f",
+      "bytes": 91550,
+      "manifest_sha256": "ee178add31c27fed9373cdc130cd40828b99381217801a3931cc9f56dd672194"
+    }
+  ]
+}

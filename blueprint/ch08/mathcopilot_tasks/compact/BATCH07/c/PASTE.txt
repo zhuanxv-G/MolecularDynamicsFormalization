@@ -1,0 +1,267 @@
+以附件/PASTE 为准，忽略 /workspace 旧文件；Mathlib 定义按标准含义采信。
+本任务只审本条：原文转录、对象资格、定义体、量词、全部结论及[EXTRA]是否一致；Lean编译不代替语义审阅。
+Lean/Mathlib均4.34.0。原页PDF映射：[377, 378]；印刷页=[356, 357].
+input_sha256请原样回显：
+{
+  "Blueprint/Ch08.lean": "2800812fadd8e2557013f1941e4570401f7903d46f44baf07e23d5531da22a72",
+  "blueprint/ch08/ch08_source.json": "9b994b0f64cd22c85c2ad4123fbfdbd064bd7a6d070fe13b721794432f9f7a63",
+  "BATCH07c_PAGES.pdf": "b0c667b41f0007b55e50d73a0e0488805f506866922eda20ac6318d60446ee48"
+}
+用代码将JSON对象(batch,input_sha256,items)写到 /workspace/.mathcopilot/reviews/ch08/BATCH07c_review.json；items仅含本source_id。
+items字段：source_id、verdict(PASS/FAIL/NEEDS_HUMAN)、transcription、semantic_review、counterexample、suggested_fix、printed_version、corrected_version。逐版区分原文疑误和修正版结论；缺材料必须具体指出，不猜测。写后json.loads自检，最后仅回复路径及统计。
+
+## 原文JSON
+```json
+{
+  "source_id": "MD-8.4.5-ThermostatEfficiency",
+  "kind": "definition",
+  "label": null,
+  "section": "8.4.5",
+  "printed_page": "356–357",
+  "pdf_page": "377–378",
+  "statement_latex": "efficiency = rate of convergence to equilibrium / rate of growth of perturbation of dynamics. Table 8.1 gives analytic lowest-order estimates; NHL has initially quadratic error.",
+  "statement_verbatim": "356\n8\nExtended Variable Methods\n8.4.5\nThe Efﬁciency of a Thermostat and “Gentle”\nThermostats\nTo understand the reason for this fundamental, qualitative difference between\nNosé-Hoover-Langevin and Langevin dynamics, and to compare it with Velocity\nRescaling, one may study a quantity that relates the rate of convergence to\nequilibrium to the rate of growth of the error in the autocorrelation function. In\n[225], this precise quantity is introduced and termed the efﬁciency of the thermostat:\nefﬁciency D\nrate of convergence to equilibrium\nrate of growth of perturbation of dynamics:\nThe rate of convergence to equilibrium is quite difﬁcult to calculate in general, as it\nwould typically relate to the spectral gap of the diffusion. In light of the observations\nof Fig. 8.3, one may choose to estimate this in terms of the rate of convergence of\nthe average kinetic energy to the target temperature.\nThe rate of accumulation of error due to the thermostat is also difﬁcult to\nquantify analytically, since it requires calculation of the error in an autocorrelation\nfunction over a time interval which may not be short compared to the simulation\nstepsize, particularly for slow-relaxing systems. Again, an estimate is obtainable\nby considering the rate of error accumulation at short times (obtained by Taylor\nexpansion of the exact and approximate autocorrelation functions). The result of\nthese two estimates is then an analytical estimate for the efﬁciency that relates\nvarious schemes for various values of the parameters involved.\nAn interesting observation is that, while for both Langevin dynamics and\nVelocity Rescaling the error accumulation is linear in time, the same is not true\nfor Nosé-Hoover-Langevin: the error in NHL increases initially in proportion to t2;\nthe instantaneous diffusion rate is inherited from the system to which it is applied.\nThis means that, while NHL cannot be used to model imposed target diffusion rates,\nits inﬂuence on dynamics within the setting of molecular dynamics thermostatting\nis also very slight: it is a gentle thermostat. The Velocity Rescaling method is\nalso gentle in another sense: the rate of growth of error is small. Estimating the\nefﬁciency for both Langevin and Velocity Rescaling is similar—we ﬁnd the ratio of\nthe estimated rate of convergence of kinetic energy to the estimated rate of linear\nerror growth in the velocity autocorrelation function. For Nosé-Hoover-Langevin,\nwhich has quadratic-in-time error growth, we determine the characteristic time\nuntil convergence (the reciprocal of the exponential rate of convergence) and from\nthis determine how much perturbation accumulates in the velocity autocorrelation\nfunction.\nIn Table 8.1 we show the comparison of the relevant estimates of the above\nquantities, including the efﬁciency, for different choices of thermostat.\n\n8.5\nNon-Newtonian Dynamics-Based Iterations for Molecular Sampling\n357\nTable 8.1 Estimated rates of convergence, perturbation growth, and efﬁciency for different\nmethods\nError (to lowest\nThermostat\nConvergence rate\norder in t)\nEfﬁciency\nLangevin\n\n\nt\n\n 1\nVelocity Rescaling\n4\nAvˇfK2˚.K/g\nTNdkB\n2\nNd AvˇfK˚.K/g t\nO .Nd/\nVR with ˚.K/ D \nVR\n2K\n\nVR\n\nVR\nNd t\n\n Nd\nNHL\nq\nNdkBT\n\u0006\nkBT\n2\u0006 t2\n\n 2Nd\n(at critical damping)\n8.5\nNon-Newtonian Dynamics-Based Iterations\nfor Molecular Sampling\nGiven that we can decompose the stochastic dynamics into deterministic part and\nstochastic process, and approximately or exactly solve the parts, it is common\nto iterate the maps for each building block sequentially in such a way that the\ncalculation approximates the dynamics of the system. This is, very likely, an\nunnecessary restriction on the sampling strategy. The crucial things that effect the\nultimate success of the method are that the parts themselves preserve the measure\n(or approximately so), the stages are volume preserving, and that the stochastic\nprocesses are sufﬁciently strongly coupled so that the overall iteration is ergodic.\nThere is essentially no need to use maps based on Newtonian deterministic\ndynamics. There are many alternative dynamics models which leave invariant the\ncanonical measure, going well beyond those considered so far. To illustrate this\nwith one intriguing example, we explore here the stochastic dynamical system in\n2Nc C 1 variables deﬁned by\ndq D \u0012M\u00021pdt;\n(8.33)\ndp D \u0003\npdt C \u0007M1=2dW;\n(8.34)\nd\u0012 D \u0003Œ.M\u00021p/ \u0002 rU.q/=\u0006 C \n0\u0012\tdt C \u00070dZ;\n(8.35)\nwhere W is a vector of Nc Wiener processes, Z is a scalar Wiener process and \u0007 D\np2kBT\n, and \u00070 D\np\n2kBT\n0=\u0006 this system preserves the augmented distribution\nwith density\nQ\u0005.q; p; \u0012/ D e\u0002ˇ.pTM\u00021p=2CU.q/C\u0006\u00122=2/:\nFor this system, it is possible to show that the Hörmander condition holds. Setting all\nparameters to 1 and taking M D I (without loss of generality in this demonstration)\nwe write our SDE in the form d' D D C PNcC1\niD1 YidWi, where ' is the vector of all\nphase variables, Yi D eNcCi, for i D 1; : : : ; Nc C 1, is the i C Ncth basis function in\n",
+  "verbatim_scope": "完整对应原页文字层，逐字保留；本条数学成分由statement_latex及statement_scope定位。",
+  "proof_latex": null,
+  "proof_note": "对应原页推导逐字保存在statement_verbatim/original_page_text；排版以原页PDF为准。",
+  "original_page_text": [
+    {
+      "pdf_page": 377,
+      "printed_page": 356,
+      "text": "356\n8\nExtended Variable Methods\n8.4.5\nThe Efﬁciency of a Thermostat and “Gentle”\nThermostats\nTo understand the reason for this fundamental, qualitative difference between\nNosé-Hoover-Langevin and Langevin dynamics, and to compare it with Velocity\nRescaling, one may study a quantity that relates the rate of convergence to\nequilibrium to the rate of growth of the error in the autocorrelation function. In\n[225], this precise quantity is introduced and termed the efﬁciency of the thermostat:\nefﬁciency D\nrate of convergence to equilibrium\nrate of growth of perturbation of dynamics:\nThe rate of convergence to equilibrium is quite difﬁcult to calculate in general, as it\nwould typically relate to the spectral gap of the diffusion. In light of the observations\nof Fig. 8.3, one may choose to estimate this in terms of the rate of convergence of\nthe average kinetic energy to the target temperature.\nThe rate of accumulation of error due to the thermostat is also difﬁcult to\nquantify analytically, since it requires calculation of the error in an autocorrelation\nfunction over a time interval which may not be short compared to the simulation\nstepsize, particularly for slow-relaxing systems. Again, an estimate is obtainable\nby considering the rate of error accumulation at short times (obtained by Taylor\nexpansion of the exact and approximate autocorrelation functions). The result of\nthese two estimates is then an analytical estimate for the efﬁciency that relates\nvarious schemes for various values of the parameters involved.\nAn interesting observation is that, while for both Langevin dynamics and\nVelocity Rescaling the error accumulation is linear in time, the same is not true\nfor Nosé-Hoover-Langevin: the error in NHL increases initially in proportion to t2;\nthe instantaneous diffusion rate is inherited from the system to which it is applied.\nThis means that, while NHL cannot be used to model imposed target diffusion rates,\nits inﬂuence on dynamics within the setting of molecular dynamics thermostatting\nis also very slight: it is a gentle thermostat. The Velocity Rescaling method is\nalso gentle in another sense: the rate of growth of error is small. Estimating the\nefﬁciency for both Langevin and Velocity Rescaling is similar—we ﬁnd the ratio of\nthe estimated rate of convergence of kinetic energy to the estimated rate of linear\nerror growth in the velocity autocorrelation function. For Nosé-Hoover-Langevin,\nwhich has quadratic-in-time error growth, we determine the characteristic time\nuntil convergence (the reciprocal of the exponential rate of convergence) and from\nthis determine how much perturbation accumulates in the velocity autocorrelation\nfunction.\nIn Table 8.1 we show the comparison of the relevant estimates of the above\nquantities, including the efﬁciency, for different choices of thermostat.\n"
+    },
+    {
+      "pdf_page": 378,
+      "printed_page": 357,
+      "text": "8.5\nNon-Newtonian Dynamics-Based Iterations for Molecular Sampling\n357\nTable 8.1 Estimated rates of convergence, perturbation growth, and efﬁciency for different\nmethods\nError (to lowest\nThermostat\nConvergence rate\norder in t)\nEfﬁciency\nLangevin\n\n\nt\n\n 1\nVelocity Rescaling\n4\nAvˇfK2˚.K/g\nTNdkB\n2\nNd AvˇfK˚.K/g t\nO .Nd/\nVR with ˚.K/ D \nVR\n2K\n\nVR\n\nVR\nNd t\n\n Nd\nNHL\nq\nNdkBT\n\u0006\nkBT\n2\u0006 t2\n\n 2Nd\n(at critical damping)\n8.5\nNon-Newtonian Dynamics-Based Iterations\nfor Molecular Sampling\nGiven that we can decompose the stochastic dynamics into deterministic part and\nstochastic process, and approximately or exactly solve the parts, it is common\nto iterate the maps for each building block sequentially in such a way that the\ncalculation approximates the dynamics of the system. This is, very likely, an\nunnecessary restriction on the sampling strategy. The crucial things that effect the\nultimate success of the method are that the parts themselves preserve the measure\n(or approximately so), the stages are volume preserving, and that the stochastic\nprocesses are sufﬁciently strongly coupled so that the overall iteration is ergodic.\nThere is essentially no need to use maps based on Newtonian deterministic\ndynamics. There are many alternative dynamics models which leave invariant the\ncanonical measure, going well beyond those considered so far. To illustrate this\nwith one intriguing example, we explore here the stochastic dynamical system in\n2Nc C 1 variables deﬁned by\ndq D \u0012M\u00021pdt;\n(8.33)\ndp D \u0003\npdt C \u0007M1=2dW;\n(8.34)\nd\u0012 D \u0003Œ.M\u00021p/ \u0002 rU.q/=\u0006 C \n0\u0012\tdt C \u00070dZ;\n(8.35)\nwhere W is a vector of Nc Wiener processes, Z is a scalar Wiener process and \u0007 D\np2kBT\n, and \u00070 D\np\n2kBT\n0=\u0006 this system preserves the augmented distribution\nwith density\nQ\u0005.q; p; \u0012/ D e\u0002ˇ.pTM\u00021p=2CU.q/C\u0006\u00122=2/:\nFor this system, it is possible to show that the Hörmander condition holds. Setting all\nparameters to 1 and taking M D I (without loss of generality in this demonstration)\nwe write our SDE in the form d' D D C PNcC1\niD1 YidWi, where ' is the vector of all\nphase variables, Yi D eNcCi, for i D 1; : : : ; Nc C 1, is the i C Ncth basis function in\n"
+    }
+  ],
+  "numbered_equations": [],
+  "transcription_note": "文字层逐字保留；数学排版另行转写，原页中的特殊字形编码不静默替换。PDF420仅取Exercises之前。",
+  "context_notation": [],
+  "extra_assumptions": [
+    "表8.1解析估计作为公式定义保留；其外引渐近推导、谱隙与误差阶不是已证定理，列覆盖缺口。",
+    "γ>0、θ,Q>0、N>0用于物理解释；一般VR的O(N)给出确切渐近性质定义，没有声称任意Φ族满足它。"
+  ],
+  "issues": [],
+  "statement_scope": "效率比值、表8.1四行解析速率/低阶误差/效率估计及一般VR的O(N)含义；外引估计定理未证，经验曲线排除。",
+  "lean_decl": "MD.Ch08.thermostatEfficiency",
+  "lean_declarations": [
+    "MD.Ch08.thermostatEfficiency",
+    "MD.Ch08.langevinErrorEstimate",
+    "MD.Ch08.rescalingRateEstimate",
+    "MD.Ch08.rescalingErrorEstimate",
+    "MD.Ch08.nhlRateEstimate",
+    "MD.Ch08.nhlErrorEstimate",
+    "MD.Ch08.langevinRateEstimate",
+    "MD.Ch08.langevinEfficiencyEstimate",
+    "MD.Ch08.originalRescalingRateEstimate",
+    "MD.Ch08.originalRescalingErrorEstimate",
+    "MD.Ch08.originalRescalingEfficiencyEstimate",
+    "MD.Ch08.nhlCriticalEfficiencyEstimate",
+    "MD.Ch08.rescalingEfficiencyOrder"
+  ],
+  "source_page_verification": "见source_page_checks.json，已目视核对本条原页。",
+  "repair_log": [],
+  "documented_priors": []
+}
+```
+
+## 完整本条Lean
+```lean
+def thermostatEfficiency (convergence perturbation : ℝ) : ℝ := convergence/perturbation
+def langevinErrorEstimate (γ t : ℝ) : ℝ := γ*t
+def rescalingRateEstimate (meanK2Phi θ : ℝ) (N : ℕ) : ℝ := 4*meanK2Phi/(θ*N)
+def rescalingErrorEstimate (meanKPhi : ℝ) (N : ℕ) (t : ℝ) : ℝ := 2*meanKPhi/(N:ℝ)*t
+def nhlRateEstimate (N : ℕ) (θ Q : ℝ) : ℝ := Real.sqrt ((N:ℝ)*θ/Q)
+def nhlErrorEstimate (θ Q t : ℝ) : ℝ := θ/(2*Q)*t^2
+
+def langevinRateEstimate (γ : ℝ) : ℝ := γ
+def langevinEfficiencyEstimate : ℝ := 1
+def originalRescalingRateEstimate (γVR : ℝ) : ℝ := γVR
+def originalRescalingErrorEstimate (N : ℕ) (γVR t : ℝ) : ℝ := γVR/(N:ℝ)*t
+def originalRescalingEfficiencyEstimate (N : ℕ) : ℝ := N
+def nhlCriticalEfficiencyEstimate (N : ℕ) : ℝ := 2*N
+def rescalingEfficiencyOrder (efficiency : ℕ → ℝ) : Prop :=
+  efficiency =O[atTop] (fun N : ℕ ↦ (N : ℝ))
+```
+
+## 项目依赖定义体及选择规格
+以下def/abbrev/structure完整保留；定理列出完整类型，Mathlib标准定义无需摘录。
+
+### MD.Ch08.thermostatEfficiency (Blueprint/Ch08.lean:561)
+原文件上下文：
+```lean
+open Set Filter MeasureTheory ProbabilityTheory MolecularDynamics
+open scoped BigOperators Topology ContDiff ENNReal NNReal Matrix
+variable {Ω : Type*} [MeasurableSpace Ω]
+variable {n : ℕ}
+```
+```lean
+def thermostatEfficiency (convergence perturbation : ℝ) : ℝ := convergence/perturbation
+```
+
+### MD.Ch08.langevinErrorEstimate (Blueprint/Ch08.lean:562)
+原文件上下文：
+```lean
+open Set Filter MeasureTheory ProbabilityTheory MolecularDynamics
+open scoped BigOperators Topology ContDiff ENNReal NNReal Matrix
+variable {Ω : Type*} [MeasurableSpace Ω]
+variable {n : ℕ}
+```
+```lean
+def langevinErrorEstimate (γ t : ℝ) : ℝ := γ*t
+```
+
+### MD.Ch08.rescalingRateEstimate (Blueprint/Ch08.lean:563)
+原文件上下文：
+```lean
+open Set Filter MeasureTheory ProbabilityTheory MolecularDynamics
+open scoped BigOperators Topology ContDiff ENNReal NNReal Matrix
+variable {Ω : Type*} [MeasurableSpace Ω]
+variable {n : ℕ}
+```
+```lean
+def rescalingRateEstimate (meanK2Phi θ : ℝ) (N : ℕ) : ℝ := 4*meanK2Phi/(θ*N)
+```
+
+### MD.Ch08.rescalingErrorEstimate (Blueprint/Ch08.lean:564)
+原文件上下文：
+```lean
+open Set Filter MeasureTheory ProbabilityTheory MolecularDynamics
+open scoped BigOperators Topology ContDiff ENNReal NNReal Matrix
+variable {Ω : Type*} [MeasurableSpace Ω]
+variable {n : ℕ}
+```
+```lean
+def rescalingErrorEstimate (meanKPhi : ℝ) (N : ℕ) (t : ℝ) : ℝ := 2*meanKPhi/(N:ℝ)*t
+```
+
+### MD.Ch08.nhlRateEstimate (Blueprint/Ch08.lean:565)
+原文件上下文：
+```lean
+open Set Filter MeasureTheory ProbabilityTheory MolecularDynamics
+open scoped BigOperators Topology ContDiff ENNReal NNReal Matrix
+variable {Ω : Type*} [MeasurableSpace Ω]
+variable {n : ℕ}
+```
+```lean
+def nhlRateEstimate (N : ℕ) (θ Q : ℝ) : ℝ := Real.sqrt ((N:ℝ)*θ/Q)
+```
+
+### MD.Ch08.nhlErrorEstimate (Blueprint/Ch08.lean:566)
+原文件上下文：
+```lean
+open Set Filter MeasureTheory ProbabilityTheory MolecularDynamics
+open scoped BigOperators Topology ContDiff ENNReal NNReal Matrix
+variable {Ω : Type*} [MeasurableSpace Ω]
+variable {n : ℕ}
+```
+```lean
+def nhlErrorEstimate (θ Q t : ℝ) : ℝ := θ/(2*Q)*t^2
+```
+
+### MD.Ch08.langevinRateEstimate (Blueprint/Ch08.lean:568)
+原文件上下文：
+```lean
+open Set Filter MeasureTheory ProbabilityTheory MolecularDynamics
+open scoped BigOperators Topology ContDiff ENNReal NNReal Matrix
+variable {Ω : Type*} [MeasurableSpace Ω]
+variable {n : ℕ}
+```
+```lean
+def langevinRateEstimate (γ : ℝ) : ℝ := γ
+```
+
+### MD.Ch08.langevinEfficiencyEstimate (Blueprint/Ch08.lean:569)
+原文件上下文：
+```lean
+open Set Filter MeasureTheory ProbabilityTheory MolecularDynamics
+open scoped BigOperators Topology ContDiff ENNReal NNReal Matrix
+variable {Ω : Type*} [MeasurableSpace Ω]
+variable {n : ℕ}
+```
+```lean
+def langevinEfficiencyEstimate : ℝ := 1
+```
+
+### MD.Ch08.originalRescalingRateEstimate (Blueprint/Ch08.lean:570)
+原文件上下文：
+```lean
+open Set Filter MeasureTheory ProbabilityTheory MolecularDynamics
+open scoped BigOperators Topology ContDiff ENNReal NNReal Matrix
+variable {Ω : Type*} [MeasurableSpace Ω]
+variable {n : ℕ}
+```
+```lean
+def originalRescalingRateEstimate (γVR : ℝ) : ℝ := γVR
+```
+
+### MD.Ch08.originalRescalingErrorEstimate (Blueprint/Ch08.lean:571)
+原文件上下文：
+```lean
+open Set Filter MeasureTheory ProbabilityTheory MolecularDynamics
+open scoped BigOperators Topology ContDiff ENNReal NNReal Matrix
+variable {Ω : Type*} [MeasurableSpace Ω]
+variable {n : ℕ}
+```
+```lean
+def originalRescalingErrorEstimate (N : ℕ) (γVR t : ℝ) : ℝ := γVR/(N:ℝ)*t
+```
+
+### MD.Ch08.originalRescalingEfficiencyEstimate (Blueprint/Ch08.lean:572)
+原文件上下文：
+```lean
+open Set Filter MeasureTheory ProbabilityTheory MolecularDynamics
+open scoped BigOperators Topology ContDiff ENNReal NNReal Matrix
+variable {Ω : Type*} [MeasurableSpace Ω]
+variable {n : ℕ}
+```
+```lean
+def originalRescalingEfficiencyEstimate (N : ℕ) : ℝ := N
+```
+
+### MD.Ch08.nhlCriticalEfficiencyEstimate (Blueprint/Ch08.lean:573)
+原文件上下文：
+```lean
+open Set Filter MeasureTheory ProbabilityTheory MolecularDynamics
+open scoped BigOperators Topology ContDiff ENNReal NNReal Matrix
+variable {Ω : Type*} [MeasurableSpace Ω]
+variable {n : ℕ}
+```
+```lean
+def nhlCriticalEfficiencyEstimate (N : ℕ) : ℝ := 2*N
+```
+
+### MD.Ch08.rescalingEfficiencyOrder (Blueprint/Ch08.lean:574)
+原文件上下文：
+```lean
+open Set Filter MeasureTheory ProbabilityTheory MolecularDynamics
+open scoped BigOperators Topology ContDiff ENNReal NNReal Matrix
+variable {Ω : Type*} [MeasurableSpace Ω]
+variable {n : ℕ}
+```
+```lean
+def rescalingEfficiencyOrder (efficiency : ℕ → ℝ) : Prop :=
+  efficiency =O[atTop] (fun N : ℕ ↦ (N : ℝ))
+```
+
+### MolecularDynamics.Chapter02Review.Q (MolecularDynamics/Chapter02/ReviewDefinitions.lean:17)
+原文件上下文：
+```lean
+open Set Filter Matrix
+open scoped BigOperators Topology
+```
+```lean
+abbrev Q (n : ℕ) := Fin n → ℝ
+```
+
+### MolecularDynamics.Chapter04Review.Q (MolecularDynamics/Chapter04/ReviewDefinitions.lean:15)
+原文件上下文：
+```lean
+open Set Matrix
+open scoped BigOperators Topology Matrix.Norms.Elementwise
+```
+```lean
+abbrev Q (n : ℕ) := Fin n → ℝ
+```

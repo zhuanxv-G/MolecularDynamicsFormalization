@@ -1,0 +1,47 @@
+{
+  "batch": "BATCH07",
+  "subtasks": [
+    {
+      "subtask": "BATCH07a",
+      "source_id": "MD-8.4.4-VelocityRescaling",
+      "path": "blueprint/ch08/mathcopilot_tasks/compact/BATCH07/a",
+      "bytes": 91529,
+      "manifest_sha256": "3afad3636125d62deddb3cf04275b1257c80180d52138afea603317db343415a"
+    },
+    {
+      "subtask": "BATCH07b",
+      "source_id": "MD-8.4.4-RescalingStationary",
+      "path": "blueprint/ch08/mathcopilot_tasks/compact/BATCH07/b",
+      "bytes": 95080,
+      "manifest_sha256": "5837acfcab12eef5829adf7669cf3ff5404362469762b72078d405def89fe725"
+    },
+    {
+      "subtask": "BATCH07c",
+      "source_id": "MD-8.4.5-ThermostatEfficiency",
+      "path": "blueprint/ch08/mathcopilot_tasks/compact/BATCH07/c",
+      "bytes": 117216,
+      "manifest_sha256": "311eeb7107c3366bdbfeca7b1e21b5e785770b60e537c911b81dbe6a6b2746e6"
+    },
+    {
+      "subtask": "BATCH07d",
+      "source_id": "MD-8.5-SLS",
+      "path": "blueprint/ch08/mathcopilot_tasks/compact/BATCH07/d",
+      "bytes": 120076,
+      "manifest_sha256": "e587619b3f806a6621a21b9fdb2153ceb803458a59f52399dddebfb72aa87c23"
+    },
+    {
+      "subtask": "BATCH07e",
+      "source_id": "MD-8.5-SLSBracketPrinted",
+      "path": "blueprint/ch08/mathcopilot_tasks/compact/BATCH07/e",
+      "bytes": 94987,
+      "manifest_sha256": "2cb26233a0d22141520f62a7150055b8514efd652946c8960a1510c02bfdb6c7"
+    },
+    {
+      "subtask": "BATCH07f",
+      "source_id": "MD-8.5-SLSHormander",
+      "path": "blueprint/ch08/mathcopilot_tasks/compact/BATCH07/f",
+      "bytes": 119092,
+      "manifest_sha256": "eb58ef6ff83f2f58e3b0110974d5f65e5ff69d8ae0ffd848b78e6c0681c754d7"
+    }
+  ]
+}

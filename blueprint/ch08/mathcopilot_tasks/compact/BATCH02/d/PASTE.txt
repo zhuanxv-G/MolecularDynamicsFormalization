@@ -1,0 +1,192 @@
+以附件/PASTE 为准，忽略 /workspace 旧文件；Mathlib 定义按标准含义采信。
+本任务只审本条：原文转录、对象资格、定义体、量词、全部结论及[EXTRA]是否一致；Lean编译不代替语义审阅。
+Lean/Mathlib均4.34.0。原页PDF映射：[355]；印刷页=[334].
+input_sha256请原样回显：
+{
+  "Blueprint/Ch08.lean": "2800812fadd8e2557013f1941e4570401f7903d46f44baf07e23d5531da22a72",
+  "blueprint/ch08/ch08_source.json": "9b994b0f64cd22c85c2ad4123fbfdbd064bd7a6d070fe13b721794432f9f7a63",
+  "BATCH02d_PAGES.pdf": "710c7b16c11761b8fa82e28f2cc1eb21ef07122c8b4353bf48b76bfdac77b0e6"
+}
+用代码将JSON对象(batch,input_sha256,items)写到 /workspace/.mathcopilot/reviews/ch08/BATCH02d_review.json；items仅含本source_id。
+items字段：source_id、verdict(PASS/FAIL/NEEDS_HUMAN)、transcription、semantic_review、counterexample、suggested_fix、printed_version、corrected_version。逐版区分原文疑误和修正版结论；缺材料必须具体指出，不猜测。写后json.loads自检，最后仅回复路径及统计。
+
+## 原文JSON
+```json
+{
+  "source_id": "MD-8.1.2.1-NoseHamiltoniansPrinted",
+  "kind": "unnumbered_claim",
+  "label": null,
+  "section": "8.1.2.1",
+  "printed_page": "334",
+  "pdf_page": "355",
+  "statement_latex": "H_N= p̃ᵀM⁻¹p̃/(2s²)+π²/(2μ)+U(q)+(N_d+1)k_BT ln s; H_NP=s[H_N-E_N]=s[p̃ᵀM⁻¹p̃/(2s²)+π²/(2μ)+U(q)+N_d k_BT ln s-E_N].",
+  "statement_verbatim": "334\n8\nExtended Variable Methods\n8.1.2.1\nNosé-Poincaré Dynamics: A Symplectic Approach\nAs we have seen in earlier chapters, there is a strong foundation for using symplectic\nintegrators, for example the existence of perturbative backward error expansions\nwhich are relatively easily calculated, it is desirable to work within this class. On\nthe other hand, as we have mentioned, Nosé-Hoover dynamics is not a Hamiltonian\nsystem. The Nosé-Poincaré method resolves this issue by providing a Hamiltonian-\nbased extension of the physical system whose projected trajectories are actually\nequivalent to Nosé-Hoover trajectories, in the absence of numerical errors. This\nextended Hamiltonian system can then be discretized using a symplectic method.\nNosé’s original proposal involved using the dynamics of the Hamiltonian\nHN D 1\n2s2 QpTM\u00021Qp C \u00142\n2\u0006 C U.q/ C .Nd C 1/kBT ln s\nto deﬁne an extension which can be used for canonical sampling. The dynamics\nfor constant Nosé extended energy, when reduced to the .q; p D Qp=s/ plane will\npreserve the canonical measure \u0005ˇ. However, the scaling of kinetic energy induces\na time transformation, which is inconvenient for molecular modelling purposes. The\nNosé-Poincaré method introduces an explicit unraveling of the time transformation.\nOne works with the modiﬁed Nosé-Poincaré (NP) Hamiltonian [41, 102]:\nHNP D sŒHN \u0003 EN\t D s\n\u0002 1\n2s2 QpTM\u00021Qp C \u00142\n2\u0006 C U.q/ C NdkBT ln s \u0003 EN\n\u0003\n;\n(8.9)\nwhere EN is a constant equal to the initial Nosé energy of the system. Trajectories of\nthis system unfold on a timescale which is in some sense commensurate with that of\nHamiltonian dynamics. The NP Hamiltonian system can be treated with symplectic\nintegrators, conferring a possible stability advantage. Symplectic integrators for this\nsystem are compared in [41].\nThe equations of motion associated to (8.9) are\nd\ndtq D M\u00021Qp=s;\n(8.10)\nd\ndt Qp D sF;\n(8.11)\nd\ndts D sps=\u0006;\n(8.12)\nd\ndtps D QpTM\u00021Qp\ns2\n\u0003 NdkBT \u0003 \u0016HN;\n(8.13)\nwhere \u0016HN D HN \u0003 H0\nN (H0\nN represents the value of the Nosé Hamiltonian at the\ninitial point).\n",
+  "verbatim_scope": "完整对应原页文字层，逐字保留；本条数学成分由statement_latex及statement_scope定位。",
+  "proof_latex": null,
+  "proof_note": "对应原页推导逐字保存在statement_verbatim/original_page_text；排版以原页PDF为准。",
+  "original_page_text": [
+    {
+      "pdf_page": 355,
+      "printed_page": 334,
+      "text": "334\n8\nExtended Variable Methods\n8.1.2.1\nNosé-Poincaré Dynamics: A Symplectic Approach\nAs we have seen in earlier chapters, there is a strong foundation for using symplectic\nintegrators, for example the existence of perturbative backward error expansions\nwhich are relatively easily calculated, it is desirable to work within this class. On\nthe other hand, as we have mentioned, Nosé-Hoover dynamics is not a Hamiltonian\nsystem. The Nosé-Poincaré method resolves this issue by providing a Hamiltonian-\nbased extension of the physical system whose projected trajectories are actually\nequivalent to Nosé-Hoover trajectories, in the absence of numerical errors. This\nextended Hamiltonian system can then be discretized using a symplectic method.\nNosé’s original proposal involved using the dynamics of the Hamiltonian\nHN D 1\n2s2 QpTM\u00021Qp C \u00142\n2\u0006 C U.q/ C .Nd C 1/kBT ln s\nto deﬁne an extension which can be used for canonical sampling. The dynamics\nfor constant Nosé extended energy, when reduced to the .q; p D Qp=s/ plane will\npreserve the canonical measure \u0005ˇ. However, the scaling of kinetic energy induces\na time transformation, which is inconvenient for molecular modelling purposes. The\nNosé-Poincaré method introduces an explicit unraveling of the time transformation.\nOne works with the modiﬁed Nosé-Poincaré (NP) Hamiltonian [41, 102]:\nHNP D sŒHN \u0003 EN\t D s\n\u0002 1\n2s2 QpTM\u00021Qp C \u00142\n2\u0006 C U.q/ C NdkBT ln s \u0003 EN\n\u0003\n;\n(8.9)\nwhere EN is a constant equal to the initial Nosé energy of the system. Trajectories of\nthis system unfold on a timescale which is in some sense commensurate with that of\nHamiltonian dynamics. The NP Hamiltonian system can be treated with symplectic\nintegrators, conferring a possible stability advantage. Symplectic integrators for this\nsystem are compared in [41].\nThe equations of motion associated to (8.9) are\nd\ndtq D M\u00021Qp=s;\n(8.10)\nd\ndt Qp D sF;\n(8.11)\nd\ndts D sps=\u0006;\n(8.12)\nd\ndtps D QpTM\u00021Qp\ns2\n\u0003 NdkBT \u0003 \u0016HN;\n(8.13)\nwhere \u0016HN D HN \u0003 H0\nN (H0\nN represents the value of the Nosé Hamiltonian at the\ninitial point).\n"
+    }
+  ],
+  "numbered_equations": [
+    "8.9"
+  ],
+  "transcription_note": "文字层逐字保留；数学排版另行转写，原页中的特殊字形编码不静默替换。PDF420仅取Exercises之前。",
+  "context_notation": [],
+  "extra_assumptions": [
+    "物理定义域s>0、β,Q及质量正；总函数在此域外不作物理解释。"
+  ],
+  "issues": [
+    "已目视核对原页PDF355：H_N先用(N_d+1)，(8.9)展开却用N_d；同名H_N等号不一致。工作修正显式减去β⁻¹ln s。"
+  ],
+  "statement_scope": "两个原印Hamiltonian定义、所印等式目标及减去对数差项后的代数修正。",
+  "lean_decl": "MD.Ch08.noseHamiltonian",
+  "lean_declarations": [
+    "MD.Ch08.noseHamiltonian",
+    "MD.Ch08.npHamiltonian",
+    "MD.Ch08.nosePoincarePrinted",
+    "MD.Ch08.nosePoincare_corrected"
+  ],
+  "source_page_verification": "见source_page_checks.json，已目视核对本条原页。",
+  "repair_log": [],
+  "documented_priors": []
+}
+```
+
+## 完整本条Lean
+```lean
+def noseHamiltonian (invm : Vec n) (U : Vec n → ℝ) (β Q : ℝ)
+    (q p : Vec n) (s π : ℝ) : ℝ :=
+  kineticTwice invm p / (2*s^2) + π^2/(2*Q) + U q + ((n : ℝ)+1)/β*Real.log s
+def npHamiltonian (invm : Vec n) (U : Vec n → ℝ) (β Q EN : ℝ)
+    (q p : Vec n) (s π : ℝ) : ℝ :=
+  s*(kineticTwice invm p/(2*s^2) + π^2/(2*Q) + U q + (n : ℝ)/β*Real.log s - EN)
+theorem nosePoincarePrinted (invm : Vec n) (U : Vec n → ℝ) (β Q EN : ℝ)
+    (hp : thermostatParameters invm β Q) (q p : Vec n) (s π : ℝ) (hs : 0 < s) :
+    npHamiltonian invm U β Q EN q p s π = s*(noseHamiltonian invm U β Q q p s π-EN) := by
+  sorry
+theorem nosePoincare_corrected (invm : Vec n) (U : Vec n → ℝ) (β Q EN : ℝ)
+    (q p : Vec n) (s π : ℝ) :
+    npHamiltonian invm U β Q EN q p s π = s*(noseHamiltonian invm U β Q q p s π-Real.log s/β-EN) := by
+  unfold npHamiltonian noseHamiltonian
+  ring
+```
+
+## 项目依赖定义体及选择规格
+以下def/abbrev/structure完整保留；定理列出完整类型，Mathlib标准定义无需摘录。
+
+### MD.Ch08.Vec (Blueprint/Ch08.lean:17)
+原文件上下文：
+```lean
+open Set Filter MeasureTheory ProbabilityTheory MolecularDynamics
+open scoped BigOperators Topology ContDiff ENNReal NNReal Matrix
+variable {Ω : Type*} [MeasurableSpace Ω]
+variable {n : ℕ}
+```
+```lean
+abbrev Vec (n : ℕ) := Fin n → ℝ
+```
+
+### MD.Ch08.thermostatParameters (Blueprint/Ch08.lean:63)
+原文件上下文：
+```lean
+open Set Filter MeasureTheory ProbabilityTheory MolecularDynamics
+open scoped BigOperators Topology ContDiff ENNReal NNReal Matrix
+variable {Ω : Type*} [MeasurableSpace Ω]
+variable {n : ℕ}
+```
+```lean
+def thermostatParameters (invm : Vec n) (β Q : ℝ) : Prop :=
+  (∀ i, 0 < invm i) ∧ 0 < β ∧ 0 < Q
+```
+
+### MD.Ch08.kineticTwice (Blueprint/Ch08.lean:65)
+原文件上下文：
+```lean
+open Set Filter MeasureTheory ProbabilityTheory MolecularDynamics
+open scoped BigOperators Topology ContDiff ENNReal NNReal Matrix
+variable {Ω : Type*} [MeasurableSpace Ω]
+variable {n : ℕ}
+```
+```lean
+def kineticTwice (invm p : Vec n) : ℝ := ∑ i, invm i * p i ^ 2
+```
+
+### MD.Ch08.noseHamiltonian (Blueprint/Ch08.lean:146)
+原文件上下文：
+```lean
+open Set Filter MeasureTheory ProbabilityTheory MolecularDynamics
+open scoped BigOperators Topology ContDiff ENNReal NNReal Matrix
+variable {Ω : Type*} [MeasurableSpace Ω]
+variable {n : ℕ}
+```
+```lean
+def noseHamiltonian (invm : Vec n) (U : Vec n → ℝ) (β Q : ℝ)
+    (q p : Vec n) (s π : ℝ) : ℝ :=
+  kineticTwice invm p / (2*s^2) + π^2/(2*Q) + U q + ((n : ℝ)+1)/β*Real.log s
+```
+
+### MD.Ch08.npHamiltonian (Blueprint/Ch08.lean:149)
+原文件上下文：
+```lean
+open Set Filter MeasureTheory ProbabilityTheory MolecularDynamics
+open scoped BigOperators Topology ContDiff ENNReal NNReal Matrix
+variable {Ω : Type*} [MeasurableSpace Ω]
+variable {n : ℕ}
+```
+```lean
+def npHamiltonian (invm : Vec n) (U : Vec n → ℝ) (β Q EN : ℝ)
+    (q p : Vec n) (s π : ℝ) : ℝ :=
+  s*(kineticTwice invm p/(2*s^2) + π^2/(2*Q) + U q + (n : ℝ)/β*Real.log s - EN)
+```
+
+### MD.Ch08.nosePoincarePrinted (Blueprint/Ch08.lean:152)
+原文件上下文：
+```lean
+open Set Filter MeasureTheory ProbabilityTheory MolecularDynamics
+open scoped BigOperators Topology ContDiff ENNReal NNReal Matrix
+variable {Ω : Type*} [MeasurableSpace Ω]
+variable {n : ℕ}
+```
+```lean
+theorem nosePoincarePrinted (invm : Vec n) (U : Vec n → ℝ) (β Q EN : ℝ)
+    (hp : thermostatParameters invm β Q) (q p : Vec n) (s π : ℝ) (hs : 0 < s) :
+    npHamiltonian invm U β Q EN q p s π = s*(noseHamiltonian invm U β Q q p s π-EN)
+```
+
+### MD.Ch08.nosePoincare_corrected (Blueprint/Ch08.lean:156)
+原文件上下文：
+```lean
+open Set Filter MeasureTheory ProbabilityTheory MolecularDynamics
+open scoped BigOperators Topology ContDiff ENNReal NNReal Matrix
+variable {Ω : Type*} [MeasurableSpace Ω]
+variable {n : ℕ}
+```
+```lean
+theorem nosePoincare_corrected (invm : Vec n) (U : Vec n → ℝ) (β Q EN : ℝ)
+    (q p : Vec n) (s π : ℝ) :
+    npHamiltonian invm U β Q EN q p s π = s*(noseHamiltonian invm U β Q q p s π-Real.log s/β-EN)
+```
+
+### MolecularDynamics.Chapter02Review.Q (MolecularDynamics/Chapter02/ReviewDefinitions.lean:17)
+原文件上下文：
+```lean
+open Set Filter Matrix
+open scoped BigOperators Topology
+```
+```lean
+abbrev Q (n : ℕ) := Fin n → ℝ
+```
+
+### MolecularDynamics.Chapter04Review.Q (MolecularDynamics/Chapter04/ReviewDefinitions.lean:15)
+原文件上下文：
+```lean
+open Set Matrix
+open scoped BigOperators Topology Matrix.Norms.Elementwise
+```
+```lean
+abbrev Q (n : ℕ) := Fin n → ℝ
+```

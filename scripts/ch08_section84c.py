@@ -50,7 +50,16 @@ def langevinErrorEstimate (γ t : ℝ) : ℝ := γ*t
 def rescalingRateEstimate (meanK2Phi θ : ℝ) (N : ℕ) : ℝ := 4*meanK2Phi/(θ*N)
 def rescalingErrorEstimate (meanKPhi : ℝ) (N : ℕ) (t : ℝ) : ℝ := 2*meanKPhi/(N:ℝ)*t
 def nhlRateEstimate (N : ℕ) (θ Q : ℝ) : ℝ := Real.sqrt ((N:ℝ)*θ/Q)
-def nhlErrorEstimate (θ Q t : ℝ) : ℝ := θ/(2*Q)*t^2''',kind='definition',extra=['表8.1解析估计作为公式定义保留；其外引渐近推导、谱隙与误差阶不是已证定理，列覆盖缺口。'],scope='效率记号与表8.1的主要解析速率/误差公式；经验曲线逐项排除。')
+def nhlErrorEstimate (θ Q t : ℝ) : ℝ := θ/(2*Q)*t^2
+
+def langevinRateEstimate (γ : ℝ) : ℝ := γ
+def langevinEfficiencyEstimate : ℝ := 1
+def originalRescalingRateEstimate (γVR : ℝ) : ℝ := γVR
+def originalRescalingErrorEstimate (N : ℕ) (γVR t : ℝ) : ℝ := γVR/(N:ℝ)*t
+def originalRescalingEfficiencyEstimate (N : ℕ) : ℝ := N
+def nhlCriticalEfficiencyEstimate (N : ℕ) : ℝ := 2*N
+def rescalingEfficiencyOrder (efficiency : ℕ → ℝ) : Prop :=
+  efficiency =O[atTop] (fun N : ℕ ↦ (N : ℝ))''',kind='definition',extra=['表8.1解析估计作为公式定义保留；其外引渐近推导、谱隙与误差阶不是已证定理，列覆盖缺口。','γ>0、θ,Q>0、N>0用于物理解释；一般VR的O(N)给出确切渐近性质定义，没有声称任意Φ族满足它。'],scope='效率比值、表8.1四行解析速率/低阶误差/效率估计及一般VR的O(N)含义；外引估计定理未证，经验曲线排除。')
 for fig,p in [('8.2',373),('8.3',374),('8.4',375)]:
  EXCLUDED.append(dict(printed_page=str(p-21),pdf_page=str(p),object='Figure '+fig,reason='计算轨道的平均能量收敛曲线或自相关曲线为经验数值结果，不作为待证对象。'))
 EXCLUDED.append(dict(printed_page='351–354',pdf_page='372–375',object='§8.4.3 数值参数及比较结论',reason='125粒子、625副本、步长与图形观测属数值实验；数学定义均另条保留。'))

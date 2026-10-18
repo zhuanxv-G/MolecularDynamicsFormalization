@@ -1,0 +1,136 @@
+{
+  "batch": "BATCH17",
+  "subtask": "BATCH17a",
+  "source_ids": [
+    "MD-8.9.3-PairwiseCanonicalWeight"
+  ],
+  "input_sha256": {
+    "Blueprint/Ch08.lean": "2800812fadd8e2557013f1941e4570401f7903d46f44baf07e23d5531da22a72",
+    "blueprint/ch08/ch08_source.json": "9b994b0f64cd22c85c2ad4123fbfdbd064bd7a6d070fe13b721794432f9f7a63",
+    "BATCH17a_PAGES.pdf": "bfa70f70acfe995197f1a4502e2a03dd28fceabaf713f48aa0887cb40b50bbcd"
+  },
+  "page_mapping": [
+    {
+      "attachment_page": 1,
+      "original_pdf_page": 415,
+      "printed_page": 394
+    }
+  ],
+  "definition_excerpts": [
+    {
+      "full_name": "MD.Ch08.Vec",
+      "kind": "abbrev",
+      "path": "Blueprint/Ch08.lean",
+      "line": 17,
+      "code_sha256": "6f4b254a8a7cc4115fb35265b77caa663bdd18567cd1e664cc5bbd080d02fcff"
+    },
+    {
+      "full_name": "MD.Ch08.dot",
+      "kind": "def",
+      "path": "Blueprint/Ch08.lean",
+      "line": 19,
+      "code_sha256": "bb45cec5def0e642f7dde399650df8a6486048be491d116502106e187aa99348"
+    },
+    {
+      "full_name": "MD.Ch08.probabilityDensity",
+      "kind": "def",
+      "path": "Blueprint/Ch08.lean",
+      "line": 24,
+      "code_sha256": "273a20a340df892158ae6bb7b929ef8c57e9d95f5785ff9729ead4dba069d0f6"
+    },
+    {
+      "full_name": "MD.Ch08.ParticleConfig",
+      "kind": "abbrev",
+      "path": "Blueprint/Ch08.lean",
+      "line": 1334,
+      "code_sha256": "c46ce65b6511b6a80adf81f99adccdc72de343aed0cedd1fcf09d0a9683ccf2e"
+    },
+    {
+      "full_name": "MD.Ch08.ParticlePhase",
+      "kind": "abbrev",
+      "path": "Blueprint/Ch08.lean",
+      "line": 1335,
+      "code_sha256": "c85eef16496630f1d2d793d7c1ec2a510d003438949acbd8ed3f9a959876fb44"
+    },
+    {
+      "full_name": "MD.Ch08.totalMomentum",
+      "kind": "def",
+      "path": "Blueprint/Ch08.lean",
+      "line": 1336,
+      "code_sha256": "6b3fdbfaee6b174232222bb9d9a58bbf3f6d9a3325cae5c3a3c2baf5b3cc250b"
+    },
+    {
+      "full_name": "MD.Ch08.particleHamiltonian",
+      "kind": "def",
+      "path": "Blueprint/Ch08.lean",
+      "line": 1450,
+      "code_sha256": "63effd5fa3c7149f1320ac969070632af9954b51e3f03e9d5f2afec5cfd8c9e1"
+    },
+    {
+      "full_name": "MD.Ch08.PNHLState",
+      "kind": "abbrev",
+      "path": "Blueprint/Ch08.lean",
+      "line": 1581,
+      "code_sha256": "6d7e0c5bfd5956222bd148e66c43b60bcc31807f7654dceb053c1b2a0e230ab9"
+    },
+    {
+      "full_name": "MD.Ch08.pairwiseWeight",
+      "kind": "def",
+      "path": "Blueprint/Ch08.lean",
+      "line": 1600,
+      "code_sha256": "da335da1d4ac2380bcc2b2578f3e562c4532688e86ac6d53f014722cf3f361d9"
+    },
+    {
+      "full_name": "MD.Ch08.pairwiseCanonicalDensity",
+      "kind": "def",
+      "path": "Blueprint/Ch08.lean",
+      "line": 1603,
+      "code_sha256": "30547f2db79e3b85859b4267ca061746fe257a8d700a8de0473a68484cdce239"
+    },
+    {
+      "full_name": "MD.Ch08.pairwiseCanonicalQualification",
+      "kind": "def",
+      "path": "Blueprint/Ch08.lean",
+      "line": 1606,
+      "code_sha256": "d5a9bd393cb7604e68bb22dce5d55efa94734c463ac79371fbef26f916111790"
+    },
+    {
+      "full_name": "MolecularDynamics.Chapter02Review.Q",
+      "kind": "abbrev",
+      "path": "MolecularDynamics/Chapter02/ReviewDefinitions.lean",
+      "line": 17,
+      "code_sha256": "d01d4518aed3668e7c982afee1cd3820fb858a94438e5b8960aa0557f5a57ef1"
+    },
+    {
+      "full_name": "MolecularDynamics.Chapter04Review.Q",
+      "kind": "abbrev",
+      "path": "MolecularDynamics/Chapter04/ReviewDefinitions.lean",
+      "line": 15,
+      "code_sha256": "d01d4518aed3668e7c982afee1cd3820fb858a94438e5b8960aa0557f5a57ef1"
+    },
+    {
+      "full_name": "MolecularDynamics.Chapter05Review.E",
+      "kind": "abbrev",
+      "path": "MolecularDynamics/Chapter05/ReviewDefinitions.lean",
+      "line": 18,
+      "code_sha256": "b497c8ba7f01b62a3147d9ae65652772ff3f81e57aa19b116f1283fef7a3cc60"
+    }
+  ],
+  "validation": {
+    "project_constant_closure": "PASS",
+    "missing_project_definitions": [],
+    "full_page_render_equality_dpi": 72,
+    "website_submitted": false
+  },
+  "files": {
+    "PASTE.txt": {
+      "bytes": 13755,
+      "sha256": "c9cd2885eb962e4c523da7bf281d5e970c4d9ee46b99f114aaee4554f9313970"
+    },
+    "BATCH17a_PAGES.pdf": {
+      "bytes": 78254,
+      "sha256": "bfa70f70acfe995197f1a4502e2a03dd28fceabaf713f48aa0887cb40b50bbcd"
+    }
+  },
+  "total_task_bytes": 96505
+}

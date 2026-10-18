@@ -1,0 +1,143 @@
+{
+  "batch": "BATCH08",
+  "subtask": "BATCH08a",
+  "source_ids": [
+    "MD-8.5-SLSConservation"
+  ],
+  "input_sha256": {
+    "Blueprint/Ch08.lean": "2800812fadd8e2557013f1941e4570401f7903d46f44baf07e23d5531da22a72",
+    "blueprint/ch08/ch08_source.json": "9b994b0f64cd22c85c2ad4123fbfdbd064bd7a6d070fe13b721794432f9f7a63",
+    "BATCH08a_PAGES.pdf": "0e072ab97960a1defe20dcb49a4c7fb481107e9079295797cdd4299823cddd67"
+  },
+  "page_mapping": [
+    {
+      "attachment_page": 1,
+      "original_pdf_page": 379,
+      "printed_page": 358
+    }
+  ],
+  "definition_excerpts": [
+    {
+      "full_name": "MD.Ch08.Vec",
+      "kind": "abbrev",
+      "path": "Blueprint/Ch08.lean",
+      "line": 17,
+      "code_sha256": "6f4b254a8a7cc4115fb35265b77caa663bdd18567cd1e664cc5bbd080d02fcff"
+    },
+    {
+      "full_name": "MD.Ch08.Phase",
+      "kind": "abbrev",
+      "path": "Blueprint/Ch08.lean",
+      "line": 18,
+      "code_sha256": "377b8086105169a0d2deaa2dd84218cb6ea1d04d27b576cd82794d54e5b84300"
+    },
+    {
+      "full_name": "MD.Ch08.dot",
+      "kind": "def",
+      "path": "Blueprint/Ch08.lean",
+      "line": 19,
+      "code_sha256": "bb45cec5def0e642f7dde399650df8a6486048be491d116502106e187aa99348"
+    },
+    {
+      "full_name": "MD.Ch08.gradient",
+      "kind": "def",
+      "path": "Blueprint/Ch08.lean",
+      "line": 20,
+      "code_sha256": "a9a017b15c584dec720a71840d896ddb8d0e05e149030bce523362af481b101e"
+    },
+    {
+      "full_name": "MD.Ch08.thermostatParameters",
+      "kind": "def",
+      "path": "Blueprint/Ch08.lean",
+      "line": 63,
+      "code_sha256": "e270d7f3278cd4087efb4fb6de4f2ba99959cae64baec460ebb813f9d01cc285"
+    },
+    {
+      "full_name": "MD.Ch08.kineticTwice",
+      "kind": "def",
+      "path": "Blueprint/Ch08.lean",
+      "line": 65,
+      "code_sha256": "74e9a17210c40ab25bfb4d66c78bf295ed45ebc01a50292e3e9961df7d0ced46"
+    },
+    {
+      "full_name": "MD.Ch08.nhWeight",
+      "kind": "def",
+      "path": "Blueprint/Ch08.lean",
+      "line": 77,
+      "code_sha256": "bd26aae8404fcd2118787c4e0163e867a8ed3e674fd6a5dfcb78954082f30c04"
+    },
+    {
+      "full_name": "MD.Ch08.slsDeterministic",
+      "kind": "def",
+      "path": "Blueprint/Ch08.lean",
+      "line": 592,
+      "code_sha256": "cb22fb5a7bfe56b8b8f9ea6db3f8dbaf3d4970b40f7afff374ee106839df2384"
+    },
+    {
+      "full_name": "MD.Ch08.slsDeterministic_stationary",
+      "kind": "theorem",
+      "path": "Blueprint/Ch08.lean",
+      "line": 619,
+      "code_sha256": "cf4bb9963a7517af5b22783dbce82764ad86093e165af9d5c109f2f4e2518fae"
+    },
+    {
+      "full_name": "MD.Ch08.slsDeterministic_divergence",
+      "kind": "theorem",
+      "path": "Blueprint/Ch08.lean",
+      "line": 623,
+      "code_sha256": "7a16613ae9b1dbeb354b2def174d0271b1bbe6730899263a382c9b063f73eee4"
+    },
+    {
+      "full_name": "MolecularDynamics.Chapter02Review.Q",
+      "kind": "abbrev",
+      "path": "MolecularDynamics/Chapter02/ReviewDefinitions.lean",
+      "line": 17,
+      "code_sha256": "d01d4518aed3668e7c982afee1cd3820fb858a94438e5b8960aa0557f5a57ef1"
+    },
+    {
+      "full_name": "MolecularDynamics.Chapter04Review.Q",
+      "kind": "abbrev",
+      "path": "MolecularDynamics/Chapter04/ReviewDefinitions.lean",
+      "line": 15,
+      "code_sha256": "d01d4518aed3668e7c982afee1cd3820fb858a94438e5b8960aa0557f5a57ef1"
+    },
+    {
+      "full_name": "MolecularDynamics.Chapter05Review.E",
+      "kind": "abbrev",
+      "path": "MolecularDynamics/Chapter05/ReviewDefinitions.lean",
+      "line": 18,
+      "code_sha256": "b497c8ba7f01b62a3147d9ae65652772ff3f81e57aa19b116f1283fef7a3cc60"
+    },
+    {
+      "full_name": "MolecularDynamics.textbookDivergence",
+      "kind": "def",
+      "path": "MolecularDynamics/Chapter08/ThermostatDensity.lean",
+      "line": 18,
+      "code_sha256": "1b45cabec3bf68bd209da969759334d158c263b7e5a40ed527bd3a4f48e25c48"
+    },
+    {
+      "full_name": "MolecularDynamics.textbookLiouvilleStationary",
+      "kind": "def",
+      "path": "MolecularDynamics/Chapter08/ThermostatDensity.lean",
+      "line": 22,
+      "code_sha256": "f508a347a748f1f3bf44848b427a82bfe147392454daa2e910628a63a8fad1ae"
+    }
+  ],
+  "validation": {
+    "project_constant_closure": "PASS",
+    "missing_project_definitions": [],
+    "full_page_render_equality_dpi": 72,
+    "website_submitted": false
+  },
+  "files": {
+    "PASTE.txt": {
+      "bytes": 14746,
+      "sha256": "51cd415af0c9a5712151a4dee87fb8ecf24beb80a55e73d681bd0fcdce69883f"
+    },
+    "BATCH08a_PAGES.pdf": {
+      "bytes": 78895,
+      "sha256": "0e072ab97960a1defe20dcb49a4c7fb481107e9079295797cdd4299823cddd67"
+    }
+  },
+  "total_task_bytes": 98427
+}

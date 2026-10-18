@@ -1,0 +1,201 @@
+以附件/PASTE 为准，忽略 /workspace 旧文件；Mathlib 定义按标准含义采信。
+本任务只审本条：原文转录、对象资格、定义体、量词、全部结论及[EXTRA]是否一致；Lean编译不代替语义审阅。
+Lean/Mathlib均4.34.0。原页PDF映射：[400, 401]；印刷页=[379, 380].
+input_sha256请原样回显：
+{
+  "Blueprint/Ch08.lean": "2800812fadd8e2557013f1941e4570401f7903d46f44baf07e23d5531da22a72",
+  "blueprint/ch08/ch08_source.json": "9b994b0f64cd22c85c2ad4123fbfdbd064bd7a6d070fe13b721794432f9f7a63",
+  "BATCH13b_PAGES.pdf": "45edcb5a3ee16f572e55e357e3de158f65efd706663ef53267e581024ca64b4e"
+}
+用代码将JSON对象(batch,input_sha256,items)写到 /workspace/.mathcopilot/reviews/ch08/BATCH13b_review.json；items仅含本source_id。
+items字段：source_id、verdict(PASS/FAIL/NEEDS_HUMAN)、transcription、semantic_review、counterexample、suggested_fix、printed_version、corrected_version。逐版区分原文疑误和修正版结论；缺材料必须具体指出，不猜测。写后json.loads自检，最后仅回复路径及统计。
+
+## 原文JSON
+```json
+{
+  "source_id": "MD-8.8-AndersenCoordinates",
+  "kind": "unnumbered_claim",
+  "label": null,
+  "section": "8.8",
+  "printed_page": "379–380",
+  "pdf_page": "400–401",
+  "statement_latex": "qᵢ=V^{1/3}q̄ᵢ; q̇ᵢ=(1/3)V^{−2/3}V̇q̄ᵢ+V^{1/3}q̄̇ᵢ; p̄ᵢ=mᵢV^{1/3}q̇ᵢ. (8.71),(8.72).",
+  "statement_verbatim": "8.8\nConstant Temperature and Pressure Molecular Dynamics\n379\nwhich leads to the probability density\n\u0005NPT D Z\u00021\nNPTe\u0002ˇ.HCPV/;\nwhere H is the Hamiltonian, and ˇ\u00021 D kBT.\nThe NPT model may be viewed as corresponding to a thermostatted system\nwhich incorporates a “piston” controlling the overall volume of the system to be\nconsistent with the target pressure. During simulation, the volume must be free\nto change; whereas the methods presented so far retain a ﬁxed volume. In NVE\nor NVT simulation, the volume enters in two ways into the molecular simulation\nmethod: (i) as a modiﬁcation of the potential (allowing for periodic replicas) and\n(ii) in the mechanism by which atoms are mapped from one boundary to the other\nof the rectangular domain, simulating motion on a torus. It is not obvious how to\ngeneralize these to the NPT setting where V is a dynamical variable.\nThe method of Andersen [11] (“Andersen’s piston”) is to control the volume\nby reparamaterizing the coordinates to lie in a cubic box with unit side. Assuming\nthe system occupies a cubic domain, say, Œ\u0003L=2; L=2\t\u0004Œ\u0003L=2; L=2\t\u0004Œ\u0003L=2; L=2\t,\nwhere L D V1=3, we may write, for each three-dimensional atomic coordinate vector\nqi\nqi D V1=3Nqi;\n(8.71)\nwhere Nqi is conﬁned to the unit-side cube. Then we have\nPqi D 1\n3V\u00022=3 PV Nqi C V1=3 d\ndt Nqi:\nThe kinetic energy of the atomic system may be written\nK D\nN\nX\niD1\nmi\nkPqik2\n2\n:\nAfter coordinate transformation this becomes\nNK D\nN\nX\niD1\nmi\n2\n\n\n\n\n\n1\n3V\u00022=3 PV Nqi C V1=3 d\ndt Nqi\n\n\n\n\n\n2\nD\nN\nX\niD1\nmi\n2\n\u00021\n9V\u00024=3 PV2 kNqik2 C 2\n3V\u00021=3 PV Nqi \u0002 PNqi C V2=3 \n\nPNqi\n\n\n2\u0003\n;\nthus the momentum vector conjugate to Nqi becomes\nNpi D @ NK\n@PNqi\n\n380\n8\nExtended Variable Methods\nD mi\n\u00021\n3V\u00021=3 PV Nqi C V2=3PNqi\n\u0003\n;\nfrom which, we observe\nNpi D miV1=3Pqi:\n(8.72)\nThere is still the question of how to adjust the volume in simulation. The idea\nof Andersen was to view the volume V as a dynamical quantity on equal footing\nwith the coordinates of the system by viewing PV as the potential energy term and\nintroducing an artiﬁcial kinetic energy term of the form \u0006V PV2. The barostat mass \u0006V\nbecomes a free parameter, analogous to the thermal mass used in Nosé dynamics.\nAn extended Hamiltonian may then be written by introducing a momentum variable\npV conjugate to V:\nOH.Nq; Np; V; pV/ D\nN\nX\niD1\nkNpik2\n2miV2=3 C NU.NqI V/ C p2\nV\n2\u0006V\nC PV;\n(8.73)\nwhere we have written NU.NqI V/ D U.V1=3Nq/.\nIn the extended space, we then observe that\n\u0005NPT D\ns\nˇ\n2\u0014\u0006V\nZ\ne\u0002ˇ OH.Nq;Np;V;pV/dpV;\nfrom the deﬁnitions (8.71) and (8.72).\nThere are several ways to proceed. Andersen suggested to use a Monte-\nCarlo method to control the temperature during simulation. This approach has\nthe advantage of simplicity, but only allows the determination of conﬁgurational\naverages. If dynamical information is required (e.g. an autocorrelation function\nor a diffusion coefﬁcient), some sort of dynamics-based scheme is needed. The\nprogress in developing formulations and numerical methods can be charted in\n[11, 32, 128, 183, 199, 248, 252, 288, 373].\nDeterministic methods can be used based on Nosé-Hoover to control the\ntemperature. A problem with methods of this type that one sometimes encounters\n“ringing” or “breathing” depending on the tuning of various parameters.\nStochastic-dynamical thermostats greatly improve control of the convergence to\nequilibrium. We have already seen several methods of this type, speciﬁcally the\nLangevin dynamics method and the Nosé-Hoover-Langevinmethod. These schemes\nmay be applied in conjunction with the Andersen Hamiltonian OH. The extended\nsystem approach outlined here was developed in collaboration with R. Elber and\nM. Di Pierro; it is close in spirit to the method of Klein [199], but incorporates\nstochastic terms as in Nosé-Hoover-Langevin in the equations deﬁning the auxiliary\nvariables to ensure ergodicity.\n",
+  "verbatim_scope": "完整对应原页文字层，逐字保留；本条数学成分由statement_latex及statement_scope定位。",
+  "proof_latex": null,
+  "proof_note": "对应原页推导逐字保存在statement_verbatim/original_page_text；排版以原页PDF为准。",
+  "original_page_text": [
+    {
+      "pdf_page": 400,
+      "printed_page": 379,
+      "text": "8.8\nConstant Temperature and Pressure Molecular Dynamics\n379\nwhich leads to the probability density\n\u0005NPT D Z\u00021\nNPTe\u0002ˇ.HCPV/;\nwhere H is the Hamiltonian, and ˇ\u00021 D kBT.\nThe NPT model may be viewed as corresponding to a thermostatted system\nwhich incorporates a “piston” controlling the overall volume of the system to be\nconsistent with the target pressure. During simulation, the volume must be free\nto change; whereas the methods presented so far retain a ﬁxed volume. In NVE\nor NVT simulation, the volume enters in two ways into the molecular simulation\nmethod: (i) as a modiﬁcation of the potential (allowing for periodic replicas) and\n(ii) in the mechanism by which atoms are mapped from one boundary to the other\nof the rectangular domain, simulating motion on a torus. It is not obvious how to\ngeneralize these to the NPT setting where V is a dynamical variable.\nThe method of Andersen [11] (“Andersen’s piston”) is to control the volume\nby reparamaterizing the coordinates to lie in a cubic box with unit side. Assuming\nthe system occupies a cubic domain, say, Œ\u0003L=2; L=2\t\u0004Œ\u0003L=2; L=2\t\u0004Œ\u0003L=2; L=2\t,\nwhere L D V1=3, we may write, for each three-dimensional atomic coordinate vector\nqi\nqi D V1=3Nqi;\n(8.71)\nwhere Nqi is conﬁned to the unit-side cube. Then we have\nPqi D 1\n3V\u00022=3 PV Nqi C V1=3 d\ndt Nqi:\nThe kinetic energy of the atomic system may be written\nK D\nN\nX\niD1\nmi\nkPqik2\n2\n:\nAfter coordinate transformation this becomes\nNK D\nN\nX\niD1\nmi\n2\n\n\n\n\n\n1\n3V\u00022=3 PV Nqi C V1=3 d\ndt Nqi\n\n\n\n\n\n2\nD\nN\nX\niD1\nmi\n2\n\u00021\n9V\u00024=3 PV2 kNqik2 C 2\n3V\u00021=3 PV Nqi \u0002 PNqi C V2=3 \n\nPNqi\n\n\n2\u0003\n;\nthus the momentum vector conjugate to Nqi becomes\nNpi D @ NK\n@PNqi\n"
+    },
+    {
+      "pdf_page": 401,
+      "printed_page": 380,
+      "text": "380\n8\nExtended Variable Methods\nD mi\n\u00021\n3V\u00021=3 PV Nqi C V2=3PNqi\n\u0003\n;\nfrom which, we observe\nNpi D miV1=3Pqi:\n(8.72)\nThere is still the question of how to adjust the volume in simulation. The idea\nof Andersen was to view the volume V as a dynamical quantity on equal footing\nwith the coordinates of the system by viewing PV as the potential energy term and\nintroducing an artiﬁcial kinetic energy term of the form \u0006V PV2. The barostat mass \u0006V\nbecomes a free parameter, analogous to the thermal mass used in Nosé dynamics.\nAn extended Hamiltonian may then be written by introducing a momentum variable\npV conjugate to V:\nOH.Nq; Np; V; pV/ D\nN\nX\niD1\nkNpik2\n2miV2=3 C NU.NqI V/ C p2\nV\n2\u0006V\nC PV;\n(8.73)\nwhere we have written NU.NqI V/ D U.V1=3Nq/.\nIn the extended space, we then observe that\n\u0005NPT D\ns\nˇ\n2\u0014\u0006V\nZ\ne\u0002ˇ OH.Nq;Np;V;pV/dpV;\nfrom the deﬁnitions (8.71) and (8.72).\nThere are several ways to proceed. Andersen suggested to use a Monte-\nCarlo method to control the temperature during simulation. This approach has\nthe advantage of simplicity, but only allows the determination of conﬁgurational\naverages. If dynamical information is required (e.g. an autocorrelation function\nor a diffusion coefﬁcient), some sort of dynamics-based scheme is needed. The\nprogress in developing formulations and numerical methods can be charted in\n[11, 32, 128, 183, 199, 248, 252, 288, 373].\nDeterministic methods can be used based on Nosé-Hoover to control the\ntemperature. A problem with methods of this type that one sometimes encounters\n“ringing” or “breathing” depending on the tuning of various parameters.\nStochastic-dynamical thermostats greatly improve control of the convergence to\nequilibrium. We have already seen several methods of this type, speciﬁcally the\nLangevin dynamics method and the Nosé-Hoover-Langevinmethod. These schemes\nmay be applied in conjunction with the Andersen Hamiltonian OH. The extended\nsystem approach outlined here was developed in collaboration with R. Elber and\nM. Di Pierro; it is close in spirit to the method of Klein [199], but incorporates\nstochastic terms as in Nosé-Hoover-Langevin in the equations deﬁning the auxiliary\nvariables to ensure ergodicity.\n"
+    }
+  ],
+  "numbered_equations": [
+    "8.71",
+    "8.72"
+  ],
+  "transcription_note": "文字层逐字保留；数学排版另行转写，原页中的特殊字形编码不静默替换。PDF420仅取Exercises之前。",
+  "context_notation": [],
+  "extra_assumptions": [
+    "V>0用于实分数幂的导数与乘法；质量物理解读取正，等式本身是坐标变换，不包含随体积变化的全局正则流或规范测度。"
+  ],
+  "issues": [],
+  "statement_scope": "位置、速度、共轭动量的实际变换式与两个局部等式目标。",
+  "lean_decl": "MD.Ch08.andersenPosition",
+  "lean_declarations": [
+    "MD.Ch08.andersenPosition",
+    "MD.Ch08.andersenVelocity",
+    "MD.Ch08.andersenMomentum",
+    "MD.Ch08.andersenPosition_derivative",
+    "MD.Ch08.andersenMomentum_velocity"
+  ],
+  "source_page_verification": "见source_page_checks.json，已目视核对本条原页。",
+  "repair_log": [],
+  "documented_priors": []
+}
+```
+
+## 完整本条Lean
+```lean
+def andersenPosition (V : ℝ) (qbar : Vec n) : Vec n := volumeScale V • qbar
+def andersenVelocity (V Vdot : ℝ) (qbar vbar : Vec n) : Vec n :=
+  ((1/3 : ℝ)*Real.rpow V (-2/3 : ℝ)*Vdot) • qbar+volumeScale V • vbar
+def andersenMomentum (m : Vec n) (V Vdot : ℝ) (qbar vbar : Vec n) : Vec n :=
+  fun i ↦ m i*((1/3 : ℝ)*Real.rpow V (-1/3 : ℝ)*Vdot*qbar i+
+    Real.rpow V (2/3 : ℝ)*vbar i)
+theorem andersenPosition_derivative (V : ℝ → ℝ) (qbar : ℝ → Vec n)
+    (t Vdot : ℝ) (vbar : Vec n) (hV : 0 < V t)
+    (hdV : HasDerivAt V Vdot t) (hdq : HasDerivAt qbar vbar t) :
+    HasDerivAt (fun s ↦ andersenPosition (V s) (qbar s))
+      (andersenVelocity (V t) Vdot (qbar t) vbar) t := by
+  sorry
+theorem andersenMomentum_velocity (m : Vec n) (V Vdot : ℝ) (qbar vbar : Vec n)
+    (hV : 0 < V) :
+    andersenMomentum m V Vdot qbar vbar =
+      fun i ↦ m i*volumeScale V*andersenVelocity V Vdot qbar vbar i := by
+  sorry
+```
+
+## 项目依赖定义体及选择规格
+以下def/abbrev/structure完整保留；定理列出完整类型，Mathlib标准定义无需摘录。
+
+### MD.Ch08.Vec (Blueprint/Ch08.lean:17)
+原文件上下文：
+```lean
+open Set Filter MeasureTheory ProbabilityTheory MolecularDynamics
+open scoped BigOperators Topology ContDiff ENNReal NNReal Matrix
+variable {Ω : Type*} [MeasurableSpace Ω]
+variable {n : ℕ}
+```
+```lean
+abbrev Vec (n : ℕ) := Fin n → ℝ
+```
+
+### MD.Ch08.volumeScale (Blueprint/Ch08.lean:1121)
+原文件上下文：
+```lean
+open Set Filter MeasureTheory ProbabilityTheory MolecularDynamics
+open scoped BigOperators Topology ContDiff ENNReal NNReal Matrix
+variable {Ω : Type*} [MeasurableSpace Ω]
+variable {n : ℕ}
+```
+```lean
+def volumeScale (V : ℝ) : ℝ := Real.rpow V (1/3 : ℝ)
+```
+
+### MD.Ch08.andersenPosition (Blueprint/Ch08.lean:1140)
+原文件上下文：
+```lean
+open Set Filter MeasureTheory ProbabilityTheory MolecularDynamics
+open scoped BigOperators Topology ContDiff ENNReal NNReal Matrix
+variable {Ω : Type*} [MeasurableSpace Ω]
+variable {n : ℕ}
+```
+```lean
+def andersenPosition (V : ℝ) (qbar : Vec n) : Vec n := volumeScale V • qbar
+```
+
+### MD.Ch08.andersenVelocity (Blueprint/Ch08.lean:1141)
+原文件上下文：
+```lean
+open Set Filter MeasureTheory ProbabilityTheory MolecularDynamics
+open scoped BigOperators Topology ContDiff ENNReal NNReal Matrix
+variable {Ω : Type*} [MeasurableSpace Ω]
+variable {n : ℕ}
+```
+```lean
+def andersenVelocity (V Vdot : ℝ) (qbar vbar : Vec n) : Vec n :=
+  ((1/3 : ℝ)*Real.rpow V (-2/3 : ℝ)*Vdot) • qbar+volumeScale V • vbar
+```
+
+### MD.Ch08.andersenMomentum (Blueprint/Ch08.lean:1143)
+原文件上下文：
+```lean
+open Set Filter MeasureTheory ProbabilityTheory MolecularDynamics
+open scoped BigOperators Topology ContDiff ENNReal NNReal Matrix
+variable {Ω : Type*} [MeasurableSpace Ω]
+variable {n : ℕ}
+```
+```lean
+def andersenMomentum (m : Vec n) (V Vdot : ℝ) (qbar vbar : Vec n) : Vec n :=
+  fun i ↦ m i*((1/3 : ℝ)*Real.rpow V (-1/3 : ℝ)*Vdot*qbar i+
+    Real.rpow V (2/3 : ℝ)*vbar i)
+```
+
+### MD.Ch08.andersenPosition_derivative (Blueprint/Ch08.lean:1146)
+原文件上下文：
+```lean
+open Set Filter MeasureTheory ProbabilityTheory MolecularDynamics
+open scoped BigOperators Topology ContDiff ENNReal NNReal Matrix
+variable {Ω : Type*} [MeasurableSpace Ω]
+variable {n : ℕ}
+```
+```lean
+theorem andersenPosition_derivative (V : ℝ → ℝ) (qbar : ℝ → Vec n)
+    (t Vdot : ℝ) (vbar : Vec n) (hV : 0 < V t)
+    (hdV : HasDerivAt V Vdot t) (hdq : HasDerivAt qbar vbar t) :
+    HasDerivAt (fun s ↦ andersenPosition (V s) (qbar s))
+      (andersenVelocity (V t) Vdot (qbar t) vbar) t
+```
+
+### MD.Ch08.andersenMomentum_velocity (Blueprint/Ch08.lean:1152)
+原文件上下文：
+```lean
+open Set Filter MeasureTheory ProbabilityTheory MolecularDynamics
+open scoped BigOperators Topology ContDiff ENNReal NNReal Matrix
+variable {Ω : Type*} [MeasurableSpace Ω]
+variable {n : ℕ}
+```
+```lean
+theorem andersenMomentum_velocity (m : Vec n) (V Vdot : ℝ) (qbar vbar : Vec n)
+    (hV : 0 < V) :
+    andersenMomentum m V Vdot qbar vbar =
+      fun i ↦ m i*volumeScale V*andersenVelocity V Vdot qbar vbar i
+```
+
+### MolecularDynamics.Chapter04Review.V (MolecularDynamics/Chapter04/ReviewDefinitions.lean:17)
+原文件上下文：
+```lean
+open Set Matrix
+open scoped BigOperators Topology Matrix.Norms.Elementwise
+```
+```lean
+abbrev V := Fin 3 → ℝ
+```
+
+### MolecularDynamics.Chapter06Review.V (MolecularDynamics/Chapter06/ReviewDefinitions.lean:17)
+原文件上下文：
+```lean
+open Set Filter MeasureTheory ProbabilityTheory
+open scoped BigOperators Topology ContDiff ENNReal NNReal
+local instance : MeasureSpace UnitAddCircle := ⟨AddCircle.haarAddCircle⟩
+```
+```lean
+abbrev V (n : ℕ) := Fin n → ℝ
+```

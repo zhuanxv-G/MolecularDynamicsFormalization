@@ -1,0 +1,366 @@
+以附件/PASTE 为准，忽略 /workspace 旧文件；Mathlib 定义按标准含义采信。
+本任务只审本条：原文转录、对象资格、定义体、量词、全部结论及[EXTRA]是否一致；Lean编译不代替语义审阅。
+Lean/Mathlib均4.34.0。原页PDF映射：[413, 414]；印刷页=[392, 393].
+input_sha256请原样回显：
+{
+  "Blueprint/Ch08.lean": "2800812fadd8e2557013f1941e4570401f7903d46f44baf07e23d5531da22a72",
+  "blueprint/ch08/ch08_source.json": "9b994b0f64cd22c85c2ad4123fbfdbd064bd7a6d070fe13b721794432f9f7a63",
+  "BATCH16d_PAGES.pdf": "d3e9cc06848ebd2aa66167a9e24106698acfcafe0b3804d5e7253172e61d462c"
+}
+用代码将JSON对象(batch,input_sha256,items)写到 /workspace/.mathcopilot/reviews/ch08/BATCH16d_review.json；items仅含本source_id。
+items字段：source_id、verdict(PASS/FAIL/NEEDS_HUMAN)、transcription、semantic_review、counterexample、suggested_fix、printed_version、corrected_version。逐版区分原文疑误和修正版结论；缺材料必须具体指出，不猜测。写后json.loads自检，最后仅回复路径及统计。
+
+## 原文JSON
+```json
+{
+  "source_id": "MD-8.9.2-DPDSplittingCompositions",
+  "kind": "algorithm",
+  "label": null,
+  "section": "8.9.2",
+  "printed_page": "392–393",
+  "pdf_page": "413–414",
+  "statement_latex": "Shardlow: O(h) B(h/2) A(h) B(h/2); S=B+O and Trotter: S(h/2) A(h) S(h/2). Pair products use the printed fixed unordered-pair order. (8.99),(8.101),(8.102).",
+  "statement_verbatim": "392\n8\nExtended Variable Methods\nAs an example, the phase space propagation of Shardlow’s method [333], may\nbe written as\nexp\n\u0006\nh OLDPD-S\n\u0007\nD exp .hLO/ exp\n\bh\n2LB\n\t\nexp .hLA/ exp\n\bh\n2LB\n\t\n;\n(8.99)\nwhere h is the stepsize and, as usual, exp\n\u0004\nhLf\n\u0005\nrepresents the phase space propaga-\ntor associated to the corresponding vector ﬁeld f. In practice, Shardlow’s method is\ntypically implemented by further reducing the vector ﬁeld O into interacting pairs:\nexp\n\u0006\nh OLO\n\u0007\nD exp\n\u0004\nhLON\u00021;N\n\u0005\n\u0002 \u0002 \u0002 exp\n\u0004\nhLO1;3\n\u0005\nexp\n\u0004\nhLO1;2\n\u0005\n;\nwith the operators associated to each interacting pair deﬁned as\nLOi;j D\n\b\n\u0003\n!D.rij/.Oqij \u0002 vij/ C \u00072\n2 Œ!R.rij/\t2Oqij \u0002\n\u0002\nrpi \u0003 rpj\n\u0003\t\nOqij \u0002 rpi:\n(8.100)\nEach interacting pair thus preserves the invariant distribution O\u0005ˇ.\n8.9.2.3\nDPD Trotter Scheme\nIn the stochastic DPD-Trotter scheme, the standard DPD system (8.90) is split into\ntwo parts, which are labelled “A” and “S” as indicated below\nd\n\u0002qi\npi\n\u0003\nD\n\u0002 m\u00021\ni pi\n0\n\u0003\ndt\n„\nƒ‚\n…\nA\nC\n\u0002\n0\nFC\ni dt C FD\ni dt C \u0007Ri\n\u0003\n„\nƒ‚\n…\nS\n:\n(8.101)\nThe corresponding operator of part A is exactly the same as in Shardlow’s method,\nwhile the operator of part S is actually the sum of the operators of B and O deﬁned\nabove\nLS D LB C LO:\n(8.102)\nAs in Shardlow’s method, the vector ﬁeld S is typically split into exactly solvable\ninteracting pairs. Subtracting dvj from dvi and multiplying Oqij on both sides gives\nmijdvij D FC\nij .rij/dt \u0003 \n!D.rij/vijdt C \u0007!R.rij/dWij;\n(8.103)\n\n8.9\nMomentum-Conserving Thermostats and the Dissipative Particle. . .\n393\nwhere mij D mimj=.mi C mj/ is the “reduced mass”, vij D Oqij \u0002 vij and FC\nij .rij/ is the\nmagnitude of the conservative force (8.82). This equation is an Ornstein-Uhlenbeck\nprocess with the exact (in the sense of distributions) solution [200]\nvij.t/ D\nFC\nij\n\u0002mij\nC e\u0002\u0002t\n \nvij.0/ \u0003\nFC\nij\n\u0002mij\n!\nC\ns\nkBT.1 \u0003 e\u00022\u0002t/\nmij\nRij.t/;\n(8.104)\nfor i < j with \u0002 D \n!D=mij, where vij.0/ are the initial relative velocities and\nRij.t/ are normally distributed variables with zero mean and unit variance. Thus the\nincremental velocities are given by\n\u0003ij D vij.t/ \u0003 vij.0/ D\n \nvij.0/ \u0003\nFC\nij\n\u0002mij\n!\n.e\u0002\u0002t \u0003 1/ C\ns\nkBT.1 \u0003 e\u00022\u0002t/\nmij\nRij.t/:\n(8.105)\nThe momenta are then obtained from\npnC1\ni\nD pn\ni C mij\u0003ijOqn\nij;\n(8.106)\npnC1\nj\nD pn\nj \u0003 mij\u0003ijOqn\nij;\n(8.107)\nthus deﬁning the propagator ehLSi;j for each particle pair. The DPD-Trotter propaga-\ntor is then\nexp\n\u0006\nh OLDPD-Trotter\n\u0007\nD exp\n\bh\n2LS\n\t\nexp .hLA/ exp\n\bh\n2LS\n\t\n;\nwhere the momentum part is deﬁned by\nexp\n\bh\n2\nOLS\n\t\nD exp\n\bh\n2LSN\u00021;N\n\t\n\u0002 \u0002 \u0002 exp\n\bh\n2LS1;3\n\t\nexp\n\bh\n2LS1;2\n\t\n:\n8.9.3\nExtended Variable Momentum-Conserving Thermostats:\nPairwise Nosé-Hoover/Nosé-Hoover-Langevin Methods\nBecause of the form of the force laws, the number of interaction terms (and\ncomputational cost) involved in the three force terms in DPD are roughly balanced.\nIn this setting the computational time needed to generate the independent random\nnumber streams can be signiﬁcant (depending on the particle density and cutoff\nradius), particularly in very large systems solved in parallel where communication\nbetween cells can require a signiﬁcant amount of time [1, 301]. For this reason,\nAllen and Schmid [8] proposed a Nosé-Hoover type thermostatting scheme in\n",
+  "verbatim_scope": "完整对应原页文字层，逐字保留；本条数学成分由statement_latex及statement_scope定位。",
+  "proof_latex": null,
+  "proof_note": "对应原页推导逐字保存在statement_verbatim/original_page_text；排版以原页PDF为准。",
+  "original_page_text": [
+    {
+      "pdf_page": 413,
+      "printed_page": 392,
+      "text": "392\n8\nExtended Variable Methods\nAs an example, the phase space propagation of Shardlow’s method [333], may\nbe written as\nexp\n\u0006\nh OLDPD-S\n\u0007\nD exp .hLO/ exp\n\bh\n2LB\n\t\nexp .hLA/ exp\n\bh\n2LB\n\t\n;\n(8.99)\nwhere h is the stepsize and, as usual, exp\n\u0004\nhLf\n\u0005\nrepresents the phase space propaga-\ntor associated to the corresponding vector ﬁeld f. In practice, Shardlow’s method is\ntypically implemented by further reducing the vector ﬁeld O into interacting pairs:\nexp\n\u0006\nh OLO\n\u0007\nD exp\n\u0004\nhLON\u00021;N\n\u0005\n\u0002 \u0002 \u0002 exp\n\u0004\nhLO1;3\n\u0005\nexp\n\u0004\nhLO1;2\n\u0005\n;\nwith the operators associated to each interacting pair deﬁned as\nLOi;j D\n\b\n\u0003\n!D.rij/.Oqij \u0002 vij/ C \u00072\n2 Œ!R.rij/\t2Oqij \u0002\n\u0002\nrpi \u0003 rpj\n\u0003\t\nOqij \u0002 rpi:\n(8.100)\nEach interacting pair thus preserves the invariant distribution O\u0005ˇ.\n8.9.2.3\nDPD Trotter Scheme\nIn the stochastic DPD-Trotter scheme, the standard DPD system (8.90) is split into\ntwo parts, which are labelled “A” and “S” as indicated below\nd\n\u0002qi\npi\n\u0003\nD\n\u0002 m\u00021\ni pi\n0\n\u0003\ndt\n„\nƒ‚\n…\nA\nC\n\u0002\n0\nFC\ni dt C FD\ni dt C \u0007Ri\n\u0003\n„\nƒ‚\n…\nS\n:\n(8.101)\nThe corresponding operator of part A is exactly the same as in Shardlow’s method,\nwhile the operator of part S is actually the sum of the operators of B and O deﬁned\nabove\nLS D LB C LO:\n(8.102)\nAs in Shardlow’s method, the vector ﬁeld S is typically split into exactly solvable\ninteracting pairs. Subtracting dvj from dvi and multiplying Oqij on both sides gives\nmijdvij D FC\nij .rij/dt \u0003 \n!D.rij/vijdt C \u0007!R.rij/dWij;\n(8.103)\n"
+    },
+    {
+      "pdf_page": 414,
+      "printed_page": 393,
+      "text": "8.9\nMomentum-Conserving Thermostats and the Dissipative Particle. . .\n393\nwhere mij D mimj=.mi C mj/ is the “reduced mass”, vij D Oqij \u0002 vij and FC\nij .rij/ is the\nmagnitude of the conservative force (8.82). This equation is an Ornstein-Uhlenbeck\nprocess with the exact (in the sense of distributions) solution [200]\nvij.t/ D\nFC\nij\n\u0002mij\nC e\u0002\u0002t\n \nvij.0/ \u0003\nFC\nij\n\u0002mij\n!\nC\ns\nkBT.1 \u0003 e\u00022\u0002t/\nmij\nRij.t/;\n(8.104)\nfor i < j with \u0002 D \n!D=mij, where vij.0/ are the initial relative velocities and\nRij.t/ are normally distributed variables with zero mean and unit variance. Thus the\nincremental velocities are given by\n\u0003ij D vij.t/ \u0003 vij.0/ D\n \nvij.0/ \u0003\nFC\nij\n\u0002mij\n!\n.e\u0002\u0002t \u0003 1/ C\ns\nkBT.1 \u0003 e\u00022\u0002t/\nmij\nRij.t/:\n(8.105)\nThe momenta are then obtained from\npnC1\ni\nD pn\ni C mij\u0003ijOqn\nij;\n(8.106)\npnC1\nj\nD pn\nj \u0003 mij\u0003ijOqn\nij;\n(8.107)\nthus deﬁning the propagator ehLSi;j for each particle pair. The DPD-Trotter propaga-\ntor is then\nexp\n\u0006\nh OLDPD-Trotter\n\u0007\nD exp\n\bh\n2LS\n\t\nexp .hLA/ exp\n\bh\n2LS\n\t\n;\nwhere the momentum part is deﬁned by\nexp\n\bh\n2\nOLS\n\t\nD exp\n\bh\n2LSN\u00021;N\n\t\n\u0002 \u0002 \u0002 exp\n\bh\n2LS1;3\n\t\nexp\n\bh\n2LS1;2\n\t\n:\n8.9.3\nExtended Variable Momentum-Conserving Thermostats:\nPairwise Nosé-Hoover/Nosé-Hoover-Langevin Methods\nBecause of the form of the force laws, the number of interaction terms (and\ncomputational cost) involved in the three force terms in DPD are roughly balanced.\nIn this setting the computational time needed to generate the independent random\nnumber streams can be signiﬁcant (depending on the particle density and cutoff\nradius), particularly in very large systems solved in parallel where communication\nbetween cells can require a signiﬁcant amount of time [1, 301]. For this reason,\nAllen and Schmid [8] proposed a Nosé-Hoover type thermostatting scheme in\n"
+    }
+  ],
+  "numbered_equations": [
+    "8.99",
+    "8.101",
+    "8.102"
+  ],
+  "transcription_note": "文字层逐字保留；数学排版另行转写，原页中的特殊字形编码不静默替换。PDF420仅取Exercises之前。",
+  "context_notation": [],
+  "extra_assumptions": [
+    "A/B/O/S为调用者指定的映射；只保留所印组合顺序。尚未实现BBK成对近似或其误差、全O/S流及生成元指数关系。",
+    "两次S同顺序的非交换成对乘积不能仅凭外层回文判为对称；不作该声称。"
+  ],
+  "issues": [],
+  "statement_scope": "两种外层组合、固定顺序逐对执行及S形式生成元；实际OU单对步骤见后条。",
+  "lean_decl": "MD.Ch08.dpdShardlowComposition",
+  "lean_declarations": [
+    "MD.Ch08.dpdShardlowComposition",
+    "MD.Ch08.dpdTrotterComposition",
+    "MD.Ch08.sequentialPairComposition",
+    "MD.Ch08.dpdSGenerator"
+  ],
+  "source_page_verification": "见source_page_checks.json，已目视核对本条原页。",
+  "repair_log": [],
+  "documented_priors": []
+}
+```
+
+## 完整本条Lean
+```lean
+def dpdShardlowComposition {E : Type*} (A B O : ℝ → E → E) (h : ℝ) : E → E :=
+  O h ∘ B (h/2) ∘ A h ∘ B (h/2)
+def dpdTrotterComposition {E : Type*} (A S : ℝ → E → E) (h : ℝ) : E → E :=
+  S (h/2) ∘ A h ∘ S (h/2)
+def sequentialPairComposition {E : Type*} (steps : List (E → E)) : E → E :=
+  fun x ↦ steps.foldl (fun y F ↦ F y) x
+def dpdSGenerator {N d K : ℕ} (pairs : Fin K → Fin N × Fin N) (m : Fin N → ℝ)
+    (α rc γ σ : ℝ) (wD wR : ℝ → ℝ) (f : ParticlePhase N d → ℝ) (z : ParticlePhase N d) : ℝ :=
+  firstOrder8 (dpdB α rc) f z+dpdLO pairs m γ σ wD wR f z
+```
+
+## 项目依赖定义体及选择规格
+以下def/abbrev/structure完整保留；定理列出完整类型，Mathlib标准定义无需摘录。
+
+### MD.Ch08.Vec (Blueprint/Ch08.lean:17)
+原文件上下文：
+```lean
+open Set Filter MeasureTheory ProbabilityTheory MolecularDynamics
+open scoped BigOperators Topology ContDiff ENNReal NNReal Matrix
+variable {Ω : Type*} [MeasurableSpace Ω]
+variable {n : ℕ}
+```
+```lean
+abbrev Vec (n : ℕ) := Fin n → ℝ
+```
+
+### MD.Ch08.dot (Blueprint/Ch08.lean:19)
+原文件上下文：
+```lean
+open Set Filter MeasureTheory ProbabilityTheory MolecularDynamics
+open scoped BigOperators Topology ContDiff ENNReal NNReal Matrix
+variable {Ω : Type*} [MeasurableSpace Ω]
+variable {n : ℕ}
+```
+```lean
+def dot (v w : Vec n) : ℝ := ∑ i, v i * w i
+```
+
+### MD.Ch08.ParticleConfig (Blueprint/Ch08.lean:1334)
+原文件上下文：
+```lean
+open Set Filter MeasureTheory ProbabilityTheory MolecularDynamics
+open scoped BigOperators Topology ContDiff ENNReal NNReal Matrix
+variable {Ω : Type*} [MeasurableSpace Ω]
+variable {n : ℕ}
+```
+```lean
+abbrev ParticleConfig (N d : ℕ) := Fin N → Vec d
+```
+
+### MD.Ch08.ParticlePhase (Blueprint/Ch08.lean:1335)
+原文件上下文：
+```lean
+open Set Filter MeasureTheory ProbabilityTheory MolecularDynamics
+open scoped BigOperators Topology ContDiff ENNReal NNReal Matrix
+variable {Ω : Type*} [MeasurableSpace Ω]
+variable {n : ℕ}
+```
+```lean
+abbrev ParticlePhase (N d : ℕ) := ParticleConfig N d × ParticleConfig N d
+```
+
+### MD.Ch08.pairDistance (Blueprint/Ch08.lean:1349)
+原文件上下文：
+```lean
+open Set Filter MeasureTheory ProbabilityTheory MolecularDynamics
+open scoped BigOperators Topology ContDiff ENNReal NNReal Matrix
+variable {Ω : Type*} [MeasurableSpace Ω]
+variable {n : ℕ}
+```
+```lean
+def pairDistance {N d : ℕ} (q : ParticleConfig N d) (i j : Fin N) : ℝ :=
+  Real.sqrt (dot (q i-q j) (q i-q j))
+```
+
+### MD.Ch08.pairDirection (Blueprint/Ch08.lean:1351)
+原文件上下文：
+```lean
+open Set Filter MeasureTheory ProbabilityTheory MolecularDynamics
+open scoped BigOperators Topology ContDiff ENNReal NNReal Matrix
+variable {Ω : Type*} [MeasurableSpace Ω]
+variable {n : ℕ}
+```
+```lean
+def pairDirection {N d : ℕ} (q : ParticleConfig N d) (i j : Fin N) : Vec d :=
+  (pairDistance q i j)⁻¹ • (q i-q j)
+```
+
+### MD.Ch08.dpdPairConservative (Blueprint/Ch08.lean:1354)
+原文件上下文：
+```lean
+open Set Filter MeasureTheory ProbabilityTheory MolecularDynamics
+open scoped BigOperators Topology ContDiff ENNReal NNReal Matrix
+variable {Ω : Type*} [MeasurableSpace Ω]
+variable {n : ℕ}
+```
+```lean
+def dpdPairConservative {N d : ℕ} (α rc : ℝ) (q : ParticleConfig N d) (i j : Fin N) : Vec d :=
+  if pairDistance q i j < rc then (α*(1-pairDistance q i j/rc)) • pairDirection q i j else 0
+```
+
+### MD.Ch08.dpdConservative (Blueprint/Ch08.lean:1358)
+原文件上下文：
+```lean
+open Set Filter MeasureTheory ProbabilityTheory MolecularDynamics
+open scoped BigOperators Topology ContDiff ENNReal NNReal Matrix
+variable {Ω : Type*} [MeasurableSpace Ω]
+variable {n : ℕ}
+```
+```lean
+def dpdConservative {N d : ℕ} (α rc : ℝ) (q : ParticleConfig N d) : ParticleConfig N d :=
+  fun i ↦ ∑ j ∈ Finset.univ.filter (fun j ↦ j ≠ i), dpdPairConservative α rc q i j
+```
+
+### MD.Ch08.relativeVelocity (Blueprint/Ch08.lean:1372)
+原文件上下文：
+```lean
+open Set Filter MeasureTheory ProbabilityTheory MolecularDynamics
+open scoped BigOperators Topology ContDiff ENNReal NNReal Matrix
+variable {Ω : Type*} [MeasurableSpace Ω]
+variable {n : ℕ}
+```
+```lean
+def relativeVelocity {N d : ℕ} (m : Fin N → ℝ) (p : ParticleConfig N d) (i j : Fin N) : Vec d :=
+  (m i)⁻¹ • p i-(m j)⁻¹ • p j
+```
+
+### MD.Ch08.dpdPairDissipative (Blueprint/Ch08.lean:1374)
+原文件上下文：
+```lean
+open Set Filter MeasureTheory ProbabilityTheory MolecularDynamics
+open scoped BigOperators Topology ContDiff ENNReal NNReal Matrix
+variable {Ω : Type*} [MeasurableSpace Ω]
+variable {n : ℕ}
+```
+```lean
+def dpdPairDissipative {N d : ℕ} (m : Fin N → ℝ) (γ : ℝ) (wD : ℝ → ℝ)
+    (q p : ParticleConfig N d) (i j : Fin N) : Vec d :=
+  (-γ*wD (pairDistance q i j)*dot (pairDirection q i j) (relativeVelocity m p i j)) • pairDirection q i j
+```
+
+### MD.Ch08.dpdDissipative (Blueprint/Ch08.lean:1379)
+原文件上下文：
+```lean
+open Set Filter MeasureTheory ProbabilityTheory MolecularDynamics
+open scoped BigOperators Topology ContDiff ENNReal NNReal Matrix
+variable {Ω : Type*} [MeasurableSpace Ω]
+variable {n : ℕ}
+```
+```lean
+def dpdDissipative {N d : ℕ} (m : Fin N → ℝ) (γ : ℝ) (wD : ℝ → ℝ)
+    (q p : ParticleConfig N d) : ParticleConfig N d :=
+  fun i ↦ ∑ j ∈ Finset.univ.filter (fun j ↦ j ≠ i), dpdPairDissipative m γ wD q p i j
+```
+
+### MD.Ch08.pairImpulseVector (Blueprint/Ch08.lean:1382)
+原文件上下文：
+```lean
+open Set Filter MeasureTheory ProbabilityTheory MolecularDynamics
+open scoped BigOperators Topology ContDiff ENNReal NNReal Matrix
+variable {Ω : Type*} [MeasurableSpace Ω]
+variable {n : ℕ}
+```
+```lean
+def pairImpulseVector {N d : ℕ} (i j : Fin N) (v : Vec d) : ParticleConfig N d :=
+  Pi.single i v-Pi.single j v
+```
+
+### MD.Ch08.dpdNoise (Blueprint/Ch08.lean:1384)
+原文件上下文：
+```lean
+open Set Filter MeasureTheory ProbabilityTheory MolecularDynamics
+open scoped BigOperators Topology ContDiff ENNReal NNReal Matrix
+variable {Ω : Type*} [MeasurableSpace Ω]
+variable {n : ℕ}
+```
+```lean
+def dpdNoise {N d K : ℕ} (pairs : Fin K → Fin N × Fin N) (σ : ℝ) (wR : ℝ → ℝ)
+    (q : ParticleConfig N d) (k : Fin K) : ParticlePhase N d :=
+  (0,pairImpulseVector (pairs k).1 (pairs k).2
+    ((σ*wR (pairDistance q (pairs k).1 (pairs k).2)) • pairDirection q (pairs k).1 (pairs k).2))
+```
+
+### MD.Ch08.dpdB (Blueprint/Ch08.lean:1508)
+原文件上下文：
+```lean
+open Set Filter MeasureTheory ProbabilityTheory MolecularDynamics
+open scoped BigOperators Topology ContDiff ENNReal NNReal Matrix
+variable {Ω : Type*} [MeasurableSpace Ω]
+variable {n : ℕ}
+```
+```lean
+def dpdB {N d : ℕ} (α rc : ℝ) (z : ParticlePhase N d) : ParticlePhase N d :=
+  (0,dpdConservative α rc z.1)
+```
+
+### MD.Ch08.dpdO (Blueprint/Ch08.lean:1510)
+原文件上下文：
+```lean
+open Set Filter MeasureTheory ProbabilityTheory MolecularDynamics
+open scoped BigOperators Topology ContDiff ENNReal NNReal Matrix
+variable {Ω : Type*} [MeasurableSpace Ω]
+variable {n : ℕ}
+```
+```lean
+def dpdO {N d : ℕ} (m : Fin N → ℝ) (γ : ℝ) (wD : ℝ → ℝ)
+    (z : ParticlePhase N d) : ParticlePhase N d := (0,dpdDissipative m γ wD z.1 z.2)
+```
+
+### MD.Ch08.firstOrder8 (Blueprint/Ch08.lean:1512)
+原文件上下文：
+```lean
+open Set Filter MeasureTheory ProbabilityTheory MolecularDynamics
+open scoped BigOperators Topology ContDiff ENNReal NNReal Matrix
+variable {Ω : Type*} [MeasurableSpace Ω]
+variable {n : ℕ}
+```
+```lean
+def firstOrder8 {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
+    (F : E → E) (f : E → ℝ) (z : E) : ℝ := fderiv ℝ f z (F z)
+```
+
+### MD.Ch08.dpdLO (Blueprint/Ch08.lean:1514)
+原文件上下文：
+```lean
+open Set Filter MeasureTheory ProbabilityTheory MolecularDynamics
+open scoped BigOperators Topology ContDiff ENNReal NNReal Matrix
+variable {Ω : Type*} [MeasurableSpace Ω]
+variable {n : ℕ}
+```
+```lean
+def dpdLO {N d K : ℕ} (pairs : Fin K → Fin N × Fin N) (m : Fin N → ℝ)
+    (γ σ : ℝ) (wD wR : ℝ → ℝ) (f : ParticlePhase N d → ℝ) (z : ParticlePhase N d) : ℝ :=
+  firstOrder8 (dpdO m γ wD) f z+
+    (∑ k, fderiv ℝ (fun x ↦ fderiv ℝ f x) z (dpdNoise pairs σ wR z.1 k)
+      (dpdNoise pairs σ wR z.1 k))/2
+```
+
+### MD.Ch08.dpdShardlowComposition (Blueprint/Ch08.lean:1546)
+原文件上下文：
+```lean
+open Set Filter MeasureTheory ProbabilityTheory MolecularDynamics
+open scoped BigOperators Topology ContDiff ENNReal NNReal Matrix
+variable {Ω : Type*} [MeasurableSpace Ω]
+variable {n : ℕ}
+```
+```lean
+def dpdShardlowComposition {E : Type*} (A B O : ℝ → E → E) (h : ℝ) : E → E :=
+  O h ∘ B (h/2) ∘ A h ∘ B (h/2)
+```
+
+### MD.Ch08.dpdTrotterComposition (Blueprint/Ch08.lean:1548)
+原文件上下文：
+```lean
+open Set Filter MeasureTheory ProbabilityTheory MolecularDynamics
+open scoped BigOperators Topology ContDiff ENNReal NNReal Matrix
+variable {Ω : Type*} [MeasurableSpace Ω]
+variable {n : ℕ}
+```
+```lean
+def dpdTrotterComposition {E : Type*} (A S : ℝ → E → E) (h : ℝ) : E → E :=
+  S (h/2) ∘ A h ∘ S (h/2)
+```
+
+### MD.Ch08.sequentialPairComposition (Blueprint/Ch08.lean:1550)
+原文件上下文：
+```lean
+open Set Filter MeasureTheory ProbabilityTheory MolecularDynamics
+open scoped BigOperators Topology ContDiff ENNReal NNReal Matrix
+variable {Ω : Type*} [MeasurableSpace Ω]
+variable {n : ℕ}
+```
+```lean
+def sequentialPairComposition {E : Type*} (steps : List (E → E)) : E → E :=
+  fun x ↦ steps.foldl (fun y F ↦ F y) x
+```
+
+### MD.Ch08.dpdSGenerator (Blueprint/Ch08.lean:1552)
+原文件上下文：
+```lean
+open Set Filter MeasureTheory ProbabilityTheory MolecularDynamics
+open scoped BigOperators Topology ContDiff ENNReal NNReal Matrix
+variable {Ω : Type*} [MeasurableSpace Ω]
+variable {n : ℕ}
+```
+```lean
+def dpdSGenerator {N d K : ℕ} (pairs : Fin K → Fin N × Fin N) (m : Fin N → ℝ)
+    (α rc γ σ : ℝ) (wD wR : ℝ → ℝ) (f : ParticlePhase N d → ℝ) (z : ParticlePhase N d) : ℝ :=
+  firstOrder8 (dpdB α rc) f z+dpdLO pairs m γ σ wD wR f z
+```
+
+### MolecularDynamics.Chapter05Review.E (MolecularDynamics/Chapter05/ReviewDefinitions.lean:18)
+原文件上下文：
+```lean
+open Set Filter MeasureTheory Matrix
+open scoped BigOperators Topology ENNReal
+```
+```lean
+abbrev E (n : ℕ) := EuclideanSpace ℝ (Fin n)
+```

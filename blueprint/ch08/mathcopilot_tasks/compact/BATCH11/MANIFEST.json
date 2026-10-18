@@ -1,0 +1,47 @@
+{
+  "batch": "BATCH11",
+  "subtasks": [
+    {
+      "subtask": "BATCH11a",
+      "source_id": "MD-8.6.4-SINThreeLevelPotential",
+      "path": "blueprint/ch08/mathcopilot_tasks/compact/BATCH11/a",
+      "bytes": 85251,
+      "manifest_sha256": "9820d7113d6d8a5897ab5f8dc887b51469ec35a84736cc00084ee773476ce4cd"
+    },
+    {
+      "subtask": "BATCH11b",
+      "source_id": "MD-8.7-GeneralizedLangevin",
+      "path": "blueprint/ch08/mathcopilot_tasks/compact/BATCH11/b",
+      "bytes": 101619,
+      "manifest_sha256": "8d1cf9d168f2135c25b70939907bec19266f82fd5ce455ec744e7a63ce670a35"
+    },
+    {
+      "subtask": "BATCH11c",
+      "source_id": "MD-8.7-GLEFluctuationDissipationPrinted",
+      "path": "blueprint/ch08/mathcopilot_tasks/compact/BATCH11/c",
+      "bytes": 101250,
+      "manifest_sha256": "d0ca780499ce73b5722562097f32c4050ee0f8809a38e667a4defb0f2c71225e"
+    },
+    {
+      "subtask": "BATCH11d",
+      "source_id": "MD-8.7-PronyKernel",
+      "path": "blueprint/ch08/mathcopilot_tasks/compact/BATCH11/d",
+      "bytes": 81363,
+      "manifest_sha256": "cb33fe4cda48fa60646c58a84e70e636fda5a10ab445f47128bbdd6a047e1e52"
+    },
+    {
+      "subtask": "BATCH11e",
+      "source_id": "MD-8.7.1-PronyMemoryODE",
+      "path": "blueprint/ch08/mathcopilot_tasks/compact/BATCH11/e",
+      "bytes": 85934,
+      "manifest_sha256": "ce679bc289c61886f8d482fbe6c91da404fec227b8d0b24ddec07a56db9b622c"
+    },
+    {
+      "subtask": "BATCH11f",
+      "source_id": "MD-8.7.1-PronyOUStationarity",
+      "path": "blueprint/ch08/mathcopilot_tasks/compact/BATCH11/f",
+      "bytes": 74897,
+      "manifest_sha256": "a2b77d86d321704a353461e440a3f4465f88a679609ffe20ce18f1c2ab3e03cd"
+    }
+  ]
+}

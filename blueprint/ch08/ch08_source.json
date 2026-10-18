@@ -1577,10 +1577,11 @@
     "transcription_note": "文字层逐字保留；数学排版另行转写，原页中的特殊字形编码不静默替换。PDF420仅取Exercises之前。",
     "context_notation": [],
     "extra_assumptions": [
-      "表8.1解析估计作为公式定义保留；其外引渐近推导、谱隙与误差阶不是已证定理，列覆盖缺口。"
+      "表8.1解析估计作为公式定义保留；其外引渐近推导、谱隙与误差阶不是已证定理，列覆盖缺口。",
+      "γ>0、θ,Q>0、N>0用于物理解释；一般VR的O(N)给出确切渐近性质定义，没有声称任意Φ族满足它。"
     ],
     "issues": [],
-    "statement_scope": "效率记号与表8.1的主要解析速率/误差公式；经验曲线逐项排除。",
+    "statement_scope": "效率比值、表8.1四行解析速率/低阶误差/效率估计及一般VR的O(N)含义；外引估计定理未证，经验曲线排除。",
     "lean_decl": "MD.Ch08.thermostatEfficiency",
     "lean_declarations": [
       "MD.Ch08.thermostatEfficiency",
@@ -1588,7 +1589,14 @@
       "MD.Ch08.rescalingRateEstimate",
       "MD.Ch08.rescalingErrorEstimate",
       "MD.Ch08.nhlRateEstimate",
-      "MD.Ch08.nhlErrorEstimate"
+      "MD.Ch08.nhlErrorEstimate",
+      "MD.Ch08.langevinRateEstimate",
+      "MD.Ch08.langevinEfficiencyEstimate",
+      "MD.Ch08.originalRescalingRateEstimate",
+      "MD.Ch08.originalRescalingErrorEstimate",
+      "MD.Ch08.originalRescalingEfficiencyEstimate",
+      "MD.Ch08.nhlCriticalEfficiencyEstimate",
+      "MD.Ch08.rescalingEfficiencyOrder"
     ],
     "source_page_verification": "见source_page_checks.json，已目视核对本条原页。",
     "repair_log": [],
@@ -1795,6 +1803,42 @@
       "MD.Ch08.slsDriftStep",
       "MD.Ch08.slsLeapfrog",
       "MD.Ch08.slsCoordinateField"
+    ],
+    "source_page_verification": "见source_page_checks.json，已目视核对本条原页。",
+    "repair_log": [],
+    "documented_priors": []
+  },
+  {
+    "source_id": "MD-8.5-SLSDoubleWell",
+    "kind": "definition",
+    "label": null,
+    "section": "8.5",
+    "printed_page": "359",
+    "pdf_page": "380",
+    "statement_latex": "The one-dimensional example has U(q)=(q²−1)².",
+    "statement_verbatim": "8.5\nNon-Newtonian Dynamics-Based Iterations for Molecular Sampling\n359\nThe deterministic part may however be approximated in various ways. We may\nsolve it by splitting into two (volume preserving) parts, integrating ﬁrst Pq D \u0012M\u00021p,\nwhere \u0012 and p are ﬁxed (thus a drift along a given direction), followed by solving\nP\u0012 D \u0003.M\u00021p/ \u0002 rU=\u0006, which is a similar drift in the auxiliary variable. Composing\nthese drifts successively in a leapfrog approach, we arrive at the deterministic\nsequence:\n\u0012nC1=2 D \u0012n \u0003 .h=2/.M\u00021p/ \u0002 rU.qn/=\u0006;\nqnC1 D qn C h\u0012nC1=2M\u00021p;\n\u0012nC1 D \u0012nC1=2 \u0003 .h=2/.M\u00021p/ \u0002 rU.qnC1/=\u0006:\nCoupling this to the stochastic evolution computed from solving the OU parts in\nboth \u0012 and p yields an alternative to Langevin dynamics that is 2nd order accurate\nin its steady state distribution and long term averages. Let us refer to this as the\nstochastic line sampling with leapfrog method.\nGoing a step further we may again obtain methods which exactly preserve the\ncanonical measure based on canonical coordinate splitting, resulting in systems of\nthe form\nPqi D \u0012m\u00021\ni pi;\nP\u0012 D \u0003piUqi=.\u0006mi/:\nUp to time-rescaling by pi, these are in fact the same types of systems as we\nencountered previously in our treatment of J-splitting of the Hamiltonian system.\nIf desired, an rth order area-preserving approximation of the qi; pi dynamics could\nbe substituted. This method results in paths that differ slightly from the linear\npath in the direction M\u00021p. In simulations we found that this method, which\nwe term “stochastic line sampling with coordinate splitting,” was more stable\nthan the leapfrog version when implemented using a further leapfrog splitting\nin each coordinate plane. However, we emphasize that both methods are highly\nexperimental and are presented here as illustrations of the ﬂexibility available in\nconstructing methods to sample the canonical distribution—they have not yet been\nshown to be beneﬁcial for molecular sampling applications.\nWe compare the trajectories and invariant distributions of the non-Newtonian\nline sampling thermostat (8.33)–(8.35) with three Newtonian-based thermostats:\nLangevin dynamics (7.4), Nosé-Hoover (8.2)–(8.4) and Nosé-Hoover-Langevin\n(8.27)–(8.29) dynamics. We seek to canonically sample a one-dimensional system\nwith double-well potential energy function given as\nU.q/ D .q2 \u0003 1/2:\nChoosing all arbitrary system parameters to be one (i.e. setting ˇ D M D \n D\n\n0 D \u0006 D 1 for the methods), we select initial conditions q.0/ D p.0/ D 1 and\n\u0012.0/ D 0:5 with a timestep parameter ıt D 0:01 sufﬁciently small to eliminate the\npossibility of numerical errors warping the results.\n",
+    "verbatim_scope": "完整对应原页文字层，逐字保留；本条数学成分由statement_latex及statement_scope定位。",
+    "proof_latex": null,
+    "proof_note": "对应原页推导逐字保存在statement_verbatim/original_page_text；排版以原页PDF为准。",
+    "original_page_text": [
+      {
+        "pdf_page": 380,
+        "printed_page": 359,
+        "text": "8.5\nNon-Newtonian Dynamics-Based Iterations for Molecular Sampling\n359\nThe deterministic part may however be approximated in various ways. We may\nsolve it by splitting into two (volume preserving) parts, integrating ﬁrst Pq D \u0012M\u00021p,\nwhere \u0012 and p are ﬁxed (thus a drift along a given direction), followed by solving\nP\u0012 D \u0003.M\u00021p/ \u0002 rU=\u0006, which is a similar drift in the auxiliary variable. Composing\nthese drifts successively in a leapfrog approach, we arrive at the deterministic\nsequence:\n\u0012nC1=2 D \u0012n \u0003 .h=2/.M\u00021p/ \u0002 rU.qn/=\u0006;\nqnC1 D qn C h\u0012nC1=2M\u00021p;\n\u0012nC1 D \u0012nC1=2 \u0003 .h=2/.M\u00021p/ \u0002 rU.qnC1/=\u0006:\nCoupling this to the stochastic evolution computed from solving the OU parts in\nboth \u0012 and p yields an alternative to Langevin dynamics that is 2nd order accurate\nin its steady state distribution and long term averages. Let us refer to this as the\nstochastic line sampling with leapfrog method.\nGoing a step further we may again obtain methods which exactly preserve the\ncanonical measure based on canonical coordinate splitting, resulting in systems of\nthe form\nPqi D \u0012m\u00021\ni pi;\nP\u0012 D \u0003piUqi=.\u0006mi/:\nUp to time-rescaling by pi, these are in fact the same types of systems as we\nencountered previously in our treatment of J-splitting of the Hamiltonian system.\nIf desired, an rth order area-preserving approximation of the qi; pi dynamics could\nbe substituted. This method results in paths that differ slightly from the linear\npath in the direction M\u00021p. In simulations we found that this method, which\nwe term “stochastic line sampling with coordinate splitting,” was more stable\nthan the leapfrog version when implemented using a further leapfrog splitting\nin each coordinate plane. However, we emphasize that both methods are highly\nexperimental and are presented here as illustrations of the ﬂexibility available in\nconstructing methods to sample the canonical distribution—they have not yet been\nshown to be beneﬁcial for molecular sampling applications.\nWe compare the trajectories and invariant distributions of the non-Newtonian\nline sampling thermostat (8.33)–(8.35) with three Newtonian-based thermostats:\nLangevin dynamics (7.4), Nosé-Hoover (8.2)–(8.4) and Nosé-Hoover-Langevin\n(8.27)–(8.29) dynamics. We seek to canonically sample a one-dimensional system\nwith double-well potential energy function given as\nU.q/ D .q2 \u0003 1/2:\nChoosing all arbitrary system parameters to be one (i.e. setting ˇ D M D \n D\n\n0 D \u0006 D 1 for the methods), we select initial conditions q.0/ D p.0/ D 1 and\n\u0012.0/ D 0:5 with a timestep parameter ıt D 0:01 sufﬁciently small to eliminate the\npossibility of numerical errors warping the results.\n"
+      }
+    ],
+    "numbered_equations": [],
+    "transcription_note": "文字层逐字保留；数学排版另行转写，原页中的特殊字形编码不静默替换。PDF420仅取Exercises之前。",
+    "context_notation": [],
+    "extra_assumptions": [
+      "保留试验中的数学势函数；轨迹、直方图和采样优劣是经验观测，另列排除。"
+    ],
+    "issues": [],
+    "statement_scope": "一维双阱势定义与非负性。",
+    "lean_decl": "MD.Ch08.slsDoubleWell",
+    "lean_declarations": [
+      "MD.Ch08.slsDoubleWell",
+      "MD.Ch08.slsDoubleWell_nonneg"
     ],
     "source_page_verification": "见source_page_checks.json，已目视核对本条原页。",
     "repair_log": [],
@@ -4132,6 +4176,133 @@
       "MD.Ch08.pnhlPairCStep",
       "MD.Ch08.pnhlSComposition",
       "MD.Ch08.pnhlNComposition"
+    ],
+    "source_page_verification": "见source_page_checks.json，已目视核对本条原页。",
+    "repair_log": [],
+    "documented_priors": []
+  },
+  {
+    "source_id": "MD-8.10-BerendsenRelaxation",
+    "kind": "unnumbered_claim",
+    "label": null,
+    "section": "8.10",
+    "printed_page": "396–397",
+    "pdf_page": "417–418",
+    "statement_latex": "Ṫ(t)=γ_T(Ttarget−T(t)), γ_T>0. After Verlet, p←√[1+γ_Th(N_d k_BT/‖p‖²−1)]p.",
+    "statement_verbatim": "396\n8\nExtended Variable Methods\nWe could split this system in a number of ways. Each of these maps exp.tL?/\nmay be integrated in the weak sense. Two examples of integrators are the PNHL-S\nand PNHL-N schemes deﬁned in [228] as\neh OLPNHL-S D e\nh\n2 LAe\nh\n2 LBe\nh\n2 LCe\nh\n2 LDehLOe\nh\n2 LDe\nh\n2 LCe\nh\n2 LBe\nh\n2 LA;\nand\neh OLPNHL-N D e\nh\n2 LAe\nh\n2 LBe\nh\n2 LCe\nh\n2 LDehLOe\nh\n2 LDe\nh\n2 LCe\nh\n2 LAe\nh\n2 LB:\nTraditionally, and elsewhere in this book, we have found symmetric compositions\nto have superior performance. This is normally due to the fact that they deliver\neven order of accuracy. In the case of PNHL-S, the supposed advantage would be\ncompounded by the fact that, as in the Verlet and \u0002BAOAB\u0003 methods, the forces\nneed only be computed once per timestep. However, rather surprisingly, and for\nreasons that are as yet unclear, it turns out that the most advantageous technique\nfrom the point of view of accuracy with respect to the invariant measure has been\nobserved to be the nonsymmetric integration strategy PNHL-N. This method also\nshows, for a variety of observables, 2nd order approximation of averages. It also\nallows the use of a much larger integration timestep in practice—so large that it\nis still more efﬁcient for DPD-like simulations when the extra force calculation is\ntaken into account!\n8.10\nNumerical Experiments\nWe investigate a simple test system of 18 unit-mass particles in a 2D periodic 3 \u0004 3\nbox using the typical soft DPD potential given in (8.83), with a cutoff radius of 1.0\nand ˛ D 25. In our simulations the temperature was ﬁxed at T D 1.\nWe implement the Nosé-Hoover-Langevin and Langevin dynamics schemes,\nas well as the momentum-conserving PNHL thermostat, and plot the normalized\nmomentum distributions and time evolution of total momentum for the methods\nin Fig. 8.8. Additionally we compare against the method of Berendsen [32], which\nmodiﬁes Netwon’s equations of motion to incorporate a relaxation process for the\ntotal system temperature, representing the exchange of energy from the coupling\nof the external bath. If the instantaneous temperature at time t is T.t/, with target\ntemperature T, then using the Berendsen device we have\nPT.t/ D \nT.T \u0003 T.t//;\n\n8.10\nNumerical Experiments\n397\n-5\n5\n0\nMomentum\nDensity\nDPD/PNHL\n0\n1\n2\n3\n4\n5\n-0.004\n0\n.004\nTime  (x104)\nTime  (x104)\nTime  (x104)\nTime  (x104)\nTotal momentum \n-5\n5\n0\nMomentum\nLangevin\n-5\n5\n0\nMomentum\nNHL\nMomentum\nBerendsen\n0\n1\n2\n3\n4\n5\nTotal momentum\n-20\n-10\n0\n10\n20\nTotal momentum\n30\n0\n1\n2\n3\n4\n5\n0\n1\n2\n3\n4\n5\nTotal momentum\n−20\n−10\n0\n10\n−10\n0\n10\n20\n-5\n5\n0\nFig. 8.8 We compare the time evolution of the system’s total momentum in the x and y\ncomponents (top row, marked blue and red respectively), and momentum distributions (bottom\nrow) for various methods. In the lower row of ﬁgures, the dark, solid curve represents the exact\nnormal density, while the superimposed histograms are constructed from the simulation data.\nFrom left to right: the PNHL-N thermostat, Langevin dynamics, Nosé-Hoover-Langevin (NHL)\ndynamics and the Berensen device. The same initial conditions were used with small values of\ntotal momenta. The Berendsen device shows a rapid and systematic increase in the momenta, NHL\nand Langevin exhibit different behavior, obtaining large ﬂuctuating values, whereas the PNHL-\nN thermostat preserves the total momenta exactly. Standard DPD results are identical to those of\nPNHL in this respect\nfor some decay constant \nT > 0. The dynamics will not necessarily sample canoni-\ncally, but the method will ensure that the average temperature is well-controlled (and\nis hence sometimes useful for equilibration purposes). We implement the version of\nthe scheme given in [186], which completes a step of the velocity Verlet scheme\nfollowed by a scaling of the momenta:\np \ns\n1 C \nTh\n\bNdkBT\nkpk2 \u0003 1\n\t\np;\nfor the given timestep h.\nWe use parameters \n D 4:5, \u0006 D 1 and \nT D 1 for the integrators, with a\nsmall stepsize of h D 0:05 (making any qualitative sampling errors unlikely). We\nstarted the simulations with very small net momenta (`x D 0:0035, `y \u0007 \u00030:0019)\nand observed a dramatic increase in magnitude of both components when using\nthe simple (deterministic) Berendsen scheme. If the system is ergodic in Euclidean\n",
+    "verbatim_scope": "完整对应原页文字层，逐字保留；本条数学成分由statement_latex及statement_scope定位。",
+    "proof_latex": null,
+    "proof_note": "对应原页推导逐字保存在statement_verbatim/original_page_text；排版以原页PDF为准。",
+    "original_page_text": [
+      {
+        "pdf_page": 417,
+        "printed_page": 396,
+        "text": "396\n8\nExtended Variable Methods\nWe could split this system in a number of ways. Each of these maps exp.tL?/\nmay be integrated in the weak sense. Two examples of integrators are the PNHL-S\nand PNHL-N schemes deﬁned in [228] as\neh OLPNHL-S D e\nh\n2 LAe\nh\n2 LBe\nh\n2 LCe\nh\n2 LDehLOe\nh\n2 LDe\nh\n2 LCe\nh\n2 LBe\nh\n2 LA;\nand\neh OLPNHL-N D e\nh\n2 LAe\nh\n2 LBe\nh\n2 LCe\nh\n2 LDehLOe\nh\n2 LDe\nh\n2 LCe\nh\n2 LAe\nh\n2 LB:\nTraditionally, and elsewhere in this book, we have found symmetric compositions\nto have superior performance. This is normally due to the fact that they deliver\neven order of accuracy. In the case of PNHL-S, the supposed advantage would be\ncompounded by the fact that, as in the Verlet and \u0002BAOAB\u0003 methods, the forces\nneed only be computed once per timestep. However, rather surprisingly, and for\nreasons that are as yet unclear, it turns out that the most advantageous technique\nfrom the point of view of accuracy with respect to the invariant measure has been\nobserved to be the nonsymmetric integration strategy PNHL-N. This method also\nshows, for a variety of observables, 2nd order approximation of averages. It also\nallows the use of a much larger integration timestep in practice—so large that it\nis still more efﬁcient for DPD-like simulations when the extra force calculation is\ntaken into account!\n8.10\nNumerical Experiments\nWe investigate a simple test system of 18 unit-mass particles in a 2D periodic 3 \u0004 3\nbox using the typical soft DPD potential given in (8.83), with a cutoff radius of 1.0\nand ˛ D 25. In our simulations the temperature was ﬁxed at T D 1.\nWe implement the Nosé-Hoover-Langevin and Langevin dynamics schemes,\nas well as the momentum-conserving PNHL thermostat, and plot the normalized\nmomentum distributions and time evolution of total momentum for the methods\nin Fig. 8.8. Additionally we compare against the method of Berendsen [32], which\nmodiﬁes Netwon’s equations of motion to incorporate a relaxation process for the\ntotal system temperature, representing the exchange of energy from the coupling\nof the external bath. If the instantaneous temperature at time t is T.t/, with target\ntemperature T, then using the Berendsen device we have\nPT.t/ D \nT.T \u0003 T.t//;\n"
+      },
+      {
+        "pdf_page": 418,
+        "printed_page": 397,
+        "text": "8.10\nNumerical Experiments\n397\n-5\n5\n0\nMomentum\nDensity\nDPD/PNHL\n0\n1\n2\n3\n4\n5\n-0.004\n0\n.004\nTime  (x104)\nTime  (x104)\nTime  (x104)\nTime  (x104)\nTotal momentum \n-5\n5\n0\nMomentum\nLangevin\n-5\n5\n0\nMomentum\nNHL\nMomentum\nBerendsen\n0\n1\n2\n3\n4\n5\nTotal momentum\n-20\n-10\n0\n10\n20\nTotal momentum\n30\n0\n1\n2\n3\n4\n5\n0\n1\n2\n3\n4\n5\nTotal momentum\n−20\n−10\n0\n10\n−10\n0\n10\n20\n-5\n5\n0\nFig. 8.8 We compare the time evolution of the system’s total momentum in the x and y\ncomponents (top row, marked blue and red respectively), and momentum distributions (bottom\nrow) for various methods. In the lower row of ﬁgures, the dark, solid curve represents the exact\nnormal density, while the superimposed histograms are constructed from the simulation data.\nFrom left to right: the PNHL-N thermostat, Langevin dynamics, Nosé-Hoover-Langevin (NHL)\ndynamics and the Berensen device. The same initial conditions were used with small values of\ntotal momenta. The Berendsen device shows a rapid and systematic increase in the momenta, NHL\nand Langevin exhibit different behavior, obtaining large ﬂuctuating values, whereas the PNHL-\nN thermostat preserves the total momenta exactly. Standard DPD results are identical to those of\nPNHL in this respect\nfor some decay constant \nT > 0. The dynamics will not necessarily sample canoni-\ncally, but the method will ensure that the average temperature is well-controlled (and\nis hence sometimes useful for equilibration purposes). We implement the version of\nthe scheme given in [186], which completes a step of the velocity Verlet scheme\nfollowed by a scaling of the momenta:\np \ns\n1 C \nTh\n\bNdkBT\nkpk2 \u0003 1\n\t\np;\nfor the given timestep h.\nWe use parameters \n D 4:5, \u0006 D 1 and \nT D 1 for the integrators, with a\nsmall stepsize of h D 0:05 (making any qualitative sampling errors unlikely). We\nstarted the simulations with very small net momenta (`x D 0:0035, `y \u0007 \u00030:0019)\nand observed a dramatic increase in magnitude of both components when using\nthe simple (deterministic) Berendsen scheme. If the system is ergodic in Euclidean\n"
+      }
+    ],
+    "numbered_equations": [],
+    "transcription_note": "文字层逐字保留；数学排版另行转写，原页中的特殊字形编码不静默替换。PDF420仅取Exercises之前。",
+    "context_notation": [],
+    "extra_assumptions": [
+      "取单位粒子质量的Euclidean动量平方和；有效域显式要求非零动量及非负根号，避免将总化sqrt/division当作物理方法。",
+      "只证明所印温度ODE的显式解及动量缩放能量恒等式；不声称温度控制必然正则采样。完整Verlet耦合的统计行为未证。"
+    ],
+    "issues": [],
+    "statement_scope": "Berendsen温度方程的显式解、动量缩放、有效域和单次能量恒等式。",
+    "lean_decl": "MD.Ch08.berendsenTemperature",
+    "lean_declarations": [
+      "MD.Ch08.berendsenTemperature",
+      "MD.Ch08.berendsenTemperature_derivative",
+      "MD.Ch08.berendsenRadicand",
+      "MD.Ch08.berendsenScale",
+      "MD.Ch08.berendsenScaleQualification",
+      "MD.Ch08.dot_smul_same",
+      "MD.Ch08.berendsenScale_energy"
+    ],
+    "source_page_verification": "见source_page_checks.json，已目视核对本条原页。",
+    "repair_log": [],
+    "documented_priors": []
+  },
+  {
+    "source_id": "MD-8.10-CanonicalTotalMomentumGaussian",
+    "kind": "unnumbered_claim",
+    "label": null,
+    "section": "8.10",
+    "printed_page": "397–398",
+    "pdf_page": "418–419",
+    "statement_latex": "In Euclidean canonical equilibrium, total momenta are sums of independent centered normal particle momenta and hence are centered normal.",
+    "statement_verbatim": "8.10\nNumerical Experiments\n397\n-5\n5\n0\nMomentum\nDensity\nDPD/PNHL\n0\n1\n2\n3\n4\n5\n-0.004\n0\n.004\nTime  (x104)\nTime  (x104)\nTime  (x104)\nTime  (x104)\nTotal momentum \n-5\n5\n0\nMomentum\nLangevin\n-5\n5\n0\nMomentum\nNHL\nMomentum\nBerendsen\n0\n1\n2\n3\n4\n5\nTotal momentum\n-20\n-10\n0\n10\n20\nTotal momentum\n30\n0\n1\n2\n3\n4\n5\n0\n1\n2\n3\n4\n5\nTotal momentum\n−20\n−10\n0\n10\n−10\n0\n10\n20\n-5\n5\n0\nFig. 8.8 We compare the time evolution of the system’s total momentum in the x and y\ncomponents (top row, marked blue and red respectively), and momentum distributions (bottom\nrow) for various methods. In the lower row of ﬁgures, the dark, solid curve represents the exact\nnormal density, while the superimposed histograms are constructed from the simulation data.\nFrom left to right: the PNHL-N thermostat, Langevin dynamics, Nosé-Hoover-Langevin (NHL)\ndynamics and the Berensen device. The same initial conditions were used with small values of\ntotal momenta. The Berendsen device shows a rapid and systematic increase in the momenta, NHL\nand Langevin exhibit different behavior, obtaining large ﬂuctuating values, whereas the PNHL-\nN thermostat preserves the total momenta exactly. Standard DPD results are identical to those of\nPNHL in this respect\nfor some decay constant \nT > 0. The dynamics will not necessarily sample canoni-\ncally, but the method will ensure that the average temperature is well-controlled (and\nis hence sometimes useful for equilibration purposes). We implement the version of\nthe scheme given in [186], which completes a step of the velocity Verlet scheme\nfollowed by a scaling of the momenta:\np \ns\n1 C \nTh\n\bNdkBT\nkpk2 \u0003 1\n\t\np;\nfor the given timestep h.\nWe use parameters \n D 4:5, \u0006 D 1 and \nT D 1 for the integrators, with a\nsmall stepsize of h D 0:05 (making any qualitative sampling errors unlikely). We\nstarted the simulations with very small net momenta (`x D 0:0035, `y \u0007 \u00030:0019)\nand observed a dramatic increase in magnitude of both components when using\nthe simple (deterministic) Berendsen scheme. If the system is ergodic in Euclidean\n\n398\n8\nExtended Variable Methods\n0.05\n0.1\n0.2\n0.01%\n0.1%\n1%\n10%\n100%\n1000%\nStepsize\nRelative Error\nRelative Error\nKinetic Temperature\nDPD−VV\nDPD−S1\nDPD−Trotter\nPNHL−S\nPNHL−N\n2nd order line\n0.05\n0.1\n0.2\n1%\n10%\n100%\nStepsize\nConﬁgurational Temperature\n2nd order line\nFig. 8.9 Log-log plot of the relative error in kinetic temperature (left) and conﬁgurational tem-\nperature (right) against stepsize by using various numerical methods. The system was simulated\nfor 1,000 reduced time units but only a trajectory’s tail of time length 800 was used to calculate\nthe static quantity to make sure the system was well equilibrated. The stepsizes tested began at\nh D 0:05 and were increased incrementally by 15 % until all methods either were above 100 %\nrelative error or became unstable\nspace, the total momenta are sums of normally distributed random variables with\nmean zero and so the total momenta too, should have normal distributions with\nmean zero. Since Langevin dynamics does not respect the momentum constraint,\nthe normal distribution is obtained. By contrast, the momentum vector is preserved\nexactly using the PNHL method. The NHL scheme performs somewhat oddly. In the\nNosé-Hoover-Langevinmethod, the total momentum ﬂuctuates but remains positive\nor negative if respective initial conditions are positive or negative (see the exercises\nat the end of the chapter). This behavior does not however contradict its mentioned\nergodic properties (one needs to pay close attention to the assumptions being placed\non the system in the proof of the ergodicity).\nWe also brieﬂy compare DPD and PNHL methods. In Fig. 8.9 we show the\nkinetic and conﬁgurational temperature errors as functions of the stepsize. The\nresults show the advantage of using the PNHL in terms of providing a more accurate\nsampling for given stepsize; the result is especially important since the PNHL\nmethods are also more efﬁcient in practice. In Fig. 8.10 the velocity autocorrelation\nfunctions are contrasted for different values of the friction coefﬁcient. This graph\nshows that for small values of \n the DPD and PNHL methods perform similarly,\nwhereas at large friction the DPD decay of correlation is substantially more rapid\nthan that for PNHL. For some additional discussion on these points, see [228].\n",
+    "verbatim_scope": "完整对应原页文字层，逐字保留；本条数学成分由statement_latex及statement_scope定位。",
+    "proof_latex": null,
+    "proof_note": "对应原页推导逐字保存在statement_verbatim/original_page_text；排版以原页PDF为准。",
+    "original_page_text": [
+      {
+        "pdf_page": 418,
+        "printed_page": 397,
+        "text": "8.10\nNumerical Experiments\n397\n-5\n5\n0\nMomentum\nDensity\nDPD/PNHL\n0\n1\n2\n3\n4\n5\n-0.004\n0\n.004\nTime  (x104)\nTime  (x104)\nTime  (x104)\nTime  (x104)\nTotal momentum \n-5\n5\n0\nMomentum\nLangevin\n-5\n5\n0\nMomentum\nNHL\nMomentum\nBerendsen\n0\n1\n2\n3\n4\n5\nTotal momentum\n-20\n-10\n0\n10\n20\nTotal momentum\n30\n0\n1\n2\n3\n4\n5\n0\n1\n2\n3\n4\n5\nTotal momentum\n−20\n−10\n0\n10\n−10\n0\n10\n20\n-5\n5\n0\nFig. 8.8 We compare the time evolution of the system’s total momentum in the x and y\ncomponents (top row, marked blue and red respectively), and momentum distributions (bottom\nrow) for various methods. In the lower row of ﬁgures, the dark, solid curve represents the exact\nnormal density, while the superimposed histograms are constructed from the simulation data.\nFrom left to right: the PNHL-N thermostat, Langevin dynamics, Nosé-Hoover-Langevin (NHL)\ndynamics and the Berensen device. The same initial conditions were used with small values of\ntotal momenta. The Berendsen device shows a rapid and systematic increase in the momenta, NHL\nand Langevin exhibit different behavior, obtaining large ﬂuctuating values, whereas the PNHL-\nN thermostat preserves the total momenta exactly. Standard DPD results are identical to those of\nPNHL in this respect\nfor some decay constant \nT > 0. The dynamics will not necessarily sample canoni-\ncally, but the method will ensure that the average temperature is well-controlled (and\nis hence sometimes useful for equilibration purposes). We implement the version of\nthe scheme given in [186], which completes a step of the velocity Verlet scheme\nfollowed by a scaling of the momenta:\np \ns\n1 C \nTh\n\bNdkBT\nkpk2 \u0003 1\n\t\np;\nfor the given timestep h.\nWe use parameters \n D 4:5, \u0006 D 1 and \nT D 1 for the integrators, with a\nsmall stepsize of h D 0:05 (making any qualitative sampling errors unlikely). We\nstarted the simulations with very small net momenta (`x D 0:0035, `y \u0007 \u00030:0019)\nand observed a dramatic increase in magnitude of both components when using\nthe simple (deterministic) Berendsen scheme. If the system is ergodic in Euclidean\n"
+      },
+      {
+        "pdf_page": 419,
+        "printed_page": 398,
+        "text": "398\n8\nExtended Variable Methods\n0.05\n0.1\n0.2\n0.01%\n0.1%\n1%\n10%\n100%\n1000%\nStepsize\nRelative Error\nRelative Error\nKinetic Temperature\nDPD−VV\nDPD−S1\nDPD−Trotter\nPNHL−S\nPNHL−N\n2nd order line\n0.05\n0.1\n0.2\n1%\n10%\n100%\nStepsize\nConﬁgurational Temperature\n2nd order line\nFig. 8.9 Log-log plot of the relative error in kinetic temperature (left) and conﬁgurational tem-\nperature (right) against stepsize by using various numerical methods. The system was simulated\nfor 1,000 reduced time units but only a trajectory’s tail of time length 800 was used to calculate\nthe static quantity to make sure the system was well equilibrated. The stepsizes tested began at\nh D 0:05 and were increased incrementally by 15 % until all methods either were above 100 %\nrelative error or became unstable\nspace, the total momenta are sums of normally distributed random variables with\nmean zero and so the total momenta too, should have normal distributions with\nmean zero. Since Langevin dynamics does not respect the momentum constraint,\nthe normal distribution is obtained. By contrast, the momentum vector is preserved\nexactly using the PNHL method. The NHL scheme performs somewhat oddly. In the\nNosé-Hoover-Langevinmethod, the total momentum ﬂuctuates but remains positive\nor negative if respective initial conditions are positive or negative (see the exercises\nat the end of the chapter). This behavior does not however contradict its mentioned\nergodic properties (one needs to pay close attention to the assumptions being placed\non the system in the proof of the ergodicity).\nWe also brieﬂy compare DPD and PNHL methods. In Fig. 8.9 we show the\nkinetic and conﬁgurational temperature errors as functions of the stepsize. The\nresults show the advantage of using the PNHL in terms of providing a more accurate\nsampling for given stepsize; the result is especially important since the PNHL\nmethods are also more efﬁcient in practice. In Fig. 8.10 the velocity autocorrelation\nfunctions are contrasted for different values of the friction coefﬁcient. This graph\nshows that for small values of \n the DPD and PNHL methods perform similarly,\nwhereas at large friction the DPD decay of correlation is substantially more rapid\nthan that for PNHL. For some additional discussion on these points, see [228].\n"
+      }
+    ],
+    "numbered_equations": [],
+    "transcription_note": "文字层逐字保留；数学排版另行转写，原页中的特殊字形编码不静默替换。PDF420仅取Exercises之前。",
+    "context_notation": [],
+    "extra_assumptions": [
+      "结论明确以各粒子坐标的独立正则Gaussian分布为前提；不从“系统遍历”直接推出有限时刻分布。",
+      "原页比较直方图和轨迹属于经验试验，未转为普适数学断言。"
+    ],
+    "issues": [],
+    "statement_scope": "实际独立Gaussian动量假设下的一坐标总动量分布；非采样收敛定理。",
+    "lean_decl": "MD.Ch08.totalMomentum_gaussian",
+    "lean_declarations": [
+      "MD.Ch08.totalMomentum_gaussian"
+    ],
+    "source_page_verification": "见source_page_checks.json，已目视核对本条原页。",
+    "repair_log": [],
+    "documented_priors": []
+  },
+  {
+    "source_id": "MD-8.10-NHLTotalMomentumSign",
+    "kind": "unnumbered_claim",
+    "label": null,
+    "section": "8.10",
+    "printed_page": "398",
+    "pdf_page": "419",
+    "statement_latex": "With central forces and an NHL thermostat, total momentum obeys Ṗ=−ξP, so each component keeps the sign of its initial value.",
+    "statement_verbatim": "398\n8\nExtended Variable Methods\n0.05\n0.1\n0.2\n0.01%\n0.1%\n1%\n10%\n100%\n1000%\nStepsize\nRelative Error\nRelative Error\nKinetic Temperature\nDPD−VV\nDPD−S1\nDPD−Trotter\nPNHL−S\nPNHL−N\n2nd order line\n0.05\n0.1\n0.2\n1%\n10%\n100%\nStepsize\nConﬁgurational Temperature\n2nd order line\nFig. 8.9 Log-log plot of the relative error in kinetic temperature (left) and conﬁgurational tem-\nperature (right) against stepsize by using various numerical methods. The system was simulated\nfor 1,000 reduced time units but only a trajectory’s tail of time length 800 was used to calculate\nthe static quantity to make sure the system was well equilibrated. The stepsizes tested began at\nh D 0:05 and were increased incrementally by 15 % until all methods either were above 100 %\nrelative error or became unstable\nspace, the total momenta are sums of normally distributed random variables with\nmean zero and so the total momenta too, should have normal distributions with\nmean zero. Since Langevin dynamics does not respect the momentum constraint,\nthe normal distribution is obtained. By contrast, the momentum vector is preserved\nexactly using the PNHL method. The NHL scheme performs somewhat oddly. In the\nNosé-Hoover-Langevinmethod, the total momentum ﬂuctuates but remains positive\nor negative if respective initial conditions are positive or negative (see the exercises\nat the end of the chapter). This behavior does not however contradict its mentioned\nergodic properties (one needs to pay close attention to the assumptions being placed\non the system in the proof of the ergodicity).\nWe also brieﬂy compare DPD and PNHL methods. In Fig. 8.9 we show the\nkinetic and conﬁgurational temperature errors as functions of the stepsize. The\nresults show the advantage of using the PNHL in terms of providing a more accurate\nsampling for given stepsize; the result is especially important since the PNHL\nmethods are also more efﬁcient in practice. In Fig. 8.10 the velocity autocorrelation\nfunctions are contrasted for different values of the friction coefﬁcient. This graph\nshows that for small values of \n the DPD and PNHL methods perform similarly,\nwhereas at large friction the DPD decay of correlation is substantially more rapid\nthan that for PNHL. For some additional discussion on these points, see [228].\n",
+    "verbatim_scope": "完整对应原页文字层，逐字保留；本条数学成分由statement_latex及statement_scope定位。",
+    "proof_latex": null,
+    "proof_note": "对应原页推导逐字保存在statement_verbatim/original_page_text；排版以原页PDF为准。",
+    "original_page_text": [
+      {
+        "pdf_page": 419,
+        "printed_page": 398,
+        "text": "398\n8\nExtended Variable Methods\n0.05\n0.1\n0.2\n0.01%\n0.1%\n1%\n10%\n100%\n1000%\nStepsize\nRelative Error\nRelative Error\nKinetic Temperature\nDPD−VV\nDPD−S1\nDPD−Trotter\nPNHL−S\nPNHL−N\n2nd order line\n0.05\n0.1\n0.2\n1%\n10%\n100%\nStepsize\nConﬁgurational Temperature\n2nd order line\nFig. 8.9 Log-log plot of the relative error in kinetic temperature (left) and conﬁgurational tem-\nperature (right) against stepsize by using various numerical methods. The system was simulated\nfor 1,000 reduced time units but only a trajectory’s tail of time length 800 was used to calculate\nthe static quantity to make sure the system was well equilibrated. The stepsizes tested began at\nh D 0:05 and were increased incrementally by 15 % until all methods either were above 100 %\nrelative error or became unstable\nspace, the total momenta are sums of normally distributed random variables with\nmean zero and so the total momenta too, should have normal distributions with\nmean zero. Since Langevin dynamics does not respect the momentum constraint,\nthe normal distribution is obtained. By contrast, the momentum vector is preserved\nexactly using the PNHL method. The NHL scheme performs somewhat oddly. In the\nNosé-Hoover-Langevinmethod, the total momentum ﬂuctuates but remains positive\nor negative if respective initial conditions are positive or negative (see the exercises\nat the end of the chapter). This behavior does not however contradict its mentioned\nergodic properties (one needs to pay close attention to the assumptions being placed\non the system in the proof of the ergodicity).\nWe also brieﬂy compare DPD and PNHL methods. In Fig. 8.9 we show the\nkinetic and conﬁgurational temperature errors as functions of the stepsize. The\nresults show the advantage of using the PNHL in terms of providing a more accurate\nsampling for given stepsize; the result is especially important since the PNHL\nmethods are also more efﬁcient in practice. In Fig. 8.10 the velocity autocorrelation\nfunctions are contrasted for different values of the friction coefﬁcient. This graph\nshows that for small values of \n the DPD and PNHL methods perform similarly,\nwhereas at large friction the DPD decay of correlation is substantially more rapid\nthan that for PNHL. For some additional discussion on these points, see [228].\n"
+      }
+    ],
+    "numbered_equations": [],
+    "transcription_note": "文字层逐字保留；数学排版另行转写，原页中的特殊字形编码不静默替换。PDF420仅取Exercises之前。",
+    "context_notation": [],
+    "extra_assumptions": [
+      "只对连续ξ及实际标量ODE声明解公式，正指数乘子的符号结论已证；从NHL粒子SDE推出总动量ODE仍需成对力抵消及积分方程桥接。",
+      "欧氏空间正负动量不变与特殊初值下遍历性的讨论不扩展为任意系统的遍历性反例。"
+    ],
+    "issues": [],
+    "statement_scope": "总动量标量ODE解目标、正指数因子及显式表达式的符号保持。",
+    "lean_decl": "MD.Ch08.nhlMomentumFactor",
+    "lean_declarations": [
+      "MD.Ch08.nhlMomentumFactor",
+      "MD.Ch08.nhlMomentumFactor_pos",
+      "MD.Ch08.nhlMomentum_sign",
+      "MD.Ch08.nhlTotalMomentum_odeSolution"
     ],
     "source_page_verification": "见source_page_checks.json，已目视核对本条原页。",
     "repair_log": [],

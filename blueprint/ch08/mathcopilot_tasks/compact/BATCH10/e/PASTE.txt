@@ -1,0 +1,143 @@
+以附件/PASTE 为准，忽略 /workspace 旧文件；Mathlib 定义按标准含义采信。
+本任务只审本条：原文转录、对象资格、定义体、量词、全部结论及[EXTRA]是否一致；Lean编译不代替语义审阅。
+Lean/Mathlib均4.34.0。原页PDF映射：[393]；印刷页=[372].
+input_sha256请原样回显：
+{
+  "Blueprint/Ch08.lean": "2800812fadd8e2557013f1941e4570401f7903d46f44baf07e23d5531da22a72",
+  "blueprint/ch08/ch08_source.json": "9b994b0f64cd22c85c2ad4123fbfdbd064bd7a6d070fe13b721794432f9f7a63",
+  "BATCH10e_PAGES.pdf": "e488633e226e80c93f8fca2291d14e58b9a9741fcdef10807f4647251388ec3c"
+}
+用代码将JSON对象(batch,input_sha256,items)写到 /workspace/.mathcopilot/reviews/ch08/BATCH10e_review.json；items仅含本source_id。
+items字段：source_id、verdict(PASS/FAIL/NEEDS_HUMAN)、transcription、semantic_review、counterexample、suggested_fix、printed_version、corrected_version。逐版区分原文疑误和修正版结论；缺材料必须具体指出，不猜测。写后json.loads自检，最后仅回复路径及统计。
+
+## 原文JSON
+```json
+{
+  "source_id": "MD-8.6.3-SINNoseSubsplitting",
+  "kind": "unnumbered_claim",
+  "label": null,
+  "section": "8.6.3",
+  "printed_page": "372",
+  "pdf_page": "393",
+  "statement_latex": "L_N=L_N^(1)+L_N^(2). The first term acts on p,ξ₁, the second has μ₂⁻¹(μ₁ξ₁²-β⁻¹)∂ξ₂.",
+  "statement_verbatim": "372\n8\nExtended Variable Methods\nWe stress that the implementation of this method is in fact quite straightforward,\ndespite its apparent complexity. The following details regarding the implementation\nare discussed in [220]:\n•\nFor the integration of the Nosé terms, it is recommended to use a further splitting:\nLN D L.1/\nN C L.2/\nN ;\nwhere\nL.1/\nN D 1\n2\n\u00061\u00122\n1\u00122p\n\u0017\n@\n@p C 1\n2\n\u00061\u00123\n1\u00122\n\u0017\n@\n@\u00121\n\u0003 \u00122\u00121\n@\n@\u00121\n;\nand\nL.2/\nN D \u0006\u00021\n2 Œ\u00061\u00122\n1 \u0003 ˇ\u00021\t @\n@\u00122\n:\nMoreover a Yoshida/Suzuki type higher order decomposition is used to obtain\nmore accuracy in this component.\n•\nThe term exp ŒhLF\t (like similar terms) is completely integrable. Note that in\ngeneral this reduces to solving\nPp D F \u0003 p2F=\u0017;\nP\u00121 D p\u00121F=\u0017;\nwith F a constant.\nThe solution in a timestep h is\np.h/ D p.0/ C .F=m/s.h/\nPs.h/\n;\n\u00121.h/ D \u00121.0/\nPs.h/ ;\nwhere\ns.t/ D b\u00021=2 sinh.t\np\nb/ C a\nb.cosh.t\np\nb/ \u0003 1/\nwith a D Fp.0/=\u0017 and b D F2=\u0017, \u0017 D ˇ\u00021.\nCare must be taken in the evaluation of s and Ps for a; b close to zero.\nNote that other decompositions are possible [220].\n",
+  "verbatim_scope": "完整对应原页文字层，逐字保留；本条数学成分由statement_latex及statement_scope定位。",
+  "proof_latex": null,
+  "proof_note": "对应原页推导逐字保存在statement_verbatim/original_page_text；排版以原页PDF为准。",
+  "original_page_text": [
+    {
+      "pdf_page": 393,
+      "printed_page": 372,
+      "text": "372\n8\nExtended Variable Methods\nWe stress that the implementation of this method is in fact quite straightforward,\ndespite its apparent complexity. The following details regarding the implementation\nare discussed in [220]:\n•\nFor the integration of the Nosé terms, it is recommended to use a further splitting:\nLN D L.1/\nN C L.2/\nN ;\nwhere\nL.1/\nN D 1\n2\n\u00061\u00122\n1\u00122p\n\u0017\n@\n@p C 1\n2\n\u00061\u00123\n1\u00122\n\u0017\n@\n@\u00121\n\u0003 \u00122\u00121\n@\n@\u00121\n;\nand\nL.2/\nN D \u0006\u00021\n2 Œ\u00061\u00122\n1 \u0003 ˇ\u00021\t @\n@\u00122\n:\nMoreover a Yoshida/Suzuki type higher order decomposition is used to obtain\nmore accuracy in this component.\n•\nThe term exp ŒhLF\t (like similar terms) is completely integrable. Note that in\ngeneral this reduces to solving\nPp D F \u0003 p2F=\u0017;\nP\u00121 D p\u00121F=\u0017;\nwith F a constant.\nThe solution in a timestep h is\np.h/ D p.0/ C .F=m/s.h/\nPs.h/\n;\n\u00121.h/ D \u00121.0/\nPs.h/ ;\nwhere\ns.t/ D b\u00021=2 sinh.t\np\nb/ C a\nb.cosh.t\np\nb/ \u0003 1/\nwith a D Fp.0/=\u0017 and b D F2=\u0017, \u0017 D ˇ\u00021.\nCare must be taken in the evaluation of s and Ps for a; b close to zero.\nNote that other decompositions are possible [220].\n"
+    }
+  ],
+  "numbered_equations": [],
+  "transcription_note": "文字层逐字保留；数学排版另行转写，原页中的特殊字形编码不静默替换。PDF420仅取Exercises之前。",
+  "context_notation": [],
+  "extra_assumptions": [
+    "正质量、温度及Λ>0作为物理资格；高阶Yoshida/Suzuki组合的系数和误差阶未在原页给出，列覆盖缺口。"
+  ],
+  "issues": [],
+  "statement_scope": "Nosé场的两项分解恒等式。",
+  "lean_decl": "MD.Ch08.sinN1Field",
+  "lean_declarations": [
+    "MD.Ch08.sinN1Field",
+    "MD.Ch08.sinN2Field",
+    "MD.Ch08.sinN_split"
+  ],
+  "source_page_verification": "见source_page_checks.json，已目视核对本条原页。",
+  "repair_log": [],
+  "documented_priors": []
+}
+```
+
+## 完整本条Lean
+```lean
+def sinN1Field (Q1 : ℝ) (z : Vec 4) : Vec 4 :=
+  ![0,Q1*z 2^2*z 3*z 1/(2*sinConstraint Q1 z),
+    Q1*z 2^3*z 3/(2*sinConstraint Q1 z)-z 3*z 2,0]
+def sinN2Field (Q1 Q2 θ : ℝ) (z : Vec 4) : Vec 4 := ![0,0,0,(Q1*z 2^2-θ)/Q2]
+theorem sinN_split (Q1 Q2 θ : ℝ) (z : Vec 4) :
+    sinNField Q1 Q2 θ z=sinN1Field Q1 z+sinN2Field Q1 Q2 θ z := by
+  ext i; fin_cases i <;> simp [sinNField,sinN1Field,sinN2Field]
+```
+
+## 项目依赖定义体及选择规格
+以下def/abbrev/structure完整保留；定理列出完整类型，Mathlib标准定义无需摘录。
+
+### MD.Ch08.Vec (Blueprint/Ch08.lean:17)
+原文件上下文：
+```lean
+open Set Filter MeasureTheory ProbabilityTheory MolecularDynamics
+open scoped BigOperators Topology ContDiff ENNReal NNReal Matrix
+variable {Ω : Type*} [MeasurableSpace Ω]
+variable {n : ℕ}
+```
+```lean
+abbrev Vec (n : ℕ) := Fin n → ℝ
+```
+
+### MD.Ch08.sinConstraint (Blueprint/Ch08.lean:714)
+原文件上下文：
+```lean
+open Set Filter MeasureTheory ProbabilityTheory MolecularDynamics
+open scoped BigOperators Topology ContDiff ENNReal NNReal Matrix
+variable {Ω : Type*} [MeasurableSpace Ω]
+variable {n : ℕ}
+```
+```lean
+def sinConstraint (Q1 : ℝ) (z : Vec 4) : ℝ := z 1^2+Q1*z 2^2/2
+```
+
+### MD.Ch08.sinNField (Blueprint/Ch08.lean:853)
+原文件上下文：
+```lean
+open Set Filter MeasureTheory ProbabilityTheory MolecularDynamics
+open scoped BigOperators Topology ContDiff ENNReal NNReal Matrix
+variable {Ω : Type*} [MeasurableSpace Ω]
+variable {n : ℕ}
+```
+```lean
+def sinNField (Q1 Q2 θ : ℝ) (z : Vec 4) : Vec 4 :=
+  ![0,Q1*z 2^2*z 3*z 1/(2*sinConstraint Q1 z),
+    Q1*z 2^3*z 3/(2*sinConstraint Q1 z)-z 3*z 2,(Q1*z 2^2-θ)/Q2]
+```
+
+### MD.Ch08.sinN1Field (Blueprint/Ch08.lean:892)
+原文件上下文：
+```lean
+open Set Filter MeasureTheory ProbabilityTheory MolecularDynamics
+open scoped BigOperators Topology ContDiff ENNReal NNReal Matrix
+variable {Ω : Type*} [MeasurableSpace Ω]
+variable {n : ℕ}
+```
+```lean
+def sinN1Field (Q1 : ℝ) (z : Vec 4) : Vec 4 :=
+  ![0,Q1*z 2^2*z 3*z 1/(2*sinConstraint Q1 z),
+    Q1*z 2^3*z 3/(2*sinConstraint Q1 z)-z 3*z 2,0]
+```
+
+### MD.Ch08.sinN2Field (Blueprint/Ch08.lean:895)
+原文件上下文：
+```lean
+open Set Filter MeasureTheory ProbabilityTheory MolecularDynamics
+open scoped BigOperators Topology ContDiff ENNReal NNReal Matrix
+variable {Ω : Type*} [MeasurableSpace Ω]
+variable {n : ℕ}
+```
+```lean
+def sinN2Field (Q1 Q2 θ : ℝ) (z : Vec 4) : Vec 4 := ![0,0,0,(Q1*z 2^2-θ)/Q2]
+```
+
+### MD.Ch08.sinN_split (Blueprint/Ch08.lean:896)
+原文件上下文：
+```lean
+open Set Filter MeasureTheory ProbabilityTheory MolecularDynamics
+open scoped BigOperators Topology ContDiff ENNReal NNReal Matrix
+variable {Ω : Type*} [MeasurableSpace Ω]
+variable {n : ℕ}
+```
+```lean
+theorem sinN_split (Q1 Q2 θ : ℝ) (z : Vec 4) :
+    sinNField Q1 Q2 θ z=sinN1Field Q1 z+sinN2Field Q1 Q2 θ z
+```

@@ -1,0 +1,157 @@
+{
+  "batch": "BATCH09",
+  "subtask": "BATCH09e",
+  "source_ids": [
+    "MD-8.6.2-SINProjectedBracketsPrinted"
+  ],
+  "input_sha256": {
+    "Blueprint/Ch08.lean": "2800812fadd8e2557013f1941e4570401f7903d46f44baf07e23d5531da22a72",
+    "blueprint/ch08/ch08_source.json": "9b994b0f64cd22c85c2ad4123fbfdbd064bd7a6d070fe13b721794432f9f7a63",
+    "BATCH09e_PAGES.pdf": "423d52fa812bbc298aae81b4cc09d82e8adeee43aac7693f56520d51e5f8c316"
+  },
+  "page_mapping": [
+    {
+      "attachment_page": 1,
+      "original_pdf_page": 388,
+      "printed_page": 367
+    }
+  ],
+  "definition_excerpts": [
+    {
+      "full_name": "MD.Ch08.Vec",
+      "kind": "abbrev",
+      "path": "Blueprint/Ch08.lean",
+      "line": 17,
+      "code_sha256": "6f4b254a8a7cc4115fb35265b77caa663bdd18567cd1e664cc5bbd080d02fcff"
+    },
+    {
+      "full_name": "MD.Ch08.sinConstraint",
+      "kind": "def",
+      "path": "Blueprint/Ch08.lean",
+      "line": 714,
+      "code_sha256": "946319fb0e80a00db3e6955a9e26729cc0e57a8bdc9c927d226f4b2e068bc287"
+    },
+    {
+      "full_name": "MD.Ch08.sinMultiplier",
+      "kind": "def",
+      "path": "Blueprint/Ch08.lean",
+      "line": 715,
+      "code_sha256": "cb1ee56c77ff03922f0486f068baf0690892755f2bddbd04b354b6818cf5c5e1"
+    },
+    {
+      "full_name": "MD.Ch08.sinDrift",
+      "kind": "def",
+      "path": "Blueprint/Ch08.lean",
+      "line": 717,
+      "code_sha256": "c5b14901922b2df83b4513df12d3a8e7988b8ee9d09689ef77261e0648db7724"
+    },
+    {
+      "full_name": "MD.Ch08.sinHarmonicF",
+      "kind": "def",
+      "path": "Blueprint/Ch08.lean",
+      "line": 755,
+      "code_sha256": "46eb90f04da26d1f157f856de0e8225e71b859ac53970f3a59fb5375ec1da9a9"
+    },
+    {
+      "full_name": "MD.Ch08.sinHarmonicG",
+      "kind": "def",
+      "path": "Blueprint/Ch08.lean",
+      "line": 756,
+      "code_sha256": "f486859234d769d4ea938c2912ef845a9972bde73cfbd56e9a85d874a8a81b94"
+    },
+    {
+      "full_name": "MD.Ch08.bracket4",
+      "kind": "def",
+      "path": "Blueprint/Ch08.lean",
+      "line": 775,
+      "code_sha256": "21c1155f4f7c4468436b1e3af6958d24310363d7f6421df41c381ef9aa18002f"
+    },
+    {
+      "full_name": "MD.Ch08.sinBracket",
+      "kind": "def",
+      "path": "Blueprint/Ch08.lean",
+      "line": 777,
+      "code_sha256": "6bf4c87b5b92dacc09aacbf675517178acde7df1f48602dc40c2534473f7768a"
+    },
+    {
+      "full_name": "MD.Ch08.projectFirstThree",
+      "kind": "def",
+      "path": "Blueprint/Ch08.lean",
+      "line": 781,
+      "code_sha256": "45f741b063f5e1cd2532e5657049cfdde74d5b8155fa4caed4dc9261e6c8c68d"
+    },
+    {
+      "full_name": "MD.Ch08.sinD",
+      "kind": "def",
+      "path": "Blueprint/Ch08.lean",
+      "line": 782,
+      "code_sha256": "6a892f4e59ebbf1c60e5307ab35232a35218c64200b6d23a43d0182e97ce8fae"
+    },
+    {
+      "full_name": "MD.Ch08.sinU0Printed",
+      "kind": "def",
+      "path": "Blueprint/Ch08.lean",
+      "line": 783,
+      "code_sha256": "b3819879cac21b4f1f13a1fb54c399931017ef45495cb7a9e9f3c92ff653be0e"
+    },
+    {
+      "full_name": "MD.Ch08.sinU1Printed",
+      "kind": "def",
+      "path": "Blueprint/Ch08.lean",
+      "line": 785,
+      "code_sha256": "853454439522558b2a4903072d85efd4ee1ff7a30240216f4db042cb6eb7069e"
+    },
+    {
+      "full_name": "MD.Ch08.sinU2Printed",
+      "kind": "def",
+      "path": "Blueprint/Ch08.lean",
+      "line": 786,
+      "code_sha256": "eefdbe138d42b713b1a0537cc81f10919247d58a907c82a2ca86b278ca066bc2"
+    },
+    {
+      "full_name": "MD.Ch08.sinU1DerivativePrinted",
+      "kind": "def",
+      "path": "Blueprint/Ch08.lean",
+      "line": 788,
+      "code_sha256": "78bca1aacdd356f17bc422bd469f0a648265d0703a33b31d3c7a6c9d8d375a02"
+    },
+    {
+      "full_name": "MD.Ch08.sinProjected_corrected",
+      "kind": "def",
+      "path": "Blueprint/Ch08.lean",
+      "line": 791,
+      "code_sha256": "a43517bc83ed0da02afb4dec8644d51a519419d02c52f9c891f4025b9cc4fc23"
+    },
+    {
+      "full_name": "MD.Ch08.sinU2LongPrinted",
+      "kind": "def",
+      "path": "Blueprint/Ch08.lean",
+      "line": 793,
+      "code_sha256": "3342a3347a40fa3325f84453c5cc1f57b48c9793abc74a27dd108ff48efc314f"
+    },
+    {
+      "full_name": "MD.Ch08.sinU2Long_at_p0",
+      "kind": "theorem",
+      "path": "Blueprint/Ch08.lean",
+      "line": 796,
+      "code_sha256": "e383fc5ba53e9b1da13656f3d94b4041e7d4c2a6fef5f73b42a0f4b648c21e67"
+    }
+  ],
+  "validation": {
+    "project_constant_closure": "PASS",
+    "missing_project_definitions": [],
+    "full_page_render_equality_dpi": 72,
+    "website_submitted": false
+  },
+  "files": {
+    "PASTE.txt": {
+      "bytes": 15445,
+      "sha256": "0caf5f194b45a474e659b29004728697e27d25d34bd61f6c2254671125948cd4"
+    },
+    "BATCH09e_PAGES.pdf": {
+      "bytes": 88398,
+      "sha256": "423d52fa812bbc298aae81b4cc09d82e8adeee43aac7693f56520d51e5f8c316"
+    }
+  },
+  "total_task_bytes": 108852
+}

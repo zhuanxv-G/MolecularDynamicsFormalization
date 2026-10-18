@@ -1,0 +1,141 @@
+{
+  "batch": "BATCH07",
+  "subtask": "BATCH07d",
+  "source_ids": [
+    "MD-8.5-SLS"
+  ],
+  "input_sha256": {
+    "Blueprint/Ch08.lean": "2800812fadd8e2557013f1941e4570401f7903d46f44baf07e23d5531da22a72",
+    "blueprint/ch08/ch08_source.json": "9b994b0f64cd22c85c2ad4123fbfdbd064bd7a6d070fe13b721794432f9f7a63",
+    "BATCH07d_PAGES.pdf": "6139f27a90eceb43c6f3be2c3c94f4f1e40c0cac822a387fff89d0bab25aef84"
+  },
+  "page_mapping": [
+    {
+      "attachment_page": 1,
+      "original_pdf_page": 378,
+      "printed_page": 357
+    },
+    {
+      "attachment_page": 2,
+      "original_pdf_page": 379,
+      "printed_page": 358
+    }
+  ],
+  "definition_excerpts": [
+    {
+      "full_name": "MD.Ch08.Vec",
+      "kind": "abbrev",
+      "path": "Blueprint/Ch08.lean",
+      "line": 17,
+      "code_sha256": "6f4b254a8a7cc4115fb35265b77caa663bdd18567cd1e664cc5bbd080d02fcff"
+    },
+    {
+      "full_name": "MD.Ch08.Phase",
+      "kind": "abbrev",
+      "path": "Blueprint/Ch08.lean",
+      "line": 18,
+      "code_sha256": "377b8086105169a0d2deaa2dd84218cb6ea1d04d27b576cd82794d54e5b84300"
+    },
+    {
+      "full_name": "MD.Ch08.dot",
+      "kind": "def",
+      "path": "Blueprint/Ch08.lean",
+      "line": 19,
+      "code_sha256": "bb45cec5def0e642f7dde399650df8a6486048be491d116502106e187aa99348"
+    },
+    {
+      "full_name": "MD.Ch08.gradient",
+      "kind": "def",
+      "path": "Blueprint/Ch08.lean",
+      "line": 20,
+      "code_sha256": "a9a017b15c584dec720a71840d896ddb8d0e05e149030bce523362af481b101e"
+    },
+    {
+      "full_name": "MD.Ch08.thermostatParameters",
+      "kind": "def",
+      "path": "Blueprint/Ch08.lean",
+      "line": 63,
+      "code_sha256": "e270d7f3278cd4087efb4fb6de4f2ba99959cae64baec460ebb813f9d01cc285"
+    },
+    {
+      "full_name": "MD.Ch08.independentWiener",
+      "kind": "def",
+      "path": "Blueprint/Ch08.lean",
+      "line": 307,
+      "code_sha256": "244c6d2d9a686d3df1fc2abd2a1c945a448896d7397bd79928618c58bcc75f4d"
+    },
+    {
+      "full_name": "MD.Ch08.additiveSDE",
+      "kind": "def",
+      "path": "Blueprint/Ch08.lean",
+      "line": 310,
+      "code_sha256": "81838b29ec807319905a573d048fd44c90ff95cc891ddf131b6c3a2e73df657a"
+    },
+    {
+      "full_name": "MD.Ch08.slsDrift",
+      "kind": "def",
+      "path": "Blueprint/Ch08.lean",
+      "line": 580,
+      "code_sha256": "6f581b1fd39ad29b0ddd9e40d96958aeb0e0e6669fb28296cdfeea2521c29404"
+    },
+    {
+      "full_name": "MD.Ch08.slsNoise",
+      "kind": "def",
+      "path": "Blueprint/Ch08.lean",
+      "line": 583,
+      "code_sha256": "d3411eb897d729a1c58c8db54d5de50d724552f2a0122a6e5144ba3b1664b2e1"
+    },
+    {
+      "full_name": "MD.Ch08.isSLSSolution",
+      "kind": "def",
+      "path": "Blueprint/Ch08.lean",
+      "line": 587,
+      "code_sha256": "b036902c5e2e1579b69347721eb111a020ac024e6e0de8c2d00956e232430f9f"
+    },
+    {
+      "full_name": "MD.Ch08.slsDeterministic",
+      "kind": "def",
+      "path": "Blueprint/Ch08.lean",
+      "line": 592,
+      "code_sha256": "cb22fb5a7bfe56b8b8f9ea6db3f8dbaf3d4970b40f7afff374ee106839df2384"
+    },
+    {
+      "full_name": "MolecularDynamics.Chapter02Review.Q",
+      "kind": "abbrev",
+      "path": "MolecularDynamics/Chapter02/ReviewDefinitions.lean",
+      "line": 17,
+      "code_sha256": "d01d4518aed3668e7c982afee1cd3820fb858a94438e5b8960aa0557f5a57ef1"
+    },
+    {
+      "full_name": "MolecularDynamics.Chapter04Review.Q",
+      "kind": "abbrev",
+      "path": "MolecularDynamics/Chapter04/ReviewDefinitions.lean",
+      "line": 15,
+      "code_sha256": "d01d4518aed3668e7c982afee1cd3820fb858a94438e5b8960aa0557f5a57ef1"
+    },
+    {
+      "full_name": "MolecularDynamics.Chapter05Review.E",
+      "kind": "abbrev",
+      "path": "MolecularDynamics/Chapter05/ReviewDefinitions.lean",
+      "line": 18,
+      "code_sha256": "b497c8ba7f01b62a3147d9ae65652772ff3f81e57aa19b116f1283fef7a3cc60"
+    }
+  ],
+  "validation": {
+    "project_constant_closure": "PASS",
+    "missing_project_definitions": [],
+    "full_page_render_equality_dpi": 72,
+    "website_submitted": false
+  },
+  "files": {
+    "PASTE.txt": {
+      "bytes": 20439,
+      "sha256": "6ee072bd673f0cc3c0eee51a69e376429154051c9e520110d6ee0db7a8b151db"
+    },
+    "BATCH07d_PAGES.pdf": {
+      "bytes": 95122,
+      "sha256": "6139f27a90eceb43c6f3be2c3c94f4f1e40c0cac822a387fff89d0bab25aef84"
+    }
+  },
+  "total_task_bytes": 120076
+}

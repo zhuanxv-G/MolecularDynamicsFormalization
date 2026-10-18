@@ -1,0 +1,211 @@
+以附件/PASTE 为准，忽略 /workspace 旧文件；Mathlib 定义按标准含义采信。
+本任务只审本条：原文转录、对象资格、定义体、量词、全部结论及[EXTRA]是否一致；Lean编译不代替语义审阅。
+Lean/Mathlib均4.34.0。原页PDF映射：[410]；印刷页=[389].
+input_sha256请原样回显：
+{
+  "Blueprint/Ch08.lean": "2800812fadd8e2557013f1941e4570401f7903d46f44baf07e23d5531da22a72",
+  "blueprint/ch08/ch08_source.json": "9b994b0f64cd22c85c2ad4123fbfdbd064bd7a6d070fe13b721794432f9f7a63",
+  "BATCH15e_PAGES.pdf": "c4e9f549df2f3537700b01d919abb1f960e96a362a7a675415b22342655a7799"
+}
+用代码将JSON对象(batch,input_sha256,items)写到 /workspace/.mathcopilot/reviews/ch08/BATCH15e_review.json；items仅含本source_id。
+items字段：source_id、verdict(PASS/FAIL/NEEDS_HUMAN)、transcription、semantic_review、counterexample、suggested_fix、printed_version、corrected_version。逐版区分原文疑误和修正版结论；缺材料必须具体指出，不猜测。写后json.loads自检，最后仅回复路径及统计。
+
+## 原文JSON
+```json
+{
+  "source_id": "MD-8.9.1-DPDCanonicalLeaf",
+  "kind": "definition",
+  "label": null,
+  "section": "8.9.1",
+  "printed_page": "389",
+  "pdf_page": "410",
+  "statement_latex": "ωᴰ=(ωᴿ)², σ²=2γk_BT. The canonical density is restricted to fixed total momentum π by δ(Σp−π). (8.89).",
+  "statement_verbatim": "8.9\nMomentum-Conserving Thermostats and the Dissipative Particle. . .\n389\nwhite-noise term with the following stochastic property\nh\u000eij.t/i D 0;\nh\u000eij.t/\u000ekl.t0/i D .ıikıjl C ıilıjk/ı.t \u0003 t0/;\n(8.88)\nand are independent for each pair of interacting particles at each time step.\nInvariance of the canonical distribution under these equations of motion follows if\n!D.rij/ D Œ!R.rij/\t2;\n\u00072 D 2\nkBT;\n(8.89)\nwhere kB is the Boltzmann constant and T the equilibrium temperature. Note that\nthe “canonical distribution” in the case of the DPD system or other momentum-\nconserving thermostat should have a density which is reduced to the leaves of\nconstant total momentum, i.e.\nO\u0005ˇ\ndef\nD Z\u00021e\u0002ˇH.q;p/ \u0004 ı\n\" N\nX\niD1\npi;x \u0003 \u0014x\n#\nı\n\" N\nX\niD1\npi;y \u0003 \u0014y\n#\nı\n\" N\nX\niD1\npi;z \u0003 \u0014z\n#\nwhere \u000f D .\u0014x; \u0014y; \u0014z/ is the total momentum vector.\nThe conservation of the total momentum is a direct result of the symmetric form\nof the various forces, thus DPD may be viewed as an isotropic Galilean-invariant\nthermostat which preserves hydrodynamics [8]. The ergodicity of DPD (i.e. that O\u0005ˇ\nis the unique measure sampled by the dynamics) has only been demonstrated in the\ncase of a high density of particles in one dimension [334].\nThe DPD system may be viewed as a special case of the generalized Langevin\ndynamics with equations\ndq D M\u00021pdt;\ndp D \u0003rU.q/dt \u0003 \u0006.q/pdt C ˙.q/dW;\n(8.90)\nwhere the potential U is given in (8.84), and the damping matrix \u0006 and stochastic\nmultiplier matrix ˙ are related by\n\u0006 D M\u00021\n2kBT˙˙ T:\nIn the next subsection we describe the numerical treatment of the DPD system.\nWe then take up the alternative scheme, the pairwise Nosé-Hoover-Langevin\n(PNHL) method, of [228] which also conserves momentum exactly. Other alter-\nnatives to the DPD system include the Peters thermostat [299], the Lowe-Andersen\nmethod [241], and the Nosé-Hoover-Lowe-Andersen thermostat [347]. We do not\ndiscuss these schemes here, but note that they are compared to DPD and some of\nthe other schemes introduced below in [228].\n",
+  "verbatim_scope": "完整对应原页文字层，逐字保留；本条数学成分由statement_latex及statement_scope定位。",
+  "proof_latex": null,
+  "proof_note": "对应原页推导逐字保存在statement_verbatim/original_page_text；排版以原页PDF为准。",
+  "original_page_text": [
+    {
+      "pdf_page": 410,
+      "printed_page": 389,
+      "text": "8.9\nMomentum-Conserving Thermostats and the Dissipative Particle. . .\n389\nwhite-noise term with the following stochastic property\nh\u000eij.t/i D 0;\nh\u000eij.t/\u000ekl.t0/i D .ıikıjl C ıilıjk/ı.t \u0003 t0/;\n(8.88)\nand are independent for each pair of interacting particles at each time step.\nInvariance of the canonical distribution under these equations of motion follows if\n!D.rij/ D Œ!R.rij/\t2;\n\u00072 D 2\nkBT;\n(8.89)\nwhere kB is the Boltzmann constant and T the equilibrium temperature. Note that\nthe “canonical distribution” in the case of the DPD system or other momentum-\nconserving thermostat should have a density which is reduced to the leaves of\nconstant total momentum, i.e.\nO\u0005ˇ\ndef\nD Z\u00021e\u0002ˇH.q;p/ \u0004 ı\n\" N\nX\niD1\npi;x \u0003 \u0014x\n#\nı\n\" N\nX\niD1\npi;y \u0003 \u0014y\n#\nı\n\" N\nX\niD1\npi;z \u0003 \u0014z\n#\nwhere \u000f D .\u0014x; \u0014y; \u0014z/ is the total momentum vector.\nThe conservation of the total momentum is a direct result of the symmetric form\nof the various forces, thus DPD may be viewed as an isotropic Galilean-invariant\nthermostat which preserves hydrodynamics [8]. The ergodicity of DPD (i.e. that O\u0005ˇ\nis the unique measure sampled by the dynamics) has only been demonstrated in the\ncase of a high density of particles in one dimension [334].\nThe DPD system may be viewed as a special case of the generalized Langevin\ndynamics with equations\ndq D M\u00021pdt;\ndp D \u0003rU.q/dt \u0003 \u0006.q/pdt C ˙.q/dW;\n(8.90)\nwhere the potential U is given in (8.84), and the damping matrix \u0006 and stochastic\nmultiplier matrix ˙ are related by\n\u0006 D M\u00021\n2kBT˙˙ T:\nIn the next subsection we describe the numerical treatment of the DPD system.\nWe then take up the alternative scheme, the pairwise Nosé-Hoover-Langevin\n(PNHL) method, of [228] which also conserves momentum exactly. Other alter-\nnatives to the DPD system include the Peters thermostat [299], the Lowe-Andersen\nmethod [241], and the Nosé-Hoover-Lowe-Andersen thermostat [347]. We do not\ndiscuss these schemes here, but note that they are compared to DPD and some of\nthe other schemes introduced below in [228].\n"
+    }
+  ],
+  "numbered_equations": [
+    "8.89"
+  ],
+  "transcription_note": "文字层逐字保留；数学排版另行转写，原页中的特殊字形编码不静默替换。PDF420仅取Exercises之前。",
+  "context_notation": [],
+  "extra_assumptions": [
+    "Dirac乘积解释为指定动量叶上的参考测度，未伪造Lebesgue密度；参考测度需另指定几何/周期体积。",
+    "只是权重与概率资格目标；DPD保持该测度、流体力学保持及高密度一维遍历性的大型定理均列缺口。"
+  ],
+  "issues": [],
+  "statement_scope": "涨落耗散资格、动量约束叶及其可归一canonical测度定义。",
+  "lean_decl": "MD.Ch08.dpdFluctuationDissipation",
+  "lean_declarations": [
+    "MD.Ch08.dpdFluctuationDissipation",
+    "MD.Ch08.momentumLeaf",
+    "MD.Ch08.particleHamiltonian",
+    "MD.Ch08.momentumCanonical",
+    "MD.Ch08.momentumCanonicalQualification"
+  ],
+  "source_page_verification": "见source_page_checks.json，已目视核对本条原页。",
+  "repair_log": [],
+  "documented_priors": []
+}
+```
+
+## 完整本条Lean
+```lean
+def dpdFluctuationDissipation (γ σ θ : ℝ) (wD wR : ℝ → ℝ) : Prop :=
+  0 ≤ γ ∧ 0 < θ ∧ σ^2=2*γ*θ ∧ ∀ r, wD r=(wR r)^2
+def momentumLeaf {N d : ℕ} (π : Vec d) : Set (ParticlePhase N d) :=
+  {z | totalMomentum z.2=π}
+def particleHamiltonian {N d : ℕ} (m : Fin N → ℝ) (U : ParticleConfig N d → ℝ)
+    (z : ParticlePhase N d) : ℝ := (∑ i, dot (z.2 i) (z.2 i)/(2*m i))+U z.1
+def momentumCanonical {N d : ℕ} (ν : Measure (ParticlePhase N d)) (m : Fin N → ℝ)
+    (U : ParticleConfig N d → ℝ) (β : ℝ) : Measure (ParticlePhase N d) :=
+  ν.withDensity (fun z ↦ ENNReal.ofReal (Real.exp (-β*particleHamiltonian m U z)/
+    (∫ x, Real.exp (-β*particleHamiltonian m U x) ∂ν)))
+def momentumCanonicalQualification {N d : ℕ} (ν : Measure (ParticlePhase N d))
+    (m : Fin N → ℝ) (U : ParticleConfig N d → ℝ) (β : ℝ) (π : Vec d) : Prop :=
+  (∀ i, 0 < m i) ∧ 0 < β ∧ ν (momentumLeaf π)ᶜ=0 ∧
+  Integrable (fun z ↦ Real.exp (-β*particleHamiltonian m U z)) ν ∧
+  (0 < ∫ z, Real.exp (-β*particleHamiltonian m U z) ∂ν) ∧
+  IsProbabilityMeasure (momentumCanonical ν m U β)
+```
+
+## 项目依赖定义体及选择规格
+以下def/abbrev/structure完整保留；定理列出完整类型，Mathlib标准定义无需摘录。
+
+### MD.Ch08.Vec (Blueprint/Ch08.lean:17)
+原文件上下文：
+```lean
+open Set Filter MeasureTheory ProbabilityTheory MolecularDynamics
+open scoped BigOperators Topology ContDiff ENNReal NNReal Matrix
+variable {Ω : Type*} [MeasurableSpace Ω]
+variable {n : ℕ}
+```
+```lean
+abbrev Vec (n : ℕ) := Fin n → ℝ
+```
+
+### MD.Ch08.dot (Blueprint/Ch08.lean:19)
+原文件上下文：
+```lean
+open Set Filter MeasureTheory ProbabilityTheory MolecularDynamics
+open scoped BigOperators Topology ContDiff ENNReal NNReal Matrix
+variable {Ω : Type*} [MeasurableSpace Ω]
+variable {n : ℕ}
+```
+```lean
+def dot (v w : Vec n) : ℝ := ∑ i, v i * w i
+```
+
+### MD.Ch08.ParticleConfig (Blueprint/Ch08.lean:1334)
+原文件上下文：
+```lean
+open Set Filter MeasureTheory ProbabilityTheory MolecularDynamics
+open scoped BigOperators Topology ContDiff ENNReal NNReal Matrix
+variable {Ω : Type*} [MeasurableSpace Ω]
+variable {n : ℕ}
+```
+```lean
+abbrev ParticleConfig (N d : ℕ) := Fin N → Vec d
+```
+
+### MD.Ch08.ParticlePhase (Blueprint/Ch08.lean:1335)
+原文件上下文：
+```lean
+open Set Filter MeasureTheory ProbabilityTheory MolecularDynamics
+open scoped BigOperators Topology ContDiff ENNReal NNReal Matrix
+variable {Ω : Type*} [MeasurableSpace Ω]
+variable {n : ℕ}
+```
+```lean
+abbrev ParticlePhase (N d : ℕ) := ParticleConfig N d × ParticleConfig N d
+```
+
+### MD.Ch08.totalMomentum (Blueprint/Ch08.lean:1336)
+原文件上下文：
+```lean
+open Set Filter MeasureTheory ProbabilityTheory MolecularDynamics
+open scoped BigOperators Topology ContDiff ENNReal NNReal Matrix
+variable {Ω : Type*} [MeasurableSpace Ω]
+variable {n : ℕ}
+```
+```lean
+def totalMomentum {N d : ℕ} (p : ParticleConfig N d) : Vec d := ∑ i, p i
+```
+
+### MD.Ch08.dpdFluctuationDissipation (Blueprint/Ch08.lean:1446)
+原文件上下文：
+```lean
+open Set Filter MeasureTheory ProbabilityTheory MolecularDynamics
+open scoped BigOperators Topology ContDiff ENNReal NNReal Matrix
+variable {Ω : Type*} [MeasurableSpace Ω]
+variable {n : ℕ}
+```
+```lean
+def dpdFluctuationDissipation (γ σ θ : ℝ) (wD wR : ℝ → ℝ) : Prop :=
+  0 ≤ γ ∧ 0 < θ ∧ σ^2=2*γ*θ ∧ ∀ r, wD r=(wR r)^2
+```
+
+### MD.Ch08.momentumLeaf (Blueprint/Ch08.lean:1448)
+原文件上下文：
+```lean
+open Set Filter MeasureTheory ProbabilityTheory MolecularDynamics
+open scoped BigOperators Topology ContDiff ENNReal NNReal Matrix
+variable {Ω : Type*} [MeasurableSpace Ω]
+variable {n : ℕ}
+```
+```lean
+def momentumLeaf {N d : ℕ} (π : Vec d) : Set (ParticlePhase N d) :=
+  {z | totalMomentum z.2=π}
+```
+
+### MD.Ch08.particleHamiltonian (Blueprint/Ch08.lean:1450)
+原文件上下文：
+```lean
+open Set Filter MeasureTheory ProbabilityTheory MolecularDynamics
+open scoped BigOperators Topology ContDiff ENNReal NNReal Matrix
+variable {Ω : Type*} [MeasurableSpace Ω]
+variable {n : ℕ}
+```
+```lean
+def particleHamiltonian {N d : ℕ} (m : Fin N → ℝ) (U : ParticleConfig N d → ℝ)
+    (z : ParticlePhase N d) : ℝ := (∑ i, dot (z.2 i) (z.2 i)/(2*m i))+U z.1
+```
+
+### MD.Ch08.momentumCanonical (Blueprint/Ch08.lean:1452)
+原文件上下文：
+```lean
+open Set Filter MeasureTheory ProbabilityTheory MolecularDynamics
+open scoped BigOperators Topology ContDiff ENNReal NNReal Matrix
+variable {Ω : Type*} [MeasurableSpace Ω]
+variable {n : ℕ}
+```
+```lean
+def momentumCanonical {N d : ℕ} (ν : Measure (ParticlePhase N d)) (m : Fin N → ℝ)
+    (U : ParticleConfig N d → ℝ) (β : ℝ) : Measure (ParticlePhase N d) :=
+  ν.withDensity (fun z ↦ ENNReal.ofReal (Real.exp (-β*particleHamiltonian m U z)/
+    (∫ x, Real.exp (-β*particleHamiltonian m U x) ∂ν)))
+```
+
+### MD.Ch08.momentumCanonicalQualification (Blueprint/Ch08.lean:1456)
+原文件上下文：
+```lean
+open Set Filter MeasureTheory ProbabilityTheory MolecularDynamics
+open scoped BigOperators Topology ContDiff ENNReal NNReal Matrix
+variable {Ω : Type*} [MeasurableSpace Ω]
+variable {n : ℕ}
+```
+```lean
+def momentumCanonicalQualification {N d : ℕ} (ν : Measure (ParticlePhase N d))
+    (m : Fin N → ℝ) (U : ParticleConfig N d → ℝ) (β : ℝ) (π : Vec d) : Prop :=
+  (∀ i, 0 < m i) ∧ 0 < β ∧ ν (momentumLeaf π)ᶜ=0 ∧
+  Integrable (fun z ↦ Real.exp (-β*particleHamiltonian m U z)) ν ∧
+  (0 < ∫ z, Real.exp (-β*particleHamiltonian m U z) ∂ν) ∧
+  IsProbabilityMeasure (momentumCanonical ν m U β)
+```

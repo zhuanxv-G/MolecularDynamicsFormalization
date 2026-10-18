@@ -1,0 +1,106 @@
+{
+  "batch": "BATCH09",
+  "subtask": "BATCH09b",
+  "source_ids": [
+    "MD-8.6.1-StochasticIsokinetic"
+  ],
+  "input_sha256": {
+    "Blueprint/Ch08.lean": "2800812fadd8e2557013f1941e4570401f7903d46f44baf07e23d5531da22a72",
+    "blueprint/ch08/ch08_source.json": "9b994b0f64cd22c85c2ad4123fbfdbd064bd7a6d070fe13b721794432f9f7a63",
+    "BATCH09b_PAGES.pdf": "f50fef75f788a43e25fcfe508a037fe768a6d51087d716553c99288f63501441"
+  },
+  "page_mapping": [
+    {
+      "attachment_page": 1,
+      "original_pdf_page": 385,
+      "printed_page": 364
+    },
+    {
+      "attachment_page": 2,
+      "original_pdf_page": 386,
+      "printed_page": 365
+    }
+  ],
+  "definition_excerpts": [
+    {
+      "full_name": "MD.Ch08.Vec",
+      "kind": "abbrev",
+      "path": "Blueprint/Ch08.lean",
+      "line": 17,
+      "code_sha256": "6f4b254a8a7cc4115fb35265b77caa663bdd18567cd1e664cc5bbd080d02fcff"
+    },
+    {
+      "full_name": "MD.Ch08.independentWiener",
+      "kind": "def",
+      "path": "Blueprint/Ch08.lean",
+      "line": 307,
+      "code_sha256": "244c6d2d9a686d3df1fc2abd2a1c945a448896d7397bd79928618c58bcc75f4d"
+    },
+    {
+      "full_name": "MD.Ch08.additiveSDE",
+      "kind": "def",
+      "path": "Blueprint/Ch08.lean",
+      "line": 310,
+      "code_sha256": "81838b29ec807319905a573d048fd44c90ff95cc891ddf131b6c3a2e73df657a"
+    },
+    {
+      "full_name": "MD.Ch08.sinConstraint",
+      "kind": "def",
+      "path": "Blueprint/Ch08.lean",
+      "line": 714,
+      "code_sha256": "946319fb0e80a00db3e6955a9e26729cc0e57a8bdc9c927d226f4b2e068bc287"
+    },
+    {
+      "full_name": "MD.Ch08.sinMultiplier",
+      "kind": "def",
+      "path": "Blueprint/Ch08.lean",
+      "line": 715,
+      "code_sha256": "cb1ee56c77ff03922f0486f068baf0690892755f2bddbd04b354b6818cf5c5e1"
+    },
+    {
+      "full_name": "MD.Ch08.sinDrift",
+      "kind": "def",
+      "path": "Blueprint/Ch08.lean",
+      "line": 717,
+      "code_sha256": "c5b14901922b2df83b4513df12d3a8e7988b8ee9d09689ef77261e0648db7724"
+    },
+    {
+      "full_name": "MD.Ch08.isSINSolution",
+      "kind": "def",
+      "path": "Blueprint/Ch08.lean",
+      "line": 720,
+      "code_sha256": "71cebdc72beaf010ad051f8ff1b1d3dfe6b8574af60ac3023e11a3bec9891d99"
+    },
+    {
+      "full_name": "MD.Ch08.sinConstraint_balance",
+      "kind": "theorem",
+      "path": "Blueprint/Ch08.lean",
+      "line": 725,
+      "code_sha256": "06ce7ffd84e32372cce8b0847006fc976088c941d62e5bd15ae8a27f6403674e"
+    },
+    {
+      "full_name": "MolecularDynamics.Chapter05Review.E",
+      "kind": "abbrev",
+      "path": "MolecularDynamics/Chapter05/ReviewDefinitions.lean",
+      "line": 18,
+      "code_sha256": "b497c8ba7f01b62a3147d9ae65652772ff3f81e57aa19b116f1283fef7a3cc60"
+    }
+  ],
+  "validation": {
+    "project_constant_closure": "PASS",
+    "missing_project_definitions": [],
+    "full_page_render_equality_dpi": 72,
+    "website_submitted": false
+  },
+  "files": {
+    "PASTE.txt": {
+      "bytes": 14887,
+      "sha256": "46d12b1157c57677dfd4fff05e08a41b14f195f69aacd141250d4810a7f392d1"
+    },
+    "BATCH09b_PAGES.pdf": {
+      "bytes": 75858,
+      "sha256": "f50fef75f788a43e25fcfe508a037fe768a6d51087d716553c99288f63501441"
+    }
+  },
+  "total_task_bytes": 94070
+}

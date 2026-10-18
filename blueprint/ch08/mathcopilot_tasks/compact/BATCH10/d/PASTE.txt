@@ -1,0 +1,119 @@
+以附件/PASTE 为准，忽略 /workspace 旧文件；Mathlib 定义按标准含义采信。
+本任务只审本条：原文转录、对象资格、定义体、量词、全部结论及[EXTRA]是否一致；Lean编译不代替语义审阅。
+Lean/Mathlib均4.34.0。原页PDF映射：[392]；印刷页=[371].
+input_sha256请原样回显：
+{
+  "Blueprint/Ch08.lean": "2800812fadd8e2557013f1941e4570401f7903d46f44baf07e23d5531da22a72",
+  "blueprint/ch08/ch08_source.json": "9b994b0f64cd22c85c2ad4123fbfdbd064bd7a6d070fe13b721794432f9f7a63",
+  "BATCH10d_PAGES.pdf": "ae0db62fb383bedb30e70ea69e5abe5933c8110e95daa75153b26640da1564b7"
+}
+用代码将JSON对象(batch,input_sha256,items)写到 /workspace/.mathcopilot/reviews/ch08/BATCH10d_review.json；items仅含本source_id。
+items字段：source_id、verdict(PASS/FAIL/NEEDS_HUMAN)、transcription、semantic_review、counterexample、suggested_fix、printed_version、corrected_version。逐版区分原文疑误和修正版结论；缺材料必须具体指出，不猜测。写后json.loads自检，最后仅回复路径及统计。
+
+## 原文JSON
+```json
+{
+  "source_id": "MD-8.6.3-SINRAlgorithm",
+  "kind": "definition",
+  "label": null,
+  "section": "8.6.3",
+  "printed_page": "371",
+  "pdf_page": "392",
+  "statement_latex": "The SIN(R) algorithm uses h̃=h/r, r−2 repeated inner blocks, outer Nosé half-steps, combined fast/slow force half-steps and independent OU substeps.",
+  "statement_verbatim": "8.6\nIsokinetic Methods and Integration with Very Large Timestep\n371\nIt is straightforward to show that each of the terms of the corresponding vector\nﬁeld splitting preserves the ﬁrst integral \u0017 D constant. For example\nLF\u0017 D \nFF \u0003 .p2=\u0017/FF\u000b @\u0017\n@p \u0003 p\u00121FF\n\u0017\n@\u0017\n@\u00121\nD\n\nFF \u0003 .p2=\u0017/FF\u000b\n.2p/ \u0003 p\u00121FF\n\u0017\n.\u00061\u00121/\nD pFF \n2 \u0003 \u0017\u00021.2p2 C \u00061\u00122\n1/\u000b\nD 2pFF \n1 \u0003 \u0017\u00021\u0017\n\u000b\nD 0:\nThe proof for the other terms is similar.\nThe given decomposition can be used to construct a variety of algorithms,\nfor example the following which we term the Stochastic Isokinetic Nosé-Hoover\nRESPA algorithm.\nSIN(R) Algorithm\nPropagate p, \u00121, \u00122 by exp Œ.h=2/LN\t.\nPropagate p, \u00121 by exp \n.Qh=2/LF C .h=2/LS\n\u000b,\n.Qh D h=r/:\nPropagate q by exp\n\nQhLK\n\u000b\n.\nPropagate \u00122 by exp\n\nQhLO\n\u000b\n.\nPropagate p, \u00121 by exp\n\n.Qh=2/LF\n\u000b\n.\nRepeat r \u0003 2 times:\nPropagate p, \u00121 by exp\n\n.Qh=2/LF\n\u000b\n.\nPropagate q by exp\n\n.Qh=2/LK\n\u000b\n.\nPropagate \u00122 by exp\n\n.Qh/LO\n\u000b\n.\nPropagate q by exp\n\n.Qh=2/LK\n\u000b\n.\nPropagate p, \u00121 by exp\n\n.Qh=2/LF\n\u000b\n.\nPropagate p, \u00121 by exp \n.Qh=2/LF\n\u000b.\nPropagate \u00122 by exp\n\nQhLO\n\u000b\n.\nPropagate q by exp\n\nQhLK\n\u000b\n.\nPropagate p, \u00121 by exp\n\n.Qh=2/LF C .h=2/LS\n\u000b\n.\nPropagate p, \u00121, \u00122 by exp Œ.h=2/LN\t.\n",
+  "verbatim_scope": "完整对应原页文字层，逐字保留；本条数学成分由statement_latex及statement_scope定位。",
+  "proof_latex": null,
+  "proof_note": "对应原页推导逐字保存在statement_verbatim/original_page_text；排版以原页PDF为准。",
+  "original_page_text": [
+    {
+      "pdf_page": 392,
+      "printed_page": 371,
+      "text": "8.6\nIsokinetic Methods and Integration with Very Large Timestep\n371\nIt is straightforward to show that each of the terms of the corresponding vector\nﬁeld splitting preserves the ﬁrst integral \u0017 D constant. For example\nLF\u0017 D \nFF \u0003 .p2=\u0017/FF\u000b @\u0017\n@p \u0003 p\u00121FF\n\u0017\n@\u0017\n@\u00121\nD\n\nFF \u0003 .p2=\u0017/FF\u000b\n.2p/ \u0003 p\u00121FF\n\u0017\n.\u00061\u00121/\nD pFF \n2 \u0003 \u0017\u00021.2p2 C \u00061\u00122\n1/\u000b\nD 2pFF \n1 \u0003 \u0017\u00021\u0017\n\u000b\nD 0:\nThe proof for the other terms is similar.\nThe given decomposition can be used to construct a variety of algorithms,\nfor example the following which we term the Stochastic Isokinetic Nosé-Hoover\nRESPA algorithm.\nSIN(R) Algorithm\nPropagate p, \u00121, \u00122 by exp Œ.h=2/LN\t.\nPropagate p, \u00121 by exp \n.Qh=2/LF C .h=2/LS\n\u000b,\n.Qh D h=r/:\nPropagate q by exp\n\nQhLK\n\u000b\n.\nPropagate \u00122 by exp\n\nQhLO\n\u000b\n.\nPropagate p, \u00121 by exp\n\n.Qh=2/LF\n\u000b\n.\nRepeat r \u0003 2 times:\nPropagate p, \u00121 by exp\n\n.Qh=2/LF\n\u000b\n.\nPropagate q by exp\n\n.Qh=2/LK\n\u000b\n.\nPropagate \u00122 by exp\n\n.Qh/LO\n\u000b\n.\nPropagate q by exp\n\n.Qh=2/LK\n\u000b\n.\nPropagate p, \u00121 by exp\n\n.Qh=2/LF\n\u000b\n.\nPropagate p, \u00121 by exp \n.Qh=2/LF\n\u000b.\nPropagate \u00122 by exp\n\nQhLO\n\u000b\n.\nPropagate q by exp\n\nQhLK\n\u000b\n.\nPropagate p, \u00121 by exp\n\n.Qh=2/LF C .h=2/LS\n\u000b\n.\nPropagate p, \u00121, \u00122 by exp Œ.h=2/LN\t.\n"
+    }
+  ],
+  "numbered_equations": [],
+  "transcription_note": "文字层逐字保留；数学排版另行转写，原页中的特殊字形编码不静默替换。PDF420仅取Exercises之前。",
+  "context_notation": [],
+  "extra_assumptions": [
+    "算法有效域h>0、r≥2；一组中多个场表示同一次合并传播，并非擅自换为两个非交换流。每次OU用独立标准正态新噪声。",
+    "这里只记录精确阶段表，具体随机核实现、保约束及全局误差/阶数列覆盖缺口。"
+  ],
+  "issues": [],
+  "statement_scope": "原印算法的阶段顺序与步长；不声称构造了各非线性子流。",
+  "lean_decl": "MD.Ch08.SINStage",
+  "lean_declarations": [
+    "MD.Ch08.SINStage",
+    "MD.Ch08.sinRStages"
+  ],
+  "source_page_verification": "见source_page_checks.json，已目视核对本条原页。",
+  "repair_log": [],
+  "documented_priors": []
+}
+```
+
+## 完整本条Lean
+```lean
+inductive SINStage where
+  | kinetic | fast | slow | nose | ou
+  deriving DecidableEq
+def sinRStages (h : ℝ) (r : ℕ) : List (List (SINStage × ℝ)) :=
+  let a := h/(r:ℝ)
+  [[(.nose,h/2)],[(.fast,a/2),(.slow,h/2)],[(.kinetic,a)],[(.ou,a)],[(.fast,a/2)]] ++
+  List.flatten (List.replicate (r-2)
+    [[(.fast,a/2)],[(.kinetic,a/2)],[(.ou,a)],[(.kinetic,a/2)],[(.fast,a/2)]]) ++
+  [[(.fast,a/2)],[(.ou,a)],[(.kinetic,a)],[(.fast,a/2),(.slow,h/2)],[(.nose,h/2)]]
+```
+
+## 项目依赖定义体及选择规格
+以下def/abbrev/structure完整保留；定理列出完整类型，Mathlib标准定义无需摘录。
+
+### MD.Ch08.SINStage (Blueprint/Ch08.lean:879)
+原文件上下文：
+```lean
+open Set Filter MeasureTheory ProbabilityTheory MolecularDynamics
+open scoped BigOperators Topology ContDiff ENNReal NNReal Matrix
+variable {Ω : Type*} [MeasurableSpace Ω]
+variable {n : ℕ}
+```
+```lean
+inductive SINStage where
+  | kinetic | fast | slow | nose | ou
+  deriving DecidableEq
+```
+
+### MD.Ch08.sinRStages (Blueprint/Ch08.lean:882)
+原文件上下文：
+```lean
+open Set Filter MeasureTheory ProbabilityTheory MolecularDynamics
+open scoped BigOperators Topology ContDiff ENNReal NNReal Matrix
+variable {Ω : Type*} [MeasurableSpace Ω]
+variable {n : ℕ}
+```
+```lean
+def sinRStages (h : ℝ) (r : ℕ) : List (List (SINStage × ℝ)) :=
+  let a := h/(r:ℝ)
+  [[(.nose,h/2)],[(.fast,a/2),(.slow,h/2)],[(.kinetic,a)],[(.ou,a)],[(.fast,a/2)]] ++
+  List.flatten (List.replicate (r-2)
+    [[(.fast,a/2)],[(.kinetic,a/2)],[(.ou,a)],[(.kinetic,a/2)],[(.fast,a/2)]]) ++
+  [[(.fast,a/2)],[(.ou,a)],[(.kinetic,a)],[(.fast,a/2),(.slow,h/2)],[(.nose,h/2)]]
+```
+
+### MolecularDynamics.Chapter03Review.kinetic (MolecularDynamics/Chapter03/ReviewDefinitions.lean:117)
+原文件上下文：
+```lean
+open Set Filter Matrix MeasureTheory
+open scoped BigOperators Topology
+open MolecularDynamics.Chapter02Review
+```
+```lean
+def kinetic {n : ℕ} (m : Fin n → ℝ) (p : Position n) : ℝ := (∑ i, p i^2/m i)/2
+```
+
+### MolecularDynamics.Position (MolecularDynamics/Notation.lean:13)
+原文件上下文：
+```lean
+
+```
+```lean
+abbrev Position (n : ℕ) := EuclideanSpace ℝ (Fin n)
+```

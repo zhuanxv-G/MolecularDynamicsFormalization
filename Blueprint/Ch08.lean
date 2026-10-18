@@ -555,14 +555,24 @@ theorem rescalingStationary (U : Vec n → ℝ) (Φ : ℝ → ℝ) (θ Z : ℝ)
   sorry
 
 /-- source_id: MD-8.4.5-ThermostatEfficiency · 印刷p.356–357 / PDFp.377–378
-[SCOPE] 效率记号与表8.1的主要解析速率/误差公式；经验曲线逐项排除。
-[EXTRA] 表8.1解析估计作为公式定义保留；其外引渐近推导、谱隙与误差阶不是已证定理，列覆盖缺口。 -/
+[SCOPE] 效率比值、表8.1四行解析速率/低阶误差/效率估计及一般VR的O(N)含义；外引估计定理未证，经验曲线排除。
+[EXTRA] 表8.1解析估计作为公式定义保留；其外引渐近推导、谱隙与误差阶不是已证定理，列覆盖缺口。
+[EXTRA] γ>0、θ,Q>0、N>0用于物理解释；一般VR的O(N)给出确切渐近性质定义，没有声称任意Φ族满足它。 -/
 def thermostatEfficiency (convergence perturbation : ℝ) : ℝ := convergence/perturbation
 def langevinErrorEstimate (γ t : ℝ) : ℝ := γ*t
 def rescalingRateEstimate (meanK2Phi θ : ℝ) (N : ℕ) : ℝ := 4*meanK2Phi/(θ*N)
 def rescalingErrorEstimate (meanKPhi : ℝ) (N : ℕ) (t : ℝ) : ℝ := 2*meanKPhi/(N:ℝ)*t
 def nhlRateEstimate (N : ℕ) (θ Q : ℝ) : ℝ := Real.sqrt ((N:ℝ)*θ/Q)
 def nhlErrorEstimate (θ Q t : ℝ) : ℝ := θ/(2*Q)*t^2
+
+def langevinRateEstimate (γ : ℝ) : ℝ := γ
+def langevinEfficiencyEstimate : ℝ := 1
+def originalRescalingRateEstimate (γVR : ℝ) : ℝ := γVR
+def originalRescalingErrorEstimate (N : ℕ) (γVR t : ℝ) : ℝ := γVR/(N:ℝ)*t
+def originalRescalingEfficiencyEstimate (N : ℕ) : ℝ := N
+def nhlCriticalEfficiencyEstimate (N : ℕ) : ℝ := 2*N
+def rescalingEfficiencyOrder (efficiency : ℕ → ℝ) : Prop :=
+  efficiency =O[atTop] (fun N : ℕ ↦ (N : ℝ))
 
 /-- source_id: MD-8.5-SLS · 印刷p.357–358 / PDFp.378–379
 [SCOPE] 完整SLS加性SDE积分解规格、噪声方向与确定性子场定义。
@@ -627,6 +637,12 @@ def slsLeapfrog (invm : Vec n) (U : Vec n → ℝ) (Q h : ℝ) : Phase n × ℝ 
 def slsCoordinateField (i : Fin n) (invm : Vec n) (U : Vec n → ℝ) (Q : ℝ)
     (z : Phase n × ℝ) : Phase n × ℝ :=
   ((Pi.single i (z.2*invm i*z.1.2 i),0), -invm i*z.1.2 i*gradient U z.1.1 i/Q)
+
+/-- source_id: MD-8.5-SLSDoubleWell · 印刷p.359 / PDFp.380
+[SCOPE] 一维双阱势定义与非负性。
+[EXTRA] 保留试验中的数学势函数；轨迹、直方图和采样优劣是经验观测，另列排除。 -/
+def slsDoubleWell (q : ℝ) : ℝ := (q^2-1)^2
+theorem slsDoubleWell_nonneg (q : ℝ) : 0 ≤ slsDoubleWell q := sq_nonneg _
 
 /-- source_id: MD-8.6-IsokineticField · 印刷p.361–362 / PDFp.382–383
 [SCOPE] 无约束向量场与瞬时动能导数的代数消去；沿解的完整第一积分列缺口。
@@ -1662,5 +1678,74 @@ def pnhlSComposition {E : Type*} (A B C D O : ℝ → E → E) (h : ℝ) : E →
   A (h/2) ∘ B (h/2) ∘ C (h/2) ∘ D (h/2) ∘ O h ∘ D (h/2) ∘ C (h/2) ∘ B (h/2) ∘ A (h/2)
 def pnhlNComposition {E : Type*} (A B C D O : ℝ → E → E) (h : ℝ) : E → E :=
   A (h/2) ∘ B (h/2) ∘ C (h/2) ∘ D (h/2) ∘ O h ∘ D (h/2) ∘ C (h/2) ∘ A (h/2) ∘ B (h/2)
+
+/-- source_id: MD-8.10-BerendsenRelaxation · 印刷p.396–397 / PDFp.417–418
+[SCOPE] Berendsen温度方程的显式解、动量缩放、有效域和单次能量恒等式。
+[EXTRA] 取单位粒子质量的Euclidean动量平方和；有效域显式要求非零动量及非负根号，避免将总化sqrt/division当作物理方法。
+[EXTRA] 只证明所印温度ODE的显式解及动量缩放能量恒等式；不声称温度控制必然正则采样。完整Verlet耦合的统计行为未证。 -/
+def berendsenTemperature (θ T0 γ t : ℝ) : ℝ := θ+(T0-θ)*Real.exp (-γ*t)
+theorem berendsenTemperature_derivative (θ T0 γ t : ℝ) :
+    HasDerivAt (berendsenTemperature θ T0 γ) (γ*(θ-berendsenTemperature θ T0 γ t)) t := by
+  convert (hasDerivAt_const t θ).add (((hasDerivAt_id t).const_mul (-γ)).exp.const_mul (T0-θ)) using 1
+  · ext x
+    dsimp [berendsenTemperature]
+  · dsimp [berendsenTemperature]
+    ring
+def berendsenRadicand (nd θ γ h E : ℝ) : ℝ := 1+γ*h*(nd*θ/E-1)
+def berendsenScale {n : ℕ} (θ γ h : ℝ) (p : Vec n) : Vec n :=
+  Real.sqrt (berendsenRadicand n θ γ h (dot p p)) • p
+def berendsenScaleQualification {n : ℕ} (θ γ h : ℝ) (p : Vec n) : Prop :=
+  0 < n ∧ 0 < θ ∧ 0 < γ ∧ 0 ≤ h ∧ 0 < dot p p ∧ 0 ≤ berendsenRadicand n θ γ h (dot p p)
+theorem dot_smul_same {n : ℕ} (c : ℝ) (p : Vec n) : dot (c • p) (c • p)=c^2*dot p p := by
+  simp only [dot,Pi.smul_apply,smul_eq_mul,Finset.mul_sum]
+  apply Finset.sum_congr rfl
+  intro i hi
+  ring
+theorem berendsenScale_energy {n : ℕ} (θ γ h : ℝ) (p : Vec n)
+    (hq : berendsenScaleQualification θ γ h p) :
+    dot (berendsenScale θ γ h p) (berendsenScale θ γ h p)=
+      (1-γ*h)*dot p p+γ*h*n*θ := by
+  rw [berendsenScale,dot_smul_same,Real.sq_sqrt hq.2.2.2.2.2]
+  dsimp [berendsenRadicand]
+  field_simp [ne_of_gt hq.2.2.2.2.1]
+  <;> ring
+
+/-- source_id: MD-8.10-CanonicalTotalMomentumGaussian · 印刷p.397–398 / PDFp.418–419
+[SCOPE] 实际独立Gaussian动量假设下的一坐标总动量分布；非采样收敛定理。
+[EXTRA] 结论明确以各粒子坐标的独立正则Gaussian分布为前提；不从“系统遍历”直接推出有限时刻分布。
+[EXTRA] 原页比较直方图和轨迹属于经验试验，未转为普适数学断言。 -/
+theorem totalMomentum_gaussian {N d : ℕ} (P : Measure Ω) [IsProbabilityMeasure P]
+    (p : Ω → ParticleConfig N d) (m : Fin N → ℝ) (θ : ℝ)
+    (hm : ∀ i, 0 < m i) (hθ : 0 < θ) (a : Fin d)
+    (hind : iIndepFun (fun i sample ↦ p sample i a) P)
+    (hlaw : ∀ i, HasLaw (fun sample ↦ p sample i a)
+      (gaussianReal 0 (Real.toNNReal (m i*θ))) P) :
+    HasLaw (fun sample ↦ totalMomentum (p sample) a)
+      (gaussianReal 0 (Real.toNNReal ((∑ i, m i)*θ))) P := by
+  sorry
+
+/-- source_id: MD-8.10-NHLTotalMomentumSign · 印刷p.398 / PDFp.419
+[SCOPE] 总动量标量ODE解目标、正指数因子及显式表达式的符号保持。
+[EXTRA] 只对连续ξ及实际标量ODE声明解公式，正指数乘子的符号结论已证；从NHL粒子SDE推出总动量ODE仍需成对力抵消及积分方程桥接。
+[EXTRA] 欧氏空间正负动量不变与特殊初值下遍历性的讨论不扩展为任意系统的遍历性反例。 -/
+def nhlMomentumFactor (ξ : ℝ → ℝ) (t : ℝ) : ℝ := Real.exp (-(∫ s in (0 : ℝ)..t, ξ s))
+theorem nhlMomentumFactor_pos (ξ : ℝ → ℝ) (t : ℝ) : 0 < nhlMomentumFactor ξ t := Real.exp_pos _
+theorem nhlMomentum_sign (ξ : ℝ → ℝ) (P0 : ℝ) (t : ℝ) :
+    (0 < nhlMomentumFactor ξ t*P0 ↔ 0 < P0) ∧
+    (nhlMomentumFactor ξ t*P0 < 0 ↔ P0 < 0) := by
+  constructor
+  · exact mul_pos_iff_of_pos_left (nhlMomentumFactor_pos ξ t)
+  · constructor
+    · intro h
+      by_contra hp
+      have hp' : 0 ≤ P0 := le_of_not_gt hp
+      have hn := mul_nonneg (le_of_lt (nhlMomentumFactor_pos ξ t)) hp'
+      linarith
+    · intro h
+      exact mul_neg_of_pos_of_neg (nhlMomentumFactor_pos ξ t) h
+theorem nhlTotalMomentum_odeSolution (ξ P : ℝ → ℝ) (hξ : Continuous ξ)
+    (hP : ∀ t, HasDerivAt P (-ξ t*P t) t) (t : ℝ) :
+    P t=nhlMomentumFactor ξ t*P 0 := by
+  sorry
 
 end MD.Ch08

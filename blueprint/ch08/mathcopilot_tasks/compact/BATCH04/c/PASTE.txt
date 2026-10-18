@@ -1,0 +1,86 @@
+以附件/PASTE 为准，忽略 /workspace 旧文件；Mathlib 定义按标准含义采信。
+本任务只审本条：原文转录、对象资格、定义体、量词、全部结论及[EXTRA]是否一致；Lean编译不代替语义审阅。
+Lean/Mathlib均4.34.0。原页PDF映射：[363]；印刷页=[342].
+input_sha256请原样回显：
+{
+  "Blueprint/Ch08.lean": "2800812fadd8e2557013f1941e4570401f7903d46f44baf07e23d5531da22a72",
+  "blueprint/ch08/ch08_source.json": "9b994b0f64cd22c85c2ad4123fbfdbd064bd7a6d070fe13b721794432f9f7a63",
+  "BATCH04c_PAGES.pdf": "32bdb60d5e8cfa32fc0270caaf396013384083c25a17fb9da65626c097f41cd7"
+}
+用代码将JSON对象(batch,input_sha256,items)写到 /workspace/.mathcopilot/reviews/ch08/BATCH04c_review.json；items仅含本source_id。
+items字段：source_id、verdict(PASS/FAIL/NEEDS_HUMAN)、transcription、semantic_review、counterexample、suggested_fix、printed_version、corrected_version。逐版区分原文疑误和修正版结论；缺材料必须具体指出，不猜测。写后json.loads自检，最后仅回复路径及统计。
+
+## 原文JSON
+```json
+{
+  "source_id": "MD-8.3-ArrheniusRate",
+  "kind": "definition",
+  "label": null,
+  "section": "8.3",
+  "printed_page": "342",
+  "pdf_page": "363",
+  "statement_latex": "k ∼ A e^{-ΔE/(k_BT)}.",
+  "statement_verbatim": "342\n8\nExtended Variable Methods\notherwise there is little clear advantage and a potentially signiﬁcant price to be\npaid, since HMC methods only work by rejecting steps. For reading on Hybrid\nMonte Carlo methods, the reader should consult [110, 188] and other references\nmentioned in Appendix C.\n•\nKinetic Monte-Carlo (KMC) methods are a broad family of multiscale sampling\nmethods which use a local sampling mechanism to explore basins while invoking\nan Arrenhius law to estimate the rates or timescales for transitions between\nbasins (we can think of basins as neighborhoods of potential energy minima).\nThe Arrenhius law relates the rate constant k associated to a particular state-\nto-state transition to the exponential of the of the “activation energy” which is\ndeﬁned as the difference \u0010E between the energy at a local minimum and that at\nthe energy barrier between the states\nk \u0005 Ae\u0002\u0010E=kBT\nIn a KMC method, it is typically assumed that various possible state-to-state\ntransitions from a given state are well modelled by the Arrenhius law and then\nmolecular dynamics is used to calculate the prefactor A and energy difference \u0010E\nin order to understand the timescales and relative probabilities of different rare\nevents. A Markov state model can be developed to help understand the global\ndynamics and simplify the model as a whole. For references on many interesting\napproaches to this important topic, the reader is referred to [36, 42, 137, 149, 391].\n•\nAndersen Thermostat. Of particular interest is the simple and useful Andersen\nthermostat [11]. This method works by selecting atoms at random and randomly\nperturbing their momenta in a way consistent with prescribed thermodynamic\nconditions. It has been rigorously proven to sample the canonical distribution\n[114].\n8.4\nErgodic Stochastic-Dynamic Thermostats\nIn this section, we consider the combination of stochastic perturbation with a\ndeterministic thermostat. Methods constructed in this way can be ergodic for\nthe canonical distribution while also providing ﬂexibility in way equilibrium is\nachieved. We distinguish in (6.16) between multiplicative noise, where B D B.z/\nvaries with z and additive noise, where B is constant. In our treatment of this topic\nwe will only consider additive noise. The presence of multiplicative noise may\ncomplicate discretization. As we shall see, the reliance on additive noise improves\nthe performance of discretization schemes.\nTo give this some speciﬁcity for molecular dynamics, we write the stochastic\ndynamical model as\ndq D M\u00021pdt;\n(8.22)\n",
+  "verbatim_scope": "完整对应原页文字层，逐字保留；本条数学成分由statement_latex及statement_scope定位。",
+  "proof_latex": null,
+  "proof_note": "对应原页推导逐字保存在statement_verbatim/original_page_text；排版以原页PDF为准。",
+  "original_page_text": [
+    {
+      "pdf_page": 363,
+      "printed_page": 342,
+      "text": "342\n8\nExtended Variable Methods\notherwise there is little clear advantage and a potentially signiﬁcant price to be\npaid, since HMC methods only work by rejecting steps. For reading on Hybrid\nMonte Carlo methods, the reader should consult [110, 188] and other references\nmentioned in Appendix C.\n•\nKinetic Monte-Carlo (KMC) methods are a broad family of multiscale sampling\nmethods which use a local sampling mechanism to explore basins while invoking\nan Arrenhius law to estimate the rates or timescales for transitions between\nbasins (we can think of basins as neighborhoods of potential energy minima).\nThe Arrenhius law relates the rate constant k associated to a particular state-\nto-state transition to the exponential of the of the “activation energy” which is\ndeﬁned as the difference \u0010E between the energy at a local minimum and that at\nthe energy barrier between the states\nk \u0005 Ae\u0002\u0010E=kBT\nIn a KMC method, it is typically assumed that various possible state-to-state\ntransitions from a given state are well modelled by the Arrenhius law and then\nmolecular dynamics is used to calculate the prefactor A and energy difference \u0010E\nin order to understand the timescales and relative probabilities of different rare\nevents. A Markov state model can be developed to help understand the global\ndynamics and simplify the model as a whole. For references on many interesting\napproaches to this important topic, the reader is referred to [36, 42, 137, 149, 391].\n•\nAndersen Thermostat. Of particular interest is the simple and useful Andersen\nthermostat [11]. This method works by selecting atoms at random and randomly\nperturbing their momenta in a way consistent with prescribed thermodynamic\nconditions. It has been rigorously proven to sample the canonical distribution\n[114].\n8.4\nErgodic Stochastic-Dynamic Thermostats\nIn this section, we consider the combination of stochastic perturbation with a\ndeterministic thermostat. Methods constructed in this way can be ergodic for\nthe canonical distribution while also providing ﬂexibility in way equilibrium is\nachieved. We distinguish in (6.16) between multiplicative noise, where B D B.z/\nvaries with z and additive noise, where B is constant. In our treatment of this topic\nwe will only consider additive noise. The presence of multiplicative noise may\ncomplicate discretization. As we shall see, the reliance on additive noise improves\nthe performance of discretization schemes.\nTo give this some speciﬁcity for molecular dynamics, we write the stochastic\ndynamical model as\ndq D M\u00021pdt;\n(8.22)\n"
+    }
+  ],
+  "numbered_equations": [],
+  "transcription_note": "文字层逐字保留；数学排版另行转写，原页中的特殊字形编码不静默替换。PDF420仅取Exercises之前。",
+  "context_notation": [],
+  "extra_assumptions": [
+    "A≥0,k_B>0,T>0为速率解释域；只定义原页模型，不声称一般能垒动力学服从此经验律。"
+  ],
+  "issues": [],
+  "statement_scope": "Arrhenius指数速率公式定义及A≥0时非负性；不含亚稳跃迁率渐近定理或温度单调性。",
+  "lean_decl": "MD.Ch08.arrheniusRate",
+  "lean_declarations": [
+    "MD.Ch08.arrheniusRate",
+    "MD.Ch08.arrheniusRate_nonneg"
+  ],
+  "source_page_verification": "见source_page_checks.json，已目视核对本条原页。",
+  "repair_log": [],
+  "documented_priors": []
+}
+```
+
+## 完整本条Lean
+```lean
+def arrheniusRate (A ΔE kB T : ℝ) : ℝ := A*Real.exp (-ΔE/(kB*T))
+theorem arrheniusRate_nonneg (A ΔE kB T : ℝ) (hA : 0 ≤ A) :
+    0 ≤ arrheniusRate A ΔE kB T := mul_nonneg hA (Real.exp_pos _).le
+```
+
+## 项目依赖定义体及选择规格
+以下def/abbrev/structure完整保留；定理列出完整类型，Mathlib标准定义无需摘录。
+
+### MD.Ch08.arrheniusRate (Blueprint/Ch08.lean:300)
+原文件上下文：
+```lean
+open Set Filter MeasureTheory ProbabilityTheory MolecularDynamics
+open scoped BigOperators Topology ContDiff ENNReal NNReal Matrix
+variable {Ω : Type*} [MeasurableSpace Ω]
+variable {n : ℕ}
+```
+```lean
+def arrheniusRate (A ΔE kB T : ℝ) : ℝ := A*Real.exp (-ΔE/(kB*T))
+```
+
+### MD.Ch08.arrheniusRate_nonneg (Blueprint/Ch08.lean:301)
+原文件上下文：
+```lean
+open Set Filter MeasureTheory ProbabilityTheory MolecularDynamics
+open scoped BigOperators Topology ContDiff ENNReal NNReal Matrix
+variable {Ω : Type*} [MeasurableSpace Ω]
+variable {n : ℕ}
+```
+```lean
+theorem arrheniusRate_nonneg (A ΔE kB T : ℝ) (hA : 0 ≤ A) :
+    0 ≤ arrheniusRate A ΔE kB T
+```

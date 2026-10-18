@@ -1,0 +1,85 @@
+{
+  "batch": "BATCH08",
+  "subtask": "BATCH08d",
+  "source_ids": [
+    "MD-8.6-IsokineticField"
+  ],
+  "input_sha256": {
+    "Blueprint/Ch08.lean": "2800812fadd8e2557013f1941e4570401f7903d46f44baf07e23d5531da22a72",
+    "blueprint/ch08/ch08_source.json": "9b994b0f64cd22c85c2ad4123fbfdbd064bd7a6d070fe13b721794432f9f7a63",
+    "BATCH08d_PAGES.pdf": "575e4bc45b752ef6cffaff0f40e3628ce0f859b50329252f3638cea89bb7bd52"
+  },
+  "page_mapping": [
+    {
+      "attachment_page": 1,
+      "original_pdf_page": 382,
+      "printed_page": 361
+    },
+    {
+      "attachment_page": 2,
+      "original_pdf_page": 383,
+      "printed_page": 362
+    }
+  ],
+  "definition_excerpts": [
+    {
+      "full_name": "MD.Ch08.Vec",
+      "kind": "abbrev",
+      "path": "Blueprint/Ch08.lean",
+      "line": 17,
+      "code_sha256": "6f4b254a8a7cc4115fb35265b77caa663bdd18567cd1e664cc5bbd080d02fcff"
+    },
+    {
+      "full_name": "MD.Ch08.Phase",
+      "kind": "abbrev",
+      "path": "Blueprint/Ch08.lean",
+      "line": 18,
+      "code_sha256": "377b8086105169a0d2deaa2dd84218cb6ea1d04d27b576cd82794d54e5b84300"
+    },
+    {
+      "full_name": "MD.Ch08.kineticTwice",
+      "kind": "def",
+      "path": "Blueprint/Ch08.lean",
+      "line": 65,
+      "code_sha256": "74e9a17210c40ab25bfb4d66c78bf295ed45ebc01a50292e3e9961df7d0ced46"
+    },
+    {
+      "full_name": "MD.Ch08.isoMultiplier",
+      "kind": "def",
+      "path": "Blueprint/Ch08.lean",
+      "line": 650,
+      "code_sha256": "f971efbe1a588bdaa5beb48068c8ce6eef3e1a231f585a9ea87f536459928983"
+    },
+    {
+      "full_name": "MD.Ch08.isoField",
+      "kind": "def",
+      "path": "Blueprint/Ch08.lean",
+      "line": 652,
+      "code_sha256": "80b91910ac121010e292a7516503b92917cff5e697992d9011a82d8e5bada88c"
+    },
+    {
+      "full_name": "MD.Ch08.isoKinetic_balance",
+      "kind": "theorem",
+      "path": "Blueprint/Ch08.lean",
+      "line": 654,
+      "code_sha256": "5dd5292bbbb6fec28af4c12978f4e2b707ce9319120f19b4b5fa7b89c8509784"
+    }
+  ],
+  "validation": {
+    "project_constant_closure": "PASS",
+    "missing_project_definitions": [],
+    "full_page_render_equality_dpi": 72,
+    "website_submitted": false
+  },
+  "files": {
+    "PASTE.txt": {
+      "bytes": 13234,
+      "sha256": "f95b5ff168d73eed92be509d2034bf93810a97f0ae04f3c8d3300ebc597a8c88"
+    },
+    "BATCH08d_PAGES.pdf": {
+      "bytes": 84144,
+      "sha256": "575e4bc45b752ef6cffaff0f40e3628ce0f859b50329252f3638cea89bb7bd52"
+    }
+  },
+  "total_task_bytes": 99949
+}

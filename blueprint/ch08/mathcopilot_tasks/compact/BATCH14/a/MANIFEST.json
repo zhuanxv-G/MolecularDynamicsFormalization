@@ -1,0 +1,108 @@
+{
+  "batch": "BATCH14",
+  "subtask": "BATCH14a",
+  "source_ids": [
+    "MD-8.8.1-PistonThermostatWeightPrinted"
+  ],
+  "input_sha256": {
+    "Blueprint/Ch08.lean": "2800812fadd8e2557013f1941e4570401f7903d46f44baf07e23d5531da22a72",
+    "blueprint/ch08/ch08_source.json": "9b994b0f64cd22c85c2ad4123fbfdbd064bd7a6d070fe13b721794432f9f7a63",
+    "BATCH14a_PAGES.pdf": "970a98ed4efde01e2bd708bcaf3cdccfa98e4434deab0c74fcfd6d97940984d0"
+  },
+  "page_mapping": [
+    {
+      "attachment_page": 1,
+      "original_pdf_page": 402,
+      "printed_page": 381
+    }
+  ],
+  "definition_excerpts": [
+    {
+      "full_name": "MD.Ch08.Vec",
+      "kind": "abbrev",
+      "path": "Blueprint/Ch08.lean",
+      "line": 17,
+      "code_sha256": "6f4b254a8a7cc4115fb35265b77caa663bdd18567cd1e664cc5bbd080d02fcff"
+    },
+    {
+      "full_name": "MD.Ch08.Phase",
+      "kind": "abbrev",
+      "path": "Blueprint/Ch08.lean",
+      "line": 18,
+      "code_sha256": "377b8086105169a0d2deaa2dd84218cb6ea1d04d27b576cd82794d54e5b84300"
+    },
+    {
+      "full_name": "MD.Ch08.kineticTwice",
+      "kind": "def",
+      "path": "Blueprint/Ch08.lean",
+      "line": 65,
+      "code_sha256": "74e9a17210c40ab25bfb4d66c78bf295ed45ebc01a50292e3e9961df7d0ced46"
+    },
+    {
+      "full_name": "MD.Ch08.PistonState",
+      "kind": "abbrev",
+      "path": "Blueprint/Ch08.lean",
+      "line": 1196,
+      "code_sha256": "37b9995e23300baa28d3ffab4fd556a4c71bdb3f8811ccee0c4c94ebc403f10a"
+    },
+    {
+      "full_name": "MD.Ch08.pistonThermostatPart",
+      "kind": "def",
+      "path": "Blueprint/Ch08.lean",
+      "line": 1233,
+      "code_sha256": "cd3669280cbf1b47e81856e94452912c3650001e6468148932f27d3c26fe6399"
+    },
+    {
+      "full_name": "MD.Ch08.pistonRho2Printed",
+      "kind": "def",
+      "path": "Blueprint/Ch08.lean",
+      "line": 1235,
+      "code_sha256": "3f29b7d92dcad1867fe410c76748535264706b0c2cc22a5b81bd35c5e0ef005d"
+    },
+    {
+      "full_name": "MD.Ch08.pistonRho2_corrected",
+      "kind": "def",
+      "path": "Blueprint/Ch08.lean",
+      "line": 1237,
+      "code_sha256": "966b218b7e9f7801d6227f415e08cc0b5cfe8ca439f66baba5a6726f982946ec"
+    },
+    {
+      "full_name": "MD.Ch08.pistonRho2_stationary_corrected",
+      "kind": "theorem",
+      "path": "Blueprint/Ch08.lean",
+      "line": 1239,
+      "code_sha256": "3f3285cb718de535c0f970e1293e9ddef29fe430fde9e5a5cefe6b8b244186d0"
+    },
+    {
+      "full_name": "MolecularDynamics.Chapter05Review.E",
+      "kind": "abbrev",
+      "path": "MolecularDynamics/Chapter05/ReviewDefinitions.lean",
+      "line": 18,
+      "code_sha256": "b497c8ba7f01b62a3147d9ae65652772ff3f81e57aa19b116f1283fef7a3cc60"
+    },
+    {
+      "full_name": "MolecularDynamics.textbookDivergence",
+      "kind": "def",
+      "path": "MolecularDynamics/Chapter08/ThermostatDensity.lean",
+      "line": 18,
+      "code_sha256": "1b45cabec3bf68bd209da969759334d158c263b7e5a40ed527bd3a4f48e25c48"
+    }
+  ],
+  "validation": {
+    "project_constant_closure": "PASS",
+    "missing_project_definitions": [],
+    "full_page_render_equality_dpi": 72,
+    "website_submitted": false
+  },
+  "files": {
+    "PASTE.txt": {
+      "bytes": 11248,
+      "sha256": "42e1d60b80e21adf8e8df0e61ff3232708a5c0a98169f868138383829def1c1e"
+    },
+    "BATCH14a_PAGES.pdf": {
+      "bytes": 77803,
+      "sha256": "970a98ed4efde01e2bd708bcaf3cdccfa98e4434deab0c74fcfd6d97940984d0"
+    }
+  },
+  "total_task_bytes": 92584
+}

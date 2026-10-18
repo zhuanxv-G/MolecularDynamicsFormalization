@@ -1,0 +1,148 @@
+{
+  "batch": "BATCH07",
+  "subtask": "BATCH07c",
+  "source_ids": [
+    "MD-8.4.5-ThermostatEfficiency"
+  ],
+  "input_sha256": {
+    "Blueprint/Ch08.lean": "2800812fadd8e2557013f1941e4570401f7903d46f44baf07e23d5531da22a72",
+    "blueprint/ch08/ch08_source.json": "9b994b0f64cd22c85c2ad4123fbfdbd064bd7a6d070fe13b721794432f9f7a63",
+    "BATCH07c_PAGES.pdf": "b0c667b41f0007b55e50d73a0e0488805f506866922eda20ac6318d60446ee48"
+  },
+  "page_mapping": [
+    {
+      "attachment_page": 1,
+      "original_pdf_page": 377,
+      "printed_page": 356
+    },
+    {
+      "attachment_page": 2,
+      "original_pdf_page": 378,
+      "printed_page": 357
+    }
+  ],
+  "definition_excerpts": [
+    {
+      "full_name": "MD.Ch08.thermostatEfficiency",
+      "kind": "def",
+      "path": "Blueprint/Ch08.lean",
+      "line": 561,
+      "code_sha256": "03981bda2e1c2ed9a46f46b1fcff4dfed39a9996169d3c8807261576f1675a30"
+    },
+    {
+      "full_name": "MD.Ch08.langevinErrorEstimate",
+      "kind": "def",
+      "path": "Blueprint/Ch08.lean",
+      "line": 562,
+      "code_sha256": "732f7d4e1bf2701fd68bef6e73a6c2f9cf866fb58d02df35b6c203667e21e439"
+    },
+    {
+      "full_name": "MD.Ch08.rescalingRateEstimate",
+      "kind": "def",
+      "path": "Blueprint/Ch08.lean",
+      "line": 563,
+      "code_sha256": "ba12d973da64b05ad5b2ad1331d31caf479a957161a73165b00dd8f0f8cf1094"
+    },
+    {
+      "full_name": "MD.Ch08.rescalingErrorEstimate",
+      "kind": "def",
+      "path": "Blueprint/Ch08.lean",
+      "line": 564,
+      "code_sha256": "9f19b46f8ff40dfeed01e02b96f1a89e4012a0e95a9da7eeac16cdc8daeca391"
+    },
+    {
+      "full_name": "MD.Ch08.nhlRateEstimate",
+      "kind": "def",
+      "path": "Blueprint/Ch08.lean",
+      "line": 565,
+      "code_sha256": "b531488312d8d89f07d7f804c38d370bebebcd3d3aa135841eb380c8ca5c36ec"
+    },
+    {
+      "full_name": "MD.Ch08.nhlErrorEstimate",
+      "kind": "def",
+      "path": "Blueprint/Ch08.lean",
+      "line": 566,
+      "code_sha256": "ab76ed7e4c746d8c223add694a6afdda7245330f2c8e92b667dd6fd548454ae6"
+    },
+    {
+      "full_name": "MD.Ch08.langevinRateEstimate",
+      "kind": "def",
+      "path": "Blueprint/Ch08.lean",
+      "line": 568,
+      "code_sha256": "02de49b27c9784bccefa36fbc3320f70a0f98ccb2ac106c3e6f96e19972cdb8c"
+    },
+    {
+      "full_name": "MD.Ch08.langevinEfficiencyEstimate",
+      "kind": "def",
+      "path": "Blueprint/Ch08.lean",
+      "line": 569,
+      "code_sha256": "d8989faed416219c8e22c4bca4c20db8b85442ca4da71e69ce4ee885d7ee3ac8"
+    },
+    {
+      "full_name": "MD.Ch08.originalRescalingRateEstimate",
+      "kind": "def",
+      "path": "Blueprint/Ch08.lean",
+      "line": 570,
+      "code_sha256": "4ead6666bda71571e945ef095496f2901bf880167aee69e7c0ff6a38dbf96637"
+    },
+    {
+      "full_name": "MD.Ch08.originalRescalingErrorEstimate",
+      "kind": "def",
+      "path": "Blueprint/Ch08.lean",
+      "line": 571,
+      "code_sha256": "fb4237cef76d39b0c666731aac0b2df57d4059cc1df9180aa8bcf1f35b7f49e1"
+    },
+    {
+      "full_name": "MD.Ch08.originalRescalingEfficiencyEstimate",
+      "kind": "def",
+      "path": "Blueprint/Ch08.lean",
+      "line": 572,
+      "code_sha256": "2b0062c92df4c21ab385e97981acd072404aa0fbdda5c8d35c56c6d7212a762a"
+    },
+    {
+      "full_name": "MD.Ch08.nhlCriticalEfficiencyEstimate",
+      "kind": "def",
+      "path": "Blueprint/Ch08.lean",
+      "line": 573,
+      "code_sha256": "9965133f35627036bc0e6aff16ec798471471b977d66e419c60c81643c412811"
+    },
+    {
+      "full_name": "MD.Ch08.rescalingEfficiencyOrder",
+      "kind": "def",
+      "path": "Blueprint/Ch08.lean",
+      "line": 574,
+      "code_sha256": "a17d788eac515ebf4c08379837dc9aece1a7cf1da18c94cc4004a382836f404d"
+    },
+    {
+      "full_name": "MolecularDynamics.Chapter02Review.Q",
+      "kind": "abbrev",
+      "path": "MolecularDynamics/Chapter02/ReviewDefinitions.lean",
+      "line": 17,
+      "code_sha256": "d01d4518aed3668e7c982afee1cd3820fb858a94438e5b8960aa0557f5a57ef1"
+    },
+    {
+      "full_name": "MolecularDynamics.Chapter04Review.Q",
+      "kind": "abbrev",
+      "path": "MolecularDynamics/Chapter04/ReviewDefinitions.lean",
+      "line": 15,
+      "code_sha256": "d01d4518aed3668e7c982afee1cd3820fb858a94438e5b8960aa0557f5a57ef1"
+    }
+  ],
+  "validation": {
+    "project_constant_closure": "PASS",
+    "missing_project_definitions": [],
+    "full_page_render_equality_dpi": 72,
+    "website_submitted": false
+  },
+  "files": {
+    "PASTE.txt": {
+      "bytes": 20612,
+      "sha256": "973c30f23884c57057c08873de8d4cad2abdc63a13f631d471cb892e3c64c365"
+    },
+    "BATCH07c_PAGES.pdf": {
+      "bytes": 91719,
+      "sha256": "b0c667b41f0007b55e50d73a0e0488805f506866922eda20ac6318d60446ee48"
+    }
+  },
+  "total_task_bytes": 117216
+}

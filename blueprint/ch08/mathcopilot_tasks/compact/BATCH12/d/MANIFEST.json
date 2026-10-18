@@ -1,0 +1,73 @@
+{
+  "batch": "BATCH12",
+  "subtask": "BATCH12d",
+  "source_ids": [
+    "MD-8.7.1-GLEConsistentCoefficients"
+  ],
+  "input_sha256": {
+    "Blueprint/Ch08.lean": "2800812fadd8e2557013f1941e4570401f7903d46f44baf07e23d5531da22a72",
+    "blueprint/ch08/ch08_source.json": "9b994b0f64cd22c85c2ad4123fbfdbd064bd7a6d070fe13b721794432f9f7a63",
+    "BATCH12d_PAGES.pdf": "3bdd33f133a655edb1a16ea20b3ec14b38c228c31bc4ff3e9bd40dbb11c9b9c9"
+  },
+  "page_mapping": [
+    {
+      "attachment_page": 1,
+      "original_pdf_page": 398,
+      "printed_page": 377
+    }
+  ],
+  "definition_excerpts": [
+    {
+      "full_name": "MD.Ch08.gleDecay",
+      "kind": "def",
+      "path": "Blueprint/Ch08.lean",
+      "line": 1073,
+      "code_sha256": "73879948c109ca8da403612ad6135b3cde20a339017849d15477aaca7502b94e"
+    },
+    {
+      "full_name": "MD.Ch08.gleNoiseCoefficient",
+      "kind": "def",
+      "path": "Blueprint/Ch08.lean",
+      "line": 1074,
+      "code_sha256": "300d90b0ce4788e757a4d09f0af98d76a41e990c8b5396aa69c0d3c3ac695e12"
+    },
+    {
+      "full_name": "MD.Ch08.gleCoefficientConsistency",
+      "kind": "def",
+      "path": "Blueprint/Ch08.lean",
+      "line": 1075,
+      "code_sha256": "6af9d38013358f23154dc2c393a1c09720fd4455a62a46ad394ecddb34b5cfdb"
+    },
+    {
+      "full_name": "MD.Ch08.gleCoefficients_consistent",
+      "kind": "theorem",
+      "path": "Blueprint/Ch08.lean",
+      "line": 1080,
+      "code_sha256": "c02841efd11d22009ac487b988d212e0b34b6b3edf65e9a8b5aa3981e3469b1c"
+    },
+    {
+      "full_name": "MD.Ch08.gleCoefficient_smallMemory",
+      "kind": "theorem",
+      "path": "Blueprint/Ch08.lean",
+      "line": 1083,
+      "code_sha256": "b21081af090e71fa4a329245f1d77ddd0d14a842f2b91fd83133bebcce166ab4"
+    }
+  ],
+  "validation": {
+    "project_constant_closure": "PASS",
+    "missing_project_definitions": [],
+    "full_page_render_equality_dpi": 72,
+    "website_submitted": false
+  },
+  "files": {
+    "PASTE.txt": {
+      "bytes": 8922,
+      "sha256": "d4fe67473d9fd3925c088a0739501108ef6ac3ca0e7fb044b182c2d5c29034e1"
+    },
+    "BATCH12d_PAGES.pdf": {
+      "bytes": 91011,
+      "sha256": "3bdd33f133a655edb1a16ea20b3ec14b38c228c31bc4ff3e9bd40dbb11c9b9c9"
+    }
+  },
+  "total_task_bytes": 102247
+}

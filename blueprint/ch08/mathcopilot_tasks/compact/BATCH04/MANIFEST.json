@@ -1,0 +1,47 @@
+{
+  "batch": "BATCH04",
+  "subtasks": [
+    {
+      "subtask": "BATCH04a",
+      "source_id": "MD-8.2.1-Proposition81",
+      "path": "blueprint/ch08/mathcopilot_tasks/compact/BATCH04/a",
+      "bytes": 115574,
+      "manifest_sha256": "2257ca6a43b9dbc53f47cf657774137139bb3974dea6ea4b8a4cb68215a75143"
+    },
+    {
+      "subtask": "BATCH04b",
+      "source_id": "MD-8.2.2-NHChains",
+      "path": "blueprint/ch08/mathcopilot_tasks/compact/BATCH04/b",
+      "bytes": 106026,
+      "manifest_sha256": "1c9763fe632848104bf02bf0aeee781f1381de15cb388df3932208cbd344e4cd"
+    },
+    {
+      "subtask": "BATCH04c",
+      "source_id": "MD-8.3-ArrheniusRate",
+      "path": "blueprint/ch08/mathcopilot_tasks/compact/BATCH04/c",
+      "bytes": 86587,
+      "manifest_sha256": "3429ad8fed820afef983e935770fc50cc2684e33582706bd8f4bfbb6dea91d3d"
+    },
+    {
+      "subtask": "BATCH04d",
+      "source_id": "MD-8.4-AdditiveThermostatSDE",
+      "path": "blueprint/ch08/mathcopilot_tasks/compact/BATCH04/d",
+      "bytes": 114026,
+      "manifest_sha256": "980adb0d129851663d6d941116ca4712036c36912ea2d1e04fa5e32d9b78d6c5"
+    },
+    {
+      "subtask": "BATCH04e",
+      "source_id": "MD-8.4-OUStationarityPrinted",
+      "path": "blueprint/ch08/mathcopilot_tasks/compact/BATCH04/e",
+      "bytes": 113838,
+      "manifest_sha256": "e3156f863368851f35bc8503c651ce2af10eedbea117f2d57c5a8444f1d42a49"
+    },
+    {
+      "subtask": "BATCH04f",
+      "source_id": "MD-8.4-LiftedThermostat",
+      "path": "blueprint/ch08/mathcopilot_tasks/compact/BATCH04/f",
+      "bytes": 115653,
+      "manifest_sha256": "6749a3f48753e5b0a0b100b6305553243f0b811308ce79ba5896b2ad1afc3cee"
+    }
+  ]
+}

@@ -1,0 +1,101 @@
+{
+  "batch": "BATCH05",
+  "subtask": "BATCH05f",
+  "source_ids": [
+    "MD-8.4.1-ZeroModeInvariant"
+  ],
+  "input_sha256": {
+    "Blueprint/Ch08.lean": "2800812fadd8e2557013f1941e4570401f7903d46f44baf07e23d5531da22a72",
+    "blueprint/ch08/ch08_source.json": "9b994b0f64cd22c85c2ad4123fbfdbd064bd7a6d070fe13b721794432f9f7a63",
+    "BATCH05f_PAGES.pdf": "f607bfd2e083c4ece31d97d6c254de95570584b95f1016e188494792cb05484b"
+  },
+  "page_mapping": [
+    {
+      "attachment_page": 1,
+      "original_pdf_page": 367,
+      "printed_page": 346
+    }
+  ],
+  "definition_excerpts": [
+    {
+      "full_name": "MD.Ch08.Vec",
+      "kind": "abbrev",
+      "path": "Blueprint/Ch08.lean",
+      "line": 17,
+      "code_sha256": "6f4b254a8a7cc4115fb35265b77caa663bdd18567cd1e664cc5bbd080d02fcff"
+    },
+    {
+      "full_name": "MD.Ch08.modeDomain_complement",
+      "kind": "theorem",
+      "path": "Blueprint/Ch08.lean",
+      "line": 418,
+      "code_sha256": "9dfef5ee835b93a2f3651063a69ad31a08fdf24c618bc13e5c411b3aaaae1384"
+    },
+    {
+      "full_name": "MD.Ch08.zeroMode_invariant",
+      "kind": "theorem",
+      "path": "Blueprint/Ch08.lean",
+      "line": 421,
+      "code_sha256": "db44022227f6f8efa7c1be626efa1ab4d7d32a4113cfabd67d60972ae4f8b1c2"
+    },
+    {
+      "full_name": "MolecularDynamics.textbookThermostatPhase",
+      "kind": "abbrev",
+      "path": "MolecularDynamics/Chapter08/ThermostatLieFields.lean",
+      "line": 17,
+      "code_sha256": "4b300f9d7c5d7e128d14137ee7bee397cbd7d1637615dbe2d533f5e08b00adee"
+    },
+    {
+      "full_name": "MolecularDynamics.textbookNHLZeroMode",
+      "kind": "def",
+      "path": "MolecularDynamics/Chapter08/ThermostatModeInvariant.lean",
+      "line": 63,
+      "code_sha256": "7ecb9618126ba81a514c41fe5432b8e0c89c1bb8286e8aa866da767928d3aa75"
+    },
+    {
+      "full_name": "MolecularDynamics.textbookThermostatModeDomain_eq_compl_zeroModes",
+      "kind": "theorem",
+      "path": "MolecularDynamics/Chapter08/ThermostatModeInvariant.lean",
+      "line": 68,
+      "code_sha256": "34fe31e18a4211c4c8f0cad622c9d1755d00d276d44b07ec9d3d87afc23dedc7"
+    },
+    {
+      "full_name": "MolecularDynamics.textbookNHL_zeroMode_invariant",
+      "kind": "theorem",
+      "path": "MolecularDynamics/Chapter08/ThermostatModeInvariant.lean",
+      "line": 76,
+      "code_sha256": "df105d24e5254886e23147f18d961170f649dfd6089f16e10b9f49cdf99d7134"
+    },
+    {
+      "full_name": "MolecularDynamics.textbookThermostatEigenCoordinates",
+      "kind": "def",
+      "path": "MolecularDynamics/Chapter08/ThermostatSpan.lean",
+      "line": 18,
+      "code_sha256": "3d31ef8d69083c6b5852c2c7b66e42e601faac963199a7a86f71491ad6e114e1"
+    },
+    {
+      "full_name": "MolecularDynamics.textbookThermostatModeDomain",
+      "kind": "def",
+      "path": "MolecularDynamics/Chapter08/ThermostatSpan.lean",
+      "line": 94,
+      "code_sha256": "188c218227140d2609f9f8fa7243b3295f6e79a37dae54944a732d25f395e06a"
+    }
+  ],
+  "validation": {
+    "project_constant_closure": "PASS",
+    "missing_project_definitions": [],
+    "full_page_render_equality_dpi": 72,
+    "website_submitted": false
+  },
+  "files": {
+    "PASTE.txt": {
+      "bytes": 12199,
+      "sha256": "3ea43a39ecfec0b2d255a6292897d1f1318dff4cccef1d585eaa3e29f8a83b24"
+    },
+    "BATCH05f_PAGES.pdf": {
+      "bytes": 88039,
+      "sha256": "f607bfd2e083c4ece31d97d6c254de95570584b95f1016e188494792cb05484b"
+    }
+  },
+  "total_task_bytes": 103790
+}

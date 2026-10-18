@@ -1,0 +1,115 @@
+{
+  "batch": "BATCH14",
+  "subtask": "BATCH14e",
+  "source_ids": [
+    "MD-8.8.3-ParrinelloRahman"
+  ],
+  "input_sha256": {
+    "Blueprint/Ch08.lean": "2800812fadd8e2557013f1941e4570401f7903d46f44baf07e23d5531da22a72",
+    "blueprint/ch08/ch08_source.json": "9b994b0f64cd22c85c2ad4123fbfdbd064bd7a6d070fe13b721794432f9f7a63",
+    "BATCH14e_PAGES.pdf": "5b3f33428b812c2114d3928f7c011f5c99b41e3f146568d34890b96ba55ea6ae"
+  },
+  "page_mapping": [
+    {
+      "attachment_page": 1,
+      "original_pdf_page": 406,
+      "printed_page": 385
+    }
+  ],
+  "definition_excerpts": [
+    {
+      "full_name": "MD.Ch08.Vec",
+      "kind": "abbrev",
+      "path": "Blueprint/Ch08.lean",
+      "line": 17,
+      "code_sha256": "6f4b254a8a7cc4115fb35265b77caa663bdd18567cd1e664cc5bbd080d02fcff"
+    },
+    {
+      "full_name": "MD.Ch08.dot",
+      "kind": "def",
+      "path": "Blueprint/Ch08.lean",
+      "line": 19,
+      "code_sha256": "bb45cec5def0e642f7dde399650df8a6486048be491d116502106e187aa99348"
+    },
+    {
+      "full_name": "MD.Ch08.cellVolume",
+      "kind": "def",
+      "path": "Blueprint/Ch08.lean",
+      "line": 1315,
+      "code_sha256": "14d9b667cf0d52d82fa79eb084fcc8a3693a78dcfb16562eff2a0274448676a3"
+    },
+    {
+      "full_name": "MD.Ch08.cellMetric",
+      "kind": "def",
+      "path": "Blueprint/Ch08.lean",
+      "line": 1316,
+      "code_sha256": "db56f880982736a27ebaf72aadb89c9d64fdc7e18e2016ca8e39c0114b0ce9d1"
+    },
+    {
+      "full_name": "MD.Ch08.cellPosition",
+      "kind": "def",
+      "path": "Blueprint/Ch08.lean",
+      "line": 1317,
+      "code_sha256": "acaf9a163231071312db6213895920c59840e81f851192938d9cc88d6cadbfe6"
+    },
+    {
+      "full_name": "MD.Ch08.cross3",
+      "kind": "def",
+      "path": "Blueprint/Ch08.lean",
+      "line": 1318,
+      "code_sha256": "f7eeb1c73476e73ac4988f4fbbf4b5d73d3c18c8a8d4a4eaadaafeaf60604a50"
+    },
+    {
+      "full_name": "MD.Ch08.cellVolume_triple",
+      "kind": "theorem",
+      "path": "Blueprint/Ch08.lean",
+      "line": 1319,
+      "code_sha256": "006b06e73e8240d64ab7143d7bf5777cddf282f1842bebc28021b8d660ac4a35"
+    },
+    {
+      "full_name": "MD.Ch08.parrinelloRahmanLagrangian",
+      "kind": "def",
+      "path": "Blueprint/Ch08.lean",
+      "line": 1323,
+      "code_sha256": "01c786f3d591cbe30c382663ad678ba1532d30915c49e81ed6b4240480d5a857"
+    },
+    {
+      "full_name": "MD.Ch08.cellQualification",
+      "kind": "def",
+      "path": "Blueprint/Ch08.lean",
+      "line": 1327,
+      "code_sha256": "7499aaa92f3466a86af8414d95d6bc411f56bc6d401e31f9ce63db4a55501fb0"
+    },
+    {
+      "full_name": "MolecularDynamics.Chapter02Review.Q",
+      "kind": "abbrev",
+      "path": "MolecularDynamics/Chapter02/ReviewDefinitions.lean",
+      "line": 17,
+      "code_sha256": "d01d4518aed3668e7c982afee1cd3820fb858a94438e5b8960aa0557f5a57ef1"
+    },
+    {
+      "full_name": "MolecularDynamics.Chapter04Review.Q",
+      "kind": "abbrev",
+      "path": "MolecularDynamics/Chapter04/ReviewDefinitions.lean",
+      "line": 15,
+      "code_sha256": "d01d4518aed3668e7c982afee1cd3820fb858a94438e5b8960aa0557f5a57ef1"
+    }
+  ],
+  "validation": {
+    "project_constant_closure": "PASS",
+    "missing_project_definitions": [],
+    "full_page_render_equality_dpi": 72,
+    "website_submitted": false
+  },
+  "files": {
+    "PASTE.txt": {
+      "bytes": 13320,
+      "sha256": "feea38e787ec427dacc1e15c8b8d325c55b62193db403d3c417ceaac53def057"
+    },
+    "BATCH14e_PAGES.pdf": {
+      "bytes": 72286,
+      "sha256": "5b3f33428b812c2114d3928f7c011f5c99b41e3f146568d34890b96ba55ea6ae"
+    }
+  },
+  "total_task_bytes": 89326
+}

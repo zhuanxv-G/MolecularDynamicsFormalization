@@ -1,0 +1,234 @@
+以附件/PASTE 为准，忽略 /workspace 旧文件；Mathlib 定义按标准含义采信。
+本任务只审本条：原文转录、对象资格、定义体、量词、全部结论及[EXTRA]是否一致；Lean编译不代替语义审阅。
+Lean/Mathlib均4.34.0。原页PDF映射：[408, 409]；印刷页=[387, 388].
+input_sha256请原样回显：
+{
+  "Blueprint/Ch08.lean": "2800812fadd8e2557013f1941e4570401f7903d46f44baf07e23d5531da22a72",
+  "blueprint/ch08/ch08_source.json": "9b994b0f64cd22c85c2ad4123fbfdbd064bd7a6d070fe13b721794432f9f7a63",
+  "BATCH15a_PAGES.pdf": "57f3ab8309f59e7517166a6674f8f5a6f69355c916d2e0d6f33070c1b0755fed"
+}
+用代码将JSON对象(batch,input_sha256,items)写到 /workspace/.mathcopilot/reviews/ch08/BATCH15a_review.json；items仅含本source_id。
+items字段：source_id、verdict(PASS/FAIL/NEEDS_HUMAN)、transcription、semantic_review、counterexample、suggested_fix、printed_version、corrected_version。逐版区分原文疑误和修正版结论；缺材料必须具体指出，不猜测。写后json.loads自检，最后仅回复路径及统计。
+
+## 原文JSON
+```json
+{
+  "source_id": "MD-8.9.1-DPDSoftPotential",
+  "kind": "unnumbered_claim",
+  "label": null,
+  "section": "8.9.1",
+  "printed_page": "387–388",
+  "pdf_page": "408–409",
+  "statement_latex": "rᵢⱼ=|qᵢ−qⱼ|, eᵢⱼ=(qᵢ−qⱼ)/rᵢⱼ. Fᶜᵢⱼ=α(1−rᵢⱼ/r_c)eᵢⱼ for rᵢⱼ<r_c, zero otherwise; φ_DPD=(αr_c/2)(1−r/r_c)² below cutoff, U=Σᵢ<ⱼφ(rᵢⱼ). (8.80)–(8.84).",
+  "statement_verbatim": "8.9\nMomentum-Conserving Thermostats and the Dissipative Particle. . .\n387\nOne of the most popular scheme of this type is the technique of dissipative\nparticle dynamics (DPD) which was introduced in 1992 by Hoogerbrugge and\nKoelman [181]. DPD groups several ﬂuid molecules and treats these as a single\nparticle (which may be thought of as a lump of ﬂuid). The particles of a DPD system\ninteract through a short-ranged “soft” pairwise (distance-based) potential energy\nfunction. The use of such a soft potential increases the usable timestep, thus the\nbeneﬁt of using DPD as opposed to MD is felt both in reduction of system dimension\nand increase in the timestep and thus the accessible time interval in simulation [156].\nDPD can be viewed as a Langevin dynamics in which conﬁguration dependence is\npresent in both dissipative and stochastic perturbations. We will consider numerical\nmethods for DPD in this section; for discussion of coarse-graining applications of\nDPD, see for example [39, 88, 330].\nThe equations of DPD are a little more complicated than standard MD. It is\ntherefore important to design accurate and efﬁcient methods tailored to their special\nform. Most numerical methods for DPD simulation exhibit substantial statistical\nbias. Some methods have been developed to reduce the per timestep efﬁciency but\nat a price in terms of the conservation properties. The only way that the errors are\ntamed in some ad hoc schemes is by reducing the timestep size excessively (well\nbelow the stability threshold), but this may destroy the practical value of those\nmethods.\nIn this section we present numerical methods based on splitting for DPD and\nfor another stochastic momentum-conserving method, the pairwise Nosé-Hoover-\nLangevin (PNHL) method.\n8.9.1\nFormulation of DPD\nWe describe here the formulation of dissipative particle dynamics due to Español\nand Warren [122].\nLet the N particles be described in the usual way by positions qi and momenta pi.\nWe assume their masses to be mi for i D 1; : : : ; N. The DPD equations of motion\nare of the form\ndqi\ndt D pi\nmi\n;\ndpi\ndt D Fi;\n(8.80)\nwhere Fi is the total interparticle force acting on particle i due to the presence of the\nother particles. The force is composed of three pairwise contributions\nFi D\nX\nj¤i\n.FC\nij C FD\nij C FR\nij/;\n(8.81)\nwhere FC\nij, FD\nij and FR\nij represent conservative, dissipative and random forces, acting\non particle i due to the j-th particle, respectively.\n\n388\n8\nExtended Variable Methods\nMany choices are possible for the conservative force ﬁeld [219, 244, 342]. In case\nthe DPD equations are used simply to control the momentum (and not as a coarse-\ngraining device), any empirical molecular force ﬁeld may be used. When DPD is\nused for coarse-graining, it is common to adopt a simpliﬁed pair potential, namely\nFC\nij D\n8\n<\n:\n˛\n\b\n1 \u0003 rij\nrc\n\t\nOqij;\nrij < rcI\n0;\nrij \b rc;\n(8.82)\nwhere rij is the interparticle distance, Oqij D r\u00021\nij .qi \u0003 qj/, parameters ˛ deﬁne\nthe strength of the repulsion of particles i and j, and rc is the cutoff radius. The\nuse of a cutoff is important for efﬁciency reasons—in a large system, only the\nparticles interacting at close range will generate nonzero forces of interaction so\nthe force calculation may be substantially reduced. Both ˛ and rc could be allowed\nto be different for different particle pairs, although they are most often taken to be\nhomogeneous. The pair potential corresponding to the force is\n'DPD.r/ D\n8\nˆ<\nˆ:\n˛rc\n2\n\b\n1 \u0003 r\nrc\n\t2\n;\nr < rcI\n0;\nr \b rc:\n(8.83)\nso that the conservative potential energy is:\nUDPD D\nX\ni<j\n'DPD.rij/;\nrij D kqi \u0003 qjk:\n(8.84)\nThe choice of dissipative and random forces is made so as to maintain a\nprescribed temperature. The typical formulas used for this purpose are\nFD\nij D \u0003\n!D.rij/.Oqij \u0002 vij/Oqij;\n(8.85)\nFR\nij D \u0007!R.rij/\u000eijOqij;\n(8.86)\nwhere \n and \u0007 parameterize the forces (again, they could be taken to be different for\ndifferent pairs), and !D and !R are conﬁguration-dependent weight functions that\ntypically incorporate a cut-off similar to that used in the conservative force, e.g. one\nmay take\n!R.r/ D\n8\n<\n:\n1 \u0003 r\nrc\n;\nr < rcI\n0;\nr \b rc;\n(8.87)\nwhere rc is the same cutoff used in the conservative force. The relative velocities\nare denoted by vij D pi=mi \u0003 pj=mj, and \u000eij is a symmetric (\u000eij D \u000eji) Gaussian\n",
+  "verbatim_scope": "完整对应原页文字层，逐字保留；本条数学成分由statement_latex及statement_scope定位。",
+  "proof_latex": null,
+  "proof_note": "对应原页推导逐字保存在statement_verbatim/original_page_text；排版以原页PDF为准。",
+  "original_page_text": [
+    {
+      "pdf_page": 408,
+      "printed_page": 387,
+      "text": "8.9\nMomentum-Conserving Thermostats and the Dissipative Particle. . .\n387\nOne of the most popular scheme of this type is the technique of dissipative\nparticle dynamics (DPD) which was introduced in 1992 by Hoogerbrugge and\nKoelman [181]. DPD groups several ﬂuid molecules and treats these as a single\nparticle (which may be thought of as a lump of ﬂuid). The particles of a DPD system\ninteract through a short-ranged “soft” pairwise (distance-based) potential energy\nfunction. The use of such a soft potential increases the usable timestep, thus the\nbeneﬁt of using DPD as opposed to MD is felt both in reduction of system dimension\nand increase in the timestep and thus the accessible time interval in simulation [156].\nDPD can be viewed as a Langevin dynamics in which conﬁguration dependence is\npresent in both dissipative and stochastic perturbations. We will consider numerical\nmethods for DPD in this section; for discussion of coarse-graining applications of\nDPD, see for example [39, 88, 330].\nThe equations of DPD are a little more complicated than standard MD. It is\ntherefore important to design accurate and efﬁcient methods tailored to their special\nform. Most numerical methods for DPD simulation exhibit substantial statistical\nbias. Some methods have been developed to reduce the per timestep efﬁciency but\nat a price in terms of the conservation properties. The only way that the errors are\ntamed in some ad hoc schemes is by reducing the timestep size excessively (well\nbelow the stability threshold), but this may destroy the practical value of those\nmethods.\nIn this section we present numerical methods based on splitting for DPD and\nfor another stochastic momentum-conserving method, the pairwise Nosé-Hoover-\nLangevin (PNHL) method.\n8.9.1\nFormulation of DPD\nWe describe here the formulation of dissipative particle dynamics due to Español\nand Warren [122].\nLet the N particles be described in the usual way by positions qi and momenta pi.\nWe assume their masses to be mi for i D 1; : : : ; N. The DPD equations of motion\nare of the form\ndqi\ndt D pi\nmi\n;\ndpi\ndt D Fi;\n(8.80)\nwhere Fi is the total interparticle force acting on particle i due to the presence of the\nother particles. The force is composed of three pairwise contributions\nFi D\nX\nj¤i\n.FC\nij C FD\nij C FR\nij/;\n(8.81)\nwhere FC\nij, FD\nij and FR\nij represent conservative, dissipative and random forces, acting\non particle i due to the j-th particle, respectively.\n"
+    },
+    {
+      "pdf_page": 409,
+      "printed_page": 388,
+      "text": "388\n8\nExtended Variable Methods\nMany choices are possible for the conservative force ﬁeld [219, 244, 342]. In case\nthe DPD equations are used simply to control the momentum (and not as a coarse-\ngraining device), any empirical molecular force ﬁeld may be used. When DPD is\nused for coarse-graining, it is common to adopt a simpliﬁed pair potential, namely\nFC\nij D\n8\n<\n:\n˛\n\b\n1 \u0003 rij\nrc\n\t\nOqij;\nrij < rcI\n0;\nrij \b rc;\n(8.82)\nwhere rij is the interparticle distance, Oqij D r\u00021\nij .qi \u0003 qj/, parameters ˛ deﬁne\nthe strength of the repulsion of particles i and j, and rc is the cutoff radius. The\nuse of a cutoff is important for efﬁciency reasons—in a large system, only the\nparticles interacting at close range will generate nonzero forces of interaction so\nthe force calculation may be substantially reduced. Both ˛ and rc could be allowed\nto be different for different particle pairs, although they are most often taken to be\nhomogeneous. The pair potential corresponding to the force is\n'DPD.r/ D\n8\nˆ<\nˆ:\n˛rc\n2\n\b\n1 \u0003 r\nrc\n\t2\n;\nr < rcI\n0;\nr \b rc:\n(8.83)\nso that the conservative potential energy is:\nUDPD D\nX\ni<j\n'DPD.rij/;\nrij D kqi \u0003 qjk:\n(8.84)\nThe choice of dissipative and random forces is made so as to maintain a\nprescribed temperature. The typical formulas used for this purpose are\nFD\nij D \u0003\n!D.rij/.Oqij \u0002 vij/Oqij;\n(8.85)\nFR\nij D \u0007!R.rij/\u000eijOqij;\n(8.86)\nwhere \n and \u0007 parameterize the forces (again, they could be taken to be different for\ndifferent pairs), and !D and !R are conﬁguration-dependent weight functions that\ntypically incorporate a cut-off similar to that used in the conservative force, e.g. one\nmay take\n!R.r/ D\n8\n<\n:\n1 \u0003 r\nrc\n;\nr < rcI\n0;\nr \b rc;\n(8.87)\nwhere rc is the same cutoff used in the conservative force. The relative velocities\nare denoted by vij D pi=mi \u0003 pj=mj, and \u000eij is a symmetric (\u000eij D \u000eji) Gaussian\n"
+    }
+  ],
+  "numbered_equations": [
+    "8.80",
+    "8.81",
+    "8.82",
+    "8.83",
+    "8.84"
+  ],
+  "transcription_note": "文字层逐字保留；数学排版另行转写，原页中的特殊字形编码不静默替换。PDF420仅取Exercises之前。",
+  "context_notation": [],
+  "extra_assumptions": [
+    "d维Euclidean距离由坐标平方和开方，避免Pi最大范数；只在非碰撞且离开截断接缝的有效域声明梯度关系。N、d为物理正整数，mᵢ>0在动力学资格另列。"
+  ],
+  "issues": [],
+  "statement_scope": "软势、保守成对力/总力与光滑有效域的梯度目标；完整SDE见后条。",
+  "lean_decl": "MD.Ch08.pairDistance",
+  "lean_declarations": [
+    "MD.Ch08.pairDistance",
+    "MD.Ch08.pairDirection",
+    "MD.Ch08.dpdSoftPotential",
+    "MD.Ch08.dpdPairConservative",
+    "MD.Ch08.dpdPotential",
+    "MD.Ch08.dpdConservative",
+    "MD.Ch08.particleGradient",
+    "MD.Ch08.dpdConservative_gradient"
+  ],
+  "source_page_verification": "见source_page_checks.json，已目视核对本条原页。",
+  "repair_log": [],
+  "documented_priors": []
+}
+```
+
+## 完整本条Lean
+```lean
+def pairDistance {N d : ℕ} (q : ParticleConfig N d) (i j : Fin N) : ℝ :=
+  Real.sqrt (dot (q i-q j) (q i-q j))
+def pairDirection {N d : ℕ} (q : ParticleConfig N d) (i j : Fin N) : Vec d :=
+  (pairDistance q i j)⁻¹ • (q i-q j)
+def dpdSoftPotential (α rc r : ℝ) : ℝ := if r < rc then α*rc/2*(1-r/rc)^2 else 0
+def dpdPairConservative {N d : ℕ} (α rc : ℝ) (q : ParticleConfig N d) (i j : Fin N) : Vec d :=
+  if pairDistance q i j < rc then (α*(1-pairDistance q i j/rc)) • pairDirection q i j else 0
+def dpdPotential {N d : ℕ} (α rc : ℝ) (q : ParticleConfig N d) : ℝ :=
+  ∑ i, ∑ j ∈ Finset.univ.filter (fun j ↦ i < j), dpdSoftPotential α rc (pairDistance q i j)
+def dpdConservative {N d : ℕ} (α rc : ℝ) (q : ParticleConfig N d) : ParticleConfig N d :=
+  fun i ↦ ∑ j ∈ Finset.univ.filter (fun j ↦ j ≠ i), dpdPairConservative α rc q i j
+def particleGradient {N d : ℕ} (U : ParticleConfig N d → ℝ) (q : ParticleConfig N d) : ParticleConfig N d :=
+  fun i a ↦ fderiv ℝ U q (Pi.single i (Pi.single a 1))
+theorem dpdConservative_gradient {N d : ℕ} (α rc : ℝ) (hα : 0 ≤ α) (hrc : 0 < rc)
+    (q : ParticleConfig N d) (hnocoll : ∀ i j, i ≠ j → 0 < pairDistance q i j)
+    (hcut : ∀ i j, i ≠ j → pairDistance q i j ≠ rc) :
+    dpdConservative α rc q = -particleGradient (dpdPotential α rc) q := by
+  sorry
+```
+
+## 项目依赖定义体及选择规格
+以下def/abbrev/structure完整保留；定理列出完整类型，Mathlib标准定义无需摘录。
+
+### MD.Ch08.Vec (Blueprint/Ch08.lean:17)
+原文件上下文：
+```lean
+open Set Filter MeasureTheory ProbabilityTheory MolecularDynamics
+open scoped BigOperators Topology ContDiff ENNReal NNReal Matrix
+variable {Ω : Type*} [MeasurableSpace Ω]
+variable {n : ℕ}
+```
+```lean
+abbrev Vec (n : ℕ) := Fin n → ℝ
+```
+
+### MD.Ch08.dot (Blueprint/Ch08.lean:19)
+原文件上下文：
+```lean
+open Set Filter MeasureTheory ProbabilityTheory MolecularDynamics
+open scoped BigOperators Topology ContDiff ENNReal NNReal Matrix
+variable {Ω : Type*} [MeasurableSpace Ω]
+variable {n : ℕ}
+```
+```lean
+def dot (v w : Vec n) : ℝ := ∑ i, v i * w i
+```
+
+### MD.Ch08.ParticleConfig (Blueprint/Ch08.lean:1334)
+原文件上下文：
+```lean
+open Set Filter MeasureTheory ProbabilityTheory MolecularDynamics
+open scoped BigOperators Topology ContDiff ENNReal NNReal Matrix
+variable {Ω : Type*} [MeasurableSpace Ω]
+variable {n : ℕ}
+```
+```lean
+abbrev ParticleConfig (N d : ℕ) := Fin N → Vec d
+```
+
+### MD.Ch08.pairDistance (Blueprint/Ch08.lean:1349)
+原文件上下文：
+```lean
+open Set Filter MeasureTheory ProbabilityTheory MolecularDynamics
+open scoped BigOperators Topology ContDiff ENNReal NNReal Matrix
+variable {Ω : Type*} [MeasurableSpace Ω]
+variable {n : ℕ}
+```
+```lean
+def pairDistance {N d : ℕ} (q : ParticleConfig N d) (i j : Fin N) : ℝ :=
+  Real.sqrt (dot (q i-q j) (q i-q j))
+```
+
+### MD.Ch08.pairDirection (Blueprint/Ch08.lean:1351)
+原文件上下文：
+```lean
+open Set Filter MeasureTheory ProbabilityTheory MolecularDynamics
+open scoped BigOperators Topology ContDiff ENNReal NNReal Matrix
+variable {Ω : Type*} [MeasurableSpace Ω]
+variable {n : ℕ}
+```
+```lean
+def pairDirection {N d : ℕ} (q : ParticleConfig N d) (i j : Fin N) : Vec d :=
+  (pairDistance q i j)⁻¹ • (q i-q j)
+```
+
+### MD.Ch08.dpdSoftPotential (Blueprint/Ch08.lean:1353)
+原文件上下文：
+```lean
+open Set Filter MeasureTheory ProbabilityTheory MolecularDynamics
+open scoped BigOperators Topology ContDiff ENNReal NNReal Matrix
+variable {Ω : Type*} [MeasurableSpace Ω]
+variable {n : ℕ}
+```
+```lean
+def dpdSoftPotential (α rc r : ℝ) : ℝ := if r < rc then α*rc/2*(1-r/rc)^2 else 0
+```
+
+### MD.Ch08.dpdPairConservative (Blueprint/Ch08.lean:1354)
+原文件上下文：
+```lean
+open Set Filter MeasureTheory ProbabilityTheory MolecularDynamics
+open scoped BigOperators Topology ContDiff ENNReal NNReal Matrix
+variable {Ω : Type*} [MeasurableSpace Ω]
+variable {n : ℕ}
+```
+```lean
+def dpdPairConservative {N d : ℕ} (α rc : ℝ) (q : ParticleConfig N d) (i j : Fin N) : Vec d :=
+  if pairDistance q i j < rc then (α*(1-pairDistance q i j/rc)) • pairDirection q i j else 0
+```
+
+### MD.Ch08.dpdPotential (Blueprint/Ch08.lean:1356)
+原文件上下文：
+```lean
+open Set Filter MeasureTheory ProbabilityTheory MolecularDynamics
+open scoped BigOperators Topology ContDiff ENNReal NNReal Matrix
+variable {Ω : Type*} [MeasurableSpace Ω]
+variable {n : ℕ}
+```
+```lean
+def dpdPotential {N d : ℕ} (α rc : ℝ) (q : ParticleConfig N d) : ℝ :=
+  ∑ i, ∑ j ∈ Finset.univ.filter (fun j ↦ i < j), dpdSoftPotential α rc (pairDistance q i j)
+```
+
+### MD.Ch08.dpdConservative (Blueprint/Ch08.lean:1358)
+原文件上下文：
+```lean
+open Set Filter MeasureTheory ProbabilityTheory MolecularDynamics
+open scoped BigOperators Topology ContDiff ENNReal NNReal Matrix
+variable {Ω : Type*} [MeasurableSpace Ω]
+variable {n : ℕ}
+```
+```lean
+def dpdConservative {N d : ℕ} (α rc : ℝ) (q : ParticleConfig N d) : ParticleConfig N d :=
+  fun i ↦ ∑ j ∈ Finset.univ.filter (fun j ↦ j ≠ i), dpdPairConservative α rc q i j
+```
+
+### MD.Ch08.particleGradient (Blueprint/Ch08.lean:1360)
+原文件上下文：
+```lean
+open Set Filter MeasureTheory ProbabilityTheory MolecularDynamics
+open scoped BigOperators Topology ContDiff ENNReal NNReal Matrix
+variable {Ω : Type*} [MeasurableSpace Ω]
+variable {n : ℕ}
+```
+```lean
+def particleGradient {N d : ℕ} (U : ParticleConfig N d → ℝ) (q : ParticleConfig N d) : ParticleConfig N d :=
+  fun i a ↦ fderiv ℝ U q (Pi.single i (Pi.single a 1))
+```
+
+### MD.Ch08.dpdConservative_gradient (Blueprint/Ch08.lean:1362)
+原文件上下文：
+```lean
+open Set Filter MeasureTheory ProbabilityTheory MolecularDynamics
+open scoped BigOperators Topology ContDiff ENNReal NNReal Matrix
+variable {Ω : Type*} [MeasurableSpace Ω]
+variable {n : ℕ}
+```
+```lean
+theorem dpdConservative_gradient {N d : ℕ} (α rc : ℝ) (hα : 0 ≤ α) (hrc : 0 < rc)
+    (q : ParticleConfig N d) (hnocoll : ∀ i j, i ≠ j → 0 < pairDistance q i j)
+    (hcut : ∀ i j, i ≠ j → pairDistance q i j ≠ rc) :
+    dpdConservative α rc q = -particleGradient (dpdPotential α rc) q
+```

@@ -1,0 +1,201 @@
+以附件/PASTE 为准，忽略 /workspace 旧文件；Mathlib 定义按标准含义采信。
+本任务只审本条：原文转录、对象资格、定义体、量词、全部结论及[EXTRA]是否一致；Lean编译不代替语义审阅。
+Lean/Mathlib均4.34.0。原页PDF映射：[363, 364]；印刷页=[342, 343].
+input_sha256请原样回显：
+{
+  "Blueprint/Ch08.lean": "2800812fadd8e2557013f1941e4570401f7903d46f44baf07e23d5531da22a72",
+  "blueprint/ch08/ch08_source.json": "9b994b0f64cd22c85c2ad4123fbfdbd064bd7a6d070fe13b721794432f9f7a63",
+  "BATCH04d_PAGES.pdf": "6590468c2fca2725f6ef4718ff2692ecdac6e7ba5d056f0872726d8187593575"
+}
+用代码将JSON对象(batch,input_sha256,items)写到 /workspace/.mathcopilot/reviews/ch08/BATCH04d_review.json；items仅含本source_id。
+items字段：source_id、verdict(PASS/FAIL/NEEDS_HUMAN)、transcription、semantic_review、counterexample、suggested_fix、printed_version、corrected_version。逐版区分原文疑误和修正版结论；缺材料必须具体指出，不猜测。写后json.loads自检，最后仅回复路径及统计。
+
+## 原文JSON
+```json
+{
+  "source_id": "MD-8.4-AdditiveThermostatSDE",
+  "kind": "definition",
+  "label": null,
+  "section": "8.4",
+  "printed_page": "342–343",
+  "pdf_page": "363–364",
+  "statement_latex": "dq=M⁻¹pdt; dp=-∇Udt-Φ(ξ,z)-Γpdt+√(2k_BT)M^{1/2}Γ^{1/2}dW; dξ=gdt-Γ̂ξdt+√(2k_BT)M̂^{1/2}Γ̂^{1/2}dŴ. All Wiener coordinates are independent.",
+  "statement_verbatim": "342\n8\nExtended Variable Methods\notherwise there is little clear advantage and a potentially signiﬁcant price to be\npaid, since HMC methods only work by rejecting steps. For reading on Hybrid\nMonte Carlo methods, the reader should consult [110, 188] and other references\nmentioned in Appendix C.\n•\nKinetic Monte-Carlo (KMC) methods are a broad family of multiscale sampling\nmethods which use a local sampling mechanism to explore basins while invoking\nan Arrenhius law to estimate the rates or timescales for transitions between\nbasins (we can think of basins as neighborhoods of potential energy minima).\nThe Arrenhius law relates the rate constant k associated to a particular state-\nto-state transition to the exponential of the of the “activation energy” which is\ndeﬁned as the difference \u0010E between the energy at a local minimum and that at\nthe energy barrier between the states\nk \u0005 Ae\u0002\u0010E=kBT\nIn a KMC method, it is typically assumed that various possible state-to-state\ntransitions from a given state are well modelled by the Arrenhius law and then\nmolecular dynamics is used to calculate the prefactor A and energy difference \u0010E\nin order to understand the timescales and relative probabilities of different rare\nevents. A Markov state model can be developed to help understand the global\ndynamics and simplify the model as a whole. For references on many interesting\napproaches to this important topic, the reader is referred to [36, 42, 137, 149, 391].\n•\nAndersen Thermostat. Of particular interest is the simple and useful Andersen\nthermostat [11]. This method works by selecting atoms at random and randomly\nperturbing their momenta in a way consistent with prescribed thermodynamic\nconditions. It has been rigorously proven to sample the canonical distribution\n[114].\n8.4\nErgodic Stochastic-Dynamic Thermostats\nIn this section, we consider the combination of stochastic perturbation with a\ndeterministic thermostat. Methods constructed in this way can be ergodic for\nthe canonical distribution while also providing ﬂexibility in way equilibrium is\nachieved. We distinguish in (6.16) between multiplicative noise, where B D B.z/\nvaries with z and additive noise, where B is constant. In our treatment of this topic\nwe will only consider additive noise. The presence of multiplicative noise may\ncomplicate discretization. As we shall see, the reliance on additive noise improves\nthe performance of discretization schemes.\nTo give this some speciﬁcity for molecular dynamics, we write the stochastic\ndynamical model as\ndq D M\u00021pdt;\n(8.22)\n\n8.4\nErgodic Stochastic-Dynamic Thermostats\n343\ndp D \u0003rU.q/dt \u0003 ˚.\u0002; z/ \u0003 \u0010 pdt C\np\n2kBTM1=2\u0010 1=2dW;\n(8.23)\nd\u0002 D g.\u0002; q; p/dt \u0003 O\u0010 \u0002dt C\np\n2kBT OM\n1=2 O\u0010\n1=2d OW:\n(8.24)\nHere \u0010 ; O\u0010\nare symmetric, square matrices of appropriate dimension, W is a\nvector of Nc Wiener processes, and OW is a vector of m Wiener processes, all\nindependent of each other. We assume that the deterministic thermostat represented\nby the ˚ and g terms preserves the extended distribution O\u0005.\u0002/\u0005ˇ, where O\u0005.\u0002/ D\nexp\n\u0006\n\u0003ˇ\u0002T OM\n\u00021\u0002=2\n\u0007\n. The matrix OM is symmetric and positive deﬁnite; one could\ntake it to be diagonal.\nThe additivity property of thermostats mentioned above holds also for stochastic\nthermostats, since the Fokker-Planck equation is constructed from linear operations\non the vector ﬁelds involved, thus it is enough to require that the newly introduced\nterms satisfy appropriate ﬂuctuation-dissipation relationships so that they are\ncompatible with the extended Gibbs distribution of the deterministic part. That is,\nwe require\ndp D \u0003\u0010 pdt C\np\n2kBTM1=2\u0010 1=2dW\nto preserve the distribution with density N\u0005 D exp\n\u0004\n\u0003ˇpTM\u00021p=2\n\u0005\n, and\nd\u0002 D \u0003 O\u0010 \u0002dt C\np\n2kBT OM\n1=2 O\u0010\n1=2d OW\nto preserve O\u0005. These two problems are essentially the same. Considering the former,\nthe stationary Fokker-Planck equation reads\nrp \u0002 .\u0010 p N\u0005/\n„\nƒ‚\n…\ndrift\nC ˇ\u00021Tr\n\u0006\n\u0010 1=2M1=2r2\np N\u0005M1=2\u0010 1=2\u0007\n„\nƒ‚\n…\ndiffusion\nD 0:\nThe drift term here equates to\nTr.\u0010 / N\u0005 C .\u0003ˇ/pT\u0010 M\u00021p N\u0005:\nFor the diffusion term, we calculate\nr N\u0005 D \u0003ˇ N\u0005M\u00021p;\nthus\nr2 N\u0005 D N\u0005Œˇ2M\u00021ppTM\u00021 \u0003 ˇM\u00021\t;\n",
+  "verbatim_scope": "完整对应原页文字层，逐字保留；本条数学成分由statement_latex及statement_scope定位。",
+  "proof_latex": null,
+  "proof_note": "对应原页推导逐字保存在statement_verbatim/original_page_text；排版以原页PDF为准。",
+  "original_page_text": [
+    {
+      "pdf_page": 363,
+      "printed_page": 342,
+      "text": "342\n8\nExtended Variable Methods\notherwise there is little clear advantage and a potentially signiﬁcant price to be\npaid, since HMC methods only work by rejecting steps. For reading on Hybrid\nMonte Carlo methods, the reader should consult [110, 188] and other references\nmentioned in Appendix C.\n•\nKinetic Monte-Carlo (KMC) methods are a broad family of multiscale sampling\nmethods which use a local sampling mechanism to explore basins while invoking\nan Arrenhius law to estimate the rates or timescales for transitions between\nbasins (we can think of basins as neighborhoods of potential energy minima).\nThe Arrenhius law relates the rate constant k associated to a particular state-\nto-state transition to the exponential of the of the “activation energy” which is\ndeﬁned as the difference \u0010E between the energy at a local minimum and that at\nthe energy barrier between the states\nk \u0005 Ae\u0002\u0010E=kBT\nIn a KMC method, it is typically assumed that various possible state-to-state\ntransitions from a given state are well modelled by the Arrenhius law and then\nmolecular dynamics is used to calculate the prefactor A and energy difference \u0010E\nin order to understand the timescales and relative probabilities of different rare\nevents. A Markov state model can be developed to help understand the global\ndynamics and simplify the model as a whole. For references on many interesting\napproaches to this important topic, the reader is referred to [36, 42, 137, 149, 391].\n•\nAndersen Thermostat. Of particular interest is the simple and useful Andersen\nthermostat [11]. This method works by selecting atoms at random and randomly\nperturbing their momenta in a way consistent with prescribed thermodynamic\nconditions. It has been rigorously proven to sample the canonical distribution\n[114].\n8.4\nErgodic Stochastic-Dynamic Thermostats\nIn this section, we consider the combination of stochastic perturbation with a\ndeterministic thermostat. Methods constructed in this way can be ergodic for\nthe canonical distribution while also providing ﬂexibility in way equilibrium is\nachieved. We distinguish in (6.16) between multiplicative noise, where B D B.z/\nvaries with z and additive noise, where B is constant. In our treatment of this topic\nwe will only consider additive noise. The presence of multiplicative noise may\ncomplicate discretization. As we shall see, the reliance on additive noise improves\nthe performance of discretization schemes.\nTo give this some speciﬁcity for molecular dynamics, we write the stochastic\ndynamical model as\ndq D M\u00021pdt;\n(8.22)\n"
+    },
+    {
+      "pdf_page": 364,
+      "printed_page": 343,
+      "text": "8.4\nErgodic Stochastic-Dynamic Thermostats\n343\ndp D \u0003rU.q/dt \u0003 ˚.\u0002; z/ \u0003 \u0010 pdt C\np\n2kBTM1=2\u0010 1=2dW;\n(8.23)\nd\u0002 D g.\u0002; q; p/dt \u0003 O\u0010 \u0002dt C\np\n2kBT OM\n1=2 O\u0010\n1=2d OW:\n(8.24)\nHere \u0010 ; O\u0010\nare symmetric, square matrices of appropriate dimension, W is a\nvector of Nc Wiener processes, and OW is a vector of m Wiener processes, all\nindependent of each other. We assume that the deterministic thermostat represented\nby the ˚ and g terms preserves the extended distribution O\u0005.\u0002/\u0005ˇ, where O\u0005.\u0002/ D\nexp\n\u0006\n\u0003ˇ\u0002T OM\n\u00021\u0002=2\n\u0007\n. The matrix OM is symmetric and positive deﬁnite; one could\ntake it to be diagonal.\nThe additivity property of thermostats mentioned above holds also for stochastic\nthermostats, since the Fokker-Planck equation is constructed from linear operations\non the vector ﬁelds involved, thus it is enough to require that the newly introduced\nterms satisfy appropriate ﬂuctuation-dissipation relationships so that they are\ncompatible with the extended Gibbs distribution of the deterministic part. That is,\nwe require\ndp D \u0003\u0010 pdt C\np\n2kBTM1=2\u0010 1=2dW\nto preserve the distribution with density N\u0005 D exp\n\u0004\n\u0003ˇpTM\u00021p=2\n\u0005\n, and\nd\u0002 D \u0003 O\u0010 \u0002dt C\np\n2kBT OM\n1=2 O\u0010\n1=2d OW\nto preserve O\u0005. These two problems are essentially the same. Considering the former,\nthe stationary Fokker-Planck equation reads\nrp \u0002 .\u0010 p N\u0005/\n„\nƒ‚\n…\ndrift\nC ˇ\u00021Tr\n\u0006\n\u0010 1=2M1=2r2\np N\u0005M1=2\u0010 1=2\u0007\n„\nƒ‚\n…\ndiffusion\nD 0:\nThe drift term here equates to\nTr.\u0010 / N\u0005 C .\u0003ˇ/pT\u0010 M\u00021p N\u0005:\nFor the diffusion term, we calculate\nr N\u0005 D \u0003ˇ N\u0005M\u00021p;\nthus\nr2 N\u0005 D N\u0005Œˇ2M\u00021ppTM\u00021 \u0003 ˇM\u00021\t;\n"
+    }
+  ],
+  "numbered_equations": [
+    "8.22",
+    "8.23",
+    "8.24"
+  ],
+  "transcription_note": "文字层逐字保留；数学排版另行转写，原页中的特殊字形编码不静默替换。PDF420仅取Exercises之前。",
+  "context_notation": [],
+  "extra_assumptions": [
+    "加性噪声用独立Wiener路径增量的精确积分方程；漂移可积、路径连续且适应自然历史。完整矩阵噪声给因子B和涨落耗散资格，物理/热浴两组坐标共同独立。"
+  ],
+  "issues": [],
+  "statement_scope": "一般漂移、常噪声SDE与协方差关系；未构造矩阵平方根。",
+  "lean_decl": "MD.Ch08.independentWiener",
+  "lean_declarations": [
+    "MD.Ch08.independentWiener",
+    "MD.Ch08.additiveSDE",
+    "MD.Ch08.stochasticThermostatDrift",
+    "MD.Ch08.fluctuationDissipation"
+  ],
+  "source_page_verification": "见source_page_checks.json，已目视核对本条原页。",
+  "repair_log": [],
+  "documented_priors": []
+}
+```
+
+## 完整本条Lean
+```lean
+def independentWiener (P : Measure Ω) (k : ℕ) (W : ℝ → Ω → Vec k) : Prop :=
+  IsProbabilityMeasure P ∧ (∀ j, IsBrownianReal (fun t sample ↦ W t sample j) P) ∧
+    iIndepFun (fun j sample ↦ fun t : ℝ ↦ W t sample j) P
+def additiveSDE {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E] [MeasurableSpace E]
+    (P : Measure Ω) (k : ℕ) (W : ℝ → Ω → Vec k)
+    (X : ℝ → Ω → E) (x0 : E) (a : E → E) (B : Fin k → E) : Prop :=
+  independentWiener P k W ∧ (∀ᵐ sample ∂P, Continuous (fun t ↦ X t sample)) ∧
+  (∀ t : ℝ, 0 ≤ t → Measurable[MeasurableSpace.comap
+    (fun (sample : Ω) (s : Icc (0 : ℝ) t) ↦ W s sample) inferInstance] (X t)) ∧
+  ∀ t : ℝ, 0 ≤ t →
+    (∀ᵐ sample ∂P, IntervalIntegrable (fun s ↦ a (X s sample)) volume 0 t) ∧
+    ∀ᵐ sample ∂P, X t sample = x0 + (∫ s in 0..t, a (X s sample)) +
+      ∑ j, (W t sample j-W 0 sample j) • B j
+def stochasticThermostatDrift {k : ℕ} (invm : Vec n) (U : Vec n → ℝ)
+    (Φ : Phase n × Vec k → Vec n) (g : Phase n × Vec k → Vec k)
+    (Γ : Matrix (Fin n) (Fin n) ℝ) (Γhat : Matrix (Fin k) (Fin k) ℝ)
+    (z : Phase n × Vec k) : Phase n × Vec k :=
+  ((fun i ↦ invm i*z.1.2 i, fun i ↦ -gradient U z.1.1 i-Φ z i-(Γ *ᵥ z.1.2) i),
+   g z - Γhat *ᵥ z.2)
+def fluctuationDissipation (M Γ B : Matrix (Fin n) (Fin n) ℝ) (β : ℝ) : Prop :=
+  0 < β ∧ M.PosDef ∧ Γ.PosSemidef ∧ B*B.transpose = (2/β) • (Γ*M)
+```
+
+## 项目依赖定义体及选择规格
+以下def/abbrev/structure完整保留；定理列出完整类型，Mathlib标准定义无需摘录。
+
+### MD.Ch08.Vec (Blueprint/Ch08.lean:17)
+原文件上下文：
+```lean
+open Set Filter MeasureTheory ProbabilityTheory MolecularDynamics
+open scoped BigOperators Topology ContDiff ENNReal NNReal Matrix
+variable {Ω : Type*} [MeasurableSpace Ω]
+variable {n : ℕ}
+```
+```lean
+abbrev Vec (n : ℕ) := Fin n → ℝ
+```
+
+### MD.Ch08.Phase (Blueprint/Ch08.lean:18)
+原文件上下文：
+```lean
+open Set Filter MeasureTheory ProbabilityTheory MolecularDynamics
+open scoped BigOperators Topology ContDiff ENNReal NNReal Matrix
+variable {Ω : Type*} [MeasurableSpace Ω]
+variable {n : ℕ}
+```
+```lean
+abbrev Phase (n : ℕ) := Vec n × Vec n
+```
+
+### MD.Ch08.gradient (Blueprint/Ch08.lean:20)
+原文件上下文：
+```lean
+open Set Filter MeasureTheory ProbabilityTheory MolecularDynamics
+open scoped BigOperators Topology ContDiff ENNReal NNReal Matrix
+variable {Ω : Type*} [MeasurableSpace Ω]
+variable {n : ℕ}
+```
+```lean
+def gradient (U : Vec n → ℝ) (q : Vec n) : Vec n := fun i ↦ fderiv ℝ U q (Pi.single i 1)
+```
+
+### MD.Ch08.independentWiener (Blueprint/Ch08.lean:307)
+原文件上下文：
+```lean
+open Set Filter MeasureTheory ProbabilityTheory MolecularDynamics
+open scoped BigOperators Topology ContDiff ENNReal NNReal Matrix
+variable {Ω : Type*} [MeasurableSpace Ω]
+variable {n : ℕ}
+```
+```lean
+def independentWiener (P : Measure Ω) (k : ℕ) (W : ℝ → Ω → Vec k) : Prop :=
+  IsProbabilityMeasure P ∧ (∀ j, IsBrownianReal (fun t sample ↦ W t sample j) P) ∧
+    iIndepFun (fun j sample ↦ fun t : ℝ ↦ W t sample j) P
+```
+
+### MD.Ch08.additiveSDE (Blueprint/Ch08.lean:310)
+原文件上下文：
+```lean
+open Set Filter MeasureTheory ProbabilityTheory MolecularDynamics
+open scoped BigOperators Topology ContDiff ENNReal NNReal Matrix
+variable {Ω : Type*} [MeasurableSpace Ω]
+variable {n : ℕ}
+```
+```lean
+def additiveSDE {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E] [MeasurableSpace E]
+    (P : Measure Ω) (k : ℕ) (W : ℝ → Ω → Vec k)
+    (X : ℝ → Ω → E) (x0 : E) (a : E → E) (B : Fin k → E) : Prop :=
+  independentWiener P k W ∧ (∀ᵐ sample ∂P, Continuous (fun t ↦ X t sample)) ∧
+  (∀ t : ℝ, 0 ≤ t → Measurable[MeasurableSpace.comap
+    (fun (sample : Ω) (s : Icc (0 : ℝ) t) ↦ W s sample) inferInstance] (X t)) ∧
+  ∀ t : ℝ, 0 ≤ t →
+    (∀ᵐ sample ∂P, IntervalIntegrable (fun s ↦ a (X s sample)) volume 0 t) ∧
+    ∀ᵐ sample ∂P, X t sample = x0 + (∫ s in 0..t, a (X s sample)) +
+      ∑ j, (W t sample j-W 0 sample j) • B j
+```
+
+### MD.Ch08.stochasticThermostatDrift (Blueprint/Ch08.lean:320)
+原文件上下文：
+```lean
+open Set Filter MeasureTheory ProbabilityTheory MolecularDynamics
+open scoped BigOperators Topology ContDiff ENNReal NNReal Matrix
+variable {Ω : Type*} [MeasurableSpace Ω]
+variable {n : ℕ}
+```
+```lean
+def stochasticThermostatDrift {k : ℕ} (invm : Vec n) (U : Vec n → ℝ)
+    (Φ : Phase n × Vec k → Vec n) (g : Phase n × Vec k → Vec k)
+    (Γ : Matrix (Fin n) (Fin n) ℝ) (Γhat : Matrix (Fin k) (Fin k) ℝ)
+    (z : Phase n × Vec k) : Phase n × Vec k :=
+  ((fun i ↦ invm i*z.1.2 i, fun i ↦ -gradient U z.1.1 i-Φ z i-(Γ *ᵥ z.1.2) i),
+   g z - Γhat *ᵥ z.2)
+```
+
+### MD.Ch08.fluctuationDissipation (Blueprint/Ch08.lean:326)
+原文件上下文：
+```lean
+open Set Filter MeasureTheory ProbabilityTheory MolecularDynamics
+open scoped BigOperators Topology ContDiff ENNReal NNReal Matrix
+variable {Ω : Type*} [MeasurableSpace Ω]
+variable {n : ℕ}
+```
+```lean
+def fluctuationDissipation (M Γ B : Matrix (Fin n) (Fin n) ℝ) (β : ℝ) : Prop :=
+  0 < β ∧ M.PosDef ∧ Γ.PosSemidef ∧ B*B.transpose = (2/β) • (Γ*M)
+```
+
+### MolecularDynamics.Chapter05Review.E (MolecularDynamics/Chapter05/ReviewDefinitions.lean:18)
+原文件上下文：
+```lean
+open Set Filter MeasureTheory Matrix
+open scoped BigOperators Topology ENNReal
+```
+```lean
+abbrev E (n : ℕ) := EuclideanSpace ℝ (Fin n)
+```

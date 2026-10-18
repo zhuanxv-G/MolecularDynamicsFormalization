@@ -1,0 +1,47 @@
+{
+  "batch": "BATCH03",
+  "subtasks": [
+    {
+      "subtask": "BATCH03a",
+      "source_id": "MD-8.1.2.1-NPShadowDensity",
+      "path": "blueprint/ch08/mathcopilot_tasks/compact/BATCH03/a",
+      "bytes": 89995,
+      "manifest_sha256": "a12738b4003393b4d18124765fe1795d63a136e9771e755f6168ea2a71605e65"
+    },
+    {
+      "subtask": "BATCH03b",
+      "source_id": "MD-8.2-GeneralThermostat",
+      "path": "blueprint/ch08/mathcopilot_tasks/compact/BATCH03/b",
+      "bytes": 94403,
+      "manifest_sha256": "aa96962b9be124cafeb69134a93f4dc1328802dd3a422916afc3c69b599096ac"
+    },
+    {
+      "subtask": "BATCH03c",
+      "source_id": "MD-8.2.1-ContinuityProductRule",
+      "path": "blueprint/ch08/mathcopilot_tasks/compact/BATCH03/c",
+      "bytes": 114921,
+      "manifest_sha256": "a8ba56ca6e67fdb96960d1b75ed5cbd1184946fca46b276560046e6aadd7fad7"
+    },
+    {
+      "subtask": "BATCH03d",
+      "source_id": "MD-8.2.1-ThermostatCriterion",
+      "path": "blueprint/ch08/mathcopilot_tasks/compact/BATCH03/d",
+      "bytes": 97430,
+      "manifest_sha256": "e9d261d055f3ba49d784630da7a1507054fe341b36442cfbd6e881fbafeaaa0e"
+    },
+    {
+      "subtask": "BATCH03e",
+      "source_id": "MD-8.2.1-Examples81and82",
+      "path": "blueprint/ch08/mathcopilot_tasks/compact/BATCH03/e",
+      "bytes": 116577,
+      "manifest_sha256": "ba477557fe41cba3fa7b0e254acecbec005e98a5a6516d3cf880fc57d0daa5c5"
+    },
+    {
+      "subtask": "BATCH03f",
+      "source_id": "MD-8.2.1-TemperatureIdentity",
+      "path": "blueprint/ch08/mathcopilot_tasks/compact/BATCH03/f",
+      "bytes": 96761,
+      "manifest_sha256": "c76c9beb07900df034141ff35d4ee8695f646bbed902592d20077d8ddb27d057"
+    }
+  ]
+}

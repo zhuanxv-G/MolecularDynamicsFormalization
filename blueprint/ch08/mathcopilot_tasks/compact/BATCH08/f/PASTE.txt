@@ -1,0 +1,204 @@
+以附件/PASTE 为准，忽略 /workspace 旧文件；Mathlib 定义按标准含义采信。
+本任务只审本条：原文转录、对象资格、定义体、量词、全部结论及[EXTRA]是否一致；Lean编译不代替语义审阅。
+Lean/Mathlib均4.34.0。原页PDF映射：[383, 384]；印刷页=[362, 363].
+input_sha256请原样回显：
+{
+  "Blueprint/Ch08.lean": "2800812fadd8e2557013f1941e4570401f7903d46f44baf07e23d5531da22a72",
+  "blueprint/ch08/ch08_source.json": "9b994b0f64cd22c85c2ad4123fbfdbd064bd7a6d070fe13b721794432f9f7a63",
+  "BATCH08f_PAGES.pdf": "90e83d2f04dc0b5a065519e6b6eec48e27da82ae18f51de6284caeb8226e36a3"
+}
+用代码将JSON对象(batch,input_sha256,items)写到 /workspace/.mathcopilot/reviews/ch08/BATCH08f_review.json；items仅含本source_id。
+items字段：source_id、verdict(PASS/FAIL/NEEDS_HUMAN)、transcription、semantic_review、counterexample、suggested_fix、printed_version、corrected_version。逐版区分原文疑误和修正版结论；缺材料必须具体指出，不猜测。写后json.loads自检，最后仅回复路径及统计。
+
+## 原文JSON
+```json
+{
+  "source_id": "MD-8.6-IsokineticDivergencePrinted",
+  "kind": "unnumbered_claim",
+  "label": null,
+  "section": "8.6",
+  "printed_page": "362–363",
+  "pdf_page": "383–384",
+  "statement_latex": "ρ=e^{-w(q,p)}Φ(K(p)); div f_iso=(N_c-1)pᵀM⁻¹F/(pᵀM⁻¹p), w=(N_c-1)U/K.",
+  "statement_verbatim": "362\n8\nExtended Variable Methods\nPq D M\u00021p;\n(8.37)\nPp D F.q/ \u0003 pTM\u00021F.q/\npTM\u00021p\np:\n(8.38)\nThese equations preserve pTM\u00021p D constant. (Note: It is tempting to replace the\ndenominator in this expression by K0, the value of kinetic energy, but this is not\nrecommended since it then destroys the ﬁrst integral.) The system (8.37)–(8.38) can\nbe rewritten in the alternative form\nPq D M\u00021p;\nPp D ŒI \u0003 H\t F.q/;\nwhere H D p.pTM\u00021p/\u00021pTM\u00021 is a projector matrix which is idempotent: H2 D\nH. The invariant subspace associated to this projector is span.p/:\nHp D p:\nIsokinetic dynamics has nonvanishing divergence, which requires a special\ntreatment to elucidate its statistical mechanical properties [338, 376]. In order to\nﬁnd a stationary solution, one substitutes\n\u0005.q; p/ D e\u0002w.q;p/˚.K.p//;\n(8.39)\n(with ˚ a nonvanishing function of K) into the continuity equation for the isokinetic\nsystem, the function w being at this point unknown. Then one obtains, with f iso\ndenoting the vector ﬁeld in (8.37)–(8.38), that\n0 D r \u0002 .\u0005f iso/ D .r\u0005/ \u0002 f iso C \u0005.r \u0002 f iso/\nD .\u0003rw\u0005 C \u0005˚0.K/\n˚.K/ rK/ \u0002 f iso C \u0005.r \u0002 f iso/:\nUsing the isokinetic property, the term involving K drops out. One next calculates\nthe divergence of the isokinetic vector ﬁeld and ﬁnds that (see Exercise 5)\nr \u0002 f iso D .Nc \u0003 1/pTM\u00021F\npTM\u00021p :\n\n8.6\nIsokinetic Methods and Integration with Very Large Timestep\n363\nThus the condition to have a stationary state of the form (8.39) is that\nrw \u0002 f iso D .Nc \u0003 1/pTM\u00021F\npTM\u00021p :\nA solution of this equation for w is easily found, it is\nw D .Nc \u0003 1/U.q/\nK.p/:\nThe invariant probability density, which is associated to a surface of constant kinetic\nenergy, can be written as a generalized function using the Dirac notation:\n\u0005.q; p/ D Z\u00021e\u0002.Nc\u00021/U.q/=K.p/ıŒK.p/ \u0003 K0\t:\nIf we work on the surface of constant kinetic energy K.p/ D K0\ndef\nD ˇ\u00021.Nc \u0003 1/, the\ninvariant density is of the form\n\u0005 / N\u0005ˇıŒK.p/ \u0003 kBT.Nc \u0003 1/\t\nwhich demonstrates that the isokinetic method, with this choice for the total kinetic\nenergy, leaves invariant the conﬁgurational Gibbs distribution. Ergodicity has not\nbeen demonstrated, so it is not possible to conclude that the invariant distribution is\nunique; as we have seen before, the incorporation of stochastic terms can allow the\nformulation of strong statements regarding the ergodicity and mixing properties.\n8.6.1\nA Stochastic, Isokinetic Method for Gibbs Sampling\nMinary et al. [271, 272] studied the isokinetic method as a means to control\nthe instability in multiple timestepping due to resonance. They suggested that\neach physical degree of freedom be coupled to its own NHC thermostat through\nan isokinetic constraint in a “massive” thermostatting approach. These massive\nthermostats introduced some complexity (each degree of freedom had an associated\nNosé-Hoover chain system as well as the constraint); obtaining an accurate solution\nfor this large system is involving. A potentially more serious problem is that,\nalthough Nosé-Hoover chains and the isokinetic method may in some cases appear\nto be “practically ergodic,” no proof of ergodicity exists. A recent article (by one\nof us, together with Margul and Tuckerman [220]) addressed these problems by\nreplacing the Nosé-Hoover chains with stochastic terms (of Ornstein-Uhlenbeck\ntype).\n",
+  "verbatim_scope": "完整对应原页文字层，逐字保留；本条数学成分由statement_latex及statement_scope定位。",
+  "proof_latex": null,
+  "proof_note": "对应原页推导逐字保存在statement_verbatim/original_page_text；排版以原页PDF为准。",
+  "original_page_text": [
+    {
+      "pdf_page": 383,
+      "printed_page": 362,
+      "text": "362\n8\nExtended Variable Methods\nPq D M\u00021p;\n(8.37)\nPp D F.q/ \u0003 pTM\u00021F.q/\npTM\u00021p\np:\n(8.38)\nThese equations preserve pTM\u00021p D constant. (Note: It is tempting to replace the\ndenominator in this expression by K0, the value of kinetic energy, but this is not\nrecommended since it then destroys the ﬁrst integral.) The system (8.37)–(8.38) can\nbe rewritten in the alternative form\nPq D M\u00021p;\nPp D ŒI \u0003 H\t F.q/;\nwhere H D p.pTM\u00021p/\u00021pTM\u00021 is a projector matrix which is idempotent: H2 D\nH. The invariant subspace associated to this projector is span.p/:\nHp D p:\nIsokinetic dynamics has nonvanishing divergence, which requires a special\ntreatment to elucidate its statistical mechanical properties [338, 376]. In order to\nﬁnd a stationary solution, one substitutes\n\u0005.q; p/ D e\u0002w.q;p/˚.K.p//;\n(8.39)\n(with ˚ a nonvanishing function of K) into the continuity equation for the isokinetic\nsystem, the function w being at this point unknown. Then one obtains, with f iso\ndenoting the vector ﬁeld in (8.37)–(8.38), that\n0 D r \u0002 .\u0005f iso/ D .r\u0005/ \u0002 f iso C \u0005.r \u0002 f iso/\nD .\u0003rw\u0005 C \u0005˚0.K/\n˚.K/ rK/ \u0002 f iso C \u0005.r \u0002 f iso/:\nUsing the isokinetic property, the term involving K drops out. One next calculates\nthe divergence of the isokinetic vector ﬁeld and ﬁnds that (see Exercise 5)\nr \u0002 f iso D .Nc \u0003 1/pTM\u00021F\npTM\u00021p :\n"
+    },
+    {
+      "pdf_page": 384,
+      "printed_page": 363,
+      "text": "8.6\nIsokinetic Methods and Integration with Very Large Timestep\n363\nThus the condition to have a stationary state of the form (8.39) is that\nrw \u0002 f iso D .Nc \u0003 1/pTM\u00021F\npTM\u00021p :\nA solution of this equation for w is easily found, it is\nw D .Nc \u0003 1/U.q/\nK.p/:\nThe invariant probability density, which is associated to a surface of constant kinetic\nenergy, can be written as a generalized function using the Dirac notation:\n\u0005.q; p/ D Z\u00021e\u0002.Nc\u00021/U.q/=K.p/ıŒK.p/ \u0003 K0\t:\nIf we work on the surface of constant kinetic energy K.p/ D K0\ndef\nD ˇ\u00021.Nc \u0003 1/, the\ninvariant density is of the form\n\u0005 / N\u0005ˇıŒK.p/ \u0003 kBT.Nc \u0003 1/\t\nwhich demonstrates that the isokinetic method, with this choice for the total kinetic\nenergy, leaves invariant the conﬁgurational Gibbs distribution. Ergodicity has not\nbeen demonstrated, so it is not possible to conclude that the invariant distribution is\nunique; as we have seen before, the incorporation of stochastic terms can allow the\nformulation of strong statements regarding the ergodicity and mixing properties.\n8.6.1\nA Stochastic, Isokinetic Method for Gibbs Sampling\nMinary et al. [271, 272] studied the isokinetic method as a means to control\nthe instability in multiple timestepping due to resonance. They suggested that\neach physical degree of freedom be coupled to its own NHC thermostat through\nan isokinetic constraint in a “massive” thermostatting approach. These massive\nthermostats introduced some complexity (each degree of freedom had an associated\nNosé-Hoover chain system as well as the constraint); obtaining an accurate solution\nfor this large system is involving. A potentially more serious problem is that,\nalthough Nosé-Hoover chains and the isokinetic method may in some cases appear\nto be “practically ergodic,” no proof of ergodicity exists. A recent article (by one\nof us, together with Margul and Tuckerman [220]) addressed these problems by\nreplacing the Nosé-Hoover chains with stochastic terms (of Ornstein-Uhlenbeck\ntype).\n"
+    }
+  ],
+  "numbered_equations": [
+    "8.39"
+  ],
+  "transcription_note": "文字层逐字保留；数学排版另行转写，原页中的特殊字形编码不静默替换。PDF420仅取Exercises之前。",
+  "context_notation": [],
+  "extra_assumptions": [
+    "Φ为正光滑非零函数时称权重；使用K≠0域上的实际散度。"
+  ],
+  "issues": [
+    "已目视核对原页PDF383–384：ṗ=F-λp的散度应为-(N_c-1)λ，所印正号与后续w=(N_c-1)U/K也冲突。"
+  ],
+  "statement_scope": "一般光滑力的原印/符号修正散度目标及权重ansatz；w方程和概率不变另列缺口。",
+  "lean_decl": "MD.Ch08.isoAnsatz",
+  "lean_declarations": [
+    "MD.Ch08.isoAnsatz",
+    "MD.Ch08.isoDivergencePrinted",
+    "MD.Ch08.isoDivergence_corrected"
+  ],
+  "source_page_verification": "见source_page_checks.json，已目视核对本条原页。",
+  "repair_log": [],
+  "documented_priors": []
+}
+```
+
+## 完整本条Lean
+```lean
+def isoAnsatz (w : Phase n → ℝ) (Φ : ℝ → ℝ) (invm : Vec n) (z : Phase n) : ℝ :=
+  Real.exp (-w z)*Φ (kineticTwice invm z.2)
+theorem isoDivergencePrinted (invm : Vec n) (F : Vec n → Vec n)
+    (hF : ContDiff ℝ 1 F) (z : Phase n) (hK : kineticTwice invm z.2 ≠ 0) :
+    textbookDivergence (isoField invm F) z = ((n:ℝ)-1)*isoMultiplier invm z.2 (F z.1) := by
+  sorry
+theorem isoDivergence_corrected (invm : Vec n) (F : Vec n → Vec n)
+    (hF : ContDiff ℝ 1 F) (z : Phase n) (hK : kineticTwice invm z.2 ≠ 0) :
+    textbookDivergence (isoField invm F) z = -((n:ℝ)-1)*isoMultiplier invm z.2 (F z.1) := by
+  sorry
+```
+
+## 项目依赖定义体及选择规格
+以下def/abbrev/structure完整保留；定理列出完整类型，Mathlib标准定义无需摘录。
+
+### MD.Ch08.Vec (Blueprint/Ch08.lean:17)
+原文件上下文：
+```lean
+open Set Filter MeasureTheory ProbabilityTheory MolecularDynamics
+open scoped BigOperators Topology ContDiff ENNReal NNReal Matrix
+variable {Ω : Type*} [MeasurableSpace Ω]
+variable {n : ℕ}
+```
+```lean
+abbrev Vec (n : ℕ) := Fin n → ℝ
+```
+
+### MD.Ch08.Phase (Blueprint/Ch08.lean:18)
+原文件上下文：
+```lean
+open Set Filter MeasureTheory ProbabilityTheory MolecularDynamics
+open scoped BigOperators Topology ContDiff ENNReal NNReal Matrix
+variable {Ω : Type*} [MeasurableSpace Ω]
+variable {n : ℕ}
+```
+```lean
+abbrev Phase (n : ℕ) := Vec n × Vec n
+```
+
+### MD.Ch08.kineticTwice (Blueprint/Ch08.lean:65)
+原文件上下文：
+```lean
+open Set Filter MeasureTheory ProbabilityTheory MolecularDynamics
+open scoped BigOperators Topology ContDiff ENNReal NNReal Matrix
+variable {Ω : Type*} [MeasurableSpace Ω]
+variable {n : ℕ}
+```
+```lean
+def kineticTwice (invm p : Vec n) : ℝ := ∑ i, invm i * p i ^ 2
+```
+
+### MD.Ch08.isoMultiplier (Blueprint/Ch08.lean:650)
+原文件上下文：
+```lean
+open Set Filter MeasureTheory ProbabilityTheory MolecularDynamics
+open scoped BigOperators Topology ContDiff ENNReal NNReal Matrix
+variable {Ω : Type*} [MeasurableSpace Ω]
+variable {n : ℕ}
+```
+```lean
+def isoMultiplier (invm p F : Vec n) : ℝ :=
+  (∑ i, invm i*p i*F i)/kineticTwice invm p
+```
+
+### MD.Ch08.isoField (Blueprint/Ch08.lean:652)
+原文件上下文：
+```lean
+open Set Filter MeasureTheory ProbabilityTheory MolecularDynamics
+open scoped BigOperators Topology ContDiff ENNReal NNReal Matrix
+variable {Ω : Type*} [MeasurableSpace Ω]
+variable {n : ℕ}
+```
+```lean
+def isoField (invm : Vec n) (F : Vec n → Vec n) (z : Phase n) : Phase n :=
+  (fun i ↦ invm i*z.2 i, fun i ↦ F z.1 i-isoMultiplier invm z.2 (F z.1)*z.2 i)
+```
+
+### MD.Ch08.isoAnsatz (Blueprint/Ch08.lean:681)
+原文件上下文：
+```lean
+open Set Filter MeasureTheory ProbabilityTheory MolecularDynamics
+open scoped BigOperators Topology ContDiff ENNReal NNReal Matrix
+variable {Ω : Type*} [MeasurableSpace Ω]
+variable {n : ℕ}
+```
+```lean
+def isoAnsatz (w : Phase n → ℝ) (Φ : ℝ → ℝ) (invm : Vec n) (z : Phase n) : ℝ :=
+  Real.exp (-w z)*Φ (kineticTwice invm z.2)
+```
+
+### MD.Ch08.isoDivergencePrinted (Blueprint/Ch08.lean:683)
+原文件上下文：
+```lean
+open Set Filter MeasureTheory ProbabilityTheory MolecularDynamics
+open scoped BigOperators Topology ContDiff ENNReal NNReal Matrix
+variable {Ω : Type*} [MeasurableSpace Ω]
+variable {n : ℕ}
+```
+```lean
+theorem isoDivergencePrinted (invm : Vec n) (F : Vec n → Vec n)
+    (hF : ContDiff ℝ 1 F) (z : Phase n) (hK : kineticTwice invm z.2 ≠ 0) :
+    textbookDivergence (isoField invm F) z = ((n:ℝ)-1)*isoMultiplier invm z.2 (F z.1)
+```
+
+### MD.Ch08.isoDivergence_corrected (Blueprint/Ch08.lean:687)
+原文件上下文：
+```lean
+open Set Filter MeasureTheory ProbabilityTheory MolecularDynamics
+open scoped BigOperators Topology ContDiff ENNReal NNReal Matrix
+variable {Ω : Type*} [MeasurableSpace Ω]
+variable {n : ℕ}
+```
+```lean
+theorem isoDivergence_corrected (invm : Vec n) (F : Vec n → Vec n)
+    (hF : ContDiff ℝ 1 F) (z : Phase n) (hK : kineticTwice invm z.2 ≠ 0) :
+    textbookDivergence (isoField invm F) z = -((n:ℝ)-1)*isoMultiplier invm z.2 (F z.1)
+```
+
+### MolecularDynamics.Chapter05Review.E (MolecularDynamics/Chapter05/ReviewDefinitions.lean:18)
+原文件上下文：
+```lean
+open Set Filter MeasureTheory Matrix
+open scoped BigOperators Topology ENNReal
+```
+```lean
+abbrev E (n : ℕ) := EuclideanSpace ℝ (Fin n)
+```
+
+### MolecularDynamics.textbookDivergence (MolecularDynamics/Chapter08/ThermostatDensity.lean:18)
+原文件上下文：
+```lean
+open Matrix
+open scoped BigOperators Topology
+variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E] [FiniteDimensional ℝ E]
+variable {G : Type*} [NormedAddCommGroup G] [NormedSpace ℝ G] [FiniteDimensional ℝ G]
+```
+```lean
+noncomputable def textbookDivergence (F : E → E) (z : E) : ℝ :=
+  LinearMap.trace ℝ E (fderiv ℝ F z).toLinearMap
+```

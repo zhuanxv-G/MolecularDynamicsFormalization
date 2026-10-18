@@ -1,0 +1,154 @@
+以附件/PASTE 为准，忽略 /workspace 旧文件；Mathlib 定义按标准含义采信。
+本任务只审本条：原文转录、对象资格、定义体、量词、全部结论及[EXTRA]是否一致；Lean编译不代替语义审阅。
+Lean/Mathlib均4.34.0。原页PDF映射：[382, 383]；印刷页=[361, 362].
+input_sha256请原样回显：
+{
+  "Blueprint/Ch08.lean": "2800812fadd8e2557013f1941e4570401f7903d46f44baf07e23d5531da22a72",
+  "blueprint/ch08/ch08_source.json": "9b994b0f64cd22c85c2ad4123fbfdbd064bd7a6d070fe13b721794432f9f7a63",
+  "BATCH08d_PAGES.pdf": "575e4bc45b752ef6cffaff0f40e3628ce0f859b50329252f3638cea89bb7bd52"
+}
+用代码将JSON对象(batch,input_sha256,items)写到 /workspace/.mathcopilot/reviews/ch08/BATCH08d_review.json；items仅含本source_id。
+items字段：source_id、verdict(PASS/FAIL/NEEDS_HUMAN)、transcription、semantic_review、counterexample、suggested_fix、printed_version、corrected_version。逐版区分原文疑误和修正版结论；缺材料必须具体指出，不猜测。写后json.loads自检，最后仅回复路径及统计。
+
+## 原文JSON
+```json
+{
+  "source_id": "MD-8.6-IsokineticField",
+  "kind": "unnumbered_claim",
+  "label": null,
+  "section": "8.6",
+  "printed_page": "361–362",
+  "pdf_page": "382–383",
+  "statement_latex": "q̇=M⁻¹p, ṗ=F(q)-[pᵀM⁻¹F(q)/(pᵀM⁻¹p)]p; K(p)=pᵀM⁻¹p is constant.",
+  "statement_verbatim": "8.6\nIsokinetic Methods and Integration with Very Large Timestep\n361\nthe exact expected result \u0005ˇ, we can see the three stochastic methods perform\nexcellently, whereas the results from using the Nosé-Hoover thermostat reveal\nextremely poor sampling as a result of the trajectory being trapped.\nWe would expect that using Nosé-Hoover Chains (8.16)–(8.21) may provide\ndeterministic, ergodic sampling, by using a sufﬁciently long chain of artiﬁcial\nvariables and correctly chosen mass parameters \u0006i. However, the choice of these\nparameter values may prove crucial to the ergodicity of the dynamics. Therefore,\nwe suggest that for equilibrium canonical sampling it is far more efﬁcient to\nuse a stochastic thermostat, in comparison to the ergodicity issues and additional\nparameter tuning required in the case of deterministic thermostats.\n8.6\nIsokinetic Methods and Integration with Very Large\nTimestep\nIn the last chapter we examined various numerical methods for Langevin dynamics,\nobserving very substantial differences in the accuracy obtainable for conﬁgurational\nsampling using different schemes. In this section, we discuss methods that accelerate\nsampling using a more radical approach, namely modiﬁcation of the ensemble to\nincorporate isokinetic constraints. We again assume in what follows that Nc D Nd,\nso there are no constraints acting on the system (other than the isokinetic constraint\nwe are going to impose).\nThe starting point here is the Gaussian isokinetic thermostat [124]. This type of\nconstraint can be introduced into Newtonian dynamics Pq D M\u00021p, Pp D F.q/ by\nadding a Lagrange multiplier, i.e. changing the equations of motion to\nPq D M\u00021p;\nPp D F.q/ \u0003 \u0012p;\nK0 D K.p/\ndef\nD pTM\u00021p:\nBy differentiating the constraint and introducing the second equation, we obtain an\nequation for \u0012:\n0 D pTM\u00021Pp D pTM\u00021ŒF.q/ \u0003 \u0012p\t:\nThis yields\n\u0012 D pTM\u00021F.q/\npTM\u00021p\n:\nSimply substitute this expression into the differential equations to obtain the\nunconstrained equations\n\n362\n8\nExtended Variable Methods\nPq D M\u00021p;\n(8.37)\nPp D F.q/ \u0003 pTM\u00021F.q/\npTM\u00021p\np:\n(8.38)\nThese equations preserve pTM\u00021p D constant. (Note: It is tempting to replace the\ndenominator in this expression by K0, the value of kinetic energy, but this is not\nrecommended since it then destroys the ﬁrst integral.) The system (8.37)–(8.38) can\nbe rewritten in the alternative form\nPq D M\u00021p;\nPp D ŒI \u0003 H\t F.q/;\nwhere H D p.pTM\u00021p/\u00021pTM\u00021 is a projector matrix which is idempotent: H2 D\nH. The invariant subspace associated to this projector is span.p/:\nHp D p:\nIsokinetic dynamics has nonvanishing divergence, which requires a special\ntreatment to elucidate its statistical mechanical properties [338, 376]. In order to\nﬁnd a stationary solution, one substitutes\n\u0005.q; p/ D e\u0002w.q;p/˚.K.p//;\n(8.39)\n(with ˚ a nonvanishing function of K) into the continuity equation for the isokinetic\nsystem, the function w being at this point unknown. Then one obtains, with f iso\ndenoting the vector ﬁeld in (8.37)–(8.38), that\n0 D r \u0002 .\u0005f iso/ D .r\u0005/ \u0002 f iso C \u0005.r \u0002 f iso/\nD .\u0003rw\u0005 C \u0005˚0.K/\n˚.K/ rK/ \u0002 f iso C \u0005.r \u0002 f iso/:\nUsing the isokinetic property, the term involving K drops out. One next calculates\nthe divergence of the isokinetic vector ﬁeld and ﬁnds that (see Exercise 5)\nr \u0002 f iso D .Nc \u0003 1/pTM\u00021F\npTM\u00021p :\n",
+  "verbatim_scope": "完整对应原页文字层，逐字保留；本条数学成分由statement_latex及statement_scope定位。",
+  "proof_latex": null,
+  "proof_note": "对应原页推导逐字保存在statement_verbatim/original_page_text；排版以原页PDF为准。",
+  "original_page_text": [
+    {
+      "pdf_page": 382,
+      "printed_page": 361,
+      "text": "8.6\nIsokinetic Methods and Integration with Very Large Timestep\n361\nthe exact expected result \u0005ˇ, we can see the three stochastic methods perform\nexcellently, whereas the results from using the Nosé-Hoover thermostat reveal\nextremely poor sampling as a result of the trajectory being trapped.\nWe would expect that using Nosé-Hoover Chains (8.16)–(8.21) may provide\ndeterministic, ergodic sampling, by using a sufﬁciently long chain of artiﬁcial\nvariables and correctly chosen mass parameters \u0006i. However, the choice of these\nparameter values may prove crucial to the ergodicity of the dynamics. Therefore,\nwe suggest that for equilibrium canonical sampling it is far more efﬁcient to\nuse a stochastic thermostat, in comparison to the ergodicity issues and additional\nparameter tuning required in the case of deterministic thermostats.\n8.6\nIsokinetic Methods and Integration with Very Large\nTimestep\nIn the last chapter we examined various numerical methods for Langevin dynamics,\nobserving very substantial differences in the accuracy obtainable for conﬁgurational\nsampling using different schemes. In this section, we discuss methods that accelerate\nsampling using a more radical approach, namely modiﬁcation of the ensemble to\nincorporate isokinetic constraints. We again assume in what follows that Nc D Nd,\nso there are no constraints acting on the system (other than the isokinetic constraint\nwe are going to impose).\nThe starting point here is the Gaussian isokinetic thermostat [124]. This type of\nconstraint can be introduced into Newtonian dynamics Pq D M\u00021p, Pp D F.q/ by\nadding a Lagrange multiplier, i.e. changing the equations of motion to\nPq D M\u00021p;\nPp D F.q/ \u0003 \u0012p;\nK0 D K.p/\ndef\nD pTM\u00021p:\nBy differentiating the constraint and introducing the second equation, we obtain an\nequation for \u0012:\n0 D pTM\u00021Pp D pTM\u00021ŒF.q/ \u0003 \u0012p\t:\nThis yields\n\u0012 D pTM\u00021F.q/\npTM\u00021p\n:\nSimply substitute this expression into the differential equations to obtain the\nunconstrained equations\n"
+    },
+    {
+      "pdf_page": 383,
+      "printed_page": 362,
+      "text": "362\n8\nExtended Variable Methods\nPq D M\u00021p;\n(8.37)\nPp D F.q/ \u0003 pTM\u00021F.q/\npTM\u00021p\np:\n(8.38)\nThese equations preserve pTM\u00021p D constant. (Note: It is tempting to replace the\ndenominator in this expression by K0, the value of kinetic energy, but this is not\nrecommended since it then destroys the ﬁrst integral.) The system (8.37)–(8.38) can\nbe rewritten in the alternative form\nPq D M\u00021p;\nPp D ŒI \u0003 H\t F.q/;\nwhere H D p.pTM\u00021p/\u00021pTM\u00021 is a projector matrix which is idempotent: H2 D\nH. The invariant subspace associated to this projector is span.p/:\nHp D p:\nIsokinetic dynamics has nonvanishing divergence, which requires a special\ntreatment to elucidate its statistical mechanical properties [338, 376]. In order to\nﬁnd a stationary solution, one substitutes\n\u0005.q; p/ D e\u0002w.q;p/˚.K.p//;\n(8.39)\n(with ˚ a nonvanishing function of K) into the continuity equation for the isokinetic\nsystem, the function w being at this point unknown. Then one obtains, with f iso\ndenoting the vector ﬁeld in (8.37)–(8.38), that\n0 D r \u0002 .\u0005f iso/ D .r\u0005/ \u0002 f iso C \u0005.r \u0002 f iso/\nD .\u0003rw\u0005 C \u0005˚0.K/\n˚.K/ rK/ \u0002 f iso C \u0005.r \u0002 f iso/:\nUsing the isokinetic property, the term involving K drops out. One next calculates\nthe divergence of the isokinetic vector ﬁeld and ﬁnds that (see Exercise 5)\nr \u0002 f iso D .Nc \u0003 1/pTM\u00021F\npTM\u00021p :\n"
+    }
+  ],
+  "numbered_equations": [
+    "8.37",
+    "8.38"
+  ],
+  "transcription_note": "文字层逐字保留；数学排版另行转写，原页中的特殊字形编码不静默替换。PDF420仅取Exercises之前。",
+  "context_notation": [],
+  "extra_assumptions": [
+    "正质量、K>0作为物理有效域；本条实际证明瞬时动能平衡，不将之扩大为全局解存在性。"
+  ],
+  "issues": [],
+  "statement_scope": "无约束向量场与瞬时动能导数的代数消去；沿解的完整第一积分列缺口。",
+  "lean_decl": "MD.Ch08.isoMultiplier",
+  "lean_declarations": [
+    "MD.Ch08.isoMultiplier",
+    "MD.Ch08.isoField",
+    "MD.Ch08.isoKinetic_balance"
+  ],
+  "source_page_verification": "见source_page_checks.json，已目视核对本条原页。",
+  "repair_log": [],
+  "documented_priors": []
+}
+```
+
+## 完整本条Lean
+```lean
+def isoMultiplier (invm p F : Vec n) : ℝ :=
+  (∑ i, invm i*p i*F i)/kineticTwice invm p
+def isoField (invm : Vec n) (F : Vec n → Vec n) (z : Phase n) : Phase n :=
+  (fun i ↦ invm i*z.2 i, fun i ↦ F z.1 i-isoMultiplier invm z.2 (F z.1)*z.2 i)
+theorem isoKinetic_balance (invm p F : Vec n) (hK : kineticTwice invm p ≠ 0) :
+    (∑ i, invm i*p i*(F i-isoMultiplier invm p F*p i)) = 0 := by
+  simp only [mul_sub, Finset.sum_sub_distrib]
+  have hsum : (∑ i, invm i*p i*(isoMultiplier invm p F*p i)) =
+      isoMultiplier invm p F*kineticTwice invm p := by
+    simp only [kineticTwice, Finset.mul_sum]
+    apply Finset.sum_congr rfl; intro i hi; ring
+  rw [hsum, isoMultiplier, div_mul_cancel₀ _ hK, sub_self]
+```
+
+## 项目依赖定义体及选择规格
+以下def/abbrev/structure完整保留；定理列出完整类型，Mathlib标准定义无需摘录。
+
+### MD.Ch08.Vec (Blueprint/Ch08.lean:17)
+原文件上下文：
+```lean
+open Set Filter MeasureTheory ProbabilityTheory MolecularDynamics
+open scoped BigOperators Topology ContDiff ENNReal NNReal Matrix
+variable {Ω : Type*} [MeasurableSpace Ω]
+variable {n : ℕ}
+```
+```lean
+abbrev Vec (n : ℕ) := Fin n → ℝ
+```
+
+### MD.Ch08.Phase (Blueprint/Ch08.lean:18)
+原文件上下文：
+```lean
+open Set Filter MeasureTheory ProbabilityTheory MolecularDynamics
+open scoped BigOperators Topology ContDiff ENNReal NNReal Matrix
+variable {Ω : Type*} [MeasurableSpace Ω]
+variable {n : ℕ}
+```
+```lean
+abbrev Phase (n : ℕ) := Vec n × Vec n
+```
+
+### MD.Ch08.kineticTwice (Blueprint/Ch08.lean:65)
+原文件上下文：
+```lean
+open Set Filter MeasureTheory ProbabilityTheory MolecularDynamics
+open scoped BigOperators Topology ContDiff ENNReal NNReal Matrix
+variable {Ω : Type*} [MeasurableSpace Ω]
+variable {n : ℕ}
+```
+```lean
+def kineticTwice (invm p : Vec n) : ℝ := ∑ i, invm i * p i ^ 2
+```
+
+### MD.Ch08.isoMultiplier (Blueprint/Ch08.lean:650)
+原文件上下文：
+```lean
+open Set Filter MeasureTheory ProbabilityTheory MolecularDynamics
+open scoped BigOperators Topology ContDiff ENNReal NNReal Matrix
+variable {Ω : Type*} [MeasurableSpace Ω]
+variable {n : ℕ}
+```
+```lean
+def isoMultiplier (invm p F : Vec n) : ℝ :=
+  (∑ i, invm i*p i*F i)/kineticTwice invm p
+```
+
+### MD.Ch08.isoField (Blueprint/Ch08.lean:652)
+原文件上下文：
+```lean
+open Set Filter MeasureTheory ProbabilityTheory MolecularDynamics
+open scoped BigOperators Topology ContDiff ENNReal NNReal Matrix
+variable {Ω : Type*} [MeasurableSpace Ω]
+variable {n : ℕ}
+```
+```lean
+def isoField (invm : Vec n) (F : Vec n → Vec n) (z : Phase n) : Phase n :=
+  (fun i ↦ invm i*z.2 i, fun i ↦ F z.1 i-isoMultiplier invm z.2 (F z.1)*z.2 i)
+```
+
+### MD.Ch08.isoKinetic_balance (Blueprint/Ch08.lean:654)
+原文件上下文：
+```lean
+open Set Filter MeasureTheory ProbabilityTheory MolecularDynamics
+open scoped BigOperators Topology ContDiff ENNReal NNReal Matrix
+variable {Ω : Type*} [MeasurableSpace Ω]
+variable {n : ℕ}
+```
+```lean
+theorem isoKinetic_balance (invm p F : Vec n) (hK : kineticTwice invm p ≠ 0) :
+    (∑ i, invm i*p i*(F i-isoMultiplier invm p F*p i)) = 0
+```

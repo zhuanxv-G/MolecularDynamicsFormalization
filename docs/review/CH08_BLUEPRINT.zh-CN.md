@@ -1,6 +1,6 @@
 # 第8章 Lean Blueprint 本地审阅材料
 
-当前已整理99条；网站尚未审阅。正文范围为印刷329–399页（PDF350–420），末页仅取Exercises之前的正文；PDF423起附录不在本轮范围。
+当前已整理103条；网站尚未审阅。正文范围为印刷329–399页（PDF350–420），末页仅取Exercises之前的正文；PDF423起附录不在本轮范围。
 
 ## 1. MD-8.1-CanonicalCorrelation · definition · 印刷p.329–330 / PDFp.350–351
 
@@ -53,8 +53,20 @@ theorem correlation_zero {E : Type*} [MeasurableSpace E] (μ : Measure E)
 ### 7. 状态与证明位置
 
 定义；Lean陈述可检查，证明完整性按本条状态区分。
-本条未登记待证缺项。
+本条没有未完成的定理证明；覆盖缺口见上述范围及[EXTRA]。
 位置：Blueprint/Ch08.lean；MD.Ch08.Vec, MD.Ch08.Phase, MD.Ch08.dot, MD.Ch08.gradient, MD.Ch08.gibbsWeight, MD.Ch08.canonicalAverage, MD.Ch08.probabilityDensity, MD.Ch08.correlation, MD.Ch08.correlation_zero。
+
+| 声明 | 数学状态 |
+|---|---|
+| `MD.Ch08.Vec` | 定义或记号 |
+| `MD.Ch08.Phase` | 定义或记号 |
+| `MD.Ch08.dot` | 定义或记号 |
+| `MD.Ch08.gradient` | 定义或记号 |
+| `MD.Ch08.gibbsWeight` | 定义或记号 |
+| `MD.Ch08.canonicalAverage` | 定义或记号 |
+| `MD.Ch08.probabilityDensity` | 定义或记号 |
+| `MD.Ch08.correlation` | 定义或记号 |
+| `MD.Ch08.correlation_zero` | 已证 |
 
 ## 1. MD-8.1-HamiltonianStationary · unnumbered_claim · 印刷p.330 / PDFp.351
 
@@ -98,8 +110,13 @@ theorem hamiltonianGibbsStationary (H : SymplecticCoordinates n → ℝ)
 ### 7. 状态与证明位置
 
 已证；Lean陈述可检查，证明完整性按本条状态区分。
-本条未登记待证缺项。
+本条没有未完成的定理证明；覆盖缺口见上述范围及[EXTRA]。
 位置：Blueprint/Ch08.lean；MD.Ch08.hamiltonianField, MD.Ch08.hamiltonianGibbsStationary。
+
+| 声明 | 数学状态 |
+|---|---|
+| `MD.Ch08.hamiltonianField` | 定义或记号 |
+| `MD.Ch08.hamiltonianGibbsStationary` | 已证 |
 
 ## 1. MD-8.1-ExtendedDensity · unnumbered_claim · 印刷p.331 / PDFp.352
 
@@ -147,8 +164,13 @@ theorem extendedAverage {E B : Type*} [MeasurableSpace E] [MeasurableSpace B]
 ### 7. 状态与证明位置
 
 已证；Lean陈述可检查，证明完整性按本条状态区分。
-本条未登记待证缺项。
+本条没有未完成的定理证明；覆盖缺口见上述范围及[EXTRA]。
 位置：Blueprint/Ch08.lean；MD.Ch08.extendedDensity, MD.Ch08.extendedAverage。
+
+| 声明 | 数学状态 |
+|---|---|
+| `MD.Ch08.extendedDensity` | 定义或记号 |
+| `MD.Ch08.extendedAverage` | 已证 |
 
 ## 1. MD-8.1.1-NoseHoover · definition · 印刷p.331 / PDFp.352
 
@@ -195,8 +217,15 @@ def isNHSolution (invm : Vec n) (U : Vec n → ℝ) (β Q : ℝ)
 ### 7. 状态与证明位置
 
 定义；Lean陈述可检查，证明完整性按本条状态区分。
-本条未登记待证缺项。
+本条没有未完成的定理证明；覆盖缺口见上述范围及[EXTRA]。
 位置：Blueprint/Ch08.lean；MD.Ch08.thermostatParameters, MD.Ch08.kineticTwice, MD.Ch08.nhField, MD.Ch08.isNHSolution。
+
+| 声明 | 数学状态 |
+|---|---|
+| `MD.Ch08.thermostatParameters` | 定义或记号 |
+| `MD.Ch08.kineticTwice` | 定义或记号 |
+| `MD.Ch08.nhField` | 定义或记号 |
+| `MD.Ch08.isNHSolution` | 定义或记号 |
 
 ## 1. MD-8.1.1-NHDensitySplit · unnumbered_claim · 印刷p.332 / PDFp.353
 
@@ -246,6 +275,13 @@ theorem nhWeight_stationary (invm : Vec n) (U : Vec n → ℝ) (β Q : ℝ)
 未证陈述；Lean陈述可检查，证明完整性按本条状态区分。
 未证原因：完整NH散度/链式法则计算及伴随算子桥接；保留驻定陈述，不推遍历性。
 位置：Blueprint/Ch08.lean；MD.Ch08.nhWeight, MD.Ch08.nhBathField, MD.Ch08.nhField_split, MD.Ch08.nhWeight_stationary。
+
+| 声明 | 数学状态 |
+|---|---|
+| `MD.Ch08.nhWeight` | 定义或记号 |
+| `MD.Ch08.nhBathField` | 定义或记号 |
+| `MD.Ch08.nhField_split` | 已证 |
+| `MD.Ch08.nhWeight_stationary` | 未证 |
 
 ## 1. MD-8.1.1-NHFirstIntegralPrinted · unnumbered_claim · 印刷p.333 / PDFp.354
 
@@ -299,6 +335,12 @@ theorem nhIntegral_corrected (invm : Vec n) (U : Vec n → ℝ) (β Q : ℝ)
 未证原因：Printed版疑误不证；修正版需沿NH解的能量求导，未建设通用ODE守恒量理论。
 位置：Blueprint/Ch08.lean；MD.Ch08.nhIntegral, MD.Ch08.nhIntegralPrinted, MD.Ch08.nhIntegral_corrected。
 
+| 声明 | 数学状态 |
+|---|---|
+| `MD.Ch08.nhIntegral` | 定义或记号 |
+| `MD.Ch08.nhIntegralPrinted` | 未证 |
+| `MD.Ch08.nhIntegral_corrected` | 未证 |
+
 ## 1. MD-8.1.2-NHReversal · unnumbered_claim · 印刷p.333 / PDFp.354
 
 ### 2. 原文陈述
@@ -341,8 +383,14 @@ theorem nhReversal_field (invm : Vec n) (U : Vec n → ℝ) (β Q : ℝ) (z : Ph
 ### 7. 状态与证明位置
 
 已证；Lean陈述可检查，证明完整性按本条状态区分。
-本条未登记待证缺项。
+本条没有未完成的定理证明；覆盖缺口见上述范围及[EXTRA]。
 位置：Blueprint/Ch08.lean；MD.Ch08.nhReversal, MD.Ch08.nhReversal_involutive, MD.Ch08.nhReversal_field。
+
+| 声明 | 数学状态 |
+|---|---|
+| `MD.Ch08.nhReversal` | 定义或记号 |
+| `MD.Ch08.nhReversal_involutive` | 已证 |
+| `MD.Ch08.nhReversal_field` | 已证 |
 
 ## 1. MD-8.1.2-NHTimestep · definition · 印刷p.333 / PDFp.354
 
@@ -389,8 +437,17 @@ theorem dampedCoefficient_zero (t : ℝ) : dampedCoefficient t 0 = t := by simp 
 ### 7. 状态与证明位置
 
 定义；Lean陈述可检查，证明完整性按本条状态区分。
-本条未登记待证缺项。
+本条没有未完成的定理证明；覆盖缺口见上述范围及[EXTRA]。
 位置：Blueprint/Ch08.lean；MD.Ch08.dampedCoefficient, MD.Ch08.nhDrift, MD.Ch08.nhKick, MD.Ch08.nhFeedback, MD.Ch08.nhStep, MD.Ch08.dampedCoefficient_zero。
+
+| 声明 | 数学状态 |
+|---|---|
+| `MD.Ch08.dampedCoefficient` | 定义或记号 |
+| `MD.Ch08.nhDrift` | 定义或记号 |
+| `MD.Ch08.nhKick` | 定义或记号 |
+| `MD.Ch08.nhFeedback` | 定义或记号 |
+| `MD.Ch08.nhStep` | 定义或记号 |
+| `MD.Ch08.dampedCoefficient_zero` | 已证 |
 
 ## 1. MD-8.1.2-NHTimestepReversible · unnumbered_claim · 印刷p.333 / PDFp.354
 
@@ -435,6 +492,11 @@ theorem nhStep_inverse (invm : Vec n) (U : Vec n → ℝ) (β Q h : ℝ) :
 未证陈述；Lean陈述可检查，证明完整性按本条状态区分。
 未证原因：含ξ=0延拓的指数函数五段映射代数消去；三条短路线内未完成。
 位置：Blueprint/Ch08.lean；MD.Ch08.nhStep_reversible, MD.Ch08.nhStep_inverse。
+
+| 声明 | 数学状态 |
+|---|---|
+| `MD.Ch08.nhStep_reversible` | 未证 |
+| `MD.Ch08.nhStep_inverse` | 未证 |
 
 ## 1. MD-8.1.2.1-NoseHamiltoniansPrinted · unnumbered_claim · 印刷p.334 / PDFp.355
 
@@ -489,6 +551,13 @@ theorem nosePoincare_corrected (invm : Vec n) (U : Vec n → ℝ) (β Q EN : ℝ
 未证原因：原文相等式的对数系数矛盾，不证；修正代数恒等式已证。
 位置：Blueprint/Ch08.lean；MD.Ch08.noseHamiltonian, MD.Ch08.npHamiltonian, MD.Ch08.nosePoincarePrinted, MD.Ch08.nosePoincare_corrected。
 
+| 声明 | 数学状态 |
+|---|---|
+| `MD.Ch08.noseHamiltonian` | 定义或记号 |
+| `MD.Ch08.npHamiltonian` | 定义或记号 |
+| `MD.Ch08.nosePoincarePrinted` | 未证 |
+| `MD.Ch08.nosePoincare_corrected` | 已证 |
+
 ## 1. MD-8.1.2.1-NPEquations · definition · 印刷p.334 / PDFp.355
 
 ### 2. 原文陈述
@@ -531,8 +600,12 @@ def npField (invm : Vec n) (U : Vec n → ℝ) (β Q EN : ℝ)
 ### 7. 状态与证明位置
 
 定义；Lean陈述可检查，证明完整性按本条状态区分。
-本条未登记待证缺项。
+本条没有未完成的定理证明；覆盖缺口见上述范围及[EXTRA]。
 位置：Blueprint/Ch08.lean；MD.Ch08.npField。
+
+| 声明 | 数学状态 |
+|---|---|
+| `MD.Ch08.npField` | 定义或记号 |
 
 ## 1. MD-8.1.2.1-NPtoNH · unnumbered_claim · 印刷p.335 / PDFp.356
 
@@ -581,6 +654,11 @@ theorem npProjection_equations (invm : Vec n) (U : Vec n → ℝ) (β Q EN : ℝ
 未证原因：商法则、有限维ODE投影及零能量面守恒的通用桥接。
 位置：Blueprint/Ch08.lean；MD.Ch08.npProjection, MD.Ch08.npProjection_equations。
 
+| 声明 | 数学状态 |
+|---|---|
+| `MD.Ch08.npProjection` | 定义或记号 |
+| `MD.Ch08.npProjection_equations` | 未证 |
+
 ## 1. MD-8.1.2.1-NPShadowDensity · definition · 印刷p.335 / PDFp.356
 
 ### 2. 原文陈述
@@ -624,8 +702,15 @@ def npDensityAnsatz (ρ : Phase n → ℝ) (ζ ρtilde : ℝ → Phase n → ℝ
 ### 7. 状态与证明位置
 
 定义；Lean陈述可检查，证明完整性按本条状态区分。
-本条未登记待证缺项。
+本条没有未完成的定理证明；覆盖缺口见上述范围及[EXTRA]。
 位置：Blueprint/Ch08.lean；MD.Ch08.fourthOrderRemainder, MD.Ch08.correctedFiniteAverage, MD.Ch08.npShadowAnsatz, MD.Ch08.npDensityAnsatz。
+
+| 声明 | 数学状态 |
+|---|---|
+| `MD.Ch08.fourthOrderRemainder` | 定义或记号 |
+| `MD.Ch08.correctedFiniteAverage` | 定义或记号 |
+| `MD.Ch08.npShadowAnsatz` | 定义或记号 |
+| `MD.Ch08.npDensityAnsatz` | 定义或记号 |
 
 ## 1. MD-8.2-GeneralThermostat · definition · 印刷p.336 / PDFp.357
 
@@ -666,8 +751,13 @@ def skewMatrix (J : Matrix (Fin n) (Fin n) ℝ) : Prop := J.transpose = -J
 ### 7. 状态与证明位置
 
 定义；Lean陈述可检查，证明完整性按本条状态区分。
-本条未登记待证缺项。
+本条没有未完成的定理证明；覆盖缺口见上述范围及[EXTRA]。
 位置：Blueprint/Ch08.lean；MD.Ch08.generalThermostat, MD.Ch08.skewMatrix。
+
+| 声明 | 数学状态 |
+|---|---|
+| `MD.Ch08.generalThermostat` | 定义或记号 |
+| `MD.Ch08.skewMatrix` | 定义或记号 |
 
 ## 1. MD-8.2.1-ContinuityProductRule · unnumbered_claim · 印刷p.336–337 / PDFp.357–358
 
@@ -712,8 +802,13 @@ theorem continuity_productRule {k : ℕ} (F : Vec n × Vec k → Vec n × Vec k)
 ### 7. 状态与证明位置
 
 已证；Lean陈述可检查，证明完整性按本条状态区分。
-本条未登记待证缺项。
+本条没有未完成的定理证明；覆盖缺口见上述范围及[EXTRA]。
 位置：Blueprint/Ch08.lean；MD.Ch08.continuityRHS, MD.Ch08.continuity_productRule。
+
+| 声明 | 数学状态 |
+|---|---|
+| `MD.Ch08.continuityRHS` | 定义或记号 |
+| `MD.Ch08.continuity_productRule` | 已证 |
 
 ## 1. MD-8.2.1-ThermostatCriterion · unnumbered_claim · 印刷p.337 / PDFp.358
 
@@ -763,6 +858,11 @@ theorem thermostatCriterion {k : ℕ} (J : Matrix (Fin n) (Fin n) ℝ)
 未证陈述；Lean陈述可检查，证明完整性按本条状态区分。
 未证原因：一般高维Gaussian链式法则、常反对称矩阵的零散度和变量分裂。
 位置：Blueprint/Ch08.lean；MD.Ch08.thermalWeight, MD.Ch08.thermostatCriterion。
+
+| 声明 | 数学状态 |
+|---|---|
+| `MD.Ch08.thermalWeight` | 定义或记号 |
+| `MD.Ch08.thermostatCriterion` | 未证 |
 
 ## 1. MD-8.2.1-Examples81and82 · Examples 8.1, 8.2 · 印刷p.337–338 / PDFp.358–359
 
@@ -814,6 +914,12 @@ theorem generalizedFeedback_stationary (J : Matrix (Fin n) (Fin n) ℝ)
 未证原因：Bulgac–Kusnezov一般散度抵消计算。
 位置：Blueprint/Ch08.lean；MD.Ch08.generalizedFeedback, MD.Ch08.configurationalFeedback, MD.Ch08.generalizedFeedback_stationary。
 
+| 声明 | 数学状态 |
+|---|---|
+| `MD.Ch08.generalizedFeedback` | 定义或记号 |
+| `MD.Ch08.configurationalFeedback` | 定义或记号 |
+| `MD.Ch08.generalizedFeedback_stationary` | 未证 |
+
 ## 1. MD-8.2.1-TemperatureIdentity · unnumbered_claim · 印刷p.338 / PDFp.359
 
 ### 2. 原文陈述
@@ -858,6 +964,11 @@ def phaseTemperature (kB numerator denominator : ℝ) : ℝ := numerator/(kB*den
 未证陈述；Lean陈述可检查，证明完整性按本条状态区分。
 未证原因：高维散度定理与Gibbs权重积分分部。
 位置：Blueprint/Ch08.lean；MD.Ch08.temperatureIdentity, MD.Ch08.phaseTemperature。
+
+| 声明 | 数学状态 |
+|---|---|
+| `MD.Ch08.temperatureIdentity` | 未证 |
+| `MD.Ch08.phaseTemperature` | 定义或记号 |
 
 ## 1. MD-8.2.1-Proposition81 · Proposition 8.1 · 印刷p.338–339 / PDFp.359–360
 
@@ -911,8 +1022,12 @@ theorem proposition81 {H : SymplecticCoordinates n → ℝ} (hH : ContDiff ℝ 2
 ### 7. 状态与证明位置
 
 已证；Lean陈述可检查，证明完整性按本条状态区分。
-本条未登记待证缺项。
+本条没有未完成的定理证明；覆盖缺口见上述范围及[EXTRA]。
 位置：Blueprint/Ch08.lean；MD.Ch08.proposition81。
+
+| 声明 | 数学状态 |
+|---|---|
+| `MD.Ch08.proposition81` | 已证 |
 
 ## 1. MD-8.2.2-NHChains · unnumbered_claim · 印刷p.339–340 / PDFp.360–361
 
@@ -965,6 +1080,11 @@ theorem nhChain_stationary (k : ℕ) (hk : 0 < k) (invm : Vec n) (U : Vec n → 
 未证原因：任意链长的散度抵消与有限和组合；不建确定性遍历理论。
 位置：Blueprint/Ch08.lean；MD.Ch08.nhChainField, MD.Ch08.nhChain_stationary。
 
+| 声明 | 数学状态 |
+|---|---|
+| `MD.Ch08.nhChainField` | 定义或记号 |
+| `MD.Ch08.nhChain_stationary` | 未证 |
+
 ## 1. MD-8.3-ArrheniusRate · definition · 印刷p.342 / PDFp.363
 
 ### 2. 原文陈述
@@ -1003,8 +1123,13 @@ theorem arrheniusRate_nonneg (A ΔE kB T : ℝ) (hA : 0 ≤ A) :
 ### 7. 状态与证明位置
 
 定义；Lean陈述可检查，证明完整性按本条状态区分。
-本条未登记待证缺项。
+本条没有未完成的定理证明；覆盖缺口见上述范围及[EXTRA]。
 位置：Blueprint/Ch08.lean；MD.Ch08.arrheniusRate, MD.Ch08.arrheniusRate_nonneg。
+
+| 声明 | 数学状态 |
+|---|---|
+| `MD.Ch08.arrheniusRate` | 定义或记号 |
+| `MD.Ch08.arrheniusRate_nonneg` | 已证 |
 
 ## 1. MD-8.4-AdditiveThermostatSDE · definition · 印刷p.342–343 / PDFp.363–364
 
@@ -1062,8 +1187,15 @@ def fluctuationDissipation (M Γ B : Matrix (Fin n) (Fin n) ℝ) (β : ℝ) : Pr
 ### 7. 状态与证明位置
 
 定义；Lean陈述可检查，证明完整性按本条状态区分。
-本条未登记待证缺项。
+本条没有未完成的定理证明；覆盖缺口见上述范围及[EXTRA]。
 位置：Blueprint/Ch08.lean；MD.Ch08.independentWiener, MD.Ch08.additiveSDE, MD.Ch08.stochasticThermostatDrift, MD.Ch08.fluctuationDissipation。
+
+| 声明 | 数学状态 |
+|---|---|
+| `MD.Ch08.independentWiener` | 定义或记号 |
+| `MD.Ch08.additiveSDE` | 定义或记号 |
+| `MD.Ch08.stochasticThermostatDrift` | 定义或记号 |
+| `MD.Ch08.fluctuationDissipation` | 定义或记号 |
 
 ## 1. MD-8.4-OUStationarityPrinted · unnumbered_claim · 印刷p.343–344 / PDFp.364–365
 
@@ -1114,6 +1246,13 @@ theorem diffusionPrinted_counterexample : ¬ ((1/(2:ℝ))*(-1) = -(1:ℝ)) := by
 未证原因：Printed代数疑误不证；修正版需Gaussian梯度/Hessian矩阵计算。
 位置：Blueprint/Ch08.lean；MD.Ch08.ouFokkerPlanck, MD.Ch08.ouStationarity_corrected, MD.Ch08.diffusionPrinted, MD.Ch08.diffusionPrinted_counterexample。
 
+| 声明 | 数学状态 |
+|---|---|
+| `MD.Ch08.ouFokkerPlanck` | 定义或记号 |
+| `MD.Ch08.ouStationarity_corrected` | 未证 |
+| `MD.Ch08.diffusionPrinted` | 未证 |
+| `MD.Ch08.diffusionPrinted_counterexample` | 已证 |
+
 ## 1. MD-8.4-LiftedThermostat · definition · 印刷p.344–345 / PDFp.365–366
 
 ### 2. 原文陈述
@@ -1154,8 +1293,12 @@ def liftedThermostat (F G : Vec n → Vec n) (g : Vec n → ℝ) (γ σ : ℝ)
 ### 7. 状态与证明位置
 
 定义；Lean陈述可检查，证明完整性按本条状态区分。
-本条未登记待证缺项。
+本条没有未完成的定理证明；覆盖缺口见上述范围及[EXTRA]。
 位置：Blueprint/Ch08.lean；MD.Ch08.liftedThermostat。
+
+| 声明 | 数学状态 |
+|---|---|
+| `MD.Ch08.liftedThermostat` | 定义或记号 |
 
 ## 1. MD-8.4-Proposition82 · Proposition 8.2 · 印刷p.344–345 / PDFp.365–366
 
@@ -1205,6 +1348,11 @@ theorem proposition82_corrected (F G : Vec n → Vec n) (g : Vec n → ℝ) (γ 
 未证原因：Printed缺非零噪声不证；修正版完整桥接。
 位置：Blueprint/Ch08.lean；MD.Ch08.proposition82Printed, MD.Ch08.proposition82_corrected。
 
+| 声明 | 数学状态 |
+|---|---|
+| `MD.Ch08.proposition82Printed` | 未证 |
+| `MD.Ch08.proposition82_corrected` | 已证 |
+
 ## 1. MD-8.4.1-NHL · definition · 印刷p.345–346 / PDFp.366–367
 
 ### 2. 原文陈述
@@ -1249,8 +1397,14 @@ def harmonicPotential (A : Matrix (Fin n) (Fin n) ℝ) (q : Vec n) : ℝ := dot 
 ### 7. 状态与证明位置
 
 定义；Lean陈述可检查，证明完整性按本条状态区分。
-本条未登记待证缺项。
+本条没有未完成的定理证明；覆盖缺口见上述范围及[EXTRA]。
 位置：Blueprint/Ch08.lean；MD.Ch08.nhlDrift, MD.Ch08.isNHLSolution, MD.Ch08.harmonicPotential。
+
+| 声明 | 数学状态 |
+|---|---|
+| `MD.Ch08.nhlDrift` | 定义或记号 |
+| `MD.Ch08.isNHLSolution` | 定义或记号 |
+| `MD.Ch08.harmonicPotential` | 定义或记号 |
 
 ## 1. MD-8.4.1-Lemma81 · Lemma 8.1 · 印刷p.347 / PDFp.368
 
@@ -1291,8 +1445,12 @@ theorem lemma81 (A : Matrix (Fin n) (Fin n) ℝ) (k : ℕ) :
 ### 7. 状态与证明位置
 
 已证；Lean陈述可检查，证明完整性按本条状态区分。
-本条未登记待证缺项。
+本条没有未完成的定理证明；覆盖缺口见上述范围及[EXTRA]。
 位置：Blueprint/Ch08.lean；MD.Ch08.lemma81。
+
+| 声明 | 数学状态 |
+|---|---|
+| `MD.Ch08.lemma81` | 已证 |
 
 ## 1. MD-8.4.1-Proposition83 · Proposition 8.3 · 印刷p.347–348 / PDFp.368–369
 
@@ -1334,8 +1492,12 @@ theorem proposition83 (A : Matrix (Fin n) (Fin n) ℝ) (hA : A.PosDef)
 ### 7. 状态与证明位置
 
 已证；Lean陈述可检查，证明完整性按本条状态区分。
-本条未登记待证缺项。
+本条没有未完成的定理证明；覆盖缺口见上述范围及[EXTRA]。
 位置：Blueprint/Ch08.lean；MD.Ch08.proposition83。
+
+| 声明 | 数学状态 |
+|---|---|
+| `MD.Ch08.proposition83` | 已证 |
 
 ## 1. MD-8.4.1-Theorem81 · Theorem 8.1 · 印刷p.346–348 / PDFp.367–369
 
@@ -1386,6 +1548,11 @@ theorem theorem81_corrected (A : Matrix (Fin n) (Fin n) ℝ) (hA : A.PosDef)
 未证原因：原文未明确σ≠0的强版本不证；修正版完整桥接。
 位置：Blueprint/Ch08.lean；MD.Ch08.theorem81Printed, MD.Ch08.theorem81_corrected。
 
+| 声明 | 数学状态 |
+|---|---|
+| `MD.Ch08.theorem81Printed` | 未证 |
+| `MD.Ch08.theorem81_corrected` | 已证 |
+
 ## 1. MD-8.4.1-ZeroModeInvariant · unnumbered_claim · 印刷p.346 / PDFp.367
 
 ### 2. 原文陈述
@@ -1433,8 +1600,13 @@ theorem zeroMode_invariant {A : Matrix (Fin n) (Fin n) ℝ} (hA : A.IsHermitian)
 ### 7. 状态与证明位置
 
 已证；Lean陈述可检查，证明完整性按本条状态区分。
-本条未登记待证缺项。
+本条没有未完成的定理证明；覆盖缺口见上述范围及[EXTRA]。
 位置：Blueprint/Ch08.lean；MD.Ch08.modeDomain_complement, MD.Ch08.zeroMode_invariant。
+
+| 声明 | 数学状态 |
+|---|---|
+| `MD.Ch08.modeDomain_complement` | 已证 |
+| `MD.Ch08.zeroMode_invariant` | 已证 |
 
 ## 1. MD-8.4.1-NHLGenerator · definition · 印刷p.348 / PDFp.369
 
@@ -1481,8 +1653,15 @@ def geometricDriftBound {E : Type*} (L : (E → ℝ) → E → ℝ) (V : E → �
 ### 7. 状态与证明位置
 
 定义；Lean陈述可检查，证明完整性按本条状态区分。
-本条未登记待证缺项。
+本条没有未完成的定理证明；覆盖缺口见上述范围及[EXTRA]。
 位置：Blueprint/Ch08.lean；MD.Ch08.additiveGenerator, MD.Ch08.nhlGenerator, MD.Ch08.nhlLyapunov, MD.Ch08.geometricDriftBound。
+
+| 声明 | 数学状态 |
+|---|---|
+| `MD.Ch08.additiveGenerator` | 定义或记号 |
+| `MD.Ch08.nhlGenerator` | 定义或记号 |
+| `MD.Ch08.nhlLyapunov` | 定义或记号 |
+| `MD.Ch08.geometricDriftBound` | 定义或记号 |
 
 ## 1. MD-8.4.1-LyapunovCalculation · unnumbered_claim · 印刷p.348–349 / PDFp.369–370
 
@@ -1531,6 +1710,12 @@ theorem shiftedSquare_bound (ξ a : ℝ) : -ξ^2-a^2 ≤ -(ξ-a)^2/2 := by
 未证陈述；Lean陈述可检查，证明完整性按本条状态区分。
 未证原因：实际扩散生成元作用于二次能量的链式法则。
 位置：Blueprint/Ch08.lean；MD.Ch08.nhlLyapunovExpression, MD.Ch08.nhlLyapunov_calculation, MD.Ch08.shiftedSquare_bound。
+
+| 声明 | 数学状态 |
+|---|---|
+| `MD.Ch08.nhlLyapunovExpression` | 定义或记号 |
+| `MD.Ch08.nhlLyapunov_calculation` | 未证 |
+| `MD.Ch08.shiftedSquare_bound` | 已证 |
 
 ## 1. MD-8.4.1-LyapunovRatePrinted · unnumbered_claim · 印刷p.349 / PDFp.370
 
@@ -1591,6 +1776,14 @@ theorem lyapunovRate_corrected (P2 U Umax ξ Q θ γ a N : ℝ)
 未证原因：Printed有反例不证；修正版代数二次型估计待短证。
 位置：Blueprint/Ch08.lean；MD.Ch08.lyapunovAlphaPrinted, MD.Ch08.lyapunovAlpha_corrected, MD.Ch08.lyapunovRatePrinted, MD.Ch08.lyapunovRate_counterexample, MD.Ch08.lyapunovRate_corrected。
 
+| 声明 | 数学状态 |
+|---|---|
+| `MD.Ch08.lyapunovAlphaPrinted` | 定义或记号 |
+| `MD.Ch08.lyapunovAlpha_corrected` | 定义或记号 |
+| `MD.Ch08.lyapunovRatePrinted` | 未证 |
+| `MD.Ch08.lyapunovRate_counterexample` | 已证 |
+| `MD.Ch08.lyapunovRate_corrected` | 未证 |
+
 ## 1. MD-8.4.2-NHLTimestep · definition · 印刷p.350 / PDFp.371
 
 ### 2. 原文陈述
@@ -1637,8 +1830,16 @@ def standardNormalSequence (P : Measure Ω) (R : ℕ → Ω → ℝ) : Prop :=
 ### 7. 状态与证明位置
 
 定义；Lean陈述可检查，证明完整性按本条状态区分。
-本条未登记待证缺项。
+本条没有未完成的定理证明；覆盖缺口见上述范围及[EXTRA]。
 位置：Blueprint/Ch08.lean；MD.Ch08.nhlOU, MD.Ch08.forceKick, MD.Ch08.bathDamping, MD.Ch08.nhlStep, MD.Ch08.standardNormalSequence。
+
+| 声明 | 数学状态 |
+|---|---|
+| `MD.Ch08.nhlOU` | 定义或记号 |
+| `MD.Ch08.forceKick` | 定义或记号 |
+| `MD.Ch08.bathDamping` | 定义或记号 |
+| `MD.Ch08.nhlStep` | 定义或记号 |
+| `MD.Ch08.standardNormalSequence` | 定义或记号 |
 
 ## 1. MD-8.4.1-NHLWeakStationary · unnumbered_claim · 印刷p.345–346 / PDFp.366–367
 
@@ -1689,6 +1890,11 @@ theorem nhlWeakStationary (invm : Vec n) (U : Vec n → ℝ) (β Q γ Z : ℝ)
 未证原因：Gibbs积分分部及OU对称性，未将局部生成元式冒充保测流或遍历定理。
 位置：Blueprint/Ch08.lean；MD.Ch08.weakStationaryNHL, MD.Ch08.nhlWeakStationary。
 
+| 声明 | 数学状态 |
+|---|---|
+| `MD.Ch08.weakStationaryNHL` | 定义或记号 |
+| `MD.Ch08.nhlWeakStationary` | 未证 |
+
 ## 1. MD-8.4.3-PreEquilibriumMeans · definition · 印刷p.354–355 / PDFp.375–376
 
 ### 2. 原文陈述
@@ -1729,8 +1935,14 @@ def preEquilibriumDensity (ρ : ℝ → Phase n × ℝ → ℝ) : Prop :=
 ### 7. 状态与证明位置
 
 定义；Lean陈述可检查，证明完整性按本条状态区分。
-本条未登记待证缺项。
+本条没有未完成的定理证明；覆盖缺口见上述范围及[EXTRA]。
 位置：Blueprint/Ch08.lean；MD.Ch08.meanKineticTwice, MD.Ch08.meanBath, MD.Ch08.preEquilibriumDensity。
+
+| 声明 | 数学状态 |
+|---|---|
+| `MD.Ch08.meanKineticTwice` | 定义或记号 |
+| `MD.Ch08.meanBath` | 定义或记号 |
+| `MD.Ch08.preEquilibriumDensity` | 定义或记号 |
 
 ## 1. MD-8.4.4-VelocityRescaling · unnumbered_claim · 印刷p.355 / PDFp.376
 
@@ -1785,6 +1997,15 @@ theorem rescalingPsi_original (γ θ K : ℝ) (hK : K ≠ 0) :
 未证原因：导数γ/(2K)的商法则短桥接。
 位置：Blueprint/Ch08.lean；MD.Ch08.rescalingPsi, MD.Ch08.rescalingDrift, MD.Ch08.rescalingNoise, MD.Ch08.originalRescalingPhi, MD.Ch08.rescalingAdmissible, MD.Ch08.rescalingPsi_original。
 
+| 声明 | 数学状态 |
+|---|---|
+| `MD.Ch08.rescalingPsi` | 定义或记号 |
+| `MD.Ch08.rescalingDrift` | 定义或记号 |
+| `MD.Ch08.rescalingNoise` | 定义或记号 |
+| `MD.Ch08.originalRescalingPhi` | 定义或记号 |
+| `MD.Ch08.rescalingAdmissible` | 定义或记号 |
+| `MD.Ch08.rescalingPsi_original` | 未证 |
+
 ## 1. MD-8.4.4-RescalingStationary · unnumbered_claim · 印刷p.355 / PDFp.376
 
 ### 2. 原文陈述
@@ -1833,6 +2054,10 @@ theorem rescalingStationary (U : Vec n → ℝ) (Φ : ℝ → ℝ) (θ Z : ℝ)
 未证原因：退化乘性扩散的Gibbs积分分部；不建设一般Fokker–Planck与遍历理论。
 位置：Blueprint/Ch08.lean；MD.Ch08.rescalingStationary。
 
+| 声明 | 数学状态 |
+|---|---|
+| `MD.Ch08.rescalingStationary` | 未证 |
+
 ## 1. MD-8.4.5-ThermostatEfficiency · definition · 印刷p.356–357 / PDFp.377–378
 
 ### 2. 原文陈述
@@ -1854,15 +2079,24 @@ def rescalingRateEstimate (meanK2Phi θ : ℝ) (N : ℕ) : ℝ := 4*meanK2Phi/(�
 def rescalingErrorEstimate (meanKPhi : ℝ) (N : ℕ) (t : ℝ) : ℝ := 2*meanKPhi/(N:ℝ)*t
 def nhlRateEstimate (N : ℕ) (θ Q : ℝ) : ℝ := Real.sqrt ((N:ℝ)*θ/Q)
 def nhlErrorEstimate (θ Q t : ℝ) : ℝ := θ/(2*Q)*t^2
+
+def langevinRateEstimate (γ : ℝ) : ℝ := γ
+def langevinEfficiencyEstimate : ℝ := 1
+def originalRescalingRateEstimate (γVR : ℝ) : ℝ := γVR
+def originalRescalingErrorEstimate (N : ℕ) (γVR t : ℝ) : ℝ := γVR/(N:ℝ)*t
+def originalRescalingEfficiencyEstimate (N : ℕ) : ℝ := N
+def nhlCriticalEfficiencyEstimate (N : ℕ) : ℝ := 2*N
+def rescalingEfficiencyOrder (efficiency : ℕ → ℝ) : Prop :=
+  efficiency =O[atTop] (fun N : ℕ ↦ (N : ℝ))
 ```
 
 ### 5. 对照表
 
 | 原文成分 | Lean对应 | 说明 |
 |---|---|---|
-| 本条引用的对象与公式 | MD.Ch08.thermostatEfficiency, MD.Ch08.langevinErrorEstimate, MD.Ch08.rescalingRateEstimate, MD.Ch08.rescalingErrorEstimate, MD.Ch08.nhlRateEstimate, MD.Ch08.nhlErrorEstimate | 效率记号与表8.1的主要解析速率/误差公式；经验曲线逐项排除。 |
+| 本条引用的对象与公式 | MD.Ch08.thermostatEfficiency, MD.Ch08.langevinErrorEstimate, MD.Ch08.rescalingRateEstimate, MD.Ch08.rescalingErrorEstimate, MD.Ch08.nhlRateEstimate, MD.Ch08.nhlErrorEstimate, MD.Ch08.langevinRateEstimate, MD.Ch08.langevinEfficiencyEstimate, MD.Ch08.originalRescalingRateEstimate, MD.Ch08.originalRescalingErrorEstimate, MD.Ch08.originalRescalingEfficiencyEstimate, MD.Ch08.nhlCriticalEfficiencyEstimate, MD.Ch08.rescalingEfficiencyOrder | 效率比值、表8.1四行解析速率/低阶误差/效率估计及一般VR的O(N)含义；外引估计定理未证，经验曲线排除。 |
 
-[EXTRA] 表8.1解析估计作为公式定义保留；其外引渐近推导、谱隙与误差阶不是已证定理，列覆盖缺口。
+[EXTRA] 表8.1解析估计作为公式定义保留；其外引渐近推导、谱隙与误差阶不是已证定理，列覆盖缺口。；γ>0、θ,Q>0、N>0用于物理解释；一般VR的O(N)给出确切渐近性质定义，没有声称任意Φ族满足它。
 记号与上下文：见所列原文与Lean量化变量。
 
 ### 6. 审计结论
@@ -1874,8 +2108,24 @@ def nhlErrorEstimate (θ Q t : ℝ) : ℝ := θ/(2*Q)*t^2
 ### 7. 状态与证明位置
 
 定义；Lean陈述可检查，证明完整性按本条状态区分。
-本条未登记待证缺项。
-位置：Blueprint/Ch08.lean；MD.Ch08.thermostatEfficiency, MD.Ch08.langevinErrorEstimate, MD.Ch08.rescalingRateEstimate, MD.Ch08.rescalingErrorEstimate, MD.Ch08.nhlRateEstimate, MD.Ch08.nhlErrorEstimate。
+本条没有未完成的定理证明；覆盖缺口见上述范围及[EXTRA]。
+位置：Blueprint/Ch08.lean；MD.Ch08.thermostatEfficiency, MD.Ch08.langevinErrorEstimate, MD.Ch08.rescalingRateEstimate, MD.Ch08.rescalingErrorEstimate, MD.Ch08.nhlRateEstimate, MD.Ch08.nhlErrorEstimate, MD.Ch08.langevinRateEstimate, MD.Ch08.langevinEfficiencyEstimate, MD.Ch08.originalRescalingRateEstimate, MD.Ch08.originalRescalingErrorEstimate, MD.Ch08.originalRescalingEfficiencyEstimate, MD.Ch08.nhlCriticalEfficiencyEstimate, MD.Ch08.rescalingEfficiencyOrder。
+
+| 声明 | 数学状态 |
+|---|---|
+| `MD.Ch08.thermostatEfficiency` | 定义或记号 |
+| `MD.Ch08.langevinErrorEstimate` | 定义或记号 |
+| `MD.Ch08.rescalingRateEstimate` | 定义或记号 |
+| `MD.Ch08.rescalingErrorEstimate` | 定义或记号 |
+| `MD.Ch08.nhlRateEstimate` | 定义或记号 |
+| `MD.Ch08.nhlErrorEstimate` | 定义或记号 |
+| `MD.Ch08.langevinRateEstimate` | 定义或记号 |
+| `MD.Ch08.langevinEfficiencyEstimate` | 定义或记号 |
+| `MD.Ch08.originalRescalingRateEstimate` | 定义或记号 |
+| `MD.Ch08.originalRescalingErrorEstimate` | 定义或记号 |
+| `MD.Ch08.originalRescalingEfficiencyEstimate` | 定义或记号 |
+| `MD.Ch08.nhlCriticalEfficiencyEstimate` | 定义或记号 |
+| `MD.Ch08.rescalingEfficiencyOrder` | 定义或记号 |
 
 ## 1. MD-8.5-SLS · definition · 印刷p.357–358 / PDFp.378–379
 
@@ -1926,8 +2176,15 @@ def slsDeterministic (invm : Vec n) (U : Vec n → ℝ) (Q : ℝ) (z : Phase n �
 ### 7. 状态与证明位置
 
 定义；Lean陈述可检查，证明完整性按本条状态区分。
-本条未登记待证缺项。
+本条没有未完成的定理证明；覆盖缺口见上述范围及[EXTRA]。
 位置：Blueprint/Ch08.lean；MD.Ch08.slsDrift, MD.Ch08.slsNoise, MD.Ch08.isSLSSolution, MD.Ch08.slsDeterministic。
+
+| 声明 | 数学状态 |
+|---|---|
+| `MD.Ch08.slsDrift` | 定义或记号 |
+| `MD.Ch08.slsNoise` | 定义或记号 |
+| `MD.Ch08.isSLSSolution` | 定义或记号 |
+| `MD.Ch08.slsDeterministic` | 定义或记号 |
 
 ## 1. MD-8.5-SLSBracketPrinted · unnumbered_claim · 印刷p.358 / PDFp.379
 
@@ -1974,6 +2231,12 @@ theorem slsBracket_corrected (U : Vec n → ℝ) (hU : ContDiff ℝ ∞ U) (z : 
 未证原因：Printed括号符号疑误不证；修正版需实际方向导数计算。
 位置：Blueprint/Ch08.lean；MD.Ch08.slsBathNoise, MD.Ch08.slsBracketPrinted, MD.Ch08.slsBracket_corrected。
 
+| 声明 | 数学状态 |
+|---|---|
+| `MD.Ch08.slsBathNoise` | 定义或记号 |
+| `MD.Ch08.slsBracketPrinted` | 未证 |
+| `MD.Ch08.slsBracket_corrected` | 未证 |
+
 ## 1. MD-8.5-SLSHormander · unnumbered_claim · 印刷p.357–358 / PDFp.378–379
 
 ### 2. 原文陈述
@@ -2016,6 +2279,10 @@ theorem slsHormander (U : Vec n → ℝ) (hU : ContDiff ℝ ∞ U) (z : Phase n 
 未证陈述；Lean陈述可检查，证明完整性按本条状态区分。
 未证原因：实际向量场二重括号与点态张成闭包。
 位置：Blueprint/Ch08.lean；MD.Ch08.slsHormander。
+
+| 声明 | 数学状态 |
+|---|---|
+| `MD.Ch08.slsHormander` | 未证 |
 
 ## 1. MD-8.5-SLSConservation · unnumbered_claim · 印刷p.358 / PDFp.379
 
@@ -2063,6 +2330,11 @@ theorem slsDeterministic_divergence (invm : Vec n) (U : Vec n → ℝ) (Q : ℝ)
 未证原因：一般U的方向能量守恒与实际散度计算。
 位置：Blueprint/Ch08.lean；MD.Ch08.slsDeterministic_stationary, MD.Ch08.slsDeterministic_divergence。
 
+| 声明 | 数学状态 |
+|---|---|
+| `MD.Ch08.slsDeterministic_stationary` | 未证 |
+| `MD.Ch08.slsDeterministic_divergence` | 未证 |
+
 ## 1. MD-8.5-SLSLeapfrog · definition · 印刷p.358–359 / PDFp.379–380
 
 ### 2. 原文陈述
@@ -2107,8 +2379,60 @@ def slsCoordinateField (i : Fin n) (invm : Vec n) (U : Vec n → ℝ) (Q : ℝ)
 ### 7. 状态与证明位置
 
 定义；Lean陈述可检查，证明完整性按本条状态区分。
-本条未登记待证缺项。
+本条没有未完成的定理证明；覆盖缺口见上述范围及[EXTRA]。
 位置：Blueprint/Ch08.lean；MD.Ch08.slsBathKick, MD.Ch08.slsDriftStep, MD.Ch08.slsLeapfrog, MD.Ch08.slsCoordinateField。
+
+| 声明 | 数学状态 |
+|---|---|
+| `MD.Ch08.slsBathKick` | 定义或记号 |
+| `MD.Ch08.slsDriftStep` | 定义或记号 |
+| `MD.Ch08.slsLeapfrog` | 定义或记号 |
+| `MD.Ch08.slsCoordinateField` | 定义或记号 |
+
+## 1. MD-8.5-SLSDoubleWell · definition · 印刷p.359 / PDFp.380
+
+### 2. 原文陈述
+
+The one-dimensional example has U(q)=(q²−1)².
+
+### 3. 原文证明
+
+对应原页推导逐字保存在statement_verbatim/original_page_text；排版以原页PDF为准。
+
+原页文字及推导保存在原文JSON的original_page_text；网站子包附对应完整原页PDF。
+
+### 4. 完整当前Lean（原文与修正版独立列出）
+
+```lean
+def slsDoubleWell (q : ℝ) : ℝ := (q^2-1)^2
+theorem slsDoubleWell_nonneg (q : ℝ) : 0 ≤ slsDoubleWell q := sq_nonneg _
+```
+
+### 5. 对照表
+
+| 原文成分 | Lean对应 | 说明 |
+|---|---|---|
+| 本条引用的对象与公式 | MD.Ch08.slsDoubleWell, MD.Ch08.slsDoubleWell_nonneg | 一维双阱势定义与非负性。 |
+
+[EXTRA] 保留试验中的数学势函数；轨迹、直方图和采样优劣是经验观测，另列排除。
+记号与上下文：见所列原文与Lean量化变量。
+
+### 6. 审计结论
+
+本地：已对照目视原页核对对象、量词、技术资格和所列覆盖范围；网站尚未审阅。
+疑点：本条暂未发现需单列的原书疑误。
+网站：尚未送审。
+
+### 7. 状态与证明位置
+
+定义；Lean陈述可检查，证明完整性按本条状态区分。
+本条没有未完成的定理证明；覆盖缺口见上述范围及[EXTRA]。
+位置：Blueprint/Ch08.lean；MD.Ch08.slsDoubleWell, MD.Ch08.slsDoubleWell_nonneg。
+
+| 声明 | 数学状态 |
+|---|---|
+| `MD.Ch08.slsDoubleWell` | 定义或记号 |
+| `MD.Ch08.slsDoubleWell_nonneg` | 已证 |
 
 ## 1. MD-8.6-IsokineticField · unnumbered_claim · 印刷p.361–362 / PDFp.382–383
 
@@ -2157,8 +2481,14 @@ theorem isoKinetic_balance (invm p F : Vec n) (hK : kineticTwice invm p ≠ 0) :
 ### 7. 状态与证明位置
 
 已证；Lean陈述可检查，证明完整性按本条状态区分。
-本条未登记待证缺项。
+本条没有未完成的定理证明；覆盖缺口见上述范围及[EXTRA]。
 位置：Blueprint/Ch08.lean；MD.Ch08.isoMultiplier, MD.Ch08.isoField, MD.Ch08.isoKinetic_balance。
+
+| 声明 | 数学状态 |
+|---|---|
+| `MD.Ch08.isoMultiplier` | 定义或记号 |
+| `MD.Ch08.isoField` | 定义或记号 |
+| `MD.Ch08.isoKinetic_balance` | 已证 |
 
 ## 1. MD-8.6-IsokineticProjector · unnumbered_claim · 印刷p.362 / PDFp.383
 
@@ -2208,6 +2538,12 @@ theorem isoProjection_idempotent (invm p : Vec n) (hK : kineticTwice invm p ≠ 
 未证原因：有限和提取标量后的投影复合代数短证明。
 位置：Blueprint/Ch08.lean；MD.Ch08.isoProjection, MD.Ch08.isoProjection_self, MD.Ch08.isoProjection_idempotent。
 
+| 声明 | 数学状态 |
+|---|---|
+| `MD.Ch08.isoProjection` | 定义或记号 |
+| `MD.Ch08.isoProjection_self` | 已证 |
+| `MD.Ch08.isoProjection_idempotent` | 未证 |
+
 ## 1. MD-8.6-IsokineticDivergencePrinted · unnumbered_claim · 印刷p.362–363 / PDFp.383–384
 
 ### 2. 原文陈述
@@ -2255,6 +2591,12 @@ theorem isoDivergence_corrected (invm : Vec n) (F : Vec n → Vec n)
 未证陈述；Lean陈述可检查，证明完整性按本条状态区分。
 未证原因：Printed散度符号疑误不证；修正版需商法则与有限维散度。
 位置：Blueprint/Ch08.lean；MD.Ch08.isoAnsatz, MD.Ch08.isoDivergencePrinted, MD.Ch08.isoDivergence_corrected。
+
+| 声明 | 数学状态 |
+|---|---|
+| `MD.Ch08.isoAnsatz` | 定义或记号 |
+| `MD.Ch08.isoDivergencePrinted` | 未证 |
+| `MD.Ch08.isoDivergence_corrected` | 未证 |
 
 ## 1. MD-8.6-IsokineticGibbsShell · unnumbered_claim · 印刷p.363 / PDFp.384
 
@@ -2306,8 +2648,14 @@ theorem isoShell_gibbsFactor (U : Vec n → ℝ) (invm : Vec n) (β : ℝ)
 ### 7. 状态与证明位置
 
 已证；Lean陈述可检查，证明完整性按本条状态区分。
-本条未登记待证缺项。
+本条没有未完成的定理证明；覆盖缺口见上述范围及[EXTRA]。
 位置：Blueprint/Ch08.lean；MD.Ch08.isokineticShell, MD.Ch08.isoShellWeight, MD.Ch08.isoShell_gibbsFactor。
+
+| 声明 | 数学状态 |
+|---|---|
+| `MD.Ch08.isokineticShell` | 定义或记号 |
+| `MD.Ch08.isoShellWeight` | 定义或记号 |
+| `MD.Ch08.isoShell_gibbsFactor` | 已证 |
 
 ## 1. MD-8.6.1-StochasticIsokinetic · definition · 印刷p.364–365 / PDFp.385–386
 
@@ -2366,8 +2714,16 @@ theorem sinConstraint_balance (Q1 Q2 θ γ : ℝ) (F : ℝ → ℝ) (z : Vec 4)
 ### 7. 状态与证明位置
 
 定义；Lean陈述可检查，证明完整性按本条状态区分。
-本条未登记待证缺项。
+本条没有未完成的定理证明；覆盖缺口见上述范围及[EXTRA]。
 位置：Blueprint/Ch08.lean；MD.Ch08.sinConstraint, MD.Ch08.sinMultiplier, MD.Ch08.sinDrift, MD.Ch08.isSINSolution, MD.Ch08.sinConstraint_balance。
+
+| 声明 | 数学状态 |
+|---|---|
+| `MD.Ch08.sinConstraint` | 定义或记号 |
+| `MD.Ch08.sinMultiplier` | 定义或记号 |
+| `MD.Ch08.sinDrift` | 定义或记号 |
+| `MD.Ch08.isSINSolution` | 定义或记号 |
+| `MD.Ch08.sinConstraint_balance` | 已证 |
 
 ## 1. MD-8.6.1-SINWeightPrinted · unnumbered_claim · 印刷p.365 / PDFp.386
 
@@ -2416,6 +2772,12 @@ theorem sinWeight_stationary_corrected (U : ℝ → ℝ) (Q1 Q2 θ : ℝ)
 未证陈述；Lean陈述可检查，证明完整性按本条状态区分。
 未证原因：原文权重仅逐字保留不证；修正版通量散度的商法则计算。
 位置：Blueprint/Ch08.lean；MD.Ch08.sinWeightPrinted, MD.Ch08.sinWeight_corrected, MD.Ch08.sinWeight_stationary_corrected。
+
+| 声明 | 数学状态 |
+|---|---|
+| `MD.Ch08.sinWeightPrinted` | 定义或记号 |
+| `MD.Ch08.sinWeight_corrected` | 定义或记号 |
+| `MD.Ch08.sinWeight_stationary_corrected` | 未证 |
 
 ## 1. MD-8.6.2-SINHarmonic · definition · 印刷p.366 / PDFp.387
 
@@ -2466,8 +2828,17 @@ theorem sinHalfCylinder_disjoint (θ : ℝ) :
 ### 7. 状态与证明位置
 
 定义；Lean陈述可检查，证明完整性按本条状态区分。
-本条未登记待证缺项。
+本条没有未完成的定理证明；覆盖缺口见上述范围及[EXTRA]。
 位置：Blueprint/Ch08.lean；MD.Ch08.sinHarmonicF, MD.Ch08.sinHarmonicG, MD.Ch08.isSINHarmonicSolution, MD.Ch08.sinExceptional, MD.Ch08.sinHalfCylinder, MD.Ch08.sinHalfCylinder_disjoint。
+
+| 声明 | 数学状态 |
+|---|---|
+| `MD.Ch08.sinHarmonicF` | 定义或记号 |
+| `MD.Ch08.sinHarmonicG` | 定义或记号 |
+| `MD.Ch08.isSINHarmonicSolution` | 定义或记号 |
+| `MD.Ch08.sinExceptional` | 定义或记号 |
+| `MD.Ch08.sinHalfCylinder` | 定义或记号 |
+| `MD.Ch08.sinHalfCylinder_disjoint` | 已证 |
 
 ## 1. MD-8.6.2-SINProjectedBracketsPrinted · unnumbered_claim · 印刷p.367 / PDFp.388
 
@@ -2528,8 +2899,22 @@ theorem sinU2Long_at_p0 (σ γ : ℝ) (z : Vec 4) (hp : z 1=0) :
 ### 7. 状态与证明位置
 
 已证；Lean陈述可检查，证明完整性按本条状态区分。
-本条未登记待证缺项。
+本条没有未完成的定理证明；覆盖缺口见上述范围及[EXTRA]。
 位置：Blueprint/Ch08.lean；MD.Ch08.bracket4, MD.Ch08.sinBracket, MD.Ch08.projectFirstThree, MD.Ch08.sinD, MD.Ch08.sinU0Printed, MD.Ch08.sinU1Printed, MD.Ch08.sinU2Printed, MD.Ch08.sinU1DerivativePrinted, MD.Ch08.sinProjected_corrected, MD.Ch08.sinU2LongPrinted, MD.Ch08.sinU2Long_at_p0。
+
+| 声明 | 数学状态 |
+|---|---|
+| `MD.Ch08.bracket4` | 定义或记号 |
+| `MD.Ch08.sinBracket` | 定义或记号 |
+| `MD.Ch08.projectFirstThree` | 定义或记号 |
+| `MD.Ch08.sinD` | 定义或记号 |
+| `MD.Ch08.sinU0Printed` | 定义或记号 |
+| `MD.Ch08.sinU1Printed` | 定义或记号 |
+| `MD.Ch08.sinU2Printed` | 定义或记号 |
+| `MD.Ch08.sinU1DerivativePrinted` | 定义或记号 |
+| `MD.Ch08.sinProjected_corrected` | 定义或记号 |
+| `MD.Ch08.sinU2LongPrinted` | 定义或记号 |
+| `MD.Ch08.sinU2Long_at_p0` | 已证 |
 
 ## 1. MD-8.6.2-SINThirdBracketPrinted · unnumbered_claim · 印刷p.368 / PDFp.389
 
@@ -2581,8 +2966,16 @@ theorem sinU3Zero_specialize (σ γ : ℝ) (z : Vec 4) (hp : z 1=0) (hξ : z 2 �
 ### 7. 状态与证明位置
 
 已证；Lean陈述可检查，证明完整性按本条状态区分。
-本条未登记待证缺项。
+本条没有未完成的定理证明；覆盖缺口见上述范围及[EXTRA]。
 位置：Blueprint/Ch08.lean；MD.Ch08.sinEtaPrinted, MD.Ch08.sinU3Printed, MD.Ch08.sinU3ZeroPrinted, MD.Ch08.sinU3Zero_corrected, MD.Ch08.sinU3Zero_specialize。
+
+| 声明 | 数学状态 |
+|---|---|
+| `MD.Ch08.sinEtaPrinted` | 定义或记号 |
+| `MD.Ch08.sinU3Printed` | 定义或记号 |
+| `MD.Ch08.sinU3ZeroPrinted` | 定义或记号 |
+| `MD.Ch08.sinU3Zero_corrected` | 定义或记号 |
+| `MD.Ch08.sinU3Zero_specialize` | 已证 |
 
 ## 1. MD-8.6.2-SINBracketRank · unnumbered_claim · 印刷p.366–368 / PDFp.387–389
 
@@ -2628,6 +3021,10 @@ theorem sinBracket_tangentSpan (θ γ : ℝ) (hθ : 0 < θ) (hγ : 0 < γ)
 未证陈述；Lean陈述可检查，证明完整性按本条状态区分。
 未证原因：真实迭代Fréchet导数及有限维秩/切核桥接；原印的错标公式不能直接充当证明。
 位置：Blueprint/Ch08.lean；MD.Ch08.sinBracket_tangentSpan。
+
+| 声明 | 数学状态 |
+|---|---|
+| `MD.Ch08.sinBracket_tangentSpan` | 未证 |
 
 ## 1. MD-8.6.2-SINLyapunov · unnumbered_claim · 印刷p.368–369 / PDFp.389–390
 
@@ -2677,6 +3074,12 @@ theorem sinConstraint_bathBound (θ : ℝ) (z : Vec 4) (hz : sinConstraint 1 z=�
 未证陈述；Lean陈述可检查，证明完整性按本条状态区分。
 未证原因：二次测试函数的实际二阶Fréchet计算；不建设遍历理论。
 位置：Blueprint/Ch08.lean；MD.Ch08.sinGenerator, MD.Ch08.sinGenerator_lyapunov, MD.Ch08.sinConstraint_bathBound。
+
+| 声明 | 数学状态 |
+|---|---|
+| `MD.Ch08.sinGenerator` | 定义或记号 |
+| `MD.Ch08.sinGenerator_lyapunov` | 未证 |
+| `MD.Ch08.sinConstraint_bathBound` | 已证 |
 
 ## 1. MD-8.6.3-SINForceSplitting · unnumbered_claim · 印刷p.370–371 / PDFp.391–392
 
@@ -2737,8 +3140,17 @@ theorem sinForce_constraintBalance (Q1 F : ℝ) (z : Vec 4)
 ### 7. 状态与证明位置
 
 已证；Lean陈述可检查，证明完整性按本条状态区分。
-本条未登记待证缺项。
+本条没有未完成的定理证明；覆盖缺口见上述范围及[EXTRA]。
 位置：Blueprint/Ch08.lean；MD.Ch08.sinKField, MD.Ch08.sinForceField, MD.Ch08.sinNField, MD.Ch08.sinOField, MD.Ch08.sinSplit_fields, MD.Ch08.sinForce_constraintBalance。
+
+| 声明 | 数学状态 |
+|---|---|
+| `MD.Ch08.sinKField` | 定义或记号 |
+| `MD.Ch08.sinForceField` | 定义或记号 |
+| `MD.Ch08.sinNField` | 定义或记号 |
+| `MD.Ch08.sinOField` | 定义或记号 |
+| `MD.Ch08.sinSplit_fields` | 已证 |
+| `MD.Ch08.sinForce_constraintBalance` | 已证 |
 
 ## 1. MD-8.6.3-SINRAlgorithm · definition · 印刷p.371 / PDFp.392
 
@@ -2784,8 +3196,13 @@ def sinRStages (h : ℝ) (r : ℕ) : List (List (SINStage × ℝ)) :=
 ### 7. 状态与证明位置
 
 定义；Lean陈述可检查，证明完整性按本条状态区分。
-本条未登记待证缺项。
+本条没有未完成的定理证明；覆盖缺口见上述范围及[EXTRA]。
 位置：Blueprint/Ch08.lean；MD.Ch08.SINStage, MD.Ch08.sinRStages。
+
+| 声明 | 数学状态 |
+|---|---|
+| `MD.Ch08.SINStage` | 定义或记号 |
+| `MD.Ch08.sinRStages` | 定义或记号 |
 
 ## 1. MD-8.6.3-SINNoseSubsplitting · unnumbered_claim · 印刷p.372 / PDFp.393
 
@@ -2829,8 +3246,14 @@ theorem sinN_split (Q1 Q2 θ : ℝ) (z : Vec 4) :
 ### 7. 状态与证明位置
 
 已证；Lean陈述可检查，证明完整性按本条状态区分。
-本条未登记待证缺项。
+本条没有未完成的定理证明；覆盖缺口见上述范围及[EXTRA]。
 位置：Blueprint/Ch08.lean；MD.Ch08.sinN1Field, MD.Ch08.sinN2Field, MD.Ch08.sinN_split。
+
+| 声明 | 数学状态 |
+|---|---|
+| `MD.Ch08.sinN1Field` | 定义或记号 |
+| `MD.Ch08.sinN2Field` | 定义或记号 |
+| `MD.Ch08.sinN_split` | 已证 |
 
 ## 1. MD-8.6.3-SINForceExactPrinted · unnumbered_claim · 印刷p.372 / PDFp.393
 
@@ -2885,6 +3308,14 @@ theorem sinForceFlow_solution_corrected (Q1 F : ℝ) (z : Vec 4)
 未证原因：双曲函数求导、分式约束及F=0分支；最多三条短路线后保留待证。
 位置：Blueprint/Ch08.lean；MD.Ch08.sinForceAux, MD.Ch08.sinForceFlow, MD.Ch08.sinForceODEPrinted, MD.Ch08.sinForceODE_corrected, MD.Ch08.sinForceFlow_solution_corrected。
 
+| 声明 | 数学状态 |
+|---|---|
+| `MD.Ch08.sinForceAux` | 定义或记号 |
+| `MD.Ch08.sinForceFlow` | 定义或记号 |
+| `MD.Ch08.sinForceODEPrinted` | 定义或记号 |
+| `MD.Ch08.sinForceODE_corrected` | 定义或记号 |
+| `MD.Ch08.sinForceFlow_solution_corrected` | 未证 |
+
 ## 1. MD-8.6.4-SINThreeLevelPotential · definition · 印刷p.373 / PDFp.394
 
 ### 2. 原文陈述
@@ -2923,8 +3354,13 @@ def nestedTimeSteps (inner middle outer : ℝ) : Prop :=
 ### 7. 状态与证明位置
 
 定义；Lean陈述可检查，证明完整性按本条状态区分。
-本条未登记待证缺项。
+本条没有未完成的定理证明；覆盖缺口见上述范围及[EXTRA]。
 位置：Blueprint/Ch08.lean；MD.Ch08.threeLevelPotential, MD.Ch08.nestedTimeSteps。
+
+| 声明 | 数学状态 |
+|---|---|
+| `MD.Ch08.threeLevelPotential` | 定义或记号 |
+| `MD.Ch08.nestedTimeSteps` | 定义或记号 |
 
 ## 1. MD-8.7-GeneralizedLangevin · definition · 印刷p.374 / PDFp.395
 
@@ -2978,8 +3414,13 @@ def generalizedLangevin (P : Measure Ω) (invm : Vec n) (U : Vec n → ℝ)
 ### 7. 状态与证明位置
 
 定义；Lean陈述可检查，证明完整性按本条状态区分。
-本条未登记待证缺项。
+本条没有未完成的定理证明；覆盖缺口见上述范围及[EXTRA]。
 位置：Blueprint/Ch08.lean；MD.Ch08.memoryDrag, MD.Ch08.generalizedLangevin。
+
+| 声明 | 数学状态 |
+|---|---|
+| `MD.Ch08.memoryDrag` | 定义或记号 |
+| `MD.Ch08.generalizedLangevin` | 定义或记号 |
 
 ## 1. MD-8.7-GLEFluctuationDissipationPrinted · definition · 印刷p.374 / PDFp.395
 
@@ -3029,8 +3470,15 @@ def scalarMemoryMatrix (γ : ℝ → ℝ) (t : ℝ) : Matrix (Fin n) (Fin n) ℝ
 ### 7. 状态与证明位置
 
 定义；Lean陈述可检查，证明完整性按本条状态区分。
-本条未登记待证缺项。
+本条没有未完成的定理证明；覆盖缺口见上述范围及[EXTRA]。
 位置：Blueprint/Ch08.lean；MD.Ch08.randomForceQualification, MD.Ch08.gleFDPrinted, MD.Ch08.gleFD_corrected, MD.Ch08.scalarMemoryMatrix。
+
+| 声明 | 数学状态 |
+|---|---|
+| `MD.Ch08.randomForceQualification` | 定义或记号 |
+| `MD.Ch08.gleFDPrinted` | 定义或记号 |
+| `MD.Ch08.gleFD_corrected` | 定义或记号 |
+| `MD.Ch08.scalarMemoryMatrix` | 定义或记号 |
 
 ## 1. MD-8.7-PronyKernel · unnumbered_claim · 印刷p.375 / PDFp.396
 
@@ -3076,8 +3524,14 @@ theorem pronyKernel_nonneg {K : ℕ} (c τ : Fin K → ℝ)
 ### 7. 状态与证明位置
 
 已证；Lean陈述可检查，证明完整性按本条状态区分。
-本条未登记待证缺项。
+本条没有未完成的定理证明；覆盖缺口见上述范围及[EXTRA]。
 位置：Blueprint/Ch08.lean；MD.Ch08.pronyKernel, MD.Ch08.pronyQualification, MD.Ch08.pronyKernel_nonneg。
+
+| 声明 | 数学状态 |
+|---|---|
+| `MD.Ch08.pronyKernel` | 定义或记号 |
+| `MD.Ch08.pronyQualification` | 定义或记号 |
+| `MD.Ch08.pronyKernel_nonneg` | 已证 |
 
 ## 1. MD-8.7.1-PronyMemoryODE · unnumbered_claim · 印刷p.375 / PDFp.396
 
@@ -3129,6 +3583,13 @@ theorem pronyMemory_sum {K : ℕ} (c τ : Fin K → ℝ) (p : ℝ → Vec n)
 未证陈述；Lean陈述可检查，证明完整性按本条状态区分。
 未证原因：带参指数卷积微分与有限和换积分；不建立一般Volterra随机解理论。
 位置：Blueprint/Ch08.lean；MD.Ch08.pronyMemory, MD.Ch08.pronyMemory_derivative, MD.Ch08.pronyMomentumDrift, MD.Ch08.pronyMemory_sum。
+
+| 声明 | 数学状态 |
+|---|---|
+| `MD.Ch08.pronyMemory` | 定义或记号 |
+| `MD.Ch08.pronyMemory_derivative` | 未证 |
+| `MD.Ch08.pronyMomentumDrift` | 定义或记号 |
+| `MD.Ch08.pronyMemory_sum` | 未证 |
 
 ## 1. MD-8.7.1-PronyOUStationarity · unnumbered_claim · 印刷p.376 / PDFp.397
 
@@ -3186,6 +3647,12 @@ def totalPronyRandomForce {K : ℕ} (R : Fin K → ℝ → Ω → ℝ) (t : ℝ)
 未证原因：平稳OU随机初态协方差与当前积分解规格的桥接；不新建Gaussian过程理论。
 位置：Blueprint/Ch08.lean；MD.Ch08.stationaryPronyOU, MD.Ch08.pronyOU_covariance, MD.Ch08.totalPronyRandomForce。
 
+| 声明 | 数学状态 |
+|---|---|
+| `MD.Ch08.stationaryPronyOU` | 定义或记号 |
+| `MD.Ch08.pronyOU_covariance` | 未证 |
+| `MD.Ch08.totalPronyRandomForce` | 定义或记号 |
+
 ## 1. MD-8.7.1-CombinedPronyVariable · definition · 印刷p.376 / PDFp.397
 
 ### 2. 原文陈述
@@ -3237,8 +3704,16 @@ theorem combinedProny_drift (η R c τ p : ℝ) :
 ### 7. 状态与证明位置
 
 定义；Lean陈述可检查，证明完整性按本条状态区分。
-本条未登记待证缺项。
+本条没有未完成的定理证明；覆盖缺口见上述范围及[EXTRA]。
 位置：Blueprint/Ch08.lean；MD.Ch08.GLEState, MD.Ch08.gleDrift, MD.Ch08.gleNoise, MD.Ch08.isExtendedGLESolution, MD.Ch08.combinedProny_drift。
+
+| 声明 | 数学状态 |
+|---|---|
+| `MD.Ch08.GLEState` | 定义或记号 |
+| `MD.Ch08.gleDrift` | 定义或记号 |
+| `MD.Ch08.gleNoise` | 定义或记号 |
+| `MD.Ch08.isExtendedGLESolution` | 定义或记号 |
+| `MD.Ch08.combinedProny_drift` | 已证 |
 
 ## 1. MD-8.7.1-PronyLangevinLimit · unnumbered_claim · 印刷p.376–377 / PDFp.397–398
 
@@ -3288,6 +3763,12 @@ theorem independentGaussian_varianceSum {K : ℕ} (P : Measure Ω)
 未证原因：有限乘积Gaussian线性映射的现成定理桥接。
 位置：Blueprint/Ch08.lean；MD.Ch08.pronyEffectiveFriction, MD.Ch08.pronyLimit_drift, MD.Ch08.independentGaussian_varianceSum。
 
+| 声明 | 数学状态 |
+|---|---|
+| `MD.Ch08.pronyEffectiveFriction` | 定义或记号 |
+| `MD.Ch08.pronyLimit_drift` | 已证 |
+| `MD.Ch08.independentGaussian_varianceSum` | 未证 |
+
 ## 1. MD-8.7.1-GeneralizedLangevinIntegrator · definition · 印刷p.377 / PDFp.398
 
 ### 2. 原文陈述
@@ -3333,8 +3814,13 @@ def gleNormalSequence {K : ℕ} (P : Measure Ω) (Z : ℕ → Ω → Fin K → V
 ### 7. 状态与证明位置
 
 定义；Lean陈述可检查，证明完整性按本条状态区分。
-本条未登记待证缺项。
+本条没有未完成的定理证明；覆盖缺口见上述范围及[EXTRA]。
 位置：Blueprint/Ch08.lean；MD.Ch08.gleIntegrator, MD.Ch08.gleNormalSequence。
+
+| 声明 | 数学状态 |
+|---|---|
+| `MD.Ch08.gleIntegrator` | 定义或记号 |
+| `MD.Ch08.gleNormalSequence` | 定义或记号 |
 
 ## 1. MD-8.7.1-GLEConsistentCoefficients · unnumbered_claim · 印刷p.377 / PDFp.398
 
@@ -3388,6 +3874,14 @@ theorem gleCoefficient_smallMemory (h : ℝ) (hh : 0 < h) :
 未证原因：指数Taylor余项、平方根正侧渐近及指数衰减的短桥接；不建设广义Langevin极限理论。
 位置：Blueprint/Ch08.lean；MD.Ch08.gleDecay, MD.Ch08.gleNoiseCoefficient, MD.Ch08.gleCoefficientConsistency, MD.Ch08.gleCoefficients_consistent, MD.Ch08.gleCoefficient_smallMemory。
 
+| 声明 | 数学状态 |
+|---|---|
+| `MD.Ch08.gleDecay` | 定义或记号 |
+| `MD.Ch08.gleNoiseCoefficient` | 定义或记号 |
+| `MD.Ch08.gleCoefficientConsistency` | 定义或记号 |
+| `MD.Ch08.gleCoefficients_consistent` | 未证 |
+| `MD.Ch08.gleCoefficient_smallMemory` | 未证 |
+
 ## 1. MD-8.8-NPTThermodynamics · unnumbered_claim · 印刷p.378 / PDFp.399
 
 ### 2. 原文陈述
@@ -3437,8 +3931,14 @@ theorem maxwellPressureRelation (T P dVdS : ℝ) (hT : T ≠ 0)
 ### 7. 状态与证明位置
 
 已证；Lean陈述可检查，证明完整性按本条状态区分。
-本条未登记待证缺项。
+本条没有未完成的定理证明；覆盖缺口见上述范围及[EXTRA]。
 位置：Blueprint/Ch08.lean；MD.Ch08.thermodynamicPressure, MD.Ch08.maxwellCycle, MD.Ch08.maxwellPressureRelation。
+
+| 声明 | 数学状态 |
+|---|---|
+| `MD.Ch08.thermodynamicPressure` | 定义或记号 |
+| `MD.Ch08.maxwellCycle` | 定义或记号 |
+| `MD.Ch08.maxwellPressureRelation` | 已证 |
 
 ## 1. MD-8.8-NPTBathTaylor · unnumbered_claim · 印刷p.378 / PDFp.399
 
@@ -3485,6 +3985,11 @@ theorem nptEntropy_firstOrder (S : ℝ × ℝ → ℝ) (E0 V0 T P : ℝ) (hT : 0
 未证陈述；Lean陈述可检查，证明完整性按本条状态区分。
 未证原因：可微定义的线性近似及负号仿射换元；短桥接未完成。
 位置：Blueprint/Ch08.lean；MD.Ch08.nptBathLinear, MD.Ch08.nptEntropy_firstOrder。
+
+| 声明 | 数学状态 |
+|---|---|
+| `MD.Ch08.nptBathLinear` | 定义或记号 |
+| `MD.Ch08.nptEntropy_firstOrder` | 未证 |
 
 ## 1. MD-8.8-NPTDensity · unnumbered_claim · 印刷p.378–379 / PDFp.399–400
 
@@ -3536,8 +4041,16 @@ theorem nptDensity_normalizes (H : Phase n × ℝ → ℝ) (β P : ℝ) (hβ : 0
 ### 7. 状态与证明位置
 
 已证；Lean陈述可检查，证明完整性按本条状态区分。
-本条未登记待证缺项。
+本条没有未完成的定理证明；覆盖缺口见上述范围及[EXTRA]。
 位置：Blueprint/Ch08.lean；MD.Ch08.volumeScale, MD.Ch08.nptBox, MD.Ch08.nptWeight, MD.Ch08.nptDensity, MD.Ch08.nptDensity_normalizes。
+
+| 声明 | 数学状态 |
+|---|---|
+| `MD.Ch08.volumeScale` | 定义或记号 |
+| `MD.Ch08.nptBox` | 定义或记号 |
+| `MD.Ch08.nptWeight` | 定义或记号 |
+| `MD.Ch08.nptDensity` | 定义或记号 |
+| `MD.Ch08.nptDensity_normalizes` | 已证 |
 
 ## 1. MD-8.8-AndersenCoordinates · unnumbered_claim · 印刷p.379–380 / PDFp.400–401
 
@@ -3594,6 +4107,14 @@ theorem andersenMomentum_velocity (m : Vec n) (V Vdot : ℝ) (qbar vbar : Vec n)
 未证原因：正数实幂求导与指数和法则的短桥接。
 位置：Blueprint/Ch08.lean；MD.Ch08.andersenPosition, MD.Ch08.andersenVelocity, MD.Ch08.andersenMomentum, MD.Ch08.andersenPosition_derivative, MD.Ch08.andersenMomentum_velocity。
 
+| 声明 | 数学状态 |
+|---|---|
+| `MD.Ch08.andersenPosition` | 定义或记号 |
+| `MD.Ch08.andersenVelocity` | 定义或记号 |
+| `MD.Ch08.andersenMomentum` | 定义或记号 |
+| `MD.Ch08.andersenPosition_derivative` | 未证 |
+| `MD.Ch08.andersenMomentum_velocity` | 未证 |
+
 ## 1. MD-8.8-AndersenKineticEnergy · unnumbered_claim · 印刷p.379 / PDFp.400
 
 ### 2. 原文陈述
@@ -3641,6 +4162,12 @@ theorem andersenKinetic_expansion (m : Vec n) (V Vdot : ℝ) (qbar vbar : Vec n)
 未证陈述；Lean陈述可检查，证明完整性按本条状态区分。
 未证原因：正V的rpow乘法与有限和平方展开桥接。
 位置：Blueprint/Ch08.lean；MD.Ch08.andersenKinetic, MD.Ch08.andersenKineticExpanded, MD.Ch08.andersenKinetic_expansion。
+
+| 声明 | 数学状态 |
+|---|---|
+| `MD.Ch08.andersenKinetic` | 定义或记号 |
+| `MD.Ch08.andersenKineticExpanded` | 定义或记号 |
+| `MD.Ch08.andersenKinetic_expansion` | 未证 |
 
 ## 1. MD-8.8-AndersenHamiltonianPrinted · unnumbered_claim · 印刷p.380 / PDFp.401
 
@@ -3695,6 +4222,13 @@ theorem andersenGaussian_marginal (m : Vec n) (U : Vec n → ℝ) (QV P β : ℝ
 未证原因：一维Gaussian积分及常数因子桥接。
 位置：Blueprint/Ch08.lean；MD.Ch08.andersenHamiltonian, MD.Ch08.andersenMarginalPrinted, MD.Ch08.andersenMarginal_corrected, MD.Ch08.andersenGaussian_marginal。
 
+| 声明 | 数学状态 |
+|---|---|
+| `MD.Ch08.andersenHamiltonian` | 定义或记号 |
+| `MD.Ch08.andersenMarginalPrinted` | 定义或记号 |
+| `MD.Ch08.andersenMarginal_corrected` | 定义或记号 |
+| `MD.Ch08.andersenGaussian_marginal` | 未证 |
+
 ## 1. MD-8.8.1-NHLPistonEquations · definition · 印刷p.381–382 / PDFp.402–403
 
 ### 2. 原文陈述
@@ -3748,8 +4282,16 @@ def isNHLPistonSolution (invm : Vec n) (U : Vec n × ℝ → ℝ) (θ P QT QP γ
 ### 7. 状态与证明位置
 
 定义；Lean陈述可检查，证明完整性按本条状态区分。
-本条未登记待证缺项。
+本条没有未完成的定理证明；覆盖缺口见上述范围及[EXTRA]。
 位置：Blueprint/Ch08.lean；MD.Ch08.PistonState, MD.Ch08.pistonPressure, MD.Ch08.pistonDrift, MD.Ch08.pistonNoise, MD.Ch08.isNHLPistonSolution。
+
+| 声明 | 数学状态 |
+|---|---|
+| `MD.Ch08.PistonState` | 定义或记号 |
+| `MD.Ch08.pistonPressure` | 定义或记号 |
+| `MD.Ch08.pistonDrift` | 定义或记号 |
+| `MD.Ch08.pistonNoise` | 定义或记号 |
+| `MD.Ch08.isNHLPistonSolution` | 定义或记号 |
 
 ## 1. MD-8.8.1-PistonHamiltonianSubfield · unnumbered_claim · 印刷p.381 / PDFp.402
 
@@ -3798,6 +4340,11 @@ theorem pistonHamiltonianWeight_stationary (invm : Vec n) (U : Vec n × ℝ → 
 未证陈述；Lean陈述可检查，证明完整性按本条状态区分。
 未证原因：有限维Hamiltonian散度与冻结辅助变量的链式法则桥接。
 位置：Blueprint/Ch08.lean；MD.Ch08.pistonHamiltonianPart, MD.Ch08.pistonHamiltonianWeight_stationary。
+
+| 声明 | 数学状态 |
+|---|---|
+| `MD.Ch08.pistonHamiltonianPart` | 定义或记号 |
+| `MD.Ch08.pistonHamiltonianWeight_stationary` | 未证 |
 
 ## 1. MD-8.8.1-PistonThermostatWeightPrinted · unnumbered_claim · 印刷p.381 / PDFp.402
 
@@ -3848,6 +4395,13 @@ theorem pistonRho2_stationary_corrected (invm : Vec n) (β QT : ℝ)
 未证原因：权重指数链式法则与实际散度计算。
 位置：Blueprint/Ch08.lean；MD.Ch08.pistonThermostatPart, MD.Ch08.pistonRho2Printed, MD.Ch08.pistonRho2_corrected, MD.Ch08.pistonRho2_stationary_corrected。
 
+| 声明 | 数学状态 |
+|---|---|
+| `MD.Ch08.pistonThermostatPart` | 定义或记号 |
+| `MD.Ch08.pistonRho2Printed` | 定义或记号 |
+| `MD.Ch08.pistonRho2_corrected` | 定义或记号 |
+| `MD.Ch08.pistonRho2_stationary_corrected` | 未证 |
+
 ## 1. MD-8.8.1-PistonReducedPDE · unnumbered_claim · 印刷p.382 / PDFp.403
 
 ### 2. 原文陈述
@@ -3895,6 +4449,11 @@ theorem pistonReduced_boltzmann (invm : Vec n) (U : Vec n × ℝ → ℝ) (β P 
 未证陈述；Lean陈述可检查，证明完整性按本条状态区分。
 未证原因：实际Fréchet导数代入及压力定义消项。
 位置：Blueprint/Ch08.lean；MD.Ch08.pistonReducedOperator, MD.Ch08.pistonReduced_boltzmann。
+
+| 声明 | 数学状态 |
+|---|---|
+| `MD.Ch08.pistonReducedOperator` | 定义或记号 |
+| `MD.Ch08.pistonReduced_boltzmann` | 未证 |
 
 ## 1. MD-8.8.1-PistonStationaryWeight · unnumbered_claim · 印刷p.382 / PDFp.403
 
@@ -3948,6 +4507,12 @@ theorem pistonWeight_stationary (invm : Vec n) (U : Vec n × ℝ → ℝ)
 未证陈述；Lean陈述可检查，证明完整性按本条状态区分。
 未证原因：Hamiltonian/热浴/活塞/OU四部分的局部通量与二阶导数计算；不建立NPT半群理论。
 位置：Blueprint/Ch08.lean；MD.Ch08.pistonWeight, MD.Ch08.pistonForward, MD.Ch08.pistonWeight_stationary。
+
+| 声明 | 数学状态 |
+|---|---|
+| `MD.Ch08.pistonWeight` | 定义或记号 |
+| `MD.Ch08.pistonForward` | 定义或记号 |
+| `MD.Ch08.pistonWeight_stationary` | 未证 |
 
 ## 1. MD-8.8.2-PistonIntegrator · definition · 印刷p.383 / PDFp.404
 
@@ -4011,8 +4576,19 @@ theorem pistonVolume_positive (V η h : ℝ) (hV : 0 < V) : 0 < Real.exp (η*h)*
 ### 7. 状态与证明位置
 
 定义；Lean陈述可检查，证明完整性按本条状态区分。
-本条未登记待证缺项。
+本条没有未完成的定理证明；覆盖缺口见上述范围及[EXTRA]。
 位置：Blueprint/Ch08.lean；MD.Ch08.expIntegrated, MD.Ch08.pistonWrap, MD.Ch08.pistonMomentumKick, MD.Ch08.pistonFeedback, MD.Ch08.pistonOU, MD.Ch08.pistonIntegrator, MD.Ch08.pistonOU_volume, MD.Ch08.pistonVolume_positive。
+
+| 声明 | 数学状态 |
+|---|---|
+| `MD.Ch08.expIntegrated` | 定义或记号 |
+| `MD.Ch08.pistonWrap` | 定义或记号 |
+| `MD.Ch08.pistonMomentumKick` | 定义或记号 |
+| `MD.Ch08.pistonFeedback` | 定义或记号 |
+| `MD.Ch08.pistonOU` | 定义或记号 |
+| `MD.Ch08.pistonIntegrator` | 定义或记号 |
+| `MD.Ch08.pistonOU_volume` | 已证 |
+| `MD.Ch08.pistonVolume_positive` | 已证 |
 
 ## 1. MD-8.8.3-ParrinelloRahman · definition · 印刷p.385 / PDFp.406
 
@@ -4064,8 +4640,18 @@ def cellQualification {N : ℕ} (m : Fin N → ℝ) (Q : ℝ)
 ### 7. 状态与证明位置
 
 定义；Lean陈述可检查，证明完整性按本条状态区分。
-本条未登记待证缺项。
+本条没有未完成的定理证明；覆盖缺口见上述范围及[EXTRA]。
 位置：Blueprint/Ch08.lean；MD.Ch08.cellVolume, MD.Ch08.cellMetric, MD.Ch08.cellPosition, MD.Ch08.cross3, MD.Ch08.cellVolume_triple, MD.Ch08.parrinelloRahmanLagrangian, MD.Ch08.cellQualification。
+
+| 声明 | 数学状态 |
+|---|---|
+| `MD.Ch08.cellVolume` | 定义或记号 |
+| `MD.Ch08.cellMetric` | 定义或记号 |
+| `MD.Ch08.cellPosition` | 定义或记号 |
+| `MD.Ch08.cross3` | 定义或记号 |
+| `MD.Ch08.cellVolume_triple` | 已证 |
+| `MD.Ch08.parrinelloRahmanLagrangian` | 定义或记号 |
+| `MD.Ch08.cellQualification` | 定义或记号 |
 
 ## 1. MD-8.9-TotalMomentum · unnumbered_claim · 印刷p.386 / PDFp.407
 
@@ -4113,8 +4699,16 @@ theorem noseTotalForce_zero {N d : ℕ} (F p : ParticleConfig N d) (ξ : ℝ)
 ### 7. 状态与证明位置
 
 已证；Lean陈述可检查，证明完整性按本条状态区分。
-本条未登记待证缺项。
+本条没有未完成的定理证明；覆盖缺口见上述范围及[EXTRA]。
 位置：Blueprint/Ch08.lean；MD.Ch08.ParticleConfig, MD.Ch08.ParticlePhase, MD.Ch08.totalMomentum, MD.Ch08.noseTotalForce, MD.Ch08.noseTotalForce_zero。
+
+| 声明 | 数学状态 |
+|---|---|
+| `MD.Ch08.ParticleConfig` | 定义或记号 |
+| `MD.Ch08.ParticlePhase` | 定义或记号 |
+| `MD.Ch08.totalMomentum` | 定义或记号 |
+| `MD.Ch08.noseTotalForce` | 已证 |
+| `MD.Ch08.noseTotalForce_zero` | 已证 |
 
 ## 1. MD-8.9.1-DPDSoftPotential · unnumbered_claim · 印刷p.387–388 / PDFp.408–409
 
@@ -4172,6 +4766,17 @@ theorem dpdConservative_gradient {N d : ℕ} (α rc : ℝ) (hα : 0 ≤ α) (hrc
 未证原因：非碰撞距离求导和有限无序对势梯度。
 位置：Blueprint/Ch08.lean；MD.Ch08.pairDistance, MD.Ch08.pairDirection, MD.Ch08.dpdSoftPotential, MD.Ch08.dpdPairConservative, MD.Ch08.dpdPotential, MD.Ch08.dpdConservative, MD.Ch08.particleGradient, MD.Ch08.dpdConservative_gradient。
 
+| 声明 | 数学状态 |
+|---|---|
+| `MD.Ch08.pairDistance` | 定义或记号 |
+| `MD.Ch08.pairDirection` | 定义或记号 |
+| `MD.Ch08.dpdSoftPotential` | 定义或记号 |
+| `MD.Ch08.dpdPairConservative` | 定义或记号 |
+| `MD.Ch08.dpdPotential` | 定义或记号 |
+| `MD.Ch08.dpdConservative` | 定义或记号 |
+| `MD.Ch08.particleGradient` | 定义或记号 |
+| `MD.Ch08.dpdConservative_gradient` | 未证 |
+
 ## 1. MD-8.9.1-DPDPairForces · definition · 印刷p.388 / PDFp.409
 
 ### 2. 原文陈述
@@ -4224,8 +4829,18 @@ def dpdNoise {N d K : ℕ} (pairs : Fin K → Fin N × Fin N) (σ : ℝ) (wR : �
 ### 7. 状态与证明位置
 
 定义；Lean陈述可检查，证明完整性按本条状态区分。
-本条未登记待证缺项。
+本条没有未完成的定理证明；覆盖缺口见上述范围及[EXTRA]。
 位置：Blueprint/Ch08.lean；MD.Ch08.dpdWeightR, MD.Ch08.relativeVelocity, MD.Ch08.dpdPairDissipative, MD.Ch08.dpdPairRandom, MD.Ch08.dpdDissipative, MD.Ch08.pairImpulseVector, MD.Ch08.dpdNoise。
+
+| 声明 | 数学状态 |
+|---|---|
+| `MD.Ch08.dpdWeightR` | 定义或记号 |
+| `MD.Ch08.relativeVelocity` | 定义或记号 |
+| `MD.Ch08.dpdPairDissipative` | 定义或记号 |
+| `MD.Ch08.dpdPairRandom` | 定义或记号 |
+| `MD.Ch08.dpdDissipative` | 定义或记号 |
+| `MD.Ch08.pairImpulseVector` | 定义或记号 |
+| `MD.Ch08.dpdNoise` | 定义或记号 |
 
 ## 1. MD-8.9.1-DPDPairWiener · unnumbered_claim · 印刷p.388–389 / PDFp.409–410
 
@@ -4281,6 +4896,13 @@ theorem pairNoiseIncrement_covariance {N K : ℕ} (P : Measure Ω)
 未证陈述；Lean陈述可检查，证明完整性按本条状态区分。
 未证原因：标准向量Wiener增量的有限和协方差与无序对枚举桥接。
 位置：Blueprint/Ch08.lean；MD.Ch08.pairEnumeration, MD.Ch08.pairNoiseIncrement, MD.Ch08.pairNoiseIncrement_symmetric, MD.Ch08.pairNoiseIncrement_covariance。
+
+| 声明 | 数学状态 |
+|---|---|
+| `MD.Ch08.pairEnumeration` | 定义或记号 |
+| `MD.Ch08.pairNoiseIncrement` | 定义或记号 |
+| `MD.Ch08.pairNoiseIncrement_symmetric` | 未证 |
+| `MD.Ch08.pairNoiseIncrement_covariance` | 未证 |
 
 ## 1. MD-8.9.1-DPDIntegralSystem · definition · 印刷p.389 / PDFp.410
 
@@ -4344,8 +4966,15 @@ def isDPDSolution {N d K : ℕ} (m : Fin N → ℝ) (α rc γ σ θ : ℝ) (wD w
 ### 7. 状态与证明位置
 
 定义；Lean陈述可检查，证明完整性按本条状态区分。
-本条未登记待证缺项。
+本条没有未完成的定理证明；覆盖缺口见上述范围及[EXTRA]。
 位置：Blueprint/Ch08.lean；MD.Ch08.strictItoIntegral8, MD.Ch08.multiplicativeSDE8, MD.Ch08.dpdDrift, MD.Ch08.isDPDSolution。
+
+| 声明 | 数学状态 |
+|---|---|
+| `MD.Ch08.strictItoIntegral8` | 定义或记号 |
+| `MD.Ch08.multiplicativeSDE8` | 定义或记号 |
+| `MD.Ch08.dpdDrift` | 定义或记号 |
+| `MD.Ch08.isDPDSolution` | 定义或记号 |
 
 ## 1. MD-8.9.1-DPDCanonicalLeaf · definition · 印刷p.389 / PDFp.410
 
@@ -4398,8 +5027,16 @@ def momentumCanonicalQualification {N d : ℕ} (ν : Measure (ParticlePhase N d)
 ### 7. 状态与证明位置
 
 定义；Lean陈述可检查，证明完整性按本条状态区分。
-本条未登记待证缺项。
+本条没有未完成的定理证明；覆盖缺口见上述范围及[EXTRA]。
 位置：Blueprint/Ch08.lean；MD.Ch08.dpdFluctuationDissipation, MD.Ch08.momentumLeaf, MD.Ch08.particleHamiltonian, MD.Ch08.momentumCanonical, MD.Ch08.momentumCanonicalQualification。
+
+| 声明 | 数学状态 |
+|---|---|
+| `MD.Ch08.dpdFluctuationDissipation` | 定义或记号 |
+| `MD.Ch08.momentumLeaf` | 定义或记号 |
+| `MD.Ch08.particleHamiltonian` | 定义或记号 |
+| `MD.Ch08.momentumCanonical` | 定义或记号 |
+| `MD.Ch08.momentumCanonicalQualification` | 定义或记号 |
 
 ## 1. MD-8.9.1-DPDMassOrderPrinted · unnumbered_claim · 印刷p.389 / PDFp.410
 
@@ -4446,8 +5083,14 @@ theorem dpdMassOrder_counterexample :
 ### 7. 状态与证明位置
 
 已证；Lean陈述可检查，证明完整性按本条状态区分。
-本条未登记待证缺项。
+本条没有未完成的定理证明；覆盖缺口见上述范围及[EXTRA]。
 位置：Blueprint/Ch08.lean；MD.Ch08.dpdMatrixFDPrinted, MD.Ch08.dpdMatrixFD_corrected, MD.Ch08.dpdMassOrder_counterexample。
+
+| 声明 | 数学状态 |
+|---|---|
+| `MD.Ch08.dpdMatrixFDPrinted` | 定义或记号 |
+| `MD.Ch08.dpdMatrixFD_corrected` | 定义或记号 |
+| `MD.Ch08.dpdMassOrder_counterexample` | 已证 |
 
 ## 1. MD-8.9.2-DPDVelocityVerlet · algorithm · 印刷p.389–391 / PDFp.410–412
 
@@ -4503,8 +5146,14 @@ theorem dpdVerlet_reuse {N d K : ℕ} (pairs : Fin K → Fin N × Fin N) (m : Fi
 ### 7. 状态与证明位置
 
 已证；Lean陈述可检查，证明完整性按本条状态区分。
-本条未登记待证缺项。
+本条没有未完成的定理证明；覆盖缺口见上述范围及[EXTRA]。
 位置：Blueprint/Ch08.lean；MD.Ch08.dpdRandomForce, MD.Ch08.dpdVerlet, MD.Ch08.dpdVerlet_reuse。
+
+| 声明 | 数学状态 |
+|---|---|
+| `MD.Ch08.dpdRandomForce` | 定义或记号 |
+| `MD.Ch08.dpdVerlet` | 定义或记号 |
+| `MD.Ch08.dpdVerlet_reuse` | 已证 |
 
 ## 1. MD-8.9.2-DPDSplitGenerator · unnumbered_claim · 印刷p.391 / PDFp.412
 
@@ -4560,8 +5209,18 @@ theorem dpdDrift_split {N d : ℕ} (m : Fin N → ℝ) (α rc γ : ℝ) (wD : �
 ### 7. 状态与证明位置
 
 已证；Lean陈述可检查，证明完整性按本条状态区分。
-本条未登记待证缺项。
+本条没有未完成的定理证明；覆盖缺口见上述范围及[EXTRA]。
 位置：Blueprint/Ch08.lean；MD.Ch08.dpdA, MD.Ch08.dpdB, MD.Ch08.dpdO, MD.Ch08.firstOrder8, MD.Ch08.dpdLO, MD.Ch08.dpdGenerator, MD.Ch08.dpdDrift_split。
+
+| 声明 | 数学状态 |
+|---|---|
+| `MD.Ch08.dpdA` | 定义或记号 |
+| `MD.Ch08.dpdB` | 定义或记号 |
+| `MD.Ch08.dpdO` | 定义或记号 |
+| `MD.Ch08.firstOrder8` | 定义或记号 |
+| `MD.Ch08.dpdLO` | 定义或记号 |
+| `MD.Ch08.dpdGenerator` | 定义或记号 |
+| `MD.Ch08.dpdDrift_split` | 已证 |
 
 ## 1. MD-8.9.2-DPDPairGeneratorPrinted · definition · 印刷p.392 / PDFp.413
 
@@ -4609,8 +5268,14 @@ def dpdPairGenerator_corrected {N d : ℕ} (i j : Fin N) (e : Vec d) (m : Fin N 
 ### 7. 状态与证明位置
 
 定义；Lean陈述可检查，证明完整性按本条状态区分。
-本条未登记待证缺项。
+本条没有未完成的定理证明；覆盖缺口见上述范围及[EXTRA]。
 位置：Blueprint/Ch08.lean；MD.Ch08.pairDerivative, MD.Ch08.dpdPairGeneratorPrinted, MD.Ch08.dpdPairGenerator_corrected。
+
+| 声明 | 数学状态 |
+|---|---|
+| `MD.Ch08.pairDerivative` | 定义或记号 |
+| `MD.Ch08.dpdPairGeneratorPrinted` | 定义或记号 |
+| `MD.Ch08.dpdPairGenerator_corrected` | 定义或记号 |
 
 ## 1. MD-8.9.2-DPDSplittingCompositions · algorithm · 印刷p.392–393 / PDFp.413–414
 
@@ -4656,8 +5321,15 @@ def dpdSGenerator {N d K : ℕ} (pairs : Fin K → Fin N × Fin N) (m : Fin N �
 ### 7. 状态与证明位置
 
 已证；Lean陈述可检查，证明完整性按本条状态区分。
-本条未登记待证缺项。
+本条没有未完成的定理证明；覆盖缺口见上述范围及[EXTRA]。
 位置：Blueprint/Ch08.lean；MD.Ch08.dpdShardlowComposition, MD.Ch08.dpdTrotterComposition, MD.Ch08.sequentialPairComposition, MD.Ch08.dpdSGenerator。
+
+| 声明 | 数学状态 |
+|---|---|
+| `MD.Ch08.dpdShardlowComposition` | 定义或记号 |
+| `MD.Ch08.dpdTrotterComposition` | 定义或记号 |
+| `MD.Ch08.sequentialPairComposition` | 定义或记号 |
+| `MD.Ch08.dpdSGenerator` | 定义或记号 |
 
 ## 1. MD-8.9.2-DPDPairOUUpdate · unnumbered_claim · 印刷p.393 / PDFp.414
 
@@ -4709,8 +5381,18 @@ theorem dpdPairMomentumStep_conserves {N d : ℕ} (i j : Fin N) (e : Vec d) (mr 
 ### 7. 状态与证明位置
 
 已证；Lean陈述可检查，证明完整性按本条状态区分。
-本条未登记待证缺项。
+本条没有未完成的定理证明；覆盖缺口见上述范围及[EXTRA]。
 位置：Blueprint/Ch08.lean；MD.Ch08.reducedMass8, MD.Ch08.reducedMass8_pos, MD.Ch08.dpdPairOUPrinted, MD.Ch08.dpdPairOU_corrected, MD.Ch08.dpdPairOU_zeroRate, MD.Ch08.dpdPairMomentumStep, MD.Ch08.dpdPairMomentumStep_conserves。
+
+| 声明 | 数学状态 |
+|---|---|
+| `MD.Ch08.reducedMass8` | 定义或记号 |
+| `MD.Ch08.reducedMass8_pos` | 已证 |
+| `MD.Ch08.dpdPairOUPrinted` | 定义或记号 |
+| `MD.Ch08.dpdPairOU_corrected` | 定义或记号 |
+| `MD.Ch08.dpdPairOU_zeroRate` | 已证 |
+| `MD.Ch08.dpdPairMomentumStep` | 定义或记号 |
+| `MD.Ch08.dpdPairMomentumStep_conserves` | 已证 |
 
 ## 1. MD-8.9.3-PairwiseNoseHoover · definition · 印刷p.394 / PDFp.415
 
@@ -4761,8 +5443,15 @@ def isPNHSolution {N d : ℕ} (m : Fin N → ℝ) (α rc θ Q : ℝ) (wD : ℝ �
 ### 7. 状态与证明位置
 
 定义；Lean陈述可检查，证明完整性按本条状态区分。
-本条未登记待证缺项。
+本条没有未完成的定理证明；覆盖缺口见上述范围及[EXTRA]。
 位置：Blueprint/Ch08.lean；MD.Ch08.PNHLState, MD.Ch08.pairwiseFeedback, MD.Ch08.pnhDrift, MD.Ch08.isPNHSolution。
+
+| 声明 | 数学状态 |
+|---|---|
+| `MD.Ch08.PNHLState` | 定义或记号 |
+| `MD.Ch08.pairwiseFeedback` | 定义或记号 |
+| `MD.Ch08.pnhDrift` | 定义或记号 |
+| `MD.Ch08.isPNHSolution` | 定义或记号 |
 
 ## 1. MD-8.9.3-PairwiseCanonicalWeight · definition · 印刷p.394 / PDFp.415
 
@@ -4810,8 +5499,14 @@ def pairwiseCanonicalQualification {N d : ℕ} (ν : Measure (PNHLState N d))
 ### 7. 状态与证明位置
 
 定义；Lean陈述可检查，证明完整性按本条状态区分。
-本条未登记待证缺项。
+本条没有未完成的定理证明；覆盖缺口见上述范围及[EXTRA]。
 位置：Blueprint/Ch08.lean；MD.Ch08.pairwiseWeight, MD.Ch08.pairwiseCanonicalDensity, MD.Ch08.pairwiseCanonicalQualification。
+
+| 声明 | 数学状态 |
+|---|---|
+| `MD.Ch08.pairwiseWeight` | 定义或记号 |
+| `MD.Ch08.pairwiseCanonicalDensity` | 定义或记号 |
+| `MD.Ch08.pairwiseCanonicalQualification` | 定义或记号 |
 
 ## 1. MD-8.9.4-PairwiseNHLSDE · definition · 印刷p.395 / PDFp.416
 
@@ -4859,8 +5554,14 @@ def isPNHLSolution {N d : ℕ} (m : Fin N → ℝ) (α rc θ Q γ σ : ℝ) (wD 
 ### 7. 状态与证明位置
 
 定义；Lean陈述可检查，证明完整性按本条状态区分。
-本条未登记待证缺项。
+本条没有未完成的定理证明；覆盖缺口见上述范围及[EXTRA]。
 位置：Blueprint/Ch08.lean；MD.Ch08.pnhlDrift, MD.Ch08.pnhlNoise, MD.Ch08.isPNHLSolution。
+
+| 声明 | 数学状态 |
+|---|---|
+| `MD.Ch08.pnhlDrift` | 定义或记号 |
+| `MD.Ch08.pnhlNoise` | 定义或记号 |
+| `MD.Ch08.isPNHLSolution` | 定义或记号 |
 
 ## 1. MD-8.9.4-PairwiseNHLGenerator · unnumbered_claim · 印刷p.395 / PDFp.416
 
@@ -4924,6 +5625,17 @@ theorem pairwiseWeight_localStationary {N d : ℕ} (m : Fin N → ℝ) (α rc θ
 未证原因：成对相对速度散度、软势梯度和扩展Gibbs权的局部Fokker–Planck计算。
 位置：Blueprint/Ch08.lean；MD.Ch08.pnhlA, MD.Ch08.pnhlB, MD.Ch08.pnhlC, MD.Ch08.pnhlD, MD.Ch08.pnhlO, MD.Ch08.pnhlGenerator, MD.Ch08.pnhlDrift_split, MD.Ch08.pairwiseWeight_localStationary。
 
+| 声明 | 数学状态 |
+|---|---|
+| `MD.Ch08.pnhlA` | 定义或记号 |
+| `MD.Ch08.pnhlB` | 定义或记号 |
+| `MD.Ch08.pnhlC` | 定义或记号 |
+| `MD.Ch08.pnhlD` | 定义或记号 |
+| `MD.Ch08.pnhlO` | 定义或记号 |
+| `MD.Ch08.pnhlGenerator` | 定义或记号 |
+| `MD.Ch08.pnhlDrift_split` | 已证 |
+| `MD.Ch08.pairwiseWeight_localStationary` | 未证 |
+
 ## 1. MD-8.9.4-PNHLSplittingAlgorithms · algorithm · 印刷p.396 / PDFp.417
 
 ### 2. 原文陈述
@@ -4979,6 +5691,205 @@ def pnhlNComposition {E : Type*} (A B C D O : ℝ → E → E) (h : ℝ) : E →
 ### 7. 状态与证明位置
 
 已证；Lean陈述可检查，证明完整性按本条状态区分。
-本条未登记待证缺项。
+本条没有未完成的定理证明；覆盖缺口见上述范围及[EXTRA]。
 位置：Blueprint/Ch08.lean；MD.Ch08.pnhlAStep, MD.Ch08.pnhlBStep, MD.Ch08.pnhlDStep, MD.Ch08.pnhlOStep, MD.Ch08.pnhlPairCStep, MD.Ch08.pnhlSComposition, MD.Ch08.pnhlNComposition。
+
+| 声明 | 数学状态 |
+|---|---|
+| `MD.Ch08.pnhlAStep` | 定义或记号 |
+| `MD.Ch08.pnhlBStep` | 定义或记号 |
+| `MD.Ch08.pnhlDStep` | 定义或记号 |
+| `MD.Ch08.pnhlOStep` | 定义或记号 |
+| `MD.Ch08.pnhlPairCStep` | 定义或记号 |
+| `MD.Ch08.pnhlSComposition` | 定义或记号 |
+| `MD.Ch08.pnhlNComposition` | 定义或记号 |
+
+## 1. MD-8.10-BerendsenRelaxation · unnumbered_claim · 印刷p.396–397 / PDFp.417–418
+
+### 2. 原文陈述
+
+Ṫ(t)=γ_T(Ttarget−T(t)), γ_T>0. After Verlet, p←√[1+γ_Th(N_d k_BT/‖p‖²−1)]p.
+
+### 3. 原文证明
+
+对应原页推导逐字保存在statement_verbatim/original_page_text；排版以原页PDF为准。
+
+原页文字及推导保存在原文JSON的original_page_text；网站子包附对应完整原页PDF。
+
+### 4. 完整当前Lean（原文与修正版独立列出）
+
+```lean
+def berendsenTemperature (θ T0 γ t : ℝ) : ℝ := θ+(T0-θ)*Real.exp (-γ*t)
+theorem berendsenTemperature_derivative (θ T0 γ t : ℝ) :
+    HasDerivAt (berendsenTemperature θ T0 γ) (γ*(θ-berendsenTemperature θ T0 γ t)) t := by
+  convert (hasDerivAt_const t θ).add (((hasDerivAt_id t).const_mul (-γ)).exp.const_mul (T0-θ)) using 1
+  · ext x
+    dsimp [berendsenTemperature]
+  · dsimp [berendsenTemperature]
+    ring
+def berendsenRadicand (nd θ γ h E : ℝ) : ℝ := 1+γ*h*(nd*θ/E-1)
+def berendsenScale {n : ℕ} (θ γ h : ℝ) (p : Vec n) : Vec n :=
+  Real.sqrt (berendsenRadicand n θ γ h (dot p p)) • p
+def berendsenScaleQualification {n : ℕ} (θ γ h : ℝ) (p : Vec n) : Prop :=
+  0 < n ∧ 0 < θ ∧ 0 < γ ∧ 0 ≤ h ∧ 0 < dot p p ∧ 0 ≤ berendsenRadicand n θ γ h (dot p p)
+theorem dot_smul_same {n : ℕ} (c : ℝ) (p : Vec n) : dot (c • p) (c • p)=c^2*dot p p := by
+  simp only [dot,Pi.smul_apply,smul_eq_mul,Finset.mul_sum]
+  apply Finset.sum_congr rfl
+  intro i hi
+  ring
+theorem berendsenScale_energy {n : ℕ} (θ γ h : ℝ) (p : Vec n)
+    (hq : berendsenScaleQualification θ γ h p) :
+    dot (berendsenScale θ γ h p) (berendsenScale θ γ h p)=
+      (1-γ*h)*dot p p+γ*h*n*θ := by
+  rw [berendsenScale,dot_smul_same,Real.sq_sqrt hq.2.2.2.2.2]
+  dsimp [berendsenRadicand]
+  field_simp [ne_of_gt hq.2.2.2.2.1]
+  <;> ring
+```
+
+### 5. 对照表
+
+| 原文成分 | Lean对应 | 说明 |
+|---|---|---|
+| 本条引用的对象与公式 | MD.Ch08.berendsenTemperature, MD.Ch08.berendsenTemperature_derivative, MD.Ch08.berendsenRadicand, MD.Ch08.berendsenScale, MD.Ch08.berendsenScaleQualification, MD.Ch08.dot_smul_same, MD.Ch08.berendsenScale_energy | Berendsen温度方程的显式解、动量缩放、有效域和单次能量恒等式。 |
+
+[EXTRA] 取单位粒子质量的Euclidean动量平方和；有效域显式要求非零动量及非负根号，避免将总化sqrt/division当作物理方法。；只证明所印温度ODE的显式解及动量缩放能量恒等式；不声称温度控制必然正则采样。完整Verlet耦合的统计行为未证。
+记号与上下文：见所列原文与Lean量化变量。
+
+### 6. 审计结论
+
+本地：已对照目视原页核对对象、量词、技术资格和所列覆盖范围；网站尚未审阅。
+疑点：本条暂未发现需单列的原书疑误。
+网站：尚未送审。
+
+### 7. 状态与证明位置
+
+已证；Lean陈述可检查，证明完整性按本条状态区分。
+本条没有未完成的定理证明；覆盖缺口见上述范围及[EXTRA]。
+位置：Blueprint/Ch08.lean；MD.Ch08.berendsenTemperature, MD.Ch08.berendsenTemperature_derivative, MD.Ch08.berendsenRadicand, MD.Ch08.berendsenScale, MD.Ch08.berendsenScaleQualification, MD.Ch08.dot_smul_same, MD.Ch08.berendsenScale_energy。
+
+| 声明 | 数学状态 |
+|---|---|
+| `MD.Ch08.berendsenTemperature` | 定义或记号 |
+| `MD.Ch08.berendsenTemperature_derivative` | 已证 |
+| `MD.Ch08.berendsenRadicand` | 定义或记号 |
+| `MD.Ch08.berendsenScale` | 定义或记号 |
+| `MD.Ch08.berendsenScaleQualification` | 定义或记号 |
+| `MD.Ch08.dot_smul_same` | 已证 |
+| `MD.Ch08.berendsenScale_energy` | 已证 |
+
+## 1. MD-8.10-CanonicalTotalMomentumGaussian · unnumbered_claim · 印刷p.397–398 / PDFp.418–419
+
+### 2. 原文陈述
+
+In Euclidean canonical equilibrium, total momenta are sums of independent centered normal particle momenta and hence are centered normal.
+
+### 3. 原文证明
+
+对应原页推导逐字保存在statement_verbatim/original_page_text；排版以原页PDF为准。
+
+原页文字及推导保存在原文JSON的original_page_text；网站子包附对应完整原页PDF。
+
+### 4. 完整当前Lean（原文与修正版独立列出）
+
+```lean
+theorem totalMomentum_gaussian {N d : ℕ} (P : Measure Ω) [IsProbabilityMeasure P]
+    (p : Ω → ParticleConfig N d) (m : Fin N → ℝ) (θ : ℝ)
+    (hm : ∀ i, 0 < m i) (hθ : 0 < θ) (a : Fin d)
+    (hind : iIndepFun (fun i sample ↦ p sample i a) P)
+    (hlaw : ∀ i, HasLaw (fun sample ↦ p sample i a)
+      (gaussianReal 0 (Real.toNNReal (m i*θ))) P) :
+    HasLaw (fun sample ↦ totalMomentum (p sample) a)
+      (gaussianReal 0 (Real.toNNReal ((∑ i, m i)*θ))) P := by
+  sorry
+```
+
+### 5. 对照表
+
+| 原文成分 | Lean对应 | 说明 |
+|---|---|---|
+| 本条引用的对象与公式 | MD.Ch08.totalMomentum_gaussian | 实际独立Gaussian动量假设下的一坐标总动量分布；非采样收敛定理。 |
+
+[EXTRA] 结论明确以各粒子坐标的独立正则Gaussian分布为前提；不从“系统遍历”直接推出有限时刻分布。；原页比较直方图和轨迹属于经验试验，未转为普适数学断言。
+记号与上下文：见所列原文与Lean量化变量。
+
+### 6. 审计结论
+
+本地：已对照目视原页核对对象、量词、技术资格和所列覆盖范围；网站尚未审阅。
+疑点：本条暂未发现需单列的原书疑误。
+网站：尚未送审。
+
+### 7. 状态与证明位置
+
+未证陈述；Lean陈述可检查，证明完整性按本条状态区分。
+未证原因：有限独立正态和分布、有限和坐标与总动量的桥接。
+位置：Blueprint/Ch08.lean；MD.Ch08.totalMomentum_gaussian。
+
+| 声明 | 数学状态 |
+|---|---|
+| `MD.Ch08.totalMomentum_gaussian` | 未证 |
+
+## 1. MD-8.10-NHLTotalMomentumSign · unnumbered_claim · 印刷p.398 / PDFp.419
+
+### 2. 原文陈述
+
+With central forces and an NHL thermostat, total momentum obeys Ṗ=−ξP, so each component keeps the sign of its initial value.
+
+### 3. 原文证明
+
+对应原页推导逐字保存在statement_verbatim/original_page_text；排版以原页PDF为准。
+
+原页文字及推导保存在原文JSON的original_page_text；网站子包附对应完整原页PDF。
+
+### 4. 完整当前Lean（原文与修正版独立列出）
+
+```lean
+def nhlMomentumFactor (ξ : ℝ → ℝ) (t : ℝ) : ℝ := Real.exp (-(∫ s in (0 : ℝ)..t, ξ s))
+theorem nhlMomentumFactor_pos (ξ : ℝ → ℝ) (t : ℝ) : 0 < nhlMomentumFactor ξ t := Real.exp_pos _
+theorem nhlMomentum_sign (ξ : ℝ → ℝ) (P0 : ℝ) (t : ℝ) :
+    (0 < nhlMomentumFactor ξ t*P0 ↔ 0 < P0) ∧
+    (nhlMomentumFactor ξ t*P0 < 0 ↔ P0 < 0) := by
+  constructor
+  · exact mul_pos_iff_of_pos_left (nhlMomentumFactor_pos ξ t)
+  · constructor
+    · intro h
+      by_contra hp
+      have hp' : 0 ≤ P0 := le_of_not_gt hp
+      have hn := mul_nonneg (le_of_lt (nhlMomentumFactor_pos ξ t)) hp'
+      linarith
+    · intro h
+      exact mul_neg_of_pos_of_neg (nhlMomentumFactor_pos ξ t) h
+theorem nhlTotalMomentum_odeSolution (ξ P : ℝ → ℝ) (hξ : Continuous ξ)
+    (hP : ∀ t, HasDerivAt P (-ξ t*P t) t) (t : ℝ) :
+    P t=nhlMomentumFactor ξ t*P 0 := by
+  sorry
+```
+
+### 5. 对照表
+
+| 原文成分 | Lean对应 | 说明 |
+|---|---|---|
+| 本条引用的对象与公式 | MD.Ch08.nhlMomentumFactor, MD.Ch08.nhlMomentumFactor_pos, MD.Ch08.nhlMomentum_sign, MD.Ch08.nhlTotalMomentum_odeSolution | 总动量标量ODE解目标、正指数因子及显式表达式的符号保持。 |
+
+[EXTRA] 只对连续ξ及实际标量ODE声明解公式，正指数乘子的符号结论已证；从NHL粒子SDE推出总动量ODE仍需成对力抵消及积分方程桥接。；欧氏空间正负动量不变与特殊初值下遍历性的讨论不扩展为任意系统的遍历性反例。
+记号与上下文：见所列原文与Lean量化变量。
+
+### 6. 审计结论
+
+本地：已对照目视原页核对对象、量词、技术资格和所列覆盖范围；网站尚未审阅。
+疑点：本条暂未发现需单列的原书疑误。
+网站：尚未送审。
+
+### 7. 状态与证明位置
+
+未证陈述；Lean陈述可检查，证明完整性按本条状态区分。
+未证原因：线性非自治ODE唯一性与积分因子公式桥接。
+位置：Blueprint/Ch08.lean；MD.Ch08.nhlMomentumFactor, MD.Ch08.nhlMomentumFactor_pos, MD.Ch08.nhlMomentum_sign, MD.Ch08.nhlTotalMomentum_odeSolution。
+
+| 声明 | 数学状态 |
+|---|---|
+| `MD.Ch08.nhlMomentumFactor` | 定义或记号 |
+| `MD.Ch08.nhlMomentumFactor_pos` | 已证 |
+| `MD.Ch08.nhlMomentum_sign` | 已证 |
+| `MD.Ch08.nhlTotalMomentum_odeSolution` | 未证 |
 

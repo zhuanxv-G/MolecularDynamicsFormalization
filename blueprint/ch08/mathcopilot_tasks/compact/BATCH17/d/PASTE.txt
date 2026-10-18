@@ -1,0 +1,389 @@
+以附件/PASTE 为准，忽略 /workspace 旧文件；Mathlib 定义按标准含义采信。
+本任务只审本条：原文转录、对象资格、定义体、量词、全部结论及[EXTRA]是否一致；Lean编译不代替语义审阅。
+Lean/Mathlib均4.34.0。原页PDF映射：[417]；印刷页=[396].
+input_sha256请原样回显：
+{
+  "Blueprint/Ch08.lean": "2800812fadd8e2557013f1941e4570401f7903d46f44baf07e23d5531da22a72",
+  "blueprint/ch08/ch08_source.json": "9b994b0f64cd22c85c2ad4123fbfdbd064bd7a6d070fe13b721794432f9f7a63",
+  "BATCH17d_PAGES.pdf": "0a7a1a507971dc3177067faa5228e2ce9aa491e11119bd9607858690f20f8857"
+}
+用代码将JSON对象(batch,input_sha256,items)写到 /workspace/.mathcopilot/reviews/ch08/BATCH17d_review.json；items仅含本source_id。
+items字段：source_id、verdict(PASS/FAIL/NEEDS_HUMAN)、transcription、semantic_review、counterexample、suggested_fix、printed_version、corrected_version。逐版区分原文疑误和修正版结论；缺材料必须具体指出，不猜测。写后json.loads自检，最后仅回复路径及统计。
+
+## 原文JSON
+```json
+{
+  "source_id": "MD-8.9.4-PNHLSplittingAlgorithms",
+  "kind": "algorithm",
+  "label": null,
+  "section": "8.9.4",
+  "printed_page": "396",
+  "pdf_page": "417",
+  "statement_latex": "PNHL-S: A½B½C½D½OD½C½B½A½; PNHL-N: A½B½C½D½OD½C½A½B½.",
+  "statement_verbatim": "396\n8\nExtended Variable Methods\nWe could split this system in a number of ways. Each of these maps exp.tL?/\nmay be integrated in the weak sense. Two examples of integrators are the PNHL-S\nand PNHL-N schemes deﬁned in [228] as\neh OLPNHL-S D e\nh\n2 LAe\nh\n2 LBe\nh\n2 LCe\nh\n2 LDehLOe\nh\n2 LDe\nh\n2 LCe\nh\n2 LBe\nh\n2 LA;\nand\neh OLPNHL-N D e\nh\n2 LAe\nh\n2 LBe\nh\n2 LCe\nh\n2 LDehLOe\nh\n2 LDe\nh\n2 LCe\nh\n2 LAe\nh\n2 LB:\nTraditionally, and elsewhere in this book, we have found symmetric compositions\nto have superior performance. This is normally due to the fact that they deliver\neven order of accuracy. In the case of PNHL-S, the supposed advantage would be\ncompounded by the fact that, as in the Verlet and \u0002BAOAB\u0003 methods, the forces\nneed only be computed once per timestep. However, rather surprisingly, and for\nreasons that are as yet unclear, it turns out that the most advantageous technique\nfrom the point of view of accuracy with respect to the invariant measure has been\nobserved to be the nonsymmetric integration strategy PNHL-N. This method also\nshows, for a variety of observables, 2nd order approximation of averages. It also\nallows the use of a much larger integration timestep in practice—so large that it\nis still more efﬁcient for DPD-like simulations when the extra force calculation is\ntaken into account!\n8.10\nNumerical Experiments\nWe investigate a simple test system of 18 unit-mass particles in a 2D periodic 3 \u0004 3\nbox using the typical soft DPD potential given in (8.83), with a cutoff radius of 1.0\nand ˛ D 25. In our simulations the temperature was ﬁxed at T D 1.\nWe implement the Nosé-Hoover-Langevin and Langevin dynamics schemes,\nas well as the momentum-conserving PNHL thermostat, and plot the normalized\nmomentum distributions and time evolution of total momentum for the methods\nin Fig. 8.8. Additionally we compare against the method of Berendsen [32], which\nmodiﬁes Netwon’s equations of motion to incorporate a relaxation process for the\ntotal system temperature, representing the exchange of energy from the coupling\nof the external bath. If the instantaneous temperature at time t is T.t/, with target\ntemperature T, then using the Berendsen device we have\nPT.t/ D \nT.T \u0003 T.t//;\n",
+  "verbatim_scope": "完整对应原页文字层，逐字保留；本条数学成分由statement_latex及statement_scope定位。",
+  "proof_latex": null,
+  "proof_note": "对应原页推导逐字保存在statement_verbatim/original_page_text；排版以原页PDF为准。",
+  "original_page_text": [
+    {
+      "pdf_page": 417,
+      "printed_page": 396,
+      "text": "396\n8\nExtended Variable Methods\nWe could split this system in a number of ways. Each of these maps exp.tL?/\nmay be integrated in the weak sense. Two examples of integrators are the PNHL-S\nand PNHL-N schemes deﬁned in [228] as\neh OLPNHL-S D e\nh\n2 LAe\nh\n2 LBe\nh\n2 LCe\nh\n2 LDehLOe\nh\n2 LDe\nh\n2 LCe\nh\n2 LBe\nh\n2 LA;\nand\neh OLPNHL-N D e\nh\n2 LAe\nh\n2 LBe\nh\n2 LCe\nh\n2 LDehLOe\nh\n2 LDe\nh\n2 LCe\nh\n2 LAe\nh\n2 LB:\nTraditionally, and elsewhere in this book, we have found symmetric compositions\nto have superior performance. This is normally due to the fact that they deliver\neven order of accuracy. In the case of PNHL-S, the supposed advantage would be\ncompounded by the fact that, as in the Verlet and \u0002BAOAB\u0003 methods, the forces\nneed only be computed once per timestep. However, rather surprisingly, and for\nreasons that are as yet unclear, it turns out that the most advantageous technique\nfrom the point of view of accuracy with respect to the invariant measure has been\nobserved to be the nonsymmetric integration strategy PNHL-N. This method also\nshows, for a variety of observables, 2nd order approximation of averages. It also\nallows the use of a much larger integration timestep in practice—so large that it\nis still more efﬁcient for DPD-like simulations when the extra force calculation is\ntaken into account!\n8.10\nNumerical Experiments\nWe investigate a simple test system of 18 unit-mass particles in a 2D periodic 3 \u0004 3\nbox using the typical soft DPD potential given in (8.83), with a cutoff radius of 1.0\nand ˛ D 25. In our simulations the temperature was ﬁxed at T D 1.\nWe implement the Nosé-Hoover-Langevin and Langevin dynamics schemes,\nas well as the momentum-conserving PNHL thermostat, and plot the normalized\nmomentum distributions and time evolution of total momentum for the methods\nin Fig. 8.8. Additionally we compare against the method of Berendsen [32], which\nmodiﬁes Netwon’s equations of motion to incorporate a relaxation process for the\ntotal system temperature, representing the exchange of energy from the coupling\nof the external bath. If the instantaneous temperature at time t is T.t/, with target\ntemperature T, then using the Berendsen device we have\nPT.t/ D \nT.T \u0003 T.t//;\n"
+    }
+  ],
+  "numbered_equations": [],
+  "transcription_note": "文字层逐字保留；数学排版另行转写，原页中的特殊字形编码不静默替换。PDF420仅取Exercises之前。",
+  "context_notation": [],
+  "extra_assumptions": [
+    "O需θ,Q>0、γ,h≥0及R独立标准正态；A/B/D给实际子步。C仅给逐对精确更新，全C需有序逐对近似，未冒称精确全流。",
+    "两组合保留原印因子顺序；不证明全方法弱阶、不变分布误差或非对称方法更优的经验结论。"
+  ],
+  "issues": [],
+  "statement_scope": "A/B/D/O实际更新、单对C更新和S/N的原印外层组合；全C指数与误差理论列缺口。",
+  "lean_decl": "MD.Ch08.pnhlAStep",
+  "lean_declarations": [
+    "MD.Ch08.pnhlAStep",
+    "MD.Ch08.pnhlBStep",
+    "MD.Ch08.pnhlDStep",
+    "MD.Ch08.pnhlOStep",
+    "MD.Ch08.pnhlPairCStep",
+    "MD.Ch08.pnhlSComposition",
+    "MD.Ch08.pnhlNComposition"
+  ],
+  "source_page_verification": "见source_page_checks.json，已目视核对本条原页。",
+  "repair_log": [],
+  "documented_priors": []
+}
+```
+
+## 完整本条Lean
+```lean
+def pnhlAStep {N d : ℕ} (m : Fin N → ℝ) (h : ℝ) (z : PNHLState N d) : PNHLState N d :=
+  (((fun i ↦ z.1.1 i+(h/m i) • z.1.2 i),z.1.2),z.2)
+def pnhlBStep {N d : ℕ} (α rc h : ℝ) (z : PNHLState N d) : PNHLState N d :=
+  ((z.1.1,z.1.2+h • dpdConservative α rc z.1.1),z.2)
+def pnhlDStep {N d : ℕ} (m : Fin N → ℝ) (θ Q h : ℝ) (wD : ℝ → ℝ)
+    (z : PNHLState N d) : PNHLState N d :=
+  (z.1,z.2+h*pairwiseFeedback m θ Q wD z.1.1 z.1.2)
+def pnhlOStep {N d : ℕ} (θ Q γ h R : ℝ) (z : PNHLState N d) : PNHLState N d :=
+  (z.1,Real.exp (-γ*h)*z.2+Real.sqrt (θ/Q*(1-Real.exp (-2*γ*h)))*R)
+def pnhlPairCStep {N d : ℕ} (i j : Fin N) (m : Fin N → ℝ) (h : ℝ)
+    (wD : ℝ → ℝ) (z : PNHLState N d) : PNHLState N d :=
+  let mr := reducedMass8 (m i) (m j)
+  let e := pairDirection z.1.1 i j
+  let u := dot e (relativeVelocity m z.1.2 i j)
+  let du := u*(Real.exp (-z.2*wD (pairDistance z.1.1 i j)*h/mr)-1)
+  ((z.1.1,dpdPairMomentumStep i j e mr du z.1.2),z.2)
+def pnhlSComposition {E : Type*} (A B C D O : ℝ → E → E) (h : ℝ) : E → E :=
+  A (h/2) ∘ B (h/2) ∘ C (h/2) ∘ D (h/2) ∘ O h ∘ D (h/2) ∘ C (h/2) ∘ B (h/2) ∘ A (h/2)
+def pnhlNComposition {E : Type*} (A B C D O : ℝ → E → E) (h : ℝ) : E → E :=
+  A (h/2) ∘ B (h/2) ∘ C (h/2) ∘ D (h/2) ∘ O h ∘ D (h/2) ∘ C (h/2) ∘ A (h/2) ∘ B (h/2)
+```
+
+## 项目依赖定义体及选择规格
+以下def/abbrev/structure完整保留；定理列出完整类型，Mathlib标准定义无需摘录。
+
+### MD.Ch08.Vec (Blueprint/Ch08.lean:17)
+原文件上下文：
+```lean
+open Set Filter MeasureTheory ProbabilityTheory MolecularDynamics
+open scoped BigOperators Topology ContDiff ENNReal NNReal Matrix
+variable {Ω : Type*} [MeasurableSpace Ω]
+variable {n : ℕ}
+```
+```lean
+abbrev Vec (n : ℕ) := Fin n → ℝ
+```
+
+### MD.Ch08.dot (Blueprint/Ch08.lean:19)
+原文件上下文：
+```lean
+open Set Filter MeasureTheory ProbabilityTheory MolecularDynamics
+open scoped BigOperators Topology ContDiff ENNReal NNReal Matrix
+variable {Ω : Type*} [MeasurableSpace Ω]
+variable {n : ℕ}
+```
+```lean
+def dot (v w : Vec n) : ℝ := ∑ i, v i * w i
+```
+
+### MD.Ch08.ParticleConfig (Blueprint/Ch08.lean:1334)
+原文件上下文：
+```lean
+open Set Filter MeasureTheory ProbabilityTheory MolecularDynamics
+open scoped BigOperators Topology ContDiff ENNReal NNReal Matrix
+variable {Ω : Type*} [MeasurableSpace Ω]
+variable {n : ℕ}
+```
+```lean
+abbrev ParticleConfig (N d : ℕ) := Fin N → Vec d
+```
+
+### MD.Ch08.ParticlePhase (Blueprint/Ch08.lean:1335)
+原文件上下文：
+```lean
+open Set Filter MeasureTheory ProbabilityTheory MolecularDynamics
+open scoped BigOperators Topology ContDiff ENNReal NNReal Matrix
+variable {Ω : Type*} [MeasurableSpace Ω]
+variable {n : ℕ}
+```
+```lean
+abbrev ParticlePhase (N d : ℕ) := ParticleConfig N d × ParticleConfig N d
+```
+
+### MD.Ch08.pairDistance (Blueprint/Ch08.lean:1349)
+原文件上下文：
+```lean
+open Set Filter MeasureTheory ProbabilityTheory MolecularDynamics
+open scoped BigOperators Topology ContDiff ENNReal NNReal Matrix
+variable {Ω : Type*} [MeasurableSpace Ω]
+variable {n : ℕ}
+```
+```lean
+def pairDistance {N d : ℕ} (q : ParticleConfig N d) (i j : Fin N) : ℝ :=
+  Real.sqrt (dot (q i-q j) (q i-q j))
+```
+
+### MD.Ch08.pairDirection (Blueprint/Ch08.lean:1351)
+原文件上下文：
+```lean
+open Set Filter MeasureTheory ProbabilityTheory MolecularDynamics
+open scoped BigOperators Topology ContDiff ENNReal NNReal Matrix
+variable {Ω : Type*} [MeasurableSpace Ω]
+variable {n : ℕ}
+```
+```lean
+def pairDirection {N d : ℕ} (q : ParticleConfig N d) (i j : Fin N) : Vec d :=
+  (pairDistance q i j)⁻¹ • (q i-q j)
+```
+
+### MD.Ch08.dpdPairConservative (Blueprint/Ch08.lean:1354)
+原文件上下文：
+```lean
+open Set Filter MeasureTheory ProbabilityTheory MolecularDynamics
+open scoped BigOperators Topology ContDiff ENNReal NNReal Matrix
+variable {Ω : Type*} [MeasurableSpace Ω]
+variable {n : ℕ}
+```
+```lean
+def dpdPairConservative {N d : ℕ} (α rc : ℝ) (q : ParticleConfig N d) (i j : Fin N) : Vec d :=
+  if pairDistance q i j < rc then (α*(1-pairDistance q i j/rc)) • pairDirection q i j else 0
+```
+
+### MD.Ch08.dpdConservative (Blueprint/Ch08.lean:1358)
+原文件上下文：
+```lean
+open Set Filter MeasureTheory ProbabilityTheory MolecularDynamics
+open scoped BigOperators Topology ContDiff ENNReal NNReal Matrix
+variable {Ω : Type*} [MeasurableSpace Ω]
+variable {n : ℕ}
+```
+```lean
+def dpdConservative {N d : ℕ} (α rc : ℝ) (q : ParticleConfig N d) : ParticleConfig N d :=
+  fun i ↦ ∑ j ∈ Finset.univ.filter (fun j ↦ j ≠ i), dpdPairConservative α rc q i j
+```
+
+### MD.Ch08.relativeVelocity (Blueprint/Ch08.lean:1372)
+原文件上下文：
+```lean
+open Set Filter MeasureTheory ProbabilityTheory MolecularDynamics
+open scoped BigOperators Topology ContDiff ENNReal NNReal Matrix
+variable {Ω : Type*} [MeasurableSpace Ω]
+variable {n : ℕ}
+```
+```lean
+def relativeVelocity {N d : ℕ} (m : Fin N → ℝ) (p : ParticleConfig N d) (i j : Fin N) : Vec d :=
+  (m i)⁻¹ • p i-(m j)⁻¹ • p j
+```
+
+### MD.Ch08.pairImpulseVector (Blueprint/Ch08.lean:1382)
+原文件上下文：
+```lean
+open Set Filter MeasureTheory ProbabilityTheory MolecularDynamics
+open scoped BigOperators Topology ContDiff ENNReal NNReal Matrix
+variable {Ω : Type*} [MeasurableSpace Ω]
+variable {n : ℕ}
+```
+```lean
+def pairImpulseVector {N d : ℕ} (i j : Fin N) (v : Vec d) : ParticleConfig N d :=
+  Pi.single i v-Pi.single j v
+```
+
+### MD.Ch08.reducedMass8 (Blueprint/Ch08.lean:1561)
+原文件上下文：
+```lean
+open Set Filter MeasureTheory ProbabilityTheory MolecularDynamics
+open scoped BigOperators Topology ContDiff ENNReal NNReal Matrix
+variable {Ω : Type*} [MeasurableSpace Ω]
+variable {n : ℕ}
+```
+```lean
+def reducedMass8 (mi mj : ℝ) : ℝ := mi*mj/(mi+mj)
+```
+
+### MD.Ch08.dpdPairMomentumStep (Blueprint/Ch08.lean:1571)
+原文件上下文：
+```lean
+open Set Filter MeasureTheory ProbabilityTheory MolecularDynamics
+open scoped BigOperators Topology ContDiff ENNReal NNReal Matrix
+variable {Ω : Type*} [MeasurableSpace Ω]
+variable {n : ℕ}
+```
+```lean
+def dpdPairMomentumStep {N d : ℕ} (i j : Fin N) (e : Vec d) (mr du : ℝ)
+    (p : ParticleConfig N d) : ParticleConfig N d := p+pairImpulseVector i j ((mr*du) • e)
+```
+
+### MD.Ch08.PNHLState (Blueprint/Ch08.lean:1581)
+原文件上下文：
+```lean
+open Set Filter MeasureTheory ProbabilityTheory MolecularDynamics
+open scoped BigOperators Topology ContDiff ENNReal NNReal Matrix
+variable {Ω : Type*} [MeasurableSpace Ω]
+variable {n : ℕ}
+```
+```lean
+abbrev PNHLState (N d : ℕ) := ParticlePhase N d × ℝ
+```
+
+### MD.Ch08.pairwiseFeedback (Blueprint/Ch08.lean:1582)
+原文件上下文：
+```lean
+open Set Filter MeasureTheory ProbabilityTheory MolecularDynamics
+open scoped BigOperators Topology ContDiff ENNReal NNReal Matrix
+variable {Ω : Type*} [MeasurableSpace Ω]
+variable {n : ℕ}
+```
+```lean
+def pairwiseFeedback {N d : ℕ} (m : Fin N → ℝ) (θ Q : ℝ) (wD : ℝ → ℝ)
+    (q p : ParticleConfig N d) : ℝ :=
+  (∑ i, ∑ j ∈ Finset.univ.filter (fun j ↦ i < j), wD (pairDistance q i j)*
+    ((dot (relativeVelocity m p i j) (pairDirection q i j))^2-θ/reducedMass8 (m i) (m j)))/Q
+```
+
+### MD.Ch08.pnhlAStep (Blueprint/Ch08.lean:1661)
+原文件上下文：
+```lean
+open Set Filter MeasureTheory ProbabilityTheory MolecularDynamics
+open scoped BigOperators Topology ContDiff ENNReal NNReal Matrix
+variable {Ω : Type*} [MeasurableSpace Ω]
+variable {n : ℕ}
+```
+```lean
+def pnhlAStep {N d : ℕ} (m : Fin N → ℝ) (h : ℝ) (z : PNHLState N d) : PNHLState N d :=
+  (((fun i ↦ z.1.1 i+(h/m i) • z.1.2 i),z.1.2),z.2)
+```
+
+### MD.Ch08.pnhlBStep (Blueprint/Ch08.lean:1663)
+原文件上下文：
+```lean
+open Set Filter MeasureTheory ProbabilityTheory MolecularDynamics
+open scoped BigOperators Topology ContDiff ENNReal NNReal Matrix
+variable {Ω : Type*} [MeasurableSpace Ω]
+variable {n : ℕ}
+```
+```lean
+def pnhlBStep {N d : ℕ} (α rc h : ℝ) (z : PNHLState N d) : PNHLState N d :=
+  ((z.1.1,z.1.2+h • dpdConservative α rc z.1.1),z.2)
+```
+
+### MD.Ch08.pnhlDStep (Blueprint/Ch08.lean:1665)
+原文件上下文：
+```lean
+open Set Filter MeasureTheory ProbabilityTheory MolecularDynamics
+open scoped BigOperators Topology ContDiff ENNReal NNReal Matrix
+variable {Ω : Type*} [MeasurableSpace Ω]
+variable {n : ℕ}
+```
+```lean
+def pnhlDStep {N d : ℕ} (m : Fin N → ℝ) (θ Q h : ℝ) (wD : ℝ → ℝ)
+    (z : PNHLState N d) : PNHLState N d :=
+  (z.1,z.2+h*pairwiseFeedback m θ Q wD z.1.1 z.1.2)
+```
+
+### MD.Ch08.pnhlOStep (Blueprint/Ch08.lean:1668)
+原文件上下文：
+```lean
+open Set Filter MeasureTheory ProbabilityTheory MolecularDynamics
+open scoped BigOperators Topology ContDiff ENNReal NNReal Matrix
+variable {Ω : Type*} [MeasurableSpace Ω]
+variable {n : ℕ}
+```
+```lean
+def pnhlOStep {N d : ℕ} (θ Q γ h R : ℝ) (z : PNHLState N d) : PNHLState N d :=
+  (z.1,Real.exp (-γ*h)*z.2+Real.sqrt (θ/Q*(1-Real.exp (-2*γ*h)))*R)
+```
+
+### MD.Ch08.pnhlPairCStep (Blueprint/Ch08.lean:1670)
+原文件上下文：
+```lean
+open Set Filter MeasureTheory ProbabilityTheory MolecularDynamics
+open scoped BigOperators Topology ContDiff ENNReal NNReal Matrix
+variable {Ω : Type*} [MeasurableSpace Ω]
+variable {n : ℕ}
+```
+```lean
+def pnhlPairCStep {N d : ℕ} (i j : Fin N) (m : Fin N → ℝ) (h : ℝ)
+    (wD : ℝ → ℝ) (z : PNHLState N d) : PNHLState N d :=
+  let mr := reducedMass8 (m i) (m j)
+  let e := pairDirection z.1.1 i j
+  let u := dot e (relativeVelocity m z.1.2 i j)
+  let du := u*(Real.exp (-z.2*wD (pairDistance z.1.1 i j)*h/mr)-1)
+  ((z.1.1,dpdPairMomentumStep i j e mr du z.1.2),z.2)
+```
+
+### MD.Ch08.pnhlSComposition (Blueprint/Ch08.lean:1677)
+原文件上下文：
+```lean
+open Set Filter MeasureTheory ProbabilityTheory MolecularDynamics
+open scoped BigOperators Topology ContDiff ENNReal NNReal Matrix
+variable {Ω : Type*} [MeasurableSpace Ω]
+variable {n : ℕ}
+```
+```lean
+def pnhlSComposition {E : Type*} (A B C D O : ℝ → E → E) (h : ℝ) : E → E :=
+  A (h/2) ∘ B (h/2) ∘ C (h/2) ∘ D (h/2) ∘ O h ∘ D (h/2) ∘ C (h/2) ∘ B (h/2) ∘ A (h/2)
+```
+
+### MD.Ch08.pnhlNComposition (Blueprint/Ch08.lean:1679)
+原文件上下文：
+```lean
+open Set Filter MeasureTheory ProbabilityTheory MolecularDynamics
+open scoped BigOperators Topology ContDiff ENNReal NNReal Matrix
+variable {Ω : Type*} [MeasurableSpace Ω]
+variable {n : ℕ}
+```
+```lean
+def pnhlNComposition {E : Type*} (A B C D O : ℝ → E → E) (h : ℝ) : E → E :=
+  A (h/2) ∘ B (h/2) ∘ C (h/2) ∘ D (h/2) ∘ O h ∘ D (h/2) ∘ C (h/2) ∘ A (h/2) ∘ B (h/2)
+```
+
+### MolecularDynamics.Chapter02Review.Q (MolecularDynamics/Chapter02/ReviewDefinitions.lean:17)
+原文件上下文：
+```lean
+open Set Filter Matrix
+open scoped BigOperators Topology
+```
+```lean
+abbrev Q (n : ℕ) := Fin n → ℝ
+```
+
+### MolecularDynamics.Chapter04Review.Q (MolecularDynamics/Chapter04/ReviewDefinitions.lean:15)
+原文件上下文：
+```lean
+open Set Matrix
+open scoped BigOperators Topology Matrix.Norms.Elementwise
+```
+```lean
+abbrev Q (n : ℕ) := Fin n → ℝ
+```
+
+### MolecularDynamics.Chapter05Review.E (MolecularDynamics/Chapter05/ReviewDefinitions.lean:18)
+原文件上下文：
+```lean
+open Set Filter MeasureTheory Matrix
+open scoped BigOperators Topology ENNReal
+```
+```lean
+abbrev E (n : ℕ) := EuclideanSpace ℝ (Fin n)
+```

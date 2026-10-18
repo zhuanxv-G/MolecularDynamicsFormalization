@@ -1,0 +1,196 @@
+以附件/PASTE 为准，忽略 /workspace 旧文件；Mathlib 定义按标准含义采信。
+本任务只审本条：原文转录、对象资格、定义体、量词、全部结论及[EXTRA]是否一致；Lean编译不代替语义审阅。
+Lean/Mathlib均4.34.0。原页PDF映射：[403]；印刷页=[382].
+input_sha256请原样回显：
+{
+  "Blueprint/Ch08.lean": "2800812fadd8e2557013f1941e4570401f7903d46f44baf07e23d5531da22a72",
+  "blueprint/ch08/ch08_source.json": "9b994b0f64cd22c85c2ad4123fbfdbd064bd7a6d070fe13b721794432f9f7a63",
+  "BATCH14b_PAGES.pdf": "3c758989f135e1174713612f159e64440a3cf14727b59f444ee745c961561bd0"
+}
+用代码将JSON对象(batch,input_sha256,items)写到 /workspace/.mathcopilot/reviews/ch08/BATCH14b_review.json；items仅含本source_id。
+items字段：source_id、verdict(PASS/FAIL/NEEDS_HUMAN)、transcription、semantic_review、counterexample、suggested_fix、printed_version、corrected_version。逐版区分原文疑误和修正版结论；缺材料必须具体指出，不猜测。写后json.loads自检，最后仅回复路径及统计。
+
+## 原文JSON
+```json
+{
+  "source_id": "MD-8.8.1-PistonReducedPDE",
+  "kind": "unnumbered_claim",
+  "label": null,
+  "section": "8.8.1",
+  "printed_page": "382",
+  "pdf_page": "403",
+  "statement_latex": "−q·∇qψ+p·∇pψ−ψ−V∂Vψ+(βVΠ−βPV+1)ψ=0, solved by ψ∝exp(−β(H+PV)). (8.74).",
+  "statement_verbatim": "382\n8\nExtended Variable Methods\nIf \u0005 has the form \u0005 D exp.\u0003ˇ\u0006P\u000f2=2/ \u0004 .q; p; V; \u0012/ then eliminate \u000f, reducing\nL\u0004\u0005 D 0 to\n\u0003rq \u0002 .q / C rp \u0002 .p / \u0003 @\n@V .V / C ˇ.V˘.q; p; V/ \u0003 PV C kBT/ D 0:\nThis results in\n\u0003 q \u0002 rq C p \u0002 rp \u0003 \u0003 V @ \n@V C .ˇV˘.q; p; V/ \u0003 ˇPV C 1/ D 0:\n(8.74)\nA solution (the desired one) is given by\n / exp.\u0003ˇ.H C PV//;\nwhere substituting into (8.74) gives\nh\nˇq \u0002 rU.q/ \u0003 ˇp \u0002 M\u00021p \u0003 1 C ˇV @U\n@V\nCˇPV C .ˇV˘.q; p; V/ \u0003 ˇPV C 1/\ni\n D 0;\nwhich is quickly checked to be true, and hence the dynamics preserves \u0005 D\nexp.\u0003ˇ\u0006P\u000f2=2/ \u0004 .\nIt is difﬁcult to see how their could be other solutions , but we know from\nthe Nosé-Hoover case that this must be possible. We improve the robustness of\nthe method by introducing Ornstein-Uhlenbeck type stochastic processes in the two\nauxiliary variables \u0012 and \u000f, yielding the system\nPq D M\u00021p C \u000fq;\n(8.75)\nPp D F.q/ \u0003 \u000fp \u0003 \u0012p;\n(8.76)\nPV D \u000fV;\n(8.77)\nd\u0012 D ŒhT \u0003 \nT\u0012\t dt C\np\n2kBT\nT=\u0006TdWT;\n(8.78)\nd\u000f D ŒhP \u0003 \nP\u000f\t dt C\np\n2kBT\nP=\u0006PdWP;\n(8.79)\nwhere \nT; \nP \b 0 are two parameters governing the strength of the noise.\n8.8.2\nDiscretization of the NHL Piston\nObservations in Chap. 7 and our experience with the Nosé-Hoover-Langevinmethod\nlead us to propose splitting methods to separate the Ornstein-Uhlenbeck processes\n",
+  "verbatim_scope": "完整对应原页文字层，逐字保留；本条数学成分由statement_latex及statement_scope定位。",
+  "proof_latex": null,
+  "proof_note": "对应原页推导逐字保存在statement_verbatim/original_page_text；排版以原页PDF为准。",
+  "original_page_text": [
+    {
+      "pdf_page": 403,
+      "printed_page": 382,
+      "text": "382\n8\nExtended Variable Methods\nIf \u0005 has the form \u0005 D exp.\u0003ˇ\u0006P\u000f2=2/ \u0004 .q; p; V; \u0012/ then eliminate \u000f, reducing\nL\u0004\u0005 D 0 to\n\u0003rq \u0002 .q / C rp \u0002 .p / \u0003 @\n@V .V / C ˇ.V˘.q; p; V/ \u0003 PV C kBT/ D 0:\nThis results in\n\u0003 q \u0002 rq C p \u0002 rp \u0003 \u0003 V @ \n@V C .ˇV˘.q; p; V/ \u0003 ˇPV C 1/ D 0:\n(8.74)\nA solution (the desired one) is given by\n / exp.\u0003ˇ.H C PV//;\nwhere substituting into (8.74) gives\nh\nˇq \u0002 rU.q/ \u0003 ˇp \u0002 M\u00021p \u0003 1 C ˇV @U\n@V\nCˇPV C .ˇV˘.q; p; V/ \u0003 ˇPV C 1/\ni\n D 0;\nwhich is quickly checked to be true, and hence the dynamics preserves \u0005 D\nexp.\u0003ˇ\u0006P\u000f2=2/ \u0004 .\nIt is difﬁcult to see how their could be other solutions , but we know from\nthe Nosé-Hoover case that this must be possible. We improve the robustness of\nthe method by introducing Ornstein-Uhlenbeck type stochastic processes in the two\nauxiliary variables \u0012 and \u000f, yielding the system\nPq D M\u00021p C \u000fq;\n(8.75)\nPp D F.q/ \u0003 \u000fp \u0003 \u0012p;\n(8.76)\nPV D \u000fV;\n(8.77)\nd\u0012 D ŒhT \u0003 \nT\u0012\t dt C\np\n2kBT\nT=\u0006TdWT;\n(8.78)\nd\u000f D ŒhP \u0003 \nP\u000f\t dt C\np\n2kBT\nP=\u0006PdWP;\n(8.79)\nwhere \nT; \nP \b 0 are two parameters governing the strength of the noise.\n8.8.2\nDiscretization of the NHL Piston\nObservations in Chap. 7 and our experience with the Nosé-Hoover-Langevinmethod\nlead us to propose splitting methods to separate the Ornstein-Uhlenbeck processes\n"
+    }
+  ],
+  "numbered_equations": [
+    "8.74"
+  ],
+  "transcription_note": "文字层逐字保留；数学排版另行转写，原页中的特殊字形编码不静默替换。PDF420仅取Exercises之前。",
+  "context_notation": [],
+  "extra_assumptions": [
+    "只核对所印局部微分方程；正V消去压力分母，概率归一、边界通量与遍历性未覆盖。"
+  ],
+  "issues": [],
+  "statement_scope": "完整(8.74)及Boltzmann权代入目标。",
+  "lean_decl": "MD.Ch08.pistonReducedOperator",
+  "lean_declarations": [
+    "MD.Ch08.pistonReducedOperator",
+    "MD.Ch08.pistonReduced_boltzmann"
+  ],
+  "source_page_verification": "见source_page_checks.json，已目视核对本条原页。",
+  "repair_log": [],
+  "documented_priors": []
+}
+```
+
+## 完整本条Lean
+```lean
+def pistonReducedOperator (invm : Vec n) (U : Vec n × ℝ → ℝ) (β P : ℝ)
+    (ψ : Phase n × ℝ → ℝ) (z : Phase n × ℝ) : ℝ :=
+  -fderiv ℝ ψ z ((z.1.1,0),0)+fderiv ℝ ψ z ((0,z.1.2),0)-ψ z-
+  z.2*fderiv ℝ ψ z ((0,0),1)+
+    (β*z.2*pistonPressure invm U z.1.1 z.1.2 z.2-β*P*z.2+1)*ψ z
+theorem pistonReduced_boltzmann (invm : Vec n) (U : Vec n × ℝ → ℝ) (β P : ℝ)
+    (hU : ContDiff ℝ 2 U) (hβ : 0 < β) (z : Phase n × ℝ) (hV : 0 < z.2) :
+    pistonReducedOperator invm U β P
+      (fun x ↦ Real.exp (-β*(kineticTwice invm x.1.2/2+U (x.1.1,x.2)+P*x.2))) z=0 := by
+  sorry
+```
+
+## 项目依赖定义体及选择规格
+以下def/abbrev/structure完整保留；定理列出完整类型，Mathlib标准定义无需摘录。
+
+### MD.Ch08.Vec (Blueprint/Ch08.lean:17)
+原文件上下文：
+```lean
+open Set Filter MeasureTheory ProbabilityTheory MolecularDynamics
+open scoped BigOperators Topology ContDiff ENNReal NNReal Matrix
+variable {Ω : Type*} [MeasurableSpace Ω]
+variable {n : ℕ}
+```
+```lean
+abbrev Vec (n : ℕ) := Fin n → ℝ
+```
+
+### MD.Ch08.Phase (Blueprint/Ch08.lean:18)
+原文件上下文：
+```lean
+open Set Filter MeasureTheory ProbabilityTheory MolecularDynamics
+open scoped BigOperators Topology ContDiff ENNReal NNReal Matrix
+variable {Ω : Type*} [MeasurableSpace Ω]
+variable {n : ℕ}
+```
+```lean
+abbrev Phase (n : ℕ) := Vec n × Vec n
+```
+
+### MD.Ch08.dot (Blueprint/Ch08.lean:19)
+原文件上下文：
+```lean
+open Set Filter MeasureTheory ProbabilityTheory MolecularDynamics
+open scoped BigOperators Topology ContDiff ENNReal NNReal Matrix
+variable {Ω : Type*} [MeasurableSpace Ω]
+variable {n : ℕ}
+```
+```lean
+def dot (v w : Vec n) : ℝ := ∑ i, v i * w i
+```
+
+### MD.Ch08.gradient (Blueprint/Ch08.lean:20)
+原文件上下文：
+```lean
+open Set Filter MeasureTheory ProbabilityTheory MolecularDynamics
+open scoped BigOperators Topology ContDiff ENNReal NNReal Matrix
+variable {Ω : Type*} [MeasurableSpace Ω]
+variable {n : ℕ}
+```
+```lean
+def gradient (U : Vec n → ℝ) (q : Vec n) : Vec n := fun i ↦ fderiv ℝ U q (Pi.single i 1)
+```
+
+### MD.Ch08.kineticTwice (Blueprint/Ch08.lean:65)
+原文件上下文：
+```lean
+open Set Filter MeasureTheory ProbabilityTheory MolecularDynamics
+open scoped BigOperators Topology ContDiff ENNReal NNReal Matrix
+variable {Ω : Type*} [MeasurableSpace Ω]
+variable {n : ℕ}
+```
+```lean
+def kineticTwice (invm p : Vec n) : ℝ := ∑ i, invm i * p i ^ 2
+```
+
+### MD.Ch08.pistonPressure (Blueprint/Ch08.lean:1197)
+原文件上下文：
+```lean
+open Set Filter MeasureTheory ProbabilityTheory MolecularDynamics
+open scoped BigOperators Topology ContDiff ENNReal NNReal Matrix
+variable {Ω : Type*} [MeasurableSpace Ω]
+variable {n : ℕ}
+```
+```lean
+def pistonPressure (invm : Vec n) (U : Vec n × ℝ → ℝ) (q p : Vec n) (V : ℝ) : ℝ :=
+  (kineticTwice invm p-dot q (gradient (fun x ↦ U (x,V)) q)-
+    V*deriv (fun v ↦ U (q,v)) V)/V
+```
+
+### MD.Ch08.pistonReducedOperator (Blueprint/Ch08.lean:1248)
+原文件上下文：
+```lean
+open Set Filter MeasureTheory ProbabilityTheory MolecularDynamics
+open scoped BigOperators Topology ContDiff ENNReal NNReal Matrix
+variable {Ω : Type*} [MeasurableSpace Ω]
+variable {n : ℕ}
+```
+```lean
+def pistonReducedOperator (invm : Vec n) (U : Vec n × ℝ → ℝ) (β P : ℝ)
+    (ψ : Phase n × ℝ → ℝ) (z : Phase n × ℝ) : ℝ :=
+  -fderiv ℝ ψ z ((z.1.1,0),0)+fderiv ℝ ψ z ((0,z.1.2),0)-ψ z-
+  z.2*fderiv ℝ ψ z ((0,0),1)+
+    (β*z.2*pistonPressure invm U z.1.1 z.1.2 z.2-β*P*z.2+1)*ψ z
+```
+
+### MD.Ch08.pistonReduced_boltzmann (Blueprint/Ch08.lean:1253)
+原文件上下文：
+```lean
+open Set Filter MeasureTheory ProbabilityTheory MolecularDynamics
+open scoped BigOperators Topology ContDiff ENNReal NNReal Matrix
+variable {Ω : Type*} [MeasurableSpace Ω]
+variable {n : ℕ}
+```
+```lean
+theorem pistonReduced_boltzmann (invm : Vec n) (U : Vec n × ℝ → ℝ) (β P : ℝ)
+    (hU : ContDiff ℝ 2 U) (hβ : 0 < β) (z : Phase n × ℝ) (hV : 0 < z.2) :
+    pistonReducedOperator invm U β P
+      (fun x ↦ Real.exp (-β*(kineticTwice invm x.1.2/2+U (x.1.1,x.2)+P*x.2))) z=0
+```
+
+### MolecularDynamics.Chapter04Review.V (MolecularDynamics/Chapter04/ReviewDefinitions.lean:17)
+原文件上下文：
+```lean
+open Set Matrix
+open scoped BigOperators Topology Matrix.Norms.Elementwise
+```
+```lean
+abbrev V := Fin 3 → ℝ
+```
+
+### MolecularDynamics.Chapter06Review.V (MolecularDynamics/Chapter06/ReviewDefinitions.lean:17)
+原文件上下文：
+```lean
+open Set Filter MeasureTheory ProbabilityTheory
+open scoped BigOperators Topology ContDiff ENNReal NNReal
+local instance : MeasureSpace UnitAddCircle := ⟨AddCircle.haarAddCircle⟩
+```
+```lean
+abbrev V (n : ℕ) := Fin n → ℝ
+```

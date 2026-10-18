@@ -1,0 +1,251 @@
+以附件/PASTE 为准，忽略 /workspace 旧文件；Mathlib 定义按标准含义采信。
+本任务只审本条：原文转录、对象资格、定义体、量词、全部结论及[EXTRA]是否一致；Lean编译不代替语义审阅。
+Lean/Mathlib均4.34.0。原页PDF映射：[369]；印刷页=[348].
+input_sha256请原样回显：
+{
+  "Blueprint/Ch08.lean": "2800812fadd8e2557013f1941e4570401f7903d46f44baf07e23d5531da22a72",
+  "blueprint/ch08/ch08_source.json": "9b994b0f64cd22c85c2ad4123fbfdbd064bd7a6d070fe13b721794432f9f7a63",
+  "BATCH06a_PAGES.pdf": "451f291173442636732dbab8b91ad6c189eb5f64908eb57f05324c9946011da4"
+}
+用代码将JSON对象(batch,input_sha256,items)写到 /workspace/.mathcopilot/reviews/ch08/BATCH06a_review.json；items仅含本source_id。
+items字段：source_id、verdict(PASS/FAIL/NEEDS_HUMAN)、transcription、semantic_review、counterexample、suggested_fix、printed_version、corrected_version。逐版区分原文疑误和修正版结论；缺材料必须具体指出，不猜测。写后json.loads自检，最后仅回复路径及统计。
+
+## 原文JSON
+```json
+{
+  "source_id": "MD-8.4.1-NHLGenerator",
+  "kind": "definition",
+  "label": null,
+  "section": "8.4.1",
+  "printed_page": "348",
+  "pdf_page": "369",
+  "statement_latex": "L_NHL f=M⁻¹p·∇qf-∇U·∇pf-ξp·∇pf+[μ⁻¹(pᵀM⁻¹p-N_dk_BT)-γξ]∂ξf+k_BTγμ⁻¹∂ξ²f.",
+  "statement_verbatim": "348\n8\nExtended Variable Methods\nDeﬁne polynomials \u0014.x/ D PNc\u00021\njD0 ˛jxj, \u0007.x/ D PNc\u00021\njD0 ˇjxj, then, for each j, we\nhave\n\u0014.\u0013j/Oqj C \u0013j\u0007.\u0013j/Opj D 0;\n\u0013j\u0014.\u0013j/Opj \u0003 \u0013j\u0007.\u0013j/Oqj D 0;\nmultiplying the ﬁrst equation by Oqj and the second by Opj and adding, we obtain\nŒOq2\nj C \u0013jOp2\nj \t\u0014.\u0013j/ D 0:\nThe ﬁrst factor is nonzero by the condition of being in D and the positive\ndeﬁniteness of A, thus we must have \u0014.\u0013j/ D 0 for all Nc distinct \u0013j. But as\n\u0014 has degree Nc \u0003 1, this is a contradiction. Thus the collection must be linearly\nindependent.\nDemonstrating the Hörmander condition is sufﬁcient for Assumption 1(ii) in\nSect. 6.4.4. Assumption 1(i) can be veriﬁed by proving that solutions are able to\naccess an open set around any point y 2 D \u0004 R. We omit the proof of Assumption\n1(i) for Nosé-Hoover-Langevin dynamics as it is follows the same structure as the\nproof of Lemma 6.1 for Langevin dynamics. The details of the proof can be found\nin [283], with examples for more general SDEs given in [256, 257].\nThe ﬁnal requirement for geometric ergodicity (speciﬁed in Assumption 2 in\nSect. 6.4.4) requires a function \b W D \u0004 R ! .0; 1/ such that\nL\b \t \u0003˛\b C ı;\nfor positive constants ˛ and ı and where L is the generator of the stochastic process.\nSuch a function is called a Lyapunov function.\nThe generator for Nosé-Hoover-Langevin dynamics (8.27)–(8.29), acting on a\nsuitable test function f.q; p; \u0012/ is\nLNHLfD M\u00021p \u0002 rqf \u0003 rU.q/ \u0002 rpf \u0003 \u0012p \u0002 rp C \u0006\u00021 \npTM\u00021p \u0003 NdkBT\n\u000b @f\n@\u0012\n\u0003 \n\u0012 @f\n@\u0012 C kBT\n\u0006\u00021 @2f\n@\u00122 :\nIf we consider M D I for simplicity, a Lyapunov function is given in [283] as\n\b.q; p; \u0012/ D 1\n2kpk2 C U.q/ C \u0006\n2 .\u0012 \u0003 a/2;\nwhere a is a constant. As our potential is smooth, it is reasonable to make the\nassumption that\n1 < Umin \t U.q/ \t Umax < 1;\n8q 2 Q;\n",
+  "verbatim_scope": "完整对应原页文字层，逐字保留；本条数学成分由statement_latex及statement_scope定位。",
+  "proof_latex": null,
+  "proof_note": "对应原页推导逐字保存在statement_verbatim/original_page_text；排版以原页PDF为准。",
+  "original_page_text": [
+    {
+      "pdf_page": 369,
+      "printed_page": 348,
+      "text": "348\n8\nExtended Variable Methods\nDeﬁne polynomials \u0014.x/ D PNc\u00021\njD0 ˛jxj, \u0007.x/ D PNc\u00021\njD0 ˇjxj, then, for each j, we\nhave\n\u0014.\u0013j/Oqj C \u0013j\u0007.\u0013j/Opj D 0;\n\u0013j\u0014.\u0013j/Opj \u0003 \u0013j\u0007.\u0013j/Oqj D 0;\nmultiplying the ﬁrst equation by Oqj and the second by Opj and adding, we obtain\nŒOq2\nj C \u0013jOp2\nj \t\u0014.\u0013j/ D 0:\nThe ﬁrst factor is nonzero by the condition of being in D and the positive\ndeﬁniteness of A, thus we must have \u0014.\u0013j/ D 0 for all Nc distinct \u0013j. But as\n\u0014 has degree Nc \u0003 1, this is a contradiction. Thus the collection must be linearly\nindependent.\nDemonstrating the Hörmander condition is sufﬁcient for Assumption 1(ii) in\nSect. 6.4.4. Assumption 1(i) can be veriﬁed by proving that solutions are able to\naccess an open set around any point y 2 D \u0004 R. We omit the proof of Assumption\n1(i) for Nosé-Hoover-Langevin dynamics as it is follows the same structure as the\nproof of Lemma 6.1 for Langevin dynamics. The details of the proof can be found\nin [283], with examples for more general SDEs given in [256, 257].\nThe ﬁnal requirement for geometric ergodicity (speciﬁed in Assumption 2 in\nSect. 6.4.4) requires a function \b W D \u0004 R ! .0; 1/ such that\nL\b \t \u0003˛\b C ı;\nfor positive constants ˛ and ı and where L is the generator of the stochastic process.\nSuch a function is called a Lyapunov function.\nThe generator for Nosé-Hoover-Langevin dynamics (8.27)–(8.29), acting on a\nsuitable test function f.q; p; \u0012/ is\nLNHLfD M\u00021p \u0002 rqf \u0003 rU.q/ \u0002 rpf \u0003 \u0012p \u0002 rp C \u0006\u00021 \npTM\u00021p \u0003 NdkBT\n\u000b @f\n@\u0012\n\u0003 \n\u0012 @f\n@\u0012 C kBT\n\u0006\u00021 @2f\n@\u00122 :\nIf we consider M D I for simplicity, a Lyapunov function is given in [283] as\n\b.q; p; \u0012/ D 1\n2kpk2 C U.q/ C \u0006\n2 .\u0012 \u0003 a/2;\nwhere a is a constant. As our potential is smooth, it is reasonable to make the\nassumption that\n1 < Umin \t U.q/ \t Umax < 1;\n8q 2 Q;\n"
+    }
+  ],
+  "numbered_equations": [],
+  "transcription_note": "文字层逐字保留；数学排版另行转写，原页中的特殊字形编码不静默替换。PDF420仅取Exercises之前。",
+  "context_notation": [],
+  "extra_assumptions": [
+    "采用实际一阶、二阶Fréchet导数；原文省略f的-ξp·∇p理解为作用于f；Q,β,γ须正。"
+  ],
+  "issues": [],
+  "statement_scope": "实际加性扩散的Fréchet形式生成元、Lyapunov候选及漂移界性质的定义。",
+  "lean_decl": "MD.Ch08.additiveGenerator",
+  "lean_declarations": [
+    "MD.Ch08.additiveGenerator",
+    "MD.Ch08.nhlGenerator",
+    "MD.Ch08.nhlLyapunov",
+    "MD.Ch08.geometricDriftBound"
+  ],
+  "source_page_verification": "见source_page_checks.json，已目视核对本条原页。",
+  "repair_log": [],
+  "documented_priors": []
+}
+```
+
+## 完整本条Lean
+```lean
+def additiveGenerator {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
+    (F : E → E) (B : E) (f : E → ℝ) (z : E) : ℝ :=
+  fderiv ℝ f z (F z) + fderiv ℝ (fun x ↦ fderiv ℝ f x B) z B / 2
+def nhlGenerator (invm : Vec n) (U : Vec n → ℝ) (β Q γ : ℝ)
+    (f : Phase n × ℝ → ℝ) (z : Phase n × ℝ) : ℝ :=
+  additiveGenerator (nhlDrift invm U β Q γ) (0, Real.sqrt (2*γ/(β*Q))) f z
+def nhlLyapunov (U : Vec n → ℝ) (Q a : ℝ) (z : Phase n × ℝ) : ℝ :=
+  (∑ i, z.1.2 i^2)/2 + U z.1.1 + Q*(z.2-a)^2/2
+def geometricDriftBound {E : Type*} (L : (E → ℝ) → E → ℝ) (V : E → ℝ) : Prop :=
+  (∀ z, 0 < V z) ∧ ∃ α δ : ℝ, 0 < α ∧ 0 < δ ∧ ∀ z, L V z ≤ -α*V z+δ
+```
+
+## 项目依赖定义体及选择规格
+以下def/abbrev/structure完整保留；定理列出完整类型，Mathlib标准定义无需摘录。
+
+### MD.Ch08.Vec (Blueprint/Ch08.lean:17)
+原文件上下文：
+```lean
+open Set Filter MeasureTheory ProbabilityTheory MolecularDynamics
+open scoped BigOperators Topology ContDiff ENNReal NNReal Matrix
+variable {Ω : Type*} [MeasurableSpace Ω]
+variable {n : ℕ}
+```
+```lean
+abbrev Vec (n : ℕ) := Fin n → ℝ
+```
+
+### MD.Ch08.Phase (Blueprint/Ch08.lean:18)
+原文件上下文：
+```lean
+open Set Filter MeasureTheory ProbabilityTheory MolecularDynamics
+open scoped BigOperators Topology ContDiff ENNReal NNReal Matrix
+variable {Ω : Type*} [MeasurableSpace Ω]
+variable {n : ℕ}
+```
+```lean
+abbrev Phase (n : ℕ) := Vec n × Vec n
+```
+
+### MD.Ch08.gradient (Blueprint/Ch08.lean:20)
+原文件上下文：
+```lean
+open Set Filter MeasureTheory ProbabilityTheory MolecularDynamics
+open scoped BigOperators Topology ContDiff ENNReal NNReal Matrix
+variable {Ω : Type*} [MeasurableSpace Ω]
+variable {n : ℕ}
+```
+```lean
+def gradient (U : Vec n → ℝ) (q : Vec n) : Vec n := fun i ↦ fderiv ℝ U q (Pi.single i 1)
+```
+
+### MD.Ch08.kineticTwice (Blueprint/Ch08.lean:65)
+原文件上下文：
+```lean
+open Set Filter MeasureTheory ProbabilityTheory MolecularDynamics
+open scoped BigOperators Topology ContDiff ENNReal NNReal Matrix
+variable {Ω : Type*} [MeasurableSpace Ω]
+variable {n : ℕ}
+```
+```lean
+def kineticTwice (invm p : Vec n) : ℝ := ∑ i, invm i * p i ^ 2
+```
+
+### MD.Ch08.nhField (Blueprint/Ch08.lean:66)
+原文件上下文：
+```lean
+open Set Filter MeasureTheory ProbabilityTheory MolecularDynamics
+open scoped BigOperators Topology ContDiff ENNReal NNReal Matrix
+variable {Ω : Type*} [MeasurableSpace Ω]
+variable {n : ℕ}
+```
+```lean
+def nhField (invm : Vec n) (U : Vec n → ℝ) (β Q : ℝ)
+    (z : Phase n × ℝ) : Phase n × ℝ :=
+  ((fun i ↦ invm i * z.1.2 i, fun i ↦ -gradient U z.1.1 i - z.2 * z.1.2 i),
+   (kineticTwice invm z.1.2 - (n : ℝ)/β)/Q)
+```
+
+### MD.Ch08.nhlDrift (Blueprint/Ch08.lean:372)
+原文件上下文：
+```lean
+open Set Filter MeasureTheory ProbabilityTheory MolecularDynamics
+open scoped BigOperators Topology ContDiff ENNReal NNReal Matrix
+variable {Ω : Type*} [MeasurableSpace Ω]
+variable {n : ℕ}
+```
+```lean
+def nhlDrift (invm : Vec n) (U : Vec n → ℝ) (β Q γ : ℝ) (z : Phase n × ℝ) : Phase n × ℝ :=
+  (nhField invm U β Q z).1 |> fun physical ↦ (physical, (nhField invm U β Q z).2-γ*z.2)
+```
+
+### MD.Ch08.additiveGenerator (Blueprint/Ch08.lean:434)
+原文件上下文：
+```lean
+open Set Filter MeasureTheory ProbabilityTheory MolecularDynamics
+open scoped BigOperators Topology ContDiff ENNReal NNReal Matrix
+variable {Ω : Type*} [MeasurableSpace Ω]
+variable {n : ℕ}
+```
+```lean
+def additiveGenerator {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
+    (F : E → E) (B : E) (f : E → ℝ) (z : E) : ℝ :=
+  fderiv ℝ f z (F z) + fderiv ℝ (fun x ↦ fderiv ℝ f x B) z B / 2
+```
+
+### MD.Ch08.nhlGenerator (Blueprint/Ch08.lean:437)
+原文件上下文：
+```lean
+open Set Filter MeasureTheory ProbabilityTheory MolecularDynamics
+open scoped BigOperators Topology ContDiff ENNReal NNReal Matrix
+variable {Ω : Type*} [MeasurableSpace Ω]
+variable {n : ℕ}
+```
+```lean
+def nhlGenerator (invm : Vec n) (U : Vec n → ℝ) (β Q γ : ℝ)
+    (f : Phase n × ℝ → ℝ) (z : Phase n × ℝ) : ℝ :=
+  additiveGenerator (nhlDrift invm U β Q γ) (0, Real.sqrt (2*γ/(β*Q))) f z
+```
+
+### MD.Ch08.nhlLyapunov (Blueprint/Ch08.lean:440)
+原文件上下文：
+```lean
+open Set Filter MeasureTheory ProbabilityTheory MolecularDynamics
+open scoped BigOperators Topology ContDiff ENNReal NNReal Matrix
+variable {Ω : Type*} [MeasurableSpace Ω]
+variable {n : ℕ}
+```
+```lean
+def nhlLyapunov (U : Vec n → ℝ) (Q a : ℝ) (z : Phase n × ℝ) : ℝ :=
+  (∑ i, z.1.2 i^2)/2 + U z.1.1 + Q*(z.2-a)^2/2
+```
+
+### MD.Ch08.geometricDriftBound (Blueprint/Ch08.lean:442)
+原文件上下文：
+```lean
+open Set Filter MeasureTheory ProbabilityTheory MolecularDynamics
+open scoped BigOperators Topology ContDiff ENNReal NNReal Matrix
+variable {Ω : Type*} [MeasurableSpace Ω]
+variable {n : ℕ}
+```
+```lean
+def geometricDriftBound {E : Type*} (L : (E → ℝ) → E → ℝ) (V : E → ℝ) : Prop :=
+  (∀ z, 0 < V z) ∧ ∃ α δ : ℝ, 0 < α ∧ 0 < δ ∧ ∀ z, L V z ≤ -α*V z+δ
+```
+
+### MolecularDynamics.Chapter02Review.Q (MolecularDynamics/Chapter02/ReviewDefinitions.lean:17)
+原文件上下文：
+```lean
+open Set Filter Matrix
+open scoped BigOperators Topology
+```
+```lean
+abbrev Q (n : ℕ) := Fin n → ℝ
+```
+
+### MolecularDynamics.Chapter04Review.Q (MolecularDynamics/Chapter04/ReviewDefinitions.lean:15)
+原文件上下文：
+```lean
+open Set Matrix
+open scoped BigOperators Topology Matrix.Norms.Elementwise
+```
+```lean
+abbrev Q (n : ℕ) := Fin n → ℝ
+```
+
+### MolecularDynamics.Chapter04Review.V (MolecularDynamics/Chapter04/ReviewDefinitions.lean:17)
+原文件上下文：
+```lean
+open Set Matrix
+open scoped BigOperators Topology Matrix.Norms.Elementwise
+```
+```lean
+abbrev V := Fin 3 → ℝ
+```
+
+### MolecularDynamics.Chapter05Review.E (MolecularDynamics/Chapter05/ReviewDefinitions.lean:18)
+原文件上下文：
+```lean
+open Set Filter MeasureTheory Matrix
+open scoped BigOperators Topology ENNReal
+```
+```lean
+abbrev E (n : ℕ) := EuclideanSpace ℝ (Fin n)
+```
+
+### MolecularDynamics.Chapter06Review.V (MolecularDynamics/Chapter06/ReviewDefinitions.lean:17)
+原文件上下文：
+```lean
+open Set Filter MeasureTheory ProbabilityTheory
+open scoped BigOperators Topology ContDiff ENNReal NNReal
+local instance : MeasureSpace UnitAddCircle := ⟨AddCircle.haarAddCircle⟩
+```
+```lean
+abbrev V (n : ℕ) := Fin n → ℝ
+```

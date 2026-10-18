@@ -1,0 +1,164 @@
+{
+  "batch": "BATCH16",
+  "subtask": "BATCH16f",
+  "source_ids": [
+    "MD-8.9.3-PairwiseNoseHoover"
+  ],
+  "input_sha256": {
+    "Blueprint/Ch08.lean": "2800812fadd8e2557013f1941e4570401f7903d46f44baf07e23d5531da22a72",
+    "blueprint/ch08/ch08_source.json": "9b994b0f64cd22c85c2ad4123fbfdbd064bd7a6d070fe13b721794432f9f7a63",
+    "BATCH16f_PAGES.pdf": "35d97dc9d1412d1b84ca82bf78508fc0277a3d420e61725f350d0d67941c0161"
+  },
+  "page_mapping": [
+    {
+      "attachment_page": 1,
+      "original_pdf_page": 415,
+      "printed_page": 394
+    }
+  ],
+  "definition_excerpts": [
+    {
+      "full_name": "MD.Ch08.Vec",
+      "kind": "abbrev",
+      "path": "Blueprint/Ch08.lean",
+      "line": 17,
+      "code_sha256": "6f4b254a8a7cc4115fb35265b77caa663bdd18567cd1e664cc5bbd080d02fcff"
+    },
+    {
+      "full_name": "MD.Ch08.dot",
+      "kind": "def",
+      "path": "Blueprint/Ch08.lean",
+      "line": 19,
+      "code_sha256": "bb45cec5def0e642f7dde399650df8a6486048be491d116502106e187aa99348"
+    },
+    {
+      "full_name": "MD.Ch08.ParticleConfig",
+      "kind": "abbrev",
+      "path": "Blueprint/Ch08.lean",
+      "line": 1334,
+      "code_sha256": "c46ce65b6511b6a80adf81f99adccdc72de343aed0cedd1fcf09d0a9683ccf2e"
+    },
+    {
+      "full_name": "MD.Ch08.ParticlePhase",
+      "kind": "abbrev",
+      "path": "Blueprint/Ch08.lean",
+      "line": 1335,
+      "code_sha256": "c85eef16496630f1d2d793d7c1ec2a510d003438949acbd8ed3f9a959876fb44"
+    },
+    {
+      "full_name": "MD.Ch08.pairDistance",
+      "kind": "def",
+      "path": "Blueprint/Ch08.lean",
+      "line": 1349,
+      "code_sha256": "af64f099c5dc4854a969526a2a57d3de36f250fab2a5568f7e2b529ecfaae03a"
+    },
+    {
+      "full_name": "MD.Ch08.pairDirection",
+      "kind": "def",
+      "path": "Blueprint/Ch08.lean",
+      "line": 1351,
+      "code_sha256": "dcb4ca3430cb77302a2e34042dee2accc9867ecba7b8dad4f9bf2facaf68ebd3"
+    },
+    {
+      "full_name": "MD.Ch08.dpdPairConservative",
+      "kind": "def",
+      "path": "Blueprint/Ch08.lean",
+      "line": 1354,
+      "code_sha256": "2b40bda3e4a0f7a226fd1b932635b2b800a6ae61b243b499c714fbd61457b387"
+    },
+    {
+      "full_name": "MD.Ch08.dpdConservative",
+      "kind": "def",
+      "path": "Blueprint/Ch08.lean",
+      "line": 1358,
+      "code_sha256": "6d25fb5ebc78e00ec353b6caa64e102e7a88ad798ac94c511998cd72948e3f2f"
+    },
+    {
+      "full_name": "MD.Ch08.relativeVelocity",
+      "kind": "def",
+      "path": "Blueprint/Ch08.lean",
+      "line": 1372,
+      "code_sha256": "f5aa7899a93172eded50c0a4e0bf41f10f8507bc554ced67e2fda6c871329420"
+    },
+    {
+      "full_name": "MD.Ch08.dpdPairDissipative",
+      "kind": "def",
+      "path": "Blueprint/Ch08.lean",
+      "line": 1374,
+      "code_sha256": "b2fddd6656040b67b32d6faf4815cba0a7c8e16de49f1ce552c223936e6b61ea"
+    },
+    {
+      "full_name": "MD.Ch08.dpdDissipative",
+      "kind": "def",
+      "path": "Blueprint/Ch08.lean",
+      "line": 1379,
+      "code_sha256": "d9f2ae893fe6bf94229e5f5c9887113f3e0267c4cc11365e65957df106c14f28"
+    },
+    {
+      "full_name": "MD.Ch08.reducedMass8",
+      "kind": "def",
+      "path": "Blueprint/Ch08.lean",
+      "line": 1561,
+      "code_sha256": "66f08719ecc862f1c5e86157ecc0521c3690fa3a038d292d4008206b91e4e8c9"
+    },
+    {
+      "full_name": "MD.Ch08.PNHLState",
+      "kind": "abbrev",
+      "path": "Blueprint/Ch08.lean",
+      "line": 1581,
+      "code_sha256": "6d7e0c5bfd5956222bd148e66c43b60bcc31807f7654dceb053c1b2a0e230ab9"
+    },
+    {
+      "full_name": "MD.Ch08.pairwiseFeedback",
+      "kind": "def",
+      "path": "Blueprint/Ch08.lean",
+      "line": 1582,
+      "code_sha256": "c3826d801acbc61124717bfb21075ab037019e354b5e72544dbf079e6de62c64"
+    },
+    {
+      "full_name": "MD.Ch08.pnhDrift",
+      "kind": "def",
+      "path": "Blueprint/Ch08.lean",
+      "line": 1586,
+      "code_sha256": "3912fb05897e06c607032589261e194b17f4e0956a6274ba0e57288645d3a004"
+    },
+    {
+      "full_name": "MD.Ch08.isPNHSolution",
+      "kind": "def",
+      "path": "Blueprint/Ch08.lean",
+      "line": 1591,
+      "code_sha256": "673d01f79b13d12926977f4a9761afabd8466507fa803805abfd3bb9209b5136"
+    },
+    {
+      "full_name": "MolecularDynamics.Chapter02Review.Q",
+      "kind": "abbrev",
+      "path": "MolecularDynamics/Chapter02/ReviewDefinitions.lean",
+      "line": 17,
+      "code_sha256": "d01d4518aed3668e7c982afee1cd3820fb858a94438e5b8960aa0557f5a57ef1"
+    },
+    {
+      "full_name": "MolecularDynamics.Chapter04Review.Q",
+      "kind": "abbrev",
+      "path": "MolecularDynamics/Chapter04/ReviewDefinitions.lean",
+      "line": 15,
+      "code_sha256": "d01d4518aed3668e7c982afee1cd3820fb858a94438e5b8960aa0557f5a57ef1"
+    }
+  ],
+  "validation": {
+    "project_constant_closure": "PASS",
+    "missing_project_definitions": [],
+    "full_page_render_equality_dpi": 72,
+    "website_submitted": false
+  },
+  "files": {
+    "PASTE.txt": {
+      "bytes": 15981,
+      "sha256": "5898f76e29d26728eaa85a955077234d5a6884910c01489e04da30ed918a09bf"
+    },
+    "BATCH16f_PAGES.pdf": {
+      "bytes": 78254,
+      "sha256": "35d97dc9d1412d1b84ca82bf78508fc0277a3d420e61725f350d0d67941c0161"
+    }
+  },
+  "total_task_bytes": 99575
+}

@@ -1,0 +1,64 @@
+{
+  "batch": "BATCH12",
+  "subtask": "BATCH12b",
+  "source_ids": [
+    "MD-8.7.1-PronyLangevinLimit"
+  ],
+  "input_sha256": {
+    "Blueprint/Ch08.lean": "2800812fadd8e2557013f1941e4570401f7903d46f44baf07e23d5531da22a72",
+    "blueprint/ch08/ch08_source.json": "9b994b0f64cd22c85c2ad4123fbfdbd064bd7a6d070fe13b721794432f9f7a63",
+    "BATCH12b_PAGES.pdf": "20435c0487d4596ebe3bc97bb6b812b2a44abd378907ce0b6fa8abfa7b1f9e61"
+  },
+  "page_mapping": [
+    {
+      "attachment_page": 1,
+      "original_pdf_page": 397,
+      "printed_page": 376
+    },
+    {
+      "attachment_page": 2,
+      "original_pdf_page": 398,
+      "printed_page": 377
+    }
+  ],
+  "definition_excerpts": [
+    {
+      "full_name": "MD.Ch08.pronyEffectiveFriction",
+      "kind": "def",
+      "path": "Blueprint/Ch08.lean",
+      "line": 1044,
+      "code_sha256": "76576324da7d31409ccfe6d46778b7cf03c1340902845a9cc0c306aaa48abd05"
+    },
+    {
+      "full_name": "MD.Ch08.pronyLimit_drift",
+      "kind": "theorem",
+      "path": "Blueprint/Ch08.lean",
+      "line": 1045,
+      "code_sha256": "c09c0da6ca2df74dacd511cb26a2b36ba1d517df369874bbaf37478abc39337f"
+    },
+    {
+      "full_name": "MD.Ch08.independentGaussian_varianceSum",
+      "kind": "theorem",
+      "path": "Blueprint/Ch08.lean",
+      "line": 1048,
+      "code_sha256": "351b38eb454aebe577bc4188a4e45a4b003be6d5030ab360747c8fc5002fbeb1"
+    }
+  ],
+  "validation": {
+    "project_constant_closure": "PASS",
+    "missing_project_definitions": [],
+    "full_page_render_equality_dpi": 72,
+    "website_submitted": false
+  },
+  "files": {
+    "PASTE.txt": {
+      "bytes": 11271,
+      "sha256": "f01a2793997c68cfabe4f503842781c3cd90453eb308d9e0c1e72c874791c1bc"
+    },
+    "BATCH12b_PAGES.pdf": {
+      "bytes": 96190,
+      "sha256": "20435c0487d4596ebe3bc97bb6b812b2a44abd378907ce0b6fa8abfa7b1f9e61"
+    }
+  },
+  "total_task_bytes": 109404
+}

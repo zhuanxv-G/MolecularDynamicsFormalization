@@ -1,0 +1,115 @@
+以附件/PASTE 为准，忽略 /workspace 旧文件；Mathlib 定义按标准含义采信。
+本任务只审本条：原文转录、对象资格、定义体、量词、全部结论及[EXTRA]是否一致；Lean编译不代替语义审阅。
+Lean/Mathlib均4.34.0。原页PDF映射：[397, 398]；印刷页=[376, 377].
+input_sha256请原样回显：
+{
+  "Blueprint/Ch08.lean": "2800812fadd8e2557013f1941e4570401f7903d46f44baf07e23d5531da22a72",
+  "blueprint/ch08/ch08_source.json": "9b994b0f64cd22c85c2ad4123fbfdbd064bd7a6d070fe13b721794432f9f7a63",
+  "BATCH12b_PAGES.pdf": "20435c0487d4596ebe3bc97bb6b812b2a44abd378907ce0b6fa8abfa7b1f9e61"
+}
+用代码将JSON对象(batch,input_sha256,items)写到 /workspace/.mathcopilot/reviews/ch08/BATCH12b_review.json；items仅含本source_id。
+items字段：source_id、verdict(PASS/FAIL/NEEDS_HUMAN)、transcription、semantic_review、counterexample、suggested_fix、printed_version、corrected_version。逐版区分原文疑误和修正版结论；缺材料必须具体指出，不猜测。写后json.loads自检，最后仅回复路径及统计。
+
+## 原文JSON
+```json
+{
+  "source_id": "MD-8.7.1-PronyLangevinLimit",
+  "kind": "unnumbered_claim",
+  "label": null,
+  "section": "8.7.1",
+  "printed_page": "376–377",
+  "pdf_page": "397–398",
+  "statement_latex": "Formally τₖ→0 gives σᵢₖdt=−cₖpᵢdt+√(2k_BT cₖ)dWᵢₖ and Langevin friction γ̂=Σₖcₖ. Independent Gaussian variances add.",
+  "statement_verbatim": "376\n8\nExtended Variable Methods\nTo calculate the random forces associated to the kth term of the expansion, we\nnote that these can be viewed as the solution of a linear SDE, speciﬁcally\ndRi;k D \u0003 1\n\u0002k\nRi;k.t/dt C 1\n\u0002k\np\n2kBTckdWi;k.t/\n(8.65)\nwhere Wi;k is a standard Wiener process. The random force is seen to be deﬁned as\nthe solution of an Ornstein-Uhlenbeck process induced by the Prony representation.\nIt is easily shown that Ri;k.t/ has zero mean and autocorrelation deﬁned by\nhRi;k.t C s/Ri;k.t/i D kBTck\n\u0002k\nexp\n\u0002\n\u0003 1\n\u0002k\ns\n\u0003\n;\ns \b 0\n(8.66)\nThe total random force is then obtained by summation\nRi D\nkmax\nX\nkD1\nRi;k:\n(8.67)\nObserve that both random and drag forces are incorporated via summation of the\ncomponents \u000fi;k and Ri;k deﬁned by linear equations, respectively the ODE (8.64)\nand SDE (8.65). It is therefore possible to replace these components by their sum\n\u0007i;k D \u000fi;k C Ri;k\nwhich may be evolved by a single SDE. The equations therefore become\ndqi D m\u00021\ni pidt;\n(8.68)\ndpi D Fidt C\nkmax\nX\nkD1\n\u0007i;kdt;\n(8.69)\nd\u0007i;k D \u0003 1\n\u0002k\n\u0007i;kdt \u0003 ck\n\u0002k\npidt C 1\n\u0002k\np\n2kBTckdWi;k:\n(8.70)\nThe relation between the Prony series representation and Langevin dynamics can be\nseen in an informal sense by multiplying the equation for \u0007i;k equation by \u0002k, and\nconsidering \u0002k ! 0, giving\n\u0007i;kdt D \u0003ckpidt C\np\n2kBTckdWi;k;\nwhich results in\ndpi D Fidt \u0003\n kmax\nX\nkD1\nck\n!\npidt C\np\n2kBT\n`\nX\nkD1\npckdWi;k:\n\n8.7\nGeneralized Langevin Dynamics\n377\nObserving that the sum of ` independent Guassian random variables of variance ck\nis a Gaussian random variable with variance P`\nkD1 ck, we see that this is in the form\nof Langevin dynamics\ndpi D Fidt \u0003 O\npidt C\np\n2kBT O\ndWi;k;\nwith\nO\n D\nNk\nX\nkD1\nck:\n(For the formal treatment of this limit refer to [293].)\nFor numerical integration, the system (8.68)–(8.70) can be handled via splitting.\nA natural family of methods based on Verlet is the following [19]:\nGeneralized Langevin Dynamics Method\npnC1=2 :D pn C h\n2F.qn/ C h\n2\nkmax\nX\nkD1\n\u0012 n;k;\nqnC1 :D qn C hM\u00021pnC1=2;\n\u0012 nC1;k :D \u000ek\u0012 n;k \u0003 .1 \u0003 \u000ek/ ckpnC1=2 C ˛k\np\n2kBTckZn\nk;\npnC1 :D pnC1=2 C h\n2F.qnC1/ C h\n2\nkmax\nX\nkD1\n\u0012 nC1;k;\nwhere \u0012 n;k is a Nc-dimensional vector, and the components of the Nc-dimensional\nvectors Zn;k are independent standard normal random variables.\nThe real-valued coefﬁcients \u000ek and ˛k which must satisfy, for consistency, the\nequations\n\u000ek D 1 \u0003 h\n\u0002k\nC O.h2/;\n˛k D\np\nh\n\u0002k\nC O.h/:\nAn argument is given in [19] that ˛k and \u000ek should be taken as\n\u000ek D exp.\u0003h=\u0002k/;\n˛k D\ns\n.1 \u0003 \u000ek/2\nh\n;\nsince, for this choice, the Langevin limit is preserved. Alternative methods are\npossible. For many comparisons and numerical experiments, refer to [19].\n",
+  "verbatim_scope": "完整对应原页文字层，逐字保留；本条数学成分由statement_latex及statement_scope定位。",
+  "proof_latex": null,
+  "proof_note": "对应原页推导逐字保存在statement_verbatim/original_page_text；排版以原页PDF为准。",
+  "original_page_text": [
+    {
+      "pdf_page": 397,
+      "printed_page": 376,
+      "text": "376\n8\nExtended Variable Methods\nTo calculate the random forces associated to the kth term of the expansion, we\nnote that these can be viewed as the solution of a linear SDE, speciﬁcally\ndRi;k D \u0003 1\n\u0002k\nRi;k.t/dt C 1\n\u0002k\np\n2kBTckdWi;k.t/\n(8.65)\nwhere Wi;k is a standard Wiener process. The random force is seen to be deﬁned as\nthe solution of an Ornstein-Uhlenbeck process induced by the Prony representation.\nIt is easily shown that Ri;k.t/ has zero mean and autocorrelation deﬁned by\nhRi;k.t C s/Ri;k.t/i D kBTck\n\u0002k\nexp\n\u0002\n\u0003 1\n\u0002k\ns\n\u0003\n;\ns \b 0\n(8.66)\nThe total random force is then obtained by summation\nRi D\nkmax\nX\nkD1\nRi;k:\n(8.67)\nObserve that both random and drag forces are incorporated via summation of the\ncomponents \u000fi;k and Ri;k deﬁned by linear equations, respectively the ODE (8.64)\nand SDE (8.65). It is therefore possible to replace these components by their sum\n\u0007i;k D \u000fi;k C Ri;k\nwhich may be evolved by a single SDE. The equations therefore become\ndqi D m\u00021\ni pidt;\n(8.68)\ndpi D Fidt C\nkmax\nX\nkD1\n\u0007i;kdt;\n(8.69)\nd\u0007i;k D \u0003 1\n\u0002k\n\u0007i;kdt \u0003 ck\n\u0002k\npidt C 1\n\u0002k\np\n2kBTckdWi;k:\n(8.70)\nThe relation between the Prony series representation and Langevin dynamics can be\nseen in an informal sense by multiplying the equation for \u0007i;k equation by \u0002k, and\nconsidering \u0002k ! 0, giving\n\u0007i;kdt D \u0003ckpidt C\np\n2kBTckdWi;k;\nwhich results in\ndpi D Fidt \u0003\n kmax\nX\nkD1\nck\n!\npidt C\np\n2kBT\n`\nX\nkD1\npckdWi;k:\n"
+    },
+    {
+      "pdf_page": 398,
+      "printed_page": 377,
+      "text": "8.7\nGeneralized Langevin Dynamics\n377\nObserving that the sum of ` independent Guassian random variables of variance ck\nis a Gaussian random variable with variance P`\nkD1 ck, we see that this is in the form\nof Langevin dynamics\ndpi D Fidt \u0003 O\npidt C\np\n2kBT O\ndWi;k;\nwith\nO\n D\nNk\nX\nkD1\nck:\n(For the formal treatment of this limit refer to [293].)\nFor numerical integration, the system (8.68)–(8.70) can be handled via splitting.\nA natural family of methods based on Verlet is the following [19]:\nGeneralized Langevin Dynamics Method\npnC1=2 :D pn C h\n2F.qn/ C h\n2\nkmax\nX\nkD1\n\u0012 n;k;\nqnC1 :D qn C hM\u00021pnC1=2;\n\u0012 nC1;k :D \u000ek\u0012 n;k \u0003 .1 \u0003 \u000ek/ ckpnC1=2 C ˛k\np\n2kBTckZn\nk;\npnC1 :D pnC1=2 C h\n2F.qnC1/ C h\n2\nkmax\nX\nkD1\n\u0012 nC1;k;\nwhere \u0012 n;k is a Nc-dimensional vector, and the components of the Nc-dimensional\nvectors Zn;k are independent standard normal random variables.\nThe real-valued coefﬁcients \u000ek and ˛k which must satisfy, for consistency, the\nequations\n\u000ek D 1 \u0003 h\n\u0002k\nC O.h2/;\n˛k D\np\nh\n\u0002k\nC O.h/:\nAn argument is given in [19] that ˛k and \u000ek should be taken as\n\u000ek D exp.\u0003h=\u0002k/;\n˛k D\ns\n.1 \u0003 \u000ek/2\nh\n;\nsince, for this choice, the Langevin limit is preserved. Alternative methods are\npossible. For many comparisons and numerical experiments, refer to [19].\n"
+    }
+  ],
+  "numbered_equations": [],
+  "transcription_note": "文字层逐字保留；数学排版另行转写，原页中的特殊字形编码不静默替换。PDF420仅取Exercises之前。",
+  "context_notation": [],
+  "extra_assumptions": [
+    "仅形式极限系数与真实有限个独立Gaussian线性组合；τ→0过程弱收敛、初始层、统一时间界不在本条声明，列覆盖缺口。"
+  ],
+  "issues": [],
+  "statement_scope": "有效摩擦定义、合并漂移和有限Gaussian求和分布，不是小记忆时间极限定理。",
+  "lean_decl": "MD.Ch08.pronyEffectiveFriction",
+  "lean_declarations": [
+    "MD.Ch08.pronyEffectiveFriction",
+    "MD.Ch08.pronyLimit_drift",
+    "MD.Ch08.independentGaussian_varianceSum"
+  ],
+  "source_page_verification": "见source_page_checks.json，已目视核对本条原页。",
+  "repair_log": [],
+  "documented_priors": []
+}
+```
+
+## 完整本条Lean
+```lean
+def pronyEffectiveFriction {K : ℕ} (c : Fin K → ℝ) : ℝ := ∑ k, c k
+theorem pronyLimit_drift {K : ℕ} (c : Fin K → ℝ) (F p : ℝ) :
+    F-∑ k, c k*p=F-pronyEffectiveFriction c*p := by
+  simp [pronyEffectiveFriction,Finset.sum_mul]
+theorem independentGaussian_varianceSum {K : ℕ} (P : Measure Ω)
+    (R : Ω → (Fin K → ℝ)) (c : Fin K → ℝ) (hc : ∀ k, 0 ≤ c k)
+    (hR : HasLaw R (Measure.pi (fun _ : Fin K ↦ gaussianReal 0 1)) P) :
+    HasLaw (fun sample ↦ ∑ k, Real.sqrt (c k)*R sample k)
+      (gaussianReal 0 (Real.toNNReal (pronyEffectiveFriction c))) P := by
+  sorry
+```
+
+## 项目依赖定义体及选择规格
+以下def/abbrev/structure完整保留；定理列出完整类型，Mathlib标准定义无需摘录。
+
+### MD.Ch08.pronyEffectiveFriction (Blueprint/Ch08.lean:1044)
+原文件上下文：
+```lean
+open Set Filter MeasureTheory ProbabilityTheory MolecularDynamics
+open scoped BigOperators Topology ContDiff ENNReal NNReal Matrix
+variable {Ω : Type*} [MeasurableSpace Ω]
+variable {n : ℕ}
+```
+```lean
+def pronyEffectiveFriction {K : ℕ} (c : Fin K → ℝ) : ℝ := ∑ k, c k
+```
+
+### MD.Ch08.pronyLimit_drift (Blueprint/Ch08.lean:1045)
+原文件上下文：
+```lean
+open Set Filter MeasureTheory ProbabilityTheory MolecularDynamics
+open scoped BigOperators Topology ContDiff ENNReal NNReal Matrix
+variable {Ω : Type*} [MeasurableSpace Ω]
+variable {n : ℕ}
+```
+```lean
+theorem pronyLimit_drift {K : ℕ} (c : Fin K → ℝ) (F p : ℝ) :
+    F-∑ k, c k*p=F-pronyEffectiveFriction c*p
+```
+
+### MD.Ch08.independentGaussian_varianceSum (Blueprint/Ch08.lean:1048)
+原文件上下文：
+```lean
+open Set Filter MeasureTheory ProbabilityTheory MolecularDynamics
+open scoped BigOperators Topology ContDiff ENNReal NNReal Matrix
+variable {Ω : Type*} [MeasurableSpace Ω]
+variable {n : ℕ}
+```
+```lean
+theorem independentGaussian_varianceSum {K : ℕ} (P : Measure Ω)
+    (R : Ω → (Fin K → ℝ)) (c : Fin K → ℝ) (hc : ∀ k, 0 ≤ c k)
+    (hR : HasLaw R (Measure.pi (fun _ : Fin K ↦ gaussianReal 0 1)) P) :
+    HasLaw (fun sample ↦ ∑ k, Real.sqrt (c k)*R sample k)
+      (gaussianReal 0 (Real.toNNReal (pronyEffectiveFriction c))) P
+```

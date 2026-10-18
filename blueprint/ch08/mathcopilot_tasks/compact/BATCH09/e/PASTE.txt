@@ -1,0 +1,320 @@
+以附件/PASTE 为准，忽略 /workspace 旧文件；Mathlib 定义按标准含义采信。
+本任务只审本条：原文转录、对象资格、定义体、量词、全部结论及[EXTRA]是否一致；Lean编译不代替语义审阅。
+Lean/Mathlib均4.34.0。原页PDF映射：[388]；印刷页=[367].
+input_sha256请原样回显：
+{
+  "Blueprint/Ch08.lean": "2800812fadd8e2557013f1941e4570401f7903d46f44baf07e23d5531da22a72",
+  "blueprint/ch08/ch08_source.json": "9b994b0f64cd22c85c2ad4123fbfdbd064bd7a6d070fe13b721794432f9f7a63",
+  "BATCH09e_PAGES.pdf": "423d52fa812bbc298aae81b4cc09d82e8adeee43aac7693f56520d51e5f8c316"
+}
+用代码将JSON对象(batch,input_sha256,items)写到 /workspace/.mathcopilot/reviews/ch08/BATCH09e_review.json；items仅含本source_id。
+items字段：source_id、verdict(PASS/FAIL/NEEDS_HUMAN)、transcription、semantic_review、counterexample、suggested_fix、printed_version、corrected_version。逐版区分原文疑误和修正版结论；缺材料必须具体指出，不猜测。写后json.loads自检，最后仅回复路径及统计。
+
+## 原文JSON
+```json
+{
+  "source_id": "MD-8.6.2-SINProjectedBracketsPrinted",
+  "kind": "unnumbered_claim",
+  "label": null,
+  "section": "8.6.2",
+  "printed_page": "367",
+  "pdf_page": "388",
+  "statement_latex": "u₀=Πf, u₁=Π[f,g], u₂=Π[f,[f,g]], u₃=Π[f,[f,[f,g]]]. The displayed equations (8.48)–(8.53) give their components, with D=2p²+ξ₁².",
+  "statement_verbatim": "8.6\nIsokinetic Methods and Integration with Very Large Timestep\n367\nThe proof requires calculation of the vector ﬁelds\nu0 D ˘ f;\nu1 D ˘ Œf; g\t ;\nu2 D ˘ Œf; Œf; g\t\t;\nu3 D ˘ Œf; Œf; Œf; g\t\t\t;\nwhere ˘ is the projector onto the ﬁrst three components. Because g D \u0007e4,\nit is enough to show that any pair from among these four vectors are linearly\nindependent, except possibly on M0. Note that projection can only be performed\nafter the full calculation of the relevant commutator. Because the commutators\nquickly become quite messy, we used a symbolic computing package to assist in\nthese calculations.\nThe ﬁrst two vectors are:\nu0 D p@q \u0003 .q C \u0013p/@p \u0003 .\u0013\u00121 C \u00121\u00122/@\u00121;\n(8.48)\nand\nu1 D \u0007p @\u0013\n@\u00122\n@p C \u00121\n\b\n1 C @\u0013\n@\u00122\n\t\n@\u00121:\n(8.49)\nAfter expanding the derivatives of \u0013 we have\nu1 D p@q C \u00122\n1\n\b\u0003q C p\u00122\nD\n\t\n@p \u0003 2\u00121p\n\b\u0003q C p\u00122\nD\n\t\n@\u00121;\n(8.50)\nand\nu2 D \u0003\u0007.\u00122\n1p=D/@p C .2\u0007\u00121p2=D/@\u00121;\n(8.51)\nwhere D D 2p2 C \u00122\n1.\nIf q ¤ 0 and p ¤ 0, then clearly u1 and u2 are linearly independent. However, if\np D 0 then u2 D 0. We proceed to compute the commutator Œf; Œf; g\t\t. Projecting to\nthe ﬁrst three components results in\nu2 D \u0007\n\b\u00122\n1p\nD\n\t\n@q \u0003 \u0007\n\b2\np3 C \n\u00122\n1p \u0003 \u00122\n1q\nD2\n\t\n@p C 2\u0007\u00121p\n\b2\np3 C \n\u00122\n1p \u0003 \u00122\n1q\nD2\n\t\n@\u00121:\n(8.52)\nAgain, we substitute p D 0 and ﬁnd that\nu2jpD0 D .\u0007\u00122\n1q=D2/@p:\n(8.53)\nUnfortunately, this is parallel to u1 (for p D 0), and hence yet one more commutator\nis required in this case.\n",
+  "verbatim_scope": "完整对应原页文字层，逐字保留；本条数学成分由statement_latex及statement_scope定位。",
+  "proof_latex": null,
+  "proof_note": "对应原页推导逐字保存在statement_verbatim/original_page_text；排版以原页PDF为准。",
+  "original_page_text": [
+    {
+      "pdf_page": 388,
+      "printed_page": 367,
+      "text": "8.6\nIsokinetic Methods and Integration with Very Large Timestep\n367\nThe proof requires calculation of the vector ﬁelds\nu0 D ˘ f;\nu1 D ˘ Œf; g\t ;\nu2 D ˘ Œf; Œf; g\t\t;\nu3 D ˘ Œf; Œf; Œf; g\t\t\t;\nwhere ˘ is the projector onto the ﬁrst three components. Because g D \u0007e4,\nit is enough to show that any pair from among these four vectors are linearly\nindependent, except possibly on M0. Note that projection can only be performed\nafter the full calculation of the relevant commutator. Because the commutators\nquickly become quite messy, we used a symbolic computing package to assist in\nthese calculations.\nThe ﬁrst two vectors are:\nu0 D p@q \u0003 .q C \u0013p/@p \u0003 .\u0013\u00121 C \u00121\u00122/@\u00121;\n(8.48)\nand\nu1 D \u0007p @\u0013\n@\u00122\n@p C \u00121\n\b\n1 C @\u0013\n@\u00122\n\t\n@\u00121:\n(8.49)\nAfter expanding the derivatives of \u0013 we have\nu1 D p@q C \u00122\n1\n\b\u0003q C p\u00122\nD\n\t\n@p \u0003 2\u00121p\n\b\u0003q C p\u00122\nD\n\t\n@\u00121;\n(8.50)\nand\nu2 D \u0003\u0007.\u00122\n1p=D/@p C .2\u0007\u00121p2=D/@\u00121;\n(8.51)\nwhere D D 2p2 C \u00122\n1.\nIf q ¤ 0 and p ¤ 0, then clearly u1 and u2 are linearly independent. However, if\np D 0 then u2 D 0. We proceed to compute the commutator Œf; Œf; g\t\t. Projecting to\nthe ﬁrst three components results in\nu2 D \u0007\n\b\u00122\n1p\nD\n\t\n@q \u0003 \u0007\n\b2\np3 C \n\u00122\n1p \u0003 \u00122\n1q\nD2\n\t\n@p C 2\u0007\u00121p\n\b2\np3 C \n\u00122\n1p \u0003 \u00122\n1q\nD2\n\t\n@\u00121:\n(8.52)\nAgain, we substitute p D 0 and ﬁnd that\nu2jpD0 D .\u0007\u00122\n1q=D2/@p:\n(8.53)\nUnfortunately, this is parallel to u1 (for p D 0), and hence yet one more commutator\nis required in this case.\n"
+    }
+  ],
+  "numbered_equations": [
+    "8.48",
+    "8.49",
+    "8.50",
+    "8.51",
+    "8.52",
+    "8.53"
+  ],
+  "transcription_note": "文字层逐字保留；数学排版另行转写，原页中的特殊字形编码不静默替换。PDF420仅取Exercises之前。",
+  "context_notation": [],
+  "extra_assumptions": [
+    "总化分式只在θ>0的约束面D=2θ>0使用；实际交换子先在四维完整计算再投影。",
+    "本条记录原印显式式和真实微分定义；显式式与真实二/三重交换子的等式尚未证明，列覆盖缺口。"
+  ],
+  "issues": [
+    "已目视核对原页PDF388：(8.50)的u₁公式实际重写u₀，(8.51)的u₂公式实际为首交换子；(8.49)第三分量似缺共同σ。原印与真实迭代交换子独立保留。"
+  ],
+  "statement_scope": "原印(8.48)–(8.53)的主要分量与实际交换子定义，(8.49)导数写法保存在逐字原页；未把错标指标视为已证恒等式。",
+  "lean_decl": "MD.Ch08.bracket4",
+  "lean_declarations": [
+    "MD.Ch08.bracket4",
+    "MD.Ch08.sinBracket",
+    "MD.Ch08.projectFirstThree",
+    "MD.Ch08.sinD",
+    "MD.Ch08.sinU0Printed",
+    "MD.Ch08.sinU1Printed",
+    "MD.Ch08.sinU2Printed",
+    "MD.Ch08.sinU1DerivativePrinted",
+    "MD.Ch08.sinProjected_corrected",
+    "MD.Ch08.sinU2LongPrinted",
+    "MD.Ch08.sinU2Long_at_p0"
+  ],
+  "source_page_verification": "见source_page_checks.json，已目视核对本条原页。",
+  "repair_log": [],
+  "documented_priors": []
+}
+```
+
+## 完整本条Lean
+```lean
+def bracket4 (f g : Vec 4 → Vec 4) (z : Vec 4) : Vec 4 :=
+  fderiv ℝ g z (f z)-fderiv ℝ f z (g z)
+def sinBracket (θ γ : ℝ) : ℕ → Vec 4 → Vec 4
+  | 0 => sinHarmonicF θ γ
+  | 1 => bracket4 (sinHarmonicF θ γ) (fun _ ↦ sinHarmonicG θ γ)
+  | k+2 => bracket4 (sinHarmonicF θ γ) (sinBracket θ γ (k+1))
+def projectFirstThree (z : Vec 4) : Vec 3 := ![z 0,z 1,z 2]
+def sinD (z : Vec 4) : ℝ := 2*z 1^2+z 2^2
+def sinU0Printed (z : Vec 4) : Vec 3 :=
+  ![z 1,z 2^2*(-z 0+z 1*z 3)/sinD z,-2*z 2*z 1*(-z 0+z 1*z 3)/sinD z]
+def sinU1Printed (z : Vec 4) : Vec 3 := sinU0Printed z
+def sinU2Printed (σ : ℝ) (z : Vec 4) : Vec 3 :=
+  ![0,-σ*z 2^2*z 1/sinD z,2*σ*z 2*z 1^2/sinD z]
+def sinU1DerivativePrinted (σ : ℝ) (z : Vec 4) : Vec 3 :=
+  let d := fderiv ℝ (sinMultiplier 1 (fun q ↦ -q)) z (Pi.single 3 1)
+  ![0,σ*z 1*d,z 2*(1+d)]
+def sinProjected_corrected (θ γ : ℝ) (j : Fin 4) (z : Vec 4) : Vec 3 :=
+  projectFirstThree (sinBracket θ γ j z)
+def sinU2LongPrinted (σ γ : ℝ) (z : Vec 4) : Vec 3 :=
+  let a := (2*γ*z 1^3+γ*z 2^2*z 1-z 2^2*z 0)/(sinD z)^2
+  ![σ*z 2^2*z 1/sinD z,-σ*a,2*σ*z 2*z 1*a]
+theorem sinU2Long_at_p0 (σ γ : ℝ) (z : Vec 4) (hp : z 1=0) :
+    sinU2LongPrinted σ γ z = ![0,σ*z 2^2*z 0/(sinD z)^2,0] := by
+  ext i; fin_cases i <;> simp [sinU2LongPrinted,hp] <;> ring
+```
+
+## 项目依赖定义体及选择规格
+以下def/abbrev/structure完整保留；定理列出完整类型，Mathlib标准定义无需摘录。
+
+### MD.Ch08.Vec (Blueprint/Ch08.lean:17)
+原文件上下文：
+```lean
+open Set Filter MeasureTheory ProbabilityTheory MolecularDynamics
+open scoped BigOperators Topology ContDiff ENNReal NNReal Matrix
+variable {Ω : Type*} [MeasurableSpace Ω]
+variable {n : ℕ}
+```
+```lean
+abbrev Vec (n : ℕ) := Fin n → ℝ
+```
+
+### MD.Ch08.sinConstraint (Blueprint/Ch08.lean:714)
+原文件上下文：
+```lean
+open Set Filter MeasureTheory ProbabilityTheory MolecularDynamics
+open scoped BigOperators Topology ContDiff ENNReal NNReal Matrix
+variable {Ω : Type*} [MeasurableSpace Ω]
+variable {n : ℕ}
+```
+```lean
+def sinConstraint (Q1 : ℝ) (z : Vec 4) : ℝ := z 1^2+Q1*z 2^2/2
+```
+
+### MD.Ch08.sinMultiplier (Blueprint/Ch08.lean:715)
+原文件上下文：
+```lean
+open Set Filter MeasureTheory ProbabilityTheory MolecularDynamics
+open scoped BigOperators Topology ContDiff ENNReal NNReal Matrix
+variable {Ω : Type*} [MeasurableSpace Ω]
+variable {n : ℕ}
+```
+```lean
+def sinMultiplier (Q1 : ℝ) (F : ℝ → ℝ) (z : Vec 4) : ℝ :=
+  (z 1*F (z 0)-Q1*z 2^2*z 3/2)/sinConstraint Q1 z
+```
+
+### MD.Ch08.sinDrift (Blueprint/Ch08.lean:717)
+原文件上下文：
+```lean
+open Set Filter MeasureTheory ProbabilityTheory MolecularDynamics
+open scoped BigOperators Topology ContDiff ENNReal NNReal Matrix
+variable {Ω : Type*} [MeasurableSpace Ω]
+variable {n : ℕ}
+```
+```lean
+def sinDrift (Q1 Q2 θ γ : ℝ) (F : ℝ → ℝ) (z : Vec 4) : Vec 4 :=
+  let lam := sinMultiplier Q1 F z
+  ![z 1, F (z 0)-lam*z 1, -lam*z 2-z 3*z 2, (Q1*z 2^2-θ)/Q2-γ*z 3]
+```
+
+### MD.Ch08.sinHarmonicF (Blueprint/Ch08.lean:755)
+原文件上下文：
+```lean
+open Set Filter MeasureTheory ProbabilityTheory MolecularDynamics
+open scoped BigOperators Topology ContDiff ENNReal NNReal Matrix
+variable {Ω : Type*} [MeasurableSpace Ω]
+variable {n : ℕ}
+```
+```lean
+def sinHarmonicF (θ γ : ℝ) : Vec 4 → Vec 4 := sinDrift 1 1 θ γ (fun q ↦ -q)
+```
+
+### MD.Ch08.sinHarmonicG (Blueprint/Ch08.lean:756)
+原文件上下文：
+```lean
+open Set Filter MeasureTheory ProbabilityTheory MolecularDynamics
+open scoped BigOperators Topology ContDiff ENNReal NNReal Matrix
+variable {Ω : Type*} [MeasurableSpace Ω]
+variable {n : ℕ}
+```
+```lean
+def sinHarmonicG (θ γ : ℝ) : Vec 4 := ![0,0,0,Real.sqrt (2*γ*θ)]
+```
+
+### MD.Ch08.bracket4 (Blueprint/Ch08.lean:775)
+原文件上下文：
+```lean
+open Set Filter MeasureTheory ProbabilityTheory MolecularDynamics
+open scoped BigOperators Topology ContDiff ENNReal NNReal Matrix
+variable {Ω : Type*} [MeasurableSpace Ω]
+variable {n : ℕ}
+```
+```lean
+def bracket4 (f g : Vec 4 → Vec 4) (z : Vec 4) : Vec 4 :=
+  fderiv ℝ g z (f z)-fderiv ℝ f z (g z)
+```
+
+### MD.Ch08.sinBracket (Blueprint/Ch08.lean:777)
+原文件上下文：
+```lean
+open Set Filter MeasureTheory ProbabilityTheory MolecularDynamics
+open scoped BigOperators Topology ContDiff ENNReal NNReal Matrix
+variable {Ω : Type*} [MeasurableSpace Ω]
+variable {n : ℕ}
+```
+```lean
+def sinBracket (θ γ : ℝ) : ℕ → Vec 4 → Vec 4
+  | 0 => sinHarmonicF θ γ
+  | 1 => bracket4 (sinHarmonicF θ γ) (fun _ ↦ sinHarmonicG θ γ)
+  | k+2 => bracket4 (sinHarmonicF θ γ) (sinBracket θ γ (k+1))
+```
+
+### MD.Ch08.projectFirstThree (Blueprint/Ch08.lean:781)
+原文件上下文：
+```lean
+open Set Filter MeasureTheory ProbabilityTheory MolecularDynamics
+open scoped BigOperators Topology ContDiff ENNReal NNReal Matrix
+variable {Ω : Type*} [MeasurableSpace Ω]
+variable {n : ℕ}
+```
+```lean
+def projectFirstThree (z : Vec 4) : Vec 3 := ![z 0,z 1,z 2]
+```
+
+### MD.Ch08.sinD (Blueprint/Ch08.lean:782)
+原文件上下文：
+```lean
+open Set Filter MeasureTheory ProbabilityTheory MolecularDynamics
+open scoped BigOperators Topology ContDiff ENNReal NNReal Matrix
+variable {Ω : Type*} [MeasurableSpace Ω]
+variable {n : ℕ}
+```
+```lean
+def sinD (z : Vec 4) : ℝ := 2*z 1^2+z 2^2
+```
+
+### MD.Ch08.sinU0Printed (Blueprint/Ch08.lean:783)
+原文件上下文：
+```lean
+open Set Filter MeasureTheory ProbabilityTheory MolecularDynamics
+open scoped BigOperators Topology ContDiff ENNReal NNReal Matrix
+variable {Ω : Type*} [MeasurableSpace Ω]
+variable {n : ℕ}
+```
+```lean
+def sinU0Printed (z : Vec 4) : Vec 3 :=
+  ![z 1,z 2^2*(-z 0+z 1*z 3)/sinD z,-2*z 2*z 1*(-z 0+z 1*z 3)/sinD z]
+```
+
+### MD.Ch08.sinU1Printed (Blueprint/Ch08.lean:785)
+原文件上下文：
+```lean
+open Set Filter MeasureTheory ProbabilityTheory MolecularDynamics
+open scoped BigOperators Topology ContDiff ENNReal NNReal Matrix
+variable {Ω : Type*} [MeasurableSpace Ω]
+variable {n : ℕ}
+```
+```lean
+def sinU1Printed (z : Vec 4) : Vec 3 := sinU0Printed z
+```
+
+### MD.Ch08.sinU2Printed (Blueprint/Ch08.lean:786)
+原文件上下文：
+```lean
+open Set Filter MeasureTheory ProbabilityTheory MolecularDynamics
+open scoped BigOperators Topology ContDiff ENNReal NNReal Matrix
+variable {Ω : Type*} [MeasurableSpace Ω]
+variable {n : ℕ}
+```
+```lean
+def sinU2Printed (σ : ℝ) (z : Vec 4) : Vec 3 :=
+  ![0,-σ*z 2^2*z 1/sinD z,2*σ*z 2*z 1^2/sinD z]
+```
+
+### MD.Ch08.sinU1DerivativePrinted (Blueprint/Ch08.lean:788)
+原文件上下文：
+```lean
+open Set Filter MeasureTheory ProbabilityTheory MolecularDynamics
+open scoped BigOperators Topology ContDiff ENNReal NNReal Matrix
+variable {Ω : Type*} [MeasurableSpace Ω]
+variable {n : ℕ}
+```
+```lean
+def sinU1DerivativePrinted (σ : ℝ) (z : Vec 4) : Vec 3 :=
+  let d := fderiv ℝ (sinMultiplier 1 (fun q ↦ -q)) z (Pi.single 3 1)
+  ![0,σ*z 1*d,z 2*(1+d)]
+```
+
+### MD.Ch08.sinProjected_corrected (Blueprint/Ch08.lean:791)
+原文件上下文：
+```lean
+open Set Filter MeasureTheory ProbabilityTheory MolecularDynamics
+open scoped BigOperators Topology ContDiff ENNReal NNReal Matrix
+variable {Ω : Type*} [MeasurableSpace Ω]
+variable {n : ℕ}
+```
+```lean
+def sinProjected_corrected (θ γ : ℝ) (j : Fin 4) (z : Vec 4) : Vec 3 :=
+  projectFirstThree (sinBracket θ γ j z)
+```
+
+### MD.Ch08.sinU2LongPrinted (Blueprint/Ch08.lean:793)
+原文件上下文：
+```lean
+open Set Filter MeasureTheory ProbabilityTheory MolecularDynamics
+open scoped BigOperators Topology ContDiff ENNReal NNReal Matrix
+variable {Ω : Type*} [MeasurableSpace Ω]
+variable {n : ℕ}
+```
+```lean
+def sinU2LongPrinted (σ γ : ℝ) (z : Vec 4) : Vec 3 :=
+  let a := (2*γ*z 1^3+γ*z 2^2*z 1-z 2^2*z 0)/(sinD z)^2
+  ![σ*z 2^2*z 1/sinD z,-σ*a,2*σ*z 2*z 1*a]
+```
+
+### MD.Ch08.sinU2Long_at_p0 (Blueprint/Ch08.lean:796)
+原文件上下文：
+```lean
+open Set Filter MeasureTheory ProbabilityTheory MolecularDynamics
+open scoped BigOperators Topology ContDiff ENNReal NNReal Matrix
+variable {Ω : Type*} [MeasurableSpace Ω]
+variable {n : ℕ}
+```
+```lean
+theorem sinU2Long_at_p0 (σ γ : ℝ) (z : Vec 4) (hp : z 1=0) :
+    sinU2LongPrinted σ γ z = ![0,σ*z 2^2*z 0/(sinD z)^2,0]
+```

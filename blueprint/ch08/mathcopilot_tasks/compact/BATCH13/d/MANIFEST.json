@@ -1,0 +1,136 @@
+{
+  "batch": "BATCH13",
+  "subtask": "BATCH13d",
+  "source_ids": [
+    "MD-8.8-AndersenHamiltonianPrinted"
+  ],
+  "input_sha256": {
+    "Blueprint/Ch08.lean": "2800812fadd8e2557013f1941e4570401f7903d46f44baf07e23d5531da22a72",
+    "blueprint/ch08/ch08_source.json": "9b994b0f64cd22c85c2ad4123fbfdbd064bd7a6d070fe13b721794432f9f7a63",
+    "BATCH13d_PAGES.pdf": "243bf29550eb79987274e6d3080b4388f3a79ebba5fa85007a350c5dafcfb9b7"
+  },
+  "page_mapping": [
+    {
+      "attachment_page": 1,
+      "original_pdf_page": 401,
+      "printed_page": 380
+    }
+  ],
+  "definition_excerpts": [
+    {
+      "full_name": "MD.Ch08.Vec",
+      "kind": "abbrev",
+      "path": "Blueprint/Ch08.lean",
+      "line": 17,
+      "code_sha256": "6f4b254a8a7cc4115fb35265b77caa663bdd18567cd1e664cc5bbd080d02fcff"
+    },
+    {
+      "full_name": "MD.Ch08.Phase",
+      "kind": "abbrev",
+      "path": "Blueprint/Ch08.lean",
+      "line": 18,
+      "code_sha256": "377b8086105169a0d2deaa2dd84218cb6ea1d04d27b576cd82794d54e5b84300"
+    },
+    {
+      "full_name": "MD.Ch08.volumeScale",
+      "kind": "def",
+      "path": "Blueprint/Ch08.lean",
+      "line": 1121,
+      "code_sha256": "aa453a63818652b11c7ff9af74d55b79af32e1ab673139adfff3b37991e97ae5"
+    },
+    {
+      "full_name": "MD.Ch08.andersenPosition",
+      "kind": "def",
+      "path": "Blueprint/Ch08.lean",
+      "line": 1140,
+      "code_sha256": "a75a6031733c9b97662c4b28527bfbd94f205e85c35fadd8237c38cb12f94cfb"
+    },
+    {
+      "full_name": "MD.Ch08.andersenHamiltonian",
+      "kind": "def",
+      "path": "Blueprint/Ch08.lean",
+      "line": 1176,
+      "code_sha256": "f1f24e2b4f365a5e3e476cbe8843fa97c5e3a5f61c8a7e64bb71fee6faeb949d"
+    },
+    {
+      "full_name": "MD.Ch08.andersenMarginalPrinted",
+      "kind": "def",
+      "path": "Blueprint/Ch08.lean",
+      "line": 1180,
+      "code_sha256": "99a70c71f40ded7f587ae8feb566439cfae7735f0ba07c246474d045f69cfa7d"
+    },
+    {
+      "full_name": "MD.Ch08.andersenMarginal_corrected",
+      "kind": "def",
+      "path": "Blueprint/Ch08.lean",
+      "line": 1183,
+      "code_sha256": "4add5eafd1fc19f7f4d65fbaf621a016a50eb1eb68e8533126facd7122a903ad"
+    },
+    {
+      "full_name": "MD.Ch08.andersenGaussian_marginal",
+      "kind": "theorem",
+      "path": "Blueprint/Ch08.lean",
+      "line": 1185,
+      "code_sha256": "e94ac26871cc783370bd477afb388f3d9a17ed09f333febf1dd9bb033c2edf7a"
+    },
+    {
+      "full_name": "MolecularDynamics.Chapter02Review.Q",
+      "kind": "abbrev",
+      "path": "MolecularDynamics/Chapter02/ReviewDefinitions.lean",
+      "line": 17,
+      "code_sha256": "d01d4518aed3668e7c982afee1cd3820fb858a94438e5b8960aa0557f5a57ef1"
+    },
+    {
+      "full_name": "MolecularDynamics.Chapter02Review.Z",
+      "kind": "abbrev",
+      "path": "MolecularDynamics/Chapter02/ReviewDefinitions.lean",
+      "line": 18,
+      "code_sha256": "5c03b9b4c74d753cfe2d9b89534d4a9a6c9c137e38273514b8c3e6d35f4c4af1"
+    },
+    {
+      "full_name": "MolecularDynamics.Chapter04Review.Q",
+      "kind": "abbrev",
+      "path": "MolecularDynamics/Chapter04/ReviewDefinitions.lean",
+      "line": 15,
+      "code_sha256": "d01d4518aed3668e7c982afee1cd3820fb858a94438e5b8960aa0557f5a57ef1"
+    },
+    {
+      "full_name": "MolecularDynamics.Chapter04Review.Z",
+      "kind": "abbrev",
+      "path": "MolecularDynamics/Chapter04/ReviewDefinitions.lean",
+      "line": 16,
+      "code_sha256": "5c03b9b4c74d753cfe2d9b89534d4a9a6c9c137e38273514b8c3e6d35f4c4af1"
+    },
+    {
+      "full_name": "MolecularDynamics.Chapter04Review.V",
+      "kind": "abbrev",
+      "path": "MolecularDynamics/Chapter04/ReviewDefinitions.lean",
+      "line": 17,
+      "code_sha256": "6ccc37dabd7987877f0360d3e6067166bb92c659835fdca7d3dcf9128e65be72"
+    },
+    {
+      "full_name": "MolecularDynamics.Chapter06Review.V",
+      "kind": "abbrev",
+      "path": "MolecularDynamics/Chapter06/ReviewDefinitions.lean",
+      "line": 17,
+      "code_sha256": "7ab0ad90462b274b03f5b929b5f09417c0b397b6cb908fa6e7bd56677a314027"
+    }
+  ],
+  "validation": {
+    "project_constant_closure": "PASS",
+    "missing_project_definitions": [],
+    "full_page_render_equality_dpi": 72,
+    "website_submitted": false
+  },
+  "files": {
+    "PASTE.txt": {
+      "bytes": 14022,
+      "sha256": "d13fa3c36af4d3de7b96ac9bdd74b3f4c5910195d0a51c8484dbd3aa246e218c"
+    },
+    "BATCH13d_PAGES.pdf": {
+      "bytes": 72589,
+      "sha256": "243bf29550eb79987274e6d3080b4388f3a79ebba5fa85007a350c5dafcfb9b7"
+    }
+  },
+  "total_task_bytes": 91253
+}

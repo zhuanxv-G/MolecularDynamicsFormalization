@@ -1,0 +1,128 @@
+以附件/PASTE 为准，忽略 /workspace 旧文件；Mathlib 定义按标准含义采信。
+本任务只审本条：原文转录、对象资格、定义体、量词、全部结论及[EXTRA]是否一致；Lean编译不代替语义审阅。
+Lean/Mathlib均4.34.0。原页PDF映射：[394]；印刷页=[373].
+input_sha256请原样回显：
+{
+  "Blueprint/Ch08.lean": "2800812fadd8e2557013f1941e4570401f7903d46f44baf07e23d5531da22a72",
+  "blueprint/ch08/ch08_source.json": "9b994b0f64cd22c85c2ad4123fbfdbd064bd7a6d070fe13b721794432f9f7a63",
+  "BATCH11a_PAGES.pdf": "669efebbb8ebfd1b9ca89727cd8680cea250f77d035cfe02b91dfd3423ff4331"
+}
+用代码将JSON对象(batch,input_sha256,items)写到 /workspace/.mathcopilot/reviews/ch08/BATCH11a_review.json；items仅含本source_id。
+items字段：source_id、verdict(PASS/FAIL/NEEDS_HUMAN)、transcription、semantic_review、counterexample、suggested_fix、printed_version、corrected_version。逐版区分原文疑误和修正版结论；缺材料必须具体指出，不猜测。写后json.loads自检，最后仅回复路径及统计。
+
+## 原文JSON
+```json
+{
+  "source_id": "MD-8.6.4-SINThreeLevelPotential",
+  "kind": "definition",
+  "label": null,
+  "section": "8.6.4",
+  "printed_page": "373",
+  "pdf_page": "394",
+  "statement_latex": "U_Total=U_bonds+U_s.r.+U_l.r.; h_outer and h_mid are integer multiples of the next smaller stepsizes.",
+  "statement_verbatim": "8.7\nGeneralized Langevin Dynamics\n373\n8.6.4\nNumerical Example\nLet us brieﬂy summarize the numerical experiments of [220] using the SIN(R)\nmethod to simulate a system of 512 ﬂexible water molecules using a fully ﬂexible\nmolecular model [294] and the smooth particle-mesh Ewald method (SPME)\n[123] (see Appendix A) to compute electrostatic forces. Initial simulations were\nconducted without a fast-slow force decomposition to demonstrate the effectiveness\nof the method as a thermostatting scheme. This technique was shown to allow\naccurate computation of the OH, HH and OO radial distribution functions when\nsuitably small timesteps were used.\nAs explained in Chap.4, the resonances in multiple timestepping restrict the\nsize of the large (outer) stepsize usable in simulation. In the case of fully ﬂexible\nwater the maximum outer stepsize that can be used for stable RESPA simulation is\ntypically found to be less than 5 fs [245, 329]. A multiple timestepping method for\nthe SPME method can be based on the decomposition\nUTotal D Ubonds C Us:r: C Ul:r:\nwhere Ubonds includes length and angle bonds, Us:r: includes all other short-ranged\ncomponents, and Ul:r: incorporates both the “reciprocal space part” from Particle\nMesh Ewald summation (normally calculated using 3D FFT) as well as longer-\nranged screened Coulombic pair terms within the simulation cell. Then a nested\nmultiple timestepping hierarchy can be used with stepsizes hinner, hmid and houter,\neach larger stepsize being an integer multiple of the next smaller. There is no\ndifﬁculty with adapting the SIN(R) scheme (which was presented for a two-level\nsetup) to this multi-level hierarchical timestepping framework.\nThe article [220] provides more detail of the SPME parameters and a detailed\nanalysis of the numerical performance. We merely mention here that with hinner D\n0:5 fs and hmid D 3 fs, it was possible to use outer stepsizes of up to 99 fs for\nstable integration and accurate resolution of all three radial distribution functions,\nwith no evidence of resonances. The short-range cutoff in the reported simulations\nwas around 8Å. High efﬁciency improvements would be anticipated in simulations\nwith a large simulation cell. These methods could be valuable in more complex\napplications, including systems with mixed quantum and classical simulation\ndomains, and in the setting of high performance computing architectures, e.g. GPU\nsystems.\n8.7\nGeneralized Langevin Dynamics\nWe have already encountered Generalized Langevin dynamics in Chap.6, where it\nappeared as an intermediate stage in the derivation of Langevin dynamics. In some\ncases, the properties of the heat bath and the resulting memory kernel are important\n",
+  "verbatim_scope": "完整对应原页文字层，逐字保留；本条数学成分由statement_latex及statement_scope定位。",
+  "proof_latex": null,
+  "proof_note": "对应原页推导逐字保存在statement_verbatim/original_page_text；排版以原页PDF为准。",
+  "original_page_text": [
+    {
+      "pdf_page": 394,
+      "printed_page": 373,
+      "text": "8.7\nGeneralized Langevin Dynamics\n373\n8.6.4\nNumerical Example\nLet us brieﬂy summarize the numerical experiments of [220] using the SIN(R)\nmethod to simulate a system of 512 ﬂexible water molecules using a fully ﬂexible\nmolecular model [294] and the smooth particle-mesh Ewald method (SPME)\n[123] (see Appendix A) to compute electrostatic forces. Initial simulations were\nconducted without a fast-slow force decomposition to demonstrate the effectiveness\nof the method as a thermostatting scheme. This technique was shown to allow\naccurate computation of the OH, HH and OO radial distribution functions when\nsuitably small timesteps were used.\nAs explained in Chap.4, the resonances in multiple timestepping restrict the\nsize of the large (outer) stepsize usable in simulation. In the case of fully ﬂexible\nwater the maximum outer stepsize that can be used for stable RESPA simulation is\ntypically found to be less than 5 fs [245, 329]. A multiple timestepping method for\nthe SPME method can be based on the decomposition\nUTotal D Ubonds C Us:r: C Ul:r:\nwhere Ubonds includes length and angle bonds, Us:r: includes all other short-ranged\ncomponents, and Ul:r: incorporates both the “reciprocal space part” from Particle\nMesh Ewald summation (normally calculated using 3D FFT) as well as longer-\nranged screened Coulombic pair terms within the simulation cell. Then a nested\nmultiple timestepping hierarchy can be used with stepsizes hinner, hmid and houter,\neach larger stepsize being an integer multiple of the next smaller. There is no\ndifﬁculty with adapting the SIN(R) scheme (which was presented for a two-level\nsetup) to this multi-level hierarchical timestepping framework.\nThe article [220] provides more detail of the SPME parameters and a detailed\nanalysis of the numerical performance. We merely mention here that with hinner D\n0:5 fs and hmid D 3 fs, it was possible to use outer stepsizes of up to 99 fs for\nstable integration and accurate resolution of all three radial distribution functions,\nwith no evidence of resonances. The short-range cutoff in the reported simulations\nwas around 8Å. High efﬁciency improvements would be anticipated in simulations\nwith a large simulation cell. These methods could be valuable in more complex\napplications, including systems with mixed quantum and classical simulation\ndomains, and in the setting of high performance computing architectures, e.g. GPU\nsystems.\n8.7\nGeneralized Langevin Dynamics\nWe have already encountered Generalized Langevin dynamics in Chap.6, where it\nappeared as an intermediate stage in the derivation of Langevin dynamics. In some\ncases, the properties of the heat bath and the resulting memory kernel are important\n"
+    }
+  ],
+  "numbered_equations": [],
+  "transcription_note": "文字层逐字保留；数学排版另行转写，原页中的特殊字形编码不静默替换。PDF420仅取Exercises之前。",
+  "context_notation": [],
+  "extra_assumptions": [
+    "仅保留势的三项分解和整数时标嵌套；SPME实现、99fs稳定性及水分子径向分布等属于数值观察，逐项排除。"
+  ],
+  "issues": [],
+  "statement_scope": "三层势与步长嵌套的定义。",
+  "lean_decl": "MD.Ch08.threeLevelPotential",
+  "lean_declarations": [
+    "MD.Ch08.threeLevelPotential",
+    "MD.Ch08.nestedTimeSteps"
+  ],
+  "source_page_verification": "见source_page_checks.json，已目视核对本条原页。",
+  "repair_log": [],
+  "documented_priors": []
+}
+```
+
+## 完整本条Lean
+```lean
+def threeLevelPotential (bond short long : Vec n → ℝ) : Vec n → ℝ := bond+short+long
+def nestedTimeSteps (inner middle outer : ℝ) : Prop :=
+  0 < inner ∧ ∃ r s : ℕ, 0 < r ∧ 0 < s ∧ middle=r*inner ∧ outer=s*middle
+```
+
+## 项目依赖定义体及选择规格
+以下def/abbrev/structure完整保留；定理列出完整类型，Mathlib标准定义无需摘录。
+
+### MD.Ch08.Vec (Blueprint/Ch08.lean:17)
+原文件上下文：
+```lean
+open Set Filter MeasureTheory ProbabilityTheory MolecularDynamics
+open scoped BigOperators Topology ContDiff ENNReal NNReal Matrix
+variable {Ω : Type*} [MeasurableSpace Ω]
+variable {n : ℕ}
+```
+```lean
+abbrev Vec (n : ℕ) := Fin n → ℝ
+```
+
+### MD.Ch08.threeLevelPotential (Blueprint/Ch08.lean:924)
+原文件上下文：
+```lean
+open Set Filter MeasureTheory ProbabilityTheory MolecularDynamics
+open scoped BigOperators Topology ContDiff ENNReal NNReal Matrix
+variable {Ω : Type*} [MeasurableSpace Ω]
+variable {n : ℕ}
+```
+```lean
+def threeLevelPotential (bond short long : Vec n → ℝ) : Vec n → ℝ := bond+short+long
+```
+
+### MD.Ch08.nestedTimeSteps (Blueprint/Ch08.lean:925)
+原文件上下文：
+```lean
+open Set Filter MeasureTheory ProbabilityTheory MolecularDynamics
+open scoped BigOperators Topology ContDiff ENNReal NNReal Matrix
+variable {Ω : Type*} [MeasurableSpace Ω]
+variable {n : ℕ}
+```
+```lean
+def nestedTimeSteps (inner middle outer : ℝ) : Prop :=
+  0 < inner ∧ ∃ r s : ℕ, 0 < r ∧ 0 < s ∧ middle=r*inner ∧ outer=s*middle
+```
+
+### MolecularDynamics.Chapter04Review.V (MolecularDynamics/Chapter04/ReviewDefinitions.lean:17)
+原文件上下文：
+```lean
+open Set Matrix
+open scoped BigOperators Topology Matrix.Norms.Elementwise
+```
+```lean
+abbrev V := Fin 3 → ℝ
+```
+
+### MolecularDynamics.Chapter04Review.Mat3 (MolecularDynamics/Chapter04/ReviewDefinitions.lean:18)
+原文件上下文：
+```lean
+open Set Matrix
+open scoped BigOperators Topology Matrix.Norms.Elementwise
+```
+```lean
+abbrev Mat3 := Matrix (Fin 3) (Fin 3) ℝ
+```
+
+### MolecularDynamics.Chapter04Review.outer (MolecularDynamics/Chapter04/ReviewDefinitions.lean:157)
+原文件上下文：
+```lean
+open Set Matrix
+open scoped BigOperators Topology Matrix.Norms.Elementwise
+```
+```lean
+def outer (v : V) : Mat3 := fun i j => v i*v j
+```

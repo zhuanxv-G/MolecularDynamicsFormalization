@@ -1,0 +1,73 @@
+{
+  "batch": "BATCH11",
+  "subtask": "BATCH11f",
+  "source_ids": [
+    "MD-8.7.1-PronyOUStationarity"
+  ],
+  "input_sha256": {
+    "Blueprint/Ch08.lean": "2800812fadd8e2557013f1941e4570401f7903d46f44baf07e23d5531da22a72",
+    "blueprint/ch08/ch08_source.json": "9b994b0f64cd22c85c2ad4123fbfdbd064bd7a6d070fe13b721794432f9f7a63",
+    "BATCH11f_PAGES.pdf": "050e76ab4147dbf8653193853199e08ec0a9303008e3344351aa2eb2e55c227d"
+  },
+  "page_mapping": [
+    {
+      "attachment_page": 1,
+      "original_pdf_page": 397,
+      "printed_page": 376
+    }
+  ],
+  "definition_excerpts": [
+    {
+      "full_name": "MD.Ch08.Vec",
+      "kind": "abbrev",
+      "path": "Blueprint/Ch08.lean",
+      "line": 17,
+      "code_sha256": "6f4b254a8a7cc4115fb35265b77caa663bdd18567cd1e664cc5bbd080d02fcff"
+    },
+    {
+      "full_name": "MD.Ch08.independentWiener",
+      "kind": "def",
+      "path": "Blueprint/Ch08.lean",
+      "line": 307,
+      "code_sha256": "244c6d2d9a686d3df1fc2abd2a1c945a448896d7397bd79928618c58bcc75f4d"
+    },
+    {
+      "full_name": "MD.Ch08.stationaryPronyOU",
+      "kind": "def",
+      "path": "Blueprint/Ch08.lean",
+      "line": 1001,
+      "code_sha256": "e2504ef1c4d9bdb9c617d138bfcf8920640f5e1f24fa2001caf8531220d8af73"
+    },
+    {
+      "full_name": "MD.Ch08.pronyOU_covariance",
+      "kind": "theorem",
+      "path": "Blueprint/Ch08.lean",
+      "line": 1011,
+      "code_sha256": "c397b5a8f5ff85596fef75ccbdc57d815ef91372d013fa8233235dea1a1da682"
+    },
+    {
+      "full_name": "MD.Ch08.totalPronyRandomForce",
+      "kind": "def",
+      "path": "Blueprint/Ch08.lean",
+      "line": 1017,
+      "code_sha256": "92f45bce91445ea21574d4466bc0e721ca248501d7743c7e23cc28c9883df312"
+    }
+  ],
+  "validation": {
+    "project_constant_closure": "PASS",
+    "missing_project_definitions": [],
+    "full_page_render_equality_dpi": 72,
+    "website_submitted": false
+  },
+  "files": {
+    "PASTE.txt": {
+      "bytes": 10136,
+      "sha256": "0081e13925a2fd32c9824e2cb77164f6f5957a81c6af90373a6fa517ce799189"
+    },
+    "BATCH11f_PAGES.pdf": {
+      "bytes": 62485,
+      "sha256": "050e76ab4147dbf8653193853199e08ec0a9303008e3344351aa2eb2e55c227d"
+    }
+  },
+  "total_task_bytes": 74897
+}

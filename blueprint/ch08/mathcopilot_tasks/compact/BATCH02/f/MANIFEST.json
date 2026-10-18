@@ -1,0 +1,129 @@
+{
+  "batch": "BATCH02",
+  "subtask": "BATCH02f",
+  "source_ids": [
+    "MD-8.1.2.1-NPtoNH"
+  ],
+  "input_sha256": {
+    "Blueprint/Ch08.lean": "2800812fadd8e2557013f1941e4570401f7903d46f44baf07e23d5531da22a72",
+    "blueprint/ch08/ch08_source.json": "9b994b0f64cd22c85c2ad4123fbfdbd064bd7a6d070fe13b721794432f9f7a63",
+    "BATCH02f_PAGES.pdf": "23fdaddd72578c89786ad97d54b3c94d269126a2607b37a08c1ef253d67afb12"
+  },
+  "page_mapping": [
+    {
+      "attachment_page": 1,
+      "original_pdf_page": 356,
+      "printed_page": 335
+    }
+  ],
+  "definition_excerpts": [
+    {
+      "full_name": "MD.Ch08.Vec",
+      "kind": "abbrev",
+      "path": "Blueprint/Ch08.lean",
+      "line": 17,
+      "code_sha256": "6f4b254a8a7cc4115fb35265b77caa663bdd18567cd1e664cc5bbd080d02fcff"
+    },
+    {
+      "full_name": "MD.Ch08.Phase",
+      "kind": "abbrev",
+      "path": "Blueprint/Ch08.lean",
+      "line": 18,
+      "code_sha256": "377b8086105169a0d2deaa2dd84218cb6ea1d04d27b576cd82794d54e5b84300"
+    },
+    {
+      "full_name": "MD.Ch08.gradient",
+      "kind": "def",
+      "path": "Blueprint/Ch08.lean",
+      "line": 20,
+      "code_sha256": "a9a017b15c584dec720a71840d896ddb8d0e05e149030bce523362af481b101e"
+    },
+    {
+      "full_name": "MD.Ch08.thermostatParameters",
+      "kind": "def",
+      "path": "Blueprint/Ch08.lean",
+      "line": 63,
+      "code_sha256": "e270d7f3278cd4087efb4fb6de4f2ba99959cae64baec460ebb813f9d01cc285"
+    },
+    {
+      "full_name": "MD.Ch08.kineticTwice",
+      "kind": "def",
+      "path": "Blueprint/Ch08.lean",
+      "line": 65,
+      "code_sha256": "74e9a17210c40ab25bfb4d66c78bf295ed45ebc01a50292e3e9961df7d0ced46"
+    },
+    {
+      "full_name": "MD.Ch08.nhField",
+      "kind": "def",
+      "path": "Blueprint/Ch08.lean",
+      "line": 66,
+      "code_sha256": "f6402231f8f1b1e43957842a16438100aea4bbe61e714af2b90139f345498154"
+    },
+    {
+      "full_name": "MD.Ch08.isNHSolution",
+      "kind": "def",
+      "path": "Blueprint/Ch08.lean",
+      "line": 70,
+      "code_sha256": "a455957dd337deafe10028edff335beb5849b62f44c4ef85b72762d0272da8c7"
+    },
+    {
+      "full_name": "MD.Ch08.npHamiltonian",
+      "kind": "def",
+      "path": "Blueprint/Ch08.lean",
+      "line": 149,
+      "code_sha256": "559e03768e0bd5e9ee808d76e3f0c8654fd5210345aceb89b1c249cf89c46136"
+    },
+    {
+      "full_name": "MD.Ch08.npField",
+      "kind": "def",
+      "path": "Blueprint/Ch08.lean",
+      "line": 165,
+      "code_sha256": "50308c9acb0936461891137592b25c4943bb64eb9cb4f2a979a6c5518561c2c4"
+    },
+    {
+      "full_name": "MD.Ch08.npProjection",
+      "kind": "def",
+      "path": "Blueprint/Ch08.lean",
+      "line": 176,
+      "code_sha256": "81a0afddd33284c4453d30f3351b1ad1f207758aced820cbe0e20d96a0bc670d"
+    },
+    {
+      "full_name": "MD.Ch08.npProjection_equations",
+      "kind": "theorem",
+      "path": "Blueprint/Ch08.lean",
+      "line": 178,
+      "code_sha256": "ff045bfa28e1eb2fef6ab19f8c090352602d45b12d111a7edaf81343ecc1acf2"
+    },
+    {
+      "full_name": "MolecularDynamics.Chapter02Review.Q",
+      "kind": "abbrev",
+      "path": "MolecularDynamics/Chapter02/ReviewDefinitions.lean",
+      "line": 17,
+      "code_sha256": "d01d4518aed3668e7c982afee1cd3820fb858a94438e5b8960aa0557f5a57ef1"
+    },
+    {
+      "full_name": "MolecularDynamics.Chapter04Review.Q",
+      "kind": "abbrev",
+      "path": "MolecularDynamics/Chapter04/ReviewDefinitions.lean",
+      "line": 15,
+      "code_sha256": "d01d4518aed3668e7c982afee1cd3820fb858a94438e5b8960aa0557f5a57ef1"
+    }
+  ],
+  "validation": {
+    "project_constant_closure": "PASS",
+    "missing_project_definitions": [],
+    "full_page_render_equality_dpi": 72,
+    "website_submitted": false
+  },
+  "files": {
+    "PASTE.txt": {
+      "bytes": 13892,
+      "sha256": "f4e23185f9b389de608537f42c9413f9dfbf7560f9d02ce48213de91c8464834"
+    },
+    "BATCH02f_PAGES.pdf": {
+      "bytes": 76694,
+      "sha256": "23fdaddd72578c89786ad97d54b3c94d269126a2607b37a08c1ef253d67afb12"
+    }
+  },
+  "total_task_bytes": 94738
+}

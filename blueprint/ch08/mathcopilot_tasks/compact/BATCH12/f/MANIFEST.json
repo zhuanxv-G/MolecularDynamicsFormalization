@@ -1,0 +1,73 @@
+{
+  "batch": "BATCH12",
+  "subtask": "BATCH12f",
+  "source_ids": [
+    "MD-8.8-NPTBathTaylor"
+  ],
+  "input_sha256": {
+    "Blueprint/Ch08.lean": "2800812fadd8e2557013f1941e4570401f7903d46f44baf07e23d5531da22a72",
+    "blueprint/ch08/ch08_source.json": "9b994b0f64cd22c85c2ad4123fbfdbd064bd7a6d070fe13b721794432f9f7a63",
+    "BATCH12f_PAGES.pdf": "0c725015e90c33bec234e8c6ae7c4f8b52fdf250c2cabc629cb5a98599a8e6e8"
+  },
+  "page_mapping": [
+    {
+      "attachment_page": 1,
+      "original_pdf_page": 399,
+      "printed_page": 378
+    }
+  ],
+  "definition_excerpts": [
+    {
+      "full_name": "MD.Ch08.nptBathLinear",
+      "kind": "def",
+      "path": "Blueprint/Ch08.lean",
+      "line": 1109,
+      "code_sha256": "388a642773202c1ce068ecc6c7acb5807ddd9e24c3016ad367af82f963610602"
+    },
+    {
+      "full_name": "MD.Ch08.nptEntropy_firstOrder",
+      "kind": "theorem",
+      "path": "Blueprint/Ch08.lean",
+      "line": 1110,
+      "code_sha256": "380bfcbcc016d339e9a34922697c8f5dc5c1fd5798be2296126ba1aa335febf2"
+    },
+    {
+      "full_name": "MolecularDynamics.Chapter04Review.V",
+      "kind": "abbrev",
+      "path": "MolecularDynamics/Chapter04/ReviewDefinitions.lean",
+      "line": 17,
+      "code_sha256": "6ccc37dabd7987877f0360d3e6067166bb92c659835fdca7d3dcf9128e65be72"
+    },
+    {
+      "full_name": "MolecularDynamics.Chapter05Review.E",
+      "kind": "abbrev",
+      "path": "MolecularDynamics/Chapter05/ReviewDefinitions.lean",
+      "line": 18,
+      "code_sha256": "b497c8ba7f01b62a3147d9ae65652772ff3f81e57aa19b116f1283fef7a3cc60"
+    },
+    {
+      "full_name": "MolecularDynamics.Chapter06Review.V",
+      "kind": "abbrev",
+      "path": "MolecularDynamics/Chapter06/ReviewDefinitions.lean",
+      "line": 17,
+      "code_sha256": "7ab0ad90462b274b03f5b929b5f09417c0b397b6cb908fa6e7bd56677a314027"
+    }
+  ],
+  "validation": {
+    "project_constant_closure": "PASS",
+    "missing_project_definitions": [],
+    "full_page_render_equality_dpi": 72,
+    "website_submitted": false
+  },
+  "files": {
+    "PASTE.txt": {
+      "bytes": 8989,
+      "sha256": "5e5075fecb92b37ce8a04c4ca3678942f3f052277927618f2ce926f0cf280f13"
+    },
+    "BATCH12f_PAGES.pdf": {
+      "bytes": 80824,
+      "sha256": "0c725015e90c33bec234e8c6ae7c4f8b52fdf250c2cabc629cb5a98599a8e6e8"
+    }
+  },
+  "total_task_bytes": 92215
+}

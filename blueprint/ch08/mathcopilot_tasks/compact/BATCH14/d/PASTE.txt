@@ -1,0 +1,342 @@
+以附件/PASTE 为准，忽略 /workspace 旧文件；Mathlib 定义按标准含义采信。
+本任务只审本条：原文转录、对象资格、定义体、量词、全部结论及[EXTRA]是否一致；Lean编译不代替语义审阅。
+Lean/Mathlib均4.34.0。原页PDF映射：[404]；印刷页=[383].
+input_sha256请原样回显：
+{
+  "Blueprint/Ch08.lean": "2800812fadd8e2557013f1941e4570401f7903d46f44baf07e23d5531da22a72",
+  "blueprint/ch08/ch08_source.json": "9b994b0f64cd22c85c2ad4123fbfdbd064bd7a6d070fe13b721794432f9f7a63",
+  "BATCH14d_PAGES.pdf": "7e0a4c154b71310a3001db33399d3d254d28bc297ca89877ea6baf255ed7eb1e"
+}
+用代码将JSON对象(batch,input_sha256,items)写到 /workspace/.mathcopilot/reviews/ch08/BATCH14d_review.json；items仅含本source_id。
+items字段：source_id、verdict(PASS/FAIL/NEEDS_HUMAN)、transcription、semantic_review、counterexample、suggested_fix、printed_version、corrected_version。逐版区分原文疑误和修正版结论；缺材料必须具体指出，不猜测。写后json.loads自检，最后仅回复路径及统计。
+
+## 原文JSON
+```json
+{
+  "source_id": "MD-8.8.2-PistonIntegrator",
+  "kind": "definition",
+  "label": null,
+  "section": "8.8.2",
+  "printed_page": "383",
+  "pdf_page": "404",
+  "statement_latex": "The printed algorithm interleaves feedback half-updates, exponentially damped momentum kicks, exponential position/volume drifts, feedback recomputation and final independent OU steps. ψ(α,t)=(e^{αt}−1)/α, extended by t at α=0.",
+  "statement_verbatim": "8.8\nConstant Temperature and Pressure Molecular Dynamics\n383\nand solve the latter exactly. It is not technically necessary to require symmetry of\nthe way that stochastic and deterministic terms are interleaved if the only purpose\nis equilibrium sampling, although symmetry is required within any splitting method\nused for the deterministic part in order to gain even order (in our case an O.h2/\nerror) in short time approximation and in the accuracy of computed thermodynamic\nquantities.\nIn the case of (8.75)–(8.79) this suggests\n\u0012 :D \u0012 C .\u0016t=2/hT;\n\u000f :D \u000f C .\u0016t=2/hP;\np :D e\u0002.\u0012C\u000f/\u0016t=2p C .\u0003\u0012 \u0003 \u000f; \u0016t=2/F.q/;\nq :D e\u000f\u0016tq C .\u000f; \u0016t/M\u00021p;\np :D e\u0002.\u0012C\u000f/\u0016t=2p C .\u0003\u0012 \u0003 \u000f; \u0016t=2/F.q/;\nV :D e\u000f\u0016tV;\nhT :D hT.p/;\nhP :D hP.q; p; V/;\n\u0012 :D \u0012 C .\u0016t=2/hT;\n\u000f :D \u000f C .\u0016t=2/hP;\n\u0012 :D e\u0002\nT\u0016t\u0012 C\np\nˇ\u00021.1 \u0003 e\u00022\nT\u0016t/=\u0006TR\u0012;\n\u000f :D e\u0002\nP\u0016t\u000f C\np\nˇ\u00021.1 \u0003 e\u00022\nP\u0016t/=\u0006PR\u000f;\nwhere\n .˛; t/\ndef\nD\n\f e˛t\u00021\n˛\n˛ ¤ 0\nt\n˛ D 0 ;\nand R\u0012, R\u000f are two scalar i.i.d. N.0; 1/ random numbers. Periodic boundary\nconditions are enforced whenever q or V is updated, to ensure that the system\nremains inside the cube with side length V1=3.\nWe perform an experiment with the given discretization for 64 atoms in a 3D\nperiodic box using a pairwise Lennard-Jones potential. We set P D 0:5, kBT D 0:1\nand \u0006P D \u0006T D 5, with all particle masses set to one and h D 0:001. As plotted in\nFig. 8.6, we initialize the particles in a cubic formation within a 5 \u0004 5 \u0004 5 periodic\nbox (so V.0/ D 125). As we run the simulation, V decreases and the pressure is\nincreased.\nWe set \nT D \nP D \n and compare simulations using three values of \n. Choosing\n\n D 0 removes any stochastic terms from the simulation, reducing the dynamics to\na similar form to the Nosé-Hoover thermostat. The distribution of the pressure ˘,\nplotted in Fig. 8.7 (centered on the target pressure P), is well sampled under all three\nchoices of the friction \n. However, as in the NVT experiment in Fig. 8.2, without\nany stochastic terms in the equations of motion the system exhibits a pronounced\n",
+  "verbatim_scope": "完整对应原页文字层，逐字保留；本条数学成分由statement_latex及statement_scope定位。",
+  "proof_latex": null,
+  "proof_note": "对应原页推导逐字保存在statement_verbatim/original_page_text；排版以原页PDF为准。",
+  "original_page_text": [
+    {
+      "pdf_page": 404,
+      "printed_page": 383,
+      "text": "8.8\nConstant Temperature and Pressure Molecular Dynamics\n383\nand solve the latter exactly. It is not technically necessary to require symmetry of\nthe way that stochastic and deterministic terms are interleaved if the only purpose\nis equilibrium sampling, although symmetry is required within any splitting method\nused for the deterministic part in order to gain even order (in our case an O.h2/\nerror) in short time approximation and in the accuracy of computed thermodynamic\nquantities.\nIn the case of (8.75)–(8.79) this suggests\n\u0012 :D \u0012 C .\u0016t=2/hT;\n\u000f :D \u000f C .\u0016t=2/hP;\np :D e\u0002.\u0012C\u000f/\u0016t=2p C .\u0003\u0012 \u0003 \u000f; \u0016t=2/F.q/;\nq :D e\u000f\u0016tq C .\u000f; \u0016t/M\u00021p;\np :D e\u0002.\u0012C\u000f/\u0016t=2p C .\u0003\u0012 \u0003 \u000f; \u0016t=2/F.q/;\nV :D e\u000f\u0016tV;\nhT :D hT.p/;\nhP :D hP.q; p; V/;\n\u0012 :D \u0012 C .\u0016t=2/hT;\n\u000f :D \u000f C .\u0016t=2/hP;\n\u0012 :D e\u0002\nT\u0016t\u0012 C\np\nˇ\u00021.1 \u0003 e\u00022\nT\u0016t/=\u0006TR\u0012;\n\u000f :D e\u0002\nP\u0016t\u000f C\np\nˇ\u00021.1 \u0003 e\u00022\nP\u0016t/=\u0006PR\u000f;\nwhere\n .˛; t/\ndef\nD\n\f e˛t\u00021\n˛\n˛ ¤ 0\nt\n˛ D 0 ;\nand R\u0012, R\u000f are two scalar i.i.d. N.0; 1/ random numbers. Periodic boundary\nconditions are enforced whenever q or V is updated, to ensure that the system\nremains inside the cube with side length V1=3.\nWe perform an experiment with the given discretization for 64 atoms in a 3D\nperiodic box using a pairwise Lennard-Jones potential. We set P D 0:5, kBT D 0:1\nand \u0006P D \u0006T D 5, with all particle masses set to one and h D 0:001. As plotted in\nFig. 8.6, we initialize the particles in a cubic formation within a 5 \u0004 5 \u0004 5 periodic\nbox (so V.0/ D 125). As we run the simulation, V decreases and the pressure is\nincreased.\nWe set \nT D \nP D \n and compare simulations using three values of \n. Choosing\n\n D 0 removes any stochastic terms from the simulation, reducing the dynamics to\na similar form to the Nosé-Hoover thermostat. The distribution of the pressure ˘,\nplotted in Fig. 8.7 (centered on the target pressure P), is well sampled under all three\nchoices of the friction \n. However, as in the NVT experiment in Fig. 8.2, without\nany stochastic terms in the equations of motion the system exhibits a pronounced\n"
+    }
+  ],
+  "numbered_equations": [],
+  "transcription_note": "文字层逐字保留；数学排版另行转写，原页中的特殊字形编码不静默替换。PDF420仅取Exercises之前。",
+  "context_notation": [],
+  "extra_assumptions": [
+    "正β、QT、QP、质量、体积及h≥0是物理有效域；R取独立标准二维正态且跨步独立，参照independentWiener/standardNormalSequence所列资格。",
+    "零指数分支按原页连续延拓；周期位置在每次q/V更新后按当前盒长映射。只定义完整算法，不证明二阶、可逆或不变分布精度。"
+  ],
+  "issues": [],
+  "statement_scope": "完整分步算法、周期映射及OU保持V和指数体积正性的短结论。",
+  "lean_decl": "MD.Ch08.expIntegrated",
+  "lean_declarations": [
+    "MD.Ch08.expIntegrated",
+    "MD.Ch08.pistonWrap",
+    "MD.Ch08.pistonMomentumKick",
+    "MD.Ch08.pistonFeedback",
+    "MD.Ch08.pistonOU",
+    "MD.Ch08.pistonIntegrator",
+    "MD.Ch08.pistonOU_volume",
+    "MD.Ch08.pistonVolume_positive"
+  ],
+  "source_page_verification": "见source_page_checks.json，已目视核对本条原页。",
+  "repair_log": [],
+  "documented_priors": []
+}
+```
+
+## 完整本条Lean
+```lean
+def expIntegrated (a t : ℝ) : ℝ := if a=0 then t else (Real.exp (a*t)-1)/a
+def pistonWrap (V : ℝ) (q : Vec n) : Vec n := fun i ↦
+  volumeScale V*(q i/volumeScale V+1/2-(Int.floor (q i/volumeScale V+1/2) : ℝ)-1/2)
+def pistonMomentumKick (U : Vec n × ℝ → ℝ) (h : ℝ) (z : PistonState n) : PistonState n :=
+  ((z.1.1,fun i ↦ Real.exp (-(z.2 1+z.2 2)*h)*z.1.2 i-
+    expIntegrated (-(z.2 1+z.2 2)) h*gradient (fun q ↦ U (q,z.2 0)) z.1.1 i),z.2)
+def pistonFeedback (invm : Vec n) (U : Vec n × ℝ → ℝ) (θ P QT QP h : ℝ)
+    (z : PistonState n) : PistonState n :=
+  let f := pistonDrift invm U θ P QT QP 0 0 z
+  (z.1,![z.2 0,z.2 1+h*f.2 1,z.2 2+h*f.2 2])
+def pistonOU (β QT QP γT γP h : ℝ) (R : Vec 2) (z : PistonState n) : PistonState n :=
+  (z.1,![z.2 0,Real.exp (-γT*h)*z.2 1+Real.sqrt ((1-Real.exp (-2*γT*h))/(β*QT))*R 0,
+    Real.exp (-γP*h)*z.2 2+Real.sqrt ((1-Real.exp (-2*γP*h))/(β*QP))*R 1])
+def pistonIntegrator (invm : Vec n) (U : Vec n × ℝ → ℝ) (β P QT QP γT γP h : ℝ)
+    (R : Vec 2) (z : PistonState n) : PistonState n :=
+  let a := pistonFeedback invm U β⁻¹ P QT QP (h/2) z
+  let b := pistonMomentumKick U (h/2) a
+  let q := pistonWrap (b.2 0) (fun i ↦ Real.exp (b.2 2*h)*b.1.1 i+
+    expIntegrated (b.2 2) h*invm i*b.1.2 i)
+  let c := pistonMomentumKick U (h/2) ((q,b.1.2),b.2)
+  let V := Real.exp (c.2 2*h)*c.2 0
+  let d : PistonState n := ((pistonWrap V c.1.1,c.1.2),![V,c.2 1,c.2 2])
+  pistonOU β QT QP γT γP h R (pistonFeedback invm U β⁻¹ P QT QP (h/2) d)
+theorem pistonOU_volume (β QT QP γT γP h : ℝ) (R : Vec 2) (z : PistonState n) :
+    (pistonOU β QT QP γT γP h R z).2 0=z.2 0 := rfl
+theorem pistonVolume_positive (V η h : ℝ) (hV : 0 < V) : 0 < Real.exp (η*h)*V :=
+  mul_pos (Real.exp_pos _) hV
+```
+
+## 项目依赖定义体及选择规格
+以下def/abbrev/structure完整保留；定理列出完整类型，Mathlib标准定义无需摘录。
+
+### MD.Ch08.Vec (Blueprint/Ch08.lean:17)
+原文件上下文：
+```lean
+open Set Filter MeasureTheory ProbabilityTheory MolecularDynamics
+open scoped BigOperators Topology ContDiff ENNReal NNReal Matrix
+variable {Ω : Type*} [MeasurableSpace Ω]
+variable {n : ℕ}
+```
+```lean
+abbrev Vec (n : ℕ) := Fin n → ℝ
+```
+
+### MD.Ch08.Phase (Blueprint/Ch08.lean:18)
+原文件上下文：
+```lean
+open Set Filter MeasureTheory ProbabilityTheory MolecularDynamics
+open scoped BigOperators Topology ContDiff ENNReal NNReal Matrix
+variable {Ω : Type*} [MeasurableSpace Ω]
+variable {n : ℕ}
+```
+```lean
+abbrev Phase (n : ℕ) := Vec n × Vec n
+```
+
+### MD.Ch08.dot (Blueprint/Ch08.lean:19)
+原文件上下文：
+```lean
+open Set Filter MeasureTheory ProbabilityTheory MolecularDynamics
+open scoped BigOperators Topology ContDiff ENNReal NNReal Matrix
+variable {Ω : Type*} [MeasurableSpace Ω]
+variable {n : ℕ}
+```
+```lean
+def dot (v w : Vec n) : ℝ := ∑ i, v i * w i
+```
+
+### MD.Ch08.gradient (Blueprint/Ch08.lean:20)
+原文件上下文：
+```lean
+open Set Filter MeasureTheory ProbabilityTheory MolecularDynamics
+open scoped BigOperators Topology ContDiff ENNReal NNReal Matrix
+variable {Ω : Type*} [MeasurableSpace Ω]
+variable {n : ℕ}
+```
+```lean
+def gradient (U : Vec n → ℝ) (q : Vec n) : Vec n := fun i ↦ fderiv ℝ U q (Pi.single i 1)
+```
+
+### MD.Ch08.kineticTwice (Blueprint/Ch08.lean:65)
+原文件上下文：
+```lean
+open Set Filter MeasureTheory ProbabilityTheory MolecularDynamics
+open scoped BigOperators Topology ContDiff ENNReal NNReal Matrix
+variable {Ω : Type*} [MeasurableSpace Ω]
+variable {n : ℕ}
+```
+```lean
+def kineticTwice (invm p : Vec n) : ℝ := ∑ i, invm i * p i ^ 2
+```
+
+### MD.Ch08.volumeScale (Blueprint/Ch08.lean:1121)
+原文件上下文：
+```lean
+open Set Filter MeasureTheory ProbabilityTheory MolecularDynamics
+open scoped BigOperators Topology ContDiff ENNReal NNReal Matrix
+variable {Ω : Type*} [MeasurableSpace Ω]
+variable {n : ℕ}
+```
+```lean
+def volumeScale (V : ℝ) : ℝ := Real.rpow V (1/3 : ℝ)
+```
+
+### MD.Ch08.PistonState (Blueprint/Ch08.lean:1196)
+原文件上下文：
+```lean
+open Set Filter MeasureTheory ProbabilityTheory MolecularDynamics
+open scoped BigOperators Topology ContDiff ENNReal NNReal Matrix
+variable {Ω : Type*} [MeasurableSpace Ω]
+variable {n : ℕ}
+```
+```lean
+abbrev PistonState (n : ℕ) := Phase n × Vec 3
+```
+
+### MD.Ch08.pistonPressure (Blueprint/Ch08.lean:1197)
+原文件上下文：
+```lean
+open Set Filter MeasureTheory ProbabilityTheory MolecularDynamics
+open scoped BigOperators Topology ContDiff ENNReal NNReal Matrix
+variable {Ω : Type*} [MeasurableSpace Ω]
+variable {n : ℕ}
+```
+```lean
+def pistonPressure (invm : Vec n) (U : Vec n × ℝ → ℝ) (q p : Vec n) (V : ℝ) : ℝ :=
+  (kineticTwice invm p-dot q (gradient (fun x ↦ U (x,V)) q)-
+    V*deriv (fun v ↦ U (q,v)) V)/V
+```
+
+### MD.Ch08.pistonDrift (Blueprint/Ch08.lean:1200)
+原文件上下文：
+```lean
+open Set Filter MeasureTheory ProbabilityTheory MolecularDynamics
+open scoped BigOperators Topology ContDiff ENNReal NNReal Matrix
+variable {Ω : Type*} [MeasurableSpace Ω]
+variable {n : ℕ}
+```
+```lean
+def pistonDrift (invm : Vec n) (U : Vec n × ℝ → ℝ) (θ P QT QP γT γP : ℝ)
+    (z : PistonState n) : PistonState n :=
+  ((fun i ↦ invm i*z.1.2 i+z.2 2*z.1.1 i,
+    fun i ↦ -gradient (fun q ↦ U (q,z.2 0)) z.1.1 i-(z.2 2+z.2 1)*z.1.2 i),
+   ![z.2 2*z.2 0,(kineticTwice invm z.1.2-n*θ)/QT-γT*z.2 1,
+     (z.2 0*pistonPressure invm U z.1.1 z.1.2 (z.2 0)-P*z.2 0+θ)/QP-γP*z.2 2])
+```
+
+### MD.Ch08.expIntegrated (Blueprint/Ch08.lean:1283)
+原文件上下文：
+```lean
+open Set Filter MeasureTheory ProbabilityTheory MolecularDynamics
+open scoped BigOperators Topology ContDiff ENNReal NNReal Matrix
+variable {Ω : Type*} [MeasurableSpace Ω]
+variable {n : ℕ}
+```
+```lean
+def expIntegrated (a t : ℝ) : ℝ := if a=0 then t else (Real.exp (a*t)-1)/a
+```
+
+### MD.Ch08.pistonWrap (Blueprint/Ch08.lean:1284)
+原文件上下文：
+```lean
+open Set Filter MeasureTheory ProbabilityTheory MolecularDynamics
+open scoped BigOperators Topology ContDiff ENNReal NNReal Matrix
+variable {Ω : Type*} [MeasurableSpace Ω]
+variable {n : ℕ}
+```
+```lean
+def pistonWrap (V : ℝ) (q : Vec n) : Vec n := fun i ↦
+  volumeScale V*(q i/volumeScale V+1/2-(Int.floor (q i/volumeScale V+1/2) : ℝ)-1/2)
+```
+
+### MD.Ch08.pistonMomentumKick (Blueprint/Ch08.lean:1286)
+原文件上下文：
+```lean
+open Set Filter MeasureTheory ProbabilityTheory MolecularDynamics
+open scoped BigOperators Topology ContDiff ENNReal NNReal Matrix
+variable {Ω : Type*} [MeasurableSpace Ω]
+variable {n : ℕ}
+```
+```lean
+def pistonMomentumKick (U : Vec n × ℝ → ℝ) (h : ℝ) (z : PistonState n) : PistonState n :=
+  ((z.1.1,fun i ↦ Real.exp (-(z.2 1+z.2 2)*h)*z.1.2 i-
+    expIntegrated (-(z.2 1+z.2 2)) h*gradient (fun q ↦ U (q,z.2 0)) z.1.1 i),z.2)
+```
+
+### MD.Ch08.pistonFeedback (Blueprint/Ch08.lean:1289)
+原文件上下文：
+```lean
+open Set Filter MeasureTheory ProbabilityTheory MolecularDynamics
+open scoped BigOperators Topology ContDiff ENNReal NNReal Matrix
+variable {Ω : Type*} [MeasurableSpace Ω]
+variable {n : ℕ}
+```
+```lean
+def pistonFeedback (invm : Vec n) (U : Vec n × ℝ → ℝ) (θ P QT QP h : ℝ)
+    (z : PistonState n) : PistonState n :=
+  let f := pistonDrift invm U θ P QT QP 0 0 z
+  (z.1,![z.2 0,z.2 1+h*f.2 1,z.2 2+h*f.2 2])
+```
+
+### MD.Ch08.pistonOU (Blueprint/Ch08.lean:1293)
+原文件上下文：
+```lean
+open Set Filter MeasureTheory ProbabilityTheory MolecularDynamics
+open scoped BigOperators Topology ContDiff ENNReal NNReal Matrix
+variable {Ω : Type*} [MeasurableSpace Ω]
+variable {n : ℕ}
+```
+```lean
+def pistonOU (β QT QP γT γP h : ℝ) (R : Vec 2) (z : PistonState n) : PistonState n :=
+  (z.1,![z.2 0,Real.exp (-γT*h)*z.2 1+Real.sqrt ((1-Real.exp (-2*γT*h))/(β*QT))*R 0,
+    Real.exp (-γP*h)*z.2 2+Real.sqrt ((1-Real.exp (-2*γP*h))/(β*QP))*R 1])
+```
+
+### MD.Ch08.pistonIntegrator (Blueprint/Ch08.lean:1296)
+原文件上下文：
+```lean
+open Set Filter MeasureTheory ProbabilityTheory MolecularDynamics
+open scoped BigOperators Topology ContDiff ENNReal NNReal Matrix
+variable {Ω : Type*} [MeasurableSpace Ω]
+variable {n : ℕ}
+```
+```lean
+def pistonIntegrator (invm : Vec n) (U : Vec n × ℝ → ℝ) (β P QT QP γT γP h : ℝ)
+    (R : Vec 2) (z : PistonState n) : PistonState n :=
+  let a := pistonFeedback invm U β⁻¹ P QT QP (h/2) z
+  let b := pistonMomentumKick U (h/2) a
+  let q := pistonWrap (b.2 0) (fun i ↦ Real.exp (b.2 2*h)*b.1.1 i+
+    expIntegrated (b.2 2) h*invm i*b.1.2 i)
+  let c := pistonMomentumKick U (h/2) ((q,b.1.2),b.2)
+  let V := Real.exp (c.2 2*h)*c.2 0
+  let d : PistonState n := ((pistonWrap V c.1.1,c.1.2),![V,c.2 1,c.2 2])
+  pistonOU β QT QP γT γP h R (pistonFeedback invm U β⁻¹ P QT QP (h/2) d)
+```
+
+### MD.Ch08.pistonOU_volume (Blueprint/Ch08.lean:1306)
+原文件上下文：
+```lean
+open Set Filter MeasureTheory ProbabilityTheory MolecularDynamics
+open scoped BigOperators Topology ContDiff ENNReal NNReal Matrix
+variable {Ω : Type*} [MeasurableSpace Ω]
+variable {n : ℕ}
+```
+```lean
+theorem pistonOU_volume (β QT QP γT γP h : ℝ) (R : Vec 2) (z : PistonState n) :
+    (pistonOU β QT QP γT γP h R z).2 0=z.2 0
+```
+
+### MD.Ch08.pistonVolume_positive (Blueprint/Ch08.lean:1308)
+原文件上下文：
+```lean
+open Set Filter MeasureTheory ProbabilityTheory MolecularDynamics
+open scoped BigOperators Topology ContDiff ENNReal NNReal Matrix
+variable {Ω : Type*} [MeasurableSpace Ω]
+variable {n : ℕ}
+```
+```lean
+theorem pistonVolume_positive (V η h : ℝ) (hV : 0 < V) : 0 < Real.exp (η*h)*V
+```
+
+### MolecularDynamics.Chapter04Review.V (MolecularDynamics/Chapter04/ReviewDefinitions.lean:17)
+原文件上下文：
+```lean
+open Set Matrix
+open scoped BigOperators Topology Matrix.Norms.Elementwise
+```
+```lean
+abbrev V := Fin 3 → ℝ
+```
+
+### MolecularDynamics.Chapter06Review.V (MolecularDynamics/Chapter06/ReviewDefinitions.lean:17)
+原文件上下文：
+```lean
+open Set Filter MeasureTheory ProbabilityTheory
+open scoped BigOperators Topology ContDiff ENNReal NNReal
+local instance : MeasureSpace UnitAddCircle := ⟨AddCircle.haarAddCircle⟩
+```
+```lean
+abbrev V (n : ℕ) := Fin n → ℝ
+```

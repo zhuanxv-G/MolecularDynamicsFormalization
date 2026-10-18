@@ -1,0 +1,220 @@
+以附件/PASTE 为准，忽略 /workspace 旧文件；Mathlib 定义按标准含义采信。
+本任务只审本条：原文转录、对象资格、定义体、量词、全部结论及[EXTRA]是否一致；Lean编译不代替语义审阅。
+Lean/Mathlib均4.34.0。原页PDF映射：[385, 386]；印刷页=[364, 365].
+input_sha256请原样回显：
+{
+  "Blueprint/Ch08.lean": "2800812fadd8e2557013f1941e4570401f7903d46f44baf07e23d5531da22a72",
+  "blueprint/ch08/ch08_source.json": "9b994b0f64cd22c85c2ad4123fbfdbd064bd7a6d070fe13b721794432f9f7a63",
+  "BATCH09b_PAGES.pdf": "f50fef75f788a43e25fcfe508a037fe768a6d51087d716553c99288f63501441"
+}
+用代码将JSON对象(batch,input_sha256,items)写到 /workspace/.mathcopilot/reviews/ch08/BATCH09b_review.json；items仅含本source_id。
+items字段：source_id、verdict(PASS/FAIL/NEEDS_HUMAN)、transcription、semantic_review、counterexample、suggested_fix、printed_version、corrected_version。逐版区分原文疑误和修正版结论；缺材料必须具体指出，不猜测。写后json.loads自检，最后仅回复路径及统计。
+
+## 原文JSON
+```json
+{
+  "source_id": "MD-8.6.1-StochasticIsokinetic",
+  "kind": "definition",
+  "label": null,
+  "section": "8.6.1",
+  "printed_page": "364–365",
+  "pdf_page": "385–386",
+  "statement_latex": "dq=pdt, dp=(F-λp)dt, dξ₁=(-λξ₁-ξ₂ξ₁)dt, dξ₂=μ₂⁻¹(μ₁ξ₁²-k_BT)dt-γξ₂dt+σdW; p²+μ₁ξ₁²/2=k_BT.",
+  "statement_verbatim": "364\n8\nExtended Variable Methods\nWe ﬁrst demonstrate the idea of [220] by considering the following SDE with a\nsingle degree of freedom:\ndq D pdt;\n(8.40)\ndp D ŒF.q/ \u0003 \u0013p\t dt;\n(8.41)\nd\u00121 D \u0003\u0013\u00121dt \u0003 \u00122\u00121dt;\n(8.42)\nd\u00122 D \u0006\u00021\n2 .\u00061\u00122\n1 \u0003 kBT/dt \u0003 \n\u00122dt C \u0007dW;\n(8.43)\nwhere \u00121 and \u00122 are auxiliary variables, \u0007 D\np\n2\n=ˇ\u00062, \n is the friction constant,\n\u00061 and \u00062 are coupling coefﬁcients, and \u0013 is a Lagrange multiplier which is chosen\nto maintain the isokinetic relation involving p and \u00121:\np2 C 1\n2\u00061\u00122\n1 D kBT:\n(8.44)\nWe calculate the multiplier by differentiating the constraint to obtain\n2pPp C \u00061\u00121 P\u00121 D 0\nor, using the differential equations,\n2.pF.q/ \u0003 \u0013p2/ C \u00061\u00121.\u0003\u0013\u00121dt \u0003 \u00122\u00121/ D 0;\nthus\n\u0013 D pF.q/ \u0003 \u00061\u00122\n1\u00122=2\np2 C \u00061\u00122\n1=2\n:\nUpon reintroduction of this expression in (8.40)–(8.43) this allows us to write a\nclosed-form SDE system for q; p; \u00121; \u00122.\nWe follow an analogous procedure to that used to study the distribution in the\ncase of the standard isokinetic system, for the moment ignoring the stochastic terms.\nThis requires us to solve the equation\nrw \u0002 f D div.f/;\nwhere now f is the vector ﬁeld in (8.40)–(8.43) where we take \n D 0. The\ndivergence is\ndiv.f/ D \u0003 d\ndp.\u0013p/ \u0003 d\nd\u00121\n.\u0013\u00121/ \u0003 \u00122:\n\n8.6\nIsokinetic Methods and Integration with Very Large Timestep\n365\nLet \u000f1 D pF \u0003 \u00061\u00122\n1\u00122=2, \u000f2 D p2 C \u00061\u00122\n1=2, so \u0013 D \u000f1=\u000f2, then calculate\nd\ndp\u0013 D .\u000f2F \u0003 2\u000f1p/=\u000f2\n2;\nd\nd\u00121\n\u0013 D .\u0003\u00061\u00121\u00122\u000f2 \u0003 \u00061\u00121\u000f1/=\u000f2\n2;\nto see that\npd\u0013\ndp C \u00121\nd\u0013\nd\u00121\nD .pF \u0003 \u00061\u00122\n1\u00122/\u000f2 \u0003 .2p2 C \u00061\u00122\n1/\u000f1\n\u000f2\n2\nD 2\n\u0002\n\u0003 pF\n2\u000f2\nC \u0013 \u0003 \u0013\n\u0003\nD \u0003pF\n\u000f2\n;\nhence\ndiv.f/ D pF\n\u000f2\n\u0003 2\u0013 \u0003 \u00122\nD pF \u0003 2.pF \u0003 \u00061\u00122\n1\u00122=2/\np2 C \u00061\u00122\n1=2\n\u0003 \u00122\nD \u0003pF C \u00061\u00122\n1\u00122\np2 C \u00061\u00122\n1=2 \u0003 \u00122:\nWe ﬁnd that a solution of the equation rw \u0002 f D div.f/ is then given by\nw D\nU C 1\n2\u00122\n2\np2 C 1\n2\u00061\u00122\n1\n:\nIntegrating over the isokinetic surface p2 C 1\n2\u00061\u00122\n1 D ˇ\u00021, and with respect to the\nvariable \u00122, yields the Gibbs conﬁgurational density.\nThe exciting prospect here is that we now have a new variable \u00122 which\nhas, in equilibrium, a Gaussian distribution. The Ornstein-Uhlenbeck terms are\ntherefore compatible with this extended distribution and can be incorporated (as\nin Nosé-Hoover-Langevin) to provide ergodicity and control of the convergence to\nequilibrium.\n",
+  "verbatim_scope": "完整对应原页文字层，逐字保留；本条数学成分由statement_latex及statement_scope定位。",
+  "proof_latex": null,
+  "proof_note": "对应原页推导逐字保存在statement_verbatim/original_page_text；排版以原页PDF为准。",
+  "original_page_text": [
+    {
+      "pdf_page": 385,
+      "printed_page": 364,
+      "text": "364\n8\nExtended Variable Methods\nWe ﬁrst demonstrate the idea of [220] by considering the following SDE with a\nsingle degree of freedom:\ndq D pdt;\n(8.40)\ndp D ŒF.q/ \u0003 \u0013p\t dt;\n(8.41)\nd\u00121 D \u0003\u0013\u00121dt \u0003 \u00122\u00121dt;\n(8.42)\nd\u00122 D \u0006\u00021\n2 .\u00061\u00122\n1 \u0003 kBT/dt \u0003 \n\u00122dt C \u0007dW;\n(8.43)\nwhere \u00121 and \u00122 are auxiliary variables, \u0007 D\np\n2\n=ˇ\u00062, \n is the friction constant,\n\u00061 and \u00062 are coupling coefﬁcients, and \u0013 is a Lagrange multiplier which is chosen\nto maintain the isokinetic relation involving p and \u00121:\np2 C 1\n2\u00061\u00122\n1 D kBT:\n(8.44)\nWe calculate the multiplier by differentiating the constraint to obtain\n2pPp C \u00061\u00121 P\u00121 D 0\nor, using the differential equations,\n2.pF.q/ \u0003 \u0013p2/ C \u00061\u00121.\u0003\u0013\u00121dt \u0003 \u00122\u00121/ D 0;\nthus\n\u0013 D pF.q/ \u0003 \u00061\u00122\n1\u00122=2\np2 C \u00061\u00122\n1=2\n:\nUpon reintroduction of this expression in (8.40)–(8.43) this allows us to write a\nclosed-form SDE system for q; p; \u00121; \u00122.\nWe follow an analogous procedure to that used to study the distribution in the\ncase of the standard isokinetic system, for the moment ignoring the stochastic terms.\nThis requires us to solve the equation\nrw \u0002 f D div.f/;\nwhere now f is the vector ﬁeld in (8.40)–(8.43) where we take \n D 0. The\ndivergence is\ndiv.f/ D \u0003 d\ndp.\u0013p/ \u0003 d\nd\u00121\n.\u0013\u00121/ \u0003 \u00122:\n"
+    },
+    {
+      "pdf_page": 386,
+      "printed_page": 365,
+      "text": "8.6\nIsokinetic Methods and Integration with Very Large Timestep\n365\nLet \u000f1 D pF \u0003 \u00061\u00122\n1\u00122=2, \u000f2 D p2 C \u00061\u00122\n1=2, so \u0013 D \u000f1=\u000f2, then calculate\nd\ndp\u0013 D .\u000f2F \u0003 2\u000f1p/=\u000f2\n2;\nd\nd\u00121\n\u0013 D .\u0003\u00061\u00121\u00122\u000f2 \u0003 \u00061\u00121\u000f1/=\u000f2\n2;\nto see that\npd\u0013\ndp C \u00121\nd\u0013\nd\u00121\nD .pF \u0003 \u00061\u00122\n1\u00122/\u000f2 \u0003 .2p2 C \u00061\u00122\n1/\u000f1\n\u000f2\n2\nD 2\n\u0002\n\u0003 pF\n2\u000f2\nC \u0013 \u0003 \u0013\n\u0003\nD \u0003pF\n\u000f2\n;\nhence\ndiv.f/ D pF\n\u000f2\n\u0003 2\u0013 \u0003 \u00122\nD pF \u0003 2.pF \u0003 \u00061\u00122\n1\u00122=2/\np2 C \u00061\u00122\n1=2\n\u0003 \u00122\nD \u0003pF C \u00061\u00122\n1\u00122\np2 C \u00061\u00122\n1=2 \u0003 \u00122:\nWe ﬁnd that a solution of the equation rw \u0002 f D div.f/ is then given by\nw D\nU C 1\n2\u00122\n2\np2 C 1\n2\u00061\u00122\n1\n:\nIntegrating over the isokinetic surface p2 C 1\n2\u00061\u00122\n1 D ˇ\u00021, and with respect to the\nvariable \u00122, yields the Gibbs conﬁgurational density.\nThe exciting prospect here is that we now have a new variable \u00122 which\nhas, in equilibrium, a Gaussian distribution. The Ornstein-Uhlenbeck terms are\ntherefore compatible with this extended distribution and can be incorporated (as\nin Nosé-Hoover-Langevin) to provide ergodicity and control of the convergence to\nequilibrium.\n"
+    }
+  ],
+  "numbered_equations": [
+    "8.40",
+    "8.41",
+    "8.42",
+    "8.43",
+    "8.44"
+  ],
+  "transcription_note": "文字层逐字保留；数学排版另行转写，原页中的特殊字形编码不静默替换。PDF420仅取Exercises之前。",
+  "context_notation": [],
+  "extra_assumptions": [
+    "热浴变量ξ₁,ξ₂∈ℝ，各质量、温度、摩擦正；随机噪声只在ξ₂；约束正值排除奇点。"
+  ],
+  "issues": [],
+  "statement_scope": "实际SIN漂移、正参数Wiener积分解和瞬时约束平衡；约束沿全路径保持未另证。",
+  "lean_decl": "MD.Ch08.sinConstraint",
+  "lean_declarations": [
+    "MD.Ch08.sinConstraint",
+    "MD.Ch08.sinMultiplier",
+    "MD.Ch08.sinDrift",
+    "MD.Ch08.isSINSolution",
+    "MD.Ch08.sinConstraint_balance"
+  ],
+  "source_page_verification": "见source_page_checks.json，已目视核对本条原页。",
+  "repair_log": [],
+  "documented_priors": []
+}
+```
+
+## 完整本条Lean
+```lean
+def sinConstraint (Q1 : ℝ) (z : Vec 4) : ℝ := z 1^2+Q1*z 2^2/2
+def sinMultiplier (Q1 : ℝ) (F : ℝ → ℝ) (z : Vec 4) : ℝ :=
+  (z 1*F (z 0)-Q1*z 2^2*z 3/2)/sinConstraint Q1 z
+def sinDrift (Q1 Q2 θ γ : ℝ) (F : ℝ → ℝ) (z : Vec 4) : Vec 4 :=
+  let lam := sinMultiplier Q1 F z
+  ![z 1, F (z 0)-lam*z 1, -lam*z 2-z 3*z 2, (Q1*z 2^2-θ)/Q2-γ*z 3]
+def isSINSolution (Q1 Q2 θ γ : ℝ) (F : ℝ → ℝ)
+    (P : Measure Ω) (W : ℝ → Ω → Vec 1) (X : ℝ → Ω → Vec 4) (x0 : Vec 4) : Prop :=
+  0 < Q1 ∧ 0 < Q2 ∧ 0 < θ ∧ 0 < γ ∧ sinConstraint Q1 x0=θ ∧
+  additiveSDE P 1 W X x0 (sinDrift Q1 Q2 θ γ F)
+    (fun _ ↦ ![0,0,0,Real.sqrt (2*γ*θ/Q2)])
+theorem sinConstraint_balance (Q1 Q2 θ γ : ℝ) (F : ℝ → ℝ) (z : Vec 4)
+    (hK : sinConstraint Q1 z ≠ 0) :
+    2*z 1*(sinDrift Q1 Q2 θ γ F z) 1+Q1*z 2*(sinDrift Q1 Q2 θ γ F z) 2=0 := by
+  have hden : 2*z 1^2+Q1*z 2^2 ≠ 0 := by
+    intro h
+    apply hK
+    dsimp [sinConstraint]
+    linarith
+  simp [sinDrift, sinMultiplier, sinConstraint]
+  field_simp [hden]
+  <;> ring
+```
+
+## 项目依赖定义体及选择规格
+以下def/abbrev/structure完整保留；定理列出完整类型，Mathlib标准定义无需摘录。
+
+### MD.Ch08.Vec (Blueprint/Ch08.lean:17)
+原文件上下文：
+```lean
+open Set Filter MeasureTheory ProbabilityTheory MolecularDynamics
+open scoped BigOperators Topology ContDiff ENNReal NNReal Matrix
+variable {Ω : Type*} [MeasurableSpace Ω]
+variable {n : ℕ}
+```
+```lean
+abbrev Vec (n : ℕ) := Fin n → ℝ
+```
+
+### MD.Ch08.independentWiener (Blueprint/Ch08.lean:307)
+原文件上下文：
+```lean
+open Set Filter MeasureTheory ProbabilityTheory MolecularDynamics
+open scoped BigOperators Topology ContDiff ENNReal NNReal Matrix
+variable {Ω : Type*} [MeasurableSpace Ω]
+variable {n : ℕ}
+```
+```lean
+def independentWiener (P : Measure Ω) (k : ℕ) (W : ℝ → Ω → Vec k) : Prop :=
+  IsProbabilityMeasure P ∧ (∀ j, IsBrownianReal (fun t sample ↦ W t sample j) P) ∧
+    iIndepFun (fun j sample ↦ fun t : ℝ ↦ W t sample j) P
+```
+
+### MD.Ch08.additiveSDE (Blueprint/Ch08.lean:310)
+原文件上下文：
+```lean
+open Set Filter MeasureTheory ProbabilityTheory MolecularDynamics
+open scoped BigOperators Topology ContDiff ENNReal NNReal Matrix
+variable {Ω : Type*} [MeasurableSpace Ω]
+variable {n : ℕ}
+```
+```lean
+def additiveSDE {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E] [MeasurableSpace E]
+    (P : Measure Ω) (k : ℕ) (W : ℝ → Ω → Vec k)
+    (X : ℝ → Ω → E) (x0 : E) (a : E → E) (B : Fin k → E) : Prop :=
+  independentWiener P k W ∧ (∀ᵐ sample ∂P, Continuous (fun t ↦ X t sample)) ∧
+  (∀ t : ℝ, 0 ≤ t → Measurable[MeasurableSpace.comap
+    (fun (sample : Ω) (s : Icc (0 : ℝ) t) ↦ W s sample) inferInstance] (X t)) ∧
+  ∀ t : ℝ, 0 ≤ t →
+    (∀ᵐ sample ∂P, IntervalIntegrable (fun s ↦ a (X s sample)) volume 0 t) ∧
+    ∀ᵐ sample ∂P, X t sample = x0 + (∫ s in 0..t, a (X s sample)) +
+      ∑ j, (W t sample j-W 0 sample j) • B j
+```
+
+### MD.Ch08.sinConstraint (Blueprint/Ch08.lean:714)
+原文件上下文：
+```lean
+open Set Filter MeasureTheory ProbabilityTheory MolecularDynamics
+open scoped BigOperators Topology ContDiff ENNReal NNReal Matrix
+variable {Ω : Type*} [MeasurableSpace Ω]
+variable {n : ℕ}
+```
+```lean
+def sinConstraint (Q1 : ℝ) (z : Vec 4) : ℝ := z 1^2+Q1*z 2^2/2
+```
+
+### MD.Ch08.sinMultiplier (Blueprint/Ch08.lean:715)
+原文件上下文：
+```lean
+open Set Filter MeasureTheory ProbabilityTheory MolecularDynamics
+open scoped BigOperators Topology ContDiff ENNReal NNReal Matrix
+variable {Ω : Type*} [MeasurableSpace Ω]
+variable {n : ℕ}
+```
+```lean
+def sinMultiplier (Q1 : ℝ) (F : ℝ → ℝ) (z : Vec 4) : ℝ :=
+  (z 1*F (z 0)-Q1*z 2^2*z 3/2)/sinConstraint Q1 z
+```
+
+### MD.Ch08.sinDrift (Blueprint/Ch08.lean:717)
+原文件上下文：
+```lean
+open Set Filter MeasureTheory ProbabilityTheory MolecularDynamics
+open scoped BigOperators Topology ContDiff ENNReal NNReal Matrix
+variable {Ω : Type*} [MeasurableSpace Ω]
+variable {n : ℕ}
+```
+```lean
+def sinDrift (Q1 Q2 θ γ : ℝ) (F : ℝ → ℝ) (z : Vec 4) : Vec 4 :=
+  let lam := sinMultiplier Q1 F z
+  ![z 1, F (z 0)-lam*z 1, -lam*z 2-z 3*z 2, (Q1*z 2^2-θ)/Q2-γ*z 3]
+```
+
+### MD.Ch08.isSINSolution (Blueprint/Ch08.lean:720)
+原文件上下文：
+```lean
+open Set Filter MeasureTheory ProbabilityTheory MolecularDynamics
+open scoped BigOperators Topology ContDiff ENNReal NNReal Matrix
+variable {Ω : Type*} [MeasurableSpace Ω]
+variable {n : ℕ}
+```
+```lean
+def isSINSolution (Q1 Q2 θ γ : ℝ) (F : ℝ → ℝ)
+    (P : Measure Ω) (W : ℝ → Ω → Vec 1) (X : ℝ → Ω → Vec 4) (x0 : Vec 4) : Prop :=
+  0 < Q1 ∧ 0 < Q2 ∧ 0 < θ ∧ 0 < γ ∧ sinConstraint Q1 x0=θ ∧
+  additiveSDE P 1 W X x0 (sinDrift Q1 Q2 θ γ F)
+    (fun _ ↦ ![0,0,0,Real.sqrt (2*γ*θ/Q2)])
+```
+
+### MD.Ch08.sinConstraint_balance (Blueprint/Ch08.lean:725)
+原文件上下文：
+```lean
+open Set Filter MeasureTheory ProbabilityTheory MolecularDynamics
+open scoped BigOperators Topology ContDiff ENNReal NNReal Matrix
+variable {Ω : Type*} [MeasurableSpace Ω]
+variable {n : ℕ}
+```
+```lean
+theorem sinConstraint_balance (Q1 Q2 θ γ : ℝ) (F : ℝ → ℝ) (z : Vec 4)
+    (hK : sinConstraint Q1 z ≠ 0) :
+    2*z 1*(sinDrift Q1 Q2 θ γ F z) 1+Q1*z 2*(sinDrift Q1 Q2 θ γ F z) 2=0
+```
+
+### MolecularDynamics.Chapter05Review.E (MolecularDynamics/Chapter05/ReviewDefinitions.lean:18)
+原文件上下文：
+```lean
+open Set Filter MeasureTheory Matrix
+open scoped BigOperators Topology ENNReal
+```
+```lean
+abbrev E (n : ℕ) := EuclideanSpace ℝ (Fin n)
+```

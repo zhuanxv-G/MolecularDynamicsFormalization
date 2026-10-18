@@ -44,7 +44,7 @@
     "printed_page": "359–361",
     "pdf_page": "380–382",
     "object": "Figure 8.5及双阱试验",
-    "reason": "轨迹、直方图、参数、稳定性经验比较不作待证对象；双阱势为算例而非通用结论。"
+    "reason": "轨迹、直方图、参数、稳定性经验比较不作待证对象；双阱势数学定义另条保留。"
   },
   {
     "section": "8.6.4",
@@ -66,5 +66,23 @@
     "pdf_page": "404–406",
     "object": "Figure 8.7及NPT体积/温度/压力实验比较",
     "reason": "64原子LJ参数与不同摩擦的呼吸模式、收敛曲线为经验数值结果。"
+  },
+  {
+    "printed_page": "396–399",
+    "pdf_page": "417–420",
+    "object": "§8.10试验设置、Figure8.8、8.9、8.10及全部轨迹/直方图/误差与自相关比较",
+    "reason": "18粒子二维周期盒参数、性能、采样优势和统计曲线是经验数值结果；独立数学内容Berendsen公式、Gaussian和、NHL符号已分别保留。"
+  },
+  {
+    "printed_page": "399–401",
+    "pdf_page": "420–422",
+    "object": "Exercises（从PDF420的Exercises标题起）",
+    "reason": "用户明确排除习题；正文止于其前的Figure8.10图注。"
+  },
+  {
+    "printed_page": "402–415",
+    "pdf_page": "423–436",
+    "object": "Appendices",
+    "reason": "已超出第8章正文；用户明确全书正文结束后不做附加章节。"
   }
 ]

@@ -1,0 +1,190 @@
+以附件/PASTE 为准，忽略 /workspace 旧文件；Mathlib 定义按标准含义采信。
+本任务只审本条：原文转录、对象资格、定义体、量词、全部结论及[EXTRA]是否一致；Lean编译不代替语义审阅。
+Lean/Mathlib均4.34.0。原页PDF映射：[370]；印刷页=[349].
+input_sha256请原样回显：
+{
+  "Blueprint/Ch08.lean": "2800812fadd8e2557013f1941e4570401f7903d46f44baf07e23d5531da22a72",
+  "blueprint/ch08/ch08_source.json": "9b994b0f64cd22c85c2ad4123fbfdbd064bd7a6d070fe13b721794432f9f7a63",
+  "BATCH06c_PAGES.pdf": "8d9ea90aca06136a0567cc8604655e23fac8176006d76c148a33de74e4040fd0"
+}
+用代码将JSON对象(batch,input_sha256,items)写到 /workspace/.mathcopilot/reviews/ch08/BATCH06c_review.json；items仅含本source_id。
+items字段：source_id、verdict(PASS/FAIL/NEEDS_HUMAN)、transcription、semantic_review、counterexample、suggested_fix、printed_version、corrected_version。逐版区分原文疑误和修正版结论；缺材料必须具体指出，不猜测。写后json.loads自检，最后仅回复路径及统计。
+
+## 原文JSON
+```json
+{
+  "source_id": "MD-8.4.1-LyapunovRatePrinted",
+  "kind": "unnumbered_claim",
+  "label": null,
+  "section": "8.4.1",
+  "printed_page": "349",
+  "pdf_page": "370",
+  "statement_latex": "Choose aγμ-N_dk_BT=0, α=min(2a,γμ), δ=αU_max+γμa²+aN_dk_BT+k_BTγ; then Lφ≤-αφ+δ.",
+  "statement_verbatim": "8.4\nErgodic Stochastic-Dynamic Thermostats\n349\nfor some constants Umin and Umax. Hence \b is strictly positive over the entire space,\nand we can compute that\nLNHL\b D p \u0002 rU.q/ \u0003 rU.q/ \u0002 p \u0003 \u0012kpk2 C\n\nkpk2 \u0003 NdkBT\n\u000b\n.\u0012 \u0003 a/\n\u0003 \n\u0006\u0012.\u0012 \u0003 a/ C kBT\n;\n\t \u0003akpk2 \u0003 \n\u0006\u00122 C .a\n\u0006 \u0003 NdkBT/ \u0012 C aNdkBT C kBT\n:\nChoosing a so that a\n\u0006 \u0003 NdkBT D 0, we obtain\nLNHL\b D \u0003akpk2 \u0003 \n\u0006\u00122 \u0003 \n\u0006a2 C \n\u0006a2 C aNdkBT C kBT\n:\nUsing \u0003\u00122 \u0003 a2 \t \u0003.\u0012 \u0003 a/2=2 gives\nLNHL\b \t \u00032a1\n2kpk2 \u0003 \n\u00061\n2.\u0012 \u0003 a/2 C \n\u0006a2 C aNdkBT C kBT\n:\nNow choosing\n˛ D min .2a; \n\u0006/ ;\nwe have\nLNHL\b \t \u0003˛\b C ˛U.q/ C \n\u0006a2 C aNdkBT C kBT\n;\n\t \u0003˛\b C ı;\nfor constants ˛ and ı as required, where\nı D ˛Umax C \n\u0006a2 C aNdkBT C kBT\n:\nThis gives the necessary Lyapunov condition for the Nosé-Hoover-Langevin equa-\ntions, and hence the dynamics are geometrically ergodic. Solution trajectories will\nsample the extended canonical distribution, and it remains to compute solutions\nusing an appropriate discretization scheme.\n8.4.2\nNumerical Integration of the Nosé-Hoover-Langevin\nEquations\nMany older schemes for Nosé-Hoover and Langevin dynamics make use of\ncomputational shortcuts to (for example) reduce the number of computed random\nvalues per iteration, reduce the data storage needed for an algorithm or replace\nfunctions that are costly to evaluate (e.g. exponential or trigonometric functions)\n",
+  "verbatim_scope": "完整对应原页文字层，逐字保留；本条数学成分由statement_latex及statement_scope定位。",
+  "proof_latex": null,
+  "proof_note": "对应原页推导逐字保存在statement_verbatim/original_page_text；排版以原页PDF为准。",
+  "original_page_text": [
+    {
+      "pdf_page": 370,
+      "printed_page": 349,
+      "text": "8.4\nErgodic Stochastic-Dynamic Thermostats\n349\nfor some constants Umin and Umax. Hence \b is strictly positive over the entire space,\nand we can compute that\nLNHL\b D p \u0002 rU.q/ \u0003 rU.q/ \u0002 p \u0003 \u0012kpk2 C\n\nkpk2 \u0003 NdkBT\n\u000b\n.\u0012 \u0003 a/\n\u0003 \n\u0006\u0012.\u0012 \u0003 a/ C kBT\n;\n\t \u0003akpk2 \u0003 \n\u0006\u00122 C .a\n\u0006 \u0003 NdkBT/ \u0012 C aNdkBT C kBT\n:\nChoosing a so that a\n\u0006 \u0003 NdkBT D 0, we obtain\nLNHL\b D \u0003akpk2 \u0003 \n\u0006\u00122 \u0003 \n\u0006a2 C \n\u0006a2 C aNdkBT C kBT\n:\nUsing \u0003\u00122 \u0003 a2 \t \u0003.\u0012 \u0003 a/2=2 gives\nLNHL\b \t \u00032a1\n2kpk2 \u0003 \n\u00061\n2.\u0012 \u0003 a/2 C \n\u0006a2 C aNdkBT C kBT\n:\nNow choosing\n˛ D min .2a; \n\u0006/ ;\nwe have\nLNHL\b \t \u0003˛\b C ˛U.q/ C \n\u0006a2 C aNdkBT C kBT\n;\n\t \u0003˛\b C ı;\nfor constants ˛ and ı as required, where\nı D ˛Umax C \n\u0006a2 C aNdkBT C kBT\n:\nThis gives the necessary Lyapunov condition for the Nosé-Hoover-Langevin equa-\ntions, and hence the dynamics are geometrically ergodic. Solution trajectories will\nsample the extended canonical distribution, and it remains to compute solutions\nusing an appropriate discretization scheme.\n8.4.2\nNumerical Integration of the Nosé-Hoover-Langevin\nEquations\nMany older schemes for Nosé-Hoover and Langevin dynamics make use of\ncomputational shortcuts to (for example) reduce the number of computed random\nvalues per iteration, reduce the data storage needed for an algorithm or replace\nfunctions that are costly to evaluate (e.g. exponential or trigonometric functions)\n"
+    }
+  ],
+  "numbered_equations": [],
+  "transcription_note": "文字层逐字保留；数学排版另行转写，原页中的特殊字形编码不静默替换。PDF420仅取Exercises之前。",
+  "context_notation": [],
+  "extra_assumptions": [
+    "修正为min(2a,γ)，仅修正漂移代数估计；几何遍历还需完整概率半群、小集条件和解理论，未声称已证。"
+  ],
+  "issues": [
+    "已目视核对原页PDF370：与φ热浴项μ(ξ-a)²/2比较时衰减系数应≤γ，所印min(2a,γμ)对一般μ不足；正参数数值反例已列。"
+  ],
+  "statement_scope": "所印与修正衰减系数、两版漂移界目标及所印界的正参数数值反例。",
+  "lean_decl": "MD.Ch08.lyapunovAlphaPrinted",
+  "lean_declarations": [
+    "MD.Ch08.lyapunovAlphaPrinted",
+    "MD.Ch08.lyapunovAlpha_corrected",
+    "MD.Ch08.lyapunovRatePrinted",
+    "MD.Ch08.lyapunovRate_counterexample",
+    "MD.Ch08.lyapunovRate_corrected"
+  ],
+  "source_page_verification": "见source_page_checks.json，已目视核对本条原页。",
+  "repair_log": [],
+  "documented_priors": []
+}
+```
+
+## 完整本条Lean
+```lean
+def lyapunovAlphaPrinted (a γ Q : ℝ) : ℝ := min (2*a) (γ*Q)
+def lyapunovAlpha_corrected (a γ : ℝ) : ℝ := min (2*a) γ
+theorem lyapunovRatePrinted (P2 U Umax ξ Q θ γ a N : ℝ)
+    (hP : 0 ≤ P2) (hU : U ≤ Umax) (hQ : 0 < Q) (hθ : 0 < θ)
+    (hγ : 0 < γ) (ha : 0 < a) (hbalance : a*γ*Q=N*θ) :
+    nhlLyapunovExpression P2 U ξ Q θ γ a N ≤
+      -lyapunovAlphaPrinted a γ Q * (P2/2+U+Q*(ξ-a)^2/2) +
+      (lyapunovAlphaPrinted a γ Q*Umax+γ*Q*a^2+a*N*θ+θ*γ) := by
+  sorry
+theorem lyapunovRate_counterexample :
+    ¬ (nhlLyapunovExpression 0 2 10 4 1 1 2 8 ≤
+      -lyapunovAlphaPrinted 2 1 4 * ((0:ℝ)/2+2+4*(10-2)^2/2) +
+      (lyapunovAlphaPrinted 2 1 4*2+1*4*2^2+2*8*1+1*1)) := by
+  norm_num [nhlLyapunovExpression, lyapunovAlphaPrinted]
+theorem lyapunovRate_corrected (P2 U Umax ξ Q θ γ a N : ℝ)
+    (hP : 0 ≤ P2) (hU : U ≤ Umax) (hQ : 0 < Q) (hθ : 0 < θ)
+    (hγ : 0 < γ) (ha : 0 < a) (hbalance : a*γ*Q=N*θ) :
+    nhlLyapunovExpression P2 U ξ Q θ γ a N ≤
+      -lyapunovAlpha_corrected a γ * (P2/2+U+Q*(ξ-a)^2/2) +
+      (lyapunovAlpha_corrected a γ*Umax+γ*Q*a^2+a*N*θ+θ*γ) := by
+  sorry
+```
+
+## 项目依赖定义体及选择规格
+以下def/abbrev/structure完整保留；定理列出完整类型，Mathlib标准定义无需摘录。
+
+### MD.Ch08.nhlLyapunovExpression (Blueprint/Ch08.lean:448)
+原文件上下文：
+```lean
+open Set Filter MeasureTheory ProbabilityTheory MolecularDynamics
+open scoped BigOperators Topology ContDiff ENNReal NNReal Matrix
+variable {Ω : Type*} [MeasurableSpace Ω]
+variable {n : ℕ}
+```
+```lean
+def nhlLyapunovExpression (P2 U ξ Q θ γ a N : ℝ) : ℝ :=
+  -a*P2-γ*Q*ξ*(ξ-a)-N*θ*(ξ-a)+θ*γ
+```
+
+### MD.Ch08.lyapunovAlphaPrinted (Blueprint/Ch08.lean:463)
+原文件上下文：
+```lean
+open Set Filter MeasureTheory ProbabilityTheory MolecularDynamics
+open scoped BigOperators Topology ContDiff ENNReal NNReal Matrix
+variable {Ω : Type*} [MeasurableSpace Ω]
+variable {n : ℕ}
+```
+```lean
+def lyapunovAlphaPrinted (a γ Q : ℝ) : ℝ := min (2*a) (γ*Q)
+```
+
+### MD.Ch08.lyapunovAlpha_corrected (Blueprint/Ch08.lean:464)
+原文件上下文：
+```lean
+open Set Filter MeasureTheory ProbabilityTheory MolecularDynamics
+open scoped BigOperators Topology ContDiff ENNReal NNReal Matrix
+variable {Ω : Type*} [MeasurableSpace Ω]
+variable {n : ℕ}
+```
+```lean
+def lyapunovAlpha_corrected (a γ : ℝ) : ℝ := min (2*a) γ
+```
+
+### MD.Ch08.lyapunovRatePrinted (Blueprint/Ch08.lean:465)
+原文件上下文：
+```lean
+open Set Filter MeasureTheory ProbabilityTheory MolecularDynamics
+open scoped BigOperators Topology ContDiff ENNReal NNReal Matrix
+variable {Ω : Type*} [MeasurableSpace Ω]
+variable {n : ℕ}
+```
+```lean
+theorem lyapunovRatePrinted (P2 U Umax ξ Q θ γ a N : ℝ)
+    (hP : 0 ≤ P2) (hU : U ≤ Umax) (hQ : 0 < Q) (hθ : 0 < θ)
+    (hγ : 0 < γ) (ha : 0 < a) (hbalance : a*γ*Q=N*θ) :
+    nhlLyapunovExpression P2 U ξ Q θ γ a N ≤
+      -lyapunovAlphaPrinted a γ Q * (P2/2+U+Q*(ξ-a)^2/2) +
+      (lyapunovAlphaPrinted a γ Q*Umax+γ*Q*a^2+a*N*θ+θ*γ)
+```
+
+### MD.Ch08.lyapunovRate_counterexample (Blueprint/Ch08.lean:472)
+原文件上下文：
+```lean
+open Set Filter MeasureTheory ProbabilityTheory MolecularDynamics
+open scoped BigOperators Topology ContDiff ENNReal NNReal Matrix
+variable {Ω : Type*} [MeasurableSpace Ω]
+variable {n : ℕ}
+```
+```lean
+theorem lyapunovRate_counterexample :
+    ¬ (nhlLyapunovExpression 0 2 10 4 1 1 2 8 ≤
+      -lyapunovAlphaPrinted 2 1 4 * ((0:ℝ)/2+2+4*(10-2)^2/2) +
+      (lyapunovAlphaPrinted 2 1 4*2+1*4*2^2+2*8*1+1*1))
+```
+
+### MD.Ch08.lyapunovRate_corrected (Blueprint/Ch08.lean:477)
+原文件上下文：
+```lean
+open Set Filter MeasureTheory ProbabilityTheory MolecularDynamics
+open scoped BigOperators Topology ContDiff ENNReal NNReal Matrix
+variable {Ω : Type*} [MeasurableSpace Ω]
+variable {n : ℕ}
+```
+```lean
+theorem lyapunovRate_corrected (P2 U Umax ξ Q θ γ a N : ℝ)
+    (hP : 0 ≤ P2) (hU : U ≤ Umax) (hQ : 0 < Q) (hθ : 0 < θ)
+    (hγ : 0 < γ) (ha : 0 < a) (hbalance : a*γ*Q=N*θ) :
+    nhlLyapunovExpression P2 U ξ Q θ γ a N ≤
+      -lyapunovAlpha_corrected a γ * (P2/2+U+Q*(ξ-a)^2/2) +
+      (lyapunovAlpha_corrected a γ*Umax+γ*Q*a^2+a*N*θ+θ*γ)
+```
+
+### MolecularDynamics.Chapter02Review.Q (MolecularDynamics/Chapter02/ReviewDefinitions.lean:17)
+原文件上下文：
+```lean
+open Set Filter Matrix
+open scoped BigOperators Topology
+```
+```lean
+abbrev Q (n : ℕ) := Fin n → ℝ
+```
+
+### MolecularDynamics.Chapter04Review.Q (MolecularDynamics/Chapter04/ReviewDefinitions.lean:15)
+原文件上下文：
+```lean
+open Set Matrix
+open scoped BigOperators Topology Matrix.Norms.Elementwise
+```
+```lean
+abbrev Q (n : ℕ) := Fin n → ℝ
+```

@@ -1,0 +1,101 @@
+{
+  "batch": "BATCH09",
+  "subtask": "BATCH09c",
+  "source_ids": [
+    "MD-8.6.1-SINWeightPrinted"
+  ],
+  "input_sha256": {
+    "Blueprint/Ch08.lean": "2800812fadd8e2557013f1941e4570401f7903d46f44baf07e23d5531da22a72",
+    "blueprint/ch08/ch08_source.json": "9b994b0f64cd22c85c2ad4123fbfdbd064bd7a6d070fe13b721794432f9f7a63",
+    "BATCH09c_PAGES.pdf": "1e2c0e700f36dca1ff2125023462464e016b7deae04ef041764304a373b45687"
+  },
+  "page_mapping": [
+    {
+      "attachment_page": 1,
+      "original_pdf_page": 386,
+      "printed_page": 365
+    }
+  ],
+  "definition_excerpts": [
+    {
+      "full_name": "MD.Ch08.Vec",
+      "kind": "abbrev",
+      "path": "Blueprint/Ch08.lean",
+      "line": 17,
+      "code_sha256": "6f4b254a8a7cc4115fb35265b77caa663bdd18567cd1e664cc5bbd080d02fcff"
+    },
+    {
+      "full_name": "MD.Ch08.sinConstraint",
+      "kind": "def",
+      "path": "Blueprint/Ch08.lean",
+      "line": 714,
+      "code_sha256": "946319fb0e80a00db3e6955a9e26729cc0e57a8bdc9c927d226f4b2e068bc287"
+    },
+    {
+      "full_name": "MD.Ch08.sinMultiplier",
+      "kind": "def",
+      "path": "Blueprint/Ch08.lean",
+      "line": 715,
+      "code_sha256": "cb1ee56c77ff03922f0486f068baf0690892755f2bddbd04b354b6818cf5c5e1"
+    },
+    {
+      "full_name": "MD.Ch08.sinDrift",
+      "kind": "def",
+      "path": "Blueprint/Ch08.lean",
+      "line": 717,
+      "code_sha256": "c5b14901922b2df83b4513df12d3a8e7988b8ee9d09689ef77261e0648db7724"
+    },
+    {
+      "full_name": "MD.Ch08.sinWeightPrinted",
+      "kind": "def",
+      "path": "Blueprint/Ch08.lean",
+      "line": 741,
+      "code_sha256": "9be424097f3a3c772ba752a0c09a0b0ca4431bad8920a17e2be923234140b2e5"
+    },
+    {
+      "full_name": "MD.Ch08.sinWeight_corrected",
+      "kind": "def",
+      "path": "Blueprint/Ch08.lean",
+      "line": 743,
+      "code_sha256": "03413577c0cbfe489b7ecabe01e4e2e13d066a04c365a58fc5114a88e74b0a6e"
+    },
+    {
+      "full_name": "MD.Ch08.sinWeight_stationary_corrected",
+      "kind": "theorem",
+      "path": "Blueprint/Ch08.lean",
+      "line": 745,
+      "code_sha256": "37d7e39b5d52b99ee6a17250441a2b94cbbfea2dbc7537be55976efd5fe1f2b1"
+    },
+    {
+      "full_name": "MolecularDynamics.Chapter05Review.E",
+      "kind": "abbrev",
+      "path": "MolecularDynamics/Chapter05/ReviewDefinitions.lean",
+      "line": 18,
+      "code_sha256": "b497c8ba7f01b62a3147d9ae65652772ff3f81e57aa19b116f1283fef7a3cc60"
+    },
+    {
+      "full_name": "MolecularDynamics.textbookDivergence",
+      "kind": "def",
+      "path": "MolecularDynamics/Chapter08/ThermostatDensity.lean",
+      "line": 18,
+      "code_sha256": "1b45cabec3bf68bd209da969759334d158c263b7e5a40ed527bd3a4f48e25c48"
+    }
+  ],
+  "validation": {
+    "project_constant_closure": "PASS",
+    "missing_project_definitions": [],
+    "full_page_render_equality_dpi": 72,
+    "website_submitted": false
+  },
+  "files": {
+    "PASTE.txt": {
+      "bytes": 10501,
+      "sha256": "088c910628755239d367e531c2913eff833319749b6ae6846162dc80c9c6d7dc"
+    },
+    "BATCH09c_PAGES.pdf": {
+      "bytes": 68272,
+      "sha256": "1e2c0e700f36dca1ff2125023462464e016b7deae04ef041764304a373b45687"
+    }
+  },
+  "total_task_bytes": 82051
+}

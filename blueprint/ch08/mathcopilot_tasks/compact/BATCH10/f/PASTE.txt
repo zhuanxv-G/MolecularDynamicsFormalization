@@ -1,0 +1,185 @@
+以附件/PASTE 为准，忽略 /workspace 旧文件；Mathlib 定义按标准含义采信。
+本任务只审本条：原文转录、对象资格、定义体、量词、全部结论及[EXTRA]是否一致；Lean编译不代替语义审阅。
+Lean/Mathlib均4.34.0。原页PDF映射：[393]；印刷页=[372].
+input_sha256请原样回显：
+{
+  "Blueprint/Ch08.lean": "2800812fadd8e2557013f1941e4570401f7903d46f44baf07e23d5531da22a72",
+  "blueprint/ch08/ch08_source.json": "9b994b0f64cd22c85c2ad4123fbfdbd064bd7a6d070fe13b721794432f9f7a63",
+  "BATCH10f_PAGES.pdf": "0b5625a74cd4e9af1e24cff88b1783af2c1e4fbf4f5fc5b1349d265e2157500d"
+}
+用代码将JSON对象(batch,input_sha256,items)写到 /workspace/.mathcopilot/reviews/ch08/BATCH10f_review.json；items仅含本source_id。
+items字段：source_id、verdict(PASS/FAIL/NEEDS_HUMAN)、transcription、semantic_review、counterexample、suggested_fix、printed_version、corrected_version。逐版区分原文疑误和修正版结论；缺材料必须具体指出，不猜测。写后json.loads自检，最后仅回复路径及统计。
+
+## 原文JSON
+```json
+{
+  "source_id": "MD-8.6.3-SINForceExactPrinted",
+  "kind": "unnumbered_claim",
+  "label": null,
+  "section": "8.6.3",
+  "printed_page": "372",
+  "pdf_page": "393",
+  "statement_latex": "ṗ=F−p²F/Λ, ξ̇₁=pξ₁F/Λ. The printed solution is p(h)=(p(0)+(F/m)s(h))/ṡ(h), ξ₁(h)=ξ₁(0)/ṡ(h), with s(t)=b⁻¹/²sinh(t√b)+(a/b)(cosh(t√b)−1), a=Fp(0)/Λ, b=F²/Λ.",
+  "statement_verbatim": "372\n8\nExtended Variable Methods\nWe stress that the implementation of this method is in fact quite straightforward,\ndespite its apparent complexity. The following details regarding the implementation\nare discussed in [220]:\n•\nFor the integration of the Nosé terms, it is recommended to use a further splitting:\nLN D L.1/\nN C L.2/\nN ;\nwhere\nL.1/\nN D 1\n2\n\u00061\u00122\n1\u00122p\n\u0017\n@\n@p C 1\n2\n\u00061\u00123\n1\u00122\n\u0017\n@\n@\u00121\n\u0003 \u00122\u00121\n@\n@\u00121\n;\nand\nL.2/\nN D \u0006\u00021\n2 Œ\u00061\u00122\n1 \u0003 ˇ\u00021\t @\n@\u00122\n:\nMoreover a Yoshida/Suzuki type higher order decomposition is used to obtain\nmore accuracy in this component.\n•\nThe term exp ŒhLF\t (like similar terms) is completely integrable. Note that in\ngeneral this reduces to solving\nPp D F \u0003 p2F=\u0017;\nP\u00121 D p\u00121F=\u0017;\nwith F a constant.\nThe solution in a timestep h is\np.h/ D p.0/ C .F=m/s.h/\nPs.h/\n;\n\u00121.h/ D \u00121.0/\nPs.h/ ;\nwhere\ns.t/ D b\u00021=2 sinh.t\np\nb/ C a\nb.cosh.t\np\nb/ \u0003 1/\nwith a D Fp.0/=\u0017 and b D F2=\u0017, \u0017 D ˇ\u00021.\nCare must be taken in the evaluation of s and Ps for a; b close to zero.\nNote that other decompositions are possible [220].\n",
+  "verbatim_scope": "完整对应原页文字层，逐字保留；本条数学成分由statement_latex及statement_scope定位。",
+  "proof_latex": null,
+  "proof_note": "对应原页推导逐字保存在statement_verbatim/original_page_text；排版以原页PDF为准。",
+  "original_page_text": [
+    {
+      "pdf_page": 393,
+      "printed_page": 372,
+      "text": "372\n8\nExtended Variable Methods\nWe stress that the implementation of this method is in fact quite straightforward,\ndespite its apparent complexity. The following details regarding the implementation\nare discussed in [220]:\n•\nFor the integration of the Nosé terms, it is recommended to use a further splitting:\nLN D L.1/\nN C L.2/\nN ;\nwhere\nL.1/\nN D 1\n2\n\u00061\u00122\n1\u00122p\n\u0017\n@\n@p C 1\n2\n\u00061\u00123\n1\u00122\n\u0017\n@\n@\u00121\n\u0003 \u00122\u00121\n@\n@\u00121\n;\nand\nL.2/\nN D \u0006\u00021\n2 Œ\u00061\u00122\n1 \u0003 ˇ\u00021\t @\n@\u00122\n:\nMoreover a Yoshida/Suzuki type higher order decomposition is used to obtain\nmore accuracy in this component.\n•\nThe term exp ŒhLF\t (like similar terms) is completely integrable. Note that in\ngeneral this reduces to solving\nPp D F \u0003 p2F=\u0017;\nP\u00121 D p\u00121F=\u0017;\nwith F a constant.\nThe solution in a timestep h is\np.h/ D p.0/ C .F=m/s.h/\nPs.h/\n;\n\u00121.h/ D \u00121.0/\nPs.h/ ;\nwhere\ns.t/ D b\u00021=2 sinh.t\np\nb/ C a\nb.cosh.t\np\nb/ \u0003 1/\nwith a D Fp.0/=\u0017 and b D F2=\u0017, \u0017 D ˇ\u00021.\nCare must be taken in the evaluation of s and Ps for a; b close to zero.\nNote that other decompositions are possible [220].\n"
+    }
+  ],
+  "numbered_equations": [],
+  "transcription_note": "文字层逐字保留；数学排版另行转写，原页中的特殊字形编码不静默替换。PDF420仅取Exercises之前。",
+  "context_notation": [],
+  "extra_assumptions": [
+    "质量按本节假设取1；Q₁、Λ正，排除ṡ=0；F=0用b=0的解析延拓，避免总化除法假装极限。",
+    "只声明候选流在有效域满足校正ODE，不证明全局流、组合方法精度或遍历性。"
+  ],
+  "issues": [
+    "已目视核对原页PDF393：所印ξ̇₁为正号，与前页力子场及ξ₁(h)=ξ₁(0)/ṡ(h)的负号导数冲突。保留原印和负号工作修正版。"
+  ],
+  "statement_scope": "原印子场、显式候选与校正ODE的局部导数目标。",
+  "lean_decl": "MD.Ch08.sinForceAux",
+  "lean_declarations": [
+    "MD.Ch08.sinForceAux",
+    "MD.Ch08.sinForceFlow",
+    "MD.Ch08.sinForceODEPrinted",
+    "MD.Ch08.sinForceODE_corrected",
+    "MD.Ch08.sinForceFlow_solution_corrected"
+  ],
+  "source_page_verification": "见source_page_checks.json，已目视核对本条原页。",
+  "repair_log": [],
+  "documented_priors": []
+}
+```
+
+## 完整本条Lean
+```lean
+def sinForceAux (a b t : ℝ) : ℝ :=
+  if b=0 then t+a*t^2/2 else Real.sinh (t*Real.sqrt b)/Real.sqrt b+a/b*(Real.cosh (t*Real.sqrt b)-1)
+def sinForceFlow (Q1 F t : ℝ) (z : Vec 4) : Vec 4 :=
+  let lam := sinConstraint Q1 z
+  let s := sinForceAux (F*z 1/lam) (F^2/lam)
+  ![z 0,(z 1+F*s t)/deriv s t,z 2/deriv s t,z 3]
+def sinForceODEPrinted (Q1 F : ℝ) (z : Vec 4) : Vec 4 :=
+  ![0,F-z 1^2*F/sinConstraint Q1 z,z 1*z 2*F/sinConstraint Q1 z,0]
+def sinForceODE_corrected (Q1 F : ℝ) : Vec 4 → Vec 4 := sinForceField Q1 F
+theorem sinForceFlow_solution_corrected (Q1 F : ℝ) (z : Vec 4)
+    (hQ1 : 0 < Q1) (hK : 0 < sinConstraint Q1 z) (t : ℝ)
+    (hden : deriv (sinForceAux (F*z 1/sinConstraint Q1 z) (F^2/sinConstraint Q1 z)) t ≠ 0) :
+    HasDerivAt (fun s ↦ sinForceFlow Q1 F s z)
+      (sinForceField Q1 F (sinForceFlow Q1 F t z)) t := by
+  sorry
+```
+
+## 项目依赖定义体及选择规格
+以下def/abbrev/structure完整保留；定理列出完整类型，Mathlib标准定义无需摘录。
+
+### MD.Ch08.Vec (Blueprint/Ch08.lean:17)
+原文件上下文：
+```lean
+open Set Filter MeasureTheory ProbabilityTheory MolecularDynamics
+open scoped BigOperators Topology ContDiff ENNReal NNReal Matrix
+variable {Ω : Type*} [MeasurableSpace Ω]
+variable {n : ℕ}
+```
+```lean
+abbrev Vec (n : ℕ) := Fin n → ℝ
+```
+
+### MD.Ch08.sinConstraint (Blueprint/Ch08.lean:714)
+原文件上下文：
+```lean
+open Set Filter MeasureTheory ProbabilityTheory MolecularDynamics
+open scoped BigOperators Topology ContDiff ENNReal NNReal Matrix
+variable {Ω : Type*} [MeasurableSpace Ω]
+variable {n : ℕ}
+```
+```lean
+def sinConstraint (Q1 : ℝ) (z : Vec 4) : ℝ := z 1^2+Q1*z 2^2/2
+```
+
+### MD.Ch08.sinForceField (Blueprint/Ch08.lean:851)
+原文件上下文：
+```lean
+open Set Filter MeasureTheory ProbabilityTheory MolecularDynamics
+open scoped BigOperators Topology ContDiff ENNReal NNReal Matrix
+variable {Ω : Type*} [MeasurableSpace Ω]
+variable {n : ℕ}
+```
+```lean
+def sinForceField (Q1 F : ℝ) (z : Vec 4) : Vec 4 :=
+  ![0,F-z 1^2*F/sinConstraint Q1 z,-z 1*z 2*F/sinConstraint Q1 z,0]
+```
+
+### MD.Ch08.sinForceAux (Blueprint/Ch08.lean:905)
+原文件上下文：
+```lean
+open Set Filter MeasureTheory ProbabilityTheory MolecularDynamics
+open scoped BigOperators Topology ContDiff ENNReal NNReal Matrix
+variable {Ω : Type*} [MeasurableSpace Ω]
+variable {n : ℕ}
+```
+```lean
+def sinForceAux (a b t : ℝ) : ℝ :=
+  if b=0 then t+a*t^2/2 else Real.sinh (t*Real.sqrt b)/Real.sqrt b+a/b*(Real.cosh (t*Real.sqrt b)-1)
+```
+
+### MD.Ch08.sinForceFlow (Blueprint/Ch08.lean:907)
+原文件上下文：
+```lean
+open Set Filter MeasureTheory ProbabilityTheory MolecularDynamics
+open scoped BigOperators Topology ContDiff ENNReal NNReal Matrix
+variable {Ω : Type*} [MeasurableSpace Ω]
+variable {n : ℕ}
+```
+```lean
+def sinForceFlow (Q1 F t : ℝ) (z : Vec 4) : Vec 4 :=
+  let lam := sinConstraint Q1 z
+  let s := sinForceAux (F*z 1/lam) (F^2/lam)
+  ![z 0,(z 1+F*s t)/deriv s t,z 2/deriv s t,z 3]
+```
+
+### MD.Ch08.sinForceODEPrinted (Blueprint/Ch08.lean:911)
+原文件上下文：
+```lean
+open Set Filter MeasureTheory ProbabilityTheory MolecularDynamics
+open scoped BigOperators Topology ContDiff ENNReal NNReal Matrix
+variable {Ω : Type*} [MeasurableSpace Ω]
+variable {n : ℕ}
+```
+```lean
+def sinForceODEPrinted (Q1 F : ℝ) (z : Vec 4) : Vec 4 :=
+  ![0,F-z 1^2*F/sinConstraint Q1 z,z 1*z 2*F/sinConstraint Q1 z,0]
+```
+
+### MD.Ch08.sinForceODE_corrected (Blueprint/Ch08.lean:913)
+原文件上下文：
+```lean
+open Set Filter MeasureTheory ProbabilityTheory MolecularDynamics
+open scoped BigOperators Topology ContDiff ENNReal NNReal Matrix
+variable {Ω : Type*} [MeasurableSpace Ω]
+variable {n : ℕ}
+```
+```lean
+def sinForceODE_corrected (Q1 F : ℝ) : Vec 4 → Vec 4 := sinForceField Q1 F
+```
+
+### MD.Ch08.sinForceFlow_solution_corrected (Blueprint/Ch08.lean:914)
+原文件上下文：
+```lean
+open Set Filter MeasureTheory ProbabilityTheory MolecularDynamics
+open scoped BigOperators Topology ContDiff ENNReal NNReal Matrix
+variable {Ω : Type*} [MeasurableSpace Ω]
+variable {n : ℕ}
+```
+```lean
+theorem sinForceFlow_solution_corrected (Q1 F : ℝ) (z : Vec 4)
+    (hQ1 : 0 < Q1) (hK : 0 < sinConstraint Q1 z) (t : ℝ)
+    (hden : deriv (sinForceAux (F*z 1/sinConstraint Q1 z) (F^2/sinConstraint Q1 z)) t ≠ 0) :
+    HasDerivAt (fun s ↦ sinForceFlow Q1 F s z)
+      (sinForceField Q1 F (sinForceFlow Q1 F t z)) t
+```

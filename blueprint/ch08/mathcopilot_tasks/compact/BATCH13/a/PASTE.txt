@@ -1,0 +1,215 @@
+以附件/PASTE 为准，忽略 /workspace 旧文件；Mathlib 定义按标准含义采信。
+本任务只审本条：原文转录、对象资格、定义体、量词、全部结论及[EXTRA]是否一致；Lean编译不代替语义审阅。
+Lean/Mathlib均4.34.0。原页PDF映射：[399, 400]；印刷页=[378, 379].
+input_sha256请原样回显：
+{
+  "Blueprint/Ch08.lean": "2800812fadd8e2557013f1941e4570401f7903d46f44baf07e23d5531da22a72",
+  "blueprint/ch08/ch08_source.json": "9b994b0f64cd22c85c2ad4123fbfdbd064bd7a6d070fe13b721794432f9f7a63",
+  "BATCH13a_PAGES.pdf": "32b3fb0dc9c32b56e585cd3ac7f3546aa10431045a04fd8b777ea3bdfaab6fe7"
+}
+用代码将JSON对象(batch,input_sha256,items)写到 /workspace/.mathcopilot/reviews/ch08/BATCH13a_review.json；items仅含本source_id。
+items字段：source_id、verdict(PASS/FAIL/NEEDS_HUMAN)、transcription、semantic_review、counterexample、suggested_fix、printed_version、corrected_version。逐版区分原文疑误和修正版结论；缺材料必须具体指出，不猜测。写后json.loads自检，最后仅回复路径及统计。
+
+## 原文JSON
+```json
+{
+  "source_id": "MD-8.8-NPTDensity",
+  "kind": "unnumbered_claim",
+  "label": null,
+  "section": "8.8",
+  "printed_page": "378–379",
+  "pdf_page": "399–400",
+  "statement_latex": "ρ_NPT=Z_NPT⁻¹ exp[−β(H+PV)], β⁻¹=k_BT; physical volume V is positive.",
+  "statement_verbatim": "378\n8\nExtended Variable Methods\n8.8\nConstant Temperature and Pressure Molecular\nDynamics\nThe isobaric, isothermal or NPT ensemble models a system in contact with a heat\nbath (temperature T) and a “pressure reservoir” maintained at pressure P. The\npressure is deﬁned by the formula\nP D \u0003\n\u0002 @E\n@V\n\u0003\nS;N\nwhere E is the energy, V is volume, S is entropy. The notation Œ: : :\tx;y means that the\nindicated partial derivatives should be taken with respect to constant values of the\nindicated variables.\nAn isothermal-isobaric system exchanges energy with the bath in such a way\nas to maintain the constant temperature; at the same time the volume ﬂuctuates to\ncontrol the pressure. The state of the system can be expressed in terms of particle\npositions and momenta as well as the volume V, i.e. we think of the probability\ndensity as a function of q, p and V.\nLet N, V, E be the number of atoms, volume and energy, respectively, of the\nsystem of interest, and N2, V2, E2 be the corresponding quantities describing the\nbath system; we have NCN2 D QN, VCV2 D QV, ECE2 D QE all constant. We view\nthe entropy as a function of the other variables and expand in a Taylor series in both\nvolume and energy:\nS.N2; V2; E2/ D S. QN \u0003 N; QV \u0003 V; QE \u0003 E/ \u0007 S.N2; QV; QE/ \u0003 @S\n@EE \u0003 @S\n@VV:\nBear in mind that here E and V are small relative perturbations of the total energy\nand volume. The quantity @S\n@E is the reciprocal temperature.\nTo calculate @S\n@V we may use Maxwell’s thermodynamic relation [372]:\n\u0002@S\n@E\n\u0003\nV;N\n\u0002 @E\n@V\n\u0003\nS;N\n\u0002@V\n@S\n\u0003\nE;N\nD \u00031:\nSince\n\n @S\n@E\n\u000b\nV;N is T\u00021 and\n\n @E\n@V\n\u000b\nS;N is \u0003P, we obtain\n\u0002 @S\n@V\n\u0003\nE;N\nD\n1\n\n @V\n@S\n\u000b\nE;N\nD P=T:\nThis results in the formula\nS.N2; V2; E2/ \u0007 constant \u0003 E C PV\nT\n;\n\n8.8\nConstant Temperature and Pressure Molecular Dynamics\n379\nwhich leads to the probability density\n\u0005NPT D Z\u00021\nNPTe\u0002ˇ.HCPV/;\nwhere H is the Hamiltonian, and ˇ\u00021 D kBT.\nThe NPT model may be viewed as corresponding to a thermostatted system\nwhich incorporates a “piston” controlling the overall volume of the system to be\nconsistent with the target pressure. During simulation, the volume must be free\nto change; whereas the methods presented so far retain a ﬁxed volume. In NVE\nor NVT simulation, the volume enters in two ways into the molecular simulation\nmethod: (i) as a modiﬁcation of the potential (allowing for periodic replicas) and\n(ii) in the mechanism by which atoms are mapped from one boundary to the other\nof the rectangular domain, simulating motion on a torus. It is not obvious how to\ngeneralize these to the NPT setting where V is a dynamical variable.\nThe method of Andersen [11] (“Andersen’s piston”) is to control the volume\nby reparamaterizing the coordinates to lie in a cubic box with unit side. Assuming\nthe system occupies a cubic domain, say, Œ\u0003L=2; L=2\t\u0004Œ\u0003L=2; L=2\t\u0004Œ\u0003L=2; L=2\t,\nwhere L D V1=3, we may write, for each three-dimensional atomic coordinate vector\nqi\nqi D V1=3Nqi;\n(8.71)\nwhere Nqi is conﬁned to the unit-side cube. Then we have\nPqi D 1\n3V\u00022=3 PV Nqi C V1=3 d\ndt Nqi:\nThe kinetic energy of the atomic system may be written\nK D\nN\nX\niD1\nmi\nkPqik2\n2\n:\nAfter coordinate transformation this becomes\nNK D\nN\nX\niD1\nmi\n2\n\n\n\n\n\n1\n3V\u00022=3 PV Nqi C V1=3 d\ndt Nqi\n\n\n\n\n\n2\nD\nN\nX\niD1\nmi\n2\n\u00021\n9V\u00024=3 PV2 kNqik2 C 2\n3V\u00021=3 PV Nqi \u0002 PNqi C V2=3 \n\nPNqi\n\n\n2\u0003\n;\nthus the momentum vector conjugate to Nqi becomes\nNpi D @ NK\n@PNqi\n",
+  "verbatim_scope": "完整对应原页文字层，逐字保留；本条数学成分由statement_latex及statement_scope定位。",
+  "proof_latex": null,
+  "proof_note": "对应原页推导逐字保存在statement_verbatim/original_page_text；排版以原页PDF为准。",
+  "original_page_text": [
+    {
+      "pdf_page": 399,
+      "printed_page": 378,
+      "text": "378\n8\nExtended Variable Methods\n8.8\nConstant Temperature and Pressure Molecular\nDynamics\nThe isobaric, isothermal or NPT ensemble models a system in contact with a heat\nbath (temperature T) and a “pressure reservoir” maintained at pressure P. The\npressure is deﬁned by the formula\nP D \u0003\n\u0002 @E\n@V\n\u0003\nS;N\nwhere E is the energy, V is volume, S is entropy. The notation Œ: : :\tx;y means that the\nindicated partial derivatives should be taken with respect to constant values of the\nindicated variables.\nAn isothermal-isobaric system exchanges energy with the bath in such a way\nas to maintain the constant temperature; at the same time the volume ﬂuctuates to\ncontrol the pressure. The state of the system can be expressed in terms of particle\npositions and momenta as well as the volume V, i.e. we think of the probability\ndensity as a function of q, p and V.\nLet N, V, E be the number of atoms, volume and energy, respectively, of the\nsystem of interest, and N2, V2, E2 be the corresponding quantities describing the\nbath system; we have NCN2 D QN, VCV2 D QV, ECE2 D QE all constant. We view\nthe entropy as a function of the other variables and expand in a Taylor series in both\nvolume and energy:\nS.N2; V2; E2/ D S. QN \u0003 N; QV \u0003 V; QE \u0003 E/ \u0007 S.N2; QV; QE/ \u0003 @S\n@EE \u0003 @S\n@VV:\nBear in mind that here E and V are small relative perturbations of the total energy\nand volume. The quantity @S\n@E is the reciprocal temperature.\nTo calculate @S\n@V we may use Maxwell’s thermodynamic relation [372]:\n\u0002@S\n@E\n\u0003\nV;N\n\u0002 @E\n@V\n\u0003\nS;N\n\u0002@V\n@S\n\u0003\nE;N\nD \u00031:\nSince\n\n @S\n@E\n\u000b\nV;N is T\u00021 and\n\n @E\n@V\n\u000b\nS;N is \u0003P, we obtain\n\u0002 @S\n@V\n\u0003\nE;N\nD\n1\n\n @V\n@S\n\u000b\nE;N\nD P=T:\nThis results in the formula\nS.N2; V2; E2/ \u0007 constant \u0003 E C PV\nT\n;\n"
+    },
+    {
+      "pdf_page": 400,
+      "printed_page": 379,
+      "text": "8.8\nConstant Temperature and Pressure Molecular Dynamics\n379\nwhich leads to the probability density\n\u0005NPT D Z\u00021\nNPTe\u0002ˇ.HCPV/;\nwhere H is the Hamiltonian, and ˇ\u00021 D kBT.\nThe NPT model may be viewed as corresponding to a thermostatted system\nwhich incorporates a “piston” controlling the overall volume of the system to be\nconsistent with the target pressure. During simulation, the volume must be free\nto change; whereas the methods presented so far retain a ﬁxed volume. In NVE\nor NVT simulation, the volume enters in two ways into the molecular simulation\nmethod: (i) as a modiﬁcation of the potential (allowing for periodic replicas) and\n(ii) in the mechanism by which atoms are mapped from one boundary to the other\nof the rectangular domain, simulating motion on a torus. It is not obvious how to\ngeneralize these to the NPT setting where V is a dynamical variable.\nThe method of Andersen [11] (“Andersen’s piston”) is to control the volume\nby reparamaterizing the coordinates to lie in a cubic box with unit side. Assuming\nthe system occupies a cubic domain, say, Œ\u0003L=2; L=2\t\u0004Œ\u0003L=2; L=2\t\u0004Œ\u0003L=2; L=2\t,\nwhere L D V1=3, we may write, for each three-dimensional atomic coordinate vector\nqi\nqi D V1=3Nqi;\n(8.71)\nwhere Nqi is conﬁned to the unit-side cube. Then we have\nPqi D 1\n3V\u00022=3 PV Nqi C V1=3 d\ndt Nqi:\nThe kinetic energy of the atomic system may be written\nK D\nN\nX\niD1\nmi\nkPqik2\n2\n:\nAfter coordinate transformation this becomes\nNK D\nN\nX\niD1\nmi\n2\n\n\n\n\n\n1\n3V\u00022=3 PV Nqi C V1=3 d\ndt Nqi\n\n\n\n\n\n2\nD\nN\nX\niD1\nmi\n2\n\u00021\n9V\u00024=3 PV2 kNqik2 C 2\n3V\u00021=3 PV Nqi \u0002 PNqi C V2=3 \n\nPNqi\n\n\n2\u0003\n;\nthus the momentum vector conjugate to Nqi becomes\nNpi D @ NK\n@PNqi\n"
+    }
+  ],
+  "numbered_equations": [],
+  "transcription_note": "文字层逐字保留；数学排版另行转写，原页中的特殊字形编码不静默替换。PDF420仅取Exercises之前。",
+  "context_notation": [],
+  "extra_assumptions": [
+    "三维N粒子时n=3N；盒域明确依赖V，并用受限Lebesgue测度。正有限配分积分与可积性明示；没有由任意势假装得到NPT概率。"
+  ],
+  "issues": [],
+  "statement_scope": "正体积盒内NPT权重和有资格时的概率归一化。",
+  "lean_decl": "MD.Ch08.volumeScale",
+  "lean_declarations": [
+    "MD.Ch08.volumeScale",
+    "MD.Ch08.nptBox",
+    "MD.Ch08.nptWeight",
+    "MD.Ch08.nptDensity",
+    "MD.Ch08.nptDensity_normalizes"
+  ],
+  "source_page_verification": "见source_page_checks.json，已目视核对本条原页。",
+  "repair_log": [],
+  "documented_priors": []
+}
+```
+
+## 完整本条Lean
+```lean
+def volumeScale (V : ℝ) : ℝ := Real.rpow V (1/3 : ℝ)
+def nptBox (n : ℕ) : Set (Phase n × ℝ) :=
+  {z | 0 < z.2 ∧ ∀ i, |z.1.1 i| ≤ volumeScale z.2/2}
+def nptWeight (H : Phase n × ℝ → ℝ) (β P : ℝ) (z : Phase n × ℝ) : ℝ :=
+  Real.exp (-β*(H z+P*z.2))
+def nptDensity (H : Phase n × ℝ → ℝ) (β P : ℝ) (z : Phase n × ℝ) : ℝ :=
+  (∫ y, nptWeight H β P y ∂volume.restrict (nptBox n))⁻¹*nptWeight H β P z
+theorem nptDensity_normalizes (H : Phase n × ℝ → ℝ) (β P : ℝ) (hβ : 0 < β)
+    (hi : Integrable (nptWeight H β P) (volume.restrict (nptBox n)))
+    (hZ : 0 < ∫ z, nptWeight H β P z ∂volume.restrict (nptBox n)) :
+    probabilityDensity (volume.restrict (nptBox n)) (nptDensity H β P) := by
+  refine ⟨fun z ↦ mul_nonneg (inv_nonneg.mpr (le_of_lt hZ))
+    (le_of_lt (Real.exp_pos _)),hi.const_mul _,?_⟩
+  simp only [nptDensity,integral_const_mul]
+  exact inv_mul_cancel₀ (ne_of_gt hZ)
+```
+
+## 项目依赖定义体及选择规格
+以下def/abbrev/structure完整保留；定理列出完整类型，Mathlib标准定义无需摘录。
+
+### MD.Ch08.Vec (Blueprint/Ch08.lean:17)
+原文件上下文：
+```lean
+open Set Filter MeasureTheory ProbabilityTheory MolecularDynamics
+open scoped BigOperators Topology ContDiff ENNReal NNReal Matrix
+variable {Ω : Type*} [MeasurableSpace Ω]
+variable {n : ℕ}
+```
+```lean
+abbrev Vec (n : ℕ) := Fin n → ℝ
+```
+
+### MD.Ch08.Phase (Blueprint/Ch08.lean:18)
+原文件上下文：
+```lean
+open Set Filter MeasureTheory ProbabilityTheory MolecularDynamics
+open scoped BigOperators Topology ContDiff ENNReal NNReal Matrix
+variable {Ω : Type*} [MeasurableSpace Ω]
+variable {n : ℕ}
+```
+```lean
+abbrev Phase (n : ℕ) := Vec n × Vec n
+```
+
+### MD.Ch08.probabilityDensity (Blueprint/Ch08.lean:24)
+原文件上下文：
+```lean
+open Set Filter MeasureTheory ProbabilityTheory MolecularDynamics
+open scoped BigOperators Topology ContDiff ENNReal NNReal Matrix
+variable {Ω : Type*} [MeasurableSpace Ω]
+variable {n : ℕ}
+```
+```lean
+def probabilityDensity {E : Type*} [MeasurableSpace E] (μ : Measure E) (ρ : E → ℝ) : Prop :=
+  (∀ z, 0 ≤ ρ z) ∧ Integrable ρ μ ∧ ∫ z, ρ z ∂μ = 1
+```
+
+### MD.Ch08.volumeScale (Blueprint/Ch08.lean:1121)
+原文件上下文：
+```lean
+open Set Filter MeasureTheory ProbabilityTheory MolecularDynamics
+open scoped BigOperators Topology ContDiff ENNReal NNReal Matrix
+variable {Ω : Type*} [MeasurableSpace Ω]
+variable {n : ℕ}
+```
+```lean
+def volumeScale (V : ℝ) : ℝ := Real.rpow V (1/3 : ℝ)
+```
+
+### MD.Ch08.nptBox (Blueprint/Ch08.lean:1122)
+原文件上下文：
+```lean
+open Set Filter MeasureTheory ProbabilityTheory MolecularDynamics
+open scoped BigOperators Topology ContDiff ENNReal NNReal Matrix
+variable {Ω : Type*} [MeasurableSpace Ω]
+variable {n : ℕ}
+```
+```lean
+def nptBox (n : ℕ) : Set (Phase n × ℝ) :=
+  {z | 0 < z.2 ∧ ∀ i, |z.1.1 i| ≤ volumeScale z.2/2}
+```
+
+### MD.Ch08.nptWeight (Blueprint/Ch08.lean:1124)
+原文件上下文：
+```lean
+open Set Filter MeasureTheory ProbabilityTheory MolecularDynamics
+open scoped BigOperators Topology ContDiff ENNReal NNReal Matrix
+variable {Ω : Type*} [MeasurableSpace Ω]
+variable {n : ℕ}
+```
+```lean
+def nptWeight (H : Phase n × ℝ → ℝ) (β P : ℝ) (z : Phase n × ℝ) : ℝ :=
+  Real.exp (-β*(H z+P*z.2))
+```
+
+### MD.Ch08.nptDensity (Blueprint/Ch08.lean:1126)
+原文件上下文：
+```lean
+open Set Filter MeasureTheory ProbabilityTheory MolecularDynamics
+open scoped BigOperators Topology ContDiff ENNReal NNReal Matrix
+variable {Ω : Type*} [MeasurableSpace Ω]
+variable {n : ℕ}
+```
+```lean
+def nptDensity (H : Phase n × ℝ → ℝ) (β P : ℝ) (z : Phase n × ℝ) : ℝ :=
+  (∫ y, nptWeight H β P y ∂volume.restrict (nptBox n))⁻¹*nptWeight H β P z
+```
+
+### MD.Ch08.nptDensity_normalizes (Blueprint/Ch08.lean:1128)
+原文件上下文：
+```lean
+open Set Filter MeasureTheory ProbabilityTheory MolecularDynamics
+open scoped BigOperators Topology ContDiff ENNReal NNReal Matrix
+variable {Ω : Type*} [MeasurableSpace Ω]
+variable {n : ℕ}
+```
+```lean
+theorem nptDensity_normalizes (H : Phase n × ℝ → ℝ) (β P : ℝ) (hβ : 0 < β)
+    (hi : Integrable (nptWeight H β P) (volume.restrict (nptBox n)))
+    (hZ : 0 < ∫ z, nptWeight H β P z ∂volume.restrict (nptBox n)) :
+    probabilityDensity (volume.restrict (nptBox n)) (nptDensity H β P)
+```
+
+### MolecularDynamics.Chapter04Review.V (MolecularDynamics/Chapter04/ReviewDefinitions.lean:17)
+原文件上下文：
+```lean
+open Set Matrix
+open scoped BigOperators Topology Matrix.Norms.Elementwise
+```
+```lean
+abbrev V := Fin 3 → ℝ
+```
+
+### MolecularDynamics.Chapter05Review.E (MolecularDynamics/Chapter05/ReviewDefinitions.lean:18)
+原文件上下文：
+```lean
+open Set Filter MeasureTheory Matrix
+open scoped BigOperators Topology ENNReal
+```
+```lean
+abbrev E (n : ℕ) := EuclideanSpace ℝ (Fin n)
+```
+
+### MolecularDynamics.Chapter06Review.V (MolecularDynamics/Chapter06/ReviewDefinitions.lean:17)
+原文件上下文：
+```lean
+open Set Filter MeasureTheory ProbabilityTheory
+open scoped BigOperators Topology ContDiff ENNReal NNReal
+local instance : MeasureSpace UnitAddCircle := ⟨AddCircle.haarAddCircle⟩
+```
+```lean
+abbrev V (n : ℕ) := Fin n → ℝ
+```

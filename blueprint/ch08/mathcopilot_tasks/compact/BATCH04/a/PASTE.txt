@@ -1,0 +1,285 @@
+以附件/PASTE 为准，忽略 /workspace 旧文件；Mathlib 定义按标准含义采信。
+本任务只审本条：原文转录、对象资格、定义体、量词、全部结论及[EXTRA]是否一致；Lean编译不代替语义审阅。
+Lean/Mathlib均4.34.0。原页PDF映射：[359, 360]；印刷页=[338, 339].
+input_sha256请原样回显：
+{
+  "Blueprint/Ch08.lean": "2800812fadd8e2557013f1941e4570401f7903d46f44baf07e23d5531da22a72",
+  "blueprint/ch08/ch08_source.json": "9b994b0f64cd22c85c2ad4123fbfdbd064bd7a6d070fe13b721794432f9f7a63",
+  "BATCH04a_PAGES.pdf": "048a9c8c8d039456ea196b492833ff80a1e1c49215dac80ed69fba8f8c0eb904"
+}
+用代码将JSON对象(batch,input_sha256,items)写到 /workspace/.mathcopilot/reviews/ch08/BATCH04a_review.json；items仅含本source_id。
+items字段：source_id、verdict(PASS/FAIL/NEEDS_HUMAN)、transcription、semantic_review、counterexample、suggested_fix、printed_version、corrected_version。逐版区分原文疑误和修正版结论；缺材料必须具体指出，不猜测。写后json.loads自检，最后仅回复路径及统计。
+
+## 原文JSON
+```json
+{
+  "source_id": "MD-8.2.1-Proposition81",
+  "kind": "proposition",
+  "label": "Proposition 8.1",
+  "section": "8.2.1",
+  "printed_page": "338–339",
+  "pdf_page": "359–360",
+  "statement_latex": "Two thermostats preserving a(ξ)ρ_β and b(η)ρ_β can be added and preserve a(ξ)b(η)ρ_β.",
+  "statement_verbatim": "338\n8\nExtended Variable Methods\nThis is a slightly generalized form of the technique suggested by Bulgac and\nKusnezov [58].\nAssuming \u0005 goes to zero sufﬁciently rapidly at inﬁnity, we have\nZ\nrz \u0002 G.z/\u0005d! D \u0003\nZ\n.rz\u0005/ \u0002 G.z/d! D ˇ\nZ\nrzH \u0002 G.z/\u0005d!;\nusing integration by parts, therefore, since ˇ\u00021 D kBT,\nT D k\u00021\nB\nhrzH \u0002 Gi\nhr \u0002 Gi ;\nwhich gives formulas for temperature in terms of phase space averages (compare\nChap. 6, Proposition 6.1).\nSuppose we let K be a scalar valued function of position, and set\nG.z/ D\n\u0002 rqK.q/\n0\n\u0003\nthen we arrive at\ng.z/ D \u0006\u00021ŒrqU \u0003 kBTrq\t \u0002 rqK.q/:\nThis is an example of a “conﬁgurational thermostat” [193, 211, 319].\nA useful fact about thermostats is the following:\nProposition 8.1 (Thermostats are Additive) Suppose we are given two ther-\nmostats,\nPz D JrH C ˚1.\u0002; z/;\nP\u0002 D g1.\u0002; z/;\nwith stationary density O\u00051.\u0002/\u0005ˇ, and another\nPz D JrH C ˚2.\u0003; z/;\nP\u0003 D g2.\u0003; z/;\nwith stationary density O\u00052.\u0003/\u0005ˇ, then\nPz D JrH C ˚1.\u0002; z/ C ˚2.\u0003; z/;\nP\u0002 D g1.\u0002; z/;\nP\u0003 D g2.\u0003; z/\nis another thermostat and has stationary density Q\u0005 D O\u00051.\u0002/ O\u00052.\u0003/\u0005ˇ.\n\n8.2\nMore General Deterministic Thermostats\n339\nThe proof is an immediate consequence of the linearity of the divergence\noperator, since the Liouville operator is constructed from this.\n8.2.2\nNosé-Hoover Chains\nLet us employ the additivity property to derive “Nosé-Hoover Chains” [251], a\npopular deterministic thermostat designed to give a more thorough sampling of the\nphase space than the standard Nosé-Hoover method.\nThe equations of Nosé-Hoover Chains may be written [251]\nPq D M\u00021p;\n(8.16)\nPp D \u0003rU.q/ \u0003 \u00121p;\n(8.17)\n\u00061 P\u00121 D pTM\u00021p \u0003 NdkBT \u0003 \u00061\u00122\u00121;\n(8.18)\n\u00062 P\u00122 D \u00061\u00122\n1 \u0003 kBT \u0003 \u00062\u00122\u00123;\n(8.19)\n\u00063 P\u00123 D \u00062\u00122\n2 \u0003 kBT \u0003 \u00063\u00123\u00124;\n(8.20)\n:::\n\u0006k P\u0012k D \u0006k\u00021\u00122\nk\u00021 \u0003 kBT:\n(8.21)\nBy creating a more substantial bath of oscillators, each of which is forced to have\nthe target kinetic energy, the physical system may more closely approximate the\ncanonical distribution.\nTo see that this is a thermostat, note the equations (8.16)–(8.21) can be split into\nthe following pieces:\n2\n66666666664\nPq\nPp\n\u00061 P\u00121\n\u00062 P\u00122\n:::\n\u0006k\u00021 P\u0012k\u00021\n\u0006k P\u0012k\n3\n77777777775\nD\n2\n66666666664\nM\u00021p\n\u0003rU.q/ \u0003 \u00121p\npTM\u00021p \u0003 NdkBT\n0\n:::\n0\n0\n3\n77777777775\nC\n2\n66666666664\n0\n0\n\u0003\u00061\u00121\u00122\n\u00061\u00122\n1 \u0003 kBT\n:::\n0\n0\n3\n77777777775\nC \u0002 \u0002 \u0002 C\n2\n66666666664\n0\n0\n0\n0\n:::\n\u0003\u0006k\u00021\u0012k\u00021\u0012k\n\u0006k\u00021\u00122\nk\u00021 \u0003 kBT\n3\n77777777775\n:\nThe ﬁrst piece of the system corresponds to Nosé-Hoover, which we already know\npreserves \u0005ˇ exp.\u0003ˇ\u00061\u00122\n1=2/. By examination, the distribution exp.\u0003ˇ\u00061\u00122\n1=2/\nexp.\u0003ˇ\u00062\u00122\n2=2/ is preserved by the second piece, the next piece preserves\n",
+  "verbatim_scope": "完整对应原页文字层，逐字保留；本条数学成分由statement_latex及statement_scope定位。",
+  "proof_latex": "The proof is an immediate consequence of the linearity of the divergence\noperator, since the Liouville operator is constructed from this.",
+  "proof_note": "对应原页推导逐字保存在statement_verbatim/original_page_text；排版以原页PDF为准。",
+  "original_page_text": [
+    {
+      "pdf_page": 359,
+      "printed_page": 338,
+      "text": "338\n8\nExtended Variable Methods\nThis is a slightly generalized form of the technique suggested by Bulgac and\nKusnezov [58].\nAssuming \u0005 goes to zero sufﬁciently rapidly at inﬁnity, we have\nZ\nrz \u0002 G.z/\u0005d! D \u0003\nZ\n.rz\u0005/ \u0002 G.z/d! D ˇ\nZ\nrzH \u0002 G.z/\u0005d!;\nusing integration by parts, therefore, since ˇ\u00021 D kBT,\nT D k\u00021\nB\nhrzH \u0002 Gi\nhr \u0002 Gi ;\nwhich gives formulas for temperature in terms of phase space averages (compare\nChap. 6, Proposition 6.1).\nSuppose we let K be a scalar valued function of position, and set\nG.z/ D\n\u0002 rqK.q/\n0\n\u0003\nthen we arrive at\ng.z/ D \u0006\u00021ŒrqU \u0003 kBTrq\t \u0002 rqK.q/:\nThis is an example of a “conﬁgurational thermostat” [193, 211, 319].\nA useful fact about thermostats is the following:\nProposition 8.1 (Thermostats are Additive) Suppose we are given two ther-\nmostats,\nPz D JrH C ˚1.\u0002; z/;\nP\u0002 D g1.\u0002; z/;\nwith stationary density O\u00051.\u0002/\u0005ˇ, and another\nPz D JrH C ˚2.\u0003; z/;\nP\u0003 D g2.\u0003; z/;\nwith stationary density O\u00052.\u0003/\u0005ˇ, then\nPz D JrH C ˚1.\u0002; z/ C ˚2.\u0003; z/;\nP\u0002 D g1.\u0002; z/;\nP\u0003 D g2.\u0003; z/\nis another thermostat and has stationary density Q\u0005 D O\u00051.\u0002/ O\u00052.\u0003/\u0005ˇ.\n"
+    },
+    {
+      "pdf_page": 360,
+      "printed_page": 339,
+      "text": "8.2\nMore General Deterministic Thermostats\n339\nThe proof is an immediate consequence of the linearity of the divergence\noperator, since the Liouville operator is constructed from this.\n8.2.2\nNosé-Hoover Chains\nLet us employ the additivity property to derive “Nosé-Hoover Chains” [251], a\npopular deterministic thermostat designed to give a more thorough sampling of the\nphase space than the standard Nosé-Hoover method.\nThe equations of Nosé-Hoover Chains may be written [251]\nPq D M\u00021p;\n(8.16)\nPp D \u0003rU.q/ \u0003 \u00121p;\n(8.17)\n\u00061 P\u00121 D pTM\u00021p \u0003 NdkBT \u0003 \u00061\u00122\u00121;\n(8.18)\n\u00062 P\u00122 D \u00061\u00122\n1 \u0003 kBT \u0003 \u00062\u00122\u00123;\n(8.19)\n\u00063 P\u00123 D \u00062\u00122\n2 \u0003 kBT \u0003 \u00063\u00123\u00124;\n(8.20)\n:::\n\u0006k P\u0012k D \u0006k\u00021\u00122\nk\u00021 \u0003 kBT:\n(8.21)\nBy creating a more substantial bath of oscillators, each of which is forced to have\nthe target kinetic energy, the physical system may more closely approximate the\ncanonical distribution.\nTo see that this is a thermostat, note the equations (8.16)–(8.21) can be split into\nthe following pieces:\n2\n66666666664\nPq\nPp\n\u00061 P\u00121\n\u00062 P\u00122\n:::\n\u0006k\u00021 P\u0012k\u00021\n\u0006k P\u0012k\n3\n77777777775\nD\n2\n66666666664\nM\u00021p\n\u0003rU.q/ \u0003 \u00121p\npTM\u00021p \u0003 NdkBT\n0\n:::\n0\n0\n3\n77777777775\nC\n2\n66666666664\n0\n0\n\u0003\u00061\u00121\u00122\n\u00061\u00122\n1 \u0003 kBT\n:::\n0\n0\n3\n77777777775\nC \u0002 \u0002 \u0002 C\n2\n66666666664\n0\n0\n0\n0\n:::\n\u0003\u0006k\u00021\u0012k\u00021\u0012k\n\u0006k\u00021\u00122\nk\u00021 \u0003 kBT\n3\n77777777775\n:\nThe ﬁrst piece of the system corresponds to Nosé-Hoover, which we already know\npreserves \u0005ˇ exp.\u0003ˇ\u00061\u00122\n1=2/. By examination, the distribution exp.\u0003ˇ\u00061\u00122\n1=2/\nexp.\u0003ˇ\u00062\u00122\n2=2/ is preserved by the second piece, the next piece preserves\n"
+    }
+  ],
+  "numbered_equations": [],
+  "transcription_note": "文字层逐字保留；数学排版另行转写，原页中的特殊字形编码不静默替换。PDF420仅取Exercises之前。",
+  "context_notation": [],
+  "extra_assumptions": [
+    "两个标量辅助变量的实际Liouville驻定版本；非负、归一后称概率密度，流保测性另需完整流存在与Jacobian条件。多维辅助变量未覆盖。"
+  ],
+  "issues": [],
+  "statement_scope": "两个标量热浴的局部Liouville驻定相加命题；不含多维热浴或全局流保测性。",
+  "lean_decl": "MD.Ch08.proposition81",
+  "lean_declarations": [
+    "MD.Ch08.proposition81"
+  ],
+  "source_page_verification": "见source_page_checks.json，已目视核对本条原页。",
+  "repair_log": [],
+  "documented_priors": [
+    "textbookThermostats_additive_proposition81"
+  ]
+}
+```
+
+## 完整本条Lean
+```lean
+theorem proposition81 {H : SymplecticCoordinates n → ℝ} (hH : ContDiff ℝ 2 H) (β c : ℝ)
+    {φ₁ φ₂ : SymplecticCoordinates n × ℝ → SymplecticCoordinates n}
+    {g₁ g₂ : SymplecticCoordinates n × ℝ → ℝ} {a b : ℝ → ℝ}
+    (hφ₁ : ContDiff ℝ 1 φ₁) (hφ₂ : ContDiff ℝ 1 φ₂)
+    (hg₁ : ContDiff ℝ 1 g₁) (hg₂ : ContDiff ℝ 1 g₂)
+    (ha : ContDiff ℝ 1 a) (hb : ContDiff ℝ 1 b)
+    (hs₁ : textbookLiouvilleStationary
+      (textbookSingleThermostatField (textbookHamiltonianVectorField H) φ₁ g₁)
+      (fun w ↦ a w.2 * textbookHamiltonianGibbsDensity H β c w.1))
+    (hs₂ : textbookLiouvilleStationary
+      (textbookSingleThermostatField (textbookHamiltonianVectorField H) φ₂ g₂)
+      (fun w ↦ b w.2 * textbookHamiltonianGibbsDensity H β c w.1)) :
+    textbookLiouvilleStationary
+      (textbookCombinedThermostatField (textbookHamiltonianVectorField H) φ₁ φ₂ g₁ g₂)
+      (textbookThermostatProductDensity (textbookHamiltonianGibbsDensity H β c) a b) := by
+  exact textbookThermostats_additive_proposition81 hH β c hφ₁ hφ₂ hg₁ hg₂ ha hb hs₁ hs₂
+```
+
+## 项目依赖定义体及选择规格
+以下def/abbrev/structure完整保留；定理列出完整类型，Mathlib标准定义无需摘录。
+
+### MD.Ch08.proposition81 (Blueprint/Ch08.lean:263)
+原文件上下文：
+```lean
+open Set Filter MeasureTheory ProbabilityTheory MolecularDynamics
+open scoped BigOperators Topology ContDiff ENNReal NNReal Matrix
+variable {Ω : Type*} [MeasurableSpace Ω]
+variable {n : ℕ}
+```
+```lean
+theorem proposition81 {H : SymplecticCoordinates n → ℝ} (hH : ContDiff ℝ 2 H) (β c : ℝ)
+    {φ₁ φ₂ : SymplecticCoordinates n × ℝ → SymplecticCoordinates n}
+    {g₁ g₂ : SymplecticCoordinates n × ℝ → ℝ} {a b : ℝ → ℝ}
+    (hφ₁ : ContDiff ℝ 1 φ₁) (hφ₂ : ContDiff ℝ 1 φ₂)
+    (hg₁ : ContDiff ℝ 1 g₁) (hg₂ : ContDiff ℝ 1 g₂)
+    (ha : ContDiff ℝ 1 a) (hb : ContDiff ℝ 1 b)
+    (hs₁ : textbookLiouvilleStationary
+      (textbookSingleThermostatField (textbookHamiltonianVectorField H) φ₁ g₁)
+      (fun w ↦ a w.2 * textbookHamiltonianGibbsDensity H β c w.1))
+    (hs₂ : textbookLiouvilleStationary
+      (textbookSingleThermostatField (textbookHamiltonianVectorField H) φ₂ g₂)
+      (fun w ↦ b w.2 * textbookHamiltonianGibbsDensity H β c w.1)) :
+    textbookLiouvilleStationary
+      (textbookCombinedThermostatField (textbookHamiltonianVectorField H) φ₁ φ₂ g₁ g₂)
+      (textbookThermostatProductDensity (textbookHamiltonianGibbsDensity H β c) a b)
+```
+
+### MolecularDynamics.textbookHamiltonianVectorField (MolecularDynamics/Chapter02/SplittingError.lean:176)
+原文件上下文：
+```lean
+open Set Metric
+open scoped Matrix Topology
+variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E] [ProperSpace E]
+
+omit [ProperSpace E] in
+```
+```lean
+noncomputable def textbookHamiltonianVectorField {Nc : ℕ}
+    (H : SymplecticCoordinates Nc → ℝ) (z : SymplecticCoordinates Nc) :
+    SymplecticCoordinates Nc :=
+  textbookJ Nc *ᵥ (fun i => (fderiv ℝ H z) (Pi.single i 1))
+```
+
+### MolecularDynamics.SymplecticCoordinates (MolecularDynamics/Chapter02/SymplecticForm.lean:25)
+原文件上下文：
+```lean
+open Matrix
+open scoped BigOperators Matrix
+```
+```lean
+abbrev SymplecticCoordinates (Nc : ℕ) := (Fin Nc ⊕ Fin Nc) → ℝ
+```
+
+### MolecularDynamics.SymplecticCoordinateMatrix (MolecularDynamics/Chapter02/SymplecticForm.lean:27)
+原文件上下文：
+```lean
+open Matrix
+open scoped BigOperators Matrix
+```
+```lean
+abbrev SymplecticCoordinateMatrix (Nc : ℕ) :=
+  Matrix (Fin Nc ⊕ Fin Nc) (Fin Nc ⊕ Fin Nc) ℝ
+```
+
+### MolecularDynamics.textbookJ (MolecularDynamics/Chapter02/SymplecticForm.lean:31)
+原文件上下文：
+```lean
+open Matrix
+open scoped BigOperators Matrix
+```
+```lean
+noncomputable def textbookJ (Nc : ℕ) : SymplecticCoordinateMatrix Nc :=
+  Matrix.fromBlocks 0 1 (-1) 0
+```
+
+### MolecularDynamics.Chapter05Review.E (MolecularDynamics/Chapter05/ReviewDefinitions.lean:18)
+原文件上下文：
+```lean
+open Set Filter MeasureTheory Matrix
+open scoped BigOperators Topology ENNReal
+```
+```lean
+abbrev E (n : ℕ) := EuclideanSpace ℝ (Fin n)
+```
+
+### MolecularDynamics.textbookDivergence (MolecularDynamics/Chapter08/ThermostatDensity.lean:18)
+原文件上下文：
+```lean
+open Matrix
+open scoped BigOperators Topology
+variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E] [FiniteDimensional ℝ E]
+variable {G : Type*} [NormedAddCommGroup G] [NormedSpace ℝ G] [FiniteDimensional ℝ G]
+```
+```lean
+noncomputable def textbookDivergence (F : E → E) (z : E) : ℝ :=
+  LinearMap.trace ℝ E (fderiv ℝ F z).toLinearMap
+```
+
+### MolecularDynamics.textbookLiouvilleStationary (MolecularDynamics/Chapter08/ThermostatDensity.lean:22)
+原文件上下文：
+```lean
+open Matrix
+open scoped BigOperators Topology
+variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E] [FiniteDimensional ℝ E]
+variable {G : Type*} [NormedAddCommGroup G] [NormedSpace ℝ G] [FiniteDimensional ℝ G]
+```
+```lean
+def textbookLiouvilleStationary (F : E → E) (ρ : E → ℝ) : Prop :=
+  ∀ z, textbookDivergence (fun x ↦ ρ x • F x) z = 0
+```
+
+### MolecularDynamics.textbookHamiltonianGibbsWeight (MolecularDynamics/Chapter08/ThermostatDensity.lean:199)
+原文件上下文：
+```lean
+open Matrix
+open scoped BigOperators Topology
+variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E] [FiniteDimensional ℝ E]
+variable {G : Type*} [NormedAddCommGroup G] [NormedSpace ℝ G] [FiniteDimensional ℝ G]
+```
+```lean
+noncomputable def textbookHamiltonianGibbsWeight {Nc : ℕ}
+    (H : SymplecticCoordinates Nc → ℝ) (β : ℝ) : SymplecticCoordinates Nc → ℝ :=
+  fun z ↦ Real.exp (-β * H z)
+```
+
+### MolecularDynamics.textbookHamiltonianGibbsDensity (MolecularDynamics/Chapter08/ThermostatDensity.lean:227)
+原文件上下文：
+```lean
+open Matrix
+open scoped BigOperators Topology
+variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E] [FiniteDimensional ℝ E]
+variable {G : Type*} [NormedAddCommGroup G] [NormedSpace ℝ G] [FiniteDimensional ℝ G]
+```
+```lean
+noncomputable def textbookHamiltonianGibbsDensity {Nc : ℕ}
+    (H : SymplecticCoordinates Nc → ℝ) (β c : ℝ) : SymplecticCoordinates Nc → ℝ :=
+  fun z ↦ c * textbookHamiltonianGibbsWeight H β z
+```
+
+### MolecularDynamics.textbookSingleThermostatField (MolecularDynamics/Chapter08/ThermostatDensity.lean:252)
+原文件上下文：
+```lean
+open Matrix
+open scoped BigOperators Topology
+variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E] [FiniteDimensional ℝ E]
+variable {G : Type*} [NormedAddCommGroup G] [NormedSpace ℝ G] [FiniteDimensional ℝ G]
+```
+```lean
+def textbookSingleThermostatField (F : E → E) (φ : E × ℝ → E) (g : E × ℝ → ℝ)
+    (w : E × ℝ) : E × ℝ := (F w.1 + φ w, g w)
+```
+
+### MolecularDynamics.textbookCombinedThermostatField (MolecularDynamics/Chapter08/ThermostatDensity.lean:256)
+原文件上下文：
+```lean
+open Matrix
+open scoped BigOperators Topology
+variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E] [FiniteDimensional ℝ E]
+variable {G : Type*} [NormedAddCommGroup G] [NormedSpace ℝ G] [FiniteDimensional ℝ G]
+```
+```lean
+def textbookCombinedThermostatField (F : E → E) (φ₁ φ₂ : E × ℝ → E)
+    (g₁ g₂ : E × ℝ → ℝ) (w : (E × ℝ) × ℝ) : (E × ℝ) × ℝ :=
+  ((F w.1.1 + φ₁ w.1 + φ₂ (w.1.1, w.2), g₁ w.1), g₂ (w.1.1, w.2))
+```
+
+### MolecularDynamics.textbookThermostatProductDensity (MolecularDynamics/Chapter08/ThermostatDensity.lean:261)
+原文件上下文：
+```lean
+open Matrix
+open scoped BigOperators Topology
+variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E] [FiniteDimensional ℝ E]
+variable {G : Type*} [NormedAddCommGroup G] [NormedSpace ℝ G] [FiniteDimensional ℝ G]
+```
+```lean
+def textbookThermostatProductDensity (ρ : E → ℝ) (a b : ℝ → ℝ)
+    (w : (E × ℝ) × ℝ) : ℝ := b w.2 * (a w.1.2 * ρ w.1.1)
+```
+
+### MolecularDynamics.textbookThermostats_additive_proposition81 (MolecularDynamics/Chapter08/ThermostatDensity.lean:358)
+原文件上下文：
+```lean
+open Matrix
+open scoped BigOperators Topology
+variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E] [FiniteDimensional ℝ E]
+variable {G : Type*} [NormedAddCommGroup G] [NormedSpace ℝ G] [FiniteDimensional ℝ G]
+```
+```lean
+theorem textbookThermostats_additive_proposition81 {Nc : ℕ}
+    {H : SymplecticCoordinates Nc → ℝ} (hH : ContDiff ℝ 2 H) (β c : ℝ)
+    {φ₁ φ₂ : SymplecticCoordinates Nc × ℝ → SymplecticCoordinates Nc}
+    {g₁ g₂ : SymplecticCoordinates Nc × ℝ → ℝ} {a b : ℝ → ℝ}
+    (hφ₁ : ContDiff ℝ 1 φ₁) (hφ₂ : ContDiff ℝ 1 φ₂)
+    (hg₁ : ContDiff ℝ 1 g₁) (hg₂ : ContDiff ℝ 1 g₂)
+    (ha : ContDiff ℝ 1 a) (hb : ContDiff ℝ 1 b)
+    (hs₁ : textbookLiouvilleStationary
+      (textbookSingleThermostatField (textbookHamiltonianVectorField H) φ₁ g₁)
+      (fun w ↦ a w.2 * textbookHamiltonianGibbsDensity H β c w.1))
+    (hs₂ : textbookLiouvilleStationary
+      (textbookSingleThermostatField (textbookHamiltonianVectorField H) φ₂ g₂)
+      (fun w ↦ b w.2 * textbookHamiltonianGibbsDensity H β c w.1)) :
+    textbookLiouvilleStationary
+      (textbookCombinedThermostatField (textbookHamiltonianVectorField H) φ₁ φ₂ g₁ g₂)
+      (textbookThermostatProductDensity (textbookHamiltonianGibbsDensity H β c) a b)
+```

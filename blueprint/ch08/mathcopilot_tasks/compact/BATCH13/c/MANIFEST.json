@@ -1,0 +1,94 @@
+{
+  "batch": "BATCH13",
+  "subtask": "BATCH13c",
+  "source_ids": [
+    "MD-8.8-AndersenKineticEnergy"
+  ],
+  "input_sha256": {
+    "Blueprint/Ch08.lean": "2800812fadd8e2557013f1941e4570401f7903d46f44baf07e23d5531da22a72",
+    "blueprint/ch08/ch08_source.json": "9b994b0f64cd22c85c2ad4123fbfdbd064bd7a6d070fe13b721794432f9f7a63",
+    "BATCH13c_PAGES.pdf": "a14f6489d739aef05b053e47f90632d6a0a596b36ff5566d9dd84d0cf2f8bd41"
+  },
+  "page_mapping": [
+    {
+      "attachment_page": 1,
+      "original_pdf_page": 400,
+      "printed_page": 379
+    }
+  ],
+  "definition_excerpts": [
+    {
+      "full_name": "MD.Ch08.Vec",
+      "kind": "abbrev",
+      "path": "Blueprint/Ch08.lean",
+      "line": 17,
+      "code_sha256": "6f4b254a8a7cc4115fb35265b77caa663bdd18567cd1e664cc5bbd080d02fcff"
+    },
+    {
+      "full_name": "MD.Ch08.volumeScale",
+      "kind": "def",
+      "path": "Blueprint/Ch08.lean",
+      "line": 1121,
+      "code_sha256": "aa453a63818652b11c7ff9af74d55b79af32e1ab673139adfff3b37991e97ae5"
+    },
+    {
+      "full_name": "MD.Ch08.andersenVelocity",
+      "kind": "def",
+      "path": "Blueprint/Ch08.lean",
+      "line": 1141,
+      "code_sha256": "22b78fea8d7046ffcd208f27a4d470ed55ab2dea7e737f0f883d7364ab55bf26"
+    },
+    {
+      "full_name": "MD.Ch08.andersenKinetic",
+      "kind": "def",
+      "path": "Blueprint/Ch08.lean",
+      "line": 1161,
+      "code_sha256": "9aa466ec3d64f94eb61653325fff5907ba1c3c7f52567968f6204cec68779334"
+    },
+    {
+      "full_name": "MD.Ch08.andersenKineticExpanded",
+      "kind": "def",
+      "path": "Blueprint/Ch08.lean",
+      "line": 1163,
+      "code_sha256": "74ed375825a888f254743879b8deb5b2d20189dda4b2a53e140b48b9f4de7fa9"
+    },
+    {
+      "full_name": "MD.Ch08.andersenKinetic_expansion",
+      "kind": "theorem",
+      "path": "Blueprint/Ch08.lean",
+      "line": 1167,
+      "code_sha256": "f7c78fe976ebe17b47dc84a320b019713a11e9e2681d8b2cc1209cefee6ef9ce"
+    },
+    {
+      "full_name": "MolecularDynamics.Chapter04Review.V",
+      "kind": "abbrev",
+      "path": "MolecularDynamics/Chapter04/ReviewDefinitions.lean",
+      "line": 17,
+      "code_sha256": "6ccc37dabd7987877f0360d3e6067166bb92c659835fdca7d3dcf9128e65be72"
+    },
+    {
+      "full_name": "MolecularDynamics.Chapter06Review.V",
+      "kind": "abbrev",
+      "path": "MolecularDynamics/Chapter06/ReviewDefinitions.lean",
+      "line": 17,
+      "code_sha256": "7ab0ad90462b274b03f5b929b5f09417c0b397b6cb908fa6e7bd56677a314027"
+    }
+  ],
+  "validation": {
+    "project_constant_closure": "PASS",
+    "missing_project_definitions": [],
+    "full_page_render_equality_dpi": 72,
+    "website_submitted": false
+  },
+  "files": {
+    "PASTE.txt": {
+      "bytes": 10375,
+      "sha256": "c71d3a22ab27baeadbd2485a6bf5d9d95b0de2900618e386eb3fbdc1a81ba400"
+    },
+    "BATCH13c_PAGES.pdf": {
+      "bytes": 71907,
+      "sha256": "a14f6489d739aef05b053e47f90632d6a0a596b36ff5566d9dd84d0cf2f8bd41"
+    }
+  },
+  "total_task_bytes": 85345
+}

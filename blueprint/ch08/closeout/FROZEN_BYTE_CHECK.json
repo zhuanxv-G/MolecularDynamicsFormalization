@@ -1,0 +1,11 @@
+{
+  "status": "PASS",
+  "files": 16481,
+  "baseline_sha256": "86fb4b20482fb9da3449d302d2fec2b36e9dd4c10b3247ab3bf859d096075c0f",
+  "method": "verify_frozen(full=True): 对全部16481路径重新读取字节并与基线SHA256逐项比对。",
+  "function_sha256": "619226667dceb1787792f200bcca5bd67b7b61ee3d7c8435fb7e86be74587f5c",
+  "completed_tool_session": 82112,
+  "completed_output": "Full byte freeze: 16481\nEntries 103 numbered equations 114\nDefault scope remains 0\nFormal lean files 298",
+  "recorded_at": "2026-10-18T22:09:53.700984+08:00",
+  "followup": "收口时重核基线哈希，并重新核验统计信息发生变化的冻结文件；复用本次完整字节核对。"
+}

@@ -1,0 +1,85 @@
+{
+  "batch": "BATCH15",
+  "subtask": "BATCH15c",
+  "source_ids": [
+    "MD-8.9.1-DPDPairWiener"
+  ],
+  "input_sha256": {
+    "Blueprint/Ch08.lean": "2800812fadd8e2557013f1941e4570401f7903d46f44baf07e23d5531da22a72",
+    "blueprint/ch08/ch08_source.json": "9b994b0f64cd22c85c2ad4123fbfdbd064bd7a6d070fe13b721794432f9f7a63",
+    "BATCH15c_PAGES.pdf": "5086886490b1a3d2bff38639757d329dfa6cbc551aff1694cbf373c432287eb1"
+  },
+  "page_mapping": [
+    {
+      "attachment_page": 1,
+      "original_pdf_page": 409,
+      "printed_page": 388
+    },
+    {
+      "attachment_page": 2,
+      "original_pdf_page": 410,
+      "printed_page": 389
+    }
+  ],
+  "definition_excerpts": [
+    {
+      "full_name": "MD.Ch08.Vec",
+      "kind": "abbrev",
+      "path": "Blueprint/Ch08.lean",
+      "line": 17,
+      "code_sha256": "6f4b254a8a7cc4115fb35265b77caa663bdd18567cd1e664cc5bbd080d02fcff"
+    },
+    {
+      "full_name": "MD.Ch08.independentWiener",
+      "kind": "def",
+      "path": "Blueprint/Ch08.lean",
+      "line": 307,
+      "code_sha256": "244c6d2d9a686d3df1fc2abd2a1c945a448896d7397bd79928618c58bcc75f4d"
+    },
+    {
+      "full_name": "MD.Ch08.pairEnumeration",
+      "kind": "def",
+      "path": "Blueprint/Ch08.lean",
+      "line": 1392,
+      "code_sha256": "a14f0dc006721066a5e1f6a673d8d38c81caa934b8c08795bb7383d3d7aa3539"
+    },
+    {
+      "full_name": "MD.Ch08.pairNoiseIncrement",
+      "kind": "def",
+      "path": "Blueprint/Ch08.lean",
+      "line": 1395,
+      "code_sha256": "b05e149f8963685dc7ff8f3370f27b819789446d637b08cdbc496f069687c1c3"
+    },
+    {
+      "full_name": "MD.Ch08.pairNoiseIncrement_symmetric",
+      "kind": "theorem",
+      "path": "Blueprint/Ch08.lean",
+      "line": 1398,
+      "code_sha256": "a5855dae88fb9976974fbeb62e299e815b4e98979ac1e33e56aa459ed7e76756"
+    },
+    {
+      "full_name": "MD.Ch08.pairNoiseIncrement_covariance",
+      "kind": "theorem",
+      "path": "Blueprint/Ch08.lean",
+      "line": 1402,
+      "code_sha256": "a916e3a558c581e379c72f66e4195fba4b19e077a4f5a8db79a5314bf595c284"
+    }
+  ],
+  "validation": {
+    "project_constant_closure": "PASS",
+    "missing_project_definitions": [],
+    "full_page_render_equality_dpi": 72,
+    "website_submitted": false
+  },
+  "files": {
+    "PASTE.txt": {
+      "bytes": 16010,
+      "sha256": "73fa9209bdf9b408e3bb8bc6401b13e885a773f8883b1ae41d932fa5a79366a5"
+    },
+    "BATCH15c_PAGES.pdf": {
+      "bytes": 95534,
+      "sha256": "5086886490b1a3d2bff38639757d329dfa6cbc551aff1694cbf373c432287eb1"
+    }
+  },
+  "total_task_bytes": 114174
+}

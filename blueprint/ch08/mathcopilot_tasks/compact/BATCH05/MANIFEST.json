@@ -1,0 +1,47 @@
+{
+  "batch": "BATCH05",
+  "subtasks": [
+    {
+      "subtask": "BATCH05a",
+      "source_id": "MD-8.4-Proposition82",
+      "path": "blueprint/ch08/mathcopilot_tasks/compact/BATCH05/a",
+      "bytes": 120812,
+      "manifest_sha256": "db8e948831c7bd27c5768767cddce35e324281cc78d9c806f722fa022870b8b2"
+    },
+    {
+      "subtask": "BATCH05b",
+      "source_id": "MD-8.4.1-NHL",
+      "path": "blueprint/ch08/mathcopilot_tasks/compact/BATCH05/b",
+      "bytes": 117035,
+      "manifest_sha256": "f960324a32aa972788d24ceacb4a82f8c6e21132da852b6e31e8f7675a642744"
+    },
+    {
+      "subtask": "BATCH05c",
+      "source_id": "MD-8.4.1-Lemma81",
+      "path": "blueprint/ch08/mathcopilot_tasks/compact/BATCH05/c",
+      "bytes": 110860,
+      "manifest_sha256": "5a339a529475a6ad708c6fd47ede4346a7206b1cf104fcfdec25216d0bdc5f61"
+    },
+    {
+      "subtask": "BATCH05d",
+      "source_id": "MD-8.4.1-Proposition83",
+      "path": "blueprint/ch08/mathcopilot_tasks/compact/BATCH05/d",
+      "bytes": 125984,
+      "manifest_sha256": "c606bcff1aac2f74ae71f198c0b2fe657f96f5ba3aa6b782a3753ab9dff16f4a"
+    },
+    {
+      "subtask": "BATCH05e",
+      "source_id": "MD-8.4.1-Theorem81",
+      "path": "blueprint/ch08/mathcopilot_tasks/compact/BATCH05/e",
+      "bytes": 144881,
+      "manifest_sha256": "cd78da414789cf8792753ac5c600a132ab73dc53799a3ce34187c543ae314952"
+    },
+    {
+      "subtask": "BATCH05f",
+      "source_id": "MD-8.4.1-ZeroModeInvariant",
+      "path": "blueprint/ch08/mathcopilot_tasks/compact/BATCH05/f",
+      "bytes": 103790,
+      "manifest_sha256": "2ce254b9ad1c1c89acdb82b93af1de2c14dc16e2c8358f3e0ec9728b719341de"
+    }
+  ]
+}

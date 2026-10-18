@@ -1,0 +1,71 @@
+{
+  "batch": "BATCH17",
+  "subtask": "BATCH17f",
+  "source_ids": [
+    "MD-8.10-CanonicalTotalMomentumGaussian"
+  ],
+  "input_sha256": {
+    "Blueprint/Ch08.lean": "2800812fadd8e2557013f1941e4570401f7903d46f44baf07e23d5531da22a72",
+    "blueprint/ch08/ch08_source.json": "9b994b0f64cd22c85c2ad4123fbfdbd064bd7a6d070fe13b721794432f9f7a63",
+    "BATCH17f_PAGES.pdf": "c80dabe517b7b2bad27a0be9cbf4f752e5be69acb631792c2e2f798c53bfa1d4"
+  },
+  "page_mapping": [
+    {
+      "attachment_page": 1,
+      "original_pdf_page": 418,
+      "printed_page": 397
+    },
+    {
+      "attachment_page": 2,
+      "original_pdf_page": 419,
+      "printed_page": 398
+    }
+  ],
+  "definition_excerpts": [
+    {
+      "full_name": "MD.Ch08.Vec",
+      "kind": "abbrev",
+      "path": "Blueprint/Ch08.lean",
+      "line": 17,
+      "code_sha256": "6f4b254a8a7cc4115fb35265b77caa663bdd18567cd1e664cc5bbd080d02fcff"
+    },
+    {
+      "full_name": "MD.Ch08.ParticleConfig",
+      "kind": "abbrev",
+      "path": "Blueprint/Ch08.lean",
+      "line": 1334,
+      "code_sha256": "c46ce65b6511b6a80adf81f99adccdc72de343aed0cedd1fcf09d0a9683ccf2e"
+    },
+    {
+      "full_name": "MD.Ch08.totalMomentum",
+      "kind": "def",
+      "path": "Blueprint/Ch08.lean",
+      "line": 1336,
+      "code_sha256": "6b3fdbfaee6b174232222bb9d9a58bbf3f6d9a3325cae5c3a3c2baf5b3cc250b"
+    },
+    {
+      "full_name": "MD.Ch08.totalMomentum_gaussian",
+      "kind": "theorem",
+      "path": "Blueprint/Ch08.lean",
+      "line": 1717,
+      "code_sha256": "3298042f9480e28aa3e191b5c7e247d185614dba87b2a4c0c2d4040448714ccc"
+    }
+  ],
+  "validation": {
+    "project_constant_closure": "PASS",
+    "missing_project_definitions": [],
+    "full_page_render_equality_dpi": 72,
+    "website_submitted": false
+  },
+  "files": {
+    "PASTE.txt": {
+      "bytes": 14503,
+      "sha256": "287966b92d7519cc55ce7083816d818598e55cb7cde4d721c126242dde03fbd4"
+    },
+    "BATCH17f_PAGES.pdf": {
+      "bytes": 196275,
+      "sha256": "c80dabe517b7b2bad27a0be9cbf4f752e5be69acb631792c2e2f798c53bfa1d4"
+    }
+  },
+  "total_task_bytes": 212933
+}

@@ -1,0 +1,207 @@
+以附件/PASTE 为准，忽略 /workspace 旧文件；Mathlib 定义按标准含义采信。
+本任务只审本条：原文转录、对象资格、定义体、量词、全部结论及[EXTRA]是否一致；Lean编译不代替语义审阅。
+Lean/Mathlib均4.34.0。原页PDF映射：[387, 388, 389]；印刷页=[366, 367, 368].
+input_sha256请原样回显：
+{
+  "Blueprint/Ch08.lean": "2800812fadd8e2557013f1941e4570401f7903d46f44baf07e23d5531da22a72",
+  "blueprint/ch08/ch08_source.json": "9b994b0f64cd22c85c2ad4123fbfdbd064bd7a6d070fe13b721794432f9f7a63",
+  "BATCH10a_PAGES.pdf": "108b5d53e040afa103862344bb88d3c35f633d8ca0eea70460f79443d3df1a6b"
+}
+用代码将JSON对象(batch,input_sha256,items)写到 /workspace/.mathcopilot/reviews/ch08/BATCH10a_review.json；items仅含本source_id。
+items字段：source_id、verdict(PASS/FAIL/NEEDS_HUMAN)、transcription、semantic_review、counterexample、suggested_fix、printed_version、corrected_version。逐版区分原文疑误和修正版结论；缺材料必须具体指出，不猜测。写后json.loads自检，最后仅回复路径及统计。
+
+## 原文JSON
+```json
+{
+  "source_id": "MD-8.6.2-SINBracketRank",
+  "kind": "unnumbered_claim",
+  "label": null,
+  "section": "8.6.2",
+  "printed_page": "366–368",
+  "pdf_page": "387–389",
+  "statement_latex": "The fields f,g,[f,g],[f,[f,g]],[f,[f,[f,g]]] span the three-dimensional tangent space of the isokinetic cylinder except on M₀.",
+  "statement_verbatim": "366\n8\nExtended Variable Methods\n8.6.2\nErgodicity\nFollowing the discussion in [220], let us show ergodicity for the stochastic isokinetic\nharmonic oscillator:\ndq D pdt\ndp D Œ\u0003q \u0003 \u0013p\tdt\nd\u00121 D Œ\u0003\u0013\u00121 \u0003 \u00122\u00121\tdt\nd\u00122 D Œ\u00122\n1 \u0003 kBT \u0003 \n\u00122\tdt C \u0007dW\n(8.45)\nwith \u0013 D \u0002qp\u0002\u00122\u00122\n1=2\np2C\u00122\n1=2\nand \u0007 D p2\nkBT. We have taken the coupling coefﬁcients\n\u00061; \u00062 both one for simplicity as their particular values (as long as nonzero) have\nno bearing on the ergodic property.\nThe constraint, p2 C \u00122\n1=2 D const, deﬁnes a three-dimensional manifold M, a\ngeneralized cylinder. \u00121 D 0 is an invariant manifold of the isokinetic equations,\nwith solutions therefore conﬁned for all time to one or the other half-space (\u00121 < 0\nor \u00121 > 0). It is enough to sample one or the other of the two half spaces. To show\nthat the solutions do so, we need to demonstrate that an appropriate Hörmander\ncondition holds. Deﬁne f and g as the vector ﬁelds\nf D p@q \u0003 .q C \u0013p/@p \u0003 .\u0013\u00121 C \u00122\u00121/@\u00121 C\n\n.\u00122\n1 \u0003 kBT/ \u0003 \n\u00122\n\u000b\n@\u00122;\n(8.46)\nand\ng D \u0007@\u00122:\n(8.47)\nWe will show that the dimension of the ideal spanned by the iterated commutators\nof the vector ﬁelds f and g is three, i.e. that it spans the tangent space to M at any\npoint. For this purpose, we use the collection of vectors\nf; g; Œf; g\t; Œf; Œf; g\t\t; Œf; Œf; Œf; g\t\t\t:\nWe will see that these provide a basis at every point excluding the one-dimensional\nset deﬁned by the union M0 of the two lines `C, `\u0002 deﬁned by\nq D 0;\np D 0;\n\u00121 D ˙\nq\n2\u0006\u00021\n1 kBT;\nand arbitrary \u00122. [Note: the choice \u00121 D ˙\nq\n2\u0006\u00021\n1 kBT is made so that the isokinetic\nconstraint is satisﬁed. In [220] this value was incorrectly deﬁned.] The vectors f and\ng are linearly independent except on M0.\n\n8.6\nIsokinetic Methods and Integration with Very Large Timestep\n367\nThe proof requires calculation of the vector ﬁelds\nu0 D ˘ f;\nu1 D ˘ Œf; g\t ;\nu2 D ˘ Œf; Œf; g\t\t;\nu3 D ˘ Œf; Œf; Œf; g\t\t\t;\nwhere ˘ is the projector onto the ﬁrst three components. Because g D \u0007e4,\nit is enough to show that any pair from among these four vectors are linearly\nindependent, except possibly on M0. Note that projection can only be performed\nafter the full calculation of the relevant commutator. Because the commutators\nquickly become quite messy, we used a symbolic computing package to assist in\nthese calculations.\nThe ﬁrst two vectors are:\nu0 D p@q \u0003 .q C \u0013p/@p \u0003 .\u0013\u00121 C \u00121\u00122/@\u00121;\n(8.48)\nand\nu1 D \u0007p @\u0013\n@\u00122\n@p C \u00121\n\b\n1 C @\u0013\n@\u00122\n\t\n@\u00121:\n(8.49)\nAfter expanding the derivatives of \u0013 we have\nu1 D p@q C \u00122\n1\n\b\u0003q C p\u00122\nD\n\t\n@p \u0003 2\u00121p\n\b\u0003q C p\u00122\nD\n\t\n@\u00121;\n(8.50)\nand\nu2 D \u0003\u0007.\u00122\n1p=D/@p C .2\u0007\u00121p2=D/@\u00121;\n(8.51)\nwhere D D 2p2 C \u00122\n1.\nIf q ¤ 0 and p ¤ 0, then clearly u1 and u2 are linearly independent. However, if\np D 0 then u2 D 0. We proceed to compute the commutator Œf; Œf; g\t\t. Projecting to\nthe ﬁrst three components results in\nu2 D \u0007\n\b\u00122\n1p\nD\n\t\n@q \u0003 \u0007\n\b2\np3 C \n\u00122\n1p \u0003 \u00122\n1q\nD2\n\t\n@p C 2\u0007\u00121p\n\b2\np3 C \n\u00122\n1p \u0003 \u00122\n1q\nD2\n\t\n@\u00121:\n(8.52)\nAgain, we substitute p D 0 and ﬁnd that\nu2jpD0 D .\u0007\u00122\n1q=D2/@p:\n(8.53)\nUnfortunately, this is parallel to u1 (for p D 0), and hence yet one more commutator\nis required in this case.\n\n368\n8\nExtended Variable Methods\nWe calculate Œf; Œf; Œf; g\t\t\t and project onto the space spanned by the ﬁrst three\ncomponents to ﬁnd\nu3 D \u0007\n\b2\np3 \u0003 4p3\u00122 C 4p2q C \u00122\n1p\u00122 C \n\u00122\n1p \u0003 2\u00122\n1q\nD2\n\t\n@q\n\u0003 \u0007\u00122\n1\n\u0006 \u000f\nD3\n\u0007\n@p C 2\u0007\u00121p\n\u0006 \u000f\nD3\n\u0007\n@\u00121:\n(8.54)\nwith\n\u000f D 4p5\n2 \u0003 8p5\u00122\n1 \u0003 4\u00122\n1p3 C 4p3\n2\u00122\n1 \u0003 4p3\u00124\n1\n\u0003 2\n\u00122\n1p2q C 4p2q\u00122\u00122\n1 \u0003 4\u00122\n1q2p \u0003 2\u00124\n1p C p\n2\u00124\n1 \u0003 q\n\u00124\n1 C \u00124\n1\u00122q:\n(8.55)\nAlong p D 0, u3 becomes\nu3jpD0 D \u00032\u0007q@q \u0003 \u0007\n\b\u0003q\n\u00124\n1 C \u00124\n1\u00122q\n\u00124\n1\n\t\n@p\nD \u00032\u0007q@q \u0003 \u0007q.\u0003\n C \u00122/@p:\n(8.56)\nTogether with u0 we obtain a linearly independent set as long as q ¤ 0.\nIf p D 0 and q D 0 then we are on M0. If p ¤ 0 then u2 and u0 are linearly\nindependent. If q ¤ 0 then u3 and u0 are linearly independent. From these we\nestablish that the Hörmander condition holds everywhere except on a space of co-\ndimension 2 (that is except on the one-dimensional set M0).\nIn this case, it is possible to complete the proof by introducing a Lyapunov\nfunction \b to demonstrate the necessary contractivity in the \u00122 direction. The\ngenerator of this system is\nLisok D p @\n@q C\n\nF \u0003 .p2=\u0017/F\n\u000b @\n@p \u0003 p\u00121F\n\u0017\n@\n@\u00121\nC LN C LO\nwith \u0017 D p2 C \u00122\n1=2,\nLN D 1\n2\n\u00122\n1\u00122p\n\u0017\n@\n@p C 1\n2\n\u00123\n1\u00122\n\u0017\n@\n@\u00121\n\u0003 \u00122\u00121\n@\n@\u00121\nC Œ\u00122\n1 \u0003 ˇ\u00021\t @\n@\u00122\n;\nand\nLO D \u0003\n\u00122\n@\n@\u00122\nC \u00072\n2\n@2\n@\u00122\n2\n:\n",
+  "verbatim_scope": "完整对应原页文字层，逐字保留；本条数学成分由statement_latex及statement_scope定位。",
+  "proof_latex": null,
+  "proof_note": "对应原页推导逐字保存在statement_verbatim/original_page_text；排版以原页PDF为准。",
+  "original_page_text": [
+    {
+      "pdf_page": 387,
+      "printed_page": 366,
+      "text": "366\n8\nExtended Variable Methods\n8.6.2\nErgodicity\nFollowing the discussion in [220], let us show ergodicity for the stochastic isokinetic\nharmonic oscillator:\ndq D pdt\ndp D Œ\u0003q \u0003 \u0013p\tdt\nd\u00121 D Œ\u0003\u0013\u00121 \u0003 \u00122\u00121\tdt\nd\u00122 D Œ\u00122\n1 \u0003 kBT \u0003 \n\u00122\tdt C \u0007dW\n(8.45)\nwith \u0013 D \u0002qp\u0002\u00122\u00122\n1=2\np2C\u00122\n1=2\nand \u0007 D p2\nkBT. We have taken the coupling coefﬁcients\n\u00061; \u00062 both one for simplicity as their particular values (as long as nonzero) have\nno bearing on the ergodic property.\nThe constraint, p2 C \u00122\n1=2 D const, deﬁnes a three-dimensional manifold M, a\ngeneralized cylinder. \u00121 D 0 is an invariant manifold of the isokinetic equations,\nwith solutions therefore conﬁned for all time to one or the other half-space (\u00121 < 0\nor \u00121 > 0). It is enough to sample one or the other of the two half spaces. To show\nthat the solutions do so, we need to demonstrate that an appropriate Hörmander\ncondition holds. Deﬁne f and g as the vector ﬁelds\nf D p@q \u0003 .q C \u0013p/@p \u0003 .\u0013\u00121 C \u00122\u00121/@\u00121 C\n\n.\u00122\n1 \u0003 kBT/ \u0003 \n\u00122\n\u000b\n@\u00122;\n(8.46)\nand\ng D \u0007@\u00122:\n(8.47)\nWe will show that the dimension of the ideal spanned by the iterated commutators\nof the vector ﬁelds f and g is three, i.e. that it spans the tangent space to M at any\npoint. For this purpose, we use the collection of vectors\nf; g; Œf; g\t; Œf; Œf; g\t\t; Œf; Œf; Œf; g\t\t\t:\nWe will see that these provide a basis at every point excluding the one-dimensional\nset deﬁned by the union M0 of the two lines `C, `\u0002 deﬁned by\nq D 0;\np D 0;\n\u00121 D ˙\nq\n2\u0006\u00021\n1 kBT;\nand arbitrary \u00122. [Note: the choice \u00121 D ˙\nq\n2\u0006\u00021\n1 kBT is made so that the isokinetic\nconstraint is satisﬁed. In [220] this value was incorrectly deﬁned.] The vectors f and\ng are linearly independent except on M0.\n"
+    },
+    {
+      "pdf_page": 388,
+      "printed_page": 367,
+      "text": "8.6\nIsokinetic Methods and Integration with Very Large Timestep\n367\nThe proof requires calculation of the vector ﬁelds\nu0 D ˘ f;\nu1 D ˘ Œf; g\t ;\nu2 D ˘ Œf; Œf; g\t\t;\nu3 D ˘ Œf; Œf; Œf; g\t\t\t;\nwhere ˘ is the projector onto the ﬁrst three components. Because g D \u0007e4,\nit is enough to show that any pair from among these four vectors are linearly\nindependent, except possibly on M0. Note that projection can only be performed\nafter the full calculation of the relevant commutator. Because the commutators\nquickly become quite messy, we used a symbolic computing package to assist in\nthese calculations.\nThe ﬁrst two vectors are:\nu0 D p@q \u0003 .q C \u0013p/@p \u0003 .\u0013\u00121 C \u00121\u00122/@\u00121;\n(8.48)\nand\nu1 D \u0007p @\u0013\n@\u00122\n@p C \u00121\n\b\n1 C @\u0013\n@\u00122\n\t\n@\u00121:\n(8.49)\nAfter expanding the derivatives of \u0013 we have\nu1 D p@q C \u00122\n1\n\b\u0003q C p\u00122\nD\n\t\n@p \u0003 2\u00121p\n\b\u0003q C p\u00122\nD\n\t\n@\u00121;\n(8.50)\nand\nu2 D \u0003\u0007.\u00122\n1p=D/@p C .2\u0007\u00121p2=D/@\u00121;\n(8.51)\nwhere D D 2p2 C \u00122\n1.\nIf q ¤ 0 and p ¤ 0, then clearly u1 and u2 are linearly independent. However, if\np D 0 then u2 D 0. We proceed to compute the commutator Œf; Œf; g\t\t. Projecting to\nthe ﬁrst three components results in\nu2 D \u0007\n\b\u00122\n1p\nD\n\t\n@q \u0003 \u0007\n\b2\np3 C \n\u00122\n1p \u0003 \u00122\n1q\nD2\n\t\n@p C 2\u0007\u00121p\n\b2\np3 C \n\u00122\n1p \u0003 \u00122\n1q\nD2\n\t\n@\u00121:\n(8.52)\nAgain, we substitute p D 0 and ﬁnd that\nu2jpD0 D .\u0007\u00122\n1q=D2/@p:\n(8.53)\nUnfortunately, this is parallel to u1 (for p D 0), and hence yet one more commutator\nis required in this case.\n"
+    },
+    {
+      "pdf_page": 389,
+      "printed_page": 368,
+      "text": "368\n8\nExtended Variable Methods\nWe calculate Œf; Œf; Œf; g\t\t\t and project onto the space spanned by the ﬁrst three\ncomponents to ﬁnd\nu3 D \u0007\n\b2\np3 \u0003 4p3\u00122 C 4p2q C \u00122\n1p\u00122 C \n\u00122\n1p \u0003 2\u00122\n1q\nD2\n\t\n@q\n\u0003 \u0007\u00122\n1\n\u0006 \u000f\nD3\n\u0007\n@p C 2\u0007\u00121p\n\u0006 \u000f\nD3\n\u0007\n@\u00121:\n(8.54)\nwith\n\u000f D 4p5\n2 \u0003 8p5\u00122\n1 \u0003 4\u00122\n1p3 C 4p3\n2\u00122\n1 \u0003 4p3\u00124\n1\n\u0003 2\n\u00122\n1p2q C 4p2q\u00122\u00122\n1 \u0003 4\u00122\n1q2p \u0003 2\u00124\n1p C p\n2\u00124\n1 \u0003 q\n\u00124\n1 C \u00124\n1\u00122q:\n(8.55)\nAlong p D 0, u3 becomes\nu3jpD0 D \u00032\u0007q@q \u0003 \u0007\n\b\u0003q\n\u00124\n1 C \u00124\n1\u00122q\n\u00124\n1\n\t\n@p\nD \u00032\u0007q@q \u0003 \u0007q.\u0003\n C \u00122/@p:\n(8.56)\nTogether with u0 we obtain a linearly independent set as long as q ¤ 0.\nIf p D 0 and q D 0 then we are on M0. If p ¤ 0 then u2 and u0 are linearly\nindependent. If q ¤ 0 then u3 and u0 are linearly independent. From these we\nestablish that the Hörmander condition holds everywhere except on a space of co-\ndimension 2 (that is except on the one-dimensional set M0).\nIn this case, it is possible to complete the proof by introducing a Lyapunov\nfunction \b to demonstrate the necessary contractivity in the \u00122 direction. The\ngenerator of this system is\nLisok D p @\n@q C\n\nF \u0003 .p2=\u0017/F\n\u000b @\n@p \u0003 p\u00121F\n\u0017\n@\n@\u00121\nC LN C LO\nwith \u0017 D p2 C \u00122\n1=2,\nLN D 1\n2\n\u00122\n1\u00122p\n\u0017\n@\n@p C 1\n2\n\u00123\n1\u00122\n\u0017\n@\n@\u00121\n\u0003 \u00122\u00121\n@\n@\u00121\nC Œ\u00122\n1 \u0003 ˇ\u00021\t @\n@\u00122\n;\nand\nLO D \u0003\n\u00122\n@\n@\u00122\nC \u00072\n2\n@2\n@\u00122\n2\n:\n"
+    }
+  ],
+  "numbered_equations": [],
+  "transcription_note": "文字层逐字保留；数学排版另行转写，原页中的特殊字形编码不静默替换。PDF420仅取Exercises之前。",
+  "context_notation": [],
+  "extra_assumptions": [
+    "θ,γ正，ξ₁≠0且在正约束面；仅声明有限向量族张成实际切空间，Hörmander理论推出平滑密度或遍历性未覆盖。"
+  ],
+  "issues": [],
+  "statement_scope": "例外直线外的有限括号张成目标；非完整遍历性定理。",
+  "lean_decl": "MD.Ch08.sinBracket_tangentSpan",
+  "lean_declarations": [
+    "MD.Ch08.sinBracket_tangentSpan"
+  ],
+  "source_page_verification": "见source_page_checks.json，已目视核对本条原页。",
+  "repair_log": [],
+  "documented_priors": []
+}
+```
+
+## 完整本条Lean
+```lean
+theorem sinBracket_tangentSpan (θ γ : ℝ) (hθ : 0 < θ) (hγ : 0 < γ)
+    (z : Vec 4) (hz : sinConstraint 1 z=θ) (hξ : z 2 ≠ 0)
+    (hout : z ∉ sinExceptional θ) :
+    Submodule.span ℝ ({sinHarmonicG θ γ} ∪
+      Set.range (fun j : Fin 4 ↦ sinBracket θ γ j z)) =
+      LinearMap.ker (fderiv ℝ (sinConstraint 1) z).toLinearMap := by
+  sorry
+```
+
+## 项目依赖定义体及选择规格
+以下def/abbrev/structure完整保留；定理列出完整类型，Mathlib标准定义无需摘录。
+
+### MD.Ch08.Vec (Blueprint/Ch08.lean:17)
+原文件上下文：
+```lean
+open Set Filter MeasureTheory ProbabilityTheory MolecularDynamics
+open scoped BigOperators Topology ContDiff ENNReal NNReal Matrix
+variable {Ω : Type*} [MeasurableSpace Ω]
+variable {n : ℕ}
+```
+```lean
+abbrev Vec (n : ℕ) := Fin n → ℝ
+```
+
+### MD.Ch08.sinConstraint (Blueprint/Ch08.lean:714)
+原文件上下文：
+```lean
+open Set Filter MeasureTheory ProbabilityTheory MolecularDynamics
+open scoped BigOperators Topology ContDiff ENNReal NNReal Matrix
+variable {Ω : Type*} [MeasurableSpace Ω]
+variable {n : ℕ}
+```
+```lean
+def sinConstraint (Q1 : ℝ) (z : Vec 4) : ℝ := z 1^2+Q1*z 2^2/2
+```
+
+### MD.Ch08.sinMultiplier (Blueprint/Ch08.lean:715)
+原文件上下文：
+```lean
+open Set Filter MeasureTheory ProbabilityTheory MolecularDynamics
+open scoped BigOperators Topology ContDiff ENNReal NNReal Matrix
+variable {Ω : Type*} [MeasurableSpace Ω]
+variable {n : ℕ}
+```
+```lean
+def sinMultiplier (Q1 : ℝ) (F : ℝ → ℝ) (z : Vec 4) : ℝ :=
+  (z 1*F (z 0)-Q1*z 2^2*z 3/2)/sinConstraint Q1 z
+```
+
+### MD.Ch08.sinDrift (Blueprint/Ch08.lean:717)
+原文件上下文：
+```lean
+open Set Filter MeasureTheory ProbabilityTheory MolecularDynamics
+open scoped BigOperators Topology ContDiff ENNReal NNReal Matrix
+variable {Ω : Type*} [MeasurableSpace Ω]
+variable {n : ℕ}
+```
+```lean
+def sinDrift (Q1 Q2 θ γ : ℝ) (F : ℝ → ℝ) (z : Vec 4) : Vec 4 :=
+  let lam := sinMultiplier Q1 F z
+  ![z 1, F (z 0)-lam*z 1, -lam*z 2-z 3*z 2, (Q1*z 2^2-θ)/Q2-γ*z 3]
+```
+
+### MD.Ch08.sinHarmonicF (Blueprint/Ch08.lean:755)
+原文件上下文：
+```lean
+open Set Filter MeasureTheory ProbabilityTheory MolecularDynamics
+open scoped BigOperators Topology ContDiff ENNReal NNReal Matrix
+variable {Ω : Type*} [MeasurableSpace Ω]
+variable {n : ℕ}
+```
+```lean
+def sinHarmonicF (θ γ : ℝ) : Vec 4 → Vec 4 := sinDrift 1 1 θ γ (fun q ↦ -q)
+```
+
+### MD.Ch08.sinHarmonicG (Blueprint/Ch08.lean:756)
+原文件上下文：
+```lean
+open Set Filter MeasureTheory ProbabilityTheory MolecularDynamics
+open scoped BigOperators Topology ContDiff ENNReal NNReal Matrix
+variable {Ω : Type*} [MeasurableSpace Ω]
+variable {n : ℕ}
+```
+```lean
+def sinHarmonicG (θ γ : ℝ) : Vec 4 := ![0,0,0,Real.sqrt (2*γ*θ)]
+```
+
+### MD.Ch08.sinExceptional (Blueprint/Ch08.lean:760)
+原文件上下文：
+```lean
+open Set Filter MeasureTheory ProbabilityTheory MolecularDynamics
+open scoped BigOperators Topology ContDiff ENNReal NNReal Matrix
+variable {Ω : Type*} [MeasurableSpace Ω]
+variable {n : ℕ}
+```
+```lean
+def sinExceptional (θ : ℝ) : Set (Vec 4) :=
+  {z | z 0=0 ∧ z 1=0 ∧ z 2^2=2*θ}
+```
+
+### MD.Ch08.bracket4 (Blueprint/Ch08.lean:775)
+原文件上下文：
+```lean
+open Set Filter MeasureTheory ProbabilityTheory MolecularDynamics
+open scoped BigOperators Topology ContDiff ENNReal NNReal Matrix
+variable {Ω : Type*} [MeasurableSpace Ω]
+variable {n : ℕ}
+```
+```lean
+def bracket4 (f g : Vec 4 → Vec 4) (z : Vec 4) : Vec 4 :=
+  fderiv ℝ g z (f z)-fderiv ℝ f z (g z)
+```
+
+### MD.Ch08.sinBracket (Blueprint/Ch08.lean:777)
+原文件上下文：
+```lean
+open Set Filter MeasureTheory ProbabilityTheory MolecularDynamics
+open scoped BigOperators Topology ContDiff ENNReal NNReal Matrix
+variable {Ω : Type*} [MeasurableSpace Ω]
+variable {n : ℕ}
+```
+```lean
+def sinBracket (θ γ : ℝ) : ℕ → Vec 4 → Vec 4
+  | 0 => sinHarmonicF θ γ
+  | 1 => bracket4 (sinHarmonicF θ γ) (fun _ ↦ sinHarmonicG θ γ)
+  | k+2 => bracket4 (sinHarmonicF θ γ) (sinBracket θ γ (k+1))
+```
+
+### MD.Ch08.sinBracket_tangentSpan (Blueprint/Ch08.lean:823)
+原文件上下文：
+```lean
+open Set Filter MeasureTheory ProbabilityTheory MolecularDynamics
+open scoped BigOperators Topology ContDiff ENNReal NNReal Matrix
+variable {Ω : Type*} [MeasurableSpace Ω]
+variable {n : ℕ}
+```
+```lean
+theorem sinBracket_tangentSpan (θ γ : ℝ) (hθ : 0 < θ) (hγ : 0 < γ)
+    (z : Vec 4) (hz : sinConstraint 1 z=θ) (hξ : z 2 ≠ 0)
+    (hout : z ∉ sinExceptional θ) :
+    Submodule.span ℝ ({sinHarmonicG θ γ} ∪
+      Set.range (fun j : Fin 4 ↦ sinBracket θ γ j z)) =
+      LinearMap.ker (fderiv ℝ (sinConstraint 1) z).toLinearMap
+```

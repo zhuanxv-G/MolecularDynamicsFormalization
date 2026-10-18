@@ -1,0 +1,73 @@
+{
+  "batch": "BATCH11",
+  "subtask": "BATCH11c",
+  "source_ids": [
+    "MD-8.7-GLEFluctuationDissipationPrinted"
+  ],
+  "input_sha256": {
+    "Blueprint/Ch08.lean": "2800812fadd8e2557013f1941e4570401f7903d46f44baf07e23d5531da22a72",
+    "blueprint/ch08/ch08_source.json": "9b994b0f64cd22c85c2ad4123fbfdbd064bd7a6d070fe13b721794432f9f7a63",
+    "BATCH11c_PAGES.pdf": "86605d34be56d9cd2fb1bc40aa0c65ae0537968432e9b26917d90a7020c07d94"
+  },
+  "page_mapping": [
+    {
+      "attachment_page": 1,
+      "original_pdf_page": 395,
+      "printed_page": 374
+    }
+  ],
+  "definition_excerpts": [
+    {
+      "full_name": "MD.Ch08.Vec",
+      "kind": "abbrev",
+      "path": "Blueprint/Ch08.lean",
+      "line": 17,
+      "code_sha256": "6f4b254a8a7cc4115fb35265b77caa663bdd18567cd1e664cc5bbd080d02fcff"
+    },
+    {
+      "full_name": "MD.Ch08.randomForceQualification",
+      "kind": "def",
+      "path": "Blueprint/Ch08.lean",
+      "line": 954,
+      "code_sha256": "13ae644e4640245fb5c9517232e069c42c8e8341fd7d55725eb18200ea069a75"
+    },
+    {
+      "full_name": "MD.Ch08.gleFDPrinted",
+      "kind": "def",
+      "path": "Blueprint/Ch08.lean",
+      "line": 957,
+      "code_sha256": "362da11d625ea9488f8c6adcfbb724ba57f380d160461a99435dff4a6a15e875"
+    },
+    {
+      "full_name": "MD.Ch08.gleFD_corrected",
+      "kind": "def",
+      "path": "Blueprint/Ch08.lean",
+      "line": 961,
+      "code_sha256": "b4144c41e857a109ee01c5a005399ea9f5ef0fe962de031b2acaa603cff98183"
+    },
+    {
+      "full_name": "MD.Ch08.scalarMemoryMatrix",
+      "kind": "def",
+      "path": "Blueprint/Ch08.lean",
+      "line": 965,
+      "code_sha256": "8d16ffa04ffedb7933065c5c99eabd9bb02c7cab774bca8600dac39925f178e7"
+    }
+  ],
+  "validation": {
+    "project_constant_closure": "PASS",
+    "missing_project_definitions": [],
+    "full_page_render_equality_dpi": 72,
+    "website_submitted": false
+  },
+  "files": {
+    "PASTE.txt": {
+      "bytes": 11411,
+      "sha256": "88c1c5f5001f37fff50e19f9a0ce52e9c432ba97559c31a9e5db42a4e5ebb279"
+    },
+    "BATCH11c_PAGES.pdf": {
+      "bytes": 87562,
+      "sha256": "86605d34be56d9cd2fb1bc40aa0c65ae0537968432e9b26917d90a7020c07d94"
+    }
+  },
+  "total_task_bytes": 101250
+}

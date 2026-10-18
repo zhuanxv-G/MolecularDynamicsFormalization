@@ -1,0 +1,87 @@
+{
+  "batch": "BATCH09",
+  "subtask": "BATCH09f",
+  "source_ids": [
+    "MD-8.6.2-SINThirdBracketPrinted"
+  ],
+  "input_sha256": {
+    "Blueprint/Ch08.lean": "2800812fadd8e2557013f1941e4570401f7903d46f44baf07e23d5531da22a72",
+    "blueprint/ch08/ch08_source.json": "9b994b0f64cd22c85c2ad4123fbfdbd064bd7a6d070fe13b721794432f9f7a63",
+    "BATCH09f_PAGES.pdf": "a505d4f853d4d6039042c2f54000795933f199cdad74b2ff7b537ed254330b90"
+  },
+  "page_mapping": [
+    {
+      "attachment_page": 1,
+      "original_pdf_page": 389,
+      "printed_page": 368
+    }
+  ],
+  "definition_excerpts": [
+    {
+      "full_name": "MD.Ch08.Vec",
+      "kind": "abbrev",
+      "path": "Blueprint/Ch08.lean",
+      "line": 17,
+      "code_sha256": "6f4b254a8a7cc4115fb35265b77caa663bdd18567cd1e664cc5bbd080d02fcff"
+    },
+    {
+      "full_name": "MD.Ch08.sinD",
+      "kind": "def",
+      "path": "Blueprint/Ch08.lean",
+      "line": 782,
+      "code_sha256": "6a892f4e59ebbf1c60e5307ab35232a35218c64200b6d23a43d0182e97ce8fae"
+    },
+    {
+      "full_name": "MD.Ch08.sinEtaPrinted",
+      "kind": "def",
+      "path": "Blueprint/Ch08.lean",
+      "line": 804,
+      "code_sha256": "fcae681a12e7e9ee9697b5198d77975e38f10532a6fe732a5d5cc5a26a88a6a6"
+    },
+    {
+      "full_name": "MD.Ch08.sinU3Printed",
+      "kind": "def",
+      "path": "Blueprint/Ch08.lean",
+      "line": 808,
+      "code_sha256": "ceeda65bb7cf3f12e90a664266a572ef8ae8f7d1c2baeedd795ceb76d0a00ec2"
+    },
+    {
+      "full_name": "MD.Ch08.sinU3ZeroPrinted",
+      "kind": "def",
+      "path": "Blueprint/Ch08.lean",
+      "line": 811,
+      "code_sha256": "c9bcd04c77ae193d713c6c02bbae3b199bf36fe6e0723279808775f18c31d32a"
+    },
+    {
+      "full_name": "MD.Ch08.sinU3Zero_corrected",
+      "kind": "def",
+      "path": "Blueprint/Ch08.lean",
+      "line": 813,
+      "code_sha256": "14946e2549c8915148697b1b3e8b5662c3804e84b025a88c569efd09c87d62a7"
+    },
+    {
+      "full_name": "MD.Ch08.sinU3Zero_specialize",
+      "kind": "theorem",
+      "path": "Blueprint/Ch08.lean",
+      "line": 815,
+      "code_sha256": "cc55211c0c5d16dffce5b6974dd3ec826fc329db58ab035330736735b23c81b2"
+    }
+  ],
+  "validation": {
+    "project_constant_closure": "PASS",
+    "missing_project_definitions": [],
+    "full_page_render_equality_dpi": 72,
+    "website_submitted": false
+  },
+  "files": {
+    "PASTE.txt": {
+      "bytes": 10841,
+      "sha256": "039954e343091428637729a2603f4da108e64211c0140c48f29466b6c470fc44"
+    },
+    "BATCH09f_PAGES.pdf": {
+      "bytes": 86563,
+      "sha256": "a505d4f853d4d6039042c2f54000795933f199cdad74b2ff7b537ed254330b90"
+    }
+  },
+  "total_task_bytes": 100124
+}

@@ -1,0 +1,169 @@
+以附件/PASTE 为准，忽略 /workspace 旧文件；Mathlib 定义按标准含义采信。
+本任务只审本条：原文转录、对象资格、定义体、量词、全部结论及[EXTRA]是否一致；Lean编译不代替语义审阅。
+Lean/Mathlib均4.34.0。原页PDF映射：[400]；印刷页=[379].
+input_sha256请原样回显：
+{
+  "Blueprint/Ch08.lean": "2800812fadd8e2557013f1941e4570401f7903d46f44baf07e23d5531da22a72",
+  "blueprint/ch08/ch08_source.json": "9b994b0f64cd22c85c2ad4123fbfdbd064bd7a6d070fe13b721794432f9f7a63",
+  "BATCH13c_PAGES.pdf": "a14f6489d739aef05b053e47f90632d6a0a596b36ff5566d9dd84d0cf2f8bd41"
+}
+用代码将JSON对象(batch,input_sha256,items)写到 /workspace/.mathcopilot/reviews/ch08/BATCH13c_review.json；items仅含本source_id。
+items字段：source_id、verdict(PASS/FAIL/NEEDS_HUMAN)、transcription、semantic_review、counterexample、suggested_fix、printed_version、corrected_version。逐版区分原文疑误和修正版结论；缺材料必须具体指出，不猜测。写后json.loads自检，最后仅回复路径及统计。
+
+## 原文JSON
+```json
+{
+  "source_id": "MD-8.8-AndersenKineticEnergy",
+  "kind": "unnumbered_claim",
+  "label": null,
+  "section": "8.8",
+  "printed_page": "379",
+  "pdf_page": "400",
+  "statement_latex": "After q=V^{1/3}q̄, K̄=Σᵢ(mᵢ/2)[(1/9)V^{−4/3}V̇²|q̄ᵢ|²+(2/3)V^{−1/3}V̇q̄ᵢ·q̄̇ᵢ+V^{2/3}|q̄̇ᵢ|²].",
+  "statement_verbatim": "8.8\nConstant Temperature and Pressure Molecular Dynamics\n379\nwhich leads to the probability density\n\u0005NPT D Z\u00021\nNPTe\u0002ˇ.HCPV/;\nwhere H is the Hamiltonian, and ˇ\u00021 D kBT.\nThe NPT model may be viewed as corresponding to a thermostatted system\nwhich incorporates a “piston” controlling the overall volume of the system to be\nconsistent with the target pressure. During simulation, the volume must be free\nto change; whereas the methods presented so far retain a ﬁxed volume. In NVE\nor NVT simulation, the volume enters in two ways into the molecular simulation\nmethod: (i) as a modiﬁcation of the potential (allowing for periodic replicas) and\n(ii) in the mechanism by which atoms are mapped from one boundary to the other\nof the rectangular domain, simulating motion on a torus. It is not obvious how to\ngeneralize these to the NPT setting where V is a dynamical variable.\nThe method of Andersen [11] (“Andersen’s piston”) is to control the volume\nby reparamaterizing the coordinates to lie in a cubic box with unit side. Assuming\nthe system occupies a cubic domain, say, Œ\u0003L=2; L=2\t\u0004Œ\u0003L=2; L=2\t\u0004Œ\u0003L=2; L=2\t,\nwhere L D V1=3, we may write, for each three-dimensional atomic coordinate vector\nqi\nqi D V1=3Nqi;\n(8.71)\nwhere Nqi is conﬁned to the unit-side cube. Then we have\nPqi D 1\n3V\u00022=3 PV Nqi C V1=3 d\ndt Nqi:\nThe kinetic energy of the atomic system may be written\nK D\nN\nX\niD1\nmi\nkPqik2\n2\n:\nAfter coordinate transformation this becomes\nNK D\nN\nX\niD1\nmi\n2\n\n\n\n\n\n1\n3V\u00022=3 PV Nqi C V1=3 d\ndt Nqi\n\n\n\n\n\n2\nD\nN\nX\niD1\nmi\n2\n\u00021\n9V\u00024=3 PV2 kNqik2 C 2\n3V\u00021=3 PV Nqi \u0002 PNqi C V2=3 \n\nPNqi\n\n\n2\u0003\n;\nthus the momentum vector conjugate to Nqi becomes\nNpi D @ NK\n@PNqi\n",
+  "verbatim_scope": "完整对应原页文字层，逐字保留；本条数学成分由statement_latex及statement_scope定位。",
+  "proof_latex": null,
+  "proof_note": "对应原页推导逐字保存在statement_verbatim/original_page_text；排版以原页PDF为准。",
+  "original_page_text": [
+    {
+      "pdf_page": 400,
+      "printed_page": 379,
+      "text": "8.8\nConstant Temperature and Pressure Molecular Dynamics\n379\nwhich leads to the probability density\n\u0005NPT D Z\u00021\nNPTe\u0002ˇ.HCPV/;\nwhere H is the Hamiltonian, and ˇ\u00021 D kBT.\nThe NPT model may be viewed as corresponding to a thermostatted system\nwhich incorporates a “piston” controlling the overall volume of the system to be\nconsistent with the target pressure. During simulation, the volume must be free\nto change; whereas the methods presented so far retain a ﬁxed volume. In NVE\nor NVT simulation, the volume enters in two ways into the molecular simulation\nmethod: (i) as a modiﬁcation of the potential (allowing for periodic replicas) and\n(ii) in the mechanism by which atoms are mapped from one boundary to the other\nof the rectangular domain, simulating motion on a torus. It is not obvious how to\ngeneralize these to the NPT setting where V is a dynamical variable.\nThe method of Andersen [11] (“Andersen’s piston”) is to control the volume\nby reparamaterizing the coordinates to lie in a cubic box with unit side. Assuming\nthe system occupies a cubic domain, say, Œ\u0003L=2; L=2\t\u0004Œ\u0003L=2; L=2\t\u0004Œ\u0003L=2; L=2\t,\nwhere L D V1=3, we may write, for each three-dimensional atomic coordinate vector\nqi\nqi D V1=3Nqi;\n(8.71)\nwhere Nqi is conﬁned to the unit-side cube. Then we have\nPqi D 1\n3V\u00022=3 PV Nqi C V1=3 d\ndt Nqi:\nThe kinetic energy of the atomic system may be written\nK D\nN\nX\niD1\nmi\nkPqik2\n2\n:\nAfter coordinate transformation this becomes\nNK D\nN\nX\niD1\nmi\n2\n\n\n\n\n\n1\n3V\u00022=3 PV Nqi C V1=3 d\ndt Nqi\n\n\n\n\n\n2\nD\nN\nX\niD1\nmi\n2\n\u00021\n9V\u00024=3 PV2 kNqik2 C 2\n3V\u00021=3 PV Nqi \u0002 PNqi C V2=3 \n\nPNqi\n\n\n2\u0003\n;\nthus the momentum vector conjugate to Nqi becomes\nNpi D @ NK\n@PNqi\n"
+    }
+  ],
+  "numbered_equations": [],
+  "transcription_note": "文字层逐字保留；数学排版另行转写，原页中的特殊字形编码不静默替换。PDF420仅取Exercises之前。",
+  "context_notation": [],
+  "extra_assumptions": [
+    "坐标逐分量求和就是三维点积展开，避免把Pi类型的最大范数误作物理Euclidean长度；V正。"
+  ],
+  "issues": [],
+  "statement_scope": "所印动能展开的逐标量坐标版本。",
+  "lean_decl": "MD.Ch08.andersenKinetic",
+  "lean_declarations": [
+    "MD.Ch08.andersenKinetic",
+    "MD.Ch08.andersenKineticExpanded",
+    "MD.Ch08.andersenKinetic_expansion"
+  ],
+  "source_page_verification": "见source_page_checks.json，已目视核对本条原页。",
+  "repair_log": [],
+  "documented_priors": []
+}
+```
+
+## 完整本条Lean
+```lean
+def andersenKinetic (m : Vec n) (V Vdot : ℝ) (qbar vbar : Vec n) : ℝ :=
+  ∑ i, m i*(andersenVelocity V Vdot qbar vbar i)^2/2
+def andersenKineticExpanded (m : Vec n) (V Vdot : ℝ) (qbar vbar : Vec n) : ℝ :=
+  ∑ i, m i/2*((1/9 : ℝ)*Real.rpow V (-4/3 : ℝ)*Vdot^2*qbar i^2+
+    (2/3 : ℝ)*Real.rpow V (-1/3 : ℝ)*Vdot*qbar i*vbar i+
+    Real.rpow V (2/3 : ℝ)*vbar i^2)
+theorem andersenKinetic_expansion (m : Vec n) (V Vdot : ℝ) (qbar vbar : Vec n)
+    (hV : 0 < V) : andersenKinetic m V Vdot qbar vbar =
+      andersenKineticExpanded m V Vdot qbar vbar := by
+  sorry
+```
+
+## 项目依赖定义体及选择规格
+以下def/abbrev/structure完整保留；定理列出完整类型，Mathlib标准定义无需摘录。
+
+### MD.Ch08.Vec (Blueprint/Ch08.lean:17)
+原文件上下文：
+```lean
+open Set Filter MeasureTheory ProbabilityTheory MolecularDynamics
+open scoped BigOperators Topology ContDiff ENNReal NNReal Matrix
+variable {Ω : Type*} [MeasurableSpace Ω]
+variable {n : ℕ}
+```
+```lean
+abbrev Vec (n : ℕ) := Fin n → ℝ
+```
+
+### MD.Ch08.volumeScale (Blueprint/Ch08.lean:1121)
+原文件上下文：
+```lean
+open Set Filter MeasureTheory ProbabilityTheory MolecularDynamics
+open scoped BigOperators Topology ContDiff ENNReal NNReal Matrix
+variable {Ω : Type*} [MeasurableSpace Ω]
+variable {n : ℕ}
+```
+```lean
+def volumeScale (V : ℝ) : ℝ := Real.rpow V (1/3 : ℝ)
+```
+
+### MD.Ch08.andersenVelocity (Blueprint/Ch08.lean:1141)
+原文件上下文：
+```lean
+open Set Filter MeasureTheory ProbabilityTheory MolecularDynamics
+open scoped BigOperators Topology ContDiff ENNReal NNReal Matrix
+variable {Ω : Type*} [MeasurableSpace Ω]
+variable {n : ℕ}
+```
+```lean
+def andersenVelocity (V Vdot : ℝ) (qbar vbar : Vec n) : Vec n :=
+  ((1/3 : ℝ)*Real.rpow V (-2/3 : ℝ)*Vdot) • qbar+volumeScale V • vbar
+```
+
+### MD.Ch08.andersenKinetic (Blueprint/Ch08.lean:1161)
+原文件上下文：
+```lean
+open Set Filter MeasureTheory ProbabilityTheory MolecularDynamics
+open scoped BigOperators Topology ContDiff ENNReal NNReal Matrix
+variable {Ω : Type*} [MeasurableSpace Ω]
+variable {n : ℕ}
+```
+```lean
+def andersenKinetic (m : Vec n) (V Vdot : ℝ) (qbar vbar : Vec n) : ℝ :=
+  ∑ i, m i*(andersenVelocity V Vdot qbar vbar i)^2/2
+```
+
+### MD.Ch08.andersenKineticExpanded (Blueprint/Ch08.lean:1163)
+原文件上下文：
+```lean
+open Set Filter MeasureTheory ProbabilityTheory MolecularDynamics
+open scoped BigOperators Topology ContDiff ENNReal NNReal Matrix
+variable {Ω : Type*} [MeasurableSpace Ω]
+variable {n : ℕ}
+```
+```lean
+def andersenKineticExpanded (m : Vec n) (V Vdot : ℝ) (qbar vbar : Vec n) : ℝ :=
+  ∑ i, m i/2*((1/9 : ℝ)*Real.rpow V (-4/3 : ℝ)*Vdot^2*qbar i^2+
+    (2/3 : ℝ)*Real.rpow V (-1/3 : ℝ)*Vdot*qbar i*vbar i+
+    Real.rpow V (2/3 : ℝ)*vbar i^2)
+```
+
+### MD.Ch08.andersenKinetic_expansion (Blueprint/Ch08.lean:1167)
+原文件上下文：
+```lean
+open Set Filter MeasureTheory ProbabilityTheory MolecularDynamics
+open scoped BigOperators Topology ContDiff ENNReal NNReal Matrix
+variable {Ω : Type*} [MeasurableSpace Ω]
+variable {n : ℕ}
+```
+```lean
+theorem andersenKinetic_expansion (m : Vec n) (V Vdot : ℝ) (qbar vbar : Vec n)
+    (hV : 0 < V) : andersenKinetic m V Vdot qbar vbar =
+      andersenKineticExpanded m V Vdot qbar vbar
+```
+
+### MolecularDynamics.Chapter04Review.V (MolecularDynamics/Chapter04/ReviewDefinitions.lean:17)
+原文件上下文：
+```lean
+open Set Matrix
+open scoped BigOperators Topology Matrix.Norms.Elementwise
+```
+```lean
+abbrev V := Fin 3 → ℝ
+```
+
+### MolecularDynamics.Chapter06Review.V (MolecularDynamics/Chapter06/ReviewDefinitions.lean:17)
+原文件上下文：
+```lean
+open Set Filter MeasureTheory ProbabilityTheory
+open scoped BigOperators Topology ContDiff ENNReal NNReal
+local instance : MeasureSpace UnitAddCircle := ⟨AddCircle.haarAddCircle⟩
+```
+```lean
+abbrev V (n : ℕ) := Fin n → ℝ
+```

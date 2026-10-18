@@ -1,0 +1,273 @@
+以附件/PASTE 为准，忽略 /workspace 旧文件；Mathlib 定义按标准含义采信。
+本任务只审本条：原文转录、对象资格、定义体、量词、全部结论及[EXTRA]是否一致；Lean编译不代替语义审阅。
+Lean/Mathlib均4.34.0。原页PDF映射：[353]；印刷页=[332].
+input_sha256请原样回显：
+{
+  "Blueprint/Ch08.lean": "2800812fadd8e2557013f1941e4570401f7903d46f44baf07e23d5531da22a72",
+  "blueprint/ch08/ch08_source.json": "9b994b0f64cd22c85c2ad4123fbfdbd064bd7a6d070fe13b721794432f9f7a63",
+  "BATCH01e_PAGES.pdf": "19250fb5f095472dd002227d989813758dfbacf10ae0f35401a6780ea61caff1"
+}
+用代码将JSON对象(batch,input_sha256,items)写到 /workspace/.mathcopilot/reviews/ch08/BATCH01e_review.json；items仅含本source_id。
+items字段：source_id、verdict(PASS/FAIL/NEEDS_HUMAN)、transcription、semantic_review、counterexample、suggested_fix、printed_version、corrected_version。逐版区分原文疑误和修正版结论；缺材料必须具体指出，不猜测。写后json.loads自检，最后仅回复路径及统计。
+
+## 原文JSON
+```json
+{
+  "source_id": "MD-8.1.1-NHDensitySplit",
+  "kind": "unnumbered_claim",
+  "label": null,
+  "section": "8.1.1",
+  "printed_page": "332",
+  "pdf_page": "353",
+  "statement_latex": "ρ̃=ρ_β exp(-βμξ²/2); f=f₁+f₂, L_f†=L_f₁†+L_f₂†; f₂ preserves ρ̃.",
+  "statement_verbatim": "332\n8\nExtended Variable Methods\nThe equation for the variable \u0012 represents a negative feedback loop which acts\nto control the value of \u0012 (and hence to regulate the kinetic energy). When the\ntemperature of the system, measured as the average kinetic energy per degree of\nfreedom, is high compared to the “target temperature” ˇ\u00021, the control equation\nwill insure that \u0012 increases, eventually becoming positive. This will damp (cool)\nthe physical variables; eventually the kinetic energy will fall below the target value,\nand \u0012 will become negative. By ﬂuctuating in this way, \u0012 typically maintains the\ntime-averaged kinetic energy of the system at very near Ndˇ\u00021=2.\nThe parameter \u00060 is arbitrary and can be used to improve the performance of the\nmethod in practical calculations.\nThis method preserves an extended measure with density of the form\nQ\u0005.q; p; \u0012/ D \u0005ˇ.q; p/ \u0004 e\u0002ˇ\u0006\u00122=2:\n(8.5)\nThat is, one can show that L\u0004\nf Q\u0005 D 0, where f is the full vector ﬁeld associated to the\nNosé-Hoover system.\nObserve that we can split f into two parts: f D f 1 C f 2, where\nf 1 D\n2\n4\nM\u00021p\n\u0003rU.q/\n0\n3\n5 ;\nf 2 D\n2\n4\n0\n\u0003\u0012p\n\u0006\u00021.pTM\u00021p \u0003 Ndˇ\u00021/\n3\n5 :\nThe Liouvillian1 follows a similar decomposition:\nL\u0004\nf D L\u0004\nf1 C L\u0004\nf2:\nSince the ﬁrst part (which is simply Hamiltonian dynamics) preserves the extended\nGibbs measure Q\u0005, it is evidently enough to show that the system\ndp\ndt D \u0003\u0012p;\n(8.6)\n\u0006d\u0012\ndt D pTM\u00021p \u0003 Ndˇ\u00021;\n(8.7)\npreserves Q\u0005 as well. The Liouvillian L\u0004\nf 2 associated to this system is deﬁned by\nL\u0004\nf2\b D rp \u0002 .\u0012p\b/ \u0003 @\n@\u0012 .\u0006\u00021ŒpTM\u00021p \u0003 Ndˇ\u00021\t\b/:\nIt is left as an exercise to demonstrate that, with this deﬁnition and (8.5), L\u0004\nf2 Q\u0005ˇ D 0.\n1Technically, “Liouville’s equation” refers to the continuity equation in the setting of a volume\npreserving ﬂow. Here we use the term “Liouvillian” to refer to the operator whose action on a\ndensity gives the right hand side of the general continuity equation.\n",
+  "verbatim_scope": "完整对应原页文字层，逐字保留；本条数学成分由statement_latex及statement_scope定位。",
+  "proof_latex": null,
+  "proof_note": "对应原页推导逐字保存在statement_verbatim/original_page_text；排版以原页PDF为准。",
+  "original_page_text": [
+    {
+      "pdf_page": 353,
+      "printed_page": 332,
+      "text": "332\n8\nExtended Variable Methods\nThe equation for the variable \u0012 represents a negative feedback loop which acts\nto control the value of \u0012 (and hence to regulate the kinetic energy). When the\ntemperature of the system, measured as the average kinetic energy per degree of\nfreedom, is high compared to the “target temperature” ˇ\u00021, the control equation\nwill insure that \u0012 increases, eventually becoming positive. This will damp (cool)\nthe physical variables; eventually the kinetic energy will fall below the target value,\nand \u0012 will become negative. By ﬂuctuating in this way, \u0012 typically maintains the\ntime-averaged kinetic energy of the system at very near Ndˇ\u00021=2.\nThe parameter \u00060 is arbitrary and can be used to improve the performance of the\nmethod in practical calculations.\nThis method preserves an extended measure with density of the form\nQ\u0005.q; p; \u0012/ D \u0005ˇ.q; p/ \u0004 e\u0002ˇ\u0006\u00122=2:\n(8.5)\nThat is, one can show that L\u0004\nf Q\u0005 D 0, where f is the full vector ﬁeld associated to the\nNosé-Hoover system.\nObserve that we can split f into two parts: f D f 1 C f 2, where\nf 1 D\n2\n4\nM\u00021p\n\u0003rU.q/\n0\n3\n5 ;\nf 2 D\n2\n4\n0\n\u0003\u0012p\n\u0006\u00021.pTM\u00021p \u0003 Ndˇ\u00021/\n3\n5 :\nThe Liouvillian1 follows a similar decomposition:\nL\u0004\nf D L\u0004\nf1 C L\u0004\nf2:\nSince the ﬁrst part (which is simply Hamiltonian dynamics) preserves the extended\nGibbs measure Q\u0005, it is evidently enough to show that the system\ndp\ndt D \u0003\u0012p;\n(8.6)\n\u0006d\u0012\ndt D pTM\u00021p \u0003 Ndˇ\u00021;\n(8.7)\npreserves Q\u0005 as well. The Liouvillian L\u0004\nf 2 associated to this system is deﬁned by\nL\u0004\nf2\b D rp \u0002 .\u0012p\b/ \u0003 @\n@\u0012 .\u0006\u00021ŒpTM\u00021p \u0003 Ndˇ\u00021\t\b/:\nIt is left as an exercise to demonstrate that, with this deﬁnition and (8.5), L\u0004\nf2 Q\u0005ˇ D 0.\n1Technically, “Liouville’s equation” refers to the continuity equation in the setting of a volume\npreserving ﬂow. Here we use the term “Liouvillian” to refer to the operator whose action on a\ndensity gives the right hand side of the general continuity equation.\n"
+    }
+  ],
+  "numbered_equations": [
+    "8.5",
+    "8.6",
+    "8.7"
+  ],
+  "transcription_note": "文字层逐字保留；数学排版另行转写，原页中的特殊字形编码不静默替换。PDF420仅取Exercises之前。",
+  "context_notation": [],
+  "extra_assumptions": [
+    "指数为未归一权重；若称概率密度还要求有限正配分积分并归一化。"
+  ],
+  "issues": [],
+  "statement_scope": "权重、分裂及完整场驻定；伴随算子分裂可由散度线性导出但未另作声明。",
+  "lean_decl": "MD.Ch08.nhWeight",
+  "lean_declarations": [
+    "MD.Ch08.nhWeight",
+    "MD.Ch08.nhBathField",
+    "MD.Ch08.nhField_split",
+    "MD.Ch08.nhWeight_stationary"
+  ],
+  "source_page_verification": "见source_page_checks.json，已目视核对本条原页。",
+  "repair_log": [],
+  "documented_priors": []
+}
+```
+
+## 完整本条Lean
+```lean
+def nhWeight (invm : Vec n) (U : Vec n → ℝ) (β Q : ℝ) (z : Phase n × ℝ) : ℝ :=
+  Real.exp (-β * (kineticTwice invm z.1.2 / 2 + U z.1.1 + Q*z.2^2/2))
+def nhBathField (invm : Vec n) (β Q : ℝ) (z : Phase n × ℝ) : Phase n × ℝ :=
+  ((0, fun i ↦ -z.2 * z.1.2 i), (kineticTwice invm z.1.2 - (n : ℝ)/β)/Q)
+theorem nhField_split (invm : Vec n) (U : Vec n → ℝ) (β Q : ℝ) (z : Phase n × ℝ) :
+  nhField invm U β Q z = (hamiltonianField invm U z.1, (0 : ℝ)) + nhBathField invm β Q z := by
+  ext <;> simp [nhField, hamiltonianField, nhBathField, sub_eq_add_neg]
+theorem nhWeight_stationary (invm : Vec n) (U : Vec n → ℝ) (β Q : ℝ)
+    (hp : thermostatParameters invm β Q) (hU : ContDiff ℝ 2 U) :
+    textbookLiouvilleStationary (nhField invm U β Q) (nhWeight invm U β Q) := by
+  sorry
+```
+
+## 项目依赖定义体及选择规格
+以下def/abbrev/structure完整保留；定理列出完整类型，Mathlib标准定义无需摘录。
+
+### MD.Ch08.Vec (Blueprint/Ch08.lean:17)
+原文件上下文：
+```lean
+open Set Filter MeasureTheory ProbabilityTheory MolecularDynamics
+open scoped BigOperators Topology ContDiff ENNReal NNReal Matrix
+variable {Ω : Type*} [MeasurableSpace Ω]
+variable {n : ℕ}
+```
+```lean
+abbrev Vec (n : ℕ) := Fin n → ℝ
+```
+
+### MD.Ch08.Phase (Blueprint/Ch08.lean:18)
+原文件上下文：
+```lean
+open Set Filter MeasureTheory ProbabilityTheory MolecularDynamics
+open scoped BigOperators Topology ContDiff ENNReal NNReal Matrix
+variable {Ω : Type*} [MeasurableSpace Ω]
+variable {n : ℕ}
+```
+```lean
+abbrev Phase (n : ℕ) := Vec n × Vec n
+```
+
+### MD.Ch08.gradient (Blueprint/Ch08.lean:20)
+原文件上下文：
+```lean
+open Set Filter MeasureTheory ProbabilityTheory MolecularDynamics
+open scoped BigOperators Topology ContDiff ENNReal NNReal Matrix
+variable {Ω : Type*} [MeasurableSpace Ω]
+variable {n : ℕ}
+```
+```lean
+def gradient (U : Vec n → ℝ) (q : Vec n) : Vec n := fun i ↦ fderiv ℝ U q (Pi.single i 1)
+```
+
+### MD.Ch08.hamiltonianField (Blueprint/Ch08.lean:37)
+原文件上下文：
+```lean
+open Set Filter MeasureTheory ProbabilityTheory MolecularDynamics
+open scoped BigOperators Topology ContDiff ENNReal NNReal Matrix
+variable {Ω : Type*} [MeasurableSpace Ω]
+variable {n : ℕ}
+```
+```lean
+def hamiltonianField (invm : Vec n) (U : Vec n → ℝ) (z : Phase n) : Phase n :=
+  (fun i ↦ invm i * z.2 i, fun i ↦ - gradient U z.1 i)
+```
+
+### MD.Ch08.thermostatParameters (Blueprint/Ch08.lean:63)
+原文件上下文：
+```lean
+open Set Filter MeasureTheory ProbabilityTheory MolecularDynamics
+open scoped BigOperators Topology ContDiff ENNReal NNReal Matrix
+variable {Ω : Type*} [MeasurableSpace Ω]
+variable {n : ℕ}
+```
+```lean
+def thermostatParameters (invm : Vec n) (β Q : ℝ) : Prop :=
+  (∀ i, 0 < invm i) ∧ 0 < β ∧ 0 < Q
+```
+
+### MD.Ch08.kineticTwice (Blueprint/Ch08.lean:65)
+原文件上下文：
+```lean
+open Set Filter MeasureTheory ProbabilityTheory MolecularDynamics
+open scoped BigOperators Topology ContDiff ENNReal NNReal Matrix
+variable {Ω : Type*} [MeasurableSpace Ω]
+variable {n : ℕ}
+```
+```lean
+def kineticTwice (invm p : Vec n) : ℝ := ∑ i, invm i * p i ^ 2
+```
+
+### MD.Ch08.nhField (Blueprint/Ch08.lean:66)
+原文件上下文：
+```lean
+open Set Filter MeasureTheory ProbabilityTheory MolecularDynamics
+open scoped BigOperators Topology ContDiff ENNReal NNReal Matrix
+variable {Ω : Type*} [MeasurableSpace Ω]
+variable {n : ℕ}
+```
+```lean
+def nhField (invm : Vec n) (U : Vec n → ℝ) (β Q : ℝ)
+    (z : Phase n × ℝ) : Phase n × ℝ :=
+  ((fun i ↦ invm i * z.1.2 i, fun i ↦ -gradient U z.1.1 i - z.2 * z.1.2 i),
+   (kineticTwice invm z.1.2 - (n : ℝ)/β)/Q)
+```
+
+### MD.Ch08.nhWeight (Blueprint/Ch08.lean:77)
+原文件上下文：
+```lean
+open Set Filter MeasureTheory ProbabilityTheory MolecularDynamics
+open scoped BigOperators Topology ContDiff ENNReal NNReal Matrix
+variable {Ω : Type*} [MeasurableSpace Ω]
+variable {n : ℕ}
+```
+```lean
+def nhWeight (invm : Vec n) (U : Vec n → ℝ) (β Q : ℝ) (z : Phase n × ℝ) : ℝ :=
+  Real.exp (-β * (kineticTwice invm z.1.2 / 2 + U z.1.1 + Q*z.2^2/2))
+```
+
+### MD.Ch08.nhBathField (Blueprint/Ch08.lean:79)
+原文件上下文：
+```lean
+open Set Filter MeasureTheory ProbabilityTheory MolecularDynamics
+open scoped BigOperators Topology ContDiff ENNReal NNReal Matrix
+variable {Ω : Type*} [MeasurableSpace Ω]
+variable {n : ℕ}
+```
+```lean
+def nhBathField (invm : Vec n) (β Q : ℝ) (z : Phase n × ℝ) : Phase n × ℝ :=
+  ((0, fun i ↦ -z.2 * z.1.2 i), (kineticTwice invm z.1.2 - (n : ℝ)/β)/Q)
+```
+
+### MD.Ch08.nhField_split (Blueprint/Ch08.lean:81)
+原文件上下文：
+```lean
+open Set Filter MeasureTheory ProbabilityTheory MolecularDynamics
+open scoped BigOperators Topology ContDiff ENNReal NNReal Matrix
+variable {Ω : Type*} [MeasurableSpace Ω]
+variable {n : ℕ}
+```
+```lean
+theorem nhField_split (invm : Vec n) (U : Vec n → ℝ) (β Q : ℝ) (z : Phase n × ℝ) :
+  nhField invm U β Q z = (hamiltonianField invm U z.1, (0 : ℝ)) + nhBathField invm β Q z
+```
+
+### MD.Ch08.nhWeight_stationary (Blueprint/Ch08.lean:84)
+原文件上下文：
+```lean
+open Set Filter MeasureTheory ProbabilityTheory MolecularDynamics
+open scoped BigOperators Topology ContDiff ENNReal NNReal Matrix
+variable {Ω : Type*} [MeasurableSpace Ω]
+variable {n : ℕ}
+```
+```lean
+theorem nhWeight_stationary (invm : Vec n) (U : Vec n → ℝ) (β Q : ℝ)
+    (hp : thermostatParameters invm β Q) (hU : ContDiff ℝ 2 U) :
+    textbookLiouvilleStationary (nhField invm U β Q) (nhWeight invm U β Q)
+```
+
+### MolecularDynamics.Chapter02Review.Q (MolecularDynamics/Chapter02/ReviewDefinitions.lean:17)
+原文件上下文：
+```lean
+open Set Filter Matrix
+open scoped BigOperators Topology
+```
+```lean
+abbrev Q (n : ℕ) := Fin n → ℝ
+```
+
+### MolecularDynamics.Chapter04Review.Q (MolecularDynamics/Chapter04/ReviewDefinitions.lean:15)
+原文件上下文：
+```lean
+open Set Matrix
+open scoped BigOperators Topology Matrix.Norms.Elementwise
+```
+```lean
+abbrev Q (n : ℕ) := Fin n → ℝ
+```
+
+### MolecularDynamics.Chapter05Review.E (MolecularDynamics/Chapter05/ReviewDefinitions.lean:18)
+原文件上下文：
+```lean
+open Set Filter MeasureTheory Matrix
+open scoped BigOperators Topology ENNReal
+```
+```lean
+abbrev E (n : ℕ) := EuclideanSpace ℝ (Fin n)
+```
+
+### MolecularDynamics.textbookDivergence (MolecularDynamics/Chapter08/ThermostatDensity.lean:18)
+原文件上下文：
+```lean
+open Matrix
+open scoped BigOperators Topology
+variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E] [FiniteDimensional ℝ E]
+variable {G : Type*} [NormedAddCommGroup G] [NormedSpace ℝ G] [FiniteDimensional ℝ G]
+```
+```lean
+noncomputable def textbookDivergence (F : E → E) (z : E) : ℝ :=
+  LinearMap.trace ℝ E (fderiv ℝ F z).toLinearMap
+```
+
+### MolecularDynamics.textbookLiouvilleStationary (MolecularDynamics/Chapter08/ThermostatDensity.lean:22)
+原文件上下文：
+```lean
+open Matrix
+open scoped BigOperators Topology
+variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E] [FiniteDimensional ℝ E]
+variable {G : Type*} [NormedAddCommGroup G] [NormedSpace ℝ G] [FiniteDimensional ℝ G]
+```
+```lean
+def textbookLiouvilleStationary (F : E → E) (ρ : E → ℝ) : Prop :=
+  ∀ z, textbookDivergence (fun x ↦ ρ x • F x) z = 0
+```

@@ -1,0 +1,59 @@
+{
+  "batch": "BATCH01",
+  "subtask": "BATCH01c",
+  "source_ids": [
+    "MD-8.1-ExtendedDensity"
+  ],
+  "input_sha256": {
+    "Blueprint/Ch08.lean": "2800812fadd8e2557013f1941e4570401f7903d46f44baf07e23d5531da22a72",
+    "blueprint/ch08/ch08_source.json": "9b994b0f64cd22c85c2ad4123fbfdbd064bd7a6d070fe13b721794432f9f7a63",
+    "BATCH01c_PAGES.pdf": "ee1161cb2e10eaa109f4eda484e8579e1fcd04284e118995de5c427b5e8c72f7"
+  },
+  "page_mapping": [
+    {
+      "attachment_page": 1,
+      "original_pdf_page": 352,
+      "printed_page": 331
+    }
+  ],
+  "definition_excerpts": [
+    {
+      "full_name": "MD.Ch08.extendedDensity",
+      "kind": "def",
+      "path": "Blueprint/Ch08.lean",
+      "line": 48,
+      "code_sha256": "5412ea99fd4d2aa7b029bdb711691015c9cee14f3cb405d6913bc16b6f916aea"
+    },
+    {
+      "full_name": "MD.Ch08.extendedAverage",
+      "kind": "theorem",
+      "path": "Blueprint/Ch08.lean",
+      "line": 49,
+      "code_sha256": "0bf920b35e5898783a2c868a7c5e89b1107c06445e69a0bc6d451214f9638161"
+    },
+    {
+      "full_name": "MolecularDynamics.Chapter05Review.E",
+      "kind": "abbrev",
+      "path": "MolecularDynamics/Chapter05/ReviewDefinitions.lean",
+      "line": 18,
+      "code_sha256": "b497c8ba7f01b62a3147d9ae65652772ff3f81e57aa19b116f1283fef7a3cc60"
+    }
+  ],
+  "validation": {
+    "project_constant_closure": "PASS",
+    "missing_project_definitions": [],
+    "full_page_render_equality_dpi": 72,
+    "website_submitted": false
+  },
+  "files": {
+    "PASTE.txt": {
+      "bytes": 9217,
+      "sha256": "607e7eccbf22a14a8946ff586785a94015992112151fe95af48cbae935af80c5"
+    },
+    "BATCH01c_PAGES.pdf": {
+      "bytes": 78010,
+      "sha256": "ee1161cb2e10eaa109f4eda484e8579e1fcd04284e118995de5c427b5e8c72f7"
+    }
+  },
+  "total_task_bytes": 89071
+}

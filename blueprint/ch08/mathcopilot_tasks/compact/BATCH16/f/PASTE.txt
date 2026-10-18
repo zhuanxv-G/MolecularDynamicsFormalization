@@ -1,0 +1,309 @@
+以附件/PASTE 为准，忽略 /workspace 旧文件；Mathlib 定义按标准含义采信。
+本任务只审本条：原文转录、对象资格、定义体、量词、全部结论及[EXTRA]是否一致；Lean编译不代替语义审阅。
+Lean/Mathlib均4.34.0。原页PDF映射：[415]；印刷页=[394].
+input_sha256请原样回显：
+{
+  "Blueprint/Ch08.lean": "2800812fadd8e2557013f1941e4570401f7903d46f44baf07e23d5531da22a72",
+  "blueprint/ch08/ch08_source.json": "9b994b0f64cd22c85c2ad4123fbfdbd064bd7a6d070fe13b721794432f9f7a63",
+  "BATCH16f_PAGES.pdf": "35d97dc9d1412d1b84ca82bf78508fc0277a3d420e61725f350d0d67941c0161"
+}
+用代码将JSON对象(batch,input_sha256,items)写到 /workspace/.mathcopilot/reviews/ch08/BATCH16f_review.json；items仅含本source_id。
+items字段：source_id、verdict(PASS/FAIL/NEEDS_HUMAN)、transcription、semantic_review、counterexample、suggested_fix、printed_version、corrected_version。逐版区分原文疑误和修正版结论；缺材料必须具体指出，不猜测。写后json.loads自检，最后仅回复路径及统计。
+
+## 原文JSON
+```json
+{
+  "source_id": "MD-8.9.3-PairwiseNoseHoover",
+  "kind": "definition",
+  "label": null,
+  "section": "8.9.3",
+  "printed_page": "394",
+  "pdf_page": "415",
+  "statement_latex": "dqᵢ=pᵢdt/mᵢ, dpᵢ=Fᶜᵢdt+ξ F̃ᴰᵢdt, dξ=Gdt; G=Q⁻¹Σᵢ<ⱼωᴰ(rᵢⱼ)[(vᵢⱼ·eᵢⱼ)²−θ/mred]. (8.108),(8.109).",
+  "statement_verbatim": "394\n8\nExtended Variable Methods\nwhich the stochastic terms are eliminated and replaced by a kinetic energy control\nlaw based only on relative velocities of interacting pairs. We refer to this as the\npairwise Nosé-Hoover (PNH) thermostat; it is designed to conserve the momentum\nand is also Galilean-invariant. This method is particularly useful in nonequilibrium\nmolecular dynamics (NEMD) applications where the total momentum needs to be\npreserved under thermostatting [342].\nThe equations of motion of the PNH thermostat (for particle i) is given by\ndqi D m\u00021\ni pidt;\ndpi D FC\ni .q/dt C \u0012 QF\nD\ni dt;\nd\u0012 D G.q; p/dt;\n(8.108)\nwhere \u0012 is a dynamical variable, the dissipative/driving coupling term is deﬁned as\nQF\nD\ni D\nN\nX\njD1\nQF\nD\nij ;\nQF\nD\nij D \u0003!D.rij/.Oqij \u0002 vij/Oqij;\n(i.e. \n D 1 in the dissipative term for DPD), and G.q; p/ is the instantaneous accu-\nmulated deviation of the kinetic temperature away from the target temperature [8]\nG.q; p/ D \u0006\u00021 X\ni\nX\nj>i\n!D.rij/\nh\u0004\nvij \u0002 Oqij\n\u00052 \u0003 kBT=mij\ni\n;\n(8.109)\nwhere \u0006 is a coupling parameter which is referred to as the “thermal mass”. The\ninvariant distribution is deﬁned in the .q; p; \u0012/ extended space, with density\nO\u0005ˇ.q; p; \u0012/ D OZ\u00021 exp .\u0003ˇH.q; p// exp\n\u0004\n\u0003ˇ\u0006\u00122=2\n\u0005\n;\n(8.110)\nwhere OZ is a suitable normalizing coefﬁcient so that the density integrates to one\nover the entire accessible space (subject, as usual, to the conservation of momentum\nconstraint).\nA nonsymmetric integration algorithm was applied in the original paper [8] to\nsolve the system.\n8.9.4\nPairwise Nosé-Hoover-Langevin Thermostat\nTo improve ergodicity, it is intuitive to employ the same stochastic device used\nin the Nosé-Hoover-Langevin method, namely linear (OU-type) stochastic terms\nintroduced in the equation for the auxiliary variable \u0012. If the OU process is properly\ntuned the extended canonical distribution with density O\u0005ˇ will still be preserved.\n",
+  "verbatim_scope": "完整对应原页文字层，逐字保留；本条数学成分由statement_latex及statement_scope定位。",
+  "proof_latex": null,
+  "proof_note": "对应原页推导逐字保存在statement_verbatim/original_page_text；排版以原页PDF为准。",
+  "original_page_text": [
+    {
+      "pdf_page": 415,
+      "printed_page": 394,
+      "text": "394\n8\nExtended Variable Methods\nwhich the stochastic terms are eliminated and replaced by a kinetic energy control\nlaw based only on relative velocities of interacting pairs. We refer to this as the\npairwise Nosé-Hoover (PNH) thermostat; it is designed to conserve the momentum\nand is also Galilean-invariant. This method is particularly useful in nonequilibrium\nmolecular dynamics (NEMD) applications where the total momentum needs to be\npreserved under thermostatting [342].\nThe equations of motion of the PNH thermostat (for particle i) is given by\ndqi D m\u00021\ni pidt;\ndpi D FC\ni .q/dt C \u0012 QF\nD\ni dt;\nd\u0012 D G.q; p/dt;\n(8.108)\nwhere \u0012 is a dynamical variable, the dissipative/driving coupling term is deﬁned as\nQF\nD\ni D\nN\nX\njD1\nQF\nD\nij ;\nQF\nD\nij D \u0003!D.rij/.Oqij \u0002 vij/Oqij;\n(i.e. \n D 1 in the dissipative term for DPD), and G.q; p/ is the instantaneous accu-\nmulated deviation of the kinetic temperature away from the target temperature [8]\nG.q; p/ D \u0006\u00021 X\ni\nX\nj>i\n!D.rij/\nh\u0004\nvij \u0002 Oqij\n\u00052 \u0003 kBT=mij\ni\n;\n(8.109)\nwhere \u0006 is a coupling parameter which is referred to as the “thermal mass”. The\ninvariant distribution is deﬁned in the .q; p; \u0012/ extended space, with density\nO\u0005ˇ.q; p; \u0012/ D OZ\u00021 exp .\u0003ˇH.q; p// exp\n\u0004\n\u0003ˇ\u0006\u00122=2\n\u0005\n;\n(8.110)\nwhere OZ is a suitable normalizing coefﬁcient so that the density integrates to one\nover the entire accessible space (subject, as usual, to the conservation of momentum\nconstraint).\nA nonsymmetric integration algorithm was applied in the original paper [8] to\nsolve the system.\n8.9.4\nPairwise Nosé-Hoover-Langevin Thermostat\nTo improve ergodicity, it is intuitive to employ the same stochastic device used\nin the Nosé-Hoover-Langevin method, namely linear (OU-type) stochastic terms\nintroduced in the equation for the auxiliary variable \u0012. If the OU process is properly\ntuned the extended canonical distribution with density O\u0005ˇ will still be preserved.\n"
+    }
+  ],
+  "numbered_equations": [
+    "8.108",
+    "8.109"
+  ],
+  "transcription_note": "文字层逐字保留；数学排版另行转写，原页中的特殊字形编码不静默替换。PDF420仅取Exercises之前。",
+  "context_notation": [],
+  "extra_assumptions": [
+    "Q为原文μ，F̃ᴰ是γ=1的相对速度耗散；排除i=j，物理轨道另需非碰撞且ωᴰ≥0。",
+    "只落盘实际ODE规格；Galilean不变性、总动量沿轨道守恒、存在唯一性及遍历性列缺口。"
+  ],
+  "issues": [],
+  "statement_scope": "PNH场、反馈和正质量/正热浴质量的ODE规格。",
+  "lean_decl": "MD.Ch08.PNHLState",
+  "lean_declarations": [
+    "MD.Ch08.PNHLState",
+    "MD.Ch08.pairwiseFeedback",
+    "MD.Ch08.pnhDrift",
+    "MD.Ch08.isPNHSolution"
+  ],
+  "source_page_verification": "见source_page_checks.json，已目视核对本条原页。",
+  "repair_log": [],
+  "documented_priors": []
+}
+```
+
+## 完整本条Lean
+```lean
+abbrev PNHLState (N d : ℕ) := ParticlePhase N d × ℝ
+def pairwiseFeedback {N d : ℕ} (m : Fin N → ℝ) (θ Q : ℝ) (wD : ℝ → ℝ)
+    (q p : ParticleConfig N d) : ℝ :=
+  (∑ i, ∑ j ∈ Finset.univ.filter (fun j ↦ i < j), wD (pairDistance q i j)*
+    ((dot (relativeVelocity m p i j) (pairDirection q i j))^2-θ/reducedMass8 (m i) (m j)))/Q
+def pnhDrift {N d : ℕ} (m : Fin N → ℝ) (α rc θ Q : ℝ) (wD : ℝ → ℝ)
+    (z : PNHLState N d) : PNHLState N d :=
+  (((fun i ↦ (m i)⁻¹ • z.1.2 i),
+    dpdConservative α rc z.1.1+z.2 • dpdDissipative m 1 wD z.1.1 z.1.2),
+   pairwiseFeedback m θ Q wD z.1.1 z.1.2)
+def isPNHSolution {N d : ℕ} (m : Fin N → ℝ) (α rc θ Q : ℝ) (wD : ℝ → ℝ)
+    (X : ℝ → PNHLState N d) : Prop :=
+  0 < N ∧ 0 < d ∧ (∀ i, 0 < m i) ∧ 0 < rc ∧ 0 < θ ∧ 0 < Q ∧
+  ∀ t, 0 ≤ t → HasDerivWithinAt X (pnhDrift m α rc θ Q wD (X t)) (Ici 0) t
+```
+
+## 项目依赖定义体及选择规格
+以下def/abbrev/structure完整保留；定理列出完整类型，Mathlib标准定义无需摘录。
+
+### MD.Ch08.Vec (Blueprint/Ch08.lean:17)
+原文件上下文：
+```lean
+open Set Filter MeasureTheory ProbabilityTheory MolecularDynamics
+open scoped BigOperators Topology ContDiff ENNReal NNReal Matrix
+variable {Ω : Type*} [MeasurableSpace Ω]
+variable {n : ℕ}
+```
+```lean
+abbrev Vec (n : ℕ) := Fin n → ℝ
+```
+
+### MD.Ch08.dot (Blueprint/Ch08.lean:19)
+原文件上下文：
+```lean
+open Set Filter MeasureTheory ProbabilityTheory MolecularDynamics
+open scoped BigOperators Topology ContDiff ENNReal NNReal Matrix
+variable {Ω : Type*} [MeasurableSpace Ω]
+variable {n : ℕ}
+```
+```lean
+def dot (v w : Vec n) : ℝ := ∑ i, v i * w i
+```
+
+### MD.Ch08.ParticleConfig (Blueprint/Ch08.lean:1334)
+原文件上下文：
+```lean
+open Set Filter MeasureTheory ProbabilityTheory MolecularDynamics
+open scoped BigOperators Topology ContDiff ENNReal NNReal Matrix
+variable {Ω : Type*} [MeasurableSpace Ω]
+variable {n : ℕ}
+```
+```lean
+abbrev ParticleConfig (N d : ℕ) := Fin N → Vec d
+```
+
+### MD.Ch08.ParticlePhase (Blueprint/Ch08.lean:1335)
+原文件上下文：
+```lean
+open Set Filter MeasureTheory ProbabilityTheory MolecularDynamics
+open scoped BigOperators Topology ContDiff ENNReal NNReal Matrix
+variable {Ω : Type*} [MeasurableSpace Ω]
+variable {n : ℕ}
+```
+```lean
+abbrev ParticlePhase (N d : ℕ) := ParticleConfig N d × ParticleConfig N d
+```
+
+### MD.Ch08.pairDistance (Blueprint/Ch08.lean:1349)
+原文件上下文：
+```lean
+open Set Filter MeasureTheory ProbabilityTheory MolecularDynamics
+open scoped BigOperators Topology ContDiff ENNReal NNReal Matrix
+variable {Ω : Type*} [MeasurableSpace Ω]
+variable {n : ℕ}
+```
+```lean
+def pairDistance {N d : ℕ} (q : ParticleConfig N d) (i j : Fin N) : ℝ :=
+  Real.sqrt (dot (q i-q j) (q i-q j))
+```
+
+### MD.Ch08.pairDirection (Blueprint/Ch08.lean:1351)
+原文件上下文：
+```lean
+open Set Filter MeasureTheory ProbabilityTheory MolecularDynamics
+open scoped BigOperators Topology ContDiff ENNReal NNReal Matrix
+variable {Ω : Type*} [MeasurableSpace Ω]
+variable {n : ℕ}
+```
+```lean
+def pairDirection {N d : ℕ} (q : ParticleConfig N d) (i j : Fin N) : Vec d :=
+  (pairDistance q i j)⁻¹ • (q i-q j)
+```
+
+### MD.Ch08.dpdPairConservative (Blueprint/Ch08.lean:1354)
+原文件上下文：
+```lean
+open Set Filter MeasureTheory ProbabilityTheory MolecularDynamics
+open scoped BigOperators Topology ContDiff ENNReal NNReal Matrix
+variable {Ω : Type*} [MeasurableSpace Ω]
+variable {n : ℕ}
+```
+```lean
+def dpdPairConservative {N d : ℕ} (α rc : ℝ) (q : ParticleConfig N d) (i j : Fin N) : Vec d :=
+  if pairDistance q i j < rc then (α*(1-pairDistance q i j/rc)) • pairDirection q i j else 0
+```
+
+### MD.Ch08.dpdConservative (Blueprint/Ch08.lean:1358)
+原文件上下文：
+```lean
+open Set Filter MeasureTheory ProbabilityTheory MolecularDynamics
+open scoped BigOperators Topology ContDiff ENNReal NNReal Matrix
+variable {Ω : Type*} [MeasurableSpace Ω]
+variable {n : ℕ}
+```
+```lean
+def dpdConservative {N d : ℕ} (α rc : ℝ) (q : ParticleConfig N d) : ParticleConfig N d :=
+  fun i ↦ ∑ j ∈ Finset.univ.filter (fun j ↦ j ≠ i), dpdPairConservative α rc q i j
+```
+
+### MD.Ch08.relativeVelocity (Blueprint/Ch08.lean:1372)
+原文件上下文：
+```lean
+open Set Filter MeasureTheory ProbabilityTheory MolecularDynamics
+open scoped BigOperators Topology ContDiff ENNReal NNReal Matrix
+variable {Ω : Type*} [MeasurableSpace Ω]
+variable {n : ℕ}
+```
+```lean
+def relativeVelocity {N d : ℕ} (m : Fin N → ℝ) (p : ParticleConfig N d) (i j : Fin N) : Vec d :=
+  (m i)⁻¹ • p i-(m j)⁻¹ • p j
+```
+
+### MD.Ch08.dpdPairDissipative (Blueprint/Ch08.lean:1374)
+原文件上下文：
+```lean
+open Set Filter MeasureTheory ProbabilityTheory MolecularDynamics
+open scoped BigOperators Topology ContDiff ENNReal NNReal Matrix
+variable {Ω : Type*} [MeasurableSpace Ω]
+variable {n : ℕ}
+```
+```lean
+def dpdPairDissipative {N d : ℕ} (m : Fin N → ℝ) (γ : ℝ) (wD : ℝ → ℝ)
+    (q p : ParticleConfig N d) (i j : Fin N) : Vec d :=
+  (-γ*wD (pairDistance q i j)*dot (pairDirection q i j) (relativeVelocity m p i j)) • pairDirection q i j
+```
+
+### MD.Ch08.dpdDissipative (Blueprint/Ch08.lean:1379)
+原文件上下文：
+```lean
+open Set Filter MeasureTheory ProbabilityTheory MolecularDynamics
+open scoped BigOperators Topology ContDiff ENNReal NNReal Matrix
+variable {Ω : Type*} [MeasurableSpace Ω]
+variable {n : ℕ}
+```
+```lean
+def dpdDissipative {N d : ℕ} (m : Fin N → ℝ) (γ : ℝ) (wD : ℝ → ℝ)
+    (q p : ParticleConfig N d) : ParticleConfig N d :=
+  fun i ↦ ∑ j ∈ Finset.univ.filter (fun j ↦ j ≠ i), dpdPairDissipative m γ wD q p i j
+```
+
+### MD.Ch08.reducedMass8 (Blueprint/Ch08.lean:1561)
+原文件上下文：
+```lean
+open Set Filter MeasureTheory ProbabilityTheory MolecularDynamics
+open scoped BigOperators Topology ContDiff ENNReal NNReal Matrix
+variable {Ω : Type*} [MeasurableSpace Ω]
+variable {n : ℕ}
+```
+```lean
+def reducedMass8 (mi mj : ℝ) : ℝ := mi*mj/(mi+mj)
+```
+
+### MD.Ch08.PNHLState (Blueprint/Ch08.lean:1581)
+原文件上下文：
+```lean
+open Set Filter MeasureTheory ProbabilityTheory MolecularDynamics
+open scoped BigOperators Topology ContDiff ENNReal NNReal Matrix
+variable {Ω : Type*} [MeasurableSpace Ω]
+variable {n : ℕ}
+```
+```lean
+abbrev PNHLState (N d : ℕ) := ParticlePhase N d × ℝ
+```
+
+### MD.Ch08.pairwiseFeedback (Blueprint/Ch08.lean:1582)
+原文件上下文：
+```lean
+open Set Filter MeasureTheory ProbabilityTheory MolecularDynamics
+open scoped BigOperators Topology ContDiff ENNReal NNReal Matrix
+variable {Ω : Type*} [MeasurableSpace Ω]
+variable {n : ℕ}
+```
+```lean
+def pairwiseFeedback {N d : ℕ} (m : Fin N → ℝ) (θ Q : ℝ) (wD : ℝ → ℝ)
+    (q p : ParticleConfig N d) : ℝ :=
+  (∑ i, ∑ j ∈ Finset.univ.filter (fun j ↦ i < j), wD (pairDistance q i j)*
+    ((dot (relativeVelocity m p i j) (pairDirection q i j))^2-θ/reducedMass8 (m i) (m j)))/Q
+```
+
+### MD.Ch08.pnhDrift (Blueprint/Ch08.lean:1586)
+原文件上下文：
+```lean
+open Set Filter MeasureTheory ProbabilityTheory MolecularDynamics
+open scoped BigOperators Topology ContDiff ENNReal NNReal Matrix
+variable {Ω : Type*} [MeasurableSpace Ω]
+variable {n : ℕ}
+```
+```lean
+def pnhDrift {N d : ℕ} (m : Fin N → ℝ) (α rc θ Q : ℝ) (wD : ℝ → ℝ)
+    (z : PNHLState N d) : PNHLState N d :=
+  (((fun i ↦ (m i)⁻¹ • z.1.2 i),
+    dpdConservative α rc z.1.1+z.2 • dpdDissipative m 1 wD z.1.1 z.1.2),
+   pairwiseFeedback m θ Q wD z.1.1 z.1.2)
+```
+
+### MD.Ch08.isPNHSolution (Blueprint/Ch08.lean:1591)
+原文件上下文：
+```lean
+open Set Filter MeasureTheory ProbabilityTheory MolecularDynamics
+open scoped BigOperators Topology ContDiff ENNReal NNReal Matrix
+variable {Ω : Type*} [MeasurableSpace Ω]
+variable {n : ℕ}
+```
+```lean
+def isPNHSolution {N d : ℕ} (m : Fin N → ℝ) (α rc θ Q : ℝ) (wD : ℝ → ℝ)
+    (X : ℝ → PNHLState N d) : Prop :=
+  0 < N ∧ 0 < d ∧ (∀ i, 0 < m i) ∧ 0 < rc ∧ 0 < θ ∧ 0 < Q ∧
+  ∀ t, 0 ≤ t → HasDerivWithinAt X (pnhDrift m α rc θ Q wD (X t)) (Ici 0) t
+```
+
+### MolecularDynamics.Chapter02Review.Q (MolecularDynamics/Chapter02/ReviewDefinitions.lean:17)
+原文件上下文：
+```lean
+open Set Filter Matrix
+open scoped BigOperators Topology
+```
+```lean
+abbrev Q (n : ℕ) := Fin n → ℝ
+```
+
+### MolecularDynamics.Chapter04Review.Q (MolecularDynamics/Chapter04/ReviewDefinitions.lean:15)
+原文件上下文：
+```lean
+open Set Matrix
+open scoped BigOperators Topology Matrix.Norms.Elementwise
+```
+```lean
+abbrev Q (n : ℕ) := Fin n → ℝ
+```

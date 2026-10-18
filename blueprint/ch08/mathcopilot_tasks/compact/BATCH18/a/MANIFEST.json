@@ -1,0 +1,66 @@
+{
+  "batch": "BATCH18",
+  "subtask": "BATCH18a",
+  "source_ids": [
+    "MD-8.10-NHLTotalMomentumSign"
+  ],
+  "input_sha256": {
+    "Blueprint/Ch08.lean": "2800812fadd8e2557013f1941e4570401f7903d46f44baf07e23d5531da22a72",
+    "blueprint/ch08/ch08_source.json": "9b994b0f64cd22c85c2ad4123fbfdbd064bd7a6d070fe13b721794432f9f7a63",
+    "BATCH18a_PAGES.pdf": "b8a8c31771b27a41d6b86d67d7d59c6f860493e92e7a09ec0b32a3b730cf8b62"
+  },
+  "page_mapping": [
+    {
+      "attachment_page": 1,
+      "original_pdf_page": 419,
+      "printed_page": 398
+    }
+  ],
+  "definition_excerpts": [
+    {
+      "full_name": "MD.Ch08.nhlMomentumFactor",
+      "kind": "def",
+      "path": "Blueprint/Ch08.lean",
+      "line": 1731,
+      "code_sha256": "bb8583a72ac5e92a17ac01a6f5616211d317adf0a881f7671c67832ed989d644"
+    },
+    {
+      "full_name": "MD.Ch08.nhlMomentumFactor_pos",
+      "kind": "theorem",
+      "path": "Blueprint/Ch08.lean",
+      "line": 1732,
+      "code_sha256": "0254753d1de93030e8107818a083d7fe019458b94fe3a1f98659c023bdef7533"
+    },
+    {
+      "full_name": "MD.Ch08.nhlMomentum_sign",
+      "kind": "theorem",
+      "path": "Blueprint/Ch08.lean",
+      "line": 1733,
+      "code_sha256": "0d5889ab0ef224a2cd97a85c8562768dda1f818ccee973be0dd1208d733bb97b"
+    },
+    {
+      "full_name": "MD.Ch08.nhlTotalMomentum_odeSolution",
+      "kind": "theorem",
+      "path": "Blueprint/Ch08.lean",
+      "line": 1746,
+      "code_sha256": "3b562e1b0e0b2068bfe328ff17c9dd970d4f08eac710974ea91fdb0b4a932851"
+    }
+  ],
+  "validation": {
+    "project_constant_closure": "PASS",
+    "missing_project_definitions": [],
+    "full_page_render_equality_dpi": 72,
+    "website_submitted": false
+  },
+  "files": {
+    "PASTE.txt": {
+      "bytes": 10528,
+      "sha256": "f73ff4d8b62bf9a7c34f0fa7e87c5a14ae44afbb0eeba5fb1565caa6016394c7"
+    },
+    "BATCH18a_PAGES.pdf": {
+      "bytes": 106274,
+      "sha256": "b8a8c31771b27a41d6b86d67d7d59c6f860493e92e7a09ec0b32a3b730cf8b62"
+    }
+  },
+  "total_task_bytes": 118877
+}

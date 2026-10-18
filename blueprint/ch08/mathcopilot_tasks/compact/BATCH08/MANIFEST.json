@@ -1,0 +1,47 @@
+{
+  "batch": "BATCH08",
+  "subtasks": [
+    {
+      "subtask": "BATCH08a",
+      "source_id": "MD-8.5-SLSConservation",
+      "path": "blueprint/ch08/mathcopilot_tasks/compact/BATCH08/a",
+      "bytes": 98427,
+      "manifest_sha256": "5f955cc123b57f73cda17a05edbe2fca168878414e8a114a0ab0b73f22f3b98b"
+    },
+    {
+      "subtask": "BATCH08b",
+      "source_id": "MD-8.5-SLSLeapfrog",
+      "path": "blueprint/ch08/mathcopilot_tasks/compact/BATCH08/b",
+      "bytes": 107940,
+      "manifest_sha256": "b0daae9b6bb86905a0ca0645dcc7f31eb8510bf51588e523f4058281955903ad"
+    },
+    {
+      "subtask": "BATCH08c",
+      "source_id": "MD-8.5-SLSDoubleWell",
+      "path": "blueprint/ch08/mathcopilot_tasks/compact/BATCH08/c",
+      "bytes": 78808,
+      "manifest_sha256": "0529e8460f4cf81125b520927f56cc70dad036f20f3a09e9583536c17fcb08a9"
+    },
+    {
+      "subtask": "BATCH08d",
+      "source_id": "MD-8.6-IsokineticField",
+      "path": "blueprint/ch08/mathcopilot_tasks/compact/BATCH08/d",
+      "bytes": 99949,
+      "manifest_sha256": "8d2a42c4f095b4187b26db99c2772281ca827e7a89b2d03c48e474bed5439c5b"
+    },
+    {
+      "subtask": "BATCH08e",
+      "source_id": "MD-8.6-IsokineticProjector",
+      "path": "blueprint/ch08/mathcopilot_tasks/compact/BATCH08/e",
+      "bytes": 80679,
+      "manifest_sha256": "70920d929bea479b713090f97ee12383ded0d11de3e60c09b06800ea3e81087b"
+    },
+    {
+      "subtask": "BATCH08f",
+      "source_id": "MD-8.6-IsokineticDivergencePrinted",
+      "path": "blueprint/ch08/mathcopilot_tasks/compact/BATCH08/f",
+      "bytes": 94050,
+      "manifest_sha256": "898f387149a2cd3c875b901b50e89118959b2df3eefdf53b13f066df1376cfcf"
+    }
+  ]
+}

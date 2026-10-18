@@ -1,0 +1,47 @@
+{
+  "batch": "BATCH10",
+  "subtasks": [
+    {
+      "subtask": "BATCH10a",
+      "source_id": "MD-8.6.2-SINBracketRank",
+      "path": "blueprint/ch08/mathcopilot_tasks/compact/BATCH10/a",
+      "bytes": 129148,
+      "manifest_sha256": "94dd806e4a1609fbf059a76171f3e4e04d36c6c0af4557b65e481ae20669dccf"
+    },
+    {
+      "subtask": "BATCH10b",
+      "source_id": "MD-8.6.2-SINLyapunov",
+      "path": "blueprint/ch08/mathcopilot_tasks/compact/BATCH10/b",
+      "bytes": 117542,
+      "manifest_sha256": "dda3c1a655376b79507a460ab3af32329f8d2c32ac2718c022df75e9c2e2ece6"
+    },
+    {
+      "subtask": "BATCH10c",
+      "source_id": "MD-8.6.3-SINForceSplitting",
+      "path": "blueprint/ch08/mathcopilot_tasks/compact/BATCH10/c",
+      "bytes": 95058,
+      "manifest_sha256": "9d1fea2d656f68cfb44955188450b669cebe65ea6bee9ae997c5c81b5e7e9b0f"
+    },
+    {
+      "subtask": "BATCH10d",
+      "source_id": "MD-8.6.3-SINRAlgorithm",
+      "path": "blueprint/ch08/mathcopilot_tasks/compact/BATCH10/d",
+      "bytes": 81961,
+      "manifest_sha256": "7d5d2ba8c5b675ec9e4eea32b464c20626614d86dc056df75fe14b9ffc0f5b25"
+    },
+    {
+      "subtask": "BATCH10e",
+      "source_id": "MD-8.6.3-SINNoseSubsplitting",
+      "path": "blueprint/ch08/mathcopilot_tasks/compact/BATCH10/e",
+      "bytes": 71165,
+      "manifest_sha256": "d55ad1526ba71622a855fe5b8dfd5543a0cbbdecb232b44d15d9863102ffd0a9"
+    },
+    {
+      "subtask": "BATCH10f",
+      "source_id": "MD-8.6.3-SINForceExactPrinted",
+      "path": "blueprint/ch08/mathcopilot_tasks/compact/BATCH10/f",
+      "bytes": 73721,
+      "manifest_sha256": "0dafa9a22f93fdaf9e500671e0c44e1a7690574b974a5812ae8bb2f9c89f79b9"
+    }
+  ]
+}

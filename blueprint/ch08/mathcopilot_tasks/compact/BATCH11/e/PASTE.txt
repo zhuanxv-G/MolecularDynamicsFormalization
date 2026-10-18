@@ -1,0 +1,197 @@
+以附件/PASTE 为准，忽略 /workspace 旧文件；Mathlib 定义按标准含义采信。
+本任务只审本条：原文转录、对象资格、定义体、量词、全部结论及[EXTRA]是否一致；Lean编译不代替语义审阅。
+Lean/Mathlib均4.34.0。原页PDF映射：[396]；印刷页=[375].
+input_sha256请原样回显：
+{
+  "Blueprint/Ch08.lean": "2800812fadd8e2557013f1941e4570401f7903d46f44baf07e23d5531da22a72",
+  "blueprint/ch08/ch08_source.json": "9b994b0f64cd22c85c2ad4123fbfdbd064bd7a6d070fe13b721794432f9f7a63",
+  "BATCH11e_PAGES.pdf": "33688367e358a553df8ba7431bac59e597cbe311f6109fcee85677e984f8f7ac"
+}
+用代码将JSON对象(batch,input_sha256,items)写到 /workspace/.mathcopilot/reviews/ch08/BATCH11e_review.json；items仅含本source_id。
+items字段：source_id、verdict(PASS/FAIL/NEEDS_HUMAN)、transcription、semantic_review、counterexample、suggested_fix、printed_version、corrected_version。逐版区分原文疑误和修正版结论；缺材料必须具体指出，不猜测。写后json.loads自检，最后仅回复路径及统计。
+
+## 原文JSON
+```json
+{
+  "source_id": "MD-8.7.1-PronyMemoryODE",
+  "kind": "unnumbered_claim",
+  "label": null,
+  "section": "8.7.1",
+  "printed_page": "375",
+  "pdf_page": "396",
+  "statement_latex": "ηᵢₖ(t)=−∫₀ᵗ(cₖ/τₖ)exp(−(t−s)/τₖ)pᵢ(s)ds, dηᵢₖ=−ηᵢₖdt/τₖ−cₖpᵢdt/τₖ. Equations (8.61)–(8.64) remove the convolution history.",
+  "statement_verbatim": "8.7\nGeneralized Langevin Dynamics\n375\nFor systems in which the memory kernel decays fairly rapidly, it is not unreasonable\nto consider its approximation by a linear combination of exponential functions, a so-\ncalled Prony series:\n\n.t/ D\nkmax\nX\nkD1\nck\n\u0002k\nexp\n\u0002\n\u0003 t\n\u0002k\n\u0003\n;\nt \b 0:\n(8.60)\nThe properties of the system in the limit \u0002k ! 0 are studied in [293].\nThe use of this representation for the memory kernel allows us to replace\nthe history-dependent equations (8.57)–(8.58) by a Markovian system in a larger\ndimensional space, by introducing k additional degrees of freedom per physical\ndegree of freedom. This method obviously increases storage requirements, and,\nin large systems, it may be signiﬁcant. However, the evolution of these additional\nvariables is elementary and the overall computational cost low.\n8.7.1\nUsing an Extended Variable Representation\nWe introduce a set of extended variables whose evolution is described by standard\nBrownian motions using Ornstein-Uhlenbeck (OU) processes. For this treatment,\nlet the particle positions and momenta be enumerated as .qi; pi/, i D 1; : : : ; Nc and\ndeﬁne the extended variable, \u000fi;k.t/, associated with the kth term in the Prony series\nin interaction with the ith physical variable by\n\u000fi;k.t/ D \u0003\nt\nZ\n0\nck\n\u0002k\nexp\n\u0002\n\u0003.t \u0003 s/\n\u0002k\n\u0003\npi.s/ds:\n(8.61)\nEquations (8.57)–(8.58) can then be rewritten in the form\ndqi D m\u00021\ni pidt\n(8.62)\ndpi D Fidt C\nkmax\nX\nkD1\n\u000fi;kdt C Ridt:\n(8.63)\nWe note that \u000fi;k is the solution of an ODE of the form\nd\u000fi;k D \u0003 1\n\u0002k\n\u000fi;k.t/dt \u0003 ck\n\u0002k\npidt:\n(8.64)\nWe have thus resolved the convolution integral.\n",
+  "verbatim_scope": "完整对应原页文字层，逐字保留；本条数学成分由statement_latex及statement_scope定位。",
+  "proof_latex": null,
+  "proof_note": "对应原页推导逐字保存在statement_verbatim/original_page_text；排版以原页PDF为准。",
+  "original_page_text": [
+    {
+      "pdf_page": 396,
+      "printed_page": 375,
+      "text": "8.7\nGeneralized Langevin Dynamics\n375\nFor systems in which the memory kernel decays fairly rapidly, it is not unreasonable\nto consider its approximation by a linear combination of exponential functions, a so-\ncalled Prony series:\n\n.t/ D\nkmax\nX\nkD1\nck\n\u0002k\nexp\n\u0002\n\u0003 t\n\u0002k\n\u0003\n;\nt \b 0:\n(8.60)\nThe properties of the system in the limit \u0002k ! 0 are studied in [293].\nThe use of this representation for the memory kernel allows us to replace\nthe history-dependent equations (8.57)–(8.58) by a Markovian system in a larger\ndimensional space, by introducing k additional degrees of freedom per physical\ndegree of freedom. This method obviously increases storage requirements, and,\nin large systems, it may be signiﬁcant. However, the evolution of these additional\nvariables is elementary and the overall computational cost low.\n8.7.1\nUsing an Extended Variable Representation\nWe introduce a set of extended variables whose evolution is described by standard\nBrownian motions using Ornstein-Uhlenbeck (OU) processes. For this treatment,\nlet the particle positions and momenta be enumerated as .qi; pi/, i D 1; : : : ; Nc and\ndeﬁne the extended variable, \u000fi;k.t/, associated with the kth term in the Prony series\nin interaction with the ith physical variable by\n\u000fi;k.t/ D \u0003\nt\nZ\n0\nck\n\u0002k\nexp\n\u0002\n\u0003.t \u0003 s/\n\u0002k\n\u0003\npi.s/ds:\n(8.61)\nEquations (8.57)–(8.58) can then be rewritten in the form\ndqi D m\u00021\ni pidt\n(8.62)\ndpi D Fidt C\nkmax\nX\nkD1\n\u000fi;kdt C Ridt:\n(8.63)\nWe note that \u000fi;k is the solution of an ODE of the form\nd\u000fi;k D \u0003 1\n\u0002k\n\u000fi;k.t/dt \u0003 ck\n\u0002k\npidt:\n(8.64)\nWe have thus resolved the convolution integral.\n"
+    }
+  ],
+  "numbered_equations": [
+    "8.61",
+    "8.62",
+    "8.63",
+    "8.64"
+  ],
+  "transcription_note": "文字层逐字保留；数学排版另行转写，原页中的特殊字形编码不静默替换。PDF420仅取Exercises之前。",
+  "context_notation": [],
+  "extra_assumptions": [
+    "p连续、τ正保证有限区间卷积合法；仅消去有限Prony历史，未声称无限Prony极限或解分布等价。"
+  ],
+  "issues": [],
+  "statement_scope": "卷积辅助定义、微分关系和有限和等式；与扩展随机解的完整等价列缺口。",
+  "lean_decl": "MD.Ch08.pronyMemory",
+  "lean_declarations": [
+    "MD.Ch08.pronyMemory",
+    "MD.Ch08.pronyMemory_derivative",
+    "MD.Ch08.pronyMomentumDrift",
+    "MD.Ch08.pronyMemory_sum"
+  ],
+  "source_page_verification": "见source_page_checks.json，已目视核对本条原页。",
+  "repair_log": [],
+  "documented_priors": []
+}
+```
+
+## 完整本条Lean
+```lean
+def pronyMemory (c τ : ℝ) (p : ℝ → ℝ) (t : ℝ) : ℝ :=
+  -∫ s in (0 : ℝ)..t, c/τ*Real.exp (-(t-s)/τ)*p s
+theorem pronyMemory_derivative (c τ : ℝ) (hτ : 0 < τ)
+    (p : ℝ → ℝ) (hp : Continuous p) (t : ℝ) :
+    HasDerivAt (pronyMemory c τ p) (-pronyMemory c τ p t/τ-c/τ*p t) t := by
+  sorry
+def pronyMomentumDrift {K : ℕ} (F : Vec n) (η : Fin K → Vec n) (R : Vec n) : Vec n :=
+  F+(∑ k, η k)+R
+theorem pronyMemory_sum {K : ℕ} (c τ : Fin K → ℝ) (p : ℝ → Vec n)
+    (hq : pronyQualification c τ) (hp : Continuous p) (t : ℝ) :
+    (∑ k, fun i ↦ pronyMemory (c k) (τ k) (fun s ↦ p s i) t) =
+      memoryDrag (scalarMemoryMatrix (n:=n) (pronyKernel c τ)) p t := by
+  sorry
+```
+
+## 项目依赖定义体及选择规格
+以下def/abbrev/structure完整保留；定理列出完整类型，Mathlib标准定义无需摘录。
+
+### MD.Ch08.Vec (Blueprint/Ch08.lean:17)
+原文件上下文：
+```lean
+open Set Filter MeasureTheory ProbabilityTheory MolecularDynamics
+open scoped BigOperators Topology ContDiff ENNReal NNReal Matrix
+variable {Ω : Type*} [MeasurableSpace Ω]
+variable {n : ℕ}
+```
+```lean
+abbrev Vec (n : ℕ) := Fin n → ℝ
+```
+
+### MD.Ch08.memoryDrag (Blueprint/Ch08.lean:932)
+原文件上下文：
+```lean
+open Set Filter MeasureTheory ProbabilityTheory MolecularDynamics
+open scoped BigOperators Topology ContDiff ENNReal NNReal Matrix
+variable {Ω : Type*} [MeasurableSpace Ω]
+variable {n : ℕ}
+```
+```lean
+def memoryDrag (Γ : ℝ → Matrix (Fin n) (Fin n) ℝ) (p : ℝ → Vec n) (t : ℝ) : Vec n :=
+  -∫ s in (0 : ℝ)..t, Γ (t-s) *ᵥ p s
+```
+
+### MD.Ch08.scalarMemoryMatrix (Blueprint/Ch08.lean:965)
+原文件上下文：
+```lean
+open Set Filter MeasureTheory ProbabilityTheory MolecularDynamics
+open scoped BigOperators Topology ContDiff ENNReal NNReal Matrix
+variable {Ω : Type*} [MeasurableSpace Ω]
+variable {n : ℕ}
+```
+```lean
+def scalarMemoryMatrix (γ : ℝ → ℝ) (t : ℝ) : Matrix (Fin n) (Fin n) ℝ :=
+  Matrix.diagonal (fun _ ↦ γ t)
+```
+
+### MD.Ch08.pronyKernel (Blueprint/Ch08.lean:971)
+原文件上下文：
+```lean
+open Set Filter MeasureTheory ProbabilityTheory MolecularDynamics
+open scoped BigOperators Topology ContDiff ENNReal NNReal Matrix
+variable {Ω : Type*} [MeasurableSpace Ω]
+variable {n : ℕ}
+```
+```lean
+def pronyKernel {K : ℕ} (c τ : Fin K → ℝ) (t : ℝ) : ℝ :=
+  ∑ k, c k/τ k*Real.exp (-t/τ k)
+```
+
+### MD.Ch08.pronyQualification (Blueprint/Ch08.lean:973)
+原文件上下文：
+```lean
+open Set Filter MeasureTheory ProbabilityTheory MolecularDynamics
+open scoped BigOperators Topology ContDiff ENNReal NNReal Matrix
+variable {Ω : Type*} [MeasurableSpace Ω]
+variable {n : ℕ}
+```
+```lean
+def pronyQualification {K : ℕ} (c τ : Fin K → ℝ) : Prop :=
+  ∀ k, 0 < c k ∧ 0 < τ k
+```
+
+### MD.Ch08.pronyMemory (Blueprint/Ch08.lean:984)
+原文件上下文：
+```lean
+open Set Filter MeasureTheory ProbabilityTheory MolecularDynamics
+open scoped BigOperators Topology ContDiff ENNReal NNReal Matrix
+variable {Ω : Type*} [MeasurableSpace Ω]
+variable {n : ℕ}
+```
+```lean
+def pronyMemory (c τ : ℝ) (p : ℝ → ℝ) (t : ℝ) : ℝ :=
+  -∫ s in (0 : ℝ)..t, c/τ*Real.exp (-(t-s)/τ)*p s
+```
+
+### MD.Ch08.pronyMemory_derivative (Blueprint/Ch08.lean:986)
+原文件上下文：
+```lean
+open Set Filter MeasureTheory ProbabilityTheory MolecularDynamics
+open scoped BigOperators Topology ContDiff ENNReal NNReal Matrix
+variable {Ω : Type*} [MeasurableSpace Ω]
+variable {n : ℕ}
+```
+```lean
+theorem pronyMemory_derivative (c τ : ℝ) (hτ : 0 < τ)
+    (p : ℝ → ℝ) (hp : Continuous p) (t : ℝ) :
+    HasDerivAt (pronyMemory c τ p) (-pronyMemory c τ p t/τ-c/τ*p t) t
+```
+
+### MD.Ch08.pronyMomentumDrift (Blueprint/Ch08.lean:990)
+原文件上下文：
+```lean
+open Set Filter MeasureTheory ProbabilityTheory MolecularDynamics
+open scoped BigOperators Topology ContDiff ENNReal NNReal Matrix
+variable {Ω : Type*} [MeasurableSpace Ω]
+variable {n : ℕ}
+```
+```lean
+def pronyMomentumDrift {K : ℕ} (F : Vec n) (η : Fin K → Vec n) (R : Vec n) : Vec n :=
+  F+(∑ k, η k)+R
+```
+
+### MD.Ch08.pronyMemory_sum (Blueprint/Ch08.lean:992)
+原文件上下文：
+```lean
+open Set Filter MeasureTheory ProbabilityTheory MolecularDynamics
+open scoped BigOperators Topology ContDiff ENNReal NNReal Matrix
+variable {Ω : Type*} [MeasurableSpace Ω]
+variable {n : ℕ}
+```
+```lean
+theorem pronyMemory_sum {K : ℕ} (c τ : Fin K → ℝ) (p : ℝ → Vec n)
+    (hq : pronyQualification c τ) (hp : Continuous p) (t : ℝ) :
+    (∑ k, fun i ↦ pronyMemory (c k) (τ k) (fun s ↦ p s i) t) =
+      memoryDrag (scalarMemoryMatrix (n:=n) (pronyKernel c τ)) p t
+```

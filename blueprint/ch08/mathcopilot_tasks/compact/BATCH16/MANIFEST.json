@@ -1,0 +1,47 @@
+{
+  "batch": "BATCH16",
+  "subtasks": [
+    {
+      "subtask": "BATCH16a",
+      "source_id": "MD-8.9.2-DPDVelocityVerlet",
+      "path": "blueprint/ch08/mathcopilot_tasks/compact/BATCH16/a",
+      "bytes": 141559,
+      "manifest_sha256": "eaf6346e14196c61079e75478a66d86c23b969cd4088071ffb75cf3f8306dd88"
+    },
+    {
+      "subtask": "BATCH16b",
+      "source_id": "MD-8.9.2-DPDSplitGenerator",
+      "path": "blueprint/ch08/mathcopilot_tasks/compact/BATCH16/b",
+      "bytes": 121934,
+      "manifest_sha256": "77c910395bee9c89303b1f846548a161e12475028eaed5677d4ff0d6586b9f34"
+    },
+    {
+      "subtask": "BATCH16c",
+      "source_id": "MD-8.9.2-DPDPairGeneratorPrinted",
+      "path": "blueprint/ch08/mathcopilot_tasks/compact/BATCH16/c",
+      "bytes": 108491,
+      "manifest_sha256": "ff059709f0dcf45574378b157b1a52a7f07f1518df2cb725d041e42246a98134"
+    },
+    {
+      "subtask": "BATCH16d",
+      "source_id": "MD-8.9.2-DPDSplittingCompositions",
+      "path": "blueprint/ch08/mathcopilot_tasks/compact/BATCH16/d",
+      "bytes": 130486,
+      "manifest_sha256": "31289f7e7d57462ee6c0700977e12ed6210ce88d4f6d7f4372c324b4262aaeda"
+    },
+    {
+      "subtask": "BATCH16e",
+      "source_id": "MD-8.9.2-DPDPairOUUpdate",
+      "path": "blueprint/ch08/mathcopilot_tasks/compact/BATCH16/e",
+      "bytes": 105310,
+      "manifest_sha256": "0b8ddf3143cfc3b000e03bd2aab8a14f6c334bd6754ba67c84f56ca75521499b"
+    },
+    {
+      "subtask": "BATCH16f",
+      "source_id": "MD-8.9.3-PairwiseNoseHoover",
+      "path": "blueprint/ch08/mathcopilot_tasks/compact/BATCH16/f",
+      "bytes": 99575,
+      "manifest_sha256": "da02025b259b725daeb827d769d323e5f1240da89418ff31af392f474260ace1"
+    }
+  ]
+}

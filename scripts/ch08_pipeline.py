@@ -80,8 +80,16 @@ def render():
           '记号与上下文：'+('；'.join(r['context_notation']) or '见所列原文与Lean量化变量。'),'',
           '### 6. 审计结论','','本地：'+a['semantic_review'],'疑点：'+('；'.join(r['issues']) or '本条暂未发现需单列的原书疑误。'),
           '网站：尚未送审。','','### 7. 状态与证明位置','',st+'；'+('Lean陈述可检查，证明完整性按本条状态区分。' if a['checked'] else 'Lean检查尚未完成。'),
-          '未证原因：'+r['missing'] if r['missing'] else '本条未登记待证缺项。',
+          '未证原因：'+r['missing'] if r['missing'] else '本条没有未完成的定理证明；覆盖缺口见上述范围及[EXTRA]。',
           '位置：Blueprint/Ch08.lean；'+', '.join(r['lean_declarations'])+'。','']
+        if a['checked']:
+            doc += ['| 声明 | 数学状态 |','|---|---|']
+            kinds=dict((name,kind) for kind,name in re.findall(r'(?m)^(?:noncomputable )?(def|abbrev|theorem|lemma|structure|inductive)\s+(\w+)',r['code']))
+            for name in r['lean_declarations']:
+                kind=kinds[name.rsplit('.',1)[1]]
+                status='未证' if 'sorryAx' in ax[name] else '已证' if kind in ('theorem','lemma') else '定义或记号'
+                doc += ['| `'+name+'` | '+status+' |']
+            doc += ['']
     (BASE/'PROGRESS.md').write_text('\n'.join(progress)+'\n',encoding='utf-8')
     (ROOT/'docs/review/CH08_BLUEPRINT.zh-CN.md').write_text('\n'.join(doc)+'\n',encoding='utf-8')
 

@@ -1,0 +1,113 @@
+{
+  "batch": "BATCH10",
+  "subtask": "BATCH10b",
+  "source_ids": [
+    "MD-8.6.2-SINLyapunov"
+  ],
+  "input_sha256": {
+    "Blueprint/Ch08.lean": "2800812fadd8e2557013f1941e4570401f7903d46f44baf07e23d5531da22a72",
+    "blueprint/ch08/ch08_source.json": "9b994b0f64cd22c85c2ad4123fbfdbd064bd7a6d070fe13b721794432f9f7a63",
+    "BATCH10b_PAGES.pdf": "3586f5ae0e3ab8bdf3c2a3beaf59c4324637a5a66272ee4922bc87f68e8a9991"
+  },
+  "page_mapping": [
+    {
+      "attachment_page": 1,
+      "original_pdf_page": 389,
+      "printed_page": 368
+    },
+    {
+      "attachment_page": 2,
+      "original_pdf_page": 390,
+      "printed_page": 369
+    }
+  ],
+  "definition_excerpts": [
+    {
+      "full_name": "MD.Ch08.Vec",
+      "kind": "abbrev",
+      "path": "Blueprint/Ch08.lean",
+      "line": 17,
+      "code_sha256": "6f4b254a8a7cc4115fb35265b77caa663bdd18567cd1e664cc5bbd080d02fcff"
+    },
+    {
+      "full_name": "MD.Ch08.additiveGenerator",
+      "kind": "def",
+      "path": "Blueprint/Ch08.lean",
+      "line": 434,
+      "code_sha256": "0b2de87656bba1dd40122d93877b55a6f00eaa25a5406ad709a8985216fb9a66"
+    },
+    {
+      "full_name": "MD.Ch08.sinConstraint",
+      "kind": "def",
+      "path": "Blueprint/Ch08.lean",
+      "line": 714,
+      "code_sha256": "946319fb0e80a00db3e6955a9e26729cc0e57a8bdc9c927d226f4b2e068bc287"
+    },
+    {
+      "full_name": "MD.Ch08.sinMultiplier",
+      "kind": "def",
+      "path": "Blueprint/Ch08.lean",
+      "line": 715,
+      "code_sha256": "cb1ee56c77ff03922f0486f068baf0690892755f2bddbd04b354b6818cf5c5e1"
+    },
+    {
+      "full_name": "MD.Ch08.sinDrift",
+      "kind": "def",
+      "path": "Blueprint/Ch08.lean",
+      "line": 717,
+      "code_sha256": "c5b14901922b2df83b4513df12d3a8e7988b8ee9d09689ef77261e0648db7724"
+    },
+    {
+      "full_name": "MD.Ch08.sinHarmonicG",
+      "kind": "def",
+      "path": "Blueprint/Ch08.lean",
+      "line": 756,
+      "code_sha256": "f486859234d769d4ea938c2912ef845a9972bde73cfbd56e9a85d874a8a81b94"
+    },
+    {
+      "full_name": "MD.Ch08.sinGenerator",
+      "kind": "def",
+      "path": "Blueprint/Ch08.lean",
+      "line": 835,
+      "code_sha256": "f72d30d1e88ed253c855cb5ce129a20c4f54c74abaa5c41fb49d7a8b1de5057f"
+    },
+    {
+      "full_name": "MD.Ch08.sinGenerator_lyapunov",
+      "kind": "theorem",
+      "path": "Blueprint/Ch08.lean",
+      "line": 837,
+      "code_sha256": "fc4a6fbf922b232a74e83cdca591e0f923d144cbeba64684e9f9d74f9c250f85"
+    },
+    {
+      "full_name": "MD.Ch08.sinConstraint_bathBound",
+      "kind": "theorem",
+      "path": "Blueprint/Ch08.lean",
+      "line": 842,
+      "code_sha256": "1088e5d03cbeeb448768cb87123f2bdd4f2a96c5805dc3775ab408a162f25a01"
+    },
+    {
+      "full_name": "MolecularDynamics.Chapter05Review.E",
+      "kind": "abbrev",
+      "path": "MolecularDynamics/Chapter05/ReviewDefinitions.lean",
+      "line": 18,
+      "code_sha256": "b497c8ba7f01b62a3147d9ae65652772ff3f81e57aa19b116f1283fef7a3cc60"
+    }
+  ],
+  "validation": {
+    "project_constant_closure": "PASS",
+    "missing_project_definitions": [],
+    "full_page_render_equality_dpi": 72,
+    "website_submitted": false
+  },
+  "files": {
+    "PASTE.txt": {
+      "bytes": 16218,
+      "sha256": "5dc0336f193f6a6964c1ab84aee4458877a378f0556c018cdc2db8e22c9d7917"
+    },
+    "BATCH10b_PAGES.pdf": {
+      "bytes": 97764,
+      "sha256": "3586f5ae0e3ab8bdf3c2a3beaf59c4324637a5a66272ee4922bc87f68e8a9991"
+    }
+  },
+  "total_task_bytes": 117542
+}

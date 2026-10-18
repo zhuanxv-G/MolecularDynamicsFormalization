@@ -1,0 +1,160 @@
+{
+  "batch": "BATCH16",
+  "subtask": "BATCH16a",
+  "source_ids": [
+    "MD-8.9.2-DPDVelocityVerlet"
+  ],
+  "input_sha256": {
+    "Blueprint/Ch08.lean": "2800812fadd8e2557013f1941e4570401f7903d46f44baf07e23d5531da22a72",
+    "blueprint/ch08/ch08_source.json": "9b994b0f64cd22c85c2ad4123fbfdbd064bd7a6d070fe13b721794432f9f7a63",
+    "BATCH16a_PAGES.pdf": "1b96eea7a1b0a5c464201b6b3d34e6ae3348db786cbd9550c1615a4937670fe5"
+  },
+  "page_mapping": [
+    {
+      "attachment_page": 1,
+      "original_pdf_page": 410,
+      "printed_page": 389
+    },
+    {
+      "attachment_page": 2,
+      "original_pdf_page": 411,
+      "printed_page": 390
+    },
+    {
+      "attachment_page": 3,
+      "original_pdf_page": 412,
+      "printed_page": 391
+    }
+  ],
+  "definition_excerpts": [
+    {
+      "full_name": "MD.Ch08.Vec",
+      "kind": "abbrev",
+      "path": "Blueprint/Ch08.lean",
+      "line": 17,
+      "code_sha256": "6f4b254a8a7cc4115fb35265b77caa663bdd18567cd1e664cc5bbd080d02fcff"
+    },
+    {
+      "full_name": "MD.Ch08.dot",
+      "kind": "def",
+      "path": "Blueprint/Ch08.lean",
+      "line": 19,
+      "code_sha256": "bb45cec5def0e642f7dde399650df8a6486048be491d116502106e187aa99348"
+    },
+    {
+      "full_name": "MD.Ch08.ParticleConfig",
+      "kind": "abbrev",
+      "path": "Blueprint/Ch08.lean",
+      "line": 1334,
+      "code_sha256": "c46ce65b6511b6a80adf81f99adccdc72de343aed0cedd1fcf09d0a9683ccf2e"
+    },
+    {
+      "full_name": "MD.Ch08.ParticlePhase",
+      "kind": "abbrev",
+      "path": "Blueprint/Ch08.lean",
+      "line": 1335,
+      "code_sha256": "c85eef16496630f1d2d793d7c1ec2a510d003438949acbd8ed3f9a959876fb44"
+    },
+    {
+      "full_name": "MD.Ch08.pairDistance",
+      "kind": "def",
+      "path": "Blueprint/Ch08.lean",
+      "line": 1349,
+      "code_sha256": "af64f099c5dc4854a969526a2a57d3de36f250fab2a5568f7e2b529ecfaae03a"
+    },
+    {
+      "full_name": "MD.Ch08.pairDirection",
+      "kind": "def",
+      "path": "Blueprint/Ch08.lean",
+      "line": 1351,
+      "code_sha256": "dcb4ca3430cb77302a2e34042dee2accc9867ecba7b8dad4f9bf2facaf68ebd3"
+    },
+    {
+      "full_name": "MD.Ch08.dpdPairConservative",
+      "kind": "def",
+      "path": "Blueprint/Ch08.lean",
+      "line": 1354,
+      "code_sha256": "2b40bda3e4a0f7a226fd1b932635b2b800a6ae61b243b499c714fbd61457b387"
+    },
+    {
+      "full_name": "MD.Ch08.dpdConservative",
+      "kind": "def",
+      "path": "Blueprint/Ch08.lean",
+      "line": 1358,
+      "code_sha256": "6d25fb5ebc78e00ec353b6caa64e102e7a88ad798ac94c511998cd72948e3f2f"
+    },
+    {
+      "full_name": "MD.Ch08.relativeVelocity",
+      "kind": "def",
+      "path": "Blueprint/Ch08.lean",
+      "line": 1372,
+      "code_sha256": "f5aa7899a93172eded50c0a4e0bf41f10f8507bc554ced67e2fda6c871329420"
+    },
+    {
+      "full_name": "MD.Ch08.dpdPairDissipative",
+      "kind": "def",
+      "path": "Blueprint/Ch08.lean",
+      "line": 1374,
+      "code_sha256": "b2fddd6656040b67b32d6faf4815cba0a7c8e16de49f1ce552c223936e6b61ea"
+    },
+    {
+      "full_name": "MD.Ch08.dpdDissipative",
+      "kind": "def",
+      "path": "Blueprint/Ch08.lean",
+      "line": 1379,
+      "code_sha256": "d9f2ae893fe6bf94229e5f5c9887113f3e0267c4cc11365e65957df106c14f28"
+    },
+    {
+      "full_name": "MD.Ch08.pairImpulseVector",
+      "kind": "def",
+      "path": "Blueprint/Ch08.lean",
+      "line": 1382,
+      "code_sha256": "0849827a195b2999a611d4023be23a0bc482b22965abf59d9cd46194a29d3bd5"
+    },
+    {
+      "full_name": "MD.Ch08.dpdNoise",
+      "kind": "def",
+      "path": "Blueprint/Ch08.lean",
+      "line": 1384,
+      "code_sha256": "80cf4475c3f88e3fb1142c3a640b3d8d976fea4aa3dd34395aa13202128589d1"
+    },
+    {
+      "full_name": "MD.Ch08.dpdRandomForce",
+      "kind": "def",
+      "path": "Blueprint/Ch08.lean",
+      "line": 1482,
+      "code_sha256": "9b8ab37128e9b513e7be1087eb77cd15ae695c81d67a6d59d708f3b167227863"
+    },
+    {
+      "full_name": "MD.Ch08.dpdVerlet",
+      "kind": "def",
+      "path": "Blueprint/Ch08.lean",
+      "line": 1486,
+      "code_sha256": "1fc752f235fd8ebc432f4aa7bfba456a7304a1a82ee91e920d601ceb77bac126"
+    },
+    {
+      "full_name": "MD.Ch08.dpdVerlet_reuse",
+      "kind": "theorem",
+      "path": "Blueprint/Ch08.lean",
+      "line": 1498,
+      "code_sha256": "ce9847dec89bb1c7143ceb72fe74c13e7a66bb899f0c63e6b3d5b088fac0a1bc"
+    }
+  ],
+  "validation": {
+    "project_constant_closure": "PASS",
+    "missing_project_definitions": [],
+    "full_page_render_equality_dpi": 72,
+    "website_submitted": false
+  },
+  "files": {
+    "PASTE.txt": {
+      "bytes": 25273,
+      "sha256": "d5f4ba0fedcec6b27a5539415b8fa16a5301c737d05d18752c97daa73c2752ef"
+    },
+    "BATCH16a_PAGES.pdf": {
+      "bytes": 111283,
+      "sha256": "1b96eea7a1b0a5c464201b6b3d34e6ae3348db786cbd9550c1615a4937670fe5"
+    }
+  },
+  "total_task_bytes": 141559
+}

@@ -1,0 +1,219 @@
+以附件/PASTE 为准，忽略 /workspace 旧文件；Mathlib 定义按标准含义采信。
+本任务只审本条：原文转录、对象资格、定义体、量词、全部结论及[EXTRA]是否一致；Lean编译不代替语义审阅。
+Lean/Mathlib均4.34.0。原页PDF映射：[417, 418]；印刷页=[396, 397].
+input_sha256请原样回显：
+{
+  "Blueprint/Ch08.lean": "2800812fadd8e2557013f1941e4570401f7903d46f44baf07e23d5531da22a72",
+  "blueprint/ch08/ch08_source.json": "9b994b0f64cd22c85c2ad4123fbfdbd064bd7a6d070fe13b721794432f9f7a63",
+  "BATCH17e_PAGES.pdf": "f68f1e92fd777686db28f058b70dd4ba09b4152be17b9e0641434313424db1f1"
+}
+用代码将JSON对象(batch,input_sha256,items)写到 /workspace/.mathcopilot/reviews/ch08/BATCH17e_review.json；items仅含本source_id。
+items字段：source_id、verdict(PASS/FAIL/NEEDS_HUMAN)、transcription、semantic_review、counterexample、suggested_fix、printed_version、corrected_version。逐版区分原文疑误和修正版结论；缺材料必须具体指出，不猜测。写后json.loads自检，最后仅回复路径及统计。
+
+## 原文JSON
+```json
+{
+  "source_id": "MD-8.10-BerendsenRelaxation",
+  "kind": "unnumbered_claim",
+  "label": null,
+  "section": "8.10",
+  "printed_page": "396–397",
+  "pdf_page": "417–418",
+  "statement_latex": "Ṫ(t)=γ_T(Ttarget−T(t)), γ_T>0. After Verlet, p←√[1+γ_Th(N_d k_BT/‖p‖²−1)]p.",
+  "statement_verbatim": "396\n8\nExtended Variable Methods\nWe could split this system in a number of ways. Each of these maps exp.tL?/\nmay be integrated in the weak sense. Two examples of integrators are the PNHL-S\nand PNHL-N schemes deﬁned in [228] as\neh OLPNHL-S D e\nh\n2 LAe\nh\n2 LBe\nh\n2 LCe\nh\n2 LDehLOe\nh\n2 LDe\nh\n2 LCe\nh\n2 LBe\nh\n2 LA;\nand\neh OLPNHL-N D e\nh\n2 LAe\nh\n2 LBe\nh\n2 LCe\nh\n2 LDehLOe\nh\n2 LDe\nh\n2 LCe\nh\n2 LAe\nh\n2 LB:\nTraditionally, and elsewhere in this book, we have found symmetric compositions\nto have superior performance. This is normally due to the fact that they deliver\neven order of accuracy. In the case of PNHL-S, the supposed advantage would be\ncompounded by the fact that, as in the Verlet and \u0002BAOAB\u0003 methods, the forces\nneed only be computed once per timestep. However, rather surprisingly, and for\nreasons that are as yet unclear, it turns out that the most advantageous technique\nfrom the point of view of accuracy with respect to the invariant measure has been\nobserved to be the nonsymmetric integration strategy PNHL-N. This method also\nshows, for a variety of observables, 2nd order approximation of averages. It also\nallows the use of a much larger integration timestep in practice—so large that it\nis still more efﬁcient for DPD-like simulations when the extra force calculation is\ntaken into account!\n8.10\nNumerical Experiments\nWe investigate a simple test system of 18 unit-mass particles in a 2D periodic 3 \u0004 3\nbox using the typical soft DPD potential given in (8.83), with a cutoff radius of 1.0\nand ˛ D 25. In our simulations the temperature was ﬁxed at T D 1.\nWe implement the Nosé-Hoover-Langevin and Langevin dynamics schemes,\nas well as the momentum-conserving PNHL thermostat, and plot the normalized\nmomentum distributions and time evolution of total momentum for the methods\nin Fig. 8.8. Additionally we compare against the method of Berendsen [32], which\nmodiﬁes Netwon’s equations of motion to incorporate a relaxation process for the\ntotal system temperature, representing the exchange of energy from the coupling\nof the external bath. If the instantaneous temperature at time t is T.t/, with target\ntemperature T, then using the Berendsen device we have\nPT.t/ D \nT.T \u0003 T.t//;\n\n8.10\nNumerical Experiments\n397\n-5\n5\n0\nMomentum\nDensity\nDPD/PNHL\n0\n1\n2\n3\n4\n5\n-0.004\n0\n.004\nTime  (x104)\nTime  (x104)\nTime  (x104)\nTime  (x104)\nTotal momentum \n-5\n5\n0\nMomentum\nLangevin\n-5\n5\n0\nMomentum\nNHL\nMomentum\nBerendsen\n0\n1\n2\n3\n4\n5\nTotal momentum\n-20\n-10\n0\n10\n20\nTotal momentum\n30\n0\n1\n2\n3\n4\n5\n0\n1\n2\n3\n4\n5\nTotal momentum\n−20\n−10\n0\n10\n−10\n0\n10\n20\n-5\n5\n0\nFig. 8.8 We compare the time evolution of the system’s total momentum in the x and y\ncomponents (top row, marked blue and red respectively), and momentum distributions (bottom\nrow) for various methods. In the lower row of ﬁgures, the dark, solid curve represents the exact\nnormal density, while the superimposed histograms are constructed from the simulation data.\nFrom left to right: the PNHL-N thermostat, Langevin dynamics, Nosé-Hoover-Langevin (NHL)\ndynamics and the Berensen device. The same initial conditions were used with small values of\ntotal momenta. The Berendsen device shows a rapid and systematic increase in the momenta, NHL\nand Langevin exhibit different behavior, obtaining large ﬂuctuating values, whereas the PNHL-\nN thermostat preserves the total momenta exactly. Standard DPD results are identical to those of\nPNHL in this respect\nfor some decay constant \nT > 0. The dynamics will not necessarily sample canoni-\ncally, but the method will ensure that the average temperature is well-controlled (and\nis hence sometimes useful for equilibration purposes). We implement the version of\nthe scheme given in [186], which completes a step of the velocity Verlet scheme\nfollowed by a scaling of the momenta:\np \ns\n1 C \nTh\n\bNdkBT\nkpk2 \u0003 1\n\t\np;\nfor the given timestep h.\nWe use parameters \n D 4:5, \u0006 D 1 and \nT D 1 for the integrators, with a\nsmall stepsize of h D 0:05 (making any qualitative sampling errors unlikely). We\nstarted the simulations with very small net momenta (`x D 0:0035, `y \u0007 \u00030:0019)\nand observed a dramatic increase in magnitude of both components when using\nthe simple (deterministic) Berendsen scheme. If the system is ergodic in Euclidean\n",
+  "verbatim_scope": "完整对应原页文字层，逐字保留；本条数学成分由statement_latex及statement_scope定位。",
+  "proof_latex": null,
+  "proof_note": "对应原页推导逐字保存在statement_verbatim/original_page_text；排版以原页PDF为准。",
+  "original_page_text": [
+    {
+      "pdf_page": 417,
+      "printed_page": 396,
+      "text": "396\n8\nExtended Variable Methods\nWe could split this system in a number of ways. Each of these maps exp.tL?/\nmay be integrated in the weak sense. Two examples of integrators are the PNHL-S\nand PNHL-N schemes deﬁned in [228] as\neh OLPNHL-S D e\nh\n2 LAe\nh\n2 LBe\nh\n2 LCe\nh\n2 LDehLOe\nh\n2 LDe\nh\n2 LCe\nh\n2 LBe\nh\n2 LA;\nand\neh OLPNHL-N D e\nh\n2 LAe\nh\n2 LBe\nh\n2 LCe\nh\n2 LDehLOe\nh\n2 LDe\nh\n2 LCe\nh\n2 LAe\nh\n2 LB:\nTraditionally, and elsewhere in this book, we have found symmetric compositions\nto have superior performance. This is normally due to the fact that they deliver\neven order of accuracy. In the case of PNHL-S, the supposed advantage would be\ncompounded by the fact that, as in the Verlet and \u0002BAOAB\u0003 methods, the forces\nneed only be computed once per timestep. However, rather surprisingly, and for\nreasons that are as yet unclear, it turns out that the most advantageous technique\nfrom the point of view of accuracy with respect to the invariant measure has been\nobserved to be the nonsymmetric integration strategy PNHL-N. This method also\nshows, for a variety of observables, 2nd order approximation of averages. It also\nallows the use of a much larger integration timestep in practice—so large that it\nis still more efﬁcient for DPD-like simulations when the extra force calculation is\ntaken into account!\n8.10\nNumerical Experiments\nWe investigate a simple test system of 18 unit-mass particles in a 2D periodic 3 \u0004 3\nbox using the typical soft DPD potential given in (8.83), with a cutoff radius of 1.0\nand ˛ D 25. In our simulations the temperature was ﬁxed at T D 1.\nWe implement the Nosé-Hoover-Langevin and Langevin dynamics schemes,\nas well as the momentum-conserving PNHL thermostat, and plot the normalized\nmomentum distributions and time evolution of total momentum for the methods\nin Fig. 8.8. Additionally we compare against the method of Berendsen [32], which\nmodiﬁes Netwon’s equations of motion to incorporate a relaxation process for the\ntotal system temperature, representing the exchange of energy from the coupling\nof the external bath. If the instantaneous temperature at time t is T.t/, with target\ntemperature T, then using the Berendsen device we have\nPT.t/ D \nT.T \u0003 T.t//;\n"
+    },
+    {
+      "pdf_page": 418,
+      "printed_page": 397,
+      "text": "8.10\nNumerical Experiments\n397\n-5\n5\n0\nMomentum\nDensity\nDPD/PNHL\n0\n1\n2\n3\n4\n5\n-0.004\n0\n.004\nTime  (x104)\nTime  (x104)\nTime  (x104)\nTime  (x104)\nTotal momentum \n-5\n5\n0\nMomentum\nLangevin\n-5\n5\n0\nMomentum\nNHL\nMomentum\nBerendsen\n0\n1\n2\n3\n4\n5\nTotal momentum\n-20\n-10\n0\n10\n20\nTotal momentum\n30\n0\n1\n2\n3\n4\n5\n0\n1\n2\n3\n4\n5\nTotal momentum\n−20\n−10\n0\n10\n−10\n0\n10\n20\n-5\n5\n0\nFig. 8.8 We compare the time evolution of the system’s total momentum in the x and y\ncomponents (top row, marked blue and red respectively), and momentum distributions (bottom\nrow) for various methods. In the lower row of ﬁgures, the dark, solid curve represents the exact\nnormal density, while the superimposed histograms are constructed from the simulation data.\nFrom left to right: the PNHL-N thermostat, Langevin dynamics, Nosé-Hoover-Langevin (NHL)\ndynamics and the Berensen device. The same initial conditions were used with small values of\ntotal momenta. The Berendsen device shows a rapid and systematic increase in the momenta, NHL\nand Langevin exhibit different behavior, obtaining large ﬂuctuating values, whereas the PNHL-\nN thermostat preserves the total momenta exactly. Standard DPD results are identical to those of\nPNHL in this respect\nfor some decay constant \nT > 0. The dynamics will not necessarily sample canoni-\ncally, but the method will ensure that the average temperature is well-controlled (and\nis hence sometimes useful for equilibration purposes). We implement the version of\nthe scheme given in [186], which completes a step of the velocity Verlet scheme\nfollowed by a scaling of the momenta:\np \ns\n1 C \nTh\n\bNdkBT\nkpk2 \u0003 1\n\t\np;\nfor the given timestep h.\nWe use parameters \n D 4:5, \u0006 D 1 and \nT D 1 for the integrators, with a\nsmall stepsize of h D 0:05 (making any qualitative sampling errors unlikely). We\nstarted the simulations with very small net momenta (`x D 0:0035, `y \u0007 \u00030:0019)\nand observed a dramatic increase in magnitude of both components when using\nthe simple (deterministic) Berendsen scheme. If the system is ergodic in Euclidean\n"
+    }
+  ],
+  "numbered_equations": [],
+  "transcription_note": "文字层逐字保留；数学排版另行转写，原页中的特殊字形编码不静默替换。PDF420仅取Exercises之前。",
+  "context_notation": [],
+  "extra_assumptions": [
+    "取单位粒子质量的Euclidean动量平方和；有效域显式要求非零动量及非负根号，避免将总化sqrt/division当作物理方法。",
+    "只证明所印温度ODE的显式解及动量缩放能量恒等式；不声称温度控制必然正则采样。完整Verlet耦合的统计行为未证。"
+  ],
+  "issues": [],
+  "statement_scope": "Berendsen温度方程的显式解、动量缩放、有效域和单次能量恒等式。",
+  "lean_decl": "MD.Ch08.berendsenTemperature",
+  "lean_declarations": [
+    "MD.Ch08.berendsenTemperature",
+    "MD.Ch08.berendsenTemperature_derivative",
+    "MD.Ch08.berendsenRadicand",
+    "MD.Ch08.berendsenScale",
+    "MD.Ch08.berendsenScaleQualification",
+    "MD.Ch08.dot_smul_same",
+    "MD.Ch08.berendsenScale_energy"
+  ],
+  "source_page_verification": "见source_page_checks.json，已目视核对本条原页。",
+  "repair_log": [],
+  "documented_priors": []
+}
+```
+
+## 完整本条Lean
+```lean
+def berendsenTemperature (θ T0 γ t : ℝ) : ℝ := θ+(T0-θ)*Real.exp (-γ*t)
+theorem berendsenTemperature_derivative (θ T0 γ t : ℝ) :
+    HasDerivAt (berendsenTemperature θ T0 γ) (γ*(θ-berendsenTemperature θ T0 γ t)) t := by
+  convert (hasDerivAt_const t θ).add (((hasDerivAt_id t).const_mul (-γ)).exp.const_mul (T0-θ)) using 1
+  · ext x
+    dsimp [berendsenTemperature]
+  · dsimp [berendsenTemperature]
+    ring
+def berendsenRadicand (nd θ γ h E : ℝ) : ℝ := 1+γ*h*(nd*θ/E-1)
+def berendsenScale {n : ℕ} (θ γ h : ℝ) (p : Vec n) : Vec n :=
+  Real.sqrt (berendsenRadicand n θ γ h (dot p p)) • p
+def berendsenScaleQualification {n : ℕ} (θ γ h : ℝ) (p : Vec n) : Prop :=
+  0 < n ∧ 0 < θ ∧ 0 < γ ∧ 0 ≤ h ∧ 0 < dot p p ∧ 0 ≤ berendsenRadicand n θ γ h (dot p p)
+theorem dot_smul_same {n : ℕ} (c : ℝ) (p : Vec n) : dot (c • p) (c • p)=c^2*dot p p := by
+  simp only [dot,Pi.smul_apply,smul_eq_mul,Finset.mul_sum]
+  apply Finset.sum_congr rfl
+  intro i hi
+  ring
+theorem berendsenScale_energy {n : ℕ} (θ γ h : ℝ) (p : Vec n)
+    (hq : berendsenScaleQualification θ γ h p) :
+    dot (berendsenScale θ γ h p) (berendsenScale θ γ h p)=
+      (1-γ*h)*dot p p+γ*h*n*θ := by
+  rw [berendsenScale,dot_smul_same,Real.sq_sqrt hq.2.2.2.2.2]
+  dsimp [berendsenRadicand]
+  field_simp [ne_of_gt hq.2.2.2.2.1]
+  <;> ring
+```
+
+## 项目依赖定义体及选择规格
+以下def/abbrev/structure完整保留；定理列出完整类型，Mathlib标准定义无需摘录。
+
+### MD.Ch08.Vec (Blueprint/Ch08.lean:17)
+原文件上下文：
+```lean
+open Set Filter MeasureTheory ProbabilityTheory MolecularDynamics
+open scoped BigOperators Topology ContDiff ENNReal NNReal Matrix
+variable {Ω : Type*} [MeasurableSpace Ω]
+variable {n : ℕ}
+```
+```lean
+abbrev Vec (n : ℕ) := Fin n → ℝ
+```
+
+### MD.Ch08.dot (Blueprint/Ch08.lean:19)
+原文件上下文：
+```lean
+open Set Filter MeasureTheory ProbabilityTheory MolecularDynamics
+open scoped BigOperators Topology ContDiff ENNReal NNReal Matrix
+variable {Ω : Type*} [MeasurableSpace Ω]
+variable {n : ℕ}
+```
+```lean
+def dot (v w : Vec n) : ℝ := ∑ i, v i * w i
+```
+
+### MD.Ch08.berendsenTemperature (Blueprint/Ch08.lean:1686)
+原文件上下文：
+```lean
+open Set Filter MeasureTheory ProbabilityTheory MolecularDynamics
+open scoped BigOperators Topology ContDiff ENNReal NNReal Matrix
+variable {Ω : Type*} [MeasurableSpace Ω]
+variable {n : ℕ}
+```
+```lean
+def berendsenTemperature (θ T0 γ t : ℝ) : ℝ := θ+(T0-θ)*Real.exp (-γ*t)
+```
+
+### MD.Ch08.berendsenTemperature_derivative (Blueprint/Ch08.lean:1687)
+原文件上下文：
+```lean
+open Set Filter MeasureTheory ProbabilityTheory MolecularDynamics
+open scoped BigOperators Topology ContDiff ENNReal NNReal Matrix
+variable {Ω : Type*} [MeasurableSpace Ω]
+variable {n : ℕ}
+```
+```lean
+theorem berendsenTemperature_derivative (θ T0 γ t : ℝ) :
+    HasDerivAt (berendsenTemperature θ T0 γ) (γ*(θ-berendsenTemperature θ T0 γ t)) t
+```
+
+### MD.Ch08.berendsenRadicand (Blueprint/Ch08.lean:1694)
+原文件上下文：
+```lean
+open Set Filter MeasureTheory ProbabilityTheory MolecularDynamics
+open scoped BigOperators Topology ContDiff ENNReal NNReal Matrix
+variable {Ω : Type*} [MeasurableSpace Ω]
+variable {n : ℕ}
+```
+```lean
+def berendsenRadicand (nd θ γ h E : ℝ) : ℝ := 1+γ*h*(nd*θ/E-1)
+```
+
+### MD.Ch08.berendsenScale (Blueprint/Ch08.lean:1695)
+原文件上下文：
+```lean
+open Set Filter MeasureTheory ProbabilityTheory MolecularDynamics
+open scoped BigOperators Topology ContDiff ENNReal NNReal Matrix
+variable {Ω : Type*} [MeasurableSpace Ω]
+variable {n : ℕ}
+```
+```lean
+def berendsenScale {n : ℕ} (θ γ h : ℝ) (p : Vec n) : Vec n :=
+  Real.sqrt (berendsenRadicand n θ γ h (dot p p)) • p
+```
+
+### MD.Ch08.berendsenScaleQualification (Blueprint/Ch08.lean:1697)
+原文件上下文：
+```lean
+open Set Filter MeasureTheory ProbabilityTheory MolecularDynamics
+open scoped BigOperators Topology ContDiff ENNReal NNReal Matrix
+variable {Ω : Type*} [MeasurableSpace Ω]
+variable {n : ℕ}
+```
+```lean
+def berendsenScaleQualification {n : ℕ} (θ γ h : ℝ) (p : Vec n) : Prop :=
+  0 < n ∧ 0 < θ ∧ 0 < γ ∧ 0 ≤ h ∧ 0 < dot p p ∧ 0 ≤ berendsenRadicand n θ γ h (dot p p)
+```
+
+### MD.Ch08.dot_smul_same (Blueprint/Ch08.lean:1699)
+原文件上下文：
+```lean
+open Set Filter MeasureTheory ProbabilityTheory MolecularDynamics
+open scoped BigOperators Topology ContDiff ENNReal NNReal Matrix
+variable {Ω : Type*} [MeasurableSpace Ω]
+variable {n : ℕ}
+```
+```lean
+theorem dot_smul_same {n : ℕ} (c : ℝ) (p : Vec n) : dot (c • p) (c • p)=c^2*dot p p
+```
+
+### MD.Ch08.berendsenScale_energy (Blueprint/Ch08.lean:1704)
+原文件上下文：
+```lean
+open Set Filter MeasureTheory ProbabilityTheory MolecularDynamics
+open scoped BigOperators Topology ContDiff ENNReal NNReal Matrix
+variable {Ω : Type*} [MeasurableSpace Ω]
+variable {n : ℕ}
+```
+```lean
+theorem berendsenScale_energy {n : ℕ} (θ γ h : ℝ) (p : Vec n)
+    (hq : berendsenScaleQualification θ γ h p) :
+    dot (berendsenScale θ γ h p) (berendsenScale θ γ h p)=
+      (1-γ*h)*dot p p+γ*h*n*θ
+```
+
+### MolecularDynamics.Chapter05Review.E (MolecularDynamics/Chapter05/ReviewDefinitions.lean:18)
+原文件上下文：
+```lean
+open Set Filter MeasureTheory Matrix
+open scoped BigOperators Topology ENNReal
+```
+```lean
+abbrev E (n : ℕ) := EuclideanSpace ℝ (Fin n)
+```

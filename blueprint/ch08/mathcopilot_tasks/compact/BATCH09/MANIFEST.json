@@ -1,0 +1,47 @@
+{
+  "batch": "BATCH09",
+  "subtasks": [
+    {
+      "subtask": "BATCH09a",
+      "source_id": "MD-8.6-IsokineticGibbsShell",
+      "path": "blueprint/ch08/mathcopilot_tasks/compact/BATCH09/a",
+      "bytes": 79263,
+      "manifest_sha256": "f2a33272848c78cf358986f709df7d8c3bb48bf2a584f5590a99333cd5b9d5a4"
+    },
+    {
+      "subtask": "BATCH09b",
+      "source_id": "MD-8.6.1-StochasticIsokinetic",
+      "path": "blueprint/ch08/mathcopilot_tasks/compact/BATCH09/b",
+      "bytes": 94070,
+      "manifest_sha256": "61198b60556c4c4fa42d6da5503287b9e4c9e6ef694449e3044528188b0ae640"
+    },
+    {
+      "subtask": "BATCH09c",
+      "source_id": "MD-8.6.1-SINWeightPrinted",
+      "path": "blueprint/ch08/mathcopilot_tasks/compact/BATCH09/c",
+      "bytes": 82051,
+      "manifest_sha256": "f6f239be450bfac979e2b4839b7099f1e0a805610a11048e2f28f06b106cd51e"
+    },
+    {
+      "subtask": "BATCH09d",
+      "source_id": "MD-8.6.2-SINHarmonic",
+      "path": "blueprint/ch08/mathcopilot_tasks/compact/BATCH09/d",
+      "bytes": 95381,
+      "manifest_sha256": "e74f79b112f1ee0c76502e64cbddf4bacf1aa8c020ba161e91b77c681ce5c76a"
+    },
+    {
+      "subtask": "BATCH09e",
+      "source_id": "MD-8.6.2-SINProjectedBracketsPrinted",
+      "path": "blueprint/ch08/mathcopilot_tasks/compact/BATCH09/e",
+      "bytes": 108852,
+      "manifest_sha256": "e81dce952b5d36388db9f36c3b3d385d2a4e4c3b3f368622837f07da00f3a6ff"
+    },
+    {
+      "subtask": "BATCH09f",
+      "source_id": "MD-8.6.2-SINThirdBracketPrinted",
+      "path": "blueprint/ch08/mathcopilot_tasks/compact/BATCH09/f",
+      "bytes": 100124,
+      "manifest_sha256": "b36d30daf4ebfc19876e42a98deeb8765140cf9d0360b9c2c436c0a6419d14b3"
+    }
+  ]
+}

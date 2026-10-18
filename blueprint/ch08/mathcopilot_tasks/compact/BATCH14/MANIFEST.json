@@ -1,0 +1,47 @@
+{
+  "batch": "BATCH14",
+  "subtasks": [
+    {
+      "subtask": "BATCH14a",
+      "source_id": "MD-8.8.1-PistonThermostatWeightPrinted",
+      "path": "blueprint/ch08/mathcopilot_tasks/compact/BATCH14/a",
+      "bytes": 92584,
+      "manifest_sha256": "164a2af98ce2dfbd4c0edbffefedece20193d95c3d88432360b4ec91074ce57d"
+    },
+    {
+      "subtask": "BATCH14b",
+      "source_id": "MD-8.8.1-PistonReducedPDE",
+      "path": "blueprint/ch08/mathcopilot_tasks/compact/BATCH14/b",
+      "bytes": 89551,
+      "manifest_sha256": "3cc67607616bf14551572fbf916cd67353aa3c629350cd9d3892c96404ea1d52"
+    },
+    {
+      "subtask": "BATCH14c",
+      "source_id": "MD-8.8.1-PistonStationaryWeight",
+      "path": "blueprint/ch08/mathcopilot_tasks/compact/BATCH14/c",
+      "bytes": 94481,
+      "manifest_sha256": "db7c25beb1c8088d8df0a63dfdb63cb05be02afd6286025d0dad06cb6abfa26e"
+    },
+    {
+      "subtask": "BATCH14d",
+      "source_id": "MD-8.8.2-PistonIntegrator",
+      "path": "blueprint/ch08/mathcopilot_tasks/compact/BATCH14/d",
+      "bytes": 100745,
+      "manifest_sha256": "2d291f534ced3c8fc81558b38c5d960884c34e9a833cb0c1df467f9f2e579b4b"
+    },
+    {
+      "subtask": "BATCH14e",
+      "source_id": "MD-8.8.3-ParrinelloRahman",
+      "path": "blueprint/ch08/mathcopilot_tasks/compact/BATCH14/e",
+      "bytes": 89326,
+      "manifest_sha256": "97b9394d855d66ac8a62775fdfd19bab0c792116da3ba504fbc18b275106197c"
+    },
+    {
+      "subtask": "BATCH14f",
+      "source_id": "MD-8.9-TotalMomentum",
+      "path": "blueprint/ch08/mathcopilot_tasks/compact/BATCH14/f",
+      "bytes": 101181,
+      "manifest_sha256": "c0985117e5a90798d46f5a99e07dfcc8d8015149690cd686dfb8b0580e497248"
+    }
+  ]
+}

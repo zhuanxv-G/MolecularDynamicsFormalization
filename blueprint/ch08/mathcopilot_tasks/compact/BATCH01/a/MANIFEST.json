@@ -1,0 +1,120 @@
+{
+  "batch": "BATCH01",
+  "subtask": "BATCH01a",
+  "source_ids": [
+    "MD-8.1-CanonicalCorrelation"
+  ],
+  "input_sha256": {
+    "Blueprint/Ch08.lean": "2800812fadd8e2557013f1941e4570401f7903d46f44baf07e23d5531da22a72",
+    "blueprint/ch08/ch08_source.json": "9b994b0f64cd22c85c2ad4123fbfdbd064bd7a6d070fe13b721794432f9f7a63",
+    "BATCH01a_PAGES.pdf": "3e9d857a277ac0891ceaf6ac03e63ac2bd7a5e9fb5cd8f9ab0944811d8497f7f"
+  },
+  "page_mapping": [
+    {
+      "attachment_page": 1,
+      "original_pdf_page": 350,
+      "printed_page": 329
+    },
+    {
+      "attachment_page": 2,
+      "original_pdf_page": 351,
+      "printed_page": 330
+    }
+  ],
+  "definition_excerpts": [
+    {
+      "full_name": "MD.Ch08.Vec",
+      "kind": "abbrev",
+      "path": "Blueprint/Ch08.lean",
+      "line": 17,
+      "code_sha256": "6f4b254a8a7cc4115fb35265b77caa663bdd18567cd1e664cc5bbd080d02fcff"
+    },
+    {
+      "full_name": "MD.Ch08.Phase",
+      "kind": "abbrev",
+      "path": "Blueprint/Ch08.lean",
+      "line": 18,
+      "code_sha256": "377b8086105169a0d2deaa2dd84218cb6ea1d04d27b576cd82794d54e5b84300"
+    },
+    {
+      "full_name": "MD.Ch08.dot",
+      "kind": "def",
+      "path": "Blueprint/Ch08.lean",
+      "line": 19,
+      "code_sha256": "bb45cec5def0e642f7dde399650df8a6486048be491d116502106e187aa99348"
+    },
+    {
+      "full_name": "MD.Ch08.gradient",
+      "kind": "def",
+      "path": "Blueprint/Ch08.lean",
+      "line": 20,
+      "code_sha256": "a9a017b15c584dec720a71840d896ddb8d0e05e149030bce523362af481b101e"
+    },
+    {
+      "full_name": "MD.Ch08.gibbsWeight",
+      "kind": "def",
+      "path": "Blueprint/Ch08.lean",
+      "line": 21,
+      "code_sha256": "0914b2250f82dd8420f3edf8ef788804216440c65b2a696ac21c9f6a21188c1e"
+    },
+    {
+      "full_name": "MD.Ch08.canonicalAverage",
+      "kind": "def",
+      "path": "Blueprint/Ch08.lean",
+      "line": 22,
+      "code_sha256": "5c3cc3d365ef387fd342fcde10b4d129913d5dd5133eaf103ac184aa175e6cb8"
+    },
+    {
+      "full_name": "MD.Ch08.probabilityDensity",
+      "kind": "def",
+      "path": "Blueprint/Ch08.lean",
+      "line": 24,
+      "code_sha256": "273a20a340df892158ae6bb7b929ef8c57e9d95f5785ff9729ead4dba069d0f6"
+    },
+    {
+      "full_name": "MD.Ch08.correlation",
+      "kind": "def",
+      "path": "Blueprint/Ch08.lean",
+      "line": 26,
+      "code_sha256": "6ad83586951a73368bc3e60c10fc736a569a46e7ef08aa142348428cc075ede0"
+    },
+    {
+      "full_name": "MD.Ch08.correlation_zero",
+      "kind": "theorem",
+      "path": "Blueprint/Ch08.lean",
+      "line": 29,
+      "code_sha256": "a1771c8b3fb62a4bd673a9e88d133834d589b5077ff39da6c4b882ee9cd89b5a"
+    },
+    {
+      "full_name": "MolecularDynamics.Chapter05Review.E",
+      "kind": "abbrev",
+      "path": "MolecularDynamics/Chapter05/ReviewDefinitions.lean",
+      "line": 18,
+      "code_sha256": "b497c8ba7f01b62a3147d9ae65652772ff3f81e57aa19b116f1283fef7a3cc60"
+    },
+    {
+      "full_name": "MolecularDynamics.Chapter05Review.flow",
+      "kind": "def",
+      "path": "MolecularDynamics/Chapter05/ReviewDefinitions.lean",
+      "line": 23,
+      "code_sha256": "cd47fe07b629a7f5aa0bdc126758e9528093d227aaebc2097a541fd177a6a961"
+    }
+  ],
+  "validation": {
+    "project_constant_closure": "PASS",
+    "missing_project_definitions": [],
+    "full_page_render_equality_dpi": 72,
+    "website_submitted": false
+  },
+  "files": {
+    "PASTE.txt": {
+      "bytes": 18259,
+      "sha256": "16ad5edd682e0e62de097809b30762f700b67dccfc150d231374795a53769bc4"
+    },
+    "BATCH01a_PAGES.pdf": {
+      "bytes": 93360,
+      "sha256": "3e9d857a277ac0891ceaf6ac03e63ac2bd7a5e9fb5cd8f9ab0944811d8497f7f"
+    }
+  },
+  "total_task_bytes": 115422
+}

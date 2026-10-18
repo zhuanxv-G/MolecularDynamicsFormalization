@@ -1,0 +1,197 @@
+{
+  "batch": "BATCH16",
+  "subtask": "BATCH16d",
+  "source_ids": [
+    "MD-8.9.2-DPDSplittingCompositions"
+  ],
+  "input_sha256": {
+    "Blueprint/Ch08.lean": "2800812fadd8e2557013f1941e4570401f7903d46f44baf07e23d5531da22a72",
+    "blueprint/ch08/ch08_source.json": "9b994b0f64cd22c85c2ad4123fbfdbd064bd7a6d070fe13b721794432f9f7a63",
+    "BATCH16d_PAGES.pdf": "d3e9cc06848ebd2aa66167a9e24106698acfcafe0b3804d5e7253172e61d462c"
+  },
+  "page_mapping": [
+    {
+      "attachment_page": 1,
+      "original_pdf_page": 413,
+      "printed_page": 392
+    },
+    {
+      "attachment_page": 2,
+      "original_pdf_page": 414,
+      "printed_page": 393
+    }
+  ],
+  "definition_excerpts": [
+    {
+      "full_name": "MD.Ch08.Vec",
+      "kind": "abbrev",
+      "path": "Blueprint/Ch08.lean",
+      "line": 17,
+      "code_sha256": "6f4b254a8a7cc4115fb35265b77caa663bdd18567cd1e664cc5bbd080d02fcff"
+    },
+    {
+      "full_name": "MD.Ch08.dot",
+      "kind": "def",
+      "path": "Blueprint/Ch08.lean",
+      "line": 19,
+      "code_sha256": "bb45cec5def0e642f7dde399650df8a6486048be491d116502106e187aa99348"
+    },
+    {
+      "full_name": "MD.Ch08.ParticleConfig",
+      "kind": "abbrev",
+      "path": "Blueprint/Ch08.lean",
+      "line": 1334,
+      "code_sha256": "c46ce65b6511b6a80adf81f99adccdc72de343aed0cedd1fcf09d0a9683ccf2e"
+    },
+    {
+      "full_name": "MD.Ch08.ParticlePhase",
+      "kind": "abbrev",
+      "path": "Blueprint/Ch08.lean",
+      "line": 1335,
+      "code_sha256": "c85eef16496630f1d2d793d7c1ec2a510d003438949acbd8ed3f9a959876fb44"
+    },
+    {
+      "full_name": "MD.Ch08.pairDistance",
+      "kind": "def",
+      "path": "Blueprint/Ch08.lean",
+      "line": 1349,
+      "code_sha256": "af64f099c5dc4854a969526a2a57d3de36f250fab2a5568f7e2b529ecfaae03a"
+    },
+    {
+      "full_name": "MD.Ch08.pairDirection",
+      "kind": "def",
+      "path": "Blueprint/Ch08.lean",
+      "line": 1351,
+      "code_sha256": "dcb4ca3430cb77302a2e34042dee2accc9867ecba7b8dad4f9bf2facaf68ebd3"
+    },
+    {
+      "full_name": "MD.Ch08.dpdPairConservative",
+      "kind": "def",
+      "path": "Blueprint/Ch08.lean",
+      "line": 1354,
+      "code_sha256": "2b40bda3e4a0f7a226fd1b932635b2b800a6ae61b243b499c714fbd61457b387"
+    },
+    {
+      "full_name": "MD.Ch08.dpdConservative",
+      "kind": "def",
+      "path": "Blueprint/Ch08.lean",
+      "line": 1358,
+      "code_sha256": "6d25fb5ebc78e00ec353b6caa64e102e7a88ad798ac94c511998cd72948e3f2f"
+    },
+    {
+      "full_name": "MD.Ch08.relativeVelocity",
+      "kind": "def",
+      "path": "Blueprint/Ch08.lean",
+      "line": 1372,
+      "code_sha256": "f5aa7899a93172eded50c0a4e0bf41f10f8507bc554ced67e2fda6c871329420"
+    },
+    {
+      "full_name": "MD.Ch08.dpdPairDissipative",
+      "kind": "def",
+      "path": "Blueprint/Ch08.lean",
+      "line": 1374,
+      "code_sha256": "b2fddd6656040b67b32d6faf4815cba0a7c8e16de49f1ce552c223936e6b61ea"
+    },
+    {
+      "full_name": "MD.Ch08.dpdDissipative",
+      "kind": "def",
+      "path": "Blueprint/Ch08.lean",
+      "line": 1379,
+      "code_sha256": "d9f2ae893fe6bf94229e5f5c9887113f3e0267c4cc11365e65957df106c14f28"
+    },
+    {
+      "full_name": "MD.Ch08.pairImpulseVector",
+      "kind": "def",
+      "path": "Blueprint/Ch08.lean",
+      "line": 1382,
+      "code_sha256": "0849827a195b2999a611d4023be23a0bc482b22965abf59d9cd46194a29d3bd5"
+    },
+    {
+      "full_name": "MD.Ch08.dpdNoise",
+      "kind": "def",
+      "path": "Blueprint/Ch08.lean",
+      "line": 1384,
+      "code_sha256": "80cf4475c3f88e3fb1142c3a640b3d8d976fea4aa3dd34395aa13202128589d1"
+    },
+    {
+      "full_name": "MD.Ch08.dpdB",
+      "kind": "def",
+      "path": "Blueprint/Ch08.lean",
+      "line": 1508,
+      "code_sha256": "327912debb306107ef6e50e70c0cdbbf4cb890b985e35d4e5940e4f5602bed7e"
+    },
+    {
+      "full_name": "MD.Ch08.dpdO",
+      "kind": "def",
+      "path": "Blueprint/Ch08.lean",
+      "line": 1510,
+      "code_sha256": "ac2263e99d79cdfe7e20f6de185653e0d6759f302652b456814d2d003eafe6e4"
+    },
+    {
+      "full_name": "MD.Ch08.firstOrder8",
+      "kind": "def",
+      "path": "Blueprint/Ch08.lean",
+      "line": 1512,
+      "code_sha256": "8840884a4ea6acbd19774d69045873977aa450aaf51d9d411f9bd316ee905743"
+    },
+    {
+      "full_name": "MD.Ch08.dpdLO",
+      "kind": "def",
+      "path": "Blueprint/Ch08.lean",
+      "line": 1514,
+      "code_sha256": "3b4d4427ca8fab813e66049eebf4f81dd1ad6f950b5491f187cd256719b21cb6"
+    },
+    {
+      "full_name": "MD.Ch08.dpdShardlowComposition",
+      "kind": "def",
+      "path": "Blueprint/Ch08.lean",
+      "line": 1546,
+      "code_sha256": "8da6d9eae10afaadf3c8ee3cd0053578eabb8aa9e5468f4cd902f2cf56f0e190"
+    },
+    {
+      "full_name": "MD.Ch08.dpdTrotterComposition",
+      "kind": "def",
+      "path": "Blueprint/Ch08.lean",
+      "line": 1548,
+      "code_sha256": "7a1baab69b38d7f28b192506f2d61eea86c6c5c06d84bd543ae9e645c787b6b3"
+    },
+    {
+      "full_name": "MD.Ch08.sequentialPairComposition",
+      "kind": "def",
+      "path": "Blueprint/Ch08.lean",
+      "line": 1550,
+      "code_sha256": "30b1ea208804767b801d51afb1e22ae4234184114f22c659094e01a7c0dc6abc"
+    },
+    {
+      "full_name": "MD.Ch08.dpdSGenerator",
+      "kind": "def",
+      "path": "Blueprint/Ch08.lean",
+      "line": 1552,
+      "code_sha256": "30085d54afec2ab9eb0c28a3945dd8c53a8a4a3ba724e20fff34afa88efd5230"
+    },
+    {
+      "full_name": "MolecularDynamics.Chapter05Review.E",
+      "kind": "abbrev",
+      "path": "MolecularDynamics/Chapter05/ReviewDefinitions.lean",
+      "line": 18,
+      "code_sha256": "b497c8ba7f01b62a3147d9ae65652772ff3f81e57aa19b116f1283fef7a3cc60"
+    }
+  ],
+  "validation": {
+    "project_constant_closure": "PASS",
+    "missing_project_definitions": [],
+    "full_page_render_equality_dpi": 72,
+    "website_submitted": false
+  },
+  "files": {
+    "PASTE.txt": {
+      "bytes": 21418,
+      "sha256": "21e897e7d823c6813a691875568d0c0b2c89b1389bf530444d45dae9b4002590"
+    },
+    "BATCH16d_PAGES.pdf": {
+      "bytes": 102738,
+      "sha256": "d3e9cc06848ebd2aa66167a9e24106698acfcafe0b3804d5e7253172e61d462c"
+    }
+  },
+  "total_task_bytes": 130486
+}

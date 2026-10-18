@@ -1,0 +1,144 @@
+以附件/PASTE 为准，忽略 /workspace 旧文件；Mathlib 定义按标准含义采信。
+本任务只审本条：原文转录、对象资格、定义体、量词、全部结论及[EXTRA]是否一致；Lean编译不代替语义审阅。
+Lean/Mathlib均4.34.0。原页PDF映射：[356]；印刷页=[335].
+input_sha256请原样回显：
+{
+  "Blueprint/Ch08.lean": "2800812fadd8e2557013f1941e4570401f7903d46f44baf07e23d5531da22a72",
+  "blueprint/ch08/ch08_source.json": "9b994b0f64cd22c85c2ad4123fbfdbd064bd7a6d070fe13b721794432f9f7a63",
+  "BATCH03a_PAGES.pdf": "8877fe01c77456a61f502fa04fffba0163af019b2b5bbe4f7f0fc37991020a26"
+}
+用代码将JSON对象(batch,input_sha256,items)写到 /workspace/.mathcopilot/reviews/ch08/BATCH03a_review.json；items仅含本source_id。
+items字段：source_id、verdict(PASS/FAIL/NEEDS_HUMAN)、transcription、semantic_review、counterexample、suggested_fix、printed_version、corrected_version。逐版区分原文疑误和修正版结论；缺材料必须具体指出，不猜测。写后json.loads自检，最后仅回复路径及统计。
+
+## 原文JSON
+```json
+{
+  "source_id": "MD-8.1.2.1-NPShadowDensity",
+  "kind": "definition",
+  "label": null,
+  "section": "8.1.2.1",
+  "printed_page": "335",
+  "pdf_page": "356",
+  "statement_latex": "H̃_h=H_NP+h²H_[2]+O(h⁴); ρ̃=ρ_βζ(q,p,h)+O(h⁴). Canonical averages are approximated by (ν+1)⁻¹Σg_nζ_n⁻¹+O(h⁴).",
+  "statement_verbatim": "8.1\nDynamics-Based Thermostat Techniques\n335\nThe relation between (8.10)–(8.13) and (8.2)–(8.4) becomes evident through the\nsubstitution p D Qp=s and \u0012 D ps=\u0006. Then (8.10)–(8.11) are seen to be the same\nas the corresponding equations in the Nosé-Hoover method, and the ﬁnal pair of\nequations become\nd\ndts D s\u0012;\nd\ndt\u0012 D 1\n\u0006\n\u0004\npTM\u00021p \u0003 NdkBT \u0003 \u0016HN\n\u0005\n:\nThe only difference between the last equation and (8.4) lies in the perturbation\n\u0006\u00021\u0016HN, which is zero along the exact solution. Under discretization, however,\nwe do not expect \u0016HN to vanish, so trajectories obtained from Nosé-Poincaré and\nNosé-Hoover will differ considerably over long time simulations.\nA beneﬁt of respecting the symplectic structure lies in the prospect of using\nbackward error analysis to analyze the behavior of the method. As shown in [40] it\nis possible to work out the terms of the perturbative expansion of the Nosé-Poincaré\nHamiltonian, i.e. to calculate the expansion\nQHh D HNP C h2HŒ2\t C O.h4/\nfor a second order, symmetric, symplectic numerical method. Then one may\ndetermine the effective distribution associated to the symplectic discretization\nmethod by “integrating out” the microcanonical density with respect to the auxiliary\nvariable and its conjugate momentum. One obtains in this way\nQ\u0005 .q; p/ D \u0005ˇ.q; p/\u0018.q; p; h/ C O\n\u0004\nh4\u0005\n:\nAn explicit formula for \u0018 is given in [40] for several symplectic methods. During\nsimulation, one may calculate the factor \u0018 and use this quantity to adjust averages.\nFor example, if we wish to calculate the average of a function g.q; p/, we may\nperform the calculation using \u0003 steps of the Nosé-Poincaré method with the given\nsymplectic, time-reversible, second order integrator, calculate gn and \u0018n at each\ntimestep, and approximate the canonical average from\nhgi D\n1\n\u0003 C 1\n\u0003\nX\nnD0\ngn\u0018\u00021\nn\nC O.h4/:\nFor further details, refer to [40]. Technically, a similar calculation can be carried out\nfor the Nosé-Hoover formulation, but the calculations are more involved.\nA good symplectic integrator for Nosé-Poincaré has been given by Nosé [287].\nFor further discussion and numerical experiments using this idea, see [94] (which\nalso considers stochastic methods).\n",
+  "verbatim_scope": "完整对应原页文字层，逐字保留；本条数学成分由statement_latex及statement_scope定位。",
+  "proof_latex": null,
+  "proof_note": "对应原页推导逐字保存在statement_verbatim/original_page_text；排版以原页PDF为准。",
+  "original_page_text": [
+    {
+      "pdf_page": 356,
+      "printed_page": 335,
+      "text": "8.1\nDynamics-Based Thermostat Techniques\n335\nThe relation between (8.10)–(8.13) and (8.2)–(8.4) becomes evident through the\nsubstitution p D Qp=s and \u0012 D ps=\u0006. Then (8.10)–(8.11) are seen to be the same\nas the corresponding equations in the Nosé-Hoover method, and the ﬁnal pair of\nequations become\nd\ndts D s\u0012;\nd\ndt\u0012 D 1\n\u0006\n\u0004\npTM\u00021p \u0003 NdkBT \u0003 \u0016HN\n\u0005\n:\nThe only difference between the last equation and (8.4) lies in the perturbation\n\u0006\u00021\u0016HN, which is zero along the exact solution. Under discretization, however,\nwe do not expect \u0016HN to vanish, so trajectories obtained from Nosé-Poincaré and\nNosé-Hoover will differ considerably over long time simulations.\nA beneﬁt of respecting the symplectic structure lies in the prospect of using\nbackward error analysis to analyze the behavior of the method. As shown in [40] it\nis possible to work out the terms of the perturbative expansion of the Nosé-Poincaré\nHamiltonian, i.e. to calculate the expansion\nQHh D HNP C h2HŒ2\t C O.h4/\nfor a second order, symmetric, symplectic numerical method. Then one may\ndetermine the effective distribution associated to the symplectic discretization\nmethod by “integrating out” the microcanonical density with respect to the auxiliary\nvariable and its conjugate momentum. One obtains in this way\nQ\u0005 .q; p/ D \u0005ˇ.q; p/\u0018.q; p; h/ C O\n\u0004\nh4\u0005\n:\nAn explicit formula for \u0018 is given in [40] for several symplectic methods. During\nsimulation, one may calculate the factor \u0018 and use this quantity to adjust averages.\nFor example, if we wish to calculate the average of a function g.q; p/, we may\nperform the calculation using \u0003 steps of the Nosé-Poincaré method with the given\nsymplectic, time-reversible, second order integrator, calculate gn and \u0018n at each\ntimestep, and approximate the canonical average from\nhgi D\n1\n\u0003 C 1\n\u0003\nX\nnD0\ngn\u0018\u00021\nn\nC O.h4/:\nFor further details, refer to [40]. Technically, a similar calculation can be carried out\nfor the Nosé-Hoover formulation, but the calculations are more involved.\nA good symplectic integrator for Nosé-Poincaré has been given by Nosé [287].\nFor further discussion and numerical experiments using this idea, see [94] (which\nalso considers stochastic methods).\n"
+    }
+  ],
+  "numbered_equations": [],
+  "transcription_note": "文字层逐字保留；数学排版另行转写，原页中的特殊字形编码不静默替换。PDF420仅取Exercises之前。",
+  "context_notation": [],
+  "extra_assumptions": [
+    "[EXTRA]仅给O(h⁴)余项与有限重加权公式的精确定义；存在修正Hamiltonian/密度和采样误差定理未覆盖，列入缺口。"
+  ],
+  "issues": [],
+  "statement_scope": "三条公式的定义及渐近条件；不声称已构造ζ或证明有限样本等于精确平均。",
+  "lean_decl": "MD.Ch08.fourthOrderRemainder",
+  "lean_declarations": [
+    "MD.Ch08.fourthOrderRemainder",
+    "MD.Ch08.correctedFiniteAverage",
+    "MD.Ch08.npShadowAnsatz",
+    "MD.Ch08.npDensityAnsatz"
+  ],
+  "source_page_verification": "见source_page_checks.json，已目视核对本条原页。",
+  "repair_log": [],
+  "documented_priors": []
+}
+```
+
+## 完整本条Lean
+```lean
+def fourthOrderRemainder (r : ℝ → ℝ) : Prop :=
+  ∃ C ε : ℝ, 0 < C ∧ 0 < ε ∧ ∀ h, |h| < ε → |r h| ≤ C*|h|^4
+def correctedFiniteAverage (g ζ : ℕ → ℝ) (N : ℕ) : ℝ :=
+  (∑ k ∈ Finset.range (N+1), g k / ζ k) / ((N : ℝ)+1)
+def npShadowAnsatz (H H2 : Phase n → ℝ) (Htilde : ℝ → Phase n → ℝ) : Prop :=
+  ∀ z, fourthOrderRemainder (fun h ↦ Htilde h z-H z-h^2*H2 z)
+def npDensityAnsatz (ρ : Phase n → ℝ) (ζ ρtilde : ℝ → Phase n → ℝ) : Prop :=
+  ∀ z, fourthOrderRemainder (fun h ↦ ρtilde h z-ρ z*ζ h z)
+```
+
+## 项目依赖定义体及选择规格
+以下def/abbrev/structure完整保留；定理列出完整类型，Mathlib标准定义无需摘录。
+
+### MD.Ch08.Vec (Blueprint/Ch08.lean:17)
+原文件上下文：
+```lean
+open Set Filter MeasureTheory ProbabilityTheory MolecularDynamics
+open scoped BigOperators Topology ContDiff ENNReal NNReal Matrix
+variable {Ω : Type*} [MeasurableSpace Ω]
+variable {n : ℕ}
+```
+```lean
+abbrev Vec (n : ℕ) := Fin n → ℝ
+```
+
+### MD.Ch08.Phase (Blueprint/Ch08.lean:18)
+原文件上下文：
+```lean
+open Set Filter MeasureTheory ProbabilityTheory MolecularDynamics
+open scoped BigOperators Topology ContDiff ENNReal NNReal Matrix
+variable {Ω : Type*} [MeasurableSpace Ω]
+variable {n : ℕ}
+```
+```lean
+abbrev Phase (n : ℕ) := Vec n × Vec n
+```
+
+### MD.Ch08.fourthOrderRemainder (Blueprint/Ch08.lean:189)
+原文件上下文：
+```lean
+open Set Filter MeasureTheory ProbabilityTheory MolecularDynamics
+open scoped BigOperators Topology ContDiff ENNReal NNReal Matrix
+variable {Ω : Type*} [MeasurableSpace Ω]
+variable {n : ℕ}
+```
+```lean
+def fourthOrderRemainder (r : ℝ → ℝ) : Prop :=
+  ∃ C ε : ℝ, 0 < C ∧ 0 < ε ∧ ∀ h, |h| < ε → |r h| ≤ C*|h|^4
+```
+
+### MD.Ch08.correctedFiniteAverage (Blueprint/Ch08.lean:191)
+原文件上下文：
+```lean
+open Set Filter MeasureTheory ProbabilityTheory MolecularDynamics
+open scoped BigOperators Topology ContDiff ENNReal NNReal Matrix
+variable {Ω : Type*} [MeasurableSpace Ω]
+variable {n : ℕ}
+```
+```lean
+def correctedFiniteAverage (g ζ : ℕ → ℝ) (N : ℕ) : ℝ :=
+  (∑ k ∈ Finset.range (N+1), g k / ζ k) / ((N : ℝ)+1)
+```
+
+### MD.Ch08.npShadowAnsatz (Blueprint/Ch08.lean:193)
+原文件上下文：
+```lean
+open Set Filter MeasureTheory ProbabilityTheory MolecularDynamics
+open scoped BigOperators Topology ContDiff ENNReal NNReal Matrix
+variable {Ω : Type*} [MeasurableSpace Ω]
+variable {n : ℕ}
+```
+```lean
+def npShadowAnsatz (H H2 : Phase n → ℝ) (Htilde : ℝ → Phase n → ℝ) : Prop :=
+  ∀ z, fourthOrderRemainder (fun h ↦ Htilde h z-H z-h^2*H2 z)
+```
+
+### MD.Ch08.npDensityAnsatz (Blueprint/Ch08.lean:195)
+原文件上下文：
+```lean
+open Set Filter MeasureTheory ProbabilityTheory MolecularDynamics
+open scoped BigOperators Topology ContDiff ENNReal NNReal Matrix
+variable {Ω : Type*} [MeasurableSpace Ω]
+variable {n : ℕ}
+```
+```lean
+def npDensityAnsatz (ρ : Phase n → ℝ) (ζ ρtilde : ℝ → Phase n → ℝ) : Prop :=
+  ∀ z, fourthOrderRemainder (fun h ↦ ρtilde h z-ρ z*ζ h z)
+```

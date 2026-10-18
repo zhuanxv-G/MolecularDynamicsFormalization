@@ -1,0 +1,525 @@
+{
+  "batches": 18,
+  "subtasks": 103,
+  "covered_entries": 103,
+  "missing_project_definitions": 0,
+  "checks": [
+    {
+      "source_id": "MD-8.1-CanonicalCorrelation",
+      "project_constants": 11,
+      "missing": []
+    },
+    {
+      "source_id": "MD-8.1-HamiltonianStationary",
+      "project_constants": 14,
+      "missing": []
+    },
+    {
+      "source_id": "MD-8.1-ExtendedDensity",
+      "project_constants": 3,
+      "missing": []
+    },
+    {
+      "source_id": "MD-8.1.1-NoseHoover",
+      "project_constants": 9,
+      "missing": []
+    },
+    {
+      "source_id": "MD-8.1.1-NHDensitySplit",
+      "project_constants": 16,
+      "missing": []
+    },
+    {
+      "source_id": "MD-8.1.1-NHFirstIntegralPrinted",
+      "project_constants": 12,
+      "missing": []
+    },
+    {
+      "source_id": "MD-8.1.2-NHReversal",
+      "project_constants": 10,
+      "missing": []
+    },
+    {
+      "source_id": "MD-8.1.2-NHTimestep",
+      "project_constants": 12,
+      "missing": []
+    },
+    {
+      "source_id": "MD-8.1.2-NHTimestepReversible",
+      "project_constants": 14,
+      "missing": []
+    },
+    {
+      "source_id": "MD-8.1.2.1-NoseHamiltoniansPrinted",
+      "project_constants": 9,
+      "missing": []
+    },
+    {
+      "source_id": "MD-8.1.2.1-NPEquations",
+      "project_constants": 7,
+      "missing": []
+    },
+    {
+      "source_id": "MD-8.1.2.1-NPtoNH",
+      "project_constants": 13,
+      "missing": []
+    },
+    {
+      "source_id": "MD-8.1.2.1-NPShadowDensity",
+      "project_constants": 6,
+      "missing": []
+    },
+    {
+      "source_id": "MD-8.2-GeneralThermostat",
+      "project_constants": 4,
+      "missing": []
+    },
+    {
+      "source_id": "MD-8.2.1-ContinuityProductRule",
+      "project_constants": 6,
+      "missing": []
+    },
+    {
+      "source_id": "MD-8.2.1-ThermostatCriterion",
+      "project_constants": 11,
+      "missing": []
+    },
+    {
+      "source_id": "MD-8.2.1-Examples81and82",
+      "project_constants": 12,
+      "missing": []
+    },
+    {
+      "source_id": "MD-8.2.1-TemperatureIdentity",
+      "project_constants": 6,
+      "missing": []
+    },
+    {
+      "source_id": "MD-8.2.1-Proposition81",
+      "project_constants": 14,
+      "missing": []
+    },
+    {
+      "source_id": "MD-8.2.2-NHChains",
+      "project_constants": 11,
+      "missing": []
+    },
+    {
+      "source_id": "MD-8.3-ArrheniusRate",
+      "project_constants": 2,
+      "missing": []
+    },
+    {
+      "source_id": "MD-8.4-AdditiveThermostatSDE",
+      "project_constants": 8,
+      "missing": []
+    },
+    {
+      "source_id": "MD-8.4-OUStationarityPrinted",
+      "project_constants": 10,
+      "missing": []
+    },
+    {
+      "source_id": "MD-8.4-LiftedThermostat",
+      "project_constants": 6,
+      "missing": []
+    },
+    {
+      "source_id": "MD-8.4-Proposition82",
+      "project_constants": 13,
+      "missing": []
+    },
+    {
+      "source_id": "MD-8.4.1-NHL",
+      "project_constants": 15,
+      "missing": []
+    },
+    {
+      "source_id": "MD-8.4.1-Lemma81",
+      "project_constants": 15,
+      "missing": []
+    },
+    {
+      "source_id": "MD-8.4.1-Proposition83",
+      "project_constants": 15,
+      "missing": []
+    },
+    {
+      "source_id": "MD-8.4.1-Theorem81",
+      "project_constants": 27,
+      "missing": []
+    },
+    {
+      "source_id": "MD-8.4.1-ZeroModeInvariant",
+      "project_constants": 9,
+      "missing": []
+    },
+    {
+      "source_id": "MD-8.4.1-NHLGenerator",
+      "project_constants": 15,
+      "missing": []
+    },
+    {
+      "source_id": "MD-8.4.1-LyapunovCalculation",
+      "project_constants": 15,
+      "missing": []
+    },
+    {
+      "source_id": "MD-8.4.1-LyapunovRatePrinted",
+      "project_constants": 8,
+      "missing": []
+    },
+    {
+      "source_id": "MD-8.4.2-NHLTimestep",
+      "project_constants": 13,
+      "missing": []
+    },
+    {
+      "source_id": "MD-8.4.1-NHLWeakStationary",
+      "project_constants": 18,
+      "missing": []
+    },
+    {
+      "source_id": "MD-8.4.3-PreEquilibriumMeans",
+      "project_constants": 8,
+      "missing": []
+    },
+    {
+      "source_id": "MD-8.4.4-VelocityRescaling",
+      "project_constants": 9,
+      "missing": []
+    },
+    {
+      "source_id": "MD-8.4.4-RescalingStationary",
+      "project_constants": 15,
+      "missing": []
+    },
+    {
+      "source_id": "MD-8.4.5-ThermostatEfficiency",
+      "project_constants": 15,
+      "missing": []
+    },
+    {
+      "source_id": "MD-8.5-SLS",
+      "project_constants": 14,
+      "missing": []
+    },
+    {
+      "source_id": "MD-8.5-SLSBracketPrinted",
+      "project_constants": 10,
+      "missing": []
+    },
+    {
+      "source_id": "MD-8.5-SLSHormander",
+      "project_constants": 15,
+      "missing": []
+    },
+    {
+      "source_id": "MD-8.5-SLSConservation",
+      "project_constants": 15,
+      "missing": []
+    },
+    {
+      "source_id": "MD-8.5-SLSLeapfrog",
+      "project_constants": 10,
+      "missing": []
+    },
+    {
+      "source_id": "MD-8.5-SLSDoubleWell",
+      "project_constants": 2,
+      "missing": []
+    },
+    {
+      "source_id": "MD-8.6-IsokineticField",
+      "project_constants": 6,
+      "missing": []
+    },
+    {
+      "source_id": "MD-8.6-IsokineticProjector",
+      "project_constants": 5,
+      "missing": []
+    },
+    {
+      "source_id": "MD-8.6-IsokineticDivergencePrinted",
+      "project_constants": 10,
+      "missing": []
+    },
+    {
+      "source_id": "MD-8.6-IsokineticGibbsShell",
+      "project_constants": 6,
+      "missing": []
+    },
+    {
+      "source_id": "MD-8.6.1-StochasticIsokinetic",
+      "project_constants": 9,
+      "missing": []
+    },
+    {
+      "source_id": "MD-8.6.1-SINWeightPrinted",
+      "project_constants": 9,
+      "missing": []
+    },
+    {
+      "source_id": "MD-8.6.2-SINHarmonic",
+      "project_constants": 14,
+      "missing": []
+    },
+    {
+      "source_id": "MD-8.6.2-SINProjectedBracketsPrinted",
+      "project_constants": 17,
+      "missing": []
+    },
+    {
+      "source_id": "MD-8.6.2-SINThirdBracketPrinted",
+      "project_constants": 7,
+      "missing": []
+    },
+    {
+      "source_id": "MD-8.6.2-SINBracketRank",
+      "project_constants": 10,
+      "missing": []
+    },
+    {
+      "source_id": "MD-8.6.2-SINLyapunov",
+      "project_constants": 10,
+      "missing": []
+    },
+    {
+      "source_id": "MD-8.6.3-SINForceSplitting",
+      "project_constants": 10,
+      "missing": []
+    },
+    {
+      "source_id": "MD-8.6.3-SINRAlgorithm",
+      "project_constants": 4,
+      "missing": []
+    },
+    {
+      "source_id": "MD-8.6.3-SINNoseSubsplitting",
+      "project_constants": 6,
+      "missing": []
+    },
+    {
+      "source_id": "MD-8.6.3-SINForceExactPrinted",
+      "project_constants": 8,
+      "missing": []
+    },
+    {
+      "source_id": "MD-8.6.4-SINThreeLevelPotential",
+      "project_constants": 6,
+      "missing": []
+    },
+    {
+      "source_id": "MD-8.7-GeneralizedLangevin",
+      "project_constants": 5,
+      "missing": []
+    },
+    {
+      "source_id": "MD-8.7-GLEFluctuationDissipationPrinted",
+      "project_constants": 5,
+      "missing": []
+    },
+    {
+      "source_id": "MD-8.7-PronyKernel",
+      "project_constants": 3,
+      "missing": []
+    },
+    {
+      "source_id": "MD-8.7.1-PronyMemoryODE",
+      "project_constants": 9,
+      "missing": []
+    },
+    {
+      "source_id": "MD-8.7.1-PronyOUStationarity",
+      "project_constants": 5,
+      "missing": []
+    },
+    {
+      "source_id": "MD-8.7.1-CombinedPronyVariable",
+      "project_constants": 12,
+      "missing": []
+    },
+    {
+      "source_id": "MD-8.7.1-PronyLangevinLimit",
+      "project_constants": 3,
+      "missing": []
+    },
+    {
+      "source_id": "MD-8.7.1-GeneralizedLangevinIntegrator",
+      "project_constants": 10,
+      "missing": []
+    },
+    {
+      "source_id": "MD-8.7.1-GLEConsistentCoefficients",
+      "project_constants": 5,
+      "missing": []
+    },
+    {
+      "source_id": "MD-8.8-NPTThermodynamics",
+      "project_constants": 6,
+      "missing": []
+    },
+    {
+      "source_id": "MD-8.8-NPTBathTaylor",
+      "project_constants": 5,
+      "missing": []
+    },
+    {
+      "source_id": "MD-8.8-NPTDensity",
+      "project_constants": 11,
+      "missing": []
+    },
+    {
+      "source_id": "MD-8.8-AndersenCoordinates",
+      "project_constants": 9,
+      "missing": []
+    },
+    {
+      "source_id": "MD-8.8-AndersenKineticEnergy",
+      "project_constants": 8,
+      "missing": []
+    },
+    {
+      "source_id": "MD-8.8-AndersenHamiltonianPrinted",
+      "project_constants": 14,
+      "missing": []
+    },
+    {
+      "source_id": "MD-8.8.1-NHLPistonEquations",
+      "project_constants": 15,
+      "missing": []
+    },
+    {
+      "source_id": "MD-8.8.1-PistonHamiltonianSubfield",
+      "project_constants": 9,
+      "missing": []
+    },
+    {
+      "source_id": "MD-8.8.1-PistonThermostatWeightPrinted",
+      "project_constants": 10,
+      "missing": []
+    },
+    {
+      "source_id": "MD-8.8.1-PistonReducedPDE",
+      "project_constants": 10,
+      "missing": []
+    },
+    {
+      "source_id": "MD-8.8.1-PistonStationaryWeight",
+      "project_constants": 16,
+      "missing": []
+    },
+    {
+      "source_id": "MD-8.8.2-PistonIntegrator",
+      "project_constants": 19,
+      "missing": []
+    },
+    {
+      "source_id": "MD-8.8.3-ParrinelloRahman",
+      "project_constants": 11,
+      "missing": []
+    },
+    {
+      "source_id": "MD-8.9-TotalMomentum",
+      "project_constants": 6,
+      "missing": []
+    },
+    {
+      "source_id": "MD-8.9.1-DPDSoftPotential",
+      "project_constants": 11,
+      "missing": []
+    },
+    {
+      "source_id": "MD-8.9.1-DPDPairForces",
+      "project_constants": 13,
+      "missing": []
+    },
+    {
+      "source_id": "MD-8.9.1-DPDPairWiener",
+      "project_constants": 6,
+      "missing": []
+    },
+    {
+      "source_id": "MD-8.9.1-DPDIntegralSystem",
+      "project_constants": 21,
+      "missing": []
+    },
+    {
+      "source_id": "MD-8.9.1-DPDCanonicalLeaf",
+      "project_constants": 10,
+      "missing": []
+    },
+    {
+      "source_id": "MD-8.9.1-DPDMassOrderPrinted",
+      "project_constants": 3,
+      "missing": []
+    },
+    {
+      "source_id": "MD-8.9.2-DPDVelocityVerlet",
+      "project_constants": 16,
+      "missing": []
+    },
+    {
+      "source_id": "MD-8.9.2-DPDSplitGenerator",
+      "project_constants": 22,
+      "missing": []
+    },
+    {
+      "source_id": "MD-8.9.2-DPDPairGeneratorPrinted",
+      "project_constants": 8,
+      "missing": []
+    },
+    {
+      "source_id": "MD-8.9.2-DPDSplittingCompositions",
+      "project_constants": 22,
+      "missing": []
+    },
+    {
+      "source_id": "MD-8.9.2-DPDPairOUUpdate",
+      "project_constants": 11,
+      "missing": []
+    },
+    {
+      "source_id": "MD-8.9.3-PairwiseNoseHoover",
+      "project_constants": 18,
+      "missing": []
+    },
+    {
+      "source_id": "MD-8.9.3-PairwiseCanonicalWeight",
+      "project_constants": 14,
+      "missing": []
+    },
+    {
+      "source_id": "MD-8.9.4-PairwiseNHLSDE",
+      "project_constants": 23,
+      "missing": []
+    },
+    {
+      "source_id": "MD-8.9.4-PairwiseNHLGenerator",
+      "project_constants": 38,
+      "missing": []
+    },
+    {
+      "source_id": "MD-8.9.4-PNHLSplittingAlgorithms",
+      "project_constants": 24,
+      "missing": []
+    },
+    {
+      "source_id": "MD-8.10-BerendsenRelaxation",
+      "project_constants": 10,
+      "missing": []
+    },
+    {
+      "source_id": "MD-8.10-CanonicalTotalMomentumGaussian",
+      "project_constants": 4,
+      "missing": []
+    },
+    {
+      "source_id": "MD-8.10-NHLTotalMomentumSign",
+      "project_constants": 4,
+      "missing": []
+    }
+  ],
+  "website_submitted": false,
+  "maximum_subtask_bytes": 212933
+}

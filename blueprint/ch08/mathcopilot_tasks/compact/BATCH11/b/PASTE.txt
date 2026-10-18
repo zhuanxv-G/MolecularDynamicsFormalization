@@ -1,0 +1,154 @@
+以附件/PASTE 为准，忽略 /workspace 旧文件；Mathlib 定义按标准含义采信。
+本任务只审本条：原文转录、对象资格、定义体、量词、全部结论及[EXTRA]是否一致；Lean编译不代替语义审阅。
+Lean/Mathlib均4.34.0。原页PDF映射：[395]；印刷页=[374].
+input_sha256请原样回显：
+{
+  "Blueprint/Ch08.lean": "2800812fadd8e2557013f1941e4570401f7903d46f44baf07e23d5531da22a72",
+  "blueprint/ch08/ch08_source.json": "9b994b0f64cd22c85c2ad4123fbfdbd064bd7a6d070fe13b721794432f9f7a63",
+  "BATCH11b_PAGES.pdf": "1323f85fb3dc8a74d3664ede9eadb358e41d748a6fd87d3f2b02b34911ee1234"
+}
+用代码将JSON对象(batch,input_sha256,items)写到 /workspace/.mathcopilot/reviews/ch08/BATCH11b_review.json；items仅含本source_id。
+items字段：source_id、verdict(PASS/FAIL/NEEDS_HUMAN)、transcription、semantic_review、counterexample、suggested_fix、printed_version、corrected_version。逐版区分原文疑误和修正版结论；缺材料必须具体指出，不猜测。写后json.loads自检，最后仅回复路径及统计。
+
+## 原文JSON
+```json
+{
+  "source_id": "MD-8.7-GeneralizedLangevin",
+  "kind": "definition",
+  "label": null,
+  "section": "8.7",
+  "printed_page": "374",
+  "pdf_page": "395",
+  "statement_latex": "dq=M⁻¹pdt, dp=−∇U(q)dt−∫₀ᵗΓ(t−s)p(s)ds dt+dB, q(0)=q₀,p(0)=p₀. Γ is the memory kernel and B is colored noise. (8.57)–(8.58).",
+  "statement_verbatim": "374\n8\nExtended Variable Methods\nand have to be modelled as part of the simulation process. Our presentation of this\ntopic follows that of [19] and earlier works [69, 85, 204, 276] which treat the non-\nMarkovian Generalized Langevin equation as a Markov system in an extended phase\nspace.\nThe equations of Generalized Langevin dynamics are normally written in the\nform\ndq D M\u00021pdt;\n(8.57)\ndp D \u0003rU.q/dt \u0003\nt\nZ\n0\n\u0010 .t \u0003 s/p.s/dsdt C dB;\n(8.58)\nsubject to initial conditions q.0/ D q0, p.0/ D p0. Here \u0010 .t/ D .\nij.t// is a Nc \u0004 Nc\nmatrix-valued function of t which we refer to as the “memory kernel”. The term\nFd D \u0003\nt\nZ\n0\n\u0010 .t \u0003 s/p.s/dsdt\nrepresents a drag force acting on the system due to the interaction with the particles\nof the bath. dB is the increment of the colored-noise (non-Gaussian) stochastic\nprocess. Often this increment is treated formally as an impulse R.t/dt, where R\nis referred to as a “random force,” which calls to mind the origin of the stochastic\nterm as the model for interaction with a large (but ﬁnite) heat bath. We use this\nlanguage for consistency with the literature. The driving forces are correlated in a\nway that is described by the ﬂuctuation-dissipation theorem [202, 402]. This states\nthat at temperature T the components of the random forces satisfy\nhRi.t C s/Rj.t/i D kBT \nij.s/ıij;\ns \b 0:\n(8.59)\nHere, ıij is the Kronecker delta, and kB is Boltzmann’s constant.\nNumerical methods for treating (8.57)–(8.58) include calculation of the drag\nforce Fd which requires a convolution of the momenta with \u0010 .t/ and therefore\nstorage of some portion of the time-history of p. Typically we will compute a\ndiscrete sequence of p0; p1; : : : ; and so it will be necessary to store a collection\nof, say ` > 0, previous momentum vectors. This may be somewhat demanding in a\nlarge scale simulation setting. Moreover, computing R requires the generation of a\nsequence of random numbers with prescribed correlation, as speciﬁed in Eq. (8.59).\nBoth these issues may be addressed sensibly using the technique of Prony series and\nan extended variable representation\nIn the remainder of this discussion, for the purpose of simpliﬁed presentation, we\nconﬁne ourselves to the simple case of a scalar memory kernel, writing\n\u0010 .t/ D \n.t/I:\n",
+  "verbatim_scope": "完整对应原页文字层，逐字保留；本条数学成分由statement_latex及statement_scope定位。",
+  "proof_latex": null,
+  "proof_note": "对应原页推导逐字保存在statement_verbatim/original_page_text；排版以原页PDF为准。",
+  "original_page_text": [
+    {
+      "pdf_page": 395,
+      "printed_page": 374,
+      "text": "374\n8\nExtended Variable Methods\nand have to be modelled as part of the simulation process. Our presentation of this\ntopic follows that of [19] and earlier works [69, 85, 204, 276] which treat the non-\nMarkovian Generalized Langevin equation as a Markov system in an extended phase\nspace.\nThe equations of Generalized Langevin dynamics are normally written in the\nform\ndq D M\u00021pdt;\n(8.57)\ndp D \u0003rU.q/dt \u0003\nt\nZ\n0\n\u0010 .t \u0003 s/p.s/dsdt C dB;\n(8.58)\nsubject to initial conditions q.0/ D q0, p.0/ D p0. Here \u0010 .t/ D .\nij.t// is a Nc \u0004 Nc\nmatrix-valued function of t which we refer to as the “memory kernel”. The term\nFd D \u0003\nt\nZ\n0\n\u0010 .t \u0003 s/p.s/dsdt\nrepresents a drag force acting on the system due to the interaction with the particles\nof the bath. dB is the increment of the colored-noise (non-Gaussian) stochastic\nprocess. Often this increment is treated formally as an impulse R.t/dt, where R\nis referred to as a “random force,” which calls to mind the origin of the stochastic\nterm as the model for interaction with a large (but ﬁnite) heat bath. We use this\nlanguage for consistency with the literature. The driving forces are correlated in a\nway that is described by the ﬂuctuation-dissipation theorem [202, 402]. This states\nthat at temperature T the components of the random forces satisfy\nhRi.t C s/Rj.t/i D kBT \nij.s/ıij;\ns \b 0:\n(8.59)\nHere, ıij is the Kronecker delta, and kB is Boltzmann’s constant.\nNumerical methods for treating (8.57)–(8.58) include calculation of the drag\nforce Fd which requires a convolution of the momenta with \u0010 .t/ and therefore\nstorage of some portion of the time-history of p. Typically we will compute a\ndiscrete sequence of p0; p1; : : : ; and so it will be necessary to store a collection\nof, say ` > 0, previous momentum vectors. This may be somewhat demanding in a\nlarge scale simulation setting. Moreover, computing R requires the generation of a\nsequence of random numbers with prescribed correlation, as speciﬁed in Eq. (8.59).\nBoth these issues may be addressed sensibly using the technique of Prony series and\nan extended variable representation\nIn the remainder of this discussion, for the purpose of simpliﬁed presentation, we\nconﬁne ourselves to the simple case of a scalar memory kernel, writing\n\u0010 .t/ D \n.t/I:\n"
+    }
+  ],
+  "numbered_equations": [
+    "8.57",
+    "8.58"
+  ],
+  "transcription_note": "文字层逐字保留；数学排版另行转写，原页中的特殊字形编码不静默替换。PDF420仅取Exercises之前。",
+  "context_notation": [],
+  "extra_assumptions": [
+    "B不是Wiener；这里是加性有色噪声增量的积分方程，未把R(t)dt当作白噪声的普通导数。",
+    "本条取非负时间连续记忆核以保证内部卷积可积；自然历史适应和正质量为选定强解范围。一般粗糙核与解存在唯一性列缺口。"
+  ],
+  "issues": [],
+  "statement_scope": "连续矩阵记忆核下的卷积及GLE积分解类定义。",
+  "lean_decl": "MD.Ch08.memoryDrag",
+  "lean_declarations": [
+    "MD.Ch08.memoryDrag",
+    "MD.Ch08.generalizedLangevin"
+  ],
+  "source_page_verification": "见source_page_checks.json，已目视核对本条原页。",
+  "repair_log": [],
+  "documented_priors": []
+}
+```
+
+## 完整本条Lean
+```lean
+def memoryDrag (Γ : ℝ → Matrix (Fin n) (Fin n) ℝ) (p : ℝ → Vec n) (t : ℝ) : Vec n :=
+  -∫ s in (0 : ℝ)..t, Γ (t-s) *ᵥ p s
+def generalizedLangevin (P : Measure Ω) (invm : Vec n) (U : Vec n → ℝ)
+    (Γ : ℝ → Matrix (Fin n) (Fin n) ℝ) (B : ℝ → Ω → Vec n)
+    (X : ℝ → Ω → Phase n) (x0 : Phase n) : Prop :=
+  IsProbabilityMeasure P ∧ (∀ i, 0 < invm i) ∧ ContDiff ℝ 1 U ∧ ContinuousOn Γ (Ici 0) ∧
+  (∀ᵐ sample ∂P, ContinuousOn (fun t ↦ X t sample) (Ici 0) ∧
+    ContinuousOn (fun t ↦ B t sample) (Ici 0)) ∧
+  (∀ t : ℝ, 0 ≤ t → Measurable[MeasurableSpace.comap
+    (fun (sample : Ω) (s : Icc (0 : ℝ) t) ↦ B s sample) inferInstance] (X t)) ∧
+  ∀ t, 0 ≤ t →
+    (∀ᵐ sample ∂P, IntervalIntegrable
+      (fun s ↦ -gradient U (X s sample).1+memoryDrag Γ (fun r ↦ (X r sample).2) s) volume 0 t) ∧
+    ∀ᵐ sample ∂P,
+      (X t sample).1=x0.1+∫ s in (0 : ℝ)..t, (fun i ↦ invm i*(X s sample).2 i) ∧
+      (X t sample).2=x0.2+(∫ s in (0 : ℝ)..t,
+        -gradient U (X s sample).1+memoryDrag Γ (fun r ↦ (X r sample).2) s)+B t sample-B 0 sample
+```
+
+## 项目依赖定义体及选择规格
+以下def/abbrev/structure完整保留；定理列出完整类型，Mathlib标准定义无需摘录。
+
+### MD.Ch08.Vec (Blueprint/Ch08.lean:17)
+原文件上下文：
+```lean
+open Set Filter MeasureTheory ProbabilityTheory MolecularDynamics
+open scoped BigOperators Topology ContDiff ENNReal NNReal Matrix
+variable {Ω : Type*} [MeasurableSpace Ω]
+variable {n : ℕ}
+```
+```lean
+abbrev Vec (n : ℕ) := Fin n → ℝ
+```
+
+### MD.Ch08.Phase (Blueprint/Ch08.lean:18)
+原文件上下文：
+```lean
+open Set Filter MeasureTheory ProbabilityTheory MolecularDynamics
+open scoped BigOperators Topology ContDiff ENNReal NNReal Matrix
+variable {Ω : Type*} [MeasurableSpace Ω]
+variable {n : ℕ}
+```
+```lean
+abbrev Phase (n : ℕ) := Vec n × Vec n
+```
+
+### MD.Ch08.gradient (Blueprint/Ch08.lean:20)
+原文件上下文：
+```lean
+open Set Filter MeasureTheory ProbabilityTheory MolecularDynamics
+open scoped BigOperators Topology ContDiff ENNReal NNReal Matrix
+variable {Ω : Type*} [MeasurableSpace Ω]
+variable {n : ℕ}
+```
+```lean
+def gradient (U : Vec n → ℝ) (q : Vec n) : Vec n := fun i ↦ fderiv ℝ U q (Pi.single i 1)
+```
+
+### MD.Ch08.memoryDrag (Blueprint/Ch08.lean:932)
+原文件上下文：
+```lean
+open Set Filter MeasureTheory ProbabilityTheory MolecularDynamics
+open scoped BigOperators Topology ContDiff ENNReal NNReal Matrix
+variable {Ω : Type*} [MeasurableSpace Ω]
+variable {n : ℕ}
+```
+```lean
+def memoryDrag (Γ : ℝ → Matrix (Fin n) (Fin n) ℝ) (p : ℝ → Vec n) (t : ℝ) : Vec n :=
+  -∫ s in (0 : ℝ)..t, Γ (t-s) *ᵥ p s
+```
+
+### MD.Ch08.generalizedLangevin (Blueprint/Ch08.lean:934)
+原文件上下文：
+```lean
+open Set Filter MeasureTheory ProbabilityTheory MolecularDynamics
+open scoped BigOperators Topology ContDiff ENNReal NNReal Matrix
+variable {Ω : Type*} [MeasurableSpace Ω]
+variable {n : ℕ}
+```
+```lean
+def generalizedLangevin (P : Measure Ω) (invm : Vec n) (U : Vec n → ℝ)
+    (Γ : ℝ → Matrix (Fin n) (Fin n) ℝ) (B : ℝ → Ω → Vec n)
+    (X : ℝ → Ω → Phase n) (x0 : Phase n) : Prop :=
+  IsProbabilityMeasure P ∧ (∀ i, 0 < invm i) ∧ ContDiff ℝ 1 U ∧ ContinuousOn Γ (Ici 0) ∧
+  (∀ᵐ sample ∂P, ContinuousOn (fun t ↦ X t sample) (Ici 0) ∧
+    ContinuousOn (fun t ↦ B t sample) (Ici 0)) ∧
+  (∀ t : ℝ, 0 ≤ t → Measurable[MeasurableSpace.comap
+    (fun (sample : Ω) (s : Icc (0 : ℝ) t) ↦ B s sample) inferInstance] (X t)) ∧
+  ∀ t, 0 ≤ t →
+    (∀ᵐ sample ∂P, IntervalIntegrable
+      (fun s ↦ -gradient U (X s sample).1+memoryDrag Γ (fun r ↦ (X r sample).2) s) volume 0 t) ∧
+    ∀ᵐ sample ∂P,
+      (X t sample).1=x0.1+∫ s in (0 : ℝ)..t, (fun i ↦ invm i*(X s sample).2 i) ∧
+      (X t sample).2=x0.2+(∫ s in (0 : ℝ)..t,
+        -gradient U (X s sample).1+memoryDrag Γ (fun r ↦ (X r sample).2) s)+B t sample-B 0 sample
+```

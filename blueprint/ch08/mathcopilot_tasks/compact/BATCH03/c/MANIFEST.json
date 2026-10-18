@@ -1,0 +1,85 @@
+{
+  "batch": "BATCH03",
+  "subtask": "BATCH03c",
+  "source_ids": [
+    "MD-8.2.1-ContinuityProductRule"
+  ],
+  "input_sha256": {
+    "Blueprint/Ch08.lean": "2800812fadd8e2557013f1941e4570401f7903d46f44baf07e23d5531da22a72",
+    "blueprint/ch08/ch08_source.json": "9b994b0f64cd22c85c2ad4123fbfdbd064bd7a6d070fe13b721794432f9f7a63",
+    "BATCH03c_PAGES.pdf": "9776fb2dc30923255a4e2719be2b22146cf59f1a09f9b1c8f58ec3b37a66f47a"
+  },
+  "page_mapping": [
+    {
+      "attachment_page": 1,
+      "original_pdf_page": 357,
+      "printed_page": 336
+    },
+    {
+      "attachment_page": 2,
+      "original_pdf_page": 358,
+      "printed_page": 337
+    }
+  ],
+  "definition_excerpts": [
+    {
+      "full_name": "MD.Ch08.Vec",
+      "kind": "abbrev",
+      "path": "Blueprint/Ch08.lean",
+      "line": 17,
+      "code_sha256": "6f4b254a8a7cc4115fb35265b77caa663bdd18567cd1e664cc5bbd080d02fcff"
+    },
+    {
+      "full_name": "MD.Ch08.continuityRHS",
+      "kind": "def",
+      "path": "Blueprint/Ch08.lean",
+      "line": 209,
+      "code_sha256": "fbd570095bbf5f5a491f144d27901543629fad12749f30f385942c9a17f2f362"
+    },
+    {
+      "full_name": "MD.Ch08.continuity_productRule",
+      "kind": "theorem",
+      "path": "Blueprint/Ch08.lean",
+      "line": 212,
+      "code_sha256": "30444c1c85f98f5a142b2984c4fc95b790eef9b28ce941fd860de6cbf598a33b"
+    },
+    {
+      "full_name": "MolecularDynamics.Chapter05Review.E",
+      "kind": "abbrev",
+      "path": "MolecularDynamics/Chapter05/ReviewDefinitions.lean",
+      "line": 18,
+      "code_sha256": "b497c8ba7f01b62a3147d9ae65652772ff3f81e57aa19b116f1283fef7a3cc60"
+    },
+    {
+      "full_name": "MolecularDynamics.textbookDivergence",
+      "kind": "def",
+      "path": "MolecularDynamics/Chapter08/ThermostatDensity.lean",
+      "line": 18,
+      "code_sha256": "1b45cabec3bf68bd209da969759334d158c263b7e5a40ed527bd3a4f48e25c48"
+    },
+    {
+      "full_name": "MolecularDynamics.textbookDivergence_density",
+      "kind": "theorem",
+      "path": "MolecularDynamics/Chapter08/ThermostatDensity.lean",
+      "line": 25,
+      "code_sha256": "5870d656f83097a9f97684050d9dcc44b00fe44c6c13f17b82d15d0f0494f506"
+    }
+  ],
+  "validation": {
+    "project_constant_closure": "PASS",
+    "missing_project_definitions": [],
+    "full_page_render_equality_dpi": 72,
+    "website_submitted": false
+  },
+  "files": {
+    "PASTE.txt": {
+      "bytes": 13980,
+      "sha256": "43acfe190d81c15c31026863e3174079a22fa988224a952f3b78cbfbe760d88a"
+    },
+    "BATCH03c_PAGES.pdf": {
+      "bytes": 98195,
+      "sha256": "9776fb2dc30923255a4e2719be2b22146cf59f1a09f9b1c8f58ec3b37a66f47a"
+    }
+  },
+  "total_task_bytes": 114921
+}

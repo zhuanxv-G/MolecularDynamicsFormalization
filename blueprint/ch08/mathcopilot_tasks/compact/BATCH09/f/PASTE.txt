@@ -1,0 +1,174 @@
+以附件/PASTE 为准，忽略 /workspace 旧文件；Mathlib 定义按标准含义采信。
+本任务只审本条：原文转录、对象资格、定义体、量词、全部结论及[EXTRA]是否一致；Lean编译不代替语义审阅。
+Lean/Mathlib均4.34.0。原页PDF映射：[389]；印刷页=[368].
+input_sha256请原样回显：
+{
+  "Blueprint/Ch08.lean": "2800812fadd8e2557013f1941e4570401f7903d46f44baf07e23d5531da22a72",
+  "blueprint/ch08/ch08_source.json": "9b994b0f64cd22c85c2ad4123fbfdbd064bd7a6d070fe13b721794432f9f7a63",
+  "BATCH09f_PAGES.pdf": "a505d4f853d4d6039042c2f54000795933f199cdad74b2ff7b537ed254330b90"
+}
+用代码将JSON对象(batch,input_sha256,items)写到 /workspace/.mathcopilot/reviews/ch08/BATCH09f_review.json；items仅含本source_id。
+items字段：source_id、verdict(PASS/FAIL/NEEDS_HUMAN)、transcription、semantic_review、counterexample、suggested_fix、printed_version、corrected_version。逐版区分原文疑误和修正版结论；缺材料必须具体指出，不猜测。写后json.loads自检，最后仅回复路径及统计。
+
+## 原文JSON
+```json
+{
+  "source_id": "MD-8.6.2-SINThirdBracketPrinted",
+  "kind": "unnumbered_claim",
+  "label": null,
+  "section": "8.6.2",
+  "printed_page": "368",
+  "pdf_page": "389",
+  "statement_latex": "The third projected commutator is displayed in (8.54), with polynomial η in (8.55); its p=0 specialization is printed as u₃=-2σq∂q-σq(-γ+ξ₂)∂p in (8.56).",
+  "statement_verbatim": "368\n8\nExtended Variable Methods\nWe calculate Œf; Œf; Œf; g\t\t\t and project onto the space spanned by the ﬁrst three\ncomponents to ﬁnd\nu3 D \u0007\n\b2\np3 \u0003 4p3\u00122 C 4p2q C \u00122\n1p\u00122 C \n\u00122\n1p \u0003 2\u00122\n1q\nD2\n\t\n@q\n\u0003 \u0007\u00122\n1\n\u0006 \u000f\nD3\n\u0007\n@p C 2\u0007\u00121p\n\u0006 \u000f\nD3\n\u0007\n@\u00121:\n(8.54)\nwith\n\u000f D 4p5\n2 \u0003 8p5\u00122\n1 \u0003 4\u00122\n1p3 C 4p3\n2\u00122\n1 \u0003 4p3\u00124\n1\n\u0003 2\n\u00122\n1p2q C 4p2q\u00122\u00122\n1 \u0003 4\u00122\n1q2p \u0003 2\u00124\n1p C p\n2\u00124\n1 \u0003 q\n\u00124\n1 C \u00124\n1\u00122q:\n(8.55)\nAlong p D 0, u3 becomes\nu3jpD0 D \u00032\u0007q@q \u0003 \u0007\n\b\u0003q\n\u00124\n1 C \u00124\n1\u00122q\n\u00124\n1\n\t\n@p\nD \u00032\u0007q@q \u0003 \u0007q.\u0003\n C \u00122/@p:\n(8.56)\nTogether with u0 we obtain a linearly independent set as long as q ¤ 0.\nIf p D 0 and q D 0 then we are on M0. If p ¤ 0 then u2 and u0 are linearly\nindependent. If q ¤ 0 then u3 and u0 are linearly independent. From these we\nestablish that the Hörmander condition holds everywhere except on a space of co-\ndimension 2 (that is except on the one-dimensional set M0).\nIn this case, it is possible to complete the proof by introducing a Lyapunov\nfunction \b to demonstrate the necessary contractivity in the \u00122 direction. The\ngenerator of this system is\nLisok D p @\n@q C\n\nF \u0003 .p2=\u0017/F\n\u000b @\n@p \u0003 p\u00121F\n\u0017\n@\n@\u00121\nC LN C LO\nwith \u0017 D p2 C \u00122\n1=2,\nLN D 1\n2\n\u00122\n1\u00122p\n\u0017\n@\n@p C 1\n2\n\u00123\n1\u00122\n\u0017\n@\n@\u00121\n\u0003 \u00122\u00121\n@\n@\u00121\nC Œ\u00122\n1 \u0003 ˇ\u00021\t @\n@\u00122\n;\nand\nLO D \u0003\n\u00122\n@\n@\u00122\nC \u00072\n2\n@2\n@\u00122\n2\n:\n",
+  "verbatim_scope": "完整对应原页文字层，逐字保留；本条数学成分由statement_latex及statement_scope定位。",
+  "proof_latex": null,
+  "proof_note": "对应原页推导逐字保存在statement_verbatim/original_page_text；排版以原页PDF为准。",
+  "original_page_text": [
+    {
+      "pdf_page": 389,
+      "printed_page": 368,
+      "text": "368\n8\nExtended Variable Methods\nWe calculate Œf; Œf; Œf; g\t\t\t and project onto the space spanned by the ﬁrst three\ncomponents to ﬁnd\nu3 D \u0007\n\b2\np3 \u0003 4p3\u00122 C 4p2q C \u00122\n1p\u00122 C \n\u00122\n1p \u0003 2\u00122\n1q\nD2\n\t\n@q\n\u0003 \u0007\u00122\n1\n\u0006 \u000f\nD3\n\u0007\n@p C 2\u0007\u00121p\n\u0006 \u000f\nD3\n\u0007\n@\u00121:\n(8.54)\nwith\n\u000f D 4p5\n2 \u0003 8p5\u00122\n1 \u0003 4\u00122\n1p3 C 4p3\n2\u00122\n1 \u0003 4p3\u00124\n1\n\u0003 2\n\u00122\n1p2q C 4p2q\u00122\u00122\n1 \u0003 4\u00122\n1q2p \u0003 2\u00124\n1p C p\n2\u00124\n1 \u0003 q\n\u00124\n1 C \u00124\n1\u00122q:\n(8.55)\nAlong p D 0, u3 becomes\nu3jpD0 D \u00032\u0007q@q \u0003 \u0007\n\b\u0003q\n\u00124\n1 C \u00124\n1\u00122q\n\u00124\n1\n\t\n@p\nD \u00032\u0007q@q \u0003 \u0007q.\u0003\n C \u00122/@p:\n(8.56)\nTogether with u0 we obtain a linearly independent set as long as q ¤ 0.\nIf p D 0 and q D 0 then we are on M0. If p ¤ 0 then u2 and u0 are linearly\nindependent. If q ¤ 0 then u3 and u0 are linearly independent. From these we\nestablish that the Hörmander condition holds everywhere except on a space of co-\ndimension 2 (that is except on the one-dimensional set M0).\nIn this case, it is possible to complete the proof by introducing a Lyapunov\nfunction \b to demonstrate the necessary contractivity in the \u00122 direction. The\ngenerator of this system is\nLisok D p @\n@q C\n\nF \u0003 .p2=\u0017/F\n\u000b @\n@p \u0003 p\u00121F\n\u0017\n@\n@\u00121\nC LN C LO\nwith \u0017 D p2 C \u00122\n1=2,\nLN D 1\n2\n\u00122\n1\u00122p\n\u0017\n@\n@p C 1\n2\n\u00123\n1\u00122\n\u0017\n@\n@\u00121\n\u0003 \u00122\u00121\n@\n@\u00121\nC Œ\u00122\n1 \u0003 ˇ\u00021\t @\n@\u00122\n;\nand\nLO D \u0003\n\u00122\n@\n@\u00122\nC \u00072\n2\n@2\n@\u00122\n2\n:\n"
+    }
+  ],
+  "numbered_equations": [
+    "8.54",
+    "8.55",
+    "8.56"
+  ],
+  "transcription_note": "文字层逐字保留；数学排版另行转写，原页中的特殊字形编码不静默替换。PDF420仅取Exercises之前。",
+  "context_notation": [],
+  "extra_assumptions": [
+    "ξ₁≠0用于分式化简；此处只核对原印(8.54)与(8.56)内部的代数关系，不声称(8.54)已被确认为实际三重交换子。"
+  ],
+  "issues": [
+    "已目视核对原页PDF389：(8.54)q分量代p=0得到-2σq/ξ₁²，(8.56)遗漏ξ₁²分母；原印多项式的其他系数仍待独立微分核对。"
+  ],
+  "statement_scope": "原印三重交换子候选及p=0内部代数核对；真实三重交换子等式列覆盖缺口。",
+  "lean_decl": "MD.Ch08.sinEtaPrinted",
+  "lean_declarations": [
+    "MD.Ch08.sinEtaPrinted",
+    "MD.Ch08.sinU3Printed",
+    "MD.Ch08.sinU3ZeroPrinted",
+    "MD.Ch08.sinU3Zero_corrected",
+    "MD.Ch08.sinU3Zero_specialize"
+  ],
+  "source_page_verification": "见source_page_checks.json，已目视核对本条原页。",
+  "repair_log": [],
+  "documented_priors": []
+}
+```
+
+## 完整本条Lean
+```lean
+def sinEtaPrinted (γ : ℝ) (z : Vec 4) : ℝ :=
+  4*z 1^5*γ^2-8*z 1^5*z 2^2-4*z 2^2*z 1^3+4*z 1^3*γ^2*z 2^2-4*z 1^3*z 2^4-
+  2*γ*z 2^2*z 1^2*z 0+4*z 1^2*z 0*z 3*z 2^2-4*z 2^2*z 0^2*z 1-
+  2*z 2^4*z 1+z 1*γ^2*z 2^4-z 0*γ*z 2^4+z 2^4*z 3*z 0
+def sinU3Printed (σ γ : ℝ) (z : Vec 4) : Vec 3 :=
+  ![σ*(2*γ*z 1^3-4*z 1^3*z 3+4*z 1^2*z 0+z 2^2*z 1*z 3+γ*z 2^2*z 1-2*z 2^2*z 0)/(sinD z)^2,
+    -σ*z 2^2*sinEtaPrinted γ z/(sinD z)^3,2*σ*z 2*z 1*sinEtaPrinted γ z/(sinD z)^3]
+def sinU3ZeroPrinted (σ γ : ℝ) (z : Vec 4) : Vec 3 :=
+  ![-2*σ*z 0,-σ*z 0*(-γ+z 3),0]
+def sinU3Zero_corrected (σ γ : ℝ) (z : Vec 4) : Vec 3 :=
+  ![-2*σ*z 0/z 2^2,-σ*z 0*(-γ+z 3),0]
+theorem sinU3Zero_specialize (σ γ : ℝ) (z : Vec 4) (hp : z 1=0) (hξ : z 2 ≠ 0) :
+    sinU3Printed σ γ z = sinU3Zero_corrected σ γ z := by
+  ext i; fin_cases i <;> simp [sinU3Printed,sinU3Zero_corrected,sinEtaPrinted,sinD,hp]
+    <;> field_simp [hξ] <;> ring
+```
+
+## 项目依赖定义体及选择规格
+以下def/abbrev/structure完整保留；定理列出完整类型，Mathlib标准定义无需摘录。
+
+### MD.Ch08.Vec (Blueprint/Ch08.lean:17)
+原文件上下文：
+```lean
+open Set Filter MeasureTheory ProbabilityTheory MolecularDynamics
+open scoped BigOperators Topology ContDiff ENNReal NNReal Matrix
+variable {Ω : Type*} [MeasurableSpace Ω]
+variable {n : ℕ}
+```
+```lean
+abbrev Vec (n : ℕ) := Fin n → ℝ
+```
+
+### MD.Ch08.sinD (Blueprint/Ch08.lean:782)
+原文件上下文：
+```lean
+open Set Filter MeasureTheory ProbabilityTheory MolecularDynamics
+open scoped BigOperators Topology ContDiff ENNReal NNReal Matrix
+variable {Ω : Type*} [MeasurableSpace Ω]
+variable {n : ℕ}
+```
+```lean
+def sinD (z : Vec 4) : ℝ := 2*z 1^2+z 2^2
+```
+
+### MD.Ch08.sinEtaPrinted (Blueprint/Ch08.lean:804)
+原文件上下文：
+```lean
+open Set Filter MeasureTheory ProbabilityTheory MolecularDynamics
+open scoped BigOperators Topology ContDiff ENNReal NNReal Matrix
+variable {Ω : Type*} [MeasurableSpace Ω]
+variable {n : ℕ}
+```
+```lean
+def sinEtaPrinted (γ : ℝ) (z : Vec 4) : ℝ :=
+  4*z 1^5*γ^2-8*z 1^5*z 2^2-4*z 2^2*z 1^3+4*z 1^3*γ^2*z 2^2-4*z 1^3*z 2^4-
+  2*γ*z 2^2*z 1^2*z 0+4*z 1^2*z 0*z 3*z 2^2-4*z 2^2*z 0^2*z 1-
+  2*z 2^4*z 1+z 1*γ^2*z 2^4-z 0*γ*z 2^4+z 2^4*z 3*z 0
+```
+
+### MD.Ch08.sinU3Printed (Blueprint/Ch08.lean:808)
+原文件上下文：
+```lean
+open Set Filter MeasureTheory ProbabilityTheory MolecularDynamics
+open scoped BigOperators Topology ContDiff ENNReal NNReal Matrix
+variable {Ω : Type*} [MeasurableSpace Ω]
+variable {n : ℕ}
+```
+```lean
+def sinU3Printed (σ γ : ℝ) (z : Vec 4) : Vec 3 :=
+  ![σ*(2*γ*z 1^3-4*z 1^3*z 3+4*z 1^2*z 0+z 2^2*z 1*z 3+γ*z 2^2*z 1-2*z 2^2*z 0)/(sinD z)^2,
+    -σ*z 2^2*sinEtaPrinted γ z/(sinD z)^3,2*σ*z 2*z 1*sinEtaPrinted γ z/(sinD z)^3]
+```
+
+### MD.Ch08.sinU3ZeroPrinted (Blueprint/Ch08.lean:811)
+原文件上下文：
+```lean
+open Set Filter MeasureTheory ProbabilityTheory MolecularDynamics
+open scoped BigOperators Topology ContDiff ENNReal NNReal Matrix
+variable {Ω : Type*} [MeasurableSpace Ω]
+variable {n : ℕ}
+```
+```lean
+def sinU3ZeroPrinted (σ γ : ℝ) (z : Vec 4) : Vec 3 :=
+  ![-2*σ*z 0,-σ*z 0*(-γ+z 3),0]
+```
+
+### MD.Ch08.sinU3Zero_corrected (Blueprint/Ch08.lean:813)
+原文件上下文：
+```lean
+open Set Filter MeasureTheory ProbabilityTheory MolecularDynamics
+open scoped BigOperators Topology ContDiff ENNReal NNReal Matrix
+variable {Ω : Type*} [MeasurableSpace Ω]
+variable {n : ℕ}
+```
+```lean
+def sinU3Zero_corrected (σ γ : ℝ) (z : Vec 4) : Vec 3 :=
+  ![-2*σ*z 0/z 2^2,-σ*z 0*(-γ+z 3),0]
+```
+
+### MD.Ch08.sinU3Zero_specialize (Blueprint/Ch08.lean:815)
+原文件上下文：
+```lean
+open Set Filter MeasureTheory ProbabilityTheory MolecularDynamics
+open scoped BigOperators Topology ContDiff ENNReal NNReal Matrix
+variable {Ω : Type*} [MeasurableSpace Ω]
+variable {n : ℕ}
+```
+```lean
+theorem sinU3Zero_specialize (σ γ : ℝ) (z : Vec 4) (hp : z 1=0) (hξ : z 2 ≠ 0) :
+    sinU3Printed σ γ z = sinU3Zero_corrected σ γ z
+```

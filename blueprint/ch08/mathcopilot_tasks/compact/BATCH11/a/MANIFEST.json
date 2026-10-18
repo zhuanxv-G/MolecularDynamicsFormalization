@@ -1,0 +1,80 @@
+{
+  "batch": "BATCH11",
+  "subtask": "BATCH11a",
+  "source_ids": [
+    "MD-8.6.4-SINThreeLevelPotential"
+  ],
+  "input_sha256": {
+    "Blueprint/Ch08.lean": "2800812fadd8e2557013f1941e4570401f7903d46f44baf07e23d5531da22a72",
+    "blueprint/ch08/ch08_source.json": "9b994b0f64cd22c85c2ad4123fbfdbd064bd7a6d070fe13b721794432f9f7a63",
+    "BATCH11a_PAGES.pdf": "669efebbb8ebfd1b9ca89727cd8680cea250f77d035cfe02b91dfd3423ff4331"
+  },
+  "page_mapping": [
+    {
+      "attachment_page": 1,
+      "original_pdf_page": 394,
+      "printed_page": 373
+    }
+  ],
+  "definition_excerpts": [
+    {
+      "full_name": "MD.Ch08.Vec",
+      "kind": "abbrev",
+      "path": "Blueprint/Ch08.lean",
+      "line": 17,
+      "code_sha256": "6f4b254a8a7cc4115fb35265b77caa663bdd18567cd1e664cc5bbd080d02fcff"
+    },
+    {
+      "full_name": "MD.Ch08.threeLevelPotential",
+      "kind": "def",
+      "path": "Blueprint/Ch08.lean",
+      "line": 924,
+      "code_sha256": "fcb20f9675ffc6b3e30b519371f5ded3b428c30f356fb7ca45692193467dc41b"
+    },
+    {
+      "full_name": "MD.Ch08.nestedTimeSteps",
+      "kind": "def",
+      "path": "Blueprint/Ch08.lean",
+      "line": 925,
+      "code_sha256": "fbc5abe17705d994ec83c72f1a898664f13e2988833c871b73362173d8b1c4d9"
+    },
+    {
+      "full_name": "MolecularDynamics.Chapter04Review.V",
+      "kind": "abbrev",
+      "path": "MolecularDynamics/Chapter04/ReviewDefinitions.lean",
+      "line": 17,
+      "code_sha256": "6ccc37dabd7987877f0360d3e6067166bb92c659835fdca7d3dcf9128e65be72"
+    },
+    {
+      "full_name": "MolecularDynamics.Chapter04Review.Mat3",
+      "kind": "abbrev",
+      "path": "MolecularDynamics/Chapter04/ReviewDefinitions.lean",
+      "line": 18,
+      "code_sha256": "901b471f5af578703d791fa40f28b823dfd3139ed16a6d37491e5a2bbf61d233"
+    },
+    {
+      "full_name": "MolecularDynamics.Chapter04Review.outer",
+      "kind": "def",
+      "path": "MolecularDynamics/Chapter04/ReviewDefinitions.lean",
+      "line": 157,
+      "code_sha256": "ceb543d2b989d03587540642d9939fa02a7ac890811088bd9a863e1b3ebea77e"
+    }
+  ],
+  "validation": {
+    "project_constant_closure": "PASS",
+    "missing_project_definitions": [],
+    "full_page_render_equality_dpi": 72,
+    "website_submitted": false
+  },
+  "files": {
+    "PASTE.txt": {
+      "bytes": 10525,
+      "sha256": "c9134b0f677839eba1478d80e90189d982ab7ebb586bde5f61691c08013805b9"
+    },
+    "BATCH11a_PAGES.pdf": {
+      "bytes": 72092,
+      "sha256": "669efebbb8ebfd1b9ca89727cd8680cea250f77d035cfe02b91dfd3423ff4331"
+    }
+  },
+  "total_task_bytes": 85251
+}

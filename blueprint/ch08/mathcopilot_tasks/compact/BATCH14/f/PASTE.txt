@@ -1,0 +1,148 @@
+以附件/PASTE 为准，忽略 /workspace 旧文件；Mathlib 定义按标准含义采信。
+本任务只审本条：原文转录、对象资格、定义体、量词、全部结论及[EXTRA]是否一致；Lean编译不代替语义审阅。
+Lean/Mathlib均4.34.0。原页PDF映射：[407]；印刷页=[386].
+input_sha256请原样回显：
+{
+  "Blueprint/Ch08.lean": "2800812fadd8e2557013f1941e4570401f7903d46f44baf07e23d5531da22a72",
+  "blueprint/ch08/ch08_source.json": "9b994b0f64cd22c85c2ad4123fbfdbd064bd7a6d070fe13b721794432f9f7a63",
+  "BATCH14f_PAGES.pdf": "01b4932736d4aaccef7927b9d5e4a11716d9a9678ff96b81876c342515d52993"
+}
+用代码将JSON对象(batch,input_sha256,items)写到 /workspace/.mathcopilot/reviews/ch08/BATCH14f_review.json；items仅含本source_id。
+items字段：source_id、verdict(PASS/FAIL/NEEDS_HUMAN)、transcription、semantic_review、counterexample、suggested_fix、printed_version、corrected_version。逐版区分原文疑误和修正版结论；缺材料必须具体指出，不猜测。写后json.loads自检，最后仅回复路径及统计。
+
+## 原文JSON
+```json
+{
+  "source_id": "MD-8.9-TotalMomentum",
+  "kind": "unnumbered_claim",
+  "label": null,
+  "section": "8.9",
+  "printed_page": "386",
+  "pdf_page": "407",
+  "statement_latex": "With central conservative forces ΣᵢFᵢ=0, Nosé dynamics gives d p_tot/dt=−ξ p_tot. Zero total momentum is formally invariant.",
+  "statement_verbatim": "386\n8\nExtended Variable Methods\n8.9\nMomentum-Conserving Thermostats and the Dissipative\nParticle Dynamics (DPD) Method\nIn many applications, it is important to preserve the total momentum while\ncalculating canonical thermodynamic averages, i.e. one works in an ensemble that\nis restricted by the additional momentum constraint. Momentum conservation plays\na key role in capturing long-ranged hydrodynamic interactions in coarse-grained\nmodels of complex ﬂuids [8]. Standard Langevin and Nosé dynamics methods fail\nto preserve the momentum. This is quite obvious in the case of Langevin dynamics.\nIn Nosé dynamics we have the following differential equation for the momenta:\ndp\ndt D \u0003rU.q/ \u0003 \u0012p:\nAssuming central forces, we have PN\niD1 rqiU D 0, thus we obtain the following\nequation for the total momentum vector ptot:\nN\nX\niD1\ndpi\ndt D dptot\ndt\nD \u0003\u0012ptot:\nIf the total momentum is chosen to be zero, then it will formally remain zero\nalong trajectories (see [78, 254] for a discussion on the affect this has on canonical\nsampling). However, in practice, a small numerical artifact may be introduced.\nMoreover, under numerical discretization, bias due to ﬁnite stepsize may be present\nallowing a build up of total momentum in long simulations.\nAn interesting potential consequence of the lack of momentum conservation is\nthe so-called “ﬂying ice cube” problem [172], whereby the system acquires a large\ntotal momentum but the internal momenta due to interactions among the particles\nbecomes small.\nIt is desirable to construct formulations and numerical methods which exactly\n(i.e. up to rounding error) preserve the total momentum from step to step. One\nobvious approach to this problem is to simply project the momenta onto the linear\nmomentum constraint at the end of each step (or after some number of steps).\nSuch a projection introduces potential issues in terms of convergence order and\nwould certainly complicate the analyses presented thus far in this book. Moreover,\nthe optimal choice of projection is unclear and it is easy to deﬁne poor schemes\n(for example, modifying always the momentum of just the ﬁrst particle in order\nto balance all the remaining components) which are likely to introduce artifacts\n(bias) in simulation. For this reason, there is interest in “building in” momentum\nconservation into the equations of motion (and indeed the integrator). Ideally this\nshould be done in a localized and homogeneous way so that momentum is not\ntransferred by a nonphysical mechanism between distant particles.\n",
+  "verbatim_scope": "完整对应原页文字层，逐字保留；本条数学成分由statement_latex及statement_scope定位。",
+  "proof_latex": null,
+  "proof_note": "对应原页推导逐字保存在statement_verbatim/original_page_text；排版以原页PDF为准。",
+  "original_page_text": [
+    {
+      "pdf_page": 407,
+      "printed_page": 386,
+      "text": "386\n8\nExtended Variable Methods\n8.9\nMomentum-Conserving Thermostats and the Dissipative\nParticle Dynamics (DPD) Method\nIn many applications, it is important to preserve the total momentum while\ncalculating canonical thermodynamic averages, i.e. one works in an ensemble that\nis restricted by the additional momentum constraint. Momentum conservation plays\na key role in capturing long-ranged hydrodynamic interactions in coarse-grained\nmodels of complex ﬂuids [8]. Standard Langevin and Nosé dynamics methods fail\nto preserve the momentum. This is quite obvious in the case of Langevin dynamics.\nIn Nosé dynamics we have the following differential equation for the momenta:\ndp\ndt D \u0003rU.q/ \u0003 \u0012p:\nAssuming central forces, we have PN\niD1 rqiU D 0, thus we obtain the following\nequation for the total momentum vector ptot:\nN\nX\niD1\ndpi\ndt D dptot\ndt\nD \u0003\u0012ptot:\nIf the total momentum is chosen to be zero, then it will formally remain zero\nalong trajectories (see [78, 254] for a discussion on the affect this has on canonical\nsampling). However, in practice, a small numerical artifact may be introduced.\nMoreover, under numerical discretization, bias due to ﬁnite stepsize may be present\nallowing a build up of total momentum in long simulations.\nAn interesting potential consequence of the lack of momentum conservation is\nthe so-called “ﬂying ice cube” problem [172], whereby the system acquires a large\ntotal momentum but the internal momenta due to interactions among the particles\nbecomes small.\nIt is desirable to construct formulations and numerical methods which exactly\n(i.e. up to rounding error) preserve the total momentum from step to step. One\nobvious approach to this problem is to simply project the momenta onto the linear\nmomentum constraint at the end of each step (or after some number of steps).\nSuch a projection introduces potential issues in terms of convergence order and\nwould certainly complicate the analyses presented thus far in this book. Moreover,\nthe optimal choice of projection is unclear and it is easy to deﬁne poor schemes\n(for example, modifying always the momentum of just the ﬁrst particle in order\nto balance all the remaining components) which are likely to introduce artifacts\n(bias) in simulation. For this reason, there is interest in “building in” momentum\nconservation into the equations of motion (and indeed the integrator). Ideally this\nshould be done in a localized and homogeneous way so that momentum is not\ntransferred by a nonphysical mechanism between distant particles.\n"
+    }
+  ],
+  "numbered_equations": [],
+  "transcription_note": "文字层逐字保留；数学排版另行转写，原页中的特殊字形编码不静默替换。PDF420仅取Exercises之前。",
+  "context_notation": [],
+  "extra_assumptions": [
+    "只证明瞬时总力恒等式；沿连续轨道的零动量不变需要ODE唯一性，有限精度“飞冰块”属经验现象，列缺口。"
+  ],
+  "issues": [],
+  "statement_scope": "总动量定义和Nosé瞬时总力/零总动量时总力为零。",
+  "lean_decl": "MD.Ch08.ParticleConfig",
+  "lean_declarations": [
+    "MD.Ch08.ParticleConfig",
+    "MD.Ch08.ParticlePhase",
+    "MD.Ch08.totalMomentum",
+    "MD.Ch08.noseTotalForce",
+    "MD.Ch08.noseTotalForce_zero"
+  ],
+  "source_page_verification": "见source_page_checks.json，已目视核对本条原页。",
+  "repair_log": [],
+  "documented_priors": []
+}
+```
+
+## 完整本条Lean
+```lean
+abbrev ParticleConfig (N d : ℕ) := Fin N → Vec d
+abbrev ParticlePhase (N d : ℕ) := ParticleConfig N d × ParticleConfig N d
+def totalMomentum {N d : ℕ} (p : ParticleConfig N d) : Vec d := ∑ i, p i
+theorem noseTotalForce {N d : ℕ} (F p : ParticleConfig N d) (ξ : ℝ)
+    (hF : totalMomentum F=0) :
+    totalMomentum (fun i ↦ F i-ξ • p i) = -ξ • totalMomentum p := by
+  simp only [totalMomentum,Finset.sum_sub_distrib,← Finset.smul_sum] at *
+  rw [hF]; simp
+theorem noseTotalForce_zero {N d : ℕ} (F p : ParticleConfig N d) (ξ : ℝ)
+    (hF : totalMomentum F=0) (hp : totalMomentum p=0) :
+    totalMomentum (fun i ↦ F i-ξ • p i)=0 := by rw [noseTotalForce F p ξ hF,hp,smul_zero]
+```
+
+## 项目依赖定义体及选择规格
+以下def/abbrev/structure完整保留；定理列出完整类型，Mathlib标准定义无需摘录。
+
+### MD.Ch08.Vec (Blueprint/Ch08.lean:17)
+原文件上下文：
+```lean
+open Set Filter MeasureTheory ProbabilityTheory MolecularDynamics
+open scoped BigOperators Topology ContDiff ENNReal NNReal Matrix
+variable {Ω : Type*} [MeasurableSpace Ω]
+variable {n : ℕ}
+```
+```lean
+abbrev Vec (n : ℕ) := Fin n → ℝ
+```
+
+### MD.Ch08.ParticleConfig (Blueprint/Ch08.lean:1334)
+原文件上下文：
+```lean
+open Set Filter MeasureTheory ProbabilityTheory MolecularDynamics
+open scoped BigOperators Topology ContDiff ENNReal NNReal Matrix
+variable {Ω : Type*} [MeasurableSpace Ω]
+variable {n : ℕ}
+```
+```lean
+abbrev ParticleConfig (N d : ℕ) := Fin N → Vec d
+```
+
+### MD.Ch08.ParticlePhase (Blueprint/Ch08.lean:1335)
+原文件上下文：
+```lean
+open Set Filter MeasureTheory ProbabilityTheory MolecularDynamics
+open scoped BigOperators Topology ContDiff ENNReal NNReal Matrix
+variable {Ω : Type*} [MeasurableSpace Ω]
+variable {n : ℕ}
+```
+```lean
+abbrev ParticlePhase (N d : ℕ) := ParticleConfig N d × ParticleConfig N d
+```
+
+### MD.Ch08.totalMomentum (Blueprint/Ch08.lean:1336)
+原文件上下文：
+```lean
+open Set Filter MeasureTheory ProbabilityTheory MolecularDynamics
+open scoped BigOperators Topology ContDiff ENNReal NNReal Matrix
+variable {Ω : Type*} [MeasurableSpace Ω]
+variable {n : ℕ}
+```
+```lean
+def totalMomentum {N d : ℕ} (p : ParticleConfig N d) : Vec d := ∑ i, p i
+```
+
+### MD.Ch08.noseTotalForce (Blueprint/Ch08.lean:1337)
+原文件上下文：
+```lean
+open Set Filter MeasureTheory ProbabilityTheory MolecularDynamics
+open scoped BigOperators Topology ContDiff ENNReal NNReal Matrix
+variable {Ω : Type*} [MeasurableSpace Ω]
+variable {n : ℕ}
+```
+```lean
+theorem noseTotalForce {N d : ℕ} (F p : ParticleConfig N d) (ξ : ℝ)
+    (hF : totalMomentum F=0) :
+    totalMomentum (fun i ↦ F i-ξ • p i) = -ξ • totalMomentum p
+```
+
+### MD.Ch08.noseTotalForce_zero (Blueprint/Ch08.lean:1342)
+原文件上下文：
+```lean
+open Set Filter MeasureTheory ProbabilityTheory MolecularDynamics
+open scoped BigOperators Topology ContDiff ENNReal NNReal Matrix
+variable {Ω : Type*} [MeasurableSpace Ω]
+variable {n : ℕ}
+```
+```lean
+theorem noseTotalForce_zero {N d : ℕ} (F p : ParticleConfig N d) (ξ : ℝ)
+    (hF : totalMomentum F=0) (hp : totalMomentum p=0) :
+    totalMomentum (fun i ↦ F i-ξ • p i)=0
+```

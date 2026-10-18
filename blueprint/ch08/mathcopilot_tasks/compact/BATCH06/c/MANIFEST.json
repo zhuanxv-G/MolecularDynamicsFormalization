@@ -1,0 +1,94 @@
+{
+  "batch": "BATCH06",
+  "subtask": "BATCH06c",
+  "source_ids": [
+    "MD-8.4.1-LyapunovRatePrinted"
+  ],
+  "input_sha256": {
+    "Blueprint/Ch08.lean": "2800812fadd8e2557013f1941e4570401f7903d46f44baf07e23d5531da22a72",
+    "blueprint/ch08/ch08_source.json": "9b994b0f64cd22c85c2ad4123fbfdbd064bd7a6d070fe13b721794432f9f7a63",
+    "BATCH06c_PAGES.pdf": "8d9ea90aca06136a0567cc8604655e23fac8176006d76c148a33de74e4040fd0"
+  },
+  "page_mapping": [
+    {
+      "attachment_page": 1,
+      "original_pdf_page": 370,
+      "printed_page": 349
+    }
+  ],
+  "definition_excerpts": [
+    {
+      "full_name": "MD.Ch08.nhlLyapunovExpression",
+      "kind": "def",
+      "path": "Blueprint/Ch08.lean",
+      "line": 448,
+      "code_sha256": "40d75222cf8b5e8c4fde8e61bd854aaa4c5e1bb974f12a9027abc889ede2c390"
+    },
+    {
+      "full_name": "MD.Ch08.lyapunovAlphaPrinted",
+      "kind": "def",
+      "path": "Blueprint/Ch08.lean",
+      "line": 463,
+      "code_sha256": "dcd3ef519105183cdd891e11745858aed97aff90f77080733a078d592097a099"
+    },
+    {
+      "full_name": "MD.Ch08.lyapunovAlpha_corrected",
+      "kind": "def",
+      "path": "Blueprint/Ch08.lean",
+      "line": 464,
+      "code_sha256": "c1c1181cc2ea9c2fa58a1186c55c2155a117ad25e69e916f07d6bbbbf55ffc93"
+    },
+    {
+      "full_name": "MD.Ch08.lyapunovRatePrinted",
+      "kind": "theorem",
+      "path": "Blueprint/Ch08.lean",
+      "line": 465,
+      "code_sha256": "afcb001a64e407c9eba8b7ce663ab3c61b92e60e7fcb629b398f4eadd2e11954"
+    },
+    {
+      "full_name": "MD.Ch08.lyapunovRate_counterexample",
+      "kind": "theorem",
+      "path": "Blueprint/Ch08.lean",
+      "line": 472,
+      "code_sha256": "60e4445dc49e322b8744e55322a567d1382468597768410b19b780f9b5c2732f"
+    },
+    {
+      "full_name": "MD.Ch08.lyapunovRate_corrected",
+      "kind": "theorem",
+      "path": "Blueprint/Ch08.lean",
+      "line": 477,
+      "code_sha256": "0ee7d5a6370ad3ff06fe02a422a3f2b6c6fe77c189b06190feaebb56aacde802"
+    },
+    {
+      "full_name": "MolecularDynamics.Chapter02Review.Q",
+      "kind": "abbrev",
+      "path": "MolecularDynamics/Chapter02/ReviewDefinitions.lean",
+      "line": 17,
+      "code_sha256": "d01d4518aed3668e7c982afee1cd3820fb858a94438e5b8960aa0557f5a57ef1"
+    },
+    {
+      "full_name": "MolecularDynamics.Chapter04Review.Q",
+      "kind": "abbrev",
+      "path": "MolecularDynamics/Chapter04/ReviewDefinitions.lean",
+      "line": 15,
+      "code_sha256": "d01d4518aed3668e7c982afee1cd3820fb858a94438e5b8960aa0557f5a57ef1"
+    }
+  ],
+  "validation": {
+    "project_constant_closure": "PASS",
+    "missing_project_definitions": [],
+    "full_page_render_equality_dpi": 72,
+    "website_submitted": false
+  },
+  "files": {
+    "PASTE.txt": {
+      "bytes": 11153,
+      "sha256": "4942df4605c2bb8cdde287cc47a7fdda20527306834f293edb5388b4e4316621"
+    },
+    "BATCH06c_PAGES.pdf": {
+      "bytes": 67926,
+      "sha256": "8d9ea90aca06136a0567cc8604655e23fac8176006d76c148a33de74e4040fd0"
+    }
+  },
+  "total_task_bytes": 82182
+}

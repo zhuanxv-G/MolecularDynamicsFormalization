@@ -1,0 +1,142 @@
+以附件/PASTE 为准，忽略 /workspace 旧文件；Mathlib 定义按标准含义采信。
+本任务只审本条：原文转录、对象资格、定义体、量词、全部结论及[EXTRA]是否一致；Lean编译不代替语义审阅。
+Lean/Mathlib均4.34.0。原页PDF映射：[399]；印刷页=[378].
+input_sha256请原样回显：
+{
+  "Blueprint/Ch08.lean": "2800812fadd8e2557013f1941e4570401f7903d46f44baf07e23d5531da22a72",
+  "blueprint/ch08/ch08_source.json": "9b994b0f64cd22c85c2ad4123fbfdbd064bd7a6d070fe13b721794432f9f7a63",
+  "BATCH12e_PAGES.pdf": "47148430b2ee3978f8727637fd6f2083d2072d19b5043fe43d746f2a53493574"
+}
+用代码将JSON对象(batch,input_sha256,items)写到 /workspace/.mathcopilot/reviews/ch08/BATCH12e_review.json；items仅含本source_id。
+items字段：source_id、verdict(PASS/FAIL/NEEDS_HUMAN)、transcription、semantic_review、counterexample、suggested_fix、printed_version、corrected_version。逐版区分原文疑误和修正版结论；缺材料必须具体指出，不猜测。写后json.loads自检，最后仅回复路径及统计。
+
+## 原文JSON
+```json
+{
+  "source_id": "MD-8.8-NPTThermodynamics",
+  "kind": "unnumbered_claim",
+  "label": null,
+  "section": "8.8",
+  "printed_page": "378",
+  "pdf_page": "399",
+  "statement_latex": "P=−(∂E/∂V)_{S,N}; the Maxwell cyclic relation gives (∂S/∂V)_{E,N}=P/T and (∂S/∂E)_{V,N}=1/T.",
+  "statement_verbatim": "378\n8\nExtended Variable Methods\n8.8\nConstant Temperature and Pressure Molecular\nDynamics\nThe isobaric, isothermal or NPT ensemble models a system in contact with a heat\nbath (temperature T) and a “pressure reservoir” maintained at pressure P. The\npressure is deﬁned by the formula\nP D \u0003\n\u0002 @E\n@V\n\u0003\nS;N\nwhere E is the energy, V is volume, S is entropy. The notation Œ: : :\tx;y means that the\nindicated partial derivatives should be taken with respect to constant values of the\nindicated variables.\nAn isothermal-isobaric system exchanges energy with the bath in such a way\nas to maintain the constant temperature; at the same time the volume ﬂuctuates to\ncontrol the pressure. The state of the system can be expressed in terms of particle\npositions and momenta as well as the volume V, i.e. we think of the probability\ndensity as a function of q, p and V.\nLet N, V, E be the number of atoms, volume and energy, respectively, of the\nsystem of interest, and N2, V2, E2 be the corresponding quantities describing the\nbath system; we have NCN2 D QN, VCV2 D QV, ECE2 D QE all constant. We view\nthe entropy as a function of the other variables and expand in a Taylor series in both\nvolume and energy:\nS.N2; V2; E2/ D S. QN \u0003 N; QV \u0003 V; QE \u0003 E/ \u0007 S.N2; QV; QE/ \u0003 @S\n@EE \u0003 @S\n@VV:\nBear in mind that here E and V are small relative perturbations of the total energy\nand volume. The quantity @S\n@E is the reciprocal temperature.\nTo calculate @S\n@V we may use Maxwell’s thermodynamic relation [372]:\n\u0002@S\n@E\n\u0003\nV;N\n\u0002 @E\n@V\n\u0003\nS;N\n\u0002@V\n@S\n\u0003\nE;N\nD \u00031:\nSince\n\n @S\n@E\n\u000b\nV;N is T\u00021 and\n\n @E\n@V\n\u000b\nS;N is \u0003P, we obtain\n\u0002 @S\n@V\n\u0003\nE;N\nD\n1\n\n @V\n@S\n\u000b\nE;N\nD P=T:\nThis results in the formula\nS.N2; V2; E2/ \u0007 constant \u0003 E C PV\nT\n;\n",
+  "verbatim_scope": "完整对应原页文字层，逐字保留；本条数学成分由statement_latex及statement_scope定位。",
+  "proof_latex": null,
+  "proof_note": "对应原页推导逐字保存在statement_verbatim/original_page_text；排版以原页PDF为准。",
+  "original_page_text": [
+    {
+      "pdf_page": 399,
+      "printed_page": 378,
+      "text": "378\n8\nExtended Variable Methods\n8.8\nConstant Temperature and Pressure Molecular\nDynamics\nThe isobaric, isothermal or NPT ensemble models a system in contact with a heat\nbath (temperature T) and a “pressure reservoir” maintained at pressure P. The\npressure is deﬁned by the formula\nP D \u0003\n\u0002 @E\n@V\n\u0003\nS;N\nwhere E is the energy, V is volume, S is entropy. The notation Œ: : :\tx;y means that the\nindicated partial derivatives should be taken with respect to constant values of the\nindicated variables.\nAn isothermal-isobaric system exchanges energy with the bath in such a way\nas to maintain the constant temperature; at the same time the volume ﬂuctuates to\ncontrol the pressure. The state of the system can be expressed in terms of particle\npositions and momenta as well as the volume V, i.e. we think of the probability\ndensity as a function of q, p and V.\nLet N, V, E be the number of atoms, volume and energy, respectively, of the\nsystem of interest, and N2, V2, E2 be the corresponding quantities describing the\nbath system; we have NCN2 D QN, VCV2 D QV, ECE2 D QE all constant. We view\nthe entropy as a function of the other variables and expand in a Taylor series in both\nvolume and energy:\nS.N2; V2; E2/ D S. QN \u0003 N; QV \u0003 V; QE \u0003 E/ \u0007 S.N2; QV; QE/ \u0003 @S\n@EE \u0003 @S\n@VV:\nBear in mind that here E and V are small relative perturbations of the total energy\nand volume. The quantity @S\n@E is the reciprocal temperature.\nTo calculate @S\n@V we may use Maxwell’s thermodynamic relation [372]:\n\u0002@S\n@E\n\u0003\nV;N\n\u0002 @E\n@V\n\u0003\nS;N\n\u0002@V\n@S\n\u0003\nE;N\nD \u00031:\nSince\n\n @S\n@E\n\u000b\nV;N is T\u00021 and\n\n @E\n@V\n\u000b\nS;N is \u0003P, we obtain\n\u0002 @S\n@V\n\u0003\nE;N\nD\n1\n\n @V\n@S\n\u000b\nE;N\nD P=T:\nThis results in the formula\nS.N2; V2; E2/ \u0007 constant \u0003 E C PV\nT\n;\n"
+    }
+  ],
+  "numbered_equations": [],
+  "transcription_note": "文字层逐字保留；数学排版另行转写，原页中的特殊字形编码不静默替换。PDF420仅取Exercises之前。",
+  "context_notation": [],
+  "extra_assumptions": [
+    "E的熵、体积、粒子数参数固定顺序明示；Maxwell循环作为热力学可逆导数资格，并非从任意E无条件推出。"
+  ],
+  "issues": [],
+  "statement_scope": "压力定义和给定非零温度/循环关系后的代数推论。",
+  "lean_decl": "MD.Ch08.thermodynamicPressure",
+  "lean_declarations": [
+    "MD.Ch08.thermodynamicPressure",
+    "MD.Ch08.maxwellCycle",
+    "MD.Ch08.maxwellPressureRelation"
+  ],
+  "source_page_verification": "见source_page_checks.json，已目视核对本条原页。",
+  "repair_log": [],
+  "documented_priors": []
+}
+```
+
+## 完整本条Lean
+```lean
+def thermodynamicPressure (E : ℝ → ℝ → ℝ → ℝ) (S V N : ℝ) : ℝ :=
+  -deriv (fun v ↦ E S v N) V
+def maxwellCycle (dSdE dEdV dVdS : ℝ) : Prop := dSdE*dEdV*dVdS = -1
+theorem maxwellPressureRelation (T P dVdS : ℝ) (hT : T ≠ 0)
+    (hcycle : maxwellCycle (1/T) (-P) dVdS) : dVdS⁻¹=P/T := by
+  have hprod : P*dVdS=T := by
+    dsimp [maxwellCycle] at hcycle
+    field_simp [hT] at hcycle
+    linarith
+  have hz : dVdS ≠ 0 := by
+    intro hz; rw [hz,mul_zero] at hprod; exact hT hprod.symm
+  apply (eq_div_iff hT).2
+  rw [← hprod]
+  field_simp [hz]
+```
+
+## 项目依赖定义体及选择规格
+以下def/abbrev/structure完整保留；定理列出完整类型，Mathlib标准定义无需摘录。
+
+### MD.Ch08.thermodynamicPressure (Blueprint/Ch08.lean:1091)
+原文件上下文：
+```lean
+open Set Filter MeasureTheory ProbabilityTheory MolecularDynamics
+open scoped BigOperators Topology ContDiff ENNReal NNReal Matrix
+variable {Ω : Type*} [MeasurableSpace Ω]
+variable {n : ℕ}
+```
+```lean
+def thermodynamicPressure (E : ℝ → ℝ → ℝ → ℝ) (S V N : ℝ) : ℝ :=
+  -deriv (fun v ↦ E S v N) V
+```
+
+### MD.Ch08.maxwellCycle (Blueprint/Ch08.lean:1093)
+原文件上下文：
+```lean
+open Set Filter MeasureTheory ProbabilityTheory MolecularDynamics
+open scoped BigOperators Topology ContDiff ENNReal NNReal Matrix
+variable {Ω : Type*} [MeasurableSpace Ω]
+variable {n : ℕ}
+```
+```lean
+def maxwellCycle (dSdE dEdV dVdS : ℝ) : Prop := dSdE*dEdV*dVdS = -1
+```
+
+### MD.Ch08.maxwellPressureRelation (Blueprint/Ch08.lean:1094)
+原文件上下文：
+```lean
+open Set Filter MeasureTheory ProbabilityTheory MolecularDynamics
+open scoped BigOperators Topology ContDiff ENNReal NNReal Matrix
+variable {Ω : Type*} [MeasurableSpace Ω]
+variable {n : ℕ}
+```
+```lean
+theorem maxwellPressureRelation (T P dVdS : ℝ) (hT : T ≠ 0)
+    (hcycle : maxwellCycle (1/T) (-P) dVdS) : dVdS⁻¹=P/T
+```
+
+### MolecularDynamics.Chapter04Review.V (MolecularDynamics/Chapter04/ReviewDefinitions.lean:17)
+原文件上下文：
+```lean
+open Set Matrix
+open scoped BigOperators Topology Matrix.Norms.Elementwise
+```
+```lean
+abbrev V := Fin 3 → ℝ
+```
+
+### MolecularDynamics.Chapter05Review.E (MolecularDynamics/Chapter05/ReviewDefinitions.lean:18)
+原文件上下文：
+```lean
+open Set Filter MeasureTheory Matrix
+open scoped BigOperators Topology ENNReal
+```
+```lean
+abbrev E (n : ℕ) := EuclideanSpace ℝ (Fin n)
+```
+
+### MolecularDynamics.Chapter06Review.V (MolecularDynamics/Chapter06/ReviewDefinitions.lean:17)
+原文件上下文：
+```lean
+open Set Filter MeasureTheory ProbabilityTheory
+open scoped BigOperators Topology ContDiff ENNReal NNReal
+local instance : MeasureSpace UnitAddCircle := ⟨AddCircle.haarAddCircle⟩
+```
+```lean
+abbrev V (n : ℕ) := Fin n → ℝ
+```

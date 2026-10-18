@@ -1,0 +1,234 @@
+以附件/PASTE 为准，忽略 /workspace 旧文件；Mathlib 定义按标准含义采信。
+本任务只审本条：原文转录、对象资格、定义体、量词、全部结论及[EXTRA]是否一致；Lean编译不代替语义审阅。
+Lean/Mathlib均4.34.0。原页PDF映射：[354]；印刷页=[333].
+input_sha256请原样回显：
+{
+  "Blueprint/Ch08.lean": "2800812fadd8e2557013f1941e4570401f7903d46f44baf07e23d5531da22a72",
+  "blueprint/ch08/ch08_source.json": "9b994b0f64cd22c85c2ad4123fbfdbd064bd7a6d070fe13b721794432f9f7a63",
+  "BATCH02c_PAGES.pdf": "9678cd767a87bf5fbf42f9199a2f62ca62efa8a63b7e91d055ce7e346f0d2434"
+}
+用代码将JSON对象(batch,input_sha256,items)写到 /workspace/.mathcopilot/reviews/ch08/BATCH02c_review.json；items仅含本source_id。
+items字段：source_id、verdict(PASS/FAIL/NEEDS_HUMAN)、transcription、semantic_review、counterexample、suggested_fix、printed_version、corrected_version。逐版区分原文疑误和修正版结论；缺材料必须具体指出，不猜测。写后json.loads自检，最后仅回复路径及统计。
+
+## 原文JSON
+```json
+{
+  "source_id": "MD-8.1.2-NHTimestepReversible",
+  "kind": "unnumbered_claim",
+  "label": null,
+  "section": "8.1.2",
+  "printed_page": "333",
+  "pdf_page": "354",
+  "statement_latex": "R∘G_h∘R=G_h^{-1}, R(q,p,ξ)=(q,-p,-ξ).",
+  "statement_verbatim": "8.1\nDynamics-Based Thermostat Techniques\n333\nLet a further dynamical variable s be deﬁned by\nds\ndt D \u0012:\nThe extended Nosé-Hoover system then has a conserved quantity (see Exercise 2):\nINH.q; p; \u0012; s/ D H.q; p/ C \u0006\u00122\n2\nC Ndˇ\u00021 ln s:\n(8.8)\nThis integral can be used to monitor the performance of numerical methods.\n8.1.2\nNumerical Methods for Extended System Thermostats\nWe next describe some numerical procedures (based on the concept of splitting\nintroduced in Chaps. 2 and 3) which are appropriate for thermostats based on the\nincorporation of auxiliary variables.\nNosé-Hoover dynamics is not a Hamiltonian system, despite the presence of the\nmentioned ﬁrst integral. It is, however, time-reversible: changing the sign of p and\n\u0012 simultaneously in the equations of motion is equivalent to reversing the arrow of\ntime t ! \u0003t. For this reason, time-reversible numerical methods are often proposed\nfor Nosé-Hoover. A typical integrator is described below.\nTo simplify the notation and to use a format that might more closely match what\nwould be implemented in software, we write the algorithm for a single timestep of\nthe method in which positions, momenta and auxiliary variables are updated in situ.\nNosé-Hoover Timestep Map\nq :D q C .h=2/M\u00021p\np :D e\u0002h\u0012=2p \u0003 c.h=2; \u0012/rU.q/\n\u0012 :D \u0012 C h\u0006\u00021 \npTM\u00021p \u0003 NdkBT\n\u000b\np :D e\u0002h\u0012=2p \u0003 c.h=2; \u0012/rU.q/\nq :D q C .h=2/M\u00021p\nHere we have solved successively, the ﬁrst, second and third equations, sequen-\ntially, and then in reverse order to make a symmetric (and second order) integrator.\nThe auxiliary function involved c.t; \u0012/ D 1\u0002e\u0002t\u0012\n\u0012\nis easily evaluated from a few terms\nof its Maclaurin series expansion\nc.t; \u0012/ D t \u0003 t2\u0012=2 C : : :\nIt is easy to verify that this method is time-reversible. If we write the timestep map\nas .q; p; \u0012/ 7! Gh.q; p; \u0012/, then we may check that\nR ı Gh ı R D G \u00021\nh ;\nR.q; p; \u0012/ D .q; \u0003p; \u0003\u0012/:\n",
+  "verbatim_scope": "完整对应原页文字层，逐字保留；本条数学成分由statement_latex及statement_scope定位。",
+  "proof_latex": null,
+  "proof_note": "对应原页推导逐字保存在statement_verbatim/original_page_text；排版以原页PDF为准。",
+  "original_page_text": [
+    {
+      "pdf_page": 354,
+      "printed_page": 333,
+      "text": "8.1\nDynamics-Based Thermostat Techniques\n333\nLet a further dynamical variable s be deﬁned by\nds\ndt D \u0012:\nThe extended Nosé-Hoover system then has a conserved quantity (see Exercise 2):\nINH.q; p; \u0012; s/ D H.q; p/ C \u0006\u00122\n2\nC Ndˇ\u00021 ln s:\n(8.8)\nThis integral can be used to monitor the performance of numerical methods.\n8.1.2\nNumerical Methods for Extended System Thermostats\nWe next describe some numerical procedures (based on the concept of splitting\nintroduced in Chaps. 2 and 3) which are appropriate for thermostats based on the\nincorporation of auxiliary variables.\nNosé-Hoover dynamics is not a Hamiltonian system, despite the presence of the\nmentioned ﬁrst integral. It is, however, time-reversible: changing the sign of p and\n\u0012 simultaneously in the equations of motion is equivalent to reversing the arrow of\ntime t ! \u0003t. For this reason, time-reversible numerical methods are often proposed\nfor Nosé-Hoover. A typical integrator is described below.\nTo simplify the notation and to use a format that might more closely match what\nwould be implemented in software, we write the algorithm for a single timestep of\nthe method in which positions, momenta and auxiliary variables are updated in situ.\nNosé-Hoover Timestep Map\nq :D q C .h=2/M\u00021p\np :D e\u0002h\u0012=2p \u0003 c.h=2; \u0012/rU.q/\n\u0012 :D \u0012 C h\u0006\u00021 \npTM\u00021p \u0003 NdkBT\n\u000b\np :D e\u0002h\u0012=2p \u0003 c.h=2; \u0012/rU.q/\nq :D q C .h=2/M\u00021p\nHere we have solved successively, the ﬁrst, second and third equations, sequen-\ntially, and then in reverse order to make a symmetric (and second order) integrator.\nThe auxiliary function involved c.t; \u0012/ D 1\u0002e\u0002t\u0012\n\u0012\nis easily evaluated from a few terms\nof its Maclaurin series expansion\nc.t; \u0012/ D t \u0003 t2\u0012=2 C : : :\nIt is easy to verify that this method is time-reversible. If we write the timestep map\nas .q; p; \u0012/ 7! Gh.q; p; \u0012/, then we may check that\nR ı Gh ı R D G \u00021\nh ;\nR.q; p; \u0012/ D .q; \u0003p; \u0003\u0012/:\n"
+    }
+  ],
+  "numbered_equations": [],
+  "transcription_note": "文字层逐字保留；数学排版另行转写，原页中的特殊字形编码不静默替换。PDF420仅取Exercises之前。",
+  "context_notation": [],
+  "extra_assumptions": [
+    "逆映射以负步长映射及LeftInverse表达；不假设算法可逆作为结论的前提。"
+  ],
+  "issues": [],
+  "statement_scope": "五段单步的反演等式及负步长左逆两个目标；未建立误差阶数。",
+  "lean_decl": "MD.Ch08.nhStep_reversible",
+  "lean_declarations": [
+    "MD.Ch08.nhStep_reversible",
+    "MD.Ch08.nhStep_inverse"
+  ],
+  "source_page_verification": "见source_page_checks.json，已目视核对本条原页。",
+  "repair_log": [],
+  "documented_priors": []
+}
+```
+
+## 完整本条Lean
+```lean
+theorem nhStep_reversible (invm : Vec n) (U : Vec n → ℝ) (β Q h : ℝ) :
+    nhReversal ∘ nhStep invm U β Q h ∘ nhReversal = nhStep invm U β Q (-h) := by
+  sorry
+theorem nhStep_inverse (invm : Vec n) (U : Vec n → ℝ) (β Q h : ℝ) :
+    Function.LeftInverse (nhStep invm U β Q (-h)) (nhStep invm U β Q h) := by
+  sorry
+```
+
+## 项目依赖定义体及选择规格
+以下def/abbrev/structure完整保留；定理列出完整类型，Mathlib标准定义无需摘录。
+
+### MD.Ch08.Vec (Blueprint/Ch08.lean:17)
+原文件上下文：
+```lean
+open Set Filter MeasureTheory ProbabilityTheory MolecularDynamics
+open scoped BigOperators Topology ContDiff ENNReal NNReal Matrix
+variable {Ω : Type*} [MeasurableSpace Ω]
+variable {n : ℕ}
+```
+```lean
+abbrev Vec (n : ℕ) := Fin n → ℝ
+```
+
+### MD.Ch08.Phase (Blueprint/Ch08.lean:18)
+原文件上下文：
+```lean
+open Set Filter MeasureTheory ProbabilityTheory MolecularDynamics
+open scoped BigOperators Topology ContDiff ENNReal NNReal Matrix
+variable {Ω : Type*} [MeasurableSpace Ω]
+variable {n : ℕ}
+```
+```lean
+abbrev Phase (n : ℕ) := Vec n × Vec n
+```
+
+### MD.Ch08.gradient (Blueprint/Ch08.lean:20)
+原文件上下文：
+```lean
+open Set Filter MeasureTheory ProbabilityTheory MolecularDynamics
+open scoped BigOperators Topology ContDiff ENNReal NNReal Matrix
+variable {Ω : Type*} [MeasurableSpace Ω]
+variable {n : ℕ}
+```
+```lean
+def gradient (U : Vec n → ℝ) (q : Vec n) : Vec n := fun i ↦ fderiv ℝ U q (Pi.single i 1)
+```
+
+### MD.Ch08.kineticTwice (Blueprint/Ch08.lean:65)
+原文件上下文：
+```lean
+open Set Filter MeasureTheory ProbabilityTheory MolecularDynamics
+open scoped BigOperators Topology ContDiff ENNReal NNReal Matrix
+variable {Ω : Type*} [MeasurableSpace Ω]
+variable {n : ℕ}
+```
+```lean
+def kineticTwice (invm p : Vec n) : ℝ := ∑ i, invm i * p i ^ 2
+```
+
+### MD.Ch08.nhReversal (Blueprint/Ch08.lean:110)
+原文件上下文：
+```lean
+open Set Filter MeasureTheory ProbabilityTheory MolecularDynamics
+open scoped BigOperators Topology ContDiff ENNReal NNReal Matrix
+variable {Ω : Type*} [MeasurableSpace Ω]
+variable {n : ℕ}
+```
+```lean
+def nhReversal (z : Phase n × ℝ) : Phase n × ℝ := ((z.1.1, -z.1.2), -z.2)
+```
+
+### MD.Ch08.dampedCoefficient (Blueprint/Ch08.lean:121)
+原文件上下文：
+```lean
+open Set Filter MeasureTheory ProbabilityTheory MolecularDynamics
+open scoped BigOperators Topology ContDiff ENNReal NNReal Matrix
+variable {Ω : Type*} [MeasurableSpace Ω]
+variable {n : ℕ}
+```
+```lean
+def dampedCoefficient (t ξ : ℝ) : ℝ := if ξ = 0 then t else (1-Real.exp (-t*ξ))/ξ
+```
+
+### MD.Ch08.nhDrift (Blueprint/Ch08.lean:122)
+原文件上下文：
+```lean
+open Set Filter MeasureTheory ProbabilityTheory MolecularDynamics
+open scoped BigOperators Topology ContDiff ENNReal NNReal Matrix
+variable {Ω : Type*} [MeasurableSpace Ω]
+variable {n : ℕ}
+```
+```lean
+def nhDrift (invm : Vec n) (h : ℝ) (z : Phase n × ℝ) : Phase n × ℝ :=
+  ((fun i ↦ z.1.1 i + h*invm i*z.1.2 i, z.1.2), z.2)
+```
+
+### MD.Ch08.nhKick (Blueprint/Ch08.lean:124)
+原文件上下文：
+```lean
+open Set Filter MeasureTheory ProbabilityTheory MolecularDynamics
+open scoped BigOperators Topology ContDiff ENNReal NNReal Matrix
+variable {Ω : Type*} [MeasurableSpace Ω]
+variable {n : ℕ}
+```
+```lean
+def nhKick (U : Vec n → ℝ) (h : ℝ) (z : Phase n × ℝ) : Phase n × ℝ :=
+  ((z.1.1, fun i ↦ Real.exp (-h*z.2)*z.1.2 i - dampedCoefficient h z.2*gradient U z.1.1 i), z.2)
+```
+
+### MD.Ch08.nhFeedback (Blueprint/Ch08.lean:126)
+原文件上下文：
+```lean
+open Set Filter MeasureTheory ProbabilityTheory MolecularDynamics
+open scoped BigOperators Topology ContDiff ENNReal NNReal Matrix
+variable {Ω : Type*} [MeasurableSpace Ω]
+variable {n : ℕ}
+```
+```lean
+def nhFeedback (invm : Vec n) (β Q h : ℝ) (z : Phase n × ℝ) : Phase n × ℝ :=
+  (z.1, z.2 + h/Q*(kineticTwice invm z.1.2 - (n : ℝ)/β))
+```
+
+### MD.Ch08.nhStep (Blueprint/Ch08.lean:128)
+原文件上下文：
+```lean
+open Set Filter MeasureTheory ProbabilityTheory MolecularDynamics
+open scoped BigOperators Topology ContDiff ENNReal NNReal Matrix
+variable {Ω : Type*} [MeasurableSpace Ω]
+variable {n : ℕ}
+```
+```lean
+def nhStep (invm : Vec n) (U : Vec n → ℝ) (β Q h : ℝ) : Phase n × ℝ → Phase n × ℝ :=
+  nhDrift invm (h/2) ∘ nhKick U (h/2) ∘ nhFeedback invm β Q h ∘ nhKick U (h/2) ∘ nhDrift invm (h/2)
+```
+
+### MD.Ch08.nhStep_reversible (Blueprint/Ch08.lean:135)
+原文件上下文：
+```lean
+open Set Filter MeasureTheory ProbabilityTheory MolecularDynamics
+open scoped BigOperators Topology ContDiff ENNReal NNReal Matrix
+variable {Ω : Type*} [MeasurableSpace Ω]
+variable {n : ℕ}
+```
+```lean
+theorem nhStep_reversible (invm : Vec n) (U : Vec n → ℝ) (β Q h : ℝ) :
+    nhReversal ∘ nhStep invm U β Q h ∘ nhReversal = nhStep invm U β Q (-h)
+```
+
+### MD.Ch08.nhStep_inverse (Blueprint/Ch08.lean:138)
+原文件上下文：
+```lean
+open Set Filter MeasureTheory ProbabilityTheory MolecularDynamics
+open scoped BigOperators Topology ContDiff ENNReal NNReal Matrix
+variable {Ω : Type*} [MeasurableSpace Ω]
+variable {n : ℕ}
+```
+```lean
+theorem nhStep_inverse (invm : Vec n) (U : Vec n → ℝ) (β Q h : ℝ) :
+    Function.LeftInverse (nhStep invm U β Q (-h)) (nhStep invm U β Q h)
+```
+
+### MolecularDynamics.Chapter02Review.Q (MolecularDynamics/Chapter02/ReviewDefinitions.lean:17)
+原文件上下文：
+```lean
+open Set Filter Matrix
+open scoped BigOperators Topology
+```
+```lean
+abbrev Q (n : ℕ) := Fin n → ℝ
+```
+
+### MolecularDynamics.Chapter04Review.Q (MolecularDynamics/Chapter04/ReviewDefinitions.lean:15)
+原文件上下文：
+```lean
+open Set Matrix
+open scoped BigOperators Topology Matrix.Norms.Elementwise
+```
+```lean
+abbrev Q (n : ℕ) := Fin n → ℝ
+```

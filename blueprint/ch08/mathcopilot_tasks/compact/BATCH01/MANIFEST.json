@@ -1,0 +1,47 @@
+{
+  "batch": "BATCH01",
+  "subtasks": [
+    {
+      "subtask": "BATCH01a",
+      "source_id": "MD-8.1-CanonicalCorrelation",
+      "path": "blueprint/ch08/mathcopilot_tasks/compact/BATCH01/a",
+      "bytes": 115422,
+      "manifest_sha256": "627e0087207f153c87b861019b22ed7ace0553bc13ebffb973a53820837c3b13"
+    },
+    {
+      "subtask": "BATCH01b",
+      "source_id": "MD-8.1-HamiltonianStationary",
+      "path": "blueprint/ch08/mathcopilot_tasks/compact/BATCH01/b",
+      "bytes": 104721,
+      "manifest_sha256": "896a7aaa3b8da7aff48d0524ec664ecb46f31988a4bde95d3cc2d9185683d5b2"
+    },
+    {
+      "subtask": "BATCH01c",
+      "source_id": "MD-8.1-ExtendedDensity",
+      "path": "blueprint/ch08/mathcopilot_tasks/compact/BATCH01/c",
+      "bytes": 89071,
+      "manifest_sha256": "e990b63905ba2be3fcd7960693d3434f9cf93531ae8cf4ed369ba74d3eafc052"
+    },
+    {
+      "subtask": "BATCH01d",
+      "source_id": "MD-8.1.1-NoseHoover",
+      "path": "blueprint/ch08/mathcopilot_tasks/compact/BATCH01/d",
+      "bytes": 92406,
+      "manifest_sha256": "7ffd674611b985b7d9d76b3f0931de274406d0541823df656ec92e22c862fa8d"
+    },
+    {
+      "subtask": "BATCH01e",
+      "source_id": "MD-8.1.1-NHDensitySplit",
+      "path": "blueprint/ch08/mathcopilot_tasks/compact/BATCH01/e",
+      "bytes": 96381,
+      "manifest_sha256": "d60e4dad4b23aa3cf2f3a599c50700791cc1e3112b1fb54fbabc4b8ba50166bd"
+    },
+    {
+      "subtask": "BATCH01f",
+      "source_id": "MD-8.1.1-NHFirstIntegralPrinted",
+      "path": "blueprint/ch08/mathcopilot_tasks/compact/BATCH01/f",
+      "bytes": 104618,
+      "manifest_sha256": "38e2ea2c28a196c288ccddc492588b8de03365409a15e7d0c36586e58ace9774"
+    }
+  ]
+}

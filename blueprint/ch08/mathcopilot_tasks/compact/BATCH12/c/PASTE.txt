@@ -1,0 +1,189 @@
+以附件/PASTE 为准，忽略 /workspace 旧文件；Mathlib 定义按标准含义采信。
+本任务只审本条：原文转录、对象资格、定义体、量词、全部结论及[EXTRA]是否一致；Lean编译不代替语义审阅。
+Lean/Mathlib均4.34.0。原页PDF映射：[398]；印刷页=[377].
+input_sha256请原样回显：
+{
+  "Blueprint/Ch08.lean": "2800812fadd8e2557013f1941e4570401f7903d46f44baf07e23d5531da22a72",
+  "blueprint/ch08/ch08_source.json": "9b994b0f64cd22c85c2ad4123fbfdbd064bd7a6d070fe13b721794432f9f7a63",
+  "BATCH12c_PAGES.pdf": "cd1fd86a5b843c42b2b76603ea13001d0ef5618886b83c26224c54c1c592f11e"
+}
+用代码将JSON对象(batch,input_sha256,items)写到 /workspace/.mathcopilot/reviews/ch08/BATCH12c_review.json；items仅含本source_id。
+items字段：source_id、verdict(PASS/FAIL/NEEDS_HUMAN)、transcription、semantic_review、counterexample、suggested_fix、printed_version、corrected_version。逐版区分原文疑误和修正版结论；缺材料必须具体指出，不猜测。写后json.loads自检，最后仅回复路径及统计。
+
+## 原文JSON
+```json
+{
+  "source_id": "MD-8.7.1-GeneralizedLangevinIntegrator",
+  "kind": "definition",
+  "label": null,
+  "section": "8.7.1",
+  "printed_page": "377",
+  "pdf_page": "398",
+  "statement_latex": "The four-step method updates p_half, q_new, σ_new,k=θₖσₖ−(1−θₖ)cₖp_half+αₖ√(2k_BT cₖ)Zₖ, then p_new with the new force and new σ.",
+  "statement_verbatim": "8.7\nGeneralized Langevin Dynamics\n377\nObserving that the sum of ` independent Guassian random variables of variance ck\nis a Gaussian random variable with variance P`\nkD1 ck, we see that this is in the form\nof Langevin dynamics\ndpi D Fidt \u0003 O\npidt C\np\n2kBT O\ndWi;k;\nwith\nO\n D\nNk\nX\nkD1\nck:\n(For the formal treatment of this limit refer to [293].)\nFor numerical integration, the system (8.68)–(8.70) can be handled via splitting.\nA natural family of methods based on Verlet is the following [19]:\nGeneralized Langevin Dynamics Method\npnC1=2 :D pn C h\n2F.qn/ C h\n2\nkmax\nX\nkD1\n\u0012 n;k;\nqnC1 :D qn C hM\u00021pnC1=2;\n\u0012 nC1;k :D \u000ek\u0012 n;k \u0003 .1 \u0003 \u000ek/ ckpnC1=2 C ˛k\np\n2kBTckZn\nk;\npnC1 :D pnC1=2 C h\n2F.qnC1/ C h\n2\nkmax\nX\nkD1\n\u0012 nC1;k;\nwhere \u0012 n;k is a Nc-dimensional vector, and the components of the Nc-dimensional\nvectors Zn;k are independent standard normal random variables.\nThe real-valued coefﬁcients \u000ek and ˛k which must satisfy, for consistency, the\nequations\n\u000ek D 1 \u0003 h\n\u0002k\nC O.h2/;\n˛k D\np\nh\n\u0002k\nC O.h/:\nAn argument is given in [19] that ˛k and \u000ek should be taken as\n\u000ek D exp.\u0003h=\u0002k/;\n˛k D\ns\n.1 \u0003 \u000ek/2\nh\n;\nsince, for this choice, the Langevin limit is preserved. Alternative methods are\npossible. For many comparisons and numerical experiments, refer to [19].\n",
+  "verbatim_scope": "完整对应原页文字层，逐字保留；本条数学成分由statement_latex及statement_scope定位。",
+  "proof_latex": null,
+  "proof_note": "对应原页推导逐字保存在statement_verbatim/original_page_text；排版以原页PDF为准。",
+  "original_page_text": [
+    {
+      "pdf_page": 398,
+      "printed_page": 377,
+      "text": "8.7\nGeneralized Langevin Dynamics\n377\nObserving that the sum of ` independent Guassian random variables of variance ck\nis a Gaussian random variable with variance P`\nkD1 ck, we see that this is in the form\nof Langevin dynamics\ndpi D Fidt \u0003 O\npidt C\np\n2kBT O\ndWi;k;\nwith\nO\n D\nNk\nX\nkD1\nck:\n(For the formal treatment of this limit refer to [293].)\nFor numerical integration, the system (8.68)–(8.70) can be handled via splitting.\nA natural family of methods based on Verlet is the following [19]:\nGeneralized Langevin Dynamics Method\npnC1=2 :D pn C h\n2F.qn/ C h\n2\nkmax\nX\nkD1\n\u0012 n;k;\nqnC1 :D qn C hM\u00021pnC1=2;\n\u0012 nC1;k :D \u000ek\u0012 n;k \u0003 .1 \u0003 \u000ek/ ckpnC1=2 C ˛k\np\n2kBTckZn\nk;\npnC1 :D pnC1=2 C h\n2F.qnC1/ C h\n2\nkmax\nX\nkD1\n\u0012 nC1;k;\nwhere \u0012 n;k is a Nc-dimensional vector, and the components of the Nc-dimensional\nvectors Zn;k are independent standard normal random variables.\nThe real-valued coefﬁcients \u000ek and ˛k which must satisfy, for consistency, the\nequations\n\u000ek D 1 \u0003 h\n\u0002k\nC O.h2/;\n˛k D\np\nh\n\u0002k\nC O.h/:\nAn argument is given in [19] that ˛k and \u000ek should be taken as\n\u000ek D exp.\u0003h=\u0002k/;\n˛k D\ns\n.1 \u0003 \u000ek/2\nh\n;\nsince, for this choice, the Langevin limit is preserved. Alternative methods are\npossible. For many comparisons and numerical experiments, refer to [19].\n"
+    }
+  ],
+  "numbered_equations": [],
+  "transcription_note": "文字层逐字保留；数学排版另行转写，原页中的特殊字形编码不静默替换。PDF420仅取Exercises之前。",
+  "context_notation": [],
+  "extra_assumptions": [
+    "h>0，正质量/c/τ/温度下作物理解读；跨步、模式与空间分量的完整独立正态资格另列gleNormalSequence。",
+    "此处完整单步定义，不包含离散不变分布、全局弱阶或Langevin极限保持的定理。"
+  ],
+  "issues": [],
+  "statement_scope": "四个实际更新及其全部噪声资格。",
+  "lean_decl": "MD.Ch08.gleIntegrator",
+  "lean_declarations": [
+    "MD.Ch08.gleIntegrator",
+    "MD.Ch08.gleNormalSequence"
+  ],
+  "source_page_verification": "见source_page_checks.json，已目视核对本条原页。",
+  "repair_log": [],
+  "documented_priors": []
+}
+```
+
+## 完整本条Lean
+```lean
+def gleIntegrator {K : ℕ} (invm : Vec n) (U : Vec n → ℝ) (c decay noise : Fin K → ℝ)
+    (θ h : ℝ) (Z : Fin K → Vec n) (z : GLEState n K) : GLEState n K :=
+  let ph := z.1.2+(h/2) • (-gradient U z.1.1+∑ k, z.2 k)
+  let qn := z.1.1+(h • fun i ↦ invm i*ph i)
+  let sn := fun k i ↦ decay k*z.2 k i-(1-decay k)*c k*ph i+
+    noise k*Real.sqrt (2*θ*c k)*Z k i
+  ((qn,ph+(h/2) • (-gradient U qn+∑ k, sn k)),sn)
+def gleNormalSequence {K : ℕ} (P : Measure Ω) (Z : ℕ → Ω → Fin K → Vec n) : Prop :=
+  IsProbabilityMeasure P ∧ iIndepFun Z P ∧ ∀ j,
+    HasLaw (Z j) (Measure.pi (fun _ : Fin K ↦ Measure.pi (fun _ : Fin n ↦ gaussianReal 0 1))) P
+```
+
+## 项目依赖定义体及选择规格
+以下def/abbrev/structure完整保留；定理列出完整类型，Mathlib标准定义无需摘录。
+
+### MD.Ch08.Vec (Blueprint/Ch08.lean:17)
+原文件上下文：
+```lean
+open Set Filter MeasureTheory ProbabilityTheory MolecularDynamics
+open scoped BigOperators Topology ContDiff ENNReal NNReal Matrix
+variable {Ω : Type*} [MeasurableSpace Ω]
+variable {n : ℕ}
+```
+```lean
+abbrev Vec (n : ℕ) := Fin n → ℝ
+```
+
+### MD.Ch08.Phase (Blueprint/Ch08.lean:18)
+原文件上下文：
+```lean
+open Set Filter MeasureTheory ProbabilityTheory MolecularDynamics
+open scoped BigOperators Topology ContDiff ENNReal NNReal Matrix
+variable {Ω : Type*} [MeasurableSpace Ω]
+variable {n : ℕ}
+```
+```lean
+abbrev Phase (n : ℕ) := Vec n × Vec n
+```
+
+### MD.Ch08.gradient (Blueprint/Ch08.lean:20)
+原文件上下文：
+```lean
+open Set Filter MeasureTheory ProbabilityTheory MolecularDynamics
+open scoped BigOperators Topology ContDiff ENNReal NNReal Matrix
+variable {Ω : Type*} [MeasurableSpace Ω]
+variable {n : ℕ}
+```
+```lean
+def gradient (U : Vec n → ℝ) (q : Vec n) : Vec n := fun i ↦ fderiv ℝ U q (Pi.single i 1)
+```
+
+### MD.Ch08.GLEState (Blueprint/Ch08.lean:1024)
+原文件上下文：
+```lean
+open Set Filter MeasureTheory ProbabilityTheory MolecularDynamics
+open scoped BigOperators Topology ContDiff ENNReal NNReal Matrix
+variable {Ω : Type*} [MeasurableSpace Ω]
+variable {n : ℕ}
+```
+```lean
+abbrev GLEState (n K : ℕ) := Phase n × (Fin K → Vec n)
+```
+
+### MD.Ch08.gleIntegrator (Blueprint/Ch08.lean:1059)
+原文件上下文：
+```lean
+open Set Filter MeasureTheory ProbabilityTheory MolecularDynamics
+open scoped BigOperators Topology ContDiff ENNReal NNReal Matrix
+variable {Ω : Type*} [MeasurableSpace Ω]
+variable {n : ℕ}
+```
+```lean
+def gleIntegrator {K : ℕ} (invm : Vec n) (U : Vec n → ℝ) (c decay noise : Fin K → ℝ)
+    (θ h : ℝ) (Z : Fin K → Vec n) (z : GLEState n K) : GLEState n K :=
+  let ph := z.1.2+(h/2) • (-gradient U z.1.1+∑ k, z.2 k)
+  let qn := z.1.1+(h • fun i ↦ invm i*ph i)
+  let sn := fun k i ↦ decay k*z.2 k i-(1-decay k)*c k*ph i+
+    noise k*Real.sqrt (2*θ*c k)*Z k i
+  ((qn,ph+(h/2) • (-gradient U qn+∑ k, sn k)),sn)
+```
+
+### MD.Ch08.gleNormalSequence (Blueprint/Ch08.lean:1066)
+原文件上下文：
+```lean
+open Set Filter MeasureTheory ProbabilityTheory MolecularDynamics
+open scoped BigOperators Topology ContDiff ENNReal NNReal Matrix
+variable {Ω : Type*} [MeasurableSpace Ω]
+variable {n : ℕ}
+```
+```lean
+def gleNormalSequence {K : ℕ} (P : Measure Ω) (Z : ℕ → Ω → Fin K → Vec n) : Prop :=
+  IsProbabilityMeasure P ∧ iIndepFun Z P ∧ ∀ j,
+    HasLaw (Z j) (Measure.pi (fun _ : Fin K ↦ Measure.pi (fun _ : Fin n ↦ gaussianReal 0 1))) P
+```
+
+### MolecularDynamics.Chapter02Review.Q (MolecularDynamics/Chapter02/ReviewDefinitions.lean:17)
+原文件上下文：
+```lean
+open Set Filter Matrix
+open scoped BigOperators Topology
+```
+```lean
+abbrev Q (n : ℕ) := Fin n → ℝ
+```
+
+### MolecularDynamics.Chapter02Review.Z (MolecularDynamics/Chapter02/ReviewDefinitions.lean:18)
+原文件上下文：
+```lean
+open Set Filter Matrix
+open scoped BigOperators Topology
+```
+```lean
+abbrev Z (n : ℕ) := Q n × Q n
+```
+
+### MolecularDynamics.Chapter04Review.Q (MolecularDynamics/Chapter04/ReviewDefinitions.lean:15)
+原文件上下文：
+```lean
+open Set Matrix
+open scoped BigOperators Topology Matrix.Norms.Elementwise
+```
+```lean
+abbrev Q (n : ℕ) := Fin n → ℝ
+```
+
+### MolecularDynamics.Chapter04Review.Z (MolecularDynamics/Chapter04/ReviewDefinitions.lean:16)
+原文件上下文：
+```lean
+open Set Matrix
+open scoped BigOperators Topology Matrix.Norms.Elementwise
+```
+```lean
+abbrev Z (n : ℕ) := Q n × Q n
+```

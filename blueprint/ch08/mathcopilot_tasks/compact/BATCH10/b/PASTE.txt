@@ -1,0 +1,204 @@
+以附件/PASTE 为准，忽略 /workspace 旧文件；Mathlib 定义按标准含义采信。
+本任务只审本条：原文转录、对象资格、定义体、量词、全部结论及[EXTRA]是否一致；Lean编译不代替语义审阅。
+Lean/Mathlib均4.34.0。原页PDF映射：[389, 390]；印刷页=[368, 369].
+input_sha256请原样回显：
+{
+  "Blueprint/Ch08.lean": "2800812fadd8e2557013f1941e4570401f7903d46f44baf07e23d5531da22a72",
+  "blueprint/ch08/ch08_source.json": "9b994b0f64cd22c85c2ad4123fbfdbd064bd7a6d070fe13b721794432f9f7a63",
+  "BATCH10b_PAGES.pdf": "3586f5ae0e3ab8bdf3c2a3beaf59c4324637a5a66272ee4922bc87f68e8a9991"
+}
+用代码将JSON对象(batch,input_sha256,items)写到 /workspace/.mathcopilot/reviews/ch08/BATCH10b_review.json；items仅含本source_id。
+items字段：source_id、verdict(PASS/FAIL/NEEDS_HUMAN)、transcription、semantic_review、counterexample、suggested_fix、printed_version、corrected_version。逐版区分原文疑误和修正版结论；缺材料必须具体指出，不猜测。写后json.loads自检，最后仅回复路径及统计。
+
+## 原文JSON
+```json
+{
+  "source_id": "MD-8.6.2-SINLyapunov",
+  "kind": "unnumbered_claim",
+  "label": null,
+  "section": "8.6.2",
+  "printed_page": "368–369",
+  "pdf_page": "389–390",
+  "statement_latex": "For φ=ξ₂²/2, L_isok φ=(ξ₁²-β⁻¹)ξ₂-γξ₂²+σ²/2, and the isokinetic constraint bounds ξ₁. The negative tail drift supports the ergodicity argument with further assumptions.",
+  "statement_verbatim": "368\n8\nExtended Variable Methods\nWe calculate Œf; Œf; Œf; g\t\t\t and project onto the space spanned by the ﬁrst three\ncomponents to ﬁnd\nu3 D \u0007\n\b2\np3 \u0003 4p3\u00122 C 4p2q C \u00122\n1p\u00122 C \n\u00122\n1p \u0003 2\u00122\n1q\nD2\n\t\n@q\n\u0003 \u0007\u00122\n1\n\u0006 \u000f\nD3\n\u0007\n@p C 2\u0007\u00121p\n\u0006 \u000f\nD3\n\u0007\n@\u00121:\n(8.54)\nwith\n\u000f D 4p5\n2 \u0003 8p5\u00122\n1 \u0003 4\u00122\n1p3 C 4p3\n2\u00122\n1 \u0003 4p3\u00124\n1\n\u0003 2\n\u00122\n1p2q C 4p2q\u00122\u00122\n1 \u0003 4\u00122\n1q2p \u0003 2\u00124\n1p C p\n2\u00124\n1 \u0003 q\n\u00124\n1 C \u00124\n1\u00122q:\n(8.55)\nAlong p D 0, u3 becomes\nu3jpD0 D \u00032\u0007q@q \u0003 \u0007\n\b\u0003q\n\u00124\n1 C \u00124\n1\u00122q\n\u00124\n1\n\t\n@p\nD \u00032\u0007q@q \u0003 \u0007q.\u0003\n C \u00122/@p:\n(8.56)\nTogether with u0 we obtain a linearly independent set as long as q ¤ 0.\nIf p D 0 and q D 0 then we are on M0. If p ¤ 0 then u2 and u0 are linearly\nindependent. If q ¤ 0 then u3 and u0 are linearly independent. From these we\nestablish that the Hörmander condition holds everywhere except on a space of co-\ndimension 2 (that is except on the one-dimensional set M0).\nIn this case, it is possible to complete the proof by introducing a Lyapunov\nfunction \b to demonstrate the necessary contractivity in the \u00122 direction. The\ngenerator of this system is\nLisok D p @\n@q C\n\nF \u0003 .p2=\u0017/F\n\u000b @\n@p \u0003 p\u00121F\n\u0017\n@\n@\u00121\nC LN C LO\nwith \u0017 D p2 C \u00122\n1=2,\nLN D 1\n2\n\u00122\n1\u00122p\n\u0017\n@\n@p C 1\n2\n\u00123\n1\u00122\n\u0017\n@\n@\u00121\n\u0003 \u00122\u00121\n@\n@\u00121\nC Œ\u00122\n1 \u0003 ˇ\u00021\t @\n@\u00122\n;\nand\nLO D \u0003\n\u00122\n@\n@\u00122\nC \u00072\n2\n@2\n@\u00122\n2\n:\n\n8.6\nIsokinetic Methods and Integration with Very Large Timestep\n369\nLet us apply the operator Lisok to \b\ndef\nD \u00122\n2=2. As this is only a function of \u00122, many\nterms vanish and we are left with\nLisok\b D LN\b C LO\b;\nLN\b D Œ\u00122\n1 \u0003 ˇ\u00021\t\u00122;\nand\nLO\b D \u0003\n\u00122\n2 C \u00072\n2 :\nBecause \u00121 is uniformly bounded due to the isokinetic constraint, we have\nLisok\b \t \u0003\n\u00122\n2 C K\u00122 C \u00072\n2 :\nFor j\u00122j sufﬁciently large this term is negative. This contractivity, together with\nassumptions of boundedness of conﬁgurations (the use of periodic boundary\nconditions) and the isokinetic constraints on p and \u00121, as well as the existence\nof a candidate measure which is positive on open sets, will ultimately ensure the\nergodicity of the system, relying on arguments similar to those in [256, 257].\n8.6.3\nMultiple Timestepping Using the Stochastic Isokinetic\nFormulation\nThe numerical integration of the equations of the stochastic isokinetic system can be\nperformed using splitting, in a style that should by now be familiar, with the proviso\nthat the isokinetic condition itself should be satisﬁed exactly (i.e. to rounding error).\nMolecular sampling using Langevin dynamics and other methods involves\nintegration over the inﬁnite cylinder TNc\u0004RNc. The power of the isokinetic method is\nthat it allows us to reformulate the conﬁgurational sampling problem as integration\non a compact manifold. The fact that we also slightly extend the domain by\nintroducing auxiliary variables is more than offset by the stabilizing effect of the\nisokinetic constraints. One approach would be to introduce an isokinetic constraint\non the entire system, but in practice it is found that no great crime is committed\nin conﬁgurational sampling by constraining each degree of freedom (together with\nassociated auxiliary variables).\nTo develop a multiple timestepping method, we begin by supposing that the\npotential energy function and therefore the force can be decomposed into fast and\nslow terms, thus U.q/ D US.q/ C UF.q/ and the force acting on the jth degree\nof freedom is Fj D FS\nj C FF\nj . Because the SIN(R) method is based on a non-\nHamiltonian formulation, we do not obtain a symplectic integrator (in the absence\n",
+  "verbatim_scope": "完整对应原页文字层，逐字保留；本条数学成分由statement_latex及statement_scope定位。",
+  "proof_latex": null,
+  "proof_note": "对应原页推导逐字保存在statement_verbatim/original_page_text；排版以原页PDF为准。",
+  "original_page_text": [
+    {
+      "pdf_page": 389,
+      "printed_page": 368,
+      "text": "368\n8\nExtended Variable Methods\nWe calculate Œf; Œf; Œf; g\t\t\t and project onto the space spanned by the ﬁrst three\ncomponents to ﬁnd\nu3 D \u0007\n\b2\np3 \u0003 4p3\u00122 C 4p2q C \u00122\n1p\u00122 C \n\u00122\n1p \u0003 2\u00122\n1q\nD2\n\t\n@q\n\u0003 \u0007\u00122\n1\n\u0006 \u000f\nD3\n\u0007\n@p C 2\u0007\u00121p\n\u0006 \u000f\nD3\n\u0007\n@\u00121:\n(8.54)\nwith\n\u000f D 4p5\n2 \u0003 8p5\u00122\n1 \u0003 4\u00122\n1p3 C 4p3\n2\u00122\n1 \u0003 4p3\u00124\n1\n\u0003 2\n\u00122\n1p2q C 4p2q\u00122\u00122\n1 \u0003 4\u00122\n1q2p \u0003 2\u00124\n1p C p\n2\u00124\n1 \u0003 q\n\u00124\n1 C \u00124\n1\u00122q:\n(8.55)\nAlong p D 0, u3 becomes\nu3jpD0 D \u00032\u0007q@q \u0003 \u0007\n\b\u0003q\n\u00124\n1 C \u00124\n1\u00122q\n\u00124\n1\n\t\n@p\nD \u00032\u0007q@q \u0003 \u0007q.\u0003\n C \u00122/@p:\n(8.56)\nTogether with u0 we obtain a linearly independent set as long as q ¤ 0.\nIf p D 0 and q D 0 then we are on M0. If p ¤ 0 then u2 and u0 are linearly\nindependent. If q ¤ 0 then u3 and u0 are linearly independent. From these we\nestablish that the Hörmander condition holds everywhere except on a space of co-\ndimension 2 (that is except on the one-dimensional set M0).\nIn this case, it is possible to complete the proof by introducing a Lyapunov\nfunction \b to demonstrate the necessary contractivity in the \u00122 direction. The\ngenerator of this system is\nLisok D p @\n@q C\n\nF \u0003 .p2=\u0017/F\n\u000b @\n@p \u0003 p\u00121F\n\u0017\n@\n@\u00121\nC LN C LO\nwith \u0017 D p2 C \u00122\n1=2,\nLN D 1\n2\n\u00122\n1\u00122p\n\u0017\n@\n@p C 1\n2\n\u00123\n1\u00122\n\u0017\n@\n@\u00121\n\u0003 \u00122\u00121\n@\n@\u00121\nC Œ\u00122\n1 \u0003 ˇ\u00021\t @\n@\u00122\n;\nand\nLO D \u0003\n\u00122\n@\n@\u00122\nC \u00072\n2\n@2\n@\u00122\n2\n:\n"
+    },
+    {
+      "pdf_page": 390,
+      "printed_page": 369,
+      "text": "8.6\nIsokinetic Methods and Integration with Very Large Timestep\n369\nLet us apply the operator Lisok to \b\ndef\nD \u00122\n2=2. As this is only a function of \u00122, many\nterms vanish and we are left with\nLisok\b D LN\b C LO\b;\nLN\b D Œ\u00122\n1 \u0003 ˇ\u00021\t\u00122;\nand\nLO\b D \u0003\n\u00122\n2 C \u00072\n2 :\nBecause \u00121 is uniformly bounded due to the isokinetic constraint, we have\nLisok\b \t \u0003\n\u00122\n2 C K\u00122 C \u00072\n2 :\nFor j\u00122j sufﬁciently large this term is negative. This contractivity, together with\nassumptions of boundedness of conﬁgurations (the use of periodic boundary\nconditions) and the isokinetic constraints on p and \u00121, as well as the existence\nof a candidate measure which is positive on open sets, will ultimately ensure the\nergodicity of the system, relying on arguments similar to those in [256, 257].\n8.6.3\nMultiple Timestepping Using the Stochastic Isokinetic\nFormulation\nThe numerical integration of the equations of the stochastic isokinetic system can be\nperformed using splitting, in a style that should by now be familiar, with the proviso\nthat the isokinetic condition itself should be satisﬁed exactly (i.e. to rounding error).\nMolecular sampling using Langevin dynamics and other methods involves\nintegration over the inﬁnite cylinder TNc\u0004RNc. The power of the isokinetic method is\nthat it allows us to reformulate the conﬁgurational sampling problem as integration\non a compact manifold. The fact that we also slightly extend the domain by\nintroducing auxiliary variables is more than offset by the stabilizing effect of the\nisokinetic constraints. One approach would be to introduce an isokinetic constraint\non the entire system, but in practice it is found that no great crime is committed\nin conﬁgurational sampling by constraining each degree of freedom (together with\nassociated auxiliary variables).\nTo develop a multiple timestepping method, we begin by supposing that the\npotential energy function and therefore the force can be decomposed into fast and\nslow terms, thus U.q/ D US.q/ C UF.q/ and the force acting on the jth degree\nof freedom is Fj D FS\nj C FF\nj . Because the SIN(R) method is based on a non-\nHamiltonian formulation, we do not obtain a symplectic integrator (in the absence\n"
+    }
+  ],
+  "numbered_equations": [],
+  "transcription_note": "文字层逐字保留；数学排版另行转写，原页中的特殊字形编码不静默替换。PDF420仅取Exercises之前。",
+  "context_notation": [],
+  "extra_assumptions": [
+    "仅生成元作用和约束界；原文有符号ξ₂的Kξ₂上界须区分尾部方向，严谨负漂移应使用K|ξ₂|并要求γ>0。",
+    "紧性、正密度、小集与Markov半群遍历定理均列覆盖缺口。"
+  ],
+  "issues": [],
+  "statement_scope": "真实局部生成元Lyapunov计算及热浴变量界；不包含由此推出遍历性的充分性。",
+  "lean_decl": "MD.Ch08.sinGenerator",
+  "lean_declarations": [
+    "MD.Ch08.sinGenerator",
+    "MD.Ch08.sinGenerator_lyapunov",
+    "MD.Ch08.sinConstraint_bathBound"
+  ],
+  "source_page_verification": "见source_page_checks.json，已目视核对本条原页。",
+  "repair_log": [],
+  "documented_priors": []
+}
+```
+
+## 完整本条Lean
+```lean
+def sinGenerator (θ γ : ℝ) (F : ℝ → ℝ) (f : Vec 4 → ℝ) (z : Vec 4) : ℝ :=
+  additiveGenerator (sinDrift 1 1 θ γ F) (sinHarmonicG θ γ) f z
+theorem sinGenerator_lyapunov (θ γ : ℝ) (hθ : 0 < θ) (hγ : 0 < γ)
+    (F : ℝ → ℝ) (z : Vec 4) (hK : sinConstraint 1 z ≠ 0) :
+    sinGenerator θ γ F (fun x ↦ x 3^2/2) z =
+      (z 2^2-θ)*z 3-γ*z 3^2+γ*θ := by
+  sorry
+theorem sinConstraint_bathBound (θ : ℝ) (z : Vec 4) (hz : sinConstraint 1 z=θ) :
+    z 2^2 ≤ 2*θ := by
+  dsimp [sinConstraint] at hz
+  nlinarith [sq_nonneg (z 1)]
+```
+
+## 项目依赖定义体及选择规格
+以下def/abbrev/structure完整保留；定理列出完整类型，Mathlib标准定义无需摘录。
+
+### MD.Ch08.Vec (Blueprint/Ch08.lean:17)
+原文件上下文：
+```lean
+open Set Filter MeasureTheory ProbabilityTheory MolecularDynamics
+open scoped BigOperators Topology ContDiff ENNReal NNReal Matrix
+variable {Ω : Type*} [MeasurableSpace Ω]
+variable {n : ℕ}
+```
+```lean
+abbrev Vec (n : ℕ) := Fin n → ℝ
+```
+
+### MD.Ch08.additiveGenerator (Blueprint/Ch08.lean:434)
+原文件上下文：
+```lean
+open Set Filter MeasureTheory ProbabilityTheory MolecularDynamics
+open scoped BigOperators Topology ContDiff ENNReal NNReal Matrix
+variable {Ω : Type*} [MeasurableSpace Ω]
+variable {n : ℕ}
+```
+```lean
+def additiveGenerator {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
+    (F : E → E) (B : E) (f : E → ℝ) (z : E) : ℝ :=
+  fderiv ℝ f z (F z) + fderiv ℝ (fun x ↦ fderiv ℝ f x B) z B / 2
+```
+
+### MD.Ch08.sinConstraint (Blueprint/Ch08.lean:714)
+原文件上下文：
+```lean
+open Set Filter MeasureTheory ProbabilityTheory MolecularDynamics
+open scoped BigOperators Topology ContDiff ENNReal NNReal Matrix
+variable {Ω : Type*} [MeasurableSpace Ω]
+variable {n : ℕ}
+```
+```lean
+def sinConstraint (Q1 : ℝ) (z : Vec 4) : ℝ := z 1^2+Q1*z 2^2/2
+```
+
+### MD.Ch08.sinMultiplier (Blueprint/Ch08.lean:715)
+原文件上下文：
+```lean
+open Set Filter MeasureTheory ProbabilityTheory MolecularDynamics
+open scoped BigOperators Topology ContDiff ENNReal NNReal Matrix
+variable {Ω : Type*} [MeasurableSpace Ω]
+variable {n : ℕ}
+```
+```lean
+def sinMultiplier (Q1 : ℝ) (F : ℝ → ℝ) (z : Vec 4) : ℝ :=
+  (z 1*F (z 0)-Q1*z 2^2*z 3/2)/sinConstraint Q1 z
+```
+
+### MD.Ch08.sinDrift (Blueprint/Ch08.lean:717)
+原文件上下文：
+```lean
+open Set Filter MeasureTheory ProbabilityTheory MolecularDynamics
+open scoped BigOperators Topology ContDiff ENNReal NNReal Matrix
+variable {Ω : Type*} [MeasurableSpace Ω]
+variable {n : ℕ}
+```
+```lean
+def sinDrift (Q1 Q2 θ γ : ℝ) (F : ℝ → ℝ) (z : Vec 4) : Vec 4 :=
+  let lam := sinMultiplier Q1 F z
+  ![z 1, F (z 0)-lam*z 1, -lam*z 2-z 3*z 2, (Q1*z 2^2-θ)/Q2-γ*z 3]
+```
+
+### MD.Ch08.sinHarmonicG (Blueprint/Ch08.lean:756)
+原文件上下文：
+```lean
+open Set Filter MeasureTheory ProbabilityTheory MolecularDynamics
+open scoped BigOperators Topology ContDiff ENNReal NNReal Matrix
+variable {Ω : Type*} [MeasurableSpace Ω]
+variable {n : ℕ}
+```
+```lean
+def sinHarmonicG (θ γ : ℝ) : Vec 4 := ![0,0,0,Real.sqrt (2*γ*θ)]
+```
+
+### MD.Ch08.sinGenerator (Blueprint/Ch08.lean:835)
+原文件上下文：
+```lean
+open Set Filter MeasureTheory ProbabilityTheory MolecularDynamics
+open scoped BigOperators Topology ContDiff ENNReal NNReal Matrix
+variable {Ω : Type*} [MeasurableSpace Ω]
+variable {n : ℕ}
+```
+```lean
+def sinGenerator (θ γ : ℝ) (F : ℝ → ℝ) (f : Vec 4 → ℝ) (z : Vec 4) : ℝ :=
+  additiveGenerator (sinDrift 1 1 θ γ F) (sinHarmonicG θ γ) f z
+```
+
+### MD.Ch08.sinGenerator_lyapunov (Blueprint/Ch08.lean:837)
+原文件上下文：
+```lean
+open Set Filter MeasureTheory ProbabilityTheory MolecularDynamics
+open scoped BigOperators Topology ContDiff ENNReal NNReal Matrix
+variable {Ω : Type*} [MeasurableSpace Ω]
+variable {n : ℕ}
+```
+```lean
+theorem sinGenerator_lyapunov (θ γ : ℝ) (hθ : 0 < θ) (hγ : 0 < γ)
+    (F : ℝ → ℝ) (z : Vec 4) (hK : sinConstraint 1 z ≠ 0) :
+    sinGenerator θ γ F (fun x ↦ x 3^2/2) z =
+      (z 2^2-θ)*z 3-γ*z 3^2+γ*θ
+```
+
+### MD.Ch08.sinConstraint_bathBound (Blueprint/Ch08.lean:842)
+原文件上下文：
+```lean
+open Set Filter MeasureTheory ProbabilityTheory MolecularDynamics
+open scoped BigOperators Topology ContDiff ENNReal NNReal Matrix
+variable {Ω : Type*} [MeasurableSpace Ω]
+variable {n : ℕ}
+```
+```lean
+theorem sinConstraint_bathBound (θ : ℝ) (z : Vec 4) (hz : sinConstraint 1 z=θ) :
+    z 2^2 ≤ 2*θ
+```
+
+### MolecularDynamics.Chapter05Review.E (MolecularDynamics/Chapter05/ReviewDefinitions.lean:18)
+原文件上下文：
+```lean
+open Set Filter MeasureTheory Matrix
+open scoped BigOperators Topology ENNReal
+```
+```lean
+abbrev E (n : ℕ) := EuclideanSpace ℝ (Fin n)
+```

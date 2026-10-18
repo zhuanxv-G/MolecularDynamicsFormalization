@@ -1,0 +1,52 @@
+{
+  "batch": "BATCH08",
+  "subtask": "BATCH08c",
+  "source_ids": [
+    "MD-8.5-SLSDoubleWell"
+  ],
+  "input_sha256": {
+    "Blueprint/Ch08.lean": "2800812fadd8e2557013f1941e4570401f7903d46f44baf07e23d5531da22a72",
+    "blueprint/ch08/ch08_source.json": "9b994b0f64cd22c85c2ad4123fbfdbd064bd7a6d070fe13b721794432f9f7a63",
+    "BATCH08c_PAGES.pdf": "e07421b63805235349d034b8ea028c6195a6b0243087852d2e94b496965977c6"
+  },
+  "page_mapping": [
+    {
+      "attachment_page": 1,
+      "original_pdf_page": 380,
+      "printed_page": 359
+    }
+  ],
+  "definition_excerpts": [
+    {
+      "full_name": "MD.Ch08.slsDoubleWell",
+      "kind": "def",
+      "path": "Blueprint/Ch08.lean",
+      "line": 644,
+      "code_sha256": "4094061ee1a606723906d317bc856f765cd192b943f79441086361d59fc2bd99"
+    },
+    {
+      "full_name": "MD.Ch08.slsDoubleWell_nonneg",
+      "kind": "theorem",
+      "path": "Blueprint/Ch08.lean",
+      "line": 645,
+      "code_sha256": "ca3558e7f49d884cb5fb705f3575fe615c2462e2be6b780b47151e3763cd5f18"
+    }
+  ],
+  "validation": {
+    "project_constant_closure": "PASS",
+    "missing_project_definitions": [],
+    "full_page_render_equality_dpi": 72,
+    "website_submitted": false
+  },
+  "files": {
+    "PASTE.txt": {
+      "bytes": 9241,
+      "sha256": "1ca22300428f1adbf5c7944ccb53d1f6f7a9bdbd1f5f5487e1d7c801065b1199"
+    },
+    "BATCH08c_PAGES.pdf": {
+      "bytes": 67996,
+      "sha256": "e07421b63805235349d034b8ea028c6195a6b0243087852d2e94b496965977c6"
+    }
+  },
+  "total_task_bytes": 78808
+}

@@ -1,0 +1,73 @@
+{
+  "batch": "BATCH08",
+  "subtask": "BATCH08e",
+  "source_ids": [
+    "MD-8.6-IsokineticProjector"
+  ],
+  "input_sha256": {
+    "Blueprint/Ch08.lean": "2800812fadd8e2557013f1941e4570401f7903d46f44baf07e23d5531da22a72",
+    "blueprint/ch08/ch08_source.json": "9b994b0f64cd22c85c2ad4123fbfdbd064bd7a6d070fe13b721794432f9f7a63",
+    "BATCH08e_PAGES.pdf": "d85c306a04cd31d191330a2800be9badc9705c67d4aacd8e45c356eb56b2ada5"
+  },
+  "page_mapping": [
+    {
+      "attachment_page": 1,
+      "original_pdf_page": 383,
+      "printed_page": 362
+    }
+  ],
+  "definition_excerpts": [
+    {
+      "full_name": "MD.Ch08.Vec",
+      "kind": "abbrev",
+      "path": "Blueprint/Ch08.lean",
+      "line": 17,
+      "code_sha256": "6f4b254a8a7cc4115fb35265b77caa663bdd18567cd1e664cc5bbd080d02fcff"
+    },
+    {
+      "full_name": "MD.Ch08.kineticTwice",
+      "kind": "def",
+      "path": "Blueprint/Ch08.lean",
+      "line": 65,
+      "code_sha256": "74e9a17210c40ab25bfb4d66c78bf295ed45ebc01a50292e3e9961df7d0ced46"
+    },
+    {
+      "full_name": "MD.Ch08.isoProjection",
+      "kind": "def",
+      "path": "Blueprint/Ch08.lean",
+      "line": 666,
+      "code_sha256": "0af47e6f6fbc89338f51c7af9b9c7d1cb7d77fdda7c136ee036b02f304fcb52f"
+    },
+    {
+      "full_name": "MD.Ch08.isoProjection_self",
+      "kind": "theorem",
+      "path": "Blueprint/Ch08.lean",
+      "line": 668,
+      "code_sha256": "4082d8d70162dca30b7a70b57aa341e9990fc019ad4409a926ca1968f4754aea"
+    },
+    {
+      "full_name": "MD.Ch08.isoProjection_idempotent",
+      "kind": "theorem",
+      "path": "Blueprint/Ch08.lean",
+      "line": 673,
+      "code_sha256": "94b24fc34093498f8ba20dc8e10b7adc2ee6801b7df7eb3b1b026284a1fe8f9f"
+    }
+  ],
+  "validation": {
+    "project_constant_closure": "PASS",
+    "missing_project_definitions": [],
+    "full_page_render_equality_dpi": 72,
+    "website_submitted": false
+  },
+  "files": {
+    "PASTE.txt": {
+      "bytes": 8382,
+      "sha256": "6465d7a7ea79d3790fb94b4d7cb2074ccd396aae2523854f5c410cf87b919e68"
+    },
+    "BATCH08e_PAGES.pdf": {
+      "bytes": 70030,
+      "sha256": "d85c306a04cd31d191330a2800be9badc9705c67d4aacd8e45c356eb56b2ada5"
+    }
+  },
+  "total_task_bytes": 80679
+}

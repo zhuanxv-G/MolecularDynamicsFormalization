@@ -1,0 +1,59 @@
+{
+  "batch": "BATCH11",
+  "subtask": "BATCH11d",
+  "source_ids": [
+    "MD-8.7-PronyKernel"
+  ],
+  "input_sha256": {
+    "Blueprint/Ch08.lean": "2800812fadd8e2557013f1941e4570401f7903d46f44baf07e23d5531da22a72",
+    "blueprint/ch08/ch08_source.json": "9b994b0f64cd22c85c2ad4123fbfdbd064bd7a6d070fe13b721794432f9f7a63",
+    "BATCH11d_PAGES.pdf": "00476fffbdbbff8216b51065392b1f143011fe7aeb550cced09534d2551458b6"
+  },
+  "page_mapping": [
+    {
+      "attachment_page": 1,
+      "original_pdf_page": 396,
+      "printed_page": 375
+    }
+  ],
+  "definition_excerpts": [
+    {
+      "full_name": "MD.Ch08.pronyKernel",
+      "kind": "def",
+      "path": "Blueprint/Ch08.lean",
+      "line": 971,
+      "code_sha256": "a50311cecb81e9d109516049ad22beab5d1fb74caf5624dac2679488f92a49a3"
+    },
+    {
+      "full_name": "MD.Ch08.pronyQualification",
+      "kind": "def",
+      "path": "Blueprint/Ch08.lean",
+      "line": 973,
+      "code_sha256": "37b9e43562f98478210b96bbc77339a67eae0cb5338bd7db87d2f077a7dbdc08"
+    },
+    {
+      "full_name": "MD.Ch08.pronyKernel_nonneg",
+      "kind": "theorem",
+      "path": "Blueprint/Ch08.lean",
+      "line": 975,
+      "code_sha256": "12ad575066258de2199f39162ceb5df31f9f21d1fcbc973e9b2c6c4ca0fcc222"
+    }
+  ],
+  "validation": {
+    "project_constant_closure": "PASS",
+    "missing_project_definitions": [],
+    "full_page_render_equality_dpi": 72,
+    "website_submitted": false
+  },
+  "files": {
+    "PASTE.txt": {
+      "bytes": 8099,
+      "sha256": "6f44b35da516d0913f90c5fb760007daf9d89adccca9ea3cb7dc9a09352869fb"
+    },
+    "BATCH11d_PAGES.pdf": {
+      "bytes": 71465,
+      "sha256": "00476fffbdbbff8216b51065392b1f143011fe7aeb550cced09534d2551458b6"
+    }
+  },
+  "total_task_bytes": 81363
+}

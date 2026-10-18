@@ -1,0 +1,85 @@
+{
+  "batch": "BATCH04",
+  "subtask": "BATCH04f",
+  "source_ids": [
+    "MD-8.4-LiftedThermostat"
+  ],
+  "input_sha256": {
+    "Blueprint/Ch08.lean": "2800812fadd8e2557013f1941e4570401f7903d46f44baf07e23d5531da22a72",
+    "blueprint/ch08/ch08_source.json": "9b994b0f64cd22c85c2ad4123fbfdbd064bd7a6d070fe13b721794432f9f7a63",
+    "BATCH04f_PAGES.pdf": "17eb6c1acd31355f3953179c7f7e621a7a0c773e8e9a0a1928774944871300bd"
+  },
+  "page_mapping": [
+    {
+      "attachment_page": 1,
+      "original_pdf_page": 365,
+      "printed_page": 344
+    },
+    {
+      "attachment_page": 2,
+      "original_pdf_page": 366,
+      "printed_page": 345
+    }
+  ],
+  "definition_excerpts": [
+    {
+      "full_name": "MD.Ch08.Vec",
+      "kind": "abbrev",
+      "path": "Blueprint/Ch08.lean",
+      "line": 17,
+      "code_sha256": "6f4b254a8a7cc4115fb35265b77caa663bdd18567cd1e664cc5bbd080d02fcff"
+    },
+    {
+      "full_name": "MD.Ch08.independentWiener",
+      "kind": "def",
+      "path": "Blueprint/Ch08.lean",
+      "line": 307,
+      "code_sha256": "244c6d2d9a686d3df1fc2abd2a1c945a448896d7397bd79928618c58bcc75f4d"
+    },
+    {
+      "full_name": "MD.Ch08.additiveSDE",
+      "kind": "def",
+      "path": "Blueprint/Ch08.lean",
+      "line": 310,
+      "code_sha256": "81838b29ec807319905a573d048fd44c90ff95cc891ddf131b6c3a2e73df657a"
+    },
+    {
+      "full_name": "MD.Ch08.liftedThermostat",
+      "kind": "def",
+      "path": "Blueprint/Ch08.lean",
+      "line": 348,
+      "code_sha256": "4f23a46d640d286368d5eb6ff538be83da07284a107fc96699eb0e7c79b85e87"
+    },
+    {
+      "full_name": "MolecularDynamics.Chapter05Review.E",
+      "kind": "abbrev",
+      "path": "MolecularDynamics/Chapter05/ReviewDefinitions.lean",
+      "line": 18,
+      "code_sha256": "b497c8ba7f01b62a3147d9ae65652772ff3f81e57aa19b116f1283fef7a3cc60"
+    },
+    {
+      "full_name": "MolecularDynamics.textbookThermostatDrift",
+      "kind": "def",
+      "path": "MolecularDynamics/Chapter08/ThermostatHormander.lean",
+      "line": 18,
+      "code_sha256": "9419504f665d2de643fb061c12013be886bf0c17f07af9b9f3289e96f3ae0bfa"
+    }
+  ],
+  "validation": {
+    "project_constant_closure": "PASS",
+    "missing_project_definitions": [],
+    "full_page_render_equality_dpi": 72,
+    "website_submitted": false
+  },
+  "files": {
+    "PASTE.txt": {
+      "bytes": 14182,
+      "sha256": "4076942d6dab9e880178a6fc5b50b53f2e8eec916863b30d8dbaa19b2f8a0890"
+    },
+    "BATCH04f_PAGES.pdf": {
+      "bytes": 98790,
+      "sha256": "17eb6c1acd31355f3953179c7f7e621a7a0c773e8e9a0a1928774944871300bd"
+    }
+  },
+  "total_task_bytes": 115653
+}

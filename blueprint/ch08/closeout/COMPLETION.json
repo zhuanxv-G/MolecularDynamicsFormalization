@@ -1,0 +1,34 @@
+{
+  "machine_check_status": "passed",
+  "body_all_items_on_disk": true,
+  "final_full_check_passed": true,
+  "entries": 103,
+  "declarations": 385,
+  "declaration_status": {
+    "定义或记号": 277,
+    "已证": 54,
+    "未证": 54
+  },
+  "unproved_categories": {
+    "缺大型理论": 43,
+    "原书疑误不证": 8,
+    "时间盒止": 3
+  },
+  "canonical_sha256": "2800812fadd8e2557013f1941e4570401f7903d46f44baf07e23d5531da22a72",
+  "source_json_sha256": "9b994b0f64cd22c85c2ad4123fbfdbd064bd7a6d070fe13b721794432f9f7a63",
+  "native_binding": "blueprint/ch08/validation/batches/s810-r3-binding.json",
+  "native_binding_sha256": "f03c8c374b0ffb364184d41f9414252058e4644a4421a0b26c248a0cd0dd6705",
+  "full_report": "blueprint/ch08/closeout/full/CHECK_REPORT.json",
+  "full_report_sha256": "a4e032053eac5d943cf0dadbb8b1d4df9c6b2cd5d353c1136b72b4b2b1df811c",
+  "frozen_files": 16481,
+  "frozen_byte_receipt_sha256": "f2531b56f69b4f8e636a3b624f1a6713a254f29643ccf5e6ef01b807d46509c6",
+  "formal_source_files": 298,
+  "formal_sorry": 0,
+  "formal_axiom_declarations": 0,
+  "batches": 18,
+  "subtasks": 103,
+  "covered_entries": 103,
+  "missing_project_definitions": 0,
+  "website_submitted": false,
+  "scope": "第8章全部正文条目已登记；证明与覆盖缺口逐条保留；停止，不做附加章节。"
+}

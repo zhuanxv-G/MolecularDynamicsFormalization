@@ -1,0 +1,246 @@
+以附件/PASTE 为准，忽略 /workspace 旧文件；Mathlib 定义按标准含义采信。
+本任务只审本条：原文转录、对象资格、定义体、量词、全部结论及[EXTRA]是否一致；Lean编译不代替语义审阅。
+Lean/Mathlib均4.34.0。原页PDF映射：[401]；印刷页=[380].
+input_sha256请原样回显：
+{
+  "Blueprint/Ch08.lean": "2800812fadd8e2557013f1941e4570401f7903d46f44baf07e23d5531da22a72",
+  "blueprint/ch08/ch08_source.json": "9b994b0f64cd22c85c2ad4123fbfdbd064bd7a6d070fe13b721794432f9f7a63",
+  "BATCH13d_PAGES.pdf": "243bf29550eb79987274e6d3080b4388f3a79ebba5fa85007a350c5dafcfb9b7"
+}
+用代码将JSON对象(batch,input_sha256,items)写到 /workspace/.mathcopilot/reviews/ch08/BATCH13d_review.json；items仅含本source_id。
+items字段：source_id、verdict(PASS/FAIL/NEEDS_HUMAN)、transcription、semantic_review、counterexample、suggested_fix、printed_version、corrected_version。逐版区分原文疑误和修正版结论；缺材料必须具体指出，不猜测。写后json.loads自检，最后仅回复路径及统计。
+
+## 原文JSON
+```json
+{
+  "source_id": "MD-8.8-AndersenHamiltonianPrinted",
+  "kind": "unnumbered_claim",
+  "label": null,
+  "section": "8.8",
+  "printed_page": "380",
+  "pdf_page": "401",
+  "statement_latex": "Ĥ=Σᵢ|p̄ᵢ|²/(2mᵢV^{2/3})+Ū(q̄;V)+p_V²/(2μ_V)+PV, and ρ_NPT=√(β/(2πμ_V))∫exp(−βĤ)dp_V. (8.73).",
+  "statement_verbatim": "380\n8\nExtended Variable Methods\nD mi\n\u00021\n3V\u00021=3 PV Nqi C V2=3PNqi\n\u0003\n;\nfrom which, we observe\nNpi D miV1=3Pqi:\n(8.72)\nThere is still the question of how to adjust the volume in simulation. The idea\nof Andersen was to view the volume V as a dynamical quantity on equal footing\nwith the coordinates of the system by viewing PV as the potential energy term and\nintroducing an artiﬁcial kinetic energy term of the form \u0006V PV2. The barostat mass \u0006V\nbecomes a free parameter, analogous to the thermal mass used in Nosé dynamics.\nAn extended Hamiltonian may then be written by introducing a momentum variable\npV conjugate to V:\nOH.Nq; Np; V; pV/ D\nN\nX\niD1\nkNpik2\n2miV2=3 C NU.NqI V/ C p2\nV\n2\u0006V\nC PV;\n(8.73)\nwhere we have written NU.NqI V/ D U.V1=3Nq/.\nIn the extended space, we then observe that\n\u0005NPT D\ns\nˇ\n2\u0014\u0006V\nZ\ne\u0002ˇ OH.Nq;Np;V;pV/dpV;\nfrom the deﬁnitions (8.71) and (8.72).\nThere are several ways to proceed. Andersen suggested to use a Monte-\nCarlo method to control the temperature during simulation. This approach has\nthe advantage of simplicity, but only allows the determination of conﬁgurational\naverages. If dynamical information is required (e.g. an autocorrelation function\nor a diffusion coefﬁcient), some sort of dynamics-based scheme is needed. The\nprogress in developing formulations and numerical methods can be charted in\n[11, 32, 128, 183, 199, 248, 252, 288, 373].\nDeterministic methods can be used based on Nosé-Hoover to control the\ntemperature. A problem with methods of this type that one sometimes encounters\n“ringing” or “breathing” depending on the tuning of various parameters.\nStochastic-dynamical thermostats greatly improve control of the convergence to\nequilibrium. We have already seen several methods of this type, speciﬁcally the\nLangevin dynamics method and the Nosé-Hoover-Langevinmethod. These schemes\nmay be applied in conjunction with the Andersen Hamiltonian OH. The extended\nsystem approach outlined here was developed in collaboration with R. Elber and\nM. Di Pierro; it is close in spirit to the method of Klein [199], but incorporates\nstochastic terms as in Nosé-Hoover-Langevin in the equations deﬁning the auxiliary\nvariables to ensure ergodicity.\n",
+  "verbatim_scope": "完整对应原页文字层，逐字保留；本条数学成分由statement_latex及statement_scope定位。",
+  "proof_latex": null,
+  "proof_note": "对应原页推导逐字保存在statement_verbatim/original_page_text；排版以原页PDF为准。",
+  "original_page_text": [
+    {
+      "pdf_page": 401,
+      "printed_page": 380,
+      "text": "380\n8\nExtended Variable Methods\nD mi\n\u00021\n3V\u00021=3 PV Nqi C V2=3PNqi\n\u0003\n;\nfrom which, we observe\nNpi D miV1=3Pqi:\n(8.72)\nThere is still the question of how to adjust the volume in simulation. The idea\nof Andersen was to view the volume V as a dynamical quantity on equal footing\nwith the coordinates of the system by viewing PV as the potential energy term and\nintroducing an artiﬁcial kinetic energy term of the form \u0006V PV2. The barostat mass \u0006V\nbecomes a free parameter, analogous to the thermal mass used in Nosé dynamics.\nAn extended Hamiltonian may then be written by introducing a momentum variable\npV conjugate to V:\nOH.Nq; Np; V; pV/ D\nN\nX\niD1\nkNpik2\n2miV2=3 C NU.NqI V/ C p2\nV\n2\u0006V\nC PV;\n(8.73)\nwhere we have written NU.NqI V/ D U.V1=3Nq/.\nIn the extended space, we then observe that\n\u0005NPT D\ns\nˇ\n2\u0014\u0006V\nZ\ne\u0002ˇ OH.Nq;Np;V;pV/dpV;\nfrom the deﬁnitions (8.71) and (8.72).\nThere are several ways to proceed. Andersen suggested to use a Monte-\nCarlo method to control the temperature during simulation. This approach has\nthe advantage of simplicity, but only allows the determination of conﬁgurational\naverages. If dynamical information is required (e.g. an autocorrelation function\nor a diffusion coefﬁcient), some sort of dynamics-based scheme is needed. The\nprogress in developing formulations and numerical methods can be charted in\n[11, 32, 128, 183, 199, 248, 252, 288, 373].\nDeterministic methods can be used based on Nosé-Hoover to control the\ntemperature. A problem with methods of this type that one sometimes encounters\n“ringing” or “breathing” depending on the tuning of various parameters.\nStochastic-dynamical thermostats greatly improve control of the convergence to\nequilibrium. We have already seen several methods of this type, speciﬁcally the\nLangevin dynamics method and the Nosé-Hoover-Langevinmethod. These schemes\nmay be applied in conjunction with the Andersen Hamiltonian OH. The extended\nsystem approach outlined here was developed in collaboration with R. Elber and\nM. Di Pierro; it is close in spirit to the method of Klein [199], but incorporates\nstochastic terms as in Nosé-Hoover-Langevin in the equations deﬁning the auxiliary\nvariables to ensure ergodicity.\n"
+    }
+  ],
+  "numbered_equations": [
+    "8.73"
+  ],
+  "transcription_note": "文字层逐字保留；数学排版另行转写，原页中的特殊字形编码不静默替换。PDF420仅取Exercises之前。",
+  "context_notation": [],
+  "extra_assumptions": [
+    "m,QV,V,β正为物理域；QV是活塞质量，pV取实数。仅高斯消元的点态权重式，不把它当成任意U下的归一概率或完整坐标Jacobian定理。"
+  ],
+  "issues": [
+    "已目视核对原页PDF401：边缘公式未写此前ρ_NPT定义中的Z_NPT⁻¹；字面右端给未归一Boltzmann权。修正版独立加入正配分常数，需导师确认作者是否在此省略归一因子。"
+  ],
+  "statement_scope": "活塞Hamiltonian、原印/修正边缘权重和Gaussian积分目标。",
+  "lean_decl": "MD.Ch08.andersenHamiltonian",
+  "lean_declarations": [
+    "MD.Ch08.andersenHamiltonian",
+    "MD.Ch08.andersenMarginalPrinted",
+    "MD.Ch08.andersenMarginal_corrected",
+    "MD.Ch08.andersenGaussian_marginal"
+  ],
+  "source_page_verification": "见source_page_checks.json，已目视核对本条原页。",
+  "repair_log": [],
+  "documented_priors": []
+}
+```
+
+## 完整本条Lean
+```lean
+def andersenHamiltonian (m : Vec n) (U : Vec n → ℝ) (QV P : ℝ)
+    (z : (Phase n × ℝ) × ℝ) : ℝ :=
+  (∑ i, z.1.1.2 i^2/(2*m i*Real.rpow z.1.2 (2/3 : ℝ)))+
+    U (andersenPosition z.1.2 z.1.1.1)+z.2^2/(2*QV)+P*z.1.2
+def andersenMarginalPrinted (m : Vec n) (U : Vec n → ℝ) (QV P β : ℝ)
+    (z : Phase n × ℝ) : ℝ :=
+  Real.sqrt (β/(2*Real.pi*QV))*∫ pV, Real.exp (-β*andersenHamiltonian m U QV P (z,pV))
+def andersenMarginal_corrected (m : Vec n) (U : Vec n → ℝ) (QV P β Z : ℝ)
+    (z : Phase n × ℝ) : ℝ := andersenMarginalPrinted m U QV P β z/Z
+theorem andersenGaussian_marginal (m : Vec n) (U : Vec n → ℝ) (QV P β : ℝ)
+    (hQV : 0 < QV) (hβ : 0 < β) (z : Phase n × ℝ) (hV : 0 < z.2) :
+    andersenMarginalPrinted m U QV P β z =
+      Real.exp (-β*((∑ i, z.1.2 i^2/(2*m i*Real.rpow z.2 (2/3 : ℝ)))+
+        U (andersenPosition z.2 z.1.1)+P*z.2)) := by
+  sorry
+```
+
+## 项目依赖定义体及选择规格
+以下def/abbrev/structure完整保留；定理列出完整类型，Mathlib标准定义无需摘录。
+
+### MD.Ch08.Vec (Blueprint/Ch08.lean:17)
+原文件上下文：
+```lean
+open Set Filter MeasureTheory ProbabilityTheory MolecularDynamics
+open scoped BigOperators Topology ContDiff ENNReal NNReal Matrix
+variable {Ω : Type*} [MeasurableSpace Ω]
+variable {n : ℕ}
+```
+```lean
+abbrev Vec (n : ℕ) := Fin n → ℝ
+```
+
+### MD.Ch08.Phase (Blueprint/Ch08.lean:18)
+原文件上下文：
+```lean
+open Set Filter MeasureTheory ProbabilityTheory MolecularDynamics
+open scoped BigOperators Topology ContDiff ENNReal NNReal Matrix
+variable {Ω : Type*} [MeasurableSpace Ω]
+variable {n : ℕ}
+```
+```lean
+abbrev Phase (n : ℕ) := Vec n × Vec n
+```
+
+### MD.Ch08.volumeScale (Blueprint/Ch08.lean:1121)
+原文件上下文：
+```lean
+open Set Filter MeasureTheory ProbabilityTheory MolecularDynamics
+open scoped BigOperators Topology ContDiff ENNReal NNReal Matrix
+variable {Ω : Type*} [MeasurableSpace Ω]
+variable {n : ℕ}
+```
+```lean
+def volumeScale (V : ℝ) : ℝ := Real.rpow V (1/3 : ℝ)
+```
+
+### MD.Ch08.andersenPosition (Blueprint/Ch08.lean:1140)
+原文件上下文：
+```lean
+open Set Filter MeasureTheory ProbabilityTheory MolecularDynamics
+open scoped BigOperators Topology ContDiff ENNReal NNReal Matrix
+variable {Ω : Type*} [MeasurableSpace Ω]
+variable {n : ℕ}
+```
+```lean
+def andersenPosition (V : ℝ) (qbar : Vec n) : Vec n := volumeScale V • qbar
+```
+
+### MD.Ch08.andersenHamiltonian (Blueprint/Ch08.lean:1176)
+原文件上下文：
+```lean
+open Set Filter MeasureTheory ProbabilityTheory MolecularDynamics
+open scoped BigOperators Topology ContDiff ENNReal NNReal Matrix
+variable {Ω : Type*} [MeasurableSpace Ω]
+variable {n : ℕ}
+```
+```lean
+def andersenHamiltonian (m : Vec n) (U : Vec n → ℝ) (QV P : ℝ)
+    (z : (Phase n × ℝ) × ℝ) : ℝ :=
+  (∑ i, z.1.1.2 i^2/(2*m i*Real.rpow z.1.2 (2/3 : ℝ)))+
+    U (andersenPosition z.1.2 z.1.1.1)+z.2^2/(2*QV)+P*z.1.2
+```
+
+### MD.Ch08.andersenMarginalPrinted (Blueprint/Ch08.lean:1180)
+原文件上下文：
+```lean
+open Set Filter MeasureTheory ProbabilityTheory MolecularDynamics
+open scoped BigOperators Topology ContDiff ENNReal NNReal Matrix
+variable {Ω : Type*} [MeasurableSpace Ω]
+variable {n : ℕ}
+```
+```lean
+def andersenMarginalPrinted (m : Vec n) (U : Vec n → ℝ) (QV P β : ℝ)
+    (z : Phase n × ℝ) : ℝ :=
+  Real.sqrt (β/(2*Real.pi*QV))*∫ pV, Real.exp (-β*andersenHamiltonian m U QV P (z,pV))
+```
+
+### MD.Ch08.andersenMarginal_corrected (Blueprint/Ch08.lean:1183)
+原文件上下文：
+```lean
+open Set Filter MeasureTheory ProbabilityTheory MolecularDynamics
+open scoped BigOperators Topology ContDiff ENNReal NNReal Matrix
+variable {Ω : Type*} [MeasurableSpace Ω]
+variable {n : ℕ}
+```
+```lean
+def andersenMarginal_corrected (m : Vec n) (U : Vec n → ℝ) (QV P β Z : ℝ)
+    (z : Phase n × ℝ) : ℝ := andersenMarginalPrinted m U QV P β z/Z
+```
+
+### MD.Ch08.andersenGaussian_marginal (Blueprint/Ch08.lean:1185)
+原文件上下文：
+```lean
+open Set Filter MeasureTheory ProbabilityTheory MolecularDynamics
+open scoped BigOperators Topology ContDiff ENNReal NNReal Matrix
+variable {Ω : Type*} [MeasurableSpace Ω]
+variable {n : ℕ}
+```
+```lean
+theorem andersenGaussian_marginal (m : Vec n) (U : Vec n → ℝ) (QV P β : ℝ)
+    (hQV : 0 < QV) (hβ : 0 < β) (z : Phase n × ℝ) (hV : 0 < z.2) :
+    andersenMarginalPrinted m U QV P β z =
+      Real.exp (-β*((∑ i, z.1.2 i^2/(2*m i*Real.rpow z.2 (2/3 : ℝ)))+
+        U (andersenPosition z.2 z.1.1)+P*z.2))
+```
+
+### MolecularDynamics.Chapter02Review.Q (MolecularDynamics/Chapter02/ReviewDefinitions.lean:17)
+原文件上下文：
+```lean
+open Set Filter Matrix
+open scoped BigOperators Topology
+```
+```lean
+abbrev Q (n : ℕ) := Fin n → ℝ
+```
+
+### MolecularDynamics.Chapter02Review.Z (MolecularDynamics/Chapter02/ReviewDefinitions.lean:18)
+原文件上下文：
+```lean
+open Set Filter Matrix
+open scoped BigOperators Topology
+```
+```lean
+abbrev Z (n : ℕ) := Q n × Q n
+```
+
+### MolecularDynamics.Chapter04Review.Q (MolecularDynamics/Chapter04/ReviewDefinitions.lean:15)
+原文件上下文：
+```lean
+open Set Matrix
+open scoped BigOperators Topology Matrix.Norms.Elementwise
+```
+```lean
+abbrev Q (n : ℕ) := Fin n → ℝ
+```
+
+### MolecularDynamics.Chapter04Review.Z (MolecularDynamics/Chapter04/ReviewDefinitions.lean:16)
+原文件上下文：
+```lean
+open Set Matrix
+open scoped BigOperators Topology Matrix.Norms.Elementwise
+```
+```lean
+abbrev Z (n : ℕ) := Q n × Q n
+```
+
+### MolecularDynamics.Chapter04Review.V (MolecularDynamics/Chapter04/ReviewDefinitions.lean:17)
+原文件上下文：
+```lean
+open Set Matrix
+open scoped BigOperators Topology Matrix.Norms.Elementwise
+```
+```lean
+abbrev V := Fin 3 → ℝ
+```
+
+### MolecularDynamics.Chapter06Review.V (MolecularDynamics/Chapter06/ReviewDefinitions.lean:17)
+原文件上下文：
+```lean
+open Set Filter MeasureTheory ProbabilityTheory
+open scoped BigOperators Topology ContDiff ENNReal NNReal
+local instance : MeasureSpace UnitAddCircle := ⟨AddCircle.haarAddCircle⟩
+```
+```lean
+abbrev V (n : ℕ) := Fin n → ℝ
+```

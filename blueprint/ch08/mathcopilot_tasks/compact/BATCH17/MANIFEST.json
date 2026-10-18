@@ -1,0 +1,47 @@
+{
+  "batch": "BATCH17",
+  "subtasks": [
+    {
+      "subtask": "BATCH17a",
+      "source_id": "MD-8.9.3-PairwiseCanonicalWeight",
+      "path": "blueprint/ch08/mathcopilot_tasks/compact/BATCH17/a",
+      "bytes": 96505,
+      "manifest_sha256": "1e9f606fd5c1db96e3f76281d9ab1b0cd2c660f983ec3e635551c433cafa65fa"
+    },
+    {
+      "subtask": "BATCH17b",
+      "source_id": "MD-8.9.4-PairwiseNHLSDE",
+      "path": "blueprint/ch08/mathcopilot_tasks/compact/BATCH17/b",
+      "bytes": 105915,
+      "manifest_sha256": "8b50025d589507461ecf8735d1bf303d870b551e05a5bbf27e2854a6cedfaf44"
+    },
+    {
+      "subtask": "BATCH17c",
+      "source_id": "MD-8.9.4-PairwiseNHLGenerator",
+      "path": "blueprint/ch08/mathcopilot_tasks/compact/BATCH17/c",
+      "bytes": 116964,
+      "manifest_sha256": "c51d62f40b2db7860dd428176d75421409f5ecd0db7d3acc41a9a7f8a7e62361"
+    },
+    {
+      "subtask": "BATCH17d",
+      "source_id": "MD-8.9.4-PNHLSplittingAlgorithms",
+      "path": "blueprint/ch08/mathcopilot_tasks/compact/BATCH17/d",
+      "bytes": 101792,
+      "manifest_sha256": "42f0fed16b0bfca01f08e6fac246e56fe45e4d25adec2689899cb32406b126fe"
+    },
+    {
+      "subtask": "BATCH17e",
+      "source_id": "MD-8.10-BerendsenRelaxation",
+      "path": "blueprint/ch08/mathcopilot_tasks/compact/BATCH17/e",
+      "bytes": 182846,
+      "manifest_sha256": "81227ac02f47f1737ec7d5148c6d0867818dc000338e9f6408cbdfdfb9a58937"
+    },
+    {
+      "subtask": "BATCH17f",
+      "source_id": "MD-8.10-CanonicalTotalMomentumGaussian",
+      "path": "blueprint/ch08/mathcopilot_tasks/compact/BATCH17/f",
+      "bytes": 212933,
+      "manifest_sha256": "e634b646de3ef81bbe78bb63c5722680f78d13cc91bad95a7757f8a3503c5a93"
+    }
+  ]
+}

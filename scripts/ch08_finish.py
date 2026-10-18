@@ -5,12 +5,18 @@ from ch08_dependency_index import index_project,strip_comments
 from collections import Counter
 
 def main():
-    frozen=verify_frozen(full=True)
+    # Reuse the completed full-byte check; recheck every changed stat here.
+    freeze_receipt=BASE/'closeout/FROZEN_BYTE_CHECK.json'
+    fr=json.loads(freeze_receipt.read_text(encoding='utf-8'))
+    assert fr['status']=='PASS' and fr['baseline_sha256']==sha(BASE/'FROZEN_BASELINE.json')
+    frozen=verify_frozen()
+    assert frozen==fr['files']
     full=BASE/'closeout/full'
     report=json.loads((full/'CHECK_REPORT.json').read_text(encoding='utf-8-sig'))
     assert report['machine_check_status']=='passed'
     for f in report['inputs']:assert sha(ROOT/f['relative_path'])==f['sha256']
     for c in report['checks']:assert c['exit_code']==0 and sha(full/c['raw_log'])==c['raw_log_sha256']
+    assert 'sorryAx' not in (full/'axiom_dependencies.log').read_text(encoding='utf-8-sig')
     canonical=ROOT/'Blueprint/Ch08.lean'
     bindings=[]
     for p in (BASE/'validation/batches').glob('*-binding.json'):
@@ -89,7 +95,7 @@ def main():
         canonical_sha256=sha(canonical),source_json_sha256=sha(BASE/'ch08_source.json'),
         native_binding=binding.relative_to(ROOT).as_posix(),native_binding_sha256=sha(binding),
         full_report='blueprint/ch08/closeout/full/CHECK_REPORT.json',full_report_sha256=sha(full/'CHECK_REPORT.json'),
-        frozen_files=frozen,formal_source_files=len(formal),formal_sorry=0,formal_axiom_declarations=0,
+        frozen_files=frozen,frozen_byte_receipt_sha256=sha(freeze_receipt),formal_source_files=len(formal),formal_sorry=0,formal_axiom_declarations=0,
         batches=packages['batches'],subtasks=len(seen),covered_entries=len(seen),missing_project_definitions=0,
         website_submitted=False,scope='第8章全部正文条目已登记；证明与覆盖缺口逐条保留；停止，不做附加章节。')
     dump(BASE/'closeout/COMPLETION.json',completion)
@@ -117,6 +123,7 @@ def main():
     summary=['# 第8章：导师审阅摘要','',
       f'已整理§8.1–§8.10正文{len(RECORDS)}条。正文为印刷329–399页（PDF350–420），末页在Exercises标题前截止；其后习题和附录不纳入。本章114条编号公式以及Lemma 8.1、Proposition 8.1–8.3、Theorem 8.1均有对应条目。数值图表与经验比较另列。','',
       f'共有{len(decls)}个命名声明：{counts["定义或记号"]}项定义或记号、{counts["已证"]}项已证定理、{counts["未证"]}项未证陈述。全部条目已登记，仍有完整理论与局部覆盖的区别；各条明确列出适用条件和未覆盖内容。','',
+      f'未证陈述中，{unproved_categories["缺大型理论"]}项的相关理论或证明桥接尚未补齐，{unproved_categories["原书疑误不证"]}项保留原书疑误版本，{unproved_categories["时间盒止"]}项局部短证明尚未完成。原书疑误版与工作修正版分别记录，不互相充当证明。','',
       '已完成的证明包括Hamiltonian Gibbs权的局部驻定、扩展密度边缘积分、热浴的相加命题、线性热浴场的Lie括号归属、模态域内的线性无关、补充非零噪声后的Hörmander条件，以及零模态沿轨道保持。另有投影、约束瞬时平衡、Gaussian权归一、体积正性、成对动量守恒和动量缩放等代数结论。','',
       '未证部分主要涉及高维散度与积分分部、随机积分和Gaussian转移律、非线性约束括号、一般ODE投影与积分因子、记忆核过程极限，以及不变测度与遍历性。给出形式生成元或局部驻定式，不表示已经证明全局概率不变性、唯一性或采样收敛。','',
       f'共有{len(issues)}项原文疑点或条件问题待导师裁定。重点包括Nosé时间变量的导数和对数项、非零噪声条件、OU矩阵协方差与扩散系数、Lyapunov衰减系数、等动能散度符号、SIN括号/子流符号及热浴质量、一般矩阵记忆核协方差、NPT边缘权的归一常数、活塞热浴权的动能系数，以及DPD质量矩阵次序与单对生成元。每项保留原文和工作修正，证明状态单独列出。','',
@@ -134,7 +141,9 @@ def main():
         p=ROOT/name;s=p.read_text(encoding='utf-8');a=s.index('## 28号运行检查点');b=s.index('## 历史规则与状态',a)
         s=s[:a]+'## 28号运行检查点\n\n'+msg+'\n未证陈述、覆盖缺口和待导师裁定问题见CH08三份文档；网站未提交。停止，不做附加章节。\n\n'+s[b:]
         s=s.replace('继续28号第8章，从50条检查点的§8.6剩余内容接续。','28号第8章已完成本地流程，现已停止，等待用户新指令。')
-        if name.endswith('CURRENT_STATE.zh-CN.md'):s='第8章本地流程完成，等待用户新指令\n\n'+s
+        if name.endswith('CURRENT_STATE.zh-CN.md'):
+            s=re.sub(r'\A(?:(?:第8章本地流程完成，等待用户新指令|第7章首轮结果已整合，复审包待用户提交；继续第8章)\n+)+','',s)
+            s='第8章本地流程完成，等待用户新指令\n\n'+s
         p.write_text(s,encoding='utf-8')
     (ROOT/'docs/handoff/RESUME_PROMPT.zh-CN.md').write_text('# 第29号及续接28号已完成\n\n'+msg+'\n第7章首轮结果已整合，12个EAUDIT包覆盖35条，待用户提交；Ch07继续冻结。\n如heartbeat接续，先读PROGRESS与COMPLETION；满足停止条件时不再开展工作。不做附加章节。\n',encoding='utf-8')
     with (ROOT/'docs/handoff/WORK_LOG.zh-CN.md').open('a',encoding='utf-8') as f:

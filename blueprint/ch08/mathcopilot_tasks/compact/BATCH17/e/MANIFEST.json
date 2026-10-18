@@ -1,0 +1,113 @@
+{
+  "batch": "BATCH17",
+  "subtask": "BATCH17e",
+  "source_ids": [
+    "MD-8.10-BerendsenRelaxation"
+  ],
+  "input_sha256": {
+    "Blueprint/Ch08.lean": "2800812fadd8e2557013f1941e4570401f7903d46f44baf07e23d5531da22a72",
+    "blueprint/ch08/ch08_source.json": "9b994b0f64cd22c85c2ad4123fbfdbd064bd7a6d070fe13b721794432f9f7a63",
+    "BATCH17e_PAGES.pdf": "f68f1e92fd777686db28f058b70dd4ba09b4152be17b9e0641434313424db1f1"
+  },
+  "page_mapping": [
+    {
+      "attachment_page": 1,
+      "original_pdf_page": 417,
+      "printed_page": 396
+    },
+    {
+      "attachment_page": 2,
+      "original_pdf_page": 418,
+      "printed_page": 397
+    }
+  ],
+  "definition_excerpts": [
+    {
+      "full_name": "MD.Ch08.Vec",
+      "kind": "abbrev",
+      "path": "Blueprint/Ch08.lean",
+      "line": 17,
+      "code_sha256": "6f4b254a8a7cc4115fb35265b77caa663bdd18567cd1e664cc5bbd080d02fcff"
+    },
+    {
+      "full_name": "MD.Ch08.dot",
+      "kind": "def",
+      "path": "Blueprint/Ch08.lean",
+      "line": 19,
+      "code_sha256": "bb45cec5def0e642f7dde399650df8a6486048be491d116502106e187aa99348"
+    },
+    {
+      "full_name": "MD.Ch08.berendsenTemperature",
+      "kind": "def",
+      "path": "Blueprint/Ch08.lean",
+      "line": 1686,
+      "code_sha256": "1174bd3b2ad668a0d8b8d77d7bc514a0e99311f52c6c9028d71c5a7f35f48f7f"
+    },
+    {
+      "full_name": "MD.Ch08.berendsenTemperature_derivative",
+      "kind": "theorem",
+      "path": "Blueprint/Ch08.lean",
+      "line": 1687,
+      "code_sha256": "168c2c3710ee563b60233078e28154bf07334145ec1d37b1fc27e49b742b2231"
+    },
+    {
+      "full_name": "MD.Ch08.berendsenRadicand",
+      "kind": "def",
+      "path": "Blueprint/Ch08.lean",
+      "line": 1694,
+      "code_sha256": "5cd1b1ccdc841020097fc4712d409b30fe0a078a61725dd90e131e4f32d23e53"
+    },
+    {
+      "full_name": "MD.Ch08.berendsenScale",
+      "kind": "def",
+      "path": "Blueprint/Ch08.lean",
+      "line": 1695,
+      "code_sha256": "faa4870803ecf6bc0c4656b4dfe97bc1476e38a77045054887b70587d1d2060f"
+    },
+    {
+      "full_name": "MD.Ch08.berendsenScaleQualification",
+      "kind": "def",
+      "path": "Blueprint/Ch08.lean",
+      "line": 1697,
+      "code_sha256": "b0f60d91191436e43dac94329ebd95f6d8198e6495bde1b7a4c9fce615e3fb10"
+    },
+    {
+      "full_name": "MD.Ch08.dot_smul_same",
+      "kind": "theorem",
+      "path": "Blueprint/Ch08.lean",
+      "line": 1699,
+      "code_sha256": "ec01e87e5523a6ff27b6e61e0862155a734b383bdabf6b94fee9ffa95b7b5691"
+    },
+    {
+      "full_name": "MD.Ch08.berendsenScale_energy",
+      "kind": "theorem",
+      "path": "Blueprint/Ch08.lean",
+      "line": 1704,
+      "code_sha256": "ea6b38a382add101635476a84f3c4056b946e5e9511873634e9b4b6a48079f8d"
+    },
+    {
+      "full_name": "MolecularDynamics.Chapter05Review.E",
+      "kind": "abbrev",
+      "path": "MolecularDynamics/Chapter05/ReviewDefinitions.lean",
+      "line": 18,
+      "code_sha256": "b497c8ba7f01b62a3147d9ae65652772ff3f81e57aa19b116f1283fef7a3cc60"
+    }
+  ],
+  "validation": {
+    "project_constant_closure": "PASS",
+    "missing_project_definitions": [],
+    "full_page_render_equality_dpi": 72,
+    "website_submitted": false
+  },
+  "files": {
+    "PASTE.txt": {
+      "bytes": 17721,
+      "sha256": "78f6697ffdec3c30c7f88b5c9dee4516a429affcf2432f3314f711b52470bb0f"
+    },
+    "BATCH17e_PAGES.pdf": {
+      "bytes": 161520,
+      "sha256": "f68f1e92fd777686db28f058b70dd4ba09b4152be17b9e0641434313424db1f1"
+    }
+  },
+  "total_task_bytes": 182846
+}

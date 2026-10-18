@@ -1,0 +1,120 @@
+{
+  "batch": "BATCH15",
+  "subtask": "BATCH15a",
+  "source_ids": [
+    "MD-8.9.1-DPDSoftPotential"
+  ],
+  "input_sha256": {
+    "Blueprint/Ch08.lean": "2800812fadd8e2557013f1941e4570401f7903d46f44baf07e23d5531da22a72",
+    "blueprint/ch08/ch08_source.json": "9b994b0f64cd22c85c2ad4123fbfdbd064bd7a6d070fe13b721794432f9f7a63",
+    "BATCH15a_PAGES.pdf": "57f3ab8309f59e7517166a6674f8f5a6f69355c916d2e0d6f33070c1b0755fed"
+  },
+  "page_mapping": [
+    {
+      "attachment_page": 1,
+      "original_pdf_page": 408,
+      "printed_page": 387
+    },
+    {
+      "attachment_page": 2,
+      "original_pdf_page": 409,
+      "printed_page": 388
+    }
+  ],
+  "definition_excerpts": [
+    {
+      "full_name": "MD.Ch08.Vec",
+      "kind": "abbrev",
+      "path": "Blueprint/Ch08.lean",
+      "line": 17,
+      "code_sha256": "6f4b254a8a7cc4115fb35265b77caa663bdd18567cd1e664cc5bbd080d02fcff"
+    },
+    {
+      "full_name": "MD.Ch08.dot",
+      "kind": "def",
+      "path": "Blueprint/Ch08.lean",
+      "line": 19,
+      "code_sha256": "bb45cec5def0e642f7dde399650df8a6486048be491d116502106e187aa99348"
+    },
+    {
+      "full_name": "MD.Ch08.ParticleConfig",
+      "kind": "abbrev",
+      "path": "Blueprint/Ch08.lean",
+      "line": 1334,
+      "code_sha256": "c46ce65b6511b6a80adf81f99adccdc72de343aed0cedd1fcf09d0a9683ccf2e"
+    },
+    {
+      "full_name": "MD.Ch08.pairDistance",
+      "kind": "def",
+      "path": "Blueprint/Ch08.lean",
+      "line": 1349,
+      "code_sha256": "af64f099c5dc4854a969526a2a57d3de36f250fab2a5568f7e2b529ecfaae03a"
+    },
+    {
+      "full_name": "MD.Ch08.pairDirection",
+      "kind": "def",
+      "path": "Blueprint/Ch08.lean",
+      "line": 1351,
+      "code_sha256": "dcb4ca3430cb77302a2e34042dee2accc9867ecba7b8dad4f9bf2facaf68ebd3"
+    },
+    {
+      "full_name": "MD.Ch08.dpdSoftPotential",
+      "kind": "def",
+      "path": "Blueprint/Ch08.lean",
+      "line": 1353,
+      "code_sha256": "80ba59b238a400bb136db220eeac1bbfec19572a88ef264110f4c538e14557f1"
+    },
+    {
+      "full_name": "MD.Ch08.dpdPairConservative",
+      "kind": "def",
+      "path": "Blueprint/Ch08.lean",
+      "line": 1354,
+      "code_sha256": "2b40bda3e4a0f7a226fd1b932635b2b800a6ae61b243b499c714fbd61457b387"
+    },
+    {
+      "full_name": "MD.Ch08.dpdPotential",
+      "kind": "def",
+      "path": "Blueprint/Ch08.lean",
+      "line": 1356,
+      "code_sha256": "a59ecf390572df8b8db49f1d251c6bce383467276c3c9fc8b5f8b77d3db07ff8"
+    },
+    {
+      "full_name": "MD.Ch08.dpdConservative",
+      "kind": "def",
+      "path": "Blueprint/Ch08.lean",
+      "line": 1358,
+      "code_sha256": "6d25fb5ebc78e00ec353b6caa64e102e7a88ad798ac94c511998cd72948e3f2f"
+    },
+    {
+      "full_name": "MD.Ch08.particleGradient",
+      "kind": "def",
+      "path": "Blueprint/Ch08.lean",
+      "line": 1360,
+      "code_sha256": "5ae22024f0d15fbcda627318d53042a4cccfd0008ea6f9a86ca89939077cbbc1"
+    },
+    {
+      "full_name": "MD.Ch08.dpdConservative_gradient",
+      "kind": "theorem",
+      "path": "Blueprint/Ch08.lean",
+      "line": 1362,
+      "code_sha256": "0005e32805f582ad739ec27ac302fff8249d2a5c6cdc94696d5aa0fefac60545"
+    }
+  ],
+  "validation": {
+    "project_constant_closure": "PASS",
+    "missing_project_definitions": [],
+    "full_page_render_equality_dpi": 72,
+    "website_submitted": false
+  },
+  "files": {
+    "PASTE.txt": {
+      "bytes": 18742,
+      "sha256": "a9cdb1108675c1bdf2cc2a51e49912d86e84efc0a92cb77504223b085f47a3b6"
+    },
+    "BATCH15a_PAGES.pdf": {
+      "bytes": 86106,
+      "sha256": "57f3ab8309f59e7517166a6674f8f5a6f69355c916d2e0d6f33070c1b0755fed"
+    }
+  },
+  "total_task_bytes": 108601
+}

@@ -1,0 +1,115 @@
+{
+  "batch": "BATCH16",
+  "subtask": "BATCH16e",
+  "source_ids": [
+    "MD-8.9.2-DPDPairOUUpdate"
+  ],
+  "input_sha256": {
+    "Blueprint/Ch08.lean": "2800812fadd8e2557013f1941e4570401f7903d46f44baf07e23d5531da22a72",
+    "blueprint/ch08/ch08_source.json": "9b994b0f64cd22c85c2ad4123fbfdbd064bd7a6d070fe13b721794432f9f7a63",
+    "BATCH16e_PAGES.pdf": "9844bb6e709791c0bff8d548c9d35e401ff6ca3274d2d0ba869896439810ccfc"
+  },
+  "page_mapping": [
+    {
+      "attachment_page": 1,
+      "original_pdf_page": 414,
+      "printed_page": 393
+    }
+  ],
+  "definition_excerpts": [
+    {
+      "full_name": "MD.Ch08.Vec",
+      "kind": "abbrev",
+      "path": "Blueprint/Ch08.lean",
+      "line": 17,
+      "code_sha256": "6f4b254a8a7cc4115fb35265b77caa663bdd18567cd1e664cc5bbd080d02fcff"
+    },
+    {
+      "full_name": "MD.Ch08.ParticleConfig",
+      "kind": "abbrev",
+      "path": "Blueprint/Ch08.lean",
+      "line": 1334,
+      "code_sha256": "c46ce65b6511b6a80adf81f99adccdc72de343aed0cedd1fcf09d0a9683ccf2e"
+    },
+    {
+      "full_name": "MD.Ch08.totalMomentum",
+      "kind": "def",
+      "path": "Blueprint/Ch08.lean",
+      "line": 1336,
+      "code_sha256": "6b3fdbfaee6b174232222bb9d9a58bbf3f6d9a3325cae5c3a3c2baf5b3cc250b"
+    },
+    {
+      "full_name": "MD.Ch08.pairImpulseVector",
+      "kind": "def",
+      "path": "Blueprint/Ch08.lean",
+      "line": 1382,
+      "code_sha256": "0849827a195b2999a611d4023be23a0bc482b22965abf59d9cd46194a29d3bd5"
+    },
+    {
+      "full_name": "MD.Ch08.reducedMass8",
+      "kind": "def",
+      "path": "Blueprint/Ch08.lean",
+      "line": 1561,
+      "code_sha256": "66f08719ecc862f1c5e86157ecc0521c3690fa3a038d292d4008206b91e4e8c9"
+    },
+    {
+      "full_name": "MD.Ch08.reducedMass8_pos",
+      "kind": "theorem",
+      "path": "Blueprint/Ch08.lean",
+      "line": 1562,
+      "code_sha256": "9289ed82af31207940d9f41428ad36b36b0ceb26af80d9288119d68578f3eb3b"
+    },
+    {
+      "full_name": "MD.Ch08.dpdPairOUPrinted",
+      "kind": "def",
+      "path": "Blueprint/Ch08.lean",
+      "line": 1564,
+      "code_sha256": "0816b105e5fda872e5b45a0031b7c18f01662c72b3995bfb8e9b4aa4260a2404"
+    },
+    {
+      "full_name": "MD.Ch08.dpdPairOU_corrected",
+      "kind": "def",
+      "path": "Blueprint/Ch08.lean",
+      "line": 1566,
+      "code_sha256": "2022aacf15010c428f681c689b0306882dc874a19b5d5ff822449e582b557584"
+    },
+    {
+      "full_name": "MD.Ch08.dpdPairOU_zeroRate",
+      "kind": "theorem",
+      "path": "Blueprint/Ch08.lean",
+      "line": 1569,
+      "code_sha256": "b43a635e8b161053c3a39db7f6f16be02a87be40b5eaf39c7d7c5afede72df7f"
+    },
+    {
+      "full_name": "MD.Ch08.dpdPairMomentumStep",
+      "kind": "def",
+      "path": "Blueprint/Ch08.lean",
+      "line": 1571,
+      "code_sha256": "32884969b20cf7582d6bd5d1cfc2cbd5f93c024f003ea363e1cfa72174c006a8"
+    },
+    {
+      "full_name": "MD.Ch08.dpdPairMomentumStep_conserves",
+      "kind": "theorem",
+      "path": "Blueprint/Ch08.lean",
+      "line": 1573,
+      "code_sha256": "9dbd63c9e97b1cf54d7b65629feee86a4d3b4dbb3b62465be48d2a183cee2d55"
+    }
+  ],
+  "validation": {
+    "project_constant_closure": "PASS",
+    "missing_project_definitions": [],
+    "full_page_render_equality_dpi": 72,
+    "website_submitted": false
+  },
+  "files": {
+    "PASTE.txt": {
+      "bytes": 13278,
+      "sha256": "af8c0852a0dc84418e4f935a54b96b58d5b756d7dcd80eb643e313d4456408ff"
+    },
+    "BATCH16e_PAGES.pdf": {
+      "bytes": 88345,
+      "sha256": "9844bb6e709791c0bff8d548c9d35e401ff6ca3274d2d0ba869896439810ccfc"
+    }
+  },
+  "total_task_bytes": 105310
+}

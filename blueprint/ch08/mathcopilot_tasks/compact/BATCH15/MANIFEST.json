@@ -1,0 +1,47 @@
+{
+  "batch": "BATCH15",
+  "subtasks": [
+    {
+      "subtask": "BATCH15a",
+      "source_id": "MD-8.9.1-DPDSoftPotential",
+      "path": "blueprint/ch08/mathcopilot_tasks/compact/BATCH15/a",
+      "bytes": 108601,
+      "manifest_sha256": "efe88afb32a0a063269a3069beaf0bf088b5f2756b14b873e55515b3cf8e61b8"
+    },
+    {
+      "subtask": "BATCH15b",
+      "source_id": "MD-8.9.1-DPDPairForces",
+      "path": "blueprint/ch08/mathcopilot_tasks/compact/BATCH15/b",
+      "bytes": 97061,
+      "manifest_sha256": "e89d7cafea26b301030cd400423faa00ced7ed71e0fd5d93a45325d0fba42a79"
+    },
+    {
+      "subtask": "BATCH15c",
+      "source_id": "MD-8.9.1-DPDPairWiener",
+      "path": "blueprint/ch08/mathcopilot_tasks/compact/BATCH15/c",
+      "bytes": 114174,
+      "manifest_sha256": "8e43379e4a145c8943deaddcb97dabdbcaafd8729c46688009dae9faddac6d09"
+    },
+    {
+      "subtask": "BATCH15d",
+      "source_id": "MD-8.9.1-DPDIntegralSystem",
+      "path": "blueprint/ch08/mathcopilot_tasks/compact/BATCH15/d",
+      "bytes": 116337,
+      "manifest_sha256": "450583f5c74c901e977cd08e3bc35c370518d1d78eacddafb7a022577627ce4b"
+    },
+    {
+      "subtask": "BATCH15e",
+      "source_id": "MD-8.9.1-DPDCanonicalLeaf",
+      "path": "blueprint/ch08/mathcopilot_tasks/compact/BATCH15/e",
+      "bytes": 106128,
+      "manifest_sha256": "8b0c4da5335763d6958dc8e73db214540e210f5bb9960028f6d10e377827a695"
+    },
+    {
+      "subtask": "BATCH15f",
+      "source_id": "MD-8.9.1-DPDMassOrderPrinted",
+      "path": "blueprint/ch08/mathcopilot_tasks/compact/BATCH15/f",
+      "bytes": 100839,
+      "manifest_sha256": "e0d18b6f260029a35a936749378c6c3be33710210f61d5f40dca93fc1dac7bbc"
+    }
+  ]
+}

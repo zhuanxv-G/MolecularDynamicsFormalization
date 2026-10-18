@@ -1,0 +1,113 @@
+{
+  "batch": "BATCH08",
+  "subtask": "BATCH08f",
+  "source_ids": [
+    "MD-8.6-IsokineticDivergencePrinted"
+  ],
+  "input_sha256": {
+    "Blueprint/Ch08.lean": "2800812fadd8e2557013f1941e4570401f7903d46f44baf07e23d5531da22a72",
+    "blueprint/ch08/ch08_source.json": "9b994b0f64cd22c85c2ad4123fbfdbd064bd7a6d070fe13b721794432f9f7a63",
+    "BATCH08f_PAGES.pdf": "90e83d2f04dc0b5a065519e6b6eec48e27da82ae18f51de6284caeb8226e36a3"
+  },
+  "page_mapping": [
+    {
+      "attachment_page": 1,
+      "original_pdf_page": 383,
+      "printed_page": 362
+    },
+    {
+      "attachment_page": 2,
+      "original_pdf_page": 384,
+      "printed_page": 363
+    }
+  ],
+  "definition_excerpts": [
+    {
+      "full_name": "MD.Ch08.Vec",
+      "kind": "abbrev",
+      "path": "Blueprint/Ch08.lean",
+      "line": 17,
+      "code_sha256": "6f4b254a8a7cc4115fb35265b77caa663bdd18567cd1e664cc5bbd080d02fcff"
+    },
+    {
+      "full_name": "MD.Ch08.Phase",
+      "kind": "abbrev",
+      "path": "Blueprint/Ch08.lean",
+      "line": 18,
+      "code_sha256": "377b8086105169a0d2deaa2dd84218cb6ea1d04d27b576cd82794d54e5b84300"
+    },
+    {
+      "full_name": "MD.Ch08.kineticTwice",
+      "kind": "def",
+      "path": "Blueprint/Ch08.lean",
+      "line": 65,
+      "code_sha256": "74e9a17210c40ab25bfb4d66c78bf295ed45ebc01a50292e3e9961df7d0ced46"
+    },
+    {
+      "full_name": "MD.Ch08.isoMultiplier",
+      "kind": "def",
+      "path": "Blueprint/Ch08.lean",
+      "line": 650,
+      "code_sha256": "f971efbe1a588bdaa5beb48068c8ce6eef3e1a231f585a9ea87f536459928983"
+    },
+    {
+      "full_name": "MD.Ch08.isoField",
+      "kind": "def",
+      "path": "Blueprint/Ch08.lean",
+      "line": 652,
+      "code_sha256": "80b91910ac121010e292a7516503b92917cff5e697992d9011a82d8e5bada88c"
+    },
+    {
+      "full_name": "MD.Ch08.isoAnsatz",
+      "kind": "def",
+      "path": "Blueprint/Ch08.lean",
+      "line": 681,
+      "code_sha256": "0f4da191c76c3147138e930107ae984f216c9946d8508eeb84dabfe1fb6cf6ab"
+    },
+    {
+      "full_name": "MD.Ch08.isoDivergencePrinted",
+      "kind": "theorem",
+      "path": "Blueprint/Ch08.lean",
+      "line": 683,
+      "code_sha256": "9d51c1a0cda685a1d628e9e8bc8859d8916a6acd3ac4c7c29d7ddcc995ebe238"
+    },
+    {
+      "full_name": "MD.Ch08.isoDivergence_corrected",
+      "kind": "theorem",
+      "path": "Blueprint/Ch08.lean",
+      "line": 687,
+      "code_sha256": "cbb9a1675435cd102c8f018137c989d67186ce17b21422398dbf48f671d817fb"
+    },
+    {
+      "full_name": "MolecularDynamics.Chapter05Review.E",
+      "kind": "abbrev",
+      "path": "MolecularDynamics/Chapter05/ReviewDefinitions.lean",
+      "line": 18,
+      "code_sha256": "b497c8ba7f01b62a3147d9ae65652772ff3f81e57aa19b116f1283fef7a3cc60"
+    },
+    {
+      "full_name": "MolecularDynamics.textbookDivergence",
+      "kind": "def",
+      "path": "MolecularDynamics/Chapter08/ThermostatDensity.lean",
+      "line": 18,
+      "code_sha256": "1b45cabec3bf68bd209da969759334d158c263b7e5a40ed527bd3a4f48e25c48"
+    }
+  ],
+  "validation": {
+    "project_constant_closure": "PASS",
+    "missing_project_definitions": [],
+    "full_page_render_equality_dpi": 72,
+    "website_submitted": false
+  },
+  "files": {
+    "PASTE.txt": {
+      "bytes": 15130,
+      "sha256": "3f9cf16a5b85353932bcb85937c47508030b87a345d0f628aa9ac5c924c4fd70"
+    },
+    "BATCH08f_PAGES.pdf": {
+      "bytes": 75317,
+      "sha256": "90e83d2f04dc0b5a065519e6b6eec48e27da82ae18f51de6284caeb8226e36a3"
+    }
+  },
+  "total_task_bytes": 94050
+}

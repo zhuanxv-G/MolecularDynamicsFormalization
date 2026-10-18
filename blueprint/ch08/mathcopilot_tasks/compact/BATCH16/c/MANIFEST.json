@@ -1,0 +1,94 @@
+{
+  "batch": "BATCH16",
+  "subtask": "BATCH16c",
+  "source_ids": [
+    "MD-8.9.2-DPDPairGeneratorPrinted"
+  ],
+  "input_sha256": {
+    "Blueprint/Ch08.lean": "2800812fadd8e2557013f1941e4570401f7903d46f44baf07e23d5531da22a72",
+    "blueprint/ch08/ch08_source.json": "9b994b0f64cd22c85c2ad4123fbfdbd064bd7a6d070fe13b721794432f9f7a63",
+    "BATCH16c_PAGES.pdf": "122ba63f05299af289dbce4bbfe08f96fb2905603e64f4eeecfe915db2a87c8b"
+  },
+  "page_mapping": [
+    {
+      "attachment_page": 1,
+      "original_pdf_page": 413,
+      "printed_page": 392
+    }
+  ],
+  "definition_excerpts": [
+    {
+      "full_name": "MD.Ch08.Vec",
+      "kind": "abbrev",
+      "path": "Blueprint/Ch08.lean",
+      "line": 17,
+      "code_sha256": "6f4b254a8a7cc4115fb35265b77caa663bdd18567cd1e664cc5bbd080d02fcff"
+    },
+    {
+      "full_name": "MD.Ch08.dot",
+      "kind": "def",
+      "path": "Blueprint/Ch08.lean",
+      "line": 19,
+      "code_sha256": "bb45cec5def0e642f7dde399650df8a6486048be491d116502106e187aa99348"
+    },
+    {
+      "full_name": "MD.Ch08.ParticleConfig",
+      "kind": "abbrev",
+      "path": "Blueprint/Ch08.lean",
+      "line": 1334,
+      "code_sha256": "c46ce65b6511b6a80adf81f99adccdc72de343aed0cedd1fcf09d0a9683ccf2e"
+    },
+    {
+      "full_name": "MD.Ch08.relativeVelocity",
+      "kind": "def",
+      "path": "Blueprint/Ch08.lean",
+      "line": 1372,
+      "code_sha256": "f5aa7899a93172eded50c0a4e0bf41f10f8507bc554ced67e2fda6c871329420"
+    },
+    {
+      "full_name": "MD.Ch08.pairImpulseVector",
+      "kind": "def",
+      "path": "Blueprint/Ch08.lean",
+      "line": 1382,
+      "code_sha256": "0849827a195b2999a611d4023be23a0bc482b22965abf59d9cd46194a29d3bd5"
+    },
+    {
+      "full_name": "MD.Ch08.pairDerivative",
+      "kind": "def",
+      "path": "Blueprint/Ch08.lean",
+      "line": 1530,
+      "code_sha256": "9f413bb163bb060c99d01b9bdadeae610b72c0f14d47c52c0dc13ffee62358a6"
+    },
+    {
+      "full_name": "MD.Ch08.dpdPairGeneratorPrinted",
+      "kind": "def",
+      "path": "Blueprint/Ch08.lean",
+      "line": 1533,
+      "code_sha256": "81803b595780739a28021ef1d55e2296508f997033d3edb3a5b92f5f5f8b8219"
+    },
+    {
+      "full_name": "MD.Ch08.dpdPairGenerator_corrected",
+      "kind": "def",
+      "path": "Blueprint/Ch08.lean",
+      "line": 1537,
+      "code_sha256": "cb2cbd18e6c60d225a250ea8f5e6f1a41beaa617ac9013a96c0c2cef46b03a5a"
+    }
+  ],
+  "validation": {
+    "project_constant_closure": "PASS",
+    "missing_project_definitions": [],
+    "full_page_render_equality_dpi": 72,
+    "website_submitted": false
+  },
+  "files": {
+    "PASTE.txt": {
+      "bytes": 11152,
+      "sha256": "f170e233068d7ecb33e0412b00c1c6eac5b52c4e0fb1a8dc256bcbdb1d9b3f09"
+    },
+    "BATCH16c_PAGES.pdf": {
+      "bytes": 94369,
+      "sha256": "122ba63f05299af289dbce4bbfe08f96fb2905603e64f4eeecfe915db2a87c8b"
+    }
+  },
+  "total_task_bytes": 108491
+}

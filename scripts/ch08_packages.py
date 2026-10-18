@@ -97,7 +97,8 @@ def build():
         dump(tasks/'compact'/batch/'MANIFEST.json',dict(batch=batch,subtasks=subtasks))
         manifests.append(dict(batch=batch,source_ids=[s['source_id'] for s in subtasks],subtasks=subtasks))
     dump(tasks/'MANIFEST.json',manifests)
-    dump(BASE/'PACKAGE_VALIDATION.json',dict(batches=len(manifests),subtasks=len(validation),covered_entries=len(validation),checks=validation,website_submitted=False))
+    dump(BASE/'PACKAGE_VALIDATION.json',dict(batches=len(manifests),subtasks=len(validation),covered_entries=len(validation),missing_project_definitions=0,checks=validation,website_submitted=False,
+      maximum_subtask_bytes=max(s['bytes'] for b in manifests for s in b['subtasks'])))
     (tasks/'INDEX.md').write_text('# 第8章待用户提交的首轮任务包\n\n'+f'{len(manifests)}批、{len(validation)}子包，覆盖{len(validation)}条；尚未提交网站。\n\n'+'\n'.join('- '+b['batch']+'：'+', '.join(b['source_ids']) for b in manifests)+'\n',encoding='utf-8')
     print('PACKAGES',len(manifests),len(validation),flush=True)
 if __name__=='__main__':build()

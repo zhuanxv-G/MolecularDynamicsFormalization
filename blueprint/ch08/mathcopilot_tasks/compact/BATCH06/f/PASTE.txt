@@ -1,0 +1,166 @@
+以附件/PASTE 为准，忽略 /workspace 旧文件；Mathlib 定义按标准含义采信。
+本任务只审本条：原文转录、对象资格、定义体、量词、全部结论及[EXTRA]是否一致；Lean编译不代替语义审阅。
+Lean/Mathlib均4.34.0。原页PDF映射：[375, 376]；印刷页=[354, 355].
+input_sha256请原样回显：
+{
+  "Blueprint/Ch08.lean": "2800812fadd8e2557013f1941e4570401f7903d46f44baf07e23d5531da22a72",
+  "blueprint/ch08/ch08_source.json": "9b994b0f64cd22c85c2ad4123fbfdbd064bd7a6d070fe13b721794432f9f7a63",
+  "BATCH06f_PAGES.pdf": "8bdcfb5e9dafaf5bf9785ebe4d1455704e9c39320c583f449cf261d037933226"
+}
+用代码将JSON对象(batch,input_sha256,items)写到 /workspace/.mathcopilot/reviews/ch08/BATCH06f_review.json；items仅含本source_id。
+items字段：source_id、verdict(PASS/FAIL/NEEDS_HUMAN)、transcription、semantic_review、counterexample、suggested_fix、printed_version、corrected_version。逐版区分原文疑误和修正版结论；缺材料必须具体指出，不猜测。写后json.loads自检，最后仅回复路径及统计。
+
+## 原文JSON
+```json
+{
+  "source_id": "MD-8.4.3-PreEquilibriumMeans",
+  "kind": "definition",
+  "label": null,
+  "section": "8.4.3",
+  "printed_page": "354–355",
+  "pdf_page": "375–376",
+  "statement_latex": "θ̄(t)=∫2Kρ(q,p,ξ,t)dωdξ, ξ̄(t)=∫ξρ(q,p,ξ,t)dωdξ, with normalized pre-equilibrium density ρ.",
+  "statement_verbatim": "354\n8\nExtended Variable Methods\n0\nTime\n0.2\n0.4\n0.6\n0.8\n1.0\n1.2\n0\nTime\nVelocity auto-correlation\n0\n0.02\n0.04\n0.06\n0.08\n0.10\n0.2\n0.4\n0.6\n0.8\n1.0\n1.2\nNosé-Hoover & Nosé-Hoover-Langevin\nLangevin\nFig. 8.4 The computed velocity auto-correlation functions are plotted for Nosé-Hoover and Nosé-\nHoover-Langevin dynamics (left), where we overlay plots from simulations using all possible\nparameter sets where \n 2 f0; 0:05; 0:5; 5; 50g and \u0006 2 f20; 2; 0:2; 0:02g. We additionally plot the\nsame result for Langevin dynamics (right), overlaying curves for \n 2 f0:05; 0:1; 0:2; : : : ; 51:2g,\nwhere high to low friction is plotted from red to blue respectively. The salient qualitative features\nof the results remain qualitatively unchanged when using different values of the parameters for the\nNosé-Hoover thermostats (see inset) whereas the Langevin thermostat has a much harsher effect\non the dynamics, with signiﬁcant differences as the friction is increased\nIt may seem that the difference between Nosé-Hoover-Langevin and Langevin\ndynamics is a technical one that essentially hinges on choice of parameters. Both\nmethods are ergodic and it may appear that by simply choosing a small value\nof friction in Langevin dynamics, we can match the behavior of Nosé-Hoover-\nLangevin to any desired accuracy. However, this is most deﬁnitely not the case, as a\ncareful analysis of Figs. 8.3 and 8.4 reveals. If an accurate velocity autocorrelation\nfunction is required, then the friction parameter in Langevin dynamics needs to be\nchosen very small (much less than \n D 0:1), see Fig. 8.4. But if the friction is\nchosen in this way, the convergence to canonical equilibrium is drastically impaired\n(Figs. 8.2 and 8.3). By contrast it is relatively easy to ﬁnd parameter choices\nfor Nosé-Hoover-Langevin which provide quite rapid convergence of canonical\naverages while preserving the accuracy of autocorrelation functions.\nThe convergence to equilibrium for Nosé-Hoover-Langevin is difﬁcult to cal-\nculate analytically. The only existing analysis is that of [225] which restricts\nconsideration to the convergence of the kinetic energy. It turns out that one may\nobtain a nonlinear system in terms of the following two variables:\nN\u000e.t/ D\nZ\nD\u0003R\n2K\u0005.q; p; \u0012; t/d!d\u0012;\n\n8.4\nErgodic Stochastic-Dynamic Thermostats\n355\nwhere K is the kinetic energy, and the mean auxiliary variable \u0012\nN\u0012.t/ D\nZ\nD\u0003R\n\u0012\u0005.q; p; \u0012; t/d!d\u0012:\n\u0005 that appears here is the normalized pre-equilibrium density which evolves\naccording to the Fokker-Planck equation of the extended Nosé-Hoover-Langevin\nsystem.\nIt is then possible to perform a local stability analysis to characterize the\nconvergence to equilibrium of N\u000e and N\u0012 to the equilibrium .NdkBT; 0/. Although\nthe analysis makes certain stringent assumptions they are veriﬁed in [225] for a\nLennard-Jones molecular system.\n8.4.4\nVelocity Rescaling\nAn alternative stochastic-dynamical method for thermostatting molecular dynamics\nis the stochastic velocity rescaling method proposed by Bussi and collaborators [60,\n63] and somewhat generalized in [225]. The equations are (for the case M D I,\nconsidered for simplicity):\ndq D pdt\ndp D \u0003rU.q/ dt \u0003 \f.K/p dt C\np\n2kBT˚.K/pdW;\nwhere W.t/ is a single Wiener process, ˚ is an arbitrary smooth positive function\nand \f is deﬁned by\n\f.K/\ndef\nD .2K \u0003 .1 C Nd/kBT/˚.K/ \u0003 2kBTK d˚\ndK :\nWith these deﬁnitions, the method preserves the canonical probability density \u0005ˇ.\nWe do not prove the ergodicity of the method here, but expect that it would follow\nby an analysis similar to that given above for Nosé-Hoover-Langevin.\nThe original proposal of Bussi et al. had\n˚.K/ D \nVR\n2K ;\nso that\n\f.K/ D .1 \u0003 .Nd \u0003 1/kBT=2K/ \nVR;\nwhere \nVR is a positive constant.\nFor the more general case, the required conditions on ˚ are as follows:\nK˚.K/ is bounded as K ! 0;\n˚.K/ grows at most polynomially as K ! 1:\n",
+  "verbatim_scope": "完整对应原页文字层，逐字保留；本条数学成分由statement_latex及statement_scope定位。",
+  "proof_latex": null,
+  "proof_note": "对应原页推导逐字保存在statement_verbatim/original_page_text；排版以原页PDF为准。",
+  "original_page_text": [
+    {
+      "pdf_page": 375,
+      "printed_page": 354,
+      "text": "354\n8\nExtended Variable Methods\n0\nTime\n0.2\n0.4\n0.6\n0.8\n1.0\n1.2\n0\nTime\nVelocity auto-correlation\n0\n0.02\n0.04\n0.06\n0.08\n0.10\n0.2\n0.4\n0.6\n0.8\n1.0\n1.2\nNosé-Hoover & Nosé-Hoover-Langevin\nLangevin\nFig. 8.4 The computed velocity auto-correlation functions are plotted for Nosé-Hoover and Nosé-\nHoover-Langevin dynamics (left), where we overlay plots from simulations using all possible\nparameter sets where \n 2 f0; 0:05; 0:5; 5; 50g and \u0006 2 f20; 2; 0:2; 0:02g. We additionally plot the\nsame result for Langevin dynamics (right), overlaying curves for \n 2 f0:05; 0:1; 0:2; : : : ; 51:2g,\nwhere high to low friction is plotted from red to blue respectively. The salient qualitative features\nof the results remain qualitatively unchanged when using different values of the parameters for the\nNosé-Hoover thermostats (see inset) whereas the Langevin thermostat has a much harsher effect\non the dynamics, with signiﬁcant differences as the friction is increased\nIt may seem that the difference between Nosé-Hoover-Langevin and Langevin\ndynamics is a technical one that essentially hinges on choice of parameters. Both\nmethods are ergodic and it may appear that by simply choosing a small value\nof friction in Langevin dynamics, we can match the behavior of Nosé-Hoover-\nLangevin to any desired accuracy. However, this is most deﬁnitely not the case, as a\ncareful analysis of Figs. 8.3 and 8.4 reveals. If an accurate velocity autocorrelation\nfunction is required, then the friction parameter in Langevin dynamics needs to be\nchosen very small (much less than \n D 0:1), see Fig. 8.4. But if the friction is\nchosen in this way, the convergence to canonical equilibrium is drastically impaired\n(Figs. 8.2 and 8.3). By contrast it is relatively easy to ﬁnd parameter choices\nfor Nosé-Hoover-Langevin which provide quite rapid convergence of canonical\naverages while preserving the accuracy of autocorrelation functions.\nThe convergence to equilibrium for Nosé-Hoover-Langevin is difﬁcult to cal-\nculate analytically. The only existing analysis is that of [225] which restricts\nconsideration to the convergence of the kinetic energy. It turns out that one may\nobtain a nonlinear system in terms of the following two variables:\nN\u000e.t/ D\nZ\nD\u0003R\n2K\u0005.q; p; \u0012; t/d!d\u0012;\n"
+    },
+    {
+      "pdf_page": 376,
+      "printed_page": 355,
+      "text": "8.4\nErgodic Stochastic-Dynamic Thermostats\n355\nwhere K is the kinetic energy, and the mean auxiliary variable \u0012\nN\u0012.t/ D\nZ\nD\u0003R\n\u0012\u0005.q; p; \u0012; t/d!d\u0012:\n\u0005 that appears here is the normalized pre-equilibrium density which evolves\naccording to the Fokker-Planck equation of the extended Nosé-Hoover-Langevin\nsystem.\nIt is then possible to perform a local stability analysis to characterize the\nconvergence to equilibrium of N\u000e and N\u0012 to the equilibrium .NdkBT; 0/. Although\nthe analysis makes certain stringent assumptions they are veriﬁed in [225] for a\nLennard-Jones molecular system.\n8.4.4\nVelocity Rescaling\nAn alternative stochastic-dynamical method for thermostatting molecular dynamics\nis the stochastic velocity rescaling method proposed by Bussi and collaborators [60,\n63] and somewhat generalized in [225]. The equations are (for the case M D I,\nconsidered for simplicity):\ndq D pdt\ndp D \u0003rU.q/ dt \u0003 \f.K/p dt C\np\n2kBT˚.K/pdW;\nwhere W.t/ is a single Wiener process, ˚ is an arbitrary smooth positive function\nand \f is deﬁned by\n\f.K/\ndef\nD .2K \u0003 .1 C Nd/kBT/˚.K/ \u0003 2kBTK d˚\ndK :\nWith these deﬁnitions, the method preserves the canonical probability density \u0005ˇ.\nWe do not prove the ergodicity of the method here, but expect that it would follow\nby an analysis similar to that given above for Nosé-Hoover-Langevin.\nThe original proposal of Bussi et al. had\n˚.K/ D \nVR\n2K ;\nso that\n\f.K/ D .1 \u0003 .Nd \u0003 1/kBT=2K/ \nVR;\nwhere \nVR is a positive constant.\nFor the more general case, the required conditions on ˚ are as follows:\nK˚.K/ is bounded as K ! 0;\n˚.K/ grows at most polynomially as K ! 1:\n"
+    }
+  ],
+  "numbered_equations": [],
+  "transcription_note": "文字层逐字保留；数学排版另行转写，原页中的特殊字形编码不静默替换。PDF420仅取Exercises之前。",
+  "context_notation": [],
+  "extra_assumptions": [
+    "ρ非负、可积且归一；外引局部稳定性分析未给闭合方程，列覆盖缺口。"
+  ],
+  "issues": [],
+  "statement_scope": "两项瞬时分布平均及随时间非负归一密度的资格；局部稳定性和闭合方程未覆盖。",
+  "lean_decl": "MD.Ch08.meanKineticTwice",
+  "lean_declarations": [
+    "MD.Ch08.meanKineticTwice",
+    "MD.Ch08.meanBath",
+    "MD.Ch08.preEquilibriumDensity"
+  ],
+  "source_page_verification": "见source_page_checks.json，已目视核对本条原页。",
+  "repair_log": [],
+  "documented_priors": []
+}
+```
+
+## 完整本条Lean
+```lean
+def meanKineticTwice (invm : Vec n) (ρ : ℝ → Phase n × ℝ → ℝ) (t : ℝ) : ℝ :=
+  ∫ z, kineticTwice invm z.1.2 * ρ t z
+def meanBath (ρ : ℝ → Phase n × ℝ → ℝ) (t : ℝ) : ℝ := ∫ z, z.2 * ρ t z
+def preEquilibriumDensity (ρ : ℝ → Phase n × ℝ → ℝ) : Prop :=
+  ∀ t, 0 ≤ t → probabilityDensity volume (ρ t)
+```
+
+## 项目依赖定义体及选择规格
+以下def/abbrev/structure完整保留；定理列出完整类型，Mathlib标准定义无需摘录。
+
+### MD.Ch08.Vec (Blueprint/Ch08.lean:17)
+原文件上下文：
+```lean
+open Set Filter MeasureTheory ProbabilityTheory MolecularDynamics
+open scoped BigOperators Topology ContDiff ENNReal NNReal Matrix
+variable {Ω : Type*} [MeasurableSpace Ω]
+variable {n : ℕ}
+```
+```lean
+abbrev Vec (n : ℕ) := Fin n → ℝ
+```
+
+### MD.Ch08.Phase (Blueprint/Ch08.lean:18)
+原文件上下文：
+```lean
+open Set Filter MeasureTheory ProbabilityTheory MolecularDynamics
+open scoped BigOperators Topology ContDiff ENNReal NNReal Matrix
+variable {Ω : Type*} [MeasurableSpace Ω]
+variable {n : ℕ}
+```
+```lean
+abbrev Phase (n : ℕ) := Vec n × Vec n
+```
+
+### MD.Ch08.probabilityDensity (Blueprint/Ch08.lean:24)
+原文件上下文：
+```lean
+open Set Filter MeasureTheory ProbabilityTheory MolecularDynamics
+open scoped BigOperators Topology ContDiff ENNReal NNReal Matrix
+variable {Ω : Type*} [MeasurableSpace Ω]
+variable {n : ℕ}
+```
+```lean
+def probabilityDensity {E : Type*} [MeasurableSpace E] (μ : Measure E) (ρ : E → ℝ) : Prop :=
+  (∀ z, 0 ≤ ρ z) ∧ Integrable ρ μ ∧ ∫ z, ρ z ∂μ = 1
+```
+
+### MD.Ch08.kineticTwice (Blueprint/Ch08.lean:65)
+原文件上下文：
+```lean
+open Set Filter MeasureTheory ProbabilityTheory MolecularDynamics
+open scoped BigOperators Topology ContDiff ENNReal NNReal Matrix
+variable {Ω : Type*} [MeasurableSpace Ω]
+variable {n : ℕ}
+```
+```lean
+def kineticTwice (invm p : Vec n) : ℝ := ∑ i, invm i * p i ^ 2
+```
+
+### MD.Ch08.meanKineticTwice (Blueprint/Ch08.lean:518)
+原文件上下文：
+```lean
+open Set Filter MeasureTheory ProbabilityTheory MolecularDynamics
+open scoped BigOperators Topology ContDiff ENNReal NNReal Matrix
+variable {Ω : Type*} [MeasurableSpace Ω]
+variable {n : ℕ}
+```
+```lean
+def meanKineticTwice (invm : Vec n) (ρ : ℝ → Phase n × ℝ → ℝ) (t : ℝ) : ℝ :=
+  ∫ z, kineticTwice invm z.1.2 * ρ t z
+```
+
+### MD.Ch08.meanBath (Blueprint/Ch08.lean:520)
+原文件上下文：
+```lean
+open Set Filter MeasureTheory ProbabilityTheory MolecularDynamics
+open scoped BigOperators Topology ContDiff ENNReal NNReal Matrix
+variable {Ω : Type*} [MeasurableSpace Ω]
+variable {n : ℕ}
+```
+```lean
+def meanBath (ρ : ℝ → Phase n × ℝ → ℝ) (t : ℝ) : ℝ := ∫ z, z.2 * ρ t z
+```
+
+### MD.Ch08.preEquilibriumDensity (Blueprint/Ch08.lean:521)
+原文件上下文：
+```lean
+open Set Filter MeasureTheory ProbabilityTheory MolecularDynamics
+open scoped BigOperators Topology ContDiff ENNReal NNReal Matrix
+variable {Ω : Type*} [MeasurableSpace Ω]
+variable {n : ℕ}
+```
+```lean
+def preEquilibriumDensity (ρ : ℝ → Phase n × ℝ → ℝ) : Prop :=
+  ∀ t, 0 ≤ t → probabilityDensity volume (ρ t)
+```
+
+### MolecularDynamics.Chapter05Review.E (MolecularDynamics/Chapter05/ReviewDefinitions.lean:18)
+原文件上下文：
+```lean
+open Set Filter MeasureTheory Matrix
+open scoped BigOperators Topology ENNReal
+```
+```lean
+abbrev E (n : ℕ) := EuclideanSpace ℝ (Fin n)
+```

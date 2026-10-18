@@ -1,0 +1,47 @@
+{
+  "batch": "BATCH06",
+  "subtasks": [
+    {
+      "subtask": "BATCH06a",
+      "source_id": "MD-8.4.1-NHLGenerator",
+      "path": "blueprint/ch08/mathcopilot_tasks/compact/BATCH06/a",
+      "bytes": 101906,
+      "manifest_sha256": "e99a8d1346b264261d0bb5648c55dd7b3aca25d0420ec45a1a834021dcaf47f5"
+    },
+    {
+      "subtask": "BATCH06b",
+      "source_id": "MD-8.4.1-LyapunovCalculation",
+      "path": "blueprint/ch08/mathcopilot_tasks/compact/BATCH06/b",
+      "bytes": 109947,
+      "manifest_sha256": "055c3fc0395e456cc89e032b110d2f2a89154f22744e5212919526dd36998d4f"
+    },
+    {
+      "subtask": "BATCH06c",
+      "source_id": "MD-8.4.1-LyapunovRatePrinted",
+      "path": "blueprint/ch08/mathcopilot_tasks/compact/BATCH06/c",
+      "bytes": 82182,
+      "manifest_sha256": "228a52b596c339a36836305f764b8463bfb1ad77f488e3e5c53118dacc390f8a"
+    },
+    {
+      "subtask": "BATCH06d",
+      "source_id": "MD-8.4.2-NHLTimestep",
+      "path": "blueprint/ch08/mathcopilot_tasks/compact/BATCH06/d",
+      "bytes": 90975,
+      "manifest_sha256": "76d05ab2eaca7c2fb754a82c8f3de2439de1e03255170b37369ac8bf3bd8af01"
+    },
+    {
+      "subtask": "BATCH06e",
+      "source_id": "MD-8.4.1-NHLWeakStationary",
+      "path": "blueprint/ch08/mathcopilot_tasks/compact/BATCH06/e",
+      "bytes": 118605,
+      "manifest_sha256": "f5bcc39a9b997b691a1aef34edaedc303c22bfb8f1297310e47d2f2632f15840"
+    },
+    {
+      "subtask": "BATCH06f",
+      "source_id": "MD-8.4.3-PreEquilibriumMeans",
+      "path": "blueprint/ch08/mathcopilot_tasks/compact/BATCH06/f",
+      "bytes": 184775,
+      "manifest_sha256": "292ebc429cd6a887787fa32b0e697c52d4440c4a8f8e390f8f9412bd8e35e657"
+    }
+  ]
+}

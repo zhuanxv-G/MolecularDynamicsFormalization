@@ -1,0 +1,47 @@
+{
+  "batch": "BATCH02",
+  "subtasks": [
+    {
+      "subtask": "BATCH02a",
+      "source_id": "MD-8.1.2-NHReversal",
+      "path": "blueprint/ch08/mathcopilot_tasks/compact/BATCH02/a",
+      "bytes": 102010,
+      "manifest_sha256": "6441c509110faf5bc1d978dd317f4872e36fa4789c9cdd35c83659922aebf929"
+    },
+    {
+      "subtask": "BATCH02b",
+      "source_id": "MD-8.1.2-NHTimestep",
+      "path": "blueprint/ch08/mathcopilot_tasks/compact/BATCH02/b",
+      "bytes": 103845,
+      "manifest_sha256": "457368c98b7ffdba0c7598a589745d5a2f1e54e1a66b71a805f6c97ea6642b93"
+    },
+    {
+      "subtask": "BATCH02c",
+      "source_id": "MD-8.1.2-NHTimestepReversible",
+      "path": "blueprint/ch08/mathcopilot_tasks/compact/BATCH02/c",
+      "bytes": 104510,
+      "manifest_sha256": "54aef11d9158a5b4b01a6f933e0269d72a91088ea9d0c8f12963cf017eb7d67b"
+    },
+    {
+      "subtask": "BATCH02d",
+      "source_id": "MD-8.1.2.1-NoseHamiltoniansPrinted",
+      "path": "blueprint/ch08/mathcopilot_tasks/compact/BATCH02/d",
+      "bytes": 96654,
+      "manifest_sha256": "2b7f42810dfb194b65bfb91fb140a2b64e179b50ff0e0f98a3dd068d0399801e"
+    },
+    {
+      "subtask": "BATCH02e",
+      "source_id": "MD-8.1.2.1-NPEquations",
+      "path": "blueprint/ch08/mathcopilot_tasks/compact/BATCH02/e",
+      "bytes": 94225,
+      "manifest_sha256": "0a27957ed398ad4b205468416154bb02046193df4cb4e03d17fcd0801d81cee9"
+    },
+    {
+      "subtask": "BATCH02f",
+      "source_id": "MD-8.1.2.1-NPtoNH",
+      "path": "blueprint/ch08/mathcopilot_tasks/compact/BATCH02/f",
+      "bytes": 94738,
+      "manifest_sha256": "fe3b6d2fa58bb5318d3cea62cdfab5b92efe57530f872ef328bb74fe7c70e8c0"
+    }
+  ]
+}

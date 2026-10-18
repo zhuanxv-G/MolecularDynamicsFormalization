@@ -1,0 +1,109 @@
+以附件/PASTE 为准，忽略 /workspace 旧文件；Mathlib 定义按标准含义采信。
+本任务只审本条：原文转录、对象资格、定义体、量词、全部结论及[EXTRA]是否一致；Lean编译不代替语义审阅。
+Lean/Mathlib均4.34.0。原页PDF映射：[352]；印刷页=[331].
+input_sha256请原样回显：
+{
+  "Blueprint/Ch08.lean": "2800812fadd8e2557013f1941e4570401f7903d46f44baf07e23d5531da22a72",
+  "blueprint/ch08/ch08_source.json": "9b994b0f64cd22c85c2ad4123fbfdbd064bd7a6d070fe13b721794432f9f7a63",
+  "BATCH01c_PAGES.pdf": "ee1161cb2e10eaa109f4eda484e8579e1fcd04284e118995de5c427b5e8c72f7"
+}
+用代码将JSON对象(batch,input_sha256,items)写到 /workspace/.mathcopilot/reviews/ch08/BATCH01c_review.json；items仅含本source_id。
+items字段：source_id、verdict(PASS/FAIL/NEEDS_HUMAN)、transcription、semantic_review、counterexample、suggested_fix、printed_version、corrected_version。逐版区分原文疑误和修正版结论；缺材料必须具体指出，不猜测。写后json.loads自检，最后仅回复路径及统计。
+
+## 原文JSON
+```json
+{
+  "source_id": "MD-8.1-ExtendedDensity",
+  "kind": "unnumbered_claim",
+  "label": null,
+  "section": "8.1",
+  "printed_page": "331",
+  "pdf_page": "352",
+  "statement_latex": "ρ̃(q,p,ξ)=ρ_β(q,p)ρ̂(ξ). Then ∫g(q,p)ρ̃ ∝ ∫g(q,p)ρ_β.",
+  "statement_verbatim": "8.1\nDynamics-Based Thermostat Techniques\n331\npurpose of the sampling strategy itself, the method of sampling by Hamiltonian\ntrajectories seems less than robust.\nAlternative families of methods exist which are based on extending the phase\nspace of the system in such a way as to (a) disturb the conserved quantity H D\nE, while (b) nonetheless preserving the phase space distribution. In general these\nmethods involve introducing additional variables \u0002 D .\u00121; \u00122; : : : ; \u0012k/ and additional\nequations of motion to drive them. The combined system is carefully designed to\npreserve an extended invariant distribution\nQ\u0005.q; p; \u0002/ D \u0005ˇ.q; p/ \u0004 O\u0005.\u0002/;\n(8.1)\nwhere the auxiliary density O\u0005 has a simple form (typically, a multivariate Gaussian).\nThen it follows that\nZ Z Z\ng.q; p/ Q\u0005.q; p; \u0002/d!qd!pdk\u0002 /\nZ Z\ng.q; p/\u0005ˇ.q; p/d!qd!p:\nAssuming ergodicity of the coupled system it is then possible to calculate averages\nwith respect to the Gibbs-Boltzmann measure by direct averaging along trajectories\nof the extended system.\nThe assumption of ergodicity is a major one (just as difﬁcult to demonstrate\nas would be the corresponding assumption for a Hamiltonian system); indeed\nit is likely that it fails generically, and there are certainly known cases where\nthermodynamic averages computed using deterministic thermostats are incorrect.\nHowever, deterministic methods are nonetheless often used in molecular simulation,\nsuggesting that, for the systems involved, averages can be recovered with sufﬁcient\naccuracy starting from most points of phase space.\n8.1.1\nNosé Dynamics: A Deterministic Thermostat\nThe simplest scheme of this type is the Nosé-Hoover method [182, 284–286]. There\nis just one auxiliary variable \u0012 and the extended system takes the form\ndq\ndt D M\u00021p;\n(8.2)\ndp\ndt D \u0003rU.q/ \u0003 \u0012p;\n(8.3)\n\u0006d\u0012\ndt D pTM\u00021p \u0003 Ndˇ\u00021:\n(8.4)\nWe have deliberately written Nd. The number of degrees of freedom in the last\nequation must be used so that the equation is in balance at thermal equilibrium.\n",
+  "verbatim_scope": "完整对应原页文字层，逐字保留；本条数学成分由statement_latex及statement_scope定位。",
+  "proof_latex": null,
+  "proof_note": "对应原页推导逐字保存在statement_verbatim/original_page_text；排版以原页PDF为准。",
+  "original_page_text": [
+    {
+      "pdf_page": 352,
+      "printed_page": 331,
+      "text": "8.1\nDynamics-Based Thermostat Techniques\n331\npurpose of the sampling strategy itself, the method of sampling by Hamiltonian\ntrajectories seems less than robust.\nAlternative families of methods exist which are based on extending the phase\nspace of the system in such a way as to (a) disturb the conserved quantity H D\nE, while (b) nonetheless preserving the phase space distribution. In general these\nmethods involve introducing additional variables \u0002 D .\u00121; \u00122; : : : ; \u0012k/ and additional\nequations of motion to drive them. The combined system is carefully designed to\npreserve an extended invariant distribution\nQ\u0005.q; p; \u0002/ D \u0005ˇ.q; p/ \u0004 O\u0005.\u0002/;\n(8.1)\nwhere the auxiliary density O\u0005 has a simple form (typically, a multivariate Gaussian).\nThen it follows that\nZ Z Z\ng.q; p/ Q\u0005.q; p; \u0002/d!qd!pdk\u0002 /\nZ Z\ng.q; p/\u0005ˇ.q; p/d!qd!p:\nAssuming ergodicity of the coupled system it is then possible to calculate averages\nwith respect to the Gibbs-Boltzmann measure by direct averaging along trajectories\nof the extended system.\nThe assumption of ergodicity is a major one (just as difﬁcult to demonstrate\nas would be the corresponding assumption for a Hamiltonian system); indeed\nit is likely that it fails generically, and there are certainly known cases where\nthermodynamic averages computed using deterministic thermostats are incorrect.\nHowever, deterministic methods are nonetheless often used in molecular simulation,\nsuggesting that, for the systems involved, averages can be recovered with sufﬁcient\naccuracy starting from most points of phase space.\n8.1.1\nNosé Dynamics: A Deterministic Thermostat\nThe simplest scheme of this type is the Nosé-Hoover method [182, 284–286]. There\nis just one auxiliary variable \u0012 and the extended system takes the form\ndq\ndt D M\u00021p;\n(8.2)\ndp\ndt D \u0003rU.q/ \u0003 \u0012p;\n(8.3)\n\u0006d\u0012\ndt D pTM\u00021p \u0003 Ndˇ\u00021:\n(8.4)\nWe have deliberately written Nd. The number of degrees of freedom in the last\nequation must be used so that the equation is in balance at thermal equilibrium.\n"
+    }
+  ],
+  "numbered_equations": [
+    "8.1"
+  ],
+  "transcription_note": "文字层逐字保留；数学排版另行转写，原页中的特殊字形编码不静默替换。PDF420仅取Exercises之前。",
+  "context_notation": [],
+  "extra_assumptions": [
+    "辅助密度归一、乘积积分可积；使用有限/σ有限测度条件。"
+  ],
+  "issues": [],
+  "statement_scope": "乘积权定义及辅助因子积分为1时的边缘积分等式；不额外证明概率正性或一般流不变性。",
+  "lean_decl": "MD.Ch08.extendedDensity",
+  "lean_declarations": [
+    "MD.Ch08.extendedDensity",
+    "MD.Ch08.extendedAverage"
+  ],
+  "source_page_verification": "见source_page_checks.json，已目视核对本条原页。",
+  "repair_log": [],
+  "documented_priors": []
+}
+```
+
+## 完整本条Lean
+```lean
+def extendedDensity {E B : Type*} (ρ : E → ℝ) (a : B → ℝ) (z : E × B) : ℝ := ρ z.1 * a z.2
+theorem extendedAverage {E B : Type*} [MeasurableSpace E] [MeasurableSpace B]
+    (μ : Measure E) (ν : Measure B) [SFinite μ] [SFinite ν]
+    (ρ g : E → ℝ) (a : B → ℝ) (ha : ∫ y, a y ∂ν = 1)
+    (hi : Integrable (fun z : E × B ↦ g z.1 * extendedDensity ρ a z) (μ.prod ν)) :
+    (∫ z, g z.1 * extendedDensity ρ a z ∂μ.prod ν) = ∫ x, g x * ρ x ∂μ := by
+  calc
+    _ = (∫ x, g x * ρ x ∂μ) * ∫ y, a y ∂ν := by
+      simpa only [extendedDensity, mul_assoc] using
+        (integral_prod_mul (μ:=μ) (ν:=ν) (fun x ↦ g x * ρ x) a)
+    _ = _ := by rw [ha, mul_one]
+```
+
+## 项目依赖定义体及选择规格
+以下def/abbrev/structure完整保留；定理列出完整类型，Mathlib标准定义无需摘录。
+
+### MD.Ch08.extendedDensity (Blueprint/Ch08.lean:48)
+原文件上下文：
+```lean
+open Set Filter MeasureTheory ProbabilityTheory MolecularDynamics
+open scoped BigOperators Topology ContDiff ENNReal NNReal Matrix
+variable {Ω : Type*} [MeasurableSpace Ω]
+variable {n : ℕ}
+```
+```lean
+def extendedDensity {E B : Type*} (ρ : E → ℝ) (a : B → ℝ) (z : E × B) : ℝ := ρ z.1 * a z.2
+```
+
+### MD.Ch08.extendedAverage (Blueprint/Ch08.lean:49)
+原文件上下文：
+```lean
+open Set Filter MeasureTheory ProbabilityTheory MolecularDynamics
+open scoped BigOperators Topology ContDiff ENNReal NNReal Matrix
+variable {Ω : Type*} [MeasurableSpace Ω]
+variable {n : ℕ}
+```
+```lean
+theorem extendedAverage {E B : Type*} [MeasurableSpace E] [MeasurableSpace B]
+    (μ : Measure E) (ν : Measure B) [SFinite μ] [SFinite ν]
+    (ρ g : E → ℝ) (a : B → ℝ) (ha : ∫ y, a y ∂ν = 1)
+    (hi : Integrable (fun z : E × B ↦ g z.1 * extendedDensity ρ a z) (μ.prod ν)) :
+    (∫ z, g z.1 * extendedDensity ρ a z ∂μ.prod ν) = ∫ x, g x * ρ x ∂μ
+```
+
+### MolecularDynamics.Chapter05Review.E (MolecularDynamics/Chapter05/ReviewDefinitions.lean:18)
+原文件上下文：
+```lean
+open Set Filter MeasureTheory Matrix
+open scoped BigOperators Topology ENNReal
+```
+```lean
+abbrev E (n : ℕ) := EuclideanSpace ℝ (Fin n)
+```

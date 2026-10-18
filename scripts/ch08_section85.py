@@ -47,4 +47,7 @@ def slsLeapfrog (invm : Vec n) (U : Vec n → ℝ) (Q h : ℝ) : Phase n × ℝ 
 def slsCoordinateField (i : Fin n) (invm : Vec n) (U : Vec n → ℝ) (Q : ℝ)
     (z : Phase n × ℝ) : Phase n × ℝ :=
   ((Pi.single i (z.2*invm i*z.1.2 i),0), -invm i*z.1.2 i*gradient U z.1.1 i/Q)''',kind='definition',extra=['原文η约化方程漏μ⁻¹，算法保留Q⁻¹；本条覆盖原页算法及逐坐标场，不声称二阶不变分布误差或精确求积实现。'],scope='线方向与两种确定性分裂公式；原文η方程、体积/面积保持和二阶长时误差有明确覆盖缺口。')
-EXCLUDED += [dict(printed_page='359–361',pdf_page='380–382',object='Figure 8.5及双阱试验',reason='轨迹、直方图、参数、稳定性经验比较不作待证对象；双阱势为算例而非通用结论。')]
+add('SLSDoubleWell','8.5',359,r'''The one-dimensional example has U(q)=(q²−1)².''',
+'''def slsDoubleWell (q : ℝ) : ℝ := (q^2-1)^2
+theorem slsDoubleWell_nonneg (q : ℝ) : 0 ≤ slsDoubleWell q := sq_nonneg _''',kind='definition',extra=['保留试验中的数学势函数；轨迹、直方图和采样优劣是经验观测，另列排除。'],scope='一维双阱势定义与非负性。')
+EXCLUDED += [dict(printed_page='359–361',pdf_page='380–382',object='Figure 8.5及双阱试验',reason='轨迹、直方图、参数、稳定性经验比较不作待证对象；双阱势数学定义另条保留。')]

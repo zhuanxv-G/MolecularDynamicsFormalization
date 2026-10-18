@@ -1,0 +1,122 @@
+{
+  "batch": "BATCH12",
+  "subtask": "BATCH12a",
+  "source_ids": [
+    "MD-8.7.1-CombinedPronyVariable"
+  ],
+  "input_sha256": {
+    "Blueprint/Ch08.lean": "2800812fadd8e2557013f1941e4570401f7903d46f44baf07e23d5531da22a72",
+    "blueprint/ch08/ch08_source.json": "9b994b0f64cd22c85c2ad4123fbfdbd064bd7a6d070fe13b721794432f9f7a63",
+    "BATCH12a_PAGES.pdf": "efeaff61a40f44097e61288c87f43fddd26cecc34de5eb077b9204ebdc0802d9"
+  },
+  "page_mapping": [
+    {
+      "attachment_page": 1,
+      "original_pdf_page": 397,
+      "printed_page": 376
+    }
+  ],
+  "definition_excerpts": [
+    {
+      "full_name": "MD.Ch08.Vec",
+      "kind": "abbrev",
+      "path": "Blueprint/Ch08.lean",
+      "line": 17,
+      "code_sha256": "6f4b254a8a7cc4115fb35265b77caa663bdd18567cd1e664cc5bbd080d02fcff"
+    },
+    {
+      "full_name": "MD.Ch08.Phase",
+      "kind": "abbrev",
+      "path": "Blueprint/Ch08.lean",
+      "line": 18,
+      "code_sha256": "377b8086105169a0d2deaa2dd84218cb6ea1d04d27b576cd82794d54e5b84300"
+    },
+    {
+      "full_name": "MD.Ch08.gradient",
+      "kind": "def",
+      "path": "Blueprint/Ch08.lean",
+      "line": 20,
+      "code_sha256": "a9a017b15c584dec720a71840d896ddb8d0e05e149030bce523362af481b101e"
+    },
+    {
+      "full_name": "MD.Ch08.independentWiener",
+      "kind": "def",
+      "path": "Blueprint/Ch08.lean",
+      "line": 307,
+      "code_sha256": "244c6d2d9a686d3df1fc2abd2a1c945a448896d7397bd79928618c58bcc75f4d"
+    },
+    {
+      "full_name": "MD.Ch08.additiveSDE",
+      "kind": "def",
+      "path": "Blueprint/Ch08.lean",
+      "line": 310,
+      "code_sha256": "81838b29ec807319905a573d048fd44c90ff95cc891ddf131b6c3a2e73df657a"
+    },
+    {
+      "full_name": "MD.Ch08.pronyQualification",
+      "kind": "def",
+      "path": "Blueprint/Ch08.lean",
+      "line": 973,
+      "code_sha256": "37b9e43562f98478210b96bbc77339a67eae0cb5338bd7db87d2f077a7dbdc08"
+    },
+    {
+      "full_name": "MD.Ch08.GLEState",
+      "kind": "abbrev",
+      "path": "Blueprint/Ch08.lean",
+      "line": 1024,
+      "code_sha256": "42834da99cd489b5dd3fb1f425f1b1a00353d156bb1152c26012548078c5784f"
+    },
+    {
+      "full_name": "MD.Ch08.gleDrift",
+      "kind": "def",
+      "path": "Blueprint/Ch08.lean",
+      "line": 1025,
+      "code_sha256": "2daabd53e5dbc6f2b89314a0bc88ad15b4927427056d8a8b92e4332ce4709020"
+    },
+    {
+      "full_name": "MD.Ch08.gleNoise",
+      "kind": "def",
+      "path": "Blueprint/Ch08.lean",
+      "line": 1029,
+      "code_sha256": "2b4abfe88dcf1ab1eec9091e28fb041bcec8b6a2a4732e4f4595b2d404d8386a"
+    },
+    {
+      "full_name": "MD.Ch08.isExtendedGLESolution",
+      "kind": "def",
+      "path": "Blueprint/Ch08.lean",
+      "line": 1032,
+      "code_sha256": "4dbf366a54cf3954c64a108ef5d36fabf91abd95fb56a1909c21ce659872516f"
+    },
+    {
+      "full_name": "MD.Ch08.combinedProny_drift",
+      "kind": "theorem",
+      "path": "Blueprint/Ch08.lean",
+      "line": 1038,
+      "code_sha256": "b067f70eb9538c5da6a0a3f3668e416ed198ca982b6e9b002beb915255d796cc"
+    },
+    {
+      "full_name": "MolecularDynamics.Chapter05Review.E",
+      "kind": "abbrev",
+      "path": "MolecularDynamics/Chapter05/ReviewDefinitions.lean",
+      "line": 18,
+      "code_sha256": "b497c8ba7f01b62a3147d9ae65652772ff3f81e57aa19b116f1283fef7a3cc60"
+    }
+  ],
+  "validation": {
+    "project_constant_closure": "PASS",
+    "missing_project_definitions": [],
+    "full_page_render_equality_dpi": 72,
+    "website_submitted": false
+  },
+  "files": {
+    "PASTE.txt": {
+      "bytes": 13223,
+      "sha256": "0f41f9a06f2bf1cca53d027258837ed7fe44ff3cd87086ee5b3d700edff8d137"
+    },
+    "BATCH12a_PAGES.pdf": {
+      "bytes": 62485,
+      "sha256": "efeaff61a40f44097e61288c87f43fddd26cecc34de5eb077b9204ebdc0802d9"
+    }
+  },
+  "total_task_bytes": 79614
+}

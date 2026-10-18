@@ -1,0 +1,150 @@
+以附件/PASTE 为准，忽略 /workspace 旧文件；Mathlib 定义按标准含义采信。
+本任务只审本条：原文转录、对象资格、定义体、量词、全部结论及[EXTRA]是否一致；Lean编译不代替语义审阅。
+Lean/Mathlib均4.34.0。原页PDF映射：[384]；印刷页=[363].
+input_sha256请原样回显：
+{
+  "Blueprint/Ch08.lean": "2800812fadd8e2557013f1941e4570401f7903d46f44baf07e23d5531da22a72",
+  "blueprint/ch08/ch08_source.json": "9b994b0f64cd22c85c2ad4123fbfdbd064bd7a6d070fe13b721794432f9f7a63",
+  "BATCH09a_PAGES.pdf": "b4a9d46d1ca3fdc291c01c6ddba4e77a629b2fd067bb184e2849d8fe0b28f060"
+}
+用代码将JSON对象(batch,input_sha256,items)写到 /workspace/.mathcopilot/reviews/ch08/BATCH09a_review.json；items仅含本source_id。
+items字段：source_id、verdict(PASS/FAIL/NEEDS_HUMAN)、transcription、semantic_review、counterexample、suggested_fix、printed_version、corrected_version。逐版区分原文疑误和修正版结论；缺材料必须具体指出，不猜测。写后json.loads自检，最后仅回复路径及统计。
+
+## 原文JSON
+```json
+{
+  "source_id": "MD-8.6-IsokineticGibbsShell",
+  "kind": "unnumbered_claim",
+  "label": null,
+  "section": "8.6",
+  "printed_page": "363",
+  "pdf_page": "384",
+  "statement_latex": "ρ=Z⁻¹exp(-(N_c-1)U/K)δ[K-K₀]; K₀=β⁻¹(N_c-1) gives the configurational Gibbs distribution.",
+  "statement_verbatim": "8.6\nIsokinetic Methods and Integration with Very Large Timestep\n363\nThus the condition to have a stationary state of the form (8.39) is that\nrw \u0002 f iso D .Nc \u0003 1/pTM\u00021F\npTM\u00021p :\nA solution of this equation for w is easily found, it is\nw D .Nc \u0003 1/U.q/\nK.p/:\nThe invariant probability density, which is associated to a surface of constant kinetic\nenergy, can be written as a generalized function using the Dirac notation:\n\u0005.q; p/ D Z\u00021e\u0002.Nc\u00021/U.q/=K.p/ıŒK.p/ \u0003 K0\t:\nIf we work on the surface of constant kinetic energy K.p/ D K0\ndef\nD ˇ\u00021.Nc \u0003 1/, the\ninvariant density is of the form\n\u0005 / N\u0005ˇıŒK.p/ \u0003 kBT.Nc \u0003 1/\t\nwhich demonstrates that the isokinetic method, with this choice for the total kinetic\nenergy, leaves invariant the conﬁgurational Gibbs distribution. Ergodicity has not\nbeen demonstrated, so it is not possible to conclude that the invariant distribution is\nunique; as we have seen before, the incorporation of stochastic terms can allow the\nformulation of strong statements regarding the ergodicity and mixing properties.\n8.6.1\nA Stochastic, Isokinetic Method for Gibbs Sampling\nMinary et al. [271, 272] studied the isokinetic method as a means to control\nthe instability in multiple timestepping due to resonance. They suggested that\neach physical degree of freedom be coupled to its own NHC thermostat through\nan isokinetic constraint in a “massive” thermostatting approach. These massive\nthermostats introduced some complexity (each degree of freedom had an associated\nNosé-Hoover chain system as well as the constraint); obtaining an accurate solution\nfor this large system is involving. A potentially more serious problem is that,\nalthough Nosé-Hoover chains and the isokinetic method may in some cases appear\nto be “practically ergodic,” no proof of ergodicity exists. A recent article (by one\nof us, together with Margul and Tuckerman [220]) addressed these problems by\nreplacing the Nosé-Hoover chains with stochastic terms (of Ornstein-Uhlenbeck\ntype).\n",
+  "verbatim_scope": "完整对应原页文字层，逐字保留；本条数学成分由statement_latex及statement_scope定位。",
+  "proof_latex": null,
+  "proof_note": "对应原页推导逐字保存在statement_verbatim/original_page_text；排版以原页PDF为准。",
+  "original_page_text": [
+    {
+      "pdf_page": 384,
+      "printed_page": 363,
+      "text": "8.6\nIsokinetic Methods and Integration with Very Large Timestep\n363\nThus the condition to have a stationary state of the form (8.39) is that\nrw \u0002 f iso D .Nc \u0003 1/pTM\u00021F\npTM\u00021p :\nA solution of this equation for w is easily found, it is\nw D .Nc \u0003 1/U.q/\nK.p/:\nThe invariant probability density, which is associated to a surface of constant kinetic\nenergy, can be written as a generalized function using the Dirac notation:\n\u0005.q; p/ D Z\u00021e\u0002.Nc\u00021/U.q/=K.p/ıŒK.p/ \u0003 K0\t:\nIf we work on the surface of constant kinetic energy K.p/ D K0\ndef\nD ˇ\u00021.Nc \u0003 1/, the\ninvariant density is of the form\n\u0005 / N\u0005ˇıŒK.p/ \u0003 kBT.Nc \u0003 1/\t\nwhich demonstrates that the isokinetic method, with this choice for the total kinetic\nenergy, leaves invariant the conﬁgurational Gibbs distribution. Ergodicity has not\nbeen demonstrated, so it is not possible to conclude that the invariant distribution is\nunique; as we have seen before, the incorporation of stochastic terms can allow the\nformulation of strong statements regarding the ergodicity and mixing properties.\n8.6.1\nA Stochastic, Isokinetic Method for Gibbs Sampling\nMinary et al. [271, 272] studied the isokinetic method as a means to control\nthe instability in multiple timestepping due to resonance. They suggested that\neach physical degree of freedom be coupled to its own NHC thermostat through\nan isokinetic constraint in a “massive” thermostatting approach. These massive\nthermostats introduced some complexity (each degree of freedom had an associated\nNosé-Hoover chain system as well as the constraint); obtaining an accurate solution\nfor this large system is involving. A potentially more serious problem is that,\nalthough Nosé-Hoover chains and the isokinetic method may in some cases appear\nto be “practically ergodic,” no proof of ergodicity exists. A recent article (by one\nof us, together with Margul and Tuckerman [220]) addressed these problems by\nreplacing the Nosé-Hoover chains with stochastic terms (of Ornstein-Uhlenbeck\ntype).\n"
+    }
+  ],
+  "numbered_equations": [],
+  "transcription_note": "文字层逐字保留；数学排版另行转写，原页中的特殊字形编码不静默替换。PDF420仅取Exercises之前。",
+  "context_notation": [],
+  "extra_assumptions": [
+    "δ是曲面测度的广义记号，未把Dirac分布写成Lebesgue密度；本条只证明壳面上构型权重化简，曲面测度归一/边缘分布不变性列覆盖缺口。"
+  ],
+  "issues": [],
+  "statement_scope": "动能壳与Gibbs因子的逐点关系；不声称完整曲面概率测度定理。",
+  "lean_decl": "MD.Ch08.isokineticShell",
+  "lean_declarations": [
+    "MD.Ch08.isokineticShell",
+    "MD.Ch08.isoShellWeight",
+    "MD.Ch08.isoShell_gibbsFactor"
+  ],
+  "source_page_verification": "见source_page_checks.json，已目视核对本条原页。",
+  "repair_log": [],
+  "documented_priors": []
+}
+```
+
+## 完整本条Lean
+```lean
+def isokineticShell (invm : Vec n) (K0 : ℝ) : Set (Phase n) := {z | kineticTwice invm z.2=K0}
+def isoShellWeight (U : Vec n → ℝ) (invm : Vec n) (z : Phase n) : ℝ :=
+  Real.exp (-((n:ℝ)-1)*U z.1/kineticTwice invm z.2)
+theorem isoShell_gibbsFactor (U : Vec n → ℝ) (invm : Vec n) (β : ℝ)
+    (hn : 1 < n) (hβ : 0 < β) (z : Phase n)
+    (hz : z ∈ isokineticShell invm (((n:ℝ)-1)/β)) :
+    isoShellWeight U invm z = Real.exp (-β*U z.1) := by
+  have hnR : (1 : ℝ) < (n : ℝ) := by exact_mod_cast hn
+  have hn' : (n:ℝ)-1 ≠ 0 := ne_of_gt (sub_pos.mpr hnR)
+  change kineticTwice invm z.2 = ((n:ℝ)-1)/β at hz
+  unfold isoShellWeight
+  rw [hz]
+  congr 1
+  field_simp [hn', ne_of_gt hβ]
+  <;> ring
+```
+
+## 项目依赖定义体及选择规格
+以下def/abbrev/structure完整保留；定理列出完整类型，Mathlib标准定义无需摘录。
+
+### MD.Ch08.Vec (Blueprint/Ch08.lean:17)
+原文件上下文：
+```lean
+open Set Filter MeasureTheory ProbabilityTheory MolecularDynamics
+open scoped BigOperators Topology ContDiff ENNReal NNReal Matrix
+variable {Ω : Type*} [MeasurableSpace Ω]
+variable {n : ℕ}
+```
+```lean
+abbrev Vec (n : ℕ) := Fin n → ℝ
+```
+
+### MD.Ch08.Phase (Blueprint/Ch08.lean:18)
+原文件上下文：
+```lean
+open Set Filter MeasureTheory ProbabilityTheory MolecularDynamics
+open scoped BigOperators Topology ContDiff ENNReal NNReal Matrix
+variable {Ω : Type*} [MeasurableSpace Ω]
+variable {n : ℕ}
+```
+```lean
+abbrev Phase (n : ℕ) := Vec n × Vec n
+```
+
+### MD.Ch08.kineticTwice (Blueprint/Ch08.lean:65)
+原文件上下文：
+```lean
+open Set Filter MeasureTheory ProbabilityTheory MolecularDynamics
+open scoped BigOperators Topology ContDiff ENNReal NNReal Matrix
+variable {Ω : Type*} [MeasurableSpace Ω]
+variable {n : ℕ}
+```
+```lean
+def kineticTwice (invm p : Vec n) : ℝ := ∑ i, invm i * p i ^ 2
+```
+
+### MD.Ch08.isokineticShell (Blueprint/Ch08.lean:695)
+原文件上下文：
+```lean
+open Set Filter MeasureTheory ProbabilityTheory MolecularDynamics
+open scoped BigOperators Topology ContDiff ENNReal NNReal Matrix
+variable {Ω : Type*} [MeasurableSpace Ω]
+variable {n : ℕ}
+```
+```lean
+def isokineticShell (invm : Vec n) (K0 : ℝ) : Set (Phase n) := {z | kineticTwice invm z.2=K0}
+```
+
+### MD.Ch08.isoShellWeight (Blueprint/Ch08.lean:696)
+原文件上下文：
+```lean
+open Set Filter MeasureTheory ProbabilityTheory MolecularDynamics
+open scoped BigOperators Topology ContDiff ENNReal NNReal Matrix
+variable {Ω : Type*} [MeasurableSpace Ω]
+variable {n : ℕ}
+```
+```lean
+def isoShellWeight (U : Vec n → ℝ) (invm : Vec n) (z : Phase n) : ℝ :=
+  Real.exp (-((n:ℝ)-1)*U z.1/kineticTwice invm z.2)
+```
+
+### MD.Ch08.isoShell_gibbsFactor (Blueprint/Ch08.lean:698)
+原文件上下文：
+```lean
+open Set Filter MeasureTheory ProbabilityTheory MolecularDynamics
+open scoped BigOperators Topology ContDiff ENNReal NNReal Matrix
+variable {Ω : Type*} [MeasurableSpace Ω]
+variable {n : ℕ}
+```
+```lean
+theorem isoShell_gibbsFactor (U : Vec n → ℝ) (invm : Vec n) (β : ℝ)
+    (hn : 1 < n) (hβ : 0 < β) (z : Phase n)
+    (hz : z ∈ isokineticShell invm (((n:ℝ)-1)/β)) :
+    isoShellWeight U invm z = Real.exp (-β*U z.1)
+```

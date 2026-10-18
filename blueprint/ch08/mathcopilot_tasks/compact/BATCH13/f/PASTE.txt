@@ -1,0 +1,182 @@
+以附件/PASTE 为准，忽略 /workspace 旧文件；Mathlib 定义按标准含义采信。
+本任务只审本条：原文转录、对象资格、定义体、量词、全部结论及[EXTRA]是否一致；Lean编译不代替语义审阅。
+Lean/Mathlib均4.34.0。原页PDF映射：[402]；印刷页=[381].
+input_sha256请原样回显：
+{
+  "Blueprint/Ch08.lean": "2800812fadd8e2557013f1941e4570401f7903d46f44baf07e23d5531da22a72",
+  "blueprint/ch08/ch08_source.json": "9b994b0f64cd22c85c2ad4123fbfdbd064bd7a6d070fe13b721794432f9f7a63",
+  "BATCH13f_PAGES.pdf": "f069ba75d89616a893f706aa7b258fb6fafec74337c2cd36a9db8db8aff8520a"
+}
+用代码将JSON对象(batch,input_sha256,items)写到 /workspace/.mathcopilot/reviews/ch08/BATCH13f_review.json；items仅含本source_id。
+items字段：source_id、verdict(PASS/FAIL/NEEDS_HUMAN)、transcription、semantic_review、counterexample、suggested_fix、printed_version、corrected_version。逐版区分原文疑误和修正版结论；缺材料必须具体指出，不猜测。写后json.loads自检，最后仅回复路径及统计。
+
+## 原文JSON
+```json
+{
+  "source_id": "MD-8.8.1-PistonHamiltonianSubfield",
+  "kind": "unnumbered_claim",
+  "label": null,
+  "section": "8.8.1",
+  "printed_page": "381",
+  "pdf_page": "402",
+  "statement_latex": "ρ₁=φ₁(pᵀM⁻¹p/2+U(q))ψ(V,ξ,η) is stationary for the Hamiltonian part.",
+  "statement_verbatim": "8.8\nConstant Temperature and Pressure Molecular Dynamics\n381\n8.8.1\nEquations of Motion for the NHL Piston\nIn the framework of [199], rewriting the equations of motion for the physical\nvariables q and p, the dynamics takes the form\nPq D M\u00021p C \u000fq;\nPp D \u0003rU.q/ \u0003 \u000fp \u0003 \u0012p;\nPV D \u000fV;\nwith auxiliary variables \u000f and \u0012 governed by additional dynamical equations of\nmotion\nP\u0012 D hT\ndef\nD .pTM\u00021p \u0003 NdkBT/=\u0006T;\nP\u000f D hP\ndef\nD .V˘.q; p; V/ \u0003 PV C kBT/=\u0006P;\nwhere\n˘.q; p; V/\ndef\nD 1\nV\n\b\npTM\u00021p \u0003 q \u0002 rU.q/ \u0003 V @\n@V U.q/\n\t\n;\nis the expression for the pressure.\nNow let us examine the distribution conserved by the dynamics. First, we observe\n\u00051 D '1.pTM\u00021p=2 C U.q// \u0004 .V; \u0012; \u000f/\nis stationary for the Liouvillian operator for the vector ﬁeld .p; \u0003rU; 0; 0; 0/.\nThe function can be chosen as any smooth function that integrates out with\nrespect to V; \u0012; \u000f over Œ0; 1\t \u0004 R \u0004 R. We already know from our discussion of\nNosé-Hoover that Pp D \u0003\u0012p; P\u0012 D .pTM\u00021p \u0003 NdkBT/=\u0006T will have as stationary\nstates functions of the form\n\u00052 D exp.\u0003ˇŒpTM\u00021p C \u0006T\u00122=2\t/ 2.q; \u000f; V/:\nFinally the remaining terms Pq D \u000fq, Pp D \u0003\u000fp, PV D \u000fV, P\u000f D .V˘.q; p; V/ \u0003 PV C\nkBT/=\u0006P give rise to the Liouvillian\nL\u0004\u0005 D \u0003\u000frq \u0002.q\u0005/C\u000frp \u0002.p\u0005/\u0003\u000f @\n@V .V\u0005/\u0003 @\n@\u000fŒ\u0005.V˘.q; p; V/\u0003PV CkBT/=\u0006P\t:\n",
+  "verbatim_scope": "完整对应原页文字层，逐字保留；本条数学成分由statement_latex及statement_scope定位。",
+  "proof_latex": null,
+  "proof_note": "对应原页推导逐字保存在statement_verbatim/original_page_text；排版以原页PDF为准。",
+  "original_page_text": [
+    {
+      "pdf_page": 402,
+      "printed_page": 381,
+      "text": "8.8\nConstant Temperature and Pressure Molecular Dynamics\n381\n8.8.1\nEquations of Motion for the NHL Piston\nIn the framework of [199], rewriting the equations of motion for the physical\nvariables q and p, the dynamics takes the form\nPq D M\u00021p C \u000fq;\nPp D \u0003rU.q/ \u0003 \u000fp \u0003 \u0012p;\nPV D \u000fV;\nwith auxiliary variables \u000f and \u0012 governed by additional dynamical equations of\nmotion\nP\u0012 D hT\ndef\nD .pTM\u00021p \u0003 NdkBT/=\u0006T;\nP\u000f D hP\ndef\nD .V˘.q; p; V/ \u0003 PV C kBT/=\u0006P;\nwhere\n˘.q; p; V/\ndef\nD 1\nV\n\b\npTM\u00021p \u0003 q \u0002 rU.q/ \u0003 V @\n@V U.q/\n\t\n;\nis the expression for the pressure.\nNow let us examine the distribution conserved by the dynamics. First, we observe\n\u00051 D '1.pTM\u00021p=2 C U.q// \u0004 .V; \u0012; \u000f/\nis stationary for the Liouvillian operator for the vector ﬁeld .p; \u0003rU; 0; 0; 0/.\nThe function can be chosen as any smooth function that integrates out with\nrespect to V; \u0012; \u000f over Œ0; 1\t \u0004 R \u0004 R. We already know from our discussion of\nNosé-Hoover that Pp D \u0003\u0012p; P\u0012 D .pTM\u00021p \u0003 NdkBT/=\u0006T will have as stationary\nstates functions of the form\n\u00052 D exp.\u0003ˇŒpTM\u00021p C \u0006T\u00122=2\t/ 2.q; \u000f; V/:\nFinally the remaining terms Pq D \u000fq, Pp D \u0003\u000fp, PV D \u000fV, P\u000f D .V˘.q; p; V/ \u0003 PV C\nkBT/=\u0006P give rise to the Liouvillian\nL\u0004\u0005 D \u0003\u000frq \u0002.q\u0005/C\u000frp \u0002.p\u0005/\u0003\u000f @\n@V .V\u0005/\u0003 @\n@\u000fŒ\u0005.V˘.q; p; V/\u0003PV CkBT/=\u0006P\t:\n"
+    }
+  ],
+  "numbered_equations": [],
+  "transcription_note": "文字层逐字保留；数学排版另行转写，原页中的特殊字形编码不静默替换。PDF420仅取Exercises之前。",
+  "context_notation": [],
+  "extra_assumptions": [
+    "只陈述实际通量散度为零；φ,ψ是权重而非自动概率密度，归一、可积和全局保测流不在本条。"
+  ],
+  "issues": [],
+  "statement_scope": "Hamiltonian子场和其光滑复合权的局部驻定式。",
+  "lean_decl": "MD.Ch08.pistonHamiltonianPart",
+  "lean_declarations": [
+    "MD.Ch08.pistonHamiltonianPart",
+    "MD.Ch08.pistonHamiltonianWeight_stationary"
+  ],
+  "source_page_verification": "见source_page_checks.json，已目视核对本条原页。",
+  "repair_log": [],
+  "documented_priors": []
+}
+```
+
+## 完整本条Lean
+```lean
+def pistonHamiltonianPart (invm : Vec n) (U : Vec n × ℝ → ℝ)
+    (z : PistonState n) : PistonState n :=
+  ((fun i ↦ invm i*z.1.2 i,-gradient (fun q ↦ U (q,z.2 0)) z.1.1),0)
+theorem pistonHamiltonianWeight_stationary (invm : Vec n) (U : Vec n × ℝ → ℝ)
+    (φ : ℝ → ℝ) (ψ : Vec 3 → ℝ) (hU : ContDiff ℝ 2 U)
+    (hφ : ContDiff ℝ 1 φ) (hψ : ContDiff ℝ 1 ψ) (z : PistonState n) :
+    textbookDivergence (fun x : PistonState n ↦
+      (φ (kineticTwice invm x.1.2/2+U (x.1.1,x.2 0))*ψ x.2) •
+        pistonHamiltonianPart invm U x) z=0 := by
+  sorry
+```
+
+## 项目依赖定义体及选择规格
+以下def/abbrev/structure完整保留；定理列出完整类型，Mathlib标准定义无需摘录。
+
+### MD.Ch08.Vec (Blueprint/Ch08.lean:17)
+原文件上下文：
+```lean
+open Set Filter MeasureTheory ProbabilityTheory MolecularDynamics
+open scoped BigOperators Topology ContDiff ENNReal NNReal Matrix
+variable {Ω : Type*} [MeasurableSpace Ω]
+variable {n : ℕ}
+```
+```lean
+abbrev Vec (n : ℕ) := Fin n → ℝ
+```
+
+### MD.Ch08.Phase (Blueprint/Ch08.lean:18)
+原文件上下文：
+```lean
+open Set Filter MeasureTheory ProbabilityTheory MolecularDynamics
+open scoped BigOperators Topology ContDiff ENNReal NNReal Matrix
+variable {Ω : Type*} [MeasurableSpace Ω]
+variable {n : ℕ}
+```
+```lean
+abbrev Phase (n : ℕ) := Vec n × Vec n
+```
+
+### MD.Ch08.gradient (Blueprint/Ch08.lean:20)
+原文件上下文：
+```lean
+open Set Filter MeasureTheory ProbabilityTheory MolecularDynamics
+open scoped BigOperators Topology ContDiff ENNReal NNReal Matrix
+variable {Ω : Type*} [MeasurableSpace Ω]
+variable {n : ℕ}
+```
+```lean
+def gradient (U : Vec n → ℝ) (q : Vec n) : Vec n := fun i ↦ fderiv ℝ U q (Pi.single i 1)
+```
+
+### MD.Ch08.kineticTwice (Blueprint/Ch08.lean:65)
+原文件上下文：
+```lean
+open Set Filter MeasureTheory ProbabilityTheory MolecularDynamics
+open scoped BigOperators Topology ContDiff ENNReal NNReal Matrix
+variable {Ω : Type*} [MeasurableSpace Ω]
+variable {n : ℕ}
+```
+```lean
+def kineticTwice (invm p : Vec n) : ℝ := ∑ i, invm i * p i ^ 2
+```
+
+### MD.Ch08.PistonState (Blueprint/Ch08.lean:1196)
+原文件上下文：
+```lean
+open Set Filter MeasureTheory ProbabilityTheory MolecularDynamics
+open scoped BigOperators Topology ContDiff ENNReal NNReal Matrix
+variable {Ω : Type*} [MeasurableSpace Ω]
+variable {n : ℕ}
+```
+```lean
+abbrev PistonState (n : ℕ) := Phase n × Vec 3
+```
+
+### MD.Ch08.pistonHamiltonianPart (Blueprint/Ch08.lean:1218)
+原文件上下文：
+```lean
+open Set Filter MeasureTheory ProbabilityTheory MolecularDynamics
+open scoped BigOperators Topology ContDiff ENNReal NNReal Matrix
+variable {Ω : Type*} [MeasurableSpace Ω]
+variable {n : ℕ}
+```
+```lean
+def pistonHamiltonianPart (invm : Vec n) (U : Vec n × ℝ → ℝ)
+    (z : PistonState n) : PistonState n :=
+  ((fun i ↦ invm i*z.1.2 i,-gradient (fun q ↦ U (q,z.2 0)) z.1.1),0)
+```
+
+### MD.Ch08.pistonHamiltonianWeight_stationary (Blueprint/Ch08.lean:1221)
+原文件上下文：
+```lean
+open Set Filter MeasureTheory ProbabilityTheory MolecularDynamics
+open scoped BigOperators Topology ContDiff ENNReal NNReal Matrix
+variable {Ω : Type*} [MeasurableSpace Ω]
+variable {n : ℕ}
+```
+```lean
+theorem pistonHamiltonianWeight_stationary (invm : Vec n) (U : Vec n × ℝ → ℝ)
+    (φ : ℝ → ℝ) (ψ : Vec 3 → ℝ) (hU : ContDiff ℝ 2 U)
+    (hφ : ContDiff ℝ 1 φ) (hψ : ContDiff ℝ 1 ψ) (z : PistonState n) :
+    textbookDivergence (fun x : PistonState n ↦
+      (φ (kineticTwice invm x.1.2/2+U (x.1.1,x.2 0))*ψ x.2) •
+        pistonHamiltonianPart invm U x) z=0
+```
+
+### MolecularDynamics.Chapter05Review.E (MolecularDynamics/Chapter05/ReviewDefinitions.lean:18)
+原文件上下文：
+```lean
+open Set Filter MeasureTheory Matrix
+open scoped BigOperators Topology ENNReal
+```
+```lean
+abbrev E (n : ℕ) := EuclideanSpace ℝ (Fin n)
+```
+
+### MolecularDynamics.textbookDivergence (MolecularDynamics/Chapter08/ThermostatDensity.lean:18)
+原文件上下文：
+```lean
+open Matrix
+open scoped BigOperators Topology
+variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E] [FiniteDimensional ℝ E]
+variable {G : Type*} [NormedAddCommGroup G] [NormedSpace ℝ G] [FiniteDimensional ℝ G]
+```
+```lean
+noncomputable def textbookDivergence (F : E → E) (z : E) : ℝ :=
+  LinearMap.trace ℝ E (fderiv ℝ F z).toLinearMap
+```

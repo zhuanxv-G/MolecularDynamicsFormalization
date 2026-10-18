@@ -1,0 +1,66 @@
+{
+  "batch": "BATCH03",
+  "subtask": "BATCH03b",
+  "source_ids": [
+    "MD-8.2-GeneralThermostat"
+  ],
+  "input_sha256": {
+    "Blueprint/Ch08.lean": "2800812fadd8e2557013f1941e4570401f7903d46f44baf07e23d5531da22a72",
+    "blueprint/ch08/ch08_source.json": "9b994b0f64cd22c85c2ad4123fbfdbd064bd7a6d070fe13b721794432f9f7a63",
+    "BATCH03b_PAGES.pdf": "f59462701b38918817e36cc02e456ff0b8e0c6cc28b38494490f605b424d7fca"
+  },
+  "page_mapping": [
+    {
+      "attachment_page": 1,
+      "original_pdf_page": 357,
+      "printed_page": 336
+    }
+  ],
+  "definition_excerpts": [
+    {
+      "full_name": "MD.Ch08.Vec",
+      "kind": "abbrev",
+      "path": "Blueprint/Ch08.lean",
+      "line": 17,
+      "code_sha256": "6f4b254a8a7cc4115fb35265b77caa663bdd18567cd1e664cc5bbd080d02fcff"
+    },
+    {
+      "full_name": "MD.Ch08.gradient",
+      "kind": "def",
+      "path": "Blueprint/Ch08.lean",
+      "line": 20,
+      "code_sha256": "a9a017b15c584dec720a71840d896ddb8d0e05e149030bce523362af481b101e"
+    },
+    {
+      "full_name": "MD.Ch08.generalThermostat",
+      "kind": "def",
+      "path": "Blueprint/Ch08.lean",
+      "line": 201,
+      "code_sha256": "951c30a5b09319823d15611dce738b88ced96d83028c3992b1a280f6394fb348"
+    },
+    {
+      "full_name": "MD.Ch08.skewMatrix",
+      "kind": "def",
+      "path": "Blueprint/Ch08.lean",
+      "line": 204,
+      "code_sha256": "d9b6b15f9fa1129821f6ada07e2ca6a96f1b9fbe079d9f4e7f62241e0a82f3b7"
+    }
+  ],
+  "validation": {
+    "project_constant_closure": "PASS",
+    "missing_project_definitions": [],
+    "full_page_render_equality_dpi": 72,
+    "website_submitted": false
+  },
+  "files": {
+    "PASTE.txt": {
+      "bytes": 8748,
+      "sha256": "e382aae2d081ae108f3afd7b7cacc8ffb60548e95697f022c1d74c770138d475"
+    },
+    "BATCH03b_PAGES.pdf": {
+      "bytes": 83646,
+      "sha256": "f59462701b38918817e36cc02e456ff0b8e0c6cc28b38494490f605b424d7fca"
+    }
+  },
+  "total_task_bytes": 94403
+}

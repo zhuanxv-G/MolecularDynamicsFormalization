@@ -1,0 +1,80 @@
+{
+  "batch": "BATCH03",
+  "subtask": "BATCH03f",
+  "source_ids": [
+    "MD-8.2.1-TemperatureIdentity"
+  ],
+  "input_sha256": {
+    "Blueprint/Ch08.lean": "2800812fadd8e2557013f1941e4570401f7903d46f44baf07e23d5531da22a72",
+    "blueprint/ch08/ch08_source.json": "9b994b0f64cd22c85c2ad4123fbfdbd064bd7a6d070fe13b721794432f9f7a63",
+    "BATCH03f_PAGES.pdf": "ddbc3141be289a4bf9c543a931dbb793a74bbdc675dcc6ef9940d4a34ccdacfa"
+  },
+  "page_mapping": [
+    {
+      "attachment_page": 1,
+      "original_pdf_page": 359,
+      "printed_page": 338
+    }
+  ],
+  "definition_excerpts": [
+    {
+      "full_name": "MD.Ch08.Vec",
+      "kind": "abbrev",
+      "path": "Blueprint/Ch08.lean",
+      "line": 17,
+      "code_sha256": "6f4b254a8a7cc4115fb35265b77caa663bdd18567cd1e664cc5bbd080d02fcff"
+    },
+    {
+      "full_name": "MD.Ch08.gibbsWeight",
+      "kind": "def",
+      "path": "Blueprint/Ch08.lean",
+      "line": 21,
+      "code_sha256": "0914b2250f82dd8420f3edf8ef788804216440c65b2a696ac21c9f6a21188c1e"
+    },
+    {
+      "full_name": "MD.Ch08.temperatureIdentity",
+      "kind": "theorem",
+      "path": "Blueprint/Ch08.lean",
+      "line": 252,
+      "code_sha256": "e7605cca4bce644804e7a18b5b188547c5511863811b7d53e8d866ecc7306459"
+    },
+    {
+      "full_name": "MD.Ch08.phaseTemperature",
+      "kind": "def",
+      "path": "Blueprint/Ch08.lean",
+      "line": 258,
+      "code_sha256": "7ae1e0167afbb6ce0b9b5076b98fff9d2c2f32580464be7cb2d48bc926d31050"
+    },
+    {
+      "full_name": "MolecularDynamics.Chapter05Review.E",
+      "kind": "abbrev",
+      "path": "MolecularDynamics/Chapter05/ReviewDefinitions.lean",
+      "line": 18,
+      "code_sha256": "b497c8ba7f01b62a3147d9ae65652772ff3f81e57aa19b116f1283fef7a3cc60"
+    },
+    {
+      "full_name": "MolecularDynamics.textbookDivergence",
+      "kind": "def",
+      "path": "MolecularDynamics/Chapter08/ThermostatDensity.lean",
+      "line": 18,
+      "code_sha256": "1b45cabec3bf68bd209da969759334d158c263b7e5a40ed527bd3a4f48e25c48"
+    }
+  ],
+  "validation": {
+    "project_constant_closure": "PASS",
+    "missing_project_definitions": [],
+    "full_page_render_equality_dpi": 72,
+    "website_submitted": false
+  },
+  "files": {
+    "PASTE.txt": {
+      "bytes": 8453,
+      "sha256": "28851fac198056adf84d831e31334b134cdc362db1f129827dfc2c531c974509"
+    },
+    "BATCH03f_PAGES.pdf": {
+      "bytes": 85730,
+      "sha256": "ddbc3141be289a4bf9c543a931dbb793a74bbdc675dcc6ef9940d4a34ccdacfa"
+    }
+  },
+  "total_task_bytes": 96761
+}
