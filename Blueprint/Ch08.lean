@@ -683,4 +683,170 @@ theorem sinWeight_stationary_corrected (U : ℝ → ℝ) (Q1 Q2 θ : ℝ)
       (fun x ↦ sinWeight_corrected U Q1 Q2 x • sinDrift Q1 Q2 θ 0 (fun q ↦ -deriv U q) x) z = 0 := by
   sorry
 
+/-- source_id: MD-8.6.2-SINHarmonic · 印刷p.366 / PDFp.387
+[EXTRA] θ=k_BT>0、γ>0、标量Wiener由isSINSolution给全；零ξ₁面不变和两个半柱的轨道符号保持需要ODE唯一性，列覆盖缺口。 -/
+def sinHarmonicF (θ γ : ℝ) : Vec 4 → Vec 4 := sinDrift 1 1 θ γ (fun q ↦ -q)
+def sinHarmonicG (θ γ : ℝ) : Vec 4 := ![0,0,0,Real.sqrt (2*γ*θ)]
+def isSINHarmonicSolution (θ γ : ℝ) (P : Measure Ω) (W : ℝ → Ω → Vec 1)
+    (X : ℝ → Ω → Vec 4) (x0 : Vec 4) : Prop :=
+  isSINSolution 1 1 θ γ (fun q ↦ -q) P W X x0
+def sinExceptional (θ : ℝ) : Set (Vec 4) :=
+  {z | z 0=0 ∧ z 1=0 ∧ z 2^2=2*θ}
+def sinHalfCylinder (θ : ℝ) (positive : Bool) : Set (Vec 4) :=
+  {z | sinConstraint 1 z=θ ∧ (if positive then 0 < z 2 else z 2 < 0)}
+theorem sinHalfCylinder_disjoint (θ : ℝ) :
+    Disjoint (sinHalfCylinder θ true) (sinHalfCylinder θ false) := by
+  apply Set.disjoint_left.mpr
+  intro z hpos hneg
+  exact (not_lt_of_ge (le_of_lt hpos.2)) hneg.2
+
+/-- source_id: MD-8.6.2-SINProjectedBracketsPrinted · 印刷p.367 / PDFp.388
+[EXTRA] 总化分式只在θ>0的约束面D=2θ>0使用；实际交换子先在四维完整计算再投影。
+[EXTRA] 本条记录原印显式式和真实微分定义；显式式与真实二/三重交换子的等式尚未证明，列覆盖缺口。
+[ERRATUM?] 已目视核对原页PDF388：(8.50)的u₁公式实际重写u₀，(8.51)的u₂公式实际为首交换子；(8.49)第三分量似缺共同σ。原印与真实迭代交换子独立保留。 -/
+def bracket4 (f g : Vec 4 → Vec 4) (z : Vec 4) : Vec 4 :=
+  fderiv ℝ g z (f z)-fderiv ℝ f z (g z)
+def sinBracket (θ γ : ℝ) : ℕ → Vec 4 → Vec 4
+  | 0 => sinHarmonicF θ γ
+  | 1 => bracket4 (sinHarmonicF θ γ) (fun _ ↦ sinHarmonicG θ γ)
+  | k+2 => bracket4 (sinHarmonicF θ γ) (sinBracket θ γ (k+1))
+def projectFirstThree (z : Vec 4) : Vec 3 := ![z 0,z 1,z 2]
+def sinD (z : Vec 4) : ℝ := 2*z 1^2+z 2^2
+def sinU0Printed (z : Vec 4) : Vec 3 :=
+  ![z 1,z 2^2*(-z 0+z 1*z 3)/sinD z,-2*z 2*z 1*(-z 0+z 1*z 3)/sinD z]
+def sinU1Printed (z : Vec 4) : Vec 3 := sinU0Printed z
+def sinU2Printed (σ : ℝ) (z : Vec 4) : Vec 3 :=
+  ![0,-σ*z 2^2*z 1/sinD z,2*σ*z 2*z 1^2/sinD z]
+def sinU1DerivativePrinted (σ : ℝ) (z : Vec 4) : Vec 3 :=
+  let d := fderiv ℝ (sinMultiplier 1 (fun q ↦ -q)) z (Pi.single 3 1)
+  ![0,σ*z 1*d,z 2*(1+d)]
+def sinProjected_corrected (θ γ : ℝ) (j : Fin 4) (z : Vec 4) : Vec 3 :=
+  projectFirstThree (sinBracket θ γ j z)
+def sinU2LongPrinted (σ γ : ℝ) (z : Vec 4) : Vec 3 :=
+  let a := (2*γ*z 1^3+γ*z 2^2*z 1-z 2^2*z 0)/(sinD z)^2
+  ![σ*z 2^2*z 1/sinD z,-σ*a,2*σ*z 2*z 1*a]
+theorem sinU2Long_at_p0 (σ γ : ℝ) (z : Vec 4) (hp : z 1=0) :
+    sinU2LongPrinted σ γ z = ![0,σ*z 2^2*z 0/(sinD z)^2,0] := by
+  ext i; fin_cases i <;> simp [sinU2LongPrinted,hp] <;> ring
+
+/-- source_id: MD-8.6.2-SINThirdBracketPrinted · 印刷p.368 / PDFp.389
+[EXTRA] ξ₁≠0用于分式化简；此处只核对原印(8.54)与(8.56)内部的代数关系，不声称(8.54)已被确认为实际三重交换子。
+[ERRATUM?] 已目视核对原页PDF389：(8.54)q分量代p=0得到-2σq/ξ₁²，(8.56)遗漏ξ₁²分母；原印多项式的其他系数仍待独立微分核对。 -/
+def sinEtaPrinted (γ : ℝ) (z : Vec 4) : ℝ :=
+  4*z 1^5*γ^2-8*z 1^5*z 2^2-4*z 2^2*z 1^3+4*z 1^3*γ^2*z 2^2-4*z 1^3*z 2^4-
+  2*γ*z 2^2*z 1^2*z 0+4*z 1^2*z 0*z 3*z 2^2-4*z 2^2*z 0^2*z 1-
+  2*z 2^4*z 1+z 1*γ^2*z 2^4-z 0*γ*z 2^4+z 2^4*z 3*z 0
+def sinU3Printed (σ γ : ℝ) (z : Vec 4) : Vec 3 :=
+  ![σ*(2*γ*z 1^3-4*z 1^3*z 3+4*z 1^2*z 0+z 2^2*z 1*z 3+γ*z 2^2*z 1-2*z 2^2*z 0)/(sinD z)^2,
+    -σ*z 2^2*sinEtaPrinted γ z/(sinD z)^3,2*σ*z 2*z 1*sinEtaPrinted γ z/(sinD z)^3]
+def sinU3ZeroPrinted (σ γ : ℝ) (z : Vec 4) : Vec 3 :=
+  ![-2*σ*z 0,-σ*z 0*(-γ+z 3),0]
+def sinU3Zero_corrected (σ γ : ℝ) (z : Vec 4) : Vec 3 :=
+  ![-2*σ*z 0/z 2^2,-σ*z 0*(-γ+z 3),0]
+theorem sinU3Zero_specialize (σ γ : ℝ) (z : Vec 4) (hp : z 1=0) (hξ : z 2 ≠ 0) :
+    sinU3Printed σ γ z = sinU3Zero_corrected σ γ z := by
+  ext i; fin_cases i <;> simp [sinU3Printed,sinU3Zero_corrected,sinEtaPrinted,sinD,hp]
+    <;> field_simp [hξ] <;> ring
+
+/-- source_id: MD-8.6.2-SINBracketRank · 印刷p.366–368 / PDFp.387–389
+[EXTRA] θ,γ正，ξ₁≠0且在正约束面；仅声明有限向量族张成实际切空间，Hörmander理论推出平滑密度或遍历性未覆盖。 -/
+theorem sinBracket_tangentSpan (θ γ : ℝ) (hθ : 0 < θ) (hγ : 0 < γ)
+    (z : Vec 4) (hz : sinConstraint 1 z=θ) (hξ : z 2 ≠ 0)
+    (hout : z ∉ sinExceptional θ) :
+    Submodule.span ℝ ({sinHarmonicG θ γ} ∪
+      Set.range (fun j : Fin 4 ↦ sinBracket θ γ j z)) =
+      LinearMap.ker (fderiv ℝ (sinConstraint 1) z).toLinearMap := by
+  sorry
+
+/-- source_id: MD-8.6.2-SINLyapunov · 印刷p.368–369 / PDFp.389–390
+[EXTRA] 仅生成元作用和约束界；原文有符号ξ₂的Kξ₂上界须区分尾部方向，严谨负漂移应使用K|ξ₂|并要求γ>0。
+[EXTRA] 紧性、正密度、小集与Markov半群遍历定理均列覆盖缺口。 -/
+def sinGenerator (θ γ : ℝ) (F : ℝ → ℝ) (f : Vec 4 → ℝ) (z : Vec 4) : ℝ :=
+  additiveGenerator (sinDrift 1 1 θ γ F) (sinHarmonicG θ γ) f z
+theorem sinGenerator_lyapunov (θ γ : ℝ) (hθ : 0 < θ) (hγ : 0 < γ)
+    (F : ℝ → ℝ) (z : Vec 4) (hK : sinConstraint 1 z ≠ 0) :
+    sinGenerator θ γ F (fun x ↦ x 3^2/2) z =
+      (z 2^2-θ)*z 3-γ*z 3^2+γ*θ := by
+  sorry
+theorem sinConstraint_bathBound (θ : ℝ) (z : Vec 4) (hz : sinConstraint 1 z=θ) :
+    z 2^2 ≤ 2*θ := by
+  dsimp [sinConstraint] at hz
+  nlinarith [sq_nonneg (z 1)]
+
+/-- source_id: MD-8.6.3-SINForceSplitting · 印刷p.370–371 / PDFp.391–392
+[EXTRA] Q₁,Q₂,θ>0且Λ=θ为物理域，总化场保留作辅助；本条含完整漂移和分解及力子场瞬时约束平衡，其他子场的流存在/保约束列缺口。 -/
+def sinKField (z : Vec 4) : Vec 4 := ![z 1,0,0,0]
+def sinForceField (Q1 F : ℝ) (z : Vec 4) : Vec 4 :=
+  ![0,F-z 1^2*F/sinConstraint Q1 z,-z 1*z 2*F/sinConstraint Q1 z,0]
+def sinNField (Q1 Q2 θ : ℝ) (z : Vec 4) : Vec 4 :=
+  ![0,Q1*z 2^2*z 3*z 1/(2*sinConstraint Q1 z),
+    Q1*z 2^3*z 3/(2*sinConstraint Q1 z)-z 3*z 2,(Q1*z 2^2-θ)/Q2]
+def sinOField (γ : ℝ) (z : Vec 4) : Vec 4 := ![0,0,0,-γ*z 3]
+theorem sinSplit_fields (Q1 Q2 θ γ : ℝ) (FF FS : ℝ → ℝ) (z : Vec 4)
+    (hK : sinConstraint Q1 z ≠ 0) :
+    sinDrift Q1 Q2 θ γ (fun q ↦ FF q+FS q) z =
+      sinKField z+sinForceField Q1 (FF (z 0)) z+
+      sinForceField Q1 (FS (z 0)) z+sinNField Q1 Q2 θ z+sinOField γ z := by
+  ext i; fin_cases i <;> simp [sinDrift,sinMultiplier,sinKField,sinForceField,sinNField,sinOField]
+    <;> field_simp <;> ring
+theorem sinForce_constraintBalance (Q1 F : ℝ) (z : Vec 4)
+    (hK : sinConstraint Q1 z ≠ 0) :
+    2*z 1*(sinForceField Q1 F z) 1+Q1*z 2*(sinForceField Q1 F z) 2=0 := by
+  change 2*z 1*(F-z 1^2*F/sinConstraint Q1 z)+
+    Q1*z 2*(-z 1*z 2*F/sinConstraint Q1 z)=0
+  generalize hd : sinConstraint Q1 z = lam at *
+  field_simp [hK]
+  rw [← hd]
+  dsimp [sinConstraint]
+  ring
+
+/-- source_id: MD-8.6.3-SINRAlgorithm · 印刷p.371 / PDFp.392
+[EXTRA] 算法有效域h>0、r≥2；一组中多个场表示同一次合并传播，并非擅自换为两个非交换流。每次OU用独立标准正态新噪声。
+[EXTRA] 这里只记录精确阶段表，具体随机核实现、保约束及全局误差/阶数列覆盖缺口。 -/
+inductive SINStage where
+  | kinetic | fast | slow | nose | ou
+  deriving DecidableEq
+def sinRStages (h : ℝ) (r : ℕ) : List (List (SINStage × ℝ)) :=
+  let a := h/(r:ℝ)
+  [[(.nose,h/2)],[(.fast,a/2),(.slow,h/2)],[(.kinetic,a)],[(.ou,a)],[(.fast,a/2)]] ++
+  List.flatten (List.replicate (r-2)
+    [[(.fast,a/2)],[(.kinetic,a/2)],[(.ou,a)],[(.kinetic,a/2)],[(.fast,a/2)]]) ++
+  [[(.fast,a/2)],[(.ou,a)],[(.kinetic,a)],[(.fast,a/2),(.slow,h/2)],[(.nose,h/2)]]
+
+/-- source_id: MD-8.6.3-SINNoseSubsplitting · 印刷p.372 / PDFp.393
+[EXTRA] 正质量、温度及Λ>0作为物理资格；高阶Yoshida/Suzuki组合的系数和误差阶未在原页给出，列覆盖缺口。 -/
+def sinN1Field (Q1 : ℝ) (z : Vec 4) : Vec 4 :=
+  ![0,Q1*z 2^2*z 3*z 1/(2*sinConstraint Q1 z),
+    Q1*z 2^3*z 3/(2*sinConstraint Q1 z)-z 3*z 2,0]
+def sinN2Field (Q1 Q2 θ : ℝ) (z : Vec 4) : Vec 4 := ![0,0,0,(Q1*z 2^2-θ)/Q2]
+theorem sinN_split (Q1 Q2 θ : ℝ) (z : Vec 4) :
+    sinNField Q1 Q2 θ z=sinN1Field Q1 z+sinN2Field Q1 Q2 θ z := by
+  ext i; fin_cases i <;> simp [sinNField,sinN1Field,sinN2Field]
+
+/-- source_id: MD-8.6.3-SINForceExactPrinted · 印刷p.372 / PDFp.393
+[EXTRA] 质量按本节假设取1；Q₁、Λ正，排除ṡ=0；F=0用b=0的解析延拓，避免总化除法假装极限。
+[EXTRA] 只声明候选流在有效域满足校正ODE，不证明全局流、组合方法精度或遍历性。
+[ERRATUM?] 已目视核对原页PDF393：所印ξ̇₁为正号，与前页力子场及ξ₁(h)=ξ₁(0)/ṡ(h)的负号导数冲突。保留原印和负号工作修正版。 -/
+def sinForceAux (a b t : ℝ) : ℝ :=
+  if b=0 then t+a*t^2/2 else Real.sinh (t*Real.sqrt b)/Real.sqrt b+a/b*(Real.cosh (t*Real.sqrt b)-1)
+def sinForceFlow (Q1 F t : ℝ) (z : Vec 4) : Vec 4 :=
+  let lam := sinConstraint Q1 z
+  let s := sinForceAux (F*z 1/lam) (F^2/lam)
+  ![z 0,(z 1+F*s t)/deriv s t,z 2/deriv s t,z 3]
+def sinForceODEPrinted (Q1 F : ℝ) (z : Vec 4) : Vec 4 :=
+  ![0,F-z 1^2*F/sinConstraint Q1 z,z 1*z 2*F/sinConstraint Q1 z,0]
+def sinForceODE_corrected (Q1 F : ℝ) : Vec 4 → Vec 4 := sinForceField Q1 F
+theorem sinForceFlow_solution_corrected (Q1 F : ℝ) (z : Vec 4)
+    (hQ1 : 0 < Q1) (hK : 0 < sinConstraint Q1 z) (t : ℝ)
+    (hden : deriv (sinForceAux (F*z 1/sinConstraint Q1 z) (F^2/sinConstraint Q1 z)) t ≠ 0) :
+    HasDerivAt (fun s ↦ sinForceFlow Q1 F s z)
+      (sinForceField Q1 F (sinForceFlow Q1 F t z)) t := by
+  sorry
+
+/-- source_id: MD-8.6.4-SINThreeLevelPotential · 印刷p.373 / PDFp.394
+[EXTRA] 仅保留势的三项分解和整数时标嵌套；SPME实现、99fs稳定性及水分子径向分布等属于数值观察，逐项排除。 -/
+def threeLevelPotential (bond short long : Vec n → ℝ) : Vec n → ℝ := bond+short+long
+def nestedTimeSteps (inner middle outer : ℝ) : Prop :=
+  0 < inner ∧ ∃ r s : ℕ, 0 < r ∧ 0 < s ∧ middle=r*inner ∧ outer=s*middle
+
 end MD.Ch08

@@ -1,6 +1,6 @@
 # 第8章 Lean Blueprint 本地审阅材料
 
-当前已整理50条；网站尚未审阅。正文范围为印刷329–399页（PDF350–420），末页仅取Exercises之前的正文；PDF423起附录不在本轮范围。
+当前已整理60条；网站尚未审阅。正文范围为印刷329–399页（PDF350–420），末页仅取Exercises之前的正文；PDF423起附录不在本轮范围。
 
 ## 1. MD-8.1-CanonicalCorrelation · definition · 印刷p.329–330 / PDFp.350–351
 
@@ -2416,4 +2416,513 @@ theorem sinWeight_stationary_corrected (U : ℝ → ℝ) (Q1 Q2 θ : ℝ)
 未证陈述；Lean陈述可检查，证明完整性按本条状态区分。
 未证原因：原文权重仅逐字保留不证；修正版通量散度的商法则计算。
 位置：Blueprint/Ch08.lean；MD.Ch08.sinWeightPrinted, MD.Ch08.sinWeight_corrected, MD.Ch08.sinWeight_stationary_corrected。
+
+## 1. MD-8.6.2-SINHarmonic · definition · 印刷p.366 / PDFp.387
+
+### 2. 原文陈述
+
+For μ₁=μ₂=1, dq=pdt, dp=(-q-λp)dt, dξ₁=(-λξ₁-ξ₂ξ₁)dt, dξ₂=(ξ₁²-k_BT-γξ₂)dt+σdW, λ=(-qp-ξ₂ξ₁²/2)/(p²+ξ₁²/2), σ=√(2γk_BT). (8.45)–(8.47).
+
+### 3. 原文证明
+
+对应原页推导逐字保存在statement_verbatim/original_page_text；排版以原页PDF为准。
+
+原页文字及推导保存在原文JSON的original_page_text；网站子包附对应完整原页PDF。
+
+### 4. 完整当前Lean（原文与修正版独立列出）
+
+```lean
+def sinHarmonicF (θ γ : ℝ) : Vec 4 → Vec 4 := sinDrift 1 1 θ γ (fun q ↦ -q)
+def sinHarmonicG (θ γ : ℝ) : Vec 4 := ![0,0,0,Real.sqrt (2*γ*θ)]
+def isSINHarmonicSolution (θ γ : ℝ) (P : Measure Ω) (W : ℝ → Ω → Vec 1)
+    (X : ℝ → Ω → Vec 4) (x0 : Vec 4) : Prop :=
+  isSINSolution 1 1 θ γ (fun q ↦ -q) P W X x0
+def sinExceptional (θ : ℝ) : Set (Vec 4) :=
+  {z | z 0=0 ∧ z 1=0 ∧ z 2^2=2*θ}
+def sinHalfCylinder (θ : ℝ) (positive : Bool) : Set (Vec 4) :=
+  {z | sinConstraint 1 z=θ ∧ (if positive then 0 < z 2 else z 2 < 0)}
+theorem sinHalfCylinder_disjoint (θ : ℝ) :
+    Disjoint (sinHalfCylinder θ true) (sinHalfCylinder θ false) := by
+  apply Set.disjoint_left.mpr
+  intro z hpos hneg
+  exact (not_lt_of_ge (le_of_lt hpos.2)) hneg.2
+```
+
+### 5. 对照表
+
+| 原文成分 | Lean对应 | 说明 |
+|---|---|---|
+| 本条引用的对象与公式 | MD.Ch08.sinHarmonicF, MD.Ch08.sinHarmonicG, MD.Ch08.isSINHarmonicSolution, MD.Ch08.sinExceptional, MD.Ch08.sinHalfCylinder, MD.Ch08.sinHalfCylinder_disjoint | 谐振SIN实际SDE、例外直线和半柱定义及半柱不交；不含全局遍历定理。 |
+
+[EXTRA] θ=k_BT>0、γ>0、标量Wiener由isSINSolution给全；零ξ₁面不变和两个半柱的轨道符号保持需要ODE唯一性，列覆盖缺口。
+记号与上下文：见所列原文与Lean量化变量。
+
+### 6. 审计结论
+
+本地：已对照目视原页核对对象、量词、技术资格和所列覆盖范围；网站尚未审阅。
+疑点：本条暂未发现需单列的原书疑误。
+网站：尚未送审。
+
+### 7. 状态与证明位置
+
+定义；Lean陈述可检查，证明完整性按本条状态区分。
+本条未登记待证缺项。
+位置：Blueprint/Ch08.lean；MD.Ch08.sinHarmonicF, MD.Ch08.sinHarmonicG, MD.Ch08.isSINHarmonicSolution, MD.Ch08.sinExceptional, MD.Ch08.sinHalfCylinder, MD.Ch08.sinHalfCylinder_disjoint。
+
+## 1. MD-8.6.2-SINProjectedBracketsPrinted · unnumbered_claim · 印刷p.367 / PDFp.388
+
+### 2. 原文陈述
+
+u₀=Πf, u₁=Π[f,g], u₂=Π[f,[f,g]], u₃=Π[f,[f,[f,g]]]. The displayed equations (8.48)–(8.53) give their components, with D=2p²+ξ₁².
+
+### 3. 原文证明
+
+对应原页推导逐字保存在statement_verbatim/original_page_text；排版以原页PDF为准。
+
+原页文字及推导保存在原文JSON的original_page_text；网站子包附对应完整原页PDF。
+
+### 4. 完整当前Lean（原文与修正版独立列出）
+
+```lean
+def bracket4 (f g : Vec 4 → Vec 4) (z : Vec 4) : Vec 4 :=
+  fderiv ℝ g z (f z)-fderiv ℝ f z (g z)
+def sinBracket (θ γ : ℝ) : ℕ → Vec 4 → Vec 4
+  | 0 => sinHarmonicF θ γ
+  | 1 => bracket4 (sinHarmonicF θ γ) (fun _ ↦ sinHarmonicG θ γ)
+  | k+2 => bracket4 (sinHarmonicF θ γ) (sinBracket θ γ (k+1))
+def projectFirstThree (z : Vec 4) : Vec 3 := ![z 0,z 1,z 2]
+def sinD (z : Vec 4) : ℝ := 2*z 1^2+z 2^2
+def sinU0Printed (z : Vec 4) : Vec 3 :=
+  ![z 1,z 2^2*(-z 0+z 1*z 3)/sinD z,-2*z 2*z 1*(-z 0+z 1*z 3)/sinD z]
+def sinU1Printed (z : Vec 4) : Vec 3 := sinU0Printed z
+def sinU2Printed (σ : ℝ) (z : Vec 4) : Vec 3 :=
+  ![0,-σ*z 2^2*z 1/sinD z,2*σ*z 2*z 1^2/sinD z]
+def sinU1DerivativePrinted (σ : ℝ) (z : Vec 4) : Vec 3 :=
+  let d := fderiv ℝ (sinMultiplier 1 (fun q ↦ -q)) z (Pi.single 3 1)
+  ![0,σ*z 1*d,z 2*(1+d)]
+def sinProjected_corrected (θ γ : ℝ) (j : Fin 4) (z : Vec 4) : Vec 3 :=
+  projectFirstThree (sinBracket θ γ j z)
+def sinU2LongPrinted (σ γ : ℝ) (z : Vec 4) : Vec 3 :=
+  let a := (2*γ*z 1^3+γ*z 2^2*z 1-z 2^2*z 0)/(sinD z)^2
+  ![σ*z 2^2*z 1/sinD z,-σ*a,2*σ*z 2*z 1*a]
+theorem sinU2Long_at_p0 (σ γ : ℝ) (z : Vec 4) (hp : z 1=0) :
+    sinU2LongPrinted σ γ z = ![0,σ*z 2^2*z 0/(sinD z)^2,0] := by
+  ext i; fin_cases i <;> simp [sinU2LongPrinted,hp] <;> ring
+```
+
+### 5. 对照表
+
+| 原文成分 | Lean对应 | 说明 |
+|---|---|---|
+| 本条引用的对象与公式 | MD.Ch08.bracket4, MD.Ch08.sinBracket, MD.Ch08.projectFirstThree, MD.Ch08.sinD, MD.Ch08.sinU0Printed, MD.Ch08.sinU1Printed, MD.Ch08.sinU2Printed, MD.Ch08.sinU1DerivativePrinted, MD.Ch08.sinProjected_corrected, MD.Ch08.sinU2LongPrinted, MD.Ch08.sinU2Long_at_p0 | 原印(8.48)–(8.53)的主要分量与实际交换子定义，(8.49)导数写法保存在逐字原页；未把错标指标视为已证恒等式。 |
+
+[EXTRA] 总化分式只在θ>0的约束面D=2θ>0使用；实际交换子先在四维完整计算再投影。；本条记录原印显式式和真实微分定义；显式式与真实二/三重交换子的等式尚未证明，列覆盖缺口。
+记号与上下文：见所列原文与Lean量化变量。
+
+### 6. 审计结论
+
+本地：已对照目视原页核对对象、量词、技术资格和所列覆盖范围；网站尚未审阅。
+疑点：已目视核对原页PDF388：(8.50)的u₁公式实际重写u₀，(8.51)的u₂公式实际为首交换子；(8.49)第三分量似缺共同σ。原印与真实迭代交换子独立保留。
+网站：尚未送审。
+
+### 7. 状态与证明位置
+
+已证；Lean陈述可检查，证明完整性按本条状态区分。
+本条未登记待证缺项。
+位置：Blueprint/Ch08.lean；MD.Ch08.bracket4, MD.Ch08.sinBracket, MD.Ch08.projectFirstThree, MD.Ch08.sinD, MD.Ch08.sinU0Printed, MD.Ch08.sinU1Printed, MD.Ch08.sinU2Printed, MD.Ch08.sinU1DerivativePrinted, MD.Ch08.sinProjected_corrected, MD.Ch08.sinU2LongPrinted, MD.Ch08.sinU2Long_at_p0。
+
+## 1. MD-8.6.2-SINThirdBracketPrinted · unnumbered_claim · 印刷p.368 / PDFp.389
+
+### 2. 原文陈述
+
+The third projected commutator is displayed in (8.54), with polynomial η in (8.55); its p=0 specialization is printed as u₃=-2σq∂q-σq(-γ+ξ₂)∂p in (8.56).
+
+### 3. 原文证明
+
+对应原页推导逐字保存在statement_verbatim/original_page_text；排版以原页PDF为准。
+
+原页文字及推导保存在原文JSON的original_page_text；网站子包附对应完整原页PDF。
+
+### 4. 完整当前Lean（原文与修正版独立列出）
+
+```lean
+def sinEtaPrinted (γ : ℝ) (z : Vec 4) : ℝ :=
+  4*z 1^5*γ^2-8*z 1^5*z 2^2-4*z 2^2*z 1^3+4*z 1^3*γ^2*z 2^2-4*z 1^3*z 2^4-
+  2*γ*z 2^2*z 1^2*z 0+4*z 1^2*z 0*z 3*z 2^2-4*z 2^2*z 0^2*z 1-
+  2*z 2^4*z 1+z 1*γ^2*z 2^4-z 0*γ*z 2^4+z 2^4*z 3*z 0
+def sinU3Printed (σ γ : ℝ) (z : Vec 4) : Vec 3 :=
+  ![σ*(2*γ*z 1^3-4*z 1^3*z 3+4*z 1^2*z 0+z 2^2*z 1*z 3+γ*z 2^2*z 1-2*z 2^2*z 0)/(sinD z)^2,
+    -σ*z 2^2*sinEtaPrinted γ z/(sinD z)^3,2*σ*z 2*z 1*sinEtaPrinted γ z/(sinD z)^3]
+def sinU3ZeroPrinted (σ γ : ℝ) (z : Vec 4) : Vec 3 :=
+  ![-2*σ*z 0,-σ*z 0*(-γ+z 3),0]
+def sinU3Zero_corrected (σ γ : ℝ) (z : Vec 4) : Vec 3 :=
+  ![-2*σ*z 0/z 2^2,-σ*z 0*(-γ+z 3),0]
+theorem sinU3Zero_specialize (σ γ : ℝ) (z : Vec 4) (hp : z 1=0) (hξ : z 2 ≠ 0) :
+    sinU3Printed σ γ z = sinU3Zero_corrected σ γ z := by
+  ext i; fin_cases i <;> simp [sinU3Printed,sinU3Zero_corrected,sinEtaPrinted,sinD,hp]
+    <;> field_simp [hξ] <;> ring
+```
+
+### 5. 对照表
+
+| 原文成分 | Lean对应 | 说明 |
+|---|---|---|
+| 本条引用的对象与公式 | MD.Ch08.sinEtaPrinted, MD.Ch08.sinU3Printed, MD.Ch08.sinU3ZeroPrinted, MD.Ch08.sinU3Zero_corrected, MD.Ch08.sinU3Zero_specialize | 原印三重交换子候选及p=0内部代数核对；真实三重交换子等式列覆盖缺口。 |
+
+[EXTRA] ξ₁≠0用于分式化简；此处只核对原印(8.54)与(8.56)内部的代数关系，不声称(8.54)已被确认为实际三重交换子。
+记号与上下文：见所列原文与Lean量化变量。
+
+### 6. 审计结论
+
+本地：已对照目视原页核对对象、量词、技术资格和所列覆盖范围；网站尚未审阅。
+疑点：已目视核对原页PDF389：(8.54)q分量代p=0得到-2σq/ξ₁²，(8.56)遗漏ξ₁²分母；原印多项式的其他系数仍待独立微分核对。
+网站：尚未送审。
+
+### 7. 状态与证明位置
+
+已证；Lean陈述可检查，证明完整性按本条状态区分。
+本条未登记待证缺项。
+位置：Blueprint/Ch08.lean；MD.Ch08.sinEtaPrinted, MD.Ch08.sinU3Printed, MD.Ch08.sinU3ZeroPrinted, MD.Ch08.sinU3Zero_corrected, MD.Ch08.sinU3Zero_specialize。
+
+## 1. MD-8.6.2-SINBracketRank · unnumbered_claim · 印刷p.366–368 / PDFp.387–389
+
+### 2. 原文陈述
+
+The fields f,g,[f,g],[f,[f,g]],[f,[f,[f,g]]] span the three-dimensional tangent space of the isokinetic cylinder except on M₀.
+
+### 3. 原文证明
+
+对应原页推导逐字保存在statement_verbatim/original_page_text；排版以原页PDF为准。
+
+原页文字及推导保存在原文JSON的original_page_text；网站子包附对应完整原页PDF。
+
+### 4. 完整当前Lean（原文与修正版独立列出）
+
+```lean
+theorem sinBracket_tangentSpan (θ γ : ℝ) (hθ : 0 < θ) (hγ : 0 < γ)
+    (z : Vec 4) (hz : sinConstraint 1 z=θ) (hξ : z 2 ≠ 0)
+    (hout : z ∉ sinExceptional θ) :
+    Submodule.span ℝ ({sinHarmonicG θ γ} ∪
+      Set.range (fun j : Fin 4 ↦ sinBracket θ γ j z)) =
+      LinearMap.ker (fderiv ℝ (sinConstraint 1) z).toLinearMap := by
+  sorry
+```
+
+### 5. 对照表
+
+| 原文成分 | Lean对应 | 说明 |
+|---|---|---|
+| 本条引用的对象与公式 | MD.Ch08.sinBracket_tangentSpan | 例外直线外的有限括号张成目标；非完整遍历性定理。 |
+
+[EXTRA] θ,γ正，ξ₁≠0且在正约束面；仅声明有限向量族张成实际切空间，Hörmander理论推出平滑密度或遍历性未覆盖。
+记号与上下文：见所列原文与Lean量化变量。
+
+### 6. 审计结论
+
+本地：已对照目视原页核对对象、量词、技术资格和所列覆盖范围；网站尚未审阅。
+疑点：本条暂未发现需单列的原书疑误。
+网站：尚未送审。
+
+### 7. 状态与证明位置
+
+未证陈述；Lean陈述可检查，证明完整性按本条状态区分。
+未证原因：真实迭代Fréchet导数及有限维秩/切核桥接；原印的错标公式不能直接充当证明。
+位置：Blueprint/Ch08.lean；MD.Ch08.sinBracket_tangentSpan。
+
+## 1. MD-8.6.2-SINLyapunov · unnumbered_claim · 印刷p.368–369 / PDFp.389–390
+
+### 2. 原文陈述
+
+For φ=ξ₂²/2, L_isok φ=(ξ₁²-β⁻¹)ξ₂-γξ₂²+σ²/2, and the isokinetic constraint bounds ξ₁. The negative tail drift supports the ergodicity argument with further assumptions.
+
+### 3. 原文证明
+
+对应原页推导逐字保存在statement_verbatim/original_page_text；排版以原页PDF为准。
+
+原页文字及推导保存在原文JSON的original_page_text；网站子包附对应完整原页PDF。
+
+### 4. 完整当前Lean（原文与修正版独立列出）
+
+```lean
+def sinGenerator (θ γ : ℝ) (F : ℝ → ℝ) (f : Vec 4 → ℝ) (z : Vec 4) : ℝ :=
+  additiveGenerator (sinDrift 1 1 θ γ F) (sinHarmonicG θ γ) f z
+theorem sinGenerator_lyapunov (θ γ : ℝ) (hθ : 0 < θ) (hγ : 0 < γ)
+    (F : ℝ → ℝ) (z : Vec 4) (hK : sinConstraint 1 z ≠ 0) :
+    sinGenerator θ γ F (fun x ↦ x 3^2/2) z =
+      (z 2^2-θ)*z 3-γ*z 3^2+γ*θ := by
+  sorry
+theorem sinConstraint_bathBound (θ : ℝ) (z : Vec 4) (hz : sinConstraint 1 z=θ) :
+    z 2^2 ≤ 2*θ := by
+  dsimp [sinConstraint] at hz
+  nlinarith [sq_nonneg (z 1)]
+```
+
+### 5. 对照表
+
+| 原文成分 | Lean对应 | 说明 |
+|---|---|---|
+| 本条引用的对象与公式 | MD.Ch08.sinGenerator, MD.Ch08.sinGenerator_lyapunov, MD.Ch08.sinConstraint_bathBound | 真实局部生成元Lyapunov计算及热浴变量界；不包含由此推出遍历性的充分性。 |
+
+[EXTRA] 仅生成元作用和约束界；原文有符号ξ₂的Kξ₂上界须区分尾部方向，严谨负漂移应使用K|ξ₂|并要求γ>0。；紧性、正密度、小集与Markov半群遍历定理均列覆盖缺口。
+记号与上下文：见所列原文与Lean量化变量。
+
+### 6. 审计结论
+
+本地：已对照目视原页核对对象、量词、技术资格和所列覆盖范围；网站尚未审阅。
+疑点：本条暂未发现需单列的原书疑误。
+网站：尚未送审。
+
+### 7. 状态与证明位置
+
+未证陈述；Lean陈述可检查，证明完整性按本条状态区分。
+未证原因：二次测试函数的实际二阶Fréchet计算；不建设遍历理论。
+位置：Blueprint/Ch08.lean；MD.Ch08.sinGenerator, MD.Ch08.sinGenerator_lyapunov, MD.Ch08.sinConstraint_bathBound。
+
+## 1. MD-8.6.3-SINForceSplitting · unnumbered_claim · 印刷p.370–371 / PDFp.391–392
+
+### 2. 原文陈述
+
+U=U_S+U_F and F=F_S+F_F. The generators split into kinetic, isokinetic fast force, isokinetic slow force, Nosé and OU terms; each preserves Λ=p²+μ₁ξ₁²/2.
+
+### 3. 原文证明
+
+对应原页推导逐字保存在statement_verbatim/original_page_text；排版以原页PDF为准。
+
+原页文字及推导保存在原文JSON的original_page_text；网站子包附对应完整原页PDF。
+
+### 4. 完整当前Lean（原文与修正版独立列出）
+
+```lean
+def sinKField (z : Vec 4) : Vec 4 := ![z 1,0,0,0]
+def sinForceField (Q1 F : ℝ) (z : Vec 4) : Vec 4 :=
+  ![0,F-z 1^2*F/sinConstraint Q1 z,-z 1*z 2*F/sinConstraint Q1 z,0]
+def sinNField (Q1 Q2 θ : ℝ) (z : Vec 4) : Vec 4 :=
+  ![0,Q1*z 2^2*z 3*z 1/(2*sinConstraint Q1 z),
+    Q1*z 2^3*z 3/(2*sinConstraint Q1 z)-z 3*z 2,(Q1*z 2^2-θ)/Q2]
+def sinOField (γ : ℝ) (z : Vec 4) : Vec 4 := ![0,0,0,-γ*z 3]
+theorem sinSplit_fields (Q1 Q2 θ γ : ℝ) (FF FS : ℝ → ℝ) (z : Vec 4)
+    (hK : sinConstraint Q1 z ≠ 0) :
+    sinDrift Q1 Q2 θ γ (fun q ↦ FF q+FS q) z =
+      sinKField z+sinForceField Q1 (FF (z 0)) z+
+      sinForceField Q1 (FS (z 0)) z+sinNField Q1 Q2 θ z+sinOField γ z := by
+  ext i; fin_cases i <;> simp [sinDrift,sinMultiplier,sinKField,sinForceField,sinNField,sinOField]
+    <;> field_simp <;> ring
+theorem sinForce_constraintBalance (Q1 F : ℝ) (z : Vec 4)
+    (hK : sinConstraint Q1 z ≠ 0) :
+    2*z 1*(sinForceField Q1 F z) 1+Q1*z 2*(sinForceField Q1 F z) 2=0 := by
+  change 2*z 1*(F-z 1^2*F/sinConstraint Q1 z)+
+    Q1*z 2*(-z 1*z 2*F/sinConstraint Q1 z)=0
+  generalize hd : sinConstraint Q1 z = lam at *
+  field_simp [hK]
+  rw [← hd]
+  dsimp [sinConstraint]
+  ring
+```
+
+### 5. 对照表
+
+| 原文成分 | Lean对应 | 说明 |
+|---|---|---|
+| 本条引用的对象与公式 | MD.Ch08.sinKField, MD.Ch08.sinForceField, MD.Ch08.sinNField, MD.Ch08.sinOField, MD.Ch08.sinSplit_fields, MD.Ch08.sinForce_constraintBalance | 五个子场及其实际和分解、力子场瞬时约束平衡；不含整体方法阶数。 |
+
+[EXTRA] Q₁,Q₂,θ>0且Λ=θ为物理域，总化场保留作辅助；本条含完整漂移和分解及力子场瞬时约束平衡，其他子场的流存在/保约束列缺口。
+记号与上下文：见所列原文与Lean量化变量。
+
+### 6. 审计结论
+
+本地：已对照目视原页核对对象、量词、技术资格和所列覆盖范围；网站尚未审阅。
+疑点：本条暂未发现需单列的原书疑误。
+网站：尚未送审。
+
+### 7. 状态与证明位置
+
+已证；Lean陈述可检查，证明完整性按本条状态区分。
+本条未登记待证缺项。
+位置：Blueprint/Ch08.lean；MD.Ch08.sinKField, MD.Ch08.sinForceField, MD.Ch08.sinNField, MD.Ch08.sinOField, MD.Ch08.sinSplit_fields, MD.Ch08.sinForce_constraintBalance。
+
+## 1. MD-8.6.3-SINRAlgorithm · definition · 印刷p.371 / PDFp.392
+
+### 2. 原文陈述
+
+The SIN(R) algorithm uses h̃=h/r, r−2 repeated inner blocks, outer Nosé half-steps, combined fast/slow force half-steps and independent OU substeps.
+
+### 3. 原文证明
+
+对应原页推导逐字保存在statement_verbatim/original_page_text；排版以原页PDF为准。
+
+原页文字及推导保存在原文JSON的original_page_text；网站子包附对应完整原页PDF。
+
+### 4. 完整当前Lean（原文与修正版独立列出）
+
+```lean
+inductive SINStage where
+  | kinetic | fast | slow | nose | ou
+  deriving DecidableEq
+def sinRStages (h : ℝ) (r : ℕ) : List (List (SINStage × ℝ)) :=
+  let a := h/(r:ℝ)
+  [[(.nose,h/2)],[(.fast,a/2),(.slow,h/2)],[(.kinetic,a)],[(.ou,a)],[(.fast,a/2)]] ++
+  List.flatten (List.replicate (r-2)
+    [[(.fast,a/2)],[(.kinetic,a/2)],[(.ou,a)],[(.kinetic,a/2)],[(.fast,a/2)]]) ++
+  [[(.fast,a/2)],[(.ou,a)],[(.kinetic,a)],[(.fast,a/2),(.slow,h/2)],[(.nose,h/2)]]
+```
+
+### 5. 对照表
+
+| 原文成分 | Lean对应 | 说明 |
+|---|---|---|
+| 本条引用的对象与公式 | MD.Ch08.SINStage, MD.Ch08.sinRStages | 原印算法的阶段顺序与步长；不声称构造了各非线性子流。 |
+
+[EXTRA] 算法有效域h>0、r≥2；一组中多个场表示同一次合并传播，并非擅自换为两个非交换流。每次OU用独立标准正态新噪声。；这里只记录精确阶段表，具体随机核实现、保约束及全局误差/阶数列覆盖缺口。
+记号与上下文：见所列原文与Lean量化变量。
+
+### 6. 审计结论
+
+本地：已对照目视原页核对对象、量词、技术资格和所列覆盖范围；网站尚未审阅。
+疑点：本条暂未发现需单列的原书疑误。
+网站：尚未送审。
+
+### 7. 状态与证明位置
+
+定义；Lean陈述可检查，证明完整性按本条状态区分。
+本条未登记待证缺项。
+位置：Blueprint/Ch08.lean；MD.Ch08.SINStage, MD.Ch08.sinRStages。
+
+## 1. MD-8.6.3-SINNoseSubsplitting · unnumbered_claim · 印刷p.372 / PDFp.393
+
+### 2. 原文陈述
+
+L_N=L_N^(1)+L_N^(2). The first term acts on p,ξ₁, the second has μ₂⁻¹(μ₁ξ₁²-β⁻¹)∂ξ₂.
+
+### 3. 原文证明
+
+对应原页推导逐字保存在statement_verbatim/original_page_text；排版以原页PDF为准。
+
+原页文字及推导保存在原文JSON的original_page_text；网站子包附对应完整原页PDF。
+
+### 4. 完整当前Lean（原文与修正版独立列出）
+
+```lean
+def sinN1Field (Q1 : ℝ) (z : Vec 4) : Vec 4 :=
+  ![0,Q1*z 2^2*z 3*z 1/(2*sinConstraint Q1 z),
+    Q1*z 2^3*z 3/(2*sinConstraint Q1 z)-z 3*z 2,0]
+def sinN2Field (Q1 Q2 θ : ℝ) (z : Vec 4) : Vec 4 := ![0,0,0,(Q1*z 2^2-θ)/Q2]
+theorem sinN_split (Q1 Q2 θ : ℝ) (z : Vec 4) :
+    sinNField Q1 Q2 θ z=sinN1Field Q1 z+sinN2Field Q1 Q2 θ z := by
+  ext i; fin_cases i <;> simp [sinNField,sinN1Field,sinN2Field]
+```
+
+### 5. 对照表
+
+| 原文成分 | Lean对应 | 说明 |
+|---|---|---|
+| 本条引用的对象与公式 | MD.Ch08.sinN1Field, MD.Ch08.sinN2Field, MD.Ch08.sinN_split | Nosé场的两项分解恒等式。 |
+
+[EXTRA] 正质量、温度及Λ>0作为物理资格；高阶Yoshida/Suzuki组合的系数和误差阶未在原页给出，列覆盖缺口。
+记号与上下文：见所列原文与Lean量化变量。
+
+### 6. 审计结论
+
+本地：已对照目视原页核对对象、量词、技术资格和所列覆盖范围；网站尚未审阅。
+疑点：本条暂未发现需单列的原书疑误。
+网站：尚未送审。
+
+### 7. 状态与证明位置
+
+已证；Lean陈述可检查，证明完整性按本条状态区分。
+本条未登记待证缺项。
+位置：Blueprint/Ch08.lean；MD.Ch08.sinN1Field, MD.Ch08.sinN2Field, MD.Ch08.sinN_split。
+
+## 1. MD-8.6.3-SINForceExactPrinted · unnumbered_claim · 印刷p.372 / PDFp.393
+
+### 2. 原文陈述
+
+ṗ=F−p²F/Λ, ξ̇₁=pξ₁F/Λ. The printed solution is p(h)=(p(0)+(F/m)s(h))/ṡ(h), ξ₁(h)=ξ₁(0)/ṡ(h), with s(t)=b⁻¹/²sinh(t√b)+(a/b)(cosh(t√b)−1), a=Fp(0)/Λ, b=F²/Λ.
+
+### 3. 原文证明
+
+对应原页推导逐字保存在statement_verbatim/original_page_text；排版以原页PDF为准。
+
+原页文字及推导保存在原文JSON的original_page_text；网站子包附对应完整原页PDF。
+
+### 4. 完整当前Lean（原文与修正版独立列出）
+
+```lean
+def sinForceAux (a b t : ℝ) : ℝ :=
+  if b=0 then t+a*t^2/2 else Real.sinh (t*Real.sqrt b)/Real.sqrt b+a/b*(Real.cosh (t*Real.sqrt b)-1)
+def sinForceFlow (Q1 F t : ℝ) (z : Vec 4) : Vec 4 :=
+  let lam := sinConstraint Q1 z
+  let s := sinForceAux (F*z 1/lam) (F^2/lam)
+  ![z 0,(z 1+F*s t)/deriv s t,z 2/deriv s t,z 3]
+def sinForceODEPrinted (Q1 F : ℝ) (z : Vec 4) : Vec 4 :=
+  ![0,F-z 1^2*F/sinConstraint Q1 z,z 1*z 2*F/sinConstraint Q1 z,0]
+def sinForceODE_corrected (Q1 F : ℝ) : Vec 4 → Vec 4 := sinForceField Q1 F
+theorem sinForceFlow_solution_corrected (Q1 F : ℝ) (z : Vec 4)
+    (hQ1 : 0 < Q1) (hK : 0 < sinConstraint Q1 z) (t : ℝ)
+    (hden : deriv (sinForceAux (F*z 1/sinConstraint Q1 z) (F^2/sinConstraint Q1 z)) t ≠ 0) :
+    HasDerivAt (fun s ↦ sinForceFlow Q1 F s z)
+      (sinForceField Q1 F (sinForceFlow Q1 F t z)) t := by
+  sorry
+```
+
+### 5. 对照表
+
+| 原文成分 | Lean对应 | 说明 |
+|---|---|---|
+| 本条引用的对象与公式 | MD.Ch08.sinForceAux, MD.Ch08.sinForceFlow, MD.Ch08.sinForceODEPrinted, MD.Ch08.sinForceODE_corrected, MD.Ch08.sinForceFlow_solution_corrected | 原印子场、显式候选与校正ODE的局部导数目标。 |
+
+[EXTRA] 质量按本节假设取1；Q₁、Λ正，排除ṡ=0；F=0用b=0的解析延拓，避免总化除法假装极限。；只声明候选流在有效域满足校正ODE，不证明全局流、组合方法精度或遍历性。
+记号与上下文：见所列原文与Lean量化变量。
+
+### 6. 审计结论
+
+本地：已对照目视原页核对对象、量词、技术资格和所列覆盖范围；网站尚未审阅。
+疑点：已目视核对原页PDF393：所印ξ̇₁为正号，与前页力子场及ξ₁(h)=ξ₁(0)/ṡ(h)的负号导数冲突。保留原印和负号工作修正版。
+网站：尚未送审。
+
+### 7. 状态与证明位置
+
+未证陈述；Lean陈述可检查，证明完整性按本条状态区分。
+未证原因：双曲函数求导、分式约束及F=0分支；最多三条短路线后保留待证。
+位置：Blueprint/Ch08.lean；MD.Ch08.sinForceAux, MD.Ch08.sinForceFlow, MD.Ch08.sinForceODEPrinted, MD.Ch08.sinForceODE_corrected, MD.Ch08.sinForceFlow_solution_corrected。
+
+## 1. MD-8.6.4-SINThreeLevelPotential · definition · 印刷p.373 / PDFp.394
+
+### 2. 原文陈述
+
+U_Total=U_bonds+U_s.r.+U_l.r.; h_outer and h_mid are integer multiples of the next smaller stepsizes.
+
+### 3. 原文证明
+
+对应原页推导逐字保存在statement_verbatim/original_page_text；排版以原页PDF为准。
+
+原页文字及推导保存在原文JSON的original_page_text；网站子包附对应完整原页PDF。
+
+### 4. 完整当前Lean（原文与修正版独立列出）
+
+```lean
+def threeLevelPotential (bond short long : Vec n → ℝ) : Vec n → ℝ := bond+short+long
+def nestedTimeSteps (inner middle outer : ℝ) : Prop :=
+  0 < inner ∧ ∃ r s : ℕ, 0 < r ∧ 0 < s ∧ middle=r*inner ∧ outer=s*middle
+```
+
+### 5. 对照表
+
+| 原文成分 | Lean对应 | 说明 |
+|---|---|---|
+| 本条引用的对象与公式 | MD.Ch08.threeLevelPotential, MD.Ch08.nestedTimeSteps | 三层势与步长嵌套的定义。 |
+
+[EXTRA] 仅保留势的三项分解和整数时标嵌套；SPME实现、99fs稳定性及水分子径向分布等属于数值观察，逐项排除。
+记号与上下文：见所列原文与Lean量化变量。
+
+### 6. 审计结论
+
+本地：已对照目视原页核对对象、量词、技术资格和所列覆盖范围；网站尚未审阅。
+疑点：本条暂未发现需单列的原书疑误。
+网站：尚未送审。
+
+### 7. 状态与证明位置
+
+定义；Lean陈述可检查，证明完整性按本条状态区分。
+本条未登记待证缺项。
+位置：Blueprint/Ch08.lean；MD.Ch08.threeLevelPotential, MD.Ch08.nestedTimeSteps。
 

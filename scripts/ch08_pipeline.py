@@ -30,7 +30,7 @@ def generate():
     source=ROOT/'Blueprint/Ch08.lean';source.write_text(text,encoding='utf-8')
     dump(BASE/'ch08_source.json',[{k:v for k,v in r.items() if k not in ['code','local_verdict','missing']} for r in RECORDS])
     dump(BASE/'excluded_qualitative.json',EXCLUDED)
-    names=re.findall(r'(?m)^(?:noncomputable )?(?:def|abbrev|theorem|lemma|structure)\s+(\w+)',text)
+    names=re.findall(r'(?m)^(?:noncomputable )?(?:def|abbrev|theorem|lemma|structure|inductive)\s+(\w+)',text)
     audit='\n'.join('#print axioms MD.Ch08.'+n for n in names)+'\n'
     (BASE/'CheckAxioms.lean').write_text('import Blueprint.Ch08\n\n'+audit,encoding='utf-8')
     old=json.loads((BASE/'local_audit.json').read_text(encoding='utf-8')) if (BASE/'local_audit.json').exists() else {}
@@ -107,7 +107,7 @@ def batch(label):
 def section(label):
     verify_frozen();state=json.loads((BASE/'local_audit.json').read_text(encoding='utf-8'));assert all(r['checked'] for r in state['items'].values())
     # Reuse the unchanged complete formal-library check. Its original report is preserved.
-    shared=ROOT/'blueprint/ch06/closeout26/full';r=json.loads((shared/'CHECK_REPORT.json').read_text(encoding='utf-8-sig'))
+    shared=ROOT/'blueprint/ch07/closeout29/full';r=json.loads((shared/'CHECK_REPORT.json').read_text(encoding='utf-8-sig'))
     assert r['machine_check_status']=='passed'
     for p in r['inputs']:assert sha(ROOT/p['relative_path'])==p['sha256'],p['relative_path']
     for c in r['checks']:assert c['exit_code']==0 and sha(shared/c['raw_log'])==c['raw_log_sha256']

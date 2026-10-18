@@ -1,6 +1,6 @@
 # 第8章逐条进度
 
-当前正文落盘：50条。全部正文完成：否。章末完整check：未完成。
+当前正文落盘：60条。全部正文完成：否。章末完整check：未完成。
 
 | source_id | 原页PDF | 本地对照 | 编译/公理 | 数学状态 | 网站 |
 |---|---|---|---|---|---|
@@ -54,3 +54,13 @@
 | MD-8.6-IsokineticGibbsShell | 384 | PASS | 通过 | 已证 | 待审 |
 | MD-8.6.1-StochasticIsokinetic | 385–386 | PASS | 通过 | 定义 | 待审 |
 | MD-8.6.1-SINWeightPrinted | 386 | NEEDS_HUMAN | 通过 | 未证陈述 | 待审 |
+| MD-8.6.2-SINHarmonic | 387 | PASS | 通过 | 定义 | 待审 |
+| MD-8.6.2-SINProjectedBracketsPrinted | 388 | NEEDS_HUMAN | 通过 | 已证 | 待审 |
+| MD-8.6.2-SINThirdBracketPrinted | 389 | NEEDS_HUMAN | 通过 | 已证 | 待审 |
+| MD-8.6.2-SINBracketRank | 387–389 | PASS | 通过 | 未证陈述 | 待审 |
+| MD-8.6.2-SINLyapunov | 389–390 | PASS | 通过 | 未证陈述 | 待审 |
+| MD-8.6.3-SINForceSplitting | 391–392 | PASS | 通过 | 已证 | 待审 |
+| MD-8.6.3-SINRAlgorithm | 392 | PASS | 通过 | 定义 | 待审 |
+| MD-8.6.3-SINNoseSubsplitting | 393 | PASS | 通过 | 已证 | 待审 |
+| MD-8.6.3-SINForceExactPrinted | 393 | NEEDS_HUMAN | 通过 | 未证陈述 | 待审 |
+| MD-8.6.4-SINThreeLevelPotential | 394 | PASS | 通过 | 定义 | 待审 |

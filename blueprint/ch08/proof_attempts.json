@@ -126,10 +126,10 @@
     "decision": "缺大型理论时直接记录缺项；否则最多三条短路线。"
   },
   "MD-8.6-IsokineticProjector": {
-    "reason": "有限和投影复合的短证明尚未展开；按29号要求在当前批次可编译处暂停，不是缺大型理论。",
+    "reason": "有限和提取标量后的投影复合代数短证明。",
     "category": "时间盒止",
     "routes": [],
-    "decision": "保留sorry；29号恢复第8章后可在最多三条短路线内继续。"
+    "decision": "缺大型理论时直接记录缺项；否则最多三条短路线。"
   },
   "MD-8.6-IsokineticDivergencePrinted": {
     "reason": "Printed散度符号疑误不证；修正版需商法则与有限维散度。",
@@ -139,6 +139,24 @@
   },
   "MD-8.6.1-SINWeightPrinted": {
     "reason": "原文权重仅逐字保留不证；修正版通量散度的商法则计算。",
+    "category": "原书疑误不证",
+    "routes": [],
+    "decision": "缺大型理论时直接记录缺项；否则最多三条短路线。"
+  },
+  "MD-8.6.2-SINBracketRank": {
+    "reason": "真实迭代Fréchet导数及有限维秩/切核桥接；原印的错标公式不能直接充当证明。",
+    "category": "缺大型理论",
+    "routes": [],
+    "decision": "缺大型理论时直接记录缺项；否则最多三条短路线。"
+  },
+  "MD-8.6.2-SINLyapunov": {
+    "reason": "二次测试函数的实际二阶Fréchet计算；不建设遍历理论。",
+    "category": "缺大型理论",
+    "routes": [],
+    "decision": "缺大型理论时直接记录缺项；否则最多三条短路线。"
+  },
+  "MD-8.6.3-SINForceExactPrinted": {
+    "reason": "双曲函数求导、分式约束及F=0分支；最多三条短路线后保留待证。",
     "category": "原书疑误不证",
     "routes": [],
     "decision": "缺大型理论时直接记录缺项；否则最多三条短路线。"

@@ -23,7 +23,7 @@ variable {n : ℕ}
 def add(key,section,page,text,code,*,kind='unnumbered_claim',label=None,proof=None,
         context=(),extra=(),issues=(),missing=None,scope=None,prior=(),verdict='PASS',equations=()):
     nums=[int(x) for x in re.findall(r'\d+',str(page))]
-    names=re.findall(r'(?m)^(?:noncomputable )?(?:def|abbrev|theorem|lemma|structure)\s+(\w+)',code)
+    names=re.findall(r'(?m)^(?:noncomputable )?(?:def|abbrev|theorem|lemma|structure|inductive)\s+(\w+)',code)
     assert names,(key,code)
     pages=list(range(nums[0]+21,nums[-1]+22))
     original=[dict(pdf_page=p,printed_page=p-21,text=(BASE/f'source_pages/pdf{p}.txt').read_text(encoding='utf-8')) for p in pages]

@@ -1,0 +1,2063 @@
+{
+  "instruction": 29,
+  "ch07_commit": "bf0f8b8a70861f952d191370d079231f7b49ebee",
+  "authorized_ch07_rebase_only": {
+    "blueprint/ch07/ch07_source.json": {
+      "before": "c434892ebf63b06f7cadcdfa7af408c2c12d7b645d35db431d1855224163ba19",
+      "after": "1a201887b51a249fb73f456237cb342963c5d98c612ec1912f21572a57924012"
+    },
+    "blueprint/ch07/CheckAxioms.lean": {
+      "before": "f04af6c00ddede3ccb54f4df4d94be94c21c63540cb5758d10963208b74bcf16",
+      "after": "89ddf57a63379b447a891876e51648c91f2bdc6988d005de79090c98f311f68e"
+    },
+    "blueprint/ch07/local_audit.json": {
+      "before": "4709c82897ad9513d7f4456d3e063c25e80650b8d45c695a235c0c1a48bbbcbe",
+      "after": "5ef9468d2a36c9870b40189125ad2b70fb3e495e8042e8f456eedd55adf9367c"
+    },
+    "blueprint/ch07/LOCAL_PIPELINE.md": {
+      "before": "182e6cedcfc77c91355f53f6387e0275af5b721c23abb89ee7125340f70efd01",
+      "after": "7f441a74f187eafe91d10f3708b8ed4d5e14064eceb9ec9e5d5a0cf6ae78ce2e"
+    },
+    "blueprint/ch07/PROGRESS.md": {
+      "before": "4856327f80ade6de7af8b4005ed61512760338d542c36a059c0090d32ac0e9ca",
+      "after": "0d53414b5d14bfab34d6fdd06e943f450f7cb0936f202fe18a87510dbb515387"
+    },
+    "blueprint/ch07/proof_attempts.json": {
+      "before": "30696464e9815cd6c861026f3b7bfac5510721ca756f92ec79d58b518460dc4a",
+      "after": "db8dd658b501a7a801784aacdf4c49d0f0b518ba7efec03d486748a4336d7847"
+    },
+    "blueprint/ch07/USER_INSTRUCTION_29.zh-CN.md": {
+      "before": null,
+      "after": "7d7e5454bba4fe4b320aca5f76e01dd6c230aeb847c38a53af71aec6e2a3f43d"
+    },
+    "blueprint/ch07/website_audit.json": {
+      "before": null,
+      "after": "8b8527154aaf4d10be647861b3f37f0097fbf3831bd15f63c54280da78d782a0"
+    },
+    "blueprint/ch07/WEBSITE_SUMMARY.json": {
+      "before": null,
+      "after": "7e148f938239b2b99f397095b0da8fcba7bb51c2ef3db34c0aff7f424b87d3b3"
+    },
+    "blueprint/ch07/closeout29/ActiveCheck.lean": {
+      "before": null,
+      "after": "3612fd5277db3ebf2cf31402d20d4d7105b1179c3a0bbaaf743a93609dc28847"
+    },
+    "blueprint/ch07/closeout29/ApproximateGeodesicOrder-PREPARED.json": {
+      "before": null,
+      "after": "bb711205a71a33dede27cf9e395e9297b9272925bad25ad525ce0b68aa44f742"
+    },
+    "blueprint/ch07/closeout29/ApproximateGeodesicOrder.diff": {
+      "before": null,
+      "after": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "blueprint/ch07/closeout29/BAOABLimitMethod-PREPARED.json": {
+      "before": null,
+      "after": "460abd39e7897cd89da9f72efb4fc29613fde97cab62828bb49b87ee271528ca"
+    },
+    "blueprint/ch07/closeout29/BAOABLimitMethod.diff": {
+      "before": null,
+      "after": "d814429342adbbd9d8f3b3d29b9ff645ec4d9b20e21eb170ad7dfd236ac9b6c8"
+    },
+    "blueprint/ch07/closeout29/BAOABMarginalCancellation-PREPARED.json": {
+      "before": null,
+      "after": "ad3bb8bdf084c95c53a4b73736c59cbcdce2570b89c412c26e87f711a81536ba"
+    },
+    "blueprint/ch07/closeout29/BAOABMarginalCancellation.diff": {
+      "before": null,
+      "after": "dbf5709246a480859a25c83b2166c722cf49d2c5d1b5da91ec8366c1fe4b6bab"
+    },
+    "blueprint/ch07/closeout29/BiasedDoubleWellExact-PREPARED.json": {
+      "before": null,
+      "after": "6b8f4281926ce82e43b3d60c67987779da5a0fe5589386559ebb67502ac449cc"
+    },
+    "blueprint/ch07/closeout29/BiasedDoubleWellExact.diff": {
+      "before": null,
+      "after": "60c06ff899ca442e212246a0888a1586a88affb6dc02ed4a57ee89c431776f85"
+    },
+    "blueprint/ch07/closeout29/Ch07.before.lean": {
+      "before": null,
+      "after": "f30ea154ebfb07ae85c0b806ff74b35808d5a0c3dcaa647c0c3cc80a78239e37"
+    },
+    "blueprint/ch07/closeout29/ch07_source.before.json": {
+      "before": null,
+      "after": "c434892ebf63b06f7cadcdfa7af408c2c12d7b645d35db431d1855224163ba19"
+    },
+    "blueprint/ch07/closeout29/ColoredNoiseAndExtension-PREPARED.json": {
+      "before": null,
+      "after": "e039a7a82707eed5570641f7de8bfe84aedf7a9c198c0a78752ede72bacada05"
+    },
+    "blueprint/ch07/closeout29/ColoredNoiseAndExtension.diff": {
+      "before": null,
+      "after": "51b54e44a4936f2d85760123d387b022b037bad721dc6ba443949ff7968e3164"
+    },
+    "blueprint/ch07/closeout29/common29.py": {
+      "before": null,
+      "after": "3c574be9042fe7d0a454e44a3f15aa75a2add7db4b663a084ca2fe0d2fe026c4"
+    },
+    "blueprint/ch07/closeout29/CommutatorPermutationRelations-PREPARED.json": {
+      "before": null,
+      "after": "3a838db4bc4671a0c7d0a8cce3adfe96a11304039773375c2de23d2c2dff790f"
+    },
+    "blueprint/ch07/closeout29/CommutatorPermutationRelations.diff": {
+      "before": null,
+      "after": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "blueprint/ch07/closeout29/ConjugateIteration-PREPARED.json": {
+      "before": null,
+      "after": "6ca7fd4624a834499d44a030ac1fd5bb1d434761c0726d818254e86c8898b8af"
+    },
+    "blueprint/ch07/closeout29/ConjugateIteration.diff": {
+      "before": null,
+      "after": "ad95c02eb9c72ac19e4aaf01a6c316f096932d21b7284be9c29eda23d5b34639"
+    },
+    "blueprint/ch07/closeout29/ConstrainedHOSplitting-PREPARED.json": {
+      "before": null,
+      "after": "93a262d3f37049c7be4eb02fd102e5db941f3915bf1472587bef4f5b91ebf920"
+    },
+    "blueprint/ch07/closeout29/ConstrainedHOSplitting.diff": {
+      "before": null,
+      "after": "c51c571baf309727214c030516a4c8e2b0ef20355372820fc81c3045145eeaac"
+    },
+    "blueprint/ch07/closeout29/CoordinateJSplitting-PREPARED.json": {
+      "before": null,
+      "after": "4a19a7d9d4affb1c83f18cffc7c7dc37cb070e118ac2edc1e2282cfaa51edccd"
+    },
+    "blueprint/ch07/closeout29/CoordinateJSplitting.diff": {
+      "before": null,
+      "after": "b5925ff514f256c8c7b1b7f31ab16d7c58d3330d2f25be6681c3d982814ea2a8"
+    },
+    "blueprint/ch07/closeout29/DECLARATIONS.json": {
+      "before": null,
+      "after": "5359747ff86e7c714a2904c22dea94ebccc64860fee0c010d05a0c47dd80ee79"
+    },
+    "blueprint/ch07/closeout29/DELIVERY_VALIDATION.json": {
+      "before": null,
+      "after": "18307ebb5d4783efe555fa8b607da3c2fde4db55290dbfe652bf0b6de8bf85b3"
+    },
+    "blueprint/ch07/closeout29/DivergenceFreeInvariant-PREPARED.json": {
+      "before": null,
+      "after": "9727c89b3357763916e055d883729bc66bc8975312704a5de732871d012898e2"
+    },
+    "blueprint/ch07/closeout29/DivergenceFreeInvariant.diff": {
+      "before": null,
+      "after": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "blueprint/ch07/closeout29/EvenDensityPerturbation-PREPARED.json": {
+      "before": null,
+      "after": "c7b81cffa6cc6c298611fff256928e2ef07151f021e50800a78958412c2b0275"
+    },
+    "blueprint/ch07/closeout29/EvenDensityPerturbation.diff": {
+      "before": null,
+      "after": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "blueprint/ch07/closeout29/FAIL_QUEUE.json": {
+      "before": null,
+      "after": "dd6446b05c66b2f5cfa399185fa4f910a8487ee24d21c9e2e798af5e5b5ca554"
+    },
+    "blueprint/ch07/closeout29/FAIL_REVIEW.txt": {
+      "before": null,
+      "after": "7536b11a97985f00e23a6ea3d878ee9848d0cc74cf536df8cea60349543eacc6"
+    },
+    "blueprint/ch07/closeout29/finalize29.py": {
+      "before": null,
+      "after": "5147a507a58f6ec75ce49ece2c0aeb6e095518ddd3b17185fb54fd71d83b0bf5"
+    },
+    "blueprint/ch07/closeout29/FirstCorrectionTablePrinted-PREPARED.json": {
+      "before": null,
+      "after": "84edc73e19ef518ca9ba0f6ab2c73ef729ae4895ac36c568f939ba84f9aad882"
+    },
+    "blueprint/ch07/closeout29/FirstCorrectionTablePrinted.diff": {
+      "before": null,
+      "after": "e785f0df85a7acf1f8159c9b1a7b38f82367c7466a1e387948d10d69ed171cc6"
+    },
+    "blueprint/ch07/closeout29/FROZEN_BASELINE.json": {
+      "before": null,
+      "after": "727e2478bbba8dee5d472ef317ad51503066951464421784af11c425f8abcb4f"
+    },
+    "blueprint/ch07/closeout29/full-check-run.log": {
+      "before": null,
+      "after": "1dee6ece371d4b1d16123df3c89728a622b0eba608cbf54f882e2172102660a3"
+    },
+    "blueprint/ch07/closeout29/full29.py": {
+      "before": null,
+      "after": "eefc8057ab40398c890c3d7f3bb4d7e6529f3ec6cad6bbeaa1d1e472ed2d01b9"
+    },
+    "blueprint/ch07/closeout29/FULL_BINDING.json": {
+      "before": null,
+      "after": "2365b1d38991e408e69eacd2ead3ce6a23d3bef61e3dd0038db2cc1b1b6e8dd5"
+    },
+    "blueprint/ch07/closeout29/GibbsComposition-PREPARED.json": {
+      "before": null,
+      "after": "7cde47f654d12470250d96994de0db4ec2a6f249f3e5c36f7a74d70ac301ffe9"
+    },
+    "blueprint/ch07/closeout29/GibbsComposition.diff": {
+      "before": null,
+      "after": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "blueprint/ch07/closeout29/GibbsDerivativeIdentities-PREPARED.json": {
+      "before": null,
+      "after": "ac1620da1f2a23740512b3d4ffecd8b11aa4fb21dd2fdfae755aabdcb7522460"
+    },
+    "blueprint/ch07/closeout29/GibbsDerivativeIdentities.diff": {
+      "before": null,
+      "after": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "blueprint/ch07/closeout29/HighFrictionCorrectionTable-PREPARED.json": {
+      "before": null,
+      "after": "549d88e0f6572ed2af0fbb999b27843a739bd009d25aa8ad3625be63e7a3cad9"
+    },
+    "blueprint/ch07/closeout29/HighFrictionCorrectionTable.diff": {
+      "before": null,
+      "after": "9d4f8575e5e36ea72a6321bd9f7d5b4edfbafb0d7f639255b1297aa96ea6a9b7"
+    },
+    "blueprint/ch07/closeout29/HUMAN-BBKStarMomentSystemPrinted-PREPARED.json": {
+      "before": null,
+      "after": "c3432589a4138322344a235fb16ef11a3b3b0bebee2ff8c17e68650fb2bcf44e"
+    },
+    "blueprint/ch07/closeout29/HUMAN-BBKStarMomentSystemPrinted.diff": {
+      "before": null,
+      "after": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "blueprint/ch07/closeout29/HUMAN-ConjugateSymmetricCorrections-PREPARED.json": {
+      "before": null,
+      "after": "3c969a9fca39ebf6c8c5dfb6eb8bed0adc1465f5790e0045d377917dac75bf58"
+    },
+    "blueprint/ch07/closeout29/HUMAN-ConjugateSymmetricCorrections.diff": {
+      "before": null,
+      "after": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "blueprint/ch07/closeout29/HUMAN-ConstrainedCanonicalErgodicity-PREPARED.json": {
+      "before": null,
+      "after": "9c1baee77778a63e6753a259de4e02e7aeaa6aaa6becc0e386a5b9c69b6c1705"
+    },
+    "blueprint/ch07/closeout29/HUMAN-ConstrainedCanonicalErgodicity.diff": {
+      "before": null,
+      "after": "06eb657f9fbb48c7f9034f0c0eb6f9e27a2d1da07d43c5ccb02f62b967dc7125"
+    },
+    "blueprint/ch07/closeout29/HUMAN-ConstrainedLangevin-PREPARED.json": {
+      "before": null,
+      "after": "adf84bba6add17e66be19a1ed1cdb8d724bdfa735cfcffa341b422700a8f7132"
+    },
+    "blueprint/ch07/closeout29/HUMAN-ConstrainedLangevin.diff": {
+      "before": null,
+      "after": "d218c4bf8cc4ffff2b8859d4cd40feae791cc840baee31f18f4aaa8226a55190"
+    },
+    "blueprint/ch07/closeout29/HUMAN-FirstReciprocalCorrection-PREPARED.json": {
+      "before": null,
+      "after": "5931a9719c0394bdcbc5b85b81ac6f2b0693a11923ecf9bddd582ae4b828a0ac"
+    },
+    "blueprint/ch07/closeout29/HUMAN-FirstReciprocalCorrection.diff": {
+      "before": null,
+      "after": "ef4b50a46cca6f1cf672ea00d60c29c6540cca32cc833aa865a81f336aba632a"
+    },
+    "blueprint/ch07/closeout29/HUMAN-FrictionThresholdPrinted-PREPARED.json": {
+      "before": null,
+      "after": "b922cf0ba686fedca7b32579227f44a7f5ec0c561c6aa1b824ea31502822640a"
+    },
+    "blueprint/ch07/closeout29/HUMAN-FrictionThresholdPrinted.diff": {
+      "before": null,
+      "after": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "blueprint/ch07/closeout29/HUMAN-GeMarsdenRestriction-PREPARED.json": {
+      "before": null,
+      "after": "d87410d67b4dff55dbc7176f0a3d6c7504f7657e4bcd5faed3b270d0040e002c"
+    },
+    "blueprint/ch07/closeout29/HUMAN-GeMarsdenRestriction.diff": {
+      "before": null,
+      "after": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "blueprint/ch07/closeout29/HUMAN-HamiltonianSamplingObstruction-PREPARED.json": {
+      "before": null,
+      "after": "6ef69f663b1cb9b51c02a7fc5e16416f26500c8f9bc7f1a3992a3fcfc0486cef"
+    },
+    "blueprint/ch07/closeout29/HUMAN-HamiltonianSamplingObstruction.diff": {
+      "before": null,
+      "after": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "blueprint/ch07/closeout29/HUMAN-HyperbolicPhaseTransform-PREPARED.json": {
+      "before": null,
+      "after": "8f3bd3a8f043dafdcbfa2503a8e4a757cb5f18390e04c874e48ad4db3ae4ac00"
+    },
+    "blueprint/ch07/closeout29/HUMAN-HyperbolicPhaseTransform.diff": {
+      "before": null,
+      "after": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "blueprint/ch07/closeout29/HUMAN-LimitMethodAccuracy-PREPARED.json": {
+      "before": null,
+      "after": "ba6eb3f66bcc1556825fc2477ba76359ad1cd548d090c05d4d1352e7704e3d72"
+    },
+    "blueprint/ch07/closeout29/HUMAN-LimitMethodAccuracy.diff": {
+      "before": null,
+      "after": "1725b2e4f00ddd4abbc4d858efa09710d61bb095458125b744ff4898c1988cdc"
+    },
+    "blueprint/ch07/closeout29/HUMAN-OUExactUpdate-PREPARED.json": {
+      "before": null,
+      "after": "3c54de2224ed722c519e44a2ed2ddbf68a7ec548094a54bfe49820a155354e2c"
+    },
+    "blueprint/ch07/closeout29/HUMAN-OUExactUpdate.diff": {
+      "before": null,
+      "after": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "blueprint/ch07/closeout29/HUMAN-OUKernelQualification-PREPARED.json": {
+      "before": null,
+      "after": "3cf5f859fb5784fa93fb7ad4a7b3ffb84b13ce3ae2085600bec6bacdeedfaa8c"
+    },
+    "blueprint/ch07/closeout29/HUMAN-OUKernelQualification.diff": {
+      "before": null,
+      "after": "a573bcb1a0a0b5150b2398a0b4ab65b653a1a56507fa3de2879730ce64401749"
+    },
+    "blueprint/ch07/closeout29/HUMAN-OverdampedSolvabilityOperators-PREPARED.json": {
+      "before": null,
+      "after": "ffee1d4088c87fa598f225d0253b836b7881784409729d3109448739880e9a72"
+    },
+    "blueprint/ch07/closeout29/HUMAN-OverdampedSolvabilityOperators.diff": {
+      "before": null,
+      "after": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "blueprint/ch07/closeout29/HUMAN-PartitionPrinted-PREPARED.json": {
+      "before": null,
+      "after": "b8d05d01b3882ee564675ea4e1d63b77366a8b02bcf766eb58efb4df88fdddfa"
+    },
+    "blueprint/ch07/closeout29/HUMAN-PartitionPrinted.diff": {
+      "before": null,
+      "after": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "blueprint/ch07/closeout29/HUMAN-PerturbativeSolvabilityCaution-PREPARED.json": {
+      "before": null,
+      "after": "4d31ec4d75bdab960282fd729885c4f3c0f5885aea34f618da363ee86e65a5f6"
+    },
+    "blueprint/ch07/closeout29/HUMAN-PerturbativeSolvabilityCaution.diff": {
+      "before": null,
+      "after": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "blueprint/ch07/closeout29/HUMAN-PerturbedErrorExpansion-PREPARED.json": {
+      "before": null,
+      "after": "88d11347c584094a3f6de90b47939aed6a16966a0cf7a34bc8ece13c3093013d"
+    },
+    "blueprint/ch07/closeout29/HUMAN-PerturbedErrorExpansion.diff": {
+      "before": null,
+      "after": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "blueprint/ch07/closeout29/HUMAN-PerturbedErrorOrders-PREPARED.json": {
+      "before": null,
+      "after": "c09318a9b9a1194e89a3aeb0b21781be68b7b37700ef812f7dc54e7d750983ef"
+    },
+    "blueprint/ch07/closeout29/HUMAN-PerturbedErrorOrders.diff": {
+      "before": null,
+      "after": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "blueprint/ch07/closeout29/HUMAN-SpectralQualification-PREPARED.json": {
+      "before": null,
+      "after": "94d986a01314749a687d11517e8307d1fd01b307fe22e25d662df4402461a5a5"
+    },
+    "blueprint/ch07/closeout29/HUMAN-SpectralQualification.diff": {
+      "before": null,
+      "after": "7599a3754a7fb1b62d7175b5650928d7f815fb6c34163c10690f73e90861839c"
+    },
+    "blueprint/ch07/closeout29/HUMAN-SPVLargeFriction-PREPARED.json": {
+      "before": null,
+      "after": "6bfa3875db7453918b33dd4b197579db864f332fdc569611745e9ad9ff76c5bb"
+    },
+    "blueprint/ch07/closeout29/HUMAN-SPVLargeFriction.diff": {
+      "before": null,
+      "after": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "blueprint/ch07/closeout29/HUMAN-SPVPrinted-PREPARED.json": {
+      "before": null,
+      "after": "08da65f4edeb2b8b50ecf13fc17135f2319222b34c951247195c6e35548fed75"
+    },
+    "blueprint/ch07/closeout29/HUMAN-SPVPrinted.diff": {
+      "before": null,
+      "after": "798ce7f858be132d1e8667b9043fef5d40284d2c1ea2535765861aed74e345ad"
+    },
+    "blueprint/ch07/closeout29/HUMAN-StationaryModifiedPDE-PREPARED.json": {
+      "before": null,
+      "after": "b2be4d505c780fa2694bb83aa35a65c1ebe0feb7dca01d61737ea48a7808a491"
+    },
+    "blueprint/ch07/closeout29/HUMAN-StationaryModifiedPDE.diff": {
+      "before": null,
+      "after": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "blueprint/ch07/closeout29/HUMAN-StrongWeakComparison-PREPARED.json": {
+      "before": null,
+      "after": "568a4a83f6fd6f81985f6dd829c097b12c61d979e503d7484288dd42c4724b42"
+    },
+    "blueprint/ch07/closeout29/HUMAN-StrongWeakComparison.diff": {
+      "before": null,
+      "after": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "blueprint/ch07/closeout29/HUMAN-TripleCommutatorPrinted-PREPARED.json": {
+      "before": null,
+      "after": "54de565610bad366478c62429929621f77f31eae84ad954579fc16b552840e73"
+    },
+    "blueprint/ch07/closeout29/HUMAN-TripleCommutatorPrinted.diff": {
+      "before": null,
+      "after": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "blueprint/ch07/closeout29/HUMAN-UnderdampedPhasePrinted-PREPARED.json": {
+      "before": null,
+      "after": "4d3db92462e0638ee5283cdacd410c139ad66bc4e84885d0389606717b40b61d"
+    },
+    "blueprint/ch07/closeout29/HUMAN-UnderdampedPhasePrinted.diff": {
+      "before": null,
+      "after": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "blueprint/ch07/closeout29/human29.py": {
+      "before": null,
+      "after": "cb35ce310771d1abbf4b8ea3106839926b48612e130f5b5748a8a31593e10447"
+    },
+    "blueprint/ch07/closeout29/HUMAN_REPAIRS.json": {
+      "before": null,
+      "after": "9b263fcb78b59cb8a0b7efdcfa2aee5b6434de44f6bb7ba262e49b43d3b8cd04"
+    },
+    "blueprint/ch07/closeout29/JSplitting-PREPARED.json": {
+      "before": null,
+      "after": "da5eacd5855186768a4177602ad59e1ad666089fd1640ca479928b5eee76f3b0"
+    },
+    "blueprint/ch07/closeout29/JSplitting.diff": {
+      "before": null,
+      "after": "7d9786d734ec3e1aa12ca643a0173942f25f2b437ade14323f341a9045a903b9"
+    },
+    "blueprint/ch07/closeout29/lean-server-stderr.log": {
+      "before": null,
+      "after": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "blueprint/ch07/closeout29/LEAN_SERVER_RUNNING.json": {
+      "before": null,
+      "after": "c5a1453792e4dcd94444736538fd1741817158443fb23547f4b85075c79793fb"
+    },
+    "blueprint/ch07/closeout29/local_audit.before.json": {
+      "before": null,
+      "after": "4709c82897ad9513d7f4456d3e063c25e80650b8d45c695a235c0c1a48bbbcbe"
+    },
+    "blueprint/ch07/closeout29/lsp29.py": {
+      "before": null,
+      "after": "ed1609fd639afe08196abe02380a34e423f518cacd0d04b440fe16c50838ee01"
+    },
+    "blueprint/ch07/closeout29/LSP_FALLBACK.json": {
+      "before": null,
+      "after": "49a2a7ce807f91b5c180a15c620c295d4a73e3803d1f2ddb51fe637d12b50d1b"
+    },
+    "blueprint/ch07/closeout29/MomentumRedrawLimit-PREPARED.json": {
+      "before": null,
+      "after": "679d3d6a45ac8848113fb75300bf20d09a8d98487ed33fd16d6f119ecc85caf7"
+    },
+    "blueprint/ch07/closeout29/MomentumRedrawLimit.diff": {
+      "before": null,
+      "after": "460f697a5e951ab37087da5f9b4c64560f04fb21056bc0c6ebac756d55b4c18a"
+    },
+    "blueprint/ch07/closeout29/NEEDS_HUMAN_REVIEW.txt": {
+      "before": null,
+      "after": "5d2c2cdb46b915768bf1e4afa5d975d1eb1ae3fcb166c279a89a7a21da98952c"
+    },
+    "blueprint/ch07/closeout29/NonsymmetricExactMoments-PREPARED.json": {
+      "before": null,
+      "after": "5b2890751ee01a0f8c6f08078c4e876e79c13f28fa375561b17e6257dedd82c0"
+    },
+    "blueprint/ch07/closeout29/NonsymmetricExactMoments.diff": {
+      "before": null,
+      "after": "7ffa9705b3fa8ca38f4b636b0e979c78fc9c070072f2488207648d6f823b9c00"
+    },
+    "blueprint/ch07/closeout29/OBAModifiedOperator-PREPARED.json": {
+      "before": null,
+      "after": "988749b63d778ec788862ae787ae779860ca38d5cae8cc4442378dbfbcb1ff85"
+    },
+    "blueprint/ch07/closeout29/OBAModifiedOperator.diff": {
+      "before": null,
+      "after": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "blueprint/ch07/closeout29/OperatorOrderReversal-PREPARED.json": {
+      "before": null,
+      "after": "734ee380d5077a7f6a266ace3b541b802d4921b321833e7021437181876f98f7"
+    },
+    "blueprint/ch07/closeout29/OperatorOrderReversal.diff": {
+      "before": null,
+      "after": "105e672f8c0828a6fe5f40ebced4ea5a80005852b894f6ba44058a3f1c1fa324"
+    },
+    "blueprint/ch07/closeout29/OUHermiteIdentities-PREPARED.json": {
+      "before": null,
+      "after": "9fd3746b427bb2c82d74868975067fc86be921a2dc99ecf6b9d343ec13dec2db"
+    },
+    "blueprint/ch07/closeout29/OUHermiteIdentities.diff": {
+      "before": null,
+      "after": "64abe31559ae5448508798942b02db87ad33d9ccce35a51629321fe0ceaf916d"
+    },
+    "blueprint/ch07/closeout29/OverdampedFirstOrderCaution-PREPARED.json": {
+      "before": null,
+      "after": "fe2a78e4d52b91565486527f9b4a72f00c09b20ac71ed631a16e6079d8088128"
+    },
+    "blueprint/ch07/closeout29/OverdampedFirstOrderCaution.diff": {
+      "before": null,
+      "after": "6481283e28028394f11b4b9f1fd04dfba0c99749ac8f62d4bf4e4e069c4473be"
+    },
+    "blueprint/ch07/closeout29/packages29.py": {
+      "before": null,
+      "after": "bbdd6218ecec39df789ad0bab592fb20f441e824cf6e599d6133185dacb7e74a"
+    },
+    "blueprint/ch07/closeout29/PACKAGE_VALIDATION.json": {
+      "before": null,
+      "after": "87d40604c18700878e82ea91295dc7cb7603c7175c35053eb3ae4c8f09672965"
+    },
+    "blueprint/ch07/closeout29/pdf283.png": {
+      "before": null,
+      "after": "0fa77b496352cd860911b87011ea47e464ba81799721755956af371afadd9936"
+    },
+    "blueprint/ch07/closeout29/pdf286.png": {
+      "before": null,
+      "after": "3cbb33162c1d63077d1afdd66f2d542953d7ed3c35fc41588052e116b3adcf20"
+    },
+    "blueprint/ch07/closeout29/pdf287.png": {
+      "before": null,
+      "after": "f56eaec5ea27d8af87d153ae1e516b14c84abf560061dd748a42e1820a51e305"
+    },
+    "blueprint/ch07/closeout29/pdf289.png": {
+      "before": null,
+      "after": "9031ed40a3f954bd80e5051c2f49f3afb267c1eacbd071904e93bfbcc0b0af3b"
+    },
+    "blueprint/ch07/closeout29/pdf291.png": {
+      "before": null,
+      "after": "50b1776dc84989e5a3f4ba0d42f8661e2806510e0f5af54cd21d6bce9d6cfdd2"
+    },
+    "blueprint/ch07/closeout29/pdf293.png": {
+      "before": null,
+      "after": "6d65617c21313e1212f17900b9c5bff6148daa362164a938c2ef19e48e30a596"
+    },
+    "blueprint/ch07/closeout29/pdf294.png": {
+      "before": null,
+      "after": "1786f6a2f883bddeb41df49aa98806daa5da5c5c455d3cde178398149db1647c"
+    },
+    "blueprint/ch07/closeout29/pdf299.png": {
+      "before": null,
+      "after": "d17a0c1fe0eca47ea569e34bd778469f5ec631dd4ef821c33a6cf979644a552b"
+    },
+    "blueprint/ch07/closeout29/pdf300.png": {
+      "before": null,
+      "after": "dd7404b0788a0a71b8d825c129498f607c9d52d1776a3c1acec8027f99bfc5a6"
+    },
+    "blueprint/ch07/closeout29/pdf301.png": {
+      "before": null,
+      "after": "6b5390e1e2184bfcf1ae6353fb320667414cbbfd4077c9e6fd25e9b72fa7604c"
+    },
+    "blueprint/ch07/closeout29/pdf303.png": {
+      "before": null,
+      "after": "2724ab4668571fe4f4f2f7caee4013691c8af5264ff30610957268e69a9ca28b"
+    },
+    "blueprint/ch07/closeout29/pdf306.png": {
+      "before": null,
+      "after": "fbe1a06a964701343dfc18a7f597a24d63028556fc23d9067e77d9434f34b844"
+    },
+    "blueprint/ch07/closeout29/pdf307.png": {
+      "before": null,
+      "after": "36ceba5c134bbd0955a7dace842aa28c5905e7e35a0a5c508142636ff3443f10"
+    },
+    "blueprint/ch07/closeout29/pdf310.png": {
+      "before": null,
+      "after": "9b3df3b33d360039b74a696f785318618a8602b6c21665663847b879ba9ad732"
+    },
+    "blueprint/ch07/closeout29/pdf311.png": {
+      "before": null,
+      "after": "edf93e7ccdd8e18ee4832b1ddb477c3429d5a8ebb8d2410644852f881f909d9e"
+    },
+    "blueprint/ch07/closeout29/pdf314.png": {
+      "before": null,
+      "after": "720c0370cfcc8ee61ae4bcb11f9ed33e5f001365d45efa95300edd4497463e71"
+    },
+    "blueprint/ch07/closeout29/pdf315.png": {
+      "before": null,
+      "after": "cb2f6e51838ddf8009d1807acdcdc216f5b26adbb0a47edddacd645419bf6ff3"
+    },
+    "blueprint/ch07/closeout29/pdf320.png": {
+      "before": null,
+      "after": "3f78e46acfb7b8a0c0e45bcdb0806b7c197567613535a1fdf24b3319cdb2b45e"
+    },
+    "blueprint/ch07/closeout29/pdf321.png": {
+      "before": null,
+      "after": "467f6c760effdc2fec8a2a716f3a076b345f78197cf08c08ab806e6e47029032"
+    },
+    "blueprint/ch07/closeout29/pdf322.png": {
+      "before": null,
+      "after": "cc215fb0cdfd0b3420b741760142a47dc948e96883ed5d7a479f717f4e056725"
+    },
+    "blueprint/ch07/closeout29/pdf323.png": {
+      "before": null,
+      "after": "137082d8ed74c0f8060bb6273d4d6fe5f2052097de987923aea311f180f042f7"
+    },
+    "blueprint/ch07/closeout29/pdf324.png": {
+      "before": null,
+      "after": "42b1f4be0e53e332fc46a4c17f228cf3af0387fb40adfb5567580b3f53faacaf"
+    },
+    "blueprint/ch07/closeout29/pdf325.png": {
+      "before": null,
+      "after": "f1ae93bff000dff00cc3082e38592cc2a37297313f50047acf51d68442dd4f13"
+    },
+    "blueprint/ch07/closeout29/pdf329.png": {
+      "before": null,
+      "after": "1aade6be5a344802729674fd99063d77adb5977ff2bd124909ae16a0fb521205"
+    },
+    "blueprint/ch07/closeout29/pdf338.png": {
+      "before": null,
+      "after": "715c37486d80e724fc8a54e538ad84cc623b66f27898e1fff5e8f135cd772a27"
+    },
+    "blueprint/ch07/closeout29/pdf345.png": {
+      "before": null,
+      "after": "66c2ccde4cb2d2374c265d59acc9b334efc9e77809897b6c777a20527cca771c"
+    },
+    "blueprint/ch07/closeout29/pdf346.png": {
+      "before": null,
+      "after": "644f2836f1809ee9744cb5f75e9dc6a056cb7e3ee494b5b176db004e90cde4cd"
+    },
+    "blueprint/ch07/closeout29/PDF_VISUAL_CHECKS.json": {
+      "before": null,
+      "after": "ff8e863e04455be37622c3e0555b1246a3789dad7c5652204561884bb9e203d0"
+    },
+    "blueprint/ch07/closeout29/proof_attempts.before.json": {
+      "before": null,
+      "after": "30696464e9815cd6c861026f3b7bfac5510721ca756f92ec79d58b518460dc4a"
+    },
+    "blueprint/ch07/closeout29/REAUDIT_SELECTION.json": {
+      "before": null,
+      "after": "c345499084536801736c08feb8472bb2d72d56a72762c6ec51a01605dbe50e8b"
+    },
+    "blueprint/ch07/closeout29/ReciprocalFrictionExpansion-PREPARED.json": {
+      "before": null,
+      "after": "5a80e01ce24d2822c3b0e49b1699619dda682807f569fc53812a5f1fe88d70d2"
+    },
+    "blueprint/ch07/closeout29/ReciprocalFrictionExpansion.diff": {
+      "before": null,
+      "after": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "blueprint/ch07/closeout29/register29.py": {
+      "before": null,
+      "after": "223d32b482651b24b2c02405bb96385db6e8400f7a06b9d3aaf491157e46b565"
+    },
+    "blueprint/ch07/closeout29/repair29.py": {
+      "before": null,
+      "after": "4d0a4ff17fca05b90882a982f0cd95a8eb44d8259582151265cc4e6333aed8a0"
+    },
+    "blueprint/ch07/closeout29/REPAIRS.json": {
+      "before": null,
+      "after": "10ebb8c8be547a3a14f0512e4efbf6ee9c63c4b38c009504a8e7c86c014a35ab"
+    },
+    "blueprint/ch07/closeout29/RETURNS.json": {
+      "before": null,
+      "after": "6275f03c72d4a60f618b1605c24c44982414e41db32fc4c238b4ec3c3872a55e"
+    },
+    "blueprint/ch07/closeout29/RETURN_ARTIFACT_HASH_CHECK.json": {
+      "before": null,
+      "after": "0334c9c9fe514b53e9d9fa41df84765d907f47903014667919e896d4aade218e"
+    },
+    "blueprint/ch07/closeout29/RETURN_REGISTRATION.json": {
+      "before": null,
+      "after": "ec25501ced002665ee4601e94c68520e9deb3d5eab68c0d55f43cc0db2b96a62"
+    },
+    "blueprint/ch07/closeout29/run_human29.py": {
+      "before": null,
+      "after": "30c301e8b14aee1750b46669362125a4217e8bd001328e280c0795e8691186c3"
+    },
+    "blueprint/ch07/closeout29/SCOPE_SELF_CHECK.json": {
+      "before": null,
+      "after": "6331cd638a2d9f759c9bb991e4a899aa95b0b185fd372574b97c408bf3d69ea3"
+    },
+    "blueprint/ch07/closeout29/SCOPE_SELF_CHECK.txt": {
+      "before": null,
+      "after": "0f758211f903aa595ff85a4e891250da41f1c8a7846857a486d97699b2a65476"
+    },
+    "blueprint/ch07/closeout29/SpectralRadiusStability-PREPARED.json": {
+      "before": null,
+      "after": "c2fd40f8ac716e993e95c92f899e2d374ec23a13911bed9710b40b31fa8e7136"
+    },
+    "blueprint/ch07/closeout29/SpectralRadiusStability.diff": {
+      "before": null,
+      "after": "7395a11527bb87ec8dd9e993a3965b75e4151fd25a6fd0cffdb46a069c1f125f"
+    },
+    "blueprint/ch07/closeout29/SUMMARY.json": {
+      "before": null,
+      "after": "7e148f938239b2b99f397095b0da8fcba7bb51c2ef3db34c0aff7f424b87d3b3"
+    },
+    "blueprint/ch07/closeout29/SuperconvergenceScope-PREPARED.json": {
+      "before": null,
+      "after": "0b40065f8e7469f4ddc23eac09d323bd2c5d1faad8c360b68bcf4800b6cbfa0a"
+    },
+    "blueprint/ch07/closeout29/SuperconvergenceScope.diff": {
+      "before": null,
+      "after": "5cff92444072fe19abcd249c80ef81155bd1eec396f2d3c13afb8a62b257f263"
+    },
+    "blueprint/ch07/closeout29/supplement29.py": {
+      "before": null,
+      "after": "32b7129411330397654f9b70332efab06c9289062420dad5dfef6db9fd405c1f"
+    },
+    "blueprint/ch07/closeout29/SUPPLEMENT_REPAIRS.json": {
+      "before": null,
+      "after": "a9a46521b33db85d372d9d597d8c0898103719dc332fd8d0360508cfd2b50aa9"
+    },
+    "blueprint/ch07/closeout29/SymmetricRHS-PREPARED.json": {
+      "before": null,
+      "after": "93f0ad94684293dc4b8824ce094699ae30d3b3df1aae96cd87cdc2bcb29bf78d"
+    },
+    "blueprint/ch07/closeout29/SymmetricRHS.diff": {
+      "before": null,
+      "after": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "blueprint/ch07/closeout29/TaylorRemainder-PREPARED.json": {
+      "before": null,
+      "after": "45cbfe659c0f60a6901f4c33df0d993b44e44265779717b57c6c7451f0897441"
+    },
+    "blueprint/ch07/closeout29/TaylorRemainder.diff": {
+      "before": null,
+      "after": "f0e0b1db5994ec9eed3139b6c8a1bec606cf67c43e62c2ccd1b6f9f4a3fa5506"
+    },
+    "blueprint/ch07/closeout29/validate29.py": {
+      "before": null,
+      "after": "6af34b205e74105b78034ddac9e7616bec882be813fb6d7e3ffff1b36fda3b7e"
+    },
+    "blueprint/ch07/closeout29/WordConvention-PREPARED.json": {
+      "before": null,
+      "after": "261c7759593815f4c4fd4ec7e83a0656d0ab1737dab9db50bfa6030a957d10cf"
+    },
+    "blueprint/ch07/closeout29/WordConvention.diff": {
+      "before": null,
+      "after": "2715e2fd9599f97cb72cde30419d1756ccfa2626e309370794b6bf3a1848470d"
+    },
+    "blueprint/ch07/mathcopilot_results/BATCH01_result.json": {
+      "before": null,
+      "after": "fde110f03045d0d84c1fc9c8a64e9b6844d4323aca3635ecccfefa168ae43d18"
+    },
+    "blueprint/ch07/mathcopilot_results/BATCH02_result.json": {
+      "before": null,
+      "after": "f27b1187c70637eb717aabfe8a06a3dfcb9290c87ed20bd993a2099737554781"
+    },
+    "blueprint/ch07/mathcopilot_results/BATCH03_result.json": {
+      "before": null,
+      "after": "d9e1776301d3c81a7f720d9f77424b823972798ebc50b502267c4b76d0f1f98f"
+    },
+    "blueprint/ch07/mathcopilot_results/BATCH04_result.json": {
+      "before": null,
+      "after": "7b4b25585fdffef30c4ebe471f31536168c7d157ccae9089d7f68e4e67cd1db4"
+    },
+    "blueprint/ch07/mathcopilot_results/BATCH05_result.json": {
+      "before": null,
+      "after": "4ae83f1d1fe4dec4dd8d7676d15577268195f06369c0889373233c0f5d50f920"
+    },
+    "blueprint/ch07/mathcopilot_results/BATCH06_result.json": {
+      "before": null,
+      "after": "8f4f6ec3b67d181d45e493fbc5559e5558b2d7db907f9bc3b6372984bd3c3379"
+    },
+    "blueprint/ch07/mathcopilot_results/BATCH07_result.json": {
+      "before": null,
+      "after": "4f46d7d513c13b93e113628866cac1b493877e5bfcc32de606ce232f0d82d3a7"
+    },
+    "blueprint/ch07/mathcopilot_results/BATCH08_result.json": {
+      "before": null,
+      "after": "5ed2827feb6f341ce38349824a164279007a4e7958bc13cd7c10457fa6a0fa3e"
+    },
+    "blueprint/ch07/mathcopilot_results/BATCH09_result.json": {
+      "before": null,
+      "after": "9cd897da387605c252f990fb6867cb836ca94553367c64113c004ce0c9dfe92f"
+    },
+    "blueprint/ch07/mathcopilot_results/BATCH10_result.json": {
+      "before": null,
+      "after": "02dbf95c0972f39c0b65c1f19a5d30d879eff127845608dd5a673a1cf3b83614"
+    },
+    "blueprint/ch07/mathcopilot_results/BATCH11_result.json": {
+      "before": null,
+      "after": "bb06cbb8dd5e173b561f628ffdb7754e9ad783fcd010c5c59d1139aaf3c22606"
+    },
+    "blueprint/ch07/mathcopilot_results/BATCH12_result.json": {
+      "before": null,
+      "after": "81da88c5a86946d07b881441e6b0689d2a19091b0ec3f6cd9a09d512f7bcf1ab"
+    },
+    "blueprint/ch07/mathcopilot_results/BATCH13_result.json": {
+      "before": null,
+      "after": "c394005ace94c63aa2c9d7def3128206574d1644bd3cad7b929b50cadcec63a8"
+    },
+    "blueprint/ch07/mathcopilot_results/BATCH14_result.json": {
+      "before": null,
+      "after": "ea1b6ed8335c6e92f3eed6854b8f1cfdd98a36698eb79725b78520981aaf8c31"
+    },
+    "blueprint/ch07/mathcopilot_results/BATCH15_result.json": {
+      "before": null,
+      "after": "f95e6e6bfa7235bb8a581c2eace825249be7882a0d47424c8d75a2e011fa8af2"
+    },
+    "blueprint/ch07/mathcopilot_results/BATCH16_result.json": {
+      "before": null,
+      "after": "9d2474fd0066617613a1334e9d1e67b7ac12c89c2af0fb2a324b5bd9f9ad012d"
+    },
+    "blueprint/ch07/mathcopilot_results/BATCH17_result.json": {
+      "before": null,
+      "after": "869728ae566307dd60f93f2989eb733ccdbc530d033d5a4569611fda4274a53a"
+    },
+    "blueprint/ch07/mathcopilot_results/BATCH18_result.json": {
+      "before": null,
+      "after": "ddbc9efed203dc0ef49278f86e00c5f16c9126185c875e3d46ae045825859dda"
+    },
+    "blueprint/ch07/mathcopilot_results/BATCH19_result.json": {
+      "before": null,
+      "after": "f07de88c889bb27aeafa470ab4fd29f0213a40a364ee7a7d1322d7388e3dc37e"
+    },
+    "blueprint/ch07/mathcopilot_results/BATCH20_result.json": {
+      "before": null,
+      "after": "d9776c91b6a419f9519e3c56b36b8135a84493a9183b07bf7dfa00ec911f9735"
+    },
+    "blueprint/ch07/mathcopilot_tasks/EAUDIT01.md": {
+      "before": null,
+      "after": "0b8947f28af080e0f62ad14fa1706c7de09d88676cd827ed4809bbe9a17d60b2"
+    },
+    "blueprint/ch07/mathcopilot_tasks/EAUDIT02.md": {
+      "before": null,
+      "after": "c24fe5607bad18d859b24b66e83103b67b019b980eaf4d9d0e4bb0331b606c22"
+    },
+    "blueprint/ch07/mathcopilot_tasks/EAUDIT03.md": {
+      "before": null,
+      "after": "9a958b2b0bd76b3b11c43828d6814a731a42f5d11809bf2e869bfea044b79cd8"
+    },
+    "blueprint/ch07/mathcopilot_tasks/EAUDIT04.md": {
+      "before": null,
+      "after": "b19c87efc07448afb85ca20e92f20742b40231fd8f35cd1205e4dc91bf43d18f"
+    },
+    "blueprint/ch07/mathcopilot_tasks/EAUDIT05.md": {
+      "before": null,
+      "after": "db60c4d555daa9409b9d619333c922994eea30d606bd3d651e1322fa2ea16f90"
+    },
+    "blueprint/ch07/mathcopilot_tasks/EAUDIT06.md": {
+      "before": null,
+      "after": "8dcca5df81b45930c530ccc2a6bd4a96a063e36c8241f399b9651603d3d7ae2d"
+    },
+    "blueprint/ch07/mathcopilot_tasks/EAUDIT07.md": {
+      "before": null,
+      "after": "18010c6d4dad2658a5874081659ce02e8e70295c188f56e8475cc38e3b4a5567"
+    },
+    "blueprint/ch07/mathcopilot_tasks/EAUDIT08.md": {
+      "before": null,
+      "after": "3f889c4610f5c13cf15645e5ed6277c2a8e1486e4c2501bbfe446b3f6a63e022"
+    },
+    "blueprint/ch07/mathcopilot_tasks/EAUDIT09.md": {
+      "before": null,
+      "after": "21a573bb8291a35dda1b8a2ee2e7c69759f8931e4773ebbe14b1c5876a3b606e"
+    },
+    "blueprint/ch07/mathcopilot_tasks/EAUDIT10.md": {
+      "before": null,
+      "after": "e99c2f9e048cdd42ec311ef5c6ce34c37c90eccc37a944b01da1d1688a93a52e"
+    },
+    "blueprint/ch07/mathcopilot_tasks/EAUDIT11.md": {
+      "before": null,
+      "after": "42fe12e2f385db88dc65d082ffc8e6e1e67d7db742e13c645cf185adc3793fda"
+    },
+    "blueprint/ch07/mathcopilot_tasks/EAUDIT12.md": {
+      "before": null,
+      "after": "933eaa2645540105cda88ac1ddf129375ad85771d179762c097ddd20564e89cc"
+    },
+    "blueprint/ch07/mathcopilot_tasks/EAUDIT_INDEX.md": {
+      "before": null,
+      "after": "5b1cef347ad420eed6d8c0b4bbbb8f42377d4a1b43ab6b03e2d130654f31258c"
+    },
+    "blueprint/ch07/mathcopilot_tasks/EAUDIT_MANIFEST.json": {
+      "before": null,
+      "after": "d5fb92e68a8717743f85d464b1d3c4f06b67b9ce992069a64e8c3409ebd3d59b"
+    },
+    "blueprint/ch07/mathcopilot_tasks/EAUDIT01/MANIFEST.json": {
+      "before": null,
+      "after": "cba7599bcf35ec1b8131b186fa933fd304b771bb584ce8f1c661ee8f87bf8941"
+    },
+    "blueprint/ch07/mathcopilot_tasks/EAUDIT02/MANIFEST.json": {
+      "before": null,
+      "after": "737332b4e6037ce37a976985a2f2476e4ca5b8843517bea104fabad640167ce8"
+    },
+    "blueprint/ch07/mathcopilot_tasks/EAUDIT03/MANIFEST.json": {
+      "before": null,
+      "after": "da0784d9324588d2ca86ccb8834da8317373e03d7898decaa64b87475cfb0597"
+    },
+    "blueprint/ch07/mathcopilot_tasks/EAUDIT04/MANIFEST.json": {
+      "before": null,
+      "after": "48f42a8e9d03c49f42a70c68d24ac5e9ac90c700fbef5d0d12abad0ee2c4902e"
+    },
+    "blueprint/ch07/mathcopilot_tasks/EAUDIT05/MANIFEST.json": {
+      "before": null,
+      "after": "67859ffbef1590c630be120928b6fac9b159445c2909bafbda4802fa5c5f9f67"
+    },
+    "blueprint/ch07/mathcopilot_tasks/EAUDIT06/MANIFEST.json": {
+      "before": null,
+      "after": "294131d98e2cac172bc48f0189f0e2bc24a6ea0a345ba0d69202a265efc55bf8"
+    },
+    "blueprint/ch07/mathcopilot_tasks/EAUDIT07/MANIFEST.json": {
+      "before": null,
+      "after": "85c75eb3d0f89e27d76d6ed5f7c3fd3cb6430625447e514ece22760707f5b624"
+    },
+    "blueprint/ch07/mathcopilot_tasks/EAUDIT08/MANIFEST.json": {
+      "before": null,
+      "after": "98ae3752a50b5d1353b6e1a04e25a086cae77f320e98d3d0fb1aded288e9e876"
+    },
+    "blueprint/ch07/mathcopilot_tasks/EAUDIT09/MANIFEST.json": {
+      "before": null,
+      "after": "8ce157bf5d6cf6d31244b1a650727ba4e85b889bdc28399ef477dda738146d9d"
+    },
+    "blueprint/ch07/mathcopilot_tasks/EAUDIT10/MANIFEST.json": {
+      "before": null,
+      "after": "0e9161f3819f0e50987f5f3698acbaeaed415aebb1d9d710fbf2ad358d8d224c"
+    },
+    "blueprint/ch07/mathcopilot_tasks/EAUDIT11/MANIFEST.json": {
+      "before": null,
+      "after": "c4694ee41180893a7df83825c81cc9258b186efa9ddec1db20bca3bdfef80691"
+    },
+    "blueprint/ch07/mathcopilot_tasks/EAUDIT12/MANIFEST.json": {
+      "before": null,
+      "after": "12f5e3235a1a3fa41480f828e454206338e339a0c995e1b211b16f0d8be11986"
+    },
+    "blueprint/ch07/mathcopilot_tasks/EAUDIT12/a/MANIFEST.json": {
+      "before": null,
+      "after": "b8f017533e1c0e6697591c85e2f742a19537eb83aa3f07b6891c9c61352681af"
+    },
+    "blueprint/ch07/mathcopilot_tasks/EAUDIT12/a/PAGES.pdf": {
+      "before": null,
+      "after": "aad92f2d25c6066d2e772f345dfe9f2e337e266c7d6a7cfdc6f78b88c471c3d5"
+    },
+    "blueprint/ch07/mathcopilot_tasks/EAUDIT12/a/PASTE.txt": {
+      "before": null,
+      "after": "fafdc698364ea64defd99e9b79aaac9e3b31f0ec473619f6edd62acee8dcf81a"
+    },
+    "blueprint/ch07/mathcopilot_tasks/EAUDIT12/b/MANIFEST.json": {
+      "before": null,
+      "after": "ccfec316f97777b5bfa078a52b85a1fc9e424064ae1275a6358d0d4a4c25a943"
+    },
+    "blueprint/ch07/mathcopilot_tasks/EAUDIT12/b/PAGES.pdf": {
+      "before": null,
+      "after": "c47bac9828ad1af6addb90f945c9fb7f765d543c5317458b9175ce9a542a2e9b"
+    },
+    "blueprint/ch07/mathcopilot_tasks/EAUDIT12/b/PASTE.txt": {
+      "before": null,
+      "after": "6038577234ab1395a002991170c3dc7a5dedddbc591113ca1cc4f34837c1879f"
+    },
+    "blueprint/ch07/mathcopilot_tasks/EAUDIT11/a/MANIFEST.json": {
+      "before": null,
+      "after": "42d94400d79526c7bd2d99bf47630441901f57de6e004804726f9c9f6893491f"
+    },
+    "blueprint/ch07/mathcopilot_tasks/EAUDIT11/a/PAGES.pdf": {
+      "before": null,
+      "after": "d444a05dbbb9d3802e6c9ffdb3c787dc2c47995f848694bab62c3fc475de0487"
+    },
+    "blueprint/ch07/mathcopilot_tasks/EAUDIT11/a/PASTE.txt": {
+      "before": null,
+      "after": "eaadadc1c9110ffc32dcf0cd3458d16c83615d22cdbabc4a79990b9addd7cad8"
+    },
+    "blueprint/ch07/mathcopilot_tasks/EAUDIT11/b/MANIFEST.json": {
+      "before": null,
+      "after": "1e34d1e45d9fcf9ed0efe9748b5aaf071b531c51bef663c5a0aedba993d0c84d"
+    },
+    "blueprint/ch07/mathcopilot_tasks/EAUDIT11/b/PAGES.pdf": {
+      "before": null,
+      "after": "ac659ba3d25ab48d22c2bdda1167c93fdf9a12030058fc69532341417101727c"
+    },
+    "blueprint/ch07/mathcopilot_tasks/EAUDIT11/b/PASTE.txt": {
+      "before": null,
+      "after": "77c97afcf4cf01b5543df8478837c83eaaa9d1885ad531c85d42fcc4627e4687"
+    },
+    "blueprint/ch07/mathcopilot_tasks/EAUDIT11/c/MANIFEST.json": {
+      "before": null,
+      "after": "ddcc82ef97884770632d679f6ed1d62d3945acdee9eada91a454a2fdd4601bff"
+    },
+    "blueprint/ch07/mathcopilot_tasks/EAUDIT11/c/PAGES.pdf": {
+      "before": null,
+      "after": "a6e178743fe9b2ef83294d844cf3beb7ade06a11325eeae606e7bdb1127f09b4"
+    },
+    "blueprint/ch07/mathcopilot_tasks/EAUDIT11/c/PASTE.txt": {
+      "before": null,
+      "after": "1c4380ee79c512c6f158caee7884439d63fc70d9ee92364e018405250aabd48b"
+    },
+    "blueprint/ch07/mathcopilot_tasks/EAUDIT10/a/MANIFEST.json": {
+      "before": null,
+      "after": "e933cf27f283e264f0bf15a748cc4f5efb1b1cd63062db64b3649b9a20cd0f78"
+    },
+    "blueprint/ch07/mathcopilot_tasks/EAUDIT10/a/PAGES.pdf": {
+      "before": null,
+      "after": "ccae7f549d9dc78ffcf92be5a9bb8dd4e9fb4469934596e9981d38701178608a"
+    },
+    "blueprint/ch07/mathcopilot_tasks/EAUDIT10/a/PASTE.txt": {
+      "before": null,
+      "after": "3170aaf1381bbadd0d57c9996e016197aed74f49863df6a1dc65033a131b02e6"
+    },
+    "blueprint/ch07/mathcopilot_tasks/EAUDIT10/b/MANIFEST.json": {
+      "before": null,
+      "after": "6f086392d56a165c03106bd404a5d729aad6200dd493a29d286d9b13f8bed891"
+    },
+    "blueprint/ch07/mathcopilot_tasks/EAUDIT10/b/PAGES.pdf": {
+      "before": null,
+      "after": "e3877b76220ea59e02c54a3df054e8de8a227b44dce3201f28b906d3ee4fe7fc"
+    },
+    "blueprint/ch07/mathcopilot_tasks/EAUDIT10/b/PASTE.txt": {
+      "before": null,
+      "after": "8b27799a3394c71dec864384e734f13cd5bc5cc6b053eb046dd738126e61d02b"
+    },
+    "blueprint/ch07/mathcopilot_tasks/EAUDIT10/c/MANIFEST.json": {
+      "before": null,
+      "after": "3ccc378f2eff7f33a6d4ef409d06aa04119184df8f4f8840863d9d164f79a23b"
+    },
+    "blueprint/ch07/mathcopilot_tasks/EAUDIT10/c/PAGES.pdf": {
+      "before": null,
+      "after": "b60d79f0451f809906444f1eaabfb5e39897a74603b8435b7804ec65fd590b61"
+    },
+    "blueprint/ch07/mathcopilot_tasks/EAUDIT10/c/PASTE.txt": {
+      "before": null,
+      "after": "70e876d398f08e19856373de1724e58ead2d0f191db8c284be97fb409873cb73"
+    },
+    "blueprint/ch07/mathcopilot_tasks/EAUDIT09/a/MANIFEST.json": {
+      "before": null,
+      "after": "dc1473c1bb78d75a395a7fec990ab8b0f6f983c64d49142e7ad31b89d891b4af"
+    },
+    "blueprint/ch07/mathcopilot_tasks/EAUDIT09/a/PAGES.pdf": {
+      "before": null,
+      "after": "32d82e1a0c3338ee618f4e864ec456468fa71a682f08440e16a497ce498dcbdd"
+    },
+    "blueprint/ch07/mathcopilot_tasks/EAUDIT09/a/PASTE.txt": {
+      "before": null,
+      "after": "6c47e3b6b7e5200fe9bf001dfd597973bc39207c03a77a344c29ebb994947052"
+    },
+    "blueprint/ch07/mathcopilot_tasks/EAUDIT09/b/MANIFEST.json": {
+      "before": null,
+      "after": "0c5a2227c7248ccd08fd3f41c58b3a8d04adab2e2da141c42ca4bf0be519ff9a"
+    },
+    "blueprint/ch07/mathcopilot_tasks/EAUDIT09/b/PAGES.pdf": {
+      "before": null,
+      "after": "a217f8a9b7231fc0aad274473f701d0907b4b71cc4c0388997b3724762bb0241"
+    },
+    "blueprint/ch07/mathcopilot_tasks/EAUDIT09/b/PASTE.txt": {
+      "before": null,
+      "after": "4af939b960570cf6094940530bdd295b81c1b8bc7d82d4e01d68957e09a05450"
+    },
+    "blueprint/ch07/mathcopilot_tasks/EAUDIT09/c/MANIFEST.json": {
+      "before": null,
+      "after": "f69810a8125db01bd50599522b381011f409087d9da0eb5773deddfd2ec96f8e"
+    },
+    "blueprint/ch07/mathcopilot_tasks/EAUDIT09/c/PAGES.pdf": {
+      "before": null,
+      "after": "ad0c145764b78932a46bac6e228aa234194ee3ed674d0431032abcc0727fb15a"
+    },
+    "blueprint/ch07/mathcopilot_tasks/EAUDIT09/c/PASTE.txt": {
+      "before": null,
+      "after": "f682fa3f37b461e29d13542eb06abea1c4c82d2c1bc93a9b22676264ea38cbb6"
+    },
+    "blueprint/ch07/mathcopilot_tasks/EAUDIT08/a/MANIFEST.json": {
+      "before": null,
+      "after": "b3efdb49aba8d46f16bc1c8f09b86c78ba9247412031127c74d4526f67d52d6c"
+    },
+    "blueprint/ch07/mathcopilot_tasks/EAUDIT08/a/PAGES.pdf": {
+      "before": null,
+      "after": "4fc4dea812ae347fe95adb6b387bba67e6fc297dae238f4a391732a9ec85a76f"
+    },
+    "blueprint/ch07/mathcopilot_tasks/EAUDIT08/a/PASTE.txt": {
+      "before": null,
+      "after": "526573dcd4a09ae815a79b3a37f5022310d5d8ad5d04644b4e24a8339ad3792c"
+    },
+    "blueprint/ch07/mathcopilot_tasks/EAUDIT08/b/MANIFEST.json": {
+      "before": null,
+      "after": "33d7db7b37ca8edd6ddeab573be1d31de05ac17d5d18b7cffa919d110eca720c"
+    },
+    "blueprint/ch07/mathcopilot_tasks/EAUDIT08/b/PAGES.pdf": {
+      "before": null,
+      "after": "fc24c5a6a710a8a826583088622dde40fb2b71ce8a1fbc8478fbaef42976ee9c"
+    },
+    "blueprint/ch07/mathcopilot_tasks/EAUDIT08/b/PASTE.txt": {
+      "before": null,
+      "after": "d256d46da8698864604ba26bb735f10bdefffcf46650e1484c0f6da391323147"
+    },
+    "blueprint/ch07/mathcopilot_tasks/EAUDIT08/c/MANIFEST.json": {
+      "before": null,
+      "after": "4d6cfbb32cd0465848e91b58de4dec699bfa0e0f239d3ff2ebbbec40df8eec6f"
+    },
+    "blueprint/ch07/mathcopilot_tasks/EAUDIT08/c/PAGES.pdf": {
+      "before": null,
+      "after": "6a0c43605b68643a94116521cba8161cf3cb43be31c97c73c9014ee8e550a53b"
+    },
+    "blueprint/ch07/mathcopilot_tasks/EAUDIT08/c/PASTE.txt": {
+      "before": null,
+      "after": "8945e4bc4f461c01ef4a7143ecf3e03a0c5dc2c82d36c162be453942181102ab"
+    },
+    "blueprint/ch07/mathcopilot_tasks/EAUDIT07/a/MANIFEST.json": {
+      "before": null,
+      "after": "012f274d39ad1d1d40561369aaa752f775f24aef0345339e18e60212ee150ebc"
+    },
+    "blueprint/ch07/mathcopilot_tasks/EAUDIT07/a/PAGES.pdf": {
+      "before": null,
+      "after": "74f2727d33cc8250e0a84a098295b4a3fddf92ef4cc2e8f1952179819459d61e"
+    },
+    "blueprint/ch07/mathcopilot_tasks/EAUDIT07/a/PASTE.txt": {
+      "before": null,
+      "after": "8ea174bf6b4abca0aff7b2f7796055644666e035b14fe0ba0e1f89dba5af4056"
+    },
+    "blueprint/ch07/mathcopilot_tasks/EAUDIT07/b/MANIFEST.json": {
+      "before": null,
+      "after": "7fb2402231630f7c2ddb88d0ff9311f8351280db42df6e35143bf86a5c5770ea"
+    },
+    "blueprint/ch07/mathcopilot_tasks/EAUDIT07/b/PAGES.pdf": {
+      "before": null,
+      "after": "a5cda40b83fbb1dbf629a56ee95562b62988499d4d1c896f48890f890a1674dd"
+    },
+    "blueprint/ch07/mathcopilot_tasks/EAUDIT07/b/PASTE.txt": {
+      "before": null,
+      "after": "b166c073c0af32088ae8a4fba8d7a93a3f3a0b6176bd65a31e153f5171564fe2"
+    },
+    "blueprint/ch07/mathcopilot_tasks/EAUDIT07/c/MANIFEST.json": {
+      "before": null,
+      "after": "ddcd9d58c65d08cd07a12b7341be5102d297c528d1d3398cf1658a497ef6c883"
+    },
+    "blueprint/ch07/mathcopilot_tasks/EAUDIT07/c/PAGES.pdf": {
+      "before": null,
+      "after": "5d8e99269c0f3f6dcfeade9070c264d458c752272817cf0705d6ad6cfc77df7b"
+    },
+    "blueprint/ch07/mathcopilot_tasks/EAUDIT07/c/PASTE.txt": {
+      "before": null,
+      "after": "51ec5d22bf466e927c09529d3340d022a1e644a79925fd6496b6c708da9fb3c5"
+    },
+    "blueprint/ch07/mathcopilot_tasks/EAUDIT06/a/MANIFEST.json": {
+      "before": null,
+      "after": "9da223f1eaf52bc65584c1b26f4e46c1afcd756387bd639df84be037e33c6d2a"
+    },
+    "blueprint/ch07/mathcopilot_tasks/EAUDIT06/a/PAGES.pdf": {
+      "before": null,
+      "after": "9dff45d272f2a2d848d8760c8390eebd7d9c6938ecf0026a50e695f247fc4691"
+    },
+    "blueprint/ch07/mathcopilot_tasks/EAUDIT06/a/PASTE.txt": {
+      "before": null,
+      "after": "f9b598789510f8cceccf67a2499c51cc7f065789b6ba8aa5fff1133494d9d8bc"
+    },
+    "blueprint/ch07/mathcopilot_tasks/EAUDIT06/b/MANIFEST.json": {
+      "before": null,
+      "after": "ea2982a34b7003fb7554a423bd1df737875e1128b5677d0217941c5e38bccdde"
+    },
+    "blueprint/ch07/mathcopilot_tasks/EAUDIT06/b/PAGES.pdf": {
+      "before": null,
+      "after": "c3a32f5c2dafd53e3711f292b07a1afac8a43fcaf1c18ab9b5716e0dc799f68c"
+    },
+    "blueprint/ch07/mathcopilot_tasks/EAUDIT06/b/PASTE.txt": {
+      "before": null,
+      "after": "84da62c0c9e74cf6e943af66617bb4fc1e71a12fc1c3bc7f6f6412df68ae4b49"
+    },
+    "blueprint/ch07/mathcopilot_tasks/EAUDIT06/c/MANIFEST.json": {
+      "before": null,
+      "after": "57edc39e46f1c8d53e74ab12ae4abd9f74322ba43a04ffb39da4d1f8bc91e028"
+    },
+    "blueprint/ch07/mathcopilot_tasks/EAUDIT06/c/PAGES.pdf": {
+      "before": null,
+      "after": "264310efd4739e0a621af323f3f72a09fc6afc048f45d59f6a4dc5dce5b0428d"
+    },
+    "blueprint/ch07/mathcopilot_tasks/EAUDIT06/c/PASTE.txt": {
+      "before": null,
+      "after": "eba089c68761c0cd828c6982204518ecf027737c5014680c4e0bd636f62d920f"
+    },
+    "blueprint/ch07/mathcopilot_tasks/EAUDIT05/a/MANIFEST.json": {
+      "before": null,
+      "after": "1181f580dad173b9a9977b8a413fadc5d0aa29bc6edb80f6dc36015ebd3297a1"
+    },
+    "blueprint/ch07/mathcopilot_tasks/EAUDIT05/a/PAGES.pdf": {
+      "before": null,
+      "after": "9981fc48dfd3506be58ee2e021d9d0a45b905e1e43033ef4fe058e9110651a39"
+    },
+    "blueprint/ch07/mathcopilot_tasks/EAUDIT05/a/PASTE.txt": {
+      "before": null,
+      "after": "5001a37da8b9261ee688cede02fcd23011eb2a3619da1ffc0b89961bf967a7bd"
+    },
+    "blueprint/ch07/mathcopilot_tasks/EAUDIT05/b/MANIFEST.json": {
+      "before": null,
+      "after": "4983e88ee994dca182e828f9c6e55ab02571ef24c034e3dfef6c029fb77ccb22"
+    },
+    "blueprint/ch07/mathcopilot_tasks/EAUDIT05/b/PAGES.pdf": {
+      "before": null,
+      "after": "0f238b96136408c3acae6108c32de8eed25f0bf4ea157810ec08babe49f02c43"
+    },
+    "blueprint/ch07/mathcopilot_tasks/EAUDIT05/b/PASTE.txt": {
+      "before": null,
+      "after": "2fbf47c942ae179777f88123da6f4e9f5a4b22e6900fda074c0e60cf6079ba4e"
+    },
+    "blueprint/ch07/mathcopilot_tasks/EAUDIT05/c/MANIFEST.json": {
+      "before": null,
+      "after": "37f72c62018afa9e10e48253efed75a66edb1ab089dbf2025506611ffdaf83f7"
+    },
+    "blueprint/ch07/mathcopilot_tasks/EAUDIT05/c/PAGES.pdf": {
+      "before": null,
+      "after": "4655540008709b97ae13959e7d14d34b79021e50d9effc8193d276220d4680ee"
+    },
+    "blueprint/ch07/mathcopilot_tasks/EAUDIT05/c/PASTE.txt": {
+      "before": null,
+      "after": "2d367b775fac9caf4c55769b4bc29c97b7f2192c70a189425608baf5d37453de"
+    },
+    "blueprint/ch07/mathcopilot_tasks/EAUDIT04/a/MANIFEST.json": {
+      "before": null,
+      "after": "62003c74583487b45f0d600fb75ad8651049d002844ac0dab814ec9de1211196"
+    },
+    "blueprint/ch07/mathcopilot_tasks/EAUDIT04/a/PAGES.pdf": {
+      "before": null,
+      "after": "73bf1cc031e5e3fab5732af47e7093b3af67d7ae2c46244accf33db7dc37911d"
+    },
+    "blueprint/ch07/mathcopilot_tasks/EAUDIT04/a/PASTE.txt": {
+      "before": null,
+      "after": "691e76f88f63cc020be4cbd0e7d28da86e626722fc276adadb42a6b69a1c9f58"
+    },
+    "blueprint/ch07/mathcopilot_tasks/EAUDIT04/b/MANIFEST.json": {
+      "before": null,
+      "after": "067013c5f53238918e548de0dd9c038de2613b8aae8f75a8972971785b71c15a"
+    },
+    "blueprint/ch07/mathcopilot_tasks/EAUDIT04/b/PAGES.pdf": {
+      "before": null,
+      "after": "ef073c22ce09beb6c8e52ef52ccb653895e16e06467a67325b3cb06174a98d00"
+    },
+    "blueprint/ch07/mathcopilot_tasks/EAUDIT04/b/PASTE.txt": {
+      "before": null,
+      "after": "7e739dba7ba9722365dd985815bc4e5704ee93f39ccd7f1968a6b8f543e88cba"
+    },
+    "blueprint/ch07/mathcopilot_tasks/EAUDIT04/c/MANIFEST.json": {
+      "before": null,
+      "after": "b06e8bc053c6cbe314ff49ccaf527865df10b0b70fbd7e7fdfe092be8ca32b0c"
+    },
+    "blueprint/ch07/mathcopilot_tasks/EAUDIT04/c/PAGES.pdf": {
+      "before": null,
+      "after": "6acd47322cf23d5b70ce4d60d31189eda8ed037bfe9e3118e0f8a81e72471b8b"
+    },
+    "blueprint/ch07/mathcopilot_tasks/EAUDIT04/c/PASTE.txt": {
+      "before": null,
+      "after": "fcb255c96bc9d4d4c159ed8c2286eb96a010188906bd6c3847c58936748f6ac9"
+    },
+    "blueprint/ch07/mathcopilot_tasks/EAUDIT03/a/MANIFEST.json": {
+      "before": null,
+      "after": "1bc1502acc0abbb73dfdda54172533282a84fe1ff0762a7cc515dbb1a8fab5ae"
+    },
+    "blueprint/ch07/mathcopilot_tasks/EAUDIT03/a/PAGES.pdf": {
+      "before": null,
+      "after": "80b8605751733b061d08408ec954b2f78e38e2d6f1971326391ae2dad7522183"
+    },
+    "blueprint/ch07/mathcopilot_tasks/EAUDIT03/a/PASTE.txt": {
+      "before": null,
+      "after": "d1adb38c4ac9faca59e468d1668c692c2f3c048fc477963f44a5a564b074fbba"
+    },
+    "blueprint/ch07/mathcopilot_tasks/EAUDIT03/b/MANIFEST.json": {
+      "before": null,
+      "after": "bd785d3b2557190e646ed42df141bc0099933e19ff1c6f9c7b078f512e91fc3e"
+    },
+    "blueprint/ch07/mathcopilot_tasks/EAUDIT03/b/PAGES.pdf": {
+      "before": null,
+      "after": "3a641080bc59f0c9acc572f0fb50c4db054b477ad833542e319d2df96e19b950"
+    },
+    "blueprint/ch07/mathcopilot_tasks/EAUDIT03/b/PASTE.txt": {
+      "before": null,
+      "after": "d41c7263f504a60744abebec0efe16417c0d7c27f49f46a1457f2b115c0d61ea"
+    },
+    "blueprint/ch07/mathcopilot_tasks/EAUDIT03/c/MANIFEST.json": {
+      "before": null,
+      "after": "ccfac91949084eae8d0ce70ec610f5089f9bad6c37bc27d0bd82c5f33d0fa2c3"
+    },
+    "blueprint/ch07/mathcopilot_tasks/EAUDIT03/c/PAGES.pdf": {
+      "before": null,
+      "after": "d2a073a77225737f2d487e0ea8ca6ae4d8fa1c21aa9fda75a084a13010db0459"
+    },
+    "blueprint/ch07/mathcopilot_tasks/EAUDIT03/c/PASTE.txt": {
+      "before": null,
+      "after": "12551b7f499a0bff6d2e7a303d84767456ee8aec7af7b051802b379e7d371278"
+    },
+    "blueprint/ch07/mathcopilot_tasks/EAUDIT02/a/MANIFEST.json": {
+      "before": null,
+      "after": "ac5b7f7c409df05b9f63da3480068b65c03ea7c3ca72acaada8c284421696dd0"
+    },
+    "blueprint/ch07/mathcopilot_tasks/EAUDIT02/a/PAGES.pdf": {
+      "before": null,
+      "after": "3102adca71c6e7b745759995d355eb68ce24cc3900e6c52759599f995f418051"
+    },
+    "blueprint/ch07/mathcopilot_tasks/EAUDIT02/a/PASTE.txt": {
+      "before": null,
+      "after": "87f9174e94ca154ab7877823a8c134d00ad439b339aa3fa40ba1bac240258df2"
+    },
+    "blueprint/ch07/mathcopilot_tasks/EAUDIT02/b/MANIFEST.json": {
+      "before": null,
+      "after": "a8b39fe473c060ec15ac270a22b20fed3120a4ad1d2f9d00ee962824cb5467f2"
+    },
+    "blueprint/ch07/mathcopilot_tasks/EAUDIT02/b/PAGES.pdf": {
+      "before": null,
+      "after": "9bf87e0a69bd8831c9b33b67b6b09802d1e89c7a4e06393c0be8ba5b839d4e7a"
+    },
+    "blueprint/ch07/mathcopilot_tasks/EAUDIT02/b/PASTE.txt": {
+      "before": null,
+      "after": "49261156c2219f8c4ccd30602cec1e94167a47ec27a09878fb07d2beb45c7bb9"
+    },
+    "blueprint/ch07/mathcopilot_tasks/EAUDIT02/c/MANIFEST.json": {
+      "before": null,
+      "after": "605f8ce3797aa65e602a3e6683c1f98182027fb71af2324eee8c81b0e890e8c6"
+    },
+    "blueprint/ch07/mathcopilot_tasks/EAUDIT02/c/PAGES.pdf": {
+      "before": null,
+      "after": "58afc4008da28296a785025e9c16728616c90df577d06af8aa268281ed6d7c53"
+    },
+    "blueprint/ch07/mathcopilot_tasks/EAUDIT02/c/PASTE.txt": {
+      "before": null,
+      "after": "f1cbd08fb16fa3ac29ea2a0cd09d1f3caf3c0694989b2f477e0e9f9096d6dac1"
+    },
+    "blueprint/ch07/mathcopilot_tasks/EAUDIT01/a/MANIFEST.json": {
+      "before": null,
+      "after": "34259123003f9728866082b67464e0db687cab0d4f43cacda67503882468fbfc"
+    },
+    "blueprint/ch07/mathcopilot_tasks/EAUDIT01/a/PAGES.pdf": {
+      "before": null,
+      "after": "15a89468e106a076dd43815a406b9ff50a1e17db43c4bf0d8d15dbcd6ea91ff6"
+    },
+    "blueprint/ch07/mathcopilot_tasks/EAUDIT01/a/PASTE.txt": {
+      "before": null,
+      "after": "f4677ffa1551f205724a25770e13b051a5e6dabf17a419ba89be940a2a0fb7c4"
+    },
+    "blueprint/ch07/mathcopilot_tasks/EAUDIT01/b/MANIFEST.json": {
+      "before": null,
+      "after": "a9841d8e0ec8877b97bb12ea4cb46f0da27c941a87c43a85bca5f84139e7e983"
+    },
+    "blueprint/ch07/mathcopilot_tasks/EAUDIT01/b/PAGES.pdf": {
+      "before": null,
+      "after": "9d72e78212039edf045403108284ed6880fe06b3346bf7760ea1aba69e5acc3a"
+    },
+    "blueprint/ch07/mathcopilot_tasks/EAUDIT01/b/PASTE.txt": {
+      "before": null,
+      "after": "9a41f7a063d8884e34bb8a221bcbacf27e2b79728d003815c0ac60874267c923"
+    },
+    "blueprint/ch07/mathcopilot_tasks/EAUDIT01/c/MANIFEST.json": {
+      "before": null,
+      "after": "374a2b9ec8a0ef7eb7fa0960d851df06beb1d72fa38e9bf7bf6006e4f62cfe9a"
+    },
+    "blueprint/ch07/mathcopilot_tasks/EAUDIT01/c/PAGES.pdf": {
+      "before": null,
+      "after": "5914223a7cbd75bdf9e01943e3ae0e75efc264e64b67218b9ad40b99a1730c82"
+    },
+    "blueprint/ch07/mathcopilot_tasks/EAUDIT01/c/PASTE.txt": {
+      "before": null,
+      "after": "92e466d3b5d38808eb6154423d587ffea3d95eb70ff52dc77ec424eaa54cee98"
+    },
+    "blueprint/ch07/closeout29/compiled/ApproximateGeodesicOrder-lsp-events.json": {
+      "before": null,
+      "after": "3d8c39546bd47dada11a5e5801c84aefcd26684dcf630c2b626d7ba454918987"
+    },
+    "blueprint/ch07/closeout29/compiled/ApproximateGeodesicOrder.json": {
+      "before": null,
+      "after": "dfefef2b90b32ae79a7fed717b4e76eac6c0000fffe5d03bc1febca879ad3a1b"
+    },
+    "blueprint/ch07/closeout29/compiled/ApproximateGeodesicOrder.lean": {
+      "before": null,
+      "after": "8985ac97d3eb7fca65e05c24a15fc8e0a58d47efa223f2bd3d4f6b22eeab0d8f"
+    },
+    "blueprint/ch07/closeout29/compiled/ApproximateGeodesicOrder.log": {
+      "before": null,
+      "after": "9ddd6510997c55fb4faaa6753c72231be8b2a10a50f6537519348f12bfbc501f"
+    },
+    "blueprint/ch07/closeout29/compiled/BAOABLimitMethod-lsp-events.json": {
+      "before": null,
+      "after": "5f1f6682e25e0f77db929ba5eff2a7906c6724582c0109f0c75e54f076e503dc"
+    },
+    "blueprint/ch07/closeout29/compiled/BAOABLimitMethod.json": {
+      "before": null,
+      "after": "deca7f314b19ec717a1a7db7394db192926a25c787e9bf61e2313dd891311356"
+    },
+    "blueprint/ch07/closeout29/compiled/BAOABLimitMethod.lean": {
+      "before": null,
+      "after": "eff611425709248c808f87493d5dab9b0538a4170e99b61f031c964e105c8254"
+    },
+    "blueprint/ch07/closeout29/compiled/BAOABLimitMethod.log": {
+      "before": null,
+      "after": "58d860cd38525cdeccdfeb16374de14a9aeef1b8000c77426f26c522d5d6d5ba"
+    },
+    "blueprint/ch07/closeout29/compiled/BAOABMarginalCancellation-lsp-events.json": {
+      "before": null,
+      "after": "66864cc2a34b37b045b0b9fe17c9695341858e73afc915097e8face7348ec4a7"
+    },
+    "blueprint/ch07/closeout29/compiled/BAOABMarginalCancellation.json": {
+      "before": null,
+      "after": "23b2094fa3db157f1611ad14292d773c4126d75aecfb51c7919f91901d8a433c"
+    },
+    "blueprint/ch07/closeout29/compiled/BAOABMarginalCancellation.lean": {
+      "before": null,
+      "after": "cff3c72e854f2b9eb14f0563d3f25a1fa391a41fefab7c6ae146e99b1a14e2ef"
+    },
+    "blueprint/ch07/closeout29/compiled/BAOABMarginalCancellation.log": {
+      "before": null,
+      "after": "a23ea81c77828522eb303b57db232d7ef8f5c920ca72030dab65a957439891f9"
+    },
+    "blueprint/ch07/closeout29/compiled/BiasedDoubleWellExact-lsp-events.json": {
+      "before": null,
+      "after": "ca4910968400adbdbc0947ae4edc70a3f72aede22996c1706d0fb918aa3bd378"
+    },
+    "blueprint/ch07/closeout29/compiled/BiasedDoubleWellExact.json": {
+      "before": null,
+      "after": "f5889f2876a9b4931e10ca3a97334b4f3d8b710bf85ff900cbba8594055923ab"
+    },
+    "blueprint/ch07/closeout29/compiled/BiasedDoubleWellExact.lean": {
+      "before": null,
+      "after": "433c15a902788c5989f85d5e80ea440e8b68b91cbe09bed7ffb79b412e506704"
+    },
+    "blueprint/ch07/closeout29/compiled/BiasedDoubleWellExact.log": {
+      "before": null,
+      "after": "5a34475d6334a5d6aaf68578dea375c4f0924cfea44f2d11bf88033d8c64df04"
+    },
+    "blueprint/ch07/closeout29/compiled/ColoredNoiseAndExtension-lsp-events.json": {
+      "before": null,
+      "after": "9241a47f5917d85ed3e674702507ca995b31f5a4c867af56a14d9255230269d8"
+    },
+    "blueprint/ch07/closeout29/compiled/ColoredNoiseAndExtension.json": {
+      "before": null,
+      "after": "b54339ba842d96c9839149caf98bab9aa6973709f0b3f7a42fc1c1a73bf6a3b5"
+    },
+    "blueprint/ch07/closeout29/compiled/ColoredNoiseAndExtension.lean": {
+      "before": null,
+      "after": "d5ea40d99167389e15dbd51660421f4f219062e7ebcbe11152733ae1a6112570"
+    },
+    "blueprint/ch07/closeout29/compiled/ColoredNoiseAndExtension.log": {
+      "before": null,
+      "after": "ea3978c3249ad14c585dd19c3b0300e95fa34af8b6bbef445a3a64a956792d10"
+    },
+    "blueprint/ch07/closeout29/compiled/CommutatorPermutationRelations-lsp-events.json": {
+      "before": null,
+      "after": "8fc1c72bc08eedfb61f7ce691a05e649f8395840bfb330c6157e0a3d3191aa45"
+    },
+    "blueprint/ch07/closeout29/compiled/CommutatorPermutationRelations.json": {
+      "before": null,
+      "after": "3419abcc73da0993b30f6ca513777596e8f749d44d64acef8d257057d5d874da"
+    },
+    "blueprint/ch07/closeout29/compiled/CommutatorPermutationRelations.lean": {
+      "before": null,
+      "after": "34b76760f16d3858552fbf621d3f7210b32b8e363341bdf7b1e0253dc5e2b9fa"
+    },
+    "blueprint/ch07/closeout29/compiled/CommutatorPermutationRelations.log": {
+      "before": null,
+      "after": "219bd9b514e1ae169b91f10a826d253520115581a7b4fab94de6a6e553a0a1dc"
+    },
+    "blueprint/ch07/closeout29/compiled/ConjugateIteration-lsp-events.json": {
+      "before": null,
+      "after": "091aa1855a3956ef30561fcfffcfa5c0f04699a0280209ae009ed9bd19dc7972"
+    },
+    "blueprint/ch07/closeout29/compiled/ConjugateIteration-RUNNING.json": {
+      "before": null,
+      "after": "c73fd96db2af84769e614d70faf23e0dcb9dfb9e7572ceda590044228ea0c575"
+    },
+    "blueprint/ch07/closeout29/compiled/ConjugateIteration.json": {
+      "before": null,
+      "after": "7a3255e39577330589e43619976bb623fa038079aa8237ce091a3e74810266a4"
+    },
+    "blueprint/ch07/closeout29/compiled/ConjugateIteration.lean": {
+      "before": null,
+      "after": "eebe25139e16e7ae4748cf1a0935a1cdd9ca34daa0a72639a0caf0f6bc90a1ea"
+    },
+    "blueprint/ch07/closeout29/compiled/ConjugateIteration.log": {
+      "before": null,
+      "after": "86f98dec807cd605c4db3135fe383d076e3150315690c4c5f1b6ea29d6cf44d1"
+    },
+    "blueprint/ch07/closeout29/compiled/ConstrainedHOSplitting-lsp-events.json": {
+      "before": null,
+      "after": "c7d45fbfa70af06a335b869b6142037b3f03f6eaf79aebd9f00e6ab8e5f978d1"
+    },
+    "blueprint/ch07/closeout29/compiled/ConstrainedHOSplitting.json": {
+      "before": null,
+      "after": "db80812a73efc096aedf04ded014743259eb644dde87ee533bc18ffe113623f1"
+    },
+    "blueprint/ch07/closeout29/compiled/ConstrainedHOSplitting.lean": {
+      "before": null,
+      "after": "45eaabedc48ed26596d23f1f30ad4629e09d31d0d580548e215332f3a43ade09"
+    },
+    "blueprint/ch07/closeout29/compiled/ConstrainedHOSplitting.log": {
+      "before": null,
+      "after": "9ddd6510997c55fb4faaa6753c72231be8b2a10a50f6537519348f12bfbc501f"
+    },
+    "blueprint/ch07/closeout29/compiled/CoordinateJSplitting-lsp-events.json": {
+      "before": null,
+      "after": "e6eda6e25e4dcfb713b303339e1e161696abe711229d8d1d14d0305e5874e0bd"
+    },
+    "blueprint/ch07/closeout29/compiled/CoordinateJSplitting.json": {
+      "before": null,
+      "after": "72977b729227b1f132ba5ea2a414d2aa189be1d048e8d32177ea3dd73ca42481"
+    },
+    "blueprint/ch07/closeout29/compiled/CoordinateJSplitting.lean": {
+      "before": null,
+      "after": "e8a67eca5174560412dd8f744ae181ef929f67cced937f4072093cf7e6d29622"
+    },
+    "blueprint/ch07/closeout29/compiled/CoordinateJSplitting.log": {
+      "before": null,
+      "after": "e2b9c3167e09341a0d203054d2d07311ebe8e8794ed3471a2489170e4774e1a2"
+    },
+    "blueprint/ch07/closeout29/compiled/DivergenceFreeInvariant-lsp-events.json": {
+      "before": null,
+      "after": "8b9165d6ad275d7a6a606c4f5b52ac666e90623b62ee2cf253c6733d31b4dde3"
+    },
+    "blueprint/ch07/closeout29/compiled/DivergenceFreeInvariant-RUNNING.json": {
+      "before": null,
+      "after": "d1161da9bc3a7ae52bc2c88ee1953ddcf9d27467af95696f57c30ef778947db4"
+    },
+    "blueprint/ch07/closeout29/compiled/DivergenceFreeInvariant.json": {
+      "before": null,
+      "after": "c2f8375635b755d42876d28bb12d60d73101eef08664f7c0b07cd60aa68b50ba"
+    },
+    "blueprint/ch07/closeout29/compiled/DivergenceFreeInvariant.lean": {
+      "before": null,
+      "after": "eebe25139e16e7ae4748cf1a0935a1cdd9ca34daa0a72639a0caf0f6bc90a1ea"
+    },
+    "blueprint/ch07/closeout29/compiled/DivergenceFreeInvariant.log": {
+      "before": null,
+      "after": "219bd9b514e1ae169b91f10a826d253520115581a7b4fab94de6a6e553a0a1dc"
+    },
+    "blueprint/ch07/closeout29/compiled/EvenDensityPerturbation-lsp-events.json": {
+      "before": null,
+      "after": "93d63ce807bc75b8b8714b7dcbc9737122539bc2917c21a8bf67e1c558a2e982"
+    },
+    "blueprint/ch07/closeout29/compiled/EvenDensityPerturbation.json": {
+      "before": null,
+      "after": "4320f930643d83fb70ecf44cc29924aa543e694a681459da90d19ad4e9378f97"
+    },
+    "blueprint/ch07/closeout29/compiled/EvenDensityPerturbation.lean": {
+      "before": null,
+      "after": "d06a029af1bb17142968c7d506db67bb91f8c4e4588b849420687e79862c9149"
+    },
+    "blueprint/ch07/closeout29/compiled/EvenDensityPerturbation.log": {
+      "before": null,
+      "after": "5a34475d6334a5d6aaf68578dea375c4f0924cfea44f2d11bf88033d8c64df04"
+    },
+    "blueprint/ch07/closeout29/compiled/FINAL-CURRENT-lsp-events.json": {
+      "before": null,
+      "after": "a618e3f3db4dd051b7fa548d34de165883404248cc5a7416bd025c2920913d80"
+    },
+    "blueprint/ch07/closeout29/compiled/FINAL-CURRENT.json": {
+      "before": null,
+      "after": "1be848ca07cedffd65f9071cc4135f070516ebdf8257a3e9af1043f3d7f39359"
+    },
+    "blueprint/ch07/closeout29/compiled/FINAL-CURRENT.lean": {
+      "before": null,
+      "after": "3612fd5277db3ebf2cf31402d20d4d7105b1179c3a0bbaaf743a93609dc28847"
+    },
+    "blueprint/ch07/closeout29/compiled/FINAL-CURRENT.log": {
+      "before": null,
+      "after": "fbc0b3cb23b11171439c4262c7e1e77a4b58de0f768777e2b378ca5c3a1bd3bc"
+    },
+    "blueprint/ch07/closeout29/compiled/FirstCorrectionTablePrinted.json": {
+      "before": null,
+      "after": "ce0a9a9aaed097fa48aa27abfb5fca5e15cc83f47e02e80733081da23c4448c7"
+    },
+    "blueprint/ch07/closeout29/compiled/FirstCorrectionTablePrinted.lean": {
+      "before": null,
+      "after": "eebe25139e16e7ae4748cf1a0935a1cdd9ca34daa0a72639a0caf0f6bc90a1ea"
+    },
+    "blueprint/ch07/closeout29/compiled/FirstCorrectionTablePrinted.log": {
+      "before": null,
+      "after": "86f98dec807cd605c4db3135fe383d076e3150315690c4c5f1b6ea29d6cf44d1"
+    },
+    "blueprint/ch07/closeout29/compiled/GibbsComposition-lsp-events.json": {
+      "before": null,
+      "after": "084cf0784bbc9228cabe50cfcc3de6c014490cbd6f88c68de4bb33ad925d9007"
+    },
+    "blueprint/ch07/closeout29/compiled/GibbsComposition-RUNNING.json": {
+      "before": null,
+      "after": "4996c118df829d8728f3cead174e23932f2c10d0fe7e4c1ae4778ba1e23085bb"
+    },
+    "blueprint/ch07/closeout29/compiled/GibbsComposition.json": {
+      "before": null,
+      "after": "99f035364ec08b697c8ee5ddb2d9a1349b79ebd266120d741d609bd2b76568c0"
+    },
+    "blueprint/ch07/closeout29/compiled/GibbsComposition.lean": {
+      "before": null,
+      "after": "eebe25139e16e7ae4748cf1a0935a1cdd9ca34daa0a72639a0caf0f6bc90a1ea"
+    },
+    "blueprint/ch07/closeout29/compiled/GibbsComposition.log": {
+      "before": null,
+      "after": "5a1cecf01d24bab03aa74b4b4a0138b93895c6f2e04005fa0e8f4f0adb47a1d5"
+    },
+    "blueprint/ch07/closeout29/compiled/GibbsDerivativeIdentities-lsp-events.json": {
+      "before": null,
+      "after": "15e9ad8e1c25995d0672a2a267c7cca35f2a45d50f4362e7fb7faa336b835fe0"
+    },
+    "blueprint/ch07/closeout29/compiled/GibbsDerivativeIdentities.json": {
+      "before": null,
+      "after": "8e16fdc60a8a377bfad7f0d98f04982522b7c12b593dedd1cce9d4c7b7d01575"
+    },
+    "blueprint/ch07/closeout29/compiled/GibbsDerivativeIdentities.lean": {
+      "before": null,
+      "after": "0ebb37307158173637b8ab0081fb491c8bde1a4d480a56b27e05b1e7606da274"
+    },
+    "blueprint/ch07/closeout29/compiled/GibbsDerivativeIdentities.log": {
+      "before": null,
+      "after": "219bd9b514e1ae169b91f10a826d253520115581a7b4fab94de6a6e553a0a1dc"
+    },
+    "blueprint/ch07/closeout29/compiled/HighFrictionCorrectionTable-lsp-events.json": {
+      "before": null,
+      "after": "23c4a687a1fa76f39f67f775caae445c6b7c499d135341cf9fcb63269e73c1a3"
+    },
+    "blueprint/ch07/closeout29/compiled/HighFrictionCorrectionTable.json": {
+      "before": null,
+      "after": "9d94211bcab4fa724d445ec321d519021a9155e1a0c2b933c6f50afb73f45ca2"
+    },
+    "blueprint/ch07/closeout29/compiled/HighFrictionCorrectionTable.lean": {
+      "before": null,
+      "after": "391a2ac67b05f47c395f8fc21e6c20f05f0e017d8d55b6a39ca339bc2e0872f8"
+    },
+    "blueprint/ch07/closeout29/compiled/HighFrictionCorrectionTable.log": {
+      "before": null,
+      "after": "4c4ab8a59888bf2fafbff307958b295dc10d85654ba4d71bb822ade7ddea32ad"
+    },
+    "blueprint/ch07/closeout29/compiled/HUMAN-ConstrainedCanonicalErgodicity-lsp-events.json": {
+      "before": null,
+      "after": "6d15db462076184d648e0b7349b7553bc5a831039e43d022f720a338e3040e63"
+    },
+    "blueprint/ch07/closeout29/compiled/HUMAN-ConstrainedCanonicalErgodicity.json": {
+      "before": null,
+      "after": "efc51b5d97489249e8fe75960544ed2a8458b73d48eb209961c80a48d6e4e35c"
+    },
+    "blueprint/ch07/closeout29/compiled/HUMAN-ConstrainedCanonicalErgodicity.lean": {
+      "before": null,
+      "after": "c251bca52cb7dd2348a10a3c478af631c1956d2e3922c02bb999222201e01a3b"
+    },
+    "blueprint/ch07/closeout29/compiled/HUMAN-ConstrainedCanonicalErgodicity.log": {
+      "before": null,
+      "after": "c5dbb20ff8d88a9988267b0fac125b1da57aff080f4da4f8ea759ad71b12b9a9"
+    },
+    "blueprint/ch07/closeout29/compiled/HUMAN-ConstrainedLangevin-FAILED1.json": {
+      "before": null,
+      "after": "ff10ac9bb741e04aefe4055c8d5de78883b072ccba2f30b1cc5a2f63386b8d84"
+    },
+    "blueprint/ch07/closeout29/compiled/HUMAN-ConstrainedLangevin-FAILED1.lean": {
+      "before": null,
+      "after": "94db8058e09c7db786f75d7d4f42e11fbf74a84dc6fbc87a41ada5fc42d94b72"
+    },
+    "blueprint/ch07/closeout29/compiled/HUMAN-ConstrainedLangevin-FAILED1.log": {
+      "before": null,
+      "after": "9542cf8ea9ccd0d006c3fc389f88eb60a7f59cce67bd401c24bcd8c90c86b5f5"
+    },
+    "blueprint/ch07/closeout29/compiled/HUMAN-ConstrainedLangevin-lsp-events.json": {
+      "before": null,
+      "after": "50d67263743e32af283e560a32d52095be0f9093c62ab1bfaa632f24fccf5266"
+    },
+    "blueprint/ch07/closeout29/compiled/HUMAN-ConstrainedLangevin-r2-lsp-events.json": {
+      "before": null,
+      "after": "d08f915db5aed5ddea83a76ace4fc1e2006b56911d245caa5557167d4d816afe"
+    },
+    "blueprint/ch07/closeout29/compiled/HUMAN-ConstrainedLangevin-r2.json": {
+      "before": null,
+      "after": "e85c4464fdd3bae12850568036a57f8d76bd400cd80947b48bca3660b7193b3a"
+    },
+    "blueprint/ch07/closeout29/compiled/HUMAN-ConstrainedLangevin-r2.lean": {
+      "before": null,
+      "after": "f37527811affdb588b61e3ff1e30f2061d003be08a938024245f8a1dc811581e"
+    },
+    "blueprint/ch07/closeout29/compiled/HUMAN-ConstrainedLangevin-r2.log": {
+      "before": null,
+      "after": "89bde94a147a0c86a98a41406d7ac91ff7327c7a419b84d66a8aed1d4a566787"
+    },
+    "blueprint/ch07/closeout29/compiled/HUMAN-ConstrainedLangevin.json": {
+      "before": null,
+      "after": "ff10ac9bb741e04aefe4055c8d5de78883b072ccba2f30b1cc5a2f63386b8d84"
+    },
+    "blueprint/ch07/closeout29/compiled/HUMAN-ConstrainedLangevin.lean": {
+      "before": null,
+      "after": "94db8058e09c7db786f75d7d4f42e11fbf74a84dc6fbc87a41ada5fc42d94b72"
+    },
+    "blueprint/ch07/closeout29/compiled/HUMAN-ConstrainedLangevin.log": {
+      "before": null,
+      "after": "9542cf8ea9ccd0d006c3fc389f88eb60a7f59cce67bd401c24bcd8c90c86b5f5"
+    },
+    "blueprint/ch07/closeout29/compiled/HUMAN-FirstReciprocalCorrection-lsp-events.json": {
+      "before": null,
+      "after": "6bdfc2cf38c2792730bbd0c735b2fc9060c202ae60d1856dc8b70e281caa4d52"
+    },
+    "blueprint/ch07/closeout29/compiled/HUMAN-FirstReciprocalCorrection.json": {
+      "before": null,
+      "after": "a0b6dbea4e50fa7ca8e769a754649fab67da8146b9c0541482f921f146178e74"
+    },
+    "blueprint/ch07/closeout29/compiled/HUMAN-FirstReciprocalCorrection.lean": {
+      "before": null,
+      "after": "68fc7a06138850861393f198ad06b5640ad5c9bb0776d62dac69d23455f3b10d"
+    },
+    "blueprint/ch07/closeout29/compiled/HUMAN-FirstReciprocalCorrection.log": {
+      "before": null,
+      "after": "9effab889ab49e784e84a6c384e26f3d99732480b56a838166906c5d350b2056"
+    },
+    "blueprint/ch07/closeout29/compiled/HUMAN-LimitMethodAccuracy-lsp-events.json": {
+      "before": null,
+      "after": "13f9c172be838e9b0c4df2dd613dc8912f2cd43ef7a9601161e8ed2daa59c96a"
+    },
+    "blueprint/ch07/closeout29/compiled/HUMAN-LimitMethodAccuracy.json": {
+      "before": null,
+      "after": "fc8b92d836c49daa5ebb3f8b91a5f4887e7e03e2e40429a24570dbe5bd69b8b4"
+    },
+    "blueprint/ch07/closeout29/compiled/HUMAN-LimitMethodAccuracy.lean": {
+      "before": null,
+      "after": "665235456c55987b175ffc57a814c77f31c3b3a9a9330feb39c567d0ca18fd79"
+    },
+    "blueprint/ch07/closeout29/compiled/HUMAN-LimitMethodAccuracy.log": {
+      "before": null,
+      "after": "af60ef7966c50f426d63866054278d891f4f3e563d0577df5e1cef5ede2c46e0"
+    },
+    "blueprint/ch07/closeout29/compiled/HUMAN-OUKernelQualification-lsp-events.json": {
+      "before": null,
+      "after": "d3cef652f6d12b2b69cf66899aa818547e733b0754b42a4301e310f48352e379"
+    },
+    "blueprint/ch07/closeout29/compiled/HUMAN-OUKernelQualification.json": {
+      "before": null,
+      "after": "cd503cf286e8fce045083db454ada929168b8fa7b0774a8a943eb56996a32196"
+    },
+    "blueprint/ch07/closeout29/compiled/HUMAN-OUKernelQualification.lean": {
+      "before": null,
+      "after": "cb3d5ad0d028f92c93f8efc6d4e061e84385e612436d9bbbfbe58b7c584e42bb"
+    },
+    "blueprint/ch07/closeout29/compiled/HUMAN-OUKernelQualification.log": {
+      "before": null,
+      "after": "667062870c25ffaffeebb54777375349fe425583e40159d850cdaac62564b398"
+    },
+    "blueprint/ch07/closeout29/compiled/HUMAN-SpectralQualification-lsp-events.json": {
+      "before": null,
+      "after": "07a93eff3abfb2cf11cdfa961bc32498365e963d30fb67e8118be7ed62e7fb58"
+    },
+    "blueprint/ch07/closeout29/compiled/HUMAN-SpectralQualification.json": {
+      "before": null,
+      "after": "7719de414e46d8325acdb0a03aec622f05bf3b4be3ffc42fedd4811cc50eddbd"
+    },
+    "blueprint/ch07/closeout29/compiled/HUMAN-SpectralQualification.lean": {
+      "before": null,
+      "after": "66f5025a5ef55431b08d0e65e5e4150e55a452fd36dcb50331407619061536c0"
+    },
+    "blueprint/ch07/closeout29/compiled/HUMAN-SpectralQualification.log": {
+      "before": null,
+      "after": "697e6aa1a587d129032949bcb343e7bdbfa1b85774653102790a5e86982d1174"
+    },
+    "blueprint/ch07/closeout29/compiled/HUMAN-SPVPrinted-lsp-events.json": {
+      "before": null,
+      "after": "b6858fe2a1a21b7e071e1f9e3b2772522130d64e6bd521d4a6122c63e110c752"
+    },
+    "blueprint/ch07/closeout29/compiled/HUMAN-SPVPrinted.json": {
+      "before": null,
+      "after": "033f3de5796872a584cccbfec5f99728a7c22bdb7524deed353636375cb9b0f6"
+    },
+    "blueprint/ch07/closeout29/compiled/HUMAN-SPVPrinted.lean": {
+      "before": null,
+      "after": "e0eb0cea125ec30e2866e26c78c6e034032e13508318ab7408bc01b05bbe0500"
+    },
+    "blueprint/ch07/closeout29/compiled/HUMAN-SPVPrinted.log": {
+      "before": null,
+      "after": "697e6aa1a587d129032949bcb343e7bdbfa1b85774653102790a5e86982d1174"
+    },
+    "blueprint/ch07/closeout29/compiled/JSplitting-lsp-events.json": {
+      "before": null,
+      "after": "d304df259db43be74e39e280d9ce9766ec696f35de73d400b5f655bb90ad03ae"
+    },
+    "blueprint/ch07/closeout29/compiled/JSplitting.json": {
+      "before": null,
+      "after": "b5c567fc4578514126dcbf5531597911b74695292ebc3f76ade4fc51e8dc3922"
+    },
+    "blueprint/ch07/closeout29/compiled/JSplitting.lean": {
+      "before": null,
+      "after": "328d627f9fe2e3a8a511cc49c6dae5eee3b6ff6dbaa90a373dd4a73f849d58c2"
+    },
+    "blueprint/ch07/closeout29/compiled/JSplitting.log": {
+      "before": null,
+      "after": "2b777eb93bab1433d1246896c7c1fbf42e985b7b029db5331169d48b8ef2f4f5"
+    },
+    "blueprint/ch07/closeout29/compiled/MomentumRedrawLimit-lsp-events.json": {
+      "before": null,
+      "after": "98402cfa3846615001f87bb188a417503a4c9fb9031d7b9f200c4ee280196e71"
+    },
+    "blueprint/ch07/closeout29/compiled/MomentumRedrawLimit.json": {
+      "before": null,
+      "after": "d6f2c8ebfff1ecff7fd4d5cea582bca3deb908755fb59286c790f26cd5385ec2"
+    },
+    "blueprint/ch07/closeout29/compiled/MomentumRedrawLimit.lean": {
+      "before": null,
+      "after": "990833385621070c3dbf37ee528a83ecb8d331ad56c5701aaef6713c1b16ef33"
+    },
+    "blueprint/ch07/closeout29/compiled/MomentumRedrawLimit.log": {
+      "before": null,
+      "after": "0bcdffb63e0a9a969a874a2616b20ce33a5bd413a5148f6c6bdb99560a3b5880"
+    },
+    "blueprint/ch07/closeout29/compiled/NonsymmetricExactMoments-lsp-events.json": {
+      "before": null,
+      "after": "b1fd011333fa95490e29be73033441ea24be65ebfd18afa2367c6eff1916c8fd"
+    },
+    "blueprint/ch07/closeout29/compiled/NonsymmetricExactMoments-RUNNING.json": {
+      "before": null,
+      "after": "aafdfa3103c957fc0dc7fda5cc7c386c7afe26e5c44f777e4d6687265a6d67af"
+    },
+    "blueprint/ch07/closeout29/compiled/NonsymmetricExactMoments.json": {
+      "before": null,
+      "after": "d94c5b7cb06f340b51536e851855080c2cae65aaff962237aee4a6f77b6ae87f"
+    },
+    "blueprint/ch07/closeout29/compiled/NonsymmetricExactMoments.lean": {
+      "before": null,
+      "after": "eebe25139e16e7ae4748cf1a0935a1cdd9ca34daa0a72639a0caf0f6bc90a1ea"
+    },
+    "blueprint/ch07/closeout29/compiled/NonsymmetricExactMoments.log": {
+      "before": null,
+      "after": "e0dbb61d6d93c4f4b5ab5c335039391e4a65aa6e19ec078c0d24acda68857cdc"
+    },
+    "blueprint/ch07/closeout29/compiled/OBAModifiedOperator-lsp-events.json": {
+      "before": null,
+      "after": "813352bca7d59c54317581ab218addc0e5098569707db2f418de9c52a2840652"
+    },
+    "blueprint/ch07/closeout29/compiled/OBAModifiedOperator.json": {
+      "before": null,
+      "after": "7646e91737dcd40ff4c9039c66796fb1da33a2897ea53bfdd3419f8be074c6a8"
+    },
+    "blueprint/ch07/closeout29/compiled/OBAModifiedOperator.lean": {
+      "before": null,
+      "after": "e7596d419969a4d47481564e7bf86f47676385a869d5a0fe13ae3bfc0e103049"
+    },
+    "blueprint/ch07/closeout29/compiled/OBAModifiedOperator.log": {
+      "before": null,
+      "after": "219bd9b514e1ae169b91f10a826d253520115581a7b4fab94de6a6e553a0a1dc"
+    },
+    "blueprint/ch07/closeout29/compiled/OperatorOrderReversal-lsp-events.json": {
+      "before": null,
+      "after": "22a65ed3d8224b0169d7202d00da010dc7635d54a75b3c2c3a2e6e870e1f286e"
+    },
+    "blueprint/ch07/closeout29/compiled/OperatorOrderReversal.json": {
+      "before": null,
+      "after": "a2fe317255f084d6e813095c6385533efbfd4fe33536b06ec52048c25f9eeaf0"
+    },
+    "blueprint/ch07/closeout29/compiled/OperatorOrderReversal.lean": {
+      "before": null,
+      "after": "ea90211336d1edac11ddbb1b9ce6a8193d0b8235e2dd0cf7c3452b4b031a59b2"
+    },
+    "blueprint/ch07/closeout29/compiled/OperatorOrderReversal.log": {
+      "before": null,
+      "after": "a8619ae6c09f9d7bd629fe99b42ff3a2d573bed6293f4c3b42a0c9b9978db016"
+    },
+    "blueprint/ch07/closeout29/compiled/OUHermiteIdentities-lsp-events.json": {
+      "before": null,
+      "after": "76b59c4d2379e57dc49ebe0ec627b79f9886f078b3c8a8748bad0842b241f97c"
+    },
+    "blueprint/ch07/closeout29/compiled/OUHermiteIdentities.json": {
+      "before": null,
+      "after": "5c835d5835bfbcf121fedfa5390708b8e5eee9d64d288f17be0054473ec9234b"
+    },
+    "blueprint/ch07/closeout29/compiled/OUHermiteIdentities.lean": {
+      "before": null,
+      "after": "188928fc3bc08380794a816b12c0b0770a9bd22470161d056fc0c44a5ea60aa2"
+    },
+    "blueprint/ch07/closeout29/compiled/OUHermiteIdentities.log": {
+      "before": null,
+      "after": "5a34475d6334a5d6aaf68578dea375c4f0924cfea44f2d11bf88033d8c64df04"
+    },
+    "blueprint/ch07/closeout29/compiled/OverdampedFirstOrderCaution-lsp-events.json": {
+      "before": null,
+      "after": "e204a37ccd8adc322590381a34c65bf9d3d8ac747e39bbb06699d912997b64d1"
+    },
+    "blueprint/ch07/closeout29/compiled/OverdampedFirstOrderCaution.json": {
+      "before": null,
+      "after": "7e981782cd75feb3aec82c40d7fc459d4902e47d0279593d49c5a92f84cadbcf"
+    },
+    "blueprint/ch07/closeout29/compiled/OverdampedFirstOrderCaution.lean": {
+      "before": null,
+      "after": "7245246b7a648aae8627698cd58616fa4a4341b5ba6eac9e013e5ad11f5f2239"
+    },
+    "blueprint/ch07/closeout29/compiled/OverdampedFirstOrderCaution.log": {
+      "before": null,
+      "after": "219bd9b514e1ae169b91f10a826d253520115581a7b4fab94de6a6e553a0a1dc"
+    },
+    "blueprint/ch07/closeout29/compiled/ReciprocalFrictionExpansion-lsp-events.json": {
+      "before": null,
+      "after": "b418b972e15bf9c16971c13801fc2de3f8b7f53b07aa59d13daf598e64353604"
+    },
+    "blueprint/ch07/closeout29/compiled/ReciprocalFrictionExpansion.json": {
+      "before": null,
+      "after": "8d4d7968f6902b7ab1b550523a853db027ce400e23ff88ef9a86ddd7ab8d457a"
+    },
+    "blueprint/ch07/closeout29/compiled/ReciprocalFrictionExpansion.lean": {
+      "before": null,
+      "after": "994ed48075a5fe934a445ed807c5a0dcfba7dbc497ce51ff71b1b75a8bba12d3"
+    },
+    "blueprint/ch07/closeout29/compiled/ReciprocalFrictionExpansion.log": {
+      "before": null,
+      "after": "5a34475d6334a5d6aaf68578dea375c4f0924cfea44f2d11bf88033d8c64df04"
+    },
+    "blueprint/ch07/closeout29/compiled/SpectralRadiusStability-lsp-events.json": {
+      "before": null,
+      "after": "ac8225edf5069bda7052b1f183e8438804f5ff9fff6ba723ef54ccb80f5ab245"
+    },
+    "blueprint/ch07/closeout29/compiled/SpectralRadiusStability.json": {
+      "before": null,
+      "after": "e0344aff92c986e6443f3f63d60213d560d165012655f86a5b3172aea3c69f02"
+    },
+    "blueprint/ch07/closeout29/compiled/SpectralRadiusStability.lean": {
+      "before": null,
+      "after": "36cea44861e9ed0668bec0dce466b789aa566592b9ccaa4f681f57058b127468"
+    },
+    "blueprint/ch07/closeout29/compiled/SpectralRadiusStability.log": {
+      "before": null,
+      "after": "76b80a0cb29b7d075b4973e1a3ec0aafbf3ed6736e6d83cc45a4c688253f5797"
+    },
+    "blueprint/ch07/closeout29/compiled/SuperconvergenceScope-lsp-events.json": {
+      "before": null,
+      "after": "b178a93223ef1f2ff4db6dd79a25ab1d9e7ecb541a21ae88d0f929d670891388"
+    },
+    "blueprint/ch07/closeout29/compiled/SuperconvergenceScope.json": {
+      "before": null,
+      "after": "d83c8b69049bfe6cc3d85716142cc01733fa109fd82e2fdd61d32c099cb96e2b"
+    },
+    "blueprint/ch07/closeout29/compiled/SuperconvergenceScope.lean": {
+      "before": null,
+      "after": "5c0f2ddfafb39c69fd68210c6ea403ef33a133c7e81bd93af6972572d0eba610"
+    },
+    "blueprint/ch07/closeout29/compiled/SuperconvergenceScope.log": {
+      "before": null,
+      "after": "7af31caf94ea2025f9c17c47cb36afbf443a2f6340cdc0cbbcc7c17ee3bf5502"
+    },
+    "blueprint/ch07/closeout29/compiled/SUPPLEMENT-final-FAILED1.json": {
+      "before": null,
+      "after": "4b0eff4883f6f256b33e585c0eda809bce6bcf8cb5043281ddf07c86d8c6e0b9"
+    },
+    "blueprint/ch07/closeout29/compiled/SUPPLEMENT-final-FAILED1.lean": {
+      "before": null,
+      "after": "89e16190aadb6555a98483a709d538fe9194a17fdb73de58d8b06f5014c1d025"
+    },
+    "blueprint/ch07/closeout29/compiled/SUPPLEMENT-final-FAILED1.log": {
+      "before": null,
+      "after": "d9b97881d777857a686202e5e487cb3f18476202ceab1808daac800d2c2b3b1d"
+    },
+    "blueprint/ch07/closeout29/compiled/SUPPLEMENT-final-lsp-events.json": {
+      "before": null,
+      "after": "ddba1fd7e66820cbebeb605f2a5ce2c103211a229d2c817658c55b070df6ee18"
+    },
+    "blueprint/ch07/closeout29/compiled/SUPPLEMENT-final-r2.json": {
+      "before": null,
+      "after": "d026bcf9f411121c9634614f65f174f00364603e359bdd4585bc700832fd8e18"
+    },
+    "blueprint/ch07/closeout29/compiled/SUPPLEMENT-final-r2.lean": {
+      "before": null,
+      "after": "f37527811affdb588b61e3ff1e30f2061d003be08a938024245f8a1dc811581e"
+    },
+    "blueprint/ch07/closeout29/compiled/SUPPLEMENT-final-r2.log": {
+      "before": null,
+      "after": "89bde94a147a0c86a98a41406d7ac91ff7327c7a419b84d66a8aed1d4a566787"
+    },
+    "blueprint/ch07/closeout29/compiled/SUPPLEMENT-final.json": {
+      "before": null,
+      "after": "4b0eff4883f6f256b33e585c0eda809bce6bcf8cb5043281ddf07c86d8c6e0b9"
+    },
+    "blueprint/ch07/closeout29/compiled/SUPPLEMENT-final.lean": {
+      "before": null,
+      "after": "89e16190aadb6555a98483a709d538fe9194a17fdb73de58d8b06f5014c1d025"
+    },
+    "blueprint/ch07/closeout29/compiled/SUPPLEMENT-final.log": {
+      "before": null,
+      "after": "d9b97881d777857a686202e5e487cb3f18476202ceab1808daac800d2c2b3b1d"
+    },
+    "blueprint/ch07/closeout29/compiled/SymmetricRHS-lsp-events.json": {
+      "before": null,
+      "after": "f9a2799577b395a98477eacf273593c826ec1b470e5741803d28032b21dd8b0c"
+    },
+    "blueprint/ch07/closeout29/compiled/SymmetricRHS.json": {
+      "before": null,
+      "after": "83a520dfa12ed26d2cb452404ff76bbdd9318e8c95d0970650cb8fe0e78845b8"
+    },
+    "blueprint/ch07/closeout29/compiled/SymmetricRHS.lean": {
+      "before": null,
+      "after": "84c3c0ecfa36e43f9b3293b42658ae15ad86477f6a0a99e98902616ee08d47a4"
+    },
+    "blueprint/ch07/closeout29/compiled/SymmetricRHS.log": {
+      "before": null,
+      "after": "277f9d8033d77c9ffd8d4c36d8d0dacafe4730a5581fb50ad255475e3efd730a"
+    },
+    "blueprint/ch07/closeout29/compiled/TaylorRemainder-lsp-events.json": {
+      "before": null,
+      "after": "a2ea45a13852c2d375cf198f82be3a22adc1950d8f74c12888cd5afa6d491f53"
+    },
+    "blueprint/ch07/closeout29/compiled/TaylorRemainder.json": {
+      "before": null,
+      "after": "4d6cd751cc3d72eebab521701a1709d0e53b1208662221e99a464484f910ba62"
+    },
+    "blueprint/ch07/closeout29/compiled/TaylorRemainder.lean": {
+      "before": null,
+      "after": "0f63391a552d10b9afcd448353cf2e5153e8f34fad6882baf532c16c5853be6b"
+    },
+    "blueprint/ch07/closeout29/compiled/TaylorRemainder.log": {
+      "before": null,
+      "after": "219bd9b514e1ae169b91f10a826d253520115581a7b4fab94de6a6e553a0a1dc"
+    },
+    "blueprint/ch07/closeout29/compiled/WordConvention-lsp-events.json": {
+      "before": null,
+      "after": "fe0ff6b50f8de36dd382397378d74f05d1a62a4c90ec09c36784f953a221aa37"
+    },
+    "blueprint/ch07/closeout29/compiled/WordConvention-RUNNING.json": {
+      "before": null,
+      "after": "250eb6f29f75e4031fd05ce3e0b8287c125a591f72b93d68766bc57b52313283"
+    },
+    "blueprint/ch07/closeout29/compiled/WordConvention.json": {
+      "before": null,
+      "after": "2f9d19275c94dba0836b529e2311a7f0e03c247b48445c5d9419a52c1223036f"
+    },
+    "blueprint/ch07/closeout29/compiled/WordConvention.lean": {
+      "before": null,
+      "after": "eebe25139e16e7ae4748cf1a0935a1cdd9ca34daa0a72639a0caf0f6bc90a1ea"
+    },
+    "blueprint/ch07/closeout29/compiled/WordConvention.log": {
+      "before": null,
+      "after": "c586c9bef85632a49fe64731998a8037d003b0018e35556e4544c93eabbd5e42"
+    },
+    "blueprint/ch07/closeout29/full/axiom_dependencies.log": {
+      "before": null,
+      "after": "4752968d596e6e834b2fbc84d3455c8797eabeaec240b74c6a3624ff0969d5e0"
+    },
+    "blueprint/ch07/closeout29/full/blueprint_axiom_dependencies.log": {
+      "before": null,
+      "after": "d4485e49ae607374689f4d2d0927e9713c606a0050c7b2ced24440b4dd79e385"
+    },
+    "blueprint/ch07/closeout29/full/blueprint_fresh_Ch01.log": {
+      "before": null,
+      "after": "b1253aa55d05f0c70a73c25c7d09925e5c72213998958a8d301825d88c94eabb"
+    },
+    "blueprint/ch07/closeout29/full/blueprint_fresh_Ch02.log": {
+      "before": null,
+      "after": "a4a5f862ca2175b2fb1807056f56714aa250d6fc4cb660f69125dfd64cf3b126"
+    },
+    "blueprint/ch07/closeout29/full/chapter02_axiom_dependencies.log": {
+      "before": null,
+      "after": "a4b0ebe8ceb224b25eb142371a463bcab37ce451e04739b8c2d695fa5f48b1ac"
+    },
+    "blueprint/ch07/closeout29/full/CHECK_REPORT.json": {
+      "before": null,
+      "after": "f6f724433976a0af7599b513bba55226f2c2de375500975339b7f7e23427f390"
+    },
+    "blueprint/ch07/closeout29/full/git_branch.log": {
+      "before": null,
+      "after": "57d74986b887e748f91bfbad6a29636a0c7dc3a20f74b4ab309099e235d1782a"
+    },
+    "blueprint/ch07/closeout29/full/git_head.log": {
+      "before": null,
+      "after": "99402b3a2c93267058b717974c27ecfb3991df67cdca473dcc4977ac697075e7"
+    },
+    "blueprint/ch07/closeout29/full/git_status.log": {
+      "before": null,
+      "after": "10bc75007743ad2afe77b50108790e560929865235419e213aaf129bfcb9e60e"
+    },
+    "blueprint/ch07/closeout29/full/lake_build.log": {
+      "before": null,
+      "after": "92ab9f8136a402260865cd967903b61a5a08d07ee6ea21c6407365f40ed13a20"
+    },
+    "blueprint/ch07/closeout29/full/lake_version.log": {
+      "before": null,
+      "after": "b801ef76e93ae33a69242d200dfe7902f24e8f2a463bbce45e791d34c3ed71cc"
+    },
+    "blueprint/ch07/closeout29/full/lean_version.log": {
+      "before": null,
+      "after": "451f21ad769edda39f880a5e59de6e61bfebaa4e7bdb9a1d60099f62c11d9c25"
+    },
+    "blueprint/ch07/closeout29/full/mathlib_revision.log": {
+      "before": null,
+      "after": "23573f26a60de8948cc8c0cbea5133c3773ebb48537680ea9c5341eee57d2db3"
+    },
+    "blueprint/ch07/closeout29/full/mathlib_status.log": {
+      "before": null,
+      "after": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "blueprint/ch07/closeout29/full/scratch.log": {
+      "before": null,
+      "after": "313d7d8a4c867ae94ec6c76233c3d92188bac4d996222614efc0510a71376c4f"
+    },
+    "Blueprint/Ch07.lean": {
+      "before": "f30ea154ebfb07ae85c0b806ff74b35808d5a0c3dcaa647c0c3cc80a78239e37",
+      "after": "f3bc0ee86ace9c825028f0cec8ebb2fb410d6be77213cc7fb41cb8889540a000"
+    },
+    "docs/review/CH07_BLUEPRINT.zh-CN.md": {
+      "before": null,
+      "after": "56f3318cab351ae4101f81e8d6c119f8b569c35626758817f8ca84a07324aa00"
+    },
+    "docs/review/CH07_ERRATA.zh-CN.md": {
+      "before": null,
+      "after": "baccb5da3a3007f4dc70acea3c6aec7c9a26ce60644083077825e8619da8e131"
+    },
+    "docs/review/CH07_SUMMARY_FOR_MENTOR.zh-CN.md": {
+      "before": null,
+      "after": "4aef41c4d86c9a43942d484be549f98e9cc9d34d512cf7fced89503d11e4ed96"
+    }
+  },
+  "frozen_files": 16481
+}
