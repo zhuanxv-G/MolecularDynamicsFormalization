@@ -1,0 +1,52 @@
+{
+  "batch": "BATCH01",
+  "subtask": "BATCH01f",
+  "source_ids": [
+    "MD-7.2-MeanErrorExpectation"
+  ],
+  "input_sha256": {
+    "Blueprint/Ch07.lean": "db27f817523c66c5dc21697122a502100be9ca4a1900711ccf264497cef2cbf5",
+    "blueprint/ch07/ch07_source.json": "250f9805f47b5907f2e260e05c9836c50550e3c5b2b21fead034ce9e4201716e",
+    "BATCH01f_PAGES.pdf": "1025bce177ace74690813ff210afa76e615e2998b1cab9dbfc08205620954a62"
+  },
+  "page_mapping": [
+    {
+      "attachment_page": 1,
+      "original_pdf_page": 285,
+      "printed_page": 264
+    }
+  ],
+  "definition_excerpts": [
+    {
+      "full_name": "MD.Ch07.meanErrorExpectation",
+      "kind": "theorem",
+      "path": "Blueprint/Ch07.lean",
+      "line": 67,
+      "code_sha256": "76079941b1d97e33b58772103d17b4d7d302139ffe05b480f9aeedde1df41ec7"
+    },
+    {
+      "full_name": "MD.Ch07.meanSquareError",
+      "kind": "def",
+      "path": "Blueprint/Ch07.lean",
+      "line": 74,
+      "code_sha256": "2b7706ff7c01f2815719b7c9c13103a22b8014e00faf92d8c6c5c6977d47029a"
+    }
+  ],
+  "validation": {
+    "project_constant_closure": "PASS",
+    "missing_project_definitions": [],
+    "full_page_render_equality_dpi": 72,
+    "website_submitted": false
+  },
+  "files": {
+    "PASTE.txt": {
+      "bytes": 3829,
+      "sha256": "2218cd80f37521477b0a91dcc0dd1cac367439baa1b9ec995d13e9d642a37cbc"
+    },
+    "BATCH01f_PAGES.pdf": {
+      "bytes": 74818,
+      "sha256": "1025bce177ace74690813ff210afa76e615e2998b1cab9dbfc08205620954a62"
+    }
+  },
+  "total_task_bytes": 80225
+}

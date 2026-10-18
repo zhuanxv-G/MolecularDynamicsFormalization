@@ -1,0 +1,31 @@
+blueprint\ch07\validation\batches\s72b-v1.lean:43:8: warning: declaration uses `sorry`
+blueprint\ch07\validation\batches\s72b-v1.lean:104:25: warning: Variable name `hL` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _hL
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+blueprint\ch07\validation\batches\s72b-v1.lean:118:8: warning: declaration uses `sorry`
+blueprint\ch07\validation\batches\s72b-v1.lean:139:8: warning: declaration uses `sorry`
+'MD.Ch07.bias' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch07.scalarSDE' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch07.eulerMaruyamaStep' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch07.standardNormalSequence' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch07.eulerMaruyama' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch07.sdeIncrement' depends on axioms: [propext, sorryAx, Classical.choice, Quot.sound]
+'MD.Ch07.strongError' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch07.meanErrorExpectation' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch07.meanSquareError' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch07.hasStrongOrder' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch07.weakError' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch07.hasWeakOrder' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch07.strongWeakLipschitz' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch07.weakDoesNotImplyStrong' depends on axioms: [propext, sorryAx, Classical.choice, Quot.sound]
+'MD.Ch07.densityWithPartition' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch07.canonicalAverage' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch07.probabilityDensity' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch07.partitionPrinted' depends on axioms: [propext, sorryAx, Classical.choice, Quot.sound]
+'MD.Ch07.partitionPrinted_counterexample' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch07.partitionPrinted_corrected' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch07.observableBias' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch07.bias_nonnegative' depends on axioms: [propext, Classical.choice, Quot.sound]

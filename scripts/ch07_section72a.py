@@ -6,6 +6,9 @@ where $W$ defines a standard scalar Wiener process.''',
 '''def scalarSDE (P : Measure Ω) (W X : ℝ → Ω → ℝ)
     (a b : ℝ → ℝ) (x0 : ℝ) : Prop :=
   IsProbabilityMeasure P ∧ IsBrownianReal (fun t sample ↦ W t sample) P ∧
+  (∀ t : ℝ, 0 ≤ t → Measurable[MeasurableSpace.comap
+    (fun (sample : Ω) (s : Icc (0 : ℝ) t) ↦ W s sample) inferInstance] (X t)) ∧
+  (∀ T : ℝ, 0 ≤ T → ∀ᵐ sample ∂P, IntervalIntegrable (fun s ↦ a (X s sample)) volume 0 T) ∧
   MolecularDynamics.Chapter06Review.adaptedSquareIntegrand P W
     (fun t sample ↦ b (X t sample)) ∧
   MolecularDynamics.Chapter06Review.scalarSDE P W X

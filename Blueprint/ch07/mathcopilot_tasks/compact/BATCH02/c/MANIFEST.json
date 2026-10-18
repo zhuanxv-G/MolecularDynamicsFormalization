@@ -1,0 +1,59 @@
+{
+  "batch": "BATCH02",
+  "subtask": "BATCH02c",
+  "source_ids": [
+    "MD-7.2-StrongWeakComparison"
+  ],
+  "input_sha256": {
+    "Blueprint/Ch07.lean": "db27f817523c66c5dc21697122a502100be9ca4a1900711ccf264497cef2cbf5",
+    "blueprint/ch07/ch07_source.json": "250f9805f47b5907f2e260e05c9836c50550e3c5b2b21fead034ce9e4201716e",
+    "BATCH02c_PAGES.pdf": "c1d1b1271f5b49812bc9b80917a20cdae6d3aff2421c6809935b98c75e5e3542"
+  },
+  "page_mapping": [
+    {
+      "attachment_page": 1,
+      "original_pdf_page": 286,
+      "printed_page": 265
+    }
+  ],
+  "definition_excerpts": [
+    {
+      "full_name": "MD.Ch07.meanErrorExpectation",
+      "kind": "theorem",
+      "path": "Blueprint/Ch07.lean",
+      "line": 67,
+      "code_sha256": "76079941b1d97e33b58772103d17b4d7d302139ffe05b480f9aeedde1df41ec7"
+    },
+    {
+      "full_name": "MD.Ch07.strongWeakLipschitz",
+      "kind": "theorem",
+      "path": "Blueprint/Ch07.lean",
+      "line": 106,
+      "code_sha256": "0f617d27e6ff79623c43d0a3939f6eff1d1e919f596e765bdc7f110466543501"
+    },
+    {
+      "full_name": "MD.Ch07.weakDoesNotImplyStrong",
+      "kind": "theorem",
+      "path": "Blueprint/Ch07.lean",
+      "line": 121,
+      "code_sha256": "1e7d4b65357d91b437c6193ef60b62488dadbe0d02a1d9ab9cb64c9a714c20fc"
+    }
+  ],
+  "validation": {
+    "project_constant_closure": "PASS",
+    "missing_project_definitions": [],
+    "full_page_render_equality_dpi": 72,
+    "website_submitted": false
+  },
+  "files": {
+    "PASTE.txt": {
+      "bytes": 5352,
+      "sha256": "45c398f01211826ec3abb23fffece59b42b26d10aa246f2c6b6975ddc1ae4752"
+    },
+    "BATCH02c_PAGES.pdf": {
+      "bytes": 61515,
+      "sha256": "c1d1b1271f5b49812bc9b80917a20cdae6d3aff2421c6809935b98c75e5e3542"
+    }
+  },
+  "total_task_bytes": 68696
+}

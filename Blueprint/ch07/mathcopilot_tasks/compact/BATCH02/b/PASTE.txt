@@ -1,0 +1,94 @@
+以附件/PASTE 为准，忽略 /workspace 旧文件；Mathlib 定义按标准含义采信。
+本任务只审本条：原文转录、对象资格、定义体、量词、全部结论及[EXTRA]是否一致；Lean编译不代替语义审阅。
+Lean/Mathlib均4.34.0。原页PDF映射：[286]；印刷页=[265].
+input_sha256请原样回显：
+{
+  "Blueprint/Ch07.lean": "db27f817523c66c5dc21697122a502100be9ca4a1900711ccf264497cef2cbf5",
+  "blueprint/ch07/ch07_source.json": "250f9805f47b5907f2e260e05c9836c50550e3c5b2b21fead034ce9e4201716e",
+  "BATCH02b_PAGES.pdf": "a20ec63186913750d053f52de6b0f5b6db8cccebfeae00c0e025ad0489716f18"
+}
+用代码将JSON对象(batch,input_sha256,items)写到 /workspace/.mathcopilot/reviews/ch07/BATCH02b_review.json；items仅含本source_id。
+items字段：source_id、verdict(PASS/FAIL/NEEDS_HUMAN)、transcription、semantic_review、counterexample、suggested_fix、printed_version、corrected_version。逐版区分原文疑误和修正版结论；缺材料必须具体指出，不猜测。写后json.loads自检，最后仅回复路径及统计。
+
+## 原文JSON
+```json
+{
+  "source_id": "MD-7.2-WeakError",
+  "kind": "definition",
+  "label": null,
+  "section": "7.2",
+  "printed_page": "265",
+  "pdf_page": "286",
+  "statement_latex": "The weak error is usually defined with reference to suitable test functions (observables) $\\phi(x)$ by\n\\[\\mathrm{Err}^{\\rm weak}_{h,\\tau,\\phi}=\\max_{n=0,1,2,\\ldots,\\nu}|\\mathbb E\\phi(X_n)-\\mathbb E\\phi(X(nh))|,\\]\nand we say that a method has weak order $r$ if $\\mathrm{Err}^{\\rm weak}_{h,\\tau,\\phi}<D(\\tau)h^r$ for some $D(\\tau)$, for all members of the chosen class of observables.",
+  "proof_latex": null,
+  "proof_note": "原书未给独立完整证明。",
+  "context_notation": [],
+  "extra_assumptions": [
+    "测试函数类明确量化；D允许依赖测试函数；积分只有在可积时解释为期望，后续误差定理显式要求可积。"
+  ],
+  "issues": [],
+  "statement_scope": "本条逐字引用的全部数学对象与公式；未纳入的上下文另列。",
+  "lean_decl": "MD.Ch07.weakError",
+  "lean_declarations": [
+    "MD.Ch07.weakError",
+    "MD.Ch07.hasWeakOrder"
+  ],
+  "source_page_verification": "见source_page_checks.json；必须已目视核对本条原页。",
+  "repair_log": [],
+  "documented_priors": []
+}
+```
+
+## 完整本条Lean
+```lean
+def weakError (P : Measure Ω) (Xh : ℕ → Ω → ℝ) (X : ℝ → Ω → ℝ)
+    (f : ℝ → ℝ) (h : ℝ) (N : ℕ) : ℝ :=
+  sSup {v | ∃ k ∈ Finset.range (N+1),
+    v = |(∫ sample, f (Xh k sample) ∂P) - ∫ sample, f (X (k*h) sample) ∂P|}
+
+def hasWeakOrder (P : Measure Ω) (Xh : ℝ → ℕ → Ω → ℝ)
+    (X : ℝ → Ω → ℝ) (tests : Set (ℝ → ℝ)) (r : ℝ) : Prop :=
+  IsProbabilityMeasure P ∧ 0 < r ∧ ∀ f ∈ tests, ∀ T : ℝ, 0 < T →
+    ∃ D : ℝ, 0 < D ∧ ∃ N0 : ℕ, 0 < N0 ∧
+      ∀ N : ℕ, N0 ≤ N →
+        (∀ k ∈ Finset.range (N+1), Integrable (fun sample ↦ f (Xh (T/N) k sample)) P ∧
+          Integrable (fun sample ↦ f (X (k*(T/N)) sample)) P) ∧
+        weakError P (Xh (T/N)) X f (T/N) N < D*(T/N)^r
+```
+
+## 项目依赖定义体及选择规格
+以下def/abbrev/structure完整保留；定理列出完整类型，Mathlib标准定义无需摘录。
+
+### MD.Ch07.weakError (Blueprint/Ch07.lean:89)
+原文件上下文：
+```lean
+open Set Filter MeasureTheory ProbabilityTheory MolecularDynamics
+open scoped BigOperators Topology ContDiff ENNReal NNReal
+variable {Ω : Type*} [MeasurableSpace Ω]
+variable {n : ℕ}
+```
+```lean
+def weakError (P : Measure Ω) (Xh : ℕ → Ω → ℝ) (X : ℝ → Ω → ℝ)
+    (f : ℝ → ℝ) (h : ℝ) (N : ℕ) : ℝ :=
+  sSup {v | ∃ k ∈ Finset.range (N+1),
+    v = |(∫ sample, f (Xh k sample) ∂P) - ∫ sample, f (X (k*h) sample) ∂P|}
+```
+
+### MD.Ch07.hasWeakOrder (Blueprint/Ch07.lean:94)
+原文件上下文：
+```lean
+open Set Filter MeasureTheory ProbabilityTheory MolecularDynamics
+open scoped BigOperators Topology ContDiff ENNReal NNReal
+variable {Ω : Type*} [MeasurableSpace Ω]
+variable {n : ℕ}
+```
+```lean
+def hasWeakOrder (P : Measure Ω) (Xh : ℝ → ℕ → Ω → ℝ)
+    (X : ℝ → Ω → ℝ) (tests : Set (ℝ → ℝ)) (r : ℝ) : Prop :=
+  IsProbabilityMeasure P ∧ 0 < r ∧ ∀ f ∈ tests, ∀ T : ℝ, 0 < T →
+    ∃ D : ℝ, 0 < D ∧ ∃ N0 : ℕ, 0 < N0 ∧
+      ∀ N : ℕ, N0 ≤ N →
+        (∀ k ∈ Finset.range (N+1), Integrable (fun sample ↦ f (Xh (T/N) k sample)) P ∧
+          Integrable (fun sample ↦ f (X (k*(T/N)) sample)) P) ∧
+        weakError P (Xh (T/N)) X f (T/N) N < D*(T/N)^r
+```

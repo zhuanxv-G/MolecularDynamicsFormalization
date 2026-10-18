@@ -36,3 +36,5 @@ def add(key,section,page,text,code,*,kind='unnumbered_claim',label=None,proof=No
 # Section modules append records in source order. No imported earlier-chapter generator.
 
 import ch07_section71
+import ch07_section72a
+import ch07_section72b

@@ -16,6 +16,8 @@ with (ROOT/'docs/handoff/WORK_LOG.zh-CN.md').open('a',encoding='utf-8') as f:
 files=['AGENTS.md','docs/handoff/CURRENT_STATE.zh-CN.md','docs/handoff/RESUME_PROMPT.zh-CN.md','docs/handoff/WORK_LOG.zh-CN.md','Blueprint/Ch07.lean','blueprint/ch07','docs/review/CH07_BLUEPRINT.zh-CN.md']
 files += [p.relative_to(ROOT).as_posix() for p in (ROOT/'scripts').glob('ch07_*.py')]
 subprocess.run(['git','add','--',*files],cwd=ROOT,check=True)
+logs=[p.relative_to(ROOT).as_posix() for p in (BASE/'validation').rglob('*.log')]
+if logs:subprocess.run(['git','add','-f','--',*logs],cwd=ROOT,check=True)
 staged=subprocess.check_output(['git','diff','--cached','--name-only'],cwd=ROOT,text=True).splitlines()
 for name in staged:
     assert name.casefold() in {p.casefold() for p in files} or name.casefold().startswith('blueprint/ch07/'),('Unrelated staged file',name)

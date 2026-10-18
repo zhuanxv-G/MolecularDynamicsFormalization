@@ -1,0 +1,101 @@
+{
+  "batch": "BATCH02",
+  "subtask": "BATCH02e",
+  "source_ids": [
+    "MD-7.2-PartitionPrinted"
+  ],
+  "input_sha256": {
+    "Blueprint/Ch07.lean": "db27f817523c66c5dc21697122a502100be9ca4a1900711ccf264497cef2cbf5",
+    "blueprint/ch07/ch07_source.json": "250f9805f47b5907f2e260e05c9836c50550e3c5b2b21fead034ce9e4201716e",
+    "BATCH02e_PAGES.pdf": "f53e909b76f2e71af2317913c424b3e5efc4386cdf59f3b2889b3077866f133d"
+  },
+  "page_mapping": [
+    {
+      "attachment_page": 1,
+      "original_pdf_page": 287,
+      "printed_page": 266
+    }
+  ],
+  "definition_excerpts": [
+    {
+      "full_name": "MD.Ch07.densityWithPartition",
+      "kind": "def",
+      "path": "Blueprint/Ch07.lean",
+      "line": 129,
+      "code_sha256": "c471b5e6366c6ee4863b9b3ec51a9f3ad95e13c11f14a8b6037c39e95edaa771"
+    },
+    {
+      "full_name": "MD.Ch07.probabilityDensity",
+      "kind": "def",
+      "path": "Blueprint/Ch07.lean",
+      "line": 135,
+      "code_sha256": "a377dd2234000b3b704f2192e37b9af7982d3c172b1255bbc3c9b91a8dc21a1c"
+    },
+    {
+      "full_name": "MD.Ch07.partitionPrinted",
+      "kind": "theorem",
+      "path": "Blueprint/Ch07.lean",
+      "line": 142,
+      "code_sha256": "6d74e633f0fc98ea4b922b108a671a6c983252f6157122ecdcdbab86fd34e2ce"
+    },
+    {
+      "full_name": "MD.Ch07.partitionPrinted_counterexample",
+      "kind": "theorem",
+      "path": "Blueprint/Ch07.lean",
+      "line": 149,
+      "code_sha256": "30e5061adb4ac5c08cdd9a1f9653d599ad685927064ac8a834bb8ca87cdb3e31"
+    },
+    {
+      "full_name": "MD.Ch07.partitionPrinted_corrected",
+      "kind": "theorem",
+      "path": "Blueprint/Ch07.lean",
+      "line": 152,
+      "code_sha256": "1bfd1529a66af3a3af552bec62278328896679ed9e5842598a1f0d98d2cbf8ef"
+    },
+    {
+      "full_name": "MolecularDynamics.Chapter02Review.Q",
+      "kind": "abbrev",
+      "path": "MolecularDynamics/Chapter02/ReviewDefinitions.lean",
+      "line": 17,
+      "code_sha256": "d01d4518aed3668e7c982afee1cd3820fb858a94438e5b8960aa0557f5a57ef1"
+    },
+    {
+      "full_name": "MolecularDynamics.Chapter02Review.Z",
+      "kind": "abbrev",
+      "path": "MolecularDynamics/Chapter02/ReviewDefinitions.lean",
+      "line": 18,
+      "code_sha256": "5c03b9b4c74d753cfe2d9b89534d4a9a6c9c137e38273514b8c3e6d35f4c4af1"
+    },
+    {
+      "full_name": "MolecularDynamics.Chapter04Review.Q",
+      "kind": "abbrev",
+      "path": "MolecularDynamics/Chapter04/ReviewDefinitions.lean",
+      "line": 15,
+      "code_sha256": "d01d4518aed3668e7c982afee1cd3820fb858a94438e5b8960aa0557f5a57ef1"
+    },
+    {
+      "full_name": "MolecularDynamics.Chapter04Review.Z",
+      "kind": "abbrev",
+      "path": "MolecularDynamics/Chapter04/ReviewDefinitions.lean",
+      "line": 16,
+      "code_sha256": "5c03b9b4c74d753cfe2d9b89534d4a9a6c9c137e38273514b8c3e6d35f4c4af1"
+    }
+  ],
+  "validation": {
+    "project_constant_closure": "PASS",
+    "missing_project_definitions": [],
+    "full_page_render_equality_dpi": 72,
+    "website_submitted": false
+  },
+  "files": {
+    "PASTE.txt": {
+      "bytes": 7200,
+      "sha256": "0ffb0202d096dbf587a47a9baa82041bbd0aa27605f0a8d13e37fb04d038843e"
+    },
+    "BATCH02e_PAGES.pdf": {
+      "bytes": 78120,
+      "sha256": "f53e909b76f2e71af2317913c424b3e5efc4386cdf59f3b2889b3077866f133d"
+    }
+  },
+  "total_task_bytes": 88732
+}
