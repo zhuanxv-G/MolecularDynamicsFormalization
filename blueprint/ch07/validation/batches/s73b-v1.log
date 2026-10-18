@@ -1,0 +1,86 @@
+blueprint\ch07\validation\batches\s73b-v1.lean:46:8: warning: declaration uses `sorry`
+blueprint\ch07\validation\batches\s73b-v1.lean:107:25: warning: Variable name `hL` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _hL
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+blueprint\ch07\validation\batches\s73b-v1.lean:121:8: warning: declaration uses `sorry`
+blueprint\ch07\validation\batches\s73b-v1.lean:142:8: warning: declaration uses `sorry`
+blueprint\ch07\validation\batches\s73b-v1.lean:187:8: warning: declaration uses `sorry`
+blueprint\ch07\validation\batches\s73b-v1.lean:201:8: warning: declaration uses `sorry`
+blueprint\ch07\validation\batches\s73b-v1.lean:232:8: warning: declaration uses `sorry`
+blueprint\ch07\validation\batches\s73b-v1.lean:240:8: warning: declaration uses `sorry`
+blueprint\ch07\validation\batches\s73b-v1.lean:268:8: warning: declaration uses `sorry`
+blueprint\ch07\validation\batches\s73b-v1.lean:292:42: warning: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+blueprint\ch07\validation\batches\s73b-v1.lean:298:2: error: Type mismatch: After simplification, term
+  HasDerivAt.const_add (x.1 i) (HasDerivAt.mul_const (hasDerivAt_id t) (x.2 i / m i))
+ has type
+  HasDerivAt (fun x_1 => x_1 * (x.2 i / m i)) (x.2 i / m i) t
+but is expected to have type
+  HasDerivAt (fun x_1 => x_1 * x.2 i / m i) (x.2 i / m i) t
+blueprint\ch07\validation\batches\s73b-v1.lean:302:2: error: Type mismatch: After simplification, term
+  HasDerivAt.sub (hasDerivAt_const t (x.2 i)) (HasDerivAt.mul_const (hasDerivAt_id t) (gradient U x.1 i))
+ has type
+  @HasDerivAt ℝ DenselyNormedField.toNontriviallyNormedField ℝ Real.normedAddCommGroup.toAddCommGroup
+    RCLike.toInnerProductSpaceReal.toModule PseudoMetricSpace.toUniformSpace.toTopologicalSpace ⋯
+    ((fun x_1 => x.2 i) - fun y => y * gradient U x.1 i) (-gradient U x.1 i) t
+but is expected to have type
+  @HasDerivAt ℝ DenselyNormedField.toNontriviallyNormedField ℝ Real.instAddCommGroup Semiring.toModule
+    PseudoMetricSpace.toUniformSpace.toTopologicalSpace ⋯ (fun s => x.2 i - s * gradient U x.1 i) (-gradient U x.1 i) t
+'MD.Ch07.bias' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch07.scalarSDE' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch07.eulerMaruyamaStep' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch07.standardNormalSequence' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch07.eulerMaruyama' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch07.sdeIncrement' depends on axioms: [propext, sorryAx, Classical.choice, Quot.sound]
+'MD.Ch07.strongError' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch07.meanErrorExpectation' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch07.meanSquareError' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch07.hasStrongOrder' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch07.weakError' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch07.hasWeakOrder' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch07.strongWeakLipschitz' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch07.weakDoesNotImplyStrong' depends on axioms: [propext, sorryAx, Classical.choice, Quot.sound]
+'MD.Ch07.densityWithPartition' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch07.canonicalAverage' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch07.probabilityDensity' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch07.partitionPrinted' depends on axioms: [propext, sorryAx, Classical.choice, Quot.sound]
+'MD.Ch07.partitionPrinted_counterexample' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch07.partitionPrinted_corrected' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch07.observableBias' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch07.bias_nonnegative' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch07.V' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch07.Phase' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch07.vectorWiener' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch07.momentumOU' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch07.ouIntegratingFactor' depends on axioms: [propext, sorryAx, Classical.choice, Quot.sound]
+'MD.Ch07.ouMomentum' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch07.ouTransitionLaw' depends on axioms: [propext, sorryAx, Classical.choice, Quot.sound]
+'MD.Ch07.ouStep' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch07.vectorNormalSequence' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch07.coordDerivative' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch07.ouForward' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch07.ouBackward' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch07.ouForward_adjoint' depends on axioms: [propext, sorryAx, Classical.choice, Quot.sound]
+'MD.Ch07.ouGaussianInvariant' depends on axioms: [propext, sorryAx, Classical.choice, Quot.sound]
+'MD.Ch07.gradient' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch07.langevin' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch07.hamiltonianGibbs' depends on axioms: [propext, sorryAx, Classical.choice, Quot.sound]
+'MD.Ch07.driftStep' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch07.kickStep' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch07.aField' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch07.bField' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch07.oDrift' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch07.splittingDrift' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch07.driftStep_derivative' depends on axioms: [propext, sorryAx, Classical.choice, Quot.sound]
+'MD.Ch07.kickStep_derivative' depends on axioms: [propext, sorryAx, Classical.choice, Quot.sound]
+'MD.Ch07.aForward' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch07.bForward' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch07.abo' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch07.babo' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch07.oabaobaoPrinted' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch07.oabaobaoPrinted_corrected' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch07.oabaobaoCount' does not depend on any axioms

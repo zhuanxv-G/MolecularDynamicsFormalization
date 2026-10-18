@@ -41,10 +41,15 @@ def generate():
             extra_assumptions=r['extra_assumptions'],source_pages=r['pdf_page'],
             semantic_review='已对照目视原页核对对象、量词、技术资格和所列覆盖范围；网站尚未审阅。')
     dump(BASE/'local_audit.json',dict(template='C',items=items))
-    dump(BASE/'proof_attempts.json',{r['source_id']:dict(reason=r['missing'],
-        category=('原书疑误不证' if 'Printed' in r['code'].split(':=')[0] and r['issues'] else '缺大型理论')
-        if r['missing'] else None,
-        routes=[],decision='缺大型理论时直接记录缺项；否则最多三条短路线。') for r in RECORDS if re.search(r'\bsorry\b',r['code'])})
+    attempts_path=BASE/'proof_attempts.json'
+    attempts=json.loads(attempts_path.read_text(encoding='utf-8')) if attempts_path.exists() else {}
+    for r in RECORDS:
+        if re.search(r'\bsorry\b',r['code']):
+            previous=attempts.get(r['source_id'],{})
+            attempts[r['source_id']]=dict(reason=r['missing'],category=previous.get('category') or
+                ('原书疑误不证' if any('Printed' in n for n in r['lean_declarations']) and r['issues'] else '缺大型理论'),
+                routes=previous.get('routes',[]),decision='缺大型理论时直接记录缺项；否则最多三条短路线。')
+    dump(attempts_path,attempts)
     render()
     return source,audit
 

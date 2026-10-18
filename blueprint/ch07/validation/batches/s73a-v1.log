@@ -1,0 +1,62 @@
+blueprint\ch07\validation\batches\s73a-v1.lean:46:8: warning: declaration uses `sorry`
+blueprint\ch07\validation\batches\s73a-v1.lean:107:25: warning: Variable name `hL` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _hL
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+blueprint\ch07\validation\batches\s73a-v1.lean:121:8: warning: declaration uses `sorry`
+blueprint\ch07\validation\batches\s73a-v1.lean:142:8: warning: declaration uses `sorry`
+blueprint\ch07\validation\batches\s73a-v1.lean:187:8: warning: declaration uses `sorry`
+blueprint\ch07\validation\batches\s73a-v1.lean:201:8: warning: declaration uses `sorry`
+blueprint\ch07\validation\batches\s73a-v1.lean:221:3: error: unexpected token 'partial'; expected identifier
+blueprint\ch07\validation\batches\s73a-v1.lean:225:11: error: unexpected token 'partial'; expected term
+blueprint\ch07\validation\batches\s73a-v1.lean:225:19: error: unexpected token '('; expected 'lemma'
+blueprint\ch07\validation\batches\s73a-v1.lean:226:28: error: unexpected token '('; expected 'lemma'
+blueprint\ch07\validation\batches\s73a-v1.lean:226:45: error: unexpected identifier; expected 'lemma'
+blueprint\ch07\validation\batches\s73a-v1.lean:229:18: error: unexpected token 'partial'; expected term
+blueprint\ch07\validation\batches\s73a-v1.lean:229:26: error: unexpected identifier; expected 'lemma'
+blueprint\ch07\validation\batches\s73a-v1.lean:230:28: error: unexpected token '('; expected 'lemma'
+blueprint\ch07\validation\batches\s73a-v1.lean:230:45: error: unexpected identifier; expected 'lemma'
+blueprint\ch07\validation\batches\s73a-v1.lean:232:8: warning: declaration uses `sorry`
+blueprint\ch07\validation\batches\s73a-v1.lean:240:8: warning: declaration uses `sorry`
+blueprint\ch07\validation\batches\s73a-v1.lean:250:53: error: unexpected token 'partial'; expected term
+blueprint\ch07\validation\batches\s73a-v1.lean:250:61: error: unexpected identifier; expected 'lemma'
+'MD.Ch07.bias' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch07.scalarSDE' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch07.eulerMaruyamaStep' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch07.standardNormalSequence' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch07.eulerMaruyama' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch07.sdeIncrement' depends on axioms: [propext, sorryAx, Classical.choice, Quot.sound]
+'MD.Ch07.strongError' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch07.meanErrorExpectation' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch07.meanSquareError' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch07.hasStrongOrder' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch07.weakError' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch07.hasWeakOrder' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch07.strongWeakLipschitz' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch07.weakDoesNotImplyStrong' depends on axioms: [propext, sorryAx, Classical.choice, Quot.sound]
+'MD.Ch07.densityWithPartition' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch07.canonicalAverage' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch07.probabilityDensity' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch07.partitionPrinted' depends on axioms: [propext, sorryAx, Classical.choice, Quot.sound]
+'MD.Ch07.partitionPrinted_counterexample' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch07.partitionPrinted_corrected' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch07.observableBias' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch07.bias_nonnegative' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch07.V' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch07.Phase' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch07.vectorWiener' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch07.momentumOU' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch07.ouIntegratingFactor' depends on axioms: [propext, sorryAx, Classical.choice, Quot.sound]
+'MD.Ch07.ouMomentum' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch07.ouTransitionLaw' depends on axioms: [propext, sorryAx, Classical.choice, Quot.sound]
+'MD.Ch07.ouStep' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch07.vectorNormalSequence' depends on axioms: [propext, Classical.choice, Quot.sound]
+blueprint\ch07\validation\batches\s73a-v1.lean:298:14: error(lean.unknownIdentifier): Unknown constant `MD.Ch07.partial`
+'MD.Ch07.ouForward' depends on axioms: [propext, sorryAx, Classical.choice, Quot.sound]
+'MD.Ch07.ouBackward' depends on axioms: [propext, sorryAx, Classical.choice, Quot.sound]
+'MD.Ch07.ouForward_adjoint' depends on axioms: [propext, sorryAx, Classical.choice, Quot.sound]
+'MD.Ch07.ouGaussianInvariant' depends on axioms: [propext, sorryAx, Classical.choice, Quot.sound]
+'MD.Ch07.gradient' depends on axioms: [propext, sorryAx, Classical.choice, Quot.sound]
+'MD.Ch07.langevin' depends on axioms: [propext, sorryAx, Classical.choice, Quot.sound]

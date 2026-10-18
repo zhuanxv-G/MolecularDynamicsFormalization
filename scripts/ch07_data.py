@@ -38,3 +38,6 @@ def add(key,section,page,text,code,*,kind='unnumbered_claim',label=None,proof=No
 import ch07_section71
 import ch07_section72a
 import ch07_section72b
+import ch07_section73a
+import ch07_section73b
+import ch07_section73c

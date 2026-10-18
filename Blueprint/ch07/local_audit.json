@@ -22,7 +22,876 @@
       ],
       "source_pages": "284",
       "semantic_review": "已对照目视原页核对对象、量词、技术资格和所列覆盖范围；网站尚未审阅。",
-      "compile_receipt": "blueprint/ch07/validation/batches/s71-v1.json"
+      "compile_receipt": "blueprint/ch07/validation/batches/s73c-v1.json"
+    },
+    "MD-7.2-ScalarSDE": {
+      "verdict": "PASS",
+      "block_sha256": "325d5e8f1e66b666c42a7abb02bdc2a495ff0976a8f9b1bccb55858862ee3f4c",
+      "checked": true,
+      "declaration_axioms": {
+        "MD.Ch07.scalarSDE": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ]
+      },
+      "direct_placeholder": false,
+      "missing": null,
+      "issues": [],
+      "website": "待网站审计",
+      "statement_scope": "本条逐字引用的全部数学对象与公式；未纳入的上下文另列。",
+      "extra_assumptions": [
+        "明确概率空间与标准连续Wiener过程；Itô积分采用第6章网格左和L²定义，扩散项适应自然历史且时间平方可积。",
+        "X的初值、几乎处处路径连续性和积分方程在第6章定义体中全部保留；未声称一般弱解与本L²表示等价。"
+      ],
+      "source_pages": "285",
+      "semantic_review": "已对照目视原页核对对象、量词、技术资格和所列覆盖范围；网站尚未审阅。",
+      "compile_receipt": "blueprint/ch07/validation/batches/s73c-v1.json"
+    },
+    "MD-7.2-EulerMaruyama": {
+      "verdict": "PASS",
+      "block_sha256": "dad7a593244059b6639c730bcf4e1b476cf836894c1bae505367e855a93d3a7d",
+      "checked": true,
+      "declaration_axioms": {
+        "MD.Ch07.eulerMaruyamaStep": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "MD.Ch07.standardNormalSequence": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "MD.Ch07.eulerMaruyama": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ]
+      },
+      "direct_placeholder": false,
+      "missing": null,
+      "issues": [],
+      "website": "待网站审计",
+      "statement_scope": "本条逐字引用的全部数学对象与公式；未纳入的上下文另列。",
+      "extra_assumptions": [
+        "步长h>0用于数值解释；单步映射本身为总函数；跨步独立正态资格另由standardNormalSequence明确给出。"
+      ],
+      "source_pages": "285",
+      "semantic_review": "已对照目视原页核对对象、量词、技术资格和所列覆盖范围；网站尚未审阅。",
+      "compile_receipt": "blueprint/ch07/validation/batches/s73c-v1.json"
+    },
+    "MD-7.2-SDEIncrement": {
+      "verdict": "PASS",
+      "block_sha256": "a1833247ce765c2c5fb43a1b6017ad3b8c0be5809c96197f1a3d289b3714337a",
+      "checked": true,
+      "declaration_axioms": {
+        "MD.Ch07.sdeIncrement": [
+          "propext",
+          "sorryAx",
+          "Classical.choice",
+          "Quot.sound"
+        ]
+      },
+      "direct_placeholder": true,
+      "missing": "需对第6章L²积分定义补区间可加性及积分几乎处处组合桥接；本轮不建立一般随机积分理论。",
+      "issues": [],
+      "website": "待网站审计",
+      "statement_scope": "本条逐字引用的全部数学对象与公式；未纳入的上下文另列。",
+      "extra_assumptions": [
+        "区间Itô积分用两个从0开始的L²积分值之差表示；t,h非负，漂移在整个区间可积；不另造未规定的随机积分。"
+      ],
+      "source_pages": "285",
+      "semantic_review": "已对照目视原页核对对象、量词、技术资格和所列覆盖范围；网站尚未审阅。",
+      "compile_receipt": "blueprint/ch07/validation/batches/s73c-v1.json"
+    },
+    "MD-7.2-StrongError": {
+      "verdict": "PASS",
+      "block_sha256": "bd789e766c7a12357624f98fc7f64d6373a1b035b9a028ddd15e0e4cba8f3a78",
+      "checked": true,
+      "declaration_axioms": {
+        "MD.Ch07.strongError": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ]
+      },
+      "direct_placeholder": false,
+      "missing": null,
+      "issues": [],
+      "website": "待网站审计",
+      "statement_scope": "本条逐字引用的全部数学对象与公式；未纳入的上下文另列。",
+      "extra_assumptions": [
+        "α>0且各网格误差的α次矩可积时具有误差解释；有限非空网格的sSup表示最大值；Real.rpow为实指数幂。"
+      ],
+      "source_pages": "285",
+      "semantic_review": "已对照目视原页核对对象、量词、技术资格和所列覆盖范围；网站尚未审阅。",
+      "compile_receipt": "blueprint/ch07/validation/batches/s73c-v1.json"
+    },
+    "MD-7.2-MeanErrorExpectation": {
+      "verdict": "PASS",
+      "block_sha256": "cae87d422ee326165247af424e55d2bdeed7f201bf987e13f2f29a55374dfb92",
+      "checked": true,
+      "declaration_axioms": {
+        "MD.Ch07.meanErrorExpectation": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "MD.Ch07.meanSquareError": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ]
+      },
+      "direct_placeholder": false,
+      "missing": null,
+      "issues": [],
+      "website": "待网站审计",
+      "statement_scope": "α=1所需期望误差不等式，及α=2均方误差的记号；网格极限通过此界立即归约。",
+      "extra_assumptions": [
+        "期望可积；不以数值方法的收敛为假设重新宣布同一收敛，只给使收敛传递成立的定量不等式。"
+      ],
+      "source_pages": "285",
+      "semantic_review": "已对照目视原页核对对象、量词、技术资格和所列覆盖范围；网站尚未审阅。",
+      "compile_receipt": "blueprint/ch07/validation/batches/s73c-v1.json"
+    },
+    "MD-7.2-StrongOrder": {
+      "verdict": "PASS",
+      "block_sha256": "41be27c203d283c278c12542e80b25635c4203d10754d14d59583f42b050d085",
+      "checked": true,
+      "declaration_axioms": {
+        "MD.Ch07.hasStrongOrder": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ]
+      },
+      "direct_placeholder": false,
+      "missing": null,
+      "issues": [],
+      "website": "待网站审计",
+      "statement_scope": "本条逐字引用的全部数学对象与公式；未纳入的上下文另列。",
+      "extra_assumptions": [
+        "显式h=T/N趋零及统一常数的量词；正α、r和时间；有限矩资格作为方法适用条件不隐去。"
+      ],
+      "source_pages": "285",
+      "semantic_review": "已对照目视原页核对对象、量词、技术资格和所列覆盖范围；网站尚未审阅。",
+      "compile_receipt": "blueprint/ch07/validation/batches/s73c-v1.json"
+    },
+    "MD-7.2-WeakError": {
+      "verdict": "PASS",
+      "block_sha256": "5508f0e4be21f4786135f6c9a9e34bc87e1e372dfeda17ced7c1c5fd08b21098",
+      "checked": true,
+      "declaration_axioms": {
+        "MD.Ch07.weakError": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "MD.Ch07.hasWeakOrder": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ]
+      },
+      "direct_placeholder": false,
+      "missing": null,
+      "issues": [],
+      "website": "待网站审计",
+      "statement_scope": "本条逐字引用的全部数学对象与公式；未纳入的上下文另列。",
+      "extra_assumptions": [
+        "测试函数类明确量化；D允许依赖测试函数；积分只有在可积时解释为期望，后续误差定理显式要求可积。"
+      ],
+      "source_pages": "286",
+      "semantic_review": "已对照目视原页核对对象、量词、技术资格和所列覆盖范围；网站尚未审阅。",
+      "compile_receipt": "blueprint/ch07/validation/batches/s73c-v1.json"
+    },
+    "MD-7.2-StrongWeakComparison": {
+      "verdict": "PASS",
+      "block_sha256": "4749e1b6981e48349a66a7daf1291e26bd3a72760ec1d5dc70209052cbb7825b",
+      "checked": true,
+      "declaration_axioms": {
+        "MD.Ch07.strongWeakLipschitz": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "MD.Ch07.weakDoesNotImplyStrong": [
+          "propext",
+          "sorryAx",
+          "Classical.choice",
+          "Quot.sound"
+        ]
+      },
+      "direct_placeholder": true,
+      "missing": "反向反例还需两点概率测度的积分化简；下一批限三条短路线。",
+      "issues": [],
+      "website": "待网站审计",
+      "statement_scope": "Lipschitz测试函数的逐步定量界与反向不成立的存在性；未证明一般多项式增长测试类的阶数传递。",
+      "extra_assumptions": [
+        "正向结论明确限制为全局Lipschitz可观测量及可积误差；对一般无界测试函数需额外矩条件，列为覆盖缺口。",
+        "反向用两点分布上交换X、Y的反例表达；同分布但耦合强误差不为零。"
+      ],
+      "source_pages": "286",
+      "semantic_review": "已对照目视原页核对对象、量词、技术资格和所列覆盖范围；网站尚未审阅。",
+      "compile_receipt": "blueprint/ch07/validation/batches/s73c-v1.json"
+    },
+    "MD-7.2-CanonicalAverage": {
+      "verdict": "PASS",
+      "block_sha256": "94a0576e620b5e3b883be71b7239d528c57182061f18890a4400afefd2c48ee2",
+      "checked": true,
+      "declaration_axioms": {
+        "MD.Ch07.densityWithPartition": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "MD.Ch07.canonicalAverage": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "MD.Ch07.probabilityDensity": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ]
+      },
+      "direct_placeholder": false,
+      "missing": null,
+      "issues": [],
+      "website": "待网站审计",
+      "statement_scope": "本条逐字引用的全部数学对象与公式；未纳入的上下文另列。",
+      "extra_assumptions": [
+        "该公式先保留显式Z参数；只有probabilityDensity成立才称概率密度。正有限配分积分及其归一化见修正版，不把原页倒数疑误带入默认定义。"
+      ],
+      "source_pages": "287",
+      "semantic_review": "已对照目视原页核对对象、量词、技术资格和所列覆盖范围；网站尚未审阅。",
+      "compile_receipt": "blueprint/ch07/validation/batches/s73c-v1.json"
+    },
+    "MD-7.2-PartitionPrinted": {
+      "verdict": "NEEDS_HUMAN",
+      "block_sha256": "e1871b4eab5af4589d08c13d340255f0e7e568e0276fdc3829a28d4f85ded11c",
+      "checked": true,
+      "declaration_axioms": {
+        "MD.Ch07.partitionPrinted": [
+          "propext",
+          "sorryAx",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "MD.Ch07.partitionPrinted_counterexample": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "MD.Ch07.partitionPrinted_corrected": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ]
+      },
+      "direct_placeholder": true,
+      "missing": "原文倒数关系导致归一化错误，原文版不证明；修正版正常证明。",
+      "issues": [
+        "已目视核对原页PDF287／印刷266：原书确为Z_can^{-1}=积分，和紧接的归一化断言不相容；不是转录错误。"
+      ],
+      "website": "待网站审计",
+      "statement_scope": "本条逐字引用的全部数学对象与公式；未纳入的上下文另列。",
+      "extra_assumptions": [
+        "原文版严格保留倒数关系；修正版取Z_can=配分积分，并补正性、可积性。",
+        "反例的代数核心：取一点评价空间总质量1/2、H=0，则原式强制Z=2，密度积分为1/4；counterexample声明给出1/4≠1，测度实现的积分化简未另作声明。"
+      ],
+      "source_pages": "287",
+      "semantic_review": "已对照目视原页核对对象、量词、技术资格和所列覆盖范围；网站尚未审阅。",
+      "compile_receipt": "blueprint/ch07/validation/batches/s73c-v1.json"
+    },
+    "MD-7.2-AverageNotationBias": {
+      "verdict": "PASS",
+      "block_sha256": "0e35414f32b0193d1d4234ba580c301cfc331dc50daf541f2a0533bd18a9789b",
+      "checked": true,
+      "declaration_axioms": {
+        "MD.Ch07.observableBias": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "MD.Ch07.bias_nonnegative": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ]
+      },
+      "direct_placeholder": false,
+      "missing": null,
+      "issues": [],
+      "website": "待网站审计",
+      "statement_scope": "本条逐字引用的全部数学对象与公式；未纳入的上下文另列。",
+      "extra_assumptions": [
+        "computed代表步长h下的不变平均，按原文忽略有限采样误差；正确Z和密度概率资格见CanonicalAverage及修正版。"
+      ],
+      "source_pages": "287",
+      "semantic_review": "已对照目视原页核对对象、量词、技术资格和所列覆盖范围；网站尚未审阅。",
+      "compile_receipt": "blueprint/ch07/validation/batches/s73c-v1.json"
+    },
+    "MD-7.3-VectorOU": {
+      "verdict": "PASS",
+      "block_sha256": "298bab540b009e8676f0642841084aa2fecf4a8a1f05f73a17f9511113bd0370",
+      "checked": true,
+      "declaration_axioms": {
+        "MD.Ch07.V": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "MD.Ch07.Phase": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "MD.Ch07.vectorWiener": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "MD.Ch07.momentumOU": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ]
+      },
+      "direct_placeholder": false,
+      "missing": null,
+      "issues": [],
+      "website": "待网站审计",
+      "statement_scope": "本条逐字引用的全部数学对象与公式；未纳入的上下文另列。",
+      "extra_assumptions": [
+        "显式标准多维Wiener及整个坐标路径独立，正质量、温度与非负摩擦；各坐标用真实Itô积分方程。"
+      ],
+      "source_pages": "288",
+      "semantic_review": "已对照目视原页核对对象、量词、技术资格和所列覆盖范围；网站尚未审阅。",
+      "compile_receipt": "blueprint/ch07/validation/batches/s73c-v1.json"
+    },
+    "MD-7.3-OUIntegratingFactor": {
+      "verdict": "PASS",
+      "block_sha256": "a19eebb3db79433e5e887d06100ec621887274e54d24284222761512a7e3c36d",
+      "checked": true,
+      "declaration_axioms": {
+        "MD.Ch07.ouIntegratingFactor": [
+          "propext",
+          "sorryAx",
+          "Classical.choice",
+          "Quot.sound"
+        ]
+      },
+      "direct_placeholder": true,
+      "missing": "需要第6章Itô积分定义与积分因子法的桥接；不新建一般随机乘积法则。",
+      "issues": [],
+      "website": "待网站审计",
+      "statement_scope": "本条逐字引用的全部数学对象与公式；未纳入的上下文另列。",
+      "extra_assumptions": [
+        "把随机微分乘积法则陈述为从0到t的确定性加权Itô积分等式；有限时间和L²解资格由momentumOU明确。"
+      ],
+      "source_pages": "288",
+      "semantic_review": "已对照目视原页核对对象、量词、技术资格和所列覆盖范围；网站尚未审阅。",
+      "compile_receipt": "blueprint/ch07/validation/batches/s73c-v1.json"
+    },
+    "MD-7.3-OUExactUpdate": {
+      "verdict": "PASS",
+      "block_sha256": "4162ca1ee5dd062be10335db4750a5f33461b198dfdd2fe877d949d59fb822a5",
+      "checked": true,
+      "declaration_axioms": {
+        "MD.Ch07.ouMomentum": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "MD.Ch07.ouTransitionLaw": [
+          "propext",
+          "sorryAx",
+          "Classical.choice",
+          "Quot.sound"
+        ]
+      },
+      "direct_placeholder": true,
+      "missing": "需要加权Wiener增量的联合Gaussian分布及相对过去的独立性；不建设一般SDE转移核理论。",
+      "issues": [],
+      "website": "待网站审计",
+      "statement_scope": "本条逐字引用的全部数学对象与公式；未纳入的上下文另列。",
+      "extra_assumptions": [
+        "等式解释为存在与过去动量独立的标准正态向量的随机表示；不是沿用同一Z表示所有时刻。",
+        "独立性要求使用W自然历史的适应解，见scalarSDE；θ=k_BT，M正对角。"
+      ],
+      "source_pages": "289",
+      "semantic_review": "已对照目视原页核对对象、量词、技术资格和所列覆盖范围；网站尚未审阅。",
+      "compile_receipt": "blueprint/ch07/validation/batches/s73c-v1.json"
+    },
+    "MD-7.3-OUPhaseIteration": {
+      "verdict": "PASS",
+      "block_sha256": "b1ee5ec96da578d460932ff64d5beb0571ed9f68ecac2e20589fba2519e19357",
+      "checked": true,
+      "declaration_axioms": {
+        "MD.Ch07.ouStep": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "MD.Ch07.vectorNormalSequence": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ]
+      },
+      "direct_placeholder": false,
+      "missing": null,
+      "issues": [],
+      "website": "待网站审计",
+      "statement_scope": "本条逐字引用的全部数学对象与公式；未纳入的上下文另列。",
+      "extra_assumptions": [
+        "独立标准正态的完整概率资格由vectorNormalSequence规定；ouStep只是总化单步函数。"
+      ],
+      "source_pages": "289",
+      "semantic_review": "已对照目视原页核对对象、量词、技术资格和所列覆盖范围；网站尚未审阅。",
+      "compile_receipt": "blueprint/ch07/validation/batches/s73c-v1.json"
+    },
+    "MD-7.3-OUForward": {
+      "verdict": "PASS",
+      "block_sha256": "93a945fc43a82a12c2fc0e679830917f13f4b02ef9cad6236d6fee3203913cf9",
+      "checked": true,
+      "declaration_axioms": {
+        "MD.Ch07.coordDerivative": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "MD.Ch07.ouForward": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "MD.Ch07.ouBackward": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "MD.Ch07.ouForward_adjoint": [
+          "propext",
+          "sorryAx",
+          "Classical.choice",
+          "Quot.sound"
+        ]
+      },
+      "direct_placeholder": true,
+      "missing": "需要任意有限维逐坐标两次分部积分；本轮仅陈述，不为此建设大型算子域理论。",
+      "issues": [],
+      "website": "待网站审计",
+      "statement_scope": "本条逐字引用的全部数学对象与公式；未纳入的上下文另列。",
+      "extra_assumptions": [
+        "partial为真实单坐标导数；给出前向表达式与后向生成元在紧支撑C²测试函数上的伴随恒等式。",
+        "仅p变量，q是固定参数；未声称已构造OU Markov半群的强生成元域。"
+      ],
+      "source_pages": "289",
+      "semantic_review": "已对照目视原页核对对象、量词、技术资格和所列覆盖范围；网站尚未审阅。",
+      "compile_receipt": "blueprint/ch07/validation/batches/s73c-v1.json"
+    },
+    "MD-7.3-OUGaussianInvariant": {
+      "verdict": "PASS",
+      "block_sha256": "0090797bbedbfab8ea0a6c6acdf73982050b742382c84aec6afce9c0ba8d3acb",
+      "checked": true,
+      "declaration_axioms": {
+        "MD.Ch07.ouGaussianInvariant": [
+          "propext",
+          "sorryAx",
+          "Classical.choice",
+          "Quot.sound"
+        ]
+      },
+      "direct_placeholder": true,
+      "missing": "需实际独立Gaussian向量线性变换与指数/方差恒等式的桥接；不建立一般随机核理论。",
+      "issues": [],
+      "website": "待网站审计",
+      "statement_scope": "本条逐字引用的全部数学对象与公式；未纳入的上下文另列。",
+      "extra_assumptions": [
+        "γ=0允许恒等更新，仍保留Gaussian不变性；不把此时的不变性说成遍历采样收敛。"
+      ],
+      "source_pages": "289",
+      "semantic_review": "已对照目视原页核对对象、量词、技术资格和所列覆盖范围；网站尚未审阅。",
+      "compile_receipt": "blueprint/ch07/validation/batches/s73c-v1.json"
+    },
+    "MD-7.3.1-Langevin": {
+      "verdict": "PASS",
+      "block_sha256": "2d296349acdec44b4316684f1e48f25ec3fd13f7982e0cd7a803156c44c97faf",
+      "checked": true,
+      "declaration_axioms": {
+        "MD.Ch07.gradient": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "MD.Ch07.langevin": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ]
+      },
+      "direct_placeholder": false,
+      "missing": null,
+      "issues": [],
+      "website": "待网站审计",
+      "statement_scope": "本条逐字引用的全部数学对象与公式；未纳入的上下文另列。",
+      "extra_assumptions": [
+        "用真实坐标偏导与完整位置/动量积分方程表达；常扩散的Itô项即W增量乘系数；显式状态适应W自然历史、漂移可积。"
+      ],
+      "source_pages": "289",
+      "semantic_review": "已对照目视原页核对对象、量词、技术资格和所列覆盖范围；网站尚未审阅。",
+      "compile_receipt": "blueprint/ch07/validation/batches/s73c-v1.json"
+    },
+    "MD-7.3.1-HamiltonianGibbs": {
+      "verdict": "PASS",
+      "block_sha256": "7e037548a9bbb51e65358a4808e739a162b465cd1760f42d9539de9156cc48a0",
+      "checked": true,
+      "declaration_axioms": {
+        "MD.Ch07.hamiltonianGibbs": [
+          "propext",
+          "sorryAx",
+          "Classical.choice",
+          "Quot.sound"
+        ]
+      },
+      "direct_placeholder": true,
+      "missing": "需map与withDensity的测度输运短桥；现有Hamiltonian体积保持可作为流资格，不新建流存在理论。",
+      "issues": [],
+      "website": "待网站审计",
+      "statement_scope": "本条逐字引用的全部数学对象与公式；未纳入的上下文另列。",
+      "extra_assumptions": [
+        "F为已存在的实际Hamiltonian流的固定时刻映射；显式体积保持与能量保持，结论为实际加权测度不变性。",
+        "本文未重证明一般Hamiltonian流存在；若需归一化为概率，须另补配分积分正有限。"
+      ],
+      "source_pages": "290",
+      "semantic_review": "已对照目视原页核对对象、量词、技术资格和所列覆盖范围；网站尚未审阅。",
+      "compile_receipt": "blueprint/ch07/validation/batches/s73c-v1.json"
+    },
+    "MD-7.3.1-ABOPieces": {
+      "verdict": "PASS",
+      "block_sha256": "8922c6a97893d1645bd19ad504f18ed3dd98aa51ab5198f308562b1ca40bd115",
+      "checked": true,
+      "declaration_axioms": {
+        "MD.Ch07.driftStep": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "MD.Ch07.kickStep": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "MD.Ch07.aField": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "MD.Ch07.bField": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "MD.Ch07.oDrift": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "MD.Ch07.splittingDrift": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ]
+      },
+      "direct_placeholder": false,
+      "missing": null,
+      "issues": [],
+      "website": "待网站审计",
+      "statement_scope": "本条逐字引用的全部数学对象与公式；未纳入的上下文另列。",
+      "extra_assumptions": [
+        "M为正对角质量；σ=√(2γk_BT)；OU单步及独立正态资格已在OUPhaseIteration写全。",
+        "仅最后短定理证明漂移相加；A/B确定性精确流与O分布精确性各自另列，不用漂移恒等式替代。"
+      ],
+      "source_pages": "290–291",
+      "semantic_review": "已对照目视原页核对对象、量词、技术资格和所列覆盖范围；网站尚未审阅。",
+      "compile_receipt": "blueprint/ch07/validation/batches/s73c-v1.json"
+    },
+    "MD-7.3.1-ABExactFlows": {
+      "verdict": "PASS",
+      "block_sha256": "13ab49cc4f484cd3fe8231b250d00bacbb49d055559c0142794dc4d3d2266308",
+      "checked": true,
+      "declaration_axioms": {
+        "MD.Ch07.driftStep_derivative": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "MD.Ch07.kickStep_derivative": [
+          "propext",
+          "sorryAx",
+          "Classical.choice",
+          "Quot.sound"
+        ]
+      },
+      "direct_placeholder": true,
+      "missing": "kickStep导数三条短路线均未通过；停止该条，保留陈述。",
+      "issues": [],
+      "website": "待网站审计",
+      "statement_scope": "A/B非恒定坐标的精确微分关系；O部分见MD-7.3-OUExactUpdate。",
+      "extra_assumptions": [
+        "逐坐标A位置/B动量真实时间导数；另一个分量由更新定义恒定；O精确性引用OUTransitionLaw未证陈述，不冒称全部已证。"
+      ],
+      "source_pages": "291",
+      "semantic_review": "已对照目视原页核对对象、量词、技术资格和所列覆盖范围；网站尚未审阅。",
+      "compile_receipt": "blueprint/ch07/validation/batches/s73c-v1.json"
+    },
+    "MD-7.3.1-ABForward": {
+      "verdict": "PASS",
+      "block_sha256": "1da0465cd572d231b7aa41bbf04dc86f358ba32dbbd0aa6440d3f5acfc52e9a0",
+      "checked": true,
+      "declaration_axioms": {
+        "MD.Ch07.aForward": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "MD.Ch07.bForward": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ]
+      },
+      "direct_placeholder": false,
+      "missing": null,
+      "issues": [],
+      "website": "待网站审计",
+      "statement_scope": "本条逐字引用的全部数学对象与公式；未纳入的上下文另列。",
+      "extra_assumptions": [
+        "以真实偏导定义所印微分表达式；形式伴随解释要求足够光滑及边界通量消失，未声称一般强算子域。"
+      ],
+      "source_pages": "291",
+      "semantic_review": "已对照目视原页核对对象、量词、技术资格和所列覆盖范围；网站尚未审阅。",
+      "compile_receipt": "blueprint/ch07/validation/batches/s73c-v1.json"
+    },
+    "MD-7.3.1-ABOBABO": {
+      "verdict": "PASS",
+      "block_sha256": "494b33c0f2f38e999c1de9bdbd9557e906afed98e21774a7a4aa07a16cd3a1d4",
+      "checked": true,
+      "declaration_axioms": {
+        "MD.Ch07.abo": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "MD.Ch07.babo": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ]
+      },
+      "direct_placeholder": false,
+      "missing": null,
+      "issues": [],
+      "website": "待网站审计",
+      "statement_scope": "本条逐字引用的全部数学对象与公式；未纳入的上下文另列。",
+      "extra_assumptions": [
+        "字母从左到右执行，函数复合从右到左；随机变量独立资格由vectorNormalSequence约束。"
+      ],
+      "source_pages": "291",
+      "semantic_review": "已对照目视原页核对对象、量词、技术资格和所列覆盖范围；网站尚未审阅。",
+      "compile_receipt": "blueprint/ch07/validation/batches/s73c-v1.json"
+    },
+    "MD-7.3.1-WordConvention": {
+      "verdict": "NEEDS_HUMAN",
+      "block_sha256": "708cb23e9774d85bd16908b19d7c0190671c4145039ab458699e96abb8e30932",
+      "checked": true,
+      "declaration_axioms": {
+        "MD.Ch07.oabaobaoPrinted": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "MD.Ch07.oabaobaoPrinted_corrected": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "MD.Ch07.oabaobaoCount": []
+      },
+      "direct_placeholder": false,
+      "missing": null,
+      "issues": [
+        "已目视核对PDF291／印刷270：字串OABAOBAO有3个O，所印复合也仅3个O，却各用h/4并称4N_c个正态数；不符前句每字母总时长h的约定。"
+      ],
+      "website": "待网站审计",
+      "statement_scope": "完整复合图式、O计数及时间分配修正；力求值说明列于上下文，不声称已证明计算成本。",
+      "extra_assumptions": [
+        "原文图式照录3个h/4的O；修正版改3个h/3和3N_c随机数。力求值次数为实现说明，未形式化成本模型。",
+        "每个O的向量噪声需联合独立标准正态；字母计数结论独立证明。"
+      ],
+      "source_pages": "291",
+      "semantic_review": "已对照目视原页核对对象、量词、技术资格和所列覆盖范围；网站尚未审阅。",
+      "compile_receipt": "blueprint/ch07/validation/batches/s73c-v1.json"
+    },
+    "MD-7.3.1-SixSchemes": {
+      "verdict": "PASS",
+      "block_sha256": "569c6ccf525f2f51b84107e7d3f5e9282b91a67981eac8167324b07e75ed7251",
+      "checked": true,
+      "declaration_axioms": {
+        "MD.Ch07.abao": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "MD.Ch07.aboba": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "MD.Ch07.baoab": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "MD.Ch07.oabao": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "MD.Ch07.obabo": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ]
+      },
+      "direct_placeholder": false,
+      "missing": null,
+      "issues": [],
+      "website": "待网站审计",
+      "statement_scope": "本条逐字引用的全部数学对象与公式；未纳入的上下文另列。",
+      "extra_assumptions": [
+        "BABO已定义于ABOBABO；其余5个完整复合依次对应所列中间步。",
+        "R与S为同一步两次O的独立标准正态向量；跨步也独立，用vectorNormalSequence提供资格。",
+        "原文最后“single evaluation”使用跨步缓存；实现成本不列为待证数学命题。"
+      ],
+      "source_pages": "292",
+      "semantic_review": "已对照目视原页核对对象、量词、技术资格和所列覆盖范围；网站尚未审阅。",
+      "compile_receipt": "blueprint/ch07/validation/batches/s73c-v1.json"
+    },
+    "MD-7.3.1-ConjugateIteration": {
+      "verdict": "PASS",
+      "block_sha256": "beb6073420936b718bab5e115f9e2beb22d2a71fd6ac9c6a2d918bf482e6f842",
+      "checked": true,
+      "declaration_axioms": {
+        "MD.Ch07.compositionIterate": [
+          "propext",
+          "Quot.sound"
+        ],
+        "MD.Ch07.oaba": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ]
+      },
+      "direct_placeholder": false,
+      "missing": null,
+      "issues": [],
+      "website": "待网站审计",
+      "statement_scope": "有限复合恒等式及OABA单步映射；独立随机序列上的共轭解释未形式化。",
+      "extra_assumptions": [
+        "compositionIterate是任意确定性映射的真实复合恒等式；实际随机迭代应在扩展噪声序列空间中使用更新映射，不能把固定R重复使用当独立重抽样。",
+        "对所印OABA与BAOAB的随机分布/路径共轭仍需噪声移位包装，列入覆盖缺口；未把一般S,T恒等式冒称整段已覆盖。"
+      ],
+      "source_pages": "293",
+      "semantic_review": "已对照目视原页核对对象、量词、技术资格和所列覆盖范围；网站尚未审阅。",
+      "compile_receipt": "blueprint/ch07/validation/batches/s73c-v1.json"
+    },
+    "MD-7.3.2-SPVPrinted": {
+      "verdict": "NEEDS_HUMAN",
+      "block_sha256": "e746bd36905ed9bc8867629c502fb89eaa5f2c129b79aa2e95293abe76cf1335",
+      "checked": true,
+      "declaration_axioms": {
+        "MD.Ch07.spvPrinted": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "MD.Ch07.spvPrinted_corrected": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ]
+      },
+      "direct_placeholder": false,
+      "missing": null,
+      "issues": [
+        "已目视核对原页PDF293／印刷272：SPV展示式动量用∇U(q_n)，而前文说对两部分作对称积分，漂移半步后冻结位置应为q_{n+1/2}；两者分别保留，待导师判断。"
+      ],
+      "website": "待网站审计",
+      "statement_scope": "本条逐字引用的全部数学对象与公式；未纳入的上下文另列。",
+      "extra_assumptions": [
+        "γ>0使用原印η商；γ=0的连续延拓η=h另需定义，不用实数除零总化声称正确。"
+      ],
+      "source_pages": "293",
+      "semantic_review": "已对照目视原页核对对象、量词、技术资格和所列覆盖范围；网站尚未审阅。",
+      "compile_receipt": "blueprint/ch07/validation/batches/s73c-v1.json"
+    },
+    "MD-7.3.2-SPVLargeFriction": {
+      "verdict": "PASS",
+      "block_sha256": "bfe33b749a43b22f4d65f9f872b5090efff1dbd462ef18004adeb9865fcc6bad",
+      "checked": true,
+      "declaration_axioms": {
+        "MD.Ch07.spvEtaLimit": [
+          "propext",
+          "sorryAx",
+          "Classical.choice",
+          "Quot.sound"
+        ]
+      },
+      "direct_placeholder": true,
+      "missing": "指数衰减及除以γ的实极限短桥尚待尝试，不建立采样收敛理论。",
+      "issues": [],
+      "website": "待网站审计",
+      "statement_scope": "固定正h的η→0；随后的数值方法失效说明登记为适用范围讨论。",
+      "extra_assumptions": [
+        "只表达明确的η极限；采样不一致的定性判断缺统一模型、时标与测试函数量化，不作为已证结论。"
+      ],
+      "source_pages": "293–294",
+      "semantic_review": "已对照目视原页核对对象、量词、技术资格和所列覆盖范围；网站尚未审阅。",
+      "compile_receipt": "blueprint/ch07/validation/batches/s73c-v1.json"
+    },
+    "MD-7.3.2-BBK": {
+      "verdict": "PASS",
+      "block_sha256": "cb3df5f46a9660de824601e3d2adbc0cb6532505b9b323a966a501a15d3e5076",
+      "checked": true,
+      "declaration_axioms": {
+        "MD.Ch07.bbk": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "MD.Ch07.bbkSameNoise": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ]
+      },
+      "direct_placeholder": false,
+      "missing": null,
+      "issues": [],
+      "website": "待网站审计",
+      "statement_scope": "本条逐字引用的全部数学对象与公式；未纳入的上下文另列。",
+      "extra_assumptions": [
+        "h>0、γ≥0、θ>0、m_i>0时分母非零及噪声方差有效；不同R′耦合方案分别处理，不把独立与重用噪声混为一谈。"
+      ],
+      "source_pages": "294",
+      "semantic_review": "已对照目视原页核对对象、量词、技术资格和所列覆盖范围；网站尚未审阅。",
+      "compile_receipt": "blueprint/ch07/validation/batches/s73c-v1.json"
     }
   }
 }

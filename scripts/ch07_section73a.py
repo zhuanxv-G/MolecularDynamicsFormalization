@@ -60,16 +60,16 @@ extra=['独立标准正态的完整概率资格由vectorNormalSequence规定；o
 add('OUForward','7.3',268,
 r'''The Fokker-Planck operator for the OU system (7.2) can be computed directly as
 \[\mathcal L_O^\dagger\phi(q,p)=\gamma\nabla_p\cdot(p\phi)+\gamma k_BT\nabla_p\cdot M\nabla_p\phi.\]''',
-'''def partial (f : V n → ℝ) (x : V n) (i : Fin n) : ℝ :=
+'''def coordDerivative (f : V n → ℝ) (x : V n) (i : Fin n) : ℝ :=
   deriv (fun z ↦ f (Function.update x i z)) (x i)
 
 def ouForward (m : V n) (γ θ : ℝ) (f : V n → ℝ) (p : V n) : ℝ :=
-  γ * (∑ i, partial (fun x ↦ x i*f x) p i) +
-    γ*θ * ∑ i, m i * partial (fun x ↦ partial f x i) p i
+  γ * (∑ i, coordDerivative (fun x ↦ x i*f x) p i) +
+    γ*θ * ∑ i, m i * coordDerivative (fun x ↦ coordDerivative f x i) p i
 
 def ouBackward (m : V n) (γ θ : ℝ) (f : V n → ℝ) (p : V n) : ℝ :=
-  -γ * (∑ i, p i * partial f p i) +
-    γ*θ * ∑ i, m i * partial (fun x ↦ partial f x i) p i
+  -γ * (∑ i, p i * coordDerivative f p i) +
+    γ*θ * ∑ i, m i * coordDerivative (fun x ↦ coordDerivative f x i) p i
 
 theorem ouForward_adjoint (m : V n) (γ θ : ℝ) (f g : V n → ℝ)
     (hf : ContDiff ℝ 2 f) (hg : ContDiff ℝ 2 g)
@@ -91,7 +91,7 @@ missing='需实际独立Gaussian向量线性变换与指数/方差恒等式的�
 add('Langevin','7.3.1',268,
 r'''Langevin dynamics:
 \[dq=M^{-1}pdt,\qquad dp=-\nabla U(q)dt-\gamma pdt+\sqrt{2\gamma k_BT}M^{1/2}dW.\tag{7.4}\]''',
-'''def gradient (U : V n → ℝ) (q : V n) : V n := fun i ↦ partial U q i
+'''def gradient (U : V n → ℝ) (q : V n) : V n := fun i ↦ coordDerivative U q i
 
 def langevin (P : Measure Ω) (W : ℝ → Ω → V n) (X : ℝ → Ω → Phase n)
     (U : V n → ℝ) (m : V n) (γ θ : ℝ) (x0 : Phase n) : Prop :=
