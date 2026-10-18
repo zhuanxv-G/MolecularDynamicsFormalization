@@ -42,20 +42,21 @@ theorem isoShell_gibbsFactor (U : Vec n → ℝ) (invm : Vec n) (β : ℝ)
     (hn : 1 < n) (hβ : 0 < β) (z : Phase n)
     (hz : z ∈ isokineticShell invm (((n:ℝ)-1)/β)) :
     isoShellWeight U invm z = Real.exp (-β*U z.1) := by
-  have hn' : (n:ℝ)-1 ≠ 0 := by exact ne_of_gt (by exact_mod_cast Nat.sub_pos_of_lt hn)
+  have hnR : (1 : ℝ) < (n : ℝ) := by exact_mod_cast hn
+  have hn' : (n:ℝ)-1 ≠ 0 := ne_of_gt (sub_pos.mpr hnR)
   change kineticTwice invm z.2 = ((n:ℝ)-1)/β at hz
   unfold isoShellWeight
   rw [hz]
   congr 1
-  field_simp
+  field_simp [hn', ne_of_gt hβ]
   <;> ring''',extra=['δ是曲面测度的广义记号，未把Dirac分布写成Lebesgue密度；本条只证明壳面上构型权重化简，曲面测度归一/边缘分布不变性列覆盖缺口。'],scope='动能壳与Gibbs因子的逐点关系；不声称完整曲面概率测度定理。')
 add('StochasticIsokinetic','8.6.1','364–365',r'''dq=pdt, dp=(F-λp)dt, dξ₁=(-λξ₁-ξ₂ξ₁)dt, dξ₂=μ₂⁻¹(μ₁ξ₁²-k_BT)dt-γξ₂dt+σdW; p²+μ₁ξ₁²/2=k_BT.''',
 '''def sinConstraint (Q1 : ℝ) (z : Vec 4) : ℝ := z 1^2+Q1*z 2^2/2
 def sinMultiplier (Q1 : ℝ) (F : ℝ → ℝ) (z : Vec 4) : ℝ :=
   (z 1*F (z 0)-Q1*z 2^2*z 3/2)/sinConstraint Q1 z
 def sinDrift (Q1 Q2 θ γ : ℝ) (F : ℝ → ℝ) (z : Vec 4) : Vec 4 :=
-  let λ := sinMultiplier Q1 F z
-  ![z 1, F (z 0)-λ*z 1, -λ*z 2-z 3*z 2, (Q1*z 2^2-θ)/Q2-γ*z 3]
+  let lam := sinMultiplier Q1 F z
+  ![z 1, F (z 0)-lam*z 1, -lam*z 2-z 3*z 2, (Q1*z 2^2-θ)/Q2-γ*z 3]
 def isSINSolution (Q1 Q2 θ γ : ℝ) (F : ℝ → ℝ)
     (P : Measure Ω) (W : ℝ → Ω → Vec 1) (X : ℝ → Ω → Vec 4) (x0 : Vec 4) : Prop :=
   0 < Q1 ∧ 0 < Q2 ∧ 0 < θ ∧ 0 < γ ∧ sinConstraint Q1 x0=θ ∧
@@ -64,9 +65,14 @@ def isSINSolution (Q1 Q2 θ γ : ℝ) (F : ℝ → ℝ)
 theorem sinConstraint_balance (Q1 Q2 θ γ : ℝ) (F : ℝ → ℝ) (z : Vec 4)
     (hK : sinConstraint Q1 z ≠ 0) :
     2*z 1*(sinDrift Q1 Q2 θ γ F z) 1+Q1*z 2*(sinDrift Q1 Q2 θ γ F z) 2=0 := by
-  simp [sinDrift, sinMultiplier, sinConstraint] at *
-  field_simp
-  <;> nlinarith''',kind='definition',equations=['8.40','8.41','8.42','8.43','8.44'],extra=['热浴变量ξ₁,ξ₂∈ℝ，各质量、温度、摩擦正；随机噪声只在ξ₂；约束正值排除奇点。'])
+  have hden : 2*z 1^2+Q1*z 2^2 ≠ 0 := by
+    intro h
+    apply hK
+    dsimp [sinConstraint]
+    linarith
+  simp [sinDrift, sinMultiplier, sinConstraint]
+  field_simp [hden]
+  <;> ring''',kind='definition',equations=['8.40','8.41','8.42','8.43','8.44'],extra=['热浴变量ξ₁,ξ₂∈ℝ，各质量、温度、摩擦正；随机噪声只在ξ₂；约束正值排除奇点。'])
 add('SINWeightPrinted','8.6.1',365,r'''w=(U+ξ₂²/2)/(p²+μ₁ξ₁²/2); integration over the isokinetic surface gives the Gibbs configurational density.''',
 '''def sinWeightPrinted (U : ℝ → ℝ) (Q1 : ℝ) (z : Vec 4) : ℝ :=
   Real.exp (-(U (z 0)+z 3^2/2)/sinConstraint Q1 z)

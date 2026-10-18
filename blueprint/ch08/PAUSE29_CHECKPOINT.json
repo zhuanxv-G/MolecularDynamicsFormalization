@@ -1,0 +1,30 @@
+{
+  "status": "paused_for_user_instruction_29",
+  "chapter_complete": false,
+  "entries": 50,
+  "compiled_and_axioms_checked": true,
+  "canonical_sha256": "6ee0047273a4c6e3e1f7cc061a765e67a37326622c725e29bc531f18d35cd68d",
+  "receipt": "blueprint\\ch08\\validation\\batches\\s86a-r3.json",
+  "receipt_sha256": "7ec6c6f0145b3a776475e8574b8e6d0b94b9abc0c7a6595feed775d420983fc6",
+  "binding": "blueprint\\ch08\\validation\\batches\\s86a-r3-binding.json",
+  "frozen_files_fully_rehashed": 15974,
+  "section_check": "blueprint/ch08/validation/section86a/CHECK_REPORT.json",
+  "chapter_final_check_complete": false,
+  "website_packages_generated": false,
+  "remaining": "§8.6剩余内容、§8.7–8.10、编号公式全集核对、章末文档和任务包、章末完整check",
+  "unvalidated_helpers": [
+    "scripts/ch08_finish.py",
+    "scripts/ch08_package.py",
+    "scripts/ch08_dependency_index.py"
+  ],
+  "next_owner": "29号聊天",
+  "next_step": "由29号聊天先完成第7章首轮结果整合、修复及复审包；其后从§8.6剩余内容继续28号。本聊天停止写共享目录；保留29号规则及heartbeat。",
+  "cautions": [
+    "50条通过编译不表示全部证明完成；以local_audit中的sorryAx为准。",
+    "第8章目前没有生成网站任务包，PACKAGE_VALIDATION未完成。",
+    "附录PDF423起不在范围；Exercises从PDF420起，420只取Exercises前正文。",
+    "生成器只启用enabled_modules所列模块；收尾和打包脚本尚未验证，不可直接当完成依据。",
+    "Windows物理blueprint目录与Lean模块Blueprint大小写不同；提交应核对Blueprint/Ch08.lean已入索引。",
+    "第7章文档误写已修正生成路径；29号聊天负责恢复CH07文档。"
+  ]
+}

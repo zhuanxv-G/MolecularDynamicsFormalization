@@ -1,6 +1,6 @@
 # 第8章 Lean Blueprint 本地审阅材料
 
-当前已整理44条；网站尚未审阅。正文范围为印刷329–399页（PDF350–420），末页仅取Exercises之前的正文；PDF423起附录不在本轮范围。
+当前已整理50条；网站尚未审阅。正文范围为印刷329–399页（PDF350–420），末页仅取Exercises之前的正文；PDF423起附录不在本轮范围。
 
 ## 1. MD-8.1-CanonicalCorrelation · definition · 印刷p.329–330 / PDFp.350–351
 
@@ -2109,4 +2109,311 @@ def slsCoordinateField (i : Fin n) (invm : Vec n) (U : Vec n → ℝ) (Q : ℝ)
 定义；Lean陈述可检查，证明完整性按本条状态区分。
 本条未登记待证缺项。
 位置：Blueprint/Ch08.lean；MD.Ch08.slsBathKick, MD.Ch08.slsDriftStep, MD.Ch08.slsLeapfrog, MD.Ch08.slsCoordinateField。
+
+## 1. MD-8.6-IsokineticField · unnumbered_claim · 印刷p.361–362 / PDFp.382–383
+
+### 2. 原文陈述
+
+q̇=M⁻¹p, ṗ=F(q)-[pᵀM⁻¹F(q)/(pᵀM⁻¹p)]p; K(p)=pᵀM⁻¹p is constant.
+
+### 3. 原文证明
+
+对应原页推导逐字保存在statement_verbatim/original_page_text；排版以原页PDF为准。
+
+原页文字及推导保存在原文JSON的original_page_text；网站子包附对应完整原页PDF。
+
+### 4. 完整当前Lean（原文与修正版独立列出）
+
+```lean
+def isoMultiplier (invm p F : Vec n) : ℝ :=
+  (∑ i, invm i*p i*F i)/kineticTwice invm p
+def isoField (invm : Vec n) (F : Vec n → Vec n) (z : Phase n) : Phase n :=
+  (fun i ↦ invm i*z.2 i, fun i ↦ F z.1 i-isoMultiplier invm z.2 (F z.1)*z.2 i)
+theorem isoKinetic_balance (invm p F : Vec n) (hK : kineticTwice invm p ≠ 0) :
+    (∑ i, invm i*p i*(F i-isoMultiplier invm p F*p i)) = 0 := by
+  simp only [mul_sub, Finset.sum_sub_distrib]
+  have hsum : (∑ i, invm i*p i*(isoMultiplier invm p F*p i)) =
+      isoMultiplier invm p F*kineticTwice invm p := by
+    simp only [kineticTwice, Finset.mul_sum]
+    apply Finset.sum_congr rfl; intro i hi; ring
+  rw [hsum, isoMultiplier, div_mul_cancel₀ _ hK, sub_self]
+```
+
+### 5. 对照表
+
+| 原文成分 | Lean对应 | 说明 |
+|---|---|---|
+| 本条引用的对象与公式 | MD.Ch08.isoMultiplier, MD.Ch08.isoField, MD.Ch08.isoKinetic_balance | 无约束向量场与瞬时动能导数的代数消去；沿解的完整第一积分列缺口。 |
+
+[EXTRA] 正质量、K>0作为物理有效域；本条实际证明瞬时动能平衡，不将之扩大为全局解存在性。
+记号与上下文：见所列原文与Lean量化变量。
+
+### 6. 审计结论
+
+本地：已对照目视原页核对对象、量词、技术资格和所列覆盖范围；网站尚未审阅。
+疑点：本条暂未发现需单列的原书疑误。
+网站：尚未送审。
+
+### 7. 状态与证明位置
+
+已证；Lean陈述可检查，证明完整性按本条状态区分。
+本条未登记待证缺项。
+位置：Blueprint/Ch08.lean；MD.Ch08.isoMultiplier, MD.Ch08.isoField, MD.Ch08.isoKinetic_balance。
+
+## 1. MD-8.6-IsokineticProjector · unnumbered_claim · 印刷p.362 / PDFp.383
+
+### 2. 原文陈述
+
+H=p(pᵀM⁻¹p)⁻¹pᵀM⁻¹; H²=H, Hp=p.
+
+### 3. 原文证明
+
+对应原页推导逐字保存在statement_verbatim/original_page_text；排版以原页PDF为准。
+
+原页文字及推导保存在原文JSON的original_page_text；网站子包附对应完整原页PDF。
+
+### 4. 完整当前Lean（原文与修正版独立列出）
+
+```lean
+def isoProjection (invm p : Vec n) (v : Vec n) : Vec n :=
+  fun i ↦ p i*((∑ j, invm j*p j*v j)/kineticTwice invm p)
+theorem isoProjection_self (invm p : Vec n) (hK : kineticTwice invm p ≠ 0) :
+    isoProjection invm p p = p := by
+  have hs : (∑ j, invm j*p j*p j) = kineticTwice invm p := by
+    simp only [kineticTwice]; apply Finset.sum_congr rfl; intro i hi; ring
+  ext i; simp [isoProjection, hs, hK]
+theorem isoProjection_idempotent (invm p : Vec n) (hK : kineticTwice invm p ≠ 0)
+    (v : Vec n) : isoProjection invm p (isoProjection invm p v) = isoProjection invm p v := by
+  sorry
+```
+
+### 5. 对照表
+
+| 原文成分 | Lean对应 | 说明 |
+|---|---|---|
+| 本条引用的对象与公式 | MD.Ch08.isoProjection, MD.Ch08.isoProjection_self, MD.Ch08.isoProjection_idempotent | 本条列出的数学对象与结论全部；上下文见逐字原页。 |
+
+[EXTRA] 分母K非零；范围为span(p)的完整线性映射子空间等式列覆盖缺口。
+记号与上下文：见所列原文与Lean量化变量。
+
+### 6. 审计结论
+
+本地：已对照目视原页核对对象、量词、技术资格和所列覆盖范围；网站尚未审阅。
+疑点：本条暂未发现需单列的原书疑误。
+网站：尚未送审。
+
+### 7. 状态与证明位置
+
+未证陈述；Lean陈述可检查，证明完整性按本条状态区分。
+未证原因：有限和提取标量后的投影复合代数短证明。
+位置：Blueprint/Ch08.lean；MD.Ch08.isoProjection, MD.Ch08.isoProjection_self, MD.Ch08.isoProjection_idempotent。
+
+## 1. MD-8.6-IsokineticDivergencePrinted · unnumbered_claim · 印刷p.362–363 / PDFp.383–384
+
+### 2. 原文陈述
+
+ρ=e^{-w(q,p)}Φ(K(p)); div f_iso=(N_c-1)pᵀM⁻¹F/(pᵀM⁻¹p), w=(N_c-1)U/K.
+
+### 3. 原文证明
+
+对应原页推导逐字保存在statement_verbatim/original_page_text；排版以原页PDF为准。
+
+原页文字及推导保存在原文JSON的original_page_text；网站子包附对应完整原页PDF。
+
+### 4. 完整当前Lean（原文与修正版独立列出）
+
+```lean
+def isoAnsatz (w : Phase n → ℝ) (Φ : ℝ → ℝ) (invm : Vec n) (z : Phase n) : ℝ :=
+  Real.exp (-w z)*Φ (kineticTwice invm z.2)
+theorem isoDivergencePrinted (invm : Vec n) (F : Vec n → Vec n)
+    (hF : ContDiff ℝ 1 F) (z : Phase n) (hK : kineticTwice invm z.2 ≠ 0) :
+    textbookDivergence (isoField invm F) z = ((n:ℝ)-1)*isoMultiplier invm z.2 (F z.1) := by
+  sorry
+theorem isoDivergence_corrected (invm : Vec n) (F : Vec n → Vec n)
+    (hF : ContDiff ℝ 1 F) (z : Phase n) (hK : kineticTwice invm z.2 ≠ 0) :
+    textbookDivergence (isoField invm F) z = -((n:ℝ)-1)*isoMultiplier invm z.2 (F z.1) := by
+  sorry
+```
+
+### 5. 对照表
+
+| 原文成分 | Lean对应 | 说明 |
+|---|---|---|
+| 本条引用的对象与公式 | MD.Ch08.isoAnsatz, MD.Ch08.isoDivergencePrinted, MD.Ch08.isoDivergence_corrected | 本条列出的数学对象与结论全部；上下文见逐字原页。 |
+
+[EXTRA] Φ为正光滑非零函数时称权重；使用K≠0域上的实际散度。
+记号与上下文：见所列原文与Lean量化变量。
+
+### 6. 审计结论
+
+本地：已对照目视原页核对对象、量词、技术资格和所列覆盖范围；网站尚未审阅。
+疑点：已目视核对原页PDF383–384：ṗ=F-λp的散度应为-(N_c-1)λ，所印正号与后续w=(N_c-1)U/K也冲突。
+网站：尚未送审。
+
+### 7. 状态与证明位置
+
+未证陈述；Lean陈述可检查，证明完整性按本条状态区分。
+未证原因：Printed散度符号疑误不证；修正版需商法则与有限维散度。
+位置：Blueprint/Ch08.lean；MD.Ch08.isoAnsatz, MD.Ch08.isoDivergencePrinted, MD.Ch08.isoDivergence_corrected。
+
+## 1. MD-8.6-IsokineticGibbsShell · unnumbered_claim · 印刷p.363 / PDFp.384
+
+### 2. 原文陈述
+
+ρ=Z⁻¹exp(-(N_c-1)U/K)δ[K-K₀]; K₀=β⁻¹(N_c-1) gives the configurational Gibbs distribution.
+
+### 3. 原文证明
+
+对应原页推导逐字保存在statement_verbatim/original_page_text；排版以原页PDF为准。
+
+原页文字及推导保存在原文JSON的original_page_text；网站子包附对应完整原页PDF。
+
+### 4. 完整当前Lean（原文与修正版独立列出）
+
+```lean
+def isokineticShell (invm : Vec n) (K0 : ℝ) : Set (Phase n) := {z | kineticTwice invm z.2=K0}
+def isoShellWeight (U : Vec n → ℝ) (invm : Vec n) (z : Phase n) : ℝ :=
+  Real.exp (-((n:ℝ)-1)*U z.1/kineticTwice invm z.2)
+theorem isoShell_gibbsFactor (U : Vec n → ℝ) (invm : Vec n) (β : ℝ)
+    (hn : 1 < n) (hβ : 0 < β) (z : Phase n)
+    (hz : z ∈ isokineticShell invm (((n:ℝ)-1)/β)) :
+    isoShellWeight U invm z = Real.exp (-β*U z.1) := by
+  have hnR : (1 : ℝ) < (n : ℝ) := by exact_mod_cast hn
+  have hn' : (n:ℝ)-1 ≠ 0 := ne_of_gt (sub_pos.mpr hnR)
+  change kineticTwice invm z.2 = ((n:ℝ)-1)/β at hz
+  unfold isoShellWeight
+  rw [hz]
+  congr 1
+  field_simp [hn', ne_of_gt hβ]
+  <;> ring
+```
+
+### 5. 对照表
+
+| 原文成分 | Lean对应 | 说明 |
+|---|---|---|
+| 本条引用的对象与公式 | MD.Ch08.isokineticShell, MD.Ch08.isoShellWeight, MD.Ch08.isoShell_gibbsFactor | 动能壳与Gibbs因子的逐点关系；不声称完整曲面概率测度定理。 |
+
+[EXTRA] δ是曲面测度的广义记号，未把Dirac分布写成Lebesgue密度；本条只证明壳面上构型权重化简，曲面测度归一/边缘分布不变性列覆盖缺口。
+记号与上下文：见所列原文与Lean量化变量。
+
+### 6. 审计结论
+
+本地：已对照目视原页核对对象、量词、技术资格和所列覆盖范围；网站尚未审阅。
+疑点：本条暂未发现需单列的原书疑误。
+网站：尚未送审。
+
+### 7. 状态与证明位置
+
+已证；Lean陈述可检查，证明完整性按本条状态区分。
+本条未登记待证缺项。
+位置：Blueprint/Ch08.lean；MD.Ch08.isokineticShell, MD.Ch08.isoShellWeight, MD.Ch08.isoShell_gibbsFactor。
+
+## 1. MD-8.6.1-StochasticIsokinetic · definition · 印刷p.364–365 / PDFp.385–386
+
+### 2. 原文陈述
+
+dq=pdt, dp=(F-λp)dt, dξ₁=(-λξ₁-ξ₂ξ₁)dt, dξ₂=μ₂⁻¹(μ₁ξ₁²-k_BT)dt-γξ₂dt+σdW; p²+μ₁ξ₁²/2=k_BT.
+
+### 3. 原文证明
+
+对应原页推导逐字保存在statement_verbatim/original_page_text；排版以原页PDF为准。
+
+原页文字及推导保存在原文JSON的original_page_text；网站子包附对应完整原页PDF。
+
+### 4. 完整当前Lean（原文与修正版独立列出）
+
+```lean
+def sinConstraint (Q1 : ℝ) (z : Vec 4) : ℝ := z 1^2+Q1*z 2^2/2
+def sinMultiplier (Q1 : ℝ) (F : ℝ → ℝ) (z : Vec 4) : ℝ :=
+  (z 1*F (z 0)-Q1*z 2^2*z 3/2)/sinConstraint Q1 z
+def sinDrift (Q1 Q2 θ γ : ℝ) (F : ℝ → ℝ) (z : Vec 4) : Vec 4 :=
+  let lam := sinMultiplier Q1 F z
+  ![z 1, F (z 0)-lam*z 1, -lam*z 2-z 3*z 2, (Q1*z 2^2-θ)/Q2-γ*z 3]
+def isSINSolution (Q1 Q2 θ γ : ℝ) (F : ℝ → ℝ)
+    (P : Measure Ω) (W : ℝ → Ω → Vec 1) (X : ℝ → Ω → Vec 4) (x0 : Vec 4) : Prop :=
+  0 < Q1 ∧ 0 < Q2 ∧ 0 < θ ∧ 0 < γ ∧ sinConstraint Q1 x0=θ ∧
+  additiveSDE P 1 W X x0 (sinDrift Q1 Q2 θ γ F)
+    (fun _ ↦ ![0,0,0,Real.sqrt (2*γ*θ/Q2)])
+theorem sinConstraint_balance (Q1 Q2 θ γ : ℝ) (F : ℝ → ℝ) (z : Vec 4)
+    (hK : sinConstraint Q1 z ≠ 0) :
+    2*z 1*(sinDrift Q1 Q2 θ γ F z) 1+Q1*z 2*(sinDrift Q1 Q2 θ γ F z) 2=0 := by
+  have hden : 2*z 1^2+Q1*z 2^2 ≠ 0 := by
+    intro h
+    apply hK
+    dsimp [sinConstraint]
+    linarith
+  simp [sinDrift, sinMultiplier, sinConstraint]
+  field_simp [hden]
+  <;> ring
+```
+
+### 5. 对照表
+
+| 原文成分 | Lean对应 | 说明 |
+|---|---|---|
+| 本条引用的对象与公式 | MD.Ch08.sinConstraint, MD.Ch08.sinMultiplier, MD.Ch08.sinDrift, MD.Ch08.isSINSolution, MD.Ch08.sinConstraint_balance | 本条列出的数学对象与结论全部；上下文见逐字原页。 |
+
+[EXTRA] 热浴变量ξ₁,ξ₂∈ℝ，各质量、温度、摩擦正；随机噪声只在ξ₂；约束正值排除奇点。
+记号与上下文：见所列原文与Lean量化变量。
+
+### 6. 审计结论
+
+本地：已对照目视原页核对对象、量词、技术资格和所列覆盖范围；网站尚未审阅。
+疑点：本条暂未发现需单列的原书疑误。
+网站：尚未送审。
+
+### 7. 状态与证明位置
+
+定义；Lean陈述可检查，证明完整性按本条状态区分。
+本条未登记待证缺项。
+位置：Blueprint/Ch08.lean；MD.Ch08.sinConstraint, MD.Ch08.sinMultiplier, MD.Ch08.sinDrift, MD.Ch08.isSINSolution, MD.Ch08.sinConstraint_balance。
+
+## 1. MD-8.6.1-SINWeightPrinted · unnumbered_claim · 印刷p.365 / PDFp.386
+
+### 2. 原文陈述
+
+w=(U+ξ₂²/2)/(p²+μ₁ξ₁²/2); integration over the isokinetic surface gives the Gibbs configurational density.
+
+### 3. 原文证明
+
+对应原页推导逐字保存在statement_verbatim/original_page_text；排版以原页PDF为准。
+
+原页文字及推导保存在原文JSON的original_page_text；网站子包附对应完整原页PDF。
+
+### 4. 完整当前Lean（原文与修正版独立列出）
+
+```lean
+def sinWeightPrinted (U : ℝ → ℝ) (Q1 : ℝ) (z : Vec 4) : ℝ :=
+  Real.exp (-(U (z 0)+z 3^2/2)/sinConstraint Q1 z)
+def sinWeight_corrected (U : ℝ → ℝ) (Q1 Q2 : ℝ) (z : Vec 4) : ℝ :=
+  Real.exp (-(U (z 0)+Q2*z 3^2/2)/sinConstraint Q1 z)
+theorem sinWeight_stationary_corrected (U : ℝ → ℝ) (Q1 Q2 θ : ℝ)
+    (hU : ContDiff ℝ 2 U) (hQ1 : 0 < Q1) (hQ2 : 0 < Q2) (hθ : 0 < θ)
+    (z : Vec 4) (hz : sinConstraint Q1 z=θ) :
+    textbookDivergence
+      (fun x ↦ sinWeight_corrected U Q1 Q2 x • sinDrift Q1 Q2 θ 0 (fun q ↦ -deriv U q) x) z = 0 := by
+  sorry
+```
+
+### 5. 对照表
+
+| 原文成分 | Lean对应 | 说明 |
+|---|---|---|
+| 本条引用的对象与公式 | MD.Ch08.sinWeightPrinted, MD.Ch08.sinWeight_corrected, MD.Ch08.sinWeight_stationary_corrected | 本条列出的数学对象与结论全部；上下文见逐字原页。 |
+
+[EXTRA] 仅证明正约束面处的实际通量散度陈述；曲面概率测度、边缘分布和遍历性列缺口。
+记号与上下文：见所列原文与Lean量化变量。
+
+### 6. 审计结论
+
+本地：已对照目视原页核对对象、量词、技术资格和所列覆盖范围；网站尚未审阅。
+疑点：已目视核对原页PDF386：ξ₂方程含μ₂⁻¹，而w的ξ₂二次项缺μ₂；一般μ₂时应为μ₂ξ₂²/2。
+网站：尚未送审。
+
+### 7. 状态与证明位置
+
+未证陈述；Lean陈述可检查，证明完整性按本条状态区分。
+未证原因：原文权重仅逐字保留不证；修正版通量散度的商法则计算。
+位置：Blueprint/Ch08.lean；MD.Ch08.sinWeightPrinted, MD.Ch08.sinWeight_corrected, MD.Ch08.sinWeight_stationary_corrected。
 

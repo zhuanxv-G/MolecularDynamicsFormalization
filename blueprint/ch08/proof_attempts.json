@@ -124,5 +124,23 @@
     "category": "缺大型理论",
     "routes": [],
     "decision": "缺大型理论时直接记录缺项；否则最多三条短路线。"
+  },
+  "MD-8.6-IsokineticProjector": {
+    "reason": "有限和投影复合的短证明尚未展开；按29号要求在当前批次可编译处暂停，不是缺大型理论。",
+    "category": "时间盒止",
+    "routes": [],
+    "decision": "保留sorry；29号恢复第8章后可在最多三条短路线内继续。"
+  },
+  "MD-8.6-IsokineticDivergencePrinted": {
+    "reason": "Printed散度符号疑误不证；修正版需商法则与有限维散度。",
+    "category": "原书疑误不证",
+    "routes": [],
+    "decision": "缺大型理论时直接记录缺项；否则最多三条短路线。"
+  },
+  "MD-8.6.1-SINWeightPrinted": {
+    "reason": "原文权重仅逐字保留不证；修正版通量散度的商法则计算。",
+    "category": "原书疑误不证",
+    "routes": [],
+    "decision": "缺大型理论时直接记录缺项；否则最多三条短路线。"
   }
 }

@@ -1799,5 +1799,259 @@
     "source_page_verification": "见source_page_checks.json，已目视核对本条原页。",
     "repair_log": [],
     "documented_priors": []
+  },
+  {
+    "source_id": "MD-8.6-IsokineticField",
+    "kind": "unnumbered_claim",
+    "label": null,
+    "section": "8.6",
+    "printed_page": "361–362",
+    "pdf_page": "382–383",
+    "statement_latex": "q̇=M⁻¹p, ṗ=F(q)-[pᵀM⁻¹F(q)/(pᵀM⁻¹p)]p; K(p)=pᵀM⁻¹p is constant.",
+    "statement_verbatim": "8.6\nIsokinetic Methods and Integration with Very Large Timestep\n361\nthe exact expected result \u0005ˇ, we can see the three stochastic methods perform\nexcellently, whereas the results from using the Nosé-Hoover thermostat reveal\nextremely poor sampling as a result of the trajectory being trapped.\nWe would expect that using Nosé-Hoover Chains (8.16)–(8.21) may provide\ndeterministic, ergodic sampling, by using a sufﬁciently long chain of artiﬁcial\nvariables and correctly chosen mass parameters \u0006i. However, the choice of these\nparameter values may prove crucial to the ergodicity of the dynamics. Therefore,\nwe suggest that for equilibrium canonical sampling it is far more efﬁcient to\nuse a stochastic thermostat, in comparison to the ergodicity issues and additional\nparameter tuning required in the case of deterministic thermostats.\n8.6\nIsokinetic Methods and Integration with Very Large\nTimestep\nIn the last chapter we examined various numerical methods for Langevin dynamics,\nobserving very substantial differences in the accuracy obtainable for conﬁgurational\nsampling using different schemes. In this section, we discuss methods that accelerate\nsampling using a more radical approach, namely modiﬁcation of the ensemble to\nincorporate isokinetic constraints. We again assume in what follows that Nc D Nd,\nso there are no constraints acting on the system (other than the isokinetic constraint\nwe are going to impose).\nThe starting point here is the Gaussian isokinetic thermostat [124]. This type of\nconstraint can be introduced into Newtonian dynamics Pq D M\u00021p, Pp D F.q/ by\nadding a Lagrange multiplier, i.e. changing the equations of motion to\nPq D M\u00021p;\nPp D F.q/ \u0003 \u0012p;\nK0 D K.p/\ndef\nD pTM\u00021p:\nBy differentiating the constraint and introducing the second equation, we obtain an\nequation for \u0012:\n0 D pTM\u00021Pp D pTM\u00021ŒF.q/ \u0003 \u0012p\t:\nThis yields\n\u0012 D pTM\u00021F.q/\npTM\u00021p\n:\nSimply substitute this expression into the differential equations to obtain the\nunconstrained equations\n\n362\n8\nExtended Variable Methods\nPq D M\u00021p;\n(8.37)\nPp D F.q/ \u0003 pTM\u00021F.q/\npTM\u00021p\np:\n(8.38)\nThese equations preserve pTM\u00021p D constant. (Note: It is tempting to replace the\ndenominator in this expression by K0, the value of kinetic energy, but this is not\nrecommended since it then destroys the ﬁrst integral.) The system (8.37)–(8.38) can\nbe rewritten in the alternative form\nPq D M\u00021p;\nPp D ŒI \u0003 H\t F.q/;\nwhere H D p.pTM\u00021p/\u00021pTM\u00021 is a projector matrix which is idempotent: H2 D\nH. The invariant subspace associated to this projector is span.p/:\nHp D p:\nIsokinetic dynamics has nonvanishing divergence, which requires a special\ntreatment to elucidate its statistical mechanical properties [338, 376]. In order to\nﬁnd a stationary solution, one substitutes\n\u0005.q; p/ D e\u0002w.q;p/˚.K.p//;\n(8.39)\n(with ˚ a nonvanishing function of K) into the continuity equation for the isokinetic\nsystem, the function w being at this point unknown. Then one obtains, with f iso\ndenoting the vector ﬁeld in (8.37)–(8.38), that\n0 D r \u0002 .\u0005f iso/ D .r\u0005/ \u0002 f iso C \u0005.r \u0002 f iso/\nD .\u0003rw\u0005 C \u0005˚0.K/\n˚.K/ rK/ \u0002 f iso C \u0005.r \u0002 f iso/:\nUsing the isokinetic property, the term involving K drops out. One next calculates\nthe divergence of the isokinetic vector ﬁeld and ﬁnds that (see Exercise 5)\nr \u0002 f iso D .Nc \u0003 1/pTM\u00021F\npTM\u00021p :\n",
+    "verbatim_scope": "完整对应原页文字层，逐字保留；本条数学成分由statement_latex及statement_scope定位。",
+    "proof_latex": null,
+    "proof_note": "对应原页推导逐字保存在statement_verbatim/original_page_text；排版以原页PDF为准。",
+    "original_page_text": [
+      {
+        "pdf_page": 382,
+        "printed_page": 361,
+        "text": "8.6\nIsokinetic Methods and Integration with Very Large Timestep\n361\nthe exact expected result \u0005ˇ, we can see the three stochastic methods perform\nexcellently, whereas the results from using the Nosé-Hoover thermostat reveal\nextremely poor sampling as a result of the trajectory being trapped.\nWe would expect that using Nosé-Hoover Chains (8.16)–(8.21) may provide\ndeterministic, ergodic sampling, by using a sufﬁciently long chain of artiﬁcial\nvariables and correctly chosen mass parameters \u0006i. However, the choice of these\nparameter values may prove crucial to the ergodicity of the dynamics. Therefore,\nwe suggest that for equilibrium canonical sampling it is far more efﬁcient to\nuse a stochastic thermostat, in comparison to the ergodicity issues and additional\nparameter tuning required in the case of deterministic thermostats.\n8.6\nIsokinetic Methods and Integration with Very Large\nTimestep\nIn the last chapter we examined various numerical methods for Langevin dynamics,\nobserving very substantial differences in the accuracy obtainable for conﬁgurational\nsampling using different schemes. In this section, we discuss methods that accelerate\nsampling using a more radical approach, namely modiﬁcation of the ensemble to\nincorporate isokinetic constraints. We again assume in what follows that Nc D Nd,\nso there are no constraints acting on the system (other than the isokinetic constraint\nwe are going to impose).\nThe starting point here is the Gaussian isokinetic thermostat [124]. This type of\nconstraint can be introduced into Newtonian dynamics Pq D M\u00021p, Pp D F.q/ by\nadding a Lagrange multiplier, i.e. changing the equations of motion to\nPq D M\u00021p;\nPp D F.q/ \u0003 \u0012p;\nK0 D K.p/\ndef\nD pTM\u00021p:\nBy differentiating the constraint and introducing the second equation, we obtain an\nequation for \u0012:\n0 D pTM\u00021Pp D pTM\u00021ŒF.q/ \u0003 \u0012p\t:\nThis yields\n\u0012 D pTM\u00021F.q/\npTM\u00021p\n:\nSimply substitute this expression into the differential equations to obtain the\nunconstrained equations\n"
+      },
+      {
+        "pdf_page": 383,
+        "printed_page": 362,
+        "text": "362\n8\nExtended Variable Methods\nPq D M\u00021p;\n(8.37)\nPp D F.q/ \u0003 pTM\u00021F.q/\npTM\u00021p\np:\n(8.38)\nThese equations preserve pTM\u00021p D constant. (Note: It is tempting to replace the\ndenominator in this expression by K0, the value of kinetic energy, but this is not\nrecommended since it then destroys the ﬁrst integral.) The system (8.37)–(8.38) can\nbe rewritten in the alternative form\nPq D M\u00021p;\nPp D ŒI \u0003 H\t F.q/;\nwhere H D p.pTM\u00021p/\u00021pTM\u00021 is a projector matrix which is idempotent: H2 D\nH. The invariant subspace associated to this projector is span.p/:\nHp D p:\nIsokinetic dynamics has nonvanishing divergence, which requires a special\ntreatment to elucidate its statistical mechanical properties [338, 376]. In order to\nﬁnd a stationary solution, one substitutes\n\u0005.q; p/ D e\u0002w.q;p/˚.K.p//;\n(8.39)\n(with ˚ a nonvanishing function of K) into the continuity equation for the isokinetic\nsystem, the function w being at this point unknown. Then one obtains, with f iso\ndenoting the vector ﬁeld in (8.37)–(8.38), that\n0 D r \u0002 .\u0005f iso/ D .r\u0005/ \u0002 f iso C \u0005.r \u0002 f iso/\nD .\u0003rw\u0005 C \u0005˚0.K/\n˚.K/ rK/ \u0002 f iso C \u0005.r \u0002 f iso/:\nUsing the isokinetic property, the term involving K drops out. One next calculates\nthe divergence of the isokinetic vector ﬁeld and ﬁnds that (see Exercise 5)\nr \u0002 f iso D .Nc \u0003 1/pTM\u00021F\npTM\u00021p :\n"
+      }
+    ],
+    "numbered_equations": [
+      "8.37",
+      "8.38"
+    ],
+    "transcription_note": "文字层逐字保留；数学排版另行转写，原页中的特殊字形编码不静默替换。PDF420仅取Exercises之前。",
+    "context_notation": [],
+    "extra_assumptions": [
+      "正质量、K>0作为物理有效域；本条实际证明瞬时动能平衡，不将之扩大为全局解存在性。"
+    ],
+    "issues": [],
+    "statement_scope": "无约束向量场与瞬时动能导数的代数消去；沿解的完整第一积分列缺口。",
+    "lean_decl": "MD.Ch08.isoMultiplier",
+    "lean_declarations": [
+      "MD.Ch08.isoMultiplier",
+      "MD.Ch08.isoField",
+      "MD.Ch08.isoKinetic_balance"
+    ],
+    "source_page_verification": "见source_page_checks.json，已目视核对本条原页。",
+    "repair_log": [],
+    "documented_priors": []
+  },
+  {
+    "source_id": "MD-8.6-IsokineticProjector",
+    "kind": "unnumbered_claim",
+    "label": null,
+    "section": "8.6",
+    "printed_page": "362",
+    "pdf_page": "383",
+    "statement_latex": "H=p(pᵀM⁻¹p)⁻¹pᵀM⁻¹; H²=H, Hp=p.",
+    "statement_verbatim": "362\n8\nExtended Variable Methods\nPq D M\u00021p;\n(8.37)\nPp D F.q/ \u0003 pTM\u00021F.q/\npTM\u00021p\np:\n(8.38)\nThese equations preserve pTM\u00021p D constant. (Note: It is tempting to replace the\ndenominator in this expression by K0, the value of kinetic energy, but this is not\nrecommended since it then destroys the ﬁrst integral.) The system (8.37)–(8.38) can\nbe rewritten in the alternative form\nPq D M\u00021p;\nPp D ŒI \u0003 H\t F.q/;\nwhere H D p.pTM\u00021p/\u00021pTM\u00021 is a projector matrix which is idempotent: H2 D\nH. The invariant subspace associated to this projector is span.p/:\nHp D p:\nIsokinetic dynamics has nonvanishing divergence, which requires a special\ntreatment to elucidate its statistical mechanical properties [338, 376]. In order to\nﬁnd a stationary solution, one substitutes\n\u0005.q; p/ D e\u0002w.q;p/˚.K.p//;\n(8.39)\n(with ˚ a nonvanishing function of K) into the continuity equation for the isokinetic\nsystem, the function w being at this point unknown. Then one obtains, with f iso\ndenoting the vector ﬁeld in (8.37)–(8.38), that\n0 D r \u0002 .\u0005f iso/ D .r\u0005/ \u0002 f iso C \u0005.r \u0002 f iso/\nD .\u0003rw\u0005 C \u0005˚0.K/\n˚.K/ rK/ \u0002 f iso C \u0005.r \u0002 f iso/:\nUsing the isokinetic property, the term involving K drops out. One next calculates\nthe divergence of the isokinetic vector ﬁeld and ﬁnds that (see Exercise 5)\nr \u0002 f iso D .Nc \u0003 1/pTM\u00021F\npTM\u00021p :\n",
+    "verbatim_scope": "完整对应原页文字层，逐字保留；本条数学成分由statement_latex及statement_scope定位。",
+    "proof_latex": null,
+    "proof_note": "对应原页推导逐字保存在statement_verbatim/original_page_text；排版以原页PDF为准。",
+    "original_page_text": [
+      {
+        "pdf_page": 383,
+        "printed_page": 362,
+        "text": "362\n8\nExtended Variable Methods\nPq D M\u00021p;\n(8.37)\nPp D F.q/ \u0003 pTM\u00021F.q/\npTM\u00021p\np:\n(8.38)\nThese equations preserve pTM\u00021p D constant. (Note: It is tempting to replace the\ndenominator in this expression by K0, the value of kinetic energy, but this is not\nrecommended since it then destroys the ﬁrst integral.) The system (8.37)–(8.38) can\nbe rewritten in the alternative form\nPq D M\u00021p;\nPp D ŒI \u0003 H\t F.q/;\nwhere H D p.pTM\u00021p/\u00021pTM\u00021 is a projector matrix which is idempotent: H2 D\nH. The invariant subspace associated to this projector is span.p/:\nHp D p:\nIsokinetic dynamics has nonvanishing divergence, which requires a special\ntreatment to elucidate its statistical mechanical properties [338, 376]. In order to\nﬁnd a stationary solution, one substitutes\n\u0005.q; p/ D e\u0002w.q;p/˚.K.p//;\n(8.39)\n(with ˚ a nonvanishing function of K) into the continuity equation for the isokinetic\nsystem, the function w being at this point unknown. Then one obtains, with f iso\ndenoting the vector ﬁeld in (8.37)–(8.38), that\n0 D r \u0002 .\u0005f iso/ D .r\u0005/ \u0002 f iso C \u0005.r \u0002 f iso/\nD .\u0003rw\u0005 C \u0005˚0.K/\n˚.K/ rK/ \u0002 f iso C \u0005.r \u0002 f iso/:\nUsing the isokinetic property, the term involving K drops out. One next calculates\nthe divergence of the isokinetic vector ﬁeld and ﬁnds that (see Exercise 5)\nr \u0002 f iso D .Nc \u0003 1/pTM\u00021F\npTM\u00021p :\n"
+      }
+    ],
+    "numbered_equations": [],
+    "transcription_note": "文字层逐字保留；数学排版另行转写，原页中的特殊字形编码不静默替换。PDF420仅取Exercises之前。",
+    "context_notation": [],
+    "extra_assumptions": [
+      "分母K非零；范围为span(p)的完整线性映射子空间等式列覆盖缺口。"
+    ],
+    "issues": [],
+    "statement_scope": "本条列出的数学对象与结论全部；上下文见逐字原页。",
+    "lean_decl": "MD.Ch08.isoProjection",
+    "lean_declarations": [
+      "MD.Ch08.isoProjection",
+      "MD.Ch08.isoProjection_self",
+      "MD.Ch08.isoProjection_idempotent"
+    ],
+    "source_page_verification": "见source_page_checks.json，已目视核对本条原页。",
+    "repair_log": [],
+    "documented_priors": []
+  },
+  {
+    "source_id": "MD-8.6-IsokineticDivergencePrinted",
+    "kind": "unnumbered_claim",
+    "label": null,
+    "section": "8.6",
+    "printed_page": "362–363",
+    "pdf_page": "383–384",
+    "statement_latex": "ρ=e^{-w(q,p)}Φ(K(p)); div f_iso=(N_c-1)pᵀM⁻¹F/(pᵀM⁻¹p), w=(N_c-1)U/K.",
+    "statement_verbatim": "362\n8\nExtended Variable Methods\nPq D M\u00021p;\n(8.37)\nPp D F.q/ \u0003 pTM\u00021F.q/\npTM\u00021p\np:\n(8.38)\nThese equations preserve pTM\u00021p D constant. (Note: It is tempting to replace the\ndenominator in this expression by K0, the value of kinetic energy, but this is not\nrecommended since it then destroys the ﬁrst integral.) The system (8.37)–(8.38) can\nbe rewritten in the alternative form\nPq D M\u00021p;\nPp D ŒI \u0003 H\t F.q/;\nwhere H D p.pTM\u00021p/\u00021pTM\u00021 is a projector matrix which is idempotent: H2 D\nH. The invariant subspace associated to this projector is span.p/:\nHp D p:\nIsokinetic dynamics has nonvanishing divergence, which requires a special\ntreatment to elucidate its statistical mechanical properties [338, 376]. In order to\nﬁnd a stationary solution, one substitutes\n\u0005.q; p/ D e\u0002w.q;p/˚.K.p//;\n(8.39)\n(with ˚ a nonvanishing function of K) into the continuity equation for the isokinetic\nsystem, the function w being at this point unknown. Then one obtains, with f iso\ndenoting the vector ﬁeld in (8.37)–(8.38), that\n0 D r \u0002 .\u0005f iso/ D .r\u0005/ \u0002 f iso C \u0005.r \u0002 f iso/\nD .\u0003rw\u0005 C \u0005˚0.K/\n˚.K/ rK/ \u0002 f iso C \u0005.r \u0002 f iso/:\nUsing the isokinetic property, the term involving K drops out. One next calculates\nthe divergence of the isokinetic vector ﬁeld and ﬁnds that (see Exercise 5)\nr \u0002 f iso D .Nc \u0003 1/pTM\u00021F\npTM\u00021p :\n\n8.6\nIsokinetic Methods and Integration with Very Large Timestep\n363\nThus the condition to have a stationary state of the form (8.39) is that\nrw \u0002 f iso D .Nc \u0003 1/pTM\u00021F\npTM\u00021p :\nA solution of this equation for w is easily found, it is\nw D .Nc \u0003 1/U.q/\nK.p/:\nThe invariant probability density, which is associated to a surface of constant kinetic\nenergy, can be written as a generalized function using the Dirac notation:\n\u0005.q; p/ D Z\u00021e\u0002.Nc\u00021/U.q/=K.p/ıŒK.p/ \u0003 K0\t:\nIf we work on the surface of constant kinetic energy K.p/ D K0\ndef\nD ˇ\u00021.Nc \u0003 1/, the\ninvariant density is of the form\n\u0005 / N\u0005ˇıŒK.p/ \u0003 kBT.Nc \u0003 1/\t\nwhich demonstrates that the isokinetic method, with this choice for the total kinetic\nenergy, leaves invariant the conﬁgurational Gibbs distribution. Ergodicity has not\nbeen demonstrated, so it is not possible to conclude that the invariant distribution is\nunique; as we have seen before, the incorporation of stochastic terms can allow the\nformulation of strong statements regarding the ergodicity and mixing properties.\n8.6.1\nA Stochastic, Isokinetic Method for Gibbs Sampling\nMinary et al. [271, 272] studied the isokinetic method as a means to control\nthe instability in multiple timestepping due to resonance. They suggested that\neach physical degree of freedom be coupled to its own NHC thermostat through\nan isokinetic constraint in a “massive” thermostatting approach. These massive\nthermostats introduced some complexity (each degree of freedom had an associated\nNosé-Hoover chain system as well as the constraint); obtaining an accurate solution\nfor this large system is involving. A potentially more serious problem is that,\nalthough Nosé-Hoover chains and the isokinetic method may in some cases appear\nto be “practically ergodic,” no proof of ergodicity exists. A recent article (by one\nof us, together with Margul and Tuckerman [220]) addressed these problems by\nreplacing the Nosé-Hoover chains with stochastic terms (of Ornstein-Uhlenbeck\ntype).\n",
+    "verbatim_scope": "完整对应原页文字层，逐字保留；本条数学成分由statement_latex及statement_scope定位。",
+    "proof_latex": null,
+    "proof_note": "对应原页推导逐字保存在statement_verbatim/original_page_text；排版以原页PDF为准。",
+    "original_page_text": [
+      {
+        "pdf_page": 383,
+        "printed_page": 362,
+        "text": "362\n8\nExtended Variable Methods\nPq D M\u00021p;\n(8.37)\nPp D F.q/ \u0003 pTM\u00021F.q/\npTM\u00021p\np:\n(8.38)\nThese equations preserve pTM\u00021p D constant. (Note: It is tempting to replace the\ndenominator in this expression by K0, the value of kinetic energy, but this is not\nrecommended since it then destroys the ﬁrst integral.) The system (8.37)–(8.38) can\nbe rewritten in the alternative form\nPq D M\u00021p;\nPp D ŒI \u0003 H\t F.q/;\nwhere H D p.pTM\u00021p/\u00021pTM\u00021 is a projector matrix which is idempotent: H2 D\nH. The invariant subspace associated to this projector is span.p/:\nHp D p:\nIsokinetic dynamics has nonvanishing divergence, which requires a special\ntreatment to elucidate its statistical mechanical properties [338, 376]. In order to\nﬁnd a stationary solution, one substitutes\n\u0005.q; p/ D e\u0002w.q;p/˚.K.p//;\n(8.39)\n(with ˚ a nonvanishing function of K) into the continuity equation for the isokinetic\nsystem, the function w being at this point unknown. Then one obtains, with f iso\ndenoting the vector ﬁeld in (8.37)–(8.38), that\n0 D r \u0002 .\u0005f iso/ D .r\u0005/ \u0002 f iso C \u0005.r \u0002 f iso/\nD .\u0003rw\u0005 C \u0005˚0.K/\n˚.K/ rK/ \u0002 f iso C \u0005.r \u0002 f iso/:\nUsing the isokinetic property, the term involving K drops out. One next calculates\nthe divergence of the isokinetic vector ﬁeld and ﬁnds that (see Exercise 5)\nr \u0002 f iso D .Nc \u0003 1/pTM\u00021F\npTM\u00021p :\n"
+      },
+      {
+        "pdf_page": 384,
+        "printed_page": 363,
+        "text": "8.6\nIsokinetic Methods and Integration with Very Large Timestep\n363\nThus the condition to have a stationary state of the form (8.39) is that\nrw \u0002 f iso D .Nc \u0003 1/pTM\u00021F\npTM\u00021p :\nA solution of this equation for w is easily found, it is\nw D .Nc \u0003 1/U.q/\nK.p/:\nThe invariant probability density, which is associated to a surface of constant kinetic\nenergy, can be written as a generalized function using the Dirac notation:\n\u0005.q; p/ D Z\u00021e\u0002.Nc\u00021/U.q/=K.p/ıŒK.p/ \u0003 K0\t:\nIf we work on the surface of constant kinetic energy K.p/ D K0\ndef\nD ˇ\u00021.Nc \u0003 1/, the\ninvariant density is of the form\n\u0005 / N\u0005ˇıŒK.p/ \u0003 kBT.Nc \u0003 1/\t\nwhich demonstrates that the isokinetic method, with this choice for the total kinetic\nenergy, leaves invariant the conﬁgurational Gibbs distribution. Ergodicity has not\nbeen demonstrated, so it is not possible to conclude that the invariant distribution is\nunique; as we have seen before, the incorporation of stochastic terms can allow the\nformulation of strong statements regarding the ergodicity and mixing properties.\n8.6.1\nA Stochastic, Isokinetic Method for Gibbs Sampling\nMinary et al. [271, 272] studied the isokinetic method as a means to control\nthe instability in multiple timestepping due to resonance. They suggested that\neach physical degree of freedom be coupled to its own NHC thermostat through\nan isokinetic constraint in a “massive” thermostatting approach. These massive\nthermostats introduced some complexity (each degree of freedom had an associated\nNosé-Hoover chain system as well as the constraint); obtaining an accurate solution\nfor this large system is involving. A potentially more serious problem is that,\nalthough Nosé-Hoover chains and the isokinetic method may in some cases appear\nto be “practically ergodic,” no proof of ergodicity exists. A recent article (by one\nof us, together with Margul and Tuckerman [220]) addressed these problems by\nreplacing the Nosé-Hoover chains with stochastic terms (of Ornstein-Uhlenbeck\ntype).\n"
+      }
+    ],
+    "numbered_equations": [
+      "8.39"
+    ],
+    "transcription_note": "文字层逐字保留；数学排版另行转写，原页中的特殊字形编码不静默替换。PDF420仅取Exercises之前。",
+    "context_notation": [],
+    "extra_assumptions": [
+      "Φ为正光滑非零函数时称权重；使用K≠0域上的实际散度。"
+    ],
+    "issues": [
+      "已目视核对原页PDF383–384：ṗ=F-λp的散度应为-(N_c-1)λ，所印正号与后续w=(N_c-1)U/K也冲突。"
+    ],
+    "statement_scope": "本条列出的数学对象与结论全部；上下文见逐字原页。",
+    "lean_decl": "MD.Ch08.isoAnsatz",
+    "lean_declarations": [
+      "MD.Ch08.isoAnsatz",
+      "MD.Ch08.isoDivergencePrinted",
+      "MD.Ch08.isoDivergence_corrected"
+    ],
+    "source_page_verification": "见source_page_checks.json，已目视核对本条原页。",
+    "repair_log": [],
+    "documented_priors": []
+  },
+  {
+    "source_id": "MD-8.6-IsokineticGibbsShell",
+    "kind": "unnumbered_claim",
+    "label": null,
+    "section": "8.6",
+    "printed_page": "363",
+    "pdf_page": "384",
+    "statement_latex": "ρ=Z⁻¹exp(-(N_c-1)U/K)δ[K-K₀]; K₀=β⁻¹(N_c-1) gives the configurational Gibbs distribution.",
+    "statement_verbatim": "8.6\nIsokinetic Methods and Integration with Very Large Timestep\n363\nThus the condition to have a stationary state of the form (8.39) is that\nrw \u0002 f iso D .Nc \u0003 1/pTM\u00021F\npTM\u00021p :\nA solution of this equation for w is easily found, it is\nw D .Nc \u0003 1/U.q/\nK.p/:\nThe invariant probability density, which is associated to a surface of constant kinetic\nenergy, can be written as a generalized function using the Dirac notation:\n\u0005.q; p/ D Z\u00021e\u0002.Nc\u00021/U.q/=K.p/ıŒK.p/ \u0003 K0\t:\nIf we work on the surface of constant kinetic energy K.p/ D K0\ndef\nD ˇ\u00021.Nc \u0003 1/, the\ninvariant density is of the form\n\u0005 / N\u0005ˇıŒK.p/ \u0003 kBT.Nc \u0003 1/\t\nwhich demonstrates that the isokinetic method, with this choice for the total kinetic\nenergy, leaves invariant the conﬁgurational Gibbs distribution. Ergodicity has not\nbeen demonstrated, so it is not possible to conclude that the invariant distribution is\nunique; as we have seen before, the incorporation of stochastic terms can allow the\nformulation of strong statements regarding the ergodicity and mixing properties.\n8.6.1\nA Stochastic, Isokinetic Method for Gibbs Sampling\nMinary et al. [271, 272] studied the isokinetic method as a means to control\nthe instability in multiple timestepping due to resonance. They suggested that\neach physical degree of freedom be coupled to its own NHC thermostat through\nan isokinetic constraint in a “massive” thermostatting approach. These massive\nthermostats introduced some complexity (each degree of freedom had an associated\nNosé-Hoover chain system as well as the constraint); obtaining an accurate solution\nfor this large system is involving. A potentially more serious problem is that,\nalthough Nosé-Hoover chains and the isokinetic method may in some cases appear\nto be “practically ergodic,” no proof of ergodicity exists. A recent article (by one\nof us, together with Margul and Tuckerman [220]) addressed these problems by\nreplacing the Nosé-Hoover chains with stochastic terms (of Ornstein-Uhlenbeck\ntype).\n",
+    "verbatim_scope": "完整对应原页文字层，逐字保留；本条数学成分由statement_latex及statement_scope定位。",
+    "proof_latex": null,
+    "proof_note": "对应原页推导逐字保存在statement_verbatim/original_page_text；排版以原页PDF为准。",
+    "original_page_text": [
+      {
+        "pdf_page": 384,
+        "printed_page": 363,
+        "text": "8.6\nIsokinetic Methods and Integration with Very Large Timestep\n363\nThus the condition to have a stationary state of the form (8.39) is that\nrw \u0002 f iso D .Nc \u0003 1/pTM\u00021F\npTM\u00021p :\nA solution of this equation for w is easily found, it is\nw D .Nc \u0003 1/U.q/\nK.p/:\nThe invariant probability density, which is associated to a surface of constant kinetic\nenergy, can be written as a generalized function using the Dirac notation:\n\u0005.q; p/ D Z\u00021e\u0002.Nc\u00021/U.q/=K.p/ıŒK.p/ \u0003 K0\t:\nIf we work on the surface of constant kinetic energy K.p/ D K0\ndef\nD ˇ\u00021.Nc \u0003 1/, the\ninvariant density is of the form\n\u0005 / N\u0005ˇıŒK.p/ \u0003 kBT.Nc \u0003 1/\t\nwhich demonstrates that the isokinetic method, with this choice for the total kinetic\nenergy, leaves invariant the conﬁgurational Gibbs distribution. Ergodicity has not\nbeen demonstrated, so it is not possible to conclude that the invariant distribution is\nunique; as we have seen before, the incorporation of stochastic terms can allow the\nformulation of strong statements regarding the ergodicity and mixing properties.\n8.6.1\nA Stochastic, Isokinetic Method for Gibbs Sampling\nMinary et al. [271, 272] studied the isokinetic method as a means to control\nthe instability in multiple timestepping due to resonance. They suggested that\neach physical degree of freedom be coupled to its own NHC thermostat through\nan isokinetic constraint in a “massive” thermostatting approach. These massive\nthermostats introduced some complexity (each degree of freedom had an associated\nNosé-Hoover chain system as well as the constraint); obtaining an accurate solution\nfor this large system is involving. A potentially more serious problem is that,\nalthough Nosé-Hoover chains and the isokinetic method may in some cases appear\nto be “practically ergodic,” no proof of ergodicity exists. A recent article (by one\nof us, together with Margul and Tuckerman [220]) addressed these problems by\nreplacing the Nosé-Hoover chains with stochastic terms (of Ornstein-Uhlenbeck\ntype).\n"
+      }
+    ],
+    "numbered_equations": [],
+    "transcription_note": "文字层逐字保留；数学排版另行转写，原页中的特殊字形编码不静默替换。PDF420仅取Exercises之前。",
+    "context_notation": [],
+    "extra_assumptions": [
+      "δ是曲面测度的广义记号，未把Dirac分布写成Lebesgue密度；本条只证明壳面上构型权重化简，曲面测度归一/边缘分布不变性列覆盖缺口。"
+    ],
+    "issues": [],
+    "statement_scope": "动能壳与Gibbs因子的逐点关系；不声称完整曲面概率测度定理。",
+    "lean_decl": "MD.Ch08.isokineticShell",
+    "lean_declarations": [
+      "MD.Ch08.isokineticShell",
+      "MD.Ch08.isoShellWeight",
+      "MD.Ch08.isoShell_gibbsFactor"
+    ],
+    "source_page_verification": "见source_page_checks.json，已目视核对本条原页。",
+    "repair_log": [],
+    "documented_priors": []
+  },
+  {
+    "source_id": "MD-8.6.1-StochasticIsokinetic",
+    "kind": "definition",
+    "label": null,
+    "section": "8.6.1",
+    "printed_page": "364–365",
+    "pdf_page": "385–386",
+    "statement_latex": "dq=pdt, dp=(F-λp)dt, dξ₁=(-λξ₁-ξ₂ξ₁)dt, dξ₂=μ₂⁻¹(μ₁ξ₁²-k_BT)dt-γξ₂dt+σdW; p²+μ₁ξ₁²/2=k_BT.",
+    "statement_verbatim": "364\n8\nExtended Variable Methods\nWe ﬁrst demonstrate the idea of [220] by considering the following SDE with a\nsingle degree of freedom:\ndq D pdt;\n(8.40)\ndp D ŒF.q/ \u0003 \u0013p\t dt;\n(8.41)\nd\u00121 D \u0003\u0013\u00121dt \u0003 \u00122\u00121dt;\n(8.42)\nd\u00122 D \u0006\u00021\n2 .\u00061\u00122\n1 \u0003 kBT/dt \u0003 \n\u00122dt C \u0007dW;\n(8.43)\nwhere \u00121 and \u00122 are auxiliary variables, \u0007 D\np\n2\n=ˇ\u00062, \n is the friction constant,\n\u00061 and \u00062 are coupling coefﬁcients, and \u0013 is a Lagrange multiplier which is chosen\nto maintain the isokinetic relation involving p and \u00121:\np2 C 1\n2\u00061\u00122\n1 D kBT:\n(8.44)\nWe calculate the multiplier by differentiating the constraint to obtain\n2pPp C \u00061\u00121 P\u00121 D 0\nor, using the differential equations,\n2.pF.q/ \u0003 \u0013p2/ C \u00061\u00121.\u0003\u0013\u00121dt \u0003 \u00122\u00121/ D 0;\nthus\n\u0013 D pF.q/ \u0003 \u00061\u00122\n1\u00122=2\np2 C \u00061\u00122\n1=2\n:\nUpon reintroduction of this expression in (8.40)–(8.43) this allows us to write a\nclosed-form SDE system for q; p; \u00121; \u00122.\nWe follow an analogous procedure to that used to study the distribution in the\ncase of the standard isokinetic system, for the moment ignoring the stochastic terms.\nThis requires us to solve the equation\nrw \u0002 f D div.f/;\nwhere now f is the vector ﬁeld in (8.40)–(8.43) where we take \n D 0. The\ndivergence is\ndiv.f/ D \u0003 d\ndp.\u0013p/ \u0003 d\nd\u00121\n.\u0013\u00121/ \u0003 \u00122:\n\n8.6\nIsokinetic Methods and Integration with Very Large Timestep\n365\nLet \u000f1 D pF \u0003 \u00061\u00122\n1\u00122=2, \u000f2 D p2 C \u00061\u00122\n1=2, so \u0013 D \u000f1=\u000f2, then calculate\nd\ndp\u0013 D .\u000f2F \u0003 2\u000f1p/=\u000f2\n2;\nd\nd\u00121\n\u0013 D .\u0003\u00061\u00121\u00122\u000f2 \u0003 \u00061\u00121\u000f1/=\u000f2\n2;\nto see that\npd\u0013\ndp C \u00121\nd\u0013\nd\u00121\nD .pF \u0003 \u00061\u00122\n1\u00122/\u000f2 \u0003 .2p2 C \u00061\u00122\n1/\u000f1\n\u000f2\n2\nD 2\n\u0002\n\u0003 pF\n2\u000f2\nC \u0013 \u0003 \u0013\n\u0003\nD \u0003pF\n\u000f2\n;\nhence\ndiv.f/ D pF\n\u000f2\n\u0003 2\u0013 \u0003 \u00122\nD pF \u0003 2.pF \u0003 \u00061\u00122\n1\u00122=2/\np2 C \u00061\u00122\n1=2\n\u0003 \u00122\nD \u0003pF C \u00061\u00122\n1\u00122\np2 C \u00061\u00122\n1=2 \u0003 \u00122:\nWe ﬁnd that a solution of the equation rw \u0002 f D div.f/ is then given by\nw D\nU C 1\n2\u00122\n2\np2 C 1\n2\u00061\u00122\n1\n:\nIntegrating over the isokinetic surface p2 C 1\n2\u00061\u00122\n1 D ˇ\u00021, and with respect to the\nvariable \u00122, yields the Gibbs conﬁgurational density.\nThe exciting prospect here is that we now have a new variable \u00122 which\nhas, in equilibrium, a Gaussian distribution. The Ornstein-Uhlenbeck terms are\ntherefore compatible with this extended distribution and can be incorporated (as\nin Nosé-Hoover-Langevin) to provide ergodicity and control of the convergence to\nequilibrium.\n",
+    "verbatim_scope": "完整对应原页文字层，逐字保留；本条数学成分由statement_latex及statement_scope定位。",
+    "proof_latex": null,
+    "proof_note": "对应原页推导逐字保存在statement_verbatim/original_page_text；排版以原页PDF为准。",
+    "original_page_text": [
+      {
+        "pdf_page": 385,
+        "printed_page": 364,
+        "text": "364\n8\nExtended Variable Methods\nWe ﬁrst demonstrate the idea of [220] by considering the following SDE with a\nsingle degree of freedom:\ndq D pdt;\n(8.40)\ndp D ŒF.q/ \u0003 \u0013p\t dt;\n(8.41)\nd\u00121 D \u0003\u0013\u00121dt \u0003 \u00122\u00121dt;\n(8.42)\nd\u00122 D \u0006\u00021\n2 .\u00061\u00122\n1 \u0003 kBT/dt \u0003 \n\u00122dt C \u0007dW;\n(8.43)\nwhere \u00121 and \u00122 are auxiliary variables, \u0007 D\np\n2\n=ˇ\u00062, \n is the friction constant,\n\u00061 and \u00062 are coupling coefﬁcients, and \u0013 is a Lagrange multiplier which is chosen\nto maintain the isokinetic relation involving p and \u00121:\np2 C 1\n2\u00061\u00122\n1 D kBT:\n(8.44)\nWe calculate the multiplier by differentiating the constraint to obtain\n2pPp C \u00061\u00121 P\u00121 D 0\nor, using the differential equations,\n2.pF.q/ \u0003 \u0013p2/ C \u00061\u00121.\u0003\u0013\u00121dt \u0003 \u00122\u00121/ D 0;\nthus\n\u0013 D pF.q/ \u0003 \u00061\u00122\n1\u00122=2\np2 C \u00061\u00122\n1=2\n:\nUpon reintroduction of this expression in (8.40)–(8.43) this allows us to write a\nclosed-form SDE system for q; p; \u00121; \u00122.\nWe follow an analogous procedure to that used to study the distribution in the\ncase of the standard isokinetic system, for the moment ignoring the stochastic terms.\nThis requires us to solve the equation\nrw \u0002 f D div.f/;\nwhere now f is the vector ﬁeld in (8.40)–(8.43) where we take \n D 0. The\ndivergence is\ndiv.f/ D \u0003 d\ndp.\u0013p/ \u0003 d\nd\u00121\n.\u0013\u00121/ \u0003 \u00122:\n"
+      },
+      {
+        "pdf_page": 386,
+        "printed_page": 365,
+        "text": "8.6\nIsokinetic Methods and Integration with Very Large Timestep\n365\nLet \u000f1 D pF \u0003 \u00061\u00122\n1\u00122=2, \u000f2 D p2 C \u00061\u00122\n1=2, so \u0013 D \u000f1=\u000f2, then calculate\nd\ndp\u0013 D .\u000f2F \u0003 2\u000f1p/=\u000f2\n2;\nd\nd\u00121\n\u0013 D .\u0003\u00061\u00121\u00122\u000f2 \u0003 \u00061\u00121\u000f1/=\u000f2\n2;\nto see that\npd\u0013\ndp C \u00121\nd\u0013\nd\u00121\nD .pF \u0003 \u00061\u00122\n1\u00122/\u000f2 \u0003 .2p2 C \u00061\u00122\n1/\u000f1\n\u000f2\n2\nD 2\n\u0002\n\u0003 pF\n2\u000f2\nC \u0013 \u0003 \u0013\n\u0003\nD \u0003pF\n\u000f2\n;\nhence\ndiv.f/ D pF\n\u000f2\n\u0003 2\u0013 \u0003 \u00122\nD pF \u0003 2.pF \u0003 \u00061\u00122\n1\u00122=2/\np2 C \u00061\u00122\n1=2\n\u0003 \u00122\nD \u0003pF C \u00061\u00122\n1\u00122\np2 C \u00061\u00122\n1=2 \u0003 \u00122:\nWe ﬁnd that a solution of the equation rw \u0002 f D div.f/ is then given by\nw D\nU C 1\n2\u00122\n2\np2 C 1\n2\u00061\u00122\n1\n:\nIntegrating over the isokinetic surface p2 C 1\n2\u00061\u00122\n1 D ˇ\u00021, and with respect to the\nvariable \u00122, yields the Gibbs conﬁgurational density.\nThe exciting prospect here is that we now have a new variable \u00122 which\nhas, in equilibrium, a Gaussian distribution. The Ornstein-Uhlenbeck terms are\ntherefore compatible with this extended distribution and can be incorporated (as\nin Nosé-Hoover-Langevin) to provide ergodicity and control of the convergence to\nequilibrium.\n"
+      }
+    ],
+    "numbered_equations": [
+      "8.40",
+      "8.41",
+      "8.42",
+      "8.43",
+      "8.44"
+    ],
+    "transcription_note": "文字层逐字保留；数学排版另行转写，原页中的特殊字形编码不静默替换。PDF420仅取Exercises之前。",
+    "context_notation": [],
+    "extra_assumptions": [
+      "热浴变量ξ₁,ξ₂∈ℝ，各质量、温度、摩擦正；随机噪声只在ξ₂；约束正值排除奇点。"
+    ],
+    "issues": [],
+    "statement_scope": "本条列出的数学对象与结论全部；上下文见逐字原页。",
+    "lean_decl": "MD.Ch08.sinConstraint",
+    "lean_declarations": [
+      "MD.Ch08.sinConstraint",
+      "MD.Ch08.sinMultiplier",
+      "MD.Ch08.sinDrift",
+      "MD.Ch08.isSINSolution",
+      "MD.Ch08.sinConstraint_balance"
+    ],
+    "source_page_verification": "见source_page_checks.json，已目视核对本条原页。",
+    "repair_log": [],
+    "documented_priors": []
+  },
+  {
+    "source_id": "MD-8.6.1-SINWeightPrinted",
+    "kind": "unnumbered_claim",
+    "label": null,
+    "section": "8.6.1",
+    "printed_page": "365",
+    "pdf_page": "386",
+    "statement_latex": "w=(U+ξ₂²/2)/(p²+μ₁ξ₁²/2); integration over the isokinetic surface gives the Gibbs configurational density.",
+    "statement_verbatim": "8.6\nIsokinetic Methods and Integration with Very Large Timestep\n365\nLet \u000f1 D pF \u0003 \u00061\u00122\n1\u00122=2, \u000f2 D p2 C \u00061\u00122\n1=2, so \u0013 D \u000f1=\u000f2, then calculate\nd\ndp\u0013 D .\u000f2F \u0003 2\u000f1p/=\u000f2\n2;\nd\nd\u00121\n\u0013 D .\u0003\u00061\u00121\u00122\u000f2 \u0003 \u00061\u00121\u000f1/=\u000f2\n2;\nto see that\npd\u0013\ndp C \u00121\nd\u0013\nd\u00121\nD .pF \u0003 \u00061\u00122\n1\u00122/\u000f2 \u0003 .2p2 C \u00061\u00122\n1/\u000f1\n\u000f2\n2\nD 2\n\u0002\n\u0003 pF\n2\u000f2\nC \u0013 \u0003 \u0013\n\u0003\nD \u0003pF\n\u000f2\n;\nhence\ndiv.f/ D pF\n\u000f2\n\u0003 2\u0013 \u0003 \u00122\nD pF \u0003 2.pF \u0003 \u00061\u00122\n1\u00122=2/\np2 C \u00061\u00122\n1=2\n\u0003 \u00122\nD \u0003pF C \u00061\u00122\n1\u00122\np2 C \u00061\u00122\n1=2 \u0003 \u00122:\nWe ﬁnd that a solution of the equation rw \u0002 f D div.f/ is then given by\nw D\nU C 1\n2\u00122\n2\np2 C 1\n2\u00061\u00122\n1\n:\nIntegrating over the isokinetic surface p2 C 1\n2\u00061\u00122\n1 D ˇ\u00021, and with respect to the\nvariable \u00122, yields the Gibbs conﬁgurational density.\nThe exciting prospect here is that we now have a new variable \u00122 which\nhas, in equilibrium, a Gaussian distribution. The Ornstein-Uhlenbeck terms are\ntherefore compatible with this extended distribution and can be incorporated (as\nin Nosé-Hoover-Langevin) to provide ergodicity and control of the convergence to\nequilibrium.\n",
+    "verbatim_scope": "完整对应原页文字层，逐字保留；本条数学成分由statement_latex及statement_scope定位。",
+    "proof_latex": null,
+    "proof_note": "对应原页推导逐字保存在statement_verbatim/original_page_text；排版以原页PDF为准。",
+    "original_page_text": [
+      {
+        "pdf_page": 386,
+        "printed_page": 365,
+        "text": "8.6\nIsokinetic Methods and Integration with Very Large Timestep\n365\nLet \u000f1 D pF \u0003 \u00061\u00122\n1\u00122=2, \u000f2 D p2 C \u00061\u00122\n1=2, so \u0013 D \u000f1=\u000f2, then calculate\nd\ndp\u0013 D .\u000f2F \u0003 2\u000f1p/=\u000f2\n2;\nd\nd\u00121\n\u0013 D .\u0003\u00061\u00121\u00122\u000f2 \u0003 \u00061\u00121\u000f1/=\u000f2\n2;\nto see that\npd\u0013\ndp C \u00121\nd\u0013\nd\u00121\nD .pF \u0003 \u00061\u00122\n1\u00122/\u000f2 \u0003 .2p2 C \u00061\u00122\n1/\u000f1\n\u000f2\n2\nD 2\n\u0002\n\u0003 pF\n2\u000f2\nC \u0013 \u0003 \u0013\n\u0003\nD \u0003pF\n\u000f2\n;\nhence\ndiv.f/ D pF\n\u000f2\n\u0003 2\u0013 \u0003 \u00122\nD pF \u0003 2.pF \u0003 \u00061\u00122\n1\u00122=2/\np2 C \u00061\u00122\n1=2\n\u0003 \u00122\nD \u0003pF C \u00061\u00122\n1\u00122\np2 C \u00061\u00122\n1=2 \u0003 \u00122:\nWe ﬁnd that a solution of the equation rw \u0002 f D div.f/ is then given by\nw D\nU C 1\n2\u00122\n2\np2 C 1\n2\u00061\u00122\n1\n:\nIntegrating over the isokinetic surface p2 C 1\n2\u00061\u00122\n1 D ˇ\u00021, and with respect to the\nvariable \u00122, yields the Gibbs conﬁgurational density.\nThe exciting prospect here is that we now have a new variable \u00122 which\nhas, in equilibrium, a Gaussian distribution. The Ornstein-Uhlenbeck terms are\ntherefore compatible with this extended distribution and can be incorporated (as\nin Nosé-Hoover-Langevin) to provide ergodicity and control of the convergence to\nequilibrium.\n"
+      }
+    ],
+    "numbered_equations": [],
+    "transcription_note": "文字层逐字保留；数学排版另行转写，原页中的特殊字形编码不静默替换。PDF420仅取Exercises之前。",
+    "context_notation": [],
+    "extra_assumptions": [
+      "仅证明正约束面处的实际通量散度陈述；曲面概率测度、边缘分布和遍历性列缺口。"
+    ],
+    "issues": [
+      "已目视核对原页PDF386：ξ₂方程含μ₂⁻¹，而w的ξ₂二次项缺μ₂；一般μ₂时应为μ₂ξ₂²/2。"
+    ],
+    "statement_scope": "本条列出的数学对象与结论全部；上下文见逐字原页。",
+    "lean_decl": "MD.Ch08.sinWeightPrinted",
+    "lean_declarations": [
+      "MD.Ch08.sinWeightPrinted",
+      "MD.Ch08.sinWeight_corrected",
+      "MD.Ch08.sinWeight_stationary_corrected"
+    ],
+    "source_page_verification": "见source_page_checks.json，已目视核对本条原页。",
+    "repair_log": [],
+    "documented_priors": []
   }
 ]
