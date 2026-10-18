@@ -1,0 +1,8 @@
+{
+  "source_id": "MD-6.4.4-HamiltonianPowerMomentumLaplacian",
+  "note": "保留已证精确Laplacian等式；原错误上界Printed与修正系数分别由MD-6.4.4-LaplacianBoundPrinted/LaplacianBoundCorrect保存，不能把等式视为已覆盖原印刷不等式。",
+  "gaps": [
+    "原印刷上界不属于本条；见LaplacianBoundPrinted（原书疑误）及LaplacianBoundCorrect。"
+  ],
+  "lean_sha256": "04e37d6e428a56db7cf3247cf9bb8829aabb99e7702be35b9939276c6343f590"
+}

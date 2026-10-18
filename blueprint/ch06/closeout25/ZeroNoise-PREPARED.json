@@ -1,0 +1,8 @@
+{
+  "source_id": "MD-6.3.6-ZeroNoise",
+  "note": "仅覆盖生成元和前向算子的零扩散代数简化；SDE解到ODE积分方程及经典导数桥接未覆盖。",
+  "gaps": [
+    "仅覆盖生成元和前向算子的零扩散代数简化；SDE解到ODE积分方程及经典导数桥接未覆盖。"
+  ],
+  "lean_sha256": "dbfda53faa9a40ca11ccf7f9ce810ea27f1ab240b3dae9c9a332f7e1f97711a8"
+}

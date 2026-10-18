@@ -1,0 +1,107 @@
+以附件/PASTE 为准，忽略 /workspace 旧文件；Mathlib 定义按标准含义采信。
+A逐字核对原文及证明；C只读核对对象、域、量词、前提和全部结论。所有项目定义体及选择规格在下文；仅作为审阅摘录，不是独立模块。theorem/lemma提供完整类型（不审证明）；定义提供完整定义体，按文件作用域解释。不要因sorry判签名FAIL。原文版忠实性、修正版正确性、反例、原书疑误分别说明，不凭旧文件或repair_log猜声明。
+本条MD-6.3.3-BathReductionPrinted，subtask=EAUDIT07c；原PDF页映射=[258]。只读，不改工程或补证明。以JSON对象返回batch=EAUDIT07,input_sha256,items；逐条含source_id,subtask,input_sha256,json_review{status,issue_codes,corrected_json,issues,evidence},audit{lean_decl,verdict,explanation,counterexample,suggested_fix}。verdict=PASS/FAIL/NEEDS_HUMAN，status=APPROVED/CORRECTED/NEEDS_HUMAN。必须原样回显下列全部哈希。
+input_sha256:
+{
+  "Blueprint/Ch06.lean": "4a2a6cb72c1692f80e3537ab1a71701d429a482780a01226c3dc66a2ebb8b44b",
+  "blueprint/ch06/ch06_source.json": "d7f93cd20eb570744c710f3e07a88b319c082e4155812fee91db0920eb05944e",
+  "PAGES.pdf": "90d1f654c528bccf284e7f0ae6c5a7c08affbeae3e93693be6aaa73be97472aa",
+  "materials_sha256": "2aa8b05cb181fdc8d0831d03ebb0014ed4920d4068b4eb5f69dc88a4836c4577"
+}
+
+## 原文JSON
+```json
+{
+  "source_id": "MD-6.3.3-BathReductionPrinted",
+  "kind": "unnumbered_claim",
+  "label": null,
+  "section": "6.3.3",
+  "printed_page": "237",
+  "pdf_page": "258",
+  "statement_latex": "\\[\\dot P=-U'(Q)+f(t)-\\int_0^t\\psi(t-s)P(s)ds.\\tag{6.29}\\]\n\\[f(t)=-k^{-1}\\sum_{i=1}^k[\\cos(\\Omega_i t)q_i(0)+\\Omega_i^{-1}\\sin(\\Omega_i t)p_i(0)/\\mu_i-\\cos(\\Omega_i t)Q(0)].\\]",
+  "proof_latex": null,
+  "proof_note": "原书未给独立完整证明。",
+  "proof_discussion_latex": null,
+  "context_notation": [],
+  "extra_assumptions": [
+    "[EXTRA] 25号：原文版忠实性与数学疑误分开；补齐所交条目所属的现有_corrected完整签名，不从repair_log名称推断网站已通过修正版。"
+  ],
+  "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
+  "coverage_gaps": null
+}
+```
+## 当前完整Lean（全部原文版、修正版及反例）
+```lean
+theorem bathReductionPrinted :
+  ∀ {k : ℕ} (μ : MolecularDynamics.Chapter06Review.V k) (U Q P : ℝ → ℝ)
+    (q p : ℝ → MolecularDynamics.Chapter06Review.V k) (t : ℝ), 0 < k → (∀ i, 0 < μ i) → 0 ≤ t →
+  ContDiff ℝ 2 Q → ContDiff ℝ 2 q →
+  (∀ s, deriv Q s=P s) → (∀ s, deriv P s = -deriv U (Q s)-(∑ i : Fin k, (Q s - q s i))/(k : ℝ)) →
+  (∀ i s, deriv (fun u ↦ q u i) s=p s i/μ i) →
+  (∀ i s, deriv (deriv (fun u ↦ q u i)) s=(Q s-q s i)/((k : ℝ)*μ i)) →
+  deriv P t = -deriv U (Q t)+MolecularDynamics.Chapter06Review.bathForcePrinted μ (q 0) (p 0) (Q 0) t -
+    ∫ s in 0..t, MolecularDynamics.Chapter06Review.memoryKernel μ (t-s)*P s := by
+  sorry
+```
+### 文件参数及作用域 Blueprint/Ch06.lean
+```lean
+open Set Filter Matrix MeasureTheory ProbabilityTheory MolecularDynamics MolecularDynamics.Chapter02Review MolecularDynamics.Chapter06Review
+open scoped BigOperators Topology ContDiff InnerProductSpace Matrix.Norms.L2Operator ENNReal NNReal
+variable {n Nc : ℕ}
+variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
+variable {R : Type*} [Ring R] [Algebra ℝ R]
+local instance : MeasureSpace UnitAddCircle := ⟨AddCircle.haarAddCircle⟩
+```
+### 文件参数及作用域 MolecularDynamics/Chapter06/ReviewDefinitions.lean
+```lean
+open Set Filter MeasureTheory ProbabilityTheory
+open scoped BigOperators Topology ContDiff ENNReal NNReal
+local instance : MeasureSpace UnitAddCircle := ⟨AddCircle.haarAddCircle⟩
+```
+### MD.Ch06.bathReductionPrinted_corrected [Blueprint/Ch06.lean:1374]
+```lean
+theorem bathReductionPrinted_corrected :
+  ∀ {k : ℕ} (μ : MolecularDynamics.Chapter06Review.V k) (U Q P : ℝ → ℝ)
+    (q p : ℝ → MolecularDynamics.Chapter06Review.V k) (t : ℝ), 0 < k → (∀ i, 0 < μ i) → 0 ≤ t →
+  ContDiff ℝ 2 Q → ContDiff ℝ 2 q →
+  (∀ s, deriv Q s=P s) → (∀ s, deriv P s = -deriv U (Q s)-(∑ i : Fin k, (Q s - q s i))/(k : ℝ)) →
+  (∀ i s, deriv (fun u ↦ q u i) s=p s i/μ i) →
+  (∀ i s, deriv (deriv (fun u ↦ q u i)) s=(Q s-q s i)/((k : ℝ)*μ i)) →
+  deriv P t = -deriv U (Q t)+MolecularDynamics.Chapter06Review.bathForce μ (q 0) (p 0) (Q 0) t -
+    ∫ s in 0..t, MolecularDynamics.Chapter06Review.memoryKernel μ (t-s)*P s
+```
+### MD.Ch06.bathReductionPrinted [Blueprint/Ch06.lean:1388]
+```lean
+theorem bathReductionPrinted :
+  ∀ {k : ℕ} (μ : MolecularDynamics.Chapter06Review.V k) (U Q P : ℝ → ℝ)
+    (q p : ℝ → MolecularDynamics.Chapter06Review.V k) (t : ℝ), 0 < k → (∀ i, 0 < μ i) → 0 ≤ t →
+  ContDiff ℝ 2 Q → ContDiff ℝ 2 q →
+  (∀ s, deriv Q s=P s) → (∀ s, deriv P s = -deriv U (Q s)-(∑ i : Fin k, (Q s - q s i))/(k : ℝ)) →
+  (∀ i s, deriv (fun u ↦ q u i) s=p s i/μ i) →
+  (∀ i s, deriv (deriv (fun u ↦ q u i)) s=(Q s-q s i)/((k : ℝ)*μ i)) →
+  deriv P t = -deriv U (Q t)+MolecularDynamics.Chapter06Review.bathForcePrinted μ (q 0) (p 0) (Q 0) t -
+    ∫ s in 0..t, MolecularDynamics.Chapter06Review.memoryKernel μ (t-s)*P s
+```
+### MolecularDynamics.Chapter06Review.V [MolecularDynamics/Chapter06/ReviewDefinitions.lean:17]
+```lean
+abbrev V (n : ℕ) := Fin n → ℝ
+```
+### MolecularDynamics.Chapter06Review.bathFrequency [MolecularDynamics/Chapter06/ReviewDefinitions.lean:96]
+```lean
+def bathFrequency {k : ℕ} (μ : V k) (i : Fin k) : ℝ := (Real.sqrt ((k : ℝ)*μ i))⁻¹
+```
+### MolecularDynamics.Chapter06Review.memoryKernel [MolecularDynamics/Chapter06/ReviewDefinitions.lean:97]
+```lean
+def memoryKernel {k : ℕ} (μ : V k) (t : ℝ) : ℝ :=
+  (k : ℝ)⁻¹ * ∑ i, Real.cos (bathFrequency μ i*t)
+```
+### MolecularDynamics.Chapter06Review.bathForce [MolecularDynamics/Chapter06/ReviewDefinitions.lean:99]
+```lean
+def bathForce {k : ℕ} (μ q0 p0 : V k) (Q0 t : ℝ) : ℝ :=
+  (k : ℝ)⁻¹ * ∑ i, (Real.cos (bathFrequency μ i*t)*(q0 i-Q0) +
+    (bathFrequency μ i)⁻¹ * Real.sin (bathFrequency μ i*t)*p0 i/μ i)
+```
+### MolecularDynamics.Chapter06Review.bathForcePrinted [MolecularDynamics/Chapter06/ReviewDefinitions.lean:102]
+```lean
+def bathForcePrinted {k : ℕ} (μ q0 p0 : V k) (Q0 t : ℝ) : ℝ := -bathForce μ q0 p0 Q0 t
+```

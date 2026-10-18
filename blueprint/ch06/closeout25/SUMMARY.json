@@ -1,0 +1,27 @@
+{
+  "total": 249,
+  "website_pass": 179,
+  "first_round": {
+    "PASS": 179,
+    "FAIL": 25,
+    "NEEDS_HUMAN": 45
+  },
+  "local_repairs": 25,
+  "repairing": 0,
+  "errata": 34,
+  "errata_source_ids": 45,
+  "declarations": {
+    "定义": 123,
+    "已证": 109,
+    "未证": 89
+  },
+  "unproved_reasons": {
+    "原书疑误不证": 21,
+    "时间盒止": 18,
+    "缺大型理论": 50
+  },
+  "current_lean_sha256": "4a2a6cb72c1692f80e3537ab1a71701d429a482780a01226c3dc66a2ebb8b44b",
+  "native_receipt": "blueprint/ch06/closeout25/FINAL_COMPILE.json",
+  "full_check": "blueprint/ch06/closeout25/full/CHECK_REPORT.json",
+  "awaiting_reaudit": 60
+}

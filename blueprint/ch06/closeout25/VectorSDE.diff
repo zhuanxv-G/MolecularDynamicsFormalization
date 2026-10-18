@@ -1,0 +1,17 @@
+--- before
++++ after
+@@ -1061,11 +1061,13 @@
+       (fun sample ↦ X T sample-x0-∫ s in 0..T, a (X s sample) s)
+ 
+ /-- source_id: MD-6.3-VectorSDE · (6.15)–(6.16) · §6.3 · 印刷p.232–233 / PDFp.253–254
+-[EXTRA] [EXTRA]完整状态及时间依赖矩阵B(Z,t)，每坐标真实严格Ito积分与漂移；没有缩成常矩阵加性特例。 -/
++[EXTRA] [EXTRA]完整状态及时间依赖矩阵B(Z,t)，每坐标真实严格Ito积分与漂移；没有缩成常矩阵加性特例。 [EXTRA] 25号：补真实标准向量Wiener资格；该结构给联合Gaussian、全部跨时协方差及连续路径，并有整坐标路径独立定理，不仅是同一时刻独立。其余方程关系保持。
++-/
+ def strictVectorSDE {Ω : Type*} [MeasurableSpace Ω] {n r : ℕ} (P : Measure Ω)
+     (W : ℝ → Ω → (Fin r → ℝ)) (X : ℝ → Ω → (Fin n → ℝ))
+     (a : (Fin n → ℝ) → ℝ → (Fin n → ℝ))
+     (B : (Fin n → ℝ) → ℝ → Matrix (Fin n) (Fin r) ℝ) (x0 : Fin n → ℝ) : Prop :=
++  textbookIsWienerVector (fun t sample ↦ W t sample) P ∧
+   (∀ᵐ sample ∂P, ContinuousOn (fun t ↦ X t sample) (Ici 0) ∧ X 0 sample=x0) ∧
+   ∀ i : Fin n, ∀ T : ℝ, 0 ≤ T →
+     (∀ᵐ sample ∂P, IntervalIntegrable (fun s ↦ a (X s sample) s i) volume 0 T) ∧

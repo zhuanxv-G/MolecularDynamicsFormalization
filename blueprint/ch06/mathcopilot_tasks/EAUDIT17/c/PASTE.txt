@@ -1,0 +1,501 @@
+以附件/PASTE 为准，忽略 /workspace 旧文件；Mathlib 定义按标准含义采信。
+A逐字核对原文及证明；C只读核对对象、域、量词、前提和全部结论。所有项目定义体及选择规格在下文；仅作为审阅摘录，不是独立模块。theorem/lemma提供完整类型（不审证明）；定义提供完整定义体，按文件作用域解释。不要因sorry判签名FAIL。原文版忠实性、修正版正确性、反例、原书疑误分别说明，不凭旧文件或repair_log猜声明。
+本条MD-6.4.4-Proposition64Printed，subtask=EAUDIT17c；原PDF页映射=[278]。只读，不改工程或补证明。以JSON对象返回batch=EAUDIT17,input_sha256,items；逐条含source_id,subtask,input_sha256,json_review{status,issue_codes,corrected_json,issues,evidence},audit{lean_decl,verdict,explanation,counterexample,suggested_fix}。verdict=PASS/FAIL/NEEDS_HUMAN，status=APPROVED/CORRECTED/NEEDS_HUMAN。必须原样回显下列全部哈希。
+input_sha256:
+{
+  "Blueprint/Ch06.lean": "4a2a6cb72c1692f80e3537ab1a71701d429a482780a01226c3dc66a2ebb8b44b",
+  "blueprint/ch06/ch06_source.json": "d7f93cd20eb570744c710f3e07a88b319c082e4155812fee91db0920eb05944e",
+  "PAGES.pdf": "86dc16b71b33f60ad786bf63a04580717ae445ce12675e7fc751265fdf31ee04",
+  "materials_sha256": "4b189cd48ec4617046fa153ecfd4357226cb7fb2417c630fc30b752b549a343a"
+}
+
+## 原文JSON
+```json
+{
+  "source_id": "MD-6.4.4-Proposition64Printed",
+  "kind": "unnumbered_claim",
+  "label": "Proposition 6.4",
+  "section": "6.4.4",
+  "printed_page": "257",
+  "pdf_page": "278",
+  "statement_latex": "Proposition 6.4 Let $U$ be $C^\\infty$ on the position domain $Q=\\mathbb T^{N_c}$ and suppose $g\\in H^1(\\mu)$ satisfies\n\\[\\int_D g\\,d\\mu_\\beta=0,\\]\nwhere $\\mu_\\beta$ is the canonical measure, then the Poisson equation\n\\[\\mathcal L_{LD}^\\dagger\\varphi=g\\]\nhas a solution $\\varphi\\in H^1(\\mu)$ which is unique up to addition of a constant multiple of the Gibbs density.",
+  "proof_latex": null,
+  "proof_note": "原书给出证明论述；本条仅摘录命题，相关论述见相邻原页，未在此补写。",
+  "proof_discussion_latex": null,
+  "context_notation": [],
+  "extra_assumptions": [
+    "[EXTRA] 25号：保留原flat/Gibbs坐标混用疑误和非Gibbs恒通量反例；补H¹伴随测试表达式，修正版本由Proposition64Relative独立保存。"
+  ],
+  "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
+  "coverage_gaps": null
+}
+```
+## 当前完整Lean（全部原文版、修正版及反例）
+```lean
+theorem proposition64Printed :
+  ∀ {n : ℕ} (U : MolecularDynamics.Chapter06Review.V n → ℝ)
+    (hU : ContDiff ℝ ∞ U) (hp : textbookUnitPeriodicPotential U)
+    (β γ : ℝ) (hβ : 0 < β), 0 < γ →
+  ∀ g : textbookLangevinCanonicalWeakH1 U hU hp β hβ,
+    (∫ x, textbookLangevinCanonicalWeakH1Value U hU hp β hβ g x ∂textbookLangevinCanonicalMeasure U β hβ)=0 →
+    ∃ φ : textbookLangevinCanonicalWeakH1 U hU hp β hβ,
+      MolecularDynamics.Chapter06Review.flatForwardWeak U β γ (textbookLangevinCanonicalWeakH1Value U hU hp β hβ φ)
+        (textbookLangevinCanonicalWeakH1Value U hU hp β hβ g) ∧
+      ∀ ψ : textbookLangevinCanonicalWeakH1 U hU hp β hβ,
+        MolecularDynamics.Chapter06Review.flatForwardWeak U β γ (textbookLangevinCanonicalWeakH1Value U hU hp β hβ ψ)
+          (textbookLangevinCanonicalWeakH1Value U hU hp β hβ g) →
+        ∃ c : ℝ, ∀ᵐ x ∂textbookLangevinCanonicalMeasure U β hβ,
+          textbookLangevinCanonicalWeakH1Value U hU hp β hβ ψ x -
+            textbookLangevinCanonicalWeakH1Value U hU hp β hβ φ x = c*textbookLangevinCanonicalDensity U β x := by
+  sorry
+```
+### 文件参数及作用域 Blueprint/Ch06.lean
+```lean
+open Set Filter Matrix MeasureTheory ProbabilityTheory MolecularDynamics MolecularDynamics.Chapter02Review MolecularDynamics.Chapter06Review
+open scoped BigOperators Topology ContDiff InnerProductSpace Matrix.Norms.L2Operator ENNReal NNReal
+variable {n Nc : ℕ}
+variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
+variable {R : Type*} [Ring R] [Algebra ℝ R]
+local instance : MeasureSpace UnitAddCircle := ⟨AddCircle.haarAddCircle⟩
+```
+### 文件参数及作用域 MolecularDynamics/Chapter02/SymplecticEuler.lean
+```lean
+open Matrix
+open scoped Matrix
+```
+### 文件参数及作用域 MolecularDynamics/Chapter02/SymplecticForm.lean
+```lean
+open Matrix
+open scoped BigOperators Matrix
+```
+### 文件参数及作用域 MolecularDynamics/Chapter02/SymplecticMaps.lean
+```lean
+open Matrix
+open scoped Matrix
+```
+### 文件参数及作用域 MolecularDynamics/Chapter06/BrownianDirichlet.lean
+```lean
+open Set MeasureTheory
+open scoped BigOperators ContDiff
+```
+### 文件参数及作用域 MolecularDynamics/Chapter06/BrownianTorusGibbs.lean
+```lean
+open Set MeasureTheory Filter
+open scoped BigOperators ENNReal ContDiff
+local instance : MeasureSpace UnitAddCircle := ⟨AddCircle.haarAddCircle⟩
+local instance : Measure.IsAddHaarMeasure (volume : Measure UnitAddCircle) :=
+  inferInstanceAs (Measure.IsAddHaarMeasure AddCircle.haarAddCircle)
+local instance : IsProbabilityMeasure (volume : Measure UnitAddCircle) :=
+  inferInstanceAs (IsProbabilityMeasure AddCircle.haarAddCircle)
+```
+### 文件参数及作用域 MolecularDynamics/Chapter06/LangevinCanonicalCoordinateWeakDerivative.lean
+```lean
+open Set Filter MeasureTheory
+open scoped Topology ContDiff NNReal ENNReal BigOperators InnerProductSpace
+local instance coordinateUnitAddCircleMeasureSpace : MeasureSpace UnitAddCircle := ⟨AddCircle.haarAddCircle⟩
+local instance coordinateUnitAddCircleHaar : Measure.IsAddHaarMeasure (volume : Measure UnitAddCircle) :=
+  inferInstanceAs (Measure.IsAddHaarMeasure AddCircle.haarAddCircle)
+local instance coordinateUnitAddCircleProbability : IsProbabilityMeasure (volume : Measure UnitAddCircle) :=
+  inferInstanceAs (IsProbabilityMeasure AddCircle.haarAddCircle)
+```
+### 文件参数及作用域 MolecularDynamics/Chapter06/LangevinCanonicalHilbertGraph.lean
+```lean
+open Set Filter MeasureTheory
+open scoped Topology ContDiff NNReal ENNReal BigOperators InnerProductSpace
+```
+### 文件参数及作用域 MolecularDynamics/Chapter06/LangevinCanonicalMeasure.lean
+```lean
+open Set Filter MeasureTheory ProbabilityTheory
+open scoped Topology ContDiff NNReal ENNReal ZeroAtInfty BigOperators
+local instance canonicalUnitAddCircleMeasureSpace : MeasureSpace UnitAddCircle := ⟨AddCircle.haarAddCircle⟩
+local instance canonicalUnitAddCircleHaar : Measure.IsAddHaarMeasure (volume : Measure UnitAddCircle) :=
+  inferInstanceAs (Measure.IsAddHaarMeasure AddCircle.haarAddCircle)
+local instance canonicalUnitAddCircleProbability : IsProbabilityMeasure (volume : Measure UnitAddCircle) :=
+  inferInstanceAs (IsProbabilityMeasure AddCircle.haarAddCircle)
+```
+### 文件参数及作用域 MolecularDynamics/Chapter06/LangevinCanonicalWeakBalance.lean
+```lean
+open Set Filter MeasureTheory
+open scoped Topology ContDiff NNReal ZeroAtInfty BigOperators
+local instance weakCanonicalUnitAddCircleMeasureSpace : MeasureSpace UnitAddCircle := ⟨AddCircle.haarAddCircle⟩
+local instance weakCanonicalUnitAddCircleHaar : Measure.IsAddHaarMeasure (volume : Measure UnitAddCircle) :=
+  inferInstanceAs (Measure.IsAddHaarMeasure AddCircle.haarAddCircle)
+local instance weakCanonicalUnitAddCircleProbability : IsProbabilityMeasure (volume : Measure UnitAddCircle) :=
+  inferInstanceAs (IsProbabilityMeasure AddCircle.haarAddCircle)
+```
+### 文件参数及作用域 MolecularDynamics/Chapter06/LangevinCanonicalWeakH1.lean
+```lean
+open Set Filter MeasureTheory
+open scoped Topology ContDiff NNReal ENNReal BigOperators InnerProductSpace
+```
+### 文件参数及作用域 MolecularDynamics/Chapter06/LangevinGibbsStationaryExpression.lean
+```lean
+open Set Filter MeasureTheory ProbabilityTheory
+open scoped Topology ContDiff NNReal ENNReal ZeroAtInfty BigOperators
+```
+### 文件参数及作用域 MolecularDynamics/Chapter06/LangevinHormander.lean
+```lean
+open scoped BigOperators ContDiff
+```
+### 文件参数及作用域 MolecularDynamics/Chapter06/LangevinLyapunov.lean
+```lean
+open Set Filter MeasureTheory
+open scoped Topology ContDiff BigOperators
+```
+### 文件参数及作用域 MolecularDynamics/Chapter06/LangevinPeriodicForce.lean
+```lean
+open Set Filter
+open scoped Topology ContDiff NNReal
+```
+### 文件参数及作用域 MolecularDynamics/Chapter06/LangevinPeriodicLift.lean
+```lean
+open Set Filter MeasureTheory ProbabilityTheory
+open scoped Topology ContDiff NNReal ENNReal
+```
+### 文件参数及作用域 MolecularDynamics/Chapter06/LangevinPeriodicLyapunov.lean
+```lean
+open Set Filter
+open scoped Topology ContDiff BigOperators
+```
+### 文件参数及作用域 MolecularDynamics/Chapter06/LangevinPeriodicProjection.lean
+```lean
+open Set Filter MeasureTheory ProbabilityTheory
+open scoped Topology ContDiff NNReal ENNReal
+```
+### 文件参数及作用域 MolecularDynamics/Chapter06/ReviewDefinitions.lean
+```lean
+open Set Filter MeasureTheory ProbabilityTheory
+open scoped BigOperators Topology ContDiff ENNReal NNReal
+local instance : MeasureSpace UnitAddCircle := ⟨AddCircle.haarAddCircle⟩
+```
+### MD.Ch06.proposition64Printed [Blueprint/Ch06.lean:3240]
+```lean
+theorem proposition64Printed :
+  ∀ {n : ℕ} (U : MolecularDynamics.Chapter06Review.V n → ℝ)
+    (hU : ContDiff ℝ ∞ U) (hp : textbookUnitPeriodicPotential U)
+    (β γ : ℝ) (hβ : 0 < β), 0 < γ →
+  ∀ g : textbookLangevinCanonicalWeakH1 U hU hp β hβ,
+    (∫ x, textbookLangevinCanonicalWeakH1Value U hU hp β hβ g x ∂textbookLangevinCanonicalMeasure U β hβ)=0 →
+    ∃ φ : textbookLangevinCanonicalWeakH1 U hU hp β hβ,
+      MolecularDynamics.Chapter06Review.flatForwardWeak U β γ (textbookLangevinCanonicalWeakH1Value U hU hp β hβ φ)
+        (textbookLangevinCanonicalWeakH1Value U hU hp β hβ g) ∧
+      ∀ ψ : textbookLangevinCanonicalWeakH1 U hU hp β hβ,
+        MolecularDynamics.Chapter06Review.flatForwardWeak U β γ (textbookLangevinCanonicalWeakH1Value U hU hp β hβ ψ)
+          (textbookLangevinCanonicalWeakH1Value U hU hp β hβ g) →
+        ∃ c : ℝ, ∀ᵐ x ∂textbookLangevinCanonicalMeasure U β hβ,
+          textbookLangevinCanonicalWeakH1Value U hU hp β hβ ψ x -
+            textbookLangevinCanonicalWeakH1Value U hU hp β hβ φ x = c*textbookLangevinCanonicalDensity U β x
+```
+### MolecularDynamics.textbookPotentialForce [MolecularDynamics/Chapter02/SymplecticEuler.lean:34]
+```lean
+noncomputable def textbookPotentialForce {Nc : ℕ}
+    (U : (Fin Nc → ℝ) → ℝ) (q : Fin Nc → ℝ) : Fin Nc → ℝ :=
+  fun i => -(fderiv ℝ U q) (Pi.single i 1)
+```
+### MolecularDynamics.SymplecticCoordinates [MolecularDynamics/Chapter02/SymplecticForm.lean:25]
+```lean
+abbrev SymplecticCoordinates (Nc : ℕ) := (Fin Nc ⊕ Fin Nc) → ℝ
+```
+### MolecularDynamics.SymplecticCoordinateMatrix [MolecularDynamics/Chapter02/SymplecticForm.lean:27]
+```lean
+abbrev SymplecticCoordinateMatrix (Nc : ℕ) :=
+  Matrix (Fin Nc ⊕ Fin Nc) (Fin Nc ⊕ Fin Nc) ℝ
+```
+### MolecularDynamics.textbookJ [MolecularDynamics/Chapter02/SymplecticForm.lean:31]
+```lean
+noncomputable def textbookJ (Nc : ℕ) : SymplecticCoordinateMatrix Nc :=
+  Matrix.fromBlocks 0 1 (-1) 0
+```
+### MolecularDynamics.IsTextbookSymplectic [MolecularDynamics/Chapter02/SymplecticForm.lean:130]
+```lean
+def IsTextbookSymplectic {Nc : ℕ} (A : SymplecticCoordinateMatrix Nc) : Prop :=
+  Aᵀ * textbookJ Nc * A = textbookJ Nc
+```
+### MolecularDynamics.textbookJacobian [MolecularDynamics/Chapter02/SymplecticMaps.lean:21]
+```lean
+noncomputable def textbookJacobian {Nc : ℕ}
+    (Φ : SymplecticCoordinates Nc → SymplecticCoordinates Nc) (z : SymplecticCoordinates Nc) :
+    SymplecticCoordinateMatrix Nc :=
+  LinearMap.toMatrix' (fderiv ℝ Φ z).toLinearMap
+```
+### MolecularDynamics.IsTextbookSymplecticMap [MolecularDynamics/Chapter02/SymplecticMaps.lean:55]
+```lean
+def IsTextbookSymplecticMap {Nc : ℕ}
+    (Φ : SymplecticCoordinates Nc → SymplecticCoordinates Nc) : Prop :=
+  ContDiff ℝ 1 Φ ∧ ∀ z, IsTextbookSymplectic (textbookJacobian Φ z)
+```
+### MolecularDynamics.IsTextbookSymplecticMap.comp [MolecularDynamics/Chapter02/SymplecticMaps.lean:86]
+```lean
+theorem IsTextbookSymplecticMap.comp {Nc : ℕ}
+    {Φ Ψ : SymplecticCoordinates Nc → SymplecticCoordinates Nc}
+    (hΦ : IsTextbookSymplecticMap Φ) (hΨ : IsTextbookSymplecticMap Ψ) :
+    IsTextbookSymplecticMap (Φ ∘ Ψ)
+```
+### MolecularDynamics.textbookConfigurationPartial [MolecularDynamics/Chapter06/BrownianDirichlet.lean:13]
+```lean
+noncomputable def textbookConfigurationPartial {Nc : ℕ}
+    (f : (Fin Nc → ℝ) → ℝ) (i : Fin Nc) (q : Fin Nc → ℝ) : ℝ :=
+  fderiv ℝ f q (Pi.single i 1)
+```
+### MolecularDynamics.textbookConfigurationCube [MolecularDynamics/Chapter06/BrownianDirichlet.lean:18]
+```lean
+def textbookConfigurationCube (Nc : ℕ) : Set (Fin Nc → ℝ) := Icc 0 1
+```
+### MolecularDynamics.textbookConfigurationGibbsWeight [MolecularDynamics/Chapter06/BrownianDirichlet.lean:21]
+```lean
+noncomputable def textbookConfigurationGibbsWeight {Nc : ℕ}
+    (U : (Fin Nc → ℝ) → ℝ) (β : ℝ) (q : Fin Nc → ℝ) : ℝ :=
+  Real.exp (-β * U q)
+```
+### MolecularDynamics.textbookConfigurationPartition [MolecularDynamics/Chapter06/BrownianDirichlet.lean:271]
+```lean
+noncomputable def textbookConfigurationPartition {Nc : ℕ}
+    (U : (Fin Nc → ℝ) → ℝ) (β : ℝ) : ℝ :=
+  ∫ q in textbookConfigurationCube Nc, textbookConfigurationGibbsWeight U β q
+```
+### MolecularDynamics.textbookConfigurationTorusRepresentative [MolecularDynamics/Chapter06/BrownianTorusGibbs.lean:26]
+```lean
+def textbookConfigurationTorusRepresentative {Nc : ℕ}
+    (Q : UnitAddTorus (Fin Nc)) : Fin Nc → ℝ :=
+  (UnitAddTorus.measurableEquivPiIoc (0 : Fin Nc → ℝ) Q).val
+```
+### MolecularDynamics.textbookConfigurationTorusObservable [MolecularDynamics/Chapter06/BrownianTorusGibbs.lean:61]
+```lean
+def textbookConfigurationTorusObservable {Nc : ℕ}
+    (f : (Fin Nc → ℝ) → ℝ) (Q : UnitAddTorus (Fin Nc)) : ℝ :=
+  f (textbookConfigurationTorusRepresentative Q)
+```
+### MolecularDynamics.textbookConfigurationTorusGibbsWeight [MolecularDynamics/Chapter06/BrownianTorusGibbs.lean:128]
+```lean
+noncomputable def textbookConfigurationTorusGibbsWeight {Nc : ℕ}
+    (U : (Fin Nc → ℝ) → ℝ) (β : ℝ) (Q : UnitAddTorus (Fin Nc)) : ℝ :=
+  Real.exp (-β * textbookConfigurationTorusObservable U Q)
+```
+### MolecularDynamics.textbookConfigurationTorusGibbsMeasure [MolecularDynamics/Chapter06/BrownianTorusGibbs.lean:159]
+```lean
+noncomputable def textbookConfigurationTorusGibbsMeasure {Nc : ℕ}
+    (U : (Fin Nc → ℝ) → ℝ) (β : ℝ) : Measure (UnitAddTorus (Fin Nc)) :=
+  volume.withDensity (fun Q ↦ ENNReal.ofReal
+    ((textbookConfigurationPartition U β)⁻¹ * textbookConfigurationTorusGibbsWeight U β Q))
+```
+### MolecularDynamics.textbookLangevinCanonicalCoordinateDirection [MolecularDynamics/Chapter06/LangevinCanonicalCoordinateWeakDerivative.lean:18]
+```lean
+def textbookLangevinCanonicalCoordinateDirection {N : ℕ} (j : Fin N ⊕ Fin N) : textbookLangevinPhase N :=
+  match j with
+  | Sum.inl i => (Pi.single i 1, 0)
+  | Sum.inr i => (0, Pi.single i 1)
+```
+### MolecularDynamics.textbookLangevinCanonicalCoordinateLogSlope [MolecularDynamics/Chapter06/LangevinCanonicalCoordinateWeakDerivative.lean:24]
+```lean
+def textbookLangevinCanonicalCoordinateLogSlope {N : ℕ}
+    (U : (Fin N → ℝ) → ℝ) (β : ℝ) (j : Fin N ⊕ Fin N)
+    (x : textbookLangevinPeriodicPhase N) : ℝ :=
+  match j with
+  | Sum.inl i => β * textbookConfigurationTorusObservable (textbookConfigurationPartial U i) x.1
+  | Sum.inr i => β * x.2 i
+```
+### MolecularDynamics.textbookLangevinCanonicalCoordinateAdjointTestExpression [MolecularDynamics/Chapter06/LangevinCanonicalCoordinateWeakDerivative.lean:171]
+```lean
+def textbookLangevinCanonicalCoordinateAdjointTestExpression {N : ℕ}
+    (U : (Fin N → ℝ) → ℝ) (β : ℝ) (j : Fin N ⊕ Fin N)
+    (G : textbookLangevinPeriodicPhase N → ℝ) (x : textbookLangevinPeriodicPhase N) : ℝ :=
+  -textbookLangevinPeriodicDirectionalDerivative G (textbookLangevinCanonicalCoordinateDirection j) x +
+    textbookLangevinCanonicalCoordinateLogSlope U β j x * G x
+```
+### MolecularDynamics.textbookLangevinCanonicalCoordinateAdjointTestExpression_memLp_two [MolecularDynamics/Chapter06/LangevinCanonicalCoordinateWeakDerivative.lean:242]
+```lean
+theorem textbookLangevinCanonicalCoordinateAdjointTestExpression_memLp_two {N : ℕ}
+    (U : (Fin N → ℝ) → ℝ) (hU : ContDiff ℝ ∞ U) (hp : textbookUnitPeriodicPotential U)
+    (β : ℝ) (hβ : 0 < β) (j : Fin N ⊕ Fin N)
+    (G : textbookLangevinPeriodicPhase N → ℝ)
+    (hG : ContDiff ℝ ∞ (G ∘ textbookLangevinPeriodicProjection)) (hs : HasCompactSupport G) :
+    MemLp (textbookLangevinCanonicalCoordinateAdjointTestExpression U β j G) 2
+      (textbookLangevinCanonicalMeasure U β hβ)
+```
+### MolecularDynamics.textbookLangevinCanonicalMeasure_compact_memLp_two [MolecularDynamics/Chapter06/LangevinCanonicalHilbertGraph.lean:13]
+```lean
+theorem textbookLangevinCanonicalMeasure_compact_memLp_two {N : ℕ}
+    (U : (Fin N → ℝ) → ℝ) (hU : ContDiff ℝ ∞ U) (hp : textbookUnitPeriodicPotential U)
+    (β : ℝ) (hβ : 0 < β) (F : textbookLangevinPeriodicPhase N → ℝ)
+    (hF : Continuous F) (hs : HasCompactSupport F) :
+    MemLp F 2 (textbookLangevinCanonicalMeasure U β hβ)
+```
+### MolecularDynamics.textbookLangevinCanonicalL2CompactObservable [MolecularDynamics/Chapter06/LangevinCanonicalHilbertGraph.lean:23]
+```lean
+def textbookLangevinCanonicalL2CompactObservable {N : ℕ}
+    (U : (Fin N → ℝ) → ℝ) (hU : ContDiff ℝ ∞ U) (hp : textbookUnitPeriodicPotential U)
+    (β : ℝ) (hβ : 0 < β) (F : textbookLangevinPeriodicPhase N → ℝ)
+    (hF : Continuous F) (hs : HasCompactSupport F) :
+    Lp ℝ 2 (textbookLangevinCanonicalMeasure U β hβ) :=
+  (textbookLangevinCanonicalMeasure_compact_memLp_two U hU hp β hβ F hF hs).toLp F
+```
+### MolecularDynamics.canonicalVariance [MolecularDynamics/Chapter06/LangevinCanonicalMeasure.lean:20]
+```lean
+private def canonicalVariance (β : ℝ) (hβ : 0 < β) : ℝ≥0 := ⟨β⁻¹, (inv_pos.mpr hβ).le⟩
+```
+### MolecularDynamics.textbookLangevinCanonicalMomentumMeasure [MolecularDynamics/Chapter06/LangevinCanonicalMeasure.lean:29]
+```lean
+def textbookLangevinCanonicalMomentumMeasure (N : ℕ) (β : ℝ) (hβ : 0 < β) :
+    Measure (Fin N → ℝ) :=
+  Measure.pi (fun _ : Fin N ↦ gaussianReal 0 (canonicalVariance β hβ))
+```
+### MolecularDynamics.textbookLangevinCanonicalMeasure [MolecularDynamics/Chapter06/LangevinCanonicalMeasure.lean:110]
+```lean
+def textbookLangevinCanonicalMeasure {N : ℕ} (U : (Fin N → ℝ) → ℝ)
+    (β : ℝ) (hβ : 0 < β) : Measure (textbookLangevinPeriodicPhase N) :=
+  (textbookConfigurationTorusGibbsMeasure U β).prod (textbookLangevinCanonicalMomentumMeasure N β hβ)
+```
+### MolecularDynamics.textbookLangevinCanonicalDensity [MolecularDynamics/Chapter06/LangevinCanonicalMeasure.lean:136]
+```lean
+def textbookLangevinCanonicalDensity {N : ℕ}
+    (U : (Fin N → ℝ) → ℝ) (β : ℝ) (x : textbookLangevinPeriodicPhase N) : ℝ :=
+  (textbookConfigurationPartition U β)⁻¹ * ((Real.sqrt (2 * Real.pi * β⁻¹))⁻¹) ^ N *
+    textbookLangevinPeriodicGibbsWeight U β x
+```
+### MolecularDynamics.textbookLangevinPeriodicDirectionalDerivative [MolecularDynamics/Chapter06/LangevinCanonicalWeakBalance.lean:41]
+```lean
+def textbookLangevinPeriodicDirectionalDerivative {N : ℕ}
+    (F : textbookLangevinPeriodicPhase N → ℝ) (v : textbookLangevinPhase N)
+    (x : textbookLangevinPeriodicPhase N) : ℝ :=
+  fderiv ℝ (F ∘ textbookLangevinPeriodicProjection)
+    (textbookConfigurationTorusRepresentative x.1, x.2) v
+```
+### MolecularDynamics.weakH1_F_continuous [MolecularDynamics/Chapter06/LangevinCanonicalWeakH1.lean:13]
+```lean
+private theorem weakH1_F_continuous {N : ℕ} (F : textbookLangevinPeriodicPhase N → ℝ)
+    (hF : ContDiff ℝ ∞ (F ∘ textbookLangevinPeriodicProjection)) : Continuous F
+```
+### MolecularDynamics.textbookLangevinCanonicalH1Jet [MolecularDynamics/Chapter06/LangevinCanonicalWeakH1.lean:18]
+```lean
+abbrev textbookLangevinCanonicalH1Jet {N : ℕ}
+    (U : (Fin N → ℝ) → ℝ) (β : ℝ) (hβ : 0 < β) : Type :=
+  PiLp 2 (fun _ : Option (Fin N ⊕ Fin N) ↦ Lp ℝ 2 (textbookLangevinCanonicalMeasure U β hβ))
+```
+### MolecularDynamics.textbookLangevinCanonicalH1WeakGraph [MolecularDynamics/Chapter06/LangevinCanonicalWeakH1.lean:24]
+```lean
+def textbookLangevinCanonicalH1WeakGraph {N : ℕ}
+    (U : (Fin N → ℝ) → ℝ) (hU : ContDiff ℝ ∞ U) (hp : textbookUnitPeriodicPotential U)
+    (β : ℝ) (hβ : 0 < β) :
+    Submodule ℝ (textbookLangevinCanonicalH1Jet U β hβ) where
+  carrier := {v | ∀ (j : Fin N ⊕ Fin N) (G : textbookLangevinPeriodicPhase N → ℝ)
+    (hG : ContDiff ℝ ∞ (G ∘ textbookLangevinPeriodicProjection)) (hsG : HasCompactSupport G),
+    ⟪v (some j), textbookLangevinCanonicalL2CompactObservable U hU hp β hβ G
+      (weakH1_F_continuous G hG) hsG⟫_ℝ =
+    ⟪v none, (textbookLangevinCanonicalCoordinateAdjointTestExpression_memLp_two U hU hp β hβ j G hG hsG).toLp _⟫_ℝ}
+  zero_mem' := by
+    intro j G hG hsG
+    simp
+  add_mem' := by
+    intro v w hv hw j G hG hsG
+    simpa only [PiLp.add_apply, inner_add_left] using congrArg₂ (· + ·) (hv j G hG hsG) (hw j G hG hsG)
+  smul_mem' := by
+    intro c v hv j G hG hsG
+    simpa only [PiLp.smul_apply, real_inner_smul_left] using
+      congrArg (fun r : ℝ ↦ c * r) (hv j G hG hsG)
+```
+### MolecularDynamics.textbookLangevinCanonicalWeakH1 [MolecularDynamics/Chapter06/LangevinCanonicalWeakH1.lean:83]
+```lean
+abbrev textbookLangevinCanonicalWeakH1 {N : ℕ}
+    (U : (Fin N → ℝ) → ℝ) (hU : ContDiff ℝ ∞ U) (hp : textbookUnitPeriodicPotential U)
+    (β : ℝ) (hβ : 0 < β) : Type :=
+  ↥(textbookLangevinCanonicalH1WeakGraph U hU hp β hβ)
+```
+### MolecularDynamics.textbookLangevinCanonicalWeakH1Value [MolecularDynamics/Chapter06/LangevinCanonicalWeakH1.lean:95]
+```lean
+def textbookLangevinCanonicalWeakH1Value {N : ℕ}
+    (U : (Fin N → ℝ) → ℝ) (hU : ContDiff ℝ ∞ U) (hp : textbookUnitPeriodicPotential U)
+    (β : ℝ) (hβ : 0 < β) :
+    textbookLangevinCanonicalWeakH1 U hU hp β hβ →L[ℝ] Lp ℝ 2 (textbookLangevinCanonicalMeasure U β hβ) :=
+  (PiLp.proj 2 (fun _ : Option (Fin N ⊕ Fin N) ↦ Lp ℝ 2 (textbookLangevinCanonicalMeasure U β hβ)) none).comp
+    (textbookLangevinCanonicalH1WeakGraph U hU hp β hβ).subtypeL
+```
+### MolecularDynamics.textbookLangevinPeriodicGibbsWeight [MolecularDynamics/Chapter06/LangevinGibbsStationaryExpression.lean:156]
+```lean
+def textbookLangevinPeriodicGibbsWeight {N : ℕ}
+    (U : (Fin N → ℝ) → ℝ) (β : ℝ) (x : textbookLangevinPeriodicPhase N) : ℝ :=
+  Real.exp (-β * textbookLangevinPeriodicHamiltonianPower U 1 x)
+```
+### MolecularDynamics.textbookLangevinPhase [MolecularDynamics/Chapter06/LangevinHormander.lean:12]
+```lean
+abbrev textbookLangevinPhase (Nc : ℕ) := (Fin Nc → ℝ) × (Fin Nc → ℝ)
+```
+### MolecularDynamics.textbookLangevinDrift [MolecularDynamics/Chapter06/LangevinHormander.lean:15]
+```lean
+noncomputable def textbookLangevinDrift {Nc : ℕ}
+    (U : (Fin Nc → ℝ) → ℝ) (γ : ℝ) : textbookLangevinPhase Nc → textbookLangevinPhase Nc :=
+  fun z ↦ (z.2, textbookPotentialForce U z.1 - γ • z.2)
+```
+### MolecularDynamics.textbookLangevinHamiltonian [MolecularDynamics/Chapter06/LangevinLyapunov.lean:12]
+```lean
+noncomputable def textbookLangevinHamiltonian {Nc : ℕ} (U : (Fin Nc → ℝ) → ℝ)
+    (z : textbookLangevinPhase Nc) : ℝ := (∑ i, z.2 i ^ 2) / 2 + U z.1
+```
+### MolecularDynamics.textbookLangevinHamiltonianPower [MolecularDynamics/Chapter06/LangevinLyapunov.lean:16]
+```lean
+noncomputable def textbookLangevinHamiltonianPower {Nc : ℕ} (U : (Fin Nc → ℝ) → ℝ) (l : ℕ)
+    (z : textbookLangevinPhase Nc) : ℝ := textbookLangevinHamiltonian U z ^ l
+```
+### MolecularDynamics.textbookLangevinDifferentialOperator [MolecularDynamics/Chapter06/LangevinLyapunov.lean:20]
+```lean
+noncomputable def textbookLangevinDifferentialOperator {Nc : ℕ}
+    (U : (Fin Nc → ℝ) → ℝ) (γ σ : ℝ) (f : textbookLangevinPhase Nc → ℝ)
+    (z : textbookLangevinPhase Nc) : ℝ :=
+  deriv (fun t : ℝ ↦ f (z + t • textbookLangevinDrift U γ z)) 0 +
+    σ ^ 2 / 2 * ∑ i : Fin Nc,
+      deriv (deriv (fun t : ℝ ↦ f (z + t • ((0 : Fin Nc → ℝ), Pi.single i 1)))) 0
+```
+### MolecularDynamics.textbookUnitPeriodicPotential [MolecularDynamics/Chapter06/LangevinPeriodicForce.lean:13]
+```lean
+def textbookUnitPeriodicPotential {Nc : ℕ} (U : (Fin Nc → ℝ) → ℝ) : Prop :=
+  ∀ q (n : Fin Nc → ℤ), U (q + fun i ↦ (n i : ℝ)) = U q
+```
+### MolecularDynamics.textbookLangevinPeriodicRepresentative [MolecularDynamics/Chapter06/LangevinPeriodicLift.lean:13]
+```lean
+noncomputable def textbookLangevinPeriodicRepresentative {Nc : ℕ}
+    (Q : UnitAddTorus (Fin Nc)) : Fin Nc → ℝ := fun i ↦ Quotient.out (Q i)
+```
+### MolecularDynamics.textbookLangevinPeriodicHamiltonianPower [MolecularDynamics/Chapter06/LangevinPeriodicLyapunov.lean:43]
+```lean
+noncomputable def textbookLangevinPeriodicHamiltonianPower {Nc : ℕ}
+    (U : (Fin Nc → ℝ) → ℝ) (l : ℕ) (z : textbookLangevinPeriodicPhase Nc) : ℝ :=
+  textbookLangevinHamiltonianPower U l (textbookLangevinPeriodicRepresentative z.1, z.2)
+```
+### MolecularDynamics.textbookLangevinPeriodicDifferentialOperator [MolecularDynamics/Chapter06/LangevinPeriodicLyapunov.lean:118]
+```lean
+noncomputable def textbookLangevinPeriodicDifferentialOperator {Nc : ℕ}
+    (U : (Fin Nc → ℝ) → ℝ) (γ σ : ℝ) (f : textbookLangevinPeriodicPhase Nc → ℝ)
+    (z : textbookLangevinPeriodicPhase Nc) : ℝ :=
+  textbookLangevinDifferentialOperator U γ σ (f ∘ textbookLangevinPeriodicProjection)
+    (textbookLangevinPeriodicRepresentative z.1, z.2)
+```
+### MolecularDynamics.textbookLangevinPeriodicPhase [MolecularDynamics/Chapter06/LangevinPeriodicProjection.lean:14]
+```lean
+abbrev textbookLangevinPeriodicPhase (Nc : ℕ) := UnitAddTorus (Fin Nc) × (Fin Nc → ℝ)
+```
+### MolecularDynamics.textbookLangevinPeriodicProjection [MolecularDynamics/Chapter06/LangevinPeriodicProjection.lean:17]
+```lean
+def textbookLangevinPeriodicProjection {Nc : ℕ}
+    (z : textbookLangevinPhase Nc) : textbookLangevinPeriodicPhase Nc :=
+  (fun i ↦ (z.1 i : UnitAddCircle), z.2)
+```
+### MolecularDynamics.Chapter06Review.V [MolecularDynamics/Chapter06/ReviewDefinitions.lean:17]
+```lean
+abbrev V (n : ℕ) := Fin n → ℝ
+```
+### MolecularDynamics.Chapter06Review.flatPhaseMeasure [MolecularDynamics/Chapter06/ReviewDefinitions.lean:189]
+```lean
+def flatPhaseMeasure (n : ℕ) : Measure (textbookLangevinPeriodicPhase n) :=
+  (volume : Measure (UnitAddTorus (Fin n))).prod (volume : Measure (V n))
+```
+### MolecularDynamics.Chapter06Review.flatForwardWeak [MolecularDynamics/Chapter06/ReviewDefinitions.lean:191]
+```lean
+def flatForwardWeak {n : ℕ} (U : V n → ℝ) (β γ : ℝ)
+    (φ g : textbookLangevinPeriodicPhase n → ℝ) : Prop :=
+  ∀ ψ : textbookLangevinPeriodicPhase n → ℝ,
+    ContDiff ℝ ∞ (ψ ∘ textbookLangevinPeriodicProjection) → HasCompactSupport ψ →
+      Integrable (fun x ↦ φ x * textbookLangevinPeriodicDifferentialOperator U γ
+        (Real.sqrt (2*γ*β⁻¹)) ψ x) (flatPhaseMeasure n) ∧
+      Integrable (fun x ↦ g x*ψ x) (flatPhaseMeasure n) ∧
+      (∫ x, φ x*textbookLangevinPeriodicDifferentialOperator U γ
+        (Real.sqrt (2*γ*β⁻¹)) ψ x ∂flatPhaseMeasure n) = ∫ x, g x*ψ x ∂flatPhaseMeasure n
+```

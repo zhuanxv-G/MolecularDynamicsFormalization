@@ -1,0 +1,82 @@
+{
+  "batch": "BATCH23",
+  "chapter": "ch06",
+  "round": "first-merged",
+  "input_sha256": {
+    "Blueprint/Ch06.lean": "0a02a34ec68989a83bccfa5916db5053ecdb58e05667bf21ff3568d9d1f4318e",
+    "blueprint/ch06/ch06_source.json": "45c70ceef21ca168af437de297e2e21e2800b452ab7942654061d4cff9bb5d95"
+  },
+  "items": [
+    {
+      "source_id": "MD-6.3.4-BrownianMassModel",
+      "json_review": {
+        "status": "APPROVED",
+        "issue_codes": [],
+        "corrected_json": null,
+        "issues": [],
+        "evidence": [
+          {
+            "phase": "A",
+            "location": "R5_PAGES.pdf，附件第16页；原PDF页261，印刷页240",
+            "finding": "A：附件第16页忽略加速度的形式消元及(6.36)的γ⁻¹M⁻¹、√(2kBγ⁻¹T)M⁻½一致。"
+          },
+          {
+            "phase": "C",
+            "location": "R5_任务.md，条目15/30，实际Lean签名/定义及其明确命名空间的依赖摘录、文末D附录",
+            "finding": "C：任意维正m、γ>0、θ>0、光滑U、n维Wiener以及q0；真实连续路径积分方程的漂移−(γm_i)⁻¹∂iU、噪声√(2θ/(γm_i))均正确，全部漂移区间可积性已明示。此定义编码形式Brownian模型；不将令加速度为0当作已经证明小质量/大摩擦收敛，实际极限另见条目16。"
+          }
+        ]
+      },
+      "audit": {
+        "lean_decl": "MD.Ch06.brownianMassSDE",
+        "verdict": "PASS",
+        "explanation": "C：任意维正m、γ>0、θ>0、光滑U、n维Wiener以及q0；真实连续路径积分方程的漂移−(γm_i)⁻¹∂iU、噪声√(2θ/(γm_i))均正确，全部漂移区间可积性已明示。此定义编码形式Brownian模型；不将令加速度为0当作已经证明小质量/大摩擦收敛，实际极限另见条目16。",
+        "counterexample": null,
+        "suggested_fix": null
+      },
+      "subtask": "BATCH23a",
+      "input_sha256": {
+        "Blueprint/Ch06.lean": "0a02a34ec68989a83bccfa5916db5053ecdb58e05667bf21ff3568d9d1f4318e",
+        "blueprint/ch06/ch06_source.json": "45c70ceef21ca168af437de297e2e21e2800b452ab7942654061d4cff9bb5d95",
+        "BATCH23a_PAGES.pdf": "5687cbb585b5e2ad331264d0d469bcc9a796fe1be3a49311186ccf90e16edb6d",
+        "signature_sha256": "1475743c139ef10f100a62f901c0410fc2cc4fe2799b3615d1ec3ab1a5e0a7af"
+      }
+    },
+    {
+      "source_id": "MD-6.3.4-OverdampedLimit",
+      "json_review": {
+        "status": "APPROVED",
+        "issue_codes": [],
+        "corrected_json": null,
+        "issues": [],
+        "evidence": [
+          {
+            "phase": "A",
+            "location": "R5_PAGES.pdf，附件第17页；原PDF页261，印刷页240",
+            "finding": "A：附件第17页Brownian/Smoluchowski命名与“Kramers to Smoluchowski limit”一致。"
+          },
+          {
+            "phase": "C",
+            "location": "R5_任务.md，条目16/30，实际Lean签名/定义及其明确命名空间的依赖摘录、文末D附录",
+            "finding": "C：任意维正m、β>0、光滑单位周期势U，固定确定初始相点；B为共同n维Wiener。前提对所有γ>0给Chapter06Review.langevinMassSDE解族，q满足该命名空间brownianMassSDE且摩擦参数1、温度β⁻¹。结论仅在每个T>0对所有有界连续位置检验f有期望弱收敛，观察时间γT正确，未主张路径强收敛。核对了所引用的是项目Review模型，而非同名MD加强定义；在光滑周期势下梯度有界且Lipschitz，路径连续性使实际漂移积分有意义。周期、光滑、时间重标度和弱拓扑限制均已由[EXTRA]披露。"
+          }
+        ]
+      },
+      "audit": {
+        "lean_decl": "MD.Ch06.overdampedLimit",
+        "verdict": "PASS",
+        "explanation": "C：任意维正m、β>0、光滑单位周期势U，固定确定初始相点；B为共同n维Wiener。前提对所有γ>0给Chapter06Review.langevinMassSDE解族，q满足该命名空间brownianMassSDE且摩擦参数1、温度β⁻¹。结论仅在每个T>0对所有有界连续位置检验f有期望弱收敛，观察时间γT正确，未主张路径强收敛。核对了所引用的是项目Review模型，而非同名MD加强定义；在光滑周期势下梯度有界且Lipschitz，路径连续性使实际漂移积分有意义。周期、光滑、时间重标度和弱拓扑限制均已由[EXTRA]披露。",
+        "counterexample": null,
+        "suggested_fix": null
+      },
+      "subtask": "BATCH23b",
+      "input_sha256": {
+        "Blueprint/Ch06.lean": "0a02a34ec68989a83bccfa5916db5053ecdb58e05667bf21ff3568d9d1f4318e",
+        "blueprint/ch06/ch06_source.json": "45c70ceef21ca168af437de297e2e21e2800b452ab7942654061d4cff9bb5d95",
+        "BATCH23b_PAGES.pdf": "5687cbb585b5e2ad331264d0d469bcc9a796fe1be3a49311186ccf90e16edb6d",
+        "signature_sha256": "7539429a651a4e51c5c986e40c912b8eaabff0817bdb919f5ef4e68e55b1dcae"
+      }
+    }
+  ],
+  "merged_from": "ch06_first_merged"
+}

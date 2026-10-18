@@ -1,0 +1,101 @@
+以附件/PASTE 为准，忽略 /workspace 旧文件；Mathlib 定义按标准含义采信。
+A逐字核对原文及证明；C只读核对对象、域、量词、前提和全部结论。所有项目定义体及选择规格在下文；仅作为审阅摘录，不是独立模块。theorem/lemma提供完整类型（不审证明）；定义提供完整定义体，按文件作用域解释。不要因sorry判签名FAIL。原文版忠实性、修正版正确性、反例、原书疑误分别说明，不凭旧文件或repair_log猜声明。
+本条MD-6.4.2-StationaryInvariant，subtask=EAUDIT11a；原PDF页映射=[268]。只读，不改工程或补证明。以JSON对象返回batch=EAUDIT11,input_sha256,items；逐条含source_id,subtask,input_sha256,json_review{status,issue_codes,corrected_json,issues,evidence},audit{lean_decl,verdict,explanation,counterexample,suggested_fix}。verdict=PASS/FAIL/NEEDS_HUMAN，status=APPROVED/CORRECTED/NEEDS_HUMAN。必须原样回显下列全部哈希。
+input_sha256:
+{
+  "Blueprint/Ch06.lean": "4a2a6cb72c1692f80e3537ab1a71701d429a482780a01226c3dc66a2ebb8b44b",
+  "blueprint/ch06/ch06_source.json": "d7f93cd20eb570744c710f3e07a88b319c082e4155812fee91db0920eb05944e",
+  "PAGES.pdf": "1a8f93fbb10d24aeabb5b30f466101143327d344b1a74a57ecbd32532c32a4f8",
+  "materials_sha256": "aa09f22f9bf68f92618f9f0875c3e9872d1b340db5a04faa8fc4eb520de4d6ed"
+}
+
+## 原文JSON
+```json
+{
+  "source_id": "MD-6.4.2-StationaryInvariant",
+  "kind": "unnumbered_claim",
+  "label": null,
+  "section": "6.4.2",
+  "printed_page": "247",
+  "pdf_page": "268",
+  "statement_latex": "We have seen that invariant distributions correspond in general to solutions of\n\\[\\mathcal L^\\dagger\\rho_{\\rm eq}\\equiv0.\\]\nSolutions to this equation are of central importance to the probabilistic behavior of solutions to (6.43). Such solutions give distributions of points in phase space which will remain constant as solutions evolve in time.",
+  "proof_latex": null,
+  "proof_note": "原书未给独立完整证明。",
+  "proof_discussion_latex": null,
+  "context_notation": [],
+  "extra_assumptions": [
+    "[EXTRA]实际Markov kernel semigroup、真实generator对演化检验的导数关系与弱stationarity，并明确局部可积支配保证求导换积分；完整kernel测度不变，未假设不变结论或把形式exp当实际流。",
+    "[EXTRA] 25号：补实际Chapter06Review.invariantKernel及其kernelEvolution定义体；不以MD.Ch06同名定义替代。"
+  ],
+  "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
+  "coverage_gaps": null
+}
+```
+## 当前完整Lean（全部原文版、修正版及反例）
+```lean
+theorem stationaryInvariant :
+  ∀ {D : Type*} [MeasurableSpace D]
+    (K : ℝ≥0 → Kernel D D) (μ : Measure D) (L : (D → ℝ) → D → ℝ),
+  MolecularDynamics.Chapter06Review.markovSemigroup K → IsProbabilityMeasure μ →
+  (∀ f : D → ℝ, Measurable f → Bornology.IsBounded (Set.range f) → ∀ T : ℝ, 0 ≤ T →
+    ∃ bound : D → ℝ, Integrable bound μ ∧ ∀ s ∈ Icc 0 T, ∀ x,
+      |L (fun y ↦ MolecularDynamics.Chapter06Review.kernelAverage K f s.toNNReal y) x| ≤ bound x) →
+  (∀ f : D → ℝ, Measurable f → Bornology.IsBounded (Set.range f) →
+    (∀ t, Integrable (L (fun x ↦ MolecularDynamics.Chapter06Review.kernelAverage K f t x)) μ) ∧
+    (∀ x t, HasDerivWithinAt (fun s : ℝ ↦ MolecularDynamics.Chapter06Review.kernelAverage K f s.toNNReal x)
+      (L (fun y ↦ MolecularDynamics.Chapter06Review.kernelAverage K f t.toNNReal y) x) (Ici 0) t)) →
+  (∀ f : D → ℝ, Measurable f → Bornology.IsBounded (Set.range f) → (∫ x, L f x ∂μ)=0) →
+  MolecularDynamics.Chapter06Review.invariantKernel K μ := by
+  sorry
+```
+### 文件参数及作用域 Blueprint/Ch06.lean
+```lean
+open Set Filter Matrix MeasureTheory ProbabilityTheory MolecularDynamics MolecularDynamics.Chapter02Review MolecularDynamics.Chapter06Review
+open scoped BigOperators Topology ContDiff InnerProductSpace Matrix.Norms.L2Operator ENNReal NNReal
+variable {n Nc : ℕ}
+variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
+variable {R : Type*} [Ring R] [Algebra ℝ R]
+local instance : MeasureSpace UnitAddCircle := ⟨AddCircle.haarAddCircle⟩
+```
+### 文件参数及作用域 MolecularDynamics/Chapter06/ReviewDefinitions.lean
+```lean
+open Set Filter MeasureTheory ProbabilityTheory
+open scoped BigOperators Topology ContDiff ENNReal NNReal
+local instance : MeasureSpace UnitAddCircle := ⟨AddCircle.haarAddCircle⟩
+```
+### MD.Ch06.stationaryInvariant [Blueprint/Ch06.lean:2137]
+```lean
+theorem stationaryInvariant :
+  ∀ {D : Type*} [MeasurableSpace D]
+    (K : ℝ≥0 → Kernel D D) (μ : Measure D) (L : (D → ℝ) → D → ℝ),
+  MolecularDynamics.Chapter06Review.markovSemigroup K → IsProbabilityMeasure μ →
+  (∀ f : D → ℝ, Measurable f → Bornology.IsBounded (Set.range f) → ∀ T : ℝ, 0 ≤ T →
+    ∃ bound : D → ℝ, Integrable bound μ ∧ ∀ s ∈ Icc 0 T, ∀ x,
+      |L (fun y ↦ MolecularDynamics.Chapter06Review.kernelAverage K f s.toNNReal y) x| ≤ bound x) →
+  (∀ f : D → ℝ, Measurable f → Bornology.IsBounded (Set.range f) →
+    (∀ t, Integrable (L (fun x ↦ MolecularDynamics.Chapter06Review.kernelAverage K f t x)) μ) ∧
+    (∀ x t, HasDerivWithinAt (fun s : ℝ ↦ MolecularDynamics.Chapter06Review.kernelAverage K f s.toNNReal x)
+      (L (fun y ↦ MolecularDynamics.Chapter06Review.kernelAverage K f t.toNNReal y) x) (Ici 0) t)) →
+  (∀ f : D → ℝ, Measurable f → Bornology.IsBounded (Set.range f) → (∫ x, L f x ∂μ)=0) →
+  MolecularDynamics.Chapter06Review.invariantKernel K μ
+```
+### MolecularDynamics.Chapter06Review.kernelEvolution [MolecularDynamics/Chapter06/ReviewDefinitions.lean:160]
+```lean
+def kernelEvolution {D : Type*} [MeasurableSpace D] (K : ℝ≥0 → Kernel D D)
+    (μ : Measure D) (t : ℝ≥0) : Measure D := K t ∘ₘ μ
+```
+### MolecularDynamics.Chapter06Review.kernelAverage [MolecularDynamics/Chapter06/ReviewDefinitions.lean:162]
+```lean
+def kernelAverage {D : Type*} [MeasurableSpace D] (K : ℝ≥0 → Kernel D D)
+    (f : D → ℝ) (t : ℝ≥0) (x : D) : ℝ := ∫ z, f z ∂K t x
+```
+### MolecularDynamics.Chapter06Review.invariantKernel [MolecularDynamics/Chapter06/ReviewDefinitions.lean:164]
+```lean
+def invariantKernel {D : Type*} [MeasurableSpace D] (K : ℝ≥0 → Kernel D D) (μ : Measure D) : Prop :=
+  ∀ t, kernelEvolution K μ t = μ
+```
+### MolecularDynamics.Chapter06Review.markovSemigroup [MolecularDynamics/Chapter06/ReviewDefinitions.lean:166]
+```lean
+def markovSemigroup {D : Type*} [MeasurableSpace D] (K : ℝ≥0 → Kernel D D) : Prop :=
+  (∀ t, IsMarkovKernel (K t)) ∧ K 0 = Kernel.id ∧ ∀ s t, K (s+t) = K s ∘ₖ K t
+```

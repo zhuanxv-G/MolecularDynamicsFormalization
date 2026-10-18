@@ -1,0 +1,54 @@
+{
+  "eaudit": "EAUDIT05",
+  "subtask": "EAUDIT05a",
+  "source_id": "MD-6.2.2-DeterministicStrobePrinted",
+  "input_sha256": {
+    "Blueprint/Ch06.lean": "4a2a6cb72c1692f80e3537ab1a71701d429a482780a01226c3dc66a2ebb8b44b",
+    "blueprint/ch06/ch06_source.json": "d7f93cd20eb570744c710f3e07a88b319c082e4155812fee91db0920eb05944e",
+    "PAGES.pdf": "606b01c375dce1002d269892ab630f69698659c8263e28d257b4bf3d290167e2",
+    "materials_sha256": "92e36c3f2257135765d7ed1c45a00e9220d9417db6de0d5c942114ea618bc67f"
+  },
+  "paste_sha256": "b0188de7874c1ed4a6c8b29068bc9c33394c5a214eb56c83580d7a45457aebb0",
+  "source_pdf_sha256": "1939a22e5e96ebd2b58b8e91fe2c796f5390b402f267390f473b271c35d2f036",
+  "pdf_page_mapping": [
+    252
+  ],
+  "crop_pixel_identity": "PASS: copied page render or lossless embedded full-page source pixels",
+  "rasterized_pages": {},
+  "source_declarations": [
+    "deterministicStrobePrinted"
+  ],
+  "dependency_excerpts": [
+    {
+      "path": "Blueprint/Ch06.lean",
+      "line": 863,
+      "full_name": "MD.Ch06.strictItoIntegral",
+      "kind": "def",
+      "excerpt_sha256": "69555ce0eea7f7da7dd5b52a53fe2003a79a1ac3a807d9eee6a859b7a7ecfc54"
+    },
+    {
+      "path": "Blueprint/Ch06.lean",
+      "line": 1032,
+      "full_name": "MD.Ch06.deterministicIntegralProcess",
+      "kind": "def",
+      "excerpt_sha256": "bbea8888e0f9cfcb64a18941903c5a4786a02eb6a78bec940313f61a5e76099d"
+    },
+    {
+      "path": "Blueprint/Ch06.lean",
+      "line": 1039,
+      "full_name": "MD.Ch06.deterministicStrobePrinted",
+      "kind": "theorem",
+      "excerpt_sha256": "c360762eaa1d24fb30283336269c98c1d57101a6f57840f2ab2485069368c7a6"
+    },
+    {
+      "path": "MolecularDynamics/Chapter06/ReviewDefinitions.lean",
+      "line": 54,
+      "full_name": "MolecularDynamics.Chapter06Review.itoLeftSum",
+      "kind": "def",
+      "excerpt_sha256": "e1cd64bf3b4edeae8a7d1bf292e844323267f948a2846db1110c7f024f55e746"
+    }
+  ],
+  "project_definition_closure": "complete recursive definitions, referenced theorem types, explicit choice and consistency specifications",
+  "website_submitted": false,
+  "total_task_bytes": 86024
+}

@@ -1,0 +1,6 @@
+{
+  "source_id": "MD-6.2.2-DeterministicStrobePrinted",
+  "note": "Printed忠实保留原书N(0,σ(t_n))累计尺度，将标准差平方后传给gaussianReal方差参数；该印刷增量说法有疑。独立修正版保留相邻区间∫g²及整族独立性，以Y(times 0)为初始观测，不假设times 0=0。",
+  "gaps": [],
+  "lean_sha256": "fee992ce39ae0aef884902f21a8f1ef82cd71cb5d57ffe39b880698ab4aaaffe"
+}

@@ -1,0 +1,103 @@
+以附件/PASTE 为准，忽略 /workspace 旧文件；Mathlib 定义按标准含义采信。
+A逐字核对原文及证明；C只读核对对象、域、量词、前提和全部结论。所有项目定义体及选择规格在下文；仅作为审阅摘录，不是独立模块。theorem/lemma提供完整类型（不审证明）；定义提供完整定义体，按文件作用域解释。不要因sorry判签名FAIL。原文版忠实性、修正版正确性、反例、原书疑误分别说明，不凭旧文件或repair_log猜声明。
+本条MD-6.4.5-SmoothTestL2Printed，subtask=EAUDIT19c；原PDF页映射=[279]。只读，不改工程或补证明。以JSON对象返回batch=EAUDIT19,input_sha256,items；逐条含source_id,subtask,input_sha256,json_review{status,issue_codes,corrected_json,issues,evidence},audit{lean_decl,verdict,explanation,counterexample,suggested_fix}。verdict=PASS/FAIL/NEEDS_HUMAN，status=APPROVED/CORRECTED/NEEDS_HUMAN。必须原样回显下列全部哈希。
+input_sha256:
+{
+  "Blueprint/Ch06.lean": "4a2a6cb72c1692f80e3537ab1a71701d429a482780a01226c3dc66a2ebb8b44b",
+  "blueprint/ch06/ch06_source.json": "d7f93cd20eb570744c710f3e07a88b319c082e4155812fee91db0920eb05944e",
+  "PAGES.pdf": "ec8ed7c53f380c329d72ef631c3dedb0c2099354ce7e3bde0a42df21053154ec",
+  "materials_sha256": "4ed359a4d2d750b4ad84b460c28a5a47381c37bc9b1980e46405deb069c66a51"
+}
+
+## 原文JSON
+```json
+{
+  "source_id": "MD-6.4.5-SmoothTestL2Printed",
+  "kind": "unnumbered_claim",
+  "label": null,
+  "section": "6.4.5",
+  "printed_page": "258",
+  "pdf_page": "279",
+  "statement_latex": "Since all the eigenvalues lie to the left of a vertical line in the left half plane, for any $\\varphi$ in $C^\\infty$ we have\n\\[\\int_D\\varphi\\rho(q,p,t)d\\omega=\\operatorname{Av}_\\beta(\\varphi)+\\alpha e^{t\\lambda_1}\\int_D\\varphi\\rho^{(1)}d\\omega.\\]\nThe latter integral is bounded since both $\\varphi$ and $\\rho^{(1)}$ are in $L^2$.",
+  "proof_latex": null,
+  "proof_note": "原书未给独立完整证明。",
+  "proof_discussion_latex": null,
+  "context_notation": [],
+  "extra_assumptions": [
+    "[EXTRA] 25号：原文版忠实性与数学疑误分开；补齐所交条目所属的现有_corrected完整签名，不从repair_log名称推断网站已通过修正版。"
+  ],
+  "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
+  "coverage_gaps": null
+}
+```
+## 当前完整Lean（全部原文版、修正版及反例）
+```lean
+theorem smoothTestL2Printed : ∀ {n : ℕ} (f : textbookLangevinPeriodicPhase n → ℝ),
+  ContDiff ℝ ∞ (f ∘ textbookLangevinPeriodicProjection) →
+  MemLp f 2 (MolecularDynamics.Chapter06Review.flatPhaseMeasure n) := by
+  sorry
+
+/-- 修正版，对应原文 MD-6.4.5-SmoothTestL2Printed；改动：明确要求检验函数属于所选L²空间；给出正确检验函数域定义，不冒称所有C∞函数可积。 -/
+def smoothTestL2Printed_corrected {n : ℕ} (f : textbookLangevinPeriodicPhase n → ℝ) : Prop :=
+  ContDiff ℝ ∞ (f ∘ textbookLangevinPeriodicProjection) ∧
+    MemLp f 2 (MolecularDynamics.Chapter06Review.flatPhaseMeasure n)
+```
+### 文件参数及作用域 Blueprint/Ch06.lean
+```lean
+open Set Filter Matrix MeasureTheory ProbabilityTheory MolecularDynamics MolecularDynamics.Chapter02Review MolecularDynamics.Chapter06Review
+open scoped BigOperators Topology ContDiff InnerProductSpace Matrix.Norms.L2Operator ENNReal NNReal
+variable {n Nc : ℕ}
+variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
+variable {R : Type*} [Ring R] [Algebra ℝ R]
+local instance : MeasureSpace UnitAddCircle := ⟨AddCircle.haarAddCircle⟩
+```
+### 文件参数及作用域 MolecularDynamics/Chapter06/LangevinHormander.lean
+```lean
+open scoped BigOperators ContDiff
+```
+### 文件参数及作用域 MolecularDynamics/Chapter06/LangevinPeriodicProjection.lean
+```lean
+open Set Filter MeasureTheory ProbabilityTheory
+open scoped Topology ContDiff NNReal ENNReal
+```
+### 文件参数及作用域 MolecularDynamics/Chapter06/ReviewDefinitions.lean
+```lean
+open Set Filter MeasureTheory ProbabilityTheory
+open scoped BigOperators Topology ContDiff ENNReal NNReal
+local instance : MeasureSpace UnitAddCircle := ⟨AddCircle.haarAddCircle⟩
+```
+### MD.Ch06.smoothTestL2Printed [Blueprint/Ch06.lean:3394]
+```lean
+theorem smoothTestL2Printed : ∀ {n : ℕ} (f : textbookLangevinPeriodicPhase n → ℝ),
+  ContDiff ℝ ∞ (f ∘ textbookLangevinPeriodicProjection) →
+  MemLp f 2 (MolecularDynamics.Chapter06Review.flatPhaseMeasure n)
+```
+### MD.Ch06.smoothTestL2Printed_corrected [Blueprint/Ch06.lean:3400]
+```lean
+def smoothTestL2Printed_corrected {n : ℕ} (f : textbookLangevinPeriodicPhase n → ℝ) : Prop :=
+  ContDiff ℝ ∞ (f ∘ textbookLangevinPeriodicProjection) ∧
+    MemLp f 2 (MolecularDynamics.Chapter06Review.flatPhaseMeasure n)
+```
+### MolecularDynamics.textbookLangevinPhase [MolecularDynamics/Chapter06/LangevinHormander.lean:12]
+```lean
+abbrev textbookLangevinPhase (Nc : ℕ) := (Fin Nc → ℝ) × (Fin Nc → ℝ)
+```
+### MolecularDynamics.textbookLangevinPeriodicPhase [MolecularDynamics/Chapter06/LangevinPeriodicProjection.lean:14]
+```lean
+abbrev textbookLangevinPeriodicPhase (Nc : ℕ) := UnitAddTorus (Fin Nc) × (Fin Nc → ℝ)
+```
+### MolecularDynamics.textbookLangevinPeriodicProjection [MolecularDynamics/Chapter06/LangevinPeriodicProjection.lean:17]
+```lean
+def textbookLangevinPeriodicProjection {Nc : ℕ}
+    (z : textbookLangevinPhase Nc) : textbookLangevinPeriodicPhase Nc :=
+  (fun i ↦ (z.1 i : UnitAddCircle), z.2)
+```
+### MolecularDynamics.Chapter06Review.V [MolecularDynamics/Chapter06/ReviewDefinitions.lean:17]
+```lean
+abbrev V (n : ℕ) := Fin n → ℝ
+```
+### MolecularDynamics.Chapter06Review.flatPhaseMeasure [MolecularDynamics/Chapter06/ReviewDefinitions.lean:189]
+```lean
+def flatPhaseMeasure (n : ℕ) : Measure (textbookLangevinPeriodicPhase n) :=
+  (volume : Measure (UnitAddTorus (Fin n))).prod (volume : Measure (V n))
+```

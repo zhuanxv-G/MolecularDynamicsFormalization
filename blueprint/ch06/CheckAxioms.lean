@@ -1,5 +1,9 @@
 import Blueprint.Ch06
 
+#print axioms MD.Ch06.naturalHistory25
+#print axioms MD.Ch06.gridItoQualification25
+#print axioms MD.Ch06.vectorGridItoQualification25
+#print axioms MD.Ch06.langevinKernelQualification25
 #print axioms MD.Ch06.microcanonical
 #print axioms MD.Ch06.entropy
 #print axioms MD.Ch06.independentPartition
@@ -41,6 +45,7 @@ import Blueprint.Ch06
 #print axioms MD.Ch06.equipartition
 #print axioms MD.Ch06.configTemperature
 #print axioms MD.Ch06.proposition61
+#print axioms MD.Ch06.proposition61_corrected
 #print axioms MD.Ch06.weightedFluxZero
 #print axioms MD.Ch06.canonicalDivergenceIdentity
 #print axioms MD.Ch06.temperatureChoiceDerivatives
@@ -80,6 +85,7 @@ import Blueprint.Ch06
 #print axioms MD.Ch06.stateMarkovMeaning
 #print axioms MD.Ch06.coarseMarkovPrinted_corrected
 #print axioms MD.Ch06.riemannTags
+#print axioms MD.Ch06.riemannTags_corrected
 #print axioms MD.Ch06.itoLeftSum
 #print axioms MD.Ch06.strictItoIntegral
 #print axioms MD.Ch06.weakItoAlias_corrected
@@ -99,6 +105,7 @@ import Blueprint.Ch06
 #print axioms MD.Ch06.quadraticMeanSquareError
 #print axioms MD.Ch06.selfItoIntegral
 #print axioms MD.Ch06.selfStratonovichIntegral
+#print axioms MD.Ch06.selfStratonovichIntegral_corrected
 #print axioms MD.Ch06.proposition63
 #print axioms MD.Ch06.quadraticSumExpectation
 #print axioms MD.Ch06.selfItoLimitL2
@@ -205,6 +212,8 @@ import Blueprint.Ch06
 #print axioms MD.Ch06.cylinderSDE
 #print axioms MD.Ch06.cylinderGenerator
 #print axioms MD.Ch06.cylinderForwardPrinted
+#print axioms MD.Ch06.cylinderForwardPeriodic_corrected
+#print axioms MD.Ch06.stationaryWeightRaw25
 #print axioms MD.Ch06.stationaryDensity
 #print axioms MD.Ch06.stationaryInvariant
 #print axioms MD.Ch06.canonicalMixingMeaning
@@ -213,13 +222,18 @@ import Blueprint.Ch06
 #print axioms MD.Ch06.brownianWeightedInner
 #print axioms MD.Ch06.brownianDirichlet
 #print axioms MD.Ch06.brownianSymmetry
+#print axioms MD.Ch06.brownianSymmetry_corrected
 #print axioms MD.Ch06.brownianNonpositive
 #print axioms MD.Ch06.brownianNonpositive_corrected
 #print axioms MD.Ch06.brownianNegativeDefinitePrinted_corrected
 #print axioms MD.Ch06.brownianRealEigenvalue
+#print axioms MD.Ch06.brownianRealEigenvalue_corrected
 #print axioms MD.Ch06.brownianClosedSelfAdjoint
+#print axioms MD.Ch06.brownianClosedSelfAdjoint_corrected
 #print axioms MD.Ch06.brownianCompactResolvent
+#print axioms MD.Ch06.brownianCompactResolvent_corrected
 #print axioms MD.Ch06.brownianDiscreteSpectrum
+#print axioms MD.Ch06.brownianDiscreteSpectrum_eigenvalue
 #print axioms MD.Ch06.brownianSpectralGap
 #print axioms MD.Ch06.theorem61
 #print axioms MD.Ch06.theorem61_corrected
@@ -296,6 +310,7 @@ import Blueprint.Ch06
 #print axioms MD.Ch06.forwardKernelGibbs
 #print axioms MD.Ch06.weightedFunctionNorm
 #print axioms MD.Ch06.weightedVectorNorm
+#print axioms MD.Ch06.kernelEvolutionRaw25
 #print axioms MD.Ch06.kernelEvolution
 #print axioms MD.Ch06.kernelAverage
 #print axioms MD.Ch06.densityEvolutionMeaning
@@ -303,5 +318,6 @@ import Blueprint.Ch06
 #print axioms MD.Ch06.smoothTestL2Printed
 #print axioms MD.Ch06.smoothTestL2Printed_corrected
 #print axioms MD.Ch06.complexInitialDensity
+#print axioms MD.Ch06.complexInitialDensity_corrected
 #print axioms MD.Ch06.langevinForwardSemigroupMeaning
 #print axioms MD.Ch06.complexEigenmodeDecay

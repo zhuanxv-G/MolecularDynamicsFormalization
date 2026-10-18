@@ -1,0 +1,17 @@
+--- before
++++ after
+@@ -2050,11 +2050,12 @@
+ 
+ /-- source_id: MD-6.4.2-CylinderForwardPrinted · definition · §6.4.2 · 印刷p.247 / PDFp.268
+ [EXTRA] [EXTRA]周期lift中的完整实际负散度与错误φ扩散，正确ρ算子已有VectorForward定义。
+-[ERRATUM?] 印刷forward密度算子仍写φ″，应ρ″；本条保留两个不同对象的字面表达，不宣称其是密度演化算子。 -/
++[ERRATUM?] 印刷forward密度算子仍写φ″，应ρ″；本条保留两个不同对象的字面表达，不宣称其是密度演化算子。 [EXTRA] 25号：Printed补原页1/2，保留印刷φ而不静默改ρ；独立corrected采用实际周期lift的前向密度表达式，与VectorForward相同。
++-/
+ def cylinderForwardPrinted {n r : ℕ} (b₀ : (Fin n → ℝ) → (Fin n → ℝ))
+     (B : Matrix (Fin n) (Fin r) ℝ) (ρ φ : (Fin n → ℝ) → ℝ) (x : Fin n → ℝ) : ℝ :=
+   -(∑ i, fderiv ℝ (fun z ↦ b₀ z i*ρ z) x (Pi.single i 1)) +
+-    MolecularDynamics.Chapter06Review.vectorDiffusion B φ x
++    MolecularDynamics.Chapter06Review.vectorDiffusion B φ x / 2
+ 
+ /-- source_id: MD-6.4.2-StationaryDensity · definition · §6.4.2 · 印刷p.247 / PDFp.268 -/
+ def stationaryDensity {n r : ℕ} (a : (Fin n → ℝ) → (Fin n → ℝ))

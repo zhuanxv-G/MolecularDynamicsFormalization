@@ -1,0 +1,40 @@
+{
+  "batch": "BATCH01",
+  "chapter": "ch06",
+  "round": "first-merged",
+  "input_sha256": {
+    "Blueprint/Ch06.lean": "0a02a34ec68989a83bccfa5916db5053ecdb58e05667bf21ff3568d9d1f4318e",
+    "blueprint/ch06/ch06_source.json": "45c70ceef21ca168af437de297e2e21e2800b452ab7942654061d4cff9bb5d95"
+  },
+  "items": [
+    {
+      "source_id": "MD-6.1.1-Microcanonical",
+      "json_review": {
+        "status": "APPROVED",
+        "issue_codes": [],
+        "corrected_json": null,
+        "issues": [],
+        "evidence": [
+          "A：实际渲染并核对 R1_PAGES.pdf 附件第1页；原PDF第235页，印刷第214页。页上确有ρ_mc=Z⁻¹δ[H−E]及Z=∫_Dδ[H−E]dω；所摘英文和两个公式相符。",
+          "C：依据 R1_任务.md 本条实际Lean签名及本任务附录，按标准Mathlib数学含义只读核对；未运行Lean编译、未补证明，未把sorry或repair_log中的未提供声明当作审校结果。",
+          "项目定义核对：E n=EuclideanSpace ℝ (Fin n)；surfaceMeasure=(hausdorffArea (n−1)).restrict {H=energy}；microRaw=surfaceMeasure.withDensity (ofReal ‖grad H‖⁻¹)；microMeasure=((microRaw H energy) univ)⁻¹ • microRaw H energy。"
+        ]
+      },
+      "audit": {
+        "lean_decl": "MD.Ch06.microcanonical",
+        "verdict": "PASS",
+        "explanation": "对象为任意自然数维数n、实值Hamiltonian H:E n→ℝ及实能量energy。microcanonical直接返回microMeasure；展开为能量面上的1/‖gradient H‖加权面积测度再除以其总质量，符合Dirac记号的测度解释。它是总定义，不宣称任意H、energy均给概率测度；正则性及总质量正且有限的物理适用范围已在context_notation明确，不能把此定义计为coarea识别或归一化定理。原D由所选环境/相空间承载，此签名没有独立的任意区域D参数。",
+        "counterexample": null,
+        "suggested_fix": null
+      },
+      "subtask": "BATCH01a",
+      "input_sha256": {
+        "Blueprint/Ch06.lean": "0a02a34ec68989a83bccfa5916db5053ecdb58e05667bf21ff3568d9d1f4318e",
+        "blueprint/ch06/ch06_source.json": "45c70ceef21ca168af437de297e2e21e2800b452ab7942654061d4cff9bb5d95",
+        "BATCH01a_PAGES.pdf": "ab4009c74e2818ed3f377e814cdf6baf3cc3d8cc9ae7cb656d9af28471293507",
+        "signature_sha256": "5cdf3eddb52be9764a5d8dafaa6f17d68830c0e4a82414dc21bd0af934d73d84"
+      }
+    }
+  ],
+  "merged_from": "ch06_first_merged"
+}

@@ -5614,5 +5614,4282 @@
         }
       }
     }
+  },
+  "closeout25": {
+    "declarations": [
+      {
+        "name": "MD.Ch06.microcanonical",
+        "kind": "def",
+        "status": "定义",
+        "axioms": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "classification": null,
+        "direct_placeholder": false,
+        "source_id": "MD-6.1.1-Microcanonical"
+      },
+      {
+        "name": "MD.Ch06.entropy",
+        "kind": "def",
+        "status": "定义",
+        "axioms": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "classification": null,
+        "direct_placeholder": false,
+        "source_id": "MD-6.1.2-Entropy"
+      },
+      {
+        "name": "MD.Ch06.independentPartition",
+        "kind": "theorem",
+        "status": "已证",
+        "axioms": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "classification": null,
+        "direct_placeholder": false,
+        "source_id": "MD-6.1.2-IndependentPartition"
+      },
+      {
+        "name": "MD.Ch06.entropyAdditivity",
+        "kind": "theorem",
+        "status": "已证",
+        "axioms": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "classification": null,
+        "direct_placeholder": false,
+        "source_id": "MD-6.1.2-EntropyAdditivity"
+      },
+      {
+        "name": "MD.Ch06.entropyEquilibrium",
+        "kind": "theorem",
+        "status": "已证",
+        "axioms": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "classification": null,
+        "direct_placeholder": false,
+        "source_id": "MD-6.1.2-EntropyEquilibrium"
+      },
+      {
+        "name": "MD.Ch06.temperature",
+        "kind": "def",
+        "status": "定义",
+        "axioms": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "classification": null,
+        "direct_placeholder": false,
+        "source_id": "MD-6.1.2-Temperature"
+      },
+      {
+        "name": "MD.Ch06.inverseThermal",
+        "kind": "def",
+        "status": "定义",
+        "axioms": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "classification": null,
+        "direct_placeholder": false,
+        "source_id": "MD-6.1.2-InverseThermal"
+      },
+      {
+        "name": "MD.Ch06.bathBoltzmannPrinted",
+        "kind": "theorem",
+        "status": "未证",
+        "axioms": [
+          "propext",
+          "sorryAx",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "classification": "原书疑误不证",
+        "direct_placeholder": true,
+        "source_id": "MD-6.1.2-BathTaylor"
+      },
+      {
+        "name": "MD.Ch06.bathBoltzmannPrinted_counterexample",
+        "kind": "theorem",
+        "status": "已证",
+        "axioms": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "classification": null,
+        "direct_placeholder": false,
+        "source_id": "MD-6.1.2-BathTaylor"
+      },
+      {
+        "name": "MD.Ch06.logTemperature",
+        "kind": "theorem",
+        "status": "已证",
+        "axioms": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "classification": null,
+        "direct_placeholder": false,
+        "source_id": "MD-6.1.2-LogTemperature"
+      },
+      {
+        "name": "MD.Ch06.bathMeanValue",
+        "kind": "theorem",
+        "status": "已证",
+        "axioms": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "classification": null,
+        "direct_placeholder": false,
+        "source_id": "MD-6.1.2-BathMeanValue"
+      },
+      {
+        "name": "MD.Ch06.bathTaylorEstimate",
+        "kind": "theorem",
+        "status": "未证",
+        "axioms": [
+          "propext",
+          "sorryAx",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "classification": "时间盒止",
+        "direct_placeholder": true,
+        "source_id": "MD-6.1.2-BathTaylorEstimate"
+      },
+      {
+        "name": "MD.Ch06.boltzmannConstantSlope",
+        "kind": "theorem",
+        "status": "已证",
+        "axioms": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "classification": null,
+        "direct_placeholder": false,
+        "source_id": "MD-6.1.2-BoltzmannConstantSlope"
+      },
+      {
+        "name": "MD.Ch06.bathBoltzmannPrinted_corrected",
+        "kind": "theorem",
+        "status": "已证",
+        "axioms": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "classification": null,
+        "direct_placeholder": false,
+        "source_id": "MD-6.1.2-BoltzmannConstantSlope"
+      },
+      {
+        "name": "MD.Ch06.canonicalCDFPrinted",
+        "kind": "theorem",
+        "status": "未证",
+        "axioms": [
+          "propext",
+          "sorryAx",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "classification": "原书疑误不证",
+        "direct_placeholder": true,
+        "source_id": "MD-6.1.2-CanonicalCDFPrinted"
+      },
+      {
+        "name": "MD.Ch06.canonicalCDFPrinted_corrected",
+        "kind": "def",
+        "status": "定义",
+        "axioms": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "classification": null,
+        "direct_placeholder": false,
+        "source_id": "MD-6.1.2-CanonicalCDFPrinted"
+      },
+      {
+        "name": "MD.Ch06.canonicalEnergyDensity",
+        "kind": "def",
+        "status": "定义",
+        "axioms": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "classification": null,
+        "direct_placeholder": false,
+        "source_id": "MD-6.1.2-CanonicalEnergyDensity"
+      },
+      {
+        "name": "MD.Ch06.entropyFunctional",
+        "kind": "def",
+        "status": "定义",
+        "axioms": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "classification": null,
+        "direct_placeholder": false,
+        "source_id": "MD-6.1.3-EntropyFunctional"
+      },
+      {
+        "name": "MD.Ch06.constrainedEntropyModel",
+        "kind": "def",
+        "status": "定义",
+        "axioms": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "classification": null,
+        "direct_placeholder": false,
+        "source_id": "MD-6.1.3-ConstrainedEntropyModel"
+      },
+      {
+        "name": "MD.Ch06.entropyFirstVariation",
+        "kind": "theorem",
+        "status": "未证",
+        "axioms": [
+          "propext",
+          "sorryAx",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "classification": "缺大型理论",
+        "direct_placeholder": true,
+        "source_id": "MD-6.1.3-EntropyFirstVariation"
+      },
+      {
+        "name": "MD.Ch06.entropyVariation",
+        "kind": "theorem",
+        "status": "未证",
+        "axioms": [
+          "propext",
+          "sorryAx",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "classification": "缺大型理论",
+        "direct_placeholder": true,
+        "source_id": "MD-6.1.3-EntropyVariation"
+      },
+      {
+        "name": "MD.Ch06.canonicalDensity",
+        "kind": "def",
+        "status": "定义",
+        "axioms": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "classification": null,
+        "direct_placeholder": false,
+        "source_id": "MD-6.1.3-CanonicalDensity"
+      },
+      {
+        "name": "MD.Ch06.massHamiltonian",
+        "kind": "def",
+        "status": "定义",
+        "axioms": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "classification": null,
+        "direct_placeholder": false,
+        "source_id": "MD-6.1.3-MassHamiltonian"
+      },
+      {
+        "name": "MD.Ch06.partitionMass",
+        "kind": "theorem",
+        "status": "未证",
+        "axioms": [
+          "propext",
+          "sorryAx",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "classification": "时间盒止",
+        "direct_placeholder": true,
+        "source_id": "MD-6.1.3-PartitionMass"
+      },
+      {
+        "name": "MD.Ch06.partitionDomain",
+        "kind": "theorem",
+        "status": "未证",
+        "axioms": [
+          "propext",
+          "sorryAx",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "classification": "时间盒止",
+        "direct_placeholder": true,
+        "source_id": "MD-6.1.3-PartitionDomain"
+      },
+      {
+        "name": "MD.Ch06.finiteDomainPrinted",
+        "kind": "theorem",
+        "status": "未证",
+        "axioms": [
+          "propext",
+          "sorryAx",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "classification": "原书疑误不证",
+        "direct_placeholder": true,
+        "source_id": "MD-6.1.3-FiniteDomainPrinted"
+      },
+      {
+        "name": "MD.Ch06.finiteDomainPrinted_corrected",
+        "kind": "theorem",
+        "status": "已证",
+        "axioms": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "classification": null,
+        "direct_placeholder": false,
+        "source_id": "MD-6.1.3-FiniteDomainPrinted"
+      },
+      {
+        "name": "MD.Ch06.periodicPartitionBridge",
+        "kind": "theorem",
+        "status": "已证",
+        "axioms": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "classification": null,
+        "direct_placeholder": false,
+        "source_id": "MD-6.1.3-PeriodicPartitionBridge"
+      },
+      {
+        "name": "MD.Ch06.confiningPartition",
+        "kind": "theorem",
+        "status": "未证",
+        "axioms": [
+          "propext",
+          "sorryAx",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "classification": "缺大型理论",
+        "direct_placeholder": true,
+        "source_id": "MD-6.1.3-ConfiningPartition"
+      },
+      {
+        "name": "MD.Ch06.lennardJonesNonintegrable",
+        "kind": "theorem",
+        "status": "未证",
+        "axioms": [
+          "propext",
+          "sorryAx",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "classification": "时间盒止",
+        "direct_placeholder": true,
+        "source_id": "MD-6.1.3-LennardJonesNonintegrable"
+      },
+      {
+        "name": "MD.Ch06.lennardJonesConfinement",
+        "kind": "theorem",
+        "status": "已证",
+        "axioms": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "classification": null,
+        "direct_placeholder": false,
+        "source_id": "MD-6.1.3-LennardJonesConfinement"
+      },
+      {
+        "name": "MD.Ch06.periodicWeightIntegrable",
+        "kind": "theorem",
+        "status": "已证",
+        "axioms": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "classification": null,
+        "direct_placeholder": false,
+        "source_id": "MD-6.1.3-PeriodicWeightIntegrable"
+      },
+      {
+        "name": "MD.Ch06.periodicPartitionPositive",
+        "kind": "theorem",
+        "status": "已证",
+        "axioms": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "classification": null,
+        "direct_placeholder": false,
+        "source_id": "MD-6.1.3-PeriodicPartitionPositive"
+      },
+      {
+        "name": "MD.Ch06.polynomialObservable",
+        "kind": "def",
+        "status": "定义",
+        "axioms": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "classification": null,
+        "direct_placeholder": false,
+        "source_id": "MD-6.1.4-PolynomialObservable"
+      },
+      {
+        "name": "MD.Ch06.canonicalAveragePrinted",
+        "kind": "def",
+        "status": "定义",
+        "axioms": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "classification": null,
+        "direct_placeholder": false,
+        "source_id": "MD-6.1.4-CanonicalAveragePrinted"
+      },
+      {
+        "name": "MD.Ch06.canonicalAverage",
+        "kind": "def",
+        "status": "定义",
+        "axioms": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "classification": null,
+        "direct_placeholder": false,
+        "source_id": "MD-6.1.4-CanonicalAverage"
+      },
+      {
+        "name": "MD.Ch06.canonicalAveragePrinted_corrected",
+        "kind": "def",
+        "status": "定义",
+        "axioms": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "classification": null,
+        "direct_placeholder": false,
+        "source_id": "MD-6.1.4-CanonicalAverage"
+      },
+      {
+        "name": "MD.Ch06.canonicalAverageOne",
+        "kind": "theorem",
+        "status": "已证",
+        "axioms": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "classification": null,
+        "direct_placeholder": false,
+        "source_id": "MD-6.1.4-CanonicalAverageOne"
+      },
+      {
+        "name": "MD.Ch06.equipartition",
+        "kind": "theorem",
+        "status": "未证",
+        "axioms": [
+          "propext",
+          "sorryAx",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "classification": "时间盒止",
+        "direct_placeholder": true,
+        "source_id": "MD-6.1.5-Equipartition"
+      },
+      {
+        "name": "MD.Ch06.configTemperature",
+        "kind": "theorem",
+        "status": "未证",
+        "axioms": [
+          "propext",
+          "sorryAx",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "classification": "缺大型理论",
+        "direct_placeholder": true,
+        "source_id": "MD-6.1.5-ConfigurationalTemperature"
+      },
+      {
+        "name": "MD.Ch06.proposition61",
+        "kind": "theorem",
+        "status": "已证",
+        "axioms": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "classification": null,
+        "direct_placeholder": false,
+        "source_id": "MD-6.1.5-Proposition61"
+      },
+      {
+        "name": "MD.Ch06.proposition61_corrected",
+        "kind": "theorem",
+        "status": "已证",
+        "axioms": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "classification": null,
+        "direct_placeholder": false,
+        "source_id": "MD-6.1.5-Proposition61"
+      },
+      {
+        "name": "MD.Ch06.weightedFluxZero",
+        "kind": "theorem",
+        "status": "已证",
+        "axioms": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "classification": null,
+        "direct_placeholder": false,
+        "source_id": "MD-6.1.5-WeightedFluxZero"
+      },
+      {
+        "name": "MD.Ch06.canonicalDivergenceIdentity",
+        "kind": "theorem",
+        "status": "已证",
+        "axioms": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "classification": null,
+        "direct_placeholder": false,
+        "source_id": "MD-6.1.5-CanonicalDivergenceIdentity"
+      },
+      {
+        "name": "MD.Ch06.temperatureChoiceDerivatives",
+        "kind": "theorem",
+        "status": "未证",
+        "axioms": [
+          "propext",
+          "sorryAx",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "classification": "时间盒止",
+        "direct_placeholder": true,
+        "source_id": "MD-6.1.5-TemperatureChoiceDerivatives"
+      },
+      {
+        "name": "MD.Ch06.periodicBoundaryCancellation",
+        "kind": "theorem",
+        "status": "已证",
+        "axioms": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "classification": null,
+        "direct_placeholder": false,
+        "source_id": "MD-6.1.5-PeriodicBoundaryCancellation"
+      },
+      {
+        "name": "MD.Ch06.meanEnergyConstraint",
+        "kind": "def",
+        "status": "定义",
+        "axioms": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "classification": null,
+        "direct_placeholder": false,
+        "source_id": "MD-6.1.3-MeanEnergyConstraint"
+      },
+      {
+        "name": "MD.Ch06.densityNormalization",
+        "kind": "theorem",
+        "status": "已证",
+        "axioms": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "classification": null,
+        "direct_placeholder": false,
+        "source_id": "MD-6.1.3-DensityNormalization"
+      },
+      {
+        "name": "MD.Ch06.partitionInversePrinted",
+        "kind": "theorem",
+        "status": "未证",
+        "axioms": [
+          "propext",
+          "sorryAx",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "classification": "原书疑误不证",
+        "direct_placeholder": true,
+        "source_id": "MD-6.1.5-PartitionInversePrinted"
+      },
+      {
+        "name": "MD.Ch06.partitionInversePrinted_corrected",
+        "kind": "def",
+        "status": "定义",
+        "axioms": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "classification": null,
+        "direct_placeholder": false,
+        "source_id": "MD-6.1.5-PartitionInversePrinted"
+      },
+      {
+        "name": "MD.Ch06.weightedFluxIdentity",
+        "kind": "theorem",
+        "status": "已证",
+        "axioms": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "classification": null,
+        "direct_placeholder": false,
+        "source_id": "MD-6.1.5-WeightedFluxIdentity"
+      },
+      {
+        "name": "MD.Ch06.virialTemperature",
+        "kind": "theorem",
+        "status": "未证",
+        "axioms": [
+          "propext",
+          "sorryAx",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "classification": "缺大型理论",
+        "direct_placeholder": true,
+        "source_id": "MD-6.1.5-VirialTemperature"
+      },
+      {
+        "name": "MD.Ch06.virialFieldNotPeriodic",
+        "kind": "theorem",
+        "status": "已证",
+        "axioms": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "classification": null,
+        "direct_placeholder": false,
+        "source_id": "MD-6.1.5-VirialFieldNotPeriodic"
+      },
+      {
+        "name": "MD.Ch06.densityPositive",
+        "kind": "theorem",
+        "status": "已证",
+        "axioms": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "classification": null,
+        "direct_placeholder": false,
+        "source_id": "MD-6.1.3-DensityPositive"
+      },
+      {
+        "name": "MD.Ch06.kineticWeightFactorization",
+        "kind": "theorem",
+        "status": "已证",
+        "axioms": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "classification": null,
+        "direct_placeholder": false,
+        "source_id": "MD-6.1.5-KineticWeightFactorization"
+      },
+      {
+        "name": "MD.Ch06.energySupportObstruction",
+        "kind": "theorem",
+        "status": "已证",
+        "axioms": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "classification": null,
+        "direct_placeholder": false,
+        "source_id": "MD-6.2-EnergySupportObstruction"
+      },
+      {
+        "name": "MD.Ch06.canonicalSamplingObstruction",
+        "kind": "theorem",
+        "status": "已证",
+        "axioms": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "classification": null,
+        "direct_placeholder": false,
+        "source_id": "MD-6.2-CanonicalSamplingObstruction"
+      },
+      {
+        "name": "MD.Ch06.rademacherJumps",
+        "kind": "def",
+        "status": "定义",
+        "axioms": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "classification": null,
+        "direct_placeholder": false,
+        "source_id": "MD-6.2.1-RademacherJumps"
+      },
+      {
+        "name": "MD.Ch06.randomWalk",
+        "kind": "def",
+        "status": "定义",
+        "axioms": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "classification": null,
+        "direct_placeholder": false,
+        "source_id": "MD-6.2.1-RandomWalk"
+      },
+      {
+        "name": "MD.Ch06.walkRecurrence",
+        "kind": "theorem",
+        "status": "已证",
+        "axioms": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "classification": null,
+        "direct_placeholder": false,
+        "source_id": "MD-6.2.1-WalkRecurrence"
+      },
+      {
+        "name": "MD.Ch06.walkInitial",
+        "kind": "theorem",
+        "status": "已证",
+        "axioms": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "classification": null,
+        "direct_placeholder": false,
+        "source_id": "MD-6.2.1-WalkInitial"
+      },
+      {
+        "name": "MD.Ch06.walkVariance",
+        "kind": "theorem",
+        "status": "未证",
+        "axioms": [
+          "propext",
+          "sorryAx",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "classification": "时间盒止",
+        "direct_placeholder": true,
+        "source_id": "MD-6.2.1-WalkVariance"
+      },
+      {
+        "name": "MD.Ch06.diffusiveWalk",
+        "kind": "def",
+        "status": "定义",
+        "axioms": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "classification": null,
+        "direct_placeholder": false,
+        "source_id": "MD-6.2.1-DiffusiveWalk"
+      },
+      {
+        "name": "MD.Ch06.interpolatedWalk",
+        "kind": "def",
+        "status": "定义",
+        "axioms": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "classification": null,
+        "direct_placeholder": false,
+        "source_id": "MD-6.2.1-InterpolatedWalk"
+      },
+      {
+        "name": "MD.Ch06.walkIncrement",
+        "kind": "def",
+        "status": "定义",
+        "axioms": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "classification": null,
+        "direct_placeholder": false,
+        "source_id": "MD-6.2.1-WalkIncrement"
+      },
+      {
+        "name": "MD.Ch06.walkGridMoments",
+        "kind": "theorem",
+        "status": "未证",
+        "axioms": [
+          "propext",
+          "sorryAx",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "classification": "时间盒止",
+        "direct_placeholder": true,
+        "source_id": "MD-6.2.1-WalkGridMoments"
+      },
+      {
+        "name": "MD.Ch06.interpolatedWalkMean",
+        "kind": "theorem",
+        "status": "未证",
+        "axioms": [
+          "propext",
+          "sorryAx",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "classification": "时间盒止",
+        "direct_placeholder": true,
+        "source_id": "MD-6.2.1-InterpolatedWalkMean"
+      },
+      {
+        "name": "MD.Ch06.walkDiffusion",
+        "kind": "theorem",
+        "status": "未证",
+        "axioms": [
+          "propext",
+          "sorryAx",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "classification": "缺大型理论",
+        "direct_placeholder": true,
+        "source_id": "MD-6.2.1-WalkDiffusion"
+      },
+      {
+        "name": "MD.Ch06.wienerVector",
+        "kind": "def",
+        "status": "定义",
+        "axioms": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "classification": null,
+        "direct_placeholder": false,
+        "source_id": "MD-6.2.1-WienerVector"
+      },
+      {
+        "name": "MD.Ch06.wienerIncrement",
+        "kind": "theorem",
+        "status": "已证",
+        "axioms": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "classification": null,
+        "direct_placeholder": false,
+        "source_id": "MD-6.2.1-WienerIncrement"
+      },
+      {
+        "name": "MD.Ch06.wienerContinuousVersion",
+        "kind": "theorem",
+        "status": "未证",
+        "axioms": [
+          "propext",
+          "sorryAx",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "classification": "缺大型理论",
+        "direct_placeholder": true,
+        "source_id": "MD-6.2.1-WienerContinuousVersion"
+      },
+      {
+        "name": "MD.Ch06.wienerNondifferentiable",
+        "kind": "theorem",
+        "status": "未证",
+        "axioms": [
+          "propext",
+          "sorryAx",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "classification": "缺大型理论",
+        "direct_placeholder": true,
+        "source_id": "MD-6.2.1-WienerNondifferentiable"
+      },
+      {
+        "name": "MD.Ch06.wienerFutureCompletedHistory",
+        "kind": "theorem",
+        "status": "已证",
+        "axioms": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "classification": null,
+        "direct_placeholder": false,
+        "source_id": "MD-6.2.1-WienerFutureCompletedHistory"
+      },
+      {
+        "name": "MD.Ch06.gridWienerIncrementLaw",
+        "kind": "theorem",
+        "status": "已证",
+        "axioms": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "classification": null,
+        "direct_placeholder": false,
+        "source_id": "MD-6.2.1-GridWienerIncrementLaw"
+      },
+      {
+        "name": "MD.Ch06.gridIncrementIndependent",
+        "kind": "theorem",
+        "status": "已证",
+        "axioms": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "classification": null,
+        "direct_placeholder": false,
+        "source_id": "MD-6.2.1-GridIncrementIndependent"
+      },
+      {
+        "name": "MD.Ch06.wienerContinuousPathEval",
+        "kind": "theorem",
+        "status": "已证",
+        "axioms": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "classification": null,
+        "direct_placeholder": false,
+        "source_id": "MD-6.2.1-WienerContinuousPathEval"
+      },
+      {
+        "name": "MD.Ch06.wienerContinuousPathMeasurable",
+        "kind": "theorem",
+        "status": "已证",
+        "axioms": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "classification": null,
+        "direct_placeholder": false,
+        "source_id": "MD-6.2.1-WienerContinuousPathMeasurable"
+      },
+      {
+        "name": "MD.Ch06.coarseMarkovPrinted",
+        "kind": "theorem",
+        "status": "未证",
+        "axioms": [
+          "propext",
+          "sorryAx",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "classification": "原书疑误不证",
+        "direct_placeholder": true,
+        "source_id": "MD-6.2.1-CoarseMarkovPrinted"
+      },
+      {
+        "name": "MD.Ch06.stateMarkovMeaning",
+        "kind": "def",
+        "status": "定义",
+        "axioms": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "classification": null,
+        "direct_placeholder": false,
+        "source_id": "MD-6.2.1-StateMarkovMeaning"
+      },
+      {
+        "name": "MD.Ch06.coarseMarkovPrinted_corrected",
+        "kind": "def",
+        "status": "定义",
+        "axioms": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "classification": null,
+        "direct_placeholder": false,
+        "source_id": "MD-6.2.1-StateMarkovMeaning"
+      },
+      {
+        "name": "MD.Ch06.riemannTags",
+        "kind": "theorem",
+        "status": "未证",
+        "axioms": [
+          "propext",
+          "sorryAx",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "classification": "时间盒止",
+        "direct_placeholder": true,
+        "source_id": "MD-6.2.2-RiemannTags"
+      },
+      {
+        "name": "MD.Ch06.riemannTags_corrected",
+        "kind": "theorem",
+        "status": "未证",
+        "axioms": [
+          "propext",
+          "sorryAx",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "classification": "缺大型理论",
+        "direct_placeholder": true,
+        "source_id": "MD-6.2.2-RiemannTags"
+      },
+      {
+        "name": "MD.Ch06.itoLeftSum",
+        "kind": "def",
+        "status": "定义",
+        "axioms": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "classification": null,
+        "direct_placeholder": false,
+        "source_id": "MD-6.2.2-ItoLeftSum"
+      },
+      {
+        "name": "MD.Ch06.strictItoIntegral",
+        "kind": "def",
+        "status": "定义",
+        "axioms": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "classification": null,
+        "direct_placeholder": false,
+        "source_id": "MD-6.2.2-StrictItoIntegral"
+      },
+      {
+        "name": "MD.Ch06.weakItoAlias_corrected",
+        "kind": "def",
+        "status": "定义",
+        "axioms": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "classification": null,
+        "direct_placeholder": false,
+        "source_id": "MD-6.2.2-StrictItoIntegral"
+      },
+      {
+        "name": "MD.Ch06.weakItoAlias",
+        "kind": "def",
+        "status": "定义",
+        "axioms": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "classification": null,
+        "direct_placeholder": false,
+        "source_id": "MD-6.2.2-WeakItoAlias"
+      },
+      {
+        "name": "MD.Ch06.stratonovichSum",
+        "kind": "def",
+        "status": "定义",
+        "axioms": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "classification": null,
+        "direct_placeholder": false,
+        "source_id": "MD-6.2.2-StratonovichSum"
+      },
+      {
+        "name": "MD.Ch06.selfItoFiniteIdentity",
+        "kind": "theorem",
+        "status": "已证",
+        "axioms": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "classification": null,
+        "direct_placeholder": false,
+        "source_id": "MD-6.2.2-SelfItoFiniteIdentity"
+      },
+      {
+        "name": "MD.Ch06.proposition62",
+        "kind": "theorem",
+        "status": "已证",
+        "axioms": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "classification": null,
+        "direct_placeholder": false,
+        "source_id": "MD-6.2.2-Proposition62"
+      },
+      {
+        "name": "MD.Ch06.proposition62_corrected",
+        "kind": "theorem",
+        "status": "已证",
+        "axioms": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "classification": null,
+        "direct_placeholder": false,
+        "source_id": "MD-6.2.2-Proposition62"
+      },
+      {
+        "name": "MD.Ch06.proposition62Printed",
+        "kind": "def",
+        "status": "定义",
+        "axioms": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "classification": null,
+        "direct_placeholder": false,
+        "source_id": "MD-6.2.2-Proposition62"
+      },
+      {
+        "name": "MD.Ch06.proposition62Expansion_corrected",
+        "kind": "theorem",
+        "status": "已证",
+        "axioms": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "classification": null,
+        "direct_placeholder": false,
+        "source_id": "MD-6.2.2-Proposition62"
+      },
+      {
+        "name": "MD.Ch06.proposition62Printed_counterexample",
+        "kind": "theorem",
+        "status": "已证",
+        "axioms": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "classification": null,
+        "direct_placeholder": false,
+        "source_id": "MD-6.2.2-Proposition62"
+      },
+      {
+        "name": "MD.Ch06.meanSquareConvergence",
+        "kind": "def",
+        "status": "定义",
+        "axioms": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "classification": null,
+        "direct_placeholder": false,
+        "source_id": "MD-6.2.2-MeanSquareConvergence"
+      },
+      {
+        "name": "MD.Ch06.wienerMidpointSum",
+        "kind": "def",
+        "status": "定义",
+        "axioms": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "classification": null,
+        "direct_placeholder": false,
+        "source_id": "MD-6.2.2-WienerMidpointSum"
+      },
+      {
+        "name": "MD.Ch06.gaussianIncrementMean",
+        "kind": "theorem",
+        "status": "已证",
+        "axioms": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "classification": null,
+        "direct_placeholder": false,
+        "source_id": "MD-6.2.2-GaussianIncrementMean"
+      },
+      {
+        "name": "MD.Ch06.gaussianIncrementSecond",
+        "kind": "theorem",
+        "status": "已证",
+        "axioms": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "classification": null,
+        "direct_placeholder": false,
+        "source_id": "MD-6.2.2-GaussianIncrementSecond"
+      },
+      {
+        "name": "MD.Ch06.gaussianIncrementFourth",
+        "kind": "theorem",
+        "status": "已证",
+        "axioms": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "classification": null,
+        "direct_placeholder": false,
+        "source_id": "MD-6.2.2-GaussianIncrementFourth"
+      },
+      {
+        "name": "MD.Ch06.quadraticMeanSquareError",
+        "kind": "theorem",
+        "status": "已证",
+        "axioms": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "classification": null,
+        "direct_placeholder": false,
+        "source_id": "MD-6.2.2-QuadraticMeanSquareError"
+      },
+      {
+        "name": "MD.Ch06.selfItoIntegral",
+        "kind": "theorem",
+        "status": "已证",
+        "axioms": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "classification": null,
+        "direct_placeholder": false,
+        "source_id": "MD-6.2.2-SelfItoIntegral"
+      },
+      {
+        "name": "MD.Ch06.selfStratonovichIntegral",
+        "kind": "theorem",
+        "status": "已证",
+        "axioms": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "classification": null,
+        "direct_placeholder": false,
+        "source_id": "MD-6.2.2-SelfStratonovichIntegral"
+      },
+      {
+        "name": "MD.Ch06.selfStratonovichIntegral_corrected",
+        "kind": "theorem",
+        "status": "已证",
+        "axioms": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "classification": null,
+        "direct_placeholder": false,
+        "source_id": "MD-6.2.2-SelfStratonovichIntegral"
+      },
+      {
+        "name": "MD.Ch06.proposition63",
+        "kind": "theorem",
+        "status": "已证",
+        "axioms": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "classification": null,
+        "direct_placeholder": false,
+        "source_id": "MD-6.2.2-Proposition63"
+      },
+      {
+        "name": "MD.Ch06.quadraticSumExpectation",
+        "kind": "theorem",
+        "status": "已证",
+        "axioms": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "classification": null,
+        "direct_placeholder": false,
+        "source_id": "MD-6.2.2-QuadraticSumExpectation"
+      },
+      {
+        "name": "MD.Ch06.selfItoLimitL2",
+        "kind": "theorem",
+        "status": "已证",
+        "axioms": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "classification": null,
+        "direct_placeholder": false,
+        "source_id": "MD-6.2.2-SelfItoLimitL2"
+      },
+      {
+        "name": "MD.Ch06.selfItoSumsL2",
+        "kind": "theorem",
+        "status": "已证",
+        "axioms": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "classification": null,
+        "direct_placeholder": false,
+        "source_id": "MD-6.2.2-SelfItoSumsL2"
+      },
+      {
+        "name": "MD.Ch06.midpointSumsL2",
+        "kind": "theorem",
+        "status": "已证",
+        "axioms": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "classification": null,
+        "direct_placeholder": false,
+        "source_id": "MD-6.2.2-MidpointSumsL2"
+      },
+      {
+        "name": "MD.Ch06.deterministicIntegralProcess",
+        "kind": "def",
+        "status": "定义",
+        "axioms": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "classification": null,
+        "direct_placeholder": false,
+        "source_id": "MD-6.2.2-DeterministicIntegralProcess"
+      },
+      {
+        "name": "MD.Ch06.deterministicStrobePrinted",
+        "kind": "theorem",
+        "status": "未证",
+        "axioms": [
+          "propext",
+          "sorryAx",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "classification": "原书疑误不证",
+        "direct_placeholder": true,
+        "source_id": "MD-6.2.2-DeterministicStrobePrinted"
+      },
+      {
+        "name": "MD.Ch06.deterministicStrobeCorrected",
+        "kind": "theorem",
+        "status": "未证",
+        "axioms": [
+          "propext",
+          "sorryAx",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "classification": "缺大型理论",
+        "direct_placeholder": true,
+        "source_id": "MD-6.2.2-DeterministicStrobeCorrected"
+      },
+      {
+        "name": "MD.Ch06.deterministicStrobePrinted_corrected",
+        "kind": "theorem",
+        "status": "未证",
+        "axioms": [
+          "propext",
+          "sorryAx",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "classification": "缺大型理论",
+        "direct_placeholder": true,
+        "source_id": "MD-6.2.2-DeterministicStrobeCorrected"
+      },
+      {
+        "name": "MD.Ch06.stochasticDifferentialIntegral",
+        "kind": "def",
+        "status": "定义",
+        "axioms": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "classification": null,
+        "direct_placeholder": false,
+        "source_id": "MD-6.2.2-StochasticDifferentialIntegral"
+      },
+      {
+        "name": "MD.Ch06.biasedWalk",
+        "kind": "def",
+        "status": "定义",
+        "axioms": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "classification": null,
+        "direct_placeholder": false,
+        "source_id": "MD-6.3-BiasedWalk"
+      },
+      {
+        "name": "MD.Ch06.biasedWalkSum",
+        "kind": "theorem",
+        "status": "已证",
+        "axioms": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "classification": null,
+        "direct_placeholder": false,
+        "source_id": "MD-6.3-BiasedWalkSum"
+      },
+      {
+        "name": "MD.Ch06.strictScalarSDE",
+        "kind": "def",
+        "status": "定义",
+        "axioms": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "classification": null,
+        "direct_placeholder": false,
+        "source_id": "MD-6.3-ScalarSDE"
+      },
+      {
+        "name": "MD.Ch06.strictVectorSDE",
+        "kind": "def",
+        "status": "定义",
+        "axioms": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "classification": null,
+        "direct_placeholder": false,
+        "source_id": "MD-6.3-VectorSDE"
+      },
+      {
+        "name": "MD.Ch06.scalarItoFormula",
+        "kind": "theorem",
+        "status": "未证",
+        "axioms": [
+          "propext",
+          "sorryAx",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "classification": "缺大型理论",
+        "direct_placeholder": true,
+        "source_id": "MD-6.3.1-ScalarItoFormula"
+      },
+      {
+        "name": "MD.Ch06.diffusiveTaylorPrinted",
+        "kind": "theorem",
+        "status": "未证",
+        "axioms": [
+          "propext",
+          "sorryAx",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "classification": "原书疑误不证",
+        "direct_placeholder": true,
+        "source_id": "MD-6.3.1-DiffusiveTaylorPrinted"
+      },
+      {
+        "name": "MD.Ch06.diffusiveTaylorPrinted_corrected",
+        "kind": "theorem",
+        "status": "未证",
+        "axioms": [
+          "propext",
+          "sorryAx",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "classification": "时间盒止",
+        "direct_placeholder": true,
+        "source_id": "MD-6.3.1-DiffusiveTaylorPrinted"
+      },
+      {
+        "name": "MD.Ch06.timeItoFormula",
+        "kind": "theorem",
+        "status": "未证",
+        "axioms": [
+          "propext",
+          "sorryAx",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "classification": "缺大型理论",
+        "direct_placeholder": true,
+        "source_id": "MD-6.3.1-TimeItoFormula"
+      },
+      {
+        "name": "MD.Ch06.timeItoFormula_corrected",
+        "kind": "theorem",
+        "status": "未证",
+        "axioms": [
+          "propext",
+          "sorryAx",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "classification": "缺大型理论",
+        "direct_placeholder": true,
+        "source_id": "MD-6.3.1-TimeItoFormula"
+      },
+      {
+        "name": "MD.Ch06.timeItoFormulaPrinted",
+        "kind": "def",
+        "status": "定义",
+        "axioms": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "classification": null,
+        "direct_placeholder": false,
+        "source_id": "MD-6.3.1-TimeItoFormula"
+      },
+      {
+        "name": "MD.Ch06.biasedWalkDiffusion",
+        "kind": "theorem",
+        "status": "未证",
+        "axioms": [
+          "propext",
+          "sorryAx",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "classification": "缺大型理论",
+        "direct_placeholder": true,
+        "source_id": "MD-6.3-BiasedWalkDiffusion"
+      },
+      {
+        "name": "MD.Ch06.strictOUProcess",
+        "kind": "def",
+        "status": "定义",
+        "axioms": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "classification": null,
+        "direct_placeholder": false,
+        "source_id": "MD-6.3.2-OUProcess"
+      },
+      {
+        "name": "MD.Ch06.ouIntegratingFactor",
+        "kind": "theorem",
+        "status": "未证",
+        "axioms": [
+          "propext",
+          "sorryAx",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "classification": "缺大型理论",
+        "direct_placeholder": true,
+        "source_id": "MD-6.3.2-OUIntegratingFactor"
+      },
+      {
+        "name": "MD.Ch06.ouVarianceIntegral",
+        "kind": "theorem",
+        "status": "已证",
+        "axioms": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "classification": null,
+        "direct_placeholder": false,
+        "source_id": "MD-6.3.2-OUVarianceIntegral"
+      },
+      {
+        "name": "MD.Ch06.ouLawPrinted",
+        "kind": "theorem",
+        "status": "未证",
+        "axioms": [
+          "propext",
+          "sorryAx",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "classification": "缺大型理论",
+        "direct_placeholder": true,
+        "source_id": "MD-6.3.2-OULawPrinted"
+      },
+      {
+        "name": "MD.Ch06.ouLawCorrect",
+        "kind": "theorem",
+        "status": "未证",
+        "axioms": [
+          "propext",
+          "sorryAx",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "classification": "缺大型理论",
+        "direct_placeholder": true,
+        "source_id": "MD-6.3.2-OULawCorrect"
+      },
+      {
+        "name": "MD.Ch06.ouLawPrinted_corrected",
+        "kind": "theorem",
+        "status": "未证",
+        "axioms": [
+          "propext",
+          "sorryAx",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "classification": "缺大型理论",
+        "direct_placeholder": true,
+        "source_id": "MD-6.3.2-OULawCorrect"
+      },
+      {
+        "name": "MD.Ch06.ouGibbsLimit",
+        "kind": "theorem",
+        "status": "未证",
+        "axioms": [
+          "propext",
+          "sorryAx",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "classification": "时间盒止",
+        "direct_placeholder": true,
+        "source_id": "MD-6.3.2-OUGibbsLimit"
+      },
+      {
+        "name": "MD.Ch06.momentumOU",
+        "kind": "def",
+        "status": "定义",
+        "axioms": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "classification": null,
+        "direct_placeholder": false,
+        "source_id": "MD-6.3.2-MomentumOU"
+      },
+      {
+        "name": "MD.Ch06.gibbsGaussianDensity",
+        "kind": "def",
+        "status": "定义",
+        "axioms": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "classification": null,
+        "direct_placeholder": false,
+        "source_id": "MD-6.3.2-GibbsGaussianDensity"
+      },
+      {
+        "name": "MD.Ch06.bathHamiltonian",
+        "kind": "def",
+        "status": "定义",
+        "axioms": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "classification": null,
+        "direct_placeholder": false,
+        "source_id": "MD-6.3.3-BathHamiltonian"
+      },
+      {
+        "name": "MD.Ch06.bathHamiltonEquations",
+        "kind": "theorem",
+        "status": "未证",
+        "axioms": [
+          "propext",
+          "sorryAx",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "classification": "时间盒止",
+        "direct_placeholder": true,
+        "source_id": "MD-6.3.3-BathHamiltonEquations"
+      },
+      {
+        "name": "MD.Ch06.bathFrequency",
+        "kind": "def",
+        "status": "定义",
+        "axioms": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "classification": null,
+        "direct_placeholder": false,
+        "source_id": "MD-6.3.3-BathFrequency"
+      },
+      {
+        "name": "MD.Ch06.bathOscillatorSolution",
+        "kind": "theorem",
+        "status": "未证",
+        "axioms": [
+          "propext",
+          "sorryAx",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "classification": "缺大型理论",
+        "direct_placeholder": true,
+        "source_id": "MD-6.3.3-BathOscillatorSolution"
+      },
+      {
+        "name": "MD.Ch06.bathConvolutionIBP",
+        "kind": "theorem",
+        "status": "未证",
+        "axioms": [
+          "propext",
+          "sorryAx",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "classification": "时间盒止",
+        "direct_placeholder": true,
+        "source_id": "MD-6.3.3-BathConvolutionIBP"
+      },
+      {
+        "name": "MD.Ch06.bathForce",
+        "kind": "def",
+        "status": "定义",
+        "axioms": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "classification": null,
+        "direct_placeholder": false,
+        "source_id": "MD-6.3.3-BathForce"
+      },
+      {
+        "name": "MD.Ch06.bathForcePrinted_corrected",
+        "kind": "def",
+        "status": "定义",
+        "axioms": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "classification": null,
+        "direct_placeholder": false,
+        "source_id": "MD-6.3.3-BathForce"
+      },
+      {
+        "name": "MD.Ch06.bathForcePrinted",
+        "kind": "def",
+        "status": "定义",
+        "axioms": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "classification": null,
+        "direct_placeholder": false,
+        "source_id": "MD-6.3.3-BathForcePrinted"
+      },
+      {
+        "name": "MD.Ch06.memoryKernel",
+        "kind": "def",
+        "status": "定义",
+        "axioms": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "classification": null,
+        "direct_placeholder": false,
+        "source_id": "MD-6.3.3-MemoryKernel"
+      },
+      {
+        "name": "MD.Ch06.bathReduction",
+        "kind": "theorem",
+        "status": "未证",
+        "axioms": [
+          "propext",
+          "sorryAx",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "classification": "缺大型理论",
+        "direct_placeholder": true,
+        "source_id": "MD-6.3.3-BathReduction"
+      },
+      {
+        "name": "MD.Ch06.bathReductionPrinted_corrected",
+        "kind": "theorem",
+        "status": "未证",
+        "axioms": [
+          "propext",
+          "sorryAx",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "classification": "缺大型理论",
+        "direct_placeholder": true,
+        "source_id": "MD-6.3.3-BathReduction"
+      },
+      {
+        "name": "MD.Ch06.bathReductionPrinted",
+        "kind": "theorem",
+        "status": "未证",
+        "axioms": [
+          "propext",
+          "sorryAx",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "classification": "原书疑误不证",
+        "direct_placeholder": true,
+        "source_id": "MD-6.3.3-BathReductionPrinted"
+      },
+      {
+        "name": "MD.Ch06.memoryKernelDeltaMeaning",
+        "kind": "def",
+        "status": "定义",
+        "axioms": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "classification": null,
+        "direct_placeholder": false,
+        "source_id": "MD-6.3.3-MemoryKernelDeltaMeaning"
+      },
+      {
+        "name": "MD.Ch06.memoryKernelDeltaMeaning_corrected",
+        "kind": "def",
+        "status": "定义",
+        "axioms": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "classification": null,
+        "direct_placeholder": false,
+        "source_id": "MD-6.3.3-MemoryKernelDeltaMeaning"
+      },
+      {
+        "name": "MD.Ch06.scalarLangevin",
+        "kind": "def",
+        "status": "定义",
+        "axioms": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "classification": null,
+        "direct_placeholder": false,
+        "source_id": "MD-6.3.3-ScalarLangevin"
+      },
+      {
+        "name": "MD.Ch06.langevinMassSDE",
+        "kind": "def",
+        "status": "定义",
+        "axioms": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "classification": null,
+        "direct_placeholder": false,
+        "source_id": "MD-6.3.3-MassLangevin"
+      },
+      {
+        "name": "MD.Ch06.variableFriction",
+        "kind": "def",
+        "status": "定义",
+        "axioms": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "classification": null,
+        "direct_placeholder": false,
+        "source_id": "MD-6.3.3-VariableFriction"
+      },
+      {
+        "name": "MD.Ch06.particleDiagonalFriction",
+        "kind": "def",
+        "status": "定义",
+        "axioms": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "classification": null,
+        "direct_placeholder": false,
+        "source_id": "MD-6.3.3-ParticleDiagonalFriction"
+      },
+      {
+        "name": "MD.Ch06.brownianMassSDE",
+        "kind": "def",
+        "status": "定义",
+        "axioms": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "classification": null,
+        "direct_placeholder": false,
+        "source_id": "MD-6.3.4-BrownianMassModel"
+      },
+      {
+        "name": "MD.Ch06.frequencyMemoryKernel",
+        "kind": "def",
+        "status": "定义",
+        "axioms": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "classification": null,
+        "direct_placeholder": false,
+        "source_id": "MD-6.3.3-FrequencyMemoryKernel"
+      },
+      {
+        "name": "MD.Ch06.figure64Frequencies",
+        "kind": "def",
+        "status": "定义",
+        "axioms": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "classification": null,
+        "direct_placeholder": false,
+        "source_id": "MD-6.3.3-Figure64Frequencies"
+      },
+      {
+        "name": "MD.Ch06.figure65Frequencies",
+        "kind": "def",
+        "status": "定义",
+        "axioms": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "classification": null,
+        "direct_placeholder": false,
+        "source_id": "MD-6.3.3-Figure65Frequencies"
+      },
+      {
+        "name": "MD.Ch06.bathForceWeakLimitMeaning",
+        "kind": "def",
+        "status": "定义",
+        "axioms": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "classification": null,
+        "direct_placeholder": false,
+        "source_id": "MD-6.3.3-BathForceWeakLimitMeaning"
+      },
+      {
+        "name": "MD.Ch06.bathForceWeakLimitMeaning_corrected",
+        "kind": "def",
+        "status": "定义",
+        "axioms": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "classification": null,
+        "direct_placeholder": false,
+        "source_id": "MD-6.3.3-BathForceWeakLimitMeaning"
+      },
+      {
+        "name": "MD.Ch06.overdampedLimit",
+        "kind": "theorem",
+        "status": "未证",
+        "axioms": [
+          "propext",
+          "sorryAx",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "classification": "缺大型理论",
+        "direct_placeholder": true,
+        "source_id": "MD-6.3.4-OverdampedLimit"
+      },
+      {
+        "name": "MD.Ch06.scalarGenerator",
+        "kind": "def",
+        "status": "定义",
+        "axioms": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "classification": null,
+        "direct_placeholder": false,
+        "source_id": "MD-6.3.5-ScalarGenerator"
+      },
+      {
+        "name": "MD.Ch06.generatorExpectation",
+        "kind": "theorem",
+        "status": "未证",
+        "axioms": [
+          "propext",
+          "sorryAx",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "classification": "缺大型理论",
+        "direct_placeholder": true,
+        "source_id": "MD-6.3.5-GeneratorExpectation"
+      },
+      {
+        "name": "MD.Ch06.polynomialSmooth",
+        "kind": "def",
+        "status": "定义",
+        "axioms": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "classification": null,
+        "direct_placeholder": false,
+        "source_id": "MD-6.3.6-PolynomialSmooth"
+      },
+      {
+        "name": "MD.Ch06.densityExpectation",
+        "kind": "theorem",
+        "status": "未证",
+        "axioms": [
+          "propext",
+          "sorryAx",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "classification": "时间盒止",
+        "direct_placeholder": true,
+        "source_id": "MD-6.3.6-DensityExpectation"
+      },
+      {
+        "name": "MD.Ch06.scalarForward",
+        "kind": "def",
+        "status": "定义",
+        "axioms": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "classification": null,
+        "direct_placeholder": false,
+        "source_id": "MD-6.3.6-ScalarForward"
+      },
+      {
+        "name": "MD.Ch06.fpDriftAdjoint",
+        "kind": "theorem",
+        "status": "已证",
+        "axioms": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "classification": null,
+        "direct_placeholder": false,
+        "source_id": "MD-6.3.6-FPDriftAdjoint"
+      },
+      {
+        "name": "MD.Ch06.fpDiffusionPrinted",
+        "kind": "theorem",
+        "status": "已证",
+        "axioms": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "classification": null,
+        "direct_placeholder": false,
+        "source_id": "MD-6.3.6-FPDiffusionPrinted"
+      },
+      {
+        "name": "MD.Ch06.fpDiffusionPrinted_corrected",
+        "kind": "theorem",
+        "status": "已证",
+        "axioms": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "classification": null,
+        "direct_placeholder": false,
+        "source_id": "MD-6.3.6-FPDiffusionPrinted"
+      },
+      {
+        "name": "MD.Ch06.fpAdjointCompact",
+        "kind": "theorem",
+        "status": "已证",
+        "axioms": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "classification": null,
+        "direct_placeholder": false,
+        "source_id": "MD-6.3.6-FPAdjointCompact"
+      },
+      {
+        "name": "MD.Ch06.fpPolynomialAdjoint",
+        "kind": "theorem",
+        "status": "未证",
+        "axioms": [
+          "propext",
+          "sorryAx",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "classification": "缺大型理论",
+        "direct_placeholder": true,
+        "source_id": "MD-6.3.6-FPPolynomialAdjoint"
+      },
+      {
+        "name": "MD.Ch06.fpPolynomialAdjoint_corrected",
+        "kind": "theorem",
+        "status": "未证",
+        "axioms": [
+          "propext",
+          "sorryAx",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "classification": "缺大型理论",
+        "direct_placeholder": true,
+        "source_id": "MD-6.3.6-FPPolynomialAdjoint"
+      },
+      {
+        "name": "MD.Ch06.fpPolynomialAdjointPrinted",
+        "kind": "theorem",
+        "status": "未证",
+        "axioms": [
+          "propext",
+          "sorryAx",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "classification": "原书疑误不证",
+        "direct_placeholder": true,
+        "source_id": "MD-6.3.6-FPPolynomialAdjoint"
+      },
+      {
+        "name": "MD.Ch06.fpEquation",
+        "kind": "theorem",
+        "status": "未证",
+        "axioms": [
+          "propext",
+          "sorryAx",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "classification": "缺大型理论",
+        "direct_placeholder": true,
+        "source_id": "MD-6.3.6-FPEquation"
+      },
+      {
+        "name": "MD.Ch06.zeroNoise",
+        "kind": "theorem",
+        "status": "已证",
+        "axioms": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "classification": null,
+        "direct_placeholder": false,
+        "source_id": "MD-6.3.6-ZeroNoise"
+      },
+      {
+        "name": "MD.Ch06.vectorIto",
+        "kind": "theorem",
+        "status": "未证",
+        "axioms": [
+          "propext",
+          "sorryAx",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "classification": "缺大型理论",
+        "direct_placeholder": true,
+        "source_id": "MD-6.3.7-VectorIto"
+      },
+      {
+        "name": "MD.Ch06.vectorForward",
+        "kind": "def",
+        "status": "定义",
+        "axioms": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "classification": null,
+        "direct_placeholder": false,
+        "source_id": "MD-6.3.7-VectorForward"
+      },
+      {
+        "name": "MD.Ch06.cylinderForwardPrinted_corrected",
+        "kind": "def",
+        "status": "定义",
+        "axioms": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "classification": null,
+        "direct_placeholder": false,
+        "source_id": "MD-6.3.7-VectorForward"
+      },
+      {
+        "name": "MD.Ch06.diffusionTrace",
+        "kind": "theorem",
+        "status": "已证",
+        "axioms": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "classification": null,
+        "direct_placeholder": false,
+        "source_id": "MD-6.3.7-DiffusionTrace"
+      },
+      {
+        "name": "MD.Ch06.vectorFPEquation",
+        "kind": "theorem",
+        "status": "未证",
+        "axioms": [
+          "propext",
+          "sorryAx",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "classification": "缺大型理论",
+        "direct_placeholder": true,
+        "source_id": "MD-6.3.7-VectorFPEquation"
+      },
+      {
+        "name": "MD.Ch06.langevinMassForward",
+        "kind": "def",
+        "status": "定义",
+        "axioms": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "classification": null,
+        "direct_placeholder": false,
+        "source_id": "MD-6.3.8-LangevinMassForward"
+      },
+      {
+        "name": "MD.Ch06.momentumMassLaplacian",
+        "kind": "def",
+        "status": "定义",
+        "axioms": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "classification": null,
+        "direct_placeholder": false,
+        "source_id": "MD-6.3.8-MomentumMassLaplacian"
+      },
+      {
+        "name": "MD.Ch06.langevinFPEquation",
+        "kind": "theorem",
+        "status": "未证",
+        "axioms": [
+          "propext",
+          "sorryAx",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "classification": "缺大型理论",
+        "direct_placeholder": true,
+        "source_id": "MD-6.3.8-LangevinFPEquation"
+      },
+      {
+        "name": "MD.Ch06.massGibbsStationary",
+        "kind": "theorem",
+        "status": "未证",
+        "axioms": [
+          "propext",
+          "sorryAx",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "classification": "时间盒止",
+        "direct_placeholder": true,
+        "source_id": "MD-6.4.2-MassGibbsStationary"
+      },
+      {
+        "name": "MD.Ch06.unitMassGibbsStationaryBridge",
+        "kind": "theorem",
+        "status": "已证",
+        "axioms": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "classification": null,
+        "direct_placeholder": false,
+        "source_id": "MD-6.4.2-UnitMassGibbsStationaryBridge"
+      },
+      {
+        "name": "MD.Ch06.variableFrictionForward",
+        "kind": "def",
+        "status": "定义",
+        "axioms": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "classification": null,
+        "direct_placeholder": false,
+        "source_id": "MD-6.3.3-VariableFrictionForward"
+      },
+      {
+        "name": "MD.Ch06.variableFrictionCanonicalPrinted",
+        "kind": "theorem",
+        "status": "未证",
+        "axioms": [
+          "propext",
+          "sorryAx",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "classification": "原书疑误不证",
+        "direct_placeholder": true,
+        "source_id": "MD-6.3.3-VariableFrictionCanonicalPrinted"
+      },
+      {
+        "name": "MD.Ch06.variableFrictionCommutingStationary",
+        "kind": "theorem",
+        "status": "未证",
+        "axioms": [
+          "propext",
+          "sorryAx",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "classification": "时间盒止",
+        "direct_placeholder": true,
+        "source_id": "MD-6.3.3-VariableFrictionCommutingStationary"
+      },
+      {
+        "name": "MD.Ch06.variableFrictionCanonicalPrinted_corrected",
+        "kind": "theorem",
+        "status": "未证",
+        "axioms": [
+          "propext",
+          "sorryAx",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "classification": "缺大型理论",
+        "direct_placeholder": true,
+        "source_id": "MD-6.3.3-VariableFrictionCommutingStationary"
+      },
+      {
+        "name": "MD.Ch06.stochasticMatrix",
+        "kind": "def",
+        "status": "定义",
+        "axioms": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "classification": null,
+        "direct_placeholder": false,
+        "source_id": "MD-6.4.1-StochasticMatrix"
+      },
+      {
+        "name": "MD.Ch06.finiteDistribution",
+        "kind": "def",
+        "status": "定义",
+        "axioms": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "classification": null,
+        "direct_placeholder": false,
+        "source_id": "MD-6.4.1-FiniteDistribution"
+      },
+      {
+        "name": "MD.Ch06.finiteDistribution_corrected",
+        "kind": "def",
+        "status": "定义",
+        "axioms": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "classification": null,
+        "direct_placeholder": false,
+        "source_id": "MD-6.4.1-FiniteDistribution"
+      },
+      {
+        "name": "MD.Ch06.finiteDistributionPrinted",
+        "kind": "def",
+        "status": "定义",
+        "axioms": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "classification": null,
+        "direct_placeholder": false,
+        "source_id": "MD-6.4.1-FiniteDistribution"
+      },
+      {
+        "name": "MD.Ch06.finiteDistributionPrinted_counterexample",
+        "kind": "theorem",
+        "status": "已证",
+        "axioms": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "classification": null,
+        "direct_placeholder": false,
+        "source_id": "MD-6.4.1-FiniteDistribution"
+      },
+      {
+        "name": "MD.Ch06.finiteEvolution",
+        "kind": "def",
+        "status": "定义",
+        "axioms": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "classification": null,
+        "direct_placeholder": false,
+        "source_id": "MD-6.4.1-FiniteEvolution"
+      },
+      {
+        "name": "MD.Ch06.finiteEvolutionRecurrence",
+        "kind": "theorem",
+        "status": "已证",
+        "axioms": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "classification": null,
+        "direct_placeholder": false,
+        "source_id": "MD-6.4.1-FiniteEvolutionRecurrence"
+      },
+      {
+        "name": "MD.Ch06.returnTimes",
+        "kind": "def",
+        "status": "定义",
+        "axioms": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "classification": null,
+        "direct_placeholder": false,
+        "source_id": "MD-6.4.1-ReturnTimes"
+      },
+      {
+        "name": "MD.Ch06.period",
+        "kind": "def",
+        "status": "定义",
+        "axioms": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "classification": null,
+        "direct_placeholder": false,
+        "source_id": "MD-6.4.1-Period"
+      },
+      {
+        "name": "MD.Ch06.aperiodic",
+        "kind": "def",
+        "status": "定义",
+        "axioms": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "classification": null,
+        "direct_placeholder": false,
+        "source_id": "MD-6.4.1-Aperiodic"
+      },
+      {
+        "name": "MD.Ch06.irreducible",
+        "kind": "def",
+        "status": "定义",
+        "axioms": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "classification": null,
+        "direct_placeholder": false,
+        "source_id": "MD-6.4.1-Irreducible"
+      },
+      {
+        "name": "MD.Ch06.finiteInvariant",
+        "kind": "def",
+        "status": "定义",
+        "axioms": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "classification": null,
+        "direct_placeholder": false,
+        "source_id": "MD-6.4.1-FiniteInvariant"
+      },
+      {
+        "name": "MD.Ch06.finiteErgodicity",
+        "kind": "theorem",
+        "status": "未证",
+        "axioms": [
+          "propext",
+          "sorryAx",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "classification": "缺大型理论",
+        "direct_placeholder": true,
+        "source_id": "MD-6.4.1-FiniteErgodicity"
+      },
+      {
+        "name": "MD.Ch06.stochasticEntryBound",
+        "kind": "theorem",
+        "status": "已证",
+        "axioms": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "classification": null,
+        "direct_placeholder": false,
+        "source_id": "MD-6.4.1-StochasticEntryBound"
+      },
+      {
+        "name": "MD.Ch06.finiteChainExample",
+        "kind": "def",
+        "status": "定义",
+        "axioms": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "classification": null,
+        "direct_placeholder": false,
+        "source_id": "MD-6.4.1-FiniteChainExample"
+      },
+      {
+        "name": "MD.Ch06.exampleStochastic",
+        "kind": "theorem",
+        "status": "已证",
+        "axioms": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "classification": null,
+        "direct_placeholder": false,
+        "source_id": "MD-6.4.1-ExampleStochastic"
+      },
+      {
+        "name": "MD.Ch06.exampleNotIrreducible",
+        "kind": "theorem",
+        "status": "已证",
+        "axioms": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "classification": null,
+        "direct_placeholder": false,
+        "source_id": "MD-6.4.1-ExampleNotIrreducible"
+      },
+      {
+        "name": "MD.Ch06.communicates",
+        "kind": "def",
+        "status": "定义",
+        "axioms": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "classification": null,
+        "direct_placeholder": false,
+        "source_id": "MD-6.4.1-Communicates"
+      },
+      {
+        "name": "MD.Ch06.directedGraphIrreducible",
+        "kind": "theorem",
+        "status": "未证",
+        "axioms": [
+          "propext",
+          "sorryAx",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "classification": "时间盒止",
+        "direct_placeholder": true,
+        "source_id": "MD-6.4.1-DirectedGraphIrreducible"
+      },
+      {
+        "name": "MD.Ch06.cylinderCoordinates",
+        "kind": "def",
+        "status": "定义",
+        "axioms": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "classification": null,
+        "direct_placeholder": false,
+        "source_id": "MD-6.4.2-CylinderCoordinates"
+      },
+      {
+        "name": "MD.Ch06.cylinderSDE",
+        "kind": "def",
+        "status": "定义",
+        "axioms": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "classification": null,
+        "direct_placeholder": false,
+        "source_id": "MD-6.4.2-CylinderSDE"
+      },
+      {
+        "name": "MD.Ch06.cylinderGenerator",
+        "kind": "def",
+        "status": "定义",
+        "axioms": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "classification": null,
+        "direct_placeholder": false,
+        "source_id": "MD-6.4.2-CylinderGenerator"
+      },
+      {
+        "name": "MD.Ch06.cylinderForwardPrinted",
+        "kind": "def",
+        "status": "定义",
+        "axioms": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "classification": null,
+        "direct_placeholder": false,
+        "source_id": "MD-6.4.2-CylinderForwardPrinted"
+      },
+      {
+        "name": "MD.Ch06.cylinderForwardPeriodic_corrected",
+        "kind": "def",
+        "status": "定义",
+        "axioms": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "classification": null,
+        "direct_placeholder": false,
+        "source_id": "MD-6.4.2-CylinderForwardPrinted"
+      },
+      {
+        "name": "MD.Ch06.stationaryWeightRaw25",
+        "kind": "def",
+        "status": "定义",
+        "axioms": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "classification": null,
+        "direct_placeholder": false,
+        "source_id": "MD-6.4.2-StationaryDensity"
+      },
+      {
+        "name": "MD.Ch06.stationaryDensity",
+        "kind": "def",
+        "status": "定义",
+        "axioms": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "classification": null,
+        "direct_placeholder": false,
+        "source_id": "MD-6.4.2-StationaryDensity"
+      },
+      {
+        "name": "MD.Ch06.stationaryInvariant",
+        "kind": "theorem",
+        "status": "未证",
+        "axioms": [
+          "propext",
+          "sorryAx",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "classification": "缺大型理论",
+        "direct_placeholder": true,
+        "source_id": "MD-6.4.2-StationaryInvariant"
+      },
+      {
+        "name": "MD.Ch06.canonicalMixingMeaning",
+        "kind": "def",
+        "status": "定义",
+        "axioms": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "classification": null,
+        "direct_placeholder": false,
+        "source_id": "MD-6.4-CanonicalMixingMeaning"
+      },
+      {
+        "name": "MD.Ch06.langevinCanonicalMixing",
+        "kind": "theorem",
+        "status": "未证",
+        "axioms": [
+          "propext",
+          "sorryAx",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "classification": "缺大型理论",
+        "direct_placeholder": true,
+        "source_id": "MD-6.4.2-LangevinCanonicalMixing"
+      },
+      {
+        "name": "MD.Ch06.brownianGenerator",
+        "kind": "def",
+        "status": "定义",
+        "axioms": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "classification": null,
+        "direct_placeholder": false,
+        "source_id": "MD-6.4.3-BrownianGenerator"
+      },
+      {
+        "name": "MD.Ch06.brownianWeightedInner",
+        "kind": "def",
+        "status": "定义",
+        "axioms": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "classification": null,
+        "direct_placeholder": false,
+        "source_id": "MD-6.4.3-BrownianWeightedInner"
+      },
+      {
+        "name": "MD.Ch06.brownianDirichlet",
+        "kind": "theorem",
+        "status": "已证",
+        "axioms": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "classification": null,
+        "direct_placeholder": false,
+        "source_id": "MD-6.4.3-BrownianDirichlet"
+      },
+      {
+        "name": "MD.Ch06.brownianSymmetry",
+        "kind": "theorem",
+        "status": "已证",
+        "axioms": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "classification": null,
+        "direct_placeholder": false,
+        "source_id": "MD-6.4.3-BrownianSymmetry"
+      },
+      {
+        "name": "MD.Ch06.brownianSymmetry_corrected",
+        "kind": "theorem",
+        "status": "已证",
+        "axioms": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "classification": null,
+        "direct_placeholder": false,
+        "source_id": "MD-6.4.3-BrownianSymmetry"
+      },
+      {
+        "name": "MD.Ch06.brownianNonpositive",
+        "kind": "theorem",
+        "status": "已证",
+        "axioms": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "classification": null,
+        "direct_placeholder": false,
+        "source_id": "MD-6.4.3-BrownianNonpositive"
+      },
+      {
+        "name": "MD.Ch06.brownianNonpositive_corrected",
+        "kind": "theorem",
+        "status": "已证",
+        "axioms": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "classification": null,
+        "direct_placeholder": false,
+        "source_id": "MD-6.4.3-BrownianNonpositive"
+      },
+      {
+        "name": "MD.Ch06.brownianNegativeDefinitePrinted_corrected",
+        "kind": "theorem",
+        "status": "已证",
+        "axioms": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "classification": null,
+        "direct_placeholder": false,
+        "source_id": "MD-6.4.3-BrownianNonpositive"
+      },
+      {
+        "name": "MD.Ch06.brownianRealEigenvalue",
+        "kind": "theorem",
+        "status": "已证",
+        "axioms": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "classification": null,
+        "direct_placeholder": false,
+        "source_id": "MD-6.4.3-BrownianRealEigenvalue"
+      },
+      {
+        "name": "MD.Ch06.brownianRealEigenvalue_corrected",
+        "kind": "theorem",
+        "status": "已证",
+        "axioms": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "classification": null,
+        "direct_placeholder": false,
+        "source_id": "MD-6.4.3-BrownianRealEigenvalue"
+      },
+      {
+        "name": "MD.Ch06.brownianClosedSelfAdjoint",
+        "kind": "theorem",
+        "status": "已证",
+        "axioms": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "classification": null,
+        "direct_placeholder": false,
+        "source_id": "MD-6.4.3-BrownianClosedSelfAdjoint"
+      },
+      {
+        "name": "MD.Ch06.brownianClosedSelfAdjoint_corrected",
+        "kind": "theorem",
+        "status": "已证",
+        "axioms": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "classification": null,
+        "direct_placeholder": false,
+        "source_id": "MD-6.4.3-BrownianClosedSelfAdjoint"
+      },
+      {
+        "name": "MD.Ch06.brownianCompactResolvent",
+        "kind": "theorem",
+        "status": "已证",
+        "axioms": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "classification": null,
+        "direct_placeholder": false,
+        "source_id": "MD-6.4.3-BrownianCompactResolvent"
+      },
+      {
+        "name": "MD.Ch06.brownianCompactResolvent_corrected",
+        "kind": "theorem",
+        "status": "已证",
+        "axioms": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "classification": null,
+        "direct_placeholder": false,
+        "source_id": "MD-6.4.3-BrownianCompactResolvent"
+      },
+      {
+        "name": "MD.Ch06.brownianDiscreteSpectrum",
+        "kind": "theorem",
+        "status": "已证",
+        "axioms": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "classification": null,
+        "direct_placeholder": false,
+        "source_id": "MD-6.4.3-BrownianDiscreteSpectrum"
+      },
+      {
+        "name": "MD.Ch06.brownianDiscreteSpectrum_eigenvalue",
+        "kind": "theorem",
+        "status": "未证",
+        "axioms": [
+          "propext",
+          "sorryAx",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "classification": "缺大型理论",
+        "direct_placeholder": true,
+        "source_id": "MD-6.4.3-BrownianDiscreteSpectrum"
+      },
+      {
+        "name": "MD.Ch06.brownianSpectralGap",
+        "kind": "theorem",
+        "status": "已证",
+        "axioms": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "classification": null,
+        "direct_placeholder": false,
+        "source_id": "MD-6.4.3-BrownianSpectralGap"
+      },
+      {
+        "name": "MD.Ch06.theorem61",
+        "kind": "theorem",
+        "status": "未证",
+        "axioms": [
+          "propext",
+          "sorryAx",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "classification": "缺大型理论",
+        "direct_placeholder": true,
+        "source_id": "MD-6.4.3-Theorem61"
+      },
+      {
+        "name": "MD.Ch06.theorem61_corrected",
+        "kind": "theorem",
+        "status": "未证",
+        "axioms": [
+          "propext",
+          "sorryAx",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "classification": "缺大型理论",
+        "direct_placeholder": true,
+        "source_id": "MD-6.4.3-Theorem61"
+      },
+      {
+        "name": "MD.Ch06.theorem61Printed",
+        "kind": "theorem",
+        "status": "未证",
+        "axioms": [
+          "propext",
+          "sorryAx",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "classification": "原书疑误不证",
+        "direct_placeholder": true,
+        "source_id": "MD-6.4.3-Theorem61"
+      },
+      {
+        "name": "MD.Ch06.brownianMassGeneratorPrinted",
+        "kind": "def",
+        "status": "定义",
+        "axioms": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "classification": null,
+        "direct_placeholder": false,
+        "source_id": "MD-6.4.3-Theorem61"
+      },
+      {
+        "name": "MD.Ch06.brownianMassGeneratorPrinted_corrected",
+        "kind": "def",
+        "status": "定义",
+        "axioms": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "classification": null,
+        "direct_placeholder": false,
+        "source_id": "MD-6.4.3-Theorem61"
+      },
+      {
+        "name": "MD.Ch06.theorem61TimeAveragePrinted",
+        "kind": "theorem",
+        "status": "未证",
+        "axioms": [
+          "propext",
+          "sorryAx",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "classification": "原书疑误不证",
+        "direct_placeholder": true,
+        "source_id": "MD-6.4.3-Theorem61TimeAveragePrinted"
+      },
+      {
+        "name": "MD.Ch06.brownianEnsembleExponential",
+        "kind": "theorem",
+        "status": "已证",
+        "axioms": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "classification": null,
+        "direct_placeholder": false,
+        "source_id": "MD-6.4.3-BrownianEnsembleExponential"
+      },
+      {
+        "name": "MD.Ch06.theorem61TimeAveragePrinted_corrected",
+        "kind": "theorem",
+        "status": "已证",
+        "axioms": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "classification": null,
+        "direct_placeholder": false,
+        "source_id": "MD-6.4.3-BrownianEnsembleExponential"
+      },
+      {
+        "name": "MD.Ch06.brownianNegativeDefinitePrinted",
+        "kind": "theorem",
+        "status": "未证",
+        "axioms": [
+          "propext",
+          "sorryAx",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "classification": "原书疑误不证",
+        "direct_placeholder": true,
+        "source_id": "MD-6.4.3-BrownianNegativeDefinitePrinted"
+      },
+      {
+        "name": "MD.Ch06.ouDensityPrinted",
+        "kind": "def",
+        "status": "定义",
+        "axioms": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "classification": null,
+        "direct_placeholder": false,
+        "source_id": "MD-6.4.2-OUDensityPrinted"
+      },
+      {
+        "name": "MD.Ch06.ouDensity",
+        "kind": "def",
+        "status": "定义",
+        "axioms": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "classification": null,
+        "direct_placeholder": false,
+        "source_id": "MD-6.4.2-OUDensityCorrect"
+      },
+      {
+        "name": "MD.Ch06.ouDensityPrinted_corrected",
+        "kind": "def",
+        "status": "定义",
+        "axioms": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "classification": null,
+        "direct_placeholder": false,
+        "source_id": "MD-6.4.2-OUDensityCorrect"
+      },
+      {
+        "name": "MD.Ch06.assumption1Printed",
+        "kind": "def",
+        "status": "定义",
+        "axioms": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "classification": null,
+        "direct_placeholder": false,
+        "source_id": "MD-6.4.4-Assumption1Printed"
+      },
+      {
+        "name": "MD.Ch06.assumption1",
+        "kind": "def",
+        "status": "定义",
+        "axioms": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "classification": null,
+        "direct_placeholder": false,
+        "source_id": "MD-6.4.4-Assumption1Correct"
+      },
+      {
+        "name": "MD.Ch06.assumption1Printed_corrected",
+        "kind": "def",
+        "status": "定义",
+        "axioms": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "classification": null,
+        "direct_placeholder": false,
+        "source_id": "MD-6.4.4-Assumption1Correct"
+      },
+      {
+        "name": "MD.Ch06.assumption2",
+        "kind": "def",
+        "status": "定义",
+        "axioms": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "classification": null,
+        "direct_placeholder": false,
+        "source_id": "MD-6.4.4-Assumption2"
+      },
+      {
+        "name": "MD.Ch06.minorizationPrinted",
+        "kind": "theorem",
+        "status": "未证",
+        "axioms": [
+          "propext",
+          "sorryAx",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "classification": "原书疑误不证",
+        "direct_placeholder": true,
+        "source_id": "MD-6.4.4-MinorizationPrinted"
+      },
+      {
+        "name": "MD.Ch06.minorizationCorrectedImplication",
+        "kind": "theorem",
+        "status": "未证",
+        "axioms": [
+          "propext",
+          "sorryAx",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "classification": "缺大型理论",
+        "direct_placeholder": true,
+        "source_id": "MD-6.4.4-MinorizationCorrectedImplication"
+      },
+      {
+        "name": "MD.Ch06.minorizationPrinted_corrected",
+        "kind": "theorem",
+        "status": "未证",
+        "axioms": [
+          "propext",
+          "sorryAx",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "classification": "缺大型理论",
+        "direct_placeholder": true,
+        "source_id": "MD-6.4.4-MinorizationCorrectedImplication"
+      },
+      {
+        "name": "MD.Ch06.theorem62",
+        "kind": "theorem",
+        "status": "未证",
+        "axioms": [
+          "propext",
+          "sorryAx",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "classification": "缺大型理论",
+        "direct_placeholder": true,
+        "source_id": "MD-6.4.4-Theorem62"
+      },
+      {
+        "name": "MD.Ch06.theorem62_corrected",
+        "kind": "theorem",
+        "status": "未证",
+        "axioms": [
+          "propext",
+          "sorryAx",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "classification": "缺大型理论",
+        "direct_placeholder": true,
+        "source_id": "MD-6.4.4-Theorem62"
+      },
+      {
+        "name": "MD.Ch06.theorem62Printed",
+        "kind": "theorem",
+        "status": "未证",
+        "axioms": [
+          "propext",
+          "sorryAx",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "classification": "原书疑误不证",
+        "direct_placeholder": true,
+        "source_id": "MD-6.4.4-Theorem62"
+      },
+      {
+        "name": "MD.Ch06.periodicPotentialBound",
+        "kind": "theorem",
+        "status": "已证",
+        "axioms": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "classification": null,
+        "direct_placeholder": false,
+        "source_id": "MD-6.4.4-PeriodicPotentialBound"
+      },
+      {
+        "name": "MD.Ch06.periodicPotentialBound_corrected",
+        "kind": "theorem",
+        "status": "已证",
+        "axioms": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "classification": null,
+        "direct_placeholder": false,
+        "source_id": "MD-6.4.4-PeriodicPotentialBound"
+      },
+      {
+        "name": "MD.Ch06.periodicPotentialBoundPrinted",
+        "kind": "theorem",
+        "status": "未证",
+        "axioms": [
+          "propext",
+          "sorryAx",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "classification": "原书疑误不证",
+        "direct_placeholder": true,
+        "source_id": "MD-6.4.4-PeriodicPotentialBound"
+      },
+      {
+        "name": "MD.Ch06.periodicPotentialBoundPrinted_counterexample",
+        "kind": "theorem",
+        "status": "已证",
+        "axioms": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "classification": null,
+        "direct_placeholder": false,
+        "source_id": "MD-6.4.4-PeriodicPotentialBound"
+      },
+      {
+        "name": "MD.Ch06.potentialNormalization",
+        "kind": "theorem",
+        "status": "已证",
+        "axioms": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "classification": null,
+        "direct_placeholder": false,
+        "source_id": "MD-6.4.4-PotentialNormalization"
+      },
+      {
+        "name": "MD.Ch06.unitLangevinModel",
+        "kind": "def",
+        "status": "定义",
+        "axioms": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "classification": null,
+        "direct_placeholder": false,
+        "source_id": "MD-6.4.4-UnitLangevinModel"
+      },
+      {
+        "name": "MD.Ch06.periodicConfiningPrinted",
+        "kind": "def",
+        "status": "定义",
+        "axioms": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "classification": null,
+        "direct_placeholder": false,
+        "source_id": "MD-6.4.4-PeriodicConfiningPrinted"
+      },
+      {
+        "name": "MD.Ch06.hamiltonianPower",
+        "kind": "def",
+        "status": "定义",
+        "axioms": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "classification": null,
+        "direct_placeholder": false,
+        "source_id": "MD-6.4.4-HamiltonianPower"
+      },
+      {
+        "name": "MD.Ch06.hamiltonianPowerCancellation",
+        "kind": "theorem",
+        "status": "已证",
+        "axioms": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "classification": null,
+        "direct_placeholder": false,
+        "source_id": "MD-6.4.4-HamiltonianPowerCancellation"
+      },
+      {
+        "name": "MD.Ch06.hamiltonianPowerMomentumDerivative",
+        "kind": "theorem",
+        "status": "已证",
+        "axioms": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "classification": null,
+        "direct_placeholder": false,
+        "source_id": "MD-6.4.4-HamiltonianPowerMomentumDerivative"
+      },
+      {
+        "name": "MD.Ch06.hamiltonianPowerMomentumLaplacian",
+        "kind": "theorem",
+        "status": "已证",
+        "axioms": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "classification": null,
+        "direct_placeholder": false,
+        "source_id": "MD-6.4.4-HamiltonianPowerMomentumLaplacian"
+      },
+      {
+        "name": "MD.Ch06.laplacianBoundPrinted",
+        "kind": "theorem",
+        "status": "未证",
+        "axioms": [
+          "propext",
+          "sorryAx",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "classification": "原书疑误不证",
+        "direct_placeholder": true,
+        "source_id": "MD-6.4.4-LaplacianBoundPrinted"
+      },
+      {
+        "name": "MD.Ch06.laplacianBoundCounterexample",
+        "kind": "theorem",
+        "status": "已证",
+        "axioms": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "classification": null,
+        "direct_placeholder": false,
+        "source_id": "MD-6.4.4-LaplacianBoundCounterexample"
+      },
+      {
+        "name": "MD.Ch06.hamiltonianPowerGenerator",
+        "kind": "theorem",
+        "status": "已证",
+        "axioms": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "classification": null,
+        "direct_placeholder": false,
+        "source_id": "MD-6.4.4-HamiltonianPowerGenerator"
+      },
+      {
+        "name": "MD.Ch06.laplacianBoundCorrect",
+        "kind": "theorem",
+        "status": "已证",
+        "axioms": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "classification": null,
+        "direct_placeholder": false,
+        "source_id": "MD-6.4.4-LaplacianBoundCorrect"
+      },
+      {
+        "name": "MD.Ch06.laplacianBoundPrinted_corrected",
+        "kind": "theorem",
+        "status": "已证",
+        "axioms": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "classification": null,
+        "direct_placeholder": false,
+        "source_id": "MD-6.4.4-LaplacianBoundCorrect"
+      },
+      {
+        "name": "MD.Ch06.lyapunovYoungBounds",
+        "kind": "theorem",
+        "status": "已证",
+        "axioms": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "classification": null,
+        "direct_placeholder": false,
+        "source_id": "MD-6.4.4-LyapunovYoungBounds"
+      },
+      {
+        "name": "MD.Ch06.lyapunovYoungBounds_corrected",
+        "kind": "theorem",
+        "status": "已证",
+        "axioms": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "classification": null,
+        "direct_placeholder": false,
+        "source_id": "MD-6.4.4-LyapunovYoungBounds"
+      },
+      {
+        "name": "MD.Ch06.lyapunovYoungBoundsPrinted",
+        "kind": "theorem",
+        "status": "未证",
+        "axioms": [
+          "propext",
+          "sorryAx",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "classification": "原书疑误不证",
+        "direct_placeholder": true,
+        "source_id": "MD-6.4.4-LyapunovYoungBounds"
+      },
+      {
+        "name": "MD.Ch06.lyapunovYoungBoundsPrinted_counterexample",
+        "kind": "theorem",
+        "status": "已证",
+        "axioms": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "classification": null,
+        "direct_placeholder": false,
+        "source_id": "MD-6.4.4-LyapunovYoungBounds"
+      },
+      {
+        "name": "MD.Ch06.langevinLyapunov",
+        "kind": "theorem",
+        "status": "已证",
+        "axioms": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "classification": null,
+        "direct_placeholder": false,
+        "source_id": "MD-6.4.4-LangevinLyapunov"
+      },
+      {
+        "name": "MD.Ch06.periodicConfiningPrinted_corrected",
+        "kind": "theorem",
+        "status": "已证",
+        "axioms": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "classification": null,
+        "direct_placeholder": false,
+        "source_id": "MD-6.4.4-LangevinLyapunov"
+      },
+      {
+        "name": "MD.Ch06.lieBracket",
+        "kind": "def",
+        "status": "定义",
+        "axioms": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "classification": null,
+        "direct_placeholder": false,
+        "source_id": "MD-6.4.4-LieBracket"
+      },
+      {
+        "name": "MD.Ch06.lieBracketProperties",
+        "kind": "theorem",
+        "status": "已证",
+        "axioms": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "classification": null,
+        "direct_placeholder": false,
+        "source_id": "MD-6.4.4-LieBracketProperties"
+      },
+      {
+        "name": "MD.Ch06.definition61",
+        "kind": "def",
+        "status": "定义",
+        "axioms": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "classification": null,
+        "direct_placeholder": false,
+        "source_id": "MD-6.4.4-Definition61"
+      },
+      {
+        "name": "MD.Ch06.parabolicNoiseBracketLevels",
+        "kind": "def",
+        "status": "定义",
+        "axioms": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "classification": null,
+        "direct_placeholder": false,
+        "source_id": "MD-6.4.4-Definition61"
+      },
+      {
+        "name": "MD.Ch06.definition61_corrected",
+        "kind": "def",
+        "status": "定义",
+        "axioms": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "classification": null,
+        "direct_placeholder": false,
+        "source_id": "MD-6.4.4-Definition61"
+      },
+      {
+        "name": "MD.Ch06.definition61Printed",
+        "kind": "def",
+        "status": "定义",
+        "axioms": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "classification": null,
+        "direct_placeholder": false,
+        "source_id": "MD-6.4.4-Definition61"
+      },
+      {
+        "name": "MD.Ch06.langevinDrift",
+        "kind": "def",
+        "status": "定义",
+        "axioms": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "classification": null,
+        "direct_placeholder": false,
+        "source_id": "MD-6.4.4-LangevinFields"
+      },
+      {
+        "name": "MD.Ch06.langevinNoise",
+        "kind": "def",
+        "status": "定义",
+        "axioms": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "classification": null,
+        "direct_placeholder": false,
+        "source_id": "MD-6.4.4-LangevinFields"
+      },
+      {
+        "name": "MD.Ch06.langevinNoiseBracket",
+        "kind": "theorem",
+        "status": "已证",
+        "axioms": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "classification": null,
+        "direct_placeholder": false,
+        "source_id": "MD-6.4.4-LangevinNoiseBracket"
+      },
+      {
+        "name": "MD.Ch06.langevinBracketIndependent",
+        "kind": "theorem",
+        "status": "已证",
+        "axioms": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "classification": null,
+        "direct_placeholder": false,
+        "source_id": "MD-6.4.4-LangevinBracketIndependent"
+      },
+      {
+        "name": "MD.Ch06.langevinHormander",
+        "kind": "theorem",
+        "status": "已证",
+        "axioms": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "classification": null,
+        "direct_placeholder": false,
+        "source_id": "MD-6.4.4-LangevinHormander"
+      },
+      {
+        "name": "MD.Ch06.langevinTransitionDensity",
+        "kind": "theorem",
+        "status": "未证",
+        "axioms": [
+          "propext",
+          "sorryAx",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "classification": "缺大型理论",
+        "direct_placeholder": true,
+        "source_id": "MD-6.4.4-LangevinTransitionDensity"
+      },
+      {
+        "name": "MD.Ch06.lemma61Printed",
+        "kind": "theorem",
+        "status": "未证",
+        "axioms": [
+          "propext",
+          "sorryAx",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "classification": "原书疑误不证",
+        "direct_placeholder": true,
+        "source_id": "MD-6.4.4-Lemma61Printed"
+      },
+      {
+        "name": "MD.Ch06.lemma61Nonempty",
+        "kind": "theorem",
+        "status": "已证",
+        "axioms": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "classification": null,
+        "direct_placeholder": false,
+        "source_id": "MD-6.4.4-Lemma61Nonempty"
+      },
+      {
+        "name": "MD.Ch06.lemma61Printed_corrected",
+        "kind": "theorem",
+        "status": "已证",
+        "axioms": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "classification": null,
+        "direct_placeholder": false,
+        "source_id": "MD-6.4.4-Lemma61Nonempty"
+      },
+      {
+        "name": "MD.Ch06.controlPath",
+        "kind": "theorem",
+        "status": "已证",
+        "axioms": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "classification": null,
+        "direct_placeholder": false,
+        "source_id": "MD-6.4.4-ControlPath"
+      },
+      {
+        "name": "MD.Ch06.controlEndpointStable",
+        "kind": "theorem",
+        "status": "已证",
+        "axioms": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "classification": null,
+        "direct_placeholder": false,
+        "source_id": "MD-6.4.4-ControlEndpointStable"
+      },
+      {
+        "name": "MD.Ch06.wienerControlTube",
+        "kind": "theorem",
+        "status": "已证",
+        "axioms": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "classification": null,
+        "direct_placeholder": false,
+        "source_id": "MD-6.4.4-WienerControlTube"
+      },
+      {
+        "name": "MD.Ch06.langevinCanonicalStationary",
+        "kind": "theorem",
+        "status": "已证",
+        "axioms": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "classification": null,
+        "direct_placeholder": false,
+        "source_id": "MD-6.4.4-LangevinCanonicalStationary"
+      },
+      {
+        "name": "MD.Ch06.langevinGeometricErgodicity",
+        "kind": "theorem",
+        "status": "未证",
+        "axioms": [
+          "propext",
+          "sorryAx",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "classification": "缺大型理论",
+        "direct_placeholder": true,
+        "source_id": "MD-6.4.4-LangevinGeometricErgodicity"
+      },
+      {
+        "name": "MD.Ch06.langevinTimeAverage",
+        "kind": "theorem",
+        "status": "未证",
+        "axioms": [
+          "propext",
+          "sorryAx",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "classification": "缺大型理论",
+        "direct_placeholder": true,
+        "source_id": "MD-6.4.4-LangevinTimeAverage"
+      },
+      {
+        "name": "MD.Ch06.weightedH1",
+        "kind": "def",
+        "status": "定义",
+        "axioms": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "classification": null,
+        "direct_placeholder": false,
+        "source_id": "MD-6.4.4-WeightedH1"
+      },
+      {
+        "name": "MD.Ch06.weightedH1Norm",
+        "kind": "theorem",
+        "status": "已证",
+        "axioms": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "classification": null,
+        "direct_placeholder": false,
+        "source_id": "MD-6.4.4-WeightedH1Norm"
+      },
+      {
+        "name": "MD.Ch06.proposition64Printed",
+        "kind": "theorem",
+        "status": "未证",
+        "axioms": [
+          "propext",
+          "sorryAx",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "classification": "原书疑误不证",
+        "direct_placeholder": true,
+        "source_id": "MD-6.4.4-Proposition64Printed"
+      },
+      {
+        "name": "MD.Ch06.proposition64Relative",
+        "kind": "theorem",
+        "status": "未证",
+        "axioms": [
+          "propext",
+          "sorryAx",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "classification": "缺大型理论",
+        "direct_placeholder": true,
+        "source_id": "MD-6.4.4-Proposition64Relative"
+      },
+      {
+        "name": "MD.Ch06.proposition64Printed_corrected",
+        "kind": "theorem",
+        "status": "未证",
+        "axioms": [
+          "propext",
+          "sorryAx",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "classification": "缺大型理论",
+        "direct_placeholder": true,
+        "source_id": "MD-6.4.4-Proposition64Relative"
+      },
+      {
+        "name": "MD.Ch06.fredholmAlternative",
+        "kind": "theorem",
+        "status": "未证",
+        "axioms": [
+          "propext",
+          "sorryAx",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "classification": "缺大型理论",
+        "direct_placeholder": true,
+        "source_id": "MD-6.4.4-FredholmAlternative"
+      },
+      {
+        "name": "MD.Ch06.backwardKernelConstants",
+        "kind": "theorem",
+        "status": "未证",
+        "axioms": [
+          "propext",
+          "sorryAx",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "classification": "缺大型理论",
+        "direct_placeholder": true,
+        "source_id": "MD-6.4.4-BackwardKernelConstants"
+      },
+      {
+        "name": "MD.Ch06.forwardKernelGibbs",
+        "kind": "theorem",
+        "status": "未证",
+        "axioms": [
+          "propext",
+          "sorryAx",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "classification": "缺大型理论",
+        "direct_placeholder": true,
+        "source_id": "MD-6.4.4-ForwardKernelGibbs"
+      },
+      {
+        "name": "MD.Ch06.weightedFunctionNorm",
+        "kind": "def",
+        "status": "定义",
+        "axioms": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "classification": null,
+        "direct_placeholder": false,
+        "source_id": "MD-6.4.4-WeightedFunctionNorm"
+      },
+      {
+        "name": "MD.Ch06.weightedVectorNorm",
+        "kind": "def",
+        "status": "定义",
+        "axioms": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "classification": null,
+        "direct_placeholder": false,
+        "source_id": "MD-6.4.4-WeightedVectorNorm"
+      },
+      {
+        "name": "MD.Ch06.kernelEvolutionRaw25",
+        "kind": "def",
+        "status": "定义",
+        "axioms": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "classification": null,
+        "direct_placeholder": false,
+        "source_id": "MD-6.4.5-KernelEvolution"
+      },
+      {
+        "name": "MD.Ch06.kernelEvolution",
+        "kind": "def",
+        "status": "定义",
+        "axioms": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "classification": null,
+        "direct_placeholder": false,
+        "source_id": "MD-6.4.5-KernelEvolution"
+      },
+      {
+        "name": "MD.Ch06.kernelAverage",
+        "kind": "def",
+        "status": "定义",
+        "axioms": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "classification": null,
+        "direct_placeholder": false,
+        "source_id": "MD-6.4.5-KernelAverage"
+      },
+      {
+        "name": "MD.Ch06.densityEvolutionMeaning",
+        "kind": "def",
+        "status": "定义",
+        "axioms": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "classification": null,
+        "direct_placeholder": false,
+        "source_id": "MD-6.4.5-DensityEvolutionMeaning"
+      },
+      {
+        "name": "MD.Ch06.kernelDuality",
+        "kind": "theorem",
+        "status": "已证",
+        "axioms": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "classification": null,
+        "direct_placeholder": false,
+        "source_id": "MD-6.4.5-KernelDuality"
+      },
+      {
+        "name": "MD.Ch06.smoothTestL2Printed",
+        "kind": "theorem",
+        "status": "未证",
+        "axioms": [
+          "propext",
+          "sorryAx",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "classification": "原书疑误不证",
+        "direct_placeholder": true,
+        "source_id": "MD-6.4.5-SmoothTestL2Printed"
+      },
+      {
+        "name": "MD.Ch06.smoothTestL2Printed_corrected",
+        "kind": "def",
+        "status": "定义",
+        "axioms": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "classification": null,
+        "direct_placeholder": false,
+        "source_id": "MD-6.4.5-SmoothTestL2Printed"
+      },
+      {
+        "name": "MD.Ch06.complexInitialDensity",
+        "kind": "def",
+        "status": "定义",
+        "axioms": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "classification": null,
+        "direct_placeholder": false,
+        "source_id": "MD-6.4.5-ComplexInitialDensity"
+      },
+      {
+        "name": "MD.Ch06.complexInitialDensity_corrected",
+        "kind": "def",
+        "status": "定义",
+        "axioms": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "classification": null,
+        "direct_placeholder": false,
+        "source_id": "MD-6.4.5-ComplexInitialDensity"
+      },
+      {
+        "name": "MD.Ch06.langevinForwardSemigroupMeaning",
+        "kind": "def",
+        "status": "定义",
+        "axioms": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "classification": null,
+        "direct_placeholder": false,
+        "source_id": "MD-6.4.5-LangevinForwardSemigroupMeaning"
+      },
+      {
+        "name": "MD.Ch06.complexEigenmodeDecay",
+        "kind": "theorem",
+        "status": "未证",
+        "axioms": [
+          "propext",
+          "sorryAx",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "classification": "缺大型理论",
+        "direct_placeholder": true,
+        "source_id": "MD-6.4.5-ComplexEigenmodeDecay"
+      },
+      {
+        "name": "MD.Ch06.naturalHistory25",
+        "kind": "def",
+        "status": "定义",
+        "axioms": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "classification": null,
+        "source_id": null,
+        "direct_placeholder": false
+      },
+      {
+        "name": "MD.Ch06.gridItoQualification25",
+        "kind": "def",
+        "status": "定义",
+        "axioms": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "classification": null,
+        "source_id": null,
+        "direct_placeholder": false
+      },
+      {
+        "name": "MD.Ch06.vectorGridItoQualification25",
+        "kind": "def",
+        "status": "定义",
+        "axioms": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "classification": null,
+        "source_id": null,
+        "direct_placeholder": false
+      },
+      {
+        "name": "MD.Ch06.langevinKernelQualification25",
+        "kind": "def",
+        "status": "定义",
+        "axioms": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "classification": null,
+        "source_id": null,
+        "direct_placeholder": false
+      }
+    ],
+    "counts": {
+      "定义": 123,
+      "已证": 109,
+      "未证": 89
+    },
+    "unproved_reasons": {
+      "原书疑误不证": 21,
+      "时间盒止": 18,
+      "缺大型理论": 50
+    },
+    "evidence": "blueprint/ch06/closeout25/FINAL_COMPILE.log"
   }
 }

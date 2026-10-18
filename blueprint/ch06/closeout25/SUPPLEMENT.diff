@@ -1,0 +1,411 @@
+--- before
++++ after
+@@ -422,6 +422,21 @@
+ [EXTRA] [EXTRA]正kB,T、实际C¹ H,G、Gibbs及两个加权可观测量可积，分母严格正；原|Ge⁻βH|<∞解释为统一有界C≥0，不采用仅逐点有限的空洞条件。 [EXTRA] 25号：所交为显式加强条件的温度恒等式；原证明除以球体积后取极限只给0=0，保留原证明并登记缺口；原下标和体积元依网站原页修订，未认证原论证。
+ -/
+ theorem proposition61 {Nc : ℕ}
++    (H : SymplecticCoordinates Nc → ℝ) (G : SymplecticCoordinates Nc → SymplecticCoordinates Nc)
++    (kB T : ℝ) (hkB : 0 < kB) (hT : 0 < T) (hH : ContDiff ℝ 1 H) (hG : ContDiff ℝ 1 G)
++    (hρI : Integrable (textbookHamiltonianGibbsWeight H (kB * T)⁻¹))
++    (hdivI : Integrable (fun z ↦ textbookDivergence G z * textbookHamiltonianGibbsWeight H (kB * T)⁻¹ z))
++    (henergyI : Integrable (fun z ↦ textbookLieDerivative G H z * textbookHamiltonianGibbsWeight H (kB * T)⁻¹ z))
++    (C : ℝ) (hC : 0 ≤ C)
++    (hbound : ∀ z, ‖textbookHamiltonianGibbsWeight H (kB * T)⁻¹ z • G z‖ ≤ C)
++    (hpos : 0 < textbookCanonicalAverage H (kB * T)⁻¹ (textbookDivergence G)) :
++    kB * T =
++      textbookCanonicalAverage H (kB * T)⁻¹ (textbookLieDerivative G H) /
++        textbookCanonicalAverage H (kB * T)⁻¹ (textbookDivergence G) := by
++  apply MolecularDynamics.proposition_6_1 <;> assumption
++
++/-- 修正版/限定版：原文公式或定义的正确限定陈述；证明/域解释缺口见ERRATA。复制独立证明体，不从原文版占位推导。 -/
++theorem proposition61_corrected {Nc : ℕ}
+     (H : SymplecticCoordinates Nc → ℝ) (G : SymplecticCoordinates Nc → SymplecticCoordinates Nc)
+     (kB T : ℝ) (hkB : 0 < kB) (hT : 0 < T) (hH : ContDiff ℝ 1 H) (hG : ContDiff ℝ 1 G)
+     (hρI : Integrable (textbookHamiltonianGibbsWeight H (kB * T)⁻¹))
+@@ -667,7 +682,7 @@
+     (MolecularDynamics.Chapter06Review.diffusiveWalk J dt (n+1) sample - MolecularDynamics.Chapter06Review.diffusiveWalk J dt n sample)
+ 
+ /-- source_id: MD-6.2.1-WalkIncrement · definition · §6.2.1 · 印刷p.225–226 / PDFp.246–247 [EXTRA] 25号：仅覆盖一步差分定义；dx·J、扩散缩放等式及独立增量尚未在本条声明。
+--/
++[EXTRA] 25号：仅覆盖一步差分定义；dx·J、扩散缩放等式及独立增量尚未在本条声明。 -/
+ def walkIncrement {Ω : Type*} (J : ℕ → Ω → ℝ) (dx : ℝ) (n : ℕ) (sample : Ω) : ℝ :=
+   MolecularDynamics.Chapter06Review.randomWalk J dx (n+1) sample - MolecularDynamics.Chapter06Review.randomWalk J dx n sample
+ 
+@@ -800,8 +815,7 @@
+   sorry
+ 
+ /-- source_id: MD-6.2.1-StateMarkovMeaning · definition · §6.2.1 · 印刷p.227 / PDFp.248
+-[EXTRA] [EXTRA]明确以真实当前状态σ(Xs)及过去history作条件期望；仅定义完整Markov意义，不计任意过程满足它已证。 [EXTRA] 25号：原版及coarseMarkovPrinted_corrected同时要求概率空间、X各时可测和history严格等于全部过去生成的自然过滤；排除任意history伪Markov。
+--/
++[EXTRA] 25号：原版及coarseMarkovPrinted_corrected同时要求概率空间、X各时可测和history严格等于全部过去生成的自然过滤；排除任意history伪Markov。 -/
+ def stateMarkovMeaning {Ω : Type*} [MeasurableSpace Ω]
+     (P : Measure Ω) (X : ℝ≥0 → Ω → ℝ) (history : ℝ≥0 → MeasurableSpace Ω) : Prop :=
+   IsProbabilityMeasure P ∧ (∀ t, Measurable (X t)) ∧
+@@ -831,6 +845,14 @@
+     (𝓝 (∫ t in (0 : ℝ)..T, g t)) := by
+   sorry
+ 
++/-- 修正版/限定版：原文公式或定义的正确限定陈述；证明/域解释缺口见ERRATA。复制独立证明体，不从原文版占位推导。 -/
++theorem riemannTags_corrected : ∀ (g : ℝ → ℝ) (T : ℝ) (tags : ℕ → ℕ → ℝ),
++  0 ≤ T → ContinuousOn g (Icc 0 T) →
++  (∀ K k : ℕ, 0 < K → k < K → tags K k ∈ Icc ((k : ℝ)*T/K) (((k : ℝ)+1)*T/K)) →
++  Tendsto (fun K : ℕ ↦ ∑ k ∈ Finset.range K, g (tags K k)*(T/K)) atTop
++    (𝓝 (∫ t in (0 : ℝ)..T, g t)) := by
++  sorry
++
+ /-- source_id: MD-6.2.2-ItoLeftSum · definition · §6.2.2 · 印刷p.228 / PDFp.249 -/
+ def itoLeftSum {Ω : Type*} (W g : ℝ → Ω → ℝ) (T : ℝ) (K : ℕ) (sample : Ω) : ℝ :=
+   ∑ k ∈ Finset.range K, g ((k : ℝ) * T / K) sample *
+@@ -852,8 +874,7 @@
+     (MolecularDynamics.Chapter06Review.itoLeftSum W g T K sample-Y sample)^2 ∂P) atTop (𝓝 0)
+ 
+ /-- source_id: MD-6.2.2-WeakItoAlias · definition · §6.2.2 · 印刷p.228–229 / PDFp.249–250
+-[ERRATUM?] 既有Review定义仅要求Y∈L²及误差Bochner积分收敛，未要求各有限和L²，非可积默认积分0会掩盖错误；不得用于新PASS SDE证明。 [EXTRA] 25号：采用既有strictItoIntegral的全部有限和L²资格；极限及平方误差的可积性不再被Bochner默认零掩盖。正式库旧辅助保持冻结。
+--/
++[EXTRA] 25号：采用既有strictItoIntegral的全部有限和L²资格；极限及平方误差的可积性不再被Bochner默认零掩盖。正式库旧辅助保持冻结。 -/
+ def weakItoAlias {Ω : Type*} [MeasurableSpace Ω] (P : Measure Ω)
+     (W g : ℝ → Ω → ℝ) (T : ℝ) (Y : Ω → ℝ) : Prop :=
+   (∀ K : ℕ, MemLp (MolecularDynamics.Chapter06Review.itoLeftSum W g T K) 2 P) ∧
+@@ -953,6 +974,14 @@
+ [EXTRA] [EXTRA]真实时间中点和、L²见证、整体均方极限、AE求值；原O(√δt)单步启发不足，正式整体均方误差证明不直接丢弃逐步残项。 [EXTRA] 25号：仅覆盖真实时间中点和的均方结论；原单步O(√dt)推理未控制总误差，不能当成完整证明；所需Brownian桥残差估计未补建。
+ -/
+ theorem selfStratonovichIntegral {Ω : Type*} [MeasurableSpace Ω] {P : Measure Ω} {W : ℝ≥0 → Ω → ℝ}
++    (hW : IsPreBrownianReal W P) (T : ℝ≥0) :
++    ∃ Y : Ω → ℝ, MemLp Y 2 P ∧
++      Tendsto (fun K : ℕ ↦ ∫ sample, (textbookWienerMidpointSum W T K sample - Y sample) ^ 2 ∂P)
++        atTop (𝓝 0) ∧ ∀ᵐ sample ∂P, Y sample = W T sample ^ 2 / 2 := by
++  apply MolecularDynamics.textbookWienerSelfStratonovichIntegral_exists <;> assumption
++
++/-- 修正版/限定版：原文公式或定义的正确限定陈述；证明/域解释缺口见ERRATA。复制独立证明体，不从原文版占位推导。 -/
++theorem selfStratonovichIntegral_corrected {Ω : Type*} [MeasurableSpace Ω] {P : Measure Ω} {W : ℝ≥0 → Ω → ℝ}
+     (hW : IsPreBrownianReal W P) (T : ℝ≥0) :
+     ∃ Y : Ω → ℝ, MemLp Y 2 P ∧
+       Tendsto (fun K : ℕ ↦ ∫ sample, (textbookWienerMidpointSum W T K sample - Y sample) ^ 2 ∂P)
+@@ -1005,8 +1034,8 @@
+   ∀ T : ℝ, 0 ≤ T → strictItoIntegral P W (fun s _ ↦ g s) T (Y T)
+ 
+ /-- source_id: MD-6.2.2-DeterministicStrobePrinted · unnumbered_claim · §6.2.2 · 印刷p.231 / PDFp.252
+-[ERRATUM?] 生成增量使用σ(tn)而非相邻时刻方差差；单时边际法则也不能确定同一过程联合分布。保持印刷式，不以独立边际偷换过程。 [EXTRA] 25号：Printed忠实保留原书N(0,σ(t_n))累计尺度，将标准差平方后传给gaussianReal方差参数；该印刷增量说法有疑。独立修正版保留相邻区间∫g²及整族独立性，以Y(times 0)为初始观测，不假设times 0=0。
+--/
++[ERRATUM?] 原书疑误、原文版与独立修正版见CH06_ERRATA。
++[EXTRA] 25号：Printed忠实保留原书N(0,σ(t_n))累计尺度，将标准差平方后传给gaussianReal方差参数；该印刷增量说法有疑。独立修正版保留相邻区间∫g²及整族独立性，以Y(times 0)为初始观测，不假设times 0=0。 -/
+ theorem deterministicStrobePrinted : ∀ {Ω : Type*} [MeasurableSpace Ω] (P : Measure Ω)
+     (W Y : ℝ → Ω → ℝ) (g : ℝ → ℝ) (times : ℕ → ℝ),
+   IsPreBrownianReal (fun t sample ↦ W t sample) P → ContDiff ℝ 1 g →
+@@ -1072,8 +1101,7 @@
+       (fun sample ↦ X T sample-x0-∫ s in 0..T, a (X s sample) s)
+ 
+ /-- source_id: MD-6.3-VectorSDE · (6.15)–(6.16) · §6.3 · 印刷p.232–233 / PDFp.253–254
+-[EXTRA] [EXTRA]完整状态及时间依赖矩阵B(Z,t)，每坐标真实严格Ito积分与漂移；没有缩成常矩阵加性特例。 [EXTRA] 25号：补真实标准向量Wiener资格；该结构给联合Gaussian、全部跨时协方差及连续路径，并有整坐标路径独立定理，不仅是同一时刻独立。其余方程关系保持。
+--/
++[EXTRA] 25号：补真实标准向量Wiener资格；该结构给联合Gaussian、全部跨时协方差及连续路径，并有整坐标路径独立定理，不仅是同一时刻独立。其余方程关系保持。 -/
+ def strictVectorSDE {Ω : Type*} [MeasurableSpace Ω] {n r : ℕ} (P : Measure Ω)
+     (W : ℝ → Ω → (Fin r → ℝ)) (X : ℝ → Ω → (Fin n → ℝ))
+     (a : (Fin n → ℝ) → ℝ → (Fin n → ℝ))
+@@ -1088,8 +1116,7 @@
+       (∀ᵐ sample ∂P, X T sample i-x0 i-(∫ s in 0..T, a (X s sample) s i)=∑ j, integrals j sample)
+ 
+ /-- source_id: MD-6.3.1-ScalarItoFormula · (6.17) · §6.3.1 · 印刷p.233 / PDFp.254
+-[EXTRA] [EXTRA]原C²φ、真实PreBrownian和严格积分方程；完整漂移、噪声、二阶Ito校正；适应/可积技术资格保留。 [EXTRA] 25号：补X联合可测及自然过滤适应、被积过程全部网格和L²与局部均方时间Hölder资格。仅时间积分平方可积的旧签名前提不足且有网站反例；新签名不假设所求积分公式/极限，仍缺一般Itô理论，不证明。Time版与_corrected同步，漏dt原文形式单列保留。
+--/
++[EXTRA] 25号：补X联合可测及自然过滤适应、被积过程全部网格和L²与局部均方时间Hölder资格。仅时间积分平方可积的旧签名前提不足且有网站反例；新签名不假设所求积分公式/极限，仍缺一般Itô理论，不证明。Time版与_corrected同步，漏dt原文形式单列保留。 -/
+ theorem scalarItoFormula :
+   ∀ {Ω : Type*} [MeasurableSpace Ω] (P : Measure Ω)
+     (W X : ℝ → Ω → ℝ) (a b : ℝ → ℝ → ℝ) (x0 : ℝ) (φ : ℝ → ℝ),
+@@ -1122,13 +1149,14 @@
+   sorry
+ 
+ /-- source_id: MD-6.3.1-TimeItoFormula · (6.18) · §6.3.1 · 印刷p.234 / PDFp.255
+-[EXTRA] [EXTRA]Lean保留完整积分陈述，以φ_t dt的正确时间积分表达；原无dt的字面式仍在逐字JSON，不宣称字面式已证。
+-[ERRATUM?] 印刷φ_t(X,t)项漏dt，字面微分式不具一致类型；补dt需要网站审计裁定。 [EXTRA] 25号：补X联合可测及自然过滤适应、被积过程全部网格和L²与局部均方时间Hölder资格。仅时间积分平方可积的旧签名前提不足且有网站反例；新签名不假设所求积分公式/极限，仍缺一般Itô理论，不证明。Time版与_corrected同步，漏dt原文形式单列保留。
+--/
++[ERRATUM?] 原书疑误、原文版与独立修正版见CH06_ERRATA。
++[EXTRA] 25号：补X联合可测及自然过滤适应、被积过程全部网格和L²与局部均方时间Hölder资格。仅时间积分平方可积的旧签名前提不足且有网站反例；新签名不假设所求积分公式/极限，仍缺一般Itô理论，不证明。Time版与_corrected同步，漏dt原文形式单列保留。 -/
+ theorem timeItoFormula :
+   ∀ {Ω : Type*} [MeasurableSpace Ω] (P : Measure Ω)
+     (W X : ℝ → Ω → ℝ) (a b : ℝ → ℝ → ℝ) (x0 : ℝ) (φ : ℝ×ℝ → ℝ),
+-  IsPreBrownianReal (fun t sample ↦ W t sample) P → strictScalarSDE P W X a b x0 → ContDiff ℝ 2 φ →
++  IsPreBrownianReal (fun t sample ↦ W t sample) P → strictScalarSDE P W X a b x0 →
++  ContDiff ℝ 1 (fun w : ℝ×ℝ ↦ a w.1 w.2) →
++  ContDiff ℝ 1 (fun w : ℝ×ℝ ↦ b w.1 w.2) → ContDiff ℝ 2 φ →
+   MolecularDynamics.Chapter06Review.adaptedSquareIntegrand P W (fun s sample ↦ fderiv ℝ φ (X s sample,s) (1,0)*b (X s sample) s) →
+   Measurable (Function.uncurry X) →
+   (∀ t, 0 ≤ t → @Measurable Ω ℝ (naturalHistory25 W t) inferInstance (X t)) →
+@@ -1144,7 +1172,9 @@
+ theorem timeItoFormula_corrected :
+   ∀ {Ω : Type*} [MeasurableSpace Ω] (P : Measure Ω)
+     (W X : ℝ → Ω → ℝ) (a b : ℝ → ℝ → ℝ) (x0 : ℝ) (φ : ℝ×ℝ → ℝ),
+-  IsPreBrownianReal (fun t sample ↦ W t sample) P → strictScalarSDE P W X a b x0 → ContDiff ℝ 2 φ →
++  IsPreBrownianReal (fun t sample ↦ W t sample) P → strictScalarSDE P W X a b x0 →
++  ContDiff ℝ 1 (fun w : ℝ×ℝ ↦ a w.1 w.2) →
++  ContDiff ℝ 1 (fun w : ℝ×ℝ ↦ b w.1 w.2) → ContDiff ℝ 2 φ →
+   MolecularDynamics.Chapter06Review.adaptedSquareIntegrand P W (fun s sample ↦ fderiv ℝ φ (X s sample,s) (1,0)*b (X s sample) s) →
+   Measurable (Function.uncurry X) →
+   (∀ t, 0 ≤ t → @Measurable Ω ℝ (naturalHistory25 W t) inferInstance (X t)) →
+@@ -1199,8 +1229,7 @@
+   sorry
+ 
+ /-- source_id: MD-6.3.2-OUVarianceIntegral · unnumbered_claim · §6.3.2 · 印刷p.235 / PDFp.256
+-[EXTRA] [EXTRA]γ>0使分母非零；随机变量完整Gaussian law在Prop6.3和OULawCorrect保留。 [EXTRA] 25号：仅覆盖确定性指数积分求值；随机积分的Gaussian法则、均值及方差由其他条目承接，本条不声称覆盖。
+--/
++[EXTRA] 25号：仅覆盖确定性指数积分求值；随机积分的Gaussian法则、均值及方差由其他条目承接，本条不声称覆盖。 -/
+ theorem ouVarianceIntegral : ∀ (γ T : ℝ), 0 < γ → 0 ≤ T →
+   (∫ s in (0 : ℝ)..T, Real.exp (2*γ*s))=(Real.exp (2*γ*T)-1)/(2*γ) := by
+   intro γ T hγ hT
+@@ -1218,8 +1247,7 @@
+   ring
+ 
+ /-- source_id: MD-6.3.2-OULawPrinted · unnumbered_claim · §6.3.2 · 印刷p.235 / PDFp.256
+-[ERRATUM?] 原页根号只覆盖(2γ)⁻¹，(1−e⁻²γt)漏在根号内；方差因此被错误平方。单时分布等价不确定整个过程耦合。 [EXTRA] 25号：PDF256/印刷235已目视核对：根号覆盖完整(2γ)⁻¹(1−e^(−2γt))。Printed方差改σ²(1−e^(−2γT))/(2γ)，此前根号范围是转录错误，撤销原书疑误归因。
+--/
++[EXTRA] 25号：PDF256/印刷235已目视核对：根号覆盖完整(2γ)⁻¹(1−e^(−2γt))。Printed方差改σ²(1−e^(−2γT))/(2γ)，此前根号范围是转录错误，撤销原书疑误归因。 -/
+ theorem ouLawPrinted : ∀ {Ω : Type*} [MeasurableSpace Ω] (P : Measure Ω)
+     (W X : ℝ → Ω → ℝ) (γ σ x0 T : ℝ),
+   IsPreBrownianReal (fun t sample ↦ W t sample) P → strictOUProcess P W X γ σ x0 →
+@@ -1256,8 +1284,7 @@
+   sorry
+ 
+ /-- source_id: MD-6.3.2-MomentumOU · (6.20)–(6.21) · §6.3.2 · 印刷p.235 / PDFp.256
+-[EXTRA] [EXTRA]全部正对角质量mi、γ>0、θ=kBT>0和真实各坐标严格积分关系；独立多维W资格另给，不把单位质量桥接当一般质量已证。 [EXTRA] 25号：补真实标准向量Wiener资格；该结构给联合Gaussian、全部跨时协方差及连续路径，并有整坐标路径独立定理，不仅是同一时刻独立。其余方程关系保持。
+--/
++[EXTRA] 25号：补真实标准向量Wiener资格；该结构给联合Gaussian、全部跨时协方差及连续路径，并有整坐标路径独立定理，不仅是同一时刻独立。其余方程关系保持。 -/
+ def momentumOU {Ω : Type*} [MeasurableSpace Ω] {n : ℕ} (P : Measure Ω)
+     (W p : ℝ → Ω → MolecularDynamics.Chapter06Review.V n) (m : MolecularDynamics.Chapter06Review.V n) (γ θ : ℝ) (p0 : MolecularDynamics.Chapter06Review.V n) : Prop :=
+   textbookIsWienerVector (fun t sample ↦ W t sample) P ∧
+@@ -1598,8 +1625,7 @@
+   simpa only [Pi.mul_apply, mul_comm, mul_left_comm, mul_assoc, mul_neg, integral_neg] using he
+ 
+ /-- source_id: MD-6.3.6-FPDiffusionPrinted · unnumbered_claim · §6.3.6 · 印刷p.242 / PDFp.263
+-[ERRATUM?] 原页两次IBP后仍打印负号；正确应正号，且(6.39)最终算子已经使用正号。 [EXTRA] 25号：PDF263/印刷242已目视核对：两次分部积分右端是正号并含(x,t)。删除错误外负号，Printed使用已有独立分部积分证明；撤销虚假原书疑误，旧_corrected名字仅兼容保留。
+--/
++[EXTRA] 25号：PDF263/印刷242已目视核对：两次分部积分右端是正号并含(x,t)。删除错误外负号，Printed使用已有独立分部积分证明；撤销虚假原书疑误，旧_corrected名字仅兼容保留。 -/
+ theorem fpDiffusionPrinted : ∀ (b ρ φ : ℝ → ℝ),
+   ContDiff ℝ 2 b → ContDiff ℝ 2 ρ → ContDiff ℝ 2 φ → HasCompactSupport φ →
+   (∫ x, b x^2*deriv (deriv φ) x*ρ x)=
+@@ -1762,7 +1788,7 @@
+   sorry
+ 
+ /-- source_id: MD-6.3.6-ZeroNoise · unnumbered_claim · §6.3.6 · 印刷p.242 / PDFp.263 [EXTRA] 25号：仅覆盖生成元和前向算子的零扩散代数简化；SDE解到ODE积分方程及经典导数桥接未覆盖。
+--/
++[EXTRA] 25号：仅覆盖生成元和前向算子的零扩散代数简化；SDE解到ODE积分方程及经典导数桥接未覆盖。 -/
+ theorem zeroNoise :
+   ∀ (a f ρ : ℝ → ℝ) (x : ℝ),
+   MolecularDynamics.Chapter06Review.scalarGenerator a (fun _ ↦ 0) f x=a x*deriv f x ∧
+@@ -1773,8 +1799,7 @@
+   · simp [MolecularDynamics.Chapter06Review.scalarForward]
+ 
+ /-- source_id: MD-6.3.7-VectorIto · (6.40)–(6.41) · §6.3.7 · 印刷p.243 / PDFp.264
+-[EXTRA] [EXTRA]按本节实际常矩阵B范围；真实全部坐标严格Ito积分与Hessian/trace完整校正，未缩成仅漂移定义。 [EXTRA] 25号：改为共同向量自然过滤上的适应性，补X联合可测、各被积过程全部左和L²及局部均方时间资格；strictVectorSDE已含整族Wiener资格。原文相隔公式按网站corrected_json恢复连接文本。仍缺一般多维Itô理论。
+--/
++[EXTRA] 25号：改为共同向量自然过滤上的适应性，补X联合可测、各被积过程全部左和L²及局部均方时间资格；strictVectorSDE已含整族Wiener资格。原文相隔公式按网站corrected_json恢复连接文本。仍缺一般多维Itô理论。 -/
+ theorem vectorIto : ∀ {Ω : Type*} [MeasurableSpace Ω] {n r : ℕ} (P : Measure Ω)
+     (W : ℝ → Ω → (Fin r → ℝ)) (X : ℝ → Ω → (Fin n → ℝ))
+     (a : (Fin n → ℝ) → (Fin n → ℝ)) (B : Matrix (Fin n) (Fin r) ℝ)
+@@ -2074,16 +2099,29 @@
+     (fun y ↦ φ (cylinderCoordinates y)) z
+ 
+ /-- source_id: MD-6.4.2-CylinderForwardPrinted · definition · §6.4.2 · 印刷p.247 / PDFp.268
+-[EXTRA] [EXTRA]周期lift中的完整实际负散度与错误φ扩散，正确ρ算子已有VectorForward定义。
+-[ERRATUM?] 印刷forward密度算子仍写φ″，应ρ″；本条保留两个不同对象的字面表达，不宣称其是密度演化算子。 [EXTRA] 25号：Printed补原页1/2，保留印刷φ而不静默改ρ；独立corrected采用实际周期lift的前向密度表达式，与VectorForward相同。
+--/
++[ERRATUM?] 原书疑误、原文版与独立修正版见CH06_ERRATA。
++[EXTRA] 25号：Printed补原页1/2，保留印刷φ而不静默改ρ；独立corrected采用实际周期lift的前向密度表达式，与VectorForward相同。 -/
+ def cylinderForwardPrinted {n r : ℕ} (b₀ : (Fin n → ℝ) → (Fin n → ℝ))
+     (B : Matrix (Fin n) (Fin r) ℝ) (ρ φ : (Fin n → ℝ) → ℝ) (x : Fin n → ℝ) : ℝ :=
+   -(∑ i, fderiv ℝ (fun z ↦ b₀ z i*ρ z) x (Pi.single i 1)) +
+     MolecularDynamics.Chapter06Review.vectorDiffusion B φ x / 2
+ 
++/-- 修正版：真正环面×动量圆柱空间的前向表达式，使用周期lift方向导数。
++原Euclidean坐标辅助cylinderForwardPrinted_corrected另保留；本定义不声称密度存在。 -/
++def cylinderForwardPeriodic_corrected {n r : ℕ}
++    (a : textbookLangevinPeriodicPhase n → (Fin n ⊕ Fin n → ℝ))
++    (B : Matrix (Fin n ⊕ Fin n) (Fin r) ℝ)
++    (ρ : textbookLangevinPeriodicPhase n → ℝ) (x : textbookLangevinPeriodicPhase n) : ℝ :=
++  -(∑ i : Fin n ⊕ Fin n, textbookLangevinPeriodicDirectionalDerivative
++      (fun y ↦ a y i*ρ y) (textbookLangevinCanonicalCoordinateDirection i) x) +
++    (∑ j : Fin r, ∑ i : Fin n ⊕ Fin n, ∑ k : Fin n ⊕ Fin n,
++      B i j*B k j*textbookLangevinPeriodicDirectionalDerivative
++        (textbookLangevinPeriodicDirectionalDerivative ρ (textbookLangevinCanonicalCoordinateDirection k))
++        (textbookLangevinCanonicalCoordinateDirection i) x)/2
++
++
+ /-- source_id: MD-6.4.2-StationaryDensity · definition · §6.4.2 · 印刷p.247 / PDFp.268 [EXTRA] 25号：保留总化平稳权重stationaryWeightRaw25作辅助；stationaryDensity补可测、非负、可积及体积积分1后才要求前向算子为零。
+--/
++[EXTRA] 25号：保留总化平稳权重stationaryWeightRaw25作辅助；stationaryDensity补可测、非负、可积及体积积分1后才要求前向算子为零。 -/
+ def stationaryWeightRaw25 {n r : ℕ} (a : (Fin n → ℝ) → (Fin n → ℝ))
+     (B : Matrix (Fin n) (Fin r) ℝ) (ρ : (Fin n → ℝ) → ℝ) : Prop :=
+   ∀ x, MolecularDynamics.Chapter06Review.vectorForward a B ρ x=0
+@@ -2185,6 +2223,21 @@
+   have hc := mul_left_cancel₀ (inv_ne_zero hz) hs
+   simpa [brownianWeightedInner, textbookConfigurationGibbsWeight] using hc
+ 
++/-- 修正版/限定版：原文公式或定义的正确限定陈述；证明/域解释缺口见ERRATA。复制独立证明体，不从原文版占位推导。 -/
++theorem brownianSymmetry_corrected {Nc : ℕ} (m : Fin Nc → ℝ)
++    (U : (Fin Nc → ℝ) → ℝ) (β : ℝ) (hβ : β ≠ 0)
++    (f g : (Fin Nc → ℝ) → ℝ)
++    (hU : ContDiff ℝ ∞ U) (hf : ContDiff ℝ ∞ f) (hg : ContDiff ℝ ∞ g)
++    (hPU : textbookUnitPeriodicPotential U) (hPf : textbookUnitPeriodicPotential f)
++    (hPg : textbookUnitPeriodicPotential g) :
++    brownianWeightedInner U β f (textbookBrownianGenerator m U β g) =
++      brownianWeightedInner U β (textbookBrownianGenerator m U β f) g := by
++  have hs := textbookBrownianGenerator_inner_symmetric m U β hβ f g hU hf hg hPU hPf hPg
++  unfold textbookConfigurationInner at hs
++  have hz := (textbookConfigurationPartition_pos U hU β).ne'
++  have hc := mul_left_cancel₀ (inv_ne_zero hz) hs
++  simpa [brownianWeightedInner, textbookConfigurationGibbsWeight] using hc
++
+ /-- source_id: MD-6.4.3-BrownianNonpositive · unnumbered_claim · §6.4.3 · 印刷p.250 / PDFp.271
+ [EXTRA] [EXTRA]正质量与β>0，未归一配对；本条结论精确保留≤0，原negative definite术语错误另记录。
+ [ERRATUM?] 常数属于核，≤0只证明半负定，不能升级严格负定。 [EXTRA] 25号：原文版忠实性与数学疑误分开；补齐所交条目所属的现有_corrected完整签名，不从repair_log名称推断网站已通过修正版。
+@@ -2233,6 +2286,16 @@
+     ℓ ≤ 0 := by
+   exact MolecularDynamics.textbookBrownianGenerator_real_eigenvalue_nonpos m hm U β hβ f hU hf hPU hPf hne ℓ heig
+ 
++/-- 修正版/限定版：原文公式或定义的正确限定陈述；证明/域解释缺口见ERRATA。复制独立证明体，不从原文版占位推导。 -/
++theorem brownianRealEigenvalue_corrected {Nc : ℕ} (m : Fin Nc → ℝ)
++    (hm : ∀ i, 0 < m i) (U : (Fin Nc → ℝ) → ℝ) (β : ℝ) (hβ : 0 < β)
++    (f : (Fin Nc → ℝ) → ℝ) (hU : ContDiff ℝ ∞ U) (hf : ContDiff ℝ ∞ f)
++    (hPU : textbookUnitPeriodicPotential U) (hPf : textbookUnitPeriodicPotential f)
++    (hne : ¬ f =ᵐ[volume.restrict (textbookConfigurationCube Nc)] 0)
++    (ℓ : ℝ) (heig : ∀ q, textbookBrownianGenerator m U β f q = ℓ * f q) :
++    ℓ ≤ 0 := by
++  exact MolecularDynamics.textbookBrownianGenerator_real_eigenvalue_nonpos m hm U β hβ f hU hf hPU hPf hne ℓ heig
++
+ /-- source_id: MD-6.4.3-BrownianClosedSelfAdjoint · unnumbered_claim · §6.4.3 · 印刷p.249–250 / PDFp.270–271
+ [EXTRA] [EXTRA]使用现成实际Gibbs复L²闭实现及完整adjoint域；原C₀²核心对称不等于闭自伴。权重归一不改变自伴关系。 [EXTRA] 25号：明确采用周期紧环面的Gibbs L²图闭包/最大复图实现；此域修正替换原C₀²核心域，不能把核心上的形式对称当原域自伴，待人工签核。
+ -/
+@@ -2242,6 +2305,13 @@
+     IsSelfAdjoint (textbookBrownianGibbsComplexOperator m hm U hU hPU β hβ) := by
+   apply MolecularDynamics.textbookBrownianGibbsComplexOperator_isSelfAdjoint <;> assumption
+ 
++/-- 修正版/限定版：原文公式或定义的正确限定陈述；证明/域解释缺口见ERRATA。复制独立证明体，不从原文版占位推导。 -/
++theorem brownianClosedSelfAdjoint_corrected {Nc : ℕ} (m : Fin Nc → ℝ) (hm : ∀ i, 0 < m i)
++    (U : (Fin Nc → ℝ) → ℝ) (hU : ContDiff ℝ ∞ U)
++    (hPU : textbookUnitPeriodicPotential U) (β : ℝ) (hβ : 0 < β) :
++    IsSelfAdjoint (textbookBrownianGibbsComplexOperator m hm U hU hPU β hβ) := by
++  apply MolecularDynamics.textbookBrownianGibbsComplexOperator_isSelfAdjoint <;> assumption
++
+ /-- source_id: MD-6.4.3-BrownianCompactResolvent · unnumbered_claim · §6.4.3 · 印刷p.250 / PDFp.271
+ [EXTRA] [EXTRA]实际Gibbs复L²闭实现的(1−L)⁻¹；全部离散谱子结论另条保留，未从本条自动声称原C₀²域自伴。 [EXTRA] 25号：仅断言紧torus上的闭实现具有紧预解式；原一般C₀²措辞未覆盖，域与紧配置假设需人工签核。
+ -/
+@@ -2251,9 +2321,15 @@
+     IsCompactOperator (textbookBrownianGibbsComplexResolvent m hm U hU hPU β hβ) := by
+   apply MolecularDynamics.textbookBrownianGibbsComplexResolvent_isCompact <;> assumption
+ 
++/-- 修正版/限定版：原文公式或定义的正确限定陈述；证明/域解释缺口见ERRATA。复制独立证明体，不从原文版占位推导。 -/
++theorem brownianCompactResolvent_corrected {Nc : ℕ} (m : Fin Nc → ℝ) (hm : ∀ i, 0 < m i)
++    (U : (Fin Nc → ℝ) → ℝ) (hU : ContDiff ℝ ∞ U)
++    (hPU : textbookUnitPeriodicPotential U) (β : ℝ) (hβ : 0 < β) :
++    IsCompactOperator (textbookBrownianGibbsComplexResolvent m hm U hU hPU β hβ) := by
++  apply MolecularDynamics.textbookBrownianGibbsComplexResolvent_isCompact <;> assumption
++
+ /-- source_id: MD-6.4.3-BrownianDiscreteSpectrum · unnumbered_claim · §6.4.3 · 印刷p.250 / PDFp.271
+-[EXTRA] [EXTRA]实际闭Gibbs复L²域的全谱，非另选某有限模式；包含可数、实值与每个点孤立。 [EXTRA] 25号：保留已证可数/实谱/孤立子句，新增“每谱点为特征值”的完整短陈述，尚未证明；有限重数与无有限聚点未冒称覆盖。
+--/
++[EXTRA] 25号：保留已证可数/实谱/孤立子句，新增“每谱点为特征值”的完整短陈述，尚未证明；有限重数与无有限聚点未冒称覆盖。 -/
+ theorem brownianDiscreteSpectrum {Nc : ℕ} (m : Fin Nc → ℝ) (hm : ∀ i, 0 < m i)
+     (U : (Fin Nc → ℝ) → ℝ) (hU : ContDiff ℝ ∞ U)
+     (hPU : textbookUnitPeriodicPotential U) (β : ℝ) (hβ : 0 < β) :
+@@ -2290,9 +2366,8 @@
+     textbookBrownianGibbsGeneratorComplexSpectrum_gap m hm U hU hPU β hβ z hn hz⟩
+ 
+ /-- source_id: MD-6.4.3-Theorem61 · Theorem 6.1 · §6.4.3 · 印刷p.250–251 / PDFp.271–272
+-[EXTRA] [EXTRA]明确采用现成闭复Gibbs-L²实现、非正谱和完整离散/谱隙；第三部分选择实际演化分布平均，并限定真实非负质量1的L²初始相对密度。全部条款保留，不用部分桥接代替整个定理。
+-[ERRATUM?] 原C₀²核心域、自伴闭实现及negative definite术语需要签核；原末句时间平均与前句分布平均冲突。原一般初始分布未证明，本条技术范围限定另行披露。 [EXTRA] 25号：Theorem6.1主版、corrected和Printed同时补全部谱点特征值子句；仍保留闭域/半负定/L²相对初始密度的分布平均与原印刷严格负定/轨道平均两套版本，原文疑误不证。
+--/
++[ERRATUM?] 原书疑误、原文版与独立修正版见CH06_ERRATA。
++[EXTRA] 25号：Theorem6.1主版、corrected和Printed同时补全部谱点特征值子句；仍保留闭域/半负定/L²相对初始密度的分布平均与原印刷严格负定/轨道平均两套版本，原文疑误不证。 -/
+ theorem theorem61 :
+   ∀ {n : ℕ} (m : MolecularDynamics.Chapter06Review.V n) (hm : ∀ i, 0 < m i)
+     (U : MolecularDynamics.Chapter06Review.V n → ℝ) (hU : ContDiff ℝ ∞ U) (hp : textbookUnitPeriodicPotential U)
+@@ -2527,8 +2602,7 @@
+   sorry
+ 
+ /-- source_id: MD-6.4.4-MinorizationCorrectedImplication · unnumbered_claim · §6.4.4 · 印刷p.252 / PDFp.273
+-[EXTRA] [EXTRA]仅单向充分条件，正时刻Assumption1加全部非空开集严格可达；实际测度下界完整，字面双向版独立保留。 [EXTRA] 25号：主版与minorizationPrinted_corrected同时补Chapman–Kolmogorov/Markov半群及参考测度全支撑。两步核局部共同下界仍需大型小集理论，未证明、未宣称数学结论已核定；交网站复审。
+--/
++[EXTRA] 25号：主版与minorizationPrinted_corrected同时补Chapman–Kolmogorov/Markov半群及参考测度全支撑。两步核局部共同下界仍需大型小集理论，未证明、未宣称数学结论已核定；交网站复审。 -/
+ theorem minorizationCorrectedImplication :
+   ∀ {D : Type*} [MetricSpace D] [MeasurableSpace D] [BorelSpace D]
+     (ν : Measure D) (K : ℝ≥0 → Kernel D D) (C : Set D),
+@@ -2747,8 +2821,7 @@
+     ring
+ 
+ /-- source_id: MD-6.4.4-HamiltonianPowerMomentumLaplacian · unnumbered_claim · §6.4.4 · 印刷p.253 / PDFp.274
+-[EXTRA] [EXTRA]完整实际坐标二阶导数和及正确等式，l≥1；原随后不等式单独原样保存，未据等式声称它成立。 [EXTRA] 25号：保留已证精确Laplacian等式；原错误上界Printed与修正系数分别由MD-6.4.4-LaplacianBoundPrinted/LaplacianBoundCorrect保存，不能把等式视为已覆盖原印刷不等式。
+--/
++[EXTRA] 25号：保留已证精确Laplacian等式；原错误上界Printed与修正系数分别由MD-6.4.4-LaplacianBoundPrinted/LaplacianBoundCorrect保存，不能把等式视为已覆盖原印刷不等式。 -/
+ theorem hamiltonianPowerMomentumLaplacian {Nc : ℕ}
+     (U : (Fin Nc → ℝ) → ℝ) (l : ℕ) (hl : 1 ≤ l) (z : textbookLangevinPhase Nc) :
+     (∑ i : Fin Nc, deriv (deriv (fun t : ℝ ↦ textbookLangevinHamiltonianPower U l
+@@ -3151,9 +3224,8 @@
+     (hU : ContDiff ℝ ∞ U) (hp : textbookUnitPeriodicPotential U) (β : ℝ) (hβ : 0 < β) : Type :=
+   textbookLangevinCanonicalWeakH1 U hU hp β hβ
+ 
+-/-- source_id: MD-6.4.4-WeightedH1Norm · unnumbered_claim · §6.4.4 · 印刷p.257 / PDFp.278
+-[EXTRA] [EXTRA]实际全部位置/动量弱导数的L²范数平方和；真实函数/弱导数投影定义随compact依赖闭包给出。 [EXTRA] 25号：仅覆盖真实加权H¹的jet范数分解；原文标量L²积分及任意向量w的平方和等式未由本条覆盖。
+--/
++/-- source_id: MD-6.4.4-WeightedH1Norm · unnumbered_claim · §6.4.4 · 印刷p.256–257 / PDFp.277–278
++[EXTRA] 25号：仅覆盖真实加权H¹的jet范数分解；原文标量L²积分及任意向量w的平方和等式未由本条覆盖。 -/
+ theorem weightedH1Norm {N : ℕ}
+     (U : (Fin N → ℝ) → ℝ) (hU : ContDiff ℝ ∞ U) (hp : textbookUnitPeriodicPotential U)
+     (β : ℝ) (hβ : 0 < β) (f : textbookLangevinCanonicalWeakH1 U hU hp β hβ) :
+@@ -3245,8 +3317,7 @@
+   sorry
+ 
+ /-- source_id: MD-6.4.4-ForwardKernelGibbs · unnumbered_claim · §6.4.4 · 印刷p.257 / PDFp.278
+-[EXTRA] [EXTRA]完整原flat forward弱PDE与真实H1类，全部stationary modes为Gibbs倍数；相对加权adjoint kernel对应常数而非Gibbs，不能混同二者。 [EXTRA] 25号：改用相对Gibbs密度的Hilbert adjoint闭域，核结论为常数；旧flat紧支弱测试允许非Gibbs恒通量零模，网站反例保留。改后核定理尚缺大型理论，不证明；原印刷flat措辞由Proposition64Printed留存。
+--/
++[EXTRA] 25号：改用相对Gibbs密度的Hilbert adjoint闭域，核结论为常数；旧flat紧支弱测试允许非Gibbs恒通量零模，网站反例保留。改后核定理尚缺大型理论，不证明；原印刷flat措辞由Proposition64Printed留存。 -/
+ theorem forwardKernelGibbs : ∀ {n : ℕ} (U : (Fin n → ℝ) → ℝ)
+     (hU : ContDiff ℝ ∞ U) (hp : textbookUnitPeriodicPotential U) (β γ : ℝ) (hβ : 0 < β),
+   0 < γ →
+@@ -3268,8 +3339,7 @@
+     (w : Fin r → Lp ℝ 2 (textbookLangevinCanonicalMeasure U β hβ)) : ℝ := ∑ i, ‖w i‖^2
+ 
+ /-- source_id: MD-6.4.5-KernelEvolution · definition · §6.4.5 · 印刷p.257 / PDFp.278
+-[EXTRA] [EXTRA]真实Markov kernel应用初始measure的compProd边缘，形式exp解释为实际演化，非无资格幂级数。 [EXTRA] 25号：保留任意核作用的kernelEvolutionRaw25辅助；主入口加真正Markov半群资格。仅覆盖概率测度推进，实际Langevin生成元和密度关系须见DensityEvolutionMeaning，不把本条称作完整指数传播识别。
+--/
++[EXTRA] 25号：保留任意核作用的kernelEvolutionRaw25辅助；主入口加真正Markov半群资格。仅覆盖概率测度推进，实际Langevin生成元和密度关系须见DensityEvolutionMeaning，不把本条称作完整指数传播识别。 -/
+ def kernelEvolutionRaw25 {D : Type*} [MeasurableSpace D] (K : ℝ≥0 → Kernel D D)
+     (μ : Measure D) (t : ℝ≥0) : Measure D := K t ∘ₘ μ
+ 
+@@ -3277,14 +3347,12 @@
+     (μ : Measure D) (_hK : MolecularDynamics.Chapter06Review.markovSemigroup K) (t : ℝ≥0) : Measure D := K t ∘ₘ μ
+ 
+ /-- source_id: MD-6.4.5-KernelAverage · definition · §6.4.5 · 印刷p.258 / PDFp.279
+-[EXTRA] [EXTRA]真实核积分的backward检验函数传播，可积资格在Duality定理明确。 [EXTRA] 25号：仅为检验函数核传播的总化辅助记号；原句两种平均相等由MD-6.4.5-KernelDuality对应，可积资格须见该条。
+--/
++[EXTRA] 25号：仅为检验函数核传播的总化辅助记号；原句两种平均相等由MD-6.4.5-KernelDuality对应，可积资格须见该条。 -/
+ def kernelAverage {D : Type*} [MeasurableSpace D] (K : ℝ≥0 → Kernel D D)
+     (f : D → ℝ) (t : ℝ≥0) (x : D) : ℝ := ∫ z, f z ∂K t x
+ 
+ /-- source_id: MD-6.4.5-DensityEvolutionMeaning · definition · §6.4.5 · 印刷p.257–258 / PDFp.278–279
+-[EXTRA] [EXTRA]真实初始概率density、全部时刻density及实际kernel measure等式的语义定义；未假设每个任意SDE必存在平滑density，未计存在性已证。 [EXTRA] 25号：补Markov/初值/半群及真实右生成元识别资格，补各时刻概率质量和初值；逐点非负为所选代表，显式列可积测试的变分等式。此为语义资格定义，未声称密度存在或任意核满足它。
+--/
++[EXTRA] 25号：补Markov/初值/半群及真实右生成元识别资格，补各时刻概率质量和初值；逐点非负为所选代表，显式列可积测试的变分等式。此为语义资格定义，未声称密度存在或任意核满足它。 -/
+ def densityEvolutionMeaning {n : ℕ} (U : (Fin n → ℝ) → ℝ) (β γ : ℝ) (K : ℝ≥0 → Kernel (textbookLangevinPeriodicPhase n) (textbookLangevinPeriodicPhase n))
+     (ρ0 : textbookLangevinPeriodicPhase n → ℝ) (ρ : ℝ≥0 → textbookLangevinPeriodicPhase n → ℝ) : Prop :=
+   langevinKernelQualification25 U β γ K ∧
+@@ -3346,9 +3414,19 @@
+   Integrable (fun x ↦ (ρeq x+(α : ℂ)*ρ1 x).re) (MolecularDynamics.Chapter06Review.flatPhaseMeasure n) ∧
+   (∫ x, (ρeq x+(α : ℂ)*ρ1 x).re ∂MolecularDynamics.Chapter06Review.flatPhaseMeasure n)=1
+ 
++/-- 修正版/限定版：原文公式或定义的正确限定陈述；证明/域解释缺口见ERRATA。复制独立证明体，不从原文版占位推导。 -/
++def complexInitialDensity_corrected {n : ℕ}
++    (ρeq ρ1 : Lp ℂ 2 (MolecularDynamics.Chapter06Review.flatPhaseMeasure n)) (α : ℝ) : Prop :=
++  (∀ᵐ x ∂MolecularDynamics.Chapter06Review.flatPhaseMeasure n, (ρeq x).im=0 ∧ 0 ≤ (ρeq x).re) ∧
++  Integrable (fun x ↦ (ρeq x).re) (MolecularDynamics.Chapter06Review.flatPhaseMeasure n) ∧
++  (∫ x, (ρeq x).re ∂MolecularDynamics.Chapter06Review.flatPhaseMeasure n)=1 ∧
++  (∀ᵐ x ∂MolecularDynamics.Chapter06Review.flatPhaseMeasure n,
++    (ρeq x+(α : ℂ)*ρ1 x).im=0 ∧ 0 ≤ (ρeq x+(α : ℂ)*ρ1 x).re) ∧
++  Integrable (fun x ↦ (ρeq x+(α : ℂ)*ρ1 x).re) (MolecularDynamics.Chapter06Review.flatPhaseMeasure n) ∧
++  (∫ x, (ρeq x+(α : ℂ)*ρ1 x).re ∂MolecularDynamics.Chapter06Review.flatPhaseMeasure n)=1
++
+ /-- source_id: MD-6.4.5-LangevinForwardSemigroupMeaning · definition · §6.4.5 · 印刷p.257–258 / PDFp.278–279
+-[EXTRA] [EXTRA]对所有真实非负实初始density的actual kernel/complex Lp²传播关联定义；不凭空把任意线性S命名Langevin，原forward identification仍未证。 [EXTRA] 25号：补C₀半群（初值/组合/强连续）、Markov核及实际Langevin右生成元联系；每个合格输入的输出AE实且非负并可积，排除(1+i)id和ofReal裁剪伪识别。此为资格定义，未证明存在。
+--/
++[EXTRA] 25号：补C₀半群（初值/组合/强连续）、Markov核及实际Langevin右生成元联系；每个合格输入的输出AE实且非负并可积，排除(1+i)id和ofReal裁剪伪识别。此为资格定义，未证明存在。 -/
+ def langevinForwardSemigroupMeaning {n : ℕ} (U : (Fin n → ℝ) → ℝ) (β γ : ℝ)
+     (K : ℝ≥0 → Kernel (textbookLangevinPeriodicPhase n) (textbookLangevinPeriodicPhase n))
+     (S : ℝ≥0 → Lp ℂ 2 (MolecularDynamics.Chapter06Review.flatPhaseMeasure n) →L[ℂ]

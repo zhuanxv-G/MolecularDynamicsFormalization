@@ -1,0 +1,12 @@
+--- before
++++ after
+@@ -3210,7 +3210,8 @@
+     (μ : Measure D) (_hK : MolecularDynamics.Chapter06Review.markovSemigroup K) (t : ℝ≥0) : Measure D := K t ∘ₘ μ
+ 
+ /-- source_id: MD-6.4.5-KernelAverage · definition · §6.4.5 · 印刷p.258 / PDFp.279
+-[EXTRA] [EXTRA]真实核积分的backward检验函数传播，可积资格在Duality定理明确。 -/
++[EXTRA] [EXTRA]真实核积分的backward检验函数传播，可积资格在Duality定理明确。 [EXTRA] 25号：仅为检验函数核传播的总化辅助记号；原句两种平均相等由MD-6.4.5-KernelDuality对应，可积资格须见该条。
++-/
+ def kernelAverage {D : Type*} [MeasurableSpace D] (K : ℝ≥0 → Kernel D D)
+     (f : D → ℝ) (t : ℝ≥0) (x : D) : ℝ := ∫ z, f z ∂K t x
+ 

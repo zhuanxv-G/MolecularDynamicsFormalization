@@ -1,0 +1,62 @@
+{
+  "eaudit": "EAUDIT20",
+  "subtask": "EAUDIT20a",
+  "source_id": "MD-6.4.5-ComplexInitialDensity",
+  "input_sha256": {
+    "Blueprint/Ch06.lean": "4a2a6cb72c1692f80e3537ab1a71701d429a482780a01226c3dc66a2ebb8b44b",
+    "blueprint/ch06/ch06_source.json": "d7f93cd20eb570744c710f3e07a88b319c082e4155812fee91db0920eb05944e",
+    "PAGES.pdf": "ec8ed7c53f380c329d72ef631c3dedb0c2099354ce7e3bde0a42df21053154ec",
+    "materials_sha256": "aff7f5c176606305964e461452909d7bf50d1099f2dea236592faea2c6951b04"
+  },
+  "paste_sha256": "204ab129242d8e2d1b93fc01d2a4fd1352bb74dd9c53c912e9f68f6d1ad337e8",
+  "source_pdf_sha256": "1939a22e5e96ebd2b58b8e91fe2c796f5390b402f267390f473b271c35d2f036",
+  "pdf_page_mapping": [
+    279
+  ],
+  "crop_pixel_identity": "PASS: copied page render or lossless embedded full-page source pixels",
+  "rasterized_pages": {},
+  "source_declarations": [
+    "complexInitialDensity",
+    "complexInitialDensity_corrected"
+  ],
+  "dependency_excerpts": [
+    {
+      "path": "Blueprint/Ch06.lean",
+      "line": 3407,
+      "full_name": "MD.Ch06.complexInitialDensity",
+      "kind": "def",
+      "excerpt_sha256": "ffeea4d91057fc1b43d02b013575857994b48c47d1582e9bdd64ab360d7c2731"
+    },
+    {
+      "path": "Blueprint/Ch06.lean",
+      "line": 3418,
+      "full_name": "MD.Ch06.complexInitialDensity_corrected",
+      "kind": "def",
+      "excerpt_sha256": "1c1470001302f69197c6956055fd47f978fe2f1a9980582780f32e34157c5c16"
+    },
+    {
+      "path": "MolecularDynamics/Chapter06/LangevinPeriodicProjection.lean",
+      "line": 14,
+      "full_name": "MolecularDynamics.textbookLangevinPeriodicPhase",
+      "kind": "abbrev",
+      "excerpt_sha256": "102d1bb0e87353db402a2cc858c5fb35b9a9c5730062ef3342e6b0f813ccfb58"
+    },
+    {
+      "path": "MolecularDynamics/Chapter06/ReviewDefinitions.lean",
+      "line": 17,
+      "full_name": "MolecularDynamics.Chapter06Review.V",
+      "kind": "abbrev",
+      "excerpt_sha256": "7ab0ad90462b274b03f5b929b5f09417c0b397b6cb908fa6e7bd56677a314027"
+    },
+    {
+      "path": "MolecularDynamics/Chapter06/ReviewDefinitions.lean",
+      "line": 189,
+      "full_name": "MolecularDynamics.Chapter06Review.flatPhaseMeasure",
+      "kind": "def",
+      "excerpt_sha256": "72f136cfee47f04d3295c66974a35b31380c4ef1d14948d44bcc412307f82d34"
+    }
+  ],
+  "project_definition_closure": "complete recursive definitions, referenced theorem types, explicit choice and consistency specifications",
+  "website_submitted": false,
+  "total_task_bytes": 90827
+}

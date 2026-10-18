@@ -1,0 +1,111 @@
+{
+  "eaudit": "EAUDIT11",
+  "subtask": "EAUDIT11c",
+  "source_id": "MD-6.4.3-BrownianSymmetry",
+  "input_sha256": {
+    "Blueprint/Ch06.lean": "4a2a6cb72c1692f80e3537ab1a71701d429a482780a01226c3dc66a2ebb8b44b",
+    "blueprint/ch06/ch06_source.json": "d7f93cd20eb570744c710f3e07a88b319c082e4155812fee91db0920eb05944e",
+    "PAGES.pdf": "db61f5524dd8e538ea263b26df24013f9a959727267372c8ec06f88d112dd86c",
+    "materials_sha256": "1d997a97da65859f8ce0794168935cb75f733908f0d321531840dc4701df7636"
+  },
+  "paste_sha256": "9615a29bc34408cb3841a1445db4ba48695287413905aaaf947d4d82d281c529",
+  "source_pdf_sha256": "1939a22e5e96ebd2b58b8e91fe2c796f5390b402f267390f473b271c35d2f036",
+  "pdf_page_mapping": [
+    271
+  ],
+  "crop_pixel_identity": "PASS: copied page render or lossless embedded full-page source pixels",
+  "rasterized_pages": {},
+  "source_declarations": [
+    "brownianSymmetry",
+    "brownianSymmetry_corrected"
+  ],
+  "dependency_excerpts": [
+    {
+      "path": "Blueprint/Ch06.lean",
+      "line": 2191,
+      "full_name": "MD.Ch06.brownianWeightedInner",
+      "kind": "def",
+      "excerpt_sha256": "8b503f667765a8b1f8ae62b3ed7d2211f7aab6e57e71525f4bf7ee2e5b02ec60"
+    },
+    {
+      "path": "Blueprint/Ch06.lean",
+      "line": 2212,
+      "full_name": "MD.Ch06.brownianSymmetry",
+      "kind": "theorem",
+      "excerpt_sha256": "ad5a4057dfce028fb8a8297fc72f654e25b2bf808ff2d1baa83487006945500d"
+    },
+    {
+      "path": "Blueprint/Ch06.lean",
+      "line": 2227,
+      "full_name": "MD.Ch06.brownianSymmetry_corrected",
+      "kind": "theorem",
+      "excerpt_sha256": "0cbbef913d7588eb9fd08dd64be2a80908366b7b6fd28632db88c242df19886c"
+    },
+    {
+      "path": "MolecularDynamics/Chapter06/BrownianDirichlet.lean",
+      "line": 13,
+      "full_name": "MolecularDynamics.textbookConfigurationPartial",
+      "kind": "def",
+      "excerpt_sha256": "fbca5c0abb1ddc15e963008415ea72d955f5e4a49bbc36888fbf88ab7a80409d"
+    },
+    {
+      "path": "MolecularDynamics/Chapter06/BrownianDirichlet.lean",
+      "line": 18,
+      "full_name": "MolecularDynamics.textbookConfigurationCube",
+      "kind": "def",
+      "excerpt_sha256": "09df86f1ec71f9b7683204ae6fb4a4c17076a4a71db9c03a87623d7423d83273"
+    },
+    {
+      "path": "MolecularDynamics/Chapter06/BrownianDirichlet.lean",
+      "line": 21,
+      "full_name": "MolecularDynamics.textbookConfigurationGibbsWeight",
+      "kind": "def",
+      "excerpt_sha256": "a5bd766d1cbfda65d529ec6b709aea756a842e8914cf452dd793034c4f50877b"
+    },
+    {
+      "path": "MolecularDynamics/Chapter06/BrownianDirichlet.lean",
+      "line": 31,
+      "full_name": "MolecularDynamics.textbookBrownianGenerator",
+      "kind": "def",
+      "excerpt_sha256": "e539c16e70580030677c468fb87e72c8ec94f2adcc60826e179399ea7dc1af00"
+    },
+    {
+      "path": "MolecularDynamics/Chapter06/BrownianDirichlet.lean",
+      "line": 271,
+      "full_name": "MolecularDynamics.textbookConfigurationPartition",
+      "kind": "def",
+      "excerpt_sha256": "bf3cd0410e09c0f547733bf9b24c116b519d674f74b7f0eeba4a189faceb3344"
+    },
+    {
+      "path": "MolecularDynamics/Chapter06/BrownianDirichlet.lean",
+      "line": 276,
+      "full_name": "MolecularDynamics.textbookConfigurationInner",
+      "kind": "def",
+      "excerpt_sha256": "26e1b2e779f1956a172544b6eac11a9961268d29d93f3ab61dd109beafa91634"
+    },
+    {
+      "path": "MolecularDynamics/Chapter06/BrownianDirichlet.lean",
+      "line": 287,
+      "full_name": "MolecularDynamics.textbookConfigurationPartition_pos",
+      "kind": "theorem",
+      "excerpt_sha256": "c7b275778935b4f15625239b33fbb753d15fa0e88a092819e81ca5f88ef539a6"
+    },
+    {
+      "path": "MolecularDynamics/Chapter06/BrownianDirichlet.lean",
+      "line": 318,
+      "full_name": "MolecularDynamics.textbookBrownianGenerator_inner_symmetric",
+      "kind": "theorem",
+      "excerpt_sha256": "929a0d93f08f4c0e5ff2f8078d6d11353d53cacfe3b1a56460b12b81475647f2"
+    },
+    {
+      "path": "MolecularDynamics/Chapter06/LangevinPeriodicForce.lean",
+      "line": 13,
+      "full_name": "MolecularDynamics.textbookUnitPeriodicPotential",
+      "kind": "def",
+      "excerpt_sha256": "e26dd47f5c122900493506ccbe55a9fe93351b063566435477f1cbd5e0803040"
+    }
+  ],
+  "project_definition_closure": "complete recursive definitions, referenced theorem types, explicit choice and consistency specifications",
+  "website_submitted": false,
+  "total_task_bytes": 108362
+}

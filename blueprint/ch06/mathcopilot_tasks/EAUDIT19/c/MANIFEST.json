@@ -1,0 +1,76 @@
+{
+  "eaudit": "EAUDIT19",
+  "subtask": "EAUDIT19c",
+  "source_id": "MD-6.4.5-SmoothTestL2Printed",
+  "input_sha256": {
+    "Blueprint/Ch06.lean": "4a2a6cb72c1692f80e3537ab1a71701d429a482780a01226c3dc66a2ebb8b44b",
+    "blueprint/ch06/ch06_source.json": "d7f93cd20eb570744c710f3e07a88b319c082e4155812fee91db0920eb05944e",
+    "PAGES.pdf": "ec8ed7c53f380c329d72ef631c3dedb0c2099354ce7e3bde0a42df21053154ec",
+    "materials_sha256": "4ed359a4d2d750b4ad84b460c28a5a47381c37bc9b1980e46405deb069c66a51"
+  },
+  "paste_sha256": "e198a4f4af39498c9f6761daec98c721821668520297af57e869efb57ca853cb",
+  "source_pdf_sha256": "1939a22e5e96ebd2b58b8e91fe2c796f5390b402f267390f473b271c35d2f036",
+  "pdf_page_mapping": [
+    279
+  ],
+  "crop_pixel_identity": "PASS: copied page render or lossless embedded full-page source pixels",
+  "rasterized_pages": {},
+  "source_declarations": [
+    "smoothTestL2Printed",
+    "smoothTestL2Printed_corrected"
+  ],
+  "dependency_excerpts": [
+    {
+      "path": "Blueprint/Ch06.lean",
+      "line": 3394,
+      "full_name": "MD.Ch06.smoothTestL2Printed",
+      "kind": "theorem",
+      "excerpt_sha256": "3523f9ac4e96d25298094316a24e3bf9a77887f0e85f85e0159d0d95f36e6cca"
+    },
+    {
+      "path": "Blueprint/Ch06.lean",
+      "line": 3400,
+      "full_name": "MD.Ch06.smoothTestL2Printed_corrected",
+      "kind": "def",
+      "excerpt_sha256": "1c6e117ea25b64ccee379321d4c69becd69e6bafb553071767644ee55f5ac3e1"
+    },
+    {
+      "path": "MolecularDynamics/Chapter06/LangevinHormander.lean",
+      "line": 12,
+      "full_name": "MolecularDynamics.textbookLangevinPhase",
+      "kind": "abbrev",
+      "excerpt_sha256": "ee32316762cd33e19f1e5e47745da89914943aa66b85fb83f71d95c9b012a326"
+    },
+    {
+      "path": "MolecularDynamics/Chapter06/LangevinPeriodicProjection.lean",
+      "line": 14,
+      "full_name": "MolecularDynamics.textbookLangevinPeriodicPhase",
+      "kind": "abbrev",
+      "excerpt_sha256": "102d1bb0e87353db402a2cc858c5fb35b9a9c5730062ef3342e6b0f813ccfb58"
+    },
+    {
+      "path": "MolecularDynamics/Chapter06/LangevinPeriodicProjection.lean",
+      "line": 17,
+      "full_name": "MolecularDynamics.textbookLangevinPeriodicProjection",
+      "kind": "def",
+      "excerpt_sha256": "9039e1043deb7d19fcb9c957cf2941bda97bce3ad50948a5df792ac90b7d7020"
+    },
+    {
+      "path": "MolecularDynamics/Chapter06/ReviewDefinitions.lean",
+      "line": 17,
+      "full_name": "MolecularDynamics.Chapter06Review.V",
+      "kind": "abbrev",
+      "excerpt_sha256": "7ab0ad90462b274b03f5b929b5f09417c0b397b6cb908fa6e7bd56677a314027"
+    },
+    {
+      "path": "MolecularDynamics/Chapter06/ReviewDefinitions.lean",
+      "line": 189,
+      "full_name": "MolecularDynamics.Chapter06Review.flatPhaseMeasure",
+      "kind": "def",
+      "excerpt_sha256": "72f136cfee47f04d3295c66974a35b31380c4ef1d14948d44bcc412307f82d34"
+    }
+  ],
+  "project_definition_closure": "complete recursive definitions, referenced theorem types, explicit choice and consistency specifications",
+  "website_submitted": false,
+  "total_task_bytes": 89610
+}

@@ -1,0 +1,119 @@
+以附件/PASTE 为准，忽略 /workspace 旧文件；Mathlib 定义按标准含义采信。
+A逐字核对原文及证明；C只读核对对象、域、量词、前提和全部结论。所有项目定义体及选择规格在下文；仅作为审阅摘录，不是独立模块。theorem/lemma提供完整类型（不审证明）；定义提供完整定义体，按文件作用域解释。不要因sorry判签名FAIL。原文版忠实性、修正版正确性、反例、原书疑误分别说明，不凭旧文件或repair_log猜声明。
+本条MD-6.3-VectorSDE，subtask=EAUDIT05b；原PDF页映射=[253, 254]。只读，不改工程或补证明。以JSON对象返回batch=EAUDIT05,input_sha256,items；逐条含source_id,subtask,input_sha256,json_review{status,issue_codes,corrected_json,issues,evidence},audit{lean_decl,verdict,explanation,counterexample,suggested_fix}。verdict=PASS/FAIL/NEEDS_HUMAN，status=APPROVED/CORRECTED/NEEDS_HUMAN。必须原样回显下列全部哈希。
+input_sha256:
+{
+  "Blueprint/Ch06.lean": "4a2a6cb72c1692f80e3537ab1a71701d429a482780a01226c3dc66a2ebb8b44b",
+  "blueprint/ch06/ch06_source.json": "d7f93cd20eb570744c710f3e07a88b319c082e4155812fee91db0920eb05944e",
+  "PAGES.pdf": "9fae3b38b6a3f373eae0d886e191d09feb205c483e5fa0dfe8e6e86dac8634b2",
+  "materials_sha256": "0a7610fa3ad7c7cdfbf3e2bad50bfbd03627fd9427ec090d86a2aa1df38e0bea"
+}
+
+## 原文JSON
+```json
+{
+  "source_id": "MD-6.3-VectorSDE",
+  "kind": "definition",
+  "label": "(6.15)–(6.16)",
+  "section": "6.3",
+  "printed_page": "232–233",
+  "pdf_page": "253–254",
+  "statement_latex": "We mention in passing the extension to systems of SDEs. Let $a(z,t)$ and $b^{(i)}(z,t)$, $i=1,2,\\ldots,r$ be a set of $r+1$ vector fields in $\\mathbb R^m$, and let $W_1,W_2,\\ldots,W_r$ be a collection of $r$ independent Wiener processes, then we may write a system of SDEs in $\\mathbb R^m$ in the form\n\\[dZ=a(Z,t)dt+\\sum_{i=1}^r b^{(i)}(Z,t)dW_i.\\tag{6.15}\\]\nalternatively, if $B$ is the matrix with columns $b^{(1)},b^{(2)},\\ldots,b^{(r)}$, and $W$ represents the $r$-component vector of Wiener processes, then\n\\[dZ=a(Z,t)dt+B(Z,t)dW.\\tag{6.16}\\]",
+  "proof_latex": null,
+  "proof_note": "原书未给独立完整证明。",
+  "proof_discussion_latex": null,
+  "context_notation": [],
+  "extra_assumptions": [
+    "[EXTRA] 25号：补真实标准向量Wiener资格；该结构给联合Gaussian、全部跨时协方差及连续路径，并有整坐标路径独立定理，不仅是同一时刻独立。其余方程关系保持。"
+  ],
+  "statement_scope": "本条Lean覆盖范围：补真实标准向量Wiener资格；该结构给联合Gaussian、全部跨时协方差及连续路径，并有整坐标路径独立定理，不仅是同一时刻独立。其余方程关系保持。",
+  "coverage_gaps": []
+}
+```
+## 当前完整Lean（全部原文版、修正版及反例）
+```lean
+def strictVectorSDE {Ω : Type*} [MeasurableSpace Ω] {n r : ℕ} (P : Measure Ω)
+    (W : ℝ → Ω → (Fin r → ℝ)) (X : ℝ → Ω → (Fin n → ℝ))
+    (a : (Fin n → ℝ) → ℝ → (Fin n → ℝ))
+    (B : (Fin n → ℝ) → ℝ → Matrix (Fin n) (Fin r) ℝ) (x0 : Fin n → ℝ) : Prop :=
+  textbookIsWienerVector (fun t sample ↦ W t sample) P ∧
+  (∀ᵐ sample ∂P, ContinuousOn (fun t ↦ X t sample) (Ici 0) ∧ X 0 sample=x0) ∧
+  ∀ i : Fin n, ∀ T : ℝ, 0 ≤ T →
+    (∀ᵐ sample ∂P, IntervalIntegrable (fun s ↦ a (X s sample) s i) volume 0 T) ∧
+    ∃ integrals : Fin r → Ω → ℝ,
+      (∀ j, strictItoIntegral P (fun s sample ↦ W s sample j)
+        (fun s sample ↦ B (X s sample) s i j) T (integrals j)) ∧
+      (∀ᵐ sample ∂P, X T sample i-x0 i-(∫ s in 0..T, a (X s sample) s i)=∑ j, integrals j sample)
+```
+### 文件参数及作用域 Blueprint/Ch06.lean
+```lean
+open Set Filter Matrix MeasureTheory ProbabilityTheory MolecularDynamics MolecularDynamics.Chapter02Review MolecularDynamics.Chapter06Review
+open scoped BigOperators Topology ContDiff InnerProductSpace Matrix.Norms.L2Operator ENNReal NNReal
+variable {n Nc : ℕ}
+variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
+variable {R : Type*} [Ring R] [Algebra ℝ R]
+local instance : MeasureSpace UnitAddCircle := ⟨AddCircle.haarAddCircle⟩
+```
+### 文件参数及作用域 MolecularDynamics/Chapter06/ReviewDefinitions.lean
+```lean
+open Set Filter MeasureTheory ProbabilityTheory
+open scoped BigOperators Topology ContDiff ENNReal NNReal
+local instance : MeasureSpace UnitAddCircle := ⟨AddCircle.haarAddCircle⟩
+```
+### 文件参数及作用域 MolecularDynamics/Chapter06/WienerVectorSupport.lean
+```lean
+open Set Filter MeasureTheory ProbabilityTheory
+open scoped Topology NNReal ENNReal
+```
+### MD.Ch06.strictItoIntegral [Blueprint/Ch06.lean:863]
+```lean
+def strictItoIntegral {Ω : Type*} [MeasurableSpace Ω] (P : Measure Ω)
+    (W g : ℝ → Ω → ℝ) (T : ℝ) (Y : Ω → ℝ) : Prop :=
+  (∀ K : ℕ, MemLp (MolecularDynamics.Chapter06Review.itoLeftSum W g T K) 2 P) ∧
+  MemLp Y 2 P ∧ Tendsto (fun K : ℕ ↦ ∫ sample,
+    (MolecularDynamics.Chapter06Review.itoLeftSum W g T K sample-Y sample)^2 ∂P) atTop (𝓝 0)
+```
+### MD.Ch06.strictVectorSDE [Blueprint/Ch06.lean:1105]
+```lean
+def strictVectorSDE {Ω : Type*} [MeasurableSpace Ω] {n r : ℕ} (P : Measure Ω)
+    (W : ℝ → Ω → (Fin r → ℝ)) (X : ℝ → Ω → (Fin n → ℝ))
+    (a : (Fin n → ℝ) → ℝ → (Fin n → ℝ))
+    (B : (Fin n → ℝ) → ℝ → Matrix (Fin n) (Fin r) ℝ) (x0 : Fin n → ℝ) : Prop :=
+  textbookIsWienerVector (fun t sample ↦ W t sample) P ∧
+  (∀ᵐ sample ∂P, ContinuousOn (fun t ↦ X t sample) (Ici 0) ∧ X 0 sample=x0) ∧
+  ∀ i : Fin n, ∀ T : ℝ, 0 ≤ T →
+    (∀ᵐ sample ∂P, IntervalIntegrable (fun s ↦ a (X s sample) s i) volume 0 T) ∧
+    ∃ integrals : Fin r → Ω → ℝ,
+      (∀ j, strictItoIntegral P (fun s sample ↦ W s sample j)
+        (fun s sample ↦ B (X s sample) s i j) T (integrals j)) ∧
+      (∀ᵐ sample ∂P, X T sample i-x0 i-(∫ s in 0..T, a (X s sample) s i)=∑ j, integrals j sample)
+```
+### MolecularDynamics.Chapter06Review.itoLeftSum [MolecularDynamics/Chapter06/ReviewDefinitions.lean:54]
+```lean
+def itoLeftSum {Ω : Type*} (W g : ℝ → Ω → ℝ) (T : ℝ) (K : ℕ) (sample : Ω) : ℝ :=
+  ∑ k ∈ Finset.range K, g ((k : ℝ) * T / K) sample *
+    (W (((k : ℝ)+1) * T / K) sample - W ((k : ℝ) * T / K) sample)
+```
+### MolecularDynamics.textbookIsWienerVector [MolecularDynamics/Chapter06/WienerVectorSupport.lean:13]
+```lean
+structure textbookIsWienerVector {Nc : ℕ} {Ω : Type*} [MeasurableSpace Ω]
+    (B : ℝ≥0 → Ω → (Fin Nc → ℝ)) (P : Measure Ω) : Prop where
+  gaussian : IsGaussianProcess (fun z : (_ : Fin Nc) × ℝ≥0 ↦ fun ω ↦ B z.2 ω z.1) P
+  mean : ∀ i t, P[fun ω ↦ B t ω i] = 0
+  covariance : ∀ i j s t, cov[fun ω ↦ B s ω i, fun ω ↦ B t ω j; P] =
+    if i = j then ((min s t : ℝ≥0) : ℝ) else 0
+  cont : ∀ᵐ ω ∂P, Continuous (fun t ↦ B t ω)
+```
+### MolecularDynamics.textbookWienerVector_coordinate [MolecularDynamics/Chapter06/WienerVectorSupport.lean:22]
+```lean
+theorem textbookWienerVector_coordinate {Nc : ℕ} {Ω : Type*} [MeasurableSpace Ω]
+    (B : ℝ≥0 → Ω → (Fin Nc → ℝ)) (P : Measure Ω) (hB : textbookIsWienerVector B P)
+    (i : Fin Nc) : IsBrownianReal (fun t ω ↦ B t ω i) P where
+  toIsPreBrownianReal
+```
+### MolecularDynamics.textbookWienerVector_coordinates_independent [MolecularDynamics/Chapter06/WienerVectorSupport.lean:35]
+```lean
+theorem textbookWienerVector_coordinates_independent {Nc : ℕ} {Ω : Type*} [MeasurableSpace Ω]
+    (B : ℝ≥0 → Ω → (Fin Nc → ℝ)) (P : Measure Ω) (hB : textbookIsWienerVector B P) :
+    iIndepFun (fun (i : Fin Nc) ω t ↦ B t ω i) P
+```

@@ -1,0 +1,19 @@
+{
+  "command": [
+    "lake",
+    "--no-cache",
+    "env",
+    "lean",
+    "blueprint/ch06/closeout25/compiled/WalkIncrement.lean"
+  ],
+  "input_sha256": "2f8308d6dc60a50486ed92b75f2f963c2b6ce432cbf8845c234a20228dd82ab0",
+  "parent_pid": 4508,
+  "parent_create_time": 1792252708.0878408,
+  "compiler_pid": 25736,
+  "compiler_create_time": 1792252708.226113,
+  "started_at": "2026-10-17T23:58:28.230891",
+  "status": "interrupted_superseded",
+  "exit_code": 4294967295,
+  "completed_at": "2026-10-18T00:05:32.672627",
+  "superseded_by": "WalkIncrement.json pass receipt"
+}

@@ -1,0 +1,75 @@
+以附件/PASTE 为准，忽略 /workspace 旧文件；Mathlib 定义按标准含义采信。
+A逐字核对原文及证明；C只读核对对象、域、量词、前提和全部结论。所有项目定义体及选择规格在下文；仅作为审阅摘录，不是独立模块。theorem/lemma提供完整类型（不审证明）；定义提供完整定义体，按文件作用域解释。不要因sorry判签名FAIL。原文版忠实性、修正版正确性、反例、原书疑误分别说明，不凭旧文件或repair_log猜声明。
+本条MD-6.2.2-RiemannTags，subtask=EAUDIT03c；原PDF页映射=[249]。只读，不改工程或补证明。以JSON对象返回batch=EAUDIT03,input_sha256,items；逐条含source_id,subtask,input_sha256,json_review{status,issue_codes,corrected_json,issues,evidence},audit{lean_decl,verdict,explanation,counterexample,suggested_fix}。verdict=PASS/FAIL/NEEDS_HUMAN，status=APPROVED/CORRECTED/NEEDS_HUMAN。必须原样回显下列全部哈希。
+input_sha256:
+{
+  "Blueprint/Ch06.lean": "4a2a6cb72c1692f80e3537ab1a71701d429a482780a01226c3dc66a2ebb8b44b",
+  "blueprint/ch06/ch06_source.json": "d7f93cd20eb570744c710f3e07a88b319c082e4155812fee91db0920eb05944e",
+  "PAGES.pdf": "48a7952cfa6f3f539858c8d6e69812f97ae7dbe448e549595928c64a12a82def",
+  "materials_sha256": "73c5263233f9b7abf88c3bad4a57266f1fb176830e1d6508201a377e52564504"
+}
+
+## 原文JSON
+```json
+{
+  "source_id": "MD-6.2.2-RiemannTags",
+  "kind": "unnumbered_claim",
+  "label": null,
+  "section": "6.2.2",
+  "printed_page": "228",
+  "pdf_page": "249",
+  "statement_latex": "Recall that the Riemann integral of a continuous function $g$ on $[0,\\tau]$ is the limit of Riemann sums constructed as follows: partition the interval $[0,\\tau]$ into $K$ subintervals each of width $\\delta t=\\tau/\\nu$, choose an arbitrary $t_k$ from the $k$th subinterval, $1\\leq k\\leq \\nu$, and evaluate the integral as a limit of the sum of products:\n\\[\\int_0^\\tau g(t)dt=\\lim_{\\nu\\to\\infty}\\sum_{k=0}^{\\nu-1}g(t_k)\\delta t.\\]\nWe know that this limit does not depend on where the $t_k$ are chosen within the subintervals. For example we can take the left or right endpoint of each subinterval or the midpoint.",
+  "proof_latex": null,
+  "proof_note": "原书未给独立完整证明。",
+  "proof_discussion_latex": null,
+  "context_notation": [],
+  "extra_assumptions": [
+    "[EXTRA]非负窗口和所有合法任意tags；完整标签无关性，没有缩减为仅左端点特例。",
+    "[EXTRA] 25号：原书文字1≤k≤ν与求和0≤k<ν冲突；本条数学修正版统一0≤k<ν，原句保留。"
+  ],
+  "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
+  "coverage_gaps": null
+}
+```
+## 当前完整Lean（全部原文版、修正版及反例）
+```lean
+theorem riemannTags : ∀ (g : ℝ → ℝ) (T : ℝ) (tags : ℕ → ℕ → ℝ),
+  0 ≤ T → ContinuousOn g (Icc 0 T) →
+  (∀ K k : ℕ, 0 < K → k < K → tags K k ∈ Icc ((k : ℝ)*T/K) (((k : ℝ)+1)*T/K)) →
+  Tendsto (fun K : ℕ ↦ ∑ k ∈ Finset.range K, g (tags K k)*(T/K)) atTop
+    (𝓝 (∫ t in (0 : ℝ)..T, g t)) := by
+  sorry
+
+/-- 修正版/限定版：原文公式或定义的正确限定陈述；证明/域解释缺口见ERRATA。复制独立证明体，不从原文版占位推导。 -/
+theorem riemannTags_corrected : ∀ (g : ℝ → ℝ) (T : ℝ) (tags : ℕ → ℕ → ℝ),
+  0 ≤ T → ContinuousOn g (Icc 0 T) →
+  (∀ K k : ℕ, 0 < K → k < K → tags K k ∈ Icc ((k : ℝ)*T/K) (((k : ℝ)+1)*T/K)) →
+  Tendsto (fun K : ℕ ↦ ∑ k ∈ Finset.range K, g (tags K k)*(T/K)) atTop
+    (𝓝 (∫ t in (0 : ℝ)..T, g t)) := by
+  sorry
+```
+### 文件参数及作用域 Blueprint/Ch06.lean
+```lean
+open Set Filter Matrix MeasureTheory ProbabilityTheory MolecularDynamics MolecularDynamics.Chapter02Review MolecularDynamics.Chapter06Review
+open scoped BigOperators Topology ContDiff InnerProductSpace Matrix.Norms.L2Operator ENNReal NNReal
+variable {n Nc : ℕ}
+variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
+variable {R : Type*} [Ring R] [Algebra ℝ R]
+local instance : MeasureSpace UnitAddCircle := ⟨AddCircle.haarAddCircle⟩
+```
+### MD.Ch06.riemannTags [Blueprint/Ch06.lean:841]
+```lean
+theorem riemannTags : ∀ (g : ℝ → ℝ) (T : ℝ) (tags : ℕ → ℕ → ℝ),
+  0 ≤ T → ContinuousOn g (Icc 0 T) →
+  (∀ K k : ℕ, 0 < K → k < K → tags K k ∈ Icc ((k : ℝ)*T/K) (((k : ℝ)+1)*T/K)) →
+  Tendsto (fun K : ℕ ↦ ∑ k ∈ Finset.range K, g (tags K k)*(T/K)) atTop
+    (𝓝 (∫ t in (0 : ℝ)..T, g t))
+```
+### MD.Ch06.riemannTags_corrected [Blueprint/Ch06.lean:849]
+```lean
+theorem riemannTags_corrected : ∀ (g : ℝ → ℝ) (T : ℝ) (tags : ℕ → ℕ → ℝ),
+  0 ≤ T → ContinuousOn g (Icc 0 T) →
+  (∀ K k : ℕ, 0 < K → k < K → tags K k ∈ Icc ((k : ℝ)*T/K) (((k : ℝ)+1)*T/K)) →
+  Tendsto (fun K : ℕ ↦ ∑ k ∈ Finset.range K, g (tags K k)*(T/K)) atTop
+    (𝓝 (∫ t in (0 : ℝ)..T, g t))
+```

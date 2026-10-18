@@ -1,0 +1,29 @@
+{
+  "eaudit": "EAUDIT10",
+  "subtasks": [
+    {
+      "subtask": "EAUDIT10a",
+      "source_id": "MD-6.3.7-VectorIto",
+      "path": "blueprint/ch06/mathcopilot_tasks/EAUDIT10/a",
+      "total_bytes": 103718,
+      "definitions": 11,
+      "manifest_sha256": "0b7dd9a8895df60deb7df08309f13b584b812d5044f152a98f016b5fcf507a62"
+    },
+    {
+      "subtask": "EAUDIT10b",
+      "source_id": "MD-6.4.2-CylinderForwardPrinted",
+      "path": "blueprint/ch06/mathcopilot_tasks/EAUDIT10/b",
+      "total_bytes": 113853,
+      "definitions": 13,
+      "manifest_sha256": "87491deac7a517ce09637e5e6fd926142d4a6c735237dcb8696dac7ecc31497f"
+    },
+    {
+      "subtask": "EAUDIT10c",
+      "source_id": "MD-6.4.2-StationaryDensity",
+      "path": "blueprint/ch06/mathcopilot_tasks/EAUDIT10/c",
+      "total_bytes": 106103,
+      "definitions": 6,
+      "manifest_sha256": "106dbd3dfeff2bb1cda9c02195ad81c858baf232390116f5299a6c255389f625"
+    }
+  ]
+}

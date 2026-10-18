@@ -1,0 +1,362 @@
+{
+  "batch": "BATCH13",
+  "chapter": "ch06",
+  "round": "first-merged",
+  "input_sha256": {
+    "Blueprint/Ch06.lean": "0a02a34ec68989a83bccfa5916db5053ecdb58e05667bf21ff3568d9d1f4318e",
+    "blueprint/ch06/ch06_source.json": "45c70ceef21ca168af437de297e2e21e2800b452ab7942654061d4cff9bb5d95"
+  },
+  "items": [
+    {
+      "source_id": "MD-6.2.1-GridWienerIncrementLaw",
+      "json_review": {
+        "status": "CORRECTED",
+        "issue_codes": [
+          "SOURCE_EXCERPT"
+        ],
+        "corrected_json": {
+          "source_id": "MD-6.2.1-GridWienerIncrementLaw",
+          "kind": "extra_claim",
+          "label": null,
+          "section": "6.2.1",
+          "printed_page": "227",
+          "pdf_page": "248",
+          "statement_latex": "For the Wiener process, we know that $W(t)-W(s)$ is normally distributed with mean zero and variance $|t-s|$;",
+          "proof_latex": null,
+          "proof_note": "原书未给独立完整证明。",
+          "proof_discussion_latex": null,
+          "context_notation": [],
+          "issues": [
+            {
+              "code": "SOURCE_EXCERPT",
+              "detail": "该引文在原页以分号继续“this does not depend ...”，输入句号为人为截断；恢复原标点，作为节选保存。"
+            }
+          ],
+          "lean_decl": "MD.Ch06.gridWienerIncrementLaw",
+          "reusable_proofs": [
+            "MolecularDynamics.textbookWienerIncrement_hasLaw"
+          ],
+          "extra_assumptions": [
+            "[EXTRA]等距T/K网格完整Gaussian法则；任意时刻原结论另条WienerIncrement保留。"
+          ],
+          "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
+          "review_status": "CORRECTED",
+          "repair_log": [],
+          "source_page_verification": "R3本次审校：核对R3_PAGES.pdf对应页；原文符号差异和页码问题见本条issues。"
+        },
+        "issues": [
+          {
+            "code": "SOURCE_EXCERPT",
+            "detail": "该引文在原页以分号继续“this does not depend ...”，输入句号为人为截断；恢复原标点，作为节选保存。"
+          }
+        ],
+        "evidence": {
+          "attachment": "R3_PAGES.pdf",
+          "attachment_pages": [
+            10
+          ],
+          "original_pdf_pages": "248",
+          "printed_pages": "227",
+          "A": "已核对本条摘录及公式；数学变量改名与原文逐字忠实分开处理。",
+          "C": "只审本任务所列签名及项目依赖定义；标准库按题设采信；未编译、未审证明体，sorry不影响签名判定。"
+        }
+      },
+      "audit": {
+        "lean_decl": "MD.Ch06.gridWienerIncrementLaw",
+        "verdict": "PASS",
+        "explanation": "T为非负、K为自然数、k:Fin K自动使K>0。D14、D15给第k个T/K长度增量，结论为方差T/K的完整Gaussian法则。为已标明的网格辅助条，不冒充任意s,t定理。",
+        "counterexample": null,
+        "suggested_fix": "按corrected_json修正原文转录或标注；不修改Lean工程。"
+      },
+      "subtask": "BATCH13a",
+      "input_sha256": {
+        "Blueprint/Ch06.lean": "0a02a34ec68989a83bccfa5916db5053ecdb58e05667bf21ff3568d9d1f4318e",
+        "blueprint/ch06/ch06_source.json": "45c70ceef21ca168af437de297e2e21e2800b452ab7942654061d4cff9bb5d95",
+        "BATCH13a_PAGES.pdf": "b999283c3a3011a3e65e617cbd0c6a4f689eba983b2e56b33e976c38a66d523d",
+        "signature_sha256": "704e624d56b15220d49a67b7c7e624b7f22bdb836c007383c05db0e648113bee"
+      }
+    },
+    {
+      "source_id": "MD-6.2.1-GridIncrementIndependent",
+      "json_review": {
+        "status": "CORRECTED",
+        "issue_codes": [
+          "SOURCE_OMISSION"
+        ],
+        "corrected_json": {
+          "source_id": "MD-6.2.1-GridIncrementIndependent",
+          "kind": "extra_claim",
+          "label": null,
+          "section": "6.2.1",
+          "printed_page": "227",
+          "pdf_page": "248",
+          "statement_latex": "this does not depend on whether there is additional information available regarding its value prior to $\\min(t,s)$, that is to say, the Wiener process is a Markov process.",
+          "proof_latex": null,
+          "proof_note": "原书未给独立完整证明。",
+          "proof_discussion_latex": null,
+          "context_notation": [],
+          "issues": [
+            {
+              "code": "SOURCE_OMISSION",
+              "detail": "所引从句后在原书继续Markov解释，并非句号结束；补全其原句尾。"
+            }
+          ],
+          "lean_decl": "MD.Ch06.gridIncrementIndependent",
+          "reusable_proofs": [
+            "MolecularDynamics.textbookWienerIncrement_independent"
+          ],
+          "extra_assumptions": [
+            "[EXTRA]实际等距有限增量族iIndepFun；整条未来路径独立在上一条保留。"
+          ],
+          "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
+          "review_status": "CORRECTED",
+          "repair_log": [],
+          "source_page_verification": "R3本次审校：核对R3_PAGES.pdf对应页；原文符号差异和页码问题见本条issues。"
+        },
+        "issues": [
+          {
+            "code": "SOURCE_OMISSION",
+            "detail": "所引从句后在原书继续Markov解释，并非句号结束；补全其原句尾。"
+          }
+        ],
+        "evidence": {
+          "attachment": "R3_PAGES.pdf",
+          "attachment_pages": [
+            11
+          ],
+          "original_pdf_pages": "248",
+          "printed_pages": "227",
+          "A": "已核对本条摘录及公式；数学变量改名与原文逐字忠实分开处理。",
+          "C": "只审本任务所列签名及项目依赖定义；标准库按题设采信；未编译、未审证明体，sorry不影响签名判定。"
+        }
+      },
+      "audit": {
+        "lean_decl": "MD.Ch06.gridIncrementIndependent",
+        "verdict": "PASS",
+        "explanation": "任意K个相邻网格增量族整体iIndepFun，非仅两两独立；K=0为空族无碍。任意T≥0及PreBrownian假设与[EXTRA]一致；完整过去独立另在第6条。",
+        "counterexample": null,
+        "suggested_fix": "按corrected_json修正原文转录或标注；不修改Lean工程。"
+      },
+      "subtask": "BATCH13b",
+      "input_sha256": {
+        "Blueprint/Ch06.lean": "0a02a34ec68989a83bccfa5916db5053ecdb58e05667bf21ff3568d9d1f4318e",
+        "blueprint/ch06/ch06_source.json": "45c70ceef21ca168af437de297e2e21e2800b452ab7942654061d4cff9bb5d95",
+        "BATCH13b_PAGES.pdf": "b999283c3a3011a3e65e617cbd0c6a4f689eba983b2e56b33e976c38a66d523d",
+        "signature_sha256": "e4610014b2477147b5b0a4ec34b814bfef4469f30ab36955d62a18da2d483ba2"
+      }
+    },
+    {
+      "source_id": "MD-6.2.1-WienerContinuousPathEval",
+      "json_review": {
+        "status": "APPROVED",
+        "issue_codes": [],
+        "corrected_json": null,
+        "issues": [],
+        "evidence": {
+          "attachment": "R3_PAGES.pdf",
+          "attachment_pages": [
+            12,
+            13
+          ],
+          "original_pdf_pages": "247–248",
+          "printed_pages": "226–227",
+          "A": "已核对本条摘录及公式；数学变量改名与原文逐字忠实分开处理。",
+          "C": "只审本任务所列签名及项目依赖定义；标准库按题设采信；未编译、未审证明体，sorry不影响签名判定。"
+        }
+      },
+      "audit": {
+        "lean_decl": "MD.Ch06.wienerContinuousPathEval",
+        "verdict": "PASS",
+        "explanation": "不要求概率空间或Wiener性质；给定一条连续样本，D13真分支在每个t:Icc 0 T的值恰为原B值。假设、全称时间及向量值均吻合辅助求值条。",
+        "counterexample": null,
+        "suggested_fix": null
+      },
+      "subtask": "BATCH13c",
+      "input_sha256": {
+        "Blueprint/Ch06.lean": "0a02a34ec68989a83bccfa5916db5053ecdb58e05667bf21ff3568d9d1f4318e",
+        "blueprint/ch06/ch06_source.json": "45c70ceef21ca168af437de297e2e21e2800b452ab7942654061d4cff9bb5d95",
+        "BATCH13c_PAGES.pdf": "9470546d602f54a6525ee1febe3ba4b393b7603feb69cb111ecbfdbad0403acf",
+        "signature_sha256": "9f44f97d77f417ace9090bcbd034396c7d7dec324803e27e9a11c6029518307c"
+      }
+    },
+    {
+      "source_id": "MD-6.2.1-WienerContinuousPathMeasurable",
+      "json_review": {
+        "status": "APPROVED",
+        "issue_codes": [],
+        "corrected_json": null,
+        "issues": [],
+        "evidence": {
+          "attachment": "R3_PAGES.pdf",
+          "attachment_pages": [
+            14,
+            15
+          ],
+          "original_pdf_pages": "247–248",
+          "printed_pages": "226–227",
+          "A": "已核对本条摘录及公式；数学变量改名与原文逐字忠实分开处理。",
+          "C": "只审本任务所列签名及项目依赖定义；标准库按题设采信；未编译、未审证明体，sorry不影响签名判定。"
+        }
+      },
+      "audit": {
+        "lean_decl": "MD.Ch06.wienerContinuousPathMeasurable",
+        "verdict": "PASS",
+        "explanation": "由真实Wiener向量结构（包括AE连续）得整个连续路径空间映射AEMeasurable；不是仅各个时间点可测，也没有将路径可测性当前提。",
+        "counterexample": null,
+        "suggested_fix": null
+      },
+      "subtask": "BATCH13d",
+      "input_sha256": {
+        "Blueprint/Ch06.lean": "0a02a34ec68989a83bccfa5916db5053ecdb58e05667bf21ff3568d9d1f4318e",
+        "blueprint/ch06/ch06_source.json": "45c70ceef21ca168af437de297e2e21e2800b452ab7942654061d4cff9bb5d95",
+        "BATCH13d_PAGES.pdf": "9470546d602f54a6525ee1febe3ba4b393b7603feb69cb111ecbfdbad0403acf",
+        "signature_sha256": "de17537b303a919093a383b45be7c5fc6d5b1e01f45f4750f5e55cbb34517d39"
+      }
+    },
+    {
+      "source_id": "MD-6.2.1-CoarseMarkovPrinted",
+      "json_review": {
+        "status": "NEEDS_HUMAN",
+        "issue_codes": [
+          "ERRATUM?"
+        ],
+        "corrected_json": {
+          "source_id": "MD-6.2.1-CoarseMarkovPrinted",
+          "kind": "unnumbered_claim",
+          "label": null,
+          "section": "6.2.1",
+          "printed_page": "227",
+          "pdf_page": "248",
+          "statement_latex": "Let $A(x)$, $B(x)$ and $C(x)$ be three events dependent on state variable $x$, and let $t_+>t_0>t_-$ be three times, then, for a Markov process $X(t)$ we have (using the notation for conditional probability):\n\\[\\Pr[A(X(t_+))\\mid B(X(t_0)),C(X(t_-))]=\\Pr[A(X(t_+))\\mid B(X(t_0))].\\]",
+          "proof_latex": null,
+          "proof_note": "原书未给独立完整证明。",
+          "proof_discussion_latex": null,
+          "context_notation": [],
+          "issues": [
+            {
+              "code": "ERRATUM?",
+              "detail": "印刷用任意粗事件B(X(t0))替代完整当前状态的条件σ代数；一般不成立，例如B=univ时过去事件仍可影响未来。"
+            },
+            {
+              "code": "ERRATUM?",
+              "detail": "任意粗事件B不能代替当前状态σ代数；原文忠实但命题一般错误。"
+            }
+          ],
+          "lean_decl": "MD.Ch06.coarseMarkovPrinted",
+          "reusable_proofs": [],
+          "extra_assumptions": [],
+          "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
+          "review_status": "NEEDS_HUMAN",
+          "repair_log": [
+            {
+              "date": "2026-10-17",
+              "action": "directive22_printed_corrected_pair",
+              "change": "以完整当前状态生成的σ代数写条件期望Markov性质。",
+              "corrected_decl": "MD.Ch06.coarseMarkovPrinted_corrected",
+              "website": "未提交；待网站审计"
+            }
+          ],
+          "source_page_verification": "R3本次审校：核对R3_PAGES.pdf对应页；原文符号差异和页码问题见本条issues。"
+        },
+        "issues": [
+          {
+            "code": "ERRATUM?",
+            "detail": "任意粗事件B不能代替当前状态σ代数；原文忠实但命题一般错误。"
+          }
+        ],
+        "evidence": {
+          "attachment": "R3_PAGES.pdf",
+          "attachment_pages": [
+            16
+          ],
+          "original_pdf_pages": "248",
+          "printed_pages": "227",
+          "A": "已核对本条摘录及公式；数学变量改名与原文逐字忠实分开处理。",
+          "C": "只审本任务所列签名及项目依赖定义；标准库按题设采信；未编译、未审证明体，sorry不影响签名判定。"
+        }
+      },
+      "audit": {
+        "lean_decl": "MD.Ch06.coarseMarkovPrinted",
+        "verdict": "NEEDS_HUMAN",
+        "explanation": "字面版在真实PreBrownian下量化任意可测事件a,b,c、past<present<future及正条件事件概率，ENNReal比值忠实表达印刷条件概率式。但原书把完整当前状态换成任意粗事件，一般错误，须保留疑误而不因字面忠实判数学正确。",
+        "counterexample": "标准Brownian，past=1,present=2,future=3，b=ℝ，a=c=(0,∞)。P(W3>0|W1>0)=1/2+arcsin(1/√3)/π>1/2=P(W3>0)，正条件概率成立。",
+        "suggested_fix": "保留Printed版及ERRATUM?；正确性质应在完整σ(Wpresent)及真实过去过滤下比较条件期望，不能把未约束history的定义当作已证明定理。"
+      },
+      "subtask": "BATCH13e",
+      "input_sha256": {
+        "Blueprint/Ch06.lean": "0a02a34ec68989a83bccfa5916db5053ecdb58e05667bf21ff3568d9d1f4318e",
+        "blueprint/ch06/ch06_source.json": "45c70ceef21ca168af437de297e2e21e2800b452ab7942654061d4cff9bb5d95",
+        "BATCH13e_PAGES.pdf": "b999283c3a3011a3e65e617cbd0c6a4f689eba983b2e56b33e976c38a66d523d",
+        "signature_sha256": "393ae864013b585dc000b1bee6da95a7786cd1db5ce11c6043c8709be39c70f1"
+      }
+    },
+    {
+      "source_id": "MD-6.2.1-StateMarkovMeaning",
+      "json_review": {
+        "status": "NEEDS_HUMAN",
+        "issue_codes": [
+          "LEAN_HISTORY_UNCONSTRAINED"
+        ],
+        "corrected_json": {
+          "source_id": "MD-6.2.1-StateMarkovMeaning",
+          "kind": "definition",
+          "label": null,
+          "section": "6.2.1",
+          "printed_page": "227",
+          "pdf_page": "248",
+          "statement_latex": "More generally, when we say that a stochastic process is Markovian, we mean that the probability of a future event conditioned on the current state of the process and the past history of the process is the same as the probability conditioned on the current state of the process.",
+          "proof_latex": null,
+          "proof_note": "原书未给独立完整证明。",
+          "proof_discussion_latex": null,
+          "context_notation": [],
+          "issues": [
+            {
+              "code": "LEAN_HISTORY_UNCONSTRAINED",
+              "detail": "history参数未约束为过程的真实过去；_corrected同样如此。"
+            }
+          ],
+          "lean_decl": "MD.Ch06.stateMarkovMeaning",
+          "reusable_proofs": [],
+          "extra_assumptions": [
+            "[EXTRA]明确以真实当前状态σ(Xs)及过去history作条件期望；仅定义完整Markov意义，不计任意过程满足它已证。"
+          ],
+          "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
+          "review_status": "CORRECTED",
+          "repair_log": [],
+          "source_page_verification": "R3本次审校：核对R3_PAGES.pdf对应页；原文符号差异和页码问题见本条issues。"
+        },
+        "issues": [
+          {
+            "code": "LEAN_HISTORY_UNCONSTRAINED",
+            "detail": "history参数未约束为过程的真实过去；_corrected同样如此。"
+          }
+        ],
+        "evidence": {
+          "attachment": "R3_PAGES.pdf",
+          "attachment_pages": [
+            17
+          ],
+          "original_pdf_pages": "248",
+          "printed_pages": "227",
+          "A": "已核对本条摘录及公式；数学变量改名与原文逐字忠实分开处理。",
+          "C": "只审本任务所列签名及项目依赖定义；标准库按题设采信；未编译、未审证明体，sorry不影响签名判定。"
+        }
+      },
+      "audit": {
+        "lean_decl": "MD.Ch06.stateMarkovMeaning",
+        "verdict": "FAIL",
+        "explanation": "两个定义确实以条件期望比较history(s)与σ(Xs)，但history是完全任意的MeasurableSpace族；没有规定它包含截至s的过去、包含σ(Xs)、是环境子σ代数或构成自然过滤。因此作为完整Markov性质的无约束接口不足，修正版也有同一缺口。",
+        "counterexample": "取history(s)=σ(Xs)，等式对任意过程恒为同式，因而可接受非Markov过程；甚至无须history真包含过去。",
+        "suggested_fix": "定义自然历史⨆r≤s σ(Xr)，或显式要求history是给定真实过滤、X适应且含全部过去并限制在环境σ代数内；stateMarkovMeaning及coarseMarkovPrinted_corrected同步修订。"
+      },
+      "subtask": "BATCH13f",
+      "input_sha256": {
+        "Blueprint/Ch06.lean": "0a02a34ec68989a83bccfa5916db5053ecdb58e05667bf21ff3568d9d1f4318e",
+        "blueprint/ch06/ch06_source.json": "45c70ceef21ca168af437de297e2e21e2800b452ab7942654061d4cff9bb5d95",
+        "BATCH13f_PAGES.pdf": "b999283c3a3011a3e65e617cbd0c6a4f689eba983b2e56b33e976c38a66d523d",
+        "signature_sha256": "e13b9029854e659f8324192044ca2bf144e2a06da8918039bb322dd55d873192"
+      }
+    }
+  ],
+  "merged_from": "ch06_first_merged"
+}

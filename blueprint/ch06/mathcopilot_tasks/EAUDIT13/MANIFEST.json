@@ -1,0 +1,29 @@
+{
+  "eaudit": "EAUDIT13",
+  "subtasks": [
+    {
+      "subtask": "EAUDIT13a",
+      "source_id": "MD-6.4.3-BrownianDiscreteSpectrum",
+      "path": "blueprint/ch06/mathcopilot_tasks/EAUDIT13/a",
+      "total_bytes": 166365,
+      "definitions": 84,
+      "manifest_sha256": "ffd457dcfd4b4c041cbd37752de79f3947c9010ca882371147f8c400e825be16"
+    },
+    {
+      "subtask": "EAUDIT13b",
+      "source_id": "MD-6.4.3-Theorem61",
+      "path": "blueprint/ch06/mathcopilot_tasks/EAUDIT13/b",
+      "total_bytes": 220248,
+      "definitions": 123,
+      "manifest_sha256": "375a491691c8caef7d8a3d0bd374f2b7dde5447de3ed460b370fb667ab1bd9a6"
+    },
+    {
+      "subtask": "EAUDIT13c",
+      "source_id": "MD-6.4.4-MinorizationCorrectedImplication",
+      "path": "blueprint/ch06/mathcopilot_tasks/EAUDIT13/c",
+      "total_bytes": 113000,
+      "definitions": 4,
+      "manifest_sha256": "533a72f8fe49991699f04c5abc81dcf39f9d349aa476dd25581b60a115e8c7ab"
+    }
+  ]
+}

@@ -1,0 +1,29 @@
+{
+  "eaudit": "EAUDIT07",
+  "subtasks": [
+    {
+      "subtask": "EAUDIT07a",
+      "source_id": "MD-6.3.2-OULawPrinted",
+      "path": "blueprint/ch06/mathcopilot_tasks/EAUDIT07/a",
+      "total_bytes": 94977,
+      "definitions": 5,
+      "manifest_sha256": "f70e1e02023aa904d3a5410e0705a2a96bc3d45762335c8d1db24f0528fcd09d"
+    },
+    {
+      "subtask": "EAUDIT07b",
+      "source_id": "MD-6.3.2-MomentumOU",
+      "path": "blueprint/ch06/mathcopilot_tasks/EAUDIT07/b",
+      "total_bytes": 98067,
+      "definitions": 9,
+      "manifest_sha256": "d033894dc4b553c5f56ebeec296320b192682dcb38c15910d66edaaf4c89b42f"
+    },
+    {
+      "subtask": "EAUDIT07c",
+      "source_id": "MD-6.3.3-BathReductionPrinted",
+      "path": "blueprint/ch06/mathcopilot_tasks/EAUDIT07/c",
+      "total_bytes": 76755,
+      "definitions": 7,
+      "manifest_sha256": "d6840c14683ee7d56cb61402a72e3beeb1d0bf234fa1acabe831f412ab80d654"
+    }
+  ]
+}

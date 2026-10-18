@@ -1,0 +1,93 @@
+{
+  "batch": "BATCH28",
+  "chapter": "ch06",
+  "round": "first-merged",
+  "input_sha256": {
+    "Blueprint/Ch06.lean": "0a02a34ec68989a83bccfa5916db5053ecdb58e05667bf21ff3568d9d1f4318e",
+    "blueprint/ch06/ch06_source.json": "45c70ceef21ca168af437de297e2e21e2800b452ab7942654061d4cff9bb5d95"
+  },
+  "items": [
+    {
+      "source_id": "MD-6.3.8-LangevinMassForward",
+      "json_review": {
+        "status": "APPROVED",
+        "issue_codes": [],
+        "corrected_json": null,
+        "issues": [],
+        "evidence": [
+          "A：R6_PAGES.pdf 附件第2页（原PDF 265，印刷页244）；逐字、公式及页码核对。",
+          "C：只读核对R6_任务.md本条全部Lean签名及其列出的项目依赖/附录定义，未使用旧工程文件；不以sorry判FAIL。"
+        ]
+      },
+      "audit": {
+        "lean_decl": "MD.Ch06.langevinMassForward",
+        "verdict": "PASS",
+        "explanation": "Phase n明确是全部位置和动量的乘积。对每个i，位置项为−mi⁻¹pi∂qiρ，动量项对(∂iU+γpi)ρ整体求导，扩散为γβ⁻¹mi∂pi²ρ；β⁻¹=kBT。系数不依赖q，所以位置散度展开正确。此为算子定义，无须把密度law或PDE证明混入定义。",
+        "counterexample": null,
+        "suggested_fix": null
+      },
+      "subtask": "BATCH28a",
+      "input_sha256": {
+        "Blueprint/Ch06.lean": "0a02a34ec68989a83bccfa5916db5053ecdb58e05667bf21ff3568d9d1f4318e",
+        "blueprint/ch06/ch06_source.json": "45c70ceef21ca168af437de297e2e21e2800b452ab7942654061d4cff9bb5d95",
+        "BATCH28a_PAGES.pdf": "fc272e27e94445fc6407552fe5c778186711a9a97461b015345cbebb03701681",
+        "signature_sha256": "bde3fbeabbd6c3b08bfef0280eb430b6142d73ef459850336474adcfbd80a6c8"
+      }
+    },
+    {
+      "source_id": "MD-6.3.8-MomentumMassLaplacian",
+      "json_review": {
+        "status": "APPROVED",
+        "issue_codes": [],
+        "corrected_json": null,
+        "issues": [],
+        "evidence": [
+          "A：R6_PAGES.pdf 附件第3页（原PDF 265，印刷页244）；逐字、公式及页码核对。",
+          "C：只读核对R6_任务.md本条全部Lean签名及其列出的项目依赖/附录定义，未使用旧工程文件；不以sorry判FAIL。"
+        ]
+      },
+      "audit": {
+        "lean_decl": "MD.Ch06.momentumMassLaplacian",
+        "verdict": "PASS",
+        "explanation": "对所有Fin n动量方向(0,ei)作两次Fréchet导数，再以mi相乘求和，恰为原正质量权重动量Laplacian；没有误用mi⁻¹或位置方向。",
+        "counterexample": null,
+        "suggested_fix": null
+      },
+      "subtask": "BATCH28b",
+      "input_sha256": {
+        "Blueprint/Ch06.lean": "0a02a34ec68989a83bccfa5916db5053ecdb58e05667bf21ff3568d9d1f4318e",
+        "blueprint/ch06/ch06_source.json": "45c70ceef21ca168af437de297e2e21e2800b452ab7942654061d4cff9bb5d95",
+        "BATCH28b_PAGES.pdf": "fc272e27e94445fc6407552fe5c778186711a9a97461b015345cbebb03701681",
+        "signature_sha256": "19abb3494a5c7ac337cd4d6a9e99e870e378448debd896aff268135933efe9a7"
+      }
+    },
+    {
+      "source_id": "MD-6.3.8-LangevinFPEquation",
+      "json_review": {
+        "status": "APPROVED",
+        "issue_codes": [],
+        "corrected_json": null,
+        "issues": [],
+        "evidence": [
+          "A：R6_PAGES.pdf 附件第4页（原PDF 265，印刷页244）；逐字、公式及页码核对。",
+          "C：只读核对R6_任务.md本条全部Lean签名及其列出的项目依赖/附录定义，未使用旧工程文件；不以sorry判FAIL。"
+        ]
+      },
+      "audit": {
+        "lean_decl": "MD.Ch06.langevinFPEquation",
+        "verdict": "PASS",
+        "explanation": "实际前提调用的是Chapter06Review.langevinMassSDE，不是同名MD加强版；已逐字展开核对：它给出连续路径和所有非负t的q、p积分方程，噪声为sqrt(2γβ⁻¹mi)(Wi(t)−Wi(0))。正质量、γ/β正性及U光滑由定理另行补齐，连续路径保证这里的漂移沿有限区间可积。结论对任意t>0、全部相点给出真实law密度的时间导数等于D10算子；没有预设PDE。",
+        "counterexample": null,
+        "suggested_fix": null
+      },
+      "subtask": "BATCH28c",
+      "input_sha256": {
+        "Blueprint/Ch06.lean": "0a02a34ec68989a83bccfa5916db5053ecdb58e05667bf21ff3568d9d1f4318e",
+        "blueprint/ch06/ch06_source.json": "45c70ceef21ca168af437de297e2e21e2800b452ab7942654061d4cff9bb5d95",
+        "BATCH28c_PAGES.pdf": "fc272e27e94445fc6407552fe5c778186711a9a97461b015345cbebb03701681",
+        "signature_sha256": "136fade39271f9933118cf7f507505f985d2cd9254b7e82a2a58763fbb056af8"
+      }
+    }
+  ],
+  "merged_from": "ch06_first_merged"
+}

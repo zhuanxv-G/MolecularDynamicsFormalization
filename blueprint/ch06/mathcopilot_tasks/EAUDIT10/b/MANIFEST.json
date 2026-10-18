@@ -1,0 +1,118 @@
+{
+  "eaudit": "EAUDIT10",
+  "subtask": "EAUDIT10b",
+  "source_id": "MD-6.4.2-CylinderForwardPrinted",
+  "input_sha256": {
+    "Blueprint/Ch06.lean": "4a2a6cb72c1692f80e3537ab1a71701d429a482780a01226c3dc66a2ebb8b44b",
+    "blueprint/ch06/ch06_source.json": "d7f93cd20eb570744c710f3e07a88b319c082e4155812fee91db0920eb05944e",
+    "PAGES.pdf": "1a8f93fbb10d24aeabb5b30f466101143327d344b1a74a57ecbd32532c32a4f8",
+    "materials_sha256": "f27ae653175c9cb6aa7b20d4a1f481a31959fc086ae511996a9323f2501b05aa"
+  },
+  "paste_sha256": "6e4ece44a28d78039b444893c40ed44a3e9162582ae71619d448e73d35e5379a",
+  "source_pdf_sha256": "1939a22e5e96ebd2b58b8e91fe2c796f5390b402f267390f473b271c35d2f036",
+  "pdf_page_mapping": [
+    268
+  ],
+  "crop_pixel_identity": "PASS: copied page render or lossless embedded full-page source pixels",
+  "rasterized_pages": {},
+  "source_declarations": [
+    "cylinderForwardPrinted",
+    "cylinderForwardPeriodic_corrected"
+  ],
+  "dependency_excerpts": [
+    {
+      "path": "Blueprint/Ch06.lean",
+      "line": 1826,
+      "full_name": "MD.Ch06.cylinderForwardPrinted_corrected",
+      "kind": "def",
+      "excerpt_sha256": "1f0b998c73c456991ee93794b6539a827b509232779eb038748413a75e3fc61d"
+    },
+    {
+      "path": "Blueprint/Ch06.lean",
+      "line": 2104,
+      "full_name": "MD.Ch06.cylinderForwardPrinted",
+      "kind": "def",
+      "excerpt_sha256": "8158ae46a1c79b0e4ecb23e83929d659af5f43bf6532aa41befc36fa04e6b643"
+    },
+    {
+      "path": "Blueprint/Ch06.lean",
+      "line": 2111,
+      "full_name": "MD.Ch06.cylinderForwardPeriodic_corrected",
+      "kind": "def",
+      "excerpt_sha256": "5e8dfc6e2a1ee16472e854395231074b29ecadcd9a1cb22fcc671f8bc08e366f"
+    },
+    {
+      "path": "MolecularDynamics/Chapter06/BrownianDirichlet.lean",
+      "line": 13,
+      "full_name": "MolecularDynamics.textbookConfigurationPartial",
+      "kind": "def",
+      "excerpt_sha256": "fbca5c0abb1ddc15e963008415ea72d955f5e4a49bbc36888fbf88ab7a80409d"
+    },
+    {
+      "path": "MolecularDynamics/Chapter06/BrownianTorusGibbs.lean",
+      "line": 26,
+      "full_name": "MolecularDynamics.textbookConfigurationTorusRepresentative",
+      "kind": "def",
+      "excerpt_sha256": "442425b55f5d24af24ce8c8e5b0e314d6b91d6587caed2be34469765d342394e"
+    },
+    {
+      "path": "MolecularDynamics/Chapter06/LangevinCanonicalCoordinateWeakDerivative.lean",
+      "line": 18,
+      "full_name": "MolecularDynamics.textbookLangevinCanonicalCoordinateDirection",
+      "kind": "def",
+      "excerpt_sha256": "dcca9f8f19713545eee945f80facf6120420030fc212cfa04078bdaac92600e0"
+    },
+    {
+      "path": "MolecularDynamics/Chapter06/LangevinCanonicalWeakBalance.lean",
+      "line": 41,
+      "full_name": "MolecularDynamics.textbookLangevinPeriodicDirectionalDerivative",
+      "kind": "def",
+      "excerpt_sha256": "ee9cf419b42860a61ea12179056be3ac66e6c308a216a0f6a4558b0d0c685642"
+    },
+    {
+      "path": "MolecularDynamics/Chapter06/LangevinHormander.lean",
+      "line": 12,
+      "full_name": "MolecularDynamics.textbookLangevinPhase",
+      "kind": "abbrev",
+      "excerpt_sha256": "ee32316762cd33e19f1e5e47745da89914943aa66b85fb83f71d95c9b012a326"
+    },
+    {
+      "path": "MolecularDynamics/Chapter06/LangevinPeriodicProjection.lean",
+      "line": 14,
+      "full_name": "MolecularDynamics.textbookLangevinPeriodicPhase",
+      "kind": "abbrev",
+      "excerpt_sha256": "102d1bb0e87353db402a2cc858c5fb35b9a9c5730062ef3342e6b0f813ccfb58"
+    },
+    {
+      "path": "MolecularDynamics/Chapter06/LangevinPeriodicProjection.lean",
+      "line": 17,
+      "full_name": "MolecularDynamics.textbookLangevinPeriodicProjection",
+      "kind": "def",
+      "excerpt_sha256": "9039e1043deb7d19fcb9c957cf2941bda97bce3ad50948a5df792ac90b7d7020"
+    },
+    {
+      "path": "MolecularDynamics/Chapter06/ReviewDefinitions.lean",
+      "line": 17,
+      "full_name": "MolecularDynamics.Chapter06Review.V",
+      "kind": "abbrev",
+      "excerpt_sha256": "7ab0ad90462b274b03f5b929b5f09417c0b397b6cb908fa6e7bd56677a314027"
+    },
+    {
+      "path": "MolecularDynamics/Chapter06/ReviewDefinitions.lean",
+      "line": 133,
+      "full_name": "MolecularDynamics.Chapter06Review.vectorDiffusion",
+      "kind": "def",
+      "excerpt_sha256": "d1e6d80090ab41b9311086d0c77d85f4888650e228f30d5513677a1664a4f348"
+    },
+    {
+      "path": "MolecularDynamics/Chapter06/ReviewDefinitions.lean",
+      "line": 138,
+      "full_name": "MolecularDynamics.Chapter06Review.vectorForward",
+      "kind": "def",
+      "excerpt_sha256": "f6d5f758f3b4611335b2e37ec83ac99ca801811b0ffd8fa4f3f62b9b362598e2"
+    }
+  ],
+  "project_definition_closure": "complete recursive definitions, referenced theorem types, explicit choice and consistency specifications",
+  "website_submitted": false,
+  "total_task_bytes": 113853
+}

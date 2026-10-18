@@ -1,0 +1,500 @@
+{
+  "batch": "BATCH38",
+  "chapter": "ch06",
+  "round": "first-merged",
+  "input_sha256": {
+    "Blueprint/Ch06.lean": "0a02a34ec68989a83bccfa5916db5053ecdb58e05667bf21ff3568d9d1f4318e",
+    "blueprint/ch06/ch06_source.json": "45c70ceef21ca168af437de297e2e21e2800b452ab7942654061d4cff9bb5d95"
+  },
+  "items": [
+    {
+      "source_id": "MD-6.4.4-HamiltonianPowerGenerator",
+      "json_review": {
+        "status": "CORRECTED",
+        "issue_codes": [
+          "SOURCE_TRANSCRIPTION"
+        ],
+        "corrected_json": {
+          "source_id": "MD-6.4.4-HamiltonianPowerGenerator",
+          "kind": "unnumbered_claim",
+          "label": null,
+          "section": "6.4.4",
+          "printed_page": "253–254",
+          "pdf_page": "274–275",
+          "statement_latex": "Computing the generator of Langevin dynamics as\n\\[\\mathcal L_{LD}f=p\\cdot\\nabla_qf-\\nabla U(q)\\cdot\\nabla_pf-\\gamma p\\cdot\\nabla_pf+\\gamma k_BT\\Delta_p\\varphi,\\]\nwe can see that $\\mathcal L_H\\varphi=0$. Hence\n\\[\\mathcal L_{LD}\\varphi=-\\gamma p\\cdot\\nabla_p\\varphi+\\gamma k_BT\\Delta_p\\varphi.\\]",
+          "proof_latex": null,
+          "proof_note": "原书未给独立完整证明。",
+          "proof_discussion_latex": null,
+          "context_notation": [],
+          "issues": [],
+          "lean_decl": "MD.Ch06.hamiltonianPowerGenerator",
+          "reusable_proofs": [
+            "MolecularDynamics.textbookLangevinHamiltonianPower_differentialOperator"
+          ],
+          "extra_assumptions": [
+            "[EXTRA]实际全坐标一二阶导数与完整H^l，现成通用σ算子取σ=√(2γkBT)使σ²/2=γkBT；不是给定目标导数再改写。物理热参数代入在下一完整Lyapunov桥接实际出现。"
+          ],
+          "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
+          "review_status": "CORRECTED",
+          "repair_log": [],
+          "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
+        },
+        "issues": [
+          {
+            "code": "SOURCE_TRANSCRIPTION",
+            "detail": "原页应为 \\Delta_p\\varphi,，输入为 \\Delta_pf,。数学疑误另行保留，不在原文内纠正。"
+          }
+        ],
+        "evidence": [
+          {
+            "attachment": "R8_PAGES.pdf",
+            "attachment_pages": [
+              3,
+              4
+            ],
+            "printed_page": "253–254",
+            "method": "逐页PDF文本比对；同原书页复用已目视核对的原页图像，图像代表页为附件1、4、12、20、26。",
+            "finding": "已核对所引正文、数学符号、页码及选取范围；差异逐项见issues。"
+          },
+          {
+            "definition_basis": "仅R8_任务.md的实际签名及项目定义摘录（含D1–D69）；标准Mathlib按任务说明采信。",
+            "finding": "D1–D5给出真实H、H^l、力和全相空间方向导数算子；hU仅一阶可微已足够，动量二阶导数来自多项式。l=1时(l−1)系数为零，Nat截断l−2无误；σ²/2保留通用参数，物理代入已明确标注。"
+          }
+        ]
+      },
+      "audit": {
+        "lean_decl": "MD.Ch06.hamiltonianPowerGenerator",
+        "verdict": "PASS",
+        "explanation": "D1–D5给出真实H、H^l、力和全相空间方向导数算子；hU仅一阶可微已足够，动量二阶导数来自多项式。l=1时(l−1)系数为零，Nat截断l−2无误；σ²/2保留通用参数，物理代入已明确标注。",
+        "counterexample": null,
+        "suggested_fix": "原文首个生成元公式必须保留印刷Δ_p φ，而不是静默改成Δ_p f；另注该处笔误。"
+      },
+      "subtask": "BATCH38a",
+      "input_sha256": {
+        "Blueprint/Ch06.lean": "0a02a34ec68989a83bccfa5916db5053ecdb58e05667bf21ff3568d9d1f4318e",
+        "blueprint/ch06/ch06_source.json": "45c70ceef21ca168af437de297e2e21e2800b452ab7942654061d4cff9bb5d95",
+        "BATCH38a_PAGES.pdf": "50903605869ccd84782dd4f5e0633ee451a85118158d7fb47b26fe19aec5e53d",
+        "signature_sha256": "c7d000bcd10c7045fe03f43a7cd1a613074f6b7c6d883a41a6c1aa25c6e68337"
+      }
+    },
+    {
+      "source_id": "MD-6.4.4-LaplacianBoundCorrect",
+      "json_review": {
+        "status": "APPROVED",
+        "issue_codes": [],
+        "corrected_json": null,
+        "issues": [],
+        "evidence": [
+          {
+            "attachment": "R8_PAGES.pdf",
+            "attachment_pages": [
+              5
+            ],
+            "printed_page": "253",
+            "method": "逐页PDF文本比对；同原书页复用已目视核对的原页图像，图像代表页为附件1、4、12、20、26。",
+            "finding": "已核对所引正文、数学符号、页码及选取范围；差异逐项见issues。"
+          },
+          {
+            "definition_basis": "仅R8_任务.md的实际签名及项目定义摘录（含D1–D69）；标准Mathlib按任务说明采信。",
+            "finding": "逐坐标动量二阶导数总和，n与l全量词，U≥1确保H≥1。由∑p_i²≤2H得正确系数2l(l−1)+nl；l=1也成立。[EXTRA]已明确这是勘误版。"
+          }
+        ]
+      },
+      "audit": {
+        "lean_decl": "MD.Ch06.laplacianBoundCorrect",
+        "verdict": "PASS",
+        "explanation": "逐坐标动量二阶导数总和，n与l全量词，U≥1确保H≥1。由∑p_i²≤2H得正确系数2l(l−1)+nl；l=1也成立。[EXTRA]已明确这是勘误版。",
+        "counterexample": null,
+        "suggested_fix": null
+      },
+      "subtask": "BATCH38b",
+      "input_sha256": {
+        "Blueprint/Ch06.lean": "0a02a34ec68989a83bccfa5916db5053ecdb58e05667bf21ff3568d9d1f4318e",
+        "blueprint/ch06/ch06_source.json": "45c70ceef21ca168af437de297e2e21e2800b452ab7942654061d4cff9bb5d95",
+        "BATCH38b_PAGES.pdf": "32c1cc542d36732491e090e1be77031b06b750329b4b39d82796678b2dfad77a",
+        "signature_sha256": "a605b49596eebd5acb0e9e71c890119f60308bf31de63061e9be9d21f7f97960"
+      }
+    },
+    {
+      "source_id": "MD-6.4.4-LyapunovYoungBounds",
+      "json_review": {
+        "status": "APPROVED",
+        "issue_codes": [
+          "ERRATUM?"
+        ],
+        "corrected_json": null,
+        "issues": [
+          {
+            "code": "ERRATUM?",
+            "detail": "原上下文仅U≤Umax，不能推出展示严格号。"
+          }
+        ],
+        "evidence": [
+          {
+            "attachment": "R8_PAGES.pdf",
+            "attachment_pages": [
+              6
+            ],
+            "printed_page": "253",
+            "method": "逐页PDF文本比对；同原书页复用已目视核对的原页图像，图像代表页为附件1、4、12、20、26。",
+            "finding": "已核对所引正文、数学符号、页码及选取范围；差异逐项见issues。"
+          },
+          {
+            "definition_basis": "仅R8_任务.md的实际签名及项目定义摘录（含D1–D69）；标准Mathlib按任务说明采信。",
+            "finding": "量词顺序正确：c,d依赖l,n,Umax，独立于所有H≥1；正性、两条原有效非严格标量界及修正系数界同时覆盖。未编码U(q)的严格不等式，已在EXTRA/ERRATUM?说明是修正版；应保留该范围说明。"
+          }
+        ]
+      },
+      "audit": {
+        "lean_decl": "MD.Ch06.lyapunovYoungBounds",
+        "verdict": "PASS",
+        "explanation": "量词顺序正确：c,d依赖l,n,Umax，独立于所有H≥1；正性、两条原有效非严格标量界及修正系数界同时覆盖。未编码U(q)的严格不等式，已在EXTRA/ERRATUM?说明是修正版；应保留该范围说明。",
+        "counterexample": null,
+        "suggested_fix": "把原U(q)<Umax标为需严格外界；不得把本签名称为该严格链的字面形式。"
+      },
+      "subtask": "BATCH38c",
+      "input_sha256": {
+        "Blueprint/Ch06.lean": "0a02a34ec68989a83bccfa5916db5053ecdb58e05667bf21ff3568d9d1f4318e",
+        "blueprint/ch06/ch06_source.json": "45c70ceef21ca168af437de297e2e21e2800b452ab7942654061d4cff9bb5d95",
+        "BATCH38c_PAGES.pdf": "32c1cc542d36732491e090e1be77031b06b750329b4b39d82796678b2dfad77a",
+        "signature_sha256": "37a65606e4ffb08dfff70dc6eb5ec124d2fc6e8f6ddd180cb23b5c8f0dc9e4aa"
+      }
+    },
+    {
+      "source_id": "MD-6.4.4-LangevinLyapunov",
+      "json_review": {
+        "status": "CORRECTED",
+        "issue_codes": [
+          "SOURCE_TRANSCRIPTION",
+          "ERRATUM?"
+        ],
+        "corrected_json": {
+          "source_id": "MD-6.4.4-LangevinLyapunov",
+          "kind": "unnumbered_claim",
+          "label": null,
+          "section": "6.4.4",
+          "printed_page": "253–254",
+          "pdf_page": "274–275",
+          "statement_latex": "giving\n\\[\\mathcal L_{LD}\\varphi\\le-2\\gamma l\\varphi+2\\gamma lH^{l-1}U(q)+\\gamma l(l+N_c-1)H^{l-1}\n\\le-\\gamma l\\varphi+\\gamma c+\\gamma d\n\\le-\\alpha\\varphi+\\delta,\\]\nsatisfying Assumption 2. The purpose of using the $l$ exponent in the Lyapunov function is to ensure that we can apply the theorem to a wide enough class of observables, as (6.48) is only valid for functions $f$ with magnitude less than or equal to the Lyapunov function.",
+          "proof_latex": null,
+          "proof_note": "原书未给独立完整证明。",
+          "proof_discussion_latex": null,
+          "context_notation": [],
+          "issues": [],
+          "lean_decl": "MD.Ch06.langevinLyapunov",
+          "reusable_proofs": [
+            "MolecularDynamics.textbookLangevinPeriodicHamiltonianPower_physical_lyapunov"
+          ],
+          "extra_assumptions": [
+            "[EXTRA]实际单位质量周期模型、归一U≥1、γ/β>0及l≥1；完整正性/紧子水平集/无穷远proper/正δ全域线性恢复界，采用真实更正系数2。原证明计算的错系数仍按原句保留；不是整个Thm6.2或canonical invariance桥接。"
+          ],
+          "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
+          "review_status": "CORRECTED",
+          "repair_log": [],
+          "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
+        },
+        "issues": [
+          {
+            "code": "SOURCE_TRANSCRIPTION",
+            "detail": "原页应为 \\gamma l(l+N_c-1)，输入为 \\gamma k_BT l(l+N_c-1)。数学疑误另行保留，不在原文内纠正。"
+          },
+          {
+            "code": "SOURCE_TRANSCRIPTION",
+            "detail": "原页应为 \\gamma c，输入为 \\gamma k_BT c。数学疑误另行保留，不在原文内纠正。"
+          },
+          {
+            "code": "SOURCE_TRANSCRIPTION",
+            "detail": "原页应为 \\le-\\alpha，输入为 =-\\alpha。数学疑误另行保留，不在原文内纠正。"
+          },
+          {
+            "code": "ERRATUM?",
+            "detail": "原Laplacian系数有误；印刷推导还未正确处理热系数吸收，但最终Lyapunov结论可修复。"
+          }
+        ],
+        "evidence": [
+          {
+            "attachment": "R8_PAGES.pdf",
+            "attachment_pages": [
+              7,
+              8
+            ],
+            "printed_page": "253–254",
+            "method": "逐页PDF文本比对；同原书页复用已目视核对的原页图像，图像代表页为附件1、4、12、20、26。",
+            "finding": "已核对所引正文、数学符号、页码及选取范围；差异逐项见issues。"
+          },
+          {
+            "definition_basis": "仅R8_任务.md的实际签名及项目定义摘录（含D1–D69）；标准Mathlib按任务说明采信。",
+            "finding": "实际周期相空间、正γ和β、归一U≥1、l≥1、热系数恒等式、正性、全部子水平紧性、cocompact无穷远增长以及全域漂移界均完整。δ位于z之前；γl>0。结论为合理修正版，未声称证明原错误中间链。"
+          }
+        ]
+      },
+      "audit": {
+        "lean_decl": "MD.Ch06.langevinLyapunov",
+        "verdict": "PASS",
+        "explanation": "实际周期相空间、正γ和β、归一U≥1、l≥1、热系数恒等式、正性、全部子水平紧性、cocompact无穷远增长以及全域漂移界均完整。δ位于z之前；γl>0。结论为合理修正版，未声称证明原错误中间链。",
+        "counterexample": null,
+        "suggested_fix": "原文公式须忠实保留印刷的γl(l+Nc−1)、γc及末行≤；另以ERRATUM?解释热系数和吸收常数。"
+      },
+      "subtask": "BATCH38d",
+      "input_sha256": {
+        "Blueprint/Ch06.lean": "0a02a34ec68989a83bccfa5916db5053ecdb58e05667bf21ff3568d9d1f4318e",
+        "blueprint/ch06/ch06_source.json": "45c70ceef21ca168af437de297e2e21e2800b452ab7942654061d4cff9bb5d95",
+        "BATCH38d_PAGES.pdf": "50903605869ccd84782dd4f5e0633ee451a85118158d7fb47b26fe19aec5e53d",
+        "signature_sha256": "e0a33bcfd6593b12e49a07010d79cef0c6e6681e1cbad3e0c548d2ffb8a94806"
+      }
+    },
+    {
+      "source_id": "MD-6.4.4-LieBracket",
+      "json_review": {
+        "status": "CORRECTED",
+        "issue_codes": [
+          "SOURCE_FORMULA_ORDER"
+        ],
+        "corrected_json": {
+          "source_id": "MD-6.4.4-LieBracket",
+          "kind": "definition",
+          "label": null,
+          "section": "6.4.4",
+          "printed_page": "254",
+          "pdf_page": "275",
+          "statement_latex": "The Lie bracket of a pair of vector fields $u(z),v(z)$ is another vector field\n\\[[u,v]=v'u-u'v;\\]\nwhere $u'$ is the Jacobian matrix of the vector field $u$. In coordinates, if we let $w=[u,v]$, then the coordinates of $w$ are\n\\[w_i=\\sum_{j=1}^m\\left(\\frac{\\partial v_i}{\\partial z_j}u_j-\\frac{\\partial u_i}{\\partial z_j}v_j\\right).\\]",
+          "proof_latex": null,
+          "proof_note": "原书未给独立完整证明。",
+          "proof_discussion_latex": null,
+          "context_notation": [],
+          "issues": [],
+          "lean_decl": "MD.Ch06.lieBracket",
+          "reusable_proofs": [],
+          "extra_assumptions": [
+            "[EXTRA]实际Fréchet导数括号，具体性质/迭代均要求适当可微字段；其通用辅助函数的非可微总化值不作经典Jacobian解释。有限坐标式由真实fderiv在basis上取分量。",
+            "[EXTRA]实际字段仅需原开域内C¹，输出点属于D，非可微/域外的总化fderiv值不作为经典Jacobian。"
+          ],
+          "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
+          "review_status": "CORRECTED",
+          "repair_log": [],
+          "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
+        },
+        "issues": [
+          {
+            "code": "SOURCE_FORMULA_ORDER",
+            "detail": "原坐标式为(∂v_i/∂z_j)u_j−(∂u_i/∂z_j)v_j；输入交换标量乘积顺序，数学等价但非逐字。"
+          }
+        ],
+        "evidence": [
+          {
+            "attachment": "R8_PAGES.pdf",
+            "attachment_pages": [
+              9
+            ],
+            "printed_page": "254",
+            "method": "逐页PDF文本比对；同原书页复用已目视核对的原页图像，图像代表页为附件1、4、12、20、26。",
+            "finding": "已核对所引正文、数学符号、页码及选取范围；差异逐项见issues。"
+          },
+          {
+            "definition_basis": "仅R8_任务.md的实际签名及项目定义摘录（含D1–D69）；标准Mathlib按任务说明采信。",
+            "finding": "D36连接标准VectorField.lieBracket，符号为Dv·u−Du·v；D开、x∈D及域内C¹保证真实局部导数。坐标表达可由基展开得到，未把域外总化值作经典导数。"
+          }
+        ]
+      },
+      "audit": {
+        "lean_decl": "MD.Ch06.lieBracket",
+        "verdict": "PASS",
+        "explanation": "D36连接标准VectorField.lieBracket，符号为Dv·u−Du·v；D开、x∈D及域内C¹保证真实局部导数。坐标表达可由基展开得到，未把域外总化值作经典导数。",
+        "counterexample": null,
+        "suggested_fix": null
+      },
+      "subtask": "BATCH38e",
+      "input_sha256": {
+        "Blueprint/Ch06.lean": "0a02a34ec68989a83bccfa5916db5053ecdb58e05667bf21ff3568d9d1f4318e",
+        "blueprint/ch06/ch06_source.json": "45c70ceef21ca168af437de297e2e21e2800b452ab7942654061d4cff9bb5d95",
+        "BATCH38e_PAGES.pdf": "c95217de05e6cb102e729ffa28db3dc07fa38ceeaa8653d0ce0ed7a07a2da1c6",
+        "signature_sha256": "0904141e181e585ad9d65cf2e084edae0b6906186c1165456e5678407e0f6c32"
+      }
+    },
+    {
+      "source_id": "MD-6.4.4-LieBracketProperties",
+      "json_review": {
+        "status": "CORRECTED",
+        "issue_codes": [
+          "SOURCE_PARAPHRASE"
+        ],
+        "corrected_json": {
+          "source_id": "MD-6.4.4-LieBracketProperties",
+          "kind": "unnumbered_claim",
+          "label": null,
+          "section": "6.4.4",
+          "printed_page": "254",
+          "pdf_page": "275",
+          "statement_latex": "The Lie bracket is a bilinear and skew-symmetric operation:\n• $[\\alpha u+\\beta v,w]=\\alpha[u,w]+\\beta[v,w]$,\n• $[u,v]=-[v,u]$ and $[u,u]=0$.",
+          "proof_latex": null,
+          "proof_note": "原书未给独立完整证明。",
+          "proof_discussion_latex": null,
+          "context_notation": [],
+          "issues": [],
+          "lean_decl": "MD.Ch06.lieBracketProperties",
+          "reusable_proofs": [],
+          "extra_assumptions": [
+            "[EXTRA]全部双槽线性、skew及自身零明确，真实全域可微资格；不只保存某一固定字段或单槽例子。"
+          ],
+          "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
+          "review_status": "CORRECTED",
+          "repair_log": [],
+          "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
+        },
+        "issues": [
+          {
+            "code": "SOURCE_PARAPHRASE",
+            "detail": "输入使用改写/缩写而非原页逐字引文；corrected_json恢复所选原句或列表。"
+          }
+        ],
+        "evidence": [
+          {
+            "attachment": "R8_PAGES.pdf",
+            "attachment_pages": [
+              10
+            ],
+            "printed_page": "254",
+            "method": "逐页PDF文本比对；同原书页复用已目视核对的原页图像，图像代表页为附件1、4、12、20、26。",
+            "finding": "已核对所引正文、数学符号、页码及选取范围；差异逐项见issues。"
+          },
+          {
+            "definition_basis": "仅R8_任务.md的实际签名及项目定义摘录（含D1–D69）；标准Mathlib按任务说明采信。",
+            "finding": "两槽所有实线性组合、反对称、自括号零同时给出，字段全局可微确保导数线性；全局版本为已标注技术范围。"
+          }
+        ]
+      },
+      "audit": {
+        "lean_decl": "MD.Ch06.lieBracketProperties",
+        "verdict": "PASS",
+        "explanation": "两槽所有实线性组合、反对称、自括号零同时给出，字段全局可微确保导数线性；全局版本为已标注技术范围。",
+        "counterexample": null,
+        "suggested_fix": null
+      },
+      "subtask": "BATCH38f",
+      "input_sha256": {
+        "Blueprint/Ch06.lean": "0a02a34ec68989a83bccfa5916db5053ecdb58e05667bf21ff3568d9d1f4318e",
+        "blueprint/ch06/ch06_source.json": "45c70ceef21ca168af437de297e2e21e2800b452ab7942654061d4cff9bb5d95",
+        "BATCH38f_PAGES.pdf": "c95217de05e6cb102e729ffa28db3dc07fa38ceeaa8653d0ce0ed7a07a2da1c6",
+        "signature_sha256": "b318a185b5e79bf0bdbab46fa8ee0159198a1056acbd8d095166f0b5e2ba072f"
+      }
+    },
+    {
+      "source_id": "MD-6.4.4-Definition61",
+      "json_review": {
+        "status": "NEEDS_HUMAN",
+        "issue_codes": [
+          "REQUIRES_HUMAN",
+          "ERRATUM?"
+        ],
+        "corrected_json": null,
+        "issues": [
+          {
+            "code": "REQUIRES_HUMAN",
+            "detail": "definition61/Printed含全部b0及噪声，域内C∞和x∈D完整；corrected从噪声开始并反复与所有字段取括号，修正方向合理。但D38引用的项目谓词textbookIteratedBracket全文未提供，无法只据摘录核定原版究竟包含哪些迭代括号。原含漂移定义也不能一般推出抛物型密度。"
+          },
+          {
+            "code": "ERRATUM?",
+            "detail": "原漂移参与初始span不足以推出一般正时间密度。"
+          }
+        ],
+        "evidence": [
+          {
+            "attachment": "R8_PAGES.pdf",
+            "attachment_pages": [
+              11
+            ],
+            "printed_page": "254",
+            "method": "逐页PDF文本比对；同原书页复用已目视核对的原页图像，图像代表页为附件1、4、12、20、26。",
+            "finding": "已核对所引正文、数学符号、页码及选取范围；差异逐项见issues。"
+          },
+          {
+            "definition_basis": "仅R8_任务.md的实际签名及项目定义摘录（含D1–D69）；标准Mathlib按任务说明采信。",
+            "finding": "definition61/Printed含全部b0及噪声，域内C∞和x∈D完整；corrected从噪声开始并反复与所有字段取括号，修正方向合理。但D38引用的项目谓词textbookIteratedBracket全文未提供，无法只据摘录核定原版究竟包含哪些迭代括号。原含漂移定义也不能一般推出抛物型密度。"
+          }
+        ]
+      },
+      "audit": {
+        "lean_decl": "MD.Ch06.definition61",
+        "verdict": "NEEDS_HUMAN",
+        "explanation": "definition61/Printed含全部b0及噪声，域内C∞和x∈D完整；corrected从噪声开始并反复与所有字段取括号，修正方向合理。但D38引用的项目谓词textbookIteratedBracket全文未提供，无法只据摘录核定原版究竟包含哪些迭代括号。原含漂移定义也不能一般推出抛物型密度。",
+        "counterexample": "一维b0=1、所有噪声为0：印刷张成条件成立，但确定性平移的转移律为Dirac，无Lebesgue密度。",
+        "suggested_fix": "补textbookIteratedBracket实际定义；原版保留ERRATUM?，密度用途采用已列噪声生成修正版。"
+      },
+      "subtask": "BATCH38g",
+      "input_sha256": {
+        "Blueprint/Ch06.lean": "0a02a34ec68989a83bccfa5916db5053ecdb58e05667bf21ff3568d9d1f4318e",
+        "blueprint/ch06/ch06_source.json": "45c70ceef21ca168af437de297e2e21e2800b452ab7942654061d4cff9bb5d95",
+        "BATCH38g_PAGES.pdf": "c95217de05e6cb102e729ffa28db3dc07fa38ceeaa8653d0ce0ed7a07a2da1c6",
+        "signature_sha256": "58bef36bd424f8e4a1fa28fdbb4f70775362cbf3765ba8afa25ef0cfcbd695c9"
+      }
+    },
+    {
+      "source_id": "MD-6.4.4-LangevinFields",
+      "json_review": {
+        "status": "CORRECTED",
+        "issue_codes": [
+          "SOURCE_PARAPHRASE"
+        ],
+        "corrected_json": {
+          "source_id": "MD-6.4.4-LangevinFields",
+          "kind": "definition",
+          "label": null,
+          "section": "6.4.4",
+          "printed_page": "255",
+          "pdf_page": "276",
+          "statement_latex": "In the case of Langevin dynamics, we identify the vectors $b_i$ in (6.43) with the terms in (6.47). One puts Langevin dynamics into the correct form by using\n\\[b_0=\\begin{bmatrix}p\\\\-\\nabla U(q)-\\gamma p\\end{bmatrix},\\qquad b_i=\\sigma\\begin{bmatrix}0\\\\e_i\\end{bmatrix},\\quad i=1,2,\\ldots,N_c,\\]\nwhere $e_i$ is the $i$th Euclidean basis vector in $\\mathbb R^{N_c}$ and $\\sigma=\\sqrt{2\\gamma k_BT}$ is constant.",
+          "proof_latex": null,
+          "proof_note": "原书未给独立完整证明。",
+          "proof_discussion_latex": null,
+          "context_notation": [],
+          "issues": [],
+          "lean_decl": "MD.Ch06.langevinDrift",
+          "reusable_proofs": [],
+          "extra_assumptions": [
+            "[EXTRA]实际全部2Nc相空间坐标的真实drift/noise，C∞势资格编码，通用σ在物理定理取√(2γkBT)；不把noise定义计作独立Wiener law或密度存在证明。"
+          ],
+          "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
+          "review_status": "CORRECTED",
+          "repair_log": [],
+          "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
+        },
+        "issues": [
+          {
+            "code": "SOURCE_PARAPHRASE",
+            "detail": "输入使用改写/缩写而非原页逐字引文；corrected_json恢复所选原句或列表。"
+          }
+        ],
+        "evidence": [
+          {
+            "attachment": "R8_PAGES.pdf",
+            "attachment_pages": [
+              12
+            ],
+            "printed_page": "255",
+            "method": "逐页PDF文本比对；同原书页复用已目视核对的原页图像，图像代表页为附件1、4、12、20、26。",
+            "finding": "已核对所引正文、数学符号、页码及选取范围；差异逐项见issues。"
+          },
+          {
+            "definition_basis": "仅R8_任务.md的实际签名及项目定义摘录（含D1–D69）；标准Mathlib按任务说明采信。",
+            "finding": "实际Drift为(p,−∇U−γp)，Noise为(0,σe_i)，Fin Nc覆盖全部坐标。C∞资格和通用σ/物理代入均已说明；噪声定义自身不是Wiener定律。"
+          }
+        ]
+      },
+      "audit": {
+        "lean_decl": "MD.Ch06.langevinDrift",
+        "verdict": "PASS",
+        "explanation": "实际Drift为(p,−∇U−γp)，Noise为(0,σe_i)，Fin Nc覆盖全部坐标。C∞资格和通用σ/物理代入均已说明；噪声定义自身不是Wiener定律。",
+        "counterexample": null,
+        "suggested_fix": null
+      },
+      "subtask": "BATCH38h",
+      "input_sha256": {
+        "Blueprint/Ch06.lean": "0a02a34ec68989a83bccfa5916db5053ecdb58e05667bf21ff3568d9d1f4318e",
+        "blueprint/ch06/ch06_source.json": "45c70ceef21ca168af437de297e2e21e2800b452ab7942654061d4cff9bb5d95",
+        "BATCH38h_PAGES.pdf": "974f7ad71997f3252515153a560b13b741e8200998eb1ebae674886184542ba0",
+        "signature_sha256": "dea9bce38cbe7ddf77c174f383ae54fc7348eeb2675dcdcb141b5dcee89577a0"
+      }
+    }
+  ],
+  "merged_from": "ch06_first_merged"
+}

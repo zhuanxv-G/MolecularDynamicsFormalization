@@ -1,0 +1,476 @@
+{
+  "batch": "BATCH11",
+  "chapter": "ch06",
+  "round": "first-merged",
+  "input_sha256": {
+    "Blueprint/Ch06.lean": "0a02a34ec68989a83bccfa5916db5053ecdb58e05667bf21ff3568d9d1f4318e",
+    "blueprint/ch06/ch06_source.json": "45c70ceef21ca168af437de297e2e21e2800b452ab7942654061d4cff9bb5d95"
+  },
+  "items": [
+    {
+      "source_id": "MD-6.2.1-RademacherJumps",
+      "json_review": {
+        "status": "APPROVED",
+        "issue_codes": [],
+        "corrected_json": {
+          "source_id": "MD-6.2.1-RademacherJumps",
+          "kind": "definition",
+          "label": null,
+          "section": "6.2.1",
+          "printed_page": "225",
+          "pdf_page": "246",
+          "statement_latex": "In the classic model of a random walk the jump takes values $\\pm1$ with equal probability.\nThe increments of the random walk are the differences $\\Delta X_n=X_n-X_{n-1}=\\delta xJ_{n-1}$, thus $(X_n)$ is a random process with independent increments.",
+          "proof_latex": null,
+          "proof_note": "原书未给独立完整证明。",
+          "proof_discussion_latex": null,
+          "context_notation": [],
+          "issues": [],
+          "lean_decl": "MD.Ch06.rademacherJumps",
+          "reusable_proofs": [],
+          "extra_assumptions": [
+            "[EXTRA]真实概率空间、独立可测L²跳跃、AE取±1且期望零；这些条件保留公平Rademacher意义，不把二阶有限和结论作假设。"
+          ],
+          "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
+          "review_status": "APPROVED",
+          "repair_log": [],
+          "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
+        },
+        "issues": [],
+        "evidence": {
+          "A_pdf_pages": [
+            25
+          ],
+          "A_original_pdf_pages": "246",
+          "A_printed_pages": "225",
+          "A_method": "直接读取附件PDF文本，并对对应印刷页的渲染图核对公式、上下标及措辞；重复页的提取正文一致。换行及LaTeX排版编码差异不作数学错误。",
+          "A_result": "所选原句与公式一致；摘录允许省去相邻未选段落，不将省略当作完整原证明。",
+          "C_basis": "仅本任务所给实际签名、该条依赖定义及附录D1–D24；Mathlib按任务约定采信。只读语义审查，未运行Lean编译，未修改工程或补证明，未因sorry判FAIL。"
+        }
+      },
+      "audit": {
+        "lean_decl": "MD.Ch06.rademacherJumps",
+        "verdict": "PASS",
+        "explanation": "任意可测概率空间、独立可测L²跳跃、AE取±1且均值0，推出两点概率各1/2，正确表达公平Rademacher列。[EXTRA]中独立性和可积性均为实际条件；AE版本是概率变量的适当语义，不要求零测集上逐点取值。",
+        "counterexample": null,
+        "suggested_fix": null
+      },
+      "subtask": "BATCH11a",
+      "input_sha256": {
+        "Blueprint/Ch06.lean": "0a02a34ec68989a83bccfa5916db5053ecdb58e05667bf21ff3568d9d1f4318e",
+        "blueprint/ch06/ch06_source.json": "45c70ceef21ca168af437de297e2e21e2800b452ab7942654061d4cff9bb5d95",
+        "BATCH11a_PAGES.pdf": "0fc6ce765e70984002da6c4d6cb452bbf11c6d3841fc314da993e6dfdf115dee",
+        "signature_sha256": "72ff393fc703946819bd5e2c908eafd45b92e6d06dc01a48eb271e43370d8f77"
+      }
+    },
+    {
+      "source_id": "MD-6.2.1-RandomWalk",
+      "json_review": {
+        "status": "APPROVED",
+        "issue_codes": [],
+        "corrected_json": {
+          "source_id": "MD-6.2.1-RandomWalk",
+          "kind": "definition",
+          "label": null,
+          "section": "6.2.1",
+          "printed_page": "225",
+          "pdf_page": "246",
+          "statement_latex": "That is, we have\n\\[X_{n+1}=X_n+\\delta x J_n.\\]\nWe initiate the random walk with $X_0=0$.\nThe solution $X_n$ of the random walk may be written\n\\[X_n=\\delta x\\sum_{k=0}^{n-1}J_k.\\]",
+          "proof_latex": null,
+          "proof_note": "原书未给独立完整证明。",
+          "proof_discussion_latex": null,
+          "context_notation": [
+            "真实n项Finset.range n有限和；递推、初值及独立增量另列，不计为定义自动证明。"
+          ],
+          "issues": [],
+          "lean_decl": "MD.Ch06.randomWalk",
+          "reusable_proofs": [],
+          "extra_assumptions": [],
+          "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
+          "review_status": "APPROVED",
+          "repair_log": [],
+          "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
+        },
+        "issues": [],
+        "evidence": {
+          "A_pdf_pages": [
+            26
+          ],
+          "A_original_pdf_pages": "246",
+          "A_printed_pages": "225",
+          "A_method": "直接读取附件PDF文本，并对对应印刷页的渲染图核对公式、上下标及措辞；重复页的提取正文一致。换行及LaTeX排版编码差异不作数学错误。",
+          "A_result": "所选原句与公式一致；摘录允许省去相邻未选段落，不将省略当作完整原证明。",
+          "C_basis": "仅本任务所给实际签名、该条依赖定义及附录D1–D24；Mathlib按任务约定采信。只读语义审查，未运行Lean编译，未修改工程或补证明，未因sorry判FAIL。"
+        }
+      },
+      "audit": {
+        "lean_decl": "MD.Ch06.randomWalk",
+        "verdict": "PASS",
+        "explanation": "∀样本空间、J、dx,n,sample；range n确为k=0,…,n-1，有限和乘dx准确，n=0为空和。定义本身无需概率结构；初始值及递推在独立条目23、24审查。",
+        "counterexample": null,
+        "suggested_fix": null
+      },
+      "subtask": "BATCH11b",
+      "input_sha256": {
+        "Blueprint/Ch06.lean": "0a02a34ec68989a83bccfa5916db5053ecdb58e05667bf21ff3568d9d1f4318e",
+        "blueprint/ch06/ch06_source.json": "45c70ceef21ca168af437de297e2e21e2800b452ab7942654061d4cff9bb5d95",
+        "BATCH11b_PAGES.pdf": "0fc6ce765e70984002da6c4d6cb452bbf11c6d3841fc314da993e6dfdf115dee",
+        "signature_sha256": "f79bc15bc3a337d9920f9c0f405d0533f8b6c02885f7a4cac73bc8b615fd90dc"
+      }
+    },
+    {
+      "source_id": "MD-6.2.1-WalkRecurrence",
+      "json_review": {
+        "status": "APPROVED",
+        "issue_codes": [],
+        "corrected_json": {
+          "source_id": "MD-6.2.1-WalkRecurrence",
+          "kind": "unnumbered_claim",
+          "label": null,
+          "section": "6.2.1",
+          "printed_page": "225",
+          "pdf_page": "246",
+          "statement_latex": "A random walk is a discrete stochastic process in which the state $X_n$ at a given instant (defined by the index $n$) is related to the state $X_{n-1}$, at step $n-1$ by an offset that may be viewed as a random variable. That is, we have\n\\[X_{n+1}=X_n+\\delta x J_n.\\]",
+          "proof_latex": null,
+          "proof_note": "原书未给独立完整证明。",
+          "proof_discussion_latex": null,
+          "context_notation": [],
+          "issues": [],
+          "lean_decl": "MD.Ch06.walkRecurrence",
+          "reusable_proofs": [],
+          "extra_assumptions": [],
+          "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
+          "review_status": "APPROVED",
+          "repair_log": [],
+          "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
+        },
+        "issues": [],
+        "evidence": {
+          "A_pdf_pages": [
+            27
+          ],
+          "A_original_pdf_pages": "246",
+          "A_printed_pages": "225",
+          "A_method": "直接读取附件PDF文本，并对对应印刷页的渲染图核对公式、上下标及措辞；重复页的提取正文一致。换行及LaTeX排版编码差异不作数学错误。",
+          "A_result": "所选原句与公式一致；摘录允许省去相邻未选段落，不将省略当作完整原证明。",
+          "C_basis": "仅本任务所给实际签名、该条依赖定义及附录D1–D24；Mathlib按任务约定采信。只读语义审查，未运行Lean编译，未修改工程或补证明，未因sorry判FAIL。"
+        }
+      },
+      "audit": {
+        "lean_decl": "MD.Ch06.walkRecurrence",
+        "verdict": "PASS",
+        "explanation": "所有J、dx,n,sample，无概率或正步长假设；range(n+1)拆最后一项便得X_(n+1)=X_n+dxJ_n，量词、下标及结论完整。",
+        "counterexample": null,
+        "suggested_fix": null
+      },
+      "subtask": "BATCH11c",
+      "input_sha256": {
+        "Blueprint/Ch06.lean": "0a02a34ec68989a83bccfa5916db5053ecdb58e05667bf21ff3568d9d1f4318e",
+        "blueprint/ch06/ch06_source.json": "45c70ceef21ca168af437de297e2e21e2800b452ab7942654061d4cff9bb5d95",
+        "BATCH11c_PAGES.pdf": "0fc6ce765e70984002da6c4d6cb452bbf11c6d3841fc314da993e6dfdf115dee",
+        "signature_sha256": "a99de4afc08ebd117e5e547c44624580fcf9cc8c57120873a211c251597f150f"
+      }
+    },
+    {
+      "source_id": "MD-6.2.1-WalkInitial",
+      "json_review": {
+        "status": "APPROVED",
+        "issue_codes": [],
+        "corrected_json": {
+          "source_id": "MD-6.2.1-WalkInitial",
+          "kind": "unnumbered_claim",
+          "label": null,
+          "section": "6.2.1",
+          "printed_page": "225",
+          "pdf_page": "246",
+          "statement_latex": "We initiate the random walk with $X_0=0$.",
+          "proof_latex": null,
+          "proof_note": "原书未给独立完整证明。",
+          "proof_discussion_latex": null,
+          "context_notation": [],
+          "issues": [],
+          "lean_decl": "MD.Ch06.walkInitial",
+          "reusable_proofs": [],
+          "extra_assumptions": [],
+          "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
+          "review_status": "APPROVED",
+          "repair_log": [],
+          "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
+        },
+        "issues": [],
+        "evidence": {
+          "A_pdf_pages": [
+            28
+          ],
+          "A_original_pdf_pages": "246",
+          "A_printed_pages": "225",
+          "A_method": "直接读取附件PDF文本，并对对应印刷页的渲染图核对公式、上下标及措辞；重复页的提取正文一致。换行及LaTeX排版编码差异不作数学错误。",
+          "A_result": "所选原句与公式一致；摘录允许省去相邻未选段落，不将省略当作完整原证明。",
+          "C_basis": "仅本任务所给实际签名、该条依赖定义及附录D1–D24；Mathlib按任务约定采信。只读语义审查，未运行Lean编译，未修改工程或补证明，未因sorry判FAIL。"
+        }
+      },
+      "audit": {
+        "lean_decl": "MD.Ch06.walkInitial",
+        "verdict": "PASS",
+        "explanation": "所有J、dx,sample，n=0时range为空，定义直接给0；无需随机性或额外假设。",
+        "counterexample": null,
+        "suggested_fix": null
+      },
+      "subtask": "BATCH11d",
+      "input_sha256": {
+        "Blueprint/Ch06.lean": "0a02a34ec68989a83bccfa5916db5053ecdb58e05667bf21ff3568d9d1f4318e",
+        "blueprint/ch06/ch06_source.json": "45c70ceef21ca168af437de297e2e21e2800b452ab7942654061d4cff9bb5d95",
+        "BATCH11d_PAGES.pdf": "0fc6ce765e70984002da6c4d6cb452bbf11c6d3841fc314da993e6dfdf115dee",
+        "signature_sha256": "6e04d575f51eaf8a4892ea44995107561e97a0c6c11b373f03d7575cf99e2746"
+      }
+    },
+    {
+      "source_id": "MD-6.2.1-WalkVariance",
+      "json_review": {
+        "status": "APPROVED",
+        "issue_codes": [],
+        "corrected_json": {
+          "source_id": "MD-6.2.1-WalkVariance",
+          "kind": "unnumbered_claim",
+          "label": null,
+          "section": "6.2.1",
+          "printed_page": "225–226",
+          "pdf_page": "246–247",
+          "statement_latex": "hence the variance is\n\\[\\mathbb E X_n^2=\\delta x^2\\mathbb E\\left(\\sum_{k=0}^{n-1}J_k\\right)^2.\\]\nExpanding the squared sum we see that there are (i) $n$ squares $J_k^2$ plus (ii) products of the form $J_kJ_l$, $k\\neq l$. Clearly the former are always one and the latter have zero expectation, thus\n\\[\\mathbb E X_n^2=n\\delta x^2.\\]",
+          "proof_latex": null,
+          "proof_note": "原书未给独立完整证明。",
+          "proof_discussion_latex": null,
+          "context_notation": [],
+          "issues": [],
+          "lean_decl": "MD.Ch06.walkVariance",
+          "reusable_proofs": [],
+          "extra_assumptions": [
+            "[EXTRA]完整真实概率、L²、独立且公平±1跳跃；同时保存零均值与原完整二阶矩，不将和的二阶矩或交叉项零作前提。"
+          ],
+          "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
+          "review_status": "APPROVED",
+          "repair_log": [],
+          "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
+        },
+        "issues": [],
+        "evidence": {
+          "A_pdf_pages": [
+            29,
+            30
+          ],
+          "A_original_pdf_pages": "246–247",
+          "A_printed_pages": "225–226",
+          "A_method": "直接读取附件PDF文本，并对对应印刷页的渲染图核对公式、上下标及措辞；重复页的提取正文一致。换行及LaTeX排版编码差异不作数学错误。",
+          "A_result": "所选原句与公式一致；摘录允许省去相邻未选段落，不将省略当作完整原证明。",
+          "C_basis": "仅本任务所给实际签名、该条依赖定义及附录D1–D24；Mathlib按任务约定采信。只读语义审查，未运行Lean编译，未修改工程或补证明，未因sorry判FAIL。"
+        }
+      },
+      "audit": {
+        "lean_decl": "MD.Ch06.walkVariance",
+        "verdict": "PASS",
+        "explanation": "任意概率空间P、J、dx,n，在D14条件下零均值及完整二阶矩n dx²同时保留。独立性消去异指标乘积，AE的J_k²=1给对角项；L²使有限和及平方可积。因此二阶矩等于原方差，未将待证矩作为假设。",
+        "counterexample": null,
+        "suggested_fix": null
+      },
+      "subtask": "BATCH11e",
+      "input_sha256": {
+        "Blueprint/Ch06.lean": "0a02a34ec68989a83bccfa5916db5053ecdb58e05667bf21ff3568d9d1f4318e",
+        "blueprint/ch06/ch06_source.json": "45c70ceef21ca168af437de297e2e21e2800b452ab7942654061d4cff9bb5d95",
+        "BATCH11e_PAGES.pdf": "c2a16b12e18e22ab2b659c05e029e59a3216cb2fc24c51ab323d7be7797e6ad8",
+        "signature_sha256": "bc80671099dd0c60099b62b82e9cfc6eaea99c11405b3fd2bfbf4e53e80eb654"
+      }
+    },
+    {
+      "source_id": "MD-6.2.1-DiffusiveWalk",
+      "json_review": {
+        "status": "APPROVED",
+        "issue_codes": [],
+        "corrected_json": {
+          "source_id": "MD-6.2.1-DiffusiveWalk",
+          "kind": "definition",
+          "label": null,
+          "section": "6.2.1",
+          "printed_page": "226",
+          "pdf_page": "247",
+          "statement_latex": "Let $t_n=n\\delta t$, $n=0,1,\\ldots,\\nu$ and define\n\\[Y(t_{k+1})=Y(t_k)+\\sqrt{\\delta t}J_k,\\qquad k=0,1,\\ldots,\\nu-1,\\]\nwhere $Y(0)=0$. Effectively we are making the size of the jump $\\delta x$ taken at each step of the random walk equal to $\\sqrt{\\delta t}$.",
+          "proof_latex": null,
+          "proof_note": "原书未给独立完整证明。",
+          "proof_discussion_latex": null,
+          "context_notation": [
+            "δt>0；Yk是真实随机游走取δx=√δt；连续时间插值另条。"
+          ],
+          "issues": [],
+          "lean_decl": "MD.Ch06.diffusiveWalk",
+          "reusable_proofs": [],
+          "extra_assumptions": [],
+          "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
+          "review_status": "APPROVED",
+          "repair_log": [],
+          "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
+        },
+        "issues": [],
+        "evidence": {
+          "A_pdf_pages": [
+            31
+          ],
+          "A_original_pdf_pages": "247",
+          "A_printed_pages": "226",
+          "A_method": "直接读取附件PDF文本，并对对应印刷页的渲染图核对公式、上下标及措辞；重复页的提取正文一致。换行及LaTeX排版编码差异不作数学错误。",
+          "A_result": "所选原句与公式一致；摘录允许省去相邻未选段落，不将省略当作完整原证明。",
+          "C_basis": "仅本任务所给实际签名、该条依赖定义及附录D1–D24；Mathlib按任务约定采信。只读语义审查，未运行Lean编译，未修改工程或补证明，未因sorry判FAIL。"
+        }
+      },
+      "audit": {
+        "lean_decl": "MD.Ch06.diffusiveWalk",
+        "verdict": "PASS",
+        "explanation": "定义是在全部自然数网格上取dx=sqrt(dt)的D22随机游走；原书有限窗口是其限制。物理使用dt>0时正确，定义对dt≤0的Lean总延拓不代表负时间步长物理主张。",
+        "counterexample": null,
+        "suggested_fix": null
+      },
+      "subtask": "BATCH11f",
+      "input_sha256": {
+        "Blueprint/Ch06.lean": "0a02a34ec68989a83bccfa5916db5053ecdb58e05667bf21ff3568d9d1f4318e",
+        "blueprint/ch06/ch06_source.json": "45c70ceef21ca168af437de297e2e21e2800b452ab7942654061d4cff9bb5d95",
+        "BATCH11f_PAGES.pdf": "2d3ba8c3ed5fd4eeb3c09161da1212f8b0ca71b82ffd466c431a7ed10976a9db",
+        "signature_sha256": "af59228d4a019ab67b66fd29db4e555e6febe1d7b5c4e87c7ac2c6a6992164c1"
+      }
+    },
+    {
+      "source_id": "MD-6.2.1-InterpolatedWalk",
+      "json_review": {
+        "status": "CORRECTED",
+        "issue_codes": [
+          "SOURCE_FORMULA_ORDER"
+        ],
+        "corrected_json": {
+          "source_id": "MD-6.2.1-InterpolatedWalk",
+          "kind": "definition",
+          "label": null,
+          "section": "6.2.1",
+          "printed_page": "226",
+          "pdf_page": "247",
+          "statement_latex": "For points between $t_k$ and $t_{k+1}$ we define the value of $Y(t)$ by linear interpolation:\n\\[Y(t)=Y_k+\\frac{t-t_k}{\\delta t}\\Delta Y_k.\\]",
+          "proof_latex": null,
+          "proof_note": "原书未给独立完整证明。",
+          "proof_discussion_latex": null,
+          "context_notation": [
+            "δt>0，k=⌊t/δt⌋，真实线性插值；不是Wiener路径，也不声称任意插值点方差恰等于时间差。"
+          ],
+          "issues": [
+            {
+              "code": "SOURCE_FORMULA_ORDER",
+              "detail": "原页为Y_k+((t-t_k)/δt)ΔY_k；JSON调换了两个标量因子。数学等价，但逐字层恢复原顺序。"
+            }
+          ],
+          "lean_decl": "MD.Ch06.interpolatedWalk",
+          "reusable_proofs": [],
+          "extra_assumptions": [],
+          "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
+          "review_status": "CORRECTED",
+          "repair_log": [],
+          "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
+        },
+        "issues": [
+          {
+            "code": "SOURCE_FORMULA_ORDER",
+            "detail": "原页为Y_k+((t-t_k)/δt)ΔY_k；JSON调换了两个标量因子。数学等价，但逐字层恢复原顺序。"
+          }
+        ],
+        "evidence": {
+          "A_pdf_pages": [
+            32
+          ],
+          "A_original_pdf_pages": "247",
+          "A_printed_pages": "226",
+          "A_method": "直接读取附件PDF文本，并对对应印刷页的渲染图核对公式、上下标及措辞；重复页的提取正文一致。换行及LaTeX排版编码差异不作数学错误。",
+          "A_result": "逐字差异见issues；corrected_json仅修正转录，不静默修复原书数学疑误。",
+          "C_basis": "仅本任务所给实际签名、该条依赖定义及附录D1–D24；Mathlib按任务约定采信。只读语义审查，未运行Lean编译，未修改工程或补证明，未因sorry判FAIL。"
+        }
+      },
+      "audit": {
+        "lean_decl": "MD.Ch06.interpolatedWalk",
+        "verdict": "PASS",
+        "explanation": "在dt>0、t≥0的原语境，n=Nat.floor(t/dt)正是网格区间编号；增量为Y_(n+1)-Y_n，系数(t-n dt)/dt正确，端点也与网格值一致。定义对其他实数的延拓未声称为原书正步长过程。A层公式因子位置须恢复原页顺序。",
+        "counterexample": null,
+        "suggested_fix": "按corrected_json恢复原页转录；Lean声明无需因此改动。"
+      },
+      "subtask": "BATCH11g",
+      "input_sha256": {
+        "Blueprint/Ch06.lean": "0a02a34ec68989a83bccfa5916db5053ecdb58e05667bf21ff3568d9d1f4318e",
+        "blueprint/ch06/ch06_source.json": "45c70ceef21ca168af437de297e2e21e2800b452ab7942654061d4cff9bb5d95",
+        "BATCH11g_PAGES.pdf": "2d3ba8c3ed5fd4eeb3c09161da1212f8b0ca71b82ffd466c431a7ed10976a9db",
+        "signature_sha256": "c10a31404838d0637e58ea6b800adb06c839332a88fa3fd43935f91293859029"
+      }
+    },
+    {
+      "source_id": "MD-6.2.1-WalkIncrement",
+      "json_review": {
+        "status": "CORRECTED",
+        "issue_codes": [
+          "LEAN_INCOMPLETE_CONCLUSION"
+        ],
+        "corrected_json": {
+          "source_id": "MD-6.2.1-WalkIncrement",
+          "kind": "definition",
+          "label": null,
+          "section": "6.2.1",
+          "printed_page": "225–226",
+          "pdf_page": "246–247",
+          "statement_latex": "The increments of the random walk are the differences $\\Delta X_n=X_n-X_{n-1}=\\delta xJ_{n-1}$, thus $(X_n)$ is a random process with independent increments.\nWe will use the shorthand $Y_k=Y(t_k)$ and $\\Delta Y_k=Y_{k+1}-Y_k=\\sqrt{\\delta t}J_k$. The increments are clearly independent.",
+          "proof_latex": null,
+          "proof_note": "原书未给独立完整证明。",
+          "proof_discussion_latex": null,
+          "context_notation": [
+            "本条定义实际X(n+1)−Xn增量；差分恒等式与独立性另条保存，不把独立性计为定义已证。"
+          ],
+          "issues": [
+            {
+              "code": "LEAN_INCOMPLETE_CONCLUSION",
+              "detail": "差分定义缺少原文两种增量等式及独立增量结论；需补相应声明或明确缩小审校范围，不能将其当作完整原文结论已形式化。"
+            }
+          ],
+          "lean_decl": "MD.Ch06.walkIncrement",
+          "reusable_proofs": [],
+          "extra_assumptions": [
+            "[EXTRA][SCOPE]当前Lean仅定义一般步长的一步差分；并未在本条声明dx J_n等式、扩散增量等式或独立性。"
+          ],
+          "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
+          "review_status": "CORRECTED",
+          "repair_log": [],
+          "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
+        },
+        "issues": [
+          {
+            "code": "LEAN_INCOMPLETE_CONCLUSION",
+            "detail": "差分定义缺少原文两种增量等式及独立增量结论；需补相应声明或明确缩小审校范围，不能将其当作完整原文结论已形式化。"
+          }
+        ],
+        "evidence": {
+          "A_pdf_pages": [
+            33,
+            34
+          ],
+          "A_original_pdf_pages": "246–247",
+          "A_printed_pages": "225–226",
+          "A_method": "直接读取附件PDF文本，并对对应印刷页的渲染图核对公式、上下标及措辞；重复页的提取正文一致。换行及LaTeX排版编码差异不作数学错误。",
+          "A_result": "所选原句与公式一致；摘录允许省去相邻未选段落，不将省略当作完整原证明。",
+          "C_basis": "仅本任务所给实际签名、该条依赖定义及附录D1–D24；Mathlib按任务约定采信。只读语义审查，未运行Lean编译，未修改工程或补证明，未因sorry判FAIL。"
+        }
+      },
+      "audit": {
+        "lean_decl": "MD.Ch06.walkIncrement",
+        "verdict": "FAIL",
+        "explanation": "实际声明只有差分定义X_(n+1)-X_n；它没有声明差分=dx J_n，没有扩散增量sqrt(dt)J_n，也没有独立增量结论或概率前提。原文statement_latex同时包含这些结论，且本条没有[EXTRA]缩小范围说明，故按完整结论要求FAIL。定义差分本身正确；递推条目23可支持一个代数推论，但不替代本条缺失的独立性陈述。",
+        "counterexample": "缺少概率前提时，令所有J_n等于同一公平±1变量且dx=1，则定义的各增量相同而不独立。这说明独立性不能由当前无条件定义自动获得；非差分代数定义的反例。",
+        "suggested_fix": "增设对全部n,sample的walkIncrement J dx n sample=dx*J n sample；对扩散步长给出sqrt(dt)*J n；在可测概率空间及rademacherJumps（或独立可测J）前提下明确iIndepFun增量列。若只保留差分定义，须缩小原文范围并明示未覆盖结论。"
+      },
+      "subtask": "BATCH11h",
+      "input_sha256": {
+        "Blueprint/Ch06.lean": "0a02a34ec68989a83bccfa5916db5053ecdb58e05667bf21ff3568d9d1f4318e",
+        "blueprint/ch06/ch06_source.json": "45c70ceef21ca168af437de297e2e21e2800b452ab7942654061d4cff9bb5d95",
+        "BATCH11h_PAGES.pdf": "c2a16b12e18e22ab2b659c05e029e59a3216cb2fc24c51ab323d7be7797e6ad8",
+        "signature_sha256": "3301e6e2cd5f828b0e9cc65e25296a7d55b16529c6ab8f7574378e77e568c31a"
+      }
+    }
+  ],
+  "merged_from": "ch06_first_merged"
+}

@@ -1,3 +1,5 @@
+> 已过时，以 [SUMMARY_FOR_MENTOR](CH06_SUMMARY_FOR_MENTOR.zh-CN.md) 为准。
+
 # 第6章导师快速审阅（15条）
 
 扫描用户PDF233–285并补核标题PDF232；实际第6章正文印刷211–258/PDF232–279，PDF280为Exercises、PDF282起第7章，排除。逐页边界见PAGE_SCAN.json。全部proved/weakened为既有正式库成果映射，本次没有新证明。CanonicalKernelConstant等封存文件不导入、不恢复。Theorem6.1、Theorem6.2、Proposition6.4保持statement_only。

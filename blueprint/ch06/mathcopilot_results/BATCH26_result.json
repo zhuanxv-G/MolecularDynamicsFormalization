@@ -1,0 +1,54 @@
+{
+  "batch": "BATCH26",
+  "chapter": "ch06",
+  "round": "first-merged",
+  "input_sha256": {
+    "Blueprint/Ch06.lean": "0a02a34ec68989a83bccfa5916db5053ecdb58e05667bf21ff3568d9d1f4318e",
+    "blueprint/ch06/ch06_source.json": "45c70ceef21ca168af437de297e2e21e2800b452ab7942654061d4cff9bb5d95"
+  },
+  "items": [
+    {
+      "source_id": "MD-6.3.6-ZeroNoise",
+      "json_review": {
+        "status": "APPROVED",
+        "issue_codes": [
+          "INCOMPLETE_CONCLUSION_ODE_REDUCTION"
+        ],
+        "corrected_json": null,
+        "issues": [
+          {
+            "code": "INCOMPLETE_CONCLUSION_ODE_REDUCTION",
+            "detail": "C：签名仅量化a/f/ρ/x并证明两个算子代数化简，D47/D50中的零扩散确实消去；无须额外光滑前提也可作Lean形式恒等。但完整原句还断言过程的SDE退化为ODE，当前声明没有W/X、SDE解前提、轨道积分方程或导数结论。[EXTRA]也未说明只覆盖算子子句，故按全部结论审校为遗漏，不能把算子化简当作整条已形式化。"
+          }
+        ],
+        "evidence": [
+          {
+            "phase": "A",
+            "location": "R5_PAGES.pdf，附件第30页；原PDF页263，印刷页242",
+            "finding": "A：附件第30页b≡0、SDE变ODE、Lie derivative和Liouvillian三段原句一致。"
+          },
+          {
+            "phase": "C",
+            "location": "R5_任务.md，条目27/30，实际Lean签名/定义及其明确命名空间的依赖摘录、文末D附录",
+            "finding": "C：签名仅量化a/f/ρ/x并证明两个算子代数化简，D47/D50中的零扩散确实消去；无须额外光滑前提也可作Lean形式恒等。但完整原句还断言过程的SDE退化为ODE，当前声明没有W/X、SDE解前提、轨道积分方程或导数结论。[EXTRA]也未说明只覆盖算子子句，故按全部结论审校为遗漏，不能把算子化简当作整条已形式化。"
+          }
+        ]
+      },
+      "audit": {
+        "lean_decl": "MD.Ch06.zeroNoise",
+        "verdict": "FAIL",
+        "explanation": "C：签名仅量化a/f/ρ/x并证明两个算子代数化简，D47/D50中的零扩散确实消去；无须额外光滑前提也可作Lean形式恒等。但完整原句还断言过程的SDE退化为ODE，当前声明没有W/X、SDE解前提、轨道积分方程或导数结论。[EXTRA]也未说明只覆盖算子子句，故按全部结论审校为遗漏，不能把算子化简当作整条已形式化。",
+        "counterexample": null,
+        "suggested_fix": "另加真实零扩散SDE解到ODE积分方程的声明，经典导数版本须有相应连续性；或明确将条目scope缩到两个算子子句并保留尚未覆盖的过程结论。"
+      },
+      "subtask": "BATCH26a",
+      "input_sha256": {
+        "Blueprint/Ch06.lean": "0a02a34ec68989a83bccfa5916db5053ecdb58e05667bf21ff3568d9d1f4318e",
+        "blueprint/ch06/ch06_source.json": "45c70ceef21ca168af437de297e2e21e2800b452ab7942654061d4cff9bb5d95",
+        "BATCH26a_PAGES.pdf": "6c67d0ee2849f40a134136fd81dce990de4fdae894f6bbb4d4883d246dae408b",
+        "signature_sha256": "541ca630d8b5a90ea6abc398dc5a8871d9c31e24266f6a0d55f11447dc9c9eca"
+      }
+    }
+  ],
+  "merged_from": "ch06_first_merged"
+}

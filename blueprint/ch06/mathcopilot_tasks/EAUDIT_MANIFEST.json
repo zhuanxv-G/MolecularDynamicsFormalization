@@ -1,0 +1,682 @@
+[
+  {
+    "eaudit": "EAUDIT01",
+    "source_ids": [
+      "MD-6.1.2-IndependentPartition",
+      "MD-6.1.2-BathTaylor",
+      "MD-6.1.2-CanonicalCDFPrinted"
+    ],
+    "subtasks": [
+      {
+        "subtask": "EAUDIT01a",
+        "source_id": "MD-6.1.2-IndependentPartition",
+        "path": "blueprint/ch06/mathcopilot_tasks/EAUDIT01/a",
+        "total_bytes": 63521,
+        "definitions": 8,
+        "manifest_sha256": "e56265d57e15cd65eaae6997a58f0b9e84df3cc6f17e190b794cb27095e69a03"
+      },
+      {
+        "subtask": "EAUDIT01b",
+        "source_id": "MD-6.1.2-BathTaylor",
+        "path": "blueprint/ch06/mathcopilot_tasks/EAUDIT01/b",
+        "total_bytes": 82374,
+        "definitions": 3,
+        "manifest_sha256": "083fce7ea20ab0f415e48f34957c004948eab598f00651e3a889e900f4d2ee33"
+      },
+      {
+        "subtask": "EAUDIT01c",
+        "source_id": "MD-6.1.2-CanonicalCDFPrinted",
+        "path": "blueprint/ch06/mathcopilot_tasks/EAUDIT01/c",
+        "total_bytes": 81956,
+        "definitions": 2,
+        "manifest_sha256": "296de9d2c0897f089f6c547172e97c9554a37ce36d22a3039e7a8512545f04a7"
+      }
+    ]
+  },
+  {
+    "eaudit": "EAUDIT02",
+    "source_ids": [
+      "MD-6.1.3-FiniteDomainPrinted",
+      "MD-6.1.5-Proposition61",
+      "MD-6.1.5-PartitionInversePrinted"
+    ],
+    "subtasks": [
+      {
+        "subtask": "EAUDIT02a",
+        "source_id": "MD-6.1.3-FiniteDomainPrinted",
+        "path": "blueprint/ch06/mathcopilot_tasks/EAUDIT02/a",
+        "total_bytes": 97350,
+        "definitions": 3,
+        "manifest_sha256": "89c7052327054756690d65238efbcbebb8b7e0d5f3ec2b3c8d5ac27ad890d86a"
+      },
+      {
+        "subtask": "EAUDIT02b",
+        "source_id": "MD-6.1.5-Proposition61",
+        "path": "blueprint/ch06/mathcopilot_tasks/EAUDIT02/b",
+        "total_bytes": 116103,
+        "definitions": 10,
+        "manifest_sha256": "494c8583bd4541db7980b5bdbf0b61d6bba8eb9c9ad8dfb113f33b8f928d997b"
+      },
+      {
+        "subtask": "EAUDIT02c",
+        "source_id": "MD-6.1.5-PartitionInversePrinted",
+        "path": "blueprint/ch06/mathcopilot_tasks/EAUDIT02/c",
+        "total_bytes": 95857,
+        "definitions": 5,
+        "manifest_sha256": "e41373aa4479ab43c2d7e2e8fb7509dcf92ed7b6fb36bbcc3bdc170779e5b401"
+      }
+    ]
+  },
+  {
+    "eaudit": "EAUDIT03",
+    "source_ids": [
+      "MD-6.2.1-WalkIncrement",
+      "MD-6.2.1-StateMarkovMeaning",
+      "MD-6.2.2-RiemannTags"
+    ],
+    "subtasks": [
+      {
+        "subtask": "EAUDIT03a",
+        "source_id": "MD-6.2.1-WalkIncrement",
+        "path": "blueprint/ch06/mathcopilot_tasks/EAUDIT03/a",
+        "total_bytes": 136671,
+        "definitions": 2,
+        "manifest_sha256": "65d1998ce40a634bad89443e27533ddf2364038b2e24cc0665a733aaf496ae7c"
+      },
+      {
+        "subtask": "EAUDIT03b",
+        "source_id": "MD-6.2.1-StateMarkovMeaning",
+        "path": "blueprint/ch06/mathcopilot_tasks/EAUDIT03/b",
+        "total_bytes": 85852,
+        "definitions": 2,
+        "manifest_sha256": "50be4649b48a5b9ef07051bee19e400dde60b8a5d76a958c04e4cb5c776e372a"
+      },
+      {
+        "subtask": "EAUDIT03c",
+        "source_id": "MD-6.2.2-RiemannTags",
+        "path": "blueprint/ch06/mathcopilot_tasks/EAUDIT03/c",
+        "total_bytes": 83344,
+        "definitions": 2,
+        "manifest_sha256": "e0311421aa0f26f2b951878be8526ba58660448e00b7e15a5b56e0b8300e9622"
+      }
+    ]
+  },
+  {
+    "eaudit": "EAUDIT04",
+    "source_ids": [
+      "MD-6.2.2-WeakItoAlias",
+      "MD-6.2.2-Proposition62",
+      "MD-6.2.2-SelfStratonovichIntegral"
+    ],
+    "subtasks": [
+      {
+        "subtask": "EAUDIT04a",
+        "source_id": "MD-6.2.2-WeakItoAlias",
+        "path": "blueprint/ch06/mathcopilot_tasks/EAUDIT04/a",
+        "total_bytes": 103709,
+        "definitions": 2,
+        "manifest_sha256": "391b44d620be27059191cb298b3843160e69bc31daf6b6c0e21db547b0e53d45"
+      },
+      {
+        "subtask": "EAUDIT04b",
+        "source_id": "MD-6.2.2-Proposition62",
+        "path": "blueprint/ch06/mathcopilot_tasks/EAUDIT04/b",
+        "total_bytes": 101917,
+        "definitions": 9,
+        "manifest_sha256": "7a912e6c7803f7178f06d959f2862833c6b831a1e953bf3e3417bf5d3cf97582"
+      },
+      {
+        "subtask": "EAUDIT04c",
+        "source_id": "MD-6.2.2-SelfStratonovichIntegral",
+        "path": "blueprint/ch06/mathcopilot_tasks/EAUDIT04/c",
+        "total_bytes": 81255,
+        "definitions": 6,
+        "manifest_sha256": "2b5ee200d43db24cf54cda2fc42f593bd7856ece6529a08418b817ac6d8177a2"
+      }
+    ]
+  },
+  {
+    "eaudit": "EAUDIT05",
+    "source_ids": [
+      "MD-6.2.2-DeterministicStrobePrinted",
+      "MD-6.3-VectorSDE",
+      "MD-6.3.1-ScalarItoFormula"
+    ],
+    "subtasks": [
+      {
+        "subtask": "EAUDIT05a",
+        "source_id": "MD-6.2.2-DeterministicStrobePrinted",
+        "path": "blueprint/ch06/mathcopilot_tasks/EAUDIT05/a",
+        "total_bytes": 86024,
+        "definitions": 4,
+        "manifest_sha256": "5595bb78dfe7ed93e89ef5582ca208cb0e567d390cb1025a33e34716c425c025"
+      },
+      {
+        "subtask": "EAUDIT05b",
+        "source_id": "MD-6.3-VectorSDE",
+        "path": "blueprint/ch06/mathcopilot_tasks/EAUDIT05/b",
+        "total_bytes": 109527,
+        "definitions": 6,
+        "manifest_sha256": "fbc4072d1183bb07531140daed08b6a21b671f07463797fae4e7a7346b34f17f"
+      },
+      {
+        "subtask": "EAUDIT05c",
+        "source_id": "MD-6.3.1-ScalarItoFormula",
+        "path": "blueprint/ch06/mathcopilot_tasks/EAUDIT05/c",
+        "total_bytes": 103931,
+        "definitions": 8,
+        "manifest_sha256": "b313cc6ec1931dd7ba32316e9da66fe39bb9208731af0f668df2f5c29df5cadf"
+      }
+    ]
+  },
+  {
+    "eaudit": "EAUDIT06",
+    "source_ids": [
+      "MD-6.3.1-DiffusiveTaylorPrinted",
+      "MD-6.3.1-TimeItoFormula",
+      "MD-6.3.2-OUVarianceIntegral"
+    ],
+    "subtasks": [
+      {
+        "subtask": "EAUDIT06a",
+        "source_id": "MD-6.3.1-DiffusiveTaylorPrinted",
+        "path": "blueprint/ch06/mathcopilot_tasks/EAUDIT06/a",
+        "total_bytes": 97335,
+        "definitions": 2,
+        "manifest_sha256": "231dc01c40fabd48d5cdcf9f44904219c80b193454c0293ad9867f3e6694edbf"
+      },
+      {
+        "subtask": "EAUDIT06b",
+        "source_id": "MD-6.3.1-TimeItoFormula",
+        "path": "blueprint/ch06/mathcopilot_tasks/EAUDIT06/b",
+        "total_bytes": 94155,
+        "definitions": 10,
+        "manifest_sha256": "51fb294b9237e2643ae51c25c487019b1b02ee84ebe64bca51517f8555ab4a6a"
+      },
+      {
+        "subtask": "EAUDIT06c",
+        "source_id": "MD-6.3.2-OUVarianceIntegral",
+        "path": "blueprint/ch06/mathcopilot_tasks/EAUDIT06/c",
+        "total_bytes": 96203,
+        "definitions": 8,
+        "manifest_sha256": "d275ec5fc9cd9a4f88fa47c234a20a19cab593b30b581b8ae3959774781edde2"
+      }
+    ]
+  },
+  {
+    "eaudit": "EAUDIT07",
+    "source_ids": [
+      "MD-6.3.2-OULawPrinted",
+      "MD-6.3.2-MomentumOU",
+      "MD-6.3.3-BathReductionPrinted"
+    ],
+    "subtasks": [
+      {
+        "subtask": "EAUDIT07a",
+        "source_id": "MD-6.3.2-OULawPrinted",
+        "path": "blueprint/ch06/mathcopilot_tasks/EAUDIT07/a",
+        "total_bytes": 94977,
+        "definitions": 5,
+        "manifest_sha256": "f70e1e02023aa904d3a5410e0705a2a96bc3d45762335c8d1db24f0528fcd09d"
+      },
+      {
+        "subtask": "EAUDIT07b",
+        "source_id": "MD-6.3.2-MomentumOU",
+        "path": "blueprint/ch06/mathcopilot_tasks/EAUDIT07/b",
+        "total_bytes": 98067,
+        "definitions": 9,
+        "manifest_sha256": "d033894dc4b553c5f56ebeec296320b192682dcb38c15910d66edaaf4c89b42f"
+      },
+      {
+        "subtask": "EAUDIT07c",
+        "source_id": "MD-6.3.3-BathReductionPrinted",
+        "path": "blueprint/ch06/mathcopilot_tasks/EAUDIT07/c",
+        "total_bytes": 76755,
+        "definitions": 7,
+        "manifest_sha256": "d6840c14683ee7d56cb61402a72e3beeb1d0bf234fa1acabe831f412ab80d654"
+      }
+    ]
+  },
+  {
+    "eaudit": "EAUDIT08",
+    "source_ids": [
+      "MD-6.3.3-MemoryKernelDeltaMeaning",
+      "MD-6.3.3-BathForceWeakLimitMeaning",
+      "MD-6.3.6-FPDiffusionPrinted"
+    ],
+    "subtasks": [
+      {
+        "subtask": "EAUDIT08a",
+        "source_id": "MD-6.3.3-MemoryKernelDeltaMeaning",
+        "path": "blueprint/ch06/mathcopilot_tasks/EAUDIT08/a",
+        "total_bytes": 180980,
+        "definitions": 5,
+        "manifest_sha256": "e35b07edeeaa04065eee6ce0823a98894a25d05818c4b3dfa13dbd79d383e341"
+      },
+      {
+        "subtask": "EAUDIT08b",
+        "source_id": "MD-6.3.3-BathForceWeakLimitMeaning",
+        "path": "blueprint/ch06/mathcopilot_tasks/EAUDIT08/b",
+        "total_bytes": 246047,
+        "definitions": 6,
+        "manifest_sha256": "7f8483c3d8bc447819b4dc04714c01f2c83ae8891bf3c92f407f6e57c7049a66"
+      },
+      {
+        "subtask": "EAUDIT08c",
+        "source_id": "MD-6.3.6-FPDiffusionPrinted",
+        "path": "blueprint/ch06/mathcopilot_tasks/EAUDIT08/c",
+        "total_bytes": 80492,
+        "definitions": 12,
+        "manifest_sha256": "b997e607eee7aacd6c8d845766c23d499b4f0b320b8d3d36bb96b10b32c8419f"
+      }
+    ]
+  },
+  {
+    "eaudit": "EAUDIT09",
+    "source_ids": [
+      "MD-6.3.6-FPPolynomialAdjoint",
+      "MD-6.3.6-FPEquation",
+      "MD-6.3.6-ZeroNoise"
+    ],
+    "subtasks": [
+      {
+        "subtask": "EAUDIT09a",
+        "source_id": "MD-6.3.6-FPPolynomialAdjoint",
+        "path": "blueprint/ch06/mathcopilot_tasks/EAUDIT09/a",
+        "total_bytes": 98601,
+        "definitions": 5,
+        "manifest_sha256": "6310ed67d83ab1ed8bdcb46fb6328bf2ea6b25ef053daeb9161d1240aafb92f8"
+      },
+      {
+        "subtask": "EAUDIT09b",
+        "source_id": "MD-6.3.6-FPEquation",
+        "path": "blueprint/ch06/mathcopilot_tasks/EAUDIT09/b",
+        "total_bytes": 78169,
+        "definitions": 8,
+        "manifest_sha256": "e9359b1fdd6ccc032579bd0e96a04b57bdb7bdc7e8152f17c2687f3a049f150d"
+      },
+      {
+        "subtask": "EAUDIT09c",
+        "source_id": "MD-6.3.6-ZeroNoise",
+        "path": "blueprint/ch06/mathcopilot_tasks/EAUDIT09/c",
+        "total_bytes": 73028,
+        "definitions": 3,
+        "manifest_sha256": "9556a4ecf3c7af298d22c068b6425e22aaed5a25b05bbc944b87f13611f66f7d"
+      }
+    ]
+  },
+  {
+    "eaudit": "EAUDIT10",
+    "source_ids": [
+      "MD-6.3.7-VectorIto",
+      "MD-6.4.2-CylinderForwardPrinted",
+      "MD-6.4.2-StationaryDensity"
+    ],
+    "subtasks": [
+      {
+        "subtask": "EAUDIT10a",
+        "source_id": "MD-6.3.7-VectorIto",
+        "path": "blueprint/ch06/mathcopilot_tasks/EAUDIT10/a",
+        "total_bytes": 103718,
+        "definitions": 11,
+        "manifest_sha256": "0b7dd9a8895df60deb7df08309f13b584b812d5044f152a98f016b5fcf507a62"
+      },
+      {
+        "subtask": "EAUDIT10b",
+        "source_id": "MD-6.4.2-CylinderForwardPrinted",
+        "path": "blueprint/ch06/mathcopilot_tasks/EAUDIT10/b",
+        "total_bytes": 113853,
+        "definitions": 13,
+        "manifest_sha256": "87491deac7a517ce09637e5e6fd926142d4a6c735237dcb8696dac7ecc31497f"
+      },
+      {
+        "subtask": "EAUDIT10c",
+        "source_id": "MD-6.4.2-StationaryDensity",
+        "path": "blueprint/ch06/mathcopilot_tasks/EAUDIT10/c",
+        "total_bytes": 106103,
+        "definitions": 6,
+        "manifest_sha256": "106dbd3dfeff2bb1cda9c02195ad81c858baf232390116f5299a6c255389f625"
+      }
+    ]
+  },
+  {
+    "eaudit": "EAUDIT11",
+    "source_ids": [
+      "MD-6.4.2-StationaryInvariant",
+      "MD-6.4.2-LangevinCanonicalMixing",
+      "MD-6.4.3-BrownianSymmetry"
+    ],
+    "subtasks": [
+      {
+        "subtask": "EAUDIT11a",
+        "source_id": "MD-6.4.2-StationaryInvariant",
+        "path": "blueprint/ch06/mathcopilot_tasks/EAUDIT11/a",
+        "total_bytes": 106920,
+        "definitions": 5,
+        "manifest_sha256": "dabf824fbe4189b505ae88a15f0caba4029b2427104228f5a9f99b9c8f572b96"
+      },
+      {
+        "subtask": "EAUDIT11b",
+        "source_id": "MD-6.4.2-LangevinCanonicalMixing",
+        "path": "blueprint/ch06/mathcopilot_tasks/EAUDIT11/b",
+        "total_bytes": 112977,
+        "definitions": 32,
+        "manifest_sha256": "0bbf4201de9863fe28f218dd67ee13b619625240877ff55c97c16cf5a5ca58c8"
+      },
+      {
+        "subtask": "EAUDIT11c",
+        "source_id": "MD-6.4.3-BrownianSymmetry",
+        "path": "blueprint/ch06/mathcopilot_tasks/EAUDIT11/c",
+        "total_bytes": 108362,
+        "definitions": 12,
+        "manifest_sha256": "59df4416868c984b1cead5b212d7f1391f08ccdb46f0afbd2df187c4a52935af"
+      }
+    ]
+  },
+  {
+    "eaudit": "EAUDIT12",
+    "source_ids": [
+      "MD-6.4.3-BrownianRealEigenvalue",
+      "MD-6.4.3-BrownianClosedSelfAdjoint",
+      "MD-6.4.3-BrownianCompactResolvent"
+    ],
+    "subtasks": [
+      {
+        "subtask": "EAUDIT12a",
+        "source_id": "MD-6.4.3-BrownianRealEigenvalue",
+        "path": "blueprint/ch06/mathcopilot_tasks/EAUDIT12/a",
+        "total_bytes": 104553,
+        "definitions": 7,
+        "manifest_sha256": "2ce0f03dc758ff86ba5a4dc70bff99049dd81d0f62d7eb41a0f75f4b1a75716b"
+      },
+      {
+        "subtask": "EAUDIT12b",
+        "source_id": "MD-6.4.3-BrownianClosedSelfAdjoint",
+        "path": "blueprint/ch06/mathcopilot_tasks/EAUDIT12/b",
+        "total_bytes": 169480,
+        "definitions": 72,
+        "manifest_sha256": "e62416720346e1ed9fb75e8f7f6c4dd17002f58d4a395821a1732b5887cc6945"
+      },
+      {
+        "subtask": "EAUDIT12c",
+        "source_id": "MD-6.4.3-BrownianCompactResolvent",
+        "path": "blueprint/ch06/mathcopilot_tasks/EAUDIT12/c",
+        "total_bytes": 153485,
+        "definitions": 67,
+        "manifest_sha256": "0ad6fca95fb309de1feddedb90bef13f9ec37f32da68ff82643754a245cfd526"
+      }
+    ]
+  },
+  {
+    "eaudit": "EAUDIT13",
+    "source_ids": [
+      "MD-6.4.3-BrownianDiscreteSpectrum",
+      "MD-6.4.3-Theorem61",
+      "MD-6.4.4-MinorizationCorrectedImplication"
+    ],
+    "subtasks": [
+      {
+        "subtask": "EAUDIT13a",
+        "source_id": "MD-6.4.3-BrownianDiscreteSpectrum",
+        "path": "blueprint/ch06/mathcopilot_tasks/EAUDIT13/a",
+        "total_bytes": 166365,
+        "definitions": 84,
+        "manifest_sha256": "ffd457dcfd4b4c041cbd37752de79f3947c9010ca882371147f8c400e825be16"
+      },
+      {
+        "subtask": "EAUDIT13b",
+        "source_id": "MD-6.4.3-Theorem61",
+        "path": "blueprint/ch06/mathcopilot_tasks/EAUDIT13/b",
+        "total_bytes": 220248,
+        "definitions": 123,
+        "manifest_sha256": "375a491691c8caef7d8a3d0bd374f2b7dde5447de3ed460b370fb667ab1bd9a6"
+      },
+      {
+        "subtask": "EAUDIT13c",
+        "source_id": "MD-6.4.4-MinorizationCorrectedImplication",
+        "path": "blueprint/ch06/mathcopilot_tasks/EAUDIT13/c",
+        "total_bytes": 113000,
+        "definitions": 4,
+        "manifest_sha256": "533a72f8fe49991699f04c5abc81dcf39f9d349aa476dd25581b60a115e8c7ab"
+      }
+    ]
+  },
+  {
+    "eaudit": "EAUDIT14",
+    "source_ids": [
+      "MD-6.4.4-Theorem62",
+      "MD-6.4.4-HamiltonianPowerMomentumLaplacian",
+      "MD-6.4.4-Definition61"
+    ],
+    "subtasks": [
+      {
+        "subtask": "EAUDIT14a",
+        "source_id": "MD-6.4.4-Theorem62",
+        "path": "blueprint/ch06/mathcopilot_tasks/EAUDIT14/a",
+        "total_bytes": 131148,
+        "definitions": 13,
+        "manifest_sha256": "621819eaf15d74e7f49b10ff2e2c22b2b6877f667274abb68c00b64861d1e5b6"
+      },
+      {
+        "subtask": "EAUDIT14b",
+        "source_id": "MD-6.4.4-HamiltonianPowerMomentumLaplacian",
+        "path": "blueprint/ch06/mathcopilot_tasks/EAUDIT14/b",
+        "total_bytes": 106891,
+        "definitions": 7,
+        "manifest_sha256": "08fd84fe704e2c3aa215984e8751896244b4150a7a6384f5a97569bea090fd8f"
+      },
+      {
+        "subtask": "EAUDIT14c",
+        "source_id": "MD-6.4.4-Definition61",
+        "path": "blueprint/ch06/mathcopilot_tasks/EAUDIT14/c",
+        "total_bytes": 117055,
+        "definitions": 10,
+        "manifest_sha256": "69c27febccdafbc2222f2ee1100bc3ab536d097412043fe10aef5823b6e36c52"
+      }
+    ]
+  },
+  {
+    "eaudit": "EAUDIT15",
+    "source_ids": [
+      "MD-6.4.4-LangevinHormander",
+      "MD-6.4.4-LangevinTransitionDensity",
+      "MD-6.4.4-Lemma61Printed"
+    ],
+    "subtasks": [
+      {
+        "subtask": "EAUDIT15a",
+        "source_id": "MD-6.4.4-LangevinHormander",
+        "path": "blueprint/ch06/mathcopilot_tasks/EAUDIT15/a",
+        "total_bytes": 113605,
+        "definitions": 12,
+        "manifest_sha256": "7aefd3ad3d4367d99bd9e84e3423c372611df3461bf5ea8fd1858b6090d6a264"
+      },
+      {
+        "subtask": "EAUDIT15b",
+        "source_id": "MD-6.4.4-LangevinTransitionDensity",
+        "path": "blueprint/ch06/mathcopilot_tasks/EAUDIT15/b",
+        "total_bytes": 124508,
+        "definitions": 20,
+        "manifest_sha256": "98eb4848a927157688b37befb0a65d4c755a9c59a962abc1cdd3c4d85fc5b08a"
+      },
+      {
+        "subtask": "EAUDIT15c",
+        "source_id": "MD-6.4.4-Lemma61Printed",
+        "path": "blueprint/ch06/mathcopilot_tasks/EAUDIT15/c",
+        "total_bytes": 121413,
+        "definitions": 17,
+        "manifest_sha256": "becef105f8682cbaf06b1a5fad2a3340ddf3f8c1365a044b72206ceb83d3b64f"
+      }
+    ]
+  },
+  {
+    "eaudit": "EAUDIT16",
+    "source_ids": [
+      "MD-6.4.4-Lemma61Nonempty",
+      "MD-6.4.4-LangevinGeometricErgodicity",
+      "MD-6.4.4-LangevinTimeAverage"
+    ],
+    "subtasks": [
+      {
+        "subtask": "EAUDIT16a",
+        "source_id": "MD-6.4.4-Lemma61Nonempty",
+        "path": "blueprint/ch06/mathcopilot_tasks/EAUDIT16/a",
+        "total_bytes": 125471,
+        "definitions": 20,
+        "manifest_sha256": "2f25557ec442becbaa02d360445cd668ce5be970b74becc416c7c7f4a6ae060d"
+      },
+      {
+        "subtask": "EAUDIT16b",
+        "source_id": "MD-6.4.4-LangevinGeometricErgodicity",
+        "path": "blueprint/ch06/mathcopilot_tasks/EAUDIT16/b",
+        "total_bytes": 139571,
+        "definitions": 32,
+        "manifest_sha256": "6b31607958425e249a8cfb42bc51ec7daeb062046d1350978afc0ce6fb00fdb3"
+      },
+      {
+        "subtask": "EAUDIT16c",
+        "source_id": "MD-6.4.4-LangevinTimeAverage",
+        "path": "blueprint/ch06/mathcopilot_tasks/EAUDIT16/c",
+        "total_bytes": 145929,
+        "definitions": 40,
+        "manifest_sha256": "660927f23ae5471f737b3522b1fb77ae8b81e6c4b8d633aa3956ae8ee3377e9b"
+      }
+    ]
+  },
+  {
+    "eaudit": "EAUDIT17",
+    "source_ids": [
+      "MD-6.4.4-WeightedH1",
+      "MD-6.4.4-WeightedH1Norm",
+      "MD-6.4.4-Proposition64Printed"
+    ],
+    "subtasks": [
+      {
+        "subtask": "EAUDIT17a",
+        "source_id": "MD-6.4.4-WeightedH1",
+        "path": "blueprint/ch06/mathcopilot_tasks/EAUDIT17/a",
+        "total_bytes": 133824,
+        "definitions": 27,
+        "manifest_sha256": "287b613e280fca5accac3c779bd7f786f7dfb7a4dc9fcff551e6492136a82e1d"
+      },
+      {
+        "subtask": "EAUDIT17b",
+        "source_id": "MD-6.4.4-WeightedH1Norm",
+        "path": "blueprint/ch06/mathcopilot_tasks/EAUDIT17/b",
+        "total_bytes": 147752,
+        "definitions": 37,
+        "manifest_sha256": "032953fe2ac74af7bf010d483a2a349468f68576774147edb0888676abf7c3fb"
+      },
+      {
+        "subtask": "EAUDIT17c",
+        "source_id": "MD-6.4.4-Proposition64Printed",
+        "path": "blueprint/ch06/mathcopilot_tasks/EAUDIT17/c",
+        "total_bytes": 146168,
+        "definitions": 48,
+        "manifest_sha256": "c17b4af96abc2a75d5801156738f51c9859ff4938d7ee491cd38f500a97d1e91"
+      }
+    ]
+  },
+  {
+    "eaudit": "EAUDIT18",
+    "source_ids": [
+      "MD-6.4.4-Proposition64Relative",
+      "MD-6.4.4-ForwardKernelGibbs",
+      "MD-6.4.5-KernelEvolution"
+    ],
+    "subtasks": [
+      {
+        "subtask": "EAUDIT18a",
+        "source_id": "MD-6.4.4-Proposition64Relative",
+        "path": "blueprint/ch06/mathcopilot_tasks/EAUDIT18/a",
+        "total_bytes": 152224,
+        "definitions": 50,
+        "manifest_sha256": "ff79472291b549060b452ef32e60740871e66fbc37e51c1440e257e8bfac3836"
+      },
+      {
+        "subtask": "EAUDIT18b",
+        "source_id": "MD-6.4.4-ForwardKernelGibbs",
+        "path": "blueprint/ch06/mathcopilot_tasks/EAUDIT18/b",
+        "total_bytes": 147682,
+        "definitions": 48,
+        "manifest_sha256": "be72354b4d93f97003759aa1f7b65a5008033bf22981abdf3fb966c8ceb819f5"
+      },
+      {
+        "subtask": "EAUDIT18c",
+        "source_id": "MD-6.4.5-KernelEvolution",
+        "path": "blueprint/ch06/mathcopilot_tasks/EAUDIT18/c",
+        "total_bytes": 108996,
+        "definitions": 3,
+        "manifest_sha256": "8763d0a38241bf0e0a072b3f2cd64dc9137a7d02574939b2b9cd5c4086d93c4f"
+      }
+    ]
+  },
+  {
+    "eaudit": "EAUDIT19",
+    "source_ids": [
+      "MD-6.4.5-KernelAverage",
+      "MD-6.4.5-DensityEvolutionMeaning",
+      "MD-6.4.5-SmoothTestL2Printed"
+    ],
+    "subtasks": [
+      {
+        "subtask": "EAUDIT19a",
+        "source_id": "MD-6.4.5-KernelAverage",
+        "path": "blueprint/ch06/mathcopilot_tasks/EAUDIT19/a",
+        "total_bytes": 85209,
+        "definitions": 1,
+        "manifest_sha256": "5ef9e9169932fedbbae9771e2b4c298710ea1786e37e966fb3669e83db099dc4"
+      },
+      {
+        "subtask": "EAUDIT19b",
+        "source_id": "MD-6.4.5-DensityEvolutionMeaning",
+        "path": "blueprint/ch06/mathcopilot_tasks/EAUDIT19/b",
+        "total_bytes": 126164,
+        "definitions": 16,
+        "manifest_sha256": "a48985c40b290a58251a497b0cfc36503957b10bd8362f0fbe0938d2bb3fd5d6"
+      },
+      {
+        "subtask": "EAUDIT19c",
+        "source_id": "MD-6.4.5-SmoothTestL2Printed",
+        "path": "blueprint/ch06/mathcopilot_tasks/EAUDIT19/c",
+        "total_bytes": 89610,
+        "definitions": 7,
+        "manifest_sha256": "63c2e353ea7b4ba3fbdfa9fd58555942db90008b926abc3caa4081d42b08ff86"
+      }
+    ]
+  },
+  {
+    "eaudit": "EAUDIT20",
+    "source_ids": [
+      "MD-6.4.5-ComplexInitialDensity",
+      "MD-6.4.5-LangevinForwardSemigroupMeaning",
+      "MD-6.4.5-ComplexEigenmodeDecay"
+    ],
+    "subtasks": [
+      {
+        "subtask": "EAUDIT20a",
+        "source_id": "MD-6.4.5-ComplexInitialDensity",
+        "path": "blueprint/ch06/mathcopilot_tasks/EAUDIT20/a",
+        "total_bytes": 90827,
+        "definitions": 5,
+        "manifest_sha256": "87319c011c6a6b468608185b336ad44b39f3ebfa0bec6b4a02c788a1ccb51852"
+      },
+      {
+        "subtask": "EAUDIT20b",
+        "source_id": "MD-6.4.5-LangevinForwardSemigroupMeaning",
+        "path": "blueprint/ch06/mathcopilot_tasks/EAUDIT20/b",
+        "total_bytes": 129573,
+        "definitions": 23,
+        "manifest_sha256": "caf29dd0df8c4b00e03ee41583fc16eb7618b4e49687a318d4ed2af52900a2ca"
+      },
+      {
+        "subtask": "EAUDIT20c",
+        "source_id": "MD-6.4.5-ComplexEigenmodeDecay",
+        "path": "blueprint/ch06/mathcopilot_tasks/EAUDIT20/c",
+        "total_bytes": 123632,
+        "definitions": 44,
+        "manifest_sha256": "9dcce76df7e313454659ce64ac186be8a7fda967891191a0a5c53d7174854916"
+      }
+    ]
+  }
+]

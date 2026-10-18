@@ -1,0 +1,378 @@
+{
+  "batch": "BATCH05",
+  "chapter": "ch06",
+  "round": "first-merged",
+  "input_sha256": {
+    "Blueprint/Ch06.lean": "0a02a34ec68989a83bccfa5916db5053ecdb58e05667bf21ff3568d9d1f4318e",
+    "blueprint/ch06/ch06_source.json": "45c70ceef21ca168af437de297e2e21e2800b452ab7942654061d4cff9bb5d95"
+  },
+  "items": [
+    {
+      "source_id": "MD-6.1.3-FiniteDomainPrinted",
+      "json_review": {
+        "status": "NEEDS_HUMAN",
+        "issue_codes": [
+          "ERRATUM?"
+        ],
+        "corrected_json": null,
+        "issues": [
+          {
+            "code": "ERRATUM?",
+            "phase": "A/C",
+            "field": "finiteDomainPrinted前提及可积性结论",
+            "detail": "有限体积及域内C∞不足以推出Boltzmann权重可积；须控制下界或采用紧域连续性。原书finite和smooth的作用域还存在歧义，保留原文与原有ERRATUM?。"
+          }
+        ],
+        "evidence": [
+          "A：实际渲染并核对 R1_PAGES.pdf 附件第26页；原PDF第239页，印刷第218页。原页确实只有“U is smooth and the domain Q is finite”这两个非量化描述并直接断言两个积分良定义；输入保留原句及ERRATUM?。",
+          "C：依据 R1_任务.md 本条实际Lean签名及本任务附录，按标准Mathlib数学含义只读核对；未运行Lean编译、未补证明，未把sorry或repair_log中的未提供声明当作审校结果。"
+        ]
+      },
+      "audit": {
+        "lean_decl": "MD.Ch06.finiteDomainPrinted",
+        "verdict": "NEEDS_HUMAN",
+        "explanation": "Printed签名将finite解释为可测有限体积Q，将smooth解释为ContDiffOn U Q，且β>0，结论为exp(−βU)在Q可积。这种字面读法不足以控制U趋边界为−∞，即使Q有界也有反例。原文若意指紧配置空间且U在其上连续，则可成立，但不能由当前Printed前提直接获得。按任务要求对原文歧义/疑误判NEEDS_HUMAN，保留忠实版，不把它判为一般正确定理。repair_log所列_corrected签名未提供，本条不推断其内容。",
+        "counterexample": "取n=1，Q={q | 0<q(0)<1}，U(q)=−(q(0))⁻¹（使用Lean实逆元在0处总定义），β=1。Q可测且体积为1，U在Q上C∞。权重为exp(1/q(0))，对0<q(0)<1有exp(1/q(0))≥1/(2q(0)²)，故其在Q的积分发散，结论不成立。",
+        "suggested_fix": "Printed原文保持不变；独立修正版可改为Q紧且ContinuousOn U Q，或保留有限体积并加U在Q有统一下界。若要断言概率归一化，还须Q具有正体积及相应正质量、正β条件。"
+      },
+      "subtask": "BATCH05a",
+      "input_sha256": {
+        "Blueprint/Ch06.lean": "0a02a34ec68989a83bccfa5916db5053ecdb58e05667bf21ff3568d9d1f4318e",
+        "blueprint/ch06/ch06_source.json": "45c70ceef21ca168af437de297e2e21e2800b452ab7942654061d4cff9bb5d95",
+        "BATCH05a_PAGES.pdf": "635117b02ee76ddae4b93c57d3dccec69510250633493367ef24ee2b4993e9c9",
+        "signature_sha256": "b4ee3764110e8390807f3ca374901b49d564092e17170c32ec1a0aa705031b27"
+      }
+    },
+    {
+      "source_id": "MD-6.1.3-PeriodicPartitionBridge",
+      "json_review": {
+        "status": "APPROVED",
+        "issue_codes": [],
+        "corrected_json": null,
+        "issues": [],
+        "evidence": [
+          "A：实际渲染并核对 R1_PAGES.pdf 附件第27页；原PDF第239页，印刷第218页。本条所引动量/配置分离式确在印刷页218；未在原文中找到单位torus或单位质量条件，它们正确列在[EXTRA]而非冒充原文。",
+          "C：依据 R1_任务.md 本条实际Lean签名及本任务附录，按标准Mathlib数学含义只读核对；未运行Lean编译、未补证明，未把sorry或repair_log中的未提供声明当作审校结果。",
+          "项目定义核对：D6–D7、D15、D20–D26全部展开核对；textbookConfigurationCube=Icc 0 1；textbookLangevinPeriodicPhase=UnitAddTorus(Fin N)×(Fin N→ℝ)。"
+        ]
+      },
+      "audit": {
+        "lean_decl": "MD.Ch06.periodicPartitionBridge",
+        "verdict": "PASS",
+        "explanation": "U在Fin N→ℝ上C∞且对任意整数向量平移周期，β>0；左边由D20在单位配置torus Haar测度×全动量Lebesgue测度上积分D23 Gibbs权重。D21–D26把Hamiltonian固定为Σp_i²/2+U；D7的配置partition在Icc 0 1上积分exp(−βU)。周期性保证任意代表元选取不影响权重，torus积分与单位基本域积分一致，边界测度为0。右边sqrt(2πβ⁻¹)^N是单位质量高斯因子，等式正确。该[EXTRA]独立特例不覆盖第21、22条的一般质量/配置域。",
+        "counterexample": null,
+        "suggested_fix": null
+      },
+      "subtask": "BATCH05b",
+      "input_sha256": {
+        "Blueprint/Ch06.lean": "0a02a34ec68989a83bccfa5916db5053ecdb58e05667bf21ff3568d9d1f4318e",
+        "blueprint/ch06/ch06_source.json": "45c70ceef21ca168af437de297e2e21e2800b452ab7942654061d4cff9bb5d95",
+        "BATCH05b_PAGES.pdf": "635117b02ee76ddae4b93c57d3dccec69510250633493367ef24ee2b4993e9c9",
+        "signature_sha256": "7966567d69c27dd0f64086ee16b7686a3c3a5460d4af5c881007f2401c2e25b6"
+      }
+    },
+    {
+      "source_id": "MD-6.1.3-ConfiningPartition",
+      "json_review": {
+        "status": "CORRECTED",
+        "issue_codes": [
+          "A_OMITTED_PARENTHETICAL",
+          "A_UNMARKED_NONCONTIGUOUS_EXCERPT",
+          "A_SECTION_MAPPING"
+        ],
+        "corrected_json": {
+          "source_id": "MD-6.1.3-ConfiningPartition",
+          "kind": "unnumbered_claim",
+          "label": null,
+          "section": "6.1.3–6.1.4",
+          "printed_page": "218–220",
+          "pdf_page": "239–241",
+          "statement_latex": "Typically one assumes that (i) $U$ is smooth except on a low-dimensional set of singular points, (ii) $U$ is bounded below (which is normally the case if a potential such as Lennard-Jones, steeply repulsive at short range, is incorporated between all pairs of atoms), and (iii) $U$ grows sufficiently rapidly as $q\\to\\infty$, in the case of an infinite domain.\n[\\ldots]\nTypical assumptions for potentials on the unbounded domain are that (i) $U$ is bounded below, and (ii) $U$ grows sufficiently rapidly as $q\\to\\infty$. This ensures that\n\\[\\int_\\Omega\\exp(-\\beta U(q))d\\omega_q<\\infty.\\]",
+          "proof_latex": null,
+          "proof_note": "原书未给独立完整证明。",
+          "proof_discussion_latex": null,
+          "context_notation": [],
+          "issues": [],
+          "lean_decl": "MD.Ch06.confiningPartition",
+          "reusable_proofs": [],
+          "extra_assumptions": [
+            "[EXTRA]无奇点的连续全空间充分条件：U(q)≥c‖q‖ᵖ−C，其中c,p,β>0；把“足够快”明确量化，不将任意增长都视为足够。"
+          ],
+          "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
+          "review_status": "CORRECTED",
+          "repair_log": [
+            {
+              "date": "2026-10-17",
+              "action": "R1_readonly_source_review",
+              "change": "恢复U is bounded below之后关于Lennard-Jones短程排斥及原子对的原文括注。；用显式省略标记区分印刷218页与220页的摘录，并恢复紧邻This ensures that的实际假设句。；本条同时摘自6.1.3和6.1.4；section应标为6.1.3–6.1.4，页码218–220及239–241保持。",
+              "scope": "仅修订本审校输出内的原文JSON；未修改工程或Lean声明。"
+            }
+          ],
+          "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
+        },
+        "issues": [
+          {
+            "code": "A_OMITTED_PARENTHETICAL",
+            "phase": "A",
+            "field": "statement_latex",
+            "detail": "恢复U is bounded below之后关于Lennard-Jones短程排斥及原子对的原文括注。"
+          },
+          {
+            "code": "A_UNMARKED_NONCONTIGUOUS_EXCERPT",
+            "phase": "A",
+            "field": "statement_latex",
+            "detail": "用显式省略标记区分印刷218页与220页的摘录，并恢复紧邻This ensures that的实际假设句。"
+          },
+          {
+            "code": "A_SECTION_MAPPING",
+            "phase": "A",
+            "field": "section",
+            "detail": "本条同时摘自6.1.3和6.1.4；section应标为6.1.3–6.1.4，页码218–220及239–241保持。"
+          }
+        ],
+        "evidence": [
+          "A：实际渲染并核对 R1_PAGES.pdf 附件第28–30页；原PDF第239–241页，印刷第218–220页。附件28页是印刷218页的条件(i)–(iii)，附件30页的“This ensures that”及积分在6.1.4、印刷220页。输入删去了(ii)后的整段括注，又把跨小节的两段无省略标记连接，并把section只写6.1.3；现恢复括注、标明跨段省略和两个来源小节。",
+          "C：依据 R1_任务.md 本条实际Lean签名及本任务附录，按标准Mathlib数学含义只读核对；未运行Lean编译、未补证明，未把sorry或repair_log中的未提供声明当作审校结果。",
+          "项目定义核对：Chapter06Review.V n=Fin n→ℝ；实指数、rpow和Lebesgue可积性按标准定义理解。"
+        ]
+      },
+      "audit": {
+        "lean_decl": "MD.Ch06.confiningPartition",
+        "verdict": "PASS",
+        "explanation": "对象是任意有限维V n上的连续U，以及实β,c,p,C；要求β,c,p>0并对全部q有c‖q‖^p−C≤U(q)。于是0<exp(−βU(q))≤exp(βC)exp(−βc‖q‖^p)，右侧在有限维空间任意p>0下可积，故结论正确。Pi范数与Euclidean范数等价，V n使用坐标函数范数不破坏可积性。C可为任意实数，无须额外C≥0。[EXTRA]已经把“足够快”量化，并明确只处理无奇点连续全空间充分条件，未声称涵盖一般奇点势或任意缓慢增长。",
+        "counterexample": null,
+        "suggested_fix": null
+      },
+      "subtask": "BATCH05c",
+      "input_sha256": {
+        "Blueprint/Ch06.lean": "0a02a34ec68989a83bccfa5916db5053ecdb58e05667bf21ff3568d9d1f4318e",
+        "blueprint/ch06/ch06_source.json": "45c70ceef21ca168af437de297e2e21e2800b452ab7942654061d4cff9bb5d95",
+        "BATCH05c_PAGES.pdf": "f4377f416c551a234068c95ca4bf19e116e0a3766b972c8426d096f825601cbe",
+        "signature_sha256": "961c72b3aaadae1287dce589a70f87c1a22523f51c388a41c0eea522b9189e85"
+      }
+    },
+    {
+      "source_id": "MD-6.1.3-LennardJonesNonintegrable",
+      "json_review": {
+        "status": "CORRECTED",
+        "issue_codes": [
+          "A_UNMARKED_NONCONTIGUOUS_EXCERPT"
+        ],
+        "corrected_json": {
+          "source_id": "MD-6.1.3-LennardJonesNonintegrable",
+          "kind": "unnumbered_claim",
+          "label": null,
+          "section": "6.1.3",
+          "printed_page": "219",
+          "pdf_page": "240",
+          "statement_latex": "For example a collection of atoms on the infinite domain interacting in Lennard-Jones potentials does not satisfy the third condition, and it does not have a well defined canonical partition function. We can understand this by considering what happens over time in such a system. For simplicity, just take the case of a one degree-of-freedom system with $H=p^2/2+q^{-12}-q^{-6}$, $q>0$.",
+          "proof_latex": null,
+          "proof_note": "原书未给独立完整证明。",
+          "proof_discussion_latex": null,
+          "context_notation": [],
+          "issues": [],
+          "lean_decl": "MD.Ch06.lennardJonesNonintegrable",
+          "reusable_proofs": [],
+          "extra_assumptions": [
+            "[EXTRA]精确取原一自由度例子的q>0配置权重；动量Gaussian有限因子不会修复配置尾部发散。"
+          ],
+          "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
+          "review_status": "CORRECTED",
+          "repair_log": [
+            {
+              "date": "2026-10-17",
+              "action": "R1_readonly_source_review",
+              "change": "恢复partition function之后、For simplicity之前被无标记删去的原句。",
+              "scope": "仅修订本审校输出内的原文JSON；未修改工程或Lean声明。"
+            }
+          ],
+          "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
+        },
+        "issues": [
+          {
+            "code": "A_UNMARKED_NONCONTIGUOUS_EXCERPT",
+            "phase": "A",
+            "field": "statement_latex",
+            "detail": "恢复partition function之后、For simplicity之前被无标记删去的原句。"
+          }
+        ],
+        "evidence": [
+          "A：实际渲染并核对 R1_PAGES.pdf 附件第31页；原PDF第240页，印刷第219页。印刷页219确有无限域Lennard-Jones的partition发散及H=p²/2+q⁻¹²−q⁻⁶、q>0的例子；两句之间原有“We can understand this by considering what happens over time in such a system.”，输入无标记删去了这句，现恢复。",
+          "C：依据 R1_任务.md 本条实际Lean签名及本任务附录，按标准Mathlib数学含义只读核对；未运行Lean编译、未补证明，未把sorry或repair_log中的未提供声明当作审校结果。"
+        ]
+      },
+      "audit": {
+        "lean_decl": "MD.Ch06.lennardJonesNonintegrable",
+        "verdict": "PASS",
+        "explanation": "量化任意β>0，结论恰为q>0上exp[−β((q⁻¹)^12−(q⁻¹)^6)]不可积。Lean的逆元幂在q>0与原q⁻¹²−q⁻⁶一致。对q≥1，此势≤0，故权重≥1，尾积分直接发散；无需把q=0奇点或数值轨迹作为理由。动量高斯有限且正，不能消去配置积分发散。[EXTRA]清楚限定为原书一自由度例子的配置结论，未声称凭此定理已证明任意多体Lennard-Jones系统的发散。",
+        "counterexample": null,
+        "suggested_fix": null
+      },
+      "subtask": "BATCH05d",
+      "input_sha256": {
+        "Blueprint/Ch06.lean": "0a02a34ec68989a83bccfa5916db5053ecdb58e05667bf21ff3568d9d1f4318e",
+        "blueprint/ch06/ch06_source.json": "45c70ceef21ca168af437de297e2e21e2800b452ab7942654061d4cff9bb5d95",
+        "BATCH05d_PAGES.pdf": "0928879dc2f0c47f561c34190483b18d6db6841bd4bad0680b4cdf6626871f80",
+        "signature_sha256": "9c52a9ed6e9637bdfe37268b383e68a1d4f76f4e360aad2e97894ab3fa26111a"
+      }
+    },
+    {
+      "source_id": "MD-6.1.3-LennardJonesConfinement",
+      "json_review": {
+        "status": "CORRECTED",
+        "issue_codes": [
+          "A_HYPHEN_TRANSCRIPTION"
+        ],
+        "corrected_json": {
+          "source_id": "MD-6.1.3-LennardJonesConfinement",
+          "kind": "unnumbered_claim",
+          "label": null,
+          "section": "6.1.3",
+          "printed_page": "219",
+          "pdf_page": "240",
+          "statement_latex": "In order to use a one degree-of-freedom model on an infinite domain in the canonical setting, we would need to incorporate a restraining potential, slightly modifying for example the Lennard-Jones potential to $U(q)=q^{-12}-q^{-6}+\\epsilon q^2$ (Fig. 6.2).",
+          "proof_latex": null,
+          "proof_note": "原书未给独立完整证明。",
+          "proof_discussion_latex": null,
+          "context_notation": [],
+          "issues": [],
+          "lean_decl": "MD.Ch06.lennardJonesConfinement",
+          "reusable_proofs": [],
+          "extra_assumptions": [
+            "[EXTRA]ε>0；保存完整势能公式，并给出足以控制无穷尾部的二次下界；q=0处总逆元记号不替代原q>0模型，不计奇点积分已证。"
+          ],
+          "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
+          "review_status": "CORRECTED",
+          "repair_log": [
+            {
+              "date": "2026-10-17",
+              "action": "R1_readonly_source_review",
+              "change": "将one-degree-of-freedom model恢复为原页one degree-of-freedom model；仅文字誊录差异。",
+              "scope": "仅修订本审校输出内的原文JSON；未修改工程或Lean声明。"
+            }
+          ],
+          "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
+        },
+        "issues": [
+          {
+            "code": "A_HYPHEN_TRANSCRIPTION",
+            "phase": "A",
+            "field": "statement_latex",
+            "detail": "将one-degree-of-freedom model恢复为原页one degree-of-freedom model；仅文字誊录差异。"
+          }
+        ],
+        "evidence": [
+          "A：实际渲染并核对 R1_PAGES.pdf 附件第32页；原PDF第240页，印刷第219页。势能q⁻¹²−q⁻⁶+εq²及(Fig. 6.2)均与原页一致；原页写“one degree-of-freedom model”，输入在one后多加了连字符，现按逐字要求恢复。",
+          "C：依据 R1_任务.md 本条实际Lean签名及本任务附录，按标准Mathlib数学含义只读核对；未运行Lean编译、未补证明，未把sorry或repair_log中的未提供声明当作审校结果。"
+        ]
+      },
+      "audit": {
+        "lean_decl": "MD.Ch06.lennardJonesConfinement",
+        "verdict": "PASS",
+        "explanation": "对每个ε>0存在统一C，使所有实q满足εq²−C≤(q⁻¹)^12−(q⁻¹)^6+εq²。取t=(q⁻¹)^6，有t²−t=(t−1/2)²−1/4，因此C=1/4即可，且不依赖ε；实逆元在q=0的总定义也满足该下界。结论是正确的全局二次下界，包含原q>0域。[EXTRA]已明确它只保存公式与控制尾部的估计，签名没有β、可积性或概率归一化结论，不把此下界本身计为完整正则化模型已证。",
+        "counterexample": null,
+        "suggested_fix": null
+      },
+      "subtask": "BATCH05e",
+      "input_sha256": {
+        "Blueprint/Ch06.lean": "0a02a34ec68989a83bccfa5916db5053ecdb58e05667bf21ff3568d9d1f4318e",
+        "blueprint/ch06/ch06_source.json": "45c70ceef21ca168af437de297e2e21e2800b452ab7942654061d4cff9bb5d95",
+        "BATCH05e_PAGES.pdf": "0928879dc2f0c47f561c34190483b18d6db6841bd4bad0680b4cdf6626871f80",
+        "signature_sha256": "9774ea793b3749dec95c8ea600cc2810514a20ab7ea8403cafb52dfc12b01fb1"
+      }
+    },
+    {
+      "source_id": "MD-6.1.3-PeriodicWeightIntegrable",
+      "json_review": {
+        "status": "NEEDS_HUMAN",
+        "issue_codes": [
+          "ERRATUM?"
+        ],
+        "corrected_json": null,
+        "issues": [
+          {
+            "code": "ERRATUM?",
+            "phase": "A",
+            "field": "statement_latex",
+            "detail": "同第23条：一般有限体积及域内光滑不足以保证可积，原句含义待人工澄清；本条明确使用光滑周期势和紧torus这一有效充分条件。"
+          }
+        ],
+        "evidence": [
+          "A：实际渲染并核对 R1_PAGES.pdf 附件第33页；原PDF第239页，印刷第218页。附件33页所引有限域光滑势原句与第23条同源，誊录一致；其一般表述仍有第23条的边界/下界歧义，须保留该原书疑误。",
+          "C：依据 R1_任务.md 本条实际Lean签名及本任务附录，按标准Mathlib数学含义只读核对；未运行Lean编译、未补证明，未把sorry或repair_log中的未提供声明当作审校结果。",
+          "项目定义核对：Chapter06Review.flatPhaseMeasure n=(volume:Measure(UnitAddTorus(Fin n))).prod(volume:Measure(V n))；D15、D21、D23–D26给出周期权重的完整定义链。"
+        ]
+      },
+      "audit": {
+        "lean_decl": "MD.Ch06.periodicWeightIntegrable",
+        "verdict": "PASS",
+        "explanation": "实际声明是已标[EXTRA]的正确特例：U全轴C∞且单位周期，β>0，D23的真实周期Gibbs权重关于flatPhaseMeasure n可积。flatPhaseMeasure明确就是单位配置torus上的Haar体积×实动量Lebesgue体积，与权重的定义域一致；周期U在紧torus上有界，配置权重有界，β>0的动量高斯可积，故结论正确。原书一般有限域句子的疑误不使此严格特例的签名FAIL；json_review保留NEEDS_HUMAN以区分原文层面的歧义与本条数学结论PASS。",
+        "counterexample": null,
+        "suggested_fix": "保留原句及[EXTRA]特例，并为原句补充与第23条一致的ERRATUM?说明；无需修改本条周期特例签名。"
+      },
+      "subtask": "BATCH05f",
+      "input_sha256": {
+        "Blueprint/Ch06.lean": "0a02a34ec68989a83bccfa5916db5053ecdb58e05667bf21ff3568d9d1f4318e",
+        "blueprint/ch06/ch06_source.json": "45c70ceef21ca168af437de297e2e21e2800b452ab7942654061d4cff9bb5d95",
+        "BATCH05f_PAGES.pdf": "635117b02ee76ddae4b93c57d3dccec69510250633493367ef24ee2b4993e9c9",
+        "signature_sha256": "6d2866ce40de4e297aa55fee3f27ac96cdc463dbe110d91793dbfa0beaedc1bc"
+      }
+    },
+    {
+      "source_id": "MD-6.1.3-PeriodicPartitionPositive",
+      "json_review": {
+        "status": "APPROVED",
+        "issue_codes": [],
+        "corrected_json": null,
+        "issues": [],
+        "evidence": [
+          "A：实际渲染并核对 R1_PAGES.pdf 附件第34页；原PDF第239页，印刷第218页。原页确有normalizable、necessary、finite及integral converge的句子；输入用显式省略号略去Z_can的积分定义，未把省略内容当作原文不存在。",
+          "C：依据 R1_任务.md 本条实际Lean签名及本任务附录，按标准Mathlib数学含义只读核对；未运行Lean编译、未补证明，未把sorry或repair_log中的未提供声明当作审校结果。",
+          "项目定义核对：D20 partition是D23周期权重关于torus Haar×动量Lebesgue的实际积分；D21–D26确保动能为单位质量且势能周期。"
+        ]
+      },
+      "audit": {
+        "lean_decl": "MD.Ch06.periodicPartitionPositive",
+        "verdict": "PASS",
+        "explanation": "U在Fin N→ℝ上光滑、单位周期且β>0，结论是实际实值周期canonical partition严格为正。D20中的积分域/测度与第28条一致，D23权重处处严格正；结合该情形的可积性与非零乘积体积，正性正确，N=0时也不例外。这里是[EXTRA]的真实周期单位质量特例，既未把正性当前提，也不宣称原书的“一般可归一化必需有限”本身等价于本签名；实值积分的有限性须由可积性支撑，不能只因结果类型是ℝ就略过第28条。reusable_proofs仅为复用线索，本轮未检查其未提供证明。",
+        "counterexample": null,
+        "suggested_fix": null
+      },
+      "subtask": "BATCH05g",
+      "input_sha256": {
+        "Blueprint/Ch06.lean": "0a02a34ec68989a83bccfa5916db5053ecdb58e05667bf21ff3568d9d1f4318e",
+        "blueprint/ch06/ch06_source.json": "45c70ceef21ca168af437de297e2e21e2800b452ab7942654061d4cff9bb5d95",
+        "BATCH05g_PAGES.pdf": "635117b02ee76ddae4b93c57d3dccec69510250633493367ef24ee2b4993e9c9",
+        "signature_sha256": "cbc8c08f2f80f274ab0f0290961139aa371cbcf13790409cc12c01f49ea30030"
+      }
+    },
+    {
+      "source_id": "MD-6.1.3-MeanEnergyConstraint",
+      "json_review": {
+        "status": "APPROVED",
+        "issue_codes": [],
+        "corrected_json": null,
+        "issues": [],
+        "evidence": [
+          "A：实际渲染并核对 R1_PAGES.pdf 附件第35页；原PDF第239页，印刷第218页。印刷页218页首的平均能量分式方程及“Alternatively”一句逐项相符；没有遗漏H(z)、β或分母。",
+          "C：依据 R1_任务.md 本条实际Lean签名及本任务附录，按标准Mathlib数学含义只读核对；未运行Lean编译、未补证明，未把sorry或repair_log中的未提供声明当作审校结果。"
+        ]
+      },
+      "audit": {
+        "lean_decl": "MD.Ch06.meanEnergyConstraint",
+        "verdict": "PASS",
+        "explanation": "对任意可测D、测度ν、实值Hamiltonian H及实β,meanEnergy，定义命题为∫H exp(−βH)/∫exp(−βH)=meanEnergy；两处测度相同，权重与分式方向正确。它只是确定β所需的约束定义，没有为任意给定能量伪造β存在或唯一性。Lean积分和实除法是总定义，若分母为0仍会得到形式命题，故必须连同输入已注明的物理适用条件理解，不能把定义本身当成非退化概率期望的存在定理。",
+        "counterexample": null,
+        "suggested_fix": null
+      },
+      "subtask": "BATCH05h",
+      "input_sha256": {
+        "Blueprint/Ch06.lean": "0a02a34ec68989a83bccfa5916db5053ecdb58e05667bf21ff3568d9d1f4318e",
+        "blueprint/ch06/ch06_source.json": "45c70ceef21ca168af437de297e2e21e2800b452ab7942654061d4cff9bb5d95",
+        "BATCH05h_PAGES.pdf": "635117b02ee76ddae4b93c57d3dccec69510250633493367ef24ee2b4993e9c9",
+        "signature_sha256": "4cc1ad4de93d3949cd469428a07408956f483686505c8923b47610b7c557a80d"
+      }
+    }
+  ],
+  "merged_from": "ch06_first_merged"
+}

@@ -1,0 +1,77 @@
+{
+  "eaudit": "EAUDIT08",
+  "subtask": "EAUDIT08b",
+  "source_id": "MD-6.3.3-BathForceWeakLimitMeaning",
+  "input_sha256": {
+    "Blueprint/Ch06.lean": "4a2a6cb72c1692f80e3537ab1a71701d429a482780a01226c3dc66a2ebb8b44b",
+    "blueprint/ch06/ch06_source.json": "d7f93cd20eb570744c710f3e07a88b319c082e4155812fee91db0920eb05944e",
+    "PAGES.pdf": "dfb761f6cb9cc8281a1fe1c050518a22b544ed130c2439812ea03f3ddfd22471",
+    "materials_sha256": "60a98a74e1c80f2205aec992e86191e165f3dc3cafc4d2523c559a52166339d2"
+  },
+  "paste_sha256": "ff1c3661765c7a000403d84fc49d12d400c3e81fa9ca00603eeef286616feb29",
+  "source_pdf_sha256": "1939a22e5e96ebd2b58b8e91fe2c796f5390b402f267390f473b271c35d2f036",
+  "pdf_page_mapping": [
+    258,
+    259
+  ],
+  "crop_pixel_identity": "PASS: copied page render or lossless embedded full-page source pixels",
+  "rasterized_pages": {
+    "259": {
+      "dpi": 126,
+      "width": 769,
+      "height": 1166,
+      "pixel_sha256": "c9f377321551e253008b9c1693c08028f620d1b10b7b5123216a7f62748970b4"
+    }
+  },
+  "source_declarations": [
+    "bathForceWeakLimitMeaning",
+    "bathForceWeakLimitMeaning_corrected"
+  ],
+  "dependency_excerpts": [
+    {
+      "path": "Blueprint/Ch06.lean",
+      "line": 1514,
+      "full_name": "MD.Ch06.bathForceWeakLimitMeaning",
+      "kind": "def",
+      "excerpt_sha256": "0075babe7a1b27ee59565eb1d75439011ea8b65b169cc944e9064913c110eb6a"
+    },
+    {
+      "path": "Blueprint/Ch06.lean",
+      "line": 1532,
+      "full_name": "MD.Ch06.bathForceWeakLimitMeaning_corrected",
+      "kind": "def",
+      "excerpt_sha256": "0346a43ce92418044d751bd868484ca8cad905ca1a328756876b0a71d7fc2e83"
+    },
+    {
+      "path": "MolecularDynamics/Chapter06/ReviewDefinitions.lean",
+      "line": 17,
+      "full_name": "MolecularDynamics.Chapter06Review.V",
+      "kind": "abbrev",
+      "excerpt_sha256": "7ab0ad90462b274b03f5b929b5f09417c0b397b6cb908fa6e7bd56677a314027"
+    },
+    {
+      "path": "MolecularDynamics/Chapter06/ReviewDefinitions.lean",
+      "line": 96,
+      "full_name": "MolecularDynamics.Chapter06Review.bathFrequency",
+      "kind": "def",
+      "excerpt_sha256": "e4644c522532c98aac00cd78a02fc4d70da0a444c50b96dd41744d020bc32500"
+    },
+    {
+      "path": "MolecularDynamics/Chapter06/ReviewDefinitions.lean",
+      "line": 99,
+      "full_name": "MolecularDynamics.Chapter06Review.bathForce",
+      "kind": "def",
+      "excerpt_sha256": "87b2d1d0e08f4a3c6a5126e57a4814770cc62636745320f745d0b5e40bd2ece3"
+    },
+    {
+      "path": "MolecularDynamics/Chapter06/ReviewDefinitions.lean",
+      "line": 102,
+      "full_name": "MolecularDynamics.Chapter06Review.bathForcePrinted",
+      "kind": "def",
+      "excerpt_sha256": "3408fcfb4adf697caf9c9c693cd38f3c0139a2de8fa12a7f9b04fc7d5b0d4d77"
+    }
+  ],
+  "project_definition_closure": "complete recursive definitions, referenced theorem types, explicit choice and consistency specifications",
+  "website_submitted": false,
+  "total_task_bytes": 246047
+}

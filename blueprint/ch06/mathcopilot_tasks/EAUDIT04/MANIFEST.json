@@ -1,0 +1,29 @@
+{
+  "eaudit": "EAUDIT04",
+  "subtasks": [
+    {
+      "subtask": "EAUDIT04a",
+      "source_id": "MD-6.2.2-WeakItoAlias",
+      "path": "blueprint/ch06/mathcopilot_tasks/EAUDIT04/a",
+      "total_bytes": 103709,
+      "definitions": 2,
+      "manifest_sha256": "391b44d620be27059191cb298b3843160e69bc31daf6b6c0e21db547b0e53d45"
+    },
+    {
+      "subtask": "EAUDIT04b",
+      "source_id": "MD-6.2.2-Proposition62",
+      "path": "blueprint/ch06/mathcopilot_tasks/EAUDIT04/b",
+      "total_bytes": 101917,
+      "definitions": 9,
+      "manifest_sha256": "7a912e6c7803f7178f06d959f2862833c6b831a1e953bf3e3417bf5d3cf97582"
+    },
+    {
+      "subtask": "EAUDIT04c",
+      "source_id": "MD-6.2.2-SelfStratonovichIntegral",
+      "path": "blueprint/ch06/mathcopilot_tasks/EAUDIT04/c",
+      "total_bytes": 81255,
+      "definitions": 6,
+      "manifest_sha256": "2b5ee200d43db24cf54cda2fc42f593bd7856ece6529a08418b817ac6d8177a2"
+    }
+  ]
+}

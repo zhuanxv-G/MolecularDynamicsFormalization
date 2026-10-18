@@ -1,0 +1,41 @@
+{
+  "eaudit": "EAUDIT01",
+  "subtask": "EAUDIT01c",
+  "source_id": "MD-6.1.2-CanonicalCDFPrinted",
+  "input_sha256": {
+    "Blueprint/Ch06.lean": "4a2a6cb72c1692f80e3537ab1a71701d429a482780a01226c3dc66a2ebb8b44b",
+    "blueprint/ch06/ch06_source.json": "d7f93cd20eb570744c710f3e07a88b319c082e4155812fee91db0920eb05944e",
+    "PAGES.pdf": "d4bfa09ad0bd17a179f1f43947f39826709c0d943efacd6a7fab149ab596af49",
+    "materials_sha256": "73e8ec80c2f6aea346568efa5e6208cb02a6251d1b3c5fb41c9322af0c93a3b1"
+  },
+  "paste_sha256": "ed11f9ea173a423f5148aa603781d8f9184dd113be3f07ec1a16538efee7adde",
+  "source_pdf_sha256": "1939a22e5e96ebd2b58b8e91fe2c796f5390b402f267390f473b271c35d2f036",
+  "pdf_page_mapping": [
+    237
+  ],
+  "crop_pixel_identity": "PASS: copied page render or lossless embedded full-page source pixels",
+  "rasterized_pages": {},
+  "source_declarations": [
+    "canonicalCDFPrinted",
+    "canonicalCDFPrinted_corrected"
+  ],
+  "dependency_excerpts": [
+    {
+      "path": "Blueprint/Ch06.lean",
+      "line": 220,
+      "full_name": "MD.Ch06.canonicalCDFPrinted",
+      "kind": "theorem",
+      "excerpt_sha256": "be747a66a8ae1c01182c407cff55c3df239ee1d1d76d33a91682c7bf70ee9f32"
+    },
+    {
+      "path": "Blueprint/Ch06.lean",
+      "line": 228,
+      "full_name": "MD.Ch06.canonicalCDFPrinted_corrected",
+      "kind": "def",
+      "excerpt_sha256": "f804aa0f07c0b55355d93f5df0c4722dcabc62864e23b6927fb232101be5b7a1"
+    }
+  ],
+  "project_definition_closure": "complete recursive definitions, referenced theorem types, explicit choice and consistency specifications",
+  "website_submitted": false,
+  "total_task_bytes": 81956
+}

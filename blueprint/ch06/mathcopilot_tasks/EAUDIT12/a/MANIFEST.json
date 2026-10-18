@@ -1,0 +1,76 @@
+{
+  "eaudit": "EAUDIT12",
+  "subtask": "EAUDIT12a",
+  "source_id": "MD-6.4.3-BrownianRealEigenvalue",
+  "input_sha256": {
+    "Blueprint/Ch06.lean": "4a2a6cb72c1692f80e3537ab1a71701d429a482780a01226c3dc66a2ebb8b44b",
+    "blueprint/ch06/ch06_source.json": "d7f93cd20eb570744c710f3e07a88b319c082e4155812fee91db0920eb05944e",
+    "PAGES.pdf": "db61f5524dd8e538ea263b26df24013f9a959727267372c8ec06f88d112dd86c",
+    "materials_sha256": "2500197cabfc6bcd6dfa026aadca34529fe82dbe536d0c65cfe7f2f249e14a18"
+  },
+  "paste_sha256": "5ffac73da2bee0051416d88428a41f9a31dd2cf3e31e7a391f2dfbab2210409d",
+  "source_pdf_sha256": "1939a22e5e96ebd2b58b8e91fe2c796f5390b402f267390f473b271c35d2f036",
+  "pdf_page_mapping": [
+    271
+  ],
+  "crop_pixel_identity": "PASS: copied page render or lossless embedded full-page source pixels",
+  "rasterized_pages": {},
+  "source_declarations": [
+    "brownianRealEigenvalue",
+    "brownianRealEigenvalue_corrected"
+  ],
+  "dependency_excerpts": [
+    {
+      "path": "Blueprint/Ch06.lean",
+      "line": 2280,
+      "full_name": "MD.Ch06.brownianRealEigenvalue",
+      "kind": "theorem",
+      "excerpt_sha256": "3ab7fea4ee784d74d4535c35d0334e65f926c6e3c71acd1a9fb7cf8c23bb497a"
+    },
+    {
+      "path": "Blueprint/Ch06.lean",
+      "line": 2290,
+      "full_name": "MD.Ch06.brownianRealEigenvalue_corrected",
+      "kind": "theorem",
+      "excerpt_sha256": "0f2b7eeb283d7029ec38c308ea49ec489ff72ee224b098aeccaf2115ba28fd2a"
+    },
+    {
+      "path": "MolecularDynamics/Chapter06/BrownianDirichlet.lean",
+      "line": 13,
+      "full_name": "MolecularDynamics.textbookConfigurationPartial",
+      "kind": "def",
+      "excerpt_sha256": "fbca5c0abb1ddc15e963008415ea72d955f5e4a49bbc36888fbf88ab7a80409d"
+    },
+    {
+      "path": "MolecularDynamics/Chapter06/BrownianDirichlet.lean",
+      "line": 18,
+      "full_name": "MolecularDynamics.textbookConfigurationCube",
+      "kind": "def",
+      "excerpt_sha256": "09df86f1ec71f9b7683204ae6fb4a4c17076a4a71db9c03a87623d7423d83273"
+    },
+    {
+      "path": "MolecularDynamics/Chapter06/BrownianDirichlet.lean",
+      "line": 31,
+      "full_name": "MolecularDynamics.textbookBrownianGenerator",
+      "kind": "def",
+      "excerpt_sha256": "e539c16e70580030677c468fb87e72c8ec94f2adcc60826e179399ea7dc1af00"
+    },
+    {
+      "path": "MolecularDynamics/Chapter06/BrownianDirichlet.lean",
+      "line": 396,
+      "full_name": "MolecularDynamics.textbookBrownianGenerator_real_eigenvalue_nonpos",
+      "kind": "theorem",
+      "excerpt_sha256": "bc6ffa0ebba24693450abd04b8b772a8456bba1627e04f15aeab67bf71c31a1f"
+    },
+    {
+      "path": "MolecularDynamics/Chapter06/LangevinPeriodicForce.lean",
+      "line": 13,
+      "full_name": "MolecularDynamics.textbookUnitPeriodicPotential",
+      "kind": "def",
+      "excerpt_sha256": "e26dd47f5c122900493506ccbe55a9fe93351b063566435477f1cbd5e0803040"
+    }
+  ],
+  "project_definition_closure": "complete recursive definitions, referenced theorem types, explicit choice and consistency specifications",
+  "website_submitted": false,
+  "total_task_bytes": 104553
+}

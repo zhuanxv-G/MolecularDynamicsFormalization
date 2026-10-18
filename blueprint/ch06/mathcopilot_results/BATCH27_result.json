@@ -1,0 +1,183 @@
+{
+  "batch": "BATCH27",
+  "chapter": "ch06",
+  "round": "first-merged",
+  "input_sha256": {
+    "Blueprint/Ch06.lean": "0a02a34ec68989a83bccfa5916db5053ecdb58e05667bf21ff3568d9d1f4318e",
+    "blueprint/ch06/ch06_source.json": "45c70ceef21ca168af437de297e2e21e2800b452ab7942654061d4cff9bb5d95"
+  },
+  "items": [
+    {
+      "source_id": "MD-6.3.7-VectorIto",
+      "json_review": {
+        "status": "CORRECTED",
+        "issue_codes": [
+          "TRANSCRIPTION_OMITTED_CONNECTING_TEXT",
+          "INSUFFICIENT_L2_RIEMANN_SUM_QUALIFICATION",
+          "UNDECLARED_FILTRATION_RESTRICTION"
+        ],
+        "corrected_json": {
+          "source_id": "MD-6.3.7-VectorIto",
+          "kind": "unnumbered_claim",
+          "label": "(6.40)–(6.41)",
+          "section": "6.3.7",
+          "printed_page": "243",
+          "pdf_page": "264",
+          "statement_latex": "If $\\phi$ is a scalar valued function of $\\mathbb R^m$, and $Z(t)$ is the solution of the SDE system\n\\[dZ=a(Z)dt+B dW;\\tag{6.39}\\]\nwhere $a$ is a function in $\\mathbb R^m$ and $B$ is a constant matrix, then we have\n\\[d\\phi(Z(t))=\\nabla\\phi\\cdot[adt+B dW]+\\tfrac12dW^TB^T\\phi''B dW;\\tag{6.40}\\]\n[原页关于Hessian、常矩阵范围及Wiener乘法规则的连接文本略]\n\\[d\\phi(Z(t))=\\nabla\\phi\\cdot[adt+B dW]+\\tfrac12\\operatorname{Tr}(B^T\\phi''B)dt.\\tag{6.41}\\]",
+          "proof_latex": null,
+          "proof_note": "原书未给独立完整证明。",
+          "proof_discussion_latex": null,
+          "context_notation": [],
+          "issues": [],
+          "lean_decl": "MD.Ch06.vectorIto",
+          "reusable_proofs": [],
+          "extra_assumptions": [
+            "[EXTRA]按本节实际常矩阵B范围；真实全部坐标严格Ito积分与Hessian/trace完整校正，未缩成仅漂移定义。"
+          ],
+          "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
+          "review_status": "CORRECTED",
+          "repair_log": [],
+          "source_page_verification": "R5_INDEPENDENT_REVIEW; R5_PAGES.pdf 附件第31页；以本次evidence及issues为准，历史repair_log不作为真实性证据。"
+        },
+        "issues": [
+          {
+            "code": "TRANSCRIPTION_OMITTED_CONNECTING_TEXT",
+            "detail": "A：附件第31页(6.40)与(6.41)之间还有Hessian说明、常矩阵/乘性噪声范围说明及dWi dWj=δij dt规则，JSON直接相接而未标省略。公式本身的½、矩阵次序、trace及编号正确。"
+          },
+          {
+            "code": "INSUFFICIENT_L2_RIEMANN_SUM_QUALIFICATION",
+            "detail": "C：n/r、全部噪声坐标、常B、C²φ和真实strictVectorSDE均保留，vectorGenerator为漂移加½ BBᵀ:Hessian。各j的adaptedSquareIntegrand仅给相对单独Wj历史可测及∫E[g_j²]dt有限；这比通常共同向量历史更窄，且未在[EXTRA]披露。更严重的是它不保证D10要求的每一个等距左端和均在L²，甚至不保证每个采样时刻g_j(t)∈L²。即使完全标准适应光滑扩散，这组前提也不足以推出当前“strict”结论，故FAIL。"
+          },
+          {
+            "code": "UNDECLARED_FILTRATION_RESTRICTION",
+            "detail": "C：n/r、全部噪声坐标、常B、C²φ和真实strictVectorSDE均保留，vectorGenerator为漂移加½ BBᵀ:Hessian。各j的adaptedSquareIntegrand仅给相对单独Wj历史可测及∫E[g_j²]dt有限；这比通常共同向量历史更窄，且未在[EXTRA]披露。更严重的是它不保证D10要求的每一个等距左端和均在L²，甚至不保证每个采样时刻g_j(t)∈L²。即使完全标准适应光滑扩散，这组前提也不足以推出当前“strict”结论，故FAIL。"
+          }
+        ],
+        "evidence": [
+          {
+            "phase": "A",
+            "location": "R5_PAGES.pdf，附件第31页；原PDF页264，印刷页243",
+            "finding": "A：附件第31页(6.40)与(6.41)之间还有Hessian说明、常矩阵/乘性噪声范围说明及dWi dWj=δij dt规则，JSON直接相接而未标省略。公式本身的½、矩阵次序、trace及编号正确。"
+          },
+          {
+            "phase": "C",
+            "location": "R5_任务.md，条目28/30，实际Lean签名/定义及其明确命名空间的依赖摘录、文末D附录",
+            "finding": "C：n/r、全部噪声坐标、常B、C²φ和真实strictVectorSDE均保留，vectorGenerator为漂移加½ BBᵀ:Hessian。各j的adaptedSquareIntegrand仅给相对单独Wj历史可测及∫E[g_j²]dt有限；这比通常共同向量历史更窄，且未在[EXTRA]披露。更严重的是它不保证D10要求的每一个等距左端和均在L²，甚至不保证每个采样时刻g_j(t)∈L²。即使完全标准适应光滑扩散，这组前提也不足以推出当前“strict”结论，故FAIL。"
+          }
+        ]
+      },
+      "audit": {
+        "lean_decl": "MD.Ch06.vectorIto",
+        "verdict": "FAIL",
+        "explanation": "C：n/r、全部噪声坐标、常B、C²φ和真实strictVectorSDE均保留，vectorGenerator为漂移加½ BBᵀ:Hessian。各j的adaptedSquareIntegrand仅给相对单独Wj历史可测及∫E[g_j²]dt有限；这比通常共同向量历史更窄，且未在[EXTRA]披露。更严重的是它不保证D10要求的每一个等距左端和均在L²，甚至不保证每个采样时刻g_j(t)∈L²。即使完全标准适应光滑扩散，这组前提也不足以推出当前“strict”结论，故FAIL。",
+        "counterexample": "取标准实Brownian W，n=2,r=1，X_t=(W_t,t)，a=(0,1)，B=(1,0)ᵀ，x0=(0,0)。取χ∈C_c∞(R)，χ=1于0附近、suppχ⊂[−1,1]，φ(x,y)=exp(x⁴)χ((y−1)exp(3x⁴))。φ为C∞，g_t=∂xφ(W_t,t)自然历史适应且在每个有限时间区间∫E[g_t²]dt<∞：大|x|处非零时间窗宽O(exp(−3x⁴))，g²至多多项式×exp(2x⁴)，故时间积分可积。但g_1=4W_1³exp(W_1⁴)不在L²。T=2,K=2的D9左端和=g_1(W_2−W_1)（g_0=0），未来独立单位增量使该和也不在L²。X满足常系数strictVectorSDE，所有给出的假设成立，而D10的第一个合取项失败。",
+        "suggested_fix": "采用标准L² Itô积分并将左端和收敛解释为适当简单过程逼近，或增加足以保证全部等距和L²及其收敛的时间L²连续/一致可积资格。多维适应性应使用共同向量滤过。原文相隔的公式用明确省略号衔接或补回原连接文本。"
+      },
+      "subtask": "BATCH27a",
+      "input_sha256": {
+        "Blueprint/Ch06.lean": "0a02a34ec68989a83bccfa5916db5053ecdb58e05667bf21ff3568d9d1f4318e",
+        "blueprint/ch06/ch06_source.json": "45c70ceef21ca168af437de297e2e21e2800b452ab7942654061d4cff9bb5d95",
+        "BATCH27a_PAGES.pdf": "2a556d2718fdeec241bd7b885b5a27deef955e0c27b9cd58ba49111408d87961",
+        "signature_sha256": "5a92ac3e1cfa3504e5aa829a5e1dcdf5a33ac5b7860952b9b7a7c82f96a937b3"
+      }
+    },
+    {
+      "source_id": "MD-6.3.7-VectorForward",
+      "json_review": {
+        "status": "APPROVED",
+        "issue_codes": [],
+        "corrected_json": null,
+        "issues": [],
+        "evidence": [
+          {
+            "phase": "A",
+            "location": "R5_PAGES.pdf，附件第32页；原PDF页264，印刷页243",
+            "finding": "A：附件第32页负散度、½ Tr(Bᵀρ″B)及常B上下文一致。"
+          },
+          {
+            "phase": "C",
+            "location": "R5_任务.md，条目29/30，实际Lean签名/定义及其明确命名空间的依赖摘录、文末D附录",
+            "finding": "C：任意n/r、向量漂移a、常n×r矩阵B、标量ρ及状态x；MD包装的精确项目定义为−∑i∂i(a_iρ)+½ vectorDiffusion B ρ，D51给BBᵀ与ρ的混合二阶导数，次序和系数正确。context_notation已明示这里只定义前向算子，不算从law证明PDE。代码块附带的cylinderForwardPrinted_corrected是另一source_id的别名，目标相同且无额外数学断言，不把它混算为本条证明或独立条目。"
+          }
+        ]
+      },
+      "audit": {
+        "lean_decl": "MD.Ch06.vectorForward",
+        "verdict": "PASS",
+        "explanation": "C：任意n/r、向量漂移a、常n×r矩阵B、标量ρ及状态x；MD包装的精确项目定义为−∑i∂i(a_iρ)+½ vectorDiffusion B ρ，D51给BBᵀ与ρ的混合二阶导数，次序和系数正确。context_notation已明示这里只定义前向算子，不算从law证明PDE。代码块附带的cylinderForwardPrinted_corrected是另一source_id的别名，目标相同且无额外数学断言，不把它混算为本条证明或独立条目。",
+        "counterexample": null,
+        "suggested_fix": null
+      },
+      "subtask": "BATCH27b",
+      "input_sha256": {
+        "Blueprint/Ch06.lean": "0a02a34ec68989a83bccfa5916db5053ecdb58e05667bf21ff3568d9d1f4318e",
+        "blueprint/ch06/ch06_source.json": "45c70ceef21ca168af437de297e2e21e2800b452ab7942654061d4cff9bb5d95",
+        "BATCH27b_PAGES.pdf": "2a556d2718fdeec241bd7b885b5a27deef955e0c27b9cd58ba49111408d87961",
+        "signature_sha256": "c0e0c4787b0ec240c1bc1f46c8f9daa5d0cc98beab13aafa4dfaf8286d6657fc"
+      }
+    },
+    {
+      "source_id": "MD-6.3.7-DiffusionTrace",
+      "json_review": {
+        "status": "APPROVED",
+        "issue_codes": [],
+        "corrected_json": null,
+        "issues": [],
+        "evidence": [
+          {
+            "phase": "A",
+            "location": "R5_PAGES.pdf，附件第33页；原PDF页264，印刷页243",
+            "finding": "A：附件第33页的trace、双重求和及(BBᵀ)ij与ρ混合二阶导数一致。"
+          },
+          {
+            "phase": "C",
+            "location": "R5_任务.md，条目30/30，实际Lean签名/定义及其明确命名空间的依赖摘录、文末D附录",
+            "finding": "C：签名将Hessian抽象为任意n×n实矩阵H，B为n×r；没有额外正定或对称前提。trace(BᵀHB)=∑ij(BBᵀ)ij H_ij对任意H成立：按矩阵乘法展开并用实数乘法交换律及BBᵀ对称性重排。包括n/r=0的空和情况。取H=ρ的Hessian即原式，强化为任意矩阵没有丢结论，也不需要用Hessian对称性作隐藏前提。"
+          }
+        ]
+      },
+      "audit": {
+        "lean_decl": "MD.Ch06.diffusionTrace",
+        "verdict": "PASS",
+        "explanation": "C：签名将Hessian抽象为任意n×n实矩阵H，B为n×r；没有额外正定或对称前提。trace(BᵀHB)=∑ij(BBᵀ)ij H_ij对任意H成立：按矩阵乘法展开并用实数乘法交换律及BBᵀ对称性重排。包括n/r=0的空和情况。取H=ρ的Hessian即原式，强化为任意矩阵没有丢结论，也不需要用Hessian对称性作隐藏前提。",
+        "counterexample": null,
+        "suggested_fix": null
+      },
+      "subtask": "BATCH27c",
+      "input_sha256": {
+        "Blueprint/Ch06.lean": "0a02a34ec68989a83bccfa5916db5053ecdb58e05667bf21ff3568d9d1f4318e",
+        "blueprint/ch06/ch06_source.json": "45c70ceef21ca168af437de297e2e21e2800b452ab7942654061d4cff9bb5d95",
+        "BATCH27c_PAGES.pdf": "2a556d2718fdeec241bd7b885b5a27deef955e0c27b9cd58ba49111408d87961",
+        "signature_sha256": "3a563c5cca4925446906d939b1344addc9b495f53f47660112a445d059e86195"
+      }
+    },
+    {
+      "source_id": "MD-6.3.7-VectorFPEquation",
+      "json_review": {
+        "status": "APPROVED",
+        "issue_codes": [],
+        "corrected_json": null,
+        "issues": [],
+        "evidence": [
+          "A：R6_PAGES.pdf 附件第1页（原PDF 264，印刷页243）；逐字、公式及页码核对。",
+          "C：只读核对R6_任务.md本条全部Lean签名及其列出的项目依赖/附录定义，未使用旧工程文件；不以sorry判FAIL。"
+        ]
+      },
+      "audit": {
+        "lean_decl": "MD.Ch06.vectorFPEquation",
+        "verdict": "PASS",
+        "explanation": "全部n个状态、r个噪声、常矩形B、确定初值和任意正时刻/空间点均保留。D2/D7/D8给出负散度及(1/2)∑(BBᵀ)ij∂ijρ，等于原迹公式。D3/D4是实际L²左和积分及路径方程，没有把PDE作前提；光滑、多项式漂移增长、局部一致指数密度/时间导数尾界均属已标[EXTRA]的充分资格。",
+        "counterexample": null,
+        "suggested_fix": null
+      },
+      "subtask": "BATCH27d",
+      "input_sha256": {
+        "Blueprint/Ch06.lean": "0a02a34ec68989a83bccfa5916db5053ecdb58e05667bf21ff3568d9d1f4318e",
+        "blueprint/ch06/ch06_source.json": "45c70ceef21ca168af437de297e2e21e2800b452ab7942654061d4cff9bb5d95",
+        "BATCH27d_PAGES.pdf": "2a556d2718fdeec241bd7b885b5a27deef955e0c27b9cd58ba49111408d87961",
+        "signature_sha256": "20762283d7a02abcf53c00abac2f3c6c7b3834e1d5ca267e8b06fab1aa81dada"
+      }
+    }
+  ],
+  "merged_from": "ch06_first_merged"
+}

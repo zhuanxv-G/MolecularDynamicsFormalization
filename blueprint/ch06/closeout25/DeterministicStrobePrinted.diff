@@ -1,0 +1,19 @@
+--- before
++++ after
+@@ -994,13 +994,14 @@
+   ∀ T : ℝ, 0 ≤ T → strictItoIntegral P W (fun s _ ↦ g s) T (Y T)
+ 
+ /-- source_id: MD-6.2.2-DeterministicStrobePrinted · unnumbered_claim · §6.2.2 · 印刷p.231 / PDFp.252
+-[ERRATUM?] 生成增量使用σ(tn)而非相邻时刻方差差；单时边际法则也不能确定同一过程联合分布。保持印刷式，不以独立边际偷换过程。 -/
++[ERRATUM?] 生成增量使用σ(tn)而非相邻时刻方差差；单时边际法则也不能确定同一过程联合分布。保持印刷式，不以独立边际偷换过程。 [EXTRA] 25号：Printed忠实保留原书N(0,σ(t_n))累计尺度，将标准差平方后传给gaussianReal方差参数；该印刷增量说法有疑。独立修正版保留相邻区间∫g²及整族独立性，以Y(times 0)为初始观测，不假设times 0=0。
++-/
+ theorem deterministicStrobePrinted : ∀ {Ω : Type*} [MeasurableSpace Ω] (P : Measure Ω)
+     (W Y : ℝ → Ω → ℝ) (g : ℝ → ℝ) (times : ℕ → ℝ),
+   IsPreBrownianReal (fun t sample ↦ W t sample) P → ContDiff ℝ 1 g →
+   deterministicIntegralProcess P W Y g → Monotone times → (∀ k, 0 ≤ times k) →
+   ∀ k, HasLaw (fun sample ↦ Y (times (k+1)) sample-Y (times k) sample)
+-    (gaussianReal 0 (Real.sqrt (∫ s in (0 : ℝ)..times (k+1), g s^2)).toNNReal) P := by
++    (gaussianReal 0 ((Real.sqrt (∫ s in (0 : ℝ)..times k, g s^2))^2).toNNReal) P := by
+   sorry
+ 
+ /-- source_id: MD-6.2.2-DeterministicStrobeCorrected · unnumbered_claim · §6.2.2 · 印刷p.231 / PDFp.252

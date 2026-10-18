@@ -1,0 +1,314 @@
+{
+  "batch": "BATCH20",
+  "chapter": "ch06",
+  "round": "first-merged",
+  "input_sha256": {
+    "Blueprint/Ch06.lean": "0a02a34ec68989a83bccfa5916db5053ecdb58e05667bf21ff3568d9d1f4318e",
+    "blueprint/ch06/ch06_source.json": "45c70ceef21ca168af437de297e2e21e2800b452ab7942654061d4cff9bb5d95"
+  },
+  "items": [
+    {
+      "source_id": "MD-6.3.3-BathHamiltonian",
+      "json_review": {
+        "status": "APPROVED",
+        "issue_codes": [],
+        "corrected_json": null,
+        "issues": [],
+        "evidence": [
+          "A：R4_PAGES.pdf 附件第24页，原PDF 257，印刷页236。原页Hamiltonian各项、k项求和、重粒子质量1和轻粒子质量说明一致。",
+          "C：仅按任务所列Lean签名及项目依赖定义作只读语义审校；标准库按标准含义采信，不作工程修改或证明检查。k>0、所有μ_i>0显式参数，Q,P实数，q,p为Fin k→ℝ，U任意实势函数。动能p_i²/(2μ_i)、势能U Q及耦合1/(2k)均正确。定义能量无需U可微。"
+        ]
+      },
+      "audit": {
+        "lean_decl": "MD.Ch06.bathHamiltonian",
+        "verdict": "PASS",
+        "explanation": "k>0、所有μ_i>0显式参数，Q,P实数，q,p为Fin k→ℝ，U任意实势函数。动能p_i²/(2μ_i)、势能U Q及耦合1/(2k)均正确。定义能量无需U可微。",
+        "counterexample": null,
+        "suggested_fix": null
+      },
+      "subtask": "BATCH20a",
+      "input_sha256": {
+        "Blueprint/Ch06.lean": "0a02a34ec68989a83bccfa5916db5053ecdb58e05667bf21ff3568d9d1f4318e",
+        "blueprint/ch06/ch06_source.json": "45c70ceef21ca168af437de297e2e21e2800b452ab7942654061d4cff9bb5d95",
+        "BATCH20a_PAGES.pdf": "594448cc7d6704e375b7e5824a507de26e86ead26b9c3601cd4534980e84ead6",
+        "signature_sha256": "27d16196dcd4634eebace3aad49a7c08e163bf9da3afe96c7e8f278fa2bb8e5c"
+      }
+    },
+    {
+      "source_id": "MD-6.3.3-BathHamiltonEquations",
+      "json_review": {
+        "status": "APPROVED",
+        "issue_codes": [],
+        "corrected_json": null,
+        "issues": [],
+        "evidence": [
+          "A：R4_PAGES.pdf 附件第25页，原PDF 257，印刷页236。原页(6.22)–(6.25)四组运动方程符号及分母对应。",
+          "C：仅按任务所列Lean签名及项目依赖定义作只读语义审校；标准库按标准含义采信，不作工程修改或证明检查。在k>0、μ_i>0及U在Q可微下，实际Hamiltonian对P,Q以及各p_i,q_i的方向导数完整给出四个Hamilton向量场分量。Pi.single i 1为第i坐标方向，负号分配正确。此为全部动力场分量的求导核验，不额外宣称轨道存在性。"
+        ]
+      },
+      "audit": {
+        "lean_decl": "MD.Ch06.bathHamiltonEquations",
+        "verdict": "PASS",
+        "explanation": "在k>0、μ_i>0及U在Q可微下，实际Hamiltonian对P,Q以及各p_i,q_i的方向导数完整给出四个Hamilton向量场分量。Pi.single i 1为第i坐标方向，负号分配正确。此为全部动力场分量的求导核验，不额外宣称轨道存在性。",
+        "counterexample": null,
+        "suggested_fix": null
+      },
+      "subtask": "BATCH20b",
+      "input_sha256": {
+        "Blueprint/Ch06.lean": "0a02a34ec68989a83bccfa5916db5053ecdb58e05667bf21ff3568d9d1f4318e",
+        "blueprint/ch06/ch06_source.json": "45c70ceef21ca168af437de297e2e21e2800b452ab7942654061d4cff9bb5d95",
+        "BATCH20b_PAGES.pdf": "594448cc7d6704e375b7e5824a507de26e86ead26b9c3601cd4534980e84ead6",
+        "signature_sha256": "7afd329e26c0f7064e6c749b5bc92bd2b8d5f04145fa5f373a25649393bc25bf"
+      }
+    },
+    {
+      "source_id": "MD-6.3.3-BathFrequency",
+      "json_review": {
+        "status": "APPROVED",
+        "issue_codes": [],
+        "corrected_json": null,
+        "issues": [],
+        "evidence": [
+          "A：R4_PAGES.pdf 附件第26页，原PDF 258，印刷页237。原页Ω_i=k^(−1/2)μ_i^(−1/2)转录正确。",
+          "C：仅按任务所列Lean签名及项目依赖定义作只读语义审校；标准库按标准含义采信，不作工程修改或证明检查。k>0和正μ_i确保sqrt(kμ_i)>0，其倒数与k^(−1/2)μ_i^(−1/2)等价。i:Fin k，未出现频率零或总化负质量问题。"
+        ]
+      },
+      "audit": {
+        "lean_decl": "MD.Ch06.bathFrequency",
+        "verdict": "PASS",
+        "explanation": "k>0和正μ_i确保sqrt(kμ_i)>0，其倒数与k^(−1/2)μ_i^(−1/2)等价。i:Fin k，未出现频率零或总化负质量问题。",
+        "counterexample": null,
+        "suggested_fix": null
+      },
+      "subtask": "BATCH20c",
+      "input_sha256": {
+        "Blueprint/Ch06.lean": "0a02a34ec68989a83bccfa5916db5053ecdb58e05667bf21ff3568d9d1f4318e",
+        "blueprint/ch06/ch06_source.json": "45c70ceef21ca168af437de297e2e21e2800b452ab7942654061d4cff9bb5d95",
+        "BATCH20c_PAGES.pdf": "cffa47df8c830650b8cabc55a4b91d449b33cb5fb6f02314a479a30baf389a1d",
+        "signature_sha256": "f0ea80751f0a429588bb931b70788d0b9c9d35b58bfc63ec00c1105cc98b7da8"
+      }
+    },
+    {
+      "source_id": "MD-6.3.3-BathOscillatorSolution",
+      "json_review": {
+        "status": "APPROVED",
+        "issue_codes": [],
+        "corrected_json": null,
+        "issues": [],
+        "evidence": [
+          "A：R4_PAGES.pdf 附件第27–28页，原PDF 257–258，印刷页236–237。跨两页(6.26)含全部三项及k⁻¹μ_i⁻¹系数；对应频率在次页给出。",
+          "C：仅按任务所列Lean签名及项目依赖定义作只读语义审校；标准库按标准含义采信，不作工程修改或证明检查。把任意一坐标写成实μ、k>0、p0，设q C²、Q连续、q′(0)=p0/μ及[0,t]上q″=(Q−q)/(kμ)。结论含q0、初始动量和完整受迫卷积；Ω=(√(kμ))⁻¹，k⁻¹μ⁻¹=Ω²，正确。仅证明q的表达式，原页展示也只给q；p可由μq′恢复。"
+        ]
+      },
+      "audit": {
+        "lean_decl": "MD.Ch06.bathOscillatorSolution",
+        "verdict": "PASS",
+        "explanation": "把任意一坐标写成实μ、k>0、p0，设q C²、Q连续、q′(0)=p0/μ及[0,t]上q″=(Q−q)/(kμ)。结论含q0、初始动量和完整受迫卷积；Ω=(√(kμ))⁻¹，k⁻¹μ⁻¹=Ω²，正确。仅证明q的表达式，原页展示也只给q；p可由μq′恢复。",
+        "counterexample": null,
+        "suggested_fix": null
+      },
+      "subtask": "BATCH20d",
+      "input_sha256": {
+        "Blueprint/Ch06.lean": "0a02a34ec68989a83bccfa5916db5053ecdb58e05667bf21ff3568d9d1f4318e",
+        "blueprint/ch06/ch06_source.json": "45c70ceef21ca168af437de297e2e21e2800b452ab7942654061d4cff9bb5d95",
+        "BATCH20d_PAGES.pdf": "4465b4f8f2cc655169034da14fd06f37cb30cbc518f3cfe8203446bc1c9261f3",
+        "signature_sha256": "3d6a92d3715af2e58958bcaa59f7c5662bacb11e730e1227a01f750e1e258bb3"
+      }
+    },
+    {
+      "source_id": "MD-6.3.3-BathConvolutionIBP",
+      "json_review": {
+        "status": "APPROVED",
+        "issue_codes": [],
+        "corrected_json": null,
+        "issues": [],
+        "evidence": [
+          "A：R4_PAGES.pdf 附件第29页，原PDF 258，印刷页237。原页分部积分两种端点写法及负卷积项对应。",
+          "C：仅按任务所列Lean签名及项目依赖定义作只读语义审校；标准库按标准含义采信，不作工程修改或证明检查。Q C¹、处处Q′=P、t≥0，Ω任意实数。对s求导cos(Ω(t−s))为+Ω sin(Ω(t−s))，故端点Q t−cos(Ωt)Q0及−∫cos P符号正确。Ω=0仍成立，不需额外非零资格。"
+        ]
+      },
+      "audit": {
+        "lean_decl": "MD.Ch06.bathConvolutionIBP",
+        "verdict": "PASS",
+        "explanation": "Q C¹、处处Q′=P、t≥0，Ω任意实数。对s求导cos(Ω(t−s))为+Ω sin(Ω(t−s))，故端点Q t−cos(Ωt)Q0及−∫cos P符号正确。Ω=0仍成立，不需额外非零资格。",
+        "counterexample": null,
+        "suggested_fix": null
+      },
+      "subtask": "BATCH20e",
+      "input_sha256": {
+        "Blueprint/Ch06.lean": "0a02a34ec68989a83bccfa5916db5053ecdb58e05667bf21ff3568d9d1f4318e",
+        "blueprint/ch06/ch06_source.json": "45c70ceef21ca168af437de297e2e21e2800b452ab7942654061d4cff9bb5d95",
+        "BATCH20e_PAGES.pdf": "cffa47df8c830650b8cabc55a4b91d449b33cb5fb6f02314a479a30baf389a1d",
+        "signature_sha256": "e0239e99050bf7601641744f013570e01c60678354952b4023b2706f5a7cb5bc"
+      }
+    },
+    {
+      "source_id": "MD-6.3.3-BathForce",
+      "json_review": {
+        "status": "NEEDS_HUMAN",
+        "issue_codes": [
+          "ERRATUM?",
+          "CORRECTED_VS_PRINTED"
+        ],
+        "corrected_json": {
+          "source_id": "MD-6.3.3-BathForce",
+          "kind": "definition",
+          "label": null,
+          "section": "6.3.3",
+          "printed_page": "237",
+          "pdf_page": "258",
+          "statement_latex": "where we define\n\\[f(t)=-k^{-1}\\sum_{i=1}^k[\\cos(\\Omega_i t)q_i(0)+\\Omega_i^{-1}\\sin(\\Omega_i t)p_i(0)/\\mu_i-\\cos(\\Omega_i t)Q(0)].\\]",
+          "proof_latex": null,
+          "proof_note": "原书未给独立完整证明。",
+          "proof_discussion_latex": null,
+          "context_notation": [],
+          "issues": [
+            {
+              "code": "R4_REVIEW",
+              "detail": "原页f确为负k⁻¹，(6.29)确为+f；JSON保留负号正确，但issues为空应补ERRATUM?。 两份所示定义bathForce和bathForcePrinted_corrected都是正k⁻¹的同一表达式。按[EXTRA]作为明示修正版审校合理：从(6.23)−k⁻¹Σ(Q−q)=+k⁻¹Σ(q−Q)得到正初值力，再减记忆卷积。k>0、正μ齐全；不是原书负号的字面版。原书符号冲突保留待人工裁定。"
+            }
+          ],
+          "lean_decl": "MD.Ch06.bathForce",
+          "reusable_proofs": [],
+          "extra_assumptions": [
+            "[EXTRA]按(6.23)推导得到正k⁻¹实际合力；原页负号与+f项冲突，字面版本另列；不宣称更正已由网站裁定。",
+            "[EXTRA]k>0和全部μi>0已编码，排除非物理逆质量/频率总化值。"
+          ],
+          "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
+          "review_status": "NEEDS_HUMAN",
+          "repair_log": [],
+          "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
+        },
+        "issues": [
+          {
+            "code": "ERRATUM?",
+            "detail": "两份所示定义bathForce和bathForcePrinted_corrected都是正k⁻¹的同一表达式。按[EXTRA]作为明示修正版审校合理：从(6.23)−k⁻¹Σ(Q−q)=+k⁻¹Σ(q−Q)得到正初值力，再减记忆卷积。k>0、正μ齐全；不是原书负号的字面版。原书符号冲突保留待人工裁定。"
+          },
+          {
+            "code": "CORRECTED_VS_PRINTED",
+            "detail": "两份所示定义bathForce和bathForcePrinted_corrected都是正k⁻¹的同一表达式。按[EXTRA]作为明示修正版审校合理：从(6.23)−k⁻¹Σ(Q−q)=+k⁻¹Σ(q−Q)得到正初值力，再减记忆卷积。k>0、正μ齐全；不是原书负号的字面版。原书符号冲突保留待人工裁定。"
+          }
+        ],
+        "evidence": [
+          "A：R4_PAGES.pdf 附件第30页，原PDF 258，印刷页237。原页f确为负k⁻¹，(6.29)确为+f；JSON保留负号正确，但issues为空应补ERRATUM?。",
+          "C：仅按任务所列Lean签名及项目依赖定义作只读语义审校；标准库按标准含义采信，不作工程修改或证明检查。两份所示定义bathForce和bathForcePrinted_corrected都是正k⁻¹的同一表达式。按[EXTRA]作为明示修正版审校合理：从(6.23)−k⁻¹Σ(Q−q)=+k⁻¹Σ(q−Q)得到正初值力，再减记忆卷积。k>0、正μ齐全；不是原书负号的字面版。原书符号冲突保留待人工裁定。"
+        ]
+      },
+      "audit": {
+        "lean_decl": "MD.Ch06.bathForce",
+        "verdict": "PASS",
+        "explanation": "两份所示定义bathForce和bathForcePrinted_corrected都是正k⁻¹的同一表达式。按[EXTRA]作为明示修正版审校合理：从(6.23)−k⁻¹Σ(Q−q)=+k⁻¹Σ(q−Q)得到正初值力，再减记忆卷积。k>0、正μ齐全；不是原书负号的字面版。原书符号冲突保留待人工裁定。",
+        "counterexample": "k=μ₁=1,Q0=0,q₁(0)=1,p₁(0)=0,t=0,U′(0)=0：(6.23)给P′(0)=+1；原印刷f(0)=−1，(6.29)的+f会给−1。",
+        "suggested_fix": "原文负号保留并补ERRATUM?；继续把正号定义清楚标为修正版，或等价地保留原f并把(6.29)改为−f。"
+      },
+      "subtask": "BATCH20f",
+      "input_sha256": {
+        "Blueprint/Ch06.lean": "0a02a34ec68989a83bccfa5916db5053ecdb58e05667bf21ff3568d9d1f4318e",
+        "blueprint/ch06/ch06_source.json": "45c70ceef21ca168af437de297e2e21e2800b452ab7942654061d4cff9bb5d95",
+        "BATCH20f_PAGES.pdf": "cffa47df8c830650b8cabc55a4b91d449b33cb5fb6f02314a479a30baf389a1d",
+        "signature_sha256": "1910bc74536836175ff0aa33ed1921976238dafa78f4e358438cda0848568999"
+      }
+    },
+    {
+      "source_id": "MD-6.3.3-BathForcePrinted",
+      "json_review": {
+        "status": "NEEDS_HUMAN",
+        "issue_codes": [
+          "ERRATUM?"
+        ],
+        "corrected_json": {
+          "source_id": "MD-6.3.3-BathForcePrinted",
+          "kind": "definition",
+          "label": null,
+          "section": "6.3.3",
+          "printed_page": "237",
+          "pdf_page": "258",
+          "statement_latex": "where we define\n\\[f(t)=-k^{-1}\\sum_{i=1}^k[\\cos(\\Omega_i t)q_i(0)+\\Omega_i^{-1}\\sin(\\Omega_i t)p_i(0)/\\mu_i-\\cos(\\Omega_i t)Q(0)].\\]",
+          "proof_latex": null,
+          "proof_note": "原书未给独立完整证明。",
+          "proof_discussion_latex": null,
+          "context_notation": [],
+          "issues": [
+            {
+              "code": "ERRATUM?",
+              "detail": "印刷f含负k⁻¹，而(6.29)写+f；从(6.23)代入振子解得到正k⁻¹合力。"
+            },
+            {
+              "code": "R4_REVIEW",
+              "detail": "原页负k⁻¹完整定义忠实，[ERRATUM?]准确指出与(6.29)冲突。 实际Chapter06Review.bathForce为正k⁻¹和，外取负号得到原页字面f，括号内cos*(q0−Q0)及sin*p0/μ完全对应。k>0及μ>0齐全。作为Printed定义PASS，不能把它与保留+f的修正动力式同时当正确推导。"
+            }
+          ],
+          "lean_decl": "MD.Ch06.bathForcePrinted",
+          "reusable_proofs": [],
+          "extra_assumptions": [
+            "[EXTRA]保持原物理k>0与全部μi>0资格；字面符号仍待裁定。"
+          ],
+          "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
+          "review_status": "NEEDS_HUMAN",
+          "repair_log": [
+            {
+              "date": "2026-10-17",
+              "action": "directive22_printed_corrected_pair",
+              "change": "选择正的初值合力f，使(6.29)保留+f；等价选项是保留原f并将(6.29)改为−f。",
+              "corrected_decl": "MD.Ch06.bathForcePrinted_corrected",
+              "website": "未提交；待网站审计"
+            }
+          ],
+          "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
+        },
+        "issues": [
+          {
+            "code": "ERRATUM?",
+            "detail": "实际Chapter06Review.bathForce为正k⁻¹和，外取负号得到原页字面f，括号内cos*(q0−Q0)及sin*p0/μ完全对应。k>0及μ>0齐全。作为Printed定义PASS，不能把它与保留+f的修正动力式同时当正确推导。"
+          }
+        ],
+        "evidence": [
+          "A：R4_PAGES.pdf 附件第31页，原PDF 258，印刷页237。原页负k⁻¹完整定义忠实，[ERRATUM?]准确指出与(6.29)冲突。",
+          "C：仅按任务所列Lean签名及项目依赖定义作只读语义审校；标准库按标准含义采信，不作工程修改或证明检查。实际Chapter06Review.bathForce为正k⁻¹和，外取负号得到原页字面f，括号内cos*(q0−Q0)及sin*p0/μ完全对应。k>0及μ>0齐全。作为Printed定义PASS，不能把它与保留+f的修正动力式同时当正确推导。"
+        ]
+      },
+      "audit": {
+        "lean_decl": "MD.Ch06.bathForcePrinted",
+        "verdict": "PASS",
+        "explanation": "实际Chapter06Review.bathForce为正k⁻¹和，外取负号得到原页字面f，括号内cos*(q0−Q0)及sin*p0/μ完全对应。k>0及μ>0齐全。作为Printed定义PASS，不能把它与保留+f的修正动力式同时当正确推导。",
+        "counterexample": "同第28条：单振子初始位移1给实际初始合力+1，印刷f为−1；Printed定义本身忠实，冲突在其代入(6.29)。",
+        "suggested_fix": "保留Printed负号和ERRATUM?；修正版按第28条处理。"
+      },
+      "subtask": "BATCH20g",
+      "input_sha256": {
+        "Blueprint/Ch06.lean": "0a02a34ec68989a83bccfa5916db5053ecdb58e05667bf21ff3568d9d1f4318e",
+        "blueprint/ch06/ch06_source.json": "45c70ceef21ca168af437de297e2e21e2800b452ab7942654061d4cff9bb5d95",
+        "BATCH20g_PAGES.pdf": "cffa47df8c830650b8cabc55a4b91d449b33cb5fb6f02314a479a30baf389a1d",
+        "signature_sha256": "79272bd84f662dcc55091758146f45875d9f412aab503299121c78cf856e7310"
+      }
+    },
+    {
+      "source_id": "MD-6.3.3-MemoryKernel",
+      "json_review": {
+        "status": "APPROVED",
+        "issue_codes": [],
+        "corrected_json": null,
+        "issues": [],
+        "evidence": [
+          "A：R4_PAGES.pdf 附件第32页，原PDF 258，印刷页237。原页记忆核是ψ，印刷cos(Ω_i(t))，JSON保留此括号写法；根据常频率定义解释为cos(Ω_i t)。",
+          "C：仅按任务所列Lean签名及项目依赖定义作只读语义审校；标准库按标准含义采信，不作工程修改或证明检查。正k、正μ，实际有限Fin k求和，系数1/k及cos频率乘时间正确。没有宣称有限核为Dirac δ，也未把它当已证明的随机极限。"
+        ]
+      },
+      "audit": {
+        "lean_decl": "MD.Ch06.memoryKernel",
+        "verdict": "PASS",
+        "explanation": "正k、正μ，实际有限Fin k求和，系数1/k及cos频率乘时间正确。没有宣称有限核为Dirac δ，也未把它当已证明的随机极限。",
+        "counterexample": null,
+        "suggested_fix": null
+      },
+      "subtask": "BATCH20h",
+      "input_sha256": {
+        "Blueprint/Ch06.lean": "0a02a34ec68989a83bccfa5916db5053ecdb58e05667bf21ff3568d9d1f4318e",
+        "blueprint/ch06/ch06_source.json": "45c70ceef21ca168af437de297e2e21e2800b452ab7942654061d4cff9bb5d95",
+        "BATCH20h_PAGES.pdf": "cffa47df8c830650b8cabc55a4b91d449b33cb5fb6f02314a479a30baf389a1d",
+        "signature_sha256": "eb3e3ac5bc830686b94cf8770e8c1e99fef2f43e11f2c9dc41f06468cfbfab52"
+      }
+    }
+  ],
+  "merged_from": "ch06_first_merged"
+}

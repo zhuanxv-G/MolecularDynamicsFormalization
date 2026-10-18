@@ -1,0 +1,172 @@
+以附件/PASTE 为准，忽略 /workspace 旧文件；Mathlib 定义按标准含义采信。
+A逐字核对原文及证明；C只读核对对象、域、量词、前提和全部结论。所有项目定义体及选择规格在下文；仅作为审阅摘录，不是独立模块。theorem/lemma提供完整类型（不审证明）；定义提供完整定义体，按文件作用域解释。不要因sorry判签名FAIL。原文版忠实性、修正版正确性、反例、原书疑误分别说明，不凭旧文件或repair_log猜声明。
+本条MD-6.3.7-VectorIto，subtask=EAUDIT10a；原PDF页映射=[264]。只读，不改工程或补证明。以JSON对象返回batch=EAUDIT10,input_sha256,items；逐条含source_id,subtask,input_sha256,json_review{status,issue_codes,corrected_json,issues,evidence},audit{lean_decl,verdict,explanation,counterexample,suggested_fix}。verdict=PASS/FAIL/NEEDS_HUMAN，status=APPROVED/CORRECTED/NEEDS_HUMAN。必须原样回显下列全部哈希。
+input_sha256:
+{
+  "Blueprint/Ch06.lean": "4a2a6cb72c1692f80e3537ab1a71701d429a482780a01226c3dc66a2ebb8b44b",
+  "blueprint/ch06/ch06_source.json": "d7f93cd20eb570744c710f3e07a88b319c082e4155812fee91db0920eb05944e",
+  "PAGES.pdf": "b75581537403a0cb135dd2f4ee918ceb33195948bb698e8f85db33810542c3d3",
+  "materials_sha256": "3e6d56ebceb6dff4b02f695e1594f02dfd21229b7e05649cae9f4c09259f8cf5"
+}
+
+## 原文JSON
+```json
+{
+  "source_id": "MD-6.3.7-VectorIto",
+  "kind": "unnumbered_claim",
+  "label": "(6.40)–(6.41)",
+  "section": "6.3.7",
+  "printed_page": "243",
+  "pdf_page": "264",
+  "statement_latex": "If $\\phi$ is a scalar valued function of $\\mathbb R^m$, and $Z(t)$ is the solution of the SDE system\n\\[dZ=a(Z)dt+B dW;\\tag{6.39}\\]\nwhere $a$ is a function in $\\mathbb R^m$ and $B$ is a constant matrix, then we have\n\\[d\\phi(Z(t))=\\nabla\\phi\\cdot[adt+B dW]+\\tfrac12dW^TB^T\\phi''B dW;\\tag{6.40}\\]\n[原页关于Hessian、常矩阵范围及Wiener乘法规则的连接文本略]\n\\[d\\phi(Z(t))=\\nabla\\phi\\cdot[adt+B dW]+\\tfrac12\\operatorname{Tr}(B^T\\phi''B)dt.\\tag{6.41}\\]",
+  "proof_latex": null,
+  "proof_note": "原书未给独立完整证明。",
+  "proof_discussion_latex": null,
+  "context_notation": [],
+  "extra_assumptions": [
+    "[EXTRA] 25号：改为共同向量自然过滤上的适应性，补X联合可测、各被积过程全部左和L²及局部均方时间资格；strictVectorSDE已含整族Wiener资格。原文相隔公式按网站corrected_json恢复连接文本。仍缺一般多维Itô理论。"
+  ],
+  "statement_scope": "本条Lean覆盖范围：改为共同向量自然过滤上的适应性，补X联合可测、各被积过程全部左和L²及局部均方时间资格；strictVectorSDE已含整族Wiener资格。原文相隔公式按网站corrected_json恢复连接文本。仍缺一般多维Itô理论。",
+  "coverage_gaps": []
+}
+```
+## 当前完整Lean（全部原文版、修正版及反例）
+```lean
+theorem vectorIto : ∀ {Ω : Type*} [MeasurableSpace Ω] {n r : ℕ} (P : Measure Ω)
+    (W : ℝ → Ω → (Fin r → ℝ)) (X : ℝ → Ω → (Fin n → ℝ))
+    (a : (Fin n → ℝ) → (Fin n → ℝ)) (B : Matrix (Fin n) (Fin r) ℝ)
+    (x0 : Fin n → ℝ) (φ : (Fin n → ℝ) → ℝ),
+  textbookIsWienerVector (fun t sample ↦ W t sample) P →
+  strictVectorSDE P W X (fun x _ ↦ a x) (fun _ _ ↦ B) x0 → ContDiff ℝ 2 φ →
+  Measurable (Function.uncurry X) →
+  (∀ t, 0 ≤ t → @Measurable Ω (Fin n → ℝ) (naturalHistory25 W t) inferInstance (X t)) →
+  vectorGridItoQualification25 P W
+    (fun j t sample ↦ fderiv ℝ φ (X t sample) (fun i ↦ B i j)) →
+  ∀ T : ℝ, 0 ≤ T → ∃ integrals : Fin r → Ω → ℝ,
+    (∀ j, strictItoIntegral P (fun t sample ↦ W t sample j)
+      (fun t sample ↦ fderiv ℝ φ (X t sample) (fun i ↦ B i j)) T (integrals j)) ∧
+    (∀ᵐ sample ∂P, φ (X T sample)-φ x0-
+      (∫ s in 0..T, MolecularDynamics.Chapter06Review.vectorGenerator a B φ (X s sample))=∑ j, integrals j sample) := by
+  sorry
+```
+### 文件参数及作用域 Blueprint/Ch06.lean
+```lean
+open Set Filter Matrix MeasureTheory ProbabilityTheory MolecularDynamics MolecularDynamics.Chapter02Review MolecularDynamics.Chapter06Review
+open scoped BigOperators Topology ContDiff InnerProductSpace Matrix.Norms.L2Operator ENNReal NNReal
+variable {n Nc : ℕ}
+variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
+variable {R : Type*} [Ring R] [Algebra ℝ R]
+local instance : MeasureSpace UnitAddCircle := ⟨AddCircle.haarAddCircle⟩
+```
+### 文件参数及作用域 MolecularDynamics/Chapter06/BrownianDirichlet.lean
+```lean
+open Set MeasureTheory
+open scoped BigOperators ContDiff
+```
+### 文件参数及作用域 MolecularDynamics/Chapter06/ReviewDefinitions.lean
+```lean
+open Set Filter MeasureTheory ProbabilityTheory
+open scoped BigOperators Topology ContDiff ENNReal NNReal
+local instance : MeasureSpace UnitAddCircle := ⟨AddCircle.haarAddCircle⟩
+```
+### 文件参数及作用域 MolecularDynamics/Chapter06/WienerVectorSupport.lean
+```lean
+open Set Filter MeasureTheory ProbabilityTheory
+open scoped Topology NNReal ENNReal
+```
+### MD.Ch06.naturalHistory25 [Blueprint/Ch06.lean:25]
+```lean
+def naturalHistory25 {Ω V : Type*} [MeasurableSpace Ω] [MeasurableSpace V]
+    (X : ℝ → Ω → V) (s : ℝ) : MeasurableSpace Ω :=
+  ⨆ r : {r : ℝ // 0 ≤ r ∧ r ≤ s}, MeasurableSpace.comap (X r) inferInstance
+```
+### MD.Ch06.vectorGridItoQualification25 [Blueprint/Ch06.lean:42]
+```lean
+def vectorGridItoQualification25 {Ω : Type*} [MeasurableSpace Ω] {r : ℕ}
+    (P : Measure Ω) (W : ℝ → Ω → (Fin r → ℝ)) (g : Fin r → ℝ → Ω → ℝ) : Prop :=
+  IsProbabilityMeasure P ∧ (∀ j, Measurable (Function.uncurry (g j))) ∧
+  (∀ j t, 0 ≤ t → @Measurable Ω ℝ (naturalHistory25 W t) inferInstance (g j t)) ∧
+  ∀ j T, 0 ≤ T → (∀ t ∈ Icc 0 T, MemLp (g j t) 2 P) ∧
+    (∀ K : ℕ, MemLp (MolecularDynamics.Chapter06Review.itoLeftSum
+      (fun s sample ↦ W s sample j) (g j) T K) 2 P) ∧
+    ∃ C : ℝ, 0 ≤ C ∧ ∀ s ∈ Icc 0 T, ∀ t ∈ Icc 0 T,
+      (∫ sample, (g j s sample-g j t sample)^2 ∂P) ≤ C*|s-t|
+```
+### MD.Ch06.strictItoIntegral [Blueprint/Ch06.lean:863]
+```lean
+def strictItoIntegral {Ω : Type*} [MeasurableSpace Ω] (P : Measure Ω)
+    (W g : ℝ → Ω → ℝ) (T : ℝ) (Y : Ω → ℝ) : Prop :=
+  (∀ K : ℕ, MemLp (MolecularDynamics.Chapter06Review.itoLeftSum W g T K) 2 P) ∧
+  MemLp Y 2 P ∧ Tendsto (fun K : ℕ ↦ ∫ sample,
+    (MolecularDynamics.Chapter06Review.itoLeftSum W g T K sample-Y sample)^2 ∂P) atTop (𝓝 0)
+```
+### MD.Ch06.strictVectorSDE [Blueprint/Ch06.lean:1105]
+```lean
+def strictVectorSDE {Ω : Type*} [MeasurableSpace Ω] {n r : ℕ} (P : Measure Ω)
+    (W : ℝ → Ω → (Fin r → ℝ)) (X : ℝ → Ω → (Fin n → ℝ))
+    (a : (Fin n → ℝ) → ℝ → (Fin n → ℝ))
+    (B : (Fin n → ℝ) → ℝ → Matrix (Fin n) (Fin r) ℝ) (x0 : Fin n → ℝ) : Prop :=
+  textbookIsWienerVector (fun t sample ↦ W t sample) P ∧
+  (∀ᵐ sample ∂P, ContinuousOn (fun t ↦ X t sample) (Ici 0) ∧ X 0 sample=x0) ∧
+  ∀ i : Fin n, ∀ T : ℝ, 0 ≤ T →
+    (∀ᵐ sample ∂P, IntervalIntegrable (fun s ↦ a (X s sample) s i) volume 0 T) ∧
+    ∃ integrals : Fin r → Ω → ℝ,
+      (∀ j, strictItoIntegral P (fun s sample ↦ W s sample j)
+        (fun s sample ↦ B (X s sample) s i j) T (integrals j)) ∧
+      (∀ᵐ sample ∂P, X T sample i-x0 i-(∫ s in 0..T, a (X s sample) s i)=∑ j, integrals j sample)
+```
+### MD.Ch06.vectorIto [Blueprint/Ch06.lean:1803]
+```lean
+theorem vectorIto : ∀ {Ω : Type*} [MeasurableSpace Ω] {n r : ℕ} (P : Measure Ω)
+    (W : ℝ → Ω → (Fin r → ℝ)) (X : ℝ → Ω → (Fin n → ℝ))
+    (a : (Fin n → ℝ) → (Fin n → ℝ)) (B : Matrix (Fin n) (Fin r) ℝ)
+    (x0 : Fin n → ℝ) (φ : (Fin n → ℝ) → ℝ),
+  textbookIsWienerVector (fun t sample ↦ W t sample) P →
+  strictVectorSDE P W X (fun x _ ↦ a x) (fun _ _ ↦ B) x0 → ContDiff ℝ 2 φ →
+  Measurable (Function.uncurry X) →
+  (∀ t, 0 ≤ t → @Measurable Ω (Fin n → ℝ) (naturalHistory25 W t) inferInstance (X t)) →
+  vectorGridItoQualification25 P W
+    (fun j t sample ↦ fderiv ℝ φ (X t sample) (fun i ↦ B i j)) →
+  ∀ T : ℝ, 0 ≤ T → ∃ integrals : Fin r → Ω → ℝ,
+    (∀ j, strictItoIntegral P (fun t sample ↦ W t sample j)
+      (fun t sample ↦ fderiv ℝ φ (X t sample) (fun i ↦ B i j)) T (integrals j)) ∧
+    (∀ᵐ sample ∂P, φ (X T sample)-φ x0-
+      (∫ s in 0..T, MolecularDynamics.Chapter06Review.vectorGenerator a B φ (X s sample))=∑ j, integrals j sample)
+```
+### MolecularDynamics.textbookConfigurationPartial [MolecularDynamics/Chapter06/BrownianDirichlet.lean:13]
+```lean
+noncomputable def textbookConfigurationPartial {Nc : ℕ}
+    (f : (Fin Nc → ℝ) → ℝ) (i : Fin Nc) (q : Fin Nc → ℝ) : ℝ :=
+  fderiv ℝ f q (Pi.single i 1)
+```
+### MolecularDynamics.Chapter06Review.V [MolecularDynamics/Chapter06/ReviewDefinitions.lean:17]
+```lean
+abbrev V (n : ℕ) := Fin n → ℝ
+```
+### MolecularDynamics.Chapter06Review.itoLeftSum [MolecularDynamics/Chapter06/ReviewDefinitions.lean:54]
+```lean
+def itoLeftSum {Ω : Type*} (W g : ℝ → Ω → ℝ) (T : ℝ) (K : ℕ) (sample : Ω) : ℝ :=
+  ∑ k ∈ Finset.range K, g ((k : ℝ) * T / K) sample *
+    (W (((k : ℝ)+1) * T / K) sample - W ((k : ℝ) * T / K) sample)
+```
+### MolecularDynamics.Chapter06Review.vectorDiffusion [MolecularDynamics/Chapter06/ReviewDefinitions.lean:133]
+```lean
+def vectorDiffusion {n r : ℕ} (B : Matrix (Fin n) (Fin r) ℝ) (f : V n → ℝ) (x : V n) : ℝ :=
+  ∑ i : Fin n, ∑ j : Fin n, (B*B.transpose) i j *
+    textbookConfigurationPartial (textbookConfigurationPartial f j) i x
+```
+### MolecularDynamics.Chapter06Review.vectorGenerator [MolecularDynamics/Chapter06/ReviewDefinitions.lean:136]
+```lean
+def vectorGenerator {n r : ℕ} (a : V n → V n) (B : Matrix (Fin n) (Fin r) ℝ)
+    (f : V n → ℝ) (x : V n) : ℝ := fderiv ℝ f x (a x) + vectorDiffusion B f x/2
+```
+### MolecularDynamics.textbookIsWienerVector [MolecularDynamics/Chapter06/WienerVectorSupport.lean:13]
+```lean
+structure textbookIsWienerVector {Nc : ℕ} {Ω : Type*} [MeasurableSpace Ω]
+    (B : ℝ≥0 → Ω → (Fin Nc → ℝ)) (P : Measure Ω) : Prop where
+  gaussian : IsGaussianProcess (fun z : (_ : Fin Nc) × ℝ≥0 ↦ fun ω ↦ B z.2 ω z.1) P
+  mean : ∀ i t, P[fun ω ↦ B t ω i] = 0
+  covariance : ∀ i j s t, cov[fun ω ↦ B s ω i, fun ω ↦ B t ω j; P] =
+    if i = j then ((min s t : ℝ≥0) : ℝ) else 0
+  cont : ∀ᵐ ω ∂P, Continuous (fun t ↦ B t ω)
+```

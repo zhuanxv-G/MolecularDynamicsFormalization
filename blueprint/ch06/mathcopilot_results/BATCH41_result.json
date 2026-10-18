@@ -1,0 +1,323 @@
+{
+  "batch": "BATCH41",
+  "chapter": "ch06",
+  "round": "first-merged",
+  "input_sha256": {
+    "Blueprint/Ch06.lean": "0a02a34ec68989a83bccfa5916db5053ecdb58e05667bf21ff3568d9d1f4318e",
+    "blueprint/ch06/ch06_source.json": "45c70ceef21ca168af437de297e2e21e2800b452ab7942654061d4cff9bb5d95"
+  },
+  "items": [
+    {
+      "source_id": "MD-6.4.4-FredholmAlternative",
+      "json_review": {
+        "status": "CORRECTED",
+        "issue_codes": [
+          "SOURCE_PARAPHRASE"
+        ],
+        "corrected_json": {
+          "source_id": "MD-6.4.4-FredholmAlternative",
+          "kind": "unnumbered_claim",
+          "label": null,
+          "section": "6.4.4",
+          "printed_page": "257",
+          "pdf_page": "278",
+          "statement_latex": "The condition is a consequence of the Fredholm Alternative which says that, for a linear operator $A$ with compact resolvent, we have one of the following two conditions:\n• $A\\varphi=g$ has a solution.\n• There is a function $y$ with $A^*y=0$ and $\\langle y,g\\rangle\\ne0$.",
+          "proof_latex": null,
+          "proof_note": "原书未给独立完整证明。",
+          "proof_discussion_latex": null,
+          "context_notation": [],
+          "issues": [],
+          "lean_decl": "MD.Ch06.fredholmAlternative",
+          "reusable_proofs": [],
+          "extra_assumptions": [
+            "[EXTRA]实际稠密域闭Hilbert partialoperator图、actual adjoint以及shift1的完整紧resolvent（含逆的存在/唯一）；全部g可解当且仅当adjoint kernel正交，没有假设目标可解性。"
+          ],
+          "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
+          "review_status": "CORRECTED",
+          "repair_log": [],
+          "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
+        },
+        "issues": [
+          {
+            "code": "SOURCE_PARAPHRASE",
+            "detail": "输入缩写原文开头，恢复原句；一般A*确为star，与Langevin dagger区分。"
+          }
+        ],
+        "evidence": [
+          {
+            "attachment": "R8_PAGES.pdf",
+            "attachment_pages": [
+              29
+            ],
+            "printed_page": "257",
+            "method": "逐页PDF文本比对；同原书页复用已目视核对的原页图像，图像代表页为附件1、4、12、20、26。",
+            "finding": "已核对所引正文、数学符号、页码及选取范围；差异逐项见issues。"
+          },
+          {
+            "definition_basis": "仅R8_任务.md的实际签名及项目定义摘录（含D1–D69）；标准Mathlib按任务说明采信。",
+            "finding": "实完备Hilbert空间、稠密定义域、闭图、紧R及(I−A)的存在与唯一性逆规格完整；固定实移位1是已明确的技术范围。对每个g，可解当且仅当与实际adjoint全部零模正交，等价于Fredholm二择一，不预设目标可解。"
+          }
+        ]
+      },
+      "audit": {
+        "lean_decl": "MD.Ch06.fredholmAlternative",
+        "verdict": "PASS",
+        "explanation": "实完备Hilbert空间、稠密定义域、闭图、紧R及(I−A)的存在与唯一性逆规格完整；固定实移位1是已明确的技术范围。对每个g，可解当且仅当与实际adjoint全部零模正交，等价于Fredholm二择一，不预设目标可解。",
+        "counterexample": null,
+        "suggested_fix": "原文Langevin前向算子使用dagger；一般A的Hilbert伴随仍用star。"
+      },
+      "subtask": "BATCH41a",
+      "input_sha256": {
+        "Blueprint/Ch06.lean": "0a02a34ec68989a83bccfa5916db5053ecdb58e05667bf21ff3568d9d1f4318e",
+        "blueprint/ch06/ch06_source.json": "45c70ceef21ca168af437de297e2e21e2800b452ab7942654061d4cff9bb5d95",
+        "BATCH41a_PAGES.pdf": "83da1ef5e86aab7bf716f29e064980cb74e6881508a8765ad565e83f8d7e442d",
+        "signature_sha256": "f95ff07cc96c236d01752b183dbeb708895b4bb18f640089deff7306f3d53cf1"
+      }
+    },
+    {
+      "source_id": "MD-6.4.4-BackwardKernelConstants",
+      "json_review": {
+        "status": "CORRECTED",
+        "issue_codes": [
+          "SOURCE_TRANSCRIPTION"
+        ],
+        "corrected_json": {
+          "source_id": "MD-6.4.4-BackwardKernelConstants",
+          "kind": "unnumbered_claim",
+          "label": null,
+          "section": "6.4.4",
+          "printed_page": "257",
+          "pdf_page": "278",
+          "statement_latex": "In our case, $A=\\mathcal L_{LD}^\\dagger$. The only solutions of $\\mathcal L_{LD}y=0$ (conserved quantities of Langevin dynamics) are the constants.",
+          "proof_latex": null,
+          "proof_note": "原书未给独立完整证明。",
+          "proof_discussion_latex": null,
+          "context_notation": [],
+          "issues": [],
+          "lean_decl": "MD.Ch06.backwardKernelConstants",
+          "reusable_proofs": [],
+          "extra_assumptions": [
+            "[EXTRA]真实Gibbs加权Lp²闭backward operator图的全部粗域元素；不能用已证C0固定观测量特例替代。"
+          ],
+          "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
+          "review_status": "CORRECTED",
+          "repair_log": [],
+          "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
+        },
+        "issues": [
+          {
+            "code": "SOURCE_TRANSCRIPTION",
+            "detail": "原页应为 \\mathcal L_{LD}^\\dagger，输入为 \\mathcal L_{LD}^*。数学疑误另行保留，不在原文内纠正。"
+          }
+        ],
+        "evidence": [
+          {
+            "attachment": "R8_PAGES.pdf",
+            "attachment_pages": [
+              30
+            ],
+            "printed_page": "257",
+            "method": "逐页PDF文本比对；同原书页复用已目视核对的原页图像，图像代表页为附件1、4、12、20、26。",
+            "finding": "已核对所引正文、数学符号、页码及选取范围；差异逐项见issues。"
+          },
+          {
+            "definition_basis": "仅R8_任务.md的实际签名及项目定义摘录（含D1–D69）；标准Mathlib按任务说明采信。",
+            "finding": "所有L²粗域元素f在实际闭backward图内且Af=0蕴含AE常数；域及正参数、周期光滑势正确，未把连续函数特例当全部粗域。该句“only”是必要性，当前签名未断言常数均入域，不影响所选文字。"
+          }
+        ]
+      },
+      "audit": {
+        "lean_decl": "MD.Ch06.backwardKernelConstants",
+        "verdict": "PASS",
+        "explanation": "所有L²粗域元素f在实际闭backward图内且Af=0蕴含AE常数；域及正参数、周期光滑势正确，未把连续函数特例当全部粗域。该句“only”是必要性，当前签名未断言常数均入域，不影响所选文字。",
+        "counterexample": null,
+        "suggested_fix": null
+      },
+      "subtask": "BATCH41b",
+      "input_sha256": {
+        "Blueprint/Ch06.lean": "0a02a34ec68989a83bccfa5916db5053ecdb58e05667bf21ff3568d9d1f4318e",
+        "blueprint/ch06/ch06_source.json": "45c70ceef21ca168af437de297e2e21e2800b452ab7942654061d4cff9bb5d95",
+        "BATCH41b_PAGES.pdf": "83da1ef5e86aab7bf716f29e064980cb74e6881508a8765ad565e83f8d7e442d",
+        "signature_sha256": "cc9c32ec6eda76ed58b7cde692b10245eb3194c3febe0955cae0966d4ce64a61"
+      }
+    },
+    {
+      "source_id": "MD-6.4.4-ForwardKernelGibbs",
+      "json_review": {
+        "status": "CORRECTED",
+        "issue_codes": [
+          "SOURCE_TRANSCRIPTION",
+          "LEAN_SIGNATURE_FAIL",
+          "COUNTEREXAMPLE"
+        ],
+        "corrected_json": {
+          "source_id": "MD-6.4.4-ForwardKernelGibbs",
+          "kind": "unnumbered_claim",
+          "label": null,
+          "section": "6.4.4",
+          "printed_page": "257",
+          "pdf_page": "278",
+          "statement_latex": "If we have two solutions $\\varphi_1,\\varphi_2$ of $\\mathcal L_{LD}^\\dagger\\varphi=g$, then their difference $w$ must be a solution of $\\mathcal L_{LD}^\\daggerw=0$ and the only such solution is a constant multiple of the Gibbs density $\\rho_\\beta$.",
+          "proof_latex": null,
+          "proof_note": "原书未给独立完整证明。",
+          "proof_discussion_latex": null,
+          "context_notation": [],
+          "issues": [],
+          "lean_decl": "MD.Ch06.forwardKernelGibbs",
+          "reusable_proofs": [],
+          "extra_assumptions": [
+            "[EXTRA]完整原flat forward弱PDE与真实H1类，全部stationary modes为Gibbs倍数；相对加权adjoint kernel对应常数而非Gibbs，不能混同二者。"
+          ],
+          "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
+          "review_status": "CORRECTED",
+          "repair_log": [],
+          "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
+        },
+        "issues": [
+          {
+            "code": "SOURCE_TRANSCRIPTION",
+            "detail": "原页应为 \\mathcal L_{LD}^\\dagger，输入为 \\mathcal L_{LD}^*。数学疑误另行保留，不在原文内纠正。"
+          },
+          {
+            "code": "LEAN_SIGNATURE_FAIL",
+            "detail": "D66的flatForwardWeak仅用紧支测试函数；w只要求Gibbs加权H¹，未要求相对于平坦测度可积或零通量。这样的定义包含额外平稳通量解，因此“所有零模为Gibbs倍数”本身错误，不只是缺证明。"
+          },
+          {
+            "code": "COUNTEREXAMPLE",
+            "detail": "紧支弱PDE + Gaussian加权H¹允许非零恒通量解；所给反例无需数值检验。"
+          }
+        ],
+        "evidence": [
+          {
+            "attachment": "R8_PAGES.pdf",
+            "attachment_pages": [
+              31
+            ],
+            "printed_page": "257",
+            "method": "逐页PDF文本比对；同原书页复用已目视核对的原页图像，图像代表页为附件1、4、12、20、26。",
+            "finding": "已核对所引正文、数学符号、页码及选取范围；差异逐项见issues。"
+          },
+          {
+            "definition_basis": "仅R8_任务.md的实际签名及项目定义摘录（含D1–D69）；标准Mathlib按任务说明采信。",
+            "finding": "D66的flatForwardWeak仅用紧支测试函数；w只要求Gibbs加权H¹，未要求相对于平坦测度可积或零通量。这样的定义包含额外平稳通量解，因此“所有零模为Gibbs倍数”本身错误，不只是缺证明。"
+          }
+        ]
+      },
+      "audit": {
+        "lean_decl": "MD.Ch06.forwardKernelGibbs",
+        "verdict": "FAIL",
+        "explanation": "D66的flatForwardWeak仅用紧支测试函数；w只要求Gibbs加权H¹，未要求相对于平坦测度可积或零通量。这样的定义包含额外平稳通量解，因此“所有零模为Gibbs倍数”本身错误，不只是缺证明。",
+        "counterexample": "n=1，U≡0，β=γ=1；q无关，w(p)=e^(−p²/2)∫₀ᵖe^(s²/2)ds。w′+pw=1，故L* w=w″+(pw)′=0。w为奇函数且不为零，而Gibbs密度为正偶函数。w~1/p、w′~−1/p²，二者在Gaussian加权L²内；紧支测试积分均成立。",
+        "suggested_fix": "在平坦forward密度空间加合适L¹/零通量条件并核定算子域，或转相对密度的Hilbert adjoint闭域，核结论改为常数。"
+      },
+      "subtask": "BATCH41c",
+      "input_sha256": {
+        "Blueprint/Ch06.lean": "0a02a34ec68989a83bccfa5916db5053ecdb58e05667bf21ff3568d9d1f4318e",
+        "blueprint/ch06/ch06_source.json": "45c70ceef21ca168af437de297e2e21e2800b452ab7942654061d4cff9bb5d95",
+        "BATCH41c_PAGES.pdf": "83da1ef5e86aab7bf716f29e064980cb74e6881508a8765ad565e83f8d7e442d",
+        "signature_sha256": "2ce21e7f2b4cc9c6b2ab891aa0a3271954ef6e8de372fde56a2fbe91dbfcd1dd"
+      }
+    },
+    {
+      "source_id": "MD-6.4.4-WeightedFunctionNorm",
+      "json_review": {
+        "status": "APPROVED",
+        "issue_codes": [],
+        "corrected_json": null,
+        "issues": [],
+        "evidence": [
+          {
+            "attachment": "R8_PAGES.pdf",
+            "attachment_pages": [
+              32
+            ],
+            "printed_page": "256",
+            "method": "逐页PDF文本比对；同原书页复用已目视核对的原页图像，图像代表页为附件1、4、12、20、26。",
+            "finding": "已核对所引正文、数学符号、页码及选取范围；差异逐项见issues。"
+          },
+          {
+            "definition_basis": "仅R8_任务.md的实际签名及项目定义摘录（含D1–D69）；标准Mathlib按任务说明采信。",
+            "finding": "weightedFunctionNorm命名易误读但实际返回‖f‖²，正好对应所引平方范数；f是canonical measure的实Lp² AE类，故标准L²积分等式适用，不包含不可积任意函数。β>0且真实Gibbs乘积测度明确。"
+          }
+        ]
+      },
+      "audit": {
+        "lean_decl": "MD.Ch06.weightedFunctionNorm",
+        "verdict": "PASS",
+        "explanation": "weightedFunctionNorm命名易误读但实际返回‖f‖²，正好对应所引平方范数；f是canonical measure的实Lp² AE类，故标准L²积分等式适用，不包含不可积任意函数。β>0且真实Gibbs乘积测度明确。",
+        "counterexample": null,
+        "suggested_fix": "在说明中明确该定义返回平方范数。"
+      },
+      "subtask": "BATCH41d",
+      "input_sha256": {
+        "Blueprint/Ch06.lean": "0a02a34ec68989a83bccfa5916db5053ecdb58e05667bf21ff3568d9d1f4318e",
+        "blueprint/ch06/ch06_source.json": "45c70ceef21ca168af437de297e2e21e2800b452ab7942654061d4cff9bb5d95",
+        "BATCH41d_PAGES.pdf": "c8777368a0a4791687943c6e8e0bab7713f9d6639639860f00aff50dc5eeb3bb",
+        "signature_sha256": "46bd6d3ab1ae6fc84025d3811daf5808ff516d4845fc58d92fe8ab71c564e86a"
+      }
+    },
+    {
+      "source_id": "MD-6.4.4-WeightedVectorNorm",
+      "json_review": {
+        "status": "CORRECTED",
+        "issue_codes": [
+          "SOURCE_WORDING"
+        ],
+        "corrected_json": {
+          "source_id": "MD-6.4.4-WeightedVectorNorm",
+          "kind": "definition",
+          "label": null,
+          "section": "6.4.4",
+          "printed_page": "257",
+          "pdf_page": "278",
+          "statement_latex": "and, for a vector function $w:D\\to\\mathbb R^{N_c}$, we have\n\\[\\|w\\|_{L^2(\\mu)}^2=\\sum_{i=1}^{N_c}\\|w_i\\|_{L^2(\\mu)}^2.\\]",
+          "proof_latex": null,
+          "proof_note": "原书未给独立完整证明。",
+          "proof_discussion_latex": null,
+          "context_notation": [],
+          "issues": [
+            {
+              "code": "SOURCE_WORDING",
+              "detail": "页首实际为“and, for a vector function …, we have”，不是“For a vector function …”；数学公式逐项相符。"
+            }
+          ],
+          "lean_decl": "MD.Ch06.weightedVectorNorm",
+          "reusable_proofs": [],
+          "extra_assumptions": [
+            "[EXTRA]完整任意维度的所有真实L²分量，弱导数族使用同一实际Gibbs测度；不遗漏向量范数定义。"
+          ],
+          "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
+          "review_status": "CORRECTED",
+          "repair_log": [],
+          "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
+        },
+        "issues": [
+          {
+            "code": "SOURCE_WORDING",
+            "detail": "页首实际为“and, for a vector function …, we have”，不是“For a vector function …”；数学公式逐项相符。"
+          }
+        ],
+        "evidence": [
+          "附件第1页（原PDF278/印刷257）页首；向量值域R^{N_c}，右侧从i=1到N_c，左右均为范数平方。",
+          "D1–D7及canonicalMomentumMeasure：所用测度确为位置Gibbs测度与方差β⁻¹动量高斯测度的乘积。",
+          "审校限于R9_任务.md所载本条声明和依赖；未读取旧工程、未修改Lean、未补证明或因sorry判失败。"
+        ]
+      },
+      "audit": {
+        "lean_decl": "MD.Ch06.weightedVectorNorm",
+        "verdict": "PASS",
+        "explanation": "n为位置/动量坐标维数，r为向量分量数，二者独立且可任意有限；w各分量为同一真实canonical measure下的实L²等价类。返回值∑‖w i‖²恰为原公式的平方范数；并未开平方，故应按平方范数解释此名称。本条是定义而不是向量Lp范数等式定理。β>0保证动量高斯方差为正；U的平滑、周期及归一资格没有编码，因而只在原书Gibbs设置下解释为canonical probability。额外说明中的弱导数族在此声明中不存在，本条也无需弱导数。",
+        "counterexample": null,
+        "suggested_fix": "建议名称说明为weightedVectorNormSquared；删去本条[EXTRA]中与此签名无关的弱导数说明。若声称对任意U均为归一Gibbs概率，另补U的适当资格。"
+      },
+      "subtask": "BATCH41e",
+      "input_sha256": {
+        "Blueprint/Ch06.lean": "0a02a34ec68989a83bccfa5916db5053ecdb58e05667bf21ff3568d9d1f4318e",
+        "blueprint/ch06/ch06_source.json": "45c70ceef21ca168af437de297e2e21e2800b452ab7942654061d4cff9bb5d95",
+        "BATCH41e_PAGES.pdf": "83da1ef5e86aab7bf716f29e064980cb74e6881508a8765ad565e83f8d7e442d",
+        "signature_sha256": "c02f15325ce9cee032042052a69dc4a60568c0fffa9415569eca2912ef13b314"
+      }
+    }
+  ],
+  "merged_from": "ch06_first_merged"
+}

@@ -1,0 +1,234 @@
+{
+  "batch": "BATCH03",
+  "chapter": "ch06",
+  "round": "first-merged",
+  "input_sha256": {
+    "Blueprint/Ch06.lean": "0a02a34ec68989a83bccfa5916db5053ecdb58e05667bf21ff3568d9d1f4318e",
+    "blueprint/ch06/ch06_source.json": "45c70ceef21ca168af437de297e2e21e2800b452ab7942654061d4cff9bb5d95"
+  },
+  "items": [
+    {
+      "source_id": "MD-6.1.2-BathMeanValue",
+      "json_review": {
+        "status": "APPROVED",
+        "issue_codes": [],
+        "corrected_json": null,
+        "issues": [],
+        "evidence": [
+          "A：实际渲染并核对 R1_PAGES.pdf 附件第11页；原PDF第237页，印刷第216页。原页均值定理的S_B(E−s)=S_B(E)−S_B′(ξ)s与摘录一致，没有把ξ换成E。",
+          "C：依据 R1_任务.md 本条实际Lean签名及本任务附录，按标准Mathlib数学含义只读核对；未运行Lean编译、未补证明，未把sorry或repair_log中的未提供声明当作审校结果。"
+        ]
+      },
+      "audit": {
+        "lean_decl": "MD.Ch06.bathMeanValue",
+        "verdict": "PASS",
+        "explanation": "S:ℝ→ℝ，energy,s均为实数，C¹及s>0保证在[energy−s,energy]连续、内部可微；结论存在ξ∈Ioo(energy−s,energy)并满足所印等式，开区间条件比原页未指定ξ位置更精确。符号、区间端点及乘s的负号正确；不推出恒温指数因子。",
+        "counterexample": null,
+        "suggested_fix": null
+      },
+      "subtask": "BATCH03a",
+      "input_sha256": {
+        "Blueprint/Ch06.lean": "0a02a34ec68989a83bccfa5916db5053ecdb58e05667bf21ff3568d9d1f4318e",
+        "blueprint/ch06/ch06_source.json": "45c70ceef21ca168af437de297e2e21e2800b452ab7942654061d4cff9bb5d95",
+        "BATCH03a_PAGES.pdf": "69c554dfcd1f85c62823a7528d4b1d31237d1aea61f4e65233aefedb10f51ab4",
+        "signature_sha256": "8990018ea84d4ce8db69b7e92eab79de7e6d9735d095cbd0a9447ed943b74357"
+      }
+    },
+    {
+      "source_id": "MD-6.1.2-BathTaylorEstimate",
+      "json_review": {
+        "status": "CORRECTED",
+        "issue_codes": [
+          "A_TRUNCATED_SENTENCE"
+        ],
+        "corrected_json": {
+          "source_id": "MD-6.1.2-BathTaylorEstimate",
+          "kind": "extra_claim",
+          "label": null,
+          "section": "6.1.2",
+          "printed_page": "216",
+          "pdf_page": "237",
+          "statement_latex": "Since $Z_B(E-s)=\\exp(S_B(E-s)/k_B)$, and $s\\ll E$, we (naively) apply the mean value theorem to $S_B$ to obtain\n\\[S_B(E-s)=S_B(E)-S'_B(\\xi)s,\\]",
+          "proof_latex": null,
+          "proof_note": "原书未给独立完整证明。",
+          "proof_discussion_latex": null,
+          "context_notation": [],
+          "issues": [],
+          "lean_decl": "MD.Ch06.bathTaylorEstimate",
+          "reusable_proofs": [],
+          "extra_assumptions": [
+            "[EXTRA]对原页热浴近似给出可核验的局部C²一阶展开及C·s²余项；这是额外严格表述，完整字面Boltzmann关系仍为NEEDS_HUMAN。"
+          ],
+          "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
+          "review_status": "CORRECTED",
+          "repair_log": [
+            {
+              "date": "2026-10-17",
+              "action": "R1_readonly_source_review",
+              "change": "删除擅加的S_B后句号，恢复原文to obtain及所接均值公式；保留Taylor余项估计仅为EXTRA的定位。",
+              "scope": "仅修订本审校输出内的原文JSON；未修改工程或Lean声明。"
+            }
+          ],
+          "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
+        },
+        "issues": [
+          {
+            "code": "A_TRUNCATED_SENTENCE",
+            "phase": "A",
+            "field": "statement_latex",
+            "detail": "删除擅加的S_B后句号，恢复原文to obtain及所接均值公式；保留Taylor余项估计仅为EXTRA的定位。"
+          }
+        ],
+        "evidence": [
+          "A：实际渲染并核对 R1_PAGES.pdf 附件第12页；原PDF第237页，印刷第216页。原页文字实际以“to S_B to obtain”接展示公式，输入却在S_B后加句号，截成了原页没有的完整句子；修复该处截断并恢复紧随其后的均值公式。",
+          "C：依据 R1_任务.md 本条实际Lean签名及本任务附录，按标准Mathlib数学含义只读核对；未运行Lean编译、未补证明，未把sorry或repair_log中的未提供声明当作审校结果。"
+        ]
+      },
+      "audit": {
+        "lean_decl": "MD.Ch06.bathTaylorEstimate",
+        "verdict": "PASS",
+        "explanation": "签名对每个C²实函数S及展开点E，给出C≥0、δ>0，使所有|e|<δ满足|S(E−e)−S(E)+S′(E)e|≤C e²。量词顺序、双侧邻域和余项符号正确；C²保证局部二阶导数有界。该C·e²估计是已明确标记的[EXTRA]严格化，不是原页已有的独立定理，也没有推出一般热浴的精确Boltzmann式。",
+        "counterexample": null,
+        "suggested_fix": null
+      },
+      "subtask": "BATCH03b",
+      "input_sha256": {
+        "Blueprint/Ch06.lean": "0a02a34ec68989a83bccfa5916db5053ecdb58e05667bf21ff3568d9d1f4318e",
+        "blueprint/ch06/ch06_source.json": "45c70ceef21ca168af437de297e2e21e2800b452ab7942654061d4cff9bb5d95",
+        "BATCH03b_PAGES.pdf": "69c554dfcd1f85c62823a7528d4b1d31237d1aea61f4e65233aefedb10f51ab4",
+        "signature_sha256": "95ca9b4ae67a9781a010e5cfe96925b07ef187e6e00e1578bf653400e31e032f"
+      }
+    },
+    {
+      "source_id": "MD-6.1.2-BoltzmannConstantSlope",
+      "json_review": {
+        "status": "CORRECTED",
+        "issue_codes": [
+          "A_UNMARKED_REPHRASING"
+        ],
+        "corrected_json": {
+          "source_id": "MD-6.1.2-BoltzmannConstantSlope",
+          "kind": "extra_claim",
+          "label": null,
+          "section": "6.1.2",
+          "printed_page": "216",
+          "pdf_page": "237",
+          "statement_latex": "and from $S'_B(\\xi)=1/T$, we obtain\n\\[Z_B(E-s)\\propto\\exp(-\\beta s),\\]\nwhere $\\beta=(k_BT)^{-1}$.",
+          "proof_latex": null,
+          "proof_note": "原书未给独立完整证明。",
+          "proof_discussion_latex": null,
+          "context_notation": [],
+          "issues": [],
+          "lean_decl": "MD.Ch06.boltzmannConstantSlope",
+          "reusable_proofs": [],
+          "extra_assumptions": [
+            "[EXTRA]理想恒温热浴明确要求熵导数在整个实轴恒定；不从固定能量的温度偷推出该条件，不将本条代替字面版。"
+          ],
+          "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
+          "review_status": "CORRECTED",
+          "repair_log": [
+            {
+              "date": "2026-10-17",
+              "action": "R1_readonly_source_review",
+              "change": "恢复展示式后的原句where β=(k_B T)⁻¹，避免将原文两处内容无标记合并。",
+              "scope": "仅修订本审校输出内的原文JSON；未修改工程或Lean声明。"
+            }
+          ],
+          "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
+        },
+        "issues": [
+          {
+            "code": "A_UNMARKED_REPHRASING",
+            "phase": "A",
+            "field": "statement_latex",
+            "detail": "恢复展示式后的原句where β=(k_B T)⁻¹，避免将原文两处内容无标记合并。"
+          }
+        ],
+        "evidence": [
+          "A：实际渲染并核对 R1_PAGES.pdf 附件第13页；原PDF第237页，印刷第216页。原页在Z_B(E−s)∝exp(−βs)展示式后另写“where β=(k_B T)⁻¹.”；输入把这句话并入同一展示式，未逐字保留where，现恢复。",
+          "C：依据 R1_任务.md 本条实际Lean签名及本任务附录，按标准Mathlib数学含义只读核对；未运行Lean编译、未补证明，未把sorry或repair_log中的未提供声明当作审校结果。"
+        ]
+      },
+      "audit": {
+        "lean_decl": "MD.Ch06.boltzmannConstantSlope",
+        "verdict": "PASS",
+        "explanation": "量化可微实熵S、energy,kB,β；要求kB>0及所有实e处S′(e)=kBβ，再对所有实s给出精确指数比。全轴恒斜率意味着S是仿射函数，S(energy−s)−S(energy)=−kBβs，因此结论正确。恒斜率是明确标记的额外理想热浴假设，没有从单点温度偷推出此条件；与第8条Printed版严格区分。",
+        "counterexample": null,
+        "suggested_fix": null
+      },
+      "subtask": "BATCH03c",
+      "input_sha256": {
+        "Blueprint/Ch06.lean": "0a02a34ec68989a83bccfa5916db5053ecdb58e05667bf21ff3568d9d1f4318e",
+        "blueprint/ch06/ch06_source.json": "45c70ceef21ca168af437de297e2e21e2800b452ab7942654061d4cff9bb5d95",
+        "BATCH03c_PAGES.pdf": "69c554dfcd1f85c62823a7528d4b1d31237d1aea61f4e65233aefedb10f51ab4",
+        "signature_sha256": "23d290b2362897009e32ea83753f194a34349c6ce8fd9216e375c16141fe3ec6"
+      }
+    },
+    {
+      "source_id": "MD-6.1.2-CanonicalCDFPrinted",
+      "json_review": {
+        "status": "NEEDS_HUMAN",
+        "issue_codes": [
+          "ERRATUM?"
+        ],
+        "corrected_json": null,
+        "issues": [
+          {
+            "code": "ERRATUM?",
+            "phase": "A/C",
+            "field": "canonicalCDFPrinted结论",
+            "detail": "一般能量CDF的权重必须为ZA(s)ZB(energy−s)；原页累计分布省略ZA而能量密度又使用ZA，现有ERRATUM?准确，应保留原文待勘误。"
+          }
+        ],
+        "evidence": [
+          "A：实际渲染并核对 R1_PAGES.pdf 附件第14页；原PDF第237页，印刷第216页。附件14页确实在CDF积分中没有Z_A(s)，同时该页末又给出能量密度Z_A(α)exp(−βα)；输入保留了这个原书不一致及ERRATUM?。",
+          "C：依据 R1_任务.md 本条实际Lean签名及本任务附录，按标准Mathlib数学含义只读核对；未运行Lean编译、未补证明，未把sorry或repair_log中的未提供声明当作审校结果。",
+          "项目定义核对：仅用标准连续性、区间积分和实除法；没有额外项目谓词。",
+          "固定反例另用math.find检索并检查契约后，调用interval.expression.definite_integral_enclosure.compute，Arb有向舍入分别包围∫₀^(1/2)(1+s²)ds与∫₀¹(1+s²)ds；两次均TARGET_MET，且2×分子上界<分母下界。请求及原始返回见R1_CDF_counterexample_check.json。这仅认证所给反例的两次积分，不作为一般命题的证明；精确值由上述原函数给出。"
+        ]
+      },
+      "audit": {
+        "lean_decl": "MD.Ch06.canonicalCDFPrinted",
+        "verdict": "NEEDS_HUMAN",
+        "explanation": "Printed签名对两个全实轴连续、处处正的函数ZA,ZB及0<α<energy，断言有ZA权重与无ZA权重的两个归一化CDF相等。分子、分母和能量约束都与字面省略ZA的主张相对应，但任意ZA不可能消去。按原文版审忠实性的要求判NEEDS_HUMAN；不能将其作为正确一般定理，也不能把repair_log中未附签名的_corrected定义视为已审通过。",
+        "counterexample": "取ZA(s)=1+s²、ZB(s)=1，energy=1，α=1/2；两函数全实轴连续且严格正。以s+s³/3为原函数，带ZA的分子=13/24、分母=4/3，故CDF=13/32；不带ZA的CDF=(1/2)/1=1/2，两者不同。",
+        "suggested_fix": "保留Printed与ERRATUM?；修正版应将正确CDF定义为∫₀^α ZA(s)ZB(E−s)ds / ∫₀^E ZA(s)ZB(E−s)ds。若要与无ZA权重的CDF相等，需另加ZA在相关区间为正的常数等充分条件。"
+      },
+      "subtask": "BATCH03d",
+      "input_sha256": {
+        "Blueprint/Ch06.lean": "0a02a34ec68989a83bccfa5916db5053ecdb58e05667bf21ff3568d9d1f4318e",
+        "blueprint/ch06/ch06_source.json": "45c70ceef21ca168af437de297e2e21e2800b452ab7942654061d4cff9bb5d95",
+        "BATCH03d_PAGES.pdf": "69c554dfcd1f85c62823a7528d4b1d31237d1aea61f4e65233aefedb10f51ab4",
+        "signature_sha256": "be747a66a8ae1c01182c407cff55c3df239ee1d1d76d33a91682c7bf70ee9f32"
+      }
+    },
+    {
+      "source_id": "MD-6.1.2-CanonicalEnergyDensity",
+      "json_review": {
+        "status": "APPROVED",
+        "issue_codes": [],
+        "corrected_json": null,
+        "issues": [],
+        "evidence": [
+          "A：实际渲染并核对 R1_PAGES.pdf 附件第15页；原PDF第237页，印刷第216页。页末逐字给出的状态体积Z_A(α)及能量密度比例Z_A(α)exp(−βα)均保留；没有沿用上一条漏掉ZA的CDF。",
+          "C：依据 R1_任务.md 本条实际Lean签名及本任务附录，按标准Mathlib数学含义只读核对；未运行Lean编译、未补证明，未把sorry或repair_log中的未提供声明当作审校结果。"
+        ]
+      },
+      "audit": {
+        "lean_decl": "MD.Ch06.canonicalEnergyDensity",
+        "verdict": "PASS",
+        "explanation": "参数Z:ℝ→ℝ表示主动系统态密度，β,E为实数；定义分子为Z(E)exp(−βE)，分母为同一权重对全能量实轴的实际积分。比例系数不依赖E，符合所印比例关系。输入明确说明实际能量域可通过Z在域外取零表示，且正有限分母才有概率密度解释；本总定义不声称可积、非负或归一化自动成立。",
+        "counterexample": null,
+        "suggested_fix": null
+      },
+      "subtask": "BATCH03e",
+      "input_sha256": {
+        "Blueprint/Ch06.lean": "0a02a34ec68989a83bccfa5916db5053ecdb58e05667bf21ff3568d9d1f4318e",
+        "blueprint/ch06/ch06_source.json": "45c70ceef21ca168af437de297e2e21e2800b452ab7942654061d4cff9bb5d95",
+        "BATCH03e_PAGES.pdf": "69c554dfcd1f85c62823a7528d4b1d31237d1aea61f4e65233aefedb10f51ab4",
+        "signature_sha256": "360f4a9efd105af8159a488feaf4234bff865795633956d7b765e9bbe40e6a66"
+      }
+    }
+  ],
+  "merged_from": "ch06_first_merged"
+}

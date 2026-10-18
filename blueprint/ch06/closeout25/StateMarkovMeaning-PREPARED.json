@@ -1,0 +1,6 @@
+{
+  "source_id": "MD-6.2.1-StateMarkovMeaning",
+  "note": "原版及coarseMarkovPrinted_corrected同时要求概率空间、X各时可测和history严格等于全部过去生成的自然过滤；排除任意history伪Markov。",
+  "gaps": [],
+  "lean_sha256": "cfcf7981c5163a7cd1c973f5bef743f3ad155b932f4fb1308b2257c244f9af32"
+}

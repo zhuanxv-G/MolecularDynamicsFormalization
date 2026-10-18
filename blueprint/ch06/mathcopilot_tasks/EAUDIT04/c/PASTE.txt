@@ -1,0 +1,112 @@
+以附件/PASTE 为准，忽略 /workspace 旧文件；Mathlib 定义按标准含义采信。
+A逐字核对原文及证明；C只读核对对象、域、量词、前提和全部结论。所有项目定义体及选择规格在下文；仅作为审阅摘录，不是独立模块。theorem/lemma提供完整类型（不审证明）；定义提供完整定义体，按文件作用域解释。不要因sorry判签名FAIL。原文版忠实性、修正版正确性、反例、原书疑误分别说明，不凭旧文件或repair_log猜声明。
+本条MD-6.2.2-SelfStratonovichIntegral，subtask=EAUDIT04c；原PDF页映射=[251]。只读，不改工程或补证明。以JSON对象返回batch=EAUDIT04,input_sha256,items；逐条含source_id,subtask,input_sha256,json_review{status,issue_codes,corrected_json,issues,evidence},audit{lean_decl,verdict,explanation,counterexample,suggested_fix}。verdict=PASS/FAIL/NEEDS_HUMAN，status=APPROVED/CORRECTED/NEEDS_HUMAN。必须原样回显下列全部哈希。
+input_sha256:
+{
+  "Blueprint/Ch06.lean": "4a2a6cb72c1692f80e3537ab1a71701d429a482780a01226c3dc66a2ebb8b44b",
+  "blueprint/ch06/ch06_source.json": "d7f93cd20eb570744c710f3e07a88b319c082e4155812fee91db0920eb05944e",
+  "PAGES.pdf": "4878fc9b8ff20fcd6be1eafd478cdc816f2846206317bfd51e7c84ca688de057",
+  "materials_sha256": "f0988a05ee1378b765735bfdeb8b0c6a19cf58caf3e31a80eb1133b88947cefd"
+}
+
+## 原文JSON
+```json
+{
+  "source_id": "MD-6.2.2-SelfStratonovichIntegral",
+  "kind": "unnumbered_claim",
+  "label": null,
+  "section": "6.2.2",
+  "printed_page": "230",
+  "pdf_page": "251",
+  "statement_latex": "In contrast, the Stratonovich (midpoint) integral can be calculated as\n\\[\\int_0^\\tau W(t)\\circ dW(t)=\\operatorname{l.i.m.}_{\\nu\\to\\infty}\\sum_{k=0}^{\\nu-1}W(k\\delta t+\\delta t/2)[W((k+1)\\delta t)-W(k\\delta t)].\\]\nWriting\n\\[W(k\\delta t+\\delta t/2)=W(\\frac{(k+1)\\delta t+k\\delta t}{2})=\\frac12(W((k+1)\\delta t)+W(k\\delta t))+O(\\sqrt{\\delta t}),\\]\nallows us to evaluate the integral as\n\\[\\int_0^\\tau W(t)\\circ dW(t)=\\frac12\\operatorname{l.i.m.}_{\\nu\\to\\infty}\\sum_{k=0}^{\\nu-1}[W((k+1)\\delta t)^2-W(k\\delta t)^2]=\\frac12W(\\tau)^2.\\]",
+  "proof_latex": null,
+  "proof_note": "原书未给独立完整证明。",
+  "proof_discussion_latex": null,
+  "context_notation": [],
+  "extra_assumptions": [
+    "[EXTRA]真实时间中点和、L²见证、整体均方极限、AE求值；原O(√δt)单步启发不足，正式整体均方误差证明不直接丢弃逐步残项。",
+    "[EXTRA] 25号：仅覆盖真实时间中点和的均方结论；原单步O(√dt)推理未控制总误差，不能当成完整证明；所需Brownian桥残差估计未补建。"
+  ],
+  "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
+  "coverage_gaps": null
+}
+```
+## 当前完整Lean（全部原文版、修正版及反例）
+```lean
+theorem selfStratonovichIntegral {Ω : Type*} [MeasurableSpace Ω] {P : Measure Ω} {W : ℝ≥0 → Ω → ℝ}
+    (hW : IsPreBrownianReal W P) (T : ℝ≥0) :
+    ∃ Y : Ω → ℝ, MemLp Y 2 P ∧
+      Tendsto (fun K : ℕ ↦ ∫ sample, (textbookWienerMidpointSum W T K sample - Y sample) ^ 2 ∂P)
+        atTop (𝓝 0) ∧ ∀ᵐ sample ∂P, Y sample = W T sample ^ 2 / 2 := by
+  apply MolecularDynamics.textbookWienerSelfStratonovichIntegral_exists <;> assumption
+
+/-- 修正版/限定版：原文公式或定义的正确限定陈述；证明/域解释缺口见ERRATA。复制独立证明体，不从原文版占位推导。 -/
+theorem selfStratonovichIntegral_corrected {Ω : Type*} [MeasurableSpace Ω] {P : Measure Ω} {W : ℝ≥0 → Ω → ℝ}
+    (hW : IsPreBrownianReal W P) (T : ℝ≥0) :
+    ∃ Y : Ω → ℝ, MemLp Y 2 P ∧
+      Tendsto (fun K : ℕ ↦ ∫ sample, (textbookWienerMidpointSum W T K sample - Y sample) ^ 2 ∂P)
+        atTop (𝓝 0) ∧ ∀ᵐ sample ∂P, Y sample = W T sample ^ 2 / 2 := by
+  apply MolecularDynamics.textbookWienerSelfStratonovichIntegral_exists <;> assumption
+```
+### 文件参数及作用域 Blueprint/Ch06.lean
+```lean
+open Set Filter Matrix MeasureTheory ProbabilityTheory MolecularDynamics MolecularDynamics.Chapter02Review MolecularDynamics.Chapter06Review
+open scoped BigOperators Topology ContDiff InnerProductSpace Matrix.Norms.L2Operator ENNReal NNReal
+variable {n Nc : ℕ}
+variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
+variable {R : Type*} [Ring R] [Algebra ℝ R]
+local instance : MeasureSpace UnitAddCircle := ⟨AddCircle.haarAddCircle⟩
+```
+### 文件参数及作用域 MolecularDynamics/Chapter06/WienerQuadraticVariation.lean
+```lean
+open MeasureTheory ProbabilityTheory Filter
+open scoped NNReal ENNReal Topology ProbabilityTheory
+variable {Ω : Type*} [MeasurableSpace Ω] {P : Measure Ω}
+```
+### 文件参数及作用域 MolecularDynamics/Chapter06/WienerStratonovich.lean
+```lean
+open MeasureTheory ProbabilityTheory Filter
+open scoped NNReal ENNReal Topology ProbabilityTheory
+variable {Ω : Type*} [MeasurableSpace Ω] {P : Measure Ω}
+```
+### MD.Ch06.selfStratonovichIntegral [Blueprint/Ch06.lean:976]
+```lean
+theorem selfStratonovichIntegral {Ω : Type*} [MeasurableSpace Ω] {P : Measure Ω} {W : ℝ≥0 → Ω → ℝ}
+    (hW : IsPreBrownianReal W P) (T : ℝ≥0) :
+    ∃ Y : Ω → ℝ, MemLp Y 2 P ∧
+      Tendsto (fun K : ℕ ↦ ∫ sample, (textbookWienerMidpointSum W T K sample - Y sample) ^ 2 ∂P)
+        atTop (𝓝 0) ∧ ∀ᵐ sample ∂P, Y sample = W T sample ^ 2 / 2
+```
+### MD.Ch06.selfStratonovichIntegral_corrected [Blueprint/Ch06.lean:984]
+```lean
+theorem selfStratonovichIntegral_corrected {Ω : Type*} [MeasurableSpace Ω] {P : Measure Ω} {W : ℝ≥0 → Ω → ℝ}
+    (hW : IsPreBrownianReal W P) (T : ℝ≥0) :
+    ∃ Y : Ω → ℝ, MemLp Y 2 P ∧
+      Tendsto (fun K : ℕ ↦ ∫ sample, (textbookWienerMidpointSum W T K sample - Y sample) ^ 2 ∂P)
+        atTop (𝓝 0) ∧ ∀ᵐ sample ∂P, Y sample = W T sample ^ 2 / 2
+```
+### MolecularDynamics.textbookWienerTime [MolecularDynamics/Chapter06/WienerQuadraticVariation.lean:105]
+```lean
+noncomputable def textbookWienerTime (T : ℝ≥0) (K k : ℕ) : ℝ≥0 :=
+  (k : ℝ≥0) * (T / (K : ℝ≥0))
+```
+### MolecularDynamics.textbookWienerIncrement [MolecularDynamics/Chapter06/WienerQuadraticVariation.lean:109]
+```lean
+noncomputable def textbookWienerIncrement (W : ℝ≥0 → Ω → ℝ) (T : ℝ≥0) (K : ℕ)
+    (k : Fin K) : Ω → ℝ :=
+  fun ω ↦ W (textbookWienerTime T K (k.val + 1)) ω - W (textbookWienerTime T K k.val) ω
+```
+### MolecularDynamics.textbookWienerMidpointSum [MolecularDynamics/Chapter06/WienerStratonovich.lean:58]
+```lean
+noncomputable def textbookWienerMidpointSum (W : ℝ≥0 → Ω → ℝ) (T : ℝ≥0) (K : ℕ) : Ω → ℝ :=
+  fun ω ↦ ∑ k : Fin K, W (textbookWienerTime T (2 * K) (2 * k.val + 1)) ω *
+    textbookWienerIncrement W T K k ω
+```
+### MolecularDynamics.textbookWienerSelfStratonovichIntegral_exists [MolecularDynamics/Chapter06/WienerStratonovich.lean:169]
+```lean
+theorem textbookWienerSelfStratonovichIntegral_exists {W : ℝ≥0 → Ω → ℝ}
+    (hW : IsPreBrownianReal W P) (T : ℝ≥0) :
+    ∃ Y : Ω → ℝ, MemLp Y 2 P ∧
+      Tendsto (fun K : ℕ ↦ ∫ ω, (textbookWienerMidpointSum W T K ω - Y ω) ^ 2 ∂P)
+        atTop (𝓝 0) ∧ ∀ᵐ ω ∂P, Y ω = W T ω ^ 2 / 2
+```

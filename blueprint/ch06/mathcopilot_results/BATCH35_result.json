@@ -1,0 +1,528 @@
+{
+  "batch": "BATCH35",
+  "chapter": "ch06",
+  "round": "first-merged",
+  "input_sha256": {
+    "Blueprint/Ch06.lean": "0a02a34ec68989a83bccfa5916db5053ecdb58e05667bf21ff3568d9d1f4318e",
+    "blueprint/ch06/ch06_source.json": "45c70ceef21ca168af437de297e2e21e2800b452ab7942654061d4cff9bb5d95"
+  },
+  "items": [
+    {
+      "source_id": "MD-6.4.3-BrownianDiscreteSpectrum",
+      "json_review": {
+        "status": "NEEDS_HUMAN",
+        "issue_codes": [
+          "LEAN_INCOMPLETE_CONCLUSION",
+          "ERRATUM?"
+        ],
+        "corrected_json": {
+          "source_id": "MD-6.4.3-BrownianDiscreteSpectrum",
+          "kind": "unnumbered_claim",
+          "label": null,
+          "section": "6.4.3",
+          "printed_page": "250",
+          "pdf_page": "271",
+          "statement_latex": "In particular, it has a compact resolvent [360]; this can be shown to imply that the spectrum consists only of a countable collection of eigenvalues, i.e. that the operator has a discrete spectrum.",
+          "proof_latex": null,
+          "proof_note": "原书未给独立完整证明。",
+          "proof_discussion_latex": null,
+          "context_notation": [],
+          "issues": [
+            {
+              "code": "LEAN_INCOMPLETE_CONCLUSION",
+              "detail": "签名保留全复谱可数、实值和每点孤立，但没有原句“谱只由特征值组成”的非零特征向量/特征图结论，也未写有限重数。[EXTRA]只列前三项不能代替全部离散特征谱结论。原C₀²域另有闭实现疑义。"
+            },
+            {
+              "code": "ERRATUM?",
+              "detail": "签名保留全复谱可数、实值和每点孤立，但没有原句“谱只由特征值组成”的非零特征向量/特征图结论，也未写有限重数。[EXTRA]只列前三项不能代替全部离散特征谱结论。原C₀²域另有闭实现疑义。"
+            }
+          ],
+          "lean_decl": "MD.Ch06.brownianDiscreteSpectrum",
+          "reusable_proofs": [
+            "MolecularDynamics.textbookBrownianGibbsGeneratorComplexSpectrum_countable",
+            "MolecularDynamics.textbookBrownianGibbsGeneratorComplexSpectrum_im_zero",
+            "MolecularDynamics.textbookBrownianGibbsGeneratorComplexSpectrum_isolated"
+          ],
+          "extra_assumptions": [
+            "[EXTRA]实际闭Gibbs复L²域的全谱，非另选某有限模式；包含可数、实值与每个点孤立。"
+          ],
+          "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
+          "review_status": "NEEDS_HUMAN",
+          "repair_log": [
+            {
+              "review": "R7",
+              "detail": "仅在审校输出中修正转录/元数据并记录问题；未改工程或原任务，原书数学疑误未静默修正。"
+            }
+          ],
+          "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
+        },
+        "issues": [
+          {
+            "code": "LEAN_INCOMPLETE_CONCLUSION",
+            "detail": "签名保留全复谱可数、实值和每点孤立，但没有原句“谱只由特征值组成”的非零特征向量/特征图结论，也未写有限重数。[EXTRA]只列前三项不能代替全部离散特征谱结论。原C₀²域另有闭实现疑义。"
+          },
+          {
+            "code": "ERRATUM?",
+            "detail": "签名保留全复谱可数、实值和每点孤立，但没有原句“谱只由特征值组成”的非零特征向量/特征图结论，也未写有限重数。[EXTRA]只列前三项不能代替全部离散特征谱结论。原C₀²域另有闭实现疑义。"
+          }
+        ],
+        "evidence": [
+          {
+            "stage": "A",
+            "location": "R7_PAGES.pdf 附件第13页；原PDF页271，印刷页250",
+            "detail": "逐条比对对应原页文字与公式；重复页另按条目映射核对。普通换行/数学排版转LaTeX不作为语义错误；下列转录差异单列。"
+          },
+          {
+            "stage": "C",
+            "detail": "签名保留全复谱可数、实值和每点孤立，但没有原句“谱只由特征值组成”的非零特征向量/特征图结论，也未写有限重数。[EXTRA]只列前三项不能代替全部离散特征谱结论。原C₀²域另有闭实现疑义。",
+            "checked_signature": "theorem brownianDiscreteSpectrum {Nc : ℕ} (m : Fin Nc → ℝ) (hm : ∀ i, 0 < m i)\n    (U : (Fin Nc → ℝ) → ℝ) (hU : ContDiff ℝ ∞ U)\n    (hPU : textbookUnitPeriodicPotential U) (β : ℝ) (hβ : 0 < β) :\n  (textbookBrownianGibbsGeneratorComplexSpectrum m hm U hU hPU β hβ).Countable ∧\n  (∀ z ∈ textbookBrownianGibbsGeneratorComplexSpectrum m hm U hU hPU β hβ, z.im=0) ∧\n  ∀ z ∈ textbookBrownianGibbsGeneratorComplexSpectrum m hm U hU hPU β hβ,\n    ∃ N : Set ℂ, IsOpen N ∧ z ∈ N ∧\n      N ∩ textbookBrownianGibbsGeneratorComplexSpectrum m hm U hU hPU β hβ={z}\n",
+            "extra_assumptions_review": [
+              "[EXTRA]实际闭Gibbs复L²域的全谱，非另选某有限模式；包含可数、实值与每个点孤立。"
+            ],
+            "scope": "只读对象/域/量词/前提/全部结论核对；不检查证明，不因sorry判FAIL；依赖仅采用任务文件摘录及附录D1–D54。"
+          }
+        ]
+      },
+      "audit": {
+        "lean_decl": "MD.Ch06.brownianDiscreteSpectrum",
+        "verdict": "FAIL",
+        "explanation": "签名保留全复谱可数、实值和每点孤立，但没有原句“谱只由特征值组成”的非零特征向量/特征图结论，也未写有限重数。[EXTRA]只列前三项不能代替全部离散特征谱结论。原C₀²域另有闭实现疑义。",
+        "counterexample": null,
+        "suggested_fix": "补∀z∈σ(L),∃v≠0,(v,z•v)∈graph L；若采用标准离散谱含义，再明确有限重数及无有限聚点。"
+      },
+      "subtask": "BATCH35a",
+      "input_sha256": {
+        "Blueprint/Ch06.lean": "0a02a34ec68989a83bccfa5916db5053ecdb58e05667bf21ff3568d9d1f4318e",
+        "blueprint/ch06/ch06_source.json": "45c70ceef21ca168af437de297e2e21e2800b452ab7942654061d4cff9bb5d95",
+        "BATCH35a_PAGES.pdf": "eecf344ee3103d1b26e1e625b43f01c8a75f2f63fb243aee929985f7a0735540",
+        "signature_sha256": "79eb60df1e1a8f0034db56fe34e71194f0442f0f533ab0ef452c5febd065b71d"
+      }
+    },
+    {
+      "source_id": "MD-6.4.3-BrownianSpectralGap",
+      "json_review": {
+        "status": "APPROVED",
+        "issue_codes": [],
+        "corrected_json": null,
+        "issues": [],
+        "evidence": [
+          {
+            "stage": "A",
+            "location": "R7_PAGES.pdf 附件第14页；原PDF页272，印刷页251",
+            "detail": "逐条比对对应原页文字与公式；重复页另按条目映射核对。普通换行/数学排版转LaTeX不作为语义错误；下列转录差异单列。"
+          },
+          {
+            "stage": "C",
+            "detail": "存在统一α>0，对全复谱每个非零点同时给出虚部0和实部≤−α，未将谱隙作为假设；与原排除零特征值的陈述吻合。正质量、β>0、C∞周期及完整谱已明确。",
+            "checked_signature": "theorem brownianSpectralGap {Nc : ℕ} (m : Fin Nc → ℝ) (hm : ∀ i, 0 < m i)\n    (U : (Fin Nc → ℝ) → ℝ) (hU : ContDiff ℝ ∞ U)\n    (hPU : textbookUnitPeriodicPotential U) (β : ℝ) (hβ : 0 < β) :\n  ∃ α : ℝ, 0 < α ∧ ∀ z ∈ textbookBrownianGibbsGeneratorComplexSpectrum m hm U hU hPU β hβ,\n    z ≠ 0 → z.im=0 ∧ z.re ≤ -α\n",
+            "extra_assumptions_review": [
+              "[EXTRA]现成实际全闭谱；正谱隙从真实Poincaré常数得出，不把目标谱隙作前提。"
+            ],
+            "scope": "只读对象/域/量词/前提/全部结论核对；不检查证明，不因sorry判FAIL；依赖仅采用任务文件摘录及附录D1–D54。"
+          }
+        ]
+      },
+      "audit": {
+        "lean_decl": "MD.Ch06.brownianSpectralGap",
+        "verdict": "PASS",
+        "explanation": "存在统一α>0，对全复谱每个非零点同时给出虚部0和实部≤−α，未将谱隙作为假设；与原排除零特征值的陈述吻合。正质量、β>0、C∞周期及完整谱已明确。",
+        "counterexample": null,
+        "suggested_fix": null
+      },
+      "subtask": "BATCH35b",
+      "input_sha256": {
+        "Blueprint/Ch06.lean": "0a02a34ec68989a83bccfa5916db5053ecdb58e05667bf21ff3568d9d1f4318e",
+        "blueprint/ch06/ch06_source.json": "45c70ceef21ca168af437de297e2e21e2800b452ab7942654061d4cff9bb5d95",
+        "BATCH35b_PAGES.pdf": "6c1292f72a6ece6ef404fcbcc8b5af1cc8ced059f568f8899bcc83e8a6251fb3",
+        "signature_sha256": "74ada1c08909f934374db6bb19eb91e57658f52c5e7cef9bec8d5fd8f7a28488"
+      }
+    },
+    {
+      "source_id": "MD-6.4.3-Theorem61",
+      "json_review": {
+        "status": "NEEDS_HUMAN",
+        "issue_codes": [
+          "SOURCE_NOTATION",
+          "LEAN_INCOMPLETE_CONCLUSION",
+          "ERRATUM?"
+        ],
+        "corrected_json": {
+          "source_id": "MD-6.4.3-Theorem61",
+          "kind": "theorem",
+          "label": "Theorem 6.1",
+          "section": "6.4.3",
+          "printed_page": "250–251",
+          "pdf_page": "271–272",
+          "statement_latex": "Theorem 6.1 Define the generator of Brownian dynamics by\n\\[\\mathcal Lf\\stackrel{\\rm def}=-M^{-1}\\nabla U^T\\nabla f+\\beta^{-1}\\Delta_Mf.\\]\nSuppose that $U$ is smooth with periodic boundary conditions $\\mathcal Q=\\mathbb T^{N_c}$ ($\\mathbb T^{N_c}$ an $N_c$-dimensional torus). Then, with respect to the space $C_0^2(\\mu_\\beta)$ with inner product $\\langle f,g\\rangle_\\beta$ as defined above, we have:\n1. $\\mathcal L$ is self-adjoint, negative definite, with spectrum consisting of discrete eigenvalues on the half line $(-\\infty,0]$.\n2. $\\mathcal L$ has a spectral gap, meaning that, with exception of the zero eigenvalue, the remainder of the spectrum satisfies $\\sigma(\\mathcal L)\\subset(-\\infty,-\\alpha]$ for some $\\alpha>0$.\n3. averages with respect to the evolving, time-dependent distribution converge exponentially rapidly to averages with respect to the invariant distribution, and, for any smooth, compactly supported test function $\\varphi$, we have\n\\[|\\bar\\varphi(t)-\\operatorname{Av}_\\beta(\\varphi)|\\le K\\|\\varphi\\|_\\beta e^{-\\alpha t};\\]\nfor some positive $K$ and $\\alpha$, where recall $\\bar\\varphi(t)$ denotes the time average of $\\varphi$ defined in (5.6).",
+          "proof_latex": null,
+          "proof_note": "原书未给独立完整证明。",
+          "proof_discussion_latex": null,
+          "context_notation": [],
+          "issues": [
+            {
+              "code": "ERRATUM?",
+              "detail": "原C₀²核心域、自伴闭实现及negative definite术语需要签核；原末句时间平均与前句分布平均冲突。原一般初始分布未证明，本条技术范围限定另行披露。"
+            },
+            {
+              "code": "SOURCE_NOTATION",
+              "detail": "定理6.1原页空间写C₀²(μβ)，JSON误作C₀²(ρβ)。"
+            },
+            {
+              "code": "LEAN_INCOMPLETE_CONCLUSION",
+              "detail": "量词顺序保证K,α独立于检验函数和时间，可依赖初始L²密度；闭自伴、全谱非正、可数孤立和谱隙均在。但仍漏明确的“全谱点均为特征值”结论，亦将严格负定改为非正谱、原时间平均改为演化分布平均并缩限初始law。后者已[EXTRA]/[ERRATUM?]披露，属需人工确认的修订，不能当原定理完整忠实版。"
+            },
+            {
+              "code": "ERRATUM?",
+              "detail": "量词顺序保证K,α独立于检验函数和时间，可依赖初始L²密度；闭自伴、全谱非正、可数孤立和谱隙均在。但仍漏明确的“全谱点均为特征值”结论，亦将严格负定改为非正谱、原时间平均改为演化分布平均并缩限初始law。后者已[EXTRA]/[ERRATUM?]披露，属需人工确认的修订，不能当原定理完整忠实版。"
+            }
+          ],
+          "lean_decl": "MD.Ch06.theorem61",
+          "reusable_proofs": [],
+          "extra_assumptions": [
+            "[EXTRA]明确采用现成闭复Gibbs-L²实现、非正谱和完整离散/谱隙；第三部分选择实际演化分布平均，并限定真实非负质量1的L²初始相对密度。全部条款保留，不用部分桥接代替整个定理。"
+          ],
+          "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
+          "review_status": "NEEDS_HUMAN",
+          "repair_log": [
+            {
+              "date": "2026-10-17",
+              "action": "directive22_printed_corrected_pair",
+              "change": "明确闭Gibbs-L²实现、半负定、离散谱、谱隙和L²初始相对密度的演化分布平均；Brownian扩散使用逆质量权重，不混用p.244动量算子的ΔM；不声称已证原轨道时间平均。",
+              "corrected_decl": "MD.Ch06.theorem61_corrected",
+              "website": "未提交；待网站审计"
+            },
+            {
+              "review": "R7",
+              "detail": "仅在审校输出中修正转录/元数据并记录问题；未改工程或原任务，原书数学疑误未静默修正。"
+            }
+          ],
+          "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
+        },
+        "issues": [
+          {
+            "code": "SOURCE_NOTATION",
+            "detail": "定理6.1原页空间写C₀²(μβ)，JSON误作C₀²(ρβ)。"
+          },
+          {
+            "code": "LEAN_INCOMPLETE_CONCLUSION",
+            "detail": "量词顺序保证K,α独立于检验函数和时间，可依赖初始L²密度；闭自伴、全谱非正、可数孤立和谱隙均在。但仍漏明确的“全谱点均为特征值”结论，亦将严格负定改为非正谱、原时间平均改为演化分布平均并缩限初始law。后者已[EXTRA]/[ERRATUM?]披露，属需人工确认的修订，不能当原定理完整忠实版。"
+          },
+          {
+            "code": "ERRATUM?",
+            "detail": "量词顺序保证K,α独立于检验函数和时间，可依赖初始L²密度；闭自伴、全谱非正、可数孤立和谱隙均在。但仍漏明确的“全谱点均为特征值”结论，亦将严格负定改为非正谱、原时间平均改为演化分布平均并缩限初始law。后者已[EXTRA]/[ERRATUM?]披露，属需人工确认的修订，不能当原定理完整忠实版。"
+          }
+        ],
+        "evidence": [
+          {
+            "stage": "A",
+            "location": "R7_PAGES.pdf 附件第15–16页；原PDF页271–272，印刷页250–251",
+            "detail": "逐条比对对应原页文字与公式；重复页另按条目映射核对。普通换行/数学排版转LaTeX不作为语义错误；下列转录差异单列。"
+          },
+          {
+            "stage": "C",
+            "detail": "量词顺序保证K,α独立于检验函数和时间，可依赖初始L²密度；闭自伴、全谱非正、可数孤立和谱隙均在。但仍漏明确的“全谱点均为特征值”结论，亦将严格负定改为非正谱、原时间平均改为演化分布平均并缩限初始law。后者已[EXTRA]/[ERRATUM?]披露，属需人工确认的修订，不能当原定理完整忠实版。",
+            "checked_signature": "theorem theorem61 :\n  ∀ {n : ℕ} (m : MolecularDynamics.Chapter06Review.V n) (hm : ∀ i, 0 < m i)\n    (U : MolecularDynamics.Chapter06Review.V n → ℝ) (hU : ContDiff ℝ ∞ U) (hp : textbookUnitPeriodicPotential U)\n    (β : ℝ) (hβ : 0 < β),\n  IsSelfAdjoint (textbookBrownianGibbsComplexOperator m hm U hU hp β hβ) ∧\n  (∀ z ∈ textbookBrownianGibbsGeneratorComplexSpectrum m hm U hU hp β hβ,\n    z.im=0 ∧ z.re ≤ 0) ∧\n  (textbookBrownianGibbsGeneratorComplexSpectrum m hm U hU hp β hβ).Countable ∧\n  (∀ z ∈ textbookBrownianGibbsGeneratorComplexSpectrum m hm U hU hp β hβ, ∃ ε : ℝ, 0 < ε ∧\n    ∀ w ∈ textbookBrownianGibbsGeneratorComplexSpectrum m hm U hU hp β hβ, dist w z < ε → w=z) ∧\n  (∃ α : ℝ, 0 < α ∧ ∀ z ∈ textbookBrownianGibbsGeneratorComplexSpectrum m hm U hU hp β hβ,\n    z ≠ 0 → z.re ≤ -α) ∧\n  ∀ {Ω : Type*} [MeasurableSpace Ω] (B : ℝ≥0 → Ω → MolecularDynamics.Chapter06Review.V n) (P : Measure Ω),\n    textbookIsWienerVector B P →\n    ∀ ρ : Lp ℝ 2 (textbookConfigurationTorusGibbsMeasure U β),\n      0 ≤ᵐ[textbookConfigurationTorusGibbsMeasure U β] ρ →\n      (∫ Q, ρ Q ∂textbookConfigurationTorusGibbsMeasure U β)=1 →\n      ∃ K α : ℝ, 0 < K ∧ 0 < α ∧ ∀ (f : textbookPeriodicSmoothSpace n) (t : ℝ≥0),\n        |textbookBrownianDensityAverage m hm U hU hp β hβ B P ρ t\n          (textbookConfigurationContinuousObservable f f.prop.1.continuous f.prop.2) -\n          (∫ Q, textbookConfigurationTorusObservable f Q ∂textbookConfigurationTorusGibbsMeasure U β)| ≤\n            K * ‖textbookPeriodicSmoothEmbedding U hU hp β f‖ * Real.exp (-α*(t : ℝ))\n",
+            "extra_assumptions_review": [
+              "[EXTRA]明确采用现成闭复Gibbs-L²实现、非正谱和完整离散/谱隙；第三部分选择实际演化分布平均，并限定真实非负质量1的L²初始相对密度。全部条款保留，不用部分桥接代替整个定理。"
+            ],
+            "scope": "只读对象/域/量词/前提/全部结论核对；不检查证明，不因sorry判FAIL；依赖仅采用任务文件摘录及附录D1–D54。"
+          },
+          {
+            "stage": "C",
+            "detail": "反例或疑误依据：f≡1反驳严格负定；轨道平均的指数路径界亦不随分布平均指数收敛而成立。"
+          }
+        ]
+      },
+      "audit": {
+        "lean_decl": "MD.Ch06.theorem61",
+        "verdict": "FAIL",
+        "explanation": "量词顺序保证K,α独立于检验函数和时间，可依赖初始L²密度；闭自伴、全谱非正、可数孤立和谱隙均在。但仍漏明确的“全谱点均为特征值”结论，亦将严格负定改为非正谱、原时间平均改为演化分布平均并缩限初始law。后者已[EXTRA]/[ERRATUM?]披露，属需人工确认的修订，不能当原定理完整忠实版。",
+        "counterexample": "f≡1反驳严格负定；轨道平均的指数路径界亦不随分布平均指数收敛而成立。",
+        "suggested_fix": "补全特征值子句；保留原版与闭域/半负定/分布平均修正版两套陈述，并明确L²初始密度范围。"
+      },
+      "subtask": "BATCH35c",
+      "input_sha256": {
+        "Blueprint/Ch06.lean": "0a02a34ec68989a83bccfa5916db5053ecdb58e05667bf21ff3568d9d1f4318e",
+        "blueprint/ch06/ch06_source.json": "45c70ceef21ca168af437de297e2e21e2800b452ab7942654061d4cff9bb5d95",
+        "BATCH35c_PAGES.pdf": "cfa4d0fd7ca08fd3435de9e2b9d83efba67c5e1513b8e4b9c0e6025e492a78f8",
+        "signature_sha256": "a385982198a5db5bc284bcafdf2a32768d76916f4b8bd50b19674d14c302ec0b"
+      }
+    },
+    {
+      "source_id": "MD-6.4.3-Theorem61TimeAveragePrinted",
+      "json_review": {
+        "status": "NEEDS_HUMAN",
+        "issue_codes": [
+          "SOURCE_NOTATION",
+          "ERRATUM?"
+        ],
+        "corrected_json": {
+          "source_id": "MD-6.4.3-Theorem61TimeAveragePrinted",
+          "kind": "theorem",
+          "label": "Theorem 6.1(3) printed time average",
+          "section": "6.4.3",
+          "printed_page": "251",
+          "pdf_page": "272",
+          "statement_latex": "Theorem 6.1 Define the generator of Brownian dynamics by\n\\[\\mathcal Lf\\stackrel{\\rm def}=-M^{-1}\\nabla U^T\\nabla f+\\beta^{-1}\\Delta_Mf.\\]\nSuppose that $U$ is smooth with periodic boundary conditions $\\mathcal Q=\\mathbb T^{N_c}$ ($\\mathbb T^{N_c}$ an $N_c$-dimensional torus). Then, with respect to the space $C_0^2(\\mu_\\beta)$ with inner product $\\langle f,g\\rangle_\\beta$ as defined above, we have:\n1. $\\mathcal L$ is self-adjoint, negative definite, with spectrum consisting of discrete eigenvalues on the half line $(-\\infty,0]$.\n2. $\\mathcal L$ has a spectral gap, meaning that, with exception of the zero eigenvalue, the remainder of the spectrum satisfies $\\sigma(\\mathcal L)\\subset(-\\infty,-\\alpha]$ for some $\\alpha>0$.\n3. averages with respect to the evolving, time-dependent distribution converge exponentially rapidly to averages with respect to the invariant distribution, and, for any smooth, compactly supported test function $\\varphi$, we have\n\\[|\\bar\\varphi(t)-\\operatorname{Av}_\\beta(\\varphi)|\\le K\\|\\varphi\\|_\\beta e^{-\\alpha t};\\]\nfor some positive $K$ and $\\alpha$, where recall $\\bar\\varphi(t)$ denotes the time average of $\\varphi$ defined in (5.6).",
+          "proof_latex": null,
+          "proof_note": "原书未给独立完整证明。",
+          "proof_discussion_latex": null,
+          "context_notation": [],
+          "issues": [
+            {
+              "code": "ERRATUM?",
+              "detail": "保留原5.6轨道时间平均读法；通常随机时间平均并无原指称指数路径误差界。原文未说明随机量的概率资格，不能改成分布平均后冒称原结论已证。"
+            },
+            {
+              "code": "SOURCE_NOTATION",
+              "detail": "定理6.1原页空间写C₀²(μβ)，JSON误作C₀²(ρβ)。"
+            },
+            {
+              "code": "ERRATUM?",
+              "detail": "按Printed规则核查：任意点初值、K,α先于f与AE样本、全部t>0的轨道时间积分，确为原末句时间平均读法的明确化。AE资格是额外选择；原文本身与前句分布平均冲突且该指数路径界一般错误。"
+            }
+          ],
+          "lean_decl": "MD.Ch06.theorem61TimeAveragePrinted",
+          "reusable_proofs": [],
+          "extra_assumptions": [
+            "[EXTRA]实际Brownian全时torus过程、任意点初值、AE路径资格和t>0明确；原C∞紧支检验在紧torus周期表示。"
+          ],
+          "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
+          "review_status": "NEEDS_HUMAN",
+          "repair_log": [
+            {
+              "date": "2026-10-17",
+              "action": "directive22_printed_corrected_pair",
+              "change": "选择演化分布平均，限定L²初始相对密度；轨道遍历极限应另行陈述，不赋予指数逐路径率。",
+              "corrected_decl": "MD.Ch06.theorem61TimeAveragePrinted_corrected",
+              "website": "未提交；待网站审计"
+            },
+            {
+              "review": "R7",
+              "detail": "仅在审校输出中修正转录/元数据并记录问题；未改工程或原任务，原书数学疑误未静默修正。"
+            }
+          ],
+          "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
+        },
+        "issues": [
+          {
+            "code": "SOURCE_NOTATION",
+            "detail": "定理6.1原页空间写C₀²(μβ)，JSON误作C₀²(ρβ)。"
+          },
+          {
+            "code": "ERRATUM?",
+            "detail": "按Printed规则核查：任意点初值、K,α先于f与AE样本、全部t>0的轨道时间积分，确为原末句时间平均读法的明确化。AE资格是额外选择；原文本身与前句分布平均冲突且该指数路径界一般错误。"
+          }
+        ],
+        "evidence": [
+          {
+            "stage": "A",
+            "location": "R7_PAGES.pdf 附件第17页；原PDF页272，印刷页251",
+            "detail": "逐条比对对应原页文字与公式；重复页另按条目映射核对。普通换行/数学排版转LaTeX不作为语义错误；下列转录差异单列。"
+          },
+          {
+            "stage": "C",
+            "detail": "按Printed规则核查：任意点初值、K,α先于f与AE样本、全部t>0的轨道时间积分，确为原末句时间平均读法的明确化。AE资格是额外选择；原文本身与前句分布平均冲突且该指数路径界一般错误。",
+            "checked_signature": "theorem theorem61TimeAveragePrinted {Nc : ℕ} (m : Fin Nc → ℝ) (hm : ∀ i, 0 < m i)\n    (U : (Fin Nc → ℝ) → ℝ) (hU : ContDiff ℝ ∞ U)\n    (hPU : textbookUnitPeriodicPotential U) (β : ℝ) (hβ : 0 < β) {Ω : Type*} [MeasurableSpace Ω]\n    (B : ℝ≥0 → Ω → (Fin Nc → ℝ)) (P : Measure Ω) (hB : textbookIsWienerVector B P) :\n  ∀ x : UnitAddTorus (Fin Nc), ∃ K α : ℝ, 0 < K ∧ 0 < α ∧\n    ∀ f : textbookPeriodicSmoothSpace Nc, ∀ᵐ sample ∂P, ∀ t : ℝ, 0 < t →\n      |t⁻¹*(∫ s in (0 : ℝ)..t,\n          textbookConfigurationTorusObservable f\n            (textbookBrownianTorusGlobalRandomConfiguration m hm U hU hPU β hβ x B s sample)) -\n        (∫ Q, textbookConfigurationTorusObservable f Q ∂textbookConfigurationTorusGibbsMeasure U β)| ≤\n          K*‖textbookPeriodicSmoothEmbedding U hU hPU β f‖*Real.exp (-α*t)\n",
+            "extra_assumptions_review": [
+              "[EXTRA]实际Brownian全时torus过程、任意点初值、AE路径资格和t>0明确；原C∞紧支检验在紧torus周期表示。"
+            ],
+            "scope": "只读对象/域/量词/前提/全部结论核对；不检查证明，不因sorry判FAIL；依赖仅采用任务文件摘录及附录D1–D54。"
+          },
+          {
+            "stage": "C",
+            "detail": "反例或疑误依据：取一维圆周U=0、标准Brownian及非恒定余弦检验。若所有t的时间积分误差≤Ct exp(−αt)，则积分趋0；任意固定长度的后期区间积分也须趋0，但混合平稳极限中该区间积分具有非退化分布，矛盾。"
+          }
+        ]
+      },
+      "audit": {
+        "lean_decl": "MD.Ch06.theorem61TimeAveragePrinted",
+        "verdict": "NEEDS_HUMAN",
+        "explanation": "按Printed规则核查：任意点初值、K,α先于f与AE样本、全部t>0的轨道时间积分，确为原末句时间平均读法的明确化。AE资格是额外选择；原文本身与前句分布平均冲突且该指数路径界一般错误。",
+        "counterexample": "取一维圆周U=0、标准Brownian及非恒定余弦检验。若所有t的时间积分误差≤Ct exp(−αt)，则积分趋0；任意固定长度的后期区间积分也须趋0，但混合平稳极限中该区间积分具有非退化分布，矛盾。",
+        "suggested_fix": "保留字面版并判人工；修正版改演化分布平均，轨道平均另给适当概率/渐近结论。"
+      },
+      "subtask": "BATCH35d",
+      "input_sha256": {
+        "Blueprint/Ch06.lean": "0a02a34ec68989a83bccfa5916db5053ecdb58e05667bf21ff3568d9d1f4318e",
+        "blueprint/ch06/ch06_source.json": "45c70ceef21ca168af437de297e2e21e2800b452ab7942654061d4cff9bb5d95",
+        "BATCH35d_PAGES.pdf": "6c1292f72a6ece6ef404fcbcc8b5af1cc8ced059f568f8899bcc83e8a6251fb3",
+        "signature_sha256": "3f537b88723a89bf66e63d13afbd09aec190128a0a33813f4818622b8c7120ef"
+      }
+    },
+    {
+      "source_id": "MD-6.4.3-BrownianEnsembleExponential",
+      "json_review": {
+        "status": "NEEDS_HUMAN",
+        "issue_codes": [
+          "ERRATUM?"
+        ],
+        "corrected_json": {
+          "source_id": "MD-6.4.3-BrownianEnsembleExponential",
+          "kind": "unnumbered_claim",
+          "label": null,
+          "section": "6.4.3",
+          "printed_page": "251",
+          "pdf_page": "272",
+          "statement_latex": "averages with respect to the evolving, time-dependent distribution converge exponentially rapidly to averages with respect to the invariant distribution, and, for any smooth, compactly supported test function $\\varphi$, we have\n\\[|\\bar\\varphi(t)-\\operatorname{Av}_\\beta(\\varphi)|\\le K\\|\\varphi\\|_\\beta e^{-\\alpha t}.\\]",
+          "proof_latex": null,
+          "proof_note": "原书未给独立完整证明。",
+          "proof_discussion_latex": null,
+          "context_notation": [],
+          "issues": [
+            {
+              "code": "ERRATUM?",
+              "detail": "原完整定理末句称bar φ为轨道时间平均，与本条选择演化分布平均有冲突；此处限定子结论合理，应补交叉勘误。"
+            }
+          ],
+          "lean_decl": "MD.Ch06.brownianEnsembleExponential",
+          "reusable_proofs": [
+            "MolecularDynamics.textbookBrownianDensityAverage_smooth_exponential"
+          ],
+          "extra_assumptions": [
+            "[EXTRA]选择实际演化分布平均；真实Wiener/kernel和非负质量1的L²初始相对密度，所有光滑周期检验同时受界。范围限定不覆盖singular点初始law，不是原轨道时间平均证明。"
+          ],
+          "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
+          "review_status": "NEEDS_HUMAN",
+          "repair_log": [
+            {
+              "review": "R7",
+              "detail": "仅在审校输出中修正转录/元数据并记录问题；未改工程或原任务，原书数学疑误未静默修正。"
+            }
+          ],
+          "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
+        },
+        "issues": [
+          {
+            "code": "ERRATUM?",
+            "detail": "原完整定理末句称bar φ为轨道时间平均，与本条选择演化分布平均有冲突；此处限定子结论合理，应补交叉勘误。"
+          }
+        ],
+        "evidence": [
+          {
+            "stage": "A",
+            "location": "R7_PAGES.pdf 附件第18页；原PDF页272，印刷页251",
+            "detail": "逐条比对对应原页文字与公式；重复页另按条目映射核对。普通换行/数学排版转LaTeX不作为语义错误；下列转录差异单列。"
+          },
+          {
+            "stage": "C",
+            "detail": "实际Wiener驱动转移kernel推动非负质量1的L²相对密度；DensityAverage是总质量归一的演化分布平均，右侧Z⁻¹积分与torus Gibbs平均一致。K,α统一于所有光滑周期f与t≥0；归一范数与原范数的常数差可吸收进K。[EXTRA]明确非轨道平均及不含奇异初始law。",
+            "checked_signature": "theorem brownianEnsembleExponential {Nc : ℕ} (m : Fin Nc → ℝ) (hm : ∀ i, 0 < m i)\n    (U : (Fin Nc → ℝ) → ℝ) (hU : ContDiff ℝ ∞ U)\n    (hPU : textbookUnitPeriodicPotential U) (β : ℝ) (hβ : 0 < β)\n    {Ω : Type*} [MeasurableSpace Ω] (B : ℝ≥0 → Ω → (Fin Nc → ℝ))\n    (P : Measure Ω) (hB : textbookIsWienerVector B P)\n    (ρ : Lp ℝ 2 (textbookConfigurationTorusGibbsMeasure U β))\n    (hρpos : 0 ≤ᵐ[textbookConfigurationTorusGibbsMeasure U β] ρ)\n    (hρmass : (∫ Q, ρ Q ∂textbookConfigurationTorusGibbsMeasure U β) = 1) :\n    ∃ K α : ℝ, 0 < K ∧ 0 < α ∧ ∀ (f : textbookPeriodicSmoothSpace Nc) (t : ℝ≥0),\n      |textbookBrownianDensityAverage m hm U hU hPU β hβ B P ρ t\n          (textbookConfigurationContinuousObservable f f.prop.1.continuous f.prop.2) -\n        (textbookConfigurationPartition U β)⁻¹ *\n          (∫ q in textbookConfigurationCube Nc, (f : (Fin Nc → ℝ) → ℝ) q *\n            textbookConfigurationGibbsWeight U β q)| ≤\n        K * ‖textbookPeriodicSmoothEmbedding U hU hPU β f‖ * Real.exp (-α * (t : ℝ))\n",
+            "extra_assumptions_review": [
+              "[EXTRA]选择实际演化分布平均；真实Wiener/kernel和非负质量1的L²初始相对密度，所有光滑周期检验同时受界。范围限定不覆盖singular点初始law，不是原轨道时间平均证明。"
+            ],
+            "scope": "只读对象/域/量词/前提/全部结论核对；不检查证明，不因sorry判FAIL；依赖仅采用任务文件摘录及附录D1–D54。"
+          }
+        ]
+      },
+      "audit": {
+        "lean_decl": "MD.Ch06.brownianEnsembleExponential",
+        "verdict": "PASS",
+        "explanation": "实际Wiener驱动转移kernel推动非负质量1的L²相对密度；DensityAverage是总质量归一的演化分布平均，右侧Z⁻¹积分与torus Gibbs平均一致。K,α统一于所有光滑周期f与t≥0；归一范数与原范数的常数差可吸收进K。[EXTRA]明确非轨道平均及不含奇异初始law。",
+        "counterexample": null,
+        "suggested_fix": "补录其与原末句时间平均的冲突，避免将此子结论当Printed版本的证明。"
+      },
+      "subtask": "BATCH35e",
+      "input_sha256": {
+        "Blueprint/Ch06.lean": "0a02a34ec68989a83bccfa5916db5053ecdb58e05667bf21ff3568d9d1f4318e",
+        "blueprint/ch06/ch06_source.json": "45c70ceef21ca168af437de297e2e21e2800b452ab7942654061d4cff9bb5d95",
+        "BATCH35e_PAGES.pdf": "6c1292f72a6ece6ef404fcbcc8b5af1cc8ced059f568f8899bcc83e8a6251fb3",
+        "signature_sha256": "76e187228345470a44ff2927d4963ee177b8d5fd2afc49648fb4db7a9e93a232"
+      }
+    },
+    {
+      "source_id": "MD-6.4.3-BrownianNegativeDefinitePrinted",
+      "json_review": {
+        "status": "NEEDS_HUMAN",
+        "issue_codes": [
+          "ERRATUM?"
+        ],
+        "corrected_json": {
+          "source_id": "MD-6.4.3-BrownianNegativeDefinitePrinted",
+          "kind": "unnumbered_claim",
+          "label": null,
+          "section": "6.4.3",
+          "printed_page": "250",
+          "pdf_page": "271",
+          "statement_latex": "so that $\\langle f,\\mathcal Lf\\rangle\\le0$ so the operator is negative definite and can only have non-positive eigenvalues.",
+          "proof_latex": null,
+          "proof_note": "原书未给独立完整证明。",
+          "proof_discussion_latex": null,
+          "context_notation": [],
+          "issues": [
+            {
+              "code": "ERRATUM?",
+              "detail": "常数非零函数给零二次型，严格负定字面不成立；原非正谱正确子结论独立保留。"
+            },
+            {
+              "code": "ERRATUM?",
+              "detail": "Printed严格负定版准确编码任意非零周期光滑f的二次型<0；虽为假，按原文字面版规则不以不忠实判FAIL。已有[ERRATUM?]正确。"
+            }
+          ],
+          "lean_decl": "MD.Ch06.brownianNegativeDefinitePrinted",
+          "reusable_proofs": [],
+          "extra_assumptions": [
+            "[EXTRA]明确严格负定含全部非零周期光滑L²函数的读法。"
+          ],
+          "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
+          "review_status": "NEEDS_HUMAN",
+          "repair_log": [
+            {
+              "date": "2026-10-17",
+              "action": "directive22_printed_corrected_pair",
+              "change": "将严格小于0改为小于等于0；零特征值与常数核保留。",
+              "corrected_decl": "MD.Ch06.brownianNegativeDefinitePrinted_corrected",
+              "website": "未提交；待网站审计"
+            },
+            {
+              "review": "R7",
+              "detail": "仅在审校输出中修正转录/元数据并记录问题；未改工程或原任务，原书数学疑误未静默修正。"
+            }
+          ],
+          "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
+        },
+        "issues": [
+          {
+            "code": "ERRATUM?",
+            "detail": "Printed严格负定版准确编码任意非零周期光滑f的二次型<0；虽为假，按原文字面版规则不以不忠实判FAIL。已有[ERRATUM?]正确。"
+          }
+        ],
+        "evidence": [
+          {
+            "stage": "A",
+            "location": "R7_PAGES.pdf 附件第19页；原PDF页271，印刷页250",
+            "detail": "逐条比对对应原页文字与公式；重复页另按条目映射核对。普通换行/数学排版转LaTeX不作为语义错误；下列转录差异单列。"
+          },
+          {
+            "stage": "C",
+            "detail": "Printed严格负定版准确编码任意非零周期光滑f的二次型<0；虽为假，按原文字面版规则不以不忠实判FAIL。已有[ERRATUM?]正确。",
+            "checked_signature": "theorem brownianNegativeDefinitePrinted {Nc : ℕ} (m : Fin Nc → ℝ) (hm : ∀ i, 0 < m i)\n    (U : (Fin Nc → ℝ) → ℝ) (hU : ContDiff ℝ ∞ U)\n    (hPU : textbookUnitPeriodicPotential U) (β : ℝ) (hβ : 0 < β) :\n  ∀ f : (Fin Nc → ℝ) → ℝ, ContDiff ℝ ∞ f → textbookUnitPeriodicPotential f →\n    (¬ f =ᵐ[volume.restrict (textbookConfigurationCube Nc)] 0) →\n      brownianWeightedInner U β f (textbookBrownianGenerator m U β f) < 0\n",
+            "extra_assumptions_review": [
+              "[EXTRA]明确严格负定含全部非零周期光滑L²函数的读法。"
+            ],
+            "scope": "只读对象/域/量词/前提/全部结论核对；不检查证明，不因sorry判FAIL；依赖仅采用任务文件摘录及附录D1–D54。"
+          },
+          {
+            "stage": "C",
+            "detail": "反例或疑误依据：任意维数取U=0、m≡1、β=1、f≡1；基本域测度1，f非零而Lf=0，结论0<0为假。"
+          }
+        ]
+      },
+      "audit": {
+        "lean_decl": "MD.Ch06.brownianNegativeDefinitePrinted",
+        "verdict": "NEEDS_HUMAN",
+        "explanation": "Printed严格负定版准确编码任意非零周期光滑f的二次型<0；虽为假，按原文字面版规则不以不忠实判FAIL。已有[ERRATUM?]正确。",
+        "counterexample": "任意维数取U=0、m≡1、β=1、f≡1；基本域测度1，f非零而Lf=0，结论0<0为假。",
+        "suggested_fix": "修正版改≤0，或在零均值非零子空间给严格不等式。"
+      },
+      "subtask": "BATCH35f",
+      "input_sha256": {
+        "Blueprint/Ch06.lean": "0a02a34ec68989a83bccfa5916db5053ecdb58e05667bf21ff3568d9d1f4318e",
+        "blueprint/ch06/ch06_source.json": "45c70ceef21ca168af437de297e2e21e2800b452ab7942654061d4cff9bb5d95",
+        "BATCH35f_PAGES.pdf": "eecf344ee3103d1b26e1e625b43f01c8a75f2f63fb243aee929985f7a0735540",
+        "signature_sha256": "cccc0289883341cd6df1c7a88bec33fe55f465bf720dfda0774f7fe0071ddd81"
+      }
+    }
+  ],
+  "merged_from": "ch06_first_merged"
+}

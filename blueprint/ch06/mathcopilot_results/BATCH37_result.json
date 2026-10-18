@@ -1,0 +1,481 @@
+{
+  "batch": "BATCH37",
+  "chapter": "ch06",
+  "round": "first-merged",
+  "input_sha256": {
+    "Blueprint/Ch06.lean": "0a02a34ec68989a83bccfa5916db5053ecdb58e05667bf21ff3568d9d1f4318e",
+    "blueprint/ch06/ch06_source.json": "45c70ceef21ca168af437de297e2e21e2800b452ab7942654061d4cff9bb5d95"
+  },
+  "items": [
+    {
+      "source_id": "MD-6.4.4-UnitLangevinModel",
+      "json_review": {
+        "status": "CORRECTED",
+        "issue_codes": [
+          "EXTRA_INACCURATE"
+        ],
+        "corrected_json": {
+          "source_id": "MD-6.4.4-UnitLangevinModel",
+          "kind": "definition",
+          "label": "(6.47)",
+          "section": "6.4.4",
+          "printed_page": "251",
+          "pdf_page": "272",
+          "statement_latex": "In Langevin dynamics, taking $M=I$ for simplicity,\n\\[dq=pdt;\\qquad dp=-\\nabla U(q)dt-\\gamma pdt+\\sqrt{2\\gamma k_BT}dW;\\tag{6.47}\\]",
+          "proof_latex": null,
+          "proof_note": "原书未给独立完整证明。",
+          "proof_discussion_latex": null,
+          "context_notation": [],
+          "issues": [
+            {
+              "code": "EXTRA_INACCURATE",
+              "detail": "[EXTRA]称Wiener law在对应定理另给，但摘录langevinMassSDE已含textbookIsWienerVector。"
+            }
+          ],
+          "lean_decl": "MD.Ch06.unitLangevinModel",
+          "reusable_proofs": [],
+          "extra_assumptions": [
+            "[EXTRA]单位质量、β>0、光滑势及完整耦合积分路径方程；γ>0与Wiener向量资格均已由langevinMassSDE包含。"
+          ],
+          "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
+          "review_status": "CORRECTED",
+          "repair_log": [
+            {
+              "review": "R7",
+              "detail": "仅在审校输出中修正转录/元数据并记录问题；未改工程或原任务，原书数学疑误未静默修正。"
+            }
+          ],
+          "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
+        },
+        "issues": [
+          {
+            "code": "EXTRA_INACCURATE",
+            "detail": "[EXTRA]称Wiener law在对应定理另给，但摘录langevinMassSDE已含textbookIsWienerVector。"
+          }
+        ],
+        "evidence": [
+          {
+            "stage": "A",
+            "location": "R7_PAGES.pdf 附件第28页；原PDF页272，印刷页251",
+            "detail": "逐条比对对应原页文字与公式；重复页另按条目映射核对。普通换行/数学排版转LaTeX不作为语义错误；下列转录差异单列。"
+          },
+          {
+            "stage": "C",
+            "detail": "展开langevinMassSDE后有正γ、正温度β⁻¹、单位质量、完整两分量积分方程、AE连续/可积资格以及textbookIsWienerVector。故σ=√(2γβ⁻¹)、dq=pdt均正确。元数据说Wiener law另给与实际定义不符，须纠正。",
+            "checked_signature": "def unitLangevinModel {n : ℕ} {A : Type*} [MeasurableSpace A] (P : Measure A)\n    (W : ℝ → A → (Fin n → ℝ)) (X : ℝ → A → ((Fin n → ℝ) × (Fin n → ℝ)))\n    (U : (Fin n → ℝ) → ℝ) (γ β : ℝ) (x0 : (Fin n → ℝ) × (Fin n → ℝ)) : Prop :=\n  0 < β ∧ ContDiff ℝ ∞ U ∧ MD.Ch06.langevinMassSDE P W X (fun _ ↦ 1) U γ β⁻¹ x0\n",
+            "extra_assumptions_review": [
+              "[EXTRA]真实单位质量完整耦合路径方程；β>0及光滑势保证原梯度存在，γ>0由实际MassLangevin资格保留。Wiener law在对应定理另给，不宣称任意W是Wiener。"
+            ],
+            "scope": "只读对象/域/量词/前提/全部结论核对；不检查证明，不因sorry判FAIL；依赖仅采用任务文件摘录及附录D1–D54。"
+          }
+        ]
+      },
+      "audit": {
+        "lean_decl": "MD.Ch06.unitLangevinModel",
+        "verdict": "PASS",
+        "explanation": "展开langevinMassSDE后有正γ、正温度β⁻¹、单位质量、完整两分量积分方程、AE连续/可积资格以及textbookIsWienerVector。故σ=√(2γβ⁻¹)、dq=pdt均正确。元数据说Wiener law另给与实际定义不符，须纠正。",
+        "counterexample": null,
+        "suggested_fix": "修正[EXTRA]：Wiener资格已包含在langevinMassSDE内，不是仅在对应定理另给。"
+      },
+      "subtask": "BATCH37a",
+      "input_sha256": {
+        "Blueprint/Ch06.lean": "0a02a34ec68989a83bccfa5916db5053ecdb58e05667bf21ff3568d9d1f4318e",
+        "blueprint/ch06/ch06_source.json": "45c70ceef21ca168af437de297e2e21e2800b452ab7942654061d4cff9bb5d95",
+        "BATCH37a_PAGES.pdf": "6c1292f72a6ece6ef404fcbcc8b5af1cc8ced059f568f8899bcc83e8a6251fb3",
+        "signature_sha256": "1d676750a9f9c8c1e9ebc0ed4c8725b221b116689fb4f698cf3ca1b776580853"
+      }
+    },
+    {
+      "source_id": "MD-6.4.4-PeriodicConfiningPrinted",
+      "json_review": {
+        "status": "NEEDS_HUMAN",
+        "issue_codes": [
+          "ERRATUM?"
+        ],
+        "corrected_json": {
+          "source_id": "MD-6.4.4-PeriodicConfiningPrinted",
+          "kind": "definition",
+          "label": null,
+          "section": "6.4.4",
+          "printed_page": "253",
+          "pdf_page": "274",
+          "statement_latex": "The whole phase space is $D=\\mathbb T^{N_c}\\times\\mathbb R^{N_c}$. We also consider the potential energy to be smooth ($C^\\infty$) with $U(q)\\to\\infty$ as $|q|\\to\\infty$.",
+          "proof_latex": null,
+          "proof_note": "原书未给独立完整证明。",
+          "proof_discussion_latex": null,
+          "context_notation": [],
+          "issues": [
+            {
+              "code": "ERRATUM?",
+              "detail": "原周期位置域与同一势能lift的q→∞围束条件冲突；保留字面资格而非构造一个不存在的周期围束势。"
+            },
+            {
+              "code": "ERRATUM?",
+              "detail": "Printed对正维欧氏lift同时要求C∞、整数平移周期、cocompact处趋∞，确实忠实表达原矛盾资格；hn排除零维真空情况。不应要求构造满足它的势。"
+            }
+          ],
+          "lean_decl": "MD.Ch06.periodicConfiningPrinted",
+          "reusable_proofs": [],
+          "extra_assumptions": [
+            "[EXTRA]实际正维单位周期lift，cocompact表达配置无穷远；不是动量Hamiltonian的围束。"
+          ],
+          "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
+          "review_status": "NEEDS_HUMAN",
+          "repair_log": [
+            {
+              "date": "2026-10-17",
+              "action": "directive22_printed_corrected_pair",
+              "change": "围束对象改为环面×动量空间上的Hamiltonian幂；无穷远只涉及动量方向。",
+              "corrected_decl": "MD.Ch06.periodicConfiningPrinted_corrected",
+              "website": "未提交；待网站审计"
+            },
+            {
+              "review": "R7",
+              "detail": "仅在审校输出中修正转录/元数据并记录问题；未改工程或原任务，原书数学疑误未静默修正。"
+            }
+          ],
+          "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
+        },
+        "issues": [
+          {
+            "code": "ERRATUM?",
+            "detail": "Printed对正维欧氏lift同时要求C∞、整数平移周期、cocompact处趋∞，确实忠实表达原矛盾资格；hn排除零维真空情况。不应要求构造满足它的势。"
+          }
+        ],
+        "evidence": [
+          {
+            "stage": "A",
+            "location": "R7_PAGES.pdf 附件第29页；原PDF页274，印刷页253",
+            "detail": "逐条比对对应原页文字与公式；重复页另按条目映射核对。普通换行/数学排版转LaTeX不作为语义错误；下列转录差异单列。"
+          },
+          {
+            "stage": "C",
+            "detail": "Printed对正维欧氏lift同时要求C∞、整数平移周期、cocompact处趋∞，确实忠实表达原矛盾资格；hn排除零维真空情况。不应要求构造满足它的势。",
+            "checked_signature": "def periodicConfiningPrinted {n : ℕ} (_hn : 0 < n) (U : (Fin n → ℝ) → ℝ) : Prop :=\n  ContDiff ℝ ∞ U ∧ textbookUnitPeriodicPotential U ∧\n    Tendsto U (cocompact (Fin n → ℝ)) atTop\n",
+            "extra_assumptions_review": [
+              "[EXTRA]实际正维单位周期lift，cocompact表达配置无穷远；不是动量Hamiltonian的围束。"
+            ],
+            "scope": "只读对象/域/量词/前提/全部结论核对；不检查证明，不因sorry判FAIL；依赖仅采用任务文件摘录及附录D1–D54。"
+          },
+          {
+            "stage": "C",
+            "detail": "反例或疑误依据：取任意q及非零整数方向e₁；q+ke₁逃离每个紧集，周期性却给U(q+ke₁)=U(q)。"
+          }
+        ]
+      },
+      "audit": {
+        "lean_decl": "MD.Ch06.periodicConfiningPrinted",
+        "verdict": "NEEDS_HUMAN",
+        "explanation": "Printed对正维欧氏lift同时要求C∞、整数平移周期、cocompact处趋∞，确实忠实表达原矛盾资格；hn排除零维真空情况。不应要求构造满足它的势。",
+        "counterexample": "取任意q及非零整数方向e₁；q+ke₁逃离每个紧集，周期性却给U(q+ke₁)=U(q)。",
+        "suggested_fix": "保留字面定义和勘误；torus位置域只需光滑周期，围束由H对动量给出。"
+      },
+      "subtask": "BATCH37b",
+      "input_sha256": {
+        "Blueprint/Ch06.lean": "0a02a34ec68989a83bccfa5916db5053ecdb58e05667bf21ff3568d9d1f4318e",
+        "blueprint/ch06/ch06_source.json": "45c70ceef21ca168af437de297e2e21e2800b452ab7942654061d4cff9bb5d95",
+        "BATCH37b_PAGES.pdf": "32c1cc542d36732491e090e1be77031b06b750329b4b39d82796678b2dfad77a",
+        "signature_sha256": "01dbab896804a5de1ad50566281f04c73096c364883215a4d3b8eadd4ad3fef7"
+      }
+    },
+    {
+      "source_id": "MD-6.4.4-HamiltonianPower",
+      "json_review": {
+        "status": "APPROVED",
+        "issue_codes": [],
+        "corrected_json": null,
+        "issues": [],
+        "evidence": [
+          {
+            "stage": "A",
+            "location": "R7_PAGES.pdf 附件第30页；原PDF页274，印刷页253",
+            "detail": "逐条比对对应原页文字与公式；重复页另按条目映射核对。普通换行/数学排版转LaTeX不作为语义错误；下列转录差异单列。"
+          },
+          {
+            "stage": "C",
+            "detail": "真实相空间为两个Fin Nc→ℝ之积，Hamiltonian为坐标平方和/2+U；l:ℕ及1≤l表达固定正整数。定义只给候选函数，不断言它无条件满足全部Assumption2。",
+            "checked_signature": "noncomputable def hamiltonianPower {Nc : ℕ} (U : (Fin Nc → ℝ) → ℝ) (l : ℕ) (_hl : 1 ≤ l)\n    (z : textbookLangevinPhase Nc) : ℝ := textbookLangevinHamiltonian U z ^ l\n",
+            "extra_assumptions_review": [
+              "[EXTRA]l≥1编码，真实单位质量Hamiltonian，未把形式jet当真实函数；正性与柱形proper在后续实际桥接证明。"
+            ],
+            "scope": "只读对象/域/量词/前提/全部结论核对；不检查证明，不因sorry判FAIL；依赖仅采用任务文件摘录及附录D1–D54。"
+          }
+        ]
+      },
+      "audit": {
+        "lean_decl": "MD.Ch06.hamiltonianPower",
+        "verdict": "PASS",
+        "explanation": "真实相空间为两个Fin Nc→ℝ之积，Hamiltonian为坐标平方和/2+U；l:ℕ及1≤l表达固定正整数。定义只给候选函数，不断言它无条件满足全部Assumption2。",
+        "counterexample": null,
+        "suggested_fix": null
+      },
+      "subtask": "BATCH37c",
+      "input_sha256": {
+        "Blueprint/Ch06.lean": "0a02a34ec68989a83bccfa5916db5053ecdb58e05667bf21ff3568d9d1f4318e",
+        "blueprint/ch06/ch06_source.json": "45c70ceef21ca168af437de297e2e21e2800b452ab7942654061d4cff9bb5d95",
+        "BATCH37c_PAGES.pdf": "32c1cc542d36732491e090e1be77031b06b750329b4b39d82796678b2dfad77a",
+        "signature_sha256": "5d77d3b497c16221028f9e51cca883a96d66e041c136ebd835684028ceae2003"
+      }
+    },
+    {
+      "source_id": "MD-6.4.4-HamiltonianPowerCancellation",
+      "json_review": {
+        "status": "APPROVED",
+        "issue_codes": [],
+        "corrected_json": null,
+        "issues": [],
+        "evidence": [
+          {
+            "stage": "A",
+            "location": "R7_PAGES.pdf 附件第31页；原PDF页274，印刷页253",
+            "detail": "逐条比对对应原页文字与公式；重复页另按条目映射核对。普通换行/数学排版转LaTeX不作为语义错误；下列转录差异单列。"
+          },
+          {
+            "stage": "C",
+            "detail": "γ=0时真实drift=(p,−∇U)，HasDerivAt对直线z+t drift在t=0给导数0，正是Lie方向导数；不是声称直线轨道的Hamiltonian在所有t常值。全域Differentiable U足以给链式法则，l≥1。",
+            "checked_signature": "theorem hamiltonianPowerCancellation {n : ℕ} (U : (Fin n → ℝ) → ℝ)\n    (hU : Differentiable ℝ U) (l : ℕ) (_hl : 1 ≤ l) (z : textbookLangevinPhase n) :\n  HasDerivAt (fun t : ℝ ↦ textbookLangevinHamiltonianPower U l\n    (z+t • textbookLangevinDrift U 0 z)) 0 0\n",
+            "extra_assumptions_review": [
+              "[EXTRA]实际沿Hamiltonian方向的真实导数为0；γ=0只在此Hamiltonian部分，非把整个物理Langevin摩擦设零。"
+            ],
+            "scope": "只读对象/域/量词/前提/全部结论核对；不检查证明，不因sorry判FAIL；依赖仅采用任务文件摘录及附录D1–D54。"
+          }
+        ]
+      },
+      "audit": {
+        "lean_decl": "MD.Ch06.hamiltonianPowerCancellation",
+        "verdict": "PASS",
+        "explanation": "γ=0时真实drift=(p,−∇U)，HasDerivAt对直线z+t drift在t=0给导数0，正是Lie方向导数；不是声称直线轨道的Hamiltonian在所有t常值。全域Differentiable U足以给链式法则，l≥1。",
+        "counterexample": null,
+        "suggested_fix": null
+      },
+      "subtask": "BATCH37d",
+      "input_sha256": {
+        "Blueprint/Ch06.lean": "0a02a34ec68989a83bccfa5916db5053ecdb58e05667bf21ff3568d9d1f4318e",
+        "blueprint/ch06/ch06_source.json": "45c70ceef21ca168af437de297e2e21e2800b452ab7942654061d4cff9bb5d95",
+        "BATCH37d_PAGES.pdf": "32c1cc542d36732491e090e1be77031b06b750329b4b39d82796678b2dfad77a",
+        "signature_sha256": "ee3531ed7124852db46d75e1eea733d8db7c22fd299a31400ac77ab1aaec4d88"
+      }
+    },
+    {
+      "source_id": "MD-6.4.4-HamiltonianPowerMomentumDerivative",
+      "json_review": {
+        "status": "APPROVED",
+        "issue_codes": [],
+        "corrected_json": null,
+        "issues": [],
+        "evidence": [
+          {
+            "stage": "A",
+            "location": "R7_PAGES.pdf 附件第32页；原PDF页274，印刷页253",
+            "detail": "逐条比对对应原页文字与公式；重复页另按条目映射核对。普通换行/数学排版转LaTeX不作为语义错误；下列转录差异单列。"
+          },
+          {
+            "stage": "C",
+            "detail": "动量曲线(1+t)p在t=0的切向量为p，HasDerivAt给实际p·∇p H^l；第二合取保留2lH^l−2lH^(l−1)U的完整恒等式。U仅在固定q取值，故动量导数不需U光滑，l=1及H=0亦成立。",
+            "checked_signature": "theorem hamiltonianPowerMomentumDerivative : ∀ {n : ℕ} (U : (Fin n → ℝ) → ℝ)\n    (l : ℕ) (z : textbookLangevinPhase n), 1 ≤ l →\n  HasDerivAt (fun t : ℝ ↦ textbookLangevinHamiltonianPower U l (z.1,(1+t) • z.2))\n    ((l : ℝ)*textbookLangevinHamiltonian U z^(l-1)*(∑ i, z.2 i^2)) 0 ∧\n  (l : ℝ)*textbookLangevinHamiltonian U z^(l-1)*(∑ i, z.2 i^2) =\n    2*(l : ℝ)*textbookLangevinHamiltonianPower U l z -\n      2*(l : ℝ)*textbookLangevinHamiltonian U z^(l-1)*U z.1\n",
+            "extra_assumptions_review": [
+              "[EXTRA]真实沿动量p方向的导数及全部两个表达式，不仅登记事先给定的导数值；实际所有坐标平方和。"
+            ],
+            "scope": "只读对象/域/量词/前提/全部结论核对；不检查证明，不因sorry判FAIL；依赖仅采用任务文件摘录及附录D1–D54。"
+          }
+        ]
+      },
+      "audit": {
+        "lean_decl": "MD.Ch06.hamiltonianPowerMomentumDerivative",
+        "verdict": "PASS",
+        "explanation": "动量曲线(1+t)p在t=0的切向量为p，HasDerivAt给实际p·∇p H^l；第二合取保留2lH^l−2lH^(l−1)U的完整恒等式。U仅在固定q取值，故动量导数不需U光滑，l=1及H=0亦成立。",
+        "counterexample": null,
+        "suggested_fix": null
+      },
+      "subtask": "BATCH37e",
+      "input_sha256": {
+        "Blueprint/Ch06.lean": "0a02a34ec68989a83bccfa5916db5053ecdb58e05667bf21ff3568d9d1f4318e",
+        "blueprint/ch06/ch06_source.json": "45c70ceef21ca168af437de297e2e21e2800b452ab7942654061d4cff9bb5d95",
+        "BATCH37e_PAGES.pdf": "32c1cc542d36732491e090e1be77031b06b750329b4b39d82796678b2dfad77a",
+        "signature_sha256": "0d21cdfb4b9b3e9cb7f4e8fd0eb1d5f167a530c08b1f314fcd3a08406e8377c6"
+      }
+    },
+    {
+      "source_id": "MD-6.4.4-HamiltonianPowerMomentumLaplacian",
+      "json_review": {
+        "status": "NEEDS_HUMAN",
+        "issue_codes": [
+          "LEAN_INCOMPLETE_CONCLUSION",
+          "ERRATUM?"
+        ],
+        "corrected_json": {
+          "source_id": "MD-6.4.4-HamiltonianPowerMomentumLaplacian",
+          "kind": "unnumbered_claim",
+          "label": null,
+          "section": "6.4.4",
+          "printed_page": "253",
+          "pdf_page": "274",
+          "statement_latex": "\\[\\Delta_p\\varphi=l(l-1)H^{l-2}\\|p\\|^2+N_clH^{l-1}\\le l(l+N_c-1)H^{l-1}.\\]",
+          "proof_latex": null,
+          "proof_note": "原书未给独立完整证明。",
+          "proof_discussion_latex": null,
+          "context_notation": [],
+          "issues": [
+            {
+              "code": "LEAN_INCOMPLETE_CONCLUSION",
+              "detail": "实际坐标二阶导数和的等式正确，l=1时自然数截断指数乘零系数仍正确；但签名完全遗漏原文随后≤l(l+Nc−1)H^(l−1)结论。[EXTRA]说原不等式另存，却在本条没有独立Printed声明或勘误，不能通过完整结论审校。原不等式本身错误，须保留并判人工，不能静默删去。"
+            },
+            {
+              "code": "ERRATUM?",
+              "detail": "实际坐标二阶导数和的等式正确，l=1时自然数截断指数乘零系数仍正确；但签名完全遗漏原文随后≤l(l+Nc−1)H^(l−1)结论。[EXTRA]说原不等式另存，却在本条没有独立Printed声明或勘误，不能通过完整结论审校。原不等式本身错误，须保留并判人工，不能静默删去。"
+            }
+          ],
+          "lean_decl": "MD.Ch06.hamiltonianPowerMomentumLaplacian",
+          "reusable_proofs": [
+            "MolecularDynamics.textbookLangevinHamiltonianPower_momentum_laplacian"
+          ],
+          "extra_assumptions": [
+            "[EXTRA]完整实际坐标二阶导数和及正确等式，l≥1；原随后不等式单独原样保存，未据等式声称它成立。"
+          ],
+          "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
+          "review_status": "NEEDS_HUMAN",
+          "repair_log": [
+            {
+              "review": "R7",
+              "detail": "仅在审校输出中修正转录/元数据并记录问题；未改工程或原任务，原书数学疑误未静默修正。"
+            }
+          ],
+          "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
+        },
+        "issues": [
+          {
+            "code": "LEAN_INCOMPLETE_CONCLUSION",
+            "detail": "实际坐标二阶导数和的等式正确，l=1时自然数截断指数乘零系数仍正确；但签名完全遗漏原文随后≤l(l+Nc−1)H^(l−1)结论。[EXTRA]说原不等式另存，却在本条没有独立Printed声明或勘误，不能通过完整结论审校。原不等式本身错误，须保留并判人工，不能静默删去。"
+          },
+          {
+            "code": "ERRATUM?",
+            "detail": "实际坐标二阶导数和的等式正确，l=1时自然数截断指数乘零系数仍正确；但签名完全遗漏原文随后≤l(l+Nc−1)H^(l−1)结论。[EXTRA]说原不等式另存，却在本条没有独立Printed声明或勘误，不能通过完整结论审校。原不等式本身错误，须保留并判人工，不能静默删去。"
+          }
+        ],
+        "evidence": [
+          {
+            "stage": "A",
+            "location": "R7_PAGES.pdf 附件第33页；原PDF页274，印刷页253",
+            "detail": "逐条比对对应原页文字与公式；重复页另按条目映射核对。普通换行/数学排版转LaTeX不作为语义错误；下列转录差异单列。"
+          },
+          {
+            "stage": "C",
+            "detail": "实际坐标二阶导数和的等式正确，l=1时自然数截断指数乘零系数仍正确；但签名完全遗漏原文随后≤l(l+Nc−1)H^(l−1)结论。[EXTRA]说原不等式另存，却在本条没有独立Printed声明或勘误，不能通过完整结论审校。原不等式本身错误，须保留并判人工，不能静默删去。",
+            "checked_signature": "theorem hamiltonianPowerMomentumLaplacian {Nc : ℕ}\n    (U : (Fin Nc → ℝ) → ℝ) (l : ℕ) (hl : 1 ≤ l) (z : textbookLangevinPhase Nc) :\n    (∑ i : Fin Nc, deriv (deriv (fun t : ℝ ↦ textbookLangevinHamiltonianPower U l\n      (z + t • ((0 : Fin Nc → ℝ), Pi.single i 1)))) 0) =\n      (l : ℝ) * ((l : ℝ) - 1) * textbookLangevinHamiltonian U z ^ (l - 2) * (∑ i, z.2 i ^ 2) +\n        (Nc : ℝ) * l * textbookLangevinHamiltonian U z ^ (l - 1)\n",
+            "extra_assumptions_review": [
+              "[EXTRA]完整实际坐标二阶导数和及正确等式，l≥1；原随后不等式单独原样保存，未据等式声称它成立。"
+            ],
+            "scope": "只读对象/域/量词/前提/全部结论核对；不检查证明，不因sorry判FAIL；依赖仅采用任务文件摘录及附录D1–D54。"
+          },
+          {
+            "stage": "C",
+            "detail": "反例或疑误依据：取Nc=1,l=2,U≡2,p=3，则H=13/2，实际Δp H²=2p²+2H=31，原右界4H=26，31≤26为假；已满足原U>1光滑周期资格。"
+          }
+        ]
+      },
+      "audit": {
+        "lean_decl": "MD.Ch06.hamiltonianPowerMomentumLaplacian",
+        "verdict": "FAIL",
+        "explanation": "实际坐标二阶导数和的等式正确，l=1时自然数截断指数乘零系数仍正确；但签名完全遗漏原文随后≤l(l+Nc−1)H^(l−1)结论。[EXTRA]说原不等式另存，却在本条没有独立Printed声明或勘误，不能通过完整结论审校。原不等式本身错误，须保留并判人工，不能静默删去。",
+        "counterexample": "取Nc=1,l=2,U≡2,p=3，则H=13/2，实际Δp H²=2p²+2H=31，原右界4H=26，31≤26为假；已满足原U>1光滑周期资格。",
+        "suggested_fix": "增加原不等式Printed条款和[ERRATUM?]；U≥0、H>0时可改界l(2(l−1)+Nc)H^(l−1)，保留现有正确等式。"
+      },
+      "subtask": "BATCH37f",
+      "input_sha256": {
+        "Blueprint/Ch06.lean": "0a02a34ec68989a83bccfa5916db5053ecdb58e05667bf21ff3568d9d1f4318e",
+        "blueprint/ch06/ch06_source.json": "45c70ceef21ca168af437de297e2e21e2800b452ab7942654061d4cff9bb5d95",
+        "BATCH37f_PAGES.pdf": "32c1cc542d36732491e090e1be77031b06b750329b4b39d82796678b2dfad77a",
+        "signature_sha256": "8bce91b5f296b939c59ab42ca15f2c4ffeeb5e6fb4801be92d51fcda541a5a01"
+      }
+    },
+    {
+      "source_id": "MD-6.4.4-LaplacianBoundPrinted",
+      "json_review": {
+        "status": "NEEDS_HUMAN",
+        "issue_codes": [
+          "REQUIRES_HUMAN",
+          "ERRATUM?"
+        ],
+        "corrected_json": null,
+        "issues": [
+          {
+            "code": "REQUIRES_HUMAN",
+            "detail": "原字面上界的量词n、U≥1、l≥1、全部相点及系数l(l+n−1)忠实；原数学断言错误，按要求保留而不把原书错误算作转录失败。"
+          },
+          {
+            "code": "ERRATUM?",
+            "detail": "原Laplacian系数漏2。"
+          }
+        ],
+        "evidence": [
+          {
+            "attachment": "R8_PAGES.pdf",
+            "attachment_pages": [
+              1
+            ],
+            "printed_page": "253",
+            "method": "逐页PDF文本比对；同原书页复用已目视核对的原页图像，图像代表页为附件1、4、12、20、26。",
+            "finding": "已核对所引正文、数学符号、页码及选取范围；差异逐项见issues。"
+          },
+          {
+            "definition_basis": "仅R8_任务.md的实际签名及项目定义摘录（含D1–D69）；标准Mathlib按任务说明采信。",
+            "finding": "原字面上界的量词n、U≥1、l≥1、全部相点及系数l(l+n−1)忠实；原数学断言错误，按要求保留而不把原书错误算作转录失败。"
+          }
+        ]
+      },
+      "audit": {
+        "lean_decl": "MD.Ch06.laplacianBoundPrinted",
+        "verdict": "NEEDS_HUMAN",
+        "explanation": "原字面上界的量词n、U≥1、l≥1、全部相点及系数l(l+n−1)忠实；原数学断言错误，按要求保留而不把原书错误算作转录失败。",
+        "counterexample": "n=1，U≡2，l=2，p=4：H=10，二阶导数52，所称上界40。",
+        "suggested_fix": "保留Printed并标ERRATUM?；修正版系数2l(l−1)+nl。"
+      },
+      "subtask": "BATCH37g",
+      "input_sha256": {
+        "Blueprint/Ch06.lean": "0a02a34ec68989a83bccfa5916db5053ecdb58e05667bf21ff3568d9d1f4318e",
+        "blueprint/ch06/ch06_source.json": "45c70ceef21ca168af437de297e2e21e2800b452ab7942654061d4cff9bb5d95",
+        "BATCH37g_PAGES.pdf": "32c1cc542d36732491e090e1be77031b06b750329b4b39d82796678b2dfad77a",
+        "signature_sha256": "9063b57c1377dcf6bac8bd69e3adf71ae41d07a8f25f8cfe3a61a128cf1efe4a"
+      }
+    },
+    {
+      "source_id": "MD-6.4.4-LaplacianBoundCounterexample",
+      "json_review": {
+        "status": "APPROVED",
+        "issue_codes": [],
+        "corrected_json": null,
+        "issues": [],
+        "evidence": [
+          {
+            "attachment": "R8_PAGES.pdf",
+            "attachment_pages": [
+              2
+            ],
+            "printed_page": "253",
+            "method": "逐页PDF文本比对；同原书页复用已目视核对的原页图像，图像代表页为附件1、4、12、20、26。",
+            "finding": "已核对所引正文、数学符号、页码及选取范围；差异逐项见issues。"
+          },
+          {
+            "definition_basis": "仅R8_任务.md的实际签名及项目定义摘录（含D1–D69）；标准Mathlib按任务说明采信。",
+            "finding": "真实一元二阶导数在p=4等于52，右侧40；n=1、U=2、l=2均由公式固定。[EXTRA]正确说明它仅是反例，不能替代全量词界。"
+          }
+        ]
+      },
+      "audit": {
+        "lean_decl": "MD.Ch06.laplacianBoundCounterexample",
+        "verdict": "PASS",
+        "explanation": "真实一元二阶导数在p=4等于52，右侧40；n=1、U=2、l=2均由公式固定。[EXTRA]正确说明它仅是反例，不能替代全量词界。",
+        "counterexample": null,
+        "suggested_fix": null
+      },
+      "subtask": "BATCH37h",
+      "input_sha256": {
+        "Blueprint/Ch06.lean": "0a02a34ec68989a83bccfa5916db5053ecdb58e05667bf21ff3568d9d1f4318e",
+        "blueprint/ch06/ch06_source.json": "45c70ceef21ca168af437de297e2e21e2800b452ab7942654061d4cff9bb5d95",
+        "BATCH37h_PAGES.pdf": "32c1cc542d36732491e090e1be77031b06b750329b4b39d82796678b2dfad77a",
+        "signature_sha256": "a4f030d6805f8ddcae6d561cb0db235f0f656170c8df3f07c3b60e644645175c"
+      }
+    }
+  ],
+  "merged_from": "ch06_first_merged"
+}

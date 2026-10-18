@@ -1,0 +1,69 @@
+{
+  "eaudit": "EAUDIT04",
+  "subtask": "EAUDIT04c",
+  "source_id": "MD-6.2.2-SelfStratonovichIntegral",
+  "input_sha256": {
+    "Blueprint/Ch06.lean": "4a2a6cb72c1692f80e3537ab1a71701d429a482780a01226c3dc66a2ebb8b44b",
+    "blueprint/ch06/ch06_source.json": "d7f93cd20eb570744c710f3e07a88b319c082e4155812fee91db0920eb05944e",
+    "PAGES.pdf": "4878fc9b8ff20fcd6be1eafd478cdc816f2846206317bfd51e7c84ca688de057",
+    "materials_sha256": "f0988a05ee1378b765735bfdeb8b0c6a19cf58caf3e31a80eb1133b88947cefd"
+  },
+  "paste_sha256": "28c267a53991562bf67ceb1c57a8432b9f3d763d4894c3068b0bae1ceceaee2c",
+  "source_pdf_sha256": "1939a22e5e96ebd2b58b8e91fe2c796f5390b402f267390f473b271c35d2f036",
+  "pdf_page_mapping": [
+    251
+  ],
+  "crop_pixel_identity": "PASS: copied page render or lossless embedded full-page source pixels",
+  "rasterized_pages": {},
+  "source_declarations": [
+    "selfStratonovichIntegral",
+    "selfStratonovichIntegral_corrected"
+  ],
+  "dependency_excerpts": [
+    {
+      "path": "Blueprint/Ch06.lean",
+      "line": 976,
+      "full_name": "MD.Ch06.selfStratonovichIntegral",
+      "kind": "theorem",
+      "excerpt_sha256": "4eedf708bff0ca744c94e799c0f786583b02ce39171e0211be34c26cadbe5a64"
+    },
+    {
+      "path": "Blueprint/Ch06.lean",
+      "line": 984,
+      "full_name": "MD.Ch06.selfStratonovichIntegral_corrected",
+      "kind": "theorem",
+      "excerpt_sha256": "0ef2edb8965d2750c9f2fc306198badc74fb620b2c3cde3c52c536db08233c98"
+    },
+    {
+      "path": "MolecularDynamics/Chapter06/WienerQuadraticVariation.lean",
+      "line": 105,
+      "full_name": "MolecularDynamics.textbookWienerTime",
+      "kind": "def",
+      "excerpt_sha256": "48d2835171e11313e4685ae314d45b6832bfe80118a2ea749cd46bcd88d4633a"
+    },
+    {
+      "path": "MolecularDynamics/Chapter06/WienerQuadraticVariation.lean",
+      "line": 109,
+      "full_name": "MolecularDynamics.textbookWienerIncrement",
+      "kind": "def",
+      "excerpt_sha256": "2bb6bdd9356679811483e775c38e463ed64f8e5a40d85c6888c50785074145e7"
+    },
+    {
+      "path": "MolecularDynamics/Chapter06/WienerStratonovich.lean",
+      "line": 58,
+      "full_name": "MolecularDynamics.textbookWienerMidpointSum",
+      "kind": "def",
+      "excerpt_sha256": "5b96ac270871293f0d8d3f6e3ca3ee4220b4bbdfbf1915e911e5c1cc31397c95"
+    },
+    {
+      "path": "MolecularDynamics/Chapter06/WienerStratonovich.lean",
+      "line": 169,
+      "full_name": "MolecularDynamics.textbookWienerSelfStratonovichIntegral_exists",
+      "kind": "theorem",
+      "excerpt_sha256": "4801648e842ff149d22093867d45e22ad97ca5ecf686fbf5ffb10f098bf506cb"
+    }
+  ],
+  "project_definition_closure": "complete recursive definitions, referenced theorem types, explicit choice and consistency specifications",
+  "website_submitted": false,
+  "total_task_bytes": 81255
+}

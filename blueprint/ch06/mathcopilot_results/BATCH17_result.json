@@ -1,0 +1,220 @@
+{
+  "batch": "BATCH17",
+  "chapter": "ch06",
+  "round": "first-merged",
+  "input_sha256": {
+    "Blueprint/Ch06.lean": "0a02a34ec68989a83bccfa5916db5053ecdb58e05667bf21ff3568d9d1f4318e",
+    "blueprint/ch06/ch06_source.json": "45c70ceef21ca168af437de297e2e21e2800b452ab7942654061d4cff9bb5d95"
+  },
+  "items": [
+    {
+      "source_id": "MD-6.3-BiasedWalk",
+      "json_review": {
+        "status": "CORRECTED",
+        "issue_codes": [
+          "TRANSCRIPTION_OMITTED_CONTEXT"
+        ],
+        "corrected_json": {
+          "source_id": "MD-6.3-BiasedWalk",
+          "kind": "definition",
+          "label": "(6.9)",
+          "section": "6.3",
+          "printed_page": "232",
+          "pdf_page": "253",
+          "statement_latex": "We introduce a pair of smooth functions $a(x,t)$ and $b(x,t)$, where $a$ represents a drift tendency and $b$ the average magnitude of the random jump. In the interval $[n\\delta t,(n+1)\\delta t]$, a step $\\delta X_n=X_{n+1}-X_n$ of the random walk will be given by\n\\[\\delta X_n=a(X_n,t_n)h+b(X_n,t_n)J_n\\delta x.\\tag{6.9}\\]\nwhere the random increment $J_n$ was introduced in Sect. 6.2.1.",
+          "proof_latex": null,
+          "proof_note": "原书未给独立完整证明。",
+          "proof_discussion_latex": null,
+          "context_notation": [],
+          "issues": [
+            {
+              "code": "R4_REVIEW",
+              "detail": "原页在(6.9)后还有where the random increment J_n was introduced in Sect. 6.2.1.，当前摘录未含该资格交代；h确为印刷h。 递归以x0起始；第n步在n*dt取a,b，漂移a*dt，噪声b*sqrt(dt)*J_n，次序和乘法正确。MD包装调用Chapter06Review的旧步值，按D10/D11展开逐步一致。作为确定性递归定义允许任意dt,a,b,J；随机游走解释另需dt>0和Rademacher资格。[EXTRA]将h解释为δt需标为解释而非书中显式等式。"
+            }
+          ],
+          "lean_decl": "MD.Ch06.biasedWalk",
+          "reusable_proofs": [],
+          "extra_assumptions": [
+            "[EXTRA]按正文h=δt及δx=√δt解释真实递归与x0初值；印刷h/δt记号不一致已保留。"
+          ],
+          "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
+          "review_status": "CORRECTED",
+          "repair_log": [],
+          "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
+        },
+        "issues": [
+          {
+            "code": "TRANSCRIPTION_OMITTED_CONTEXT",
+            "detail": "原页在(6.9)后还有where the random increment J_n was introduced in Sect. 6.2.1.，当前摘录未含该资格交代；h确为印刷h。"
+          }
+        ],
+        "evidence": [
+          "A：R4_PAGES.pdf 附件第7页，原PDF 253，印刷页232。原页在(6.9)后还有where the random increment J_n was introduced in Sect. 6.2.1.，当前摘录未含该资格交代；h确为印刷h。",
+          "C：仅按任务所列Lean签名及项目依赖定义作只读语义审校；标准库按标准含义采信，不作工程修改或证明检查。递归以x0起始；第n步在n*dt取a,b，漂移a*dt，噪声b*sqrt(dt)*J_n，次序和乘法正确。MD包装调用Chapter06Review的旧步值，按D10/D11展开逐步一致。作为确定性递归定义允许任意dt,a,b,J；随机游走解释另需dt>0和Rademacher资格。[EXTRA]将h解释为δt需标为解释而非书中显式等式。"
+        ]
+      },
+      "audit": {
+        "lean_decl": "MD.Ch06.biasedWalk",
+        "verdict": "PASS",
+        "explanation": "递归以x0起始；第n步在n*dt取a,b，漂移a*dt，噪声b*sqrt(dt)*J_n，次序和乘法正确。MD包装调用Chapter06Review的旧步值，按D10/D11展开逐步一致。作为确定性递归定义允许任意dt,a,b,J；随机游走解释另需dt>0和Rademacher资格。[EXTRA]将h解释为δt需标为解释而非书中显式等式。",
+        "counterexample": null,
+        "suggested_fix": "按A项恢复逐字原文；本条签名无须修改。"
+      },
+      "subtask": "BATCH17a",
+      "input_sha256": {
+        "Blueprint/Ch06.lean": "0a02a34ec68989a83bccfa5916db5053ecdb58e05667bf21ff3568d9d1f4318e",
+        "blueprint/ch06/ch06_source.json": "45c70ceef21ca168af437de297e2e21e2800b452ab7942654061d4cff9bb5d95",
+        "BATCH17a_PAGES.pdf": "3f9dc3c9f97789c13b49cb34e4b39dc2d9b593213457e5c4a0e22411fecce091",
+        "signature_sha256": "a3966af43eee1d6e4923efad821eca31e4712eb1beb27bf0a0c53b9a66a436df"
+      }
+    },
+    {
+      "source_id": "MD-6.3-BiasedWalkSum",
+      "json_review": {
+        "status": "APPROVED",
+        "issue_codes": [],
+        "corrected_json": null,
+        "issues": [],
+        "evidence": [
+          "A：R4_PAGES.pdf 附件第8页，原PDF 253，印刷页232。原页求和范围0至ν−1、ν=floor(t/δt)、两项和一致。",
+          "C：仅按任务所列Lean签名及项目依赖定义作只读语义审校；标准库按标准含义采信，不作工程修改或证明检查。对任意K∈ℕ、任意sample作递归望远镜求和，K=0也成立。K泛化原ν，不丢失原结论；dt和系数无正性/随机性限制也不影响此代数恒等式。"
+        ]
+      },
+      "audit": {
+        "lean_decl": "MD.Ch06.biasedWalkSum",
+        "verdict": "PASS",
+        "explanation": "对任意K∈ℕ、任意sample作递归望远镜求和，K=0也成立。K泛化原ν，不丢失原结论；dt和系数无正性/随机性限制也不影响此代数恒等式。",
+        "counterexample": null,
+        "suggested_fix": null
+      },
+      "subtask": "BATCH17b",
+      "input_sha256": {
+        "Blueprint/Ch06.lean": "0a02a34ec68989a83bccfa5916db5053ecdb58e05667bf21ff3568d9d1f4318e",
+        "blueprint/ch06/ch06_source.json": "45c70ceef21ca168af437de297e2e21e2800b452ab7942654061d4cff9bb5d95",
+        "BATCH17b_PAGES.pdf": "3f9dc3c9f97789c13b49cb34e4b39dc2d9b593213457e5c4a0e22411fecce091",
+        "signature_sha256": "9ff8a121fe68254162492ebe83606a0a1682ff22922641e7c2078005da842acb"
+      }
+    },
+    {
+      "source_id": "MD-6.3-ScalarSDE",
+      "json_review": {
+        "status": "APPROVED",
+        "issue_codes": [],
+        "corrected_json": null,
+        "issues": [],
+        "evidence": [
+          "A：R4_PAGES.pdf 附件第9页，原PDF 253，印刷页232。原页(6.11)、(6.14)及扩散极限引导句对应；省略中间(6.12)/(6.13)由context说明。",
+          "C：仅按任务所列Lean签名及项目依赖定义作只读语义审校；标准库按标准含义采信，不作工程修改或证明检查。D19保留连续路径和确定初值的共同AE集合；每个T≥0漂移路径区间可积，并以完整残差作严格Ito积分。a,b仍状态和时间依赖。作为方程关系定义可接受；[EXTRA]正确说明未由此证明游走极限，W及适应性资格应由使用环境另给。"
+        ]
+      },
+      "audit": {
+        "lean_decl": "MD.Ch06.strictScalarSDE",
+        "verdict": "PASS",
+        "explanation": "D19保留连续路径和确定初值的共同AE集合；每个T≥0漂移路径区间可积，并以完整残差作严格Ito积分。a,b仍状态和时间依赖。作为方程关系定义可接受；[EXTRA]正确说明未由此证明游走极限，W及适应性资格应由使用环境另给。",
+        "counterexample": null,
+        "suggested_fix": null
+      },
+      "subtask": "BATCH17c",
+      "input_sha256": {
+        "Blueprint/Ch06.lean": "0a02a34ec68989a83bccfa5916db5053ecdb58e05667bf21ff3568d9d1f4318e",
+        "blueprint/ch06/ch06_source.json": "45c70ceef21ca168af437de297e2e21e2800b452ab7942654061d4cff9bb5d95",
+        "BATCH17c_PAGES.pdf": "3f9dc3c9f97789c13b49cb34e4b39dc2d9b593213457e5c4a0e22411fecce091",
+        "signature_sha256": "3181a68f401d8c4cedb55a706f14c191a69578941248ff1b9d0d835a6d78dc2b"
+      }
+    },
+    {
+      "source_id": "MD-6.3-VectorSDE",
+      "json_review": {
+        "status": "CORRECTED",
+        "issue_codes": [
+          "TRANSCRIPTION_OMITTED_INTRO",
+          "MISSING_WIENER_INDEPENDENCE"
+        ],
+        "corrected_json": {
+          "source_id": "MD-6.3-VectorSDE",
+          "kind": "definition",
+          "label": "(6.15)–(6.16)",
+          "section": "6.3",
+          "printed_page": "232–233",
+          "pdf_page": "253–254",
+          "statement_latex": "We mention in passing the extension to systems of SDEs. Let $a(z,t)$ and $b^{(i)}(z,t)$, $i=1,2,\\ldots,r$ be a set of $r+1$ vector fields in $\\mathbb R^m$, and let $W_1,W_2,\\ldots,W_r$ be a collection of $r$ independent Wiener processes, then we may write a system of SDEs in $\\mathbb R^m$ in the form\n\\[dZ=a(Z,t)dt+\\sum_{i=1}^r b^{(i)}(Z,t)dW_i.\\tag{6.15}\\]\nalternatively, if $B$ is the matrix with columns $b^{(1)},b^{(2)},\\ldots,b^{(r)}$, and $W$ represents the $r$-component vector of Wiener processes, then\n\\[dZ=a(Z,t)dt+B(Z,t)dW.\\tag{6.16}\\]",
+          "proof_latex": null,
+          "proof_note": "原书未给独立完整证明。",
+          "proof_discussion_latex": null,
+          "context_notation": [],
+          "issues": [
+            {
+              "code": "R4_REVIEW",
+              "detail": "原页开头为We mention in passing the extension to systems of SDEs.，摘录未包含；两页其余核心公式及矩阵列含义对应。 任意n,r；矩阵B为n×r并依赖X和时间；逐坐标漂移及r项真实积分齐全。但定义完全不要求W的坐标为Wiener，也不要求独立，且本条没有给出补充资格声明。故仅编码方程关系，未覆盖原文完整对象域“r independent Wiener processes”。"
+            }
+          ],
+          "lean_decl": "MD.Ch06.strictVectorSDE",
+          "reusable_proofs": [],
+          "extra_assumptions": [
+            "[EXTRA]完整状态及时间依赖矩阵B(Z,t)，每坐标真实严格Ito积分与漂移；没有缩成常矩阵加性特例。"
+          ],
+          "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
+          "review_status": "CORRECTED",
+          "repair_log": [],
+          "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
+        },
+        "issues": [
+          {
+            "code": "TRANSCRIPTION_OMITTED_INTRO",
+            "detail": "原页开头为We mention in passing the extension to systems of SDEs.，摘录未包含；两页其余核心公式及矩阵列含义对应。"
+          },
+          {
+            "code": "MISSING_WIENER_INDEPENDENCE",
+            "detail": "任意n,r；矩阵B为n×r并依赖X和时间；逐坐标漂移及r项真实积分齐全。但定义完全不要求W的坐标为Wiener，也不要求独立，且本条没有给出补充资格声明。故仅编码方程关系，未覆盖原文完整对象域“r independent Wiener processes”。"
+          }
+        ],
+        "evidence": [
+          "A：R4_PAGES.pdf 附件第10–11页，原PDF 253–254，印刷页232–233。原页开头为We mention in passing the extension to systems of SDEs.，摘录未包含；两页其余核心公式及矩阵列含义对应。",
+          "C：仅按任务所列Lean签名及项目依赖定义作只读语义审校；标准库按标准含义采信，不作工程修改或证明检查。任意n,r；矩阵B为n×r并依赖X和时间；逐坐标漂移及r项真实积分齐全。但定义完全不要求W的坐标为Wiener，也不要求独立，且本条没有给出补充资格声明。故仅编码方程关系，未覆盖原文完整对象域“r independent Wiener processes”。"
+        ]
+      },
+      "audit": {
+        "lean_decl": "MD.Ch06.strictVectorSDE",
+        "verdict": "FAIL",
+        "explanation": "任意n,r；矩阵B为n×r并依赖X和时间；逐坐标漂移及r项真实积分齐全。但定义完全不要求W的坐标为Wiener，也不要求独立，且本条没有给出补充资格声明。故仅编码方程关系，未覆盖原文完整对象域“r independent Wiener processes”。",
+        "counterexample": "P取单点概率空间、W≡0、X≡x0、a≡0、B任意非零常矩阵，则所有有限和及残差为0，定义成立，但W坐标不是Wiener。也可令两个驱动相同的真实W，定义无从排除完全相关坐标。",
+        "suggested_fix": "加入每坐标IsPreBrownianReal及W各坐标随机路径的独立性资格（不能只要同一时刻坐标独立），或把定义明确标为给定独立W环境下的纯方程关系并附完整资格声明。"
+      },
+      "subtask": "BATCH17d",
+      "input_sha256": {
+        "Blueprint/Ch06.lean": "0a02a34ec68989a83bccfa5916db5053ecdb58e05667bf21ff3568d9d1f4318e",
+        "blueprint/ch06/ch06_source.json": "45c70ceef21ca168af437de297e2e21e2800b452ab7942654061d4cff9bb5d95",
+        "BATCH17d_PAGES.pdf": "ab71050f0df25960bf74fd70539231cbb8ae25193b0c11539f1baeae216f76e5",
+        "signature_sha256": "de954d94c206beaf61e7cae5c6464d63a920b3847d1b979c3b508aeffdd47016"
+      }
+    },
+    {
+      "source_id": "MD-6.3-BiasedWalkDiffusion",
+      "json_review": {
+        "status": "APPROVED",
+        "issue_codes": [],
+        "corrected_json": null,
+        "issues": [],
+        "evidence": [
+          "A：R4_PAGES.pdf 附件第12页，原PDF 253，印刷页232。原页扩散极限段及(6.11)对应，去掉编号不改变内容。",
+          "C：仅按任务所列Lean签名及项目依赖定义作只读语义审校；标准库按标准含义采信，不作工程修改或证明检查。rademacherJumps含概率测度、独立、可测、±1、均值零。W另有PreBrownian和AE连续资格；a,b对(x,t)全局Lipschitz是明示[EXTRA]。结论含全时间严格标量SDE解、[0,T]连续路径版本、dt=T/K的线性插值及所有有界连续路径泛函积分收敛；不是仅参数或单时边际收敛。T>0且K=0不约束无碍atTop。J与W无需互相独立，因为结论只作分布极限。"
+        ]
+      },
+      "audit": {
+        "lean_decl": "MD.Ch06.biasedWalkDiffusion",
+        "verdict": "PASS",
+        "explanation": "rademacherJumps含概率测度、独立、可测、±1、均值零。W另有PreBrownian和AE连续资格；a,b对(x,t)全局Lipschitz是明示[EXTRA]。结论含全时间严格标量SDE解、[0,T]连续路径版本、dt=T/K的线性插值及所有有界连续路径泛函积分收敛；不是仅参数或单时边际收敛。T>0且K=0不约束无碍atTop。J与W无需互相独立，因为结论只作分布极限。",
+        "counterexample": null,
+        "suggested_fix": null
+      },
+      "subtask": "BATCH17e",
+      "input_sha256": {
+        "Blueprint/Ch06.lean": "0a02a34ec68989a83bccfa5916db5053ecdb58e05667bf21ff3568d9d1f4318e",
+        "blueprint/ch06/ch06_source.json": "45c70ceef21ca168af437de297e2e21e2800b452ab7942654061d4cff9bb5d95",
+        "BATCH17e_PAGES.pdf": "3f9dc3c9f97789c13b49cb34e4b39dc2d9b593213457e5c4a0e22411fecce091",
+        "signature_sha256": "3bfe4e5032778085ca480b4bf93c38d9ded36c5640775f92355f245e2fa7b320"
+      }
+    }
+  ],
+  "merged_from": "ch06_first_merged"
+}

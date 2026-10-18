@@ -1,0 +1,30 @@
+--- before
++++ after
+@@ -1111,12 +1111,16 @@
+ 
+ /-- source_id: MD-6.3.1-TimeItoFormula · (6.18) · §6.3.1 · 印刷p.234 / PDFp.255
+ [EXTRA] [EXTRA]Lean保留完整积分陈述，以φ_t dt的正确时间积分表达；原无dt的字面式仍在逐字JSON，不宣称字面式已证。
+-[ERRATUM?] 印刷φ_t(X,t)项漏dt，字面微分式不具一致类型；补dt需要网站审计裁定。 -/
++[ERRATUM?] 印刷φ_t(X,t)项漏dt，字面微分式不具一致类型；补dt需要网站审计裁定。 [EXTRA] 25号：补X联合可测及自然过滤适应、被积过程全部网格和L²与局部均方时间Hölder资格。仅时间积分平方可积的旧签名前提不足且有网站反例；新签名不假设所求积分公式/极限，仍缺一般Itô理论，不证明。Time版与_corrected同步，漏dt原文形式单列保留。
++-/
+ theorem timeItoFormula :
+   ∀ {Ω : Type*} [MeasurableSpace Ω] (P : Measure Ω)
+     (W X : ℝ → Ω → ℝ) (a b : ℝ → ℝ → ℝ) (x0 : ℝ) (φ : ℝ×ℝ → ℝ),
+   IsPreBrownianReal (fun t sample ↦ W t sample) P → strictScalarSDE P W X a b x0 → ContDiff ℝ 2 φ →
+   MolecularDynamics.Chapter06Review.adaptedSquareIntegrand P W (fun s sample ↦ fderiv ℝ φ (X s sample,s) (1,0)*b (X s sample) s) →
++  Measurable (Function.uncurry X) →
++  (∀ t, 0 ≤ t → @Measurable Ω ℝ (naturalHistory25 W t) inferInstance (X t)) →
++  gridItoQualification25 P W (fun s sample ↦ fderiv ℝ φ (X s sample,s) (1,0)*b (X s sample) s) →
+   ∀ T : ℝ, 0 ≤ T → strictItoIntegral P W
+     (fun s sample ↦ fderiv ℝ φ (X s sample,s) (1,0)*b (X s sample) s) T
+     (fun sample ↦ φ (X T sample,T)-φ (x0,0) - ∫ s in 0..T,
+@@ -1130,6 +1134,9 @@
+     (W X : ℝ → Ω → ℝ) (a b : ℝ → ℝ → ℝ) (x0 : ℝ) (φ : ℝ×ℝ → ℝ),
+   IsPreBrownianReal (fun t sample ↦ W t sample) P → strictScalarSDE P W X a b x0 → ContDiff ℝ 2 φ →
+   MolecularDynamics.Chapter06Review.adaptedSquareIntegrand P W (fun s sample ↦ fderiv ℝ φ (X s sample,s) (1,0)*b (X s sample) s) →
++  Measurable (Function.uncurry X) →
++  (∀ t, 0 ≤ t → @Measurable Ω ℝ (naturalHistory25 W t) inferInstance (X t)) →
++  gridItoQualification25 P W (fun s sample ↦ fderiv ℝ φ (X s sample,s) (1,0)*b (X s sample) s) →
+   ∀ T : ℝ, 0 ≤ T → strictItoIntegral P W
+     (fun s sample ↦ fderiv ℝ φ (X s sample,s) (1,0)*b (X s sample) s) T
+     (fun sample ↦ φ (X T sample,T)-φ (x0,0) - ∫ s in 0..T,

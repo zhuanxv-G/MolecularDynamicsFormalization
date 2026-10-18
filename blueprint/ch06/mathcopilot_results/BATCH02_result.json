@@ -1,0 +1,288 @@
+{
+  "batch": "BATCH02",
+  "chapter": "ch06",
+  "round": "first-merged",
+  "input_sha256": {
+    "Blueprint/Ch06.lean": "0a02a34ec68989a83bccfa5916db5053ecdb58e05667bf21ff3568d9d1f4318e",
+    "blueprint/ch06/ch06_source.json": "45c70ceef21ca168af437de297e2e21e2800b452ab7942654061d4cff9bb5d95"
+  },
+  "items": [
+    {
+      "source_id": "MD-6.1.2-Entropy",
+      "json_review": {
+        "status": "CORRECTED",
+        "issue_codes": [
+          "A_DEFINITION_SYMBOL"
+        ],
+        "corrected_json": {
+          "source_id": "MD-6.1.2-Entropy",
+          "kind": "definition",
+          "label": "(6.1)",
+          "section": "6.1.2",
+          "printed_page": "214",
+          "pdf_page": "235",
+          "statement_latex": "In terms of a microcanonical system, the entropy is enshrined in the famous formula that appears on Boltzmann's tombstone:\n\\[S:=k_B\\ln Z.\\tag{6.1}\\]",
+          "proof_latex": null,
+          "proof_note": "原书未给独立完整证明。",
+          "proof_discussion_latex": null,
+          "context_notation": [
+            "kB约1.38×10⁻²³ J/K为物理常量记号；Z>0时log具有熵解释；热力学第二定律为物理建模原则，非本条Lean结论。"
+          ],
+          "issues": [],
+          "lean_decl": "MD.Ch06.entropy",
+          "reusable_proofs": [],
+          "extra_assumptions": [],
+          "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
+          "review_status": "CORRECTED",
+          "repair_log": [
+            {
+              "date": "2026-10-17",
+              "action": "R1_readonly_source_review",
+              "change": "将原页(6.1)的S:=k_B ln Z恢复为定义号；仅修订誊录符号，不改数学定义。",
+              "scope": "仅修订本审校输出内的原文JSON；未修改工程或Lean声明。"
+            }
+          ],
+          "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
+        },
+        "issues": [
+          {
+            "code": "A_DEFINITION_SYMBOL",
+            "phase": "A",
+            "field": "statement_latex",
+            "detail": "将原页(6.1)的S:=k_B ln Z恢复为定义号；仅修订誊录符号，不改数学定义。"
+          }
+        ],
+        "evidence": [
+          "A：实际渲染并核对 R1_PAGES.pdf 附件第2页；原PDF第235页，印刷第214页。英文引句及式号(6.1)一致；原页S与k_B ln Z之间印的是定义号“:=”，输入转成了普通等号。",
+          "C：依据 R1_任务.md 本条实际Lean签名及本任务附录，按标准Mathlib数学含义只读核对；未运行Lean编译、未补证明，未把sorry或repair_log中的未提供声明当作审校结果。",
+          "项目定义核对：MD.Ch06.entropy (kB) (Z) (E)=kB*Real.log (Z E)。"
+        ]
+      },
+      "audit": {
+        "lean_decl": "MD.Ch06.entropy",
+        "verdict": "PASS",
+        "explanation": "kB∈ℝ、Z:ℝ→ℝ及能量E∈ℝ的定义值恰为kB*log(Z E)，与Boltzmann熵定义一致。把Z写成能量函数没有改变固定能量处的公式。Z>0及物理常量的适用说明已经列出；定义自身不证明正性、物理第二定律或极值。",
+        "counterexample": null,
+        "suggested_fix": null
+      },
+      "subtask": "BATCH02a",
+      "input_sha256": {
+        "Blueprint/Ch06.lean": "0a02a34ec68989a83bccfa5916db5053ecdb58e05667bf21ff3568d9d1f4318e",
+        "blueprint/ch06/ch06_source.json": "45c70ceef21ca168af437de297e2e21e2800b452ab7942654061d4cff9bb5d95",
+        "BATCH02a_PAGES.pdf": "ab4009c74e2818ed3f377e814cdf6baf3cc3d8cc9ae7cb656d9af28471293507",
+        "signature_sha256": "55acd3f7331b28a70fefcf9b06e22dbe6c51c26f9efaeb3f094b0343053516f7"
+      }
+    },
+    {
+      "source_id": "MD-6.1.2-IndependentPartition",
+      "json_review": {
+        "status": "NEEDS_HUMAN",
+        "issue_codes": [
+          "C_PROJECT_DEFINITION_MISSING"
+        ],
+        "corrected_json": null,
+        "issues": [
+          {
+            "code": "C_PROJECT_DEFINITION_MISSING",
+            "phase": "C",
+            "field": "Chapter05Review.regularEnergy",
+            "detail": "R1_任务.md全篇与附录未提供regularEnergy定义；这是签名中的两个项目自定义前提，无法审定其实际内容及是否隐藏额外限制。"
+          }
+        ],
+        "evidence": [
+          "A：实际渲染并核对 R1_PAGES.pdf 附件第3页；原PDF第236页，印刷第215页。“分别具有能量E_A、E_B”的英文和Z(E_A,E_B)=Z_A(E_A)×Z_B(E_B)逐项相符；未误写成固定总能量配分函数的乘积。",
+          "C：依据 R1_任务.md 本条实际Lean签名及本任务附录，按标准Mathlib数学含义只读核对；未运行Lean编译、未补证明，未把sorry或repair_log中的未提供声明当作审校结果。",
+          "项目定义核对：microRaw可由第1条定义链核实；regularEnergy缺失，未借用/workspace旧工程补足。"
+        ]
+      },
+      "audit": {
+        "lean_decl": "MD.Ch06.independentPartition",
+        "verdict": "NEEDS_HUMAN",
+        "explanation": "签名量化n,m、HA、HB及EA,EB，并以两个regularEnergy为前提；μA、μB确为第1条所给microRaw，结论是乘积测度在univ上的质量等于两个总质量之积，符合已标[EXTRA]的分别固定能量独立乘积模型。但本任务没有摘录Chapter05Review.regularEnergy的定义，无法完成“全部前提”与物理正则能量含义的核对。质量乘法这一结论本身不依赖该谓词的内容；本条保留待人工补齐上下文，不臆造其定义。",
+        "counterexample": null,
+        "suggested_fix": "提供本次哈希对应的MolecularDynamics.Chapter05Review.regularEnergy完整定义后再审；若只是独立乘积测度的全空间质量恒等式，可另行讨论是否删去冗余正则性前提。本轮不修改声明。"
+      },
+      "subtask": "BATCH02b",
+      "input_sha256": {
+        "Blueprint/Ch06.lean": "0a02a34ec68989a83bccfa5916db5053ecdb58e05667bf21ff3568d9d1f4318e",
+        "blueprint/ch06/ch06_source.json": "45c70ceef21ca168af437de297e2e21e2800b452ab7942654061d4cff9bb5d95",
+        "BATCH02b_PAGES.pdf": "c691f971d3f41e5c4b4a884edb4a606e52a55a2f4f96391b76cf59411d27bc52",
+        "signature_sha256": "7264bc0555206c98d6b80e350d4d1e91042f22c014177ff03bca2ec61f744575"
+      }
+    },
+    {
+      "source_id": "MD-6.1.2-EntropyAdditivity",
+      "json_review": {
+        "status": "APPROVED",
+        "issue_codes": [],
+        "corrected_json": null,
+        "issues": [],
+        "evidence": [
+          "A：实际渲染并核对 R1_PAGES.pdf 附件第4页；原PDF第236页，印刷第215页。原页先以E−E_A替换E_B，再写ln(ZA·ZB)=ln ZA+ln ZB；摘录忠实。",
+          "C：依据 R1_任务.md 本条实际Lean签名及本任务附录，按标准Mathlib数学含义只读核对；未运行Lean编译、未补证明，未把sorry或repair_log中的未提供声明当作审校结果。"
+        ]
+      },
+      "audit": {
+        "lean_decl": "MD.Ch06.entropyAdditivity",
+        "verdict": "PASS",
+        "explanation": "量化任意实kB,ZA,ZB，并明确要求ZA,ZB>0；结论完整保留kB log(ZA ZB)=kB log ZA+kB log ZB，两边加号及乘法因子正确。把能量处的两个partition值作为实参数是合法抽象。取kB=1就是原页对数式；任意kB给出已标[EXTRA]的熵加法，没有添加独立性结论或偷换固定总能量的积分。",
+        "counterexample": null,
+        "suggested_fix": null
+      },
+      "subtask": "BATCH02c",
+      "input_sha256": {
+        "Blueprint/Ch06.lean": "0a02a34ec68989a83bccfa5916db5053ecdb58e05667bf21ff3568d9d1f4318e",
+        "blueprint/ch06/ch06_source.json": "45c70ceef21ca168af437de297e2e21e2800b452ab7942654061d4cff9bb5d95",
+        "BATCH02c_PAGES.pdf": "c691f971d3f41e5c4b4a884edb4a606e52a55a2f4f96391b76cf59411d27bc52",
+        "signature_sha256": "2835600fc59f2b99240be5bc630a99fd162527ed0f6bf2a1c62a9fbf08eda407"
+      }
+    },
+    {
+      "source_id": "MD-6.1.2-EntropyEquilibrium",
+      "json_review": {
+        "status": "APPROVED",
+        "issue_codes": [],
+        "corrected_json": null,
+        "issues": [],
+        "evidence": [
+          "A：实际渲染并核对 R1_PAGES.pdf 附件第5页；原PDF第236页，印刷第215页。局部最大能量位置的一阶驻点式以及S_A、S_B能量导数相等均见原页，英文摘录相符。",
+          "C：依据 R1_任务.md 本条实际Lean签名及本任务附录，按标准Mathlib数学含义只读核对；未运行Lean编译、未补证明，未把sorry或repair_log中的未提供声明当作审校结果。"
+        ]
+      },
+      "audit": {
+        "lean_decl": "MD.Ch06.entropyEquilibrium",
+        "verdict": "PASS",
+        "explanation": "SA,SB:ℝ→ℝ，E为固定总能量、e为A的能量；在e及E−e处可微，且x↦SA x+SB(E−x)在e有局部最大，是已明示的[EXTRA]内点情形。其导数为SA′(e)−SB′(E−e)，故结论SA′(e)=SB′(E−e)正确，链式求导负号没有遗漏。没有把该一阶必要条件表述成平衡存在、最大值充分性或热力学定律。",
+        "counterexample": null,
+        "suggested_fix": null
+      },
+      "subtask": "BATCH02d",
+      "input_sha256": {
+        "Blueprint/Ch06.lean": "0a02a34ec68989a83bccfa5916db5053ecdb58e05667bf21ff3568d9d1f4318e",
+        "blueprint/ch06/ch06_source.json": "45c70ceef21ca168af437de297e2e21e2800b452ab7942654061d4cff9bb5d95",
+        "BATCH02d_PAGES.pdf": "c691f971d3f41e5c4b4a884edb4a606e52a55a2f4f96391b76cf59411d27bc52",
+        "signature_sha256": "c04774a21064666309b55e90af4ada1be8f4d708f3926d5711510a03c17e6c8c"
+      }
+    },
+    {
+      "source_id": "MD-6.1.2-Temperature",
+      "json_review": {
+        "status": "APPROVED",
+        "issue_codes": [],
+        "corrected_json": null,
+        "issues": [],
+        "evidence": [
+          "A：实际渲染并核对 R1_PAGES.pdf 附件第6页；原PDF第236页，印刷第215页。印刷页215页末明确把1/T定义为∂S/∂E，输入的句子及定义号相符。",
+          "C：依据 R1_任务.md 本条实际Lean签名及本任务附录，按标准Mathlib数学含义只读核对；未运行Lean编译、未补证明，未把sorry或repair_log中的未提供声明当作审校结果。",
+          "项目定义核对：MolecularDynamics.Chapter06Review.inverseTemperature S E=deriv S E；没有将其误认作(kB*T)⁻¹。"
+        ]
+      },
+      "audit": {
+        "lean_decl": "MD.Ch06.temperature",
+        "verdict": "PASS",
+        "explanation": "S:ℝ→ℝ及实能量E的temperature定义为inverseTemperature S E的倒数；展开项目定义即(deriv S E)⁻¹，方向正确。固定其他物理参数后单变量导数承载原偏导。Lean逆元与deriv均为总定义，此条不宣称S必可微或T必正；context_notation已限定实际导数及非零情形下的温度解释。",
+        "counterexample": null,
+        "suggested_fix": null
+      },
+      "subtask": "BATCH02e",
+      "input_sha256": {
+        "Blueprint/Ch06.lean": "0a02a34ec68989a83bccfa5916db5053ecdb58e05667bf21ff3568d9d1f4318e",
+        "blueprint/ch06/ch06_source.json": "45c70ceef21ca168af437de297e2e21e2800b452ab7942654061d4cff9bb5d95",
+        "BATCH02e_PAGES.pdf": "c691f971d3f41e5c4b4a884edb4a606e52a55a2f4f96391b76cf59411d27bc52",
+        "signature_sha256": "a1a128e8825ee065b962fd60de0859770659381a01e57af147da17fd7164b08b"
+      }
+    },
+    {
+      "source_id": "MD-6.1.2-InverseThermal",
+      "json_review": {
+        "status": "APPROVED",
+        "issue_codes": [],
+        "corrected_json": null,
+        "issues": [],
+        "evidence": [
+          "A：实际渲染并核对 R1_PAGES.pdf 附件第7页；原PDF第237页，印刷第216页。式(6.2)确为两个log partition导数等于1/(k_B T)=:β，并有inverse or reciprocal temperature命名句。",
+          "C：依据 R1_任务.md 本条实际Lean签名及本任务附录，按标准Mathlib数学含义只读核对；未运行Lean编译、未补证明，未把sorry或repair_log中的未提供声明当作审校结果。"
+        ]
+      },
+      "audit": {
+        "lean_decl": "MD.Ch06.inverseThermal",
+        "verdict": "PASS",
+        "explanation": "inverseThermal量化kB,T∈ℝ，值为(kB*T)⁻¹，恰好形式化β的定义。该定义自身没有A、B两个系统，不能被计作式(6.2)整条平衡导数关系的证明；输入context_notation已明确将导数关系分给EntropyEquilibrium及LogTemperature，并注明物理解释要求kB,T>0，因此定义范围匹配。",
+        "counterexample": null,
+        "suggested_fix": null
+      },
+      "subtask": "BATCH02f",
+      "input_sha256": {
+        "Blueprint/Ch06.lean": "0a02a34ec68989a83bccfa5916db5053ecdb58e05667bf21ff3568d9d1f4318e",
+        "blueprint/ch06/ch06_source.json": "45c70ceef21ca168af437de297e2e21e2800b452ab7942654061d4cff9bb5d95",
+        "BATCH02f_PAGES.pdf": "69c554dfcd1f85c62823a7528d4b1d31237d1aea61f4e65233aefedb10f51ab4",
+        "signature_sha256": "c8ec5833dcf28e251472d0b18f3ab3f9cb6ca1d5dfec7c5ebd19472385a89d7e"
+      }
+    },
+    {
+      "source_id": "MD-6.1.2-BathTaylor",
+      "json_review": {
+        "status": "NEEDS_HUMAN",
+        "issue_codes": [
+          "ERRATUM?"
+        ],
+        "corrected_json": null,
+        "issues": [
+          {
+            "code": "ERRATUM?",
+            "phase": "A/C",
+            "field": "statement_latex; bathBoltzmannPrinted第二合取结论",
+            "detail": "从S′(energy)=kBβ不能推出整个区间内S′恒定；“s≪E”只能支撑受控近似，不能推出对所有s的精确指数恒等式。原页脚注3及原有ERRATUM?标注保留。"
+          }
+        ],
+        "evidence": [
+          "A：实际渲染并核对 R1_PAGES.pdf 附件第8页；原PDF第237页，印刷第216页。原页确实从均值定理中的S_B′(ξ)直接代入1/T得到精确比例关系；脚注3承认这段推导存在不精确处。原文版未擅自改成近似式。",
+          "C：依据 R1_任务.md 本条实际Lean签名及本任务附录，按标准Mathlib数学含义只读核对；未运行Lean编译、未补证明，未把sorry或repair_log中的未提供声明当作审校结果。"
+        ]
+      },
+      "audit": {
+        "lean_decl": "MD.Ch06.bathBoltzmannPrinted",
+        "verdict": "NEEDS_HUMAN",
+        "explanation": "Printed声明量化任意C²实熵S及正energy,kB，只在energy处假设S′=kBβ。第一合取分量对任意s>0给闭区间中值点，数学上成立；第二分量却对所有0≤s≤energy断言精确指数比，单点斜率不足以推出。它忠实暴露原文从ξ到固定温度的缺口，按任务要求保留字面版并判NEEDS_HUMAN，不因命题一般为假而将忠实Printed版判签名FAIL。repair_log仅提到_corrected声明名称，没有提供其签名，本条未审定该修正版。",
+        "counterexample": "令S(x)=x²，energy=kB=1，β=2。全部显式前提成立，且均值定理分量成立；取s=1/2，左边指数比为exp(−3/4)，右边为exp(−1)，不相等。一般0<s≤1时两边相差exp(s²)，故任意小正s也不能使精确式成立。",
+        "suggested_fix": "保留Printed原文与ERRATUM?；另提供独立修正版的完整签名：可要求相关区间上S′≡kBβ，或将指数中的误差以C·s²控制。第11、12条分别是合法的近似及恒斜率处理，不能据此声称本Printed命题成立。"
+      },
+      "subtask": "BATCH02g",
+      "input_sha256": {
+        "Blueprint/Ch06.lean": "0a02a34ec68989a83bccfa5916db5053ecdb58e05667bf21ff3568d9d1f4318e",
+        "blueprint/ch06/ch06_source.json": "45c70ceef21ca168af437de297e2e21e2800b452ab7942654061d4cff9bb5d95",
+        "BATCH02g_PAGES.pdf": "69c554dfcd1f85c62823a7528d4b1d31237d1aea61f4e65233aefedb10f51ab4",
+        "signature_sha256": "2dae18dcb1f95add45a1d7248a4268b99c94882c87fadd73aa6b96454fa72f2b"
+      }
+    },
+    {
+      "source_id": "MD-6.1.2-LogTemperature",
+      "json_review": {
+        "status": "APPROVED",
+        "issue_codes": [],
+        "corrected_json": null,
+        "issues": [],
+        "evidence": [
+          "A：实际渲染并核对 R1_PAGES.pdf 附件第9–10页；原PDF第236–237页，印刷第215–216页。附件9页末的温度定义与附件10页首式(6.2)连续衔接；跨页内容、等式顺序及β定义均核对一致。",
+          "C：依据 R1_任务.md 本条实际Lean签名及本任务附录，按标准Mathlib数学含义只读核对；未运行Lean编译、未补证明，未把sorry或repair_log中的未提供声明当作审校结果。",
+          "项目定义核对：Chapter06Review.entropy=kB*log(Z E)，inverseTemperature=deriv；未使用同名Gibbs或小写e等无关定义。"
+        ]
+      },
+      "audit": {
+        "lean_decl": "MD.Ch06.logTemperature",
+        "verdict": "PASS",
+        "explanation": "量化实kB、函数Z及实能量；要求Z在该点可微且值为正。第一结论是(log∘Z)′=Z′/Z，第二结论展开项目定义后为(kB log Z)′=kB Z′/Z，均正确，kB不必非零即可成立。按已标[EXTRA]，这里只是单系统的实际微分关系；跨系统等温关系由第5条处理，显式的T、β及1/(kB T)关系不在本签名结论中，不能把本条单独计为完整式(6.2)已证。",
+        "counterexample": null,
+        "suggested_fix": null
+      },
+      "subtask": "BATCH02h",
+      "input_sha256": {
+        "Blueprint/Ch06.lean": "0a02a34ec68989a83bccfa5916db5053ecdb58e05667bf21ff3568d9d1f4318e",
+        "blueprint/ch06/ch06_source.json": "45c70ceef21ca168af437de297e2e21e2800b452ab7942654061d4cff9bb5d95",
+        "BATCH02h_PAGES.pdf": "7ebdaa97956592ce9fcac3b257fdbeed92aff471fd16baf71cfa7dea68483e85",
+        "signature_sha256": "c72cad4e7ccd81899d4312fabfbb3b39e65ed74298124a597851cf4b4f5565f2"
+      }
+    }
+  ],
+  "merged_from": "ch06_first_merged"
+}

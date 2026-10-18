@@ -1,0 +1,237 @@
+{
+  "batch": "BATCH18",
+  "chapter": "ch06",
+  "round": "first-merged",
+  "input_sha256": {
+    "Blueprint/Ch06.lean": "0a02a34ec68989a83bccfa5916db5053ecdb58e05667bf21ff3568d9d1f4318e",
+    "blueprint/ch06/ch06_source.json": "45c70ceef21ca168af437de297e2e21e2800b452ab7942654061d4cff9bb5d95"
+  },
+  "items": [
+    {
+      "source_id": "MD-6.3.1-ScalarItoFormula",
+      "json_review": {
+        "status": "NEEDS_HUMAN",
+        "issue_codes": [
+          "TRANSCRIPTION_PHI_NOTATION",
+          "STRICT_L2_LEFT_SUM_GAP"
+        ],
+        "corrected_json": {
+          "source_id": "MD-6.3.1-ScalarItoFormula",
+          "kind": "unnumbered_claim",
+          "label": "(6.17)",
+          "section": "6.3.1",
+          "printed_page": "233",
+          "pdf_page": "254",
+          "statement_latex": "Let $\\phi(\\cdot)$ be any continuously twice differentiable function and let $X_n\\in\\mathbb R$ represent the state of a biased random walk as considered in Sect. 6.3, i.e., with state $X_{n+1}=X_n+a(X_n,n\\delta t)\\delta t+b(X_n,n\\delta t)J_n\\delta x$.\n\\[d\\phi(X)=\\phi'(X)(a(X,t)dt+b(X,t)dW)+\\tfrac12\\phi''(X)b(X,t)^2dt.\\tag{6.17}\\]",
+          "proof_latex": "Let $\\phi_n=\\phi(X_n)$, then Taylor's theorem gives\n\\[\\delta\\phi\\stackrel{\\rm def}=\\phi_{n+1}-\\phi_n=\\phi'(X_n)\\delta X_n+\\tfrac12\\phi''(X_n)\\delta X_n^2+o(\\delta X_n^2)\n=\\phi'(X_n)(a(X_n,n\\delta t)\\delta t+b(X_n,n\\delta t)J_n\\delta x)\n+\\tfrac12\\phi''(X_n)(a(X_n,n\\delta t)\\delta t+b(X_n,n\\delta t)J_n\\delta x)^2+o(\\delta X_n^2).\\]\nNow we expand the 2nd order term and, working in the diffusion limit, recognize that $\\delta x^2\\approx\\delta t$, thus we have\n\\[\\delta\\phi=\\phi'(X_n)(a(X_n,n\\delta t)\\delta t+b(X_n,n\\delta t)J_n\\delta x)+\\tfrac12\\phi''(X_n)b(X_n,n\\delta t)^2\\delta t+O(\\delta t^{3/2}).\\]\nPassing to the limit, this leads to the SDE.",
+          "proof_note": "原启发证明完整保留；C²仅给o(δt)，O(δt³⁄²)需要更高阶资格，另条疑误。",
+          "proof_discussion_latex": null,
+          "context_notation": [],
+          "issues": [
+            {
+              "code": "R4_REVIEW",
+              "detail": "原页为Let φ(·) be any continuously twice differentiable function；当前写φ(x)。Itô公式本身正确，但此处强制所有有限和L²的技术版本有额外缺口。 完整漂移φ′a+φ″b²/2和噪声φ′b均正确，C²φ、C¹a,b及适应平方时间可积均已列出。然而D20只有时间积分的平方可积，不能保证D5所要求每一个网格点左和MemLp 2。下述光滑线性SDE反例满足全部前提，却在T=2,K=2失败。"
+            }
+          ],
+          "lean_decl": "MD.Ch06.scalarItoFormula",
+          "reusable_proofs": [],
+          "extra_assumptions": [
+            "[EXTRA]原C²φ、真实PreBrownian和严格积分方程；完整漂移、噪声、二阶Ito校正；适应/可积技术资格保留。"
+          ],
+          "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
+          "review_status": "NEEDS_HUMAN",
+          "repair_log": [],
+          "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
+        },
+        "issues": [
+          {
+            "code": "TRANSCRIPTION_PHI_NOTATION",
+            "detail": "原页为Let φ(·) be any continuously twice differentiable function；当前写φ(x)。Itô公式本身正确，但此处强制所有有限和L²的技术版本有额外缺口。"
+          },
+          {
+            "code": "STRICT_L2_LEFT_SUM_GAP",
+            "detail": "完整漂移φ′a+φ″b²/2和噪声φ′b均正确，C²φ、C¹a,b及适应平方时间可积均已列出。然而D20只有时间积分的平方可积，不能保证D5所要求每一个网格点左和MemLp 2。下述光滑线性SDE反例满足全部前提，却在T=2,K=2失败。"
+          }
+        ],
+        "evidence": [
+          "A：R4_PAGES.pdf 附件第13页，原PDF 254，印刷页233。原页为Let φ(·) be any continuously twice differentiable function；当前写φ(x)。Itô公式本身正确，但此处强制所有有限和L²的技术版本有额外缺口。",
+          "C：仅按任务所列Lean签名及项目依赖定义作只读语义审校；标准库按标准含义采信，不作工程修改或证明检查。完整漂移φ′a+φ″b²/2和噪声φ′b均正确，C²φ、C¹a,b及适应平方时间可积均已列出。然而D20只有时间积分的平方可积，不能保证D5所要求每一个网格点左和MemLp 2。下述光滑线性SDE反例满足全部前提，却在T=2,K=2失败。"
+        ]
+      },
+      "audit": {
+        "lean_decl": "MD.Ch06.scalarItoFormula",
+        "verdict": "FAIL",
+        "explanation": "完整漂移φ′a+φ″b²/2和噪声φ′b均正确，C²φ、C¹a,b及适应平方时间可积均已列出。然而D20只有时间积分的平方可积，不能保证D5所要求每一个网格点左和MemLp 2。下述光滑线性SDE反例满足全部前提，却在T=2,K=2失败。",
+        "counterexample": "取标准Brownian W，X_t=exp(−t/2)W_t，a(x,t)=−x/2，b(x,t)=exp(−t/2)，x0=0。令Φ(x)=∫₀ˣ exp(e*u²/4)/(1+u²)^(1/8) du；Φ光滑。Var(X_t)=v(t)=t exp(−t)，唯一最大V=1/e在t=1。g_t=Φ′(X_t)b(t)适应；在t=1，E[g_t²]=∞，因为Gaussian指数恰抵消，尾积分为∫u^(−1/2)du；附近E[g_t²]量级|t−1|^(−1/2)，故任意有限时间∫E[g_t²]dt有限，满足D20。T=2,K=2左和含g_1(W_2−W_1)，未来增量独立且方差1，所以该项二阶矩无限，另一项为常数倍W_1，不能抵消；D5要求MemLp的结论失败。第14条取φ(x,t)=Φ(x)。",
+        "suggested_fix": "采用通常局部Itô积分定义，或另要求结论所用每个左点和的L²资格及其均方收敛所需的充分正则/一致可积条件；仅增加时间积分平方可积不足。"
+      },
+      "subtask": "BATCH18a",
+      "input_sha256": {
+        "Blueprint/Ch06.lean": "0a02a34ec68989a83bccfa5916db5053ecdb58e05667bf21ff3568d9d1f4318e",
+        "blueprint/ch06/ch06_source.json": "45c70ceef21ca168af437de297e2e21e2800b452ab7942654061d4cff9bb5d95",
+        "BATCH18a_PAGES.pdf": "cfd90ab25e20c99e6ec983947bb8b9ef3fdd34b18bd07e66985178c5706a0592",
+        "signature_sha256": "27346742cd8b8cb811d042be47dc3f5ebbf62be1c866c85676deb3ee8549a7ee"
+      }
+    },
+    {
+      "source_id": "MD-6.3.1-DiffusiveTaylorPrinted",
+      "json_review": {
+        "status": "NEEDS_HUMAN",
+        "issue_codes": [
+          "TRANSCRIPTION_ASYMPTOTIC_SYMBOL",
+          "ERRATUM?"
+        ],
+        "corrected_json": {
+          "source_id": "MD-6.3.1-DiffusiveTaylorPrinted",
+          "kind": "unnumbered_claim",
+          "label": null,
+          "section": "6.3.1",
+          "printed_page": "233",
+          "pdf_page": "254",
+          "statement_latex": "Now we expand the 2nd order term and, working in the diffusion limit, recognize that $\\delta x^2\\sim\\delta t$, thus we have\n\\[\\delta\\phi=\\phi'(X_n)(a(X_n,n\\delta t)\\delta t+b(X_n,n\\delta t)J_n\\delta x)+\\tfrac12\\phi''(X_n)b(X_n,n\\delta t)^2\\delta t+O(\\delta t^{3/2}).\\]",
+          "proof_latex": null,
+          "proof_note": "原书未给独立完整证明。",
+          "proof_discussion_latex": null,
+          "context_notation": [],
+          "issues": [
+            {
+              "code": "ERRATUM?",
+              "detail": "C² Taylor余项仅o(h²)，不能自动提升为O(h³)；在h≈√δt时原O(δt³⁄²)需要更高阶正则性。"
+            },
+            {
+              "code": "R4_REVIEW",
+              "detail": "原页写δx²∼δt，JSON用≈；O(δt^(3/2))确为原书印刷，C²不足的ERRATUM?成立。 签名取J=+1及δx=√dt的字面特例，a,b可任意实数，故−1符号可吸收到b。右侧滤子dt→0+、二阶项及3/2指数对应。但C²只给o(dt)，不能保证O(dt^(3/2))。按原文疑误保留并NEEDS_HUMAN，不因sorry失败；C³修正合理但该修正声明不在本条展示范围内。"
+            }
+          ],
+          "lean_decl": "MD.Ch06.diffusiveTaylorPrinted",
+          "reusable_proofs": [],
+          "extra_assumptions": [],
+          "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
+          "review_status": "NEEDS_HUMAN",
+          "repair_log": [
+            {
+              "date": "2026-10-17",
+              "action": "directive22_printed_corrected_pair",
+              "change": "C²加强为C³，使三阶Taylor余项与扩散缩放匹配。",
+              "corrected_decl": "MD.Ch06.diffusiveTaylorPrinted_corrected",
+              "website": "未提交；待网站审计"
+            }
+          ],
+          "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
+        },
+        "issues": [
+          {
+            "code": "TRANSCRIPTION_ASYMPTOTIC_SYMBOL",
+            "detail": "原页写δx²∼δt，JSON用≈；O(δt^(3/2))确为原书印刷，C²不足的ERRATUM?成立。"
+          },
+          {
+            "code": "ERRATUM?",
+            "detail": "签名取J=+1及δx=√dt的字面特例，a,b可任意实数，故−1符号可吸收到b。右侧滤子dt→0+、二阶项及3/2指数对应。但C²只给o(dt)，不能保证O(dt^(3/2))。按原文疑误保留并NEEDS_HUMAN，不因sorry失败；C³修正合理但该修正声明不在本条展示范围内。"
+          }
+        ],
+        "evidence": [
+          "A：R4_PAGES.pdf 附件第14页，原PDF 254，印刷页233。原页写δx²∼δt，JSON用≈；O(δt^(3/2))确为原书印刷，C²不足的ERRATUM?成立。",
+          "C：仅按任务所列Lean签名及项目依赖定义作只读语义审校；标准库按标准含义采信，不作工程修改或证明检查。签名取J=+1及δx=√dt的字面特例，a,b可任意实数，故−1符号可吸收到b。右侧滤子dt→0+、二阶项及3/2指数对应。但C²只给o(dt)，不能保证O(dt^(3/2))。按原文疑误保留并NEEDS_HUMAN，不因sorry失败；C³修正合理但该修正声明不在本条展示范围内。"
+        ]
+      },
+      "audit": {
+        "lean_decl": "MD.Ch06.diffusiveTaylorPrinted",
+        "verdict": "NEEDS_HUMAN",
+        "explanation": "签名取J=+1及δx=√dt的字面特例，a,b可任意实数，故−1符号可吸收到b。右侧滤子dt→0+、二阶项及3/2指数对应。但C²只给o(dt)，不能保证O(dt^(3/2))。按原文疑误保留并NEEDS_HUMAN，不因sorry失败；C³修正合理但该修正声明不在本条展示范围内。",
+        "counterexample": "φ(x)=|x|^(5/2)属于C²，x=a=0,b=1时φ′(0)=φ″(0)=0，余项=dt^(5/4)，除dt^(3/2)为dt^(−1/4)，无界。",
+        "suggested_fix": "保留原文并标勘误疑问；C²下改余项为o(dt)，或增加C³/局部Lipschitz二阶导数再断言O(dt^(3/2))。"
+      },
+      "subtask": "BATCH18b",
+      "input_sha256": {
+        "Blueprint/Ch06.lean": "0a02a34ec68989a83bccfa5916db5053ecdb58e05667bf21ff3568d9d1f4318e",
+        "blueprint/ch06/ch06_source.json": "45c70ceef21ca168af437de297e2e21e2800b452ab7942654061d4cff9bb5d95",
+        "BATCH18b_PAGES.pdf": "cfd90ab25e20c99e6ec983947bb8b9ef3fdd34b18bd07e66985178c5706a0592",
+        "signature_sha256": "741a16b67a07677e0eb7500dcf17214c9ede167735bb324bbd5602625acb0266"
+      }
+    },
+    {
+      "source_id": "MD-6.3.1-TimeItoFormula",
+      "json_review": {
+        "status": "NEEDS_HUMAN",
+        "issue_codes": [
+          "ERRATUM?",
+          "CORRECTED_VS_PRINTED",
+          "STRICT_L2_LEFT_SUM_GAP"
+        ],
+        "corrected_json": {
+          "source_id": "MD-6.3.1-TimeItoFormula",
+          "kind": "unnumbered_claim",
+          "label": "(6.18)",
+          "section": "6.3.1",
+          "printed_page": "234",
+          "pdf_page": "255",
+          "statement_latex": "We also mention that the Itô-Doeblin formula can be easily generalized to functions of the form $\\phi(x,t)$:\n\\[d\\phi(X,t)=\\phi_t(X,t)+\\phi_x(X,t)(a(X,t)dt+b(X,t)dW)+\\tfrac12\\phi_{xx}(X,t)b(X,t)^2dt.\\tag{6.18}\\]",
+          "proof_latex": null,
+          "proof_note": "原书未给独立完整证明。",
+          "proof_discussion_latex": null,
+          "context_notation": [],
+          "issues": [
+            {
+              "code": "ERRATUM?",
+              "detail": "印刷φ_t(X,t)项漏dt，字面微分式不具一致类型；补dt需要网站审计裁定。"
+            },
+            {
+              "code": "R4_REVIEW",
+              "detail": "原页(6.18)的φ_t项确实漏dt；JSON忠实保留，ERRATUM?合理。 签名是补上φ_t dt后的完整积分修正版，(1,0)/(0,1)方向及二阶x导数正确，[EXTRA]已坦白修正。但仍有与第12条相同的全部有限和L²缺口；取下述φ(x,t)=Φ(x)即可，故当前积分版本在所列前提下也不成立。"
+            }
+          ],
+          "lean_decl": "MD.Ch06.timeItoFormula",
+          "reusable_proofs": [],
+          "extra_assumptions": [
+            "[EXTRA]Lean保留完整积分陈述，以φ_t dt的正确时间积分表达；原无dt的字面式仍在逐字JSON，不宣称字面式已证。"
+          ],
+          "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
+          "review_status": "NEEDS_HUMAN",
+          "repair_log": [
+            {
+              "date": "2026-10-17",
+              "action": "directive22_printed_corrected_pair",
+              "change": "原文右端以形式微分占位量记录，时间偏导补dt；完整修正积分公式独立命名。",
+              "corrected_decl": "MD.Ch06.timeItoFormula_corrected",
+              "website": "未提交；待网站审计"
+            }
+          ],
+          "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
+        },
+        "issues": [
+          {
+            "code": "ERRATUM?",
+            "detail": "签名是补上φ_t dt后的完整积分修正版，(1,0)/(0,1)方向及二阶x导数正确，[EXTRA]已坦白修正。但仍有与第12条相同的全部有限和L²缺口；取下述φ(x,t)=Φ(x)即可，故当前积分版本在所列前提下也不成立。"
+          },
+          {
+            "code": "CORRECTED_VS_PRINTED",
+            "detail": "签名是补上φ_t dt后的完整积分修正版，(1,0)/(0,1)方向及二阶x导数正确，[EXTRA]已坦白修正。但仍有与第12条相同的全部有限和L²缺口；取下述φ(x,t)=Φ(x)即可，故当前积分版本在所列前提下也不成立。"
+          },
+          {
+            "code": "STRICT_L2_LEFT_SUM_GAP",
+            "detail": "签名是补上φ_t dt后的完整积分修正版，(1,0)/(0,1)方向及二阶x导数正确，[EXTRA]已坦白修正。但仍有与第12条相同的全部有限和L²缺口；取下述φ(x,t)=Φ(x)即可，故当前积分版本在所列前提下也不成立。"
+          }
+        ],
+        "evidence": [
+          "A：R4_PAGES.pdf 附件第15页，原PDF 255，印刷页234。原页(6.18)的φ_t项确实漏dt；JSON忠实保留，ERRATUM?合理。",
+          "C：仅按任务所列Lean签名及项目依赖定义作只读语义审校；标准库按标准含义采信，不作工程修改或证明检查。签名是补上φ_t dt后的完整积分修正版，(1,0)/(0,1)方向及二阶x导数正确，[EXTRA]已坦白修正。但仍有与第12条相同的全部有限和L²缺口；取下述φ(x,t)=Φ(x)即可，故当前积分版本在所列前提下也不成立。"
+        ]
+      },
+      "audit": {
+        "lean_decl": "MD.Ch06.timeItoFormula",
+        "verdict": "FAIL",
+        "explanation": "签名是补上φ_t dt后的完整积分修正版，(1,0)/(0,1)方向及二阶x导数正确，[EXTRA]已坦白修正。但仍有与第12条相同的全部有限和L²缺口；取下述φ(x,t)=Φ(x)即可，故当前积分版本在所列前提下也不成立。",
+        "counterexample": "取标准Brownian W，X_t=exp(−t/2)W_t，a(x,t)=−x/2，b(x,t)=exp(−t/2)，x0=0。令Φ(x)=∫₀ˣ exp(e*u²/4)/(1+u²)^(1/8) du；Φ光滑。Var(X_t)=v(t)=t exp(−t)，唯一最大V=1/e在t=1。g_t=Φ′(X_t)b(t)适应；在t=1，E[g_t²]=∞，因为Gaussian指数恰抵消，尾积分为∫u^(−1/2)du；附近E[g_t²]量级|t−1|^(−1/2)，故任意有限时间∫E[g_t²]dt有限，满足D20。T=2,K=2左和含g_1(W_2−W_1)，未来增量独立且方差1，所以该项二阶矩无限，另一项为常数倍W_1，不能抵消；D5要求MemLp的结论失败。第14条取φ(x,t)=Φ(x)。",
+        "suggested_fix": "原文漏dt保留并标注，修正公式独立命名；同时修复第12条所述严格左和L²缺口。"
+      },
+      "subtask": "BATCH18c",
+      "input_sha256": {
+        "Blueprint/Ch06.lean": "0a02a34ec68989a83bccfa5916db5053ecdb58e05667bf21ff3568d9d1f4318e",
+        "blueprint/ch06/ch06_source.json": "45c70ceef21ca168af437de297e2e21e2800b452ab7942654061d4cff9bb5d95",
+        "BATCH18c_PAGES.pdf": "8739b522449334878461d199d41aeeb858c8086e869d288869270a2a067d9b07",
+        "signature_sha256": "73394758c5f293412223d43553bed7d3f0416222ca3103169ba0444c20a722ac"
+      }
+    }
+  ],
+  "merged_from": "ch06_first_merged"
+}

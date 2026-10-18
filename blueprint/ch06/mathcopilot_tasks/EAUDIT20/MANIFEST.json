@@ -1,0 +1,29 @@
+{
+  "eaudit": "EAUDIT20",
+  "subtasks": [
+    {
+      "subtask": "EAUDIT20a",
+      "source_id": "MD-6.4.5-ComplexInitialDensity",
+      "path": "blueprint/ch06/mathcopilot_tasks/EAUDIT20/a",
+      "total_bytes": 90827,
+      "definitions": 5,
+      "manifest_sha256": "87319c011c6a6b468608185b336ad44b39f3ebfa0bec6b4a02c788a1ccb51852"
+    },
+    {
+      "subtask": "EAUDIT20b",
+      "source_id": "MD-6.4.5-LangevinForwardSemigroupMeaning",
+      "path": "blueprint/ch06/mathcopilot_tasks/EAUDIT20/b",
+      "total_bytes": 129573,
+      "definitions": 23,
+      "manifest_sha256": "caf29dd0df8c4b00e03ee41583fc16eb7618b4e49687a318d4ed2af52900a2ca"
+    },
+    {
+      "subtask": "EAUDIT20c",
+      "source_id": "MD-6.4.5-ComplexEigenmodeDecay",
+      "path": "blueprint/ch06/mathcopilot_tasks/EAUDIT20/c",
+      "total_bytes": 123632,
+      "definitions": 44,
+      "manifest_sha256": "9dcce76df7e313454659ce64ac186be8a7fda967891191a0a5c53d7174854916"
+    }
+  ]
+}

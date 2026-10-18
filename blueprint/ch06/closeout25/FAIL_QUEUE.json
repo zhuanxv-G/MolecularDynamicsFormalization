@@ -1,0 +1,1871 @@
+[
+  {
+    "batch": "BATCH11",
+    "source_id": "MD-6.2.1-WalkIncrement",
+    "json_review": {
+      "status": "CORRECTED",
+      "issue_codes": [
+        "LEAN_INCOMPLETE_CONCLUSION"
+      ],
+      "corrected_json": {
+        "source_id": "MD-6.2.1-WalkIncrement",
+        "kind": "definition",
+        "label": null,
+        "section": "6.2.1",
+        "printed_page": "225–226",
+        "pdf_page": "246–247",
+        "statement_latex": "The increments of the random walk are the differences $\\Delta X_n=X_n-X_{n-1}=\\delta xJ_{n-1}$, thus $(X_n)$ is a random process with independent increments.\nWe will use the shorthand $Y_k=Y(t_k)$ and $\\Delta Y_k=Y_{k+1}-Y_k=\\sqrt{\\delta t}J_k$. The increments are clearly independent.",
+        "proof_latex": null,
+        "proof_note": "原书未给独立完整证明。",
+        "proof_discussion_latex": null,
+        "context_notation": [
+          "本条定义实际X(n+1)−Xn增量；差分恒等式与独立性另条保存，不把独立性计为定义已证。"
+        ],
+        "issues": [
+          {
+            "code": "LEAN_INCOMPLETE_CONCLUSION",
+            "detail": "差分定义缺少原文两种增量等式及独立增量结论；需补相应声明或明确缩小审校范围，不能将其当作完整原文结论已形式化。"
+          }
+        ],
+        "lean_decl": "MD.Ch06.walkIncrement",
+        "reusable_proofs": [],
+        "extra_assumptions": [
+          "[EXTRA][SCOPE]当前Lean仅定义一般步长的一步差分；并未在本条声明dx J_n等式、扩散增量等式或独立性。"
+        ],
+        "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
+        "review_status": "CORRECTED",
+        "repair_log": [],
+        "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
+      },
+      "issues": [
+        {
+          "code": "LEAN_INCOMPLETE_CONCLUSION",
+          "detail": "差分定义缺少原文两种增量等式及独立增量结论；需补相应声明或明确缩小审校范围，不能将其当作完整原文结论已形式化。"
+        }
+      ],
+      "evidence": {
+        "A_pdf_pages": [
+          33,
+          34
+        ],
+        "A_original_pdf_pages": "246–247",
+        "A_printed_pages": "225–226",
+        "A_method": "直接读取附件PDF文本，并对对应印刷页的渲染图核对公式、上下标及措辞；重复页的提取正文一致。换行及LaTeX排版编码差异不作数学错误。",
+        "A_result": "所选原句与公式一致；摘录允许省去相邻未选段落，不将省略当作完整原证明。",
+        "C_basis": "仅本任务所给实际签名、该条依赖定义及附录D1–D24；Mathlib按任务约定采信。只读语义审查，未运行Lean编译，未修改工程或补证明，未因sorry判FAIL。"
+      }
+    },
+    "audit": {
+      "lean_decl": "MD.Ch06.walkIncrement",
+      "verdict": "FAIL",
+      "explanation": "实际声明只有差分定义X_(n+1)-X_n；它没有声明差分=dx J_n，没有扩散增量sqrt(dt)J_n，也没有独立增量结论或概率前提。原文statement_latex同时包含这些结论，且本条没有[EXTRA]缩小范围说明，故按完整结论要求FAIL。定义差分本身正确；递推条目23可支持一个代数推论，但不替代本条缺失的独立性陈述。",
+      "counterexample": "缺少概率前提时，令所有J_n等于同一公平±1变量且dx=1，则定义的各增量相同而不独立。这说明独立性不能由当前无条件定义自动获得；非差分代数定义的反例。",
+      "suggested_fix": "增设对全部n,sample的walkIncrement J dx n sample=dx*J n sample；对扩散步长给出sqrt(dt)*J n；在可测概率空间及rademacherJumps（或独立可测J）前提下明确iIndepFun增量列。若只保留差分定义，须缩小原文范围并明示未覆盖结论。"
+    },
+    "subtask": "BATCH11h",
+    "input_sha256": {
+      "Blueprint/Ch06.lean": "0a02a34ec68989a83bccfa5916db5053ecdb58e05667bf21ff3568d9d1f4318e",
+      "blueprint/ch06/ch06_source.json": "45c70ceef21ca168af437de297e2e21e2800b452ab7942654061d4cff9bb5d95",
+      "BATCH11h_PAGES.pdf": "c2a16b12e18e22ab2b659c05e029e59a3216cb2fc24c51ab323d7be7797e6ad8",
+      "signature_sha256": "3301e6e2cd5f828b0e9cc65e25296a7d55b16529c6ab8f7574378e77e568c31a"
+    }
+  },
+  {
+    "batch": "BATCH13",
+    "source_id": "MD-6.2.1-StateMarkovMeaning",
+    "json_review": {
+      "status": "NEEDS_HUMAN",
+      "issue_codes": [
+        "LEAN_HISTORY_UNCONSTRAINED"
+      ],
+      "corrected_json": {
+        "source_id": "MD-6.2.1-StateMarkovMeaning",
+        "kind": "definition",
+        "label": null,
+        "section": "6.2.1",
+        "printed_page": "227",
+        "pdf_page": "248",
+        "statement_latex": "More generally, when we say that a stochastic process is Markovian, we mean that the probability of a future event conditioned on the current state of the process and the past history of the process is the same as the probability conditioned on the current state of the process.",
+        "proof_latex": null,
+        "proof_note": "原书未给独立完整证明。",
+        "proof_discussion_latex": null,
+        "context_notation": [],
+        "issues": [
+          {
+            "code": "LEAN_HISTORY_UNCONSTRAINED",
+            "detail": "history参数未约束为过程的真实过去；_corrected同样如此。"
+          }
+        ],
+        "lean_decl": "MD.Ch06.stateMarkovMeaning",
+        "reusable_proofs": [],
+        "extra_assumptions": [
+          "[EXTRA]明确以真实当前状态σ(Xs)及过去history作条件期望；仅定义完整Markov意义，不计任意过程满足它已证。"
+        ],
+        "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
+        "review_status": "CORRECTED",
+        "repair_log": [],
+        "source_page_verification": "R3本次审校：核对R3_PAGES.pdf对应页；原文符号差异和页码问题见本条issues。"
+      },
+      "issues": [
+        {
+          "code": "LEAN_HISTORY_UNCONSTRAINED",
+          "detail": "history参数未约束为过程的真实过去；_corrected同样如此。"
+        }
+      ],
+      "evidence": {
+        "attachment": "R3_PAGES.pdf",
+        "attachment_pages": [
+          17
+        ],
+        "original_pdf_pages": "248",
+        "printed_pages": "227",
+        "A": "已核对本条摘录及公式；数学变量改名与原文逐字忠实分开处理。",
+        "C": "只审本任务所列签名及项目依赖定义；标准库按题设采信；未编译、未审证明体，sorry不影响签名判定。"
+      }
+    },
+    "audit": {
+      "lean_decl": "MD.Ch06.stateMarkovMeaning",
+      "verdict": "FAIL",
+      "explanation": "两个定义确实以条件期望比较history(s)与σ(Xs)，但history是完全任意的MeasurableSpace族；没有规定它包含截至s的过去、包含σ(Xs)、是环境子σ代数或构成自然过滤。因此作为完整Markov性质的无约束接口不足，修正版也有同一缺口。",
+      "counterexample": "取history(s)=σ(Xs)，等式对任意过程恒为同式，因而可接受非Markov过程；甚至无须history真包含过去。",
+      "suggested_fix": "定义自然历史⨆r≤s σ(Xr)，或显式要求history是给定真实过滤、X适应且含全部过去并限制在环境σ代数内；stateMarkovMeaning及coarseMarkovPrinted_corrected同步修订。"
+    },
+    "subtask": "BATCH13f",
+    "input_sha256": {
+      "Blueprint/Ch06.lean": "0a02a34ec68989a83bccfa5916db5053ecdb58e05667bf21ff3568d9d1f4318e",
+      "blueprint/ch06/ch06_source.json": "45c70ceef21ca168af437de297e2e21e2800b452ab7942654061d4cff9bb5d95",
+      "BATCH13f_PAGES.pdf": "b999283c3a3011a3e65e617cbd0c6a4f689eba983b2e56b33e976c38a66d523d",
+      "signature_sha256": "e13b9029854e659f8324192044ca2bf144e2a06da8918039bb322dd55d873192"
+    }
+  },
+  {
+    "batch": "BATCH14",
+    "source_id": "MD-6.2.2-WeakItoAlias",
+    "json_review": {
+      "status": "NEEDS_HUMAN",
+      "issue_codes": [
+        "SOURCE_NOTATION",
+        "LEAN_NONINTEGRABLE_DEFAULT"
+      ],
+      "corrected_json": {
+        "source_id": "MD-6.2.2-WeakItoAlias",
+        "kind": "definition",
+        "label": null,
+        "section": "6.2.2",
+        "printed_page": "228–229",
+        "pdf_page": "249–250",
+        "statement_latex": "By analogy, we would like to write the stochastic integral of a function $g$, where $g$ may, itself, be defined in terms of a stochastic process, as the limit of a sum:\n\\[\\sum_{k=0}^{\\nu-1}g(t_k)[W((k+1)\\delta t)-W(k\\delta t)],\\quad \\nu\\to\\infty.\\]\nThe first choice is commonly referred to as Itô integration, and the second as Stratonovich integration.",
+        "proof_latex": null,
+        "proof_note": "原书未给独立完整证明。",
+        "proof_discussion_latex": null,
+        "context_notation": [],
+        "issues": [
+          {
+            "code": "ERRATUM?",
+            "detail": "既有Review定义仅要求Y∈L²及误差Bochner积分收敛，未要求各有限和L²，非可积默认积分0会掩盖错误；不得用于新PASS SDE证明。"
+          },
+          {
+            "code": "SOURCE_NOTATION",
+            "detail": "原页公式的分割数为希腊ν；输入将其系统改为K，逐字层面不忠实。已仅在原文字段恢复ν；Lean中的K作为变量重命名无数学问题。"
+          },
+          {
+            "code": "LEAN_NONINTEGRABLE_DEFAULT",
+            "detail": "缺有限和L²，Bochner默认0制造伪收敛。"
+          }
+        ],
+        "lean_decl": "MD.Ch06.weakItoAlias",
+        "reusable_proofs": [],
+        "extra_assumptions": [],
+        "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
+        "review_status": "CORRECTED",
+        "repair_log": [
+          {
+            "date": "2026-10-17",
+            "action": "directive22_printed_corrected_pair",
+            "change": "严格定义要求每个有限和及极限变量均属于L²；正式库冻结，只在Blueprint使用严格版。",
+            "corrected_decl": "MD.Ch06.weakItoAlias_corrected",
+            "website": "未提交；待网站审计"
+          }
+        ],
+        "source_page_verification": "R3本次审校：核对R3_PAGES.pdf对应页；原文符号差异和页码问题见本条issues。"
+      },
+      "issues": [
+        {
+          "code": "SOURCE_NOTATION",
+          "detail": "原页公式的分割数为希腊ν；输入将其系统改为K，逐字层面不忠实。已仅在原文字段恢复ν；Lean中的K作为变量重命名无数学问题。"
+        },
+        {
+          "code": "LEAN_NONINTEGRABLE_DEFAULT",
+          "detail": "缺有限和L²，Bochner默认0制造伪收敛。"
+        }
+      ],
+      "evidence": {
+        "attachment": "R3_PAGES.pdf",
+        "attachment_pages": [
+          22,
+          23
+        ],
+        "original_pdf_pages": "249–250",
+        "printed_pages": "228–229",
+        "A": "已核对本条摘录及公式；数学变量改名与原文逐字忠实分开处理。",
+        "C": "只审本任务所列签名及项目依赖定义；标准库按题设采信；未编译、未审证明体，sorry不影响签名判定。"
+      }
+    },
+    "audit": {
+      "lean_decl": "MD.Ch06.weakItoAlias",
+      "verdict": "FAIL",
+      "explanation": "仅Y∈L²，没有有限和或平方误差的可积资格。Lean的Bochner积分在非可积时取0，故该谓词会接受没有数学均方收敛的对象；[ERRATUM?]虽已提示，签名仍不合格。第15条附带的_corrected定义补全L²条件，审校为PASS。",
+      "counterexample": "Ω=(0,1]取Lebesgue概率，Z(ω)=1/ω，W(t,ω)=t，g(t,ω)=Z(ω)，T=1，Y=0。每个K>0左和=Z，Z²不可积，Lean误差Bochner积分=0，Y∈L²；谓词成立而均方误差实际上无穷。",
+      "suggested_fix": "采用第15条weakItoAlias_corrected/strictItoIntegral，增加∀K,MemLp(itoLeftSum ...) 2 P。修正版PASS。"
+    },
+    "subtask": "BATCH14d",
+    "input_sha256": {
+      "Blueprint/Ch06.lean": "0a02a34ec68989a83bccfa5916db5053ecdb58e05667bf21ff3568d9d1f4318e",
+      "blueprint/ch06/ch06_source.json": "45c70ceef21ca168af437de297e2e21e2800b452ab7942654061d4cff9bb5d95",
+      "BATCH14d_PAGES.pdf": "dc91116065e9bd3ca2a1ab22a453f996fb8b12ba0ca4ba6f64c4bee17479668b",
+      "signature_sha256": "36f5c5f56aaa24d798725c70d3c9fc8ea4deffd49c8648d0e2cbb1c00280d306"
+    }
+  },
+  {
+    "batch": "BATCH16",
+    "source_id": "MD-6.2.2-DeterministicStrobePrinted",
+    "json_review": {
+      "status": "NEEDS_HUMAN",
+      "issue_codes": [
+        "TRANSCRIPTION_TIME_ARGUMENT",
+        "GAUSSIAN_VARIANCE_PARAMETER",
+        "INCOMPLETE_JOINT_LAW",
+        "ERRATUM?"
+      ],
+      "corrected_json": {
+        "source_id": "MD-6.2.2-DeterministicStrobePrinted",
+        "kind": "unnumbered_claim",
+        "label": null,
+        "section": "6.2.2",
+        "printed_page": "231",
+        "pdf_page": "252",
+        "statement_latex": "Finally, we observe that by calculating $\\sigma^2(t_n)$ and generating random increments $R_n\\sim N(0,\\sigma(t_n))$ we have a discrete representation of the continuous time stochastic process $Y(t)$, effectively an exact stroboscopic representation.",
+        "proof_latex": null,
+        "proof_note": "原书未给独立完整证明。",
+        "proof_discussion_latex": null,
+        "context_notation": [],
+        "issues": [
+          {
+            "code": "ERRATUM?",
+            "detail": "生成增量使用σ(tn)而非相邻时刻方差差；单时边际法则也不能确定同一过程联合分布。保持印刷式，不以独立边际偷换过程。"
+          },
+          {
+            "code": "R4_REVIEW",
+            "detail": "原页写连续过程Y(t)，不是Y(t_n)；σ²(t_n)和N(0,σ(t_n))确实如此印刷。原文“增量”的方差/时间含义有疑误。 原书N的第二参数按标准差读时，Lean gaussianReal第二参数是方差，不能直接放sqrt(∫g²)。此外t_n至t_(n+1)的增量应取区间积分，且签名没有整个增量族独立性。即使保留原文错误，当前参数转换也不忠实。"
+          }
+        ],
+        "lean_decl": "MD.Ch06.deterministicStrobePrinted",
+        "reusable_proofs": [],
+        "extra_assumptions": [],
+        "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
+        "review_status": "NEEDS_HUMAN",
+        "repair_log": [
+          {
+            "date": "2026-10-17",
+            "action": "directive22_printed_corrected_pair",
+            "change": "采用区间积分∫[tₙ,tₙ₊₁]g²及同一过程的独立增量资格。",
+            "corrected_decl": "MD.Ch06.deterministicStrobePrinted_corrected",
+            "website": "未提交；待网站审计"
+          }
+        ],
+        "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
+      },
+      "issues": [
+        {
+          "code": "TRANSCRIPTION_TIME_ARGUMENT",
+          "detail": "原页写连续过程Y(t)，不是Y(t_n)；σ²(t_n)和N(0,σ(t_n))确实如此印刷。原文“增量”的方差/时间含义有疑误。"
+        },
+        {
+          "code": "GAUSSIAN_VARIANCE_PARAMETER",
+          "detail": "原书N的第二参数按标准差读时，Lean gaussianReal第二参数是方差，不能直接放sqrt(∫g²)。此外t_n至t_(n+1)的增量应取区间积分，且签名没有整个增量族独立性。即使保留原文错误，当前参数转换也不忠实。"
+        },
+        {
+          "code": "INCOMPLETE_JOINT_LAW",
+          "detail": "原书N的第二参数按标准差读时，Lean gaussianReal第二参数是方差，不能直接放sqrt(∫g²)。此外t_n至t_(n+1)的增量应取区间积分，且签名没有整个增量族独立性。即使保留原文错误，当前参数转换也不忠实。"
+        },
+        {
+          "code": "ERRATUM?",
+          "detail": "原书N的第二参数按标准差读时，Lean gaussianReal第二参数是方差，不能直接放sqrt(∫g²)。此外t_n至t_(n+1)的增量应取区间积分，且签名没有整个增量族独立性。即使保留原文错误，当前参数转换也不忠实。"
+        }
+      ],
+      "evidence": [
+        "A：R4_PAGES.pdf 附件第4页，原PDF 252，印刷页231。原页写连续过程Y(t)，不是Y(t_n)；σ²(t_n)和N(0,σ(t_n))确实如此印刷。原文“增量”的方差/时间含义有疑误。",
+        "C：仅按任务所列Lean签名及项目依赖定义作只读语义审校；标准库按标准含义采信，不作工程修改或证明检查。原书N的第二参数按标准差读时，Lean gaussianReal第二参数是方差，不能直接放sqrt(∫g²)。此外t_n至t_(n+1)的增量应取区间积分，且签名没有整个增量族独立性。即使保留原文错误，当前参数转换也不忠实。"
+      ]
+    },
+    "audit": {
+      "lean_decl": "MD.Ch06.deterministicStrobePrinted",
+      "verdict": "FAIL",
+      "explanation": "原书N的第二参数按标准差读时，Lean gaussianReal第二参数是方差，不能直接放sqrt(∫g²)。此外t_n至t_(n+1)的增量应取区间积分，且签名没有整个增量族独立性。即使保留原文错误，当前参数转换也不忠实。",
+      "counterexample": "取g≡1，times≡1，Y=W：所有真实增量为0，签名却要求非退化N(0,1)；另外times 0=0,times 1=4时，签名variance=2而实际4，显示标准差未平方的独立问题。",
+      "suggested_fix": "原文保留Y(t)和印刷N(0,σ(t_n))；若按标准差读印刷量，转换到gaussianReal须平方。真实过程表示另用第5条相邻区间方差和独立族，初始化须从Y(times 0)或令times 0=0。"
+    },
+    "subtask": "BATCH16f",
+    "input_sha256": {
+      "Blueprint/Ch06.lean": "0a02a34ec68989a83bccfa5916db5053ecdb58e05667bf21ff3568d9d1f4318e",
+      "blueprint/ch06/ch06_source.json": "45c70ceef21ca168af437de297e2e21e2800b452ab7942654061d4cff9bb5d95",
+      "BATCH16f_PAGES.pdf": "6f6a357923477e514795546ce778a6a81e3a770c786d9cb9e2d4f4c8411f18a9",
+      "signature_sha256": "30b55b07da29df5e2b4be5174a6be6c8427a6d155142c70ac1a7d7bf1f9b739e"
+    }
+  },
+  {
+    "batch": "BATCH17",
+    "source_id": "MD-6.3-VectorSDE",
+    "json_review": {
+      "status": "CORRECTED",
+      "issue_codes": [
+        "TRANSCRIPTION_OMITTED_INTRO",
+        "MISSING_WIENER_INDEPENDENCE"
+      ],
+      "corrected_json": {
+        "source_id": "MD-6.3-VectorSDE",
+        "kind": "definition",
+        "label": "(6.15)–(6.16)",
+        "section": "6.3",
+        "printed_page": "232–233",
+        "pdf_page": "253–254",
+        "statement_latex": "We mention in passing the extension to systems of SDEs. Let $a(z,t)$ and $b^{(i)}(z,t)$, $i=1,2,\\ldots,r$ be a set of $r+1$ vector fields in $\\mathbb R^m$, and let $W_1,W_2,\\ldots,W_r$ be a collection of $r$ independent Wiener processes, then we may write a system of SDEs in $\\mathbb R^m$ in the form\n\\[dZ=a(Z,t)dt+\\sum_{i=1}^r b^{(i)}(Z,t)dW_i.\\tag{6.15}\\]\nalternatively, if $B$ is the matrix with columns $b^{(1)},b^{(2)},\\ldots,b^{(r)}$, and $W$ represents the $r$-component vector of Wiener processes, then\n\\[dZ=a(Z,t)dt+B(Z,t)dW.\\tag{6.16}\\]",
+        "proof_latex": null,
+        "proof_note": "原书未给独立完整证明。",
+        "proof_discussion_latex": null,
+        "context_notation": [],
+        "issues": [
+          {
+            "code": "R4_REVIEW",
+            "detail": "原页开头为We mention in passing the extension to systems of SDEs.，摘录未包含；两页其余核心公式及矩阵列含义对应。 任意n,r；矩阵B为n×r并依赖X和时间；逐坐标漂移及r项真实积分齐全。但定义完全不要求W的坐标为Wiener，也不要求独立，且本条没有给出补充资格声明。故仅编码方程关系，未覆盖原文完整对象域“r independent Wiener processes”。"
+          }
+        ],
+        "lean_decl": "MD.Ch06.strictVectorSDE",
+        "reusable_proofs": [],
+        "extra_assumptions": [
+          "[EXTRA]完整状态及时间依赖矩阵B(Z,t)，每坐标真实严格Ito积分与漂移；没有缩成常矩阵加性特例。"
+        ],
+        "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
+        "review_status": "CORRECTED",
+        "repair_log": [],
+        "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
+      },
+      "issues": [
+        {
+          "code": "TRANSCRIPTION_OMITTED_INTRO",
+          "detail": "原页开头为We mention in passing the extension to systems of SDEs.，摘录未包含；两页其余核心公式及矩阵列含义对应。"
+        },
+        {
+          "code": "MISSING_WIENER_INDEPENDENCE",
+          "detail": "任意n,r；矩阵B为n×r并依赖X和时间；逐坐标漂移及r项真实积分齐全。但定义完全不要求W的坐标为Wiener，也不要求独立，且本条没有给出补充资格声明。故仅编码方程关系，未覆盖原文完整对象域“r independent Wiener processes”。"
+        }
+      ],
+      "evidence": [
+        "A：R4_PAGES.pdf 附件第10–11页，原PDF 253–254，印刷页232–233。原页开头为We mention in passing the extension to systems of SDEs.，摘录未包含；两页其余核心公式及矩阵列含义对应。",
+        "C：仅按任务所列Lean签名及项目依赖定义作只读语义审校；标准库按标准含义采信，不作工程修改或证明检查。任意n,r；矩阵B为n×r并依赖X和时间；逐坐标漂移及r项真实积分齐全。但定义完全不要求W的坐标为Wiener，也不要求独立，且本条没有给出补充资格声明。故仅编码方程关系，未覆盖原文完整对象域“r independent Wiener processes”。"
+      ]
+    },
+    "audit": {
+      "lean_decl": "MD.Ch06.strictVectorSDE",
+      "verdict": "FAIL",
+      "explanation": "任意n,r；矩阵B为n×r并依赖X和时间；逐坐标漂移及r项真实积分齐全。但定义完全不要求W的坐标为Wiener，也不要求独立，且本条没有给出补充资格声明。故仅编码方程关系，未覆盖原文完整对象域“r independent Wiener processes”。",
+      "counterexample": "P取单点概率空间、W≡0、X≡x0、a≡0、B任意非零常矩阵，则所有有限和及残差为0，定义成立，但W坐标不是Wiener。也可令两个驱动相同的真实W，定义无从排除完全相关坐标。",
+      "suggested_fix": "加入每坐标IsPreBrownianReal及W各坐标随机路径的独立性资格（不能只要同一时刻坐标独立），或把定义明确标为给定独立W环境下的纯方程关系并附完整资格声明。"
+    },
+    "subtask": "BATCH17d",
+    "input_sha256": {
+      "Blueprint/Ch06.lean": "0a02a34ec68989a83bccfa5916db5053ecdb58e05667bf21ff3568d9d1f4318e",
+      "blueprint/ch06/ch06_source.json": "45c70ceef21ca168af437de297e2e21e2800b452ab7942654061d4cff9bb5d95",
+      "BATCH17d_PAGES.pdf": "ab71050f0df25960bf74fd70539231cbb8ae25193b0c11539f1baeae216f76e5",
+      "signature_sha256": "de954d94c206beaf61e7cae5c6464d63a920b3847d1b979c3b508aeffdd47016"
+    }
+  },
+  {
+    "batch": "BATCH18",
+    "source_id": "MD-6.3.1-ScalarItoFormula",
+    "json_review": {
+      "status": "NEEDS_HUMAN",
+      "issue_codes": [
+        "TRANSCRIPTION_PHI_NOTATION",
+        "STRICT_L2_LEFT_SUM_GAP"
+      ],
+      "corrected_json": {
+        "source_id": "MD-6.3.1-ScalarItoFormula",
+        "kind": "unnumbered_claim",
+        "label": "(6.17)",
+        "section": "6.3.1",
+        "printed_page": "233",
+        "pdf_page": "254",
+        "statement_latex": "Let $\\phi(\\cdot)$ be any continuously twice differentiable function and let $X_n\\in\\mathbb R$ represent the state of a biased random walk as considered in Sect. 6.3, i.e., with state $X_{n+1}=X_n+a(X_n,n\\delta t)\\delta t+b(X_n,n\\delta t)J_n\\delta x$.\n\\[d\\phi(X)=\\phi'(X)(a(X,t)dt+b(X,t)dW)+\\tfrac12\\phi''(X)b(X,t)^2dt.\\tag{6.17}\\]",
+        "proof_latex": "Let $\\phi_n=\\phi(X_n)$, then Taylor's theorem gives\n\\[\\delta\\phi\\stackrel{\\rm def}=\\phi_{n+1}-\\phi_n=\\phi'(X_n)\\delta X_n+\\tfrac12\\phi''(X_n)\\delta X_n^2+o(\\delta X_n^2)\n=\\phi'(X_n)(a(X_n,n\\delta t)\\delta t+b(X_n,n\\delta t)J_n\\delta x)\n+\\tfrac12\\phi''(X_n)(a(X_n,n\\delta t)\\delta t+b(X_n,n\\delta t)J_n\\delta x)^2+o(\\delta X_n^2).\\]\nNow we expand the 2nd order term and, working in the diffusion limit, recognize that $\\delta x^2\\approx\\delta t$, thus we have\n\\[\\delta\\phi=\\phi'(X_n)(a(X_n,n\\delta t)\\delta t+b(X_n,n\\delta t)J_n\\delta x)+\\tfrac12\\phi''(X_n)b(X_n,n\\delta t)^2\\delta t+O(\\delta t^{3/2}).\\]\nPassing to the limit, this leads to the SDE.",
+        "proof_note": "原启发证明完整保留；C²仅给o(δt)，O(δt³⁄²)需要更高阶资格，另条疑误。",
+        "proof_discussion_latex": null,
+        "context_notation": [],
+        "issues": [
+          {
+            "code": "R4_REVIEW",
+            "detail": "原页为Let φ(·) be any continuously twice differentiable function；当前写φ(x)。Itô公式本身正确，但此处强制所有有限和L²的技术版本有额外缺口。 完整漂移φ′a+φ″b²/2和噪声φ′b均正确，C²φ、C¹a,b及适应平方时间可积均已列出。然而D20只有时间积分的平方可积，不能保证D5所要求每一个网格点左和MemLp 2。下述光滑线性SDE反例满足全部前提，却在T=2,K=2失败。"
+          }
+        ],
+        "lean_decl": "MD.Ch06.scalarItoFormula",
+        "reusable_proofs": [],
+        "extra_assumptions": [
+          "[EXTRA]原C²φ、真实PreBrownian和严格积分方程；完整漂移、噪声、二阶Ito校正；适应/可积技术资格保留。"
+        ],
+        "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
+        "review_status": "NEEDS_HUMAN",
+        "repair_log": [],
+        "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
+      },
+      "issues": [
+        {
+          "code": "TRANSCRIPTION_PHI_NOTATION",
+          "detail": "原页为Let φ(·) be any continuously twice differentiable function；当前写φ(x)。Itô公式本身正确，但此处强制所有有限和L²的技术版本有额外缺口。"
+        },
+        {
+          "code": "STRICT_L2_LEFT_SUM_GAP",
+          "detail": "完整漂移φ′a+φ″b²/2和噪声φ′b均正确，C²φ、C¹a,b及适应平方时间可积均已列出。然而D20只有时间积分的平方可积，不能保证D5所要求每一个网格点左和MemLp 2。下述光滑线性SDE反例满足全部前提，却在T=2,K=2失败。"
+        }
+      ],
+      "evidence": [
+        "A：R4_PAGES.pdf 附件第13页，原PDF 254，印刷页233。原页为Let φ(·) be any continuously twice differentiable function；当前写φ(x)。Itô公式本身正确，但此处强制所有有限和L²的技术版本有额外缺口。",
+        "C：仅按任务所列Lean签名及项目依赖定义作只读语义审校；标准库按标准含义采信，不作工程修改或证明检查。完整漂移φ′a+φ″b²/2和噪声φ′b均正确，C²φ、C¹a,b及适应平方时间可积均已列出。然而D20只有时间积分的平方可积，不能保证D5所要求每一个网格点左和MemLp 2。下述光滑线性SDE反例满足全部前提，却在T=2,K=2失败。"
+      ]
+    },
+    "audit": {
+      "lean_decl": "MD.Ch06.scalarItoFormula",
+      "verdict": "FAIL",
+      "explanation": "完整漂移φ′a+φ″b²/2和噪声φ′b均正确，C²φ、C¹a,b及适应平方时间可积均已列出。然而D20只有时间积分的平方可积，不能保证D5所要求每一个网格点左和MemLp 2。下述光滑线性SDE反例满足全部前提，却在T=2,K=2失败。",
+      "counterexample": "取标准Brownian W，X_t=exp(−t/2)W_t，a(x,t)=−x/2，b(x,t)=exp(−t/2)，x0=0。令Φ(x)=∫₀ˣ exp(e*u²/4)/(1+u²)^(1/8) du；Φ光滑。Var(X_t)=v(t)=t exp(−t)，唯一最大V=1/e在t=1。g_t=Φ′(X_t)b(t)适应；在t=1，E[g_t²]=∞，因为Gaussian指数恰抵消，尾积分为∫u^(−1/2)du；附近E[g_t²]量级|t−1|^(−1/2)，故任意有限时间∫E[g_t²]dt有限，满足D20。T=2,K=2左和含g_1(W_2−W_1)，未来增量独立且方差1，所以该项二阶矩无限，另一项为常数倍W_1，不能抵消；D5要求MemLp的结论失败。第14条取φ(x,t)=Φ(x)。",
+      "suggested_fix": "采用通常局部Itô积分定义，或另要求结论所用每个左点和的L²资格及其均方收敛所需的充分正则/一致可积条件；仅增加时间积分平方可积不足。"
+    },
+    "subtask": "BATCH18a",
+    "input_sha256": {
+      "Blueprint/Ch06.lean": "0a02a34ec68989a83bccfa5916db5053ecdb58e05667bf21ff3568d9d1f4318e",
+      "blueprint/ch06/ch06_source.json": "45c70ceef21ca168af437de297e2e21e2800b452ab7942654061d4cff9bb5d95",
+      "BATCH18a_PAGES.pdf": "cfd90ab25e20c99e6ec983947bb8b9ef3fdd34b18bd07e66985178c5706a0592",
+      "signature_sha256": "27346742cd8b8cb811d042be47dc3f5ebbf62be1c866c85676deb3ee8549a7ee"
+    }
+  },
+  {
+    "batch": "BATCH18",
+    "source_id": "MD-6.3.1-TimeItoFormula",
+    "json_review": {
+      "status": "NEEDS_HUMAN",
+      "issue_codes": [
+        "ERRATUM?",
+        "CORRECTED_VS_PRINTED",
+        "STRICT_L2_LEFT_SUM_GAP"
+      ],
+      "corrected_json": {
+        "source_id": "MD-6.3.1-TimeItoFormula",
+        "kind": "unnumbered_claim",
+        "label": "(6.18)",
+        "section": "6.3.1",
+        "printed_page": "234",
+        "pdf_page": "255",
+        "statement_latex": "We also mention that the Itô-Doeblin formula can be easily generalized to functions of the form $\\phi(x,t)$:\n\\[d\\phi(X,t)=\\phi_t(X,t)+\\phi_x(X,t)(a(X,t)dt+b(X,t)dW)+\\tfrac12\\phi_{xx}(X,t)b(X,t)^2dt.\\tag{6.18}\\]",
+        "proof_latex": null,
+        "proof_note": "原书未给独立完整证明。",
+        "proof_discussion_latex": null,
+        "context_notation": [],
+        "issues": [
+          {
+            "code": "ERRATUM?",
+            "detail": "印刷φ_t(X,t)项漏dt，字面微分式不具一致类型；补dt需要网站审计裁定。"
+          },
+          {
+            "code": "R4_REVIEW",
+            "detail": "原页(6.18)的φ_t项确实漏dt；JSON忠实保留，ERRATUM?合理。 签名是补上φ_t dt后的完整积分修正版，(1,0)/(0,1)方向及二阶x导数正确，[EXTRA]已坦白修正。但仍有与第12条相同的全部有限和L²缺口；取下述φ(x,t)=Φ(x)即可，故当前积分版本在所列前提下也不成立。"
+          }
+        ],
+        "lean_decl": "MD.Ch06.timeItoFormula",
+        "reusable_proofs": [],
+        "extra_assumptions": [
+          "[EXTRA]Lean保留完整积分陈述，以φ_t dt的正确时间积分表达；原无dt的字面式仍在逐字JSON，不宣称字面式已证。"
+        ],
+        "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
+        "review_status": "NEEDS_HUMAN",
+        "repair_log": [
+          {
+            "date": "2026-10-17",
+            "action": "directive22_printed_corrected_pair",
+            "change": "原文右端以形式微分占位量记录，时间偏导补dt；完整修正积分公式独立命名。",
+            "corrected_decl": "MD.Ch06.timeItoFormula_corrected",
+            "website": "未提交；待网站审计"
+          }
+        ],
+        "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
+      },
+      "issues": [
+        {
+          "code": "ERRATUM?",
+          "detail": "签名是补上φ_t dt后的完整积分修正版，(1,0)/(0,1)方向及二阶x导数正确，[EXTRA]已坦白修正。但仍有与第12条相同的全部有限和L²缺口；取下述φ(x,t)=Φ(x)即可，故当前积分版本在所列前提下也不成立。"
+        },
+        {
+          "code": "CORRECTED_VS_PRINTED",
+          "detail": "签名是补上φ_t dt后的完整积分修正版，(1,0)/(0,1)方向及二阶x导数正确，[EXTRA]已坦白修正。但仍有与第12条相同的全部有限和L²缺口；取下述φ(x,t)=Φ(x)即可，故当前积分版本在所列前提下也不成立。"
+        },
+        {
+          "code": "STRICT_L2_LEFT_SUM_GAP",
+          "detail": "签名是补上φ_t dt后的完整积分修正版，(1,0)/(0,1)方向及二阶x导数正确，[EXTRA]已坦白修正。但仍有与第12条相同的全部有限和L²缺口；取下述φ(x,t)=Φ(x)即可，故当前积分版本在所列前提下也不成立。"
+        }
+      ],
+      "evidence": [
+        "A：R4_PAGES.pdf 附件第15页，原PDF 255，印刷页234。原页(6.18)的φ_t项确实漏dt；JSON忠实保留，ERRATUM?合理。",
+        "C：仅按任务所列Lean签名及项目依赖定义作只读语义审校；标准库按标准含义采信，不作工程修改或证明检查。签名是补上φ_t dt后的完整积分修正版，(1,0)/(0,1)方向及二阶x导数正确，[EXTRA]已坦白修正。但仍有与第12条相同的全部有限和L²缺口；取下述φ(x,t)=Φ(x)即可，故当前积分版本在所列前提下也不成立。"
+      ]
+    },
+    "audit": {
+      "lean_decl": "MD.Ch06.timeItoFormula",
+      "verdict": "FAIL",
+      "explanation": "签名是补上φ_t dt后的完整积分修正版，(1,0)/(0,1)方向及二阶x导数正确，[EXTRA]已坦白修正。但仍有与第12条相同的全部有限和L²缺口；取下述φ(x,t)=Φ(x)即可，故当前积分版本在所列前提下也不成立。",
+      "counterexample": "取标准Brownian W，X_t=exp(−t/2)W_t，a(x,t)=−x/2，b(x,t)=exp(−t/2)，x0=0。令Φ(x)=∫₀ˣ exp(e*u²/4)/(1+u²)^(1/8) du；Φ光滑。Var(X_t)=v(t)=t exp(−t)，唯一最大V=1/e在t=1。g_t=Φ′(X_t)b(t)适应；在t=1，E[g_t²]=∞，因为Gaussian指数恰抵消，尾积分为∫u^(−1/2)du；附近E[g_t²]量级|t−1|^(−1/2)，故任意有限时间∫E[g_t²]dt有限，满足D20。T=2,K=2左和含g_1(W_2−W_1)，未来增量独立且方差1，所以该项二阶矩无限，另一项为常数倍W_1，不能抵消；D5要求MemLp的结论失败。第14条取φ(x,t)=Φ(x)。",
+      "suggested_fix": "原文漏dt保留并标注，修正公式独立命名；同时修复第12条所述严格左和L²缺口。"
+    },
+    "subtask": "BATCH18c",
+    "input_sha256": {
+      "Blueprint/Ch06.lean": "0a02a34ec68989a83bccfa5916db5053ecdb58e05667bf21ff3568d9d1f4318e",
+      "blueprint/ch06/ch06_source.json": "45c70ceef21ca168af437de297e2e21e2800b452ab7942654061d4cff9bb5d95",
+      "BATCH18c_PAGES.pdf": "8739b522449334878461d199d41aeeb858c8086e869d288869270a2a067d9b07",
+      "signature_sha256": "73394758c5f293412223d43553bed7d3f0416222ca3103169ba0444c20a722ac"
+    }
+  },
+  {
+    "batch": "BATCH19",
+    "source_id": "MD-6.3.2-OUVarianceIntegral",
+    "json_review": {
+      "status": "APPROVED",
+      "issue_codes": [
+        "INCOMPLETE_CONCLUSION_GAUSSIAN_LAW"
+      ],
+      "corrected_json": null,
+      "issues": [
+        {
+          "code": "INCOMPLETE_CONCLUSION_GAUSSIAN_LAW",
+          "detail": "签名只对γ>0,T≥0计算普通定积分，等式正确。但整条statement_scope未限制成仅末尾确定性等式，原文的Y为Gaussian、均值0、随机积分方差都没有出现在本声明结论中。[EXTRA]说由其他条目保留不能替代本条完整核对；应缩小来源范围或添加完整随机声明。"
+        }
+      ],
+      "evidence": [
+        "A：R4_PAGES.pdf 附件第18页，原PDF 256，印刷页235。本页Y定义、均值零Gaussian和完整方差等式转录相符。",
+        "C：仅按任务所列Lean签名及项目依赖定义作只读语义审校；标准库按标准含义采信，不作工程修改或证明检查。签名只对γ>0,T≥0计算普通定积分，等式正确。但整条statement_scope未限制成仅末尾确定性等式，原文的Y为Gaussian、均值0、随机积分方差都没有出现在本声明结论中。[EXTRA]说由其他条目保留不能替代本条完整核对；应缩小来源范围或添加完整随机声明。"
+      ]
+    },
+    "audit": {
+      "lean_decl": "MD.Ch06.ouVarianceIntegral",
+      "verdict": "FAIL",
+      "explanation": "签名只对γ>0,T≥0计算普通定积分，等式正确。但整条statement_scope未限制成仅末尾确定性等式，原文的Y为Gaussian、均值0、随机积分方差都没有出现在本声明结论中。[EXTRA]说由其他条目保留不能替代本条完整核对；应缩小来源范围或添加完整随机声明。",
+      "counterexample": null,
+      "suggested_fix": "若只审普通积分，statement_latex限定为积分求值等式并明确范围；否则增加真实随机积分Y的HasLaw(gaussianReal 0 variance)及均值/方差结论。"
+    },
+    "subtask": "BATCH19c",
+    "input_sha256": {
+      "Blueprint/Ch06.lean": "0a02a34ec68989a83bccfa5916db5053ecdb58e05667bf21ff3568d9d1f4318e",
+      "blueprint/ch06/ch06_source.json": "45c70ceef21ca168af437de297e2e21e2800b452ab7942654061d4cff9bb5d95",
+      "BATCH19c_PAGES.pdf": "a6e8e3feddb36409662cf766ad2d68bb12959b5d70618fa79a7ca4478d700d7e",
+      "signature_sha256": "38f369d03b287f3f2a2b7c72a7dc7c3c26f9411a7961788e157063933b80f9f7"
+    }
+  },
+  {
+    "batch": "BATCH19",
+    "source_id": "MD-6.3.2-OULawPrinted",
+    "json_review": {
+      "status": "CORRECTED",
+      "issue_codes": [
+        "TRANSCRIPTION_RADICAL_SCOPE",
+        "FALSE_ERRATUM",
+        "WRONG_OU_VARIANCE"
+      ],
+      "corrected_json": {
+        "source_id": "MD-6.3.2-OULawPrinted",
+        "kind": "unnumbered_claim",
+        "label": null,
+        "section": "6.3.2",
+        "printed_page": "235",
+        "pdf_page": "256",
+        "statement_latex": "The solution with equivalent distribution is therefore\n\\[X(t)=e^{-\\gamma t}X(0)+\\sigma\\sqrt{(2\\gamma)^{-1}(1-e^{-2\\gamma t})}\\widehat Y(t).\\]\nwhere $\\widehat Y(t)$ should be interpreted as random process which at every time $t$ evaluates to a normal random variable ($\\widehat Y(t)\\sim N(0,1)$). This is what we mean by the exact distributional solution of the Ornstein-Uhlenbeck SDE with prescribed initial value $X(0)$.",
+        "proof_latex": null,
+        "proof_note": "原书未给独立完整证明。",
+        "proof_discussion_latex": null,
+        "context_notation": [],
+        "issues": [
+          {
+            "code": "R4_REVIEW",
+            "detail": "附件第19页根号横线覆盖整个(2γ)⁻¹(1−e^(−2γt))，并非只覆盖(2γ)⁻¹。JSON、ERRATUM?及repair_log均误读原页；原书此公式是正确的。 所列前提下正确均值是exp(−γT)x0，正确variance为σ²(1−exp(−2γT))/(2γ)。签名却将(1−exp(−2γT))平方，既不忠实原页也数学错误；不能以Printed名称豁免。仅单时law无需指定Ŷ整族耦合。"
+          }
+        ],
+        "lean_decl": "MD.Ch06.ouLawPrinted",
+        "reusable_proofs": [],
+        "extra_assumptions": [],
+        "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
+        "review_status": "CORRECTED",
+        "repair_log": [],
+        "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
+      },
+      "issues": [
+        {
+          "code": "TRANSCRIPTION_RADICAL_SCOPE",
+          "detail": "附件第19页根号横线覆盖整个(2γ)⁻¹(1−e^(−2γt))，并非只覆盖(2γ)⁻¹。JSON、ERRATUM?及repair_log均误读原页；原书此公式是正确的。"
+        },
+        {
+          "code": "FALSE_ERRATUM",
+          "detail": "附件第19页根号横线覆盖整个(2γ)⁻¹(1−e^(−2γt))，并非只覆盖(2γ)⁻¹。JSON、ERRATUM?及repair_log均误读原页；原书此公式是正确的。"
+        },
+        {
+          "code": "WRONG_OU_VARIANCE",
+          "detail": "所列前提下正确均值是exp(−γT)x0，正确variance为σ²(1−exp(−2γT))/(2γ)。签名却将(1−exp(−2γT))平方，既不忠实原页也数学错误；不能以Printed名称豁免。仅单时law无需指定Ŷ整族耦合。"
+        }
+      ],
+      "evidence": [
+        "A：R4_PAGES.pdf 附件第19页，原PDF 256，印刷页235。附件第19页根号横线覆盖整个(2γ)⁻¹(1−e^(−2γt))，并非只覆盖(2γ)⁻¹。JSON、ERRATUM?及repair_log均误读原页；原书此公式是正确的。",
+        "C：仅按任务所列Lean签名及项目依赖定义作只读语义审校；标准库按标准含义采信，不作工程修改或证明检查。所列前提下正确均值是exp(−γT)x0，正确variance为σ²(1−exp(−2γT))/(2γ)。签名却将(1−exp(−2γT))平方，既不忠实原页也数学错误；不能以Printed名称豁免。仅单时law无需指定Ŷ整族耦合。"
+      ]
+    },
+    "audit": {
+      "lean_decl": "MD.Ch06.ouLawPrinted",
+      "verdict": "FAIL",
+      "explanation": "所列前提下正确均值是exp(−γT)x0，正确variance为σ²(1−exp(−2γT))/(2γ)。签名却将(1−exp(−2γT))平方，既不忠实原页也数学错误；不能以Printed名称豁免。仅单时law无需指定Ŷ整族耦合。",
+      "counterexample": "γ=σ=1,x0=0,T=(log 2)/2：真实variance=(1−1/2)/2=1/4，签名variance=(1−1/2)²/2=1/8。",
+      "suggested_fix": "根号改为覆盖整个(2γ)⁻¹(1−e^(−2γt))；撤销错误ERRATUM?及其错误repair_log归因；Lean variance改为σ²(1−e^(−2γT))/(2γ)。"
+    },
+    "subtask": "BATCH19d",
+    "input_sha256": {
+      "Blueprint/Ch06.lean": "0a02a34ec68989a83bccfa5916db5053ecdb58e05667bf21ff3568d9d1f4318e",
+      "blueprint/ch06/ch06_source.json": "45c70ceef21ca168af437de297e2e21e2800b452ab7942654061d4cff9bb5d95",
+      "BATCH19d_PAGES.pdf": "a6e8e3feddb36409662cf766ad2d68bb12959b5d70618fa79a7ca4478d700d7e",
+      "signature_sha256": "43a177ab42dcc1a9357f1334fd0a0f170196d0739e263b0fb4cf5543054637a8"
+    }
+  },
+  {
+    "batch": "BATCH19",
+    "source_id": "MD-6.3.2-MomentumOU",
+    "json_review": {
+      "status": "APPROVED",
+      "issue_codes": [
+        "MISSING_WIENER_INDEPENDENCE"
+      ],
+      "corrected_json": null,
+      "issues": [
+        {
+          "code": "MISSING_WIENER_INDEPENDENCE",
+          "detail": "正质量、γ>0、θ>0、各坐标噪声√(2γθm_i)、任意确定p0都正确。但strictOUProcess和strictScalarSDE均不编码Wiener或坐标独立性；[EXTRA]称资格另给，本条未给任何可核对声明。因此该Prop允许完全相关甚至零驱动，未覆盖原文完整对象域。"
+        }
+      ],
+      "evidence": [
+        "A：R4_PAGES.pdf 附件第22页，原PDF 256，印刷页235。原页(6.20)、(6.21)、独立W_i及M^(1/2)对应。",
+        "C：仅按任务所列Lean签名及项目依赖定义作只读语义审校；标准库按标准含义采信，不作工程修改或证明检查。正质量、γ>0、θ>0、各坐标噪声√(2γθm_i)、任意确定p0都正确。但strictOUProcess和strictScalarSDE均不编码Wiener或坐标独立性；[EXTRA]称资格另给，本条未给任何可核对声明。因此该Prop允许完全相关甚至零驱动，未覆盖原文完整对象域。"
+      ]
+    },
+    "audit": {
+      "lean_decl": "MD.Ch06.momentumOU",
+      "verdict": "FAIL",
+      "explanation": "正质量、γ>0、θ>0、各坐标噪声√(2γθm_i)、任意确定p0都正确。但strictOUProcess和strictScalarSDE均不编码Wiener或坐标独立性；[EXTRA]称资格另给，本条未给任何可核对声明。因此该Prop允许完全相关甚至零驱动，未覆盖原文完整对象域。",
+      "counterexample": "P取单点概率空间，W≡0、p≡0、p0=0，任取正γ,θ,m，定义成立，但W不是Wiener。若W_i全取同一个Brownian、相同参数且p0相同，则各动量完全相关，同样不能表达原文独立噪声。",
+      "suggested_fix": "将完整独立Wiener族资格纳入Prop，或提供可核对的单独环境声明并显式限定本定义仅为方程关系。"
+    },
+    "subtask": "BATCH19g",
+    "input_sha256": {
+      "Blueprint/Ch06.lean": "0a02a34ec68989a83bccfa5916db5053ecdb58e05667bf21ff3568d9d1f4318e",
+      "blueprint/ch06/ch06_source.json": "45c70ceef21ca168af437de297e2e21e2800b452ab7942654061d4cff9bb5d95",
+      "BATCH19g_PAGES.pdf": "a6e8e3feddb36409662cf766ad2d68bb12959b5d70618fa79a7ca4478d700d7e",
+      "signature_sha256": "5b8050532652d8acab084d2409af56b2caf3582ffd75111fcdc9ba4e4983af69"
+    }
+  },
+  {
+    "batch": "BATCH25",
+    "source_id": "MD-6.3.6-FPDiffusionPrinted",
+    "json_review": {
+      "status": "CORRECTED",
+      "issue_codes": [
+        "TRANSCRIPTION_DIFFUSION_SIGN",
+        "FALSE_SOURCE_ERRATUM",
+        "FALSE_LEAN_SIGNATURE",
+        "CORRECTED_DECL_NOT_SUPPLIED"
+      ],
+      "corrected_json": {
+        "source_id": "MD-6.3.6-FPDiffusionPrinted",
+        "kind": "unnumbered_claim",
+        "label": null,
+        "section": "6.3.6",
+        "printed_page": "242",
+        "pdf_page": "263",
+        "statement_latex": "With two rounds of integration by parts on the term involving $b(x)$, we find, using the fact that the boundary terms vanish,\n\\[\\int_{-\\infty}^{+\\infty}b^2(x)\\phi''(x)\\rho(x,t)dx=\\int_{-\\infty}^{+\\infty}\\phi(x)(b^2(x)\\rho)_{xx}(x,t)dx.\\]",
+        "proof_latex": null,
+        "proof_note": "原书未给独立完整证明。",
+        "proof_discussion_latex": null,
+        "context_notation": [],
+        "issues": [
+          {
+            "code": "TRANSCRIPTION_ERROR",
+            "detail": "附件第25页原式为正号；原JSON负号及指称原书负号的ERRATUM?均错误。原页无(6.39)编号。"
+          }
+        ],
+        "lean_decl": "MD.Ch06.fpDiffusionPrinted",
+        "reusable_proofs": [],
+        "extra_assumptions": [],
+        "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
+        "review_status": "CORRECTED",
+        "repair_log": [
+          {
+            "date": "2026-10-16",
+            "action": "original_page_recheck",
+            "reason": "保留原书错误负号；恢复原页引导句，不用转述替代原引文。",
+            "evidence": "source_pages/p262.png; source_pages/p263.png; visual check 2026-10-16",
+            "before": {
+              "statement_latex": "Using two integrations by parts gives\n\\[\\int_{-\\infty}^{+\\infty}b^2(x)\\phi''(x)\\rho(x,t)dx=-\\int_{-\\infty}^{+\\infty}\\phi(x)(b^2(x)\\rho(x,t))_{xx}dx.\\]"
+            },
+            "after": {
+              "statement_latex": "With two rounds of integration by parts on the term involving $b(x)$, we find, using the fact that the boundary terms vanish,\n\\[\\int_{-\\infty}^{+\\infty}b^2(x)\\phi''(x)\\rho(x,t)dx=-\\int_{-\\infty}^{+\\infty}\\phi(x)(b^2(x)\\rho)_{xx}dx.\\]"
+            },
+            "website": "待网站审计"
+          },
+          {
+            "date": "2026-10-17",
+            "action": "directive22_printed_corrected_pair",
+            "change": "仅将两次分部积分后的外负号改为正号，保留原C²和紧支资格。",
+            "corrected_decl": "MD.Ch06.fpDiffusionPrinted_corrected",
+            "website": "未提交；待网站审计"
+          },
+          {
+            "date": "2026-10-17",
+            "action": "R5_independent_pdf_review",
+            "reason": "直接视觉核对R5_PAGES.pdf第25页，撤销历史记录把转录负号归责于原书的结论；恢复正积分。"
+          }
+        ],
+        "source_page_verification": "R5_INDEPENDENT_REVIEW; R5_PAGES.pdf 附件第25页；以本次evidence及issues为准，历史repair_log不作为真实性证据。"
+      },
+      "issues": [
+        {
+          "code": "TRANSCRIPTION_DIFFUSION_SIGN",
+          "detail": "A：附件第25页视觉核对：等号后直接是正积分，没有负号；被积式为φ(x)(b²(x)ρ)xx(x,t)。JSON转录负号、issues称原页负号、repair_log称原书错误，三者都不符附件。原页也未把该式编号为(6.39)。"
+        },
+        {
+          "code": "FALSE_SOURCE_ERRATUM",
+          "detail": "C：Printed签名对所有C² b/ρ/φ及紧支φ断言负号积分恒等。此负号既不忠实也数学错误；两次分部积分应得正号。现有签名需FAIL，不因Printed名称而豁免与实际PDF不符的问题。repair_log提到fpDiffusionPrinted_corrected，但无实际签名，不能把修改描述当作独立签名已审；若仅删除外负号并保留这些C²/紧支前提，则数学陈述正确。"
+        },
+        {
+          "code": "FALSE_LEAN_SIGNATURE",
+          "detail": "C：Printed签名对所有C² b/ρ/φ及紧支φ断言负号积分恒等。此负号既不忠实也数学错误；两次分部积分应得正号。现有签名需FAIL，不因Printed名称而豁免与实际PDF不符的问题。repair_log提到fpDiffusionPrinted_corrected，但无实际签名，不能把修改描述当作独立签名已审；若仅删除外负号并保留这些C²/紧支前提，则数学陈述正确。"
+        },
+        {
+          "code": "CORRECTED_DECL_NOT_SUPPLIED",
+          "detail": "C：Printed签名对所有C² b/ρ/φ及紧支φ断言负号积分恒等。此负号既不忠实也数学错误；两次分部积分应得正号。现有签名需FAIL，不因Printed名称而豁免与实际PDF不符的问题。repair_log提到fpDiffusionPrinted_corrected，但无实际签名，不能把修改描述当作独立签名已审；若仅删除外负号并保留这些C²/紧支前提，则数学陈述正确。"
+        }
+      ],
+      "evidence": [
+        {
+          "phase": "A",
+          "location": "R5_PAGES.pdf，附件第25页；原PDF页263，印刷页242",
+          "finding": "A：附件第25页视觉核对：等号后直接是正积分，没有负号；被积式为φ(x)(b²(x)ρ)xx(x,t)。JSON转录负号、issues称原页负号、repair_log称原书错误，三者都不符附件。原页也未把该式编号为(6.39)。"
+        },
+        {
+          "phase": "C",
+          "location": "R5_任务.md，条目23/30，实际Lean签名/定义及其明确命名空间的依赖摘录、文末D附录",
+          "finding": "C：Printed签名对所有C² b/ρ/φ及紧支φ断言负号积分恒等。此负号既不忠实也数学错误；两次分部积分应得正号。现有签名需FAIL，不因Printed名称而豁免与实际PDF不符的问题。repair_log提到fpDiffusionPrinted_corrected，但无实际签名，不能把修改描述当作独立签名已审；若仅删除外负号并保留这些C²/紧支前提，则数学陈述正确。"
+        }
+      ]
+    },
+    "audit": {
+      "lean_decl": "MD.Ch06.fpDiffusionPrinted",
+      "verdict": "FAIL",
+      "explanation": "C：Printed签名对所有C² b/ρ/φ及紧支φ断言负号积分恒等。此负号既不忠实也数学错误；两次分部积分应得正号。现有签名需FAIL，不因Printed名称而豁免与实际PDF不符的问题。repair_log提到fpDiffusionPrinted_corrected，但无实际签名，不能把修改描述当作独立签名已审；若仅删除外负号并保留这些C²/紧支前提，则数学陈述正确。",
+      "counterexample": "b(x)=1、ρ(x)=x²，取任一非零非负C∞紧支φ。左边∫x²φ″=2∫φ>0，现有右边=−2∫φ<0。满足签名全部前提。",
+      "suggested_fix": "原文改回正号并补回(x,t)，移除虚假的原书ERRATUM?；Lean去掉右端外负号。补充实际_corrected签名后再审；修正历史记录的错误来源归属。"
+    },
+    "subtask": "BATCH25e",
+    "input_sha256": {
+      "Blueprint/Ch06.lean": "0a02a34ec68989a83bccfa5916db5053ecdb58e05667bf21ff3568d9d1f4318e",
+      "blueprint/ch06/ch06_source.json": "45c70ceef21ca168af437de297e2e21e2800b452ab7942654061d4cff9bb5d95",
+      "BATCH25e_PAGES.pdf": "6c67d0ee2849f40a134136fd81dce990de4fdae894f6bbb4d4883d246dae408b",
+      "signature_sha256": "e3054ef15edf9b7a625d6d50b25eded1fdfc693b1d2c0c80664c36a4b1f9ea23"
+    }
+  },
+  {
+    "batch": "BATCH26",
+    "source_id": "MD-6.3.6-ZeroNoise",
+    "json_review": {
+      "status": "APPROVED",
+      "issue_codes": [
+        "INCOMPLETE_CONCLUSION_ODE_REDUCTION"
+      ],
+      "corrected_json": null,
+      "issues": [
+        {
+          "code": "INCOMPLETE_CONCLUSION_ODE_REDUCTION",
+          "detail": "C：签名仅量化a/f/ρ/x并证明两个算子代数化简，D47/D50中的零扩散确实消去；无须额外光滑前提也可作Lean形式恒等。但完整原句还断言过程的SDE退化为ODE，当前声明没有W/X、SDE解前提、轨道积分方程或导数结论。[EXTRA]也未说明只覆盖算子子句，故按全部结论审校为遗漏，不能把算子化简当作整条已形式化。"
+        }
+      ],
+      "evidence": [
+        {
+          "phase": "A",
+          "location": "R5_PAGES.pdf，附件第30页；原PDF页263，印刷页242",
+          "finding": "A：附件第30页b≡0、SDE变ODE、Lie derivative和Liouvillian三段原句一致。"
+        },
+        {
+          "phase": "C",
+          "location": "R5_任务.md，条目27/30，实际Lean签名/定义及其明确命名空间的依赖摘录、文末D附录",
+          "finding": "C：签名仅量化a/f/ρ/x并证明两个算子代数化简，D47/D50中的零扩散确实消去；无须额外光滑前提也可作Lean形式恒等。但完整原句还断言过程的SDE退化为ODE，当前声明没有W/X、SDE解前提、轨道积分方程或导数结论。[EXTRA]也未说明只覆盖算子子句，故按全部结论审校为遗漏，不能把算子化简当作整条已形式化。"
+        }
+      ]
+    },
+    "audit": {
+      "lean_decl": "MD.Ch06.zeroNoise",
+      "verdict": "FAIL",
+      "explanation": "C：签名仅量化a/f/ρ/x并证明两个算子代数化简，D47/D50中的零扩散确实消去；无须额外光滑前提也可作Lean形式恒等。但完整原句还断言过程的SDE退化为ODE，当前声明没有W/X、SDE解前提、轨道积分方程或导数结论。[EXTRA]也未说明只覆盖算子子句，故按全部结论审校为遗漏，不能把算子化简当作整条已形式化。",
+      "counterexample": null,
+      "suggested_fix": "另加真实零扩散SDE解到ODE积分方程的声明，经典导数版本须有相应连续性；或明确将条目scope缩到两个算子子句并保留尚未覆盖的过程结论。"
+    },
+    "subtask": "BATCH26a",
+    "input_sha256": {
+      "Blueprint/Ch06.lean": "0a02a34ec68989a83bccfa5916db5053ecdb58e05667bf21ff3568d9d1f4318e",
+      "blueprint/ch06/ch06_source.json": "45c70ceef21ca168af437de297e2e21e2800b452ab7942654061d4cff9bb5d95",
+      "BATCH26a_PAGES.pdf": "6c67d0ee2849f40a134136fd81dce990de4fdae894f6bbb4d4883d246dae408b",
+      "signature_sha256": "541ca630d8b5a90ea6abc398dc5a8871d9c31e24266f6a0d55f11447dc9c9eca"
+    }
+  },
+  {
+    "batch": "BATCH27",
+    "source_id": "MD-6.3.7-VectorIto",
+    "json_review": {
+      "status": "CORRECTED",
+      "issue_codes": [
+        "TRANSCRIPTION_OMITTED_CONNECTING_TEXT",
+        "INSUFFICIENT_L2_RIEMANN_SUM_QUALIFICATION",
+        "UNDECLARED_FILTRATION_RESTRICTION"
+      ],
+      "corrected_json": {
+        "source_id": "MD-6.3.7-VectorIto",
+        "kind": "unnumbered_claim",
+        "label": "(6.40)–(6.41)",
+        "section": "6.3.7",
+        "printed_page": "243",
+        "pdf_page": "264",
+        "statement_latex": "If $\\phi$ is a scalar valued function of $\\mathbb R^m$, and $Z(t)$ is the solution of the SDE system\n\\[dZ=a(Z)dt+B dW;\\tag{6.39}\\]\nwhere $a$ is a function in $\\mathbb R^m$ and $B$ is a constant matrix, then we have\n\\[d\\phi(Z(t))=\\nabla\\phi\\cdot[adt+B dW]+\\tfrac12dW^TB^T\\phi''B dW;\\tag{6.40}\\]\n[原页关于Hessian、常矩阵范围及Wiener乘法规则的连接文本略]\n\\[d\\phi(Z(t))=\\nabla\\phi\\cdot[adt+B dW]+\\tfrac12\\operatorname{Tr}(B^T\\phi''B)dt.\\tag{6.41}\\]",
+        "proof_latex": null,
+        "proof_note": "原书未给独立完整证明。",
+        "proof_discussion_latex": null,
+        "context_notation": [],
+        "issues": [],
+        "lean_decl": "MD.Ch06.vectorIto",
+        "reusable_proofs": [],
+        "extra_assumptions": [
+          "[EXTRA]按本节实际常矩阵B范围；真实全部坐标严格Ito积分与Hessian/trace完整校正，未缩成仅漂移定义。"
+        ],
+        "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
+        "review_status": "CORRECTED",
+        "repair_log": [],
+        "source_page_verification": "R5_INDEPENDENT_REVIEW; R5_PAGES.pdf 附件第31页；以本次evidence及issues为准，历史repair_log不作为真实性证据。"
+      },
+      "issues": [
+        {
+          "code": "TRANSCRIPTION_OMITTED_CONNECTING_TEXT",
+          "detail": "A：附件第31页(6.40)与(6.41)之间还有Hessian说明、常矩阵/乘性噪声范围说明及dWi dWj=δij dt规则，JSON直接相接而未标省略。公式本身的½、矩阵次序、trace及编号正确。"
+        },
+        {
+          "code": "INSUFFICIENT_L2_RIEMANN_SUM_QUALIFICATION",
+          "detail": "C：n/r、全部噪声坐标、常B、C²φ和真实strictVectorSDE均保留，vectorGenerator为漂移加½ BBᵀ:Hessian。各j的adaptedSquareIntegrand仅给相对单独Wj历史可测及∫E[g_j²]dt有限；这比通常共同向量历史更窄，且未在[EXTRA]披露。更严重的是它不保证D10要求的每一个等距左端和均在L²，甚至不保证每个采样时刻g_j(t)∈L²。即使完全标准适应光滑扩散，这组前提也不足以推出当前“strict”结论，故FAIL。"
+        },
+        {
+          "code": "UNDECLARED_FILTRATION_RESTRICTION",
+          "detail": "C：n/r、全部噪声坐标、常B、C²φ和真实strictVectorSDE均保留，vectorGenerator为漂移加½ BBᵀ:Hessian。各j的adaptedSquareIntegrand仅给相对单独Wj历史可测及∫E[g_j²]dt有限；这比通常共同向量历史更窄，且未在[EXTRA]披露。更严重的是它不保证D10要求的每一个等距左端和均在L²，甚至不保证每个采样时刻g_j(t)∈L²。即使完全标准适应光滑扩散，这组前提也不足以推出当前“strict”结论，故FAIL。"
+        }
+      ],
+      "evidence": [
+        {
+          "phase": "A",
+          "location": "R5_PAGES.pdf，附件第31页；原PDF页264，印刷页243",
+          "finding": "A：附件第31页(6.40)与(6.41)之间还有Hessian说明、常矩阵/乘性噪声范围说明及dWi dWj=δij dt规则，JSON直接相接而未标省略。公式本身的½、矩阵次序、trace及编号正确。"
+        },
+        {
+          "phase": "C",
+          "location": "R5_任务.md，条目28/30，实际Lean签名/定义及其明确命名空间的依赖摘录、文末D附录",
+          "finding": "C：n/r、全部噪声坐标、常B、C²φ和真实strictVectorSDE均保留，vectorGenerator为漂移加½ BBᵀ:Hessian。各j的adaptedSquareIntegrand仅给相对单独Wj历史可测及∫E[g_j²]dt有限；这比通常共同向量历史更窄，且未在[EXTRA]披露。更严重的是它不保证D10要求的每一个等距左端和均在L²，甚至不保证每个采样时刻g_j(t)∈L²。即使完全标准适应光滑扩散，这组前提也不足以推出当前“strict”结论，故FAIL。"
+        }
+      ]
+    },
+    "audit": {
+      "lean_decl": "MD.Ch06.vectorIto",
+      "verdict": "FAIL",
+      "explanation": "C：n/r、全部噪声坐标、常B、C²φ和真实strictVectorSDE均保留，vectorGenerator为漂移加½ BBᵀ:Hessian。各j的adaptedSquareIntegrand仅给相对单独Wj历史可测及∫E[g_j²]dt有限；这比通常共同向量历史更窄，且未在[EXTRA]披露。更严重的是它不保证D10要求的每一个等距左端和均在L²，甚至不保证每个采样时刻g_j(t)∈L²。即使完全标准适应光滑扩散，这组前提也不足以推出当前“strict”结论，故FAIL。",
+      "counterexample": "取标准实Brownian W，n=2,r=1，X_t=(W_t,t)，a=(0,1)，B=(1,0)ᵀ，x0=(0,0)。取χ∈C_c∞(R)，χ=1于0附近、suppχ⊂[−1,1]，φ(x,y)=exp(x⁴)χ((y−1)exp(3x⁴))。φ为C∞，g_t=∂xφ(W_t,t)自然历史适应且在每个有限时间区间∫E[g_t²]dt<∞：大|x|处非零时间窗宽O(exp(−3x⁴))，g²至多多项式×exp(2x⁴)，故时间积分可积。但g_1=4W_1³exp(W_1⁴)不在L²。T=2,K=2的D9左端和=g_1(W_2−W_1)（g_0=0），未来独立单位增量使该和也不在L²。X满足常系数strictVectorSDE，所有给出的假设成立，而D10的第一个合取项失败。",
+      "suggested_fix": "采用标准L² Itô积分并将左端和收敛解释为适当简单过程逼近，或增加足以保证全部等距和L²及其收敛的时间L²连续/一致可积资格。多维适应性应使用共同向量滤过。原文相隔的公式用明确省略号衔接或补回原连接文本。"
+    },
+    "subtask": "BATCH27a",
+    "input_sha256": {
+      "Blueprint/Ch06.lean": "0a02a34ec68989a83bccfa5916db5053ecdb58e05667bf21ff3568d9d1f4318e",
+      "blueprint/ch06/ch06_source.json": "45c70ceef21ca168af437de297e2e21e2800b452ab7942654061d4cff9bb5d95",
+      "BATCH27a_PAGES.pdf": "2a556d2718fdeec241bd7b885b5a27deef955e0c27b9cd58ba49111408d87961",
+      "signature_sha256": "5a92ac3e1cfa3504e5aa829a5e1dcdf5a33ac5b7860952b9b7a7c82f96a937b3"
+    }
+  },
+  {
+    "batch": "BATCH29",
+    "source_id": "MD-6.4.2-CylinderForwardPrinted",
+    "json_review": {
+      "status": "NEEDS_HUMAN",
+      "issue_codes": [
+        "PRINTED_ERRATUM_PHI",
+        "LEAN_DIFFUSION_FACTOR_MISSING"
+      ],
+      "corrected_json": {
+        "source_id": "MD-6.4.2-CylinderForwardPrinted",
+        "kind": "definition",
+        "label": null,
+        "section": "6.4.2",
+        "printed_page": "247",
+        "pdf_page": "268",
+        "statement_latex": "Taking the adjoint, the forward Kolmogorov or Fokker-Planck operator is $\\mathcal L^*$, acting on a density $\\rho(X)$ as\n\\[\\mathcal L^*\\rho=-\\nabla\\cdot(b_0\\rho)+\\tfrac12\\operatorname{Tr}(B^T\\phi''B).\\]",
+        "proof_latex": null,
+        "proof_note": "原书未给独立完整证明。",
+        "proof_discussion_latex": null,
+        "context_notation": [],
+        "issues": [
+          {
+            "code": "ERRATUM?",
+            "detail": "印刷forward密度算子仍写φ″，应ρ″；本条保留两个不同对象的字面表达，不宣称其是密度演化算子。"
+          },
+          {
+            "code": "PRINTED_ERRATUM_PHI",
+            "message": "原页前向算子二阶项确实印为φ″而不是ρ″；保留原文，标[ERRATUM?]并交人审，不默改。"
+          },
+          {
+            "code": "LEAN_DIFFUSION_FACTOR_MISSING",
+            "message": "Printed Lean表达式缺原页二阶项的1/2，D7定义没有内含此系数。"
+          }
+        ],
+        "lean_decl": "MD.Ch06.cylinderForwardPrinted",
+        "reusable_proofs": [],
+        "extra_assumptions": [
+          "[EXTRA]周期lift中的完整实际负散度与错误φ扩散，正确ρ算子已有VectorForward定义。"
+        ],
+        "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
+        "review_status": "NEEDS_HUMAN",
+        "repair_log": [
+          {
+            "date": "2026-10-17",
+            "action": "directive22_printed_corrected_pair",
+            "change": "扩散项中的φ″改为ρ″。",
+            "corrected_decl": "MD.Ch06.cylinderForwardPrinted_corrected",
+            "website": "未提交；待网站审计"
+          },
+          "R6审校：只修订审校JSON；原书数学疑误保留，未修改Lean工程或补证明。"
+        ],
+        "source_page_verification": "R6_PAGES.pdf 附件第10页；已比对对应原页渲染及文本；详见本条evidence。"
+      },
+      "issues": [
+        {
+          "code": "PRINTED_ERRATUM_PHI",
+          "message": "原页前向算子二阶项确实印为φ″而不是ρ″；保留原文，标[ERRATUM?]并交人审，不默改。"
+        },
+        {
+          "code": "LEAN_DIFFUSION_FACTOR_MISSING",
+          "message": "Printed Lean表达式缺原页二阶项的1/2，D7定义没有内含此系数。"
+        }
+      ],
+      "evidence": [
+        "A：R6_PAGES.pdf 附件第10页（原PDF 268，印刷页247）；逐字、公式及页码核对。",
+        "C：只读核对R6_任务.md本条全部Lean签名及其列出的项目依赖/附录定义，未使用旧工程文件；不以sorry判FAIL。",
+        "原页前向显示式二阶项明确有1/2且使用φ″；附录D7的双重求和无1/2。"
+      ]
+    },
+    "audit": {
+      "lean_decl": "MD.Ch06.cylinderForwardPrinted",
+      "verdict": "FAIL",
+      "explanation": "字面版确实保留了原页误写的φ而不是ρ，但漏掉原页清楚印出的1/2：D7的vectorDiffusion是完整∑ij(BBᵀ)ij∂ijφ，自身不含1/2。因此即使按Printed忠实标准也FAIL。[EXTRA]只说明错误φ，未记录新增的二倍系数错误；签名也没有圆环lift约束，只能视为欧氏局部表达。",
+      "counterexample": "取n=r=1、b₀=0、B=[1]、φ(x)=x²、ρ=0。原印刷式值为(1/2)·2=1，当前Lean定义值为2。",
+      "suggested_fix": "仅修复字面忠实版：将vectorDiffusion B φ x改为vectorDiffusion B φ x / 2，继续保留原印刷φ并标[ERRATUM?]；另设corrected版本才改成ρ并对真正圆柱空间使用周期lift。"
+    },
+    "subtask": "BATCH29f",
+    "input_sha256": {
+      "Blueprint/Ch06.lean": "0a02a34ec68989a83bccfa5916db5053ecdb58e05667bf21ff3568d9d1f4318e",
+      "blueprint/ch06/ch06_source.json": "45c70ceef21ca168af437de297e2e21e2800b452ab7942654061d4cff9bb5d95",
+      "BATCH29f_PAGES.pdf": "9483a7964d73395bc3b255ea8c0c4adb3062d81605078941b36202a48c164842",
+      "signature_sha256": "c0c4d694322f52cfd0bce13a831706fd41ffc37320725dcbf0d8f4bceef55d3f"
+    }
+  },
+  {
+    "batch": "BATCH29",
+    "source_id": "MD-6.4.2-StationaryDensity",
+    "json_review": {
+      "status": "CORRECTED",
+      "issue_codes": [
+        "SOURCE_QUOTE_NOT_ON_PAGE",
+        "DENSITY_DOMAIN_MISSING"
+      ],
+      "corrected_json": {
+        "source_id": "MD-6.4.2-StationaryDensity",
+        "kind": "definition",
+        "label": null,
+        "section": "6.4.2",
+        "printed_page": "247",
+        "pdf_page": "268",
+        "statement_latex": "We have seen that invariant distributions correspond in general to solutions of\n\\[\\mathcal L^\\dagger\\rho_{\\rm eq}\\equiv0.\\]",
+        "proof_latex": null,
+        "proof_note": "原书未给独立完整证明。",
+        "proof_discussion_latex": null,
+        "context_notation": [
+          "仅实际形式stationarity；非负、归一化、generator域及真实kernel演化另给，不能由定义计测度不变性已证。"
+        ],
+        "issues": [
+          {
+            "code": "SOURCE_QUOTE_NOT_ON_PAGE",
+            "message": "所引“We have a stationary distribution if …”不是所指定附件原页上的原句。原页实际为“We have seen that invariant distributions correspond in general to solutions of”及L†ρeq≡0。应改为真实摘录，不能把意译标作逐字原文。"
+          },
+          {
+            "code": "DENSITY_DOMAIN_MISSING",
+            "message": "形式PDE为零不能保证ρ是概率密度；当前定义没有非负/可测/归一化资格，亦无[EXTRA]范围缩减说明。"
+          }
+        ],
+        "lean_decl": "MD.Ch06.stationaryDensity",
+        "reusable_proofs": [],
+        "extra_assumptions": [],
+        "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
+        "review_status": "CORRECTED",
+        "repair_log": [
+          "R6审校：只修订审校JSON；原书数学疑误保留，未修改Lean工程或补证明。"
+        ],
+        "source_page_verification": "R6_PAGES.pdf 附件第11页；已比对对应原页渲染及文本；详见本条evidence。"
+      },
+      "issues": [
+        {
+          "code": "SOURCE_QUOTE_NOT_ON_PAGE",
+          "message": "所引“We have a stationary distribution if …”不是所指定附件原页上的原句。原页实际为“We have seen that invariant distributions correspond in general to solutions of”及L†ρeq≡0。应改为真实摘录，不能把意译标作逐字原文。"
+        },
+        {
+          "code": "DENSITY_DOMAIN_MISSING",
+          "message": "形式PDE为零不能保证ρ是概率密度；当前定义没有非负/可测/归一化资格，亦无[EXTRA]范围缩减说明。"
+        }
+      ],
+      "evidence": [
+        "A：R6_PAGES.pdf 附件第11页（原PDF 268，印刷页247）；逐字、公式及页码核对。",
+        "C：只读核对R6_任务.md本条全部Lean签名及其列出的项目依赖/附录定义，未使用旧工程文件；不以sorry判FAIL。",
+        "原页下半部确为“We have seen that invariant distributions correspond in general to solutions of”与L†ρeq≡0，不是给定JSON中的原句。"
+      ]
+    },
+    "audit": {
+      "lean_decl": "MD.Ch06.stationaryDensity",
+      "verdict": "FAIL",
+      "explanation": "定义只要求任意实函数ρ满足形式PDE，没有非负、可测、总质量1或可归一化条件；因此名称stationaryDensity及原句stationary distribution的对象资格没有完整保留。它可作为formalStationaryWeight的定义，但不能单独等同概率平稳密度。[EXTRA]也未标明这一缩减。",
+      "counterexample": "取n=r=1、a=0、B=0、ρ(x)=−1。所有导数为0，所以stationaryDensity成立；ρ却不是非负概率密度。",
+      "suggested_fix": "将现定义明确命名/标注为形式平稳权重；如需保留stationaryDensity为概率密度，则补ρ非负、可测、∫ρ=1（或明确已限定在密度子类型），再要求算子为零。"
+    },
+    "subtask": "BATCH29g",
+    "input_sha256": {
+      "Blueprint/Ch06.lean": "0a02a34ec68989a83bccfa5916db5053ecdb58e05667bf21ff3568d9d1f4318e",
+      "blueprint/ch06/ch06_source.json": "45c70ceef21ca168af437de297e2e21e2800b452ab7942654061d4cff9bb5d95",
+      "BATCH29g_PAGES.pdf": "9483a7964d73395bc3b255ea8c0c4adb3062d81605078941b36202a48c164842",
+      "signature_sha256": "d2fd2021f6601bcbda2188887242440c53cf3e7cc61e5bec1d2b0c5edf2130d7"
+    }
+  },
+  {
+    "batch": "BATCH35",
+    "source_id": "MD-6.4.3-BrownianDiscreteSpectrum",
+    "json_review": {
+      "status": "NEEDS_HUMAN",
+      "issue_codes": [
+        "LEAN_INCOMPLETE_CONCLUSION",
+        "ERRATUM?"
+      ],
+      "corrected_json": {
+        "source_id": "MD-6.4.3-BrownianDiscreteSpectrum",
+        "kind": "unnumbered_claim",
+        "label": null,
+        "section": "6.4.3",
+        "printed_page": "250",
+        "pdf_page": "271",
+        "statement_latex": "In particular, it has a compact resolvent [360]; this can be shown to imply that the spectrum consists only of a countable collection of eigenvalues, i.e. that the operator has a discrete spectrum.",
+        "proof_latex": null,
+        "proof_note": "原书未给独立完整证明。",
+        "proof_discussion_latex": null,
+        "context_notation": [],
+        "issues": [
+          {
+            "code": "LEAN_INCOMPLETE_CONCLUSION",
+            "detail": "签名保留全复谱可数、实值和每点孤立，但没有原句“谱只由特征值组成”的非零特征向量/特征图结论，也未写有限重数。[EXTRA]只列前三项不能代替全部离散特征谱结论。原C₀²域另有闭实现疑义。"
+          },
+          {
+            "code": "ERRATUM?",
+            "detail": "签名保留全复谱可数、实值和每点孤立，但没有原句“谱只由特征值组成”的非零特征向量/特征图结论，也未写有限重数。[EXTRA]只列前三项不能代替全部离散特征谱结论。原C₀²域另有闭实现疑义。"
+          }
+        ],
+        "lean_decl": "MD.Ch06.brownianDiscreteSpectrum",
+        "reusable_proofs": [
+          "MolecularDynamics.textbookBrownianGibbsGeneratorComplexSpectrum_countable",
+          "MolecularDynamics.textbookBrownianGibbsGeneratorComplexSpectrum_im_zero",
+          "MolecularDynamics.textbookBrownianGibbsGeneratorComplexSpectrum_isolated"
+        ],
+        "extra_assumptions": [
+          "[EXTRA]实际闭Gibbs复L²域的全谱，非另选某有限模式；包含可数、实值与每个点孤立。"
+        ],
+        "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
+        "review_status": "NEEDS_HUMAN",
+        "repair_log": [
+          {
+            "review": "R7",
+            "detail": "仅在审校输出中修正转录/元数据并记录问题；未改工程或原任务，原书数学疑误未静默修正。"
+          }
+        ],
+        "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
+      },
+      "issues": [
+        {
+          "code": "LEAN_INCOMPLETE_CONCLUSION",
+          "detail": "签名保留全复谱可数、实值和每点孤立，但没有原句“谱只由特征值组成”的非零特征向量/特征图结论，也未写有限重数。[EXTRA]只列前三项不能代替全部离散特征谱结论。原C₀²域另有闭实现疑义。"
+        },
+        {
+          "code": "ERRATUM?",
+          "detail": "签名保留全复谱可数、实值和每点孤立，但没有原句“谱只由特征值组成”的非零特征向量/特征图结论，也未写有限重数。[EXTRA]只列前三项不能代替全部离散特征谱结论。原C₀²域另有闭实现疑义。"
+        }
+      ],
+      "evidence": [
+        {
+          "stage": "A",
+          "location": "R7_PAGES.pdf 附件第13页；原PDF页271，印刷页250",
+          "detail": "逐条比对对应原页文字与公式；重复页另按条目映射核对。普通换行/数学排版转LaTeX不作为语义错误；下列转录差异单列。"
+        },
+        {
+          "stage": "C",
+          "detail": "签名保留全复谱可数、实值和每点孤立，但没有原句“谱只由特征值组成”的非零特征向量/特征图结论，也未写有限重数。[EXTRA]只列前三项不能代替全部离散特征谱结论。原C₀²域另有闭实现疑义。",
+          "checked_signature": "theorem brownianDiscreteSpectrum {Nc : ℕ} (m : Fin Nc → ℝ) (hm : ∀ i, 0 < m i)\n    (U : (Fin Nc → ℝ) → ℝ) (hU : ContDiff ℝ ∞ U)\n    (hPU : textbookUnitPeriodicPotential U) (β : ℝ) (hβ : 0 < β) :\n  (textbookBrownianGibbsGeneratorComplexSpectrum m hm U hU hPU β hβ).Countable ∧\n  (∀ z ∈ textbookBrownianGibbsGeneratorComplexSpectrum m hm U hU hPU β hβ, z.im=0) ∧\n  ∀ z ∈ textbookBrownianGibbsGeneratorComplexSpectrum m hm U hU hPU β hβ,\n    ∃ N : Set ℂ, IsOpen N ∧ z ∈ N ∧\n      N ∩ textbookBrownianGibbsGeneratorComplexSpectrum m hm U hU hPU β hβ={z}\n",
+          "extra_assumptions_review": [
+            "[EXTRA]实际闭Gibbs复L²域的全谱，非另选某有限模式；包含可数、实值与每个点孤立。"
+          ],
+          "scope": "只读对象/域/量词/前提/全部结论核对；不检查证明，不因sorry判FAIL；依赖仅采用任务文件摘录及附录D1–D54。"
+        }
+      ]
+    },
+    "audit": {
+      "lean_decl": "MD.Ch06.brownianDiscreteSpectrum",
+      "verdict": "FAIL",
+      "explanation": "签名保留全复谱可数、实值和每点孤立，但没有原句“谱只由特征值组成”的非零特征向量/特征图结论，也未写有限重数。[EXTRA]只列前三项不能代替全部离散特征谱结论。原C₀²域另有闭实现疑义。",
+      "counterexample": null,
+      "suggested_fix": "补∀z∈σ(L),∃v≠0,(v,z•v)∈graph L；若采用标准离散谱含义，再明确有限重数及无有限聚点。"
+    },
+    "subtask": "BATCH35a",
+    "input_sha256": {
+      "Blueprint/Ch06.lean": "0a02a34ec68989a83bccfa5916db5053ecdb58e05667bf21ff3568d9d1f4318e",
+      "blueprint/ch06/ch06_source.json": "45c70ceef21ca168af437de297e2e21e2800b452ab7942654061d4cff9bb5d95",
+      "BATCH35a_PAGES.pdf": "eecf344ee3103d1b26e1e625b43f01c8a75f2f63fb243aee929985f7a0735540",
+      "signature_sha256": "79eb60df1e1a8f0034db56fe34e71194f0442f0f533ab0ef452c5febd065b71d"
+    }
+  },
+  {
+    "batch": "BATCH35",
+    "source_id": "MD-6.4.3-Theorem61",
+    "json_review": {
+      "status": "NEEDS_HUMAN",
+      "issue_codes": [
+        "SOURCE_NOTATION",
+        "LEAN_INCOMPLETE_CONCLUSION",
+        "ERRATUM?"
+      ],
+      "corrected_json": {
+        "source_id": "MD-6.4.3-Theorem61",
+        "kind": "theorem",
+        "label": "Theorem 6.1",
+        "section": "6.4.3",
+        "printed_page": "250–251",
+        "pdf_page": "271–272",
+        "statement_latex": "Theorem 6.1 Define the generator of Brownian dynamics by\n\\[\\mathcal Lf\\stackrel{\\rm def}=-M^{-1}\\nabla U^T\\nabla f+\\beta^{-1}\\Delta_Mf.\\]\nSuppose that $U$ is smooth with periodic boundary conditions $\\mathcal Q=\\mathbb T^{N_c}$ ($\\mathbb T^{N_c}$ an $N_c$-dimensional torus). Then, with respect to the space $C_0^2(\\mu_\\beta)$ with inner product $\\langle f,g\\rangle_\\beta$ as defined above, we have:\n1. $\\mathcal L$ is self-adjoint, negative definite, with spectrum consisting of discrete eigenvalues on the half line $(-\\infty,0]$.\n2. $\\mathcal L$ has a spectral gap, meaning that, with exception of the zero eigenvalue, the remainder of the spectrum satisfies $\\sigma(\\mathcal L)\\subset(-\\infty,-\\alpha]$ for some $\\alpha>0$.\n3. averages with respect to the evolving, time-dependent distribution converge exponentially rapidly to averages with respect to the invariant distribution, and, for any smooth, compactly supported test function $\\varphi$, we have\n\\[|\\bar\\varphi(t)-\\operatorname{Av}_\\beta(\\varphi)|\\le K\\|\\varphi\\|_\\beta e^{-\\alpha t};\\]\nfor some positive $K$ and $\\alpha$, where recall $\\bar\\varphi(t)$ denotes the time average of $\\varphi$ defined in (5.6).",
+        "proof_latex": null,
+        "proof_note": "原书未给独立完整证明。",
+        "proof_discussion_latex": null,
+        "context_notation": [],
+        "issues": [
+          {
+            "code": "ERRATUM?",
+            "detail": "原C₀²核心域、自伴闭实现及negative definite术语需要签核；原末句时间平均与前句分布平均冲突。原一般初始分布未证明，本条技术范围限定另行披露。"
+          },
+          {
+            "code": "SOURCE_NOTATION",
+            "detail": "定理6.1原页空间写C₀²(μβ)，JSON误作C₀²(ρβ)。"
+          },
+          {
+            "code": "LEAN_INCOMPLETE_CONCLUSION",
+            "detail": "量词顺序保证K,α独立于检验函数和时间，可依赖初始L²密度；闭自伴、全谱非正、可数孤立和谱隙均在。但仍漏明确的“全谱点均为特征值”结论，亦将严格负定改为非正谱、原时间平均改为演化分布平均并缩限初始law。后者已[EXTRA]/[ERRATUM?]披露，属需人工确认的修订，不能当原定理完整忠实版。"
+          },
+          {
+            "code": "ERRATUM?",
+            "detail": "量词顺序保证K,α独立于检验函数和时间，可依赖初始L²密度；闭自伴、全谱非正、可数孤立和谱隙均在。但仍漏明确的“全谱点均为特征值”结论，亦将严格负定改为非正谱、原时间平均改为演化分布平均并缩限初始law。后者已[EXTRA]/[ERRATUM?]披露，属需人工确认的修订，不能当原定理完整忠实版。"
+          }
+        ],
+        "lean_decl": "MD.Ch06.theorem61",
+        "reusable_proofs": [],
+        "extra_assumptions": [
+          "[EXTRA]明确采用现成闭复Gibbs-L²实现、非正谱和完整离散/谱隙；第三部分选择实际演化分布平均，并限定真实非负质量1的L²初始相对密度。全部条款保留，不用部分桥接代替整个定理。"
+        ],
+        "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
+        "review_status": "NEEDS_HUMAN",
+        "repair_log": [
+          {
+            "date": "2026-10-17",
+            "action": "directive22_printed_corrected_pair",
+            "change": "明确闭Gibbs-L²实现、半负定、离散谱、谱隙和L²初始相对密度的演化分布平均；Brownian扩散使用逆质量权重，不混用p.244动量算子的ΔM；不声称已证原轨道时间平均。",
+            "corrected_decl": "MD.Ch06.theorem61_corrected",
+            "website": "未提交；待网站审计"
+          },
+          {
+            "review": "R7",
+            "detail": "仅在审校输出中修正转录/元数据并记录问题；未改工程或原任务，原书数学疑误未静默修正。"
+          }
+        ],
+        "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
+      },
+      "issues": [
+        {
+          "code": "SOURCE_NOTATION",
+          "detail": "定理6.1原页空间写C₀²(μβ)，JSON误作C₀²(ρβ)。"
+        },
+        {
+          "code": "LEAN_INCOMPLETE_CONCLUSION",
+          "detail": "量词顺序保证K,α独立于检验函数和时间，可依赖初始L²密度；闭自伴、全谱非正、可数孤立和谱隙均在。但仍漏明确的“全谱点均为特征值”结论，亦将严格负定改为非正谱、原时间平均改为演化分布平均并缩限初始law。后者已[EXTRA]/[ERRATUM?]披露，属需人工确认的修订，不能当原定理完整忠实版。"
+        },
+        {
+          "code": "ERRATUM?",
+          "detail": "量词顺序保证K,α独立于检验函数和时间，可依赖初始L²密度；闭自伴、全谱非正、可数孤立和谱隙均在。但仍漏明确的“全谱点均为特征值”结论，亦将严格负定改为非正谱、原时间平均改为演化分布平均并缩限初始law。后者已[EXTRA]/[ERRATUM?]披露，属需人工确认的修订，不能当原定理完整忠实版。"
+        }
+      ],
+      "evidence": [
+        {
+          "stage": "A",
+          "location": "R7_PAGES.pdf 附件第15–16页；原PDF页271–272，印刷页250–251",
+          "detail": "逐条比对对应原页文字与公式；重复页另按条目映射核对。普通换行/数学排版转LaTeX不作为语义错误；下列转录差异单列。"
+        },
+        {
+          "stage": "C",
+          "detail": "量词顺序保证K,α独立于检验函数和时间，可依赖初始L²密度；闭自伴、全谱非正、可数孤立和谱隙均在。但仍漏明确的“全谱点均为特征值”结论，亦将严格负定改为非正谱、原时间平均改为演化分布平均并缩限初始law。后者已[EXTRA]/[ERRATUM?]披露，属需人工确认的修订，不能当原定理完整忠实版。",
+          "checked_signature": "theorem theorem61 :\n  ∀ {n : ℕ} (m : MolecularDynamics.Chapter06Review.V n) (hm : ∀ i, 0 < m i)\n    (U : MolecularDynamics.Chapter06Review.V n → ℝ) (hU : ContDiff ℝ ∞ U) (hp : textbookUnitPeriodicPotential U)\n    (β : ℝ) (hβ : 0 < β),\n  IsSelfAdjoint (textbookBrownianGibbsComplexOperator m hm U hU hp β hβ) ∧\n  (∀ z ∈ textbookBrownianGibbsGeneratorComplexSpectrum m hm U hU hp β hβ,\n    z.im=0 ∧ z.re ≤ 0) ∧\n  (textbookBrownianGibbsGeneratorComplexSpectrum m hm U hU hp β hβ).Countable ∧\n  (∀ z ∈ textbookBrownianGibbsGeneratorComplexSpectrum m hm U hU hp β hβ, ∃ ε : ℝ, 0 < ε ∧\n    ∀ w ∈ textbookBrownianGibbsGeneratorComplexSpectrum m hm U hU hp β hβ, dist w z < ε → w=z) ∧\n  (∃ α : ℝ, 0 < α ∧ ∀ z ∈ textbookBrownianGibbsGeneratorComplexSpectrum m hm U hU hp β hβ,\n    z ≠ 0 → z.re ≤ -α) ∧\n  ∀ {Ω : Type*} [MeasurableSpace Ω] (B : ℝ≥0 → Ω → MolecularDynamics.Chapter06Review.V n) (P : Measure Ω),\n    textbookIsWienerVector B P →\n    ∀ ρ : Lp ℝ 2 (textbookConfigurationTorusGibbsMeasure U β),\n      0 ≤ᵐ[textbookConfigurationTorusGibbsMeasure U β] ρ →\n      (∫ Q, ρ Q ∂textbookConfigurationTorusGibbsMeasure U β)=1 →\n      ∃ K α : ℝ, 0 < K ∧ 0 < α ∧ ∀ (f : textbookPeriodicSmoothSpace n) (t : ℝ≥0),\n        |textbookBrownianDensityAverage m hm U hU hp β hβ B P ρ t\n          (textbookConfigurationContinuousObservable f f.prop.1.continuous f.prop.2) -\n          (∫ Q, textbookConfigurationTorusObservable f Q ∂textbookConfigurationTorusGibbsMeasure U β)| ≤\n            K * ‖textbookPeriodicSmoothEmbedding U hU hp β f‖ * Real.exp (-α*(t : ℝ))\n",
+          "extra_assumptions_review": [
+            "[EXTRA]明确采用现成闭复Gibbs-L²实现、非正谱和完整离散/谱隙；第三部分选择实际演化分布平均，并限定真实非负质量1的L²初始相对密度。全部条款保留，不用部分桥接代替整个定理。"
+          ],
+          "scope": "只读对象/域/量词/前提/全部结论核对；不检查证明，不因sorry判FAIL；依赖仅采用任务文件摘录及附录D1–D54。"
+        },
+        {
+          "stage": "C",
+          "detail": "反例或疑误依据：f≡1反驳严格负定；轨道平均的指数路径界亦不随分布平均指数收敛而成立。"
+        }
+      ]
+    },
+    "audit": {
+      "lean_decl": "MD.Ch06.theorem61",
+      "verdict": "FAIL",
+      "explanation": "量词顺序保证K,α独立于检验函数和时间，可依赖初始L²密度；闭自伴、全谱非正、可数孤立和谱隙均在。但仍漏明确的“全谱点均为特征值”结论，亦将严格负定改为非正谱、原时间平均改为演化分布平均并缩限初始law。后者已[EXTRA]/[ERRATUM?]披露，属需人工确认的修订，不能当原定理完整忠实版。",
+      "counterexample": "f≡1反驳严格负定；轨道平均的指数路径界亦不随分布平均指数收敛而成立。",
+      "suggested_fix": "补全特征值子句；保留原版与闭域/半负定/分布平均修正版两套陈述，并明确L²初始密度范围。"
+    },
+    "subtask": "BATCH35c",
+    "input_sha256": {
+      "Blueprint/Ch06.lean": "0a02a34ec68989a83bccfa5916db5053ecdb58e05667bf21ff3568d9d1f4318e",
+      "blueprint/ch06/ch06_source.json": "45c70ceef21ca168af437de297e2e21e2800b452ab7942654061d4cff9bb5d95",
+      "BATCH35c_PAGES.pdf": "cfa4d0fd7ca08fd3435de9e2b9d83efba67c5e1513b8e4b9c0e6025e492a78f8",
+      "signature_sha256": "a385982198a5db5bc284bcafdf2a32768d76916f4b8bd50b19674d14c302ec0b"
+    }
+  },
+  {
+    "batch": "BATCH36",
+    "source_id": "MD-6.4.4-MinorizationCorrectedImplication",
+    "json_review": {
+      "status": "CORRECTED",
+      "issue_codes": [
+        "MISSING_SEMIGROUP"
+      ],
+      "corrected_json": {
+        "source_id": "MD-6.4.4-MinorizationCorrectedImplication",
+        "kind": "unnumbered_claim",
+        "label": null,
+        "section": "6.4.4",
+        "printed_page": "252",
+        "pdf_page": "273",
+        "statement_latex": "It can be shown that this assumption is tantamount to the SDE satisfying a minorization condition. This condition is a particular case of the general concept of small sets, found in Markov literature for proving ergodicity.",
+        "proof_latex": null,
+        "proof_note": "原书未给独立完整证明。",
+        "proof_discussion_latex": null,
+        "context_notation": [],
+        "issues": [
+          {
+            "code": "MISSING_SEMIGROUP",
+            "detail": "即使修正正时连续并加每个正时刻所有非空开集可达，任意kernel族仍不能推出共同小集下界。签名缺少Chapman–Kolmogorov/Markov半群结构，新增全支撑不足以弥补。"
+          }
+        ],
+        "lean_decl": "MD.Ch06.minorizationCorrectedImplication",
+        "reusable_proofs": [],
+        "extra_assumptions": [
+          "[EXTRA]仅单向充分条件，正时刻Assumption1加全部非空开集严格可达；实际测度下界完整，字面双向版独立保留。"
+        ],
+        "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
+        "review_status": "CORRECTED",
+        "repair_log": [
+          {
+            "review": "R7",
+            "detail": "仅在审校输出中修正转录/元数据并记录问题；未改工程或原任务，原书数学疑误未静默修正。"
+          }
+        ],
+        "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
+      },
+      "issues": [
+        {
+          "code": "MISSING_SEMIGROUP",
+          "detail": "即使修正正时连续并加每个正时刻所有非空开集可达，任意kernel族仍不能推出共同小集下界。签名缺少Chapman–Kolmogorov/Markov半群结构，新增全支撑不足以弥补。"
+        }
+      ],
+      "evidence": [
+        {
+          "stage": "A",
+          "location": "R7_PAGES.pdf 附件第24页；原PDF页273，印刷页252",
+          "detail": "逐条比对对应原页文字与公式；重复页另按条目映射核对。普通换行/数学排版转LaTeX不作为语义错误；下列转录差异单列。"
+        },
+        {
+          "stage": "C",
+          "detail": "即使修正正时连续并加每个正时刻所有非空开集可达，任意kernel族仍不能推出共同小集下界。签名缺少Chapman–Kolmogorov/Markov半群结构，新增全支撑不足以弥补。",
+          "checked_signature": "theorem minorizationCorrectedImplication :\n  ∀ {D : Type*} [MetricSpace D] [MeasurableSpace D] [BorelSpace D]\n    (ν : Measure D) (K : ℝ≥0 → Kernel D D) (C : Set D), MolecularDynamics.Chapter06Review.assumption1 ν K C →\n  (∀ t : ℝ≥0, ∀ x : D, ∀ A : Set D, IsOpen A → A.Nonempty → 0 < t → 0 < K t x A) →\n  ∃ t : ℝ≥0, 0 < t ∧ ∃ ε : ℝ≥0∞, 0 < ε ∧ ∃ μ : Measure D,\n    IsProbabilityMeasure μ ∧ ∀ x ∈ C, ε • μ ≤ K t x\n",
+          "extra_assumptions_review": [
+            "[EXTRA]仅单向充分条件，正时刻Assumption1加全部非空开集严格可达；实际测度下界完整，字面双向版独立保留。"
+          ],
+          "scope": "只读对象/域/量词/前提/全部结论核对；不检查证明，不因sorry判FAIL；依赖仅采用任务文件摘录及附录D1–D54。"
+        },
+        {
+          "stage": "C",
+          "detail": "反例或疑误依据：D为单位圆周、C=D、ν为归一Haar；所有t令K_t(x,dz)=[1−cos(2π(z−x))]ν(dz)。密度连续非负归一且每个非空开集正，满足assumption1及附加可达性。若εμ≤K_t(x)对全部x，则μ≪ν且对可数稠密x同时有εdμ/dν≤1−cos(2π(z−x))，取下确界得密度0，矛盾μ(D)=1。"
+        }
+      ]
+    },
+    "audit": {
+      "lean_decl": "MD.Ch06.minorizationCorrectedImplication",
+      "verdict": "FAIL",
+      "explanation": "即使修正正时连续并加每个正时刻所有非空开集可达，任意kernel族仍不能推出共同小集下界。签名缺少Chapman–Kolmogorov/Markov半群结构，新增全支撑不足以弥补。",
+      "counterexample": "D为单位圆周、C=D、ν为归一Haar；所有t令K_t(x,dz)=[1−cos(2π(z−x))]ν(dz)。密度连续非负归一且每个非空开集正，满足assumption1及附加可达性。若εμ≤K_t(x)对全部x，则μ≪ν且对可数稠密x同时有εdμ/dν≤1−cos(2π(z−x))，取下确界得密度0，矛盾μ(D)=1。",
+      "suggested_fix": "增加真正Markov半群资格并重审利用两步核获得共同下界的条件；不能仅增加全支撑。"
+    },
+    "subtask": "BATCH36e",
+    "input_sha256": {
+      "Blueprint/Ch06.lean": "0a02a34ec68989a83bccfa5916db5053ecdb58e05667bf21ff3568d9d1f4318e",
+      "blueprint/ch06/ch06_source.json": "45c70ceef21ca168af437de297e2e21e2800b452ab7942654061d4cff9bb5d95",
+      "BATCH36e_PAGES.pdf": "e03e1437042a000ef6a4e09adc482a04d554f5af71189f3e617a9161b938e4d8",
+      "signature_sha256": "74a9215300abd98c22609c6a4b7f01ed28fa4cd4dd962f01e1280dcbd21288f4"
+    }
+  },
+  {
+    "batch": "BATCH37",
+    "source_id": "MD-6.4.4-HamiltonianPowerMomentumLaplacian",
+    "json_review": {
+      "status": "NEEDS_HUMAN",
+      "issue_codes": [
+        "LEAN_INCOMPLETE_CONCLUSION",
+        "ERRATUM?"
+      ],
+      "corrected_json": {
+        "source_id": "MD-6.4.4-HamiltonianPowerMomentumLaplacian",
+        "kind": "unnumbered_claim",
+        "label": null,
+        "section": "6.4.4",
+        "printed_page": "253",
+        "pdf_page": "274",
+        "statement_latex": "\\[\\Delta_p\\varphi=l(l-1)H^{l-2}\\|p\\|^2+N_clH^{l-1}\\le l(l+N_c-1)H^{l-1}.\\]",
+        "proof_latex": null,
+        "proof_note": "原书未给独立完整证明。",
+        "proof_discussion_latex": null,
+        "context_notation": [],
+        "issues": [
+          {
+            "code": "LEAN_INCOMPLETE_CONCLUSION",
+            "detail": "实际坐标二阶导数和的等式正确，l=1时自然数截断指数乘零系数仍正确；但签名完全遗漏原文随后≤l(l+Nc−1)H^(l−1)结论。[EXTRA]说原不等式另存，却在本条没有独立Printed声明或勘误，不能通过完整结论审校。原不等式本身错误，须保留并判人工，不能静默删去。"
+          },
+          {
+            "code": "ERRATUM?",
+            "detail": "实际坐标二阶导数和的等式正确，l=1时自然数截断指数乘零系数仍正确；但签名完全遗漏原文随后≤l(l+Nc−1)H^(l−1)结论。[EXTRA]说原不等式另存，却在本条没有独立Printed声明或勘误，不能通过完整结论审校。原不等式本身错误，须保留并判人工，不能静默删去。"
+          }
+        ],
+        "lean_decl": "MD.Ch06.hamiltonianPowerMomentumLaplacian",
+        "reusable_proofs": [
+          "MolecularDynamics.textbookLangevinHamiltonianPower_momentum_laplacian"
+        ],
+        "extra_assumptions": [
+          "[EXTRA]完整实际坐标二阶导数和及正确等式，l≥1；原随后不等式单独原样保存，未据等式声称它成立。"
+        ],
+        "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
+        "review_status": "NEEDS_HUMAN",
+        "repair_log": [
+          {
+            "review": "R7",
+            "detail": "仅在审校输出中修正转录/元数据并记录问题；未改工程或原任务，原书数学疑误未静默修正。"
+          }
+        ],
+        "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
+      },
+      "issues": [
+        {
+          "code": "LEAN_INCOMPLETE_CONCLUSION",
+          "detail": "实际坐标二阶导数和的等式正确，l=1时自然数截断指数乘零系数仍正确；但签名完全遗漏原文随后≤l(l+Nc−1)H^(l−1)结论。[EXTRA]说原不等式另存，却在本条没有独立Printed声明或勘误，不能通过完整结论审校。原不等式本身错误，须保留并判人工，不能静默删去。"
+        },
+        {
+          "code": "ERRATUM?",
+          "detail": "实际坐标二阶导数和的等式正确，l=1时自然数截断指数乘零系数仍正确；但签名完全遗漏原文随后≤l(l+Nc−1)H^(l−1)结论。[EXTRA]说原不等式另存，却在本条没有独立Printed声明或勘误，不能通过完整结论审校。原不等式本身错误，须保留并判人工，不能静默删去。"
+        }
+      ],
+      "evidence": [
+        {
+          "stage": "A",
+          "location": "R7_PAGES.pdf 附件第33页；原PDF页274，印刷页253",
+          "detail": "逐条比对对应原页文字与公式；重复页另按条目映射核对。普通换行/数学排版转LaTeX不作为语义错误；下列转录差异单列。"
+        },
+        {
+          "stage": "C",
+          "detail": "实际坐标二阶导数和的等式正确，l=1时自然数截断指数乘零系数仍正确；但签名完全遗漏原文随后≤l(l+Nc−1)H^(l−1)结论。[EXTRA]说原不等式另存，却在本条没有独立Printed声明或勘误，不能通过完整结论审校。原不等式本身错误，须保留并判人工，不能静默删去。",
+          "checked_signature": "theorem hamiltonianPowerMomentumLaplacian {Nc : ℕ}\n    (U : (Fin Nc → ℝ) → ℝ) (l : ℕ) (hl : 1 ≤ l) (z : textbookLangevinPhase Nc) :\n    (∑ i : Fin Nc, deriv (deriv (fun t : ℝ ↦ textbookLangevinHamiltonianPower U l\n      (z + t • ((0 : Fin Nc → ℝ), Pi.single i 1)))) 0) =\n      (l : ℝ) * ((l : ℝ) - 1) * textbookLangevinHamiltonian U z ^ (l - 2) * (∑ i, z.2 i ^ 2) +\n        (Nc : ℝ) * l * textbookLangevinHamiltonian U z ^ (l - 1)\n",
+          "extra_assumptions_review": [
+            "[EXTRA]完整实际坐标二阶导数和及正确等式，l≥1；原随后不等式单独原样保存，未据等式声称它成立。"
+          ],
+          "scope": "只读对象/域/量词/前提/全部结论核对；不检查证明，不因sorry判FAIL；依赖仅采用任务文件摘录及附录D1–D54。"
+        },
+        {
+          "stage": "C",
+          "detail": "反例或疑误依据：取Nc=1,l=2,U≡2,p=3，则H=13/2，实际Δp H²=2p²+2H=31，原右界4H=26，31≤26为假；已满足原U>1光滑周期资格。"
+        }
+      ]
+    },
+    "audit": {
+      "lean_decl": "MD.Ch06.hamiltonianPowerMomentumLaplacian",
+      "verdict": "FAIL",
+      "explanation": "实际坐标二阶导数和的等式正确，l=1时自然数截断指数乘零系数仍正确；但签名完全遗漏原文随后≤l(l+Nc−1)H^(l−1)结论。[EXTRA]说原不等式另存，却在本条没有独立Printed声明或勘误，不能通过完整结论审校。原不等式本身错误，须保留并判人工，不能静默删去。",
+      "counterexample": "取Nc=1,l=2,U≡2,p=3，则H=13/2，实际Δp H²=2p²+2H=31，原右界4H=26，31≤26为假；已满足原U>1光滑周期资格。",
+      "suggested_fix": "增加原不等式Printed条款和[ERRATUM?]；U≥0、H>0时可改界l(2(l−1)+Nc)H^(l−1)，保留现有正确等式。"
+    },
+    "subtask": "BATCH37f",
+    "input_sha256": {
+      "Blueprint/Ch06.lean": "0a02a34ec68989a83bccfa5916db5053ecdb58e05667bf21ff3568d9d1f4318e",
+      "blueprint/ch06/ch06_source.json": "45c70ceef21ca168af437de297e2e21e2800b452ab7942654061d4cff9bb5d95",
+      "BATCH37f_PAGES.pdf": "32c1cc542d36732491e090e1be77031b06b750329b4b39d82796678b2dfad77a",
+      "signature_sha256": "8bce91b5f296b939c59ab42ca15f2c4ffeeb5e6fb4801be92d51fcda541a5a01"
+    }
+  },
+  {
+    "batch": "BATCH40",
+    "source_id": "MD-6.4.4-WeightedH1Norm",
+    "json_review": {
+      "status": "CORRECTED",
+      "issue_codes": [
+        "SOURCE_PAGE_RANGE",
+        "LEAN_SIGNATURE_FAIL"
+      ],
+      "corrected_json": {
+        "source_id": "MD-6.4.4-WeightedH1Norm",
+        "kind": "unnumbered_claim",
+        "label": null,
+        "section": "6.4.4",
+        "printed_page": "256–257",
+        "pdf_page": "277–278",
+        "statement_latex": "\\[\\|f\\|_{L^2(\\mu)}^2=\\int_D f^2\\mu(d\\omega);\\qquad\n\\|w\\|_{L^2(\\mu)}^2=\\sum_{i=1}^{N_c}\\|w_i\\|_{L^2(\\mu)}^2.\\]",
+        "proof_latex": null,
+        "proof_note": "原书未给独立完整证明。",
+        "proof_discussion_latex": null,
+        "context_notation": [],
+        "issues": [],
+        "lean_decl": "MD.Ch06.weightedH1Norm",
+        "reusable_proofs": [
+          "MolecularDynamics.textbookLangevinCanonicalWeakH1_norm_sq"
+        ],
+        "extra_assumptions": [
+          "[EXTRA]实际全部位置/动量弱导数的L²范数平方和；真实函数/弱导数投影定义随compact依赖闭包给出。"
+        ],
+        "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
+        "review_status": "CORRECTED",
+        "repair_log": [],
+        "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
+      },
+      "issues": [
+        {
+          "code": "SOURCE_PAGE_RANGE",
+          "detail": "标量L²积分式实际在印刷256/原PDF277；附件第26页仅有向量式。第25页/32页包含标量式，可从本附件核对。"
+        },
+        {
+          "code": "LEAN_SIGNATURE_FAIL",
+          "detail": "原JSON含标量L²积分恒等式和任意向量函数w的分量平方和；实际Lean仅断言H¹ jet范数分解，不包含上述标量积分式，也没有量化任意w。公式相关并不等于覆盖所选完整结论；原标量式还跨到了上一印刷页。"
+        }
+      ],
+      "evidence": [
+        {
+          "attachment": "R8_PAGES.pdf",
+          "attachment_pages": [
+            26
+          ],
+          "printed_page": "257",
+          "method": "逐页PDF文本比对；同原书页复用已目视核对的原页图像，图像代表页为附件1、4、12、20、26。",
+          "finding": "已核对所引正文、数学符号、页码及选取范围；差异逐项见issues。"
+        },
+        {
+          "definition_basis": "仅R8_任务.md的实际签名及项目定义摘录（含D1–D69）；标准Mathlib按任务说明采信。",
+          "finding": "原JSON含标量L²积分恒等式和任意向量函数w的分量平方和；实际Lean仅断言H¹ jet范数分解，不包含上述标量积分式，也没有量化任意w。公式相关并不等于覆盖所选完整结论；原标量式还跨到了上一印刷页。"
+        }
+      ]
+    },
+    "audit": {
+      "lean_decl": "MD.Ch06.weightedH1Norm",
+      "verdict": "FAIL",
+      "explanation": "原JSON含标量L²积分恒等式和任意向量函数w的分量平方和；实际Lean仅断言H¹ jet范数分解，不包含上述标量积分式，也没有量化任意w。公式相关并不等于覆盖所选完整结论；原标量式还跨到了上一印刷页。",
+      "counterexample": null,
+      "suggested_fix": "分列并给出原两条L²恒等式的声明，或把本条明确重命名为H¹范数分解并限scope，另保留原条目；补正页码为256–257/277–278。"
+    },
+    "subtask": "BATCH40f",
+    "input_sha256": {
+      "Blueprint/Ch06.lean": "0a02a34ec68989a83bccfa5916db5053ecdb58e05667bf21ff3568d9d1f4318e",
+      "blueprint/ch06/ch06_source.json": "45c70ceef21ca168af437de297e2e21e2800b452ab7942654061d4cff9bb5d95",
+      "BATCH40f_PAGES.pdf": "83da1ef5e86aab7bf716f29e064980cb74e6881508a8765ad565e83f8d7e442d",
+      "signature_sha256": "79fc1816c8f3e4d894c67c87181265f46aa75a8eb34ee76bac6ec718c3773e71"
+    }
+  },
+  {
+    "batch": "BATCH41",
+    "source_id": "MD-6.4.4-ForwardKernelGibbs",
+    "json_review": {
+      "status": "CORRECTED",
+      "issue_codes": [
+        "SOURCE_TRANSCRIPTION",
+        "LEAN_SIGNATURE_FAIL",
+        "COUNTEREXAMPLE"
+      ],
+      "corrected_json": {
+        "source_id": "MD-6.4.4-ForwardKernelGibbs",
+        "kind": "unnumbered_claim",
+        "label": null,
+        "section": "6.4.4",
+        "printed_page": "257",
+        "pdf_page": "278",
+        "statement_latex": "If we have two solutions $\\varphi_1,\\varphi_2$ of $\\mathcal L_{LD}^\\dagger\\varphi=g$, then their difference $w$ must be a solution of $\\mathcal L_{LD}^\\daggerw=0$ and the only such solution is a constant multiple of the Gibbs density $\\rho_\\beta$.",
+        "proof_latex": null,
+        "proof_note": "原书未给独立完整证明。",
+        "proof_discussion_latex": null,
+        "context_notation": [],
+        "issues": [],
+        "lean_decl": "MD.Ch06.forwardKernelGibbs",
+        "reusable_proofs": [],
+        "extra_assumptions": [
+          "[EXTRA]完整原flat forward弱PDE与真实H1类，全部stationary modes为Gibbs倍数；相对加权adjoint kernel对应常数而非Gibbs，不能混同二者。"
+        ],
+        "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
+        "review_status": "CORRECTED",
+        "repair_log": [],
+        "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
+      },
+      "issues": [
+        {
+          "code": "SOURCE_TRANSCRIPTION",
+          "detail": "原页应为 \\mathcal L_{LD}^\\dagger，输入为 \\mathcal L_{LD}^*。数学疑误另行保留，不在原文内纠正。"
+        },
+        {
+          "code": "LEAN_SIGNATURE_FAIL",
+          "detail": "D66的flatForwardWeak仅用紧支测试函数；w只要求Gibbs加权H¹，未要求相对于平坦测度可积或零通量。这样的定义包含额外平稳通量解，因此“所有零模为Gibbs倍数”本身错误，不只是缺证明。"
+        },
+        {
+          "code": "COUNTEREXAMPLE",
+          "detail": "紧支弱PDE + Gaussian加权H¹允许非零恒通量解；所给反例无需数值检验。"
+        }
+      ],
+      "evidence": [
+        {
+          "attachment": "R8_PAGES.pdf",
+          "attachment_pages": [
+            31
+          ],
+          "printed_page": "257",
+          "method": "逐页PDF文本比对；同原书页复用已目视核对的原页图像，图像代表页为附件1、4、12、20、26。",
+          "finding": "已核对所引正文、数学符号、页码及选取范围；差异逐项见issues。"
+        },
+        {
+          "definition_basis": "仅R8_任务.md的实际签名及项目定义摘录（含D1–D69）；标准Mathlib按任务说明采信。",
+          "finding": "D66的flatForwardWeak仅用紧支测试函数；w只要求Gibbs加权H¹，未要求相对于平坦测度可积或零通量。这样的定义包含额外平稳通量解，因此“所有零模为Gibbs倍数”本身错误，不只是缺证明。"
+        }
+      ]
+    },
+    "audit": {
+      "lean_decl": "MD.Ch06.forwardKernelGibbs",
+      "verdict": "FAIL",
+      "explanation": "D66的flatForwardWeak仅用紧支测试函数；w只要求Gibbs加权H¹，未要求相对于平坦测度可积或零通量。这样的定义包含额外平稳通量解，因此“所有零模为Gibbs倍数”本身错误，不只是缺证明。",
+      "counterexample": "n=1，U≡0，β=γ=1；q无关，w(p)=e^(−p²/2)∫₀ᵖe^(s²/2)ds。w′+pw=1，故L* w=w″+(pw)′=0。w为奇函数且不为零，而Gibbs密度为正偶函数。w~1/p、w′~−1/p²，二者在Gaussian加权L²内；紧支测试积分均成立。",
+      "suggested_fix": "在平坦forward密度空间加合适L¹/零通量条件并核定算子域，或转相对密度的Hilbert adjoint闭域，核结论改为常数。"
+    },
+    "subtask": "BATCH41c",
+    "input_sha256": {
+      "Blueprint/Ch06.lean": "0a02a34ec68989a83bccfa5916db5053ecdb58e05667bf21ff3568d9d1f4318e",
+      "blueprint/ch06/ch06_source.json": "45c70ceef21ca168af437de297e2e21e2800b452ab7942654061d4cff9bb5d95",
+      "BATCH41c_PAGES.pdf": "83da1ef5e86aab7bf716f29e064980cb74e6881508a8765ad565e83f8d7e442d",
+      "signature_sha256": "2ce21e7f2b4cc9c6b2ab891aa0a3271954ef6e8de372fde56a2fbe91dbfcd1dd"
+    }
+  },
+  {
+    "batch": "BATCH42",
+    "source_id": "MD-6.4.5-KernelEvolution",
+    "json_review": {
+      "status": "CORRECTED",
+      "issue_codes": [
+        "SOURCE_WORDING",
+        "ADJOINT_SYMBOL"
+      ],
+      "corrected_json": {
+        "source_id": "MD-6.4.5-KernelEvolution",
+        "kind": "definition",
+        "label": null,
+        "section": "6.4.5",
+        "printed_page": "257",
+        "pdf_page": "278",
+        "statement_latex": "Given a collection of phase space points distributed according to the density $\\rho_0(q,p)$, we know that its evolution (under Langevin dynamics) after a time $t$ will be described by\n\\[\\rho(q,p,t)=e^{t\\mathcal L_{LD}^{\\dagger}}\\rho_0(q,p).\\]",
+        "proof_latex": null,
+        "proof_note": "原书未给独立完整证明。",
+        "proof_discussion_latex": null,
+        "context_notation": [],
+        "issues": [
+          {
+            "code": "SOURCE_WORDING",
+            "detail": "原句为“…, we know that its evolution (under Langevin dynamics) after a time t will be described by”，现摘录改写并遗漏we know that。"
+          },
+          {
+            "code": "ADJOINT_SYMBOL",
+            "detail": "原页前向密度生成元使用dagger上标†，摘录写成*；应保留原符号，不静默替换。"
+          }
+        ],
+        "lean_decl": "MD.Ch06.kernelEvolution",
+        "reusable_proofs": [],
+        "extra_assumptions": [
+          "[EXTRA]真实Markov kernel应用初始measure的compProd边缘，形式exp解释为实际演化，非无资格幂级数。"
+        ],
+        "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
+        "review_status": "CORRECTED",
+        "repair_log": [],
+        "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
+      },
+      "issues": [
+        {
+          "code": "SOURCE_WORDING",
+          "detail": "原句为“…, we know that its evolution (under Langevin dynamics) after a time t will be described by”，现摘录改写并遗漏we know that。"
+        },
+        {
+          "code": "ADJOINT_SYMBOL",
+          "detail": "原页前向密度生成元使用dagger上标†，摘录写成*；应保留原符号，不静默替换。"
+        }
+      ],
+      "evidence": [
+        "附件第2页=第1页，印刷257底部6.4.5首段及展示式；PDF原符号为L_{LD}^{†}。",
+        "审校限于R9_任务.md所载本条声明和依赖；未读取旧工程、未修改Lean、未补证明或因sorry判失败。"
+      ]
+    },
+    "audit": {
+      "lean_decl": "MD.Ch06.kernelEvolution",
+      "verdict": "FAIL",
+      "explanation": "签名是任意可测空间D、任意Kernel族K、任意测度μ及非负时刻t的measure bind定义，D9确认其含义正确。但Kernel本身不保证Markov，未要求K 0=id或半群律；无Langevin系数、生成元、初始density、绝对连续性或ρ。它是可用于原文的通用构件，尚未编码原文全部对象及密度前向指数传播关系。[EXTRA]称真实Markov及exp解释为实际演化，未由此签名实现。",
+      "counterexample": "取D为单点，所有t的K t均为零核，μ为单位点质量；结果始终为零，t=0也不等于初始概率。",
+      "suggested_fix": "保留此通用定义并缩小对应声明的范围；完整原文需另以实际Langevin转移核、初始概率密度和所得密度的测度等式表达，且明确前向生成元/半群的识别资格。"
+    },
+    "subtask": "BATCH42a",
+    "input_sha256": {
+      "Blueprint/Ch06.lean": "0a02a34ec68989a83bccfa5916db5053ecdb58e05667bf21ff3568d9d1f4318e",
+      "blueprint/ch06/ch06_source.json": "45c70ceef21ca168af437de297e2e21e2800b452ab7942654061d4cff9bb5d95",
+      "BATCH42a_PAGES.pdf": "83da1ef5e86aab7bf716f29e064980cb74e6881508a8765ad565e83f8d7e442d",
+      "signature_sha256": "982e3128e0ed8753bc95ef260730eddc1668ee26c1d7bded9aad476e1b9d74e2"
+    }
+  },
+  {
+    "batch": "BATCH42",
+    "source_id": "MD-6.4.5-KernelAverage",
+    "json_review": {
+      "status": "CORRECTED",
+      "issue_codes": [
+        "SOURCE_WORDING"
+      ],
+      "corrected_json": {
+        "source_id": "MD-6.4.5-KernelAverage",
+        "kind": "definition",
+        "label": null,
+        "section": "6.4.5",
+        "printed_page": "258",
+        "pdf_page": "279",
+        "statement_latex": "which says that the average of a function $\\varphi$ with respect to the distribution at time $t$ is equivalent to the average of the forward propagation of $\\varphi$ with respect to the initial distribution.",
+        "proof_latex": null,
+        "proof_note": "原书未给独立完整证明。",
+        "proof_discussion_latex": null,
+        "context_notation": [],
+        "issues": [
+          {
+            "code": "SOURCE_WORDING",
+            "detail": "原文为接上式的“which says that the average …”，摘录改成独立句“The average …”；其余该句文字及数学含义相符。"
+          }
+        ],
+        "lean_decl": "MD.Ch06.kernelAverage",
+        "reusable_proofs": [],
+        "extra_assumptions": [
+          "[EXTRA]真实核积分的backward检验函数传播，可积资格在Duality定理明确。"
+        ],
+        "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
+        "review_status": "CORRECTED",
+        "repair_log": [],
+        "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
+      },
+      "issues": [
+        {
+          "code": "SOURCE_WORDING",
+          "detail": "原文为接上式的“which says that the average …”，摘录改成独立句“The average …”；其余该句文字及数学含义相符。"
+        }
+      ],
+      "evidence": [
+        "附件第3页（原PDF279/印刷258）第二个积分公式之后，以which says that开头。",
+        "审校限于R9_任务.md所载本条声明和依赖；未读取旧工程、未修改Lean、未补证明或因sorry判失败。"
+      ]
+    },
+    "audit": {
+      "lean_decl": "MD.Ch06.kernelAverage",
+      "verdict": "FAIL",
+      "explanation": "f为任意实值函数，K为任意核族，t为非负时刻，x为起点；定义∫f d(K t x)确为核对检验函数的传播，D10一致。但原句断言两种平均相等，签名既无初始分布μ，也无演化分布或平均等式；没有可测、可积或Markov资格。Bochner积分在不满足可积条件时的默认值不能代替原书的有限平均。该[EXTRA]明确可积资格移至Duality，可作为辅助定义接受，但不足以单独覆盖所映射整句。",
+      "counterexample": null,
+      "suggested_fix": "将本条原文对应到kernelDuality，或添加带初始概率measure和可积资格的平均等式；kernelAverage仅登记为检验函数传播的辅助记号。"
+    },
+    "subtask": "BATCH42b",
+    "input_sha256": {
+      "Blueprint/Ch06.lean": "0a02a34ec68989a83bccfa5916db5053ecdb58e05667bf21ff3568d9d1f4318e",
+      "blueprint/ch06/ch06_source.json": "45c70ceef21ca168af437de297e2e21e2800b452ab7942654061d4cff9bb5d95",
+      "BATCH42b_PAGES.pdf": "a1452496650f35c505ba46020a634c9977f4744ee37ba9d3941d7c06e8cbc54c",
+      "signature_sha256": "040338bc2ba5855cfe804d143e04799a1071818368f8b71e808316c671bd9182"
+    }
+  },
+  {
+    "batch": "BATCH42",
+    "source_id": "MD-6.4.5-DensityEvolutionMeaning",
+    "json_review": {
+      "status": "CORRECTED",
+      "issue_codes": [
+        "SOURCE_WORDING",
+        "ADJOINT_SYMBOL"
+      ],
+      "corrected_json": {
+        "source_id": "MD-6.4.5-DensityEvolutionMeaning",
+        "kind": "definition",
+        "label": null,
+        "section": "6.4.5",
+        "printed_page": "257–258",
+        "pdf_page": "278–279",
+        "statement_latex": "More precisely this relation should be interpreted in the variational sense, so that we have, for any suitable test function $\\varphi$, e.g. $\\varphi\\in C^\\infty$,\n\\[\\int_D\\varphi\\rho(q,p,t)d\\omega=\\int_D\\varphi e^{t\\mathcal L_{LD}^{\\dagger}}\\rho_0(q,p)d\\omega.\\]",
+        "proof_latex": null,
+        "proof_note": "原书未给独立完整证明。",
+        "proof_discussion_latex": null,
+        "context_notation": [],
+        "issues": [
+          {
+            "code": "SOURCE_WORDING",
+            "detail": "原句为“…, so that we have, for any suitable test function …”，摘录漏去we have并调整标点。"
+          },
+          {
+            "code": "ADJOINT_SYMBOL",
+            "detail": "积分内原书为e^{t L_{LD}^{†}}，不是星号上标。"
+          }
+        ],
+        "lean_decl": "MD.Ch06.densityEvolutionMeaning",
+        "reusable_proofs": [],
+        "extra_assumptions": [
+          "[EXTRA]真实初始概率density、全部时刻density及实际kernel measure等式的语义定义；未假设每个任意SDE必存在平滑density，未计存在性已证。"
+        ],
+        "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
+        "review_status": "CORRECTED",
+        "repair_log": [],
+        "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
+      },
+      "issues": [
+        {
+          "code": "SOURCE_WORDING",
+          "detail": "原句为“…, so that we have, for any suitable test function …”，摘录漏去we have并调整标点。"
+        },
+        {
+          "code": "ADJOINT_SYMBOL",
+          "detail": "积分内原书为e^{t L_{LD}^{†}}，不是星号上标。"
+        }
+      ],
+      "evidence": [
+        "附件第4页=第1页、第5页=第3页；所引变分句和等式全部实际位于第5页/印刷258顶端；跨页范围作为上下文可保留。",
+        "D8为环面Haar体积×R^n Lebesgue体积；D9为K t ∘ₘ μ。",
+        "审校限于R9_任务.md所载本条声明和依赖；未读取旧工程、未修改Lean、未补证明或因sorry判失败。"
+      ]
+    },
+    "audit": {
+      "lean_decl": "MD.Ch06.densityEvolutionMeaning",
+      "verdict": "FAIL",
+      "explanation": "此Prop对ρ0逐点非负、flat可积、积分1，并对所有非负时刻ρ t逐点非负、可积以及withDensity测度等式编码完整。它不声称密度存在，这一点[EXTRA]准确。测度等式能导出合格检验函数的弱等式；逐点非负比AE非负更强，属于所选代表的附加要求。然而K仍完全任意，没有Markov或实际Langevin关联；ρ t的质量1、初值和Langevin前向生成元均未确保。故作为通用核密度关系定义有意义，作为原文完整Langevin密度演化解释不充分。",
+      "counterexample": "令ρ0为任意归一非负可积密度，K t=0且ρ t=0（包括t=0）；此Prop成立，但ρ t不是概率分布且ρ 0≠ρ0。",
+      "suggested_fix": "补K为实际Langevin转移核，或显式Markov、K 0=id、半群及生成元关联；标明逐点/AE的代表选择，并给出合格检验函数的变分等式。"
+    },
+    "subtask": "BATCH42c",
+    "input_sha256": {
+      "Blueprint/Ch06.lean": "0a02a34ec68989a83bccfa5916db5053ecdb58e05667bf21ff3568d9d1f4318e",
+      "blueprint/ch06/ch06_source.json": "45c70ceef21ca168af437de297e2e21e2800b452ab7942654061d4cff9bb5d95",
+      "BATCH42c_PAGES.pdf": "1014f3dcba6b5b35d677466d1bd412b450e3541e899f55dcd708cadf014d2161",
+      "signature_sha256": "9d6d7b13b6dee23d7337f7c7d835949270ec85b9ba702445be179d251090823e"
+    }
+  },
+  {
+    "batch": "BATCH42",
+    "source_id": "MD-6.4.5-LangevinForwardSemigroupMeaning",
+    "json_review": {
+      "status": "CORRECTED",
+      "issue_codes": [
+        "ADJOINT_SYMBOL",
+        "INCOMPLETE_FORWARD_IDENTIFICATION"
+      ],
+      "corrected_json": {
+        "source_id": "MD-6.4.5-LangevinForwardSemigroupMeaning",
+        "kind": "definition",
+        "label": null,
+        "section": "6.4.5",
+        "printed_page": "257–258",
+        "pdf_page": "278–279",
+        "statement_latex": "\\[\\rho(q,p,t)=e^{t\\mathcal L_{LD}^{\\dagger}}\\rho_0(q,p).\\]",
+        "proof_latex": null,
+        "proof_note": "原书未给独立完整证明。",
+        "proof_discussion_latex": null,
+        "context_notation": [],
+        "issues": [
+          {
+            "code": "ADJOINT_SYMBOL",
+            "detail": "原公式前向生成元上标为†，摘录写*。"
+          },
+          {
+            "code": "INCOMPLETE_FORWARD_IDENTIFICATION",
+            "detail": "[EXTRA]所称complex L²传播关联仅比对输出实部经ofReal裁剪后的measure；没有要求输出仍为实非负密度，且没有半群律/强连续性。"
+          }
+        ],
+        "lean_decl": "MD.Ch06.langevinForwardSemigroupMeaning",
+        "reusable_proofs": [],
+        "extra_assumptions": [
+          "[EXTRA]对所有真实非负实初始density的actual kernel/complex Lp²传播关联定义；不凭空把任意线性S命名Langevin，原forward identification仍未证。"
+        ],
+        "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
+        "review_status": "CORRECTED",
+        "repair_log": [],
+        "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
+      },
+      "issues": [
+        {
+          "code": "ADJOINT_SYMBOL",
+          "detail": "原公式前向生成元上标为†，摘录写*。"
+        },
+        {
+          "code": "INCOMPLETE_FORWARD_IDENTIFICATION",
+          "detail": "[EXTRA]所称complex L²传播关联仅比对输出实部经ofReal裁剪后的measure；没有要求输出仍为实非负密度，且没有半群律/强连续性。"
+        }
+      ],
+      "evidence": [
+        "附件第9页=第1页的末式；第10页=第3页提供弱解释上下文。",
+        "D13明确只出现ENNReal.ofReal ((S t v x).re)，既不约束虚部，也会丢失负实部。",
+        "审校限于R9_任务.md所载本条声明和依赖；未读取旧工程、未修改Lean、未补证明或因sorry判失败。"
+      ]
+    },
+    "audit": {
+      "lean_decl": "MD.Ch06.langevinForwardSemigroupMeaning",
+      "verdict": "FAIL",
+      "explanation": "∀v量化整个复flat L²，前提是v AE实非负且实部L¹；不要求积分1是允许有限正密度的合理泛化。∀t的测度等式写对了输入核演化，但输出只保留实部正部。S t虽为复连续线性映射，却没有S 0=id、半群律、强连续或生成元条件；K也任意，未识别为实际Langevin。尤其不能由该Prop推出S t v就是原文真实前向密度，故[EXTRA]描述过强。",
+      "counterexample": "取K t=Kernel.id，且每个t令S t=(1+i)•id。在非负实v上输出实部恰为v，该Prop成立；但输出含非零虚部，S 0≠id，且不满足半群律。",
+      "suggested_fix": "补每个合格v及t的输出AE实非负；同时要求S为C0半群并关联实际Langevin核/生成元。可用实部等于真实密度加虚部为零的AE等式，避免ofReal裁剪弱化语义。"
+    },
+    "subtask": "BATCH42g",
+    "input_sha256": {
+      "Blueprint/Ch06.lean": "0a02a34ec68989a83bccfa5916db5053ecdb58e05667bf21ff3568d9d1f4318e",
+      "blueprint/ch06/ch06_source.json": "45c70ceef21ca168af437de297e2e21e2800b452ab7942654061d4cff9bb5d95",
+      "BATCH42g_PAGES.pdf": "1014f3dcba6b5b35d677466d1bd412b450e3541e899f55dcd708cadf014d2161",
+      "signature_sha256": "618bf4bf96075ef51d250b396e32fbf9eae01b37e00f3116d5b76d28a1ada085"
+    }
+  }
+]

@@ -1,0 +1,103 @@
+{
+  "eaudit": "EAUDIT10",
+  "subtask": "EAUDIT10a",
+  "source_id": "MD-6.3.7-VectorIto",
+  "input_sha256": {
+    "Blueprint/Ch06.lean": "4a2a6cb72c1692f80e3537ab1a71701d429a482780a01226c3dc66a2ebb8b44b",
+    "blueprint/ch06/ch06_source.json": "d7f93cd20eb570744c710f3e07a88b319c082e4155812fee91db0920eb05944e",
+    "PAGES.pdf": "b75581537403a0cb135dd2f4ee918ceb33195948bb698e8f85db33810542c3d3",
+    "materials_sha256": "3e6d56ebceb6dff4b02f695e1594f02dfd21229b7e05649cae9f4c09259f8cf5"
+  },
+  "paste_sha256": "69de5b14c1d13319439c7403a8d35a7c6a951aa813daaf71c31a82a640adab70",
+  "source_pdf_sha256": "1939a22e5e96ebd2b58b8e91fe2c796f5390b402f267390f473b271c35d2f036",
+  "pdf_page_mapping": [
+    264
+  ],
+  "crop_pixel_identity": "PASS: copied page render or lossless embedded full-page source pixels",
+  "rasterized_pages": {},
+  "source_declarations": [
+    "vectorIto"
+  ],
+  "dependency_excerpts": [
+    {
+      "path": "Blueprint/Ch06.lean",
+      "line": 25,
+      "full_name": "MD.Ch06.naturalHistory25",
+      "kind": "def",
+      "excerpt_sha256": "0659f3ba03825d04e9a7a6b282556edb0f87399baa0c4f6b39131a8bd39b3493"
+    },
+    {
+      "path": "Blueprint/Ch06.lean",
+      "line": 42,
+      "full_name": "MD.Ch06.vectorGridItoQualification25",
+      "kind": "def",
+      "excerpt_sha256": "f3100df9d09b02796338301e71625f2f461bb4e114527140dd6e9d1012e98572"
+    },
+    {
+      "path": "Blueprint/Ch06.lean",
+      "line": 863,
+      "full_name": "MD.Ch06.strictItoIntegral",
+      "kind": "def",
+      "excerpt_sha256": "69555ce0eea7f7da7dd5b52a53fe2003a79a1ac3a807d9eee6a859b7a7ecfc54"
+    },
+    {
+      "path": "Blueprint/Ch06.lean",
+      "line": 1105,
+      "full_name": "MD.Ch06.strictVectorSDE",
+      "kind": "def",
+      "excerpt_sha256": "1cb2640ecc7ed508d0ba275392b25b74e8d1b08d8d42b5003574bc77c472a725"
+    },
+    {
+      "path": "Blueprint/Ch06.lean",
+      "line": 1803,
+      "full_name": "MD.Ch06.vectorIto",
+      "kind": "theorem",
+      "excerpt_sha256": "02d46c2ed1a5269d695944ef17d491beb3e7ccaa2eb4c88623fb3bba45438631"
+    },
+    {
+      "path": "MolecularDynamics/Chapter06/BrownianDirichlet.lean",
+      "line": 13,
+      "full_name": "MolecularDynamics.textbookConfigurationPartial",
+      "kind": "def",
+      "excerpt_sha256": "fbca5c0abb1ddc15e963008415ea72d955f5e4a49bbc36888fbf88ab7a80409d"
+    },
+    {
+      "path": "MolecularDynamics/Chapter06/ReviewDefinitions.lean",
+      "line": 17,
+      "full_name": "MolecularDynamics.Chapter06Review.V",
+      "kind": "abbrev",
+      "excerpt_sha256": "7ab0ad90462b274b03f5b929b5f09417c0b397b6cb908fa6e7bd56677a314027"
+    },
+    {
+      "path": "MolecularDynamics/Chapter06/ReviewDefinitions.lean",
+      "line": 54,
+      "full_name": "MolecularDynamics.Chapter06Review.itoLeftSum",
+      "kind": "def",
+      "excerpt_sha256": "e1cd64bf3b4edeae8a7d1bf292e844323267f948a2846db1110c7f024f55e746"
+    },
+    {
+      "path": "MolecularDynamics/Chapter06/ReviewDefinitions.lean",
+      "line": 133,
+      "full_name": "MolecularDynamics.Chapter06Review.vectorDiffusion",
+      "kind": "def",
+      "excerpt_sha256": "d1e6d80090ab41b9311086d0c77d85f4888650e228f30d5513677a1664a4f348"
+    },
+    {
+      "path": "MolecularDynamics/Chapter06/ReviewDefinitions.lean",
+      "line": 136,
+      "full_name": "MolecularDynamics.Chapter06Review.vectorGenerator",
+      "kind": "def",
+      "excerpt_sha256": "cf72a7843e87e0bf9e0dbda8f56242e924f8fb22592d36a7795022340e644b3b"
+    },
+    {
+      "path": "MolecularDynamics/Chapter06/WienerVectorSupport.lean",
+      "line": 13,
+      "full_name": "MolecularDynamics.textbookIsWienerVector",
+      "kind": "structure",
+      "excerpt_sha256": "030040a9146ab99e095c5a3e84fa3feed1dc8f0dd916643d371a0bb7e6efb622"
+    }
+  ],
+  "project_definition_closure": "complete recursive definitions, referenced theorem types, explicit choice and consistency specifications",
+  "website_submitted": false,
+  "total_task_bytes": 103718
+}

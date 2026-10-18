@@ -1,0 +1,29 @@
+{
+  "eaudit": "EAUDIT19",
+  "subtasks": [
+    {
+      "subtask": "EAUDIT19a",
+      "source_id": "MD-6.4.5-KernelAverage",
+      "path": "blueprint/ch06/mathcopilot_tasks/EAUDIT19/a",
+      "total_bytes": 85209,
+      "definitions": 1,
+      "manifest_sha256": "5ef9e9169932fedbbae9771e2b4c298710ea1786e37e966fb3669e83db099dc4"
+    },
+    {
+      "subtask": "EAUDIT19b",
+      "source_id": "MD-6.4.5-DensityEvolutionMeaning",
+      "path": "blueprint/ch06/mathcopilot_tasks/EAUDIT19/b",
+      "total_bytes": 126164,
+      "definitions": 16,
+      "manifest_sha256": "a48985c40b290a58251a497b0cfc36503957b10bd8362f0fbe0938d2bb3fd5d6"
+    },
+    {
+      "subtask": "EAUDIT19c",
+      "source_id": "MD-6.4.5-SmoothTestL2Printed",
+      "path": "blueprint/ch06/mathcopilot_tasks/EAUDIT19/c",
+      "total_bytes": 89610,
+      "definitions": 7,
+      "manifest_sha256": "63c2e353ea7b4ba3fbdfa9fd58555942db90008b926abc3caa4081d42b08ff86"
+    }
+  ]
+}

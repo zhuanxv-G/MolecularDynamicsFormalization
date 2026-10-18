@@ -1,0 +1,64 @@
+{
+  "eaudit": "EAUDIT09",
+  "subtask": "EAUDIT09a",
+  "source_id": "MD-6.3.6-FPPolynomialAdjoint",
+  "input_sha256": {
+    "Blueprint/Ch06.lean": "4a2a6cb72c1692f80e3537ab1a71701d429a482780a01226c3dc66a2ebb8b44b",
+    "blueprint/ch06/ch06_source.json": "d7f93cd20eb570744c710f3e07a88b319c082e4155812fee91db0920eb05944e",
+    "PAGES.pdf": "5bd681703fe60f423eb8de031b34bb5117bf6fadbaf2c496cc11f46cf2fb0d7d",
+    "materials_sha256": "b7ab9cb2a229248b7d35ea704983c8509da883fc4f4eae9e8af421b12be8c0e1"
+  },
+  "paste_sha256": "762b208426dc42dc827f857d08ff781454baf0372e8b7bc63f3842e867b5eff6",
+  "source_pdf_sha256": "1939a22e5e96ebd2b58b8e91fe2c796f5390b402f267390f473b271c35d2f036",
+  "pdf_page_mapping": [
+    262,
+    263
+  ],
+  "crop_pixel_identity": "PASS: copied page render or lossless embedded full-page source pixels",
+  "rasterized_pages": {},
+  "source_declarations": [
+    "fpPolynomialAdjoint",
+    "fpPolynomialAdjoint_corrected",
+    "fpPolynomialAdjointPrinted"
+  ],
+  "dependency_excerpts": [
+    {
+      "path": "Blueprint/Ch06.lean",
+      "line": 1739,
+      "full_name": "MD.Ch06.fpPolynomialAdjoint",
+      "kind": "theorem",
+      "excerpt_sha256": "b86cee8f0e52b1e0f38e52252226f09f80113fc3b14fa6671b44ce09d1ca8a2d"
+    },
+    {
+      "path": "Blueprint/Ch06.lean",
+      "line": 1750,
+      "full_name": "MD.Ch06.fpPolynomialAdjoint_corrected",
+      "kind": "theorem",
+      "excerpt_sha256": "c06209de1dc640997719c0f7948a4ce9816ea1d818041988e1885c8da09df6ff"
+    },
+    {
+      "path": "Blueprint/Ch06.lean",
+      "line": 1761,
+      "full_name": "MD.Ch06.fpPolynomialAdjointPrinted",
+      "kind": "theorem",
+      "excerpt_sha256": "3fe5f9bd86a34b750242b8ffae25a6b703921a1e27abfe4a69b4d9c4f967c9d1"
+    },
+    {
+      "path": "MolecularDynamics/Chapter06/ReviewDefinitions.lean",
+      "line": 128,
+      "full_name": "MolecularDynamics.Chapter06Review.scalarGenerator",
+      "kind": "def",
+      "excerpt_sha256": "0bf9ab9fe315d138ab99dad97d866e1cbf0ec9fc9f8e20343b0267c79369c0d5"
+    },
+    {
+      "path": "MolecularDynamics/Chapter06/ReviewDefinitions.lean",
+      "line": 129,
+      "full_name": "MolecularDynamics.Chapter06Review.scalarForward",
+      "kind": "def",
+      "excerpt_sha256": "6178ede8590f4d53818b0d1142a6d6276703d817ade32e469966ed46315b15bd"
+    }
+  ],
+  "project_definition_closure": "complete recursive definitions, referenced theorem types, explicit choice and consistency specifications",
+  "website_submitted": false,
+  "total_task_bytes": 98601
+}

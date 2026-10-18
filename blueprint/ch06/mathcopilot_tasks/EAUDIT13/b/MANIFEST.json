@@ -1,0 +1,892 @@
+{
+  "eaudit": "EAUDIT13",
+  "subtask": "EAUDIT13b",
+  "source_id": "MD-6.4.3-Theorem61",
+  "input_sha256": {
+    "Blueprint/Ch06.lean": "4a2a6cb72c1692f80e3537ab1a71701d429a482780a01226c3dc66a2ebb8b44b",
+    "blueprint/ch06/ch06_source.json": "d7f93cd20eb570744c710f3e07a88b319c082e4155812fee91db0920eb05944e",
+    "PAGES.pdf": "d3151cadbf8575ec200d3b1c9f0a1f06032b1202aea29bf6736de82e4df6c0ce",
+    "materials_sha256": "79763cdc99010ad24e0f1c17a46f899a1c486f4ab6aaf3d2cfc76a630d7d559b"
+  },
+  "paste_sha256": "62ea245116a6ddb37fd826b4d48a5116096897af70263012292ebd4b3ba9a5f7",
+  "source_pdf_sha256": "1939a22e5e96ebd2b58b8e91fe2c796f5390b402f267390f473b271c35d2f036",
+  "pdf_page_mapping": [
+    271,
+    272
+  ],
+  "crop_pixel_identity": "PASS: copied page render or lossless embedded full-page source pixels",
+  "rasterized_pages": {},
+  "source_declarations": [
+    "theorem61",
+    "theorem61_corrected",
+    "theorem61Printed",
+    "brownianMassGeneratorPrinted",
+    "brownianMassGeneratorPrinted_corrected"
+  ],
+  "dependency_excerpts": [
+    {
+      "path": "Blueprint/Ch06.lean",
+      "line": 2191,
+      "full_name": "MD.Ch06.brownianWeightedInner",
+      "kind": "def",
+      "excerpt_sha256": "8b503f667765a8b1f8ae62b3ed7d2211f7aab6e57e71525f4bf7ee2e5b02ec60"
+    },
+    {
+      "path": "Blueprint/Ch06.lean",
+      "line": 2371,
+      "full_name": "MD.Ch06.theorem61",
+      "kind": "theorem",
+      "excerpt_sha256": "7752dfeffc7fe3c5a2c71adbde627ee22b4d571644d97ee620d128d8c9afa1ed"
+    },
+    {
+      "path": "Blueprint/Ch06.lean",
+      "line": 2399,
+      "full_name": "MD.Ch06.theorem61_corrected",
+      "kind": "theorem",
+      "excerpt_sha256": "00e07bac5240d2f2067bbb94082354ec7ff13ab1d64fe627b9760d23ae58fc78"
+    },
+    {
+      "path": "Blueprint/Ch06.lean",
+      "line": 2427,
+      "full_name": "MD.Ch06.theorem61Printed",
+      "kind": "theorem",
+      "excerpt_sha256": "7cec25de7fe9db0f4b7d5c6037dd03821bef89a49a39d635f6aa05560dfc0c82"
+    },
+    {
+      "path": "Blueprint/Ch06.lean",
+      "line": 2457,
+      "full_name": "MD.Ch06.brownianMassGeneratorPrinted",
+      "kind": "def",
+      "excerpt_sha256": "77066884d2151ca402751cfbe78ec52c567bbc113acf3f3d41dcdbec182f8c1a"
+    },
+    {
+      "path": "Blueprint/Ch06.lean",
+      "line": 2463,
+      "full_name": "MD.Ch06.brownianMassGeneratorPrinted_corrected",
+      "kind": "def",
+      "excerpt_sha256": "05550f42a22640440005454393c6a46c5d081696ca77cf7a7382162df923dc41"
+    },
+    {
+      "path": "MolecularDynamics/Chapter01/LocalTrajectories.lean",
+      "line": 24,
+      "full_name": "MolecularDynamics.velocityOperator",
+      "kind": "def",
+      "excerpt_sha256": "715cd487c9efc9fe4ffaa4f5b65e0178109869a91e2adb9f649fed6c888b96d5"
+    },
+    {
+      "path": "MolecularDynamics/Chapter01/LocalTrajectories.lean",
+      "line": 69,
+      "full_name": "MolecularDynamics.mechanicalVectorField",
+      "kind": "def",
+      "excerpt_sha256": "36242d31adc1ee6a6edb451265a0838c3eebc158a8fa6ed8b06960f6f4dc15ea"
+    },
+    {
+      "path": "MolecularDynamics/Chapter01/LocalTrajectories.lean",
+      "line": 74,
+      "full_name": "MolecularDynamics.IsMechanicalSolutionOn",
+      "kind": "def",
+      "excerpt_sha256": "57e22f321cfe8f54c9731f68f4200374e8b3b05c735ff5a01296226dda617030"
+    },
+    {
+      "path": "MolecularDynamics/Chapter01/LocalTrajectories.lean",
+      "line": 95,
+      "full_name": "MolecularDynamics.IsMechanicalSolutionOn.continuousOn",
+      "kind": "theorem",
+      "excerpt_sha256": "664d0f5c3de96d26f6078713eb25ed50992b55ca0141b3d68bc14d87bbca28ce"
+    },
+    {
+      "path": "MolecularDynamics/Chapter01/NBody.lean",
+      "line": 19,
+      "full_name": "MolecularDynamics.CoordinateMasses",
+      "kind": "abbrev",
+      "excerpt_sha256": "50939e8d47d2aea37f48a71423ee3ae48b297b19ba4394b17b02a93c1f4510a4"
+    },
+    {
+      "path": "MolecularDynamics/Chapter01/NBody.lean",
+      "line": 22,
+      "full_name": "MolecularDynamics.diagonalMassMatrix",
+      "kind": "def",
+      "excerpt_sha256": "56c215aa345f33da76588c37690a0b34fd6c467f706ccbb6c832962abd41e7db"
+    },
+    {
+      "path": "MolecularDynamics/Chapter02/SymplecticEuler.lean",
+      "line": 34,
+      "full_name": "MolecularDynamics.textbookPotentialForce",
+      "kind": "def",
+      "excerpt_sha256": "1d801e666ee821e28ac10d711b4d36f5d14d48ffc72ce3a8e7d6608ba2f48594"
+    },
+    {
+      "path": "MolecularDynamics/Chapter02/SymplecticForm.lean",
+      "line": 25,
+      "full_name": "MolecularDynamics.SymplecticCoordinates",
+      "kind": "abbrev",
+      "excerpt_sha256": "d801b1ef7d571d0b96c22167cbd9c508f58aeba9e8793a8caaddb87888fc252e"
+    },
+    {
+      "path": "MolecularDynamics/Chapter02/SymplecticForm.lean",
+      "line": 27,
+      "full_name": "MolecularDynamics.SymplecticCoordinateMatrix",
+      "kind": "abbrev",
+      "excerpt_sha256": "f11e8c230eb2e2caa77c5d8ff83b56b846ee34e6d0347e62c39dea2ffa50f12c"
+    },
+    {
+      "path": "MolecularDynamics/Chapter02/SymplecticForm.lean",
+      "line": 31,
+      "full_name": "MolecularDynamics.textbookJ",
+      "kind": "def",
+      "excerpt_sha256": "c7944ade4b768d7f5c7755bc8d2b34c927db678ea6d001a3deb85cc2318f8304"
+    },
+    {
+      "path": "MolecularDynamics/Chapter02/SymplecticForm.lean",
+      "line": 130,
+      "full_name": "MolecularDynamics.IsTextbookSymplectic",
+      "kind": "def",
+      "excerpt_sha256": "6642b20035e535f764e24183b8b3fd564c65f367b80a24c79a394d8a4d55056f"
+    },
+    {
+      "path": "MolecularDynamics/Chapter02/SymplecticMaps.lean",
+      "line": 21,
+      "full_name": "MolecularDynamics.textbookJacobian",
+      "kind": "def",
+      "excerpt_sha256": "de22cc68d29839d120350e99f4983537ef9e72385df49f475c8e3396754dcdbe"
+    },
+    {
+      "path": "MolecularDynamics/Chapter02/SymplecticMaps.lean",
+      "line": 55,
+      "full_name": "MolecularDynamics.IsTextbookSymplecticMap",
+      "kind": "def",
+      "excerpt_sha256": "7563019e4b4160d2583955860a10898409a2b10b6eb8f48ee27ca77e8efc5c9a"
+    },
+    {
+      "path": "MolecularDynamics/Chapter02/SymplecticMaps.lean",
+      "line": 86,
+      "full_name": "MolecularDynamics.IsTextbookSymplecticMap.comp",
+      "kind": "theorem",
+      "excerpt_sha256": "c50b4bc7e836e7f63b8b43b992458e7f6e06306e245a300ea8f72acc8c682f65"
+    },
+    {
+      "path": "MolecularDynamics/Chapter06/BrownianClosedOperator.lean",
+      "line": 17,
+      "full_name": "MolecularDynamics.textbookBrownianGibbsPartialOperator",
+      "kind": "def",
+      "excerpt_sha256": "4e5f947d754c1ed8ea9c4e1de995216c2289b50c85f371cd7f39bbcaaf6ad41a"
+    },
+    {
+      "path": "MolecularDynamics/Chapter06/BrownianClosedOperator.lean",
+      "line": 77,
+      "full_name": "MolecularDynamics.textbookBrownianGibbsClosedOperator",
+      "kind": "def",
+      "excerpt_sha256": "ff3c437202efb981392fcc9e80c21762801398cfe8e35906375f1045112ef993"
+    },
+    {
+      "path": "MolecularDynamics/Chapter06/BrownianClosedOperator.lean",
+      "line": 89,
+      "full_name": "MolecularDynamics.textbookBrownianGibbsClosedOperator_isClosed",
+      "kind": "theorem",
+      "excerpt_sha256": "d52a6b92437c7ffde7b43b1bb1189d6be7a9633e5a9f4528175c22dc36dab227"
+    },
+    {
+      "path": "MolecularDynamics/Chapter06/BrownianDirichlet.lean",
+      "line": 13,
+      "full_name": "MolecularDynamics.textbookConfigurationPartial",
+      "kind": "def",
+      "excerpt_sha256": "fbca5c0abb1ddc15e963008415ea72d955f5e4a49bbc36888fbf88ab7a80409d"
+    },
+    {
+      "path": "MolecularDynamics/Chapter06/BrownianDirichlet.lean",
+      "line": 18,
+      "full_name": "MolecularDynamics.textbookConfigurationCube",
+      "kind": "def",
+      "excerpt_sha256": "09df86f1ec71f9b7683204ae6fb4a4c17076a4a71db9c03a87623d7423d83273"
+    },
+    {
+      "path": "MolecularDynamics/Chapter06/BrownianDirichlet.lean",
+      "line": 21,
+      "full_name": "MolecularDynamics.textbookConfigurationGibbsWeight",
+      "kind": "def",
+      "excerpt_sha256": "a5bd766d1cbfda65d529ec6b709aea756a842e8914cf452dd793034c4f50877b"
+    },
+    {
+      "path": "MolecularDynamics/Chapter06/BrownianDirichlet.lean",
+      "line": 31,
+      "full_name": "MolecularDynamics.textbookBrownianGenerator",
+      "kind": "def",
+      "excerpt_sha256": "e539c16e70580030677c468fb87e72c8ec94f2adcc60826e179399ea7dc1af00"
+    },
+    {
+      "path": "MolecularDynamics/Chapter06/BrownianDirichlet.lean",
+      "line": 271,
+      "full_name": "MolecularDynamics.textbookConfigurationPartition",
+      "kind": "def",
+      "excerpt_sha256": "bf3cd0410e09c0f547733bf9b24c116b519d674f74b7f0eeba4a189faceb3344"
+    },
+    {
+      "path": "MolecularDynamics/Chapter06/BrownianEigenDiscreteness.lean",
+      "line": 11,
+      "full_name": "MolecularDynamics.Gibbs",
+      "kind": "abbrev",
+      "excerpt_sha256": "fa18067b0ae7dabf9742874edfcaea19c44f49504a9520c7033b74c5b9be0f17"
+    },
+    {
+      "path": "MolecularDynamics/Chapter06/BrownianEigenEnumeration.lean",
+      "line": 19,
+      "full_name": "MolecularDynamics.Gibbs",
+      "kind": "abbrev",
+      "excerpt_sha256": "fa18067b0ae7dabf9742874edfcaea19c44f49504a9520c7033b74c5b9be0f17"
+    },
+    {
+      "path": "MolecularDynamics/Chapter06/BrownianEigenGraph.lean",
+      "line": 11,
+      "full_name": "MolecularDynamics.Gibbs",
+      "kind": "abbrev",
+      "excerpt_sha256": "fa18067b0ae7dabf9742874edfcaea19c44f49504a9520c7033b74c5b9be0f17"
+    },
+    {
+      "path": "MolecularDynamics/Chapter06/BrownianEigenOrdering.lean",
+      "line": 103,
+      "full_name": "MolecularDynamics.Gibbs",
+      "kind": "abbrev",
+      "excerpt_sha256": "8b35e8a190e530468223152a3d2e76734e7c74b8e142c1d533d8991a87b10323"
+    },
+    {
+      "path": "MolecularDynamics/Chapter06/BrownianGeneratorRealSpectrum.lean",
+      "line": 11,
+      "full_name": "MolecularDynamics.Gibbs",
+      "kind": "abbrev",
+      "excerpt_sha256": "fa18067b0ae7dabf9742874edfcaea19c44f49504a9520c7033b74c5b9be0f17"
+    },
+    {
+      "path": "MolecularDynamics/Chapter06/BrownianGibbsComplexOperator.lean",
+      "line": 12,
+      "full_name": "MolecularDynamics.Gibbs",
+      "kind": "abbrev",
+      "excerpt_sha256": "fa18067b0ae7dabf9742874edfcaea19c44f49504a9520c7033b74c5b9be0f17"
+    },
+    {
+      "path": "MolecularDynamics/Chapter06/BrownianGibbsComplexOperator.lean",
+      "line": 14,
+      "full_name": "MolecularDynamics.GibbsComplex",
+      "kind": "abbrev",
+      "excerpt_sha256": "44d94c9dfbf58ff750c0bb06b28c4fa29631830bc2b1f4de5afc2db23805365c"
+    },
+    {
+      "path": "MolecularDynamics/Chapter06/BrownianGibbsComplexOperator.lean",
+      "line": 20,
+      "full_name": "MolecularDynamics.cb",
+      "kind": "abbrev",
+      "excerpt_sha256": "3aa24f2325dbf60b9ab3db6338e22547e2c2741d41e5c8f8dcfa7a003bafca5c"
+    },
+    {
+      "path": "MolecularDynamics/Chapter06/BrownianGibbsComplexOperator.lean",
+      "line": 35,
+      "full_name": "MolecularDynamics.textbookBrownianGibbsComplexGraph",
+      "kind": "def",
+      "excerpt_sha256": "a3a05a0bbd1ef9a68bde9b59da71fe3931845635586fe1721f2571f4f6da2a7d"
+    },
+    {
+      "path": "MolecularDynamics/Chapter06/BrownianGibbsComplexOperator.lean",
+      "line": 106,
+      "full_name": "MolecularDynamics.textbookBrownianGibbsComplexOperator",
+      "kind": "def",
+      "excerpt_sha256": "26da48a41df4fa5bed20a9f44d70274a24eb16af56229c469997f298c3b79ee1"
+    },
+    {
+      "path": "MolecularDynamics/Chapter06/BrownianGibbsComplexResolvent.lean",
+      "line": 12,
+      "full_name": "MolecularDynamics.GibbsComplex",
+      "kind": "abbrev",
+      "excerpt_sha256": "44d94c9dfbf58ff750c0bb06b28c4fa29631830bc2b1f4de5afc2db23805365c"
+    },
+    {
+      "path": "MolecularDynamics/Chapter06/BrownianGibbsComplexResolvent.lean",
+      "line": 18,
+      "full_name": "MolecularDynamics.cb",
+      "kind": "abbrev",
+      "excerpt_sha256": "3aa24f2325dbf60b9ab3db6338e22547e2c2741d41e5c8f8dcfa7a003bafca5c"
+    },
+    {
+      "path": "MolecularDynamics/Chapter06/BrownianGibbsComplexResolvent.lean",
+      "line": 19,
+      "full_name": "MolecularDynamics.R",
+      "kind": "abbrev",
+      "excerpt_sha256": "4d7ecd17ca4ef090003efbff848e8bdb192fb9867744af70d81d42155c6e0217"
+    },
+    {
+      "path": "MolecularDynamics/Chapter06/BrownianGibbsComplexSpectrum.lean",
+      "line": 11,
+      "full_name": "MolecularDynamics.Gibbs",
+      "kind": "abbrev",
+      "excerpt_sha256": "6dcaa415d2cdd1737a260905cc9cca73cddfbb9d300af91c9aed3ad1561272dd"
+    },
+    {
+      "path": "MolecularDynamics/Chapter06/BrownianGibbsComplexSpectrum.lean",
+      "line": 18,
+      "full_name": "MolecularDynamics.textbookBrownianGibbsGeneratorComplexResolventSet",
+      "kind": "def",
+      "excerpt_sha256": "e753e330dc6e76073997c0a6d57cc2aa9661da27df309c79bb1643633a9043f0"
+    },
+    {
+      "path": "MolecularDynamics/Chapter06/BrownianGibbsComplexSpectrum.lean",
+      "line": 126,
+      "full_name": "MolecularDynamics.textbookBrownianGibbsGeneratorComplexSpectrum",
+      "kind": "def",
+      "excerpt_sha256": "d766d87bb7056bbb8b174961584049565a4b86aaaffad557c75272e3802c422c"
+    },
+    {
+      "path": "MolecularDynamics/Chapter06/BrownianGibbsComplexSpectrum.lean",
+      "line": 139,
+      "full_name": "MolecularDynamics.cb",
+      "kind": "abbrev",
+      "excerpt_sha256": "3aa24f2325dbf60b9ab3db6338e22547e2c2741d41e5c8f8dcfa7a003bafca5c"
+    },
+    {
+      "path": "MolecularDynamics/Chapter06/BrownianGibbsComplexification.lean",
+      "line": 12,
+      "full_name": "MolecularDynamics.Gibbs",
+      "kind": "abbrev",
+      "excerpt_sha256": "fa18067b0ae7dabf9742874edfcaea19c44f49504a9520c7033b74c5b9be0f17"
+    },
+    {
+      "path": "MolecularDynamics/Chapter06/BrownianGibbsComplexification.lean",
+      "line": 14,
+      "full_name": "MolecularDynamics.GibbsComplex",
+      "kind": "abbrev",
+      "excerpt_sha256": "44d94c9dfbf58ff750c0bb06b28c4fa29631830bc2b1f4de5afc2db23805365c"
+    },
+    {
+      "path": "MolecularDynamics/Chapter06/BrownianGibbsComplexification.lean",
+      "line": 20,
+      "full_name": "MolecularDynamics.textbookBrownianGibbsL2Complexify",
+      "kind": "def",
+      "excerpt_sha256": "849ee56f3025f86c910ee3fa4aec88e825fa5a06e0e19607ed2e2c9d901e1e0b"
+    },
+    {
+      "path": "MolecularDynamics/Chapter06/BrownianGibbsComplexification.lean",
+      "line": 24,
+      "full_name": "MolecularDynamics.textbookBrownianGibbsL2RealPart",
+      "kind": "def",
+      "excerpt_sha256": "d3cd1d3b8882d7f7ab73a5ff8acc1a057862e8dcb9558a68e1591f1e94d547e0"
+    },
+    {
+      "path": "MolecularDynamics/Chapter06/BrownianGibbsComplexification.lean",
+      "line": 28,
+      "full_name": "MolecularDynamics.textbookBrownianGibbsL2ImagPart",
+      "kind": "def",
+      "excerpt_sha256": "3ee92433e7cac8977dfd06713943df2ace9a9fd06fabf7eb0a8207c50946221d"
+    },
+    {
+      "path": "MolecularDynamics/Chapter06/BrownianGibbsComplexification.lean",
+      "line": 68,
+      "full_name": "MolecularDynamics.textbookBrownianGibbsL2Complexify_decomposition",
+      "kind": "theorem",
+      "excerpt_sha256": "d3e7efc5cfa54dcd4ad8d19ac22f7861152bb1808fef6355fb89ee0b0ad95483"
+    },
+    {
+      "path": "MolecularDynamics/Chapter06/BrownianGibbsComplexification.lean",
+      "line": 123,
+      "full_name": "MolecularDynamics.textbookBrownianGibbsComplexEigenmodes_orthonormal",
+      "kind": "theorem",
+      "excerpt_sha256": "eaee1677ef531abdeca0eaa27d748d00ec8710a9b17b1dd19ea8b34d8b1a8f00"
+    },
+    {
+      "path": "MolecularDynamics/Chapter06/BrownianGibbsComplexification.lean",
+      "line": 134,
+      "full_name": "MolecularDynamics.textbookBrownianGibbsComplexEigenbasis",
+      "kind": "def",
+      "excerpt_sha256": "20d44b7fff9837d6e3f689b7d31b88dcdaf3f6213328067a116c18dce28163c3"
+    },
+    {
+      "path": "MolecularDynamics/Chapter06/BrownianGibbsResolvent.lean",
+      "line": 14,
+      "full_name": "MolecularDynamics.Gibbs",
+      "kind": "abbrev",
+      "excerpt_sha256": "fa18067b0ae7dabf9742874edfcaea19c44f49504a9520c7033b74c5b9be0f17"
+    },
+    {
+      "path": "MolecularDynamics/Chapter06/BrownianGibbsResolvent.lean",
+      "line": 21,
+      "full_name": "MolecularDynamics.textbookBrownianGibbsClosedGraphShift",
+      "kind": "def",
+      "excerpt_sha256": "93b20cab97e7ca99753da7013be7ef057e6679228bde99d627b9eb306510dbab"
+    },
+    {
+      "path": "MolecularDynamics/Chapter06/BrownianGibbsResolvent.lean",
+      "line": 87,
+      "full_name": "MolecularDynamics.textbookBrownianGibbsClosedGraphShift_injective",
+      "kind": "theorem",
+      "excerpt_sha256": "2f3062b46fb44029609911ea303b2b7757b4ba587f64aee93f29b70bcee2a919"
+    },
+    {
+      "path": "MolecularDynamics/Chapter06/BrownianGibbsResolvent.lean",
+      "line": 143,
+      "full_name": "MolecularDynamics.textbookBrownianGibbsClosedGraphShift_range_eq_top",
+      "kind": "theorem",
+      "excerpt_sha256": "156c02621a96f65d778e850ec8b9a2b10eb552712c14059fcc2aada4ad74f7f7"
+    },
+    {
+      "path": "MolecularDynamics/Chapter06/BrownianGibbsResolvent.lean",
+      "line": 152,
+      "full_name": "MolecularDynamics.shifted_graph_equiv",
+      "kind": "def",
+      "excerpt_sha256": "f634cca1bff38b104a9fae05adfde03fc2f2e38ae4518d52e19e23cf62e8069c"
+    },
+    {
+      "path": "MolecularDynamics/Chapter06/BrownianGibbsResolvent.lean",
+      "line": 164,
+      "full_name": "MolecularDynamics.textbookBrownianGibbsResolvent",
+      "kind": "def",
+      "excerpt_sha256": "b67bcfe2d122a1294f4705be02b441456bfc04453ff5744ddc648f7b01c705b4"
+    },
+    {
+      "path": "MolecularDynamics/Chapter06/BrownianGraphCompact.lean",
+      "line": 87,
+      "full_name": "MolecularDynamics.textbookBrownianGibbsClosedGraphProjection",
+      "kind": "def",
+      "excerpt_sha256": "bb8a817fc707bab1bbb41aa21b89429d51d62122c603c2a04c820e0904e2c288"
+    },
+    {
+      "path": "MolecularDynamics/Chapter06/BrownianHilbertCore.lean",
+      "line": 32,
+      "full_name": "MolecularDynamics.textbookConfigurationTorusObservable_continuous",
+      "kind": "theorem",
+      "excerpt_sha256": "24ab6385c3b119fccdf031bac4d552f1cb7e838b75c844e4db8f98e09dcad686"
+    },
+    {
+      "path": "MolecularDynamics/Chapter06/BrownianHilbertCore.lean",
+      "line": 44,
+      "full_name": "MolecularDynamics.textbookConfigurationTorusGibbsMeasure_memLp_two",
+      "kind": "theorem",
+      "excerpt_sha256": "1988e4e887f12caaa77dda0c1f52f2314caced0b43ce601b99405934a9f65c7c"
+    },
+    {
+      "path": "MolecularDynamics/Chapter06/BrownianHilbertCore.lean",
+      "line": 55,
+      "full_name": "MolecularDynamics.textbookConfigurationGibbsL2Observable",
+      "kind": "def",
+      "excerpt_sha256": "34695f92fb54187c3fa214ec7488f46fbdb9599cdb83130e5d98171ca56ae6e4"
+    },
+    {
+      "path": "MolecularDynamics/Chapter06/BrownianHilbertCore.lean",
+      "line": 64,
+      "full_name": "MolecularDynamics.textbookConfigurationGibbsL2Observable_ae_eq",
+      "kind": "theorem",
+      "excerpt_sha256": "691a06b0874e215cd2f99624c922d326262054d89b8caada8d80b191f4cb0c06"
+    },
+    {
+      "path": "MolecularDynamics/Chapter06/BrownianPathSolution.lean",
+      "line": 21,
+      "full_name": "MolecularDynamics.textbookBrownianIntegralSolution",
+      "kind": "def",
+      "excerpt_sha256": "ae8b2e03ad3e51d93d1d69eb21913dc4f950034e746aa5089463b9a9300b4f4d"
+    },
+    {
+      "path": "MolecularDynamics/Chapter06/BrownianPathSolution.lean",
+      "line": 29,
+      "full_name": "MolecularDynamics.textbookBrownianIntegralSolution_exists_model",
+      "kind": "theorem",
+      "excerpt_sha256": "70f7c8ff8d1fe5315b7d491aef097576b6759385a520b0133e4c7e8f6e8439e8"
+    },
+    {
+      "path": "MolecularDynamics/Chapter06/BrownianPathSolution.lean",
+      "line": 239,
+      "full_name": "MolecularDynamics.textbookBrownianPathSolution",
+      "kind": "def",
+      "excerpt_sha256": "6cc92bf360da3337fe2942acfcc804e0d82bb54c9d2c8ffc09fe4065f36b4aa9"
+    },
+    {
+      "path": "MolecularDynamics/Chapter06/BrownianPathSolution.lean",
+      "line": 253,
+      "full_name": "MolecularDynamics.textbookBrownianPathEndpoint",
+      "kind": "def",
+      "excerpt_sha256": "9b3992e3333c3978954121982231dc1461bd68edaa2e2f56ddad5eef0f702ba3"
+    },
+    {
+      "path": "MolecularDynamics/Chapter06/BrownianProbabilityDensityAverage.lean",
+      "line": 18,
+      "full_name": "MolecularDynamics.textbookBrownianInitialDensityMeasure",
+      "kind": "def",
+      "excerpt_sha256": "32bdc94924260ef87f2cf2a869678f8686a0fe453c11e0d1c966479302aa59f3"
+    },
+    {
+      "path": "MolecularDynamics/Chapter06/BrownianProbabilityDensityAverage.lean",
+      "line": 57,
+      "full_name": "MolecularDynamics.textbookBrownianDensityLaw",
+      "kind": "def",
+      "excerpt_sha256": "41700737d6c6ba20875dfc88b2b585c049ebf31c5a0deab65e2b0a11280880d1"
+    },
+    {
+      "path": "MolecularDynamics/Chapter06/BrownianProbabilityDensityAverage.lean",
+      "line": 156,
+      "full_name": "MolecularDynamics.textbookBrownianDensityAverage",
+      "kind": "def",
+      "excerpt_sha256": "4dc969ce674b50a4713cdabbc9810283681a79843ed239325ebec8685baba87f"
+    },
+    {
+      "path": "MolecularDynamics/Chapter06/BrownianRandomModel.lean",
+      "line": 30,
+      "full_name": "MolecularDynamics.textbookBrownianRandomSolution",
+      "kind": "def",
+      "excerpt_sha256": "80991ce5efeca36e07f19169eeb22295ba51c0e72512d8f11f8dae806343c57e"
+    },
+    {
+      "path": "MolecularDynamics/Chapter06/BrownianRandomModel.lean",
+      "line": 148,
+      "full_name": "MolecularDynamics.textbookBrownianGlobalRandomConfiguration",
+      "kind": "def",
+      "excerpt_sha256": "c43737afb23fd87aacaab5f1e83165a32b9afd316f0c0f95474eceb041f68778"
+    },
+    {
+      "path": "MolecularDynamics/Chapter06/BrownianResolventSpectrum.lean",
+      "line": 13,
+      "full_name": "MolecularDynamics.Gibbs",
+      "kind": "abbrev",
+      "excerpt_sha256": "fa18067b0ae7dabf9742874edfcaea19c44f49504a9520c7033b74c5b9be0f17"
+    },
+    {
+      "path": "MolecularDynamics/Chapter06/BrownianResolventSpectrum.lean",
+      "line": 124,
+      "full_name": "MolecularDynamics.textbookBrownianGibbsClosedEigenspace",
+      "kind": "def",
+      "excerpt_sha256": "e61800d415d1748cf20046c06d33a2cd4751ca86281ed58ee0449ea1ab5c8e7e"
+    },
+    {
+      "path": "MolecularDynamics/Chapter06/BrownianResolventSpectrum.lean",
+      "line": 176,
+      "full_name": "MolecularDynamics.textbookBrownianGibbsClosedEigenspace_finiteDimensional",
+      "kind": "theorem",
+      "excerpt_sha256": "6551f6bea3a3606d6c3ee97df9d1c35955ec49da89b22286850c2ac9aeab4ca8"
+    },
+    {
+      "path": "MolecularDynamics/Chapter06/BrownianResolventSpectrum.lean",
+      "line": 240,
+      "full_name": "MolecularDynamics.textbookBrownianGibbsEigenIndex",
+      "kind": "abbrev",
+      "excerpt_sha256": "504c21862074fbf8dd9036ff90a0beca85f2d172ab0925ebb143b632226e3881"
+    },
+    {
+      "path": "MolecularDynamics/Chapter06/BrownianResolventSpectrum.lean",
+      "line": 243,
+      "full_name": "MolecularDynamics.local_eigenbasis",
+      "kind": "def",
+      "excerpt_sha256": "8d8580a63189ce2523b155b78d39681790d5883a1ea7c6eead5f4840d79ef669"
+    },
+    {
+      "path": "MolecularDynamics/Chapter06/BrownianResolventSpectrum.lean",
+      "line": 250,
+      "full_name": "MolecularDynamics.eigenfamily",
+      "kind": "def",
+      "excerpt_sha256": "2fff8f66b80a24afeb65f464f54634b07746ce54e2bb51901b603a7412c888ca"
+    },
+    {
+      "path": "MolecularDynamics/Chapter06/BrownianResolventSpectrum.lean",
+      "line": 253,
+      "full_name": "MolecularDynamics.eigenfamily_orthonormal",
+      "kind": "theorem",
+      "excerpt_sha256": "c85caf5501d084dda089e5655d3f2bda18cd1744e13fd4ba01da45b176ec6563"
+    },
+    {
+      "path": "MolecularDynamics/Chapter06/BrownianResolventSpectrum.lean",
+      "line": 261,
+      "full_name": "MolecularDynamics.eigenfamily_dense",
+      "kind": "theorem",
+      "excerpt_sha256": "0d0c160489c935dcd3ab68c95fe9b47f15589147bc19bee45f642770e41a11ef"
+    },
+    {
+      "path": "MolecularDynamics/Chapter06/BrownianResolventSpectrum.lean",
+      "line": 283,
+      "full_name": "MolecularDynamics.textbookBrownianGibbsEigenbasis",
+      "kind": "def",
+      "excerpt_sha256": "d07b2a758b9960a91aa0c762828a0a29fa3b4636b8db46c4585bc596e4841a0f"
+    },
+    {
+      "path": "MolecularDynamics/Chapter06/BrownianSDECoefficients.lean",
+      "line": 17,
+      "full_name": "MolecularDynamics.textbookBrownianMassMobility",
+      "kind": "def",
+      "excerpt_sha256": "3086ecee487db282f949c9f31aeeda8f5a8b37389757c9c25a63da8e02f3ad51"
+    },
+    {
+      "path": "MolecularDynamics/Chapter06/BrownianSDECoefficients.lean",
+      "line": 27,
+      "full_name": "MolecularDynamics.textbookBrownianSDEDrift",
+      "kind": "def",
+      "excerpt_sha256": "bc1a216529e08db893f7c1e384a2ab53a52dd6d2be44d52be717cb2fe8006ee6"
+    },
+    {
+      "path": "MolecularDynamics/Chapter06/BrownianSDECoefficients.lean",
+      "line": 52,
+      "full_name": "MolecularDynamics.textbookBrownianSDENoiseAmplitude",
+      "kind": "def",
+      "excerpt_sha256": "773748fa98a6342dd7b6d036bec935777effea8d4906381780f1b84cfb837407"
+    },
+    {
+      "path": "MolecularDynamics/Chapter06/BrownianSDECoefficients.lean",
+      "line": 76,
+      "full_name": "MolecularDynamics.textbookBrownianSDENoise",
+      "kind": "def",
+      "excerpt_sha256": "f38e12c99d65139df7cbc0a3269bd78bda70cc1af2e75f561c15a61981aa26bc"
+    },
+    {
+      "path": "MolecularDynamics/Chapter06/BrownianSmoothDomain.lean",
+      "line": 36,
+      "full_name": "MolecularDynamics.textbookBrownianGenerator_add",
+      "kind": "theorem",
+      "excerpt_sha256": "7717265b60f224534f7b55685e2920b20669d7625258f6ecf262baa098b7bc7b"
+    },
+    {
+      "path": "MolecularDynamics/Chapter06/BrownianSmoothDomain.lean",
+      "line": 54,
+      "full_name": "MolecularDynamics.textbookBrownianGenerator_smul",
+      "kind": "theorem",
+      "excerpt_sha256": "513cce262daff02991eb394d9feb96548bf19f8f492ac3f182978cf985188c96"
+    },
+    {
+      "path": "MolecularDynamics/Chapter06/BrownianSmoothDomain.lean",
+      "line": 70,
+      "full_name": "MolecularDynamics.textbookPeriodicSmoothSpace",
+      "kind": "def",
+      "excerpt_sha256": "376c26ecd5d958444303985f8beec288d75f128060b0278c23d79b3fe347af0a"
+    },
+    {
+      "path": "MolecularDynamics/Chapter06/BrownianSmoothDomain.lean",
+      "line": 93,
+      "full_name": "MolecularDynamics.textbookBrownianSmoothGenerator",
+      "kind": "def",
+      "excerpt_sha256": "90f4c8e9f88a30546e997685c193ced04015f44ad91db03a42f074e1b3d56f08"
+    },
+    {
+      "path": "MolecularDynamics/Chapter06/BrownianSmoothDomain.lean",
+      "line": 120,
+      "full_name": "MolecularDynamics.textbookPeriodicSmoothEmbedding",
+      "kind": "def",
+      "excerpt_sha256": "6621bb98a11d9c28ad1c5f44012faec0e656eae055518609d2a12d82310f0dbf"
+    },
+    {
+      "path": "MolecularDynamics/Chapter06/BrownianSmoothDomain.lean",
+      "line": 153,
+      "full_name": "MolecularDynamics.textbookPeriodicSmoothEmbedding_injective",
+      "kind": "theorem",
+      "excerpt_sha256": "cddb367a75c870a54f669b0b04df89470f2856fe39438ec854d208c3ea9608f9"
+    },
+    {
+      "path": "MolecularDynamics/Chapter06/BrownianSmoothDomain.lean",
+      "line": 163,
+      "full_name": "MolecularDynamics.textbookBrownianGibbsSmoothDomain",
+      "kind": "def",
+      "excerpt_sha256": "7860e09b2724dc649944e692c0d8e73a25b51136921a0c92dd76d5f31e5a6c72"
+    },
+    {
+      "path": "MolecularDynamics/Chapter06/BrownianSmoothDomain.lean",
+      "line": 170,
+      "full_name": "MolecularDynamics.textbookPeriodicSmoothEmbeddingEquiv",
+      "kind": "def",
+      "excerpt_sha256": "10f810daf80b4e8613ced8522166b39190a813f41fa9951c9a332fb25d893f8c"
+    },
+    {
+      "path": "MolecularDynamics/Chapter06/BrownianSmoothDomain.lean",
+      "line": 198,
+      "full_name": "MolecularDynamics.textbookBrownianGibbsDomainOperator",
+      "kind": "def",
+      "excerpt_sha256": "51b4a646e991cf555b8086e8f9313257360f27ae4017cd30c8c5faa3835e7af3"
+    },
+    {
+      "path": "MolecularDynamics/Chapter06/BrownianSpectralAverage.lean",
+      "line": 12,
+      "full_name": "MolecularDynamics.Gibbs",
+      "kind": "abbrev",
+      "excerpt_sha256": "fa18067b0ae7dabf9742874edfcaea19c44f49504a9520c7033b74c5b9be0f17"
+    },
+    {
+      "path": "MolecularDynamics/Chapter06/BrownianSpectralDecay.lean",
+      "line": 11,
+      "full_name": "MolecularDynamics.Gibbs",
+      "kind": "abbrev",
+      "excerpt_sha256": "fa18067b0ae7dabf9742874edfcaea19c44f49504a9520c7033b74c5b9be0f17"
+    },
+    {
+      "path": "MolecularDynamics/Chapter06/BrownianSpectralEvolution.lean",
+      "line": 12,
+      "full_name": "MolecularDynamics.Gibbs",
+      "kind": "abbrev",
+      "excerpt_sha256": "fa18067b0ae7dabf9742874edfcaea19c44f49504a9520c7033b74c5b9be0f17"
+    },
+    {
+      "path": "MolecularDynamics/Chapter06/BrownianSpectralGenerator.lean",
+      "line": 12,
+      "full_name": "MolecularDynamics.Gibbs",
+      "kind": "abbrev",
+      "excerpt_sha256": "fa18067b0ae7dabf9742874edfcaea19c44f49504a9520c7033b74c5b9be0f17"
+    },
+    {
+      "path": "MolecularDynamics/Chapter06/BrownianTorusGibbs.lean",
+      "line": 22,
+      "full_name": "MolecularDynamics.textbookConfigurationTorusProjection",
+      "kind": "def",
+      "excerpt_sha256": "d1be8d8d410f74dd9eb52b9b167f57809e455f88b7146d6c4b45ff761066eb4c"
+    },
+    {
+      "path": "MolecularDynamics/Chapter06/BrownianTorusGibbs.lean",
+      "line": 26,
+      "full_name": "MolecularDynamics.textbookConfigurationTorusRepresentative",
+      "kind": "def",
+      "excerpt_sha256": "442425b55f5d24af24ce8c8e5b0e314d6b91d6587caed2be34469765d342394e"
+    },
+    {
+      "path": "MolecularDynamics/Chapter06/BrownianTorusGibbs.lean",
+      "line": 61,
+      "full_name": "MolecularDynamics.textbookConfigurationTorusObservable",
+      "kind": "def",
+      "excerpt_sha256": "cb669cb19f543779af1b1e95cfda5a27558df70edccf81015dbea8b6a83e7840"
+    },
+    {
+      "path": "MolecularDynamics/Chapter06/BrownianTorusGibbs.lean",
+      "line": 128,
+      "full_name": "MolecularDynamics.textbookConfigurationTorusGibbsWeight",
+      "kind": "def",
+      "excerpt_sha256": "f55998b10922bf1f86318be773315bb1e410284130560cec0696abf6c6e6f535"
+    },
+    {
+      "path": "MolecularDynamics/Chapter06/BrownianTorusGibbs.lean",
+      "line": 159,
+      "full_name": "MolecularDynamics.textbookConfigurationTorusGibbsMeasure",
+      "kind": "def",
+      "excerpt_sha256": "c24f3b2b97b6334c7a6ca4e263f5be752e2e0618d4738aa7b973ac8cf55cd5fe"
+    },
+    {
+      "path": "MolecularDynamics/Chapter06/BrownianTorusGibbs.lean",
+      "line": 242,
+      "full_name": "MolecularDynamics.textbookBrownianGenerator_periodic",
+      "kind": "theorem",
+      "excerpt_sha256": "ee24d760c0fe8edb814f43726792db1c7e24db29c0535d9a22304c3cabce0c2b"
+    },
+    {
+      "path": "MolecularDynamics/Chapter06/BrownianTorusGibbs.lean",
+      "line": 256,
+      "full_name": "MolecularDynamics.textbookBrownianGenerator_contDiff",
+      "kind": "theorem",
+      "excerpt_sha256": "b50854dec79fadec0eeae67cb5340004c81b80ffcd307315bcfa956415e3c02b"
+    },
+    {
+      "path": "MolecularDynamics/Chapter06/BrownianTorusModel.lean",
+      "line": 132,
+      "full_name": "MolecularDynamics.textbookBrownianTorusPathEndpoint",
+      "kind": "def",
+      "excerpt_sha256": "870630deed5df8fc069f53528604de4d674fc6f091a67be5b9cbae894cec6029"
+    },
+    {
+      "path": "MolecularDynamics/Chapter06/BrownianTorusModel.lean",
+      "line": 172,
+      "full_name": "MolecularDynamics.textbookBrownianTorusPathEndpoint_joint_measurable",
+      "kind": "theorem",
+      "excerpt_sha256": "c4c8e32f3064485b8d32b83659603c7813e9ca328b25ca2f7c4f62194b6049c3"
+    },
+    {
+      "path": "MolecularDynamics/Chapter06/BrownianTorusModel.lean",
+      "line": 187,
+      "full_name": "MolecularDynamics.textbookBrownianTorusGlobalRandomConfiguration",
+      "kind": "def",
+      "excerpt_sha256": "412e71260d9a14d52add2430b9fa6565b4fcba06ef2400ca5cd9676385209f7c"
+    },
+    {
+      "path": "MolecularDynamics/Chapter06/BrownianTorusModel.lean",
+      "line": 321,
+      "full_name": "MolecularDynamics.textbookBrownianTorusTransitionKernel",
+      "kind": "def",
+      "excerpt_sha256": "3c4e4f013532b2f26a8e05351811824764a5640d01f20de66f522cf1c677f8b0"
+    },
+    {
+      "path": "MolecularDynamics/Chapter06/BrownianUniformGenerator.lean",
+      "line": 183,
+      "full_name": "MolecularDynamics.textbookConfigurationContinuousObservable",
+      "kind": "def",
+      "excerpt_sha256": "323656fc5184176ef1ab79b877c3c1ac08b83dba7ad69538ffdd175e5e4e278a"
+    },
+    {
+      "path": "MolecularDynamics/Chapter06/LangevinPathSolution.lean",
+      "line": 13,
+      "full_name": "MolecularDynamics.textbookLangevinPathNoise",
+      "kind": "def",
+      "excerpt_sha256": "c5bd4e3eb9f3afce9ad47a497ab6a4733d45260b75eb96f71ccf6e8a159376d2"
+    },
+    {
+      "path": "MolecularDynamics/Chapter06/LangevinPathSolution.lean",
+      "line": 18,
+      "full_name": "MolecularDynamics.textbookLangevinPathNoise_continuous",
+      "kind": "theorem",
+      "excerpt_sha256": "3e248ef5a4b8a509f0f00d3aec1d123656486e62272f8827a32fdd5635e60e75"
+    },
+    {
+      "path": "MolecularDynamics/Chapter06/LangevinPeriodicForce.lean",
+      "line": 13,
+      "full_name": "MolecularDynamics.textbookUnitPeriodicPotential",
+      "kind": "def",
+      "excerpt_sha256": "e26dd47f5c122900493506ccbe55a9fe93351b063566435477f1cbd5e0803040"
+    },
+    {
+      "path": "MolecularDynamics/Chapter06/ReviewDefinitions.lean",
+      "line": 17,
+      "full_name": "MolecularDynamics.Chapter06Review.V",
+      "kind": "abbrev",
+      "excerpt_sha256": "7ab0ad90462b274b03f5b929b5f09417c0b397b6cb908fa6e7bd56677a314027"
+    },
+    {
+      "path": "MolecularDynamics/Chapter06/WienerVectorContinuousPath.lean",
+      "line": 14,
+      "full_name": "MolecularDynamics.textbookWienerVectorContinuousPath",
+      "kind": "def",
+      "excerpt_sha256": "b11a8fc0474f50fb4a9874d2e2728b6fec823ef1e54aea4aa4254d89f72472d8"
+    },
+    {
+      "path": "MolecularDynamics/Chapter06/WienerVectorSupport.lean",
+      "line": 13,
+      "full_name": "MolecularDynamics.textbookIsWienerVector",
+      "kind": "structure",
+      "excerpt_sha256": "030040a9146ab99e095c5a3e84fa3feed1dc8f0dd916643d371a0bb7e6efb622"
+    },
+    {
+      "path": "MolecularDynamics/Notation.lean",
+      "line": 13,
+      "full_name": "MolecularDynamics.Position",
+      "kind": "abbrev",
+      "excerpt_sha256": "92bb46cdf2b50ecfabd89666b74e351a28826511de67f133ef1e506c26f8c34d"
+    },
+    {
+      "path": "MolecularDynamics/Notation.lean",
+      "line": 14,
+      "full_name": "MolecularDynamics.Velocity",
+      "kind": "abbrev",
+      "excerpt_sha256": "22e67e3397d83abd0c1c1aeaa28366555c9f365d02734f9df1fd443624636cf1"
+    },
+    {
+      "path": "MolecularDynamics/Notation.lean",
+      "line": 15,
+      "full_name": "MolecularDynamics.Momentum",
+      "kind": "abbrev",
+      "excerpt_sha256": "8c441583b3b3ab30b489a0d825689615e99810e8209d72d24dc0ea84074dd0f4"
+    },
+    {
+      "path": "MolecularDynamics/Notation.lean",
+      "line": 17,
+      "full_name": "MolecularDynamics.PhaseSpace",
+      "kind": "abbrev",
+      "excerpt_sha256": "daa02c2c07383d89b526c2336a494ea2279c29eb9ade168bef41013e54ebff7f"
+    },
+    {
+      "path": "MolecularDynamics/Notation.lean",
+      "line": 18,
+      "full_name": "MolecularDynamics.MassMatrix",
+      "kind": "abbrev",
+      "excerpt_sha256": "98dc2589cf902b088edd39fbacfd5ceaeb43e0ec8cd3609f562eac8091e9df77"
+    },
+    {
+      "path": "MolecularDynamics/Notation.lean",
+      "line": 20,
+      "full_name": "MolecularDynamics.Force",
+      "kind": "abbrev",
+      "excerpt_sha256": "96d8a4c978b42ab5868278a8f9c5f164d431ef08f24baf04a0c1fcab21d713f0"
+    }
+  ],
+  "project_definition_closure": "complete recursive definitions, referenced theorem types, explicit choice and consistency specifications",
+  "website_submitted": false,
+  "total_task_bytes": 220248
+}

@@ -1,0 +1,72 @@
+以附件/PASTE 为准，忽略 /workspace 旧文件；Mathlib 定义按标准含义采信。
+A逐字核对原文及证明；C只读核对对象、域、量词、前提和全部结论。所有项目定义体及选择规格在下文；仅作为审阅摘录，不是独立模块。theorem/lemma提供完整类型（不审证明）；定义提供完整定义体，按文件作用域解释。不要因sorry判签名FAIL。原文版忠实性、修正版正确性、反例、原书疑误分别说明，不凭旧文件或repair_log猜声明。
+本条MD-6.4.5-KernelEvolution，subtask=EAUDIT18c；原PDF页映射=[278]。只读，不改工程或补证明。以JSON对象返回batch=EAUDIT18,input_sha256,items；逐条含source_id,subtask,input_sha256,json_review{status,issue_codes,corrected_json,issues,evidence},audit{lean_decl,verdict,explanation,counterexample,suggested_fix}。verdict=PASS/FAIL/NEEDS_HUMAN，status=APPROVED/CORRECTED/NEEDS_HUMAN。必须原样回显下列全部哈希。
+input_sha256:
+{
+  "Blueprint/Ch06.lean": "4a2a6cb72c1692f80e3537ab1a71701d429a482780a01226c3dc66a2ebb8b44b",
+  "blueprint/ch06/ch06_source.json": "d7f93cd20eb570744c710f3e07a88b319c082e4155812fee91db0920eb05944e",
+  "PAGES.pdf": "86dc16b71b33f60ad786bf63a04580717ae445ce12675e7fc751265fdf31ee04",
+  "materials_sha256": "141e67ebd4a726d6a1145f0a51729bed7d85ddde4d01918c74288ba36fb1016f"
+}
+
+## 原文JSON
+```json
+{
+  "source_id": "MD-6.4.5-KernelEvolution",
+  "kind": "definition",
+  "label": null,
+  "section": "6.4.5",
+  "printed_page": "257",
+  "pdf_page": "278",
+  "statement_latex": "Given a collection of phase space points distributed according to the density $\\rho_0(q,p)$, we know that its evolution (under Langevin dynamics) after a time $t$ will be described by\n\\[\\rho(q,p,t)=e^{t\\mathcal L_{LD}^{\\dagger}}\\rho_0(q,p).\\]",
+  "proof_latex": null,
+  "proof_note": "原书未给独立完整证明。",
+  "proof_discussion_latex": null,
+  "context_notation": [],
+  "extra_assumptions": [
+    "[EXTRA] 25号：保留任意核作用的kernelEvolutionRaw25辅助；主入口加真正Markov半群资格。仅覆盖概率测度推进，实际Langevin生成元和密度关系须见DensityEvolutionMeaning，不把本条称作完整指数传播识别。"
+  ],
+  "statement_scope": "本条Lean覆盖范围：保留任意核作用的kernelEvolutionRaw25辅助；主入口加真正Markov半群资格。仅覆盖概率测度推进，实际Langevin生成元和密度关系须见DensityEvolutionMeaning，不把本条称作完整指数传播识别。",
+  "coverage_gaps": [
+    "仅核推进，不覆盖Langevin密度存在、前向生成元或指数算子识别。"
+  ]
+}
+```
+## 当前完整Lean（全部原文版、修正版及反例）
+```lean
+def kernelEvolutionRaw25 {D : Type*} [MeasurableSpace D] (K : ℝ≥0 → Kernel D D)
+    (μ : Measure D) (t : ℝ≥0) : Measure D := K t ∘ₘ μ
+
+def kernelEvolution {D : Type*} [MeasurableSpace D] (K : ℝ≥0 → Kernel D D)
+    (μ : Measure D) (_hK : MolecularDynamics.Chapter06Review.markovSemigroup K) (t : ℝ≥0) : Measure D := K t ∘ₘ μ
+```
+### 文件参数及作用域 Blueprint/Ch06.lean
+```lean
+open Set Filter Matrix MeasureTheory ProbabilityTheory MolecularDynamics MolecularDynamics.Chapter02Review MolecularDynamics.Chapter06Review
+open scoped BigOperators Topology ContDiff InnerProductSpace Matrix.Norms.L2Operator ENNReal NNReal
+variable {n Nc : ℕ}
+variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
+variable {R : Type*} [Ring R] [Algebra ℝ R]
+local instance : MeasureSpace UnitAddCircle := ⟨AddCircle.haarAddCircle⟩
+```
+### 文件参数及作用域 MolecularDynamics/Chapter06/ReviewDefinitions.lean
+```lean
+open Set Filter MeasureTheory ProbabilityTheory
+open scoped BigOperators Topology ContDiff ENNReal NNReal
+local instance : MeasureSpace UnitAddCircle := ⟨AddCircle.haarAddCircle⟩
+```
+### MD.Ch06.kernelEvolutionRaw25 [Blueprint/Ch06.lean:3343]
+```lean
+def kernelEvolutionRaw25 {D : Type*} [MeasurableSpace D] (K : ℝ≥0 → Kernel D D)
+    (μ : Measure D) (t : ℝ≥0) : Measure D := K t ∘ₘ μ
+```
+### MD.Ch06.kernelEvolution [Blueprint/Ch06.lean:3346]
+```lean
+def kernelEvolution {D : Type*} [MeasurableSpace D] (K : ℝ≥0 → Kernel D D)
+    (μ : Measure D) (_hK : MolecularDynamics.Chapter06Review.markovSemigroup K) (t : ℝ≥0) : Measure D := K t ∘ₘ μ
+```
+### MolecularDynamics.Chapter06Review.markovSemigroup [MolecularDynamics/Chapter06/ReviewDefinitions.lean:166]
+```lean
+def markovSemigroup {D : Type*} [MeasurableSpace D] (K : ℝ≥0 → Kernel D D) : Prop :=
+  (∀ t, IsMarkovKernel (K t)) ∧ K 0 = Kernel.id ∧ ∀ s t, K (s+t) = K s ∘ₖ K t
+```

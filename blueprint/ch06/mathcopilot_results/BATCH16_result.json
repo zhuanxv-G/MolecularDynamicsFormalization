@@ -1,0 +1,501 @@
+{
+  "batch": "BATCH16",
+  "chapter": "ch06",
+  "round": "first-merged",
+  "input_sha256": {
+    "Blueprint/Ch06.lean": "0a02a34ec68989a83bccfa5916db5053ecdb58e05667bf21ff3568d9d1f4318e",
+    "blueprint/ch06/ch06_source.json": "45c70ceef21ca168af437de297e2e21e2800b452ab7942654061d4cff9bb5d95"
+  },
+  "items": [
+    {
+      "source_id": "MD-6.2.2-QuadraticSumExpectation",
+      "json_review": {
+        "status": "CORRECTED",
+        "issue_codes": [
+          "SOURCE_NOTATION"
+        ],
+        "corrected_json": {
+          "source_id": "MD-6.2.2-QuadraticSumExpectation",
+          "kind": "unnumbered_claim",
+          "label": null,
+          "section": "6.2.2",
+          "printed_page": "229",
+          "pdf_page": "250",
+          "statement_latex": "On the other hand, from (6.7), we have\n\\[\\lim_{\\nu\\to\\infty}\\mathbb E\\sum_{k=0}^{\\nu-1}[(W((k+1)\\delta t)-W(k\\delta t))^2]=\\tau.\\]",
+          "proof_latex": null,
+          "proof_note": "原书未给独立完整证明。",
+          "proof_discussion_latex": null,
+          "context_notation": [],
+          "issues": [
+            {
+              "code": "SOURCE_NOTATION",
+              "detail": "原页公式的分割数为希腊ν；输入将其系统改为K，逐字层面不忠实。已仅在原文字段恢复ν；Lean中的K作为变量重命名无数学问题。"
+            }
+          ],
+          "lean_decl": "MD.Ch06.quadraticSumExpectation",
+          "reusable_proofs": [
+            "MolecularDynamics.textbookWienerQuadraticSum_integral"
+          ],
+          "extra_assumptions": [
+            "[EXTRA]实际上每个K>0有限和期望已经恰等于τ；均方极限在Prop6.2保留。"
+          ],
+          "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
+          "review_status": "CORRECTED",
+          "repair_log": [],
+          "source_page_verification": "R3本次审校：核对R3_PAGES.pdf对应页；原文符号差异和页码问题见本条issues。"
+        },
+        "issues": [
+          {
+            "code": "SOURCE_NOTATION",
+            "detail": "原页公式的分割数为希腊ν；输入将其系统改为K，逐字层面不忠实。已仅在原文字段恢复ν；Lean中的K作为变量重命名无数学问题。"
+          }
+        ],
+        "evidence": {
+          "attachment": "R3_PAGES.pdf",
+          "attachment_pages": [
+            38
+          ],
+          "original_pdf_pages": "250",
+          "printed_pages": "229",
+          "A": "已核对本条摘录及公式；数学变量改名与原文逐字忠实分开处理。",
+          "C": "只审本任务所列签名及项目依赖定义；标准库按题设采信；未编译、未审证明体，sorry不影响签名判定。"
+        }
+      },
+      "audit": {
+        "lean_decl": "MD.Ch06.quadraticSumExpectation",
+        "verdict": "PASS",
+        "explanation": "K>0时平方增量有限和期望已经等于T，较原文极限式强并直接蕴含它；[EXTRA]准确注明。非负窗口、真实PreBrownian及完整和均保留。",
+        "counterexample": null,
+        "suggested_fix": "按corrected_json修正原文转录或标注；不修改Lean工程。"
+      },
+      "subtask": "BATCH16a",
+      "input_sha256": {
+        "Blueprint/Ch06.lean": "0a02a34ec68989a83bccfa5916db5053ecdb58e05667bf21ff3568d9d1f4318e",
+        "blueprint/ch06/ch06_source.json": "45c70ceef21ca168af437de297e2e21e2800b452ab7942654061d4cff9bb5d95",
+        "BATCH16a_PAGES.pdf": "286fa3ff2eda70f6b9a11ddeb99a15a77eee855ac31095af0fe3c430a9bb1f9b",
+        "signature_sha256": "7fe01ed03d28363f128d709e3f7f5ea0fae6b008d0e55044f5ec335845b2e6fa"
+      }
+    },
+    {
+      "source_id": "MD-6.2.2-SelfItoLimitL2",
+      "json_review": {
+        "status": "CORRECTED",
+        "issue_codes": [
+          "SOURCE_PAGE_MISMATCH",
+          "EXTRA_OVERCLAIM"
+        ],
+        "corrected_json": {
+          "source_id": "MD-6.2.2-SelfItoLimitL2",
+          "kind": "extra_claim",
+          "label": null,
+          "section": "6.2.2",
+          "printed_page": "228",
+          "pdf_page": "249",
+          "statement_latex": "First, we should be careful regarding the sense in which we expect convergence, since sequences of random variables may converge in various ways.",
+          "proof_latex": null,
+          "proof_note": "原书未给独立完整证明。",
+          "proof_discussion_latex": null,
+          "context_notation": [],
+          "issues": [
+            {
+              "code": "SOURCE_PAGE_MISMATCH",
+              "detail": "引文位于附件第18页/原PDF249/印刷228；附件第39页/原PDF251/印刷230没有此句。已纠正JSON页码，但任务附件目录映射仍需修订。"
+            },
+            {
+              "code": "EXTRA_OVERCLAIM",
+              "detail": "原[EXTRA]同时声称有限和L²；实际Lean结论只有候选极限L²，已缩减标注。"
+            }
+          ],
+          "lean_decl": "MD.Ch06.selfItoLimitL2",
+          "reusable_proofs": [
+            "MolecularDynamics.textbookWienerSelfItoLimit_memLp"
+          ],
+          "extra_assumptions": [
+            "[EXTRA]仅候选极限的L²资格，由真实PreBrownian Gaussian法则推出；不声称本条同时证明有限和L²或收敛。"
+          ],
+          "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
+          "review_status": "CORRECTED",
+          "repair_log": [],
+          "source_page_verification": "R3本次审校：核对R3_PAGES.pdf对应页；原文符号差异和页码问题见本条issues。"
+        },
+        "issues": [
+          {
+            "code": "SOURCE_PAGE_MISMATCH",
+            "detail": "引文位于附件第18页/原PDF249/印刷228；附件第39页/原PDF251/印刷230没有此句。已纠正JSON页码，但任务附件目录映射仍需修订。"
+          },
+          {
+            "code": "EXTRA_OVERCLAIM",
+            "detail": "原[EXTRA]同时声称有限和L²；实际Lean结论只有候选极限L²，已缩减标注。"
+          }
+        ],
+        "evidence": {
+          "attachment": "R3_PAGES.pdf",
+          "attachment_pages": [
+            39
+          ],
+          "original_pdf_pages": "251",
+          "printed_pages": "230",
+          "A": "已核对本条摘录及公式；数学变量改名与原文逐字忠实分开处理。",
+          "C": "只审本任务所列签名及项目依赖定义；标准库按题设采信；未编译、未审证明体，sorry不影响签名判定。"
+        }
+      },
+      "audit": {
+        "lean_decl": "MD.Ch06.selfItoLimitL2",
+        "verdict": "PASS",
+        "explanation": "签名只证明候选极限(W(T)²−T)/2的MemLp 2 P，数学正确。extra_assumptions声称“有限和/候选极限”两者L²，但此签名没有有限和L²结论，须缩减标注。引文实际在印刷228页，并不在所配附件第39页（印刷230）。",
+        "counterexample": null,
+        "suggested_fix": "按corrected_json修正原文转录或标注；不修改Lean工程。"
+      },
+      "subtask": "BATCH16b",
+      "input_sha256": {
+        "Blueprint/Ch06.lean": "0a02a34ec68989a83bccfa5916db5053ecdb58e05667bf21ff3568d9d1f4318e",
+        "blueprint/ch06/ch06_source.json": "45c70ceef21ca168af437de297e2e21e2800b452ab7942654061d4cff9bb5d95",
+        "BATCH16b_PAGES.pdf": "2bc45681e6b66ad0f59f09b24f0df386723914a6693f92744b51efed502d6106",
+        "signature_sha256": "bd692aacd034c462f231059cf347001a42aaffa03c55dcf03297f6b23d99bb4e"
+      }
+    },
+    {
+      "source_id": "MD-6.2.2-SelfItoSumsL2",
+      "json_review": {
+        "status": "CORRECTED",
+        "issue_codes": [
+          "SOURCE_QUOTE_NOT_ON_PAGE",
+          "EXTRA_SCOPE"
+        ],
+        "corrected_json": {
+          "source_id": "MD-6.2.2-SelfItoSumsL2",
+          "kind": "extra_claim",
+          "label": null,
+          "section": "6.2.2",
+          "printed_page": "230",
+          "pdf_page": "251",
+          "statement_latex": "The calculation implies that\n\\[\\int_0^\\tau W(t)dW(t)=\\frac12(W(\\tau)^2-\\tau).\\]",
+          "proof_latex": null,
+          "proof_note": "原书未给独立完整证明。",
+          "proof_discussion_latex": null,
+          "context_notation": [],
+          "issues": [
+            {
+              "code": "R4_REVIEW",
+              "detail": "附件第1页没有所引 First, we should be careful... 句；本页实际给出自积分求值及中点和。不能将该句标为本页逐字核实。 Ω任意可测空间，P任意测度但hW给出PreBrownian资格；T非负、K正。结论仅左点有限乘积和属于L²，没有候选极限或收敛结论。有限联合Gaussian的四阶矩足够，签名正确；[EXTRA]中的“候选极限”超出本声明。"
+            }
+          ],
+          "lean_decl": "MD.Ch06.selfItoSumsL2",
+          "reusable_proofs": [
+            "MolecularDynamics.textbookWienerSelfItoSum_memLp"
+          ],
+          "extra_assumptions": [
+            "[EXTRA]本Lean声明只证明实际有限和的L²资格，不覆盖候选极限或收敛；所引展示式仅为原页背景。"
+          ],
+          "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
+          "review_status": "CORRECTED",
+          "repair_log": [],
+          "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
+        },
+        "issues": [
+          {
+            "code": "SOURCE_QUOTE_NOT_ON_PAGE",
+            "detail": "附件第1页没有所引 First, we should be careful... 句；本页实际给出自积分求值及中点和。不能将该句标为本页逐字核实。"
+          },
+          {
+            "code": "EXTRA_SCOPE",
+            "detail": "Ω任意可测空间，P任意测度但hW给出PreBrownian资格；T非负、K正。结论仅左点有限乘积和属于L²，没有候选极限或收敛结论。有限联合Gaussian的四阶矩足够，签名正确；[EXTRA]中的“候选极限”超出本声明。"
+          }
+        ],
+        "evidence": [
+          "A：R4_PAGES.pdf 附件第1页，原PDF 251，印刷页230。附件第1页没有所引 First, we should be careful... 句；本页实际给出自积分求值及中点和。不能将该句标为本页逐字核实。",
+          "C：仅按任务所列Lean签名及项目依赖定义作只读语义审校；标准库按标准含义采信，不作工程修改或证明检查。Ω任意可测空间，P任意测度但hW给出PreBrownian资格；T非负、K正。结论仅左点有限乘积和属于L²，没有候选极限或收敛结论。有限联合Gaussian的四阶矩足够，签名正确；[EXTRA]中的“候选极限”超出本声明。"
+        ]
+      },
+      "audit": {
+        "lean_decl": "MD.Ch06.selfItoSumsL2",
+        "verdict": "PASS",
+        "explanation": "Ω任意可测空间，P任意测度但hW给出PreBrownian资格；T非负、K正。结论仅左点有限乘积和属于L²，没有候选极限或收敛结论。有限联合Gaussian的四阶矩足够，签名正确；[EXTRA]中的“候选极限”超出本声明。",
+        "counterexample": null,
+        "suggested_fix": "将source_id保留为额外L²条目，引用本页真实自积分展示式作背景；不要伪称不存在的句子来自本页，并删除“候选极限”已由此声明覆盖的描述。"
+      },
+      "subtask": "BATCH16c",
+      "input_sha256": {
+        "Blueprint/Ch06.lean": "0a02a34ec68989a83bccfa5916db5053ecdb58e05667bf21ff3568d9d1f4318e",
+        "blueprint/ch06/ch06_source.json": "45c70ceef21ca168af437de297e2e21e2800b452ab7942654061d4cff9bb5d95",
+        "BATCH16c_PAGES.pdf": "2bc45681e6b66ad0f59f09b24f0df386723914a6693f92744b51efed502d6106",
+        "signature_sha256": "8d4ea139891e3d3bf610c8d21e0a86983eea07103c6b56da505bc81a5e23076c"
+      }
+    },
+    {
+      "source_id": "MD-6.2.2-MidpointSumsL2",
+      "json_review": {
+        "status": "CORRECTED",
+        "issue_codes": [
+          "SOURCE_QUOTE_NOT_ON_PAGE",
+          "EXTRA_SCOPE"
+        ],
+        "corrected_json": {
+          "source_id": "MD-6.2.2-MidpointSumsL2",
+          "kind": "extra_claim",
+          "label": null,
+          "section": "6.2.2",
+          "printed_page": "230",
+          "pdf_page": "251",
+          "statement_latex": "In contrast, the Stratonovich (midpoint) integral (denoted by $\\int_0^\\tau\\circ dW(t)$) can be calculated as\n\\[\\int_0^\\tau W(t)\\circ dW(t)=\\mathrm{l.i.m.}_{\nu\\to\\infty}\\sum_{k=0}^{\nu-1}W(k\\delta t+\\delta t/2)[W((k+1)\\delta t)-W(k\\delta t)].\\]",
+          "proof_latex": null,
+          "proof_note": "原书未给独立完整证明。",
+          "proof_discussion_latex": null,
+          "context_notation": [],
+          "issues": [
+            {
+              "code": "R4_REVIEW",
+              "detail": "附件第2页同样没有所引 First, we should be careful... 句。实际中点为时间中点W(kδt+δt/2)，不是端点值算术平均。 同第1条的空间/测度资格；T≥0、K>0；依D1、D2及所列定义，采样时间为(2k+1)T/(2K)，乘整段增量。仅有限和MemLp 2正确；未证明候选极限资格或收敛。"
+            }
+          ],
+          "lean_decl": "MD.Ch06.midpointSumsL2",
+          "reusable_proofs": [
+            "MolecularDynamics.textbookWienerMidpointSum_memLp"
+          ],
+          "extra_assumptions": [
+            "[EXTRA]本Lean声明只证明实际有限和的L²资格，不覆盖候选极限或收敛；所引展示式仅为原页背景。"
+          ],
+          "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
+          "review_status": "CORRECTED",
+          "repair_log": [],
+          "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
+        },
+        "issues": [
+          {
+            "code": "SOURCE_QUOTE_NOT_ON_PAGE",
+            "detail": "附件第2页同样没有所引 First, we should be careful... 句。实际中点为时间中点W(kδt+δt/2)，不是端点值算术平均。"
+          },
+          {
+            "code": "EXTRA_SCOPE",
+            "detail": "同第1条的空间/测度资格；T≥0、K>0；依D1、D2及所列定义，采样时间为(2k+1)T/(2K)，乘整段增量。仅有限和MemLp 2正确；未证明候选极限资格或收敛。"
+          }
+        ],
+        "evidence": [
+          "A：R4_PAGES.pdf 附件第2页，原PDF 251，印刷页230。附件第2页同样没有所引 First, we should be careful... 句。实际中点为时间中点W(kδt+δt/2)，不是端点值算术平均。",
+          "C：仅按任务所列Lean签名及项目依赖定义作只读语义审校；标准库按标准含义采信，不作工程修改或证明检查。同第1条的空间/测度资格；T≥0、K>0；依D1、D2及所列定义，采样时间为(2k+1)T/(2K)，乘整段增量。仅有限和MemLp 2正确；未证明候选极限资格或收敛。"
+        ]
+      },
+      "audit": {
+        "lean_decl": "MD.Ch06.midpointSumsL2",
+        "verdict": "PASS",
+        "explanation": "同第1条的空间/测度资格；T≥0、K>0；依D1、D2及所列定义，采样时间为(2k+1)T/(2K)，乘整段增量。仅有限和MemLp 2正确；未证明候选极限资格或收敛。",
+        "counterexample": null,
+        "suggested_fix": "改引本页中点和展示式，明确额外L²资格不是原书独立结论；删除“候选极限”覆盖说法。"
+      },
+      "subtask": "BATCH16d",
+      "input_sha256": {
+        "Blueprint/Ch06.lean": "0a02a34ec68989a83bccfa5916db5053ecdb58e05667bf21ff3568d9d1f4318e",
+        "blueprint/ch06/ch06_source.json": "45c70ceef21ca168af437de297e2e21e2800b452ab7942654061d4cff9bb5d95",
+        "BATCH16d_PAGES.pdf": "2bc45681e6b66ad0f59f09b24f0df386723914a6693f92744b51efed502d6106",
+        "signature_sha256": "00736636a5f41e5334924ee177304a92dd6e21c8bc0b5a5208a39d5f075742c3"
+      }
+    },
+    {
+      "source_id": "MD-6.2.2-DeterministicIntegralProcess",
+      "json_review": {
+        "status": "APPROVED",
+        "issue_codes": [],
+        "corrected_json": null,
+        "issues": [],
+        "evidence": [
+          "A：R4_PAGES.pdf 附件第3页，原PDF 252，印刷页231。原页(6.8)和引导句对应，零初值保留。",
+          "C：仅按任务所列Lean签名及项目依赖定义作只读语义审校；标准库按标准含义采信，不作工程修改或证明检查。对同一W,Y以及确定g，量化全部T≥0，D5要求每个有限左点和及Y T的L²资格和均方收敛。T=0的和恒零，所以Y 0=0几乎处处。作为积分关系定义正确；未独立断言W是Wiener、过程路径连续或同时逐样本等式，使用时须另给W资格。"
+        ]
+      },
+      "audit": {
+        "lean_decl": "MD.Ch06.deterministicIntegralProcess",
+        "verdict": "PASS",
+        "explanation": "对同一W,Y以及确定g，量化全部T≥0，D5要求每个有限左点和及Y T的L²资格和均方收敛。T=0的和恒零，所以Y 0=0几乎处处。作为积分关系定义正确；未独立断言W是Wiener、过程路径连续或同时逐样本等式，使用时须另给W资格。",
+        "counterexample": null,
+        "suggested_fix": null
+      },
+      "subtask": "BATCH16e",
+      "input_sha256": {
+        "Blueprint/Ch06.lean": "0a02a34ec68989a83bccfa5916db5053ecdb58e05667bf21ff3568d9d1f4318e",
+        "blueprint/ch06/ch06_source.json": "45c70ceef21ca168af437de297e2e21e2800b452ab7942654061d4cff9bb5d95",
+        "BATCH16e_PAGES.pdf": "6f6a357923477e514795546ce778a6a81e3a770c786d9cb9e2d4f4c8411f18a9",
+        "signature_sha256": "bbea8888e0f9cfcb64a18941903c5a4786a02eb6a78bec940313f61a5e76099d"
+      }
+    },
+    {
+      "source_id": "MD-6.2.2-DeterministicStrobePrinted",
+      "json_review": {
+        "status": "NEEDS_HUMAN",
+        "issue_codes": [
+          "TRANSCRIPTION_TIME_ARGUMENT",
+          "GAUSSIAN_VARIANCE_PARAMETER",
+          "INCOMPLETE_JOINT_LAW",
+          "ERRATUM?"
+        ],
+        "corrected_json": {
+          "source_id": "MD-6.2.2-DeterministicStrobePrinted",
+          "kind": "unnumbered_claim",
+          "label": null,
+          "section": "6.2.2",
+          "printed_page": "231",
+          "pdf_page": "252",
+          "statement_latex": "Finally, we observe that by calculating $\\sigma^2(t_n)$ and generating random increments $R_n\\sim N(0,\\sigma(t_n))$ we have a discrete representation of the continuous time stochastic process $Y(t)$, effectively an exact stroboscopic representation.",
+          "proof_latex": null,
+          "proof_note": "原书未给独立完整证明。",
+          "proof_discussion_latex": null,
+          "context_notation": [],
+          "issues": [
+            {
+              "code": "ERRATUM?",
+              "detail": "生成增量使用σ(tn)而非相邻时刻方差差；单时边际法则也不能确定同一过程联合分布。保持印刷式，不以独立边际偷换过程。"
+            },
+            {
+              "code": "R4_REVIEW",
+              "detail": "原页写连续过程Y(t)，不是Y(t_n)；σ²(t_n)和N(0,σ(t_n))确实如此印刷。原文“增量”的方差/时间含义有疑误。 原书N的第二参数按标准差读时，Lean gaussianReal第二参数是方差，不能直接放sqrt(∫g²)。此外t_n至t_(n+1)的增量应取区间积分，且签名没有整个增量族独立性。即使保留原文错误，当前参数转换也不忠实。"
+            }
+          ],
+          "lean_decl": "MD.Ch06.deterministicStrobePrinted",
+          "reusable_proofs": [],
+          "extra_assumptions": [],
+          "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
+          "review_status": "NEEDS_HUMAN",
+          "repair_log": [
+            {
+              "date": "2026-10-17",
+              "action": "directive22_printed_corrected_pair",
+              "change": "采用区间积分∫[tₙ,tₙ₊₁]g²及同一过程的独立增量资格。",
+              "corrected_decl": "MD.Ch06.deterministicStrobePrinted_corrected",
+              "website": "未提交；待网站审计"
+            }
+          ],
+          "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
+        },
+        "issues": [
+          {
+            "code": "TRANSCRIPTION_TIME_ARGUMENT",
+            "detail": "原页写连续过程Y(t)，不是Y(t_n)；σ²(t_n)和N(0,σ(t_n))确实如此印刷。原文“增量”的方差/时间含义有疑误。"
+          },
+          {
+            "code": "GAUSSIAN_VARIANCE_PARAMETER",
+            "detail": "原书N的第二参数按标准差读时，Lean gaussianReal第二参数是方差，不能直接放sqrt(∫g²)。此外t_n至t_(n+1)的增量应取区间积分，且签名没有整个增量族独立性。即使保留原文错误，当前参数转换也不忠实。"
+          },
+          {
+            "code": "INCOMPLETE_JOINT_LAW",
+            "detail": "原书N的第二参数按标准差读时，Lean gaussianReal第二参数是方差，不能直接放sqrt(∫g²)。此外t_n至t_(n+1)的增量应取区间积分，且签名没有整个增量族独立性。即使保留原文错误，当前参数转换也不忠实。"
+          },
+          {
+            "code": "ERRATUM?",
+            "detail": "原书N的第二参数按标准差读时，Lean gaussianReal第二参数是方差，不能直接放sqrt(∫g²)。此外t_n至t_(n+1)的增量应取区间积分，且签名没有整个增量族独立性。即使保留原文错误，当前参数转换也不忠实。"
+          }
+        ],
+        "evidence": [
+          "A：R4_PAGES.pdf 附件第4页，原PDF 252，印刷页231。原页写连续过程Y(t)，不是Y(t_n)；σ²(t_n)和N(0,σ(t_n))确实如此印刷。原文“增量”的方差/时间含义有疑误。",
+          "C：仅按任务所列Lean签名及项目依赖定义作只读语义审校；标准库按标准含义采信，不作工程修改或证明检查。原书N的第二参数按标准差读时，Lean gaussianReal第二参数是方差，不能直接放sqrt(∫g²)。此外t_n至t_(n+1)的增量应取区间积分，且签名没有整个增量族独立性。即使保留原文错误，当前参数转换也不忠实。"
+        ]
+      },
+      "audit": {
+        "lean_decl": "MD.Ch06.deterministicStrobePrinted",
+        "verdict": "FAIL",
+        "explanation": "原书N的第二参数按标准差读时，Lean gaussianReal第二参数是方差，不能直接放sqrt(∫g²)。此外t_n至t_(n+1)的增量应取区间积分，且签名没有整个增量族独立性。即使保留原文错误，当前参数转换也不忠实。",
+        "counterexample": "取g≡1，times≡1，Y=W：所有真实增量为0，签名却要求非退化N(0,1)；另外times 0=0,times 1=4时，签名variance=2而实际4，显示标准差未平方的独立问题。",
+        "suggested_fix": "原文保留Y(t)和印刷N(0,σ(t_n))；若按标准差读印刷量，转换到gaussianReal须平方。真实过程表示另用第5条相邻区间方差和独立族，初始化须从Y(times 0)或令times 0=0。"
+      },
+      "subtask": "BATCH16f",
+      "input_sha256": {
+        "Blueprint/Ch06.lean": "0a02a34ec68989a83bccfa5916db5053ecdb58e05667bf21ff3568d9d1f4318e",
+        "blueprint/ch06/ch06_source.json": "45c70ceef21ca168af437de297e2e21e2800b452ab7942654061d4cff9bb5d95",
+        "BATCH16f_PAGES.pdf": "6f6a357923477e514795546ce778a6a81e3a770c786d9cb9e2d4f4c8411f18a9",
+        "signature_sha256": "30b55b07da29df5e2b4be5174a6be6c8427a6d155142c70ac1a7d7bf1f9b739e"
+      }
+    },
+    {
+      "source_id": "MD-6.2.2-DeterministicStrobeCorrected",
+      "json_review": {
+        "status": "CORRECTED",
+        "issue_codes": [
+          "TRANSCRIPTION_TIME_ARGUMENT",
+          "CORRECTION_SEPARATION"
+        ],
+        "corrected_json": {
+          "source_id": "MD-6.2.2-DeterministicStrobeCorrected",
+          "kind": "unnumbered_claim",
+          "label": null,
+          "section": "6.2.2",
+          "printed_page": "231",
+          "pdf_page": "252",
+          "statement_latex": "Finally, we observe that by calculating $\\sigma^2(t_n)$ and generating random increments $R_n\\sim N(0,\\sigma(t_n))$ we have a discrete representation of the continuous time stochastic process $Y(t)$, effectively an exact stroboscopic representation.",
+          "proof_latex": null,
+          "proof_note": "原书未给独立完整证明。",
+          "proof_discussion_latex": null,
+          "context_notation": [],
+          "issues": [
+            {
+              "code": "R4_REVIEW",
+              "detail": "与第4条共用原文，原页为Y(t)；修正版不应回写原文为修正公式。 PreBrownian、C¹确定g、全部时间严格积分关系、非负单调times足够；各相邻增量的variance为∫[times k,times(k+1)]g²，并断言整个族iIndepFun。允许相等时刻，退化零增量正确。修正数学合理；若称完整stroboscopic表示，应从实际Y(times 0)初始化，或另设times 0=0。"
+            }
+          ],
+          "lean_decl": "MD.Ch06.deterministicStrobeCorrected",
+          "reusable_proofs": [],
+          "extra_assumptions": [
+            "[EXTRA]相邻时间积分g²为完整增量方差，并保存整个增量族独立性；不是仅单时law；强L²模型。"
+          ],
+          "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
+          "review_status": "CORRECTED",
+          "repair_log": [],
+          "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
+        },
+        "issues": [
+          {
+            "code": "TRANSCRIPTION_TIME_ARGUMENT",
+            "detail": "与第4条共用原文，原页为Y(t)；修正版不应回写原文为修正公式。"
+          },
+          {
+            "code": "CORRECTION_SEPARATION",
+            "detail": "PreBrownian、C¹确定g、全部时间严格积分关系、非负单调times足够；各相邻增量的variance为∫[times k,times(k+1)]g²，并断言整个族iIndepFun。允许相等时刻，退化零增量正确。修正数学合理；若称完整stroboscopic表示，应从实际Y(times 0)初始化，或另设times 0=0。"
+          }
+        ],
+        "evidence": [
+          "A：R4_PAGES.pdf 附件第5页，原PDF 252，印刷页231。与第4条共用原文，原页为Y(t)；修正版不应回写原文为修正公式。",
+          "C：仅按任务所列Lean签名及项目依赖定义作只读语义审校；标准库按标准含义采信，不作工程修改或证明检查。PreBrownian、C¹确定g、全部时间严格积分关系、非负单调times足够；各相邻增量的variance为∫[times k,times(k+1)]g²，并断言整个族iIndepFun。允许相等时刻，退化零增量正确。修正数学合理；若称完整stroboscopic表示，应从实际Y(times 0)初始化，或另设times 0=0。"
+        ]
+      },
+      "audit": {
+        "lean_decl": "MD.Ch06.deterministicStrobeCorrected",
+        "verdict": "PASS",
+        "explanation": "PreBrownian、C¹确定g、全部时间严格积分关系、非负单调times足够；各相邻增量的variance为∫[times k,times(k+1)]g²，并断言整个族iIndepFun。允许相等时刻，退化零增量正确。修正数学合理；若称完整stroboscopic表示，应从实际Y(times 0)初始化，或另设times 0=0。",
+        "counterexample": null,
+        "suggested_fix": "按A项恢复逐字原文；本条签名无须修改。"
+      },
+      "subtask": "BATCH16g",
+      "input_sha256": {
+        "Blueprint/Ch06.lean": "0a02a34ec68989a83bccfa5916db5053ecdb58e05667bf21ff3568d9d1f4318e",
+        "blueprint/ch06/ch06_source.json": "45c70ceef21ca168af437de297e2e21e2800b452ab7942654061d4cff9bb5d95",
+        "BATCH16g_PAGES.pdf": "6f6a357923477e514795546ce778a6a81e3a770c786d9cb9e2d4f4c8411f18a9",
+        "signature_sha256": "0746969369a19112f4a714507c196528d060cfb1ffa5e066c7778a08eaa489e5"
+      }
+    },
+    {
+      "source_id": "MD-6.2.2-StochasticDifferentialIntegral",
+      "json_review": {
+        "status": "APPROVED",
+        "issue_codes": [],
+        "corrected_json": null,
+        "issues": [],
+        "evidence": [
+          "A：R4_PAGES.pdf 附件第6页，原PDF 252，印刷页231。原页引导句及积分恒等式对应。",
+          "C：仅按任务所列Lean签名及项目依赖定义作只读语义审校；标准库按标准含义采信，不作工程修改或证明检查。P,Y及integralOfDifferential均任意，对全部T≥0断言两随机变量几乎处处相等。按context_notation，这是积分符号的语义定义；没有循环地声称已构造一般积分或证明链式法则。无需样本普通导数。"
+        ]
+      },
+      "audit": {
+        "lean_decl": "MD.Ch06.stochasticDifferentialIntegral",
+        "verdict": "PASS",
+        "explanation": "P,Y及integralOfDifferential均任意，对全部T≥0断言两随机变量几乎处处相等。按context_notation，这是积分符号的语义定义；没有循环地声称已构造一般积分或证明链式法则。无需样本普通导数。",
+        "counterexample": null,
+        "suggested_fix": null
+      },
+      "subtask": "BATCH16h",
+      "input_sha256": {
+        "Blueprint/Ch06.lean": "0a02a34ec68989a83bccfa5916db5053ecdb58e05667bf21ff3568d9d1f4318e",
+        "blueprint/ch06/ch06_source.json": "45c70ceef21ca168af437de297e2e21e2800b452ab7942654061d4cff9bb5d95",
+        "BATCH16h_PAGES.pdf": "6f6a357923477e514795546ce778a6a81e3a770c786d9cb9e2d4f4c8411f18a9",
+        "signature_sha256": "8d0325d8edacc12533aa332a7c738f9b91c432ae31c5c1fd2552cb602e66a3be"
+      }
+    }
+  ],
+  "merged_from": "ch06_first_merged"
+}

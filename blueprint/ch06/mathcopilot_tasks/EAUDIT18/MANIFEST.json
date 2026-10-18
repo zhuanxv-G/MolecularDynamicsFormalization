@@ -1,0 +1,29 @@
+{
+  "eaudit": "EAUDIT18",
+  "subtasks": [
+    {
+      "subtask": "EAUDIT18a",
+      "source_id": "MD-6.4.4-Proposition64Relative",
+      "path": "blueprint/ch06/mathcopilot_tasks/EAUDIT18/a",
+      "total_bytes": 152224,
+      "definitions": 50,
+      "manifest_sha256": "ff79472291b549060b452ef32e60740871e66fbc37e51c1440e257e8bfac3836"
+    },
+    {
+      "subtask": "EAUDIT18b",
+      "source_id": "MD-6.4.4-ForwardKernelGibbs",
+      "path": "blueprint/ch06/mathcopilot_tasks/EAUDIT18/b",
+      "total_bytes": 147682,
+      "definitions": 48,
+      "manifest_sha256": "be72354b4d93f97003759aa1f7b65a5008033bf22981abdf3fb966c8ceb819f5"
+    },
+    {
+      "subtask": "EAUDIT18c",
+      "source_id": "MD-6.4.5-KernelEvolution",
+      "path": "blueprint/ch06/mathcopilot_tasks/EAUDIT18/c",
+      "total_bytes": 108996,
+      "definitions": 3,
+      "manifest_sha256": "8763d0a38241bf0e0a072b3f2cd64dc9137a7d02574939b2b9cd5c4086d93c4f"
+    }
+  ]
+}

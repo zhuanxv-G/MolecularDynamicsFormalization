@@ -1,0 +1,25 @@
+--- before
++++ after
+@@ -792,9 +792,12 @@
+   sorry
+ 
+ /-- source_id: MD-6.2.1-StateMarkovMeaning · definition · §6.2.1 · 印刷p.227 / PDFp.248
+-[EXTRA] [EXTRA]明确以真实当前状态σ(Xs)及过去history作条件期望；仅定义完整Markov意义，不计任意过程满足它已证。 -/
++[EXTRA] [EXTRA]明确以真实当前状态σ(Xs)及过去history作条件期望；仅定义完整Markov意义，不计任意过程满足它已证。 [EXTRA] 25号：原版及coarseMarkovPrinted_corrected同时要求概率空间、X各时可测和history严格等于全部过去生成的自然过滤；排除任意history伪Markov。
++-/
+ def stateMarkovMeaning {Ω : Type*} [MeasurableSpace Ω]
+     (P : Measure Ω) (X : ℝ≥0 → Ω → ℝ) (history : ℝ≥0 → MeasurableSpace Ω) : Prop :=
++  IsProbabilityMeasure P ∧ (∀ t, Measurable (X t)) ∧
++  (∀ s, history s = ⨆ r : {r : ℝ≥0 // r ≤ s}, MeasurableSpace.comap (X r) inferInstance) ∧
+   ∀ s t : ℝ≥0, s ≤ t → ∀ a : Set ℝ, MeasurableSet a →
+     MeasureTheory.condExp (history s) P (fun sample ↦ a.indicator (fun _ ↦ (1 : ℝ)) (X t sample)) =ᵐ[P]
+     MeasureTheory.condExp (MeasurableSpace.comap (X s) inferInstance) P
+@@ -803,6 +806,8 @@
+ /-- 修正版，对应原文 MD-6.2.1-CoarseMarkovPrinted；改动：以完整当前状态生成的σ代数写条件期望Markov性质。 -/
+ def coarseMarkovPrinted_corrected {Ω : Type*} [MeasurableSpace Ω]
+     (P : Measure Ω) (X : ℝ≥0 → Ω → ℝ) (history : ℝ≥0 → MeasurableSpace Ω) : Prop :=
++  IsProbabilityMeasure P ∧ (∀ t, Measurable (X t)) ∧
++  (∀ s, history s = ⨆ r : {r : ℝ≥0 // r ≤ s}, MeasurableSpace.comap (X r) inferInstance) ∧
+   ∀ s t : ℝ≥0, s ≤ t → ∀ a : Set ℝ, MeasurableSet a →
+     MeasureTheory.condExp (history s) P (fun sample ↦ a.indicator (fun _ ↦ (1 : ℝ)) (X t sample)) =ᵐ[P]
+     MeasureTheory.condExp (MeasurableSpace.comap (X s) inferInstance) P

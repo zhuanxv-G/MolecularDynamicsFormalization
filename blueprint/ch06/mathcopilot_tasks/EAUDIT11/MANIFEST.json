@@ -1,0 +1,29 @@
+{
+  "eaudit": "EAUDIT11",
+  "subtasks": [
+    {
+      "subtask": "EAUDIT11a",
+      "source_id": "MD-6.4.2-StationaryInvariant",
+      "path": "blueprint/ch06/mathcopilot_tasks/EAUDIT11/a",
+      "total_bytes": 106920,
+      "definitions": 5,
+      "manifest_sha256": "dabf824fbe4189b505ae88a15f0caba4029b2427104228f5a9f99b9c8f572b96"
+    },
+    {
+      "subtask": "EAUDIT11b",
+      "source_id": "MD-6.4.2-LangevinCanonicalMixing",
+      "path": "blueprint/ch06/mathcopilot_tasks/EAUDIT11/b",
+      "total_bytes": 112977,
+      "definitions": 32,
+      "manifest_sha256": "0bbf4201de9863fe28f218dd67ee13b619625240877ff55c97c16cf5a5ca58c8"
+    },
+    {
+      "subtask": "EAUDIT11c",
+      "source_id": "MD-6.4.3-BrownianSymmetry",
+      "path": "blueprint/ch06/mathcopilot_tasks/EAUDIT11/c",
+      "total_bytes": 108362,
+      "definitions": 12,
+      "manifest_sha256": "59df4416868c984b1cead5b212d7f1391f08ccdb46f0afbd2df187c4a52935af"
+    }
+  ]
+}

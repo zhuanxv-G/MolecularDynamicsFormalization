@@ -1,0 +1,66 @@
+以附件/PASTE 为准，忽略 /workspace 旧文件；Mathlib 定义按标准含义采信。
+A逐字核对原文及证明；C只读核对对象、域、量词、前提和全部结论。所有项目定义体及选择规格在下文；仅作为审阅摘录，不是独立模块。theorem/lemma提供完整类型（不审证明）；定义提供完整定义体，按文件作用域解释。不要因sorry判签名FAIL。原文版忠实性、修正版正确性、反例、原书疑误分别说明，不凭旧文件或repair_log猜声明。
+本条MD-6.2.1-WalkIncrement，subtask=EAUDIT03a；原PDF页映射=[246, 247]。只读，不改工程或补证明。以JSON对象返回batch=EAUDIT03,input_sha256,items；逐条含source_id,subtask,input_sha256,json_review{status,issue_codes,corrected_json,issues,evidence},audit{lean_decl,verdict,explanation,counterexample,suggested_fix}。verdict=PASS/FAIL/NEEDS_HUMAN，status=APPROVED/CORRECTED/NEEDS_HUMAN。必须原样回显下列全部哈希。
+input_sha256:
+{
+  "Blueprint/Ch06.lean": "4a2a6cb72c1692f80e3537ab1a71701d429a482780a01226c3dc66a2ebb8b44b",
+  "blueprint/ch06/ch06_source.json": "d7f93cd20eb570744c710f3e07a88b319c082e4155812fee91db0920eb05944e",
+  "PAGES.pdf": "b944fb420ba22e1581ff2128f1f39c0fa394cf83d06e8a2350ee562b2b29225c",
+  "materials_sha256": "390182f1c4cb7bf88992f5ddc4ef71dd5c9c963e754aff5541cfde7552c6e1cc"
+}
+
+## 原文JSON
+```json
+{
+  "source_id": "MD-6.2.1-WalkIncrement",
+  "kind": "definition",
+  "label": null,
+  "section": "6.2.1",
+  "printed_page": "225–226",
+  "pdf_page": "246–247",
+  "statement_latex": "The increments of the random walk are the differences $\\Delta X_n=X_n-X_{n-1}=\\delta xJ_{n-1}$, thus $(X_n)$ is a random process with independent increments.\nWe will use the shorthand $Y_k=Y(t_k)$ and $\\Delta Y_k=Y_{k+1}-Y_k=\\sqrt{\\delta t}J_k$. The increments are clearly independent.",
+  "proof_latex": null,
+  "proof_note": "原书未给独立完整证明。",
+  "proof_discussion_latex": null,
+  "context_notation": [
+    "本条定义实际X(n+1)−Xn增量；差分恒等式与独立性另条保存，不把独立性计为定义已证。"
+  ],
+  "extra_assumptions": [
+    "[EXTRA] 25号：仅覆盖一步差分定义；dx·J、扩散缩放等式及独立增量尚未在本条声明。"
+  ],
+  "statement_scope": "本条Lean覆盖范围：仅覆盖一步差分定义；dx·J、扩散缩放等式及独立增量尚未在本条声明。",
+  "coverage_gaps": [
+    "仅覆盖一步差分定义；dx·J、扩散缩放等式及独立增量尚未在本条声明。"
+  ]
+}
+```
+## 当前完整Lean（全部原文版、修正版及反例）
+```lean
+def walkIncrement {Ω : Type*} (J : ℕ → Ω → ℝ) (dx : ℝ) (n : ℕ) (sample : Ω) : ℝ :=
+  MolecularDynamics.Chapter06Review.randomWalk J dx (n+1) sample - MolecularDynamics.Chapter06Review.randomWalk J dx n sample
+```
+### 文件参数及作用域 Blueprint/Ch06.lean
+```lean
+open Set Filter Matrix MeasureTheory ProbabilityTheory MolecularDynamics MolecularDynamics.Chapter02Review MolecularDynamics.Chapter06Review
+open scoped BigOperators Topology ContDiff InnerProductSpace Matrix.Norms.L2Operator ENNReal NNReal
+variable {n Nc : ℕ}
+variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
+variable {R : Type*} [Ring R] [Algebra ℝ R]
+local instance : MeasureSpace UnitAddCircle := ⟨AddCircle.haarAddCircle⟩
+```
+### 文件参数及作用域 MolecularDynamics/Chapter06/ReviewDefinitions.lean
+```lean
+open Set Filter MeasureTheory ProbabilityTheory
+open scoped BigOperators Topology ContDiff ENNReal NNReal
+local instance : MeasureSpace UnitAddCircle := ⟨AddCircle.haarAddCircle⟩
+```
+### MD.Ch06.walkIncrement [Blueprint/Ch06.lean:686]
+```lean
+def walkIncrement {Ω : Type*} (J : ℕ → Ω → ℝ) (dx : ℝ) (n : ℕ) (sample : Ω) : ℝ :=
+  MolecularDynamics.Chapter06Review.randomWalk J dx (n+1) sample - MolecularDynamics.Chapter06Review.randomWalk J dx n sample
+```
+### MolecularDynamics.Chapter06Review.randomWalk [MolecularDynamics/Chapter06/ReviewDefinitions.lean:39]
+```lean
+def randomWalk {Ω : Type*} (J : ℕ → Ω → ℝ) (dx : ℝ) (n : ℕ) (sample : Ω) : ℝ :=
+  dx * ∑ k ∈ Finset.range n, J k sample
+```

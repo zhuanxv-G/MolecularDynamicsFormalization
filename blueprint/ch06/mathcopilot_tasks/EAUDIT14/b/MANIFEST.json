@@ -1,0 +1,75 @@
+{
+  "eaudit": "EAUDIT14",
+  "subtask": "EAUDIT14b",
+  "source_id": "MD-6.4.4-HamiltonianPowerMomentumLaplacian",
+  "input_sha256": {
+    "Blueprint/Ch06.lean": "4a2a6cb72c1692f80e3537ab1a71701d429a482780a01226c3dc66a2ebb8b44b",
+    "blueprint/ch06/ch06_source.json": "d7f93cd20eb570744c710f3e07a88b319c082e4155812fee91db0920eb05944e",
+    "PAGES.pdf": "b7e5ebf45cf8b5ff7b8ac1a27bdfb932327321f88da8bcd4e305a1d7976cc0dd",
+    "materials_sha256": "b372e65e30769b2395b168700d41e8a95748e92ab52b7c0eb85e9883c340d72c"
+  },
+  "paste_sha256": "5a1a6687dc9f38706261668764168b0be91b477b025838dde04040934e77ae8d",
+  "source_pdf_sha256": "1939a22e5e96ebd2b58b8e91fe2c796f5390b402f267390f473b271c35d2f036",
+  "pdf_page_mapping": [
+    274
+  ],
+  "crop_pixel_identity": "PASS: copied page render or lossless embedded full-page source pixels",
+  "rasterized_pages": {},
+  "source_declarations": [
+    "hamiltonianPowerMomentumLaplacian"
+  ],
+  "dependency_excerpts": [
+    {
+      "path": "Blueprint/Ch06.lean",
+      "line": 2825,
+      "full_name": "MD.Ch06.hamiltonianPowerMomentumLaplacian",
+      "kind": "theorem",
+      "excerpt_sha256": "8bce91b5f296b939c59ab42ca15f2c4ffeeb5e6fb4801be92d51fcda541a5a01"
+    },
+    {
+      "path": "Blueprint/Ch06.lean",
+      "line": 2836,
+      "full_name": "MD.Ch06.laplacianBoundPrinted",
+      "kind": "theorem",
+      "excerpt_sha256": "9063b57c1377dcf6bac8bd69e3adf71ae41d07a8f25f8cfe3a61a128cf1efe4a"
+    },
+    {
+      "path": "Blueprint/Ch06.lean",
+      "line": 2864,
+      "full_name": "MD.Ch06.laplacianBoundCorrect",
+      "kind": "theorem",
+      "excerpt_sha256": "a605b49596eebd5acb0e9e71c890119f60308bf31de63061e9be9d21f7f97960"
+    },
+    {
+      "path": "MolecularDynamics/Chapter06/LangevinHormander.lean",
+      "line": 12,
+      "full_name": "MolecularDynamics.textbookLangevinPhase",
+      "kind": "abbrev",
+      "excerpt_sha256": "ee32316762cd33e19f1e5e47745da89914943aa66b85fb83f71d95c9b012a326"
+    },
+    {
+      "path": "MolecularDynamics/Chapter06/LangevinLyapunov.lean",
+      "line": 12,
+      "full_name": "MolecularDynamics.textbookLangevinHamiltonian",
+      "kind": "def",
+      "excerpt_sha256": "cd2e2ee9e33d05070add45db9db9e28b19ce150d25b247ae14f0b1df613127f5"
+    },
+    {
+      "path": "MolecularDynamics/Chapter06/LangevinLyapunov.lean",
+      "line": 16,
+      "full_name": "MolecularDynamics.textbookLangevinHamiltonianPower",
+      "kind": "def",
+      "excerpt_sha256": "90efb85b772b2c91852fa73469db0544f38de5400e0ac1726557adad9b0f57be"
+    },
+    {
+      "path": "MolecularDynamics/Chapter06/LangevinLyapunov.lean",
+      "line": 159,
+      "full_name": "MolecularDynamics.textbookLangevinHamiltonianPower_momentum_laplacian",
+      "kind": "theorem",
+      "excerpt_sha256": "a101b6720c30d3912c8a17b002830dfd0cb41d33ca5be934f106dea201210840"
+    }
+  ],
+  "project_definition_closure": "complete recursive definitions, referenced theorem types, explicit choice and consistency specifications",
+  "website_submitted": false,
+  "total_task_bytes": 106891
+}

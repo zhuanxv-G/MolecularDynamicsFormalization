@@ -1,0 +1,22 @@
+--- before
++++ after
+@@ -1077,7 +1077,8 @@
+       (∀ᵐ sample ∂P, X T sample i-x0 i-(∫ s in 0..T, a (X s sample) s i)=∑ j, integrals j sample)
+ 
+ /-- source_id: MD-6.3.1-ScalarItoFormula · (6.17) · §6.3.1 · 印刷p.233 / PDFp.254
+-[EXTRA] [EXTRA]原C²φ、真实PreBrownian和严格积分方程；完整漂移、噪声、二阶Ito校正；适应/可积技术资格保留。 -/
++[EXTRA] [EXTRA]原C²φ、真实PreBrownian和严格积分方程；完整漂移、噪声、二阶Ito校正；适应/可积技术资格保留。 [EXTRA] 25号：补X联合可测及自然过滤适应、被积过程全部网格和L²与局部均方时间Hölder资格。仅时间积分平方可积的旧签名前提不足且有网站反例；新签名不假设所求积分公式/极限，仍缺一般Itô理论，不证明。Time版与_corrected同步，漏dt原文形式单列保留。
++-/
+ theorem scalarItoFormula :
+   ∀ {Ω : Type*} [MeasurableSpace Ω] (P : Measure Ω)
+     (W X : ℝ → Ω → ℝ) (a b : ℝ → ℝ → ℝ) (x0 : ℝ) (φ : ℝ → ℝ),
+@@ -1085,6 +1086,9 @@
+   ContDiff ℝ 2 φ → ContDiff ℝ 1 (fun w : ℝ×ℝ ↦ a w.1 w.2) →
+   ContDiff ℝ 1 (fun w : ℝ×ℝ ↦ b w.1 w.2) →
+   MolecularDynamics.Chapter06Review.adaptedSquareIntegrand P W (fun t sample ↦ deriv φ (X t sample)*b (X t sample) t) →
++  Measurable (Function.uncurry X) →
++  (∀ t, 0 ≤ t → @Measurable Ω ℝ (naturalHistory25 W t) inferInstance (X t)) →
++  gridItoQualification25 P W (fun t sample ↦ deriv φ (X t sample)*b (X t sample) t) →
+   ∀ T : ℝ, 0 ≤ T → strictItoIntegral P W (fun t sample ↦ deriv φ (X t sample)*b (X t sample) t) T
+     (fun sample ↦ φ (X T sample)-φ x0 - ∫ s in 0..T,
+       deriv φ (X s sample)*a (X s sample) s + deriv (deriv φ) (X s sample)*b (X s sample) s^2/2) := by

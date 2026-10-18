@@ -1,0 +1,31 @@
+--- before
++++ after
+@@ -2491,10 +2491,14 @@
+   sorry
+ 
+ /-- source_id: MD-6.4.4-MinorizationCorrectedImplication · unnumbered_claim · §6.4.4 · 印刷p.252 / PDFp.273
+-[EXTRA] [EXTRA]仅单向充分条件，正时刻Assumption1加全部非空开集严格可达；实际测度下界完整，字面双向版独立保留。 -/
++[EXTRA] [EXTRA]仅单向充分条件，正时刻Assumption1加全部非空开集严格可达；实际测度下界完整，字面双向版独立保留。 [EXTRA] 25号：主版与minorizationPrinted_corrected同时补Chapman–Kolmogorov/Markov半群及参考测度全支撑。两步核局部共同下界仍需大型小集理论，未证明、未宣称数学结论已核定；交网站复审。
++-/
+ theorem minorizationCorrectedImplication :
+   ∀ {D : Type*} [MetricSpace D] [MeasurableSpace D] [BorelSpace D]
+-    (ν : Measure D) (K : ℝ≥0 → Kernel D D) (C : Set D), MolecularDynamics.Chapter06Review.assumption1 ν K C →
++    (ν : Measure D) (K : ℝ≥0 → Kernel D D) (C : Set D),
++    MolecularDynamics.Chapter06Review.markovSemigroup K →
++    (∀ A : Set D, IsOpen A → A.Nonempty → 0 < ν A) →
++    MolecularDynamics.Chapter06Review.assumption1 ν K C →
+   (∀ t : ℝ≥0, ∀ x : D, ∀ A : Set D, IsOpen A → A.Nonempty → 0 < t → 0 < K t x A) →
+   ∃ t : ℝ≥0, 0 < t ∧ ∃ ε : ℝ≥0∞, 0 < ε ∧ ∃ μ : Measure D,
+     IsProbabilityMeasure μ ∧ ∀ x ∈ C, ε • μ ≤ K t x := by
+@@ -2503,7 +2507,10 @@
+ /-- 修正版，对应原文 MD-6.4.4-MinorizationPrinted；改动：只保留在明确正时刻密度、可达性条件下到小集下界的充分方向。 -/
+ theorem minorizationPrinted_corrected :
+   ∀ {D : Type*} [MetricSpace D] [MeasurableSpace D] [BorelSpace D]
+-    (ν : Measure D) (K : ℝ≥0 → Kernel D D) (C : Set D), MolecularDynamics.Chapter06Review.assumption1 ν K C →
++    (ν : Measure D) (K : ℝ≥0 → Kernel D D) (C : Set D),
++    MolecularDynamics.Chapter06Review.markovSemigroup K →
++    (∀ A : Set D, IsOpen A → A.Nonempty → 0 < ν A) →
++    MolecularDynamics.Chapter06Review.assumption1 ν K C →
+   (∀ t : ℝ≥0, ∀ x : D, ∀ A : Set D, IsOpen A → A.Nonempty → 0 < t → 0 < K t x A) →
+   ∃ t : ℝ≥0, 0 < t ∧ ∃ ε : ℝ≥0∞, 0 < ε ∧ ∃ μ : Measure D,
+     IsProbabilityMeasure μ ∧ ∀ x ∈ C, ε • μ ≤ K t x := by

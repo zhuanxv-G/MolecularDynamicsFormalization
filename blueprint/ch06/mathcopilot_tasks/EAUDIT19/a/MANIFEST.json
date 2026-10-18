@@ -1,0 +1,33 @@
+{
+  "eaudit": "EAUDIT19",
+  "subtask": "EAUDIT19a",
+  "source_id": "MD-6.4.5-KernelAverage",
+  "input_sha256": {
+    "Blueprint/Ch06.lean": "4a2a6cb72c1692f80e3537ab1a71701d429a482780a01226c3dc66a2ebb8b44b",
+    "blueprint/ch06/ch06_source.json": "d7f93cd20eb570744c710f3e07a88b319c082e4155812fee91db0920eb05944e",
+    "PAGES.pdf": "ec8ed7c53f380c329d72ef631c3dedb0c2099354ce7e3bde0a42df21053154ec",
+    "materials_sha256": "6ff90a19bdb0d8d2eabcc765b16a5486fe3058f52399a3bae46d3170208a829c"
+  },
+  "paste_sha256": "c8a4238a6694c380f39490c863382fac1030e63a19530c435d669282113eef7e",
+  "source_pdf_sha256": "1939a22e5e96ebd2b58b8e91fe2c796f5390b402f267390f473b271c35d2f036",
+  "pdf_page_mapping": [
+    279
+  ],
+  "crop_pixel_identity": "PASS: copied page render or lossless embedded full-page source pixels",
+  "rasterized_pages": {},
+  "source_declarations": [
+    "kernelAverage"
+  ],
+  "dependency_excerpts": [
+    {
+      "path": "Blueprint/Ch06.lean",
+      "line": 3351,
+      "full_name": "MD.Ch06.kernelAverage",
+      "kind": "def",
+      "excerpt_sha256": "040338bc2ba5855cfe804d143e04799a1071818368f8b71e808316c671bd9182"
+    }
+  ],
+  "project_definition_closure": "complete recursive definitions, referenced theorem types, explicit choice and consistency specifications",
+  "website_submitted": false,
+  "total_task_bytes": 85209
+}

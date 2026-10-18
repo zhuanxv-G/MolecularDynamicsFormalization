@@ -1,0 +1,582 @@
+{
+  "batch": "BATCH42",
+  "chapter": "ch06",
+  "round": "first-merged",
+  "input_sha256": {
+    "Blueprint/Ch06.lean": "0a02a34ec68989a83bccfa5916db5053ecdb58e05667bf21ff3568d9d1f4318e",
+    "blueprint/ch06/ch06_source.json": "45c70ceef21ca168af437de297e2e21e2800b452ab7942654061d4cff9bb5d95"
+  },
+  "items": [
+    {
+      "source_id": "MD-6.4.5-KernelEvolution",
+      "json_review": {
+        "status": "CORRECTED",
+        "issue_codes": [
+          "SOURCE_WORDING",
+          "ADJOINT_SYMBOL"
+        ],
+        "corrected_json": {
+          "source_id": "MD-6.4.5-KernelEvolution",
+          "kind": "definition",
+          "label": null,
+          "section": "6.4.5",
+          "printed_page": "257",
+          "pdf_page": "278",
+          "statement_latex": "Given a collection of phase space points distributed according to the density $\\rho_0(q,p)$, we know that its evolution (under Langevin dynamics) after a time $t$ will be described by\n\\[\\rho(q,p,t)=e^{t\\mathcal L_{LD}^{\\dagger}}\\rho_0(q,p).\\]",
+          "proof_latex": null,
+          "proof_note": "原书未给独立完整证明。",
+          "proof_discussion_latex": null,
+          "context_notation": [],
+          "issues": [
+            {
+              "code": "SOURCE_WORDING",
+              "detail": "原句为“…, we know that its evolution (under Langevin dynamics) after a time t will be described by”，现摘录改写并遗漏we know that。"
+            },
+            {
+              "code": "ADJOINT_SYMBOL",
+              "detail": "原页前向密度生成元使用dagger上标†，摘录写成*；应保留原符号，不静默替换。"
+            }
+          ],
+          "lean_decl": "MD.Ch06.kernelEvolution",
+          "reusable_proofs": [],
+          "extra_assumptions": [
+            "[EXTRA]真实Markov kernel应用初始measure的compProd边缘，形式exp解释为实际演化，非无资格幂级数。"
+          ],
+          "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
+          "review_status": "CORRECTED",
+          "repair_log": [],
+          "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
+        },
+        "issues": [
+          {
+            "code": "SOURCE_WORDING",
+            "detail": "原句为“…, we know that its evolution (under Langevin dynamics) after a time t will be described by”，现摘录改写并遗漏we know that。"
+          },
+          {
+            "code": "ADJOINT_SYMBOL",
+            "detail": "原页前向密度生成元使用dagger上标†，摘录写成*；应保留原符号，不静默替换。"
+          }
+        ],
+        "evidence": [
+          "附件第2页=第1页，印刷257底部6.4.5首段及展示式；PDF原符号为L_{LD}^{†}。",
+          "审校限于R9_任务.md所载本条声明和依赖；未读取旧工程、未修改Lean、未补证明或因sorry判失败。"
+        ]
+      },
+      "audit": {
+        "lean_decl": "MD.Ch06.kernelEvolution",
+        "verdict": "FAIL",
+        "explanation": "签名是任意可测空间D、任意Kernel族K、任意测度μ及非负时刻t的measure bind定义，D9确认其含义正确。但Kernel本身不保证Markov，未要求K 0=id或半群律；无Langevin系数、生成元、初始density、绝对连续性或ρ。它是可用于原文的通用构件，尚未编码原文全部对象及密度前向指数传播关系。[EXTRA]称真实Markov及exp解释为实际演化，未由此签名实现。",
+        "counterexample": "取D为单点，所有t的K t均为零核，μ为单位点质量；结果始终为零，t=0也不等于初始概率。",
+        "suggested_fix": "保留此通用定义并缩小对应声明的范围；完整原文需另以实际Langevin转移核、初始概率密度和所得密度的测度等式表达，且明确前向生成元/半群的识别资格。"
+      },
+      "subtask": "BATCH42a",
+      "input_sha256": {
+        "Blueprint/Ch06.lean": "0a02a34ec68989a83bccfa5916db5053ecdb58e05667bf21ff3568d9d1f4318e",
+        "blueprint/ch06/ch06_source.json": "45c70ceef21ca168af437de297e2e21e2800b452ab7942654061d4cff9bb5d95",
+        "BATCH42a_PAGES.pdf": "83da1ef5e86aab7bf716f29e064980cb74e6881508a8765ad565e83f8d7e442d",
+        "signature_sha256": "982e3128e0ed8753bc95ef260730eddc1668ee26c1d7bded9aad476e1b9d74e2"
+      }
+    },
+    {
+      "source_id": "MD-6.4.5-KernelAverage",
+      "json_review": {
+        "status": "CORRECTED",
+        "issue_codes": [
+          "SOURCE_WORDING"
+        ],
+        "corrected_json": {
+          "source_id": "MD-6.4.5-KernelAverage",
+          "kind": "definition",
+          "label": null,
+          "section": "6.4.5",
+          "printed_page": "258",
+          "pdf_page": "279",
+          "statement_latex": "which says that the average of a function $\\varphi$ with respect to the distribution at time $t$ is equivalent to the average of the forward propagation of $\\varphi$ with respect to the initial distribution.",
+          "proof_latex": null,
+          "proof_note": "原书未给独立完整证明。",
+          "proof_discussion_latex": null,
+          "context_notation": [],
+          "issues": [
+            {
+              "code": "SOURCE_WORDING",
+              "detail": "原文为接上式的“which says that the average …”，摘录改成独立句“The average …”；其余该句文字及数学含义相符。"
+            }
+          ],
+          "lean_decl": "MD.Ch06.kernelAverage",
+          "reusable_proofs": [],
+          "extra_assumptions": [
+            "[EXTRA]真实核积分的backward检验函数传播，可积资格在Duality定理明确。"
+          ],
+          "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
+          "review_status": "CORRECTED",
+          "repair_log": [],
+          "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
+        },
+        "issues": [
+          {
+            "code": "SOURCE_WORDING",
+            "detail": "原文为接上式的“which says that the average …”，摘录改成独立句“The average …”；其余该句文字及数学含义相符。"
+          }
+        ],
+        "evidence": [
+          "附件第3页（原PDF279/印刷258）第二个积分公式之后，以which says that开头。",
+          "审校限于R9_任务.md所载本条声明和依赖；未读取旧工程、未修改Lean、未补证明或因sorry判失败。"
+        ]
+      },
+      "audit": {
+        "lean_decl": "MD.Ch06.kernelAverage",
+        "verdict": "FAIL",
+        "explanation": "f为任意实值函数，K为任意核族，t为非负时刻，x为起点；定义∫f d(K t x)确为核对检验函数的传播，D10一致。但原句断言两种平均相等，签名既无初始分布μ，也无演化分布或平均等式；没有可测、可积或Markov资格。Bochner积分在不满足可积条件时的默认值不能代替原书的有限平均。该[EXTRA]明确可积资格移至Duality，可作为辅助定义接受，但不足以单独覆盖所映射整句。",
+        "counterexample": null,
+        "suggested_fix": "将本条原文对应到kernelDuality，或添加带初始概率measure和可积资格的平均等式；kernelAverage仅登记为检验函数传播的辅助记号。"
+      },
+      "subtask": "BATCH42b",
+      "input_sha256": {
+        "Blueprint/Ch06.lean": "0a02a34ec68989a83bccfa5916db5053ecdb58e05667bf21ff3568d9d1f4318e",
+        "blueprint/ch06/ch06_source.json": "45c70ceef21ca168af437de297e2e21e2800b452ab7942654061d4cff9bb5d95",
+        "BATCH42b_PAGES.pdf": "a1452496650f35c505ba46020a634c9977f4744ee37ba9d3941d7c06e8cbc54c",
+        "signature_sha256": "040338bc2ba5855cfe804d143e04799a1071818368f8b71e808316c671bd9182"
+      }
+    },
+    {
+      "source_id": "MD-6.4.5-DensityEvolutionMeaning",
+      "json_review": {
+        "status": "CORRECTED",
+        "issue_codes": [
+          "SOURCE_WORDING",
+          "ADJOINT_SYMBOL"
+        ],
+        "corrected_json": {
+          "source_id": "MD-6.4.5-DensityEvolutionMeaning",
+          "kind": "definition",
+          "label": null,
+          "section": "6.4.5",
+          "printed_page": "257–258",
+          "pdf_page": "278–279",
+          "statement_latex": "More precisely this relation should be interpreted in the variational sense, so that we have, for any suitable test function $\\varphi$, e.g. $\\varphi\\in C^\\infty$,\n\\[\\int_D\\varphi\\rho(q,p,t)d\\omega=\\int_D\\varphi e^{t\\mathcal L_{LD}^{\\dagger}}\\rho_0(q,p)d\\omega.\\]",
+          "proof_latex": null,
+          "proof_note": "原书未给独立完整证明。",
+          "proof_discussion_latex": null,
+          "context_notation": [],
+          "issues": [
+            {
+              "code": "SOURCE_WORDING",
+              "detail": "原句为“…, so that we have, for any suitable test function …”，摘录漏去we have并调整标点。"
+            },
+            {
+              "code": "ADJOINT_SYMBOL",
+              "detail": "积分内原书为e^{t L_{LD}^{†}}，不是星号上标。"
+            }
+          ],
+          "lean_decl": "MD.Ch06.densityEvolutionMeaning",
+          "reusable_proofs": [],
+          "extra_assumptions": [
+            "[EXTRA]真实初始概率density、全部时刻density及实际kernel measure等式的语义定义；未假设每个任意SDE必存在平滑density，未计存在性已证。"
+          ],
+          "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
+          "review_status": "CORRECTED",
+          "repair_log": [],
+          "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
+        },
+        "issues": [
+          {
+            "code": "SOURCE_WORDING",
+            "detail": "原句为“…, so that we have, for any suitable test function …”，摘录漏去we have并调整标点。"
+          },
+          {
+            "code": "ADJOINT_SYMBOL",
+            "detail": "积分内原书为e^{t L_{LD}^{†}}，不是星号上标。"
+          }
+        ],
+        "evidence": [
+          "附件第4页=第1页、第5页=第3页；所引变分句和等式全部实际位于第5页/印刷258顶端；跨页范围作为上下文可保留。",
+          "D8为环面Haar体积×R^n Lebesgue体积；D9为K t ∘ₘ μ。",
+          "审校限于R9_任务.md所载本条声明和依赖；未读取旧工程、未修改Lean、未补证明或因sorry判失败。"
+        ]
+      },
+      "audit": {
+        "lean_decl": "MD.Ch06.densityEvolutionMeaning",
+        "verdict": "FAIL",
+        "explanation": "此Prop对ρ0逐点非负、flat可积、积分1，并对所有非负时刻ρ t逐点非负、可积以及withDensity测度等式编码完整。它不声称密度存在，这一点[EXTRA]准确。测度等式能导出合格检验函数的弱等式；逐点非负比AE非负更强，属于所选代表的附加要求。然而K仍完全任意，没有Markov或实际Langevin关联；ρ t的质量1、初值和Langevin前向生成元均未确保。故作为通用核密度关系定义有意义，作为原文完整Langevin密度演化解释不充分。",
+        "counterexample": "令ρ0为任意归一非负可积密度，K t=0且ρ t=0（包括t=0）；此Prop成立，但ρ t不是概率分布且ρ 0≠ρ0。",
+        "suggested_fix": "补K为实际Langevin转移核，或显式Markov、K 0=id、半群及生成元关联；标明逐点/AE的代表选择，并给出合格检验函数的变分等式。"
+      },
+      "subtask": "BATCH42c",
+      "input_sha256": {
+        "Blueprint/Ch06.lean": "0a02a34ec68989a83bccfa5916db5053ecdb58e05667bf21ff3568d9d1f4318e",
+        "blueprint/ch06/ch06_source.json": "45c70ceef21ca168af437de297e2e21e2800b452ab7942654061d4cff9bb5d95",
+        "BATCH42c_PAGES.pdf": "1014f3dcba6b5b35d677466d1bd412b450e3541e899f55dcd708cadf014d2161",
+        "signature_sha256": "9d6d7b13b6dee23d7337f7c7d835949270ec85b9ba702445be179d251090823e"
+      }
+    },
+    {
+      "source_id": "MD-6.4.5-KernelDuality",
+      "json_review": {
+        "status": "CORRECTED",
+        "issue_codes": [
+          "SOURCE_WORDING"
+        ],
+        "corrected_json": {
+          "source_id": "MD-6.4.5-KernelDuality",
+          "kind": "unnumbered_claim",
+          "label": null,
+          "section": "6.4.5",
+          "printed_page": "258",
+          "pdf_page": "279",
+          "statement_latex": "This is of course an inner product, and due to the properties of the inner product, we may interpret the right hand side as\n\\[\\int_D\\left[e^{t\\mathcal L_{LD}}\\varphi(q,p)\\right]\\rho_0(q,p)d\\omega,\\]",
+          "proof_latex": null,
+          "proof_note": "原书未给独立完整证明。",
+          "proof_discussion_latex": null,
+          "context_notation": [],
+          "issues": [
+            {
+              "code": "SOURCE_WORDING",
+              "detail": "原段为“This is of course an inner product, and due to the properties of the inner product, we may interpret the right hand side as”。摘录删去前半句且改Due为大写。原公式含方括号，数学分组等价。"
+            }
+          ],
+          "lean_decl": "MD.Ch06.kernelDuality",
+          "reusable_proofs": [],
+          "extra_assumptions": [
+            "[EXTRA]全部实际可测可积检验、真实Markov kernel及初始概率measure；非仅Brownian谱模型配对。"
+          ],
+          "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
+          "review_status": "CORRECTED",
+          "repair_log": [],
+          "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
+        },
+        "issues": [
+          {
+            "code": "SOURCE_WORDING",
+            "detail": "原段为“This is of course an inner product, and due to the properties of the inner product, we may interpret the right hand side as”。摘录删去前半句且改Due为大写。原公式含方括号，数学分组等价。"
+          }
+        ],
+        "evidence": [
+          "附件第6页=第3页，印刷258上部第二段及第二个积分公式。",
+          "D9、D10确认两个Chapter06Review定义分别为测度bind和核积分，与MD.Ch06同名构件语义相同。",
+          "审校限于R9_任务.md所载本条声明和依赖；未读取旧工程、未修改Lean、未补证明或因sorry判失败。"
+        ]
+      },
+      "audit": {
+        "lean_decl": "MD.Ch06.kernelDuality",
+        "verdict": "PASS",
+        "explanation": "对任意可测空间D、任意时刻t、初始概率μ、该时刻Markov核K t及可测实函数f，假设f对演化measure可积，结论恰是演化measure积分等于初始measure下的核平均积分。μ概率及K t Markov给出有限性，从总积分可积可获AE纤维可积，迭代积分有明确资格；无需所有时刻半群律即可证明该时刻对偶式。原文density×flat measure在此抽象为μ，泛化合理；本条未声称已把任意K识别为Langevin。所有量词、前提及等号方向与[EXTRA]一致。",
+        "counterexample": null,
+        "suggested_fix": null
+      },
+      "subtask": "BATCH42d",
+      "input_sha256": {
+        "Blueprint/Ch06.lean": "0a02a34ec68989a83bccfa5916db5053ecdb58e05667bf21ff3568d9d1f4318e",
+        "blueprint/ch06/ch06_source.json": "45c70ceef21ca168af437de297e2e21e2800b452ab7942654061d4cff9bb5d95",
+        "BATCH42d_PAGES.pdf": "a1452496650f35c505ba46020a634c9977f4744ee37ba9d3941d7c06e8cbc54c",
+        "signature_sha256": "09fb011750b00f749aaf08138215a2dbe5490f09b4b0898534b1cdfeb04f2e06"
+      }
+    },
+    {
+      "source_id": "MD-6.4.5-SmoothTestL2Printed",
+      "json_review": {
+        "status": "NEEDS_HUMAN",
+        "issue_codes": [
+          "ERRATUM?",
+          "MISSING_CORRECTED_SIGNATURE"
+        ],
+        "corrected_json": {
+          "source_id": "MD-6.4.5-SmoothTestL2Printed",
+          "kind": "unnumbered_claim",
+          "label": null,
+          "section": "6.4.5",
+          "printed_page": "258",
+          "pdf_page": "279",
+          "statement_latex": "Since all the eigenvalues lie to the left of a vertical line in the left half plane, for any $\\varphi$ in $C^\\infty$ we have\n\\[\\int_D\\varphi\\rho(q,p,t)d\\omega=\\operatorname{Av}_\\beta(\\varphi)+\\alpha e^{t\\lambda_1}\\int_D\\varphi\\rho^{(1)}d\\omega.\\]\nThe latter integral is bounded since both $\\varphi$ and $\\rho^{(1)}$ are in $L^2$.",
+          "proof_latex": null,
+          "proof_note": "原书未给独立完整证明。",
+          "proof_discussion_latex": null,
+          "context_notation": [],
+          "issues": [
+            {
+              "code": "ERRATUM?",
+              "detail": "环面×无界动量上C∞不自动L²；常数1已不在flat L²，指数增长函数也可能不在Gibbs L²。需适当weighted空间/增长资格。"
+            },
+            {
+              "code": "ERRATUM?",
+              "detail": "原句字面确称任意C∞检验函数并据此使用L²；环面×无界动量的flat测度下不成立。另“all the eigenvalues”不能包括平衡态的零本征值，应限制为非零/衰减谱。忠实转录应保留疑误。"
+            },
+            {
+              "code": "MISSING_CORRECTED_SIGNATURE",
+              "detail": "repair_log登记smoothTestL2Printed_corrected，但任务没有给出该声明或_counterexample声明的实际签名/定义；无法审校该修正版。当前Printed只形式化C∞⇒L²子断言，没有同时表达本条完整平均恒等式。"
+            }
+          ],
+          "lean_decl": "MD.Ch06.smoothTestL2Printed",
+          "reusable_proofs": [],
+          "extra_assumptions": [],
+          "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
+          "review_status": "NEEDS_HUMAN",
+          "repair_log": [
+            {
+              "date": "2026-10-17",
+              "action": "directive22_printed_corrected_pair",
+              "change": "明确要求检验函数属于所选L²空间；给出正确检验函数域定义，不冒称所有C∞函数可积。",
+              "corrected_decl": "MD.Ch06.smoothTestL2Printed_corrected",
+              "website": "未提交；待网站审计"
+            }
+          ],
+          "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
+        },
+        "issues": [
+          {
+            "code": "ERRATUM?",
+            "detail": "原句字面确称任意C∞检验函数并据此使用L²；环面×无界动量的flat测度下不成立。另“all the eigenvalues”不能包括平衡态的零本征值，应限制为非零/衰减谱。忠实转录应保留疑误。"
+          },
+          {
+            "code": "MISSING_CORRECTED_SIGNATURE",
+            "detail": "repair_log登记smoothTestL2Printed_corrected，但任务没有给出该声明或_counterexample声明的实际签名/定义；无法审校该修正版。当前Printed只形式化C∞⇒L²子断言，没有同时表达本条完整平均恒等式。"
+          }
+        ],
+        "evidence": [
+          "附件第7页=第3页，印刷258倒数展示式及末段前半句；现JSON所摘范围基本忠实。",
+          "D7–D8：n≥1时空间含R^n无界动量，flat measure总质量无限。",
+          "原文末段bounded后接逗号and since …，摘录在此截成句号，宜在严格转录中标明节选而非原句结束。",
+          "审校限于R9_任务.md所载本条声明和依赖；未读取旧工程、未修改Lean、未补证明或因sorry判失败。"
+        ]
+      },
+      "audit": {
+        "lean_decl": "MD.Ch06.smoothTestL2Printed",
+        "verdict": "NEEDS_HUMAN",
+        "explanation": "Printed签名∀n、∀实函数f，提升到欧氏相空间后ContDiff∞便推出flat MemLp 2，忠实暴露原书“光滑即L²”的错误，不因其不可证或sorry判FAIL。它只覆盖本条的一项字面子断言；原文平均恒等式及谱措辞的疑误仍需人工处理。原[ERRATUM?]关于flat常数反例及一般Gibbs下增长反例合理。repair_log称修正版已明示L²域，但实际修正签名未提供，不能确认它是否覆盖完整结论。",
+        "counterexample": "n=1，f(q,p)=1；f∘periodicProjection是常光滑函数，但∫|f|² dflat=∞，故不属于L²。",
+        "suggested_fix": "保留Printed为原书字面问题记录；另给出修正版实际签名，明确f属于flat L²（并保证平衡态及模式属L²），再陈述完整平均恒等式、CS界和衰减。将“all eigenvalues”勘误为相关非零谱，保留原文。"
+      },
+      "subtask": "BATCH42e",
+      "input_sha256": {
+        "Blueprint/Ch06.lean": "0a02a34ec68989a83bccfa5916db5053ecdb58e05667bf21ff3568d9d1f4318e",
+        "blueprint/ch06/ch06_source.json": "45c70ceef21ca168af437de297e2e21e2800b452ab7942654061d4cff9bb5d95",
+        "BATCH42e_PAGES.pdf": "a1452496650f35c505ba46020a634c9977f4744ee37ba9d3941d7c06e8cbc54c",
+        "signature_sha256": "3523f9ac4e96d25298094316a24e3bf9a77887f0e85f85e0159d0d95f36e6cca"
+      }
+    },
+    {
+      "source_id": "MD-6.4.5-ComplexInitialDensity",
+      "json_review": {
+        "status": "NEEDS_HUMAN",
+        "issue_codes": [
+          "SOURCE_WORDING",
+          "ERRATUM?",
+          "MISSING_EIGENPAIR_CONTEXT"
+        ],
+        "corrected_json": {
+          "source_id": "MD-6.4.5-ComplexInitialDensity",
+          "kind": "definition",
+          "label": null,
+          "section": "6.4.5",
+          "printed_page": "258",
+          "pdf_page": "279",
+          "statement_latex": "For example, if we assume that $\\lambda_1,\\rho^{(1)}$ is some eigenvalue, eigenfunction pair with $\\operatorname{Re}(\\lambda_1)<0$ and take the initial distribution to be\n\\[\\rho_0=\\rho_{eq}+\\alpha\\rho^{(1)},\\]\nfor $\\alpha\\in\\mathbb R$, then we have",
+          "proof_latex": null,
+          "proof_note": "原书未给独立完整证明。",
+          "proof_discussion_latex": null,
+          "context_notation": [],
+          "issues": [
+            {
+              "code": "SOURCE_WORDING",
+              "detail": "原文为“For example, if we assume that … and take the initial distribution to be [公式], for α∈R, then we have”；摘录重写为“Assume that …”，并将α移入展示式。"
+            },
+            {
+              "code": "ERRATUM?",
+              "detail": "任意复本征模式乘任意实α不自动得到实非负归一密度；[EXTRA]所加资格合理，但属于限制原句，原文疑误仍须保留。"
+            },
+            {
+              "code": "MISSING_EIGENPAIR_CONTEXT",
+              "detail": "此独立定义无生成元、λ或本征关系，也不编码ρeq平衡性；只能作为概率资格辅助谓词，不能单独涵盖原句的本征对条件。"
+            }
+          ],
+          "lean_decl": "MD.Ch06.complexInitialDensity",
+          "reusable_proofs": [],
+          "extra_assumptions": [
+            "[EXTRA]明确真实初始概率的实性/非负/积分1，原单复模式不自动是概率；保留复Lp空间与复本征值，未缩成实负λ玩具。复共轭成对构造可另建，但原单模式需这些资格。"
+          ],
+          "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
+          "review_status": "NEEDS_HUMAN",
+          "repair_log": [],
+          "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
+        },
+        "issues": [
+          {
+            "code": "SOURCE_WORDING",
+            "detail": "原文为“For example, if we assume that … and take the initial distribution to be [公式], for α∈R, then we have”；摘录重写为“Assume that …”，并将α移入展示式。"
+          },
+          {
+            "code": "ERRATUM?",
+            "detail": "任意复本征模式乘任意实α不自动得到实非负归一密度；[EXTRA]所加资格合理，但属于限制原句，原文疑误仍须保留。"
+          },
+          {
+            "code": "MISSING_EIGENPAIR_CONTEXT",
+            "detail": "此独立定义无生成元、λ或本征关系，也不编码ρeq平衡性；只能作为概率资格辅助谓词，不能单独涵盖原句的本征对条件。"
+          }
+        ],
+        "evidence": [
+          "附件第8页=第3页，印刷258中段For example开头至for α∈R, then we have。",
+          "D12完整列出ρeq和ρeq+αρ1各自的AE实非负、实部可积及积分1，共两组三项资格；不存在本征值参数。",
+          "审校限于R9_任务.md所载本条声明和依赖；未读取旧工程、未修改Lean、未补证明或因sorry判失败。"
+        ]
+      },
+      "audit": {
+        "lean_decl": "MD.Ch06.complexInitialDensity",
+        "verdict": "NEEDS_HUMAN",
+        "explanation": "n任意，ρeq、ρ1均为复flat L²等价类，α实数；谓词准确要求平衡候选和初始组合AE实、非负、可积、归一，并未缩为实负λ。α=0不约束ρ1是合理的概率资格行为。作为新增概率资格定义合理，但不证明或表达本征/平衡条件，本征条件在第9条另有编码。原书把单一复模式当概率初始分布的可行性需人工确认；不能把此限制后的谓词当原句对任意α成立的证明。",
+        "counterexample": "若ρ1在正测度集合有非零虚部且α≠0，则实ρeq+αρ1仍有非零虚部，不能为概率密度；即使ρ1实且积分0，也未必可为任意α保持非负。",
+        "suggested_fix": "保留原句并登记[ERRATUM?]；将此声明定位为概率资格辅助定义，在使用处补生成元本征关系、Re λ<0及真正平衡态识别。非实模式需选共轭成对实组合并另行检查非负性。"
+      },
+      "subtask": "BATCH42f",
+      "input_sha256": {
+        "Blueprint/Ch06.lean": "0a02a34ec68989a83bccfa5916db5053ecdb58e05667bf21ff3568d9d1f4318e",
+        "blueprint/ch06/ch06_source.json": "45c70ceef21ca168af437de297e2e21e2800b452ab7942654061d4cff9bb5d95",
+        "BATCH42f_PAGES.pdf": "a1452496650f35c505ba46020a634c9977f4744ee37ba9d3941d7c06e8cbc54c",
+        "signature_sha256": "ffeea4d91057fc1b43d02b013575857994b48c47d1582e9bdd64ab360d7c2731"
+      }
+    },
+    {
+      "source_id": "MD-6.4.5-LangevinForwardSemigroupMeaning",
+      "json_review": {
+        "status": "CORRECTED",
+        "issue_codes": [
+          "ADJOINT_SYMBOL",
+          "INCOMPLETE_FORWARD_IDENTIFICATION"
+        ],
+        "corrected_json": {
+          "source_id": "MD-6.4.5-LangevinForwardSemigroupMeaning",
+          "kind": "definition",
+          "label": null,
+          "section": "6.4.5",
+          "printed_page": "257–258",
+          "pdf_page": "278–279",
+          "statement_latex": "\\[\\rho(q,p,t)=e^{t\\mathcal L_{LD}^{\\dagger}}\\rho_0(q,p).\\]",
+          "proof_latex": null,
+          "proof_note": "原书未给独立完整证明。",
+          "proof_discussion_latex": null,
+          "context_notation": [],
+          "issues": [
+            {
+              "code": "ADJOINT_SYMBOL",
+              "detail": "原公式前向生成元上标为†，摘录写*。"
+            },
+            {
+              "code": "INCOMPLETE_FORWARD_IDENTIFICATION",
+              "detail": "[EXTRA]所称complex L²传播关联仅比对输出实部经ofReal裁剪后的measure；没有要求输出仍为实非负密度，且没有半群律/强连续性。"
+            }
+          ],
+          "lean_decl": "MD.Ch06.langevinForwardSemigroupMeaning",
+          "reusable_proofs": [],
+          "extra_assumptions": [
+            "[EXTRA]对所有真实非负实初始density的actual kernel/complex Lp²传播关联定义；不凭空把任意线性S命名Langevin，原forward identification仍未证。"
+          ],
+          "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
+          "review_status": "CORRECTED",
+          "repair_log": [],
+          "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
+        },
+        "issues": [
+          {
+            "code": "ADJOINT_SYMBOL",
+            "detail": "原公式前向生成元上标为†，摘录写*。"
+          },
+          {
+            "code": "INCOMPLETE_FORWARD_IDENTIFICATION",
+            "detail": "[EXTRA]所称complex L²传播关联仅比对输出实部经ofReal裁剪后的measure；没有要求输出仍为实非负密度，且没有半群律/强连续性。"
+          }
+        ],
+        "evidence": [
+          "附件第9页=第1页的末式；第10页=第3页提供弱解释上下文。",
+          "D13明确只出现ENNReal.ofReal ((S t v x).re)，既不约束虚部，也会丢失负实部。",
+          "审校限于R9_任务.md所载本条声明和依赖；未读取旧工程、未修改Lean、未补证明或因sorry判失败。"
+        ]
+      },
+      "audit": {
+        "lean_decl": "MD.Ch06.langevinForwardSemigroupMeaning",
+        "verdict": "FAIL",
+        "explanation": "∀v量化整个复flat L²，前提是v AE实非负且实部L¹；不要求积分1是允许有限正密度的合理泛化。∀t的测度等式写对了输入核演化，但输出只保留实部正部。S t虽为复连续线性映射，却没有S 0=id、半群律、强连续或生成元条件；K也任意，未识别为实际Langevin。尤其不能由该Prop推出S t v就是原文真实前向密度，故[EXTRA]描述过强。",
+        "counterexample": "取K t=Kernel.id，且每个t令S t=(1+i)•id。在非负实v上输出实部恰为v，该Prop成立；但输出含非零虚部，S 0≠id，且不满足半群律。",
+        "suggested_fix": "补每个合格v及t的输出AE实非负；同时要求S为C0半群并关联实际Langevin核/生成元。可用实部等于真实密度加虚部为零的AE等式，避免ofReal裁剪弱化语义。"
+      },
+      "subtask": "BATCH42g",
+      "input_sha256": {
+        "Blueprint/Ch06.lean": "0a02a34ec68989a83bccfa5916db5053ecdb58e05667bf21ff3568d9d1f4318e",
+        "blueprint/ch06/ch06_source.json": "45c70ceef21ca168af437de297e2e21e2800b452ab7942654061d4cff9bb5d95",
+        "BATCH42g_PAGES.pdf": "1014f3dcba6b5b35d677466d1bd412b450e3541e899f55dcd708cadf014d2161",
+        "signature_sha256": "618bf4bf96075ef51d250b396e32fbf9eae01b37e00f3116d5b76d28a1ada085"
+      }
+    },
+    {
+      "source_id": "MD-6.4.5-ComplexEigenmodeDecay",
+      "json_review": {
+        "status": "CORRECTED",
+        "issue_codes": [
+          "ADJOINT_SYMBOL",
+          "SOURCE_WORDING"
+        ],
+        "corrected_json": {
+          "source_id": "MD-6.4.5-ComplexEigenmodeDecay",
+          "kind": "unnumbered_claim",
+          "label": null,
+          "section": "6.4.5",
+          "printed_page": "258",
+          "pdf_page": "279",
+          "statement_latex": "\\[\\rho(q,p,t)=e^{t\\mathcal L_{LD}^{\\dagger}}\\rho_0=e^{t\\mathcal L_{LD}^{\\dagger}}\\rho_{eq}+\\alpha e^{t\\mathcal L_{LD}^{\\dagger}}\\rho^{(1)}=\\rho_{eq}+\\alpha e^{t\\lambda_1}\\rho^{(1)}.\\]\nand since $\\operatorname{Re}(\\lambda_1)<0$, we see that this converges exponentially to the desired average.",
+          "proof_latex": null,
+          "proof_note": "原书未给独立完整证明。",
+          "proof_discussion_latex": null,
+          "context_notation": [],
+          "issues": [
+            {
+              "code": "ADJOINT_SYMBOL",
+              "detail": "展示式中三处L_{LD}的前向上标原为†，摘录全部改为*。"
+            },
+            {
+              "code": "SOURCE_WORDING",
+              "detail": "原文衰减结语不是独立“Since Re(λ1)<0, this …”；实际为上一条末段接续的“and since Re(λ1)<0, we see that this converges exponentially to the desired average.”。"
+            }
+          ],
+          "lean_decl": "MD.Ch06.complexEigenmodeDecay",
+          "reusable_proofs": [],
+          "extra_assumptions": [
+            "[EXTRA]完整复λ/Reλ<0及原α∈ℝ，真实flat Lp² initial probability资格；实际C0 semigroup/0处generator图关系、stationary/eigenvector为前提，完整全时exp模式及所有L²检验CS衰减为结论，没有把全时模式演化作假设。S需识别为实际Langevin前向传播，下一条登记，不冒充已识别。",
+            "[EXTRA]S与原实际周期Langevin核在全部非负可积初始密度上的关联及rhoeq与真实归一Gibbs density的AE识别均显式编码；模式演化、平均恒等、CS界及极限全部为结论，仍未计forward semigroup的存在/识别已证。"
+          ],
+          "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
+          "review_status": "CORRECTED",
+          "repair_log": [],
+          "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
+        },
+        "issues": [
+          {
+            "code": "ADJOINT_SYMBOL",
+            "detail": "展示式中三处L_{LD}的前向上标原为†，摘录全部改为*。"
+          },
+          {
+            "code": "SOURCE_WORDING",
+            "detail": "原文衰减结语不是独立“Since Re(λ1)<0, this …”；实际为上一条末段接续的“and since Re(λ1)<0, we see that this converges exponentially to the desired average.”。"
+          }
+        ],
+        "evidence": [
+          "附件第11页=第3页，印刷258中部两行模式演化式及最末句。",
+          "定理显式给actual periodicTransitionKernel，噪声sqrt(2γβ⁻¹)、β>0、γ>0，Gibbs density的AE识别、C0半群条件及零点右导数图条件。",
+          "结论四部分依次为全时模式公式、复内积平均公式、CS指数界和atTop极限；未把全时模式演化假设化。",
+          "审校限于R9_任务.md所载本条声明和依赖；未读取旧工程、未修改Lean、未补证明或因sorry判失败。"
+        ]
+      },
+      "audit": {
+        "lean_decl": "MD.Ch06.complexEigenmodeDecay",
+        "verdict": "PASS",
+        "explanation": "此为有明确[EXTRA]资格的条件定理：n、噪声空间、B/P、平滑周期U、力的Lipschitz常数、正β/γ均量化；没有把存在性当结论。E为正确的complex flat L²；S有单位元、半群律和逐向量强连续。A为部分复线性算子，只需其图包含于S在0的右导数图，配合平衡/本征图关系，即可从半群推出S tρeq=ρeq和S tρ1=exp(t ev)ρ1，不需把A假设为整个最大生成元。ρ1非零、ev.re<0、α实及第7条概率资格明确。复内积对第二变量线性，故标量系数位置正确；对实检验函数即原书无共轭平均，复检验函数是合理的共轭配对推广。范数界系数|α|‖f‖‖ρ1‖exp(Re(ev)t)及极限正确，结论覆盖L²检验域内的指数收敛。实际核及Gibbs AE识别已作前提，forward existence/identification仍未证明。第8条谓词未保证S保实非负是独立缺陷，但不破坏本条由C0和本征前提推出的四个L²代数/极限结论。原书对所有光滑检验和任意复模式概率性的疑误分别保留在第6、7条，不以本条有资格的条件结论消除。",
+        "counterexample": null,
+        "suggested_fix": "补强第8条forward谓词的保实非负条件后同步使用；文稿中明确本条为条件性L²结论，不能宣称已构造实际前向C0半群或已证明全部光滑检验函数的收敛。"
+      },
+      "subtask": "BATCH42h",
+      "input_sha256": {
+        "Blueprint/Ch06.lean": "0a02a34ec68989a83bccfa5916db5053ecdb58e05667bf21ff3568d9d1f4318e",
+        "blueprint/ch06/ch06_source.json": "45c70ceef21ca168af437de297e2e21e2800b452ab7942654061d4cff9bb5d95",
+        "BATCH42h_PAGES.pdf": "a1452496650f35c505ba46020a634c9977f4744ee37ba9d3941d7c06e8cbc54c",
+        "signature_sha256": "2a6499d4502d8e04e801dd90a17c87fade15d6336092b5ac9f6fec0ee432ae50"
+      }
+    }
+  ],
+  "merged_from": "ch06_first_merged"
+}

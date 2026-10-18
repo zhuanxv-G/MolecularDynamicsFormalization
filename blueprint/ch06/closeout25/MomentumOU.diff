@@ -1,0 +1,15 @@
+--- before
++++ after
+@@ -1244,9 +1244,11 @@
+   sorry
+ 
+ /-- source_id: MD-6.3.2-MomentumOU · (6.20)–(6.21) · §6.3.2 · 印刷p.235 / PDFp.256
+-[EXTRA] [EXTRA]全部正对角质量mi、γ>0、θ=kBT>0和真实各坐标严格积分关系；独立多维W资格另给，不把单位质量桥接当一般质量已证。 -/
++[EXTRA] [EXTRA]全部正对角质量mi、γ>0、θ=kBT>0和真实各坐标严格积分关系；独立多维W资格另给，不把单位质量桥接当一般质量已证。 [EXTRA] 25号：补真实标准向量Wiener资格；该结构给联合Gaussian、全部跨时协方差及连续路径，并有整坐标路径独立定理，不仅是同一时刻独立。其余方程关系保持。
++-/
+ def momentumOU {Ω : Type*} [MeasurableSpace Ω] {n : ℕ} (P : Measure Ω)
+     (W p : ℝ → Ω → MolecularDynamics.Chapter06Review.V n) (m : MolecularDynamics.Chapter06Review.V n) (γ θ : ℝ) (p0 : MolecularDynamics.Chapter06Review.V n) : Prop :=
++  textbookIsWienerVector (fun t sample ↦ W t sample) P ∧
+   (∀ i, 0 < m i) ∧ 0 < γ ∧ 0 < θ ∧
+   ∀ i, strictOUProcess P (fun t sample ↦ W t sample i) (fun t sample ↦ p t sample i) γ (Real.sqrt (2*γ*θ*m i)) (p0 i)
+ 

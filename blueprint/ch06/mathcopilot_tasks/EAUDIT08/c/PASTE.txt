@@ -1,0 +1,180 @@
+以附件/PASTE 为准，忽略 /workspace 旧文件；Mathlib 定义按标准含义采信。
+A逐字核对原文及证明；C只读核对对象、域、量词、前提和全部结论。所有项目定义体及选择规格在下文；仅作为审阅摘录，不是独立模块。theorem/lemma提供完整类型（不审证明）；定义提供完整定义体，按文件作用域解释。不要因sorry判签名FAIL。原文版忠实性、修正版正确性、反例、原书疑误分别说明，不凭旧文件或repair_log猜声明。
+本条MD-6.3.6-FPDiffusionPrinted，subtask=EAUDIT08c；原PDF页映射=[263]。只读，不改工程或补证明。以JSON对象返回batch=EAUDIT08,input_sha256,items；逐条含source_id,subtask,input_sha256,json_review{status,issue_codes,corrected_json,issues,evidence},audit{lean_decl,verdict,explanation,counterexample,suggested_fix}。verdict=PASS/FAIL/NEEDS_HUMAN，status=APPROVED/CORRECTED/NEEDS_HUMAN。必须原样回显下列全部哈希。
+input_sha256:
+{
+  "Blueprint/Ch06.lean": "4a2a6cb72c1692f80e3537ab1a71701d429a482780a01226c3dc66a2ebb8b44b",
+  "blueprint/ch06/ch06_source.json": "d7f93cd20eb570744c710f3e07a88b319c082e4155812fee91db0920eb05944e",
+  "PAGES.pdf": "8e4548411afd8a8d9ff80e4f6d1b7a25ba578c3dd8865cd395ff0aa76261b517",
+  "materials_sha256": "c41a6d1cc83a0185430598dc7b6f878f558bb44a363e5220488890e81d87a513"
+}
+
+## 原文JSON
+```json
+{
+  "source_id": "MD-6.3.6-FPDiffusionPrinted",
+  "kind": "unnumbered_claim",
+  "label": null,
+  "section": "6.3.6",
+  "printed_page": "242",
+  "pdf_page": "263",
+  "statement_latex": "With two rounds of integration by parts on the term involving $b(x)$, we find, using the fact that the boundary terms vanish,\n\\[\\int_{-\\infty}^{+\\infty}b^2(x)\\phi''(x)\\rho(x,t)dx=\\int_{-\\infty}^{+\\infty}\\phi(x)(b^2(x)\\rho)_{xx}(x,t)dx.\\]",
+  "proof_latex": null,
+  "proof_note": "原书未给独立完整证明。",
+  "proof_discussion_latex": null,
+  "context_notation": [],
+  "extra_assumptions": [
+    "[EXTRA] 25号：PDF263/印刷242已目视核对：两次分部积分右端是正号并含(x,t)。删除错误外负号，Printed使用已有独立分部积分证明；撤销虚假原书疑误，旧_corrected名字仅兼容保留。"
+  ],
+  "statement_scope": "本条Lean覆盖范围：PDF263/印刷242已目视核对：两次分部积分右端是正号并含(x,t)。删除错误外负号，Printed使用已有独立分部积分证明；撤销虚假原书疑误，旧_corrected名字仅兼容保留。",
+  "coverage_gaps": []
+}
+```
+## 当前完整Lean（全部原文版、修正版及反例）
+```lean
+theorem fpDiffusionPrinted : ∀ (b ρ φ : ℝ → ℝ),
+  ContDiff ℝ 2 b → ContDiff ℝ 2 ρ → ContDiff ℝ 2 φ → HasCompactSupport φ →
+  (∫ x, b x^2*deriv (deriv φ) x*ρ x)=
+    (∫ x, φ x*deriv (deriv (fun z ↦ b z^2*ρ z)) x) := by
+  intro b ρ φ hb hρ hφ hc
+  have ibp : ∀ (g f : ℝ → ℝ), ContDiff ℝ 1 g → ContDiff ℝ 1 f → HasCompactSupport f →
+      (∫ x, g x*deriv f x)=-(∫ x, deriv g x*f x) := by
+    intro g f hg hf hs
+    have he := fpDriftAdjoint g (fun _ ↦ 1) f hg contDiff_const hf hs
+    simpa only [mul_one, mul_neg, integral_neg, mul_comm] using he
+  have hG : ContDiff ℝ 2 (fun x ↦ b x^2*ρ x) := (hb.pow 2).mul hρ
+  have hG1 : ContDiff ℝ 1 (fun x ↦ b x^2*ρ x) := hG.of_le (by norm_num)
+  have hφ1 : ContDiff ℝ 1 φ := hφ.of_le (by norm_num)
+  have h1 := ibp (fun x ↦ b x^2*ρ x) (deriv φ) hG1 hφ.deriv' hc.deriv
+  have h2 := ibp (deriv (fun x ↦ b x^2*ρ x)) φ hG.deriv' hφ1 hc
+  calc
+    _ = (∫ x, (b x^2*ρ x)*deriv (deriv φ) x) := by
+      apply integral_congr_ae
+      filter_upwards [] with x
+      ring
+    _ = _ := by
+      rw [h1,h2,neg_neg]
+      apply integral_congr_ae
+      filter_upwards [] with x
+      ring
+
+
+
+/-- 原页本为正号；此同义_corrected名称为兼容保留，不是原书勘误。 -/
+theorem fpDiffusionPrinted_corrected : ∀ (b ρ φ : ℝ → ℝ),
+  ContDiff ℝ 2 b → ContDiff ℝ 2 ρ → ContDiff ℝ 2 φ → HasCompactSupport φ →
+  (∫ x, b x^2*deriv (deriv φ) x*ρ x)=
+    (∫ x, φ x*deriv (deriv (fun z ↦ b z^2*ρ z)) x) := by
+  intro b ρ φ hb hρ hφ hc
+  have ibp : ∀ (g f : ℝ → ℝ), ContDiff ℝ 1 g → ContDiff ℝ 1 f → HasCompactSupport f →
+      (∫ x, g x*deriv f x)=-(∫ x, deriv g x*f x) := by
+    intro g f hg hf hs
+    have he := fpDriftAdjoint g (fun _ ↦ 1) f hg contDiff_const hf hs
+    simpa only [mul_one, mul_neg, integral_neg, mul_comm] using he
+  have hG : ContDiff ℝ 2 (fun x ↦ b x^2*ρ x) := (hb.pow 2).mul hρ
+  have hG1 : ContDiff ℝ 1 (fun x ↦ b x^2*ρ x) := hG.of_le (by norm_num)
+  have hφ1 : ContDiff ℝ 1 φ := hφ.of_le (by norm_num)
+  have h1 := ibp (fun x ↦ b x^2*ρ x) (deriv φ) hG1 hφ.deriv' hc.deriv
+  have h2 := ibp (deriv (fun x ↦ b x^2*ρ x)) φ hG.deriv' hφ1 hc
+  calc
+    _ = (∫ x, (b x^2*ρ x)*deriv (deriv φ) x) := by
+      apply integral_congr_ae
+      filter_upwards [] with x
+      ring
+    _ = _ := by
+      rw [h1,h2,neg_neg]
+      apply integral_congr_ae
+      filter_upwards [] with x
+      ring
+```
+### 文件参数及作用域 Blueprint/Ch06.lean
+```lean
+open Set Filter Matrix MeasureTheory ProbabilityTheory MolecularDynamics MolecularDynamics.Chapter02Review MolecularDynamics.Chapter06Review
+open scoped BigOperators Topology ContDiff InnerProductSpace Matrix.Norms.L2Operator ENNReal NNReal
+variable {n Nc : ℕ}
+variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
+variable {R : Type*} [Ring R] [Algebra ℝ R]
+local instance : MeasureSpace UnitAddCircle := ⟨AddCircle.haarAddCircle⟩
+```
+### 文件参数及作用域 MolecularDynamics/Chapter02/SymplecticForm.lean
+```lean
+open Matrix
+open scoped BigOperators Matrix
+```
+### 文件参数及作用域 MolecularDynamics/Chapter02/SymplecticMaps.lean
+```lean
+open Matrix
+open scoped Matrix
+```
+### MD.Ch06.fpDriftAdjoint [Blueprint/Ch06.lean:1609]
+```lean
+theorem fpDriftAdjoint :
+  ∀ (a ρ φ : ℝ → ℝ),
+  ContDiff ℝ 1 a → ContDiff ℝ 1 ρ → ContDiff ℝ 1 φ →
+  HasCompactSupport φ → (∫ x, a x*deriv φ x*ρ x) = ∫ x, φ x*(-deriv (fun z ↦ a z*ρ z) x)
+```
+### MD.Ch06.fpDiffusionPrinted [Blueprint/Ch06.lean:1629]
+```lean
+theorem fpDiffusionPrinted : ∀ (b ρ φ : ℝ → ℝ),
+  ContDiff ℝ 2 b → ContDiff ℝ 2 ρ → ContDiff ℝ 2 φ → HasCompactSupport φ →
+  (∫ x, b x^2*deriv (deriv φ) x*ρ x)=
+    (∫ x, φ x*deriv (deriv (fun z ↦ b z^2*ρ z)) x)
+```
+### MD.Ch06.fpDiffusionPrinted_corrected [Blueprint/Ch06.lean:1658]
+```lean
+theorem fpDiffusionPrinted_corrected : ∀ (b ρ φ : ℝ → ℝ),
+  ContDiff ℝ 2 b → ContDiff ℝ 2 ρ → ContDiff ℝ 2 φ → HasCompactSupport φ →
+  (∫ x, b x^2*deriv (deriv φ) x*ρ x)=
+    (∫ x, φ x*deriv (deriv (fun z ↦ b z^2*ρ z)) x)
+```
+### MolecularDynamics.SymplecticCoordinates [MolecularDynamics/Chapter02/SymplecticForm.lean:25]
+```lean
+abbrev SymplecticCoordinates (Nc : ℕ) := (Fin Nc ⊕ Fin Nc) → ℝ
+```
+### MolecularDynamics.SymplecticCoordinateMatrix [MolecularDynamics/Chapter02/SymplecticForm.lean:27]
+```lean
+abbrev SymplecticCoordinateMatrix (Nc : ℕ) :=
+  Matrix (Fin Nc ⊕ Fin Nc) (Fin Nc ⊕ Fin Nc) ℝ
+```
+### MolecularDynamics.textbookJ [MolecularDynamics/Chapter02/SymplecticForm.lean:31]
+```lean
+noncomputable def textbookJ (Nc : ℕ) : SymplecticCoordinateMatrix Nc :=
+  Matrix.fromBlocks 0 1 (-1) 0
+```
+### MolecularDynamics.IsTextbookSymplectic [MolecularDynamics/Chapter02/SymplecticForm.lean:130]
+```lean
+def IsTextbookSymplectic {Nc : ℕ} (A : SymplecticCoordinateMatrix Nc) : Prop :=
+  Aᵀ * textbookJ Nc * A = textbookJ Nc
+```
+### MolecularDynamics.IsTextbookSymplectic.mul [MolecularDynamics/Chapter02/SymplecticForm.lean:164]
+```lean
+theorem IsTextbookSymplectic.mul {Nc : ℕ} {A B : SymplecticCoordinateMatrix Nc}
+    (hA : IsTextbookSymplectic A) (hB : IsTextbookSymplectic B) :
+    IsTextbookSymplectic (A * B)
+```
+### MolecularDynamics.textbookJacobian [MolecularDynamics/Chapter02/SymplecticMaps.lean:21]
+```lean
+noncomputable def textbookJacobian {Nc : ℕ}
+    (Φ : SymplecticCoordinates Nc → SymplecticCoordinates Nc) (z : SymplecticCoordinates Nc) :
+    SymplecticCoordinateMatrix Nc :=
+  LinearMap.toMatrix' (fderiv ℝ Φ z).toLinearMap
+```
+### MolecularDynamics.IsTextbookSymplecticMap [MolecularDynamics/Chapter02/SymplecticMaps.lean:55]
+```lean
+def IsTextbookSymplecticMap {Nc : ℕ}
+    (Φ : SymplecticCoordinates Nc → SymplecticCoordinates Nc) : Prop :=
+  ContDiff ℝ 1 Φ ∧ ∀ z, IsTextbookSymplectic (textbookJacobian Φ z)
+```
+### MolecularDynamics.IsTextbookSymplecticEquiv [MolecularDynamics/Chapter02/SymplecticMaps.lean:116]
+```lean
+def IsTextbookSymplecticEquiv {Nc : ℕ} (e : Equiv.Perm (SymplecticCoordinates Nc)) : Prop :=
+  IsTextbookSymplecticMap (e : SymplecticCoordinates Nc → SymplecticCoordinates Nc) ∧
+    ContDiff ℝ 1 (e.symm : SymplecticCoordinates Nc → SymplecticCoordinates Nc)
+```
+### MolecularDynamics.IsTextbookSymplecticEquiv.mul [MolecularDynamics/Chapter02/SymplecticMaps.lean:124]
+```lean
+theorem IsTextbookSymplecticEquiv.mul {Nc : ℕ}
+    {e f : Equiv.Perm (SymplecticCoordinates Nc)}
+    (he : IsTextbookSymplecticEquiv e) (hf : IsTextbookSymplecticEquiv f) :
+    IsTextbookSymplecticEquiv (e * f)
+```

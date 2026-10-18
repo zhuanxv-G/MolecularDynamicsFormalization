@@ -1,0 +1,100 @@
+以附件/PASTE 为准，忽略 /workspace 旧文件；Mathlib 定义按标准含义采信。
+A逐字核对原文及证明；C只读核对对象、域、量词、前提和全部结论。所有项目定义体及选择规格在下文；仅作为审阅摘录，不是独立模块。theorem/lemma提供完整类型（不审证明）；定义提供完整定义体，按文件作用域解释。不要因sorry判签名FAIL。原文版忠实性、修正版正确性、反例、原书疑误分别说明，不凭旧文件或repair_log猜声明。
+本条MD-6.1.5-PartitionInversePrinted，subtask=EAUDIT02c；原PDF页映射=[241]。只读，不改工程或补证明。以JSON对象返回batch=EAUDIT02,input_sha256,items；逐条含source_id,subtask,input_sha256,json_review{status,issue_codes,corrected_json,issues,evidence},audit{lean_decl,verdict,explanation,counterexample,suggested_fix}。verdict=PASS/FAIL/NEEDS_HUMAN，status=APPROVED/CORRECTED/NEEDS_HUMAN。必须原样回显下列全部哈希。
+input_sha256:
+{
+  "Blueprint/Ch06.lean": "4a2a6cb72c1692f80e3537ab1a71701d429a482780a01226c3dc66a2ebb8b44b",
+  "blueprint/ch06/ch06_source.json": "d7f93cd20eb570744c710f3e07a88b319c082e4155812fee91db0920eb05944e",
+  "PAGES.pdf": "d6b06345f2ff34655fe7bd43bf8419ebcf430f9e616228c42674005456147341",
+  "materials_sha256": "7e26ad337c124d5f1db3b5c2ce1f57fe17c6a315179bd4f3fb6e2dad162b9c33"
+}
+
+## 原文JSON
+```json
+{
+  "source_id": "MD-6.1.5-PartitionInversePrinted",
+  "kind": "unnumbered_claim",
+  "label": null,
+  "section": "6.1.5",
+  "printed_page": "220",
+  "pdf_page": "241",
+  "statement_latex": "The associated canonical density is\n\\[\\rho_\\beta=Z_{\\rm can}^{-1}\\exp\\left(-\\beta\\left[\\frac{p^2}{2m}+U(q)\\right]\\right),\\]\nwhere\n\\[Z_{\\rm can}^{-1}=\\int_{-\\infty}^{\\infty}\\int_{-\\infty}^{\\infty}\\exp\\left(-\\beta\\left[\\frac{p^2}{2m}+U(q)\\right]\\right)dpdq.\\]",
+  "proof_latex": null,
+  "proof_note": "原书未给独立完整证明。",
+  "proof_discussion_latex": null,
+  "context_notation": [],
+  "extra_assumptions": [
+    "[EXTRA] 25号：原文版忠实性与数学疑误分开；补齐所交条目所属的现有_corrected完整签名，不从repair_log名称推断网站已通过修正版。"
+  ],
+  "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
+  "coverage_gaps": null
+}
+```
+## 当前完整Lean（全部原文版、修正版及反例）
+```lean
+theorem partitionInversePrinted : ∀ {n : ℕ}
+    (m : MolecularDynamics.Chapter06Review.V n)
+    (U : MolecularDynamics.Chapter06Review.V n → ℝ) (β : ℝ),
+  (∀ i, 0 < m i) → 0 < β →
+  Integrable (fun x : MolecularDynamics.Chapter06Review.Phase n ↦
+    Real.exp (-β*MolecularDynamics.Chapter06Review.massHamiltonian m U x)) →
+  (∫ x : MolecularDynamics.Chapter06Review.Phase n,
+    Real.exp (-β*MolecularDynamics.Chapter06Review.massHamiltonian m U x))⁻¹ =
+  (∫ x : MolecularDynamics.Chapter06Review.Phase n,
+    Real.exp (-β*MolecularDynamics.Chapter06Review.massHamiltonian m U x)) := by
+  sorry
+
+/-- 修正版，对应原文 MD-6.1.5-PartitionInversePrinted；改动：Zcan定义为积分本身；归一密度的结论另见DensityNormalization，避免把定义重述作新定理。 -/
+def partitionInversePrinted_corrected {n : ℕ} (m : Fin n → ℝ)
+    (U : (Fin n → ℝ) → ℝ) (β : ℝ) : ℝ :=
+  ∫ x : MolecularDynamics.Chapter06Review.Phase n,
+    Real.exp (-β*MolecularDynamics.Chapter06Review.massHamiltonian m U x)
+```
+### 文件参数及作用域 Blueprint/Ch06.lean
+```lean
+open Set Filter Matrix MeasureTheory ProbabilityTheory MolecularDynamics MolecularDynamics.Chapter02Review MolecularDynamics.Chapter06Review
+open scoped BigOperators Topology ContDiff InnerProductSpace Matrix.Norms.L2Operator ENNReal NNReal
+variable {n Nc : ℕ}
+variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
+variable {R : Type*} [Ring R] [Algebra ℝ R]
+local instance : MeasureSpace UnitAddCircle := ⟨AddCircle.haarAddCircle⟩
+```
+### 文件参数及作用域 MolecularDynamics/Chapter06/ReviewDefinitions.lean
+```lean
+open Set Filter MeasureTheory ProbabilityTheory
+open scoped BigOperators Topology ContDiff ENNReal NNReal
+local instance : MeasureSpace UnitAddCircle := ⟨AddCircle.haarAddCircle⟩
+```
+### MD.Ch06.partitionInversePrinted [Blueprint/Ch06.lean:520]
+```lean
+theorem partitionInversePrinted : ∀ {n : ℕ}
+    (m : MolecularDynamics.Chapter06Review.V n)
+    (U : MolecularDynamics.Chapter06Review.V n → ℝ) (β : ℝ),
+  (∀ i, 0 < m i) → 0 < β →
+  Integrable (fun x : MolecularDynamics.Chapter06Review.Phase n ↦
+    Real.exp (-β*MolecularDynamics.Chapter06Review.massHamiltonian m U x)) →
+  (∫ x : MolecularDynamics.Chapter06Review.Phase n,
+    Real.exp (-β*MolecularDynamics.Chapter06Review.massHamiltonian m U x))⁻¹ =
+  (∫ x : MolecularDynamics.Chapter06Review.Phase n,
+    Real.exp (-β*MolecularDynamics.Chapter06Review.massHamiltonian m U x))
+```
+### MD.Ch06.partitionInversePrinted_corrected [Blueprint/Ch06.lean:533]
+```lean
+def partitionInversePrinted_corrected {n : ℕ} (m : Fin n → ℝ)
+    (U : (Fin n → ℝ) → ℝ) (β : ℝ) : ℝ :=
+  ∫ x : MolecularDynamics.Chapter06Review.Phase n,
+    Real.exp (-β*MolecularDynamics.Chapter06Review.massHamiltonian m U x)
+```
+### MolecularDynamics.Chapter06Review.V [MolecularDynamics/Chapter06/ReviewDefinitions.lean:17]
+```lean
+abbrev V (n : ℕ) := Fin n → ℝ
+```
+### MolecularDynamics.Chapter06Review.Phase [MolecularDynamics/Chapter06/ReviewDefinitions.lean:18]
+```lean
+abbrev Phase (n : ℕ) := V n × V n
+```
+### MolecularDynamics.Chapter06Review.massHamiltonian [MolecularDynamics/Chapter06/ReviewDefinitions.lean:37]
+```lean
+def massHamiltonian {n : ℕ} (m : V n) (U : V n → ℝ) (x : Phase n) : ℝ :=
+  (∑ i, (x.2 i) ^ 2 / (2 * m i)) + U x.1
+```

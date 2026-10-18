@@ -1,0 +1,29 @@
+--- before
++++ after
+@@ -2220,7 +2220,8 @@
+   apply MolecularDynamics.textbookBrownianGibbsComplexResolvent_isCompact <;> assumption
+ 
+ /-- source_id: MD-6.4.3-BrownianDiscreteSpectrum · unnumbered_claim · §6.4.3 · 印刷p.250 / PDFp.271
+-[EXTRA] [EXTRA]实际闭Gibbs复L²域的全谱，非另选某有限模式；包含可数、实值与每个点孤立。 -/
++[EXTRA] [EXTRA]实际闭Gibbs复L²域的全谱，非另选某有限模式；包含可数、实值与每个点孤立。 [EXTRA] 25号：保留已证可数/实谱/孤立子句，新增“每谱点为特征值”的完整短陈述，尚未证明；有限重数与无有限聚点未冒称覆盖。
++-/
+ theorem brownianDiscreteSpectrum {Nc : ℕ} (m : Fin Nc → ℝ) (hm : ∀ i, 0 < m i)
+     (U : (Fin Nc → ℝ) → ℝ) (hU : ContDiff ℝ ∞ U)
+     (hPU : textbookUnitPeriodicPotential U) (β : ℝ) (hβ : 0 < β) :
+@@ -2232,6 +2233,16 @@
+   refine ⟨textbookBrownianGibbsGeneratorComplexSpectrum_countable m hm U hU hPU β hβ, ?_, ?_⟩
+   · exact fun z hz ↦ textbookBrownianGibbsGeneratorComplexSpectrum_im_zero m hm U hU hPU β hβ z hz
+   · exact fun z hz ↦ textbookBrownianGibbsGeneratorComplexSpectrum_isolated m hm U hU hPU β hβ z hz
++
++/-- 25号补全：每个谱点均为闭实现的特征值；尚缺完整谱理论桥接。 -/
++theorem brownianDiscreteSpectrum_eigenvalue {Nc : ℕ} (m : Fin Nc → ℝ) (hm : ∀ i, 0 < m i)
++    (U : (Fin Nc → ℝ) → ℝ) (hU : ContDiff ℝ ∞ U)
++    (hp : textbookUnitPeriodicPotential U) (β : ℝ) (hβ : 0 < β) :
++    ∀ z ∈ textbookBrownianGibbsGeneratorComplexSpectrum m hm U hU hp β hβ,
++      ∃ v : Lp ℂ 2 (textbookConfigurationTorusGibbsMeasure U β), v ≠ 0 ∧
++        (v,z • v) ∈ (textbookBrownianGibbsComplexOperator m hm U hU hp β hβ).graph := by
++  sorry
++
+ 
+ /-- source_id: MD-6.4.3-BrownianSpectralGap · unnumbered_claim · §6.4.3 · 印刷p.251 / PDFp.272
+ [EXTRA] [EXTRA]现成实际全闭谱；正谱隙从真实Poincaré常数得出，不把目标谱隙作前提。 -/

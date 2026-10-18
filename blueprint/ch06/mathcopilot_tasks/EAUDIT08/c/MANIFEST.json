@@ -1,0 +1,111 @@
+{
+  "eaudit": "EAUDIT08",
+  "subtask": "EAUDIT08c",
+  "source_id": "MD-6.3.6-FPDiffusionPrinted",
+  "input_sha256": {
+    "Blueprint/Ch06.lean": "4a2a6cb72c1692f80e3537ab1a71701d429a482780a01226c3dc66a2ebb8b44b",
+    "blueprint/ch06/ch06_source.json": "d7f93cd20eb570744c710f3e07a88b319c082e4155812fee91db0920eb05944e",
+    "PAGES.pdf": "8e4548411afd8a8d9ff80e4f6d1b7a25ba578c3dd8865cd395ff0aa76261b517",
+    "materials_sha256": "c41a6d1cc83a0185430598dc7b6f878f558bb44a363e5220488890e81d87a513"
+  },
+  "paste_sha256": "4b1b9b281f60a3f3ed1fc0d6ca4cbaaa2cfb809586d9c9055c37b5d88be6733f",
+  "source_pdf_sha256": "1939a22e5e96ebd2b58b8e91fe2c796f5390b402f267390f473b271c35d2f036",
+  "pdf_page_mapping": [
+    263
+  ],
+  "crop_pixel_identity": "PASS: copied page render or lossless embedded full-page source pixels",
+  "rasterized_pages": {},
+  "source_declarations": [
+    "fpDiffusionPrinted",
+    "fpDiffusionPrinted_corrected"
+  ],
+  "dependency_excerpts": [
+    {
+      "path": "Blueprint/Ch06.lean",
+      "line": 1609,
+      "full_name": "MD.Ch06.fpDriftAdjoint",
+      "kind": "theorem",
+      "excerpt_sha256": "662b99240ac521be7f9bec9c1496c338696f19f1699532d278b46784bf143528"
+    },
+    {
+      "path": "Blueprint/Ch06.lean",
+      "line": 1629,
+      "full_name": "MD.Ch06.fpDiffusionPrinted",
+      "kind": "theorem",
+      "excerpt_sha256": "35fbe5cbae978f85ac5ebecb6d2f8f69e238fa7efa743a64d17bfe98f07f7631"
+    },
+    {
+      "path": "Blueprint/Ch06.lean",
+      "line": 1658,
+      "full_name": "MD.Ch06.fpDiffusionPrinted_corrected",
+      "kind": "theorem",
+      "excerpt_sha256": "2ae5ee4ceecd0b83fceb2fd3c973124b65f1ba0d5b9337684210c9c8686e5b94"
+    },
+    {
+      "path": "MolecularDynamics/Chapter02/SymplecticForm.lean",
+      "line": 25,
+      "full_name": "MolecularDynamics.SymplecticCoordinates",
+      "kind": "abbrev",
+      "excerpt_sha256": "d801b1ef7d571d0b96c22167cbd9c508f58aeba9e8793a8caaddb87888fc252e"
+    },
+    {
+      "path": "MolecularDynamics/Chapter02/SymplecticForm.lean",
+      "line": 27,
+      "full_name": "MolecularDynamics.SymplecticCoordinateMatrix",
+      "kind": "abbrev",
+      "excerpt_sha256": "f11e8c230eb2e2caa77c5d8ff83b56b846ee34e6d0347e62c39dea2ffa50f12c"
+    },
+    {
+      "path": "MolecularDynamics/Chapter02/SymplecticForm.lean",
+      "line": 31,
+      "full_name": "MolecularDynamics.textbookJ",
+      "kind": "def",
+      "excerpt_sha256": "c7944ade4b768d7f5c7755bc8d2b34c927db678ea6d001a3deb85cc2318f8304"
+    },
+    {
+      "path": "MolecularDynamics/Chapter02/SymplecticForm.lean",
+      "line": 130,
+      "full_name": "MolecularDynamics.IsTextbookSymplectic",
+      "kind": "def",
+      "excerpt_sha256": "6642b20035e535f764e24183b8b3fd564c65f367b80a24c79a394d8a4d55056f"
+    },
+    {
+      "path": "MolecularDynamics/Chapter02/SymplecticForm.lean",
+      "line": 164,
+      "full_name": "MolecularDynamics.IsTextbookSymplectic.mul",
+      "kind": "theorem",
+      "excerpt_sha256": "1bb91329ff8b48e3fd2d81a365e74f3a0be92c1c874b01463339c3a9be4105cb"
+    },
+    {
+      "path": "MolecularDynamics/Chapter02/SymplecticMaps.lean",
+      "line": 21,
+      "full_name": "MolecularDynamics.textbookJacobian",
+      "kind": "def",
+      "excerpt_sha256": "de22cc68d29839d120350e99f4983537ef9e72385df49f475c8e3396754dcdbe"
+    },
+    {
+      "path": "MolecularDynamics/Chapter02/SymplecticMaps.lean",
+      "line": 55,
+      "full_name": "MolecularDynamics.IsTextbookSymplecticMap",
+      "kind": "def",
+      "excerpt_sha256": "7563019e4b4160d2583955860a10898409a2b10b6eb8f48ee27ca77e8efc5c9a"
+    },
+    {
+      "path": "MolecularDynamics/Chapter02/SymplecticMaps.lean",
+      "line": 116,
+      "full_name": "MolecularDynamics.IsTextbookSymplecticEquiv",
+      "kind": "def",
+      "excerpt_sha256": "eda4781471a3a0658755ede22a64490faa2cb095b4bdd9b029e39637724353dc"
+    },
+    {
+      "path": "MolecularDynamics/Chapter02/SymplecticMaps.lean",
+      "line": 124,
+      "full_name": "MolecularDynamics.IsTextbookSymplecticEquiv.mul",
+      "kind": "theorem",
+      "excerpt_sha256": "44e3703c694c0b65a312124f4b614002427e1d80f4132a6850c00a29283c007c"
+    }
+  ],
+  "project_definition_closure": "complete recursive definitions, referenced theorem types, explicit choice and consistency specifications",
+  "website_submitted": false,
+  "total_task_bytes": 80492
+}

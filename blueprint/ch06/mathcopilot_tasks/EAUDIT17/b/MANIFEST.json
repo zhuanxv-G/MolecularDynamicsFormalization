@@ -1,0 +1,286 @@
+{
+  "eaudit": "EAUDIT17",
+  "subtask": "EAUDIT17b",
+  "source_id": "MD-6.4.4-WeightedH1Norm",
+  "input_sha256": {
+    "Blueprint/Ch06.lean": "4a2a6cb72c1692f80e3537ab1a71701d429a482780a01226c3dc66a2ebb8b44b",
+    "blueprint/ch06/ch06_source.json": "d7f93cd20eb570744c710f3e07a88b319c082e4155812fee91db0920eb05944e",
+    "PAGES.pdf": "05d82dee1a11f046df1efba6787fe61874a0a9aa5f9c20dda6307204f3c1a134",
+    "materials_sha256": "d609a7b3ce684cb5d08c29f6ea4cd85875c6820610ede02586631b45166bf150"
+  },
+  "paste_sha256": "4a0d91d6d0e2ad558fc62775a05f2c0832f591e985115970519dd1311e472c9d",
+  "source_pdf_sha256": "1939a22e5e96ebd2b58b8e91fe2c796f5390b402f267390f473b271c35d2f036",
+  "pdf_page_mapping": [
+    277,
+    278
+  ],
+  "crop_pixel_identity": "PASS: copied page render or lossless embedded full-page source pixels",
+  "rasterized_pages": {},
+  "source_declarations": [
+    "weightedH1Norm"
+  ],
+  "dependency_excerpts": [
+    {
+      "path": "Blueprint/Ch06.lean",
+      "line": 3229,
+      "full_name": "MD.Ch06.weightedH1Norm",
+      "kind": "theorem",
+      "excerpt_sha256": "79fc1816c8f3e4d894c67c87181265f46aa75a8eb34ee76bac6ec718c3773e71"
+    },
+    {
+      "path": "MolecularDynamics/Chapter02/SymplecticForm.lean",
+      "line": 25,
+      "full_name": "MolecularDynamics.SymplecticCoordinates",
+      "kind": "abbrev",
+      "excerpt_sha256": "d801b1ef7d571d0b96c22167cbd9c508f58aeba9e8793a8caaddb87888fc252e"
+    },
+    {
+      "path": "MolecularDynamics/Chapter02/SymplecticForm.lean",
+      "line": 27,
+      "full_name": "MolecularDynamics.SymplecticCoordinateMatrix",
+      "kind": "abbrev",
+      "excerpt_sha256": "f11e8c230eb2e2caa77c5d8ff83b56b846ee34e6d0347e62c39dea2ffa50f12c"
+    },
+    {
+      "path": "MolecularDynamics/Chapter02/SymplecticForm.lean",
+      "line": 31,
+      "full_name": "MolecularDynamics.textbookJ",
+      "kind": "def",
+      "excerpt_sha256": "c7944ade4b768d7f5c7755bc8d2b34c927db678ea6d001a3deb85cc2318f8304"
+    },
+    {
+      "path": "MolecularDynamics/Chapter02/SymplecticForm.lean",
+      "line": 130,
+      "full_name": "MolecularDynamics.IsTextbookSymplectic",
+      "kind": "def",
+      "excerpt_sha256": "6642b20035e535f764e24183b8b3fd564c65f367b80a24c79a394d8a4d55056f"
+    },
+    {
+      "path": "MolecularDynamics/Chapter02/SymplecticMaps.lean",
+      "line": 21,
+      "full_name": "MolecularDynamics.textbookJacobian",
+      "kind": "def",
+      "excerpt_sha256": "de22cc68d29839d120350e99f4983537ef9e72385df49f475c8e3396754dcdbe"
+    },
+    {
+      "path": "MolecularDynamics/Chapter02/SymplecticMaps.lean",
+      "line": 55,
+      "full_name": "MolecularDynamics.IsTextbookSymplecticMap",
+      "kind": "def",
+      "excerpt_sha256": "7563019e4b4160d2583955860a10898409a2b10b6eb8f48ee27ca77e8efc5c9a"
+    },
+    {
+      "path": "MolecularDynamics/Chapter02/SymplecticMaps.lean",
+      "line": 86,
+      "full_name": "MolecularDynamics.IsTextbookSymplecticMap.comp",
+      "kind": "theorem",
+      "excerpt_sha256": "c50b4bc7e836e7f63b8b43b992458e7f6e06306e245a300ea8f72acc8c682f65"
+    },
+    {
+      "path": "MolecularDynamics/Chapter06/BrownianDirichlet.lean",
+      "line": 13,
+      "full_name": "MolecularDynamics.textbookConfigurationPartial",
+      "kind": "def",
+      "excerpt_sha256": "fbca5c0abb1ddc15e963008415ea72d955f5e4a49bbc36888fbf88ab7a80409d"
+    },
+    {
+      "path": "MolecularDynamics/Chapter06/BrownianDirichlet.lean",
+      "line": 18,
+      "full_name": "MolecularDynamics.textbookConfigurationCube",
+      "kind": "def",
+      "excerpt_sha256": "09df86f1ec71f9b7683204ae6fb4a4c17076a4a71db9c03a87623d7423d83273"
+    },
+    {
+      "path": "MolecularDynamics/Chapter06/BrownianDirichlet.lean",
+      "line": 21,
+      "full_name": "MolecularDynamics.textbookConfigurationGibbsWeight",
+      "kind": "def",
+      "excerpt_sha256": "a5bd766d1cbfda65d529ec6b709aea756a842e8914cf452dd793034c4f50877b"
+    },
+    {
+      "path": "MolecularDynamics/Chapter06/BrownianDirichlet.lean",
+      "line": 271,
+      "full_name": "MolecularDynamics.textbookConfigurationPartition",
+      "kind": "def",
+      "excerpt_sha256": "bf3cd0410e09c0f547733bf9b24c116b519d674f74b7f0eeba4a189faceb3344"
+    },
+    {
+      "path": "MolecularDynamics/Chapter06/BrownianTorusGibbs.lean",
+      "line": 26,
+      "full_name": "MolecularDynamics.textbookConfigurationTorusRepresentative",
+      "kind": "def",
+      "excerpt_sha256": "442425b55f5d24af24ce8c8e5b0e314d6b91d6587caed2be34469765d342394e"
+    },
+    {
+      "path": "MolecularDynamics/Chapter06/BrownianTorusGibbs.lean",
+      "line": 61,
+      "full_name": "MolecularDynamics.textbookConfigurationTorusObservable",
+      "kind": "def",
+      "excerpt_sha256": "cb669cb19f543779af1b1e95cfda5a27558df70edccf81015dbea8b6a83e7840"
+    },
+    {
+      "path": "MolecularDynamics/Chapter06/BrownianTorusGibbs.lean",
+      "line": 128,
+      "full_name": "MolecularDynamics.textbookConfigurationTorusGibbsWeight",
+      "kind": "def",
+      "excerpt_sha256": "f55998b10922bf1f86318be773315bb1e410284130560cec0696abf6c6e6f535"
+    },
+    {
+      "path": "MolecularDynamics/Chapter06/BrownianTorusGibbs.lean",
+      "line": 159,
+      "full_name": "MolecularDynamics.textbookConfigurationTorusGibbsMeasure",
+      "kind": "def",
+      "excerpt_sha256": "c24f3b2b97b6334c7a6ca4e263f5be752e2e0618d4738aa7b973ac8cf55cd5fe"
+    },
+    {
+      "path": "MolecularDynamics/Chapter06/LangevinCanonicalCoordinateWeakDerivative.lean",
+      "line": 18,
+      "full_name": "MolecularDynamics.textbookLangevinCanonicalCoordinateDirection",
+      "kind": "def",
+      "excerpt_sha256": "dcca9f8f19713545eee945f80facf6120420030fc212cfa04078bdaac92600e0"
+    },
+    {
+      "path": "MolecularDynamics/Chapter06/LangevinCanonicalCoordinateWeakDerivative.lean",
+      "line": 24,
+      "full_name": "MolecularDynamics.textbookLangevinCanonicalCoordinateLogSlope",
+      "kind": "def",
+      "excerpt_sha256": "5c9f97484fcba01c7c41ebb3d5315b73dbeee3b89e6d30025e442650c18b4457"
+    },
+    {
+      "path": "MolecularDynamics/Chapter06/LangevinCanonicalCoordinateWeakDerivative.lean",
+      "line": 171,
+      "full_name": "MolecularDynamics.textbookLangevinCanonicalCoordinateAdjointTestExpression",
+      "kind": "def",
+      "excerpt_sha256": "fed90c07d22aaa5f8de03148eb49d608be42769a0725fd594b0d81bc2996d19f"
+    },
+    {
+      "path": "MolecularDynamics/Chapter06/LangevinCanonicalCoordinateWeakDerivative.lean",
+      "line": 242,
+      "full_name": "MolecularDynamics.textbookLangevinCanonicalCoordinateAdjointTestExpression_memLp_two",
+      "kind": "theorem",
+      "excerpt_sha256": "5307a32404ea31c29e43a4c0aef14ab73138aad460bcfe1d94f3bbc4f32529e5"
+    },
+    {
+      "path": "MolecularDynamics/Chapter06/LangevinCanonicalHilbertGraph.lean",
+      "line": 13,
+      "full_name": "MolecularDynamics.textbookLangevinCanonicalMeasure_compact_memLp_two",
+      "kind": "theorem",
+      "excerpt_sha256": "5b0052b24e40648dd3cdfe096c282a67e13c28f8379e6029cb8f3cb3097e5257"
+    },
+    {
+      "path": "MolecularDynamics/Chapter06/LangevinCanonicalHilbertGraph.lean",
+      "line": 23,
+      "full_name": "MolecularDynamics.textbookLangevinCanonicalL2CompactObservable",
+      "kind": "def",
+      "excerpt_sha256": "f09a479d0490c2197e96713d3caaf5bdb00025e7f3d76a761d39b22b1a577cb5"
+    },
+    {
+      "path": "MolecularDynamics/Chapter06/LangevinCanonicalMeasure.lean",
+      "line": 20,
+      "full_name": "MolecularDynamics.canonicalVariance",
+      "kind": "def",
+      "excerpt_sha256": "8c4048d70813415bebc16e3c96efd8393baedcca84fd9d67a6364b6b8b4e073e"
+    },
+    {
+      "path": "MolecularDynamics/Chapter06/LangevinCanonicalMeasure.lean",
+      "line": 29,
+      "full_name": "MolecularDynamics.textbookLangevinCanonicalMomentumMeasure",
+      "kind": "def",
+      "excerpt_sha256": "5fe47a006e72e0b9ed9f82b758323ff65ac5d4152b03a6cc9728ff6c0f7b8207"
+    },
+    {
+      "path": "MolecularDynamics/Chapter06/LangevinCanonicalMeasure.lean",
+      "line": 110,
+      "full_name": "MolecularDynamics.textbookLangevinCanonicalMeasure",
+      "kind": "def",
+      "excerpt_sha256": "b1e2db8b5b1df86c7aeb84abd1b37d13c4305e5bb7ba8290fff66bbdadb369c8"
+    },
+    {
+      "path": "MolecularDynamics/Chapter06/LangevinCanonicalWeakBalance.lean",
+      "line": 41,
+      "full_name": "MolecularDynamics.textbookLangevinPeriodicDirectionalDerivative",
+      "kind": "def",
+      "excerpt_sha256": "ee9cf419b42860a61ea12179056be3ac66e6c308a216a0f6a4558b0d0c685642"
+    },
+    {
+      "path": "MolecularDynamics/Chapter06/LangevinCanonicalWeakH1.lean",
+      "line": 13,
+      "full_name": "MolecularDynamics.weakH1_F_continuous",
+      "kind": "theorem",
+      "excerpt_sha256": "da8533b9b570dcc4cffa4132275c1ad80c82fa58ede72119d0321798b1e151f3"
+    },
+    {
+      "path": "MolecularDynamics/Chapter06/LangevinCanonicalWeakH1.lean",
+      "line": 18,
+      "full_name": "MolecularDynamics.textbookLangevinCanonicalH1Jet",
+      "kind": "abbrev",
+      "excerpt_sha256": "564c488bfe8a0aef2b324a078119865448683008812425926cfcdc6a6b310806"
+    },
+    {
+      "path": "MolecularDynamics/Chapter06/LangevinCanonicalWeakH1.lean",
+      "line": 24,
+      "full_name": "MolecularDynamics.textbookLangevinCanonicalH1WeakGraph",
+      "kind": "def",
+      "excerpt_sha256": "c7ae96256712d3c9055640fc8608fa2d3cd4e97d85307372e6f6cd88552a566f"
+    },
+    {
+      "path": "MolecularDynamics/Chapter06/LangevinCanonicalWeakH1.lean",
+      "line": 83,
+      "full_name": "MolecularDynamics.textbookLangevinCanonicalWeakH1",
+      "kind": "abbrev",
+      "excerpt_sha256": "dd44d01b6f2550cce69dd361f035b9bc73d1fc5dafb70d3b0c04317859812df1"
+    },
+    {
+      "path": "MolecularDynamics/Chapter06/LangevinCanonicalWeakH1.lean",
+      "line": 95,
+      "full_name": "MolecularDynamics.textbookLangevinCanonicalWeakH1Value",
+      "kind": "def",
+      "excerpt_sha256": "770be6cc50fed8a9c0a38a38f13b60da66ab53967ad747caa3432bd224f5e922"
+    },
+    {
+      "path": "MolecularDynamics/Chapter06/LangevinCanonicalWeakH1.lean",
+      "line": 103,
+      "full_name": "MolecularDynamics.textbookLangevinCanonicalWeakH1Derivative",
+      "kind": "def",
+      "excerpt_sha256": "5beaa144f7e3d3367b06e7b45092d0962c428d98dfe56e2374530134f8d1d167"
+    },
+    {
+      "path": "MolecularDynamics/Chapter06/LangevinCanonicalWeakH1.lean",
+      "line": 141,
+      "full_name": "MolecularDynamics.textbookLangevinCanonicalWeakH1_norm_sq",
+      "kind": "theorem",
+      "excerpt_sha256": "783b83820be53a0470f224b8c795b49766e0af913bb9c2134ed602b4b02bce74"
+    },
+    {
+      "path": "MolecularDynamics/Chapter06/LangevinHormander.lean",
+      "line": 12,
+      "full_name": "MolecularDynamics.textbookLangevinPhase",
+      "kind": "abbrev",
+      "excerpt_sha256": "ee32316762cd33e19f1e5e47745da89914943aa66b85fb83f71d95c9b012a326"
+    },
+    {
+      "path": "MolecularDynamics/Chapter06/LangevinPeriodicForce.lean",
+      "line": 13,
+      "full_name": "MolecularDynamics.textbookUnitPeriodicPotential",
+      "kind": "def",
+      "excerpt_sha256": "e26dd47f5c122900493506ccbe55a9fe93351b063566435477f1cbd5e0803040"
+    },
+    {
+      "path": "MolecularDynamics/Chapter06/LangevinPeriodicProjection.lean",
+      "line": 14,
+      "full_name": "MolecularDynamics.textbookLangevinPeriodicPhase",
+      "kind": "abbrev",
+      "excerpt_sha256": "102d1bb0e87353db402a2cc858c5fb35b9a9c5730062ef3342e6b0f813ccfb58"
+    },
+    {
+      "path": "MolecularDynamics/Chapter06/LangevinPeriodicProjection.lean",
+      "line": 17,
+      "full_name": "MolecularDynamics.textbookLangevinPeriodicProjection",
+      "kind": "def",
+      "excerpt_sha256": "9039e1043deb7d19fcb9c957cf2941bda97bce3ad50948a5df792ac90b7d7020"
+    }
+  ],
+  "project_definition_closure": "complete recursive definitions, referenced theorem types, explicit choice and consistency specifications",
+  "website_submitted": false,
+  "total_task_bytes": 147752
+}

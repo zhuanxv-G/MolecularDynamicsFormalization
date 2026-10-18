@@ -1,3 +1,9 @@
+# 25号已完成：停止等待用户提交第6章复审包
+
+先读CURRENT_STATE顶部和25号指令。20包/60条已生成；本轮不向网站提交，不进入第7章。除非用户给新指令，不继续证明或处理后续章节。
+
+---
+
 # 按24号继续第2–5章收口
 
 先读AGENTS、CURRENT_STATE顶部、WORK_LOG最新和第2–5章PROGRESS，先git status并复用通过证据。完整24号原文见blueprint/closeout24/USER_INSTRUCTION.zh-CN.md。仅第2–5章，正式库与第1/6章冻结，不进入第7章，不再送网站。

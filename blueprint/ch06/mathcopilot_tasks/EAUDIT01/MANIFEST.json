@@ -1,0 +1,29 @@
+{
+  "eaudit": "EAUDIT01",
+  "subtasks": [
+    {
+      "subtask": "EAUDIT01a",
+      "source_id": "MD-6.1.2-IndependentPartition",
+      "path": "blueprint/ch06/mathcopilot_tasks/EAUDIT01/a",
+      "total_bytes": 63521,
+      "definitions": 8,
+      "manifest_sha256": "e56265d57e15cd65eaae6997a58f0b9e84df3cc6f17e190b794cb27095e69a03"
+    },
+    {
+      "subtask": "EAUDIT01b",
+      "source_id": "MD-6.1.2-BathTaylor",
+      "path": "blueprint/ch06/mathcopilot_tasks/EAUDIT01/b",
+      "total_bytes": 82374,
+      "definitions": 3,
+      "manifest_sha256": "083fce7ea20ab0f415e48f34957c004948eab598f00651e3a889e900f4d2ee33"
+    },
+    {
+      "subtask": "EAUDIT01c",
+      "source_id": "MD-6.1.2-CanonicalCDFPrinted",
+      "path": "blueprint/ch06/mathcopilot_tasks/EAUDIT01/c",
+      "total_bytes": 81956,
+      "definitions": 2,
+      "manifest_sha256": "296de9d2c0897f089f6c547172e97c9554a37ce36d22a3039e7a8512545f04a7"
+    }
+  ]
+}

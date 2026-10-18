@@ -1,0 +1,60 @@
+--- before
++++ after
+@@ -19,6 +19,47 @@
+ variable {n Nc : ℕ}
+ variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
+ variable {R : Type*} [Ring R] [Algebra ℝ R]
++
++
++/-- 25号：只在非负时间使用的真实自然历史，包含全部过去。 -/
++def naturalHistory25 {Ω V : Type*} [MeasurableSpace Ω] [MeasurableSpace V]
++    (X : ℝ → Ω → V) (s : ℝ) : MeasurableSpace Ω :=
++  ⨆ r : {r : ℝ // 0 ≤ r ∧ r ≤ s}, MeasurableSpace.comap (X r) inferInstance
++
++/-- 25号：严格网格积分的充分资格；切片L²、有限和L²及局部均方Hölder控制。
++不把积分公式或其所求极限作为假设。 -/
++def gridItoQualification25 {Ω : Type*} [MeasurableSpace Ω] (P : Measure Ω)
++    (W g : ℝ → Ω → ℝ) : Prop :=
++  IsProbabilityMeasure P ∧ Measurable (Function.uncurry g) ∧
++  (∀ t : ℝ, 0 ≤ t → @Measurable Ω ℝ (naturalHistory25 W t) inferInstance (g t)) ∧
++  ∀ T : ℝ, 0 ≤ T →
++    (∀ t ∈ Icc 0 T, MemLp (g t) 2 P) ∧
++    (∀ K : ℕ, MemLp (MolecularDynamics.Chapter06Review.itoLeftSum W g T K) 2 P) ∧
++    ∃ C : ℝ, 0 ≤ C ∧ ∀ s ∈ Icc 0 T, ∀ t ∈ Icc 0 T,
++      (∫ sample, (g s sample-g t sample)^2 ∂P) ≤ C*|s-t|
++
++/-- 25号：共同向量自然过滤上的适应性与均方时间正则；不要求仅对单坐标历史适应。 -/
++def vectorGridItoQualification25 {Ω : Type*} [MeasurableSpace Ω] {r : ℕ}
++    (P : Measure Ω) (W : ℝ → Ω → (Fin r → ℝ)) (g : Fin r → ℝ → Ω → ℝ) : Prop :=
++  IsProbabilityMeasure P ∧ (∀ j, Measurable (Function.uncurry (g j))) ∧
++  (∀ j t, 0 ≤ t → @Measurable Ω ℝ (naturalHistory25 W t) inferInstance (g j t)) ∧
++  ∀ j T, 0 ≤ T → (∀ t ∈ Icc 0 T, MemLp (g j t) 2 P) ∧
++    (∀ K : ℕ, MemLp (MolecularDynamics.Chapter06Review.itoLeftSum
++      (fun s sample ↦ W s sample j) (g j) T K) 2 P) ∧
++    ∃ C : ℝ, 0 ≤ C ∧ ∀ s ∈ Icc 0 T, ∀ t ∈ Icc 0 T,
++      (∫ sample, (g j s sample-g j t sample)^2 ∂P) ≤ C*|s-t|
++
++/-- 25号：Markov半群及紧支光滑测试的真实右生成元资格。
++它是给定核与Langevin微分表达式的识别条件，不是任意核存在性定理。 -/
++def langevinKernelQualification25 {n : ℕ} (U : (Fin n → ℝ) → ℝ) (β γ : ℝ)
++    (K : ℝ≥0 → Kernel (textbookLangevinPeriodicPhase n) (textbookLangevinPeriodicPhase n)) : Prop :=
++  0 < β ∧ 0 < γ ∧ ContDiff ℝ ∞ U ∧ textbookUnitPeriodicPotential U ∧
++  MolecularDynamics.Chapter06Review.markovSemigroup K ∧
++  ∀ f : textbookLangevinPeriodicPhase n → ℝ,
++    ContDiff ℝ ∞ (f ∘ textbookLangevinPeriodicProjection) → HasCompactSupport f →
++    ∀ x, HasDerivWithinAt
++      (fun t : ℝ ↦ MolecularDynamics.Chapter06Review.kernelAverage K f t.toNNReal x)
++      (textbookLangevinPeriodicDifferentialOperator U γ (Real.sqrt (2*γ*β⁻¹)) f x) (Ici 0) 0
+ 
+ /-- source_id: MD-6.1.1-Microcanonical · definition · §6.1.1 · 印刷p.214 / PDFp.235 -/
+ def microcanonical {n : ℕ} (H : MolecularDynamics.Chapter05Review.E n → ℝ) (energy : ℝ) :=
+@@ -618,7 +659,8 @@
+   MolecularDynamics.Chapter06Review.diffusiveWalk J dt n sample + (t - n * dt) / dt *
+     (MolecularDynamics.Chapter06Review.diffusiveWalk J dt (n+1) sample - MolecularDynamics.Chapter06Review.diffusiveWalk J dt n sample)
+ 
+-/-- source_id: MD-6.2.1-WalkIncrement · definition · §6.2.1 · 印刷p.225–226 / PDFp.246–247 -/
++/-- source_id: MD-6.2.1-WalkIncrement · definition · §6.2.1 · 印刷p.225–226 / PDFp.246–247 [EXTRA] 25号：仅覆盖一步差分定义；dx·J、扩散缩放等式及独立增量尚未在本条声明。
++-/
+ def walkIncrement {Ω : Type*} (J : ℕ → Ω → ℝ) (dx : ℝ) (n : ℕ) (sample : Ω) : ℝ :=
+   MolecularDynamics.Chapter06Review.randomWalk J dx (n+1) sample - MolecularDynamics.Chapter06Review.randomWalk J dx n sample
+ 

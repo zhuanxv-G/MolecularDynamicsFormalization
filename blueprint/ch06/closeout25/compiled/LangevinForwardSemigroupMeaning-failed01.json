@@ -1,0 +1,98 @@
+{
+  "command": [
+    "lake",
+    "--no-cache",
+    "env",
+    "lean",
+    "--server"
+  ],
+  "mode": "official Lean compiler single-file LSP elaboration",
+  "exit_code": 1,
+  "input_sha256": "d24261ab01dfc3f36fc12ef8710869debafa84e734e4a5d9ec4b2668636e6f26",
+  "log_sha256": "e7c6bd3d06f3258a60124eba93cdc94bce5ea35e01dd50397a1ce68f984cf88c",
+  "version": 24,
+  "uri": "file:///C:/Users/ustc/Desktop/formal%20math/MolecularDynamicsFormalization/blueprint/ch06/closeout25/ActiveCheck.lean",
+  "elapsed_seconds": 4.713271141052246,
+  "errors": [
+    {
+      "fullRange": {
+        "end": {
+          "character": 91,
+          "line": 3311
+        },
+        "start": {
+          "character": 90,
+          "line": 3311
+        }
+      },
+      "message": "Application type mismatch: The argument\n  S\nhas type\n  ℝ≥0 → ↥E →L[ℂ] ↥E\nbut is expected to have type\n  ℝ\nin the application\n  langevinForwardSemigroupMeaning ?m.77 S",
+      "range": {
+        "end": {
+          "character": 91,
+          "line": 3311
+        },
+        "start": {
+          "character": 90,
+          "line": 3311
+        }
+      },
+      "severity": 1,
+      "source": "Lean 4"
+    },
+    {
+      "fullRange": {
+        "end": {
+          "character": 89,
+          "line": 3311
+        },
+        "start": {
+          "character": 6,
+          "line": 3311
+        }
+      },
+      "message": "Application type mismatch: The argument\n  textbookLangevinPeriodicTransitionKernel B P U hU hp L hF γ √(2 * γ * β⁻¹)\nhas type\n  ℝ≥0 → Kernel (textbookLangevinPeriodicPhase n) (textbookLangevinPeriodicPhase n)\nbut is expected to have type\n  (Fin ?m.60 → ℝ) → ℝ\nin the application\n  langevinForwardSemigroupMeaning (textbookLangevinPeriodicTransitionKernel B P U hU hp L hF γ √(2 * γ * β⁻¹))",
+      "range": {
+        "end": {
+          "character": 89,
+          "line": 3311
+        },
+        "start": {
+          "character": 6,
+          "line": 3311
+        }
+      },
+      "severity": 1,
+      "source": "Lean 4"
+    },
+    {
+      "code": "lean.unknownIdentifier",
+      "fullRange": {
+        "end": {
+          "character": 43,
+          "line": 3643
+        },
+        "start": {
+          "character": 14,
+          "line": 3643
+        }
+      },
+      "message": "Unknown constant `MD.Ch06.complexEigenmodeDecay`",
+      "range": {
+        "end": {
+          "character": 43,
+          "line": 3643
+        },
+        "start": {
+          "character": 14,
+          "line": 3643
+        }
+      },
+      "severity": 1,
+      "source": "Lean 4"
+    }
+  ],
+  "missing_axiom_outputs": [
+    "MD.Ch06.complexEigenmodeDecay"
+  ],
+  "canonical_sha256": "edeabf01accaf3e9666bcd05371b57f74e344a9d985264468da9e30e36eb04eb"
+}

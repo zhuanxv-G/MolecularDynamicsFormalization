@@ -1,0 +1,362 @@
+{
+  "batch": "BATCH32",
+  "chapter": "ch06",
+  "round": "first-merged",
+  "input_sha256": {
+    "Blueprint/Ch06.lean": "0a02a34ec68989a83bccfa5916db5053ecdb58e05667bf21ff3568d9d1f4318e",
+    "blueprint/ch06/ch06_source.json": "45c70ceef21ca168af437de297e2e21e2800b452ab7942654061d4cff9bb5d95"
+  },
+  "items": [
+    {
+      "source_id": "MD-6.4.1-FiniteInvariant",
+      "json_review": {
+        "status": "CORRECTED",
+        "issue_codes": [
+          "SOURCE_SUBSCRIPT_TRANSCRIPTION"
+        ],
+        "corrected_json": {
+          "source_id": "MD-6.4.1-FiniteInvariant",
+          "kind": "definition",
+          "label": null,
+          "section": "6.4.1",
+          "printed_page": "246",
+          "pdf_page": "267",
+          "statement_latex": "An invariant distribution is a left eigenvector of $\\Pi$, having only non-negative elements, and corresponding to the eigenvalue 1. That is, an invariant distribution $\\psi_*$ satisfies\n\\[\\psi_*=\\psi_*\\Pi.\\]",
+          "proof_latex": null,
+          "proof_note": "原书未给独立完整证明。",
+          "proof_discussion_latex": null,
+          "context_notation": [
+            "真实归一化非负左特征向量；不忽略归一化或改为右向量。"
+          ],
+          "issues": [
+            {
+              "code": "SOURCE_SUBSCRIPT_TRANSCRIPTION",
+              "message": "原页平稳向量记作ψ_*（下标星号），JSON转成ψ^*（上标星号）；语义相同但逐字转录应恢复下标。"
+            }
+          ],
+          "lean_decl": "MD.Ch06.finiteInvariant",
+          "reusable_proofs": [],
+          "extra_assumptions": [],
+          "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
+          "review_status": "CORRECTED",
+          "repair_log": [
+            "R6审校：只修订审校JSON；原书数学疑误保留，未修改Lean工程或补证明。"
+          ],
+          "source_page_verification": "R6_PAGES.pdf 附件第25页；已比对对应原页渲染及文本；详见本条evidence。"
+        },
+        "issues": [
+          {
+            "code": "SOURCE_SUBSCRIPT_TRANSCRIPTION",
+            "message": "原页平稳向量记作ψ_*（下标星号），JSON转成ψ^*（上标星号）；语义相同但逐字转录应恢复下标。"
+          }
+        ],
+        "evidence": [
+          "A：R6_PAGES.pdf 附件第25页（原PDF 267，印刷页246）；逐字、公式及页码核对。",
+          "C：只读核对R6_任务.md本条全部Lean签名及其列出的项目依赖/附录定义，未使用旧工程文件；不以sorry判FAIL。",
+          "图6.6下方平稳向量及极限式的星号位于ψ的下标。"
+        ]
+      },
+      "audit": {
+        "lean_decl": "MD.Ch06.finiteInvariant",
+        "verdict": "PASS",
+        "explanation": "真实Chapter06Review.finiteDistribution要求非负且总和1，再以Matrix.vecMul ψ Π=ψ表达特征值1的左不变性；完整概率对象而不是未归一化/零特征向量。总和1由distribution的前文语义继承合理。",
+        "counterexample": null,
+        "suggested_fix": null
+      },
+      "subtask": "BATCH32a",
+      "input_sha256": {
+        "Blueprint/Ch06.lean": "0a02a34ec68989a83bccfa5916db5053ecdb58e05667bf21ff3568d9d1f4318e",
+        "blueprint/ch06/ch06_source.json": "45c70ceef21ca168af437de297e2e21e2800b452ab7942654061d4cff9bb5d95",
+        "BATCH32a_PAGES.pdf": "2ee24942198a8040f41ec7d6bede99765056510736a4143733ace44e5d7d465f",
+        "signature_sha256": "14a7d6ba154cc917641bd1c101aed81d58a7477b85b994374670652541f18e33"
+      }
+    },
+    {
+      "source_id": "MD-6.4.1-FiniteErgodicity",
+      "json_review": {
+        "status": "NEEDS_HUMAN",
+        "issue_codes": [
+          "SOURCE_SUBSCRIPT_TRANSCRIPTION",
+          "PRINTED_APERIODICITY_OMITTED_IN_DISCUSSION"
+        ],
+        "corrected_json": {
+          "source_id": "MD-6.4.1-FiniteErgodicity",
+          "kind": "unnumbered_claim",
+          "label": null,
+          "section": "6.4.1",
+          "printed_page": "246",
+          "pdf_page": "267",
+          "statement_latex": "The fundamental result for Markov chains is the following: If a given Markov chain is both irreducible and aperiodic, then it can be shown that there is a unique invariant distribution $\\psi_*$ such that\n\\[\\lim_{n\\to\\infty}\\psi_n=\\psi_*,\\]\nfor arbitrary initial distribution $\\psi_0$. The convergence of an irreducible finite Markov chain to its stationary distribution can be understood through the properties of its eigenvalues by applying of the Perron-Frobenius theorem (see [269]).",
+          "proof_latex": null,
+          "proof_note": "原书未给独立完整证明。",
+          "proof_discussion_latex": null,
+          "context_notation": [],
+          "issues": [
+            {
+              "code": "SOURCE_SUBSCRIPT_TRANSCRIPTION",
+              "message": "原页平稳向量记作ψ_*（下标星号），JSON转成ψ^*（上标星号）；语义相同但逐字转录应恢复下标。"
+            },
+            {
+              "code": "PRINTED_APERIODICITY_OMITTED_IN_DISCUSSION",
+              "message": "末句单说不可约有限链收敛而没有重申非周期性，须按前句条件理解；若独立断言则错误，保留原文并标[ERRATUM?]交人审。"
+            }
+          ],
+          "lean_decl": "MD.Ch06.finiteErgodicity",
+          "reusable_proofs": [],
+          "extra_assumptions": [
+            "[EXTRA]非空真实有限状态、右随机矩阵、全部幂Πⁿ、真实全部初始概率；完整存在、唯一性及任意初值向量收敛，不假设谱隙或收敛结论。"
+          ],
+          "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
+          "review_status": "NEEDS_HUMAN",
+          "repair_log": [
+            "R6审校：只修订审校JSON；原书数学疑误保留，未修改Lean工程或补证明。"
+          ],
+          "source_page_verification": "R6_PAGES.pdf 附件第26页；已比对对应原页渲染及文本；详见本条evidence。"
+        },
+        "issues": [
+          {
+            "code": "SOURCE_SUBSCRIPT_TRANSCRIPTION",
+            "message": "原页平稳向量记作ψ_*（下标星号），JSON转成ψ^*（上标星号）；语义相同但逐字转录应恢复下标。"
+          },
+          {
+            "code": "PRINTED_APERIODICITY_OMITTED_IN_DISCUSSION",
+            "message": "末句单说不可约有限链收敛而没有重申非周期性，须按前句条件理解；若独立断言则错误，保留原文并标[ERRATUM?]交人审。"
+          }
+        ],
+        "evidence": [
+          "A：R6_PAGES.pdf 附件第26页（原PDF 267，印刷页246）；逐字、公式及页码核对。",
+          "C：只读核对R6_任务.md本条全部Lean签名及其列出的项目依赖/附录定义，未使用旧工程文件；不以sorry判FAIL。",
+          "图6.6下方平稳向量及极限式的星号位于ψ的下标。"
+        ]
+      },
+      "audit": {
+        "lean_decl": "MD.Ch06.finiteErgodicity",
+        "verdict": "PASS",
+        "explanation": "非空有限域、实际右随机性、所有状态不可约且非周期的前提完整；结论为概率不变向量存在、在全部概率不变向量中唯一，以及所有初始概率向量的Πⁿ演化向该向量收敛。没有把谱隙或收敛作为前提，[EXTRA]说明准确。完整定理的非周期性排除了原末句单独阅读时的周期反例。",
+        "counterexample": "若丢弃非周期假设，Π=[[0,1],[1,0]]不可约；初值(1,0)在(1,0)、(0,1)间交替，不收敛。此反例不反驳所给完整Lean签名。",
+        "suggested_fix": "保留原书疑误并加[ERRATUM?]；按本条说明分别保留Printed版和修正版。"
+      },
+      "subtask": "BATCH32b",
+      "input_sha256": {
+        "Blueprint/Ch06.lean": "0a02a34ec68989a83bccfa5916db5053ecdb58e05667bf21ff3568d9d1f4318e",
+        "blueprint/ch06/ch06_source.json": "45c70ceef21ca168af437de297e2e21e2800b452ab7942654061d4cff9bb5d95",
+        "BATCH32b_PAGES.pdf": "2ee24942198a8040f41ec7d6bede99765056510736a4143733ace44e5d7d465f",
+        "signature_sha256": "0967f232e5773a65270f5af12c4bd89c6ebb22636c35f0e2f74823e86629e9db"
+      }
+    },
+    {
+      "source_id": "MD-6.4.1-StochasticEntryBound",
+      "json_review": {
+        "status": "APPROVED",
+        "issue_codes": [],
+        "corrected_json": null,
+        "issues": [],
+        "evidence": [
+          "A：R6_PAGES.pdf 附件第27页（原PDF 266，印刷页245）；逐字、公式及页码核对。",
+          "C：只读核对R6_任务.md本条全部Lean签名及其列出的项目依赖/附录定义，未使用旧工程文件；不以sorry判FAIL。"
+        ]
+      },
+      "audit": {
+        "lean_decl": "MD.Ch06.stochasticEntryBound",
+        "verdict": "PASS",
+        "explanation": "输入实际stochasticMatrix已包含全部元素非负，结论逐一给出≤1；合在一起正是原条目全部[0,1]界。对任意k,i,j成立，来自行和1及其余元素非负，无遗漏。",
+        "counterexample": null,
+        "suggested_fix": null
+      },
+      "subtask": "BATCH32c",
+      "input_sha256": {
+        "Blueprint/Ch06.lean": "0a02a34ec68989a83bccfa5916db5053ecdb58e05667bf21ff3568d9d1f4318e",
+        "blueprint/ch06/ch06_source.json": "45c70ceef21ca168af437de297e2e21e2800b452ab7942654061d4cff9bb5d95",
+        "BATCH32c_PAGES.pdf": "6c170a1e455e66b937a01f9c1b379652a7e561078d7d29b8e008190e3d50ceed",
+        "signature_sha256": "af299da3b2d8afac84213a6765aba10435e85d27c0bd0b6ccbdcdbde30c2b516"
+      }
+    },
+    {
+      "source_id": "MD-6.4.1-FiniteChainExample",
+      "json_review": {
+        "status": "APPROVED",
+        "issue_codes": [],
+        "corrected_json": null,
+        "issues": [],
+        "evidence": [
+          "A：R6_PAGES.pdf 附件第28页（原PDF 267，印刷页246）；逐字、公式及页码核对。",
+          "C：只读核对R6_任务.md本条全部Lean签名及其列出的项目依赖/附录定义，未使用旧工程文件；不以sorry判FAIL。"
+        ]
+      },
+      "audit": {
+        "lean_decl": "MD.Ch06.finiteChainExample",
+        "verdict": "PASS",
+        "explanation": "逐个核对图6.6矩阵25个数值及行列方向；1/5=0.2、1/10=0.1、7/10=0.7、3/10=0.3、2/5=0.4、1/2=0.5，全部零和1也一致。该定义只负责数值矩阵，不可约结论由29独立审校。",
+        "counterexample": null,
+        "suggested_fix": null
+      },
+      "subtask": "BATCH32d",
+      "input_sha256": {
+        "Blueprint/Ch06.lean": "0a02a34ec68989a83bccfa5916db5053ecdb58e05667bf21ff3568d9d1f4318e",
+        "blueprint/ch06/ch06_source.json": "45c70ceef21ca168af437de297e2e21e2800b452ab7942654061d4cff9bb5d95",
+        "BATCH32d_PAGES.pdf": "2ee24942198a8040f41ec7d6bede99765056510736a4143733ace44e5d7d465f",
+        "signature_sha256": "5f8f58d40c9b5727b84f861cda56168a75b2b5ebfdef6eb1c682e429aa690982"
+      }
+    },
+    {
+      "source_id": "MD-6.4.1-ExampleStochastic",
+      "json_review": {
+        "status": "APPROVED",
+        "issue_codes": [],
+        "corrected_json": null,
+        "issues": [],
+        "evidence": [
+          "A：R6_PAGES.pdf 附件第29页（原PDF 267，印刷页246）；逐字、公式及页码核对。",
+          "C：只读核对R6_任务.md本条全部Lean签名及其列出的项目依赖/附录定义，未使用旧工程文件；不以sorry判FAIL。"
+        ]
+      },
+      "audit": {
+        "lean_decl": "MD.Ch06.exampleStochastic",
+        "verdict": "PASS",
+        "explanation": "真实谓词对27的完整数值矩阵逐项要求非负和行和1。五行分别为1、1、1、1、1，所有项非负；[EXTRA]是该具体例的资格检查，没有添加原例中不存在的假设。",
+        "counterexample": null,
+        "suggested_fix": null
+      },
+      "subtask": "BATCH32e",
+      "input_sha256": {
+        "Blueprint/Ch06.lean": "0a02a34ec68989a83bccfa5916db5053ecdb58e05667bf21ff3568d9d1f4318e",
+        "blueprint/ch06/ch06_source.json": "45c70ceef21ca168af437de297e2e21e2800b452ab7942654061d4cff9bb5d95",
+        "BATCH32e_PAGES.pdf": "2ee24942198a8040f41ec7d6bede99765056510736a4143733ace44e5d7d465f",
+        "signature_sha256": "75977c533ddccb4f1deb66d0a3e7077a4b2f831830e157929323b6f2ef6e9900"
+      }
+    },
+    {
+      "source_id": "MD-6.4.1-ExampleNotIrreducible",
+      "json_review": {
+        "status": "APPROVED",
+        "issue_codes": [],
+        "corrected_json": null,
+        "issues": [],
+        "evidence": [
+          "A：R6_PAGES.pdf 附件第30页（原PDF 267，印刷页246）；逐字、公式及页码核对。",
+          "C：只读核对R6_任务.md本条全部Lean签名及其列出的项目依赖/附录定义，未使用旧工程文件；不以sorry判FAIL。"
+        ]
+      },
+      "audit": {
+        "lean_decl": "MD.Ch06.exampleNotIrreducible",
+        "verdict": "PASS",
+        "explanation": "实际irreducible是所有有序状态对存在正概率有限步转移。按书中1起始标签，{2,4,5}为闭类，无法达到1或3，因此矩阵确实不不可约。没有误把无向连通或单步全正性当作不可约。",
+        "counterexample": null,
+        "suggested_fix": null
+      },
+      "subtask": "BATCH32f",
+      "input_sha256": {
+        "Blueprint/Ch06.lean": "0a02a34ec68989a83bccfa5916db5053ecdb58e05667bf21ff3568d9d1f4318e",
+        "blueprint/ch06/ch06_source.json": "45c70ceef21ca168af437de297e2e21e2800b452ab7942654061d4cff9bb5d95",
+        "BATCH32f_PAGES.pdf": "2ee24942198a8040f41ec7d6bede99765056510736a4143733ace44e5d7d465f",
+        "signature_sha256": "6cfcb9ae1ceb471b39d635825267f30a1be7479e14bac2cf34e302f3eacd33cf"
+      }
+    },
+    {
+      "source_id": "MD-6.4.1-Communicates",
+      "json_review": {
+        "status": "APPROVED",
+        "issue_codes": [],
+        "corrected_json": null,
+        "issues": [],
+        "evidence": [
+          "A：R6_PAGES.pdf 附件第31–32页（原PDF 266–267，印刷页245–246）；逐字、公式及页码核对。",
+          "C：只读核对R6_任务.md本条全部Lean签名及其列出的项目依赖/附录定义，未使用旧工程文件；不以sorry判FAIL。"
+        ]
+      },
+      "audit": {
+        "lean_decl": "MD.Ch06.communicates",
+        "verdict": "PASS",
+        "explanation": "两个方向分别使用存在自然数n，允许不同时间；矩阵幂正项忠实表达正概率可达。原句的integers结合Markov步数解读为非负整数，不能允许任意负幂；这是上下文限定而不是额外概率假设。",
+        "counterexample": null,
+        "suggested_fix": null
+      },
+      "subtask": "BATCH32g",
+      "input_sha256": {
+        "Blueprint/Ch06.lean": "0a02a34ec68989a83bccfa5916db5053ecdb58e05667bf21ff3568d9d1f4318e",
+        "blueprint/ch06/ch06_source.json": "45c70ceef21ca168af437de297e2e21e2800b452ab7942654061d4cff9bb5d95",
+        "BATCH32g_PAGES.pdf": "83dcf90778aa2a4a2d4bf81c15578defc83495497e220e9d5c7f46911c01e9a0",
+        "signature_sha256": "fa0a46323ae0740838cb3df0415fccf30d49075ac5c0f9751f0ff20eed0aa9ad"
+      }
+    },
+    {
+      "source_id": "MD-6.4.1-DirectedGraphIrreducible",
+      "json_review": {
+        "status": "CORRECTED",
+        "issue_codes": [
+          "SOURCE_OMISSION"
+        ],
+        "corrected_json": {
+          "source_id": "MD-6.4.1-DirectedGraphIrreducible",
+          "kind": "unnumbered_claim",
+          "label": null,
+          "section": "6.4.1",
+          "printed_page": "246",
+          "pdf_page": "267",
+          "statement_latex": "Then one may understand irreducibility as expressing the connectedness of this graph (see Fig. 6.6).\nFor a directed graph, we must have, for any pair of vertices $A$ and $B$, paths which take us from $A$ to $B$ and vice-versa.",
+          "proof_latex": null,
+          "proof_note": "原书未给独立完整证明。 本摘录第二句来自同页脚注8；正文与脚注间有省略。",
+          "proof_discussion_latex": null,
+          "context_notation": [],
+          "issues": [
+            {
+              "code": "SOURCE_OMISSION",
+              "detail": "原正文graph后有“(see Fig. 6.6)”；脚注解释系另处拼接的摘录，应在proof_note注明而非假装连续原文。"
+            }
+          ],
+          "lean_decl": "MD.Ch06.directedGraphIrreducible",
+          "reusable_proofs": [],
+          "extra_assumptions": [
+            "[EXTRA]真实正权边与有向路径可达关系；∀i,j强连通，不用无向连通偷换。"
+          ],
+          "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
+          "review_status": "CORRECTED",
+          "repair_log": [
+            {
+              "review": "R7",
+              "detail": "仅在审校输出中修正转录/元数据并记录问题；未改工程或原任务，原书数学疑误未静默修正。"
+            }
+          ],
+          "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
+        },
+        "issues": [
+          {
+            "code": "SOURCE_OMISSION",
+            "detail": "原正文graph后有“(see Fig. 6.6)”；脚注解释系另处拼接的摘录，应在proof_note注明而非假装连续原文。"
+          }
+        ],
+        "evidence": [
+          {
+            "stage": "A",
+            "location": "R7_PAGES.pdf 附件第1页；原PDF页267，印刷页246",
+            "detail": "逐条比对对应原页文字与公式；重复页另按条目映射核对。普通换行/数学排版转LaTeX不作为语义错误；下列转录差异单列。"
+          },
+          {
+            "stage": "C",
+            "detail": "有限非负行随机矩阵；irreducible为任意i,j存在自然数次幂正元，右侧为正权边自反传递闭包。非负性排除路径贡献抵消；n=0与零长路径相合，k=0亦无遗漏。",
+            "checked_signature": "theorem directedGraphIrreducible : ∀ {k : ℕ} (matrix : Matrix (Fin k) (Fin k) ℝ),\n  MolecularDynamics.Chapter06Review.stochasticMatrix matrix →\n  (MolecularDynamics.Chapter06Review.irreducible matrix ↔\n    ∀ i j, Relation.ReflTransGen (fun a b ↦ 0 < matrix a b) i j)\n",
+            "extra_assumptions_review": [
+              "[EXTRA]真实正权边与有向路径可达关系；∀i,j强连通，不用无向连通偷换。"
+            ],
+            "scope": "只读对象/域/量词/前提/全部结论核对；不检查证明，不因sorry判FAIL；依赖仅采用任务文件摘录及附录D1–D54。"
+          }
+        ]
+      },
+      "audit": {
+        "lean_decl": "MD.Ch06.directedGraphIrreducible",
+        "verdict": "PASS",
+        "explanation": "有限非负行随机矩阵；irreducible为任意i,j存在自然数次幂正元，右侧为正权边自反传递闭包。非负性排除路径贡献抵消；n=0与零长路径相合，k=0亦无遗漏。",
+        "counterexample": null,
+        "suggested_fix": null
+      },
+      "subtask": "BATCH32h",
+      "input_sha256": {
+        "Blueprint/Ch06.lean": "0a02a34ec68989a83bccfa5916db5053ecdb58e05667bf21ff3568d9d1f4318e",
+        "blueprint/ch06/ch06_source.json": "45c70ceef21ca168af437de297e2e21e2800b452ab7942654061d4cff9bb5d95",
+        "BATCH32h_PAGES.pdf": "2ee24942198a8040f41ec7d6bede99765056510736a4143733ace44e5d7d465f",
+        "signature_sha256": "43c3da9bba95a7cb44e133c5280356e406fd76fff50d5ebd16e6fb2537e39735"
+      }
+    }
+  ],
+  "merged_from": "ch06_first_merged"
+}

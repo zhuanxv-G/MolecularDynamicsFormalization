@@ -1,0 +1,69 @@
+{
+  "eaudit": "EAUDIT05",
+  "subtask": "EAUDIT05b",
+  "source_id": "MD-6.3-VectorSDE",
+  "input_sha256": {
+    "Blueprint/Ch06.lean": "4a2a6cb72c1692f80e3537ab1a71701d429a482780a01226c3dc66a2ebb8b44b",
+    "blueprint/ch06/ch06_source.json": "d7f93cd20eb570744c710f3e07a88b319c082e4155812fee91db0920eb05944e",
+    "PAGES.pdf": "9fae3b38b6a3f373eae0d886e191d09feb205c483e5fa0dfe8e6e86dac8634b2",
+    "materials_sha256": "0a7610fa3ad7c7cdfbf3e2bad50bfbd03627fd9427ec090d86a2aa1df38e0bea"
+  },
+  "paste_sha256": "092ddd67980cb590dc925a0b9d42e385e5efdcb9f74ee99fe51d1a7403d6fe02",
+  "source_pdf_sha256": "1939a22e5e96ebd2b58b8e91fe2c796f5390b402f267390f473b271c35d2f036",
+  "pdf_page_mapping": [
+    253,
+    254
+  ],
+  "crop_pixel_identity": "PASS: copied page render or lossless embedded full-page source pixels",
+  "rasterized_pages": {},
+  "source_declarations": [
+    "strictVectorSDE"
+  ],
+  "dependency_excerpts": [
+    {
+      "path": "Blueprint/Ch06.lean",
+      "line": 863,
+      "full_name": "MD.Ch06.strictItoIntegral",
+      "kind": "def",
+      "excerpt_sha256": "69555ce0eea7f7da7dd5b52a53fe2003a79a1ac3a807d9eee6a859b7a7ecfc54"
+    },
+    {
+      "path": "Blueprint/Ch06.lean",
+      "line": 1105,
+      "full_name": "MD.Ch06.strictVectorSDE",
+      "kind": "def",
+      "excerpt_sha256": "1cb2640ecc7ed508d0ba275392b25b74e8d1b08d8d42b5003574bc77c472a725"
+    },
+    {
+      "path": "MolecularDynamics/Chapter06/ReviewDefinitions.lean",
+      "line": 54,
+      "full_name": "MolecularDynamics.Chapter06Review.itoLeftSum",
+      "kind": "def",
+      "excerpt_sha256": "e1cd64bf3b4edeae8a7d1bf292e844323267f948a2846db1110c7f024f55e746"
+    },
+    {
+      "path": "MolecularDynamics/Chapter06/WienerVectorSupport.lean",
+      "line": 13,
+      "full_name": "MolecularDynamics.textbookIsWienerVector",
+      "kind": "structure",
+      "excerpt_sha256": "030040a9146ab99e095c5a3e84fa3feed1dc8f0dd916643d371a0bb7e6efb622"
+    },
+    {
+      "path": "MolecularDynamics/Chapter06/WienerVectorSupport.lean",
+      "line": 22,
+      "full_name": "MolecularDynamics.textbookWienerVector_coordinate",
+      "kind": "theorem",
+      "excerpt_sha256": "a2b16b63fbbcaa59dd6d49939ff3431e6eb6e901a8d3c424b51b33c8dfeeba74"
+    },
+    {
+      "path": "MolecularDynamics/Chapter06/WienerVectorSupport.lean",
+      "line": 35,
+      "full_name": "MolecularDynamics.textbookWienerVector_coordinates_independent",
+      "kind": "theorem",
+      "excerpt_sha256": "b37efd8ef290876ef9e4239be23a56d8223830dd154b94237929630976d5a37f"
+    }
+  ],
+  "project_definition_closure": "complete recursive definitions, referenced theorem types, explicit choice and consistency specifications",
+  "website_submitted": false,
+  "total_task_bytes": 109527
+}

@@ -1,0 +1,98 @@
+{
+  "eaudit": "EAUDIT06",
+  "subtask": "EAUDIT06b",
+  "source_id": "MD-6.3.1-TimeItoFormula",
+  "input_sha256": {
+    "Blueprint/Ch06.lean": "4a2a6cb72c1692f80e3537ab1a71701d429a482780a01226c3dc66a2ebb8b44b",
+    "blueprint/ch06/ch06_source.json": "d7f93cd20eb570744c710f3e07a88b319c082e4155812fee91db0920eb05944e",
+    "PAGES.pdf": "90dbafab07b2e88e3548f65a3913ca4aac10b0283ce04b37e849845c28aebedf",
+    "materials_sha256": "fd04ba002339fb45a3a7abc1c0892ae971fe54bd84286773731e071524238702"
+  },
+  "paste_sha256": "8633b4589b40e1b86f5800dd93b9e8d12add89dce4d6d164d7a32a84d5381932",
+  "source_pdf_sha256": "1939a22e5e96ebd2b58b8e91fe2c796f5390b402f267390f473b271c35d2f036",
+  "pdf_page_mapping": [
+    255
+  ],
+  "crop_pixel_identity": "PASS: copied page render or lossless embedded full-page source pixels",
+  "rasterized_pages": {},
+  "source_declarations": [
+    "timeItoFormula",
+    "timeItoFormula_corrected",
+    "timeItoFormulaPrinted"
+  ],
+  "dependency_excerpts": [
+    {
+      "path": "Blueprint/Ch06.lean",
+      "line": 25,
+      "full_name": "MD.Ch06.naturalHistory25",
+      "kind": "def",
+      "excerpt_sha256": "0659f3ba03825d04e9a7a6b282556edb0f87399baa0c4f6b39131a8bd39b3493"
+    },
+    {
+      "path": "Blueprint/Ch06.lean",
+      "line": 31,
+      "full_name": "MD.Ch06.gridItoQualification25",
+      "kind": "def",
+      "excerpt_sha256": "a1367a51610d5f652a610e5018178fc2180ff15e026728c024e10489377717cb"
+    },
+    {
+      "path": "Blueprint/Ch06.lean",
+      "line": 863,
+      "full_name": "MD.Ch06.strictItoIntegral",
+      "kind": "def",
+      "excerpt_sha256": "69555ce0eea7f7da7dd5b52a53fe2003a79a1ac3a807d9eee6a859b7a7ecfc54"
+    },
+    {
+      "path": "Blueprint/Ch06.lean",
+      "line": 1096,
+      "full_name": "MD.Ch06.strictScalarSDE",
+      "kind": "def",
+      "excerpt_sha256": "3181a68f401d8c4cedb55a706f14c191a69578941248ff1b9d0d835a6d78dc2b"
+    },
+    {
+      "path": "Blueprint/Ch06.lean",
+      "line": 1154,
+      "full_name": "MD.Ch06.timeItoFormula",
+      "kind": "theorem",
+      "excerpt_sha256": "75eb3b8525fac78c23aab9ce700adc21c9706b0c111c5c21ecfd1c40de639e77"
+    },
+    {
+      "path": "Blueprint/Ch06.lean",
+      "line": 1172,
+      "full_name": "MD.Ch06.timeItoFormula_corrected",
+      "kind": "theorem",
+      "excerpt_sha256": "202d00d0806023f0cece80aeb89f948b71c6e69724e8bbd1a0cd8fdb70e45ed6"
+    },
+    {
+      "path": "Blueprint/Ch06.lean",
+      "line": 1190,
+      "full_name": "MD.Ch06.timeItoFormulaPrinted",
+      "kind": "def",
+      "excerpt_sha256": "5a4707c41179a8238dfda41e2517cb62e922c72c683f39b9f589c52260a1fdd5"
+    },
+    {
+      "path": "MolecularDynamics/Chapter06/ReviewDefinitions.lean",
+      "line": 17,
+      "full_name": "MolecularDynamics.Chapter06Review.V",
+      "kind": "abbrev",
+      "excerpt_sha256": "7ab0ad90462b274b03f5b929b5f09417c0b397b6cb908fa6e7bd56677a314027"
+    },
+    {
+      "path": "MolecularDynamics/Chapter06/ReviewDefinitions.lean",
+      "line": 54,
+      "full_name": "MolecularDynamics.Chapter06Review.itoLeftSum",
+      "kind": "def",
+      "excerpt_sha256": "e1cd64bf3b4edeae8a7d1bf292e844323267f948a2846db1110c7f024f55e746"
+    },
+    {
+      "path": "MolecularDynamics/Chapter06/ReviewDefinitions.lean",
+      "line": 73,
+      "full_name": "MolecularDynamics.Chapter06Review.adaptedSquareIntegrand",
+      "kind": "def",
+      "excerpt_sha256": "e0925840a6b277a247707e296796fd1371886e2a3a193850c2e0cc98cfe001a0"
+    }
+  ],
+  "project_definition_closure": "complete recursive definitions, referenced theorem types, explicit choice and consistency specifications",
+  "website_submitted": false,
+  "total_task_bytes": 94155
+}

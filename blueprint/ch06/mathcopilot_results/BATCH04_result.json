@@ -1,0 +1,355 @@
+{
+  "batch": "BATCH04",
+  "chapter": "ch06",
+  "round": "first-merged",
+  "input_sha256": {
+    "Blueprint/Ch06.lean": "0a02a34ec68989a83bccfa5916db5053ecdb58e05667bf21ff3568d9d1f4318e",
+    "blueprint/ch06/ch06_source.json": "45c70ceef21ca168af437de297e2e21e2800b452ab7942654061d4cff9bb5d95"
+  },
+  "items": [
+    {
+      "source_id": "MD-6.1.3-EntropyFunctional",
+      "json_review": {
+        "status": "APPROVED",
+        "issue_codes": [],
+        "corrected_json": null,
+        "issues": [],
+        "evidence": [
+          "A：实际渲染并核对 R1_PAGES.pdf 附件第16页；原PDF第238页，印刷第217页。印刷页217确有负号、k_B因子及∫ρ lnρ，并列出质量1和平均能量Ē两个约束；摘录相符。",
+          "C：依据 R1_任务.md 本条实际Lean签名及本任务附录，按标准Mathlib数学含义只读核对；未运行Lean编译、未补证明，未把sorry或repair_log中的未提供声明当作审校结果。"
+        ]
+      },
+      "audit": {
+        "lean_decl": "MD.Ch06.entropyFunctional",
+        "verdict": "PASS",
+        "explanation": "对象为任意可测空间D、测度ν、实kB及实函数ρ；返回−kB乘ρ logρ的Bochner积分，符号与权重正确。此条仅形式化熵泛函定义；归一化及平均能量约束由第16条另存，驻点分析由第17、18条另存，context_notation已明确拆分。ρ≥0、可积性及0 log0的总定义不在此签名中被证明，不应把它计成任意ρ的合法概率熵定理。",
+        "counterexample": null,
+        "suggested_fix": null
+      },
+      "subtask": "BATCH04a",
+      "input_sha256": {
+        "Blueprint/Ch06.lean": "0a02a34ec68989a83bccfa5916db5053ecdb58e05667bf21ff3568d9d1f4318e",
+        "blueprint/ch06/ch06_source.json": "45c70ceef21ca168af437de297e2e21e2800b452ab7942654061d4cff9bb5d95",
+        "BATCH04a_PAGES.pdf": "bacc3ba46dc87666ad3fef989404b73f10360fa6d41095506e23714e99061cf8",
+        "signature_sha256": "802d85abc1a09dafd9837a107a2bdd6b48db56fde07c21a0b83b776b902e1f23"
+      }
+    },
+    {
+      "source_id": "MD-6.1.3-ConstrainedEntropyModel",
+      "json_review": {
+        "status": "CORRECTED",
+        "issue_codes": [
+          "A_OMITTED_CROSS_REFERENCE"
+        ],
+        "corrected_json": {
+          "source_id": "MD-6.1.3-ConstrainedEntropyModel",
+          "kind": "definition",
+          "label": null,
+          "section": "6.1.3",
+          "printed_page": "217",
+          "pdf_page": "238",
+          "statement_latex": "Using the method of Lagrange multipliers, we seek stationary solutions of\n\\[V=S/k_B-\\lambda\\left[\\int\\rho(z)d\\omega-1\\right]-\\beta\\left[\\int H(z)\\rho(z)d\\omega-\\bar E\\right]\\]\nwith respect to the choice of density $\\rho$ and coefficients $\\lambda$ and $\\beta$. The resulting equations for the maximizing density are obtained by variational differentiation (see Sect. 2.2.1):\n\\[\\frac{\\delta V}{\\delta\\rho}=0,\\quad\\int\\rho(z)d\\omega=1,\\quad\\int H(z)\\rho(z)d\\omega=\\bar E.\\]",
+          "proof_latex": null,
+          "proof_note": "原书未给独立完整证明。",
+          "proof_discussion_latex": null,
+          "context_notation": [
+            "完整常数项和两个约束保留；实际变分导数/驻点结论另见EntropyFirstVariation与EntropyVariation；kB≠0才按原物理解释约去。"
+          ],
+          "issues": [],
+          "lean_decl": "MD.Ch06.constrainedEntropyModel",
+          "reusable_proofs": [],
+          "extra_assumptions": [],
+          "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
+          "review_status": "CORRECTED",
+          "repair_log": [
+            {
+              "date": "2026-10-17",
+              "action": "R1_readonly_source_review",
+              "change": "恢复原文variational differentiation (see Sect. 2.2.1)后的冒号；不改变约束或变分方程。",
+              "scope": "仅修订本审校输出内的原文JSON；未修改工程或Lean声明。"
+            }
+          ],
+          "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
+        },
+        "issues": [
+          {
+            "code": "A_OMITTED_CROSS_REFERENCE",
+            "phase": "A",
+            "field": "statement_latex",
+            "detail": "恢复原文variational differentiation (see Sect. 2.2.1)后的冒号；不改变约束或变分方程。"
+          }
+        ],
+        "evidence": [
+          "A：实际渲染并核对 R1_PAGES.pdf 附件第17页；原PDF第238页，印刷第217页。V中的λ[∫ρ−1]、β[∫Hρ−Ē]及三条驻点/约束方程均与原页一致；原页variational differentiation后还有“(see Sect. 2.2.1)”，输入漏录了该括注。",
+          "C：依据 R1_任务.md 本条实际Lean签名及本任务附录，按标准Mathlib数学含义只读核对；未运行Lean编译、未补证明，未把sorry或repair_log中的未提供声明当作审校结果。",
+          "项目定义核对：Chapter06Review.entropyFunctional全文由D16给出；pair类型为ℝ×Prop，不是已携带约束证明的Subtype。"
+        ]
+      },
+      "audit": {
+        "lean_decl": "MD.Ch06.constrainedEntropyModel",
+        "verdict": "PASS",
+        "explanation": "量化任意可测D、测度ν、实值H,ρ及四个实参数。返回的第一分量是S/kB−λ(∫ρ−1)−β(∫Hρ−meanEnergy)，常数项没有丢失；第二分量是两个约束的合取命题，不能把构造这个Prop误当成证明约束已成立。签名没有驻点或最大化断言，输入context_notation已把实际一阶变分和驻点结论分给第17、18条。kB≠0下S/kB与物理表达式一致；kB=0只保留Lean总定义，不冒充约消证明。",
+        "counterexample": null,
+        "suggested_fix": null
+      },
+      "subtask": "BATCH04b",
+      "input_sha256": {
+        "Blueprint/Ch06.lean": "0a02a34ec68989a83bccfa5916db5053ecdb58e05667bf21ff3568d9d1f4318e",
+        "blueprint/ch06/ch06_source.json": "45c70ceef21ca168af437de297e2e21e2800b452ab7942654061d4cff9bb5d95",
+        "BATCH04b_PAGES.pdf": "bacc3ba46dc87666ad3fef989404b73f10360fa6d41095506e23714e99061cf8",
+        "signature_sha256": "f6ca62553b2fce1166c89fd6f96c9721fcd8db54c65e47ca725f12fcfe2263a5"
+      }
+    },
+    {
+      "source_id": "MD-6.1.3-EntropyFirstVariation",
+      "json_review": {
+        "status": "APPROVED",
+        "issue_codes": [],
+        "corrected_json": null,
+        "issues": [],
+        "evidence": [
+          "A：实际渲染并核对 R1_PAGES.pdf 附件第18–19页；原PDF第238–239页，印刷第217–218页。附件18页底部的−(1+lnρ)−λ−βH=0以及ρ=e^(−1−λ)e^(−βH)与摘录相符；附件19页为其归一化讨论的后续页。",
+          "C：依据 R1_任务.md 本条实际Lean签名及本任务附录，按标准Mathlib数学含义只读核对；未运行Lean编译、未补证明，未把sorry或repair_log中的未提供声明当作审校结果。",
+          "项目定义核对：V n=Fin n→ℝ；D16为真实Bochner熵积分；D17 entropyLagrangian=entropyFunctional volume 1 ρ−λ∫ρ−β∫Hρ。"
+        ]
+      },
+      "audit": {
+        "lean_decl": "MD.Ch06.entropyFirstVariation",
+        "verdict": "PASS",
+        "explanation": "H,ρ定义在V n=Fin n→ℝ；H,ρ连续、ρ处处正，且ρ、ρ logρ、Hρ分别可积。对每个光滑紧支ψ，结论是沿实际ρ+eψ的entropyLagrangian在e=0处具有导数∫[−(1+logρ)−λ−βH]ψ，方向、负号、β因子及求导点均正确。正连续ρ在ψ的紧支集上有正下界，保证局部可保持密度正值并对积分求导。D17以kB=1消去熵因子，省去的λ+βĒ与ρ无关，正如[EXTRA]所述。本条只是一阶变分恒等式，原页EL及指数解由第18条承接，不误计本条已经给出点态EL。",
+        "counterexample": null,
+        "suggested_fix": null
+      },
+      "subtask": "BATCH04c",
+      "input_sha256": {
+        "Blueprint/Ch06.lean": "0a02a34ec68989a83bccfa5916db5053ecdb58e05667bf21ff3568d9d1f4318e",
+        "blueprint/ch06/ch06_source.json": "45c70ceef21ca168af437de297e2e21e2800b452ab7942654061d4cff9bb5d95",
+        "BATCH04c_PAGES.pdf": "a92f32a84f070f14e0cf82bf90db3d126146e714f41c784b4f326585c93a1bb7",
+        "signature_sha256": "10d8e6c714ff94885da236f4beaa98730204fb8354b3421765cc44ac881e4a0a"
+      }
+    },
+    {
+      "source_id": "MD-6.1.3-EntropyVariation",
+      "json_review": {
+        "status": "CORRECTED",
+        "issue_codes": [
+          "A_TRUNCATED_SENTENCE"
+        ],
+        "corrected_json": {
+          "source_id": "MD-6.1.3-EntropyVariation",
+          "kind": "unnumbered_claim",
+          "label": null,
+          "section": "6.1.3",
+          "printed_page": "217–218",
+          "pdf_page": "238–239",
+          "statement_latex": "The first equation reduces to\n\\[-(1+\\ln\\rho)-\\lambda-\\beta H=0\\]\nyielding\n\\[\\rho=e^{-1-\\lambda}e^{-\\beta H}.\\]\nThe normalization condition determines the parameter $\\lambda$, whereas $\\beta$ and hence the temperature arises from the choice of average energy, i.e. from solving the equation\n\\[\\frac{\\int H(z)e^{-\\beta H(z)}d\\omega}{\\int e^{-\\beta H(z)}d\\omega}=\\bar E.\\]",
+          "proof_latex": null,
+          "proof_note": "原书未给独立完整证明。",
+          "proof_discussion_latex": null,
+          "context_notation": [],
+          "issues": [],
+          "lean_decl": "MD.Ch06.entropyVariation",
+          "reusable_proofs": [],
+          "extra_assumptions": [
+            "[EXTRA]在每个光滑紧支实际密度方向的内点局部极值、正连续可积密度；不假设变分导数零或点态EL结论。"
+          ],
+          "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
+          "review_status": "CORRECTED",
+          "repair_log": [
+            {
+              "date": "2026-10-17",
+              "action": "R1_readonly_source_review",
+              "change": "恢复choice of average energy之后的i.e.从句及原页平均能量积分方程，避免把原页连续句无标记改写为独立断言。",
+              "scope": "仅修订本审校输出内的原文JSON；未修改工程或Lean声明。"
+            }
+          ],
+          "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
+        },
+        "issues": [
+          {
+            "code": "A_TRUNCATED_SENTENCE",
+            "phase": "A",
+            "field": "statement_latex",
+            "detail": "恢复choice of average energy之后的i.e.从句及原页平均能量积分方程，避免把原页连续句无标记改写为独立断言。"
+          }
+        ],
+        "evidence": [
+          "A：实际渲染并核对 R1_PAGES.pdf 附件第20–21页；原PDF第238–239页，印刷第217–218页。附件20页的EL方程和指数解忠实；附件21页首“choice of average energy”后原文继续“i.e. from solving the equation”并列积分方程，输入改成句号作了无标记截断。现恢复该连续原文。",
+          "C：依据 R1_任务.md 本条实际Lean签名及本任务附录，按标准Mathlib数学含义只读核对；未运行Lean编译、未补证明，未把sorry或repair_log中的未提供声明当作审校结果。",
+          "项目定义核对：entropyLagrangian仍为D17的真实积分泛函；局部最大指沿ρ+eψ的实函数在e=0处局部最大。"
+        ]
+      },
+      "audit": {
+        "lean_decl": "MD.Ch06.entropyVariation",
+        "verdict": "PASS",
+        "explanation": "与第17条相同的有限维空间及正性、连续性、三个可积性前提下，额外要求每个光滑紧支方向的实际Lagrangian在0处局部最大；没有把变分导数零或EL式直接当前提。由一阶变分及连续系数的基本变分引理得到每个x处EL式，再由ρ>0取指数得到ρ(x)=exp(−1−λ)exp(−βH(x))，两个合取结论完整且正确。此签名既不假设归一化/给定meanEnergy，也不证明λ或β存在、唯一或被指定能量确定；原文后续的约束说明仅由第16、30条记录，不能算成本定理额外结论。",
+        "counterexample": null,
+        "suggested_fix": null
+      },
+      "subtask": "BATCH04d",
+      "input_sha256": {
+        "Blueprint/Ch06.lean": "0a02a34ec68989a83bccfa5916db5053ecdb58e05667bf21ff3568d9d1f4318e",
+        "blueprint/ch06/ch06_source.json": "45c70ceef21ca168af437de297e2e21e2800b452ab7942654061d4cff9bb5d95",
+        "BATCH04d_PAGES.pdf": "a92f32a84f070f14e0cf82bf90db3d126146e714f41c784b4f326585c93a1bb7",
+        "signature_sha256": "9d369866f9b60109bf80602f9a08491358a0075662facfea584c0de78da69e79"
+      }
+    },
+    {
+      "source_id": "MD-6.1.3-CanonicalDensity",
+      "json_review": {
+        "status": "CORRECTED",
+        "issue_codes": [
+          "A_ADDED_INTEGRATION_DOMAIN",
+          "A_UNMARKED_NONCONTIGUOUS_EXCERPT"
+        ],
+        "corrected_json": {
+          "source_id": "MD-6.1.3-CanonicalDensity",
+          "kind": "definition",
+          "label": "(6.3)",
+          "section": "6.1.3",
+          "printed_page": "218",
+          "pdf_page": "239",
+          "statement_latex": "This defines the phase space density of the canonical ensemble which we refer to as the Gibbs-Boltzmann density:\n\\[\\rho_\\beta=Z_{\\rm can}^{-1}e^{-\\beta H(q,p)}.\\tag{6.3}\\]\nwhere the parameter $\\beta=1/(k_BT)$. The quantity $Z_{\\rm can}$ is a normalizing constant so that this is a probability density.\n[\\ldots]\n\\[Z_{\\rm can}=\\int e^{-\\beta H(q,p)}d\\omega.\\]",
+          "proof_latex": null,
+          "proof_note": "原书未给独立完整证明。",
+          "proof_discussion_latex": null,
+          "context_notation": [
+            "实际积分分母，没有独立给定Z；正有限可积条件下才为概率密度，归一化定理另列；NVT为固定N,V,T记号。"
+          ],
+          "issues": [],
+          "lean_decl": "MD.Ch06.canonicalDensity",
+          "reusable_proofs": [],
+          "extra_assumptions": [],
+          "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
+          "review_status": "CORRECTED",
+          "repair_log": [
+            {
+              "date": "2026-10-17",
+              "action": "R1_readonly_source_review",
+              "change": "单独的Z_can定义在印刷页218上写作无下标∫，输入添加的_D不属该处原式；修复誊录，测度域仍由上下文决定。；在概率密度说明与后文Z_can积分定义之间添加明确省略标记，不伪装成原页连续段落。",
+              "scope": "仅修订本审校输出内的原文JSON；未修改工程或Lean声明。"
+            }
+          ],
+          "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
+        },
+        "issues": [
+          {
+            "code": "A_ADDED_INTEGRATION_DOMAIN",
+            "phase": "A",
+            "field": "statement_latex",
+            "detail": "单独的Z_can定义在印刷页218上写作无下标∫，输入添加的_D不属该处原式；修复誊录，测度域仍由上下文决定。"
+          },
+          {
+            "code": "A_UNMARKED_NONCONTIGUOUS_EXCERPT",
+            "phase": "A",
+            "field": "statement_latex",
+            "detail": "在概率密度说明与后文Z_can积分定义之间添加明确省略标记，不伪装成原页连续段落。"
+          }
+        ],
+        "evidence": [
+          "A：实际渲染并核对 R1_PAGES.pdf 附件第22页；原PDF第239页，印刷第218页。式(6.3)、β定义及normalizing constant原句一致；但稍后单独定义Z_can的展示积分原页没有下标D，且二者之间还有NVT与可归一化的文字。现删除擅加的积分域下标，并明确标记跨段摘录省略。",
+          "C：依据 R1_任务.md 本条实际Lean签名及本任务附录，按标准Mathlib数学含义只读核对；未运行Lean编译、未补证明，未把sorry或repair_log中的未提供声明当作审校结果。"
+        ]
+      },
+      "audit": {
+        "lean_decl": "MD.Ch06.canonicalDensity",
+        "verdict": "PASS",
+        "explanation": "可测空间D、测度ν、实H及β与点x全部显式；canonicalDensity恰为exp(−βH x)除以同一权重的实际积分，分母不是独立任意常数。测度ν承载所选相空间域。定义对应原归一化表达式；没有宣称任意ν,H,β均有正有限partition或积分为1，context_notation已限定适用条件。输入中的β=1/(kB T)是参数解释，不是此函数隐含证明的平衡定理。",
+        "counterexample": null,
+        "suggested_fix": null
+      },
+      "subtask": "BATCH04e",
+      "input_sha256": {
+        "Blueprint/Ch06.lean": "0a02a34ec68989a83bccfa5916db5053ecdb58e05667bf21ff3568d9d1f4318e",
+        "blueprint/ch06/ch06_source.json": "45c70ceef21ca168af437de297e2e21e2800b452ab7942654061d4cff9bb5d95",
+        "BATCH04e_PAGES.pdf": "635117b02ee76ddae4b93c57d3dccec69510250633493367ef24ee2b4993e9c9",
+        "signature_sha256": "054a4e2ad5701d6d566b717151bba2dd35b462eea96418c7701dce45a59fa833"
+      }
+    },
+    {
+      "source_id": "MD-6.1.3-MassHamiltonian",
+      "json_review": {
+        "status": "APPROVED",
+        "issue_codes": [],
+        "corrected_json": null,
+        "issues": [],
+        "evidence": [
+          "A：实际渲染并核对 R1_PAGES.pdf 附件第23页；原PDF第239页，印刷第218页。原页标准分子Hamiltonian确为pᵀM⁻¹p/2+U(q)，并写有N_c=Nd个自由度；输入与之相符。",
+          "C：依据 R1_任务.md 本条实际Lean签名及本任务附录，按标准Mathlib数学含义只读核对；未运行Lean编译、未补证明，未把sorry或repair_log中的未提供声明当作审校结果。",
+          "项目定义核对：Chapter06Review.V n=Fin n→ℝ，Phase n=V n×V n；本条未使用Chapter04Review.V=Fin 3→ℝ或Chapter05Review.Phase。"
+        ]
+      },
+      "audit": {
+        "lean_decl": "MD.Ch06.massHamiltonian",
+        "verdict": "PASS",
+        "explanation": "n个实坐标的m∈V n、势能U:V n→ℝ及相点x∈Phase n全部显式；Phase n=V n×V n，x.1为q、x.2为p。动能是Σ_i p_i²/(2m_i)，等于对角质量矩阵的pᵀM⁻¹p/2，保留每个m_i，未偷换为单位质量。定义没有限制m_i，但context_notation明确物理模型为正对角质量，后续积分定理也逐坐标要求m_i>0；此处是总定义而非任意质量正定的断言。",
+        "counterexample": null,
+        "suggested_fix": null
+      },
+      "subtask": "BATCH04f",
+      "input_sha256": {
+        "Blueprint/Ch06.lean": "0a02a34ec68989a83bccfa5916db5053ecdb58e05667bf21ff3568d9d1f4318e",
+        "blueprint/ch06/ch06_source.json": "45c70ceef21ca168af437de297e2e21e2800b452ab7942654061d4cff9bb5d95",
+        "BATCH04f_PAGES.pdf": "635117b02ee76ddae4b93c57d3dccec69510250633493367ef24ee2b4993e9c9",
+        "signature_sha256": "1e61717a0b74e0e8ed51cc375e6a9744cd172c7cd2229e5e6dfdde4bff45f92a"
+      }
+    },
+    {
+      "source_id": "MD-6.1.3-PartitionMass",
+      "json_review": {
+        "status": "APPROVED",
+        "issue_codes": [],
+        "corrected_json": null,
+        "issues": [],
+        "evidence": [
+          "A：实际渲染并核对 R1_PAGES.pdf 附件第24页；原PDF第239页，印刷第218页。原页分离为动量高斯积分与配置积分的乘积，所有β、二次型及积分域均保留；原页没有计算高斯常数，本条对此作明确加强。",
+          "C：依据 R1_任务.md 本条实际Lean签名及本任务附录，按标准Mathlib数学含义只读核对；未运行Lean编译、未补证明，未把sorry或repair_log中的未提供声明当作审校结果。",
+          "项目定义核对：Chapter06Review.V、Phase及D19 massHamiltonian均按本任务实定义核实。"
+        ]
+      },
+      "audit": {
+        "lean_decl": "MD.Ch06.partitionMass",
+        "verdict": "PASS",
+        "explanation": "对任意n、正对角质量m、β>0及配置权重可积的U，结论给整个Phase n上的指数积分=配置积分×Π_i sqrt(2πm_i/β)。[EXTRA]已明确Q取全部配置实空间，n为任意自然数，不能把它当作一般区域Q结论。D19的质量Hamiltonian与第20条相同；高斯因子与每个质量、β的依赖正确，乘积次序交换无影响。可积性保证实际实值积分与Fubini分离合法，n=0时空乘积为1亦相容。",
+        "counterexample": null,
+        "suggested_fix": null
+      },
+      "subtask": "BATCH04g",
+      "input_sha256": {
+        "Blueprint/Ch06.lean": "0a02a34ec68989a83bccfa5916db5053ecdb58e05667bf21ff3568d9d1f4318e",
+        "blueprint/ch06/ch06_source.json": "45c70ceef21ca168af437de297e2e21e2800b452ab7942654061d4cff9bb5d95",
+        "BATCH04g_PAGES.pdf": "635117b02ee76ddae4b93c57d3dccec69510250633493367ef24ee2b4993e9c9",
+        "signature_sha256": "57fe63e922cabb4f6ff6a8e99674053a8a19ed02531d5af16e9759752d9eac9c"
+      }
+    },
+    {
+      "source_id": "MD-6.1.3-PartitionDomain",
+      "json_review": {
+        "status": "APPROVED",
+        "issue_codes": [],
+        "corrected_json": null,
+        "issues": [],
+        "evidence": [
+          "A：实际渲染并核对 R1_PAGES.pdf 附件第25页；原PDF第239页，印刷第218页。原页将Q称为accessible position domain并逐坐标写明动量、位置Lebesgue体积元；摘录忠实。",
+          "C：依据 R1_任务.md 本条实际Lean签名及本任务附录，按标准Mathlib数学含义只读核对；未运行Lean编译、未补证明，未把sorry或repair_log中的未提供声明当作审校结果。",
+          "项目定义核对：Phase n=V n×V n，D19 Hamiltonian先势能位置、后动量动能；μ.prod volume与坐标顺序一致。"
+        ]
+      },
+      "audit": {
+        "lean_decl": "MD.Ch06.partitionDomain",
+        "verdict": "PASS",
+        "explanation": "量化任意n及配置测度μ:Measure(V n)，明确[SigmaFinite μ]；正逐坐标质量、β>0及配置权重关于μ可积为前提。左边实际使用μ.prod(volume)作用在(q,p)顺序的Phase n上，右边是关于同一μ的配置积分乘正确的高斯质量因子。[EXTRA]说明原Q由μ=volume.restrict Q表示；这既保留一般可测配置域，也未把Q改成torus或把质量改成1。任意σ有限μ的推广与原公式相容，不额外声称其归一化常数为正。",
+        "counterexample": null,
+        "suggested_fix": null
+      },
+      "subtask": "BATCH04h",
+      "input_sha256": {
+        "Blueprint/Ch06.lean": "0a02a34ec68989a83bccfa5916db5053ecdb58e05667bf21ff3568d9d1f4318e",
+        "blueprint/ch06/ch06_source.json": "45c70ceef21ca168af437de297e2e21e2800b452ab7942654061d4cff9bb5d95",
+        "BATCH04h_PAGES.pdf": "635117b02ee76ddae4b93c57d3dccec69510250633493367ef24ee2b4993e9c9",
+        "signature_sha256": "a2728db22fe443714963b4dfa76fad8aeae3c30d091066ecfda29b23f5461871"
+      }
+    }
+  ],
+  "merged_from": "ch06_first_merged"
+}

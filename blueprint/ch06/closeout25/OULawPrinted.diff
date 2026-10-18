@@ -1,0 +1,19 @@
+--- before
++++ after
+@@ -1206,13 +1206,14 @@
+   ring
+ 
+ /-- source_id: MD-6.3.2-OULawPrinted · unnumbered_claim · §6.3.2 · 印刷p.235 / PDFp.256
+-[ERRATUM?] 原页根号只覆盖(2γ)⁻¹，(1−e⁻²γt)漏在根号内；方差因此被错误平方。单时分布等价不确定整个过程耦合。 -/
++[ERRATUM?] 原页根号只覆盖(2γ)⁻¹，(1−e⁻²γt)漏在根号内；方差因此被错误平方。单时分布等价不确定整个过程耦合。 [EXTRA] 25号：PDF256/印刷235已目视核对：根号覆盖完整(2γ)⁻¹(1−e^(−2γt))。Printed方差改σ²(1−e^(−2γT))/(2γ)，此前根号范围是转录错误，撤销原书疑误归因。
++-/
+ theorem ouLawPrinted : ∀ {Ω : Type*} [MeasurableSpace Ω] (P : Measure Ω)
+     (W X : ℝ → Ω → ℝ) (γ σ x0 T : ℝ),
+   IsPreBrownianReal (fun t sample ↦ W t sample) P → strictOUProcess P W X γ σ x0 →
+   0 < γ → 0 ≤ T → HasLaw (X T)
+     (gaussianReal (Real.exp (-γ*T)*x0)
+-      ((σ*Real.sqrt ((2*γ)⁻¹)*(1-Real.exp (-2*γ*T)))^2).toNNReal) P := by
++      (σ^2*(1-Real.exp (-2*γ*T))/(2*γ)).toNNReal) P := by
+   sorry
+ 
+ /-- source_id: MD-6.3.2-OULawCorrect · unnumbered_claim · §6.3.2 · 印刷p.235 / PDFp.256

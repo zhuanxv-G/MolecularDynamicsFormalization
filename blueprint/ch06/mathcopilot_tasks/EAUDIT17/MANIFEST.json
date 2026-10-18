@@ -1,0 +1,29 @@
+{
+  "eaudit": "EAUDIT17",
+  "subtasks": [
+    {
+      "subtask": "EAUDIT17a",
+      "source_id": "MD-6.4.4-WeightedH1",
+      "path": "blueprint/ch06/mathcopilot_tasks/EAUDIT17/a",
+      "total_bytes": 133824,
+      "definitions": 27,
+      "manifest_sha256": "287b613e280fca5accac3c779bd7f786f7dfb7a4dc9fcff551e6492136a82e1d"
+    },
+    {
+      "subtask": "EAUDIT17b",
+      "source_id": "MD-6.4.4-WeightedH1Norm",
+      "path": "blueprint/ch06/mathcopilot_tasks/EAUDIT17/b",
+      "total_bytes": 147752,
+      "definitions": 37,
+      "manifest_sha256": "032953fe2ac74af7bf010d483a2a349468f68576774147edb0888676abf7c3fb"
+    },
+    {
+      "subtask": "EAUDIT17c",
+      "source_id": "MD-6.4.4-Proposition64Printed",
+      "path": "blueprint/ch06/mathcopilot_tasks/EAUDIT17/c",
+      "total_bytes": 146168,
+      "definitions": 48,
+      "manifest_sha256": "c17b4af96abc2a75d5801156738f51c9859ff4938d7ee491cd38f500a97d1e91"
+    }
+  ]
+}

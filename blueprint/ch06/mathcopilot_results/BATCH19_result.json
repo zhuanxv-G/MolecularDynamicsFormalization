@@ -1,0 +1,357 @@
+{
+  "batch": "BATCH19",
+  "chapter": "ch06",
+  "round": "first-merged",
+  "input_sha256": {
+    "Blueprint/Ch06.lean": "0a02a34ec68989a83bccfa5916db5053ecdb58e05667bf21ff3568d9d1f4318e",
+    "blueprint/ch06/ch06_source.json": "45c70ceef21ca168af437de297e2e21e2800b452ab7942654061d4cff9bb5d95"
+  },
+  "items": [
+    {
+      "source_id": "MD-6.3.2-OUProcess",
+      "json_review": {
+        "status": "APPROVED",
+        "issue_codes": [],
+        "corrected_json": null,
+        "issues": [],
+        "evidence": [
+          "A：R4_PAGES.pdf 附件第16页，原PDF 255，印刷页234。原页(6.19)、γ>0及常σ对应。",
+          "C：仅按任务所列Lean签名及项目依赖定义作只读语义审校；标准库按标准含义采信，不作工程修改或证明检查。D21明列γ>0并把a(x,t)=−γx、b(x,t)=σ、固定x0代入D19。保留负漂移、实常σ和严格积分语义；不是用Gaussian law定义OU。W资格仍需在使用处给出。"
+        ]
+      },
+      "audit": {
+        "lean_decl": "MD.Ch06.strictOUProcess",
+        "verdict": "PASS",
+        "explanation": "D21明列γ>0并把a(x,t)=−γx、b(x,t)=σ、固定x0代入D19。保留负漂移、实常σ和严格积分语义；不是用Gaussian law定义OU。W资格仍需在使用处给出。",
+        "counterexample": null,
+        "suggested_fix": null
+      },
+      "subtask": "BATCH19a",
+      "input_sha256": {
+        "Blueprint/Ch06.lean": "0a02a34ec68989a83bccfa5916db5053ecdb58e05667bf21ff3568d9d1f4318e",
+        "blueprint/ch06/ch06_source.json": "45c70ceef21ca168af437de297e2e21e2800b452ab7942654061d4cff9bb5d95",
+        "BATCH19a_PAGES.pdf": "8739b522449334878461d199d41aeeb858c8086e869d288869270a2a067d9b07",
+        "signature_sha256": "1351fa71e19b18f03e9a17f373c6c5c3ce210bdff07b8aa677f3a008bab9d815"
+      }
+    },
+    {
+      "source_id": "MD-6.3.2-OUIntegratingFactor",
+      "json_review": {
+        "status": "CORRECTED",
+        "issue_codes": [
+          "TRANSCRIPTION_SIGMA_INTEGRAL"
+        ],
+        "corrected_json": {
+          "source_id": "MD-6.3.2-OUIntegratingFactor",
+          "kind": "unnumbered_claim",
+          "label": null,
+          "section": "6.3.2",
+          "printed_page": "234",
+          "pdf_page": "255",
+          "statement_latex": "Multiply both sides of (6.19) by the integrating factor $\\exp(\\gamma t)$, and observe that\n\\[d(\\exp(\\gamma t)X)=\\exp(\\gamma t)(dX+\\gamma Xdt);\\]\nthus (6.19) becomes\n\\[d(\\exp(\\gamma t)X)=\\sigma\\exp(\\gamma t)dW(t).\\]\nWe then integrate both sides to obtain\n\\[\\exp(\\gamma t)X(t)=X(0)+\\int_0^t\\sigma\\exp(\\gamma s)dW(s).\\]\nMultiplying by $e^{-\\gamma t}$ gives\n\\[X(t)=e^{-\\gamma t}X(0)+\\sigma e^{-\\gamma t}\\int_0^t\\exp(\\gamma s)dW(s).\\]",
+          "proof_latex": null,
+          "proof_note": "原书未给独立完整证明。",
+          "proof_discussion_latex": null,
+          "context_notation": [],
+          "issues": [
+            {
+              "code": "R4_REVIEW",
+              "detail": "原页第一条积分后的等式是exp(γt)X(t)=X(0)+∫₀ᵗ σ exp(γs)dW(s)，JSON把σ移至积分外；数学等价但不逐字，应还原。其余公式对应。 任意概率样本空间和PreBrownian W，真实OU关系、γ>0、T≥0；存在Y为exp(γs)的严格确定积分且X T几乎处处等于完整变常数解。σ=0也成立；额外重复γ>0无害。"
+            }
+          ],
+          "lean_decl": "MD.Ch06.ouIntegratingFactor",
+          "reusable_proofs": [],
+          "extra_assumptions": [
+            "[EXTRA]实际PreBrownian、严格OU与严格确定性Ito积分见证、γ>0和t≥0；完整求值，不以解公式作假设。"
+          ],
+          "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
+          "review_status": "CORRECTED",
+          "repair_log": [],
+          "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
+        },
+        "issues": [
+          {
+            "code": "TRANSCRIPTION_SIGMA_INTEGRAL",
+            "detail": "原页第一条积分后的等式是exp(γt)X(t)=X(0)+∫₀ᵗ σ exp(γs)dW(s)，JSON把σ移至积分外；数学等价但不逐字，应还原。其余公式对应。"
+          }
+        ],
+        "evidence": [
+          "A：R4_PAGES.pdf 附件第17页，原PDF 255，印刷页234。原页第一条积分后的等式是exp(γt)X(t)=X(0)+∫₀ᵗ σ exp(γs)dW(s)，JSON把σ移至积分外；数学等价但不逐字，应还原。其余公式对应。",
+          "C：仅按任务所列Lean签名及项目依赖定义作只读语义审校；标准库按标准含义采信，不作工程修改或证明检查。任意概率样本空间和PreBrownian W，真实OU关系、γ>0、T≥0；存在Y为exp(γs)的严格确定积分且X T几乎处处等于完整变常数解。σ=0也成立；额外重复γ>0无害。"
+        ]
+      },
+      "audit": {
+        "lean_decl": "MD.Ch06.ouIntegratingFactor",
+        "verdict": "PASS",
+        "explanation": "任意概率样本空间和PreBrownian W，真实OU关系、γ>0、T≥0；存在Y为exp(γs)的严格确定积分且X T几乎处处等于完整变常数解。σ=0也成立；额外重复γ>0无害。",
+        "counterexample": null,
+        "suggested_fix": "按A项恢复逐字原文；本条签名无须修改。"
+      },
+      "subtask": "BATCH19b",
+      "input_sha256": {
+        "Blueprint/Ch06.lean": "0a02a34ec68989a83bccfa5916db5053ecdb58e05667bf21ff3568d9d1f4318e",
+        "blueprint/ch06/ch06_source.json": "45c70ceef21ca168af437de297e2e21e2800b452ab7942654061d4cff9bb5d95",
+        "BATCH19b_PAGES.pdf": "8739b522449334878461d199d41aeeb858c8086e869d288869270a2a067d9b07",
+        "signature_sha256": "008829ea5f879f45dd6d06bdc534077927f59de87cc79f7fc1fffbb6428eb885"
+      }
+    },
+    {
+      "source_id": "MD-6.3.2-OUVarianceIntegral",
+      "json_review": {
+        "status": "APPROVED",
+        "issue_codes": [
+          "INCOMPLETE_CONCLUSION_GAUSSIAN_LAW"
+        ],
+        "corrected_json": null,
+        "issues": [
+          {
+            "code": "INCOMPLETE_CONCLUSION_GAUSSIAN_LAW",
+            "detail": "签名只对γ>0,T≥0计算普通定积分，等式正确。但整条statement_scope未限制成仅末尾确定性等式，原文的Y为Gaussian、均值0、随机积分方差都没有出现在本声明结论中。[EXTRA]说由其他条目保留不能替代本条完整核对；应缩小来源范围或添加完整随机声明。"
+          }
+        ],
+        "evidence": [
+          "A：R4_PAGES.pdf 附件第18页，原PDF 256，印刷页235。本页Y定义、均值零Gaussian和完整方差等式转录相符。",
+          "C：仅按任务所列Lean签名及项目依赖定义作只读语义审校；标准库按标准含义采信，不作工程修改或证明检查。签名只对γ>0,T≥0计算普通定积分，等式正确。但整条statement_scope未限制成仅末尾确定性等式，原文的Y为Gaussian、均值0、随机积分方差都没有出现在本声明结论中。[EXTRA]说由其他条目保留不能替代本条完整核对；应缩小来源范围或添加完整随机声明。"
+        ]
+      },
+      "audit": {
+        "lean_decl": "MD.Ch06.ouVarianceIntegral",
+        "verdict": "FAIL",
+        "explanation": "签名只对γ>0,T≥0计算普通定积分，等式正确。但整条statement_scope未限制成仅末尾确定性等式，原文的Y为Gaussian、均值0、随机积分方差都没有出现在本声明结论中。[EXTRA]说由其他条目保留不能替代本条完整核对；应缩小来源范围或添加完整随机声明。",
+        "counterexample": null,
+        "suggested_fix": "若只审普通积分，statement_latex限定为积分求值等式并明确范围；否则增加真实随机积分Y的HasLaw(gaussianReal 0 variance)及均值/方差结论。"
+      },
+      "subtask": "BATCH19c",
+      "input_sha256": {
+        "Blueprint/Ch06.lean": "0a02a34ec68989a83bccfa5916db5053ecdb58e05667bf21ff3568d9d1f4318e",
+        "blueprint/ch06/ch06_source.json": "45c70ceef21ca168af437de297e2e21e2800b452ab7942654061d4cff9bb5d95",
+        "BATCH19c_PAGES.pdf": "a6e8e3feddb36409662cf766ad2d68bb12959b5d70618fa79a7ca4478d700d7e",
+        "signature_sha256": "38f369d03b287f3f2a2b7c72a7dc7c3c26f9411a7961788e157063933b80f9f7"
+      }
+    },
+    {
+      "source_id": "MD-6.3.2-OULawPrinted",
+      "json_review": {
+        "status": "CORRECTED",
+        "issue_codes": [
+          "TRANSCRIPTION_RADICAL_SCOPE",
+          "FALSE_ERRATUM",
+          "WRONG_OU_VARIANCE"
+        ],
+        "corrected_json": {
+          "source_id": "MD-6.3.2-OULawPrinted",
+          "kind": "unnumbered_claim",
+          "label": null,
+          "section": "6.3.2",
+          "printed_page": "235",
+          "pdf_page": "256",
+          "statement_latex": "The solution with equivalent distribution is therefore\n\\[X(t)=e^{-\\gamma t}X(0)+\\sigma\\sqrt{(2\\gamma)^{-1}(1-e^{-2\\gamma t})}\\widehat Y(t).\\]\nwhere $\\widehat Y(t)$ should be interpreted as random process which at every time $t$ evaluates to a normal random variable ($\\widehat Y(t)\\sim N(0,1)$). This is what we mean by the exact distributional solution of the Ornstein-Uhlenbeck SDE with prescribed initial value $X(0)$.",
+          "proof_latex": null,
+          "proof_note": "原书未给独立完整证明。",
+          "proof_discussion_latex": null,
+          "context_notation": [],
+          "issues": [
+            {
+              "code": "R4_REVIEW",
+              "detail": "附件第19页根号横线覆盖整个(2γ)⁻¹(1−e^(−2γt))，并非只覆盖(2γ)⁻¹。JSON、ERRATUM?及repair_log均误读原页；原书此公式是正确的。 所列前提下正确均值是exp(−γT)x0，正确variance为σ²(1−exp(−2γT))/(2γ)。签名却将(1−exp(−2γT))平方，既不忠实原页也数学错误；不能以Printed名称豁免。仅单时law无需指定Ŷ整族耦合。"
+            }
+          ],
+          "lean_decl": "MD.Ch06.ouLawPrinted",
+          "reusable_proofs": [],
+          "extra_assumptions": [],
+          "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
+          "review_status": "CORRECTED",
+          "repair_log": [],
+          "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
+        },
+        "issues": [
+          {
+            "code": "TRANSCRIPTION_RADICAL_SCOPE",
+            "detail": "附件第19页根号横线覆盖整个(2γ)⁻¹(1−e^(−2γt))，并非只覆盖(2γ)⁻¹。JSON、ERRATUM?及repair_log均误读原页；原书此公式是正确的。"
+          },
+          {
+            "code": "FALSE_ERRATUM",
+            "detail": "附件第19页根号横线覆盖整个(2γ)⁻¹(1−e^(−2γt))，并非只覆盖(2γ)⁻¹。JSON、ERRATUM?及repair_log均误读原页；原书此公式是正确的。"
+          },
+          {
+            "code": "WRONG_OU_VARIANCE",
+            "detail": "所列前提下正确均值是exp(−γT)x0，正确variance为σ²(1−exp(−2γT))/(2γ)。签名却将(1−exp(−2γT))平方，既不忠实原页也数学错误；不能以Printed名称豁免。仅单时law无需指定Ŷ整族耦合。"
+          }
+        ],
+        "evidence": [
+          "A：R4_PAGES.pdf 附件第19页，原PDF 256，印刷页235。附件第19页根号横线覆盖整个(2γ)⁻¹(1−e^(−2γt))，并非只覆盖(2γ)⁻¹。JSON、ERRATUM?及repair_log均误读原页；原书此公式是正确的。",
+          "C：仅按任务所列Lean签名及项目依赖定义作只读语义审校；标准库按标准含义采信，不作工程修改或证明检查。所列前提下正确均值是exp(−γT)x0，正确variance为σ²(1−exp(−2γT))/(2γ)。签名却将(1−exp(−2γT))平方，既不忠实原页也数学错误；不能以Printed名称豁免。仅单时law无需指定Ŷ整族耦合。"
+        ]
+      },
+      "audit": {
+        "lean_decl": "MD.Ch06.ouLawPrinted",
+        "verdict": "FAIL",
+        "explanation": "所列前提下正确均值是exp(−γT)x0，正确variance为σ²(1−exp(−2γT))/(2γ)。签名却将(1−exp(−2γT))平方，既不忠实原页也数学错误；不能以Printed名称豁免。仅单时law无需指定Ŷ整族耦合。",
+        "counterexample": "γ=σ=1,x0=0,T=(log 2)/2：真实variance=(1−1/2)/2=1/4，签名variance=(1−1/2)²/2=1/8。",
+        "suggested_fix": "根号改为覆盖整个(2γ)⁻¹(1−e^(−2γt))；撤销错误ERRATUM?及其错误repair_log归因；Lean variance改为σ²(1−e^(−2γT))/(2γ)。"
+      },
+      "subtask": "BATCH19d",
+      "input_sha256": {
+        "Blueprint/Ch06.lean": "0a02a34ec68989a83bccfa5916db5053ecdb58e05667bf21ff3568d9d1f4318e",
+        "blueprint/ch06/ch06_source.json": "45c70ceef21ca168af437de297e2e21e2800b452ab7942654061d4cff9bb5d95",
+        "BATCH19d_PAGES.pdf": "a6e8e3feddb36409662cf766ad2d68bb12959b5d70618fa79a7ca4478d700d7e",
+        "signature_sha256": "43a177ab42dcc1a9357f1334fd0a0f170196d0739e263b0fb4cf5543054637a8"
+      }
+    },
+    {
+      "source_id": "MD-6.3.2-OULawCorrect",
+      "json_review": {
+        "status": "CORRECTED",
+        "issue_codes": [
+          "TRANSCRIPTION_RADICAL_SCOPE",
+          "FALSE_CORRECTION_ATTRIBUTION"
+        ],
+        "corrected_json": {
+          "source_id": "MD-6.3.2-OULawCorrect",
+          "kind": "unnumbered_claim",
+          "label": null,
+          "section": "6.3.2",
+          "printed_page": "235",
+          "pdf_page": "256",
+          "statement_latex": "The solution with equivalent distribution is therefore\n\\[X(t)=e^{-\\gamma t}X(0)+\\sigma\\sqrt{(2\\gamma)^{-1}(1-e^{-2\\gamma t})}\\widehat Y(t).\\]",
+          "proof_latex": null,
+          "proof_note": "原书未给独立完整证明。",
+          "proof_discussion_latex": null,
+          "context_notation": [],
+          "issues": [
+            {
+              "code": "R4_REVIEW",
+              "detail": "附件第20页与第19页同一原页，根号覆盖整个乘积。原JSON错误；所谓修正实为恢复原书正确根号范围，应撤回“原书漏根号”归因。 ouMean和ouVariance的实际定义已给，完整均值及variance正确；PreBrownian、严格OU、γ>0及T≥0足够。σ任意实数由σ²消除符号，T=0退化为点质量正确。这一law忠实于实际PDF公式。"
+            }
+          ],
+          "lean_decl": "MD.Ch06.ouLawCorrect",
+          "reusable_proofs": [],
+          "extra_assumptions": [
+            "[EXTRA]原书根号实际覆盖整个乘积；此声明保留同一OU过程的完整单时Gaussian law，不宣称联合过程耦合由边际决定。"
+          ],
+          "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
+          "review_status": "CORRECTED",
+          "repair_log": [],
+          "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
+        },
+        "issues": [
+          {
+            "code": "TRANSCRIPTION_RADICAL_SCOPE",
+            "detail": "附件第20页与第19页同一原页，根号覆盖整个乘积。原JSON错误；所谓修正实为恢复原书正确根号范围，应撤回“原书漏根号”归因。"
+          },
+          {
+            "code": "FALSE_CORRECTION_ATTRIBUTION",
+            "detail": "附件第20页与第19页同一原页，根号覆盖整个乘积。原JSON错误；所谓修正实为恢复原书正确根号范围，应撤回“原书漏根号”归因。"
+          }
+        ],
+        "evidence": [
+          "A：R4_PAGES.pdf 附件第20页，原PDF 256，印刷页235。附件第20页与第19页同一原页，根号覆盖整个乘积。原JSON错误；所谓修正实为恢复原书正确根号范围，应撤回“原书漏根号”归因。",
+          "C：仅按任务所列Lean签名及项目依赖定义作只读语义审校；标准库按标准含义采信，不作工程修改或证明检查。ouMean和ouVariance的实际定义已给，完整均值及variance正确；PreBrownian、严格OU、γ>0及T≥0足够。σ任意实数由σ²消除符号，T=0退化为点质量正确。这一law忠实于实际PDF公式。"
+        ]
+      },
+      "audit": {
+        "lean_decl": "MD.Ch06.ouLawCorrect",
+        "verdict": "PASS",
+        "explanation": "ouMean和ouVariance的实际定义已给，完整均值及variance正确；PreBrownian、严格OU、γ>0及T≥0足够。σ任意实数由σ²消除符号，T=0退化为点质量正确。这一law忠实于实际PDF公式。",
+        "counterexample": null,
+        "suggested_fix": "还原正确根号，改称原书忠实law而不是修正原书；保留单时分布范围。"
+      },
+      "subtask": "BATCH19e",
+      "input_sha256": {
+        "Blueprint/Ch06.lean": "0a02a34ec68989a83bccfa5916db5053ecdb58e05667bf21ff3568d9d1f4318e",
+        "blueprint/ch06/ch06_source.json": "45c70ceef21ca168af437de297e2e21e2800b452ab7942654061d4cff9bb5d95",
+        "BATCH19e_PAGES.pdf": "a6e8e3feddb36409662cf766ad2d68bb12959b5d70618fa79a7ca4478d700d7e",
+        "signature_sha256": "9ec86279b99b659cac9b786db673d2e7f24214a0649cfc381bf5bcb1da00fc03"
+      }
+    },
+    {
+      "source_id": "MD-6.3.2-OUGibbsLimit",
+      "json_review": {
+        "status": "APPROVED",
+        "issue_codes": [],
+        "corrected_json": null,
+        "issues": [],
+        "evidence": [
+          "A：R4_PAGES.pdf 附件第21页，原PDF 256，印刷页235。原页热噪声σ、长时Gaussian表达及规范化密度对应。",
+          "C：仅按任务所列Lean签名及项目依赖定义作只读语义审校；标准库按标准含义采信，不作工程修改或证明检查。γ,θ,m均正，σ=√(2γθm)，全部实t沿atTop；对所有有界连续f检验Gaussian测度积分，极限variance θm，均值0。完整弱收敛，不只均值方差参数收敛。负t的toNNReal总化不影响长时极限；本条未声称随机路径几乎处处收敛。"
+        ]
+      },
+      "audit": {
+        "lean_decl": "MD.Ch06.ouGibbsLimit",
+        "verdict": "PASS",
+        "explanation": "γ,θ,m均正，σ=√(2γθm)，全部实t沿atTop；对所有有界连续f检验Gaussian测度积分，极限variance θm，均值0。完整弱收敛，不只均值方差参数收敛。负t的toNNReal总化不影响长时极限；本条未声称随机路径几乎处处收敛。",
+        "counterexample": null,
+        "suggested_fix": null
+      },
+      "subtask": "BATCH19f",
+      "input_sha256": {
+        "Blueprint/Ch06.lean": "0a02a34ec68989a83bccfa5916db5053ecdb58e05667bf21ff3568d9d1f4318e",
+        "blueprint/ch06/ch06_source.json": "45c70ceef21ca168af437de297e2e21e2800b452ab7942654061d4cff9bb5d95",
+        "BATCH19f_PAGES.pdf": "a6e8e3feddb36409662cf766ad2d68bb12959b5d70618fa79a7ca4478d700d7e",
+        "signature_sha256": "9e3244246dfd8b745a195d15650fe7dac4725fb9d763facf408dd4e6c2b0e5ac"
+      }
+    },
+    {
+      "source_id": "MD-6.3.2-MomentumOU",
+      "json_review": {
+        "status": "APPROVED",
+        "issue_codes": [
+          "MISSING_WIENER_INDEPENDENCE"
+        ],
+        "corrected_json": null,
+        "issues": [
+          {
+            "code": "MISSING_WIENER_INDEPENDENCE",
+            "detail": "正质量、γ>0、θ>0、各坐标噪声√(2γθm_i)、任意确定p0都正确。但strictOUProcess和strictScalarSDE均不编码Wiener或坐标独立性；[EXTRA]称资格另给，本条未给任何可核对声明。因此该Prop允许完全相关甚至零驱动，未覆盖原文完整对象域。"
+          }
+        ],
+        "evidence": [
+          "A：R4_PAGES.pdf 附件第22页，原PDF 256，印刷页235。原页(6.20)、(6.21)、独立W_i及M^(1/2)对应。",
+          "C：仅按任务所列Lean签名及项目依赖定义作只读语义审校；标准库按标准含义采信，不作工程修改或证明检查。正质量、γ>0、θ>0、各坐标噪声√(2γθm_i)、任意确定p0都正确。但strictOUProcess和strictScalarSDE均不编码Wiener或坐标独立性；[EXTRA]称资格另给，本条未给任何可核对声明。因此该Prop允许完全相关甚至零驱动，未覆盖原文完整对象域。"
+        ]
+      },
+      "audit": {
+        "lean_decl": "MD.Ch06.momentumOU",
+        "verdict": "FAIL",
+        "explanation": "正质量、γ>0、θ>0、各坐标噪声√(2γθm_i)、任意确定p0都正确。但strictOUProcess和strictScalarSDE均不编码Wiener或坐标独立性；[EXTRA]称资格另给，本条未给任何可核对声明。因此该Prop允许完全相关甚至零驱动，未覆盖原文完整对象域。",
+        "counterexample": "P取单点概率空间，W≡0、p≡0、p0=0，任取正γ,θ,m，定义成立，但W不是Wiener。若W_i全取同一个Brownian、相同参数且p0相同，则各动量完全相关，同样不能表达原文独立噪声。",
+        "suggested_fix": "将完整独立Wiener族资格纳入Prop，或提供可核对的单独环境声明并显式限定本定义仅为方程关系。"
+      },
+      "subtask": "BATCH19g",
+      "input_sha256": {
+        "Blueprint/Ch06.lean": "0a02a34ec68989a83bccfa5916db5053ecdb58e05667bf21ff3568d9d1f4318e",
+        "blueprint/ch06/ch06_source.json": "45c70ceef21ca168af437de297e2e21e2800b452ab7942654061d4cff9bb5d95",
+        "BATCH19g_PAGES.pdf": "a6e8e3feddb36409662cf766ad2d68bb12959b5d70618fa79a7ca4478d700d7e",
+        "signature_sha256": "5b8050532652d8acab084d2409af56b2caf3582ffd75111fcdc9ba4e4983af69"
+      }
+    },
+    {
+      "source_id": "MD-6.3.2-GibbsGaussianDensity",
+      "json_review": {
+        "status": "APPROVED",
+        "issue_codes": [],
+        "corrected_json": null,
+        "issues": [],
+        "evidence": [
+          "A：R4_PAGES.pdf 附件第23页，原PDF 256，印刷页235。原页ρ∞公式的系数、负指数、m及kBT对应。",
+          "C：仅按任务所列Lean签名及项目依赖定义作只读语义审校；标准库按标准含义采信，不作工程修改或证明检查。θ=kBT；exp(−(u²/(2m))/θ)/√(2πmθ)与原式相同。θ,m,u为实数；context明确θ,m>0才称概率密度。仅定义函数，不声称已证归一化或非正参数为密度，数学范围已注明。"
+        ]
+      },
+      "audit": {
+        "lean_decl": "MD.Ch06.gibbsGaussianDensity",
+        "verdict": "PASS",
+        "explanation": "θ=kBT；exp(−(u²/(2m))/θ)/√(2πmθ)与原式相同。θ,m,u为实数；context明确θ,m>0才称概率密度。仅定义函数，不声称已证归一化或非正参数为密度，数学范围已注明。",
+        "counterexample": null,
+        "suggested_fix": null
+      },
+      "subtask": "BATCH19h",
+      "input_sha256": {
+        "Blueprint/Ch06.lean": "0a02a34ec68989a83bccfa5916db5053ecdb58e05667bf21ff3568d9d1f4318e",
+        "blueprint/ch06/ch06_source.json": "45c70ceef21ca168af437de297e2e21e2800b452ab7942654061d4cff9bb5d95",
+        "BATCH19h_PAGES.pdf": "a6e8e3feddb36409662cf766ad2d68bb12959b5d70618fa79a7ca4478d700d7e",
+        "signature_sha256": "214e9de407f3f6fb5b49f6738f987c32bab1061a2382f83b4b25a413cda8d44e"
+      }
+    }
+  ],
+  "merged_from": "ch06_first_merged"
+}

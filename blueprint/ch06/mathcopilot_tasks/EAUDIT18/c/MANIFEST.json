@@ -1,0 +1,48 @@
+{
+  "eaudit": "EAUDIT18",
+  "subtask": "EAUDIT18c",
+  "source_id": "MD-6.4.5-KernelEvolution",
+  "input_sha256": {
+    "Blueprint/Ch06.lean": "4a2a6cb72c1692f80e3537ab1a71701d429a482780a01226c3dc66a2ebb8b44b",
+    "blueprint/ch06/ch06_source.json": "d7f93cd20eb570744c710f3e07a88b319c082e4155812fee91db0920eb05944e",
+    "PAGES.pdf": "86dc16b71b33f60ad786bf63a04580717ae445ce12675e7fc751265fdf31ee04",
+    "materials_sha256": "141e67ebd4a726d6a1145f0a51729bed7d85ddde4d01918c74288ba36fb1016f"
+  },
+  "paste_sha256": "153aade1031d70af47ca287967850ab104c087a16777c19da2076e7da6e01458",
+  "source_pdf_sha256": "1939a22e5e96ebd2b58b8e91fe2c796f5390b402f267390f473b271c35d2f036",
+  "pdf_page_mapping": [
+    278
+  ],
+  "crop_pixel_identity": "PASS: copied page render or lossless embedded full-page source pixels",
+  "rasterized_pages": {},
+  "source_declarations": [
+    "kernelEvolutionRaw25",
+    "kernelEvolution"
+  ],
+  "dependency_excerpts": [
+    {
+      "path": "Blueprint/Ch06.lean",
+      "line": 3343,
+      "full_name": "MD.Ch06.kernelEvolutionRaw25",
+      "kind": "def",
+      "excerpt_sha256": "64c7ea1ee0141f6b21a170d37e723c24d1cf61629a4ec481b277b4e737f0ff17"
+    },
+    {
+      "path": "Blueprint/Ch06.lean",
+      "line": 3346,
+      "full_name": "MD.Ch06.kernelEvolution",
+      "kind": "def",
+      "excerpt_sha256": "6ab8e6f53810f7bcfb141691778d1a36e5e878b44b4b60357e044736f22687a9"
+    },
+    {
+      "path": "MolecularDynamics/Chapter06/ReviewDefinitions.lean",
+      "line": 166,
+      "full_name": "MolecularDynamics.Chapter06Review.markovSemigroup",
+      "kind": "def",
+      "excerpt_sha256": "24513b322cd8ce723974b7b551e95e9f91290d3d9e8669bf7a61a3bf6fb77d8d"
+    }
+  ],
+  "project_definition_closure": "complete recursive definitions, referenced theorem types, explicit choice and consistency specifications",
+  "website_submitted": false,
+  "total_task_bytes": 108996
+}

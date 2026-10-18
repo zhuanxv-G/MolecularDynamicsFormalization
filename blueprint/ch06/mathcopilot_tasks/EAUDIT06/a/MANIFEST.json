@@ -1,0 +1,41 @@
+{
+  "eaudit": "EAUDIT06",
+  "subtask": "EAUDIT06a",
+  "source_id": "MD-6.3.1-DiffusiveTaylorPrinted",
+  "input_sha256": {
+    "Blueprint/Ch06.lean": "4a2a6cb72c1692f80e3537ab1a71701d429a482780a01226c3dc66a2ebb8b44b",
+    "blueprint/ch06/ch06_source.json": "d7f93cd20eb570744c710f3e07a88b319c082e4155812fee91db0920eb05944e",
+    "PAGES.pdf": "7058e4bc32b764dd3a73cfafc446c02722de792ea1688eb657b62e15fa4c01d6",
+    "materials_sha256": "e624c8c4f199d75ff5cba937f8248f5222986ff8351050bc109adbb461762fae"
+  },
+  "paste_sha256": "b4d87996317aeeef47ef1e940c59615a01d4717d4e79ee19364f9ed26ceab3db",
+  "source_pdf_sha256": "1939a22e5e96ebd2b58b8e91fe2c796f5390b402f267390f473b271c35d2f036",
+  "pdf_page_mapping": [
+    254
+  ],
+  "crop_pixel_identity": "PASS: copied page render or lossless embedded full-page source pixels",
+  "rasterized_pages": {},
+  "source_declarations": [
+    "diffusiveTaylorPrinted",
+    "diffusiveTaylorPrinted_corrected"
+  ],
+  "dependency_excerpts": [
+    {
+      "path": "Blueprint/Ch06.lean",
+      "line": 1138,
+      "full_name": "MD.Ch06.diffusiveTaylorPrinted",
+      "kind": "theorem",
+      "excerpt_sha256": "741a16b67a07677e0eb7500dcf17214c9ede167735bb324bbd5602625acb0266"
+    },
+    {
+      "path": "Blueprint/Ch06.lean",
+      "line": 1145,
+      "full_name": "MD.Ch06.diffusiveTaylorPrinted_corrected",
+      "kind": "theorem",
+      "excerpt_sha256": "ab609845179629ed7d32c982d23f1709553a81a8c7334a0a3f6fb030b5090c56"
+    }
+  ],
+  "project_definition_closure": "complete recursive definitions, referenced theorem types, explicit choice and consistency specifications",
+  "website_submitted": false,
+  "total_task_bytes": 97335
+}

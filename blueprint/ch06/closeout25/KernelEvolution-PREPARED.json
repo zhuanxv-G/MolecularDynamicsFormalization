@@ -1,0 +1,8 @@
+{
+  "source_id": "MD-6.4.5-KernelEvolution",
+  "note": "保留任意核作用的kernelEvolutionRaw25辅助；主入口加真正Markov半群资格。仅覆盖概率测度推进，实际Langevin生成元和密度关系须见DensityEvolutionMeaning，不把本条称作完整指数传播识别。",
+  "gaps": [
+    "仅核推进，不覆盖Langevin密度存在、前向生成元或指数算子识别。"
+  ],
+  "lean_sha256": "0bb833d1a9a20fc19a56450bfe3a08731c5e8103743a879fe6b12bd98d86f110"
+}

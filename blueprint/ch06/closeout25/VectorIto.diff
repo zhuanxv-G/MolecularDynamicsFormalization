@@ -1,0 +1,24 @@
+--- before
++++ after
+@@ -1749,15 +1749,18 @@
+   · simp [MolecularDynamics.Chapter06Review.scalarForward]
+ 
+ /-- source_id: MD-6.3.7-VectorIto · (6.40)–(6.41) · §6.3.7 · 印刷p.243 / PDFp.264
+-[EXTRA] [EXTRA]按本节实际常矩阵B范围；真实全部坐标严格Ito积分与Hessian/trace完整校正，未缩成仅漂移定义。 -/
++[EXTRA] [EXTRA]按本节实际常矩阵B范围；真实全部坐标严格Ito积分与Hessian/trace完整校正，未缩成仅漂移定义。 [EXTRA] 25号：改为共同向量自然过滤上的适应性，补X联合可测、各被积过程全部左和L²及局部均方时间资格；strictVectorSDE已含整族Wiener资格。原文相隔公式按网站corrected_json恢复连接文本。仍缺一般多维Itô理论。
++-/
+ theorem vectorIto : ∀ {Ω : Type*} [MeasurableSpace Ω] {n r : ℕ} (P : Measure Ω)
+     (W : ℝ → Ω → (Fin r → ℝ)) (X : ℝ → Ω → (Fin n → ℝ))
+     (a : (Fin n → ℝ) → (Fin n → ℝ)) (B : Matrix (Fin n) (Fin r) ℝ)
+     (x0 : Fin n → ℝ) (φ : (Fin n → ℝ) → ℝ),
+   textbookIsWienerVector (fun t sample ↦ W t sample) P →
+   strictVectorSDE P W X (fun x _ ↦ a x) (fun _ _ ↦ B) x0 → ContDiff ℝ 2 φ →
+-  (∀ j, MolecularDynamics.Chapter06Review.adaptedSquareIntegrand P (fun t sample ↦ W t sample j)
+-    (fun t sample ↦ fderiv ℝ φ (X t sample) (fun i ↦ B i j))) →
++  Measurable (Function.uncurry X) →
++  (∀ t, 0 ≤ t → @Measurable Ω (Fin n → ℝ) (naturalHistory25 W t) inferInstance (X t)) →
++  vectorGridItoQualification25 P W
++    (fun j t sample ↦ fderiv ℝ φ (X t sample) (fun i ↦ B i j)) →
+   ∀ T : ℝ, 0 ≤ T → ∃ integrals : Fin r → Ω → ℝ,
+     (∀ j, strictItoIntegral P (fun t sample ↦ W t sample j)
+       (fun t sample ↦ fderiv ℝ φ (X t sample) (fun i ↦ B i j)) T (integrals j)) ∧

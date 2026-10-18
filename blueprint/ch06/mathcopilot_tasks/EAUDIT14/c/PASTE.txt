@@ -1,0 +1,141 @@
+以附件/PASTE 为准，忽略 /workspace 旧文件；Mathlib 定义按标准含义采信。
+A逐字核对原文及证明；C只读核对对象、域、量词、前提和全部结论。所有项目定义体及选择规格在下文；仅作为审阅摘录，不是独立模块。theorem/lemma提供完整类型（不审证明）；定义提供完整定义体，按文件作用域解释。不要因sorry判签名FAIL。原文版忠实性、修正版正确性、反例、原书疑误分别说明，不凭旧文件或repair_log猜声明。
+本条MD-6.4.4-Definition61，subtask=EAUDIT14c；原PDF页映射=[275]。只读，不改工程或补证明。以JSON对象返回batch=EAUDIT14,input_sha256,items；逐条含source_id,subtask,input_sha256,json_review{status,issue_codes,corrected_json,issues,evidence},audit{lean_decl,verdict,explanation,counterexample,suggested_fix}。verdict=PASS/FAIL/NEEDS_HUMAN，status=APPROVED/CORRECTED/NEEDS_HUMAN。必须原样回显下列全部哈希。
+input_sha256:
+{
+  "Blueprint/Ch06.lean": "4a2a6cb72c1692f80e3537ab1a71701d429a482780a01226c3dc66a2ebb8b44b",
+  "blueprint/ch06/ch06_source.json": "d7f93cd20eb570744c710f3e07a88b319c082e4155812fee91db0920eb05944e",
+  "PAGES.pdf": "f7db858d1b5894e9e522582fea51831f4ea2a6fc46e17a03945770b25b5598c8",
+  "materials_sha256": "f48fab3c1cda4eaa33300e386dee7de329329c8e2b57af52e72b3b22b137814f"
+}
+
+## 原文JSON
+```json
+{
+  "source_id": "MD-6.4.4-Definition61",
+  "kind": "definition",
+  "label": "Definition 6.1",
+  "section": "6.4.4",
+  "printed_page": "254",
+  "pdf_page": "275",
+  "statement_latex": "Definition 6.1 (Hörmander's Condition) Let $U\\subset\\mathbb R^m$ be open. The SDE (6.43) with $C^\\infty$ vector fields $b_0,b_1,\\ldots,b_r:U\\to\\mathbb R^m$ are said to satisfy Hörmander's condition at $z\\in U$ if the vector space spanned by the collection of iterated Lie brackets\n\\[b_0,b_1,\\ldots,b_r,[b_0,b_1],[b_0,b_2],\\ldots,[b_{r-1},b_r],[b_0,[b_0,b_1]],\\ldots\\]\n(evaluated at $z$) is $\\mathbb R^m$.",
+  "proof_latex": null,
+  "proof_note": "原书未给独立完整证明。",
+  "proof_discussion_latex": null,
+  "context_notation": [],
+  "extra_assumptions": [
+    "[EXTRA]Fin(S+1)完整包含原drift b0与全部噪声，实际无限次括号及实span；明确C∞字段资格。保留原定义含b0，不冒充一般parabolic噪声生成条件；具体Langevin rank另证。",
+    "[EXTRA]原开域U和域内点完整保留；坐标字段全空间任意总化只用于函数表示，C∞仅要求在原开域，不要求全局光滑延拓。开域内真实fderiv/全部迭代括号是局部对象。",
+    "[EXTRA] 25号：补textbookIteratedBracket定义体；原含漂移版仅为原书括号秩定义，密度用途必须用噪声起始的抛物型修正版。"
+  ],
+  "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
+  "coverage_gaps": null
+}
+```
+## 当前完整Lean（全部原文版、修正版及反例）
+```lean
+def definition61 {m S : ℕ} (D : Set (Fin m → ℝ)) (_hD : IsOpen D)
+    (b : Fin (S+1) → ((Fin m → ℝ) → (Fin m → ℝ))) (x : Fin m → ℝ) : Prop :=
+  x ∈ D ∧ (∀ i, ContDiffOn ℝ ∞ (b i) D) ∧ textbookHormanderAt (Set.range b) x
+
+/-- 修正版，对应原文 MD-6.4.4-Definition61；改动：用于密度结论时，从噪声字段开始，允许与漂移及噪声反复取括号；不把漂移本身直接加入初始生成族。 -/
+def parabolicNoiseBracketLevels {m S : ℕ}
+    (b : Fin (S+1) → ((Fin m → ℝ) → (Fin m → ℝ))) : ℕ → Set ((Fin m → ℝ) → (Fin m → ℝ))
+  | 0 => Set.range (fun i : Fin S ↦ b i.succ)
+  | k+1 => parabolicNoiseBracketLevels b k ∪
+      {w | ∃ u ∈ parabolicNoiseBracketLevels b k, ∃ i : Fin (S+1),
+        w=MolecularDynamics.Chapter06Review.lieBracket (b i) u}
+
+def definition61_corrected {m S : ℕ} (D : Set (Fin m → ℝ)) (_hD : IsOpen D)
+    (b : Fin (S+1) → ((Fin m → ℝ) → (Fin m → ℝ))) (x : Fin m → ℝ) : Prop :=
+  x ∈ D ∧ (∀ i, ContDiffOn ℝ ∞ (b i) D) ∧
+    Submodule.span ℝ {v | ∃ k : ℕ, ∃ w ∈ parabolicNoiseBracketLevels b k, v=w x}=⊤
+
+/-- 【原书疑误】保留原含漂移的张成条件，不能据此推出一般转移密度。 -/
+def definition61Printed {m S : ℕ} (D : Set (Fin m → ℝ)) (_hD : IsOpen D)
+    (b : Fin (S+1) → ((Fin m → ℝ) → (Fin m → ℝ))) (x : Fin m → ℝ) : Prop :=
+  x ∈ D ∧ (∀ i, ContDiffOn ℝ ∞ (b i) D) ∧ textbookHormanderAt (Set.range b) x
+```
+### 文件参数及作用域 Blueprint/Ch06.lean
+```lean
+open Set Filter Matrix MeasureTheory ProbabilityTheory MolecularDynamics MolecularDynamics.Chapter02Review MolecularDynamics.Chapter06Review
+open scoped BigOperators Topology ContDiff InnerProductSpace Matrix.Norms.L2Operator ENNReal NNReal
+variable {n Nc : ℕ}
+variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
+variable {R : Type*} [Ring R] [Algebra ℝ R]
+local instance : MeasureSpace UnitAddCircle := ⟨AddCircle.haarAddCircle⟩
+```
+### 文件参数及作用域 MolecularDynamics/Chapter05/ReviewDefinitions.lean
+```lean
+open Set Filter MeasureTheory Matrix
+open scoped BigOperators Topology ENNReal
+```
+### 文件参数及作用域 MolecularDynamics/Chapter06/ReviewDefinitions.lean
+```lean
+open Set Filter MeasureTheory ProbabilityTheory
+open scoped BigOperators Topology ContDiff ENNReal NNReal
+local instance : MeasureSpace UnitAddCircle := ⟨AddCircle.haarAddCircle⟩
+```
+### 文件参数及作用域 MolecularDynamics/Chapter08/HormanderClosure.lean
+```lean
+open scoped ContDiff
+variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
+```
+### MD.Ch06.definition61 [Blueprint/Ch06.lean:3031]
+```lean
+def definition61 {m S : ℕ} (D : Set (Fin m → ℝ)) (_hD : IsOpen D)
+    (b : Fin (S+1) → ((Fin m → ℝ) → (Fin m → ℝ))) (x : Fin m → ℝ) : Prop :=
+  x ∈ D ∧ (∀ i, ContDiffOn ℝ ∞ (b i) D) ∧ textbookHormanderAt (Set.range b) x
+```
+### MD.Ch06.parabolicNoiseBracketLevels [Blueprint/Ch06.lean:3036]
+```lean
+def parabolicNoiseBracketLevels {m S : ℕ}
+    (b : Fin (S+1) → ((Fin m → ℝ) → (Fin m → ℝ))) : ℕ → Set ((Fin m → ℝ) → (Fin m → ℝ))
+  | 0 => Set.range (fun i : Fin S ↦ b i.succ)
+  | k+1 => parabolicNoiseBracketLevels b k ∪
+      {w | ∃ u ∈ parabolicNoiseBracketLevels b k, ∃ i : Fin (S+1),
+        w=MolecularDynamics.Chapter06Review.lieBracket (b i) u}
+```
+### MD.Ch06.definition61_corrected [Blueprint/Ch06.lean:3043]
+```lean
+def definition61_corrected {m S : ℕ} (D : Set (Fin m → ℝ)) (_hD : IsOpen D)
+    (b : Fin (S+1) → ((Fin m → ℝ) → (Fin m → ℝ))) (x : Fin m → ℝ) : Prop :=
+  x ∈ D ∧ (∀ i, ContDiffOn ℝ ∞ (b i) D) ∧
+    Submodule.span ℝ {v | ∃ k : ℕ, ∃ w ∈ parabolicNoiseBracketLevels b k, v=w x}=⊤
+```
+### MD.Ch06.definition61Printed [Blueprint/Ch06.lean:3049]
+```lean
+def definition61Printed {m S : ℕ} (D : Set (Fin m → ℝ)) (_hD : IsOpen D)
+    (b : Fin (S+1) → ((Fin m → ℝ) → (Fin m → ℝ))) (x : Fin m → ℝ) : Prop :=
+  x ∈ D ∧ (∀ i, ContDiffOn ℝ ∞ (b i) D) ∧ textbookHormanderAt (Set.range b) x
+```
+### MolecularDynamics.Chapter05Review.E [MolecularDynamics/Chapter05/ReviewDefinitions.lean:18]
+```lean
+abbrev E (n : ℕ) := EuclideanSpace ℝ (Fin n)
+```
+### MolecularDynamics.Chapter06Review.V [MolecularDynamics/Chapter06/ReviewDefinitions.lean:17]
+```lean
+abbrev V (n : ℕ) := Fin n → ℝ
+```
+### MolecularDynamics.Chapter06Review.lieBracket [MolecularDynamics/Chapter06/ReviewDefinitions.lean:159]
+```lean
+def lieBracket {n : ℕ} (u v : V n → V n) : V n → V n := VectorField.lieBracket ℝ u v
+```
+### MolecularDynamics.textbookIteratedBracket [MolecularDynamics/Chapter08/HormanderClosure.lean:16]
+```lean
+inductive textbookIteratedBracket (seed : Set (E → E)) : (E → E) → Prop
+  | seed {V : E → E} (hV : V ∈ seed) : textbookIteratedBracket seed V
+  | bracket {V W : E → E} (hV : textbookIteratedBracket seed V)
+      (hW : textbookIteratedBracket seed W) :
+      textbookIteratedBracket seed (VectorField.lieBracket ℝ V W)
+```
+### MolecularDynamics.textbookBracketPointSpan [MolecularDynamics/Chapter08/HormanderClosure.lean:30]
+```lean
+def textbookBracketPointSpan (seed : Set (E → E)) (x : E) : Submodule ℝ E :=
+  Submodule.span ℝ (Set.range (fun V : {V // textbookIteratedBracket seed V} ↦ V.val x))
+```
+### MolecularDynamics.textbookHormanderAt [MolecularDynamics/Chapter08/HormanderClosure.lean:33]
+```lean
+def textbookHormanderAt (seed : Set (E → E)) (x : E) : Prop :=
+  textbookBracketPointSpan seed x = ⊤
+```

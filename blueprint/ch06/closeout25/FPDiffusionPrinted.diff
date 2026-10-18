@@ -1,0 +1,45 @@
+--- before
++++ after
+@@ -1579,14 +1579,37 @@
+   simpa only [Pi.mul_apply, mul_comm, mul_left_comm, mul_assoc, mul_neg, integral_neg] using he
+ 
+ /-- source_id: MD-6.3.6-FPDiffusionPrinted · unnumbered_claim · §6.3.6 · 印刷p.242 / PDFp.263
+-[ERRATUM?] 原页两次IBP后仍打印负号；正确应正号，且(6.39)最终算子已经使用正号。 -/
++[ERRATUM?] 原页两次IBP后仍打印负号；正确应正号，且(6.39)最终算子已经使用正号。 [EXTRA] 25号：PDF263/印刷242已目视核对：两次分部积分右端是正号并含(x,t)。删除错误外负号，Printed使用已有独立分部积分证明；撤销虚假原书疑误，旧_corrected名字仅兼容保留。
++-/
+ theorem fpDiffusionPrinted : ∀ (b ρ φ : ℝ → ℝ),
+   ContDiff ℝ 2 b → ContDiff ℝ 2 ρ → ContDiff ℝ 2 φ → HasCompactSupport φ →
+   (∫ x, b x^2*deriv (deriv φ) x*ρ x)=
+-    -(∫ x, φ x*deriv (deriv (fun z ↦ b z^2*ρ z)) x) := by
+-  sorry
+-
+-/-- 修正版，对应原文 MD-6.3.6-FPDiffusionPrinted；改动：仅将两次分部积分后的外负号改为正号，保留原C²和紧支资格。 -/
++    (∫ x, φ x*deriv (deriv (fun z ↦ b z^2*ρ z)) x) := by
++  intro b ρ φ hb hρ hφ hc
++  have ibp : ∀ (g f : ℝ → ℝ), ContDiff ℝ 1 g → ContDiff ℝ 1 f → HasCompactSupport f →
++      (∫ x, g x*deriv f x)=-(∫ x, deriv g x*f x) := by
++    intro g f hg hf hs
++    have he := fpDriftAdjoint g (fun _ ↦ 1) f hg contDiff_const hf hs
++    simpa only [mul_one, mul_neg, integral_neg, mul_comm] using he
++  have hG : ContDiff ℝ 2 (fun x ↦ b x^2*ρ x) := (hb.pow 2).mul hρ
++  have hG1 : ContDiff ℝ 1 (fun x ↦ b x^2*ρ x) := hG.of_le (by norm_num)
++  have hφ1 : ContDiff ℝ 1 φ := hφ.of_le (by norm_num)
++  have h1 := ibp (fun x ↦ b x^2*ρ x) (deriv φ) hG1 hφ.deriv' hc.deriv
++  have h2 := ibp (deriv (fun x ↦ b x^2*ρ x)) φ hG.deriv' hφ1 hc
++  calc
++    _ = (∫ x, (b x^2*ρ x)*deriv (deriv φ) x) := by
++      apply integral_congr_ae
++      filter_upwards [] with x
++      ring
++    _ = _ := by
++      rw [h1,h2,neg_neg]
++      apply integral_congr_ae
++      filter_upwards [] with x
++      ring
++
++
++
++/-- 原页本为正号；此同义_corrected名称为兼容保留，不是原书勘误。 -/
+ theorem fpDiffusionPrinted_corrected : ∀ (b ρ φ : ℝ → ℝ),
+   ContDiff ℝ 2 b → ContDiff ℝ 2 ρ → ContDiff ℝ 2 φ → HasCompactSupport φ →
+   (∫ x, b x^2*deriv (deriv φ) x*ρ x)=

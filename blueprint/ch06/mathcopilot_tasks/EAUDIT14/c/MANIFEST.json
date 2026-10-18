@@ -1,0 +1,99 @@
+{
+  "eaudit": "EAUDIT14",
+  "subtask": "EAUDIT14c",
+  "source_id": "MD-6.4.4-Definition61",
+  "input_sha256": {
+    "Blueprint/Ch06.lean": "4a2a6cb72c1692f80e3537ab1a71701d429a482780a01226c3dc66a2ebb8b44b",
+    "blueprint/ch06/ch06_source.json": "d7f93cd20eb570744c710f3e07a88b319c082e4155812fee91db0920eb05944e",
+    "PAGES.pdf": "f7db858d1b5894e9e522582fea51831f4ea2a6fc46e17a03945770b25b5598c8",
+    "materials_sha256": "f48fab3c1cda4eaa33300e386dee7de329329c8e2b57af52e72b3b22b137814f"
+  },
+  "paste_sha256": "513100bcce14326004ce66c7361235d00cfe4d0a3de3937b4d097a2d4ede54de",
+  "source_pdf_sha256": "1939a22e5e96ebd2b58b8e91fe2c796f5390b402f267390f473b271c35d2f036",
+  "pdf_page_mapping": [
+    275
+  ],
+  "crop_pixel_identity": "PASS: copied page render or lossless embedded full-page source pixels",
+  "rasterized_pages": {},
+  "source_declarations": [
+    "definition61",
+    "parabolicNoiseBracketLevels",
+    "definition61_corrected",
+    "definition61Printed"
+  ],
+  "dependency_excerpts": [
+    {
+      "path": "Blueprint/Ch06.lean",
+      "line": 3031,
+      "full_name": "MD.Ch06.definition61",
+      "kind": "def",
+      "excerpt_sha256": "74bd169fc54808fa440596f0968419c3d25791e0bb0201106721432e3389757a"
+    },
+    {
+      "path": "Blueprint/Ch06.lean",
+      "line": 3036,
+      "full_name": "MD.Ch06.parabolicNoiseBracketLevels",
+      "kind": "def",
+      "excerpt_sha256": "e3fdccc4680cceacafc54d97733fbe170b51a2b131b339e0f4db320b4db5374c"
+    },
+    {
+      "path": "Blueprint/Ch06.lean",
+      "line": 3043,
+      "full_name": "MD.Ch06.definition61_corrected",
+      "kind": "def",
+      "excerpt_sha256": "137a5d5df982240c259191f8070e3214f620702cbd361f695273966b38bd564f"
+    },
+    {
+      "path": "Blueprint/Ch06.lean",
+      "line": 3049,
+      "full_name": "MD.Ch06.definition61Printed",
+      "kind": "def",
+      "excerpt_sha256": "dbfff64095f178d2a9e2cc11ec8eda6ed8160deea628669a3f01c4ca96d62252"
+    },
+    {
+      "path": "MolecularDynamics/Chapter05/ReviewDefinitions.lean",
+      "line": 18,
+      "full_name": "MolecularDynamics.Chapter05Review.E",
+      "kind": "abbrev",
+      "excerpt_sha256": "b497c8ba7f01b62a3147d9ae65652772ff3f81e57aa19b116f1283fef7a3cc60"
+    },
+    {
+      "path": "MolecularDynamics/Chapter06/ReviewDefinitions.lean",
+      "line": 17,
+      "full_name": "MolecularDynamics.Chapter06Review.V",
+      "kind": "abbrev",
+      "excerpt_sha256": "7ab0ad90462b274b03f5b929b5f09417c0b397b6cb908fa6e7bd56677a314027"
+    },
+    {
+      "path": "MolecularDynamics/Chapter06/ReviewDefinitions.lean",
+      "line": 159,
+      "full_name": "MolecularDynamics.Chapter06Review.lieBracket",
+      "kind": "def",
+      "excerpt_sha256": "c137c9bb6f12e565cc6ac85d8b17a51e05972b398b006211cf78b8eecf3268ca"
+    },
+    {
+      "path": "MolecularDynamics/Chapter08/HormanderClosure.lean",
+      "line": 16,
+      "full_name": "MolecularDynamics.textbookIteratedBracket",
+      "kind": "inductive",
+      "excerpt_sha256": "0854f03293cb092ab091c0eef6d9ca8f82f34470c196ccc148e3721a885365db"
+    },
+    {
+      "path": "MolecularDynamics/Chapter08/HormanderClosure.lean",
+      "line": 30,
+      "full_name": "MolecularDynamics.textbookBracketPointSpan",
+      "kind": "def",
+      "excerpt_sha256": "adb68f2e9a0c14a76660beb31071f15c5ed538fdd7dd593fee25f6bf8cf0c675"
+    },
+    {
+      "path": "MolecularDynamics/Chapter08/HormanderClosure.lean",
+      "line": 33,
+      "full_name": "MolecularDynamics.textbookHormanderAt",
+      "kind": "def",
+      "excerpt_sha256": "15f9fa88d5934a94ad8fd2b07f88f907824bded0569c13ab96d75c015d01f0e2"
+    }
+  ],
+  "project_definition_closure": "complete recursive definitions, referenced theorem types, explicit choice and consistency specifications",
+  "website_submitted": false,
+  "total_task_bytes": 117055
+}

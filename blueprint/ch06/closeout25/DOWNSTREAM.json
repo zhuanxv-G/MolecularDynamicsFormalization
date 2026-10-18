@@ -1,0 +1,6 @@
+{
+  "source_id": "MD-6.4.5-ComplexEigenmodeDecay",
+  "note": "LangevinForwardSemigroupMeaning增加U、β、γ及资格后，ComplexEigenmodeDecay只在既有半群识别前提的调用处补同一U β γ；未改目标结论和证明体。该前提随被引用资格加强，进入复审。",
+  "signature_changed": true,
+  "category": "下游最小接口适配"
+}

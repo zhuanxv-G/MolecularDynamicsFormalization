@@ -1,0 +1,29 @@
+{
+  "eaudit": "EAUDIT14",
+  "subtasks": [
+    {
+      "subtask": "EAUDIT14a",
+      "source_id": "MD-6.4.4-Theorem62",
+      "path": "blueprint/ch06/mathcopilot_tasks/EAUDIT14/a",
+      "total_bytes": 131148,
+      "definitions": 13,
+      "manifest_sha256": "621819eaf15d74e7f49b10ff2e2c22b2b6877f667274abb68c00b64861d1e5b6"
+    },
+    {
+      "subtask": "EAUDIT14b",
+      "source_id": "MD-6.4.4-HamiltonianPowerMomentumLaplacian",
+      "path": "blueprint/ch06/mathcopilot_tasks/EAUDIT14/b",
+      "total_bytes": 106891,
+      "definitions": 7,
+      "manifest_sha256": "08fd84fe704e2c3aa215984e8751896244b4150a7a6384f5a97569bea090fd8f"
+    },
+    {
+      "subtask": "EAUDIT14c",
+      "source_id": "MD-6.4.4-Definition61",
+      "path": "blueprint/ch06/mathcopilot_tasks/EAUDIT14/c",
+      "total_bytes": 117055,
+      "definitions": 10,
+      "manifest_sha256": "69c27febccdafbc2222f2ee1100bc3ab536d097412043fe10aef5823b6e36c52"
+    }
+  ]
+}

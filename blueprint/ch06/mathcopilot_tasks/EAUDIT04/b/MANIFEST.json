@@ -1,0 +1,94 @@
+{
+  "eaudit": "EAUDIT04",
+  "subtask": "EAUDIT04b",
+  "source_id": "MD-6.2.2-Proposition62",
+  "input_sha256": {
+    "Blueprint/Ch06.lean": "4a2a6cb72c1692f80e3537ab1a71701d429a482780a01226c3dc66a2ebb8b44b",
+    "blueprint/ch06/ch06_source.json": "d7f93cd20eb570744c710f3e07a88b319c082e4155812fee91db0920eb05944e",
+    "PAGES.pdf": "395b7cbcd9ba0acd1fca7141ce72fd19ed5b5e1ca5f9f0bdd40782e2e3dcc8fc",
+    "materials_sha256": "4bf0646fdf8a4e6d664d4ed07c0fb3ba59fbe2e8e774be92633050e89aa35e28"
+  },
+  "paste_sha256": "b8e7d0ed2db8bf164c7d00315b38a627828858d929906bf4927cc5768ddb215e",
+  "source_pdf_sha256": "1939a22e5e96ebd2b58b8e91fe2c796f5390b402f267390f473b271c35d2f036",
+  "pdf_page_mapping": [
+    250,
+    251
+  ],
+  "crop_pixel_identity": "PASS: copied page render or lossless embedded full-page source pixels",
+  "rasterized_pages": {},
+  "source_declarations": [
+    "proposition62",
+    "proposition62_corrected",
+    "proposition62Printed",
+    "proposition62Expansion_corrected",
+    "proposition62Printed_counterexample"
+  ],
+  "dependency_excerpts": [
+    {
+      "path": "Blueprint/Ch06.lean",
+      "line": 900,
+      "full_name": "MD.Ch06.proposition62",
+      "kind": "theorem",
+      "excerpt_sha256": "a80757d4dd49c9ae8189927ca6cc847cc14350a8a1fd01742f460299011f7f87"
+    },
+    {
+      "path": "Blueprint/Ch06.lean",
+      "line": 907,
+      "full_name": "MD.Ch06.proposition62_corrected",
+      "kind": "theorem",
+      "excerpt_sha256": "673d9b1dc01206b174fc9ef832e149108ab2af03d08ed3970f9df6689893f591"
+    },
+    {
+      "path": "Blueprint/Ch06.lean",
+      "line": 914,
+      "full_name": "MD.Ch06.proposition62Printed",
+      "kind": "def",
+      "excerpt_sha256": "95eded2cd98de48d71e993c94fd3166a3b1a78f12ba92f10999d7052adb0233b"
+    },
+    {
+      "path": "Blueprint/Ch06.lean",
+      "line": 917,
+      "full_name": "MD.Ch06.proposition62Expansion_corrected",
+      "kind": "theorem",
+      "excerpt_sha256": "67d0a73a36365e5b4375c2a7250653c087bfc388e84736f871bec237c73464bd"
+    },
+    {
+      "path": "Blueprint/Ch06.lean",
+      "line": 920,
+      "full_name": "MD.Ch06.proposition62Printed_counterexample",
+      "kind": "theorem",
+      "excerpt_sha256": "e1643756f82bf2ebbce3469174e3842fbb5b7aecc0241e7bf381b69c165b8fd9"
+    },
+    {
+      "path": "MolecularDynamics/Chapter06/WienerQuadraticVariation.lean",
+      "line": 105,
+      "full_name": "MolecularDynamics.textbookWienerTime",
+      "kind": "def",
+      "excerpt_sha256": "48d2835171e11313e4685ae314d45b6832bfe80118a2ea749cd46bcd88d4633a"
+    },
+    {
+      "path": "MolecularDynamics/Chapter06/WienerQuadraticVariation.lean",
+      "line": 109,
+      "full_name": "MolecularDynamics.textbookWienerIncrement",
+      "kind": "def",
+      "excerpt_sha256": "2bb6bdd9356679811483e775c38e463ed64f8e5a40d85c6888c50785074145e7"
+    },
+    {
+      "path": "MolecularDynamics/Chapter06/WienerQuadraticVariation.lean",
+      "line": 114,
+      "full_name": "MolecularDynamics.textbookWienerQuadraticSum",
+      "kind": "def",
+      "excerpt_sha256": "0e481ebfa18f9942211f2ee0dfa3f44cb49d33af44fe291d6da8f77e0a8112a9"
+    },
+    {
+      "path": "MolecularDynamics/Chapter06/WienerQuadraticVariation.lean",
+      "line": 200,
+      "full_name": "MolecularDynamics.textbookWienerQuadraticSum_meanSquare_tendsto",
+      "kind": "theorem",
+      "excerpt_sha256": "976579b04e7512372bb490648388e713e816c68484e6f6b6ab095300e6ffe6d3"
+    }
+  ],
+  "project_definition_closure": "complete recursive definitions, referenced theorem types, explicit choice and consistency specifications",
+  "website_submitted": false,
+  "total_task_bytes": 101917
+}

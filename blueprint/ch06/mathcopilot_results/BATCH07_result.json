@@ -1,0 +1,273 @@
+{
+  "batch": "BATCH07",
+  "chapter": "ch06",
+  "round": "first-merged",
+  "input_sha256": {
+    "Blueprint/Ch06.lean": "0a02a34ec68989a83bccfa5916db5053ecdb58e05667bf21ff3568d9d1f4318e",
+    "blueprint/ch06/ch06_source.json": "45c70ceef21ca168af437de297e2e21e2800b452ab7942654061d4cff9bb5d95"
+  },
+  "items": [
+    {
+      "source_id": "MD-6.1.4-PolynomialObservable",
+      "json_review": {
+        "status": "APPROVED",
+        "issue_codes": [
+          "SCOPE_NOTE"
+        ],
+        "corrected_json": {
+          "source_id": "MD-6.1.4-PolynomialObservable",
+          "kind": "definition",
+          "label": null,
+          "section": "6.1.4",
+          "printed_page": "220",
+          "pdf_page": "241",
+          "statement_latex": "In the case of periodic boundary conditions we will assume that, for any observable of interest,\n\\[|\\phi(q,p)|=O(\\|p\\|^\\alpha),\\qquad p\\to\\infty,\\]\nfor some positive constant $\\alpha$.",
+          "proof_latex": null,
+          "proof_note": "原书未给独立完整证明。",
+          "proof_discussion_latex": null,
+          "context_notation": [],
+          "issues": [
+            {
+              "code": "SCOPE_NOTE",
+              "detail": "全局统一多项式界是已标注加强条件；任意不连续函数的渐近界不自动等价于此定义。"
+            }
+          ],
+          "lean_decl": "MD.Ch06.polynomialObservable",
+          "reusable_proofs": [],
+          "extra_assumptions": [
+            "[EXTRA]q在实际紧torus上；用一致C(1+‖p‖)^r、C≥0及自然数r表达至多多项式增长，实α可取更大整数；不证明每个可观测量自动满足增长界。"
+          ],
+          "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
+          "review_status": "APPROVED",
+          "repair_log": [],
+          "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
+        },
+        "issues": [
+          {
+            "code": "SCOPE_NOTE",
+            "detail": "全局统一多项式界是已标注加强条件；任意不连续函数的渐近界不自动等价于此定义。"
+          }
+        ],
+        "evidence": {
+          "A_pdf_pages": [
+            3
+          ],
+          "A_original_pdf_pages": "241",
+          "A_printed_pages": "220",
+          "A_method": "直接读取附件PDF文本，并对对应印刷页的渲染图核对公式、上下标及措辞；重复页的提取正文一致。换行及LaTeX排版编码差异不作数学错误。",
+          "A_result": "所选原句与公式一致；摘录允许省去相邻未选段落，不将省略当作完整原证明。",
+          "C_basis": "仅本任务所给实际签名、该条依赖定义及附录D1–D24；Mathlib按任务约定采信。只读语义审查，未运行Lean编译，未修改工程或补证明，未因sorry判FAIL。"
+        }
+      },
+      "audit": {
+        "lean_decl": "MD.Ch06.polynomialObservable",
+        "verdict": "PASS",
+        "explanation": "对象为单位配置环面×实动量空间。存在统一C≥0、自然数r，对全部配置和动量有全局界。该条件是明确标注的较强增长条件；仅靠环面紧性并不能把任意不连续函数的渐近界升级为全局界，不能把此定义宣称为对所有函数都与原大O等价。对连续可观测量和一致的大O，紧集有界后可作此替换。r=0也允许，仍满足某个正指数的渐近界。",
+        "counterexample": null,
+        "suggested_fix": null
+      },
+      "subtask": "BATCH07a",
+      "input_sha256": {
+        "Blueprint/Ch06.lean": "0a02a34ec68989a83bccfa5916db5053ecdb58e05667bf21ff3568d9d1f4318e",
+        "blueprint/ch06/ch06_source.json": "45c70ceef21ca168af437de297e2e21e2800b452ab7942654061d4cff9bb5d95",
+        "BATCH07a_PAGES.pdf": "6a6b4014c48f977d47afa698ef45f4f2e4f8712da06f24aee99ec7ff1c583c67",
+        "signature_sha256": "75ce451f779beb0d2eecc079fcadce00ea9090b4b22ed54e169d01e2f9d63335"
+      }
+    },
+    {
+      "source_id": "MD-6.1.4-CanonicalAveragePrinted",
+      "json_review": {
+        "status": "NEEDS_HUMAN",
+        "issue_codes": [
+          "ERRATUM?"
+        ],
+        "corrected_json": {
+          "source_id": "MD-6.1.4-CanonicalAveragePrinted",
+          "kind": "definition",
+          "label": "(6.4)",
+          "section": "6.1.4",
+          "printed_page": "220",
+          "pdf_page": "241",
+          "statement_latex": "Under assumptions on the potential energy as discussed above, and with $\\phi$ continuous and allowed to grow at most polynomially fast at infinity, we may proceed to define averages with respect to the canonical density $\\rho_\\beta$, namely\n\\[\\operatorname{Av}_\\beta(\\phi)=Z_{\\rm can}^{-1}\\int_D\\phi(q,p)\\rho_\\beta(q,p)d\\omega.\\tag{6.4}\\]",
+          "proof_latex": null,
+          "proof_note": "原书未给独立完整证明。",
+          "proof_discussion_latex": null,
+          "context_notation": [],
+          "issues": [
+            {
+              "code": "ERRATUM?",
+              "detail": "[ERRATUM?]式(6.3)的ρβ已含Zcan⁻¹，式(6.4)再乘一次导致Avβ(1)=Zcan⁻¹，而后文p.221使用标准归一化平均。"
+            },
+            {
+              "code": "ERRATUM?",
+              "detail": "保留原书印刷矛盾；不静默改正文献原式。式(6.4)对已归一密度重复乘Z⁻¹。"
+            }
+          ],
+          "lean_decl": "MD.Ch06.canonicalAveragePrinted",
+          "reusable_proofs": [],
+          "extra_assumptions": [],
+          "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
+          "review_status": "NEEDS_HUMAN",
+          "repair_log": [
+            {
+              "date": "2026-10-17",
+              "action": "directive22_printed_corrected_pair",
+              "change": "去掉对已经归一化ρβ的第二次Zcan⁻¹；沿用未归一权重乘一次Zcan⁻¹的定义。",
+              "corrected_decl": "MD.Ch06.canonicalAveragePrinted_corrected",
+              "website": "未提交；待网站审计"
+            }
+          ],
+          "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
+        },
+        "issues": [
+          {
+            "code": "ERRATUM?",
+            "detail": "保留原书印刷矛盾；不静默改正文献原式。式(6.4)对已归一密度重复乘Z⁻¹。"
+          }
+        ],
+        "evidence": {
+          "A_pdf_pages": [
+            4
+          ],
+          "A_original_pdf_pages": "241",
+          "A_printed_pages": "220",
+          "A_method": "直接读取附件PDF文本，并对对应印刷页的渲染图核对公式、上下标及措辞；重复页的提取正文一致。换行及LaTeX排版编码差异不作数学错误。",
+          "A_result": "所选原句与公式一致；摘录允许省去相邻未选段落，不将省略当作完整原证明。",
+          "C_basis": "仅本任务所给实际签名、该条依赖定义及附录D1–D24；Mathlib按任务约定采信。只读语义审查，未运行Lean编译，未修改工程或补证明，未因sorry判FAIL。"
+        }
+      },
+      "audit": {
+        "lean_decl": "MD.Ch06.canonicalAveragePrinted",
+        "verdict": "NEEDS_HUMAN",
+        "explanation": "Printed定义确实在D1已归一密度之外又乘D2的Z倒数；全实相空间、H、β、f的类型一致。作为原书字面定义忠实，不能因其非标准平均而判签名FAIL；原书与(6.3)及p.221用法冲突，须人工处理。修正版已在条目5给出，需分别看待。",
+        "counterexample": "若Z>0且权重可积，Printed平均(1)=1/Z，只有Z=1时为1。例如一自由度H=(q²+p²)/2、β=1有Z=2π，Printed平均(1)=1/(2π)。",
+        "suggested_fix": "保留Printed字面式；采用条目5中单次归一化修正版作标准平均，原书勘误由人工确认。"
+      },
+      "subtask": "BATCH07b",
+      "input_sha256": {
+        "Blueprint/Ch06.lean": "0a02a34ec68989a83bccfa5916db5053ecdb58e05667bf21ff3568d9d1f4318e",
+        "blueprint/ch06/ch06_source.json": "45c70ceef21ca168af437de297e2e21e2800b452ab7942654061d4cff9bb5d95",
+        "BATCH07b_PAGES.pdf": "6a6b4014c48f977d47afa698ef45f4f2e4f8712da06f24aee99ec7ff1c583c67",
+        "signature_sha256": "7ee5d2038154421c958f085f0817b9c6f83e5bf7dc8aa94edfe3c02cadcdf30b"
+      }
+    },
+    {
+      "source_id": "MD-6.1.4-CanonicalAverage",
+      "json_review": {
+        "status": "APPROVED",
+        "issue_codes": [],
+        "corrected_json": {
+          "source_id": "MD-6.1.4-CanonicalAverage",
+          "kind": "definition",
+          "label": null,
+          "section": "6.1.4",
+          "printed_page": "220–221",
+          "pdf_page": "241–242",
+          "statement_latex": "We will denote the average with respect to the canonical probability density by $\\operatorname{Av}_\\beta$. Using (6.4), we can compute the average of the function $p^2$ as\n\\[\\operatorname{Av}_\\beta(p^2)=\\int_{-\\infty}^{\\infty}\\int_{-\\infty}^{\\infty}p^2\\rho_\\beta dqdp.\\]",
+          "proof_latex": null,
+          "proof_note": "原书未给独立完整证明。",
+          "proof_discussion_latex": null,
+          "context_notation": [
+            "实际未归一权重的积分乘真实partition倒数；定义不计可积性或归一化已证。"
+          ],
+          "issues": [],
+          "lean_decl": "MD.Ch06.canonicalAverage",
+          "reusable_proofs": [],
+          "extra_assumptions": [
+            "[EXTRA][ERRATUM?]按p.221的实际用法与概率平均标准定义去掉式(6.4)对已归一ρ的第二次Z⁻¹；原字面版仍保留NEEDS_HUMAN。"
+          ],
+          "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
+          "review_status": "APPROVED",
+          "repair_log": [],
+          "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
+        },
+        "issues": [],
+        "evidence": {
+          "A_pdf_pages": [
+            5,
+            6
+          ],
+          "A_original_pdf_pages": "241–242",
+          "A_printed_pages": "220–221",
+          "A_method": "直接读取附件PDF文本，并对对应印刷页的渲染图核对公式、上下标及措辞；重复页的提取正文一致。换行及LaTeX排版编码差异不作数学错误。",
+          "A_result": "所选原句与公式一致；摘录允许省去相邻未选段落，不将省略当作完整原证明。",
+          "C_basis": "仅本任务所给实际签名、该条依赖定义及附录D1–D24；Mathlib按任务约定采信。只读语义审查，未运行Lean编译，未修改工程或补证明，未因sorry判FAIL。"
+        }
+      },
+      "audit": {
+        "lean_decl": "MD.Ch06.canonicalAverage",
+        "verdict": "PASS",
+        "explanation": "canonicalAverage与canonicalAveragePrinted_corrected均为D2真实partition倒数乘未归一权重积分，只含一个归一化因子。两者对同一全实相空间及任意H、β、f定义；无可积性前提是总定义的延拓，不表示任意输入都已是概率平均。修正与p.221一致，合理且定义正确。",
+        "counterexample": null,
+        "suggested_fix": null
+      },
+      "subtask": "BATCH07c",
+      "input_sha256": {
+        "Blueprint/Ch06.lean": "0a02a34ec68989a83bccfa5916db5053ecdb58e05667bf21ff3568d9d1f4318e",
+        "blueprint/ch06/ch06_source.json": "45c70ceef21ca168af437de297e2e21e2800b452ab7942654061d4cff9bb5d95",
+        "BATCH07c_PAGES.pdf": "d3d3044a9747f0967ecfd253d25552676f7293d68b3ecfd0340e42053d02fac6",
+        "signature_sha256": "fa8d6af4dd85a9b06f4aeda083a7977be68ea6d21ebf90f93f3fe8112360fcea"
+      }
+    },
+    {
+      "source_id": "MD-6.1.4-CanonicalAverageOne",
+      "json_review": {
+        "status": "APPROVED",
+        "issue_codes": [],
+        "corrected_json": {
+          "source_id": "MD-6.1.4-CanonicalAverageOne",
+          "kind": "extra_claim",
+          "label": null,
+          "section": "6.1.4",
+          "printed_page": "218–220",
+          "pdf_page": "239–241",
+          "statement_latex": "The quantity $Z_{\\rm can}$ is a normalizing constant so that this is a probability density.",
+          "proof_latex": null,
+          "proof_note": "原书未给独立完整证明。",
+          "proof_discussion_latex": null,
+          "context_notation": [],
+          "issues": [],
+          "lean_decl": "MD.Ch06.canonicalAverageOne",
+          "reusable_proofs": [
+            "MolecularDynamics.textbookCanonicalAverage_one"
+          ],
+          "extra_assumptions": [
+            "[EXTRA]标准归一化概率平均的实际检验Avβ(1)=1；保留旧CH06-017，独立于错误的式(6.4)重复归一化字面定义。"
+          ],
+          "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
+          "review_status": "APPROVED",
+          "repair_log": [],
+          "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
+        },
+        "issues": [],
+        "evidence": {
+          "A_pdf_pages": [
+            7,
+            8,
+            9
+          ],
+          "A_original_pdf_pages": "239–241",
+          "A_printed_pages": "218–220",
+          "A_method": "直接读取附件PDF文本，并对对应印刷页的渲染图核对公式、上下标及措辞；重复页的提取正文一致。换行及LaTeX排版编码差异不作数学错误。",
+          "A_result": "所选原句与公式一致；摘录允许省去相邻未选段落，不将省略当作完整原证明。",
+          "C_basis": "仅本任务所给实际签名、该条依赖定义及附录D1–D24；Mathlib按任务约定采信。只读语义审查，未运行Lean编译，未修改工程或补证明，未因sorry判FAIL。"
+        }
+      },
+      "audit": {
+        "lean_decl": "MD.Ch06.canonicalAverageOne",
+        "verdict": "PASS",
+        "explanation": "∀Nc、H、β；hρ为整个实相空间权重可积。正指数在非零Lebesgue测度上可积，积分自动严格正（Nc=0时单点体积亦为1），故不缺Z≠0前提。D4积分化为Z⁻¹Z=1。[EXTRA]正确地区分了Printed错误平均。",
+        "counterexample": null,
+        "suggested_fix": null
+      },
+      "subtask": "BATCH07d",
+      "input_sha256": {
+        "Blueprint/Ch06.lean": "0a02a34ec68989a83bccfa5916db5053ecdb58e05667bf21ff3568d9d1f4318e",
+        "blueprint/ch06/ch06_source.json": "45c70ceef21ca168af437de297e2e21e2800b452ab7942654061d4cff9bb5d95",
+        "BATCH07d_PAGES.pdf": "5c603a78f2a218658db796ef294f05a402acbfb09827e1a25215df27e1bd84c9",
+        "signature_sha256": "b95a5af0d0b690bc22a78b249493134b6dee707d4a3e5a68527b96a3fdc8e5e3"
+      }
+    }
+  ],
+  "merged_from": "ch06_first_merged"
+}

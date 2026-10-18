@@ -1,0 +1,29 @@
+{
+  "eaudit": "EAUDIT05",
+  "subtasks": [
+    {
+      "subtask": "EAUDIT05a",
+      "source_id": "MD-6.2.2-DeterministicStrobePrinted",
+      "path": "blueprint/ch06/mathcopilot_tasks/EAUDIT05/a",
+      "total_bytes": 86024,
+      "definitions": 4,
+      "manifest_sha256": "5595bb78dfe7ed93e89ef5582ca208cb0e567d390cb1025a33e34716c425c025"
+    },
+    {
+      "subtask": "EAUDIT05b",
+      "source_id": "MD-6.3-VectorSDE",
+      "path": "blueprint/ch06/mathcopilot_tasks/EAUDIT05/b",
+      "total_bytes": 109527,
+      "definitions": 6,
+      "manifest_sha256": "fbc4072d1183bb07531140daed08b6a21b671f07463797fae4e7a7346b34f17f"
+    },
+    {
+      "subtask": "EAUDIT05c",
+      "source_id": "MD-6.3.1-ScalarItoFormula",
+      "path": "blueprint/ch06/mathcopilot_tasks/EAUDIT05/c",
+      "total_bytes": 103931,
+      "definitions": 8,
+      "manifest_sha256": "b313cc6ec1931dd7ba32316e9da66fe39bb9208731af0f668df2f5c29df5cadf"
+    }
+  ]
+}

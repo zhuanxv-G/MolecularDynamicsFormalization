@@ -1,0 +1,29 @@
+{
+  "eaudit": "EAUDIT03",
+  "subtasks": [
+    {
+      "subtask": "EAUDIT03a",
+      "source_id": "MD-6.2.1-WalkIncrement",
+      "path": "blueprint/ch06/mathcopilot_tasks/EAUDIT03/a",
+      "total_bytes": 136671,
+      "definitions": 2,
+      "manifest_sha256": "65d1998ce40a634bad89443e27533ddf2364038b2e24cc0665a733aaf496ae7c"
+    },
+    {
+      "subtask": "EAUDIT03b",
+      "source_id": "MD-6.2.1-StateMarkovMeaning",
+      "path": "blueprint/ch06/mathcopilot_tasks/EAUDIT03/b",
+      "total_bytes": 85852,
+      "definitions": 2,
+      "manifest_sha256": "50be4649b48a5b9ef07051bee19e400dde60b8a5d76a958c04e4cb5c776e372a"
+    },
+    {
+      "subtask": "EAUDIT03c",
+      "source_id": "MD-6.2.2-RiemannTags",
+      "path": "blueprint/ch06/mathcopilot_tasks/EAUDIT03/c",
+      "total_bytes": 83344,
+      "definitions": 2,
+      "manifest_sha256": "e0311421aa0f26f2b951878be8526ba58660448e00b7e15a5b56e0b8300e9622"
+    }
+  ]
+}

@@ -1,0 +1,241 @@
+{
+  "batch": "BATCH30",
+  "chapter": "ch06",
+  "round": "first-merged",
+  "input_sha256": {
+    "Blueprint/Ch06.lean": "0a02a34ec68989a83bccfa5916db5053ecdb58e05667bf21ff3568d9d1f4318e",
+    "blueprint/ch06/ch06_source.json": "45c70ceef21ca168af437de297e2e21e2800b452ab7942654061d4cff9bb5d95"
+  },
+  "items": [
+    {
+      "source_id": "MD-6.4.2-LangevinCanonicalMixing",
+      "json_review": {
+        "status": "NEEDS_HUMAN",
+        "issue_codes": [
+          "DEPENDENCY_SPECIFICATION_MISSING",
+          "SOURCE_GENERALITY_REQUIRES_QUALIFICATION"
+        ],
+        "corrected_json": {
+          "source_id": "MD-6.4.2-LangevinCanonicalMixing",
+          "kind": "unnumbered_claim",
+          "label": null,
+          "section": "6.4.2",
+          "printed_page": "248",
+          "pdf_page": "269",
+          "statement_latex": "Even a single phase space point, which corresponds to a delta-function initial distribution, will instantly diffuse as the solution of the Fokker-Planck equation and, eventually, would cover the entire phase space.",
+          "proof_latex": null,
+          "proof_note": "原书未给独立完整证明。",
+          "proof_discussion_latex": null,
+          "context_notation": [],
+          "issues": [
+            {
+              "code": "DEPENDENCY_SPECIFICATION_MISSING",
+              "message": "textbookLangevinPathSolution使用Classical.choose actual_path_solution_exists，但未给该存在命题的完整类型，无法核定所选路径满足哪套方程。"
+            },
+            {
+              "code": "SOURCE_GENERALITY_REQUIRES_QUALIFICATION",
+              "message": "原句从SDE谈瞬间扩散及最终覆盖全相空间，若理解为所有SDE则过强；零噪声或退化且不可达系统不满足。所列Lean仅处理已标明的周期非退化Langevin特例。"
+            }
+          ],
+          "lean_decl": "MD.Ch06.langevinCanonicalMixing",
+          "reusable_proofs": [],
+          "extra_assumptions": [
+            "[EXTRA]真实现有周期单位质量Langevin kernel、正γ/β、原光滑力全局Lipschitz；完整任意点初值的正时刻严格正连续转移密度以及全部有界连续检验弱混合，原一般混合意义另条，不以单位质量特例替代一般定义。"
+          ],
+          "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
+          "review_status": "NEEDS_HUMAN",
+          "repair_log": [
+            "R6审校：只修订审校JSON；原书数学疑误保留，未修改Lean工程或补证明。"
+          ],
+          "source_page_verification": "R6_PAGES.pdf 附件第13页；已比对对应原页渲染及文本；详见本条evidence。"
+        },
+        "issues": [
+          {
+            "code": "DEPENDENCY_SPECIFICATION_MISSING",
+            "message": "textbookLangevinPathSolution使用Classical.choose actual_path_solution_exists，但未给该存在命题的完整类型，无法核定所选路径满足哪套方程。"
+          },
+          {
+            "code": "SOURCE_GENERALITY_REQUIRES_QUALIFICATION",
+            "message": "原句从SDE谈瞬间扩散及最终覆盖全相空间，若理解为所有SDE则过强；零噪声或退化且不可达系统不满足。所列Lean仅处理已标明的周期非退化Langevin特例。"
+          }
+        ],
+        "evidence": [
+          "A：R6_PAGES.pdf 附件第13页（原PDF 269，印刷页248）；逐字、公式及页码核对。",
+          "C：只读核对R6_任务.md本条全部Lean签名及其列出的项目依赖/附录定义，未使用旧工程文件；不以sorry判FAIL。"
+        ]
+      },
+      "audit": {
+        "lean_decl": "MD.Ch06.langevinCanonicalMixing",
+        "verdict": "NEEDS_HUMAN",
+        "explanation": "明确只覆盖周期单位质量、光滑周期势、全局Lipschitz力及正γ/β的实际kernel，结论包括所有t>0、所有初值的严格正连续联合转移密度及所有有界连续检验的弱混合；[EXTRA]已披露这一范围。可见定义把路径解设为Classical.choose(actual_path_solution_exists ...)，但该项目存在命题的完整陈述未提供，因此无法只凭本任务证明choose出的对象确为指定Langevin路径而不是其他存在对象。另需核对该路径解在[0,T]上的方程/初值资格。数学结论在所列周期非退化Langevin条件下合理，缺失的是决定性项目定义依据。",
+        "counterexample": "一般SDE取dX=0，从单点出发永远为同一Dirac分布，不会瞬时扩散或覆盖整个空间；这不是所列非退化Langevin特例的反例。",
+        "suggested_fix": "提供actual_path_solution_exists的完整Lean类型及所选路径满足的初值/积分方程定义；保留[EXTRA]周期单位质量范围，原书一般性句子加条件不足的疑误标记。"
+      },
+      "subtask": "BATCH30a",
+      "input_sha256": {
+        "Blueprint/Ch06.lean": "0a02a34ec68989a83bccfa5916db5053ecdb58e05667bf21ff3568d9d1f4318e",
+        "blueprint/ch06/ch06_source.json": "45c70ceef21ca168af437de297e2e21e2800b452ab7942654061d4cff9bb5d95",
+        "BATCH30a_PAGES.pdf": "8177071121fb292231a8d5e19bf9dbbfbe5f36a7923b3c8f6383ed07e10bbfb9",
+        "signature_sha256": "6771c0129ba54a6bcfe6e60894f1b6a38891a368cf4fc952c6ffdc83083adadc"
+      }
+    },
+    {
+      "source_id": "MD-6.4.2-OUDensityPrinted",
+      "json_review": {
+        "status": "NEEDS_HUMAN",
+        "issue_codes": [
+          "PRINTED_GAUSSIAN_NORMALIZATION",
+          "PRINTED_TIME_ZERO_DEGENERACY"
+        ],
+        "corrected_json": {
+          "source_id": "MD-6.4.2-OUDensityPrinted",
+          "kind": "definition",
+          "label": "(6.44)–(6.45)",
+          "section": "6.4.2",
+          "printed_page": "248",
+          "pdf_page": "269",
+          "statement_latex": "The solution $p(t)$ to the Ornstein-Uhlenbeck equation, for any finite time $t$, is always normally distributed\n\\[\\rho(p,t)=\\exp\\left[-\\frac{(p-\\mu(t))^2}{2\\sigma(t)^2}\\right];\\tag{6.44}\\]\nwhere\n\\[\\mu(t)=p_0e^{-\\gamma t};\\qquad\\sigma^2(t)=k_BT m[1-e^{-2\\gamma t}].\\tag{6.45}\\]",
+          "proof_latex": null,
+          "proof_note": "原书未给独立完整证明。",
+          "proof_discussion_latex": null,
+          "context_notation": [],
+          "issues": [
+            {
+              "code": "ERRATUM?",
+              "detail": "(6.44)遗漏(2πσ²(t))⁻¹/²归一化系数；t=0为Dirac，不能声称每个有限t都是非退化Lebesgue密度。"
+            },
+            {
+              "code": "PRINTED_GAUSSIAN_NORMALIZATION",
+              "message": "[ERRATUM?]6.44原页缺(2πσ²(t))^(-1/2)；原文须保留，修正公式另列，不能将原指数直接认证为归一化密度。"
+            },
+            {
+              "code": "PRINTED_TIME_ZERO_DEGENERACY",
+              "message": "[ERRATUM?]“any finite time t”在t=0点初值为Dirac，不具有通常Lebesgue密度；密度公式只在正方差时解释。"
+            }
+          ],
+          "lean_decl": "MD.Ch06.ouDensityPrinted",
+          "reusable_proofs": [],
+          "extra_assumptions": [
+            "[EXTRA]定义中使用通用噪声σ，取σ=√(2γkBTm)即6.45；t=0资格另记录。"
+          ],
+          "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
+          "review_status": "NEEDS_HUMAN",
+          "repair_log": [
+            {
+              "date": "2026-10-17",
+              "action": "directive22_printed_corrected_pair",
+              "change": "增加(2πσ²(t))⁻¹/²，并限γ>0、噪声非零、t>0的密度解释。",
+              "corrected_decl": "MD.Ch06.ouDensityPrinted_corrected",
+              "website": "未提交；待网站审计"
+            },
+            "R6审校：只修订审校JSON；原书数学疑误保留，未修改Lean工程或补证明。"
+          ],
+          "source_page_verification": "R6_PAGES.pdf 附件第14页；已比对对应原页渲染及文本；详见本条evidence。"
+        },
+        "issues": [
+          {
+            "code": "PRINTED_GAUSSIAN_NORMALIZATION",
+            "message": "[ERRATUM?]6.44原页缺(2πσ²(t))^(-1/2)；原文须保留，修正公式另列，不能将原指数直接认证为归一化密度。"
+          },
+          {
+            "code": "PRINTED_TIME_ZERO_DEGENERACY",
+            "message": "[ERRATUM?]“any finite time t”在t=0点初值为Dirac，不具有通常Lebesgue密度；密度公式只在正方差时解释。"
+          }
+        ],
+        "evidence": [
+          "A：R6_PAGES.pdf 附件第14页（原PDF 269，印刷页248）；逐字、公式及页码核对。",
+          "C：只读核对R6_任务.md本条全部Lean签名及其列出的项目依赖/附录定义，未使用旧工程文件；不以sorry判FAIL。",
+          "原页6.44仅印指数，无正态归一化因子；6.45方差为kBTm(1−e^(−2γt))。"
+        ]
+      },
+      "audit": {
+        "lean_decl": "MD.Ch06.ouDensityPrinted",
+        "verdict": "PASS",
+        "explanation": "Printed定义保留了原书未归一化指数。ouMean=exp(−γt)x0，ouVariance=σ_noise²(1−exp(−2γt))/(2γ)；取σ_noise²=2γkBTm就得到6.45。[EXTRA]已经说明参数转换。作为字面公式定义PASS，不把原书缺归一化或t=0问题算成该字面定义的签名错误。",
+        "counterexample": "在方差v=1时，未归一化指数在实线的积分为sqrt(2π)，不是1；t=0时真实law为δx0。",
+        "suggested_fix": "保留原书疑误并加[ERRATUM?]；按本条说明分别保留Printed版和修正版。"
+      },
+      "subtask": "BATCH30b",
+      "input_sha256": {
+        "Blueprint/Ch06.lean": "0a02a34ec68989a83bccfa5916db5053ecdb58e05667bf21ff3568d9d1f4318e",
+        "blueprint/ch06/ch06_source.json": "45c70ceef21ca168af437de297e2e21e2800b452ab7942654061d4cff9bb5d95",
+        "BATCH30b_PAGES.pdf": "8177071121fb292231a8d5e19bf9dbbfbe5f36a7923b3c8f6383ed07e10bbfb9",
+        "signature_sha256": "183af3ea1c6c47a406b73358a0e0f2ef0f31c4185de4cd86c398579685007ce2"
+      }
+    },
+    {
+      "source_id": "MD-6.4.2-OUDensityCorrect",
+      "json_review": {
+        "status": "NEEDS_HUMAN",
+        "issue_codes": [
+          "PRINTED_GAUSSIAN_NORMALIZATION",
+          "PRINTED_TIME_ZERO_DEGENERACY"
+        ],
+        "corrected_json": {
+          "source_id": "MD-6.4.2-OUDensityCorrect",
+          "kind": "definition",
+          "label": "(6.44) correction",
+          "section": "6.4.2",
+          "printed_page": "248",
+          "pdf_page": "269",
+          "statement_latex": "The solution $p(t)$ to the Ornstein-Uhlenbeck equation, for any finite time $t$, is always normally distributed\n\\[\\rho(p,t)=\\exp\\left[-\\frac{(p-\\mu(t))^2}{2\\sigma(t)^2}\\right];\\tag{6.44}\\]\nwhere\n\\[\\mu(t)=p_0e^{-\\gamma t};\\qquad\\sigma^2(t)=k_BT m[1-e^{-2\\gamma t}].\\tag{6.45}\\]",
+          "proof_latex": null,
+          "proof_note": "原书未给独立完整证明。",
+          "proof_discussion_latex": null,
+          "context_notation": [],
+          "issues": [
+            {
+              "code": "PRINTED_GAUSSIAN_NORMALIZATION",
+              "message": "[ERRATUM?]6.44原页缺(2πσ²(t))^(-1/2)；原文须保留，修正公式另列，不能将原指数直接认证为归一化密度。"
+            },
+            {
+              "code": "PRINTED_TIME_ZERO_DEGENERACY",
+              "message": "[ERRATUM?]“any finite time t”在t=0点初值为Dirac，不具有通常Lebesgue密度；密度公式只在正方差时解释。"
+            }
+          ],
+          "lean_decl": "MD.Ch06.ouDensity",
+          "reusable_proofs": [],
+          "extra_assumptions": [
+            "[EXTRA]补归一化系数，正γ/温度/质量且t>0使用；仅实际密度公式定义，原OU严格law结论在§6.3.2保留，不计密度积分或过程law已证。"
+          ],
+          "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
+          "review_status": "NEEDS_HUMAN",
+          "repair_log": [
+            "R6审校：只修订审校JSON；原书数学疑误保留，未修改Lean工程或补证明。"
+          ],
+          "source_page_verification": "R6_PAGES.pdf 附件第15页；已比对对应原页渲染及文本；详见本条evidence。"
+        },
+        "issues": [
+          {
+            "code": "PRINTED_GAUSSIAN_NORMALIZATION",
+            "message": "[ERRATUM?]6.44原页缺(2πσ²(t))^(-1/2)；原文须保留，修正公式另列，不能将原指数直接认证为归一化密度。"
+          },
+          {
+            "code": "PRINTED_TIME_ZERO_DEGENERACY",
+            "message": "[ERRATUM?]“any finite time t”在t=0点初值为Dirac，不具有通常Lebesgue密度；密度公式只在正方差时解释。"
+          }
+        ],
+        "evidence": [
+          "A：R6_PAGES.pdf 附件第15页（原PDF 269，印刷页248）；逐字、公式及页码核对。",
+          "C：只读核对R6_任务.md本条全部Lean签名及其列出的项目依赖/附录定义，未使用旧工程文件；不以sorry判FAIL。",
+          "原页6.44仅印指数，无正态归一化因子；6.45方差为kBTm(1−e^(−2γt))。"
+        ]
+      },
+      "audit": {
+        "lean_decl": "MD.Ch06.ouDensity",
+        "verdict": "PASS",
+        "explanation": "ouDensity与ouDensityPrinted_corrected均用完整指数除以sqrt(2πv)，修正合理。γ>0、σ_noise≠0、t>0时v>0，得到通常正态密度；注释明确密度解释只在这一域成立。定义对全部实数全定义不意味着声称退化参数下也是密度；没有积分归一化或过程HasLaw定理可被误计为已证。",
+        "counterexample": "原书式在v=1时积分为sqrt(2π)，而所列corrected式积分为1；t=0不能作为普通密度。",
+        "suggested_fix": "保留原书疑误并加[ERRATUM?]；按本条说明分别保留Printed版和修正版。"
+      },
+      "subtask": "BATCH30c",
+      "input_sha256": {
+        "Blueprint/Ch06.lean": "0a02a34ec68989a83bccfa5916db5053ecdb58e05667bf21ff3568d9d1f4318e",
+        "blueprint/ch06/ch06_source.json": "45c70ceef21ca168af437de297e2e21e2800b452ab7942654061d4cff9bb5d95",
+        "BATCH30c_PAGES.pdf": "8177071121fb292231a8d5e19bf9dbbfbe5f36a7923b3c8f6383ed07e10bbfb9",
+        "signature_sha256": "847d79cc229cb5df7a3646b0b1c7d07e40c08b995f74165fcbbeddd5a01c17e9"
+      }
+    }
+  ],
+  "merged_from": "ch06_first_merged"
+}

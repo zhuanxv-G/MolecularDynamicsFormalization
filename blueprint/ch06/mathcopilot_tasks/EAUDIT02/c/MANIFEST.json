@@ -1,0 +1,62 @@
+{
+  "eaudit": "EAUDIT02",
+  "subtask": "EAUDIT02c",
+  "source_id": "MD-6.1.5-PartitionInversePrinted",
+  "input_sha256": {
+    "Blueprint/Ch06.lean": "4a2a6cb72c1692f80e3537ab1a71701d429a482780a01226c3dc66a2ebb8b44b",
+    "blueprint/ch06/ch06_source.json": "d7f93cd20eb570744c710f3e07a88b319c082e4155812fee91db0920eb05944e",
+    "PAGES.pdf": "d6b06345f2ff34655fe7bd43bf8419ebcf430f9e616228c42674005456147341",
+    "materials_sha256": "7e26ad337c124d5f1db3b5c2ce1f57fe17c6a315179bd4f3fb6e2dad162b9c33"
+  },
+  "paste_sha256": "85d80786a35bc4f4a0c273a23806690cffbbad039165f2742b696bbfcde9cac9",
+  "source_pdf_sha256": "1939a22e5e96ebd2b58b8e91fe2c796f5390b402f267390f473b271c35d2f036",
+  "pdf_page_mapping": [
+    241
+  ],
+  "crop_pixel_identity": "PASS: copied page render or lossless embedded full-page source pixels",
+  "rasterized_pages": {},
+  "source_declarations": [
+    "partitionInversePrinted",
+    "partitionInversePrinted_corrected"
+  ],
+  "dependency_excerpts": [
+    {
+      "path": "Blueprint/Ch06.lean",
+      "line": 520,
+      "full_name": "MD.Ch06.partitionInversePrinted",
+      "kind": "theorem",
+      "excerpt_sha256": "bda9160dabf4bba4606f65c93b2adb4ffd505b8341752cb22666284812ca2a3f"
+    },
+    {
+      "path": "Blueprint/Ch06.lean",
+      "line": 533,
+      "full_name": "MD.Ch06.partitionInversePrinted_corrected",
+      "kind": "def",
+      "excerpt_sha256": "72e9a3a4cace1b18c6540fa01fc1a9a50eac3004ceb7d24705a4d9de8c1aa93c"
+    },
+    {
+      "path": "MolecularDynamics/Chapter06/ReviewDefinitions.lean",
+      "line": 17,
+      "full_name": "MolecularDynamics.Chapter06Review.V",
+      "kind": "abbrev",
+      "excerpt_sha256": "7ab0ad90462b274b03f5b929b5f09417c0b397b6cb908fa6e7bd56677a314027"
+    },
+    {
+      "path": "MolecularDynamics/Chapter06/ReviewDefinitions.lean",
+      "line": 18,
+      "full_name": "MolecularDynamics.Chapter06Review.Phase",
+      "kind": "abbrev",
+      "excerpt_sha256": "ef1520e3b22ac1c99a30a989deafe8d3da44a9f2a3e5b6c2cd3220218b88513e"
+    },
+    {
+      "path": "MolecularDynamics/Chapter06/ReviewDefinitions.lean",
+      "line": 37,
+      "full_name": "MolecularDynamics.Chapter06Review.massHamiltonian",
+      "kind": "def",
+      "excerpt_sha256": "981396c5be1fdadd6769dc86ee0eb839179f10d41eda55cf29268bc3b52ee971"
+    }
+  ],
+  "project_definition_closure": "complete recursive definitions, referenced theorem types, explicit choice and consistency specifications",
+  "website_submitted": false,
+  "total_task_bytes": 95857
+}

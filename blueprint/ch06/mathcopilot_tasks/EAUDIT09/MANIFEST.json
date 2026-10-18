@@ -1,0 +1,29 @@
+{
+  "eaudit": "EAUDIT09",
+  "subtasks": [
+    {
+      "subtask": "EAUDIT09a",
+      "source_id": "MD-6.3.6-FPPolynomialAdjoint",
+      "path": "blueprint/ch06/mathcopilot_tasks/EAUDIT09/a",
+      "total_bytes": 98601,
+      "definitions": 5,
+      "manifest_sha256": "6310ed67d83ab1ed8bdcb46fb6328bf2ea6b25ef053daeb9161d1240aafb92f8"
+    },
+    {
+      "subtask": "EAUDIT09b",
+      "source_id": "MD-6.3.6-FPEquation",
+      "path": "blueprint/ch06/mathcopilot_tasks/EAUDIT09/b",
+      "total_bytes": 78169,
+      "definitions": 8,
+      "manifest_sha256": "e9359b1fdd6ccc032579bd0e96a04b57bdb7bdc7e8152f17c2687f3a049f150d"
+    },
+    {
+      "subtask": "EAUDIT09c",
+      "source_id": "MD-6.3.6-ZeroNoise",
+      "path": "blueprint/ch06/mathcopilot_tasks/EAUDIT09/c",
+      "total_bytes": 73028,
+      "definitions": 3,
+      "manifest_sha256": "9556a4ecf3c7af298d22c068b6425e22aaed5a25b05bbc944b87f13611f66f7d"
+    }
+  ]
+}

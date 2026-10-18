@@ -1,0 +1,491 @@
+{
+  "batch": "BATCH21",
+  "chapter": "ch06",
+  "round": "first-merged",
+  "input_sha256": {
+    "Blueprint/Ch06.lean": "0a02a34ec68989a83bccfa5916db5053ecdb58e05667bf21ff3568d9d1f4318e",
+    "blueprint/ch06/ch06_source.json": "45c70ceef21ca168af437de297e2e21e2800b452ab7942654061d4cff9bb5d95"
+  },
+  "items": [
+    {
+      "source_id": "MD-6.3.3-BathReduction",
+      "json_review": {
+        "status": "NEEDS_HUMAN",
+        "issue_codes": [
+          "UNMARKED_SOURCE_ERRATUM",
+          "CORRECTED_FORCE_CONVENTION"
+        ],
+        "corrected_json": {
+          "source_id": "MD-6.3.3-BathReduction",
+          "kind": "unnumbered_claim",
+          "label": null,
+          "section": "6.3.3",
+          "printed_page": "237",
+          "pdf_page": "258",
+          "statement_latex": "Introducing this formula in (6.23), we obtain a reduced system\n\\[\\dot Q=P;\\tag{6.27}\\quad\\dot P=-U'(Q)-k^{-1}\\sum_{i=1}^k(Q-q_i);\\tag{6.28}\\]\n\\[=-U'(Q)+f(t)-\\int_0^t\\psi(t-s)P(s)ds.\\tag{6.29}\\]",
+          "proof_latex": null,
+          "proof_note": "原书未给独立完整证明。",
+          "proof_discussion_latex": null,
+          "context_notation": [],
+          "issues": [
+            {
+              "code": "ERRATUM?",
+              "detail": "原页f定义带负号，与(6.28)代入(6.29)冲突；本Lean使用正合力D1，为明确的符号修正版。"
+            }
+          ],
+          "lean_decl": "MD.Ch06.bathReduction",
+          "reusable_proofs": [],
+          "extra_assumptions": [
+            "[EXTRA]保留全部原Hamilton ODE与初值、正质量、真实卷积，按导出正k⁻¹合力；不将约化等式作前提。"
+          ],
+          "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
+          "review_status": "NEEDS_HUMAN",
+          "repair_log": [
+            {
+              "date": "2026-10-16",
+              "action": "local_original_page_transcription",
+              "reason": "PDF258/259视觉核对原记忆核为psi，不是eta；仅原文符号转录更正，Lean定义未变。",
+              "evidence": "source_transcription_fixes.json; PDF258/259",
+              "website": "待网站审计"
+            }
+          ],
+          "source_page_verification": "R5_INDEPENDENT_REVIEW; R5_PAGES.pdf 附件第1页；以本次evidence及issues为准，历史repair_log不作为真实性证据。"
+        },
+        "issues": [
+          {
+            "code": "UNMARKED_SOURCE_ERRATUM",
+            "detail": "A：所引三式的变量、负势力、负卷积及编号与附件第1页一致；但本页随后明确把f定义为负k⁻¹合力，不能脱离此定义宣称完全忠实。JSON未标记这一原书符号冲突。"
+          },
+          {
+            "code": "CORRECTED_FORCE_CONVENTION",
+            "detail": "C：量化k、正质量μ、U/Q/P、浴坐标q/p及t≥0；Q与q为C²，四组ODE/导数条件均保留，初值由q 0、p 0、Q 0取出。D1正合力、D2频率和D3记忆核代入，结论为正确的正合力减实际卷积。Qdot=P和原动量ODE在前提中，不是用所求约化式作前提。[EXTRA]范围基本准确；这是对原书f符号的修正版本，应明确勘误，不能称原f的字面版。"
+          }
+        ],
+        "evidence": [
+          {
+            "phase": "A",
+            "location": "R5_PAGES.pdf，附件第1页；原PDF页258，印刷页237",
+            "finding": "A：所引三式的变量、负势力、负卷积及编号与附件第1页一致；但本页随后明确把f定义为负k⁻¹合力，不能脱离此定义宣称完全忠实。JSON未标记这一原书符号冲突。"
+          },
+          {
+            "phase": "C",
+            "location": "R5_任务.md，条目1/30，实际Lean签名/定义及其明确命名空间的依赖摘录、文末D附录",
+            "finding": "C：量化k、正质量μ、U/Q/P、浴坐标q/p及t≥0；Q与q为C²，四组ODE/导数条件均保留，初值由q 0、p 0、Q 0取出。D1正合力、D2频率和D3记忆核代入，结论为正确的正合力减实际卷积。Qdot=P和原动量ODE在前提中，不是用所求约化式作前提。[EXTRA]范围基本准确；这是对原书f符号的修正版本，应明确勘误，不能称原f的字面版。"
+          }
+        ]
+      },
+      "audit": {
+        "lean_decl": "MD.Ch06.bathReduction",
+        "verdict": "PASS",
+        "explanation": "C：量化k、正质量μ、U/Q/P、浴坐标q/p及t≥0；Q与q为C²，四组ODE/导数条件均保留，初值由q 0、p 0、Q 0取出。D1正合力、D2频率和D3记忆核代入，结论为正确的正合力减实际卷积。Qdot=P和原动量ODE在前提中，不是用所求约化式作前提。[EXTRA]范围基本准确；这是对原书f符号的修正版本，应明确勘误，不能称原f的字面版。",
+        "counterexample": null,
+        "suggested_fix": "在原文issues中标记f的符号疑误；把此Lean声明说明为正合力约定下的修正版，原书字面式另见条目2。"
+      },
+      "subtask": "BATCH21a",
+      "input_sha256": {
+        "Blueprint/Ch06.lean": "0a02a34ec68989a83bccfa5916db5053ecdb58e05667bf21ff3568d9d1f4318e",
+        "blueprint/ch06/ch06_source.json": "45c70ceef21ca168af437de297e2e21e2800b452ab7942654061d4cff9bb5d95",
+        "BATCH21a_PAGES.pdf": "cffa47df8c830650b8cabc55a4b91d449b33cb5fb6f02314a479a30baf389a1d",
+        "signature_sha256": "69547bb3c474a1b5c02c3fa9ffad785de7812d736127828c7fe6bce8042eb647"
+      }
+    },
+    {
+      "source_id": "MD-6.3.3-BathReductionPrinted",
+      "json_review": {
+        "status": "NEEDS_HUMAN",
+        "issue_codes": [
+          "SOURCE_ERRATUM",
+          "CORRECTED_DECL_NOT_SUPPLIED",
+          "UNDECLARED_TECHNICAL_ASSUMPTIONS"
+        ],
+        "corrected_json": {
+          "source_id": "MD-6.3.3-BathReductionPrinted",
+          "kind": "unnumbered_claim",
+          "label": null,
+          "section": "6.3.3",
+          "printed_page": "237",
+          "pdf_page": "258",
+          "statement_latex": "\\[\\dot P=-U'(Q)+f(t)-\\int_0^t\\psi(t-s)P(s)ds.\\tag{6.29}\\]\n\\[f(t)=-k^{-1}\\sum_{i=1}^k[\\cos(\\Omega_i t)q_i(0)+\\Omega_i^{-1}\\sin(\\Omega_i t)p_i(0)/\\mu_i-\\cos(\\Omega_i t)Q(0)].\\]",
+          "proof_latex": null,
+          "proof_note": "原书未给独立完整证明。",
+          "proof_discussion_latex": null,
+          "context_notation": [],
+          "issues": [
+            {
+              "code": "ERRATUM?",
+              "detail": "原负f与+f约化式符号冲突；保留完整字面卷积方程。"
+            }
+          ],
+          "lean_decl": "MD.Ch06.bathReductionPrinted",
+          "reusable_proofs": [],
+          "extra_assumptions": [
+            "[EXTRA]Lean以正k、正质量、t≥0、Q/q为C²及全实轴Hamilton ODE为技术范围；原书字面f符号疑误保留。"
+          ],
+          "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
+          "review_status": "NEEDS_HUMAN",
+          "repair_log": [
+            {
+              "date": "2026-10-16",
+              "action": "local_original_page_transcription",
+              "reason": "PDF258/259视觉核对原记忆核为psi，不是eta；仅原文符号转录更正，Lean定义未变。",
+              "evidence": "source_transcription_fixes.json; PDF258/259",
+              "website": "待网站审计"
+            },
+            {
+              "date": "2026-10-17",
+              "action": "directive22_printed_corrected_pair",
+              "change": "使用从原Hamilton方程实际代入所得的正合力卷积方程。",
+              "corrected_decl": "MD.Ch06.bathReductionPrinted_corrected",
+              "website": "未提交；待网站审计"
+            }
+          ],
+          "source_page_verification": "R5_INDEPENDENT_REVIEW; R5_PAGES.pdf 附件第2页；以本次evidence及issues为准，历史repair_log不作为真实性证据。"
+        },
+        "issues": [
+          {
+            "code": "SOURCE_ERRATUM",
+            "detail": "A：附件第2页确实同时印有(6.29)中的+f与f定义前的负号；转录保留这两个符号，原疑误不能擅自修正。"
+          },
+          {
+            "code": "CORRECTED_DECL_NOT_SUPPLIED",
+            "detail": "C：原声明与条目1相同的全部对象、正质量、非负时刻、C²和四组ODE前提俱在；D7=-D1，完整卷积未丢失。按Printed只审忠实性，本签名忠实性PASS；其数学结论与原书一样有符号矛盾，按任务要求总判NEEDS_HUMAN。extra_assumptions=[]未记录新增C²及全实轴ODE范围。repair_log仅给出bathReductionPrinted_corrected名称，任务未提供其实际签名，无法独立审校该修正版。"
+          },
+          {
+            "code": "UNDECLARED_TECHNICAL_ASSUMPTIONS",
+            "detail": "C：原声明与条目1相同的全部对象、正质量、非负时刻、C²和四组ODE前提俱在；D7=-D1，完整卷积未丢失。按Printed只审忠实性，本签名忠实性PASS；其数学结论与原书一样有符号矛盾，按任务要求总判NEEDS_HUMAN。extra_assumptions=[]未记录新增C²及全实轴ODE范围。repair_log仅给出bathReductionPrinted_corrected名称，任务未提供其实际签名，无法独立审校该修正版。"
+          }
+        ],
+        "evidence": [
+          {
+            "phase": "A",
+            "location": "R5_PAGES.pdf，附件第2页；原PDF页258，印刷页237",
+            "finding": "A：附件第2页确实同时印有(6.29)中的+f与f定义前的负号；转录保留这两个符号，原疑误不能擅自修正。"
+          },
+          {
+            "phase": "C",
+            "location": "R5_任务.md，条目2/30，实际Lean签名/定义及其明确命名空间的依赖摘录、文末D附录",
+            "finding": "C：原声明与条目1相同的全部对象、正质量、非负时刻、C²和四组ODE前提俱在；D7=-D1，完整卷积未丢失。按Printed只审忠实性，本签名忠实性PASS；其数学结论与原书一样有符号矛盾，按任务要求总判NEEDS_HUMAN。extra_assumptions=[]未记录新增C²及全实轴ODE范围。repair_log仅给出bathReductionPrinted_corrected名称，任务未提供其实际签名，无法独立审校该修正版。"
+          }
+        ]
+      },
+      "audit": {
+        "lean_decl": "MD.Ch06.bathReductionPrinted",
+        "verdict": "NEEDS_HUMAN",
+        "explanation": "C：原声明与条目1相同的全部对象、正质量、非负时刻、C²和四组ODE前提俱在；D7=-D1，完整卷积未丢失。按Printed只审忠实性，本签名忠实性PASS；其数学结论与原书一样有符号矛盾，按任务要求总判NEEDS_HUMAN。extra_assumptions=[]未记录新增C²及全实轴ODE范围。repair_log仅给出bathReductionPrinted_corrected名称，任务未提供其实际签名，无法独立审校该修正版。",
+        "counterexample": "k=1、μ=1、U=0；Q(t)=(1−cos(√2t))/2，q(t)=(1+cos(√2t))/2，P(t)=sin(√2t)/√2，p(t)=−sin(√2t)/√2。所有ODE前提成立；t=0时deriv P=1，Printed右端=−1。",
+        "suggested_fix": "保留原文及ERRATUM?；补记技术前提。另提供实际_corrected签名，正合力版本应使用D1而非D7；勿仅凭repair_log算已审。"
+      },
+      "subtask": "BATCH21b",
+      "input_sha256": {
+        "Blueprint/Ch06.lean": "0a02a34ec68989a83bccfa5916db5053ecdb58e05667bf21ff3568d9d1f4318e",
+        "blueprint/ch06/ch06_source.json": "45c70ceef21ca168af437de297e2e21e2800b452ab7942654061d4cff9bb5d95",
+        "BATCH21b_PAGES.pdf": "cffa47df8c830650b8cabc55a4b91d449b33cb5fb6f02314a479a30baf389a1d",
+        "signature_sha256": "66c6d3b2864bab4f9e15eb8a3509bb675dbe8fe8b260bbd08e286de1d9c5c7c2"
+      }
+    },
+    {
+      "source_id": "MD-6.3.3-MemoryKernelDeltaMeaning",
+      "json_review": {
+        "status": "NEEDS_HUMAN",
+        "issue_codes": [
+          "SOURCE_LIMIT_QUALIFICATION",
+          "IMPOSSIBLE_POSITIVE_DELTA_LIMIT",
+          "HALF_LINE_NORMALIZATION"
+        ],
+        "corrected_json": {
+          "source_id": "MD-6.3.3-MemoryKernelDeltaMeaning",
+          "kind": "definition",
+          "label": null,
+          "section": "6.3.3",
+          "printed_page": "238",
+          "pdf_page": "259",
+          "statement_latex": "If sufficient high frequency components are present, then the mass of the memory kernel is typically found to be localized around 0; in such a situation of rapid decay it is found that one may replace the function $\\psi$ by a Dirac delta function scaled by a positive coefficient $\\gamma$; we say that the system is Markovian or memory-less in this situation and we replace the delay-differential equation (6.29) by the SDEs\n\\[dQ=Pdt;\\tag{6.30}\\quad dP=-U'(Q)dt+\\sigma dW-\\gamma Pdt.\\tag{6.31}\\]",
+          "proof_latex": null,
+          "proof_note": "原书未给独立完整证明。",
+          "proof_discussion_latex": null,
+          "context_notation": [],
+          "issues": [
+            {
+              "code": "ERRATUM?",
+              "detail": "原“sufficient high frequency/typically”没有给频率序列、归一化、热浴初值法则及白噪声弱收敛资格，不能声明任意热浴自动满足δ极限。"
+            },
+            {
+              "code": "ERRATUM?",
+              "detail": "固定1/k归一化使|ψk|≤1，不能分布收敛到任何γ>0的δ；正质量修正版也不能消除此障碍，需另定重标度及单边δ约定。"
+            }
+          ],
+          "lean_decl": "MD.Ch06.memoryKernelDeltaMeaning",
+          "reusable_proofs": [],
+          "extra_assumptions": [
+            "[EXTRA]明确ψk→γδ0的实际分布意义，仅定义该近似资格；不计极限或Langevin推导已证。"
+          ],
+          "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
+          "review_status": "NEEDS_HUMAN",
+          "repair_log": [
+            {
+              "date": "2026-10-16",
+              "action": "local_original_page_transcription",
+              "reason": "PDF258/259视觉核对原记忆核为psi，不是eta；仅原文符号转录更正，Lean定义未变。",
+              "evidence": "source_transcription_fixes.json; PDF258/259",
+              "website": "待网站审计"
+            },
+            {
+              "date": "2026-10-17",
+              "action": "directive22_printed_corrected_pair",
+              "change": "仅给分布收敛的精确定义，并明确正质量资格；不声称任意热浴满足该极限。",
+              "corrected_decl": "MD.Ch06.memoryKernelDeltaMeaning_corrected",
+              "website": "未提交；待网站审计"
+            }
+          ],
+          "source_page_verification": "R5_INDEPENDENT_REVIEW; R5_PAGES.pdf 附件第3页；以本次evidence及issues为准，历史repair_log不作为真实性证据。"
+        },
+        "issues": [
+          {
+            "code": "SOURCE_LIMIT_QUALIFICATION",
+            "detail": "C：原版和_corrected均为分布极限资格定义，测试所有实轴上的C∞紧支函数，k→∞，极限γ f(0)，γ>0；修正版额外要求所有质量为正。二者没有声称此极限已成立。但D3的1/k平均使|ψk(t)|≤1，故该固定归一化下任何族均不可能收敛到正质量δ。增加正质量不能修复此问题；此外全实轴γδ与单边Volterra摩擦γ之间的边界因子未说明。"
+          },
+          {
+            "code": "IMPOSSIBLE_POSITIVE_DELTA_LIMIT",
+            "detail": "C：原版和_corrected均为分布极限资格定义，测试所有实轴上的C∞紧支函数，k→∞，极限γ f(0)，γ>0；修正版额外要求所有质量为正。二者没有声称此极限已成立。但D3的1/k平均使|ψk(t)|≤1，故该固定归一化下任何族均不可能收敛到正质量δ。增加正质量不能修复此问题；此外全实轴γδ与单边Volterra摩擦γ之间的边界因子未说明。"
+          },
+          {
+            "code": "HALF_LINE_NORMALIZATION",
+            "detail": "C：原版和_corrected均为分布极限资格定义，测试所有实轴上的C∞紧支函数，k→∞，极限γ f(0)，γ>0；修正版额外要求所有质量为正。二者没有声称此极限已成立。但D3的1/k平均使|ψk(t)|≤1，故该固定归一化下任何族均不可能收敛到正质量δ。增加正质量不能修复此问题；此外全实轴γδ与单边Volterra摩擦γ之间的边界因子未说明。"
+          }
+        ],
+        "evidence": [
+          {
+            "phase": "A",
+            "location": "R5_PAGES.pdf，附件第3页；原PDF页259，印刷页238",
+            "finding": "A：附件第3页的高频、rapid decay、正γ、Markovian与(6.30)–(6.31)基本忠实；保留启发性而非定量收敛定理。extra_assumptions中的ηk应与原文ψ统一。"
+          },
+          {
+            "phase": "C",
+            "location": "R5_任务.md，条目3/30，实际Lean签名/定义及其明确命名空间的依赖摘录、文末D附录",
+            "finding": "C：原版和_corrected均为分布极限资格定义，测试所有实轴上的C∞紧支函数，k→∞，极限γ f(0)，γ>0；修正版额外要求所有质量为正。二者没有声称此极限已成立。但D3的1/k平均使|ψk(t)|≤1，故该固定归一化下任何族均不可能收敛到正质量δ。增加正质量不能修复此问题；此外全实轴γδ与单边Volterra摩擦γ之间的边界因子未说明。"
+          }
+        ]
+      },
+      "audit": {
+        "lean_decl": "MD.Ch06.memoryKernelDeltaMeaning",
+        "verdict": "NEEDS_HUMAN",
+        "explanation": "C：原版和_corrected均为分布极限资格定义，测试所有实轴上的C∞紧支函数，k→∞，极限γ f(0)，γ>0；修正版额外要求所有质量为正。二者没有声称此极限已成立。但D3的1/k平均使|ψk(t)|≤1，故该固定归一化下任何族均不可能收敛到正质量δ。增加正质量不能修复此问题；此外全实轴γδ与单边Volterra摩擦γ之间的边界因子未说明。",
+        "counterexample": "若γ>0，取f≥0、f(0)=1、紧支且∫f<γ，则每个k均有|∫ψk f|≤∫f<γ，不可能趋于γ。该论证与频率及质量选择无关。",
+        "suggested_fix": "由人工确认时间/振幅重标度及单边δ约定；保留原启发式。将修正版注明为当前归一化下不可实现的资格，或先改物理标度后重新定义，不能把加入正质量视为有效勘误。"
+      },
+      "subtask": "BATCH21c",
+      "input_sha256": {
+        "Blueprint/Ch06.lean": "0a02a34ec68989a83bccfa5916db5053ecdb58e05667bf21ff3568d9d1f4318e",
+        "blueprint/ch06/ch06_source.json": "45c70ceef21ca168af437de297e2e21e2800b452ab7942654061d4cff9bb5d95",
+        "BATCH21c_PAGES.pdf": "8e56181fe4956f8bef3a1ce62bd5f9a0d7e9a2d027a0ebdfcf42c8e1e54a7303",
+        "signature_sha256": "53d51f1eb49d52d71a5adeebb543dac0aa995804569253a51e8636b003d605a6"
+      }
+    },
+    {
+      "source_id": "MD-6.3.3-ScalarLangevin",
+      "json_review": {
+        "status": "APPROVED",
+        "issue_codes": [],
+        "corrected_json": null,
+        "issues": [],
+        "evidence": [
+          {
+            "phase": "A",
+            "location": "R5_PAGES.pdf，附件第4页；原PDF页259，印刷页238",
+            "finding": "A：附件第4页(6.30)–(6.31)两式、γ摩擦及σ噪声一致。"
+          },
+          {
+            "phase": "C",
+            "location": "R5_任务.md，条目4/30，实际Lean签名/定义及其明确命名空间的依赖摘录、文末D附录",
+            "finding": "C：对任意样本空间和law定义随机Q/动量模型；γ>0、U光滑、真正一维Wiener driver均明示。几乎处处连续、p(0)=p0、Q的积分方程及两项漂移可积性齐全；T=0给Q(0)=q0。每个T≥0以D10的L²左端和极限表达常σ积分，动量残差正确。σ任意实数与原式一致；固定初值及光滑范围作为[EXTRA]已披露。此为模型定义，无存在性/极限结论。"
+          }
+        ]
+      },
+      "audit": {
+        "lean_decl": "MD.Ch06.scalarLangevin",
+        "verdict": "PASS",
+        "explanation": "C：对任意样本空间和law定义随机Q/动量模型；γ>0、U光滑、真正一维Wiener driver均明示。几乎处处连续、p(0)=p0、Q的积分方程及两项漂移可积性齐全；T=0给Q(0)=q0。每个T≥0以D10的L²左端和极限表达常σ积分，动量残差正确。σ任意实数与原式一致；固定初值及光滑范围作为[EXTRA]已披露。此为模型定义，无存在性/极限结论。",
+        "counterexample": null,
+        "suggested_fix": null
+      },
+      "subtask": "BATCH21d",
+      "input_sha256": {
+        "Blueprint/Ch06.lean": "0a02a34ec68989a83bccfa5916db5053ecdb58e05667bf21ff3568d9d1f4318e",
+        "blueprint/ch06/ch06_source.json": "45c70ceef21ca168af437de297e2e21e2800b452ab7942654061d4cff9bb5d95",
+        "BATCH21d_PAGES.pdf": "2c8a92b05e50247abafa2a6f76ee327b75e85a181c4cb7284c9c22be7895eb70",
+        "signature_sha256": "513cc664075076bec0f05ee77c622478cfe1cc0668188523fd7528a526a4f860"
+      }
+    },
+    {
+      "source_id": "MD-6.3.3-MassLangevin",
+      "json_review": {
+        "status": "APPROVED",
+        "issue_codes": [],
+        "corrected_json": null,
+        "issues": [],
+        "evidence": [
+          {
+            "phase": "A",
+            "location": "R5_PAGES.pdf，附件第5页；原PDF页260，印刷页239",
+            "finding": "A：附件第5页(6.32)–(6.33)的M⁻¹、−∇U、−γp与√(2γkBT)M½一致。"
+          },
+          {
+            "phase": "C",
+            "location": "R5_任务.md，条目5/30，实际Lean签名/定义及其明确命名空间的依赖摘录、文末D附录",
+            "finding": "C：n维状态为V n×V n，m每个分量正，γ、θ=kBT正，U为C∞；n维Wiener、确定初值x0、非负时间连续路径与两漂移可积性均显式保留。坐标噪声√(2γθ m_i)(W_i(t)−W_i(0))与质量矩阵噪声相符；位置积分m_i⁻¹p_i和势偏导D13正确。[EXTRA]准确描述技术限制；不证明解存在或不变分布。"
+          }
+        ]
+      },
+      "audit": {
+        "lean_decl": "MD.Ch06.langevinMassSDE",
+        "verdict": "PASS",
+        "explanation": "C：n维状态为V n×V n，m每个分量正，γ、θ=kBT正，U为C∞；n维Wiener、确定初值x0、非负时间连续路径与两漂移可积性均显式保留。坐标噪声√(2γθ m_i)(W_i(t)−W_i(0))与质量矩阵噪声相符；位置积分m_i⁻¹p_i和势偏导D13正确。[EXTRA]准确描述技术限制；不证明解存在或不变分布。",
+        "counterexample": null,
+        "suggested_fix": null
+      },
+      "subtask": "BATCH21e",
+      "input_sha256": {
+        "Blueprint/Ch06.lean": "0a02a34ec68989a83bccfa5916db5053ecdb58e05667bf21ff3568d9d1f4318e",
+        "blueprint/ch06/ch06_source.json": "45c70ceef21ca168af437de297e2e21e2800b452ab7942654061d4cff9bb5d95",
+        "BATCH21e_PAGES.pdf": "caf0649b504cdd9b1aef8c3686dd2a0a0da5f8b0eea5da0805c1ad484c9a9b19",
+        "signature_sha256": "0908ce127d1dfa95f334506332b69c4f8910529c3357a04b73c11254ee3ac432"
+      }
+    },
+    {
+      "source_id": "MD-6.3.3-VariableFriction",
+      "json_review": {
+        "status": "CORRECTED",
+        "issue_codes": [
+          "TRANSCRIPTION_WIENER_SYMBOL"
+        ],
+        "corrected_json": {
+          "source_id": "MD-6.3.3-VariableFriction",
+          "kind": "definition",
+          "label": "(6.34)–(6.35)",
+          "section": "6.3.3",
+          "printed_page": "239",
+          "pdf_page": "260",
+          "statement_latex": "In particular, a different friction coefficient can be used for each particle and these coefficients can even depend on spatial location, thus we might work with the following system:\n\\[dq=M^{-1}pdt;\\tag{6.34}\\quad dp=-\\nabla U(q)dt-\\Gamma(q)\\Gamma(q)^T pdt+\\sqrt{2k_BT}M^{1/2}\\Gamma(q)d\\widehat W;\\tag{6.35}\\]\nwhere we use the matrix $\\Gamma(q)\\in\\mathbb R^{N_c\\times S}$ and a vector of $S$ independent Wiener processes $\\widehat W$.",
+          "proof_latex": null,
+          "proof_note": "原书未给独立完整证明。",
+          "proof_discussion_latex": null,
+          "context_notation": [],
+          "issues": [],
+          "lean_decl": "MD.Ch06.variableFriction",
+          "reusable_proofs": [],
+          "extra_assumptions": [
+            "[EXTRA]完整任意矩形Γ(q)、任意质量和真实全部噪声坐标严格Ito积分；未缩成对角或单位质量，不宣称自动Gibbs不变。",
+            "[EXTRA]明确真正Wiener driver及当前全域C∞势（Γ模型还要求Γ C∞）的充分技术范围，全部实际漂移可积；不是把不可微梯度或非可积Bochner默认值当经典过程，不声称此范围覆盖奇异势的正规域版本。"
+          ],
+          "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
+          "review_status": "CORRECTED",
+          "repair_log": [],
+          "source_page_verification": "R5_INDEPENDENT_REVIEW; R5_PAGES.pdf 附件第6页；以本次evidence及issues为准，历史repair_log不作为真实性证据。"
+        },
+        "issues": [
+          {
+            "code": "TRANSCRIPTION_WIENER_SYMBOL",
+            "detail": "A：附件第6页的噪声过程记为带帽W（widehat W），不是widetilde W；两条方程、矩形Γ∈R^(Nc×S)及S个独立Wiener分量其余一致。"
+          }
+        ],
+        "evidence": [
+          {
+            "phase": "A",
+            "location": "R5_PAGES.pdf，附件第6页；原PDF页260，印刷页239",
+            "finding": "A：附件第6页的噪声过程记为带帽W（widehat W），不是widetilde W；两条方程、矩形Γ∈R^(Nc×S)及S个独立Wiener分量其余一致。"
+          },
+          {
+            "phase": "C",
+            "location": "R5_任务.md，条目6/30，实际Lean签名/定义及其明确命名空间的依赖摘录、文末D附录",
+            "finding": "C：n/r独立量化，Γ为n×r的空间依赖矩阵；m_i>0、θ>0、U/Γ光滑，r维联合Wiener，连续初值路径与位置方程齐全。每个动量坐标i、每个T≥0存在全部r个严格积分，系数√(2θm_i)Γ_ij，漂移−∂iU−(ΓΓᵀp)_i，均正确，全部漂移可积性明示。没有单位质量或对角化偷换；严格L²积分模型比一般局部Itô解范围窄，[EXTRA]已说明严格积分范围。"
+          }
+        ]
+      },
+      "audit": {
+        "lean_decl": "MD.Ch06.variableFriction",
+        "verdict": "PASS",
+        "explanation": "C：n/r独立量化，Γ为n×r的空间依赖矩阵；m_i>0、θ>0、U/Γ光滑，r维联合Wiener，连续初值路径与位置方程齐全。每个动量坐标i、每个T≥0存在全部r个严格积分，系数√(2θm_i)Γ_ij，漂移−∂iU−(ΓΓᵀp)_i，均正确，全部漂移可积性明示。没有单位质量或对角化偷换；严格L²积分模型比一般局部Itô解范围窄，[EXTRA]已说明严格积分范围。",
+        "counterexample": null,
+        "suggested_fix": "仅修正原文JSON的噪声帽号，不改Lean中的抽象W。"
+      },
+      "subtask": "BATCH21f",
+      "input_sha256": {
+        "Blueprint/Ch06.lean": "0a02a34ec68989a83bccfa5916db5053ecdb58e05667bf21ff3568d9d1f4318e",
+        "blueprint/ch06/ch06_source.json": "45c70ceef21ca168af437de297e2e21e2800b452ab7942654061d4cff9bb5d95",
+        "BATCH21f_PAGES.pdf": "caf0649b504cdd9b1aef8c3686dd2a0a0da5f8b0eea5da0805c1ad484c9a9b19",
+        "signature_sha256": "9f07c0d1189e93bb43d6a6e98ce5777518e8884055301f64c7a428d68c8cf730"
+      }
+    },
+    {
+      "source_id": "MD-6.3.3-ParticleDiagonalFriction",
+      "json_review": {
+        "status": "APPROVED",
+        "issue_codes": [],
+        "corrected_json": null,
+        "issues": [],
+        "evidence": [
+          {
+            "phase": "A",
+            "location": "R5_PAGES.pdf，附件第7页；原PDF页260，印刷页239",
+            "finding": "A：附件第7页的S=Nc及每粒子三次重复γj(q)的对角阵一致。"
+          },
+          {
+            "phase": "C",
+            "location": "R5_任务.md，条目7/30，实际Lean签名/定义及其明确命名空间的依赖摘录、文末D附录",
+            "finding": "C：输出为(N*3)×(N*3)实矩阵，i.val/3从0起每组三坐标取同一粒子γ；输入γ允许依赖全部构型，Matrix.diagonal确保非对角项为0。未把γ静默替换为√γ；有限类型N=0为空矩阵，无越界对象。忠实于给出的Γ定义，而非把γ宣称为ΓΓᵀ中的系数。"
+          }
+        ]
+      },
+      "audit": {
+        "lean_decl": "MD.Ch06.particleDiagonalFriction",
+        "verdict": "PASS",
+        "explanation": "C：输出为(N*3)×(N*3)实矩阵，i.val/3从0起每组三坐标取同一粒子γ；输入γ允许依赖全部构型，Matrix.diagonal确保非对角项为0。未把γ静默替换为√γ；有限类型N=0为空矩阵，无越界对象。忠实于给出的Γ定义，而非把γ宣称为ΓΓᵀ中的系数。",
+        "counterexample": null,
+        "suggested_fix": null
+      },
+      "subtask": "BATCH21g",
+      "input_sha256": {
+        "Blueprint/Ch06.lean": "0a02a34ec68989a83bccfa5916db5053ecdb58e05667bf21ff3568d9d1f4318e",
+        "blueprint/ch06/ch06_source.json": "45c70ceef21ca168af437de297e2e21e2800b452ab7942654061d4cff9bb5d95",
+        "BATCH21g_PAGES.pdf": "caf0649b504cdd9b1aef8c3686dd2a0a0da5f8b0eea5da0805c1ad484c9a9b19",
+        "signature_sha256": "60b45ca2196fcc3785d057cb7fc9a28c49707e53de6604c3a920865fba485a35"
+      }
+    },
+    {
+      "source_id": "MD-6.3.3-FrequencyMemoryKernel",
+      "json_review": {
+        "status": "APPROVED",
+        "issue_codes": [],
+        "corrected_json": null,
+        "issues": [],
+        "evidence": [
+          {
+            "phase": "A",
+            "location": "R5_PAGES.pdf，附件第8页；原PDF页258，印刷页237",
+            "finding": "A：附件第8页确实印cos(Ω_i(t))，转录忠实；结合页首Ω_i为常频率，数学含义为cos(Ω_i t)。"
+          },
+          {
+            "phase": "C",
+            "location": "R5_任务.md，条目8/30，实际Lean签名/定义及其明确命名空间的依赖摘录、文末D附录",
+            "finding": "C：任意有限频率族Ω和实t，函数为k⁻¹∑cos(Ω_i*t)，与D3相同的频率解释。k=0在Lean中定义为0；[EXTRA]所说k>0仅为物理解释，实际签名没有该前提，不应当作已验证的正k模型定理。此为核定义，无δ极限结论。"
+          }
+        ]
+      },
+      "audit": {
+        "lean_decl": "MD.Ch06.frequencyMemoryKernel",
+        "verdict": "PASS",
+        "explanation": "C：任意有限频率族Ω和实t，函数为k⁻¹∑cos(Ω_i*t)，与D3相同的频率解释。k=0在Lean中定义为0；[EXTRA]所说k>0仅为物理解释，实际签名没有该前提，不应当作已验证的正k模型定理。此为核定义，无δ极限结论。",
+        "counterexample": null,
+        "suggested_fix": null
+      },
+      "subtask": "BATCH21h",
+      "input_sha256": {
+        "Blueprint/Ch06.lean": "0a02a34ec68989a83bccfa5916db5053ecdb58e05667bf21ff3568d9d1f4318e",
+        "blueprint/ch06/ch06_source.json": "45c70ceef21ca168af437de297e2e21e2800b452ab7942654061d4cff9bb5d95",
+        "BATCH21h_PAGES.pdf": "cffa47df8c830650b8cabc55a4b91d449b33cb5fb6f02314a479a30baf389a1d",
+        "signature_sha256": "403da5b4675484e5d1d57ef2875c7755db29a0ebe45263ad7703a2594ca08f39"
+      }
+    }
+  ],
+  "merged_from": "ch06_first_merged"
+}

@@ -1,0 +1,6 @@
+{
+  "source_id": "MD-6.4.2-StationaryDensity",
+  "note": "保留总化平稳权重stationaryWeightRaw25作辅助；stationaryDensity补可测、非负、可积及体积积分1后才要求前向算子为零。",
+  "gaps": [],
+  "lean_sha256": "21717475f391d9c3006a9506cae493b105a1fbdb9267b546081f941f79638c5c"
+}

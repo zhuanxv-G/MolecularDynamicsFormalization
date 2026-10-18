@@ -1,0 +1,122 @@
+{
+  "batch": "BATCH06",
+  "chapter": "ch06",
+  "round": "first-merged",
+  "input_sha256": {
+    "Blueprint/Ch06.lean": "0a02a34ec68989a83bccfa5916db5053ecdb58e05667bf21ff3568d9d1f4318e",
+    "blueprint/ch06/ch06_source.json": "45c70ceef21ca168af437de297e2e21e2800b452ab7942654061d4cff9bb5d95"
+  },
+  "items": [
+    {
+      "source_id": "MD-6.1.3-DensityNormalization",
+      "json_review": {
+        "status": "APPROVED",
+        "issue_codes": [],
+        "corrected_json": {
+          "source_id": "MD-6.1.3-DensityNormalization",
+          "kind": "extra_claim",
+          "label": null,
+          "section": "6.1.3",
+          "printed_page": "218",
+          "pdf_page": "239",
+          "statement_latex": "The quantity $Z_{\\rm can}$ is a normalizing constant so that this is a probability density.",
+          "proof_latex": null,
+          "proof_note": "原书未给独立完整证明。",
+          "proof_discussion_latex": null,
+          "context_notation": [],
+          "issues": [],
+          "lean_decl": "MD.Ch06.densityNormalization",
+          "reusable_proofs": [],
+          "extra_assumptions": [
+            "[EXTRA]任意实际参考测度、权重可积且分母正；结论是实际归一化，不假设密度积分一。"
+          ],
+          "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
+          "review_status": "APPROVED",
+          "repair_log": [],
+          "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
+        },
+        "issues": [],
+        "evidence": {
+          "A_pdf_pages": [
+            1
+          ],
+          "A_original_pdf_pages": "239",
+          "A_printed_pages": "218",
+          "A_method": "直接读取附件PDF文本，并对对应印刷页的渲染图核对公式、上下标及措辞；重复页的提取正文一致。换行及LaTeX排版编码差异不作数学错误。",
+          "A_result": "所选原句与公式一致；摘录允许省去相邻未选段落，不将省略当作完整原证明。",
+          "C_basis": "仅本任务所给实际签名、该条依赖定义及附录D1–D24；Mathlib按任务约定采信。只读语义审查，未运行Lean编译，未修改工程或补证明，未因sorry判FAIL。"
+        }
+      },
+      "audit": {
+        "lean_decl": "MD.Ch06.densityNormalization",
+        "verdict": "PASS",
+        "explanation": "任意类型D及其可测结构、任意参考测度ν；H与β任意。D1为exp(-βH)/实际积分。权重可积及积分严格正恰使积分等于Z/Z=1；无循环前提。[EXTRA]准确。",
+        "counterexample": null,
+        "suggested_fix": null
+      },
+      "subtask": "BATCH06a",
+      "input_sha256": {
+        "Blueprint/Ch06.lean": "0a02a34ec68989a83bccfa5916db5053ecdb58e05667bf21ff3568d9d1f4318e",
+        "blueprint/ch06/ch06_source.json": "45c70ceef21ca168af437de297e2e21e2800b452ab7942654061d4cff9bb5d95",
+        "BATCH06a_PAGES.pdf": "635117b02ee76ddae4b93c57d3dccec69510250633493367ef24ee2b4993e9c9",
+        "signature_sha256": "0707e60f3cf9bf6a26de841dbe2b54a92f625111205fe0d5e24052209b71c957"
+      }
+    },
+    {
+      "source_id": "MD-6.1.3-DensityPositive",
+      "json_review": {
+        "status": "APPROVED",
+        "issue_codes": [],
+        "corrected_json": {
+          "source_id": "MD-6.1.3-DensityPositive",
+          "kind": "extra_claim",
+          "label": null,
+          "section": "6.1.3",
+          "printed_page": "218",
+          "pdf_page": "239",
+          "statement_latex": "The quantity $Z_{\\rm can}$ is a normalizing constant so that this is a probability density.",
+          "proof_latex": null,
+          "proof_note": "原书未给独立完整证明。",
+          "proof_discussion_latex": null,
+          "context_notation": [],
+          "issues": [],
+          "lean_decl": "MD.Ch06.densityPositive",
+          "reusable_proofs": [],
+          "extra_assumptions": [
+            "[EXTRA]真实partition严格正时实际密度点态正；不将正密度作前提，积分为一在独立Normalization条目。"
+          ],
+          "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
+          "review_status": "APPROVED",
+          "repair_log": [],
+          "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
+        },
+        "issues": [],
+        "evidence": {
+          "A_pdf_pages": [
+            2
+          ],
+          "A_original_pdf_pages": "239",
+          "A_printed_pages": "218",
+          "A_method": "直接读取附件PDF文本，并对对应印刷页的渲染图核对公式、上下标及措辞；重复页的提取正文一致。换行及LaTeX排版编码差异不作数学错误。",
+          "A_result": "所选原句与公式一致；摘录允许省去相邻未选段落，不将省略当作完整原证明。",
+          "C_basis": "仅本任务所给实际签名、该条依赖定义及附录D1–D24；Mathlib按任务约定采信。只读语义审查，未运行Lean编译，未修改工程或补证明，未因sorry判FAIL。"
+        }
+      },
+      "audit": {
+        "lean_decl": "MD.Ch06.densityPositive",
+        "verdict": "PASS",
+        "explanation": "同一D1、任意D、ν、H、β；唯一前提是实际分母严格正。指数逐点严格正，故对全部x密度严格正。此结论不需要另设可积性或β>0；没有把积分归一化混入结论。",
+        "counterexample": null,
+        "suggested_fix": null
+      },
+      "subtask": "BATCH06b",
+      "input_sha256": {
+        "Blueprint/Ch06.lean": "0a02a34ec68989a83bccfa5916db5053ecdb58e05667bf21ff3568d9d1f4318e",
+        "blueprint/ch06/ch06_source.json": "45c70ceef21ca168af437de297e2e21e2800b452ab7942654061d4cff9bb5d95",
+        "BATCH06b_PAGES.pdf": "635117b02ee76ddae4b93c57d3dccec69510250633493367ef24ee2b4993e9c9",
+        "signature_sha256": "fc58df3b2a447db95c241967d7c620638ac6fc5b118f576b575733c52ad1c22c"
+      }
+    }
+  ],
+  "merged_from": "ch06_first_merged"
+}

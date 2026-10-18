@@ -1,0 +1,194 @@
+以附件/PASTE 为准，忽略 /workspace 旧文件；Mathlib 定义按标准含义采信。
+A逐字核对原文及证明；C只读核对对象、域、量词、前提和全部结论。所有项目定义体及选择规格在下文；仅作为审阅摘录，不是独立模块。theorem/lemma提供完整类型（不审证明）；定义提供完整定义体，按文件作用域解释。不要因sorry判签名FAIL。原文版忠实性、修正版正确性、反例、原书疑误分别说明，不凭旧文件或repair_log猜声明。
+本条MD-6.4.2-CylinderForwardPrinted，subtask=EAUDIT10b；原PDF页映射=[268]。只读，不改工程或补证明。以JSON对象返回batch=EAUDIT10,input_sha256,items；逐条含source_id,subtask,input_sha256,json_review{status,issue_codes,corrected_json,issues,evidence},audit{lean_decl,verdict,explanation,counterexample,suggested_fix}。verdict=PASS/FAIL/NEEDS_HUMAN，status=APPROVED/CORRECTED/NEEDS_HUMAN。必须原样回显下列全部哈希。
+input_sha256:
+{
+  "Blueprint/Ch06.lean": "4a2a6cb72c1692f80e3537ab1a71701d429a482780a01226c3dc66a2ebb8b44b",
+  "blueprint/ch06/ch06_source.json": "d7f93cd20eb570744c710f3e07a88b319c082e4155812fee91db0920eb05944e",
+  "PAGES.pdf": "1a8f93fbb10d24aeabb5b30f466101143327d344b1a74a57ecbd32532c32a4f8",
+  "materials_sha256": "f27ae653175c9cb6aa7b20d4a1f481a31959fc086ae511996a9323f2501b05aa"
+}
+
+## 原文JSON
+```json
+{
+  "source_id": "MD-6.4.2-CylinderForwardPrinted",
+  "kind": "definition",
+  "label": null,
+  "section": "6.4.2",
+  "printed_page": "247",
+  "pdf_page": "268",
+  "statement_latex": "Taking the adjoint, the forward Kolmogorov or Fokker-Planck operator is $\\mathcal L^*$, acting on a density $\\rho(X)$ as\n\\[\\mathcal L^*\\rho=-\\nabla\\cdot(b_0\\rho)+\\tfrac12\\operatorname{Tr}(B^T\\phi''B).\\]",
+  "proof_latex": null,
+  "proof_note": "原书未给独立完整证明。",
+  "proof_discussion_latex": null,
+  "context_notation": [],
+  "extra_assumptions": [
+    "[EXTRA] 25号：Printed补原页1/2，保留印刷φ而不静默改ρ；独立corrected采用实际周期lift的前向密度表达式，与VectorForward相同。"
+  ],
+  "statement_scope": "本条Lean覆盖范围：Printed补原页1/2，保留印刷φ而不静默改ρ；独立corrected采用实际周期lift的前向密度表达式，与VectorForward相同。",
+  "coverage_gaps": []
+}
+```
+## 当前完整Lean（全部原文版、修正版及反例）
+```lean
+def cylinderForwardPrinted {n r : ℕ} (b₀ : (Fin n → ℝ) → (Fin n → ℝ))
+    (B : Matrix (Fin n) (Fin r) ℝ) (ρ φ : (Fin n → ℝ) → ℝ) (x : Fin n → ℝ) : ℝ :=
+  -(∑ i, fderiv ℝ (fun z ↦ b₀ z i*ρ z) x (Pi.single i 1)) +
+    MolecularDynamics.Chapter06Review.vectorDiffusion B φ x / 2
+
+/-- 修正版：真正环面×动量圆柱空间的前向表达式，使用周期lift方向导数。
+原Euclidean坐标辅助cylinderForwardPrinted_corrected另保留；本定义不声称密度存在。 -/
+def cylinderForwardPeriodic_corrected {n r : ℕ}
+    (a : textbookLangevinPeriodicPhase n → (Fin n ⊕ Fin n → ℝ))
+    (B : Matrix (Fin n ⊕ Fin n) (Fin r) ℝ)
+    (ρ : textbookLangevinPeriodicPhase n → ℝ) (x : textbookLangevinPeriodicPhase n) : ℝ :=
+  -(∑ i : Fin n ⊕ Fin n, textbookLangevinPeriodicDirectionalDerivative
+      (fun y ↦ a y i*ρ y) (textbookLangevinCanonicalCoordinateDirection i) x) +
+    (∑ j : Fin r, ∑ i : Fin n ⊕ Fin n, ∑ k : Fin n ⊕ Fin n,
+      B i j*B k j*textbookLangevinPeriodicDirectionalDerivative
+        (textbookLangevinPeriodicDirectionalDerivative ρ (textbookLangevinCanonicalCoordinateDirection k))
+        (textbookLangevinCanonicalCoordinateDirection i) x)/2
+```
+### 文件参数及作用域 Blueprint/Ch06.lean
+```lean
+open Set Filter Matrix MeasureTheory ProbabilityTheory MolecularDynamics MolecularDynamics.Chapter02Review MolecularDynamics.Chapter06Review
+open scoped BigOperators Topology ContDiff InnerProductSpace Matrix.Norms.L2Operator ENNReal NNReal
+variable {n Nc : ℕ}
+variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
+variable {R : Type*} [Ring R] [Algebra ℝ R]
+local instance : MeasureSpace UnitAddCircle := ⟨AddCircle.haarAddCircle⟩
+```
+### 文件参数及作用域 MolecularDynamics/Chapter06/BrownianDirichlet.lean
+```lean
+open Set MeasureTheory
+open scoped BigOperators ContDiff
+```
+### 文件参数及作用域 MolecularDynamics/Chapter06/BrownianTorusGibbs.lean
+```lean
+open Set MeasureTheory Filter
+open scoped BigOperators ENNReal ContDiff
+local instance : MeasureSpace UnitAddCircle := ⟨AddCircle.haarAddCircle⟩
+local instance : Measure.IsAddHaarMeasure (volume : Measure UnitAddCircle) :=
+  inferInstanceAs (Measure.IsAddHaarMeasure AddCircle.haarAddCircle)
+local instance : IsProbabilityMeasure (volume : Measure UnitAddCircle) :=
+  inferInstanceAs (IsProbabilityMeasure AddCircle.haarAddCircle)
+```
+### 文件参数及作用域 MolecularDynamics/Chapter06/LangevinCanonicalCoordinateWeakDerivative.lean
+```lean
+open Set Filter MeasureTheory
+open scoped Topology ContDiff NNReal ENNReal BigOperators InnerProductSpace
+local instance coordinateUnitAddCircleMeasureSpace : MeasureSpace UnitAddCircle := ⟨AddCircle.haarAddCircle⟩
+local instance coordinateUnitAddCircleHaar : Measure.IsAddHaarMeasure (volume : Measure UnitAddCircle) :=
+  inferInstanceAs (Measure.IsAddHaarMeasure AddCircle.haarAddCircle)
+local instance coordinateUnitAddCircleProbability : IsProbabilityMeasure (volume : Measure UnitAddCircle) :=
+  inferInstanceAs (IsProbabilityMeasure AddCircle.haarAddCircle)
+```
+### 文件参数及作用域 MolecularDynamics/Chapter06/LangevinCanonicalWeakBalance.lean
+```lean
+open Set Filter MeasureTheory
+open scoped Topology ContDiff NNReal ZeroAtInfty BigOperators
+local instance weakCanonicalUnitAddCircleMeasureSpace : MeasureSpace UnitAddCircle := ⟨AddCircle.haarAddCircle⟩
+local instance weakCanonicalUnitAddCircleHaar : Measure.IsAddHaarMeasure (volume : Measure UnitAddCircle) :=
+  inferInstanceAs (Measure.IsAddHaarMeasure AddCircle.haarAddCircle)
+local instance weakCanonicalUnitAddCircleProbability : IsProbabilityMeasure (volume : Measure UnitAddCircle) :=
+  inferInstanceAs (IsProbabilityMeasure AddCircle.haarAddCircle)
+```
+### 文件参数及作用域 MolecularDynamics/Chapter06/LangevinHormander.lean
+```lean
+open scoped BigOperators ContDiff
+```
+### 文件参数及作用域 MolecularDynamics/Chapter06/LangevinPeriodicProjection.lean
+```lean
+open Set Filter MeasureTheory ProbabilityTheory
+open scoped Topology ContDiff NNReal ENNReal
+```
+### 文件参数及作用域 MolecularDynamics/Chapter06/ReviewDefinitions.lean
+```lean
+open Set Filter MeasureTheory ProbabilityTheory
+open scoped BigOperators Topology ContDiff ENNReal NNReal
+local instance : MeasureSpace UnitAddCircle := ⟨AddCircle.haarAddCircle⟩
+```
+### MD.Ch06.cylinderForwardPrinted_corrected [Blueprint/Ch06.lean:1826]
+```lean
+def cylinderForwardPrinted_corrected {n r : ℕ} (a : (Fin n → ℝ) → (Fin n → ℝ))
+    (B : Matrix (Fin n) (Fin r) ℝ) (ρ : (Fin n → ℝ) → ℝ) (x : Fin n → ℝ) : ℝ :=
+  MolecularDynamics.Chapter06Review.vectorForward a B ρ x
+```
+### MD.Ch06.cylinderForwardPrinted [Blueprint/Ch06.lean:2104]
+```lean
+def cylinderForwardPrinted {n r : ℕ} (b₀ : (Fin n → ℝ) → (Fin n → ℝ))
+    (B : Matrix (Fin n) (Fin r) ℝ) (ρ φ : (Fin n → ℝ) → ℝ) (x : Fin n → ℝ) : ℝ :=
+  -(∑ i, fderiv ℝ (fun z ↦ b₀ z i*ρ z) x (Pi.single i 1)) +
+    MolecularDynamics.Chapter06Review.vectorDiffusion B φ x / 2
+```
+### MD.Ch06.cylinderForwardPeriodic_corrected [Blueprint/Ch06.lean:2111]
+```lean
+def cylinderForwardPeriodic_corrected {n r : ℕ}
+    (a : textbookLangevinPeriodicPhase n → (Fin n ⊕ Fin n → ℝ))
+    (B : Matrix (Fin n ⊕ Fin n) (Fin r) ℝ)
+    (ρ : textbookLangevinPeriodicPhase n → ℝ) (x : textbookLangevinPeriodicPhase n) : ℝ :=
+  -(∑ i : Fin n ⊕ Fin n, textbookLangevinPeriodicDirectionalDerivative
+      (fun y ↦ a y i*ρ y) (textbookLangevinCanonicalCoordinateDirection i) x) +
+    (∑ j : Fin r, ∑ i : Fin n ⊕ Fin n, ∑ k : Fin n ⊕ Fin n,
+      B i j*B k j*textbookLangevinPeriodicDirectionalDerivative
+        (textbookLangevinPeriodicDirectionalDerivative ρ (textbookLangevinCanonicalCoordinateDirection k))
+        (textbookLangevinCanonicalCoordinateDirection i) x)/2
+```
+### MolecularDynamics.textbookConfigurationPartial [MolecularDynamics/Chapter06/BrownianDirichlet.lean:13]
+```lean
+noncomputable def textbookConfigurationPartial {Nc : ℕ}
+    (f : (Fin Nc → ℝ) → ℝ) (i : Fin Nc) (q : Fin Nc → ℝ) : ℝ :=
+  fderiv ℝ f q (Pi.single i 1)
+```
+### MolecularDynamics.textbookConfigurationTorusRepresentative [MolecularDynamics/Chapter06/BrownianTorusGibbs.lean:26]
+```lean
+def textbookConfigurationTorusRepresentative {Nc : ℕ}
+    (Q : UnitAddTorus (Fin Nc)) : Fin Nc → ℝ :=
+  (UnitAddTorus.measurableEquivPiIoc (0 : Fin Nc → ℝ) Q).val
+```
+### MolecularDynamics.textbookLangevinCanonicalCoordinateDirection [MolecularDynamics/Chapter06/LangevinCanonicalCoordinateWeakDerivative.lean:18]
+```lean
+def textbookLangevinCanonicalCoordinateDirection {N : ℕ} (j : Fin N ⊕ Fin N) : textbookLangevinPhase N :=
+  match j with
+  | Sum.inl i => (Pi.single i 1, 0)
+  | Sum.inr i => (0, Pi.single i 1)
+```
+### MolecularDynamics.textbookLangevinPeriodicDirectionalDerivative [MolecularDynamics/Chapter06/LangevinCanonicalWeakBalance.lean:41]
+```lean
+def textbookLangevinPeriodicDirectionalDerivative {N : ℕ}
+    (F : textbookLangevinPeriodicPhase N → ℝ) (v : textbookLangevinPhase N)
+    (x : textbookLangevinPeriodicPhase N) : ℝ :=
+  fderiv ℝ (F ∘ textbookLangevinPeriodicProjection)
+    (textbookConfigurationTorusRepresentative x.1, x.2) v
+```
+### MolecularDynamics.textbookLangevinPhase [MolecularDynamics/Chapter06/LangevinHormander.lean:12]
+```lean
+abbrev textbookLangevinPhase (Nc : ℕ) := (Fin Nc → ℝ) × (Fin Nc → ℝ)
+```
+### MolecularDynamics.textbookLangevinPeriodicPhase [MolecularDynamics/Chapter06/LangevinPeriodicProjection.lean:14]
+```lean
+abbrev textbookLangevinPeriodicPhase (Nc : ℕ) := UnitAddTorus (Fin Nc) × (Fin Nc → ℝ)
+```
+### MolecularDynamics.textbookLangevinPeriodicProjection [MolecularDynamics/Chapter06/LangevinPeriodicProjection.lean:17]
+```lean
+def textbookLangevinPeriodicProjection {Nc : ℕ}
+    (z : textbookLangevinPhase Nc) : textbookLangevinPeriodicPhase Nc :=
+  (fun i ↦ (z.1 i : UnitAddCircle), z.2)
+```
+### MolecularDynamics.Chapter06Review.V [MolecularDynamics/Chapter06/ReviewDefinitions.lean:17]
+```lean
+abbrev V (n : ℕ) := Fin n → ℝ
+```
+### MolecularDynamics.Chapter06Review.vectorDiffusion [MolecularDynamics/Chapter06/ReviewDefinitions.lean:133]
+```lean
+def vectorDiffusion {n r : ℕ} (B : Matrix (Fin n) (Fin r) ℝ) (f : V n → ℝ) (x : V n) : ℝ :=
+  ∑ i : Fin n, ∑ j : Fin n, (B*B.transpose) i j *
+    textbookConfigurationPartial (textbookConfigurationPartial f j) i x
+```
+### MolecularDynamics.Chapter06Review.vectorForward [MolecularDynamics/Chapter06/ReviewDefinitions.lean:138]
+```lean
+def vectorForward {n r : ℕ} (a : V n → V n) (B : Matrix (Fin n) (Fin r) ℝ)
+    (ρ : V n → ℝ) (x : V n) : ℝ :=
+  -(∑ i, textbookConfigurationPartial (fun z ↦ a z i*ρ z) i x) + vectorDiffusion B ρ x/2
+```

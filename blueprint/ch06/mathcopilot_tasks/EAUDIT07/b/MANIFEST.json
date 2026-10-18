@@ -1,0 +1,89 @@
+{
+  "eaudit": "EAUDIT07",
+  "subtask": "EAUDIT07b",
+  "source_id": "MD-6.3.2-MomentumOU",
+  "input_sha256": {
+    "Blueprint/Ch06.lean": "4a2a6cb72c1692f80e3537ab1a71701d429a482780a01226c3dc66a2ebb8b44b",
+    "blueprint/ch06/ch06_source.json": "d7f93cd20eb570744c710f3e07a88b319c082e4155812fee91db0920eb05944e",
+    "PAGES.pdf": "717eda2e426d401eea49aab6ea6a5a322d0b272a836c03697f0f575b032a7cbd",
+    "materials_sha256": "765e66ff81ee5fd9398d4ca14d06be38214ad0c8870b26ab6dd07060bf0e884b"
+  },
+  "paste_sha256": "e06ebe7d7db2a80640c771d87186439c37ba4a4ae0c0f4ca751d61dc103ecaae",
+  "source_pdf_sha256": "1939a22e5e96ebd2b58b8e91fe2c796f5390b402f267390f473b271c35d2f036",
+  "pdf_page_mapping": [
+    256
+  ],
+  "crop_pixel_identity": "PASS: copied page render or lossless embedded full-page source pixels",
+  "rasterized_pages": {},
+  "source_declarations": [
+    "momentumOU"
+  ],
+  "dependency_excerpts": [
+    {
+      "path": "Blueprint/Ch06.lean",
+      "line": 863,
+      "full_name": "MD.Ch06.strictItoIntegral",
+      "kind": "def",
+      "excerpt_sha256": "69555ce0eea7f7da7dd5b52a53fe2003a79a1ac3a807d9eee6a859b7a7ecfc54"
+    },
+    {
+      "path": "Blueprint/Ch06.lean",
+      "line": 1096,
+      "full_name": "MD.Ch06.strictScalarSDE",
+      "kind": "def",
+      "excerpt_sha256": "3181a68f401d8c4cedb55a706f14c191a69578941248ff1b9d0d835a6d78dc2b"
+    },
+    {
+      "path": "Blueprint/Ch06.lean",
+      "line": 1217,
+      "full_name": "MD.Ch06.strictOUProcess",
+      "kind": "def",
+      "excerpt_sha256": "1351fa71e19b18f03e9a17f373c6c5c3ce210bdff07b8aa677f3a008bab9d815"
+    },
+    {
+      "path": "Blueprint/Ch06.lean",
+      "line": 1288,
+      "full_name": "MD.Ch06.momentumOU",
+      "kind": "def",
+      "excerpt_sha256": "118f3c99e3d48da0d34dc94d712d425fec417500703f8901e3810061b8ae3207"
+    },
+    {
+      "path": "MolecularDynamics/Chapter06/ReviewDefinitions.lean",
+      "line": 17,
+      "full_name": "MolecularDynamics.Chapter06Review.V",
+      "kind": "abbrev",
+      "excerpt_sha256": "7ab0ad90462b274b03f5b929b5f09417c0b397b6cb908fa6e7bd56677a314027"
+    },
+    {
+      "path": "MolecularDynamics/Chapter06/ReviewDefinitions.lean",
+      "line": 54,
+      "full_name": "MolecularDynamics.Chapter06Review.itoLeftSum",
+      "kind": "def",
+      "excerpt_sha256": "e1cd64bf3b4edeae8a7d1bf292e844323267f948a2846db1110c7f024f55e746"
+    },
+    {
+      "path": "MolecularDynamics/Chapter06/WienerVectorSupport.lean",
+      "line": 13,
+      "full_name": "MolecularDynamics.textbookIsWienerVector",
+      "kind": "structure",
+      "excerpt_sha256": "030040a9146ab99e095c5a3e84fa3feed1dc8f0dd916643d371a0bb7e6efb622"
+    },
+    {
+      "path": "MolecularDynamics/Chapter06/WienerVectorSupport.lean",
+      "line": 22,
+      "full_name": "MolecularDynamics.textbookWienerVector_coordinate",
+      "kind": "theorem",
+      "excerpt_sha256": "a2b16b63fbbcaa59dd6d49939ff3431e6eb6e901a8d3c424b51b33c8dfeeba74"
+    },
+    {
+      "path": "MolecularDynamics/Chapter06/WienerVectorSupport.lean",
+      "line": 35,
+      "full_name": "MolecularDynamics.textbookWienerVector_coordinates_independent",
+      "kind": "theorem",
+      "excerpt_sha256": "b37efd8ef290876ef9e4239be23a56d8223830dd154b94237929630976d5a37f"
+    }
+  ],
+  "project_definition_closure": "complete recursive definitions, referenced theorem types, explicit choice and consistency specifications",
+  "website_submitted": false,
+  "total_task_bytes": 98067
+}

@@ -1,0 +1,112 @@
+以附件/PASTE 为准，忽略 /workspace 旧文件；Mathlib 定义按标准含义采信。
+A逐字核对原文及证明；C只读核对对象、域、量词、前提和全部结论。所有项目定义体及选择规格在下文；仅作为审阅摘录，不是独立模块。theorem/lemma提供完整类型（不审证明）；定义提供完整定义体，按文件作用域解释。不要因sorry判签名FAIL。原文版忠实性、修正版正确性、反例、原书疑误分别说明，不凭旧文件或repair_log猜声明。
+本条MD-6.4.4-MinorizationCorrectedImplication，subtask=EAUDIT13c；原PDF页映射=[273]。只读，不改工程或补证明。以JSON对象返回batch=EAUDIT13,input_sha256,items；逐条含source_id,subtask,input_sha256,json_review{status,issue_codes,corrected_json,issues,evidence},audit{lean_decl,verdict,explanation,counterexample,suggested_fix}。verdict=PASS/FAIL/NEEDS_HUMAN，status=APPROVED/CORRECTED/NEEDS_HUMAN。必须原样回显下列全部哈希。
+input_sha256:
+{
+  "Blueprint/Ch06.lean": "4a2a6cb72c1692f80e3537ab1a71701d429a482780a01226c3dc66a2ebb8b44b",
+  "blueprint/ch06/ch06_source.json": "d7f93cd20eb570744c710f3e07a88b319c082e4155812fee91db0920eb05944e",
+  "PAGES.pdf": "3980efdbb76d53b0c41f0507cda50853b873ffe7e26aeae131e1f2e60cc1e9a2",
+  "materials_sha256": "488e579172c8bcfe7e6ebb5ca9b7d41186c537f51e5934bc1ea65e3f78c77253"
+}
+
+## 原文JSON
+```json
+{
+  "source_id": "MD-6.4.4-MinorizationCorrectedImplication",
+  "kind": "unnumbered_claim",
+  "label": null,
+  "section": "6.4.4",
+  "printed_page": "252",
+  "pdf_page": "273",
+  "statement_latex": "It can be shown that this assumption is tantamount to the SDE satisfying a minorization condition. This condition is a particular case of the general concept of small sets, found in Markov literature for proving ergodicity.",
+  "proof_latex": null,
+  "proof_note": "原书未给独立完整证明。",
+  "proof_discussion_latex": null,
+  "context_notation": [],
+  "extra_assumptions": [
+    "[EXTRA] 25号：主版与minorizationPrinted_corrected同时补Chapman–Kolmogorov/Markov半群及参考测度全支撑。两步核局部共同下界仍需大型小集理论，未证明、未宣称数学结论已核定；交网站复审。"
+  ],
+  "statement_scope": "本条Lean覆盖范围：主版与minorizationPrinted_corrected同时补Chapman–Kolmogorov/Markov半群及参考测度全支撑。两步核局部共同下界仍需大型小集理论，未证明、未宣称数学结论已核定；交网站复审。",
+  "coverage_gaps": []
+}
+```
+## 当前完整Lean（全部原文版、修正版及反例）
+```lean
+theorem minorizationCorrectedImplication :
+  ∀ {D : Type*} [MetricSpace D] [MeasurableSpace D] [BorelSpace D]
+    (ν : Measure D) (K : ℝ≥0 → Kernel D D) (C : Set D),
+    MolecularDynamics.Chapter06Review.markovSemigroup K →
+    (∀ A : Set D, IsOpen A → A.Nonempty → 0 < ν A) →
+    MolecularDynamics.Chapter06Review.assumption1 ν K C →
+  (∀ t : ℝ≥0, ∀ x : D, ∀ A : Set D, IsOpen A → A.Nonempty → 0 < t → 0 < K t x A) →
+  ∃ t : ℝ≥0, 0 < t ∧ ∃ ε : ℝ≥0∞, 0 < ε ∧ ∃ μ : Measure D,
+    IsProbabilityMeasure μ ∧ ∀ x ∈ C, ε • μ ≤ K t x := by
+  sorry
+
+/-- 修正版，对应原文 MD-6.4.4-MinorizationPrinted；改动：只保留在明确正时刻密度、可达性条件下到小集下界的充分方向。 -/
+theorem minorizationPrinted_corrected :
+  ∀ {D : Type*} [MetricSpace D] [MeasurableSpace D] [BorelSpace D]
+    (ν : Measure D) (K : ℝ≥0 → Kernel D D) (C : Set D),
+    MolecularDynamics.Chapter06Review.markovSemigroup K →
+    (∀ A : Set D, IsOpen A → A.Nonempty → 0 < ν A) →
+    MolecularDynamics.Chapter06Review.assumption1 ν K C →
+  (∀ t : ℝ≥0, ∀ x : D, ∀ A : Set D, IsOpen A → A.Nonempty → 0 < t → 0 < K t x A) →
+  ∃ t : ℝ≥0, 0 < t ∧ ∃ ε : ℝ≥0∞, 0 < ε ∧ ∃ μ : Measure D,
+    IsProbabilityMeasure μ ∧ ∀ x ∈ C, ε • μ ≤ K t x := by
+  sorry
+```
+### 文件参数及作用域 Blueprint/Ch06.lean
+```lean
+open Set Filter Matrix MeasureTheory ProbabilityTheory MolecularDynamics MolecularDynamics.Chapter02Review MolecularDynamics.Chapter06Review
+open scoped BigOperators Topology ContDiff InnerProductSpace Matrix.Norms.L2Operator ENNReal NNReal
+variable {n Nc : ℕ}
+variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
+variable {R : Type*} [Ring R] [Algebra ℝ R]
+local instance : MeasureSpace UnitAddCircle := ⟨AddCircle.haarAddCircle⟩
+```
+### 文件参数及作用域 MolecularDynamics/Chapter06/ReviewDefinitions.lean
+```lean
+open Set Filter MeasureTheory ProbabilityTheory
+open scoped BigOperators Topology ContDiff ENNReal NNReal
+local instance : MeasureSpace UnitAddCircle := ⟨AddCircle.haarAddCircle⟩
+```
+### MD.Ch06.minorizationCorrectedImplication [Blueprint/Ch06.lean:2606]
+```lean
+theorem minorizationCorrectedImplication :
+  ∀ {D : Type*} [MetricSpace D] [MeasurableSpace D] [BorelSpace D]
+    (ν : Measure D) (K : ℝ≥0 → Kernel D D) (C : Set D),
+    MolecularDynamics.Chapter06Review.markovSemigroup K →
+    (∀ A : Set D, IsOpen A → A.Nonempty → 0 < ν A) →
+    MolecularDynamics.Chapter06Review.assumption1 ν K C →
+  (∀ t : ℝ≥0, ∀ x : D, ∀ A : Set D, IsOpen A → A.Nonempty → 0 < t → 0 < K t x A) →
+  ∃ t : ℝ≥0, 0 < t ∧ ∃ ε : ℝ≥0∞, 0 < ε ∧ ∃ μ : Measure D,
+    IsProbabilityMeasure μ ∧ ∀ x ∈ C, ε • μ ≤ K t x
+```
+### MD.Ch06.minorizationPrinted_corrected [Blueprint/Ch06.lean:2618]
+```lean
+theorem minorizationPrinted_corrected :
+  ∀ {D : Type*} [MetricSpace D] [MeasurableSpace D] [BorelSpace D]
+    (ν : Measure D) (K : ℝ≥0 → Kernel D D) (C : Set D),
+    MolecularDynamics.Chapter06Review.markovSemigroup K →
+    (∀ A : Set D, IsOpen A → A.Nonempty → 0 < ν A) →
+    MolecularDynamics.Chapter06Review.assumption1 ν K C →
+  (∀ t : ℝ≥0, ∀ x : D, ∀ A : Set D, IsOpen A → A.Nonempty → 0 < t → 0 < K t x A) →
+  ∃ t : ℝ≥0, 0 < t ∧ ∃ ε : ℝ≥0∞, 0 < ε ∧ ∃ μ : Measure D,
+    IsProbabilityMeasure μ ∧ ∀ x ∈ C, ε • μ ≤ K t x
+```
+### MolecularDynamics.Chapter06Review.markovSemigroup [MolecularDynamics/Chapter06/ReviewDefinitions.lean:166]
+```lean
+def markovSemigroup {D : Type*} [MeasurableSpace D] (K : ℝ≥0 → Kernel D D) : Prop :=
+  (∀ t, IsMarkovKernel (K t)) ∧ K 0 = Kernel.id ∧ ∀ s t, K (s+t) = K s ∘ₖ K t
+```
+### MolecularDynamics.Chapter06Review.assumption1 [MolecularDynamics/Chapter06/ReviewDefinitions.lean:168]
+```lean
+def assumption1 {D : Type*} [MetricSpace D] [MeasurableSpace D] [BorelSpace D]
+    (ν : Measure D) (K : ℝ≥0 → Kernel D D) (C : Set D) : Prop :=
+  IsCompact C ∧ (∃ y ∈ interior C, ∀ δ : ℝ, 0 < δ → ∃ t : ℝ≥0, 0 < t ∧
+    ∀ x ∈ C, 0 < K t x (Metric.ball y δ)) ∧
+  ∃ ρ : D → D → ℝ → ℝ, (∀ x z t, 0 ≤ ρ x z t) ∧
+    (∀ t : ℝ≥0, 0 < t → ∀ x ∈ C, ∀ A : Set D, MeasurableSet A → A ⊆ C →
+      K t x A = ∫⁻ z in A, ENNReal.ofReal (ρ x z t) ∂ν) ∧
+    ContinuousOn (fun w : (D×D)×ℝ ↦ ρ w.1.1 w.1.2 w.2) ((C×ˢ C)×ˢ Ioi 0)
+```

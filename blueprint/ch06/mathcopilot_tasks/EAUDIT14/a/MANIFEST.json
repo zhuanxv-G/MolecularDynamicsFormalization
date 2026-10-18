@@ -1,0 +1,119 @@
+{
+  "eaudit": "EAUDIT14",
+  "subtask": "EAUDIT14a",
+  "source_id": "MD-6.4.4-Theorem62",
+  "input_sha256": {
+    "Blueprint/Ch06.lean": "4a2a6cb72c1692f80e3537ab1a71701d429a482780a01226c3dc66a2ebb8b44b",
+    "blueprint/ch06/ch06_source.json": "d7f93cd20eb570744c710f3e07a88b319c082e4155812fee91db0920eb05944e",
+    "PAGES.pdf": "3980efdbb76d53b0c41f0507cda50853b873ffe7e26aeae131e1f2e60cc1e9a2",
+    "materials_sha256": "eca3dbcde241322adce772ceaba65aa69f4d15665a84427e7fb1faf7b1ac02b9"
+  },
+  "paste_sha256": "c3bd89ac25e426ab999a68ae94ca2a661588dc19753c749fe19c804a64f55d86",
+  "source_pdf_sha256": "1939a22e5e96ebd2b58b8e91fe2c796f5390b402f267390f473b271c35d2f036",
+  "pdf_page_mapping": [
+    273
+  ],
+  "crop_pixel_identity": "PASS: copied page render or lossless embedded full-page source pixels",
+  "rasterized_pages": {},
+  "source_declarations": [
+    "theorem62",
+    "theorem62_corrected",
+    "theorem62Printed"
+  ],
+  "dependency_excerpts": [
+    {
+      "path": "Blueprint/Ch06.lean",
+      "line": 2633,
+      "full_name": "MD.Ch06.theorem62",
+      "kind": "theorem",
+      "excerpt_sha256": "8760e613296ed9a58228f9c94af1d83366f4f1ecd03c8339a374c1d49ba62b12"
+    },
+    {
+      "path": "Blueprint/Ch06.lean",
+      "line": 2666,
+      "full_name": "MD.Ch06.theorem62_corrected",
+      "kind": "theorem",
+      "excerpt_sha256": "044dd93bde4b0825b3ae32b8f1daa24015ba776a078bbaebd9b6f03a7c682778"
+    },
+    {
+      "path": "Blueprint/Ch06.lean",
+      "line": 2699,
+      "full_name": "MD.Ch06.theorem62Printed",
+      "kind": "theorem",
+      "excerpt_sha256": "a2b1c4f844969d76fc5cf5bf73c72622767d9004f36f42bd4e6ec1896a07764c"
+    },
+    {
+      "path": "MolecularDynamics/Chapter05/ReviewDefinitions.lean",
+      "line": 18,
+      "full_name": "MolecularDynamics.Chapter05Review.E",
+      "kind": "abbrev",
+      "excerpt_sha256": "b497c8ba7f01b62a3147d9ae65652772ff3f81e57aa19b116f1283fef7a3cc60"
+    },
+    {
+      "path": "MolecularDynamics/Chapter05/ReviewDefinitions.lean",
+      "line": 26,
+      "full_name": "MolecularDynamics.Chapter05Review.density",
+      "kind": "def",
+      "excerpt_sha256": "cb24f1ce958a8a1e95b72fdcf4783440869a7e892f6e1482e9123c8154016f86"
+    },
+    {
+      "path": "MolecularDynamics/Chapter06/ReviewDefinitions.lean",
+      "line": 160,
+      "full_name": "MolecularDynamics.Chapter06Review.kernelEvolution",
+      "kind": "def",
+      "excerpt_sha256": "982e3128e0ed8753bc95ef260730eddc1668ee26c1d7bded9aad476e1b9d74e2"
+    },
+    {
+      "path": "MolecularDynamics/Chapter06/ReviewDefinitions.lean",
+      "line": 162,
+      "full_name": "MolecularDynamics.Chapter06Review.kernelAverage",
+      "kind": "def",
+      "excerpt_sha256": "040338bc2ba5855cfe804d143e04799a1071818368f8b71e808316c671bd9182"
+    },
+    {
+      "path": "MolecularDynamics/Chapter06/ReviewDefinitions.lean",
+      "line": 164,
+      "full_name": "MolecularDynamics.Chapter06Review.invariantKernel",
+      "kind": "def",
+      "excerpt_sha256": "8611e1e6038d01d8c2bb29c0b25399b30c6cc263b25dfc737d4d65740f794452"
+    },
+    {
+      "path": "MolecularDynamics/Chapter06/ReviewDefinitions.lean",
+      "line": 166,
+      "full_name": "MolecularDynamics.Chapter06Review.markovSemigroup",
+      "kind": "def",
+      "excerpt_sha256": "24513b322cd8ce723974b7b551e95e9f91290d3d9e8669bf7a61a3bf6fb77d8d"
+    },
+    {
+      "path": "MolecularDynamics/Chapter06/ReviewDefinitions.lean",
+      "line": 168,
+      "full_name": "MolecularDynamics.Chapter06Review.assumption1",
+      "kind": "def",
+      "excerpt_sha256": "0d57965536608e60186a81c948ff72655a0d3d5bff40577280c84acb748a628e"
+    },
+    {
+      "path": "MolecularDynamics/Chapter06/ReviewDefinitions.lean",
+      "line": 176,
+      "full_name": "MolecularDynamics.Chapter06Review.assumption1Printed",
+      "kind": "def",
+      "excerpt_sha256": "83d6cd798da574cd3538deee74c01854dd61f6b7830709d852d202f47fa8d2ca"
+    },
+    {
+      "path": "MolecularDynamics/Chapter06/ReviewDefinitions.lean",
+      "line": 184,
+      "full_name": "MolecularDynamics.Chapter06Review.assumption2",
+      "kind": "def",
+      "excerpt_sha256": "19fde98b536bfdff1ca08307a0229047ee2087861a46d7ccf58282140d1d80da"
+    },
+    {
+      "path": "MolecularDynamics/Chapter06/Statements.lean",
+      "line": 258,
+      "full_name": "MolecularDynamics.Chapter06Review.kernelGenerator",
+      "kind": "def",
+      "excerpt_sha256": "3b3f9dda3c5656c268ca81ddff86df705a79e93c77f9ca6ef3282283794b6fe2"
+    }
+  ],
+  "project_definition_closure": "complete recursive definitions, referenced theorem types, explicit choice and consistency specifications",
+  "website_submitted": false,
+  "total_task_bytes": 131148
+}

@@ -1,0 +1,111 @@
+{
+  "batch": "BATCH24",
+  "chapter": "ch06",
+  "round": "first-merged",
+  "input_sha256": {
+    "Blueprint/Ch06.lean": "0a02a34ec68989a83bccfa5916db5053ecdb58e05667bf21ff3568d9d1f4318e",
+    "blueprint/ch06/ch06_source.json": "45c70ceef21ca168af437de297e2e21e2800b452ab7942654061d4cff9bb5d95"
+  },
+  "items": [
+    {
+      "source_id": "MD-6.3.5-ScalarGenerator",
+      "json_review": {
+        "status": "CORRECTED",
+        "issue_codes": [
+          "TRANSCRIPTION_OPERATOR_ACTION"
+        ],
+        "corrected_json": {
+          "source_id": "MD-6.3.5-ScalarGenerator",
+          "kind": "definition",
+          "label": "(6.38)",
+          "section": "6.3.5",
+          "printed_page": "240",
+          "pdf_page": "261",
+          "statement_latex": "where $\\mathcal L$ is a linear operator, called the generator of the stochastic process, defined by\n\\[\\mathcal L\\phi(x)=\\left(a(x)\\frac d{dx}+\\tfrac12 b^2(x)\\frac{d^2}{dx^2}\\right)\\phi(x).\\tag{6.38}\\]",
+          "proof_latex": null,
+          "proof_note": "原书未给独立完整证明。",
+          "proof_discussion_latex": null,
+          "context_notation": [
+            "真实一、二阶导数及1/2系数，C²资格在应用定理给出。"
+          ],
+          "issues": [],
+          "lean_decl": "MD.Ch06.scalarGenerator",
+          "reusable_proofs": [],
+          "extra_assumptions": [],
+          "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
+          "review_status": "CORRECTED",
+          "repair_log": [],
+          "source_page_verification": "R5_INDEPENDENT_REVIEW; R5_PAGES.pdf 附件第18页；以本次evidence及issues为准，历史repair_log不作为真实性证据。"
+        },
+        "issues": [
+          {
+            "code": "TRANSCRIPTION_OPERATOR_ACTION",
+            "detail": "A：附件第18页(6.38)实际印为Lφ(x)=(a(x)d/dx+½b²(x)d²/dx²)φ(x)；JSON把它改写成裸算子等式，数学等价但不是逐字转录。"
+          }
+        ],
+        "evidence": [
+          {
+            "phase": "A",
+            "location": "R5_PAGES.pdf，附件第18页；原PDF页261，印刷页240",
+            "finding": "A：附件第18页(6.38)实际印为Lφ(x)=(a(x)d/dx+½b²(x)d²/dx²)φ(x)；JSON把它改写成裸算子等式，数学等价但不是逐字转录。"
+          },
+          {
+            "phase": "C",
+            "location": "R5_任务.md，条目17/30，实际Lean签名/定义及其明确命名空间的依赖摘录、文末D附录",
+            "finding": "C：任意实函数a/b/f及实x，a(x)f′(x)+b(x)²f″(x)/2与原生成元动作完全对应，括号和平方位置正确。对非光滑函数deriv有总定义，但这里是形式算子定义，不含错误的对任意函数经典可微性断言；经典解释取C²测试函数。"
+          }
+        ]
+      },
+      "audit": {
+        "lean_decl": "MD.Ch06.scalarGenerator",
+        "verdict": "PASS",
+        "explanation": "C：任意实函数a/b/f及实x，a(x)f′(x)+b(x)²f″(x)/2与原生成元动作完全对应，括号和平方位置正确。对非光滑函数deriv有总定义，但这里是形式算子定义，不含错误的对任意函数经典可微性断言；经典解释取C²测试函数。",
+        "counterexample": null,
+        "suggested_fix": "还原(6.38)的算子作用形式，不必更改Lean定义。"
+      },
+      "subtask": "BATCH24a",
+      "input_sha256": {
+        "Blueprint/Ch06.lean": "0a02a34ec68989a83bccfa5916db5053ecdb58e05667bf21ff3568d9d1f4318e",
+        "blueprint/ch06/ch06_source.json": "45c70ceef21ca168af437de297e2e21e2800b452ab7942654061d4cff9bb5d95",
+        "BATCH24a_PAGES.pdf": "5687cbb585b5e2ad331264d0d469bcc9a796fe1be3a49311186ccf90e16edb6d",
+        "signature_sha256": "0bf9ab9fe315d138ab99dad97d866e1cbf0ec9fc9f8e20343b0267c79369c0d5"
+      }
+    },
+    {
+      "source_id": "MD-6.3.5-GeneratorExpectation",
+      "json_review": {
+        "status": "APPROVED",
+        "issue_codes": [],
+        "corrected_json": null,
+        "issues": [],
+        "evidence": [
+          {
+            "phase": "A",
+            "location": "R5_PAGES.pdf，附件第19页；原PDF页261，印刷页240",
+            "finding": "A：附件第19页(6.37)中两项期望、½及最终生成元期望一致。"
+          },
+          {
+            "phase": "C",
+            "location": "R5_任务.md，条目18/30，实际Lean签名/定义及其明确命名空间的依赖摘录、文末D附录",
+            "finding": "C：完整量化样本测度、W/X、a/b/φ、确定x0；前提为PreBrownian、实际strictScalarSDE、C¹a/b、C²φ、φ′(X)b(X)自然历史适应且平方时间可积、每时刻Lφ可积、期望连续、X自然历史适应/联合可测，以及每个有限时间×样本上|Lφ|可积。结论为每个t>0期望函数的HasDerivAt，导数等于E[Lφ(Xt)]。Fubini和去随机积分期望所需范围已作为[EXTRA]披露，没有把所求导数或弱PDE当作前提。严格SDE给实际积分残差，结论强于只定义L而未偷换对象。"
+          }
+        ]
+      },
+      "audit": {
+        "lean_decl": "MD.Ch06.generatorExpectation",
+        "verdict": "PASS",
+        "explanation": "C：完整量化样本测度、W/X、a/b/φ、确定x0；前提为PreBrownian、实际strictScalarSDE、C¹a/b、C²φ、φ′(X)b(X)自然历史适应且平方时间可积、每时刻Lφ可积、期望连续、X自然历史适应/联合可测，以及每个有限时间×样本上|Lφ|可积。结论为每个t>0期望函数的HasDerivAt，导数等于E[Lφ(Xt)]。Fubini和去随机积分期望所需范围已作为[EXTRA]披露，没有把所求导数或弱PDE当作前提。严格SDE给实际积分残差，结论强于只定义L而未偷换对象。",
+        "counterexample": null,
+        "suggested_fix": null
+      },
+      "subtask": "BATCH24b",
+      "input_sha256": {
+        "Blueprint/Ch06.lean": "0a02a34ec68989a83bccfa5916db5053ecdb58e05667bf21ff3568d9d1f4318e",
+        "blueprint/ch06/ch06_source.json": "45c70ceef21ca168af437de297e2e21e2800b452ab7942654061d4cff9bb5d95",
+        "BATCH24b_PAGES.pdf": "5687cbb585b5e2ad331264d0d469bcc9a796fe1be3a49311186ccf90e16edb6d",
+        "signature_sha256": "4053d0f49330c822edaeb038e97320b7086f6e8058d521cca617d12567e09798"
+      }
+    }
+  ],
+  "merged_from": "ch06_first_merged"
+}

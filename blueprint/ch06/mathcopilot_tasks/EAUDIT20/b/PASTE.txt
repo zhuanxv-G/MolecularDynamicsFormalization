@@ -1,0 +1,259 @@
+以附件/PASTE 为准，忽略 /workspace 旧文件；Mathlib 定义按标准含义采信。
+A逐字核对原文及证明；C只读核对对象、域、量词、前提和全部结论。所有项目定义体及选择规格在下文；仅作为审阅摘录，不是独立模块。theorem/lemma提供完整类型（不审证明）；定义提供完整定义体，按文件作用域解释。不要因sorry判签名FAIL。原文版忠实性、修正版正确性、反例、原书疑误分别说明，不凭旧文件或repair_log猜声明。
+本条MD-6.4.5-LangevinForwardSemigroupMeaning，subtask=EAUDIT20b；原PDF页映射=[278, 279]。只读，不改工程或补证明。以JSON对象返回batch=EAUDIT20,input_sha256,items；逐条含source_id,subtask,input_sha256,json_review{status,issue_codes,corrected_json,issues,evidence},audit{lean_decl,verdict,explanation,counterexample,suggested_fix}。verdict=PASS/FAIL/NEEDS_HUMAN，status=APPROVED/CORRECTED/NEEDS_HUMAN。必须原样回显下列全部哈希。
+input_sha256:
+{
+  "Blueprint/Ch06.lean": "4a2a6cb72c1692f80e3537ab1a71701d429a482780a01226c3dc66a2ebb8b44b",
+  "blueprint/ch06/ch06_source.json": "d7f93cd20eb570744c710f3e07a88b319c082e4155812fee91db0920eb05944e",
+  "PAGES.pdf": "0688596d9674febadb05c22c809f49f1f77c5ba1ea661a4f02c3e37104a9bb70",
+  "materials_sha256": "df5bc462bb2c623235241decc1280e96967b215df7a5f0bbbbd27f843b7f01b9"
+}
+
+## 原文JSON
+```json
+{
+  "source_id": "MD-6.4.5-LangevinForwardSemigroupMeaning",
+  "kind": "definition",
+  "label": null,
+  "section": "6.4.5",
+  "printed_page": "257–258",
+  "pdf_page": "278–279",
+  "statement_latex": "\\[\\rho(q,p,t)=e^{t\\mathcal L_{LD}^{\\dagger}}\\rho_0(q,p).\\]",
+  "proof_latex": null,
+  "proof_note": "原书未给独立完整证明。",
+  "proof_discussion_latex": null,
+  "context_notation": [],
+  "extra_assumptions": [
+    "[EXTRA] 25号：补C₀半群（初值/组合/强连续）、Markov核及实际Langevin右生成元联系；每个合格输入的输出AE实且非负并可积，排除(1+i)id和ofReal裁剪伪识别。此为资格定义，未证明存在。"
+  ],
+  "statement_scope": "本条Lean覆盖范围：补C₀半群（初值/组合/强连续）、Markov核及实际Langevin右生成元联系；每个合格输入的输出AE实且非负并可积，排除(1+i)id和ofReal裁剪伪识别。此为资格定义，未证明存在。",
+  "coverage_gaps": []
+}
+```
+## 当前完整Lean（全部原文版、修正版及反例）
+```lean
+def langevinForwardSemigroupMeaning {n : ℕ} (U : (Fin n → ℝ) → ℝ) (β γ : ℝ)
+    (K : ℝ≥0 → Kernel (textbookLangevinPeriodicPhase n) (textbookLangevinPeriodicPhase n))
+    (S : ℝ≥0 → Lp ℂ 2 (MolecularDynamics.Chapter06Review.flatPhaseMeasure n) →L[ℂ]
+      Lp ℂ 2 (MolecularDynamics.Chapter06Review.flatPhaseMeasure n)) : Prop :=
+  langevinKernelQualification25 U β γ K ∧
+  S 0 = ContinuousLinearMap.id ℂ _ ∧
+  (∀ s t, S (s+t) = (S s).comp (S t)) ∧
+  (∀ v, Continuous (fun t ↦ S t v)) ∧
+  ∀ v : Lp ℂ 2 (MolecularDynamics.Chapter06Review.flatPhaseMeasure n),
+    (∀ᵐ x ∂MolecularDynamics.Chapter06Review.flatPhaseMeasure n, (v x).im=0 ∧ 0 ≤ (v x).re) →
+    Integrable (fun x ↦ (v x).re) (MolecularDynamics.Chapter06Review.flatPhaseMeasure n) →
+    ∀ t, (∀ᵐ x ∂MolecularDynamics.Chapter06Review.flatPhaseMeasure n,
+      (S t v x).im=0 ∧ 0 ≤ (S t v x).re) ∧
+      Integrable (fun x ↦ (S t v x).re) (MolecularDynamics.Chapter06Review.flatPhaseMeasure n) ∧
+      MolecularDynamics.Chapter06Review.kernelEvolution K
+      ((MolecularDynamics.Chapter06Review.flatPhaseMeasure n).withDensity (fun x ↦ ENNReal.ofReal (v x).re)) t =
+      (MolecularDynamics.Chapter06Review.flatPhaseMeasure n).withDensity (fun x ↦ ENNReal.ofReal ((S t v x).re))
+```
+### 文件参数及作用域 Blueprint/Ch06.lean
+```lean
+open Set Filter Matrix MeasureTheory ProbabilityTheory MolecularDynamics MolecularDynamics.Chapter02Review MolecularDynamics.Chapter06Review
+open scoped BigOperators Topology ContDiff InnerProductSpace Matrix.Norms.L2Operator ENNReal NNReal
+variable {n Nc : ℕ}
+variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
+variable {R : Type*} [Ring R] [Algebra ℝ R]
+local instance : MeasureSpace UnitAddCircle := ⟨AddCircle.haarAddCircle⟩
+```
+### 文件参数及作用域 MolecularDynamics/Chapter02/SymplecticEuler.lean
+```lean
+open Matrix
+open scoped Matrix
+```
+### 文件参数及作用域 MolecularDynamics/Chapter02/SymplecticForm.lean
+```lean
+open Matrix
+open scoped BigOperators Matrix
+```
+### 文件参数及作用域 MolecularDynamics/Chapter02/SymplecticMaps.lean
+```lean
+open Matrix
+open scoped Matrix
+```
+### 文件参数及作用域 MolecularDynamics/Chapter06/LangevinHormander.lean
+```lean
+open scoped BigOperators ContDiff
+```
+### 文件参数及作用域 MolecularDynamics/Chapter06/LangevinLyapunov.lean
+```lean
+open Set Filter MeasureTheory
+open scoped Topology ContDiff BigOperators
+```
+### 文件参数及作用域 MolecularDynamics/Chapter06/LangevinPeriodicForce.lean
+```lean
+open Set Filter
+open scoped Topology ContDiff NNReal
+```
+### 文件参数及作用域 MolecularDynamics/Chapter06/LangevinPeriodicLift.lean
+```lean
+open Set Filter MeasureTheory ProbabilityTheory
+open scoped Topology ContDiff NNReal ENNReal
+```
+### 文件参数及作用域 MolecularDynamics/Chapter06/LangevinPeriodicLyapunov.lean
+```lean
+open Set Filter
+open scoped Topology ContDiff BigOperators
+```
+### 文件参数及作用域 MolecularDynamics/Chapter06/LangevinPeriodicProjection.lean
+```lean
+open Set Filter MeasureTheory ProbabilityTheory
+open scoped Topology ContDiff NNReal ENNReal
+```
+### 文件参数及作用域 MolecularDynamics/Chapter06/ReviewDefinitions.lean
+```lean
+open Set Filter MeasureTheory ProbabilityTheory
+open scoped BigOperators Topology ContDiff ENNReal NNReal
+local instance : MeasureSpace UnitAddCircle := ⟨AddCircle.haarAddCircle⟩
+```
+### MD.Ch06.langevinKernelQualification25 [Blueprint/Ch06.lean:54]
+```lean
+def langevinKernelQualification25 {n : ℕ} (U : (Fin n → ℝ) → ℝ) (β γ : ℝ)
+    (K : ℝ≥0 → Kernel (textbookLangevinPeriodicPhase n) (textbookLangevinPeriodicPhase n)) : Prop :=
+  0 < β ∧ 0 < γ ∧ ContDiff ℝ ∞ U ∧ textbookUnitPeriodicPotential U ∧
+  MolecularDynamics.Chapter06Review.markovSemigroup K ∧
+  ∀ f : textbookLangevinPeriodicPhase n → ℝ,
+    ContDiff ℝ ∞ (f ∘ textbookLangevinPeriodicProjection) → HasCompactSupport f →
+    ∀ x, HasDerivWithinAt
+      (fun t : ℝ ↦ MolecularDynamics.Chapter06Review.kernelAverage K f t.toNNReal x)
+      (textbookLangevinPeriodicDifferentialOperator U γ (Real.sqrt (2*γ*β⁻¹)) f x) (Ici 0) 0
+```
+### MD.Ch06.langevinForwardSemigroupMeaning [Blueprint/Ch06.lean:3430]
+```lean
+def langevinForwardSemigroupMeaning {n : ℕ} (U : (Fin n → ℝ) → ℝ) (β γ : ℝ)
+    (K : ℝ≥0 → Kernel (textbookLangevinPeriodicPhase n) (textbookLangevinPeriodicPhase n))
+    (S : ℝ≥0 → Lp ℂ 2 (MolecularDynamics.Chapter06Review.flatPhaseMeasure n) →L[ℂ]
+      Lp ℂ 2 (MolecularDynamics.Chapter06Review.flatPhaseMeasure n)) : Prop :=
+  langevinKernelQualification25 U β γ K ∧
+  S 0 = ContinuousLinearMap.id ℂ _ ∧
+  (∀ s t, S (s+t) = (S s).comp (S t)) ∧
+  (∀ v, Continuous (fun t ↦ S t v)) ∧
+  ∀ v : Lp ℂ 2 (MolecularDynamics.Chapter06Review.flatPhaseMeasure n),
+    (∀ᵐ x ∂MolecularDynamics.Chapter06Review.flatPhaseMeasure n, (v x).im=0 ∧ 0 ≤ (v x).re) →
+    Integrable (fun x ↦ (v x).re) (MolecularDynamics.Chapter06Review.flatPhaseMeasure n) →
+    ∀ t, (∀ᵐ x ∂MolecularDynamics.Chapter06Review.flatPhaseMeasure n,
+      (S t v x).im=0 ∧ 0 ≤ (S t v x).re) ∧
+      Integrable (fun x ↦ (S t v x).re) (MolecularDynamics.Chapter06Review.flatPhaseMeasure n) ∧
+      MolecularDynamics.Chapter06Review.kernelEvolution K
+      ((MolecularDynamics.Chapter06Review.flatPhaseMeasure n).withDensity (fun x ↦ ENNReal.ofReal (v x).re)) t =
+      (MolecularDynamics.Chapter06Review.flatPhaseMeasure n).withDensity (fun x ↦ ENNReal.ofReal ((S t v x).re))
+```
+### MolecularDynamics.textbookPotentialForce [MolecularDynamics/Chapter02/SymplecticEuler.lean:34]
+```lean
+noncomputable def textbookPotentialForce {Nc : ℕ}
+    (U : (Fin Nc → ℝ) → ℝ) (q : Fin Nc → ℝ) : Fin Nc → ℝ :=
+  fun i => -(fderiv ℝ U q) (Pi.single i 1)
+```
+### MolecularDynamics.SymplecticCoordinates [MolecularDynamics/Chapter02/SymplecticForm.lean:25]
+```lean
+abbrev SymplecticCoordinates (Nc : ℕ) := (Fin Nc ⊕ Fin Nc) → ℝ
+```
+### MolecularDynamics.SymplecticCoordinateMatrix [MolecularDynamics/Chapter02/SymplecticForm.lean:27]
+```lean
+abbrev SymplecticCoordinateMatrix (Nc : ℕ) :=
+  Matrix (Fin Nc ⊕ Fin Nc) (Fin Nc ⊕ Fin Nc) ℝ
+```
+### MolecularDynamics.textbookJ [MolecularDynamics/Chapter02/SymplecticForm.lean:31]
+```lean
+noncomputable def textbookJ (Nc : ℕ) : SymplecticCoordinateMatrix Nc :=
+  Matrix.fromBlocks 0 1 (-1) 0
+```
+### MolecularDynamics.IsTextbookSymplectic [MolecularDynamics/Chapter02/SymplecticForm.lean:130]
+```lean
+def IsTextbookSymplectic {Nc : ℕ} (A : SymplecticCoordinateMatrix Nc) : Prop :=
+  Aᵀ * textbookJ Nc * A = textbookJ Nc
+```
+### MolecularDynamics.textbookJacobian [MolecularDynamics/Chapter02/SymplecticMaps.lean:21]
+```lean
+noncomputable def textbookJacobian {Nc : ℕ}
+    (Φ : SymplecticCoordinates Nc → SymplecticCoordinates Nc) (z : SymplecticCoordinates Nc) :
+    SymplecticCoordinateMatrix Nc :=
+  LinearMap.toMatrix' (fderiv ℝ Φ z).toLinearMap
+```
+### MolecularDynamics.IsTextbookSymplecticMap [MolecularDynamics/Chapter02/SymplecticMaps.lean:55]
+```lean
+def IsTextbookSymplecticMap {Nc : ℕ}
+    (Φ : SymplecticCoordinates Nc → SymplecticCoordinates Nc) : Prop :=
+  ContDiff ℝ 1 Φ ∧ ∀ z, IsTextbookSymplectic (textbookJacobian Φ z)
+```
+### MolecularDynamics.IsTextbookSymplecticMap.comp [MolecularDynamics/Chapter02/SymplecticMaps.lean:86]
+```lean
+theorem IsTextbookSymplecticMap.comp {Nc : ℕ}
+    {Φ Ψ : SymplecticCoordinates Nc → SymplecticCoordinates Nc}
+    (hΦ : IsTextbookSymplecticMap Φ) (hΨ : IsTextbookSymplecticMap Ψ) :
+    IsTextbookSymplecticMap (Φ ∘ Ψ)
+```
+### MolecularDynamics.textbookLangevinPhase [MolecularDynamics/Chapter06/LangevinHormander.lean:12]
+```lean
+abbrev textbookLangevinPhase (Nc : ℕ) := (Fin Nc → ℝ) × (Fin Nc → ℝ)
+```
+### MolecularDynamics.textbookLangevinDrift [MolecularDynamics/Chapter06/LangevinHormander.lean:15]
+```lean
+noncomputable def textbookLangevinDrift {Nc : ℕ}
+    (U : (Fin Nc → ℝ) → ℝ) (γ : ℝ) : textbookLangevinPhase Nc → textbookLangevinPhase Nc :=
+  fun z ↦ (z.2, textbookPotentialForce U z.1 - γ • z.2)
+```
+### MolecularDynamics.textbookLangevinDifferentialOperator [MolecularDynamics/Chapter06/LangevinLyapunov.lean:20]
+```lean
+noncomputable def textbookLangevinDifferentialOperator {Nc : ℕ}
+    (U : (Fin Nc → ℝ) → ℝ) (γ σ : ℝ) (f : textbookLangevinPhase Nc → ℝ)
+    (z : textbookLangevinPhase Nc) : ℝ :=
+  deriv (fun t : ℝ ↦ f (z + t • textbookLangevinDrift U γ z)) 0 +
+    σ ^ 2 / 2 * ∑ i : Fin Nc,
+      deriv (deriv (fun t : ℝ ↦ f (z + t • ((0 : Fin Nc → ℝ), Pi.single i 1)))) 0
+```
+### MolecularDynamics.textbookUnitPeriodicPotential [MolecularDynamics/Chapter06/LangevinPeriodicForce.lean:13]
+```lean
+def textbookUnitPeriodicPotential {Nc : ℕ} (U : (Fin Nc → ℝ) → ℝ) : Prop :=
+  ∀ q (n : Fin Nc → ℤ), U (q + fun i ↦ (n i : ℝ)) = U q
+```
+### MolecularDynamics.textbookLangevinPeriodicRepresentative [MolecularDynamics/Chapter06/LangevinPeriodicLift.lean:13]
+```lean
+noncomputable def textbookLangevinPeriodicRepresentative {Nc : ℕ}
+    (Q : UnitAddTorus (Fin Nc)) : Fin Nc → ℝ := fun i ↦ Quotient.out (Q i)
+```
+### MolecularDynamics.textbookLangevinPeriodicDifferentialOperator [MolecularDynamics/Chapter06/LangevinPeriodicLyapunov.lean:118]
+```lean
+noncomputable def textbookLangevinPeriodicDifferentialOperator {Nc : ℕ}
+    (U : (Fin Nc → ℝ) → ℝ) (γ σ : ℝ) (f : textbookLangevinPeriodicPhase Nc → ℝ)
+    (z : textbookLangevinPeriodicPhase Nc) : ℝ :=
+  textbookLangevinDifferentialOperator U γ σ (f ∘ textbookLangevinPeriodicProjection)
+    (textbookLangevinPeriodicRepresentative z.1, z.2)
+```
+### MolecularDynamics.textbookLangevinPeriodicPhase [MolecularDynamics/Chapter06/LangevinPeriodicProjection.lean:14]
+```lean
+abbrev textbookLangevinPeriodicPhase (Nc : ℕ) := UnitAddTorus (Fin Nc) × (Fin Nc → ℝ)
+```
+### MolecularDynamics.textbookLangevinPeriodicProjection [MolecularDynamics/Chapter06/LangevinPeriodicProjection.lean:17]
+```lean
+def textbookLangevinPeriodicProjection {Nc : ℕ}
+    (z : textbookLangevinPhase Nc) : textbookLangevinPeriodicPhase Nc :=
+  (fun i ↦ (z.1 i : UnitAddCircle), z.2)
+```
+### MolecularDynamics.Chapter06Review.V [MolecularDynamics/Chapter06/ReviewDefinitions.lean:17]
+```lean
+abbrev V (n : ℕ) := Fin n → ℝ
+```
+### MolecularDynamics.Chapter06Review.kernelEvolution [MolecularDynamics/Chapter06/ReviewDefinitions.lean:160]
+```lean
+def kernelEvolution {D : Type*} [MeasurableSpace D] (K : ℝ≥0 → Kernel D D)
+    (μ : Measure D) (t : ℝ≥0) : Measure D := K t ∘ₘ μ
+```
+### MolecularDynamics.Chapter06Review.kernelAverage [MolecularDynamics/Chapter06/ReviewDefinitions.lean:162]
+```lean
+def kernelAverage {D : Type*} [MeasurableSpace D] (K : ℝ≥0 → Kernel D D)
+    (f : D → ℝ) (t : ℝ≥0) (x : D) : ℝ := ∫ z, f z ∂K t x
+```
+### MolecularDynamics.Chapter06Review.markovSemigroup [MolecularDynamics/Chapter06/ReviewDefinitions.lean:166]
+```lean
+def markovSemigroup {D : Type*} [MeasurableSpace D] (K : ℝ≥0 → Kernel D D) : Prop :=
+  (∀ t, IsMarkovKernel (K t)) ∧ K 0 = Kernel.id ∧ ∀ s t, K (s+t) = K s ∘ₖ K t
+```
+### MolecularDynamics.Chapter06Review.flatPhaseMeasure [MolecularDynamics/Chapter06/ReviewDefinitions.lean:189]
+```lean
+def flatPhaseMeasure (n : ℕ) : Measure (textbookLangevinPeriodicPhase n) :=
+  (volume : Measure (UnitAddTorus (Fin n))).prod (volume : Measure (V n))
+```

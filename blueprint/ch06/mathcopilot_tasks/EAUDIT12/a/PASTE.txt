@@ -1,0 +1,127 @@
+以附件/PASTE 为准，忽略 /workspace 旧文件；Mathlib 定义按标准含义采信。
+A逐字核对原文及证明；C只读核对对象、域、量词、前提和全部结论。所有项目定义体及选择规格在下文；仅作为审阅摘录，不是独立模块。theorem/lemma提供完整类型（不审证明）；定义提供完整定义体，按文件作用域解释。不要因sorry判签名FAIL。原文版忠实性、修正版正确性、反例、原书疑误分别说明，不凭旧文件或repair_log猜声明。
+本条MD-6.4.3-BrownianRealEigenvalue，subtask=EAUDIT12a；原PDF页映射=[271]。只读，不改工程或补证明。以JSON对象返回batch=EAUDIT12,input_sha256,items；逐条含source_id,subtask,input_sha256,json_review{status,issue_codes,corrected_json,issues,evidence},audit{lean_decl,verdict,explanation,counterexample,suggested_fix}。verdict=PASS/FAIL/NEEDS_HUMAN，status=APPROVED/CORRECTED/NEEDS_HUMAN。必须原样回显下列全部哈希。
+input_sha256:
+{
+  "Blueprint/Ch06.lean": "4a2a6cb72c1692f80e3537ab1a71701d429a482780a01226c3dc66a2ebb8b44b",
+  "blueprint/ch06/ch06_source.json": "d7f93cd20eb570744c710f3e07a88b319c082e4155812fee91db0920eb05944e",
+  "PAGES.pdf": "db61f5524dd8e538ea263b26df24013f9a959727267372c8ec06f88d112dd86c",
+  "materials_sha256": "2500197cabfc6bcd6dfa026aadca34529fe82dbe536d0c65cfe7f2f249e14a18"
+}
+
+## 原文JSON
+```json
+{
+  "source_id": "MD-6.4.3-BrownianRealEigenvalue",
+  "kind": "unnumbered_claim",
+  "label": null,
+  "section": "6.4.3",
+  "printed_page": "250",
+  "pdf_page": "271",
+  "statement_latex": "so that $\\langle f,\\mathcal Lf\\rangle\\le0$ so the operator is negative definite and can only have non-positive eigenvalues.",
+  "proof_latex": null,
+  "proof_note": "原书未给独立完整证明。",
+  "proof_discussion_latex": null,
+  "context_notation": [],
+  "extra_assumptions": [
+    "[EXTRA]真正非零L²特征函数、C∞周期、正质量与β>0；不以特征值符号作假设。",
+    "[EXTRA] 25号：[ERRATUM?]原引文negative definite应为半负定，常数零模反例与BrownianNegativeDefinitePrinted共用；本条只证明已给实特征参数≤0，不冒称全部复谱实性。"
+  ],
+  "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
+  "coverage_gaps": null
+}
+```
+## 当前完整Lean（全部原文版、修正版及反例）
+```lean
+theorem brownianRealEigenvalue {Nc : ℕ} (m : Fin Nc → ℝ)
+    (hm : ∀ i, 0 < m i) (U : (Fin Nc → ℝ) → ℝ) (β : ℝ) (hβ : 0 < β)
+    (f : (Fin Nc → ℝ) → ℝ) (hU : ContDiff ℝ ∞ U) (hf : ContDiff ℝ ∞ f)
+    (hPU : textbookUnitPeriodicPotential U) (hPf : textbookUnitPeriodicPotential f)
+    (hne : ¬ f =ᵐ[volume.restrict (textbookConfigurationCube Nc)] 0)
+    (ℓ : ℝ) (heig : ∀ q, textbookBrownianGenerator m U β f q = ℓ * f q) :
+    ℓ ≤ 0 := by
+  exact MolecularDynamics.textbookBrownianGenerator_real_eigenvalue_nonpos m hm U β hβ f hU hf hPU hPf hne ℓ heig
+
+/-- 修正版/限定版：原文公式或定义的正确限定陈述；证明/域解释缺口见ERRATA。复制独立证明体，不从原文版占位推导。 -/
+theorem brownianRealEigenvalue_corrected {Nc : ℕ} (m : Fin Nc → ℝ)
+    (hm : ∀ i, 0 < m i) (U : (Fin Nc → ℝ) → ℝ) (β : ℝ) (hβ : 0 < β)
+    (f : (Fin Nc → ℝ) → ℝ) (hU : ContDiff ℝ ∞ U) (hf : ContDiff ℝ ∞ f)
+    (hPU : textbookUnitPeriodicPotential U) (hPf : textbookUnitPeriodicPotential f)
+    (hne : ¬ f =ᵐ[volume.restrict (textbookConfigurationCube Nc)] 0)
+    (ℓ : ℝ) (heig : ∀ q, textbookBrownianGenerator m U β f q = ℓ * f q) :
+    ℓ ≤ 0 := by
+  exact MolecularDynamics.textbookBrownianGenerator_real_eigenvalue_nonpos m hm U β hβ f hU hf hPU hPf hne ℓ heig
+```
+### 文件参数及作用域 Blueprint/Ch06.lean
+```lean
+open Set Filter Matrix MeasureTheory ProbabilityTheory MolecularDynamics MolecularDynamics.Chapter02Review MolecularDynamics.Chapter06Review
+open scoped BigOperators Topology ContDiff InnerProductSpace Matrix.Norms.L2Operator ENNReal NNReal
+variable {n Nc : ℕ}
+variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
+variable {R : Type*} [Ring R] [Algebra ℝ R]
+local instance : MeasureSpace UnitAddCircle := ⟨AddCircle.haarAddCircle⟩
+```
+### 文件参数及作用域 MolecularDynamics/Chapter06/BrownianDirichlet.lean
+```lean
+open Set MeasureTheory
+open scoped BigOperators ContDiff
+```
+### 文件参数及作用域 MolecularDynamics/Chapter06/LangevinPeriodicForce.lean
+```lean
+open Set Filter
+open scoped Topology ContDiff NNReal
+```
+### MD.Ch06.brownianRealEigenvalue [Blueprint/Ch06.lean:2280]
+```lean
+theorem brownianRealEigenvalue {Nc : ℕ} (m : Fin Nc → ℝ)
+    (hm : ∀ i, 0 < m i) (U : (Fin Nc → ℝ) → ℝ) (β : ℝ) (hβ : 0 < β)
+    (f : (Fin Nc → ℝ) → ℝ) (hU : ContDiff ℝ ∞ U) (hf : ContDiff ℝ ∞ f)
+    (hPU : textbookUnitPeriodicPotential U) (hPf : textbookUnitPeriodicPotential f)
+    (hne : ¬ f =ᵐ[volume.restrict (textbookConfigurationCube Nc)] 0)
+    (ℓ : ℝ) (heig : ∀ q, textbookBrownianGenerator m U β f q = ℓ * f q) :
+    ℓ ≤ 0
+```
+### MD.Ch06.brownianRealEigenvalue_corrected [Blueprint/Ch06.lean:2290]
+```lean
+theorem brownianRealEigenvalue_corrected {Nc : ℕ} (m : Fin Nc → ℝ)
+    (hm : ∀ i, 0 < m i) (U : (Fin Nc → ℝ) → ℝ) (β : ℝ) (hβ : 0 < β)
+    (f : (Fin Nc → ℝ) → ℝ) (hU : ContDiff ℝ ∞ U) (hf : ContDiff ℝ ∞ f)
+    (hPU : textbookUnitPeriodicPotential U) (hPf : textbookUnitPeriodicPotential f)
+    (hne : ¬ f =ᵐ[volume.restrict (textbookConfigurationCube Nc)] 0)
+    (ℓ : ℝ) (heig : ∀ q, textbookBrownianGenerator m U β f q = ℓ * f q) :
+    ℓ ≤ 0
+```
+### MolecularDynamics.textbookConfigurationPartial [MolecularDynamics/Chapter06/BrownianDirichlet.lean:13]
+```lean
+noncomputable def textbookConfigurationPartial {Nc : ℕ}
+    (f : (Fin Nc → ℝ) → ℝ) (i : Fin Nc) (q : Fin Nc → ℝ) : ℝ :=
+  fderiv ℝ f q (Pi.single i 1)
+```
+### MolecularDynamics.textbookConfigurationCube [MolecularDynamics/Chapter06/BrownianDirichlet.lean:18]
+```lean
+def textbookConfigurationCube (Nc : ℕ) : Set (Fin Nc → ℝ) := Icc 0 1
+```
+### MolecularDynamics.textbookBrownianGenerator [MolecularDynamics/Chapter06/BrownianDirichlet.lean:31]
+```lean
+noncomputable def textbookBrownianGenerator {Nc : ℕ} (m : Fin Nc → ℝ)
+    (U : (Fin Nc → ℝ) → ℝ) (β : ℝ) (f : (Fin Nc → ℝ) → ℝ)
+    (q : Fin Nc → ℝ) : ℝ :=
+  ∑ i, (m i)⁻¹ * (β⁻¹ * textbookConfigurationPartial
+    (textbookConfigurationPartial f i) i q -
+      textbookConfigurationPartial U i q * textbookConfigurationPartial f i q)
+```
+### MolecularDynamics.textbookBrownianGenerator_real_eigenvalue_nonpos [MolecularDynamics/Chapter06/BrownianDirichlet.lean:396]
+```lean
+theorem textbookBrownianGenerator_real_eigenvalue_nonpos {Nc : ℕ} (m : Fin Nc → ℝ)
+    (hm : ∀ i, 0 < m i) (U : (Fin Nc → ℝ) → ℝ) (β : ℝ) (hβ : 0 < β)
+    (f : (Fin Nc → ℝ) → ℝ) (hU : ContDiff ℝ ∞ U) (hf : ContDiff ℝ ∞ f)
+    (hPU : textbookUnitPeriodicPotential U) (hPf : textbookUnitPeriodicPotential f)
+    (hne : ¬ f =ᵐ[volume.restrict (textbookConfigurationCube Nc)] 0)
+    (ℓ : ℝ) (heig : ∀ q, textbookBrownianGenerator m U β f q = ℓ * f q) :
+    ℓ ≤ 0
+```
+### MolecularDynamics.textbookUnitPeriodicPotential [MolecularDynamics/Chapter06/LangevinPeriodicForce.lean:13]
+```lean
+def textbookUnitPeriodicPotential {Nc : ℕ} (U : (Fin Nc → ℝ) → ℝ) : Prop :=
+  ∀ q (n : Fin Nc → ℤ), U (q + fun i ↦ (n i : ℝ)) = U q
+```

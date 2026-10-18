@@ -1,0 +1,12 @@
+--- before
++++ after
+@@ -1737,7 +1737,8 @@
+   ∀ t x : ℝ, 0 < t → deriv (fun s ↦ ρ s x) t=MolecularDynamics.Chapter06Review.scalarForward a b (ρ t) x := by
+   sorry
+ 
+-/-- source_id: MD-6.3.6-ZeroNoise · unnumbered_claim · §6.3.6 · 印刷p.242 / PDFp.263 -/
++/-- source_id: MD-6.3.6-ZeroNoise · unnumbered_claim · §6.3.6 · 印刷p.242 / PDFp.263 [EXTRA] 25号：仅覆盖生成元和前向算子的零扩散代数简化；SDE解到ODE积分方程及经典导数桥接未覆盖。
++-/
+ theorem zeroNoise :
+   ∀ (a f ρ : ℝ → ℝ) (x : ℝ),
+   MolecularDynamics.Chapter06Review.scalarGenerator a (fun _ ↦ 0) f x=a x*deriv f x ∧

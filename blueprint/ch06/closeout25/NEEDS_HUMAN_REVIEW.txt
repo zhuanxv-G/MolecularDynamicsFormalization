@@ -1,0 +1,3035 @@
+
+### MD-6.1.2-IndependentPartition 236
+{
+  "lean_decl": "MD.Ch06.independentPartition",
+  "verdict": "NEEDS_HUMAN",
+  "explanation": "签名量化n,m、HA、HB及EA,EB，并以两个regularEnergy为前提；μA、μB确为第1条所给microRaw，结论是乘积测度在univ上的质量等于两个总质量之积，符合已标[EXTRA]的分别固定能量独立乘积模型。但本任务没有摘录Chapter05Review.regularEnergy的定义，无法完成“全部前提”与物理正则能量含义的核对。质量乘法这一结论本身不依赖该谓词的内容；本条保留待人工补齐上下文，不臆造其定义。",
+  "counterexample": null,
+  "suggested_fix": "提供本次哈希对应的MolecularDynamics.Chapter05Review.regularEnergy完整定义后再审；若只是独立乘积测度的全空间质量恒等式，可另行讨论是否删去冗余正则性前提。本轮不修改声明。"
+}
+{
+  "status": "NEEDS_HUMAN",
+  "issue_codes": [
+    "C_PROJECT_DEFINITION_MISSING"
+  ],
+  "corrected_json": null,
+  "issues": [
+    {
+      "code": "C_PROJECT_DEFINITION_MISSING",
+      "phase": "C",
+      "field": "Chapter05Review.regularEnergy",
+      "detail": "R1_任务.md全篇与附录未提供regularEnergy定义；这是签名中的两个项目自定义前提，无法审定其实际内容及是否隐藏额外限制。"
+    }
+  ],
+  "evidence": [
+    "A：实际渲染并核对 R1_PAGES.pdf 附件第3页；原PDF第236页，印刷第215页。“分别具有能量E_A、E_B”的英文和Z(E_A,E_B)=Z_A(E_A)×Z_B(E_B)逐项相符；未误写成固定总能量配分函数的乘积。",
+    "C：依据 R1_任务.md 本条实际Lean签名及本任务附录，按标准Mathlib数学含义只读核对；未运行Lean编译、未补证明，未把sorry或repair_log中的未提供声明当作审校结果。",
+    "项目定义核对：microRaw可由第1条定义链核实；regularEnergy缺失，未借用/workspace旧工程补足。"
+  ]
+}
+
+### MD-6.1.2-BathTaylor 237
+{
+  "lean_decl": "MD.Ch06.bathBoltzmannPrinted",
+  "verdict": "NEEDS_HUMAN",
+  "explanation": "Printed声明量化任意C²实熵S及正energy,kB，只在energy处假设S′=kBβ。第一合取分量对任意s>0给闭区间中值点，数学上成立；第二分量却对所有0≤s≤energy断言精确指数比，单点斜率不足以推出。它忠实暴露原文从ξ到固定温度的缺口，按任务要求保留字面版并判NEEDS_HUMAN，不因命题一般为假而将忠实Printed版判签名FAIL。repair_log仅提到_corrected声明名称，没有提供其签名，本条未审定该修正版。",
+  "counterexample": "令S(x)=x²，energy=kB=1，β=2。全部显式前提成立，且均值定理分量成立；取s=1/2，左边指数比为exp(−3/4)，右边为exp(−1)，不相等。一般0<s≤1时两边相差exp(s²)，故任意小正s也不能使精确式成立。",
+  "suggested_fix": "保留Printed原文与ERRATUM?；另提供独立修正版的完整签名：可要求相关区间上S′≡kBβ，或将指数中的误差以C·s²控制。第11、12条分别是合法的近似及恒斜率处理，不能据此声称本Printed命题成立。"
+}
+{
+  "status": "NEEDS_HUMAN",
+  "issue_codes": [
+    "ERRATUM?"
+  ],
+  "corrected_json": null,
+  "issues": [
+    {
+      "code": "ERRATUM?",
+      "phase": "A/C",
+      "field": "statement_latex; bathBoltzmannPrinted第二合取结论",
+      "detail": "从S′(energy)=kBβ不能推出整个区间内S′恒定；“s≪E”只能支撑受控近似，不能推出对所有s的精确指数恒等式。原页脚注3及原有ERRATUM?标注保留。"
+    }
+  ],
+  "evidence": [
+    "A：实际渲染并核对 R1_PAGES.pdf 附件第8页；原PDF第237页，印刷第216页。原页确实从均值定理中的S_B′(ξ)直接代入1/T得到精确比例关系；脚注3承认这段推导存在不精确处。原文版未擅自改成近似式。",
+    "C：依据 R1_任务.md 本条实际Lean签名及本任务附录，按标准Mathlib数学含义只读核对；未运行Lean编译、未补证明，未把sorry或repair_log中的未提供声明当作审校结果。"
+  ]
+}
+
+### MD-6.1.2-CanonicalCDFPrinted 237
+{
+  "lean_decl": "MD.Ch06.canonicalCDFPrinted",
+  "verdict": "NEEDS_HUMAN",
+  "explanation": "Printed签名对两个全实轴连续、处处正的函数ZA,ZB及0<α<energy，断言有ZA权重与无ZA权重的两个归一化CDF相等。分子、分母和能量约束都与字面省略ZA的主张相对应，但任意ZA不可能消去。按原文版审忠实性的要求判NEEDS_HUMAN；不能将其作为正确一般定理，也不能把repair_log中未附签名的_corrected定义视为已审通过。",
+  "counterexample": "取ZA(s)=1+s²、ZB(s)=1，energy=1，α=1/2；两函数全实轴连续且严格正。以s+s³/3为原函数，带ZA的分子=13/24、分母=4/3，故CDF=13/32；不带ZA的CDF=(1/2)/1=1/2，两者不同。",
+  "suggested_fix": "保留Printed与ERRATUM?；修正版应将正确CDF定义为∫₀^α ZA(s)ZB(E−s)ds / ∫₀^E ZA(s)ZB(E−s)ds。若要与无ZA权重的CDF相等，需另加ZA在相关区间为正的常数等充分条件。"
+}
+{
+  "status": "NEEDS_HUMAN",
+  "issue_codes": [
+    "ERRATUM?"
+  ],
+  "corrected_json": null,
+  "issues": [
+    {
+      "code": "ERRATUM?",
+      "phase": "A/C",
+      "field": "canonicalCDFPrinted结论",
+      "detail": "一般能量CDF的权重必须为ZA(s)ZB(energy−s)；原页累计分布省略ZA而能量密度又使用ZA，现有ERRATUM?准确，应保留原文待勘误。"
+    }
+  ],
+  "evidence": [
+    "A：实际渲染并核对 R1_PAGES.pdf 附件第14页；原PDF第237页，印刷第216页。附件14页确实在CDF积分中没有Z_A(s)，同时该页末又给出能量密度Z_A(α)exp(−βα)；输入保留了这个原书不一致及ERRATUM?。",
+    "C：依据 R1_任务.md 本条实际Lean签名及本任务附录，按标准Mathlib数学含义只读核对；未运行Lean编译、未补证明，未把sorry或repair_log中的未提供声明当作审校结果。",
+    "项目定义核对：仅用标准连续性、区间积分和实除法；没有额外项目谓词。",
+    "固定反例另用math.find检索并检查契约后，调用interval.expression.definite_integral_enclosure.compute，Arb有向舍入分别包围∫₀^(1/2)(1+s²)ds与∫₀¹(1+s²)ds；两次均TARGET_MET，且2×分子上界<分母下界。请求及原始返回见R1_CDF_counterexample_check.json。这仅认证所给反例的两次积分，不作为一般命题的证明；精确值由上述原函数给出。"
+  ]
+}
+
+### MD-6.1.3-FiniteDomainPrinted 239
+{
+  "lean_decl": "MD.Ch06.finiteDomainPrinted",
+  "verdict": "NEEDS_HUMAN",
+  "explanation": "Printed签名将finite解释为可测有限体积Q，将smooth解释为ContDiffOn U Q，且β>0，结论为exp(−βU)在Q可积。这种字面读法不足以控制U趋边界为−∞，即使Q有界也有反例。原文若意指紧配置空间且U在其上连续，则可成立，但不能由当前Printed前提直接获得。按任务要求对原文歧义/疑误判NEEDS_HUMAN，保留忠实版，不把它判为一般正确定理。repair_log所列_corrected签名未提供，本条不推断其内容。",
+  "counterexample": "取n=1，Q={q | 0<q(0)<1}，U(q)=−(q(0))⁻¹（使用Lean实逆元在0处总定义），β=1。Q可测且体积为1，U在Q上C∞。权重为exp(1/q(0))，对0<q(0)<1有exp(1/q(0))≥1/(2q(0)²)，故其在Q的积分发散，结论不成立。",
+  "suggested_fix": "Printed原文保持不变；独立修正版可改为Q紧且ContinuousOn U Q，或保留有限体积并加U在Q有统一下界。若要断言概率归一化，还须Q具有正体积及相应正质量、正β条件。"
+}
+{
+  "status": "NEEDS_HUMAN",
+  "issue_codes": [
+    "ERRATUM?"
+  ],
+  "corrected_json": null,
+  "issues": [
+    {
+      "code": "ERRATUM?",
+      "phase": "A/C",
+      "field": "finiteDomainPrinted前提及可积性结论",
+      "detail": "有限体积及域内C∞不足以推出Boltzmann权重可积；须控制下界或采用紧域连续性。原书finite和smooth的作用域还存在歧义，保留原文与原有ERRATUM?。"
+    }
+  ],
+  "evidence": [
+    "A：实际渲染并核对 R1_PAGES.pdf 附件第26页；原PDF第239页，印刷第218页。原页确实只有“U is smooth and the domain Q is finite”这两个非量化描述并直接断言两个积分良定义；输入保留原句及ERRATUM?。",
+    "C：依据 R1_任务.md 本条实际Lean签名及本任务附录，按标准Mathlib数学含义只读核对；未运行Lean编译、未补证明，未把sorry或repair_log中的未提供声明当作审校结果。"
+  ]
+}
+
+### MD-6.1.4-CanonicalAveragePrinted 241
+{
+  "lean_decl": "MD.Ch06.canonicalAveragePrinted",
+  "verdict": "NEEDS_HUMAN",
+  "explanation": "Printed定义确实在D1已归一密度之外又乘D2的Z倒数；全实相空间、H、β、f的类型一致。作为原书字面定义忠实，不能因其非标准平均而判签名FAIL；原书与(6.3)及p.221用法冲突，须人工处理。修正版已在条目5给出，需分别看待。",
+  "counterexample": "若Z>0且权重可积，Printed平均(1)=1/Z，只有Z=1时为1。例如一自由度H=(q²+p²)/2、β=1有Z=2π，Printed平均(1)=1/(2π)。",
+  "suggested_fix": "保留Printed字面式；采用条目5中单次归一化修正版作标准平均，原书勘误由人工确认。"
+}
+{
+  "status": "NEEDS_HUMAN",
+  "issue_codes": [
+    "ERRATUM?"
+  ],
+  "corrected_json": {
+    "source_id": "MD-6.1.4-CanonicalAveragePrinted",
+    "kind": "definition",
+    "label": "(6.4)",
+    "section": "6.1.4",
+    "printed_page": "220",
+    "pdf_page": "241",
+    "statement_latex": "Under assumptions on the potential energy as discussed above, and with $\\phi$ continuous and allowed to grow at most polynomially fast at infinity, we may proceed to define averages with respect to the canonical density $\\rho_\\beta$, namely\n\\[\\operatorname{Av}_\\beta(\\phi)=Z_{\\rm can}^{-1}\\int_D\\phi(q,p)\\rho_\\beta(q,p)d\\omega.\\tag{6.4}\\]",
+    "proof_latex": null,
+    "proof_note": "原书未给独立完整证明。",
+    "proof_discussion_latex": null,
+    "context_notation": [],
+    "issues": [
+      {
+        "code": "ERRATUM?",
+        "detail": "[ERRATUM?]式(6.3)的ρβ已含Zcan⁻¹，式(6.4)再乘一次导致Avβ(1)=Zcan⁻¹，而后文p.221使用标准归一化平均。"
+      },
+      {
+        "code": "ERRATUM?",
+        "detail": "保留原书印刷矛盾；不静默改正文献原式。式(6.4)对已归一密度重复乘Z⁻¹。"
+      }
+    ],
+    "lean_decl": "MD.Ch06.canonicalAveragePrinted",
+    "reusable_proofs": [],
+    "extra_assumptions": [],
+    "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
+    "review_status": "NEEDS_HUMAN",
+    "repair_log": [
+      {
+        "date": "2026-10-17",
+        "action": "directive22_printed_corrected_pair",
+        "change": "去掉对已经归一化ρβ的第二次Zcan⁻¹；沿用未归一权重乘一次Zcan⁻¹的定义。",
+        "corrected_decl": "MD.Ch06.canonicalAveragePrinted_corrected",
+        "website": "未提交；待网站审计"
+      }
+    ],
+    "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
+  },
+  "issues": [
+    {
+      "code": "ERRATUM?",
+      "detail": "保留原书印刷矛盾；不静默改正文献原式。式(6.4)对已归一密度重复乘Z⁻¹。"
+    }
+  ],
+  "evidence": {
+    "A_pdf_pages": [
+      4
+    ],
+    "A_original_pdf_pages": "241",
+    "A_printed_pages": "220",
+    "A_method": "直接读取附件PDF文本，并对对应印刷页的渲染图核对公式、上下标及措辞；重复页的提取正文一致。换行及LaTeX排版编码差异不作数学错误。",
+    "A_result": "所选原句与公式一致；摘录允许省去相邻未选段落，不将省略当作完整原证明。",
+    "C_basis": "仅本任务所给实际签名、该条依赖定义及附录D1–D24；Mathlib按任务约定采信。只读语义审查，未运行Lean编译，未修改工程或补证明，未因sorry判FAIL。"
+  }
+}
+
+### MD-6.1.5-Proposition61 243
+{
+  "lean_decl": "MD.Ch06.proposition61",
+  "verdict": "NEEDS_HUMAN",
+  "explanation": "相空间为(Fin Nc⊕Fin Nc)→ℝ，维数2Nc；kB,T正，H,G为C¹，真实权重及两个加权观测量可积，加权向量场有统一界，平均散度严格正。D8为导数迹、D9为dH(G)，比值方向正确。原文的逐点有限条件被明确加强为统一有界；原证明以球体积除两边后取极限只能得到0=0，不能据此恢复未缩放积分恒等式，不能按原证明认证。加强前提下的恒等式可另用权重层集截断证明，非此处已提供证明。",
+  "counterexample": "这里指出原证明的逻辑缺口，不提供加强版签名的反例；除以v_R使有限的非零积分也趋0，所以缩放后的相等极限不足以判定未缩放积分相等。",
+  "suggested_fix": "恢复原页下标、体积元与措辞；保留原证明并标明极限步骤缺口。加强版须另给权重层集截断等有效论证，不把除体积论证当证明。"
+}
+{
+  "status": "NEEDS_HUMAN",
+  "issue_codes": [
+    "SOURCE_TRANSCRIPTION",
+    "SOURCE_PROOF_GAP",
+    "EXTRA_INTERPRETATION"
+  ],
+  "corrected_json": {
+    "source_id": "MD-6.1.5-Proposition61",
+    "kind": "proposition",
+    "label": "Proposition 6.1",
+    "section": "6.1.5",
+    "printed_page": "222",
+    "pdf_page": "243",
+    "statement_latex": "Proposition 6.1 Let $H$ be a Hamiltonian defined on the phase space $\\mathbb R^{2N_c}$ and suppose $G:\\mathbb R^{2N_c}\\to\\mathbb R^{2N_c}$ is a smooth ($C^1$) vector field with the following properties:\n\\[0<|\\operatorname{Av}_\\beta(G\\cdot\\nabla H)|<\\infty,\\quad\n0<\\operatorname{Av}_\\beta(\\nabla\\cdot G)<\\infty,\\quad |Ge^{-\\beta H}|<\\infty.\\]\nThen\n\\[k_BT=\\frac{\\operatorname{Av}_\\beta(G\\cdot\\nabla H)}{\\operatorname{Av}_\\beta(\\nabla\\cdot G)}.\\]",
+    "proof_latex": "The proof relies on a $2N_c$-dimensional version of integration by parts. Let $B_R$ be the $2N_c$-dimensional ball centered at the origin, of radius $R$, and let $\\Gamma_R$ be its boundary, the $2N_c-1$-dimensional sphere. Then, for any smooth scalar field $g$ defined on $B_R$, we have\n\\[\\int_{B_R}G\\cdot\\nabla g\\,d\\omega=\\int_{\\Gamma_R}(Gg)\\cdot\\hat n\\,d\\Gamma-\\int_{B_R}(\\nabla\\cdot G)g\\,d\\omega.\\tag{6.6}\\]\nwhere $d\\omega=dq_1\\ldots dp_{N_c}$ is the standard measure of Lebesgue integration in $\\mathbb R^{2N_c}$, and $d\\Gamma$ is the surface area element of the hypersphere, and $\\hat n$ represents the unit outward normal of the sphere. Replace $g$ by $\\rho_\\beta=\\exp(-\\beta H)$, then it follows that\n\\[\\left|\\int_{\\Gamma_R}(G\\rho_\\beta)\\cdot\\hat n\\,d\\Gamma\\right|\\leq\\max_{\\Gamma_R}|G\\rho_\\beta|\\sigma_R\\]\nwhere $\\sigma_R$ is the surface area of the hypersphere. Divide (6.6) by the volume $v_R$ of $B_R$. Then, for large $R$, since the ratio of surface area to volume is proportional to $R^{-1}$, we have\n\\[\\frac{\\int_{B_R}G\\cdot\\nabla\\rho_\\beta d\\omega}{v_R}\\approx\\frac{-\\int_{B_R}(\\nabla\\cdot G)\\rho_\\beta d\\omega}{v_R}.\\]\nSince $\\nabla\\rho_\\beta=-\\beta\\nabla H\\rho_\\beta$, we obtain, in the limit $R\\to\\infty$, the desired result.",
+    "proof_note": "原书完整球边界证明已保留；按体积除法只能给出平均残项，不直接证明所需未缩放IBP。正式库以真实双截断和DCT证明同一结论。",
+    "proof_discussion_latex": null,
+    "context_notation": [],
+    "issues": [
+      {
+        "code": "SOURCE_TRANSCRIPTION",
+        "detail": "原命题空间为ℝ^{2N_c}，非ℝ^{2N}；原证明维数也为2N_c、球面2N_c-1，体积元为dq_1…dp_{N_c}，不是dω_1…dω_N；原页称unit outward normal，拼写centered，并有“then it follows”。"
+      },
+      {
+        "code": "SOURCE_PROOF_GAP",
+        "detail": "除以v_R后两侧均趋零，不能推出原未缩放积分相等；表面积/体积趋零也不等于绝对边界通量趋零。保留原证明并请求人工审定。"
+      },
+      {
+        "code": "EXTRA_INTERPRETATION",
+        "detail": "把原|G exp(-βH)|<∞解释为统一有界，是实质加强，已明示；签名还明确C¹H及绝对可积性。不能把加强版等同于仅逐点有限的字面条件。"
+      }
+    ],
+    "lean_decl": "MD.Ch06.proposition61",
+    "reusable_proofs": [
+      "MolecularDynamics.proposition_6_1"
+    ],
+    "extra_assumptions": [
+      "[EXTRA]正kB,T、实际C¹ H,G、Gibbs及两个加权可观测量可积，分母严格正；原|Ge⁻βH|<∞解释为统一有界C≥0，不采用仅逐点有限的空洞条件。"
+    ],
+    "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
+    "review_status": "NEEDS_HUMAN",
+    "repair_log": [],
+    "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
+  },
+  "issues": [
+    {
+      "code": "SOURCE_TRANSCRIPTION",
+      "detail": "原命题空间为ℝ^{2N_c}，非ℝ^{2N}；原证明维数也为2N_c、球面2N_c-1，体积元为dq_1…dp_{N_c}，不是dω_1…dω_N；原页称unit outward normal，拼写centered，并有“then it follows”。"
+    },
+    {
+      "code": "SOURCE_PROOF_GAP",
+      "detail": "除以v_R后两侧均趋零，不能推出原未缩放积分相等；表面积/体积趋零也不等于绝对边界通量趋零。保留原证明并请求人工审定。"
+    },
+    {
+      "code": "EXTRA_INTERPRETATION",
+      "detail": "把原|G exp(-βH)|<∞解释为统一有界，是实质加强，已明示；签名还明确C¹H及绝对可积性。不能把加强版等同于仅逐点有限的字面条件。"
+    }
+  ],
+  "evidence": {
+    "A_pdf_pages": [
+      12
+    ],
+    "A_original_pdf_pages": "243",
+    "A_printed_pages": "222",
+    "A_method": "直接读取附件PDF文本，并对对应印刷页的渲染图核对公式、上下标及措辞；重复页的提取正文一致。换行及LaTeX排版编码差异不作数学错误。",
+    "A_result": "逐字差异见issues；corrected_json仅修正转录，不静默修复原书数学疑误。",
+    "C_basis": "仅本任务所给实际签名、该条依赖定义及附录D1–D24；Mathlib按任务约定采信。只读语义审查，未运行Lean编译，未修改工程或补证明，未因sorry判FAIL。"
+  }
+}
+
+### MD-6.1.5-PartitionInversePrinted 241
+{
+  "lean_decl": "MD.Ch06.partitionInversePrinted",
+  "verdict": "NEEDS_HUMAN",
+  "explanation": "字面原页确印Zcan⁻¹=积分，签名把既定Z=积分代入后断言Z⁻¹=Z，忠实保存这一原书矛盾，故按任务规则NEEDS_HUMAN而非因数学错误直接FAIL。n维、正质量、正β及全权重可积是额外限制，未在extra_assumptions中列出；并未消除错误。repair_log提及的partitionInversePrinted_corrected没有在本任务给出实际声明或定义，不能认证该修正版，仅其改动方向合理。",
+  "counterexample": "n=1，m=1，β=1，U(q)=q²/2，权重exp(-(q²+p²)/2)可积，Z=2π，故Z⁻¹≠Z。符合所有给定前提，错误来自忠实保留的原书印刷式。",
+  "suggested_fix": "原文保持Z⁻¹=积分并标勘误；标准版用Z=积分。提供partitionInversePrinted_corrected实际定义后再审；补列实际额外条件。"
+}
+{
+  "status": "NEEDS_HUMAN",
+  "issue_codes": [
+    "ERRATUM?",
+    "UNDECLARED_EXTRA_ASSUMPTIONS",
+    "CORRECTED_DECL_NOT_SUPPLIED"
+  ],
+  "corrected_json": {
+    "source_id": "MD-6.1.5-PartitionInversePrinted",
+    "kind": "unnumbered_claim",
+    "label": null,
+    "section": "6.1.5",
+    "printed_page": "220",
+    "pdf_page": "241",
+    "statement_latex": "The associated canonical density is\n\\[\\rho_\\beta=Z_{\\rm can}^{-1}\\exp\\left(-\\beta\\left[\\frac{p^2}{2m}+U(q)\\right]\\right),\\]\nwhere\n\\[Z_{\\rm can}^{-1}=\\int_{-\\infty}^{\\infty}\\int_{-\\infty}^{\\infty}\\exp\\left(-\\beta\\left[\\frac{p^2}{2m}+U(q)\\right]\\right)dpdq.\\]",
+    "proof_latex": null,
+    "proof_note": "原书未给独立完整证明。",
+    "proof_discussion_latex": null,
+    "context_notation": [],
+    "issues": [
+      {
+        "code": "ERRATUM?",
+        "detail": "[ERRATUM?]此页印刷Zcan⁻¹=积分，与p.218的Zcan=积分相反；字面保留，标准DensityNormalization仍按真实积分归一化。"
+      },
+      {
+        "code": "ERRATUM?",
+        "detail": "保留原书印刷矛盾；不静默改正文献原式。p.220印Z⁻¹=积分，与p.218的Z=积分矛盾。"
+      },
+      {
+        "code": "UNDECLARED_EXTRA_ASSUMPTIONS",
+        "detail": "n维推广、全部正质量、正β、全相空间权重可积均出现在签名，但原JSON extra_assumptions为空。"
+      },
+      {
+        "code": "CORRECTED_DECL_NOT_SUPPLIED",
+        "detail": "repair_log仅给出partitionInversePrinted_corrected名称，任务全文未给其实际签名/定义，不能审定修正版。"
+      }
+    ],
+    "lean_decl": "MD.Ch06.partitionInversePrinted",
+    "reusable_proofs": [],
+    "extra_assumptions": [
+      "[EXTRA]将原一自由度印刷公式推广至n维；全部质量正、β正且全相空间权重可积。此举不修复Z与Z⁻¹的原书矛盾。"
+    ],
+    "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
+    "review_status": "NEEDS_HUMAN",
+    "repair_log": [
+      {
+        "date": "2026-10-17",
+        "action": "directive22_printed_corrected_pair",
+        "change": "Zcan定义为积分本身；归一密度的结论另见DensityNormalization，避免把定义重述作新定理。",
+        "corrected_decl": "MD.Ch06.partitionInversePrinted_corrected",
+        "website": "未提交；待网站审计"
+      }
+    ],
+    "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
+  },
+  "issues": [
+    {
+      "code": "ERRATUM?",
+      "detail": "保留原书印刷矛盾；不静默改正文献原式。p.220印Z⁻¹=积分，与p.218的Z=积分矛盾。"
+    },
+    {
+      "code": "UNDECLARED_EXTRA_ASSUMPTIONS",
+      "detail": "n维推广、全部正质量、正β、全相空间权重可积均出现在签名，但原JSON extra_assumptions为空。"
+    },
+    {
+      "code": "CORRECTED_DECL_NOT_SUPPLIED",
+      "detail": "repair_log仅给出partitionInversePrinted_corrected名称，任务全文未给其实际签名/定义，不能审定修正版。"
+    }
+  ],
+  "evidence": {
+    "A_pdf_pages": [
+      18
+    ],
+    "A_original_pdf_pages": "241",
+    "A_printed_pages": "220",
+    "A_method": "直接读取附件PDF文本，并对对应印刷页的渲染图核对公式、上下标及措辞；重复页的提取正文一致。换行及LaTeX排版编码差异不作数学错误。",
+    "A_result": "所选原句与公式一致；摘录允许省去相邻未选段落，不将省略当作完整原证明。",
+    "C_basis": "仅本任务所给实际签名、该条依赖定义及附录D1–D24；Mathlib按任务约定采信。只读语义审查，未运行Lean编译，未修改工程或补证明，未因sorry判FAIL。"
+  }
+}
+
+### MD-6.2.1-CoarseMarkovPrinted 248
+{
+  "lean_decl": "MD.Ch06.coarseMarkovPrinted",
+  "verdict": "NEEDS_HUMAN",
+  "explanation": "字面版在真实PreBrownian下量化任意可测事件a,b,c、past<present<future及正条件事件概率，ENNReal比值忠实表达印刷条件概率式。但原书把完整当前状态换成任意粗事件，一般错误，须保留疑误而不因字面忠实判数学正确。",
+  "counterexample": "标准Brownian，past=1,present=2,future=3，b=ℝ，a=c=(0,∞)。P(W3>0|W1>0)=1/2+arcsin(1/√3)/π>1/2=P(W3>0)，正条件概率成立。",
+  "suggested_fix": "保留Printed版及ERRATUM?；正确性质应在完整σ(Wpresent)及真实过去过滤下比较条件期望，不能把未约束history的定义当作已证明定理。"
+}
+{
+  "status": "NEEDS_HUMAN",
+  "issue_codes": [
+    "ERRATUM?"
+  ],
+  "corrected_json": {
+    "source_id": "MD-6.2.1-CoarseMarkovPrinted",
+    "kind": "unnumbered_claim",
+    "label": null,
+    "section": "6.2.1",
+    "printed_page": "227",
+    "pdf_page": "248",
+    "statement_latex": "Let $A(x)$, $B(x)$ and $C(x)$ be three events dependent on state variable $x$, and let $t_+>t_0>t_-$ be three times, then, for a Markov process $X(t)$ we have (using the notation for conditional probability):\n\\[\\Pr[A(X(t_+))\\mid B(X(t_0)),C(X(t_-))]=\\Pr[A(X(t_+))\\mid B(X(t_0))].\\]",
+    "proof_latex": null,
+    "proof_note": "原书未给独立完整证明。",
+    "proof_discussion_latex": null,
+    "context_notation": [],
+    "issues": [
+      {
+        "code": "ERRATUM?",
+        "detail": "印刷用任意粗事件B(X(t0))替代完整当前状态的条件σ代数；一般不成立，例如B=univ时过去事件仍可影响未来。"
+      },
+      {
+        "code": "ERRATUM?",
+        "detail": "任意粗事件B不能代替当前状态σ代数；原文忠实但命题一般错误。"
+      }
+    ],
+    "lean_decl": "MD.Ch06.coarseMarkovPrinted",
+    "reusable_proofs": [],
+    "extra_assumptions": [],
+    "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
+    "review_status": "NEEDS_HUMAN",
+    "repair_log": [
+      {
+        "date": "2026-10-17",
+        "action": "directive22_printed_corrected_pair",
+        "change": "以完整当前状态生成的σ代数写条件期望Markov性质。",
+        "corrected_decl": "MD.Ch06.coarseMarkovPrinted_corrected",
+        "website": "未提交；待网站审计"
+      }
+    ],
+    "source_page_verification": "R3本次审校：核对R3_PAGES.pdf对应页；原文符号差异和页码问题见本条issues。"
+  },
+  "issues": [
+    {
+      "code": "ERRATUM?",
+      "detail": "任意粗事件B不能代替当前状态σ代数；原文忠实但命题一般错误。"
+    }
+  ],
+  "evidence": {
+    "attachment": "R3_PAGES.pdf",
+    "attachment_pages": [
+      16
+    ],
+    "original_pdf_pages": "248",
+    "printed_pages": "227",
+    "A": "已核对本条摘录及公式；数学变量改名与原文逐字忠实分开处理。",
+    "C": "只审本任务所列签名及项目依赖定义；标准库按题设采信；未编译、未审证明体，sorry不影响签名判定。"
+  }
+}
+
+### MD-6.2.2-RiemannTags 249
+{
+  "lean_decl": "MD.Ch06.riemannTags",
+  "verdict": "NEEDS_HUMAN",
+  "explanation": "任意T≥0、[0,T]上连续g、每个K>0的所有k<K标签位于第k个闭子区间，结论为整族带标签和趋于区间积分。K=0不影响atTop；形式化正确地采用0起始索引。原书文字1≤k≤ν而公式0≤k<ν有索引冲突，需保留原貌并标疑误。",
+  "counterexample": null,
+  "suggested_fix": "保留原文1≤k≤ν并标记；数学修正版统一为0≤k<ν。"
+}
+{
+  "status": "NEEDS_HUMAN",
+  "issue_codes": [
+    "SOURCE_NOTATION",
+    "ERRATUM?"
+  ],
+  "corrected_json": {
+    "source_id": "MD-6.2.2-RiemannTags",
+    "kind": "unnumbered_claim",
+    "label": null,
+    "section": "6.2.2",
+    "printed_page": "228",
+    "pdf_page": "249",
+    "statement_latex": "Recall that the Riemann integral of a continuous function $g$ on $[0,\\tau]$ is the limit of Riemann sums constructed as follows: partition the interval $[0,\\tau]$ into $K$ subintervals each of width $\\delta t=\\tau/\\nu$, choose an arbitrary $t_k$ from the $k$th subinterval, $1\\leq k\\leq \\nu$, and evaluate the integral as a limit of the sum of products:\n\\[\\int_0^\\tau g(t)dt=\\lim_{\\nu\\to\\infty}\\sum_{k=0}^{\\nu-1}g(t_k)\\delta t.\\]\nWe know that this limit does not depend on where the $t_k$ are chosen within the subintervals. For example we can take the left or right endpoint of each subinterval or the midpoint.",
+    "proof_latex": null,
+    "proof_note": "原书未给独立完整证明。",
+    "proof_discussion_latex": null,
+    "context_notation": [],
+    "issues": [
+      {
+        "code": "SOURCE_NOTATION",
+        "detail": "原页公式的分割数为希腊ν；输入将其系统改为K，逐字层面不忠实。已仅在原文字段恢复ν；Lean中的K作为变量重命名无数学问题。"
+      },
+      {
+        "code": "ERRATUM?",
+        "detail": "原页文字标签1≤k≤ν但求和0≤k≤ν−1，索引不一致；形式化0起始版本合理，原文版应保留疑误。"
+      }
+    ],
+    "lean_decl": "MD.Ch06.riemannTags",
+    "reusable_proofs": [],
+    "extra_assumptions": [
+      "[EXTRA]非负窗口和所有合法任意tags；完整标签无关性，没有缩减为仅左端点特例。"
+    ],
+    "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
+    "review_status": "NEEDS_HUMAN",
+    "repair_log": [],
+    "source_page_verification": "R3本次审校：核对R3_PAGES.pdf对应页；原文符号差异和页码问题见本条issues。"
+  },
+  "issues": [
+    {
+      "code": "SOURCE_NOTATION",
+      "detail": "原页公式的分割数为希腊ν；输入将其系统改为K，逐字层面不忠实。已仅在原文字段恢复ν；Lean中的K作为变量重命名无数学问题。"
+    },
+    {
+      "code": "ERRATUM?",
+      "detail": "原页文字标签1≤k≤ν但求和0≤k≤ν−1，索引不一致；形式化0起始版本合理，原文版应保留疑误。"
+    }
+  ],
+  "evidence": {
+    "attachment": "R3_PAGES.pdf",
+    "attachment_pages": [
+      18
+    ],
+    "original_pdf_pages": "249",
+    "printed_pages": "228",
+    "A": "已核对本条摘录及公式；数学变量改名与原文逐字忠实分开处理。",
+    "C": "只审本任务所列签名及项目依赖定义；标准库按题设采信；未编译、未审证明体，sorry不影响签名判定。"
+  }
+}
+
+### MD-6.2.2-Proposition62 250–251
+{
+  "lean_decl": "MD.Ch06.proposition62",
+  "verdict": "NEEDS_HUMAN",
+  "explanation": "任意T≥0和PreBrownian，结论为实际平方增量和减T的平方误差期望随K→∞趋0，吻合命题结论。原证明负交叉项和ν→0两处印刷疑误必须保留。repair_log列出的proposition62_corrected没有在本条给出签名，不能仅凭名称确认其完整内容。",
+  "counterexample": null,
+  "suggested_fix": "原文保留疑误；正确恒等式用2∑_{k<l}ZkZl或∑_{k≠l}ZkZl，极限为ν→∞。当前proposition62结论PASS；未提供的_corrected签名需单独核对。"
+}
+{
+  "status": "NEEDS_HUMAN",
+  "issue_codes": [
+    "SOURCE_NOTATION",
+    "SOURCE_FORMULA",
+    "ERRATUM?"
+  ],
+  "corrected_json": {
+    "source_id": "MD-6.2.2-Proposition62",
+    "kind": "proposition",
+    "label": "Proposition 6.2",
+    "section": "6.2.2",
+    "printed_page": "229–230",
+    "pdf_page": "250–251",
+    "statement_latex": "Proposition 6.2 Let $\\nu\\delta t=\\tau$ then\n\\[\\operatorname{l.i.m.}_{\\nu\\to\\infty}\\sum_{k=0}^{\\nu-1}[(W((k+1)\\delta t)-W(k\\delta t))^2]=\\tau,\\]\nwhere, for a sequence of random variables, $A_\\nu$ and a random variable $B$, we have\n\\[\\operatorname{l.i.m.}_{\\nu\\to\\infty}A_\\nu=B\\iff\\lim_{\\nu\\to\\infty}\\mathbb E(A_\\nu-B)^2=0.\\]\n(This is referred to as convergence in the mean square sense.)",
+    "proof_latex": "With $\\tau,\\nu$ fixed, we have $\\delta t=\\tau/\\nu$.\nLet $\\Delta W_{\\nu,k}=W((k+1)\\delta t)-W(k\\delta t)=W((k+1)\\tau/\\nu)-W(k\\tau/\\nu)$ and observe that\n\\[\\sum_{k=0}^{\\nu-1}\\Delta W_{\\nu,k}^2-\\tau=\\sum_{k=0}^{\\nu-1}[\\Delta W_{\\nu,k}^2-\\delta t].\\]\nThen\n\\[I_\\nu\\stackrel{\\rm def}=\\mathbb E(\\sum_{k=0}^{\\nu-1}\\Delta W_{\\nu,k}^2-\\tau)^2=\\mathbb E(\\sum_{k=0}^{\\nu-1}[\\Delta W_{\\nu,k}^2-\\delta t])^2.\\]\nTerms of the form $Z_{\\nu,k}\\stackrel{\\rm def}=\\Delta W_{\\nu,k}^2-\\delta t$ are independent and have mean zero. Therefore\n\\[\\mathbb E(\\sum_{k=0}^{\\nu-1}Z_{\\nu,k})^2=\\mathbb E\\sum_{k=0}^{\\nu-1}Z_{\\nu,k}^2-2\\mathbb E\\sum_{k\\ne l}Z_{\\nu,k}Z_{\\nu,l}=\\mathbb E\\sum_{k=0}^{\\nu-1}Z_{\\nu,k}^2,\\]\nwhere the last equation follows from independence of the increments ($\\mathbb E Z_kZ_l=0$ if $k\\ne l$).\nAlso observe that $\\Delta W_k$ is a normally distributed random variable with the following properties\n\\[\\mathbb E\\Delta W_k=0;\\quad\\mathbb E\\Delta W_k^2=\\delta t=\\tau/\\nu;\\quad\\mathbb E\\Delta W_k^4=3\\delta t^2=3(\\tau/\\nu)^2.\\]\nThus we have\n\\[I_\\nu=\\sum_{k=0}^{\\nu-1}\\mathbb E(\\Delta \\Delta W_{\\nu,k}^2-\\delta t)^2\n=\\sum_{k=0}^{\\nu-1}\\mathbb E[\\Delta \\Delta W_{\\nu,k}^4-2\\delta t\\Delta \\Delta W_{\\nu,k}^2+\\delta t^2]\n=\\sum_{k=0}^{\\nu-1}[3\\delta t^2-2\\delta t^2+\\delta t^2]=2\\nu\\delta t^2=2\\tau^2/\\nu.\\]\nThus $I_\\nu\\to0$ as $\\nu\\to0$, which is the desired result.",
+    "proof_note": "逐字保存含印刷负号与K→0；正式桥接使用正确独立平方和及K→∞。",
+    "proof_discussion_latex": null,
+    "context_notation": [],
+    "issues": [
+      {
+        "code": "ERRATUM?",
+        "detail": "印刷证明的独立交叉项展开带负号；平方展开应正号，见单独疑误条。"
+      },
+      {
+        "code": "SOURCE_NOTATION",
+        "detail": "原页公式的分割数为希腊ν；输入将其系统改为K，逐字层面不忠实。已仅在原文字段恢复ν；Lean中的K作为变量重命名无数学问题。"
+      },
+      {
+        "code": "SOURCE_FORMULA",
+        "detail": "原命题为Let νδt=τ；原证明用ΔW_{ν,k}及I_ν，输入改写为W_{K,k}和I；已恢复主要符号，保留原书负号和ν→0。"
+      },
+      {
+        "code": "ERRATUM?",
+        "detail": "原证明ν→0应为ν→∞；交叉项展开的负号及求和计数不正确。独立零均值使交叉项期望为0，结论仍正确。"
+      }
+    ],
+    "lean_decl": "MD.Ch06.proposition62",
+    "reusable_proofs": [
+      "MolecularDynamics.textbookWienerQuadraticSum_meanSquare_tendsto"
+    ],
+    "extra_assumptions": [
+      "[EXTRA]实际PreBrownian law、τ≥0、全部均方极限；印刷最后K→0是笔误，更正K→∞。"
+    ],
+    "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
+    "review_status": "NEEDS_HUMAN",
+    "repair_log": [
+      {
+        "date": "2026-10-17",
+        "action": "directive22_printed_corrected_pair",
+        "change": "保持已证二次变差结论；独立记录印刷平方展开与其正确代数式，并注明极限方向。",
+        "corrected_decl": "MD.Ch06.proposition62_corrected",
+        "website": "未提交；待网站审计"
+      }
+    ],
+    "source_page_verification": "R3本次审校：核对R3_PAGES.pdf对应页；原文符号差异和页码问题见本条issues。"
+  },
+  "issues": [
+    {
+      "code": "SOURCE_NOTATION",
+      "detail": "原页公式的分割数为希腊ν；输入将其系统改为K，逐字层面不忠实。已仅在原文字段恢复ν；Lean中的K作为变量重命名无数学问题。"
+    },
+    {
+      "code": "SOURCE_FORMULA",
+      "detail": "原命题为Let νδt=τ；原证明用ΔW_{ν,k}及I_ν，输入改写为W_{K,k}和I；已恢复主要符号，保留原书负号和ν→0。"
+    },
+    {
+      "code": "ERRATUM?",
+      "detail": "原证明ν→0应为ν→∞；交叉项展开的负号及求和计数不正确。独立零均值使交叉项期望为0，结论仍正确。"
+    }
+  ],
+  "evidence": {
+    "attachment": "R3_PAGES.pdf",
+    "attachment_pages": [
+      27,
+      28
+    ],
+    "original_pdf_pages": "250–251",
+    "printed_pages": "229–230",
+    "A": "已核对本条摘录及公式；数学变量改名与原文逐字忠实分开处理。",
+    "C": "只审本任务所列签名及项目依赖定义；标准库按题设采信；未编译、未审证明体，sorry不影响签名判定。"
+  }
+}
+
+### MD-6.2.2-SelfStratonovichIntegral 251
+{
+  "lean_decl": "MD.Ch06.selfStratonovichIntegral",
+  "verdict": "NEEDS_HUMAN",
+  "explanation": "真实时间中点和存在L²极限Y且AE为W(T)²/2，结论数学正确。原文单步O(√δt)没有指定随机意义或控制累积误差，不能直接据此丢弃K项残差；需保留此原文论证疑点，正式签名本身并未依赖该大O假设。",
+  "counterexample": null,
+  "suggested_fix": "保留原启发式并注明非完整证明；用Brownian桥残差与整步增量独立，证明残差和L²误差趋0（方差T²/(4K)），即可支持所列正确签名。"
+}
+{
+  "status": "NEEDS_HUMAN",
+  "issue_codes": [
+    "SOURCE_NOTATION",
+    "ERRATUM?"
+  ],
+  "corrected_json": {
+    "source_id": "MD-6.2.2-SelfStratonovichIntegral",
+    "kind": "unnumbered_claim",
+    "label": null,
+    "section": "6.2.2",
+    "printed_page": "230",
+    "pdf_page": "251",
+    "statement_latex": "In contrast, the Stratonovich (midpoint) integral can be calculated as\n\\[\\int_0^\\tau W(t)\\circ dW(t)=\\operatorname{l.i.m.}_{\\nu\\to\\infty}\\sum_{k=0}^{\\nu-1}W(k\\delta t+\\delta t/2)[W((k+1)\\delta t)-W(k\\delta t)].\\]\nWriting\n\\[W(k\\delta t+\\delta t/2)=W(\\frac{(k+1)\\delta t+k\\delta t}{2})=\\frac12(W((k+1)\\delta t)+W(k\\delta t))+O(\\sqrt{\\delta t}),\\]\nallows us to evaluate the integral as\n\\[\\int_0^\\tau W(t)\\circ dW(t)=\\frac12\\operatorname{l.i.m.}_{\\nu\\to\\infty}\\sum_{k=0}^{\\nu-1}[W((k+1)\\delta t)^2-W(k\\delta t)^2]=\\frac12W(\\tau)^2.\\]",
+    "proof_latex": null,
+    "proof_note": "原书未给独立完整证明。",
+    "proof_discussion_latex": null,
+    "context_notation": [],
+    "issues": [
+      {
+        "code": "SOURCE_NOTATION",
+        "detail": "原页公式的分割数为希腊ν；输入将其系统改为K，逐字层面不忠实。已仅在原文字段恢复ν；Lean中的K作为变量重命名无数学问题。"
+      },
+      {
+        "code": "ERRATUM?",
+        "detail": "原文随机O(√δt)未指定模式，单步估计不能直接控制整和残差；最终中点均方极限本身正确。"
+      }
+    ],
+    "lean_decl": "MD.Ch06.selfStratonovichIntegral",
+    "reusable_proofs": [
+      "MolecularDynamics.textbookWienerSelfStratonovichIntegral_exists"
+    ],
+    "extra_assumptions": [
+      "[EXTRA]真实时间中点和、L²见证、整体均方极限、AE求值；原O(√δt)单步启发不足，正式整体均方误差证明不直接丢弃逐步残项。"
+    ],
+    "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
+    "review_status": "NEEDS_HUMAN",
+    "repair_log": [],
+    "source_page_verification": "R3本次审校：核对R3_PAGES.pdf对应页；原文符号差异和页码问题见本条issues。"
+  },
+  "issues": [
+    {
+      "code": "SOURCE_NOTATION",
+      "detail": "原页公式的分割数为希腊ν；输入将其系统改为K，逐字层面不忠实。已仅在原文字段恢复ν；Lean中的K作为变量重命名无数学问题。"
+    },
+    {
+      "code": "ERRATUM?",
+      "detail": "原文随机O(√δt)未指定模式，单步估计不能直接控制整和残差；最终中点均方极限本身正确。"
+    }
+  ],
+  "evidence": {
+    "attachment": "R3_PAGES.pdf",
+    "attachment_pages": [
+      36
+    ],
+    "original_pdf_pages": "251",
+    "printed_pages": "230",
+    "A": "已核对本条摘录及公式；数学变量改名与原文逐字忠实分开处理。",
+    "C": "只审本任务所列签名及项目依赖定义；标准库按题设采信；未编译、未审证明体，sorry不影响签名判定。"
+  }
+}
+
+### MD-6.3.1-DiffusiveTaylorPrinted 254
+{
+  "lean_decl": "MD.Ch06.diffusiveTaylorPrinted",
+  "verdict": "NEEDS_HUMAN",
+  "explanation": "签名取J=+1及δx=√dt的字面特例，a,b可任意实数，故−1符号可吸收到b。右侧滤子dt→0+、二阶项及3/2指数对应。但C²只给o(dt)，不能保证O(dt^(3/2))。按原文疑误保留并NEEDS_HUMAN，不因sorry失败；C³修正合理但该修正声明不在本条展示范围内。",
+  "counterexample": "φ(x)=|x|^(5/2)属于C²，x=a=0,b=1时φ′(0)=φ″(0)=0，余项=dt^(5/4)，除dt^(3/2)为dt^(−1/4)，无界。",
+  "suggested_fix": "保留原文并标勘误疑问；C²下改余项为o(dt)，或增加C³/局部Lipschitz二阶导数再断言O(dt^(3/2))。"
+}
+{
+  "status": "NEEDS_HUMAN",
+  "issue_codes": [
+    "TRANSCRIPTION_ASYMPTOTIC_SYMBOL",
+    "ERRATUM?"
+  ],
+  "corrected_json": {
+    "source_id": "MD-6.3.1-DiffusiveTaylorPrinted",
+    "kind": "unnumbered_claim",
+    "label": null,
+    "section": "6.3.1",
+    "printed_page": "233",
+    "pdf_page": "254",
+    "statement_latex": "Now we expand the 2nd order term and, working in the diffusion limit, recognize that $\\delta x^2\\sim\\delta t$, thus we have\n\\[\\delta\\phi=\\phi'(X_n)(a(X_n,n\\delta t)\\delta t+b(X_n,n\\delta t)J_n\\delta x)+\\tfrac12\\phi''(X_n)b(X_n,n\\delta t)^2\\delta t+O(\\delta t^{3/2}).\\]",
+    "proof_latex": null,
+    "proof_note": "原书未给独立完整证明。",
+    "proof_discussion_latex": null,
+    "context_notation": [],
+    "issues": [
+      {
+        "code": "ERRATUM?",
+        "detail": "C² Taylor余项仅o(h²)，不能自动提升为O(h³)；在h≈√δt时原O(δt³⁄²)需要更高阶正则性。"
+      },
+      {
+        "code": "R4_REVIEW",
+        "detail": "原页写δx²∼δt，JSON用≈；O(δt^(3/2))确为原书印刷，C²不足的ERRATUM?成立。 签名取J=+1及δx=√dt的字面特例，a,b可任意实数，故−1符号可吸收到b。右侧滤子dt→0+、二阶项及3/2指数对应。但C²只给o(dt)，不能保证O(dt^(3/2))。按原文疑误保留并NEEDS_HUMAN，不因sorry失败；C³修正合理但该修正声明不在本条展示范围内。"
+      }
+    ],
+    "lean_decl": "MD.Ch06.diffusiveTaylorPrinted",
+    "reusable_proofs": [],
+    "extra_assumptions": [],
+    "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
+    "review_status": "NEEDS_HUMAN",
+    "repair_log": [
+      {
+        "date": "2026-10-17",
+        "action": "directive22_printed_corrected_pair",
+        "change": "C²加强为C³，使三阶Taylor余项与扩散缩放匹配。",
+        "corrected_decl": "MD.Ch06.diffusiveTaylorPrinted_corrected",
+        "website": "未提交；待网站审计"
+      }
+    ],
+    "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
+  },
+  "issues": [
+    {
+      "code": "TRANSCRIPTION_ASYMPTOTIC_SYMBOL",
+      "detail": "原页写δx²∼δt，JSON用≈；O(δt^(3/2))确为原书印刷，C²不足的ERRATUM?成立。"
+    },
+    {
+      "code": "ERRATUM?",
+      "detail": "签名取J=+1及δx=√dt的字面特例，a,b可任意实数，故−1符号可吸收到b。右侧滤子dt→0+、二阶项及3/2指数对应。但C²只给o(dt)，不能保证O(dt^(3/2))。按原文疑误保留并NEEDS_HUMAN，不因sorry失败；C³修正合理但该修正声明不在本条展示范围内。"
+    }
+  ],
+  "evidence": [
+    "A：R4_PAGES.pdf 附件第14页，原PDF 254，印刷页233。原页写δx²∼δt，JSON用≈；O(δt^(3/2))确为原书印刷，C²不足的ERRATUM?成立。",
+    "C：仅按任务所列Lean签名及项目依赖定义作只读语义审校；标准库按标准含义采信，不作工程修改或证明检查。签名取J=+1及δx=√dt的字面特例，a,b可任意实数，故−1符号可吸收到b。右侧滤子dt→0+、二阶项及3/2指数对应。但C²只给o(dt)，不能保证O(dt^(3/2))。按原文疑误保留并NEEDS_HUMAN，不因sorry失败；C³修正合理但该修正声明不在本条展示范围内。"
+  ]
+}
+
+### MD-6.3.3-BathReductionPrinted 258
+{
+  "lean_decl": "MD.Ch06.bathReductionPrinted",
+  "verdict": "NEEDS_HUMAN",
+  "explanation": "C：原声明与条目1相同的全部对象、正质量、非负时刻、C²和四组ODE前提俱在；D7=-D1，完整卷积未丢失。按Printed只审忠实性，本签名忠实性PASS；其数学结论与原书一样有符号矛盾，按任务要求总判NEEDS_HUMAN。extra_assumptions=[]未记录新增C²及全实轴ODE范围。repair_log仅给出bathReductionPrinted_corrected名称，任务未提供其实际签名，无法独立审校该修正版。",
+  "counterexample": "k=1、μ=1、U=0；Q(t)=(1−cos(√2t))/2，q(t)=(1+cos(√2t))/2，P(t)=sin(√2t)/√2，p(t)=−sin(√2t)/√2。所有ODE前提成立；t=0时deriv P=1，Printed右端=−1。",
+  "suggested_fix": "保留原文及ERRATUM?；补记技术前提。另提供实际_corrected签名，正合力版本应使用D1而非D7；勿仅凭repair_log算已审。"
+}
+{
+  "status": "NEEDS_HUMAN",
+  "issue_codes": [
+    "SOURCE_ERRATUM",
+    "CORRECTED_DECL_NOT_SUPPLIED",
+    "UNDECLARED_TECHNICAL_ASSUMPTIONS"
+  ],
+  "corrected_json": {
+    "source_id": "MD-6.3.3-BathReductionPrinted",
+    "kind": "unnumbered_claim",
+    "label": null,
+    "section": "6.3.3",
+    "printed_page": "237",
+    "pdf_page": "258",
+    "statement_latex": "\\[\\dot P=-U'(Q)+f(t)-\\int_0^t\\psi(t-s)P(s)ds.\\tag{6.29}\\]\n\\[f(t)=-k^{-1}\\sum_{i=1}^k[\\cos(\\Omega_i t)q_i(0)+\\Omega_i^{-1}\\sin(\\Omega_i t)p_i(0)/\\mu_i-\\cos(\\Omega_i t)Q(0)].\\]",
+    "proof_latex": null,
+    "proof_note": "原书未给独立完整证明。",
+    "proof_discussion_latex": null,
+    "context_notation": [],
+    "issues": [
+      {
+        "code": "ERRATUM?",
+        "detail": "原负f与+f约化式符号冲突；保留完整字面卷积方程。"
+      }
+    ],
+    "lean_decl": "MD.Ch06.bathReductionPrinted",
+    "reusable_proofs": [],
+    "extra_assumptions": [
+      "[EXTRA]Lean以正k、正质量、t≥0、Q/q为C²及全实轴Hamilton ODE为技术范围；原书字面f符号疑误保留。"
+    ],
+    "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
+    "review_status": "NEEDS_HUMAN",
+    "repair_log": [
+      {
+        "date": "2026-10-16",
+        "action": "local_original_page_transcription",
+        "reason": "PDF258/259视觉核对原记忆核为psi，不是eta；仅原文符号转录更正，Lean定义未变。",
+        "evidence": "source_transcription_fixes.json; PDF258/259",
+        "website": "待网站审计"
+      },
+      {
+        "date": "2026-10-17",
+        "action": "directive22_printed_corrected_pair",
+        "change": "使用从原Hamilton方程实际代入所得的正合力卷积方程。",
+        "corrected_decl": "MD.Ch06.bathReductionPrinted_corrected",
+        "website": "未提交；待网站审计"
+      }
+    ],
+    "source_page_verification": "R5_INDEPENDENT_REVIEW; R5_PAGES.pdf 附件第2页；以本次evidence及issues为准，历史repair_log不作为真实性证据。"
+  },
+  "issues": [
+    {
+      "code": "SOURCE_ERRATUM",
+      "detail": "A：附件第2页确实同时印有(6.29)中的+f与f定义前的负号；转录保留这两个符号，原疑误不能擅自修正。"
+    },
+    {
+      "code": "CORRECTED_DECL_NOT_SUPPLIED",
+      "detail": "C：原声明与条目1相同的全部对象、正质量、非负时刻、C²和四组ODE前提俱在；D7=-D1，完整卷积未丢失。按Printed只审忠实性，本签名忠实性PASS；其数学结论与原书一样有符号矛盾，按任务要求总判NEEDS_HUMAN。extra_assumptions=[]未记录新增C²及全实轴ODE范围。repair_log仅给出bathReductionPrinted_corrected名称，任务未提供其实际签名，无法独立审校该修正版。"
+    },
+    {
+      "code": "UNDECLARED_TECHNICAL_ASSUMPTIONS",
+      "detail": "C：原声明与条目1相同的全部对象、正质量、非负时刻、C²和四组ODE前提俱在；D7=-D1，完整卷积未丢失。按Printed只审忠实性，本签名忠实性PASS；其数学结论与原书一样有符号矛盾，按任务要求总判NEEDS_HUMAN。extra_assumptions=[]未记录新增C²及全实轴ODE范围。repair_log仅给出bathReductionPrinted_corrected名称，任务未提供其实际签名，无法独立审校该修正版。"
+    }
+  ],
+  "evidence": [
+    {
+      "phase": "A",
+      "location": "R5_PAGES.pdf，附件第2页；原PDF页258，印刷页237",
+      "finding": "A：附件第2页确实同时印有(6.29)中的+f与f定义前的负号；转录保留这两个符号，原疑误不能擅自修正。"
+    },
+    {
+      "phase": "C",
+      "location": "R5_任务.md，条目2/30，实际Lean签名/定义及其明确命名空间的依赖摘录、文末D附录",
+      "finding": "C：原声明与条目1相同的全部对象、正质量、非负时刻、C²和四组ODE前提俱在；D7=-D1，完整卷积未丢失。按Printed只审忠实性，本签名忠实性PASS；其数学结论与原书一样有符号矛盾，按任务要求总判NEEDS_HUMAN。extra_assumptions=[]未记录新增C²及全实轴ODE范围。repair_log仅给出bathReductionPrinted_corrected名称，任务未提供其实际签名，无法独立审校该修正版。"
+    }
+  ]
+}
+
+### MD-6.3.3-MemoryKernelDeltaMeaning 259
+{
+  "lean_decl": "MD.Ch06.memoryKernelDeltaMeaning",
+  "verdict": "NEEDS_HUMAN",
+  "explanation": "C：原版和_corrected均为分布极限资格定义，测试所有实轴上的C∞紧支函数，k→∞，极限γ f(0)，γ>0；修正版额外要求所有质量为正。二者没有声称此极限已成立。但D3的1/k平均使|ψk(t)|≤1，故该固定归一化下任何族均不可能收敛到正质量δ。增加正质量不能修复此问题；此外全实轴γδ与单边Volterra摩擦γ之间的边界因子未说明。",
+  "counterexample": "若γ>0，取f≥0、f(0)=1、紧支且∫f<γ，则每个k均有|∫ψk f|≤∫f<γ，不可能趋于γ。该论证与频率及质量选择无关。",
+  "suggested_fix": "由人工确认时间/振幅重标度及单边δ约定；保留原启发式。将修正版注明为当前归一化下不可实现的资格，或先改物理标度后重新定义，不能把加入正质量视为有效勘误。"
+}
+{
+  "status": "NEEDS_HUMAN",
+  "issue_codes": [
+    "SOURCE_LIMIT_QUALIFICATION",
+    "IMPOSSIBLE_POSITIVE_DELTA_LIMIT",
+    "HALF_LINE_NORMALIZATION"
+  ],
+  "corrected_json": {
+    "source_id": "MD-6.3.3-MemoryKernelDeltaMeaning",
+    "kind": "definition",
+    "label": null,
+    "section": "6.3.3",
+    "printed_page": "238",
+    "pdf_page": "259",
+    "statement_latex": "If sufficient high frequency components are present, then the mass of the memory kernel is typically found to be localized around 0; in such a situation of rapid decay it is found that one may replace the function $\\psi$ by a Dirac delta function scaled by a positive coefficient $\\gamma$; we say that the system is Markovian or memory-less in this situation and we replace the delay-differential equation (6.29) by the SDEs\n\\[dQ=Pdt;\\tag{6.30}\\quad dP=-U'(Q)dt+\\sigma dW-\\gamma Pdt.\\tag{6.31}\\]",
+    "proof_latex": null,
+    "proof_note": "原书未给独立完整证明。",
+    "proof_discussion_latex": null,
+    "context_notation": [],
+    "issues": [
+      {
+        "code": "ERRATUM?",
+        "detail": "原“sufficient high frequency/typically”没有给频率序列、归一化、热浴初值法则及白噪声弱收敛资格，不能声明任意热浴自动满足δ极限。"
+      },
+      {
+        "code": "ERRATUM?",
+        "detail": "固定1/k归一化使|ψk|≤1，不能分布收敛到任何γ>0的δ；正质量修正版也不能消除此障碍，需另定重标度及单边δ约定。"
+      }
+    ],
+    "lean_decl": "MD.Ch06.memoryKernelDeltaMeaning",
+    "reusable_proofs": [],
+    "extra_assumptions": [
+      "[EXTRA]明确ψk→γδ0的实际分布意义，仅定义该近似资格；不计极限或Langevin推导已证。"
+    ],
+    "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
+    "review_status": "NEEDS_HUMAN",
+    "repair_log": [
+      {
+        "date": "2026-10-16",
+        "action": "local_original_page_transcription",
+        "reason": "PDF258/259视觉核对原记忆核为psi，不是eta；仅原文符号转录更正，Lean定义未变。",
+        "evidence": "source_transcription_fixes.json; PDF258/259",
+        "website": "待网站审计"
+      },
+      {
+        "date": "2026-10-17",
+        "action": "directive22_printed_corrected_pair",
+        "change": "仅给分布收敛的精确定义，并明确正质量资格；不声称任意热浴满足该极限。",
+        "corrected_decl": "MD.Ch06.memoryKernelDeltaMeaning_corrected",
+        "website": "未提交；待网站审计"
+      }
+    ],
+    "source_page_verification": "R5_INDEPENDENT_REVIEW; R5_PAGES.pdf 附件第3页；以本次evidence及issues为准，历史repair_log不作为真实性证据。"
+  },
+  "issues": [
+    {
+      "code": "SOURCE_LIMIT_QUALIFICATION",
+      "detail": "C：原版和_corrected均为分布极限资格定义，测试所有实轴上的C∞紧支函数，k→∞，极限γ f(0)，γ>0；修正版额外要求所有质量为正。二者没有声称此极限已成立。但D3的1/k平均使|ψk(t)|≤1，故该固定归一化下任何族均不可能收敛到正质量δ。增加正质量不能修复此问题；此外全实轴γδ与单边Volterra摩擦γ之间的边界因子未说明。"
+    },
+    {
+      "code": "IMPOSSIBLE_POSITIVE_DELTA_LIMIT",
+      "detail": "C：原版和_corrected均为分布极限资格定义，测试所有实轴上的C∞紧支函数，k→∞，极限γ f(0)，γ>0；修正版额外要求所有质量为正。二者没有声称此极限已成立。但D3的1/k平均使|ψk(t)|≤1，故该固定归一化下任何族均不可能收敛到正质量δ。增加正质量不能修复此问题；此外全实轴γδ与单边Volterra摩擦γ之间的边界因子未说明。"
+    },
+    {
+      "code": "HALF_LINE_NORMALIZATION",
+      "detail": "C：原版和_corrected均为分布极限资格定义，测试所有实轴上的C∞紧支函数，k→∞，极限γ f(0)，γ>0；修正版额外要求所有质量为正。二者没有声称此极限已成立。但D3的1/k平均使|ψk(t)|≤1，故该固定归一化下任何族均不可能收敛到正质量δ。增加正质量不能修复此问题；此外全实轴γδ与单边Volterra摩擦γ之间的边界因子未说明。"
+    }
+  ],
+  "evidence": [
+    {
+      "phase": "A",
+      "location": "R5_PAGES.pdf，附件第3页；原PDF页259，印刷页238",
+      "finding": "A：附件第3页的高频、rapid decay、正γ、Markovian与(6.30)–(6.31)基本忠实；保留启发性而非定量收敛定理。extra_assumptions中的ηk应与原文ψ统一。"
+    },
+    {
+      "phase": "C",
+      "location": "R5_任务.md，条目3/30，实际Lean签名/定义及其明确命名空间的依赖摘录、文末D附录",
+      "finding": "C：原版和_corrected均为分布极限资格定义，测试所有实轴上的C∞紧支函数，k→∞，极限γ f(0)，γ>0；修正版额外要求所有质量为正。二者没有声称此极限已成立。但D3的1/k平均使|ψk(t)|≤1，故该固定归一化下任何族均不可能收敛到正质量δ。增加正质量不能修复此问题；此外全实轴γδ与单边Volterra摩擦γ之间的边界因子未说明。"
+    }
+  ]
+}
+
+### MD-6.3.3-BathForceWeakLimitMeaning 258–259
+{
+  "lean_decl": "MD.Ch06.bathForceWeakLimitMeaning",
+  "verdict": "NEEDS_HUMAN",
+  "explanation": "C：原版量化正质量族、随机q0/p0、固定Q0和所有有限T的连续路径；把Printed负热浴力逐点识别为forcePaths，与有界连续路径泛函的期望收敛，确实强于单时均值。_corrected改为D1正力的时间积分并保留同一弱测试，改动在物理对象上合理，但不是原句字面版，且未证明任何频率/初值族满足。两版均未要求样本→连续路径映射可测（也未用HasLaw声明真正路径law）；对任意不可测对象，Lean的总定义积分不能直接当作概率弱收敛。需补足概率law和路径可测资格后才能认定为完整弱法则定义。",
+  "counterexample": null,
+  "suggested_fix": "人工确认原文f应为力/白噪声还是其时间积分；分别保留字面版和修正版。增加路径随机变量可测性及明确概率测度，必要时用路径law的弱收敛表述；不要把资格定义计为极限定理。"
+}
+{
+  "status": "NEEDS_HUMAN",
+  "issue_codes": [
+    "SOURCE_FORCE_VS_INTEGRATED_FORCE",
+    "PATH_LAW_MEASURABILITY_MISSING"
+  ],
+  "corrected_json": {
+    "source_id": "MD-6.3.3-BathForceWeakLimitMeaning",
+    "kind": "definition",
+    "label": null,
+    "section": "6.3.3",
+    "printed_page": "237–238",
+    "pdf_page": "258–259",
+    "statement_latex": "For large $k$ and for many choices of the frequencies $\\Omega_i$ and the initial conditions $\\{q_i(0);p_i(0)\\}$, function $f(t)$ will take on the character of a Wiener process; in fact the convergence can be shown in the weak sense. We may even take the initial conditions to be randomly distributed [13,205].",
+    "proof_latex": null,
+    "proof_note": "原书未给独立完整证明。",
+    "proof_discussion_latex": null,
+    "context_notation": [],
+    "issues": [
+      {
+        "code": "ERRATUM?",
+        "detail": "原many choices没有给热浴初值法则/频率条件/拓扑；此处f像Wiener process、下页f(t)作为Wiener increment还存在力与积分过程的类型疑问。"
+      },
+      {
+        "code": "FORMALIZATION_QUALIFICATION",
+        "detail": "两版路径测试期望定义均缺样本到连续路径空间映射的可测性资格；不能直接认作完整路径law弱收敛。"
+      }
+    ],
+    "lean_decl": "MD.Ch06.bathForceWeakLimitMeaning",
+    "reusable_proofs": [],
+    "extra_assumptions": [
+      "[EXTRA]完整连续路径空间的弱法则，而非只收敛均值/某单时边际；实际有限热浴力路径与Wiener路径逐点关联，只定义原希望的资格，不宣称任意族满足。"
+    ],
+    "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
+    "review_status": "NEEDS_HUMAN",
+    "repair_log": [
+      {
+        "date": "2026-10-17",
+        "action": "directive22_printed_corrected_pair",
+        "change": "将与Wiener过程比较的对象改为时间积分后的热浴力；仍只定义极限意义。",
+        "corrected_decl": "MD.Ch06.bathForceWeakLimitMeaning_corrected",
+        "website": "未提交；待网站审计"
+      }
+    ],
+    "source_page_verification": "R5_INDEPENDENT_REVIEW; R5_PAGES.pdf 附件第11–12页；以本次evidence及issues为准，历史repair_log不作为真实性证据。"
+  },
+  "issues": [
+    {
+      "code": "SOURCE_FORCE_VS_INTEGRATED_FORCE",
+      "detail": "C：原版量化正质量族、随机q0/p0、固定Q0和所有有限T的连续路径；把Printed负热浴力逐点识别为forcePaths，与有界连续路径泛函的期望收敛，确实强于单时均值。_corrected改为D1正力的时间积分并保留同一弱测试，改动在物理对象上合理，但不是原句字面版，且未证明任何频率/初值族满足。两版均未要求样本→连续路径映射可测（也未用HasLaw声明真正路径law）；对任意不可测对象，Lean的总定义积分不能直接当作概率弱收敛。需补足概率law和路径可测资格后才能认定为完整弱法则定义。"
+    },
+    {
+      "code": "PATH_LAW_MEASURABILITY_MISSING",
+      "detail": "C：原版量化正质量族、随机q0/p0、固定Q0和所有有限T的连续路径；把Printed负热浴力逐点识别为forcePaths，与有界连续路径泛函的期望收敛，确实强于单时均值。_corrected改为D1正力的时间积分并保留同一弱测试，改动在物理对象上合理，但不是原句字面版，且未证明任何频率/初值族满足。两版均未要求样本→连续路径映射可测（也未用HasLaw声明真正路径law）；对任意不可测对象，Lean的总定义积分不能直接当作概率弱收敛。需补足概率law和路径可测资格后才能认定为完整弱法则定义。"
+    }
+  ],
+  "evidence": [
+    {
+      "phase": "A",
+      "location": "R5_PAGES.pdf，附件第11–12页；原PDF页258–259，印刷页237–238",
+      "finding": "A：附件第11页的Wiener process、weak sense和随机初值转录忠实；附件第12页另说Wiener increment，原书对象存在歧义，原疑误应保留。"
+    },
+    {
+      "phase": "C",
+      "location": "R5_任务.md，条目11/30，实际Lean签名/定义及其明确命名空间的依赖摘录、文末D附录",
+      "finding": "C：原版量化正质量族、随机q0/p0、固定Q0和所有有限T的连续路径；把Printed负热浴力逐点识别为forcePaths，与有界连续路径泛函的期望收敛，确实强于单时均值。_corrected改为D1正力的时间积分并保留同一弱测试，改动在物理对象上合理，但不是原句字面版，且未证明任何频率/初值族满足。两版均未要求样本→连续路径映射可测（也未用HasLaw声明真正路径law）；对任意不可测对象，Lean的总定义积分不能直接当作概率弱收敛。需补足概率law和路径可测资格后才能认定为完整弱法则定义。"
+    }
+  ]
+}
+
+### MD-6.3.3-VariableFrictionCanonicalPrinted 260
+{
+  "lean_decl": "MD.Ch06.variableFrictionCanonicalPrinted",
+  "verdict": "NEEDS_HUMAN",
+  "explanation": "C：量化任意n/r、正m、光滑U/Γ、θ>0以及所有相点，断言D42作用于未归一化exp(−H/θ)为0；对象、Hamiltonian质量分母和全部结论无遗漏。但该Printed全称命题不成立。作为原书canonical目标的必要检验可保留，不能认定数学PASS；也没有证明归一化存在或采样遍历性。[EXTRA]正确提醒必要性，不修复非交换问题。",
+  "counterexample": "n=2,r=1,m=(1,4),θ=1,U=0,Γ=(1,1)ᵀ常矩阵，p=(1,1)。ΓΓᵀ为全1矩阵。D42/ρ=−pᵀM⁻¹(ΓΓᵀ)p+pᵀM⁻½(ΓΓᵀ)M⁻½p=−1/4，故前向值=−exp(−5/8)/4≠0。",
+  "suggested_fix": "保留原句和疑误；加入条目14的交换前提可获形式stationarity。若要保留任意Γ，可重新设计满足涨落耗散的漂移；不可把原文平均恢复直接提升为遍历采样定理。"
+}
+{
+  "status": "NEEDS_HUMAN",
+  "issue_codes": [
+    "SOURCE_CANONICAL_QUALIFICATION",
+    "NONCOMMUTING_MASS_FRICTION"
+  ],
+  "corrected_json": null,
+  "issues": [
+    {
+      "code": "SOURCE_CANONICAL_QUALIFICATION",
+      "detail": "C：量化任意n/r、正m、光滑U/Γ、θ>0以及所有相点，断言D42作用于未归一化exp(−H/θ)为0；对象、Hamiltonian质量分母和全部结论无遗漏。但该Printed全称命题不成立。作为原书canonical目标的必要检验可保留，不能认定数学PASS；也没有证明归一化存在或采样遍历性。[EXTRA]正确提醒必要性，不修复非交换问题。"
+    },
+    {
+      "code": "NONCOMMUTING_MASS_FRICTION",
+      "detail": "C：量化任意n/r、正m、光滑U/Γ、θ>0以及所有相点，断言D42作用于未归一化exp(−H/θ)为0；对象、Hamiltonian质量分母和全部结论无遗漏。但该Printed全称命题不成立。作为原书canonical目标的必要检验可保留，不能认定数学PASS；也没有证明归一化存在或采样遍历性。[EXTRA]正确提醒必要性，不修复非交换问题。"
+    }
+  ],
+  "evidence": [
+    {
+      "phase": "A",
+      "location": "R5_PAGES.pdf，附件第14页；原PDF页260，印刷页239",
+      "finding": "A：附件第14页关于artificial parameters和canonical averages的原句一致；原句没有给出可适用于任意质量/矩形Γ的全称不变性定理。现有ERRATUM?方向正确。"
+    },
+    {
+      "phase": "C",
+      "location": "R5_任务.md，条目13/30，实际Lean签名/定义及其明确命名空间的依赖摘录、文末D附录",
+      "finding": "C：量化任意n/r、正m、光滑U/Γ、θ>0以及所有相点，断言D42作用于未归一化exp(−H/θ)为0；对象、Hamiltonian质量分母和全部结论无遗漏。但该Printed全称命题不成立。作为原书canonical目标的必要检验可保留，不能认定数学PASS；也没有证明归一化存在或采样遍历性。[EXTRA]正确提醒必要性，不修复非交换问题。"
+    }
+  ]
+}
+
+### MD-6.3.6-FPPolynomialAdjoint 262–263
+{
+  "lean_decl": "MD.Ch06.fpPolynomialAdjoint",
+  "verdict": "NEEDS_HUMAN",
+  "explanation": "C：实际fpPolynomialAdjoint已显式加强：a/b/ρ/φ全C∞；a、b、φ的0至2阶导数各有多项式全局界；ρ的0至2阶导数各有正指数衰减界。两边真实积分恒等由两次分部积分成立，这个已给出的加强版数学PASS，[EXTRA]准确披露了附加资格。但它不是仅原文值增长假设的定理；repair_log再列fpPolynomialAdjoint_corrected而无实际签名，不能独立确认命名修正版，所以本条整体NEEDS_HUMAN。",
+  "counterexample": "函数值有界不控制导数：例如f(x)=sin(exp(x²))为C∞且有界，f′(x)=2x exp(x²)cos(exp(x²))不受任何多项式界控制。原条件不能直接提供所需导数估计。",
+  "suggested_fix": "原书条件保留并标疑误；将已给声明明确称为加强版。补充_corrected实际签名，不能仅依赖repair_log；还原原句和dagger。"
+}
+{
+  "status": "NEEDS_HUMAN",
+  "issue_codes": [
+    "SOURCE_DERIVATIVE_GROWTH_GAP",
+    "TRANSCRIPTION_ADJOINT_SYMBOL",
+    "TRANSCRIPTION_TRUNCATED_SENTENCE",
+    "CORRECTED_DECL_NOT_SUPPLIED"
+  ],
+  "corrected_json": {
+    "source_id": "MD-6.3.6-FPPolynomialAdjoint",
+    "kind": "unnumbered_claim",
+    "label": null,
+    "section": "6.3.6",
+    "printed_page": "241–242",
+    "pdf_page": "262–263",
+    "statement_latex": "We assume that $\\rho$ is $C^\\infty$ for all $t$ and that the density tends to zero exponentially fast as $x\\to\\pm\\infty$, whereas $a$ and $b$ are $C^\\infty$ functions which grow at most polynomially fast in these limits, that is, there are constants $\\eta_a$, $\\eta_b$ such that\n\\[a(x)=\\mathcal O(|x|^{\\eta_a}),\\quad b(x)=\\mathcal O(|x|^{\\eta_b}),\\quad x\\to\\pm\\infty.\\]\n[中间原文略]\n\\[\\langle\\mathcal L\\phi,\\rho\\rangle=\\langle\\phi,\\mathcal L^\\dagger\\rho\\rangle.\\]",
+    "proof_latex": null,
+    "proof_note": "原书未给独立完整证明。",
+    "proof_discussion_latex": null,
+    "context_notation": [],
+    "issues": [
+      {
+        "code": "ERRATUM?",
+        "detail": "原只给函数值尾部增长而未约束导数；完整IBP及边界消失需技术资格，已全部明示，不静默添加。"
+      }
+    ],
+    "lean_decl": "MD.Ch06.fpPolynomialAdjoint",
+    "reusable_proofs": [],
+    "extra_assumptions": [
+      "[EXTRA]原C∞P值增长不足以控制所有IBP边界；明确一、二阶a,b,φ多项式增长及ρ导数指数尾，保存整个非紧支撑真实积分恒等。"
+    ],
+    "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
+    "review_status": "NEEDS_HUMAN",
+    "repair_log": [
+      {
+        "date": "2026-10-17",
+        "action": "directive22_printed_corrected_pair",
+        "change": "显式约束所需导数的多项式增长和密度导数的指数衰减。",
+        "corrected_decl": "MD.Ch06.fpPolynomialAdjoint_corrected",
+        "website": "未提交；待网站审计"
+      }
+    ],
+    "source_page_verification": "R5_INDEPENDENT_REVIEW; R5_PAGES.pdf 附件第27–28页；以本次evidence及issues为准，历史repair_log不作为真实性证据。"
+  },
+  "issues": [
+    {
+      "code": "SOURCE_DERIVATIVE_GROWTH_GAP",
+      "detail": "C：实际fpPolynomialAdjoint已显式加强：a/b/ρ/φ全C∞；a、b、φ的0至2阶导数各有多项式全局界；ρ的0至2阶导数各有正指数衰减界。两边真实积分恒等由两次分部积分成立，这个已给出的加强版数学PASS，[EXTRA]准确披露了附加资格。但它不是仅原文值增长假设的定理；repair_log再列fpPolynomialAdjoint_corrected而无实际签名，不能独立确认命名修正版，所以本条整体NEEDS_HUMAN。"
+    },
+    {
+      "code": "TRANSCRIPTION_ADJOINT_SYMBOL",
+      "detail": "A：附件第27页原句在“these limits”后接“, that is, there are constants ηa, ηb such that”及Big-O式，JSON提前添句号；附件第28页配对记号为dagger。原只约束函数值，确实不足以直接宣称所有分部积分边界与导数积分良好，原疑误保留。"
+    },
+    {
+      "code": "TRANSCRIPTION_TRUNCATED_SENTENCE",
+      "detail": "A：附件第27页原句在“these limits”后接“, that is, there are constants ηa, ηb such that”及Big-O式，JSON提前添句号；附件第28页配对记号为dagger。原只约束函数值，确实不足以直接宣称所有分部积分边界与导数积分良好，原疑误保留。"
+    },
+    {
+      "code": "CORRECTED_DECL_NOT_SUPPLIED",
+      "detail": "C：实际fpPolynomialAdjoint已显式加强：a/b/ρ/φ全C∞；a、b、φ的0至2阶导数各有多项式全局界；ρ的0至2阶导数各有正指数衰减界。两边真实积分恒等由两次分部积分成立，这个已给出的加强版数学PASS，[EXTRA]准确披露了附加资格。但它不是仅原文值增长假设的定理；repair_log再列fpPolynomialAdjoint_corrected而无实际签名，不能独立确认命名修正版，所以本条整体NEEDS_HUMAN。"
+    }
+  ],
+  "evidence": [
+    {
+      "phase": "A",
+      "location": "R5_PAGES.pdf，附件第27–28页；原PDF页262–263，印刷页241–242",
+      "finding": "A：附件第27页原句在“these limits”后接“, that is, there are constants ηa, ηb such that”及Big-O式，JSON提前添句号；附件第28页配对记号为dagger。原只约束函数值，确实不足以直接宣称所有分部积分边界与导数积分良好，原疑误保留。"
+    },
+    {
+      "phase": "C",
+      "location": "R5_任务.md，条目25/30，实际Lean签名/定义及其明确命名空间的依赖摘录、文末D附录",
+      "finding": "C：实际fpPolynomialAdjoint已显式加强：a/b/ρ/φ全C∞；a、b、φ的0至2阶导数各有多项式全局界；ρ的0至2阶导数各有正指数衰减界。两边真实积分恒等由两次分部积分成立，这个已给出的加强版数学PASS，[EXTRA]准确披露了附加资格。但它不是仅原文值增长假设的定理；repair_log再列fpPolynomialAdjoint_corrected而无实际签名，不能独立确认命名修正版，所以本条整体NEEDS_HUMAN。"
+    }
+  ]
+}
+
+### MD-6.3.6-FPEquation 263
+{
+  "lean_decl": "MD.Ch06.fpEquation",
+  "verdict": "NEEDS_HUMAN",
+  "explanation": "C：量化P、W/X、自治a/b、固定x0和光滑ρ(t,x)；有PreBrownian、strictScalarSDE、C∞系数、每t>0非负真实density law、a/b值多项式界及ρ和时间导数的局部一致指数尾。结论完整覆盖所有t>0、x∈R，等于D50的负漂移加正扩散；未把弱PDE作前提，时间微分的尾部资格足够。问题是本声明未如条目18一样要求X相对W的历史适应、联合可测，也没有扩散被积过程的适应资格；D48只要求固定时间均方左端和残差收敛，本身不是已经建立的标准适应Itô解定义。任务未给出从这一更弱定义恢复标准Itô/鞅问题的桥接。无法仅凭名为strictScalarSDE就直接认定标准FP推导成立，需人工核定或补足桥接/前提。",
+  "counterexample": null,
+  "suggested_fix": "补入共同滤过下W为Brownian、X适应/联合可测及适当局部积分资格，或提供已验证的D48到标准Itô解桥接；随后可用紧支检验导出弱PDE再用光滑性得点态式。只修正JSON伴随记号，工程不改。"
+}
+{
+  "status": "CORRECTED",
+  "issue_codes": [
+    "TRANSCRIPTION_ADJOINT_SYMBOL",
+    "SDE_FILTRATION_QUALIFICATION_MISSING"
+  ],
+  "corrected_json": {
+    "source_id": "MD-6.3.6-FPEquation",
+    "kind": "unnumbered_claim",
+    "label": null,
+    "section": "6.3.6",
+    "printed_page": "242",
+    "pdf_page": "263",
+    "statement_latex": "If this is to hold for all test functions $\\phi$, we must have\n\\[\\frac{\\partial\\rho}{\\partial t}=-\\frac\\partial{\\partial x}(a(x)\\rho)+\\frac12\\frac{\\partial^2}{\\partial x^2}(b^2(x)\\rho).\\]\nThe Fokker-Planck equation may be written in the compact form\n\\[\\frac{\\partial\\rho}{\\partial t}=\\mathcal L^\\dagger\\rho.\\]",
+    "proof_latex": null,
+    "proof_note": "原书未给独立完整证明。",
+    "proof_discussion_latex": null,
+    "context_notation": [],
+    "issues": [],
+    "lean_decl": "MD.Ch06.fpEquation",
+    "reusable_proofs": [],
+    "extra_assumptions": [
+      "[EXTRA]实际严格SDE与其真实平滑非负密度law、局部一致指数尾可求导资格；没有把弱PDE或所求点态PDE当假设。"
+    ],
+    "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
+    "review_status": "CORRECTED",
+    "repair_log": [],
+    "source_page_verification": "R5_INDEPENDENT_REVIEW; R5_PAGES.pdf 附件第29页；以本次evidence及issues为准，历史repair_log不作为真实性证据。"
+  },
+  "issues": [
+    {
+      "code": "TRANSCRIPTION_ADJOINT_SYMBOL",
+      "detail": "A：附件第29页点态Fokker–Planck式符号一致；紧凑式实际为L†ρ，需把*还原为dagger。"
+    },
+    {
+      "code": "SDE_FILTRATION_QUALIFICATION_MISSING",
+      "detail": "C：量化P、W/X、自治a/b、固定x0和光滑ρ(t,x)；有PreBrownian、strictScalarSDE、C∞系数、每t>0非负真实density law、a/b值多项式界及ρ和时间导数的局部一致指数尾。结论完整覆盖所有t>0、x∈R，等于D50的负漂移加正扩散；未把弱PDE作前提，时间微分的尾部资格足够。问题是本声明未如条目18一样要求X相对W的历史适应、联合可测，也没有扩散被积过程的适应资格；D48只要求固定时间均方左端和残差收敛，本身不是已经建立的标准适应Itô解定义。任务未给出从这一更弱定义恢复标准Itô/鞅问题的桥接。无法仅凭名为strictScalarSDE就直接认定标准FP推导成立，需人工核定或补足桥接/前提。"
+    }
+  ],
+  "evidence": [
+    {
+      "phase": "A",
+      "location": "R5_PAGES.pdf，附件第29页；原PDF页263，印刷页242",
+      "finding": "A：附件第29页点态Fokker–Planck式符号一致；紧凑式实际为L†ρ，需把*还原为dagger。"
+    },
+    {
+      "phase": "C",
+      "location": "R5_任务.md，条目26/30，实际Lean签名/定义及其明确命名空间的依赖摘录、文末D附录",
+      "finding": "C：量化P、W/X、自治a/b、固定x0和光滑ρ(t,x)；有PreBrownian、strictScalarSDE、C∞系数、每t>0非负真实density law、a/b值多项式界及ρ和时间导数的局部一致指数尾。结论完整覆盖所有t>0、x∈R，等于D50的负漂移加正扩散；未把弱PDE作前提，时间微分的尾部资格足够。问题是本声明未如条目18一样要求X相对W的历史适应、联合可测，也没有扩散被积过程的适应资格；D48只要求固定时间均方左端和残差收敛，本身不是已经建立的标准适应Itô解定义。任务未给出从这一更弱定义恢复标准Itô/鞅问题的桥接。无法仅凭名为strictScalarSDE就直接认定标准FP推导成立，需人工核定或补足桥接/前提。"
+    }
+  ]
+}
+
+### MD-6.4.2-StationaryInvariant 268
+{
+  "lean_decl": "MD.Ch06.stationaryInvariant",
+  "verdict": "NEEDS_HUMAN",
+  "explanation": "量词覆盖任意可测D、真实Markov半群K、概率μ和算子L；局部可积支配及演化检验函数导数关系均明确，没有直接假设不变结论。但终点谓词实际引用Chapter06Review.invariantKernel，它再调用该命名空间的kernelEvolution；附件只给出MD.Ch06.kernelEvolution，不能用不同命名空间的定义补齐。需确认真实kernelEvolution确为K t ∘ₘ μ。另外弱stationarity给在所有有界可测f上，而演化检验函数只有有界可测（由Markov核性质）时可套用，此处结构合理；不因sorry或未补证明判FAIL。",
+  "counterexample": null,
+  "suggested_fix": "补充实际Chapter06Review.kernelEvolution定义并确认其为K t ∘ₘ μ；将原文摘录改为附件实际句子，保留明确的[EXTRA]核半群桥接说明。"
+}
+{
+  "status": "CORRECTED",
+  "issue_codes": [
+    "SOURCE_QUOTE_NOT_ON_PAGE",
+    "DEPENDENCY_DEFINITION_MISSING"
+  ],
+  "corrected_json": {
+    "source_id": "MD-6.4.2-StationaryInvariant",
+    "kind": "unnumbered_claim",
+    "label": null,
+    "section": "6.4.2",
+    "printed_page": "247",
+    "pdf_page": "268",
+    "statement_latex": "We have seen that invariant distributions correspond in general to solutions of\n\\[\\mathcal L^\\dagger\\rho_{\\rm eq}\\equiv0.\\]\nSolutions to this equation are of central importance to the probabilistic behavior of solutions to (6.43). Such solutions give distributions of points in phase space which will remain constant as solutions evolve in time.",
+    "proof_latex": null,
+    "proof_note": "原书未给独立完整证明。",
+    "proof_discussion_latex": null,
+    "context_notation": [],
+    "issues": [
+      {
+        "code": "SOURCE_QUOTE_NOT_ON_PAGE",
+        "message": "所给整段“This is completely analogous … exp(tL*)ρ=ρ”在附件第12页不存在。该页实际只有不变分布对应L†ρeq≡0及随演化保持常数的句子，不能认证现有长段为原文。"
+      },
+      {
+        "code": "DEPENDENCY_DEFINITION_MISSING",
+        "message": "缺Chapter06Review.kernelEvolution的实际定义；只列出MD.Ch06同名定义不能判定终点谓词完全一致。"
+      }
+    ],
+    "lean_decl": "MD.Ch06.stationaryInvariant",
+    "reusable_proofs": [],
+    "extra_assumptions": [
+      "[EXTRA]实际Markov kernel semigroup、真实generator对演化检验的导数关系与弱stationarity，并明确局部可积支配保证求导换积分；完整kernel测度不变，未假设不变结论或把形式exp当实际流。"
+    ],
+    "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
+    "review_status": "CORRECTED",
+    "repair_log": [
+      "R6审校：只修订审校JSON；原书数学疑误保留，未修改Lean工程或补证明。"
+    ],
+    "source_page_verification": "R6_PAGES.pdf 附件第12页；已比对对应原页渲染及文本；详见本条evidence。"
+  },
+  "issues": [
+    {
+      "code": "SOURCE_QUOTE_NOT_ON_PAGE",
+      "message": "所给整段“This is completely analogous … exp(tL*)ρ=ρ”在附件第12页不存在。该页实际只有不变分布对应L†ρeq≡0及随演化保持常数的句子，不能认证现有长段为原文。"
+    },
+    {
+      "code": "DEPENDENCY_DEFINITION_MISSING",
+      "message": "缺Chapter06Review.kernelEvolution的实际定义；只列出MD.Ch06同名定义不能判定终点谓词完全一致。"
+    }
+  ],
+  "evidence": [
+    "A：R6_PAGES.pdf 附件第12页（原PDF 268，印刷页247）；逐字、公式及页码核对。",
+    "C：只读核对R6_任务.md本条全部Lean签名及其列出的项目依赖/附录定义，未使用旧工程文件；不以sorry判FAIL。",
+    "原页下半部确为“We have seen that invariant distributions correspond in general to solutions of”与L†ρeq≡0，不是给定JSON中的原句。"
+  ]
+}
+
+### MD-6.4.2-LangevinCanonicalMixing 269
+{
+  "lean_decl": "MD.Ch06.langevinCanonicalMixing",
+  "verdict": "NEEDS_HUMAN",
+  "explanation": "明确只覆盖周期单位质量、光滑周期势、全局Lipschitz力及正γ/β的实际kernel，结论包括所有t>0、所有初值的严格正连续联合转移密度及所有有界连续检验的弱混合；[EXTRA]已披露这一范围。可见定义把路径解设为Classical.choose(actual_path_solution_exists ...)，但该项目存在命题的完整陈述未提供，因此无法只凭本任务证明choose出的对象确为指定Langevin路径而不是其他存在对象。另需核对该路径解在[0,T]上的方程/初值资格。数学结论在所列周期非退化Langevin条件下合理，缺失的是决定性项目定义依据。",
+  "counterexample": "一般SDE取dX=0，从单点出发永远为同一Dirac分布，不会瞬时扩散或覆盖整个空间；这不是所列非退化Langevin特例的反例。",
+  "suggested_fix": "提供actual_path_solution_exists的完整Lean类型及所选路径满足的初值/积分方程定义；保留[EXTRA]周期单位质量范围，原书一般性句子加条件不足的疑误标记。"
+}
+{
+  "status": "NEEDS_HUMAN",
+  "issue_codes": [
+    "DEPENDENCY_SPECIFICATION_MISSING",
+    "SOURCE_GENERALITY_REQUIRES_QUALIFICATION"
+  ],
+  "corrected_json": {
+    "source_id": "MD-6.4.2-LangevinCanonicalMixing",
+    "kind": "unnumbered_claim",
+    "label": null,
+    "section": "6.4.2",
+    "printed_page": "248",
+    "pdf_page": "269",
+    "statement_latex": "Even a single phase space point, which corresponds to a delta-function initial distribution, will instantly diffuse as the solution of the Fokker-Planck equation and, eventually, would cover the entire phase space.",
+    "proof_latex": null,
+    "proof_note": "原书未给独立完整证明。",
+    "proof_discussion_latex": null,
+    "context_notation": [],
+    "issues": [
+      {
+        "code": "DEPENDENCY_SPECIFICATION_MISSING",
+        "message": "textbookLangevinPathSolution使用Classical.choose actual_path_solution_exists，但未给该存在命题的完整类型，无法核定所选路径满足哪套方程。"
+      },
+      {
+        "code": "SOURCE_GENERALITY_REQUIRES_QUALIFICATION",
+        "message": "原句从SDE谈瞬间扩散及最终覆盖全相空间，若理解为所有SDE则过强；零噪声或退化且不可达系统不满足。所列Lean仅处理已标明的周期非退化Langevin特例。"
+      }
+    ],
+    "lean_decl": "MD.Ch06.langevinCanonicalMixing",
+    "reusable_proofs": [],
+    "extra_assumptions": [
+      "[EXTRA]真实现有周期单位质量Langevin kernel、正γ/β、原光滑力全局Lipschitz；完整任意点初值的正时刻严格正连续转移密度以及全部有界连续检验弱混合，原一般混合意义另条，不以单位质量特例替代一般定义。"
+    ],
+    "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
+    "review_status": "NEEDS_HUMAN",
+    "repair_log": [
+      "R6审校：只修订审校JSON；原书数学疑误保留，未修改Lean工程或补证明。"
+    ],
+    "source_page_verification": "R6_PAGES.pdf 附件第13页；已比对对应原页渲染及文本；详见本条evidence。"
+  },
+  "issues": [
+    {
+      "code": "DEPENDENCY_SPECIFICATION_MISSING",
+      "message": "textbookLangevinPathSolution使用Classical.choose actual_path_solution_exists，但未给该存在命题的完整类型，无法核定所选路径满足哪套方程。"
+    },
+    {
+      "code": "SOURCE_GENERALITY_REQUIRES_QUALIFICATION",
+      "message": "原句从SDE谈瞬间扩散及最终覆盖全相空间，若理解为所有SDE则过强；零噪声或退化且不可达系统不满足。所列Lean仅处理已标明的周期非退化Langevin特例。"
+    }
+  ],
+  "evidence": [
+    "A：R6_PAGES.pdf 附件第13页（原PDF 269，印刷页248）；逐字、公式及页码核对。",
+    "C：只读核对R6_任务.md本条全部Lean签名及其列出的项目依赖/附录定义，未使用旧工程文件；不以sorry判FAIL。"
+  ]
+}
+
+### MD-6.4.3-BrownianSymmetry 271
+{
+  "lean_decl": "MD.Ch06.brownianSymmetry",
+  "verdict": "NEEDS_HUMAN",
+  "explanation": "Lean只陈述周期光滑核心上的对称配对，签名正确；原引文还推出L=L*，核心对称不等于完整伴随域相等。[EXTRA]承认缩小含义，却不能把原整段自伴结论视作已完全覆盖。",
+  "counterexample": null,
+  "suggested_fix": "把形式对称与闭实现自伴分开，并由人工确认原C₀²域的解释。"
+}
+{
+  "status": "NEEDS_HUMAN",
+  "issue_codes": [
+    "SOURCE_NOTATION",
+    "ERRATUM?"
+  ],
+  "corrected_json": {
+    "source_id": "MD-6.4.3-BrownianSymmetry",
+    "kind": "unnumbered_claim",
+    "label": null,
+    "section": "6.4.3",
+    "printed_page": "250",
+    "pdf_page": "271",
+    "statement_latex": "In this form we see that $f$ and $g$ appear symmetrically, so we may write\n\\[\\langle f,\\mathcal Lg\\rangle_\\beta=\\langle\\mathcal Lf,g\\rangle_\\beta;\\]\nhence, with respect to the weighted inner product, $\\mathcal L^\\dagger=\\mathcal L$. (Note that the adjoint indicated here is quite different than the $L^2$ adjoint mentioned previously in connection with the Fokker-Planck operator.)",
+    "proof_latex": null,
+    "proof_note": "原书未给独立完整证明。",
+    "proof_discussion_latex": null,
+    "context_notation": [],
+    "issues": [
+      {
+        "code": "SOURCE_NOTATION",
+        "detail": "原页是L†=L，JSON改写为L=L*；数学等价但非逐字记号。"
+      },
+      {
+        "code": "ERRATUM?",
+        "detail": "Lean只陈述周期光滑核心上的对称配对，签名正确；原引文还推出L=L*，核心对称不等于完整伴随域相等。[EXTRA]承认缩小含义，却不能把原整段自伴结论视作已完全覆盖。"
+      }
+    ],
+    "lean_decl": "MD.Ch06.brownianSymmetry",
+    "reusable_proofs": [
+      "MolecularDynamics.textbookBrownianGenerator_inner_symmetric"
+    ],
+    "extra_assumptions": [
+      "[EXTRA]完整未归一配对等式，由现成归一配对消去正Z⁻¹；C∞周期核心上的形式对称，不宣称C₀²核心本身已闭自伴。"
+    ],
+    "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
+    "review_status": "NEEDS_HUMAN",
+    "repair_log": [
+      {
+        "review": "R7",
+        "detail": "仅在审校输出中修正转录/元数据并记录问题；未改工程或原任务，原书数学疑误未静默修正。"
+      }
+    ],
+    "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
+  },
+  "issues": [
+    {
+      "code": "SOURCE_NOTATION",
+      "detail": "原页是L†=L，JSON改写为L=L*；数学等价但非逐字记号。"
+    },
+    {
+      "code": "ERRATUM?",
+      "detail": "Lean只陈述周期光滑核心上的对称配对，签名正确；原引文还推出L=L*，核心对称不等于完整伴随域相等。[EXTRA]承认缩小含义，却不能把原整段自伴结论视作已完全覆盖。"
+    }
+  ],
+  "evidence": [
+    {
+      "stage": "A",
+      "location": "R7_PAGES.pdf 附件第7页；原PDF页271，印刷页250",
+      "detail": "逐条比对对应原页文字与公式；重复页另按条目映射核对。普通换行/数学排版转LaTeX不作为语义错误；下列转录差异单列。"
+    },
+    {
+      "stage": "C",
+      "detail": "Lean只陈述周期光滑核心上的对称配对，签名正确；原引文还推出L=L*，核心对称不等于完整伴随域相等。[EXTRA]承认缩小含义，却不能把原整段自伴结论视作已完全覆盖。",
+      "checked_signature": "theorem brownianSymmetry {Nc : ℕ} (m : Fin Nc → ℝ)\n    (U : (Fin Nc → ℝ) → ℝ) (β : ℝ) (hβ : β ≠ 0)\n    (f g : (Fin Nc → ℝ) → ℝ)\n    (hU : ContDiff ℝ ∞ U) (hf : ContDiff ℝ ∞ f) (hg : ContDiff ℝ ∞ g)\n    (hPU : textbookUnitPeriodicPotential U) (hPf : textbookUnitPeriodicPotential f)\n    (hPg : textbookUnitPeriodicPotential g) :\n    brownianWeightedInner U β f (textbookBrownianGenerator m U β g) =\n      brownianWeightedInner U β (textbookBrownianGenerator m U β f) g\n",
+      "extra_assumptions_review": [
+        "[EXTRA]完整未归一配对等式，由现成归一配对消去正Z⁻¹；C∞周期核心上的形式对称，不宣称C₀²核心本身已闭自伴。"
+      ],
+      "scope": "只读对象/域/量词/前提/全部结论核对；不检查证明，不因sorry判FAIL；依赖仅采用任务文件摘录及附录D1–D54。"
+    }
+  ]
+}
+
+### MD-6.4.3-BrownianNonpositive 271
+{
+  "lean_decl": "MD.Ch06.brownianNonpositive",
+  "verdict": "NEEDS_HUMAN",
+  "explanation": "正质量、β>0及周期光滑域下未归一二次型≤0正确。原文negative definite错误，已有[ERRATUM?]保留；本签名仅保留正确的半负定子结论。",
+  "counterexample": "f≡1光滑周期非零，但Lf=0，二次型=0。",
+  "suggested_fix": "原文保留并标注半负定；严格负定只能在合适的零均值非零子空间讨论。"
+}
+{
+  "status": "NEEDS_HUMAN",
+  "issue_codes": [
+    "ERRATUM?"
+  ],
+  "corrected_json": {
+    "source_id": "MD-6.4.3-BrownianNonpositive",
+    "kind": "unnumbered_claim",
+    "label": null,
+    "section": "6.4.3",
+    "printed_page": "250",
+    "pdf_page": "271",
+    "statement_latex": "Moreover, from the calculation above,\n\\[\\langle f,\\mathcal Lf\\rangle=-\\beta^{-1}\\int_{\\mathcal Q}\\|\\nabla f\\|^2\\bar\\rho_\\beta d\\omega_q;\\]\nso that $\\langle f,\\mathcal Lf\\rangle\\le0$ so the operator is negative definite and can only have non-positive eigenvalues.",
+    "proof_latex": null,
+    "proof_note": "原书未给独立完整证明。",
+    "proof_discussion_latex": null,
+    "context_notation": [],
+    "issues": [
+      {
+        "code": "ERRATUM?",
+        "detail": "常数属于核，≤0只证明半负定，不能升级严格负定。"
+      },
+      {
+        "code": "ERRATUM?",
+        "detail": "正质量、β>0及周期光滑域下未归一二次型≤0正确。原文negative definite错误，已有[ERRATUM?]保留；本签名仅保留正确的半负定子结论。"
+      }
+    ],
+    "lean_decl": "MD.Ch06.brownianNonpositive",
+    "reusable_proofs": [
+      "MolecularDynamics.textbookBrownianGenerator_inner_nonpos"
+    ],
+    "extra_assumptions": [
+      "[EXTRA]正质量与β>0，未归一配对；本条结论精确保留≤0，原negative definite术语错误另记录。"
+    ],
+    "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
+    "review_status": "NEEDS_HUMAN",
+    "repair_log": [
+      {
+        "date": "2026-10-17",
+        "action": "directive22_printed_corrected_pair",
+        "change": "采用≤0并区分闭算子实现与光滑核心；严格负定字面另见BrownianNegativeDefinitePrinted。",
+        "corrected_decl": "MD.Ch06.brownianNonpositive_corrected",
+        "website": "未提交；待网站审计"
+      },
+      {
+        "review": "R7",
+        "detail": "仅在审校输出中修正转录/元数据并记录问题；未改工程或原任务，原书数学疑误未静默修正。"
+      }
+    ],
+    "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
+  },
+  "issues": [
+    {
+      "code": "ERRATUM?",
+      "detail": "正质量、β>0及周期光滑域下未归一二次型≤0正确。原文negative definite错误，已有[ERRATUM?]保留；本签名仅保留正确的半负定子结论。"
+    }
+  ],
+  "evidence": [
+    {
+      "stage": "A",
+      "location": "R7_PAGES.pdf 附件第8页；原PDF页271，印刷页250",
+      "detail": "逐条比对对应原页文字与公式；重复页另按条目映射核对。普通换行/数学排版转LaTeX不作为语义错误；下列转录差异单列。"
+    },
+    {
+      "stage": "C",
+      "detail": "正质量、β>0及周期光滑域下未归一二次型≤0正确。原文negative definite错误，已有[ERRATUM?]保留；本签名仅保留正确的半负定子结论。",
+      "checked_signature": "theorem brownianNonpositive {Nc : ℕ} (m : Fin Nc → ℝ)\n    (hm : ∀ i, 0 < m i) (U : (Fin Nc → ℝ) → ℝ) (β : ℝ) (hβ : 0 < β)\n    (f : (Fin Nc → ℝ) → ℝ) (hU : ContDiff ℝ ∞ U) (hf : ContDiff ℝ ∞ f)\n    (hPU : textbookUnitPeriodicPotential U) (hPf : textbookUnitPeriodicPotential f) :\n    brownianWeightedInner U β f (textbookBrownianGenerator m U β f) ≤ 0\n",
+      "extra_assumptions_review": [
+        "[EXTRA]正质量与β>0，未归一配对；本条结论精确保留≤0，原negative definite术语错误另记录。"
+      ],
+      "scope": "只读对象/域/量词/前提/全部结论核对；不检查证明，不因sorry判FAIL；依赖仅采用任务文件摘录及附录D1–D54。"
+    },
+    {
+      "stage": "C",
+      "detail": "反例或疑误依据：f≡1光滑周期非零，但Lf=0，二次型=0。"
+    }
+  ]
+}
+
+### MD-6.4.3-BrownianRealEigenvalue 271
+{
+  "lean_decl": "MD.Ch06.brownianRealEigenvalue",
+  "verdict": "NEEDS_HUMAN",
+  "explanation": "非零性为基本域Lebesgue几乎处处非零之否定，正权重下范数严格正；全域特征关系及二次型非正推出所给实数ℓ≤0。签名未声称证明所有复特征值实性。原引文仍含negative definite疑误，应补相同勘误标记。",
+  "counterexample": "常数特征函数的ℓ=0反驳严格负定，不反驳本条ℓ≤0。",
+  "suggested_fix": "补录negative definite的[ERRATUM?]，保留本正确子结论。"
+}
+{
+  "status": "NEEDS_HUMAN",
+  "issue_codes": [
+    "ERRATUM?"
+  ],
+  "corrected_json": {
+    "source_id": "MD-6.4.3-BrownianRealEigenvalue",
+    "kind": "unnumbered_claim",
+    "label": null,
+    "section": "6.4.3",
+    "printed_page": "250",
+    "pdf_page": "271",
+    "statement_latex": "so that $\\langle f,\\mathcal Lf\\rangle\\le0$ so the operator is negative definite and can only have non-positive eigenvalues.",
+    "proof_latex": null,
+    "proof_note": "原书未给独立完整证明。",
+    "proof_discussion_latex": null,
+    "context_notation": [],
+    "issues": [
+      {
+        "code": "ERRATUM?",
+        "detail": "非零性为基本域Lebesgue几乎处处非零之否定，正权重下范数严格正；全域特征关系及二次型非正推出所给实数ℓ≤0。签名未声称证明所有复特征值实性。原引文仍含negative definite疑误，应补相同勘误标记。"
+      }
+    ],
+    "lean_decl": "MD.Ch06.brownianRealEigenvalue",
+    "reusable_proofs": [
+      "MolecularDynamics.textbookBrownianGenerator_real_eigenvalue_nonpos"
+    ],
+    "extra_assumptions": [
+      "[EXTRA]真正非零L²特征函数、C∞周期、正质量与β>0；不以特征值符号作假设。"
+    ],
+    "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
+    "review_status": "NEEDS_HUMAN",
+    "repair_log": [
+      {
+        "review": "R7",
+        "detail": "仅在审校输出中修正转录/元数据并记录问题；未改工程或原任务，原书数学疑误未静默修正。"
+      }
+    ],
+    "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
+  },
+  "issues": [
+    {
+      "code": "ERRATUM?",
+      "detail": "非零性为基本域Lebesgue几乎处处非零之否定，正权重下范数严格正；全域特征关系及二次型非正推出所给实数ℓ≤0。签名未声称证明所有复特征值实性。原引文仍含negative definite疑误，应补相同勘误标记。"
+    }
+  ],
+  "evidence": [
+    {
+      "stage": "A",
+      "location": "R7_PAGES.pdf 附件第9页；原PDF页271，印刷页250",
+      "detail": "逐条比对对应原页文字与公式；重复页另按条目映射核对。普通换行/数学排版转LaTeX不作为语义错误；下列转录差异单列。"
+    },
+    {
+      "stage": "C",
+      "detail": "非零性为基本域Lebesgue几乎处处非零之否定，正权重下范数严格正；全域特征关系及二次型非正推出所给实数ℓ≤0。签名未声称证明所有复特征值实性。原引文仍含negative definite疑误，应补相同勘误标记。",
+      "checked_signature": "theorem brownianRealEigenvalue {Nc : ℕ} (m : Fin Nc → ℝ)\n    (hm : ∀ i, 0 < m i) (U : (Fin Nc → ℝ) → ℝ) (β : ℝ) (hβ : 0 < β)\n    (f : (Fin Nc → ℝ) → ℝ) (hU : ContDiff ℝ ∞ U) (hf : ContDiff ℝ ∞ f)\n    (hPU : textbookUnitPeriodicPotential U) (hPf : textbookUnitPeriodicPotential f)\n    (hne : ¬ f =ᵐ[volume.restrict (textbookConfigurationCube Nc)] 0)\n    (ℓ : ℝ) (heig : ∀ q, textbookBrownianGenerator m U β f q = ℓ * f q) :\n    ℓ ≤ 0\n",
+      "extra_assumptions_review": [
+        "[EXTRA]真正非零L²特征函数、C∞周期、正质量与β>0；不以特征值符号作假设。"
+      ],
+      "scope": "只读对象/域/量词/前提/全部结论核对；不检查证明，不因sorry判FAIL；依赖仅采用任务文件摘录及附录D1–D54。"
+    },
+    {
+      "stage": "C",
+      "detail": "反例或疑误依据：常数特征函数的ℓ=0反驳严格负定，不反驳本条ℓ≤0。"
+    }
+  ]
+}
+
+### MD-6.4.3-BrownianClosedSelfAdjoint 270–271
+{
+  "lean_decl": "MD.Ch06.brownianClosedSelfAdjoint",
+  "verdict": "NEEDS_HUMAN",
+  "explanation": "D11、D19、D20给出光滑周期实L²算子的图闭包；D12–D14给出完整复特征基上的最大图算子。正质量、β>0、光滑周期势下闭自伴陈述合理，归一化无碍；但这替换了原文C₀²核心域，不能以核心形式对称直接视作原域自伴。",
+  "counterexample": null,
+  "suggested_fix": "人工签核闭实现对原文域的修正；本条不因证明未给出而失败。"
+}
+{
+  "status": "NEEDS_HUMAN",
+  "issue_codes": [
+    "ERRATUM?"
+  ],
+  "corrected_json": {
+    "source_id": "MD-6.4.3-BrownianClosedSelfAdjoint",
+    "kind": "unnumbered_claim",
+    "label": null,
+    "section": "6.4.3",
+    "printed_page": "249–250",
+    "pdf_page": "270–271",
+    "statement_latex": "Then $\\mathcal L$ is self-adjoint with respect to this inner product.",
+    "proof_latex": null,
+    "proof_note": "原书未给独立完整证明。",
+    "proof_discussion_latex": null,
+    "context_notation": [],
+    "issues": [
+      {
+        "code": "ERRATUM?",
+        "detail": "D11、D19、D20给出光滑周期实L²算子的图闭包；D12–D14给出完整复特征基上的最大图算子。正质量、β>0、光滑周期势下闭自伴陈述合理，归一化无碍；但这替换了原文C₀²核心域，不能以核心形式对称直接视作原域自伴。"
+      }
+    ],
+    "lean_decl": "MD.Ch06.brownianClosedSelfAdjoint",
+    "reusable_proofs": [
+      "MolecularDynamics.textbookBrownianGibbsComplexOperator_isSelfAdjoint"
+    ],
+    "extra_assumptions": [
+      "[EXTRA]使用现成实际Gibbs复L²闭实现及完整adjoint域；原C₀²核心对称不等于闭自伴。权重归一不改变自伴关系。"
+    ],
+    "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
+    "review_status": "NEEDS_HUMAN",
+    "repair_log": [
+      {
+        "review": "R7",
+        "detail": "仅在审校输出中修正转录/元数据并记录问题；未改工程或原任务，原书数学疑误未静默修正。"
+      }
+    ],
+    "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
+  },
+  "issues": [
+    {
+      "code": "ERRATUM?",
+      "detail": "D11、D19、D20给出光滑周期实L²算子的图闭包；D12–D14给出完整复特征基上的最大图算子。正质量、β>0、光滑周期势下闭自伴陈述合理，归一化无碍；但这替换了原文C₀²核心域，不能以核心形式对称直接视作原域自伴。"
+    }
+  ],
+  "evidence": [
+    {
+      "stage": "A",
+      "location": "R7_PAGES.pdf 附件第10–11页；原PDF页270–271，印刷页249–250",
+      "detail": "逐条比对对应原页文字与公式；重复页另按条目映射核对。普通换行/数学排版转LaTeX不作为语义错误；下列转录差异单列。"
+    },
+    {
+      "stage": "C",
+      "detail": "D11、D19、D20给出光滑周期实L²算子的图闭包；D12–D14给出完整复特征基上的最大图算子。正质量、β>0、光滑周期势下闭自伴陈述合理，归一化无碍；但这替换了原文C₀²核心域，不能以核心形式对称直接视作原域自伴。",
+      "checked_signature": "theorem brownianClosedSelfAdjoint {Nc : ℕ} (m : Fin Nc → ℝ) (hm : ∀ i, 0 < m i)\n    (U : (Fin Nc → ℝ) → ℝ) (hU : ContDiff ℝ ∞ U)\n    (hPU : textbookUnitPeriodicPotential U) (β : ℝ) (hβ : 0 < β) :\n    IsSelfAdjoint (textbookBrownianGibbsComplexOperator m hm U hU hPU β hβ)\n",
+      "extra_assumptions_review": [
+        "[EXTRA]使用现成实际Gibbs复L²闭实现及完整adjoint域；原C₀²核心对称不等于闭自伴。权重归一不改变自伴关系。"
+      ],
+      "scope": "只读对象/域/量词/前提/全部结论核对；不检查证明，不因sorry判FAIL；依赖仅采用任务文件摘录及附录D1–D54。"
+    }
+  ]
+}
+
+### MD-6.4.3-BrownianCompactResolvent 271
+{
+  "lean_decl": "MD.Ch06.brownianCompactResolvent",
+  "verdict": "NEEDS_HUMAN",
+  "explanation": "移位图映射为(x,y)↦x−y，逆映射再投影为(1−L)⁻¹，实部/虚部复化对应复L²预解式。周期紧域上紧性合理；原段在未明确紧配置域及闭算子域前泛称C₀²算子具有紧预解式，范围需签核。",
+  "counterexample": "在Q=ℝ、U=0时，拉普拉斯的(1−Δ)⁻¹不紧：平移的固定局部函数序列无强收敛子列。",
+  "suggested_fix": "将原断言限定到紧torus及闭实现。"
+}
+{
+  "status": "NEEDS_HUMAN",
+  "issue_codes": [
+    "ERRATUM?"
+  ],
+  "corrected_json": {
+    "source_id": "MD-6.4.3-BrownianCompactResolvent",
+    "kind": "unnumbered_claim",
+    "label": null,
+    "section": "6.4.3",
+    "printed_page": "250",
+    "pdf_page": "271",
+    "statement_latex": "In particular, it has a compact resolvent [360]; this can be shown to imply that the spectrum consists only of a countable collection of eigenvalues, i.e. that the operator has a discrete spectrum.",
+    "proof_latex": null,
+    "proof_note": "原书未给独立完整证明。",
+    "proof_discussion_latex": null,
+    "context_notation": [],
+    "issues": [
+      {
+        "code": "ERRATUM?",
+        "detail": "移位图映射为(x,y)↦x−y，逆映射再投影为(1−L)⁻¹，实部/虚部复化对应复L²预解式。周期紧域上紧性合理；原段在未明确紧配置域及闭算子域前泛称C₀²算子具有紧预解式，范围需签核。"
+      }
+    ],
+    "lean_decl": "MD.Ch06.brownianCompactResolvent",
+    "reusable_proofs": [
+      "MolecularDynamics.textbookBrownianGibbsComplexResolvent_isCompact"
+    ],
+    "extra_assumptions": [
+      "[EXTRA]实际Gibbs复L²闭实现的(1−L)⁻¹；全部离散谱子结论另条保留，未从本条自动声称原C₀²域自伴。"
+    ],
+    "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
+    "review_status": "NEEDS_HUMAN",
+    "repair_log": [
+      {
+        "review": "R7",
+        "detail": "仅在审校输出中修正转录/元数据并记录问题；未改工程或原任务，原书数学疑误未静默修正。"
+      }
+    ],
+    "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
+  },
+  "issues": [
+    {
+      "code": "ERRATUM?",
+      "detail": "移位图映射为(x,y)↦x−y，逆映射再投影为(1−L)⁻¹，实部/虚部复化对应复L²预解式。周期紧域上紧性合理；原段在未明确紧配置域及闭算子域前泛称C₀²算子具有紧预解式，范围需签核。"
+    }
+  ],
+  "evidence": [
+    {
+      "stage": "A",
+      "location": "R7_PAGES.pdf 附件第12页；原PDF页271，印刷页250",
+      "detail": "逐条比对对应原页文字与公式；重复页另按条目映射核对。普通换行/数学排版转LaTeX不作为语义错误；下列转录差异单列。"
+    },
+    {
+      "stage": "C",
+      "detail": "移位图映射为(x,y)↦x−y，逆映射再投影为(1−L)⁻¹，实部/虚部复化对应复L²预解式。周期紧域上紧性合理；原段在未明确紧配置域及闭算子域前泛称C₀²算子具有紧预解式，范围需签核。",
+      "checked_signature": "theorem brownianCompactResolvent {Nc : ℕ} (m : Fin Nc → ℝ) (hm : ∀ i, 0 < m i)\n    (U : (Fin Nc → ℝ) → ℝ) (hU : ContDiff ℝ ∞ U)\n    (hPU : textbookUnitPeriodicPotential U) (β : ℝ) (hβ : 0 < β) :\n    IsCompactOperator (textbookBrownianGibbsComplexResolvent m hm U hU hPU β hβ)\n",
+      "extra_assumptions_review": [
+        "[EXTRA]实际Gibbs复L²闭实现的(1−L)⁻¹；全部离散谱子结论另条保留，未从本条自动声称原C₀²域自伴。"
+      ],
+      "scope": "只读对象/域/量词/前提/全部结论核对；不检查证明，不因sorry判FAIL；依赖仅采用任务文件摘录及附录D1–D54。"
+    },
+    {
+      "stage": "C",
+      "detail": "反例或疑误依据：在Q=ℝ、U=0时，拉普拉斯的(1−Δ)⁻¹不紧：平移的固定局部函数序列无强收敛子列。"
+    }
+  ]
+}
+
+### MD-6.4.3-Theorem61TimeAveragePrinted 272
+{
+  "lean_decl": "MD.Ch06.theorem61TimeAveragePrinted",
+  "verdict": "NEEDS_HUMAN",
+  "explanation": "按Printed规则核查：任意点初值、K,α先于f与AE样本、全部t>0的轨道时间积分，确为原末句时间平均读法的明确化。AE资格是额外选择；原文本身与前句分布平均冲突且该指数路径界一般错误。",
+  "counterexample": "取一维圆周U=0、标准Brownian及非恒定余弦检验。若所有t的时间积分误差≤Ct exp(−αt)，则积分趋0；任意固定长度的后期区间积分也须趋0，但混合平稳极限中该区间积分具有非退化分布，矛盾。",
+  "suggested_fix": "保留字面版并判人工；修正版改演化分布平均，轨道平均另给适当概率/渐近结论。"
+}
+{
+  "status": "NEEDS_HUMAN",
+  "issue_codes": [
+    "SOURCE_NOTATION",
+    "ERRATUM?"
+  ],
+  "corrected_json": {
+    "source_id": "MD-6.4.3-Theorem61TimeAveragePrinted",
+    "kind": "theorem",
+    "label": "Theorem 6.1(3) printed time average",
+    "section": "6.4.3",
+    "printed_page": "251",
+    "pdf_page": "272",
+    "statement_latex": "Theorem 6.1 Define the generator of Brownian dynamics by\n\\[\\mathcal Lf\\stackrel{\\rm def}=-M^{-1}\\nabla U^T\\nabla f+\\beta^{-1}\\Delta_Mf.\\]\nSuppose that $U$ is smooth with periodic boundary conditions $\\mathcal Q=\\mathbb T^{N_c}$ ($\\mathbb T^{N_c}$ an $N_c$-dimensional torus). Then, with respect to the space $C_0^2(\\mu_\\beta)$ with inner product $\\langle f,g\\rangle_\\beta$ as defined above, we have:\n1. $\\mathcal L$ is self-adjoint, negative definite, with spectrum consisting of discrete eigenvalues on the half line $(-\\infty,0]$.\n2. $\\mathcal L$ has a spectral gap, meaning that, with exception of the zero eigenvalue, the remainder of the spectrum satisfies $\\sigma(\\mathcal L)\\subset(-\\infty,-\\alpha]$ for some $\\alpha>0$.\n3. averages with respect to the evolving, time-dependent distribution converge exponentially rapidly to averages with respect to the invariant distribution, and, for any smooth, compactly supported test function $\\varphi$, we have\n\\[|\\bar\\varphi(t)-\\operatorname{Av}_\\beta(\\varphi)|\\le K\\|\\varphi\\|_\\beta e^{-\\alpha t};\\]\nfor some positive $K$ and $\\alpha$, where recall $\\bar\\varphi(t)$ denotes the time average of $\\varphi$ defined in (5.6).",
+    "proof_latex": null,
+    "proof_note": "原书未给独立完整证明。",
+    "proof_discussion_latex": null,
+    "context_notation": [],
+    "issues": [
+      {
+        "code": "ERRATUM?",
+        "detail": "保留原5.6轨道时间平均读法；通常随机时间平均并无原指称指数路径误差界。原文未说明随机量的概率资格，不能改成分布平均后冒称原结论已证。"
+      },
+      {
+        "code": "SOURCE_NOTATION",
+        "detail": "定理6.1原页空间写C₀²(μβ)，JSON误作C₀²(ρβ)。"
+      },
+      {
+        "code": "ERRATUM?",
+        "detail": "按Printed规则核查：任意点初值、K,α先于f与AE样本、全部t>0的轨道时间积分，确为原末句时间平均读法的明确化。AE资格是额外选择；原文本身与前句分布平均冲突且该指数路径界一般错误。"
+      }
+    ],
+    "lean_decl": "MD.Ch06.theorem61TimeAveragePrinted",
+    "reusable_proofs": [],
+    "extra_assumptions": [
+      "[EXTRA]实际Brownian全时torus过程、任意点初值、AE路径资格和t>0明确；原C∞紧支检验在紧torus周期表示。"
+    ],
+    "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
+    "review_status": "NEEDS_HUMAN",
+    "repair_log": [
+      {
+        "date": "2026-10-17",
+        "action": "directive22_printed_corrected_pair",
+        "change": "选择演化分布平均，限定L²初始相对密度；轨道遍历极限应另行陈述，不赋予指数逐路径率。",
+        "corrected_decl": "MD.Ch06.theorem61TimeAveragePrinted_corrected",
+        "website": "未提交；待网站审计"
+      },
+      {
+        "review": "R7",
+        "detail": "仅在审校输出中修正转录/元数据并记录问题；未改工程或原任务，原书数学疑误未静默修正。"
+      }
+    ],
+    "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
+  },
+  "issues": [
+    {
+      "code": "SOURCE_NOTATION",
+      "detail": "定理6.1原页空间写C₀²(μβ)，JSON误作C₀²(ρβ)。"
+    },
+    {
+      "code": "ERRATUM?",
+      "detail": "按Printed规则核查：任意点初值、K,α先于f与AE样本、全部t>0的轨道时间积分，确为原末句时间平均读法的明确化。AE资格是额外选择；原文本身与前句分布平均冲突且该指数路径界一般错误。"
+    }
+  ],
+  "evidence": [
+    {
+      "stage": "A",
+      "location": "R7_PAGES.pdf 附件第17页；原PDF页272，印刷页251",
+      "detail": "逐条比对对应原页文字与公式；重复页另按条目映射核对。普通换行/数学排版转LaTeX不作为语义错误；下列转录差异单列。"
+    },
+    {
+      "stage": "C",
+      "detail": "按Printed规则核查：任意点初值、K,α先于f与AE样本、全部t>0的轨道时间积分，确为原末句时间平均读法的明确化。AE资格是额外选择；原文本身与前句分布平均冲突且该指数路径界一般错误。",
+      "checked_signature": "theorem theorem61TimeAveragePrinted {Nc : ℕ} (m : Fin Nc → ℝ) (hm : ∀ i, 0 < m i)\n    (U : (Fin Nc → ℝ) → ℝ) (hU : ContDiff ℝ ∞ U)\n    (hPU : textbookUnitPeriodicPotential U) (β : ℝ) (hβ : 0 < β) {Ω : Type*} [MeasurableSpace Ω]\n    (B : ℝ≥0 → Ω → (Fin Nc → ℝ)) (P : Measure Ω) (hB : textbookIsWienerVector B P) :\n  ∀ x : UnitAddTorus (Fin Nc), ∃ K α : ℝ, 0 < K ∧ 0 < α ∧\n    ∀ f : textbookPeriodicSmoothSpace Nc, ∀ᵐ sample ∂P, ∀ t : ℝ, 0 < t →\n      |t⁻¹*(∫ s in (0 : ℝ)..t,\n          textbookConfigurationTorusObservable f\n            (textbookBrownianTorusGlobalRandomConfiguration m hm U hU hPU β hβ x B s sample)) -\n        (∫ Q, textbookConfigurationTorusObservable f Q ∂textbookConfigurationTorusGibbsMeasure U β)| ≤\n          K*‖textbookPeriodicSmoothEmbedding U hU hPU β f‖*Real.exp (-α*t)\n",
+      "extra_assumptions_review": [
+        "[EXTRA]实际Brownian全时torus过程、任意点初值、AE路径资格和t>0明确；原C∞紧支检验在紧torus周期表示。"
+      ],
+      "scope": "只读对象/域/量词/前提/全部结论核对；不检查证明，不因sorry判FAIL；依赖仅采用任务文件摘录及附录D1–D54。"
+    },
+    {
+      "stage": "C",
+      "detail": "反例或疑误依据：取一维圆周U=0、标准Brownian及非恒定余弦检验。若所有t的时间积分误差≤Ct exp(−αt)，则积分趋0；任意固定长度的后期区间积分也须趋0，但混合平稳极限中该区间积分具有非退化分布，矛盾。"
+    }
+  ]
+}
+
+### MD-6.4.3-BrownianNegativeDefinitePrinted 271
+{
+  "lean_decl": "MD.Ch06.brownianNegativeDefinitePrinted",
+  "verdict": "NEEDS_HUMAN",
+  "explanation": "Printed严格负定版准确编码任意非零周期光滑f的二次型<0；虽为假，按原文字面版规则不以不忠实判FAIL。已有[ERRATUM?]正确。",
+  "counterexample": "任意维数取U=0、m≡1、β=1、f≡1；基本域测度1，f非零而Lf=0，结论0<0为假。",
+  "suggested_fix": "修正版改≤0，或在零均值非零子空间给严格不等式。"
+}
+{
+  "status": "NEEDS_HUMAN",
+  "issue_codes": [
+    "ERRATUM?"
+  ],
+  "corrected_json": {
+    "source_id": "MD-6.4.3-BrownianNegativeDefinitePrinted",
+    "kind": "unnumbered_claim",
+    "label": null,
+    "section": "6.4.3",
+    "printed_page": "250",
+    "pdf_page": "271",
+    "statement_latex": "so that $\\langle f,\\mathcal Lf\\rangle\\le0$ so the operator is negative definite and can only have non-positive eigenvalues.",
+    "proof_latex": null,
+    "proof_note": "原书未给独立完整证明。",
+    "proof_discussion_latex": null,
+    "context_notation": [],
+    "issues": [
+      {
+        "code": "ERRATUM?",
+        "detail": "常数非零函数给零二次型，严格负定字面不成立；原非正谱正确子结论独立保留。"
+      },
+      {
+        "code": "ERRATUM?",
+        "detail": "Printed严格负定版准确编码任意非零周期光滑f的二次型<0；虽为假，按原文字面版规则不以不忠实判FAIL。已有[ERRATUM?]正确。"
+      }
+    ],
+    "lean_decl": "MD.Ch06.brownianNegativeDefinitePrinted",
+    "reusable_proofs": [],
+    "extra_assumptions": [
+      "[EXTRA]明确严格负定含全部非零周期光滑L²函数的读法。"
+    ],
+    "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
+    "review_status": "NEEDS_HUMAN",
+    "repair_log": [
+      {
+        "date": "2026-10-17",
+        "action": "directive22_printed_corrected_pair",
+        "change": "将严格小于0改为小于等于0；零特征值与常数核保留。",
+        "corrected_decl": "MD.Ch06.brownianNegativeDefinitePrinted_corrected",
+        "website": "未提交；待网站审计"
+      },
+      {
+        "review": "R7",
+        "detail": "仅在审校输出中修正转录/元数据并记录问题；未改工程或原任务，原书数学疑误未静默修正。"
+      }
+    ],
+    "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
+  },
+  "issues": [
+    {
+      "code": "ERRATUM?",
+      "detail": "Printed严格负定版准确编码任意非零周期光滑f的二次型<0；虽为假，按原文字面版规则不以不忠实判FAIL。已有[ERRATUM?]正确。"
+    }
+  ],
+  "evidence": [
+    {
+      "stage": "A",
+      "location": "R7_PAGES.pdf 附件第19页；原PDF页271，印刷页250",
+      "detail": "逐条比对对应原页文字与公式；重复页另按条目映射核对。普通换行/数学排版转LaTeX不作为语义错误；下列转录差异单列。"
+    },
+    {
+      "stage": "C",
+      "detail": "Printed严格负定版准确编码任意非零周期光滑f的二次型<0；虽为假，按原文字面版规则不以不忠实判FAIL。已有[ERRATUM?]正确。",
+      "checked_signature": "theorem brownianNegativeDefinitePrinted {Nc : ℕ} (m : Fin Nc → ℝ) (hm : ∀ i, 0 < m i)\n    (U : (Fin Nc → ℝ) → ℝ) (hU : ContDiff ℝ ∞ U)\n    (hPU : textbookUnitPeriodicPotential U) (β : ℝ) (hβ : 0 < β) :\n  ∀ f : (Fin Nc → ℝ) → ℝ, ContDiff ℝ ∞ f → textbookUnitPeriodicPotential f →\n    (¬ f =ᵐ[volume.restrict (textbookConfigurationCube Nc)] 0) →\n      brownianWeightedInner U β f (textbookBrownianGenerator m U β f) < 0\n",
+      "extra_assumptions_review": [
+        "[EXTRA]明确严格负定含全部非零周期光滑L²函数的读法。"
+      ],
+      "scope": "只读对象/域/量词/前提/全部结论核对；不检查证明，不因sorry判FAIL；依赖仅采用任务文件摘录及附录D1–D54。"
+    },
+    {
+      "stage": "C",
+      "detail": "反例或疑误依据：任意维数取U=0、m≡1、β=1、f≡1；基本域测度1，f非零而Lf=0，结论0<0为假。"
+    }
+  ]
+}
+
+### MD-6.4.4-Assumption1Printed 273
+{
+  "lean_decl": "MD.Ch06.assumption1Printed",
+  "verdict": "NEEDS_HUMAN",
+  "explanation": "Printed保留紧C、同一内点y、δ后选统一t、全部x和可测A⊆C及联合连续时间Ici 0；与原[0,∞)一致。ν是披露的参考测度推广，但Kernel本身不含Markov/半群资格；此定义只编码局部条件。原零时连续性疑误保留。",
+  "counterexample": "正维热核在对角随t↓0发散，不能在C×C×[0,∞)上取有限连续延拓。",
+  "suggested_fix": "保留Printed；改正定义仅将连续时间域改为Ioi 0，不声称原条件自动成立。"
+}
+{
+  "status": "NEEDS_HUMAN",
+  "issue_codes": [
+    "ERRATUM?"
+  ],
+  "corrected_json": {
+    "source_id": "MD-6.4.4-Assumption1Printed",
+    "kind": "definition",
+    "label": "Assumption 1 printed",
+    "section": "6.4.4",
+    "printed_page": "252",
+    "pdf_page": "273",
+    "statement_latex": "Assumption 1 The Markov process generated by the SDE (6.43) satisfies, for some fixed compact set $C\\in\\mathcal B(D)$, the conditions:\n(i) For some $y\\in\\operatorname{int}(C)$, we have that for any $\\delta>0$ there is a $t_0>0$ such that\n\\[\\operatorname{Pr}(X(t_0)\\in B_\\delta(y)\\mid X(0)=X_0)>0,\\quad\\forall X_0\\in C.\\]\n(ii) For $t>0$, the transition kernel possesses a density $\\widehat\\rho(X,z,t)$ such that\n\\[\\operatorname{Pr}(X(t)\\in A\\mid X(0)=X_0)=\\int_A\\widehat\\rho(X_0,z,t)dz,\\quad\\forall X_0\\in C,\\ A\\in\\mathcal B(D)\\cap\\mathcal B(C);\\]\nand $\\widehat\\rho(X,z,t)$ is jointly continuous in $C\\times C\\times[0,\\infty)$.",
+    "proof_latex": null,
+    "proof_note": "原书未给独立完整证明。",
+    "proof_discussion_latex": null,
+    "context_notation": [],
+    "issues": [
+      {
+        "code": "ERRATUM?",
+        "detail": "正维连续状态中t=0初始Dirac通常不具有可连续延拓的Lebesgue转移密度；字面[0,∞)与正时刻密度不能混同。"
+      },
+      {
+        "code": "ERRATUM?",
+        "detail": "Printed保留紧C、同一内点y、δ后选统一t、全部x和可测A⊆C及联合连续时间Ici 0；与原[0,∞)一致。ν是披露的参考测度推广，但Kernel本身不含Markov/半群资格；此定义只编码局部条件。原零时连续性疑误保留。"
+      }
+    ],
+    "lean_decl": "MD.Ch06.assumption1Printed",
+    "reusable_proofs": [],
+    "extra_assumptions": [
+      "[EXTRA]真实Borel Markov kernel与局部参考测度；完整同一内点可达、全部初值与可测子集及联合连续资格。"
+    ],
+    "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
+    "review_status": "NEEDS_HUMAN",
+    "repair_log": [
+      {
+        "date": "2026-10-17",
+        "action": "directive22_printed_corrected_pair",
+        "change": "联合连续性的时间域由[0,∞)改为(0,∞)。",
+        "corrected_decl": "MD.Ch06.assumption1Printed_corrected",
+        "website": "未提交；待网站审计"
+      },
+      {
+        "review": "R7",
+        "detail": "仅在审校输出中修正转录/元数据并记录问题；未改工程或原任务，原书数学疑误未静默修正。"
+      }
+    ],
+    "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
+  },
+  "issues": [
+    {
+      "code": "ERRATUM?",
+      "detail": "Printed保留紧C、同一内点y、δ后选统一t、全部x和可测A⊆C及联合连续时间Ici 0；与原[0,∞)一致。ν是披露的参考测度推广，但Kernel本身不含Markov/半群资格；此定义只编码局部条件。原零时连续性疑误保留。"
+    }
+  ],
+  "evidence": [
+    {
+      "stage": "A",
+      "location": "R7_PAGES.pdf 附件第20页；原PDF页273，印刷页252",
+      "detail": "逐条比对对应原页文字与公式；重复页另按条目映射核对。普通换行/数学排版转LaTeX不作为语义错误；下列转录差异单列。"
+    },
+    {
+      "stage": "C",
+      "detail": "Printed保留紧C、同一内点y、δ后选统一t、全部x和可测A⊆C及联合连续时间Ici 0；与原[0,∞)一致。ν是披露的参考测度推广，但Kernel本身不含Markov/半群资格；此定义只编码局部条件。原零时连续性疑误保留。",
+      "checked_signature": "def assumption1Printed {D : Type*} [MetricSpace D] [MeasurableSpace D] [BorelSpace D]\n    (ν : Measure D) (K : ℝ≥0 → Kernel D D) (C : Set D) : Prop :=\n  IsCompact C ∧ (∃ y ∈ interior C, ∀ δ : ℝ, 0 < δ → ∃ t : ℝ≥0, 0 < t ∧\n    ∀ x ∈ C, 0 < K t x (Metric.ball y δ)) ∧\n  ∃ ρ : D → D → ℝ → ℝ, (∀ x z t, 0 ≤ ρ x z t) ∧\n    (∀ t : ℝ≥0, 0 < t → ∀ x ∈ C, ∀ A : Set D, MeasurableSet A → A ⊆ C →\n      K t x A = ∫⁻ z in A, ENNReal.ofReal (ρ x z t) ∂ν) ∧\n    ContinuousOn (fun w : (D×D)×ℝ ↦ ρ w.1.1 w.1.2 w.2) ((C×ˢ C)×ˢ Ici 0)\n",
+      "extra_assumptions_review": [
+        "[EXTRA]真实Borel Markov kernel与局部参考测度；完整同一内点可达、全部初值与可测子集及联合连续资格。"
+      ],
+      "scope": "只读对象/域/量词/前提/全部结论核对；不检查证明，不因sorry判FAIL；依赖仅采用任务文件摘录及附录D1–D54。"
+    },
+    {
+      "stage": "C",
+      "detail": "反例或疑误依据：正维热核在对角随t↓0发散，不能在C×C×[0,∞)上取有限连续延拓。"
+    }
+  ]
+}
+
+### MD-6.4.4-MinorizationPrinted 273
+{
+  "lean_decl": "MD.Ch06.minorizationPrinted",
+  "verdict": "NEEDS_HUMAN",
+  "explanation": "Printed将tantamount忠实读为↔，右侧给一个正时刻、正ENNReal下界系数和同一概率μ，对全部x∈C作完整测度序下界。左侧仍为原零时连续版；抽象签名没有SDE或Markov半群假设，等价一般错误。",
+  "counterexample": "S=ℝ，C=[0,1]，ν为Lebesgue，K_t(x)=δ₀对所有t。右侧取ε=1,μ=δ₀成立；左侧局部密度不存在，且点0不在int C。故反向不成立。",
+  "suggested_fix": "保留字面等价并判人工；充分方向需补半群和适当正则/可达条件，反向不能无条件恢复。"
+}
+{
+  "status": "NEEDS_HUMAN",
+  "issue_codes": [
+    "ERRATUM?"
+  ],
+  "corrected_json": {
+    "source_id": "MD-6.4.4-MinorizationPrinted",
+    "kind": "unnumbered_claim",
+    "label": null,
+    "section": "6.4.4",
+    "printed_page": "252",
+    "pdf_page": "273",
+    "statement_latex": "It can be shown that this assumption is tantamount to the SDE satisfying a minorization condition. This condition is a particular case of the general concept of small sets, found in Markov literature for proving ergodicity.",
+    "proof_latex": null,
+    "proof_note": "原书未给独立完整证明。",
+    "proof_discussion_latex": null,
+    "context_notation": [],
+    "issues": [
+      {
+        "code": "ERRATUM?",
+        "detail": "原tantamount按双向等价读取；一般小集下界并不自动产生原要求的联合连续密度，且原时间0连续性需勘误。不能只证单向后冒称原等价已证。"
+      },
+      {
+        "code": "ERRATUM?",
+        "detail": "Printed将tantamount忠实读为↔，右侧给一个正时刻、正ENNReal下界系数和同一概率μ，对全部x∈C作完整测度序下界。左侧仍为原零时连续版；抽象签名没有SDE或Markov半群假设，等价一般错误。"
+      }
+    ],
+    "lean_decl": "MD.Ch06.minorizationPrinted",
+    "reusable_proofs": [],
+    "extra_assumptions": [],
+    "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
+    "review_status": "NEEDS_HUMAN",
+    "repair_log": [
+      {
+        "date": "2026-10-17",
+        "action": "directive22_printed_corrected_pair",
+        "change": "只保留在明确正时刻密度、可达性条件下到小集下界的充分方向。",
+        "corrected_decl": "MD.Ch06.minorizationPrinted_corrected",
+        "website": "未提交；待网站审计"
+      },
+      {
+        "review": "R7",
+        "detail": "仅在审校输出中修正转录/元数据并记录问题；未改工程或原任务，原书数学疑误未静默修正。"
+      }
+    ],
+    "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
+  },
+  "issues": [
+    {
+      "code": "ERRATUM?",
+      "detail": "Printed将tantamount忠实读为↔，右侧给一个正时刻、正ENNReal下界系数和同一概率μ，对全部x∈C作完整测度序下界。左侧仍为原零时连续版；抽象签名没有SDE或Markov半群假设，等价一般错误。"
+    }
+  ],
+  "evidence": [
+    {
+      "stage": "A",
+      "location": "R7_PAGES.pdf 附件第23页；原PDF页273，印刷页252",
+      "detail": "逐条比对对应原页文字与公式；重复页另按条目映射核对。普通换行/数学排版转LaTeX不作为语义错误；下列转录差异单列。"
+    },
+    {
+      "stage": "C",
+      "detail": "Printed将tantamount忠实读为↔，右侧给一个正时刻、正ENNReal下界系数和同一概率μ，对全部x∈C作完整测度序下界。左侧仍为原零时连续版；抽象签名没有SDE或Markov半群假设，等价一般错误。",
+      "checked_signature": "theorem minorizationPrinted : ∀ {S : Type*} [MetricSpace S] [MeasurableSpace S] [BorelSpace S]\n    (ν : Measure S) (K : ℝ≥0 → Kernel S S) (C : Set S),\n  MolecularDynamics.Chapter06Review.assumption1Printed ν K C ↔\n    ∃ t : ℝ≥0, 0 < t ∧ ∃ ε : ℝ≥0∞, 0 < ε ∧ ∃ μ : Measure S,\n      IsProbabilityMeasure μ ∧ ∀ x ∈ C, ε • μ ≤ K t x\n",
+      "extra_assumptions_review": [],
+      "scope": "只读对象/域/量词/前提/全部结论核对；不检查证明，不因sorry判FAIL；依赖仅采用任务文件摘录及附录D1–D54。"
+    },
+    {
+      "stage": "C",
+      "detail": "反例或疑误依据：S=ℝ，C=[0,1]，ν为Lebesgue，K_t(x)=δ₀对所有t。右侧取ε=1,μ=δ₀成立；左侧局部密度不存在，且点0不在int C。故反向不成立。"
+    }
+  ]
+}
+
+### MD-6.4.4-Theorem62 273
+{
+  "lean_decl": "MD.Ch06.theorem62",
+  "verdict": "NEEDS_HUMAN",
+  "explanation": "阈值在所有状态空间/过程前选择且仅依α,δ；全体测度不变概率唯一性、密度、弱生成元检验和统一加权指数界均写出。但kernelGenerator仅为derivWithin总定义，假设没有保证φ或测试函数的右导数真实存在，也没有C₀半群/扩展生成元域及交换积分极限条件；空间Feller不补这些时间域条件。原Assumption1已被正时修正。不能据此签核完整Harris推广定理。",
+  "counterexample": null,
+  "suggested_fix": "补φ的真实（扩展）生成元域和Dynkin/半群漂移条件，补弱平稳方程测试域的可交换条件，并签核从局部正时密度到small set的桥接。"
+}
+{
+  "status": "NEEDS_HUMAN",
+  "issue_codes": [
+    "SOURCE_NOTATION",
+    "ERRATUM?"
+  ],
+  "corrected_json": {
+    "source_id": "MD-6.4.4-Theorem62",
+    "kind": "theorem",
+    "label": "Theorem 6.2",
+    "section": "6.4.4",
+    "printed_page": "252",
+    "pdf_page": "273",
+    "statement_latex": "Theorem 6.2 (Geometric Ergodicity) Let the solution to (6.43) be denoted $X(t)$. If Assumption 1 and Assumption 2 are satisfied for\n\\[C=\\{X\\in D\\mid\\varphi(X)\\le K_{\\alpha,\\delta}\\},\\]\nwhere $K_{\\alpha,\\delta}$ is a particular positive value depending on $\\alpha$ and $\\delta$, then\n(i) there exists a unique invariant measure $\\rho_*$, with $\\mathcal L^*\\rho_*=0$, and\n(ii) there exist positive constants $k$ and $\\lambda$ such that for all suitable functions $f$ with $|f|\\le\\varphi$,\n\\[|e^{t\\mathcal L}f(X_0)-\\operatorname{Av}(f)|\\le ke^{-\\lambda t}\\varphi(X_0);\\tag{6.48}\\]\nwhere $\\operatorname{Av}(f)=\\int_D f(z)\\rho_*(z)dz$ is the spatial average.",
+    "proof_latex": null,
+    "proof_note": "原书未给独立完整证明。",
+    "proof_discussion_latex": null,
+    "context_notation": [],
+    "issues": [
+      {
+        "code": "ERRATUM?",
+        "detail": "原未指定阈值、generator域或非爆炸/Markov域识别；原Assumption1时间0勘误和全状态密度资格需要明确签核。"
+      },
+      {
+        "code": "SOURCE_NOTATION",
+        "detail": "定理6.2原页不变密度/测度记号均为ρ_*，JSON漏下标*。"
+      },
+      {
+        "code": "ERRATUM?",
+        "detail": "阈值在所有状态空间/过程前选择且仅依α,δ；全体测度不变概率唯一性、密度、弱生成元检验和统一加权指数界均写出。但kernelGenerator仅为derivWithin总定义，假设没有保证φ或测试函数的右导数真实存在，也没有C₀半群/扩展生成元域及交换积分极限条件；空间Feller不补这些时间域条件。原Assumption1已被正时修正。不能据此签核完整Harris推广定理。"
+      }
+    ],
+    "lean_decl": "MD.Ch06.theorem62",
+    "reusable_proofs": [],
+    "extra_assumptions": [
+      "[EXTRA]阈值函数先于全部过程/Lyapunov量词选择，不能临时选使Assumption1假而空真；真实Markov semigroup/Feller、Polish局部紧状态及σ有限参考测度。全状态正时刻密度资格用于完整不变概率密度结论；L*ρ=0按真实generator检验的弱意义，不是先假定不变性。全部函数/初值/时刻统一加权指数界与唯一性均保留。"
+    ],
+    "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
+    "review_status": "NEEDS_HUMAN",
+    "repair_log": [
+      {
+        "date": "2026-10-17",
+        "action": "directive22_printed_corrected_pair",
+        "change": "明示实际Markov/Feller演化、正确正时刻密度、generator联系和先于过程选择的阈值；整条仍未证明。",
+        "corrected_decl": "MD.Ch06.theorem62_corrected",
+        "website": "未提交；待网站审计"
+      },
+      {
+        "review": "R7",
+        "detail": "仅在审校输出中修正转录/元数据并记录问题；未改工程或原任务，原书数学疑误未静默修正。"
+      }
+    ],
+    "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
+  },
+  "issues": [
+    {
+      "code": "SOURCE_NOTATION",
+      "detail": "定理6.2原页不变密度/测度记号均为ρ_*，JSON漏下标*。"
+    },
+    {
+      "code": "ERRATUM?",
+      "detail": "阈值在所有状态空间/过程前选择且仅依α,δ；全体测度不变概率唯一性、密度、弱生成元检验和统一加权指数界均写出。但kernelGenerator仅为derivWithin总定义，假设没有保证φ或测试函数的右导数真实存在，也没有C₀半群/扩展生成元域及交换积分极限条件；空间Feller不补这些时间域条件。原Assumption1已被正时修正。不能据此签核完整Harris推广定理。"
+    }
+  ],
+  "evidence": [
+    {
+      "stage": "A",
+      "location": "R7_PAGES.pdf 附件第25页；原PDF页273，印刷页252",
+      "detail": "逐条比对对应原页文字与公式；重复页另按条目映射核对。普通换行/数学排版转LaTeX不作为语义错误；下列转录差异单列。"
+    },
+    {
+      "stage": "C",
+      "detail": "阈值在所有状态空间/过程前选择且仅依α,δ；全体测度不变概率唯一性、密度、弱生成元检验和统一加权指数界均写出。但kernelGenerator仅为derivWithin总定义，假设没有保证φ或测试函数的右导数真实存在，也没有C₀半群/扩展生成元域及交换积分极限条件；空间Feller不补这些时间域条件。原Assumption1已被正时修正。不能据此签核完整Harris推广定理。",
+      "checked_signature": "theorem theorem62 :\n  ∃ threshold : ℝ → ℝ → ℝ,\n    (∀ α δ : ℝ, 0 < α → 0 < δ → 0 < threshold α δ) ∧\n  ∀ {D : Type*} [MetricSpace D] [MeasurableSpace D] [BorelSpace D] [CompleteSpace D] [SecondCountableTopology D] [LocallyCompactSpace D]\n    (ν : Measure D) [SigmaFinite ν] (K : ℝ≥0 → Kernel D D), MolecularDynamics.Chapter06Review.markovSemigroup K →\n  (∀ f : D → ℝ, Continuous f → Bornology.IsBounded (Set.range f) → ∀ t,\n    Continuous (MolecularDynamics.Chapter06Review.kernelAverage K f t)) →\n  (∀ t : ℝ≥0, 0 < t → ∀ x : D, ∃ density : D → ℝ,\n    Measurable density ∧ (∀ z, 0 ≤ density z) ∧\n      K t x = ν.withDensity (fun z ↦ ENNReal.ofReal (density z))) →\n  ∀ (φ : D → ℝ) (α δ : ℝ), MolecularDynamics.Chapter06Review.assumption2 (MolecularDynamics.Chapter06Review.kernelGenerator K) φ α δ →\n    MolecularDynamics.Chapter06Review.assumption1 ν K {x | φ x ≤ threshold α δ} →\n      ∃ μ : Measure D, IsProbabilityMeasure μ ∧ MolecularDynamics.Chapter06Review.invariantKernel K μ ∧\n      (∀ μ' : Measure D, IsProbabilityMeasure μ' → MolecularDynamics.Chapter06Review.invariantKernel K μ' → μ'=μ) ∧\n      (∃ ρ : D → ℝ, Measurable ρ ∧ (∀ x, 0 ≤ ρ x) ∧\n        μ=ν.withDensity (fun x ↦ ENNReal.ofReal (ρ x))) ∧\n      (∀ f : D → ℝ, Continuous f → Bornology.IsBounded (Set.range f) →\n        Integrable (MolecularDynamics.Chapter06Review.kernelGenerator K f) μ → (∫ x, MolecularDynamics.Chapter06Review.kernelGenerator K f x ∂μ)=0) ∧\n      ∃ κ lambdaParam : ℝ, 0 < κ ∧ 0 < lambdaParam ∧ ∀ f : D → ℝ, Measurable f → (∀ x, |f x| ≤ φ x) →\n        Integrable f μ ∧ ∀ (t : ℝ≥0) (x : D),\n          |MolecularDynamics.Chapter06Review.kernelAverage K f t x-(∫ z, f z ∂μ)| ≤ κ*Real.exp (-lambdaParam*(t : ℝ))*φ x\n",
+      "extra_assumptions_review": [
+        "[EXTRA]阈值函数先于全部过程/Lyapunov量词选择，不能临时选使Assumption1假而空真；真实Markov semigroup/Feller、Polish局部紧状态及σ有限参考测度。全状态正时刻密度资格用于完整不变概率密度结论；L*ρ=0按真实generator检验的弱意义，不是先假定不变性。全部函数/初值/时刻统一加权指数界与唯一性均保留。"
+      ],
+      "scope": "只读对象/域/量词/前提/全部结论核对；不检查证明，不因sorry判FAIL；依赖仅采用任务文件摘录及附录D1–D54。"
+    }
+  ]
+}
+
+### MD-6.4.4-PeriodicPotentialBound 274
+{
+  "lean_decl": "MD.Ch06.periodicPotentialBound",
+  "verdict": "NEEDS_HUMAN",
+  "explanation": "连续周期势全域有界的签名正确，M≥0的范数界给−M≤U≤M。它未包含原1<Umin；该要求由下一条平移解释而非本条证明。原文同时要求周期与配置无穷远围束，本条[ERRATUM?]正确保留。",
+  "counterexample": "U≡0满足连续周期却没有1<Umin≤U；正维周期势沿整数平移保持常值，不能趋∞。",
+  "suggested_fix": "原文保留；修正版分为全域有界与可平移归一两条，删除周期lift的围束要求。"
+}
+{
+  "status": "NEEDS_HUMAN",
+  "issue_codes": [
+    "ERRATUM?"
+  ],
+  "corrected_json": {
+    "source_id": "MD-6.4.4-PeriodicPotentialBound",
+    "kind": "unnumbered_claim",
+    "label": null,
+    "section": "6.4.4",
+    "printed_page": "253",
+    "pdf_page": "274",
+    "statement_latex": "We also consider the potential energy to be smooth ($C^\\infty$) with $U(q)\\to\\infty$ as $|q|\\to\\infty$. As we have a smooth potential on a bounded (position) domain, we have\n\\[1<U_{\\min}\\le U(q)\\le U_{\\max}<\\infty,\\quad\\forall q\\in\\mathcal Q,\\]\nfor some constants $U_{\\min}$ and $U_{\\max}$.",
+    "proof_latex": null,
+    "proof_note": "原书未给独立完整证明。",
+    "proof_discussion_latex": null,
+    "context_notation": [],
+    "issues": [
+      {
+        "code": "ERRATUM?",
+        "detail": "非恒零维周期势在lift上不会趋∞；光滑周期本身也不推出原1<Umin。"
+      },
+      {
+        "code": "ERRATUM?",
+        "detail": "连续周期势全域有界的签名正确，M≥0的范数界给−M≤U≤M。它未包含原1<Umin；该要求由下一条平移解释而非本条证明。原文同时要求周期与配置无穷远围束，本条[ERRATUM?]正确保留。"
+      }
+    ],
+    "lean_decl": "MD.Ch06.periodicPotentialBound",
+    "reusable_proofs": [
+      "MolecularDynamics.textbookUnitPeriodicPotential_bound"
+    ],
+    "extra_assumptions": [
+      "[EXTRA]完整全域有限范数界，给上下界±M；正下界>1需实际势能平移，另条给出。原周期与q→∞围束资格冲突另留字面记录，不由本条消去。"
+    ],
+    "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
+    "review_status": "NEEDS_HUMAN",
+    "repair_log": [
+      {
+        "date": "2026-10-17",
+        "action": "directive22_printed_corrected_pair",
+        "change": "保留周期势有界结论；正下界通过加常数归一单独实现。",
+        "corrected_decl": "MD.Ch06.periodicPotentialBound_corrected",
+        "website": "未提交；待网站审计"
+      },
+      {
+        "review": "R7",
+        "detail": "仅在审校输出中修正转录/元数据并记录问题；未改工程或原任务，原书数学疑误未静默修正。"
+      }
+    ],
+    "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
+  },
+  "issues": [
+    {
+      "code": "ERRATUM?",
+      "detail": "连续周期势全域有界的签名正确，M≥0的范数界给−M≤U≤M。它未包含原1<Umin；该要求由下一条平移解释而非本条证明。原文同时要求周期与配置无穷远围束，本条[ERRATUM?]正确保留。"
+    }
+  ],
+  "evidence": [
+    {
+      "stage": "A",
+      "location": "R7_PAGES.pdf 附件第26页；原PDF页274，印刷页253",
+      "detail": "逐条比对对应原页文字与公式；重复页另按条目映射核对。普通换行/数学排版转LaTeX不作为语义错误；下列转录差异单列。"
+    },
+    {
+      "stage": "C",
+      "detail": "连续周期势全域有界的签名正确，M≥0的范数界给−M≤U≤M。它未包含原1<Umin；该要求由下一条平移解释而非本条证明。原文同时要求周期与配置无穷远围束，本条[ERRATUM?]正确保留。",
+      "checked_signature": "theorem periodicPotentialBound {Nc : ℕ}\n    (U : (Fin Nc → ℝ) → ℝ) (hU : Continuous U) (hP : textbookUnitPeriodicPotential U) :\n    ∃ M : ℝ, 0 ≤ M ∧ ∀ q, ‖U q‖ ≤ M\n",
+      "extra_assumptions_review": [
+        "[EXTRA]完整全域有限范数界，给上下界±M；正下界>1需实际势能平移，另条给出。原周期与q→∞围束资格冲突另留字面记录，不由本条消去。"
+      ],
+      "scope": "只读对象/域/量词/前提/全部结论核对；不检查证明，不因sorry判FAIL；依赖仅采用任务文件摘录及附录D1–D54。"
+    },
+    {
+      "stage": "C",
+      "detail": "反例或疑误依据：U≡0满足连续周期却没有1<Umin≤U；正维周期势沿整数平移保持常值，不能趋∞。"
+    }
+  ]
+}
+
+### MD-6.4.4-PeriodicConfiningPrinted 274
+{
+  "lean_decl": "MD.Ch06.periodicConfiningPrinted",
+  "verdict": "NEEDS_HUMAN",
+  "explanation": "Printed对正维欧氏lift同时要求C∞、整数平移周期、cocompact处趋∞，确实忠实表达原矛盾资格；hn排除零维真空情况。不应要求构造满足它的势。",
+  "counterexample": "取任意q及非零整数方向e₁；q+ke₁逃离每个紧集，周期性却给U(q+ke₁)=U(q)。",
+  "suggested_fix": "保留字面定义和勘误；torus位置域只需光滑周期，围束由H对动量给出。"
+}
+{
+  "status": "NEEDS_HUMAN",
+  "issue_codes": [
+    "ERRATUM?"
+  ],
+  "corrected_json": {
+    "source_id": "MD-6.4.4-PeriodicConfiningPrinted",
+    "kind": "definition",
+    "label": null,
+    "section": "6.4.4",
+    "printed_page": "253",
+    "pdf_page": "274",
+    "statement_latex": "The whole phase space is $D=\\mathbb T^{N_c}\\times\\mathbb R^{N_c}$. We also consider the potential energy to be smooth ($C^\\infty$) with $U(q)\\to\\infty$ as $|q|\\to\\infty$.",
+    "proof_latex": null,
+    "proof_note": "原书未给独立完整证明。",
+    "proof_discussion_latex": null,
+    "context_notation": [],
+    "issues": [
+      {
+        "code": "ERRATUM?",
+        "detail": "原周期位置域与同一势能lift的q→∞围束条件冲突；保留字面资格而非构造一个不存在的周期围束势。"
+      },
+      {
+        "code": "ERRATUM?",
+        "detail": "Printed对正维欧氏lift同时要求C∞、整数平移周期、cocompact处趋∞，确实忠实表达原矛盾资格；hn排除零维真空情况。不应要求构造满足它的势。"
+      }
+    ],
+    "lean_decl": "MD.Ch06.periodicConfiningPrinted",
+    "reusable_proofs": [],
+    "extra_assumptions": [
+      "[EXTRA]实际正维单位周期lift，cocompact表达配置无穷远；不是动量Hamiltonian的围束。"
+    ],
+    "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
+    "review_status": "NEEDS_HUMAN",
+    "repair_log": [
+      {
+        "date": "2026-10-17",
+        "action": "directive22_printed_corrected_pair",
+        "change": "围束对象改为环面×动量空间上的Hamiltonian幂；无穷远只涉及动量方向。",
+        "corrected_decl": "MD.Ch06.periodicConfiningPrinted_corrected",
+        "website": "未提交；待网站审计"
+      },
+      {
+        "review": "R7",
+        "detail": "仅在审校输出中修正转录/元数据并记录问题；未改工程或原任务，原书数学疑误未静默修正。"
+      }
+    ],
+    "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
+  },
+  "issues": [
+    {
+      "code": "ERRATUM?",
+      "detail": "Printed对正维欧氏lift同时要求C∞、整数平移周期、cocompact处趋∞，确实忠实表达原矛盾资格；hn排除零维真空情况。不应要求构造满足它的势。"
+    }
+  ],
+  "evidence": [
+    {
+      "stage": "A",
+      "location": "R7_PAGES.pdf 附件第29页；原PDF页274，印刷页253",
+      "detail": "逐条比对对应原页文字与公式；重复页另按条目映射核对。普通换行/数学排版转LaTeX不作为语义错误；下列转录差异单列。"
+    },
+    {
+      "stage": "C",
+      "detail": "Printed对正维欧氏lift同时要求C∞、整数平移周期、cocompact处趋∞，确实忠实表达原矛盾资格；hn排除零维真空情况。不应要求构造满足它的势。",
+      "checked_signature": "def periodicConfiningPrinted {n : ℕ} (_hn : 0 < n) (U : (Fin n → ℝ) → ℝ) : Prop :=\n  ContDiff ℝ ∞ U ∧ textbookUnitPeriodicPotential U ∧\n    Tendsto U (cocompact (Fin n → ℝ)) atTop\n",
+      "extra_assumptions_review": [
+        "[EXTRA]实际正维单位周期lift，cocompact表达配置无穷远；不是动量Hamiltonian的围束。"
+      ],
+      "scope": "只读对象/域/量词/前提/全部结论核对；不检查证明，不因sorry判FAIL；依赖仅采用任务文件摘录及附录D1–D54。"
+    },
+    {
+      "stage": "C",
+      "detail": "反例或疑误依据：取任意q及非零整数方向e₁；q+ke₁逃离每个紧集，周期性却给U(q+ke₁)=U(q)。"
+    }
+  ]
+}
+
+### MD-6.4.4-LaplacianBoundPrinted 274
+{
+  "lean_decl": "MD.Ch06.laplacianBoundPrinted",
+  "verdict": "NEEDS_HUMAN",
+  "explanation": "原字面上界的量词n、U≥1、l≥1、全部相点及系数l(l+n−1)忠实；原数学断言错误，按要求保留而不把原书错误算作转录失败。",
+  "counterexample": "n=1，U≡2，l=2，p=4：H=10，二阶导数52，所称上界40。",
+  "suggested_fix": "保留Printed并标ERRATUM?；修正版系数2l(l−1)+nl。"
+}
+{
+  "status": "NEEDS_HUMAN",
+  "issue_codes": [
+    "REQUIRES_HUMAN",
+    "ERRATUM?"
+  ],
+  "corrected_json": null,
+  "issues": [
+    {
+      "code": "REQUIRES_HUMAN",
+      "detail": "原字面上界的量词n、U≥1、l≥1、全部相点及系数l(l+n−1)忠实；原数学断言错误，按要求保留而不把原书错误算作转录失败。"
+    },
+    {
+      "code": "ERRATUM?",
+      "detail": "原Laplacian系数漏2。"
+    }
+  ],
+  "evidence": [
+    {
+      "attachment": "R8_PAGES.pdf",
+      "attachment_pages": [
+        1
+      ],
+      "printed_page": "253",
+      "method": "逐页PDF文本比对；同原书页复用已目视核对的原页图像，图像代表页为附件1、4、12、20、26。",
+      "finding": "已核对所引正文、数学符号、页码及选取范围；差异逐项见issues。"
+    },
+    {
+      "definition_basis": "仅R8_任务.md的实际签名及项目定义摘录（含D1–D69）；标准Mathlib按任务说明采信。",
+      "finding": "原字面上界的量词n、U≥1、l≥1、全部相点及系数l(l+n−1)忠实；原数学断言错误，按要求保留而不把原书错误算作转录失败。"
+    }
+  ]
+}
+
+### MD-6.4.4-Definition61 275
+{
+  "lean_decl": "MD.Ch06.definition61",
+  "verdict": "NEEDS_HUMAN",
+  "explanation": "definition61/Printed含全部b0及噪声，域内C∞和x∈D完整；corrected从噪声开始并反复与所有字段取括号，修正方向合理。但D38引用的项目谓词textbookIteratedBracket全文未提供，无法只据摘录核定原版究竟包含哪些迭代括号。原含漂移定义也不能一般推出抛物型密度。",
+  "counterexample": "一维b0=1、所有噪声为0：印刷张成条件成立，但确定性平移的转移律为Dirac，无Lebesgue密度。",
+  "suggested_fix": "补textbookIteratedBracket实际定义；原版保留ERRATUM?，密度用途采用已列噪声生成修正版。"
+}
+{
+  "status": "NEEDS_HUMAN",
+  "issue_codes": [
+    "REQUIRES_HUMAN",
+    "ERRATUM?"
+  ],
+  "corrected_json": null,
+  "issues": [
+    {
+      "code": "REQUIRES_HUMAN",
+      "detail": "definition61/Printed含全部b0及噪声，域内C∞和x∈D完整；corrected从噪声开始并反复与所有字段取括号，修正方向合理。但D38引用的项目谓词textbookIteratedBracket全文未提供，无法只据摘录核定原版究竟包含哪些迭代括号。原含漂移定义也不能一般推出抛物型密度。"
+    },
+    {
+      "code": "ERRATUM?",
+      "detail": "原漂移参与初始span不足以推出一般正时间密度。"
+    }
+  ],
+  "evidence": [
+    {
+      "attachment": "R8_PAGES.pdf",
+      "attachment_pages": [
+        11
+      ],
+      "printed_page": "254",
+      "method": "逐页PDF文本比对；同原书页复用已目视核对的原页图像，图像代表页为附件1、4、12、20、26。",
+      "finding": "已核对所引正文、数学符号、页码及选取范围；差异逐项见issues。"
+    },
+    {
+      "definition_basis": "仅R8_任务.md的实际签名及项目定义摘录（含D1–D69）；标准Mathlib按任务说明采信。",
+      "finding": "definition61/Printed含全部b0及噪声，域内C∞和x∈D完整；corrected从噪声开始并反复与所有字段取括号，修正方向合理。但D38引用的项目谓词textbookIteratedBracket全文未提供，无法只据摘录核定原版究竟包含哪些迭代括号。原含漂移定义也不能一般推出抛物型密度。"
+    }
+  ]
+}
+
+### MD-6.4.4-LangevinHormander 276
+{
+  "lean_decl": "MD.Ch06.langevinHormander",
+  "verdict": "NEEDS_HUMAN",
+  "explanation": "正γ、θ给非零物理噪声，实际seed包括drift/noise。但textbookIteratedBracket定义缺失，无法最终核定textbookHormanderAt语义；且签名仅为rank，不含原句Assumption 1(ii)的转移密度结论，后者虽另列14，当前条目scope需明确拆分。",
+  "counterexample": null,
+  "suggested_fix": "补迭代括号定义；本条scope限rank，密度结论由14承接，不能将含漂移的一般定义当抛物型定理。"
+}
+{
+  "status": "NEEDS_HUMAN",
+  "issue_codes": [
+    "SOURCE_PARAPHRASE",
+    "REQUIRES_HUMAN"
+  ],
+  "corrected_json": {
+    "source_id": "MD-6.4.4-LangevinHormander",
+    "kind": "unnumbered_claim",
+    "label": null,
+    "section": "6.4.4",
+    "printed_page": "255",
+    "pdf_page": "276",
+    "statement_latex": "we have verified Hörmander’s condition. Thus Assumption 1(ii) holds in the case of Langevin dynamics.",
+    "proof_latex": null,
+    "proof_note": "原书未给独立完整证明。",
+    "proof_discussion_latex": null,
+    "context_notation": [],
+    "issues": [],
+    "lean_decl": "MD.Ch06.langevinHormander",
+    "reusable_proofs": [
+      "MolecularDynamics.textbookLangevin_hormander_physicalNoise"
+    ],
+    "extra_assumptions": [
+      "[EXTRA]完整物理σ=√(2γθ)、γ/θ>0、C∞ U的实际噪声及括号span；本桥只证rank，转移密度存在另条未证。"
+    ],
+    "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。 本Lean条目仅覆盖rank/微分平稳性子结论；其余原句结论分别交由条目14/21，不能算在本条已覆盖。",
+    "review_status": "NEEDS_HUMAN",
+    "repair_log": [],
+    "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
+  },
+  "issues": [
+    {
+      "code": "SOURCE_PARAPHRASE",
+      "detail": "输入使用改写/缩写而非原页逐字引文；corrected_json恢复所选原句或列表。"
+    },
+    {
+      "code": "REQUIRES_HUMAN",
+      "detail": "正γ、θ给非零物理噪声，实际seed包括drift/noise。但textbookIteratedBracket定义缺失，无法最终核定textbookHormanderAt语义；且签名仅为rank，不含原句Assumption 1(ii)的转移密度结论，后者虽另列14，当前条目scope需明确拆分。"
+    }
+  ],
+  "evidence": [
+    {
+      "attachment": "R8_PAGES.pdf",
+      "attachment_pages": [
+        15
+      ],
+      "printed_page": "255",
+      "method": "逐页PDF文本比对；同原书页复用已目视核对的原页图像，图像代表页为附件1、4、12、20、26。",
+      "finding": "已核对所引正文、数学符号、页码及选取范围；差异逐项见issues。"
+    },
+    {
+      "definition_basis": "仅R8_任务.md的实际签名及项目定义摘录（含D1–D69）；标准Mathlib按任务说明采信。",
+      "finding": "正γ、θ给非零物理噪声，实际seed包括drift/noise。但textbookIteratedBracket定义缺失，无法最终核定textbookHormanderAt语义；且签名仅为rank，不含原句Assumption 1(ii)的转移密度结论，后者虽另列14，当前条目scope需明确拆分。"
+    }
+  ]
+}
+
+### MD-6.4.4-LangevinTransitionDensity 276
+{
+  "lean_decl": "MD.Ch06.langevinTransitionDensity",
+  "verdict": "NEEDS_HUMAN",
+  "explanation": "签名有全部初值、正时间、非负联合连续密度和对任意可测集相对于flatPhaseMeasure的核表示，物理噪声、周期域正确。D52仅以Classical.choose(actual_path_solution_exists ...)选解，未提供该存在命题的完整签名；不能只据此确认所选轨迹满足哪一积分方程和初值。",
+  "counterexample": null,
+  "suggested_fix": "补actual_path_solution_exists完整命题及所选解满足积分方程的规格；本项不因未给证明或sorry降级。"
+}
+{
+  "status": "NEEDS_HUMAN",
+  "issue_codes": [
+    "REQUIRES_HUMAN"
+  ],
+  "corrected_json": null,
+  "issues": [
+    {
+      "code": "REQUIRES_HUMAN",
+      "detail": "签名有全部初值、正时间、非负联合连续密度和对任意可测集相对于flatPhaseMeasure的核表示，物理噪声、周期域正确。D52仅以Classical.choose(actual_path_solution_exists ...)选解，未提供该存在命题的完整签名；不能只据此确认所选轨迹满足哪一积分方程和初值。"
+    }
+  ],
+  "evidence": [
+    {
+      "attachment": "R8_PAGES.pdf",
+      "attachment_pages": [
+        16
+      ],
+      "printed_page": "255",
+      "method": "逐页PDF文本比对；同原书页复用已目视核对的原页图像，图像代表页为附件1、4、12、20、26。",
+      "finding": "已核对所引正文、数学符号、页码及选取范围；差异逐项见issues。"
+    },
+    {
+      "definition_basis": "仅R8_任务.md的实际签名及项目定义摘录（含D1–D69）；标准Mathlib按任务说明采信。",
+      "finding": "签名有全部初值、正时间、非负联合连续密度和对任意可测集相对于flatPhaseMeasure的核表示，物理噪声、周期域正确。D52仅以Classical.choose(actual_path_solution_exists ...)选解，未提供该存在命题的完整签名；不能只据此确认所选轨迹满足哪一积分方程和初值。"
+    }
+  ]
+}
+
+### MD-6.4.4-Lemma61Printed 276
+{
+  "lean_decl": "MD.Ch06.lemma61Printed",
+  "verdict": "NEEDS_HUMAN",
+  "explanation": "字面保留所有开集，空集确使断言错误；还把原单位质量周期相空间扩大为任意正质量、全欧氏Phase n，且extra_assumptions为空，故不是完整忠实的Printed形式。原书疑误按NEEDS_HUMAN处理，并记录额外的签名范围偏移。",
+  "counterexample": "取C=∅即要求0<P∅=0；不依赖任何动力学。",
+  "suggested_fix": "Printed应回到单位质量周期域或明确标注扩大范围；另列非空目标修正版，不在Printed内静默加非空。"
+}
+{
+  "status": "NEEDS_HUMAN",
+  "issue_codes": [
+    "PROOF_METADATA",
+    "REQUIRES_HUMAN",
+    "ERRATUM?"
+  ],
+  "corrected_json": {
+    "source_id": "MD-6.4.4-Lemma61Printed",
+    "kind": "unnumbered_claim",
+    "label": "Lemma 6.1",
+    "section": "6.4.4",
+    "printed_page": "255",
+    "pdf_page": "276",
+    "statement_latex": "Lemma 6.1 For all $t>0$ and all open $C\\subset D$, we have that\n\\[\\Pr(X(t)\\in C\\mid X(0)=X_0)>0,\\quad\\forall X_0\\in D,\\]\nwhere $X(t)=(q(t),p(t))^T$ is a solution to Langevin dynamics (6.47).",
+    "proof_latex": null,
+    "proof_note": "原书给出证明论述；本条仅摘录命题，相关论述见相邻原页，未在此补写。",
+    "proof_discussion_latex": null,
+    "context_notation": [],
+    "issues": [
+      {
+        "code": "ERRATUM?",
+        "detail": "字面all open C包括空集，概率为0；需Nonempty。原(6.47)单位质量，旧清单一般质量扩展须另标技术范围。"
+      }
+    ],
+    "lean_decl": "MD.Ch06.lemma61Printed",
+    "reusable_proofs": [],
+    "extra_assumptions": [],
+    "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
+    "review_status": "NEEDS_HUMAN",
+    "repair_log": [
+      {
+        "date": "2026-10-17",
+        "action": "directive22_printed_corrected_pair",
+        "change": "增加目标开集非空；保留任意点初值、任意t>0的实际核正概率。",
+        "corrected_decl": "MD.Ch06.lemma61Printed_corrected",
+        "website": "未提交；待网站审计"
+      }
+    ],
+    "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
+  },
+  "issues": [
+    {
+      "code": "PROOF_METADATA",
+      "detail": "原页确有证明段落（Lemma 6.1明确标Proof；Proposition 6.4随后给Fredholm论证），不宜笼统记作未给独立完整证明。"
+    },
+    {
+      "code": "REQUIRES_HUMAN",
+      "detail": "字面保留所有开集，空集确使断言错误；还把原单位质量周期相空间扩大为任意正质量、全欧氏Phase n，且extra_assumptions为空，故不是完整忠实的Printed形式。原书疑误按NEEDS_HUMAN处理，并记录额外的签名范围偏移。"
+    },
+    {
+      "code": "ERRATUM?",
+      "detail": "原all open包含空集。"
+    }
+  ],
+  "evidence": [
+    {
+      "attachment": "R8_PAGES.pdf",
+      "attachment_pages": [
+        17
+      ],
+      "printed_page": "255",
+      "method": "逐页PDF文本比对；同原书页复用已目视核对的原页图像，图像代表页为附件1、4、12、20、26。",
+      "finding": "已核对所引正文、数学符号、页码及选取范围；差异逐项见issues。"
+    },
+    {
+      "definition_basis": "仅R8_任务.md的实际签名及项目定义摘录（含D1–D69）；标准Mathlib按任务说明采信。",
+      "finding": "字面保留所有开集，空集确使断言错误；还把原单位质量周期相空间扩大为任意正质量、全欧氏Phase n，且extra_assumptions为空，故不是完整忠实的Printed形式。原书疑误按NEEDS_HUMAN处理，并记录额外的签名范围偏移。"
+    }
+  ]
+}
+
+### MD-6.4.4-Lemma61Nonempty 276
+{
+  "lean_decl": "MD.Ch06.lemma61Nonempty",
+  "verdict": "NEEDS_HUMAN",
+  "explanation": "补C.Nonempty且T>0、σ≠0；全部点初值、真实周期核目标齐全。γ任意不妨碍有限时间可控性。缺D52所用actual_path_solution_exists的规格，尚不能核定此实际核确为所称Langevin解律。",
+  "counterexample": null,
+  "suggested_fix": "补选解存在命题的完整规格；非空修正本身合理。"
+}
+{
+  "status": "NEEDS_HUMAN",
+  "issue_codes": [
+    "REQUIRES_HUMAN"
+  ],
+  "corrected_json": null,
+  "issues": [
+    {
+      "code": "REQUIRES_HUMAN",
+      "detail": "补C.Nonempty且T>0、σ≠0；全部点初值、真实周期核目标齐全。γ任意不妨碍有限时间可控性。缺D52所用actual_path_solution_exists的规格，尚不能核定此实际核确为所称Langevin解律。"
+    }
+  ],
+  "evidence": [
+    {
+      "attachment": "R8_PAGES.pdf",
+      "attachment_pages": [
+        18
+      ],
+      "printed_page": "255",
+      "method": "逐页PDF文本比对；同原书页复用已目视核对的原页图像，图像代表页为附件1、4、12、20、26。",
+      "finding": "已核对所引正文、数学符号、页码及选取范围；差异逐项见issues。"
+    },
+    {
+      "definition_basis": "仅R8_任务.md的实际签名及项目定义摘录（含D1–D69）；标准Mathlib按任务说明采信。",
+      "finding": "补C.Nonempty且T>0、σ≠0；全部点初值、真实周期核目标齐全。γ任意不妨碍有限时间可控性。缺D52所用actual_path_solution_exists的规格，尚不能核定此实际核确为所称Langevin解律。"
+    }
+  ]
+}
+
+### MD-6.4.4-LangevinGeometricErgodicity 277
+{
+  "lean_decl": "MD.Ch06.langevinGeometricErgodicity",
+  "verdict": "NEEDS_HUMAN",
+  "explanation": "不变性、唯一概率律、任意l≥1、统一C和λ、所有可测加权有界f及t≥0的指数估计齐全；(1+‖p‖²)^l与周期H^l权等价已说明。实际核依赖D52缺失的存在命题规格，故不能完整确认对象语义。",
+  "counterexample": null,
+  "suggested_fix": "补D52所选解规格。Measurable且被权控制不等于任意仅加权可积函数；EXTRA措辞应收窄为已写出的点态权界类。"
+}
+{
+  "status": "NEEDS_HUMAN",
+  "issue_codes": [
+    "SOURCE_PARAPHRASE",
+    "REQUIRES_HUMAN",
+    "EXTRA_SCOPE"
+  ],
+  "corrected_json": {
+    "source_id": "MD-6.4.4-LangevinGeometricErgodicity",
+    "kind": "unnumbered_claim",
+    "label": null,
+    "section": "6.4.4",
+    "printed_page": "256",
+    "pdf_page": "277",
+    "statement_latex": "Hence Langevin dynamics is geometrically ergodic with respect to the canonical distribution",
+    "proof_latex": null,
+    "proof_note": "原书未给独立完整证明。",
+    "proof_discussion_latex": null,
+    "context_notation": [],
+    "issues": [],
+    "lean_decl": "MD.Ch06.langevinGeometricErgodicity",
+    "reusable_proofs": [],
+    "extra_assumptions": [
+      "[EXTRA]实际单位周期Langevin完整Gibbs不变/唯一概率及任意l≥1全部可测且满足所列点态多项式权界的观测量的统一指数估计，常数在x/f/t之外；有界周期U使H^l与(1+‖p‖²)^l等价，没有弱化为紧支函数。"
+    ],
+    "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
+    "review_status": "NEEDS_HUMAN",
+    "repair_log": [],
+    "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
+  },
+  "issues": [
+    {
+      "code": "SOURCE_PARAPHRASE",
+      "detail": "输入使用改写/缩写而非原页逐字引文；corrected_json恢复所选原句或列表。"
+    },
+    {
+      "code": "REQUIRES_HUMAN",
+      "detail": "不变性、唯一概率律、任意l≥1、统一C和λ、所有可测加权有界f及t≥0的指数估计齐全；(1+‖p‖²)^l与周期H^l权等价已说明。实际核依赖D52缺失的存在命题规格，故不能完整确认对象语义。"
+    },
+    {
+      "code": "EXTRA_SCOPE",
+      "detail": "签名覆盖点态权界观测量；“全部加权可积”表述过宽。"
+    }
+  ],
+  "evidence": [
+    {
+      "attachment": "R8_PAGES.pdf",
+      "attachment_pages": [
+        23
+      ],
+      "printed_page": "256",
+      "method": "逐页PDF文本比对；同原书页复用已目视核对的原页图像，图像代表页为附件1、4、12、20、26。",
+      "finding": "已核对所引正文、数学符号、页码及选取范围；差异逐项见issues。"
+    },
+    {
+      "definition_basis": "仅R8_任务.md的实际签名及项目定义摘录（含D1–D69）；标准Mathlib按任务说明采信。",
+      "finding": "不变性、唯一概率律、任意l≥1、统一C和λ、所有可测加权有界f及t≥0的指数估计齐全；(1+‖p‖²)^l与周期H^l权等价已说明。实际核依赖D52缺失的存在命题规格，故不能完整确认对象语义。"
+    }
+  ]
+}
+
+### MD-6.4.4-LangevinTimeAverage 277
+{
+  "lean_decl": "MD.Ch06.langevinTimeAverage",
+  "verdict": "NEEDS_HUMAN",
+  "explanation": "全部点初值、任意多项式增长可测f、sample几乎处处以及连续时间积分平均均明确，非ensemble平均。GlobalRandomPhase按ceil(t)+1选择有限时解；D52缺真实解规格，亦未给出这些有限时选择的一致性，无法据摘录确认其为同一全时轨迹。",
+  "counterexample": null,
+  "suggested_fix": "补actual_path_solution_exists规格和所选解唯一性/跨时间窗一致性声明；不要求在此补证明。"
+}
+{
+  "status": "NEEDS_HUMAN",
+  "issue_codes": [
+    "REQUIRES_HUMAN"
+  ],
+  "corrected_json": null,
+  "issues": [
+    {
+      "code": "REQUIRES_HUMAN",
+      "detail": "全部点初值、任意多项式增长可测f、sample几乎处处以及连续时间积分平均均明确，非ensemble平均。GlobalRandomPhase按ceil(t)+1选择有限时解；D52缺真实解规格，亦未给出这些有限时选择的一致性，无法据摘录确认其为同一全时轨迹。"
+    }
+  ],
+  "evidence": [
+    {
+      "attachment": "R8_PAGES.pdf",
+      "attachment_pages": [
+        24
+      ],
+      "printed_page": "256",
+      "method": "逐页PDF文本比对；同原书页复用已目视核对的原页图像，图像代表页为附件1、4、12、20、26。",
+      "finding": "已核对所引正文、数学符号、页码及选取范围；差异逐项见issues。"
+    },
+    {
+      "definition_basis": "仅R8_任务.md的实际签名及项目定义摘录（含D1–D69）；标准Mathlib按任务说明采信。",
+      "finding": "全部点初值、任意多项式增长可测f、sample几乎处处以及连续时间积分平均均明确，非ensemble平均。GlobalRandomPhase按ceil(t)+1选择有限时解；D52缺真实解规格，亦未给出这些有限时选择的一致性，无法据摘录确认其为同一全时轨迹。"
+    }
+  ]
+}
+
+### MD-6.4.4-WeightedH1 277
+{
+  "lean_decl": "MD.Ch06.weightedH1",
+  "verdict": "NEEDS_HUMAN",
+  "explanation": "H¹通过D61–D65的L² jet和弱导数图实现，值及全部位置/动量分量存在。但D62关键右侧textbookLangevinCanonicalCoordinateAdjointTestExpression_memLp_two所对应测试表达式没有定义或完整签名；无法确认分部积分符号及β∂U/βp项，故不能确认该图就是原加权弱H¹。",
+  "counterexample": null,
+  "suggested_fix": "补坐标伴随测试表达式实际定义及其memLp规格。"
+}
+{
+  "status": "NEEDS_HUMAN",
+  "issue_codes": [
+    "REQUIRES_HUMAN"
+  ],
+  "corrected_json": null,
+  "issues": [
+    {
+      "code": "REQUIRES_HUMAN",
+      "detail": "H¹通过D61–D65的L² jet和弱导数图实现，值及全部位置/动量分量存在。但D62关键右侧textbookLangevinCanonicalCoordinateAdjointTestExpression_memLp_two所对应测试表达式没有定义或完整签名；无法确认分部积分符号及β∂U/βp项，故不能确认该图就是原加权弱H¹。"
+    }
+  ],
+  "evidence": [
+    {
+      "attachment": "R8_PAGES.pdf",
+      "attachment_pages": [
+        25
+      ],
+      "printed_page": "256",
+      "method": "逐页PDF文本比对；同原书页复用已目视核对的原页图像，图像代表页为附件1、4、12、20、26。",
+      "finding": "已核对所引正文、数学符号、页码及选取范围；差异逐项见issues。"
+    },
+    {
+      "definition_basis": "仅R8_任务.md的实际签名及项目定义摘录（含D1–D69）；标准Mathlib按任务说明采信。",
+      "finding": "H¹通过D61–D65的L² jet和弱导数图实现，值及全部位置/动量分量存在。但D62关键右侧textbookLangevinCanonicalCoordinateAdjointTestExpression_memLp_two所对应测试表达式没有定义或完整签名；无法确认分部积分符号及β∂U/βp项，故不能确认该图就是原加权弱H¹。"
+    }
+  ]
+}
+
+### MD-6.4.4-Proposition64Printed 278
+{
+  "lean_decl": "MD.Ch06.proposition64Printed",
+  "verdict": "NEEDS_HUMAN",
+  "explanation": "签名确实保留平坦forward弱PDE、Gibbs均值零、H¹存在及唯一模Gibbs密度这一有疑误组合。原书约定μ未澄清；当前弱PDE的H¹类过宽，还存在非Gibbs的零模，故原文必须保留疑误而不能判正确。H¹本身亦有缺失测试表达式定义。",
+  "counterexample": "在n=1、U≡0、β=γ=1下，w(p)=exp(−p²/2)∫₀ᵖexp(s²/2)ds满足w′+pw=1，故w″+(pw)′=0；它与导数有界，属高斯加权H¹，却不是Gibbs倍数。g=0时已违反所写唯一性。",
+  "suggested_fix": "原文保持并NEEDS_HUMAN；决定μ及forward/relative密度约定；采用26的相对坐标修正后核应为常数。"
+}
+{
+  "status": "NEEDS_HUMAN",
+  "issue_codes": [
+    "SOURCE_TRANSCRIPTION",
+    "PROOF_METADATA",
+    "REQUIRES_HUMAN",
+    "ERRATUM?"
+  ],
+  "corrected_json": {
+    "source_id": "MD-6.4.4-Proposition64Printed",
+    "kind": "unnumbered_claim",
+    "label": "Proposition 6.4",
+    "section": "6.4.4",
+    "printed_page": "257",
+    "pdf_page": "278",
+    "statement_latex": "Proposition 6.4 Let $U$ be $C^\\infty$ on the position domain $Q=\\mathbb T^{N_c}$ and suppose $g\\in H^1(\\mu)$ satisfies\n\\[\\int_D g\\,d\\mu_\\beta=0,\\]\nwhere $\\mu_\\beta$ is the canonical measure, then the Poisson equation\n\\[\\mathcal L_{LD}^\\dagger\\varphi=g\\]\nhas a solution $\\varphi\\in H^1(\\mu)$ which is unique up to addition of a constant multiple of the Gibbs density.",
+    "proof_latex": null,
+    "proof_note": "原书给出证明论述；本条仅摘录命题，相关论述见相邻原页，未在此补写。",
+    "proof_discussion_latex": null,
+    "context_notation": [],
+    "issues": [
+      {
+        "code": "ERRATUM?",
+        "detail": "印刷flat forward PDE与Gibbs加权mean-zero/adjoint pairing混用；测度及density-vs-relative-density选择待导师，原式完整保留。"
+      }
+    ],
+    "lean_decl": "MD.Ch06.proposition64Printed",
+    "reusable_proofs": [],
+    "extra_assumptions": [],
+    "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
+    "review_status": "NEEDS_HUMAN",
+    "repair_log": [
+      {
+        "date": "2026-10-17",
+        "action": "directive22_printed_corrected_pair",
+        "change": "选择相对Gibbs密度坐标与真实加权伴随算子，核相应为常数；保留完整H¹解存在与唯一性目标。",
+        "corrected_decl": "MD.Ch06.proposition64Printed_corrected",
+        "website": "未提交；待网站审计"
+      }
+    ],
+    "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
+  },
+  "issues": [
+    {
+      "code": "SOURCE_TRANSCRIPTION",
+      "detail": "原页应为 d\\mu_\\beta，输入为 d\\rho_\\beta。数学疑误另行保留，不在原文内纠正。"
+    },
+    {
+      "code": "SOURCE_TRANSCRIPTION",
+      "detail": "原页应为 $\\mu_\\beta$ is the canonical measure，输入为 $\\rho_\\beta$ is the canonical measure。数学疑误另行保留，不在原文内纠正。"
+    },
+    {
+      "code": "SOURCE_TRANSCRIPTION",
+      "detail": "原页应为 \\mathcal L_{LD}^\\dagger，输入为 \\mathcal L_{LD}^*。数学疑误另行保留，不在原文内纠正。"
+    },
+    {
+      "code": "PROOF_METADATA",
+      "detail": "原页确有证明段落（Lemma 6.1明确标Proof；Proposition 6.4随后给Fredholm论证），不宜笼统记作未给独立完整证明。"
+    },
+    {
+      "code": "REQUIRES_HUMAN",
+      "detail": "签名确实保留平坦forward弱PDE、Gibbs均值零、H¹存在及唯一模Gibbs密度这一有疑误组合。原书约定μ未澄清；当前弱PDE的H¹类过宽，还存在非Gibbs的零模，故原文必须保留疑误而不能判正确。H¹本身亦有缺失测试表达式定义。"
+    },
+    {
+      "code": "ERRATUM?",
+      "detail": "原forward密度/加权零均值/唯一性约定冲突，见反例。"
+    }
+  ],
+  "evidence": [
+    {
+      "attachment": "R8_PAGES.pdf",
+      "attachment_pages": [
+        27
+      ],
+      "printed_page": "257",
+      "method": "逐页PDF文本比对；同原书页复用已目视核对的原页图像，图像代表页为附件1、4、12、20、26。",
+      "finding": "已核对所引正文、数学符号、页码及选取范围；差异逐项见issues。"
+    },
+    {
+      "definition_basis": "仅R8_任务.md的实际签名及项目定义摘录（含D1–D69）；标准Mathlib按任务说明采信。",
+      "finding": "签名确实保留平坦forward弱PDE、Gibbs均值零、H¹存在及唯一模Gibbs密度这一有疑误组合。原书约定μ未澄清；当前弱PDE的H¹类过宽，还存在非Gibbs的零模，故原文必须保留疑误而不能判正确。H¹本身亦有缺失测试表达式定义。"
+    }
+  ]
+}
+
+### MD-6.4.4-Proposition64Relative 278
+{
+  "lean_decl": "MD.Ch06.proposition64Relative",
+  "verdict": "NEEDS_HUMAN",
+  "explanation": "相对Gibbs坐标中取真实闭backward算子的Hilbert adjoint，g均值零、H¹解存在、唯一模常数，数学修正合理；D67–D69给出原算子图。但H¹弱导数测试表达式仍缺，无法完成全部项目对象核查；不把该合理修正等同于已核定完整实现。",
+  "counterexample": null,
+  "suggested_fix": "补H¹坐标伴随测试表达式；原JSON继续保留原句，同时EXTRA明确相对坐标与唯一模常数。"
+}
+{
+  "status": "NEEDS_HUMAN",
+  "issue_codes": [
+    "SOURCE_TRANSCRIPTION",
+    "REQUIRES_HUMAN"
+  ],
+  "corrected_json": {
+    "source_id": "MD-6.4.4-Proposition64Relative",
+    "kind": "unnumbered_claim",
+    "label": null,
+    "section": "6.4.4",
+    "printed_page": "257",
+    "pdf_page": "278",
+    "statement_latex": "\\[\\mathcal L_{LD}^\\dagger\\varphi=g.\\] The solution is unique up to addition of a constant multiple of the Gibbs density.",
+    "proof_latex": null,
+    "proof_note": "原书未给独立完整证明。",
+    "proof_discussion_latex": null,
+    "context_notation": [],
+    "issues": [],
+    "lean_decl": "MD.Ch06.proposition64Relative",
+    "reusable_proofs": [],
+    "extra_assumptions": [
+      "[EXTRA]明确相对Gibbs密度坐标，实际加权Hilbert闭算子adjoint图与完整H1、加权零均值、解存在/唯一模常数；与印刷flat-density Gibbs倍数版分列，非静默纠错。"
+    ],
+    "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
+    "review_status": "NEEDS_HUMAN",
+    "repair_log": [],
+    "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
+  },
+  "issues": [
+    {
+      "code": "SOURCE_TRANSCRIPTION",
+      "detail": "原页应为 \\mathcal L_{LD}^\\dagger，输入为 \\mathcal L_{LD}^*。数学疑误另行保留，不在原文内纠正。"
+    },
+    {
+      "code": "REQUIRES_HUMAN",
+      "detail": "相对Gibbs坐标中取真实闭backward算子的Hilbert adjoint，g均值零、H¹解存在、唯一模常数，数学修正合理；D67–D69给出原算子图。但H¹弱导数测试表达式仍缺，无法完成全部项目对象核查；不把该合理修正等同于已核定完整实现。"
+    }
+  ],
+  "evidence": [
+    {
+      "attachment": "R8_PAGES.pdf",
+      "attachment_pages": [
+        28
+      ],
+      "printed_page": "257",
+      "method": "逐页PDF文本比对；同原书页复用已目视核对的原页图像，图像代表页为附件1、4、12、20、26。",
+      "finding": "已核对所引正文、数学符号、页码及选取范围；差异逐项见issues。"
+    },
+    {
+      "definition_basis": "仅R8_任务.md的实际签名及项目定义摘录（含D1–D69）；标准Mathlib按任务说明采信。",
+      "finding": "相对Gibbs坐标中取真实闭backward算子的Hilbert adjoint，g均值零、H¹解存在、唯一模常数，数学修正合理；D67–D69给出原算子图。但H¹弱导数测试表达式仍缺，无法完成全部项目对象核查；不把该合理修正等同于已核定完整实现。"
+    }
+  ]
+}
+
+### MD-6.4.5-SmoothTestL2Printed 279
+{
+  "lean_decl": "MD.Ch06.smoothTestL2Printed",
+  "verdict": "NEEDS_HUMAN",
+  "explanation": "Printed签名∀n、∀实函数f，提升到欧氏相空间后ContDiff∞便推出flat MemLp 2，忠实暴露原书“光滑即L²”的错误，不因其不可证或sorry判FAIL。它只覆盖本条的一项字面子断言；原文平均恒等式及谱措辞的疑误仍需人工处理。原[ERRATUM?]关于flat常数反例及一般Gibbs下增长反例合理。repair_log称修正版已明示L²域，但实际修正签名未提供，不能确认它是否覆盖完整结论。",
+  "counterexample": "n=1，f(q,p)=1；f∘periodicProjection是常光滑函数，但∫|f|² dflat=∞，故不属于L²。",
+  "suggested_fix": "保留Printed为原书字面问题记录；另给出修正版实际签名，明确f属于flat L²（并保证平衡态及模式属L²），再陈述完整平均恒等式、CS界和衰减。将“all eigenvalues”勘误为相关非零谱，保留原文。"
+}
+{
+  "status": "NEEDS_HUMAN",
+  "issue_codes": [
+    "ERRATUM?",
+    "MISSING_CORRECTED_SIGNATURE"
+  ],
+  "corrected_json": {
+    "source_id": "MD-6.4.5-SmoothTestL2Printed",
+    "kind": "unnumbered_claim",
+    "label": null,
+    "section": "6.4.5",
+    "printed_page": "258",
+    "pdf_page": "279",
+    "statement_latex": "Since all the eigenvalues lie to the left of a vertical line in the left half plane, for any $\\varphi$ in $C^\\infty$ we have\n\\[\\int_D\\varphi\\rho(q,p,t)d\\omega=\\operatorname{Av}_\\beta(\\varphi)+\\alpha e^{t\\lambda_1}\\int_D\\varphi\\rho^{(1)}d\\omega.\\]\nThe latter integral is bounded since both $\\varphi$ and $\\rho^{(1)}$ are in $L^2$.",
+    "proof_latex": null,
+    "proof_note": "原书未给独立完整证明。",
+    "proof_discussion_latex": null,
+    "context_notation": [],
+    "issues": [
+      {
+        "code": "ERRATUM?",
+        "detail": "环面×无界动量上C∞不自动L²；常数1已不在flat L²，指数增长函数也可能不在Gibbs L²。需适当weighted空间/增长资格。"
+      },
+      {
+        "code": "ERRATUM?",
+        "detail": "原句字面确称任意C∞检验函数并据此使用L²；环面×无界动量的flat测度下不成立。另“all the eigenvalues”不能包括平衡态的零本征值，应限制为非零/衰减谱。忠实转录应保留疑误。"
+      },
+      {
+        "code": "MISSING_CORRECTED_SIGNATURE",
+        "detail": "repair_log登记smoothTestL2Printed_corrected，但任务没有给出该声明或_counterexample声明的实际签名/定义；无法审校该修正版。当前Printed只形式化C∞⇒L²子断言，没有同时表达本条完整平均恒等式。"
+      }
+    ],
+    "lean_decl": "MD.Ch06.smoothTestL2Printed",
+    "reusable_proofs": [],
+    "extra_assumptions": [],
+    "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
+    "review_status": "NEEDS_HUMAN",
+    "repair_log": [
+      {
+        "date": "2026-10-17",
+        "action": "directive22_printed_corrected_pair",
+        "change": "明确要求检验函数属于所选L²空间；给出正确检验函数域定义，不冒称所有C∞函数可积。",
+        "corrected_decl": "MD.Ch06.smoothTestL2Printed_corrected",
+        "website": "未提交；待网站审计"
+      }
+    ],
+    "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
+  },
+  "issues": [
+    {
+      "code": "ERRATUM?",
+      "detail": "原句字面确称任意C∞检验函数并据此使用L²；环面×无界动量的flat测度下不成立。另“all the eigenvalues”不能包括平衡态的零本征值，应限制为非零/衰减谱。忠实转录应保留疑误。"
+    },
+    {
+      "code": "MISSING_CORRECTED_SIGNATURE",
+      "detail": "repair_log登记smoothTestL2Printed_corrected，但任务没有给出该声明或_counterexample声明的实际签名/定义；无法审校该修正版。当前Printed只形式化C∞⇒L²子断言，没有同时表达本条完整平均恒等式。"
+    }
+  ],
+  "evidence": [
+    "附件第7页=第3页，印刷258倒数展示式及末段前半句；现JSON所摘范围基本忠实。",
+    "D7–D8：n≥1时空间含R^n无界动量，flat measure总质量无限。",
+    "原文末段bounded后接逗号and since …，摘录在此截成句号，宜在严格转录中标明节选而非原句结束。",
+    "审校限于R9_任务.md所载本条声明和依赖；未读取旧工程、未修改Lean、未补证明或因sorry判失败。"
+  ]
+}
+
+### MD-6.4.5-ComplexInitialDensity 279
+{
+  "lean_decl": "MD.Ch06.complexInitialDensity",
+  "verdict": "NEEDS_HUMAN",
+  "explanation": "n任意，ρeq、ρ1均为复flat L²等价类，α实数；谓词准确要求平衡候选和初始组合AE实、非负、可积、归一，并未缩为实负λ。α=0不约束ρ1是合理的概率资格行为。作为新增概率资格定义合理，但不证明或表达本征/平衡条件，本征条件在第9条另有编码。原书把单一复模式当概率初始分布的可行性需人工确认；不能把此限制后的谓词当原句对任意α成立的证明。",
+  "counterexample": "若ρ1在正测度集合有非零虚部且α≠0，则实ρeq+αρ1仍有非零虚部，不能为概率密度；即使ρ1实且积分0，也未必可为任意α保持非负。",
+  "suggested_fix": "保留原句并登记[ERRATUM?]；将此声明定位为概率资格辅助定义，在使用处补生成元本征关系、Re λ<0及真正平衡态识别。非实模式需选共轭成对实组合并另行检查非负性。"
+}
+{
+  "status": "NEEDS_HUMAN",
+  "issue_codes": [
+    "SOURCE_WORDING",
+    "ERRATUM?",
+    "MISSING_EIGENPAIR_CONTEXT"
+  ],
+  "corrected_json": {
+    "source_id": "MD-6.4.5-ComplexInitialDensity",
+    "kind": "definition",
+    "label": null,
+    "section": "6.4.5",
+    "printed_page": "258",
+    "pdf_page": "279",
+    "statement_latex": "For example, if we assume that $\\lambda_1,\\rho^{(1)}$ is some eigenvalue, eigenfunction pair with $\\operatorname{Re}(\\lambda_1)<0$ and take the initial distribution to be\n\\[\\rho_0=\\rho_{eq}+\\alpha\\rho^{(1)},\\]\nfor $\\alpha\\in\\mathbb R$, then we have",
+    "proof_latex": null,
+    "proof_note": "原书未给独立完整证明。",
+    "proof_discussion_latex": null,
+    "context_notation": [],
+    "issues": [
+      {
+        "code": "SOURCE_WORDING",
+        "detail": "原文为“For example, if we assume that … and take the initial distribution to be [公式], for α∈R, then we have”；摘录重写为“Assume that …”，并将α移入展示式。"
+      },
+      {
+        "code": "ERRATUM?",
+        "detail": "任意复本征模式乘任意实α不自动得到实非负归一密度；[EXTRA]所加资格合理，但属于限制原句，原文疑误仍须保留。"
+      },
+      {
+        "code": "MISSING_EIGENPAIR_CONTEXT",
+        "detail": "此独立定义无生成元、λ或本征关系，也不编码ρeq平衡性；只能作为概率资格辅助谓词，不能单独涵盖原句的本征对条件。"
+      }
+    ],
+    "lean_decl": "MD.Ch06.complexInitialDensity",
+    "reusable_proofs": [],
+    "extra_assumptions": [
+      "[EXTRA]明确真实初始概率的实性/非负/积分1，原单复模式不自动是概率；保留复Lp空间与复本征值，未缩成实负λ玩具。复共轭成对构造可另建，但原单模式需这些资格。"
+    ],
+    "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
+    "review_status": "NEEDS_HUMAN",
+    "repair_log": [],
+    "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
+  },
+  "issues": [
+    {
+      "code": "SOURCE_WORDING",
+      "detail": "原文为“For example, if we assume that … and take the initial distribution to be [公式], for α∈R, then we have”；摘录重写为“Assume that …”，并将α移入展示式。"
+    },
+    {
+      "code": "ERRATUM?",
+      "detail": "任意复本征模式乘任意实α不自动得到实非负归一密度；[EXTRA]所加资格合理，但属于限制原句，原文疑误仍须保留。"
+    },
+    {
+      "code": "MISSING_EIGENPAIR_CONTEXT",
+      "detail": "此独立定义无生成元、λ或本征关系，也不编码ρeq平衡性；只能作为概率资格辅助谓词，不能单独涵盖原句的本征对条件。"
+    }
+  ],
+  "evidence": [
+    "附件第8页=第3页，印刷258中段For example开头至for α∈R, then we have。",
+    "D12完整列出ρeq和ρeq+αρ1各自的AE实非负、实部可积及积分1，共两组三项资格；不存在本征值参数。",
+    "审校限于R9_任务.md所载本条声明和依赖；未读取旧工程、未修改Lean、未补证明或因sorry判失败。"
+  ]
+}

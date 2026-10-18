@@ -1,0 +1,24 @@
+--- before
++++ after
+@@ -3178,14 +3178,16 @@
+   sorry
+ 
+ /-- source_id: MD-6.4.4-ForwardKernelGibbs · unnumbered_claim · §6.4.4 · 印刷p.257 / PDFp.278
+-[EXTRA] [EXTRA]完整原flat forward弱PDE与真实H1类，全部stationary modes为Gibbs倍数；相对加权adjoint kernel对应常数而非Gibbs，不能混同二者。 -/
++[EXTRA] [EXTRA]完整原flat forward弱PDE与真实H1类，全部stationary modes为Gibbs倍数；相对加权adjoint kernel对应常数而非Gibbs，不能混同二者。 [EXTRA] 25号：改用相对Gibbs密度的Hilbert adjoint闭域，核结论为常数；旧flat紧支弱测试允许非Gibbs恒通量零模，网站反例保留。改后核定理尚缺大型理论，不证明；原印刷flat措辞由Proposition64Printed留存。
++-/
+ theorem forwardKernelGibbs : ∀ {n : ℕ} (U : (Fin n → ℝ) → ℝ)
+     (hU : ContDiff ℝ ∞ U) (hp : textbookUnitPeriodicPotential U) (β γ : ℝ) (hβ : 0 < β),
+-  0 < γ → ∀ w : textbookLangevinCanonicalWeakH1 U hU hp β hβ,
+-    MolecularDynamics.Chapter06Review.flatForwardWeak U β γ
+-      (textbookLangevinCanonicalWeakH1Value U hU hp β hβ w) 0 →
++  0 < γ →
++  let A := (textbookLangevinCanonicalHilbertClosedOperator U β γ (Real.sqrt (2*γ*β⁻¹)) hβ).adjoint
++  ∀ w : textbookLangevinCanonicalWeakH1 U hU hp β hβ,
++    (textbookLangevinCanonicalWeakH1Value U hU hp β hβ w,0) ∈ A.graph →
+     ∃ c : ℝ, ∀ᵐ x ∂textbookLangevinCanonicalMeasure U β hβ,
+-      textbookLangevinCanonicalWeakH1Value U hU hp β hβ w x=c*textbookLangevinCanonicalDensity U β x := by
++      textbookLangevinCanonicalWeakH1Value U hU hp β hβ w x=c := by
+   sorry
+ 
+ /-- source_id: MD-6.4.4-WeightedFunctionNorm · definition · §6.4.4 · 印刷p.256 / PDFp.277

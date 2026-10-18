@@ -1,0 +1,242 @@
+以附件/PASTE 为准，忽略 /workspace 旧文件；Mathlib 定义按标准含义采信。
+A逐字核对原文及证明；C只读核对对象、域、量词、前提和全部结论。所有项目定义体及选择规格在下文；仅作为审阅摘录，不是独立模块。theorem/lemma提供完整类型（不审证明）；定义提供完整定义体，按文件作用域解释。不要因sorry判签名FAIL。原文版忠实性、修正版正确性、反例、原书疑误分别说明，不凭旧文件或repair_log猜声明。
+本条MD-6.4.4-Lemma61Printed，subtask=EAUDIT15c；原PDF页映射=[276]。只读，不改工程或补证明。以JSON对象返回batch=EAUDIT15,input_sha256,items；逐条含source_id,subtask,input_sha256,json_review{status,issue_codes,corrected_json,issues,evidence},audit{lean_decl,verdict,explanation,counterexample,suggested_fix}。verdict=PASS/FAIL/NEEDS_HUMAN，status=APPROVED/CORRECTED/NEEDS_HUMAN。必须原样回显下列全部哈希。
+input_sha256:
+{
+  "Blueprint/Ch06.lean": "4a2a6cb72c1692f80e3537ab1a71701d429a482780a01226c3dc66a2ebb8b44b",
+  "blueprint/ch06/ch06_source.json": "d7f93cd20eb570744c710f3e07a88b319c082e4155812fee91db0920eb05944e",
+  "PAGES.pdf": "963c3677394f87b9de29ef07b6f60af6f65d20cc1187fa74df67c0124b4e938e",
+  "materials_sha256": "b015a1fd43e5b765281ab610d962025141d97a43c1fcfd618e5eddbf666e06f4"
+}
+
+## 原文JSON
+```json
+{
+  "source_id": "MD-6.4.4-Lemma61Printed",
+  "kind": "unnumbered_claim",
+  "label": "Lemma 6.1",
+  "section": "6.4.4",
+  "printed_page": "255",
+  "pdf_page": "276",
+  "statement_latex": "Lemma 6.1 For all $t>0$ and all open $C\\subset D$, we have that\n\\[\\Pr(X(t)\\in C\\mid X(0)=X_0)>0,\\quad\\forall X_0\\in D,\\]\nwhere $X(t)=(q(t),p(t))^T$ is a solution to Langevin dynamics (6.47).",
+  "proof_latex": null,
+  "proof_note": "原书给出证明论述；本条仅摘录命题，相关论述见相邻原页，未在此补写。",
+  "proof_discussion_latex": null,
+  "context_notation": [],
+  "extra_assumptions": [
+    "[EXTRA] 25号：Printed收回单位质量周期相空间，保留包括空集的原全称开集断言及原书疑误；非空修正版独立保留，真实核存在规格补入复审包。"
+  ],
+  "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
+  "coverage_gaps": null
+}
+```
+## 当前完整Lean（全部原文版、修正版及反例）
+```lean
+theorem lemma61Printed {N : ℕ} {Ω : Type*} [MeasurableSpace Ω]
+    (B : ℝ≥0 → Ω → (Fin N → ℝ)) (P : Measure Ω) (hB : textbookIsWienerVector B P)
+    (U : (Fin N → ℝ) → ℝ) (hU : ContDiff ℝ ∞ U) (hp : textbookUnitPeriodicPotential U)
+    (L : ℝ≥0) (hF : LipschitzWith L (textbookPotentialForce U)) (γ σ : ℝ) (T : ℝ≥0) (hT : (0 : ℝ) < T)
+    (hσ : σ ≠ 0) (x : textbookLangevinPeriodicPhase N)
+    (C : Set (textbookLangevinPeriodicPhase N)) (hC : IsOpen C) :
+    0 < textbookLangevinPeriodicTransitionKernel B P U hU hp L hF γ σ T x C := by
+  sorry
+```
+### 文件参数及作用域 Blueprint/Ch06.lean
+```lean
+open Set Filter Matrix MeasureTheory ProbabilityTheory MolecularDynamics MolecularDynamics.Chapter02Review MolecularDynamics.Chapter06Review
+open scoped BigOperators Topology ContDiff InnerProductSpace Matrix.Norms.L2Operator ENNReal NNReal
+variable {n Nc : ℕ}
+variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
+variable {R : Type*} [Ring R] [Algebra ℝ R]
+local instance : MeasureSpace UnitAddCircle := ⟨AddCircle.haarAddCircle⟩
+```
+### 文件参数及作用域 MolecularDynamics/Chapter02/SymplecticEuler.lean
+```lean
+open Matrix
+open scoped Matrix
+```
+### 文件参数及作用域 MolecularDynamics/Chapter06/LangevinHormander.lean
+```lean
+open scoped BigOperators ContDiff
+```
+### 文件参数及作用域 MolecularDynamics/Chapter06/LangevinInitialState.lean
+```lean
+open Set Filter MeasureTheory ProbabilityTheory
+open scoped Topology ContDiff NNReal
+```
+### 文件参数及作用域 MolecularDynamics/Chapter06/LangevinNoiseStability.lean
+```lean
+open Set Filter MeasureTheory
+open scoped Topology ContDiff NNReal
+```
+### 文件参数及作用域 MolecularDynamics/Chapter06/LangevinPathSolution.lean
+```lean
+open Set Filter MeasureTheory
+open scoped Topology ContDiff NNReal
+```
+### 文件参数及作用域 MolecularDynamics/Chapter06/LangevinPeriodicCausalFlow.lean
+```lean
+open Set Filter MeasureTheory ProbabilityTheory
+open scoped Topology ContDiff NNReal
+```
+### 文件参数及作用域 MolecularDynamics/Chapter06/LangevinPeriodicForce.lean
+```lean
+open Set Filter
+open scoped Topology ContDiff NNReal
+```
+### 文件参数及作用域 MolecularDynamics/Chapter06/LangevinPeriodicLift.lean
+```lean
+open Set Filter MeasureTheory ProbabilityTheory
+open scoped Topology ContDiff NNReal ENNReal
+```
+### 文件参数及作用域 MolecularDynamics/Chapter06/LangevinPeriodicProjection.lean
+```lean
+open Set Filter MeasureTheory ProbabilityTheory
+open scoped Topology ContDiff NNReal ENNReal
+```
+### 文件参数及作用域 MolecularDynamics/Chapter06/LangevinTransitionKernel.lean
+```lean
+open Set Filter MeasureTheory ProbabilityTheory
+open scoped Topology ContDiff NNReal ProbabilityTheory
+```
+### 文件参数及作用域 MolecularDynamics/Chapter06/WienerVectorContinuousPath.lean
+```lean
+open Set Filter MeasureTheory ProbabilityTheory
+open scoped Topology NNReal
+```
+### 文件参数及作用域 MolecularDynamics/Chapter06/WienerVectorSupport.lean
+```lean
+open Set Filter MeasureTheory ProbabilityTheory
+open scoped Topology NNReal ENNReal
+```
+### MD.Ch06.lemma61Printed [Blueprint/Ch06.lean:3107]
+```lean
+theorem lemma61Printed {N : ℕ} {Ω : Type*} [MeasurableSpace Ω]
+    (B : ℝ≥0 → Ω → (Fin N → ℝ)) (P : Measure Ω) (hB : textbookIsWienerVector B P)
+    (U : (Fin N → ℝ) → ℝ) (hU : ContDiff ℝ ∞ U) (hp : textbookUnitPeriodicPotential U)
+    (L : ℝ≥0) (hF : LipschitzWith L (textbookPotentialForce U)) (γ σ : ℝ) (T : ℝ≥0) (hT : (0 : ℝ) < T)
+    (hσ : σ ≠ 0) (x : textbookLangevinPeriodicPhase N)
+    (C : Set (textbookLangevinPeriodicPhase N)) (hC : IsOpen C) :
+    0 < textbookLangevinPeriodicTransitionKernel B P U hU hp L hF γ σ T x C
+```
+### MolecularDynamics.textbookPotentialForce [MolecularDynamics/Chapter02/SymplecticEuler.lean:34]
+```lean
+noncomputable def textbookPotentialForce {Nc : ℕ}
+    (U : (Fin Nc → ℝ) → ℝ) (q : Fin Nc → ℝ) : Fin Nc → ℝ :=
+  fun i => -(fderiv ℝ U q) (Pi.single i 1)
+```
+### MolecularDynamics.textbookLangevinPhase [MolecularDynamics/Chapter06/LangevinHormander.lean:12]
+```lean
+abbrev textbookLangevinPhase (Nc : ℕ) := (Fin Nc → ℝ) × (Fin Nc → ℝ)
+```
+### MolecularDynamics.textbookLangevinPeriodicPathEndpoint_joint_measurable [MolecularDynamics/Chapter06/LangevinInitialState.lean:127]
+```lean
+theorem textbookLangevinPeriodicPathEndpoint_joint_measurable {Nc : ℕ}
+    (U : (Fin Nc → ℝ) → ℝ) (hU : ContDiff ℝ ∞ U) (hP : textbookUnitPeriodicPotential U)
+    (L : ℝ≥0) (hF : LipschitzWith L (textbookPotentialForce U)) (γ σ T : ℝ) (hT : 0 ≤ T)
+    (t : ℝ) (ht : t ∈ Icc 0 T) :
+    Measurable (fun z : textbookLangevinPeriodicPhase Nc × C(Icc 0 T, Fin Nc → ℝ) ↦
+      textbookLangevinPeriodicPathEndpoint U L hF γ σ T hT z.1 t z.2)
+```
+### MolecularDynamics.textbookLangevinIntegralSolution [MolecularDynamics/Chapter06/LangevinNoiseStability.lean:12]
+```lean
+def textbookLangevinIntegralSolution {Nc : ℕ} (U : (Fin Nc → ℝ) → ℝ)
+    (γ σ T : ℝ) (x : textbookLangevinPhase Nc) (W q p : ℝ → (Fin Nc → ℝ)) : Prop :=
+  ContinuousOn q (Icc 0 T) ∧ ContinuousOn p (Icc 0 T) ∧ ContinuousOn W (Icc 0 T) ∧
+    W 0 = 0 ∧
+    (∀ t ∈ Icc 0 T, q t = x.1 + ∫ s in 0..t, p s) ∧
+    (∀ t ∈ Icc 0 T, p t = x.2 +
+      (∫ s in 0..t, textbookPotentialForce U (q s) - γ • p s) + σ • W t)
+```
+### MolecularDynamics.textbookLangevinPathNoise [MolecularDynamics/Chapter06/LangevinPathSolution.lean:13]
+```lean
+noncomputable def textbookLangevinPathNoise {Nc : ℕ} (T : ℝ) (hT : 0 ≤ T)
+    (W : C(Icc 0 T, Fin Nc → ℝ)) (t : ℝ) : Fin Nc → ℝ :=
+  W (projIcc 0 T hT t) - W ⟨0, le_rfl, hT⟩
+```
+### MolecularDynamics.actual_path_solution_exists [MolecularDynamics/Chapter06/LangevinPathSolution.lean:27]
+```lean
+private theorem actual_path_solution_exists {Nc : ℕ}
+    (U : (Fin Nc → ℝ) → ℝ) (L : ℝ≥0) (hF : LipschitzWith L (textbookPotentialForce U))
+    (γ σ T : ℝ) (hT : 0 ≤ T) (x : textbookLangevinPhase Nc) (W : C(Icc 0 T, Fin Nc → ℝ)) :
+    ∃ qp : (ℝ → (Fin Nc → ℝ)) × (ℝ → (Fin Nc → ℝ)),
+      textbookLangevinIntegralSolution U γ σ T x (textbookLangevinPathNoise T hT W) qp.1 qp.2
+```
+### MolecularDynamics.textbookLangevinPathSolution [MolecularDynamics/Chapter06/LangevinPathSolution.lean:38]
+```lean
+noncomputable def textbookLangevinPathSolution {Nc : ℕ}
+    (U : (Fin Nc → ℝ) → ℝ) (L : ℝ≥0) (hF : LipschitzWith L (textbookPotentialForce U))
+    (γ σ T : ℝ) (hT : 0 ≤ T) (x : textbookLangevinPhase Nc) (W : C(Icc 0 T, Fin Nc → ℝ)) :
+    (ℝ → (Fin Nc → ℝ)) × (ℝ → (Fin Nc → ℝ)) :=
+  Classical.choose (actual_path_solution_exists U L hF γ σ T hT x W)
+```
+### MolecularDynamics.textbookLangevinPathEndpoint [MolecularDynamics/Chapter06/LangevinPathSolution.lean:54]
+```lean
+noncomputable def textbookLangevinPathEndpoint {Nc : ℕ}
+    (U : (Fin Nc → ℝ) → ℝ) (L : ℝ≥0) (hF : LipschitzWith L (textbookPotentialForce U))
+    (γ σ T : ℝ) (hT : 0 ≤ T) (x : textbookLangevinPhase Nc) (t : ℝ)
+    (W : C(Icc 0 T, Fin Nc → ℝ)) : textbookLangevinPhase Nc :=
+  ((textbookLangevinPathSolution U L hF γ σ T hT x W).1 t,
+    (textbookLangevinPathSolution U L hF γ σ T hT x W).2 t)
+```
+### MolecularDynamics.textbookLangevinPeriodicPathEndpoint [MolecularDynamics/Chapter06/LangevinPeriodicCausalFlow.lean:64]
+```lean
+noncomputable def textbookLangevinPeriodicPathEndpoint {Nc : ℕ}
+    (U : (Fin Nc → ℝ) → ℝ) (L : ℝ≥0) (hF : LipschitzWith L (textbookPotentialForce U))
+    (γ σ T : ℝ) (hT : 0 ≤ T) (x : textbookLangevinPeriodicPhase Nc) (t : ℝ)
+    (W : C(Icc 0 T, Fin Nc → ℝ)) : textbookLangevinPeriodicPhase Nc :=
+  textbookLangevinPeriodicProjection
+    (textbookLangevinPathEndpoint U L hF γ σ T hT (textbookLangevinPeriodicRepresentative x.1, x.2) t W)
+```
+### MolecularDynamics.textbookUnitPeriodicPotential [MolecularDynamics/Chapter06/LangevinPeriodicForce.lean:13]
+```lean
+def textbookUnitPeriodicPotential {Nc : ℕ} (U : (Fin Nc → ℝ) → ℝ) : Prop :=
+  ∀ q (n : Fin Nc → ℤ), U (q + fun i ↦ (n i : ℝ)) = U q
+```
+### MolecularDynamics.textbookLangevinPeriodicRepresentative [MolecularDynamics/Chapter06/LangevinPeriodicLift.lean:13]
+```lean
+noncomputable def textbookLangevinPeriodicRepresentative {Nc : ℕ}
+    (Q : UnitAddTorus (Fin Nc)) : Fin Nc → ℝ := fun i ↦ Quotient.out (Q i)
+```
+### MolecularDynamics.textbookLangevinPeriodicPhase [MolecularDynamics/Chapter06/LangevinPeriodicProjection.lean:14]
+```lean
+abbrev textbookLangevinPeriodicPhase (Nc : ℕ) := UnitAddTorus (Fin Nc) × (Fin Nc → ℝ)
+```
+### MolecularDynamics.textbookLangevinPeriodicProjection [MolecularDynamics/Chapter06/LangevinPeriodicProjection.lean:17]
+```lean
+def textbookLangevinPeriodicProjection {Nc : ℕ}
+    (z : textbookLangevinPhase Nc) : textbookLangevinPeriodicPhase Nc :=
+  (fun i ↦ (z.1 i : UnitAddCircle), z.2)
+```
+### MolecularDynamics.textbookLangevinPeriodicTransitionKernel [MolecularDynamics/Chapter06/LangevinTransitionKernel.lean:178]
+```lean
+noncomputable def textbookLangevinPeriodicTransitionKernel {Nc : ℕ} {Ω : Type*} [MeasurableSpace Ω]
+    (B : ℝ≥0 → Ω → (Fin Nc → ℝ)) (P : Measure Ω)
+    (U : (Fin Nc → ℝ) → ℝ) (hU : ContDiff ℝ ∞ U) (hP : textbookUnitPeriodicPotential U) (L : ℝ≥0)
+    (hF : LipschitzWith L (textbookPotentialForce U)) (γ σ : ℝ) (T : ℝ≥0) :
+    Kernel (textbookLangevinPeriodicPhase Nc) (textbookLangevinPeriodicPhase Nc) :=
+  (Kernel.deterministic
+    (fun z : textbookLangevinPeriodicPhase Nc × C(Icc (0 : ℝ) T, Fin Nc → ℝ) ↦
+      textbookLangevinPeriodicPathEndpoint U L hF γ σ T T.property z.1 T z.2)
+    (textbookLangevinPeriodicPathEndpoint_joint_measurable U hU hP L hF γ σ T T.property T ⟨T.property, le_rfl⟩)) ∘ₖ
+      (Kernel.id ×ₖ Kernel.const (textbookLangevinPeriodicPhase Nc)
+        (P.map (textbookWienerVectorContinuousPath B T)))
+```
+### MolecularDynamics.textbookWienerVectorContinuousPath [MolecularDynamics/Chapter06/WienerVectorContinuousPath.lean:14]
+```lean
+noncomputable def textbookWienerVectorContinuousPath {Nc : ℕ} {Ω : Type*}
+    (B : ℝ≥0 → Ω → (Fin Nc → ℝ)) (T : ℝ) (sample : Ω) : C(Icc 0 T, Fin Nc → ℝ) := by
+  classical
+  exact if h : Continuous (fun t ↦ B t sample) then
+    ⟨fun s ↦ B ⟨s.1, s.2.1⟩ sample, h.comp (by fun_prop)⟩ else 0
+```
+### MolecularDynamics.textbookIsWienerVector [MolecularDynamics/Chapter06/WienerVectorSupport.lean:13]
+```lean
+structure textbookIsWienerVector {Nc : ℕ} {Ω : Type*} [MeasurableSpace Ω]
+    (B : ℝ≥0 → Ω → (Fin Nc → ℝ)) (P : Measure Ω) : Prop where
+  gaussian : IsGaussianProcess (fun z : (_ : Fin Nc) × ℝ≥0 ↦ fun ω ↦ B z.2 ω z.1) P
+  mean : ∀ i t, P[fun ω ↦ B t ω i] = 0
+  covariance : ∀ i j s t, cov[fun ω ↦ B s ω i, fun ω ↦ B t ω j; P] =
+    if i = j then ((min s t : ℝ≥0) : ℝ) else 0
+  cont : ∀ᵐ ω ∂P, Continuous (fun t ↦ B t ω)
+```

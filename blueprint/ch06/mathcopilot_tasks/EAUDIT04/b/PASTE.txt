@@ -1,0 +1,122 @@
+以附件/PASTE 为准，忽略 /workspace 旧文件；Mathlib 定义按标准含义采信。
+A逐字核对原文及证明；C只读核对对象、域、量词、前提和全部结论。所有项目定义体及选择规格在下文；仅作为审阅摘录，不是独立模块。theorem/lemma提供完整类型（不审证明）；定义提供完整定义体，按文件作用域解释。不要因sorry判签名FAIL。原文版忠实性、修正版正确性、反例、原书疑误分别说明，不凭旧文件或repair_log猜声明。
+本条MD-6.2.2-Proposition62，subtask=EAUDIT04b；原PDF页映射=[250, 251]。只读，不改工程或补证明。以JSON对象返回batch=EAUDIT04,input_sha256,items；逐条含source_id,subtask,input_sha256,json_review{status,issue_codes,corrected_json,issues,evidence},audit{lean_decl,verdict,explanation,counterexample,suggested_fix}。verdict=PASS/FAIL/NEEDS_HUMAN，status=APPROVED/CORRECTED/NEEDS_HUMAN。必须原样回显下列全部哈希。
+input_sha256:
+{
+  "Blueprint/Ch06.lean": "4a2a6cb72c1692f80e3537ab1a71701d429a482780a01226c3dc66a2ebb8b44b",
+  "blueprint/ch06/ch06_source.json": "d7f93cd20eb570744c710f3e07a88b319c082e4155812fee91db0920eb05944e",
+  "PAGES.pdf": "395b7cbcd9ba0acd1fca7141ce72fd19ed5b5e1ca5f9f0bdd40782e2e3dcc8fc",
+  "materials_sha256": "4bf0646fdf8a4e6d664d4ed07c0fb3ba59fbe2e8e774be92633050e89aa35e28"
+}
+
+## 原文JSON
+```json
+{
+  "source_id": "MD-6.2.2-Proposition62",
+  "kind": "proposition",
+  "label": "Proposition 6.2",
+  "section": "6.2.2",
+  "printed_page": "229–230",
+  "pdf_page": "250–251",
+  "statement_latex": "Proposition 6.2 Let $\\nu\\delta t=\\tau$ then\n\\[\\operatorname{l.i.m.}_{\\nu\\to\\infty}\\sum_{k=0}^{\\nu-1}[(W((k+1)\\delta t)-W(k\\delta t))^2]=\\tau,\\]\nwhere, for a sequence of random variables, $A_\\nu$ and a random variable $B$, we have\n\\[\\operatorname{l.i.m.}_{\\nu\\to\\infty}A_\\nu=B\\iff\\lim_{\\nu\\to\\infty}\\mathbb E(A_\\nu-B)^2=0.\\]\n(This is referred to as convergence in the mean square sense.)",
+  "proof_latex": "With $\\tau,\\nu$ fixed, we have $\\delta t=\\tau/\\nu$.\nLet $\\Delta W_{\\nu,k}=W((k+1)\\delta t)-W(k\\delta t)=W((k+1)\\tau/\\nu)-W(k\\tau/\\nu)$ and observe that\n\\[\\sum_{k=0}^{\\nu-1}\\Delta W_{\\nu,k}^2-\\tau=\\sum_{k=0}^{\\nu-1}[\\Delta W_{\\nu,k}^2-\\delta t].\\]\nThen\n\\[I_\\nu\\stackrel{\\rm def}=\\mathbb E(\\sum_{k=0}^{\\nu-1}\\Delta W_{\\nu,k}^2-\\tau)^2=\\mathbb E(\\sum_{k=0}^{\\nu-1}[\\Delta W_{\\nu,k}^2-\\delta t])^2.\\]\nTerms of the form $Z_{\\nu,k}\\stackrel{\\rm def}=\\Delta W_{\\nu,k}^2-\\delta t$ are independent and have mean zero. Therefore\n\\[\\mathbb E(\\sum_{k=0}^{\\nu-1}Z_{\\nu,k})^2=\\mathbb E\\sum_{k=0}^{\\nu-1}Z_{\\nu,k}^2-2\\mathbb E\\sum_{k\\ne l}Z_{\\nu,k}Z_{\\nu,l}=\\mathbb E\\sum_{k=0}^{\\nu-1}Z_{\\nu,k}^2,\\]\nwhere the last equation follows from independence of the increments ($\\mathbb E Z_kZ_l=0$ if $k\\ne l$).\nAlso observe that $\\Delta W_k$ is a normally distributed random variable with the following properties\n\\[\\mathbb E\\Delta W_k=0;\\quad\\mathbb E\\Delta W_k^2=\\delta t=\\tau/\\nu;\\quad\\mathbb E\\Delta W_k^4=3\\delta t^2=3(\\tau/\\nu)^2.\\]\nThus we have\n\\[I_\\nu=\\sum_{k=0}^{\\nu-1}\\mathbb E(\\Delta \\Delta W_{\\nu,k}^2-\\delta t)^2\n=\\sum_{k=0}^{\\nu-1}\\mathbb E[\\Delta \\Delta W_{\\nu,k}^4-2\\delta t\\Delta \\Delta W_{\\nu,k}^2+\\delta t^2]\n=\\sum_{k=0}^{\\nu-1}[3\\delta t^2-2\\delta t^2+\\delta t^2]=2\\nu\\delta t^2=2\\tau^2/\\nu.\\]\nThus $I_\\nu\\to0$ as $\\nu\\to0$, which is the desired result.",
+  "proof_note": "逐字保存含印刷负号与K→0；正式桥接使用正确独立平方和及K→∞。",
+  "proof_discussion_latex": null,
+  "context_notation": [],
+  "extra_assumptions": [
+    "[EXTRA]实际PreBrownian law、τ≥0、全部均方极限；印刷最后K→0是笔误，更正K→∞。",
+    "[EXTRA] 25号：原文版忠实性与数学疑误分开；补齐所交条目所属的现有_corrected完整签名，不从repair_log名称推断网站已通过修正版。"
+  ],
+  "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
+  "coverage_gaps": null
+}
+```
+## 当前完整Lean（全部原文版、修正版及反例）
+```lean
+theorem proposition62 {Ω : Type*} [MeasurableSpace Ω] {P : Measure Ω} {W : ℝ≥0 → Ω → ℝ}
+    (hW : IsPreBrownianReal W P) (T : ℝ≥0) :
+    Tendsto (fun K : ℕ ↦ ∫ sample,
+      (textbookWienerQuadraticSum W T K sample - (T : ℝ)) ^ 2 ∂P) atTop (𝓝 0) := by
+  apply MolecularDynamics.textbookWienerQuadraticSum_meanSquare_tendsto <;> assumption
+
+/-- 修正版，对应原文 MD-6.2.2-Proposition62；改动：保持已证二次变差结论；独立记录印刷平方展开与其正确代数式，并注明极限方向。 -/
+theorem proposition62_corrected {Ω : Type*} [MeasurableSpace Ω] {P : Measure Ω} {W : ℝ≥0 → Ω → ℝ}
+    (hW : IsPreBrownianReal W P) (T : ℝ≥0) :
+    Tendsto (fun K : ℕ ↦ ∫ sample,
+      (textbookWienerQuadraticSum W T K sample - (T : ℝ)) ^ 2 ∂P) atTop (𝓝 0) := by
+  apply MolecularDynamics.textbookWienerQuadraticSum_meanSquare_tendsto <;> assumption
+
+/-- 【原书疑误】p.229错误交叉项展开；双变量形式，原文不证。 -/
+def proposition62Printed (x y : ℝ) : ℝ := x^2+y^2-4*x*y
+
+/-- 修正平方展开；有序交叉和的系数为+1。 -/
+theorem proposition62Expansion_corrected (x y : ℝ) : (x+y)^2=x^2+y^2+2*x*y := by
+  ring
+
+theorem proposition62Printed_counterexample : ¬ ((1+1 : ℝ)^2=1^2+1^2-4*1*1) := by
+  norm_num
+```
+### 文件参数及作用域 Blueprint/Ch06.lean
+```lean
+open Set Filter Matrix MeasureTheory ProbabilityTheory MolecularDynamics MolecularDynamics.Chapter02Review MolecularDynamics.Chapter06Review
+open scoped BigOperators Topology ContDiff InnerProductSpace Matrix.Norms.L2Operator ENNReal NNReal
+variable {n Nc : ℕ}
+variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
+variable {R : Type*} [Ring R] [Algebra ℝ R]
+local instance : MeasureSpace UnitAddCircle := ⟨AddCircle.haarAddCircle⟩
+```
+### 文件参数及作用域 MolecularDynamics/Chapter06/WienerQuadraticVariation.lean
+```lean
+open MeasureTheory ProbabilityTheory Filter
+open scoped NNReal ENNReal Topology ProbabilityTheory
+variable {Ω : Type*} [MeasurableSpace Ω] {P : Measure Ω}
+```
+### MD.Ch06.proposition62 [Blueprint/Ch06.lean:900]
+```lean
+theorem proposition62 {Ω : Type*} [MeasurableSpace Ω] {P : Measure Ω} {W : ℝ≥0 → Ω → ℝ}
+    (hW : IsPreBrownianReal W P) (T : ℝ≥0) :
+    Tendsto (fun K : ℕ ↦ ∫ sample,
+      (textbookWienerQuadraticSum W T K sample - (T : ℝ)) ^ 2 ∂P) atTop (𝓝 0)
+```
+### MD.Ch06.proposition62_corrected [Blueprint/Ch06.lean:907]
+```lean
+theorem proposition62_corrected {Ω : Type*} [MeasurableSpace Ω] {P : Measure Ω} {W : ℝ≥0 → Ω → ℝ}
+    (hW : IsPreBrownianReal W P) (T : ℝ≥0) :
+    Tendsto (fun K : ℕ ↦ ∫ sample,
+      (textbookWienerQuadraticSum W T K sample - (T : ℝ)) ^ 2 ∂P) atTop (𝓝 0)
+```
+### MD.Ch06.proposition62Printed [Blueprint/Ch06.lean:914]
+```lean
+def proposition62Printed (x y : ℝ) : ℝ := x^2+y^2-4*x*y
+```
+### MD.Ch06.proposition62Expansion_corrected [Blueprint/Ch06.lean:917]
+```lean
+theorem proposition62Expansion_corrected (x y : ℝ) : (x+y)^2=x^2+y^2+2*x*y
+```
+### MD.Ch06.proposition62Printed_counterexample [Blueprint/Ch06.lean:920]
+```lean
+theorem proposition62Printed_counterexample : ¬ ((1+1 : ℝ)^2=1^2+1^2-4*1*1)
+```
+### MolecularDynamics.textbookWienerTime [MolecularDynamics/Chapter06/WienerQuadraticVariation.lean:105]
+```lean
+noncomputable def textbookWienerTime (T : ℝ≥0) (K k : ℕ) : ℝ≥0 :=
+  (k : ℝ≥0) * (T / (K : ℝ≥0))
+```
+### MolecularDynamics.textbookWienerIncrement [MolecularDynamics/Chapter06/WienerQuadraticVariation.lean:109]
+```lean
+noncomputable def textbookWienerIncrement (W : ℝ≥0 → Ω → ℝ) (T : ℝ≥0) (K : ℕ)
+    (k : Fin K) : Ω → ℝ :=
+  fun ω ↦ W (textbookWienerTime T K (k.val + 1)) ω - W (textbookWienerTime T K k.val) ω
+```
+### MolecularDynamics.textbookWienerQuadraticSum [MolecularDynamics/Chapter06/WienerQuadraticVariation.lean:114]
+```lean
+noncomputable def textbookWienerQuadraticSum (W : ℝ≥0 → Ω → ℝ) (T : ℝ≥0) (K : ℕ) : Ω → ℝ :=
+  fun ω ↦ ∑ k : Fin K, textbookWienerIncrement W T K k ω ^ 2
+```
+### MolecularDynamics.textbookWienerQuadraticSum_meanSquare_tendsto [MolecularDynamics/Chapter06/WienerQuadraticVariation.lean:200]
+```lean
+theorem textbookWienerQuadraticSum_meanSquare_tendsto {W : ℝ≥0 → Ω → ℝ}
+    (hW : IsPreBrownianReal W P) (T : ℝ≥0) :
+    Tendsto (fun K : ℕ ↦ ∫ ω,
+      (textbookWienerQuadraticSum W T K ω - (T : ℝ)) ^ 2 ∂P) atTop (𝓝 0)
+```

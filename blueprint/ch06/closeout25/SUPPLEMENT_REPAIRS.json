@@ -1,0 +1,75 @@
+{
+  "items": [
+    {
+      "source_id": null,
+      "note": "25条FAIL旧覆盖/资格docstring以当前限定范围替换；旧内容逐字保存在before与各项diff，不保留互相冲突的现行范围声称。"
+    },
+    {
+      "source_id": "MD-6.3.2-OULawPrinted",
+      "note": "撤销旧docstring对原书错误的归因，历史before/diff保留。"
+    },
+    {
+      "source_id": "MD-6.3.6-FPDiffusionPrinted",
+      "note": "撤销旧docstring对原书错误的归因，历史before/diff保留。"
+    },
+    {
+      "source_id": "MD-6.3.1-TimeItoFormula",
+      "note": "Time主版和corrected另补C¹系数以保证自然适应连续被积过程的标准局部Itô联系，仍未证明。"
+    },
+    {
+      "source_id": "MD-6.1.5-Proposition61",
+      "note": "补独立proposition61_corrected；原有正确限定数学子句不撤回，原书证明或无条件说法的疑误另列。"
+    },
+    {
+      "source_id": "MD-6.2.2-RiemannTags",
+      "note": "补独立riemannTags_corrected；原有正确限定数学子句不撤回，原书证明或无条件说法的疑误另列。"
+    },
+    {
+      "source_id": "MD-6.2.2-SelfStratonovichIntegral",
+      "note": "补独立selfStratonovichIntegral_corrected；原有正确限定数学子句不撤回，原书证明或无条件说法的疑误另列。"
+    },
+    {
+      "source_id": "MD-6.4.3-BrownianSymmetry",
+      "note": "补独立brownianSymmetry_corrected；原有正确限定数学子句不撤回，原书证明或无条件说法的疑误另列。"
+    },
+    {
+      "source_id": "MD-6.4.3-BrownianRealEigenvalue",
+      "note": "补独立brownianRealEigenvalue_corrected；原有正确限定数学子句不撤回，原书证明或无条件说法的疑误另列。"
+    },
+    {
+      "source_id": "MD-6.4.3-BrownianClosedSelfAdjoint",
+      "note": "补独立brownianClosedSelfAdjoint_corrected；原有正确限定数学子句不撤回，原书证明或无条件说法的疑误另列。"
+    },
+    {
+      "source_id": "MD-6.4.3-BrownianCompactResolvent",
+      "note": "补独立brownianCompactResolvent_corrected；原有正确限定数学子句不撤回，原书证明或无条件说法的疑误另列。"
+    },
+    {
+      "source_id": "MD-6.4.5-ComplexInitialDensity",
+      "note": "补独立complexInitialDensity_corrected；原有正确限定数学子句不撤回，原书证明或无条件说法的疑误另列。"
+    },
+    {
+      "source_id": "MD-6.4.2-CylinderForwardPrinted",
+      "note": "新增圆柱空间周期lift版本，Printed保留原φ及1/2；Euclidean corrected仅作坐标辅助。"
+    }
+  ],
+  "receipt": {
+    "command": [
+      "lake",
+      "--no-cache",
+      "env",
+      "lean",
+      "--server"
+    ],
+    "mode": "official Lean compiler single-file LSP elaboration",
+    "exit_code": 0,
+    "input_sha256": "0e9bd19fc24c2c11cba977c78123012a450af93c6a049822b13b39afe191e66d",
+    "log_sha256": "4d50b3259b802048769d3590396cb501ad9745236cc1527522f0d6c78f97037f",
+    "version": 27,
+    "uri": "file:///C:/Users/ustc/Desktop/formal%20math/MolecularDynamicsFormalization/blueprint/ch06/closeout25/ActiveCheck.lean",
+    "elapsed_seconds": 20.392341136932373,
+    "errors": [],
+    "missing_axiom_outputs": [],
+    "canonical_sha256": "4a2a6cb72c1692f80e3537ab1a71701d429a482780a01226c3dc66a2ebb8b44b"
+  }
+}

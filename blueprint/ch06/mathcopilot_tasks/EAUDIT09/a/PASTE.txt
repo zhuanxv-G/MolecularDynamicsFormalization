@@ -1,0 +1,124 @@
+以附件/PASTE 为准，忽略 /workspace 旧文件；Mathlib 定义按标准含义采信。
+A逐字核对原文及证明；C只读核对对象、域、量词、前提和全部结论。所有项目定义体及选择规格在下文；仅作为审阅摘录，不是独立模块。theorem/lemma提供完整类型（不审证明）；定义提供完整定义体，按文件作用域解释。不要因sorry判签名FAIL。原文版忠实性、修正版正确性、反例、原书疑误分别说明，不凭旧文件或repair_log猜声明。
+本条MD-6.3.6-FPPolynomialAdjoint，subtask=EAUDIT09a；原PDF页映射=[262, 263]。只读，不改工程或补证明。以JSON对象返回batch=EAUDIT09,input_sha256,items；逐条含source_id,subtask,input_sha256,json_review{status,issue_codes,corrected_json,issues,evidence},audit{lean_decl,verdict,explanation,counterexample,suggested_fix}。verdict=PASS/FAIL/NEEDS_HUMAN，status=APPROVED/CORRECTED/NEEDS_HUMAN。必须原样回显下列全部哈希。
+input_sha256:
+{
+  "Blueprint/Ch06.lean": "4a2a6cb72c1692f80e3537ab1a71701d429a482780a01226c3dc66a2ebb8b44b",
+  "blueprint/ch06/ch06_source.json": "d7f93cd20eb570744c710f3e07a88b319c082e4155812fee91db0920eb05944e",
+  "PAGES.pdf": "5bd681703fe60f423eb8de031b34bb5117bf6fadbaf2c496cc11f46cf2fb0d7d",
+  "materials_sha256": "b7ab9cb2a229248b7d35ea704983c8509da883fc4f4eae9e8af421b12be8c0e1"
+}
+
+## 原文JSON
+```json
+{
+  "source_id": "MD-6.3.6-FPPolynomialAdjoint",
+  "kind": "unnumbered_claim",
+  "label": null,
+  "section": "6.3.6",
+  "printed_page": "241–242",
+  "pdf_page": "262–263",
+  "statement_latex": "We assume that $\\rho$ is $C^\\infty$ for all $t$ and that the density tends to zero exponentially fast as $x\\to\\pm\\infty$, whereas $a$ and $b$ are $C^\\infty$ functions which grow at most polynomially fast in these limits, that is, there are constants $\\eta_a$, $\\eta_b$ such that\n\\[a(x)=\\mathcal O(|x|^{\\eta_a}),\\quad b(x)=\\mathcal O(|x|^{\\eta_b}),\\quad x\\to\\pm\\infty.\\]\n[中间原文略]\n\\[\\langle\\mathcal L\\phi,\\rho\\rangle=\\langle\\phi,\\mathcal L^\\dagger\\rho\\rangle.\\]",
+  "proof_latex": null,
+  "proof_note": "原书未给独立完整证明。",
+  "proof_discussion_latex": null,
+  "context_notation": [],
+  "extra_assumptions": [
+    "[EXTRA]原C∞P值增长不足以控制所有IBP边界；明确一、二阶a,b,φ多项式增长及ρ导数指数尾，保存整个非紧支撑真实积分恒等。",
+    "[EXTRA] 25号：原文版忠实性与数学疑误分开；补齐所交条目所属的现有_corrected完整签名，不从repair_log名称推断网站已通过修正版。"
+  ],
+  "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
+  "coverage_gaps": null
+}
+```
+## 当前完整Lean（全部原文版、修正版及反例）
+```lean
+theorem fpPolynomialAdjoint : ∀ (a b ρ φ : ℝ → ℝ),
+  ContDiff ℝ ∞ a → ContDiff ℝ ∞ b → ContDiff ℝ ∞ ρ → ContDiff ℝ ∞ φ →
+  (∀ f ∈ ({a,b,φ} : Set (ℝ → ℝ)), ∀ k : ℕ, k ≤ 2 →
+    ∃ C : ℝ, 0 ≤ C ∧ ∃ r : ℕ, ∀ x, |iteratedDeriv k f x| ≤ C*(1+|x|)^r) →
+  (∀ k : ℕ, k ≤ 2 → ∃ C c : ℝ, 0 ≤ C ∧ 0 < c ∧ ∀ x,
+    |iteratedDeriv k ρ x| ≤ C*Real.exp (-c*|x|)) →
+  (∫ x, MolecularDynamics.Chapter06Review.scalarGenerator a b φ x*ρ x)=
+    (∫ x, φ x*MolecularDynamics.Chapter06Review.scalarForward a b ρ x) := by
+  sorry
+
+/-- 修正版，对应原文 MD-6.3.6-FPPolynomialAdjoint；改动：显式约束所需导数的多项式增长和密度导数的指数衰减。 -/
+theorem fpPolynomialAdjoint_corrected : ∀ (a b ρ φ : ℝ → ℝ),
+  ContDiff ℝ ∞ a → ContDiff ℝ ∞ b → ContDiff ℝ ∞ ρ → ContDiff ℝ ∞ φ →
+  (∀ f ∈ ({a,b,φ} : Set (ℝ → ℝ)), ∀ k : ℕ, k ≤ 2 →
+    ∃ C : ℝ, 0 ≤ C ∧ ∃ r : ℕ, ∀ x, |iteratedDeriv k f x| ≤ C*(1+|x|)^r) →
+  (∀ k : ℕ, k ≤ 2 → ∃ C c : ℝ, 0 ≤ C ∧ 0 < c ∧ ∀ x,
+    |iteratedDeriv k ρ x| ≤ C*Real.exp (-c*|x|)) →
+  (∫ x, MolecularDynamics.Chapter06Review.scalarGenerator a b φ x*ρ x)=
+    (∫ x, φ x*MolecularDynamics.Chapter06Review.scalarForward a b ρ x) := by
+  sorry
+
+/-- 【原书疑误】仅函数值增长条件的字面伴随断言；不证。 -/
+theorem fpPolynomialAdjointPrinted : ∀ (a b ρ φ : ℝ → ℝ),
+  ContDiff ℝ ∞ a → ContDiff ℝ ∞ b → ContDiff ℝ ∞ ρ → ContDiff ℝ ∞ φ →
+  (∀ f ∈ ({a,b,φ} : Set (ℝ → ℝ)), ∀ k : ℕ, k = 0 →
+    ∃ C : ℝ, 0 ≤ C ∧ ∃ r : ℕ, ∀ x, |iteratedDeriv k f x| ≤ C*(1+|x|)^r) →
+  (∀ k : ℕ, k = 0 → ∃ C c : ℝ, 0 ≤ C ∧ 0 < c ∧ ∀ x,
+    |iteratedDeriv k ρ x| ≤ C*Real.exp (-c*|x|)) →
+  (∫ x, MolecularDynamics.Chapter06Review.scalarGenerator a b φ x*ρ x)=
+    (∫ x, φ x*MolecularDynamics.Chapter06Review.scalarForward a b ρ x) := by
+  sorry
+```
+### 文件参数及作用域 Blueprint/Ch06.lean
+```lean
+open Set Filter Matrix MeasureTheory ProbabilityTheory MolecularDynamics MolecularDynamics.Chapter02Review MolecularDynamics.Chapter06Review
+open scoped BigOperators Topology ContDiff InnerProductSpace Matrix.Norms.L2Operator ENNReal NNReal
+variable {n Nc : ℕ}
+variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
+variable {R : Type*} [Ring R] [Algebra ℝ R]
+local instance : MeasureSpace UnitAddCircle := ⟨AddCircle.haarAddCircle⟩
+```
+### 文件参数及作用域 MolecularDynamics/Chapter06/ReviewDefinitions.lean
+```lean
+open Set Filter MeasureTheory ProbabilityTheory
+open scoped BigOperators Topology ContDiff ENNReal NNReal
+local instance : MeasureSpace UnitAddCircle := ⟨AddCircle.haarAddCircle⟩
+```
+### MD.Ch06.fpPolynomialAdjoint [Blueprint/Ch06.lean:1739]
+```lean
+theorem fpPolynomialAdjoint : ∀ (a b ρ φ : ℝ → ℝ),
+  ContDiff ℝ ∞ a → ContDiff ℝ ∞ b → ContDiff ℝ ∞ ρ → ContDiff ℝ ∞ φ →
+  (∀ f ∈ ({a,b,φ} : Set (ℝ → ℝ)), ∀ k : ℕ, k ≤ 2 →
+    ∃ C : ℝ, 0 ≤ C ∧ ∃ r : ℕ, ∀ x, |iteratedDeriv k f x| ≤ C*(1+|x|)^r) →
+  (∀ k : ℕ, k ≤ 2 → ∃ C c : ℝ, 0 ≤ C ∧ 0 < c ∧ ∀ x,
+    |iteratedDeriv k ρ x| ≤ C*Real.exp (-c*|x|)) →
+  (∫ x, MolecularDynamics.Chapter06Review.scalarGenerator a b φ x*ρ x)=
+    (∫ x, φ x*MolecularDynamics.Chapter06Review.scalarForward a b ρ x)
+```
+### MD.Ch06.fpPolynomialAdjoint_corrected [Blueprint/Ch06.lean:1750]
+```lean
+theorem fpPolynomialAdjoint_corrected : ∀ (a b ρ φ : ℝ → ℝ),
+  ContDiff ℝ ∞ a → ContDiff ℝ ∞ b → ContDiff ℝ ∞ ρ → ContDiff ℝ ∞ φ →
+  (∀ f ∈ ({a,b,φ} : Set (ℝ → ℝ)), ∀ k : ℕ, k ≤ 2 →
+    ∃ C : ℝ, 0 ≤ C ∧ ∃ r : ℕ, ∀ x, |iteratedDeriv k f x| ≤ C*(1+|x|)^r) →
+  (∀ k : ℕ, k ≤ 2 → ∃ C c : ℝ, 0 ≤ C ∧ 0 < c ∧ ∀ x,
+    |iteratedDeriv k ρ x| ≤ C*Real.exp (-c*|x|)) →
+  (∫ x, MolecularDynamics.Chapter06Review.scalarGenerator a b φ x*ρ x)=
+    (∫ x, φ x*MolecularDynamics.Chapter06Review.scalarForward a b ρ x)
+```
+### MD.Ch06.fpPolynomialAdjointPrinted [Blueprint/Ch06.lean:1761]
+```lean
+theorem fpPolynomialAdjointPrinted : ∀ (a b ρ φ : ℝ → ℝ),
+  ContDiff ℝ ∞ a → ContDiff ℝ ∞ b → ContDiff ℝ ∞ ρ → ContDiff ℝ ∞ φ →
+  (∀ f ∈ ({a,b,φ} : Set (ℝ → ℝ)), ∀ k : ℕ, k = 0 →
+    ∃ C : ℝ, 0 ≤ C ∧ ∃ r : ℕ, ∀ x, |iteratedDeriv k f x| ≤ C*(1+|x|)^r) →
+  (∀ k : ℕ, k = 0 → ∃ C c : ℝ, 0 ≤ C ∧ 0 < c ∧ ∀ x,
+    |iteratedDeriv k ρ x| ≤ C*Real.exp (-c*|x|)) →
+  (∫ x, MolecularDynamics.Chapter06Review.scalarGenerator a b φ x*ρ x)=
+    (∫ x, φ x*MolecularDynamics.Chapter06Review.scalarForward a b ρ x)
+```
+### MolecularDynamics.Chapter06Review.scalarGenerator [MolecularDynamics/Chapter06/ReviewDefinitions.lean:128]
+```lean
+def scalarGenerator (a b f : ℝ → ℝ) (x : ℝ) : ℝ := a x*deriv f x + b x^2/2*deriv (deriv f) x
+```
+### MolecularDynamics.Chapter06Review.scalarForward [MolecularDynamics/Chapter06/ReviewDefinitions.lean:129]
+```lean
+def scalarForward (a b ρ : ℝ → ℝ) (x : ℝ) : ℝ :=
+  -deriv (fun z ↦ a z*ρ z) x + deriv (deriv (fun z ↦ b z^2*ρ z)) x/2
+```

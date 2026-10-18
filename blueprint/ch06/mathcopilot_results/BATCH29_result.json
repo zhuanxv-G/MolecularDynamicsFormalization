@@ -1,0 +1,453 @@
+{
+  "batch": "BATCH29",
+  "chapter": "ch06",
+  "round": "first-merged",
+  "input_sha256": {
+    "Blueprint/Ch06.lean": "0a02a34ec68989a83bccfa5916db5053ecdb58e05667bf21ff3568d9d1f4318e",
+    "blueprint/ch06/ch06_source.json": "45c70ceef21ca168af437de297e2e21e2800b452ab7942654061d4cff9bb5d95"
+  },
+  "items": [
+    {
+      "source_id": "MD-6.4.2-MassGibbsStationary",
+      "json_review": {
+        "status": "CORRECTED",
+        "issue_codes": [
+          "SOURCE_QUOTE_NOT_ON_PAGE"
+        ],
+        "corrected_json": {
+          "source_id": "MD-6.4.2-MassGibbsStationary",
+          "kind": "extra_claim",
+          "label": null,
+          "section": "6.4.2",
+          "printed_page": "247",
+          "pdf_page": "268",
+          "statement_latex": "We have seen that invariant distributions correspond in general to solutions of\n\\[\\mathcal L^\\dagger\\rho_{\\rm eq}\\equiv0.\\]",
+          "proof_latex": null,
+          "proof_note": "原书未给独立完整证明。",
+          "proof_discussion_latex": null,
+          "context_notation": [],
+          "issues": [
+            {
+              "code": "SOURCE_QUOTE_NOT_ON_PAGE",
+              "message": "所引“We have a stationary distribution if …”不是所指定附件原页上的原句。原页实际为“We have seen that invariant distributions correspond in general to solutions of”及L†ρeq≡0。应改为真实摘录，不能把意译标作逐字原文。"
+            }
+          ],
+          "lean_decl": "MD.Ch06.massGibbsStationary",
+          "reusable_proofs": [],
+          "extra_assumptions": [
+            "[EXTRA]真实任意正质量与匹配β⁻¹噪声；完整原Gibbs权重的形式stationarity验证，不将它计为Markov演化测度不变性。"
+          ],
+          "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
+          "review_status": "CORRECTED",
+          "repair_log": [
+            "R6审校：只修订审校JSON；原书数学疑误保留，未修改Lean工程或补证明。"
+          ],
+          "source_page_verification": "R6_PAGES.pdf 附件第5页；已比对对应原页渲染及文本；详见本条evidence。"
+        },
+        "issues": [
+          {
+            "code": "SOURCE_QUOTE_NOT_ON_PAGE",
+            "message": "所引“We have a stationary distribution if …”不是所指定附件原页上的原句。原页实际为“We have seen that invariant distributions correspond in general to solutions of”及L†ρeq≡0。应改为真实摘录，不能把意译标作逐字原文。"
+          }
+        ],
+        "evidence": [
+          "A：R6_PAGES.pdf 附件第5页（原PDF 268，印刷页247）；逐字、公式及页码核对。",
+          "C：只读核对R6_任务.md本条全部Lean签名及其列出的项目依赖/附录定义，未使用旧工程文件；不以sorry判FAIL。",
+          "原页下半部确为“We have seen that invariant distributions correspond in general to solutions of”与L†ρeq≡0，不是给定JSON中的原句。"
+        ]
+      },
+      "audit": {
+        "lean_decl": "MD.Ch06.massGibbsStationary",
+        "verdict": "PASS",
+        "explanation": "D10与massHamiltonian的全部质量权重匹配：H=∑pi²/(2mi)+U，ρ=exp(−βH)。Hamilton项互消，摩擦项与γβ⁻¹mi的扩散项互消。正质量、光滑U及γ/β正性已明列。只断言形式算子为零，[EXTRA]已说明没有归一化或测度不变性结论；例如U=0时权重在非紧q空间不归一化也不影响该代数微分恒等式。",
+        "counterexample": null,
+        "suggested_fix": null
+      },
+      "subtask": "BATCH29a",
+      "input_sha256": {
+        "Blueprint/Ch06.lean": "0a02a34ec68989a83bccfa5916db5053ecdb58e05667bf21ff3568d9d1f4318e",
+        "blueprint/ch06/ch06_source.json": "45c70ceef21ca168af437de297e2e21e2800b452ab7942654061d4cff9bb5d95",
+        "BATCH29a_PAGES.pdf": "9483a7964d73395bc3b255ea8c0c4adb3062d81605078941b36202a48c164842",
+        "signature_sha256": "4e6cb960613c12d507ace661ea65f6177a04a886c1a20b545336637088c30496"
+      }
+    },
+    {
+      "source_id": "MD-6.4.2-UnitMassGibbsStationaryBridge",
+      "json_review": {
+        "status": "CORRECTED",
+        "issue_codes": [
+          "SOURCE_QUOTE_NOT_ON_PAGE"
+        ],
+        "corrected_json": {
+          "source_id": "MD-6.4.2-UnitMassGibbsStationaryBridge",
+          "kind": "extra_claim",
+          "label": null,
+          "section": "6.4.2",
+          "printed_page": "247",
+          "pdf_page": "268",
+          "statement_latex": "We have seen that invariant distributions correspond in general to solutions of\n\\[\\mathcal L^\\dagger\\rho_{\\rm eq}\\equiv0.\\]",
+          "proof_latex": null,
+          "proof_note": "原书未给独立完整证明。",
+          "proof_discussion_latex": null,
+          "context_notation": [],
+          "issues": [
+            {
+              "code": "SOURCE_QUOTE_NOT_ON_PAGE",
+              "message": "所引“We have a stationary distribution if …”不是所指定附件原页上的原句。原页实际为“We have seen that invariant distributions correspond in general to solutions of”及L†ρeq≡0。应改为真实摘录，不能把意译标作逐字原文。"
+            }
+          ],
+          "lean_decl": "MD.Ch06.unitMassGibbsStationaryBridge",
+          "reusable_proofs": [
+            "MolecularDynamics.textbookLangevinForwardDifferentialOperator_gibbs_eq_zero"
+          ],
+          "extra_assumptions": [
+            "[EXTRA]现成真实单位质量原机械Hamiltonian权重、σ²=2γ/β的前向形式表达；未代表任意质量或真实过程测度不变性全部已证。"
+          ],
+          "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
+          "review_status": "CORRECTED",
+          "repair_log": [
+            "R6审校：只修订审校JSON；原书数学疑误保留，未修改Lean工程或补证明。"
+          ],
+          "source_page_verification": "R6_PAGES.pdf 附件第6页；已比对对应原页渲染及文本；详见本条evidence。"
+        },
+        "issues": [
+          {
+            "code": "SOURCE_QUOTE_NOT_ON_PAGE",
+            "message": "所引“We have a stationary distribution if …”不是所指定附件原页上的原句。原页实际为“We have seen that invariant distributions correspond in general to solutions of”及L†ρeq≡0。应改为真实摘录，不能把意译标作逐字原文。"
+          }
+        ],
+        "evidence": [
+          "A：R6_PAGES.pdf 附件第6页（原PDF 268，印刷页247）；逐字、公式及页码核对。",
+          "C：只读核对R6_任务.md本条全部Lean签名及其列出的项目依赖/附录定义，未使用旧工程文件；不以sorry判FAIL。",
+          "原页下半部确为“We have seen that invariant distributions correspond in general to solutions of”与L†ρeq≡0，不是给定JSON中的原句。"
+        ]
+      },
+      "audit": {
+        "lean_decl": "MD.Ch06.unitMassGibbsStationaryBridge",
+        "verdict": "PASS",
+        "explanation": "单位质量相空间、机械Hamiltonian、Gibbs指数及σ²=2γ/β一致。给出的前向定义沿冻结漂移方向作一阶导数，加实际相空间散度及全部动量二阶导数；散度为−γN，势力只需U可微，因为散度只对动量力的动量变量求导。结论是任意z上的形式消去，不声称一般质量或概率测度不变性。",
+        "counterexample": null,
+        "suggested_fix": null
+      },
+      "subtask": "BATCH29b",
+      "input_sha256": {
+        "Blueprint/Ch06.lean": "0a02a34ec68989a83bccfa5916db5053ecdb58e05667bf21ff3568d9d1f4318e",
+        "blueprint/ch06/ch06_source.json": "45c70ceef21ca168af437de297e2e21e2800b452ab7942654061d4cff9bb5d95",
+        "BATCH29b_PAGES.pdf": "9483a7964d73395bc3b255ea8c0c4adb3062d81605078941b36202a48c164842",
+        "signature_sha256": "9e6c8fe0df31f0a462c0f473f8096f9089898f456ea16ef34db03abcb1f594cf"
+      }
+    },
+    {
+      "source_id": "MD-6.4.2-CylinderCoordinates",
+      "json_review": {
+        "status": "APPROVED",
+        "issue_codes": [],
+        "corrected_json": null,
+        "issues": [],
+        "evidence": [
+          "A：R6_PAGES.pdf 附件第7页（原PDF 268，印刷页247）；逐字、公式及页码核对。",
+          "C：只读核对R6_任务.md本条全部Lean签名及其列出的项目依赖/附录定义，未使用旧工程文件；不以sorry判FAIL。"
+        ]
+      },
+      "audit": {
+        "lean_decl": "MD.Ch06.cylinderCoordinates",
+        "verdict": "PASS",
+        "explanation": "k₁、k₂取任意自然数，允许零；前k₁个实坐标商到AddCircle 1，后k₂个保留为实数。维数及真正的圆环×非紧空间均正确，定义是坐标投影这一明确[EXTRA]构造。",
+        "counterexample": null,
+        "suggested_fix": null
+      },
+      "subtask": "BATCH29c",
+      "input_sha256": {
+        "Blueprint/Ch06.lean": "0a02a34ec68989a83bccfa5916db5053ecdb58e05667bf21ff3568d9d1f4318e",
+        "blueprint/ch06/ch06_source.json": "45c70ceef21ca168af437de297e2e21e2800b452ab7942654061d4cff9bb5d95",
+        "BATCH29c_PAGES.pdf": "9483a7964d73395bc3b255ea8c0c4adb3062d81605078941b36202a48c164842",
+        "signature_sha256": "4eaf19155333c4e32df78880ff30f970378d8478f3c4e391508ee76bfb0cd29f"
+      }
+    },
+    {
+      "source_id": "MD-6.4.2-CylinderSDE",
+      "json_review": {
+        "status": "APPROVED",
+        "issue_codes": [],
+        "corrected_json": null,
+        "issues": [],
+        "evidence": [
+          "A：R6_PAGES.pdf 附件第8页（原PDF 268，印刷页247）；逐字、公式及页码核对。",
+          "C：只读核对R6_任务.md本条全部Lean签名及其列出的项目依赖/附录定义，未使用旧工程文件；不以sorry判FAIL。"
+        ]
+      },
+      "audit": {
+        "lean_decl": "MD.Ch06.cylinderSDE",
+        "verdict": "PASS",
+        "explanation": "定义同时要求周期lift漂移C∞、D6独立标准Wiener向量、全部常噪声矩阵和D4严格路径方程；输出X确实在圆环×实空间中，且几乎处处对所有非负时刻等于lift投影。x0是选定实lift初值，[EXTRA]已明确；没有先假设遍历或不变性。",
+        "counterexample": null,
+        "suggested_fix": null
+      },
+      "subtask": "BATCH29d",
+      "input_sha256": {
+        "Blueprint/Ch06.lean": "0a02a34ec68989a83bccfa5916db5053ecdb58e05667bf21ff3568d9d1f4318e",
+        "blueprint/ch06/ch06_source.json": "45c70ceef21ca168af437de297e2e21e2800b452ab7942654061d4cff9bb5d95",
+        "BATCH29d_PAGES.pdf": "9483a7964d73395bc3b255ea8c0c4adb3062d81605078941b36202a48c164842",
+        "signature_sha256": "674ab98b4bfdf8887f342e0b152d68aeb4140810efffe4258f3e302193a6dcbb"
+      }
+    },
+    {
+      "source_id": "MD-6.4.2-CylinderGenerator",
+      "json_review": {
+        "status": "APPROVED",
+        "issue_codes": [],
+        "corrected_json": null,
+        "issues": [],
+        "evidence": [
+          "A：R6_PAGES.pdf 附件第9页（原PDF 268，印刷页247）；逐字、公式及页码核对。",
+          "C：只读核对R6_任务.md本条全部Lean签名及其列出的项目依赖/附录定义，未使用旧工程文件；不以sorry判FAIL。"
+        ]
+      },
+      "audit": {
+        "lean_decl": "MD.Ch06.cylinderGenerator",
+        "verdict": "PASS",
+        "explanation": "展开vectorGenerator后是一阶方向导数Dφ·b₀加D7扩散的一半；φ和b₀都经cylinderCoordinates拉回，输入空间和全部k₁+k₂方向正确。此处给出局部微分表达式的定义，不是另一个声称已证明强生成元域的定理。",
+        "counterexample": null,
+        "suggested_fix": null
+      },
+      "subtask": "BATCH29e",
+      "input_sha256": {
+        "Blueprint/Ch06.lean": "0a02a34ec68989a83bccfa5916db5053ecdb58e05667bf21ff3568d9d1f4318e",
+        "blueprint/ch06/ch06_source.json": "45c70ceef21ca168af437de297e2e21e2800b452ab7942654061d4cff9bb5d95",
+        "BATCH29e_PAGES.pdf": "9483a7964d73395bc3b255ea8c0c4adb3062d81605078941b36202a48c164842",
+        "signature_sha256": "2a803ca8e42e6538301aa9b0462f2c426c484c3a9459804de70764fbcb6f1aff"
+      }
+    },
+    {
+      "source_id": "MD-6.4.2-CylinderForwardPrinted",
+      "json_review": {
+        "status": "NEEDS_HUMAN",
+        "issue_codes": [
+          "PRINTED_ERRATUM_PHI",
+          "LEAN_DIFFUSION_FACTOR_MISSING"
+        ],
+        "corrected_json": {
+          "source_id": "MD-6.4.2-CylinderForwardPrinted",
+          "kind": "definition",
+          "label": null,
+          "section": "6.4.2",
+          "printed_page": "247",
+          "pdf_page": "268",
+          "statement_latex": "Taking the adjoint, the forward Kolmogorov or Fokker-Planck operator is $\\mathcal L^*$, acting on a density $\\rho(X)$ as\n\\[\\mathcal L^*\\rho=-\\nabla\\cdot(b_0\\rho)+\\tfrac12\\operatorname{Tr}(B^T\\phi''B).\\]",
+          "proof_latex": null,
+          "proof_note": "原书未给独立完整证明。",
+          "proof_discussion_latex": null,
+          "context_notation": [],
+          "issues": [
+            {
+              "code": "ERRATUM?",
+              "detail": "印刷forward密度算子仍写φ″，应ρ″；本条保留两个不同对象的字面表达，不宣称其是密度演化算子。"
+            },
+            {
+              "code": "PRINTED_ERRATUM_PHI",
+              "message": "原页前向算子二阶项确实印为φ″而不是ρ″；保留原文，标[ERRATUM?]并交人审，不默改。"
+            },
+            {
+              "code": "LEAN_DIFFUSION_FACTOR_MISSING",
+              "message": "Printed Lean表达式缺原页二阶项的1/2，D7定义没有内含此系数。"
+            }
+          ],
+          "lean_decl": "MD.Ch06.cylinderForwardPrinted",
+          "reusable_proofs": [],
+          "extra_assumptions": [
+            "[EXTRA]周期lift中的完整实际负散度与错误φ扩散，正确ρ算子已有VectorForward定义。"
+          ],
+          "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
+          "review_status": "NEEDS_HUMAN",
+          "repair_log": [
+            {
+              "date": "2026-10-17",
+              "action": "directive22_printed_corrected_pair",
+              "change": "扩散项中的φ″改为ρ″。",
+              "corrected_decl": "MD.Ch06.cylinderForwardPrinted_corrected",
+              "website": "未提交；待网站审计"
+            },
+            "R6审校：只修订审校JSON；原书数学疑误保留，未修改Lean工程或补证明。"
+          ],
+          "source_page_verification": "R6_PAGES.pdf 附件第10页；已比对对应原页渲染及文本；详见本条evidence。"
+        },
+        "issues": [
+          {
+            "code": "PRINTED_ERRATUM_PHI",
+            "message": "原页前向算子二阶项确实印为φ″而不是ρ″；保留原文，标[ERRATUM?]并交人审，不默改。"
+          },
+          {
+            "code": "LEAN_DIFFUSION_FACTOR_MISSING",
+            "message": "Printed Lean表达式缺原页二阶项的1/2，D7定义没有内含此系数。"
+          }
+        ],
+        "evidence": [
+          "A：R6_PAGES.pdf 附件第10页（原PDF 268，印刷页247）；逐字、公式及页码核对。",
+          "C：只读核对R6_任务.md本条全部Lean签名及其列出的项目依赖/附录定义，未使用旧工程文件；不以sorry判FAIL。",
+          "原页前向显示式二阶项明确有1/2且使用φ″；附录D7的双重求和无1/2。"
+        ]
+      },
+      "audit": {
+        "lean_decl": "MD.Ch06.cylinderForwardPrinted",
+        "verdict": "FAIL",
+        "explanation": "字面版确实保留了原页误写的φ而不是ρ，但漏掉原页清楚印出的1/2：D7的vectorDiffusion是完整∑ij(BBᵀ)ij∂ijφ，自身不含1/2。因此即使按Printed忠实标准也FAIL。[EXTRA]只说明错误φ，未记录新增的二倍系数错误；签名也没有圆环lift约束，只能视为欧氏局部表达。",
+        "counterexample": "取n=r=1、b₀=0、B=[1]、φ(x)=x²、ρ=0。原印刷式值为(1/2)·2=1，当前Lean定义值为2。",
+        "suggested_fix": "仅修复字面忠实版：将vectorDiffusion B φ x改为vectorDiffusion B φ x / 2，继续保留原印刷φ并标[ERRATUM?]；另设corrected版本才改成ρ并对真正圆柱空间使用周期lift。"
+      },
+      "subtask": "BATCH29f",
+      "input_sha256": {
+        "Blueprint/Ch06.lean": "0a02a34ec68989a83bccfa5916db5053ecdb58e05667bf21ff3568d9d1f4318e",
+        "blueprint/ch06/ch06_source.json": "45c70ceef21ca168af437de297e2e21e2800b452ab7942654061d4cff9bb5d95",
+        "BATCH29f_PAGES.pdf": "9483a7964d73395bc3b255ea8c0c4adb3062d81605078941b36202a48c164842",
+        "signature_sha256": "c0c4d694322f52cfd0bce13a831706fd41ffc37320725dcbf0d8f4bceef55d3f"
+      }
+    },
+    {
+      "source_id": "MD-6.4.2-StationaryDensity",
+      "json_review": {
+        "status": "CORRECTED",
+        "issue_codes": [
+          "SOURCE_QUOTE_NOT_ON_PAGE",
+          "DENSITY_DOMAIN_MISSING"
+        ],
+        "corrected_json": {
+          "source_id": "MD-6.4.2-StationaryDensity",
+          "kind": "definition",
+          "label": null,
+          "section": "6.4.2",
+          "printed_page": "247",
+          "pdf_page": "268",
+          "statement_latex": "We have seen that invariant distributions correspond in general to solutions of\n\\[\\mathcal L^\\dagger\\rho_{\\rm eq}\\equiv0.\\]",
+          "proof_latex": null,
+          "proof_note": "原书未给独立完整证明。",
+          "proof_discussion_latex": null,
+          "context_notation": [
+            "仅实际形式stationarity；非负、归一化、generator域及真实kernel演化另给，不能由定义计测度不变性已证。"
+          ],
+          "issues": [
+            {
+              "code": "SOURCE_QUOTE_NOT_ON_PAGE",
+              "message": "所引“We have a stationary distribution if …”不是所指定附件原页上的原句。原页实际为“We have seen that invariant distributions correspond in general to solutions of”及L†ρeq≡0。应改为真实摘录，不能把意译标作逐字原文。"
+            },
+            {
+              "code": "DENSITY_DOMAIN_MISSING",
+              "message": "形式PDE为零不能保证ρ是概率密度；当前定义没有非负/可测/归一化资格，亦无[EXTRA]范围缩减说明。"
+            }
+          ],
+          "lean_decl": "MD.Ch06.stationaryDensity",
+          "reusable_proofs": [],
+          "extra_assumptions": [],
+          "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
+          "review_status": "CORRECTED",
+          "repair_log": [
+            "R6审校：只修订审校JSON；原书数学疑误保留，未修改Lean工程或补证明。"
+          ],
+          "source_page_verification": "R6_PAGES.pdf 附件第11页；已比对对应原页渲染及文本；详见本条evidence。"
+        },
+        "issues": [
+          {
+            "code": "SOURCE_QUOTE_NOT_ON_PAGE",
+            "message": "所引“We have a stationary distribution if …”不是所指定附件原页上的原句。原页实际为“We have seen that invariant distributions correspond in general to solutions of”及L†ρeq≡0。应改为真实摘录，不能把意译标作逐字原文。"
+          },
+          {
+            "code": "DENSITY_DOMAIN_MISSING",
+            "message": "形式PDE为零不能保证ρ是概率密度；当前定义没有非负/可测/归一化资格，亦无[EXTRA]范围缩减说明。"
+          }
+        ],
+        "evidence": [
+          "A：R6_PAGES.pdf 附件第11页（原PDF 268，印刷页247）；逐字、公式及页码核对。",
+          "C：只读核对R6_任务.md本条全部Lean签名及其列出的项目依赖/附录定义，未使用旧工程文件；不以sorry判FAIL。",
+          "原页下半部确为“We have seen that invariant distributions correspond in general to solutions of”与L†ρeq≡0，不是给定JSON中的原句。"
+        ]
+      },
+      "audit": {
+        "lean_decl": "MD.Ch06.stationaryDensity",
+        "verdict": "FAIL",
+        "explanation": "定义只要求任意实函数ρ满足形式PDE，没有非负、可测、总质量1或可归一化条件；因此名称stationaryDensity及原句stationary distribution的对象资格没有完整保留。它可作为formalStationaryWeight的定义，但不能单独等同概率平稳密度。[EXTRA]也未标明这一缩减。",
+        "counterexample": "取n=r=1、a=0、B=0、ρ(x)=−1。所有导数为0，所以stationaryDensity成立；ρ却不是非负概率密度。",
+        "suggested_fix": "将现定义明确命名/标注为形式平稳权重；如需保留stationaryDensity为概率密度，则补ρ非负、可测、∫ρ=1（或明确已限定在密度子类型），再要求算子为零。"
+      },
+      "subtask": "BATCH29g",
+      "input_sha256": {
+        "Blueprint/Ch06.lean": "0a02a34ec68989a83bccfa5916db5053ecdb58e05667bf21ff3568d9d1f4318e",
+        "blueprint/ch06/ch06_source.json": "45c70ceef21ca168af437de297e2e21e2800b452ab7942654061d4cff9bb5d95",
+        "BATCH29g_PAGES.pdf": "9483a7964d73395bc3b255ea8c0c4adb3062d81605078941b36202a48c164842",
+        "signature_sha256": "d2fd2021f6601bcbda2188887242440c53cf3e7cc61e5bec1d2b0c5edf2130d7"
+      }
+    },
+    {
+      "source_id": "MD-6.4.2-StationaryInvariant",
+      "json_review": {
+        "status": "CORRECTED",
+        "issue_codes": [
+          "SOURCE_QUOTE_NOT_ON_PAGE",
+          "DEPENDENCY_DEFINITION_MISSING"
+        ],
+        "corrected_json": {
+          "source_id": "MD-6.4.2-StationaryInvariant",
+          "kind": "unnumbered_claim",
+          "label": null,
+          "section": "6.4.2",
+          "printed_page": "247",
+          "pdf_page": "268",
+          "statement_latex": "We have seen that invariant distributions correspond in general to solutions of\n\\[\\mathcal L^\\dagger\\rho_{\\rm eq}\\equiv0.\\]\nSolutions to this equation are of central importance to the probabilistic behavior of solutions to (6.43). Such solutions give distributions of points in phase space which will remain constant as solutions evolve in time.",
+          "proof_latex": null,
+          "proof_note": "原书未给独立完整证明。",
+          "proof_discussion_latex": null,
+          "context_notation": [],
+          "issues": [
+            {
+              "code": "SOURCE_QUOTE_NOT_ON_PAGE",
+              "message": "所给整段“This is completely analogous … exp(tL*)ρ=ρ”在附件第12页不存在。该页实际只有不变分布对应L†ρeq≡0及随演化保持常数的句子，不能认证现有长段为原文。"
+            },
+            {
+              "code": "DEPENDENCY_DEFINITION_MISSING",
+              "message": "缺Chapter06Review.kernelEvolution的实际定义；只列出MD.Ch06同名定义不能判定终点谓词完全一致。"
+            }
+          ],
+          "lean_decl": "MD.Ch06.stationaryInvariant",
+          "reusable_proofs": [],
+          "extra_assumptions": [
+            "[EXTRA]实际Markov kernel semigroup、真实generator对演化检验的导数关系与弱stationarity，并明确局部可积支配保证求导换积分；完整kernel测度不变，未假设不变结论或把形式exp当实际流。"
+          ],
+          "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
+          "review_status": "CORRECTED",
+          "repair_log": [
+            "R6审校：只修订审校JSON；原书数学疑误保留，未修改Lean工程或补证明。"
+          ],
+          "source_page_verification": "R6_PAGES.pdf 附件第12页；已比对对应原页渲染及文本；详见本条evidence。"
+        },
+        "issues": [
+          {
+            "code": "SOURCE_QUOTE_NOT_ON_PAGE",
+            "message": "所给整段“This is completely analogous … exp(tL*)ρ=ρ”在附件第12页不存在。该页实际只有不变分布对应L†ρeq≡0及随演化保持常数的句子，不能认证现有长段为原文。"
+          },
+          {
+            "code": "DEPENDENCY_DEFINITION_MISSING",
+            "message": "缺Chapter06Review.kernelEvolution的实际定义；只列出MD.Ch06同名定义不能判定终点谓词完全一致。"
+          }
+        ],
+        "evidence": [
+          "A：R6_PAGES.pdf 附件第12页（原PDF 268，印刷页247）；逐字、公式及页码核对。",
+          "C：只读核对R6_任务.md本条全部Lean签名及其列出的项目依赖/附录定义，未使用旧工程文件；不以sorry判FAIL。",
+          "原页下半部确为“We have seen that invariant distributions correspond in general to solutions of”与L†ρeq≡0，不是给定JSON中的原句。"
+        ]
+      },
+      "audit": {
+        "lean_decl": "MD.Ch06.stationaryInvariant",
+        "verdict": "NEEDS_HUMAN",
+        "explanation": "量词覆盖任意可测D、真实Markov半群K、概率μ和算子L；局部可积支配及演化检验函数导数关系均明确，没有直接假设不变结论。但终点谓词实际引用Chapter06Review.invariantKernel，它再调用该命名空间的kernelEvolution；附件只给出MD.Ch06.kernelEvolution，不能用不同命名空间的定义补齐。需确认真实kernelEvolution确为K t ∘ₘ μ。另外弱stationarity给在所有有界可测f上，而演化检验函数只有有界可测（由Markov核性质）时可套用，此处结构合理；不因sorry或未补证明判FAIL。",
+        "counterexample": null,
+        "suggested_fix": "补充实际Chapter06Review.kernelEvolution定义并确认其为K t ∘ₘ μ；将原文摘录改为附件实际句子，保留明确的[EXTRA]核半群桥接说明。"
+      },
+      "subtask": "BATCH29h",
+      "input_sha256": {
+        "Blueprint/Ch06.lean": "0a02a34ec68989a83bccfa5916db5053ecdb58e05667bf21ff3568d9d1f4318e",
+        "blueprint/ch06/ch06_source.json": "45c70ceef21ca168af437de297e2e21e2800b452ab7942654061d4cff9bb5d95",
+        "BATCH29h_PAGES.pdf": "9483a7964d73395bc3b255ea8c0c4adb3062d81605078941b36202a48c164842",
+        "signature_sha256": "494a3a2b6e1c7b372665a052cfeb7c89cf2fd0e22ff9d215f1d04dc9da8d3077"
+      }
+    }
+  ],
+  "merged_from": "ch06_first_merged"
+}

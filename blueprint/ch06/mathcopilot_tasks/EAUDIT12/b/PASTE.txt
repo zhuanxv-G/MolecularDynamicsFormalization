@@ -1,0 +1,744 @@
+以附件/PASTE 为准，忽略 /workspace 旧文件；Mathlib 定义按标准含义采信。
+A逐字核对原文及证明；C只读核对对象、域、量词、前提和全部结论。所有项目定义体及选择规格在下文；仅作为审阅摘录，不是独立模块。theorem/lemma提供完整类型（不审证明）；定义提供完整定义体，按文件作用域解释。不要因sorry判签名FAIL。原文版忠实性、修正版正确性、反例、原书疑误分别说明，不凭旧文件或repair_log猜声明。
+本条MD-6.4.3-BrownianClosedSelfAdjoint，subtask=EAUDIT12b；原PDF页映射=[270, 271]。只读，不改工程或补证明。以JSON对象返回batch=EAUDIT12,input_sha256,items；逐条含source_id,subtask,input_sha256,json_review{status,issue_codes,corrected_json,issues,evidence},audit{lean_decl,verdict,explanation,counterexample,suggested_fix}。verdict=PASS/FAIL/NEEDS_HUMAN，status=APPROVED/CORRECTED/NEEDS_HUMAN。必须原样回显下列全部哈希。
+input_sha256:
+{
+  "Blueprint/Ch06.lean": "4a2a6cb72c1692f80e3537ab1a71701d429a482780a01226c3dc66a2ebb8b44b",
+  "blueprint/ch06/ch06_source.json": "d7f93cd20eb570744c710f3e07a88b319c082e4155812fee91db0920eb05944e",
+  "PAGES.pdf": "4611a25ee2942f91b65f2651749fb8c31bc52d731980b26afbb6aeed111bfb79",
+  "materials_sha256": "e9815248f048d735227f9e2045446067aacff718599a7f86b193660035702362"
+}
+
+## 原文JSON
+```json
+{
+  "source_id": "MD-6.4.3-BrownianClosedSelfAdjoint",
+  "kind": "unnumbered_claim",
+  "label": null,
+  "section": "6.4.3",
+  "printed_page": "249–250",
+  "pdf_page": "270–271",
+  "statement_latex": "Then $\\mathcal L$ is self-adjoint with respect to this inner product.",
+  "proof_latex": null,
+  "proof_note": "原书未给独立完整证明。",
+  "proof_discussion_latex": null,
+  "context_notation": [],
+  "extra_assumptions": [
+    "[EXTRA]使用现成实际Gibbs复L²闭实现及完整adjoint域；原C₀²核心对称不等于闭自伴。权重归一不改变自伴关系。",
+    "[EXTRA] 25号：明确采用周期紧环面的Gibbs L²图闭包/最大复图实现；此域修正替换原C₀²核心域，不能把核心上的形式对称当原域自伴，待人工签核。"
+  ],
+  "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
+  "coverage_gaps": null
+}
+```
+## 当前完整Lean（全部原文版、修正版及反例）
+```lean
+theorem brownianClosedSelfAdjoint {Nc : ℕ} (m : Fin Nc → ℝ) (hm : ∀ i, 0 < m i)
+    (U : (Fin Nc → ℝ) → ℝ) (hU : ContDiff ℝ ∞ U)
+    (hPU : textbookUnitPeriodicPotential U) (β : ℝ) (hβ : 0 < β) :
+    IsSelfAdjoint (textbookBrownianGibbsComplexOperator m hm U hU hPU β hβ) := by
+  apply MolecularDynamics.textbookBrownianGibbsComplexOperator_isSelfAdjoint <;> assumption
+
+/-- 修正版/限定版：原文公式或定义的正确限定陈述；证明/域解释缺口见ERRATA。复制独立证明体，不从原文版占位推导。 -/
+theorem brownianClosedSelfAdjoint_corrected {Nc : ℕ} (m : Fin Nc → ℝ) (hm : ∀ i, 0 < m i)
+    (U : (Fin Nc → ℝ) → ℝ) (hU : ContDiff ℝ ∞ U)
+    (hPU : textbookUnitPeriodicPotential U) (β : ℝ) (hβ : 0 < β) :
+    IsSelfAdjoint (textbookBrownianGibbsComplexOperator m hm U hU hPU β hβ) := by
+  apply MolecularDynamics.textbookBrownianGibbsComplexOperator_isSelfAdjoint <;> assumption
+```
+### 文件参数及作用域 Blueprint/Ch06.lean
+```lean
+open Set Filter Matrix MeasureTheory ProbabilityTheory MolecularDynamics MolecularDynamics.Chapter02Review MolecularDynamics.Chapter06Review
+open scoped BigOperators Topology ContDiff InnerProductSpace Matrix.Norms.L2Operator ENNReal NNReal
+variable {n Nc : ℕ}
+variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
+variable {R : Type*} [Ring R] [Algebra ℝ R]
+local instance : MeasureSpace UnitAddCircle := ⟨AddCircle.haarAddCircle⟩
+```
+### 文件参数及作用域 MolecularDynamics/Chapter02/SymplecticForm.lean
+```lean
+open Matrix
+open scoped BigOperators Matrix
+```
+### 文件参数及作用域 MolecularDynamics/Chapter02/SymplecticMaps.lean
+```lean
+open Matrix
+open scoped Matrix
+```
+### 文件参数及作用域 MolecularDynamics/Chapter06/BrownianClosedOperator.lean
+```lean
+open Set MeasureTheory Filter Topology
+open scoped ContDiff InnerProductSpace LinearPMap
+variable {Nc : ℕ} (m : Fin Nc → ℝ)
+    (U : (Fin Nc → ℝ) → ℝ) (hU : ContDiff ℝ ∞ U)
+    (hPU : textbookUnitPeriodicPotential U) (β : ℝ)
+```
+### 文件参数及作用域 MolecularDynamics/Chapter06/BrownianDirichlet.lean
+```lean
+open Set MeasureTheory
+open scoped BigOperators ContDiff
+```
+### 文件参数及作用域 MolecularDynamics/Chapter06/BrownianEigenDiscreteness.lean
+```lean
+open MeasureTheory Filter Topology
+open scoped ContDiff InnerProductSpace LinearPMap
+variable {Nc : ℕ} (m : Fin Nc → ℝ) (hm : ∀ i, 0 < m i) (U : (Fin Nc → ℝ) → ℝ)
+  (hU : ContDiff ℝ ∞ U) (hPU : textbookUnitPeriodicPotential U) (β : ℝ) (hβ : 0 < β)
+
+include hm hβ in
+```
+### 文件参数及作用域 MolecularDynamics/Chapter06/BrownianEigenEnumeration.lean
+```lean
+open MeasureTheory Filter Topology
+open scoped ContDiff InnerProductSpace LinearPMap
+private local instance brownianEigenEnumerationCircleMeasure : MeasureSpace UnitAddCircle :=
+  ⟨AddCircle.haarAddCircle⟩
+private local instance brownianEigenEnumerationCircleProbability :
+    IsProbabilityMeasure (volume : Measure UnitAddCircle) :=
+  inferInstanceAs (IsProbabilityMeasure AddCircle.haarAddCircle)
+variable {Nc : ℕ} (m : Fin Nc → ℝ) (hm : ∀ i, 0 < m i) (U : (Fin Nc → ℝ) → ℝ)
+  (hU : ContDiff ℝ ∞ U) (hPU : textbookUnitPeriodicPotential U) (β : ℝ) (hβ : 0 < β)
+
+include hU hPU in
+```
+### 文件参数及作用域 MolecularDynamics/Chapter06/BrownianEigenGraph.lean
+```lean
+open MeasureTheory Filter Topology
+open scoped ContDiff InnerProductSpace LinearPMap
+variable {Nc : ℕ} (m : Fin Nc → ℝ) (hm : ∀ i, 0 < m i) (U : (Fin Nc → ℝ) → ℝ)
+  (hU : ContDiff ℝ ∞ U) (hPU : textbookUnitPeriodicPotential U) (β : ℝ) (hβ : 0 < β)
+```
+### 文件参数及作用域 MolecularDynamics/Chapter06/BrownianEigenOrdering.lean
+```lean
+open MeasureTheory Filter Topology
+open scoped ContDiff InnerProductSpace LinearPMap
+variable {Nc : ℕ} (m : Fin Nc → ℝ) (hm : ∀ i, 0 < m i) (U : (Fin Nc → ℝ) → ℝ)
+  (hU : ContDiff ℝ ∞ U) (hPU : textbookUnitPeriodicPotential U) (β : ℝ) (hβ : 0 < β)
+```
+### 文件参数及作用域 MolecularDynamics/Chapter06/BrownianGeneratorRealSpectrum.lean
+```lean
+open MeasureTheory Filter Topology
+open scoped ContDiff InnerProductSpace LinearPMap
+variable {Nc : ℕ} (m : Fin Nc → ℝ) (hm : ∀ i, 0 < m i) (U : (Fin Nc → ℝ) → ℝ)
+  (hU : ContDiff ℝ ∞ U) (hPU : textbookUnitPeriodicPotential U) (β : ℝ) (hβ : 0 < β)
+```
+### 文件参数及作用域 MolecularDynamics/Chapter06/BrownianGibbsComplexOperator.lean
+```lean
+open MeasureTheory Filter Topology
+open scoped ContDiff InnerProductSpace LinearPMap
+variable {Nc : ℕ} (m : Fin Nc → ℝ) (hm : ∀ i, 0 < m i) (U : (Fin Nc → ℝ) → ℝ)
+  (hU : ContDiff ℝ ∞ U) (hPU : textbookUnitPeriodicPotential U) (β : ℝ) (hβ : 0 < β)
+```
+### 文件参数及作用域 MolecularDynamics/Chapter06/BrownianGibbsComplexResolvent.lean
+```lean
+open MeasureTheory Filter Topology
+open scoped ContDiff InnerProductSpace LinearPMap
+variable {Nc : ℕ} (m : Fin Nc → ℝ) (hm : ∀ i, 0 < m i) (U : (Fin Nc → ℝ) → ℝ)
+  (hU : ContDiff ℝ ∞ U) (hPU : textbookUnitPeriodicPotential U) (β : ℝ) (hβ : 0 < β)
+```
+### 文件参数及作用域 MolecularDynamics/Chapter06/BrownianGibbsComplexSpectrum.lean
+```lean
+open MeasureTheory Filter Topology
+open scoped ContDiff InnerProductSpace LinearPMap
+variable {Nc : ℕ} (m : Fin Nc → ℝ) (hm : ∀ i, 0 < m i) (U : (Fin Nc → ℝ) → ℝ)
+  (hU : ContDiff ℝ ∞ U) (hPU : textbookUnitPeriodicPotential U) (β : ℝ) (hβ : 0 < β)
+```
+### 文件参数及作用域 MolecularDynamics/Chapter06/BrownianGibbsComplexification.lean
+```lean
+open MeasureTheory Filter Topology
+open scoped ContDiff InnerProductSpace
+variable {Nc : ℕ} (U : (Fin Nc → ℝ) → ℝ) (β : ℝ)
+variable (m : Fin Nc → ℝ) (hm : ∀ i, 0 < m i)
+  (hU : ContDiff ℝ ∞ U) (hPU : textbookUnitPeriodicPotential U) (hβ : 0 < β)
+```
+### 文件参数及作用域 MolecularDynamics/Chapter06/BrownianGibbsResolvent.lean
+```lean
+open MeasureTheory Filter Topology
+open scoped ContDiff InnerProductSpace LinearPMap
+variable {Nc : ℕ} (m : Fin Nc → ℝ) (U : (Fin Nc → ℝ) → ℝ)
+  (hU : ContDiff ℝ ∞ U) (hPU : textbookUnitPeriodicPotential U) (β : ℝ)
+```
+### 文件参数及作用域 MolecularDynamics/Chapter06/BrownianHilbertCore.lean
+```lean
+open Set MeasureTheory Filter Topology
+open scoped ContDiff InnerProductSpace RealInnerProductSpace
+local instance : MeasureSpace UnitAddCircle := ⟨AddCircle.haarAddCircle⟩
+local instance : Measure.IsAddHaarMeasure (volume : Measure UnitAddCircle) :=
+  inferInstanceAs (Measure.IsAddHaarMeasure AddCircle.haarAddCircle)
+local instance : IsProbabilityMeasure (volume : Measure UnitAddCircle) :=
+  inferInstanceAs (IsProbabilityMeasure AddCircle.haarAddCircle)
+```
+### 文件参数及作用域 MolecularDynamics/Chapter06/BrownianResolventSpectrum.lean
+```lean
+open MeasureTheory Filter Topology
+open scoped ContDiff InnerProductSpace LinearPMap
+variable {Nc : ℕ} (m : Fin Nc → ℝ) (hm : ∀ i, 0 < m i) (U : (Fin Nc → ℝ) → ℝ)
+  (hU : ContDiff ℝ ∞ U) (hPU : textbookUnitPeriodicPotential U) (β : ℝ) (hβ : 0 < β)
+```
+### 文件参数及作用域 MolecularDynamics/Chapter06/BrownianSmoothDomain.lean
+```lean
+open Set MeasureTheory Filter Topology
+open scoped ContDiff InnerProductSpace
+```
+### 文件参数及作用域 MolecularDynamics/Chapter06/BrownianSpectralAverage.lean
+```lean
+open MeasureTheory Filter Topology
+open scoped ContDiff InnerProductSpace
+variable {Nc : ℕ} (m : Fin Nc → ℝ) (hm : ∀ i, 0 < m i) (U : (Fin Nc → ℝ) → ℝ)
+  (hU : ContDiff ℝ ∞ U) (hPU : textbookUnitPeriodicPotential U) (β : ℝ) (hβ : 0 < β)
+```
+### 文件参数及作用域 MolecularDynamics/Chapter06/BrownianSpectralDecay.lean
+```lean
+open MeasureTheory Filter Topology
+open scoped ContDiff InnerProductSpace LinearPMap
+variable {Nc : ℕ} (m : Fin Nc → ℝ) (hm : ∀ i, 0 < m i) (U : (Fin Nc → ℝ) → ℝ)
+  (hU : ContDiff ℝ ∞ U) (hPU : textbookUnitPeriodicPotential U) (β : ℝ) (hβ : 0 < β)
+```
+### 文件参数及作用域 MolecularDynamics/Chapter06/BrownianSpectralEvolution.lean
+```lean
+open MeasureTheory Filter Topology
+open scoped ContDiff InnerProductSpace LinearPMap
+variable {Nc : ℕ} (m : Fin Nc → ℝ) (hm : ∀ i, 0 < m i) (U : (Fin Nc → ℝ) → ℝ)
+  (hU : ContDiff ℝ ∞ U) (hPU : textbookUnitPeriodicPotential U) (β : ℝ) (hβ : 0 < β)
+```
+### 文件参数及作用域 MolecularDynamics/Chapter06/BrownianSpectralGenerator.lean
+```lean
+open MeasureTheory Filter Topology
+open scoped ContDiff InnerProductSpace LinearPMap
+variable {Nc : ℕ} (m : Fin Nc → ℝ) (hm : ∀ i, 0 < m i) (U : (Fin Nc → ℝ) → ℝ)
+  (hU : ContDiff ℝ ∞ U) (hPU : textbookUnitPeriodicPotential U) (β : ℝ) (hβ : 0 < β)
+```
+### 文件参数及作用域 MolecularDynamics/Chapter06/BrownianTorusGibbs.lean
+```lean
+open Set MeasureTheory Filter
+open scoped BigOperators ENNReal ContDiff
+local instance : MeasureSpace UnitAddCircle := ⟨AddCircle.haarAddCircle⟩
+local instance : Measure.IsAddHaarMeasure (volume : Measure UnitAddCircle) :=
+  inferInstanceAs (Measure.IsAddHaarMeasure AddCircle.haarAddCircle)
+local instance : IsProbabilityMeasure (volume : Measure UnitAddCircle) :=
+  inferInstanceAs (IsProbabilityMeasure AddCircle.haarAddCircle)
+```
+### 文件参数及作用域 MolecularDynamics/Chapter06/LangevinPeriodicForce.lean
+```lean
+open Set Filter
+open scoped Topology ContDiff NNReal
+```
+### MD.Ch06.brownianClosedSelfAdjoint [Blueprint/Ch06.lean:2302]
+```lean
+theorem brownianClosedSelfAdjoint {Nc : ℕ} (m : Fin Nc → ℝ) (hm : ∀ i, 0 < m i)
+    (U : (Fin Nc → ℝ) → ℝ) (hU : ContDiff ℝ ∞ U)
+    (hPU : textbookUnitPeriodicPotential U) (β : ℝ) (hβ : 0 < β) :
+    IsSelfAdjoint (textbookBrownianGibbsComplexOperator m hm U hU hPU β hβ)
+```
+### MD.Ch06.brownianClosedSelfAdjoint_corrected [Blueprint/Ch06.lean:2309]
+```lean
+theorem brownianClosedSelfAdjoint_corrected {Nc : ℕ} (m : Fin Nc → ℝ) (hm : ∀ i, 0 < m i)
+    (U : (Fin Nc → ℝ) → ℝ) (hU : ContDiff ℝ ∞ U)
+    (hPU : textbookUnitPeriodicPotential U) (β : ℝ) (hβ : 0 < β) :
+    IsSelfAdjoint (textbookBrownianGibbsComplexOperator m hm U hU hPU β hβ)
+```
+### MolecularDynamics.SymplecticCoordinates [MolecularDynamics/Chapter02/SymplecticForm.lean:25]
+```lean
+abbrev SymplecticCoordinates (Nc : ℕ) := (Fin Nc ⊕ Fin Nc) → ℝ
+```
+### MolecularDynamics.SymplecticCoordinateMatrix [MolecularDynamics/Chapter02/SymplecticForm.lean:27]
+```lean
+abbrev SymplecticCoordinateMatrix (Nc : ℕ) :=
+  Matrix (Fin Nc ⊕ Fin Nc) (Fin Nc ⊕ Fin Nc) ℝ
+```
+### MolecularDynamics.textbookJ [MolecularDynamics/Chapter02/SymplecticForm.lean:31]
+```lean
+noncomputable def textbookJ (Nc : ℕ) : SymplecticCoordinateMatrix Nc :=
+  Matrix.fromBlocks 0 1 (-1) 0
+```
+### MolecularDynamics.IsTextbookSymplectic [MolecularDynamics/Chapter02/SymplecticForm.lean:130]
+```lean
+def IsTextbookSymplectic {Nc : ℕ} (A : SymplecticCoordinateMatrix Nc) : Prop :=
+  Aᵀ * textbookJ Nc * A = textbookJ Nc
+```
+### MolecularDynamics.textbookJacobian [MolecularDynamics/Chapter02/SymplecticMaps.lean:21]
+```lean
+noncomputable def textbookJacobian {Nc : ℕ}
+    (Φ : SymplecticCoordinates Nc → SymplecticCoordinates Nc) (z : SymplecticCoordinates Nc) :
+    SymplecticCoordinateMatrix Nc :=
+  LinearMap.toMatrix' (fderiv ℝ Φ z).toLinearMap
+```
+### MolecularDynamics.IsTextbookSymplecticMap [MolecularDynamics/Chapter02/SymplecticMaps.lean:55]
+```lean
+def IsTextbookSymplecticMap {Nc : ℕ}
+    (Φ : SymplecticCoordinates Nc → SymplecticCoordinates Nc) : Prop :=
+  ContDiff ℝ 1 Φ ∧ ∀ z, IsTextbookSymplectic (textbookJacobian Φ z)
+```
+### MolecularDynamics.IsTextbookSymplecticMap.comp [MolecularDynamics/Chapter02/SymplecticMaps.lean:86]
+```lean
+theorem IsTextbookSymplecticMap.comp {Nc : ℕ}
+    {Φ Ψ : SymplecticCoordinates Nc → SymplecticCoordinates Nc}
+    (hΦ : IsTextbookSymplecticMap Φ) (hΨ : IsTextbookSymplecticMap Ψ) :
+    IsTextbookSymplecticMap (Φ ∘ Ψ)
+```
+### MolecularDynamics.textbookBrownianGibbsPartialOperator [MolecularDynamics/Chapter06/BrownianClosedOperator.lean:17]
+```lean
+noncomputable def textbookBrownianGibbsPartialOperator :
+    Lp ℝ 2 (textbookConfigurationTorusGibbsMeasure U β) →ₗ.[ℝ]
+      Lp ℝ 2 (textbookConfigurationTorusGibbsMeasure U β) where
+  domain := textbookBrownianGibbsSmoothDomain U hU hPU β
+  toFun := textbookBrownianGibbsDomainOperator m U hU hPU β
+```
+### MolecularDynamics.textbookBrownianGibbsClosedOperator [MolecularDynamics/Chapter06/BrownianClosedOperator.lean:77]
+```lean
+noncomputable def textbookBrownianGibbsClosedOperator :
+    Lp ℝ 2 (textbookConfigurationTorusGibbsMeasure U β) →ₗ.[ℝ]
+      Lp ℝ 2 (textbookConfigurationTorusGibbsMeasure U β) :=
+  (textbookBrownianGibbsPartialOperator m U hU hPU β).closure
+```
+### MolecularDynamics.textbookConfigurationPartial [MolecularDynamics/Chapter06/BrownianDirichlet.lean:13]
+```lean
+noncomputable def textbookConfigurationPartial {Nc : ℕ}
+    (f : (Fin Nc → ℝ) → ℝ) (i : Fin Nc) (q : Fin Nc → ℝ) : ℝ :=
+  fderiv ℝ f q (Pi.single i 1)
+```
+### MolecularDynamics.textbookConfigurationCube [MolecularDynamics/Chapter06/BrownianDirichlet.lean:18]
+```lean
+def textbookConfigurationCube (Nc : ℕ) : Set (Fin Nc → ℝ) := Icc 0 1
+```
+### MolecularDynamics.textbookConfigurationGibbsWeight [MolecularDynamics/Chapter06/BrownianDirichlet.lean:21]
+```lean
+noncomputable def textbookConfigurationGibbsWeight {Nc : ℕ}
+    (U : (Fin Nc → ℝ) → ℝ) (β : ℝ) (q : Fin Nc → ℝ) : ℝ :=
+  Real.exp (-β * U q)
+```
+### MolecularDynamics.textbookBrownianGenerator [MolecularDynamics/Chapter06/BrownianDirichlet.lean:31]
+```lean
+noncomputable def textbookBrownianGenerator {Nc : ℕ} (m : Fin Nc → ℝ)
+    (U : (Fin Nc → ℝ) → ℝ) (β : ℝ) (f : (Fin Nc → ℝ) → ℝ)
+    (q : Fin Nc → ℝ) : ℝ :=
+  ∑ i, (m i)⁻¹ * (β⁻¹ * textbookConfigurationPartial
+    (textbookConfigurationPartial f i) i q -
+      textbookConfigurationPartial U i q * textbookConfigurationPartial f i q)
+```
+### MolecularDynamics.textbookConfigurationPartition [MolecularDynamics/Chapter06/BrownianDirichlet.lean:271]
+```lean
+noncomputable def textbookConfigurationPartition {Nc : ℕ}
+    (U : (Fin Nc → ℝ) → ℝ) (β : ℝ) : ℝ :=
+  ∫ q in textbookConfigurationCube Nc, textbookConfigurationGibbsWeight U β q
+```
+### MolecularDynamics.Gibbs [MolecularDynamics/Chapter06/BrownianEigenDiscreteness.lean:11]
+```lean
+private abbrev Gibbs {Nc : ℕ} (U : (Fin Nc → ℝ) → ℝ) (β : ℝ) :=
+  Lp ℝ 2 (textbookConfigurationTorusGibbsMeasure U β)
+```
+### MolecularDynamics.Gibbs [MolecularDynamics/Chapter06/BrownianEigenEnumeration.lean:19]
+```lean
+private abbrev Gibbs {Nc : ℕ} (U : (Fin Nc → ℝ) → ℝ) (β : ℝ) :=
+  Lp ℝ 2 (textbookConfigurationTorusGibbsMeasure U β)
+```
+### MolecularDynamics.Gibbs [MolecularDynamics/Chapter06/BrownianEigenGraph.lean:11]
+```lean
+private abbrev Gibbs {Nc : ℕ} (U : (Fin Nc → ℝ) → ℝ) (β : ℝ) :=
+  Lp ℝ 2 (textbookConfigurationTorusGibbsMeasure U β)
+```
+### MolecularDynamics.Gibbs [MolecularDynamics/Chapter06/BrownianEigenOrdering.lean:103]
+```lean
+private abbrev Gibbs {Nc : ℕ} (U : (Fin Nc → ℝ) → ℝ) (β : ℝ) :=
+  Lp ℝ 2 (textbookConfigurationTorusGibbsMeasure U β)
+
+include hm hβ in
+```
+### MolecularDynamics.Gibbs [MolecularDynamics/Chapter06/BrownianGeneratorRealSpectrum.lean:11]
+```lean
+private abbrev Gibbs {Nc : ℕ} (U : (Fin Nc → ℝ) → ℝ) (β : ℝ) :=
+  Lp ℝ 2 (textbookConfigurationTorusGibbsMeasure U β)
+```
+### MolecularDynamics.Gibbs [MolecularDynamics/Chapter06/BrownianGibbsComplexOperator.lean:12]
+```lean
+private abbrev Gibbs {Nc : ℕ} (U : (Fin Nc → ℝ) → ℝ) (β : ℝ) :=
+  Lp ℝ 2 (textbookConfigurationTorusGibbsMeasure U β)
+```
+### MolecularDynamics.GibbsComplex [MolecularDynamics/Chapter06/BrownianGibbsComplexOperator.lean:14]
+```lean
+private abbrev GibbsComplex {Nc : ℕ} (U : (Fin Nc → ℝ) → ℝ) (β : ℝ) :=
+  Lp ℂ 2 (textbookConfigurationTorusGibbsMeasure U β)
+```
+### MolecularDynamics.cb [MolecularDynamics/Chapter06/BrownianGibbsComplexOperator.lean:20]
+```lean
+private abbrev cb := textbookBrownianGibbsComplexEigenbasis U β m hm hU hPU hβ
+```
+### MolecularDynamics.textbookBrownianGibbsComplexGraph [MolecularDynamics/Chapter06/BrownianGibbsComplexOperator.lean:35]
+```lean
+def textbookBrownianGibbsComplexGraph : Submodule ℂ (GibbsComplex U β × GibbsComplex U β) where
+  carrier := {p | ∀ j : textbookBrownianGibbsEigenIndex m U hU hPU β,
+    ⟪cb m hm U hU hPU β hβ j, p.2⟫_ℂ =
+      (j.1 : ℂ) * ⟪cb m hm U hU hPU β hβ j, p.1⟫_ℂ}
+  zero_mem' := by intro j; simp
+  add_mem' := by
+    intro p q hp hq j
+    change ⟪cb m hm U hU hPU β hβ j, p.2 + q.2⟫_ℂ =
+      (j.1 : ℂ) * ⟪cb m hm U hU hPU β hβ j, p.1 + q.1⟫_ℂ
+    rw [inner_add_right, inner_add_right, hp j, hq j, mul_add]
+  smul_mem' := by
+    intro c p hp j
+    change ⟪cb m hm U hU hPU β hβ j, c • p.2⟫_ℂ =
+      (j.1 : ℂ) * ⟪cb m hm U hU hPU β hβ j, c • p.1⟫_ℂ
+    rw [inner_smul_right, inner_smul_right, hp j]
+    ring
+```
+### MolecularDynamics.textbookBrownianGibbsComplexOperator [MolecularDynamics/Chapter06/BrownianGibbsComplexOperator.lean:106]
+```lean
+def textbookBrownianGibbsComplexOperator : GibbsComplex U β →ₗ.[ℂ] GibbsComplex U β :=
+  (textbookBrownianGibbsComplexGraph m hm U hU hPU β hβ).toLinearPMap
+```
+### MolecularDynamics.textbookBrownianGibbsComplexOperator_isSelfAdjoint [MolecularDynamics/Chapter06/BrownianGibbsComplexOperator.lean:245]
+```lean
+theorem textbookBrownianGibbsComplexOperator_isSelfAdjoint :
+    IsSelfAdjoint (textbookBrownianGibbsComplexOperator m hm U hU hPU β hβ)
+```
+### MolecularDynamics.GibbsComplex [MolecularDynamics/Chapter06/BrownianGibbsComplexResolvent.lean:12]
+```lean
+private abbrev GibbsComplex {Nc : ℕ} (U : (Fin Nc → ℝ) → ℝ) (β : ℝ) :=
+  Lp ℂ 2 (textbookConfigurationTorusGibbsMeasure U β)
+```
+### MolecularDynamics.cb [MolecularDynamics/Chapter06/BrownianGibbsComplexResolvent.lean:18]
+```lean
+private abbrev cb := textbookBrownianGibbsComplexEigenbasis U β m hm hU hPU hβ
+```
+### MolecularDynamics.Gibbs [MolecularDynamics/Chapter06/BrownianGibbsComplexSpectrum.lean:11]
+```lean
+private abbrev Gibbs {Nc : ℕ} (U : (Fin Nc → ℝ) → ℝ) (β : ℝ) :=
+  Lp ℂ 2 (textbookConfigurationTorusGibbsMeasure U β)
+```
+### MolecularDynamics.cb [MolecularDynamics/Chapter06/BrownianGibbsComplexSpectrum.lean:139]
+```lean
+private abbrev cb := textbookBrownianGibbsComplexEigenbasis U β m hm hU hPU hβ
+```
+### MolecularDynamics.Gibbs [MolecularDynamics/Chapter06/BrownianGibbsComplexification.lean:12]
+```lean
+private abbrev Gibbs {Nc : ℕ} (U : (Fin Nc → ℝ) → ℝ) (β : ℝ) :=
+  Lp ℝ 2 (textbookConfigurationTorusGibbsMeasure U β)
+```
+### MolecularDynamics.GibbsComplex [MolecularDynamics/Chapter06/BrownianGibbsComplexification.lean:14]
+```lean
+private abbrev GibbsComplex {Nc : ℕ} (U : (Fin Nc → ℝ) → ℝ) (β : ℝ) :=
+  Lp ℂ 2 (textbookConfigurationTorusGibbsMeasure U β)
+```
+### MolecularDynamics.textbookBrownianGibbsL2Complexify [MolecularDynamics/Chapter06/BrownianGibbsComplexification.lean:20]
+```lean
+def textbookBrownianGibbsL2Complexify : Gibbs U β →L[ℝ] GibbsComplex U β :=
+  Complex.ofRealCLM.compLpL 2 (textbookConfigurationTorusGibbsMeasure U β)
+```
+### MolecularDynamics.textbookBrownianGibbsL2RealPart [MolecularDynamics/Chapter06/BrownianGibbsComplexification.lean:24]
+```lean
+def textbookBrownianGibbsL2RealPart : GibbsComplex U β →L[ℝ] Gibbs U β :=
+  Complex.reCLM.compLpL 2 (textbookConfigurationTorusGibbsMeasure U β)
+```
+### MolecularDynamics.textbookBrownianGibbsL2ImagPart [MolecularDynamics/Chapter06/BrownianGibbsComplexification.lean:28]
+```lean
+def textbookBrownianGibbsL2ImagPart : GibbsComplex U β →L[ℝ] Gibbs U β :=
+  Complex.imCLM.compLpL 2 (textbookConfigurationTorusGibbsMeasure U β)
+```
+### MolecularDynamics.textbookBrownianGibbsL2Complexify_decomposition [MolecularDynamics/Chapter06/BrownianGibbsComplexification.lean:68]
+```lean
+theorem textbookBrownianGibbsL2Complexify_decomposition (z : GibbsComplex U β) :
+    textbookBrownianGibbsL2Complexify U β (textbookBrownianGibbsL2RealPart U β z) +
+      Complex.I • textbookBrownianGibbsL2Complexify U β (textbookBrownianGibbsL2ImagPart U β z) = z
+```
+### MolecularDynamics.textbookBrownianGibbsComplexEigenmodes_orthonormal [MolecularDynamics/Chapter06/BrownianGibbsComplexification.lean:123]
+```lean
+theorem textbookBrownianGibbsComplexEigenmodes_orthonormal :
+    Orthonormal ℂ (fun j : textbookBrownianGibbsEigenIndex m U hU hPU β ↦
+      textbookBrownianGibbsL2Complexify U β (textbookBrownianGibbsEigenbasis m hm U hU hPU β hβ j))
+```
+### MolecularDynamics.textbookBrownianGibbsComplexEigenbasis [MolecularDynamics/Chapter06/BrownianGibbsComplexification.lean:134]
+```lean
+def textbookBrownianGibbsComplexEigenbasis :
+    HilbertBasis (textbookBrownianGibbsEigenIndex m U hU hPU β) ℂ (GibbsComplex U β) := by
+  classical
+  let b := textbookBrownianGibbsEigenbasis m hm U hU hPU β hβ
+  let J := textbookBrownianGibbsL2Complexify U β
+  let s := Submodule.span ℂ (Set.range (fun j ↦ J (b j)))
+  let K := s.topologicalClosure
+  have hJ (x : Gibbs U β) : J x ∈ K := by
+    have hs := J.hasSum (b.hasSum_repr x)
+    refine s.isClosed_topologicalClosure.mem_of_tendsto hs ?_
+    exact Filter.Eventually.of_forall fun F ↦ K.sum_mem fun j _ ↦ by
+      rw [map_smul]
+      rw [← algebraMap_smul ℂ (b.repr x j) (J (b j))]
+      exact K.smul_mem _ (s.le_topologicalClosure (Submodule.subset_span ⟨j, rfl⟩))
+  refine HilbertBasis.mk
+    (textbookBrownianGibbsComplexEigenmodes_orthonormal U β m hm hU hPU hβ) ?_
+  intro z _
+  change z ∈ K
+  rw [← textbookBrownianGibbsL2Complexify_decomposition U β z]
+  exact K.add_mem (hJ _) (K.smul_mem Complex.I (hJ _))
+```
+### MolecularDynamics.Gibbs [MolecularDynamics/Chapter06/BrownianGibbsResolvent.lean:14]
+```lean
+private abbrev Gibbs {Nc : ℕ} (U : (Fin Nc → ℝ) → ℝ) (β : ℝ) :=
+  Lp ℝ 2 (textbookConfigurationTorusGibbsMeasure U β)
+```
+### MolecularDynamics.textbookConfigurationTorusGibbsMeasure_memLp_two [MolecularDynamics/Chapter06/BrownianHilbertCore.lean:44]
+```lean
+theorem textbookConfigurationTorusGibbsMeasure_memLp_two {Nc : ℕ}
+    (U : (Fin Nc → ℝ) → ℝ) (hU : ContDiff ℝ ∞ U)
+    (hPU : textbookUnitPeriodicPotential U) (β : ℝ)
+    (f : (Fin Nc → ℝ) → ℝ) (hf : Continuous f) (hPf : textbookUnitPeriodicPotential f) :
+    MemLp (textbookConfigurationTorusObservable f) 2 (textbookConfigurationTorusGibbsMeasure U β)
+```
+### MolecularDynamics.textbookConfigurationGibbsL2Observable [MolecularDynamics/Chapter06/BrownianHilbertCore.lean:55]
+```lean
+noncomputable def textbookConfigurationGibbsL2Observable {Nc : ℕ}
+    (U : (Fin Nc → ℝ) → ℝ) (hU : ContDiff ℝ ∞ U)
+    (hPU : textbookUnitPeriodicPotential U) (β : ℝ)
+    (f : (Fin Nc → ℝ) → ℝ) (hf : Continuous f) (hPf : textbookUnitPeriodicPotential f) :
+    Lp ℝ 2 (textbookConfigurationTorusGibbsMeasure U β) :=
+  (textbookConfigurationTorusGibbsMeasure_memLp_two U hU hPU β f hf hPf).toLp
+    (textbookConfigurationTorusObservable f)
+```
+### MolecularDynamics.textbookConfigurationGibbsL2Observable_ae_eq [MolecularDynamics/Chapter06/BrownianHilbertCore.lean:64]
+```lean
+theorem textbookConfigurationGibbsL2Observable_ae_eq {Nc : ℕ}
+    (U : (Fin Nc → ℝ) → ℝ) (hU : ContDiff ℝ ∞ U)
+    (hPU : textbookUnitPeriodicPotential U) (β : ℝ)
+    (f : (Fin Nc → ℝ) → ℝ) (hf : Continuous f) (hPf : textbookUnitPeriodicPotential f) :
+    (textbookConfigurationGibbsL2Observable U hU hPU β f hf hPf :
+      UnitAddTorus (Fin Nc) → ℝ) =ᵐ[textbookConfigurationTorusGibbsMeasure U β]
+        textbookConfigurationTorusObservable f
+```
+### MolecularDynamics.Gibbs [MolecularDynamics/Chapter06/BrownianResolventSpectrum.lean:13]
+```lean
+private abbrev Gibbs {Nc : ℕ} (U : (Fin Nc → ℝ) → ℝ) (β : ℝ) :=
+  Lp ℝ 2 (textbookConfigurationTorusGibbsMeasure U β)
+```
+### MolecularDynamics.textbookBrownianGibbsClosedEigenspace [MolecularDynamics/Chapter06/BrownianResolventSpectrum.lean:124]
+```lean
+def textbookBrownianGibbsClosedEigenspace (ℓ : ℝ) : Submodule ℝ (Gibbs U β) :=
+  (textbookBrownianGibbsClosedOperator m U hU hPU β).graph.comap
+    ((LinearMap.id : Gibbs U β →ₗ[ℝ] Gibbs U β).prod
+      (ℓ • (LinearMap.id : Gibbs U β →ₗ[ℝ] Gibbs U β)))
+```
+### MolecularDynamics.textbookBrownianGibbsClosedEigenspace_finiteDimensional [MolecularDynamics/Chapter06/BrownianResolventSpectrum.lean:176]
+```lean
+theorem textbookBrownianGibbsClosedEigenspace_finiteDimensional (ℓ : ℝ) :
+    FiniteDimensional ℝ (textbookBrownianGibbsClosedEigenspace m U hU hPU β ℓ)
+```
+### MolecularDynamics.textbookBrownianGibbsEigenIndex [MolecularDynamics/Chapter06/BrownianResolventSpectrum.lean:240]
+```lean
+abbrev textbookBrownianGibbsEigenIndex :=
+  Σ ℓ : ℝ, Fin (Module.finrank ℝ (textbookBrownianGibbsClosedEigenspace m U hU hPU β ℓ))
+```
+### MolecularDynamics.local_eigenbasis [MolecularDynamics/Chapter06/BrownianResolventSpectrum.lean:243]
+```lean
+private def local_eigenbasis (ℓ : ℝ) :
+    OrthonormalBasis (Fin (Module.finrank ℝ (textbookBrownianGibbsClosedEigenspace m U hU hPU β ℓ)))
+      ℝ (textbookBrownianGibbsClosedEigenspace m U hU hPU β ℓ) := by
+  let : FiniteDimensional ℝ (textbookBrownianGibbsClosedEigenspace m U hU hPU β ℓ) :=
+    textbookBrownianGibbsClosedEigenspace_finiteDimensional m hm U hU hPU β hβ ℓ
+  exact stdOrthonormalBasis ℝ _
+```
+### MolecularDynamics.eigenfamily [MolecularDynamics/Chapter06/BrownianResolventSpectrum.lean:250]
+```lean
+private def eigenfamily (j : textbookBrownianGibbsEigenIndex m U hU hPU β) : Gibbs U β :=
+  (local_eigenbasis m hm U hU hPU β hβ j.1 j.2 : Gibbs U β)
+```
+### MolecularDynamics.eigenfamily_orthonormal [MolecularDynamics/Chapter06/BrownianResolventSpectrum.lean:253]
+```lean
+private theorem eigenfamily_orthonormal :
+    Orthonormal ℝ (eigenfamily m hm U hU hPU β hβ)
+```
+### MolecularDynamics.eigenfamily_dense [MolecularDynamics/Chapter06/BrownianResolventSpectrum.lean:261]
+```lean
+private theorem eigenfamily_dense :
+    (Submodule.span ℝ (Set.range (eigenfamily m hm U hU hPU β hβ))).topologicalClosure = ⊤
+```
+### MolecularDynamics.textbookBrownianGibbsEigenbasis [MolecularDynamics/Chapter06/BrownianResolventSpectrum.lean:283]
+```lean
+def textbookBrownianGibbsEigenbasis :
+    HilbertBasis (textbookBrownianGibbsEigenIndex m U hU hPU β) ℝ (Gibbs U β) :=
+  HilbertBasis.mk (eigenfamily_orthonormal m hm U hU hPU β hβ)
+    (by rw [eigenfamily_dense m hm U hU hPU β hβ])
+```
+### MolecularDynamics.textbookBrownianGenerator_add [MolecularDynamics/Chapter06/BrownianSmoothDomain.lean:36]
+```lean
+theorem textbookBrownianGenerator_add {Nc : ℕ} (m : Fin Nc → ℝ)
+    (U : (Fin Nc → ℝ) → ℝ) (β : ℝ)
+    (f g : (Fin Nc → ℝ) → ℝ) (hf : ContDiff ℝ ∞ f) (hg : ContDiff ℝ ∞ g) :
+    textbookBrownianGenerator m U β (f + g) =
+      textbookBrownianGenerator m U β f + textbookBrownianGenerator m U β g
+```
+### MolecularDynamics.textbookBrownianGenerator_smul [MolecularDynamics/Chapter06/BrownianSmoothDomain.lean:54]
+```lean
+theorem textbookBrownianGenerator_smul {Nc : ℕ} (m : Fin Nc → ℝ)
+    (U : (Fin Nc → ℝ) → ℝ) (β : ℝ)
+    (f : (Fin Nc → ℝ) → ℝ) (hf : ContDiff ℝ ∞ f) (c : ℝ) :
+    textbookBrownianGenerator m U β (c • f) =
+      c • textbookBrownianGenerator m U β f
+```
+### MolecularDynamics.textbookPeriodicSmoothSpace [MolecularDynamics/Chapter06/BrownianSmoothDomain.lean:70]
+```lean
+def textbookPeriodicSmoothSpace (Nc : ℕ) : Submodule ℝ ((Fin Nc → ℝ) → ℝ) where
+  carrier := {f | ContDiff ℝ ∞ f ∧ textbookUnitPeriodicPotential f}
+  zero_mem' := ⟨contDiff_const, by intro q n; rfl⟩
+  add_mem' := by
+    intro f g hf hg
+    refine ⟨hf.1.add hg.1, ?_⟩
+    intro q n
+    change f (q + fun i ↦ (n i : ℝ)) + g (q + fun i ↦ (n i : ℝ)) = f q + g q
+    rw [hf.2 q n, hg.2 q n]
+  smul_mem' := by
+    intro c f hf
+    refine ⟨hf.1.const_smul c, ?_⟩
+    intro q n
+    change c * f (q + fun i ↦ (n i : ℝ)) = c * f q
+    rw [hf.2 q n]
+```
+### MolecularDynamics.textbookBrownianSmoothGenerator [MolecularDynamics/Chapter06/BrownianSmoothDomain.lean:93]
+```lean
+noncomputable def textbookBrownianSmoothGenerator {Nc : ℕ} (m : Fin Nc → ℝ)
+    (U : (Fin Nc → ℝ) → ℝ) (hU : ContDiff ℝ ∞ U)
+    (hPU : textbookUnitPeriodicPotential U) (β : ℝ) :
+    textbookPeriodicSmoothSpace Nc →ₗ[ℝ] textbookPeriodicSmoothSpace Nc where
+  toFun f := ⟨textbookBrownianGenerator m U β f,
+    textbookBrownianGenerator_contDiff m U β f hU f.prop.1,
+    textbookBrownianGenerator_periodic m U β f hU f.prop.1 hPU f.prop.2⟩
+  map_add' := by
+    intro f g
+    apply Subtype.ext
+    exact textbookBrownianGenerator_add m U β f g f.prop.1 g.prop.1
+  map_smul' := by
+    intro c f
+    apply Subtype.ext
+    exact textbookBrownianGenerator_smul m U β f f.prop.1 c
+```
+### MolecularDynamics.textbookPeriodicSmoothEmbedding [MolecularDynamics/Chapter06/BrownianSmoothDomain.lean:120]
+```lean
+noncomputable def textbookPeriodicSmoothEmbedding {Nc : ℕ}
+    (U : (Fin Nc → ℝ) → ℝ) (hU : ContDiff ℝ ∞ U)
+    (hPU : textbookUnitPeriodicPotential U) (β : ℝ) :
+    textbookPeriodicSmoothSpace Nc →ₗ[ℝ] Lp ℝ 2 (textbookConfigurationTorusGibbsMeasure U β) where
+  toFun f := textbookConfigurationGibbsL2Observable U hU hPU β f f.prop.1.continuous f.prop.2
+  map_add' := by
+    intro f g
+    apply Lp.ext
+    filter_upwards [textbookConfigurationGibbsL2Observable_ae_eq U hU hPU β (f + g)
+        (f + g).prop.1.continuous (f + g).prop.2,
+      textbookConfigurationGibbsL2Observable_ae_eq U hU hPU β f f.prop.1.continuous f.prop.2,
+      textbookConfigurationGibbsL2Observable_ae_eq U hU hPU β g g.prop.1.continuous g.prop.2,
+      Lp.coeFn_add (textbookConfigurationGibbsL2Observable U hU hPU β f f.prop.1.continuous f.prop.2)
+        (textbookConfigurationGibbsL2Observable U hU hPU β g g.prop.1.continuous g.prop.2)]
+      with Q hfg hf hg hs
+    exact hfg.trans ((show textbookConfigurationTorusObservable
+      ((f : (Fin Nc → ℝ) → ℝ) + (g : (Fin Nc → ℝ) → ℝ)) Q =
+        textbookConfigurationTorusObservable f Q + textbookConfigurationTorusObservable g Q from rfl).trans
+      ((congrArg₂ (fun a b : ℝ ↦ a + b) hf hg).symm.trans hs.symm))
+  map_smul' := by
+    intro c f
+    apply Lp.ext
+    filter_upwards [textbookConfigurationGibbsL2Observable_ae_eq U hU hPU β (c • f)
+        (c • f).prop.1.continuous (c • f).prop.2,
+      textbookConfigurationGibbsL2Observable_ae_eq U hU hPU β f f.prop.1.continuous f.prop.2,
+      Lp.coeFn_smul c (textbookConfigurationGibbsL2Observable U hU hPU β f f.prop.1.continuous f.prop.2)]
+      with Q hcf hf hs
+    exact hcf.trans ((show textbookConfigurationTorusObservable
+      (c • (f : (Fin Nc → ℝ) → ℝ)) Q =
+        c • textbookConfigurationTorusObservable f Q from rfl).trans
+      ((congrArg (fun a : ℝ ↦ c • a) hf).symm.trans hs.symm))
+```
+### MolecularDynamics.textbookPeriodicSmoothEmbedding_injective [MolecularDynamics/Chapter06/BrownianSmoothDomain.lean:153]
+```lean
+theorem textbookPeriodicSmoothEmbedding_injective {Nc : ℕ}
+    (U : (Fin Nc → ℝ) → ℝ) (hU : ContDiff ℝ ∞ U)
+    (hPU : textbookUnitPeriodicPotential U) (β : ℝ) :
+    Function.Injective (textbookPeriodicSmoothEmbedding U hU hPU β)
+```
+### MolecularDynamics.textbookBrownianGibbsSmoothDomain [MolecularDynamics/Chapter06/BrownianSmoothDomain.lean:163]
+```lean
+noncomputable def textbookBrownianGibbsSmoothDomain {Nc : ℕ}
+    (U : (Fin Nc → ℝ) → ℝ) (hU : ContDiff ℝ ∞ U)
+    (hPU : textbookUnitPeriodicPotential U) (β : ℝ) :
+    Submodule ℝ (Lp ℝ 2 (textbookConfigurationTorusGibbsMeasure U β)) :=
+  (textbookPeriodicSmoothEmbedding U hU hPU β).range
+```
+### MolecularDynamics.textbookPeriodicSmoothEmbeddingEquiv [MolecularDynamics/Chapter06/BrownianSmoothDomain.lean:170]
+```lean
+noncomputable def textbookPeriodicSmoothEmbeddingEquiv {Nc : ℕ}
+    (U : (Fin Nc → ℝ) → ℝ) (hU : ContDiff ℝ ∞ U)
+    (hPU : textbookUnitPeriodicPotential U) (β : ℝ) :
+    textbookPeriodicSmoothSpace Nc ≃ₗ[ℝ] textbookBrownianGibbsSmoothDomain U hU hPU β :=
+  LinearEquiv.ofInjective (textbookPeriodicSmoothEmbedding U hU hPU β)
+    (textbookPeriodicSmoothEmbedding_injective U hU hPU β)
+```
+### MolecularDynamics.textbookBrownianGibbsDomainOperator [MolecularDynamics/Chapter06/BrownianSmoothDomain.lean:198]
+```lean
+noncomputable def textbookBrownianGibbsDomainOperator {Nc : ℕ} (m : Fin Nc → ℝ)
+    (U : (Fin Nc → ℝ) → ℝ) (hU : ContDiff ℝ ∞ U)
+    (hPU : textbookUnitPeriodicPotential U) (β : ℝ) :
+    textbookBrownianGibbsSmoothDomain U hU hPU β →ₗ[ℝ]
+      Lp ℝ 2 (textbookConfigurationTorusGibbsMeasure U β) :=
+  (textbookPeriodicSmoothEmbedding U hU hPU β).comp
+    ((textbookBrownianSmoothGenerator m U hU hPU β).comp
+      (textbookPeriodicSmoothEmbeddingEquiv U hU hPU β).symm.toLinearMap)
+```
+### MolecularDynamics.Gibbs [MolecularDynamics/Chapter06/BrownianSpectralAverage.lean:12]
+```lean
+private abbrev Gibbs {Nc : ℕ} (U : (Fin Nc → ℝ) → ℝ) (β : ℝ) :=
+  Lp ℝ 2 (textbookConfigurationTorusGibbsMeasure U β)
+```
+### MolecularDynamics.Gibbs [MolecularDynamics/Chapter06/BrownianSpectralDecay.lean:11]
+```lean
+private abbrev Gibbs {Nc : ℕ} (U : (Fin Nc → ℝ) → ℝ) (β : ℝ) :=
+  Lp ℝ 2 (textbookConfigurationTorusGibbsMeasure U β)
+```
+### MolecularDynamics.Gibbs [MolecularDynamics/Chapter06/BrownianSpectralEvolution.lean:12]
+```lean
+private abbrev Gibbs {Nc : ℕ} (U : (Fin Nc → ℝ) → ℝ) (β : ℝ) :=
+  Lp ℝ 2 (textbookConfigurationTorusGibbsMeasure U β)
+```
+### MolecularDynamics.Gibbs [MolecularDynamics/Chapter06/BrownianSpectralGenerator.lean:12]
+```lean
+private abbrev Gibbs {Nc : ℕ} (U : (Fin Nc → ℝ) → ℝ) (β : ℝ) :=
+  Lp ℝ 2 (textbookConfigurationTorusGibbsMeasure U β)
+```
+### MolecularDynamics.textbookConfigurationTorusRepresentative [MolecularDynamics/Chapter06/BrownianTorusGibbs.lean:26]
+```lean
+def textbookConfigurationTorusRepresentative {Nc : ℕ}
+    (Q : UnitAddTorus (Fin Nc)) : Fin Nc → ℝ :=
+  (UnitAddTorus.measurableEquivPiIoc (0 : Fin Nc → ℝ) Q).val
+```
+### MolecularDynamics.textbookConfigurationTorusObservable [MolecularDynamics/Chapter06/BrownianTorusGibbs.lean:61]
+```lean
+def textbookConfigurationTorusObservable {Nc : ℕ}
+    (f : (Fin Nc → ℝ) → ℝ) (Q : UnitAddTorus (Fin Nc)) : ℝ :=
+  f (textbookConfigurationTorusRepresentative Q)
+```
+### MolecularDynamics.textbookConfigurationTorusGibbsWeight [MolecularDynamics/Chapter06/BrownianTorusGibbs.lean:128]
+```lean
+noncomputable def textbookConfigurationTorusGibbsWeight {Nc : ℕ}
+    (U : (Fin Nc → ℝ) → ℝ) (β : ℝ) (Q : UnitAddTorus (Fin Nc)) : ℝ :=
+  Real.exp (-β * textbookConfigurationTorusObservable U Q)
+```
+### MolecularDynamics.textbookConfigurationTorusGibbsMeasure [MolecularDynamics/Chapter06/BrownianTorusGibbs.lean:159]
+```lean
+noncomputable def textbookConfigurationTorusGibbsMeasure {Nc : ℕ}
+    (U : (Fin Nc → ℝ) → ℝ) (β : ℝ) : Measure (UnitAddTorus (Fin Nc)) :=
+  volume.withDensity (fun Q ↦ ENNReal.ofReal
+    ((textbookConfigurationPartition U β)⁻¹ * textbookConfigurationTorusGibbsWeight U β Q))
+```
+### MolecularDynamics.textbookBrownianGenerator_periodic [MolecularDynamics/Chapter06/BrownianTorusGibbs.lean:242]
+```lean
+theorem textbookBrownianGenerator_periodic {Nc : ℕ} (m : Fin Nc → ℝ)
+    (U : (Fin Nc → ℝ) → ℝ) (β : ℝ) (g : (Fin Nc → ℝ) → ℝ)
+    (hU : ContDiff ℝ ∞ U) (hg : ContDiff ℝ ∞ g)
+    (hPU : textbookUnitPeriodicPotential U) (hPg : textbookUnitPeriodicPotential g) :
+    textbookUnitPeriodicPotential (textbookBrownianGenerator m U β g)
+```
+### MolecularDynamics.textbookBrownianGenerator_contDiff [MolecularDynamics/Chapter06/BrownianTorusGibbs.lean:256]
+```lean
+theorem textbookBrownianGenerator_contDiff {Nc : ℕ} (m : Fin Nc → ℝ)
+    (U : (Fin Nc → ℝ) → ℝ) (β : ℝ) (g : (Fin Nc → ℝ) → ℝ)
+    (hU : ContDiff ℝ ∞ U) (hg : ContDiff ℝ ∞ g) :
+    ContDiff ℝ ∞ (textbookBrownianGenerator m U β g)
+```
+### MolecularDynamics.textbookUnitPeriodicPotential [MolecularDynamics/Chapter06/LangevinPeriodicForce.lean:13]
+```lean
+def textbookUnitPeriodicPotential {Nc : ℕ} (U : (Fin Nc → ℝ) → ℝ) : Prop :=
+  ∀ q (n : Fin Nc → ℤ), U (q + fun i ↦ (n i : ℝ)) = U q
+```

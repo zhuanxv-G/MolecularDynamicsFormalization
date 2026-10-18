@@ -1,0 +1,540 @@
+{
+  "batch": "BATCH39",
+  "chapter": "ch06",
+  "round": "first-merged",
+  "input_sha256": {
+    "Blueprint/Ch06.lean": "0a02a34ec68989a83bccfa5916db5053ecdb58e05667bf21ff3568d9d1f4318e",
+    "blueprint/ch06/ch06_source.json": "45c70ceef21ca168af437de297e2e21e2800b452ab7942654061d4cff9bb5d95"
+  },
+  "items": [
+    {
+      "source_id": "MD-6.4.4-LangevinNoiseBracket",
+      "json_review": {
+        "status": "CORRECTED",
+        "issue_codes": [
+          "SOURCE_PARAPHRASE"
+        ],
+        "corrected_json": {
+          "source_id": "MD-6.4.4-LangevinNoiseBracket",
+          "kind": "unnumbered_claim",
+          "label": null,
+          "section": "6.4.4",
+          "printed_page": "255",
+          "pdf_page": "276",
+          "statement_latex": "For $i=1,2,\\ldots,N_c$, we have, using the fact that $b_i$ is a constant vector field and so its Jacobian matrix vanishes,\n\\[[b_0,b_i]=-\\begin{bmatrix}0&I\\\\-U''(q)&-\\gamma I\\end{bmatrix}b_i\n=-\\sigma\\begin{bmatrix}e_i\\\\-\\gamma e_i\\end{bmatrix}.\\]",
+          "proof_latex": null,
+          "proof_note": "原书未给独立完整证明。",
+          "proof_discussion_latex": null,
+          "context_notation": [],
+          "issues": [],
+          "lean_decl": "MD.Ch06.langevinNoiseBracket",
+          "reusable_proofs": [
+            "MolecularDynamics.textbookLangevinDrift_noise_bracket"
+          ],
+          "extra_assumptions": [
+            "[EXTRA]真实C²势的Fréchet Jacobian、全部噪声坐标；σ任意，非零条件在独立性条明确。"
+          ],
+          "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
+          "review_status": "CORRECTED",
+          "repair_log": [],
+          "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
+        },
+        "issues": [
+          {
+            "code": "SOURCE_PARAPHRASE",
+            "detail": "原页为“For i=1,2,…,Nc, we have, using …”；输入缩写，并省略Hessian说明。所选公式符号正确。"
+          }
+        ],
+        "evidence": [
+          {
+            "attachment": "R8_PAGES.pdf",
+            "attachment_pages": [
+              13
+            ],
+            "printed_page": "255",
+            "method": "逐页PDF文本比对；同原书页复用已目视核对的原页图像，图像代表页为附件1、4、12、20、26。",
+            "finding": "已核对所引正文、数学符号、页码及选取范围；差异逐项见issues。"
+          },
+          {
+            "definition_basis": "仅R8_任务.md的实际签名及项目定义摘录（含D1–D69）；标准Mathlib按任务说明采信。",
+            "finding": "C²势足以使力可微；常字段导数为零，−Db0·bi=(−σe_i,σγe_i)，与原符号和全部i,z吻合；σ=0也允许本恒等式。"
+          }
+        ]
+      },
+      "audit": {
+        "lean_decl": "MD.Ch06.langevinNoiseBracket",
+        "verdict": "PASS",
+        "explanation": "C²势足以使力可微；常字段导数为零，−Db0·bi=(−σe_i,σγe_i)，与原符号和全部i,z吻合；σ=0也允许本恒等式。",
+        "counterexample": null,
+        "suggested_fix": null
+      },
+      "subtask": "BATCH39a",
+      "input_sha256": {
+        "Blueprint/Ch06.lean": "0a02a34ec68989a83bccfa5916db5053ecdb58e05667bf21ff3568d9d1f4318e",
+        "blueprint/ch06/ch06_source.json": "45c70ceef21ca168af437de297e2e21e2800b452ab7942654061d4cff9bb5d95",
+        "BATCH39a_PAGES.pdf": "974f7ad71997f3252515153a560b13b741e8200998eb1ebae674886184542ba0",
+        "signature_sha256": "033e8a46b38fdc66a76860efde5ece56f854bf78d3b2bbd6ac5148e858b65c69"
+      }
+    },
+    {
+      "source_id": "MD-6.4.4-LangevinBracketIndependent",
+      "json_review": {
+        "status": "CORRECTED",
+        "issue_codes": [
+          "SOURCE_PARAPHRASE"
+        ],
+        "corrected_json": {
+          "source_id": "MD-6.4.4-LangevinBracketIndependent",
+          "kind": "unnumbered_claim",
+          "label": null,
+          "section": "6.4.4",
+          "printed_page": "255",
+          "pdf_page": "276",
+          "statement_latex": "As these $N_c$ vectors, taken together with the original $b_i$, clearly provide a linearly independent set of $2N_c$ vectors,",
+          "proof_latex": null,
+          "proof_note": "原书未给独立完整证明。",
+          "proof_discussion_latex": null,
+          "context_notation": [],
+          "issues": [],
+          "lean_decl": "MD.Ch06.langevinBracketIndependent",
+          "reusable_proofs": [
+            "MolecularDynamics.textbookLangevinBracketFamily_linearIndependent"
+          ],
+          "extra_assumptions": [
+            "[EXTRA]真实Fin Nc⊕Fin Nc的全部2Nc向量族、σ≠0；不以维数计数代替独立性。"
+          ],
+          "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
+          "review_status": "CORRECTED",
+          "repair_log": [],
+          "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
+        },
+        "issues": [
+          {
+            "code": "SOURCE_PARAPHRASE",
+            "detail": "输入使用改写/缩写而非原页逐字引文；corrected_json恢复所选原句或列表。"
+          }
+        ],
+        "evidence": [
+          {
+            "attachment": "R8_PAGES.pdf",
+            "attachment_pages": [
+              14
+            ],
+            "printed_page": "255",
+            "method": "逐页PDF文本比对；同原书页复用已目视核对的原页图像，图像代表页为附件1、4、12、20、26。",
+            "finding": "已核对所引正文、数学符号、页码及选取范围；差异逐项见issues。"
+          },
+          {
+            "definition_basis": "仅R8_任务.md的实际签名及项目定义摘录（含D1–D69）；标准Mathlib按任务说明采信。",
+            "finding": "族定义Sum.elim分别为全部噪声及全部括号，Fin Nc⊕Fin Nc恰有2Nc个向量；σ≠0保证位置块再动量块消元独立，n=0为空族也正确。"
+          }
+        ]
+      },
+      "audit": {
+        "lean_decl": "MD.Ch06.langevinBracketIndependent",
+        "verdict": "PASS",
+        "explanation": "族定义Sum.elim分别为全部噪声及全部括号，Fin Nc⊕Fin Nc恰有2Nc个向量；σ≠0保证位置块再动量块消元独立，n=0为空族也正确。",
+        "counterexample": null,
+        "suggested_fix": null
+      },
+      "subtask": "BATCH39b",
+      "input_sha256": {
+        "Blueprint/Ch06.lean": "0a02a34ec68989a83bccfa5916db5053ecdb58e05667bf21ff3568d9d1f4318e",
+        "blueprint/ch06/ch06_source.json": "45c70ceef21ca168af437de297e2e21e2800b452ab7942654061d4cff9bb5d95",
+        "BATCH39b_PAGES.pdf": "974f7ad71997f3252515153a560b13b741e8200998eb1ebae674886184542ba0",
+        "signature_sha256": "9e340fe61cff0d5188b9922ef1f6f19dcdaefac0c49a114d8a4b919b54606a54"
+      }
+    },
+    {
+      "source_id": "MD-6.4.4-LangevinHormander",
+      "json_review": {
+        "status": "NEEDS_HUMAN",
+        "issue_codes": [
+          "SOURCE_PARAPHRASE",
+          "REQUIRES_HUMAN"
+        ],
+        "corrected_json": {
+          "source_id": "MD-6.4.4-LangevinHormander",
+          "kind": "unnumbered_claim",
+          "label": null,
+          "section": "6.4.4",
+          "printed_page": "255",
+          "pdf_page": "276",
+          "statement_latex": "we have verified Hörmander’s condition. Thus Assumption 1(ii) holds in the case of Langevin dynamics.",
+          "proof_latex": null,
+          "proof_note": "原书未给独立完整证明。",
+          "proof_discussion_latex": null,
+          "context_notation": [],
+          "issues": [],
+          "lean_decl": "MD.Ch06.langevinHormander",
+          "reusable_proofs": [
+            "MolecularDynamics.textbookLangevin_hormander_physicalNoise"
+          ],
+          "extra_assumptions": [
+            "[EXTRA]完整物理σ=√(2γθ)、γ/θ>0、C∞ U的实际噪声及括号span；本桥只证rank，转移密度存在另条未证。"
+          ],
+          "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。 本Lean条目仅覆盖rank/微分平稳性子结论；其余原句结论分别交由条目14/21，不能算在本条已覆盖。",
+          "review_status": "NEEDS_HUMAN",
+          "repair_log": [],
+          "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
+        },
+        "issues": [
+          {
+            "code": "SOURCE_PARAPHRASE",
+            "detail": "输入使用改写/缩写而非原页逐字引文；corrected_json恢复所选原句或列表。"
+          },
+          {
+            "code": "REQUIRES_HUMAN",
+            "detail": "正γ、θ给非零物理噪声，实际seed包括drift/noise。但textbookIteratedBracket定义缺失，无法最终核定textbookHormanderAt语义；且签名仅为rank，不含原句Assumption 1(ii)的转移密度结论，后者虽另列14，当前条目scope需明确拆分。"
+          }
+        ],
+        "evidence": [
+          {
+            "attachment": "R8_PAGES.pdf",
+            "attachment_pages": [
+              15
+            ],
+            "printed_page": "255",
+            "method": "逐页PDF文本比对；同原书页复用已目视核对的原页图像，图像代表页为附件1、4、12、20、26。",
+            "finding": "已核对所引正文、数学符号、页码及选取范围；差异逐项见issues。"
+          },
+          {
+            "definition_basis": "仅R8_任务.md的实际签名及项目定义摘录（含D1–D69）；标准Mathlib按任务说明采信。",
+            "finding": "正γ、θ给非零物理噪声，实际seed包括drift/noise。但textbookIteratedBracket定义缺失，无法最终核定textbookHormanderAt语义；且签名仅为rank，不含原句Assumption 1(ii)的转移密度结论，后者虽另列14，当前条目scope需明确拆分。"
+          }
+        ]
+      },
+      "audit": {
+        "lean_decl": "MD.Ch06.langevinHormander",
+        "verdict": "NEEDS_HUMAN",
+        "explanation": "正γ、θ给非零物理噪声，实际seed包括drift/noise。但textbookIteratedBracket定义缺失，无法最终核定textbookHormanderAt语义；且签名仅为rank，不含原句Assumption 1(ii)的转移密度结论，后者虽另列14，当前条目scope需明确拆分。",
+        "counterexample": null,
+        "suggested_fix": "补迭代括号定义；本条scope限rank，密度结论由14承接，不能将含漂移的一般定义当抛物型定理。"
+      },
+      "subtask": "BATCH39c",
+      "input_sha256": {
+        "Blueprint/Ch06.lean": "0a02a34ec68989a83bccfa5916db5053ecdb58e05667bf21ff3568d9d1f4318e",
+        "blueprint/ch06/ch06_source.json": "45c70ceef21ca168af437de297e2e21e2800b452ab7942654061d4cff9bb5d95",
+        "BATCH39c_PAGES.pdf": "974f7ad71997f3252515153a560b13b741e8200998eb1ebae674886184542ba0",
+        "signature_sha256": "57c98f3a0aba75cd24738f0ca0e5e091c6ed8a6170e7eb908f36991807fd4f0c"
+      }
+    },
+    {
+      "source_id": "MD-6.4.4-LangevinTransitionDensity",
+      "json_review": {
+        "status": "NEEDS_HUMAN",
+        "issue_codes": [
+          "REQUIRES_HUMAN"
+        ],
+        "corrected_json": null,
+        "issues": [
+          {
+            "code": "REQUIRES_HUMAN",
+            "detail": "签名有全部初值、正时间、非负联合连续密度和对任意可测集相对于flatPhaseMeasure的核表示，物理噪声、周期域正确。D52仅以Classical.choose(actual_path_solution_exists ...)选解，未提供该存在命题的完整签名；不能只据此确认所选轨迹满足哪一积分方程和初值。"
+          }
+        ],
+        "evidence": [
+          {
+            "attachment": "R8_PAGES.pdf",
+            "attachment_pages": [
+              16
+            ],
+            "printed_page": "255",
+            "method": "逐页PDF文本比对；同原书页复用已目视核对的原页图像，图像代表页为附件1、4、12、20、26。",
+            "finding": "已核对所引正文、数学符号、页码及选取范围；差异逐项见issues。"
+          },
+          {
+            "definition_basis": "仅R8_任务.md的实际签名及项目定义摘录（含D1–D69）；标准Mathlib按任务说明采信。",
+            "finding": "签名有全部初值、正时间、非负联合连续密度和对任意可测集相对于flatPhaseMeasure的核表示，物理噪声、周期域正确。D52仅以Classical.choose(actual_path_solution_exists ...)选解，未提供该存在命题的完整签名；不能只据此确认所选轨迹满足哪一积分方程和初值。"
+          }
+        ]
+      },
+      "audit": {
+        "lean_decl": "MD.Ch06.langevinTransitionDensity",
+        "verdict": "NEEDS_HUMAN",
+        "explanation": "签名有全部初值、正时间、非负联合连续密度和对任意可测集相对于flatPhaseMeasure的核表示，物理噪声、周期域正确。D52仅以Classical.choose(actual_path_solution_exists ...)选解，未提供该存在命题的完整签名；不能只据此确认所选轨迹满足哪一积分方程和初值。",
+        "counterexample": null,
+        "suggested_fix": "补actual_path_solution_exists完整命题及所选解满足积分方程的规格；本项不因未给证明或sorry降级。"
+      },
+      "subtask": "BATCH39d",
+      "input_sha256": {
+        "Blueprint/Ch06.lean": "0a02a34ec68989a83bccfa5916db5053ecdb58e05667bf21ff3568d9d1f4318e",
+        "blueprint/ch06/ch06_source.json": "45c70ceef21ca168af437de297e2e21e2800b452ab7942654061d4cff9bb5d95",
+        "BATCH39d_PAGES.pdf": "974f7ad71997f3252515153a560b13b741e8200998eb1ebae674886184542ba0",
+        "signature_sha256": "ab8a63f5335eee836b8201f812ba169d81b9690fea39bf1e3255324692768e79"
+      }
+    },
+    {
+      "source_id": "MD-6.4.4-Lemma61Printed",
+      "json_review": {
+        "status": "NEEDS_HUMAN",
+        "issue_codes": [
+          "PROOF_METADATA",
+          "REQUIRES_HUMAN",
+          "ERRATUM?"
+        ],
+        "corrected_json": {
+          "source_id": "MD-6.4.4-Lemma61Printed",
+          "kind": "unnumbered_claim",
+          "label": "Lemma 6.1",
+          "section": "6.4.4",
+          "printed_page": "255",
+          "pdf_page": "276",
+          "statement_latex": "Lemma 6.1 For all $t>0$ and all open $C\\subset D$, we have that\n\\[\\Pr(X(t)\\in C\\mid X(0)=X_0)>0,\\quad\\forall X_0\\in D,\\]\nwhere $X(t)=(q(t),p(t))^T$ is a solution to Langevin dynamics (6.47).",
+          "proof_latex": null,
+          "proof_note": "原书给出证明论述；本条仅摘录命题，相关论述见相邻原页，未在此补写。",
+          "proof_discussion_latex": null,
+          "context_notation": [],
+          "issues": [
+            {
+              "code": "ERRATUM?",
+              "detail": "字面all open C包括空集，概率为0；需Nonempty。原(6.47)单位质量，旧清单一般质量扩展须另标技术范围。"
+            }
+          ],
+          "lean_decl": "MD.Ch06.lemma61Printed",
+          "reusable_proofs": [],
+          "extra_assumptions": [],
+          "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
+          "review_status": "NEEDS_HUMAN",
+          "repair_log": [
+            {
+              "date": "2026-10-17",
+              "action": "directive22_printed_corrected_pair",
+              "change": "增加目标开集非空；保留任意点初值、任意t>0的实际核正概率。",
+              "corrected_decl": "MD.Ch06.lemma61Printed_corrected",
+              "website": "未提交；待网站审计"
+            }
+          ],
+          "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
+        },
+        "issues": [
+          {
+            "code": "PROOF_METADATA",
+            "detail": "原页确有证明段落（Lemma 6.1明确标Proof；Proposition 6.4随后给Fredholm论证），不宜笼统记作未给独立完整证明。"
+          },
+          {
+            "code": "REQUIRES_HUMAN",
+            "detail": "字面保留所有开集，空集确使断言错误；还把原单位质量周期相空间扩大为任意正质量、全欧氏Phase n，且extra_assumptions为空，故不是完整忠实的Printed形式。原书疑误按NEEDS_HUMAN处理，并记录额外的签名范围偏移。"
+          },
+          {
+            "code": "ERRATUM?",
+            "detail": "原all open包含空集。"
+          }
+        ],
+        "evidence": [
+          {
+            "attachment": "R8_PAGES.pdf",
+            "attachment_pages": [
+              17
+            ],
+            "printed_page": "255",
+            "method": "逐页PDF文本比对；同原书页复用已目视核对的原页图像，图像代表页为附件1、4、12、20、26。",
+            "finding": "已核对所引正文、数学符号、页码及选取范围；差异逐项见issues。"
+          },
+          {
+            "definition_basis": "仅R8_任务.md的实际签名及项目定义摘录（含D1–D69）；标准Mathlib按任务说明采信。",
+            "finding": "字面保留所有开集，空集确使断言错误；还把原单位质量周期相空间扩大为任意正质量、全欧氏Phase n，且extra_assumptions为空，故不是完整忠实的Printed形式。原书疑误按NEEDS_HUMAN处理，并记录额外的签名范围偏移。"
+          }
+        ]
+      },
+      "audit": {
+        "lean_decl": "MD.Ch06.lemma61Printed",
+        "verdict": "NEEDS_HUMAN",
+        "explanation": "字面保留所有开集，空集确使断言错误；还把原单位质量周期相空间扩大为任意正质量、全欧氏Phase n，且extra_assumptions为空，故不是完整忠实的Printed形式。原书疑误按NEEDS_HUMAN处理，并记录额外的签名范围偏移。",
+        "counterexample": "取C=∅即要求0<P∅=0；不依赖任何动力学。",
+        "suggested_fix": "Printed应回到单位质量周期域或明确标注扩大范围；另列非空目标修正版，不在Printed内静默加非空。"
+      },
+      "subtask": "BATCH39e",
+      "input_sha256": {
+        "Blueprint/Ch06.lean": "0a02a34ec68989a83bccfa5916db5053ecdb58e05667bf21ff3568d9d1f4318e",
+        "blueprint/ch06/ch06_source.json": "45c70ceef21ca168af437de297e2e21e2800b452ab7942654061d4cff9bb5d95",
+        "BATCH39e_PAGES.pdf": "974f7ad71997f3252515153a560b13b741e8200998eb1ebae674886184542ba0",
+        "signature_sha256": "cbb897aa469f9070586bfae6a015c6147b28e8c2d11c0a34f4d790d4d816810c"
+      }
+    },
+    {
+      "source_id": "MD-6.4.4-Lemma61Nonempty",
+      "json_review": {
+        "status": "NEEDS_HUMAN",
+        "issue_codes": [
+          "REQUIRES_HUMAN"
+        ],
+        "corrected_json": null,
+        "issues": [
+          {
+            "code": "REQUIRES_HUMAN",
+            "detail": "补C.Nonempty且T>0、σ≠0；全部点初值、真实周期核目标齐全。γ任意不妨碍有限时间可控性。缺D52所用actual_path_solution_exists的规格，尚不能核定此实际核确为所称Langevin解律。"
+          }
+        ],
+        "evidence": [
+          {
+            "attachment": "R8_PAGES.pdf",
+            "attachment_pages": [
+              18
+            ],
+            "printed_page": "255",
+            "method": "逐页PDF文本比对；同原书页复用已目视核对的原页图像，图像代表页为附件1、4、12、20、26。",
+            "finding": "已核对所引正文、数学符号、页码及选取范围；差异逐项见issues。"
+          },
+          {
+            "definition_basis": "仅R8_任务.md的实际签名及项目定义摘录（含D1–D69）；标准Mathlib按任务说明采信。",
+            "finding": "补C.Nonempty且T>0、σ≠0；全部点初值、真实周期核目标齐全。γ任意不妨碍有限时间可控性。缺D52所用actual_path_solution_exists的规格，尚不能核定此实际核确为所称Langevin解律。"
+          }
+        ]
+      },
+      "audit": {
+        "lean_decl": "MD.Ch06.lemma61Nonempty",
+        "verdict": "NEEDS_HUMAN",
+        "explanation": "补C.Nonempty且T>0、σ≠0；全部点初值、真实周期核目标齐全。γ任意不妨碍有限时间可控性。缺D52所用actual_path_solution_exists的规格，尚不能核定此实际核确为所称Langevin解律。",
+        "counterexample": null,
+        "suggested_fix": "补选解存在命题的完整规格；非空修正本身合理。"
+      },
+      "subtask": "BATCH39f",
+      "input_sha256": {
+        "Blueprint/Ch06.lean": "0a02a34ec68989a83bccfa5916db5053ecdb58e05667bf21ff3568d9d1f4318e",
+        "blueprint/ch06/ch06_source.json": "45c70ceef21ca168af437de297e2e21e2800b452ab7942654061d4cff9bb5d95",
+        "BATCH39f_PAGES.pdf": "974f7ad71997f3252515153a560b13b741e8200998eb1ebae674886184542ba0",
+        "signature_sha256": "14609a20a597ff7367860229766c5135ed814d6793fba2e128c76b0edff3701c"
+      }
+    },
+    {
+      "source_id": "MD-6.4.4-ControlPath",
+      "json_review": {
+        "status": "CORRECTED",
+        "issue_codes": [
+          "SOURCE_OMISSION"
+        ],
+        "corrected_json": {
+          "source_id": "MD-6.4.4-ControlPath",
+          "kind": "unnumbered_claim",
+          "label": null,
+          "section": "6.4.4",
+          "printed_page": "255",
+          "pdf_page": "276",
+          "statement_latex": "Consider the ODE\n\\[\\frac{d^2q}{dt^2}+\\nabla U(q)+\\gamma\\frac{dq}{dt}=\\sigma\\frac{dR}{dt}.\\tag{6.49}\\]\nfor some positive constants $\\gamma$ and $\\sigma$. This is precisely Langevin dynamics (6.47), substituting a process $R(t)$ in place of the Wiener process. Choose $q$ to be a $C^\\infty$ path such that for a given $t>0$\n\\[(q(0),\\dot q(0))^T=X_0;\\quad(q(t),\\dot q(t))^T=y.\\]\nTaking $R(0)=0$, we can obtain a $C^\\infty$ function $dR/dt$ by substitution.",
+          "proof_latex": null,
+          "proof_note": "原书未给独立完整证明。",
+          "proof_discussion_latex": null,
+          "context_notation": [],
+          "issues": [],
+          "lean_decl": "MD.Ch06.controlPath",
+          "reusable_proofs": [
+            "MolecularDynamics.textbookLangevinControlledEndpoint"
+          ],
+          "extra_assumptions": [
+            "[EXTRA]完整实际任意位置/速度端点、q/p/R全光滑、R0=0及真实全时ODE；σ≠0，未冒充随机正概率。"
+          ],
+          "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
+          "review_status": "CORRECTED",
+          "repair_log": [],
+          "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
+        },
+        "issues": [
+          {
+            "code": "SOURCE_OMISSION",
+            "detail": "ODE与Choose q之间原有正γ、σ及以R替代Wiener过程两句；输入未标省略。"
+          }
+        ],
+        "evidence": [
+          {
+            "attachment": "R8_PAGES.pdf",
+            "attachment_pages": [
+              19
+            ],
+            "printed_page": "255",
+            "method": "逐页PDF文本比对；同原书页复用已目视核对的原页图像，图像代表页为附件1、4、12、20、26。",
+            "finding": "已核对所引正文、数学符号、页码及选取范围；差异逐项见issues。"
+          },
+          {
+            "definition_basis": "仅R8_任务.md的实际签名及项目定义摘录（含D1–D69）；标准Mathlib按任务说明采信。",
+            "finding": "所有x,y、T>0、σ≠0，存在全光滑q,p,R，四个端点及R0=0，逐时q′=p与p′=−∇U−γp+σR′全部保留。欧氏提升的可控性足够用于环面投影，EXTRA范围清楚。"
+          }
+        ]
+      },
+      "audit": {
+        "lean_decl": "MD.Ch06.controlPath",
+        "verdict": "PASS",
+        "explanation": "所有x,y、T>0、σ≠0，存在全光滑q,p,R，四个端点及R0=0，逐时q′=p与p′=−∇U−γp+σR′全部保留。欧氏提升的可控性足够用于环面投影，EXTRA范围清楚。",
+        "counterexample": null,
+        "suggested_fix": null
+      },
+      "subtask": "BATCH39g",
+      "input_sha256": {
+        "Blueprint/Ch06.lean": "0a02a34ec68989a83bccfa5916db5053ecdb58e05667bf21ff3568d9d1f4318e",
+        "blueprint/ch06/ch06_source.json": "45c70ceef21ca168af437de297e2e21e2800b452ab7942654061d4cff9bb5d95",
+        "BATCH39g_PAGES.pdf": "974f7ad71997f3252515153a560b13b741e8200998eb1ebae674886184542ba0",
+        "signature_sha256": "ad9e759fb5e4f67accff4669f658e3e62937060a38619b6233becae748fbba45"
+      }
+    },
+    {
+      "source_id": "MD-6.4.4-ControlEndpointStable",
+      "json_review": {
+        "status": "CORRECTED",
+        "issue_codes": [
+          "SOURCE_OMISSION"
+        ],
+        "corrected_json": {
+          "source_id": "MD-6.4.4-ControlEndpointStable",
+          "kind": "unnumbered_claim",
+          "label": null,
+          "section": "6.4.4",
+          "printed_page": "256",
+          "pdf_page": "277",
+          "statement_latex": "Using the results of [257, Lemma 3.4], we can deduce that for any $\\delta>0$, there exists a sufficiently small $\\varepsilon>0$ such that if a realization of the Wiener process $W$ remains close to our solution $R$\n\\[\\sup_{0\\le s\\le t}\\|W(s)-R(s)\\|\\le\\varepsilon,\\tag{6.50}\\]\nthen $X(t)\\in\\mathcal B_\\delta(y)$. ",
+          "proof_latex": null,
+          "proof_note": "原书未给独立完整证明。",
+          "proof_discussion_latex": null,
+          "context_notation": [],
+          "issues": [],
+          "lean_decl": "MD.Ch06.controlEndpointStable",
+          "reusable_proofs": [
+            "MolecularDynamics.textbookLangevinControlledEndpoint_stable"
+          ],
+          "extra_assumptions": [
+            "[EXTRA]实际完整受控积分方程和原平滑势局部cutoff稳定性，全部端点/δ/ε；未假设全局Lipschitz势，原环面投影由上一真实核桥接。"
+          ],
+          "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
+          "review_status": "CORRECTED",
+          "repair_log": [],
+          "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
+        },
+        "issues": [
+          {
+            "code": "SOURCE_OMISSION",
+            "detail": "原页明确援引[257, Lemma 3.4]；输入删去引用并将开头改写。恢复所选到球包含式的原句。"
+          }
+        ],
+        "evidence": [
+          {
+            "attachment": "R8_PAGES.pdf",
+            "attachment_pages": [
+              20
+            ],
+            "printed_page": "256",
+            "method": "逐页PDF文本比对；同原书页复用已目视核对的原页图像，图像代表页为附件1、4、12、20、26。",
+            "finding": "已核对所引正文、数学符号、页码及选取范围；差异逐项见issues。"
+          },
+          {
+            "definition_basis": "仅R8_任务.md的实际签名及项目定义摘录（含D1–D69）；标准Mathlib按任务说明采信。",
+            "finding": "δ后选统一ε，再量化所有连续W,q,p；积分解定义包含初值、W0和两条真实积分方程。给定controlPosition/Momentum/Rate为Hermite三次路径及ODE反解，R为其积分；sup管道用逐时≤表达，端点严格dist<δ正确。"
+          }
+        ]
+      },
+      "audit": {
+        "lean_decl": "MD.Ch06.controlEndpointStable",
+        "verdict": "PASS",
+        "explanation": "δ后选统一ε，再量化所有连续W,q,p；积分解定义包含初值、W0和两条真实积分方程。给定controlPosition/Momentum/Rate为Hermite三次路径及ODE反解，R为其积分；sup管道用逐时≤表达，端点严格dist<δ正确。",
+        "counterexample": null,
+        "suggested_fix": null
+      },
+      "subtask": "BATCH39h",
+      "input_sha256": {
+        "Blueprint/Ch06.lean": "0a02a34ec68989a83bccfa5916db5053ecdb58e05667bf21ff3568d9d1f4318e",
+        "blueprint/ch06/ch06_source.json": "45c70ceef21ca168af437de297e2e21e2800b452ab7942654061d4cff9bb5d95",
+        "BATCH39h_PAGES.pdf": "c8777368a0a4791687943c6e8e0bab7713f9d6639639860f00aff50dc5eeb3bb",
+        "signature_sha256": "c6a35d554b709049ba995aae6c5c6c78de3c83edbeecfa1fd7a173aa067b66b3"
+      }
+    }
+  ],
+  "merged_from": "ch06_first_merged"
+}

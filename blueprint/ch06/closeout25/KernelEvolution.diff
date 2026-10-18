@@ -1,0 +1,18 @@
+--- before
++++ after
+@@ -3201,9 +3201,13 @@
+     (w : Fin r → Lp ℝ 2 (textbookLangevinCanonicalMeasure U β hβ)) : ℝ := ∑ i, ‖w i‖^2
+ 
+ /-- source_id: MD-6.4.5-KernelEvolution · definition · §6.4.5 · 印刷p.257 / PDFp.278
+-[EXTRA] [EXTRA]真实Markov kernel应用初始measure的compProd边缘，形式exp解释为实际演化，非无资格幂级数。 -/
++[EXTRA] [EXTRA]真实Markov kernel应用初始measure的compProd边缘，形式exp解释为实际演化，非无资格幂级数。 [EXTRA] 25号：保留任意核作用的kernelEvolutionRaw25辅助；主入口加真正Markov半群资格。仅覆盖概率测度推进，实际Langevin生成元和密度关系须见DensityEvolutionMeaning，不把本条称作完整指数传播识别。
++-/
++def kernelEvolutionRaw25 {D : Type*} [MeasurableSpace D] (K : ℝ≥0 → Kernel D D)
++    (μ : Measure D) (t : ℝ≥0) : Measure D := K t ∘ₘ μ
++
+ def kernelEvolution {D : Type*} [MeasurableSpace D] (K : ℝ≥0 → Kernel D D)
+-    (μ : Measure D) (t : ℝ≥0) : Measure D := K t ∘ₘ μ
++    (μ : Measure D) (_hK : MolecularDynamics.Chapter06Review.markovSemigroup K) (t : ℝ≥0) : Measure D := K t ∘ₘ μ
+ 
+ /-- source_id: MD-6.4.5-KernelAverage · definition · §6.4.5 · 印刷p.258 / PDFp.279
+ [EXTRA] [EXTRA]真实核积分的backward检验函数传播，可积资格在Duality定理明确。 -/

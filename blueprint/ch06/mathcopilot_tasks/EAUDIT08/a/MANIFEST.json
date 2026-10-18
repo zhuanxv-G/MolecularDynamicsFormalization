@@ -1,0 +1,69 @@
+{
+  "eaudit": "EAUDIT08",
+  "subtask": "EAUDIT08a",
+  "source_id": "MD-6.3.3-MemoryKernelDeltaMeaning",
+  "input_sha256": {
+    "Blueprint/Ch06.lean": "4a2a6cb72c1692f80e3537ab1a71701d429a482780a01226c3dc66a2ebb8b44b",
+    "blueprint/ch06/ch06_source.json": "d7f93cd20eb570744c710f3e07a88b319c082e4155812fee91db0920eb05944e",
+    "PAGES.pdf": "e928e873b4e41567f25a743137d5e2d15d1825df9f112861884e6cb9b990a492",
+    "materials_sha256": "f772da3e3a5de845c4c49b7937ee69782558ff98d13bdf3899c68e518cb0c2ac"
+  },
+  "paste_sha256": "6e24500643ea7b31d21a22016987b2d7440f97ba7c5e1bd2c3c34adc027606cf",
+  "source_pdf_sha256": "1939a22e5e96ebd2b58b8e91fe2c796f5390b402f267390f473b271c35d2f036",
+  "pdf_page_mapping": [
+    259
+  ],
+  "crop_pixel_identity": "PASS: copied page render or lossless embedded full-page source pixels",
+  "rasterized_pages": {
+    "259": {
+      "dpi": 126,
+      "width": 769,
+      "height": 1166,
+      "pixel_sha256": "c9f377321551e253008b9c1693c08028f620d1b10b7b5123216a7f62748970b4"
+    }
+  },
+  "source_declarations": [
+    "memoryKernelDeltaMeaning",
+    "memoryKernelDeltaMeaning_corrected"
+  ],
+  "dependency_excerpts": [
+    {
+      "path": "Blueprint/Ch06.lean",
+      "line": 1403,
+      "full_name": "MD.Ch06.memoryKernelDeltaMeaning",
+      "kind": "def",
+      "excerpt_sha256": "c4190aa91c728c5ba207ac3c84893552108b0fe6e62ca5909aea968e21695076"
+    },
+    {
+      "path": "Blueprint/Ch06.lean",
+      "line": 1409,
+      "full_name": "MD.Ch06.memoryKernelDeltaMeaning_corrected",
+      "kind": "def",
+      "excerpt_sha256": "24db34b56a23854f888d73364cfdaa6e72b8aafcb3236cd030ec89f4bb048209"
+    },
+    {
+      "path": "MolecularDynamics/Chapter06/ReviewDefinitions.lean",
+      "line": 17,
+      "full_name": "MolecularDynamics.Chapter06Review.V",
+      "kind": "abbrev",
+      "excerpt_sha256": "7ab0ad90462b274b03f5b929b5f09417c0b397b6cb908fa6e7bd56677a314027"
+    },
+    {
+      "path": "MolecularDynamics/Chapter06/ReviewDefinitions.lean",
+      "line": 96,
+      "full_name": "MolecularDynamics.Chapter06Review.bathFrequency",
+      "kind": "def",
+      "excerpt_sha256": "e4644c522532c98aac00cd78a02fc4d70da0a444c50b96dd41744d020bc32500"
+    },
+    {
+      "path": "MolecularDynamics/Chapter06/ReviewDefinitions.lean",
+      "line": 97,
+      "full_name": "MolecularDynamics.Chapter06Review.memoryKernel",
+      "kind": "def",
+      "excerpt_sha256": "0204b6b985c3cc2c7b3dc5fd9929cc9f504009b74a63c65686e1566c9aca20f2"
+    }
+  ],
+  "project_definition_closure": "complete recursive definitions, referenced theorem types, explicit choice and consistency specifications",
+  "website_submitted": false,
+  "total_task_bytes": 180980
+}

@@ -1,0 +1,475 @@
+{
+  "batch": "BATCH15",
+  "chapter": "ch06",
+  "round": "first-merged",
+  "input_sha256": {
+    "Blueprint/Ch06.lean": "0a02a34ec68989a83bccfa5916db5053ecdb58e05667bf21ff3568d9d1f4318e",
+    "blueprint/ch06/ch06_source.json": "45c70ceef21ca168af437de297e2e21e2800b452ab7942654061d4cff9bb5d95"
+  },
+  "items": [
+    {
+      "source_id": "MD-6.2.2-WienerMidpointSum",
+      "json_review": {
+        "status": "APPROVED",
+        "issue_codes": [],
+        "corrected_json": null,
+        "issues": [],
+        "evidence": {
+          "attachment": "R3_PAGES.pdf",
+          "attachment_pages": [
+            30
+          ],
+          "original_pdf_pages": "249",
+          "printed_pages": "228",
+          "A": "已核对本条摘录及公式；数学变量改名与原文逐字忠实分开处理。",
+          "C": "只审本任务所列签名及项目依赖定义；标准库按题设采信；未编译、未审证明体，sorry不影响签名判定。"
+        }
+      },
+      "audit": {
+        "lean_decl": "MD.Ch06.wienerMidpointSum",
+        "verdict": "PASS",
+        "explanation": "Fin K上取W((2k+1)T/(2K))乘整步增量，K>0时精确时间中点；K=0为空和。虽有未使用的P隐参，不改变数学内容。仅g=W辅助定义。",
+        "counterexample": null,
+        "suggested_fix": null
+      },
+      "subtask": "BATCH15a",
+      "input_sha256": {
+        "Blueprint/Ch06.lean": "0a02a34ec68989a83bccfa5916db5053ecdb58e05667bf21ff3568d9d1f4318e",
+        "blueprint/ch06/ch06_source.json": "45c70ceef21ca168af437de297e2e21e2800b452ab7942654061d4cff9bb5d95",
+        "BATCH15a_PAGES.pdf": "46fe0c1f4f3ba2b76ebe9fbea4cdd02da75e696114911d5241c5895a2494f36c",
+        "signature_sha256": "09e60f5dfd8faf15e64b16aba1a020e3e59e6f5017b7002f1a80105de1375996"
+      }
+    },
+    {
+      "source_id": "MD-6.2.2-GaussianIncrementMean",
+      "json_review": {
+        "status": "CORRECTED",
+        "issue_codes": [
+          "SOURCE_NOTATION"
+        ],
+        "corrected_json": {
+          "source_id": "MD-6.2.2-GaussianIncrementMean",
+          "kind": "unnumbered_claim",
+          "label": null,
+          "section": "6.2.2",
+          "printed_page": "230",
+          "pdf_page": "251",
+          "statement_latex": "Also observe that $\\Delta W_k$ is a normally distributed random variable with the following properties\n\\[\\mathbb E\\Delta W_k=0;\\quad\\mathbb E\\Delta W_k^2=\\delta t=\\tau/\\nu;\\quad\\mathbb E\\Delta W_k^4=3\\delta t^2=3(\\tau/\\nu)^2.\\]",
+          "proof_latex": null,
+          "proof_note": "原书未给独立完整证明。",
+          "proof_discussion_latex": null,
+          "context_notation": [],
+          "issues": [
+            {
+              "code": "SOURCE_NOTATION",
+              "detail": "原页公式的分割数为希腊ν；输入将其系统改为K，逐字层面不忠实。已仅在原文字段恢复ν；Lean中的K作为变量重命名无数学问题。"
+            }
+          ],
+          "lean_decl": "MD.Ch06.gaussianIncrementMean",
+          "reusable_proofs": [
+            "ProbabilityTheory.HasLaw.integral_eq",
+            "ProbabilityTheory.integral_id_gaussianReal"
+          ],
+          "extra_assumptions": [
+            "[EXTRA]任意真实中心Gaussian完整法则推出零均值；增量law桥接先前已保存。"
+          ],
+          "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
+          "review_status": "CORRECTED",
+          "repair_log": [],
+          "source_page_verification": "R3本次审校：核对R3_PAGES.pdf对应页；原文符号差异和页码问题见本条issues。"
+        },
+        "issues": [
+          {
+            "code": "SOURCE_NOTATION",
+            "detail": "原页公式的分割数为希腊ν；输入将其系统改为K，逐字层面不忠实。已仅在原文字段恢复ν；Lean中的K作为变量重命名无数学问题。"
+          }
+        ],
+        "evidence": {
+          "attachment": "R3_PAGES.pdf",
+          "attachment_pages": [
+            31
+          ],
+          "original_pdf_pages": "251",
+          "printed_pages": "230",
+          "A": "已核对本条摘录及公式；数学变量改名与原文逐字忠实分开处理。",
+          "C": "只审本任务所列签名及项目依赖定义；标准库按题设采信；未编译、未审证明体，sorry不影响签名判定。"
+        }
+      },
+      "audit": {
+        "lean_decl": "MD.Ch06.gaussianIncrementMean",
+        "verdict": "PASS",
+        "explanation": "任意HasLaw X (gaussianReal 0 v) P，v≥0，推出期望0；真实增量法则在第7条提供。此条只承载三项矩公式的第一项，其余分别由第23、24条承载。",
+        "counterexample": null,
+        "suggested_fix": "按corrected_json修正原文转录或标注；不修改Lean工程。"
+      },
+      "subtask": "BATCH15b",
+      "input_sha256": {
+        "Blueprint/Ch06.lean": "0a02a34ec68989a83bccfa5916db5053ecdb58e05667bf21ff3568d9d1f4318e",
+        "blueprint/ch06/ch06_source.json": "45c70ceef21ca168af437de297e2e21e2800b452ab7942654061d4cff9bb5d95",
+        "BATCH15b_PAGES.pdf": "2bc45681e6b66ad0f59f09b24f0df386723914a6693f92744b51efed502d6106",
+        "signature_sha256": "a5ade2aa496c04c988a7380ab6474a166dd869b8b838d861a7d4bb7020692169"
+      }
+    },
+    {
+      "source_id": "MD-6.2.2-GaussianIncrementSecond",
+      "json_review": {
+        "status": "CORRECTED",
+        "issue_codes": [
+          "SOURCE_NOTATION"
+        ],
+        "corrected_json": {
+          "source_id": "MD-6.2.2-GaussianIncrementSecond",
+          "kind": "unnumbered_claim",
+          "label": null,
+          "section": "6.2.2",
+          "printed_page": "230",
+          "pdf_page": "251",
+          "statement_latex": "Also observe that $\\Delta W_k$ is a normally distributed random variable with the following properties\n\\[\\mathbb E\\Delta W_k=0;\\quad\\mathbb E\\Delta W_k^2=\\delta t=\\tau/\\nu;\\quad\\mathbb E\\Delta W_k^4=3\\delta t^2=3(\\tau/\\nu)^2.\\]",
+          "proof_latex": null,
+          "proof_note": "原书未给独立完整证明。",
+          "proof_discussion_latex": null,
+          "context_notation": [],
+          "issues": [
+            {
+              "code": "SOURCE_NOTATION",
+              "detail": "原页公式的分割数为希腊ν；输入将其系统改为K，逐字层面不忠实。已仅在原文字段恢复ν；Lean中的K作为变量重命名无数学问题。"
+            }
+          ],
+          "lean_decl": "MD.Ch06.gaussianIncrementSecond",
+          "reusable_proofs": [
+            "MolecularDynamics.textbookCenteredGaussian_secondMoment"
+          ],
+          "extra_assumptions": [
+            "[EXTRA]真实中心Gaussian法则导出完整矩；不将矩结论前置。"
+          ],
+          "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
+          "review_status": "CORRECTED",
+          "repair_log": [],
+          "source_page_verification": "R3本次审校：核对R3_PAGES.pdf对应页；原文符号差异和页码问题见本条issues。"
+        },
+        "issues": [
+          {
+            "code": "SOURCE_NOTATION",
+            "detail": "原页公式的分割数为希腊ν；输入将其系统改为K，逐字层面不忠实。已仅在原文字段恢复ν；Lean中的K作为变量重命名无数学问题。"
+          }
+        ],
+        "evidence": {
+          "attachment": "R3_PAGES.pdf",
+          "attachment_pages": [
+            32
+          ],
+          "original_pdf_pages": "251",
+          "printed_pages": "230",
+          "A": "已核对本条摘录及公式；数学变量改名与原文逐字忠实分开处理。",
+          "C": "只审本任务所列签名及项目依赖定义；标准库按题设采信；未编译、未审证明体，sorry不影响签名判定。"
+        }
+      },
+      "audit": {
+        "lean_decl": "MD.Ch06.gaussianIncrementSecond",
+        "verdict": "PASS",
+        "explanation": "同一中心Gaussian完整法则推出二阶矩v，包括v=0；未把二阶矩作为前提，网格代入v=T/K与原式一致。",
+        "counterexample": null,
+        "suggested_fix": "按corrected_json修正原文转录或标注；不修改Lean工程。"
+      },
+      "subtask": "BATCH15c",
+      "input_sha256": {
+        "Blueprint/Ch06.lean": "0a02a34ec68989a83bccfa5916db5053ecdb58e05667bf21ff3568d9d1f4318e",
+        "blueprint/ch06/ch06_source.json": "45c70ceef21ca168af437de297e2e21e2800b452ab7942654061d4cff9bb5d95",
+        "BATCH15c_PAGES.pdf": "2bc45681e6b66ad0f59f09b24f0df386723914a6693f92744b51efed502d6106",
+        "signature_sha256": "421c046ff00fcc8bfb15455a5c16c50b65b0a5b0c52c01c41e0bafed899453be"
+      }
+    },
+    {
+      "source_id": "MD-6.2.2-GaussianIncrementFourth",
+      "json_review": {
+        "status": "CORRECTED",
+        "issue_codes": [
+          "SOURCE_NOTATION"
+        ],
+        "corrected_json": {
+          "source_id": "MD-6.2.2-GaussianIncrementFourth",
+          "kind": "unnumbered_claim",
+          "label": null,
+          "section": "6.2.2",
+          "printed_page": "230",
+          "pdf_page": "251",
+          "statement_latex": "Also observe that $\\Delta W_k$ is a normally distributed random variable with the following properties\n\\[\\mathbb E\\Delta W_k=0;\\quad\\mathbb E\\Delta W_k^2=\\delta t=\\tau/\\nu;\\quad\\mathbb E\\Delta W_k^4=3\\delta t^2=3(\\tau/\\nu)^2.\\]",
+          "proof_latex": null,
+          "proof_note": "原书未给独立完整证明。",
+          "proof_discussion_latex": null,
+          "context_notation": [],
+          "issues": [
+            {
+              "code": "SOURCE_NOTATION",
+              "detail": "原页公式的分割数为希腊ν；输入将其系统改为K，逐字层面不忠实。已仅在原文字段恢复ν；Lean中的K作为变量重命名无数学问题。"
+            }
+          ],
+          "lean_decl": "MD.Ch06.gaussianIncrementFourth",
+          "reusable_proofs": [
+            "MolecularDynamics.textbookCenteredGaussian_fourthMoment"
+          ],
+          "extra_assumptions": [
+            "[EXTRA]真实中心Gaussian法则导出完整矩；不将矩结论前置。"
+          ],
+          "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
+          "review_status": "CORRECTED",
+          "repair_log": [],
+          "source_page_verification": "R3本次审校：核对R3_PAGES.pdf对应页；原文符号差异和页码问题见本条issues。"
+        },
+        "issues": [
+          {
+            "code": "SOURCE_NOTATION",
+            "detail": "原页公式的分割数为希腊ν；输入将其系统改为K，逐字层面不忠实。已仅在原文字段恢复ν；Lean中的K作为变量重命名无数学问题。"
+          }
+        ],
+        "evidence": {
+          "attachment": "R3_PAGES.pdf",
+          "attachment_pages": [
+            33
+          ],
+          "original_pdf_pages": "251",
+          "printed_pages": "230",
+          "A": "已核对本条摘录及公式；数学变量改名与原文逐字忠实分开处理。",
+          "C": "只审本任务所列签名及项目依赖定义；标准库按题设采信；未编译、未审证明体，sorry不影响签名判定。"
+        }
+      },
+      "audit": {
+        "lean_decl": "MD.Ch06.gaussianIncrementFourth",
+        "verdict": "PASS",
+        "explanation": "任意中心Gaussian完整法则推出四阶矩3v²，包括退化v=0；并未遗漏四次幂或误用标准差。",
+        "counterexample": null,
+        "suggested_fix": "按corrected_json修正原文转录或标注；不修改Lean工程。"
+      },
+      "subtask": "BATCH15d",
+      "input_sha256": {
+        "Blueprint/Ch06.lean": "0a02a34ec68989a83bccfa5916db5053ecdb58e05667bf21ff3568d9d1f4318e",
+        "blueprint/ch06/ch06_source.json": "45c70ceef21ca168af437de297e2e21e2800b452ab7942654061d4cff9bb5d95",
+        "BATCH15d_PAGES.pdf": "2bc45681e6b66ad0f59f09b24f0df386723914a6693f92744b51efed502d6106",
+        "signature_sha256": "119d6fa7c9e5294e868401c00a1a166adc2c1921d55c0579894b71467d10775a"
+      }
+    },
+    {
+      "source_id": "MD-6.2.2-QuadraticMeanSquareError",
+      "json_review": {
+        "status": "CORRECTED",
+        "issue_codes": [
+          "SOURCE_NOTATION",
+          "SOURCE_FORMULA"
+        ],
+        "corrected_json": {
+          "source_id": "MD-6.2.2-QuadraticMeanSquareError",
+          "kind": "unnumbered_claim",
+          "label": null,
+          "section": "6.2.2",
+          "printed_page": "230",
+          "pdf_page": "251",
+          "statement_latex": "Thus we have\n\\[I_\\nu=\\mathbb E\\sum_{k=0}^{\\nu-1}(\\Delta W_{\\nu,k}^2-\\tau/\\nu)^2\n=\\sum_{k=0}^{\\nu-1}\\mathbb E\\left(\\Delta W_{\\nu,k}^4-2\\frac{\\tau}{\\nu}\\Delta W_{\\nu,k}^2+\\frac{\\tau^2}{\\nu^2}\\right)\n=\\sum_{k=0}^{\\nu-1}\\left(3(\\tau/\\nu)^2-2(\\tau/\\nu)^2+\\tau^2/\\nu^2\\right)=2\\frac{\\tau^2}{\\nu^2}\\nu=2\\frac{\\tau^2}{\\nu}.\\]",
+          "proof_latex": null,
+          "proof_note": "原书未给独立完整证明。",
+          "proof_discussion_latex": null,
+          "context_notation": [],
+          "issues": [
+            {
+              "code": "SOURCE_NOTATION",
+              "detail": "原页公式的分割数为希腊ν；输入将其系统改为K，逐字层面不忠实。已仅在原文字段恢复ν；Lean中的K作为变量重命名无数学问题。"
+            },
+            {
+              "code": "SOURCE_FORMULA",
+              "detail": "输入将原页τ/ν及I_ν的具体表达改写成δt及I；首行期望与求和次序也改写。已恢复原页表达。"
+            }
+          ],
+          "lean_decl": "MD.Ch06.quadraticMeanSquareError",
+          "reusable_proofs": [
+            "MolecularDynamics.textbookWienerQuadraticSum_meanSquareError"
+          ],
+          "extra_assumptions": [
+            "[EXTRA]实际PreBrownian且K>0；精确误差，不是仅Tendsto0。"
+          ],
+          "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
+          "review_status": "CORRECTED",
+          "repair_log": [],
+          "source_page_verification": "R3本次审校：核对R3_PAGES.pdf对应页；原文符号差异和页码问题见本条issues。"
+        },
+        "issues": [
+          {
+            "code": "SOURCE_NOTATION",
+            "detail": "原页公式的分割数为希腊ν；输入将其系统改为K，逐字层面不忠实。已仅在原文字段恢复ν；Lean中的K作为变量重命名无数学问题。"
+          },
+          {
+            "code": "SOURCE_FORMULA",
+            "detail": "输入将原页τ/ν及I_ν的具体表达改写成δt及I；首行期望与求和次序也改写。已恢复原页表达。"
+          }
+        ],
+        "evidence": {
+          "attachment": "R3_PAGES.pdf",
+          "attachment_pages": [
+            34
+          ],
+          "original_pdf_pages": "251",
+          "printed_pages": "230",
+          "A": "已核对本条摘录及公式；数学变量改名与原文逐字忠实分开处理。",
+          "C": "只审本任务所列签名及项目依赖定义；标准库按题设采信；未编译、未审证明体，sorry不影响签名判定。"
+        }
+      },
+      "audit": {
+        "lean_decl": "MD.Ch06.quadraticMeanSquareError",
+        "verdict": "PASS",
+        "explanation": "T≥0，K>0，实际PreBrownian平方增量和的整体误差平方期望精确等于2T²/K；不是仅逐项矩或仅极限。D14、15、17的网格与原书一致。",
+        "counterexample": null,
+        "suggested_fix": "按corrected_json修正原文转录或标注；不修改Lean工程。"
+      },
+      "subtask": "BATCH15e",
+      "input_sha256": {
+        "Blueprint/Ch06.lean": "0a02a34ec68989a83bccfa5916db5053ecdb58e05667bf21ff3568d9d1f4318e",
+        "blueprint/ch06/ch06_source.json": "45c70ceef21ca168af437de297e2e21e2800b452ab7942654061d4cff9bb5d95",
+        "BATCH15e_PAGES.pdf": "2bc45681e6b66ad0f59f09b24f0df386723914a6693f92744b51efed502d6106",
+        "signature_sha256": "084feedf246a52c94ccc46a2bfefd0c520341340317c05a3663cdb63e99c2188"
+      }
+    },
+    {
+      "source_id": "MD-6.2.2-SelfItoIntegral",
+      "json_review": {
+        "status": "APPROVED",
+        "issue_codes": [],
+        "corrected_json": null,
+        "issues": [],
+        "evidence": {
+          "attachment": "R3_PAGES.pdf",
+          "attachment_pages": [
+            35
+          ],
+          "original_pdf_pages": "251",
+          "printed_pages": "230",
+          "A": "已核对本条摘录及公式；数学变量改名与原文逐字忠实分开处理。",
+          "C": "只审本任务所列签名及项目依赖定义；标准库按题设采信；未编译、未审证明体，sorry不影响签名判定。"
+        }
+      },
+      "audit": {
+        "lean_decl": "MD.Ch06.selfItoIntegral",
+        "verdict": "PASS",
+        "explanation": "存在Y∈L²、真实D18左和整体均方趋于Y、Y几乎处处等于(W(T)²−T)/2三项齐全。任意T≥0；没有把积分求值当前提。有限和L²不在此签名显式陈述，但对PreBrownian有限Gaussian乘积成立。",
+        "counterexample": null,
+        "suggested_fix": null
+      },
+      "subtask": "BATCH15f",
+      "input_sha256": {
+        "Blueprint/Ch06.lean": "0a02a34ec68989a83bccfa5916db5053ecdb58e05667bf21ff3568d9d1f4318e",
+        "blueprint/ch06/ch06_source.json": "45c70ceef21ca168af437de297e2e21e2800b452ab7942654061d4cff9bb5d95",
+        "BATCH15f_PAGES.pdf": "2bc45681e6b66ad0f59f09b24f0df386723914a6693f92744b51efed502d6106",
+        "signature_sha256": "eab6b325a331e654a9e825a527a428ad3d253e5ca14d865ceccea21fda5f3e4f"
+      }
+    },
+    {
+      "source_id": "MD-6.2.2-SelfStratonovichIntegral",
+      "json_review": {
+        "status": "NEEDS_HUMAN",
+        "issue_codes": [
+          "SOURCE_NOTATION",
+          "ERRATUM?"
+        ],
+        "corrected_json": {
+          "source_id": "MD-6.2.2-SelfStratonovichIntegral",
+          "kind": "unnumbered_claim",
+          "label": null,
+          "section": "6.2.2",
+          "printed_page": "230",
+          "pdf_page": "251",
+          "statement_latex": "In contrast, the Stratonovich (midpoint) integral can be calculated as\n\\[\\int_0^\\tau W(t)\\circ dW(t)=\\operatorname{l.i.m.}_{\\nu\\to\\infty}\\sum_{k=0}^{\\nu-1}W(k\\delta t+\\delta t/2)[W((k+1)\\delta t)-W(k\\delta t)].\\]\nWriting\n\\[W(k\\delta t+\\delta t/2)=W(\\frac{(k+1)\\delta t+k\\delta t}{2})=\\frac12(W((k+1)\\delta t)+W(k\\delta t))+O(\\sqrt{\\delta t}),\\]\nallows us to evaluate the integral as\n\\[\\int_0^\\tau W(t)\\circ dW(t)=\\frac12\\operatorname{l.i.m.}_{\\nu\\to\\infty}\\sum_{k=0}^{\\nu-1}[W((k+1)\\delta t)^2-W(k\\delta t)^2]=\\frac12W(\\tau)^2.\\]",
+          "proof_latex": null,
+          "proof_note": "原书未给独立完整证明。",
+          "proof_discussion_latex": null,
+          "context_notation": [],
+          "issues": [
+            {
+              "code": "SOURCE_NOTATION",
+              "detail": "原页公式的分割数为希腊ν；输入将其系统改为K，逐字层面不忠实。已仅在原文字段恢复ν；Lean中的K作为变量重命名无数学问题。"
+            },
+            {
+              "code": "ERRATUM?",
+              "detail": "原文随机O(√δt)未指定模式，单步估计不能直接控制整和残差；最终中点均方极限本身正确。"
+            }
+          ],
+          "lean_decl": "MD.Ch06.selfStratonovichIntegral",
+          "reusable_proofs": [
+            "MolecularDynamics.textbookWienerSelfStratonovichIntegral_exists"
+          ],
+          "extra_assumptions": [
+            "[EXTRA]真实时间中点和、L²见证、整体均方极限、AE求值；原O(√δt)单步启发不足，正式整体均方误差证明不直接丢弃逐步残项。"
+          ],
+          "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
+          "review_status": "NEEDS_HUMAN",
+          "repair_log": [],
+          "source_page_verification": "R3本次审校：核对R3_PAGES.pdf对应页；原文符号差异和页码问题见本条issues。"
+        },
+        "issues": [
+          {
+            "code": "SOURCE_NOTATION",
+            "detail": "原页公式的分割数为希腊ν；输入将其系统改为K，逐字层面不忠实。已仅在原文字段恢复ν；Lean中的K作为变量重命名无数学问题。"
+          },
+          {
+            "code": "ERRATUM?",
+            "detail": "原文随机O(√δt)未指定模式，单步估计不能直接控制整和残差；最终中点均方极限本身正确。"
+          }
+        ],
+        "evidence": {
+          "attachment": "R3_PAGES.pdf",
+          "attachment_pages": [
+            36
+          ],
+          "original_pdf_pages": "251",
+          "printed_pages": "230",
+          "A": "已核对本条摘录及公式；数学变量改名与原文逐字忠实分开处理。",
+          "C": "只审本任务所列签名及项目依赖定义；标准库按题设采信；未编译、未审证明体，sorry不影响签名判定。"
+        }
+      },
+      "audit": {
+        "lean_decl": "MD.Ch06.selfStratonovichIntegral",
+        "verdict": "NEEDS_HUMAN",
+        "explanation": "真实时间中点和存在L²极限Y且AE为W(T)²/2，结论数学正确。原文单步O(√δt)没有指定随机意义或控制累积误差，不能直接据此丢弃K项残差；需保留此原文论证疑点，正式签名本身并未依赖该大O假设。",
+        "counterexample": null,
+        "suggested_fix": "保留原启发式并注明非完整证明；用Brownian桥残差与整步增量独立，证明残差和L²误差趋0（方差T²/(4K)），即可支持所列正确签名。"
+      },
+      "subtask": "BATCH15g",
+      "input_sha256": {
+        "Blueprint/Ch06.lean": "0a02a34ec68989a83bccfa5916db5053ecdb58e05667bf21ff3568d9d1f4318e",
+        "blueprint/ch06/ch06_source.json": "45c70ceef21ca168af437de297e2e21e2800b452ab7942654061d4cff9bb5d95",
+        "BATCH15g_PAGES.pdf": "2bc45681e6b66ad0f59f09b24f0df386723914a6693f92744b51efed502d6106",
+        "signature_sha256": "4eedf708bff0ca744c94e799c0f786583b02ce39171e0211be34c26cadbe5a64"
+      }
+    },
+    {
+      "source_id": "MD-6.2.2-Proposition63",
+      "json_review": {
+        "status": "APPROVED",
+        "issue_codes": [],
+        "corrected_json": null,
+        "issues": [],
+        "evidence": {
+          "attachment": "R3_PAGES.pdf",
+          "attachment_pages": [
+            37
+          ],
+          "original_pdf_pages": "252",
+          "printed_pages": "231",
+          "A": "已核对本条摘录及公式；数学变量改名与原文逐字忠实分开处理。",
+          "C": "只审本任务所列签名及项目依赖定义；标准库按题设采信；未编译、未审证明体，sorry不影响签名判定。"
+        }
+      },
+      "audit": {
+        "lean_decl": "MD.Ch06.proposition63",
+        "verdict": "PASS",
+        "explanation": "任意T≥0、PreBrownian及C¹实确定函数g；存在Y∈L²，实际左和均方收敛；Gaussian完整法则的方差是∫g²的toNNReal（非负故不截断值）；均值0及二阶矩等于∫g²齐全。C¹比原smooth弱且足够。",
+        "counterexample": null,
+        "suggested_fix": null
+      },
+      "subtask": "BATCH15h",
+      "input_sha256": {
+        "Blueprint/Ch06.lean": "0a02a34ec68989a83bccfa5916db5053ecdb58e05667bf21ff3568d9d1f4318e",
+        "blueprint/ch06/ch06_source.json": "45c70ceef21ca168af437de297e2e21e2800b452ab7942654061d4cff9bb5d95",
+        "BATCH15h_PAGES.pdf": "6f6a357923477e514795546ce778a6a81e3a770c786d9cb9e2d4f4c8411f18a9",
+        "signature_sha256": "d824ddf5f217f440f427078ca1d04bff3b2e67d826907063029b6491a47d294a"
+      }
+    }
+  ],
+  "merged_from": "ch06_first_merged"
+}

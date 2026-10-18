@@ -1,0 +1,29 @@
+{
+  "eaudit": "EAUDIT06",
+  "subtasks": [
+    {
+      "subtask": "EAUDIT06a",
+      "source_id": "MD-6.3.1-DiffusiveTaylorPrinted",
+      "path": "blueprint/ch06/mathcopilot_tasks/EAUDIT06/a",
+      "total_bytes": 97335,
+      "definitions": 2,
+      "manifest_sha256": "231dc01c40fabd48d5cdcf9f44904219c80b193454c0293ad9867f3e6694edbf"
+    },
+    {
+      "subtask": "EAUDIT06b",
+      "source_id": "MD-6.3.1-TimeItoFormula",
+      "path": "blueprint/ch06/mathcopilot_tasks/EAUDIT06/b",
+      "total_bytes": 94155,
+      "definitions": 10,
+      "manifest_sha256": "51fb294b9237e2643ae51c25c487019b1b02ee84ebe64bca51517f8555ab4a6a"
+    },
+    {
+      "subtask": "EAUDIT06c",
+      "source_id": "MD-6.3.2-OUVarianceIntegral",
+      "path": "blueprint/ch06/mathcopilot_tasks/EAUDIT06/c",
+      "total_bytes": 96203,
+      "definitions": 8,
+      "manifest_sha256": "d275ec5fc9cd9a4f88fa47c234a20a19cab593b30b581b8ae3959774781edde2"
+    }
+  ]
+}

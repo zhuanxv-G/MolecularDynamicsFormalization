@@ -1,0 +1,48 @@
+{
+  "eaudit": "EAUDIT01",
+  "subtask": "EAUDIT01b",
+  "source_id": "MD-6.1.2-BathTaylor",
+  "input_sha256": {
+    "Blueprint/Ch06.lean": "4a2a6cb72c1692f80e3537ab1a71701d429a482780a01226c3dc66a2ebb8b44b",
+    "blueprint/ch06/ch06_source.json": "d7f93cd20eb570744c710f3e07a88b319c082e4155812fee91db0920eb05944e",
+    "PAGES.pdf": "d4bfa09ad0bd17a179f1f43947f39826709c0d943efacd6a7fab149ab596af49",
+    "materials_sha256": "1eaa6c4fad3b1204deae1254261bf390efe3492330b4d99649efe004c31ea1b0"
+  },
+  "paste_sha256": "031439e47587172b06277b103e6deadee7f2fcf1ebc666b3caf974ba8e54dea8",
+  "source_pdf_sha256": "1939a22e5e96ebd2b58b8e91fe2c796f5390b402f267390f473b271c35d2f036",
+  "pdf_page_mapping": [
+    237
+  ],
+  "crop_pixel_identity": "PASS: copied page render or lossless embedded full-page source pixels",
+  "rasterized_pages": {},
+  "source_declarations": [
+    "bathBoltzmannPrinted",
+    "bathBoltzmannPrinted_counterexample"
+  ],
+  "dependency_excerpts": [
+    {
+      "path": "Blueprint/Ch06.lean",
+      "line": 119,
+      "full_name": "MD.Ch06.bathBoltzmannPrinted",
+      "kind": "theorem",
+      "excerpt_sha256": "2dae18dcb1f95add45a1d7248a4268b99c94882c87fadd73aa6b96454fa72f2b"
+    },
+    {
+      "path": "Blueprint/Ch06.lean",
+      "line": 127,
+      "full_name": "MD.Ch06.bathBoltzmannPrinted_counterexample",
+      "kind": "theorem",
+      "excerpt_sha256": "d31766a86cc1e3f31ff5a9326166ac4fabaf74129a590ded45aec042b6ab5093"
+    },
+    {
+      "path": "Blueprint/Ch06.lean",
+      "line": 195,
+      "full_name": "MD.Ch06.bathBoltzmannPrinted_corrected",
+      "kind": "theorem",
+      "excerpt_sha256": "c44d851d89cd46ab46929d195dad82c25c771f855d57337bd8dce83daf2dd59d"
+    }
+  ],
+  "project_definition_closure": "complete recursive definitions, referenced theorem types, explicit choice and consistency specifications",
+  "website_submitted": false,
+  "total_task_bytes": 82374
+}

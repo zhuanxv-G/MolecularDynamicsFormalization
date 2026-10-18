@@ -1,0 +1,97 @@
+{
+  "eaudit": "EAUDIT02",
+  "subtask": "EAUDIT02b",
+  "source_id": "MD-6.1.5-Proposition61",
+  "input_sha256": {
+    "Blueprint/Ch06.lean": "4a2a6cb72c1692f80e3537ab1a71701d429a482780a01226c3dc66a2ebb8b44b",
+    "blueprint/ch06/ch06_source.json": "d7f93cd20eb570744c710f3e07a88b319c082e4155812fee91db0920eb05944e",
+    "PAGES.pdf": "b34d51aa9802c443d19f203d12f495d011a06fcc39c812247e770b4912e16e15",
+    "materials_sha256": "ac994c8ce7ca04b1b868a52652c63ea15174d740b3546ed0b2ed094f294a2062"
+  },
+  "paste_sha256": "df4d6625271dd16f5c5a3f2db7584be9968899aad777446cbcf63a3ff39b097a",
+  "source_pdf_sha256": "1939a22e5e96ebd2b58b8e91fe2c796f5390b402f267390f473b271c35d2f036",
+  "pdf_page_mapping": [
+    243
+  ],
+  "crop_pixel_identity": "PASS: copied page render or lossless embedded full-page source pixels",
+  "rasterized_pages": {},
+  "source_declarations": [
+    "proposition61",
+    "proposition61_corrected"
+  ],
+  "dependency_excerpts": [
+    {
+      "path": "Blueprint/Ch06.lean",
+      "line": 424,
+      "full_name": "MD.Ch06.proposition61",
+      "kind": "theorem",
+      "excerpt_sha256": "42762bd2c4900c0b15bf0723f82b4de67eb251c928d8538a41cb075e86523f4b"
+    },
+    {
+      "path": "Blueprint/Ch06.lean",
+      "line": 439,
+      "full_name": "MD.Ch06.proposition61_corrected",
+      "kind": "theorem",
+      "excerpt_sha256": "06a04291ccb5208ce9e915028055d89ca228a0e7ee8a883d1e1b10c01cd86be5"
+    },
+    {
+      "path": "MolecularDynamics/Chapter02/SymplecticForm.lean",
+      "line": 25,
+      "full_name": "MolecularDynamics.SymplecticCoordinates",
+      "kind": "abbrev",
+      "excerpt_sha256": "d801b1ef7d571d0b96c22167cbd9c508f58aeba9e8793a8caaddb87888fc252e"
+    },
+    {
+      "path": "MolecularDynamics/Chapter03/LiePoisson.lean",
+      "line": 25,
+      "full_name": "MolecularDynamics.textbookLieDerivative",
+      "kind": "def",
+      "excerpt_sha256": "568897e0d038d7a64bb00948ec5045c2014446c16bba7bc93488b691f9d2e415"
+    },
+    {
+      "path": "MolecularDynamics/Chapter05/ReviewDefinitions.lean",
+      "line": 18,
+      "full_name": "MolecularDynamics.Chapter05Review.E",
+      "kind": "abbrev",
+      "excerpt_sha256": "b497c8ba7f01b62a3147d9ae65652772ff3f81e57aa19b116f1283fef7a3cc60"
+    },
+    {
+      "path": "MolecularDynamics/Chapter06/CanonicalIntegrationByParts.lean",
+      "line": 376,
+      "full_name": "MolecularDynamics.proposition_6_1",
+      "kind": "theorem",
+      "excerpt_sha256": "439ae3f3b763ab519cdb7c3954a13e7076c94e0cd7fdc531804cc1477ffb4852"
+    },
+    {
+      "path": "MolecularDynamics/Chapter06/CanonicalTemperature.lean",
+      "line": 15,
+      "full_name": "MolecularDynamics.textbookCanonicalPartition",
+      "kind": "def",
+      "excerpt_sha256": "51b60e64fc0de8ded42f1df8c8e5ec1c04c566871105b866f456e66ff0c2a950"
+    },
+    {
+      "path": "MolecularDynamics/Chapter06/CanonicalTemperature.lean",
+      "line": 20,
+      "full_name": "MolecularDynamics.textbookCanonicalAverage",
+      "kind": "def",
+      "excerpt_sha256": "a169a3ecf40f1ef6616e30cabb64ccd86ab88477a59d49d7e2a7ef1b1ee8be38"
+    },
+    {
+      "path": "MolecularDynamics/Chapter08/ThermostatDensity.lean",
+      "line": 18,
+      "full_name": "MolecularDynamics.textbookDivergence",
+      "kind": "def",
+      "excerpt_sha256": "1b45cabec3bf68bd209da969759334d158c263b7e5a40ed527bd3a4f48e25c48"
+    },
+    {
+      "path": "MolecularDynamics/Chapter08/ThermostatDensity.lean",
+      "line": 199,
+      "full_name": "MolecularDynamics.textbookHamiltonianGibbsWeight",
+      "kind": "def",
+      "excerpt_sha256": "ffbff77216b796f7f99e4d776610af3dd4481f431d5d94de2d8317bb36da23e8"
+    }
+  ],
+  "project_definition_closure": "complete recursive definitions, referenced theorem types, explicit choice and consistency specifications",
+  "website_submitted": false,
+  "total_task_bytes": 116103
+}

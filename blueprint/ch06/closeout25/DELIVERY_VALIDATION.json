@@ -1,0 +1,28 @@
+{
+  "status": "PASS",
+  "frozen_files": 12773,
+  "frozen_changed": [],
+  "formal_lean_files": 298,
+  "formal_sorry": 0,
+  "formal_axiom": 0,
+  "first_round": {
+    "PASS": 179,
+    "NEEDS_HUMAN": 45,
+    "FAIL": 25
+  },
+  "fail_repaired": 25,
+  "repairing": 0,
+  "blueprint_items": 249,
+  "blueprint_sections_per_item": 7,
+  "reaudit_batches": 20,
+  "reaudit_items": 60,
+  "website_submitted": false,
+  "native_sha256": "3cb9af08a7d28682d60593ba89b7feeff59e4998d2cced31039f21cee82e34f0",
+  "full_check_sha256": "f1e7fc13eacdd04752c384731ecad64e88d5245ed897f8b000f1ddd1a42f506d",
+  "lean_sha256": "4a2a6cb72c1692f80e3537ab1a71701d429a482780a01226c3dc66a2ebb8b44b",
+  "unverified": [
+    "修改版本的网站复审意见",
+    "含sorryAx声明的完整证明",
+    "导师对原书疑误及范围的裁定"
+  ]
+}

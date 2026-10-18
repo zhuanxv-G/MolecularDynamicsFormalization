@@ -1,0 +1,304 @@
+{
+  "counts": {
+    "PASS": 179,
+    "NEEDS_HUMAN": 45,
+    "FAIL": 25
+  },
+  "bindings": [
+    {
+      "batch": "BATCH01",
+      "path": "blueprint/ch06/mathcopilot_results/BATCH01_result.json",
+      "sha256": "5bb5b1bc2cb61caaebed8d6284a699b283a3f91ad76f2c1e52138612d62563f9",
+      "merged_from": "ch06_first_merged",
+      "items": 1
+    },
+    {
+      "batch": "BATCH02",
+      "path": "blueprint/ch06/mathcopilot_results/BATCH02_result.json",
+      "sha256": "7b957bde468e99971af90e77a1a456d889d0a8efcc2080347e4a3aaf9b75e0e1",
+      "merged_from": "ch06_first_merged",
+      "items": 8
+    },
+    {
+      "batch": "BATCH03",
+      "path": "blueprint/ch06/mathcopilot_results/BATCH03_result.json",
+      "sha256": "fc0ab728797079c4fd264f58737ba31fbda39569cbf2bd73f08cab435adc1893",
+      "merged_from": "ch06_first_merged",
+      "items": 5
+    },
+    {
+      "batch": "BATCH04",
+      "path": "blueprint/ch06/mathcopilot_results/BATCH04_result.json",
+      "sha256": "02c2c9b3a7338d2a6a3acaf97b3c6afad672c476c82674fcacaaeb989a3f49b1",
+      "merged_from": "ch06_first_merged",
+      "items": 8
+    },
+    {
+      "batch": "BATCH05",
+      "path": "blueprint/ch06/mathcopilot_results/BATCH05_result.json",
+      "sha256": "5d489f079bb7516b4679c78e7351af9602d63af5d22c0be111880b2921c601ed",
+      "merged_from": "ch06_first_merged",
+      "items": 8
+    },
+    {
+      "batch": "BATCH06",
+      "path": "blueprint/ch06/mathcopilot_results/BATCH06_result.json",
+      "sha256": "cd133423f5c253002cec91a106ec3817e4773c2578dd4aede5303425306b4035",
+      "merged_from": "ch06_first_merged",
+      "items": 2
+    },
+    {
+      "batch": "BATCH07",
+      "path": "blueprint/ch06/mathcopilot_results/BATCH07_result.json",
+      "sha256": "9e679ab47d417f8c775921272e173acef4d5712dc5e984424239bce53c7d9d2d",
+      "merged_from": "ch06_first_merged",
+      "items": 4
+    },
+    {
+      "batch": "BATCH08",
+      "path": "blueprint/ch06/mathcopilot_results/BATCH08_result.json",
+      "sha256": "1d9e51bdd94f5efcdfca61a4f0e08fbdcf733c7aba4e37d3bd43c3a4d1d90d52",
+      "merged_from": "ch06_first_merged",
+      "items": 8
+    },
+    {
+      "batch": "BATCH09",
+      "path": "blueprint/ch06/mathcopilot_results/BATCH09_result.json",
+      "sha256": "d559ad15de3e0d63f4da9c7e58d518f095f5fbd9702cb9f5945e0290f222be54",
+      "merged_from": "ch06_first_merged",
+      "items": 4
+    },
+    {
+      "batch": "BATCH10",
+      "path": "blueprint/ch06/mathcopilot_results/BATCH10_result.json",
+      "sha256": "15a0e28e2680957f71a71652ed0c02416caae5f66d7d1e4fc5e1c36045915a81",
+      "merged_from": "ch06_first_merged",
+      "items": 2
+    },
+    {
+      "batch": "BATCH11",
+      "path": "blueprint/ch06/mathcopilot_results/BATCH11_result.json",
+      "sha256": "ef90328333ddb672199dd368b59f79be87e6982557f9dcd340c55e25719fb7ba",
+      "merged_from": "ch06_first_merged",
+      "items": 8
+    },
+    {
+      "batch": "BATCH12",
+      "path": "blueprint/ch06/mathcopilot_results/BATCH12_result.json",
+      "sha256": "a30ada10a5b03a87f1ab3d754a141f231ab0af861f3b81b6c2ee1202fdd8363b",
+      "merged_from": "ch06_first_merged",
+      "items": 8
+    },
+    {
+      "batch": "BATCH13",
+      "path": "blueprint/ch06/mathcopilot_results/BATCH13_result.json",
+      "sha256": "a209f57f9b7ed687d384480f15607fee3e62bcda31362d2f980e536424b1d888",
+      "merged_from": "ch06_first_merged",
+      "items": 6
+    },
+    {
+      "batch": "BATCH14",
+      "path": "blueprint/ch06/mathcopilot_results/BATCH14_result.json",
+      "sha256": "68b0ee3c93854ffce4908ca193b05126af6a9f37063dd4babc5948028fd5189f",
+      "merged_from": "ch06_first_merged",
+      "items": 8
+    },
+    {
+      "batch": "BATCH15",
+      "path": "blueprint/ch06/mathcopilot_results/BATCH15_result.json",
+      "sha256": "3af0e34a8ccba20782b2558680813feca13f2e6d83f68619380a238f70ff0ecd",
+      "merged_from": "ch06_first_merged",
+      "items": 8
+    },
+    {
+      "batch": "BATCH16",
+      "path": "blueprint/ch06/mathcopilot_results/BATCH16_result.json",
+      "sha256": "f090d8605552bf232fa3590f2a5f443fee33d9e6468df5f7c429b5d9141f32f5",
+      "merged_from": "ch06_first_merged",
+      "items": 8
+    },
+    {
+      "batch": "BATCH17",
+      "path": "blueprint/ch06/mathcopilot_results/BATCH17_result.json",
+      "sha256": "16eb3277a5e463c3c057719a28553e682ba9e354360c6f60da4aa24ea1e0ad5e",
+      "merged_from": "ch06_first_merged",
+      "items": 5
+    },
+    {
+      "batch": "BATCH18",
+      "path": "blueprint/ch06/mathcopilot_results/BATCH18_result.json",
+      "sha256": "d701c471d0d670e7265bd1befec39d596002ea1470b5febc1ae7380d7c9a37a9",
+      "merged_from": "ch06_first_merged",
+      "items": 3
+    },
+    {
+      "batch": "BATCH19",
+      "path": "blueprint/ch06/mathcopilot_results/BATCH19_result.json",
+      "sha256": "317316fe286b00d966b91deb46084c2d8db07ba3eb5b478c0d8c22346174e1b0",
+      "merged_from": "ch06_first_merged",
+      "items": 8
+    },
+    {
+      "batch": "BATCH20",
+      "path": "blueprint/ch06/mathcopilot_results/BATCH20_result.json",
+      "sha256": "a18813e9334287acf8ec7311ba2f5dbf591f19fc9feba211fe0b05d0f61b93e8",
+      "merged_from": "ch06_first_merged",
+      "items": 8
+    },
+    {
+      "batch": "BATCH21",
+      "path": "blueprint/ch06/mathcopilot_results/BATCH21_result.json",
+      "sha256": "138a373ea0e6b3d51110d8aa47f2dc7f10271fe6a9cc09628e63036fddb8057a",
+      "merged_from": "ch06_first_merged",
+      "items": 8
+    },
+    {
+      "batch": "BATCH22",
+      "path": "blueprint/ch06/mathcopilot_results/BATCH22_result.json",
+      "sha256": "9b3f2c2393e9126c26c388e0927e0658facb68866d24e607f97acc29893f8c48",
+      "merged_from": "ch06_first_merged",
+      "items": 6
+    },
+    {
+      "batch": "BATCH23",
+      "path": "blueprint/ch06/mathcopilot_results/BATCH23_result.json",
+      "sha256": "7fbd129dc88eadf3a7f5b4f9d341a10858e62d6c14e5647515a33201dd1b6827",
+      "merged_from": "ch06_first_merged",
+      "items": 2
+    },
+    {
+      "batch": "BATCH24",
+      "path": "blueprint/ch06/mathcopilot_results/BATCH24_result.json",
+      "sha256": "8d2144ae9a4c95328708130408b5800e7460ed7f5bffc6d5eeeda63b4e7e81bc",
+      "merged_from": "ch06_first_merged",
+      "items": 2
+    },
+    {
+      "batch": "BATCH25",
+      "path": "blueprint/ch06/mathcopilot_results/BATCH25_result.json",
+      "sha256": "b9a9b83847969c6220c3e7a5511468537ea3b30028aa50c3ae8e98344f3a9b17",
+      "merged_from": "ch06_first_merged",
+      "items": 8
+    },
+    {
+      "batch": "BATCH26",
+      "path": "blueprint/ch06/mathcopilot_results/BATCH26_result.json",
+      "sha256": "12c3b95a2bc8b3d48566fc6cb05e0abf175af4cf5fd5077f8ca184bc2d795608",
+      "merged_from": "ch06_first_merged",
+      "items": 1
+    },
+    {
+      "batch": "BATCH27",
+      "path": "blueprint/ch06/mathcopilot_results/BATCH27_result.json",
+      "sha256": "ad3e4601e5240f71447c4d445e8ee916b65d703e3e3a75f99585f55cbe96b71e",
+      "merged_from": "ch06_first_merged",
+      "items": 4
+    },
+    {
+      "batch": "BATCH28",
+      "path": "blueprint/ch06/mathcopilot_results/BATCH28_result.json",
+      "sha256": "5ef8bd9e858d61836d5232d2ed20a97af2a1e31cee7d60ae8954e992046edf40",
+      "merged_from": "ch06_first_merged",
+      "items": 3
+    },
+    {
+      "batch": "BATCH29",
+      "path": "blueprint/ch06/mathcopilot_results/BATCH29_result.json",
+      "sha256": "bd59a5e52d0101055b18c94475f882adadf894891fc8e71751d56dc67c432692",
+      "merged_from": "ch06_first_merged",
+      "items": 8
+    },
+    {
+      "batch": "BATCH30",
+      "path": "blueprint/ch06/mathcopilot_results/BATCH30_result.json",
+      "sha256": "e6acb0821f08b7e1e675d39eea8dfc777a39282ab56d76bbc54d416490c6a063",
+      "merged_from": "ch06_first_merged",
+      "items": 3
+    },
+    {
+      "batch": "BATCH31",
+      "path": "blueprint/ch06/mathcopilot_results/BATCH31_result.json",
+      "sha256": "e26b183599ac991f9e6ff53cf8435ae85f2a9f8b801912077b4fcf0b4f811b41",
+      "merged_from": "ch06_first_merged",
+      "items": 8
+    },
+    {
+      "batch": "BATCH32",
+      "path": "blueprint/ch06/mathcopilot_results/BATCH32_result.json",
+      "sha256": "266471fc0fc5cf8f4cf915b94beea60656d6dfae05b6abadcbc8b68270e016cc",
+      "merged_from": "ch06_first_merged",
+      "items": 8
+    },
+    {
+      "batch": "BATCH33",
+      "path": "blueprint/ch06/mathcopilot_results/BATCH33_result.json",
+      "sha256": "bb17bb707a2684005b864fde1b05cb112a082c2f00b11332135415d8783e011e",
+      "merged_from": "ch06_first_merged",
+      "items": 1
+    },
+    {
+      "batch": "BATCH34",
+      "path": "blueprint/ch06/mathcopilot_results/BATCH34_result.json",
+      "sha256": "61eca1e9d62c49a6cbb695d565f6e1fa2f70f4aabb153540a2d6aea74d222bb8",
+      "merged_from": "ch06_first_merged",
+      "items": 8
+    },
+    {
+      "batch": "BATCH35",
+      "path": "blueprint/ch06/mathcopilot_results/BATCH35_result.json",
+      "sha256": "8f676ad27e96b5742fd5e4f8e9df454475c36e0b551ed6f9e37984bbf81bfb13",
+      "merged_from": "ch06_first_merged",
+      "items": 6
+    },
+    {
+      "batch": "BATCH36",
+      "path": "blueprint/ch06/mathcopilot_results/BATCH36_result.json",
+      "sha256": "e31a618e96bf8f5d87a8e919a8f23527a3819ef0c7209333d382883ffd7f7d0c",
+      "merged_from": "ch06_first_merged",
+      "items": 8
+    },
+    {
+      "batch": "BATCH37",
+      "path": "blueprint/ch06/mathcopilot_results/BATCH37_result.json",
+      "sha256": "1bf96039b9b4be06967a146e46d18ac903384e81be4946157c18f9e2b6349c9b",
+      "merged_from": "ch06_first_merged",
+      "items": 8
+    },
+    {
+      "batch": "BATCH38",
+      "path": "blueprint/ch06/mathcopilot_results/BATCH38_result.json",
+      "sha256": "bad530d3df8162a8637ab92ed74240741dde01dcdf929903491869f428835f6f",
+      "merged_from": "ch06_first_merged",
+      "items": 8
+    },
+    {
+      "batch": "BATCH39",
+      "path": "blueprint/ch06/mathcopilot_results/BATCH39_result.json",
+      "sha256": "8bb1dc70e479e4726d38b850decf4411d77f5a47cd3eaeb1032ffacf39971a4a",
+      "merged_from": "ch06_first_merged",
+      "items": 8
+    },
+    {
+      "batch": "BATCH40",
+      "path": "blueprint/ch06/mathcopilot_results/BATCH40_result.json",
+      "sha256": "52f2cd984e1af9d5a3d883c8604dc9842010d1d2527d8321ffcd371c0d0da875",
+      "merged_from": "ch06_first_merged",
+      "items": 8
+    },
+    {
+      "batch": "BATCH41",
+      "path": "blueprint/ch06/mathcopilot_results/BATCH41_result.json",
+      "sha256": "df9cff4668cd83a70cd522b726cf6583bee9eed8ffaad9281eea1585afb85cb4",
+      "merged_from": "ch06_first_merged",
+      "items": 5
+    },
+    {
+      "batch": "BATCH42",
+      "path": "blueprint/ch06/mathcopilot_results/BATCH42_result.json",
+      "sha256": "8925d1b1d76ad3144c4f85dfeab691c594f6267be57fedb7a456ad8c853b30d1",
+      "merged_from": "ch06_first_merged",
+      "items": 8
+    }
+  ],
+  "input_binding": "all shared and per-item hashes match unchanged original compact manifests"
+}

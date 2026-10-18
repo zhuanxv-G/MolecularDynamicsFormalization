@@ -1,0 +1,128 @@
+以附件/PASTE 为准，忽略 /workspace 旧文件；Mathlib 定义按标准含义采信。
+A逐字核对原文及证明；C只读核对对象、域、量词、前提和全部结论。所有项目定义体及选择规格在下文；仅作为审阅摘录，不是独立模块。theorem/lemma提供完整类型（不审证明）；定义提供完整定义体，按文件作用域解释。不要因sorry判签名FAIL。原文版忠实性、修正版正确性、反例、原书疑误分别说明，不凭旧文件或repair_log猜声明。
+本条MD-6.3.6-FPEquation，subtask=EAUDIT09b；原PDF页映射=[263]。只读，不改工程或补证明。以JSON对象返回batch=EAUDIT09,input_sha256,items；逐条含source_id,subtask,input_sha256,json_review{status,issue_codes,corrected_json,issues,evidence},audit{lean_decl,verdict,explanation,counterexample,suggested_fix}。verdict=PASS/FAIL/NEEDS_HUMAN，status=APPROVED/CORRECTED/NEEDS_HUMAN。必须原样回显下列全部哈希。
+input_sha256:
+{
+  "Blueprint/Ch06.lean": "4a2a6cb72c1692f80e3537ab1a71701d429a482780a01226c3dc66a2ebb8b44b",
+  "blueprint/ch06/ch06_source.json": "d7f93cd20eb570744c710f3e07a88b319c082e4155812fee91db0920eb05944e",
+  "PAGES.pdf": "8e4548411afd8a8d9ff80e4f6d1b7a25ba578c3dd8865cd395ff0aa76261b517",
+  "materials_sha256": "252afef2463ebb3c3944b70092f9fcdc6b79752818434977d4a01f8e8ee9b207"
+}
+
+## 原文JSON
+```json
+{
+  "source_id": "MD-6.3.6-FPEquation",
+  "kind": "unnumbered_claim",
+  "label": null,
+  "section": "6.3.6",
+  "printed_page": "242",
+  "pdf_page": "263",
+  "statement_latex": "If this is to hold for all test functions $\\phi$, we must have\n\\[\\frac{\\partial\\rho}{\\partial t}=-\\frac\\partial{\\partial x}(a(x)\\rho)+\\frac12\\frac{\\partial^2}{\\partial x^2}(b^2(x)\\rho).\\]\nThe Fokker-Planck equation may be written in the compact form\n\\[\\frac{\\partial\\rho}{\\partial t}=\\mathcal L^\\dagger\\rho.\\]",
+  "proof_latex": null,
+  "proof_note": "原书未给独立完整证明。",
+  "proof_discussion_latex": null,
+  "context_notation": [],
+  "extra_assumptions": [
+    "[EXTRA]实际严格SDE与其真实平滑非负密度law、局部一致指数尾可求导资格；没有把弱PDE或所求点态PDE当假设。",
+    "[EXTRA] 25号：补X联合可测和相对W自然历史适应、扩散被积过程的适应平方可积资格；未建立严格网格解到标准适应Itô解的完整桥接，仍未证明。"
+  ],
+  "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
+  "coverage_gaps": null
+}
+```
+## 当前完整Lean（全部原文版、修正版及反例）
+```lean
+theorem fpEquation : ∀ {Ω : Type*} [MeasurableSpace Ω] (P : Measure Ω)
+    (W X : ℝ → Ω → ℝ) (a b : ℝ → ℝ) (x0 : ℝ) (ρ : ℝ → ℝ → ℝ),
+  IsPreBrownianReal (fun t sample ↦ W t sample) P →
+  strictScalarSDE P W X (fun x _ ↦ a x) (fun x _ ↦ b x) x0 →
+  Measurable (Function.uncurry X) →
+  (∀ t, 0 ≤ t → @Measurable Ω ℝ (naturalHistory25 W t) inferInstance (X t)) →
+  MolecularDynamics.Chapter06Review.adaptedSquareIntegrand P W (fun t sample ↦ b (X t sample)) →
+  ContDiff ℝ ∞ a → ContDiff ℝ ∞ b → ContDiff ℝ ∞ (Function.uncurry ρ) →
+  (∀ t : ℝ, 0 < t → (∀ x, 0 ≤ ρ t x) ∧
+    HasLaw (X t) (volume.withDensity (fun x ↦ ENNReal.ofReal (ρ t x))) P) →
+  (∃ C : ℝ, 0 ≤ C ∧ ∃ r : ℕ, ∀ x, |a x|+|b x| ≤ C*(1+|x|)^r) →
+  (∀ lo hi : ℝ, 0 < lo → lo ≤ hi → ∃ C c : ℝ, 0 ≤ C ∧ 0 < c ∧
+    ∀ t ∈ Icc lo hi, ∀ x, |ρ t x|+|deriv (fun s ↦ ρ s x) t| ≤ C*Real.exp (-c*|x|)) →
+  ∀ t x : ℝ, 0 < t → deriv (fun s ↦ ρ s x) t=MolecularDynamics.Chapter06Review.scalarForward a b (ρ t) x := by
+  sorry
+```
+### 文件参数及作用域 Blueprint/Ch06.lean
+```lean
+open Set Filter Matrix MeasureTheory ProbabilityTheory MolecularDynamics MolecularDynamics.Chapter02Review MolecularDynamics.Chapter06Review
+open scoped BigOperators Topology ContDiff InnerProductSpace Matrix.Norms.L2Operator ENNReal NNReal
+variable {n Nc : ℕ}
+variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
+variable {R : Type*} [Ring R] [Algebra ℝ R]
+local instance : MeasureSpace UnitAddCircle := ⟨AddCircle.haarAddCircle⟩
+```
+### 文件参数及作用域 MolecularDynamics/Chapter06/ReviewDefinitions.lean
+```lean
+open Set Filter MeasureTheory ProbabilityTheory
+open scoped BigOperators Topology ContDiff ENNReal NNReal
+local instance : MeasureSpace UnitAddCircle := ⟨AddCircle.haarAddCircle⟩
+```
+### MD.Ch06.naturalHistory25 [Blueprint/Ch06.lean:25]
+```lean
+def naturalHistory25 {Ω V : Type*} [MeasurableSpace Ω] [MeasurableSpace V]
+    (X : ℝ → Ω → V) (s : ℝ) : MeasurableSpace Ω :=
+  ⨆ r : {r : ℝ // 0 ≤ r ∧ r ≤ s}, MeasurableSpace.comap (X r) inferInstance
+```
+### MD.Ch06.strictItoIntegral [Blueprint/Ch06.lean:863]
+```lean
+def strictItoIntegral {Ω : Type*} [MeasurableSpace Ω] (P : Measure Ω)
+    (W g : ℝ → Ω → ℝ) (T : ℝ) (Y : Ω → ℝ) : Prop :=
+  (∀ K : ℕ, MemLp (MolecularDynamics.Chapter06Review.itoLeftSum W g T K) 2 P) ∧
+  MemLp Y 2 P ∧ Tendsto (fun K : ℕ ↦ ∫ sample,
+    (MolecularDynamics.Chapter06Review.itoLeftSum W g T K sample-Y sample)^2 ∂P) atTop (𝓝 0)
+```
+### MD.Ch06.strictScalarSDE [Blueprint/Ch06.lean:1096]
+```lean
+def strictScalarSDE {Ω : Type*} [MeasurableSpace Ω] (P : Measure Ω)
+    (W X : ℝ → Ω → ℝ) (a b : ℝ → ℝ → ℝ) (x0 : ℝ) : Prop :=
+  (∀ᵐ sample ∂P, ContinuousOn (fun t ↦ X t sample) (Ici 0) ∧ X 0 sample=x0) ∧
+  ∀ T : ℝ, 0 ≤ T → (∀ᵐ sample ∂P, IntervalIntegrable (fun s ↦ a (X s sample) s) volume 0 T) ∧
+    strictItoIntegral P W (fun s sample ↦ b (X s sample) s) T
+      (fun sample ↦ X T sample-x0-∫ s in 0..T, a (X s sample) s)
+```
+### MD.Ch06.fpEquation [Blueprint/Ch06.lean:1774]
+```lean
+theorem fpEquation : ∀ {Ω : Type*} [MeasurableSpace Ω] (P : Measure Ω)
+    (W X : ℝ → Ω → ℝ) (a b : ℝ → ℝ) (x0 : ℝ) (ρ : ℝ → ℝ → ℝ),
+  IsPreBrownianReal (fun t sample ↦ W t sample) P →
+  strictScalarSDE P W X (fun x _ ↦ a x) (fun x _ ↦ b x) x0 →
+  Measurable (Function.uncurry X) →
+  (∀ t, 0 ≤ t → @Measurable Ω ℝ (naturalHistory25 W t) inferInstance (X t)) →
+  MolecularDynamics.Chapter06Review.adaptedSquareIntegrand P W (fun t sample ↦ b (X t sample)) →
+  ContDiff ℝ ∞ a → ContDiff ℝ ∞ b → ContDiff ℝ ∞ (Function.uncurry ρ) →
+  (∀ t : ℝ, 0 < t → (∀ x, 0 ≤ ρ t x) ∧
+    HasLaw (X t) (volume.withDensity (fun x ↦ ENNReal.ofReal (ρ t x))) P) →
+  (∃ C : ℝ, 0 ≤ C ∧ ∃ r : ℕ, ∀ x, |a x|+|b x| ≤ C*(1+|x|)^r) →
+  (∀ lo hi : ℝ, 0 < lo → lo ≤ hi → ∃ C c : ℝ, 0 ≤ C ∧ 0 < c ∧
+    ∀ t ∈ Icc lo hi, ∀ x, |ρ t x|+|deriv (fun s ↦ ρ s x) t| ≤ C*Real.exp (-c*|x|)) →
+  ∀ t x : ℝ, 0 < t → deriv (fun s ↦ ρ s x) t=MolecularDynamics.Chapter06Review.scalarForward a b (ρ t) x
+```
+### MolecularDynamics.Chapter06Review.V [MolecularDynamics/Chapter06/ReviewDefinitions.lean:17]
+```lean
+abbrev V (n : ℕ) := Fin n → ℝ
+```
+### MolecularDynamics.Chapter06Review.itoLeftSum [MolecularDynamics/Chapter06/ReviewDefinitions.lean:54]
+```lean
+def itoLeftSum {Ω : Type*} (W g : ℝ → Ω → ℝ) (T : ℝ) (K : ℕ) (sample : Ω) : ℝ :=
+  ∑ k ∈ Finset.range K, g ((k : ℝ) * T / K) sample *
+    (W (((k : ℝ)+1) * T / K) sample - W ((k : ℝ) * T / K) sample)
+```
+### MolecularDynamics.Chapter06Review.adaptedSquareIntegrand [MolecularDynamics/Chapter06/ReviewDefinitions.lean:73]
+```lean
+def adaptedSquareIntegrand {Ω : Type*} [MeasurableSpace Ω] (P : Measure Ω)
+    (W g : ℝ → Ω → ℝ) : Prop :=
+  (∀ t : ℝ, 0 ≤ t → Measurable[MeasurableSpace.comap (fun (sample : Ω) (s : Icc (0 : ℝ) t) ↦ W s sample) inferInstance]
+    (g t)) ∧ ∀ T : ℝ, 0 ≤ T → Integrable (fun s ↦ ∫ sample, (g s sample)^2 ∂P) (volume.restrict (Icc 0 T))
+```
+### MolecularDynamics.Chapter06Review.scalarForward [MolecularDynamics/Chapter06/ReviewDefinitions.lean:129]
+```lean
+def scalarForward (a b ρ : ℝ → ℝ) (x : ℝ) : ℝ :=
+  -deriv (fun z ↦ a z*ρ z) x + deriv (deriv (fun z ↦ b z^2*ρ z)) x/2
+```

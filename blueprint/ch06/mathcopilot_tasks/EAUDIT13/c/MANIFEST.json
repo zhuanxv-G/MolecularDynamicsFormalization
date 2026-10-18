@@ -1,0 +1,55 @@
+{
+  "eaudit": "EAUDIT13",
+  "subtask": "EAUDIT13c",
+  "source_id": "MD-6.4.4-MinorizationCorrectedImplication",
+  "input_sha256": {
+    "Blueprint/Ch06.lean": "4a2a6cb72c1692f80e3537ab1a71701d429a482780a01226c3dc66a2ebb8b44b",
+    "blueprint/ch06/ch06_source.json": "d7f93cd20eb570744c710f3e07a88b319c082e4155812fee91db0920eb05944e",
+    "PAGES.pdf": "3980efdbb76d53b0c41f0507cda50853b873ffe7e26aeae131e1f2e60cc1e9a2",
+    "materials_sha256": "488e579172c8bcfe7e6ebb5ca9b7d41186c537f51e5934bc1ea65e3f78c77253"
+  },
+  "paste_sha256": "ceee808f427b24296bb688b34d544529f69a956efcdaeeac101d0dfa1fc380de",
+  "source_pdf_sha256": "1939a22e5e96ebd2b58b8e91fe2c796f5390b402f267390f473b271c35d2f036",
+  "pdf_page_mapping": [
+    273
+  ],
+  "crop_pixel_identity": "PASS: copied page render or lossless embedded full-page source pixels",
+  "rasterized_pages": {},
+  "source_declarations": [
+    "minorizationCorrectedImplication",
+    "minorizationPrinted_corrected"
+  ],
+  "dependency_excerpts": [
+    {
+      "path": "Blueprint/Ch06.lean",
+      "line": 2606,
+      "full_name": "MD.Ch06.minorizationCorrectedImplication",
+      "kind": "theorem",
+      "excerpt_sha256": "9800e6cc3eafd6f8f1cf4e9f043c012c82228f77f1d38ba73e0a18822de2e731"
+    },
+    {
+      "path": "Blueprint/Ch06.lean",
+      "line": 2618,
+      "full_name": "MD.Ch06.minorizationPrinted_corrected",
+      "kind": "theorem",
+      "excerpt_sha256": "fe442d363197a3716be556a498314b9770f71ab8a69fca1ccf7ab77eb5a642ef"
+    },
+    {
+      "path": "MolecularDynamics/Chapter06/ReviewDefinitions.lean",
+      "line": 166,
+      "full_name": "MolecularDynamics.Chapter06Review.markovSemigroup",
+      "kind": "def",
+      "excerpt_sha256": "24513b322cd8ce723974b7b551e95e9f91290d3d9e8669bf7a61a3bf6fb77d8d"
+    },
+    {
+      "path": "MolecularDynamics/Chapter06/ReviewDefinitions.lean",
+      "line": 168,
+      "full_name": "MolecularDynamics.Chapter06Review.assumption1",
+      "kind": "def",
+      "excerpt_sha256": "0d57965536608e60186a81c948ff72655a0d3d5bff40577280c84acb748a628e"
+    }
+  ],
+  "project_definition_closure": "complete recursive definitions, referenced theorem types, explicit choice and consistency specifications",
+  "website_submitted": false,
+  "total_task_bytes": 113000
+}

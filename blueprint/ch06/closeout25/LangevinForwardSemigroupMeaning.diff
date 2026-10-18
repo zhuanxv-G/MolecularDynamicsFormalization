@@ -1,0 +1,29 @@
+--- before
++++ after
+@@ -3278,15 +3278,23 @@
+   (∫ x, (ρeq x+(α : ℂ)*ρ1 x).re ∂MolecularDynamics.Chapter06Review.flatPhaseMeasure n)=1
+ 
+ /-- source_id: MD-6.4.5-LangevinForwardSemigroupMeaning · definition · §6.4.5 · 印刷p.257–258 / PDFp.278–279
+-[EXTRA] [EXTRA]对所有真实非负实初始density的actual kernel/complex Lp²传播关联定义；不凭空把任意线性S命名Langevin，原forward identification仍未证。 -/
+-def langevinForwardSemigroupMeaning {n : ℕ}
++[EXTRA] [EXTRA]对所有真实非负实初始density的actual kernel/complex Lp²传播关联定义；不凭空把任意线性S命名Langevin，原forward identification仍未证。 [EXTRA] 25号：补C₀半群（初值/组合/强连续）、Markov核及实际Langevin右生成元联系；每个合格输入的输出AE实且非负并可积，排除(1+i)id和ofReal裁剪伪识别。此为资格定义，未证明存在。
++-/
++def langevinForwardSemigroupMeaning {n : ℕ} (U : (Fin n → ℝ) → ℝ) (β γ : ℝ)
+     (K : ℝ≥0 → Kernel (textbookLangevinPeriodicPhase n) (textbookLangevinPeriodicPhase n))
+     (S : ℝ≥0 → Lp ℂ 2 (MolecularDynamics.Chapter06Review.flatPhaseMeasure n) →L[ℂ]
+       Lp ℂ 2 (MolecularDynamics.Chapter06Review.flatPhaseMeasure n)) : Prop :=
++  langevinKernelQualification25 U β γ K ∧
++  S 0 = ContinuousLinearMap.id ℂ _ ∧
++  (∀ s t, S (s+t) = (S s).comp (S t)) ∧
++  (∀ v, Continuous (fun t ↦ S t v)) ∧
+   ∀ v : Lp ℂ 2 (MolecularDynamics.Chapter06Review.flatPhaseMeasure n),
+     (∀ᵐ x ∂MolecularDynamics.Chapter06Review.flatPhaseMeasure n, (v x).im=0 ∧ 0 ≤ (v x).re) →
+     Integrable (fun x ↦ (v x).re) (MolecularDynamics.Chapter06Review.flatPhaseMeasure n) →
+-    ∀ t, MolecularDynamics.Chapter06Review.kernelEvolution K
++    ∀ t, (∀ᵐ x ∂MolecularDynamics.Chapter06Review.flatPhaseMeasure n,
++      (S t v x).im=0 ∧ 0 ≤ (S t v x).re) ∧
++      Integrable (fun x ↦ (S t v x).re) (MolecularDynamics.Chapter06Review.flatPhaseMeasure n) ∧
++      MolecularDynamics.Chapter06Review.kernelEvolution K
+       ((MolecularDynamics.Chapter06Review.flatPhaseMeasure n).withDensity (fun x ↦ ENNReal.ofReal (v x).re)) t =
+       (MolecularDynamics.Chapter06Review.flatPhaseMeasure n).withDensity (fun x ↦ ENNReal.ofReal ((S t v x).re))
+ 

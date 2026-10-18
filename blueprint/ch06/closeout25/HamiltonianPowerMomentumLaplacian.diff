@@ -1,0 +1,12 @@
+--- before
++++ after
+@@ -2690,7 +2690,8 @@
+     ring
+ 
+ /-- source_id: MD-6.4.4-HamiltonianPowerMomentumLaplacian · unnumbered_claim · §6.4.4 · 印刷p.253 / PDFp.274
+-[EXTRA] [EXTRA]完整实际坐标二阶导数和及正确等式，l≥1；原随后不等式单独原样保存，未据等式声称它成立。 -/
++[EXTRA] [EXTRA]完整实际坐标二阶导数和及正确等式，l≥1；原随后不等式单独原样保存，未据等式声称它成立。 [EXTRA] 25号：保留已证精确Laplacian等式；原错误上界Printed与修正系数分别由MD-6.4.4-LaplacianBoundPrinted/LaplacianBoundCorrect保存，不能把等式视为已覆盖原印刷不等式。
++-/
+ theorem hamiltonianPowerMomentumLaplacian {Nc : ℕ}
+     (U : (Fin Nc → ℝ) → ℝ) (l : ℕ) (hl : 1 ≤ l) (z : textbookLangevinPhase Nc) :
+     (∑ i : Fin Nc, deriv (deriv (fun t : ℝ ↦ textbookLangevinHamiltonianPower U l

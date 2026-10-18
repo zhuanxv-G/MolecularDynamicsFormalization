@@ -1,0 +1,276 @@
+{
+  "batch": "BATCH31",
+  "chapter": "ch06",
+  "round": "first-merged",
+  "input_sha256": {
+    "Blueprint/Ch06.lean": "0a02a34ec68989a83bccfa5916db5053ecdb58e05667bf21ff3568d9d1f4318e",
+    "blueprint/ch06/ch06_source.json": "45c70ceef21ca168af437de297e2e21e2800b452ab7942654061d4cff9bb5d95"
+  },
+  "items": [
+    {
+      "source_id": "MD-6.4.1-StochasticMatrix",
+      "json_review": {
+        "status": "APPROVED",
+        "issue_codes": [],
+        "corrected_json": null,
+        "issues": [],
+        "evidence": [
+          "A：R6_PAGES.pdf 附件第16页（原PDF 266，印刷页245）；逐字、公式及页码核对。",
+          "C：只读核对R6_任务.md本条全部Lean签名及其列出的项目依赖/附录定义，未使用旧工程文件；不以sorry判FAIL。"
+        ]
+      },
+      "audit": {
+        "lean_decl": "MD.Ch06.stochasticMatrix",
+        "verdict": "PASS",
+        "explanation": "任意有限k×k实矩阵，所有元素非负且每行总和1，恰为右随机矩阵；每项≤1由这些条件推出，非遗漏。Fin k的0起始重编号与原{1,…,k}无语义差异；k=0为形式定义的空域推广。这里只定义矩阵资格，不伪称构造了随机过程。",
+        "counterexample": null,
+        "suggested_fix": null
+      },
+      "subtask": "BATCH31a",
+      "input_sha256": {
+        "Blueprint/Ch06.lean": "0a02a34ec68989a83bccfa5916db5053ecdb58e05667bf21ff3568d9d1f4318e",
+        "blueprint/ch06/ch06_source.json": "45c70ceef21ca168af437de297e2e21e2800b452ab7942654061d4cff9bb5d95",
+        "BATCH31a_PAGES.pdf": "6c170a1e455e66b937a01f9c1b379652a7e561078d7d29b8e008190e3d50ceed",
+        "signature_sha256": "4cde2c58f29e20994124dfc87ed21f68198f6ac4f1befb5d580bc53fba851c15"
+      }
+    },
+    {
+      "source_id": "MD-6.4.1-FiniteDistribution",
+      "json_review": {
+        "status": "NEEDS_HUMAN",
+        "issue_codes": [
+          "PRINTED_NONZERO_AMBIGUITY"
+        ],
+        "corrected_json": {
+          "source_id": "MD-6.4.1-FiniteDistribution",
+          "kind": "definition",
+          "label": null,
+          "section": "6.4.1",
+          "printed_page": "245",
+          "pdf_page": "266",
+          "statement_latex": "A distribution on the state space is typically associated to a row vector $\\psi=(\\psi_1,\\psi_2,\\ldots,\\psi_k)$ with nonzero elements and which is normalized such that\n\\[\\sum_{i=1}^k\\psi_i=1.\\]",
+          "proof_latex": null,
+          "proof_note": "原书未给独立完整证明。",
+          "proof_discussion_latex": null,
+          "context_notation": [],
+          "issues": [
+            {
+              "code": "ERRATUM?",
+              "detail": "印刷nonzero应区分典型正权重与一般非负概率；原句完整保留，未声明字面nonzero定义网站PASS。"
+            },
+            {
+              "code": "PRINTED_NONZERO_AMBIGUITY",
+              "message": "原页确印nonzero且带typically；一般概率向量可有零分量。原句可能仅描述常见满支撑分布，需保留疑义，不将其直接替换成nonnegative原文。"
+            }
+          ],
+          "lean_decl": "MD.Ch06.finiteDistribution",
+          "reusable_proofs": [],
+          "extra_assumptions": [
+            "[EXTRA]概率权重取非负，允许零概率状态；原nonzero作为“typically”的描述而非概率的必要条件，不添加严格正初值要求。"
+          ],
+          "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
+          "review_status": "NEEDS_HUMAN",
+          "repair_log": [
+            {
+              "date": "2026-10-17",
+              "action": "directive22_printed_corrected_pair",
+              "change": "原nonzero单独保留为严格正权重版本；一般定义采用非负权重、总和1。",
+              "corrected_decl": "MD.Ch06.finiteDistribution_corrected",
+              "website": "未提交；待网站审计"
+            },
+            "R6审校：只修订审校JSON；原书数学疑误保留，未修改Lean工程或补证明。"
+          ],
+          "source_page_verification": "R6_PAGES.pdf 附件第17页；已比对对应原页渲染及文本；详见本条evidence。"
+        },
+        "issues": [
+          {
+            "code": "PRINTED_NONZERO_AMBIGUITY",
+            "message": "原页确印nonzero且带typically；一般概率向量可有零分量。原句可能仅描述常见满支撑分布，需保留疑义，不将其直接替换成nonnegative原文。"
+          }
+        ],
+        "evidence": [
+          "A：R6_PAGES.pdf 附件第17页（原PDF 266，印刷页245）；逐字、公式及页码核对。",
+          "C：只读核对R6_任务.md本条全部Lean签名及其列出的项目依赖/附录定义，未使用旧工程文件；不以sorry判FAIL。",
+          "原页分布段确为“typically associated … with nonzero elements”；并非nonnegative。"
+        ]
+      },
+      "audit": {
+        "lean_decl": "MD.Ch06.finiteDistribution",
+        "verdict": "PASS",
+        "explanation": "逐个审校：finiteDistribution及_corrected均为非负且总和1的一般概率向量；finiteDistributionPrinted按概率权重上下文将nonzero保留为严格正且总和1；反例(1,0)确实满足前者且不满足后者。三种对象及counterexample相互吻合。原句含typically，不能无条件把原文认定为错误定义；应保留人审。",
+        "counterexample": "ψ=(1,0)非负且和1，但第二分量不严格正；任务给出的counterexample完整表达此事实。",
+        "suggested_fix": "保留原书疑误并加[ERRATUM?]；按本条说明分别保留Printed版和修正版。"
+      },
+      "subtask": "BATCH31b",
+      "input_sha256": {
+        "Blueprint/Ch06.lean": "0a02a34ec68989a83bccfa5916db5053ecdb58e05667bf21ff3568d9d1f4318e",
+        "blueprint/ch06/ch06_source.json": "45c70ceef21ca168af437de297e2e21e2800b452ab7942654061d4cff9bb5d95",
+        "BATCH31b_PAGES.pdf": "6c170a1e455e66b937a01f9c1b379652a7e561078d7d29b8e008190e3d50ceed",
+        "signature_sha256": "c439f19b97c80ea0c5b88957d2fd5cf771c9293f0eb39cf559b13e73df276b8b"
+      }
+    },
+    {
+      "source_id": "MD-6.4.1-FiniteEvolution",
+      "json_review": {
+        "status": "APPROVED",
+        "issue_codes": [],
+        "corrected_json": null,
+        "issues": [],
+        "evidence": [
+          "A：R6_PAGES.pdf 附件第18页（原PDF 266，印刷页245）；逐字、公式及页码核对。",
+          "C：只读核对R6_任务.md本条全部Lean签名及其列出的项目依赖/附录定义，未使用旧工程文件；不以sorry判FAIL。"
+        ]
+      },
+      "audit": {
+        "lean_decl": "MD.Ch06.finiteEvolution",
+        "verdict": "PASS",
+        "explanation": "定义ψ_n=ψ₀Πⁿ，Matrix.vecMul方向是行向量右乘；n=0得到初值，全部分量保留。原递推式与此闭式等价（19另列完整递推定理）。作为线性演化定义允许任意实矩阵/向量，不声称它们都是概率；无需额外随机性前提。",
+        "counterexample": null,
+        "suggested_fix": null
+      },
+      "subtask": "BATCH31c",
+      "input_sha256": {
+        "Blueprint/Ch06.lean": "0a02a34ec68989a83bccfa5916db5053ecdb58e05667bf21ff3568d9d1f4318e",
+        "blueprint/ch06/ch06_source.json": "45c70ceef21ca168af437de297e2e21e2800b452ab7942654061d4cff9bb5d95",
+        "BATCH31c_PAGES.pdf": "6c170a1e455e66b937a01f9c1b379652a7e561078d7d29b8e008190e3d50ceed",
+        "signature_sha256": "e320d5194ce5ef4475040cd0a6412dce72ad4b294a83214a5b6dcc218f32a231"
+      }
+    },
+    {
+      "source_id": "MD-6.4.1-FiniteEvolutionRecurrence",
+      "json_review": {
+        "status": "APPROVED",
+        "issue_codes": [],
+        "corrected_json": null,
+        "issues": [],
+        "evidence": [
+          "A：R6_PAGES.pdf 附件第19页（原PDF 266，印刷页245）；逐字、公式及页码核对。",
+          "C：只读核对R6_任务.md本条全部Lean签名及其列出的项目依赖/附录定义，未使用旧工程文件；不以sorry判FAIL。"
+        ]
+      },
+      "audit": {
+        "lean_decl": "MD.Ch06.finiteEvolutionRecurrence",
+        "verdict": "PASS",
+        "explanation": "任意k、矩阵、初始向量及n均量化，结论把n+1步演化严格等于第n步行向量右乘同一个矩阵，是原递推的完整形式。由矩阵幂和行乘结合律成立，不需要随机矩阵或正初值。",
+        "counterexample": null,
+        "suggested_fix": null
+      },
+      "subtask": "BATCH31d",
+      "input_sha256": {
+        "Blueprint/Ch06.lean": "0a02a34ec68989a83bccfa5916db5053ecdb58e05667bf21ff3568d9d1f4318e",
+        "blueprint/ch06/ch06_source.json": "45c70ceef21ca168af437de297e2e21e2800b452ab7942654061d4cff9bb5d95",
+        "BATCH31d_PAGES.pdf": "6c170a1e455e66b937a01f9c1b379652a7e561078d7d29b8e008190e3d50ceed",
+        "signature_sha256": "39e7d23dd717860efd21628e1378ef185ed381ab5451b2f595f44073a394529c"
+      }
+    },
+    {
+      "source_id": "MD-6.4.1-ReturnTimes",
+      "json_review": {
+        "status": "APPROVED",
+        "issue_codes": [],
+        "corrected_json": null,
+        "issues": [],
+        "evidence": [
+          "A：R6_PAGES.pdf 附件第20页（原PDF 266，印刷页245）；逐字、公式及页码核对。",
+          "C：只读核对R6_任务.md本条全部Lean签名及其列出的项目依赖/附录定义，未使用旧工程文件；不以sorry判FAIL。"
+        ]
+      },
+      "audit": {
+        "lean_decl": "MD.Ch06.returnTimes",
+        "verdict": "PASS",
+        "explanation": "返回时间集恰为所有正自然数n且(Πⁿ)ii>0，排除n=0恒等阵的平凡返回。[EXTRA]已明示这一解读，与原无返回时周期0的约定一致。",
+        "counterexample": null,
+        "suggested_fix": null
+      },
+      "subtask": "BATCH31e",
+      "input_sha256": {
+        "Blueprint/Ch06.lean": "0a02a34ec68989a83bccfa5916db5053ecdb58e05667bf21ff3568d9d1f4318e",
+        "blueprint/ch06/ch06_source.json": "45c70ceef21ca168af437de297e2e21e2800b452ab7942654061d4cff9bb5d95",
+        "BATCH31e_PAGES.pdf": "6c170a1e455e66b937a01f9c1b379652a7e561078d7d29b8e008190e3d50ceed",
+        "signature_sha256": "340b92951db45d305f733fb31470bf24270946fd6dc744a3baeb290994116d4f"
+      }
+    },
+    {
+      "source_id": "MD-6.4.1-Period",
+      "json_review": {
+        "status": "APPROVED",
+        "issue_codes": [],
+        "corrected_json": null,
+        "issues": [],
+        "evidence": [
+          "A：R6_PAGES.pdf 附件第21页（原PDF 266，印刷页245）；逐字、公式及页码核对。",
+          "C：只读核对R6_任务.md本条全部Lean签名及其列出的项目依赖/附录定义，未使用旧工程文件；不以sorry判FAIL。"
+        ]
+      },
+      "audit": {
+        "lean_decl": "MD.Ch06.period",
+        "verdict": "PASS",
+        "explanation": "对正返回时间的公因子取自然数sSup：返回集非空时公因子被任一返回时间界住，最大者就是gcd；返回集空时公因子集为全部ℕ，Mathlib自然数条件完备序的无界sSup取0，符合书中特殊约定。不能把无界sSup误当作自然数中的无穷大而判错。",
+        "counterexample": null,
+        "suggested_fix": null
+      },
+      "subtask": "BATCH31f",
+      "input_sha256": {
+        "Blueprint/Ch06.lean": "0a02a34ec68989a83bccfa5916db5053ecdb58e05667bf21ff3568d9d1f4318e",
+        "blueprint/ch06/ch06_source.json": "45c70ceef21ca168af437de297e2e21e2800b452ab7942654061d4cff9bb5d95",
+        "BATCH31f_PAGES.pdf": "6c170a1e455e66b937a01f9c1b379652a7e561078d7d29b8e008190e3d50ceed",
+        "signature_sha256": "7902181f6cef117b2f1b4db8507b45c173fa6345272640c58548e99e1bb5dd45"
+      }
+    },
+    {
+      "source_id": "MD-6.4.1-Aperiodic",
+      "json_review": {
+        "status": "APPROVED",
+        "issue_codes": [],
+        "corrected_json": null,
+        "issues": [],
+        "evidence": [
+          "A：R6_PAGES.pdf 附件第22页（原PDF 266，印刷页245）；逐字、公式及页码核对。",
+          "C：只读核对R6_任务.md本条全部Lean签名及其列出的项目依赖/附录定义，未使用旧工程文件；不以sorry判FAIL。"
+        ]
+      },
+      "audit": {
+        "lean_decl": "MD.Ch06.aperiodic",
+        "verdict": "PASS",
+        "explanation": "所有状态i均要求实际D18周期等于1；D16/D18与21所核对定义一致。没有偷换成单个状态、存在状态或仅自环条件。",
+        "counterexample": null,
+        "suggested_fix": null
+      },
+      "subtask": "BATCH31g",
+      "input_sha256": {
+        "Blueprint/Ch06.lean": "0a02a34ec68989a83bccfa5916db5053ecdb58e05667bf21ff3568d9d1f4318e",
+        "blueprint/ch06/ch06_source.json": "45c70ceef21ca168af437de297e2e21e2800b452ab7942654061d4cff9bb5d95",
+        "BATCH31g_PAGES.pdf": "6c170a1e455e66b937a01f9c1b379652a7e561078d7d29b8e008190e3d50ceed",
+        "signature_sha256": "88534cd0cf7f6db49808a28889d8027aa42333d14e49b5f90a5a15f8cbf928d6"
+      }
+    },
+    {
+      "source_id": "MD-6.4.1-Irreducible",
+      "json_review": {
+        "status": "APPROVED",
+        "issue_codes": [],
+        "corrected_json": null,
+        "issues": [],
+        "evidence": [
+          "A：R6_PAGES.pdf 附件第23–24页（原PDF 266–267，印刷页245–246）；逐字、公式及页码核对。",
+          "C：只读核对R6_任务.md本条全部Lean签名及其列出的项目依赖/附录定义，未使用旧工程文件；不以sorry判FAIL。"
+        ]
+      },
+      "audit": {
+        "lean_decl": "MD.Ch06.irreducible",
+        "verdict": "PASS",
+        "explanation": "对每一对i,j存在有限自然数n使(Πⁿ)ij>0；交换全称变量即可得到反向存在，时间可不同，等价所有状态互相communicate。允许n=0只增加同状态的平凡可达性，不改变不同状态连通要求。原矩阵幂的文字方向有上下文笔误，但该全称双向定义不受影响。",
+        "counterexample": null,
+        "suggested_fix": null
+      },
+      "subtask": "BATCH31h",
+      "input_sha256": {
+        "Blueprint/Ch06.lean": "0a02a34ec68989a83bccfa5916db5053ecdb58e05667bf21ff3568d9d1f4318e",
+        "blueprint/ch06/ch06_source.json": "45c70ceef21ca168af437de297e2e21e2800b452ab7942654061d4cff9bb5d95",
+        "BATCH31h_PAGES.pdf": "83dcf90778aa2a4a2d4bf81c15578defc83495497e220e9d5c7f46911c01e9a0",
+        "signature_sha256": "b500404952dbe2828f09460b05e2c77190b7300a55cf7116332076472832c455"
+      }
+    }
+  ],
+  "merged_from": "ch06_first_merged"
+}

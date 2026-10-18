@@ -1,0 +1,41 @@
+{
+  "eaudit": "EAUDIT03",
+  "subtask": "EAUDIT03b",
+  "source_id": "MD-6.2.1-StateMarkovMeaning",
+  "input_sha256": {
+    "Blueprint/Ch06.lean": "4a2a6cb72c1692f80e3537ab1a71701d429a482780a01226c3dc66a2ebb8b44b",
+    "blueprint/ch06/ch06_source.json": "d7f93cd20eb570744c710f3e07a88b319c082e4155812fee91db0920eb05944e",
+    "PAGES.pdf": "9057274d4b2f2ec3c4148442d78863b5497b8fb8e9821b4474110f7fca3aa0be",
+    "materials_sha256": "8b47f5aa14508df879484dd96c66a658f94f31ef736cd5b2ca91adfaff00134c"
+  },
+  "paste_sha256": "1a39f0e76e822364d05d6e247c9e47e137f815d86ce4f7a59ee909fd84c6cef1",
+  "source_pdf_sha256": "1939a22e5e96ebd2b58b8e91fe2c796f5390b402f267390f473b271c35d2f036",
+  "pdf_page_mapping": [
+    248
+  ],
+  "crop_pixel_identity": "PASS: copied page render or lossless embedded full-page source pixels",
+  "rasterized_pages": {},
+  "source_declarations": [
+    "stateMarkovMeaning",
+    "coarseMarkovPrinted_corrected"
+  ],
+  "dependency_excerpts": [
+    {
+      "path": "Blueprint/Ch06.lean",
+      "line": 819,
+      "full_name": "MD.Ch06.stateMarkovMeaning",
+      "kind": "def",
+      "excerpt_sha256": "3a467f081b18ef63d00978f682321d3ad88271364d0207bad6665ec5470e4f56"
+    },
+    {
+      "path": "Blueprint/Ch06.lean",
+      "line": 829,
+      "full_name": "MD.Ch06.coarseMarkovPrinted_corrected",
+      "kind": "def",
+      "excerpt_sha256": "d023355468e62337d0f987b01e3f5fc19308b26bd3e84d5916e610e3e01da077"
+    }
+  ],
+  "project_definition_closure": "complete recursive definitions, referenced theorem types, explicit choice and consistency specifications",
+  "website_submitted": false,
+  "total_task_bytes": 85852
+}

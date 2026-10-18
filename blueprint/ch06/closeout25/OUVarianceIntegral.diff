@@ -1,0 +1,12 @@
+--- before
++++ after
+@@ -1187,7 +1187,8 @@
+   sorry
+ 
+ /-- source_id: MD-6.3.2-OUVarianceIntegral · unnumbered_claim · §6.3.2 · 印刷p.235 / PDFp.256
+-[EXTRA] [EXTRA]γ>0使分母非零；随机变量完整Gaussian law在Prop6.3和OULawCorrect保留。 -/
++[EXTRA] [EXTRA]γ>0使分母非零；随机变量完整Gaussian law在Prop6.3和OULawCorrect保留。 [EXTRA] 25号：仅覆盖确定性指数积分求值；随机积分的Gaussian法则、均值及方差由其他条目承接，本条不声称覆盖。
++-/
+ theorem ouVarianceIntegral : ∀ (γ T : ℝ), 0 < γ → 0 ≤ T →
+   (∫ s in (0 : ℝ)..T, Real.exp (2*γ*s))=(Real.exp (2*γ*T)-1)/(2*γ) := by
+   intro γ T hγ hT

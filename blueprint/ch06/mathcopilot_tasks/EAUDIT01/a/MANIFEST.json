@@ -1,0 +1,82 @@
+{
+  "eaudit": "EAUDIT01",
+  "subtask": "EAUDIT01a",
+  "source_id": "MD-6.1.2-IndependentPartition",
+  "input_sha256": {
+    "Blueprint/Ch06.lean": "4a2a6cb72c1692f80e3537ab1a71701d429a482780a01226c3dc66a2ebb8b44b",
+    "blueprint/ch06/ch06_source.json": "d7f93cd20eb570744c710f3e07a88b319c082e4155812fee91db0920eb05944e",
+    "PAGES.pdf": "33604c921e31f4a5af21e500771d2027b62b3f62e824573a0107360682d185af",
+    "materials_sha256": "d5bd83f9e7e3933617051eb34627fc5f34a975d80e5d3a4f6aa5129df3768427"
+  },
+  "paste_sha256": "9584c6e1cd256fcf2d2b043575b03e3a54abe70762c1697a69be928db4962652",
+  "source_pdf_sha256": "1939a22e5e96ebd2b58b8e91fe2c796f5390b402f267390f473b271c35d2f036",
+  "pdf_page_mapping": [
+    236
+  ],
+  "crop_pixel_identity": "PASS: copied page render or lossless embedded full-page source pixels",
+  "rasterized_pages": {},
+  "source_declarations": [
+    "independentPartition"
+  ],
+  "dependency_excerpts": [
+    {
+      "path": "Blueprint/Ch06.lean",
+      "line": 74,
+      "full_name": "MD.Ch06.independentPartition",
+      "kind": "theorem",
+      "excerpt_sha256": "7264bc0555206c98d6b80e350d4d1e91042f22c014177ff03bca2ec61f744575"
+    },
+    {
+      "path": "MolecularDynamics/Chapter05/ReviewDefinitions.lean",
+      "line": 18,
+      "full_name": "MolecularDynamics.Chapter05Review.E",
+      "kind": "abbrev",
+      "excerpt_sha256": "b497c8ba7f01b62a3147d9ae65652772ff3f81e57aa19b116f1283fef7a3cc60"
+    },
+    {
+      "path": "MolecularDynamics/Chapter05/ReviewDefinitions.lean",
+      "line": 58,
+      "full_name": "MolecularDynamics.Chapter05Review.energySurface",
+      "kind": "def",
+      "excerpt_sha256": "4a489aacb7ba56caf0c623137a4bd613859a0cda5df7b7491a952224b6bdd7e2"
+    },
+    {
+      "path": "MolecularDynamics/Chapter05/ReviewDefinitions.lean",
+      "line": 59,
+      "full_name": "MolecularDynamics.Chapter05Review.grad",
+      "kind": "def",
+      "excerpt_sha256": "2b02b79e903c41eb476fa11e97dc6ad10bd20c99b33fe437c813ade44b68008e"
+    },
+    {
+      "path": "MolecularDynamics/Chapter05/ReviewDefinitions.lean",
+      "line": 60,
+      "full_name": "MolecularDynamics.Chapter05Review.hausdorffArea",
+      "kind": "def",
+      "excerpt_sha256": "73d1ad867002f7f341fa945c2f0374aa4f564b211a3109a180ad1ad586af2a39"
+    },
+    {
+      "path": "MolecularDynamics/Chapter05/ReviewDefinitions.lean",
+      "line": 63,
+      "full_name": "MolecularDynamics.Chapter05Review.surfaceMeasure",
+      "kind": "def",
+      "excerpt_sha256": "996815cfebda44b199d5a4a8b5cbedf428cc398393464a7fc3c383e3cf3f9fcd"
+    },
+    {
+      "path": "MolecularDynamics/Chapter05/ReviewDefinitions.lean",
+      "line": 65,
+      "full_name": "MolecularDynamics.Chapter05Review.microRaw",
+      "kind": "def",
+      "excerpt_sha256": "e2519ffdb9c766be3aa33bf35315ba208cdd69d5e3f6a7b4ce760272b2665ace"
+    },
+    {
+      "path": "MolecularDynamics/Chapter05/ReviewDefinitions.lean",
+      "line": 72,
+      "full_name": "MolecularDynamics.Chapter05Review.regularEnergy",
+      "kind": "def",
+      "excerpt_sha256": "bbc98d09426b79221523a11252820c7e52504e6c6a88e7b27bc7047eb0a13af2"
+    }
+  ],
+  "project_definition_closure": "complete recursive definitions, referenced theorem types, explicit choice and consistency specifications",
+  "website_submitted": false,
+  "total_task_bytes": 63521
+}

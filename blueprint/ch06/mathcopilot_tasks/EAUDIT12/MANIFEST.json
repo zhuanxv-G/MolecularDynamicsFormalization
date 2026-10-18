@@ -1,0 +1,29 @@
+{
+  "eaudit": "EAUDIT12",
+  "subtasks": [
+    {
+      "subtask": "EAUDIT12a",
+      "source_id": "MD-6.4.3-BrownianRealEigenvalue",
+      "path": "blueprint/ch06/mathcopilot_tasks/EAUDIT12/a",
+      "total_bytes": 104553,
+      "definitions": 7,
+      "manifest_sha256": "2ce0f03dc758ff86ba5a4dc70bff99049dd81d0f62d7eb41a0f75f4b1a75716b"
+    },
+    {
+      "subtask": "EAUDIT12b",
+      "source_id": "MD-6.4.3-BrownianClosedSelfAdjoint",
+      "path": "blueprint/ch06/mathcopilot_tasks/EAUDIT12/b",
+      "total_bytes": 169480,
+      "definitions": 72,
+      "manifest_sha256": "e62416720346e1ed9fb75e8f7f6c4dd17002f58d4a395821a1732b5887cc6945"
+    },
+    {
+      "subtask": "EAUDIT12c",
+      "source_id": "MD-6.4.3-BrownianCompactResolvent",
+      "path": "blueprint/ch06/mathcopilot_tasks/EAUDIT12/c",
+      "total_bytes": 153485,
+      "definitions": 67,
+      "manifest_sha256": "0ad6fca95fb309de1feddedb90bef13f9ec37f32da68ff82643754a245cfd526"
+    }
+  ]
+}

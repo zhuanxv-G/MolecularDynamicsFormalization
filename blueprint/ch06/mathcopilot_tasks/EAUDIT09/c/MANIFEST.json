@@ -1,0 +1,47 @@
+{
+  "eaudit": "EAUDIT09",
+  "subtask": "EAUDIT09c",
+  "source_id": "MD-6.3.6-ZeroNoise",
+  "input_sha256": {
+    "Blueprint/Ch06.lean": "4a2a6cb72c1692f80e3537ab1a71701d429a482780a01226c3dc66a2ebb8b44b",
+    "blueprint/ch06/ch06_source.json": "d7f93cd20eb570744c710f3e07a88b319c082e4155812fee91db0920eb05944e",
+    "PAGES.pdf": "8e4548411afd8a8d9ff80e4f6d1b7a25ba578c3dd8865cd395ff0aa76261b517",
+    "materials_sha256": "a0d793798623f2960a656523e88edaaded0c5dca9b887cbb5b9c624a681220d9"
+  },
+  "paste_sha256": "b0fc240dee4863626ab3b085322cb16e240cd57cadccbcd684a28f1429db03f9",
+  "source_pdf_sha256": "1939a22e5e96ebd2b58b8e91fe2c796f5390b402f267390f473b271c35d2f036",
+  "pdf_page_mapping": [
+    263
+  ],
+  "crop_pixel_identity": "PASS: copied page render or lossless embedded full-page source pixels",
+  "rasterized_pages": {},
+  "source_declarations": [
+    "zeroNoise"
+  ],
+  "dependency_excerpts": [
+    {
+      "path": "Blueprint/Ch06.lean",
+      "line": 1792,
+      "full_name": "MD.Ch06.zeroNoise",
+      "kind": "theorem",
+      "excerpt_sha256": "541ca630d8b5a90ea6abc398dc5a8871d9c31e24266f6a0d55f11447dc9c9eca"
+    },
+    {
+      "path": "MolecularDynamics/Chapter06/ReviewDefinitions.lean",
+      "line": 128,
+      "full_name": "MolecularDynamics.Chapter06Review.scalarGenerator",
+      "kind": "def",
+      "excerpt_sha256": "0bf9ab9fe315d138ab99dad97d866e1cbf0ec9fc9f8e20343b0267c79369c0d5"
+    },
+    {
+      "path": "MolecularDynamics/Chapter06/ReviewDefinitions.lean",
+      "line": 129,
+      "full_name": "MolecularDynamics.Chapter06Review.scalarForward",
+      "kind": "def",
+      "excerpt_sha256": "6178ede8590f4d53818b0d1142a6d6276703d817ade32e469966ed46315b15bd"
+    }
+  ],
+  "project_definition_closure": "complete recursive definitions, referenced theorem types, explicit choice and consistency specifications",
+  "website_submitted": false,
+  "total_task_bytes": 73028
+}

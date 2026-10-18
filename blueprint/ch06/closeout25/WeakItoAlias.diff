@@ -1,0 +1,15 @@
+--- before
++++ after
+@@ -843,9 +843,11 @@
+     (MolecularDynamics.Chapter06Review.itoLeftSum W g T K sample-Y sample)^2 ∂P) atTop (𝓝 0)
+ 
+ /-- source_id: MD-6.2.2-WeakItoAlias · definition · §6.2.2 · 印刷p.228–229 / PDFp.249–250
+-[ERRATUM?] 既有Review定义仅要求Y∈L²及误差Bochner积分收敛，未要求各有限和L²，非可积默认积分0会掩盖错误；不得用于新PASS SDE证明。 -/
++[ERRATUM?] 既有Review定义仅要求Y∈L²及误差Bochner积分收敛，未要求各有限和L²，非可积默认积分0会掩盖错误；不得用于新PASS SDE证明。 [EXTRA] 25号：采用既有strictItoIntegral的全部有限和L²资格；极限及平方误差的可积性不再被Bochner默认零掩盖。正式库旧辅助保持冻结。
++-/
+ def weakItoAlias {Ω : Type*} [MeasurableSpace Ω] (P : Measure Ω)
+     (W g : ℝ → Ω → ℝ) (T : ℝ) (Y : Ω → ℝ) : Prop :=
++  (∀ K : ℕ, MemLp (MolecularDynamics.Chapter06Review.itoLeftSum W g T K) 2 P) ∧
+   MemLp Y 2 P ∧ Tendsto (fun K : ℕ ↦ ∫ sample, (MolecularDynamics.Chapter06Review.itoLeftSum W g T K sample - Y sample)^2 ∂P) atTop (𝓝 0)
+ 
+ /-- source_id: MD-6.2.2-StratonovichSum · definition · §6.2.2 · 印刷p.228 / PDFp.249 -/

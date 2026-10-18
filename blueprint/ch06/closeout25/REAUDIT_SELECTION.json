@@ -1,0 +1,345 @@
+{
+  "source_ids": [
+    "MD-6.1.2-IndependentPartition",
+    "MD-6.1.2-BathTaylor",
+    "MD-6.1.2-CanonicalCDFPrinted",
+    "MD-6.1.3-FiniteDomainPrinted",
+    "MD-6.1.5-Proposition61",
+    "MD-6.1.5-PartitionInversePrinted",
+    "MD-6.2.1-WalkIncrement",
+    "MD-6.2.1-StateMarkovMeaning",
+    "MD-6.2.2-RiemannTags",
+    "MD-6.2.2-WeakItoAlias",
+    "MD-6.2.2-Proposition62",
+    "MD-6.2.2-SelfStratonovichIntegral",
+    "MD-6.2.2-DeterministicStrobePrinted",
+    "MD-6.3-VectorSDE",
+    "MD-6.3.1-ScalarItoFormula",
+    "MD-6.3.1-DiffusiveTaylorPrinted",
+    "MD-6.3.1-TimeItoFormula",
+    "MD-6.3.2-OUVarianceIntegral",
+    "MD-6.3.2-OULawPrinted",
+    "MD-6.3.2-MomentumOU",
+    "MD-6.3.3-BathReductionPrinted",
+    "MD-6.3.3-MemoryKernelDeltaMeaning",
+    "MD-6.3.3-BathForceWeakLimitMeaning",
+    "MD-6.3.6-FPDiffusionPrinted",
+    "MD-6.3.6-FPPolynomialAdjoint",
+    "MD-6.3.6-FPEquation",
+    "MD-6.3.6-ZeroNoise",
+    "MD-6.3.7-VectorIto",
+    "MD-6.4.2-CylinderForwardPrinted",
+    "MD-6.4.2-StationaryDensity",
+    "MD-6.4.2-StationaryInvariant",
+    "MD-6.4.2-LangevinCanonicalMixing",
+    "MD-6.4.3-BrownianSymmetry",
+    "MD-6.4.3-BrownianRealEigenvalue",
+    "MD-6.4.3-BrownianClosedSelfAdjoint",
+    "MD-6.4.3-BrownianCompactResolvent",
+    "MD-6.4.3-BrownianDiscreteSpectrum",
+    "MD-6.4.3-Theorem61",
+    "MD-6.4.4-MinorizationCorrectedImplication",
+    "MD-6.4.4-Theorem62",
+    "MD-6.4.4-HamiltonianPowerMomentumLaplacian",
+    "MD-6.4.4-Definition61",
+    "MD-6.4.4-LangevinHormander",
+    "MD-6.4.4-LangevinTransitionDensity",
+    "MD-6.4.4-Lemma61Printed",
+    "MD-6.4.4-Lemma61Nonempty",
+    "MD-6.4.4-LangevinGeometricErgodicity",
+    "MD-6.4.4-LangevinTimeAverage",
+    "MD-6.4.4-WeightedH1",
+    "MD-6.4.4-WeightedH1Norm",
+    "MD-6.4.4-Proposition64Printed",
+    "MD-6.4.4-Proposition64Relative",
+    "MD-6.4.4-ForwardKernelGibbs",
+    "MD-6.4.5-KernelEvolution",
+    "MD-6.4.5-KernelAverage",
+    "MD-6.4.5-DensityEvolutionMeaning",
+    "MD-6.4.5-SmoothTestL2Printed",
+    "MD-6.4.5-ComplexInitialDensity",
+    "MD-6.4.5-LangevinForwardSemigroupMeaning",
+    "MD-6.4.5-ComplexEigenmodeDecay"
+  ],
+  "reason": "25 FAIL plus missing project/corrected excerpts and signature/scope qualifications",
+  "human_triage": [
+    {
+      "source_id": "MD-6.1.2-IndependentPartition",
+      "note": "只补regularEnergy的真实定义体；不因未摘录而认定原书有错，不删正则前提。",
+      "signature_changed": false,
+      "category": "摘录缺失"
+    },
+    {
+      "source_id": "MD-6.1.2-BathTaylor",
+      "note": "原文版忠实性与数学疑误分开；补齐所交条目所属的现有_corrected完整签名，不从repair_log名称推断网站已通过修正版。",
+      "signature_changed": false,
+      "category": "摘录缺失"
+    },
+    {
+      "source_id": "MD-6.1.2-CanonicalCDFPrinted",
+      "note": "原文版忠实性与数学疑误分开；补齐所交条目所属的现有_corrected完整签名，不从repair_log名称推断网站已通过修正版。",
+      "signature_changed": false,
+      "category": "摘录缺失"
+    },
+    {
+      "source_id": "MD-6.1.3-FiniteDomainPrinted",
+      "note": "原文版忠实性与数学疑误分开；补齐所交条目所属的现有_corrected完整签名，不从repair_log名称推断网站已通过修正版。",
+      "signature_changed": false,
+      "category": "摘录缺失"
+    },
+    {
+      "source_id": "MD-6.1.4-CanonicalAveragePrinted",
+      "note": "原文版忠实性与数学疑误分开；补齐所交条目所属的现有_corrected完整签名，不从repair_log名称推断网站已通过修正版。",
+      "signature_changed": false,
+      "category": "原书疑误"
+    },
+    {
+      "source_id": "MD-6.1.5-Proposition61",
+      "note": "所交为显式加强条件的温度恒等式；原证明除以球体积后取极限只给0=0，保留原证明并登记缺口；原下标和体积元依网站原页修订，未认证原论证。",
+      "signature_changed": false,
+      "category": "范围/签名需签核"
+    },
+    {
+      "source_id": "MD-6.1.5-PartitionInversePrinted",
+      "note": "原文版忠实性与数学疑误分开；补齐所交条目所属的现有_corrected完整签名，不从repair_log名称推断网站已通过修正版。",
+      "signature_changed": false,
+      "category": "摘录缺失"
+    },
+    {
+      "source_id": "MD-6.2.1-CoarseMarkovPrinted",
+      "note": "原文版忠实性与数学疑误分开；补齐所交条目所属的现有_corrected完整签名，不从repair_log名称推断网站已通过修正版。",
+      "signature_changed": false,
+      "category": "原书疑误"
+    },
+    {
+      "source_id": "MD-6.2.2-RiemannTags",
+      "note": "原书文字1≤k≤ν与求和0≤k<ν冲突；本条数学修正版统一0≤k<ν，原句保留。",
+      "signature_changed": false,
+      "category": "范围/签名需签核"
+    },
+    {
+      "source_id": "MD-6.2.2-Proposition62",
+      "note": "原文版忠实性与数学疑误分开；补齐所交条目所属的现有_corrected完整签名，不从repair_log名称推断网站已通过修正版。",
+      "signature_changed": false,
+      "category": "摘录缺失"
+    },
+    {
+      "source_id": "MD-6.2.2-SelfStratonovichIntegral",
+      "note": "仅覆盖真实时间中点和的均方结论；原单步O(√dt)推理未控制总误差，不能当成完整证明；所需Brownian桥残差估计未补建。",
+      "signature_changed": false,
+      "category": "范围/签名需签核"
+    },
+    {
+      "source_id": "MD-6.3.1-DiffusiveTaylorPrinted",
+      "note": "原文版忠实性与数学疑误分开；补齐所交条目所属的现有_corrected完整签名，不从repair_log名称推断网站已通过修正版。",
+      "signature_changed": false,
+      "category": "摘录缺失"
+    },
+    {
+      "source_id": "MD-6.3.3-BathReductionPrinted",
+      "note": "原文版忠实性与数学疑误分开；补齐所交条目所属的现有_corrected完整签名，不从repair_log名称推断网站已通过修正版。",
+      "signature_changed": false,
+      "category": "摘录缺失"
+    },
+    {
+      "source_id": "MD-6.3.3-MemoryKernelDeltaMeaning",
+      "note": "旧_corrected只加正质量并非有效修复：固定1/k平均使|ψk|≤1，不可能收敛到正质量Dirac。此谓词在当前归一化下不可实现；原启发式与两版资格定义均留存，待确认时间/振幅重标度及单边边界因子；不把资格定义计成极限定理。",
+      "signature_changed": false,
+      "category": "范围/签名需签核"
+    },
+    {
+      "source_id": "MD-6.3.3-BathForceWeakLimitMeaning",
+      "note": "两版补概率空间与连续路径随机变量可测性；Printed是力路径、corrected是正力时间积分；物理标度和极限是否可实现仍待导师，不把弱收敛资格谓词当存在定理。",
+      "signature_changed": true,
+      "category": "范围/签名需签核"
+    },
+    {
+      "source_id": "MD-6.3.3-VariableFrictionCanonicalPrinted",
+      "note": "原文版忠实性与数学疑误分开；补齐所交条目所属的现有_corrected完整签名，不从repair_log名称推断网站已通过修正版。",
+      "signature_changed": false,
+      "category": "原书疑误"
+    },
+    {
+      "source_id": "MD-6.3.6-FPPolynomialAdjoint",
+      "note": "原文版忠实性与数学疑误分开；补齐所交条目所属的现有_corrected完整签名，不从repair_log名称推断网站已通过修正版。",
+      "signature_changed": false,
+      "category": "摘录缺失"
+    },
+    {
+      "source_id": "MD-6.3.6-FPEquation",
+      "note": "补X联合可测和相对W自然历史适应、扩散被积过程的适应平方可积资格；未建立严格网格解到标准适应Itô解的完整桥接，仍未证明。",
+      "signature_changed": true,
+      "category": "范围/签名需签核"
+    },
+    {
+      "source_id": "MD-6.4.2-StationaryInvariant",
+      "note": "补实际Chapter06Review.invariantKernel及其kernelEvolution定义体；不以MD.Ch06同名定义替代。",
+      "signature_changed": false,
+      "category": "摘录缺失"
+    },
+    {
+      "source_id": "MD-6.4.2-LangevinCanonicalMixing",
+      "note": "补所选真实路径的存在规格和初值/积分方程；范围仅周期、单位质量及已列全局Lipschitz力，不声称一般非周期Langevin结论。",
+      "signature_changed": false,
+      "category": "摘录缺失"
+    },
+    {
+      "source_id": "MD-6.4.3-BrownianSymmetry",
+      "note": "本条仅为周期光滑核心上的形式对称配对；核心对称不推出伴随域相等。闭实现自伴另见BrownianClosedSelfAdjoint，原C₀²域解释待签核。",
+      "signature_changed": false,
+      "category": "范围/签名需签核"
+    },
+    {
+      "source_id": "MD-6.4.3-BrownianNonpositive",
+      "note": "原文版忠实性与数学疑误分开；补齐所交条目所属的现有_corrected完整签名，不从repair_log名称推断网站已通过修正版。",
+      "signature_changed": false,
+      "category": "原书疑误"
+    },
+    {
+      "source_id": "MD-6.4.3-BrownianRealEigenvalue",
+      "note": "[ERRATUM?]原引文negative definite应为半负定，常数零模反例与BrownianNegativeDefinitePrinted共用；本条只证明已给实特征参数≤0，不冒称全部复谱实性。",
+      "signature_changed": false,
+      "category": "范围/签名需签核"
+    },
+    {
+      "source_id": "MD-6.4.3-BrownianClosedSelfAdjoint",
+      "note": "明确采用周期紧环面的Gibbs L²图闭包/最大复图实现；此域修正替换原C₀²核心域，不能把核心上的形式对称当原域自伴，待人工签核。",
+      "signature_changed": false,
+      "category": "范围/签名需签核"
+    },
+    {
+      "source_id": "MD-6.4.3-BrownianCompactResolvent",
+      "note": "仅断言紧torus上的闭实现具有紧预解式；原一般C₀²措辞未覆盖，域与紧配置假设需人工签核。",
+      "signature_changed": false,
+      "category": "范围/签名需签核"
+    },
+    {
+      "source_id": "MD-6.4.3-Theorem61TimeAveragePrinted",
+      "note": "原文版忠实性与数学疑误分开；补齐所交条目所属的现有_corrected完整签名，不从repair_log名称推断网站已通过修正版。",
+      "signature_changed": false,
+      "category": "原书疑误"
+    },
+    {
+      "source_id": "MD-6.4.3-BrownianNegativeDefinitePrinted",
+      "note": "原文版忠实性与数学疑误分开；补齐所交条目所属的现有_corrected完整签名，不从repair_log名称推断网站已通过修正版。",
+      "signature_changed": false,
+      "category": "原书疑误"
+    },
+    {
+      "source_id": "MD-6.4.4-Assumption1Printed",
+      "note": "原文版忠实性与数学疑误分开；补齐所交条目所属的现有_corrected完整签名，不从repair_log名称推断网站已通过修正版。",
+      "signature_changed": false,
+      "category": "原书疑误"
+    },
+    {
+      "source_id": "MD-6.4.4-MinorizationPrinted",
+      "note": "原文版忠实性与数学疑误分开；补齐所交条目所属的现有_corrected完整签名，不从repair_log名称推断网站已通过修正版。",
+      "signature_changed": false,
+      "category": "原书疑误"
+    },
+    {
+      "source_id": "MD-6.4.4-Theorem62",
+      "note": "主版与corrected补真实半群漂移估计；弱平稳测试限真实右导数且有局部可积差商支配，排除derivWithin总定义默认值。Printed保留原有疑误版不证；Harris桥接及统一阈值仍缺大型理论，未声称原全定理已认证。",
+      "signature_changed": true,
+      "category": "范围/签名需签核"
+    },
+    {
+      "source_id": "MD-6.4.4-PeriodicPotentialBound",
+      "note": "原文版忠实性与数学疑误分开；补齐所交条目所属的现有_corrected完整签名，不从repair_log名称推断网站已通过修正版。",
+      "signature_changed": false,
+      "category": "原书疑误"
+    },
+    {
+      "source_id": "MD-6.4.4-PeriodicConfiningPrinted",
+      "note": "原文版忠实性与数学疑误分开；补齐所交条目所属的现有_corrected完整签名，不从repair_log名称推断网站已通过修正版。",
+      "signature_changed": false,
+      "category": "原书疑误"
+    },
+    {
+      "source_id": "MD-6.4.4-LaplacianBoundPrinted",
+      "note": "原文版忠实性与数学疑误分开；补齐所交条目所属的现有_corrected完整签名，不从repair_log名称推断网站已通过修正版。",
+      "signature_changed": false,
+      "category": "原书疑误"
+    },
+    {
+      "source_id": "MD-6.4.4-Definition61",
+      "note": "补textbookIteratedBracket定义体；原含漂移版仅为原书括号秩定义，密度用途必须用噪声起始的抛物型修正版。",
+      "signature_changed": false,
+      "category": "摘录缺失"
+    },
+    {
+      "source_id": "MD-6.4.4-LangevinHormander",
+      "note": "scope仅实际Langevin向量场括号rank；密度结论由LangevinTransitionDensity承接，补全部迭代括号定义。",
+      "signature_changed": false,
+      "category": "摘录缺失"
+    },
+    {
+      "source_id": "MD-6.4.4-LangevinTransitionDensity",
+      "note": "补actual_path_solution_exists完整存在类型及所选解满足初值/积分方程的规格；不把缺摘录误记原书问题。",
+      "signature_changed": false,
+      "category": "摘录缺失"
+    },
+    {
+      "source_id": "MD-6.4.4-Lemma61Printed",
+      "note": "Printed收回单位质量周期相空间，保留包括空集的原全称开集断言及原书疑误；非空修正版独立保留，真实核存在规格补入复审包。",
+      "signature_changed": true,
+      "category": "范围/签名需签核"
+    },
+    {
+      "source_id": "MD-6.4.4-Lemma61Nonempty",
+      "note": "补所选解存在规格；目标开集非空修正保持。",
+      "signature_changed": false,
+      "category": "摘录缺失"
+    },
+    {
+      "source_id": "MD-6.4.4-LangevinGeometricErgodicity",
+      "note": "补真实选解规格；可测观察量范围严格为点态多项式权界类，不写成任意仅加权可积函数。",
+      "signature_changed": false,
+      "category": "摘录缺失"
+    },
+    {
+      "source_id": "MD-6.4.4-LangevinTimeAverage",
+      "note": "补实际选解存在、真实积分方程、唯一性、限制及同一全时随机过程一致性的完整声明类型；有限窗选择不能仅凭choose名称认定相容。",
+      "signature_changed": false,
+      "category": "摘录缺失"
+    },
+    {
+      "source_id": "MD-6.4.4-WeightedH1",
+      "note": "补坐标伴随测试表达式及memLp_two完整规格；明确位置β∂U、动量βp项及分部积分符号，补摘录不算原书勘误。",
+      "signature_changed": false,
+      "category": "摘录缺失"
+    },
+    {
+      "source_id": "MD-6.4.4-Proposition64Printed",
+      "note": "保留原flat/Gibbs坐标混用疑误和非Gibbs恒通量反例；补H¹伴随测试表达式，修正版本由Proposition64Relative独立保存。",
+      "signature_changed": false,
+      "category": "摘录缺失"
+    },
+    {
+      "source_id": "MD-6.4.4-Proposition64Relative",
+      "note": "补H¹坐标伴随测试表达式与memLp规格；相对Gibbs密度采用闭Hilbert adjoint，唯一模常数，不是flat Gibbs倍数。",
+      "signature_changed": false,
+      "category": "摘录缺失"
+    },
+    {
+      "source_id": "MD-6.4.5-SmoothTestL2Printed",
+      "note": "原文版忠实性与数学疑误分开；补齐所交条目所属的现有_corrected完整签名，不从repair_log名称推断网站已通过修正版。",
+      "signature_changed": false,
+      "category": "摘录缺失"
+    },
+    {
+      "source_id": "MD-6.4.5-ComplexInitialDensity",
+      "note": "仅为给定复L²候选的概率资格辅助定义；本征关系、Reλ<0及平衡态识别须在使用处另列，单一非实模式须共轭配对后再查非负性，不能覆盖任意α的原句。",
+      "signature_changed": false,
+      "category": "范围/签名需签核"
+    }
+  ],
+  "downstream_adjustments": [
+    {
+      "source_id": "MD-6.4.5-ComplexEigenmodeDecay",
+      "note": "LangevinForwardSemigroupMeaning增加U、β、γ及资格后，ComplexEigenmodeDecay只在既有半群识别前提的调用处补同一U β γ；未改目标结论和证明体。该前提随被引用资格加强，进入复审。",
+      "signature_changed": true,
+      "category": "下游最小接口适配"
+    }
+  ]
+}

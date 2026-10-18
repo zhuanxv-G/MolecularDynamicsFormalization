@@ -1,0 +1,171 @@
+以附件/PASTE 为准，忽略 /workspace 旧文件；Mathlib 定义按标准含义采信。
+A逐字核对原文及证明；C只读核对对象、域、量词、前提和全部结论。所有项目定义体及选择规格在下文；仅作为审阅摘录，不是独立模块。theorem/lemma提供完整类型（不审证明）；定义提供完整定义体，按文件作用域解释。不要因sorry判签名FAIL。原文版忠实性、修正版正确性、反例、原书疑误分别说明，不凭旧文件或repair_log猜声明。
+本条MD-6.4.3-BrownianSymmetry，subtask=EAUDIT11c；原PDF页映射=[271]。只读，不改工程或补证明。以JSON对象返回batch=EAUDIT11,input_sha256,items；逐条含source_id,subtask,input_sha256,json_review{status,issue_codes,corrected_json,issues,evidence},audit{lean_decl,verdict,explanation,counterexample,suggested_fix}。verdict=PASS/FAIL/NEEDS_HUMAN，status=APPROVED/CORRECTED/NEEDS_HUMAN。必须原样回显下列全部哈希。
+input_sha256:
+{
+  "Blueprint/Ch06.lean": "4a2a6cb72c1692f80e3537ab1a71701d429a482780a01226c3dc66a2ebb8b44b",
+  "blueprint/ch06/ch06_source.json": "d7f93cd20eb570744c710f3e07a88b319c082e4155812fee91db0920eb05944e",
+  "PAGES.pdf": "db61f5524dd8e538ea263b26df24013f9a959727267372c8ec06f88d112dd86c",
+  "materials_sha256": "1d997a97da65859f8ce0794168935cb75f733908f0d321531840dc4701df7636"
+}
+
+## 原文JSON
+```json
+{
+  "source_id": "MD-6.4.3-BrownianSymmetry",
+  "kind": "unnumbered_claim",
+  "label": null,
+  "section": "6.4.3",
+  "printed_page": "250",
+  "pdf_page": "271",
+  "statement_latex": "In this form we see that $f$ and $g$ appear symmetrically, so we may write\n\\[\\langle f,\\mathcal Lg\\rangle_\\beta=\\langle\\mathcal Lf,g\\rangle_\\beta;\\]\nhence, with respect to the weighted inner product, $\\mathcal L^\\dagger=\\mathcal L$. (Note that the adjoint indicated here is quite different than the $L^2$ adjoint mentioned previously in connection with the Fokker-Planck operator.)",
+  "proof_latex": null,
+  "proof_note": "原书未给独立完整证明。",
+  "proof_discussion_latex": null,
+  "context_notation": [],
+  "extra_assumptions": [
+    "[EXTRA]完整未归一配对等式，由现成归一配对消去正Z⁻¹；C∞周期核心上的形式对称，不宣称C₀²核心本身已闭自伴。",
+    "[EXTRA] 25号：本条仅为周期光滑核心上的形式对称配对；核心对称不推出伴随域相等。闭实现自伴另见BrownianClosedSelfAdjoint，原C₀²域解释待签核。"
+  ],
+  "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
+  "coverage_gaps": null
+}
+```
+## 当前完整Lean（全部原文版、修正版及反例）
+```lean
+theorem brownianSymmetry {Nc : ℕ} (m : Fin Nc → ℝ)
+    (U : (Fin Nc → ℝ) → ℝ) (β : ℝ) (hβ : β ≠ 0)
+    (f g : (Fin Nc → ℝ) → ℝ)
+    (hU : ContDiff ℝ ∞ U) (hf : ContDiff ℝ ∞ f) (hg : ContDiff ℝ ∞ g)
+    (hPU : textbookUnitPeriodicPotential U) (hPf : textbookUnitPeriodicPotential f)
+    (hPg : textbookUnitPeriodicPotential g) :
+    brownianWeightedInner U β f (textbookBrownianGenerator m U β g) =
+      brownianWeightedInner U β (textbookBrownianGenerator m U β f) g := by
+  have hs := textbookBrownianGenerator_inner_symmetric m U β hβ f g hU hf hg hPU hPf hPg
+  unfold textbookConfigurationInner at hs
+  have hz := (textbookConfigurationPartition_pos U hU β).ne'
+  have hc := mul_left_cancel₀ (inv_ne_zero hz) hs
+  simpa [brownianWeightedInner, textbookConfigurationGibbsWeight] using hc
+
+/-- 修正版/限定版：原文公式或定义的正确限定陈述；证明/域解释缺口见ERRATA。复制独立证明体，不从原文版占位推导。 -/
+theorem brownianSymmetry_corrected {Nc : ℕ} (m : Fin Nc → ℝ)
+    (U : (Fin Nc → ℝ) → ℝ) (β : ℝ) (hβ : β ≠ 0)
+    (f g : (Fin Nc → ℝ) → ℝ)
+    (hU : ContDiff ℝ ∞ U) (hf : ContDiff ℝ ∞ f) (hg : ContDiff ℝ ∞ g)
+    (hPU : textbookUnitPeriodicPotential U) (hPf : textbookUnitPeriodicPotential f)
+    (hPg : textbookUnitPeriodicPotential g) :
+    brownianWeightedInner U β f (textbookBrownianGenerator m U β g) =
+      brownianWeightedInner U β (textbookBrownianGenerator m U β f) g := by
+  have hs := textbookBrownianGenerator_inner_symmetric m U β hβ f g hU hf hg hPU hPf hPg
+  unfold textbookConfigurationInner at hs
+  have hz := (textbookConfigurationPartition_pos U hU β).ne'
+  have hc := mul_left_cancel₀ (inv_ne_zero hz) hs
+  simpa [brownianWeightedInner, textbookConfigurationGibbsWeight] using hc
+```
+### 文件参数及作用域 Blueprint/Ch06.lean
+```lean
+open Set Filter Matrix MeasureTheory ProbabilityTheory MolecularDynamics MolecularDynamics.Chapter02Review MolecularDynamics.Chapter06Review
+open scoped BigOperators Topology ContDiff InnerProductSpace Matrix.Norms.L2Operator ENNReal NNReal
+variable {n Nc : ℕ}
+variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
+variable {R : Type*} [Ring R] [Algebra ℝ R]
+local instance : MeasureSpace UnitAddCircle := ⟨AddCircle.haarAddCircle⟩
+```
+### 文件参数及作用域 MolecularDynamics/Chapter06/BrownianDirichlet.lean
+```lean
+open Set MeasureTheory
+open scoped BigOperators ContDiff
+```
+### 文件参数及作用域 MolecularDynamics/Chapter06/LangevinPeriodicForce.lean
+```lean
+open Set Filter
+open scoped Topology ContDiff NNReal
+```
+### MD.Ch06.brownianWeightedInner [Blueprint/Ch06.lean:2191]
+```lean
+def brownianWeightedInner {n : ℕ} (U : (Fin n → ℝ) → ℝ) (β : ℝ)
+    (f g : (Fin n → ℝ) → ℝ) : ℝ :=
+  ∫ q in textbookConfigurationCube n, f q*g q*Real.exp (-β*U q)
+```
+### MD.Ch06.brownianSymmetry [Blueprint/Ch06.lean:2212]
+```lean
+theorem brownianSymmetry {Nc : ℕ} (m : Fin Nc → ℝ)
+    (U : (Fin Nc → ℝ) → ℝ) (β : ℝ) (hβ : β ≠ 0)
+    (f g : (Fin Nc → ℝ) → ℝ)
+    (hU : ContDiff ℝ ∞ U) (hf : ContDiff ℝ ∞ f) (hg : ContDiff ℝ ∞ g)
+    (hPU : textbookUnitPeriodicPotential U) (hPf : textbookUnitPeriodicPotential f)
+    (hPg : textbookUnitPeriodicPotential g) :
+    brownianWeightedInner U β f (textbookBrownianGenerator m U β g) =
+      brownianWeightedInner U β (textbookBrownianGenerator m U β f) g
+```
+### MD.Ch06.brownianSymmetry_corrected [Blueprint/Ch06.lean:2227]
+```lean
+theorem brownianSymmetry_corrected {Nc : ℕ} (m : Fin Nc → ℝ)
+    (U : (Fin Nc → ℝ) → ℝ) (β : ℝ) (hβ : β ≠ 0)
+    (f g : (Fin Nc → ℝ) → ℝ)
+    (hU : ContDiff ℝ ∞ U) (hf : ContDiff ℝ ∞ f) (hg : ContDiff ℝ ∞ g)
+    (hPU : textbookUnitPeriodicPotential U) (hPf : textbookUnitPeriodicPotential f)
+    (hPg : textbookUnitPeriodicPotential g) :
+    brownianWeightedInner U β f (textbookBrownianGenerator m U β g) =
+      brownianWeightedInner U β (textbookBrownianGenerator m U β f) g
+```
+### MolecularDynamics.textbookConfigurationPartial [MolecularDynamics/Chapter06/BrownianDirichlet.lean:13]
+```lean
+noncomputable def textbookConfigurationPartial {Nc : ℕ}
+    (f : (Fin Nc → ℝ) → ℝ) (i : Fin Nc) (q : Fin Nc → ℝ) : ℝ :=
+  fderiv ℝ f q (Pi.single i 1)
+```
+### MolecularDynamics.textbookConfigurationCube [MolecularDynamics/Chapter06/BrownianDirichlet.lean:18]
+```lean
+def textbookConfigurationCube (Nc : ℕ) : Set (Fin Nc → ℝ) := Icc 0 1
+```
+### MolecularDynamics.textbookConfigurationGibbsWeight [MolecularDynamics/Chapter06/BrownianDirichlet.lean:21]
+```lean
+noncomputable def textbookConfigurationGibbsWeight {Nc : ℕ}
+    (U : (Fin Nc → ℝ) → ℝ) (β : ℝ) (q : Fin Nc → ℝ) : ℝ :=
+  Real.exp (-β * U q)
+```
+### MolecularDynamics.textbookBrownianGenerator [MolecularDynamics/Chapter06/BrownianDirichlet.lean:31]
+```lean
+noncomputable def textbookBrownianGenerator {Nc : ℕ} (m : Fin Nc → ℝ)
+    (U : (Fin Nc → ℝ) → ℝ) (β : ℝ) (f : (Fin Nc → ℝ) → ℝ)
+    (q : Fin Nc → ℝ) : ℝ :=
+  ∑ i, (m i)⁻¹ * (β⁻¹ * textbookConfigurationPartial
+    (textbookConfigurationPartial f i) i q -
+      textbookConfigurationPartial U i q * textbookConfigurationPartial f i q)
+```
+### MolecularDynamics.textbookConfigurationPartition [MolecularDynamics/Chapter06/BrownianDirichlet.lean:271]
+```lean
+noncomputable def textbookConfigurationPartition {Nc : ℕ}
+    (U : (Fin Nc → ℝ) → ℝ) (β : ℝ) : ℝ :=
+  ∫ q in textbookConfigurationCube Nc, textbookConfigurationGibbsWeight U β q
+```
+### MolecularDynamics.textbookConfigurationInner [MolecularDynamics/Chapter06/BrownianDirichlet.lean:276]
+```lean
+noncomputable def textbookConfigurationInner {Nc : ℕ}
+    (U : (Fin Nc → ℝ) → ℝ) (β : ℝ) (f g : (Fin Nc → ℝ) → ℝ) : ℝ :=
+  (textbookConfigurationPartition U β)⁻¹ *
+    ∫ q in textbookConfigurationCube Nc, f q * g q * textbookConfigurationGibbsWeight U β q
+```
+### MolecularDynamics.textbookConfigurationPartition_pos [MolecularDynamics/Chapter06/BrownianDirichlet.lean:287]
+```lean
+theorem textbookConfigurationPartition_pos {Nc : ℕ}
+    (U : (Fin Nc → ℝ) → ℝ) (hU : ContDiff ℝ ∞ U) (β : ℝ) :
+    0 < textbookConfigurationPartition U β
+```
+### MolecularDynamics.textbookBrownianGenerator_inner_symmetric [MolecularDynamics/Chapter06/BrownianDirichlet.lean:318]
+```lean
+theorem textbookBrownianGenerator_inner_symmetric {Nc : ℕ} (m : Fin Nc → ℝ)
+    (U : (Fin Nc → ℝ) → ℝ) (β : ℝ) (hβ : β ≠ 0)
+    (f g : (Fin Nc → ℝ) → ℝ)
+    (hU : ContDiff ℝ ∞ U) (hf : ContDiff ℝ ∞ f) (hg : ContDiff ℝ ∞ g)
+    (hPU : textbookUnitPeriodicPotential U) (hPf : textbookUnitPeriodicPotential f)
+    (hPg : textbookUnitPeriodicPotential g) :
+    textbookConfigurationInner U β f (textbookBrownianGenerator m U β g) =
+      textbookConfigurationInner U β (textbookBrownianGenerator m U β f) g
+```
+### MolecularDynamics.textbookUnitPeriodicPotential [MolecularDynamics/Chapter06/LangevinPeriodicForce.lean:13]
+```lean
+def textbookUnitPeriodicPotential {Nc : ℕ} (U : (Fin Nc → ℝ) → ℝ) : Prop :=
+  ∀ q (n : Fin Nc → ℤ), U (q + fun i ↦ (n i : ℝ)) = U q
+```

@@ -1,0 +1,583 @@
+{
+  "batch": "BATCH25",
+  "chapter": "ch06",
+  "round": "first-merged",
+  "input_sha256": {
+    "Blueprint/Ch06.lean": "0a02a34ec68989a83bccfa5916db5053ecdb58e05667bf21ff3568d9d1f4318e",
+    "blueprint/ch06/ch06_source.json": "45c70ceef21ca168af437de297e2e21e2800b452ab7942654061d4cff9bb5d95"
+  },
+  "items": [
+    {
+      "source_id": "MD-6.3.6-PolynomialSmooth",
+      "json_review": {
+        "status": "CORRECTED",
+        "issue_codes": [
+          "TRANSCRIPTION_WORDING",
+          "TRANSCRIPTION_BOUND_VARIABLE"
+        ],
+        "corrected_json": {
+          "source_id": "MD-6.3.6-PolynomialSmooth",
+          "kind": "definition",
+          "label": null,
+          "section": "6.3.6",
+          "printed_page": "241",
+          "pdf_page": "262",
+          "statement_latex": "This condition of polynomial growth of the coefficients is a common assumption in the analysis of SDEs. For future reference we define the space of functions which are $C^\\infty$ smooth and satisfy the polynomial growth restriction by $C_P^\\infty$:\n\\[C_P^\\infty\\stackrel{\\mathrm{def}}=\\{\\phi\\in C^\\infty\\mid\\exists\\eta\\in\\mathbb N:\\phi(x)=O(|x|^\\eta),\\ x\\to\\pm\\infty\\}.\\]",
+          "proof_latex": null,
+          "proof_note": "原书未给独立完整证明。",
+          "proof_discussion_latex": null,
+          "context_notation": [
+            "真实函数值的多项式增长；不擅自增加所有阶导数也有多项式增长。全域(1+|x|)^r界等价于尾部O加连续紧集界。"
+          ],
+          "issues": [],
+          "lean_decl": "MD.Ch06.polynomialSmooth",
+          "reusable_proofs": [],
+          "extra_assumptions": [],
+          "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
+          "review_status": "CORRECTED",
+          "repair_log": [
+            {
+              "date": "2026-10-16",
+              "action": "original_page_recheck",
+              "reason": "按原PDF逐字恢复引文，原草稿的For future reference不在原页。",
+              "evidence": "source_pages/p262.png; source_pages/p263.png; visual check 2026-10-16",
+              "before": {
+                "statement_latex": "For future reference we define the space of functions which are $C^\\infty$ smooth and satisfy the polynomial growth restriction by $C_P^\\infty$:\n\\[C_P^\\infty=\\{\\phi\\in C^\\infty\\mid\\exists r\\in\\mathbb N:\\phi(x)=O(|x|^r),\\ x\\to\\pm\\infty\\}.\\]"
+              },
+              "after": {
+                "statement_latex": "This condition of polynomial growth of the coefficients is a common assumption in the analysis of SDEs. For future purposes we define the space of functions which are $C^\\infty$ smooth and satisfy the polynomial growth restriction by $C_P^\\infty$:\n\\[C_P^\\infty\\stackrel{\\mathrm{def}}=\\{\\phi\\in C^\\infty\\mid\\exists r\\in\\mathbb N:\\phi(x)=O(|x|^r),\\ x\\to\\pm\\infty\\}.\\]"
+              },
+              "website": "待网站审计"
+            }
+          ],
+          "source_page_verification": "R5_INDEPENDENT_REVIEW; R5_PAGES.pdf 附件第20页；以本次evidence及issues为准，历史repair_log不作为真实性证据。"
+        },
+        "issues": [
+          {
+            "code": "TRANSCRIPTION_WORDING",
+            "detail": "A：附件第20页是“For future reference”，不是“For future purposes”；原集合定义使用η∈N及|x|^η，JSON改成r；数学等价但并非逐字转录。C∞与仅函数值的双侧多项式增长定义一致，不含所有导数增长。"
+          },
+          {
+            "code": "TRANSCRIPTION_BOUND_VARIABLE",
+            "detail": "A：附件第20页是“For future reference”，不是“For future purposes”；原集合定义使用η∈N及|x|^η，JSON改成r；数学等价但并非逐字转录。C∞与仅函数值的双侧多项式增长定义一致，不含所有导数增长。"
+          }
+        ],
+        "evidence": [
+          {
+            "phase": "A",
+            "location": "R5_PAGES.pdf，附件第20页；原PDF页262，印刷页241",
+            "finding": "A：附件第20页是“For future reference”，不是“For future purposes”；原集合定义使用η∈N及|x|^η，JSON改成r；数学等价但并非逐字转录。C∞与仅函数值的双侧多项式增长定义一致，不含所有导数增长。"
+          },
+          {
+            "phase": "C",
+            "location": "R5_任务.md，条目19/30，实际Lean签名/定义及其明确命名空间的依赖摘录、文末D附录",
+            "finding": "C：ContDiff ℝ ∞ f且存在统一C≥0、自然r、∀x的|f(x)|≤C(1+|x|)^r。光滑函数在紧区间有界，因此该全局界与原双侧无穷处Big-O等价。没有擅自把C_P∞强化为所有阶导数都多项式增长。"
+          }
+        ]
+      },
+      "audit": {
+        "lean_decl": "MD.Ch06.polynomialSmooth",
+        "verdict": "PASS",
+        "explanation": "C：ContDiff ℝ ∞ f且存在统一C≥0、自然r、∀x的|f(x)|≤C(1+|x|)^r。光滑函数在紧区间有界，因此该全局界与原双侧无穷处Big-O等价。没有擅自把C_P∞强化为所有阶导数都多项式增长。",
+        "counterexample": null,
+        "suggested_fix": "把purposes还原为reference。"
+      },
+      "subtask": "BATCH25a",
+      "input_sha256": {
+        "Blueprint/Ch06.lean": "0a02a34ec68989a83bccfa5916db5053ecdb58e05667bf21ff3568d9d1f4318e",
+        "blueprint/ch06/ch06_source.json": "45c70ceef21ca168af437de297e2e21e2800b452ab7942654061d4cff9bb5d95",
+        "BATCH25a_PAGES.pdf": "38bed5a39d43f6f50611854b9d21fa3ea1fa4ee60789f4d1f8642da254ea4a7b",
+        "signature_sha256": "ae41aa78d0fc6b70af0a0c355b696c5f5c72c19f64b5b32fb89f331528a610f6"
+      }
+    },
+    {
+      "source_id": "MD-6.3.6-DensityExpectation",
+      "json_review": {
+        "status": "APPROVED",
+        "issue_codes": [],
+        "corrected_json": null,
+        "issues": [],
+        "evidence": [
+          {
+            "phase": "A",
+            "location": "R5_PAGES.pdf，附件第21页；原PDF页262，印刷页241",
+            "finding": "A：附件第21页的C_P∞、期望、配对及全实轴密度积分一致。"
+          },
+          {
+            "phase": "C",
+            "location": "R5_任务.md，条目20/30，实际Lean签名/定义及其明确命名空间的依赖摘录、文末D附录",
+            "finding": "C：HasLaw把真实X分布与volume.withDensity(ofRealρ)关联，额外ρ非负且可测，φ取D49（函数值多项式增长），ρ有全局正指数尾上界。无需假设导数增长即可得|φ|ρ可积；结论同时给样本上的Integrable和与∫φρ相等，乘积顺序无影响。指数尾和多项式界控制实轴尾部，law桥接真实随机变量，不把积分恒等作前提。[EXTRA]准确。"
+          }
+        ]
+      },
+      "audit": {
+        "lean_decl": "MD.Ch06.densityExpectation",
+        "verdict": "PASS",
+        "explanation": "C：HasLaw把真实X分布与volume.withDensity(ofRealρ)关联，额外ρ非负且可测，φ取D49（函数值多项式增长），ρ有全局正指数尾上界。无需假设导数增长即可得|φ|ρ可积；结论同时给样本上的Integrable和与∫φρ相等，乘积顺序无影响。指数尾和多项式界控制实轴尾部，law桥接真实随机变量，不把积分恒等作前提。[EXTRA]准确。",
+        "counterexample": null,
+        "suggested_fix": null
+      },
+      "subtask": "BATCH25b",
+      "input_sha256": {
+        "Blueprint/Ch06.lean": "0a02a34ec68989a83bccfa5916db5053ecdb58e05667bf21ff3568d9d1f4318e",
+        "blueprint/ch06/ch06_source.json": "45c70ceef21ca168af437de297e2e21e2800b452ab7942654061d4cff9bb5d95",
+        "BATCH25b_PAGES.pdf": "38bed5a39d43f6f50611854b9d21fa3ea1fa4ee60789f4d1f8642da254ea4a7b",
+        "signature_sha256": "d432bd6c1cccf9f7e007a1782419e79a89b52ad595f70cd0081daaab9313706b"
+      }
+    },
+    {
+      "source_id": "MD-6.3.6-ScalarForward",
+      "json_review": {
+        "status": "CORRECTED",
+        "issue_codes": [
+          "TRANSCRIPTION_ADJOINT_SYMBOL"
+        ],
+        "corrected_json": {
+          "source_id": "MD-6.3.6-ScalarForward",
+          "kind": "definition",
+          "label": null,
+          "section": "6.3.6",
+          "printed_page": "242",
+          "pdf_page": "263",
+          "statement_latex": "In the case at hand the adjoint is\n\\[\\mathcal L^\\dagger\\rho=-(a(x)\\rho)_x+\\tfrac12(b^2(x)\\rho)_{xx},\\]\nwhich we shall refer to as the Kolmogorov operator.",
+          "proof_latex": null,
+          "proof_note": "原书未给独立完整证明。",
+          "proof_discussion_latex": null,
+          "context_notation": [
+            "完整正号diffusion伴随算子；PDE从law推导另条，不计定义已证PDE。"
+          ],
+          "issues": [],
+          "lean_decl": "MD.Ch06.scalarForward",
+          "reusable_proofs": [],
+          "extra_assumptions": [],
+          "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
+          "review_status": "CORRECTED",
+          "repair_log": [
+            {
+              "date": "2026-10-16",
+              "action": "original_page_recheck",
+              "reason": "原页无编号；(6.39)属于后页多维SDE，不是此标量伴随算子。",
+              "evidence": "source_pages/p262.png; source_pages/p263.png; visual check 2026-10-16",
+              "before": {
+                "label": "(6.39)",
+                "statement_latex": "As this holds for any function $\\phi$ in the appropriate space, we may obtain an equation for the time evolution of $\\rho$:\n\\[\\frac{\\partial\\rho}{\\partial t}=-\\frac\\partial{\\partial x}(a(x)\\rho)+\\frac12\\frac{\\partial^2}{\\partial x^2}(b^2(x)\\rho).\\tag{6.39}\\]"
+              },
+              "after": {
+                "label": null,
+                "statement_latex": "In the case at hand the adjoint is\n\\[\\mathcal L^*\\rho=-(a(x)\\rho)_x+\\tfrac12(b^2(x)\\rho)_{xx},\\]\nwhich we shall refer to as the Kolmogorov operator."
+              },
+              "website": "待网站审计"
+            }
+          ],
+          "source_page_verification": "R5_INDEPENDENT_REVIEW; R5_PAGES.pdf 附件第22页；以本次evidence及issues为准，历史repair_log不作为真实性证据。"
+        },
+        "issues": [
+          {
+            "code": "TRANSCRIPTION_ADJOINT_SYMBOL",
+            "detail": "A：附件第22页使用L的dagger（†）作伴随号，JSON写成*；负一阶项、正½二阶项及Kolmogorov名称一致。该式原页无编号。"
+          }
+        ],
+        "evidence": [
+          {
+            "phase": "A",
+            "location": "R5_PAGES.pdf，附件第22页；原PDF页263，印刷页242",
+            "finding": "A：附件第22页使用L的dagger（†）作伴随号，JSON写成*；负一阶项、正½二阶项及Kolmogorov名称一致。该式原页无编号。"
+          },
+          {
+            "phase": "C",
+            "location": "R5_任务.md，条目21/30，实际Lean签名/定义及其明确命名空间的依赖摘录、文末D附录",
+            "finding": "C：任意实函数a/b/ρ及实x，−(aρ)′+(b²ρ)″/2完整正确。形式定义没有把ρ′′误写为φ′′，也没有带入条目23虚构的负扩散号。经典含义需相应可微性，此定义没有宣称PDE已从law推出。"
+          }
+        ]
+      },
+      "audit": {
+        "lean_decl": "MD.Ch06.scalarForward",
+        "verdict": "PASS",
+        "explanation": "C：任意实函数a/b/ρ及实x，−(aρ)′+(b²ρ)″/2完整正确。形式定义没有把ρ′′误写为φ′′，也没有带入条目23虚构的负扩散号。经典含义需相应可微性，此定义没有宣称PDE已从law推出。",
+        "counterexample": null,
+        "suggested_fix": "将原文伴随记号还原为dagger。"
+      },
+      "subtask": "BATCH25c",
+      "input_sha256": {
+        "Blueprint/Ch06.lean": "0a02a34ec68989a83bccfa5916db5053ecdb58e05667bf21ff3568d9d1f4318e",
+        "blueprint/ch06/ch06_source.json": "45c70ceef21ca168af437de297e2e21e2800b452ab7942654061d4cff9bb5d95",
+        "BATCH25c_PAGES.pdf": "6c67d0ee2849f40a134136fd81dce990de4fdae894f6bbb4d4883d246dae408b",
+        "signature_sha256": "6178ede8590f4d53818b0d1142a6d6276703d817ade32e469966ed46315b15bd"
+      }
+    },
+    {
+      "source_id": "MD-6.3.6-FPDriftAdjoint",
+      "json_review": {
+        "status": "APPROVED",
+        "issue_codes": [],
+        "corrected_json": null,
+        "issues": [],
+        "evidence": [
+          {
+            "phase": "A",
+            "location": "R5_PAGES.pdf，附件第23–24页；原PDF页262–263，印刷页241–242",
+            "finding": "A：附件第23页的边界项、第一次分部积分负号及边界消失后一式一致；附件第24页只是后续上下文。"
+          },
+          {
+            "phase": "C",
+            "location": "R5_任务.md，条目22/30，实际Lean签名/定义及其明确命名空间的依赖摘录、文末D附录",
+            "finding": "C：∀a/ρ/φ为C¹，且φ紧支；左积分aφ′ρ，右积分φ[−(aρ)′]，全实轴真实积分相等。紧支和C¹使两边连续紧支、可积，边界自动消失；未要求a或ρ紧支。仅证明[EXTRA]明示的紧支桥接，不能计为原所有多项式测试函数的全域版本。"
+          }
+        ]
+      },
+      "audit": {
+        "lean_decl": "MD.Ch06.fpDriftAdjoint",
+        "verdict": "PASS",
+        "explanation": "C：∀a/ρ/φ为C¹，且φ紧支；左积分aφ′ρ，右积分φ[−(aρ)′]，全实轴真实积分相等。紧支和C¹使两边连续紧支、可积，边界自动消失；未要求a或ρ紧支。仅证明[EXTRA]明示的紧支桥接，不能计为原所有多项式测试函数的全域版本。",
+        "counterexample": null,
+        "suggested_fix": null
+      },
+      "subtask": "BATCH25d",
+      "input_sha256": {
+        "Blueprint/Ch06.lean": "0a02a34ec68989a83bccfa5916db5053ecdb58e05667bf21ff3568d9d1f4318e",
+        "blueprint/ch06/ch06_source.json": "45c70ceef21ca168af437de297e2e21e2800b452ab7942654061d4cff9bb5d95",
+        "BATCH25d_PAGES.pdf": "b1025110b527af9087426591ff4dc587a52485676e492cbd3aa98e9095c1ecbe",
+        "signature_sha256": "662b99240ac521be7f9bec9c1496c338696f19f1699532d278b46784bf143528"
+      }
+    },
+    {
+      "source_id": "MD-6.3.6-FPDiffusionPrinted",
+      "json_review": {
+        "status": "CORRECTED",
+        "issue_codes": [
+          "TRANSCRIPTION_DIFFUSION_SIGN",
+          "FALSE_SOURCE_ERRATUM",
+          "FALSE_LEAN_SIGNATURE",
+          "CORRECTED_DECL_NOT_SUPPLIED"
+        ],
+        "corrected_json": {
+          "source_id": "MD-6.3.6-FPDiffusionPrinted",
+          "kind": "unnumbered_claim",
+          "label": null,
+          "section": "6.3.6",
+          "printed_page": "242",
+          "pdf_page": "263",
+          "statement_latex": "With two rounds of integration by parts on the term involving $b(x)$, we find, using the fact that the boundary terms vanish,\n\\[\\int_{-\\infty}^{+\\infty}b^2(x)\\phi''(x)\\rho(x,t)dx=\\int_{-\\infty}^{+\\infty}\\phi(x)(b^2(x)\\rho)_{xx}(x,t)dx.\\]",
+          "proof_latex": null,
+          "proof_note": "原书未给独立完整证明。",
+          "proof_discussion_latex": null,
+          "context_notation": [],
+          "issues": [
+            {
+              "code": "TRANSCRIPTION_ERROR",
+              "detail": "附件第25页原式为正号；原JSON负号及指称原书负号的ERRATUM?均错误。原页无(6.39)编号。"
+            }
+          ],
+          "lean_decl": "MD.Ch06.fpDiffusionPrinted",
+          "reusable_proofs": [],
+          "extra_assumptions": [],
+          "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
+          "review_status": "CORRECTED",
+          "repair_log": [
+            {
+              "date": "2026-10-16",
+              "action": "original_page_recheck",
+              "reason": "保留原书错误负号；恢复原页引导句，不用转述替代原引文。",
+              "evidence": "source_pages/p262.png; source_pages/p263.png; visual check 2026-10-16",
+              "before": {
+                "statement_latex": "Using two integrations by parts gives\n\\[\\int_{-\\infty}^{+\\infty}b^2(x)\\phi''(x)\\rho(x,t)dx=-\\int_{-\\infty}^{+\\infty}\\phi(x)(b^2(x)\\rho(x,t))_{xx}dx.\\]"
+              },
+              "after": {
+                "statement_latex": "With two rounds of integration by parts on the term involving $b(x)$, we find, using the fact that the boundary terms vanish,\n\\[\\int_{-\\infty}^{+\\infty}b^2(x)\\phi''(x)\\rho(x,t)dx=-\\int_{-\\infty}^{+\\infty}\\phi(x)(b^2(x)\\rho)_{xx}dx.\\]"
+              },
+              "website": "待网站审计"
+            },
+            {
+              "date": "2026-10-17",
+              "action": "directive22_printed_corrected_pair",
+              "change": "仅将两次分部积分后的外负号改为正号，保留原C²和紧支资格。",
+              "corrected_decl": "MD.Ch06.fpDiffusionPrinted_corrected",
+              "website": "未提交；待网站审计"
+            },
+            {
+              "date": "2026-10-17",
+              "action": "R5_independent_pdf_review",
+              "reason": "直接视觉核对R5_PAGES.pdf第25页，撤销历史记录把转录负号归责于原书的结论；恢复正积分。"
+            }
+          ],
+          "source_page_verification": "R5_INDEPENDENT_REVIEW; R5_PAGES.pdf 附件第25页；以本次evidence及issues为准，历史repair_log不作为真实性证据。"
+        },
+        "issues": [
+          {
+            "code": "TRANSCRIPTION_DIFFUSION_SIGN",
+            "detail": "A：附件第25页视觉核对：等号后直接是正积分，没有负号；被积式为φ(x)(b²(x)ρ)xx(x,t)。JSON转录负号、issues称原页负号、repair_log称原书错误，三者都不符附件。原页也未把该式编号为(6.39)。"
+          },
+          {
+            "code": "FALSE_SOURCE_ERRATUM",
+            "detail": "C：Printed签名对所有C² b/ρ/φ及紧支φ断言负号积分恒等。此负号既不忠实也数学错误；两次分部积分应得正号。现有签名需FAIL，不因Printed名称而豁免与实际PDF不符的问题。repair_log提到fpDiffusionPrinted_corrected，但无实际签名，不能把修改描述当作独立签名已审；若仅删除外负号并保留这些C²/紧支前提，则数学陈述正确。"
+          },
+          {
+            "code": "FALSE_LEAN_SIGNATURE",
+            "detail": "C：Printed签名对所有C² b/ρ/φ及紧支φ断言负号积分恒等。此负号既不忠实也数学错误；两次分部积分应得正号。现有签名需FAIL，不因Printed名称而豁免与实际PDF不符的问题。repair_log提到fpDiffusionPrinted_corrected，但无实际签名，不能把修改描述当作独立签名已审；若仅删除外负号并保留这些C²/紧支前提，则数学陈述正确。"
+          },
+          {
+            "code": "CORRECTED_DECL_NOT_SUPPLIED",
+            "detail": "C：Printed签名对所有C² b/ρ/φ及紧支φ断言负号积分恒等。此负号既不忠实也数学错误；两次分部积分应得正号。现有签名需FAIL，不因Printed名称而豁免与实际PDF不符的问题。repair_log提到fpDiffusionPrinted_corrected，但无实际签名，不能把修改描述当作独立签名已审；若仅删除外负号并保留这些C²/紧支前提，则数学陈述正确。"
+          }
+        ],
+        "evidence": [
+          {
+            "phase": "A",
+            "location": "R5_PAGES.pdf，附件第25页；原PDF页263，印刷页242",
+            "finding": "A：附件第25页视觉核对：等号后直接是正积分，没有负号；被积式为φ(x)(b²(x)ρ)xx(x,t)。JSON转录负号、issues称原页负号、repair_log称原书错误，三者都不符附件。原页也未把该式编号为(6.39)。"
+          },
+          {
+            "phase": "C",
+            "location": "R5_任务.md，条目23/30，实际Lean签名/定义及其明确命名空间的依赖摘录、文末D附录",
+            "finding": "C：Printed签名对所有C² b/ρ/φ及紧支φ断言负号积分恒等。此负号既不忠实也数学错误；两次分部积分应得正号。现有签名需FAIL，不因Printed名称而豁免与实际PDF不符的问题。repair_log提到fpDiffusionPrinted_corrected，但无实际签名，不能把修改描述当作独立签名已审；若仅删除外负号并保留这些C²/紧支前提，则数学陈述正确。"
+          }
+        ]
+      },
+      "audit": {
+        "lean_decl": "MD.Ch06.fpDiffusionPrinted",
+        "verdict": "FAIL",
+        "explanation": "C：Printed签名对所有C² b/ρ/φ及紧支φ断言负号积分恒等。此负号既不忠实也数学错误；两次分部积分应得正号。现有签名需FAIL，不因Printed名称而豁免与实际PDF不符的问题。repair_log提到fpDiffusionPrinted_corrected，但无实际签名，不能把修改描述当作独立签名已审；若仅删除外负号并保留这些C²/紧支前提，则数学陈述正确。",
+        "counterexample": "b(x)=1、ρ(x)=x²，取任一非零非负C∞紧支φ。左边∫x²φ″=2∫φ>0，现有右边=−2∫φ<0。满足签名全部前提。",
+        "suggested_fix": "原文改回正号并补回(x,t)，移除虚假的原书ERRATUM?；Lean去掉右端外负号。补充实际_corrected签名后再审；修正历史记录的错误来源归属。"
+      },
+      "subtask": "BATCH25e",
+      "input_sha256": {
+        "Blueprint/Ch06.lean": "0a02a34ec68989a83bccfa5916db5053ecdb58e05667bf21ff3568d9d1f4318e",
+        "blueprint/ch06/ch06_source.json": "45c70ceef21ca168af437de297e2e21e2800b452ab7942654061d4cff9bb5d95",
+        "BATCH25e_PAGES.pdf": "6c67d0ee2849f40a134136fd81dce990de4fdae894f6bbb4d4883d246dae408b",
+        "signature_sha256": "e3054ef15edf9b7a625d6d50b25eded1fdfc693b1d2c0c80664c36a4b1f9ea23"
+      }
+    },
+    {
+      "source_id": "MD-6.3.6-FPAdjointCompact",
+      "json_review": {
+        "status": "CORRECTED",
+        "issue_codes": [
+          "TRANSCRIPTION_ADJOINT_SYMBOL",
+          "TRANSCRIPTION_PUNCTUATION"
+        ],
+        "corrected_json": {
+          "source_id": "MD-6.3.6-FPAdjointCompact",
+          "kind": "unnumbered_claim",
+          "label": null,
+          "section": "6.3.6",
+          "printed_page": "242",
+          "pdf_page": "263",
+          "statement_latex": "where the operator appearing on the right hand side is the adjoint $\\mathcal L^\\dagger$ of the generator of the stochastic process, satisfying the relation\n\\[\\langle\\mathcal L\\phi,\\rho\\rangle=\\langle\\phi,\\mathcal L^\\dagger\\rho\\rangle.\\]\nIn the case at hand the adjoint is\n\\[\\mathcal L^\\dagger\\rho=-(a(x)\\rho)_x+\\tfrac12(b^2(x)\\rho)_{xx},\\]",
+          "proof_latex": null,
+          "proof_note": "原书未给独立完整证明。",
+          "proof_discussion_latex": null,
+          "context_notation": [],
+          "issues": [],
+          "lean_decl": "MD.Ch06.fpAdjointCompact",
+          "reusable_proofs": [],
+          "extra_assumptions": [
+            "[EXTRA]紧支撑C²检验的完整正号伴随恒等；多项式检验及指数尾版本另条保留。"
+          ],
+          "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
+          "review_status": "CORRECTED",
+          "repair_log": [],
+          "source_page_verification": "R5_INDEPENDENT_REVIEW; R5_PAGES.pdf 附件第26页；以本次evidence及issues为准，历史repair_log不作为真实性证据。"
+        },
+        "issues": [
+          {
+            "code": "TRANSCRIPTION_ADJOINT_SYMBOL",
+            "detail": "A：附件第26页伴随符号为dagger；最后标点为逗号，JSON用星号及分号。生成元配对、负漂移和正½扩散内容一致。"
+          },
+          {
+            "code": "TRANSCRIPTION_PUNCTUATION",
+            "detail": "A：附件第26页伴随符号为dagger；最后标点为逗号，JSON用星号及分号。生成元配对、负漂移和正½扩散内容一致。"
+          }
+        ],
+        "evidence": [
+          {
+            "phase": "A",
+            "location": "R5_PAGES.pdf，附件第26页；原PDF页263，印刷页242",
+            "finding": "A：附件第26页伴随符号为dagger；最后标点为逗号，JSON用星号及分号。生成元配对、负漂移和正½扩散内容一致。"
+          },
+          {
+            "phase": "C",
+            "location": "R5_任务.md，条目24/30，实际Lean签名/定义及其明确命名空间的依赖摘录、文末D附录",
+            "finding": "C：对任意C² a/b/ρ/φ和紧支φ，真实全实轴∫(Lφ)ρ=∫φ(L†ρ)。D47/D50展开后正确，紧支使全部相关积分存在；紧支C²范围已在[EXTRA]明示，不把它计作所有C_P∞测试的完整伴随域结论。"
+          }
+        ]
+      },
+      "audit": {
+        "lean_decl": "MD.Ch06.fpAdjointCompact",
+        "verdict": "PASS",
+        "explanation": "C：对任意C² a/b/ρ/φ和紧支φ，真实全实轴∫(Lφ)ρ=∫φ(L†ρ)。D47/D50展开后正确，紧支使全部相关积分存在；紧支C²范围已在[EXTRA]明示，不把它计作所有C_P∞测试的完整伴随域结论。",
+        "counterexample": null,
+        "suggested_fix": "还原伴随号dagger及逗号。"
+      },
+      "subtask": "BATCH25f",
+      "input_sha256": {
+        "Blueprint/Ch06.lean": "0a02a34ec68989a83bccfa5916db5053ecdb58e05667bf21ff3568d9d1f4318e",
+        "blueprint/ch06/ch06_source.json": "45c70ceef21ca168af437de297e2e21e2800b452ab7942654061d4cff9bb5d95",
+        "BATCH25f_PAGES.pdf": "6c67d0ee2849f40a134136fd81dce990de4fdae894f6bbb4d4883d246dae408b",
+        "signature_sha256": "1bae3346ca17baa6c628256014b86e6cec426817d72b39c7e3dbc811eba2f546"
+      }
+    },
+    {
+      "source_id": "MD-6.3.6-FPPolynomialAdjoint",
+      "json_review": {
+        "status": "NEEDS_HUMAN",
+        "issue_codes": [
+          "SOURCE_DERIVATIVE_GROWTH_GAP",
+          "TRANSCRIPTION_ADJOINT_SYMBOL",
+          "TRANSCRIPTION_TRUNCATED_SENTENCE",
+          "CORRECTED_DECL_NOT_SUPPLIED"
+        ],
+        "corrected_json": {
+          "source_id": "MD-6.3.6-FPPolynomialAdjoint",
+          "kind": "unnumbered_claim",
+          "label": null,
+          "section": "6.3.6",
+          "printed_page": "241–242",
+          "pdf_page": "262–263",
+          "statement_latex": "We assume that $\\rho$ is $C^\\infty$ for all $t$ and that the density tends to zero exponentially fast as $x\\to\\pm\\infty$, whereas $a$ and $b$ are $C^\\infty$ functions which grow at most polynomially fast in these limits, that is, there are constants $\\eta_a$, $\\eta_b$ such that\n\\[a(x)=\\mathcal O(|x|^{\\eta_a}),\\quad b(x)=\\mathcal O(|x|^{\\eta_b}),\\quad x\\to\\pm\\infty.\\]\n[中间原文略]\n\\[\\langle\\mathcal L\\phi,\\rho\\rangle=\\langle\\phi,\\mathcal L^\\dagger\\rho\\rangle.\\]",
+          "proof_latex": null,
+          "proof_note": "原书未给独立完整证明。",
+          "proof_discussion_latex": null,
+          "context_notation": [],
+          "issues": [
+            {
+              "code": "ERRATUM?",
+              "detail": "原只给函数值尾部增长而未约束导数；完整IBP及边界消失需技术资格，已全部明示，不静默添加。"
+            }
+          ],
+          "lean_decl": "MD.Ch06.fpPolynomialAdjoint",
+          "reusable_proofs": [],
+          "extra_assumptions": [
+            "[EXTRA]原C∞P值增长不足以控制所有IBP边界；明确一、二阶a,b,φ多项式增长及ρ导数指数尾，保存整个非紧支撑真实积分恒等。"
+          ],
+          "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
+          "review_status": "NEEDS_HUMAN",
+          "repair_log": [
+            {
+              "date": "2026-10-17",
+              "action": "directive22_printed_corrected_pair",
+              "change": "显式约束所需导数的多项式增长和密度导数的指数衰减。",
+              "corrected_decl": "MD.Ch06.fpPolynomialAdjoint_corrected",
+              "website": "未提交；待网站审计"
+            }
+          ],
+          "source_page_verification": "R5_INDEPENDENT_REVIEW; R5_PAGES.pdf 附件第27–28页；以本次evidence及issues为准，历史repair_log不作为真实性证据。"
+        },
+        "issues": [
+          {
+            "code": "SOURCE_DERIVATIVE_GROWTH_GAP",
+            "detail": "C：实际fpPolynomialAdjoint已显式加强：a/b/ρ/φ全C∞；a、b、φ的0至2阶导数各有多项式全局界；ρ的0至2阶导数各有正指数衰减界。两边真实积分恒等由两次分部积分成立，这个已给出的加强版数学PASS，[EXTRA]准确披露了附加资格。但它不是仅原文值增长假设的定理；repair_log再列fpPolynomialAdjoint_corrected而无实际签名，不能独立确认命名修正版，所以本条整体NEEDS_HUMAN。"
+          },
+          {
+            "code": "TRANSCRIPTION_ADJOINT_SYMBOL",
+            "detail": "A：附件第27页原句在“these limits”后接“, that is, there are constants ηa, ηb such that”及Big-O式，JSON提前添句号；附件第28页配对记号为dagger。原只约束函数值，确实不足以直接宣称所有分部积分边界与导数积分良好，原疑误保留。"
+          },
+          {
+            "code": "TRANSCRIPTION_TRUNCATED_SENTENCE",
+            "detail": "A：附件第27页原句在“these limits”后接“, that is, there are constants ηa, ηb such that”及Big-O式，JSON提前添句号；附件第28页配对记号为dagger。原只约束函数值，确实不足以直接宣称所有分部积分边界与导数积分良好，原疑误保留。"
+          },
+          {
+            "code": "CORRECTED_DECL_NOT_SUPPLIED",
+            "detail": "C：实际fpPolynomialAdjoint已显式加强：a/b/ρ/φ全C∞；a、b、φ的0至2阶导数各有多项式全局界；ρ的0至2阶导数各有正指数衰减界。两边真实积分恒等由两次分部积分成立，这个已给出的加强版数学PASS，[EXTRA]准确披露了附加资格。但它不是仅原文值增长假设的定理；repair_log再列fpPolynomialAdjoint_corrected而无实际签名，不能独立确认命名修正版，所以本条整体NEEDS_HUMAN。"
+          }
+        ],
+        "evidence": [
+          {
+            "phase": "A",
+            "location": "R5_PAGES.pdf，附件第27–28页；原PDF页262–263，印刷页241–242",
+            "finding": "A：附件第27页原句在“these limits”后接“, that is, there are constants ηa, ηb such that”及Big-O式，JSON提前添句号；附件第28页配对记号为dagger。原只约束函数值，确实不足以直接宣称所有分部积分边界与导数积分良好，原疑误保留。"
+          },
+          {
+            "phase": "C",
+            "location": "R5_任务.md，条目25/30，实际Lean签名/定义及其明确命名空间的依赖摘录、文末D附录",
+            "finding": "C：实际fpPolynomialAdjoint已显式加强：a/b/ρ/φ全C∞；a、b、φ的0至2阶导数各有多项式全局界；ρ的0至2阶导数各有正指数衰减界。两边真实积分恒等由两次分部积分成立，这个已给出的加强版数学PASS，[EXTRA]准确披露了附加资格。但它不是仅原文值增长假设的定理；repair_log再列fpPolynomialAdjoint_corrected而无实际签名，不能独立确认命名修正版，所以本条整体NEEDS_HUMAN。"
+          }
+        ]
+      },
+      "audit": {
+        "lean_decl": "MD.Ch06.fpPolynomialAdjoint",
+        "verdict": "NEEDS_HUMAN",
+        "explanation": "C：实际fpPolynomialAdjoint已显式加强：a/b/ρ/φ全C∞；a、b、φ的0至2阶导数各有多项式全局界；ρ的0至2阶导数各有正指数衰减界。两边真实积分恒等由两次分部积分成立，这个已给出的加强版数学PASS，[EXTRA]准确披露了附加资格。但它不是仅原文值增长假设的定理；repair_log再列fpPolynomialAdjoint_corrected而无实际签名，不能独立确认命名修正版，所以本条整体NEEDS_HUMAN。",
+        "counterexample": "函数值有界不控制导数：例如f(x)=sin(exp(x²))为C∞且有界，f′(x)=2x exp(x²)cos(exp(x²))不受任何多项式界控制。原条件不能直接提供所需导数估计。",
+        "suggested_fix": "原书条件保留并标疑误；将已给声明明确称为加强版。补充_corrected实际签名，不能仅依赖repair_log；还原原句和dagger。"
+      },
+      "subtask": "BATCH25g",
+      "input_sha256": {
+        "Blueprint/Ch06.lean": "0a02a34ec68989a83bccfa5916db5053ecdb58e05667bf21ff3568d9d1f4318e",
+        "blueprint/ch06/ch06_source.json": "45c70ceef21ca168af437de297e2e21e2800b452ab7942654061d4cff9bb5d95",
+        "BATCH25g_PAGES.pdf": "b1025110b527af9087426591ff4dc587a52485676e492cbd3aa98e9095c1ecbe",
+        "signature_sha256": "b86cee8f0e52b1e0f38e52252226f09f80113fc3b14fa6671b44ce09d1ca8a2d"
+      }
+    },
+    {
+      "source_id": "MD-6.3.6-FPEquation",
+      "json_review": {
+        "status": "CORRECTED",
+        "issue_codes": [
+          "TRANSCRIPTION_ADJOINT_SYMBOL",
+          "SDE_FILTRATION_QUALIFICATION_MISSING"
+        ],
+        "corrected_json": {
+          "source_id": "MD-6.3.6-FPEquation",
+          "kind": "unnumbered_claim",
+          "label": null,
+          "section": "6.3.6",
+          "printed_page": "242",
+          "pdf_page": "263",
+          "statement_latex": "If this is to hold for all test functions $\\phi$, we must have\n\\[\\frac{\\partial\\rho}{\\partial t}=-\\frac\\partial{\\partial x}(a(x)\\rho)+\\frac12\\frac{\\partial^2}{\\partial x^2}(b^2(x)\\rho).\\]\nThe Fokker-Planck equation may be written in the compact form\n\\[\\frac{\\partial\\rho}{\\partial t}=\\mathcal L^\\dagger\\rho.\\]",
+          "proof_latex": null,
+          "proof_note": "原书未给独立完整证明。",
+          "proof_discussion_latex": null,
+          "context_notation": [],
+          "issues": [],
+          "lean_decl": "MD.Ch06.fpEquation",
+          "reusable_proofs": [],
+          "extra_assumptions": [
+            "[EXTRA]实际严格SDE与其真实平滑非负密度law、局部一致指数尾可求导资格；没有把弱PDE或所求点态PDE当假设。"
+          ],
+          "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
+          "review_status": "CORRECTED",
+          "repair_log": [],
+          "source_page_verification": "R5_INDEPENDENT_REVIEW; R5_PAGES.pdf 附件第29页；以本次evidence及issues为准，历史repair_log不作为真实性证据。"
+        },
+        "issues": [
+          {
+            "code": "TRANSCRIPTION_ADJOINT_SYMBOL",
+            "detail": "A：附件第29页点态Fokker–Planck式符号一致；紧凑式实际为L†ρ，需把*还原为dagger。"
+          },
+          {
+            "code": "SDE_FILTRATION_QUALIFICATION_MISSING",
+            "detail": "C：量化P、W/X、自治a/b、固定x0和光滑ρ(t,x)；有PreBrownian、strictScalarSDE、C∞系数、每t>0非负真实density law、a/b值多项式界及ρ和时间导数的局部一致指数尾。结论完整覆盖所有t>0、x∈R，等于D50的负漂移加正扩散；未把弱PDE作前提，时间微分的尾部资格足够。问题是本声明未如条目18一样要求X相对W的历史适应、联合可测，也没有扩散被积过程的适应资格；D48只要求固定时间均方左端和残差收敛，本身不是已经建立的标准适应Itô解定义。任务未给出从这一更弱定义恢复标准Itô/鞅问题的桥接。无法仅凭名为strictScalarSDE就直接认定标准FP推导成立，需人工核定或补足桥接/前提。"
+          }
+        ],
+        "evidence": [
+          {
+            "phase": "A",
+            "location": "R5_PAGES.pdf，附件第29页；原PDF页263，印刷页242",
+            "finding": "A：附件第29页点态Fokker–Planck式符号一致；紧凑式实际为L†ρ，需把*还原为dagger。"
+          },
+          {
+            "phase": "C",
+            "location": "R5_任务.md，条目26/30，实际Lean签名/定义及其明确命名空间的依赖摘录、文末D附录",
+            "finding": "C：量化P、W/X、自治a/b、固定x0和光滑ρ(t,x)；有PreBrownian、strictScalarSDE、C∞系数、每t>0非负真实density law、a/b值多项式界及ρ和时间导数的局部一致指数尾。结论完整覆盖所有t>0、x∈R，等于D50的负漂移加正扩散；未把弱PDE作前提，时间微分的尾部资格足够。问题是本声明未如条目18一样要求X相对W的历史适应、联合可测，也没有扩散被积过程的适应资格；D48只要求固定时间均方左端和残差收敛，本身不是已经建立的标准适应Itô解定义。任务未给出从这一更弱定义恢复标准Itô/鞅问题的桥接。无法仅凭名为strictScalarSDE就直接认定标准FP推导成立，需人工核定或补足桥接/前提。"
+          }
+        ]
+      },
+      "audit": {
+        "lean_decl": "MD.Ch06.fpEquation",
+        "verdict": "NEEDS_HUMAN",
+        "explanation": "C：量化P、W/X、自治a/b、固定x0和光滑ρ(t,x)；有PreBrownian、strictScalarSDE、C∞系数、每t>0非负真实density law、a/b值多项式界及ρ和时间导数的局部一致指数尾。结论完整覆盖所有t>0、x∈R，等于D50的负漂移加正扩散；未把弱PDE作前提，时间微分的尾部资格足够。问题是本声明未如条目18一样要求X相对W的历史适应、联合可测，也没有扩散被积过程的适应资格；D48只要求固定时间均方左端和残差收敛，本身不是已经建立的标准适应Itô解定义。任务未给出从这一更弱定义恢复标准Itô/鞅问题的桥接。无法仅凭名为strictScalarSDE就直接认定标准FP推导成立，需人工核定或补足桥接/前提。",
+        "counterexample": null,
+        "suggested_fix": "补入共同滤过下W为Brownian、X适应/联合可测及适当局部积分资格，或提供已验证的D48到标准Itô解桥接；随后可用紧支检验导出弱PDE再用光滑性得点态式。只修正JSON伴随记号，工程不改。"
+      },
+      "subtask": "BATCH25h",
+      "input_sha256": {
+        "Blueprint/Ch06.lean": "0a02a34ec68989a83bccfa5916db5053ecdb58e05667bf21ff3568d9d1f4318e",
+        "blueprint/ch06/ch06_source.json": "45c70ceef21ca168af437de297e2e21e2800b452ab7942654061d4cff9bb5d95",
+        "BATCH25h_PAGES.pdf": "6c67d0ee2849f40a134136fd81dce990de4fdae894f6bbb4d4883d246dae408b",
+        "signature_sha256": "8fa9e446ddff6acaa48b4d43a785c9f297890828cdefd34b17948a52e0446777"
+      }
+    }
+  ],
+  "merged_from": "ch06_first_merged"
+}

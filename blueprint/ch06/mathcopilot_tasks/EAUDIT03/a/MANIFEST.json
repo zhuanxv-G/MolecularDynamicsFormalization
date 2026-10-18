@@ -1,0 +1,41 @@
+{
+  "eaudit": "EAUDIT03",
+  "subtask": "EAUDIT03a",
+  "source_id": "MD-6.2.1-WalkIncrement",
+  "input_sha256": {
+    "Blueprint/Ch06.lean": "4a2a6cb72c1692f80e3537ab1a71701d429a482780a01226c3dc66a2ebb8b44b",
+    "blueprint/ch06/ch06_source.json": "d7f93cd20eb570744c710f3e07a88b319c082e4155812fee91db0920eb05944e",
+    "PAGES.pdf": "b944fb420ba22e1581ff2128f1f39c0fa394cf83d06e8a2350ee562b2b29225c",
+    "materials_sha256": "390182f1c4cb7bf88992f5ddc4ef71dd5c9c963e754aff5541cfde7552c6e1cc"
+  },
+  "paste_sha256": "0ee075408125453e82325c39b9daedef08a34a549f2cb907604a81409a72d6b8",
+  "source_pdf_sha256": "1939a22e5e96ebd2b58b8e91fe2c796f5390b402f267390f473b271c35d2f036",
+  "pdf_page_mapping": [
+    246,
+    247
+  ],
+  "crop_pixel_identity": "PASS: copied page render or lossless embedded full-page source pixels",
+  "rasterized_pages": {},
+  "source_declarations": [
+    "walkIncrement"
+  ],
+  "dependency_excerpts": [
+    {
+      "path": "Blueprint/Ch06.lean",
+      "line": 686,
+      "full_name": "MD.Ch06.walkIncrement",
+      "kind": "def",
+      "excerpt_sha256": "3301e6e2cd5f828b0e9cc65e25296a7d55b16529c6ab8f7574378e77e568c31a"
+    },
+    {
+      "path": "MolecularDynamics/Chapter06/ReviewDefinitions.lean",
+      "line": 39,
+      "full_name": "MolecularDynamics.Chapter06Review.randomWalk",
+      "kind": "def",
+      "excerpt_sha256": "f79bc15bc3a337d9920f9c0f405d0533f8b6c02885f7a4cac73bc8b615fd90dc"
+    }
+  ],
+  "project_definition_closure": "complete recursive definitions, referenced theorem types, explicit choice and consistency specifications",
+  "website_submitted": false,
+  "total_task_bytes": 136671
+}

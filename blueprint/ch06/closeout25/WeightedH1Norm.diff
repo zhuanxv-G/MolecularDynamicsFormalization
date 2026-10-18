@@ -1,0 +1,12 @@
+--- before
++++ after
+@@ -3087,7 +3087,8 @@
+   textbookLangevinCanonicalWeakH1 U hU hp β hβ
+ 
+ /-- source_id: MD-6.4.4-WeightedH1Norm · unnumbered_claim · §6.4.4 · 印刷p.257 / PDFp.278
+-[EXTRA] [EXTRA]实际全部位置/动量弱导数的L²范数平方和；真实函数/弱导数投影定义随compact依赖闭包给出。 -/
++[EXTRA] [EXTRA]实际全部位置/动量弱导数的L²范数平方和；真实函数/弱导数投影定义随compact依赖闭包给出。 [EXTRA] 25号：仅覆盖真实加权H¹的jet范数分解；原文标量L²积分及任意向量w的平方和等式未由本条覆盖。
++-/
+ theorem weightedH1Norm {N : ℕ}
+     (U : (Fin N → ℝ) → ℝ) (hU : ContDiff ℝ ∞ U) (hp : textbookUnitPeriodicPotential U)
+     (β : ℝ) (hβ : 0 < β) (f : textbookLangevinCanonicalWeakH1 U hU hp β hβ) :

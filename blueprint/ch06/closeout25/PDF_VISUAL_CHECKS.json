@@ -1,0 +1,35 @@
+{
+  "status": "PASS",
+  "checks": [
+    {
+      "pdf_page": 256,
+      "image": "pdf256.png",
+      "finding": "OU根号覆盖全部(2γ)^-1(1-exp(-2γt))；旧方差平方为转录错误"
+    },
+    {
+      "pdf_page": 263,
+      "image": "pdf263.png",
+      "finding": "分部积分两次右端正号；旧负号为转录错误"
+    },
+    {
+      "pdf_page": 268,
+      "image": "pdf268.png",
+      "finding": "圆柱空间前向式印有1/2，仍印φ；保留原文并另设ρ及周期lift修正版"
+    },
+    {
+      "pdf_page": 259,
+      "image": "pdf259-raster-QA.png",
+      "finding": "126dpi整页无损封装可读、无裁失；嵌入源渲染像素完全相同"
+    }
+  ],
+  "image_sha256": {
+    "pdf256.png": "d4597f0639fb15288bf6ea13219b3d7521199b8f6790955a427ad2e930d994fa",
+    "pdf259-raster-QA.png": "012beba7398a743bc4f7a61018f609d064ebb016a7bcc682ca80a44e64913175",
+    "pdf259.png": "7a9dcb407b53308a790cab52ec172912f2aa247b212ed163b0679751dbfd7b84",
+    "pdf263.png": "5b8e981017e12df16656d68955fc131dec8af71de27dfff6595f739a97b1e4a0",
+    "pdf264.png": "941e785d559365af6dbe02d8b9fc80926acb1a1be55f5ac67999c932a3a7f3c9",
+    "pdf265.png": "7e71798423b1666ab0fb3c025e2e6b8393457238e06f3939e342c8b28c1091c4",
+    "pdf267.png": "eeef06e0e5892bac0682ea301695307b9945a2f24c56d94096da538b50e20cc8",
+    "pdf268.png": "82b2a45bc7ef193650843127f290364f3b87ff36344ff5e6f3a80a6e78e409fe"
+  }
+}

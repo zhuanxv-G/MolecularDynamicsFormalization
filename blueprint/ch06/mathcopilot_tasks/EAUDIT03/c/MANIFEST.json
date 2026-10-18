@@ -1,0 +1,41 @@
+{
+  "eaudit": "EAUDIT03",
+  "subtask": "EAUDIT03c",
+  "source_id": "MD-6.2.2-RiemannTags",
+  "input_sha256": {
+    "Blueprint/Ch06.lean": "4a2a6cb72c1692f80e3537ab1a71701d429a482780a01226c3dc66a2ebb8b44b",
+    "blueprint/ch06/ch06_source.json": "d7f93cd20eb570744c710f3e07a88b319c082e4155812fee91db0920eb05944e",
+    "PAGES.pdf": "48a7952cfa6f3f539858c8d6e69812f97ae7dbe448e549595928c64a12a82def",
+    "materials_sha256": "73c5263233f9b7abf88c3bad4a57266f1fb176830e1d6508201a377e52564504"
+  },
+  "paste_sha256": "8c2663560efee9854d80bf869babfd71797ddd65a2071b1bf1ebe51d3ce91761",
+  "source_pdf_sha256": "1939a22e5e96ebd2b58b8e91fe2c796f5390b402f267390f473b271c35d2f036",
+  "pdf_page_mapping": [
+    249
+  ],
+  "crop_pixel_identity": "PASS: copied page render or lossless embedded full-page source pixels",
+  "rasterized_pages": {},
+  "source_declarations": [
+    "riemannTags",
+    "riemannTags_corrected"
+  ],
+  "dependency_excerpts": [
+    {
+      "path": "Blueprint/Ch06.lean",
+      "line": 841,
+      "full_name": "MD.Ch06.riemannTags",
+      "kind": "theorem",
+      "excerpt_sha256": "00df021768c544846eb6396345bc9d95b97bc18ac8ebcac8f8bf64d571ec7747"
+    },
+    {
+      "path": "Blueprint/Ch06.lean",
+      "line": 849,
+      "full_name": "MD.Ch06.riemannTags_corrected",
+      "kind": "theorem",
+      "excerpt_sha256": "a261b9a525d520a2ea12a4f0d446fa868f32a84f44a96b7b475a51976a569f7d"
+    }
+  ],
+  "project_definition_closure": "complete recursive definitions, referenced theorem types, explicit choice and consistency specifications",
+  "website_submitted": false,
+  "total_task_bytes": 83344
+}

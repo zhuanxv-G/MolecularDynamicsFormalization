@@ -1,0 +1,188 @@
+以附件/PASTE 为准，忽略 /workspace 旧文件；Mathlib 定义按标准含义采信。
+A逐字核对原文及证明；C只读核对对象、域、量词、前提和全部结论。所有项目定义体及选择规格在下文；仅作为审阅摘录，不是独立模块。theorem/lemma提供完整类型（不审证明）；定义提供完整定义体，按文件作用域解释。不要因sorry判签名FAIL。原文版忠实性、修正版正确性、反例、原书疑误分别说明，不凭旧文件或repair_log猜声明。
+本条MD-6.1.5-Proposition61，subtask=EAUDIT02b；原PDF页映射=[243]。只读，不改工程或补证明。以JSON对象返回batch=EAUDIT02,input_sha256,items；逐条含source_id,subtask,input_sha256,json_review{status,issue_codes,corrected_json,issues,evidence},audit{lean_decl,verdict,explanation,counterexample,suggested_fix}。verdict=PASS/FAIL/NEEDS_HUMAN，status=APPROVED/CORRECTED/NEEDS_HUMAN。必须原样回显下列全部哈希。
+input_sha256:
+{
+  "Blueprint/Ch06.lean": "4a2a6cb72c1692f80e3537ab1a71701d429a482780a01226c3dc66a2ebb8b44b",
+  "blueprint/ch06/ch06_source.json": "d7f93cd20eb570744c710f3e07a88b319c082e4155812fee91db0920eb05944e",
+  "PAGES.pdf": "b34d51aa9802c443d19f203d12f495d011a06fcc39c812247e770b4912e16e15",
+  "materials_sha256": "ac994c8ce7ca04b1b868a52652c63ea15174d740b3546ed0b2ed094f294a2062"
+}
+
+## 原文JSON
+```json
+{
+  "source_id": "MD-6.1.5-Proposition61",
+  "kind": "proposition",
+  "label": "Proposition 6.1",
+  "section": "6.1.5",
+  "printed_page": "222",
+  "pdf_page": "243",
+  "statement_latex": "Proposition 6.1 Let $H$ be a Hamiltonian defined on the phase space $\\mathbb R^{2N_c}$ and suppose $G:\\mathbb R^{2N_c}\\to\\mathbb R^{2N_c}$ is a smooth ($C^1$) vector field with the following properties:\n\\[0<|\\operatorname{Av}_\\beta(G\\cdot\\nabla H)|<\\infty,\\quad\n0<\\operatorname{Av}_\\beta(\\nabla\\cdot G)<\\infty,\\quad |Ge^{-\\beta H}|<\\infty.\\]\nThen\n\\[k_BT=\\frac{\\operatorname{Av}_\\beta(G\\cdot\\nabla H)}{\\operatorname{Av}_\\beta(\\nabla\\cdot G)}.\\]",
+  "proof_latex": "The proof relies on a $2N_c$-dimensional version of integration by parts. Let $B_R$ be the $2N_c$-dimensional ball centered at the origin, of radius $R$, and let $\\Gamma_R$ be its boundary, the $2N_c-1$-dimensional sphere. Then, for any smooth scalar field $g$ defined on $B_R$, we have\n\\[\\int_{B_R}G\\cdot\\nabla g\\,d\\omega=\\int_{\\Gamma_R}(Gg)\\cdot\\hat n\\,d\\Gamma-\\int_{B_R}(\\nabla\\cdot G)g\\,d\\omega.\\tag{6.6}\\]\nwhere $d\\omega=dq_1\\ldots dp_{N_c}$ is the standard measure of Lebesgue integration in $\\mathbb R^{2N_c}$, and $d\\Gamma$ is the surface area element of the hypersphere, and $\\hat n$ represents the unit outward normal of the sphere. Replace $g$ by $\\rho_\\beta=\\exp(-\\beta H)$, then it follows that\n\\[\\left|\\int_{\\Gamma_R}(G\\rho_\\beta)\\cdot\\hat n\\,d\\Gamma\\right|\\leq\\max_{\\Gamma_R}|G\\rho_\\beta|\\sigma_R\\]\nwhere $\\sigma_R$ is the surface area of the hypersphere. Divide (6.6) by the volume $v_R$ of $B_R$. Then, for large $R$, since the ratio of surface area to volume is proportional to $R^{-1}$, we have\n\\[\\frac{\\int_{B_R}G\\cdot\\nabla\\rho_\\beta d\\omega}{v_R}\\approx\\frac{-\\int_{B_R}(\\nabla\\cdot G)\\rho_\\beta d\\omega}{v_R}.\\]\nSince $\\nabla\\rho_\\beta=-\\beta\\nabla H\\rho_\\beta$, we obtain, in the limit $R\\to\\infty$, the desired result.",
+  "proof_note": "原书完整球边界证明已保留；按体积除法只能给出平均残项，不直接证明所需未缩放IBP。正式库以真实双截断和DCT证明同一结论。",
+  "proof_discussion_latex": null,
+  "context_notation": [],
+  "extra_assumptions": [
+    "[EXTRA]正kB,T、实际C¹ H,G、Gibbs及两个加权可观测量可积，分母严格正；原|Ge⁻βH|<∞解释为统一有界C≥0，不采用仅逐点有限的空洞条件。",
+    "[EXTRA] 25号：所交为显式加强条件的温度恒等式；原证明除以球体积后取极限只给0=0，保留原证明并登记缺口；原下标和体积元依网站原页修订，未认证原论证。"
+  ],
+  "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
+  "coverage_gaps": null
+}
+```
+## 当前完整Lean（全部原文版、修正版及反例）
+```lean
+theorem proposition61 {Nc : ℕ}
+    (H : SymplecticCoordinates Nc → ℝ) (G : SymplecticCoordinates Nc → SymplecticCoordinates Nc)
+    (kB T : ℝ) (hkB : 0 < kB) (hT : 0 < T) (hH : ContDiff ℝ 1 H) (hG : ContDiff ℝ 1 G)
+    (hρI : Integrable (textbookHamiltonianGibbsWeight H (kB * T)⁻¹))
+    (hdivI : Integrable (fun z ↦ textbookDivergence G z * textbookHamiltonianGibbsWeight H (kB * T)⁻¹ z))
+    (henergyI : Integrable (fun z ↦ textbookLieDerivative G H z * textbookHamiltonianGibbsWeight H (kB * T)⁻¹ z))
+    (C : ℝ) (hC : 0 ≤ C)
+    (hbound : ∀ z, ‖textbookHamiltonianGibbsWeight H (kB * T)⁻¹ z • G z‖ ≤ C)
+    (hpos : 0 < textbookCanonicalAverage H (kB * T)⁻¹ (textbookDivergence G)) :
+    kB * T =
+      textbookCanonicalAverage H (kB * T)⁻¹ (textbookLieDerivative G H) /
+        textbookCanonicalAverage H (kB * T)⁻¹ (textbookDivergence G) := by
+  apply MolecularDynamics.proposition_6_1 <;> assumption
+
+/-- 修正版/限定版：原文公式或定义的正确限定陈述；证明/域解释缺口见ERRATA。复制独立证明体，不从原文版占位推导。 -/
+theorem proposition61_corrected {Nc : ℕ}
+    (H : SymplecticCoordinates Nc → ℝ) (G : SymplecticCoordinates Nc → SymplecticCoordinates Nc)
+    (kB T : ℝ) (hkB : 0 < kB) (hT : 0 < T) (hH : ContDiff ℝ 1 H) (hG : ContDiff ℝ 1 G)
+    (hρI : Integrable (textbookHamiltonianGibbsWeight H (kB * T)⁻¹))
+    (hdivI : Integrable (fun z ↦ textbookDivergence G z * textbookHamiltonianGibbsWeight H (kB * T)⁻¹ z))
+    (henergyI : Integrable (fun z ↦ textbookLieDerivative G H z * textbookHamiltonianGibbsWeight H (kB * T)⁻¹ z))
+    (C : ℝ) (hC : 0 ≤ C)
+    (hbound : ∀ z, ‖textbookHamiltonianGibbsWeight H (kB * T)⁻¹ z • G z‖ ≤ C)
+    (hpos : 0 < textbookCanonicalAverage H (kB * T)⁻¹ (textbookDivergence G)) :
+    kB * T =
+      textbookCanonicalAverage H (kB * T)⁻¹ (textbookLieDerivative G H) /
+        textbookCanonicalAverage H (kB * T)⁻¹ (textbookDivergence G) := by
+  apply MolecularDynamics.proposition_6_1 <;> assumption
+```
+### 文件参数及作用域 Blueprint/Ch06.lean
+```lean
+open Set Filter Matrix MeasureTheory ProbabilityTheory MolecularDynamics MolecularDynamics.Chapter02Review MolecularDynamics.Chapter06Review
+open scoped BigOperators Topology ContDiff InnerProductSpace Matrix.Norms.L2Operator ENNReal NNReal
+variable {n Nc : ℕ}
+variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
+variable {R : Type*} [Ring R] [Algebra ℝ R]
+local instance : MeasureSpace UnitAddCircle := ⟨AddCircle.haarAddCircle⟩
+```
+### 文件参数及作用域 MolecularDynamics/Chapter02/SymplecticForm.lean
+```lean
+open Matrix
+open scoped BigOperators Matrix
+```
+### 文件参数及作用域 MolecularDynamics/Chapter03/LiePoisson.lean
+```lean
+open Set Matrix
+open scoped BigOperators Matrix Topology
+variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
+variable {Nc : ℕ}
+```
+### 文件参数及作用域 MolecularDynamics/Chapter05/ReviewDefinitions.lean
+```lean
+open Set Filter MeasureTheory Matrix
+open scoped BigOperators Topology ENNReal
+```
+### 文件参数及作用域 MolecularDynamics/Chapter06/CanonicalIntegrationByParts.lean
+```lean
+open Set Filter MeasureTheory
+open scoped Topology BigOperators
+```
+### 文件参数及作用域 MolecularDynamics/Chapter06/CanonicalTemperature.lean
+```lean
+open Set Filter MeasureTheory
+open scoped Topology BigOperators
+```
+### 文件参数及作用域 MolecularDynamics/Chapter08/ThermostatDensity.lean
+```lean
+open Matrix
+open scoped BigOperators Topology
+variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E] [FiniteDimensional ℝ E]
+variable {G : Type*} [NormedAddCommGroup G] [NormedSpace ℝ G] [FiniteDimensional ℝ G]
+```
+### MD.Ch06.proposition61 [Blueprint/Ch06.lean:424]
+```lean
+theorem proposition61 {Nc : ℕ}
+    (H : SymplecticCoordinates Nc → ℝ) (G : SymplecticCoordinates Nc → SymplecticCoordinates Nc)
+    (kB T : ℝ) (hkB : 0 < kB) (hT : 0 < T) (hH : ContDiff ℝ 1 H) (hG : ContDiff ℝ 1 G)
+    (hρI : Integrable (textbookHamiltonianGibbsWeight H (kB * T)⁻¹))
+    (hdivI : Integrable (fun z ↦ textbookDivergence G z * textbookHamiltonianGibbsWeight H (kB * T)⁻¹ z))
+    (henergyI : Integrable (fun z ↦ textbookLieDerivative G H z * textbookHamiltonianGibbsWeight H (kB * T)⁻¹ z))
+    (C : ℝ) (hC : 0 ≤ C)
+    (hbound : ∀ z, ‖textbookHamiltonianGibbsWeight H (kB * T)⁻¹ z • G z‖ ≤ C)
+    (hpos : 0 < textbookCanonicalAverage H (kB * T)⁻¹ (textbookDivergence G)) :
+    kB * T =
+      textbookCanonicalAverage H (kB * T)⁻¹ (textbookLieDerivative G H) /
+        textbookCanonicalAverage H (kB * T)⁻¹ (textbookDivergence G)
+```
+### MD.Ch06.proposition61_corrected [Blueprint/Ch06.lean:439]
+```lean
+theorem proposition61_corrected {Nc : ℕ}
+    (H : SymplecticCoordinates Nc → ℝ) (G : SymplecticCoordinates Nc → SymplecticCoordinates Nc)
+    (kB T : ℝ) (hkB : 0 < kB) (hT : 0 < T) (hH : ContDiff ℝ 1 H) (hG : ContDiff ℝ 1 G)
+    (hρI : Integrable (textbookHamiltonianGibbsWeight H (kB * T)⁻¹))
+    (hdivI : Integrable (fun z ↦ textbookDivergence G z * textbookHamiltonianGibbsWeight H (kB * T)⁻¹ z))
+    (henergyI : Integrable (fun z ↦ textbookLieDerivative G H z * textbookHamiltonianGibbsWeight H (kB * T)⁻¹ z))
+    (C : ℝ) (hC : 0 ≤ C)
+    (hbound : ∀ z, ‖textbookHamiltonianGibbsWeight H (kB * T)⁻¹ z • G z‖ ≤ C)
+    (hpos : 0 < textbookCanonicalAverage H (kB * T)⁻¹ (textbookDivergence G)) :
+    kB * T =
+      textbookCanonicalAverage H (kB * T)⁻¹ (textbookLieDerivative G H) /
+        textbookCanonicalAverage H (kB * T)⁻¹ (textbookDivergence G)
+```
+### MolecularDynamics.SymplecticCoordinates [MolecularDynamics/Chapter02/SymplecticForm.lean:25]
+```lean
+abbrev SymplecticCoordinates (Nc : ℕ) := (Fin Nc ⊕ Fin Nc) → ℝ
+```
+### MolecularDynamics.textbookLieDerivative [MolecularDynamics/Chapter03/LiePoisson.lean:25]
+```lean
+noncomputable def textbookLieDerivative (f : E → E) (φ : E → ℝ) (z : E) : ℝ :=
+  (fderiv ℝ φ z) (f z)
+```
+### MolecularDynamics.Chapter05Review.E [MolecularDynamics/Chapter05/ReviewDefinitions.lean:18]
+```lean
+abbrev E (n : ℕ) := EuclideanSpace ℝ (Fin n)
+```
+### MolecularDynamics.proposition_6_1 [MolecularDynamics/Chapter06/CanonicalIntegrationByParts.lean:376]
+```lean
+theorem proposition_6_1 {Nc : ℕ}
+    (H : SymplecticCoordinates Nc → ℝ) (G : SymplecticCoordinates Nc → SymplecticCoordinates Nc)
+    (kB T : ℝ) (hkB : 0 < kB) (hT : 0 < T) (hH : ContDiff ℝ 1 H) (hG : ContDiff ℝ 1 G)
+    (hρI : Integrable (textbookHamiltonianGibbsWeight H (kB * T)⁻¹))
+    (hdivI : Integrable (fun z ↦ textbookDivergence G z * textbookHamiltonianGibbsWeight H (kB * T)⁻¹ z))
+    (henergyI : Integrable (fun z ↦ textbookLieDerivative G H z * textbookHamiltonianGibbsWeight H (kB * T)⁻¹ z))
+    (C : ℝ) (hC : 0 ≤ C)
+    (hbound : ∀ z, ‖textbookHamiltonianGibbsWeight H (kB * T)⁻¹ z • G z‖ ≤ C)
+    (hpos : 0 < textbookCanonicalAverage H (kB * T)⁻¹ (textbookDivergence G)) :
+    kB * T =
+      textbookCanonicalAverage H (kB * T)⁻¹ (textbookLieDerivative G H) /
+        textbookCanonicalAverage H (kB * T)⁻¹ (textbookDivergence G)
+```
+### MolecularDynamics.textbookCanonicalPartition [MolecularDynamics/Chapter06/CanonicalTemperature.lean:15]
+```lean
+noncomputable def textbookCanonicalPartition {Nc : ℕ}
+    (H : SymplecticCoordinates Nc → ℝ) (β : ℝ) : ℝ :=
+  ∫ z, textbookHamiltonianGibbsWeight H β z
+```
+### MolecularDynamics.textbookCanonicalAverage [MolecularDynamics/Chapter06/CanonicalTemperature.lean:20]
+```lean
+noncomputable def textbookCanonicalAverage {Nc : ℕ}
+    (H : SymplecticCoordinates Nc → ℝ) (β : ℝ) (f : SymplecticCoordinates Nc → ℝ) : ℝ :=
+  (textbookCanonicalPartition H β)⁻¹ * ∫ z, f z * textbookHamiltonianGibbsWeight H β z
+```
+### MolecularDynamics.textbookDivergence [MolecularDynamics/Chapter08/ThermostatDensity.lean:18]
+```lean
+noncomputable def textbookDivergence (F : E → E) (z : E) : ℝ :=
+  LinearMap.trace ℝ E (fderiv ℝ F z).toLinearMap
+```
+### MolecularDynamics.textbookHamiltonianGibbsWeight [MolecularDynamics/Chapter08/ThermostatDensity.lean:199]
+```lean
+noncomputable def textbookHamiltonianGibbsWeight {Nc : ℕ}
+    (H : SymplecticCoordinates Nc → ℝ) (β : ℝ) : SymplecticCoordinates Nc → ℝ :=
+  fun z ↦ Real.exp (-β * H z)
+```

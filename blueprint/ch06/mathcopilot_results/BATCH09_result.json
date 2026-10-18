@@ -1,0 +1,246 @@
+{
+  "batch": "BATCH09",
+  "chapter": "ch06",
+  "round": "first-merged",
+  "input_sha256": {
+    "Blueprint/Ch06.lean": "0a02a34ec68989a83bccfa5916db5053ecdb58e05667bf21ff3568d9d1f4318e",
+    "blueprint/ch06/ch06_source.json": "45c70ceef21ca168af437de297e2e21e2800b452ab7942654061d4cff9bb5d95"
+  },
+  "items": [
+    {
+      "source_id": "MD-6.1.5-WeightedFluxIdentity",
+      "json_review": {
+        "status": "APPROVED",
+        "issue_codes": [],
+        "corrected_json": {
+          "source_id": "MD-6.1.5-WeightedFluxIdentity",
+          "kind": "extra_claim",
+          "label": null,
+          "section": "6.1.5",
+          "printed_page": "222",
+          "pdf_page": "243",
+          "statement_latex": "Since $\\nabla\\rho_\\beta=-\\beta\\nabla H\\rho_\\beta$, we obtain, in the limit $R\\to\\infty$, the desired result.",
+          "proof_latex": null,
+          "proof_note": "原书未给独立完整证明。",
+          "proof_discussion_latex": null,
+          "context_notation": [],
+          "issues": [],
+          "lean_decl": "MD.Ch06.weightedFluxIdentity",
+          "reusable_proofs": [
+            "MolecularDynamics.textbookCanonicalWeightedFlux_divergence"
+          ],
+          "extra_assumptions": [
+            "[EXTRA]真实Fréchet导数和散度乘法恒等式，β任意、H,G在该点可微；不假设加权散度恒等式。"
+          ],
+          "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
+          "review_status": "APPROVED",
+          "repair_log": [],
+          "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
+        },
+        "issues": [],
+        "evidence": {
+          "A_pdf_pages": [
+            19
+          ],
+          "A_original_pdf_pages": "243",
+          "A_printed_pages": "222",
+          "A_method": "直接读取附件PDF文本，并对对应印刷页的渲染图核对公式、上下标及措辞；重复页的提取正文一致。换行及LaTeX排版编码差异不作数学错误。",
+          "A_result": "所选原句与公式一致；摘录允许省去相邻未选段落，不将省略当作完整原证明。",
+          "C_basis": "仅本任务所给实际签名、该条依赖定义及附录D1–D24；Mathlib按任务约定采信。只读语义审查，未运行Lean编译，未修改工程或补证明，未因sorry判FAIL。"
+        }
+      },
+      "audit": {
+        "lean_decl": "MD.Ch06.weightedFluxIdentity",
+        "verdict": "PASS",
+        "explanation": "∀Nc,H,G,β,z；只要求H和G在z可微。D3权重乘向量场、D8导数迹及D9方向导数满足乘积法则，恰为w(divG-βdH(G))，符号、β系数及全部量词正确；不需要全局积分前提。",
+        "counterexample": null,
+        "suggested_fix": null
+      },
+      "subtask": "BATCH09a",
+      "input_sha256": {
+        "Blueprint/Ch06.lean": "0a02a34ec68989a83bccfa5916db5053ecdb58e05667bf21ff3568d9d1f4318e",
+        "blueprint/ch06/ch06_source.json": "45c70ceef21ca168af437de297e2e21e2800b452ab7942654061d4cff9bb5d95",
+        "BATCH09a_PAGES.pdf": "af5e7a26852f0a5a62902e4282fd309912ce5dae58c3c491bfdadf18ab66ccf6",
+        "signature_sha256": "f365f3df540f2a1148eb0a686f4031bf0a773046c01e61bcf8c9c3377e3492ad"
+      }
+    },
+    {
+      "source_id": "MD-6.1.5-VirialTemperature",
+      "json_review": {
+        "status": "APPROVED",
+        "issue_codes": [],
+        "corrected_json": {
+          "source_id": "MD-6.1.5-VirialTemperature",
+          "kind": "unnumbered_claim",
+          "label": null,
+          "section": "6.1.5",
+          "printed_page": "223",
+          "pdf_page": "244",
+          "statement_latex": "An even simpler configuration-dependent choice is derived from $G=(q,0)^T$, corresponding to\n\\[k_BT=\\frac{\\operatorname{Av}_\\beta(q\\cdot\\nabla U)}{N_c}.\\]",
+          "proof_latex": null,
+          "proof_note": "原书未给独立完整证明。",
+          "proof_discussion_latex": null,
+          "context_notation": [],
+          "issues": [],
+          "lean_decl": "MD.Ch06.virialTemperature",
+          "reusable_proofs": [],
+          "extra_assumptions": [
+            "[EXTRA]实际全配置空间、n>0、一般正质量、正β及C²U；真实加权virial可积且配置通量统一有界，不假设平均温度公式。"
+          ],
+          "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
+          "review_status": "APPROVED",
+          "repair_log": [],
+          "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
+        },
+        "issues": [],
+        "evidence": {
+          "A_pdf_pages": [
+            20
+          ],
+          "A_original_pdf_pages": "244",
+          "A_printed_pages": "223",
+          "A_method": "直接读取附件PDF文本，并对对应印刷页的渲染图核对公式、上下标及措辞；重复页的提取正文一致。换行及LaTeX排版编码差异不作数学错误。",
+          "A_result": "所选原句与公式一致；摘录允许省去相邻未选段落，不将省略当作完整原证明。",
+          "C_basis": "仅本任务所给实际签名、该条依赖定义及附录D1–D24；Mathlib按任务约定采信。只读语义审查，未运行Lean编译，未修改工程或补证明，未因sorry判FAIL。"
+        }
+      },
+      "audit": {
+        "lean_decl": "MD.Ch06.virialTemperature",
+        "verdict": "PASS",
+        "explanation": "n>0、所有质量正、β正、C²U；配置权重及virial权重可积，并有‖q‖exp(-βU)统一界。光滑正权重可积使配置partition正；可由有界配置通量与权重截断得∫q·∇U w=nZ/β，再结合可分离高斯动量，得到全Phase平均除n=β⁻¹。没有假定温度公式；n>0确保相除合法。",
+        "counterexample": null,
+        "suggested_fix": null
+      },
+      "subtask": "BATCH09b",
+      "input_sha256": {
+        "Blueprint/Ch06.lean": "0a02a34ec68989a83bccfa5916db5053ecdb58e05667bf21ff3568d9d1f4318e",
+        "blueprint/ch06/ch06_source.json": "45c70ceef21ca168af437de297e2e21e2800b452ab7942654061d4cff9bb5d95",
+        "BATCH09b_PAGES.pdf": "cf63130a9ca5121bc89a7404bcc51ea8e3ec3f455c9a171780376beda0e47ead",
+        "signature_sha256": "107f83bf4b5d29b1bf586f86f597e621f03ab0332a080d509b51747f028b4258"
+      }
+    },
+    {
+      "source_id": "MD-6.1.5-VirialFieldNotPeriodic",
+      "json_review": {
+        "status": "APPROVED",
+        "issue_codes": [],
+        "corrected_json": {
+          "source_id": "MD-6.1.5-VirialFieldNotPeriodic",
+          "kind": "unnumbered_claim",
+          "label": null,
+          "section": "6.1.5",
+          "printed_page": "224",
+          "pdf_page": "245",
+          "statement_latex": "However $G(z)=(q,0)^T$ is problematic for periodic boundary conditions.",
+          "proof_latex": null,
+          "proof_note": "原书未给独立完整证明。",
+          "proof_discussion_latex": null,
+          "context_notation": [],
+          "issues": [],
+          "lean_decl": "MD.Ch06.virialFieldNotPeriodic",
+          "reusable_proofs": [],
+          "extra_assumptions": [
+            "[EXTRA]沿实际单位周期坐标平移时配置部分q变化，因此G=(q,0)不定义周期torus向量场；i : Fin n自动排除零维空坐标情形。"
+          ],
+          "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
+          "review_status": "APPROVED",
+          "repair_log": [],
+          "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
+        },
+        "issues": [],
+        "evidence": {
+          "A_pdf_pages": [
+            21
+          ],
+          "A_original_pdf_pages": "245",
+          "A_printed_pages": "224",
+          "A_method": "直接读取附件PDF文本，并对对应印刷页的渲染图核对公式、上下标及措辞；重复页的提取正文一致。换行及LaTeX排版编码差异不作数学错误。",
+          "A_result": "所选原句与公式一致；摘录允许省去相邻未选段落，不将省略当作完整原证明。",
+          "C_basis": "仅本任务所给实际签名、该条依赖定义及附录D1–D24；Mathlib按任务约定采信。只读语义审查，未运行Lean编译，未修改工程或补证明，未因sorry判FAIL。"
+        }
+      },
+      "audit": {
+        "lean_decl": "MD.Ch06.virialFieldNotPeriodic",
+        "verdict": "PASS",
+        "explanation": "∀n,i:Fin n,q；结论为q+e_i≠q。评价第i坐标即q_i+1≠q_i，准确表达virial配置部分不周期；i的存在已排除零维。没有错误地把环面上相等的商类与实空间代表相等混淆。",
+        "counterexample": null,
+        "suggested_fix": null
+      },
+      "subtask": "BATCH09c",
+      "input_sha256": {
+        "Blueprint/Ch06.lean": "0a02a34ec68989a83bccfa5916db5053ecdb58e05667bf21ff3568d9d1f4318e",
+        "blueprint/ch06/ch06_source.json": "45c70ceef21ca168af437de297e2e21e2800b452ab7942654061d4cff9bb5d95",
+        "BATCH09c_PAGES.pdf": "8440926fbf7d240a08962216ae13706e5af9d5a5c04fb8f8d7adfe71be515980",
+        "signature_sha256": "3c1241c6cf93ccb809c297f65617676bee8d2e4e700cf5dabc18010a2219aea5"
+      }
+    },
+    {
+      "source_id": "MD-6.1.5-KineticWeightFactorization",
+      "json_review": {
+        "status": "APPROVED",
+        "issue_codes": [
+          "ANNOTATION_PRECISION"
+        ],
+        "corrected_json": {
+          "source_id": "MD-6.1.5-KineticWeightFactorization",
+          "kind": "unnumbered_claim",
+          "label": null,
+          "section": "6.1.5",
+          "printed_page": "221",
+          "pdf_page": "242",
+          "statement_latex": "then we may decompose the unnormalized canonical distribution as\n\\[\\exp(-\\beta[K(p)+U(q)])=\\exp(-\\beta K(p))\\exp(-\\beta U(q))\n=\\exp(-\\beta U(q))\\prod_{i=1}^{N_c}\\exp\\left(-\\beta\\frac{p_i^2}{2m_i}\\right).\\]",
+          "proof_latex": null,
+          "proof_note": "原书未给独立完整证明。",
+          "proof_discussion_latex": null,
+          "context_notation": [],
+          "issues": [
+            {
+              "code": "ANNOTATION_PRECISION",
+              "detail": "正质量未出现在实际签名；它只是[EXTRA]所说的物理解释条件，不是该代数恒等式的必要条件。"
+            }
+          ],
+          "lean_decl": "MD.Ch06.kineticWeightFactorization",
+          "reusable_proofs": [],
+          "extra_assumptions": [
+            "[EXTRA]保存每坐标质量和实际有限乘积；这是点态指数代数恒等式，正质量是物理解释所需，不计积分/能均分已证。"
+          ],
+          "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
+          "review_status": "APPROVED",
+          "repair_log": [],
+          "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json"
+        },
+        "issues": [
+          {
+            "code": "ANNOTATION_PRECISION",
+            "detail": "正质量未出现在实际签名；它只是[EXTRA]所说的物理解释条件，不是该代数恒等式的必要条件。"
+          }
+        ],
+        "evidence": {
+          "A_pdf_pages": [
+            22
+          ],
+          "A_original_pdf_pages": "242",
+          "A_printed_pages": "221",
+          "A_method": "直接读取附件PDF文本，并对对应印刷页的渲染图核对公式、上下标及措辞；重复页的提取正文一致。换行及LaTeX排版编码差异不作数学错误。",
+          "A_result": "所选原句与公式一致；摘录允许省去相邻未选段落，不将省略当作完整原证明。",
+          "C_basis": "仅本任务所给实际签名、该条依赖定义及附录D1–D24；Mathlib按任务约定采信。只读语义审查，未运行Lean编译，未修改工程或补证明，未因sorry判FAIL。"
+        }
+      },
+      "audit": {
+        "lean_decl": "MD.Ch06.kineticWeightFactorization",
+        "verdict": "PASS",
+        "explanation": "∀n,m,q,p,U,β均无符号限制；D5有限和及exp加法/有限和公式给出完整乘积。即使质量为0，Lean实数除法的总定义也使两边同样处理相应项，代数恒等式仍真；正质量仅是物理使用条件，[EXTRA]文字不应误读为实际签名前提。",
+        "counterexample": null,
+        "suggested_fix": null
+      },
+      "subtask": "BATCH09d",
+      "input_sha256": {
+        "Blueprint/Ch06.lean": "0a02a34ec68989a83bccfa5916db5053ecdb58e05667bf21ff3568d9d1f4318e",
+        "blueprint/ch06/ch06_source.json": "45c70ceef21ca168af437de297e2e21e2800b452ab7942654061d4cff9bb5d95",
+        "BATCH09d_PAGES.pdf": "50b24288ad6dc732574a895361be77e0c6a3a88ce443558be0e410f128182628",
+        "signature_sha256": "1b1ef702bd72ab1499b98574727ebd7e5162f47eaa21981116c3ef9f8876110f"
+      }
+    }
+  ],
+  "merged_from": "ch06_first_merged"
+}

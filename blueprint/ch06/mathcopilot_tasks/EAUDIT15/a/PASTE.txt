@@ -1,0 +1,142 @@
+以附件/PASTE 为准，忽略 /workspace 旧文件；Mathlib 定义按标准含义采信。
+A逐字核对原文及证明；C只读核对对象、域、量词、前提和全部结论。所有项目定义体及选择规格在下文；仅作为审阅摘录，不是独立模块。theorem/lemma提供完整类型（不审证明）；定义提供完整定义体，按文件作用域解释。不要因sorry判签名FAIL。原文版忠实性、修正版正确性、反例、原书疑误分别说明，不凭旧文件或repair_log猜声明。
+本条MD-6.4.4-LangevinHormander，subtask=EAUDIT15a；原PDF页映射=[276]。只读，不改工程或补证明。以JSON对象返回batch=EAUDIT15,input_sha256,items；逐条含source_id,subtask,input_sha256,json_review{status,issue_codes,corrected_json,issues,evidence},audit{lean_decl,verdict,explanation,counterexample,suggested_fix}。verdict=PASS/FAIL/NEEDS_HUMAN，status=APPROVED/CORRECTED/NEEDS_HUMAN。必须原样回显下列全部哈希。
+input_sha256:
+{
+  "Blueprint/Ch06.lean": "4a2a6cb72c1692f80e3537ab1a71701d429a482780a01226c3dc66a2ebb8b44b",
+  "blueprint/ch06/ch06_source.json": "d7f93cd20eb570744c710f3e07a88b319c082e4155812fee91db0920eb05944e",
+  "PAGES.pdf": "963c3677394f87b9de29ef07b6f60af6f65d20cc1187fa74df67c0124b4e938e",
+  "materials_sha256": "dd959ff7b5d4d3abc38cf1f7e442b98927af6fbb4ef1d6f99a698fd6e28a67b0"
+}
+
+## 原文JSON
+```json
+{
+  "source_id": "MD-6.4.4-LangevinHormander",
+  "kind": "unnumbered_claim",
+  "label": null,
+  "section": "6.4.4",
+  "printed_page": "255",
+  "pdf_page": "276",
+  "statement_latex": "we have verified Hörmander’s condition. Thus Assumption 1(ii) holds in the case of Langevin dynamics.",
+  "proof_latex": null,
+  "proof_note": "原书未给独立完整证明。",
+  "proof_discussion_latex": null,
+  "context_notation": [],
+  "extra_assumptions": [
+    "[EXTRA]完整物理σ=√(2γθ)、γ/θ>0、C∞ U的实际噪声及括号span；本桥只证rank，转移密度存在另条未证。",
+    "[EXTRA] 25号：scope仅实际Langevin向量场括号rank；密度结论由LangevinTransitionDensity承接，补全部迭代括号定义。"
+  ],
+  "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
+  "coverage_gaps": null
+}
+```
+## 当前完整Lean（全部原文版、修正版及反例）
+```lean
+theorem langevinHormander {Nc : ℕ}
+    (U : (Fin Nc → ℝ) → ℝ) (hU : ContDiff ℝ ∞ U) (γ θ : ℝ)
+    (hγ : 0 < γ) (hθ : 0 < θ) (z : textbookLangevinPhase Nc) :
+    textbookHormanderAt (textbookLangevinSeed U γ (Real.sqrt (2 * γ * θ))) z := by
+  apply MolecularDynamics.textbookLangevin_hormander_physicalNoise <;> assumption
+```
+### 文件参数及作用域 Blueprint/Ch06.lean
+```lean
+open Set Filter Matrix MeasureTheory ProbabilityTheory MolecularDynamics MolecularDynamics.Chapter02Review MolecularDynamics.Chapter06Review
+open scoped BigOperators Topology ContDiff InnerProductSpace Matrix.Norms.L2Operator ENNReal NNReal
+variable {n Nc : ℕ}
+variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
+variable {R : Type*} [Ring R] [Algebra ℝ R]
+local instance : MeasureSpace UnitAddCircle := ⟨AddCircle.haarAddCircle⟩
+```
+### 文件参数及作用域 MolecularDynamics/Chapter02/SymplecticEuler.lean
+```lean
+open Matrix
+open scoped Matrix
+```
+### 文件参数及作用域 MolecularDynamics/Chapter05/ReviewDefinitions.lean
+```lean
+open Set Filter MeasureTheory Matrix
+open scoped BigOperators Topology ENNReal
+```
+### 文件参数及作用域 MolecularDynamics/Chapter06/LangevinHormander.lean
+```lean
+open scoped BigOperators ContDiff
+```
+### 文件参数及作用域 MolecularDynamics/Chapter06/ReviewDefinitions.lean
+```lean
+open Set Filter MeasureTheory ProbabilityTheory
+open scoped BigOperators Topology ContDiff ENNReal NNReal
+local instance : MeasureSpace UnitAddCircle := ⟨AddCircle.haarAddCircle⟩
+```
+### 文件参数及作用域 MolecularDynamics/Chapter08/HormanderClosure.lean
+```lean
+open scoped ContDiff
+variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
+```
+### MD.Ch06.langevinHormander [Blueprint/Ch06.lean:3080]
+```lean
+theorem langevinHormander {Nc : ℕ}
+    (U : (Fin Nc → ℝ) → ℝ) (hU : ContDiff ℝ ∞ U) (γ θ : ℝ)
+    (hγ : 0 < γ) (hθ : 0 < θ) (z : textbookLangevinPhase Nc) :
+    textbookHormanderAt (textbookLangevinSeed U γ (Real.sqrt (2 * γ * θ))) z
+```
+### MolecularDynamics.textbookPotentialForce [MolecularDynamics/Chapter02/SymplecticEuler.lean:34]
+```lean
+noncomputable def textbookPotentialForce {Nc : ℕ}
+    (U : (Fin Nc → ℝ) → ℝ) (q : Fin Nc → ℝ) : Fin Nc → ℝ :=
+  fun i => -(fderiv ℝ U q) (Pi.single i 1)
+```
+### MolecularDynamics.Chapter05Review.E [MolecularDynamics/Chapter05/ReviewDefinitions.lean:18]
+```lean
+abbrev E (n : ℕ) := EuclideanSpace ℝ (Fin n)
+```
+### MolecularDynamics.textbookLangevinPhase [MolecularDynamics/Chapter06/LangevinHormander.lean:12]
+```lean
+abbrev textbookLangevinPhase (Nc : ℕ) := (Fin Nc → ℝ) × (Fin Nc → ℝ)
+```
+### MolecularDynamics.textbookLangevinDrift [MolecularDynamics/Chapter06/LangevinHormander.lean:15]
+```lean
+noncomputable def textbookLangevinDrift {Nc : ℕ}
+    (U : (Fin Nc → ℝ) → ℝ) (γ : ℝ) : textbookLangevinPhase Nc → textbookLangevinPhase Nc :=
+  fun z ↦ (z.2, textbookPotentialForce U z.1 - γ • z.2)
+```
+### MolecularDynamics.textbookLangevinNoise [MolecularDynamics/Chapter06/LangevinHormander.lean:20]
+```lean
+def textbookLangevinNoise (Nc : ℕ) (σ : ℝ) (i : Fin Nc) :
+    textbookLangevinPhase Nc → textbookLangevinPhase Nc := fun _ ↦ (0, σ • Pi.single i 1)
+```
+### MolecularDynamics.textbookLangevinSeed [MolecularDynamics/Chapter06/LangevinHormander.lean:23]
+```lean
+def textbookLangevinSeed {Nc : ℕ} (U : (Fin Nc → ℝ) → ℝ) (γ σ : ℝ) :
+    Set (textbookLangevinPhase Nc → textbookLangevinPhase Nc) :=
+  {textbookLangevinDrift U γ} ∪ Set.range (textbookLangevinNoise Nc σ)
+```
+### MolecularDynamics.textbookLangevin_hormander_physicalNoise [MolecularDynamics/Chapter06/LangevinHormander.lean:162]
+```lean
+theorem textbookLangevin_hormander_physicalNoise {Nc : ℕ}
+    (U : (Fin Nc → ℝ) → ℝ) (hU : ContDiff ℝ ∞ U) (γ θ : ℝ)
+    (hγ : 0 < γ) (hθ : 0 < θ) (z : textbookLangevinPhase Nc) :
+    textbookHormanderAt (textbookLangevinSeed U γ (Real.sqrt (2 * γ * θ))) z
+```
+### MolecularDynamics.Chapter06Review.V [MolecularDynamics/Chapter06/ReviewDefinitions.lean:17]
+```lean
+abbrev V (n : ℕ) := Fin n → ℝ
+```
+### MolecularDynamics.textbookIteratedBracket [MolecularDynamics/Chapter08/HormanderClosure.lean:16]
+```lean
+inductive textbookIteratedBracket (seed : Set (E → E)) : (E → E) → Prop
+  | seed {V : E → E} (hV : V ∈ seed) : textbookIteratedBracket seed V
+  | bracket {V W : E → E} (hV : textbookIteratedBracket seed V)
+      (hW : textbookIteratedBracket seed W) :
+      textbookIteratedBracket seed (VectorField.lieBracket ℝ V W)
+```
+### MolecularDynamics.textbookBracketPointSpan [MolecularDynamics/Chapter08/HormanderClosure.lean:30]
+```lean
+def textbookBracketPointSpan (seed : Set (E → E)) (x : E) : Submodule ℝ E :=
+  Submodule.span ℝ (Set.range (fun V : {V // textbookIteratedBracket seed V} ↦ V.val x))
+```
+### MolecularDynamics.textbookHormanderAt [MolecularDynamics/Chapter08/HormanderClosure.lean:33]
+```lean
+def textbookHormanderAt (seed : Set (E → E)) (x : E) : Prop :=
+  textbookBracketPointSpan seed x = ⊤
+```

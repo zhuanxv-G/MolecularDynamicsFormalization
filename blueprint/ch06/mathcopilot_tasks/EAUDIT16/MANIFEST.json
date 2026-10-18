@@ -1,0 +1,29 @@
+{
+  "eaudit": "EAUDIT16",
+  "subtasks": [
+    {
+      "subtask": "EAUDIT16a",
+      "source_id": "MD-6.4.4-Lemma61Nonempty",
+      "path": "blueprint/ch06/mathcopilot_tasks/EAUDIT16/a",
+      "total_bytes": 125471,
+      "definitions": 20,
+      "manifest_sha256": "2f25557ec442becbaa02d360445cd668ce5be970b74becc416c7c7f4a6ae060d"
+    },
+    {
+      "subtask": "EAUDIT16b",
+      "source_id": "MD-6.4.4-LangevinGeometricErgodicity",
+      "path": "blueprint/ch06/mathcopilot_tasks/EAUDIT16/b",
+      "total_bytes": 139571,
+      "definitions": 32,
+      "manifest_sha256": "6b31607958425e249a8cfb42bc51ec7daeb062046d1350978afc0ce6fb00fdb3"
+    },
+    {
+      "subtask": "EAUDIT16c",
+      "source_id": "MD-6.4.4-LangevinTimeAverage",
+      "path": "blueprint/ch06/mathcopilot_tasks/EAUDIT16/c",
+      "total_bytes": 145929,
+      "definitions": 40,
+      "manifest_sha256": "660927f23ae5471f737b3522b1fb77ae8b81e6c4b8d633aa3956ae8ee3377e9b"
+    }
+  ]
+}

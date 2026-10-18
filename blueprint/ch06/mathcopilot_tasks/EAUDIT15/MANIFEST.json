@@ -1,0 +1,29 @@
+{
+  "eaudit": "EAUDIT15",
+  "subtasks": [
+    {
+      "subtask": "EAUDIT15a",
+      "source_id": "MD-6.4.4-LangevinHormander",
+      "path": "blueprint/ch06/mathcopilot_tasks/EAUDIT15/a",
+      "total_bytes": 113605,
+      "definitions": 12,
+      "manifest_sha256": "7aefd3ad3d4367d99bd9e84e3423c372611df3461bf5ea8fd1858b6090d6a264"
+    },
+    {
+      "subtask": "EAUDIT15b",
+      "source_id": "MD-6.4.4-LangevinTransitionDensity",
+      "path": "blueprint/ch06/mathcopilot_tasks/EAUDIT15/b",
+      "total_bytes": 124508,
+      "definitions": 20,
+      "manifest_sha256": "98eb4848a927157688b37befb0a65d4c755a9c59a962abc1cdd3c4d85fc5b08a"
+    },
+    {
+      "subtask": "EAUDIT15c",
+      "source_id": "MD-6.4.4-Lemma61Printed",
+      "path": "blueprint/ch06/mathcopilot_tasks/EAUDIT15/c",
+      "total_bytes": 121413,
+      "definitions": 17,
+      "manifest_sha256": "becef105f8682cbaf06b1a5fad2a3340ddf3f8c1365a044b72206ceb83d3b64f"
+    }
+  ]
+}

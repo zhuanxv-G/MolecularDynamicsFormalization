@@ -1,0 +1,29 @@
+{
+  "eaudit": "EAUDIT08",
+  "subtasks": [
+    {
+      "subtask": "EAUDIT08a",
+      "source_id": "MD-6.3.3-MemoryKernelDeltaMeaning",
+      "path": "blueprint/ch06/mathcopilot_tasks/EAUDIT08/a",
+      "total_bytes": 180980,
+      "definitions": 5,
+      "manifest_sha256": "e35b07edeeaa04065eee6ce0823a98894a25d05818c4b3dfa13dbd79d383e341"
+    },
+    {
+      "subtask": "EAUDIT08b",
+      "source_id": "MD-6.3.3-BathForceWeakLimitMeaning",
+      "path": "blueprint/ch06/mathcopilot_tasks/EAUDIT08/b",
+      "total_bytes": 246047,
+      "definitions": 6,
+      "manifest_sha256": "7f8483c3d8bc447819b4dc04714c01f2c83ae8891bf3c92f407f6e57c7049a66"
+    },
+    {
+      "subtask": "EAUDIT08c",
+      "source_id": "MD-6.3.6-FPDiffusionPrinted",
+      "path": "blueprint/ch06/mathcopilot_tasks/EAUDIT08/c",
+      "total_bytes": 80492,
+      "definitions": 12,
+      "manifest_sha256": "b997e607eee7aacd6c8d845766c23d499b4f0b320b8d3d36bb96b10b32c8419f"
+    }
+  ]
+}

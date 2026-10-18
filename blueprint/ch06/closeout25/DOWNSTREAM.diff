@@ -1,0 +1,11 @@
+--- before
++++ after
+@@ -3308,7 +3308,7 @@
+     (hβ : 0 < β) (_hγ : 0 < γ), textbookIsWienerVector B P →
+   let E := Lp ℂ 2 (MolecularDynamics.Chapter06Review.flatPhaseMeasure n)
+   ∀ (S : ℝ≥0 → E →L[ℂ] E) (A : E →ₗ.[ℂ] E) (ρeq ρ1 : E) (α : ℝ) (ev : ℂ),
+-    langevinForwardSemigroupMeaning
++    langevinForwardSemigroupMeaning U β γ
+       (textbookLangevinPeriodicTransitionKernel B P U hU hp L hF γ (Real.sqrt (2*γ*β⁻¹))) S →
+     (∀ᵐ x ∂MolecularDynamics.Chapter06Review.flatPhaseMeasure n,
+       ρeq x=(textbookLangevinCanonicalDensity U β x : ℂ)) →
