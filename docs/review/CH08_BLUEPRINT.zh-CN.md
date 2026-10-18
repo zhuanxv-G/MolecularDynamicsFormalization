@@ -1,6 +1,6 @@
 # 第8章 Lean Blueprint 本地审阅材料
 
-当前已整理82条；网站尚未审阅。正文范围为印刷329–399页（PDF350–420），末页仅取Exercises之前的正文；PDF423起附录不在本轮范围。
+当前已整理99条；网站尚未审阅。正文范围为印刷329–399页（PDF350–420），末页仅取Exercises之前的正文；PDF423起附录不在本轮范围。
 
 ## 1. MD-8.1-CanonicalCorrelation · definition · 印刷p.329–330 / PDFp.350–351
 
@@ -133,7 +133,7 @@ theorem extendedAverage {E B : Type*} [MeasurableSpace E] [MeasurableSpace B]
 
 | 原文成分 | Lean对应 | 说明 |
 |---|---|---|
-| 本条引用的对象与公式 | MD.Ch08.extendedDensity, MD.Ch08.extendedAverage | 本条列出的数学对象与结论全部；上下文见逐字原页。 |
+| 本条引用的对象与公式 | MD.Ch08.extendedDensity, MD.Ch08.extendedAverage | 乘积权定义及辅助因子积分为1时的边缘积分等式；不额外证明概率正性或一般流不变性。 |
 
 [EXTRA] 辅助密度归一、乘积积分可积；使用有限/σ有限测度条件。
 记号与上下文：见所列原文与Lean量化变量。
@@ -181,7 +181,7 @@ def isNHSolution (invm : Vec n) (U : Vec n → ℝ) (β Q : ℝ)
 
 | 原文成分 | Lean对应 | 说明 |
 |---|---|---|
-| 本条引用的对象与公式 | MD.Ch08.thermostatParameters, MD.Ch08.kineticTwice, MD.Ch08.nhField, MD.Ch08.isNHSolution | 本条列出的数学对象与结论全部；上下文见逐字原页。 |
+| 本条引用的对象与公式 | MD.Ch08.thermostatParameters, MD.Ch08.kineticTwice, MD.Ch08.nhField, MD.Ch08.isNHSolution | 正参数资格、动能平方和、NH实际向量场及全实时间ODE规格。 |
 
 [EXTRA] μ记为Q且Q>0，β>0，正质量，热浴变量ξ∈ℝ；总函数nhField配合资格谓词使用。
 记号与上下文：见所列原文与Lean量化变量。
@@ -282,7 +282,7 @@ theorem nhIntegral_corrected (invm : Vec n) (U : Vec n → ℝ) (β Q : ℝ)
 
 | 原文成分 | Lean对应 | 说明 |
 |---|---|---|
-| 本条引用的对象与公式 | MD.Ch08.nhIntegral, MD.Ch08.nhIntegralPrinted, MD.Ch08.nhIntegral_corrected | 本条列出的数学对象与结论全部；上下文见逐字原页。 |
+| 本条引用的对象与公式 | MD.Ch08.nhIntegral, MD.Ch08.nhIntegralPrinted, MD.Ch08.nhIntegral_corrected | 第一积分候选、原印s导数与修正s导数各自对应的沿解零导数目标；原印版不证。 |
 
 [EXTRA] s>0；原文版不证明，修正版另列；两版均保留原文H形式。
 记号与上下文：见所列原文与Lean量化变量。
@@ -419,7 +419,7 @@ theorem nhStep_inverse (invm : Vec n) (U : Vec n → ℝ) (β Q h : ℝ) :
 
 | 原文成分 | Lean对应 | 说明 |
 |---|---|---|
-| 本条引用的对象与公式 | MD.Ch08.nhStep_reversible, MD.Ch08.nhStep_inverse | 本条列出的数学对象与结论全部；上下文见逐字原页。 |
+| 本条引用的对象与公式 | MD.Ch08.nhStep_reversible, MD.Ch08.nhStep_inverse | 五段单步的反演等式及负步长左逆两个目标；未建立误差阶数。 |
 
 [EXTRA] 逆映射以负步长映射及LeftInverse表达；不假设算法可逆作为结论的前提。
 记号与上下文：见所列原文与Lean量化变量。
@@ -472,7 +472,7 @@ theorem nosePoincare_corrected (invm : Vec n) (U : Vec n → ℝ) (β Q EN : ℝ
 
 | 原文成分 | Lean对应 | 说明 |
 |---|---|---|
-| 本条引用的对象与公式 | MD.Ch08.noseHamiltonian, MD.Ch08.npHamiltonian, MD.Ch08.nosePoincarePrinted, MD.Ch08.nosePoincare_corrected | 本条列出的数学对象与结论全部；上下文见逐字原页。 |
+| 本条引用的对象与公式 | MD.Ch08.noseHamiltonian, MD.Ch08.npHamiltonian, MD.Ch08.nosePoincarePrinted, MD.Ch08.nosePoincare_corrected | 两个原印Hamiltonian定义、所印等式目标及减去对数差项后的代数修正。 |
 
 [EXTRA] 物理定义域s>0、β,Q及质量正；总函数在此域外不作物理解释。
 记号与上下文：见所列原文与Lean量化变量。
@@ -517,7 +517,7 @@ def npField (invm : Vec n) (U : Vec n → ℝ) (β Q EN : ℝ)
 
 | 原文成分 | Lean对应 | 说明 |
 |---|---|---|
-| 本条引用的对象与公式 | MD.Ch08.npField | 本条列出的数学对象与结论全部；上下文见逐字原页。 |
+| 本条引用的对象与公式 | MD.Ch08.npField | 四个NP漂移分量的实际定义；从Hamiltonian求导得到这些分量未证。 |
 
 [EXTRA] ΔH采用(8.9)展开内的N_d版本；β,Q>0及s>0为有效域；尚未桥接实际Hamiltonian梯度。
 记号与上下文：见所列原文与Lean量化变量。
@@ -652,7 +652,7 @@ def skewMatrix (J : Matrix (Fin n) (Fin n) ℝ) : Prop := J.transpose = -J
 
 | 原文成分 | Lean对应 | 说明 |
 |---|---|---|
-| 本条引用的对象与公式 | MD.Ch08.generalThermostat, MD.Ch08.skewMatrix | 本条列出的数学对象与结论全部；上下文见逐字原页。 |
+| 本条引用的对象与公式 | MD.Ch08.generalThermostat, MD.Ch08.skewMatrix | 常矩阵一般热浴场及矩阵反对称资格的定义；不声称已证驻定或采样。 |
 
 [EXTRA] J为常矩阵，Jᵀ=-J；z、ξ为实向量，光滑资格在结论中给出。
 记号与上下文：见所列原文与Lean量化变量。
@@ -747,7 +747,7 @@ theorem thermostatCriterion {k : ℕ} (J : Matrix (Fin n) (Fin n) ℝ)
 
 | 原文成分 | Lean对应 | 说明 |
 |---|---|---|
-| 本条引用的对象与公式 | MD.Ch08.thermalWeight, MD.Ch08.thermostatCriterion | 本条列出的数学对象与结论全部；上下文见逐字原页。 |
+| 本条引用的对象与公式 | MD.Ch08.thermalWeight, MD.Ch08.thermostatCriterion | 给定正参数与光滑性后，局部Liouville驻定与所列标量散度条件的等价目标。 |
 
 [EXTRA] 原文μ_i在指数中是热质量，统一写Q_i；矩阵μ⁻¹的记号按对角热质量解释。归一化概率密度需另加有限正配分积分。
 记号与上下文：见所列原文与Lean量化变量。
@@ -797,7 +797,7 @@ theorem generalizedFeedback_stationary (J : Matrix (Fin n) (Fin n) ℝ)
 
 | 原文成分 | Lean对应 | 说明 |
 |---|---|---|
-| 本条引用的对象与公式 | MD.Ch08.generalizedFeedback, MD.Ch08.configurationalFeedback, MD.Ch08.generalizedFeedback_stationary | 本条列出的数学对象与结论全部；上下文见逐字原页。 |
+| 本条引用的对象与公式 | MD.Ch08.generalizedFeedback, MD.Ch08.configurationalFeedback, MD.Ch08.generalizedFeedback_stationary | 单热浴一般G反馈及构型反馈公式、一般G的局部驻定目标；Example8.1由NH另条覆盖。 |
 
 [EXTRA] Example8.1使用此前完整NH定义；本条单热浴一般G与构型反馈公式，构型全场与驻定证明未单列。
 记号与上下文：见所列原文与Lean量化变量。
@@ -842,7 +842,7 @@ def phaseTemperature (kB numerator denominator : ℝ) : ℝ := numerator/(kB*den
 
 | 原文成分 | Lean对应 | 说明 |
 |---|---|---|
-| 本条引用的对象与公式 | MD.Ch08.temperatureIdentity, MD.Ch08.phaseTemperature | 本条列出的数学对象与结论全部；上下文见逐字原页。 |
+| 本条引用的对象与公式 | MD.Ch08.temperatureIdentity, MD.Ch08.phaseTemperature | 紧支撑G的Gibbs积分分部目标及温度比值定义；一般边界衰减条件和比值推导未另证。 |
 
 [EXTRA] 以G紧支撑替代原文未量化的足够快边界衰减；温度比值解释另要求k_B>0、分母非零。
 记号与上下文：见所列原文与Lean量化变量。
@@ -897,7 +897,7 @@ theorem proposition81 {H : SymplecticCoordinates n → ℝ} (hH : ContDiff ℝ 2
 
 | 原文成分 | Lean对应 | 说明 |
 |---|---|---|
-| 本条引用的对象与公式 | MD.Ch08.proposition81 | 本条列出的数学对象与结论全部；上下文见逐字原页。 |
+| 本条引用的对象与公式 | MD.Ch08.proposition81 | 两个标量热浴的局部Liouville驻定相加命题；不含多维热浴或全局流保测性。 |
 
 [EXTRA] 两个标量辅助变量的实际Liouville驻定版本；非负、归一后称概率密度，流保测性另需完整流存在与Jacobian条件。多维辅助变量未覆盖。
 记号与上下文：见所列原文与Lean量化变量。
@@ -948,7 +948,7 @@ theorem nhChain_stationary (k : ℕ) (hk : 0 < k) (invm : Vec n) (U : Vec n → 
 
 | 原文成分 | Lean对应 | 说明 |
 |---|---|---|
-| 本条引用的对象与公式 | MD.Ch08.nhChainField, MD.Ch08.nhChain_stationary | 本条列出的数学对象与结论全部；上下文见逐字原页。 |
+| 本条引用的对象与公式 | MD.Ch08.nhChainField, MD.Ch08.nhChain_stationary | 任意正链长的完整NH链场及Gaussian权局部驻定目标；不含遍历性。 |
 
 [EXTRA] 链长k>0，各热质量Q_j>0、β>0，实辅助变量；未归一Gaussian权重不声称唯一不变概率或遍历性。
 记号与上下文：见所列原文与Lean量化变量。
@@ -989,7 +989,7 @@ theorem arrheniusRate_nonneg (A ΔE kB T : ℝ) (hA : 0 ≤ A) :
 
 | 原文成分 | Lean对应 | 说明 |
 |---|---|---|
-| 本条引用的对象与公式 | MD.Ch08.arrheniusRate, MD.Ch08.arrheniusRate_nonneg | 本条列出的数学对象与结论全部；上下文见逐字原页。 |
+| 本条引用的对象与公式 | MD.Ch08.arrheniusRate, MD.Ch08.arrheniusRate_nonneg | Arrhenius指数速率公式定义及A≥0时非负性；不含亚稳跃迁率渐近定理或温度单调性。 |
 
 [EXTRA] A≥0,k_B>0,T>0为速率解释域；只定义原页模型，不声称一般能垒动力学服从此经验律。
 记号与上下文：见所列原文与Lean量化变量。
@@ -1097,7 +1097,7 @@ theorem diffusionPrinted_counterexample : ¬ ((1/(2:ℝ))*(-1) = -(1:ℝ)) := by
 
 | 原文成分 | Lean对应 | 说明 |
 |---|---|---|
-| 本条引用的对象与公式 | MD.Ch08.ouFokkerPlanck, MD.Ch08.ouStationarity_corrected, MD.Ch08.diffusionPrinted, MD.Ch08.diffusionPrinted_counterexample | 本条列出的数学对象与结论全部；上下文见逐字原页。 |
+| 本条引用的对象与公式 | MD.Ch08.ouFokkerPlanck, MD.Ch08.ouStationarity_corrected, MD.Ch08.diffusionPrinted, MD.Ch08.diffusionPrinted_counterexample | 协方差匹配的完整OU局部驻定目标；所印扩散抵消的标量特例及数值反例。 |
 
 [EXTRA] Printed保留显示抵消式的M=Γ=1,p=0标量特例；修正版为完整匹配协方差后的OU驻定式；不将转移分布存在性作为已证。
 记号与上下文：见所列原文与Lean量化变量。
@@ -1140,7 +1140,7 @@ def liftedThermostat (F G : Vec n → Vec n) (g : Vec n → ℝ) (γ σ : ℝ)
 
 | 原文成分 | Lean对应 | 说明 |
 |---|---|---|
-| 本条引用的对象与公式 | MD.Ch08.liftedThermostat | 本条列出的数学对象与结论全部；上下文见逐字原页。 |
+| 本条引用的对象与公式 | MD.Ch08.liftedThermostat | 一般单热浴提升场的实际加性Wiener积分解规格。 |
 
 [EXTRA] 真实Wiener、适应性和可积性由additiveSDE给出；σ≠0在Hörmander结论中单列。
 记号与上下文：见所列原文与Lean量化变量。
@@ -1188,7 +1188,7 @@ theorem proposition82_corrected (F G : Vec n → Vec n) (g : Vec n → ℝ) (γ 
 
 | 原文成分 | Lean对应 | 说明 |
 |---|---|---|
-| 本条引用的对象与公式 | MD.Ch08.proposition82Printed, MD.Ch08.proposition82_corrected | 本条列出的数学对象与结论全部；上下文见逐字原页。 |
+| 本条引用的对象与公式 | MD.Ch08.proposition82Printed, MD.Ch08.proposition82_corrected | 所印及补σ≠0后的真实Lie括号张成命题；不含解存在、平滑转移核或遍历性。 |
 
 [EXTRA] Printed版保留未要求非零σ的原文强度，不证明；修正版完整使用真实迭代Lie括号张成定义。
 记号与上下文：见所列原文与Lean量化变量。
@@ -1277,7 +1277,7 @@ theorem lemma81 (A : Matrix (Fin n) (Fin n) ℝ) (k : ℕ) :
 
 | 原文成分 | Lean对应 | 说明 |
 |---|---|---|
-| 本条引用的对象与公式 | MD.Ch08.lemma81 | 本条列出的数学对象与结论全部；上下文见逐字原页。 |
+| 本条引用的对象与公式 | MD.Ch08.lemma81 | 线性向量场C、D在实际Lie生成空间中的归属；Lean零起始索引对应原文正索引。 |
 
 [EXTRA] Lean索引k=0对应原文k=1；完整实际线性场、导数括号与End括号约定均摘录；生成子代数在相反括号下相同。
 记号与上下文：见所列原文与Lean量化变量。
@@ -1320,7 +1320,7 @@ theorem proposition83 (A : Matrix (Fin n) (Fin n) ℝ) (hA : A.PosDef)
 
 | 原文成分 | Lean对应 | 说明 |
 |---|---|---|
-| 本条引用的对象与公式 | MD.Ch08.proposition83 | 本条列出的数学对象与结论全部；上下文见逐字原页。 |
+| 本条引用的对象与公式 | MD.Ch08.proposition83 | 指定模态域内的2n个实际线性场值线性无关；不扩大到例外零模态。 |
 
 [EXTRA] D的每个特征模态中q、p不能同时为0；有限族用Fin n⊕Fin n索引；完整证明消去两组系数。
 记号与上下文：见所列原文与Lean量化变量。
@@ -1369,7 +1369,7 @@ theorem theorem81_corrected (A : Matrix (Fin n) (Fin n) ℝ) (hA : A.PosDef)
 
 | 原文成分 | Lean对应 | 说明 |
 |---|---|---|
-| 本条引用的对象与公式 | MD.Ch08.theorem81Printed, MD.Ch08.theorem81_corrected | 本条列出的数学对象与结论全部；上下文见逐字原页。 |
+| 本条引用的对象与公式 | MD.Ch08.theorem81Printed, MD.Ch08.theorem81_corrected | 所印及补参数资格后的NHL点态Hörmander条件；不含由其推出全局几何遍历性。 |
 
 [EXTRA] D严格采用每个特征模态q、p不同时为零；正温度、质量、摩擦及非零噪声明确写出。
 记号与上下文：见所列原文与Lean量化变量。
@@ -1419,7 +1419,7 @@ theorem zeroMode_invariant {A : Matrix (Fin n) (Fin n) ℝ} (hA : A.IsHermitian)
 
 | 原文成分 | Lean对应 | 说明 |
 |---|---|---|
-| 本条引用的对象与公式 | MD.Ch08.modeDomain_complement, MD.Ch08.zeroMode_invariant | 本条列出的数学对象与结论全部；上下文见逐字原页。 |
+| 本条引用的对象与公式 | MD.Ch08.modeDomain_complement, MD.Ch08.zeroMode_invariant | 模态域的补集表达及连续热浴路径驱动的模态ODE零模态不变。 |
 
 [EXTRA] 任意紧时间区间上的实际模态ODE；连续随机热浴路径可逐路径应用，不额外声称SDE解存在。
 记号与上下文：见所列原文与Lean量化变量。
@@ -1467,7 +1467,7 @@ def geometricDriftBound {E : Type*} (L : (E → ℝ) → E → ℝ) (V : E → �
 
 | 原文成分 | Lean对应 | 说明 |
 |---|---|---|
-| 本条引用的对象与公式 | MD.Ch08.additiveGenerator, MD.Ch08.nhlGenerator, MD.Ch08.nhlLyapunov, MD.Ch08.geometricDriftBound | 本条列出的数学对象与结论全部；上下文见逐字原页。 |
+| 本条引用的对象与公式 | MD.Ch08.additiveGenerator, MD.Ch08.nhlGenerator, MD.Ch08.nhlLyapunov, MD.Ch08.geometricDriftBound | 实际加性扩散的Fréchet形式生成元、Lyapunov候选及漂移界性质的定义。 |
 
 [EXTRA] 采用实际一阶、二阶Fréchet导数；原文省略f的-ξp·∇p理解为作用于f；Q,β,γ须正。
 记号与上下文：见所列原文与Lean量化变量。
@@ -1515,7 +1515,7 @@ theorem shiftedSquare_bound (ξ a : ℝ) : -ξ^2-a^2 ≤ -(ξ-a)^2/2 := by
 
 | 原文成分 | Lean对应 | 说明 |
 |---|---|---|
-| 本条引用的对象与公式 | MD.Ch08.nhlLyapunovExpression, MD.Ch08.nhlLyapunov_calculation, MD.Ch08.shiftedSquare_bound | 本条列出的数学对象与结论全部；上下文见逐字原页。 |
+| 本条引用的对象与公式 | MD.Ch08.nhlLyapunovExpression, MD.Ch08.nhlLyapunov_calculation, MD.Ch08.shiftedSquare_bound | 实际NHL生成元作用于平移二次能量的目标及标量平方不等式；未据此证明遍历。 |
 
 [EXTRA] U下界>1且上界有限用于后续Lyapunov正性/漂移估计；本条计算本身只需C²。
 记号与上下文：见所列原文与Lean量化变量。
@@ -1574,7 +1574,7 @@ theorem lyapunovRate_corrected (P2 U Umax ξ Q θ γ a N : ℝ)
 
 | 原文成分 | Lean对应 | 说明 |
 |---|---|---|
-| 本条引用的对象与公式 | MD.Ch08.lyapunovAlphaPrinted, MD.Ch08.lyapunovAlpha_corrected, MD.Ch08.lyapunovRatePrinted, MD.Ch08.lyapunovRate_counterexample, MD.Ch08.lyapunovRate_corrected | 本条列出的数学对象与结论全部；上下文见逐字原页。 |
+| 本条引用的对象与公式 | MD.Ch08.lyapunovAlphaPrinted, MD.Ch08.lyapunovAlpha_corrected, MD.Ch08.lyapunovRatePrinted, MD.Ch08.lyapunovRate_counterexample, MD.Ch08.lyapunovRate_corrected | 所印与修正衰减系数、两版漂移界目标及所印界的正参数数值反例。 |
 
 [EXTRA] 修正为min(2a,γ)，仅修正漂移代数估计；几何遍历还需完整概率半群、小集条件和解理论，未声称已证。
 记号与上下文：见所列原文与Lean量化变量。
@@ -1623,7 +1623,7 @@ def standardNormalSequence (P : Measure Ω) (R : ℕ → Ω → ℝ) : Prop :=
 
 | 原文成分 | Lean对应 | 说明 |
 |---|---|---|
-| 本条引用的对象与公式 | MD.Ch08.nhlOU, MD.Ch08.forceKick, MD.Ch08.bathDamping, MD.Ch08.nhlStep, MD.Ch08.standardNormalSequence | 本条列出的数学对象与结论全部；上下文见逐字原页。 |
+| 本条引用的对象与公式 | MD.Ch08.nhlOU, MD.Ch08.forceKick, MD.Ch08.bathDamping, MD.Ch08.nhlStep, MD.Ch08.standardNormalSequence | 实际九阶段NHL单步映射、OU随机输入及独立标准正态序列资格；不含整体稳定性。 |
 
 [EXTRA] R_n独立标准正态；h≥0、β,Q>0、γ≥0用于OU噪声解释；所谓无限摩擦稳定性没有扩大成完整算法无条件稳定定理。
 记号与上下文：见所列原文与Lean量化变量。
@@ -1672,7 +1672,7 @@ theorem nhlWeakStationary (invm : Vec n) (U : Vec n → ℝ) (β Q γ Z : ℝ)
 
 | 原文成分 | Lean对应 | 说明 |
 |---|---|---|
-| 本条引用的对象与公式 | MD.Ch08.weakStationaryNHL, MD.Ch08.nhlWeakStationary | 本条列出的数学对象与结论全部；上下文见逐字原页。 |
+| 本条引用的对象与公式 | MD.Ch08.weakStationaryNHL, MD.Ch08.nhlWeakStationary | 归一概率密度的弱驻定积分式目标；Markov半群不变性、唯一性和遍历性未覆盖。 |
 
 [EXTRA] 只覆盖归一概率密度的弱驻定积分式；Markov半群不变性、唯一性及遍历结论需要额外解理论，明确列覆盖缺口。
 记号与上下文：见所列原文与Lean量化变量。
@@ -1715,7 +1715,7 @@ def preEquilibriumDensity (ρ : ℝ → Phase n × ℝ → ℝ) : Prop :=
 
 | 原文成分 | Lean对应 | 说明 |
 |---|---|---|
-| 本条引用的对象与公式 | MD.Ch08.meanKineticTwice, MD.Ch08.meanBath, MD.Ch08.preEquilibriumDensity | 本条列出的数学对象与结论全部；上下文见逐字原页。 |
+| 本条引用的对象与公式 | MD.Ch08.meanKineticTwice, MD.Ch08.meanBath, MD.Ch08.preEquilibriumDensity | 两项瞬时分布平均及随时间非负归一密度的资格；局部稳定性和闭合方程未覆盖。 |
 
 [EXTRA] ρ非负、可积且归一；外引局部稳定性分析未给闭合方程，列覆盖缺口。
 记号与上下文：见所列原文与Lean量化变量。
@@ -1768,7 +1768,7 @@ theorem rescalingPsi_original (γ θ K : ℝ) (hK : K ≠ 0) :
 
 | 原文成分 | Lean对应 | 说明 |
 |---|---|---|
-| 本条引用的对象与公式 | MD.Ch08.rescalingPsi, MD.Ch08.rescalingDrift, MD.Ch08.rescalingNoise, MD.Ch08.originalRescalingPhi, MD.Ch08.rescalingAdmissible, MD.Ch08.rescalingPsi_original | 本条列出的数学对象与结论全部；上下文见逐字原页。 |
+| 本条引用的对象与公式 | MD.Ch08.rescalingPsi, MD.Ch08.rescalingDrift, MD.Ch08.rescalingNoise, MD.Ch08.originalRescalingPhi, MD.Ch08.rescalingAdmissible, MD.Ch08.rescalingPsi_original | 实际漂移扩散、Φ有效性和原始Φ对应Ψ的化简目标；没有完整乘性SDE解规格。 |
 
 [EXTRA] Φ在K>0光滑正，KΦ在0附近有界且多项式增长；原始Φ在K=0奇异，未声称全空间光滑扩散或遍历性。
 记号与上下文：见所列原文与Lean量化变量。
@@ -1816,7 +1816,7 @@ theorem rescalingStationary (U : Vec n → ℝ) (Φ : ℝ → ℝ) (θ Z : ℝ)
 
 | 原文成分 | Lean对应 | 说明 |
 |---|---|---|
-| 本条引用的对象与公式 | MD.Ch08.rescalingStationary | 本条列出的数学对象与结论全部；上下文见逐字原页。 |
+| 本条引用的对象与公式 | MD.Ch08.rescalingStationary | 支撑避开零动量的测试函数弱驻定目标；零动量边界与半群不变性未覆盖。 |
 
 [EXTRA] 测试函数支撑远离K=0，覆盖弱驻定式；完整随机解与半群不变性列缺口。二阶项冻结f的一阶微分求导，表示Itô Hessian而不混入Stratonovich漂移。
 记号与上下文：见所列原文与Lean量化变量。
@@ -1912,7 +1912,7 @@ def slsDeterministic (invm : Vec n) (U : Vec n → ℝ) (Q : ℝ) (z : Phase n �
 
 | 原文成分 | Lean对应 | 说明 |
 |---|---|---|
-| 本条引用的对象与公式 | MD.Ch08.slsDrift, MD.Ch08.slsNoise, MD.Ch08.isSLSSolution, MD.Ch08.slsDeterministic | 本条列出的数学对象与结论全部；上下文见逐字原页。 |
+| 本条引用的对象与公式 | MD.Ch08.slsDrift, MD.Ch08.slsNoise, MD.Ch08.isSLSSolution, MD.Ch08.slsDeterministic | 完整SLS加性SDE积分解规格、噪声方向与确定性子场定义。 |
 
 [EXTRA] 全部n+1个Wiener坐标独立，Q、质量、温度及两摩擦参数正；总漂移和常噪声用实际积分方程解释。
 记号与上下文：见所列原文与Lean量化变量。
@@ -1957,7 +1957,7 @@ theorem slsBracket_corrected (U : Vec n → ℝ) (hU : ContDiff ℝ ∞ U) (z : 
 
 | 原文成分 | Lean对应 | 说明 |
 |---|---|---|
-| 本条引用的对象与公式 | MD.Ch08.slsBathNoise, MD.Ch08.slsBracketPrinted, MD.Ch08.slsBracket_corrected | 本条列出的数学对象与结论全部；上下文见逐字原页。 |
+| 本条引用的对象与公式 | MD.Ch08.slsBathNoise, MD.Ch08.slsBracketPrinted, MD.Ch08.slsBracket_corrected | 第一漂移/热浴括号的原印与符号修正目标；二重括号在Hörmander另条处理。 |
 
 [EXTRA] 只纠正第一括号；二次括号的整体符号不影响生成空间张成。
 记号与上下文：见所列原文与Lean量化变量。
@@ -2000,7 +2000,7 @@ theorem slsHormander (U : Vec n → ℝ) (hU : ContDiff ℝ ∞ U) (z : Phase n 
 
 | 原文成分 | Lean对应 | 说明 |
 |---|---|---|
-| 本条引用的对象与公式 | MD.Ch08.slsHormander | 本条列出的数学对象与结论全部；上下文见逐字原页。 |
+| 本条引用的对象与公式 | MD.Ch08.slsHormander | 单位参数实际SLS场与噪声方向的点态Lie张成目标；不含几何遍历性。 |
 
 [EXTRA] 单位参数、常非零独立噪声；只陈述实际Lie张成，不将其直接称为几何遍历定理。
 记号与上下文：见所列原文与Lean量化变量。
@@ -2046,7 +2046,7 @@ theorem slsDeterministic_divergence (invm : Vec n) (U : Vec n → ℝ) (Q : ℝ)
 
 | 原文成分 | Lean对应 | 说明 |
 |---|---|---|
-| 本条引用的对象与公式 | MD.Ch08.slsDeterministic_stationary, MD.Ch08.slsDeterministic_divergence | 本条列出的数学对象与结论全部；上下文见逐字原页。 |
+| 本条引用的对象与公式 | MD.Ch08.slsDeterministic_stationary, MD.Ch08.slsDeterministic_divergence | 确定性SLS子场的局部驻定及零散度目标；完整SDE概率不变、独立第一积分未另证。 |
 
 [EXTRA] 完整权重含p高斯项，确定性p固定；只保留驻定及零散度，完整SDE概率不变和离散迭代收敛列缺口。
 记号与上下文：见所列原文与Lean量化变量。
@@ -2191,7 +2191,7 @@ theorem isoProjection_idempotent (invm p : Vec n) (hK : kineticTwice invm p ≠ 
 
 | 原文成分 | Lean对应 | 说明 |
 |---|---|---|
-| 本条引用的对象与公式 | MD.Ch08.isoProjection, MD.Ch08.isoProjection_self, MD.Ch08.isoProjection_idempotent | 本条列出的数学对象与结论全部；上下文见逐字原页。 |
+| 本条引用的对象与公式 | MD.Ch08.isoProjection, MD.Ch08.isoProjection_self, MD.Ch08.isoProjection_idempotent | 实际投影定义、固定p及幂等性目标；完整像空间刻画未覆盖。 |
 
 [EXTRA] 分母K非零；范围为span(p)的完整线性映射子空间等式列覆盖缺口。
 记号与上下文：见所列原文与Lean量化变量。
@@ -2239,7 +2239,7 @@ theorem isoDivergence_corrected (invm : Vec n) (F : Vec n → Vec n)
 
 | 原文成分 | Lean对应 | 说明 |
 |---|---|---|
-| 本条引用的对象与公式 | MD.Ch08.isoAnsatz, MD.Ch08.isoDivergencePrinted, MD.Ch08.isoDivergence_corrected | 本条列出的数学对象与结论全部；上下文见逐字原页。 |
+| 本条引用的对象与公式 | MD.Ch08.isoAnsatz, MD.Ch08.isoDivergencePrinted, MD.Ch08.isoDivergence_corrected | 一般光滑力的原印/符号修正散度目标及权重ansatz；w方程和概率不变另列缺口。 |
 
 [EXTRA] Φ为正光滑非零函数时称权重；使用K≠0域上的实际散度。
 记号与上下文：见所列原文与Lean量化变量。
@@ -2352,7 +2352,7 @@ theorem sinConstraint_balance (Q1 Q2 θ γ : ℝ) (F : ℝ → ℝ) (z : Vec 4)
 
 | 原文成分 | Lean对应 | 说明 |
 |---|---|---|
-| 本条引用的对象与公式 | MD.Ch08.sinConstraint, MD.Ch08.sinMultiplier, MD.Ch08.sinDrift, MD.Ch08.isSINSolution, MD.Ch08.sinConstraint_balance | 本条列出的数学对象与结论全部；上下文见逐字原页。 |
+| 本条引用的对象与公式 | MD.Ch08.sinConstraint, MD.Ch08.sinMultiplier, MD.Ch08.sinDrift, MD.Ch08.isSINSolution, MD.Ch08.sinConstraint_balance | 实际SIN漂移、正参数Wiener积分解和瞬时约束平衡；约束沿全路径保持未另证。 |
 
 [EXTRA] 热浴变量ξ₁,ξ₂∈ℝ，各质量、温度、摩擦正；随机噪声只在ξ₂；约束正值排除奇点。
 记号与上下文：见所列原文与Lean量化变量。
@@ -2400,7 +2400,7 @@ theorem sinWeight_stationary_corrected (U : ℝ → ℝ) (Q1 Q2 θ : ℝ)
 
 | 原文成分 | Lean对应 | 说明 |
 |---|---|---|
-| 本条引用的对象与公式 | MD.Ch08.sinWeightPrinted, MD.Ch08.sinWeight_corrected, MD.Ch08.sinWeight_stationary_corrected | 本条列出的数学对象与结论全部；上下文见逐字原页。 |
+| 本条引用的对象与公式 | MD.Ch08.sinWeightPrinted, MD.Ch08.sinWeight_corrected, MD.Ch08.sinWeight_stationary_corrected | 原印及补热浴质量的权重、正约束面局部驻定目标；曲面边缘分布及遍历性未覆盖。 |
 
 [EXTRA] 仅证明正约束面处的实际通量散度陈述；曲面概率测度、边缘分布和遍历性列缺口。
 记号与上下文：见所列原文与Lean量化变量。
@@ -3062,7 +3062,7 @@ theorem pronyKernel_nonneg {K : ℕ} (c τ : Fin K → ℝ)
 
 | 原文成分 | Lean对应 | 说明 |
 |---|---|---|
-| 本条引用的对象与公式 | MD.Ch08.pronyKernel, MD.Ch08.pronyQualification, MD.Ch08.pronyKernel_nonneg | 本条列出的数学对象与结论全部；上下文见逐字原页。 |
+| 本条引用的对象与公式 | MD.Ch08.pronyKernel, MD.Ch08.pronyQualification, MD.Ch08.pronyKernel_nonneg | 正指数系数/记忆时间资格、Prony核定义及非负性；不包含过程极限。 |
 
 [EXTRA] 正cₖ、τₖ为后文OU实现所用域；此处只定义Prony核并证明非负，不声称任意记忆核的逼近误差。
 记号与上下文：见所列原文与Lean量化变量。
@@ -4066,4 +4066,919 @@ def cellQualification {N : ℕ} (m : Fin N → ℝ) (Q : ℝ)
 定义；Lean陈述可检查，证明完整性按本条状态区分。
 本条未登记待证缺项。
 位置：Blueprint/Ch08.lean；MD.Ch08.cellVolume, MD.Ch08.cellMetric, MD.Ch08.cellPosition, MD.Ch08.cross3, MD.Ch08.cellVolume_triple, MD.Ch08.parrinelloRahmanLagrangian, MD.Ch08.cellQualification。
+
+## 1. MD-8.9-TotalMomentum · unnumbered_claim · 印刷p.386 / PDFp.407
+
+### 2. 原文陈述
+
+With central conservative forces ΣᵢFᵢ=0, Nosé dynamics gives d p_tot/dt=−ξ p_tot. Zero total momentum is formally invariant.
+
+### 3. 原文证明
+
+对应原页推导逐字保存在statement_verbatim/original_page_text；排版以原页PDF为准。
+
+原页文字及推导保存在原文JSON的original_page_text；网站子包附对应完整原页PDF。
+
+### 4. 完整当前Lean（原文与修正版独立列出）
+
+```lean
+abbrev ParticleConfig (N d : ℕ) := Fin N → Vec d
+abbrev ParticlePhase (N d : ℕ) := ParticleConfig N d × ParticleConfig N d
+def totalMomentum {N d : ℕ} (p : ParticleConfig N d) : Vec d := ∑ i, p i
+theorem noseTotalForce {N d : ℕ} (F p : ParticleConfig N d) (ξ : ℝ)
+    (hF : totalMomentum F=0) :
+    totalMomentum (fun i ↦ F i-ξ • p i) = -ξ • totalMomentum p := by
+  simp only [totalMomentum,Finset.sum_sub_distrib,← Finset.smul_sum] at *
+  rw [hF]; simp
+theorem noseTotalForce_zero {N d : ℕ} (F p : ParticleConfig N d) (ξ : ℝ)
+    (hF : totalMomentum F=0) (hp : totalMomentum p=0) :
+    totalMomentum (fun i ↦ F i-ξ • p i)=0 := by rw [noseTotalForce F p ξ hF,hp,smul_zero]
+```
+
+### 5. 对照表
+
+| 原文成分 | Lean对应 | 说明 |
+|---|---|---|
+| 本条引用的对象与公式 | MD.Ch08.ParticleConfig, MD.Ch08.ParticlePhase, MD.Ch08.totalMomentum, MD.Ch08.noseTotalForce, MD.Ch08.noseTotalForce_zero | 总动量定义和Nosé瞬时总力/零总动量时总力为零。 |
+
+[EXTRA] 只证明瞬时总力恒等式；沿连续轨道的零动量不变需要ODE唯一性，有限精度“飞冰块”属经验现象，列缺口。
+记号与上下文：见所列原文与Lean量化变量。
+
+### 6. 审计结论
+
+本地：已对照目视原页核对对象、量词、技术资格和所列覆盖范围；网站尚未审阅。
+疑点：本条暂未发现需单列的原书疑误。
+网站：尚未送审。
+
+### 7. 状态与证明位置
+
+已证；Lean陈述可检查，证明完整性按本条状态区分。
+本条未登记待证缺项。
+位置：Blueprint/Ch08.lean；MD.Ch08.ParticleConfig, MD.Ch08.ParticlePhase, MD.Ch08.totalMomentum, MD.Ch08.noseTotalForce, MD.Ch08.noseTotalForce_zero。
+
+## 1. MD-8.9.1-DPDSoftPotential · unnumbered_claim · 印刷p.387–388 / PDFp.408–409
+
+### 2. 原文陈述
+
+rᵢⱼ=|qᵢ−qⱼ|, eᵢⱼ=(qᵢ−qⱼ)/rᵢⱼ. Fᶜᵢⱼ=α(1−rᵢⱼ/r_c)eᵢⱼ for rᵢⱼ<r_c, zero otherwise; φ_DPD=(αr_c/2)(1−r/r_c)² below cutoff, U=Σᵢ<ⱼφ(rᵢⱼ). (8.80)–(8.84).
+
+### 3. 原文证明
+
+对应原页推导逐字保存在statement_verbatim/original_page_text；排版以原页PDF为准。
+
+原页文字及推导保存在原文JSON的original_page_text；网站子包附对应完整原页PDF。
+
+### 4. 完整当前Lean（原文与修正版独立列出）
+
+```lean
+def pairDistance {N d : ℕ} (q : ParticleConfig N d) (i j : Fin N) : ℝ :=
+  Real.sqrt (dot (q i-q j) (q i-q j))
+def pairDirection {N d : ℕ} (q : ParticleConfig N d) (i j : Fin N) : Vec d :=
+  (pairDistance q i j)⁻¹ • (q i-q j)
+def dpdSoftPotential (α rc r : ℝ) : ℝ := if r < rc then α*rc/2*(1-r/rc)^2 else 0
+def dpdPairConservative {N d : ℕ} (α rc : ℝ) (q : ParticleConfig N d) (i j : Fin N) : Vec d :=
+  if pairDistance q i j < rc then (α*(1-pairDistance q i j/rc)) • pairDirection q i j else 0
+def dpdPotential {N d : ℕ} (α rc : ℝ) (q : ParticleConfig N d) : ℝ :=
+  ∑ i, ∑ j ∈ Finset.univ.filter (fun j ↦ i < j), dpdSoftPotential α rc (pairDistance q i j)
+def dpdConservative {N d : ℕ} (α rc : ℝ) (q : ParticleConfig N d) : ParticleConfig N d :=
+  fun i ↦ ∑ j ∈ Finset.univ.filter (fun j ↦ j ≠ i), dpdPairConservative α rc q i j
+def particleGradient {N d : ℕ} (U : ParticleConfig N d → ℝ) (q : ParticleConfig N d) : ParticleConfig N d :=
+  fun i a ↦ fderiv ℝ U q (Pi.single i (Pi.single a 1))
+theorem dpdConservative_gradient {N d : ℕ} (α rc : ℝ) (hα : 0 ≤ α) (hrc : 0 < rc)
+    (q : ParticleConfig N d) (hnocoll : ∀ i j, i ≠ j → 0 < pairDistance q i j)
+    (hcut : ∀ i j, i ≠ j → pairDistance q i j ≠ rc) :
+    dpdConservative α rc q = -particleGradient (dpdPotential α rc) q := by
+  sorry
+```
+
+### 5. 对照表
+
+| 原文成分 | Lean对应 | 说明 |
+|---|---|---|
+| 本条引用的对象与公式 | MD.Ch08.pairDistance, MD.Ch08.pairDirection, MD.Ch08.dpdSoftPotential, MD.Ch08.dpdPairConservative, MD.Ch08.dpdPotential, MD.Ch08.dpdConservative, MD.Ch08.particleGradient, MD.Ch08.dpdConservative_gradient | 软势、保守成对力/总力与光滑有效域的梯度目标；完整SDE见后条。 |
+
+[EXTRA] d维Euclidean距离由坐标平方和开方，避免Pi最大范数；只在非碰撞且离开截断接缝的有效域声明梯度关系。N、d为物理正整数，mᵢ>0在动力学资格另列。
+记号与上下文：见所列原文与Lean量化变量。
+
+### 6. 审计结论
+
+本地：已对照目视原页核对对象、量词、技术资格和所列覆盖范围；网站尚未审阅。
+疑点：本条暂未发现需单列的原书疑误。
+网站：尚未送审。
+
+### 7. 状态与证明位置
+
+未证陈述；Lean陈述可检查，证明完整性按本条状态区分。
+未证原因：非碰撞距离求导和有限无序对势梯度。
+位置：Blueprint/Ch08.lean；MD.Ch08.pairDistance, MD.Ch08.pairDirection, MD.Ch08.dpdSoftPotential, MD.Ch08.dpdPairConservative, MD.Ch08.dpdPotential, MD.Ch08.dpdConservative, MD.Ch08.particleGradient, MD.Ch08.dpdConservative_gradient。
+
+## 1. MD-8.9.1-DPDPairForces · definition · 印刷p.388 / PDFp.409
+
+### 2. 原文陈述
+
+Fᴰᵢⱼ=−γ ωᴰ(rᵢⱼ)(eᵢⱼ·vᵢⱼ)eᵢⱼ, Fᴿᵢⱼ=σ ωᴿ(rᵢⱼ)θᵢⱼeᵢⱼ, ωᴿ(r)=1−r/r_c below cutoff. vᵢⱼ=pᵢ/mᵢ−pⱼ/mⱼ. (8.85)–(8.87).
+
+### 3. 原文证明
+
+对应原页推导逐字保存在statement_verbatim/original_page_text；排版以原页PDF为准。
+
+原页文字及推导保存在原文JSON的original_page_text；网站子包附对应完整原页PDF。
+
+### 4. 完整当前Lean（原文与修正版独立列出）
+
+```lean
+def dpdWeightR (rc r : ℝ) : ℝ := if r < rc then 1-r/rc else 0
+def relativeVelocity {N d : ℕ} (m : Fin N → ℝ) (p : ParticleConfig N d) (i j : Fin N) : Vec d :=
+  (m i)⁻¹ • p i-(m j)⁻¹ • p j
+def dpdPairDissipative {N d : ℕ} (m : Fin N → ℝ) (γ : ℝ) (wD : ℝ → ℝ)
+    (q p : ParticleConfig N d) (i j : Fin N) : Vec d :=
+  (-γ*wD (pairDistance q i j)*dot (pairDirection q i j) (relativeVelocity m p i j)) • pairDirection q i j
+def dpdPairRandom {N d : ℕ} (σ : ℝ) (wR : ℝ → ℝ) (q : ParticleConfig N d)
+    (i j : Fin N) (R : ℝ) : Vec d := (σ*wR (pairDistance q i j)*R) • pairDirection q i j
+def dpdDissipative {N d : ℕ} (m : Fin N → ℝ) (γ : ℝ) (wD : ℝ → ℝ)
+    (q p : ParticleConfig N d) : ParticleConfig N d :=
+  fun i ↦ ∑ j ∈ Finset.univ.filter (fun j ↦ j ≠ i), dpdPairDissipative m γ wD q p i j
+def pairImpulseVector {N d : ℕ} (i j : Fin N) (v : Vec d) : ParticleConfig N d :=
+  Pi.single i v-Pi.single j v
+def dpdNoise {N d K : ℕ} (pairs : Fin K → Fin N × Fin N) (σ : ℝ) (wR : ℝ → ℝ)
+    (q : ParticleConfig N d) (k : Fin K) : ParticlePhase N d :=
+  (0,pairImpulseVector (pairs k).1 (pairs k).2
+    ((σ*wR (pairDistance q (pairs k).1 (pairs k).2)) • pairDirection q (pairs k).1 (pairs k).2))
+```
+
+### 5. 对照表
+
+| 原文成分 | Lean对应 | 说明 |
+|---|---|---|
+| 本条引用的对象与公式 | MD.Ch08.dpdWeightR, MD.Ch08.relativeVelocity, MD.Ch08.dpdPairDissipative, MD.Ch08.dpdPairRandom, MD.Ch08.dpdDissipative, MD.Ch08.pairImpulseVector, MD.Ch08.dpdNoise | 全部成对/总耗散力、软随机权与成对守恒扩散方向。 |
+
+[EXTRA] 白噪声θᵢⱼ不作为逐点函数使用；随机力的实际意义是下一条无序对独立Wiener驱动、双方相反的扩散向量。总化r=0只作辅助，在动力学中要求非碰撞。
+记号与上下文：见所列原文与Lean量化变量。
+
+### 6. 审计结论
+
+本地：已对照目视原页核对对象、量词、技术资格和所列覆盖范围；网站尚未审阅。
+疑点：本条暂未发现需单列的原书疑误。
+网站：尚未送审。
+
+### 7. 状态与证明位置
+
+定义；Lean陈述可检查，证明完整性按本条状态区分。
+本条未登记待证缺项。
+位置：Blueprint/Ch08.lean；MD.Ch08.dpdWeightR, MD.Ch08.relativeVelocity, MD.Ch08.dpdPairDissipative, MD.Ch08.dpdPairRandom, MD.Ch08.dpdDissipative, MD.Ch08.pairImpulseVector, MD.Ch08.dpdNoise。
+
+## 1. MD-8.9.1-DPDPairWiener · unnumbered_claim · 印刷p.388–389 / PDFp.409–410
+
+### 2. 原文陈述
+
+θᵢⱼ=θⱼᵢ; E θᵢⱼ=0 and E[θᵢⱼ(t)θₖₗ(t′)]=(δᵢₖδⱼₗ+δᵢₗδⱼₖ)δ(t−t′). Distinct unordered pairs are independent. (8.88).
+
+### 3. 原文证明
+
+对应原页推导逐字保存在statement_verbatim/original_page_text；排版以原页PDF为准。
+
+原页文字及推导保存在原文JSON的original_page_text；网站子包附对应完整原页PDF。
+
+### 4. 完整当前Lean（原文与修正版独立列出）
+
+```lean
+def pairEnumeration {N K : ℕ} (pairs : Fin K → Fin N × Fin N) : Prop :=
+  (∀ k, (pairs k).1 < (pairs k).2) ∧ Function.Injective pairs ∧
+  ∀ i j, i < j → ∃ k, pairs k=(i,j)
+def pairNoiseIncrement {N K : ℕ} (pairs : Fin K → Fin N × Fin N)
+    (W : ℝ → Ω → Vec K) (s t : ℝ) (i j : Fin N) (sample : Ω) : ℝ :=
+  ∑ k, if pairs k=(i,j) ∨ pairs k=(j,i) then W t sample k-W s sample k else 0
+theorem pairNoiseIncrement_symmetric {N K : ℕ} (pairs : Fin K → Fin N × Fin N)
+    (W : ℝ → Ω → Vec K) (s t : ℝ) (i j : Fin N) :
+    pairNoiseIncrement pairs W s t i j=pairNoiseIncrement pairs W s t j i := by
+  sorry
+theorem pairNoiseIncrement_covariance {N K : ℕ} (P : Measure Ω)
+    (pairs : Fin K → Fin N × Fin N) (he : pairEnumeration pairs)
+    (W : ℝ → Ω → Vec K) (hW : independentWiener P K W)
+    (s t : ℝ) (hs : 0 ≤ s) (hst : s ≤ t) (i j k l : Fin N) (hij : i ≠ j) (hkl : k ≠ l) :
+    (∫ sample, pairNoiseIncrement pairs W s t i j sample*pairNoiseIncrement pairs W s t k l sample ∂P)=
+      if (i=k ∧ j=l) ∨ (i=l ∧ j=k) then t-s else 0 := by
+  sorry
+```
+
+### 5. 对照表
+
+| 原文成分 | Lean对应 | 说明 |
+|---|---|---|
+| 本条引用的对象与公式 | MD.Ch08.pairEnumeration, MD.Ch08.pairNoiseIncrement, MD.Ch08.pairNoiseIncrement_symmetric, MD.Ch08.pairNoiseIncrement_covariance | 对称噪声增量和对应所印δ协方差的积分版本。 |
+
+[EXTRA] 只对无序对使用独立标准Wiener；Wᵢⱼ=Wⱼᵢ由同一坐标实现，不能把有序对全部设独立。Dirac白噪声公式通过有限时间增量协方差表达。
+记号与上下文：见所列原文与Lean量化变量。
+
+### 6. 审计结论
+
+本地：已对照目视原页核对对象、量词、技术资格和所列覆盖范围；网站尚未审阅。
+疑点：本条暂未发现需单列的原书疑误。
+网站：尚未送审。
+
+### 7. 状态与证明位置
+
+未证陈述；Lean陈述可检查，证明完整性按本条状态区分。
+未证原因：标准向量Wiener增量的有限和协方差与无序对枚举桥接。
+位置：Blueprint/Ch08.lean；MD.Ch08.pairEnumeration, MD.Ch08.pairNoiseIncrement, MD.Ch08.pairNoiseIncrement_symmetric, MD.Ch08.pairNoiseIncrement_covariance。
+
+## 1. MD-8.9.1-DPDIntegralSystem · definition · 印刷p.389 / PDFp.410
+
+### 2. 原文陈述
+
+dq=M⁻¹pdt, dp=−∇Udt−Δ(q)pdt+Σ(q)dW. (8.90).
+
+### 3. 原文证明
+
+对应原页推导逐字保存在statement_verbatim/original_page_text；排版以原页PDF为准。
+
+原页文字及推导保存在原文JSON的original_page_text；网站子包附对应完整原页PDF。
+
+### 4. 完整当前Lean（原文与修正版独立列出）
+
+```lean
+def strictItoIntegral8 (P : Measure Ω) (W g : ℝ → Ω → ℝ) (T : ℝ) (Y : Ω → ℝ) : Prop :=
+  (∀ k, MemLp (MolecularDynamics.Chapter06Review.itoLeftSum W g T k) 2 P) ∧ MemLp Y 2 P ∧
+  Tendsto (fun k ↦ ∫ sample, (MolecularDynamics.Chapter06Review.itoLeftSum W g T k sample-Y sample)^2 ∂P)
+    atTop (𝓝 0)
+def multiplicativeSDE8 {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
+    [MeasurableSpace E] [BorelSpace E] (P : Measure Ω) (r : ℕ)
+    (W : ℝ → Ω → Vec r) (X : ℝ → Ω → E) (x0 : E) (a : E → E) (B : E → Fin r → E) : Prop :=
+  independentWiener P r W ∧ Measurable (Function.uncurry X) ∧ (∀ j, Measurable (fun x ↦ B x j)) ∧
+  (∀ᵐ sample ∂P, ContinuousOn (fun t ↦ X t sample) (Ici 0) ∧ X 0 sample=x0) ∧
+  (∀ t : ℝ, 0 ≤ t → Measurable[MeasurableSpace.comap
+    (fun (sample : Ω) (s : Icc (0 : ℝ) t) ↦ W s sample) inferInstance] (X t)) ∧
+  ∀ T, 0 ≤ T → (∀ᵐ sample ∂P, IntervalIntegrable (fun s ↦ a (X s sample)) volume 0 T) ∧
+    ∀ ell : E →L[ℝ] ℝ, ∃ Y : Fin r → Ω → ℝ,
+      (∀ j, strictItoIntegral8 P (fun s sample ↦ W s sample j)
+        (fun s sample ↦ ell (B (X s sample) j)) T (Y j)) ∧
+      ∀ᵐ sample ∂P, ell (X T sample-x0-(∫ s in (0 : ℝ)..T, a (X s sample)))=∑ j, Y j sample
+def dpdDrift {N d : ℕ} (m : Fin N → ℝ) (α rc γ : ℝ) (wD : ℝ → ℝ)
+    (z : ParticlePhase N d) : ParticlePhase N d :=
+  ((fun i ↦ (m i)⁻¹ • z.2 i),dpdConservative α rc z.1+dpdDissipative m γ wD z.1 z.2)
+def isDPDSolution {N d K : ℕ} (m : Fin N → ℝ) (α rc γ σ θ : ℝ) (wD wR : ℝ → ℝ)
+    (pairs : Fin K → Fin N × Fin N) (P : Measure Ω) (W : ℝ → Ω → Vec K)
+    (X : ℝ → Ω → ParticlePhase N d) (x0 : ParticlePhase N d) : Prop :=
+  0 < N ∧ 0 < d ∧ (∀ i, 0 < m i) ∧ 0 < rc ∧ 0 ≤ α ∧ 0 ≤ γ ∧ 0 < θ ∧
+  (∀ r, wD r=(wR r)^2) ∧ σ^2=2*γ*θ ∧ pairEnumeration pairs ∧
+  (∀ t, 0 ≤ t → ∀ᵐ sample ∂P, ∀ i j, i ≠ j → 0 < pairDistance (X t sample).1 i j) ∧
+  multiplicativeSDE8 P K W X x0 (dpdDrift m α rc γ wD)
+    (fun z ↦ dpdNoise pairs σ wR z.1)
+```
+
+### 5. 对照表
+
+| 原文成分 | Lean对应 | 说明 |
+|---|---|---|
+| 本条引用的对象与公式 | MD.Ch08.strictItoIntegral8, MD.Ch08.multiplicativeSDE8, MD.Ch08.dpdDrift, MD.Ch08.isDPDSolution | 配置依赖扩散的真实积分解规格及正质量/涨落耗散/无序噪声资格。 |
+
+[EXTRA] 实际多维独立Wiener、共同自然历史适应、联合可测、路径连续、漂移可积、所有网格左和及积分代表L²均明示。；选择强L²、非碰撞解类；不声称与所有弱解等价，也不建立SDE存在唯一或Markov半群。
+记号与上下文：见所列原文与Lean量化变量。
+
+### 6. 审计结论
+
+本地：已对照目视原页核对对象、量词、技术资格和所列覆盖范围；网站尚未审阅。
+疑点：本条暂未发现需单列的原书疑误。
+网站：尚未送审。
+
+### 7. 状态与证明位置
+
+定义；Lean陈述可检查，证明完整性按本条状态区分。
+本条未登记待证缺项。
+位置：Blueprint/Ch08.lean；MD.Ch08.strictItoIntegral8, MD.Ch08.multiplicativeSDE8, MD.Ch08.dpdDrift, MD.Ch08.isDPDSolution。
+
+## 1. MD-8.9.1-DPDCanonicalLeaf · definition · 印刷p.389 / PDFp.410
+
+### 2. 原文陈述
+
+ωᴰ=(ωᴿ)², σ²=2γk_BT. The canonical density is restricted to fixed total momentum π by δ(Σp−π). (8.89).
+
+### 3. 原文证明
+
+对应原页推导逐字保存在statement_verbatim/original_page_text；排版以原页PDF为准。
+
+原页文字及推导保存在原文JSON的original_page_text；网站子包附对应完整原页PDF。
+
+### 4. 完整当前Lean（原文与修正版独立列出）
+
+```lean
+def dpdFluctuationDissipation (γ σ θ : ℝ) (wD wR : ℝ → ℝ) : Prop :=
+  0 ≤ γ ∧ 0 < θ ∧ σ^2=2*γ*θ ∧ ∀ r, wD r=(wR r)^2
+def momentumLeaf {N d : ℕ} (π : Vec d) : Set (ParticlePhase N d) :=
+  {z | totalMomentum z.2=π}
+def particleHamiltonian {N d : ℕ} (m : Fin N → ℝ) (U : ParticleConfig N d → ℝ)
+    (z : ParticlePhase N d) : ℝ := (∑ i, dot (z.2 i) (z.2 i)/(2*m i))+U z.1
+def momentumCanonical {N d : ℕ} (ν : Measure (ParticlePhase N d)) (m : Fin N → ℝ)
+    (U : ParticleConfig N d → ℝ) (β : ℝ) : Measure (ParticlePhase N d) :=
+  ν.withDensity (fun z ↦ ENNReal.ofReal (Real.exp (-β*particleHamiltonian m U z)/
+    (∫ x, Real.exp (-β*particleHamiltonian m U x) ∂ν)))
+def momentumCanonicalQualification {N d : ℕ} (ν : Measure (ParticlePhase N d))
+    (m : Fin N → ℝ) (U : ParticleConfig N d → ℝ) (β : ℝ) (π : Vec d) : Prop :=
+  (∀ i, 0 < m i) ∧ 0 < β ∧ ν (momentumLeaf π)ᶜ=0 ∧
+  Integrable (fun z ↦ Real.exp (-β*particleHamiltonian m U z)) ν ∧
+  (0 < ∫ z, Real.exp (-β*particleHamiltonian m U z) ∂ν) ∧
+  IsProbabilityMeasure (momentumCanonical ν m U β)
+```
+
+### 5. 对照表
+
+| 原文成分 | Lean对应 | 说明 |
+|---|---|---|
+| 本条引用的对象与公式 | MD.Ch08.dpdFluctuationDissipation, MD.Ch08.momentumLeaf, MD.Ch08.particleHamiltonian, MD.Ch08.momentumCanonical, MD.Ch08.momentumCanonicalQualification | 涨落耗散资格、动量约束叶及其可归一canonical测度定义。 |
+
+[EXTRA] Dirac乘积解释为指定动量叶上的参考测度，未伪造Lebesgue密度；参考测度需另指定几何/周期体积。；只是权重与概率资格目标；DPD保持该测度、流体力学保持及高密度一维遍历性的大型定理均列缺口。
+记号与上下文：见所列原文与Lean量化变量。
+
+### 6. 审计结论
+
+本地：已对照目视原页核对对象、量词、技术资格和所列覆盖范围；网站尚未审阅。
+疑点：本条暂未发现需单列的原书疑误。
+网站：尚未送审。
+
+### 7. 状态与证明位置
+
+定义；Lean陈述可检查，证明完整性按本条状态区分。
+本条未登记待证缺项。
+位置：Blueprint/Ch08.lean；MD.Ch08.dpdFluctuationDissipation, MD.Ch08.momentumLeaf, MD.Ch08.particleHamiltonian, MD.Ch08.momentumCanonical, MD.Ch08.momentumCanonicalQualification。
+
+## 1. MD-8.9.1-DPDMassOrderPrinted · unnumbered_claim · 印刷p.389 / PDFp.410
+
+### 2. 原文陈述
+
+For dp=−∇Udt−Δ(q)pdt+Σ(q)dW, the book gives Δ=M⁻¹ΣΣᵀ/(2k_BT).
+
+### 3. 原文证明
+
+对应原页推导逐字保存在statement_verbatim/original_page_text；排版以原页PDF为准。
+
+原页文字及推导保存在原文JSON的original_page_text；网站子包附对应完整原页PDF。
+
+### 4. 完整当前Lean（原文与修正版独立列出）
+
+```lean
+def dpdMatrixFDPrinted {s r : ℕ} (M Γ : Matrix (Fin s) (Fin s) ℝ)
+    (B : Matrix (Fin s) (Fin r) ℝ) (θ : ℝ) : Prop := Γ=(1/(2*θ)) • (M⁻¹*(B*B.transpose))
+def dpdMatrixFD_corrected {s r : ℕ} (M Γ : Matrix (Fin s) (Fin s) ℝ)
+    (B : Matrix (Fin s) (Fin r) ℝ) (θ : ℝ) : Prop := Γ=(1/(2*θ)) • ((B*B.transpose)*M⁻¹)
+theorem dpdMassOrder_counterexample :
+    (!![1,0;0,(1/2 : ℝ)]) * (!![1,-1;-1,1]) ≠
+      (!![1,-1;-1,1]) * (!![1,0;0,(1/2 : ℝ)]) := by
+  intro h
+  have hh := congrArg (fun A : Matrix (Fin 2) (Fin 2) ℝ ↦ A 0 1) h
+  norm_num [Matrix.mul_apply,Fin.sum_univ_two] at hh
+```
+
+### 5. 对照表
+
+| 原文成分 | Lean对应 | 说明 |
+|---|---|---|
+| 本条引用的对象与公式 | MD.Ch08.dpdMatrixFDPrinted, MD.Ch08.dpdMatrixFD_corrected, MD.Ch08.dpdMassOrder_counterexample | 原印/校正的质量矩阵次序及具体代数反例。 |
+
+[EXTRA] M应正定、θ>0；本条记录两个矩阵关系目标与不交换反例，不声称由形式关系自动得到不变概率。
+记号与上下文：见所列原文与Lean量化变量。
+
+### 6. 审计结论
+
+本地：已对照目视原页核对对象、量词、技术资格和所列覆盖范围；网站尚未审阅。
+疑点：已目视核对原页PDF410：对动量漂移−Δp、动量协方差k_BT M，应为Δ=ΣΣᵀM⁻¹/(2k_BT)；原印左乘仅在相应矩阵可交换（如等质量）时一致。两粒子不等质量的矩阵反例已证。
+网站：尚未送审。
+
+### 7. 状态与证明位置
+
+已证；Lean陈述可检查，证明完整性按本条状态区分。
+本条未登记待证缺项。
+位置：Blueprint/Ch08.lean；MD.Ch08.dpdMatrixFDPrinted, MD.Ch08.dpdMatrixFD_corrected, MD.Ch08.dpdMassOrder_counterexample。
+
+## 1. MD-8.9.2-DPDVelocityVerlet · algorithm · 印刷p.389–391 / PDFp.410–412
+
+### 2. 原文陈述
+
+p½=p+hFᶜ(q)/2+hFᴰ(q,p)/2+√h Fᴿ(q,Rold)/2; q'=q+hM⁻¹p½; p'=p½+hFᶜ(q')/2+hFᴰ(q',p½)/2+√h Fᴿ(q',Rnew)/2. Reuse Rnew next step. (8.91)–(8.93).
+
+### 3. 原文证明
+
+对应原页推导逐字保存在statement_verbatim/original_page_text；排版以原页PDF为准。
+
+原页文字及推导保存在原文JSON的original_page_text；网站子包附对应完整原页PDF。
+
+### 4. 完整当前Lean（原文与修正版独立列出）
+
+```lean
+def dpdRandomForce {N d K : ℕ} (pairs : Fin K → Fin N × Fin N) (σ : ℝ)
+    (wR : ℝ → ℝ) (q : ParticleConfig N d) (R : Vec K) : ParticleConfig N d :=
+  ∑ k, R k • (dpdNoise pairs σ wR q k).2
+
+def dpdVerlet {N d K : ℕ} (pairs : Fin K → Fin N × Fin N) (m : Fin N → ℝ)
+    (α rc γ σ h : ℝ) (wD wR : ℝ → ℝ)
+    (state : ParticlePhase N d × Vec K) (Rnew : Vec K) : ParticlePhase N d × Vec K :=
+  let q := state.1.1
+  let p := state.1.2
+  let ph := p+(h/2) • dpdConservative α rc q+(h/2) • dpdDissipative m γ wD q p+
+    (Real.sqrt h/2) • dpdRandomForce pairs σ wR q state.2
+  let qn := fun i ↦ q i+(h/m i) • ph i
+  let pn := ph+(h/2) • dpdConservative α rc qn+(h/2) • dpdDissipative m γ wD qn ph+
+    (Real.sqrt h/2) • dpdRandomForce pairs σ wR qn Rnew
+  ((qn,pn),Rnew)
+
+theorem dpdVerlet_reuse {N d K : ℕ} (pairs : Fin K → Fin N × Fin N) (m : Fin N → ℝ)
+    (α rc γ σ h : ℝ) (wD wR : ℝ → ℝ) (z : ParticlePhase N d × Vec K) (R : Vec K) :
+    (dpdVerlet pairs m α rc γ σ h wD wR z R).2=R := rfl
+```
+
+### 5. 对照表
+
+| 原文成分 | Lean对应 | 说明 |
+|---|---|---|
+| 本条引用的对象与公式 | MD.Ch08.dpdRandomForce, MD.Ch08.dpdVerlet, MD.Ch08.dpdVerlet_reuse | 三条更新式和新噪声在下一步复用的状态机制。 |
+
+[EXTRA] 物理用法要求mᵢ>0、h≥0、无序对枚举、每步Rnew独立标准正态并与历史独立；本条确定性给定输入的扩展状态映射。；尚未证明书中预期的一阶弱收敛；未把随机输入映射称为对称确定性流。
+记号与上下文：见所列原文与Lean量化变量。
+
+### 6. 审计结论
+
+本地：已对照目视原页核对对象、量词、技术资格和所列覆盖范围；网站尚未审阅。
+疑点：本条暂未发现需单列的原书疑误。
+网站：尚未送审。
+
+### 7. 状态与证明位置
+
+已证；Lean陈述可检查，证明完整性按本条状态区分。
+本条未登记待证缺项。
+位置：Blueprint/Ch08.lean；MD.Ch08.dpdRandomForce, MD.Ch08.dpdVerlet, MD.Ch08.dpdVerlet_reuse。
+
+## 1. MD-8.9.2-DPDSplitGenerator · unnumbered_claim · 印刷p.391 / PDFp.412
+
+### 2. 原文陈述
+
+The DPD system splits into A: free transport, B: conservative force, O: dissipative plus pair noise. L_DPD=L_A+L_B+L_O. (8.94)–(8.98).
+
+### 3. 原文证明
+
+对应原页推导逐字保存在statement_verbatim/original_page_text；排版以原页PDF为准。
+
+原页文字及推导保存在原文JSON的original_page_text；网站子包附对应完整原页PDF。
+
+### 4. 完整当前Lean（原文与修正版独立列出）
+
+```lean
+def dpdA {N d : ℕ} (m : Fin N → ℝ) (z : ParticlePhase N d) : ParticlePhase N d :=
+  ((fun i ↦ (m i)⁻¹ • z.2 i),0)
+def dpdB {N d : ℕ} (α rc : ℝ) (z : ParticlePhase N d) : ParticlePhase N d :=
+  (0,dpdConservative α rc z.1)
+def dpdO {N d : ℕ} (m : Fin N → ℝ) (γ : ℝ) (wD : ℝ → ℝ)
+    (z : ParticlePhase N d) : ParticlePhase N d := (0,dpdDissipative m γ wD z.1 z.2)
+def firstOrder8 {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
+    (F : E → E) (f : E → ℝ) (z : E) : ℝ := fderiv ℝ f z (F z)
+def dpdLO {N d K : ℕ} (pairs : Fin K → Fin N × Fin N) (m : Fin N → ℝ)
+    (γ σ : ℝ) (wD wR : ℝ → ℝ) (f : ParticlePhase N d → ℝ) (z : ParticlePhase N d) : ℝ :=
+  firstOrder8 (dpdO m γ wD) f z+
+    (∑ k, fderiv ℝ (fun x ↦ fderiv ℝ f x) z (dpdNoise pairs σ wR z.1 k)
+      (dpdNoise pairs σ wR z.1 k))/2
+def dpdGenerator {N d K : ℕ} (pairs : Fin K → Fin N × Fin N) (m : Fin N → ℝ)
+    (α rc γ σ : ℝ) (wD wR : ℝ → ℝ) (f : ParticlePhase N d → ℝ) (z : ParticlePhase N d) : ℝ :=
+  firstOrder8 (dpdA m) f z+firstOrder8 (dpdB α rc) f z+dpdLO pairs m γ σ wD wR f z
+theorem dpdDrift_split {N d : ℕ} (m : Fin N → ℝ) (α rc γ : ℝ) (wD : ℝ → ℝ)
+    (z : ParticlePhase N d) : dpdDrift m α rc γ wD z=dpdA m z+dpdB α rc z+dpdO m γ wD z := by
+  ext <;> simp [dpdDrift,dpdA,dpdB,dpdO]
+```
+
+### 5. 对照表
+
+| 原文成分 | Lean对应 | 说明 |
+|---|---|---|
+| 本条引用的对象与公式 | MD.Ch08.dpdA, MD.Ch08.dpdB, MD.Ch08.dpdO, MD.Ch08.firstOrder8, MD.Ch08.dpdLO, MD.Ch08.dpdGenerator, MD.Ch08.dpdDrift_split | 实际三个漂移、无序对扩散生成元和漂移分解恒等式。 |
+
+[EXTRA] 采用独立无序对的Itô二阶导数形式，实现(8.97)有序双和的合并表达；未证明有序/无序表达等价。；光滑测试函数上的形式生成元定义不等同于已建立Markov半群，Fₜ=eᵗᴸ及其定义域列缺口。
+记号与上下文：见所列原文与Lean量化变量。
+
+### 6. 审计结论
+
+本地：已对照目视原页核对对象、量词、技术资格和所列覆盖范围；网站尚未审阅。
+疑点：本条暂未发现需单列的原书疑误。
+网站：尚未送审。
+
+### 7. 状态与证明位置
+
+已证；Lean陈述可检查，证明完整性按本条状态区分。
+本条未登记待证缺项。
+位置：Blueprint/Ch08.lean；MD.Ch08.dpdA, MD.Ch08.dpdB, MD.Ch08.dpdO, MD.Ch08.firstOrder8, MD.Ch08.dpdLO, MD.Ch08.dpdGenerator, MD.Ch08.dpdDrift_split。
+
+## 1. MD-8.9.2-DPDPairGeneratorPrinted · definition · 印刷p.392 / PDFp.413
+
+### 2. 原文陈述
+
+(8.100) prints L_Oij=[−γωᴰu+(σ²/2)(ωᴿ)² e·(∂pi−∂pj)] e·∂pi for each unordered pair i<j.
+
+### 3. 原文证明
+
+对应原页推导逐字保存在statement_verbatim/original_page_text；排版以原页PDF为准。
+
+原页文字及推导保存在原文JSON的original_page_text；网站子包附对应完整原页PDF。
+
+### 4. 完整当前Lean（原文与修正版独立列出）
+
+```lean
+def pairDerivative {N d : ℕ} (i j : Fin N) (e : Vec d)
+    (f : ParticleConfig N d → ℝ) (p : ParticleConfig N d) : ℝ :=
+  fderiv ℝ f p (pairImpulseVector i j e)
+def dpdPairGeneratorPrinted {N d : ℕ} (i j : Fin N) (e : Vec d) (m : Fin N → ℝ)
+    (γ σ wd wr : ℝ) (f : ParticleConfig N d → ℝ) (p : ParticleConfig N d) : ℝ :=
+  -γ*wd*dot e (relativeVelocity m p i j)*fderiv ℝ f p (Pi.single i e)+
+    σ^2*wr^2/2*pairDerivative i j e (fun x ↦ fderiv ℝ f x (Pi.single i e)) p
+def dpdPairGenerator_corrected {N d : ℕ} (i j : Fin N) (e : Vec d) (m : Fin N → ℝ)
+    (γ σ wd wr : ℝ) (f : ParticleConfig N d → ℝ) (p : ParticleConfig N d) : ℝ :=
+  -γ*wd*dot e (relativeVelocity m p i j)*pairDerivative i j e f p+
+    σ^2*wr^2/2*pairDerivative i j e (pairDerivative i j e f) p
+```
+
+### 5. 对照表
+
+| 原文成分 | Lean对应 | 说明 |
+|---|---|---|
+| 本条引用的对象与公式 | MD.Ch08.pairDerivative, MD.Ch08.dpdPairGeneratorPrinted, MD.Ch08.dpdPairGenerator_corrected | 冻结配置下单对动量生成元的原式和守恒方向修正版。 |
+
+[EXTRA] 本条只分别定义原印和成对修正版；不声称已证明驻定概率或原书单对不变性。
+记号与上下文：见所列原文与Lean量化变量。
+
+### 6. 审计结论
+
+本地：已对照目视原页核对对象、量词、技术资格和所列覆盖范围；网站尚未审阅。
+疑点：已目视核对原页PDF413：单个无序对算子的最外层只对pᵢ求导，会对总动量产生非零漂移；对两粒子成对守恒更新应将最外层改为e·(∂pᵢ−∂pⱼ)。完整有序双和(8.97)另含反方向项，不能直接同样判错。
+网站：尚未送审。
+
+### 7. 状态与证明位置
+
+定义；Lean陈述可检查，证明完整性按本条状态区分。
+本条未登记待证缺项。
+位置：Blueprint/Ch08.lean；MD.Ch08.pairDerivative, MD.Ch08.dpdPairGeneratorPrinted, MD.Ch08.dpdPairGenerator_corrected。
+
+## 1. MD-8.9.2-DPDSplittingCompositions · algorithm · 印刷p.392–393 / PDFp.413–414
+
+### 2. 原文陈述
+
+Shardlow: O(h) B(h/2) A(h) B(h/2); S=B+O and Trotter: S(h/2) A(h) S(h/2). Pair products use the printed fixed unordered-pair order. (8.99),(8.101),(8.102).
+
+### 3. 原文证明
+
+对应原页推导逐字保存在statement_verbatim/original_page_text；排版以原页PDF为准。
+
+原页文字及推导保存在原文JSON的original_page_text；网站子包附对应完整原页PDF。
+
+### 4. 完整当前Lean（原文与修正版独立列出）
+
+```lean
+def dpdShardlowComposition {E : Type*} (A B O : ℝ → E → E) (h : ℝ) : E → E :=
+  O h ∘ B (h/2) ∘ A h ∘ B (h/2)
+def dpdTrotterComposition {E : Type*} (A S : ℝ → E → E) (h : ℝ) : E → E :=
+  S (h/2) ∘ A h ∘ S (h/2)
+def sequentialPairComposition {E : Type*} (steps : List (E → E)) : E → E :=
+  fun x ↦ steps.foldl (fun y F ↦ F y) x
+def dpdSGenerator {N d K : ℕ} (pairs : Fin K → Fin N × Fin N) (m : Fin N → ℝ)
+    (α rc γ σ : ℝ) (wD wR : ℝ → ℝ) (f : ParticlePhase N d → ℝ) (z : ParticlePhase N d) : ℝ :=
+  firstOrder8 (dpdB α rc) f z+dpdLO pairs m γ σ wD wR f z
+```
+
+### 5. 对照表
+
+| 原文成分 | Lean对应 | 说明 |
+|---|---|---|
+| 本条引用的对象与公式 | MD.Ch08.dpdShardlowComposition, MD.Ch08.dpdTrotterComposition, MD.Ch08.sequentialPairComposition, MD.Ch08.dpdSGenerator | 两种外层组合、固定顺序逐对执行及S形式生成元；实际OU单对步骤见后条。 |
+
+[EXTRA] A/B/O/S为调用者指定的映射；只保留所印组合顺序。尚未实现BBK成对近似或其误差、全O/S流及生成元指数关系。；两次S同顺序的非交换成对乘积不能仅凭外层回文判为对称；不作该声称。
+记号与上下文：见所列原文与Lean量化变量。
+
+### 6. 审计结论
+
+本地：已对照目视原页核对对象、量词、技术资格和所列覆盖范围；网站尚未审阅。
+疑点：本条暂未发现需单列的原书疑误。
+网站：尚未送审。
+
+### 7. 状态与证明位置
+
+已证；Lean陈述可检查，证明完整性按本条状态区分。
+本条未登记待证缺项。
+位置：Blueprint/Ch08.lean；MD.Ch08.dpdShardlowComposition, MD.Ch08.dpdTrotterComposition, MD.Ch08.sequentialPairComposition, MD.Ch08.dpdSGenerator。
+
+## 1. MD-8.9.2-DPDPairOUUpdate · unnumbered_claim · 印刷p.393 / PDFp.414
+
+### 2. 原文陈述
+
+mred=mi mj/(mi+mj); mred du=Fdt−γωᴰu dt+σωᴿdW. a=γωᴰ/mred. u(t)=F/(a mred)+exp(−at)(u0−F/(a mred))+√[θ(1−exp(−2at))/mred]R. Δu=u(t)−u0; pi+=mred Δu e, pj−=mred Δu e. (8.103)–(8.107).
+
+### 3. 原文证明
+
+对应原页推导逐字保存在statement_verbatim/original_page_text；排版以原页PDF为准。
+
+原页文字及推导保存在原文JSON的original_page_text；网站子包附对应完整原页PDF。
+
+### 4. 完整当前Lean（原文与修正版独立列出）
+
+```lean
+def reducedMass8 (mi mj : ℝ) : ℝ := mi*mj/(mi+mj)
+theorem reducedMass8_pos (mi mj : ℝ) (hi : 0 < mi) (hj : 0 < mj) : 0 < reducedMass8 mi mj :=
+  div_pos (mul_pos hi hj) (add_pos hi hj)
+def dpdPairOUPrinted (mr a F θ t u R : ℝ) : ℝ :=
+  F/(a*mr)+Real.exp (-a*t)*(u-F/(a*mr))+Real.sqrt (θ*(1-Real.exp (-2*a*t))/mr)*R
+def dpdPairOU_corrected (mr a F θ t u R : ℝ) : ℝ :=
+  Real.exp (-a*t)*u+(F/mr)*(if a=0 then t else (1-Real.exp (-a*t))/a)+
+    Real.sqrt (θ*(1-Real.exp (-2*a*t))/mr)*R
+theorem dpdPairOU_zeroRate (mr F θ t u R : ℝ) :
+    dpdPairOU_corrected mr 0 F θ t u R=u+(F/mr)*t := by simp [dpdPairOU_corrected]
+def dpdPairMomentumStep {N d : ℕ} (i j : Fin N) (e : Vec d) (mr du : ℝ)
+    (p : ParticleConfig N d) : ParticleConfig N d := p+pairImpulseVector i j ((mr*du) • e)
+theorem dpdPairMomentumStep_conserves {N d : ℕ} (i j : Fin N) (e : Vec d) (mr du : ℝ)
+    (p : ParticleConfig N d) : totalMomentum (dpdPairMomentumStep i j e mr du p)=totalMomentum p := by
+  simp [dpdPairMomentumStep,pairImpulseVector,totalMomentum,Finset.sum_add_distrib,Finset.sum_sub_distrib]
+```
+
+### 5. 对照表
+
+| 原文成分 | Lean对应 | 说明 |
+|---|---|---|
+| 本条引用的对象与公式 | MD.Ch08.reducedMass8, MD.Ch08.reducedMass8_pos, MD.Ch08.dpdPairOUPrinted, MD.Ch08.dpdPairOU_corrected, MD.Ch08.dpdPairOU_zeroRate, MD.Ch08.dpdPairMomentumStep, MD.Ch08.dpdPairMomentumStep_conserves | 原印/零率延拓的OU转移公式、速度增量所用动量更新及总动量守恒。 |
+
+[EXTRA] 原印转移律要求mr>0、a>0、θ>0、t≥0及R独立标准正态；F为冻结配置的成对保守力标量，FDT用于方差。；单对精确分布律及其随机积分推导未证明；已证明质量正性、零率值与逐对总动量代数守恒。
+记号与上下文：见所列原文与Lean量化变量。
+
+### 6. 审计结论
+
+本地：已对照目视原页核对对象、量词、技术资格和所列覆盖范围；网站尚未审阅。
+疑点：已目视核对原页PDF414：原印F/(amred)须a>0；γ=0或截断外ωᴰ=0时需用积分系数连续延拓。修正版显式定义a=0为自由加速，噪声退化为零。
+网站：尚未送审。
+
+### 7. 状态与证明位置
+
+已证；Lean陈述可检查，证明完整性按本条状态区分。
+本条未登记待证缺项。
+位置：Blueprint/Ch08.lean；MD.Ch08.reducedMass8, MD.Ch08.reducedMass8_pos, MD.Ch08.dpdPairOUPrinted, MD.Ch08.dpdPairOU_corrected, MD.Ch08.dpdPairOU_zeroRate, MD.Ch08.dpdPairMomentumStep, MD.Ch08.dpdPairMomentumStep_conserves。
+
+## 1. MD-8.9.3-PairwiseNoseHoover · definition · 印刷p.394 / PDFp.415
+
+### 2. 原文陈述
+
+dqᵢ=pᵢdt/mᵢ, dpᵢ=Fᶜᵢdt+ξ F̃ᴰᵢdt, dξ=Gdt; G=Q⁻¹Σᵢ<ⱼωᴰ(rᵢⱼ)[(vᵢⱼ·eᵢⱼ)²−θ/mred]. (8.108),(8.109).
+
+### 3. 原文证明
+
+对应原页推导逐字保存在statement_verbatim/original_page_text；排版以原页PDF为准。
+
+原页文字及推导保存在原文JSON的original_page_text；网站子包附对应完整原页PDF。
+
+### 4. 完整当前Lean（原文与修正版独立列出）
+
+```lean
+abbrev PNHLState (N d : ℕ) := ParticlePhase N d × ℝ
+def pairwiseFeedback {N d : ℕ} (m : Fin N → ℝ) (θ Q : ℝ) (wD : ℝ → ℝ)
+    (q p : ParticleConfig N d) : ℝ :=
+  (∑ i, ∑ j ∈ Finset.univ.filter (fun j ↦ i < j), wD (pairDistance q i j)*
+    ((dot (relativeVelocity m p i j) (pairDirection q i j))^2-θ/reducedMass8 (m i) (m j)))/Q
+def pnhDrift {N d : ℕ} (m : Fin N → ℝ) (α rc θ Q : ℝ) (wD : ℝ → ℝ)
+    (z : PNHLState N d) : PNHLState N d :=
+  (((fun i ↦ (m i)⁻¹ • z.1.2 i),
+    dpdConservative α rc z.1.1+z.2 • dpdDissipative m 1 wD z.1.1 z.1.2),
+   pairwiseFeedback m θ Q wD z.1.1 z.1.2)
+def isPNHSolution {N d : ℕ} (m : Fin N → ℝ) (α rc θ Q : ℝ) (wD : ℝ → ℝ)
+    (X : ℝ → PNHLState N d) : Prop :=
+  0 < N ∧ 0 < d ∧ (∀ i, 0 < m i) ∧ 0 < rc ∧ 0 < θ ∧ 0 < Q ∧
+  ∀ t, 0 ≤ t → HasDerivWithinAt X (pnhDrift m α rc θ Q wD (X t)) (Ici 0) t
+```
+
+### 5. 对照表
+
+| 原文成分 | Lean对应 | 说明 |
+|---|---|---|
+| 本条引用的对象与公式 | MD.Ch08.PNHLState, MD.Ch08.pairwiseFeedback, MD.Ch08.pnhDrift, MD.Ch08.isPNHSolution | PNH场、反馈和正质量/正热浴质量的ODE规格。 |
+
+[EXTRA] Q为原文μ，F̃ᴰ是γ=1的相对速度耗散；排除i=j，物理轨道另需非碰撞且ωᴰ≥0。；只落盘实际ODE规格；Galilean不变性、总动量沿轨道守恒、存在唯一性及遍历性列缺口。
+记号与上下文：见所列原文与Lean量化变量。
+
+### 6. 审计结论
+
+本地：已对照目视原页核对对象、量词、技术资格和所列覆盖范围；网站尚未审阅。
+疑点：本条暂未发现需单列的原书疑误。
+网站：尚未送审。
+
+### 7. 状态与证明位置
+
+定义；Lean陈述可检查，证明完整性按本条状态区分。
+本条未登记待证缺项。
+位置：Blueprint/Ch08.lean；MD.Ch08.PNHLState, MD.Ch08.pairwiseFeedback, MD.Ch08.pnhDrift, MD.Ch08.isPNHSolution。
+
+## 1. MD-8.9.3-PairwiseCanonicalWeight · definition · 印刷p.394 / PDFp.415
+
+### 2. 原文陈述
+
+ρ̂β=Ẑ⁻¹exp(−βH(q,p))exp(−βQξ²/2), on accessible fixed-momentum space. (8.110).
+
+### 3. 原文证明
+
+对应原页推导逐字保存在statement_verbatim/original_page_text；排版以原页PDF为准。
+
+原页文字及推导保存在原文JSON的original_page_text；网站子包附对应完整原页PDF。
+
+### 4. 完整当前Lean（原文与修正版独立列出）
+
+```lean
+def pairwiseWeight {N d : ℕ} (m : Fin N → ℝ) (U : ParticleConfig N d → ℝ)
+    (β Q : ℝ) (z : PNHLState N d) : ℝ :=
+  Real.exp (-β*particleHamiltonian m U z.1)*Real.exp (-β*Q*z.2^2/2)
+def pairwiseCanonicalDensity {N d : ℕ} (ν : Measure (PNHLState N d))
+    (m : Fin N → ℝ) (U : ParticleConfig N d → ℝ) (β Q : ℝ) (z : PNHLState N d) : ℝ :=
+  pairwiseWeight m U β Q z/(∫ x, pairwiseWeight m U β Q x ∂ν)
+def pairwiseCanonicalQualification {N d : ℕ} (ν : Measure (PNHLState N d))
+    (m : Fin N → ℝ) (U : ParticleConfig N d → ℝ) (β Q : ℝ) (π : Vec d) : Prop :=
+  (∀ i, 0 < m i) ∧ 0 < β ∧ 0 < Q ∧ ν {z | totalMomentum z.1.2 ≠ π}=0 ∧
+  Integrable (pairwiseWeight m U β Q) ν ∧ (0 < ∫ z, pairwiseWeight m U β Q z ∂ν) ∧
+  probabilityDensity ν (pairwiseCanonicalDensity ν m U β Q)
+```
+
+### 5. 对照表
+
+| 原文成分 | Lean对应 | 说明 |
+|---|---|---|
+| 本条引用的对象与公式 | MD.Ch08.pairwiseWeight, MD.Ch08.pairwiseCanonicalDensity, MD.Ch08.pairwiseCanonicalQualification | 动量约束下扩展Gibbs权、配分积分和概率密度资格。 |
+
+[EXTRA] ν是需指定的动量叶参考测度；正有限配分积分和概率资格显式列出。；这里只定义权重及归一目标，不把任意支持在动量叶上的测度称为PNH不变测度。完整不变性和归一存在理论列缺口。
+记号与上下文：见所列原文与Lean量化变量。
+
+### 6. 审计结论
+
+本地：已对照目视原页核对对象、量词、技术资格和所列覆盖范围；网站尚未审阅。
+疑点：本条暂未发现需单列的原书疑误。
+网站：尚未送审。
+
+### 7. 状态与证明位置
+
+定义；Lean陈述可检查，证明完整性按本条状态区分。
+本条未登记待证缺项。
+位置：Blueprint/Ch08.lean；MD.Ch08.pairwiseWeight, MD.Ch08.pairwiseCanonicalDensity, MD.Ch08.pairwiseCanonicalQualification。
+
+## 1. MD-8.9.4-PairwiseNHLSDE · definition · 印刷p.395 / PDFp.416
+
+### 2. 原文陈述
+
+PNHL adds dξ=(G−γ̂ξ)dt+σ̂dW, σ̂²=2γ̂θ/Q, to PNH. W is standard Wiener. (8.111),(8.112).
+
+### 3. 原文证明
+
+对应原页推导逐字保存在statement_verbatim/original_page_text；排版以原页PDF为准。
+
+原页文字及推导保存在原文JSON的original_page_text；网站子包附对应完整原页PDF。
+
+### 4. 完整当前Lean（原文与修正版独立列出）
+
+```lean
+def pnhlDrift {N d : ℕ} (m : Fin N → ℝ) (α rc θ Q γ : ℝ) (wD : ℝ → ℝ)
+    (z : PNHLState N d) : PNHLState N d :=
+  ((pnhDrift m α rc θ Q wD z).1,pairwiseFeedback m θ Q wD z.1.1 z.1.2-γ*z.2)
+def pnhlNoise {N d : ℕ} (σ : ℝ) (_ : Fin 1) : PNHLState N d := ((0,0),σ)
+def isPNHLSolution {N d : ℕ} (m : Fin N → ℝ) (α rc θ Q γ σ : ℝ) (wD : ℝ → ℝ)
+    (P : Measure Ω) (W : ℝ → Ω → Vec 1) (X : ℝ → Ω → PNHLState N d)
+    (x0 : PNHLState N d) : Prop :=
+  0 < N ∧ 0 < d ∧ (∀ i, 0 < m i) ∧ 0 < rc ∧ 0 < θ ∧ 0 < Q ∧ 0 ≤ γ ∧
+  σ^2=2*γ*θ/Q ∧ (∀ r, 0 ≤ wD r) ∧
+  (∀ t, 0 ≤ t → ∀ᵐ sample ∂P, ∀ i j, i ≠ j → 0 < pairDistance (X t sample).1.1 i j) ∧
+  additiveSDE P 1 W X x0 (pnhlDrift m α rc θ Q γ wD) (pnhlNoise σ)
+```
+
+### 5. 对照表
+
+| 原文成分 | Lean对应 | 说明 |
+|---|---|---|
+| 本条引用的对象与公式 | MD.Ch08.pnhlDrift, MD.Ch08.pnhlNoise, MD.Ch08.isPNHLSolution | 带正质量资格、涨落耗散关系及真实独立标准Wiener的PNHL积分解规格。 |
+
+[EXTRA] 实际一维标准Wiener由通用积分解规格明示；扩散仅作用ξ。；未证明该非碰撞解类存在、唯一、保测或遍历；“改善遍历性”是动机不是已证结论。
+记号与上下文：见所列原文与Lean量化变量。
+
+### 6. 审计结论
+
+本地：已对照目视原页核对对象、量词、技术资格和所列覆盖范围；网站尚未审阅。
+疑点：本条暂未发现需单列的原书疑误。
+网站：尚未送审。
+
+### 7. 状态与证明位置
+
+定义；Lean陈述可检查，证明完整性按本条状态区分。
+本条未登记待证缺项。
+位置：Blueprint/Ch08.lean；MD.Ch08.pnhlDrift, MD.Ch08.pnhlNoise, MD.Ch08.isPNHLSolution。
+
+## 1. MD-8.9.4-PairwiseNHLGenerator · unnumbered_claim · 印刷p.395 / PDFp.416
+
+### 2. 原文陈述
+
+PNHL splits A,B,C,D,O, with C:ξF̃ᴰ, D:G∂ξ, O:−γ̂ξ∂ξ+σ̂²∂ξ²/2. LPNHL=LA+LB+LC+LD+LO. (8.113),(8.114).
+
+### 3. 原文证明
+
+对应原页推导逐字保存在statement_verbatim/original_page_text；排版以原页PDF为准。
+
+原页文字及推导保存在原文JSON的original_page_text；网站子包附对应完整原页PDF。
+
+### 4. 完整当前Lean（原文与修正版独立列出）
+
+```lean
+def pnhlA {N d : ℕ} (m : Fin N → ℝ) (z : PNHLState N d) : PNHLState N d := (dpdA m z.1,0)
+def pnhlB {N d : ℕ} (α rc : ℝ) (z : PNHLState N d) : PNHLState N d := (dpdB α rc z.1,0)
+def pnhlC {N d : ℕ} (m : Fin N → ℝ) (wD : ℝ → ℝ) (z : PNHLState N d) : PNHLState N d :=
+  ((0,z.2 • dpdDissipative m 1 wD z.1.1 z.1.2),0)
+def pnhlD {N d : ℕ} (m : Fin N → ℝ) (θ Q : ℝ) (wD : ℝ → ℝ)
+    (z : PNHLState N d) : PNHLState N d := ((0,0),pairwiseFeedback m θ Q wD z.1.1 z.1.2)
+def pnhlO {N d : ℕ} (γ : ℝ) (z : PNHLState N d) : PNHLState N d := ((0,0),-γ*z.2)
+def pnhlGenerator {N d : ℕ} (m : Fin N → ℝ) (α rc θ Q γ σ : ℝ) (wD : ℝ → ℝ)
+    (f : PNHLState N d → ℝ) (z : PNHLState N d) : ℝ :=
+  firstOrder8 (pnhlA m) f z+firstOrder8 (pnhlB α rc) f z+firstOrder8 (pnhlC m wD) f z+
+    firstOrder8 (pnhlD m θ Q wD) f z+additiveGenerator (pnhlO γ) (pnhlNoise σ 0) f z
+theorem pnhlDrift_split {N d : ℕ} (m : Fin N → ℝ) (α rc θ Q γ : ℝ) (wD : ℝ → ℝ)
+    (z : PNHLState N d) : pnhlDrift m α rc θ Q γ wD z=
+      pnhlA m z+pnhlB α rc z+pnhlC m wD z+pnhlD m θ Q wD z+pnhlO γ z := by
+  ext <;> simp [pnhlDrift,pnhDrift,pnhlA,pnhlB,pnhlC,pnhlD,pnhlO,dpdA,dpdB,sub_eq_add_neg]
+theorem pairwiseWeight_localStationary {N d : ℕ} (m : Fin N → ℝ) (α rc θ Q γ σ : ℝ)
+    (hm : ∀ i, 0 < m i) (hrc : 0 < rc) (hθ : 0 < θ) (hQ : 0 < Q)
+    (hγ : 0 ≤ γ) (hσ : σ^2=2*γ*θ/Q) (z : PNHLState N d)
+    (hq : ∀ i j, i ≠ j → 0 < pairDistance z.1.1 i j)
+    (hcut : ∀ i j, i ≠ j → pairDistance z.1.1 i j ≠ rc) :
+    -textbookDivergence (fun x ↦ pairwiseWeight m (dpdPotential α rc) θ⁻¹ Q x •
+      pnhlDrift m α rc θ Q γ (fun r ↦ (dpdWeightR rc r)^2) x) z+
+      σ^2/2*deriv (deriv (fun s ↦ pairwiseWeight m (dpdPotential α rc) θ⁻¹ Q (z.1,s))) z.2=0 := by
+  sorry
+```
+
+### 5. 对照表
+
+| 原文成分 | Lean对应 | 说明 |
+|---|---|---|
+| 本条引用的对象与公式 | MD.Ch08.pnhlA, MD.Ch08.pnhlB, MD.Ch08.pnhlC, MD.Ch08.pnhlD, MD.Ch08.pnhlO, MD.Ch08.pnhlGenerator, MD.Ch08.pnhlDrift_split, MD.Ch08.pairwiseWeight_localStationary | 五子场、形式生成元、漂移分解；扩展权的局部驻定目标。 |
+
+[EXTRA] 驻定式只为非碰撞、离开截断界面的局部光滑目标；全局保测需边界、半群等理论。；没有以漂移分解恒等式替代驻定或遍历性证明；两者分别列状态。
+记号与上下文：见所列原文与Lean量化变量。
+
+### 6. 审计结论
+
+本地：已对照目视原页核对对象、量词、技术资格和所列覆盖范围；网站尚未审阅。
+疑点：本条暂未发现需单列的原书疑误。
+网站：尚未送审。
+
+### 7. 状态与证明位置
+
+未证陈述；Lean陈述可检查，证明完整性按本条状态区分。
+未证原因：成对相对速度散度、软势梯度和扩展Gibbs权的局部Fokker–Planck计算。
+位置：Blueprint/Ch08.lean；MD.Ch08.pnhlA, MD.Ch08.pnhlB, MD.Ch08.pnhlC, MD.Ch08.pnhlD, MD.Ch08.pnhlO, MD.Ch08.pnhlGenerator, MD.Ch08.pnhlDrift_split, MD.Ch08.pairwiseWeight_localStationary。
+
+## 1. MD-8.9.4-PNHLSplittingAlgorithms · algorithm · 印刷p.396 / PDFp.417
+
+### 2. 原文陈述
+
+PNHL-S: A½B½C½D½OD½C½B½A½; PNHL-N: A½B½C½D½OD½C½A½B½.
+
+### 3. 原文证明
+
+对应原页推导逐字保存在statement_verbatim/original_page_text；排版以原页PDF为准。
+
+原页文字及推导保存在原文JSON的original_page_text；网站子包附对应完整原页PDF。
+
+### 4. 完整当前Lean（原文与修正版独立列出）
+
+```lean
+def pnhlAStep {N d : ℕ} (m : Fin N → ℝ) (h : ℝ) (z : PNHLState N d) : PNHLState N d :=
+  (((fun i ↦ z.1.1 i+(h/m i) • z.1.2 i),z.1.2),z.2)
+def pnhlBStep {N d : ℕ} (α rc h : ℝ) (z : PNHLState N d) : PNHLState N d :=
+  ((z.1.1,z.1.2+h • dpdConservative α rc z.1.1),z.2)
+def pnhlDStep {N d : ℕ} (m : Fin N → ℝ) (θ Q h : ℝ) (wD : ℝ → ℝ)
+    (z : PNHLState N d) : PNHLState N d :=
+  (z.1,z.2+h*pairwiseFeedback m θ Q wD z.1.1 z.1.2)
+def pnhlOStep {N d : ℕ} (θ Q γ h R : ℝ) (z : PNHLState N d) : PNHLState N d :=
+  (z.1,Real.exp (-γ*h)*z.2+Real.sqrt (θ/Q*(1-Real.exp (-2*γ*h)))*R)
+def pnhlPairCStep {N d : ℕ} (i j : Fin N) (m : Fin N → ℝ) (h : ℝ)
+    (wD : ℝ → ℝ) (z : PNHLState N d) : PNHLState N d :=
+  let mr := reducedMass8 (m i) (m j)
+  let e := pairDirection z.1.1 i j
+  let u := dot e (relativeVelocity m z.1.2 i j)
+  let du := u*(Real.exp (-z.2*wD (pairDistance z.1.1 i j)*h/mr)-1)
+  ((z.1.1,dpdPairMomentumStep i j e mr du z.1.2),z.2)
+def pnhlSComposition {E : Type*} (A B C D O : ℝ → E → E) (h : ℝ) : E → E :=
+  A (h/2) ∘ B (h/2) ∘ C (h/2) ∘ D (h/2) ∘ O h ∘ D (h/2) ∘ C (h/2) ∘ B (h/2) ∘ A (h/2)
+def pnhlNComposition {E : Type*} (A B C D O : ℝ → E → E) (h : ℝ) : E → E :=
+  A (h/2) ∘ B (h/2) ∘ C (h/2) ∘ D (h/2) ∘ O h ∘ D (h/2) ∘ C (h/2) ∘ A (h/2) ∘ B (h/2)
+```
+
+### 5. 对照表
+
+| 原文成分 | Lean对应 | 说明 |
+|---|---|---|
+| 本条引用的对象与公式 | MD.Ch08.pnhlAStep, MD.Ch08.pnhlBStep, MD.Ch08.pnhlDStep, MD.Ch08.pnhlOStep, MD.Ch08.pnhlPairCStep, MD.Ch08.pnhlSComposition, MD.Ch08.pnhlNComposition | A/B/D/O实际更新、单对C更新和S/N的原印外层组合；全C指数与误差理论列缺口。 |
+
+[EXTRA] O需θ,Q>0、γ,h≥0及R独立标准正态；A/B/D给实际子步。C仅给逐对精确更新，全C需有序逐对近似，未冒称精确全流。；两组合保留原印因子顺序；不证明全方法弱阶、不变分布误差或非对称方法更优的经验结论。
+记号与上下文：见所列原文与Lean量化变量。
+
+### 6. 审计结论
+
+本地：已对照目视原页核对对象、量词、技术资格和所列覆盖范围；网站尚未审阅。
+疑点：本条暂未发现需单列的原书疑误。
+网站：尚未送审。
+
+### 7. 状态与证明位置
+
+已证；Lean陈述可检查，证明完整性按本条状态区分。
+本条未登记待证缺项。
+位置：Blueprint/Ch08.lean；MD.Ch08.pnhlAStep, MD.Ch08.pnhlBStep, MD.Ch08.pnhlDStep, MD.Ch08.pnhlOStep, MD.Ch08.pnhlPairCStep, MD.Ch08.pnhlSComposition, MD.Ch08.pnhlNComposition。
 

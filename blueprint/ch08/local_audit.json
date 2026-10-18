@@ -62,7 +62,7 @@
       ],
       "source_pages": "350–351",
       "semantic_review": "已对照目视原页核对对象、量词、技术资格和所列覆盖范围；网站尚未审阅。",
-      "compile_receipt": "blueprint/ch08/validation/batches/s88b-r1.json"
+      "compile_receipt": "blueprint/ch08/validation/batches/s89c-r2.json"
     },
     "MD-8.1-HamiltonianStationary": {
       "verdict": "PASS",
@@ -90,7 +90,7 @@
       ],
       "source_pages": "351",
       "semantic_review": "已对照目视原页核对对象、量词、技术资格和所列覆盖范围；网站尚未审阅。",
-      "compile_receipt": "blueprint/ch08/validation/batches/s88b-r1.json"
+      "compile_receipt": "blueprint/ch08/validation/batches/s89c-r2.json"
     },
     "MD-8.1-ExtendedDensity": {
       "verdict": "PASS",
@@ -112,13 +112,13 @@
       "missing": null,
       "issues": [],
       "website": "待网站审计",
-      "statement_scope": "本条列出的数学对象与结论全部；上下文见逐字原页。",
+      "statement_scope": "乘积权定义及辅助因子积分为1时的边缘积分等式；不额外证明概率正性或一般流不变性。",
       "extra_assumptions": [
         "辅助密度归一、乘积积分可积；使用有限/σ有限测度条件。"
       ],
       "source_pages": "352",
       "semantic_review": "已对照目视原页核对对象、量词、技术资格和所列覆盖范围；网站尚未审阅。",
-      "compile_receipt": "blueprint/ch08/validation/batches/s88b-r1.json"
+      "compile_receipt": "blueprint/ch08/validation/batches/s89c-r2.json"
     },
     "MD-8.1.1-NoseHoover": {
       "verdict": "PASS",
@@ -150,13 +150,13 @@
       "missing": null,
       "issues": [],
       "website": "待网站审计",
-      "statement_scope": "本条列出的数学对象与结论全部；上下文见逐字原页。",
+      "statement_scope": "正参数资格、动能平方和、NH实际向量场及全实时间ODE规格。",
       "extra_assumptions": [
         "μ记为Q且Q>0，β>0，正质量，热浴变量ξ∈ℝ；总函数nhField配合资格谓词使用。"
       ],
       "source_pages": "352",
       "semantic_review": "已对照目视原页核对对象、量词、技术资格和所列覆盖范围；网站尚未审阅。",
-      "compile_receipt": "blueprint/ch08/validation/batches/s88b-r1.json"
+      "compile_receipt": "blueprint/ch08/validation/batches/s89c-r2.json"
     },
     "MD-8.1.1-NHDensitySplit": {
       "verdict": "PASS",
@@ -195,7 +195,7 @@
       ],
       "source_pages": "353",
       "semantic_review": "已对照目视原页核对对象、量词、技术资格和所列覆盖范围；网站尚未审阅。",
-      "compile_receipt": "blueprint/ch08/validation/batches/s88b-r1.json"
+      "compile_receipt": "blueprint/ch08/validation/batches/s89c-r2.json"
     },
     "MD-8.1.1-NHFirstIntegralPrinted": {
       "verdict": "NEEDS_HUMAN",
@@ -226,13 +226,13 @@
         "已目视核对原页PDF354：上行ds/dt=ξ，与(8.8)的ln s不相容；改为ds/dt=sξ（亦见PDF356和Exercise2）。"
       ],
       "website": "待网站审计",
-      "statement_scope": "本条列出的数学对象与结论全部；上下文见逐字原页。",
+      "statement_scope": "第一积分候选、原印s导数与修正s导数各自对应的沿解零导数目标；原印版不证。",
       "extra_assumptions": [
         "s>0；原文版不证明，修正版另列；两版均保留原文H形式。"
       ],
       "source_pages": "354",
       "semantic_review": "已对照目视原页核对对象、量词、技术资格和所列覆盖范围；网站尚未审阅。",
-      "compile_receipt": "blueprint/ch08/validation/batches/s88b-r1.json"
+      "compile_receipt": "blueprint/ch08/validation/batches/s89c-r2.json"
     },
     "MD-8.1.2-NHReversal": {
       "verdict": "PASS",
@@ -263,7 +263,7 @@
       "extra_assumptions": [],
       "source_pages": "354",
       "semantic_review": "已对照目视原页核对对象、量词、技术资格和所列覆盖范围；网站尚未审阅。",
-      "compile_receipt": "blueprint/ch08/validation/batches/s88b-r1.json"
+      "compile_receipt": "blueprint/ch08/validation/batches/s89c-r2.json"
     },
     "MD-8.1.2-NHTimestep": {
       "verdict": "PASS",
@@ -311,7 +311,7 @@
       ],
       "source_pages": "354",
       "semantic_review": "已对照目视原页核对对象、量词、技术资格和所列覆盖范围；网站尚未审阅。",
-      "compile_receipt": "blueprint/ch08/validation/batches/s88b-r1.json"
+      "compile_receipt": "blueprint/ch08/validation/batches/s89c-r2.json"
     },
     "MD-8.1.2-NHTimestepReversible": {
       "verdict": "PASS",
@@ -335,13 +335,13 @@
       "missing": "含ξ=0延拓的指数函数五段映射代数消去；三条短路线内未完成。",
       "issues": [],
       "website": "待网站审计",
-      "statement_scope": "本条列出的数学对象与结论全部；上下文见逐字原页。",
+      "statement_scope": "五段单步的反演等式及负步长左逆两个目标；未建立误差阶数。",
       "extra_assumptions": [
         "逆映射以负步长映射及LeftInverse表达；不假设算法可逆作为结论的前提。"
       ],
       "source_pages": "354",
       "semantic_review": "已对照目视原页核对对象、量词、技术资格和所列覆盖范围；网站尚未审阅。",
-      "compile_receipt": "blueprint/ch08/validation/batches/s88b-r1.json"
+      "compile_receipt": "blueprint/ch08/validation/batches/s89c-r2.json"
     },
     "MD-8.1.2.1-NoseHamiltoniansPrinted": {
       "verdict": "NEEDS_HUMAN",
@@ -376,13 +376,13 @@
         "已目视核对原页PDF355：H_N先用(N_d+1)，(8.9)展开却用N_d；同名H_N等号不一致。工作修正显式减去β⁻¹ln s。"
       ],
       "website": "待网站审计",
-      "statement_scope": "本条列出的数学对象与结论全部；上下文见逐字原页。",
+      "statement_scope": "两个原印Hamiltonian定义、所印等式目标及减去对数差项后的代数修正。",
       "extra_assumptions": [
         "物理定义域s>0、β,Q及质量正；总函数在此域外不作物理解释。"
       ],
       "source_pages": "355",
       "semantic_review": "已对照目视原页核对对象、量词、技术资格和所列覆盖范围；网站尚未审阅。",
-      "compile_receipt": "blueprint/ch08/validation/batches/s88b-r1.json"
+      "compile_receipt": "blueprint/ch08/validation/batches/s89c-r2.json"
     },
     "MD-8.1.2.1-NPEquations": {
       "verdict": "PASS",
@@ -399,13 +399,13 @@
       "missing": null,
       "issues": [],
       "website": "待网站审计",
-      "statement_scope": "本条列出的数学对象与结论全部；上下文见逐字原页。",
+      "statement_scope": "四个NP漂移分量的实际定义；从Hamiltonian求导得到这些分量未证。",
       "extra_assumptions": [
         "ΔH采用(8.9)展开内的N_d版本；β,Q>0及s>0为有效域；尚未桥接实际Hamiltonian梯度。"
       ],
       "source_pages": "355",
       "semantic_review": "已对照目视原页核对对象、量词、技术资格和所列覆盖范围；网站尚未审阅。",
-      "compile_receipt": "blueprint/ch08/validation/batches/s88b-r1.json"
+      "compile_receipt": "blueprint/ch08/validation/batches/s89c-r2.json"
     },
     "MD-8.1.2.1-NPtoNH": {
       "verdict": "PASS",
@@ -434,7 +434,7 @@
       ],
       "source_pages": "356",
       "semantic_review": "已对照目视原页核对对象、量词、技术资格和所列覆盖范围；网站尚未审阅。",
-      "compile_receipt": "blueprint/ch08/validation/batches/s88b-r1.json"
+      "compile_receipt": "blueprint/ch08/validation/batches/s89c-r2.json"
     },
     "MD-8.1.2.1-NPShadowDensity": {
       "verdict": "PASS",
@@ -472,7 +472,7 @@
       ],
       "source_pages": "356",
       "semantic_review": "已对照目视原页核对对象、量词、技术资格和所列覆盖范围；网站尚未审阅。",
-      "compile_receipt": "blueprint/ch08/validation/batches/s88b-r1.json"
+      "compile_receipt": "blueprint/ch08/validation/batches/s89c-r2.json"
     },
     "MD-8.2-GeneralThermostat": {
       "verdict": "PASS",
@@ -494,13 +494,13 @@
       "missing": null,
       "issues": [],
       "website": "待网站审计",
-      "statement_scope": "本条列出的数学对象与结论全部；上下文见逐字原页。",
+      "statement_scope": "常矩阵一般热浴场及矩阵反对称资格的定义；不声称已证驻定或采样。",
       "extra_assumptions": [
         "J为常矩阵，Jᵀ=-J；z、ξ为实向量，光滑资格在结论中给出。"
       ],
       "source_pages": "357",
       "semantic_review": "已对照目视原页核对对象、量词、技术资格和所列覆盖范围；网站尚未审阅。",
-      "compile_receipt": "blueprint/ch08/validation/batches/s88b-r1.json"
+      "compile_receipt": "blueprint/ch08/validation/batches/s89c-r2.json"
     },
     "MD-8.2.1-ContinuityProductRule": {
       "verdict": "PASS",
@@ -528,7 +528,7 @@
       ],
       "source_pages": "357–358",
       "semantic_review": "已对照目视原页核对对象、量词、技术资格和所列覆盖范围；网站尚未审阅。",
-      "compile_receipt": "blueprint/ch08/validation/batches/s88b-r1.json"
+      "compile_receipt": "blueprint/ch08/validation/batches/s89c-r2.json"
     },
     "MD-8.2.1-ThermostatCriterion": {
       "verdict": "PASS",
@@ -551,13 +551,13 @@
       "missing": "一般高维Gaussian链式法则、常反对称矩阵的零散度和变量分裂。",
       "issues": [],
       "website": "待网站审计",
-      "statement_scope": "本条列出的数学对象与结论全部；上下文见逐字原页。",
+      "statement_scope": "给定正参数与光滑性后，局部Liouville驻定与所列标量散度条件的等价目标。",
       "extra_assumptions": [
         "原文μ_i在指数中是热质量，统一写Q_i；矩阵μ⁻¹的记号按对角热质量解释。归一化概率密度需另加有限正配分积分。"
       ],
       "source_pages": "358",
       "semantic_review": "已对照目视原页核对对象、量词、技术资格和所列覆盖范围；网站尚未审阅。",
-      "compile_receipt": "blueprint/ch08/validation/batches/s88b-r1.json"
+      "compile_receipt": "blueprint/ch08/validation/batches/s89c-r2.json"
     },
     "MD-8.2.1-Examples81and82": {
       "verdict": "PASS",
@@ -585,13 +585,13 @@
       "missing": "Bulgac–Kusnezov一般散度抵消计算。",
       "issues": [],
       "website": "待网站审计",
-      "statement_scope": "本条列出的数学对象与结论全部；上下文见逐字原页。",
+      "statement_scope": "单热浴一般G反馈及构型反馈公式、一般G的局部驻定目标；Example8.1由NH另条覆盖。",
       "extra_assumptions": [
         "Example8.1使用此前完整NH定义；本条单热浴一般G与构型反馈公式，构型全场与驻定证明未单列。"
       ],
       "source_pages": "358–359",
       "semantic_review": "已对照目视原页核对对象、量词、技术资格和所列覆盖范围；网站尚未审阅。",
-      "compile_receipt": "blueprint/ch08/validation/batches/s88b-r1.json"
+      "compile_receipt": "blueprint/ch08/validation/batches/s89c-r2.json"
     },
     "MD-8.2.1-TemperatureIdentity": {
       "verdict": "PASS",
@@ -614,13 +614,13 @@
       "missing": "高维散度定理与Gibbs权重积分分部。",
       "issues": [],
       "website": "待网站审计",
-      "statement_scope": "本条列出的数学对象与结论全部；上下文见逐字原页。",
+      "statement_scope": "紧支撑G的Gibbs积分分部目标及温度比值定义；一般边界衰减条件和比值推导未另证。",
       "extra_assumptions": [
         "以G紧支撑替代原文未量化的足够快边界衰减；温度比值解释另要求k_B>0、分母非零。"
       ],
       "source_pages": "359",
       "semantic_review": "已对照目视原页核对对象、量词、技术资格和所列覆盖范围；网站尚未审阅。",
-      "compile_receipt": "blueprint/ch08/validation/batches/s88b-r1.json"
+      "compile_receipt": "blueprint/ch08/validation/batches/s89c-r2.json"
     },
     "MD-8.2.1-Proposition81": {
       "verdict": "PASS",
@@ -637,13 +637,13 @@
       "missing": null,
       "issues": [],
       "website": "待网站审计",
-      "statement_scope": "本条列出的数学对象与结论全部；上下文见逐字原页。",
+      "statement_scope": "两个标量热浴的局部Liouville驻定相加命题；不含多维热浴或全局流保测性。",
       "extra_assumptions": [
         "两个标量辅助变量的实际Liouville驻定版本；非负、归一后称概率密度，流保测性另需完整流存在与Jacobian条件。多维辅助变量未覆盖。"
       ],
       "source_pages": "359–360",
       "semantic_review": "已对照目视原页核对对象、量词、技术资格和所列覆盖范围；网站尚未审阅。",
-      "compile_receipt": "blueprint/ch08/validation/batches/s88b-r1.json"
+      "compile_receipt": "blueprint/ch08/validation/batches/s89c-r2.json"
     },
     "MD-8.2.2-NHChains": {
       "verdict": "PASS",
@@ -666,13 +666,13 @@
       "missing": "任意链长的散度抵消与有限和组合；不建确定性遍历理论。",
       "issues": [],
       "website": "待网站审计",
-      "statement_scope": "本条列出的数学对象与结论全部；上下文见逐字原页。",
+      "statement_scope": "任意正链长的完整NH链场及Gaussian权局部驻定目标；不含遍历性。",
       "extra_assumptions": [
         "链长k>0，各热质量Q_j>0、β>0，实辅助变量；未归一Gaussian权重不声称唯一不变概率或遍历性。"
       ],
       "source_pages": "360–361",
       "semantic_review": "已对照目视原页核对对象、量词、技术资格和所列覆盖范围；网站尚未审阅。",
-      "compile_receipt": "blueprint/ch08/validation/batches/s88b-r1.json"
+      "compile_receipt": "blueprint/ch08/validation/batches/s89c-r2.json"
     },
     "MD-8.3-ArrheniusRate": {
       "verdict": "PASS",
@@ -694,13 +694,13 @@
       "missing": null,
       "issues": [],
       "website": "待网站审计",
-      "statement_scope": "本条列出的数学对象与结论全部；上下文见逐字原页。",
+      "statement_scope": "Arrhenius指数速率公式定义及A≥0时非负性；不含亚稳跃迁率渐近定理或温度单调性。",
       "extra_assumptions": [
         "A≥0,k_B>0,T>0为速率解释域；只定义原页模型，不声称一般能垒动力学服从此经验律。"
       ],
       "source_pages": "363",
       "semantic_review": "已对照目视原页核对对象、量词、技术资格和所列覆盖范围；网站尚未审阅。",
-      "compile_receipt": "blueprint/ch08/validation/batches/s88b-r1.json"
+      "compile_receipt": "blueprint/ch08/validation/batches/s89c-r2.json"
     },
     "MD-8.4-AdditiveThermostatSDE": {
       "verdict": "PASS",
@@ -738,7 +738,7 @@
       ],
       "source_pages": "363–364",
       "semantic_review": "已对照目视原页核对对象、量词、技术资格和所列覆盖范围；网站尚未审阅。",
-      "compile_receipt": "blueprint/ch08/validation/batches/s88b-r1.json"
+      "compile_receipt": "blueprint/ch08/validation/batches/s89c-r2.json"
     },
     "MD-8.4-OUStationarityPrinted": {
       "verdict": "NEEDS_HUMAN",
@@ -774,13 +774,13 @@
         "已目视核对原页PDF364–365：一般M与Γ仅对称不足保证原噪声协方差匹配，应加ΓM=MΓ或直接给涨落耗散关系；PDF365将Hessian的β提取后仍留β⁻¹，标量β=2,p=0已反例。"
       ],
       "website": "待网站审计",
-      "statement_scope": "本条列出的数学对象与结论全部；上下文见逐字原页。",
+      "statement_scope": "协方差匹配的完整OU局部驻定目标；所印扩散抵消的标量特例及数值反例。",
       "extra_assumptions": [
         "Printed保留显示抵消式的M=Γ=1,p=0标量特例；修正版为完整匹配协方差后的OU驻定式；不将转移分布存在性作为已证。"
       ],
       "source_pages": "364–365",
       "semantic_review": "已对照目视原页核对对象、量词、技术资格和所列覆盖范围；网站尚未审阅。",
-      "compile_receipt": "blueprint/ch08/validation/batches/s88b-r1.json"
+      "compile_receipt": "blueprint/ch08/validation/batches/s89c-r2.json"
     },
     "MD-8.4-LiftedThermostat": {
       "verdict": "PASS",
@@ -797,13 +797,13 @@
       "missing": null,
       "issues": [],
       "website": "待网站审计",
-      "statement_scope": "本条列出的数学对象与结论全部；上下文见逐字原页。",
+      "statement_scope": "一般单热浴提升场的实际加性Wiener积分解规格。",
       "extra_assumptions": [
         "真实Wiener、适应性和可积性由additiveSDE给出；σ≠0在Hörmander结论中单列。"
       ],
       "source_pages": "365–366",
       "semantic_review": "已对照目视原页核对对象、量词、技术资格和所列覆盖范围；网站尚未审阅。",
-      "compile_receipt": "blueprint/ch08/validation/batches/s88b-r1.json"
+      "compile_receipt": "blueprint/ch08/validation/batches/s89c-r2.json"
     },
     "MD-8.4-Proposition82": {
       "verdict": "NEEDS_HUMAN",
@@ -828,13 +828,13 @@
         "已目视核对原页PDF365–366：证明除以σ，定理需σ≠0；光滑向量场资格明确补足。"
       ],
       "website": "待网站审计",
-      "statement_scope": "本条列出的数学对象与结论全部；上下文见逐字原页。",
+      "statement_scope": "所印及补σ≠0后的真实Lie括号张成命题；不含解存在、平滑转移核或遍历性。",
       "extra_assumptions": [
         "Printed版保留未要求非零σ的原文强度，不证明；修正版完整使用真实迭代Lie括号张成定义。"
       ],
       "source_pages": "365–366",
       "semantic_review": "已对照目视原页核对对象、量词、技术资格和所列覆盖范围；网站尚未审阅。",
-      "compile_receipt": "blueprint/ch08/validation/batches/s88b-r1.json"
+      "compile_receipt": "blueprint/ch08/validation/batches/s89c-r2.json"
     },
     "MD-8.4.1-NHL": {
       "verdict": "PASS",
@@ -867,7 +867,7 @@
       ],
       "source_pages": "366–367",
       "semantic_review": "已对照目视原页核对对象、量词、技术资格和所列覆盖范围；网站尚未审阅。",
-      "compile_receipt": "blueprint/ch08/validation/batches/s88b-r1.json"
+      "compile_receipt": "blueprint/ch08/validation/batches/s89c-r2.json"
     },
     "MD-8.4.1-Lemma81": {
       "verdict": "PASS",
@@ -884,13 +884,13 @@
       "missing": null,
       "issues": [],
       "website": "待网站审计",
-      "statement_scope": "本条列出的数学对象与结论全部；上下文见逐字原页。",
+      "statement_scope": "线性向量场C、D在实际Lie生成空间中的归属；Lean零起始索引对应原文正索引。",
       "extra_assumptions": [
         "Lean索引k=0对应原文k=1；完整实际线性场、导数括号与End括号约定均摘录；生成子代数在相反括号下相同。"
       ],
       "source_pages": "368",
       "semantic_review": "已对照目视原页核对对象、量词、技术资格和所列覆盖范围；网站尚未审阅。",
-      "compile_receipt": "blueprint/ch08/validation/batches/s88b-r1.json"
+      "compile_receipt": "blueprint/ch08/validation/batches/s89c-r2.json"
     },
     "MD-8.4.1-Proposition83": {
       "verdict": "PASS",
@@ -907,13 +907,13 @@
       "missing": null,
       "issues": [],
       "website": "待网站审计",
-      "statement_scope": "本条列出的数学对象与结论全部；上下文见逐字原页。",
+      "statement_scope": "指定模态域内的2n个实际线性场值线性无关；不扩大到例外零模态。",
       "extra_assumptions": [
         "D的每个特征模态中q、p不能同时为0；有限族用Fin n⊕Fin n索引；完整证明消去两组系数。"
       ],
       "source_pages": "368–369",
       "semantic_review": "已对照目视原页核对对象、量词、技术资格和所列覆盖范围；网站尚未审阅。",
-      "compile_receipt": "blueprint/ch08/validation/batches/s88b-r1.json"
+      "compile_receipt": "blueprint/ch08/validation/batches/s89c-r2.json"
     },
     "MD-8.4.1-Theorem81": {
       "verdict": "NEEDS_HUMAN",
@@ -938,13 +938,13 @@
         "已目视核对原页PDF367–369：继承Proposition8.2证明，必须排除σ=0；只证明Hörmander张成，不自动获得全局几何遍历性。"
       ],
       "website": "待网站审计",
-      "statement_scope": "本条列出的数学对象与结论全部；上下文见逐字原页。",
+      "statement_scope": "所印及补参数资格后的NHL点态Hörmander条件；不含由其推出全局几何遍历性。",
       "extra_assumptions": [
         "D严格采用每个特征模态q、p不同时为零；正温度、质量、摩擦及非零噪声明确写出。"
       ],
       "source_pages": "367–369",
       "semantic_review": "已对照目视原页核对对象、量词、技术资格和所列覆盖范围；网站尚未审阅。",
-      "compile_receipt": "blueprint/ch08/validation/batches/s88b-r1.json"
+      "compile_receipt": "blueprint/ch08/validation/batches/s89c-r2.json"
     },
     "MD-8.4.1-ZeroModeInvariant": {
       "verdict": "PASS",
@@ -966,13 +966,13 @@
       "missing": null,
       "issues": [],
       "website": "待网站审计",
-      "statement_scope": "本条列出的数学对象与结论全部；上下文见逐字原页。",
+      "statement_scope": "模态域的补集表达及连续热浴路径驱动的模态ODE零模态不变。",
       "extra_assumptions": [
         "任意紧时间区间上的实际模态ODE；连续随机热浴路径可逐路径应用，不额外声称SDE解存在。"
       ],
       "source_pages": "367",
       "semantic_review": "已对照目视原页核对对象、量词、技术资格和所列覆盖范围；网站尚未审阅。",
-      "compile_receipt": "blueprint/ch08/validation/batches/s88b-r1.json"
+      "compile_receipt": "blueprint/ch08/validation/batches/s89c-r2.json"
     },
     "MD-8.4.1-NHLGenerator": {
       "verdict": "PASS",
@@ -1004,13 +1004,13 @@
       "missing": null,
       "issues": [],
       "website": "待网站审计",
-      "statement_scope": "本条列出的数学对象与结论全部；上下文见逐字原页。",
+      "statement_scope": "实际加性扩散的Fréchet形式生成元、Lyapunov候选及漂移界性质的定义。",
       "extra_assumptions": [
         "采用实际一阶、二阶Fréchet导数；原文省略f的-ξp·∇p理解为作用于f；Q,β,γ须正。"
       ],
       "source_pages": "369",
       "semantic_review": "已对照目视原页核对对象、量词、技术资格和所列覆盖范围；网站尚未审阅。",
-      "compile_receipt": "blueprint/ch08/validation/batches/s88b-r1.json"
+      "compile_receipt": "blueprint/ch08/validation/batches/s89c-r2.json"
     },
     "MD-8.4.1-LyapunovCalculation": {
       "verdict": "PASS",
@@ -1038,13 +1038,13 @@
       "missing": "实际扩散生成元作用于二次能量的链式法则。",
       "issues": [],
       "website": "待网站审计",
-      "statement_scope": "本条列出的数学对象与结论全部；上下文见逐字原页。",
+      "statement_scope": "实际NHL生成元作用于平移二次能量的目标及标量平方不等式；未据此证明遍历。",
       "extra_assumptions": [
         "U下界>1且上界有限用于后续Lyapunov正性/漂移估计；本条计算本身只需C²。"
       ],
       "source_pages": "369–370",
       "semantic_review": "已对照目视原页核对对象、量词、技术资格和所列覆盖范围；网站尚未审阅。",
-      "compile_receipt": "blueprint/ch08/validation/batches/s88b-r1.json"
+      "compile_receipt": "blueprint/ch08/validation/batches/s89c-r2.json"
     },
     "MD-8.4.1-LyapunovRatePrinted": {
       "verdict": "NEEDS_HUMAN",
@@ -1085,13 +1085,13 @@
         "已目视核对原页PDF370：与φ热浴项μ(ξ-a)²/2比较时衰减系数应≤γ，所印min(2a,γμ)对一般μ不足；正参数数值反例已列。"
       ],
       "website": "待网站审计",
-      "statement_scope": "本条列出的数学对象与结论全部；上下文见逐字原页。",
+      "statement_scope": "所印与修正衰减系数、两版漂移界目标及所印界的正参数数值反例。",
       "extra_assumptions": [
         "修正为min(2a,γ)，仅修正漂移代数估计；几何遍历还需完整概率半群、小集条件和解理论，未声称已证。"
       ],
       "source_pages": "370",
       "semantic_review": "已对照目视原页核对对象、量词、技术资格和所列覆盖范围；网站尚未审阅。",
-      "compile_receipt": "blueprint/ch08/validation/batches/s88b-r1.json"
+      "compile_receipt": "blueprint/ch08/validation/batches/s89c-r2.json"
     },
     "MD-8.4.2-NHLTimestep": {
       "verdict": "PASS",
@@ -1128,13 +1128,13 @@
       "missing": null,
       "issues": [],
       "website": "待网站审计",
-      "statement_scope": "本条列出的数学对象与结论全部；上下文见逐字原页。",
+      "statement_scope": "实际九阶段NHL单步映射、OU随机输入及独立标准正态序列资格；不含整体稳定性。",
       "extra_assumptions": [
         "R_n独立标准正态；h≥0、β,Q>0、γ≥0用于OU噪声解释；所谓无限摩擦稳定性没有扩大成完整算法无条件稳定定理。"
       ],
       "source_pages": "371",
       "semantic_review": "已对照目视原页核对对象、量词、技术资格和所列覆盖范围；网站尚未审阅。",
-      "compile_receipt": "blueprint/ch08/validation/batches/s88b-r1.json"
+      "compile_receipt": "blueprint/ch08/validation/batches/s89c-r2.json"
     },
     "MD-8.4.1-NHLWeakStationary": {
       "verdict": "PASS",
@@ -1157,13 +1157,13 @@
       "missing": "Gibbs积分分部及OU对称性，未将局部生成元式冒充保测流或遍历定理。",
       "issues": [],
       "website": "待网站审计",
-      "statement_scope": "本条列出的数学对象与结论全部；上下文见逐字原页。",
+      "statement_scope": "归一概率密度的弱驻定积分式目标；Markov半群不变性、唯一性和遍历性未覆盖。",
       "extra_assumptions": [
         "只覆盖归一概率密度的弱驻定积分式；Markov半群不变性、唯一性及遍历结论需要额外解理论，明确列覆盖缺口。"
       ],
       "source_pages": "366–367",
       "semantic_review": "已对照目视原页核对对象、量词、技术资格和所列覆盖范围；网站尚未审阅。",
-      "compile_receipt": "blueprint/ch08/validation/batches/s88b-r1.json"
+      "compile_receipt": "blueprint/ch08/validation/batches/s89c-r2.json"
     },
     "MD-8.4.3-PreEquilibriumMeans": {
       "verdict": "PASS",
@@ -1190,13 +1190,13 @@
       "missing": null,
       "issues": [],
       "website": "待网站审计",
-      "statement_scope": "本条列出的数学对象与结论全部；上下文见逐字原页。",
+      "statement_scope": "两项瞬时分布平均及随时间非负归一密度的资格；局部稳定性和闭合方程未覆盖。",
       "extra_assumptions": [
         "ρ非负、可积且归一；外引局部稳定性分析未给闭合方程，列覆盖缺口。"
       ],
       "source_pages": "375–376",
       "semantic_review": "已对照目视原页核对对象、量词、技术资格和所列覆盖范围；网站尚未审阅。",
-      "compile_receipt": "blueprint/ch08/validation/batches/s88b-r1.json"
+      "compile_receipt": "blueprint/ch08/validation/batches/s89c-r2.json"
     },
     "MD-8.4.4-VelocityRescaling": {
       "verdict": "PASS",
@@ -1239,13 +1239,13 @@
       "missing": "导数γ/(2K)的商法则短桥接。",
       "issues": [],
       "website": "待网站审计",
-      "statement_scope": "本条列出的数学对象与结论全部；上下文见逐字原页。",
+      "statement_scope": "实际漂移扩散、Φ有效性和原始Φ对应Ψ的化简目标；没有完整乘性SDE解规格。",
       "extra_assumptions": [
         "Φ在K>0光滑正，KΦ在0附近有界且多项式增长；原始Φ在K=0奇异，未声称全空间光滑扩散或遍历性。"
       ],
       "source_pages": "376",
       "semantic_review": "已对照目视原页核对对象、量词、技术资格和所列覆盖范围；网站尚未审阅。",
-      "compile_receipt": "blueprint/ch08/validation/batches/s88b-r1.json"
+      "compile_receipt": "blueprint/ch08/validation/batches/s89c-r2.json"
     },
     "MD-8.4.4-RescalingStationary": {
       "verdict": "PASS",
@@ -1263,13 +1263,13 @@
       "missing": "退化乘性扩散的Gibbs积分分部；不建设一般Fokker–Planck与遍历理论。",
       "issues": [],
       "website": "待网站审计",
-      "statement_scope": "本条列出的数学对象与结论全部；上下文见逐字原页。",
+      "statement_scope": "支撑避开零动量的测试函数弱驻定目标；零动量边界与半群不变性未覆盖。",
       "extra_assumptions": [
         "测试函数支撑远离K=0，覆盖弱驻定式；完整随机解与半群不变性列缺口。二阶项冻结f的一阶微分求导，表示Itô Hessian而不混入Stratonovich漂移。"
       ],
       "source_pages": "376",
       "semantic_review": "已对照目视原页核对对象、量词、技术资格和所列覆盖范围；网站尚未审阅。",
-      "compile_receipt": "blueprint/ch08/validation/batches/s88b-r1.json"
+      "compile_receipt": "blueprint/ch08/validation/batches/s89c-r2.json"
     },
     "MD-8.4.5-ThermostatEfficiency": {
       "verdict": "PASS",
@@ -1317,7 +1317,7 @@
       ],
       "source_pages": "377–378",
       "semantic_review": "已对照目视原页核对对象、量词、技术资格和所列覆盖范围；网站尚未审阅。",
-      "compile_receipt": "blueprint/ch08/validation/batches/s88b-r1.json"
+      "compile_receipt": "blueprint/ch08/validation/batches/s89c-r2.json"
     },
     "MD-8.5-SLS": {
       "verdict": "PASS",
@@ -1349,13 +1349,13 @@
       "missing": null,
       "issues": [],
       "website": "待网站审计",
-      "statement_scope": "本条列出的数学对象与结论全部；上下文见逐字原页。",
+      "statement_scope": "完整SLS加性SDE积分解规格、噪声方向与确定性子场定义。",
       "extra_assumptions": [
         "全部n+1个Wiener坐标独立，Q、质量、温度及两摩擦参数正；总漂移和常噪声用实际积分方程解释。"
       ],
       "source_pages": "378–379",
       "semantic_review": "已对照目视原页核对对象、量词、技术资格和所列覆盖范围；网站尚未审阅。",
-      "compile_receipt": "blueprint/ch08/validation/batches/s88b-r1.json"
+      "compile_receipt": "blueprint/ch08/validation/batches/s89c-r2.json"
     },
     "MD-8.5-SLSBracketPrinted": {
       "verdict": "NEEDS_HUMAN",
@@ -1386,13 +1386,13 @@
         "已目视核对原页PDF379：沿用Proposition8.2所用括号约定[D,Y]=DY·D-DD·Y，q分量应为-p；整体反号也不能同时保留热浴分量+1。"
       ],
       "website": "待网站审计",
-      "statement_scope": "本条列出的数学对象与结论全部；上下文见逐字原页。",
+      "statement_scope": "第一漂移/热浴括号的原印与符号修正目标；二重括号在Hörmander另条处理。",
       "extra_assumptions": [
         "只纠正第一括号；二次括号的整体符号不影响生成空间张成。"
       ],
       "source_pages": "379",
       "semantic_review": "已对照目视原页核对对象、量词、技术资格和所列覆盖范围；网站尚未审阅。",
-      "compile_receipt": "blueprint/ch08/validation/batches/s88b-r1.json"
+      "compile_receipt": "blueprint/ch08/validation/batches/s89c-r2.json"
     },
     "MD-8.5-SLSHormander": {
       "verdict": "PASS",
@@ -1410,13 +1410,13 @@
       "missing": "实际向量场二重括号与点态张成闭包。",
       "issues": [],
       "website": "待网站审计",
-      "statement_scope": "本条列出的数学对象与结论全部；上下文见逐字原页。",
+      "statement_scope": "单位参数实际SLS场与噪声方向的点态Lie张成目标；不含几何遍历性。",
       "extra_assumptions": [
         "单位参数、常非零独立噪声；只陈述实际Lie张成，不将其直接称为几何遍历定理。"
       ],
       "source_pages": "378–379",
       "semantic_review": "已对照目视原页核对对象、量词、技术资格和所列覆盖范围；网站尚未审阅。",
-      "compile_receipt": "blueprint/ch08/validation/batches/s88b-r1.json"
+      "compile_receipt": "blueprint/ch08/validation/batches/s89c-r2.json"
     },
     "MD-8.5-SLSConservation": {
       "verdict": "PASS",
@@ -1440,13 +1440,13 @@
       "missing": "一般U的方向能量守恒与实际散度计算。",
       "issues": [],
       "website": "待网站审计",
-      "statement_scope": "本条列出的数学对象与结论全部；上下文见逐字原页。",
+      "statement_scope": "确定性SLS子场的局部驻定及零散度目标；完整SDE概率不变、独立第一积分未另证。",
       "extra_assumptions": [
         "完整权重含p高斯项，确定性p固定；只保留驻定及零散度，完整SDE概率不变和离散迭代收敛列缺口。"
       ],
       "source_pages": "379",
       "semantic_review": "已对照目视原页核对对象、量词、技术资格和所列覆盖范围；网站尚未审阅。",
-      "compile_receipt": "blueprint/ch08/validation/batches/s88b-r1.json"
+      "compile_receipt": "blueprint/ch08/validation/batches/s89c-r2.json"
     },
     "MD-8.5-SLSLeapfrog": {
       "verdict": "PASS",
@@ -1484,7 +1484,7 @@
       ],
       "source_pages": "379–380",
       "semantic_review": "已对照目视原页核对对象、量词、技术资格和所列覆盖范围；网站尚未审阅。",
-      "compile_receipt": "blueprint/ch08/validation/batches/s88b-r1.json"
+      "compile_receipt": "blueprint/ch08/validation/batches/s89c-r2.json"
     },
     "MD-8.6-IsokineticField": {
       "verdict": "PASS",
@@ -1517,7 +1517,7 @@
       ],
       "source_pages": "382–383",
       "semantic_review": "已对照目视原页核对对象、量词、技术资格和所列覆盖范围；网站尚未审阅。",
-      "compile_receipt": "blueprint/ch08/validation/batches/s88b-r1.json"
+      "compile_receipt": "blueprint/ch08/validation/batches/s89c-r2.json"
     },
     "MD-8.6-IsokineticProjector": {
       "verdict": "PASS",
@@ -1545,13 +1545,13 @@
       "missing": "有限和提取标量后的投影复合代数短证明。",
       "issues": [],
       "website": "待网站审计",
-      "statement_scope": "本条列出的数学对象与结论全部；上下文见逐字原页。",
+      "statement_scope": "实际投影定义、固定p及幂等性目标；完整像空间刻画未覆盖。",
       "extra_assumptions": [
         "分母K非零；范围为span(p)的完整线性映射子空间等式列覆盖缺口。"
       ],
       "source_pages": "383",
       "semantic_review": "已对照目视原页核对对象、量词、技术资格和所列覆盖范围；网站尚未审阅。",
-      "compile_receipt": "blueprint/ch08/validation/batches/s88b-r1.json"
+      "compile_receipt": "blueprint/ch08/validation/batches/s89c-r2.json"
     },
     "MD-8.6-IsokineticDivergencePrinted": {
       "verdict": "NEEDS_HUMAN",
@@ -1582,13 +1582,13 @@
         "已目视核对原页PDF383–384：ṗ=F-λp的散度应为-(N_c-1)λ，所印正号与后续w=(N_c-1)U/K也冲突。"
       ],
       "website": "待网站审计",
-      "statement_scope": "本条列出的数学对象与结论全部；上下文见逐字原页。",
+      "statement_scope": "一般光滑力的原印/符号修正散度目标及权重ansatz；w方程和概率不变另列缺口。",
       "extra_assumptions": [
         "Φ为正光滑非零函数时称权重；使用K≠0域上的实际散度。"
       ],
       "source_pages": "383–384",
       "semantic_review": "已对照目视原页核对对象、量词、技术资格和所列覆盖范围；网站尚未审阅。",
-      "compile_receipt": "blueprint/ch08/validation/batches/s88b-r1.json"
+      "compile_receipt": "blueprint/ch08/validation/batches/s89c-r2.json"
     },
     "MD-8.6-IsokineticGibbsShell": {
       "verdict": "PASS",
@@ -1621,7 +1621,7 @@
       ],
       "source_pages": "384",
       "semantic_review": "已对照目视原页核对对象、量词、技术资格和所列覆盖范围；网站尚未审阅。",
-      "compile_receipt": "blueprint/ch08/validation/batches/s88b-r1.json"
+      "compile_receipt": "blueprint/ch08/validation/batches/s89c-r2.json"
     },
     "MD-8.6.1-StochasticIsokinetic": {
       "verdict": "PASS",
@@ -1658,13 +1658,13 @@
       "missing": null,
       "issues": [],
       "website": "待网站审计",
-      "statement_scope": "本条列出的数学对象与结论全部；上下文见逐字原页。",
+      "statement_scope": "实际SIN漂移、正参数Wiener积分解和瞬时约束平衡；约束沿全路径保持未另证。",
       "extra_assumptions": [
         "热浴变量ξ₁,ξ₂∈ℝ，各质量、温度、摩擦正；随机噪声只在ξ₂；约束正值排除奇点。"
       ],
       "source_pages": "385–386",
       "semantic_review": "已对照目视原页核对对象、量词、技术资格和所列覆盖范围；网站尚未审阅。",
-      "compile_receipt": "blueprint/ch08/validation/batches/s88b-r1.json"
+      "compile_receipt": "blueprint/ch08/validation/batches/s89c-r2.json"
     },
     "MD-8.6.1-SINWeightPrinted": {
       "verdict": "NEEDS_HUMAN",
@@ -1694,13 +1694,13 @@
         "已目视核对原页PDF386：ξ₂方程含μ₂⁻¹，而w的ξ₂二次项缺μ₂；一般μ₂时应为μ₂ξ₂²/2。"
       ],
       "website": "待网站审计",
-      "statement_scope": "本条列出的数学对象与结论全部；上下文见逐字原页。",
+      "statement_scope": "原印及补热浴质量的权重、正约束面局部驻定目标；曲面边缘分布及遍历性未覆盖。",
       "extra_assumptions": [
         "仅证明正约束面处的实际通量散度陈述；曲面概率测度、边缘分布和遍历性列缺口。"
       ],
       "source_pages": "386",
       "semantic_review": "已对照目视原页核对对象、量词、技术资格和所列覆盖范围；网站尚未审阅。",
-      "compile_receipt": "blueprint/ch08/validation/batches/s88b-r1.json"
+      "compile_receipt": "blueprint/ch08/validation/batches/s89c-r2.json"
     },
     "MD-8.6.2-SINHarmonic": {
       "verdict": "PASS",
@@ -1748,7 +1748,7 @@
       ],
       "source_pages": "387",
       "semantic_review": "已对照目视原页核对对象、量词、技术资格和所列覆盖范围；网站尚未审阅。",
-      "compile_receipt": "blueprint/ch08/validation/batches/s88b-r1.json"
+      "compile_receipt": "blueprint/ch08/validation/batches/s89c-r2.json"
     },
     "MD-8.6.2-SINProjectedBracketsPrinted": {
       "verdict": "NEEDS_HUMAN",
@@ -1824,7 +1824,7 @@
       ],
       "source_pages": "388",
       "semantic_review": "已对照目视原页核对对象、量词、技术资格和所列覆盖范围；网站尚未审阅。",
-      "compile_receipt": "blueprint/ch08/validation/batches/s88b-r1.json"
+      "compile_receipt": "blueprint/ch08/validation/batches/s89c-r2.json"
     },
     "MD-8.6.2-SINThirdBracketPrinted": {
       "verdict": "NEEDS_HUMAN",
@@ -1869,7 +1869,7 @@
       ],
       "source_pages": "389",
       "semantic_review": "已对照目视原页核对对象、量词、技术资格和所列覆盖范围；网站尚未审阅。",
-      "compile_receipt": "blueprint/ch08/validation/batches/s88b-r1.json"
+      "compile_receipt": "blueprint/ch08/validation/batches/s89c-r2.json"
     },
     "MD-8.6.2-SINBracketRank": {
       "verdict": "PASS",
@@ -1893,7 +1893,7 @@
       ],
       "source_pages": "387–389",
       "semantic_review": "已对照目视原页核对对象、量词、技术资格和所列覆盖范围；网站尚未审阅。",
-      "compile_receipt": "blueprint/ch08/validation/batches/s88b-r1.json"
+      "compile_receipt": "blueprint/ch08/validation/batches/s89c-r2.json"
     },
     "MD-8.6.2-SINLyapunov": {
       "verdict": "PASS",
@@ -1928,7 +1928,7 @@
       ],
       "source_pages": "389–390",
       "semantic_review": "已对照目视原页核对对象、量词、技术资格和所列覆盖范围；网站尚未审阅。",
-      "compile_receipt": "blueprint/ch08/validation/batches/s88b-r1.json"
+      "compile_receipt": "blueprint/ch08/validation/batches/s89c-r2.json"
     },
     "MD-8.6.3-SINForceSplitting": {
       "verdict": "PASS",
@@ -1976,7 +1976,7 @@
       ],
       "source_pages": "391–392",
       "semantic_review": "已对照目视原页核对对象、量词、技术资格和所列覆盖范围；网站尚未审阅。",
-      "compile_receipt": "blueprint/ch08/validation/batches/s88b-r1.json"
+      "compile_receipt": "blueprint/ch08/validation/batches/s89c-r2.json"
     },
     "MD-8.6.3-SINRAlgorithm": {
       "verdict": "PASS",
@@ -2001,7 +2001,7 @@
       ],
       "source_pages": "392",
       "semantic_review": "已对照目视原页核对对象、量词、技术资格和所列覆盖范围；网站尚未审阅。",
-      "compile_receipt": "blueprint/ch08/validation/batches/s88b-r1.json"
+      "compile_receipt": "blueprint/ch08/validation/batches/s89c-r2.json"
     },
     "MD-8.6.3-SINNoseSubsplitting": {
       "verdict": "PASS",
@@ -2034,7 +2034,7 @@
       ],
       "source_pages": "393",
       "semantic_review": "已对照目视原页核对对象、量词、技术资格和所列覆盖范围；网站尚未审阅。",
-      "compile_receipt": "blueprint/ch08/validation/batches/s88b-r1.json"
+      "compile_receipt": "blueprint/ch08/validation/batches/s89c-r2.json"
     },
     "MD-8.6.3-SINForceExactPrinted": {
       "verdict": "NEEDS_HUMAN",
@@ -2081,7 +2081,7 @@
       ],
       "source_pages": "393",
       "semantic_review": "已对照目视原页核对对象、量词、技术资格和所列覆盖范围；网站尚未审阅。",
-      "compile_receipt": "blueprint/ch08/validation/batches/s88b-r1.json"
+      "compile_receipt": "blueprint/ch08/validation/batches/s89c-r2.json"
     },
     "MD-8.6.4-SINThreeLevelPotential": {
       "verdict": "PASS",
@@ -2109,7 +2109,7 @@
       ],
       "source_pages": "394",
       "semantic_review": "已对照目视原页核对对象、量词、技术资格和所列覆盖范围；网站尚未审阅。",
-      "compile_receipt": "blueprint/ch08/validation/batches/s88b-r1.json"
+      "compile_receipt": "blueprint/ch08/validation/batches/s89c-r2.json"
     },
     "MD-8.7-GeneralizedLangevin": {
       "verdict": "PASS",
@@ -2138,7 +2138,7 @@
       ],
       "source_pages": "395",
       "semantic_review": "已对照目视原页核对对象、量词、技术资格和所列覆盖范围；网站尚未审阅。",
-      "compile_receipt": "blueprint/ch08/validation/batches/s88b-r1.json"
+      "compile_receipt": "blueprint/ch08/validation/batches/s89c-r2.json"
     },
     "MD-8.7-GLEFluctuationDissipationPrinted": {
       "verdict": "NEEDS_HUMAN",
@@ -2178,7 +2178,7 @@
       ],
       "source_pages": "395",
       "semantic_review": "已对照目视原页核对对象、量词、技术资格和所列覆盖范围；网站尚未审阅。",
-      "compile_receipt": "blueprint/ch08/validation/batches/s88b-r1.json"
+      "compile_receipt": "blueprint/ch08/validation/batches/s89c-r2.json"
     },
     "MD-8.7-PronyKernel": {
       "verdict": "PASS",
@@ -2205,13 +2205,13 @@
       "missing": null,
       "issues": [],
       "website": "待网站审计",
-      "statement_scope": "本条列出的数学对象与结论全部；上下文见逐字原页。",
+      "statement_scope": "正指数系数/记忆时间资格、Prony核定义及非负性；不包含过程极限。",
       "extra_assumptions": [
         "正cₖ、τₖ为后文OU实现所用域；此处只定义Prony核并证明非负，不声称任意记忆核的逼近误差。"
       ],
       "source_pages": "396",
       "semantic_review": "已对照目视原页核对对象、量词、技术资格和所列覆盖范围；网站尚未审阅。",
-      "compile_receipt": "blueprint/ch08/validation/batches/s88b-r1.json"
+      "compile_receipt": "blueprint/ch08/validation/batches/s89c-r2.json"
     },
     "MD-8.7.1-PronyMemoryODE": {
       "verdict": "PASS",
@@ -2251,7 +2251,7 @@
       ],
       "source_pages": "396",
       "semantic_review": "已对照目视原页核对对象、量词、技术资格和所列覆盖范围；网站尚未审阅。",
-      "compile_receipt": "blueprint/ch08/validation/batches/s88b-r1.json"
+      "compile_receipt": "blueprint/ch08/validation/batches/s89c-r2.json"
     },
     "MD-8.7.1-PronyOUStationarity": {
       "verdict": "PASS",
@@ -2285,7 +2285,7 @@
       ],
       "source_pages": "397",
       "semantic_review": "已对照目视原页核对对象、量词、技术资格和所列覆盖范围；网站尚未审阅。",
-      "compile_receipt": "blueprint/ch08/validation/batches/s88b-r1.json"
+      "compile_receipt": "blueprint/ch08/validation/batches/s89c-r2.json"
     },
     "MD-8.7.1-CombinedPronyVariable": {
       "verdict": "PASS",
@@ -2329,7 +2329,7 @@
       ],
       "source_pages": "397",
       "semantic_review": "已对照目视原页核对对象、量词、技术资格和所列覆盖范围；网站尚未审阅。",
-      "compile_receipt": "blueprint/ch08/validation/batches/s88b-r1.json"
+      "compile_receipt": "blueprint/ch08/validation/batches/s89c-r2.json"
     },
     "MD-8.7.1-PronyLangevinLimit": {
       "verdict": "PASS",
@@ -2363,7 +2363,7 @@
       ],
       "source_pages": "397–398",
       "semantic_review": "已对照目视原页核对对象、量词、技术资格和所列覆盖范围；网站尚未审阅。",
-      "compile_receipt": "blueprint/ch08/validation/batches/s88b-r1.json"
+      "compile_receipt": "blueprint/ch08/validation/batches/s89c-r2.json"
     },
     "MD-8.7.1-GeneralizedLangevinIntegrator": {
       "verdict": "PASS",
@@ -2392,7 +2392,7 @@
       ],
       "source_pages": "398",
       "semantic_review": "已对照目视原页核对对象、量词、技术资格和所列覆盖范围；网站尚未审阅。",
-      "compile_receipt": "blueprint/ch08/validation/batches/s88b-r1.json"
+      "compile_receipt": "blueprint/ch08/validation/batches/s89c-r2.json"
     },
     "MD-8.7.1-GLEConsistentCoefficients": {
       "verdict": "PASS",
@@ -2437,7 +2437,7 @@
       ],
       "source_pages": "398",
       "semantic_review": "已对照目视原页核对对象、量词、技术资格和所列覆盖范围；网站尚未审阅。",
-      "compile_receipt": "blueprint/ch08/validation/batches/s88b-r1.json"
+      "compile_receipt": "blueprint/ch08/validation/batches/s89c-r2.json"
     },
     "MD-8.8-NPTThermodynamics": {
       "verdict": "PASS",
@@ -2470,7 +2470,7 @@
       ],
       "source_pages": "399",
       "semantic_review": "已对照目视原页核对对象、量词、技术资格和所列覆盖范围；网站尚未审阅。",
-      "compile_receipt": "blueprint/ch08/validation/batches/s88b-r1.json"
+      "compile_receipt": "blueprint/ch08/validation/batches/s89c-r2.json"
     },
     "MD-8.8-NPTBathTaylor": {
       "verdict": "PASS",
@@ -2499,7 +2499,7 @@
       ],
       "source_pages": "399",
       "semantic_review": "已对照目视原页核对对象、量词、技术资格和所列覆盖范围；网站尚未审阅。",
-      "compile_receipt": "blueprint/ch08/validation/batches/s88b-r1.json"
+      "compile_receipt": "blueprint/ch08/validation/batches/s89c-r2.json"
     },
     "MD-8.8-NPTDensity": {
       "verdict": "PASS",
@@ -2542,7 +2542,7 @@
       ],
       "source_pages": "399–400",
       "semantic_review": "已对照目视原页核对对象、量词、技术资格和所列覆盖范围；网站尚未审阅。",
-      "compile_receipt": "blueprint/ch08/validation/batches/s88b-r1.json"
+      "compile_receipt": "blueprint/ch08/validation/batches/s89c-r2.json"
     },
     "MD-8.8-AndersenCoordinates": {
       "verdict": "PASS",
@@ -2587,7 +2587,7 @@
       ],
       "source_pages": "400–401",
       "semantic_review": "已对照目视原页核对对象、量词、技术资格和所列覆盖范围；网站尚未审阅。",
-      "compile_receipt": "blueprint/ch08/validation/batches/s88b-r1.json"
+      "compile_receipt": "blueprint/ch08/validation/batches/s89c-r2.json"
     },
     "MD-8.8-AndersenKineticEnergy": {
       "verdict": "PASS",
@@ -2621,7 +2621,7 @@
       ],
       "source_pages": "400",
       "semantic_review": "已对照目视原页核对对象、量词、技术资格和所列覆盖范围；网站尚未审阅。",
-      "compile_receipt": "blueprint/ch08/validation/batches/s88b-r1.json"
+      "compile_receipt": "blueprint/ch08/validation/batches/s89c-r2.json"
     },
     "MD-8.8-AndersenHamiltonianPrinted": {
       "verdict": "NEEDS_HUMAN",
@@ -2662,7 +2662,7 @@
       ],
       "source_pages": "401",
       "semantic_review": "已对照目视原页核对对象、量词、技术资格和所列覆盖范围；网站尚未审阅。",
-      "compile_receipt": "blueprint/ch08/validation/batches/s88b-r1.json"
+      "compile_receipt": "blueprint/ch08/validation/batches/s89c-r2.json"
     },
     "MD-8.8.1-NHLPistonEquations": {
       "verdict": "PASS",
@@ -2706,7 +2706,7 @@
       ],
       "source_pages": "402–403",
       "semantic_review": "已对照目视原页核对对象、量词、技术资格和所列覆盖范围；网站尚未审阅。",
-      "compile_receipt": "blueprint/ch08/validation/batches/s88b-r1.json"
+      "compile_receipt": "blueprint/ch08/validation/batches/s89c-r2.json"
     },
     "MD-8.8.1-PistonHamiltonianSubfield": {
       "verdict": "PASS",
@@ -2735,7 +2735,7 @@
       ],
       "source_pages": "402",
       "semantic_review": "已对照目视原页核对对象、量词、技术资格和所列覆盖范围；网站尚未审阅。",
-      "compile_receipt": "blueprint/ch08/validation/batches/s88b-r1.json"
+      "compile_receipt": "blueprint/ch08/validation/batches/s89c-r2.json"
     },
     "MD-8.8.1-PistonThermostatWeightPrinted": {
       "verdict": "NEEDS_HUMAN",
@@ -2776,7 +2776,7 @@
       ],
       "source_pages": "402",
       "semantic_review": "已对照目视原页核对对象、量词、技术资格和所列覆盖范围；网站尚未审阅。",
-      "compile_receipt": "blueprint/ch08/validation/batches/s88b-r1.json"
+      "compile_receipt": "blueprint/ch08/validation/batches/s89c-r2.json"
     },
     "MD-8.8.1-PistonReducedPDE": {
       "verdict": "PASS",
@@ -2805,7 +2805,7 @@
       ],
       "source_pages": "403",
       "semantic_review": "已对照目视原页核对对象、量词、技术资格和所列覆盖范围；网站尚未审阅。",
-      "compile_receipt": "blueprint/ch08/validation/batches/s88b-r1.json"
+      "compile_receipt": "blueprint/ch08/validation/batches/s89c-r2.json"
     },
     "MD-8.8.1-PistonStationaryWeight": {
       "verdict": "PASS",
@@ -2840,7 +2840,7 @@
       ],
       "source_pages": "403",
       "semantic_review": "已对照目视原页核对对象、量词、技术资格和所列覆盖范围；网站尚未审阅。",
-      "compile_receipt": "blueprint/ch08/validation/batches/s88b-r1.json"
+      "compile_receipt": "blueprint/ch08/validation/batches/s89c-r2.json"
     },
     "MD-8.8.2-PistonIntegrator": {
       "verdict": "PASS",
@@ -2899,7 +2899,7 @@
       ],
       "source_pages": "404",
       "semantic_review": "已对照目视原页核对对象、量词、技术资格和所列覆盖范围；网站尚未审阅。",
-      "compile_receipt": "blueprint/ch08/validation/batches/s88b-r1.json"
+      "compile_receipt": "blueprint/ch08/validation/batches/s89c-r2.json"
     },
     "MD-8.8.3-ParrinelloRahman": {
       "verdict": "PASS",
@@ -2953,7 +2953,751 @@
       ],
       "source_pages": "406",
       "semantic_review": "已对照目视原页核对对象、量词、技术资格和所列覆盖范围；网站尚未审阅。",
-      "compile_receipt": "blueprint/ch08/validation/batches/s88b-r1.json"
+      "compile_receipt": "blueprint/ch08/validation/batches/s89c-r2.json"
+    },
+    "MD-8.9-TotalMomentum": {
+      "verdict": "PASS",
+      "block_sha256": "87444d98653546cc75bc67e4ad5da4f3d84106c2a18dbc8f9575f1749ddf7ccf",
+      "checked": true,
+      "declaration_axioms": {
+        "MD.Ch08.ParticleConfig": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "MD.Ch08.ParticlePhase": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "MD.Ch08.totalMomentum": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "MD.Ch08.noseTotalForce": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "MD.Ch08.noseTotalForce_zero": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ]
+      },
+      "direct_placeholder": false,
+      "missing": null,
+      "issues": [],
+      "website": "待网站审计",
+      "statement_scope": "总动量定义和Nosé瞬时总力/零总动量时总力为零。",
+      "extra_assumptions": [
+        "只证明瞬时总力恒等式；沿连续轨道的零动量不变需要ODE唯一性，有限精度“飞冰块”属经验现象，列缺口。"
+      ],
+      "source_pages": "407",
+      "semantic_review": "已对照目视原页核对对象、量词、技术资格和所列覆盖范围；网站尚未审阅。",
+      "compile_receipt": "blueprint/ch08/validation/batches/s89c-r2.json"
+    },
+    "MD-8.9.1-DPDSoftPotential": {
+      "verdict": "PASS",
+      "block_sha256": "897ad5b6f53340fa5dc769f456a03abc000609f483db94aaefc951bbb04ee713",
+      "checked": true,
+      "declaration_axioms": {
+        "MD.Ch08.pairDistance": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "MD.Ch08.pairDirection": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "MD.Ch08.dpdSoftPotential": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "MD.Ch08.dpdPairConservative": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "MD.Ch08.dpdPotential": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "MD.Ch08.dpdConservative": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "MD.Ch08.particleGradient": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "MD.Ch08.dpdConservative_gradient": [
+          "propext",
+          "sorryAx",
+          "Classical.choice",
+          "Quot.sound"
+        ]
+      },
+      "direct_placeholder": true,
+      "missing": "非碰撞距离求导和有限无序对势梯度。",
+      "issues": [],
+      "website": "待网站审计",
+      "statement_scope": "软势、保守成对力/总力与光滑有效域的梯度目标；完整SDE见后条。",
+      "extra_assumptions": [
+        "d维Euclidean距离由坐标平方和开方，避免Pi最大范数；只在非碰撞且离开截断接缝的有效域声明梯度关系。N、d为物理正整数，mᵢ>0在动力学资格另列。"
+      ],
+      "source_pages": "408–409",
+      "semantic_review": "已对照目视原页核对对象、量词、技术资格和所列覆盖范围；网站尚未审阅。",
+      "compile_receipt": "blueprint/ch08/validation/batches/s89c-r2.json"
+    },
+    "MD-8.9.1-DPDPairForces": {
+      "verdict": "PASS",
+      "block_sha256": "e853bdb29c90526c1c900e12c92e7b5886d2846466d93bd3df827000ece7967b",
+      "checked": true,
+      "declaration_axioms": {
+        "MD.Ch08.dpdWeightR": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "MD.Ch08.relativeVelocity": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "MD.Ch08.dpdPairDissipative": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "MD.Ch08.dpdPairRandom": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "MD.Ch08.dpdDissipative": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "MD.Ch08.pairImpulseVector": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "MD.Ch08.dpdNoise": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ]
+      },
+      "direct_placeholder": false,
+      "missing": null,
+      "issues": [],
+      "website": "待网站审计",
+      "statement_scope": "全部成对/总耗散力、软随机权与成对守恒扩散方向。",
+      "extra_assumptions": [
+        "白噪声θᵢⱼ不作为逐点函数使用；随机力的实际意义是下一条无序对独立Wiener驱动、双方相反的扩散向量。总化r=0只作辅助，在动力学中要求非碰撞。"
+      ],
+      "source_pages": "409",
+      "semantic_review": "已对照目视原页核对对象、量词、技术资格和所列覆盖范围；网站尚未审阅。",
+      "compile_receipt": "blueprint/ch08/validation/batches/s89c-r2.json"
+    },
+    "MD-8.9.1-DPDPairWiener": {
+      "verdict": "PASS",
+      "block_sha256": "7ab9f612179655ffd243b8639cfb0cfb43ce8e80287da2eb85224e2bb23af309",
+      "checked": true,
+      "declaration_axioms": {
+        "MD.Ch08.pairEnumeration": [],
+        "MD.Ch08.pairNoiseIncrement": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "MD.Ch08.pairNoiseIncrement_symmetric": [
+          "propext",
+          "sorryAx",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "MD.Ch08.pairNoiseIncrement_covariance": [
+          "propext",
+          "sorryAx",
+          "Classical.choice",
+          "Quot.sound"
+        ]
+      },
+      "direct_placeholder": true,
+      "missing": "标准向量Wiener增量的有限和协方差与无序对枚举桥接。",
+      "issues": [],
+      "website": "待网站审计",
+      "statement_scope": "对称噪声增量和对应所印δ协方差的积分版本。",
+      "extra_assumptions": [
+        "只对无序对使用独立标准Wiener；Wᵢⱼ=Wⱼᵢ由同一坐标实现，不能把有序对全部设独立。Dirac白噪声公式通过有限时间增量协方差表达。"
+      ],
+      "source_pages": "409–410",
+      "semantic_review": "已对照目视原页核对对象、量词、技术资格和所列覆盖范围；网站尚未审阅。",
+      "compile_receipt": "blueprint/ch08/validation/batches/s89c-r2.json"
+    },
+    "MD-8.9.1-DPDIntegralSystem": {
+      "verdict": "PASS",
+      "block_sha256": "17dd0042a7ce6e06b9c2917b6b6ff1acb01c964816155b500e5e2cd3e10d8fbe",
+      "checked": true,
+      "declaration_axioms": {
+        "MD.Ch08.strictItoIntegral8": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "MD.Ch08.multiplicativeSDE8": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "MD.Ch08.dpdDrift": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "MD.Ch08.isDPDSolution": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ]
+      },
+      "direct_placeholder": false,
+      "missing": null,
+      "issues": [],
+      "website": "待网站审计",
+      "statement_scope": "配置依赖扩散的真实积分解规格及正质量/涨落耗散/无序噪声资格。",
+      "extra_assumptions": [
+        "实际多维独立Wiener、共同自然历史适应、联合可测、路径连续、漂移可积、所有网格左和及积分代表L²均明示。",
+        "选择强L²、非碰撞解类；不声称与所有弱解等价，也不建立SDE存在唯一或Markov半群。"
+      ],
+      "source_pages": "410",
+      "semantic_review": "已对照目视原页核对对象、量词、技术资格和所列覆盖范围；网站尚未审阅。",
+      "compile_receipt": "blueprint/ch08/validation/batches/s89c-r2.json"
+    },
+    "MD-8.9.1-DPDCanonicalLeaf": {
+      "verdict": "PASS",
+      "block_sha256": "5acef6bee6a511507d750b420e43e6f043c95f0f876e16e276854c590d9af546",
+      "checked": true,
+      "declaration_axioms": {
+        "MD.Ch08.dpdFluctuationDissipation": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "MD.Ch08.momentumLeaf": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "MD.Ch08.particleHamiltonian": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "MD.Ch08.momentumCanonical": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "MD.Ch08.momentumCanonicalQualification": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ]
+      },
+      "direct_placeholder": false,
+      "missing": null,
+      "issues": [],
+      "website": "待网站审计",
+      "statement_scope": "涨落耗散资格、动量约束叶及其可归一canonical测度定义。",
+      "extra_assumptions": [
+        "Dirac乘积解释为指定动量叶上的参考测度，未伪造Lebesgue密度；参考测度需另指定几何/周期体积。",
+        "只是权重与概率资格目标；DPD保持该测度、流体力学保持及高密度一维遍历性的大型定理均列缺口。"
+      ],
+      "source_pages": "410",
+      "semantic_review": "已对照目视原页核对对象、量词、技术资格和所列覆盖范围；网站尚未审阅。",
+      "compile_receipt": "blueprint/ch08/validation/batches/s89c-r2.json"
+    },
+    "MD-8.9.1-DPDMassOrderPrinted": {
+      "verdict": "NEEDS_HUMAN",
+      "block_sha256": "f3fcd30902b005d31e0fa6540400dbe13be2545aa2c007005f7d2a762cee0ba4",
+      "checked": true,
+      "declaration_axioms": {
+        "MD.Ch08.dpdMatrixFDPrinted": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "MD.Ch08.dpdMatrixFD_corrected": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "MD.Ch08.dpdMassOrder_counterexample": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ]
+      },
+      "direct_placeholder": false,
+      "missing": null,
+      "issues": [
+        "已目视核对原页PDF410：对动量漂移−Δp、动量协方差k_BT M，应为Δ=ΣΣᵀM⁻¹/(2k_BT)；原印左乘仅在相应矩阵可交换（如等质量）时一致。两粒子不等质量的矩阵反例已证。"
+      ],
+      "website": "待网站审计",
+      "statement_scope": "原印/校正的质量矩阵次序及具体代数反例。",
+      "extra_assumptions": [
+        "M应正定、θ>0；本条记录两个矩阵关系目标与不交换反例，不声称由形式关系自动得到不变概率。"
+      ],
+      "source_pages": "410",
+      "semantic_review": "已对照目视原页核对对象、量词、技术资格和所列覆盖范围；网站尚未审阅。",
+      "compile_receipt": "blueprint/ch08/validation/batches/s89c-r2.json"
+    },
+    "MD-8.9.2-DPDVelocityVerlet": {
+      "verdict": "PASS",
+      "block_sha256": "161739f01938524ba1906d7919057b12eb746651dafdc1b684049f2c5fabbecf",
+      "checked": true,
+      "declaration_axioms": {
+        "MD.Ch08.dpdRandomForce": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "MD.Ch08.dpdVerlet": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "MD.Ch08.dpdVerlet_reuse": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ]
+      },
+      "direct_placeholder": false,
+      "missing": null,
+      "issues": [],
+      "website": "待网站审计",
+      "statement_scope": "三条更新式和新噪声在下一步复用的状态机制。",
+      "extra_assumptions": [
+        "物理用法要求mᵢ>0、h≥0、无序对枚举、每步Rnew独立标准正态并与历史独立；本条确定性给定输入的扩展状态映射。",
+        "尚未证明书中预期的一阶弱收敛；未把随机输入映射称为对称确定性流。"
+      ],
+      "source_pages": "410–412",
+      "semantic_review": "已对照目视原页核对对象、量词、技术资格和所列覆盖范围；网站尚未审阅。",
+      "compile_receipt": "blueprint/ch08/validation/batches/s89c-r2.json"
+    },
+    "MD-8.9.2-DPDSplitGenerator": {
+      "verdict": "PASS",
+      "block_sha256": "2edcb82b8dd38a32d5ae4a3d2fed4fd2b121cb973d79ba8b510166e40a0ac6c3",
+      "checked": true,
+      "declaration_axioms": {
+        "MD.Ch08.dpdA": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "MD.Ch08.dpdB": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "MD.Ch08.dpdO": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "MD.Ch08.firstOrder8": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "MD.Ch08.dpdLO": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "MD.Ch08.dpdGenerator": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "MD.Ch08.dpdDrift_split": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ]
+      },
+      "direct_placeholder": false,
+      "missing": null,
+      "issues": [],
+      "website": "待网站审计",
+      "statement_scope": "实际三个漂移、无序对扩散生成元和漂移分解恒等式。",
+      "extra_assumptions": [
+        "采用独立无序对的Itô二阶导数形式，实现(8.97)有序双和的合并表达；未证明有序/无序表达等价。",
+        "光滑测试函数上的形式生成元定义不等同于已建立Markov半群，Fₜ=eᵗᴸ及其定义域列缺口。"
+      ],
+      "source_pages": "412",
+      "semantic_review": "已对照目视原页核对对象、量词、技术资格和所列覆盖范围；网站尚未审阅。",
+      "compile_receipt": "blueprint/ch08/validation/batches/s89c-r2.json"
+    },
+    "MD-8.9.2-DPDPairGeneratorPrinted": {
+      "verdict": "NEEDS_HUMAN",
+      "block_sha256": "7af5bc674f1ce40fd9d02fa025c7a10b2812ddbb94628092ae92bfb047c37518",
+      "checked": true,
+      "declaration_axioms": {
+        "MD.Ch08.pairDerivative": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "MD.Ch08.dpdPairGeneratorPrinted": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "MD.Ch08.dpdPairGenerator_corrected": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ]
+      },
+      "direct_placeholder": false,
+      "missing": null,
+      "issues": [
+        "已目视核对原页PDF413：单个无序对算子的最外层只对pᵢ求导，会对总动量产生非零漂移；对两粒子成对守恒更新应将最外层改为e·(∂pᵢ−∂pⱼ)。完整有序双和(8.97)另含反方向项，不能直接同样判错。"
+      ],
+      "website": "待网站审计",
+      "statement_scope": "冻结配置下单对动量生成元的原式和守恒方向修正版。",
+      "extra_assumptions": [
+        "本条只分别定义原印和成对修正版；不声称已证明驻定概率或原书单对不变性。"
+      ],
+      "source_pages": "413",
+      "semantic_review": "已对照目视原页核对对象、量词、技术资格和所列覆盖范围；网站尚未审阅。",
+      "compile_receipt": "blueprint/ch08/validation/batches/s89c-r2.json"
+    },
+    "MD-8.9.2-DPDSplittingCompositions": {
+      "verdict": "PASS",
+      "block_sha256": "a61382b744eed30dfa651698de57b6246298ddb56f96e504c347f122ed7650e7",
+      "checked": true,
+      "declaration_axioms": {
+        "MD.Ch08.dpdShardlowComposition": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "MD.Ch08.dpdTrotterComposition": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "MD.Ch08.sequentialPairComposition": [],
+        "MD.Ch08.dpdSGenerator": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ]
+      },
+      "direct_placeholder": false,
+      "missing": null,
+      "issues": [],
+      "website": "待网站审计",
+      "statement_scope": "两种外层组合、固定顺序逐对执行及S形式生成元；实际OU单对步骤见后条。",
+      "extra_assumptions": [
+        "A/B/O/S为调用者指定的映射；只保留所印组合顺序。尚未实现BBK成对近似或其误差、全O/S流及生成元指数关系。",
+        "两次S同顺序的非交换成对乘积不能仅凭外层回文判为对称；不作该声称。"
+      ],
+      "source_pages": "413–414",
+      "semantic_review": "已对照目视原页核对对象、量词、技术资格和所列覆盖范围；网站尚未审阅。",
+      "compile_receipt": "blueprint/ch08/validation/batches/s89c-r2.json"
+    },
+    "MD-8.9.2-DPDPairOUUpdate": {
+      "verdict": "NEEDS_HUMAN",
+      "block_sha256": "2de0cc0a87bf658d0e260f240be38a983eed15d2114de56c3e9bc7e85e40cc93",
+      "checked": true,
+      "declaration_axioms": {
+        "MD.Ch08.reducedMass8": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "MD.Ch08.reducedMass8_pos": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "MD.Ch08.dpdPairOUPrinted": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "MD.Ch08.dpdPairOU_corrected": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "MD.Ch08.dpdPairOU_zeroRate": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "MD.Ch08.dpdPairMomentumStep": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "MD.Ch08.dpdPairMomentumStep_conserves": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ]
+      },
+      "direct_placeholder": false,
+      "missing": null,
+      "issues": [
+        "已目视核对原页PDF414：原印F/(amred)须a>0；γ=0或截断外ωᴰ=0时需用积分系数连续延拓。修正版显式定义a=0为自由加速，噪声退化为零。"
+      ],
+      "website": "待网站审计",
+      "statement_scope": "原印/零率延拓的OU转移公式、速度增量所用动量更新及总动量守恒。",
+      "extra_assumptions": [
+        "原印转移律要求mr>0、a>0、θ>0、t≥0及R独立标准正态；F为冻结配置的成对保守力标量，FDT用于方差。",
+        "单对精确分布律及其随机积分推导未证明；已证明质量正性、零率值与逐对总动量代数守恒。"
+      ],
+      "source_pages": "414",
+      "semantic_review": "已对照目视原页核对对象、量词、技术资格和所列覆盖范围；网站尚未审阅。",
+      "compile_receipt": "blueprint/ch08/validation/batches/s89c-r2.json"
+    },
+    "MD-8.9.3-PairwiseNoseHoover": {
+      "verdict": "PASS",
+      "block_sha256": "7a2c5072a2a4072e390ece13bda7d0811741e9fd1290e1b050b2efec69b99793",
+      "checked": true,
+      "declaration_axioms": {
+        "MD.Ch08.PNHLState": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "MD.Ch08.pairwiseFeedback": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "MD.Ch08.pnhDrift": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "MD.Ch08.isPNHSolution": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ]
+      },
+      "direct_placeholder": false,
+      "missing": null,
+      "issues": [],
+      "website": "待网站审计",
+      "statement_scope": "PNH场、反馈和正质量/正热浴质量的ODE规格。",
+      "extra_assumptions": [
+        "Q为原文μ，F̃ᴰ是γ=1的相对速度耗散；排除i=j，物理轨道另需非碰撞且ωᴰ≥0。",
+        "只落盘实际ODE规格；Galilean不变性、总动量沿轨道守恒、存在唯一性及遍历性列缺口。"
+      ],
+      "source_pages": "415",
+      "semantic_review": "已对照目视原页核对对象、量词、技术资格和所列覆盖范围；网站尚未审阅。",
+      "compile_receipt": "blueprint/ch08/validation/batches/s89c-r2.json"
+    },
+    "MD-8.9.3-PairwiseCanonicalWeight": {
+      "verdict": "PASS",
+      "block_sha256": "9c658d06ceaa94f06dfc92a65a6cce9143ee254eb604c25b8f30d900eed617eb",
+      "checked": true,
+      "declaration_axioms": {
+        "MD.Ch08.pairwiseWeight": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "MD.Ch08.pairwiseCanonicalDensity": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "MD.Ch08.pairwiseCanonicalQualification": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ]
+      },
+      "direct_placeholder": false,
+      "missing": null,
+      "issues": [],
+      "website": "待网站审计",
+      "statement_scope": "动量约束下扩展Gibbs权、配分积分和概率密度资格。",
+      "extra_assumptions": [
+        "ν是需指定的动量叶参考测度；正有限配分积分和概率资格显式列出。",
+        "这里只定义权重及归一目标，不把任意支持在动量叶上的测度称为PNH不变测度。完整不变性和归一存在理论列缺口。"
+      ],
+      "source_pages": "415",
+      "semantic_review": "已对照目视原页核对对象、量词、技术资格和所列覆盖范围；网站尚未审阅。",
+      "compile_receipt": "blueprint/ch08/validation/batches/s89c-r2.json"
+    },
+    "MD-8.9.4-PairwiseNHLSDE": {
+      "verdict": "PASS",
+      "block_sha256": "9b3929c5b0327ee11aaae41aa7e46a419710196e61d311ffa109d9cdb233134e",
+      "checked": true,
+      "declaration_axioms": {
+        "MD.Ch08.pnhlDrift": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "MD.Ch08.pnhlNoise": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "MD.Ch08.isPNHLSolution": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ]
+      },
+      "direct_placeholder": false,
+      "missing": null,
+      "issues": [],
+      "website": "待网站审计",
+      "statement_scope": "带正质量资格、涨落耗散关系及真实独立标准Wiener的PNHL积分解规格。",
+      "extra_assumptions": [
+        "实际一维标准Wiener由通用积分解规格明示；扩散仅作用ξ。",
+        "未证明该非碰撞解类存在、唯一、保测或遍历；“改善遍历性”是动机不是已证结论。"
+      ],
+      "source_pages": "416",
+      "semantic_review": "已对照目视原页核对对象、量词、技术资格和所列覆盖范围；网站尚未审阅。",
+      "compile_receipt": "blueprint/ch08/validation/batches/s89c-r2.json"
+    },
+    "MD-8.9.4-PairwiseNHLGenerator": {
+      "verdict": "PASS",
+      "block_sha256": "7ffb34e4439383929bf6099b58a8219c2b3838c8d33ca89b1aac44865c7372dc",
+      "checked": true,
+      "declaration_axioms": {
+        "MD.Ch08.pnhlA": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "MD.Ch08.pnhlB": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "MD.Ch08.pnhlC": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "MD.Ch08.pnhlD": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "MD.Ch08.pnhlO": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "MD.Ch08.pnhlGenerator": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "MD.Ch08.pnhlDrift_split": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "MD.Ch08.pairwiseWeight_localStationary": [
+          "propext",
+          "sorryAx",
+          "Classical.choice",
+          "Quot.sound"
+        ]
+      },
+      "direct_placeholder": true,
+      "missing": "成对相对速度散度、软势梯度和扩展Gibbs权的局部Fokker–Planck计算。",
+      "issues": [],
+      "website": "待网站审计",
+      "statement_scope": "五子场、形式生成元、漂移分解；扩展权的局部驻定目标。",
+      "extra_assumptions": [
+        "驻定式只为非碰撞、离开截断界面的局部光滑目标；全局保测需边界、半群等理论。",
+        "没有以漂移分解恒等式替代驻定或遍历性证明；两者分别列状态。"
+      ],
+      "source_pages": "416",
+      "semantic_review": "已对照目视原页核对对象、量词、技术资格和所列覆盖范围；网站尚未审阅。",
+      "compile_receipt": "blueprint/ch08/validation/batches/s89c-r2.json"
+    },
+    "MD-8.9.4-PNHLSplittingAlgorithms": {
+      "verdict": "PASS",
+      "block_sha256": "ef87670acf0ff2c298c3ad4d25dd322ab9dc6db2eb06749199dab0fdb5d2e63f",
+      "checked": true,
+      "declaration_axioms": {
+        "MD.Ch08.pnhlAStep": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "MD.Ch08.pnhlBStep": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "MD.Ch08.pnhlDStep": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "MD.Ch08.pnhlOStep": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "MD.Ch08.pnhlPairCStep": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "MD.Ch08.pnhlSComposition": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "MD.Ch08.pnhlNComposition": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ]
+      },
+      "direct_placeholder": false,
+      "missing": null,
+      "issues": [],
+      "website": "待网站审计",
+      "statement_scope": "A/B/D/O实际更新、单对C更新和S/N的原印外层组合；全C指数与误差理论列缺口。",
+      "extra_assumptions": [
+        "O需θ,Q>0、γ,h≥0及R独立标准正态；A/B/D给实际子步。C仅给逐对精确更新，全C需有序逐对近似，未冒称精确全流。",
+        "两组合保留原印因子顺序；不证明全方法弱阶、不变分布误差或非对称方法更优的经验结论。"
+      ],
+      "source_pages": "417",
+      "semantic_review": "已对照目视原页核对对象、量词、技术资格和所列覆盖范围；网站尚未审阅。",
+      "compile_receipt": "blueprint/ch08/validation/batches/s89c-r2.json"
     }
   }
 }

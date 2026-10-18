@@ -26,7 +26,11 @@ def add(key,section,page,text,code,*,kind='unnumbered_claim',label=None,proof=No
     names=re.findall(r'(?m)^(?:noncomputable )?(?:def|abbrev|theorem|lemma|structure|inductive)\s+(\w+)',code)
     assert names,(key,code)
     pages=list(range(nums[0]+21,nums[-1]+22))
-    original=[dict(pdf_page=p,printed_page=p-21,text=(BASE/f'source_pages/pdf{p}.txt').read_text(encoding='utf-8')) for p in pages]
+    original=[]
+    for p in pages:
+        raw=(BASE/f'source_pages/pdf{p}.txt').read_text(encoding='utf-8')
+        if p==420: raw=raw.split('Exercises',1)[0]
+        original.append(dict(pdf_page=p,printed_page=p-21,text=raw))
     RECORDS.append(dict(source_id=f'MD-{section}-{key}',kind=kind,label=label,section=section,
         printed_page=str(page),pdf_page='–'.join(str(p+21) for p in nums),statement_latex=text,
         statement_verbatim='\n'.join(x['text'] for x in original),
@@ -42,3 +46,6 @@ def add(key,section,page,text,code,*,kind='unnumbered_claim',label=None,proof=No
 
 for name in json.loads((BASE/'enabled_modules.json').read_text(encoding='utf-8')):
     importlib.import_module(name)
+
+from ch08_scope_review import apply_scope_review
+apply_scope_review(RECORDS)

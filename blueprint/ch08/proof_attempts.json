@@ -232,5 +232,27 @@
     "category": "缺大型理论",
     "routes": [],
     "decision": "缺大型理论时直接记录缺项；否则最多三条短路线。"
+  },
+  "MD-8.9.1-DPDSoftPotential": {
+    "reason": "非碰撞距离求导和有限无序对势梯度。",
+    "category": "缺大型理论",
+    "routes": [],
+    "decision": "缺大型理论时直接记录缺项；否则最多三条短路线。"
+  },
+  "MD-8.9.1-DPDPairWiener": {
+    "reason": "标准向量Wiener增量的有限和协方差与无序对枚举桥接。",
+    "category": "时间盒止",
+    "routes": [
+      "r1: simp未展开函数等式",
+      "r2: sum_congr前缺函数外延",
+      "r3: 条件重写的Decidable依赖未消去"
+    ],
+    "decision": "缺大型理论时直接记录缺项；否则最多三条短路线。"
+  },
+  "MD-8.9.4-PairwiseNHLGenerator": {
+    "reason": "成对相对速度散度、软势梯度和扩展Gibbs权的局部Fokker–Planck计算。",
+    "category": "缺大型理论",
+    "routes": [],
+    "decision": "缺大型理论时直接记录缺项；否则最多三条短路线。"
   }
 }

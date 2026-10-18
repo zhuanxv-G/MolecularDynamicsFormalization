@@ -25,6 +25,7 @@ def generate():
         nums=[int(x) for x in re.findall(r'\d+',r['pdf_page'])]
         for p in range(nums[0],nums[-1]+1):assert str(p) in checks['visually_checked_pdf_pages'],(r['source_id'],p)
     text=HEADER+''.join('/-- source_id: '+r['source_id']+' · 印刷p.'+r['printed_page']+' / PDFp.'+r['pdf_page']+
+        '\n[SCOPE] '+r['statement_scope']+
         ''.join('\n[EXTRA] '+x for x in r['extra_assumptions'])+
         ''.join('\n[ERRATUM?] '+x for x in r['issues'])+' -/\n'+r['code']+'\n\n' for r in RECORDS)+'end MD.Ch08\n'
     source=ROOT/'Blueprint/Ch08.lean';source.write_text(text,encoding='utf-8')

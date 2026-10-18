@@ -1,6 +1,6 @@
 # 第8章逐条进度
 
-当前正文落盘：82条。全部正文完成：否。章末完整check：未完成。
+当前正文落盘：99条。全部正文完成：否。章末完整check：未完成。
 
 | source_id | 原页PDF | 本地对照 | 编译/公理 | 数学状态 | 网站 |
 |---|---|---|---|---|---|
@@ -86,3 +86,20 @@
 | MD-8.8.1-PistonStationaryWeight | 403 | PASS | 通过 | 未证陈述 | 待审 |
 | MD-8.8.2-PistonIntegrator | 404 | PASS | 通过 | 定义 | 待审 |
 | MD-8.8.3-ParrinelloRahman | 406 | PASS | 通过 | 定义 | 待审 |
+| MD-8.9-TotalMomentum | 407 | PASS | 通过 | 已证 | 待审 |
+| MD-8.9.1-DPDSoftPotential | 408–409 | PASS | 通过 | 未证陈述 | 待审 |
+| MD-8.9.1-DPDPairForces | 409 | PASS | 通过 | 定义 | 待审 |
+| MD-8.9.1-DPDPairWiener | 409–410 | PASS | 通过 | 未证陈述 | 待审 |
+| MD-8.9.1-DPDIntegralSystem | 410 | PASS | 通过 | 定义 | 待审 |
+| MD-8.9.1-DPDCanonicalLeaf | 410 | PASS | 通过 | 定义 | 待审 |
+| MD-8.9.1-DPDMassOrderPrinted | 410 | NEEDS_HUMAN | 通过 | 已证 | 待审 |
+| MD-8.9.2-DPDVelocityVerlet | 410–412 | PASS | 通过 | 已证 | 待审 |
+| MD-8.9.2-DPDSplitGenerator | 412 | PASS | 通过 | 已证 | 待审 |
+| MD-8.9.2-DPDPairGeneratorPrinted | 413 | NEEDS_HUMAN | 通过 | 定义 | 待审 |
+| MD-8.9.2-DPDSplittingCompositions | 413–414 | PASS | 通过 | 已证 | 待审 |
+| MD-8.9.2-DPDPairOUUpdate | 414 | NEEDS_HUMAN | 通过 | 已证 | 待审 |
+| MD-8.9.3-PairwiseNoseHoover | 415 | PASS | 通过 | 定义 | 待审 |
+| MD-8.9.3-PairwiseCanonicalWeight | 415 | PASS | 通过 | 定义 | 待审 |
+| MD-8.9.4-PairwiseNHLSDE | 416 | PASS | 通过 | 定义 | 待审 |
+| MD-8.9.4-PairwiseNHLGenerator | 416 | PASS | 通过 | 未证陈述 | 待审 |
+| MD-8.9.4-PNHLSplittingAlgorithms | 417 | PASS | 通过 | 已证 | 待审 |
