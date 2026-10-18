@@ -1,0 +1,55 @@
+380
+8
+Extended Variable Methods
+D mi
+1
+3V1=3 PV Nqi C V2=3PNqi
+
+;
+from which, we observe
+Npi D miV1=3Pqi:
+(8.72)
+There is still the question of how to adjust the volume in simulation. The idea
+of Andersen was to view the volume V as a dynamical quantity on equal footing
+with the coordinates of the system by viewing PV as the potential energy term and
+introducing an artiﬁcial kinetic energy term of the form V PV2. The barostat mass V
+becomes a free parameter, analogous to the thermal mass used in Nosé dynamics.
+An extended Hamiltonian may then be written by introducing a momentum variable
+pV conjugate to V:
+OH.Nq; Np; V; pV/ D
+N
+X
+iD1
+kNpik2
+2miV2=3 C NU.NqI V/ C p2
+V
+2V
+C PV;
+(8.73)
+where we have written NU.NqI V/ D U.V1=3Nq/.
+In the extended space, we then observe that
+NPT D
+s
+ˇ
+2V
+Z
+eˇ OH.Nq;Np;V;pV/dpV;
+from the deﬁnitions (8.71) and (8.72).
+There are several ways to proceed. Andersen suggested to use a Monte-
+Carlo method to control the temperature during simulation. This approach has
+the advantage of simplicity, but only allows the determination of conﬁgurational
+averages. If dynamical information is required (e.g. an autocorrelation function
+or a diffusion coefﬁcient), some sort of dynamics-based scheme is needed. The
+progress in developing formulations and numerical methods can be charted in
+[11, 32, 128, 183, 199, 248, 252, 288, 373].
+Deterministic methods can be used based on Nosé-Hoover to control the
+temperature. A problem with methods of this type that one sometimes encounters
+“ringing” or “breathing” depending on the tuning of various parameters.
+Stochastic-dynamical thermostats greatly improve control of the convergence to
+equilibrium. We have already seen several methods of this type, speciﬁcally the
+Langevin dynamics method and the Nosé-Hoover-Langevinmethod. These schemes
+may be applied in conjunction with the Andersen Hamiltonian OH. The extended
+system approach outlined here was developed in collaboration with R. Elber and
+M. Di Pierro; it is close in spirit to the method of Klein [199], but incorporates
+stochastic terms as in Nosé-Hoover-Langevin in the equations deﬁning the auxiliary
+variables to ensure ergodicity.

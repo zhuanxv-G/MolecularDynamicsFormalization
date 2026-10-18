@@ -1,0 +1,42 @@
+8.7
+Generalized Langevin Dynamics
+373
+8.6.4
+Numerical Example
+Let us brieﬂy summarize the numerical experiments of [220] using the SIN(R)
+method to simulate a system of 512 ﬂexible water molecules using a fully ﬂexible
+molecular model [294] and the smooth particle-mesh Ewald method (SPME)
+[123] (see Appendix A) to compute electrostatic forces. Initial simulations were
+conducted without a fast-slow force decomposition to demonstrate the effectiveness
+of the method as a thermostatting scheme. This technique was shown to allow
+accurate computation of the OH, HH and OO radial distribution functions when
+suitably small timesteps were used.
+As explained in Chap.4, the resonances in multiple timestepping restrict the
+size of the large (outer) stepsize usable in simulation. In the case of fully ﬂexible
+water the maximum outer stepsize that can be used for stable RESPA simulation is
+typically found to be less than 5 fs [245, 329]. A multiple timestepping method for
+the SPME method can be based on the decomposition
+UTotal D Ubonds C Us:r: C Ul:r:
+where Ubonds includes length and angle bonds, Us:r: includes all other short-ranged
+components, and Ul:r: incorporates both the “reciprocal space part” from Particle
+Mesh Ewald summation (normally calculated using 3D FFT) as well as longer-
+ranged screened Coulombic pair terms within the simulation cell. Then a nested
+multiple timestepping hierarchy can be used with stepsizes hinner, hmid and houter,
+each larger stepsize being an integer multiple of the next smaller. There is no
+difﬁculty with adapting the SIN(R) scheme (which was presented for a two-level
+setup) to this multi-level hierarchical timestepping framework.
+The article [220] provides more detail of the SPME parameters and a detailed
+analysis of the numerical performance. We merely mention here that with hinner D
+0:5 fs and hmid D 3 fs, it was possible to use outer stepsizes of up to 99 fs for
+stable integration and accurate resolution of all three radial distribution functions,
+with no evidence of resonances. The short-range cutoff in the reported simulations
+was around 8Å. High efﬁciency improvements would be anticipated in simulations
+with a large simulation cell. These methods could be valuable in more complex
+applications, including systems with mixed quantum and classical simulation
+domains, and in the setting of high performance computing architectures, e.g. GPU
+systems.
+8.7
+Generalized Langevin Dynamics
+We have already encountered Generalized Langevin dynamics in Chap.6, where it
+appeared as an intermediate stage in the derivation of Langevin dynamics. In some
+cases, the properties of the heat bath and the resulting memory kernel are important

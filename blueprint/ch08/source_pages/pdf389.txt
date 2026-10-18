@@ -1,0 +1,110 @@
+368
+8
+Extended Variable Methods
+We calculate Œf; Œf; Œf; g			 and project onto the space spanned by the ﬁrst three
+components to ﬁnd
+u3 D 
+2
+p3  4p32 C 4p2q C 2
+1p2 C 
+2
+1p  22
+1q
+D2
+	
+@q
+ 2
+1
+ 
+D3
+
+@p C 21p
+ 
+D3
+
+@1:
+(8.54)
+with
+ D 4p5
+2  8p52
+1  42
+1p3 C 4p3
+22
+1  4p34
+1
+ 2
+2
+1p2q C 4p2q22
+1  42
+1q2p  24
+1p C p
+24
+1  q
+4
+1 C 4
+12q:
+(8.55)
+Along p D 0, u3 becomes
+u3jpD0 D 2q@q  
+q
+4
+1 C 4
+12q
+4
+1
+	
+@p
+D 2q@q  q.
+ C 2/@p:
+(8.56)
+Together with u0 we obtain a linearly independent set as long as q ¤ 0.
+If p D 0 and q D 0 then we are on M0. If p ¤ 0 then u2 and u0 are linearly
+independent. If q ¤ 0 then u3 and u0 are linearly independent. From these we
+establish that the Hörmander condition holds everywhere except on a space of co-
+dimension 2 (that is except on the one-dimensional set M0).
+In this case, it is possible to complete the proof by introducing a Lyapunov
+function  to demonstrate the necessary contractivity in the 2 direction. The
+generator of this system is
+Lisok D p @
+@q C
+
+F  .p2=/F
+ @
+@p  p1F
+
+@
+@1
+C LN C LO
+with  D p2 C 2
+1=2,
+LN D 1
+2
+2
+12p
+
+@
+@p C 1
+2
+3
+12
+
+@
+@1
+ 21
+@
+@1
+C Œ2
+1  ˇ1	 @
+@2
+;
+and
+LO D 
+2
+@
+@2
+C 2
+2
+@2
+@2
+2
+:

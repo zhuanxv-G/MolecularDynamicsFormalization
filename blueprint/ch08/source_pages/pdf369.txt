@@ -1,0 +1,47 @@
+348
+8
+Extended Variable Methods
+Deﬁne polynomials .x/ D PNc1
+jD0 ˛jxj, .x/ D PNc1
+jD0 ˇjxj, then, for each j, we
+have
+.j/Oqj C j.j/Opj D 0;
+j.j/Opj  j.j/Oqj D 0;
+multiplying the ﬁrst equation by Oqj and the second by Opj and adding, we obtain
+ŒOq2
+j C jOp2
+j 	.j/ D 0:
+The ﬁrst factor is nonzero by the condition of being in D and the positive
+deﬁniteness of A, thus we must have .j/ D 0 for all Nc distinct j. But as
+ has degree Nc  1, this is a contradiction. Thus the collection must be linearly
+independent.
+Demonstrating the Hörmander condition is sufﬁcient for Assumption 1(ii) in
+Sect. 6.4.4. Assumption 1(i) can be veriﬁed by proving that solutions are able to
+access an open set around any point y 2 D  R. We omit the proof of Assumption
+1(i) for Nosé-Hoover-Langevin dynamics as it is follows the same structure as the
+proof of Lemma 6.1 for Langevin dynamics. The details of the proof can be found
+in [283], with examples for more general SDEs given in [256, 257].
+The ﬁnal requirement for geometric ergodicity (speciﬁed in Assumption 2 in
+Sect. 6.4.4) requires a function  W D  R ! .0; 1/ such that
+L 	 ˛ C ı;
+for positive constants ˛ and ı and where L is the generator of the stochastic process.
+Such a function is called a Lyapunov function.
+The generator for Nosé-Hoover-Langevin dynamics (8.27)–(8.29), acting on a
+suitable test function f.q; p; / is
+LNHLfD M1p  rqf  rU.q/  rpf  p  rp C 1 
+pTM1p  NdkBT
+ @f
+@
+ 
+ @f
+@ C kBT
+1 @2f
+@2 :
+If we consider M D I for simplicity, a Lyapunov function is given in [283] as
+.q; p; / D 1
+2kpk2 C U.q/ C 
+2 .  a/2;
+where a is a constant. As our potential is smooth, it is reasonable to make the
+assumption that
+1 < Umin 	 U.q/ 	 Umax < 1;
+8q 2 Q;

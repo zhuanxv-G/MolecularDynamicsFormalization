@@ -1,0 +1,50 @@
+390
+8
+Extended Variable Methods
+8.9.2
+Numerical Treatment of the DPD System
+In comparing the DPD system to standard molecular dynamics, a key feature is the
+“soft” nature of the repulsive potential UDPD deﬁned by (8.84). The lack of any sort
+of stiff harmonic component or steep repulsive potentials such as those present in
+typical molecular models means that the stepsize is not dominated by the stability
+restriction, but rather by accuracy requirements. That is, DPD simulations may be
+stable for stepsizes which lead to very large errors in thermodynamic averages.
+Many efforts have been made to develop accurate integration schemes for the
+DPD system. With few exceptions, the methods used are variants of the velocity-
+Verlet integrator, owing to its long history in MD. Some early integration schemes
+are to be found in the papers of Groot and Warren [157], Gibson et al. [148], and
+Besold et al. [34, 385]. The latter work describes the so-called DPD-Velocity Verlet
+(DPD-VV) method. Unfortunately [34, 385], all of these methods exhibit signiﬁcant
+simulation errors for large stepsize. Much of the error can be seen as the result of
+requiring an explicit treatment of the dissipative terms, for reasons of computational
+efﬁciency. More accurate schemes are possible by using implicit (or semi-implicit)
+methods such the self-consistent leap-frog integrator (see [34, 295]). However, these
+methods are typically much slower than the simpler, explicit methods [73, 281], the
+consequence being that the simpler DPD-VV is most often used (with a relatively
+small timestep). Further alternatives to the DPD-VV method include a scheme of
+den Otter and Clarke [101], splitting methods (Shardlow [333], De Fabritiis et al.
+[96] and Thalmann and Farago [363]), and multiple time step schemes of Jakobsen
+et al. [191].
+8.9.2.1
+DPD Velocity-Verlet
+With integration stepsize h, the DPD-VV method may be written as
+pnC1=2 D pn C h
+2FC.qn/ C h
+2FD.qn; pn/ C
+p
+h
+2 FR.qn/;
+(8.91)
+qnC1 D qn C hM1pnC1=2;
+(8.92)
+pnC1 D pnC1=2 C h
+2FC.qnC1/ C h
+2FD.qnC1; pnC1=2/ C
+p
+h
+2 FR.qnC1/:
+(8.93)
+In this scheme, the conservative forces are recalculated once per timestep (the
+conservative force computed may be re-used at the following timestep). The
+dissipative force must be computed twice, and the new random force used in (8.93)
+should also be used in the subsequent step. This scheme is not symmetric for

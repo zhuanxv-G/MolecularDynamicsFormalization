@@ -1,0 +1,71 @@
+360
+8
+Extended Variable Methods
+-2
+-1
+0
+1
+2
+Position 
+-2
+0
+2
+Position 
+-4
+0
+4
+Momentum 
+Momentum 
+-4
+-2
+0
+2
+4
+Momentum 
+-4
+-2
+0
+2
+4
+Momentum 
+-4
+-2
+0
+2
+4
+Momentum 
+-4
+-2
+0
+2
+4
+Langevin
+Line
+Sampling 
+distribution
+distribution
+distribution
+distribution
+Nos´e-Hoover
+Langevin
+Nos´e-Hoover
+Fig. 8.5 We show sample trajectories (left) and long-time distributions (right) for a number
+of thermostatted dynamics. A lack of ergodicity in the case of the deterministic Nosé-Hoover
+thermostat prevents sampling ergodically, when compared to the exact distributions in bold
+In Fig. 8.5 we give a realization of a trajectory computed using each dynamics,
+in the .q; p/ plane. The Nosé-Hoover and Nosé-Hoover Langevin trajectories are
+signiﬁcantly smoother than the others, indicating that these offer much more gentle
+thermostat techniques to reduce the perturbation to the dynamics. However, the
+Nosé-Hoover thermostat remains stuck in a periodic cycle preventing exploration
+of the space. This behavior persisted using other initial conditions and parameter
+values, indicating that it is symptomatic of a lack of ergodicity in the system.
+By contrast, it is clear that the non-Newtonian thermostat explores the space in
+a very different way to the Newtonian-based thermostats. It is possible that this
+different type of exploration of the phase space could be advantageous in certain
+models (for example the linear stability threshold for step size may be different),
+however exploiting this difference may involve tuning the three parameters 
+, 
+0
+and , making it more difﬁcult to work with than Langevin dynamics.
+We also plot a histogram of the distributions of the position and momentum
+in Fig. 8.5, computed from a single trajectory of 109 discrete points. Overlaying

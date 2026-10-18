@@ -1,0 +1,39 @@
+336
+8
+Extended Variable Methods
+8.2
+More General Deterministic Thermostats
+We have now seen that it is possible to construct stochastic differential equations
+that preserve the Gibbs distribution or to design deterministic perturbations of
+Hamiltonian dynamics, in an extended phase space, that do the same thing.
+The latter class of methods are not rigorously ergodic, but the dynamics based
+thermostatting technique adds a great deal of ﬂexibility. For example it is easy to
+control the ensemble using dynamic perturbations introduced only in some special
+phase space directions. In this section, we show how to design distributional controls
+which blend deterministic dynamics with restricted stochastic perturbations, with,
+in some cases, provable ergodicity. We will present the methods of this section in
+some generality.
+Let a system be provided with Hamiltonian (energy) function H D H.z/, z 2 Rm,
+and microcanonical dynamics
+Pz D JrH;
+(8.14)
+where J is skew symmetric. In principle, J need not be constant, as long as it satisﬁes
+certain constraints, but as the extra generality is not needed for our current purposes,
+we restrict the case J constant. We describe dynamical and stochastic-dynamical
+techniques for computing averages with respect to a smooth density, for simplicity
+the Gibbsian one, ˇ / exp.ˇH/.
+We ﬁrst consider methods that are based on perturbation of the conservative
+system (8.14), i.e.
+Pz D JrH C ˚.; z/;
+(8.15)
+where  2 Rm is controlled by the dynamical system
+d
+dt D g.; z/:
+8.2.1
+Continuity Equation
+Given a deterministic thermostatting method, the density will evolve under the
+continuity equation,
+@
+@t D rz  Œ.JrzH C ˚/	  r  .g.; z// DW L:
+We have, using product rule,
+L D .rz/  .JrzH C ˚/  rz  .JrzH C ˚/  .r/  g  r  g:

@@ -1,0 +1,61 @@
+372
+8
+Extended Variable Methods
+We stress that the implementation of this method is in fact quite straightforward,
+despite its apparent complexity. The following details regarding the implementation
+are discussed in [220]:
+•
+For the integration of the Nosé terms, it is recommended to use a further splitting:
+LN D L.1/
+N C L.2/
+N ;
+where
+L.1/
+N D 1
+2
+12
+12p
+
+@
+@p C 1
+2
+13
+12
+
+@
+@1
+ 21
+@
+@1
+;
+and
+L.2/
+N D 1
+2 Œ12
+1  ˇ1	 @
+@2
+:
+Moreover a Yoshida/Suzuki type higher order decomposition is used to obtain
+more accuracy in this component.
+•
+The term exp ŒhLF	 (like similar terms) is completely integrable. Note that in
+general this reduces to solving
+Pp D F  p2F=;
+P1 D p1F=;
+with F a constant.
+The solution in a timestep h is
+p.h/ D p.0/ C .F=m/s.h/
+Ps.h/
+;
+1.h/ D 1.0/
+Ps.h/ ;
+where
+s.t/ D b1=2 sinh.t
+p
+b/ C a
+b.cosh.t
+p
+b/  1/
+with a D Fp.0/= and b D F2=,  D ˇ1.
+Care must be taken in the evaluation of s and Ps for a; b close to zero.
+Note that other decompositions are possible [220].

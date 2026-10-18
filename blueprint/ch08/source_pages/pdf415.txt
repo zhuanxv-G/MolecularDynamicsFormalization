@@ -1,0 +1,64 @@
+394
+8
+Extended Variable Methods
+which the stochastic terms are eliminated and replaced by a kinetic energy control
+law based only on relative velocities of interacting pairs. We refer to this as the
+pairwise Nosé-Hoover (PNH) thermostat; it is designed to conserve the momentum
+and is also Galilean-invariant. This method is particularly useful in nonequilibrium
+molecular dynamics (NEMD) applications where the total momentum needs to be
+preserved under thermostatting [342].
+The equations of motion of the PNH thermostat (for particle i) is given by
+dqi D m1
+i pidt;
+dpi D FC
+i .q/dt C  QF
+D
+i dt;
+d D G.q; p/dt;
+(8.108)
+where  is a dynamical variable, the dissipative/driving coupling term is deﬁned as
+QF
+D
+i D
+N
+X
+jD1
+QF
+D
+ij ;
+QF
+D
+ij D !D.rij/.Oqij  vij/Oqij;
+(i.e. 
+ D 1 in the dissipative term for DPD), and G.q; p/ is the instantaneous accu-
+mulated deviation of the kinetic temperature away from the target temperature [8]
+G.q; p/ D 1 X
+i
+X
+j>i
+!D.rij/
+h
+vij  Oqij
+2  kBT=mij
+i
+;
+(8.109)
+where  is a coupling parameter which is referred to as the “thermal mass”. The
+invariant distribution is deﬁned in the .q; p; / extended space, with density
+Oˇ.q; p; / D OZ1 exp .ˇH.q; p// exp
+
+ˇ2=2
+
+;
+(8.110)
+where OZ is a suitable normalizing coefﬁcient so that the density integrates to one
+over the entire accessible space (subject, as usual, to the conservation of momentum
+constraint).
+A nonsymmetric integration algorithm was applied in the original paper [8] to
+solve the system.
+8.9.4
+Pairwise Nosé-Hoover-Langevin Thermostat
+To improve ergodicity, it is intuitive to employ the same stochastic device used
+in the Nosé-Hoover-Langevin method, namely linear (OU-type) stochastic terms
+introduced in the equation for the auxiliary variable . If the OU process is properly
+tuned the extended canonical distribution with density Oˇ will still be preserved.

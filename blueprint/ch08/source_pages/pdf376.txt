@@ -1,0 +1,46 @@
+8.4
+Ergodic Stochastic-Dynamic Thermostats
+355
+where K is the kinetic energy, and the mean auxiliary variable 
+N.t/ D
+Z
+DR
+.q; p; ; t/d!d:
+ that appears here is the normalized pre-equilibrium density which evolves
+according to the Fokker-Planck equation of the extended Nosé-Hoover-Langevin
+system.
+It is then possible to perform a local stability analysis to characterize the
+convergence to equilibrium of N and N to the equilibrium .NdkBT; 0/. Although
+the analysis makes certain stringent assumptions they are veriﬁed in [225] for a
+Lennard-Jones molecular system.
+8.4.4
+Velocity Rescaling
+An alternative stochastic-dynamical method for thermostatting molecular dynamics
+is the stochastic velocity rescaling method proposed by Bussi and collaborators [60,
+63] and somewhat generalized in [225]. The equations are (for the case M D I,
+considered for simplicity):
+dq D pdt
+dp D rU.q/ dt  .K/p dt C
+p
+2kBT˚.K/pdW;
+where W.t/ is a single Wiener process, ˚ is an arbitrary smooth positive function
+and  is deﬁned by
+.K/
+def
+D .2K  .1 C Nd/kBT/˚.K/  2kBTK d˚
+dK :
+With these deﬁnitions, the method preserves the canonical probability density ˇ.
+We do not prove the ergodicity of the method here, but expect that it would follow
+by an analysis similar to that given above for Nosé-Hoover-Langevin.
+The original proposal of Bussi et al. had
+˚.K/ D 
+VR
+2K ;
+so that
+.K/ D .1  .Nd  1/kBT=2K/ 
+VR;
+where 
+VR is a positive constant.
+For the more general case, the required conditions on ˚ are as follows:
+K˚.K/ is bounded as K ! 0;
+˚.K/ grows at most polynomially as K ! 1:

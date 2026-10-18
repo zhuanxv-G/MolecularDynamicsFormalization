@@ -1,0 +1,48 @@
+Appendix
+409
+In a similar way we may compute the expectation of any function of the random
+variable as a sum or integral over states. For example, the variance is deﬁned for a
+discrete random variable by
+Var.X/ D E.X  EX/2 D
+X
+i2S
+.Xi  NX/2fi;
+with a similar formula for the continuous case. The standard deviation is the square
+root of the variance. It is common to denote the standard deviation by  and the
+variance by 2.
+An important example of a random variable is the normal or Guassian distribu-
+tion with density
+normal.x/ D
+1
+
+p
+2
+e .x/2
+22 :
+where  is the mean and 2 the variance.
+The expectation of a certain random variable X given some condition, such as
+another random variable Y being in set A, is referred to as a conditional expectation
+and is denoted E.XjY 2 A/. If X and Y are independent random variables, their joint
+probability density is a product f.x; y/ D g.x/h.y/ and the conditional expectation
+of X is therefore independent of any event pertaining to Y, E.XjY 2 A/  E.X/.
+One of the fundamental results in probability is the Central Limit Theorem which
+concerns an inﬁnite collection of mutually independent, identically distributed
+random variables. The basic observation is that if we have some random variables
+drawn from some particular distribution we may deﬁne a new random variable by
+averaging. The average will not have the same distribution as those of the collection,
+but it will have a well deﬁned density. The Central Limit Theorem effectively
+describes the limiting density obtained by averaging over an inﬁnite collection.
+Remarkably, independent of the density of a particular member of the collection,
+this averaged random variable will ultimately be Gaussian with mean and variance
+speciﬁed by the mean and variance associated to the members of the collection.
+Theorem B.1 (Central Limit Theorem) Let X1; X2; : : : be a collection of inde-
+pendent, identically distributed random variables with E.Xi/ D  and Var.Xi/ D
+2 > 0. Deﬁne
+Sn D X1 C X2 C : : : C Xn
+n
+;
+which can be viewed as the average of the random variables. Then the distribution
+of .Sn  /pn converges to a normal distribution with mean zero and standard
+deviation 2.
+The notion of convergence in distribution in the Central Limit Theorem is
+that of pointwise convergence of the probability distribution function deﬁned by

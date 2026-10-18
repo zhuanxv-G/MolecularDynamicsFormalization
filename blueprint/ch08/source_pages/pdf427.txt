@@ -1,0 +1,44 @@
+408
+B
+Concepts from Probability
+and we have the properties
+.x/  0;
+Pr.R/ D
+Z
+R
+.x/dx D 1;
+and, for any two measurable sets A and B,
+Pr.A [ B/ D Pr.A/ C Pr.B/  Pr.A \ B/:
+Given two random variables, X and Y, we deﬁne their joint probability distribution
+in terms of a joint density f.x; y/ thus
+Pr.X 2 A; Y 2 B/ D
+Z
+A
+Z
+B
+f.x; y/dxdy;
+with a similar concept for larger collections.
+The conditional probability Pr.AjB/ is the probability of event A, given event
+B. It is deﬁned by
+Pr.AjB/ WD Pr.A \ B/
+Pr.B/
+;
+Pr.B/ ¤ 0:
+Events A and B are said to be (statistically) independent if Pr.AjB/ D Pr.A/. In
+other words, A and B are independent if
+Pr.A \ B/ D Pr.A/Pr.B/:
+The expectation or mean of a random variable is the average value over the whole
+distribution. For a discrete random variable with density fi and state space S, we
+have, denoting expectation by the symbol E,
+EX D
+X
+i2S
+Xifi:
+It is common to write NX for EX.
+In the case of a continuous random variable, we have, if the state space is S and
+ is the density,
+EX 
+Z
+S
+x.x/dx:
+It is common to denote the mean of a random variable by .

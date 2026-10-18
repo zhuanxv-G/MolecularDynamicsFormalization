@@ -1,0 +1,40 @@
+8.6
+Isokinetic Methods and Integration with Very Large Timestep
+361
+the exact expected result ˇ, we can see the three stochastic methods perform
+excellently, whereas the results from using the Nosé-Hoover thermostat reveal
+extremely poor sampling as a result of the trajectory being trapped.
+We would expect that using Nosé-Hoover Chains (8.16)–(8.21) may provide
+deterministic, ergodic sampling, by using a sufﬁciently long chain of artiﬁcial
+variables and correctly chosen mass parameters i. However, the choice of these
+parameter values may prove crucial to the ergodicity of the dynamics. Therefore,
+we suggest that for equilibrium canonical sampling it is far more efﬁcient to
+use a stochastic thermostat, in comparison to the ergodicity issues and additional
+parameter tuning required in the case of deterministic thermostats.
+8.6
+Isokinetic Methods and Integration with Very Large
+Timestep
+In the last chapter we examined various numerical methods for Langevin dynamics,
+observing very substantial differences in the accuracy obtainable for conﬁgurational
+sampling using different schemes. In this section, we discuss methods that accelerate
+sampling using a more radical approach, namely modiﬁcation of the ensemble to
+incorporate isokinetic constraints. We again assume in what follows that Nc D Nd,
+so there are no constraints acting on the system (other than the isokinetic constraint
+we are going to impose).
+The starting point here is the Gaussian isokinetic thermostat [124]. This type of
+constraint can be introduced into Newtonian dynamics Pq D M1p, Pp D F.q/ by
+adding a Lagrange multiplier, i.e. changing the equations of motion to
+Pq D M1p;
+Pp D F.q/  p;
+K0 D K.p/
+def
+D pTM1p:
+By differentiating the constraint and introducing the second equation, we obtain an
+equation for :
+0 D pTM1Pp D pTM1ŒF.q/  p	:
+This yields
+ D pTM1F.q/
+pTM1p
+:
+Simply substitute this expression into the differential equations to obtain the
+unconstrained equations

@@ -1,0 +1,28 @@
+8.10
+Numerical Experiments
+401
+9
+Projective Thermostat.
+Consider the following method for thermostatting
+H.q; p/ D kpk2=2 C U.q/ (q; p 2 RNc):
+dq D pdt;
+(8.115)
+dp D rU.q/dt  R.q/pdt;
+(8.116)
+d D pTR.q/pdt  tr.R.q//dt;
+(8.117)
+where
+R.q/ D
+1
+k˛.q/k2 ˛.q/˛.q/T
+is a symmetric projector matrix onto the direction ˛.q/. Show that this
+method preserves the canonical distribution. [Observe that in the Fokker-Planck
+equation for this method, derivatives with respect to q are only applied for the
+ﬁrst equations, thus the task is identical to showing the result for constant R.]
+10. Show that when the Nosé-Hoover or Nosé-Hoover-Langevin method is used,
+any individual component of the total momentum vector P
+j pj remains positive
+for all time, if initialized from a positive value (similarly negative momenta stay
+negative). When is this property maintained under discretization? Discuss this
+fact in relation to the proof given for ergodicity of the Nosé-Hoover-Langevin
+thermostat in Sect. 8.4.1.

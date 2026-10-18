@@ -1,0 +1,52 @@
+340
+8
+Extended Variable Methods
+exp.ˇ22
+2=2/ exp.ˇ32
+3=2/ and so on. Thus the full system preserves the
+combined distribution
+Q D ˇ exp
+ 
+ˇ
+k
+X
+iD1
+i2
+i =2
+!
+:
+Of course this is only a demonstration that the dynamics is compatible with Q; there
+may be other invariant distributions.
+Numerical treatment of the Nosé-Hoover Chain system can be performed by
+splitting, just as in Newtonian and Langevin dynamics. Various related methods
+and comparisons may be found in [65, 192, 230, 253].
+8.2.3
+Lack of Ergodicity of Deterministic Thermostats
+Deterministic methods like the ones in the previous subsection are sometimes used
+for sampling calculations, however, our and others’ experience is that these methods
+are not always ergodic.
+In the case of Nosé-Hoover, this problem was known to both of the inventors
+and has been observed by many authors (see e.g. [251] and [180]). More recently,
+it has been studied analytically [218]. Some confusion arises from the fact that the
+practical ergodic properties (and other properties) in Nosé-Hoover simulations are
+sensitive to the particular system under study and the values of parameters. For
+example it is known that in the case of simple liquids and gases, Nosé-Hoover does
+(at least under some conditions) enable reliable calculation of thermodynamical
+quantities [77], whereas in other systems results are poor and cannot be rectiﬁed
+by adjustment of parameters. In general, the control of temperature requires that
+the thermostat couples tightly to the physical variables, which generally calls for a
+small thermal mass, but this may be at odds with efﬁciency reduction (it may lead
+to a need to use smaller timesteps to resolve the motion of the auxiliary variable).
+Ergodicity is less well known as a potential problem for methods involving
+thermostatting chains. Figure 8.1 shows a projection of a torus in phase space
+found numerically for a chain-thermostatted harmonic oscillator. As the number of
+auxiliary chain variables increases, we observe that the tori become increasingly thin
+but wind in a complicated way through the phase space. Even for initial conditions
+trapped within one of the tori, crude sampling may be possible, provided that the
+torus itself is of sufﬁcient size, but the presence of such tori will impose a ﬁnite
+accuracy limit on the averages that can be obtained.
+The reliable use of deterministic thermostats is system dependent—it is essential
+that there be mechanisms within the underlying physical dynamics model that
+promote energetic exchange among the degrees of freedom.
+Numerical methods for Nosé-Hoover chains are easily constructed by splitting
+of the equations of motion.

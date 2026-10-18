@@ -1,0 +1,42 @@
+8.8
+Constant Temperature and Pressure Molecular Dynamics
+381
+8.8.1
+Equations of Motion for the NHL Piston
+In the framework of [199], rewriting the equations of motion for the physical
+variables q and p, the dynamics takes the form
+Pq D M1p C q;
+Pp D rU.q/  p  p;
+PV D V;
+with auxiliary variables  and  governed by additional dynamical equations of
+motion
+P D hT
+def
+D .pTM1p  NdkBT/=T;
+P D hP
+def
+D .V˘.q; p; V/  PV C kBT/=P;
+where
+˘.q; p; V/
+def
+D 1
+V
+
+pTM1p  q  rU.q/  V @
+@V U.q/
+	
+;
+is the expression for the pressure.
+Now let us examine the distribution conserved by the dynamics. First, we observe
+1 D '1.pTM1p=2 C U.q//  .V; ; /
+is stationary for the Liouvillian operator for the vector ﬁeld .p; rU; 0; 0; 0/.
+The function can be chosen as any smooth function that integrates out with
+respect to V; ;  over Œ0; 1	  R  R. We already know from our discussion of
+Nosé-Hoover that Pp D p; P D .pTM1p  NdkBT/=T will have as stationary
+states functions of the form
+2 D exp.ˇŒpTM1p C T2=2	/ 2.q; ; V/:
+Finally the remaining terms Pq D q, Pp D p, PV D V, P D .V˘.q; p; V/  PV C
+kBT/=P give rise to the Liouvillian
+L D rq .q/Crp .p/ @
+@V .V/ @
+@Œ.V˘.q; p; V/PV CkBT/=P	:

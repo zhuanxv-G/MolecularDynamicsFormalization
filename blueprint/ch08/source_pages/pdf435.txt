@@ -1,0 +1,49 @@
+C.3
+Hybrid Monte-Carlo Methods
+417
+lost. Modiﬁcations of the basic scheme presented in [313] address this issue by
+truncation of the proposal distribution. Much subsequent work has focused on the
+design of MALA-type methods with the aim of obtaining optimal convergence to
+equilibrium.
+In [43, 47, 48] the corrections are applied to a deterministic or stochastic
+molecular dynamics method with the goal of improving numerical stability at large
+timestep and/or enhancing phase space exploration. A practical overview of these
+methods, with a molecular dynamics test example, may be found in [43].
+A fundamental issue for these schemes is that, for efﬁciency purposes, the
+acceptance ratio must be kept sufﬁciently high. At ﬁxed stepsize, the acceptance
+ratio will tend to deteriorate with increasing system size [43], so smaller stepsizes
+are generally needed for large systems in practice. By contrast the straightforward,
+uncorrected discretization methods accept every step; this leads to error due to
+numerical bias in proportion to a power of the stepsize.
+When certain methods are used (see Chap. 7 for examples) the error due to
+bias in molecular dynamics can be well controlled, in which case the beneﬁts of a
+Metropolis-Hastings correction may be modest. Metropolis-Hastings correction in
+MD, as described in the algorithms mentioned above, is likely to be most helpful in
+situations where very high accuracy is needed, or where, for some practical reasons,
+the underlying basic integrator is a low-accuracy (in the sense of invariant measure)
+integration method. Moreover, the Monte-Carlo framework tends to impose a strong
+perturbation on dynamics, so that temporal correlations can no longer be recovered
+from the sampling paths. Technically, this is also the case for Langevin dynamics
+itself, but as discussed in Chap. 8, the perturbation of dynamics is controlled by the
+friction parameter 
+ (and even better methods for weak perturbation of dynamics
+are described in Chap. 8, based on extended systems).
+C.3
+Hybrid Monte-Carlo Methods
+As an intermediate between deterministic integration and Monte-Carlo, one may
+consider Hybrid Monte-Carlo (HMC) methods [110, 278]. These schemes use,
+for the proposal distribution, a moderate length path obtained from deterministic
+molecular dynamics (usually computed by the Verlet method). Thus, at each step of
+an HMC scheme, we obtain s C 1 timesteps
+
+G j
+h
+ qk
+pk
+ ˇˇˇˇ j D 0; 1; 2; : : : ; s
+
+which approximate the local Hamiltonian evolution. It is important that the underly-
+ing scheme Gh is time-reversible and volume preserving in the case of deterministic
+dynamics.
+As explained in Gardiner [142], it is necessary, upon rejection of a step, to
+incorporate a change of sign of the momentum (a “momentum ﬂip” [2]). The

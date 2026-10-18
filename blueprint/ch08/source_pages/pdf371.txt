@@ -1,0 +1,43 @@
+350
+8
+Extended Variable Methods
+by an approximate series expansion. In modern computer architectures, the number
+of force evaluations is responsible for the overwhelming majority of the time spent
+per iteration.
+We can apply the splitting approach considered in Chap. 7 to integrate equations
+(8.27)–(8.29). One suitable choice of algorithm that we shall use in the following
+subsection is
+pnC1=2 D pn  .h=2/rU.qn/;
+qnC1=2 D qn C .h=2/M1pnC1=2;
+nC1=2 D n C .h=2/1 h
+pT
+nC1=2M1pnC1=2  NdkBT
+i
+;
+QpnC1=2 D e.h=2/nC1=2pnC1=2;
+OnC1=2 D e
+hnC1=2 C Rn;
+OpnC1=2 D e.h=2/OnC1=2 QpnC1=2;
+nC1 D OnC1=2 C .h=2/1 h
+OpT
+nC1=2M1OpnC1=2  NdkBT
+i
+;
+qnC1 D qnC1=2 C .h=2/M1OpnC1=2;
+pnC1 D OpnC1=2  .h=2/rU.qnC1/;
+where  D
+p
+kBT1.1  exp.2
+h// and Rn is a normal random number with
+unit variance and zero mean.
+This numerical method requires only one evaluation of the force per timestep. It
+also reduces to a Nosé-Hoover integrator when 
+ D 0, and as it solves the Ornstein-
+Uhlenbeck process exactly, it is stable under the large (or inﬁnite) limit of friction.
+8.4.3
+Numerical Comparison of Dynamics
+We shall compare the long-time averages evaluated by computing solution trajec-
+tories for Nosé-Hoover, Langevin and Nosé-Hoover-Langevin dynamics. We will
+look at the impact that the choice of dynamics (and associated parameters) has on
+the rate of convergence of averages in time, as well as the perturbation introduced
+into dynamical quantities (such as autocorrelation functions).

@@ -1,0 +1,38 @@
+Chapter 8
+Extended Variable Methods
+In the previous chapter we described numerical methods for solving the equations
+of Langevin dynamics, a system of stochastic differential equations that sample the
+canonical ensemble. The methods allow us to compute averages of the form
+Avˇ..q; p// D
+R
+D .q; p/ˇ.q; p/d!
+R
+D ˇ.q; p/d!
+;
+where ˇ D exp.ˇH/, and H is the system Hamiltonian. In this chapter we
+extend the range of systems that can be used to accomplish this task using methods
+based on the incorporation of auxiliary variables. We also consider schemes for
+sampling alternative thermodynamic ensembles, for example those deﬁned by
+constant number of atoms N, pressure P and temperature T. In some of the methods,
+based on purely deterministic models, the ergodic property may be compromised, so
+an important issue is to design schemes that restore this. We will focus on methods
+that introduce random processes in direct contact with the auxiliary variables.
+Besides canonical or conﬁgurational sampling, another common purpose of
+molecular simulation is the calculation of a dynamical (time-dependent) quantity
+such as the rearrangement of a molecular group over time or a diffusion rate. The
+only dynamical calculations that make sense in the context of molecular modelling,
+where trajectories are chaotic, are those that involve some sort of average. We
+consider this average in a thermodynamic sense and assume that the calculation can
+be formulated as the determination of the canonically weighted correlation between
+two quantities evaluated at different times, for example
+Cˇ./ D
+R
+D A.z/  B.F H
+ .z//ˇd!
+R
+D A.z/  B.z/ˇd!
+:
+© Springer International Publishing Switzerland 2015
+B. Leimkuhler, C. Matthews, Molecular Dynamics, Interdisciplinary Applied
+Mathematics 39, DOI 10.1007/978-3-319-16375-8_8
+329

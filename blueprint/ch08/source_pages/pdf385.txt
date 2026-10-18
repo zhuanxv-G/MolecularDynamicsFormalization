@@ -1,0 +1,50 @@
+364
+8
+Extended Variable Methods
+We ﬁrst demonstrate the idea of [220] by considering the following SDE with a
+single degree of freedom:
+dq D pdt;
+(8.40)
+dp D ŒF.q/  p	 dt;
+(8.41)
+d1 D 1dt  21dt;
+(8.42)
+d2 D 1
+2 .12
+1  kBT/dt  
+2dt C dW;
+(8.43)
+where 1 and 2 are auxiliary variables,  D
+p
+2
+=ˇ2, 
+ is the friction constant,
+1 and 2 are coupling coefﬁcients, and  is a Lagrange multiplier which is chosen
+to maintain the isokinetic relation involving p and 1:
+p2 C 1
+212
+1 D kBT:
+(8.44)
+We calculate the multiplier by differentiating the constraint to obtain
+2pPp C 11 P1 D 0
+or, using the differential equations,
+2.pF.q/  p2/ C 11.1dt  21/ D 0;
+thus
+ D pF.q/  12
+12=2
+p2 C 12
+1=2
+:
+Upon reintroduction of this expression in (8.40)–(8.43) this allows us to write a
+closed-form SDE system for q; p; 1; 2.
+We follow an analogous procedure to that used to study the distribution in the
+case of the standard isokinetic system, for the moment ignoring the stochastic terms.
+This requires us to solve the equation
+rw  f D div.f/;
+where now f is the vector ﬁeld in (8.40)–(8.43) where we take 
+ D 0. The
+divergence is
+div.f/ D  d
+dp.p/  d
+d1
+.1/  2:

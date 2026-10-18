@@ -1,0 +1,63 @@
+8.6
+Isokinetic Methods and Integration with Very Large Timestep
+365
+Let 1 D pF  12
+12=2, 2 D p2 C 12
+1=2, so  D 1=2, then calculate
+d
+dp D .2F  21p/=2
+2;
+d
+d1
+ D .1122  111/=2
+2;
+to see that
+pd
+dp C 1
+d
+d1
+D .pF  12
+12/2  .2p2 C 12
+1/1
+2
+2
+D 2
+
+ pF
+22
+C   
+
+D pF
+2
+;
+hence
+div.f/ D pF
+2
+ 2  2
+D pF  2.pF  12
+12=2/
+p2 C 12
+1=2
+ 2
+D pF C 12
+12
+p2 C 12
+1=2  2:
+We ﬁnd that a solution of the equation rw  f D div.f/ is then given by
+w D
+U C 1
+22
+2
+p2 C 1
+212
+1
+:
+Integrating over the isokinetic surface p2 C 1
+212
+1 D ˇ1, and with respect to the
+variable 2, yields the Gibbs conﬁgurational density.
+The exciting prospect here is that we now have a new variable 2 which
+has, in equilibrium, a Gaussian distribution. The Ornstein-Uhlenbeck terms are
+therefore compatible with this extended distribution and can be incorporated (as
+in Nosé-Hoover-Langevin) to provide ergodicity and control of the convergence to
+equilibrium.

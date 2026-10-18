@@ -1,0 +1,54 @@
+334
+8
+Extended Variable Methods
+8.1.2.1
+Nosé-Poincaré Dynamics: A Symplectic Approach
+As we have seen in earlier chapters, there is a strong foundation for using symplectic
+integrators, for example the existence of perturbative backward error expansions
+which are relatively easily calculated, it is desirable to work within this class. On
+the other hand, as we have mentioned, Nosé-Hoover dynamics is not a Hamiltonian
+system. The Nosé-Poincaré method resolves this issue by providing a Hamiltonian-
+based extension of the physical system whose projected trajectories are actually
+equivalent to Nosé-Hoover trajectories, in the absence of numerical errors. This
+extended Hamiltonian system can then be discretized using a symplectic method.
+Nosé’s original proposal involved using the dynamics of the Hamiltonian
+HN D 1
+2s2 QpTM1Qp C 2
+2 C U.q/ C .Nd C 1/kBT ln s
+to deﬁne an extension which can be used for canonical sampling. The dynamics
+for constant Nosé extended energy, when reduced to the .q; p D Qp=s/ plane will
+preserve the canonical measure ˇ. However, the scaling of kinetic energy induces
+a time transformation, which is inconvenient for molecular modelling purposes. The
+Nosé-Poincaré method introduces an explicit unraveling of the time transformation.
+One works with the modiﬁed Nosé-Poincaré (NP) Hamiltonian [41, 102]:
+HNP D sŒHN  EN	 D s
+ 1
+2s2 QpTM1Qp C 2
+2 C U.q/ C NdkBT ln s  EN
+
+;
+(8.9)
+where EN is a constant equal to the initial Nosé energy of the system. Trajectories of
+this system unfold on a timescale which is in some sense commensurate with that of
+Hamiltonian dynamics. The NP Hamiltonian system can be treated with symplectic
+integrators, conferring a possible stability advantage. Symplectic integrators for this
+system are compared in [41].
+The equations of motion associated to (8.9) are
+d
+dtq D M1Qp=s;
+(8.10)
+d
+dt Qp D sF;
+(8.11)
+d
+dts D sps=;
+(8.12)
+d
+dtps D QpTM1Qp
+s2
+ NdkBT  HN;
+(8.13)
+where HN D HN  H0
+N (H0
+N represents the value of the Nosé Hamiltonian at the
+initial point).

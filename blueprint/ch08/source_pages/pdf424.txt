@@ -1,0 +1,45 @@
+404
+A
+Force Computation
+In recent years, Verlet lists have often been supplanted by (or combined with)
+the Linked Cell List method [7]. For discussion of these techniques, see [86, 173,
+303, 307]. See also [49, 50, 203, 335, 341] for work on fast parallel computation of
+molecular forces.
+A.1
+Accumulation of Long-Ranged Forces
+When periodic boundary conditions are used, it is not possible to neglect far-ﬁeld
+interactions via long-ranged potentials due to electrostatics, thus periodic boundary
+conditions must be extended to include replica systems at distance ˙L; ˙2L; : : :.
+The total energy is, up to a constant scaling,
+U.q/ D
+X
+n
+N1
+X
+iD1
+N
+X
+jDiC1
+QiQj
+kqi  qj C Lnk
+where n is an multi-index with three integer components corresponding the three
+spatial directions. The Coulombic summation is only conditionally convergent in
+R3, meaning that its result depends on the way in which the terms are accumulated.
+We can see why this is the case in three-dimensions by considering a spherical shell
+around a given particle at distance r. The potential energies are proportional to 1=r
+but the number of terms is proportional to r2. Thus, if there are no cancellations,
+the sum cannot converge and absolute convergence refers precisely to the situation
+where the signs do not matter. We can only resolve this by considering electrically
+neutral systems (which ensures adequate cancellation) and also by describing the
+way in which the sum is computed. Even when this is resolved through some
+convention, the sum converges slowly.
+A variety of methods are available for computing electrostatic energies (and
+forces), including the Fast Multipole Method [38], the Particle-Particle-Particle-
+Mesh Method [179], and methods based on the technique of Ewald Summation
+[125, 367]; we only discuss a particular variant of the latter approach here and not
+in detail.
+A.2
+Particle Mesh Ewald (PME)
+The starting point these methods is an additive decomposition of the pair potential
+into two terms
+'Coulomb.r/ D 's:r:.r/ C 'l:r:.r/;

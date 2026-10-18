@@ -1,0 +1,94 @@
+8.6
+Isokinetic Methods and Integration with Very Large Timestep
+371
+It is straightforward to show that each of the terms of the corresponding vector
+ﬁeld splitting preserves the ﬁrst integral  D constant. For example
+LF D 
+FF  .p2=/FF @
+@p  p1FF
+
+@
+@1
+D
+
+FF  .p2=/FF
+.2p/  p1FF
+
+.11/
+D pFF 
+2  1.2p2 C 12
+1/
+D 2pFF 
+1  1
+
+D 0:
+The proof for the other terms is similar.
+The given decomposition can be used to construct a variety of algorithms,
+for example the following which we term the Stochastic Isokinetic Nosé-Hoover
+RESPA algorithm.
+SIN(R) Algorithm
+Propagate p, 1, 2 by exp Œ.h=2/LN	.
+Propagate p, 1 by exp 
+.Qh=2/LF C .h=2/LS
+,
+.Qh D h=r/:
+Propagate q by exp
+
+QhLK
+
+.
+Propagate 2 by exp
+
+QhLO
+
+.
+Propagate p, 1 by exp
+
+.Qh=2/LF
+
+.
+Repeat r  2 times:
+Propagate p, 1 by exp
+
+.Qh=2/LF
+
+.
+Propagate q by exp
+
+.Qh=2/LK
+
+.
+Propagate 2 by exp
+
+.Qh/LO
+
+.
+Propagate q by exp
+
+.Qh=2/LK
+
+.
+Propagate p, 1 by exp
+
+.Qh=2/LF
+
+.
+Propagate p, 1 by exp 
+.Qh=2/LF
+.
+Propagate 2 by exp
+
+QhLO
+
+.
+Propagate q by exp
+
+QhLK
+
+.
+Propagate p, 1 by exp
+
+.Qh=2/LF C .h=2/LS
+
+.
+Propagate p, 1, 2 by exp Œ.h=2/LN	.

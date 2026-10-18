@@ -1,0 +1,91 @@
+8.9
+Momentum-Conserving Thermostats and the Dissipative Particle. . .
+391
+deterministic systems and would be expected to be only ﬁrst order accurate. It
+could be made symmetric by a simple change, for example replacing pn in the force
+computation at the ﬁrst step by pnC1=2, but these changes would make the method
+implicit.
+8.9.2.2
+Shardlow’s Splitting Method
+Shardlow [333] proposed splitting methods for DPD based on dividing the force
+ﬁeld of the DPD system into its separate (conservative+dissipative+random) parts.
+Several integrators are then derived based on approximating the various terms. In
+the most popular and efﬁcient variant, the scheme of Brünger, Brooks and Karplus
+(BBK) [55] is used to solve the dissipative+stochastic terms, with standard velocity
+Verlet applied to the conservative part.
+We ﬁrst separate the system of stochastic differential equations for DPD (8.90)
+into three pieces, which we label as A, B and O:
+d
+qi
+pi
+
+D
+ m1
+i pi
+0
+
+dt
+„
+ƒ‚
+…
+A
+C
+ 0
+FC
+i
+
+dt
+„ ƒ‚ …
+B
+C
+
+0
+FD
+i dt C Ri
+
+„
+ƒ‚
+…
+O
+;
+(8.94)
+where Ri D P
+j¤i !R.rij/OqijdWij, for standard i.i.d. Wiener processes Wij.t/, such
+that dWij D dWji. The generators for each part of the SDE may be written out as
+follows:
+LA D
+X
+i
+pi
+mi
+ rqi;
+(8.95)
+LB D
+X
+i
+FC
+i  rpi D 
+X
+i
+rqiU.q/  rpi;
+(8.96)
+LO D
+X
+i
+X
+j¤i
+
+
+!D.rij/.Oqij  vij/ C 2
+2 Œ!R.rij/	2Oqij 
+
+rpi  rpj
+	
+Oqij  rpi:
+(8.97)
+Thus, the generator for the DPD system can be written as
+LDPD D LA C LB C LO;
+(8.98)
+and the ﬂow map may be written in the standard shorthand as
+Ft D etLDPD:
+Approximations of Ft can be constructed as for Langevin dynamics.

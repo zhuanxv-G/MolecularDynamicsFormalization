@@ -1,0 +1,55 @@
+8.9
+Momentum-Conserving Thermostats and the Dissipative Particle. . .
+387
+One of the most popular scheme of this type is the technique of dissipative
+particle dynamics (DPD) which was introduced in 1992 by Hoogerbrugge and
+Koelman [181]. DPD groups several ﬂuid molecules and treats these as a single
+particle (which may be thought of as a lump of ﬂuid). The particles of a DPD system
+interact through a short-ranged “soft” pairwise (distance-based) potential energy
+function. The use of such a soft potential increases the usable timestep, thus the
+beneﬁt of using DPD as opposed to MD is felt both in reduction of system dimension
+and increase in the timestep and thus the accessible time interval in simulation [156].
+DPD can be viewed as a Langevin dynamics in which conﬁguration dependence is
+present in both dissipative and stochastic perturbations. We will consider numerical
+methods for DPD in this section; for discussion of coarse-graining applications of
+DPD, see for example [39, 88, 330].
+The equations of DPD are a little more complicated than standard MD. It is
+therefore important to design accurate and efﬁcient methods tailored to their special
+form. Most numerical methods for DPD simulation exhibit substantial statistical
+bias. Some methods have been developed to reduce the per timestep efﬁciency but
+at a price in terms of the conservation properties. The only way that the errors are
+tamed in some ad hoc schemes is by reducing the timestep size excessively (well
+below the stability threshold), but this may destroy the practical value of those
+methods.
+In this section we present numerical methods based on splitting for DPD and
+for another stochastic momentum-conserving method, the pairwise Nosé-Hoover-
+Langevin (PNHL) method.
+8.9.1
+Formulation of DPD
+We describe here the formulation of dissipative particle dynamics due to Español
+and Warren [122].
+Let the N particles be described in the usual way by positions qi and momenta pi.
+We assume their masses to be mi for i D 1; : : : ; N. The DPD equations of motion
+are of the form
+dqi
+dt D pi
+mi
+;
+dpi
+dt D Fi;
+(8.80)
+where Fi is the total interparticle force acting on particle i due to the presence of the
+other particles. The force is composed of three pairwise contributions
+Fi D
+X
+j¤i
+.FC
+ij C FD
+ij C FR
+ij/;
+(8.81)
+where FC
+ij, FD
+ij and FR
+ij represent conservative, dissipative and random forces, acting
+on particle i due to the j-th particle, respectively.

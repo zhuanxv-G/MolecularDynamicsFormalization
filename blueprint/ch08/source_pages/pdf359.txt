@@ -1,0 +1,40 @@
+338
+8
+Extended Variable Methods
+This is a slightly generalized form of the technique suggested by Bulgac and
+Kusnezov [58].
+Assuming  goes to zero sufﬁciently rapidly at inﬁnity, we have
+Z
+rz  G.z/d! D 
+Z
+.rz/  G.z/d! D ˇ
+Z
+rzH  G.z/d!;
+using integration by parts, therefore, since ˇ1 D kBT,
+T D k1
+B
+hrzH  Gi
+hr  Gi ;
+which gives formulas for temperature in terms of phase space averages (compare
+Chap. 6, Proposition 6.1).
+Suppose we let K be a scalar valued function of position, and set
+G.z/ D
+ rqK.q/
+0
+
+then we arrive at
+g.z/ D 1ŒrqU  kBTrq	  rqK.q/:
+This is an example of a “conﬁgurational thermostat” [193, 211, 319].
+A useful fact about thermostats is the following:
+Proposition 8.1 (Thermostats are Additive) Suppose we are given two ther-
+mostats,
+Pz D JrH C ˚1.; z/;
+P D g1.; z/;
+with stationary density O1./ˇ, and another
+Pz D JrH C ˚2.; z/;
+P D g2.; z/;
+with stationary density O2./ˇ, then
+Pz D JrH C ˚1.; z/ C ˚2.; z/;
+P D g1.; z/;
+P D g2.; z/
+is another thermostat and has stationary density Q D O1./ O2./ˇ.

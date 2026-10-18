@@ -1,0 +1,78 @@
+384
+8
+Extended Variable Methods
+Time: 0
+Time: 2
+Time: 4
+Time: 6
+Fig. 8.6 We simulate 64 atoms at constant pressure in 3D using a Lennard-Jones interaction
+between them. The volume V of the simulation box (marked with black lines) shrinks and stabilizes
+in size as the simulation evolves in time. Periodic boundary conditions with respect to this
+simulation box are enforced throughout the simulation
+Instantaneous kinetic temperature
+Auxiliary variable ξ
+Volume of periodic box
+Distribution of pressure
+Time
+0
+20
+40
+60
+80
+100
+Time
+0
+20
+40
+60
+80
+100
+Time
+0
+20
+40
+60
+80
+100
+0.1
+0.2
+0
+0.3
+44
+-2
+43
+2
+0
+46
+45
+4
+Π - P
+-6
+-4
+-2
+0
+2
+4
+6
+γ=0
+γ=0.1
+γ=1
+0
+0.1
+0.2
+0.3
+Fig. 8.7 We plot the results of an NPT simulation of 64 atoms of Lennard-Jonesium using the
+given discretization where 
+T D 
+P D 
+, with 
+ set to zero (blue), 
+ D 0:1 (green) or 
+ D 1
+(red). Although the distribution of instantaneous pressure ˘ (centered on the target pressure P)
+looks similar for all three cases, we can see that without any stochasticity the simulation exhibits
+artiﬁcial periodic ﬂuctuations in the temperature and volume
+oscillation in its kinetic energy (and in the extended variable  that regulates the
+kinetic energy), with the temperature ﬂuctuating between double and half of its
+target. The volume also periodically ﬂuctuates when 
+ D 0, giving rise to the

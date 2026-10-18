@@ -1,0 +1,53 @@
+8.1
+Dynamics-Based Thermostat Techniques
+335
+The relation between (8.10)–(8.13) and (8.2)–(8.4) becomes evident through the
+substitution p D Qp=s and  D ps=. Then (8.10)–(8.11) are seen to be the same
+as the corresponding equations in the Nosé-Hoover method, and the ﬁnal pair of
+equations become
+d
+dts D s;
+d
+dt D 1
+
+
+pTM1p  NdkBT  HN
+
+:
+The only difference between the last equation and (8.4) lies in the perturbation
+1HN, which is zero along the exact solution. Under discretization, however,
+we do not expect HN to vanish, so trajectories obtained from Nosé-Poincaré and
+Nosé-Hoover will differ considerably over long time simulations.
+A beneﬁt of respecting the symplectic structure lies in the prospect of using
+backward error analysis to analyze the behavior of the method. As shown in [40] it
+is possible to work out the terms of the perturbative expansion of the Nosé-Poincaré
+Hamiltonian, i.e. to calculate the expansion
+QHh D HNP C h2HŒ2	 C O.h4/
+for a second order, symmetric, symplectic numerical method. Then one may
+determine the effective distribution associated to the symplectic discretization
+method by “integrating out” the microcanonical density with respect to the auxiliary
+variable and its conjugate momentum. One obtains in this way
+Q .q; p/ D ˇ.q; p/.q; p; h/ C O
+
+h4
+:
+An explicit formula for  is given in [40] for several symplectic methods. During
+simulation, one may calculate the factor  and use this quantity to adjust averages.
+For example, if we wish to calculate the average of a function g.q; p/, we may
+perform the calculation using  steps of the Nosé-Poincaré method with the given
+symplectic, time-reversible, second order integrator, calculate gn and n at each
+timestep, and approximate the canonical average from
+hgi D
+1
+ C 1
+
+X
+nD0
+gn1
+n
+C O.h4/:
+For further details, refer to [40]. Technically, a similar calculation can be carried out
+for the Nosé-Hoover formulation, but the calculations are more involved.
+A good symplectic integrator for Nosé-Poincaré has been given by Nosé [287].
+For further discussion and numerical experiments using this idea, see [94] (which
+also considers stochastic methods).

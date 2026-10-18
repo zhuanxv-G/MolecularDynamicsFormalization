@@ -1,0 +1,46 @@
+330
+8
+Extended Variable Methods
+F H
+t represents the ﬂow map of Hamiltonian dynamics. Thus C.0/ D 1. At large ,
+if the system is “mixing,” and loses memory of its starting point, hence
+Avˇ
+
+A.z/  B.F H
+ .z//
+
+ Avˇ ŒA.z/	  Avˇ ŒB.z/	
+is approximately independent of . Thus the correlation should approximately
+vanish at large time, provided the scalar product of the average of A and the aver-
+age B vanishes. Computing an autocorrelation function Cˇ./ normally involves
+performing a stationary thermodynamic calculation in which the observable itself
+depends on a Hamiltonian dynamics calculation.
+There is no reason for taking the averages solely with respect to ˇ. We could
+in effect assume any prior distribution for the initial conditions. Our choice of
+Gibbs statistics in deﬁning autocorrelation is made for purely practical reasons—
+it simpliﬁes the study of the problem by allowing us to bring to bear the common
+techniques of thermodynamic sampling. In some cases, the Gibbs weight is ignored
+and the calculation is performed as an average two point correlation along a single
+trajectory. In some cases this calculation is performed using a single thermostatted
+molecular dynamics trajectory. Such a calculation is only justiﬁed when the
+thermostat is “weakly coupled” to the physical system. In this setup, the key to
+accurately computing averaged dynamics of molecular systems is to use thermostat
+techniques that minimally perturb the physical dynamics. We will brieﬂy discuss
+how this may be achieved while maintaining the ergodic property.
+8.1
+Dynamics-Based Thermostat Techniques
+Deterministic trajectories can sometimes be used to sample the canonical measure.
+A very simple technique of this type is Hamiltonian dynamics itself.
+Let a Hamiltonian H.q; p/ be given and let L be its Liouvillian
+L D rpH  rq  rqH  rp:
+Recall from Chap. 5 that, as the dynamics automatically preserves functions of H,
+the Liouvillian satisﬁes L'.H/ D 0. We also know that for Hamiltonian dynamics
+L is skew-adjoint, i.e., L D L which implies that L .H/ D 0. Hence any
+density which is a function of H will be preserved, and this includes the canonical
+one .H/ D exp.ˇH/.
+If we select a set of points at random from the canonical distribution, then
+initiate trajectories of Hamiltonian dynamics from each of these points, the points
+will remain Gibbs-distributed over time. If the paths themselves are ergodic on the
+surfaces of constant energy H D E then the collection of paths may provide a usable
+sampling of the canonical distribution. Such a sampling technique relies on having
+the means of choosing initial points from the canonical distribution; as this is the

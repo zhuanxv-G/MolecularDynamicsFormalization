@@ -1,0 +1,59 @@
+332
+8
+Extended Variable Methods
+The equation for the variable  represents a negative feedback loop which acts
+to control the value of  (and hence to regulate the kinetic energy). When the
+temperature of the system, measured as the average kinetic energy per degree of
+freedom, is high compared to the “target temperature” ˇ1, the control equation
+will insure that  increases, eventually becoming positive. This will damp (cool)
+the physical variables; eventually the kinetic energy will fall below the target value,
+and  will become negative. By ﬂuctuating in this way,  typically maintains the
+time-averaged kinetic energy of the system at very near Ndˇ1=2.
+The parameter 0 is arbitrary and can be used to improve the performance of the
+method in practical calculations.
+This method preserves an extended measure with density of the form
+Q.q; p; / D ˇ.q; p/  eˇ2=2:
+(8.5)
+That is, one can show that L
+f Q D 0, where f is the full vector ﬁeld associated to the
+Nosé-Hoover system.
+Observe that we can split f into two parts: f D f 1 C f 2, where
+f 1 D
+2
+4
+M1p
+rU.q/
+0
+3
+5 ;
+f 2 D
+2
+4
+0
+p
+1.pTM1p  Ndˇ1/
+3
+5 :
+The Liouvillian1 follows a similar decomposition:
+L
+f D L
+f1 C L
+f2:
+Since the ﬁrst part (which is simply Hamiltonian dynamics) preserves the extended
+Gibbs measure Q, it is evidently enough to show that the system
+dp
+dt D p;
+(8.6)
+d
+dt D pTM1p  Ndˇ1;
+(8.7)
+preserves Q as well. The Liouvillian L
+f 2 associated to this system is deﬁned by
+L
+f2 D rp  .p/  @
+@ .1ŒpTM1p  Ndˇ1	/:
+It is left as an exercise to demonstrate that, with this deﬁnition and (8.5), L
+f2 Qˇ D 0.
+1Technically, “Liouville’s equation” refers to the continuity equation in the setting of a volume
+preserving ﬂow. Here we use the term “Liouvillian” to refer to the operator whose action on a
+density gives the right hand side of the general continuity equation.

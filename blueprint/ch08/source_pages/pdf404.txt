@@ -1,0 +1,60 @@
+8.8
+Constant Temperature and Pressure Molecular Dynamics
+383
+and solve the latter exactly. It is not technically necessary to require symmetry of
+the way that stochastic and deterministic terms are interleaved if the only purpose
+is equilibrium sampling, although symmetry is required within any splitting method
+used for the deterministic part in order to gain even order (in our case an O.h2/
+error) in short time approximation and in the accuracy of computed thermodynamic
+quantities.
+In the case of (8.75)–(8.79) this suggests
+ :D  C .t=2/hT;
+ :D  C .t=2/hP;
+p :D e.C/t=2p C .  ; t=2/F.q/;
+q :D etq C .; t/M1p;
+p :D e.C/t=2p C .  ; t=2/F.q/;
+V :D etV;
+hT :D hT.p/;
+hP :D hP.q; p; V/;
+ :D  C .t=2/hT;
+ :D  C .t=2/hP;
+ :D e
+Tt C
+p
+ˇ1.1  e2
+Tt/=TR;
+ :D e
+Pt C
+p
+ˇ1.1  e2
+Pt/=PR;
+where
+ .˛; t/
+def
+D
+ e˛t1
+˛
+˛ ¤ 0
+t
+˛ D 0 ;
+and R, R are two scalar i.i.d. N.0; 1/ random numbers. Periodic boundary
+conditions are enforced whenever q or V is updated, to ensure that the system
+remains inside the cube with side length V1=3.
+We perform an experiment with the given discretization for 64 atoms in a 3D
+periodic box using a pairwise Lennard-Jones potential. We set P D 0:5, kBT D 0:1
+and P D T D 5, with all particle masses set to one and h D 0:001. As plotted in
+Fig. 8.6, we initialize the particles in a cubic formation within a 5  5  5 periodic
+box (so V.0/ D 125). As we run the simulation, V decreases and the pressure is
+increased.
+We set 
+T D 
+P D 
+ and compare simulations using three values of 
+. Choosing
+
+ D 0 removes any stochastic terms from the simulation, reducing the dynamics to
+a similar form to the Nosé-Hoover thermostat. The distribution of the pressure ˘,
+plotted in Fig. 8.7 (centered on the target pressure P), is well sampled under all three
+choices of the friction 
+. However, as in the NVT experiment in Fig. 8.2, without
+any stochastic terms in the equations of motion the system exhibits a pronounced

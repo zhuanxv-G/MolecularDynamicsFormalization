@@ -1,0 +1,44 @@
+342
+8
+Extended Variable Methods
+otherwise there is little clear advantage and a potentially signiﬁcant price to be
+paid, since HMC methods only work by rejecting steps. For reading on Hybrid
+Monte Carlo methods, the reader should consult [110, 188] and other references
+mentioned in Appendix C.
+•
+Kinetic Monte-Carlo (KMC) methods are a broad family of multiscale sampling
+methods which use a local sampling mechanism to explore basins while invoking
+an Arrenhius law to estimate the rates or timescales for transitions between
+basins (we can think of basins as neighborhoods of potential energy minima).
+The Arrenhius law relates the rate constant k associated to a particular state-
+to-state transition to the exponential of the of the “activation energy” which is
+deﬁned as the difference E between the energy at a local minimum and that at
+the energy barrier between the states
+k  AeE=kBT
+In a KMC method, it is typically assumed that various possible state-to-state
+transitions from a given state are well modelled by the Arrenhius law and then
+molecular dynamics is used to calculate the prefactor A and energy difference E
+in order to understand the timescales and relative probabilities of different rare
+events. A Markov state model can be developed to help understand the global
+dynamics and simplify the model as a whole. For references on many interesting
+approaches to this important topic, the reader is referred to [36, 42, 137, 149, 391].
+•
+Andersen Thermostat. Of particular interest is the simple and useful Andersen
+thermostat [11]. This method works by selecting atoms at random and randomly
+perturbing their momenta in a way consistent with prescribed thermodynamic
+conditions. It has been rigorously proven to sample the canonical distribution
+[114].
+8.4
+Ergodic Stochastic-Dynamic Thermostats
+In this section, we consider the combination of stochastic perturbation with a
+deterministic thermostat. Methods constructed in this way can be ergodic for
+the canonical distribution while also providing ﬂexibility in way equilibrium is
+achieved. We distinguish in (6.16) between multiplicative noise, where B D B.z/
+varies with z and additive noise, where B is constant. In our treatment of this topic
+we will only consider additive noise. The presence of multiplicative noise may
+complicate discretization. As we shall see, the reliance on additive noise improves
+the performance of discretization schemes.
+To give this some speciﬁcity for molecular dynamics, we write the stochastic
+dynamical model as
+dq D M1pdt;
+(8.22)

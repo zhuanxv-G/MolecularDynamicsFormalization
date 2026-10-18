@@ -1,0 +1,45 @@
+8.1
+Dynamics-Based Thermostat Techniques
+333
+Let a further dynamical variable s be deﬁned by
+ds
+dt D :
+The extended Nosé-Hoover system then has a conserved quantity (see Exercise 2):
+INH.q; p; ; s/ D H.q; p/ C 2
+2
+C Ndˇ1 ln s:
+(8.8)
+This integral can be used to monitor the performance of numerical methods.
+8.1.2
+Numerical Methods for Extended System Thermostats
+We next describe some numerical procedures (based on the concept of splitting
+introduced in Chaps. 2 and 3) which are appropriate for thermostats based on the
+incorporation of auxiliary variables.
+Nosé-Hoover dynamics is not a Hamiltonian system, despite the presence of the
+mentioned ﬁrst integral. It is, however, time-reversible: changing the sign of p and
+ simultaneously in the equations of motion is equivalent to reversing the arrow of
+time t ! t. For this reason, time-reversible numerical methods are often proposed
+for Nosé-Hoover. A typical integrator is described below.
+To simplify the notation and to use a format that might more closely match what
+would be implemented in software, we write the algorithm for a single timestep of
+the method in which positions, momenta and auxiliary variables are updated in situ.
+Nosé-Hoover Timestep Map
+q :D q C .h=2/M1p
+p :D eh=2p  c.h=2; /rU.q/
+ :D  C h1 
+pTM1p  NdkBT
+
+p :D eh=2p  c.h=2; /rU.q/
+q :D q C .h=2/M1p
+Here we have solved successively, the ﬁrst, second and third equations, sequen-
+tially, and then in reverse order to make a symmetric (and second order) integrator.
+The auxiliary function involved c.t; / D 1et
+
+is easily evaluated from a few terms
+of its Maclaurin series expansion
+c.t; / D t  t2=2 C : : :
+It is easy to verify that this method is time-reversible. If we write the timestep map
+as .q; p; / 7! Gh.q; p; /, then we may check that
+R ı Gh ı R D G 1
+h ;
+R.q; p; / D .q; p; /:

@@ -1,0 +1,59 @@
+354
+8
+Extended Variable Methods
+0
+Time
+0.2
+0.4
+0.6
+0.8
+1.0
+1.2
+0
+Time
+Velocity auto-correlation
+0
+0.02
+0.04
+0.06
+0.08
+0.10
+0.2
+0.4
+0.6
+0.8
+1.0
+1.2
+Nosé-Hoover & Nosé-Hoover-Langevin
+Langevin
+Fig. 8.4 The computed velocity auto-correlation functions are plotted for Nosé-Hoover and Nosé-
+Hoover-Langevin dynamics (left), where we overlay plots from simulations using all possible
+parameter sets where 
+ 2 f0; 0:05; 0:5; 5; 50g and  2 f20; 2; 0:2; 0:02g. We additionally plot the
+same result for Langevin dynamics (right), overlaying curves for 
+ 2 f0:05; 0:1; 0:2; : : : ; 51:2g,
+where high to low friction is plotted from red to blue respectively. The salient qualitative features
+of the results remain qualitatively unchanged when using different values of the parameters for the
+Nosé-Hoover thermostats (see inset) whereas the Langevin thermostat has a much harsher effect
+on the dynamics, with signiﬁcant differences as the friction is increased
+It may seem that the difference between Nosé-Hoover-Langevin and Langevin
+dynamics is a technical one that essentially hinges on choice of parameters. Both
+methods are ergodic and it may appear that by simply choosing a small value
+of friction in Langevin dynamics, we can match the behavior of Nosé-Hoover-
+Langevin to any desired accuracy. However, this is most deﬁnitely not the case, as a
+careful analysis of Figs. 8.3 and 8.4 reveals. If an accurate velocity autocorrelation
+function is required, then the friction parameter in Langevin dynamics needs to be
+chosen very small (much less than 
+ D 0:1), see Fig. 8.4. But if the friction is
+chosen in this way, the convergence to canonical equilibrium is drastically impaired
+(Figs. 8.2 and 8.3). By contrast it is relatively easy to ﬁnd parameter choices
+for Nosé-Hoover-Langevin which provide quite rapid convergence of canonical
+averages while preserving the accuracy of autocorrelation functions.
+The convergence to equilibrium for Nosé-Hoover-Langevin is difﬁcult to cal-
+culate analytically. The only existing analysis is that of [225] which restricts
+consideration to the convergence of the kinetic energy. It turns out that one may
+obtain a nonlinear system in terms of the following two variables:
+N.t/ D
+Z
+DR
+2K.q; p; ; t/d!d;

@@ -1,0 +1,88 @@
+8.2
+More General Deterministic Thermostats
+339
+The proof is an immediate consequence of the linearity of the divergence
+operator, since the Liouville operator is constructed from this.
+8.2.2
+Nosé-Hoover Chains
+Let us employ the additivity property to derive “Nosé-Hoover Chains” [251], a
+popular deterministic thermostat designed to give a more thorough sampling of the
+phase space than the standard Nosé-Hoover method.
+The equations of Nosé-Hoover Chains may be written [251]
+Pq D M1p;
+(8.16)
+Pp D rU.q/  1p;
+(8.17)
+1 P1 D pTM1p  NdkBT  121;
+(8.18)
+2 P2 D 12
+1  kBT  223;
+(8.19)
+3 P3 D 22
+2  kBT  334;
+(8.20)
+:::
+k Pk D k12
+k1  kBT:
+(8.21)
+By creating a more substantial bath of oscillators, each of which is forced to have
+the target kinetic energy, the physical system may more closely approximate the
+canonical distribution.
+To see that this is a thermostat, note the equations (8.16)–(8.21) can be split into
+the following pieces:
+2
+66666666664
+Pq
+Pp
+1 P1
+2 P2
+:::
+k1 Pk1
+k Pk
+3
+77777777775
+D
+2
+66666666664
+M1p
+rU.q/  1p
+pTM1p  NdkBT
+0
+:::
+0
+0
+3
+77777777775
+C
+2
+66666666664
+0
+0
+112
+12
+1  kBT
+:::
+0
+0
+3
+77777777775
+C    C
+2
+66666666664
+0
+0
+0
+0
+:::
+k1k1k
+k12
+k1  kBT
+3
+77777777775
+:
+The ﬁrst piece of the system corresponds to Nosé-Hoover, which we already know
+preserves ˇ exp.ˇ12
+1=2/. By examination, the distribution exp.ˇ12
+1=2/
+exp.ˇ22
+2=2/ is preserved by the second piece, the next piece preserves

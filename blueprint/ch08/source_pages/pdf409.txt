@@ -1,0 +1,79 @@
+388
+8
+Extended Variable Methods
+Many choices are possible for the conservative force ﬁeld [219, 244, 342]. In case
+the DPD equations are used simply to control the momentum (and not as a coarse-
+graining device), any empirical molecular force ﬁeld may be used. When DPD is
+used for coarse-graining, it is common to adopt a simpliﬁed pair potential, namely
+FC
+ij D
+8
+<
+:
+˛
+
+1  rij
+rc
+	
+Oqij;
+rij < rcI
+0;
+rij  rc;
+(8.82)
+where rij is the interparticle distance, Oqij D r1
+ij .qi  qj/, parameters ˛ deﬁne
+the strength of the repulsion of particles i and j, and rc is the cutoff radius. The
+use of a cutoff is important for efﬁciency reasons—in a large system, only the
+particles interacting at close range will generate nonzero forces of interaction so
+the force calculation may be substantially reduced. Both ˛ and rc could be allowed
+to be different for different particle pairs, although they are most often taken to be
+homogeneous. The pair potential corresponding to the force is
+'DPD.r/ D
+8
+ˆ<
+ˆ:
+˛rc
+2
+
+1  r
+rc
+	2
+;
+r < rcI
+0;
+r  rc:
+(8.83)
+so that the conservative potential energy is:
+UDPD D
+X
+i<j
+'DPD.rij/;
+rij D kqi  qjk:
+(8.84)
+The choice of dissipative and random forces is made so as to maintain a
+prescribed temperature. The typical formulas used for this purpose are
+FD
+ij D 
+!D.rij/.Oqij  vij/Oqij;
+(8.85)
+FR
+ij D !R.rij/ijOqij;
+(8.86)
+where 
+ and  parameterize the forces (again, they could be taken to be different for
+different pairs), and !D and !R are conﬁguration-dependent weight functions that
+typically incorporate a cut-off similar to that used in the conservative force, e.g. one
+may take
+!R.r/ D
+8
+<
+:
+1  r
+rc
+;
+r < rcI
+0;
+r  rc;
+(8.87)
+where rc is the same cutoff used in the conservative force. The relative velocities
+are denoted by vij D pi=mi  pj=mj, and ij is a symmetric (ij D ji) Gaussian

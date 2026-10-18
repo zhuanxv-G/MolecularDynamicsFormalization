@@ -1,0 +1,35 @@
+Appendix C
+Monte-Carlo Markov Chains
+In this section, we outline a broad family of Monte-Carlo methods which are useful
+in molecular modelling. The reader is suggested to consult references on this subject
+such as [269, 312] for a more comprehensive treatment, such as the details of proofs
+of ergodicity.
+The ﬁrst use of the Monte-Carlo method in a form similar to that used today was
+by Ulam, von Neumann and Metropolis. The goal is to calculate the expectation
+of some observable g.X/ of a random variable X (assumed to be deﬁned by a
+complicated process) having a given probability density f.x/. By deﬁnition
+EŒg.X/	 D
+Z
+D
+g.x/f.x/dx:
+Let Xi, i D 1; 2; : : : be a discrete process and deﬁne
+Sn.g/ D 1
+n
+n
+X
+iD1
+g.Xi/
+this is sometimes referred to as the Monte-Carlo estimator of EŒg.X/	. Using the
+Central Limit Theorem it is easy to see that if each of the iterates Xi has the same
+distribution as X, and both mean EŒg.X/	 and variance 2 of g.x/ are deﬁned then
+c
+limn!1
+pn1 .Sn.g/  EŒg.X/	/ D Y  N.0; 1/:
+In particular Sn.g/ will tend to the desired expectation.
+If we have some means of generating a random process Xi for which the iterates
+have the same distribution as X (or a sufﬁciently close approximation) we can use
+this method to compute an estimate of the expectation EŒg.X/	.
+© Springer International Publishing Switzerland 2015
+B. Leimkuhler, C. Matthews, Molecular Dynamics, Interdisciplinary Applied
+Mathematics 39, DOI 10.1007/978-3-319-16375-8
+413

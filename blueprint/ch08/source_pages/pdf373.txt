@@ -1,0 +1,67 @@
+352
+8
+Extended Variable Methods
+= 0.01
+Time
+0
+25
+50
+Time
+0
+25
+50
+Time
+0
+25
+50
+Time
+0
+25
+50
+Langevin
+Average kineic energy
+0
+10
+20
+30
+40
+50
+Average kineic energy
+0
+10
+20
+30
+40
+50
+Average kineic energy
+0
+10
+20
+30
+40
+50
+Average kineic energy
+0
+10
+20
+30
+40
+50
+Nosé-Hoover
+Nosé-Hoover-Langevin
+0.5
+Nosé-Hoover-Langevin
+5
+Fig. 8.2 We plot the evolution of the average of kinetic energy in time for several choices of the
+thermostat. We vary the parameters used for the dynamics to illustrate the effect on the convergence
+of averages. The averages will converge to the dashed line in the large-time limit
+terms ensure that the residual oscillatory behavior of the Nosé-Hoover dynamics
+is damped, removing any long-lived oscillations.
+Finally, we see that Langevin dynamics shows that the rate of convergence of
+the kinetic energy is highly dependent on the choice of friction 
+. At the smallest
+friction value considered the convergence is very poor, taking a signiﬁcant time to
+properly thermalize. Larger friction results in rapid convergence of the momentum
+towards equilibrium.
+Results for the convergence of potential energy are shown in Fig. 8.3 are entirely
+consistent with the results for kinetic energy. One subtle observation to note is that

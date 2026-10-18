@@ -1,0 +1,79 @@
+8.5
+Non-Newtonian Dynamics-Based Iterations for Molecular Sampling
+357
+Table 8.1 Estimated rates of convergence, perturbation growth, and efﬁciency for different
+methods
+Error (to lowest
+Thermostat
+Convergence rate
+order in t)
+Efﬁciency
+Langevin
+
+
+t
+
+ 1
+Velocity Rescaling
+4
+AvˇfK2˚.K/g
+TNdkB
+2
+Nd AvˇfK˚.K/g t
+O .Nd/
+VR with ˚.K/ D 
+VR
+2K
+
+VR
+
+VR
+Nd t
+
+ Nd
+NHL
+q
+NdkBT
+
+kBT
+2 t2
+
+ 2Nd
+(at critical damping)
+8.5
+Non-Newtonian Dynamics-Based Iterations
+for Molecular Sampling
+Given that we can decompose the stochastic dynamics into deterministic part and
+stochastic process, and approximately or exactly solve the parts, it is common
+to iterate the maps for each building block sequentially in such a way that the
+calculation approximates the dynamics of the system. This is, very likely, an
+unnecessary restriction on the sampling strategy. The crucial things that effect the
+ultimate success of the method are that the parts themselves preserve the measure
+(or approximately so), the stages are volume preserving, and that the stochastic
+processes are sufﬁciently strongly coupled so that the overall iteration is ergodic.
+There is essentially no need to use maps based on Newtonian deterministic
+dynamics. There are many alternative dynamics models which leave invariant the
+canonical measure, going well beyond those considered so far. To illustrate this
+with one intriguing example, we explore here the stochastic dynamical system in
+2Nc C 1 variables deﬁned by
+dq D M1pdt;
+(8.33)
+dp D 
+pdt C M1=2dW;
+(8.34)
+d D Œ.M1p/  rU.q/= C 
+0	dt C 0dZ;
+(8.35)
+where W is a vector of Nc Wiener processes, Z is a scalar Wiener process and  D
+p2kBT
+, and 0 D
+p
+2kBT
+0= this system preserves the augmented distribution
+with density
+Q.q; p; / D eˇ.pTM1p=2CU.q/C2=2/:
+For this system, it is possible to show that the Hörmander condition holds. Setting all
+parameters to 1 and taking M D I (without loss of generality in this demonstration)
+we write our SDE in the form d' D D C PNcC1
+iD1 YidWi, where ' is the vector of all
+phase variables, Yi D eNcCi, for i D 1; : : : ; Nc C 1, is the i C Ncth basis function in

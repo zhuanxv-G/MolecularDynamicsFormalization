@@ -1,0 +1,88 @@
+370
+8
+Extended Variable Methods
+of stochastic perturbation). Unlike for r-RESPA, the splitting needs to be performed
+at the level of the differential equations. We suppress the index of the degree of
+freedom, takes its mass to be one for simplicity of presentation, and write the
+equations of motion for the variables associated to a single physical degree of
+freedom in the form
+dq D pdt;
+dp D Fdt 
+ 
+p.FF C FS/  1
+212
+12
+
+!
+pdt;
+d1 D 
+ 
+p.FF C FS/  1
+212
+12
+
+!
+1dt  21dt;
+d2 D 1
+2 .12
+1  ˇ1/dt  
+2dt C dW;
+where  D p2 C 1
+212
+1.  D ˇ1 is constant of motion.
+Because of the form of the coupling, we observe that this vector ﬁeld can be addi-
+tively decomposed based on the various terms in the stochastic isokinetic equations,
+including the fast-slow splitting of the forces, into the following generators:
+Kinetic part:
+LK D p @
+@q;
+isokinetic Fast force:
+LF D 
+FF  .p2=/FF @
+@p  p1FF
+
+@
+@1
+;
+isokinetic Slow force:
+LS D
+
+FS  .p2=/FS @
+@p  p1FS
+
+@
+@1
+;
+isokinetic Nosé terms:
+LN D 1
+2
+12
+12p
+
+@
+@p C 1
+2
+13
+12
+
+@
+@1
+ 21
+@
+@1
+C 1
+2 Œ12
+1  ˇ1	 @
+@2
+;
+Ornstein-Uhlenbeck term:
+LO D 
+2
+@
+@2
+C 2
+2
+@2
+@2
+2
+:

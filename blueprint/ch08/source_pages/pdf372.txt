@@ -1,0 +1,54 @@
+8.4
+Ergodic Stochastic-Dynamic Thermostats
+351
+The test model we shall use to study this problem will be a Lennard-Jones liquid.
+We place N D 125 atoms with unit mass in a 3D periodic box with total potential
+energy given by
+U.q/ D
+N
+X
+iD1
+N
+X
+jDiC1
+'LJ.rij/;
+where
+rij D kqi  qjk;
+'LJ.r/ D r12  r6:
+The particles’ positions are initialized on a 5  5  5 grid, with equidistant grid
+spacing 21=6: the minimum of the Lennard-Jones potential 'LJ.r/. We will sample
+canonically at reciprocal temperature ˇ D 10, with a force cutoff chosen equal to
+the side length of the periodic box. The size of the box deﬁnes the particle density
+of the simulation and hence the phase of matter that we shall study. After some
+experimentation, a cubic box with side length 7 was found to give conditions for a
+liquid state.
+In order to compare the rate of convergence of averages, we initialize 625
+identical (and independent) copies of our system, and propagate each forward in
+time. The values of the instantaneous kinetic and potential energy for the system are
+averaged over all of the systems at each time. In all simulations, we use a timestep of
+h D 0:005. Speciﬁc cases considered are: Nosé-Hoover with  ranging from 0:02 to
+20, and Nosé-Hoover-Langevin with that range of  and 
+ D 0:5 or 
+ D 5. We also
+include simulations using Langevin dynamics with values of 
+ ranging from 0:01 to
+10. In Fig. 8.2 we plot the convergence of the average kinetic energy of the system
+towards its equilibrium average, while Fig. 8.3 illustrates the convergence of the
+average potential energy as a function of time. The equilibrium average is known
+exactly for the kinetic energy, whereas the equilibrium average for the potential
+energy was computed to high accuracy by averaging over several long trajectories.
+The results show residual oscillations of average kinetic energy in Nosé-Hoover
+that may be indicative of long term correlations—the method is, as we know, not
+ergodic. Decreasing  increases the frequency of oscillations observed, which can
+present problems for numerical integration of the dynamics (i.e. a small stepsize
+may be needed), which would introduce inefﬁciency. It is also known from a
+dynamical systems analysis that Nosé dynamics is not ergodic in the large 
+limit [217]; as  is increased, the thermalizing auxiliary variable is increasingly
+decoupled from the physical variables, so that thermal control is impaired; in
+practice, for large  in Nosé-Hoover, one may observe long period oscillations in
+system temperature.
+For the Nosé-Hoover-Langevin method, we observe that, while small values of
+ increase the high frequency oscillations observed in the kinetic energy, the rate of
+convergence is essentially determined by 
+ and the average kinetic energy indeed
+converges in the timescale of these simulations. The presence of the stochastic

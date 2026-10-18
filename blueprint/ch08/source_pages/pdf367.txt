@@ -1,0 +1,39 @@
+346
+8
+Extended Variable Methods
+preserves O./ D exp.ˇ2=2/. However, this is obvious from our earlier
+investigations of Ornstein-Uhlenbeck equations.
+In order to show that this thermostat is ergodic, we need to demonstrate that
+the assumptions presented in Sect. 6.4.4 are valid. Assumption 1(ii) requires us to
+verify that a Hörmander condition (see Deﬁnition 6.1) holds for the Nosé-Hoover-
+Langevin system. Because of the complexity of the high order commutators, we
+will work here with the assumption of a quadratic potential in the physical model.
+In some sense this is the most difﬁcult case for a thermostat, but paradoxically, the
+assumption facilitates the mathematical analysis. We will assume throughout the
+following that Nd D Nc, i.e. that there are no constraints in the system. Our potential
+will therefore be assumed to be
+U.q/ D 1
+2qTAq;
+for A a symmetric, positive deﬁnite Nc  Nc matrix, with
+rU.q/ D Aq:
+We will further assume M D I. If this is not the case, then one may introduce the
+rescaling Qq D M1=2q; Qp D M1=2p in order to rewrite the system in a form that does
+not involve M. Thus the system under study is
+dq D pdt;
+(8.30)
+dp D Aqdt  pdt;
+(8.31)
+d D 1Œkpk2  NdkBT	dt  
+dt C dW:
+(8.32)
+Let u1; u2; : : : ; uNc be the eigenvectors of A with 1; : : : ; Nc the corresponding
+eigenvalues. Observe that if q0 uk D p0 uk D 0, then, using (8.30)–(8.31), we have
+at this point
+uk  p D 0;
+uk  ŒAq  p	 D kuk  q D 0;
+which implies that Vk D f.q; p/juk  q D 0; uk  p D 0g is an invariant submanifold.
+Therefore we must require that uk  q and uk  p do not simultaneously vanish, that
+is, .q; p/ 2 D D R2Nc n SNc
+kD1 Vk.
+Theorem 8.1 If A is symmetric positive deﬁnite and has distinct eigenvalues, then
+(8.30)–(8.32) satisﬁes the Hörmander condition on D  R.

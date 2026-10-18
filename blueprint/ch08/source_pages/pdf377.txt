@@ -1,0 +1,43 @@
+356
+8
+Extended Variable Methods
+8.4.5
+The Efﬁciency of a Thermostat and “Gentle”
+Thermostats
+To understand the reason for this fundamental, qualitative difference between
+Nosé-Hoover-Langevin and Langevin dynamics, and to compare it with Velocity
+Rescaling, one may study a quantity that relates the rate of convergence to
+equilibrium to the rate of growth of the error in the autocorrelation function. In
+[225], this precise quantity is introduced and termed the efﬁciency of the thermostat:
+efﬁciency D
+rate of convergence to equilibrium
+rate of growth of perturbation of dynamics:
+The rate of convergence to equilibrium is quite difﬁcult to calculate in general, as it
+would typically relate to the spectral gap of the diffusion. In light of the observations
+of Fig. 8.3, one may choose to estimate this in terms of the rate of convergence of
+the average kinetic energy to the target temperature.
+The rate of accumulation of error due to the thermostat is also difﬁcult to
+quantify analytically, since it requires calculation of the error in an autocorrelation
+function over a time interval which may not be short compared to the simulation
+stepsize, particularly for slow-relaxing systems. Again, an estimate is obtainable
+by considering the rate of error accumulation at short times (obtained by Taylor
+expansion of the exact and approximate autocorrelation functions). The result of
+these two estimates is then an analytical estimate for the efﬁciency that relates
+various schemes for various values of the parameters involved.
+An interesting observation is that, while for both Langevin dynamics and
+Velocity Rescaling the error accumulation is linear in time, the same is not true
+for Nosé-Hoover-Langevin: the error in NHL increases initially in proportion to t2;
+the instantaneous diffusion rate is inherited from the system to which it is applied.
+This means that, while NHL cannot be used to model imposed target diffusion rates,
+its inﬂuence on dynamics within the setting of molecular dynamics thermostatting
+is also very slight: it is a gentle thermostat. The Velocity Rescaling method is
+also gentle in another sense: the rate of growth of error is small. Estimating the
+efﬁciency for both Langevin and Velocity Rescaling is similar—we ﬁnd the ratio of
+the estimated rate of convergence of kinetic energy to the estimated rate of linear
+error growth in the velocity autocorrelation function. For Nosé-Hoover-Langevin,
+which has quadratic-in-time error growth, we determine the characteristic time
+until convergence (the reciprocal of the exponential rate of convergence) and from
+this determine how much perturbation accumulates in the velocity autocorrelation
+function.
+In Table 8.1 we show the comparison of the relevant estimates of the above
+quantities, including the efﬁciency, for different choices of thermostat.

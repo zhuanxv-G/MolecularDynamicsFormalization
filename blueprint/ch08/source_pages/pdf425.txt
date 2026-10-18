@@ -1,0 +1,22 @@
+A.2
+Particle Mesh Ewald (PME)
+405
+where s.r. and l.r. refer to “short-ranged” and “long-ranged” respectively, obtained
+using a suitable decomposition. The precise way in which this is done is not too
+critical from a theoretical point of view, but can have dramatic impact on the
+efﬁciency of the method. With this in mind, we separate the total energy into sums
+of short-ranged and long-range contributions, the latter including the terms due to
+interactions of distant copies of the simulation cell. The total potential energy thus
+can be written
+U D Us:r: C Ul:r::
+The short-ranged part is calculated in the normal manner by direct summation
+of force contributions. The long-ranged part includes components that can be
+calculated by a discrete convolution on an interpolating grid, using a 3D Fast Fourier
+Transform (FFT). When implemented as described in [123], the method can be
+shown to have asymptotic complexity (O.N log N/).
+For further reading on force calculation issues the reader is advised to consult
+[24, 38, 89, 90, 109, 123, 134, 154, 173, 367].
+An entirely different approach to the treatment of electrostatic interactions is to
+eliminate them entirely in favor of implicit solvation techniques [28, 315] which
+either solve the Poisson-Boltzmann equation [144, 337] or employ the Generalized
+Born [291] model of excluded volumes.

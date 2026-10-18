@@ -1,0 +1,54 @@
+8.4
+Ergodic Stochastic-Dynamic Thermostats
+349
+for some constants Umin and Umax. Hence  is strictly positive over the entire space,
+and we can compute that
+LNHL D p  rU.q/  rU.q/  p  kpk2 C
+
+kpk2  NdkBT
+
+.  a/
+ 
+.  a/ C kBT
+;
+	 akpk2  
+2 C .a
+  NdkBT/  C aNdkBT C kBT
+:
+Choosing a so that a
+  NdkBT D 0, we obtain
+LNHL D akpk2  
+2  
+a2 C 
+a2 C aNdkBT C kBT
+:
+Using 2  a2 	 .  a/2=2 gives
+LNHL 	 2a1
+2kpk2  
+1
+2.  a/2 C 
+a2 C aNdkBT C kBT
+:
+Now choosing
+˛ D min .2a; 
+/ ;
+we have
+LNHL 	 ˛ C ˛U.q/ C 
+a2 C aNdkBT C kBT
+;
+	 ˛ C ı;
+for constants ˛ and ı as required, where
+ı D ˛Umax C 
+a2 C aNdkBT C kBT
+:
+This gives the necessary Lyapunov condition for the Nosé-Hoover-Langevin equa-
+tions, and hence the dynamics are geometrically ergodic. Solution trajectories will
+sample the extended canonical distribution, and it remains to compute solutions
+using an appropriate discretization scheme.
+8.4.2
+Numerical Integration of the Nosé-Hoover-Langevin
+Equations
+Many older schemes for Nosé-Hoover and Langevin dynamics make use of
+computational shortcuts to (for example) reduce the number of computed random
+values per iteration, reduce the data storage needed for an algorithm or replace
+functions that are costly to evaluate (e.g. exponential or trigonometric functions)

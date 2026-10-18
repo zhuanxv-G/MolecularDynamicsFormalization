@@ -1,0 +1,48 @@
+8.6
+Isokinetic Methods and Integration with Very Large Timestep
+369
+Let us apply the operator Lisok to 
+def
+D 2
+2=2. As this is only a function of 2, many
+terms vanish and we are left with
+Lisok D LN C LO;
+LN D Œ2
+1  ˇ1	2;
+and
+LO D 
+2
+2 C 2
+2 :
+Because 1 is uniformly bounded due to the isokinetic constraint, we have
+Lisok 	 
+2
+2 C K2 C 2
+2 :
+For j2j sufﬁciently large this term is negative. This contractivity, together with
+assumptions of boundedness of conﬁgurations (the use of periodic boundary
+conditions) and the isokinetic constraints on p and 1, as well as the existence
+of a candidate measure which is positive on open sets, will ultimately ensure the
+ergodicity of the system, relying on arguments similar to those in [256, 257].
+8.6.3
+Multiple Timestepping Using the Stochastic Isokinetic
+Formulation
+The numerical integration of the equations of the stochastic isokinetic system can be
+performed using splitting, in a style that should by now be familiar, with the proviso
+that the isokinetic condition itself should be satisﬁed exactly (i.e. to rounding error).
+Molecular sampling using Langevin dynamics and other methods involves
+integration over the inﬁnite cylinder TNcRNc. The power of the isokinetic method is
+that it allows us to reformulate the conﬁgurational sampling problem as integration
+on a compact manifold. The fact that we also slightly extend the domain by
+introducing auxiliary variables is more than offset by the stabilizing effect of the
+isokinetic constraints. One approach would be to introduce an isokinetic constraint
+on the entire system, but in practice it is found that no great crime is committed
+in conﬁgurational sampling by constraining each degree of freedom (together with
+associated auxiliary variables).
+To develop a multiple timestepping method, we begin by supposing that the
+potential energy function and therefore the force can be decomposed into fast and
+slow terms, thus U.q/ D US.q/ C UF.q/ and the force acting on the jth degree
+of freedom is Fj D FS
+j C FF
+j . Because the SIN(R) method is based on a non-
+Hamiltonian formulation, we do not obtain a symplectic integrator (in the absence

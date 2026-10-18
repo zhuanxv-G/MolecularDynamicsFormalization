@@ -1,0 +1,43 @@
+8.3
+Metropolis-Based Stochastic Sampling
+341
+−1
+0
+1
+−2
+0
+2
+−4
+0
+4
+q
+p
+Fig. 8.1 Trajectories of the Nosé-Hoover Chain system may be trapped forever in restricted
+regions of phase space. Here a torus is shown in a projection of the full extended phase space
+for the harmonic oscillator with a length two thermostatting chain. (Equations of motion: Pq D
+pI Pp D q  1pI P1 D .p2  1/=1  12I P2 D .12
+1  1/=2, with 1 D 0:2, and 2 D 1)
+It should also be mentioned that the “measure-preserving” thermostatting meth-
+ods discussed in [373] refer rather to the underlying measure of the phase space and
+not the thermodynamic equilibrium distribution; those methods are deterministic
+and, like Nosé-Hoover based schemes, will exhibit thermodynamic errors due to
+both lack of ergodicity and discretization error, in addition to sampling errors.
+8.3
+Metropolis-Based Stochastic Sampling
+One approach to providing ergodicity to deterministic systems is to introduce ran-
+dom ﬂuctuations via a Monte-Carlo technique [268]. Several Monte-Carlo methods
+are described in Appendix C. Randomized steps are taken and then an accept-reject
+mechanism is introduced in order to ensure that the steps are consistent with the
+canonical distribution. It is possible to combine the Metropolis-Hastings concept
+with timestepping procedures in a variety of ways, which are often subsumed under
+the title “Monte-Carlo Markov Chain methods”, these include
+•
+Metropolis correction. The Hybrid Monte-Carlo (HMC) method combines
+constant energy molecular dynamics (deterministic timestepping) with stochas-
+tic perturbation. A great advantage of HMC methods is that, under certain
+circumstances, they are not only ergodic, but also exact in the sense that the
+provide results that are unbiased, whereas a native timestepping method generally
+introduces some bias due to the ﬁnite timestep. The HMC approach can be used
+in combination with, for example the Nosé-Hoover method to provide rigorous
+sampling. Hybrid Monte-Carlo methods are likely to be most effective when used
+with an underlying deterministic method that has a high sampling bias, since

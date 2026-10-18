@@ -1,0 +1,478 @@
+{
+  "template": "C",
+  "items": {
+    "MD-8.1-CanonicalCorrelation": {
+      "verdict": "PASS",
+      "block_sha256": "76762869e1100ca2a798777c132d95d950e6be220c8478df909d8d9f7afee662",
+      "checked": true,
+      "declaration_axioms": {
+        "MD.Ch08.Vec": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "MD.Ch08.Phase": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "MD.Ch08.dot": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "MD.Ch08.gradient": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "MD.Ch08.gibbsWeight": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "MD.Ch08.canonicalAverage": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "MD.Ch08.probabilityDensity": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "MD.Ch08.correlation": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "MD.Ch08.correlation_zero": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ]
+      },
+      "direct_placeholder": false,
+      "missing": null,
+      "issues": [],
+      "website": "待网站审计",
+      "statement_scope": "规范平均、标量相关函数及零时归一；混合时的大时间极限定性说明另列。",
+      "extra_assumptions": [
+        "相关分母非零才有C(0)=1；向量观测的点积由标量乘积表示，其余分量情形未展开。"
+      ],
+      "source_pages": "350–351",
+      "semantic_review": "已对照目视原页核对对象、量词、技术资格和所列覆盖范围；网站尚未审阅。",
+      "compile_receipt": "blueprint/ch08/validation/batches/s81b-r2.json"
+    },
+    "MD-8.1-HamiltonianStationary": {
+      "verdict": "PASS",
+      "block_sha256": "703b95ce035461f0642eb917a77ea707191a27a6a6a0109133d67201c6c91c57",
+      "checked": true,
+      "declaration_axioms": {
+        "MD.Ch08.hamiltonianField": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "MD.Ch08.hamiltonianGibbsStationary": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ]
+      },
+      "direct_placeholder": false,
+      "missing": null,
+      "issues": [],
+      "website": "待网站审计",
+      "statement_scope": "光滑Hamiltonian Gibbs权重的Liouville驻定方程；其余三项列覆盖缺口。",
+      "extra_assumptions": [
+        "只桥接光滑Hamiltonian的Gibbs权重驻定方程；一般φ(H)、算子偏斜伴随及流的保测性未由本条覆盖。"
+      ],
+      "source_pages": "351",
+      "semantic_review": "已对照目视原页核对对象、量词、技术资格和所列覆盖范围；网站尚未审阅。",
+      "compile_receipt": "blueprint/ch08/validation/batches/s81b-r2.json"
+    },
+    "MD-8.1-ExtendedDensity": {
+      "verdict": "PASS",
+      "block_sha256": "31c8bc80e84ddac00352ea4a3a0c086de19b38f8fd6fa4633c0ea6fb3eee1e45",
+      "checked": true,
+      "declaration_axioms": {
+        "MD.Ch08.extendedDensity": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "MD.Ch08.extendedAverage": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ]
+      },
+      "direct_placeholder": false,
+      "missing": null,
+      "issues": [],
+      "website": "待网站审计",
+      "statement_scope": "本条列出的数学对象与结论全部；上下文见逐字原页。",
+      "extra_assumptions": [
+        "辅助密度归一、乘积积分可积；使用有限/σ有限测度条件。"
+      ],
+      "source_pages": "352",
+      "semantic_review": "已对照目视原页核对对象、量词、技术资格和所列覆盖范围；网站尚未审阅。",
+      "compile_receipt": "blueprint/ch08/validation/batches/s81b-r2.json"
+    },
+    "MD-8.1.1-NoseHoover": {
+      "verdict": "PASS",
+      "block_sha256": "fc4b9086f48c23a13965cad9c7b8467618d671c347adb85fa392bfae40e2acfc",
+      "checked": true,
+      "declaration_axioms": {
+        "MD.Ch08.thermostatParameters": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "MD.Ch08.kineticTwice": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "MD.Ch08.nhField": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "MD.Ch08.isNHSolution": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ]
+      },
+      "direct_placeholder": false,
+      "missing": null,
+      "issues": [],
+      "website": "待网站审计",
+      "statement_scope": "本条列出的数学对象与结论全部；上下文见逐字原页。",
+      "extra_assumptions": [
+        "μ记为Q且Q>0，β>0，正质量，热浴变量ξ∈ℝ；总函数nhField配合资格谓词使用。"
+      ],
+      "source_pages": "352",
+      "semantic_review": "已对照目视原页核对对象、量词、技术资格和所列覆盖范围；网站尚未审阅。",
+      "compile_receipt": "blueprint/ch08/validation/batches/s81b-r2.json"
+    },
+    "MD-8.1.1-NHDensitySplit": {
+      "verdict": "PASS",
+      "block_sha256": "b4b4c5cea02c1ea90738fd48f568f3ffa6f753b51c40de23faaa93b0d5115e53",
+      "checked": true,
+      "declaration_axioms": {
+        "MD.Ch08.nhWeight": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "MD.Ch08.nhBathField": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "MD.Ch08.nhField_split": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "MD.Ch08.nhWeight_stationary": [
+          "propext",
+          "sorryAx",
+          "Classical.choice",
+          "Quot.sound"
+        ]
+      },
+      "direct_placeholder": true,
+      "missing": "完整NH散度/链式法则计算及伴随算子桥接；保留驻定陈述，不推遍历性。",
+      "issues": [],
+      "website": "待网站审计",
+      "statement_scope": "权重、分裂及完整场驻定；伴随算子分裂可由散度线性导出但未另作声明。",
+      "extra_assumptions": [
+        "指数为未归一权重；若称概率密度还要求有限正配分积分并归一化。"
+      ],
+      "source_pages": "353",
+      "semantic_review": "已对照目视原页核对对象、量词、技术资格和所列覆盖范围；网站尚未审阅。",
+      "compile_receipt": "blueprint/ch08/validation/batches/s81b-r2.json"
+    },
+    "MD-8.1.1-NHFirstIntegralPrinted": {
+      "verdict": "NEEDS_HUMAN",
+      "block_sha256": "d1780f9071a1f030c5aee03c8b9be738d17cb34ba816c45a972d464b607ffaa0",
+      "checked": true,
+      "declaration_axioms": {
+        "MD.Ch08.nhIntegral": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "MD.Ch08.nhIntegralPrinted": [
+          "propext",
+          "sorryAx",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "MD.Ch08.nhIntegral_corrected": [
+          "propext",
+          "sorryAx",
+          "Classical.choice",
+          "Quot.sound"
+        ]
+      },
+      "direct_placeholder": true,
+      "missing": "Printed版疑误不证；修正版需沿NH解的能量求导，未建设通用ODE守恒量理论。",
+      "issues": [
+        "已目视核对原页PDF354：上行ds/dt=ξ，与(8.8)的ln s不相容；改为ds/dt=sξ（亦见PDF356和Exercise2）。"
+      ],
+      "website": "待网站审计",
+      "statement_scope": "本条列出的数学对象与结论全部；上下文见逐字原页。",
+      "extra_assumptions": [
+        "s>0；原文版不证明，修正版另列；两版均保留原文H形式。"
+      ],
+      "source_pages": "354",
+      "semantic_review": "已对照目视原页核对对象、量词、技术资格和所列覆盖范围；网站尚未审阅。",
+      "compile_receipt": "blueprint/ch08/validation/batches/s81b-r2.json"
+    },
+    "MD-8.1.2-NHReversal": {
+      "verdict": "PASS",
+      "block_sha256": "564287ce946dd4f117d6f6b2815f82f608c434c0252478887860c919c76e125d",
+      "checked": true,
+      "declaration_axioms": {
+        "MD.Ch08.nhReversal": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "MD.Ch08.nhReversal_involutive": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "MD.Ch08.nhReversal_field": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ]
+      },
+      "direct_placeholder": false,
+      "missing": null,
+      "issues": [],
+      "website": "待网站审计",
+      "statement_scope": "反演为对合及向量场反演等式；不另称一般ODE流的全局反演定理。",
+      "extra_assumptions": [],
+      "source_pages": "354",
+      "semantic_review": "已对照目视原页核对对象、量词、技术资格和所列覆盖范围；网站尚未审阅。",
+      "compile_receipt": "blueprint/ch08/validation/batches/s81b-r2.json"
+    },
+    "MD-8.1.2-NHTimestep": {
+      "verdict": "PASS",
+      "block_sha256": "d1902bd7903331b694bacc4840d9132380e254da98cf746c9a1b97dd56565c0d",
+      "checked": true,
+      "declaration_axioms": {
+        "MD.Ch08.dampedCoefficient": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "MD.Ch08.nhDrift": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "MD.Ch08.nhKick": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "MD.Ch08.nhFeedback": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "MD.Ch08.nhStep": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "MD.Ch08.dampedCoefficient_zero": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ]
+      },
+      "direct_placeholder": false,
+      "missing": null,
+      "issues": [],
+      "website": "待网站审计",
+      "statement_scope": "五段单步算法与c的可去奇点延拓；Taylor展开及二阶收敛列覆盖缺口。",
+      "extra_assumptions": [
+        "c在ξ=0处取连续延拓t；系数Taylor级数与二阶全局误差未由单步定义证明。"
+      ],
+      "source_pages": "354",
+      "semantic_review": "已对照目视原页核对对象、量词、技术资格和所列覆盖范围；网站尚未审阅。",
+      "compile_receipt": "blueprint/ch08/validation/batches/s81b-r2.json"
+    },
+    "MD-8.1.2-NHTimestepReversible": {
+      "verdict": "PASS",
+      "block_sha256": "5c2e5f55cff0f304da98ece24035dfe1f8695abba62d2544d2df5800d3db070c",
+      "checked": true,
+      "declaration_axioms": {
+        "MD.Ch08.nhStep_reversible": [
+          "propext",
+          "sorryAx",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "MD.Ch08.nhStep_inverse": [
+          "propext",
+          "sorryAx",
+          "Classical.choice",
+          "Quot.sound"
+        ]
+      },
+      "direct_placeholder": true,
+      "missing": "含ξ=0延拓的指数函数五段映射代数消去；三条短路线内未完成。",
+      "issues": [],
+      "website": "待网站审计",
+      "statement_scope": "本条列出的数学对象与结论全部；上下文见逐字原页。",
+      "extra_assumptions": [
+        "逆映射以负步长映射及LeftInverse表达；不假设算法可逆作为结论的前提。"
+      ],
+      "source_pages": "354",
+      "semantic_review": "已对照目视原页核对对象、量词、技术资格和所列覆盖范围；网站尚未审阅。",
+      "compile_receipt": "blueprint/ch08/validation/batches/s81b-r2.json"
+    },
+    "MD-8.1.2.1-NoseHamiltoniansPrinted": {
+      "verdict": "NEEDS_HUMAN",
+      "block_sha256": "df3fe14a0ef43edb8a572848e02c6ab17d6b6a650234adf0597b9bbf682b6161",
+      "checked": true,
+      "declaration_axioms": {
+        "MD.Ch08.noseHamiltonian": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "MD.Ch08.npHamiltonian": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "MD.Ch08.nosePoincarePrinted": [
+          "propext",
+          "sorryAx",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "MD.Ch08.nosePoincare_corrected": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ]
+      },
+      "direct_placeholder": true,
+      "missing": "原文相等式的对数系数矛盾，不证；修正代数恒等式已证。",
+      "issues": [
+        "已目视核对原页PDF355：H_N先用(N_d+1)，(8.9)展开却用N_d；同名H_N等号不一致。工作修正显式减去β⁻¹ln s。"
+      ],
+      "website": "待网站审计",
+      "statement_scope": "本条列出的数学对象与结论全部；上下文见逐字原页。",
+      "extra_assumptions": [
+        "物理定义域s>0、β,Q及质量正；总函数在此域外不作物理解释。"
+      ],
+      "source_pages": "355",
+      "semantic_review": "已对照目视原页核对对象、量词、技术资格和所列覆盖范围；网站尚未审阅。",
+      "compile_receipt": "blueprint/ch08/validation/batches/s81b-r2.json"
+    },
+    "MD-8.1.2.1-NPEquations": {
+      "verdict": "PASS",
+      "block_sha256": "50308c9acb0936461891137592b25c4943bb64eb9cb4f2a979a6c5518561c2c4",
+      "checked": true,
+      "declaration_axioms": {
+        "MD.Ch08.npField": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ]
+      },
+      "direct_placeholder": false,
+      "missing": null,
+      "issues": [],
+      "website": "待网站审计",
+      "statement_scope": "本条列出的数学对象与结论全部；上下文见逐字原页。",
+      "extra_assumptions": [
+        "ΔH采用(8.9)展开内的N_d版本；β,Q>0及s>0为有效域；尚未桥接实际Hamiltonian梯度。"
+      ],
+      "source_pages": "355",
+      "semantic_review": "已对照目视原页核对对象、量词、技术资格和所列覆盖范围；网站尚未审阅。",
+      "compile_receipt": "blueprint/ch08/validation/batches/s81b-r2.json"
+    },
+    "MD-8.1.2.1-NPtoNH": {
+      "verdict": "PASS",
+      "block_sha256": "8b10690be713917bba1c4d739d8bc94381d7e323440b617294cf502724525400",
+      "checked": true,
+      "declaration_axioms": {
+        "MD.Ch08.npProjection": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "MD.Ch08.npProjection_equations": [
+          "propext",
+          "sorryAx",
+          "Classical.choice",
+          "Quot.sound"
+        ]
+      },
+      "direct_placeholder": true,
+      "missing": "商法则、有限维ODE投影及零能量面守恒的通用桥接。",
+      "issues": [],
+      "website": "待网站审计",
+      "statement_scope": "给定零能量NP解投影为NH解；NP零能量初值传播和非零能量修正列缺口。",
+      "extra_assumptions": [
+        "明确零能量面及s>0；零能量守恒本身未假作普遍结论。"
+      ],
+      "source_pages": "356",
+      "semantic_review": "已对照目视原页核对对象、量词、技术资格和所列覆盖范围；网站尚未审阅。",
+      "compile_receipt": "blueprint/ch08/validation/batches/s81b-r2.json"
+    },
+    "MD-8.1.2.1-NPShadowDensity": {
+      "verdict": "PASS",
+      "block_sha256": "8b7f24a1b6b0795f54d87c5502cd3292c872c7eb82e69a0202a293f3060427cb",
+      "checked": true,
+      "declaration_axioms": {
+        "MD.Ch08.fourthOrderRemainder": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "MD.Ch08.correctedFiniteAverage": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "MD.Ch08.npShadowAnsatz": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "MD.Ch08.npDensityAnsatz": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ]
+      },
+      "direct_placeholder": false,
+      "missing": null,
+      "issues": [],
+      "website": "待网站审计",
+      "statement_scope": "三条公式的定义及渐近条件；不声称已构造ζ或证明有限样本等于精确平均。",
+      "extra_assumptions": [
+        "[EXTRA]仅给O(h⁴)余项与有限重加权公式的精确定义；存在修正Hamiltonian/密度和采样误差定理未覆盖，列入缺口。"
+      ],
+      "source_pages": "356",
+      "semantic_review": "已对照目视原页核对对象、量词、技术资格和所列覆盖范围；网站尚未审阅。",
+      "compile_receipt": "blueprint/ch08/validation/batches/s81b-r2.json"
+    }
+  }
+}

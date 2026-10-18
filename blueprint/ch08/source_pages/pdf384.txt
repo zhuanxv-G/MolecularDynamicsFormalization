@@ -1,0 +1,36 @@
+8.6
+Isokinetic Methods and Integration with Very Large Timestep
+363
+Thus the condition to have a stationary state of the form (8.39) is that
+rw  f iso D .Nc  1/pTM1F
+pTM1p :
+A solution of this equation for w is easily found, it is
+w D .Nc  1/U.q/
+K.p/:
+The invariant probability density, which is associated to a surface of constant kinetic
+energy, can be written as a generalized function using the Dirac notation:
+.q; p/ D Z1e.Nc1/U.q/=K.p/ıŒK.p/  K0	:
+If we work on the surface of constant kinetic energy K.p/ D K0
+def
+D ˇ1.Nc  1/, the
+invariant density is of the form
+ / NˇıŒK.p/  kBT.Nc  1/	
+which demonstrates that the isokinetic method, with this choice for the total kinetic
+energy, leaves invariant the conﬁgurational Gibbs distribution. Ergodicity has not
+been demonstrated, so it is not possible to conclude that the invariant distribution is
+unique; as we have seen before, the incorporation of stochastic terms can allow the
+formulation of strong statements regarding the ergodicity and mixing properties.
+8.6.1
+A Stochastic, Isokinetic Method for Gibbs Sampling
+Minary et al. [271, 272] studied the isokinetic method as a means to control
+the instability in multiple timestepping due to resonance. They suggested that
+each physical degree of freedom be coupled to its own NHC thermostat through
+an isokinetic constraint in a “massive” thermostatting approach. These massive
+thermostats introduced some complexity (each degree of freedom had an associated
+Nosé-Hoover chain system as well as the constraint); obtaining an accurate solution
+for this large system is involving. A potentially more serious problem is that,
+although Nosé-Hoover chains and the isokinetic method may in some cases appear
+to be “practically ergodic,” no proof of ergodicity exists. A recent article (by one
+of us, together with Margul and Tuckerman [220]) addressed these problems by
+replacing the Nosé-Hoover chains with stochastic terms (of Ornstein-Uhlenbeck
+type).

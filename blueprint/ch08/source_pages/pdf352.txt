@@ -1,0 +1,44 @@
+8.1
+Dynamics-Based Thermostat Techniques
+331
+purpose of the sampling strategy itself, the method of sampling by Hamiltonian
+trajectories seems less than robust.
+Alternative families of methods exist which are based on extending the phase
+space of the system in such a way as to (a) disturb the conserved quantity H D
+E, while (b) nonetheless preserving the phase space distribution. In general these
+methods involve introducing additional variables  D .1; 2; : : : ; k/ and additional
+equations of motion to drive them. The combined system is carefully designed to
+preserve an extended invariant distribution
+Q.q; p; / D ˇ.q; p/  O./;
+(8.1)
+where the auxiliary density O has a simple form (typically, a multivariate Gaussian).
+Then it follows that
+Z Z Z
+g.q; p/ Q.q; p; /d!qd!pdk /
+Z Z
+g.q; p/ˇ.q; p/d!qd!p:
+Assuming ergodicity of the coupled system it is then possible to calculate averages
+with respect to the Gibbs-Boltzmann measure by direct averaging along trajectories
+of the extended system.
+The assumption of ergodicity is a major one (just as difﬁcult to demonstrate
+as would be the corresponding assumption for a Hamiltonian system); indeed
+it is likely that it fails generically, and there are certainly known cases where
+thermodynamic averages computed using deterministic thermostats are incorrect.
+However, deterministic methods are nonetheless often used in molecular simulation,
+suggesting that, for the systems involved, averages can be recovered with sufﬁcient
+accuracy starting from most points of phase space.
+8.1.1
+Nosé Dynamics: A Deterministic Thermostat
+The simplest scheme of this type is the Nosé-Hoover method [182, 284–286]. There
+is just one auxiliary variable  and the extended system takes the form
+dq
+dt D M1p;
+(8.2)
+dp
+dt D rU.q/  p;
+(8.3)
+d
+dt D pTM1p  Ndˇ1:
+(8.4)
+We have deliberately written Nd. The number of degrees of freedom in the last
+equation must be used so that the equation is in balance at thermal equilibrium.

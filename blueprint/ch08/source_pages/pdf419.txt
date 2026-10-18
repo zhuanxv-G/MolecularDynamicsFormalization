@@ -1,0 +1,57 @@
+398
+8
+Extended Variable Methods
+0.05
+0.1
+0.2
+0.01%
+0.1%
+1%
+10%
+100%
+1000%
+Stepsize
+Relative Error
+Relative Error
+Kinetic Temperature
+DPD−VV
+DPD−S1
+DPD−Trotter
+PNHL−S
+PNHL−N
+2nd order line
+0.05
+0.1
+0.2
+1%
+10%
+100%
+Stepsize
+Conﬁgurational Temperature
+2nd order line
+Fig. 8.9 Log-log plot of the relative error in kinetic temperature (left) and conﬁgurational tem-
+perature (right) against stepsize by using various numerical methods. The system was simulated
+for 1,000 reduced time units but only a trajectory’s tail of time length 800 was used to calculate
+the static quantity to make sure the system was well equilibrated. The stepsizes tested began at
+h D 0:05 and were increased incrementally by 15 % until all methods either were above 100 %
+relative error or became unstable
+space, the total momenta are sums of normally distributed random variables with
+mean zero and so the total momenta too, should have normal distributions with
+mean zero. Since Langevin dynamics does not respect the momentum constraint,
+the normal distribution is obtained. By contrast, the momentum vector is preserved
+exactly using the PNHL method. The NHL scheme performs somewhat oddly. In the
+Nosé-Hoover-Langevinmethod, the total momentum ﬂuctuates but remains positive
+or negative if respective initial conditions are positive or negative (see the exercises
+at the end of the chapter). This behavior does not however contradict its mentioned
+ergodic properties (one needs to pay close attention to the assumptions being placed
+on the system in the proof of the ergodicity).
+We also brieﬂy compare DPD and PNHL methods. In Fig. 8.9 we show the
+kinetic and conﬁgurational temperature errors as functions of the stepsize. The
+results show the advantage of using the PNHL in terms of providing a more accurate
+sampling for given stepsize; the result is especially important since the PNHL
+methods are also more efﬁcient in practice. In Fig. 8.10 the velocity autocorrelation
+functions are contrasted for different values of the friction coefﬁcient. This graph
+shows that for small values of 
+ the DPD and PNHL methods perform similarly,
+whereas at large friction the DPD decay of correlation is substantially more rapid
+than that for PNHL. For some additional discussion on these points, see [228].

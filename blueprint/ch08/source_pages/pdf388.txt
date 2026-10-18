@@ -1,0 +1,77 @@
+8.6
+Isokinetic Methods and Integration with Very Large Timestep
+367
+The proof requires calculation of the vector ﬁelds
+u0 D ˘ f;
+u1 D ˘ Œf; g	 ;
+u2 D ˘ Œf; Œf; g		;
+u3 D ˘ Œf; Œf; Œf; g			;
+where ˘ is the projector onto the ﬁrst three components. Because g D e4,
+it is enough to show that any pair from among these four vectors are linearly
+independent, except possibly on M0. Note that projection can only be performed
+after the full calculation of the relevant commutator. Because the commutators
+quickly become quite messy, we used a symbolic computing package to assist in
+these calculations.
+The ﬁrst two vectors are:
+u0 D p@q  .q C p/@p  .1 C 12/@1;
+(8.48)
+and
+u1 D p @
+@2
+@p C 1
+
+1 C @
+@2
+	
+@1:
+(8.49)
+After expanding the derivatives of  we have
+u1 D p@q C 2
+1
+q C p2
+D
+	
+@p  21p
+q C p2
+D
+	
+@1;
+(8.50)
+and
+u2 D .2
+1p=D/@p C .21p2=D/@1;
+(8.51)
+where D D 2p2 C 2
+1.
+If q ¤ 0 and p ¤ 0, then clearly u1 and u2 are linearly independent. However, if
+p D 0 then u2 D 0. We proceed to compute the commutator Œf; Œf; g		. Projecting to
+the ﬁrst three components results in
+u2 D 
+2
+1p
+D
+	
+@q  
+2
+p3 C 
+2
+1p  2
+1q
+D2
+	
+@p C 21p
+2
+p3 C 
+2
+1p  2
+1q
+D2
+	
+@1:
+(8.52)
+Again, we substitute p D 0 and ﬁnd that
+u2jpD0 D .2
+1q=D2/@p:
+(8.53)
+Unfortunately, this is parallel to u1 (for p D 0), and hence yet one more commutator
+is required in this case.

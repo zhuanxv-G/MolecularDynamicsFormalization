@@ -1,0 +1,51 @@
+374
+8
+Extended Variable Methods
+and have to be modelled as part of the simulation process. Our presentation of this
+topic follows that of [19] and earlier works [69, 85, 204, 276] which treat the non-
+Markovian Generalized Langevin equation as a Markov system in an extended phase
+space.
+The equations of Generalized Langevin dynamics are normally written in the
+form
+dq D M1pdt;
+(8.57)
+dp D rU.q/dt 
+t
+Z
+0
+ .t  s/p.s/dsdt C dB;
+(8.58)
+subject to initial conditions q.0/ D q0, p.0/ D p0. Here  .t/ D .
+ij.t// is a Nc  Nc
+matrix-valued function of t which we refer to as the “memory kernel”. The term
+Fd D 
+t
+Z
+0
+ .t  s/p.s/dsdt
+represents a drag force acting on the system due to the interaction with the particles
+of the bath. dB is the increment of the colored-noise (non-Gaussian) stochastic
+process. Often this increment is treated formally as an impulse R.t/dt, where R
+is referred to as a “random force,” which calls to mind the origin of the stochastic
+term as the model for interaction with a large (but ﬁnite) heat bath. We use this
+language for consistency with the literature. The driving forces are correlated in a
+way that is described by the ﬂuctuation-dissipation theorem [202, 402]. This states
+that at temperature T the components of the random forces satisfy
+hRi.t C s/Rj.t/i D kBT 
+ij.s/ıij;
+s  0:
+(8.59)
+Here, ıij is the Kronecker delta, and kB is Boltzmann’s constant.
+Numerical methods for treating (8.57)–(8.58) include calculation of the drag
+force Fd which requires a convolution of the momenta with  .t/ and therefore
+storage of some portion of the time-history of p. Typically we will compute a
+discrete sequence of p0; p1; : : : ; and so it will be necessary to store a collection
+of, say ` > 0, previous momentum vectors. This may be somewhat demanding in a
+large scale simulation setting. Moreover, computing R requires the generation of a
+sequence of random numbers with prescribed correlation, as speciﬁed in Eq. (8.59).
+Both these issues may be addressed sensibly using the technique of Prony series and
+an extended variable representation
+In the remainder of this discussion, for the purpose of simpliﬁed presentation, we
+conﬁne ourselves to the simple case of a scalar memory kernel, writing
+ .t/ D 
+.t/I:

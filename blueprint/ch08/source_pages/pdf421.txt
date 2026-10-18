@@ -1,0 +1,48 @@
+400
+8
+Extended Variable Methods
+b. Introduce the change of variables
+p D s1Qp:
+Show that the equations resulting from this transformation are
+Pq D s1M1p;
+Ps D =;
+Pp D s1rU  Ps
+sp;
+P D 2K
+s  NdkBT
+s
+;
+where K is the kinetic energy, K D pTM1p=2.
+c. Apply the time-rescaling dt D sd and then introduce   Ps D = to
+obtain the Nosé-Hoover equations of motion (8.2)–(8.4)
+4. Show that the system (8.6)–(8.7) preserves distributions with densities of the
+form
+.q; p; / D '.q/  exp.ˇpTM1p=2/  exp.ˇ2=2/;
+where ' is an arbitrary L2 function.
+5
+Isokinetic Thermostat. Let f iso be the vector ﬁeld of the isokinetic system
+(8.37)–(8.38). Calculate the divergence to show that
+r  f iso D .Nc  1/pTM1F
+pTM1p :
+6
+“Massive” Nosé-Hoover Thermostats. Attach a Nosé-Hoover thermostat to
+each degree of freedom. That is, consider a method where, for each i D
+1; 2 : : : ; Nc we have
+Pqi D m1
+i pi;
+Ppi D @U=@qi  ipi;
+i Pi D p2
+i =mi  kBT:
+Under what circumstances is this a proper thermostat (i.e. under what circum-
+stances does the dynamics preserve the canonical ensemble)?
+7. Prove Lemma 8.1.
+8
+Force Perturbation Thermostat. Let the potential in an Nc-degree of freedom
+system be decomposed as U D U1CU2. Show that the following is a thermostat
+dq D M1pdt;
+dp D rU1.q/dt  ˇ2rU2.q/dt;
+d D ŒˇpTM1rU.q/ C 
+	dt C
+p
+2kBT
+dW:

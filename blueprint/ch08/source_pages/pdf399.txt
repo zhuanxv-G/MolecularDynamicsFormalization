@@ -1,0 +1,75 @@
+378
+8
+Extended Variable Methods
+8.8
+Constant Temperature and Pressure Molecular
+Dynamics
+The isobaric, isothermal or NPT ensemble models a system in contact with a heat
+bath (temperature T) and a “pressure reservoir” maintained at pressure P. The
+pressure is deﬁned by the formula
+P D 
+ @E
+@V
+
+S;N
+where E is the energy, V is volume, S is entropy. The notation Œ: : :	x;y means that the
+indicated partial derivatives should be taken with respect to constant values of the
+indicated variables.
+An isothermal-isobaric system exchanges energy with the bath in such a way
+as to maintain the constant temperature; at the same time the volume ﬂuctuates to
+control the pressure. The state of the system can be expressed in terms of particle
+positions and momenta as well as the volume V, i.e. we think of the probability
+density as a function of q, p and V.
+Let N, V, E be the number of atoms, volume and energy, respectively, of the
+system of interest, and N2, V2, E2 be the corresponding quantities describing the
+bath system; we have NCN2 D QN, VCV2 D QV, ECE2 D QE all constant. We view
+the entropy as a function of the other variables and expand in a Taylor series in both
+volume and energy:
+S.N2; V2; E2/ D S. QN  N; QV  V; QE  E/  S.N2; QV; QE/  @S
+@EE  @S
+@VV:
+Bear in mind that here E and V are small relative perturbations of the total energy
+and volume. The quantity @S
+@E is the reciprocal temperature.
+To calculate @S
+@V we may use Maxwell’s thermodynamic relation [372]:
+@S
+@E
+
+V;N
+ @E
+@V
+
+S;N
+@V
+@S
+
+E;N
+D 1:
+Since
+
+ @S
+@E
+
+V;N is T1 and
+
+ @E
+@V
+
+S;N is P, we obtain
+ @S
+@V
+
+E;N
+D
+1
+
+ @V
+@S
+
+E;N
+D P=T:
+This results in the formula
+S.N2; V2; E2/  constant  E C PV
+T
+;

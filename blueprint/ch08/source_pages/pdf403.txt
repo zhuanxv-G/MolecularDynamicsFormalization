@@ -1,0 +1,51 @@
+382
+8
+Extended Variable Methods
+If  has the form  D exp.ˇP2=2/  .q; p; V; / then eliminate , reducing
+L D 0 to
+rq  .q / C rp  .p /  @
+@V .V / C ˇ.V˘.q; p; V/  PV C kBT/ D 0:
+This results in
+ q  rq C p  rp   V @ 
+@V C .ˇV˘.q; p; V/  ˇPV C 1/ D 0:
+(8.74)
+A solution (the desired one) is given by
+ / exp.ˇ.H C PV//;
+where substituting into (8.74) gives
+h
+ˇq  rU.q/  ˇp  M1p  1 C ˇV @U
+@V
+CˇPV C .ˇV˘.q; p; V/  ˇPV C 1/
+i
+ D 0;
+which is quickly checked to be true, and hence the dynamics preserves  D
+exp.ˇP2=2/  .
+It is difﬁcult to see how their could be other solutions , but we know from
+the Nosé-Hoover case that this must be possible. We improve the robustness of
+the method by introducing Ornstein-Uhlenbeck type stochastic processes in the two
+auxiliary variables  and , yielding the system
+Pq D M1p C q;
+(8.75)
+Pp D F.q/  p  p;
+(8.76)
+PV D V;
+(8.77)
+d D ŒhT  
+T	 dt C
+p
+2kBT
+T=TdWT;
+(8.78)
+d D ŒhP  
+P	 dt C
+p
+2kBT
+P=PdWP;
+(8.79)
+where 
+T; 
+P  0 are two parameters governing the strength of the noise.
+8.8.2
+Discretization of the NHL Piston
+Observations in Chap. 7 and our experience with the Nosé-Hoover-Langevinmethod
+lead us to propose splitting methods to separate the Ornstein-Uhlenbeck processes

@@ -1,0 +1,44 @@
+8.2
+More General Deterministic Thermostats
+337
+We divide this into four parts: L D W1 C W2 C W3 C W4, where
+W1 D .rz/  .JrzH C ˚/; W2 D rz  .JrzH C ˚/;
+W3 D .r/  g;
+W4 D r  g:
+We seek perturbations of Hamiltonian dynamics with separable equilibria, i.e., such
+that  D ˇ.H.z// O./ is a stationary solution.
+Taking this as an ansatz, the ﬁrst term can be simpliﬁed as follows:
+W1 D  O./0
+ˇ.H/rzH  .JrzH C ˚/
+D ˇ O./ˇ.H/rzH  ˚ D ˇrzH  ˚
+as J is skew-symmetric.
+Using the volume preservation of Hamiltonian systems, the second term satisﬁes
+W2 D rz  .JrzH C ˚/ D rz  ˚;
+hence
+W1 C W2 D Œrz  ˇrzH	  ˚:
+There are many possibilities for the distribution of , of course, but we will
+assume this is Gaussian for simplicity: O./
+D
+exp
+
+ˇ Pm
+iD1 i2
+i =2
+
+D
+exp.ˇT1=2/ to get
+W3 D .r/  g.; z/ D ˇT1g:
+Finally, for an equilibrium solution we must have W1 C W2 C W3 C W4 D 0, so
+Œrz  ˇrzH	  ˚ C ˇT1g  r  g D 0:
+This equation is the fundamental one for deterministic thermostats.
+Example 8.1 To recover Nosé-Hoover, assume an even dimensional phase space,
+z D .q; p/, Nd degrees of freedom, and  2 R,
+˚ D 
+ 0
+p
+
+;
+g.z/ D 1.p  rpH  NdkBT/:
+Example 8.2 Slightly more generally, let
+˚ D G.z/;
+g.; z/ D g.z/ D 1ŒrzH  kBTrz	  G.z/:

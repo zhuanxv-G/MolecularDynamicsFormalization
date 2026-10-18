@@ -1,0 +1,44 @@
+8.10
+Numerical Experiments
+399
+0
+0.2
+0.4
+0.6
+0.8
+1
+0
+0.2
+0.4
+0.6
+0.8
+1
+Time
+VAF
+DPD γ =0.5
+PNHL
+DPD γ =4.5
+DPD γ =40.5
+Fig. 8.10 Comparisons of velocity autocorrelation function (VAF) of various numerical methods
+by using very small stepsize h D 0:01. Standard DPD methods with three different values of
+friction coefﬁcient were calculated by using DPD-S1 method to compare with other methods. 100
+different runs were averaged to reduce the sampling errors after the system was well equilibrated
+Exercises
+1. Show that Q deﬁned by (8.5) is conserved by the Nosé-Hoover equations of
+motion.
+2. Show that (8.8) is a ﬁrst integral of the extended Nosé-Hoover system:
+dq
+dt D M1p;
+dp
+dt D rU.q/  p;
+d
+dt D pTM1p  Ndˇ1;
+ds
+dt D s:
+3. Nosé proposed the following Hamiltonian
+HN D 1
+2s2 QpTM1Qp C 2
+2 C U.q/ C .Nd C 1/kBT ln s:
+a. Write out the equations of motion corresponding to HN (treating Qp as the
+canonical momentum vector corresponding to q, and  as the canonical
+momentum corresponding to s).

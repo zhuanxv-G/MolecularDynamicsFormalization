@@ -1,0 +1,54 @@
+414
+C
+Monte-Carlo Markov Chains
+In the Monte-Carlo Markov Chain algorithm one assumes that one is given a
+density  deﬁned on domain D with respect to which the average of an observable
+EŒg.X/	 D
+Z
+D
+g.x/.x/dx
+is to be computed, and then one constructs a sequence of iterates Xi as a discrete-
+time Markov Chain such that the transition probability density .x; y/ satisﬁes
+Z
+D
+.x; y/.x/dx D .y/:
+This means that the Markov chain preserves the density  as an invariant distribu-
+tion.
+Under certain circumstances it can be shown that in the limit of large number of
+iterations of the process, the random variable Xn tends to X (in distribution). Thus
+the Monte-Carlo Markov Chain method can be used to generate sets of independent
+realizations of the random variable which can be used to calculate an expectation.
+In practice, one prefers to use a long sequence of the iterates from a single starting
+value. The efﬁcacy (speciﬁcally the ergodicity and rate of convergence) of the
+Monte-Carlo Markov-Chain method depends on the choice of the transition density.
+Let  be the distribution which we seek to sample. Let .x; y/ be the transition
+density of a Markov chain such that
+Pr.XkC1 2 AjXk D y/ D
+Z
+A
+.x; y/dy:
+Also deﬁne n.x; y/ as the time-n transition density,
+n.x; y/ D
+Z Z
+  
+Z
+.x; zn1/.zn1; zn2/    .z1; y/dz1dz2 : : : dzn1:
+A set of assumptions can be used to ensure that the chain will correctly sample the
+distribution .x/:
+Reversibility
+.x/.x; y/ D .y/.y; x/. (This is also referred to as
+detailed
+balance.)
+Irreducibility
+For all x; y, there exists a time n such that n.x; y/ > 0.
+Aperiodicity
+For all x, gcdfnjn.x; x/ > 0g D 1, where gcd is the greatest
+common divisor.
+Let us note that detailed balance implies that
+Z
+D
+.x/.x; y/dx D .y/
+Z
+D
+.y; x/dx D .y/;
+and thus, in this case,  will be invariant under the process.

@@ -1,0 +1,37 @@
+blueprint\ch08\validation\batches\s81a-r2.lean:46:8: warning: declaration uses `sorry`
+blueprint\ch08\validation\batches\s81a-r2.lean:75:8: warning: declaration uses `sorry`
+blueprint\ch08\validation\batches\s81a-r2.lean:85:8: warning: declaration uses `sorry`
+blueprint\ch08\validation\batches\s81a-r2.lean:91:8: warning: declaration uses `sorry`
+blueprint\ch08\validation\batches\s81a-r2.lean:105:55: warning: Unused tactic linter: `ring` does nothing
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+blueprint\ch08\validation\batches\s81a-r2.lean:105:55: warning: this tactic is never executed
+
+Note: This linter can be disabled with `set_option linter.unreachableTactic false`
+'MD.Ch08.Vec' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch08.Phase' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch08.dot' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch08.gradient' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch08.gibbsWeight' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch08.canonicalAverage' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch08.probabilityDensity' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch08.correlation' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch08.correlation_zero' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch08.hamiltonianField' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch08.hamiltonianGibbsStationary' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch08.extendedDensity' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch08.extendedAverage' depends on axioms: [propext, sorryAx, Classical.choice, Quot.sound]
+'MD.Ch08.thermostatParameters' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch08.kineticTwice' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch08.nhField' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch08.isNHSolution' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch08.nhWeight' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch08.nhBathField' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch08.nhField_split' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch08.nhWeight_stationary' depends on axioms: [propext, sorryAx, Classical.choice, Quot.sound]
+'MD.Ch08.nhIntegral' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch08.nhIntegralPrinted' depends on axioms: [propext, sorryAx, Classical.choice, Quot.sound]
+'MD.Ch08.nhIntegral_corrected' depends on axioms: [propext, sorryAx, Classical.choice, Quot.sound]
+'MD.Ch08.nhReversal' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch08.nhReversal_involutive' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch08.nhReversal_field' depends on axioms: [propext, Classical.choice, Quot.sound]

@@ -1,0 +1,98 @@
+8.9
+Momentum-Conserving Thermostats and the Dissipative Particle. . .
+393
+where mij D mimj=.mi C mj/ is the “reduced mass”, vij D Oqij  vij and FC
+ij .rij/ is the
+magnitude of the conservative force (8.82). This equation is an Ornstein-Uhlenbeck
+process with the exact (in the sense of distributions) solution [200]
+vij.t/ D
+FC
+ij
+mij
+C et
+ 
+vij.0/ 
+FC
+ij
+mij
+!
+C
+s
+kBT.1  e2t/
+mij
+Rij.t/;
+(8.104)
+for i < j with  D 
+!D=mij, where vij.0/ are the initial relative velocities and
+Rij.t/ are normally distributed variables with zero mean and unit variance. Thus the
+incremental velocities are given by
+ij D vij.t/  vij.0/ D
+ 
+vij.0/ 
+FC
+ij
+mij
+!
+.et  1/ C
+s
+kBT.1  e2t/
+mij
+Rij.t/:
+(8.105)
+The momenta are then obtained from
+pnC1
+i
+D pn
+i C mijijOqn
+ij;
+(8.106)
+pnC1
+j
+D pn
+j  mijijOqn
+ij;
+(8.107)
+thus deﬁning the propagator ehLSi;j for each particle pair. The DPD-Trotter propaga-
+tor is then
+exp
+
+h OLDPD-Trotter
+
+D exp
+h
+2LS
+	
+exp .hLA/ exp
+h
+2LS
+	
+;
+where the momentum part is deﬁned by
+exp
+h
+2
+OLS
+	
+D exp
+h
+2LSN1;N
+	
+   exp
+h
+2LS1;3
+	
+exp
+h
+2LS1;2
+	
+:
+8.9.3
+Extended Variable Momentum-Conserving Thermostats:
+Pairwise Nosé-Hoover/Nosé-Hoover-Langevin Methods
+Because of the form of the force laws, the number of interaction terms (and
+computational cost) involved in the three force terms in DPD are roughly balanced.
+In this setting the computational time needed to generate the independent random
+number streams can be signiﬁcant (depending on the particle density and cutoff
+radius), particularly in very large systems solved in parallel where communication
+between cells can require a signiﬁcant amount of time [1, 301]. For this reason,
+Allen and Schmid [8] proposed a Nosé-Hoover type thermostatting scheme in

@@ -1,0 +1,38 @@
+{
+  "MD-8.1-ExtendedDensity": {
+    "reason": "乘积测度Fubini与标量积分拆分的短桥接，时间盒后保留。",
+    "category": "缺大型理论",
+    "routes": [],
+    "decision": "缺大型理论时直接记录缺项；否则最多三条短路线。"
+  },
+  "MD-8.1.1-NHDensitySplit": {
+    "reason": "完整NH散度/链式法则计算及伴随算子桥接；保留驻定陈述，不推遍历性。",
+    "category": "缺大型理论",
+    "routes": [],
+    "decision": "缺大型理论时直接记录缺项；否则最多三条短路线。"
+  },
+  "MD-8.1.1-NHFirstIntegralPrinted": {
+    "reason": "Printed版疑误不证；修正版需沿NH解的能量求导，未建设通用ODE守恒量理论。",
+    "category": "原书疑误不证",
+    "routes": [],
+    "decision": "缺大型理论时直接记录缺项；否则最多三条短路线。"
+  },
+  "MD-8.1.2-NHTimestepReversible": {
+    "reason": "含ξ=0延拓的指数函数五段映射代数消去；三条短路线内未完成。",
+    "category": "缺大型理论",
+    "routes": [],
+    "decision": "缺大型理论时直接记录缺项；否则最多三条短路线。"
+  },
+  "MD-8.1.2.1-NoseHamiltoniansPrinted": {
+    "reason": "原文相等式的对数系数矛盾，不证；修正代数恒等式已证。",
+    "category": "原书疑误不证",
+    "routes": [],
+    "decision": "缺大型理论时直接记录缺项；否则最多三条短路线。"
+  },
+  "MD-8.1.2.1-NPtoNH": {
+    "reason": "商法则、有限维ODE投影及零能量面守恒的通用桥接。",
+    "category": "缺大型理论",
+    "routes": [],
+    "decision": "缺大型理论时直接记录缺项；否则最多三条短路线。"
+  }
+}

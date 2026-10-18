@@ -1,0 +1,105 @@
+8.10
+Numerical Experiments
+397
+-5
+5
+0
+Momentum
+Density
+DPD/PNHL
+0
+1
+2
+3
+4
+5
+-0.004
+0
+.004
+Time  (x104)
+Time  (x104)
+Time  (x104)
+Time  (x104)
+Total momentum 
+-5
+5
+0
+Momentum
+Langevin
+-5
+5
+0
+Momentum
+NHL
+Momentum
+Berendsen
+0
+1
+2
+3
+4
+5
+Total momentum
+-20
+-10
+0
+10
+20
+Total momentum
+30
+0
+1
+2
+3
+4
+5
+0
+1
+2
+3
+4
+5
+Total momentum
+−20
+−10
+0
+10
+−10
+0
+10
+20
+-5
+5
+0
+Fig. 8.8 We compare the time evolution of the system’s total momentum in the x and y
+components (top row, marked blue and red respectively), and momentum distributions (bottom
+row) for various methods. In the lower row of ﬁgures, the dark, solid curve represents the exact
+normal density, while the superimposed histograms are constructed from the simulation data.
+From left to right: the PNHL-N thermostat, Langevin dynamics, Nosé-Hoover-Langevin (NHL)
+dynamics and the Berensen device. The same initial conditions were used with small values of
+total momenta. The Berendsen device shows a rapid and systematic increase in the momenta, NHL
+and Langevin exhibit different behavior, obtaining large ﬂuctuating values, whereas the PNHL-
+N thermostat preserves the total momenta exactly. Standard DPD results are identical to those of
+PNHL in this respect
+for some decay constant 
+T > 0. The dynamics will not necessarily sample canoni-
+cally, but the method will ensure that the average temperature is well-controlled (and
+is hence sometimes useful for equilibration purposes). We implement the version of
+the scheme given in [186], which completes a step of the velocity Verlet scheme
+followed by a scaling of the momenta:
+p 
+s
+1 C 
+Th
+NdkBT
+kpk2  1
+	
+p;
+for the given timestep h.
+We use parameters 
+ D 4:5,  D 1 and 
+T D 1 for the integrators, with a
+small stepsize of h D 0:05 (making any qualitative sampling errors unlikely). We
+started the simulations with very small net momenta (`x D 0:0035, `y  0:0019)
+and observed a dramatic increase in magnitude of both components when using
+the simple (deterministic) Berendsen scheme. If the system is ergodic in Euclidean

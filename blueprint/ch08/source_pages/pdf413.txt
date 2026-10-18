@@ -1,0 +1,97 @@
+392
+8
+Extended Variable Methods
+As an example, the phase space propagation of Shardlow’s method [333], may
+be written as
+exp
+
+h OLDPD-S
+
+D exp .hLO/ exp
+h
+2LB
+	
+exp .hLA/ exp
+h
+2LB
+	
+;
+(8.99)
+where h is the stepsize and, as usual, exp
+
+hLf
+
+represents the phase space propaga-
+tor associated to the corresponding vector ﬁeld f. In practice, Shardlow’s method is
+typically implemented by further reducing the vector ﬁeld O into interacting pairs:
+exp
+
+h OLO
+
+D exp
+
+hLON1;N
+
+   exp
+
+hLO1;3
+
+exp
+
+hLO1;2
+
+;
+with the operators associated to each interacting pair deﬁned as
+LOi;j D
+
+
+!D.rij/.Oqij  vij/ C 2
+2 Œ!R.rij/	2Oqij 
+
+rpi  rpj
+	
+Oqij  rpi:
+(8.100)
+Each interacting pair thus preserves the invariant distribution Oˇ.
+8.9.2.3
+DPD Trotter Scheme
+In the stochastic DPD-Trotter scheme, the standard DPD system (8.90) is split into
+two parts, which are labelled “A” and “S” as indicated below
+d
+qi
+pi
+
+D
+ m1
+i pi
+0
+
+dt
+„
+ƒ‚
+…
+A
+C
+
+0
+FC
+i dt C FD
+i dt C Ri
+
+„
+ƒ‚
+…
+S
+:
+(8.101)
+The corresponding operator of part A is exactly the same as in Shardlow’s method,
+while the operator of part S is actually the sum of the operators of B and O deﬁned
+above
+LS D LB C LO:
+(8.102)
+As in Shardlow’s method, the vector ﬁeld S is typically split into exactly solvable
+interacting pairs. Subtracting dvj from dvi and multiplying Oqij on both sides gives
+mijdvij D FC
+ij .rij/dt  
+!D.rij/vijdt C !R.rij/dWij;
+(8.103)

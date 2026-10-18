@@ -1,0 +1,76 @@
+376
+8
+Extended Variable Methods
+To calculate the random forces associated to the kth term of the expansion, we
+note that these can be viewed as the solution of a linear SDE, speciﬁcally
+dRi;k D  1
+k
+Ri;k.t/dt C 1
+k
+p
+2kBTckdWi;k.t/
+(8.65)
+where Wi;k is a standard Wiener process. The random force is seen to be deﬁned as
+the solution of an Ornstein-Uhlenbeck process induced by the Prony representation.
+It is easily shown that Ri;k.t/ has zero mean and autocorrelation deﬁned by
+hRi;k.t C s/Ri;k.t/i D kBTck
+k
+exp
+
+ 1
+k
+s
+
+;
+s  0
+(8.66)
+The total random force is then obtained by summation
+Ri D
+kmax
+X
+kD1
+Ri;k:
+(8.67)
+Observe that both random and drag forces are incorporated via summation of the
+components i;k and Ri;k deﬁned by linear equations, respectively the ODE (8.64)
+and SDE (8.65). It is therefore possible to replace these components by their sum
+i;k D i;k C Ri;k
+which may be evolved by a single SDE. The equations therefore become
+dqi D m1
+i pidt;
+(8.68)
+dpi D Fidt C
+kmax
+X
+kD1
+i;kdt;
+(8.69)
+di;k D  1
+k
+i;kdt  ck
+k
+pidt C 1
+k
+p
+2kBTckdWi;k:
+(8.70)
+The relation between the Prony series representation and Langevin dynamics can be
+seen in an informal sense by multiplying the equation for i;k equation by k, and
+considering k ! 0, giving
+i;kdt D ckpidt C
+p
+2kBTckdWi;k;
+which results in
+dpi D Fidt 
+ kmax
+X
+kD1
+ck
+!
+pidt C
+p
+2kBT
+`
+X
+kD1
+pckdWi;k:

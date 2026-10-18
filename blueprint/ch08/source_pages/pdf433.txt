@@ -1,0 +1,42 @@
+Appendix
+415
+The Metropolis-Hastings Monte-Carlo algorithm is a type of Monte-Carlo
+Markov-Chain scheme in which a computable (but not necessarily rigorously
+ergodic) proposal step (taken from a “prior” distribution) is corrected by means
+of an elementary test in order to provide exact sampling of the target distribution.
+Let the prior distribution be represented by a density N.x; y/. We assume the prior
+to be easily sampled and select NXkC1 given the current state Xk using the probability
+distribution deﬁned by
+Pr. NXkC1 2 AjXk D y/ D
+Z
+A
+N.x; y/dy:
+The proposal distribution is not assumed to satisfy detailed balance, i.e.
+.x/ N.x; y/ ¤ .y/ N.y; x/:
+However, if we deﬁne
+˛.x; y/ D min
+
+1; N.y; x/.y/
+N.x; y/.x/
+
+;
+(C.1)
+which is termed the acceptance coefﬁcient or the acceptance rate, then
+.x/˛.x; y/ N.x; y/ D .y/˛.y; x/ N.y; x/:
+In other words we have constructed a new transition density .x; y/
+D
+˛.x; y/ N.x; y/, and, consequently, a new iterative procedure, in such a way that
+detailed balance is restored.
+The Metropolis-Hastings algorithm can be written as:
+Metropolis-Hastings Monte-Carlo Algorithm
+repeat for k D 0; 1; 2; : : :
+Given Xk, make a trial move (Xk ! YkC1) using a given prior distribution
+with density N.x; y/
+Draw a uniformly distributed random variable u  U.0; 1/.
+Compute the acceptance coefﬁcient ˛ D ˛.Xk; YkC1/ using (C.1).
+if u < ˛
+Accept the step: XkC1 :D YkC1.
+else
+Reject the step: XkC1 :D Xk.
+until sampling complete
+We now consider several variants of this basic approach.

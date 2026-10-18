@@ -1,0 +1,63 @@
+blueprint\ch08\validation\batches\s81a-r1.lean:40:40: error: Application type mismatch: The argument
+  U
+has type
+  Vec n → ℝ
+but is expected to have type
+  ℝ
+in the application
+  textbookHamiltonianGibbsWeight ?m.19 U
+blueprint\ch08\validation\batches\s81a-r1.lean:39:33: error: Function expected at
+  textbookHamiltonianField
+but this term has type
+  ?m.1
+
+Note: Expected a function because this term is being applied to the argument
+  A
+
+Hint: The identifier `textbookHamiltonianField` is unknown, and Lean's `autoImplicit` option causes an unknown identifier to be treated as an implicitly bound variable with an unknown type. However, the unknown type cannot be a function, and a function is what Lean expects here. This is often the result of a typo or a missing `import` or `open` statement.
+blueprint\ch08\validation\batches\s81a-r1.lean:46:8: warning: declaration uses `sorry`
+blueprint\ch08\validation\batches\s81a-r1.lean:73:92: error: unsolved goals
+case fst.snd
+n : ℕ
+invm : Vec n
+U : Vec n → ℝ
+β Q : ℝ
+z : Phase n × ℝ
+x✝ : Fin n
+⊢ -gradient U z.1.1 x✝ - z.2 * z.1.2 x✝ = -gradient U z.1.1 x✝ + -(z.2 * z.1.2 x✝)
+blueprint\ch08\validation\batches\s81a-r1.lean:75:8: warning: declaration uses `sorry`
+blueprint\ch08\validation\batches\s81a-r1.lean:85:8: warning: declaration uses `sorry`
+blueprint\ch08\validation\batches\s81a-r1.lean:91:8: warning: declaration uses `sorry`
+blueprint\ch08\validation\batches\s81a-r1.lean:105:55: warning: Unused tactic linter: `ring` does nothing
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+blueprint\ch08\validation\batches\s81a-r1.lean:105:55: warning: this tactic is never executed
+
+Note: This linter can be disabled with `set_option linter.unreachableTactic false`
+'MD.Ch08.Vec' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch08.Phase' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch08.dot' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch08.gradient' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch08.gibbsWeight' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch08.canonicalAverage' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch08.probabilityDensity' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch08.correlation' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch08.correlation_zero' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch08.hamiltonianField' depends on axioms: [propext, Classical.choice, Quot.sound]
+blueprint\ch08\validation\batches\s81a-r1.lean:119:14: error(lean.unknownIdentifier): Unknown constant `MD.Ch08.hamiltonianGibbsStationary`
+'MD.Ch08.extendedDensity' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch08.extendedAverage' depends on axioms: [propext, sorryAx, Classical.choice, Quot.sound]
+'MD.Ch08.thermostatParameters' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch08.kineticTwice' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch08.nhField' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch08.isNHSolution' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch08.nhWeight' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch08.nhBathField' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch08.nhField_split' depends on axioms: [propext, sorryAx, Classical.choice, Quot.sound]
+'MD.Ch08.nhWeight_stationary' depends on axioms: [propext, sorryAx, Classical.choice, Quot.sound]
+'MD.Ch08.nhIntegral' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch08.nhIntegralPrinted' depends on axioms: [propext, sorryAx, Classical.choice, Quot.sound]
+'MD.Ch08.nhIntegral_corrected' depends on axioms: [propext, sorryAx, Classical.choice, Quot.sound]
+'MD.Ch08.nhReversal' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch08.nhReversal_involutive' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch08.nhReversal_field' depends on axioms: [propext, Classical.choice, Quot.sound]

@@ -1,0 +1,63 @@
+8.7
+Generalized Langevin Dynamics
+377
+Observing that the sum of ` independent Guassian random variables of variance ck
+is a Gaussian random variable with variance P`
+kD1 ck, we see that this is in the form
+of Langevin dynamics
+dpi D Fidt  O
+pidt C
+p
+2kBT O
+dWi;k;
+with
+O
+ D
+Nk
+X
+kD1
+ck:
+(For the formal treatment of this limit refer to [293].)
+For numerical integration, the system (8.68)–(8.70) can be handled via splitting.
+A natural family of methods based on Verlet is the following [19]:
+Generalized Langevin Dynamics Method
+pnC1=2 :D pn C h
+2F.qn/ C h
+2
+kmax
+X
+kD1
+ n;k;
+qnC1 :D qn C hM1pnC1=2;
+ nC1;k :D k n;k  .1  k/ ckpnC1=2 C ˛k
+p
+2kBTckZn
+k;
+pnC1 :D pnC1=2 C h
+2F.qnC1/ C h
+2
+kmax
+X
+kD1
+ nC1;k;
+where  n;k is a Nc-dimensional vector, and the components of the Nc-dimensional
+vectors Zn;k are independent standard normal random variables.
+The real-valued coefﬁcients k and ˛k which must satisfy, for consistency, the
+equations
+k D 1  h
+k
+C O.h2/;
+˛k D
+p
+h
+k
+C O.h/:
+An argument is given in [19] that ˛k and k should be taken as
+k D exp.h=k/;
+˛k D
+s
+.1  k/2
+h
+;
+since, for this choice, the Langevin limit is preserved. Alternative methods are
+possible. For many comparisons and numerical experiments, refer to [19].

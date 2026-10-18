@@ -1,0 +1,47 @@
+386
+8
+Extended Variable Methods
+8.9
+Momentum-Conserving Thermostats and the Dissipative
+Particle Dynamics (DPD) Method
+In many applications, it is important to preserve the total momentum while
+calculating canonical thermodynamic averages, i.e. one works in an ensemble that
+is restricted by the additional momentum constraint. Momentum conservation plays
+a key role in capturing long-ranged hydrodynamic interactions in coarse-grained
+models of complex ﬂuids [8]. Standard Langevin and Nosé dynamics methods fail
+to preserve the momentum. This is quite obvious in the case of Langevin dynamics.
+In Nosé dynamics we have the following differential equation for the momenta:
+dp
+dt D rU.q/  p:
+Assuming central forces, we have PN
+iD1 rqiU D 0, thus we obtain the following
+equation for the total momentum vector ptot:
+N
+X
+iD1
+dpi
+dt D dptot
+dt
+D ptot:
+If the total momentum is chosen to be zero, then it will formally remain zero
+along trajectories (see [78, 254] for a discussion on the affect this has on canonical
+sampling). However, in practice, a small numerical artifact may be introduced.
+Moreover, under numerical discretization, bias due to ﬁnite stepsize may be present
+allowing a build up of total momentum in long simulations.
+An interesting potential consequence of the lack of momentum conservation is
+the so-called “ﬂying ice cube” problem [172], whereby the system acquires a large
+total momentum but the internal momenta due to interactions among the particles
+becomes small.
+It is desirable to construct formulations and numerical methods which exactly
+(i.e. up to rounding error) preserve the total momentum from step to step. One
+obvious approach to this problem is to simply project the momenta onto the linear
+momentum constraint at the end of each step (or after some number of steps).
+Such a projection introduces potential issues in terms of convergence order and
+would certainly complicate the analyses presented thus far in this book. Moreover,
+the optimal choice of projection is unclear and it is easy to deﬁne poor schemes
+(for example, modifying always the momentum of just the ﬁrst particle in order
+to balance all the remaining components) which are likely to introduce artifacts
+(bias) in simulation. For this reason, there is interest in “building in” momentum
+conservation into the equations of motion (and indeed the integrator). Ideally this
+should be done in a localized and homogeneous way so that momentum is not
+transferred by a nonphysical mechanism between distant particles.

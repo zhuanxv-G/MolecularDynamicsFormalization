@@ -1,0 +1,66 @@
+8.4
+Ergodic Stochastic-Dynamic Thermostats
+343
+dp D rU.q/dt  ˚.; z/   pdt C
+p
+2kBTM1=2 1=2dW;
+(8.23)
+d D g.; q; p/dt  O dt C
+p
+2kBT OM
+1=2 O
+1=2d OW:
+(8.24)
+Here  ; O
+are symmetric, square matrices of appropriate dimension, W is a
+vector of Nc Wiener processes, and OW is a vector of m Wiener processes, all
+independent of each other. We assume that the deterministic thermostat represented
+by the ˚ and g terms preserves the extended distribution O./ˇ, where O./ D
+exp
+
+ˇT OM
+1=2
+
+. The matrix OM is symmetric and positive deﬁnite; one could
+take it to be diagonal.
+The additivity property of thermostats mentioned above holds also for stochastic
+thermostats, since the Fokker-Planck equation is constructed from linear operations
+on the vector ﬁelds involved, thus it is enough to require that the newly introduced
+terms satisfy appropriate ﬂuctuation-dissipation relationships so that they are
+compatible with the extended Gibbs distribution of the deterministic part. That is,
+we require
+dp D  pdt C
+p
+2kBTM1=2 1=2dW
+to preserve the distribution with density N D exp
+
+ˇpTM1p=2
+
+, and
+d D  O dt C
+p
+2kBT OM
+1=2 O
+1=2d OW
+to preserve O. These two problems are essentially the same. Considering the former,
+the stationary Fokker-Planck equation reads
+rp  . p N/
+„
+ƒ‚
+…
+drift
+C ˇ1Tr
+
+ 1=2M1=2r2
+p NM1=2 1=2
+„
+ƒ‚
+…
+diffusion
+D 0:
+The drift term here equates to
+Tr. / N C .ˇ/pT M1p N:
+For the diffusion term, we calculate
+r N D ˇ NM1p;
+thus
+r2 N D NŒˇ2M1ppTM1  ˇM1	;

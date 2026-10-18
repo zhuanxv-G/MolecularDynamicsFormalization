@@ -1,0 +1,33 @@
+362
+8
+Extended Variable Methods
+Pq D M1p;
+(8.37)
+Pp D F.q/  pTM1F.q/
+pTM1p
+p:
+(8.38)
+These equations preserve pTM1p D constant. (Note: It is tempting to replace the
+denominator in this expression by K0, the value of kinetic energy, but this is not
+recommended since it then destroys the ﬁrst integral.) The system (8.37)–(8.38) can
+be rewritten in the alternative form
+Pq D M1p;
+Pp D ŒI  H	 F.q/;
+where H D p.pTM1p/1pTM1 is a projector matrix which is idempotent: H2 D
+H. The invariant subspace associated to this projector is span.p/:
+Hp D p:
+Isokinetic dynamics has nonvanishing divergence, which requires a special
+treatment to elucidate its statistical mechanical properties [338, 376]. In order to
+ﬁnd a stationary solution, one substitutes
+.q; p/ D ew.q;p/˚.K.p//;
+(8.39)
+(with ˚ a nonvanishing function of K) into the continuity equation for the isokinetic
+system, the function w being at this point unknown. Then one obtains, with f iso
+denoting the vector ﬁeld in (8.37)–(8.38), that
+0 D r  .f iso/ D .r/  f iso C .r  f iso/
+D .rw C ˚0.K/
+˚.K/ rK/  f iso C .r  f iso/:
+Using the isokinetic property, the term involving K drops out. One next calculates
+the divergence of the isokinetic vector ﬁeld and ﬁnds that (see Exercise 5)
+r  f iso D .Nc  1/pTM1F
+pTM1p :

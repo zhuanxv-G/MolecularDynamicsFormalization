@@ -1,0 +1,77 @@
+blueprint\ch08\validation\batches\s81b-r1.lean:52:6: error: Tactic `rewrite` failed: Did not find an occurrence of the pattern
+  ∫ (z : ?m.64 × ?m.65), ?f z.1 * ?g z.2 ∂Measure.prod ?m.68 ?m.69
+in the target expression
+  ∫ (z : E × B), g z.1 * ρ z.1 * a z.2 ∂μ.prod ν = ∫ (x : E), g x * ρ x ∂μ
+
+E : Type u_2
+B : Type u_3
+inst✝³ : MeasurableSpace E
+inst✝² : MeasurableSpace B
+μ : Measure E
+ν : Measure B
+inst✝¹ : SFinite μ
+inst✝ : SFinite ν
+ρ g : E → ℝ
+a : B → ℝ
+ha : ∫ (y : B), a y ∂ν = 1
+hi : Integrable (fun z => g z.1 * extendedDensity ρ a z) (μ.prod ν)
+⊢ ∫ (z : E × B), g z.1 * ρ z.1 * a z.2 ∂μ.prod ν = ∫ (x : E), g x * ρ x ∂μ
+blueprint\ch08\validation\batches\s81b-r1.lean:76:8: warning: declaration uses `sorry`
+blueprint\ch08\validation\batches\s81b-r1.lean:86:8: warning: declaration uses `sorry`
+blueprint\ch08\validation\batches\s81b-r1.lean:92:8: warning: declaration uses `sorry`
+blueprint\ch08\validation\batches\s81b-r1.lean:106:55: warning: Unused tactic linter: `ring` does nothing
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+blueprint\ch08\validation\batches\s81b-r1.lean:106:55: warning: this tactic is never executed
+
+Note: This linter can be disabled with `set_option linter.unreachableTactic false`
+blueprint\ch08\validation\batches\s81b-r1.lean:123:8: warning: declaration uses `sorry`
+blueprint\ch08\validation\batches\s81b-r1.lean:126:8: warning: declaration uses `sorry`
+blueprint\ch08\validation\batches\s81b-r1.lean:139:8: warning: declaration uses `sorry`
+blueprint\ch08\validation\batches\s81b-r1.lean:163:8: warning: declaration uses `sorry`
+'MD.Ch08.Vec' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch08.Phase' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch08.dot' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch08.gradient' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch08.gibbsWeight' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch08.canonicalAverage' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch08.probabilityDensity' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch08.correlation' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch08.correlation_zero' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch08.hamiltonianField' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch08.hamiltonianGibbsStationary' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch08.extendedDensity' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch08.extendedAverage' depends on axioms: [propext, sorryAx, Classical.choice, Quot.sound]
+'MD.Ch08.thermostatParameters' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch08.kineticTwice' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch08.nhField' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch08.isNHSolution' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch08.nhWeight' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch08.nhBathField' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch08.nhField_split' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch08.nhWeight_stationary' depends on axioms: [propext, sorryAx, Classical.choice, Quot.sound]
+'MD.Ch08.nhIntegral' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch08.nhIntegralPrinted' depends on axioms: [propext, sorryAx, Classical.choice, Quot.sound]
+'MD.Ch08.nhIntegral_corrected' depends on axioms: [propext, sorryAx, Classical.choice, Quot.sound]
+'MD.Ch08.nhReversal' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch08.nhReversal_involutive' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch08.nhReversal_field' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch08.dampedCoefficient' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch08.nhDrift' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch08.nhKick' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch08.nhFeedback' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch08.nhStep' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch08.dampedCoefficient_zero' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch08.nhStep_reversible' depends on axioms: [propext, sorryAx, Classical.choice, Quot.sound]
+'MD.Ch08.nhStep_inverse' depends on axioms: [propext, sorryAx, Classical.choice, Quot.sound]
+'MD.Ch08.noseHamiltonian' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch08.npHamiltonian' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch08.nosePoincarePrinted' depends on axioms: [propext, sorryAx, Classical.choice, Quot.sound]
+'MD.Ch08.nosePoincare_corrected' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch08.npField' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch08.npProjection' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch08.npProjection_equations' depends on axioms: [propext, sorryAx, Classical.choice, Quot.sound]
+'MD.Ch08.fourthOrderRemainder' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch08.correctedFiniteAverage' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch08.npShadowAnsatz' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch08.npDensityAnsatz' depends on axioms: [propext, Classical.choice, Quot.sound]

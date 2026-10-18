@@ -1,0 +1,63 @@
+8.8
+Constant Temperature and Pressure Molecular Dynamics
+379
+which leads to the probability density
+NPT D Z1
+NPTeˇ.HCPV/;
+where H is the Hamiltonian, and ˇ1 D kBT.
+The NPT model may be viewed as corresponding to a thermostatted system
+which incorporates a “piston” controlling the overall volume of the system to be
+consistent with the target pressure. During simulation, the volume must be free
+to change; whereas the methods presented so far retain a ﬁxed volume. In NVE
+or NVT simulation, the volume enters in two ways into the molecular simulation
+method: (i) as a modiﬁcation of the potential (allowing for periodic replicas) and
+(ii) in the mechanism by which atoms are mapped from one boundary to the other
+of the rectangular domain, simulating motion on a torus. It is not obvious how to
+generalize these to the NPT setting where V is a dynamical variable.
+The method of Andersen [11] (“Andersen’s piston”) is to control the volume
+by reparamaterizing the coordinates to lie in a cubic box with unit side. Assuming
+the system occupies a cubic domain, say, ŒL=2; L=2	ŒL=2; L=2	ŒL=2; L=2	,
+where L D V1=3, we may write, for each three-dimensional atomic coordinate vector
+qi
+qi D V1=3Nqi;
+(8.71)
+where Nqi is conﬁned to the unit-side cube. Then we have
+Pqi D 1
+3V2=3 PV Nqi C V1=3 d
+dt Nqi:
+The kinetic energy of the atomic system may be written
+K D
+N
+X
+iD1
+mi
+kPqik2
+2
+:
+After coordinate transformation this becomes
+NK D
+N
+X
+iD1
+mi
+2
+
+1
+3V2=3 PV Nqi C V1=3 d
+dt Nqi
+
+2
+D
+N
+X
+iD1
+mi
+2
+1
+9V4=3 PV2 kNqik2 C 2
+3V1=3 PV Nqi  PNqi C V2=3 PNqi
+2
+;
+thus the momentum vector conjugate to Nqi becomes
+Npi D @ NK
+@PNqi

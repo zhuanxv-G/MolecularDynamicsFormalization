@@ -1,0 +1,48 @@
+8.4
+Ergodic Stochastic-Dynamic Thermostats
+345
+This means that we have built one of our two vectors. The second follows as a linear
+combination of the others:
+QF D b0   QG  .g  
+/1b1:
+ut
+The fact that the Hörmander condition holds is, as we know from Chap. 6, only
+part of the story. However based on known results for Langevin dynamics, we
+conjecture that ergodicity will hold if (i) the Hörmander condition holds, (ii) U
+is sufﬁciently smooth, and (iii) the conﬁgurational phase space is compact, e.g.
+periodic boundary conditions are employed. However we stress that each possible
+method will ultimately need to be carefully and systematically checked to verify the
+ergodic properties.
+8.4.1
+Nosé-Hoover-Langevin: An Ergodic Weakly Coupled
+Thermostat
+The Nosé-Hoover-Langevin (NHL) method is based on a simple idea: replace the
+“chain” in the Nosé-Hoover Chain, whose sole purpose is to maintain a Gaussian
+distribution in the auxiliary variable, by a stochastic Langevin-type thermostat. The
+method was ﬁrst proposed in [323]. The proof of ergodicity (more precisely the
+conﬁrmation of the Hörmander condition), for a problem with harmonic internal
+interactions, was given in [226] and we roughly follow the treatment from this paper.
+The Nosé-Hoover-Langevin equations are
+dq D M1pdt;
+(8.27)
+dp D rU.q/dt  pdt;
+(8.28)
+d D 1ŒpTM1p  NdkBT	dt  
+dt C
+p
+2kBT
+1dW;
+(8.29)
+where .q; p/ 2 D with  2 R. Let us emphasize that the principal features of this
+thermostat: (1) it is essentially Nosé-Hoover plus a perturbation, (2) it incorporates
+a single Wiener process, (3) it has two free parameters 
+ and .
+Let us ﬁrst demonstrate that the Nosé-Hoover-Langevin method, is, in fact, a
+thermostat. We observe that we have already shown that the Nosé-Hoover method
+preserves the extended canonical distribution ˇ exp.ˇ2=2/. Therefore, by the
+additivity property, all that is needed is to show that the additional part
+d D 
+dt C
+p
+2kBT
+1dW

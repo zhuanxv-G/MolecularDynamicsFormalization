@@ -1,0 +1,114 @@
+8.9
+Momentum-Conserving Thermostats and the Dissipative Particle. . .
+395
+The pairwise-NHL (PNHL) system takes the form
+dqi D m1
+i pidt;
+dpi D FC
+i .q/dt C  QF
+D
+i dt;
+d D G.q; p/dt  Q
+dt C QdW;
+(8.111)
+where all notation is as for PNH and the coefﬁcients Q
+ and Q are chosen to preserve
+the target temperature
+Q2 D 2 Q
+kBT=;
+(8.112)
+and W D W.t/ is a standard Wiener process.
+Splitting methods for the pairwise-NHL (PNHL) system (including those given
+here) are taken up in [228]. The PNHL system can be divided into ﬁve parts such
+that each piece can be solved exactly, in the sense of distributions:
+d
+2
+4
+qi
+pi
+
+3
+5 D
+2
+4
+m1
+i pi
+0
+0
+3
+5 dt
+„
+ƒ‚
+…
+A
+C
+2
+4
+0
+FC
+i
+0
+3
+5 dt
+„ ƒ‚ …
+B
+C
+2
+64
+0
+C QF
+D
+i
+0
+3
+75 dt
+„
+ƒ‚
+…
+C
+C
+2
+4
+0
+0
+G
+3
+5 dt
+„ ƒ‚ …
+D
+C
+2
+4
+0
+0
+ Q
+dt C QdW
+3
+5
+„
+ƒ‚
+…
+O
+:
+(8.113)
+Note that the operators corresponding to parts A and B are exactly the same as
+deﬁned in (8.95) and (8.96), respectively. The operators corresponding to the other
+terms in the vector ﬁeld are
+LC D 
+X
+i
+QF
+D
+i .q; p/  rpi;
+LD D G.q; p/ @
+@ ;
+LO D  Q
+ @
+@ C Q2
+2
+@2
+@2 :
+Note that the generator LO now only affect the auxiliary variable (as in NHL). The
+generator for the PNHL system is then deﬁned by
+LPNHL D LA C LB C LC C LD C LO:
+(8.114)

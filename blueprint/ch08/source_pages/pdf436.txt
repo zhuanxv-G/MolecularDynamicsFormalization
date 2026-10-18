@@ -1,0 +1,26 @@
+418
+C
+Monte-Carlo Markov Chains
+acceptance criterion is based on the change in energy along the computed path.
+That is, we evaluate the energy difference
+H D H
+
+G s
+h
+qk
+pk
+	
+ H
+ qk
+pk
+	
+and accept the step if either H < 0 or else if H > 0 but
+exp.ˇH/ > u  U.0; 1/:
+If the step is rejected, we set qkC1 :D qk, pkC1 :D pk and continue.
+Note that when a symplectic integration method is used, we have, from the dis-
+cussion in Chap. 3, a perturbed energy function and, moreover, from Theorem 3.1,
+the error in energy H is O.hr/, nonetheless the perturbations are large for a large
+stepsize h. In the Shadow Hybrid Monte-Carlo (SHMC) method [2, 3, 188], the
+accept-reject test is based on the modiﬁed Hamiltonian QHh (see Chap. 3), derived
+from the Baker-Campbell-Hausdorff expansion. SHMC can improve efﬁciency by
+decreasing the rejection rate.

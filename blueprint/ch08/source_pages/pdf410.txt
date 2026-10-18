@@ -1,0 +1,59 @@
+8.9
+Momentum-Conserving Thermostats and the Dissipative Particle. . .
+389
+white-noise term with the following stochastic property
+hij.t/i D 0;
+hij.t/kl.t0/i D .ıikıjl C ıilıjk/ı.t  t0/;
+(8.88)
+and are independent for each pair of interacting particles at each time step.
+Invariance of the canonical distribution under these equations of motion follows if
+!D.rij/ D Œ!R.rij/	2;
+2 D 2
+kBT;
+(8.89)
+where kB is the Boltzmann constant and T the equilibrium temperature. Note that
+the “canonical distribution” in the case of the DPD system or other momentum-
+conserving thermostat should have a density which is reduced to the leaves of
+constant total momentum, i.e.
+Oˇ
+def
+D Z1eˇH.q;p/  ı
+" N
+X
+iD1
+pi;x  x
+#
+ı
+" N
+X
+iD1
+pi;y  y
+#
+ı
+" N
+X
+iD1
+pi;z  z
+#
+where  D .x; y; z/ is the total momentum vector.
+The conservation of the total momentum is a direct result of the symmetric form
+of the various forces, thus DPD may be viewed as an isotropic Galilean-invariant
+thermostat which preserves hydrodynamics [8]. The ergodicity of DPD (i.e. that Oˇ
+is the unique measure sampled by the dynamics) has only been demonstrated in the
+case of a high density of particles in one dimension [334].
+The DPD system may be viewed as a special case of the generalized Langevin
+dynamics with equations
+dq D M1pdt;
+dp D rU.q/dt  .q/pdt C ˙.q/dW;
+(8.90)
+where the potential U is given in (8.84), and the damping matrix  and stochastic
+multiplier matrix ˙ are related by
+ D M1
+2kBT˙˙ T:
+In the next subsection we describe the numerical treatment of the DPD system.
+We then take up the alternative scheme, the pairwise Nosé-Hoover-Langevin
+(PNHL) method, of [228] which also conserves momentum exactly. Other alter-
+natives to the DPD system include the Peters thermostat [299], the Lowe-Andersen
+method [241], and the Nosé-Hoover-Lowe-Andersen thermostat [347]. We do not
+discuss these schemes here, but note that they are compared to DPD and some of
+the other schemes introduced below in [228].

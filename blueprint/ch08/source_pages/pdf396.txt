@@ -1,0 +1,66 @@
+8.7
+Generalized Langevin Dynamics
+375
+For systems in which the memory kernel decays fairly rapidly, it is not unreasonable
+to consider its approximation by a linear combination of exponential functions, a so-
+called Prony series:
+
+.t/ D
+kmax
+X
+kD1
+ck
+k
+exp
+
+ t
+k
+
+;
+t  0:
+(8.60)
+The properties of the system in the limit k ! 0 are studied in [293].
+The use of this representation for the memory kernel allows us to replace
+the history-dependent equations (8.57)–(8.58) by a Markovian system in a larger
+dimensional space, by introducing k additional degrees of freedom per physical
+degree of freedom. This method obviously increases storage requirements, and,
+in large systems, it may be signiﬁcant. However, the evolution of these additional
+variables is elementary and the overall computational cost low.
+8.7.1
+Using an Extended Variable Representation
+We introduce a set of extended variables whose evolution is described by standard
+Brownian motions using Ornstein-Uhlenbeck (OU) processes. For this treatment,
+let the particle positions and momenta be enumerated as .qi; pi/, i D 1; : : : ; Nc and
+deﬁne the extended variable, i;k.t/, associated with the kth term in the Prony series
+in interaction with the ith physical variable by
+i;k.t/ D 
+t
+Z
+0
+ck
+k
+exp
+
+.t  s/
+k
+
+pi.s/ds:
+(8.61)
+Equations (8.57)–(8.58) can then be rewritten in the form
+dqi D m1
+i pidt
+(8.62)
+dpi D Fidt C
+kmax
+X
+kD1
+i;kdt C Ridt:
+(8.63)
+We note that i;k is the solution of an ODE of the form
+di;k D  1
+k
+i;k.t/dt  ck
+k
+pidt:
+(8.64)
+We have thus resolved the convolution integral.

@@ -1,0 +1,33 @@
+Appendix A
+Force Computation
+The computation of forces may be exceedingly costly depending on the size of the
+system and the types of potentials involved and strongly affect the overall efﬁciency
+of a large scale molecular dynamics simulation. For modest sized systems it is
+usually just a matter of careful coding to produce a reliable force ﬁeld routine. For
+a pair potential ' which is a function of the separation between atoms i and j, the
+forces are accumulated as follows:
+r WD kqi  qjk
+ WD '0.r/
+r
+.qj  qi/
+Fi WD Fi C 
+Fj WD Fj  :
+Very often, for larger systems with many short-ranged interactions, mechanisms
+are used to eliminate wasted computation. For example, a Verlet neighbor list [140,
+307, 387] is sometimes employed. In this case, a list of neighbor atoms is maintained
+and adjusted from timestep to timestep. The list identiﬁes the labels of atoms which
+are likely to be sufﬁciently close (e.g. within 3, where  is the parameter in the
+Lennard-Jones potential which deﬁnes the distance unit for the molecular model)
+to a given atom so that the force between them is non-negligible. At the end of
+the timestep (or every l timesteps) the lists must be updated based on the positions
+and velocities of the atoms to reﬂect new potential neighbors. Normally the lists
+include all atoms within the collision radius, as well as those which could enter the
+collision radius within l timesteps. Theoretically, within a large system, almost any
+energy could accumulate in a single particle which would suggest that extraordinary
+ballistic motions could arise, but in practice the individual particle momenta would
+be expected to be consistent with the Boltzmann distribution which falls off rapidly
+for large p.
+© Springer International Publishing Switzerland 2015
+B. Leimkuhler, C. Matthews, Molecular Dynamics, Interdisciplinary Applied
+Mathematics 39, DOI 10.1007/978-3-319-16375-8
+403

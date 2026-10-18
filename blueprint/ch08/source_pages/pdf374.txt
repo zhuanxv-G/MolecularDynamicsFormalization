@@ -1,0 +1,72 @@
+8.4
+Ergodic Stochastic-Dynamic Thermostats
+353
+ 
+= 0.01
+ 
+= 0.1
+ 
+= 1
+ 
+= 10
+Time
+0
+25
+50
+Time
+0
+25
+50
+Time
+0
+25
+50
+Time
+0
+25
+50
+Nosé-Hoover-Langevin
+Langevin
+5
+Average potential energy
+-80
+-100
+-120
+-140
+-160
+Average potential energy
+-80
+-100
+-120
+-140
+-160
+Average potential energy
+-80
+-100
+-120
+-140
+-160
+Average potential energy
+-80
+-100
+-120
+-140
+-160
+Nosé-Hoover
+(   = 0)
+Nosé-Hoover-Langevin
+0.5
+Fig. 8.3 The evolution of the average of potential energy as a function of time is plotted, using
+different choices of the friction parameter 
+ and the coupling parameter  in different thermostats.
+The long-time average of the simulation is shown as the dashed line
+in the case of Langevin dynamics, the fastest convergenceof the average of potential
+energy occurs between the minimum and maximum values tested. At large values
+of 
+ the convergence is impaired due to the reduction in the diffusion rate (compare
+Fig. 7.6). This would suggest the existence of some optimum value of the friction to
+ensure rapid convergence of conﬁgurational averages (which would likely depend
+on the observable).
+Very important differences emerge if we attempt to use the stochastic integrators
+to compute dynamics, e.g. a time-correlation function. Velocity auto-correlation
+functions are shown in Fig. 8.4 for various choices of the parameters.

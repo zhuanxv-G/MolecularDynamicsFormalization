@@ -1,0 +1,50 @@
+8.8
+Constant Temperature and Pressure Molecular Dynamics
+385
+“breathing” mode. We would expect these ﬂuctuations to be especially long-lived in
+the case of large values of . Decreasing the values of  will increase the frequency
+of the oscillations; if the frequency of the periodic motion is too high then the overall
+stability of the simulation will become threatened (a smaller timestep h may be
+required).
+Choosing 
+ D 0:1 or 
+ D 1 removes this artiﬁcial oscillatory behavior, with
+the larger choice of 
+ giving faster dissipation of the periodic oscillation. Figure 8.7
+demonstrates that when setting 
+ D 1 the temperature and volume rapidly stabilize
+and give small, random ﬂuctuations compared to the non-stochastic case. For some
+alternatives and more in-depth discussion of constant temperature and pressure
+strategies, including numerical experiments, refer to [128, 194, 199, 238, 252].
+8.8.3
+Anisotropic Simulation Cell: The Method
+of Parrinello and Rahman
+Not all molecules are naturally simulated in a cubic unit cell and indeed the system
+may undergo dramatic changes of shape during simulation. Parrinello and Rahman
+[296] explained how to extend the method of Andersen to allow for a system
+conﬁned to a cell with dimensions that are allowed to vary during simulation. Three
+vectors a, b and c deﬁne the sides of the simulation cell. Let h be the 3  3 matrix
+with these vectors as columns, then its volume is V D det.h/ D a  .b  c/, where
+a, b, c and h are viewed as time-dependent variables.
+Any position vector may be decomposed into coordinates deﬁned by the matrix
+h, thus
+qi D hNqi D ia C ib C ic;
+0 	 i; i; i 	 1:
+Introducing the metric tensor G D hTh, the Lagrangian describing the system then
+becomes
+L D 1
+2
+N
+X
+iD1
+miPNqT
+i GPNqi  NU.Nq/ C 1
+2Tr.Ph
+T Ph/  PV;
+where  is an artiﬁcial “mass” parameter which can be adjusted to alter the tightness
+of the coupling of the barostat to the physical variables.
+This system can then be coupled to a thermostat as in the Andersen or Hoover
+formulation [266].
+The method works well as long as there are internal molecular structures that
+prevent a degeneracy (one cell dimension collapsing) as might happen, for example,
+if the scheme were applied to a simple liquid such as Lennard-Jonesium.

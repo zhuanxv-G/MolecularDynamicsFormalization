@@ -1,0 +1,38 @@
+Appendix B
+Concepts from Probability
+A general probability space is deﬁned by a triple .˝; F; Pr/ where ˝ is the sample
+space of all possible outcomes, F is a collection of sets of outcomes referred to as
+events, and Pr is a probability function which assigns real values between 0 and 1 to
+the events of F.
+Discrete random variables are characterized by a discrete probability density
+which deﬁnes the probability associated with some set of states, that is if we have a
+random variable X which can take on states i D 1; 2; : : :, the non-negative density
+may be viewed as a sequence f D ffig which is assumed to be summable with
+P1
+iD1 fi D 1. Then the probability that the random variable lies in a given subset of
+the natural numbers is just the sum of the corresponding density values:
+Pr.X 2 S  N/ D
+X
+i2S
+fi:
+If X has discrete density f we write X  f. The cumulative distribution F D fFig
+associated to a random variable with density f is just deﬁned by the partial sums
+Fn D P
+in fi. Thus 0 	 Fn 	 1; 8n and Fn D Pr.X 	 n/.
+In the continuous case, we suppose the sample space is the Euclidean space Rm,
+and assume there is a (normalized) probability measure d deﬁned by the density
+ which is a non-negative function. In this case the standard event space F is then
+typically taken to be the Borel -algebra of subsets of Rm which includes open balls
+and countable unions, countable intersections or relative complements of open balls
+in Rm. The measure of the set can be deﬁned by Lebesgue integration
+Pr.S/  Pr.X 2 S  R/ D
+Z
+S
+d.x/ D
+Z
+S
+.x/dx;
+© Springer International Publishing Switzerland 2015
+B. Leimkuhler, C. Matthews, Molecular Dynamics, Interdisciplinary Applied
+Mathematics 39, DOI 10.1007/978-3-319-16375-8
+407
