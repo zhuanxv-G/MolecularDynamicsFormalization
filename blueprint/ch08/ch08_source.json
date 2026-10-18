@@ -2482,5 +2482,372 @@
     "source_page_verification": "见source_page_checks.json，已目视核对本条原页。",
     "repair_log": [],
     "documented_priors": []
+  },
+  {
+    "source_id": "MD-8.7-GeneralizedLangevin",
+    "kind": "definition",
+    "label": null,
+    "section": "8.7",
+    "printed_page": "374",
+    "pdf_page": "395",
+    "statement_latex": "dq=M⁻¹pdt, dp=−∇U(q)dt−∫₀ᵗΓ(t−s)p(s)ds dt+dB, q(0)=q₀,p(0)=p₀. Γ is the memory kernel and B is colored noise. (8.57)–(8.58).",
+    "statement_verbatim": "374\n8\nExtended Variable Methods\nand have to be modelled as part of the simulation process. Our presentation of this\ntopic follows that of [19] and earlier works [69, 85, 204, 276] which treat the non-\nMarkovian Generalized Langevin equation as a Markov system in an extended phase\nspace.\nThe equations of Generalized Langevin dynamics are normally written in the\nform\ndq D M\u00021pdt;\n(8.57)\ndp D \u0003rU.q/dt \u0003\nt\nZ\n0\n\u0010 .t \u0003 s/p.s/dsdt C dB;\n(8.58)\nsubject to initial conditions q.0/ D q0, p.0/ D p0. Here \u0010 .t/ D .\nij.t// is a Nc \u0004 Nc\nmatrix-valued function of t which we refer to as the “memory kernel”. The term\nFd D \u0003\nt\nZ\n0\n\u0010 .t \u0003 s/p.s/dsdt\nrepresents a drag force acting on the system due to the interaction with the particles\nof the bath. dB is the increment of the colored-noise (non-Gaussian) stochastic\nprocess. Often this increment is treated formally as an impulse R.t/dt, where R\nis referred to as a “random force,” which calls to mind the origin of the stochastic\nterm as the model for interaction with a large (but ﬁnite) heat bath. We use this\nlanguage for consistency with the literature. The driving forces are correlated in a\nway that is described by the ﬂuctuation-dissipation theorem [202, 402]. This states\nthat at temperature T the components of the random forces satisfy\nhRi.t C s/Rj.t/i D kBT \nij.s/ıij;\ns \b 0:\n(8.59)\nHere, ıij is the Kronecker delta, and kB is Boltzmann’s constant.\nNumerical methods for treating (8.57)–(8.58) include calculation of the drag\nforce Fd which requires a convolution of the momenta with \u0010 .t/ and therefore\nstorage of some portion of the time-history of p. Typically we will compute a\ndiscrete sequence of p0; p1; : : : ; and so it will be necessary to store a collection\nof, say ` > 0, previous momentum vectors. This may be somewhat demanding in a\nlarge scale simulation setting. Moreover, computing R requires the generation of a\nsequence of random numbers with prescribed correlation, as speciﬁed in Eq. (8.59).\nBoth these issues may be addressed sensibly using the technique of Prony series and\nan extended variable representation\nIn the remainder of this discussion, for the purpose of simpliﬁed presentation, we\nconﬁne ourselves to the simple case of a scalar memory kernel, writing\n\u0010 .t/ D \n.t/I:\n",
+    "verbatim_scope": "完整对应原页文字层，逐字保留；本条数学成分由statement_latex及statement_scope定位。",
+    "proof_latex": null,
+    "proof_note": "对应原页推导逐字保存在statement_verbatim/original_page_text；排版以原页PDF为准。",
+    "original_page_text": [
+      {
+        "pdf_page": 395,
+        "printed_page": 374,
+        "text": "374\n8\nExtended Variable Methods\nand have to be modelled as part of the simulation process. Our presentation of this\ntopic follows that of [19] and earlier works [69, 85, 204, 276] which treat the non-\nMarkovian Generalized Langevin equation as a Markov system in an extended phase\nspace.\nThe equations of Generalized Langevin dynamics are normally written in the\nform\ndq D M\u00021pdt;\n(8.57)\ndp D \u0003rU.q/dt \u0003\nt\nZ\n0\n\u0010 .t \u0003 s/p.s/dsdt C dB;\n(8.58)\nsubject to initial conditions q.0/ D q0, p.0/ D p0. Here \u0010 .t/ D .\nij.t// is a Nc \u0004 Nc\nmatrix-valued function of t which we refer to as the “memory kernel”. The term\nFd D \u0003\nt\nZ\n0\n\u0010 .t \u0003 s/p.s/dsdt\nrepresents a drag force acting on the system due to the interaction with the particles\nof the bath. dB is the increment of the colored-noise (non-Gaussian) stochastic\nprocess. Often this increment is treated formally as an impulse R.t/dt, where R\nis referred to as a “random force,” which calls to mind the origin of the stochastic\nterm as the model for interaction with a large (but ﬁnite) heat bath. We use this\nlanguage for consistency with the literature. The driving forces are correlated in a\nway that is described by the ﬂuctuation-dissipation theorem [202, 402]. This states\nthat at temperature T the components of the random forces satisfy\nhRi.t C s/Rj.t/i D kBT \nij.s/ıij;\ns \b 0:\n(8.59)\nHere, ıij is the Kronecker delta, and kB is Boltzmann’s constant.\nNumerical methods for treating (8.57)–(8.58) include calculation of the drag\nforce Fd which requires a convolution of the momenta with \u0010 .t/ and therefore\nstorage of some portion of the time-history of p. Typically we will compute a\ndiscrete sequence of p0; p1; : : : ; and so it will be necessary to store a collection\nof, say ` > 0, previous momentum vectors. This may be somewhat demanding in a\nlarge scale simulation setting. Moreover, computing R requires the generation of a\nsequence of random numbers with prescribed correlation, as speciﬁed in Eq. (8.59).\nBoth these issues may be addressed sensibly using the technique of Prony series and\nan extended variable representation\nIn the remainder of this discussion, for the purpose of simpliﬁed presentation, we\nconﬁne ourselves to the simple case of a scalar memory kernel, writing\n\u0010 .t/ D \n.t/I:\n"
+      }
+    ],
+    "numbered_equations": [
+      "8.57",
+      "8.58"
+    ],
+    "transcription_note": "文字层逐字保留；数学排版另行转写，原页中的特殊字形编码不静默替换。PDF420仅取Exercises之前。",
+    "context_notation": [],
+    "extra_assumptions": [
+      "B不是Wiener；这里是加性有色噪声增量的积分方程，未把R(t)dt当作白噪声的普通导数。",
+      "本条取非负时间连续记忆核以保证内部卷积可积；自然历史适应和正质量为选定强解范围。一般粗糙核与解存在唯一性列缺口。"
+    ],
+    "issues": [],
+    "statement_scope": "连续矩阵记忆核下的卷积及GLE积分解类定义。",
+    "lean_decl": "MD.Ch08.memoryDrag",
+    "lean_declarations": [
+      "MD.Ch08.memoryDrag",
+      "MD.Ch08.generalizedLangevin"
+    ],
+    "source_page_verification": "见source_page_checks.json，已目视核对本条原页。",
+    "repair_log": [],
+    "documented_priors": []
+  },
+  {
+    "source_id": "MD-8.7-GLEFluctuationDissipationPrinted",
+    "kind": "definition",
+    "label": null,
+    "section": "8.7",
+    "printed_page": "374",
+    "pdf_page": "395",
+    "statement_latex": "⟨Rᵢ(t+s)Rⱼ(t)⟩=k_BT γᵢⱼ(s)δᵢⱼ, s≥0. Γ(t)=γ(t)I in the scalar-kernel specialization. (8.59).",
+    "statement_verbatim": "374\n8\nExtended Variable Methods\nand have to be modelled as part of the simulation process. Our presentation of this\ntopic follows that of [19] and earlier works [69, 85, 204, 276] which treat the non-\nMarkovian Generalized Langevin equation as a Markov system in an extended phase\nspace.\nThe equations of Generalized Langevin dynamics are normally written in the\nform\ndq D M\u00021pdt;\n(8.57)\ndp D \u0003rU.q/dt \u0003\nt\nZ\n0\n\u0010 .t \u0003 s/p.s/dsdt C dB;\n(8.58)\nsubject to initial conditions q.0/ D q0, p.0/ D p0. Here \u0010 .t/ D .\nij.t// is a Nc \u0004 Nc\nmatrix-valued function of t which we refer to as the “memory kernel”. The term\nFd D \u0003\nt\nZ\n0\n\u0010 .t \u0003 s/p.s/dsdt\nrepresents a drag force acting on the system due to the interaction with the particles\nof the bath. dB is the increment of the colored-noise (non-Gaussian) stochastic\nprocess. Often this increment is treated formally as an impulse R.t/dt, where R\nis referred to as a “random force,” which calls to mind the origin of the stochastic\nterm as the model for interaction with a large (but ﬁnite) heat bath. We use this\nlanguage for consistency with the literature. The driving forces are correlated in a\nway that is described by the ﬂuctuation-dissipation theorem [202, 402]. This states\nthat at temperature T the components of the random forces satisfy\nhRi.t C s/Rj.t/i D kBT \nij.s/ıij;\ns \b 0:\n(8.59)\nHere, ıij is the Kronecker delta, and kB is Boltzmann’s constant.\nNumerical methods for treating (8.57)–(8.58) include calculation of the drag\nforce Fd which requires a convolution of the momenta with \u0010 .t/ and therefore\nstorage of some portion of the time-history of p. Typically we will compute a\ndiscrete sequence of p0; p1; : : : ; and so it will be necessary to store a collection\nof, say ` > 0, previous momentum vectors. This may be somewhat demanding in a\nlarge scale simulation setting. Moreover, computing R requires the generation of a\nsequence of random numbers with prescribed correlation, as speciﬁed in Eq. (8.59).\nBoth these issues may be addressed sensibly using the technique of Prony series and\nan extended variable representation\nIn the remainder of this discussion, for the purpose of simpliﬁed presentation, we\nconﬁne ourselves to the simple case of a scalar memory kernel, writing\n\u0010 .t/ D \n.t/I:\n",
+    "verbatim_scope": "完整对应原页文字层，逐字保留；本条数学成分由statement_latex及statement_scope定位。",
+    "proof_latex": null,
+    "proof_note": "对应原页推导逐字保存在statement_verbatim/original_page_text；排版以原页PDF为准。",
+    "original_page_text": [
+      {
+        "pdf_page": 395,
+        "printed_page": 374,
+        "text": "374\n8\nExtended Variable Methods\nand have to be modelled as part of the simulation process. Our presentation of this\ntopic follows that of [19] and earlier works [69, 85, 204, 276] which treat the non-\nMarkovian Generalized Langevin equation as a Markov system in an extended phase\nspace.\nThe equations of Generalized Langevin dynamics are normally written in the\nform\ndq D M\u00021pdt;\n(8.57)\ndp D \u0003rU.q/dt \u0003\nt\nZ\n0\n\u0010 .t \u0003 s/p.s/dsdt C dB;\n(8.58)\nsubject to initial conditions q.0/ D q0, p.0/ D p0. Here \u0010 .t/ D .\nij.t// is a Nc \u0004 Nc\nmatrix-valued function of t which we refer to as the “memory kernel”. The term\nFd D \u0003\nt\nZ\n0\n\u0010 .t \u0003 s/p.s/dsdt\nrepresents a drag force acting on the system due to the interaction with the particles\nof the bath. dB is the increment of the colored-noise (non-Gaussian) stochastic\nprocess. Often this increment is treated formally as an impulse R.t/dt, where R\nis referred to as a “random force,” which calls to mind the origin of the stochastic\nterm as the model for interaction with a large (but ﬁnite) heat bath. We use this\nlanguage for consistency with the literature. The driving forces are correlated in a\nway that is described by the ﬂuctuation-dissipation theorem [202, 402]. This states\nthat at temperature T the components of the random forces satisfy\nhRi.t C s/Rj.t/i D kBT \nij.s/ıij;\ns \b 0:\n(8.59)\nHere, ıij is the Kronecker delta, and kB is Boltzmann’s constant.\nNumerical methods for treating (8.57)–(8.58) include calculation of the drag\nforce Fd which requires a convolution of the momenta with \u0010 .t/ and therefore\nstorage of some portion of the time-history of p. Typically we will compute a\ndiscrete sequence of p0; p1; : : : ; and so it will be necessary to store a collection\nof, say ` > 0, previous momentum vectors. This may be somewhat demanding in a\nlarge scale simulation setting. Moreover, computing R requires the generation of a\nsequence of random numbers with prescribed correlation, as speciﬁed in Eq. (8.59).\nBoth these issues may be addressed sensibly using the technique of Prony series and\nan extended variable representation\nIn the remainder of this discussion, for the purpose of simpliﬁed presentation, we\nconﬁne ourselves to the simple case of a scalar memory kernel, writing\n\u0010 .t/ D \n.t/I:\n"
+      }
+    ],
+    "numbered_equations": [
+      "8.59"
+    ],
+    "transcription_note": "文字层逐字保留；数学排版另行转写，原页中的特殊字形编码不静默替换。PDF420仅取Exercises之前。",
+    "context_notation": [],
+    "extra_assumptions": [
+      "修正版作为单位质量下的一般矩阵协方差目标，不声称任意Γ均可实现为随机过程；正定协方差/核存在性列缺口。"
+    ],
+    "issues": [
+      "已目视核对原页PDF395：一般矩阵核后额外乘δᵢⱼ会消掉交叉相关，只在对角核/独立分量解释下成立；标量核特化没有此问题。颜色与非Gaussian不是同义条件。"
+    ],
+    "statement_scope": "Printed与一般矩阵协方差目标及标量核定义；不包含涨落耗散定理的物理推导。",
+    "lean_decl": "MD.Ch08.randomForceQualification",
+    "lean_declarations": [
+      "MD.Ch08.randomForceQualification",
+      "MD.Ch08.gleFDPrinted",
+      "MD.Ch08.gleFD_corrected",
+      "MD.Ch08.scalarMemoryMatrix"
+    ],
+    "source_page_verification": "见source_page_checks.json，已目视核对本条原页。",
+    "repair_log": [],
+    "documented_priors": []
+  },
+  {
+    "source_id": "MD-8.7-PronyKernel",
+    "kind": "unnumbered_claim",
+    "label": null,
+    "section": "8.7",
+    "printed_page": "375",
+    "pdf_page": "396",
+    "statement_latex": "γ(t)=Σₖ(cₖ/τₖ)exp(−t/τₖ), t≥0. (8.60).",
+    "statement_verbatim": "8.7\nGeneralized Langevin Dynamics\n375\nFor systems in which the memory kernel decays fairly rapidly, it is not unreasonable\nto consider its approximation by a linear combination of exponential functions, a so-\ncalled Prony series:\n\n.t/ D\nkmax\nX\nkD1\nck\n\u0002k\nexp\n\u0002\n\u0003 t\n\u0002k\n\u0003\n;\nt \b 0:\n(8.60)\nThe properties of the system in the limit \u0002k ! 0 are studied in [293].\nThe use of this representation for the memory kernel allows us to replace\nthe history-dependent equations (8.57)–(8.58) by a Markovian system in a larger\ndimensional space, by introducing k additional degrees of freedom per physical\ndegree of freedom. This method obviously increases storage requirements, and,\nin large systems, it may be signiﬁcant. However, the evolution of these additional\nvariables is elementary and the overall computational cost low.\n8.7.1\nUsing an Extended Variable Representation\nWe introduce a set of extended variables whose evolution is described by standard\nBrownian motions using Ornstein-Uhlenbeck (OU) processes. For this treatment,\nlet the particle positions and momenta be enumerated as .qi; pi/, i D 1; : : : ; Nc and\ndeﬁne the extended variable, \u000fi;k.t/, associated with the kth term in the Prony series\nin interaction with the ith physical variable by\n\u000fi;k.t/ D \u0003\nt\nZ\n0\nck\n\u0002k\nexp\n\u0002\n\u0003.t \u0003 s/\n\u0002k\n\u0003\npi.s/ds:\n(8.61)\nEquations (8.57)–(8.58) can then be rewritten in the form\ndqi D m\u00021\ni pidt\n(8.62)\ndpi D Fidt C\nkmax\nX\nkD1\n\u000fi;kdt C Ridt:\n(8.63)\nWe note that \u000fi;k is the solution of an ODE of the form\nd\u000fi;k D \u0003 1\n\u0002k\n\u000fi;k.t/dt \u0003 ck\n\u0002k\npidt:\n(8.64)\nWe have thus resolved the convolution integral.\n",
+    "verbatim_scope": "完整对应原页文字层，逐字保留；本条数学成分由statement_latex及statement_scope定位。",
+    "proof_latex": null,
+    "proof_note": "对应原页推导逐字保存在statement_verbatim/original_page_text；排版以原页PDF为准。",
+    "original_page_text": [
+      {
+        "pdf_page": 396,
+        "printed_page": 375,
+        "text": "8.7\nGeneralized Langevin Dynamics\n375\nFor systems in which the memory kernel decays fairly rapidly, it is not unreasonable\nto consider its approximation by a linear combination of exponential functions, a so-\ncalled Prony series:\n\n.t/ D\nkmax\nX\nkD1\nck\n\u0002k\nexp\n\u0002\n\u0003 t\n\u0002k\n\u0003\n;\nt \b 0:\n(8.60)\nThe properties of the system in the limit \u0002k ! 0 are studied in [293].\nThe use of this representation for the memory kernel allows us to replace\nthe history-dependent equations (8.57)–(8.58) by a Markovian system in a larger\ndimensional space, by introducing k additional degrees of freedom per physical\ndegree of freedom. This method obviously increases storage requirements, and,\nin large systems, it may be signiﬁcant. However, the evolution of these additional\nvariables is elementary and the overall computational cost low.\n8.7.1\nUsing an Extended Variable Representation\nWe introduce a set of extended variables whose evolution is described by standard\nBrownian motions using Ornstein-Uhlenbeck (OU) processes. For this treatment,\nlet the particle positions and momenta be enumerated as .qi; pi/, i D 1; : : : ; Nc and\ndeﬁne the extended variable, \u000fi;k.t/, associated with the kth term in the Prony series\nin interaction with the ith physical variable by\n\u000fi;k.t/ D \u0003\nt\nZ\n0\nck\n\u0002k\nexp\n\u0002\n\u0003.t \u0003 s/\n\u0002k\n\u0003\npi.s/ds:\n(8.61)\nEquations (8.57)–(8.58) can then be rewritten in the form\ndqi D m\u00021\ni pidt\n(8.62)\ndpi D Fidt C\nkmax\nX\nkD1\n\u000fi;kdt C Ridt:\n(8.63)\nWe note that \u000fi;k is the solution of an ODE of the form\nd\u000fi;k D \u0003 1\n\u0002k\n\u000fi;k.t/dt \u0003 ck\n\u0002k\npidt:\n(8.64)\nWe have thus resolved the convolution integral.\n"
+      }
+    ],
+    "numbered_equations": [
+      "8.60"
+    ],
+    "transcription_note": "文字层逐字保留；数学排版另行转写，原页中的特殊字形编码不静默替换。PDF420仅取Exercises之前。",
+    "context_notation": [],
+    "extra_assumptions": [
+      "正cₖ、τₖ为后文OU实现所用域；此处只定义Prony核并证明非负，不声称任意记忆核的逼近误差。"
+    ],
+    "issues": [],
+    "statement_scope": "本条列出的数学对象与结论全部；上下文见逐字原页。",
+    "lean_decl": "MD.Ch08.pronyKernel",
+    "lean_declarations": [
+      "MD.Ch08.pronyKernel",
+      "MD.Ch08.pronyQualification",
+      "MD.Ch08.pronyKernel_nonneg"
+    ],
+    "source_page_verification": "见source_page_checks.json，已目视核对本条原页。",
+    "repair_log": [],
+    "documented_priors": []
+  },
+  {
+    "source_id": "MD-8.7.1-PronyMemoryODE",
+    "kind": "unnumbered_claim",
+    "label": null,
+    "section": "8.7.1",
+    "printed_page": "375",
+    "pdf_page": "396",
+    "statement_latex": "ηᵢₖ(t)=−∫₀ᵗ(cₖ/τₖ)exp(−(t−s)/τₖ)pᵢ(s)ds, dηᵢₖ=−ηᵢₖdt/τₖ−cₖpᵢdt/τₖ. Equations (8.61)–(8.64) remove the convolution history.",
+    "statement_verbatim": "8.7\nGeneralized Langevin Dynamics\n375\nFor systems in which the memory kernel decays fairly rapidly, it is not unreasonable\nto consider its approximation by a linear combination of exponential functions, a so-\ncalled Prony series:\n\n.t/ D\nkmax\nX\nkD1\nck\n\u0002k\nexp\n\u0002\n\u0003 t\n\u0002k\n\u0003\n;\nt \b 0:\n(8.60)\nThe properties of the system in the limit \u0002k ! 0 are studied in [293].\nThe use of this representation for the memory kernel allows us to replace\nthe history-dependent equations (8.57)–(8.58) by a Markovian system in a larger\ndimensional space, by introducing k additional degrees of freedom per physical\ndegree of freedom. This method obviously increases storage requirements, and,\nin large systems, it may be signiﬁcant. However, the evolution of these additional\nvariables is elementary and the overall computational cost low.\n8.7.1\nUsing an Extended Variable Representation\nWe introduce a set of extended variables whose evolution is described by standard\nBrownian motions using Ornstein-Uhlenbeck (OU) processes. For this treatment,\nlet the particle positions and momenta be enumerated as .qi; pi/, i D 1; : : : ; Nc and\ndeﬁne the extended variable, \u000fi;k.t/, associated with the kth term in the Prony series\nin interaction with the ith physical variable by\n\u000fi;k.t/ D \u0003\nt\nZ\n0\nck\n\u0002k\nexp\n\u0002\n\u0003.t \u0003 s/\n\u0002k\n\u0003\npi.s/ds:\n(8.61)\nEquations (8.57)–(8.58) can then be rewritten in the form\ndqi D m\u00021\ni pidt\n(8.62)\ndpi D Fidt C\nkmax\nX\nkD1\n\u000fi;kdt C Ridt:\n(8.63)\nWe note that \u000fi;k is the solution of an ODE of the form\nd\u000fi;k D \u0003 1\n\u0002k\n\u000fi;k.t/dt \u0003 ck\n\u0002k\npidt:\n(8.64)\nWe have thus resolved the convolution integral.\n",
+    "verbatim_scope": "完整对应原页文字层，逐字保留；本条数学成分由statement_latex及statement_scope定位。",
+    "proof_latex": null,
+    "proof_note": "对应原页推导逐字保存在statement_verbatim/original_page_text；排版以原页PDF为准。",
+    "original_page_text": [
+      {
+        "pdf_page": 396,
+        "printed_page": 375,
+        "text": "8.7\nGeneralized Langevin Dynamics\n375\nFor systems in which the memory kernel decays fairly rapidly, it is not unreasonable\nto consider its approximation by a linear combination of exponential functions, a so-\ncalled Prony series:\n\n.t/ D\nkmax\nX\nkD1\nck\n\u0002k\nexp\n\u0002\n\u0003 t\n\u0002k\n\u0003\n;\nt \b 0:\n(8.60)\nThe properties of the system in the limit \u0002k ! 0 are studied in [293].\nThe use of this representation for the memory kernel allows us to replace\nthe history-dependent equations (8.57)–(8.58) by a Markovian system in a larger\ndimensional space, by introducing k additional degrees of freedom per physical\ndegree of freedom. This method obviously increases storage requirements, and,\nin large systems, it may be signiﬁcant. However, the evolution of these additional\nvariables is elementary and the overall computational cost low.\n8.7.1\nUsing an Extended Variable Representation\nWe introduce a set of extended variables whose evolution is described by standard\nBrownian motions using Ornstein-Uhlenbeck (OU) processes. For this treatment,\nlet the particle positions and momenta be enumerated as .qi; pi/, i D 1; : : : ; Nc and\ndeﬁne the extended variable, \u000fi;k.t/, associated with the kth term in the Prony series\nin interaction with the ith physical variable by\n\u000fi;k.t/ D \u0003\nt\nZ\n0\nck\n\u0002k\nexp\n\u0002\n\u0003.t \u0003 s/\n\u0002k\n\u0003\npi.s/ds:\n(8.61)\nEquations (8.57)–(8.58) can then be rewritten in the form\ndqi D m\u00021\ni pidt\n(8.62)\ndpi D Fidt C\nkmax\nX\nkD1\n\u000fi;kdt C Ridt:\n(8.63)\nWe note that \u000fi;k is the solution of an ODE of the form\nd\u000fi;k D \u0003 1\n\u0002k\n\u000fi;k.t/dt \u0003 ck\n\u0002k\npidt:\n(8.64)\nWe have thus resolved the convolution integral.\n"
+      }
+    ],
+    "numbered_equations": [
+      "8.61",
+      "8.62",
+      "8.63",
+      "8.64"
+    ],
+    "transcription_note": "文字层逐字保留；数学排版另行转写，原页中的特殊字形编码不静默替换。PDF420仅取Exercises之前。",
+    "context_notation": [],
+    "extra_assumptions": [
+      "p连续、τ正保证有限区间卷积合法；仅消去有限Prony历史，未声称无限Prony极限或解分布等价。"
+    ],
+    "issues": [],
+    "statement_scope": "卷积辅助定义、微分关系和有限和等式；与扩展随机解的完整等价列缺口。",
+    "lean_decl": "MD.Ch08.pronyMemory",
+    "lean_declarations": [
+      "MD.Ch08.pronyMemory",
+      "MD.Ch08.pronyMemory_derivative",
+      "MD.Ch08.pronyMomentumDrift",
+      "MD.Ch08.pronyMemory_sum"
+    ],
+    "source_page_verification": "见source_page_checks.json，已目视核对本条原页。",
+    "repair_log": [],
+    "documented_priors": []
+  },
+  {
+    "source_id": "MD-8.7.1-PronyOUStationarity",
+    "kind": "unnumbered_claim",
+    "label": null,
+    "section": "8.7.1",
+    "printed_page": "376",
+    "pdf_page": "397",
+    "statement_latex": "dRᵢₖ=−Rᵢₖdt/τₖ+√(2k_BT cₖ)dWᵢₖ/τₖ; E Rᵢₖ=0 and E[Rᵢₖ(t+s)Rᵢₖ(t)]=(k_BT cₖ/τₖ)e^(−s/τₖ). Rᵢ=ΣₖRᵢₖ. (8.65)–(8.67).",
+    "statement_verbatim": "376\n8\nExtended Variable Methods\nTo calculate the random forces associated to the kth term of the expansion, we\nnote that these can be viewed as the solution of a linear SDE, speciﬁcally\ndRi;k D \u0003 1\n\u0002k\nRi;k.t/dt C 1\n\u0002k\np\n2kBTckdWi;k.t/\n(8.65)\nwhere Wi;k is a standard Wiener process. The random force is seen to be deﬁned as\nthe solution of an Ornstein-Uhlenbeck process induced by the Prony representation.\nIt is easily shown that Ri;k.t/ has zero mean and autocorrelation deﬁned by\nhRi;k.t C s/Ri;k.t/i D kBTck\n\u0002k\nexp\n\u0002\n\u0003 1\n\u0002k\ns\n\u0003\n;\ns \b 0\n(8.66)\nThe total random force is then obtained by summation\nRi D\nkmax\nX\nkD1\nRi;k:\n(8.67)\nObserve that both random and drag forces are incorporated via summation of the\ncomponents \u000fi;k and Ri;k deﬁned by linear equations, respectively the ODE (8.64)\nand SDE (8.65). It is therefore possible to replace these components by their sum\n\u0007i;k D \u000fi;k C Ri;k\nwhich may be evolved by a single SDE. The equations therefore become\ndqi D m\u00021\ni pidt;\n(8.68)\ndpi D Fidt C\nkmax\nX\nkD1\n\u0007i;kdt;\n(8.69)\nd\u0007i;k D \u0003 1\n\u0002k\n\u0007i;kdt \u0003 ck\n\u0002k\npidt C 1\n\u0002k\np\n2kBTckdWi;k:\n(8.70)\nThe relation between the Prony series representation and Langevin dynamics can be\nseen in an informal sense by multiplying the equation for \u0007i;k equation by \u0002k, and\nconsidering \u0002k ! 0, giving\n\u0007i;kdt D \u0003ckpidt C\np\n2kBTckdWi;k;\nwhich results in\ndpi D Fidt \u0003\n kmax\nX\nkD1\nck\n!\npidt C\np\n2kBT\n`\nX\nkD1\npckdWi;k:\n",
+    "verbatim_scope": "完整对应原页文字层，逐字保留；本条数学成分由statement_latex及statement_scope定位。",
+    "proof_latex": null,
+    "proof_note": "对应原页推导逐字保存在statement_verbatim/original_page_text；排版以原页PDF为准。",
+    "original_page_text": [
+      {
+        "pdf_page": 397,
+        "printed_page": 376,
+        "text": "376\n8\nExtended Variable Methods\nTo calculate the random forces associated to the kth term of the expansion, we\nnote that these can be viewed as the solution of a linear SDE, speciﬁcally\ndRi;k D \u0003 1\n\u0002k\nRi;k.t/dt C 1\n\u0002k\np\n2kBTckdWi;k.t/\n(8.65)\nwhere Wi;k is a standard Wiener process. The random force is seen to be deﬁned as\nthe solution of an Ornstein-Uhlenbeck process induced by the Prony representation.\nIt is easily shown that Ri;k.t/ has zero mean and autocorrelation deﬁned by\nhRi;k.t C s/Ri;k.t/i D kBTck\n\u0002k\nexp\n\u0002\n\u0003 1\n\u0002k\ns\n\u0003\n;\ns \b 0\n(8.66)\nThe total random force is then obtained by summation\nRi D\nkmax\nX\nkD1\nRi;k:\n(8.67)\nObserve that both random and drag forces are incorporated via summation of the\ncomponents \u000fi;k and Ri;k deﬁned by linear equations, respectively the ODE (8.64)\nand SDE (8.65). It is therefore possible to replace these components by their sum\n\u0007i;k D \u000fi;k C Ri;k\nwhich may be evolved by a single SDE. The equations therefore become\ndqi D m\u00021\ni pidt;\n(8.68)\ndpi D Fidt C\nkmax\nX\nkD1\n\u0007i;kdt;\n(8.69)\nd\u0007i;k D \u0003 1\n\u0002k\n\u0007i;kdt \u0003 ck\n\u0002k\npidt C 1\n\u0002k\np\n2kBTckdWi;k:\n(8.70)\nThe relation between the Prony series representation and Langevin dynamics can be\nseen in an informal sense by multiplying the equation for \u0007i;k equation by \u0002k, and\nconsidering \u0002k ! 0, giving\n\u0007i;kdt D \u0003ckpidt C\np\n2kBTckdWi;k;\nwhich results in\ndpi D Fidt \u0003\n kmax\nX\nkD1\nck\n!\npidt C\np\n2kBT\n`\nX\nkD1\npckdWi;k:\n"
+      }
+    ],
+    "numbered_equations": [
+      "8.65",
+      "8.66",
+      "8.67"
+    ],
+    "transcription_note": "文字层逐字保留；数学排版另行转写，原页中的特殊字形编码不静默替换。PDF420仅取Exercises之前。",
+    "context_notation": [],
+    "extra_assumptions": [
+      "为(8.66)补平稳Gaussian初态及其与未来整条W独立；确定初态OU一般没有所印不依赖t的协方差。多分量实际实现使用独立W坐标。"
+    ],
+    "issues": [],
+    "statement_scope": "单个Prony OU的完整资格及平稳均值/协方差目标、总随机力定义。",
+    "lean_decl": "MD.Ch08.stationaryPronyOU",
+    "lean_declarations": [
+      "MD.Ch08.stationaryPronyOU",
+      "MD.Ch08.pronyOU_covariance",
+      "MD.Ch08.totalPronyRandomForce"
+    ],
+    "source_page_verification": "见source_page_checks.json，已目视核对本条原页。",
+    "repair_log": [],
+    "documented_priors": []
+  },
+  {
+    "source_id": "MD-8.7.1-CombinedPronyVariable",
+    "kind": "definition",
+    "label": null,
+    "section": "8.7.1",
+    "printed_page": "376",
+    "pdf_page": "397",
+    "statement_latex": "σᵢₖ=ηᵢₖ+Rᵢₖ yields dσᵢₖ=−σᵢₖdt/τₖ−cₖpᵢdt/τₖ+√(2k_BT cₖ)dWᵢₖ/τₖ. (8.68)–(8.70).",
+    "statement_verbatim": "376\n8\nExtended Variable Methods\nTo calculate the random forces associated to the kth term of the expansion, we\nnote that these can be viewed as the solution of a linear SDE, speciﬁcally\ndRi;k D \u0003 1\n\u0002k\nRi;k.t/dt C 1\n\u0002k\np\n2kBTckdWi;k.t/\n(8.65)\nwhere Wi;k is a standard Wiener process. The random force is seen to be deﬁned as\nthe solution of an Ornstein-Uhlenbeck process induced by the Prony representation.\nIt is easily shown that Ri;k.t/ has zero mean and autocorrelation deﬁned by\nhRi;k.t C s/Ri;k.t/i D kBTck\n\u0002k\nexp\n\u0002\n\u0003 1\n\u0002k\ns\n\u0003\n;\ns \b 0\n(8.66)\nThe total random force is then obtained by summation\nRi D\nkmax\nX\nkD1\nRi;k:\n(8.67)\nObserve that both random and drag forces are incorporated via summation of the\ncomponents \u000fi;k and Ri;k deﬁned by linear equations, respectively the ODE (8.64)\nand SDE (8.65). It is therefore possible to replace these components by their sum\n\u0007i;k D \u000fi;k C Ri;k\nwhich may be evolved by a single SDE. The equations therefore become\ndqi D m\u00021\ni pidt;\n(8.68)\ndpi D Fidt C\nkmax\nX\nkD1\n\u0007i;kdt;\n(8.69)\nd\u0007i;k D \u0003 1\n\u0002k\n\u0007i;kdt \u0003 ck\n\u0002k\npidt C 1\n\u0002k\np\n2kBTckdWi;k:\n(8.70)\nThe relation between the Prony series representation and Langevin dynamics can be\nseen in an informal sense by multiplying the equation for \u0007i;k equation by \u0002k, and\nconsidering \u0002k ! 0, giving\n\u0007i;kdt D \u0003ckpidt C\np\n2kBTckdWi;k;\nwhich results in\ndpi D Fidt \u0003\n kmax\nX\nkD1\nck\n!\npidt C\np\n2kBT\n`\nX\nkD1\npckdWi;k:\n",
+    "verbatim_scope": "完整对应原页文字层，逐字保留；本条数学成分由statement_latex及statement_scope定位。",
+    "proof_latex": null,
+    "proof_note": "对应原页推导逐字保存在statement_verbatim/original_page_text；排版以原页PDF为准。",
+    "original_page_text": [
+      {
+        "pdf_page": 397,
+        "printed_page": 376,
+        "text": "376\n8\nExtended Variable Methods\nTo calculate the random forces associated to the kth term of the expansion, we\nnote that these can be viewed as the solution of a linear SDE, speciﬁcally\ndRi;k D \u0003 1\n\u0002k\nRi;k.t/dt C 1\n\u0002k\np\n2kBTckdWi;k.t/\n(8.65)\nwhere Wi;k is a standard Wiener process. The random force is seen to be deﬁned as\nthe solution of an Ornstein-Uhlenbeck process induced by the Prony representation.\nIt is easily shown that Ri;k.t/ has zero mean and autocorrelation deﬁned by\nhRi;k.t C s/Ri;k.t/i D kBTck\n\u0002k\nexp\n\u0002\n\u0003 1\n\u0002k\ns\n\u0003\n;\ns \b 0\n(8.66)\nThe total random force is then obtained by summation\nRi D\nkmax\nX\nkD1\nRi;k:\n(8.67)\nObserve that both random and drag forces are incorporated via summation of the\ncomponents \u000fi;k and Ri;k deﬁned by linear equations, respectively the ODE (8.64)\nand SDE (8.65). It is therefore possible to replace these components by their sum\n\u0007i;k D \u000fi;k C Ri;k\nwhich may be evolved by a single SDE. The equations therefore become\ndqi D m\u00021\ni pidt;\n(8.68)\ndpi D Fidt C\nkmax\nX\nkD1\n\u0007i;kdt;\n(8.69)\nd\u0007i;k D \u0003 1\n\u0002k\n\u0007i;kdt \u0003 ck\n\u0002k\npidt C 1\n\u0002k\np\n2kBTckdWi;k:\n(8.70)\nThe relation between the Prony series representation and Langevin dynamics can be\nseen in an informal sense by multiplying the equation for \u0007i;k equation by \u0002k, and\nconsidering \u0002k ! 0, giving\n\u0007i;kdt D \u0003ckpidt C\np\n2kBTckdWi;k;\nwhich results in\ndpi D Fidt \u0003\n kmax\nX\nkD1\nck\n!\npidt C\np\n2kBT\n`\nX\nkD1\npckdWi;k:\n"
+      }
+    ],
+    "numbered_equations": [
+      "8.68",
+      "8.69",
+      "8.70"
+    ],
+    "transcription_note": "文字层逐字保留；数学排版另行转写，原页中的特殊字形编码不静默替换。PDF420仅取Exercises之前。",
+    "context_notation": [],
+    "extra_assumptions": [
+      "额外变量取实数；正质量、c、τ、温度和独立标准向量Wiener写入解规格。e仅把有限噪声坐标编号为(k,i)。",
+      "本条实际是加性扩展SDE和漂移合并恒等式；Markov半群构造、解存在唯一及与非Markov GLE分布等价列缺口。"
+    ],
+    "issues": [],
+    "statement_scope": "有限维扩展SDE完整积分规格及σ=η+R的漂移恒等式。",
+    "lean_decl": "MD.Ch08.GLEState",
+    "lean_declarations": [
+      "MD.Ch08.GLEState",
+      "MD.Ch08.gleDrift",
+      "MD.Ch08.gleNoise",
+      "MD.Ch08.isExtendedGLESolution",
+      "MD.Ch08.combinedProny_drift"
+    ],
+    "source_page_verification": "见source_page_checks.json，已目视核对本条原页。",
+    "repair_log": [],
+    "documented_priors": []
+  },
+  {
+    "source_id": "MD-8.7.1-PronyLangevinLimit",
+    "kind": "unnumbered_claim",
+    "label": null,
+    "section": "8.7.1",
+    "printed_page": "376–377",
+    "pdf_page": "397–398",
+    "statement_latex": "Formally τₖ→0 gives σᵢₖdt=−cₖpᵢdt+√(2k_BT cₖ)dWᵢₖ and Langevin friction γ̂=Σₖcₖ. Independent Gaussian variances add.",
+    "statement_verbatim": "376\n8\nExtended Variable Methods\nTo calculate the random forces associated to the kth term of the expansion, we\nnote that these can be viewed as the solution of a linear SDE, speciﬁcally\ndRi;k D \u0003 1\n\u0002k\nRi;k.t/dt C 1\n\u0002k\np\n2kBTckdWi;k.t/\n(8.65)\nwhere Wi;k is a standard Wiener process. The random force is seen to be deﬁned as\nthe solution of an Ornstein-Uhlenbeck process induced by the Prony representation.\nIt is easily shown that Ri;k.t/ has zero mean and autocorrelation deﬁned by\nhRi;k.t C s/Ri;k.t/i D kBTck\n\u0002k\nexp\n\u0002\n\u0003 1\n\u0002k\ns\n\u0003\n;\ns \b 0\n(8.66)\nThe total random force is then obtained by summation\nRi D\nkmax\nX\nkD1\nRi;k:\n(8.67)\nObserve that both random and drag forces are incorporated via summation of the\ncomponents \u000fi;k and Ri;k deﬁned by linear equations, respectively the ODE (8.64)\nand SDE (8.65). It is therefore possible to replace these components by their sum\n\u0007i;k D \u000fi;k C Ri;k\nwhich may be evolved by a single SDE. The equations therefore become\ndqi D m\u00021\ni pidt;\n(8.68)\ndpi D Fidt C\nkmax\nX\nkD1\n\u0007i;kdt;\n(8.69)\nd\u0007i;k D \u0003 1\n\u0002k\n\u0007i;kdt \u0003 ck\n\u0002k\npidt C 1\n\u0002k\np\n2kBTckdWi;k:\n(8.70)\nThe relation between the Prony series representation and Langevin dynamics can be\nseen in an informal sense by multiplying the equation for \u0007i;k equation by \u0002k, and\nconsidering \u0002k ! 0, giving\n\u0007i;kdt D \u0003ckpidt C\np\n2kBTckdWi;k;\nwhich results in\ndpi D Fidt \u0003\n kmax\nX\nkD1\nck\n!\npidt C\np\n2kBT\n`\nX\nkD1\npckdWi;k:\n\n8.7\nGeneralized Langevin Dynamics\n377\nObserving that the sum of ` independent Guassian random variables of variance ck\nis a Gaussian random variable with variance P`\nkD1 ck, we see that this is in the form\nof Langevin dynamics\ndpi D Fidt \u0003 O\npidt C\np\n2kBT O\ndWi;k;\nwith\nO\n D\nNk\nX\nkD1\nck:\n(For the formal treatment of this limit refer to [293].)\nFor numerical integration, the system (8.68)–(8.70) can be handled via splitting.\nA natural family of methods based on Verlet is the following [19]:\nGeneralized Langevin Dynamics Method\npnC1=2 :D pn C h\n2F.qn/ C h\n2\nkmax\nX\nkD1\n\u0012 n;k;\nqnC1 :D qn C hM\u00021pnC1=2;\n\u0012 nC1;k :D \u000ek\u0012 n;k \u0003 .1 \u0003 \u000ek/ ckpnC1=2 C ˛k\np\n2kBTckZn\nk;\npnC1 :D pnC1=2 C h\n2F.qnC1/ C h\n2\nkmax\nX\nkD1\n\u0012 nC1;k;\nwhere \u0012 n;k is a Nc-dimensional vector, and the components of the Nc-dimensional\nvectors Zn;k are independent standard normal random variables.\nThe real-valued coefﬁcients \u000ek and ˛k which must satisfy, for consistency, the\nequations\n\u000ek D 1 \u0003 h\n\u0002k\nC O.h2/;\n˛k D\np\nh\n\u0002k\nC O.h/:\nAn argument is given in [19] that ˛k and \u000ek should be taken as\n\u000ek D exp.\u0003h=\u0002k/;\n˛k D\ns\n.1 \u0003 \u000ek/2\nh\n;\nsince, for this choice, the Langevin limit is preserved. Alternative methods are\npossible. For many comparisons and numerical experiments, refer to [19].\n",
+    "verbatim_scope": "完整对应原页文字层，逐字保留；本条数学成分由statement_latex及statement_scope定位。",
+    "proof_latex": null,
+    "proof_note": "对应原页推导逐字保存在statement_verbatim/original_page_text；排版以原页PDF为准。",
+    "original_page_text": [
+      {
+        "pdf_page": 397,
+        "printed_page": 376,
+        "text": "376\n8\nExtended Variable Methods\nTo calculate the random forces associated to the kth term of the expansion, we\nnote that these can be viewed as the solution of a linear SDE, speciﬁcally\ndRi;k D \u0003 1\n\u0002k\nRi;k.t/dt C 1\n\u0002k\np\n2kBTckdWi;k.t/\n(8.65)\nwhere Wi;k is a standard Wiener process. The random force is seen to be deﬁned as\nthe solution of an Ornstein-Uhlenbeck process induced by the Prony representation.\nIt is easily shown that Ri;k.t/ has zero mean and autocorrelation deﬁned by\nhRi;k.t C s/Ri;k.t/i D kBTck\n\u0002k\nexp\n\u0002\n\u0003 1\n\u0002k\ns\n\u0003\n;\ns \b 0\n(8.66)\nThe total random force is then obtained by summation\nRi D\nkmax\nX\nkD1\nRi;k:\n(8.67)\nObserve that both random and drag forces are incorporated via summation of the\ncomponents \u000fi;k and Ri;k deﬁned by linear equations, respectively the ODE (8.64)\nand SDE (8.65). It is therefore possible to replace these components by their sum\n\u0007i;k D \u000fi;k C Ri;k\nwhich may be evolved by a single SDE. The equations therefore become\ndqi D m\u00021\ni pidt;\n(8.68)\ndpi D Fidt C\nkmax\nX\nkD1\n\u0007i;kdt;\n(8.69)\nd\u0007i;k D \u0003 1\n\u0002k\n\u0007i;kdt \u0003 ck\n\u0002k\npidt C 1\n\u0002k\np\n2kBTckdWi;k:\n(8.70)\nThe relation between the Prony series representation and Langevin dynamics can be\nseen in an informal sense by multiplying the equation for \u0007i;k equation by \u0002k, and\nconsidering \u0002k ! 0, giving\n\u0007i;kdt D \u0003ckpidt C\np\n2kBTckdWi;k;\nwhich results in\ndpi D Fidt \u0003\n kmax\nX\nkD1\nck\n!\npidt C\np\n2kBT\n`\nX\nkD1\npckdWi;k:\n"
+      },
+      {
+        "pdf_page": 398,
+        "printed_page": 377,
+        "text": "8.7\nGeneralized Langevin Dynamics\n377\nObserving that the sum of ` independent Guassian random variables of variance ck\nis a Gaussian random variable with variance P`\nkD1 ck, we see that this is in the form\nof Langevin dynamics\ndpi D Fidt \u0003 O\npidt C\np\n2kBT O\ndWi;k;\nwith\nO\n D\nNk\nX\nkD1\nck:\n(For the formal treatment of this limit refer to [293].)\nFor numerical integration, the system (8.68)–(8.70) can be handled via splitting.\nA natural family of methods based on Verlet is the following [19]:\nGeneralized Langevin Dynamics Method\npnC1=2 :D pn C h\n2F.qn/ C h\n2\nkmax\nX\nkD1\n\u0012 n;k;\nqnC1 :D qn C hM\u00021pnC1=2;\n\u0012 nC1;k :D \u000ek\u0012 n;k \u0003 .1 \u0003 \u000ek/ ckpnC1=2 C ˛k\np\n2kBTckZn\nk;\npnC1 :D pnC1=2 C h\n2F.qnC1/ C h\n2\nkmax\nX\nkD1\n\u0012 nC1;k;\nwhere \u0012 n;k is a Nc-dimensional vector, and the components of the Nc-dimensional\nvectors Zn;k are independent standard normal random variables.\nThe real-valued coefﬁcients \u000ek and ˛k which must satisfy, for consistency, the\nequations\n\u000ek D 1 \u0003 h\n\u0002k\nC O.h2/;\n˛k D\np\nh\n\u0002k\nC O.h/:\nAn argument is given in [19] that ˛k and \u000ek should be taken as\n\u000ek D exp.\u0003h=\u0002k/;\n˛k D\ns\n.1 \u0003 \u000ek/2\nh\n;\nsince, for this choice, the Langevin limit is preserved. Alternative methods are\npossible. For many comparisons and numerical experiments, refer to [19].\n"
+      }
+    ],
+    "numbered_equations": [],
+    "transcription_note": "文字层逐字保留；数学排版另行转写，原页中的特殊字形编码不静默替换。PDF420仅取Exercises之前。",
+    "context_notation": [],
+    "extra_assumptions": [
+      "仅形式极限系数与真实有限个独立Gaussian线性组合；τ→0过程弱收敛、初始层、统一时间界不在本条声明，列覆盖缺口。"
+    ],
+    "issues": [],
+    "statement_scope": "有效摩擦定义、合并漂移和有限Gaussian求和分布，不是小记忆时间极限定理。",
+    "lean_decl": "MD.Ch08.pronyEffectiveFriction",
+    "lean_declarations": [
+      "MD.Ch08.pronyEffectiveFriction",
+      "MD.Ch08.pronyLimit_drift",
+      "MD.Ch08.independentGaussian_varianceSum"
+    ],
+    "source_page_verification": "见source_page_checks.json，已目视核对本条原页。",
+    "repair_log": [],
+    "documented_priors": []
+  },
+  {
+    "source_id": "MD-8.7.1-GeneralizedLangevinIntegrator",
+    "kind": "definition",
+    "label": null,
+    "section": "8.7.1",
+    "printed_page": "377",
+    "pdf_page": "398",
+    "statement_latex": "The four-step method updates p_half, q_new, σ_new,k=θₖσₖ−(1−θₖ)cₖp_half+αₖ√(2k_BT cₖ)Zₖ, then p_new with the new force and new σ.",
+    "statement_verbatim": "8.7\nGeneralized Langevin Dynamics\n377\nObserving that the sum of ` independent Guassian random variables of variance ck\nis a Gaussian random variable with variance P`\nkD1 ck, we see that this is in the form\nof Langevin dynamics\ndpi D Fidt \u0003 O\npidt C\np\n2kBT O\ndWi;k;\nwith\nO\n D\nNk\nX\nkD1\nck:\n(For the formal treatment of this limit refer to [293].)\nFor numerical integration, the system (8.68)–(8.70) can be handled via splitting.\nA natural family of methods based on Verlet is the following [19]:\nGeneralized Langevin Dynamics Method\npnC1=2 :D pn C h\n2F.qn/ C h\n2\nkmax\nX\nkD1\n\u0012 n;k;\nqnC1 :D qn C hM\u00021pnC1=2;\n\u0012 nC1;k :D \u000ek\u0012 n;k \u0003 .1 \u0003 \u000ek/ ckpnC1=2 C ˛k\np\n2kBTckZn\nk;\npnC1 :D pnC1=2 C h\n2F.qnC1/ C h\n2\nkmax\nX\nkD1\n\u0012 nC1;k;\nwhere \u0012 n;k is a Nc-dimensional vector, and the components of the Nc-dimensional\nvectors Zn;k are independent standard normal random variables.\nThe real-valued coefﬁcients \u000ek and ˛k which must satisfy, for consistency, the\nequations\n\u000ek D 1 \u0003 h\n\u0002k\nC O.h2/;\n˛k D\np\nh\n\u0002k\nC O.h/:\nAn argument is given in [19] that ˛k and \u000ek should be taken as\n\u000ek D exp.\u0003h=\u0002k/;\n˛k D\ns\n.1 \u0003 \u000ek/2\nh\n;\nsince, for this choice, the Langevin limit is preserved. Alternative methods are\npossible. For many comparisons and numerical experiments, refer to [19].\n",
+    "verbatim_scope": "完整对应原页文字层，逐字保留；本条数学成分由statement_latex及statement_scope定位。",
+    "proof_latex": null,
+    "proof_note": "对应原页推导逐字保存在statement_verbatim/original_page_text；排版以原页PDF为准。",
+    "original_page_text": [
+      {
+        "pdf_page": 398,
+        "printed_page": 377,
+        "text": "8.7\nGeneralized Langevin Dynamics\n377\nObserving that the sum of ` independent Guassian random variables of variance ck\nis a Gaussian random variable with variance P`\nkD1 ck, we see that this is in the form\nof Langevin dynamics\ndpi D Fidt \u0003 O\npidt C\np\n2kBT O\ndWi;k;\nwith\nO\n D\nNk\nX\nkD1\nck:\n(For the formal treatment of this limit refer to [293].)\nFor numerical integration, the system (8.68)–(8.70) can be handled via splitting.\nA natural family of methods based on Verlet is the following [19]:\nGeneralized Langevin Dynamics Method\npnC1=2 :D pn C h\n2F.qn/ C h\n2\nkmax\nX\nkD1\n\u0012 n;k;\nqnC1 :D qn C hM\u00021pnC1=2;\n\u0012 nC1;k :D \u000ek\u0012 n;k \u0003 .1 \u0003 \u000ek/ ckpnC1=2 C ˛k\np\n2kBTckZn\nk;\npnC1 :D pnC1=2 C h\n2F.qnC1/ C h\n2\nkmax\nX\nkD1\n\u0012 nC1;k;\nwhere \u0012 n;k is a Nc-dimensional vector, and the components of the Nc-dimensional\nvectors Zn;k are independent standard normal random variables.\nThe real-valued coefﬁcients \u000ek and ˛k which must satisfy, for consistency, the\nequations\n\u000ek D 1 \u0003 h\n\u0002k\nC O.h2/;\n˛k D\np\nh\n\u0002k\nC O.h/:\nAn argument is given in [19] that ˛k and \u000ek should be taken as\n\u000ek D exp.\u0003h=\u0002k/;\n˛k D\ns\n.1 \u0003 \u000ek/2\nh\n;\nsince, for this choice, the Langevin limit is preserved. Alternative methods are\npossible. For many comparisons and numerical experiments, refer to [19].\n"
+      }
+    ],
+    "numbered_equations": [],
+    "transcription_note": "文字层逐字保留；数学排版另行转写，原页中的特殊字形编码不静默替换。PDF420仅取Exercises之前。",
+    "context_notation": [],
+    "extra_assumptions": [
+      "h>0，正质量/c/τ/温度下作物理解读；跨步、模式与空间分量的完整独立正态资格另列gleNormalSequence。",
+      "此处完整单步定义，不包含离散不变分布、全局弱阶或Langevin极限保持的定理。"
+    ],
+    "issues": [],
+    "statement_scope": "四个实际更新及其全部噪声资格。",
+    "lean_decl": "MD.Ch08.gleIntegrator",
+    "lean_declarations": [
+      "MD.Ch08.gleIntegrator",
+      "MD.Ch08.gleNormalSequence"
+    ],
+    "source_page_verification": "见source_page_checks.json，已目视核对本条原页。",
+    "repair_log": [],
+    "documented_priors": []
+  },
+  {
+    "source_id": "MD-8.7.1-GLEConsistentCoefficients",
+    "kind": "unnumbered_claim",
+    "label": null,
+    "section": "8.7.1",
+    "printed_page": "377",
+    "pdf_page": "398",
+    "statement_latex": "For consistency θₖ=1−h/τₖ+O(h²), αₖ=√h/τₖ+O(h). Choose θₖ=exp(−h/τₖ), αₖ=√((1−θₖ)²/h).",
+    "statement_verbatim": "8.7\nGeneralized Langevin Dynamics\n377\nObserving that the sum of ` independent Guassian random variables of variance ck\nis a Gaussian random variable with variance P`\nkD1 ck, we see that this is in the form\nof Langevin dynamics\ndpi D Fidt \u0003 O\npidt C\np\n2kBT O\ndWi;k;\nwith\nO\n D\nNk\nX\nkD1\nck:\n(For the formal treatment of this limit refer to [293].)\nFor numerical integration, the system (8.68)–(8.70) can be handled via splitting.\nA natural family of methods based on Verlet is the following [19]:\nGeneralized Langevin Dynamics Method\npnC1=2 :D pn C h\n2F.qn/ C h\n2\nkmax\nX\nkD1\n\u0012 n;k;\nqnC1 :D qn C hM\u00021pnC1=2;\n\u0012 nC1;k :D \u000ek\u0012 n;k \u0003 .1 \u0003 \u000ek/ ckpnC1=2 C ˛k\np\n2kBTckZn\nk;\npnC1 :D pnC1=2 C h\n2F.qnC1/ C h\n2\nkmax\nX\nkD1\n\u0012 nC1;k;\nwhere \u0012 n;k is a Nc-dimensional vector, and the components of the Nc-dimensional\nvectors Zn;k are independent standard normal random variables.\nThe real-valued coefﬁcients \u000ek and ˛k which must satisfy, for consistency, the\nequations\n\u000ek D 1 \u0003 h\n\u0002k\nC O.h2/;\n˛k D\np\nh\n\u0002k\nC O.h/:\nAn argument is given in [19] that ˛k and \u000ek should be taken as\n\u000ek D exp.\u0003h=\u0002k/;\n˛k D\ns\n.1 \u0003 \u000ek/2\nh\n;\nsince, for this choice, the Langevin limit is preserved. Alternative methods are\npossible. For many comparisons and numerical experiments, refer to [19].\n",
+    "verbatim_scope": "完整对应原页文字层，逐字保留；本条数学成分由statement_latex及statement_scope定位。",
+    "proof_latex": null,
+    "proof_note": "对应原页推导逐字保存在statement_verbatim/original_page_text；排版以原页PDF为准。",
+    "original_page_text": [
+      {
+        "pdf_page": 398,
+        "printed_page": 377,
+        "text": "8.7\nGeneralized Langevin Dynamics\n377\nObserving that the sum of ` independent Guassian random variables of variance ck\nis a Gaussian random variable with variance P`\nkD1 ck, we see that this is in the form\nof Langevin dynamics\ndpi D Fidt \u0003 O\npidt C\np\n2kBT O\ndWi;k;\nwith\nO\n D\nNk\nX\nkD1\nck:\n(For the formal treatment of this limit refer to [293].)\nFor numerical integration, the system (8.68)–(8.70) can be handled via splitting.\nA natural family of methods based on Verlet is the following [19]:\nGeneralized Langevin Dynamics Method\npnC1=2 :D pn C h\n2F.qn/ C h\n2\nkmax\nX\nkD1\n\u0012 n;k;\nqnC1 :D qn C hM\u00021pnC1=2;\n\u0012 nC1;k :D \u000ek\u0012 n;k \u0003 .1 \u0003 \u000ek/ ckpnC1=2 C ˛k\np\n2kBTckZn\nk;\npnC1 :D pnC1=2 C h\n2F.qnC1/ C h\n2\nkmax\nX\nkD1\n\u0012 nC1;k;\nwhere \u0012 n;k is a Nc-dimensional vector, and the components of the Nc-dimensional\nvectors Zn;k are independent standard normal random variables.\nThe real-valued coefﬁcients \u000ek and ˛k which must satisfy, for consistency, the\nequations\n\u000ek D 1 \u0003 h\n\u0002k\nC O.h2/;\n˛k D\np\nh\n\u0002k\nC O.h/:\nAn argument is given in [19] that ˛k and \u000ek should be taken as\n\u000ek D exp.\u0003h=\u0002k/;\n˛k D\ns\n.1 \u0003 \u000ek/2\nh\n;\nsince, for this choice, the Langevin limit is preserved. Alternative methods are\npossible. For many comparisons and numerical experiments, refer to [19].\n"
+      }
+    ],
+    "numbered_equations": [],
+    "transcription_note": "文字层逐字保留；数学排版另行转写，原页中的特殊字形编码不静默替换。PDF420仅取Exercises之前。",
+    "context_notation": [],
+    "extra_assumptions": [
+      "h从正侧趋0、τ固定正；小记忆极限另固定h>0，只陈述单步系数极限，未把它当成随机过程极限或长期采样结论。"
+    ],
+    "issues": [],
+    "statement_scope": "两项一致性渐近和所选单步系数的τ→0极限。",
+    "lean_decl": "MD.Ch08.gleDecay",
+    "lean_declarations": [
+      "MD.Ch08.gleDecay",
+      "MD.Ch08.gleNoiseCoefficient",
+      "MD.Ch08.gleCoefficientConsistency",
+      "MD.Ch08.gleCoefficients_consistent",
+      "MD.Ch08.gleCoefficient_smallMemory"
+    ],
+    "source_page_verification": "见source_page_checks.json，已目视核对本条原页。",
+    "repair_log": [],
+    "documented_priors": []
   }
 ]

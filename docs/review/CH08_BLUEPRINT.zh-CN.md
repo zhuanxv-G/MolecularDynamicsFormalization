@@ -1,6 +1,6 @@
 # 第8章 Lean Blueprint 本地审阅材料
 
-当前已整理60条；网站尚未审阅。正文范围为印刷329–399页（PDF350–420），末页仅取Exercises之前的正文；PDF423起附录不在本轮范围。
+当前已整理69条；网站尚未审阅。正文范围为印刷329–399页（PDF350–420），末页仅取Exercises之前的正文；PDF423起附录不在本轮范围。
 
 ## 1. MD-8.1-CanonicalCorrelation · definition · 印刷p.329–330 / PDFp.350–351
 
@@ -2925,4 +2925,466 @@ def nestedTimeSteps (inner middle outer : ℝ) : Prop :=
 定义；Lean陈述可检查，证明完整性按本条状态区分。
 本条未登记待证缺项。
 位置：Blueprint/Ch08.lean；MD.Ch08.threeLevelPotential, MD.Ch08.nestedTimeSteps。
+
+## 1. MD-8.7-GeneralizedLangevin · definition · 印刷p.374 / PDFp.395
+
+### 2. 原文陈述
+
+dq=M⁻¹pdt, dp=−∇U(q)dt−∫₀ᵗΓ(t−s)p(s)ds dt+dB, q(0)=q₀,p(0)=p₀. Γ is the memory kernel and B is colored noise. (8.57)–(8.58).
+
+### 3. 原文证明
+
+对应原页推导逐字保存在statement_verbatim/original_page_text；排版以原页PDF为准。
+
+原页文字及推导保存在原文JSON的original_page_text；网站子包附对应完整原页PDF。
+
+### 4. 完整当前Lean（原文与修正版独立列出）
+
+```lean
+def memoryDrag (Γ : ℝ → Matrix (Fin n) (Fin n) ℝ) (p : ℝ → Vec n) (t : ℝ) : Vec n :=
+  -∫ s in (0 : ℝ)..t, Γ (t-s) *ᵥ p s
+def generalizedLangevin (P : Measure Ω) (invm : Vec n) (U : Vec n → ℝ)
+    (Γ : ℝ → Matrix (Fin n) (Fin n) ℝ) (B : ℝ → Ω → Vec n)
+    (X : ℝ → Ω → Phase n) (x0 : Phase n) : Prop :=
+  IsProbabilityMeasure P ∧ (∀ i, 0 < invm i) ∧ ContDiff ℝ 1 U ∧ ContinuousOn Γ (Ici 0) ∧
+  (∀ᵐ sample ∂P, ContinuousOn (fun t ↦ X t sample) (Ici 0) ∧
+    ContinuousOn (fun t ↦ B t sample) (Ici 0)) ∧
+  (∀ t : ℝ, 0 ≤ t → Measurable[MeasurableSpace.comap
+    (fun (sample : Ω) (s : Icc (0 : ℝ) t) ↦ B s sample) inferInstance] (X t)) ∧
+  ∀ t, 0 ≤ t →
+    (∀ᵐ sample ∂P, IntervalIntegrable
+      (fun s ↦ -gradient U (X s sample).1+memoryDrag Γ (fun r ↦ (X r sample).2) s) volume 0 t) ∧
+    ∀ᵐ sample ∂P,
+      (X t sample).1=x0.1+∫ s in (0 : ℝ)..t, (fun i ↦ invm i*(X s sample).2 i) ∧
+      (X t sample).2=x0.2+(∫ s in (0 : ℝ)..t,
+        -gradient U (X s sample).1+memoryDrag Γ (fun r ↦ (X r sample).2) s)+B t sample-B 0 sample
+```
+
+### 5. 对照表
+
+| 原文成分 | Lean对应 | 说明 |
+|---|---|---|
+| 本条引用的对象与公式 | MD.Ch08.memoryDrag, MD.Ch08.generalizedLangevin | 连续矩阵记忆核下的卷积及GLE积分解类定义。 |
+
+[EXTRA] B不是Wiener；这里是加性有色噪声增量的积分方程，未把R(t)dt当作白噪声的普通导数。；本条取非负时间连续记忆核以保证内部卷积可积；自然历史适应和正质量为选定强解范围。一般粗糙核与解存在唯一性列缺口。
+记号与上下文：见所列原文与Lean量化变量。
+
+### 6. 审计结论
+
+本地：已对照目视原页核对对象、量词、技术资格和所列覆盖范围；网站尚未审阅。
+疑点：本条暂未发现需单列的原书疑误。
+网站：尚未送审。
+
+### 7. 状态与证明位置
+
+定义；Lean陈述可检查，证明完整性按本条状态区分。
+本条未登记待证缺项。
+位置：Blueprint/Ch08.lean；MD.Ch08.memoryDrag, MD.Ch08.generalizedLangevin。
+
+## 1. MD-8.7-GLEFluctuationDissipationPrinted · definition · 印刷p.374 / PDFp.395
+
+### 2. 原文陈述
+
+⟨Rᵢ(t+s)Rⱼ(t)⟩=k_BT γᵢⱼ(s)δᵢⱼ, s≥0. Γ(t)=γ(t)I in the scalar-kernel specialization. (8.59).
+
+### 3. 原文证明
+
+对应原页推导逐字保存在statement_verbatim/original_page_text；排版以原页PDF为准。
+
+原页文字及推导保存在原文JSON的original_page_text；网站子包附对应完整原页PDF。
+
+### 4. 完整当前Lean（原文与修正版独立列出）
+
+```lean
+def randomForceQualification (P : Measure Ω) (R : ℝ → Ω → Vec n) : Prop :=
+  IsProbabilityMeasure P ∧ ∀ t, 0 ≤ t → ∀ i, MemLp (fun sample ↦ R t sample i) 2 P ∧
+    (∫ sample, R t sample i ∂P)=0
+def gleFDPrinted (P : Measure Ω) (R : ℝ → Ω → Vec n)
+    (Γ : ℝ → Matrix (Fin n) (Fin n) ℝ) (θ : ℝ) : Prop :=
+  0 < θ ∧ randomForceQualification P R ∧ ∀ t s, 0 ≤ t → 0 ≤ s → ∀ i j,
+    (∫ sample, R (t+s) sample i*R t sample j ∂P)=if i=j then θ*Γ s i j else 0
+def gleFD_corrected (P : Measure Ω) (R : ℝ → Ω → Vec n)
+    (Γ : ℝ → Matrix (Fin n) (Fin n) ℝ) (θ : ℝ) : Prop :=
+  0 < θ ∧ randomForceQualification P R ∧ ∀ t s, 0 ≤ t → 0 ≤ s → ∀ i j,
+    (∫ sample, R (t+s) sample i*R t sample j ∂P)=θ*Γ s i j
+def scalarMemoryMatrix (γ : ℝ → ℝ) (t : ℝ) : Matrix (Fin n) (Fin n) ℝ :=
+  Matrix.diagonal (fun _ ↦ γ t)
+```
+
+### 5. 对照表
+
+| 原文成分 | Lean对应 | 说明 |
+|---|---|---|
+| 本条引用的对象与公式 | MD.Ch08.randomForceQualification, MD.Ch08.gleFDPrinted, MD.Ch08.gleFD_corrected, MD.Ch08.scalarMemoryMatrix | Printed与一般矩阵协方差目标及标量核定义；不包含涨落耗散定理的物理推导。 |
+
+[EXTRA] 修正版作为单位质量下的一般矩阵协方差目标，不声称任意Γ均可实现为随机过程；正定协方差/核存在性列缺口。
+记号与上下文：见所列原文与Lean量化变量。
+
+### 6. 审计结论
+
+本地：已对照目视原页核对对象、量词、技术资格和所列覆盖范围；网站尚未审阅。
+疑点：已目视核对原页PDF395：一般矩阵核后额外乘δᵢⱼ会消掉交叉相关，只在对角核/独立分量解释下成立；标量核特化没有此问题。颜色与非Gaussian不是同义条件。
+网站：尚未送审。
+
+### 7. 状态与证明位置
+
+定义；Lean陈述可检查，证明完整性按本条状态区分。
+本条未登记待证缺项。
+位置：Blueprint/Ch08.lean；MD.Ch08.randomForceQualification, MD.Ch08.gleFDPrinted, MD.Ch08.gleFD_corrected, MD.Ch08.scalarMemoryMatrix。
+
+## 1. MD-8.7-PronyKernel · unnumbered_claim · 印刷p.375 / PDFp.396
+
+### 2. 原文陈述
+
+γ(t)=Σₖ(cₖ/τₖ)exp(−t/τₖ), t≥0. (8.60).
+
+### 3. 原文证明
+
+对应原页推导逐字保存在statement_verbatim/original_page_text；排版以原页PDF为准。
+
+原页文字及推导保存在原文JSON的original_page_text；网站子包附对应完整原页PDF。
+
+### 4. 完整当前Lean（原文与修正版独立列出）
+
+```lean
+def pronyKernel {K : ℕ} (c τ : Fin K → ℝ) (t : ℝ) : ℝ :=
+  ∑ k, c k/τ k*Real.exp (-t/τ k)
+def pronyQualification {K : ℕ} (c τ : Fin K → ℝ) : Prop :=
+  ∀ k, 0 < c k ∧ 0 < τ k
+theorem pronyKernel_nonneg {K : ℕ} (c τ : Fin K → ℝ)
+    (h : pronyQualification c τ) (t : ℝ) : 0 ≤ pronyKernel c τ t := by
+  apply Finset.sum_nonneg
+  intro k hk
+  exact mul_nonneg (le_of_lt (div_pos (h k).1 (h k).2)) (le_of_lt (Real.exp_pos _))
+```
+
+### 5. 对照表
+
+| 原文成分 | Lean对应 | 说明 |
+|---|---|---|
+| 本条引用的对象与公式 | MD.Ch08.pronyKernel, MD.Ch08.pronyQualification, MD.Ch08.pronyKernel_nonneg | 本条列出的数学对象与结论全部；上下文见逐字原页。 |
+
+[EXTRA] 正cₖ、τₖ为后文OU实现所用域；此处只定义Prony核并证明非负，不声称任意记忆核的逼近误差。
+记号与上下文：见所列原文与Lean量化变量。
+
+### 6. 审计结论
+
+本地：已对照目视原页核对对象、量词、技术资格和所列覆盖范围；网站尚未审阅。
+疑点：本条暂未发现需单列的原书疑误。
+网站：尚未送审。
+
+### 7. 状态与证明位置
+
+已证；Lean陈述可检查，证明完整性按本条状态区分。
+本条未登记待证缺项。
+位置：Blueprint/Ch08.lean；MD.Ch08.pronyKernel, MD.Ch08.pronyQualification, MD.Ch08.pronyKernel_nonneg。
+
+## 1. MD-8.7.1-PronyMemoryODE · unnumbered_claim · 印刷p.375 / PDFp.396
+
+### 2. 原文陈述
+
+ηᵢₖ(t)=−∫₀ᵗ(cₖ/τₖ)exp(−(t−s)/τₖ)pᵢ(s)ds, dηᵢₖ=−ηᵢₖdt/τₖ−cₖpᵢdt/τₖ. Equations (8.61)–(8.64) remove the convolution history.
+
+### 3. 原文证明
+
+对应原页推导逐字保存在statement_verbatim/original_page_text；排版以原页PDF为准。
+
+原页文字及推导保存在原文JSON的original_page_text；网站子包附对应完整原页PDF。
+
+### 4. 完整当前Lean（原文与修正版独立列出）
+
+```lean
+def pronyMemory (c τ : ℝ) (p : ℝ → ℝ) (t : ℝ) : ℝ :=
+  -∫ s in (0 : ℝ)..t, c/τ*Real.exp (-(t-s)/τ)*p s
+theorem pronyMemory_derivative (c τ : ℝ) (hτ : 0 < τ)
+    (p : ℝ → ℝ) (hp : Continuous p) (t : ℝ) :
+    HasDerivAt (pronyMemory c τ p) (-pronyMemory c τ p t/τ-c/τ*p t) t := by
+  sorry
+def pronyMomentumDrift {K : ℕ} (F : Vec n) (η : Fin K → Vec n) (R : Vec n) : Vec n :=
+  F+(∑ k, η k)+R
+theorem pronyMemory_sum {K : ℕ} (c τ : Fin K → ℝ) (p : ℝ → Vec n)
+    (hq : pronyQualification c τ) (hp : Continuous p) (t : ℝ) :
+    (∑ k, fun i ↦ pronyMemory (c k) (τ k) (fun s ↦ p s i) t) =
+      memoryDrag (scalarMemoryMatrix (n:=n) (pronyKernel c τ)) p t := by
+  sorry
+```
+
+### 5. 对照表
+
+| 原文成分 | Lean对应 | 说明 |
+|---|---|---|
+| 本条引用的对象与公式 | MD.Ch08.pronyMemory, MD.Ch08.pronyMemory_derivative, MD.Ch08.pronyMomentumDrift, MD.Ch08.pronyMemory_sum | 卷积辅助定义、微分关系和有限和等式；与扩展随机解的完整等价列缺口。 |
+
+[EXTRA] p连续、τ正保证有限区间卷积合法；仅消去有限Prony历史，未声称无限Prony极限或解分布等价。
+记号与上下文：见所列原文与Lean量化变量。
+
+### 6. 审计结论
+
+本地：已对照目视原页核对对象、量词、技术资格和所列覆盖范围；网站尚未审阅。
+疑点：本条暂未发现需单列的原书疑误。
+网站：尚未送审。
+
+### 7. 状态与证明位置
+
+未证陈述；Lean陈述可检查，证明完整性按本条状态区分。
+未证原因：带参指数卷积微分与有限和换积分；不建立一般Volterra随机解理论。
+位置：Blueprint/Ch08.lean；MD.Ch08.pronyMemory, MD.Ch08.pronyMemory_derivative, MD.Ch08.pronyMomentumDrift, MD.Ch08.pronyMemory_sum。
+
+## 1. MD-8.7.1-PronyOUStationarity · unnumbered_claim · 印刷p.376 / PDFp.397
+
+### 2. 原文陈述
+
+dRᵢₖ=−Rᵢₖdt/τₖ+√(2k_BT cₖ)dWᵢₖ/τₖ; E Rᵢₖ=0 and E[Rᵢₖ(t+s)Rᵢₖ(t)]=(k_BT cₖ/τₖ)e^(−s/τₖ). Rᵢ=ΣₖRᵢₖ. (8.65)–(8.67).
+
+### 3. 原文证明
+
+对应原页推导逐字保存在statement_verbatim/original_page_text；排版以原页PDF为准。
+
+原页文字及推导保存在原文JSON的original_page_text；网站子包附对应完整原页PDF。
+
+### 4. 完整当前Lean（原文与修正版独立列出）
+
+```lean
+def stationaryPronyOU (P : Measure Ω) (W : ℝ → Ω → Vec 1) (R : ℝ → Ω → ℝ)
+    (c τ θ : ℝ) : Prop :=
+  independentWiener P 1 W ∧ 0 < c ∧ 0 < τ ∧ 0 < θ ∧
+  HasLaw (R 0) (gaussianReal 0 (Real.toNNReal (θ*c/τ))) P ∧
+  IndepFun (R 0) (fun sample t ↦ W t sample) P ∧
+  (∀ᵐ sample ∂P, ContinuousOn (fun t ↦ R t sample) (Ici 0)) ∧
+  (∀ t, 0 ≤ t → MemLp (R t) 2 P) ∧
+  ∀ t, 0 ≤ t → ∀ᵐ sample ∂P,
+    R t sample=R 0 sample+(∫ s in (0 : ℝ)..t, -R s sample/τ)+
+      Real.sqrt (2*θ*c)/τ*(W t sample 0-W 0 sample 0)
+theorem pronyOU_covariance (P : Measure Ω) (W : ℝ → Ω → Vec 1)
+    (R : ℝ → Ω → ℝ) (c τ θ : ℝ) (hR : stationaryPronyOU P W R c τ θ)
+    (t s : ℝ) (ht : 0 ≤ t) (hs : 0 ≤ s) :
+    (∫ sample, R t sample ∂P)=0 ∧
+      (∫ sample, R (t+s) sample*R t sample ∂P)=θ*c/τ*Real.exp (-s/τ) := by
+  sorry
+def totalPronyRandomForce {K : ℕ} (R : Fin K → ℝ → Ω → ℝ) (t : ℝ) (sample : Ω) : ℝ :=
+  ∑ k, R k t sample
+```
+
+### 5. 对照表
+
+| 原文成分 | Lean对应 | 说明 |
+|---|---|---|
+| 本条引用的对象与公式 | MD.Ch08.stationaryPronyOU, MD.Ch08.pronyOU_covariance, MD.Ch08.totalPronyRandomForce | 单个Prony OU的完整资格及平稳均值/协方差目标、总随机力定义。 |
+
+[EXTRA] 为(8.66)补平稳Gaussian初态及其与未来整条W独立；确定初态OU一般没有所印不依赖t的协方差。多分量实际实现使用独立W坐标。
+记号与上下文：见所列原文与Lean量化变量。
+
+### 6. 审计结论
+
+本地：已对照目视原页核对对象、量词、技术资格和所列覆盖范围；网站尚未审阅。
+疑点：本条暂未发现需单列的原书疑误。
+网站：尚未送审。
+
+### 7. 状态与证明位置
+
+未证陈述；Lean陈述可检查，证明完整性按本条状态区分。
+未证原因：平稳OU随机初态协方差与当前积分解规格的桥接；不新建Gaussian过程理论。
+位置：Blueprint/Ch08.lean；MD.Ch08.stationaryPronyOU, MD.Ch08.pronyOU_covariance, MD.Ch08.totalPronyRandomForce。
+
+## 1. MD-8.7.1-CombinedPronyVariable · definition · 印刷p.376 / PDFp.397
+
+### 2. 原文陈述
+
+σᵢₖ=ηᵢₖ+Rᵢₖ yields dσᵢₖ=−σᵢₖdt/τₖ−cₖpᵢdt/τₖ+√(2k_BT cₖ)dWᵢₖ/τₖ. (8.68)–(8.70).
+
+### 3. 原文证明
+
+对应原页推导逐字保存在statement_verbatim/original_page_text；排版以原页PDF为准。
+
+原页文字及推导保存在原文JSON的original_page_text；网站子包附对应完整原页PDF。
+
+### 4. 完整当前Lean（原文与修正版独立列出）
+
+```lean
+abbrev GLEState (n K : ℕ) := Phase n × (Fin K → Vec n)
+def gleDrift {K : ℕ} (invm : Vec n) (U : Vec n → ℝ) (c τ : Fin K → ℝ)
+    (z : GLEState n K) : GLEState n K :=
+  ((fun i ↦ invm i*z.1.2 i,-gradient U z.1.1+∑ k, z.2 k),
+   fun k i ↦ -z.2 k i/τ k-c k/τ k*z.1.2 i)
+def gleNoise {K : ℕ} (c τ : Fin K → ℝ) (θ : ℝ)
+    (e : Fin (K*n) ≃ Fin K × Fin n) (j : Fin (K*n)) : GLEState n K :=
+  ((0,0),fun k i ↦ if (k,i)=e j then Real.sqrt (2*θ*c k)/τ k else 0)
+def isExtendedGLESolution {K : ℕ} (invm : Vec n) (U : Vec n → ℝ)
+    (c τ : Fin K → ℝ) (θ : ℝ) (e : Fin (K*n) ≃ Fin K × Fin n)
+    (P : Measure Ω) (W : ℝ → Ω → Vec (K*n))
+    (X : ℝ → Ω → GLEState n K) (x0 : GLEState n K) : Prop :=
+  (∀ i, 0 < invm i) ∧ 0 < θ ∧ pronyQualification c τ ∧ ContDiff ℝ 1 U ∧
+  additiveSDE P (K*n) W X x0 (gleDrift invm U c τ) (gleNoise c τ θ e)
+theorem combinedProny_drift (η R c τ p : ℝ) :
+    (-η/τ-c/τ*p)+(-R/τ)=-(η+R)/τ-c/τ*p := by ring
+```
+
+### 5. 对照表
+
+| 原文成分 | Lean对应 | 说明 |
+|---|---|---|
+| 本条引用的对象与公式 | MD.Ch08.GLEState, MD.Ch08.gleDrift, MD.Ch08.gleNoise, MD.Ch08.isExtendedGLESolution, MD.Ch08.combinedProny_drift | 有限维扩展SDE完整积分规格及σ=η+R的漂移恒等式。 |
+
+[EXTRA] 额外变量取实数；正质量、c、τ、温度和独立标准向量Wiener写入解规格。e仅把有限噪声坐标编号为(k,i)。；本条实际是加性扩展SDE和漂移合并恒等式；Markov半群构造、解存在唯一及与非Markov GLE分布等价列缺口。
+记号与上下文：见所列原文与Lean量化变量。
+
+### 6. 审计结论
+
+本地：已对照目视原页核对对象、量词、技术资格和所列覆盖范围；网站尚未审阅。
+疑点：本条暂未发现需单列的原书疑误。
+网站：尚未送审。
+
+### 7. 状态与证明位置
+
+定义；Lean陈述可检查，证明完整性按本条状态区分。
+本条未登记待证缺项。
+位置：Blueprint/Ch08.lean；MD.Ch08.GLEState, MD.Ch08.gleDrift, MD.Ch08.gleNoise, MD.Ch08.isExtendedGLESolution, MD.Ch08.combinedProny_drift。
+
+## 1. MD-8.7.1-PronyLangevinLimit · unnumbered_claim · 印刷p.376–377 / PDFp.397–398
+
+### 2. 原文陈述
+
+Formally τₖ→0 gives σᵢₖdt=−cₖpᵢdt+√(2k_BT cₖ)dWᵢₖ and Langevin friction γ̂=Σₖcₖ. Independent Gaussian variances add.
+
+### 3. 原文证明
+
+对应原页推导逐字保存在statement_verbatim/original_page_text；排版以原页PDF为准。
+
+原页文字及推导保存在原文JSON的original_page_text；网站子包附对应完整原页PDF。
+
+### 4. 完整当前Lean（原文与修正版独立列出）
+
+```lean
+def pronyEffectiveFriction {K : ℕ} (c : Fin K → ℝ) : ℝ := ∑ k, c k
+theorem pronyLimit_drift {K : ℕ} (c : Fin K → ℝ) (F p : ℝ) :
+    F-∑ k, c k*p=F-pronyEffectiveFriction c*p := by
+  simp [pronyEffectiveFriction,Finset.sum_mul]
+theorem independentGaussian_varianceSum {K : ℕ} (P : Measure Ω)
+    (R : Ω → (Fin K → ℝ)) (c : Fin K → ℝ) (hc : ∀ k, 0 ≤ c k)
+    (hR : HasLaw R (Measure.pi (fun _ : Fin K ↦ gaussianReal 0 1)) P) :
+    HasLaw (fun sample ↦ ∑ k, Real.sqrt (c k)*R sample k)
+      (gaussianReal 0 (Real.toNNReal (pronyEffectiveFriction c))) P := by
+  sorry
+```
+
+### 5. 对照表
+
+| 原文成分 | Lean对应 | 说明 |
+|---|---|---|
+| 本条引用的对象与公式 | MD.Ch08.pronyEffectiveFriction, MD.Ch08.pronyLimit_drift, MD.Ch08.independentGaussian_varianceSum | 有效摩擦定义、合并漂移和有限Gaussian求和分布，不是小记忆时间极限定理。 |
+
+[EXTRA] 仅形式极限系数与真实有限个独立Gaussian线性组合；τ→0过程弱收敛、初始层、统一时间界不在本条声明，列覆盖缺口。
+记号与上下文：见所列原文与Lean量化变量。
+
+### 6. 审计结论
+
+本地：已对照目视原页核对对象、量词、技术资格和所列覆盖范围；网站尚未审阅。
+疑点：本条暂未发现需单列的原书疑误。
+网站：尚未送审。
+
+### 7. 状态与证明位置
+
+未证陈述；Lean陈述可检查，证明完整性按本条状态区分。
+未证原因：有限乘积Gaussian线性映射的现成定理桥接。
+位置：Blueprint/Ch08.lean；MD.Ch08.pronyEffectiveFriction, MD.Ch08.pronyLimit_drift, MD.Ch08.independentGaussian_varianceSum。
+
+## 1. MD-8.7.1-GeneralizedLangevinIntegrator · definition · 印刷p.377 / PDFp.398
+
+### 2. 原文陈述
+
+The four-step method updates p_half, q_new, σ_new,k=θₖσₖ−(1−θₖ)cₖp_half+αₖ√(2k_BT cₖ)Zₖ, then p_new with the new force and new σ.
+
+### 3. 原文证明
+
+对应原页推导逐字保存在statement_verbatim/original_page_text；排版以原页PDF为准。
+
+原页文字及推导保存在原文JSON的original_page_text；网站子包附对应完整原页PDF。
+
+### 4. 完整当前Lean（原文与修正版独立列出）
+
+```lean
+def gleIntegrator {K : ℕ} (invm : Vec n) (U : Vec n → ℝ) (c decay noise : Fin K → ℝ)
+    (θ h : ℝ) (Z : Fin K → Vec n) (z : GLEState n K) : GLEState n K :=
+  let ph := z.1.2+(h/2) • (-gradient U z.1.1+∑ k, z.2 k)
+  let qn := z.1.1+(h • fun i ↦ invm i*ph i)
+  let sn := fun k i ↦ decay k*z.2 k i-(1-decay k)*c k*ph i+
+    noise k*Real.sqrt (2*θ*c k)*Z k i
+  ((qn,ph+(h/2) • (-gradient U qn+∑ k, sn k)),sn)
+def gleNormalSequence {K : ℕ} (P : Measure Ω) (Z : ℕ → Ω → Fin K → Vec n) : Prop :=
+  IsProbabilityMeasure P ∧ iIndepFun Z P ∧ ∀ j,
+    HasLaw (Z j) (Measure.pi (fun _ : Fin K ↦ Measure.pi (fun _ : Fin n ↦ gaussianReal 0 1))) P
+```
+
+### 5. 对照表
+
+| 原文成分 | Lean对应 | 说明 |
+|---|---|---|
+| 本条引用的对象与公式 | MD.Ch08.gleIntegrator, MD.Ch08.gleNormalSequence | 四个实际更新及其全部噪声资格。 |
+
+[EXTRA] h>0，正质量/c/τ/温度下作物理解读；跨步、模式与空间分量的完整独立正态资格另列gleNormalSequence。；此处完整单步定义，不包含离散不变分布、全局弱阶或Langevin极限保持的定理。
+记号与上下文：见所列原文与Lean量化变量。
+
+### 6. 审计结论
+
+本地：已对照目视原页核对对象、量词、技术资格和所列覆盖范围；网站尚未审阅。
+疑点：本条暂未发现需单列的原书疑误。
+网站：尚未送审。
+
+### 7. 状态与证明位置
+
+定义；Lean陈述可检查，证明完整性按本条状态区分。
+本条未登记待证缺项。
+位置：Blueprint/Ch08.lean；MD.Ch08.gleIntegrator, MD.Ch08.gleNormalSequence。
+
+## 1. MD-8.7.1-GLEConsistentCoefficients · unnumbered_claim · 印刷p.377 / PDFp.398
+
+### 2. 原文陈述
+
+For consistency θₖ=1−h/τₖ+O(h²), αₖ=√h/τₖ+O(h). Choose θₖ=exp(−h/τₖ), αₖ=√((1−θₖ)²/h).
+
+### 3. 原文证明
+
+对应原页推导逐字保存在statement_verbatim/original_page_text；排版以原页PDF为准。
+
+原页文字及推导保存在原文JSON的original_page_text；网站子包附对应完整原页PDF。
+
+### 4. 完整当前Lean（原文与修正版独立列出）
+
+```lean
+def gleDecay (τ h : ℝ) : ℝ := Real.exp (-h/τ)
+def gleNoiseCoefficient (τ h : ℝ) : ℝ := Real.sqrt ((1-gleDecay τ h)^2/h)
+def gleCoefficientConsistency (τ : ℝ) (decay noise : ℝ → ℝ) : Prop :=
+  Asymptotics.IsBigO (𝓝[Set.Ioi (0 : ℝ)] 0)
+    (fun h ↦ decay h-(1-h/τ)) (fun h ↦ h^2) ∧
+  Asymptotics.IsBigO (𝓝[Set.Ioi (0 : ℝ)] 0)
+    (fun h ↦ noise h-Real.sqrt h/τ) (fun h ↦ h)
+theorem gleCoefficients_consistent (τ : ℝ) (hτ : 0 < τ) :
+    gleCoefficientConsistency τ (gleDecay τ) (gleNoiseCoefficient τ) := by
+  sorry
+theorem gleCoefficient_smallMemory (h : ℝ) (hh : 0 < h) :
+    Tendsto (fun τ ↦ (gleDecay τ h,gleNoiseCoefficient τ h))
+      (𝓝[Set.Ioi (0 : ℝ)] 0) (𝓝 ((0 : ℝ),1/Real.sqrt h)) := by
+  sorry
+```
+
+### 5. 对照表
+
+| 原文成分 | Lean对应 | 说明 |
+|---|---|---|
+| 本条引用的对象与公式 | MD.Ch08.gleDecay, MD.Ch08.gleNoiseCoefficient, MD.Ch08.gleCoefficientConsistency, MD.Ch08.gleCoefficients_consistent, MD.Ch08.gleCoefficient_smallMemory | 两项一致性渐近和所选单步系数的τ→0极限。 |
+
+[EXTRA] h从正侧趋0、τ固定正；小记忆极限另固定h>0，只陈述单步系数极限，未把它当成随机过程极限或长期采样结论。
+记号与上下文：见所列原文与Lean量化变量。
+
+### 6. 审计结论
+
+本地：已对照目视原页核对对象、量词、技术资格和所列覆盖范围；网站尚未审阅。
+疑点：本条暂未发现需单列的原书疑误。
+网站：尚未送审。
+
+### 7. 状态与证明位置
+
+未证陈述；Lean陈述可检查，证明完整性按本条状态区分。
+未证原因：指数Taylor余项、平方根正侧渐近及指数衰减的短桥接；不建设广义Langevin极限理论。
+位置：Blueprint/Ch08.lean；MD.Ch08.gleDecay, MD.Ch08.gleNoiseCoefficient, MD.Ch08.gleCoefficientConsistency, MD.Ch08.gleCoefficients_consistent, MD.Ch08.gleCoefficient_smallMemory。
 

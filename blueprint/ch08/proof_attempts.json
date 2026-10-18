@@ -160,5 +160,29 @@
     "category": "原书疑误不证",
     "routes": [],
     "decision": "缺大型理论时直接记录缺项；否则最多三条短路线。"
+  },
+  "MD-8.7.1-PronyMemoryODE": {
+    "reason": "带参指数卷积微分与有限和换积分；不建立一般Volterra随机解理论。",
+    "category": "缺大型理论",
+    "routes": [],
+    "decision": "缺大型理论时直接记录缺项；否则最多三条短路线。"
+  },
+  "MD-8.7.1-PronyOUStationarity": {
+    "reason": "平稳OU随机初态协方差与当前积分解规格的桥接；不新建Gaussian过程理论。",
+    "category": "缺大型理论",
+    "routes": [],
+    "decision": "缺大型理论时直接记录缺项；否则最多三条短路线。"
+  },
+  "MD-8.7.1-PronyLangevinLimit": {
+    "reason": "有限乘积Gaussian线性映射的现成定理桥接。",
+    "category": "缺大型理论",
+    "routes": [],
+    "decision": "缺大型理论时直接记录缺项；否则最多三条短路线。"
+  },
+  "MD-8.7.1-GLEConsistentCoefficients": {
+    "reason": "指数Taylor余项、平方根正侧渐近及指数衰减的短桥接；不建设广义Langevin极限理论。",
+    "category": "缺大型理论",
+    "routes": [],
+    "decision": "缺大型理论时直接记录缺项；否则最多三条短路线。"
   }
 }

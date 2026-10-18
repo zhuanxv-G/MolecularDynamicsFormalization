@@ -849,4 +849,155 @@ def threeLevelPotential (bond short long : Vec n → ℝ) : Vec n → ℝ := bon
 def nestedTimeSteps (inner middle outer : ℝ) : Prop :=
   0 < inner ∧ ∃ r s : ℕ, 0 < r ∧ 0 < s ∧ middle=r*inner ∧ outer=s*middle
 
+/-- source_id: MD-8.7-GeneralizedLangevin · 印刷p.374 / PDFp.395
+[EXTRA] B不是Wiener；这里是加性有色噪声增量的积分方程，未把R(t)dt当作白噪声的普通导数。
+[EXTRA] 本条取非负时间连续记忆核以保证内部卷积可积；自然历史适应和正质量为选定强解范围。一般粗糙核与解存在唯一性列缺口。 -/
+def memoryDrag (Γ : ℝ → Matrix (Fin n) (Fin n) ℝ) (p : ℝ → Vec n) (t : ℝ) : Vec n :=
+  -∫ s in (0 : ℝ)..t, Γ (t-s) *ᵥ p s
+def generalizedLangevin (P : Measure Ω) (invm : Vec n) (U : Vec n → ℝ)
+    (Γ : ℝ → Matrix (Fin n) (Fin n) ℝ) (B : ℝ → Ω → Vec n)
+    (X : ℝ → Ω → Phase n) (x0 : Phase n) : Prop :=
+  IsProbabilityMeasure P ∧ (∀ i, 0 < invm i) ∧ ContDiff ℝ 1 U ∧ ContinuousOn Γ (Ici 0) ∧
+  (∀ᵐ sample ∂P, ContinuousOn (fun t ↦ X t sample) (Ici 0) ∧
+    ContinuousOn (fun t ↦ B t sample) (Ici 0)) ∧
+  (∀ t : ℝ, 0 ≤ t → Measurable[MeasurableSpace.comap
+    (fun (sample : Ω) (s : Icc (0 : ℝ) t) ↦ B s sample) inferInstance] (X t)) ∧
+  ∀ t, 0 ≤ t →
+    (∀ᵐ sample ∂P, IntervalIntegrable
+      (fun s ↦ -gradient U (X s sample).1+memoryDrag Γ (fun r ↦ (X r sample).2) s) volume 0 t) ∧
+    ∀ᵐ sample ∂P,
+      (X t sample).1=x0.1+∫ s in (0 : ℝ)..t, (fun i ↦ invm i*(X s sample).2 i) ∧
+      (X t sample).2=x0.2+(∫ s in (0 : ℝ)..t,
+        -gradient U (X s sample).1+memoryDrag Γ (fun r ↦ (X r sample).2) s)+B t sample-B 0 sample
+
+/-- source_id: MD-8.7-GLEFluctuationDissipationPrinted · 印刷p.374 / PDFp.395
+[EXTRA] 修正版作为单位质量下的一般矩阵协方差目标，不声称任意Γ均可实现为随机过程；正定协方差/核存在性列缺口。
+[ERRATUM?] 已目视核对原页PDF395：一般矩阵核后额外乘δᵢⱼ会消掉交叉相关，只在对角核/独立分量解释下成立；标量核特化没有此问题。颜色与非Gaussian不是同义条件。 -/
+def randomForceQualification (P : Measure Ω) (R : ℝ → Ω → Vec n) : Prop :=
+  IsProbabilityMeasure P ∧ ∀ t, 0 ≤ t → ∀ i, MemLp (fun sample ↦ R t sample i) 2 P ∧
+    (∫ sample, R t sample i ∂P)=0
+def gleFDPrinted (P : Measure Ω) (R : ℝ → Ω → Vec n)
+    (Γ : ℝ → Matrix (Fin n) (Fin n) ℝ) (θ : ℝ) : Prop :=
+  0 < θ ∧ randomForceQualification P R ∧ ∀ t s, 0 ≤ t → 0 ≤ s → ∀ i j,
+    (∫ sample, R (t+s) sample i*R t sample j ∂P)=if i=j then θ*Γ s i j else 0
+def gleFD_corrected (P : Measure Ω) (R : ℝ → Ω → Vec n)
+    (Γ : ℝ → Matrix (Fin n) (Fin n) ℝ) (θ : ℝ) : Prop :=
+  0 < θ ∧ randomForceQualification P R ∧ ∀ t s, 0 ≤ t → 0 ≤ s → ∀ i j,
+    (∫ sample, R (t+s) sample i*R t sample j ∂P)=θ*Γ s i j
+def scalarMemoryMatrix (γ : ℝ → ℝ) (t : ℝ) : Matrix (Fin n) (Fin n) ℝ :=
+  Matrix.diagonal (fun _ ↦ γ t)
+
+/-- source_id: MD-8.7-PronyKernel · 印刷p.375 / PDFp.396
+[EXTRA] 正cₖ、τₖ为后文OU实现所用域；此处只定义Prony核并证明非负，不声称任意记忆核的逼近误差。 -/
+def pronyKernel {K : ℕ} (c τ : Fin K → ℝ) (t : ℝ) : ℝ :=
+  ∑ k, c k/τ k*Real.exp (-t/τ k)
+def pronyQualification {K : ℕ} (c τ : Fin K → ℝ) : Prop :=
+  ∀ k, 0 < c k ∧ 0 < τ k
+theorem pronyKernel_nonneg {K : ℕ} (c τ : Fin K → ℝ)
+    (h : pronyQualification c τ) (t : ℝ) : 0 ≤ pronyKernel c τ t := by
+  apply Finset.sum_nonneg
+  intro k hk
+  exact mul_nonneg (le_of_lt (div_pos (h k).1 (h k).2)) (le_of_lt (Real.exp_pos _))
+
+/-- source_id: MD-8.7.1-PronyMemoryODE · 印刷p.375 / PDFp.396
+[EXTRA] p连续、τ正保证有限区间卷积合法；仅消去有限Prony历史，未声称无限Prony极限或解分布等价。 -/
+def pronyMemory (c τ : ℝ) (p : ℝ → ℝ) (t : ℝ) : ℝ :=
+  -∫ s in (0 : ℝ)..t, c/τ*Real.exp (-(t-s)/τ)*p s
+theorem pronyMemory_derivative (c τ : ℝ) (hτ : 0 < τ)
+    (p : ℝ → ℝ) (hp : Continuous p) (t : ℝ) :
+    HasDerivAt (pronyMemory c τ p) (-pronyMemory c τ p t/τ-c/τ*p t) t := by
+  sorry
+def pronyMomentumDrift {K : ℕ} (F : Vec n) (η : Fin K → Vec n) (R : Vec n) : Vec n :=
+  F+(∑ k, η k)+R
+theorem pronyMemory_sum {K : ℕ} (c τ : Fin K → ℝ) (p : ℝ → Vec n)
+    (hq : pronyQualification c τ) (hp : Continuous p) (t : ℝ) :
+    (∑ k, fun i ↦ pronyMemory (c k) (τ k) (fun s ↦ p s i) t) =
+      memoryDrag (scalarMemoryMatrix (n:=n) (pronyKernel c τ)) p t := by
+  sorry
+
+/-- source_id: MD-8.7.1-PronyOUStationarity · 印刷p.376 / PDFp.397
+[EXTRA] 为(8.66)补平稳Gaussian初态及其与未来整条W独立；确定初态OU一般没有所印不依赖t的协方差。多分量实际实现使用独立W坐标。 -/
+def stationaryPronyOU (P : Measure Ω) (W : ℝ → Ω → Vec 1) (R : ℝ → Ω → ℝ)
+    (c τ θ : ℝ) : Prop :=
+  independentWiener P 1 W ∧ 0 < c ∧ 0 < τ ∧ 0 < θ ∧
+  HasLaw (R 0) (gaussianReal 0 (Real.toNNReal (θ*c/τ))) P ∧
+  IndepFun (R 0) (fun sample t ↦ W t sample) P ∧
+  (∀ᵐ sample ∂P, ContinuousOn (fun t ↦ R t sample) (Ici 0)) ∧
+  (∀ t, 0 ≤ t → MemLp (R t) 2 P) ∧
+  ∀ t, 0 ≤ t → ∀ᵐ sample ∂P,
+    R t sample=R 0 sample+(∫ s in (0 : ℝ)..t, -R s sample/τ)+
+      Real.sqrt (2*θ*c)/τ*(W t sample 0-W 0 sample 0)
+theorem pronyOU_covariance (P : Measure Ω) (W : ℝ → Ω → Vec 1)
+    (R : ℝ → Ω → ℝ) (c τ θ : ℝ) (hR : stationaryPronyOU P W R c τ θ)
+    (t s : ℝ) (ht : 0 ≤ t) (hs : 0 ≤ s) :
+    (∫ sample, R t sample ∂P)=0 ∧
+      (∫ sample, R (t+s) sample*R t sample ∂P)=θ*c/τ*Real.exp (-s/τ) := by
+  sorry
+def totalPronyRandomForce {K : ℕ} (R : Fin K → ℝ → Ω → ℝ) (t : ℝ) (sample : Ω) : ℝ :=
+  ∑ k, R k t sample
+
+/-- source_id: MD-8.7.1-CombinedPronyVariable · 印刷p.376 / PDFp.397
+[EXTRA] 额外变量取实数；正质量、c、τ、温度和独立标准向量Wiener写入解规格。e仅把有限噪声坐标编号为(k,i)。
+[EXTRA] 本条实际是加性扩展SDE和漂移合并恒等式；Markov半群构造、解存在唯一及与非Markov GLE分布等价列缺口。 -/
+abbrev GLEState (n K : ℕ) := Phase n × (Fin K → Vec n)
+def gleDrift {K : ℕ} (invm : Vec n) (U : Vec n → ℝ) (c τ : Fin K → ℝ)
+    (z : GLEState n K) : GLEState n K :=
+  ((fun i ↦ invm i*z.1.2 i,-gradient U z.1.1+∑ k, z.2 k),
+   fun k i ↦ -z.2 k i/τ k-c k/τ k*z.1.2 i)
+def gleNoise {K : ℕ} (c τ : Fin K → ℝ) (θ : ℝ)
+    (e : Fin (K*n) ≃ Fin K × Fin n) (j : Fin (K*n)) : GLEState n K :=
+  ((0,0),fun k i ↦ if (k,i)=e j then Real.sqrt (2*θ*c k)/τ k else 0)
+def isExtendedGLESolution {K : ℕ} (invm : Vec n) (U : Vec n → ℝ)
+    (c τ : Fin K → ℝ) (θ : ℝ) (e : Fin (K*n) ≃ Fin K × Fin n)
+    (P : Measure Ω) (W : ℝ → Ω → Vec (K*n))
+    (X : ℝ → Ω → GLEState n K) (x0 : GLEState n K) : Prop :=
+  (∀ i, 0 < invm i) ∧ 0 < θ ∧ pronyQualification c τ ∧ ContDiff ℝ 1 U ∧
+  additiveSDE P (K*n) W X x0 (gleDrift invm U c τ) (gleNoise c τ θ e)
+theorem combinedProny_drift (η R c τ p : ℝ) :
+    (-η/τ-c/τ*p)+(-R/τ)=-(η+R)/τ-c/τ*p := by ring
+
+/-- source_id: MD-8.7.1-PronyLangevinLimit · 印刷p.376–377 / PDFp.397–398
+[EXTRA] 仅形式极限系数与真实有限个独立Gaussian线性组合；τ→0过程弱收敛、初始层、统一时间界不在本条声明，列覆盖缺口。 -/
+def pronyEffectiveFriction {K : ℕ} (c : Fin K → ℝ) : ℝ := ∑ k, c k
+theorem pronyLimit_drift {K : ℕ} (c : Fin K → ℝ) (F p : ℝ) :
+    F-∑ k, c k*p=F-pronyEffectiveFriction c*p := by
+  simp [pronyEffectiveFriction,Finset.sum_mul]
+theorem independentGaussian_varianceSum {K : ℕ} (P : Measure Ω)
+    (R : Ω → (Fin K → ℝ)) (c : Fin K → ℝ) (hc : ∀ k, 0 ≤ c k)
+    (hR : HasLaw R (Measure.pi (fun _ : Fin K ↦ gaussianReal 0 1)) P) :
+    HasLaw (fun sample ↦ ∑ k, Real.sqrt (c k)*R sample k)
+      (gaussianReal 0 (Real.toNNReal (pronyEffectiveFriction c))) P := by
+  sorry
+
+/-- source_id: MD-8.7.1-GeneralizedLangevinIntegrator · 印刷p.377 / PDFp.398
+[EXTRA] h>0，正质量/c/τ/温度下作物理解读；跨步、模式与空间分量的完整独立正态资格另列gleNormalSequence。
+[EXTRA] 此处完整单步定义，不包含离散不变分布、全局弱阶或Langevin极限保持的定理。 -/
+def gleIntegrator {K : ℕ} (invm : Vec n) (U : Vec n → ℝ) (c decay noise : Fin K → ℝ)
+    (θ h : ℝ) (Z : Fin K → Vec n) (z : GLEState n K) : GLEState n K :=
+  let ph := z.1.2+(h/2) • (-gradient U z.1.1+∑ k, z.2 k)
+  let qn := z.1.1+(h • fun i ↦ invm i*ph i)
+  let sn := fun k i ↦ decay k*z.2 k i-(1-decay k)*c k*ph i+
+    noise k*Real.sqrt (2*θ*c k)*Z k i
+  ((qn,ph+(h/2) • (-gradient U qn+∑ k, sn k)),sn)
+def gleNormalSequence {K : ℕ} (P : Measure Ω) (Z : ℕ → Ω → Fin K → Vec n) : Prop :=
+  IsProbabilityMeasure P ∧ iIndepFun Z P ∧ ∀ j,
+    HasLaw (Z j) (Measure.pi (fun _ : Fin K ↦ Measure.pi (fun _ : Fin n ↦ gaussianReal 0 1))) P
+
+/-- source_id: MD-8.7.1-GLEConsistentCoefficients · 印刷p.377 / PDFp.398
+[EXTRA] h从正侧趋0、τ固定正；小记忆极限另固定h>0，只陈述单步系数极限，未把它当成随机过程极限或长期采样结论。 -/
+def gleDecay (τ h : ℝ) : ℝ := Real.exp (-h/τ)
+def gleNoiseCoefficient (τ h : ℝ) : ℝ := Real.sqrt ((1-gleDecay τ h)^2/h)
+def gleCoefficientConsistency (τ : ℝ) (decay noise : ℝ → ℝ) : Prop :=
+  Asymptotics.IsBigO (𝓝[Set.Ioi (0 : ℝ)] 0)
+    (fun h ↦ decay h-(1-h/τ)) (fun h ↦ h^2) ∧
+  Asymptotics.IsBigO (𝓝[Set.Ioi (0 : ℝ)] 0)
+    (fun h ↦ noise h-Real.sqrt h/τ) (fun h ↦ h)
+theorem gleCoefficients_consistent (τ : ℝ) (hτ : 0 < τ) :
+    gleCoefficientConsistency τ (gleDecay τ) (gleNoiseCoefficient τ) := by
+  sorry
+theorem gleCoefficient_smallMemory (h : ℝ) (hh : 0 < h) :
+    Tendsto (fun τ ↦ (gleDecay τ h,gleNoiseCoefficient τ h))
+      (𝓝[Set.Ioi (0 : ℝ)] 0) (𝓝 ((0 : ℝ),1/Real.sqrt h)) := by
+  sorry
+
 end MD.Ch08

@@ -1,6 +1,6 @@
 # 第8章逐条进度
 
-当前正文落盘：60条。全部正文完成：否。章末完整check：未完成。
+当前正文落盘：69条。全部正文完成：否。章末完整check：未完成。
 
 | source_id | 原页PDF | 本地对照 | 编译/公理 | 数学状态 | 网站 |
 |---|---|---|---|---|---|
@@ -64,3 +64,12 @@
 | MD-8.6.3-SINNoseSubsplitting | 393 | PASS | 通过 | 已证 | 待审 |
 | MD-8.6.3-SINForceExactPrinted | 393 | NEEDS_HUMAN | 通过 | 未证陈述 | 待审 |
 | MD-8.6.4-SINThreeLevelPotential | 394 | PASS | 通过 | 定义 | 待审 |
+| MD-8.7-GeneralizedLangevin | 395 | PASS | 通过 | 定义 | 待审 |
+| MD-8.7-GLEFluctuationDissipationPrinted | 395 | NEEDS_HUMAN | 通过 | 定义 | 待审 |
+| MD-8.7-PronyKernel | 396 | PASS | 通过 | 已证 | 待审 |
+| MD-8.7.1-PronyMemoryODE | 396 | PASS | 通过 | 未证陈述 | 待审 |
+| MD-8.7.1-PronyOUStationarity | 397 | PASS | 通过 | 未证陈述 | 待审 |
+| MD-8.7.1-CombinedPronyVariable | 397 | PASS | 通过 | 定义 | 待审 |
+| MD-8.7.1-PronyLangevinLimit | 397–398 | PASS | 通过 | 未证陈述 | 待审 |
+| MD-8.7.1-GeneralizedLangevinIntegrator | 398 | PASS | 通过 | 定义 | 待审 |
+| MD-8.7.1-GLEConsistentCoefficients | 398 | PASS | 通过 | 未证陈述 | 待审 |
