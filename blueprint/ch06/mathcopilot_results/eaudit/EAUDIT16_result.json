@@ -1,0 +1,181 @@
+{
+  "batch": "EAUDIT16",
+  "input_sha256": {
+    "Blueprint/Ch06.lean": "4a2a6cb72c1692f80e3537ab1a71701d429a482780a01226c3dc66a2ebb8b44b",
+    "blueprint/ch06/ch06_source.json": "d7f93cd20eb570744c710f3e07a88b319c082e4155812fee91db0920eb05944e"
+  },
+  "items": [
+    {
+      "source_id": "MD-6.4.4-Lemma61Nonempty",
+      "json_review": {
+        "status": "CORRECTED",
+        "issue_codes": [
+          "TRANSCRIPTION_DISPLAY_PUNCTUATION",
+          "CONTEXT_NOTATION_MISSING",
+          "PROOF_NOTE_INCOMPLETE",
+          "FORMAL_ASSUMPTIONS_NOT_FULLY_DOCUMENTED"
+        ],
+        "corrected_json": {
+          "source_id": "MD-6.4.4-Lemma61Nonempty",
+          "kind": "unnumbered_claim",
+          "label": null,
+          "section": "6.4.4",
+          "printed_page": "255",
+          "pdf_page": "276",
+          "statement_latex": "\\[\\Pr(X(t)\\in C\\mid X(0)=X_0)>0,\\quad\\forall X_0\\in D,\\]",
+          "proof_latex": null,
+          "proof_note": "原书给出Lemma 6.1的Proof论述；本条只摘录展示式，未重录证明。",
+          "proof_discussion_latex": null,
+          "context_notation": [
+            "原书上下文：t>0，C⊂D为开集，X(t)=(q(t),p(t))ᵀ为Langevin动力学(6.47)的解，X0∈D任意。",
+            "原书未明写C非空；C.Nonempty属于本条修正版的额外条件，不加入原引文。"
+          ],
+          "extra_assumptions": [
+            "[EXTRA]补非空目标；桥接实际单位周期相空间、原单位质量、真实Wiener/实际完整Langevin核，σ≠0。原一般质量扩大版不计已证。",
+            "[EXTRA] 25号：补所选解存在规格；目标开集非空修正保持。",
+            "[EXTRA] γ可为任意实数，σ可为任意非零实数，是有限正时刻支持性质的推广；原物理(6.47)为其中的特例。"
+          ],
+          "statement_scope": "原展示式保持原文；两份Lean声明均为增加目标非空条件、并将γ及σ参数推广后的实际周期单位质量核正概率命题。",
+          "coverage_gaps": null
+        },
+        "issues": [
+          {
+            "code": "TRANSCRIPTION_DISPLAY_PUNCTUATION",
+            "field": "statement_latex",
+            "message": "原页在∀X0∈D后为逗号并承接where，当前摘录改作句号。"
+          },
+          {
+            "code": "CONTEXT_NOTATION_MISSING",
+            "field": "context_notation",
+            "message": "单独公式未交代t>0、C为开集以及X为(6.47)的解；这些原书上下文应记录。"
+          },
+          {
+            "code": "PROOF_NOTE_INCOMPLETE",
+            "field": "proof_note",
+            "message": "同一页紧接Lemma 6.1已有Proof段，宜说明仅摘录命题、未重录证明。"
+          },
+          {
+            "code": "FORMAL_ASSUMPTIONS_NOT_FULLY_DOCUMENTED",
+            "field": "extra_assumptions",
+            "message": "应说明γ任意实数及σ任意非零实数相对于原物理系数的推广。"
+          }
+        ],
+        "evidence": [
+          {
+            "source": "R2_PAGES.pdf",
+            "attachment_page": [
+              18
+            ],
+            "location": "印刷255页Lemma 6.1展示式及where句、Proof段",
+            "observation": "公式结尾是逗号；nonempty不是原书已印出的词，而是修正条件。"
+          },
+          {
+            "source": "R2_任务.md",
+            "location": "条目16完整签名；LangevinWeakFeller文件参数及open_pos定理；附录D17、D19–D23、D28–D31",
+            "observation": "两个本条声明均有hCN : C.Nonempty；所引正概率定理确关于相同真实周期核，未借用带sorry的Printed声明。"
+          }
+        ]
+      },
+      "audit": {
+        "lean_decl": "MD.Ch06.lemma61Nonempty; MD.Ch06.lemma61Printed_corrected",
+        "verdict": "PASS",
+        "explanation": "A：该展示式来自同一Lemma 6.1；原页展示式以逗号承接where句，JSON改成句号，已还原。公式单独摘录时需补上原来的t>0、开集C、Langevin解及任意初值的上下文。原页下面有Proof段，当前proof_note应说明仅摘录命题，而不是遗漏这段原书论述。C：两份签名相同且作为修正/推广版均PASS：真实Wiener过程、C∞单位周期势及Lipschitz力、实际单位质量周期端点核；T>0、σ≠0、任意初值x以及非空开集C给出严格正概率。已展开路径存在规格和初值/积分方程、推前核定义，并核对所引open_pos定理的完整文件参数。增加C.Nonempty恰好消除条目15的空集漏洞；γ任意实数、σ任意非零实数是有限时刻可达性的合理推广，不需要为此引入规范不变测度或正摩擦。修正版并未声称一般质量矩阵版本已经覆盖。[EXTRA]应补全该参数推广，不把nonempty写进原文引文冒充原书已印出。",
+        "counterexample": null,
+        "suggested_fix": "仅修订JSON的原式标点、上下文和假设说明；两份非空修正版的签名可保留。原空集疑误留在条目15，不在本条原引文中静默补字。"
+      },
+      "subtask": "EAUDIT16a"
+    },
+    {
+      "source_id": "MD-6.4.4-LangevinGeometricErgodicity",
+      "json_review": {
+        "status": "NEEDS_HUMAN",
+        "issue_codes": [
+          "SOURCE_DISPLAY_OMITTED",
+          "EXTRA_OBSERVABLE_CLASS",
+          "EXTRA_UNSHIFTED_HAMILTONIAN",
+          "ERRATUM_NORMALIZATION_CONVENTION"
+        ],
+        "corrected_json": {
+          "source_id": "MD-6.4.4-LangevinGeometricErgodicity",
+          "kind": "unnumbered_claim",
+          "label": null,
+          "section": "6.4.4",
+          "printed_page": "256",
+          "pdf_page": "277",
+          "statement_latex": "Hence Langevin dynamics is geometrically ergodic with respect to the canonical distribution\n\\[\\rho_\\beta(q,p)=\\exp(-\\beta H(q,p)),\\]\nwhere it is easily checked that\n\\[\\mathcal L_{LD}^{\\dagger}\\rho_\\beta=0.\\]",
+          "proof_latex": null,
+          "proof_note": "原书未给独立完整证明。",
+          "proof_discussion_latex": null,
+          "context_notation": [],
+          "extra_assumptions": [
+            "[EXTRA] Lean采用单位周期、单位质量的实际Langevin核与归一Gibbs概率，显式要求U光滑周期、力全局Lipschitz及β,γ>0。",
+            "[EXTRA] 对每个l≥1，常数在x、f、t之外；f精确限定为可测且|f(y)|≤(1+‖p‖²)^l的点态权界类。一般常数倍由缩放处理；不能称任意仅加权可积函数。",
+            "[EXTRA] 固定有限维时可使用正平移后的Hamiltonian权重与(1+‖p‖²)^l比较，不能对未平移H^l作全局双边比较。",
+            "[ERRATUM?] 原页exp(-βH)未显示归一因子；保留原式，需人工确认省略Z的约定。Lean实际采用归一Gibbs概率。"
+          ],
+          "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
+          "coverage_gaps": null
+        },
+        "issues": [
+          {
+            "code": "SOURCE_DISPLAY_OMITTED",
+            "location": "statement_latex",
+            "message": "原句在附件第1页接有ρβ(q,p)=exp(-βH(q,p))及L†LDρβ=0两个展示公式，现JSON均未收录。"
+          },
+          {
+            "code": "EXTRA_OBSERVABLE_CLASS",
+            "location": "extra_assumptions[0:2]",
+            "message": "第一条仍称全部可测加权可积观测量，第二条及Lean实际限定点态多项式权界；二者不可混同。"
+          },
+          {
+            "code": "EXTRA_UNSHIFTED_HAMILTONIAN",
+            "location": "extra_assumptions[0]",
+            "message": "有界周期U不能保证未平移的H^l与(1+‖p‖²)^l全局双边可比；必须先作正平移。"
+          },
+          {
+            "code": "ERRATUM_NORMALIZATION_CONVENTION",
+            "location": "statement_latex / context_notation",
+            "message": "原页以exp(-βH)称canonical distribution而未显示归一常数。需人工确认这是省略Z的记号约定；原文应保留，不能直接改成已归一概率密度。"
+          }
+        ],
+        "evidence": [
+          "A：附件第1页，印刷256、原书PDF277；已目视核对canonical distribution之后的两个公式。附件第1–4页的提取文本完全一致。",
+          "C：D5、D16–D30给出负梯度力、实际积分方程、存在选解、路径端点、周期投影及Wiener路径推前核；不是仅由命名推断随机动力学。",
+          "C：D11–D14为归一位置Gibbs×各坐标方差β⁻¹的高斯；D27–D28及本条invariantKernel给出测度推进、不变性与观测量平均。",
+          "C：Blueprint/Ch06.lean:3182的量词顺序为∀l≥1，∃C>0、λ>0，∀x、f、t；不是每个f另选常数。"
+        ]
+      },
+      "audit": {
+        "lean_decl": "MD.Ch06.langevinGeometricErgodicity",
+        "verdict": "PASS",
+        "explanation": "PASS指所交Lean签名的语义审校。相空间确为T^n×R^n；U光滑且单位周期，力全局Lipschitz，β、γ严格为正，噪声幅度√(2γ/β)。核来自有限窗真实Langevin积分解及Wiener路径分布；结论依次是归一Gibbs不变、全部不变概率的唯一性、每个整数l≥1上的统一加权指数估计。观测量为所有可测且逐点满足|f(y)|≤(1+‖p‖²)^l的实函数，既不是仅紧支函数，也不是任意加权L¹函数。C、λ可依赖n、U、β、γ、l等此前参数，但不依赖x、f、t；t=0包括在内。Fin n→R的标准范数与欧氏范数在固定有限维可比，不改变这一增长类。归一Gibbs与原页未写Z的exp(-βH)有明确区别，因此A阶段保留归一约定疑问为NEEDS_HUMAN；该疑问及过时EXTRA措辞不构成此正确签名的FAIL。未检查证明完成度。",
+        "counterexample": "EXTRA措辞的反例：U=0、p=0、l=1时H=0，而1+‖p‖²=1，故两权重不存在严格正常数的全局双边比较。这不是对Lean指数估计的反例。",
+        "suggested_fix": "补录原页两个展示式并标记归一约定；EXTRA统一改为逐点权界，并将H权重比较写成正平移后的Hamiltonian。保持现有Lean目标。"
+      },
+      "subtask": "EAUDIT16b"
+    },
+    {
+      "source_id": "MD-6.4.4-LangevinTimeAverage",
+      "json_review": {
+        "status": "APPROVED",
+        "issue_codes": [],
+        "corrected_json": null,
+        "issues": [],
+        "evidence": [
+          "A：附件第2页，印刷256、原书PDF277；从Hence averages along solutions to (6.47)至by computing solutions to the SDE.，两句逐词一致。",
+          "C：本条摘录的textbookLangevinGlobalRandomPhase_integralSolution_ae明确是∀ᵐ sample，∀T≥0的同一全时积分解。",
+          "C：textbookLangevinIntegralSolution_unique_globalLip、LangevinGlobalRandomSolution.family_agree、textbookLangevinPathEndpoint_restrict及实际选解D18–D19提供唯一性和有限窗相容的完整声明；无须借用旁列的Brownian同名family_agree。"
+        ]
+      },
+      "audit": {
+        "lean_decl": "MD.Ch06.langevinTimeAverage",
+        "verdict": "PASS",
+        "explanation": "相空间、归一Gibbs测度、β和γ及Wiener向量与上一条一致。结论确为沿同一随机轨迹的Cesàro时间均值：∀确定x、∀可测实f，若存在l∈N及C≥0使|f|≤C(1+‖p‖²)^l，则对P几乎所有样本，实数T→+∞时T⁻¹∫₀ᵀf(X_s)ds趋于Gibbs空间平均。l=0允许全部有界可测函数；零测例外集可以依赖x、f，并未声称所有x、f共享例外集。GlobalRandomPhase虽按ceil(t)+1选有限窗，但本任务同时提供真实积分解、全局唯一性、窗口一致性及∀T的AE规格，故不是把不相容choose选择误认成一条轨迹。周期过程由该全时解投影得到；hU、hp即便以下划线命名仍是显式前提。没有用初始密度ensemble收敛替代时间平均。sorry不参与本签名判定。",
+        "counterexample": null,
+        "suggested_fix": null
+      },
+      "subtask": "EAUDIT16c"
+    }
+  ],
+  "merged_from": "ch06_eaudit_merged"
+}

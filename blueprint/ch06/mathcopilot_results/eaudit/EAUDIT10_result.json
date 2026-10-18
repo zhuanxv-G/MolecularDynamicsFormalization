@@ -1,0 +1,163 @@
+{
+  "batch": "EAUDIT10",
+  "input_sha256": {
+    "Blueprint/Ch06.lean": "4a2a6cb72c1692f80e3537ab1a71701d429a482780a01226c3dc66a2ebb8b44b",
+    "blueprint/ch06/ch06_source.json": "d7f93cd20eb570744c710f3e07a88b319c082e4155812fee91db0920eb05944e"
+  },
+  "items": [
+    {
+      "source_id": "MD-6.3.7-VectorIto",
+      "json_review": {
+        "status": "CORRECTED",
+        "issue_codes": [
+          "SOURCE_OMITTED_CONNECTING_TEXT"
+        ],
+        "corrected_json": {
+          "source_id": "MD-6.3.7-VectorIto",
+          "kind": "unnumbered_claim",
+          "label": "(6.40)–(6.41)",
+          "section": "6.3.7",
+          "printed_page": "243",
+          "pdf_page": "264",
+          "statement_latex": "If $\\phi$ is a scalar valued function of $\\mathbb R^m$, and $Z(t)$ is the solution of the SDE system\n\\[dZ=a(Z)dt+B dW;\\tag{6.39}\\]\nwhere $a$ is a function in $\\mathbb R^m$ and $B$ is a constant matrix, then we have\n\\[d\\phi(Z(t))=\\nabla\\phi\\cdot[adt+B dW]+\\tfrac12dW^TB^T\\phi''B dW;\\tag{6.40}\\]\nwhere $\\phi''$ is the Hessian matrix of $\\phi$, i.e. the matrix of second partial derivatives of $\\phi$ with respect to pairs of the variables. In some applications $B=B(Z)$, in which case the SDE (6.39) is said to involve multiplicative noise (as oppose to the additive case we consider when $B$ is constant). For a discussion of the differences and applications of these types of noise, see [289, 324].\nAll components on the right hand side of (6.40) are evaluated at $Z(t)$. Then using the shorthand rules $dW_i dW_j=dt\\delta_{ij}$ (where $\\delta_{ij}$ is one if $i=j$, zero otherwise), we have\n\\[d\\phi(Z(t))=\\nabla\\phi\\cdot[adt+B dW]+\\tfrac12\\operatorname{Tr}(B^T\\phi''B)dt.\\tag{6.41}\\]",
+          "proof_latex": null,
+          "proof_note": "原书未给独立完整证明。",
+          "proof_discussion_latex": null,
+          "context_notation": [],
+          "extra_assumptions": [
+            "[EXTRA] 25号：改为共同向量自然过滤上的适应性，补X联合可测、各被积过程全部左和L²及局部均方时间资格；strictVectorSDE已含整族Wiener资格。原文相隔公式按网站corrected_json恢复连接文本。仍缺一般多维Itô理论。"
+          ],
+          "statement_scope": "本条Lean覆盖范围：改为共同向量自然过滤上的适应性，补X联合可测、各被积过程全部左和L²及局部均方时间资格；strictVectorSDE已含整族Wiener资格。原文相隔公式按网站corrected_json恢复连接文本。仍缺一般多维Itô理论。",
+          "coverage_gaps": []
+        },
+        "issues": [
+          {
+            "stage": "A",
+            "description": "附件第34页(6.40)与(6.41)之间仍有“Hessian、常矩阵范围及Wiener规则”的中文省略占位，需恢复原书连接全文；常矩阵、转置次序和1/2均正确。"
+          }
+        ],
+        "evidence": [
+          "A：已核对R1_PAGES.pdf附件第34页，原书PDF页264、印刷页243。附件第34页(6.40)与(6.41)之间仍有“Hessian、常矩阵范围及Wiener规则”的中文省略占位，需恢复原书连接全文；常矩阵、转置次序和1/2均正确。",
+          "C：只读核对本条完整Lean摘录及所引用附录项目定义；标准库按标准数学含义采信。vectorIto：任意n,r、共同向量Wiener及strictVectorSDE、常n×r矩阵B、C² φ、联合可测且共同向量自然历史适应X；vectorGridItoQualification25对每列方向导数被积过程给共同历史适应、每时及每网格L²、局部均方Hölder资格。结论逐T≥0存在r个严格标量积分，且φ增量减∫vectorGenerator等于积分和AE。共同过滤不误限为各自单坐标过滤；vectorDiffusion=Σ_ij(BBᵀ)_ij∂i∂jφ，等价Tr(Bᵀ Hess φ B)，漂移fderiv φ(a)与1/2正确。资格未预设结论，签名PASS；只审签名，不认证sorry证明。"
+        ]
+      },
+      "audit": {
+        "lean_decl": "MD.Ch06.naturalHistory25; MD.Ch06.vectorGridItoQualification25; MD.Ch06.strictItoIntegral; MD.Ch06.strictVectorSDE; MD.Ch06.vectorIto",
+        "verdict": "PASS",
+        "explanation": "vectorIto：任意n,r、共同向量Wiener及strictVectorSDE、常n×r矩阵B、C² φ、联合可测且共同向量自然历史适应X；vectorGridItoQualification25对每列方向导数被积过程给共同历史适应、每时及每网格L²、局部均方Hölder资格。结论逐T≥0存在r个严格标量积分，且φ增量减∫vectorGenerator等于积分和AE。共同过滤不误限为各自单坐标过滤；vectorDiffusion=Σ_ij(BBᵀ)_ij∂i∂jφ，等价Tr(Bᵀ Hess φ B)，漂移fderiv φ(a)与1/2正确。资格未预设结论，签名PASS；只审签名，不认证sorry证明。",
+        "counterexample": null,
+        "suggested_fix": "补回Hessian解释、additive/multiplicative范围和dWi dWj=δij dt原文；保留共同向量历史资格。"
+      },
+      "subtask": "EAUDIT10a"
+    },
+    {
+      "source_id": "MD-6.4.2-CylinderForwardPrinted",
+      "json_review": {
+        "status": "NEEDS_HUMAN",
+        "issue_codes": [
+          "SOURCE_ADJOINT_SUPERSCRIPT",
+          "BOOK_PHI_VS_RHO",
+          "DISCLOSED_DOMAIN_RESTRICTION"
+        ],
+        "corrected_json": {
+          "source_id": "MD-6.4.2-CylinderForwardPrinted",
+          "kind": "definition",
+          "label": null,
+          "section": "6.4.2",
+          "printed_page": "247",
+          "pdf_page": "268",
+          "statement_latex": "Taking the adjoint, the forward Kolmogorov or Fokker-Planck operator is $\\mathcal L^\\dagger$, acting on a density $\\rho(X)$ as\n\\[\\mathcal L^\\dagger\\rho=-\\nabla\\cdot(b_0\\rho)+\\tfrac12\\operatorname{Tr}(B^T\\phi''B).\\]",
+          "proof_latex": null,
+          "proof_note": "原书未给独立完整证明。",
+          "proof_discussion_latex": null,
+          "context_notation": [],
+          "extra_assumptions": [
+            "[EXTRA] 25号：Printed补原页1/2，保留印刷φ而不静默改ρ；独立corrected采用实际周期lift的前向密度表达式，与VectorForward相同。"
+          ],
+          "statement_scope": "本条Lean覆盖范围：Printed补原页1/2，保留印刷φ而不静默改ρ；独立corrected采用实际周期lift的前向密度表达式，与VectorForward相同。",
+          "coverage_gaps": []
+        },
+        "issues": [
+          {
+            "stage": "A",
+            "description": "已目视核对附件第35页：原书用L^†而非JSON的L^*；φ″确为印刷符号，1/2也确实存在，须只改转录的伴随上标，保留φ/ρ疑误。"
+          },
+          {
+            "stage": "C",
+            "description": "cylinderForwardPrinted：任意欧氏n维b0、n×r常B、密度ρ和独立测试φ，负散度作用于b0ρ，扩散作用φ并除2，忠实保留原书符号错误，但这是欧氏局部坐标表达式，不是完整一般T^k1×R^k2域。cylinderForwardPrinted_corrected调用vectorForward，将扩散改为ρ，欧氏辅助定义正确。cylinderForwardPeriodic_corrected在真实T^n×R^n上按Fin n⊕Fin n坐标方向求周期lift的一、二阶方向导数，用Σ_j B_ij B_kj和1/2给前向密度算子；维数与噪声列维一致，作为光滑周期密度的形式表达式正确。它只覆盖k1=k2=n的Langevin相空间，非原页全部k1,k2；且未在类型内强制光滑/密度资格，不能当算子域或不变性定理。"
+          }
+        ],
+        "evidence": [
+          "A：已核对R1_PAGES.pdf附件第35页，原书PDF页268、印刷页247。已目视核对附件第35页：原书用L^†而非JSON的L^*；φ″确为印刷符号，1/2也确实存在，须只改转录的伴随上标，保留φ/ρ疑误。",
+          "C：只读核对本条完整Lean摘录及所引用附录项目定义；标准库按标准数学含义采信。cylinderForwardPrinted：任意欧氏n维b0、n×r常B、密度ρ和独立测试φ，负散度作用于b0ρ，扩散作用φ并除2，忠实保留原书符号错误，但这是欧氏局部坐标表达式，不是完整一般T^k1×R^k2域。cylinderForwardPrinted_corrected调用vectorForward，将扩散改为ρ，欧氏辅助定义正确。cylinderForwardPeriodic_corrected在真实T^n×R^n上按Fin n⊕Fin n坐标方向求周期lift的一、二阶方向导数，用Σ_j B_ij B_kj和1/2给前向密度算子；维数与噪声列维一致，作为光滑周期密度的形式表达式正确。它只覆盖k1=k2=n的Langevin相空间，非原页全部k1,k2；且未在类型内强制光滑/密度资格，不能当算子域或不变性定理。"
+        ]
+      },
+      "audit": {
+        "lean_decl": "MD.Ch06.cylinderForwardPrinted_corrected; MD.Ch06.cylinderForwardPrinted; MD.Ch06.cylinderForwardPeriodic_corrected",
+        "verdict": "NEEDS_HUMAN",
+        "explanation": "cylinderForwardPrinted：任意欧氏n维b0、n×r常B、密度ρ和独立测试φ，负散度作用于b0ρ，扩散作用φ并除2，忠实保留原书符号错误，但这是欧氏局部坐标表达式，不是完整一般T^k1×R^k2域。cylinderForwardPrinted_corrected调用vectorForward，将扩散改为ρ，欧氏辅助定义正确。cylinderForwardPeriodic_corrected在真实T^n×R^n上按Fin n⊕Fin n坐标方向求周期lift的一、二阶方向导数，用Σ_j B_ij B_kj和1/2给前向密度算子；维数与噪声列维一致，作为光滑周期密度的形式表达式正确。它只覆盖k1=k2=n的Langevin相空间，非原页全部k1,k2；且未在类型内强制光滑/密度资格，不能当算子域或不变性定理。",
+        "counterexample": "n=r=1,b0=0,B=1,ρ=0,φ(x)=x²；Printed所得常数1，而真正前向算子作用零密度应为0。",
+        "suggested_fix": "转录L^*恢复L^†；Printed保留φ″疑误。数学修正版扩散必须作用ρ，注明周期版的n+n维和光滑周期函数域限制。"
+      },
+      "subtask": "EAUDIT10b"
+    },
+    {
+      "source_id": "MD-6.4.2-StationaryDensity",
+      "json_review": {
+        "status": "CORRECTED",
+        "issue_codes": [
+          "FORMAL_STATIONARITY_ONLY",
+          "STALE_CONTEXT_NOTATION"
+        ],
+        "corrected_json": {
+          "source_id": "MD-6.4.2-StationaryDensity",
+          "kind": "definition",
+          "label": null,
+          "section": "6.4.2",
+          "printed_page": "247",
+          "pdf_page": "268",
+          "statement_latex": "We have seen that invariant distributions correspond in general to solutions of\n\\[\\mathcal L^\\dagger\\rho_{\\rm eq}\\equiv0.\\]",
+          "proof_latex": null,
+          "proof_note": "原书未给独立完整证明。",
+          "proof_discussion_latex": null,
+          "context_notation": [
+            "仅定义形式stationarity；stationaryDensity已包含可测、非负、可积、体积积分1；generator域、光滑性及真实kernel演化尚未提供，不能由该定义推出测度不变性。"
+          ],
+          "extra_assumptions": [
+            "[EXTRA] 25号：保留总化平稳权重stationaryWeightRaw25作辅助；stationaryDensity补可测、非负、可积及体积积分1后才要求前向算子为零。"
+          ],
+          "statement_scope": "本条Lean覆盖范围：保留总化平稳权重stationaryWeightRaw25作辅助；stationaryDensity补可测、非负、可积及体积积分1后才要求前向算子为零。",
+          "coverage_gaps": []
+        },
+        "issues": [
+          {
+            "stage": "A",
+            "description": "附件第36页L^†ρ_eq≡0及所引句与JSON一致。"
+          },
+          {
+            "stage": "C",
+            "description": "stationaryWeightRaw25只定义任意实函数的vectorForward逐点为0，是总化辅助。stationaryDensity另外要求ρ可测、处处非负、Lebesgue可积及积分1，再要求同一逐点形式方程，概率密度资格已补足，签名作为形式平稳密度定义PASS。D29为负散度加常B扩散半项；n,r任意，当前域为ℝ^n而非一般圆柱。类型未要求C²或适当generator域，Lean的不可微处导数总化为零；所以不能凭该谓词推出真实Markov核不变性，当前context_notation已明示形式stationarity且另给generator域/演化。该限制须持续保留，不把“correspond in general”误报为已证等价定理。"
+          },
+          {
+            "stage": "A",
+            "description": "context_notation仍称非负、归一化另给，与现有stationaryDensity定义不符；应更新为本条已含这些资格，缺少的是光滑/算子域及演化桥接。"
+          }
+        ],
+        "evidence": [
+          "A：已核对R1_PAGES.pdf附件第36页，原书PDF页268、印刷页247。附件第36页L^†ρ_eq≡0及所引句与JSON一致。",
+          "C：只读核对本条完整Lean摘录及所引用附录项目定义；标准库按标准数学含义采信。stationaryWeightRaw25只定义任意实函数的vectorForward逐点为0，是总化辅助。stationaryDensity另外要求ρ可测、处处非负、Lebesgue可积及积分1，再要求同一逐点形式方程，概率密度资格已补足，签名作为形式平稳密度定义PASS。D29为负散度加常B扩散半项；n,r任意，当前域为ℝ^n而非一般圆柱。类型未要求C²或适当generator域，Lean的不可微处导数总化为零；所以不能凭该谓词推出真实Markov核不变性，当前context_notation已明示形式stationarity且另给generator域/演化。该限制须持续保留，不把“correspond in general”误报为已证等价定理。",
+          "元数据核对：stationaryDensity本身含Measurable、非负、Integrable及积分1；context_notation中的“另给”已过时。"
+        ]
+      },
+      "audit": {
+        "lean_decl": "MD.Ch06.stationaryWeightRaw25; MD.Ch06.stationaryDensity",
+        "verdict": "PASS",
+        "explanation": "stationaryWeightRaw25只定义任意实函数的vectorForward逐点为0，是总化辅助。stationaryDensity另外要求ρ可测、处处非负、Lebesgue可积及积分1，再要求同一逐点形式方程，概率密度资格已补足，签名作为形式平稳密度定义PASS。D29为负散度加常B扩散半项；n,r任意，当前域为ℝ^n而非一般圆柱。类型未要求C²或适当generator域，Lean的不可微处导数总化为零；所以不能凭该谓词推出真实Markov核不变性，当前context_notation已明示形式stationarity且另给generator域/演化。该限制须持续保留，不把“correspond in general”误报为已证等价定理。",
+        "counterexample": null,
+        "suggested_fix": "保留形式定义的范围说明；若要定理化“不变分布对应”，必须补光滑/弱算子域及实际半群或核与生成元的关系。"
+      },
+      "subtask": "EAUDIT10c"
+    }
+  ],
+  "merged_from": "ch06_eaudit_merged"
+}

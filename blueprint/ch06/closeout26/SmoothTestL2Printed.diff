@@ -1,0 +1,59 @@
+--- Blueprint/Ch06.lean before
++++ Blueprint/Ch06.lean after
+@@ -3432,6 +3432,7 @@
+ 
+ /-- source_id: MD-6.4.5-SmoothTestL2Printed · unnumbered_claim · §6.4.5 · 印刷p.258 / PDFp.279
+ [ERRATUM?] 环面×无界动量上C∞不自动L²；常数1已不在flat L²，指数增长函数也可能不在Gibbs L²。需适当weighted空间/增长资格。 [EXTRA] 25号：原文版忠实性与数学疑误分开；补齐所交条目所属的现有_corrected完整签名，不从repair_log名称推断网站已通过修正版。
++[EXTRA] 26号：恢复原文完整末句。Printed仅保留光滑蕴含平直L²的原书疑误子主张；_corrected仅是网站已PASS的C∞∩L²合格域定义。限定当前覆盖，不把该定义计作平均公式或积分有界定理。
+ -/
+ theorem smoothTestL2Printed : ∀ {n : ℕ} (f : textbookLangevinPeriodicPhase n → ℝ),
+   ContDiff ℝ ∞ (f ∘ textbookLangevinPeriodicProjection) →
+
+--- source entry before
++++ source entry after
+@@ -5,7 +5,7 @@
+   "section": "6.4.5",
+   "printed_page": "258",
+   "pdf_page": "279",
+-  "statement_latex": "Since all the eigenvalues lie to the left of a vertical line in the left half plane, for any $\\varphi$ in $C^\\infty$ we have\n\\[\\int_D\\varphi\\rho(q,p,t)d\\omega=\\operatorname{Av}_\\beta(\\varphi)+\\alpha e^{t\\lambda_1}\\int_D\\varphi\\rho^{(1)}d\\omega.\\]\nThe latter integral is bounded since both $\\varphi$ and $\\rho^{(1)}$ are in $L^2$.",
++  "statement_latex": "Since all the eigenvalues lie to the left of a vertical line in the left half plane, for any $\\varphi$ in $C^\\infty$ we have\n\\[\\int_D\\varphi\\rho(q,p,t)d\\omega=\\operatorname{Av}_\\beta(\\varphi)+\\alpha e^{t\\lambda_1}\\int_D\\varphi\\rho^{(1)}d\\omega.\\]\nThe latter integral is bounded since both $\\varphi$ and $\\rho^{(1)}$ are in $L^2$, and since $\\operatorname{Re}(\\lambda_1)<0$, we see that this converges exponentially to the desired average.",
+   "proof_latex": null,
+   "proof_note": "原书未给独立完整证明。",
+   "proof_discussion_latex": null,
+@@ -27,9 +27,10 @@
+   "lean_decl": "MD.Ch06.smoothTestL2Printed",
+   "reusable_proofs": [],
+   "extra_assumptions": [
+-    "[EXTRA] 25号：原文版忠实性与数学疑误分开；补齐所交条目所属的现有_corrected完整签名，不从repair_log名称推断网站已通过修正版。"
++    "[EXTRA] 26号：恢复原文完整末句。Printed仅保留光滑蕴含平直L²的原书疑误子主张；_corrected仅是网站已PASS的C∞∩L²合格域定义。限定当前覆盖，不把该定义计作平均公式或积分有界定理。",
++    "[ERRATUM?] 原书数学疑误与本次形式化修复分别记录，见CH06_ERRATA。"
+   ],
+-  "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
++  "statement_scope": "本条当前覆盖范围：恢复原文完整末句。Printed仅保留光滑蕴含平直L²的原书疑误子主张；_corrected仅是网站已PASS的C∞∩L²合格域定义。限定当前覆盖，不把该定义计作平均公式或积分有界定理。",
+   "review_status": "DRAFT",
+   "repair_log": [
+     {
+@@ -38,6 +39,11 @@
+       "change": "明确要求检验函数属于所选L²空间；给出正确检验函数域定义，不冒称所有C∞函数可积。",
+       "corrected_decl": "MD.Ch06.smoothTestL2Printed_corrected",
+       "website": "未提交；待网站审计"
++    },
++    {
++      "stage": "CLOSEOUT26",
++      "note": "恢复原文完整末句。Printed仅保留光滑蕴含平直L²的原书疑误子主张；_corrected仅是网站已PASS的C∞∩L²合格域定义。限定当前覆盖，不把该定义计作平均公式或积分有界定理。",
++      "suggested_fix": "原文恢复完整末句并加[ERRATUM?]；保留Printed及正确的限定域定义。另列两种平均相等及ρ1、测试函数满足L²时的积分界，或如实登记当前缺口；不得把def合格域算成完整平均定理。"
+     }
+   ],
+   "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json",
+@@ -70,5 +76,11 @@
+       "direct_placeholder": false,
+       "source_id": "MD-6.4.5-SmoothTestL2Printed"
+     }
++  ],
++  "superseded_extra_assumptions26": [
++    "[EXTRA] 25号：原文版忠实性与数学疑误分开；补齐所交条目所属的现有_corrected完整签名，不从repair_log名称推断网站已通过修正版。"
++  ],
++  "coverage_gaps": [
++    "平均恒等式、ρ^(1)的L²资格及与测试函数配对的有界性没有在本条两声明中表达；未将这些内容标为已经形式化。"
+   ]
+ }

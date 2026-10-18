@@ -1,0 +1,154 @@
+{
+  "batch": "EAUDIT17",
+  "input_sha256": {
+    "Blueprint/Ch06.lean": "4a2a6cb72c1692f80e3537ab1a71701d429a482780a01226c3dc66a2ebb8b44b",
+    "blueprint/ch06/ch06_source.json": "d7f93cd20eb570744c710f3e07a88b319c082e4155812fee91db0920eb05944e"
+  },
+  "items": [
+    {
+      "source_id": "MD-6.4.4-WeightedH1",
+      "json_review": {
+        "status": "APPROVED",
+        "issue_codes": [],
+        "corrected_json": null,
+        "issues": [],
+        "evidence": [
+          "A：附件第3页，印刷256、原书PDF277，页面底部H¹定义及三项范数平方和与JSON一致；书中花体H、D与JSON的H、D视为记号排版规范化。",
+          "C：D33–D37明确给出坐标导数、方向、β∂ᵢU或βpᵢ斜率以及-∂ᵢG+(β∂ᵢH)G的加权伴随测试表达式。",
+          "C：D39–D44将函数值及2N个弱导数放在PiLp 2的L²(μβ)分量中，以全部光滑紧支G的分部积分恒等式约束；不是光滑函数jet的子集。"
+        ]
+      },
+      "audit": {
+        "lean_decl": "MD.Ch06.weightedH1",
+        "verdict": "PASS",
+        "explanation": "weightedH1是Gibbs权重下的完整实弱H¹实现：none分量为函数的AE等价类，some(inl i)、some(inr i)分别是q、p的L²弱导数。测试恒等式的负号和β∂U、βp项正确，因为dμβ正比于exp(-βH)dω。所有测试函数的伴随表达式MemLp规格已实际摘录，不能只看名称。每项均为L²类，PiLp 2给出平方和范数；测试恒等式是连续线性约束，数学上刻画闭弱导数图及通常的Sobolev完备空间。所加U光滑、单位周期、β>0和Gibbs权重专业化已有EXTRA说明。这里审查类型和定义语义，不另宣称项目已证明闭性、完备性或所有相关实例。",
+        "counterexample": null,
+        "suggested_fix": null
+      },
+      "subtask": "EAUDIT17a"
+    },
+    {
+      "source_id": "MD-6.4.4-WeightedH1Norm",
+      "json_review": {
+        "status": "CORRECTED",
+        "issue_codes": [
+          "SOURCE_DOMAIN_OMITTED",
+          "LEAN_CONCLUSION_COVERAGE_GAP"
+        ],
+        "corrected_json": {
+          "source_id": "MD-6.4.4-WeightedH1Norm",
+          "kind": "unnumbered_claim",
+          "label": null,
+          "section": "6.4.4",
+          "printed_page": "256–257",
+          "pdf_page": "277–278",
+          "statement_latex": "where\n\\[\\|f\\|_{L^2(\\mu)}^2=\\int_D f^2\\mu(d\\omega),\\]\nand, for a vector function $w:D\\to\\mathbb R^{N_c}$, we have\n\\[\\|w\\|_{L^2(\\mu)}^2=\\sum_{i=1}^{N_c}\\|w_i\\|_{L^2(\\mu)}^2.\\]",
+          "proof_latex": null,
+          "proof_note": "原书未给独立完整证明。",
+          "proof_discussion_latex": null,
+          "context_notation": [],
+          "extra_assumptions": [
+            "[EXTRA] 25号：仅覆盖真实加权H¹的jet范数分解；原文标量L²积分及任意向量w的平方和等式未由本条覆盖。"
+          ],
+          "statement_scope": "本条Lean覆盖范围：仅覆盖真实加权H¹的jet范数分解；原文标量L²积分及任意向量w的平方和等式未由本条覆盖。",
+          "coverage_gaps": [
+            "仅覆盖真实加权H¹的jet范数分解；原文标量L²积分及任意向量w的平方和等式未由本条覆盖。"
+          ]
+        },
+        "issues": [
+          {
+            "code": "SOURCE_DOMAIN_OMITTED",
+            "location": "statement_latex",
+            "message": "两个展示式数值结构正确，但JSON删去了原页为向量等式明确给出的w:D→R^{Nc}；宜补回标量/向量区别及连接文字。"
+          },
+          {
+            "code": "LEAN_CONCLUSION_COVERAGE_GAP",
+            "location": "weightedH1Norm / coverage_gaps",
+            "message": "所交定理仅是H¹ jet范数分解，没有原文的标量L²积分恒等式，也没有对任意向量函数w的L²分量平方和等式。现有coverage_gaps已如实承认，但不等于两项已覆盖。"
+          }
+        ],
+        "evidence": [
+          "A：附件第4页末尾是标量式；第5页开头明确写and, for a vector function w:D→R^{Nc}, we have后给出向量式，印刷256–257、原书PDF277–278。",
+          "C：Blueprint/Ch06.lean:3229只量化f:CanonicalWeakH1，结论仅含值投影和两组导数投影的范数。",
+          "C：已核对本条Derivative投影到some j、D50值投影到none、D42的PiLp 2及本条norm_sq完整签名。"
+        ]
+      },
+      "audit": {
+        "lean_decl": "MD.Ch06.weightedH1Norm",
+        "verdict": "FAIL",
+        "explanation": "现有weightedH1Norm本身数学正确：它确实给出加权H¹范数等于函数值及全部位置、动量弱导数L²范数的平方和，N、β、U及坐标投影均正确。但原文JSON的两项主结论分别是‖f‖²L²=∫f²dμ，以及任意w:D→R^N的‖w‖²L²=Σ‖wᵢ‖²L²。该Lean结论没有积分，没有独立标量f:L²，也没有任意向量w，因此不能覆盖这些结论。FAIL仅指本条原文与声明的完整覆盖关系，不指jet等式错误，也不因证明或sorry。EXTRA承认缺口是准确的，但不能替代缺失声明。",
+        "counterexample": null,
+        "suggested_fix": "保留已有H¹等式作为辅助结果；另列原文两个独立声明，使用实标量L²与欧氏向量值L²或明确的坐标PiLp 2，并写出积分恒等式和任意向量函数的分量平方和。此次只审校，不编辑工程。"
+      },
+      "subtask": "EAUDIT17b"
+    },
+    {
+      "source_id": "MD-6.4.4-Proposition64Printed",
+      "json_review": {
+        "status": "NEEDS_HUMAN",
+        "issue_codes": [
+          "SOURCE_KIND_MISMATCH",
+          "ERRATUM_DENSITY_COORDINATES",
+          "ERRATUM_FLAT_WEAK_DOMAIN",
+          "COUNTEREXAMPLE_DECL_NOT_SUPPLIED"
+        ],
+        "corrected_json": {
+          "source_id": "MD-6.4.4-Proposition64Printed",
+          "kind": "proposition",
+          "label": "Proposition 6.4",
+          "section": "6.4.4",
+          "printed_page": "257",
+          "pdf_page": "278",
+          "statement_latex": "Proposition 6.4 Let $U$ be $C^\\infty$ on the position domain $Q=\\mathbb T^{N_c}$ and suppose $g\\in H^1(\\mu)$ satisfies\n\\[\\int_D g\\,d\\mu_\\beta=0,\\]\nwhere $\\mu_\\beta$ is the canonical measure, then the Poisson equation\n\\[\\mathcal L_{LD}^\\dagger\\varphi=g\\]\nhas a solution $\\varphi\\in H^1(\\mu)$ which is unique up to addition of a constant multiple of the Gibbs density.",
+          "proof_latex": null,
+          "proof_note": "原书给出证明论述；本条仅摘录命题，相关论述见相邻原页，未在此补写。",
+          "proof_discussion_latex": null,
+          "context_notation": [],
+          "extra_assumptions": [
+            "[EXTRA] 25号：保留原flat/Gibbs坐标混用疑误和非Gibbs恒通量反例；补H¹伴随测试表达式，修正版本由Proposition64Relative独立保存。",
+            "[ERRATUM?] 原印刷同时混用Gibbs零均值与flat前向核的Gibbs倍数结论；所给弱域存在非Gibbs恒通量零模，须人工核定伴随坐标与算子域，原句不改。",
+            "[EXTRA] 本任务没有提供_counterexample声明；不能把“保留反例”当作已完成的Lean审查证据。"
+          ],
+          "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
+          "coverage_gaps": null
+        },
+        "issues": [
+          {
+            "code": "SOURCE_KIND_MISMATCH",
+            "location": "kind",
+            "message": "原页为编号Proposition 6.4，不应标为unnumbered_claim。"
+          },
+          {
+            "code": "ERRATUM_DENSITY_COORDINATES",
+            "location": "statement_latex / flatForwardWeak",
+            "message": "原页同时使用加权Gibbs零均值、forward dagger及唯一模Gibbs密度，混合相对密度与平直密度的坐标和伴随空间，需要人工确认。"
+          },
+          {
+            "code": "ERRATUM_FLAT_WEAK_DOMAIN",
+            "location": "proposition64Printed / extra_assumptions",
+            "message": "所给flat紧支弱测试域加上Gibbs加权H¹允许非Gibbs恒通量零模，唯一性按该原文解释不成立。此为保留原文的疑误，不能因数学错误把Printed忠实版判成签名FAIL。"
+          },
+          {
+            "code": "COUNTEREXAMPLE_DECL_NOT_SUPPLIED",
+            "location": "extra_assumptions[0]",
+            "message": "EXTRA提及保留反例，但本条及全任务均未提供_counterexample Lean声明，不能据此认定网站反例已检验。"
+          }
+        ],
+        "evidence": [
+          "A：附件第6页，印刷257、原书PDF278；已目视核对U为C^∞、g∈H¹、∫g dμβ=0、L†LDφ=g及unique up to ... Gibbs density，未将它们换成正确版本。",
+          "C：本条flatForwardWeak在flatPhaseMeasure下对所有光滑紧支ψ要求∫φ Lψ=∫gψ；零均值及H¹却使用D14的μβ。",
+          "C：Blueprint/Ch06.lean:3240包含存在φ及对所有同方程H¹解ψ的AE差值c·CanonicalDensity；不是仅核非空或仅光滑解。"
+        ]
+      },
+      "audit": {
+        "lean_decl": "MD.Ch06.proposition64Printed",
+        "verdict": "NEEDS_HUMAN",
+        "explanation": "Printed忠实性：PASS。给定光滑周期U、β>0、γ>0，对每个Gibbs加权H¹且μβ零均值的g，确实逐项保留flat-forward弱Poisson方程、完整H¹解存在、以及全部H¹解唯一模Gibbs密度倍数。CanonicalDensity为D52–D59的归一exp(-βH)，与未归一Gibbs密度相差正常数，不改变唯一模其倍数的表述。但这一原文字面版本在所定义弱域上存在明确恒通量反例；不能将平直前向伴随与Gibbs Hilbert伴随混用。因此总判NEEDS_HUMAN，保留Printed；不是因sorry失败。修正版在条目6的独立声明另审，未用它替换此原文版。",
+        "counterexample": "针对原印刷flat-forward弱域，而非相对Gibbs修正版：取n=1、U=0、β=γ=1，μ为单位环面Haar概率与标准高斯的乘积。令w(q,p)=exp(-p²/2)·∫₀ᵖexp(s²/2)ds。w为非零奇函数，满足∂ₚw+p w=1，故∂ₚ²w+∂ₚ(pw)=0，且与q无关。w及其一阶导数在高斯加权L²中，因而给出所定义的完整加权H¹元素；对每个紧支光滑测试函数均满足flatForwardWeak U 1 1 w 0。w不可能是偶函数Gibbs密度的常数倍。g=0时0与w已经破坏唯一模Gibbs倍数的结论。这是一项解析审校反例，不是经Lean验证的_counterexample声明；本任务未摘录任何此名声明。",
+        "suggested_fix": "原文字面版保留并加[ERRATUM?]坐标/域警示；若使用相对Gibbs密度，采用条目6的闭Hilbert伴随与唯一模常数。若坚持flat密度，则需要另行选择排除非可积恒通量模式的自然域，并核对相应的平直零质量兼容条件。"
+      },
+      "subtask": "EAUDIT17c"
+    }
+  ],
+  "merged_from": "ch06_eaudit_merged"
+}

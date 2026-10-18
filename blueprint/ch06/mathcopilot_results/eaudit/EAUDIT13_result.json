@@ -1,0 +1,240 @@
+{
+  "batch": "EAUDIT13",
+  "input_sha256": {
+    "Blueprint/Ch06.lean": "4a2a6cb72c1692f80e3537ab1a71701d429a482780a01226c3dc66a2ebb8b44b",
+    "blueprint/ch06/ch06_source.json": "d7f93cd20eb570744c710f3e07a88b319c082e4155812fee91db0920eb05944e"
+  },
+  "items": [
+    {
+      "source_id": "MD-6.4.3-BrownianDiscreteSpectrum",
+      "json_review": {
+        "status": "NEEDS_HUMAN",
+        "issue_codes": [
+          "SOURCE_RESOLVENT_DOMAIN_AMBIGUITY",
+          "FORMAL_ASSUMPTIONS_NOT_FULLY_DOCUMENTED"
+        ],
+        "corrected_json": {
+          "source_id": "MD-6.4.3-BrownianDiscreteSpectrum",
+          "kind": "unnumbered_claim",
+          "label": null,
+          "section": "6.4.3",
+          "printed_page": "250",
+          "pdf_page": "271",
+          "statement_latex": "In particular, it has a compact resolvent [360]; this can be shown to imply that the spectrum consists only of a countable collection of eigenvalues, i.e. that the operator has a discrete spectrum.",
+          "proof_latex": null,
+          "proof_note": "原书未给独立完整证明。",
+          "proof_discussion_latex": null,
+          "context_notation": [],
+          "extra_assumptions": [
+            "[EXTRA] 25号：保留已证可数/实谱/孤立子句，新增“每谱点为特征值”的完整短陈述，尚未证明；有限重数与无有限聚点未冒称覆盖。",
+            "[EXTRA] 全部谱结论针对正质量、β>0、C∞单位周期势的紧环面Gibbs复L²闭实现。",
+            "[ERRATUM?] 原C₀²域与上述闭实现的对应关系承接条目6，仍需人工签核。"
+          ],
+          "statement_scope": "本条Lean覆盖范围：保留已证可数/实谱/孤立子句，新增“每谱点为特征值”的完整短陈述，尚未证明；有限重数与无有限聚点未冒称覆盖。",
+          "coverage_gaps": [
+            "有限重数和无有限聚点的标准离散谱强化尚未单列。"
+          ]
+        },
+        "issues": [
+          {
+            "code": "SOURCE_RESOLVENT_DOMAIN_AMBIGUITY",
+            "field": "extra_assumptions",
+            "message": "本条应同样披露周期闭实现与原C₀²域的差别，现有EXTRA只说明谱子句覆盖情况。"
+          },
+          {
+            "code": "FORMAL_ASSUMPTIONS_NOT_FULLY_DOCUMENTED",
+            "field": "extra_assumptions",
+            "message": "还应逐项记录正质量、β>0、C∞单位周期势及Gibbs复L²对象。"
+          }
+        ],
+        "evidence": [
+          {
+            "source": "R2_PAGES.pdf",
+            "attachment_page": [
+              8
+            ],
+            "location": "印刷250页，countable collection of eigenvalues一句",
+            "observation": "原句并非只说谱点可数，还明确说这些谱点是特征值。"
+          },
+          {
+            "source": "R2_任务.md",
+            "location": "条目7；附录D49–D50、D92–D93",
+            "observation": "新增eigenvalue声明已补齐非零向量/图关系；谱定义是预解集之补。"
+          }
+        ]
+      },
+      "audit": {
+        "lean_decl": "MD.Ch06.brownianDiscreteSpectrum; MD.Ch06.brownianDiscreteSpectrum_eigenvalue",
+        "verdict": "NEEDS_HUMAN",
+        "explanation": "A：与条目6同一句原文，转录准确。C：两份签名分别PASS。主声明给出所定义复谱的可数性、虚部为零及每个谱点的开邻域孤立性；补充声明对每个谱点给出非零复L²向量及(v,z•v)在完整闭图中，准确表达它是特征值而非仅“谱点可数”。D92–D93的预解集要求有界复线性算子同时满足左右逆图关系，谱取其补集，未偷换成预先枚举的特征值集合。审校按两份声明合并覆盖原文的“countable collection of eigenvalues”，不因补充声明的sorry判FAIL。有限重数没有作为该两份签名的结论；不得把依赖中某定理的存在误计为这里显式列出的结论。整条仍承接条目6的原C₀²域/闭实现解释疑问。",
+        "counterexample": null,
+        "suggested_fix": "保留两份声明并一并统计覆盖；补齐闭实现及参数假设的EXTRA记录，有限重数等更强结论未单列时不冒称已经覆盖。"
+      },
+      "subtask": "EAUDIT13a"
+    },
+    {
+      "source_id": "MD-6.4.3-Theorem61",
+      "json_review": {
+        "status": "NEEDS_HUMAN",
+        "issue_codes": [
+          "SOURCE_NEGATIVE_DEFINITE_ERRATUM",
+          "SOURCE_TIME_AVERAGE_CONFLICT",
+          "PRINTED_OPERATOR_DOMAIN_SUBSTITUTION",
+          "PRINTED_GENERATOR_NOT_LINKED",
+          "SOURCE_MASS_LAPLACIAN_UNRESOLVED",
+          "COVERAGE_METADATA_INCOMPLETE"
+        ],
+        "corrected_json": {
+          "source_id": "MD-6.4.3-Theorem61",
+          "kind": "theorem",
+          "label": "Theorem 6.1",
+          "section": "6.4.3",
+          "printed_page": "250–251",
+          "pdf_page": "271–272",
+          "statement_latex": "Theorem 6.1 Define the generator of Brownian dynamics by\n\\[\\mathcal Lf\\stackrel{\\rm def}=-M^{-1}\\nabla U^T\\nabla f+\\beta^{-1}\\Delta_Mf.\\]\nSuppose that $U$ is smooth with periodic boundary conditions $\\mathcal Q=\\mathbb T^{N_c}$ ($\\mathbb T^{N_c}$ an $N_c$-dimensional torus). Then, with respect to the space $C_0^2(\\mu_\\beta)$ with inner product $\\langle f,g\\rangle_\\beta$ as defined above, we have:\n1. $\\mathcal L$ is self-adjoint, negative definite, with spectrum consisting of discrete eigenvalues on the half line $(-\\infty,0]$.\n2. $\\mathcal L$ has a spectral gap, meaning that, with exception of the zero eigenvalue, the remainder of the spectrum satisfies $\\sigma(\\mathcal L)\\subset(-\\infty,-\\alpha]$ for some $\\alpha>0$.\n3. averages with respect to the evolving, time-dependent distribution converge exponentially rapidly to averages with respect to the invariant distribution, and, for any smooth, compactly supported test function $\\varphi$, we have\n\\[|\\bar\\varphi(t)-\\operatorname{Av}_\\beta(\\varphi)|\\le K\\|\\varphi\\|_\\beta e^{-\\alpha t};\\]\nfor some positive $K$ and $\\alpha$, where recall $\\bar\\varphi(t)$ denotes the time average of $\\varphi$ defined in (5.6).",
+          "proof_latex": null,
+          "proof_note": "原书未给独立完整证明。",
+          "proof_discussion_latex": null,
+          "context_notation": [],
+          "extra_assumptions": [
+            "[EXTRA] 25号：Theorem6.1主版、corrected和Printed同时补全部谱点特征值子句；仍保留闭域/半负定/L²相对初始密度的分布平均与原印刷严格负定/轨道平均两套版本，原文疑误不证。",
+            "[ERRATUM?] 原negative definite应区分半负定；常数零模存在。",
+            "[ERRATUM?] 原文第三款的演化分布平均与(5.6)轨道时间平均不是同一对象；修正版只断言前者。",
+            "[EXTRA] Printed的闭域替换是当前形式化与原域的偏差，不能只归因于原书疑误。"
+          ],
+          "statement_scope": "本条Lean覆盖范围：Theorem6.1主版、corrected和Printed同时补全部谱点特征值子句；仍保留闭域/半负定/L²相对初始密度的分布平均与原印刷严格负定/轨道平均两套版本，原文疑误不证。",
+          "coverage_gaps": [
+            "原C₀²域与闭实现的解释尚需人工签核。",
+            "theorem61Printed尚未保持原域，且未连接另列的字面质量生成元。",
+            "原印刷严格负定及轨道时间平均指数界保留为疑误，不视为成立。",
+            "附件未含印刷244页，ΔM旧定义的解释未能由本附件独立核定。"
+          ]
+        },
+        "issues": [
+          {
+            "code": "SOURCE_NEGATIVE_DEFINITE_ERRATUM",
+            "field": "statement_latex",
+            "message": "零常数模与严格负定矛盾，原文应保留并标疑误。"
+          },
+          {
+            "code": "SOURCE_TIME_AVERAGE_CONFLICT",
+            "field": "statement_latex",
+            "message": "原文先说演化分布平均，末尾却明确说(5.6)轨道时间平均；后者一般没有所写路径级指数界。"
+          },
+          {
+            "code": "PRINTED_OPERATOR_DOMAIN_SUBSTITUTION",
+            "field": "theorem61Printed",
+            "message": "Printed仍将C₀²原域替换为corrected的闭Gibbs复L²域，属于形式化对象偏移而不是原书自身错误。"
+          },
+          {
+            "code": "PRINTED_GENERATOR_NOT_LINKED",
+            "field": "theorem61Printed / brownianMassGeneratorPrinted",
+            "message": "另有字面质量生成元定义并不能使Printed定理中采用的另一算子自动变为该原生成元。"
+          },
+          {
+            "code": "SOURCE_MASS_LAPLACIAN_UNRESOLVED",
+            "field": "context_notation",
+            "message": "附件只给出ΔM符号，未附所称印刷244页的定义，不能从本材料判定其质量系数解释。"
+          },
+          {
+            "code": "COVERAGE_METADATA_INCOMPLETE",
+            "field": "coverage_gaps",
+            "message": "原书疑误、Printed域偏移和ΔM解释尚未核定时，coverage_gaps不宜为空数组。"
+          }
+        ],
+        "evidence": [
+          {
+            "source": "R2_PAGES.pdf",
+            "attachment_page": [
+              9,
+              10
+            ],
+            "location": "印刷250页末及251页Theorem 6.1全文",
+            "observation": "原文明确写C₀²(μβ)、negative definite及time average defined in (5.6)。"
+          },
+          {
+            "source": "R2_任务.md",
+            "location": "条目8的三份theorem61声明及两份质量生成元；BrownianDensityLaw/Average、SDEDrift/Noise定义",
+            "observation": "Printed的IsSelfAdjoint对象与corrected完全相同；实际路径漂移/扩散使用逆质量，未调用brownianMassGeneratorPrinted。"
+          }
+        ]
+      },
+      "audit": {
+        "lean_decl": "MD.Ch06.theorem61; MD.Ch06.theorem61_corrected; MD.Ch06.theorem61Printed; MD.Ch06.brownianMassGeneratorPrinted; MD.Ch06.brownianMassGeneratorPrinted_corrected",
+        "verdict": "FAIL",
+        "explanation": "A：Theorem 6.1的生成元、三款结论及最后明确指向(5.6)的time average均准确转录；书中分布平均与轨道时间平均的冲突以及negative definite措辞须保留为原书疑误。C分版本：theorem61和theorem61_corrected作为限定修正版均PASS，包含完整闭自伴、全部复谱实且非正、可数、每点有非零图特征向量、孤立、非零谱隙及对所有非负归一L²相对初始密度的演化分布平均指数界。K、α在ρ之后、在所有f和t之前选择，量词正确；DensityLaw为真实Brownian核作用初始ρμβ，DensityAverage的分母在这些概率条件下为1。修正生成元的扩散和漂移均用逆质量，匹配给出的实际Brownian路径系数。theorem61Printed的严格负定及几乎处处轨道平均指数界保留了原文疑误，但它仍使用与corrected相同的闭复L²算子，而原文明确以C₀²(μβ)为域；其全部谱/自伴断言也未与另列的brownianMassGeneratorPrinted建立对象联系。因此该名字为Printed的整条声明不是原域及原生成元的字面实现，忠实性FAIL；这与原书数学错误本身的NEEDS_HUMAN及sorry无关。brownianMassGeneratorPrinted的代数表达与其注释一致，但附件没有印刷244页，无法据本附件独立确认ΔM在该页的既定含义，应保留记号歧义而不能假称已逐页核实。",
+        "counterexample": "严格负定：取一维、m=β=1、U=0、f≡1，有Lf=0且⟨f,Lf⟩=0。轨道指数界也不能用分布指数混合替代：在同一圆周Brownian模型、初值0、f(q)=cos(2πq)时，对每个固定t>0有正概率整段路径停在足够小的邻域，时间平均仍接近1而空间平均为0；当t足够大，任意固定Kexp(−αt)都会小于该偏差，故Printed所要求的几乎处处、所有t成立的固定常数界不能成立。此处反例说明原书疑误，不作为Printed忠实性FAIL的理由。",
+        "suggested_fix": "不改工程的建议：保留当前主版/corrected为闭实现和分布平均修正版。将现有Printed重命名为闭实现限定摘录，或另设真正保留C₀²原域及原ΔM记号的literal声明；不把单独质量表达式当作已经连接到整个Printed定理。原书数学疑误继续标[ERRATUM?]并待人工决定。"
+      },
+      "subtask": "EAUDIT13b"
+    },
+    {
+      "source_id": "MD-6.4.4-MinorizationCorrectedImplication",
+      "json_review": {
+        "status": "CORRECTED",
+        "issue_codes": [
+          "UNDOCUMENTED_GLOBAL_IRREDUCIBILITY_ASSUMPTION",
+          "EQUIVALENCE_NOT_FORMALIZED"
+        ],
+        "corrected_json": {
+          "source_id": "MD-6.4.4-MinorizationCorrectedImplication",
+          "kind": "unnumbered_claim",
+          "label": null,
+          "section": "6.4.4",
+          "printed_page": "252",
+          "pdf_page": "273",
+          "statement_latex": "It can be shown that this assumption is tantamount to the SDE satisfying a minorization condition. This condition is a particular case of the general concept of small sets, found in Markov literature for proving ergodicity.",
+          "proof_latex": null,
+          "proof_note": "原书未给独立完整证明。",
+          "proof_discussion_latex": null,
+          "context_notation": [],
+          "extra_assumptions": [
+            "[EXTRA] 25号：主版与minorizationPrinted_corrected同时补Chapman–Kolmogorov/Markov半群及参考测度全支撑。两步核局部共同下界仍需大型小集理论，未证明、未宣称数学结论已核定；交网站复审。",
+            "[EXTRA] 还独立假设：对所有t>0、所有x及所有非空开集A，K t x A>0；这比原Assumption 1(i)强，不能省略于假设说明。",
+            "[EXTRA] assumption1中的密度联合连续性只在t>0要求；原书写到t=0的端点问题另见条目10、14。"
+          ],
+          "statement_scope": "只覆盖加强假设下由Assumption 1到共同小集下界的充分方向；不覆盖原tantamount所可能表示的必要方向。",
+          "coverage_gaps": [
+            "未声明或认证minorization反推原Assumption 1的必要方向。"
+          ]
+        },
+        "issues": [
+          {
+            "code": "UNDOCUMENTED_GLOBAL_IRREDUCIBILITY_ASSUMPTION",
+            "field": "extra_assumptions",
+            "message": "现有EXTRA只列补入半群和参考测度全支撑，却没有列出签名中独立的全局正时刻非空开集可达性假设。"
+          },
+          {
+            "code": "EQUIVALENCE_NOT_FORMALIZED",
+            "field": "statement_scope",
+            "message": "原文用tantamount，而两份corrected声明只给加强假设下的充分方向；必须明确不声称必要性。"
+          }
+        ],
+        "evidence": [
+          {
+            "source": "R2_PAGES.pdf",
+            "attachment_page": [
+              11
+            ],
+            "location": "印刷252页，Assumption 1之后两句",
+            "observation": "原文说tantamount；并未在该句另行加入对所有非空开集的任意正时刻全局可达性。"
+          },
+          {
+            "source": "R2_任务.md",
+            "location": "条目9两份签名；附录D6、D94",
+            "observation": "独立全称前提位于assumption1之后、小集结论之前；两个声明量词与结论一致。"
+          }
+        ]
+      },
+      "audit": {
+        "lean_decl": "MD.Ch06.minorizationCorrectedImplication; MD.Ch06.minorizationPrinted_corrected",
+        "verdict": "PASS",
+        "explanation": "A：关于“tantamount”及small sets的两句原文准确。C：两份声明签名相同，作为明确加强前提的充分方向均PASS。逐项包含实际概率核半群/Chapman–Kolmogorov、参考测度对所有非空开集为正、紧C及其内点可达条件、仅正时刻在C×C上联合连续的实非负密度；此外还另行假设所有点、所有正时刻对每个非空开集都有正概率。这一全局开放集可达性是实质性加强，不能由原Assumption 1(i)的固定内点可达性直接冒充。结论的时间、ε>0及概率μ先于所有x∈C选择，测度序ε•μ≤K t x正是共同小集下界；ε不必额外假设≤1，因为K t x和μ为概率。连续局部密度、紧性和真实核合成足以支持此加强版的共同下界；未以sorry是否消除作为签名判据。这里只认证充分方向，未把原文“tantamount”解读为已经认证了必要方向。JSON须补记遗漏的全局可达前提。",
+        "counterexample": null,
+        "suggested_fix": "在JSON假设说明中补全全局开放集可达性，并保留“只审充分方向”的范围说明；不应将此修正版计为原文等价关系的完整形式化。"
+      },
+      "subtask": "EAUDIT13c"
+    }
+  ],
+  "merged_from": "ch06_eaudit_merged"
+}

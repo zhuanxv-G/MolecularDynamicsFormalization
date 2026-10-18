@@ -1,0 +1,158 @@
+{
+  "batch": "EAUDIT18",
+  "input_sha256": {
+    "Blueprint/Ch06.lean": "4a2a6cb72c1692f80e3537ab1a71701d429a482780a01226c3dc66a2ebb8b44b",
+    "blueprint/ch06/ch06_source.json": "d7f93cd20eb570744c710f3e07a88b319c082e4155812fee91db0920eb05944e"
+  },
+  "items": [
+    {
+      "source_id": "MD-6.4.4-Proposition64Relative",
+      "json_review": {
+        "status": "NEEDS_HUMAN",
+        "issue_codes": [
+          "SOURCE_PARAPHRASE_AS_QUOTE",
+          "ERRATUM_DENSITY_COORDINATES"
+        ],
+        "corrected_json": {
+          "source_id": "MD-6.4.4-Proposition64Relative",
+          "kind": "unnumbered_claim",
+          "label": null,
+          "section": "6.4.4",
+          "printed_page": "257",
+          "pdf_page": "278",
+          "statement_latex": "\\[\\mathcal L_{LD}^{\\dagger}\\varphi=g\\]\nhas a solution $\\varphi\\in H^1(\\mu)$ which is unique up to addition of a constant multiple of the Gibbs density.",
+          "proof_latex": null,
+          "proof_note": "原书未给独立完整证明。",
+          "proof_discussion_latex": null,
+          "context_notation": [],
+          "extra_assumptions": [
+            "[EXTRA]明确相对Gibbs密度坐标，实际加权Hilbert闭算子adjoint图与完整H1、加权零均值、解存在/唯一模常数；与印刷flat-density Gibbs倍数版分列，非静默纠错。",
+            "[EXTRA] 25号：补H¹坐标伴随测试表达式与memLp规格；相对Gibbs密度采用闭Hilbert adjoint，唯一模常数，不是flat Gibbs倍数。",
+            "[ERRATUM?] 原页为Gibbs density倍数，原文照录；本条Lean是相对Gibbs坐标下的明确修正版，因此唯一性改为模常数。原印刷坐标/域问题见Proposition64Printed。"
+          ],
+          "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
+          "coverage_gaps": null
+        },
+        "issues": [
+          {
+            "code": "SOURCE_PARAPHRASE_AS_QUOTE",
+            "location": "statement_latex",
+            "message": "The solution is unique ...不是附件原页的连续原句；原页为has a solution φ∈H¹(μ) which is unique ...，需恢复原文而将修正说明留在EXTRA。"
+          },
+          {
+            "code": "ERRATUM_DENSITY_COORDINATES",
+            "location": "extra_assumptions",
+            "message": "相对Gibbs密度、加权Hilbert伴随与唯一模常数是对原印刷坐标的显式修正；应补[ERRATUM?]并保留原文Gibbs density措辞。"
+          }
+        ],
+        "evidence": [
+          "A：附件第7页，印刷257、原书PDF278，Poisson式之后实际为has a solution φ∈H¹(μ) which is unique up to addition of a constant multiple of the Gibbs density.。",
+          "C：D67–D69为C∞紧支测试函数的真实Langevin微分算子图在L²(μβ)×L²(μβ)的闭包；本条A是其Hilbert adjoint，非任意抽象占位算子。",
+          "C：Blueprint/Ch06.lean:3279的proposition64Printed_corrected与本条proposition64Relative前提和全部结论相同；两者分别审阅，未从原Printed占位证明推导。"
+        ]
+      },
+      "audit": {
+        "lean_decl": "MD.Ch06.proposition64Relative; MD.Ch06.proposition64Printed_corrected",
+        "verdict": "PASS",
+        "explanation": "proposition64Relative：PASS；proposition64Printed_corrected：PASS。二者都在归一Gibbs L²中使用实际Langevin后向算子的闭图伴随，对全部完整弱H¹且μβ零均值的g，断言存在H¹解，(value φ,value g)属于A.graph；对任意另一H¹解，差值μβ-AE为实常数。β、γ正、U光滑周期、噪声√(2γ/β)均保留，未把解空间缩成光滑或紧支函数。加权伴随作用于相对Gibbs密度r，flat密度为ρβr，所以核从Gibbs倍数变成常数是合理而明确的修正；Weighted H¹的导数测试及闭Hilbert图的算子表达式均已核对。这里认可修正版陈述与坐标选择，不认定其大型存在/正则性证明已完成。A阶段原印刷问题仍为NEEDS_HUMAN，不静默改写原书。",
+        "counterexample": "条目5给出的恒通量w是flat密度。把它转换成相对密度w/ρβ后不在L²(μβ)，故不是本条修正版的反例。",
+        "suggested_fix": "只修复JSON中的非逐字摘录，并明确[ERRATUM?]原印刷坐标疑问；保留两个相同且合理的修正版目标及其独立名称，不据sorry声称已证。"
+      },
+      "subtask": "EAUDIT18a"
+    },
+    {
+      "source_id": "MD-6.4.4-ForwardKernelGibbs",
+      "json_review": {
+        "status": "NEEDS_HUMAN",
+        "issue_codes": [
+          "SOURCE_LATEX_COMMAND_JOIN",
+          "ERRATUM_DENSITY_COORDINATES",
+          "COUNTEREXAMPLE_DECL_NOT_SUPPLIED"
+        ],
+        "corrected_json": {
+          "source_id": "MD-6.4.4-ForwardKernelGibbs",
+          "kind": "unnumbered_claim",
+          "label": null,
+          "section": "6.4.4",
+          "printed_page": "257",
+          "pdf_page": "278",
+          "statement_latex": "If we have two solutions $\\varphi_1,\\varphi_2$ of $\\mathcal L_{LD}^\\dagger\\varphi=g$, then their difference $w$ must be a solution of $\\mathcal L_{LD}^{\\dagger}w=0$ and the only such solution is a constant multiple of the Gibbs density $\\rho_\\beta$.",
+          "proof_latex": null,
+          "proof_note": "原书未给独立完整证明。",
+          "proof_discussion_latex": null,
+          "context_notation": [],
+          "extra_assumptions": [
+            "[EXTRA] 25号：改用相对Gibbs密度的Hilbert adjoint闭域，核结论为常数；旧flat紧支弱测试允许非Gibbs恒通量零模，网站反例保留。改后核定理尚缺大型理论，不证明；原印刷flat措辞由Proposition64Printed留存。",
+            "[ERRATUM?] 原flat-forward核结论需自然算子域/可积性约束；当前Lean明确改为相对Gibbs闭Hilbert伴随，核为常数。原书文字保留。",
+            "[EXTRA] 未提供_counterexample声明，不能以“网站保留”作为形式验证证据。"
+          ],
+          "statement_scope": "本条Lean覆盖范围：改用相对Gibbs密度的Hilbert adjoint闭域，核结论为常数；旧flat紧支弱测试允许非Gibbs恒通量零模，网站反例保留。改后核定理尚缺大型理论，不证明；原印刷flat措辞由Proposition64Printed留存。",
+          "coverage_gaps": [
+            "本条只交付相对Gibbs修正版核结论，没有独立交付原flat坐标的两解差与Gibbs倍数核声明；原印刷Poisson命题在条目5保留，但不能据此称本条原核结论已证。"
+          ]
+        },
+        "issues": [
+          {
+            "code": "SOURCE_LATEX_COMMAND_JOIN",
+            "location": "statement_latex",
+            "message": "原JSON将\\dagger与w拼为\\daggerw，形成不存在的LaTeX命令，应写^{\\dagger}w。"
+          },
+          {
+            "code": "ERRATUM_DENSITY_COORDINATES",
+            "location": "statement_latex / extra_assumptions",
+            "message": "原文flat核的Gibbs倍数结论缺少域约束；目前Lean是相对Gibbs闭伴随核的常数结论。EXTRA已说明更换，需进一步加[ERRATUM?]并明确该原文版未在本条独立交付。"
+          },
+          {
+            "code": "COUNTEREXAMPLE_DECL_NOT_SUPPLIED",
+            "location": "extra_assumptions[0]",
+            "message": "“网站反例保留”不是可审校声明；任务未摘录_counterexample签名，不能对其作通过结论。"
+          }
+        ],
+        "evidence": [
+          "A：附件第8页，印刷257、原书PDF278，从If we have two solutions到Gibbs density ρβ.；除daggerw拼接外文本与原页吻合。",
+          "C：Blueprint/Ch06.lean:3321所给forwardKernelGibbs使用D68闭算子的adjoint及D44完整H¹，(value w,0)∈A.graph后结论为AE常数。以任务摘录为准，不依赖工程旧文件。",
+          "C：D35–D37、D43的β∂U、βp和加权分部积分符号与这个相对密度坐标相容。"
+        ]
+      },
+      "audit": {
+        "lean_decl": "MD.Ch06.forwardKernelGibbs",
+        "verdict": "PASS",
+        "explanation": "PASS限于EXTRA明确交付的相对Gibbs修正版。它保留所有光滑周期U、β>0、γ>0，对每个完整弱H¹零模w，在真实Langevin后向闭算子的Gibbs Hilbert伴随域内断言value(w)为常数。图成员资格不可省略，且这里没有使用旧flat紧支测试定义。这与r↦ρβr的密度转换一致，核陈述合理。原句的“两解差”可由伴随图线性化为此零模结论，但本条没有另外给出flat坐标的两解差等式；不能将常数直接说成原坐标的Gibbs密度倍数。EXTRA已经声明改动，故不当作静默纠错或签名FAIL；原书域/坐标问题在A阶段维持NEEDS_HUMAN。本结论尚待证明与签名是否正确是两回事。",
+        "counterexample": "针对原印刷flat-forward弱域，而非相对Gibbs修正版：取n=1、U=0、β=γ=1，μ为单位环面Haar概率与标准高斯的乘积。令w(q,p)=exp(-p²/2)·∫₀ᵖexp(s²/2)ds。w为非零奇函数，满足∂ₚw+p w=1，故∂ₚ²w+∂ₚ(pw)=0，且与q无关。w及其一阶导数在高斯加权L²中，因而给出所定义的完整加权H¹元素；对每个紧支光滑测试函数均满足flatForwardWeak U 1 1 w 0。w不可能是偶函数Gibbs密度的常数倍。g=0时0与w已经破坏唯一模Gibbs倍数的结论。这是一项解析审校反例，不是经Lean验证的_counterexample声明；本任务未摘录任何此名声明。",
+        "suggested_fix": "修复LaTeX拼接，明确把forwardKernelGibbs标为相对密度核的修正版，并在coverage_gaps登记原flat版本未独立覆盖；不改工程、不补证明。"
+      },
+      "subtask": "EAUDIT18b"
+    },
+    {
+      "source_id": "MD-6.4.5-KernelEvolution",
+      "json_review": {
+        "status": "APPROVED",
+        "issue_codes": [
+          "LEAN_CONCLUSION_COVERAGE_GAP"
+        ],
+        "corrected_json": null,
+        "issues": [
+          {
+            "code": "LEAN_CONCLUSION_COVERAGE_GAP",
+            "location": "kernelEvolutionRaw25 / kernelEvolution / coverage_gaps",
+            "message": "两个定义都只是核作用于测度；有Markov半群资格仍不包含实际Langevin生成元、ρ0与ρt的密度识别及e^{tL†}传播。现有coverage_gaps已准确登记。"
+          }
+        ],
+        "evidence": [
+          "A：附件第9页，印刷257、原书PDF278，6.4.5开头的引导句及ρ(q,p,t)=e^{tL†LD}ρ0(q,p)与JSON逐词/逐式一致。",
+          "C：D70的markovSemigroup确为每时Markov、K0=id、K(s+t)=Ks∘ₖKt。所交两个定义的体都为K t∘ₘμ。",
+          "C：MD.Ch06.kernelEvolution带_hK；D27的MolecularDynamics.Chapter06Review.kernelEvolution不带_hK。后续条目全限定调用的是后者，不能把两者的类型混淆。"
+        ]
+      },
+      "audit": {
+        "lean_decl": "MD.Ch06.kernelEvolutionRaw25; MD.Ch06.kernelEvolution",
+        "verdict": "FAIL",
+        "explanation": "A阶段APPROVED表示原文JSON与其“仅核推进”的限制说明真实。两个Lean辅助定义本身均正确：Raw25允许任意核族，主入口另要求真正Markov半群，D是任意可测类型，μ是任意测度，t≥0。即使μ未限定概率，该定义仍成立；仅在μ为概率时才得到概率推进。但原文完整结论是特定Langevin密度随前向指数算子演化。两个辅助体没有U、β、γ、ρ0、ρt、平直参考测度、生成元或密度等式。FAIL仅指该原文完整结论未由本条交付；EXTRA如实承认限制，不据此把缺失部分判成已经覆盖。条目10、13的资格定义另行审校，不能合并替代本条。",
+        "counterexample": null,
+        "suggested_fix": "保留两个辅助定义；若此source_id要求完整覆盖，应另外提供特定Langevin核与前向密度半群的识别及ρt dω=(Kt∘ₘ(ρ0dω))等关系。若仅登记辅助定义，应保持当前明确缺口，不能标成原式已形式化。"
+      },
+      "subtask": "EAUDIT18c"
+    }
+  ],
+  "merged_from": "ch06_eaudit_merged"
+}

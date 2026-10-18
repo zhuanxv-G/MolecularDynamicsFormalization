@@ -1,0 +1,69 @@
+--- Blueprint/Ch06.lean before
++++ Blueprint/Ch06.lean after
+@@ -3112,14 +3112,15 @@
+ 
+ /-- source_id: MD-6.4.4-Lemma61Printed · Lemma 6.1 · §6.4.4 · 印刷p.255 / PDFp.276
+ [ERRATUM?] 字面all open C包括空集，概率为0；需Nonempty。原(6.47)单位质量，旧清单一般质量扩展须另标技术范围。 [EXTRA] 25号：Printed收回单位质量周期相空间，保留包括空集的原全称开集断言及原书疑误；非空修正版独立保留，真实核存在规格补入复审包。
++[EXTRA] 26号：kind恢复编号lemma；Printed收回原(6.47)正摩擦γ>0及物理噪声σ=√(2γθ)、θ=kBT>0的参数域，保留所有开集（包括空集）的原断言。任意实γ/非零σ的推广只留在非空修正版；漏C.Nonempty是原书疑误，不证明Printed。
+ -/
+ theorem lemma61Printed {N : ℕ} {Ω : Type*} [MeasurableSpace Ω]
+     (B : ℝ≥0 → Ω → (Fin N → ℝ)) (P : Measure Ω) (hB : textbookIsWienerVector B P)
+     (U : (Fin N → ℝ) → ℝ) (hU : ContDiff ℝ ∞ U) (hp : textbookUnitPeriodicPotential U)
+-    (L : ℝ≥0) (hF : LipschitzWith L (textbookPotentialForce U)) (γ σ : ℝ) (T : ℝ≥0) (hT : (0 : ℝ) < T)
+-    (hσ : σ ≠ 0) (x : textbookLangevinPeriodicPhase N)
++    (L : ℝ≥0) (hF : LipschitzWith L (textbookPotentialForce U)) (γ θ : ℝ) (hγ : 0 < γ) (hθ : 0 < θ)
++    (T : ℝ≥0) (hT : (0 : ℝ) < T) (x : textbookLangevinPeriodicPhase N)
+     (C : Set (textbookLangevinPeriodicPhase N)) (hC : IsOpen C) :
+-    0 < textbookLangevinPeriodicTransitionKernel B P U hU hp L hF γ σ T x C := by
++    0 < textbookLangevinPeriodicTransitionKernel B P U hU hp L hF γ (Real.sqrt (2*γ*θ)) T x C := by
+   sorry
+ 
+ /-- source_id: MD-6.4.4-Lemma61Nonempty · unnumbered_claim · §6.4.4 · 印刷p.255 / PDFp.276
+
+--- source entry before
++++ source entry after
+@@ -1,6 +1,6 @@
+ {
+   "source_id": "MD-6.4.4-Lemma61Printed",
+-  "kind": "unnumbered_claim",
++  "kind": "lemma",
+   "label": "Lemma 6.1",
+   "section": "6.4.4",
+   "printed_page": "255",
+@@ -19,9 +19,10 @@
+   "lean_decl": "MD.Ch06.lemma61Printed",
+   "reusable_proofs": [],
+   "extra_assumptions": [
+-    "[EXTRA] 25号：Printed收回单位质量周期相空间，保留包括空集的原全称开集断言及原书疑误；非空修正版独立保留，真实核存在规格补入复审包。"
++    "[EXTRA] 26号：kind恢复编号lemma；Printed收回原(6.47)正摩擦γ>0及物理噪声σ=√(2γθ)、θ=kBT>0的参数域，保留所有开集（包括空集）的原断言。任意实γ/非零σ的推广只留在非空修正版；漏C.Nonempty是原书疑误，不证明Printed。",
++    "[ERRATUM?] 原书数学疑误与本次形式化修复分别记录，见CH06_ERRATA。"
+   ],
+-  "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
++  "statement_scope": "本条当前覆盖范围：kind恢复编号lemma；Printed收回原(6.47)正摩擦γ>0及物理噪声σ=√(2γθ)、θ=kBT>0的参数域，保留所有开集（包括空集）的原断言。任意实γ/非零σ的推广只留在非空修正版；漏C.Nonempty是原书疑误，不证明Printed。",
+   "review_status": "DRAFT",
+   "repair_log": [
+     {
+@@ -30,6 +31,11 @@
+       "change": "增加目标开集非空；保留任意点初值、任意t>0的实际核正概率。",
+       "corrected_decl": "MD.Ch06.lemma61Printed_corrected",
+       "website": "未提交；待网站审计"
++    },
++    {
++      "stage": "CLOSEOUT26",
++      "note": "kind恢复编号lemma；Printed收回原(6.47)正摩擦γ>0及物理噪声σ=√(2γθ)、θ=kBT>0的参数域，保留所有开集（包括空集）的原断言。任意实γ/非零σ的推广只留在非空修正版；漏C.Nonempty是原书疑误，不证明Printed。",
++      "suggested_fix": "kind改为lemma。真正的Printed应保留原all open（包括空集）和原物理参数域，并挂[ERRATUM?]；任意实γ、非零σ的推广放到非空修正版中或另行命名。"
+     }
+   ],
+   "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json",
+@@ -54,5 +60,11 @@
+       "direct_placeholder": true,
+       "source_id": "MD-6.4.4-Lemma61Printed"
+     }
++  ],
++  "superseded_extra_assumptions26": [
++    "[EXTRA] 25号：Printed收回单位质量周期相空间，保留包括空集的原全称开集断言及原书疑误；非空修正版独立保留，真实核存在规格补入复审包。"
++  ],
++  "coverage_gaps": [
++    "原书漏非空目标；Printed忠实保留空集漏洞。"
+   ]
+ }

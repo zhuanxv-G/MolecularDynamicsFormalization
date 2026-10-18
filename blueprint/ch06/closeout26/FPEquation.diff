@@ -1,0 +1,57 @@
+--- Blueprint/Ch06.lean before
++++ Blueprint/Ch06.lean after
+@@ -1770,6 +1770,7 @@
+ 
+ /-- source_id: MD-6.3.6-FPEquation · unnumbered_claim · §6.3.6 · 印刷p.242 / PDFp.263
+ [EXTRA] [EXTRA]实际严格SDE与其真实平滑非负密度law、局部一致指数尾可求导资格；没有把弱PDE或所求点态PDE当假设。 [EXTRA] 25号：补X联合可测和相对W自然历史适应、扩散被积过程的适应平方可积资格；未建立严格网格解到标准适应Itô解的完整桥接，仍未证明。
++[EXTRA] 26号：密度联合光滑性只要求在(0,∞)×ℝ，保留确定初态及正时刻密度；不再要求密度跨t=0光滑。严格网格积分解到通常适应Itô解的桥接仍未证明，PDE结论不当作前提。
+ -/
+ theorem fpEquation : ∀ {Ω : Type*} [MeasurableSpace Ω] (P : Measure Ω)
+     (W X : ℝ → Ω → ℝ) (a b : ℝ → ℝ) (x0 : ℝ) (ρ : ℝ → ℝ → ℝ),
+@@ -1778,7 +1779,7 @@
+   Measurable (Function.uncurry X) →
+   (∀ t, 0 ≤ t → @Measurable Ω ℝ (naturalHistory25 W t) inferInstance (X t)) →
+   MolecularDynamics.Chapter06Review.adaptedSquareIntegrand P W (fun t sample ↦ b (X t sample)) →
+-  ContDiff ℝ ∞ a → ContDiff ℝ ∞ b → ContDiff ℝ ∞ (Function.uncurry ρ) →
++  ContDiff ℝ ∞ a → ContDiff ℝ ∞ b → ContDiffOn ℝ ∞ (Function.uncurry ρ) {z : ℝ × ℝ | 0 < z.1} →
+   (∀ t : ℝ, 0 < t → (∀ x, 0 ≤ ρ t x) ∧
+     HasLaw (X t) (volume.withDensity (fun x ↦ ENNReal.ofReal (ρ t x))) P) →
+   (∃ C : ℝ, 0 ≤ C ∧ ∃ r : ℕ, ∀ x, |a x|+|b x| ≤ C*(1+|x|)^r) →
+
+--- source entry before
++++ source entry after
+@@ -14,12 +14,17 @@
+   "lean_decl": "MD.Ch06.fpEquation",
+   "reusable_proofs": [],
+   "extra_assumptions": [
+-    "[EXTRA]实际严格SDE与其真实平滑非负密度law、局部一致指数尾可求导资格；没有把弱PDE或所求点态PDE当假设。",
+-    "[EXTRA] 25号：补X联合可测和相对W自然历史适应、扩散被积过程的适应平方可积资格；未建立严格网格解到标准适应Itô解的完整桥接，仍未证明。"
++    "[EXTRA] 26号：密度联合光滑性只要求在(0,∞)×ℝ，保留确定初态及正时刻密度；不再要求密度跨t=0光滑。严格网格积分解到通常适应Itô解的桥接仍未证明，PDE结论不当作前提。"
+   ],
+-  "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
++  "statement_scope": "本条当前覆盖范围：密度联合光滑性只要求在(0,∞)×ℝ，保留确定初态及正时刻密度；不再要求密度跨t=0光滑。严格网格积分解到通常适应Itô解的桥接仍未证明，PDE结论不当作前提。",
+   "review_status": "DRAFT",
+-  "repair_log": [],
++  "repair_log": [
++    {
++      "stage": "CLOSEOUT26",
++      "note": "密度联合光滑性只要求在(0,∞)×ℝ，保留确定初态及正时刻密度；不再要求密度跨t=0光滑。严格网格积分解到通常适应Itô解的桥接仍未证明，PDE结论不当作前提。",
++      "suggested_fix": "把ρ的光滑性限定在(0,∞)×ℝ，保留确定性初态；或改为随机初态具有给定平滑密度，并相应修改严格SDE定义。再核查严格网格解到适应Itô解的桥接；此处仅建议，不修改工程。"
++    }
++  ],
+   "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json",
+   "closeout25_source_changes": {
+     "statement_latex": {
+@@ -42,5 +47,12 @@
+       "direct_placeholder": true,
+       "source_id": "MD-6.3.6-FPEquation"
+     }
++  ],
++  "superseded_extra_assumptions26": [
++    "[EXTRA]实际严格SDE与其真实平滑非负密度law、局部一致指数尾可求导资格；没有把弱PDE或所求点态PDE当假设。",
++    "[EXTRA] 25号：补X联合可测和相对W自然历史适应、扩散被积过程的适应平方可积资格；未建立严格网格解到标准适应Itô解的完整桥接，仍未证明。"
++  ],
++  "coverage_gaps": [
++    "严格网格积分关系到通常适应Itô解、以及一般Fokker–Planck推导尚缺证明；不将单文件编译当作这些桥接已完成。"
+   ]
+ }

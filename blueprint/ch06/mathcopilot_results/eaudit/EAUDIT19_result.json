@@ -1,0 +1,124 @@
+{
+  "batch": "EAUDIT19",
+  "input_sha256": {
+    "Blueprint/Ch06.lean": "4a2a6cb72c1692f80e3537ab1a71701d429a482780a01226c3dc66a2ebb8b44b",
+    "blueprint/ch06/ch06_source.json": "d7f93cd20eb570744c710f3e07a88b319c082e4155812fee91db0920eb05944e"
+  },
+  "items": [
+    {
+      "source_id": "MD-6.4.5-KernelAverage",
+      "json_review": {
+        "status": "APPROVED",
+        "issue_codes": [
+          "LEAN_CONCLUSION_COVERAGE_GAP"
+        ],
+        "corrected_json": null,
+        "issues": [
+          {
+            "code": "LEAN_CONCLUSION_COVERAGE_GAP",
+            "location": "kernelAverage / coverage_gaps",
+            "message": "定义仅给出x处的核测试积分，没有初始分布μ0、演化分布μt或两种平均相等的结论；所引KernelDuality不在本批提供，不能代审。"
+          }
+        ],
+        "evidence": [
+          "A：附件第10页，印刷258、原书PDF279，which says that ... initial distribution.整句与JSON逐词一致。",
+          "C：所交kernelAverage只有K、f、t、x，体为∫f d(Kt x)，没有任何等式结论或可积前提；D28共享定义相同。",
+          "C：原页前一个展示式是∫D[e^{tLLD}φ(q,p)]ρ0(q,p)dω，说明本句指整体分布平均的对偶恒等式。"
+        ]
+      },
+      "audit": {
+        "lean_decl": "MD.Ch06.kernelAverage",
+        "verdict": "FAIL",
+        "explanation": "该辅助定义正确且与EXTRA所称“总化记号”相符：D为任意可测空间、K为任意核族、f为任意实函数；Lean积分对不合格函数仍有总化值。因此本定义不能解释为任意f都有概率平均，更不能推出原句的∫f dμt=∫Kt f dμ0。原句要求分布演化、可积资格及核积分交换的等式，而这些对象和结论均未在当前声明中出现。FAIL为完整原句覆盖不足，非定义或证明错误。原文JSON没有伪称它已覆盖，故A状态APPROVED并保留既有coverage_gaps。",
+        "counterexample": null,
+        "suggested_fix": "保留kernelAverage；另交两种平均相等的实际声明，量化μ0、μt并关联μt=Kt∘ₘμ0，附相应可测与可积条件。不能只引用本任务未提供的KernelDuality名称。"
+      },
+      "subtask": "EAUDIT19a"
+    },
+    {
+      "source_id": "MD-6.4.5-DensityEvolutionMeaning",
+      "json_review": {
+        "status": "APPROVED",
+        "issue_codes": [],
+        "corrected_json": null,
+        "issues": [],
+        "evidence": [
+          "A：附件第11–12页，印刷257–258、原书PDF278–279；variational sense引导句及两个含φ的积分与原页一致。",
+          "C：D60为环面Haar×动量Lebesgue的flatPhaseMeasure；D71实际包含β、γ正、U光滑周期、Markov半群及光滑紧支测试上的0处右生成元识别。",
+          "C：densityEvolutionMeaning逐项列出ρ0非负、可积、质量1、ρ(0)=ρ0以及每个t的非负、可积、质量1、测度等式与可积测试积分等式。"
+        ]
+      },
+      "audit": {
+        "lean_decl": "MD.Ch06.densityEvolutionMeaning",
+        "verdict": "PASS",
+        "explanation": "这是对给定K、ρ0、ρ的语义资格定义，未声称任意K或任意输入都存在密度。位置与动量维数一致，t∈R≥0。langevinKernelQualification25包含真实表达式p·∇q-∇U·∇p-γp·∇p+(γ/β)Δp在0处的右导数条件，并包含Markov初值与组合律；它是明确的生成元资格，不是仅有Markov名称。密度均相对于flatPhaseMeasure；withDensity采用ofReal前已有逐点非负，不能以裁剪冒充负密度。ρ0和各ρt均为单位质量并可积，ρ(0)=ρ0逐点明确。最后对所有满足两侧明确Integrable条件的实测试函数给出积分等式，把原页模糊的suitable test function落实为可积范围，不声称所有C∞在非紧空间自动合格。没有构造指数算子或证明K唯一等于路径核；EXTRA已明确只交语义资格。这个定义的对象、条件和完整定义体正确。",
+        "counterexample": null,
+        "suggested_fix": null
+      },
+      "subtask": "EAUDIT19b"
+    },
+    {
+      "source_id": "MD-6.4.5-SmoothTestL2Printed",
+      "json_review": {
+        "status": "NEEDS_HUMAN",
+        "issue_codes": [
+          "SOURCE_SENTENCE_TRUNCATION",
+          "ERRATUM_SMOOTH_NOT_L2",
+          "LEAN_CONCLUSION_COVERAGE_GAP"
+        ],
+        "corrected_json": {
+          "source_id": "MD-6.4.5-SmoothTestL2Printed",
+          "kind": "unnumbered_claim",
+          "label": null,
+          "section": "6.4.5",
+          "printed_page": "258",
+          "pdf_page": "279",
+          "statement_latex": "Since all the eigenvalues lie to the left of a vertical line in the left half plane, for any $\\varphi$ in $C^\\infty$ we have\n\\[\\int_D\\varphi\\rho(q,p,t)d\\omega=\\operatorname{Av}_\\beta(\\varphi)+\\alpha e^{t\\lambda_1}\\int_D\\varphi\\rho^{(1)}d\\omega.\\]\nThe latter integral is bounded since both $\\varphi$ and $\\rho^{(1)}$ are in $L^2$, and since $\\operatorname{Re}(\\lambda_1)<0$, we see that this converges exponentially to the desired average.",
+          "proof_latex": null,
+          "proof_note": "原书未给独立完整证明。",
+          "proof_discussion_latex": null,
+          "context_notation": [],
+          "extra_assumptions": [
+            "[EXTRA] 25号：原文版忠实性与数学疑误分开；补齐所交条目所属的现有_corrected完整签名，不从repair_log名称推断网站已通过修正版。",
+            "[ERRATUM?] 非紧平直相空间上光滑不蕴含L²。保留原句；修正版仅将测试域限定为C∞∩L²，不声称已证明平均公式或积分有界。"
+          ],
+          "statement_scope": "原文按页照录；当前Printed只表达光滑蕴含L²的疑误子主张，corrected只给出C∞∩L²测试函数域，不能标成整个平均公式已覆盖。",
+          "coverage_gaps": [
+            "原文展示的平均恒等式、ρ^(1)的L²资格及两者配对的有界性没有在当前两个声明中表达；corrected只是测试函数资格定义。"
+          ]
+        },
+        "issues": [
+          {
+            "code": "SOURCE_SENTENCE_TRUNCATION",
+            "location": "statement_latex",
+            "message": "原页L²之后为逗号并继续and since Re(λ1)<0, we see that this converges exponentially to the desired average.；JSON改成句号，应恢复原句或明确摘录截断。"
+          },
+          {
+            "code": "ERRATUM_SMOOTH_NOT_L2",
+            "location": "statement_latex / smoothTestL2Printed",
+            "message": "T^n×R^n在n≥1时平直测度无限，C∞不蕴含L²；原文的任意C∞及both are in L²推理需人工确认测试函数域。保持Printed字面结论，不静默改正。"
+          },
+          {
+            "code": "LEAN_CONCLUSION_COVERAGE_GAP",
+            "location": "smoothTestL2Printed_corrected / coverage_gaps",
+            "message": "Printed仅形式化C∞⇒L²这一原文隐含子主张；corrected仅定义C∞∩L²合格域。两者都没有本条JSON展示的平均恒等式、ρ1的L²资格或积分的Cauchy–Schwarz界。"
+          }
+        ],
+        "evidence": [
+          "A：附件第13页，印刷258、原书PDF279，已目视核对Since all the eigenvalues ...、平均恒等式及其后完整最后一句；原文确实把任意C∞与L²资格混用。",
+          "C：D60的flatPhaseMeasure包含R^n的Lebesgue测度；这不是有限质量Gibbs测度。",
+          "C：Blueprint/Ch06.lean:3394为∀n∀f，ContDiff lift→MemLp f 2 flat；:3400的corrected为两个谓词的合取，既非其证明，也非平均等式。"
+        ]
+      },
+      "audit": {
+        "lean_decl": "MD.Ch06.smoothTestL2Printed; MD.Ch06.smoothTestL2Printed_corrected",
+        "verdict": "FAIL",
+        "explanation": "分版审校：smoothTestL2Printed忠实地保留原页隐含的“每个光滑测试函数均在平直L²”子主张；该子主张的原书数学疑误判NEEDS_HUMAN，而不因它为假就判Printed不忠实。smoothTestL2Printed_corrected是正确的限定域定义C∞∩L²，修正合理，局部签名PASS；但它是def，不是有界积分定理。本条scope仍称覆盖所引原句及展示公式，coverage_gaps却为null。实际两个声明都没有ρt、ρeq、ρ1、λ1、α、传播关系、平均恒等式或积分界，因此总audit为FAIL，理由是独立的完整结论覆盖缺口，而不是原书数学疑误或sorry。原文错误另在json_review中保留NEEDS_HUMAN。",
+        "counterexample": "针对Printed数学主张：n=1取f(q,p)=1，周期提升处处C∞，但平直∫T×R|f|²dω=∞，故不在L²。也可取任意非零高次多项式。该反例不反驳corrected的C∞∩L²定义。",
+        "suggested_fix": "原文恢复完整末句并加[ERRATUM?]；保留Printed及正确的限定域定义。另列两种平均相等及ρ1、测试函数满足L²时的积分界，或如实登记当前缺口；不得把def合格域算成完整平均定理。"
+      },
+      "subtask": "EAUDIT19c"
+    }
+  ],
+  "merged_from": "ch06_eaudit_merged"
+}

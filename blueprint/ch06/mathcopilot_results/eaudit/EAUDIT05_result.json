@@ -1,0 +1,146 @@
+{
+  "batch": "EAUDIT05",
+  "input_sha256": {
+    "Blueprint/Ch06.lean": "4a2a6cb72c1692f80e3537ab1a71701d429a482780a01226c3dc66a2ebb8b44b",
+    "blueprint/ch06/ch06_source.json": "d7f93cd20eb570744c710f3e07a88b319c082e4155812fee91db0920eb05944e"
+  },
+  "items": [
+    {
+      "source_id": "MD-6.2.2-DeterministicStrobePrinted",
+      "json_review": {
+        "status": "NEEDS_HUMAN",
+        "issue_codes": [
+          "BOOK_INCREMENT_VARIANCE_CONFUSION",
+          "GAUSSIAN_PARAMETER_CONVENTION",
+          "MISSING_CORRECTED_DECLARATION",
+          "COVERAGE_METADATA_MISMATCH"
+        ],
+        "corrected_json": {
+          "source_id": "MD-6.2.2-DeterministicStrobePrinted",
+          "kind": "unnumbered_claim",
+          "label": null,
+          "section": "6.2.2",
+          "printed_page": "231",
+          "pdf_page": "252",
+          "statement_latex": "Finally, we observe that by calculating $\\sigma^2(t_n)$ and generating random increments $R_n\\sim N(0,\\sigma(t_n))$ we have a discrete representation of the continuous time stochastic process $Y(t)$, effectively an exact stroboscopic representation.",
+          "proof_latex": null,
+          "proof_note": "原书未给独立完整证明。",
+          "proof_discussion_latex": null,
+          "context_notation": [],
+          "extra_assumptions": [
+            "[EXTRA] Printed保留原书累计尺度N(0,σ(t_n))；将第二参数解释为标准差并平方传入gaussianReal是额外约定，需确认。本条未摘录所称相邻区间方差与整族独立性的修正版，不能认证该修正版。"
+          ],
+          "statement_scope": "本条实际仅提供deterministicIntegralProcess与deterministicStrobePrinted；所称独立修正版未摘录。",
+          "coverage_gaps": [
+            "本条未提供[EXTRA]声称的独立修正版完整声明，无法审校其相邻区间方差及整族独立性。"
+          ]
+        },
+        "issues": [
+          {
+            "stage": "A",
+            "description": "原书确写累计σ²(t_n)和R_n∼N(0,σ(t_n))；Gaussian记号的第二参数约定也应澄清，不能由此归因于转录。"
+          },
+          {
+            "stage": "C",
+            "description": "deterministicIntegralProcess为每个T≥0的严格均方积分资格，已核对。deterministicStrobePrinted把第k到k+1观测的增量分布方差写成0到times k的累计∫g²（对sqrt再平方），保留了原书增量/边际混淆。N(0,σ)按标准差理解是额外约定；此前书中W(t)∼N(0,t)使用方差式习惯，更需人工确认。[EXTRA]与statement_scope声称独立修正版包含相邻区间方差和整族独立性，但本条全部摘录没有任何相应_corrected声明；不能认证未提供的修正版，coverage_gaps=[]不实。"
+          }
+        ],
+        "evidence": [
+          "A：已核对R1_PAGES.pdf附件第16页，原书PDF页252、印刷页231。原书确写累计σ²(t_n)和R_n∼N(0,σ(t_n))；Gaussian记号的第二参数约定也应澄清，不能由此归因于转录。",
+          "C：只读核对本条完整Lean摘录及所引用附录项目定义；标准库按标准数学含义采信。deterministicIntegralProcess为每个T≥0的严格均方积分资格，已核对。deterministicStrobePrinted把第k到k+1观测的增量分布方差写成0到times k的累计∫g²（对sqrt再平方），保留了原书增量/边际混淆。N(0,σ)按标准差理解是额外约定；此前书中W(t)∼N(0,t)使用方差式习惯，更需人工确认。[EXTRA]与statement_scope声称独立修正版包含相邻区间方差和整族独立性，但本条全部摘录没有任何相应_corrected声明；不能认证未提供的修正版，coverage_gaps=[]不实。"
+        ]
+      },
+      "audit": {
+        "lean_decl": "MD.Ch06.strictItoIntegral; MD.Ch06.deterministicIntegralProcess; MD.Ch06.deterministicStrobePrinted",
+        "verdict": "NEEDS_HUMAN",
+        "explanation": "deterministicIntegralProcess为每个T≥0的严格均方积分资格，已核对。deterministicStrobePrinted把第k到k+1观测的增量分布方差写成0到times k的累计∫g²（对sqrt再平方），保留了原书增量/边际混淆。N(0,σ)按标准差理解是额外约定；此前书中W(t)∼N(0,t)使用方差式习惯，更需人工确认。[EXTRA]与statement_scope声称独立修正版包含相邻区间方差和整族独立性，但本条全部摘录没有任何相应_corrected声明；不能认证未提供的修正版，coverage_gaps=[]不实。",
+        "counterexample": "g=1、times k=k、Y=W；k=0时实际W(1)-W(0)方差为1，Printed给0。",
+        "suggested_fix": "修正版应给方差∫_{times k}^{times(k+1)}g²及整个增量族独立性，并实际提供完整声明；原文保留疑误，不把累计边际方差用作步进方差。"
+      },
+      "subtask": "EAUDIT05a"
+    },
+    {
+      "source_id": "MD-6.3-VectorSDE",
+      "json_review": {
+        "status": "NEEDS_HUMAN",
+        "issue_codes": [
+          "MISSING_ADAPTED_SOLUTION_QUALIFICATION"
+        ],
+        "corrected_json": null,
+        "issues": [
+          {
+            "stage": "A",
+            "description": "附件第17–18页的向量场、独立Wiener、按列组成B及两式录入一致。"
+          },
+          {
+            "stage": "C",
+            "description": "strictVectorSDE对任意n,r、样本空间、实时间W和X、时变向量a与n×r矩阵B、确定初态x0，要求真实联合Gaussian向量Wiener、AE连续初态、逐坐标逐T漂移可积与各列严格左和积分，增量等于列积分和。D9的Gaussian、零均值、全部跨时协方差和AE连续确可给坐标过程独立，D10、D11已核对，未仅以同一时刻独立代替。但定义不要求X联合可测或相对共同W历史适应，不能未经限定当作标准适应Itô解的完整定义；第28条另外加这些资格印证区别。作为积分方程关系签名正确，作为完整SDE资格仍需人工确认范围。"
+          }
+        ],
+        "evidence": [
+          "A：已核对R1_PAGES.pdf附件第17,18页，原书PDF页253–254、印刷页232–233。附件第17–18页的向量场、独立Wiener、按列组成B及两式录入一致。",
+          "C：只读核对本条完整Lean摘录及所引用附录项目定义；标准库按标准数学含义采信。strictVectorSDE对任意n,r、样本空间、实时间W和X、时变向量a与n×r矩阵B、确定初态x0，要求真实联合Gaussian向量Wiener、AE连续初态、逐坐标逐T漂移可积与各列严格左和积分，增量等于列积分和。D9的Gaussian、零均值、全部跨时协方差和AE连续确可给坐标过程独立，D10、D11已核对，未仅以同一时刻独立代替。但定义不要求X联合可测或相对共同W历史适应，不能未经限定当作标准适应Itô解的完整定义；第28条另外加这些资格印证区别。作为积分方程关系签名正确，作为完整SDE资格仍需人工确认范围。"
+        ]
+      },
+      "audit": {
+        "lean_decl": "MD.Ch06.strictItoIntegral; MD.Ch06.strictVectorSDE",
+        "verdict": "NEEDS_HUMAN",
+        "explanation": "strictVectorSDE对任意n,r、样本空间、实时间W和X、时变向量a与n×r矩阵B、确定初态x0，要求真实联合Gaussian向量Wiener、AE连续初态、逐坐标逐T漂移可积与各列严格左和积分，增量等于列积分和。D9的Gaussian、零均值、全部跨时协方差和AE连续确可给坐标过程独立，D10、D11已核对，未仅以同一时刻独立代替。但定义不要求X联合可测或相对共同W历史适应，不能未经限定当作标准适应Itô解的完整定义；第28条另外加这些资格印证区别。作为积分方程关系签名正确，作为完整SDE资格仍需人工确认范围。",
+        "counterexample": null,
+        "suggested_fix": "注明这里只定义严格网格积分方程关系；若拟定义标准Itô解，补共同过滤下X可测/适应与通常积分资格，勿仅靠向量Wiener条件。"
+      },
+      "subtask": "EAUDIT05b"
+    },
+    {
+      "source_id": "MD-6.3.1-ScalarItoFormula",
+      "json_review": {
+        "status": "NEEDS_HUMAN",
+        "issue_codes": [
+          "SOURCE_SIM_SYMBOL",
+          "BOOK_C2_REMAINDER_OVERCLAIM"
+        ],
+        "corrected_json": {
+          "source_id": "MD-6.3.1-ScalarItoFormula",
+          "kind": "unnumbered_claim",
+          "label": "(6.17)",
+          "section": "6.3.1",
+          "printed_page": "233",
+          "pdf_page": "254",
+          "statement_latex": "Let $\\phi(\\cdot)$ be any continuously twice differentiable function and let $X_n\\in\\mathbb R$ represent the state of a biased random walk as considered in Sect. 6.3, i.e., with state $X_{n+1}=X_n+a(X_n,n\\delta t)\\delta t+b(X_n,n\\delta t)J_n\\delta x$.\n\\[d\\phi(X)=\\phi'(X)(a(X,t)dt+b(X,t)dW)+\\tfrac12\\phi''(X)b(X,t)^2dt.\\tag{6.17}\\]",
+          "proof_latex": "Let $\\phi_n=\\phi(X_n)$, then Taylor's theorem gives\n\\[\\delta\\phi\\stackrel{\\rm def}=\\phi_{n+1}-\\phi_n=\\phi'(X_n)\\delta X_n+\\tfrac12\\phi''(X_n)\\delta X_n^2+o(\\delta X_n^2)\n=\\phi'(X_n)(a(X_n,n\\delta t)\\delta t+b(X_n,n\\delta t)J_n\\delta x)\n+\\tfrac12\\phi''(X_n)(a(X_n,n\\delta t)\\delta t+b(X_n,n\\delta t)J_n\\delta x)^2+o(\\delta X_n^2).\\]\nNow we expand the 2nd order term and, working in the diffusion limit, recognize that $\\delta x^2\\sim\\delta t$, thus we have\n\\[\\delta\\phi=\\phi'(X_n)(a(X_n,n\\delta t)\\delta t+b(X_n,n\\delta t)J_n\\delta x)+\\tfrac12\\phi''(X_n)b(X_n,n\\delta t)^2\\delta t+O(\\delta t^{3/2}).\\]\nPassing to the limit, this leads to the SDE.",
+          "proof_note": "原启发证明完整保留；C²仅给o(δt)，O(δt³⁄²)需要更高阶资格，另条疑误。",
+          "proof_discussion_latex": null,
+          "context_notation": [],
+          "extra_assumptions": [
+            "[EXTRA] 25号：补X联合可测及自然过滤适应、被积过程全部网格和L²与局部均方时间Hölder资格。仅时间积分平方可积的旧签名前提不足且有网站反例；新签名不假设所求积分公式/极限，仍缺一般Itô理论，不证明。Time版与_corrected同步，漏dt原文形式单列保留。"
+          ],
+          "statement_scope": "本条Lean覆盖范围：补X联合可测及自然过滤适应、被积过程全部网格和L²与局部均方时间Hölder资格。仅时间积分平方可积的旧签名前提不足且有网站反例；新签名不假设所求积分公式/极限，仍缺一般Itô理论，不证明。Time版与_corrected同步，漏dt原文形式单列保留。",
+          "coverage_gaps": []
+        },
+        "issues": [
+          {
+            "stage": "A",
+            "description": "附件第19页中的扩散缩放符号为∼，proof_latex误录为≈；C²到O(dt^(3/2))的原书推理问题仍应留存。"
+          },
+          {
+            "stage": "C",
+            "description": "scalarItoFormula：P上的preBrownian、strictScalarSDE（AE连续、确定初态、逐终点漂移可积和严格均方左和关系）、φ为C²、a,b在状态时间上C¹，再加φ′(X)b适应平方可积、X联合可测及自然历史适应、gridItoQualification25。后者含P概率、联合可测和适应、每时L²、每个左和L²以及局部均方Hölder控制，并未假设所求结论。结论为每T≥0下φ(X_T)-φ(x0)-∫(φ′a+φ″b²/2)等于φ′b的严格均方积分，系数、初项、时变量和量词正确。限定签名PASS，不因sorry判FAIL；原文C²余项推成O(dt^(3/2))及直接过极限缺口保留NEEDS_HUMAN。"
+          }
+        ],
+        "evidence": [
+          "A：已核对R1_PAGES.pdf附件第19页，原书PDF页254、印刷页233。附件第19页中的扩散缩放符号为∼，proof_latex误录为≈；C²到O(dt^(3/2))的原书推理问题仍应留存。",
+          "C：只读核对本条完整Lean摘录及所引用附录项目定义；标准库按标准数学含义采信。scalarItoFormula：P上的preBrownian、strictScalarSDE（AE连续、确定初态、逐终点漂移可积和严格均方左和关系）、φ为C²、a,b在状态时间上C¹，再加φ′(X)b适应平方可积、X联合可测及自然历史适应、gridItoQualification25。后者含P概率、联合可测和适应、每时L²、每个左和L²以及局部均方Hölder控制，并未假设所求结论。结论为每T≥0下φ(X_T)-φ(x0)-∫(φ′a+φ″b²/2)等于φ′b的严格均方积分，系数、初项、时变量和量词正确。限定签名PASS，不因sorry判FAIL；原文C²余项推成O(dt^(3/2))及直接过极限缺口保留NEEDS_HUMAN。"
+        ]
+      },
+      "audit": {
+        "lean_decl": "MD.Ch06.naturalHistory25; MD.Ch06.gridItoQualification25; MD.Ch06.strictItoIntegral; MD.Ch06.strictScalarSDE; MD.Ch06.scalarItoFormula",
+        "verdict": "NEEDS_HUMAN",
+        "explanation": "scalarItoFormula：P上的preBrownian、strictScalarSDE（AE连续、确定初态、逐终点漂移可积和严格均方左和关系）、φ为C²、a,b在状态时间上C¹，再加φ′(X)b适应平方可积、X联合可测及自然历史适应、gridItoQualification25。后者含P概率、联合可测和适应、每时L²、每个左和L²以及局部均方Hölder控制，并未假设所求结论。结论为每T≥0下φ(X_T)-φ(x0)-∫(φ′a+φ″b²/2)等于φ′b的严格均方积分，系数、初项、时变量和量词正确。限定签名PASS，不因sorry判FAIL；原文C²余项推成O(dt^(3/2))及直接过极限缺口保留NEEDS_HUMAN。",
+        "counterexample": "φ(x)=|x|^(5/2)、x=0、a=0、b=1；C²成立，局部余项dt^(5/4)非O(dt^(3/2))。",
+        "suggested_fix": "将转录≈恢复为∼；原书启发式单列疑误。保留补足的网格L²/适应资格，勿称一般Itô理论已证明。"
+      },
+      "subtask": "EAUDIT05c"
+    }
+  ],
+  "merged_from": "ch06_eaudit_merged"
+}

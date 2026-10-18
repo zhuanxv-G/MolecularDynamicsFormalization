@@ -1,0 +1,155 @@
+{
+  "batch": "EAUDIT11",
+  "input_sha256": {
+    "Blueprint/Ch06.lean": "4a2a6cb72c1692f80e3537ab1a71701d429a482780a01226c3dc66a2ebb8b44b",
+    "blueprint/ch06/ch06_source.json": "d7f93cd20eb570744c710f3e07a88b319c082e4155812fee91db0920eb05944e"
+  },
+  "items": [
+    {
+      "source_id": "MD-6.4.2-StationaryInvariant",
+      "json_review": {
+        "status": "APPROVED",
+        "issue_codes": [],
+        "corrected_json": null,
+        "issues": [],
+        "evidence": [
+          {
+            "source": "R2_PAGES.pdf",
+            "attachment_page": [
+              1
+            ],
+            "location": "印刷247页，L†ρeq≡0及其后一段",
+            "observation": "statement_latex中的三句及展示公式与原页一致。"
+          },
+          {
+            "source": "R2_任务.md",
+            "location": "条目1及附录D3–D6",
+            "observation": "结论实际引用MolecularDynamics.Chapter06Review.invariantKernel；已按该命名空间展开核对。"
+          }
+        ]
+      },
+      "audit": {
+        "lean_decl": "MD.Ch06.stationaryInvariant",
+        "verdict": "PASS",
+        "explanation": "A：引文、公式、节号及印刷247/PDF268页均与附件第1页相符。C：D为任意可测状态空间，K为非负时间的实际概率Markov核半群，μ为概率测度；逐一核对了全部有界可测检验函数、每个有限时间区间上的可积导数支配、演化检验函数的右侧导数关系、L作用后的可积性及弱平稳性前提。D3–D6中kernelAverage是真实核积分，kernelEvolution为K t ∘ₘ μ，invariantKernel量化所有非负时刻的测度相等。因此结论是完整的核不变性，未将形式指数、只对常数检验的恒等式或不变性本身作为前提。[EXTRA]清楚披露了这是一条在可交换微分与积分条件下由弱平稳推出不变的充分命题；不把它解读为无条件的形式偏微分方程等价定理。本次只审签名，不因sorry扣分。",
+        "counterexample": null,
+        "suggested_fix": null
+      },
+      "subtask": "EAUDIT11a"
+    },
+    {
+      "source_id": "MD-6.4.2-LangevinCanonicalMixing",
+      "json_review": {
+        "status": "APPROVED",
+        "issue_codes": [],
+        "corrected_json": null,
+        "issues": [],
+        "evidence": [
+          {
+            "source": "R2_PAGES.pdf",
+            "attachment_page": [
+              2
+            ],
+            "location": "印刷248页，中部点初始分布一段",
+            "observation": "所引原句准确；同页前部另有演化分布平均的混合公式。"
+          },
+          {
+            "source": "R2_任务.md",
+            "location": "条目2；附录D8、D15、D17–D31及CanonicalMeasure定义",
+            "observation": "实际路径、端点核、参考测度及目标规范测度均有定义体，不存在仅凭同名对象替代实际演化的问题。"
+          }
+        ]
+      },
+      "audit": {
+        "lean_decl": "MD.Ch06.langevinCanonicalMixing",
+        "verdict": "PASS",
+        "explanation": "A：印刷248/PDF269页中从“Even a single phase space point”到“entire phase space”的摘录准确。C：状态空间确为单位位置环面×实动量，U全局C∞且单位周期，力为−∇U并有显式全局Lipschitz常数；β、γ正，噪声幅度√(2γ/β)，B满足给定高斯、均值、协方差和几乎处处连续的Wiener规格。D17、D19–D23给出所选路径的存在、初值和两条积分方程；D28的核是该实际路径端点的推前，未任意选一个具有所需性质的核。flatPhaseMeasure为位置Haar×动量Lebesgue；canonicalMeasure为归一位置Gibbs×各坐标方差β⁻¹的独立高斯。第一结论对每个t>0提供在两个初末态变量上连续、处处严格正的密度及全测度相等；第二结论对每个点初值、每个有界连续f给出到该规范测度的弱收敛。[EXTRA]已明确周期、单位质量的范围；不把此声明扩大为任意退化SDE或非紧配置空间的结论。",
+        "counterexample": null,
+        "suggested_fix": null
+      },
+      "subtask": "EAUDIT11b"
+    },
+    {
+      "source_id": "MD-6.4.3-BrownianSymmetry",
+      "json_review": {
+        "status": "NEEDS_HUMAN",
+        "issue_codes": [
+          "SOURCE_ADJOINT_DOMAIN_AMBIGUITY",
+          "PROOF_NOTE_INCOMPLETE",
+          "COVERAGE_METADATA_INCOMPLETE"
+        ],
+        "corrected_json": {
+          "source_id": "MD-6.4.3-BrownianSymmetry",
+          "kind": "unnumbered_claim",
+          "label": null,
+          "section": "6.4.3",
+          "printed_page": "250",
+          "pdf_page": "271",
+          "statement_latex": "In this form we see that $f$ and $g$ appear symmetrically, so we may write\n\\[\\langle f,\\mathcal Lg\\rangle_\\beta=\\langle\\mathcal Lf,g\\rangle_\\beta;\\]\nhence, with respect to the weighted inner product, $\\mathcal L^\\dagger=\\mathcal L$. (Note that the adjoint indicated here is quite different than the $L^2$ adjoint mentioned previously in connection with the Fokker-Planck operator.)",
+          "proof_latex": null,
+          "proof_note": "原书给出分部积分得到形式对称配对的论证；未给出无界算子闭域及伴随域相等的完整论证。",
+          "proof_discussion_latex": null,
+          "context_notation": [],
+          "extra_assumptions": [
+            "[EXTRA]完整未归一配对等式，由现成归一配对消去正Z⁻¹；C∞周期核心上的形式对称，不宣称C₀²核心本身已闭自伴。",
+            "[EXTRA] 25号：本条仅为周期光滑核心上的形式对称配对；核心对称不推出伴随域相等。闭实现自伴另见BrownianClosedSelfAdjoint，原C₀²域解释待签核。",
+            "[ERRATUM?] 形式对称与闭自伴须区分；本条配对恒等式不等于已经忠实实现原C₀²域上的L†=L。"
+          ],
+          "statement_scope": "原文引文保持不变；两份Lean声明仅覆盖C∞单位周期核心上的加权配对对称。",
+          "coverage_gaps": [
+            "原C₀²域的自伴解释待人工确认；闭实现的自伴性由BrownianClosedSelfAdjoint单独处理。"
+          ]
+        },
+        "issues": [
+          {
+            "code": "SOURCE_ADJOINT_DOMAIN_AMBIGUITY",
+            "field": "statement_latex",
+            "message": "原页的L†=L未说明伴随域；C₀²/光滑核心上的形式对称不能单独推出作为无界算子的自伴性。"
+          },
+          {
+            "code": "PROOF_NOTE_INCOMPLETE",
+            "field": "proof_note",
+            "message": "原页在该句之前有连续的分部积分推导；应说明原书给出形式配对的论证，但未给出闭域/伴随域的完整论证。"
+          },
+          {
+            "code": "COVERAGE_METADATA_INCOMPLETE",
+            "field": "coverage_gaps",
+            "message": "extra_assumptions已承认伴随域缺口，coverage_gaps却为null，应显式记录。"
+          }
+        ],
+        "evidence": [
+          {
+            "source": "R2_PAGES.pdf",
+            "attachment_page": [
+              3
+            ],
+            "location": "印刷250页，中部配对等式及其后两句",
+            "observation": "原页确写L†=L；上方给出了分部积分等式。"
+          },
+          {
+            "source": "R2_PAGES.pdf",
+            "attachment_page": [
+              5
+            ],
+            "location": "印刷249页，C₀²(μ̄β)及内积定义",
+            "observation": "原书先以C₀²函数空间表述，未在所附原页指定闭图定义域。"
+          },
+          {
+            "source": "R2_任务.md",
+            "location": "条目3；附录D32–D34",
+            "observation": "两份签名只有实值函数的双线性配对相等；没有无界算子伴随域结论。"
+          }
+        ]
+      },
+      "audit": {
+        "lean_decl": "MD.Ch06.brownianSymmetry; MD.Ch06.brownianSymmetry_corrected",
+        "verdict": "NEEDS_HUMAN",
+        "explanation": "A：配对等式及随后L†=L的引文准确，原文的自伴措辞应保留。C：两份Lean签名完全相同，均为PASS的限定配对恒等式：积分在一个基本立方体上，权为exp(−βU)，U、f、g均C∞且单位周期，β≠0；m仅作实系数参数，形式对称本身不需要质量正性。D32–D34及归一配对定义表明取消正的配分函数因子不会改变等式。它们没有表达伴随算子的定义域等于原定义域。原页从对称积分直接说L†=L，但此前给出的C₀²域是否指闭实现并不清楚，不能把正确的核心对称等式当作原域已自伴。corrected版数学陈述通过；整条因原文域解释仍为NEEDS_HUMAN，而非因证明占位或定义缺失。",
+        "counterexample": "用于说明域问题而非反驳配对等式：在一维周期环面、U=0时，将d²/dq²仅定义在C∞周期核心上，它对称但尚未闭；其自伴闭实现的定义域为周期H²。",
+        "suggested_fix": "保留原文及域疑问；将本条签名标为形式对称限定版，并由闭Gibbs-L²实现单列自伴结论。不要将两份相同签名计为额外覆盖了原伴随域断言。"
+      },
+      "subtask": "EAUDIT11c"
+    }
+  ],
+  "merged_from": "ch06_eaudit_merged"
+}

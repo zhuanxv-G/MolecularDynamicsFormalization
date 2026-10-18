@@ -1,3 +1,16 @@
+# 26号已完成：第6章最终收口，等待用户新指令
+
+先核对CURRENT_STATE顶部、26号验收及Git实际推送状态。本轮8项按意见处理、324声明公理及一次完整check已通过，三份文档齐全。随终态提交push后停止；不再送网站、不生成新EAUDIT包、不进入第7章。没有用户新指令不继续证明。
+
+---
+
+# 按26号继续第6章收口
+
+先读AGENTS、CURRENT_STATE顶部、WORK_LOG最新和blueprint/ch06/PROGRESS.md，先git status并复用通过证据。完整26号原文见blueprint/ch06/closeout26/USER_INSTRUCTION.zh-CN.md。仅第6章；正式库和第1–5章冻结，不再送网站、不生成新EAUDIT包、不进入第7章。
+完成标准为26号第5节：8条FAIL修复中0、逐项单文件与全部声明公理检查、一次完整check通过，正式库0 sorry/0 axiom，三份文档齐全，提交push后CURRENT_STATE写完成终态并停止。当前处于本地核验阶段，尚未完成提交push。
+
+---
+
 # 25号已完成：停止等待用户提交第6章复审包
 
 先读CURRENT_STATE顶部和25号指令。20包/60条已生成；本轮不向网站提交，不进入第7章。除非用户给新指令，不继续证明或处理后续章节。

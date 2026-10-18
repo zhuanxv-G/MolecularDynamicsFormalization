@@ -1,0 +1,99 @@
+{
+  "batch": "EAUDIT08",
+  "input_sha256": {
+    "Blueprint/Ch06.lean": "4a2a6cb72c1692f80e3537ab1a71701d429a482780a01226c3dc66a2ebb8b44b",
+    "blueprint/ch06/ch06_source.json": "d7f93cd20eb570744c710f3e07a88b319c082e4155812fee91db0920eb05944e"
+  },
+  "items": [
+    {
+      "source_id": "MD-6.3.3-MemoryKernelDeltaMeaning",
+      "json_review": {
+        "status": "NEEDS_HUMAN",
+        "issue_codes": [
+          "UNREALIZABLE_DELTA_QUALIFICATION",
+          "ONE_SIDED_BOUNDARY_CONVENTION",
+          "LIMIT_DEFINITION_NOT_THEOREM"
+        ],
+        "corrected_json": null,
+        "issues": [
+          {
+            "stage": "A",
+            "description": "已目视核对附件第26页图下段落及(6.30)–(6.31)，与所摘原句一致。"
+          },
+          {
+            "stage": "C",
+            "description": "memoryKernelDeltaMeaning定义对全部C∞紧支测试f的全实轴分布收敛到γf(0)，γ>0；_corrected再要求所有质量正。两者作为收敛资格的形式表达准确，均非存在或Langevin推导定理。但memoryKernel的1/k归一使所有k,t的绝对值≤1，因此两谓词在γ>0时都不可实现；正质量未修复。[EXTRA]已披露这一点，故保留NEEDS_HUMAN，不把不可实现资格当有效修正版。全线γδ0与0到t卷积的边界因子尚需约定，(6.30)–(6.31)本身未被定义覆盖。"
+          }
+        ],
+        "evidence": [
+          "A：已核对R1_PAGES.pdf附件第26页，原书PDF页259、印刷页238。已目视核对附件第26页图下段落及(6.30)–(6.31)，与所摘原句一致。",
+          "C：只读核对本条完整Lean摘录及所引用附录项目定义；标准库按标准数学含义采信。memoryKernelDeltaMeaning定义对全部C∞紧支测试f的全实轴分布收敛到γf(0)，γ>0；_corrected再要求所有质量正。两者作为收敛资格的形式表达准确，均非存在或Langevin推导定理。但memoryKernel的1/k归一使所有k,t的绝对值≤1，因此两谓词在γ>0时都不可实现；正质量未修复。[EXTRA]已披露这一点，故保留NEEDS_HUMAN，不把不可实现资格当有效修正版。全线γδ0与0到t卷积的边界因子尚需约定，(6.30)–(6.31)本身未被定义覆盖。"
+        ]
+      },
+      "audit": {
+        "lean_decl": "MD.Ch06.memoryKernelDeltaMeaning; MD.Ch06.memoryKernelDeltaMeaning_corrected",
+        "verdict": "NEEDS_HUMAN",
+        "explanation": "memoryKernelDeltaMeaning定义对全部C∞紧支测试f的全实轴分布收敛到γf(0)，γ>0；_corrected再要求所有质量正。两者作为收敛资格的形式表达准确，均非存在或Langevin推导定理。但memoryKernel的1/k归一使所有k,t的绝对值≤1，因此两谓词在γ>0时都不可实现；正质量未修复。[EXTRA]已披露这一点，故保留NEEDS_HUMAN，不把不可实现资格当有效修正版。全线γδ0与0到t卷积的边界因子尚需约定，(6.30)–(6.31)本身未被定义覆盖。",
+        "counterexample": "选0≤f≤1、f(0)=1、支撑在(-ε,ε)的光滑bump，则所有k的|∫ψ_k f|≤2ε；若2ε<γ，不可能趋γ。",
+        "suggested_fix": "先规定时间/振幅重标度及单边核质量，再定义可实现的δ极限；保留原启发式和当前谓词的不可实现说明。"
+      },
+      "subtask": "EAUDIT08a"
+    },
+    {
+      "source_id": "MD-6.3.3-BathForceWeakLimitMeaning",
+      "json_review": {
+        "status": "NEEDS_HUMAN",
+        "issue_codes": [
+          "FORCE_VS_INTEGRATED_FORCE",
+          "UNSPECIFIED_LIMIT_SCALING",
+          "LIMIT_DEFINITION_NOT_THEOREM"
+        ],
+        "corrected_json": null,
+        "issues": [
+          {
+            "stage": "A",
+            "description": "关于f(t)弱收敛到Wiener、随机初态及引用[13,205]的原句见附件第27页；第28页续文说力被近似为Wiener增量，显示“力”与“积分力”的解释冲突。"
+          },
+          {
+            "stage": "C",
+            "description": "bathForceWeakLimitMeaning：在概率空间、正质量下，将实际Printed力逐点嵌入C([0,T])，要求路径随机变量可测，W为preBrownian并有连续路径代表；对每T>0全部有界连续泛函的期望收敛，确为路径法则弱收敛而非仅边际。_corrected改成正bathForce的0至s时间积分，其余量词不变；这是与dP中的白噪声驱动更相符的候选。没有任何版本断言存在初态/质量族满足；也没有σ幅度或物理标度条件，所以不能认证实际热浴收敛或称“修复完成”。两版定义签名各自表达所说资格，但数学解释保留NEEDS_HUMAN。"
+          }
+        ],
+        "evidence": [
+          "A：已核对R1_PAGES.pdf附件第27,28页，原书PDF页258–259、印刷页237–238。关于f(t)弱收敛到Wiener、随机初态及引用[13,205]的原句见附件第27页；第28页续文说力被近似为Wiener增量，显示“力”与“积分力”的解释冲突。",
+          "C：只读核对本条完整Lean摘录及所引用附录项目定义；标准库按标准数学含义采信。bathForceWeakLimitMeaning：在概率空间、正质量下，将实际Printed力逐点嵌入C([0,T])，要求路径随机变量可测，W为preBrownian并有连续路径代表；对每T>0全部有界连续泛函的期望收敛，确为路径法则弱收敛而非仅边际。_corrected改成正bathForce的0至s时间积分，其余量词不变；这是与dP中的白噪声驱动更相符的候选。没有任何版本断言存在初态/质量族满足；也没有σ幅度或物理标度条件，所以不能认证实际热浴收敛或称“修复完成”。两版定义签名各自表达所说资格，但数学解释保留NEEDS_HUMAN。"
+        ]
+      },
+      "audit": {
+        "lean_decl": "MD.Ch06.bathForceWeakLimitMeaning; MD.Ch06.bathForceWeakLimitMeaning_corrected",
+        "verdict": "NEEDS_HUMAN",
+        "explanation": "bathForceWeakLimitMeaning：在概率空间、正质量下，将实际Printed力逐点嵌入C([0,T])，要求路径随机变量可测，W为preBrownian并有连续路径代表；对每T>0全部有界连续泛函的期望收敛，确为路径法则弱收敛而非仅边际。_corrected改成正bathForce的0至s时间积分，其余量词不变；这是与dP中的白噪声驱动更相符的候选。没有任何版本断言存在初态/质量族满足；也没有σ幅度或物理标度条件，所以不能认证实际热浴收敛或称“修复完成”。两版定义签名各自表达所说资格，但数学解释保留NEEDS_HUMAN。",
+        "counterexample": null,
+        "suggested_fix": "保留原文与两种资格的区别；另行给初态法则、频谱/标度、σ及紧性条件后，才能提出并核验极限定理。"
+      },
+      "subtask": "EAUDIT08b"
+    },
+    {
+      "source_id": "MD-6.3.6-FPDiffusionPrinted",
+      "json_review": {
+        "status": "APPROVED",
+        "issue_codes": [],
+        "corrected_json": null,
+        "issues": [],
+        "evidence": [
+          "A：已核对R1_PAGES.pdf附件第29页，原书PDF页263、印刷页242。附件第29页两次分部积分右端确为正号，且含(x,t)；当前JSON与撤销伪负号勘误的说明正确。",
+          "C：只读核对本条完整Lean摘录及所引用附录项目定义；标准库按标准数学含义采信。fpDiffusionPrinted与_corrected同签名：b,ρ,φ为C²，φ紧支撑，则∫b²φ″ρ=∫φ(b²ρ)″。将时间固定后ρ为实函数符合原式；紧支撑φ及其导数消除边界项，C²使各紧支 integrand可积。没有外负号，亦没有在该纯扩散分部积分恒等式中额外放1/2。两版PASS；_corrected只是兼容同义名，不是原书勘误。fpDriftAdjoint的C¹紧支辅助式负号也正确。"
+        ]
+      },
+      "audit": {
+        "lean_decl": "MD.Ch06.fpDriftAdjoint; MD.Ch06.fpDiffusionPrinted; MD.Ch06.fpDiffusionPrinted_corrected",
+        "verdict": "PASS",
+        "explanation": "fpDiffusionPrinted与_corrected同签名：b,ρ,φ为C²，φ紧支撑，则∫b²φ″ρ=∫φ(b²ρ)″。将时间固定后ρ为实函数符合原式；紧支撑φ及其导数消除边界项，C²使各紧支 integrand可积。没有外负号，亦没有在该纯扩散分部积分恒等式中额外放1/2。两版PASS；_corrected只是兼容同义名，不是原书勘误。fpDriftAdjoint的C¹紧支辅助式负号也正确。",
+        "counterexample": null,
+        "suggested_fix": "保留正号及兼容名称说明。"
+      },
+      "subtask": "EAUDIT08c"
+    }
+  ],
+  "merged_from": "ch06_eaudit_merged"
+}

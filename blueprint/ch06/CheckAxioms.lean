@@ -237,7 +237,7 @@ import Blueprint.Ch06
 #print axioms MD.Ch06.brownianSpectralGap
 #print axioms MD.Ch06.theorem61
 #print axioms MD.Ch06.theorem61_corrected
-#print axioms MD.Ch06.theorem61Printed
+#print axioms MD.Ch06.theorem61ClosedRealizationExcerpt
 #print axioms MD.Ch06.brownianMassGeneratorPrinted
 #print axioms MD.Ch06.brownianMassGeneratorPrinted_corrected
 #print axioms MD.Ch06.theorem61TimeAveragePrinted
@@ -302,6 +302,8 @@ import Blueprint.Ch06
 #print axioms MD.Ch06.langevinTimeAverage
 #print axioms MD.Ch06.weightedH1
 #print axioms MD.Ch06.weightedH1Norm
+#print axioms MD.Ch06.weightedL2NormScalar26
+#print axioms MD.Ch06.weightedL2NormVector26
 #print axioms MD.Ch06.proposition64Printed
 #print axioms MD.Ch06.proposition64Relative
 #print axioms MD.Ch06.proposition64Printed_corrected
@@ -313,6 +315,7 @@ import Blueprint.Ch06
 #print axioms MD.Ch06.kernelEvolutionRaw25
 #print axioms MD.Ch06.kernelEvolution
 #print axioms MD.Ch06.kernelAverage
+#print axioms MD.Ch06.kernelAverage_distributionIdentity26
 #print axioms MD.Ch06.densityEvolutionMeaning
 #print axioms MD.Ch06.kernelDuality
 #print axioms MD.Ch06.smoothTestL2Printed

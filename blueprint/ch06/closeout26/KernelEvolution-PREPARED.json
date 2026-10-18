@@ -1,0 +1,8 @@
+{
+  "source_id": "MD-6.4.5-KernelEvolution",
+  "note": "本source_id仅登记两个核作用于测度的辅助定义；hK要求真实Markov半群，但不因此提供特定Langevin前向密度或指数算子识别。明确原式尚未由本条形式化，缺口继续保留。",
+  "gaps": [
+    "特定Langevin核与前向密度半群的识别、ρt dω=Kt∘ₘ(ρ0 dω)及e^{tL†}解释未由本条给出。"
+  ],
+  "lean_sha256": "878ea9131ee989319adf02f95ab0c7f3ab36b125c8912cff5a1019af109f01ce"
+}

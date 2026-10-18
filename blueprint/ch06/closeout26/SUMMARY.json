@@ -1,0 +1,43 @@
+{
+  "full_check_status": "passed",
+  "total": 249,
+  "website_pass": 203,
+  "website_pass_counting": "latest whole-source verdict PASS; unchanged statement only; partial PASS recorded separately",
+  "first_round": {
+    "PASS": 179,
+    "FAIL": 25,
+    "NEEDS_HUMAN": 45
+  },
+  "reaudit": {
+    "PASS": 25,
+    "FAIL": 8,
+    "NEEDS_HUMAN": 27
+  },
+  "latest_raw": {
+    "PASS": 203,
+    "NEEDS_HUMAN": 38,
+    "FAIL": 8
+  },
+  "local_repairs": 8,
+  "previous_round_local_repairs": 25,
+  "repairing": 0,
+  "needs_human_with_pass_versions": 22,
+  "errata": 32,
+  "context_records": 1,
+  "errata_entries": 33,
+  "declarations": {
+    "定义": 123,
+    "已证": 110,
+    "未证": 91
+  },
+  "unproved_reasons": {
+    "原书疑误不证": 21,
+    "时间盒止": 18,
+    "缺大型理论": 52
+  },
+  "current_lean_sha256": "11107c725ecf79187d25c93f4f34f162ce504a092a0012eaa18acf2218687d18",
+  "native_receipt": "blueprint/ch06/closeout26/FINAL_COMPILE.json",
+  "full_check": "blueprint/ch06/closeout26/full/CHECK_REPORT.json",
+  "awaiting_reaudit": 0,
+  "website_resubmitted": false
+}

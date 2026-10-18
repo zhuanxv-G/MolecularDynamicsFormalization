@@ -1770,6 +1770,7 @@ theorem fpPolynomialAdjointPrinted : ∀ (a b ρ φ : ℝ → ℝ),
 
 /-- source_id: MD-6.3.6-FPEquation · unnumbered_claim · §6.3.6 · 印刷p.242 / PDFp.263
 [EXTRA] [EXTRA]实际严格SDE与其真实平滑非负密度law、局部一致指数尾可求导资格；没有把弱PDE或所求点态PDE当假设。 [EXTRA] 25号：补X联合可测和相对W自然历史适应、扩散被积过程的适应平方可积资格；未建立严格网格解到标准适应Itô解的完整桥接，仍未证明。
+[EXTRA] 26号：密度联合光滑性只要求在(0,∞)×ℝ，保留确定初态及正时刻密度；不再要求密度跨t=0光滑。严格网格积分解到通常适应Itô解的桥接仍未证明，PDE结论不当作前提。
 -/
 theorem fpEquation : ∀ {Ω : Type*} [MeasurableSpace Ω] (P : Measure Ω)
     (W X : ℝ → Ω → ℝ) (a b : ℝ → ℝ) (x0 : ℝ) (ρ : ℝ → ℝ → ℝ),
@@ -1778,7 +1779,7 @@ theorem fpEquation : ∀ {Ω : Type*} [MeasurableSpace Ω] (P : Measure Ω)
   Measurable (Function.uncurry X) →
   (∀ t, 0 ≤ t → @Measurable Ω ℝ (naturalHistory25 W t) inferInstance (X t)) →
   MolecularDynamics.Chapter06Review.adaptedSquareIntegrand P W (fun t sample ↦ b (X t sample)) →
-  ContDiff ℝ ∞ a → ContDiff ℝ ∞ b → ContDiff ℝ ∞ (Function.uncurry ρ) →
+  ContDiff ℝ ∞ a → ContDiff ℝ ∞ b → ContDiffOn ℝ ∞ (Function.uncurry ρ) {z : ℝ × ℝ | 0 < z.1} →
   (∀ t : ℝ, 0 < t → (∀ x, 0 ≤ ρ t x) ∧
     HasLaw (X t) (volume.withDensity (fun x ↦ ENNReal.ofReal (ρ t x))) P) →
   (∃ C : ℝ, 0 ≤ C ∧ ∃ r : ℕ, ∀ x, |a x|+|b x| ≤ C*(1+|x|)^r) →
@@ -2367,7 +2368,8 @@ theorem brownianSpectralGap {Nc : ℕ} (m : Fin Nc → ℝ) (hm : ∀ i, 0 < m i
 
 /-- source_id: MD-6.4.3-Theorem61 · Theorem 6.1 · §6.4.3 · 印刷p.250–251 / PDFp.271–272
 [ERRATUM?] 原书疑误、原文版与独立修正版见CH06_ERRATA。
-[EXTRA] 25号：Theorem6.1主版、corrected和Printed同时补全部谱点特征值子句；仍保留闭域/半负定/L²相对初始密度的分布平均与原印刷严格负定/轨道平均两套版本，原文疑误不证。 -/
+[EXTRA] 25号：Theorem6.1主版、corrected和Printed同时补全部谱点特征值子句；仍保留闭域/半负定/L²相对初始密度的分布平均与原印刷严格负定/轨道平均两套版本，原文疑误不证。 [EXTRA] 26号：主版与_corrected保持网站已通过的闭实现/分布平均签名。旧theorem61Printed改名theorem61ClosedRealizationExcerpt，明确只是闭实现限定摘录，不能冒称C₀²原域及原ΔM生成元的整条字面实现。分布平均与轨道时间平均冲突、negative definite措辞保留为原书疑误。
+-/
 theorem theorem61 :
   ∀ {n : ℕ} (m : MolecularDynamics.Chapter06Review.V n) (hm : ∀ i, 0 < m i)
     (U : MolecularDynamics.Chapter06Review.V n → ℝ) (hU : ContDiff ℝ ∞ U) (hp : textbookUnitPeriodicPotential U)
@@ -2423,8 +2425,8 @@ theorem theorem61_corrected :
             K * ‖textbookPeriodicSmoothEmbedding U hU hp β f‖ * Real.exp (-α*(t : ℝ)) := by
   sorry
 
-/-- 【原书疑误】Theorem6.1三款并列，保留严格负定及(5.6)轨道时间平均；闭算子实现与质量Laplacian歧义另列，不证明此版。 -/
-theorem theorem61Printed :
+/-- 【限定摘录，非原域字面版】保留严格负定及(5.6)轨道时间平均的疑误，但算子为闭Gibbs复L²实现；不把另列质量表达式当成本声明的算子，不证明此版。 -/
+theorem theorem61ClosedRealizationExcerpt :
   ∀ {n : ℕ} (m : MolecularDynamics.Chapter06Review.V n) (hm : ∀ i, 0 < m i)
     (U : MolecularDynamics.Chapter06Review.V n → ℝ) (hU : ContDiff ℝ ∞ U) (hp : textbookUnitPeriodicPotential U)
     (β : ℝ) (hβ : 0 < β),
@@ -2453,7 +2455,7 @@ theorem theorem61Printed :
             K*‖textbookPeriodicSmoothEmbedding U hU hp β f‖*Real.exp (-α*t) := by
   sorry
 
-/-- 【原书疑误】按p.244既定ΔM=Σmi∂ii逐字代入Theorem6.1的形式表达；不宣称它是Brownian过程生成元。 -/
+/-- 【原书疑误】在ΔM=Σmi∂ii这一记号解释下的条件性代数表达；原页记号尚待核定，不宣称它是整个原定理或Brownian过程生成元。 -/
 def brownianMassGeneratorPrinted {n : ℕ} (m : Fin n → ℝ) (U f : (Fin n → ℝ) → ℝ)
     (β : ℝ) (x : Fin n → ℝ) : ℝ :=
   ∑ i, (-(m i)⁻¹*fderiv ℝ U x (Pi.single i 1)*fderiv ℝ f x (Pi.single i 1)+
@@ -2629,6 +2631,7 @@ theorem minorizationPrinted_corrected :
 /-- source_id: MD-6.4.4-Theorem62 · Theorem 6.2 · §6.4.4 · 印刷p.252 / PDFp.273
 [EXTRA] [EXTRA]阈值函数先于全部过程/Lyapunov量词选择，不能临时选使Assumption1假而空真；真实Markov semigroup/Feller、Polish局部紧状态及σ有限参考测度。全状态正时刻密度资格用于完整不变概率密度结论；L*ρ=0按真实generator检验的弱意义，不是先假定不变性。全部函数/初值/时刻统一加权指数界与唯一性均保留。
 [ERRATUM?] 原未指定阈值、generator域或非爆炸/Markov域识别；原Assumption1时间0勘误和全状态密度资格需要明确签核。 [EXTRA] 25号：主版与corrected补真实半群漂移估计；弱平稳测试限真实右导数且有局部可积差商支配，排除derivWithin总定义默认值。Printed保留原有疑误版不证；Harris桥接及统一阈值仍缺大型理论，未声称原全定理已认证。
+[EXTRA] 26号：原文两处k按网站逐页核对改回κ（转录纠正）。Printed的弱平稳测试补主版同样的真实右导数及局部可积差商支配，排除derivWithin默认值；保留原[0,∞)连续密度端点疑误，阈值统一性和全部结论量词不变。
 -/
 theorem theorem62 :
   ∃ threshold : ℝ → ℝ → ℝ,
@@ -2713,6 +2716,12 @@ theorem theorem62Printed :
       (∃ ρ : D → ℝ, Measurable ρ ∧ (∀ x, 0 ≤ ρ x) ∧
         μ=ν.withDensity (fun x ↦ ENNReal.ofReal (ρ x))) ∧
       (∀ f : D → ℝ, Continuous f → Bornology.IsBounded (Set.range f) →
+        (∀ x, HasDerivWithinAt
+          (fun t : ℝ ↦ MolecularDynamics.Chapter06Review.kernelAverage K f t.toNNReal x)
+          (MolecularDynamics.Chapter06Review.kernelGenerator K f x) (Ici 0) 0) →
+        (∃ ε : ℝ, 0 < ε ∧ ∃ bound : D → ℝ, Integrable bound μ ∧
+          ∀ t ∈ Ioo (0 : ℝ) ε, ∀ x,
+            |(MolecularDynamics.Chapter06Review.kernelAverage K f t.toNNReal x-f x)/t| ≤ bound x) →
         Integrable (MolecularDynamics.Chapter06Review.kernelGenerator K f) μ → (∫ x, MolecularDynamics.Chapter06Review.kernelGenerator K f x ∂μ)=0) ∧
       ∃ κ lambdaParam : ℝ, 0 < κ ∧ 0 < lambdaParam ∧ ∀ f : D → ℝ, Measurable f → (∀ x, |f x| ≤ φ x) →
         Integrable f μ ∧ ∀ (t : ℝ≥0) (x : D),
@@ -3103,14 +3112,15 @@ theorem langevinTransitionDensity :
 
 /-- source_id: MD-6.4.4-Lemma61Printed · Lemma 6.1 · §6.4.4 · 印刷p.255 / PDFp.276
 [ERRATUM?] 字面all open C包括空集，概率为0；需Nonempty。原(6.47)单位质量，旧清单一般质量扩展须另标技术范围。 [EXTRA] 25号：Printed收回单位质量周期相空间，保留包括空集的原全称开集断言及原书疑误；非空修正版独立保留，真实核存在规格补入复审包。
+[EXTRA] 26号：kind恢复编号lemma；Printed收回原(6.47)正摩擦γ>0及物理噪声σ=√(2γθ)、θ=kBT>0的参数域，保留所有开集（包括空集）的原断言。任意实γ/非零σ的推广只留在非空修正版；漏C.Nonempty是原书疑误，不证明Printed。
 -/
 theorem lemma61Printed {N : ℕ} {Ω : Type*} [MeasurableSpace Ω]
     (B : ℝ≥0 → Ω → (Fin N → ℝ)) (P : Measure Ω) (hB : textbookIsWienerVector B P)
     (U : (Fin N → ℝ) → ℝ) (hU : ContDiff ℝ ∞ U) (hp : textbookUnitPeriodicPotential U)
-    (L : ℝ≥0) (hF : LipschitzWith L (textbookPotentialForce U)) (γ σ : ℝ) (T : ℝ≥0) (hT : (0 : ℝ) < T)
-    (hσ : σ ≠ 0) (x : textbookLangevinPeriodicPhase N)
+    (L : ℝ≥0) (hF : LipschitzWith L (textbookPotentialForce U)) (γ θ : ℝ) (hγ : 0 < γ) (hθ : 0 < θ)
+    (T : ℝ≥0) (hT : (0 : ℝ) < T) (x : textbookLangevinPeriodicPhase N)
     (C : Set (textbookLangevinPeriodicPhase N)) (hC : IsOpen C) :
-    0 < textbookLangevinPeriodicTransitionKernel B P U hU hp L hF γ σ T x C := by
+    0 < textbookLangevinPeriodicTransitionKernel B P U hU hp L hF γ (Real.sqrt (2*γ*θ)) T x C := by
   sorry
 
 /-- source_id: MD-6.4.4-Lemma61Nonempty · unnumbered_claim · §6.4.4 · 印刷p.255 / PDFp.276
@@ -3225,7 +3235,8 @@ def weightedH1 {N : ℕ} (U : (Fin N → ℝ) → ℝ)
   textbookLangevinCanonicalWeakH1 U hU hp β hβ
 
 /-- source_id: MD-6.4.4-WeightedH1Norm · unnumbered_claim · §6.4.4 · 印刷p.256–257 / PDFp.277–278
-[EXTRA] 25号：仅覆盖真实加权H¹的jet范数分解；原文标量L²积分及任意向量w的平方和等式未由本条覆盖。 -/
+[EXTRA] 25号：仅覆盖真实加权H¹的jet范数分解；原文标量L²积分及任意向量w的平方和等式未由本条覆盖。 [EXTRA] 26号：保留已证H¹ jet范数分解为辅助；新增原文实标量L²平方积分式及任意欧氏向量值L²函数的分量范数平方和两条独立短陈述。新增陈述的证明状态单列，不用辅助等式代替原文两式。
+-/
 theorem weightedH1Norm {N : ℕ}
     (U : (Fin N → ℝ) → ℝ) (hU : ContDiff ℝ ∞ U) (hp : textbookUnitPeriodicPotential U)
     (β : ℝ) (hβ : 0 < β) (f : textbookLangevinCanonicalWeakH1 U hU hp β hβ) :
@@ -3233,6 +3244,20 @@ theorem weightedH1Norm {N : ℕ}
       (∑ i : Fin N, ‖textbookLangevinCanonicalWeakH1Derivative U hU hp β hβ (Sum.inl i) f‖ ^ 2) +
       (∑ i : Fin N, ‖textbookLangevinCanonicalWeakH1Derivative U hU hp β hβ (Sum.inr i) f‖ ^ 2) := by
   apply MolecularDynamics.textbookLangevinCanonicalWeakH1_norm_sq <;> assumption
+
+/-- 原文第一式：实标量L²范数平方等于平方积分。 -/
+theorem weightedL2NormScalar26 {D : Type*} [MeasurableSpace D]
+    (μ : Measure D) (f : Lp ℝ 2 μ) :
+    ‖f‖ ^ 2 = ∫ x, (f x) ^ 2 ∂μ := by
+  sorry
+
+/-- 原文第二式：任意欧氏向量值L²函数的分量均属L²，范数平方为分量平方和。 -/
+theorem weightedL2NormVector26 {D : Type*} [MeasurableSpace D] {Nc : ℕ}
+    (μ : Measure D) (w : D → EuclideanSpace ℝ (Fin Nc)) (hw : MemLp w 2 μ) :
+    ∃ hc : ∀ i : Fin Nc, MemLp (fun x ↦ w x i) 2 μ,
+      ‖hw.toLp w‖ ^ 2 = ∑ i : Fin Nc, ‖(hc i).toLp (fun x ↦ w x i)‖ ^ 2 := by
+  sorry
+
 
 /-- source_id: MD-6.4.4-Proposition64Printed · Proposition 6.4 · §6.4.4 · 印刷p.257 / PDFp.278
 [ERRATUM?] 印刷flat forward PDE与Gibbs加权mean-zero/adjoint pairing混用；测度及density-vs-relative-density选择待导师，原式完整保留。 [EXTRA] 25号：保留原flat/Gibbs坐标混用疑误和非Gibbs恒通量反例；补H¹伴随测试表达式，修正版本由Proposition64Relative独立保存。
@@ -3339,7 +3364,8 @@ def weightedVectorNorm {n r : ℕ} (U : (Fin n → ℝ) → ℝ) (β : ℝ) (hβ
     (w : Fin r → Lp ℝ 2 (textbookLangevinCanonicalMeasure U β hβ)) : ℝ := ∑ i, ‖w i‖^2
 
 /-- source_id: MD-6.4.5-KernelEvolution · definition · §6.4.5 · 印刷p.257 / PDFp.278
-[EXTRA] 25号：保留任意核作用的kernelEvolutionRaw25辅助；主入口加真正Markov半群资格。仅覆盖概率测度推进，实际Langevin生成元和密度关系须见DensityEvolutionMeaning，不把本条称作完整指数传播识别。 -/
+[EXTRA] 25号：保留任意核作用的kernelEvolutionRaw25辅助；主入口加真正Markov半群资格。仅覆盖概率测度推进，实际Langevin生成元和密度关系须见DensityEvolutionMeaning，不把本条称作完整指数传播识别。 [EXTRA] 26号：本source_id仅登记两个核作用于测度的辅助定义；hK要求真实Markov半群，但不因此提供特定Langevin前向密度或指数算子识别。明确原式尚未由本条形式化，缺口继续保留。
+-/
 def kernelEvolutionRaw25 {D : Type*} [MeasurableSpace D] (K : ℝ≥0 → Kernel D D)
     (μ : Measure D) (t : ℝ≥0) : Measure D := K t ∘ₘ μ
 
@@ -3347,9 +3373,25 @@ def kernelEvolution {D : Type*} [MeasurableSpace D] (K : ℝ≥0 → Kernel D D)
     (μ : Measure D) (_hK : MolecularDynamics.Chapter06Review.markovSemigroup K) (t : ℝ≥0) : Measure D := K t ∘ₘ μ
 
 /-- source_id: MD-6.4.5-KernelAverage · definition · §6.4.5 · 印刷p.258 / PDFp.279
-[EXTRA] 25号：仅为检验函数核传播的总化辅助记号；原句两种平均相等由MD-6.4.5-KernelDuality对应，可积资格须见该条。 -/
+[EXTRA] 25号：仅为检验函数核传播的总化辅助记号；原句两种平均相等由MD-6.4.5-KernelDuality对应，可积资格须见该条。 [EXTRA] 26号：保留kernelAverage总化辅助记号；新增实际分布平均恒等式，显式量化μ0、μt、μt=Kt∘ₘμ0、概率/Markov资格以及f可测可积，不再仅引用未随本条送审的KernelDuality名称。
+-/
 def kernelAverage {D : Type*} [MeasurableSpace D] (K : ℝ≥0 → Kernel D D)
     (f : D → ℝ) (t : ℝ≥0) (x : D) : ℝ := ∫ z, f z ∂K t x
+
+/-- 原句的两种平均相等：明确初始/演化分布及可积资格。 -/
+theorem kernelAverage_distributionIdentity26 {D : Type*} [MeasurableSpace D]
+    (K : ℝ≥0 → Kernel D D) (μ0 μt : Measure D) (t : ℝ≥0) (f : D → ℝ)
+    (hμ0 : IsProbabilityMeasure μ0) (hK : IsMarkovKernel (K t))
+    (hμt : μt = K t ∘ₘ μ0) (hf : Measurable f) (hi : Integrable f μt) :
+    (∫ x, f x ∂μt) = ∫ x, kernelAverage K f t x ∂μ0 := by
+  subst μt
+  letI : IsProbabilityMeasure μ0 := hμ0
+  letI : IsMarkovKernel (K t) := hK
+  unfold kernelAverage
+  rw [Measure.comp_eq_comp_const_apply]
+  apply Kernel.integral_comp
+  simpa only [← Measure.comp_eq_comp_const_apply] using hi
+
 
 /-- source_id: MD-6.4.5-DensityEvolutionMeaning · definition · §6.4.5 · 印刷p.257–258 / PDFp.278–279
 [EXTRA] 25号：补Markov/初值/半群及真实右生成元识别资格，补各时刻概率质量和初值；逐点非负为所选代表，显式列可积测试的变分等式。此为语义资格定义，未声称密度存在或任意核满足它。 -/
@@ -3390,6 +3432,7 @@ theorem kernelDuality :
 
 /-- source_id: MD-6.4.5-SmoothTestL2Printed · unnumbered_claim · §6.4.5 · 印刷p.258 / PDFp.279
 [ERRATUM?] 环面×无界动量上C∞不自动L²；常数1已不在flat L²，指数增长函数也可能不在Gibbs L²。需适当weighted空间/增长资格。 [EXTRA] 25号：原文版忠实性与数学疑误分开；补齐所交条目所属的现有_corrected完整签名，不从repair_log名称推断网站已通过修正版。
+[EXTRA] 26号：恢复原文完整末句。Printed仅保留光滑蕴含平直L²的原书疑误子主张；_corrected仅是网站已PASS的C∞∩L²合格域定义。限定当前覆盖，不把该定义计作平均公式或积分有界定理。
 -/
 theorem smoothTestL2Printed : ∀ {n : ℕ} (f : textbookLangevinPeriodicPhase n → ℝ),
   ContDiff ℝ ∞ (f ∘ textbookLangevinPeriodicProjection) →

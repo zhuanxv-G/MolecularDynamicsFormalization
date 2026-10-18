@@ -1,0 +1,74 @@
+--- Blueprint/Ch06.lean before
++++ Blueprint/Ch06.lean after
+@@ -2631,6 +2631,7 @@
+ /-- source_id: MD-6.4.4-Theorem62 · Theorem 6.2 · §6.4.4 · 印刷p.252 / PDFp.273
+ [EXTRA] [EXTRA]阈值函数先于全部过程/Lyapunov量词选择，不能临时选使Assumption1假而空真；真实Markov semigroup/Feller、Polish局部紧状态及σ有限参考测度。全状态正时刻密度资格用于完整不变概率密度结论；L*ρ=0按真实generator检验的弱意义，不是先假定不变性。全部函数/初值/时刻统一加权指数界与唯一性均保留。
+ [ERRATUM?] 原未指定阈值、generator域或非爆炸/Markov域识别；原Assumption1时间0勘误和全状态密度资格需要明确签核。 [EXTRA] 25号：主版与corrected补真实半群漂移估计；弱平稳测试限真实右导数且有局部可积差商支配，排除derivWithin总定义默认值。Printed保留原有疑误版不证；Harris桥接及统一阈值仍缺大型理论，未声称原全定理已认证。
++[EXTRA] 26号：原文两处k按网站逐页核对改回κ（转录纠正）。Printed的弱平稳测试补主版同样的真实右导数及局部可积差商支配，排除derivWithin默认值；保留原[0,∞)连续密度端点疑误，阈值统一性和全部结论量词不变。
+ -/
+ theorem theorem62 :
+   ∃ threshold : ℝ → ℝ → ℝ,
+@@ -2715,6 +2716,12 @@
+       (∃ ρ : D → ℝ, Measurable ρ ∧ (∀ x, 0 ≤ ρ x) ∧
+         μ=ν.withDensity (fun x ↦ ENNReal.ofReal (ρ x))) ∧
+       (∀ f : D → ℝ, Continuous f → Bornology.IsBounded (Set.range f) →
++        (∀ x, HasDerivWithinAt
++          (fun t : ℝ ↦ MolecularDynamics.Chapter06Review.kernelAverage K f t.toNNReal x)
++          (MolecularDynamics.Chapter06Review.kernelGenerator K f x) (Ici 0) 0) →
++        (∃ ε : ℝ, 0 < ε ∧ ∃ bound : D → ℝ, Integrable bound μ ∧
++          ∀ t ∈ Ioo (0 : ℝ) ε, ∀ x,
++            |(MolecularDynamics.Chapter06Review.kernelAverage K f t.toNNReal x-f x)/t| ≤ bound x) →
+         Integrable (MolecularDynamics.Chapter06Review.kernelGenerator K f) μ → (∫ x, MolecularDynamics.Chapter06Review.kernelGenerator K f x ∂μ)=0) ∧
+       ∃ κ lambdaParam : ℝ, 0 < κ ∧ 0 < lambdaParam ∧ ∀ f : D → ℝ, Measurable f → (∀ x, |f x| ≤ φ x) →
+         Integrable f μ ∧ ∀ (t : ℝ≥0) (x : D),
+
+--- source entry before
++++ source entry after
+@@ -5,7 +5,7 @@
+   "section": "6.4.4",
+   "printed_page": "252",
+   "pdf_page": "273",
+-  "statement_latex": "Theorem 6.2 (Geometric Ergodicity) Let the solution to (6.43) be denoted $X(t)$. If Assumption 1 and Assumption 2 are satisfied for\n\\[C=\\{X\\in D\\mid\\varphi(X)\\le K_{\\alpha,\\delta}\\},\\]\nwhere $K_{\\alpha,\\delta}$ is a particular positive value depending on $\\alpha$ and $\\delta$, then\n(i) there exists a unique invariant measure $\\rho_*$, with $\\mathcal L^*\\rho_*=0$, and\n(ii) there exist positive constants $k$ and $\\lambda$ such that for all suitable functions $f$ with $|f|\\le\\varphi$,\n\\[|e^{t\\mathcal L}f(X_0)-\\operatorname{Av}(f)|\\le ke^{-\\lambda t}\\varphi(X_0);\\tag{6.48}\\]\nwhere $\\operatorname{Av}(f)=\\int_D f(z)\\rho_*(z)dz$ is the spatial average.",
++  "statement_latex": "Theorem 6.2 (Geometric Ergodicity) Let the solution to (6.43) be denoted $X(t)$. If Assumption 1 and Assumption 2 are satisfied for\n\\[C=\\{X\\in D\\mid\\varphi(X)\\le K_{\\alpha,\\delta}\\},\\]\nwhere $K_{\\alpha,\\delta}$ is a particular positive value depending on $\\alpha$ and $\\delta$, then\n(i) there exists a unique invariant measure $\\rho_*$, with $\\mathcal L^*\\rho_*=0$, and\n(ii) there exist positive constants $\\kappa$ and $\\lambda$ such that for all suitable functions $f$ with $|f|\\le\\varphi$,\n\\[|e^{t\\mathcal L}f(X_0)-\\operatorname{Av}(f)|\\le \\kappa e^{-\\lambda t}\\varphi(X_0);\\tag{6.48}\\]\nwhere $\\operatorname{Av}(f)=\\int_D f(z)\\rho_*(z)dz$ is the spatial average.",
+   "proof_latex": null,
+   "proof_note": "原书未给独立完整证明。",
+   "proof_discussion_latex": null,
+@@ -27,10 +27,10 @@
+   "lean_decl": "MD.Ch06.theorem62",
+   "reusable_proofs": [],
+   "extra_assumptions": [
+-    "[EXTRA]阈值函数先于全部过程/Lyapunov量词选择，不能临时选使Assumption1假而空真；真实Markov semigroup/Feller、Polish局部紧状态及σ有限参考测度。全状态正时刻密度资格用于完整不变概率密度结论；L*ρ=0按真实generator检验的弱意义，不是先假定不变性。全部函数/初值/时刻统一加权指数界与唯一性均保留。",
+-    "[EXTRA] 25号：主版与corrected补真实半群漂移估计；弱平稳测试限真实右导数且有局部可积差商支配，排除derivWithin总定义默认值。Printed保留原有疑误版不证；Harris桥接及统一阈值仍缺大型理论，未声称原全定理已认证。"
++    "[EXTRA] 26号：原文两处k按网站逐页核对改回κ（转录纠正）。Printed的弱平稳测试补主版同样的真实右导数及局部可积差商支配，排除derivWithin默认值；保留原[0,∞)连续密度端点疑误，阈值统一性和全部结论量词不变。",
++    "[ERRATUM?] 原书数学疑误与本次形式化修复分别记录，见CH06_ERRATA。"
+   ],
+-  "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
++  "statement_scope": "本条当前覆盖范围：原文两处k按网站逐页核对改回κ（转录纠正）。Printed的弱平稳测试补主版同样的真实右导数及局部可积差商支配，排除derivWithin默认值；保留原[0,∞)连续密度端点疑误，阈值统一性和全部结论量词不变。",
+   "review_status": "DRAFT",
+   "repair_log": [
+     {
+@@ -39,6 +39,11 @@
+       "change": "明示实际Markov/Feller演化、正确正时刻密度、generator联系和先于过程选择的阈值；整条仍未证明。",
+       "corrected_decl": "MD.Ch06.theorem62_corrected",
+       "website": "未提交；待网站审计"
++    },
++    {
++      "stage": "CLOSEOUT26",
++      "note": "原文两处k按网站逐页核对改回κ（转录纠正）。Printed的弱平稳测试补主版同样的真实右导数及局部可积差商支配，排除derivWithin默认值；保留原[0,∞)连续密度端点疑误，阈值统一性和全部结论量词不变。",
++      "suggested_fix": "原文JSON的k改回κ，保留端点[ERRATUM?]。Printed中的L*ρ*=0应采用真实生成元的测试域/弱方程，至少保留主版的真实右导数与换积分资格；若需保留旧的总导数断言，应另名为形式化问题版，不称原书Printed。阈值统一性及所有结论量词应保持现状。"
+     }
+   ],
+   "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json",
+@@ -91,5 +96,12 @@
+       "direct_placeholder": true,
+       "source_id": "MD-6.4.4-Theorem62"
+     }
++  ],
++  "superseded_extra_assumptions26": [
++    "[EXTRA]阈值函数先于全部过程/Lyapunov量词选择，不能临时选使Assumption1假而空真；真实Markov semigroup/Feller、Polish局部紧状态及σ有限参考测度。全状态正时刻密度资格用于完整不变概率密度结论；L*ρ=0按真实generator检验的弱意义，不是先假定不变性。全部函数/初值/时刻统一加权指数界与唯一性均保留。",
++    "[EXTRA] 25号：主版与corrected补真实半群漂移估计；弱平稳测试限真实右导数且有局部可积差商支配，排除derivWithin总定义默认值。Printed保留原有疑误版不证；Harris桥接及统一阈值仍缺大型理论，未声称原全定理已认证。"
++  ],
++  "coverage_gaps": [
++    "原Assumption 1(ii)在t=0要求连续密度的疑误保留；Printed含明确的实际生成元测试资格，并非无技术前提的整条字面翻译。"
+   ]
+ }

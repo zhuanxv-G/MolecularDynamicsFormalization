@@ -1,0 +1,202 @@
+{
+  "batch": "EAUDIT14",
+  "input_sha256": {
+    "Blueprint/Ch06.lean": "4a2a6cb72c1692f80e3537ab1a71701d429a482780a01226c3dc66a2ebb8b44b",
+    "blueprint/ch06/ch06_source.json": "d7f93cd20eb570744c710f3e07a88b319c082e4155812fee91db0920eb05944e"
+  },
+  "items": [
+    {
+      "source_id": "MD-6.4.4-Theorem62",
+      "json_review": {
+        "status": "NEEDS_HUMAN",
+        "issue_codes": [
+          "TRANSCRIPTION_KAPPA",
+          "SOURCE_ZERO_TIME_DENSITY_ERRATUM",
+          "PRINTED_GENERATOR_TEST_DOMAIN_MISMATCH",
+          "COVERAGE_METADATA_INCOMPLETE"
+        ],
+        "corrected_json": {
+          "source_id": "MD-6.4.4-Theorem62",
+          "kind": "theorem",
+          "label": "Theorem 6.2",
+          "section": "6.4.4",
+          "printed_page": "252",
+          "pdf_page": "273",
+          "statement_latex": "Theorem 6.2 (Geometric Ergodicity) Let the solution to (6.43) be denoted $X(t)$. If Assumption 1 and Assumption 2 are satisfied for\n\\[C=\\{X\\in D\\mid\\varphi(X)\\le K_{\\alpha,\\delta}\\},\\]\nwhere $K_{\\alpha,\\delta}$ is a particular positive value depending on $\\alpha$ and $\\delta$, then\n(i) there exists a unique invariant measure $\\rho_*$, with $\\mathcal L^*\\rho_*=0$, and\n(ii) there exist positive constants $\\kappa$ and $\\lambda$ such that for all suitable functions $f$ with $|f|\\le\\varphi$,\n\\[|e^{t\\mathcal L}f(X_0)-\\operatorname{Av}(f)|\\le \\kappa e^{-\\lambda t}\\varphi(X_0);\\tag{6.48}\\]\nwhere $\\operatorname{Av}(f)=\\int_D f(z)\\rho_*(z)dz$ is the spatial average.",
+          "proof_latex": null,
+          "proof_note": "原书未给独立完整证明。",
+          "proof_discussion_latex": null,
+          "context_notation": [],
+          "extra_assumptions": [
+            "[EXTRA]阈值函数先于全部过程/Lyapunov量词选择，不能临时选使Assumption1假而空真；真实Markov semigroup/Feller、Polish局部紧状态及σ有限参考测度。全状态正时刻密度资格用于完整不变概率密度结论；L*ρ=0按真实generator检验的弱意义，不是先假定不变性。全部函数/初值/时刻统一加权指数界与唯一性均保留。",
+            "[EXTRA] 25号：主版与corrected补真实半群漂移估计；弱平稳测试限真实右导数且有局部可积差商支配，排除derivWithin总定义默认值。Printed保留原有疑误版不证；Harris桥接及统一阈值仍缺大型理论，未声称原全定理已认证。",
+            "[ERRATUM?] 原Assumption 1(ii)的[0,∞)端点保留；主版/corrected只要求正时刻连续密度。",
+            "[EXTRA] 主版/corrected的真实右导数及局部可积差商支配资格不适用于当前Printed；Printed这里存在独立的形式化域偏差。"
+          ],
+          "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
+          "coverage_gaps": [
+            "原Assumption 1的t=0联合连续密度表述需人工处理。",
+            "Printed的弱平稳测试未限制到实际生成元域，不能作为原L*ρ*=0的忠实实现。"
+          ]
+        },
+        "issues": [
+          {
+            "code": "TRANSCRIPTION_KAPPA",
+            "field": "statement_latex",
+            "message": "原页为κ和λ；JSON把κ转成k，包括式(6.48)的系数。"
+          },
+          {
+            "code": "SOURCE_ZERO_TIME_DENSITY_ERRATUM",
+            "field": "extra_assumptions / assumption1Printed",
+            "message": "原Assumption 1(ii)把密度联合连续区间写到t=0；对点初值的非原子扩散通常不成立，修正版限t>0合理。"
+          },
+          {
+            "code": "PRINTED_GENERATOR_TEST_DOMAIN_MISMATCH",
+            "field": "theorem62Printed",
+            "message": "将总定义derivWithin用于所有有界连续检验，未要求真实右导数，并非忠实表达实际生成元的L*ρ*=0。"
+          },
+          {
+            "code": "COVERAGE_METADATA_INCOMPLETE",
+            "field": "coverage_gaps",
+            "message": "应区分主版/修正版的资格保护与Printed的欠缺，不能把Printed剩余问题只归给原书。"
+          }
+        ],
+        "evidence": [
+          {
+            "source": "R2_PAGES.pdf",
+            "attachment_page": [
+              12
+            ],
+            "location": "印刷252页Theorem 6.2(ii)及式(6.48)",
+            "observation": "两个正系数的原字形为κ、λ；L明确是SDE的生成元。"
+          },
+          {
+            "source": "R2_PAGES.pdf",
+            "attachment_page": [
+              12
+            ],
+            "location": "同页Assumption 1(ii)",
+            "observation": "联合连续性区间确写C×C×[0,∞)。"
+          },
+          {
+            "source": "R2_任务.md",
+            "location": "条目10三份签名及kernelGenerator、assumption1/Printed、assumption2定义",
+            "observation": "主版/corrected有HasDerivWithinAt与局部可积差商支配前提，Printed没有这两项；后者仍对所有有界连续f作弱平稳断言。"
+          }
+        ]
+      },
+      "audit": {
+        "lean_decl": "MD.Ch06.theorem62; MD.Ch06.theorem62_corrected; MD.Ch06.theorem62Printed",
+        "verdict": "FAIL",
+        "explanation": "A：节号、页码、阈值集合、唯一不变测度、弱平稳意图、加权指数界及空间平均均核对；原页的正系数为κ，JSON两处写为k，应作转录纠正，其余原文数学措辞保留。C：theorem62及corrected作为加强的半群版本，签名PASS：阈值函数先于状态空间、过程及φ量化；完整Markov/Feller、局部紧Polish状态、σ有限ν、每个正时刻全部初值的绝对连续性；φ正连续且子水平紧，α、δ正；另有实际积分可积性和半群漂移估计；结论保留全部不变概率的唯一性、相对于ν的密度、受真实右导数及局部可积差商支配限制的弱平稳检验，以及统一于所有可测|f|≤φ、t≥0、x的指数界。没有把不变性或收敛结论作假设，也没有把有限个检验或单一初态替代全部量词。Printed保留[0,∞)连续密度的原书疑误，这一点本身应NEEDS_HUMAN；但其弱平稳分句量化所有有界连续f，仅假设kernelGenerator f可积，没有要求该f存在真实右导数/属于生成元测试域。D中kernelGenerator是总定义的derivWithin，不能把其无导数时的默认值当成原书实际SDE生成元。该超出原生成元域的Printed弱平稳断言不属于原书字面陈述，忠实性FAIL。主版新增的测试域保护没有在Printed中保留，这一偏差不是sorry问题，也不能全标成原书疑误。",
+        "counterexample": "端点问题：以一维Brownian运动、初值0、Lebesgue参考测度为例，t>0的热核在原点为(4πDt)⁻¹/²，t↓0时无界；t=0的分布是δ0，而不是在C×C×[0,∞)连续的有限实值密度。这是原书端点疑误；Printed测试域FAIL的理由是其总导数对象与原实际生成元不相同，而不是该热核例或sorry。",
+        "suggested_fix": "原文JSON的k改回κ，保留端点[ERRATUM?]。Printed中的L*ρ*=0应采用真实生成元的测试域/弱方程，至少保留主版的真实右导数与换积分资格；若需保留旧的总导数断言，应另名为形式化问题版，不称原书Printed。阈值统一性及所有结论量词应保持现状。"
+      },
+      "subtask": "EAUDIT14a"
+    },
+    {
+      "source_id": "MD-6.4.4-HamiltonianPowerMomentumLaplacian",
+      "json_review": {
+        "status": "NEEDS_HUMAN",
+        "issue_codes": [
+          "SOURCE_LAPLACIAN_BOUND_COEFFICIENT_ERRATUM",
+          "COVERAGE_METADATA_INCONSISTENT"
+        ],
+        "corrected_json": {
+          "source_id": "MD-6.4.4-HamiltonianPowerMomentumLaplacian",
+          "kind": "unnumbered_claim",
+          "label": null,
+          "section": "6.4.4",
+          "printed_page": "253",
+          "pdf_page": "274",
+          "statement_latex": "\\[\\Delta_p\\varphi=l(l-1)H^{l-2}\\|p\\|^2+N_clH^{l-1}\\le l(l+N_c-1)H^{l-1}.\\]",
+          "proof_latex": null,
+          "proof_note": "原书未给独立完整证明。",
+          "proof_discussion_latex": null,
+          "context_notation": [],
+          "extra_assumptions": [
+            "[EXTRA] 25号：保留已证精确Laplacian等式；原错误上界Printed与修正系数分别由MD-6.4.4-LaplacianBoundPrinted/LaplacianBoundCorrect保存，不能把等式视为已覆盖原印刷不等式。",
+            "[ERRATUM?] 原上界缺少由‖p‖²<2H产生的因子2；正确的统一系数为2l(l−1)+Ncl。"
+          ],
+          "statement_scope": "原印刷等式及错误上界均保留。目标主声明只给精确等式；随包关联声明laplacianBoundPrinted和laplacianBoundCorrect分别作字面忠实性与修正正确性审校。",
+          "coverage_gaps": [
+            "Printed上界存在明确反例，不能被视为已成立；上界修正须人工认可。"
+          ]
+        },
+        "issues": [
+          {
+            "code": "SOURCE_LAPLACIAN_BOUND_COEFFICIENT_ERRATUM",
+            "field": "statement_latex",
+            "message": "由‖p‖²<2H代入第一项会产生因子2；原上界l(l+Nc−1)一般过小。"
+          },
+          {
+            "code": "COVERAGE_METADATA_INCONSISTENT",
+            "field": "statement_scope / coverage_gaps",
+            "message": "本包同时摘录Printed与Correct上界，须分别记录其忠实性/正确性，不能把精确等式与整个印刷链式不等式等同。"
+          }
+        ],
+        "evidence": [
+          {
+            "source": "R2_PAGES.pdf",
+            "attachment_page": [
+              13
+            ],
+            "location": "印刷253页，下部动量导数两行",
+            "observation": "原页明确先写‖p‖²<2H，再写漏掉相应因子2的上界。"
+          },
+          {
+            "source": "R2_任务.md",
+            "location": "条目11的Hamiltonian定义、精确等式、laplacianBoundPrinted/Correct",
+            "observation": "修正系数确为2l(l−1)+Ncl；正l和下界U≥1的量词均已核对。"
+          },
+          {
+            "source": "Jacobian typed exact polynomial operation",
+            "location": "polynomial.rational.compute.derivative，连续执行两次",
+            "observation": "对(p²/2+2)²=p⁴/4+2p²+4得到一阶p³+4p，二阶3p²+4；这是精确有理多项式计算，不是抽样估计。"
+          }
+        ]
+      },
+      "audit": {
+        "lean_decl": "MD.Ch06.hamiltonianPowerMomentumLaplacian; MD.Ch06.laplacianBoundPrinted; MD.Ch06.laplacianBoundCorrect",
+        "verdict": "NEEDS_HUMAN",
+        "explanation": "A：原页的动量Laplacian精确等式和上界系数l(l+Nc−1)均准确转录，应保留原错误系数作疑误。C分版本：hamiltonianPowerMomentumLaplacian为PASS；相空间两分量确为(q,p)，H=Σpᵢ²/2+U(q)，沿(0,eᵢ)作两次一元导数再求和，结论是完整精确等式。l为正自然数；l=1时(l−2)的自然数截断无害，因为前系数l(l−1)=0；对任意U也合理，因为只对动量微分。附带给出的laplacianBoundPrinted忠实保留原上界，但该不等式错误，应NEEDS_HUMAN而非因数学错误将字面忠实版判FAIL。laplacianBoundCorrect的系数2l(l−1)+Ncl，在U≥1前提下是正确上界，签名PASS。JSON现称上界“不属于本条”，但本包又列出了两份上界声明；应明确它们是随包核对的关联声明，不能只审等式后声称原不等式已成立。",
+        "counterexample": "取Nc=1、l=2、光滑周期常势U≡2、p=4。H=10，ΔpH²=3p²+4=52，而原上界l(l+Nc−1)H^(l−1)=4×10=40；52≤40为假。U=2也满足原书严格大于1的势下界。修正上界为6H=60，52≤60成立。",
+        "suggested_fix": "原引文与Printed系数保持原样并挂[ERRATUM?]；修正版明确使用2l(l−1)+Ncl；范围说明列清主等式及随包两份上界的不同审校结论。"
+      },
+      "subtask": "EAUDIT14b"
+    },
+    {
+      "source_id": "MD-6.4.4-Definition61",
+      "json_review": {
+        "status": "APPROVED",
+        "issue_codes": [],
+        "corrected_json": null,
+        "issues": [],
+        "evidence": [
+          {
+            "source": "R2_PAGES.pdf",
+            "attachment_page": [
+              14
+            ],
+            "location": "印刷254页，Lie bracket定义及Definition 6.1全文",
+            "observation": "原定义确将b0直接加入生成族；括号为v′u−u′v。"
+          },
+          {
+            "source": "R2_任务.md",
+            "location": "条目12及附录D95–D97、lieBracket定义",
+            "observation": "原定义与Printed同义；corrected从噪声开始，对所有迭代层取span，没有以漂移本身补足噪声秩。"
+          }
+        ]
+      },
+      "audit": {
+        "lean_decl": "MD.Ch06.definition61; MD.Ch06.parabolicNoiseBracketLevels; MD.Ch06.definition61_corrected; MD.Ch06.definition61Printed",
+        "verdict": "PASS",
+        "explanation": "A：Definition 6.1的开域、光滑向量场、域内点、包括b0的迭代括号及实线性张成等于ℝm均准确转录，省略号保持同一完整有限生成族。C：definition61与Printed逐项保留开域D、x∈D、所有Fin(S+1)字段在D上C∞以及包括漂移b0的全部迭代Lie括号；D95不是有限深度截断，D96–D97在x处取实span=⊤。全空间总化函数只用于表示局部字段，D开且光滑性只要求ContDiffOn D，因此不要求原书没有的全局光滑延拓。Bracket符号与原文v′u−u′v一致。corrected的第0层只用b1,…,bS，后续允许与任一bᵢ取括号再取并，最后量化所有自然数层并取实span，正确区分用于正时刻密度的抛物型条件。原定义包含漂移作为一个数学定义本身并不矛盾；不能据此对一般SDE断言转移密度，而本条也没有这样的定理结论。四个定义的角色及[EXTRA]一致。",
+        "counterexample": null,
+        "suggested_fix": null
+      },
+      "subtask": "EAUDIT14c"
+    }
+  ],
+  "merged_from": "ch06_eaudit_merged"
+}

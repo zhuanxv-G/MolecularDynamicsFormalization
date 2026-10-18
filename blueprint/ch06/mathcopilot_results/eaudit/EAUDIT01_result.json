@@ -1,0 +1,113 @@
+{
+  "batch": "EAUDIT01",
+  "input_sha256": {
+    "Blueprint/Ch06.lean": "4a2a6cb72c1692f80e3537ab1a71701d429a482780a01226c3dc66a2ebb8b44b",
+    "blueprint/ch06/ch06_source.json": "d7f93cd20eb570744c710f3e07a88b319c082e4155812fee91db0920eb05944e"
+  },
+  "items": [
+    {
+      "source_id": "MD-6.1.2-IndependentPartition",
+      "json_review": {
+        "status": "APPROVED",
+        "issue_codes": [],
+        "corrected_json": null,
+        "issues": [],
+        "evidence": [
+          "A：已核对R1_PAGES.pdf附件第1页，原书PDF页236、印刷页215。原文所引段落及乘积公式与附件第1页一致。",
+          "C：只读核对本条完整Lean摘录及所引用附录项目定义；标准库按标准数学含义采信。PASS：independentPartition 对任意维数n,m、实值Hamiltonian及分别固定的EA,EB，在regularEnergy前提下断言两个microRaw测度的乘积总质量等于总质量之积。E为EuclideanSpace；microRaw确为能量面Hausdorff测度乘以逆梯度范数，regularEnergy含非空、紧性、非零梯度、正有限质量，均已核对。前提比原书独立状态计数强，已由[EXTRA]披露。这里只把联合系统明确解释为独立测度乘积，未证明固定总能量的卷积公式，也没有偷换为该公式。"
+        ]
+      },
+      "audit": {
+        "lean_decl": "MD.Ch06.independentPartition",
+        "verdict": "PASS",
+        "explanation": "PASS：independentPartition 对任意维数n,m、实值Hamiltonian及分别固定的EA,EB，在regularEnergy前提下断言两个microRaw测度的乘积总质量等于总质量之积。E为EuclideanSpace；microRaw确为能量面Hausdorff测度乘以逆梯度范数，regularEnergy含非空、紧性、非零梯度、正有限质量，均已核对。前提比原书独立状态计数强，已由[EXTRA]披露。这里只把联合系统明确解释为独立测度乘积，未证明固定总能量的卷积公式，也没有偷换为该公式。",
+        "counterexample": null,
+        "suggested_fix": "保留现有独立、分别定能量的解释与[EXTRA]。"
+      },
+      "subtask": "EAUDIT01a"
+    },
+    {
+      "source_id": "MD-6.1.2-BathTaylor",
+      "json_review": {
+        "status": "NEEDS_HUMAN",
+        "issue_codes": [
+          "BOOK_APPROXIMATION_AS_EXACT"
+        ],
+        "corrected_json": null,
+        "issues": [
+          {
+            "stage": "A",
+            "description": "原文中值公式、s≪E、naively及Boltzmann比例式录入正确；原页脚注3也明确承认此推导不精确。"
+          },
+          {
+            "stage": "C",
+            "description": "bathBoltzmannPrinted：中值部分在C²前提下正确；第二合取把只在energy处给定的导数扩张成全区间精确指数比，不是中值定理的推论。作为Printed，保留原书启发式而标NEEDS_HUMAN，不因其错误直接判签名FAIL。bathBoltzmannPrinted_counterexample：exp(-1)≠exp(-2)正确，代入S(e)=e²、energy=kB=s=1、β=2即见原断言失败。bathBoltzmannPrinted_corrected：所有e处deriv S e=kB*β且S可微、kB>0，足以推出任意实数s的精确比值；是正确的全局仿射熵限定版，但并非一般热浴近似的误差估计。"
+          }
+        ],
+        "evidence": [
+          "A：已核对R1_PAGES.pdf附件第2页，原书PDF页237、印刷页216。原文中值公式、s≪E、naively及Boltzmann比例式录入正确；原页脚注3也明确承认此推导不精确。",
+          "C：只读核对本条完整Lean摘录及所引用附录项目定义；标准库按标准数学含义采信。bathBoltzmannPrinted：中值部分在C²前提下正确；第二合取把只在energy处给定的导数扩张成全区间精确指数比，不是中值定理的推论。作为Printed，保留原书启发式而标NEEDS_HUMAN，不因其错误直接判签名FAIL。bathBoltzmannPrinted_counterexample：exp(-1)≠exp(-2)正确，代入S(e)=e²、energy=kB=s=1、β=2即见原断言失败。bathBoltzmannPrinted_corrected：所有e处deriv S e=kB*β且S可微、kB>0，足以推出任意实数s的精确比值；是正确的全局仿射熵限定版，但并非一般热浴近似的误差估计。"
+        ]
+      },
+      "audit": {
+        "lean_decl": "MD.Ch06.bathBoltzmannPrinted; MD.Ch06.bathBoltzmannPrinted_counterexample; MD.Ch06.bathBoltzmannPrinted_corrected",
+        "verdict": "NEEDS_HUMAN",
+        "explanation": "bathBoltzmannPrinted：中值部分在C²前提下正确；第二合取把只在energy处给定的导数扩张成全区间精确指数比，不是中值定理的推论。作为Printed，保留原书启发式而标NEEDS_HUMAN，不因其错误直接判签名FAIL。bathBoltzmannPrinted_counterexample：exp(-1)≠exp(-2)正确，代入S(e)=e²、energy=kB=s=1、β=2即见原断言失败。bathBoltzmannPrinted_corrected：所有e处deriv S e=kB*β且S可微、kB>0，足以推出任意实数s的精确比值；是正确的全局仿射熵限定版，但并非一般热浴近似的误差估计。",
+        "counterexample": "S(e)=e²，energy=kB=s=1，β=2；比值为e^(-1)，所断言右端为e^(-2)。",
+        "suggested_fix": "保留Printed疑误；修正版明确命名为恒定熵导数特例，或另给带二阶余项的近似式。"
+      },
+      "subtask": "EAUDIT01b"
+    },
+    {
+      "source_id": "MD-6.1.2-CanonicalCDFPrinted",
+      "json_review": {
+        "status": "NEEDS_HUMAN",
+        "issue_codes": [
+          "SOURCE_NONCONTIGUOUS_EXCERPT",
+          "BOOK_MISSING_DENSITY_OF_STATES"
+        ],
+        "corrected_json": {
+          "source_id": "MD-6.1.2-CanonicalCDFPrinted",
+          "kind": "unnumbered_claim",
+          "label": null,
+          "section": "6.1.2",
+          "printed_page": "216",
+          "pdf_page": "237",
+          "statement_latex": "On the other hand the probability for the active system to have energy $\\leq\\alpha$ is the same as the probability of the bath having energy $\\geq E-\\alpha$, this must be\n\\[P(\\alpha)=\\Pr\\{E_B\\geq E-\\alpha\\}\\propto\\int_0^\\alpha Z_B(E-s)ds.\\]\n[The intervening bath-entropy argument is quoted separately in MD-6.1.2-BathTaylor.]\nThus we have $P(\\alpha)\\propto\\int_0^\\alpha\\exp(-\\beta s)ds$.",
+          "proof_latex": null,
+          "proof_note": "原书未给独立完整证明。",
+          "proof_discussion_latex": null,
+          "context_notation": [],
+          "extra_assumptions": [
+            "[EXTRA] 25号：原文版忠实性与数学疑误分开；补齐所交条目所属的现有_corrected完整签名，不从repair_log名称推断网站已通过修正版。"
+          ],
+          "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
+          "coverage_gaps": null
+        },
+        "issues": [
+          {
+            "stage": "A",
+            "description": "所摘CDF两公式与附件第3页一致，但原书在它们之间有热浴熵推导，当前JSON以不连续摘录连接；不应把这个摘录当作连续原段。原书后文又给出ZA(α)exp(-βα)能量密度，暴露了前式缺少ZA权重的问题。"
+          },
+          {
+            "stage": "C",
+            "description": "canonicalCDFPrinted：任意连续、全实轴严格正ZA,ZB，0<α<energy，等同含ZA与不含ZA的两个归一化积分。它精确呈现原书忽略简并度的主张，其数学疑误保留为NEEDS_HUMAN。canonicalCDFPrinted_corrected：保留分子分母ZA的定义是正确候选CDF表达式；本定义对任意函数和实α总化，不保证非负、归一、单调或分母非零。作为公式定义PASS；只有在正可积权重及0≤α≤energy时才有概率解释；定义没有证明热浴熵近似后的指数形式。"
+          }
+        ],
+        "evidence": [
+          "A：已核对R1_PAGES.pdf附件第3页，原书PDF页237、印刷页216。所摘CDF两公式与附件第3页一致，但原书在它们之间有热浴熵推导，当前JSON以不连续摘录连接；不应把这个摘录当作连续原段。原书后文又给出ZA(α)exp(-βα)能量密度，暴露了前式缺少ZA权重的问题。",
+          "C：只读核对本条完整Lean摘录及所引用附录项目定义；标准库按标准数学含义采信。canonicalCDFPrinted：任意连续、全实轴严格正ZA,ZB，0<α<energy，等同含ZA与不含ZA的两个归一化积分。它精确呈现原书忽略简并度的主张，其数学疑误保留为NEEDS_HUMAN。canonicalCDFPrinted_corrected：保留分子分母ZA的定义是正确候选CDF表达式；本定义对任意函数和实α总化，不保证非负、归一、单调或分母非零。作为公式定义PASS；只有在正可积权重及0≤α≤energy时才有概率解释；定义没有证明热浴熵近似后的指数形式。"
+        ]
+      },
+      "audit": {
+        "lean_decl": "MD.Ch06.canonicalCDFPrinted; MD.Ch06.canonicalCDFPrinted_corrected",
+        "verdict": "NEEDS_HUMAN",
+        "explanation": "canonicalCDFPrinted：任意连续、全实轴严格正ZA,ZB，0<α<energy，等同含ZA与不含ZA的两个归一化积分。它精确呈现原书忽略简并度的主张，其数学疑误保留为NEEDS_HUMAN。canonicalCDFPrinted_corrected：保留分子分母ZA的定义是正确候选CDF表达式；本定义对任意函数和实α总化，不保证非负、归一、单调或分母非零。作为公式定义PASS；只有在正可积权重及0≤α≤energy时才有概率解释；定义没有证明热浴熵近似后的指数形式。",
+        "counterexample": "取ZA(s)=1+s²、ZB=1、energy=1、α=1/2，左比值13/32，右比值1/2；两函数在全实轴连续严格正。",
+        "suggested_fix": "在原文摘录中明确分段；保留原书疑误。在修正版旁注明正可积权重、正总质量和α区间，勿把总化定义当概率定理。"
+      },
+      "subtask": "EAUDIT01c"
+    }
+  ],
+  "merged_from": "ch06_eaudit_merged"
+}

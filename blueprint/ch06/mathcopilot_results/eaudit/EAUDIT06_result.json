@@ -1,0 +1,107 @@
+{
+  "batch": "EAUDIT06",
+  "input_sha256": {
+    "Blueprint/Ch06.lean": "4a2a6cb72c1692f80e3537ab1a71701d429a482780a01226c3dc66a2ebb8b44b",
+    "blueprint/ch06/ch06_source.json": "d7f93cd20eb570744c710f3e07a88b319c082e4155812fee91db0920eb05944e"
+  },
+  "items": [
+    {
+      "source_id": "MD-6.3.1-DiffusiveTaylorPrinted",
+      "json_review": {
+        "status": "NEEDS_HUMAN",
+        "issue_codes": [
+          "BOOK_C2_REMAINDER_OVERCLAIM"
+        ],
+        "corrected_json": null,
+        "issues": [
+          {
+            "stage": "A",
+            "description": "原文C²背景下的O(dt^(3/2))与附件第20页一致，错误属于数学强度而非公式转录。"
+          },
+          {
+            "stage": "C",
+            "description": "diffusiveTaylorPrinted：任意C² φ、任意实x,a,b，沿dt→0+对增量a*dt+b*sqrt(dt)宣称三阶扩散余项BigO，忠实记录原书J=+1特例但断言过强。diffusiveTaylorPrinted_corrected：C³提供局部三阶Taylor界，混合二阶项也为O(dt^(3/2))，对固定实x,a,b正确。右滤子和实rpow的指数3/2均正确；b可负；此式只包含J=+1分支，J=-1可用替换b覆盖，但不是显式随机极限定理。"
+          }
+        ],
+        "evidence": [
+          "A：已核对R1_PAGES.pdf附件第20页，原书PDF页254、印刷页233。原文C²背景下的O(dt^(3/2))与附件第20页一致，错误属于数学强度而非公式转录。",
+          "C：只读核对本条完整Lean摘录及所引用附录项目定义；标准库按标准数学含义采信。diffusiveTaylorPrinted：任意C² φ、任意实x,a,b，沿dt→0+对增量a*dt+b*sqrt(dt)宣称三阶扩散余项BigO，忠实记录原书J=+1特例但断言过强。diffusiveTaylorPrinted_corrected：C³提供局部三阶Taylor界，混合二阶项也为O(dt^(3/2))，对固定实x,a,b正确。右滤子和实rpow的指数3/2均正确；b可负；此式只包含J=+1分支，J=-1可用替换b覆盖，但不是显式随机极限定理。"
+        ]
+      },
+      "audit": {
+        "lean_decl": "MD.Ch06.diffusiveTaylorPrinted; MD.Ch06.diffusiveTaylorPrinted_corrected",
+        "verdict": "NEEDS_HUMAN",
+        "explanation": "diffusiveTaylorPrinted：任意C² φ、任意实x,a,b，沿dt→0+对增量a*dt+b*sqrt(dt)宣称三阶扩散余项BigO，忠实记录原书J=+1特例但断言过强。diffusiveTaylorPrinted_corrected：C³提供局部三阶Taylor界，混合二阶项也为O(dt^(3/2))，对固定实x,a,b正确。右滤子和实rpow的指数3/2均正确；b可负；此式只包含J=+1分支，J=-1可用替换b覆盖，但不是显式随机极限定理。",
+        "counterexample": "φ=|x|^(5/2)，x=a=0,b=1；余项dt^(5/4)，除以dt^(3/2)为dt^(-1/4)无界。",
+        "suggested_fix": "保留Printed并标C²不足；采用C³修正版，或在C²下将余项降为o(dt)。"
+      },
+      "subtask": "EAUDIT06a"
+    },
+    {
+      "source_id": "MD-6.3.1-TimeItoFormula",
+      "json_review": {
+        "status": "NEEDS_HUMAN",
+        "issue_codes": [
+          "BOOK_MISSING_DT",
+          "LEAN_COMMENT_WRONG_EQUATION_NUMBER"
+        ],
+        "corrected_json": null,
+        "issues": [
+          {
+            "stage": "A",
+            "description": "附件第21页(6.18)的φ_t确实漏dt；JSON保留正确，不应静默更正原文。"
+          },
+          {
+            "stage": "C",
+            "description": "timeItoFormula及timeItoFormula_corrected签名相同：在与标量版一致的preBrownian、严格SDE、C¹ a,b、C²联合φ、联合可测及自然适应X、被积过程适应平方可积和网格L²/Hölder资格下，给出任意T≥0完整积分公式。方向(1,0)为x偏导，(0,1)为t偏导，二次方向导数给φ_xx；漂移积分已正确包含φ_t，初值φ(x0,0)，扩散φ_x*b，系数b²/2均正确，两数学签名PASS。timeItoFormulaPrinted以dX,dXX形式占位保留漏dt的右端，是表达式定义，不是正确积分定理，其文档误标(6.17)，应为(6.18)。原书疑误与已修正主签名不能混认。"
+          }
+        ],
+        "evidence": [
+          "A：已核对R1_PAGES.pdf附件第21页，原书PDF页255、印刷页234。附件第21页(6.18)的φ_t确实漏dt；JSON保留正确，不应静默更正原文。",
+          "C：只读核对本条完整Lean摘录及所引用附录项目定义；标准库按标准数学含义采信。timeItoFormula及timeItoFormula_corrected签名相同：在与标量版一致的preBrownian、严格SDE、C¹ a,b、C²联合φ、联合可测及自然适应X、被积过程适应平方可积和网格L²/Hölder资格下，给出任意T≥0完整积分公式。方向(1,0)为x偏导，(0,1)为t偏导，二次方向导数给φ_xx；漂移积分已正确包含φ_t，初值φ(x0,0)，扩散φ_x*b，系数b²/2均正确，两数学签名PASS。timeItoFormulaPrinted以dX,dXX形式占位保留漏dt的右端，是表达式定义，不是正确积分定理，其文档误标(6.17)，应为(6.18)。原书疑误与已修正主签名不能混认。"
+        ]
+      },
+      "audit": {
+        "lean_decl": "MD.Ch06.naturalHistory25; MD.Ch06.gridItoQualification25; MD.Ch06.strictItoIntegral; MD.Ch06.strictScalarSDE; MD.Ch06.timeItoFormula; MD.Ch06.timeItoFormula_corrected; MD.Ch06.timeItoFormulaPrinted",
+        "verdict": "NEEDS_HUMAN",
+        "explanation": "timeItoFormula及timeItoFormula_corrected签名相同：在与标量版一致的preBrownian、严格SDE、C¹ a,b、C²联合φ、联合可测及自然适应X、被积过程适应平方可积和网格L²/Hölder资格下，给出任意T≥0完整积分公式。方向(1,0)为x偏导，(0,1)为t偏导，二次方向导数给φ_xx；漂移积分已正确包含φ_t，初值φ(x0,0)，扩散φ_x*b，系数b²/2均正确，两数学签名PASS。timeItoFormulaPrinted以dX,dXX形式占位保留漏dt的右端，是表达式定义，不是正确积分定理，其文档误标(6.17)，应为(6.18)。原书疑误与已修正主签名不能混认。",
+        "counterexample": "φ(x,t)=t，a=b=0时正确关系是dφ=dt；Printed右端的时间项为1，缺少形式dt。",
+        "suggested_fix": "保留Printed原式，文档编号改为(6.18)；明确主定理是已补dt的积分版本，非字面原式。"
+      },
+      "subtask": "EAUDIT06b"
+    },
+    {
+      "source_id": "MD-6.3.2-OUVarianceIntegral",
+      "json_review": {
+        "status": "APPROVED",
+        "issue_codes": [
+          "DISCLOSED_PARTIAL_COVERAGE"
+        ],
+        "corrected_json": null,
+        "issues": [
+          {
+            "stage": "A",
+            "description": "Gaussian、零均值与指数方差积分的原句和公式与附件第22页一致。"
+          },
+          {
+            "stage": "C",
+            "description": "ouVarianceIntegral对任意γ>0、T≥0断言确定性区间积分∫exp(2γs)=(exp(2γT)-1)/(2γ)，签名正确。明确排除γ=0以免总化除零给错误值。scope和coverage_gaps已声明不覆盖随机积分Gaussian法则、均值或方差的识别；按此范围PASS。条目中额外列出的SymplecticCoordinates、textbookJ及复合辛映射声明与本积分结论无关，不把它们当证据。"
+          }
+        ],
+        "evidence": [
+          "A：已核对R1_PAGES.pdf附件第22页，原书PDF页256、印刷页235。Gaussian、零均值与指数方差积分的原句和公式与附件第22页一致。",
+          "C：只读核对本条完整Lean摘录及所引用附录项目定义；标准库按标准数学含义采信。ouVarianceIntegral对任意γ>0、T≥0断言确定性区间积分∫exp(2γs)=(exp(2γT)-1)/(2γ)，签名正确。明确排除γ=0以免总化除零给错误值。scope和coverage_gaps已声明不覆盖随机积分Gaussian法则、均值或方差的识别；按此范围PASS。条目中额外列出的SymplecticCoordinates、textbookJ及复合辛映射声明与本积分结论无关，不把它们当证据。"
+        ]
+      },
+      "audit": {
+        "lean_decl": "MD.Ch06.ouVarianceIntegral",
+        "verdict": "PASS",
+        "explanation": "ouVarianceIntegral对任意γ>0、T≥0断言确定性区间积分∫exp(2γs)=(exp(2γT)-1)/(2γ)，签名正确。明确排除γ=0以免总化除零给错误值。scope和coverage_gaps已声明不覆盖随机积分Gaussian法则、均值或方差的识别；按此范围PASS。条目中额外列出的SymplecticCoordinates、textbookJ及复合辛映射声明与本积分结论无关，不把它们当证据。",
+        "counterexample": null,
+        "suggested_fix": "保留限定覆盖；若补γ=0分支，积分应为T。"
+      },
+      "subtask": "EAUDIT06c"
+    }
+  ],
+  "merged_from": "ch06_eaudit_merged"
+}

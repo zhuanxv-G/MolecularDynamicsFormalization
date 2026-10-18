@@ -1,0 +1,84 @@
+{
+  "batch": "EAUDIT07",
+  "input_sha256": {
+    "Blueprint/Ch06.lean": "4a2a6cb72c1692f80e3537ab1a71701d429a482780a01226c3dc66a2ebb8b44b",
+    "blueprint/ch06/ch06_source.json": "d7f93cd20eb570744c710f3e07a88b319c082e4155812fee91db0920eb05944e"
+  },
+  "items": [
+    {
+      "source_id": "MD-6.3.2-OULawPrinted",
+      "json_review": {
+        "status": "APPROVED",
+        "issue_codes": [],
+        "corrected_json": null,
+        "issues": [],
+        "evidence": [
+          "A：已核对R1_PAGES.pdf附件第23页，原书PDF页256、印刷页235。已目视核对附件第23页：根号横线覆盖整个(2γ)^(-1)(1-exp(-2γt))，当前JSON及撤销旧疑误的标注正确。",
+          "C：只读核对本条完整Lean摘录及所引用附录项目定义；标准库按标准数学含义采信。ouLawPrinted：对实际preBrownian驱动与strictOUProcess（γ>0及线性漂移-γx、常扩散σ、确定初态x0的严格积分方程），任意T≥0，X_T有Gaussian法则，均值exp(-γT)x0、方差σ²(1-exp(-2γT))/(2γ)。方差非负，toNNReal不截掉任何合法量；σ为任意实数、T=0退化为初态Dirac也正确。原文只规定每时刻正态边际，签名没有错误声称各时刻独立或整路径法则，因此PASS；sorry不影响签名审校。"
+        ]
+      },
+      "audit": {
+        "lean_decl": "MD.Ch06.strictItoIntegral; MD.Ch06.strictScalarSDE; MD.Ch06.strictOUProcess; MD.Ch06.ouLawPrinted",
+        "verdict": "PASS",
+        "explanation": "ouLawPrinted：对实际preBrownian驱动与strictOUProcess（γ>0及线性漂移-γx、常扩散σ、确定初态x0的严格积分方程），任意T≥0，X_T有Gaussian法则，均值exp(-γT)x0、方差σ²(1-exp(-2γT))/(2γ)。方差非负，toNNReal不截掉任何合法量；σ为任意实数、T=0退化为初态Dirac也正确。原文只规定每时刻正态边际，签名没有错误声称各时刻独立或整路径法则，因此PASS；sorry不影响签名审校。",
+        "counterexample": null,
+        "suggested_fix": "保留当前根号范围和正确方差，勿再归因于原书根号错误。"
+      },
+      "subtask": "EAUDIT07a"
+    },
+    {
+      "source_id": "MD-6.3.2-MomentumOU",
+      "json_review": {
+        "status": "APPROVED",
+        "issue_codes": [],
+        "corrected_json": null,
+        "issues": [],
+        "evidence": [
+          "A：已核对R1_PAGES.pdf附件第24页，原书PDF页256、印刷页235。附件第24页坐标噪声sqrt(2γkBTm_i)及矩阵sqrt(2γkBT)M^(1/2)与原文JSON一致。",
+          "C：只读核对本条完整Lean摘录及所引用附录项目定义；标准库按标准数学含义采信。momentumOU在任意n上要求整族向量Wiener（联合Gaussian、全跨时协方差、连续路径）、逐质量正、γ>0、θ>0，其中θ表示kBT；每坐标为γ相同、σ_i=sqrt(2γθm_i)、初态p0_i的strictOUProcess。各噪声来自同一真实独立坐标Wiener，并非任意彼此相关标量过程。常系数线性方程对应对角M^(1/2)，签名PASS；不把该定义当作长期采样或不变性定理。"
+        ]
+      },
+      "audit": {
+        "lean_decl": "MD.Ch06.strictItoIntegral; MD.Ch06.strictScalarSDE; MD.Ch06.strictOUProcess; MD.Ch06.momentumOU",
+        "verdict": "PASS",
+        "explanation": "momentumOU在任意n上要求整族向量Wiener（联合Gaussian、全跨时协方差、连续路径）、逐质量正、γ>0、θ>0，其中θ表示kBT；每坐标为γ相同、σ_i=sqrt(2γθm_i)、初态p0_i的strictOUProcess。各噪声来自同一真实独立坐标Wiener，并非任意彼此相关标量过程。常系数线性方程对应对角M^(1/2)，签名PASS；不把该定义当作长期采样或不变性定理。",
+        "counterexample": null,
+        "suggested_fix": "保留θ=kBT说明及整族Wiener前提。"
+      },
+      "subtask": "EAUDIT07b"
+    },
+    {
+      "source_id": "MD-6.3.3-BathReductionPrinted",
+      "json_review": {
+        "status": "NEEDS_HUMAN",
+        "issue_codes": [
+          "BOOK_BATH_FORCE_SIGN"
+        ],
+        "corrected_json": null,
+        "issues": [
+          {
+            "stage": "A",
+            "description": "附件第25页(6.29)为+f(t)，f定义前确有-k^(-1)，与JSON一致；该外负号疑误不能归因于录入。"
+          },
+          {
+            "stage": "C",
+            "description": "bathReductionPrinted：k>0、μ_i>0、t≥0、Q,q为C²，dot Q=P、重粒子与热浴坐标的完整动力学均已列出。bathFrequency=1/sqrt(kμ_i)、memoryKernel=(1/k)Σcos、bathForcePrinted=-bathForce均核对。Printed的力与由dot P=-U′+(1/k)Σ(q_i-Q)导出的力差一个负号，原版忠实但需NEEDS_HUMAN。bathReductionPrinted_corrected保持相同域量词前提，用正bathForce替换，记忆项仍为负卷积，数学上正确；p0/μ_i与Ω_i^(-1)因子吻合。"
+          }
+        ],
+        "evidence": [
+          "A：已核对R1_PAGES.pdf附件第25页，原书PDF页258、印刷页237。附件第25页(6.29)为+f(t)，f定义前确有-k^(-1)，与JSON一致；该外负号疑误不能归因于录入。",
+          "C：只读核对本条完整Lean摘录及所引用附录项目定义；标准库按标准数学含义采信。bathReductionPrinted：k>0、μ_i>0、t≥0、Q,q为C²，dot Q=P、重粒子与热浴坐标的完整动力学均已列出。bathFrequency=1/sqrt(kμ_i)、memoryKernel=(1/k)Σcos、bathForcePrinted=-bathForce均核对。Printed的力与由dot P=-U′+(1/k)Σ(q_i-Q)导出的力差一个负号，原版忠实但需NEEDS_HUMAN。bathReductionPrinted_corrected保持相同域量词前提，用正bathForce替换，记忆项仍为负卷积，数学上正确；p0/μ_i与Ω_i^(-1)因子吻合。"
+        ]
+      },
+      "audit": {
+        "lean_decl": "MD.Ch06.bathReductionPrinted_corrected; MD.Ch06.bathReductionPrinted",
+        "verdict": "NEEDS_HUMAN",
+        "explanation": "bathReductionPrinted：k>0、μ_i>0、t≥0、Q,q为C²，dot Q=P、重粒子与热浴坐标的完整动力学均已列出。bathFrequency=1/sqrt(kμ_i)、memoryKernel=(1/k)Σcos、bathForcePrinted=-bathForce均核对。Printed的力与由dot P=-U′+(1/k)Σ(q_i-Q)导出的力差一个负号，原版忠实但需NEEDS_HUMAN。bathReductionPrinted_corrected保持相同域量词前提，用正bathForce替换，记忆项仍为负卷积，数学上正确；p0/μ_i与Ω_i^(-1)因子吻合。",
+        "counterexample": "取k=1,μ=1,U=0，Q(t)=(1-cos(sqrt(2)t))/2，q(t)=(1+cos(sqrt(2)t))/2，P=Q′，p=q′。初态Q0=0,q0=1,p0=0；t=0时实际dot P=1，Printed右端=-1。",
+        "suggested_fix": "保留原书f的外负号疑误；采用正bathForce的修正版。"
+      },
+      "subtask": "EAUDIT07c"
+    }
+  ],
+  "merged_from": "ch06_eaudit_merged"
+}

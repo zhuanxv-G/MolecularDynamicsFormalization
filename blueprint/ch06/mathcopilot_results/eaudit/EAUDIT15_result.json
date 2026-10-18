@@ -1,0 +1,257 @@
+{
+  "batch": "EAUDIT15",
+  "input_sha256": {
+    "Blueprint/Ch06.lean": "4a2a6cb72c1692f80e3537ab1a71701d429a482780a01226c3dc66a2ebb8b44b",
+    "blueprint/ch06/ch06_source.json": "d7f93cd20eb570744c710f3e07a88b319c082e4155812fee91db0920eb05944e"
+  },
+  "items": [
+    {
+      "source_id": "MD-6.4.4-LangevinHormander",
+      "json_review": {
+        "status": "NEEDS_HUMAN",
+        "issue_codes": [
+          "PROOF_NOTE_INCOMPLETE",
+          "COVERAGE_METADATA_INCONSISTENT",
+          "SOURCE_ZERO_TIME_DENSITY_ERRATUM"
+        ],
+        "corrected_json": {
+          "source_id": "MD-6.4.4-LangevinHormander",
+          "kind": "unnumbered_claim",
+          "label": null,
+          "section": "6.4.4",
+          "printed_page": "255",
+          "pdf_page": "276",
+          "statement_latex": "we have verified Hörmander’s condition. Thus Assumption 1(ii) holds in the case of Langevin dynamics.",
+          "proof_latex": null,
+          "proof_note": "原书在结论前给出漂移、噪声、Lie括号计算及线性无关论证；本条仅摘录最后的结论句。",
+          "proof_discussion_latex": null,
+          "context_notation": [],
+          "extra_assumptions": [
+            "[EXTRA]完整物理σ=√(2γθ)、γ/θ>0、C∞ U的实际噪声及括号span；本桥只证rank，转移密度存在另条未证。",
+            "[EXTRA] 25号：scope仅实际Langevin向量场括号rank；密度结论由LangevinTransitionDensity承接，补全部迭代括号定义。",
+            "[ERRATUM?] 原Assumption 1(ii)中的零时刻端点不能由此rank核验推出；仅正时刻密度可由相应抛物型条件讨论。"
+          ],
+          "statement_scope": "Lean仅覆盖实际Langevin向量场的原书括号秩条件；转移密度由条目14的正时刻修正版承接。",
+          "coverage_gaps": [
+            "本条rank签名不包含密度存在或连续性。",
+            "原Assumption 1(ii)包含t=0的端点仍需人工处理。"
+          ]
+        },
+        "issues": [
+          {
+            "code": "PROOF_NOTE_INCOMPLETE",
+            "field": "proof_note",
+            "message": "原页在结论前给出显式括号和线性无关论证，应在元数据中承认该原书论证。"
+          },
+          {
+            "code": "COVERAGE_METADATA_INCONSISTENT",
+            "field": "statement_scope / coverage_gaps",
+            "message": "EXTRA说明仅rank、密度另条，但scope仍称覆盖全部所引原句，coverage_gaps为null。"
+          },
+          {
+            "code": "SOURCE_ZERO_TIME_DENSITY_ERRATUM",
+            "field": "statement_latex",
+            "message": "原Assumption 1(ii)的零时刻联合连续密度端点并不由该rank声明成立，见条目14。"
+          }
+        ],
+        "evidence": [
+          {
+            "source": "R2_PAGES.pdf",
+            "attachment_page": [
+              15
+            ],
+            "location": "印刷255页，上半页b0、bi、[b0,bi]及结论",
+            "observation": "原页给出[b0,bi]=−σ(ei,−γei)并解释与噪声向量共同线性无关。"
+          },
+          {
+            "source": "R2_PAGES.pdf",
+            "attachment_page": [
+              11
+            ],
+            "location": "印刷252页Assumption 1(ii)",
+            "observation": "被引用的连续区间包括0。"
+          },
+          {
+            "source": "R2_任务.md",
+            "location": "条目13及LangevinDrift/Noise/Seed、附录D95–D97",
+            "observation": "Lean完整结论仅为textbookHormanderAt，未包含kernel密度存在结论。"
+          }
+        ]
+      },
+      "audit": {
+        "lean_decl": "MD.Ch06.langevinHormander",
+        "verdict": "NEEDS_HUMAN",
+        "explanation": "A：所引两句与原页相符；原页在此前已明确计算漂移、噪声及第一层括号并说明2Nc个向量线性无关，proof_note不应让人误以为没有这段论证。C：rank声明自身PASS：状态为实配置×实动量，漂移(p,−∇U−γp)，噪声(0,σeᵢ)，σ=√(2γθ)且γ、θ正；给出每个z处的全部迭代括号span=整个相空间。Nc=0时是零维的无害情形。D95–D97以及实际seed均已展开，不是把rank结论当作假设。签名只给含漂移种子族的原书秩条件，没有直接给出转移密度或Assumption 1(ii)的联合连续性；这种拆分在EXTRA已有说明，需同步修正statement_scope和coverage_gaps。引文后半句的原Assumption 1(ii)实际写到t=0，正时刻密度即使正确，也不能自动覆盖这个端点，故原书层面的合并断言仍NEEDS_HUMAN。",
+        "counterexample": null,
+        "suggested_fix": "同步scope与EXTRA，承认原页已给括号论证；保持rank与密度条目分列，并对原零时刻端点保留[ERRATUM?]。"
+      },
+      "subtask": "EAUDIT15a"
+    },
+    {
+      "source_id": "MD-6.4.4-LangevinTransitionDensity",
+      "json_review": {
+        "status": "NEEDS_HUMAN",
+        "issue_codes": [
+          "SOURCE_ZERO_TIME_DENSITY_ERRATUM",
+          "COVERAGE_METADATA_INCOMPLETE"
+        ],
+        "corrected_json": {
+          "source_id": "MD-6.4.4-LangevinTransitionDensity",
+          "kind": "unnumbered_claim",
+          "label": null,
+          "section": "6.4.4",
+          "printed_page": "255",
+          "pdf_page": "276",
+          "statement_latex": "Thus Assumption 1(ii) holds in the case of Langevin dynamics.",
+          "proof_latex": null,
+          "proof_note": "原书未给独立完整证明。",
+          "proof_discussion_latex": null,
+          "context_notation": [],
+          "extra_assumptions": [
+            "[EXTRA]具体实际单位周期Langevin、C∞势、正γ/β，全部点初值的正时间连续转移密度及真实平坦相空间测度表示；没有从含drift的任意原Definition6.1断言一般parabolic密度定理。",
+            "[EXTRA] 25号：补actual_path_solution_exists完整存在类型及所选解满足初值/积分方程的规格；不把缺摘录误记原书问题。",
+            "[ERRATUM?] 原Assumption 1(ii)的[0,∞)应就转移密度连续性改为(0,∞)；点初值在零时刻是Dirac测度。"
+          ],
+          "statement_scope": "原引文保留；Lean覆盖实际周期单位质量Langevin核在t>0的联合连续转移密度及全部可测集合表示。",
+          "coverage_gaps": [
+            "原Assumption 1(ii)在t=0的联合连续端点不成立/未按原文形式化，须勘误签核。"
+          ]
+        },
+        "issues": [
+          {
+            "code": "SOURCE_ZERO_TIME_DENSITY_ERRATUM",
+            "field": "statement_latex / extra_assumptions",
+            "message": "原引用指向[0,∞)联合连续密度；当前仅t>0的正确声明须明确作为端点勘误版。"
+          },
+          {
+            "code": "COVERAGE_METADATA_INCOMPLETE",
+            "field": "statement_scope / coverage_gaps",
+            "message": "现有元数据没明确承认零时刻端点未覆盖。"
+          }
+        ],
+        "evidence": [
+          {
+            "source": "R2_PAGES.pdf",
+            "attachment_page": [
+              16
+            ],
+            "location": "印刷255页，上部rank结论后一行",
+            "observation": "原句直接说Assumption 1(ii)成立。"
+          },
+          {
+            "source": "R2_PAGES.pdf",
+            "attachment_page": [
+              11
+            ],
+            "location": "印刷252页Assumption 1(ii)",
+            "observation": "原条件为正时刻密度，但还要求密度函数在包括t=0的闭端点区间联合连续。"
+          },
+          {
+            "source": "R2_任务.md",
+            "location": "条目14；附录D17、D19–D23、D28–D31及flatPhaseMeasure",
+            "observation": "当前完整密度命题只量化t>0，ContinuousOn的时间域是Ioi 0。"
+          }
+        ]
+      },
+      "audit": {
+        "lean_decl": "MD.Ch06.langevinTransitionDensity",
+        "verdict": "NEEDS_HUMAN",
+        "explanation": "A：所引“Thus Assumption 1(ii) holds in the case of Langevin dynamics.”原句准确；须连同其所引用的Assumption 1(ii)核对，不能只看该短句。C：当前正时刻限定签名PASS：真实周期单位质量Langevin端点核、C∞周期势和Lipschitz力、β和γ正、物理幅度√(2γ/β)、真实Wiener过程。D17、D19–D23及D28–D31说明是实际积分解的推前核；flatPhaseMeasure为真实平坦相空间测度。ρ先于所有t>0、x、可测A选择，在(x,z,t)联合变量上ContinuousOn(univ×(0,∞))，并给出全部可测集合上的限制积分表示；这是全密度结论，不是仅有限检验函数相等，也未把密度存在当作假设。原书Assumption 1(ii)却要求C×C×[0,∞)联合连续，当前声明有意改成t>0。该修改合理且必要，但应明标[ERRATUM?]并由人工认可；它不是原Assumption 1(ii)端点的完整忠实实现。",
+        "counterexample": "取一维周期位置、实动量及任一点初值x；K0 x=δx。平坦相空间测度无原子。若ρ(x,z,t)在x附近的z及t=0处有有限连续延拓，则在一个紧小邻域上有统一密度上界，使足够小邻域的概率一致小于1；但实际连续路径使K_t x在t↓0时集中到x，概率趋向1，矛盾。该问题来自原零时刻端点，不反驳当前t>0的签名。",
+        "suggested_fix": "保持现有正时刻声明并明确标为端点修正版；原句及原Assumption 1(ii)的[0,∞)写法保留供人工勘误。"
+      },
+      "subtask": "EAUDIT15b"
+    },
+    {
+      "source_id": "MD-6.4.4-Lemma61Printed",
+      "json_review": {
+        "status": "NEEDS_HUMAN",
+        "issue_codes": [
+          "NUMBERED_LEMMA_KIND",
+          "SOURCE_EMPTY_OPEN_SET_ERRATUM",
+          "PRINTED_PHYSICAL_PARAMETER_DOMAIN_MISMATCH"
+        ],
+        "corrected_json": {
+          "source_id": "MD-6.4.4-Lemma61Printed",
+          "kind": "lemma",
+          "label": "Lemma 6.1",
+          "section": "6.4.4",
+          "printed_page": "255",
+          "pdf_page": "276",
+          "statement_latex": "Lemma 6.1 For all $t>0$ and all open $C\\subset D$, we have that\n\\[\\Pr(X(t)\\in C\\mid X(0)=X_0)>0,\\quad\\forall X_0\\in D,\\]\nwhere $X(t)=(q(t),p(t))^T$ is a solution to Langevin dynamics (6.47).",
+          "proof_latex": null,
+          "proof_note": "原书给出证明论述；本条仅摘录命题，相关论述见相邻原页，未在此补写。",
+          "proof_discussion_latex": null,
+          "context_notation": [],
+          "extra_assumptions": [
+            "[EXTRA] 25号：Printed收回单位质量周期相空间，保留包括空集的原全称开集断言及原书疑误；非空修正版独立保留，真实核存在规格补入复审包。",
+            "[ERRATUM?] 原所有开集应限制为非空开集；Printed仍应保留原空集漏洞用于忠实性审校。",
+            "[EXTRA] 当前声明还将γ推广为任意实数、σ推广为任意非零实数；这不是原(6.47)的字面参数域，须另行命名或恢复原域。"
+          ],
+          "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
+          "coverage_gaps": [
+            "原书漏非空目标的疑误仍保留。",
+            "当前Printed的γ、σ参数域比原(6.47)宽；需恢复原域或改名为推广版。"
+          ]
+        },
+        "issues": [
+          {
+            "code": "NUMBERED_LEMMA_KIND",
+            "field": "kind",
+            "message": "label和原页均为Lemma 6.1，kind=unnumbered_claim不符。"
+          },
+          {
+            "code": "SOURCE_EMPTY_OPEN_SET_ERRATUM",
+            "field": "statement_latex",
+            "message": "原书all open C包括空集；空事件概率为0，故严格正断言不成立。"
+          },
+          {
+            "code": "PRINTED_PHYSICAL_PARAMETER_DOMAIN_MISMATCH",
+            "field": "lemma61Printed / extra_assumptions",
+            "message": "原(6.47)的正摩擦和物理噪声关系被替换为γ任意实数、σ任意非零实数，Printed未保持原过程参数域。"
+          }
+        ],
+        "evidence": [
+          {
+            "source": "R2_PAGES.pdf",
+            "attachment_page": [
+              17
+            ],
+            "location": "印刷255页Lemma 6.1全文",
+            "observation": "原页确没有nonempty，且明确说解的是Langevin dynamics (6.47)。"
+          },
+          {
+            "source": "R2_PAGES.pdf",
+            "attachment_page": [
+              10
+            ],
+            "location": "印刷251页式(6.47)",
+            "observation": "原噪声为√(2γkBT)，不是独立的任意非零σ。"
+          },
+          {
+            "source": "R2_PAGES.pdf",
+            "attachment_page": [
+              17
+            ],
+            "location": "印刷255页Lemma 6.1证明中式(6.49)之后",
+            "observation": "原文明确称γ与σ为positive constants。"
+          },
+          {
+            "source": "R2_任务.md",
+            "location": "条目15完整签名",
+            "observation": "只有hσ : σ ≠ 0，没有0<γ或σ与温度、γ的关系；目标开集也无非空条件。"
+          }
+        ]
+      },
+      "audit": {
+        "lean_decl": "MD.Ch06.lemma61Printed",
+        "verdict": "FAIL",
+        "explanation": "A：Lemma 6.1的标题、所有t>0、所有开集、全部点初值及原式准确；kind应为编号lemma而不是unnumbered_claim。C：缺少C.Nonempty忠实保留了原文的空集漏洞，这个数学错误应NEEDS_HUMAN，不能仅因此判Printed签名FAIL。实际端点核的定义、时间正性、全部点初值及周期单位质量相空间均已核对。不过原页把过程指定为(6.47)，其γ为正且噪声为√(2γkBT)；当前Printed却量化任意实γ和任意非零实σ，额外覆盖γ≤0及不满足物理噪声关系的过程。它们可用于有限时刻开放集可达性的正确推广，但该推广没有在本条EXTRA中完整披露，也不是(6.47)的字面参数域。按Printed必须审忠实性的要求，本条因参数域扩张FAIL；原书空集错误仍独立标NEEDS_HUMAN。此结论不依据sorry。",
+        "counterexample": "仅针对原书数学错误：取任意允许的正时间、初值及物理参数，令C=∅。∅是开集，任何转移测度都有K t x ∅=0，故原严格不等式变成0<0。此反例不作为Printed忠实性FAIL的理由。",
+        "suggested_fix": "kind改为lemma。真正的Printed应保留原all open（包括空集）和原物理参数域，并挂[ERRATUM?]；任意实γ、非零σ的推广放到非空修正版中或另行命名。"
+      },
+      "subtask": "EAUDIT15c"
+    }
+  ],
+  "merged_from": "ch06_eaudit_merged"
+}

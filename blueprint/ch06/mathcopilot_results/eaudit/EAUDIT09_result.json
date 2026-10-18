@@ -1,0 +1,126 @@
+{
+  "batch": "EAUDIT09",
+  "input_sha256": {
+    "Blueprint/Ch06.lean": "4a2a6cb72c1692f80e3537ab1a71701d429a482780a01226c3dc66a2ebb8b44b",
+    "blueprint/ch06/ch06_source.json": "d7f93cd20eb570744c710f3e07a88b319c082e4155812fee91db0920eb05944e"
+  },
+  "items": [
+    {
+      "source_id": "MD-6.3.6-FPPolynomialAdjoint",
+      "json_review": {
+        "status": "NEEDS_HUMAN",
+        "issue_codes": [
+          "SOURCE_OMISSION_PLACEHOLDER",
+          "BOOK_DERIVATIVE_GROWTH_GAP"
+        ],
+        "corrected_json": {
+          "source_id": "MD-6.3.6-FPPolynomialAdjoint",
+          "kind": "unnumbered_claim",
+          "label": null,
+          "section": "6.3.6",
+          "printed_page": "241–242",
+          "pdf_page": "262–263",
+          "statement_latex": "We assume that $\\rho$ is $C^\\infty$ for all $t$ and that the density tends to zero exponentially fast as $x\\to\\pm\\infty$, whereas $a$ and $b$ are $C^\\infty$ functions which grow at most polynomially fast in these limits, that is, there are constants $\\eta_a$, $\\eta_b$ such that\n\\[a(x)=\\mathcal O(|x|^{\\eta_a}),\\quad b(x)=\\mathcal O(|x|^{\\eta_b}),\\quad x\\to\\pm\\infty.\\]\nThis condition of polynomial growth of the coefficients is a common assumption in the analysis of SDEs. For future reference we define the space of functions which are $C^\\infty$ smooth and satisfy the polynomial growth restriction by $CP^\\infty$:\n\\[CP^\\infty=\\{\\phi\\in C^\\infty\\mid\\exists\\eta\\in\\mathbb N:\\phi(x)=O(|x|^\\eta),\\ x\\to\\pm\\infty\\}.\\]\nFor any $\\phi\\in CP^\\infty$, the expectation with respect to $\\rho(x,t)$ is well defined and we have\n\\[\\mathbb E\\phi(X(t))=\\langle\\phi,\\rho\\rangle=\\int_{-\\infty}^{+\\infty}\\phi(x)\\rho(x,t)dx.\\]\nTaking the differential, we obtain an equation for $\\mathbb E d\\phi$ which must be equal to (6.37):\n\\[\\int_{-\\infty}^{+\\infty}\\phi(x)\\frac{\\partial\\rho}{\\partial t}dx=\\int_{-\\infty}^{+\\infty}(\\mathcal L\\phi)(x)\\rho(x,t)dx=\\int_{-\\infty}^{+\\infty}(a(x)\\phi'+\\tfrac12 b^2(x)\\phi''(x))\\rho(x,t)dx.\\]\nUsing the assumptions given above regarding the exponential rate of decay of the density, it is possible to recast the right hand side as an integral of a product with $\\phi$. First, we find\n\\[\\int_{-\\infty}^{+\\infty}a(x)\\phi'(x)\\rho(x,t)dx=[\\phi(x)a(x)\\rho(x,t)]_{-\\infty}^{\\infty}-\\int_{-\\infty}^{+\\infty}\\phi(x)(a(x)\\rho(x,t))_x dx=-\\int_{-\\infty}^{+\\infty}\\phi(x)(a(x)\\rho(x,t))_x dx.\\]\nWith two rounds of integration by parts on the term involving $b(x)$, we find, using the fact that the boundary terms vanish,\n\\[\\int_{-\\infty}^{+\\infty}b^2(x)\\phi''(x)\\rho(x,t)dx=\\int_{-\\infty}^{+\\infty}\\phi(x)(b^2(x)\\rho)_{xx}(x,t)dx.\\]\nFinally, putting these results together, we have\n\\[\\int_{-\\infty}^{+\\infty}\\phi(x)\\left[\\frac{\\partial\\rho}{\\partial t}+\\frac{\\partial}{\\partial x}(a(x)\\rho(x,t))-\\frac12\\frac{\\partial^2}{\\partial x^2}(b^2(x)\\rho)\\right]dx=0.\\]\nIf this is to hold for all test functions $\\phi$, we must have\n\\[\\frac{\\partial\\rho}{\\partial t}=-\\frac{\\partial}{\\partial x}(a(x)\\rho)+\\frac12\\frac{\\partial^2}{\\partial x^2}(b^2(x)\\rho).\\]\nThis partial differential equation is often called the Fokker-Planck equation. The great benefit of the Fokker-Planck equation is that it enables the macroscopic perspective on the solutions of an SDE.\nThe Fokker-Planck equation may be written in the compact form\n\\[\\frac{\\partial\\rho}{\\partial t}=\\mathcal L^\\dagger\\rho,\\]\nwhere the operator appearing on the right hand side is the adjoint $\\mathcal L^\\dagger$ of the generator of the stochastic process, satisfying the relation\n\\[\\langle\\mathcal L\\phi,\\rho\\rangle=\\langle\\phi,\\mathcal L^\\dagger\\rho\\rangle.\\]",
+          "proof_latex": null,
+          "proof_note": "原书未给独立完整证明。",
+          "proof_discussion_latex": null,
+          "context_notation": [],
+          "extra_assumptions": [
+            "[EXTRA]原C∞P值增长不足以控制所有IBP边界；明确一、二阶a,b,φ多项式增长及ρ导数指数尾，保存整个非紧支撑真实积分恒等。",
+            "[EXTRA] 25号：原文版忠实性与数学疑误分开；补齐所交条目所属的现有_corrected完整签名，不从repair_log名称推断网站已通过修正版。"
+          ],
+          "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
+          "coverage_gaps": null
+        },
+        "issues": [
+          {
+            "stage": "A",
+            "description": "statement_latex含“[中间原文略]”占位，未给连续完整原文；需补回CP∞定义、期望、生成元/分部积分以及伴随连接文字。原页仅规定函数值增长/衰减，未给导数尾界，属于数学资格缺口。"
+          },
+          {
+            "stage": "C",
+            "description": "fpPolynomialAdjoint及_corrected：a,b,ρ,φ为C∞；a,b,φ的0至2阶导数逐阶有全局多项式界，ρ的0至2阶导数逐阶有正指数尾；这些明确加强条件保证真正非紧支撑积分可积与所需边界消失，scalarGenerator=aφ′+b²φ″/2、scalarForward=-(aρ)′+(b²ρ)″/2，签名正确。fpPolynomialAdjointPrinted只约束k=0的函数值，忠实于原书CP∞和密度衰减，不能据此控制导数、边界或积分；Printed保留NEEDS_HUMAN。原文并未证明任意此类测试函数的Lφ可积，不能让Bochner总化积分掩盖问题。"
+          }
+        ],
+        "evidence": [
+          "A：已核对R1_PAGES.pdf附件第30,31页，原书PDF页262–263、印刷页241–242。statement_latex含“[中间原文略]”占位，未给连续完整原文；需补回CP∞定义、期望、生成元/分部积分以及伴随连接文字。原页仅规定函数值增长/衰减，未给导数尾界，属于数学资格缺口。",
+          "C：只读核对本条完整Lean摘录及所引用附录项目定义；标准库按标准数学含义采信。fpPolynomialAdjoint及_corrected：a,b,ρ,φ为C∞；a,b,φ的0至2阶导数逐阶有全局多项式界，ρ的0至2阶导数逐阶有正指数尾；这些明确加强条件保证真正非紧支撑积分可积与所需边界消失，scalarGenerator=aφ′+b²φ″/2、scalarForward=-(aρ)′+(b²ρ)″/2，签名正确。fpPolynomialAdjointPrinted只约束k=0的函数值，忠实于原书CP∞和密度衰减，不能据此控制导数、边界或积分；Printed保留NEEDS_HUMAN。原文并未证明任意此类测试函数的Lφ可积，不能让Bochner总化积分掩盖问题。"
+        ]
+      },
+      "audit": {
+        "lean_decl": "MD.Ch06.fpPolynomialAdjoint; MD.Ch06.fpPolynomialAdjoint_corrected; MD.Ch06.fpPolynomialAdjointPrinted",
+        "verdict": "NEEDS_HUMAN",
+        "explanation": "fpPolynomialAdjoint及_corrected：a,b,ρ,φ为C∞；a,b,φ的0至2阶导数逐阶有全局多项式界，ρ的0至2阶导数逐阶有正指数尾；这些明确加强条件保证真正非紧支撑积分可积与所需边界消失，scalarGenerator=aφ′+b²φ″/2、scalarForward=-(aρ)′+(b²ρ)″/2，签名正确。fpPolynomialAdjointPrinted只约束k=0的函数值，忠实于原书CP∞和密度衰减，不能据此控制导数、边界或积分；Printed保留NEEDS_HUMAN。原文并未证明任意此类测试函数的Lφ可积，不能让Bochner总化积分掩盖问题。",
+        "counterexample": "光滑有界φ(x)=sin(exp(x⁴))具有多项式函数值界而导数增长超指数；取ρ(x)=exp(-x²)，仅函数值的原书条件不能保证φ′ρ、φ″ρ可积。此例展示缺失资格，不把不可积表达式自动当作普通积分反例数值。",
+        "suggested_fix": "补回省略原文；保留函数值条件Printed疑问，使用明确导数界的限定版。"
+      },
+      "subtask": "EAUDIT09a"
+    },
+    {
+      "source_id": "MD-6.3.6-FPEquation",
+      "json_review": {
+        "status": "NEEDS_HUMAN",
+        "issue_codes": [
+          "INCONSISTENT_INITIAL_DENSITY_REGULARITY",
+          "INITIAL_LAW_SCOPE_MISMATCH"
+        ],
+        "corrected_json": null,
+        "issues": [
+          {
+            "stage": "A",
+            "description": "附件第32页PDE的负漂移、正半扩散及伴随紧写公式一致；未把原书数学问题误当转录问题。"
+          },
+          {
+            "stage": "C",
+            "description": "fpEquation的P、W,X、a,b、确定初态x0及ρ(t,x)量词、自然历史适应与联合可测X、扩散平方可积、真实正密度HasLaw、多项式值界及正时间紧窗一致指数尾均已核对；结论是每t>0、每x的经典PDE，scalarForward系数正确，未把目标PDE设为前提。但ContDiff ℝ ∞ (Function.uncurry ρ)要求ρ在包括t=0的整个ℝ²光滑，同时strictScalarSDE要求X0=x0且AE路径在0连续，HasLaw对所有t>0成立。这使整组前提不可能：连续初态的边际趋δ_x0，而跨t=0连续的Lebesgue密度在小紧矩形有一致界，不能产生该原子极限。因此该签名是空泛的加强，并非原书“给定初始密度”的FP陈述，判FAIL；与sorry无关。仅补适应性不能修复时间域和初始法则。"
+          }
+        ],
+        "evidence": [
+          "A：已核对R1_PAGES.pdf附件第32页，原书PDF页263、印刷页242。附件第32页PDE的负漂移、正半扩散及伴随紧写公式一致；未把原书数学问题误当转录问题。",
+          "C：只读核对本条完整Lean摘录及所引用附录项目定义；标准库按标准数学含义采信。fpEquation的P、W,X、a,b、确定初态x0及ρ(t,x)量词、自然历史适应与联合可测X、扩散平方可积、真实正密度HasLaw、多项式值界及正时间紧窗一致指数尾均已核对；结论是每t>0、每x的经典PDE，scalarForward系数正确，未把目标PDE设为前提。但ContDiff ℝ ∞ (Function.uncurry ρ)要求ρ在包括t=0的整个ℝ²光滑，同时strictScalarSDE要求X0=x0且AE路径在0连续，HasLaw对所有t>0成立。这使整组前提不可能：连续初态的边际趋δ_x0，而跨t=0连续的Lebesgue密度在小紧矩形有一致界，不能产生该原子极限。因此该签名是空泛的加强，并非原书“给定初始密度”的FP陈述，判FAIL；与sorry无关。仅补适应性不能修复时间域和初始法则。"
+        ]
+      },
+      "audit": {
+        "lean_decl": "MD.Ch06.naturalHistory25; MD.Ch06.strictItoIntegral; MD.Ch06.strictScalarSDE; MD.Ch06.fpEquation",
+        "verdict": "FAIL",
+        "explanation": "fpEquation的P、W,X、a,b、确定初态x0及ρ(t,x)量词、自然历史适应与联合可测X、扩散平方可积、真实正密度HasLaw、多项式值界及正时间紧窗一致指数尾均已核对；结论是每t>0、每x的经典PDE，scalarForward系数正确，未把目标PDE设为前提。但ContDiff ℝ ∞ (Function.uncurry ρ)要求ρ在包括t=0的整个ℝ²光滑，同时strictScalarSDE要求X0=x0且AE路径在0连续，HasLaw对所有t>0成立。这使整组前提不可能：连续初态的边际趋δ_x0，而跨t=0连续的Lebesgue密度在小紧矩形有一致界，不能产生该原子极限。因此该签名是空泛的加强，并非原书“给定初始密度”的FP陈述，判FAIL；与sorry无关。仅补适应性不能修复时间域和初始法则。",
+        "counterexample": "不相容性证明：联合连续给出小矩形[0,ε]×[x0-ε,x0+ε]上的有限界M；取δ<min(ε,1/(4(M+1)))，小正t时P(|X_t-x0|<δ)≤2δM<1/2；但X_t→x0 AE使该概率趋1，矛盾。",
+        "suggested_fix": "把ρ的光滑性限定在(0,∞)×ℝ，保留确定性初态；或改为随机初态具有给定平滑密度，并相应修改严格SDE定义。再核查严格网格解到适应Itô解的桥接；此处仅建议，不修改工程。"
+      },
+      "subtask": "EAUDIT09b"
+    },
+    {
+      "source_id": "MD-6.3.6-ZeroNoise",
+      "json_review": {
+        "status": "APPROVED",
+        "issue_codes": [
+          "DISCLOSED_PARTIAL_COVERAGE"
+        ],
+        "corrected_json": null,
+        "issues": [
+          {
+            "stage": "A",
+            "description": "附件第33页关于b≡0、Lie导数和Liouvillian的原句一致。"
+          },
+          {
+            "stage": "C",
+            "description": "zeroNoise对任意实函数a,f,ρ和任意x给两合取：scalarGenerator(a,0)f=a f′及scalarForward(a,0)ρ=-(aρ)′。展开D25、D26即得，扩散项为恒零故不需可微性前提。覆盖范围已注明只是算子代数化简，未声称SDE解成为经典ODE解，PASS。"
+          }
+        ],
+        "evidence": [
+          "A：已核对R1_PAGES.pdf附件第33页，原书PDF页263、印刷页242。附件第33页关于b≡0、Lie导数和Liouvillian的原句一致。",
+          "C：只读核对本条完整Lean摘录及所引用附录项目定义；标准库按标准数学含义采信。zeroNoise对任意实函数a,f,ρ和任意x给两合取：scalarGenerator(a,0)f=a f′及scalarForward(a,0)ρ=-(aρ)′。展开D25、D26即得，扩散项为恒零故不需可微性前提。覆盖范围已注明只是算子代数化简，未声称SDE解成为经典ODE解，PASS。"
+        ]
+      },
+      "audit": {
+        "lean_decl": "MD.Ch06.zeroNoise",
+        "verdict": "PASS",
+        "explanation": "zeroNoise对任意实函数a,f,ρ和任意x给两合取：scalarGenerator(a,0)f=a f′及scalarForward(a,0)ρ=-(aρ)′。展开D25、D26即得，扩散项为恒零故不需可微性前提。覆盖范围已注明只是算子代数化简，未声称SDE解成为经典ODE解，PASS。",
+        "counterexample": null,
+        "suggested_fix": "保留coverage_gaps中的SDE/ODE桥接缺口。"
+      },
+      "subtask": "EAUDIT09c"
+    }
+  ],
+  "merged_from": "ch06_eaudit_merged"
+}

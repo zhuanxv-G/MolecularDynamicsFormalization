@@ -1,0 +1,146 @@
+{
+  "batch": "EAUDIT20",
+  "input_sha256": {
+    "Blueprint/Ch06.lean": "4a2a6cb72c1692f80e3537ab1a71701d429a482780a01226c3dc66a2ebb8b44b",
+    "blueprint/ch06/ch06_source.json": "d7f93cd20eb570744c710f3e07a88b319c082e4155812fee91db0920eb05944e"
+  },
+  "items": [
+    {
+      "source_id": "MD-6.4.5-ComplexInitialDensity",
+      "json_review": {
+        "status": "NEEDS_HUMAN",
+        "issue_codes": [
+          "ERRATUM_INITIAL_PROBABILITY_QUALIFICATION",
+          "SCOPE_METADATA_INCOMPLETE"
+        ],
+        "corrected_json": {
+          "source_id": "MD-6.4.5-ComplexInitialDensity",
+          "kind": "definition",
+          "label": null,
+          "section": "6.4.5",
+          "printed_page": "258",
+          "pdf_page": "279",
+          "statement_latex": "For example, if we assume that $\\lambda_1,\\rho^{(1)}$ is some eigenvalue, eigenfunction pair with $\\operatorname{Re}(\\lambda_1)<0$ and take the initial distribution to be\n\\[\\rho_0=\\rho_{eq}+\\alpha\\rho^{(1)},\\]\nfor $\\alpha\\in\\mathbb R$, then we have",
+          "proof_latex": null,
+          "proof_note": "原书未给独立完整证明。",
+          "proof_discussion_latex": null,
+          "context_notation": [],
+          "extra_assumptions": [
+            "[EXTRA]明确真实初始概率的实性/非负/积分1，原单复模式不自动是概率；保留复Lp空间与复本征值，未缩成实负λ玩具。复共轭成对构造可另建，但原单模式需这些资格。",
+            "[EXTRA] 25号：仅为给定复L²候选的概率资格辅助定义；本征关系、Reλ<0及平衡态识别须在使用处另列，单一非实模式须共轭配对后再查非负性，不能覆盖任意α的原句。",
+            "[ERRATUM?] 原文取initial distribution需隐含实性、非负和单位质量的额外限制；不能把任意α或任意单一复模式当作概率。原句保留。"
+          ],
+          "statement_scope": "只定义给定复L²候选ρeq、ρ1及实α的平衡候选与初始组合的概率资格；不单独编码本征对、Reλ<0或实际Gibbs识别，也不声称所有α合格。",
+          "coverage_gaps": [
+            "本条不含本征关系、Reλ<0与实际Gibbs平衡态识别；相关使用条件在ComplexEigenmodeDecay另列，不能据此称本定义包含这些条件。"
+          ]
+        },
+        "issues": [
+          {
+            "code": "ERRATUM_INITIAL_PROBABILITY_QUALIFICATION",
+            "location": "statement_latex / extra_assumptions",
+            "message": "原页未显式限定αρ1使ρeq+αρ1实、非负、可积、单位质量；任意实α或单一非实模式并不自动给出概率初始分布。需保留原文并标[ERRATUM?]。"
+          },
+          {
+            "code": "SCOPE_METADATA_INCOMPLETE",
+            "location": "statement_scope / coverage_gaps",
+            "message": "实际两个同体定义仅检验已给复L²候选的概率资格，不包含λ、生成元本征关系或ρeq为实际Gibbs平衡态；EXTRA已承认，scope和coverage_gaps应同步。"
+          }
+        ],
+        "evidence": [
+          "A：附件第14页，印刷258、原书PDF279；eigenvalue/eigenfunction pair、Re(λ1)<0、ρ0=ρeq+αρ^(1)和α∈R的次序与原页一致。",
+          "C：complexInitialDensity与complexInitialDensity_corrected的六组合取逐项相同，保留复Lp ℂ 2及α:ℝ。D72完整重列前者。",
+          "C：实性、非负性均为flatPhaseMeasure-AE条件，而L¹与质量1另外显式列出，避免将无限测度上的L²误作L¹。"
+        ]
+      },
+      "audit": {
+        "lean_decl": "MD.Ch06.complexInitialDensity; MD.Ch06.complexInitialDensity_corrected",
+        "verdict": "PASS",
+        "explanation": "complexInitialDensity：作为EXTRA明确声明的概率资格辅助定义，PASS；complexInitialDensity_corrected：同样PASS，且二者实为同体，不是一个已证另一个待证。它们要求ρeq及给定组合ρeq+αρ1各自AE实且非负，实部可积且积分1；这些是复L²候选代表概率密度所需的正确条件。不要求ρ1本身非负，亦不要求α≠0，均正确；α=0时没有从单位质量倒推ρ1零积分。定义里没有λ或A，也没有声称所有α合格、ρeq确为Gibbs或ρ1确为本征函数；这些必须由使用处如条目14另列。因此这是合理的显式限定，不是对原页任意α的无条件实现；A阶段仍须人工核定原文中“initial distribution”的隐含范围。",
+        "counterexample": "取n=1、U=0、β=γ=1，ρeq=(2π)^(-1/2)e^(-p²/2)，ρ1=pρeq（q无关），这是平直前向OU生成元的非零特征函数，特征值-1。两者均在平直L²，且∫ρ1=0；但α=1时ρ0=(1+p)ρeq在p<-1为负，故不是概率密度。即使实本征模式和负实特征值也不能免去非负检查。",
+        "suggested_fix": "保留原句；补[ERRATUM?]α及模式的概率资格问题，同步scope和coverage_gaps。若讨论非实本征模式的非平凡概率扰动，应使用共轭配对并再次检查非负性。"
+      },
+      "subtask": "EAUDIT20a"
+    },
+    {
+      "source_id": "MD-6.4.5-LangevinForwardSemigroupMeaning",
+      "json_review": {
+        "status": "APPROVED",
+        "issue_codes": [],
+        "corrected_json": null,
+        "issues": [],
+        "evidence": [
+          "A：附件第15–16页，印刷257–258、原书PDF278–279；ρ(q,p,t)=e^{tL†LD}ρ0(q,p)与原书展示式一致。",
+          "C：D71、D73逐项给出实际微分表达式的右生成元资格、Markov核及复L²上的C₀半群与正密度推进关系。",
+          "C：本定义先要求输出S t v AE实、非负且L¹，再作withDensity(ofReal(real part))识别；不是仅保留实部或把负部裁掉的伪识别。"
+        ]
+      },
+      "audit": {
+        "lean_decl": "MD.Ch06.langevinForwardSemigroupMeaning",
+        "verdict": "PASS",
+        "explanation": "对给定U、β、γ、K、S定义资格，非存在定理。S t为复L²(flatPhaseMeasure)上的有界复线性算子，S0=id、组合律及对每个v的强连续性齐全。K满足β、γ正、U光滑周期、Markov半群及紧支光滑函数的0处真实Langevin右生成元资格。对每个AE实非负且L¹的v，定义要求所有t的S t v也AE实非负且L¹，并将输入、输出平直密度测度精确关联为Kt推进。输入不必质量1，因此包括全部非负可积L²密度；质量由Markov性质保留。这些条件排除了(1+i)id及ofReal裁剪假象；双线性/复线性与非负可积类的线性生成关系可延伸识别，不必错误地对所有复v使用非负withDensity。该定义没有直接写出S的全域生成元图等于L†或证明K等于某条路径核；交付范围是EXTRA声明的生成元和测度推进语义资格，本次不把资格或存在性视为已证。",
+        "counterexample": null,
+        "suggested_fix": null
+      },
+      "subtask": "EAUDIT20b"
+    },
+    {
+      "source_id": "MD-6.4.5-ComplexEigenmodeDecay",
+      "json_review": {
+        "status": "CORRECTED",
+        "issue_codes": [
+          "SOURCE_NONCONTIGUOUS_SPLICE",
+          "EXTRA_STALE_CROSS_REFERENCE"
+        ],
+        "corrected_json": {
+          "source_id": "MD-6.4.5-ComplexEigenmodeDecay",
+          "kind": "unnumbered_claim",
+          "label": null,
+          "section": "6.4.5",
+          "printed_page": "258",
+          "pdf_page": "279",
+          "statement_latex": "\\[\\rho(q,p,t)=e^{t\\mathcal L_{LD}^{\\dagger}}\\rho_0=e^{t\\mathcal L_{LD}^{\\dagger}}\\rho_{eq}+\\alpha e^{t\\mathcal L_{LD}^{\\dagger}}\\rho^{(1)}=\\rho_{eq}+\\alpha e^{t\\lambda_1}\\rho^{(1)}.\\]",
+          "proof_latex": null,
+          "proof_note": "原书未给独立完整证明。",
+          "proof_discussion_latex": "The latter integral is bounded since both $\\varphi$ and $\\rho^{(1)}$ are in $L^2$, and since $\\operatorname{Re}(\\lambda_1)<0$, we see that this converges exponentially to the desired average.",
+          "context_notation": [],
+          "extra_assumptions": [
+            "[EXTRA] 采用平直复L²空间、实α和完整复特征值ev，要求ev.re<0、非零本征向量及真实初始概率资格；不把所有α、所有单一非实模式视为概率扰动。",
+            "[EXTRA] S以LangevinForwardSemigroupMeaning U β γ作用于本条真实周期Langevin路径核为前提；ρeq与归一Gibbs密度AE识别。资格已编码，实际半群存在及资格实现仍未视为已证。",
+            "[EXTRA] 0处生成元图成员、驻定态和本征关系为前提；全时指数模式、平均恒等式、Cauchy–Schwarz界与极限全部为结论。测试对象精确为复L²，未沿用原书任意C∞的可积性推断。",
+            "[ERRATUM?] 单个非实本征模式的初始概率资格及原页任意C∞的L²推断分别见ComplexInitialDensity和SmoothTestL2Printed；保留原书末句，不以该句证明本条。"
+          ],
+          "statement_scope": "statement_latex只存演化展示式；proof_discussion_latex存不相邻的原页完整末句。二者之间的平均段落见SmoothTestL2Printed，不冒充连续引文。本条Lean结论含模式演化、全部L²测试的平均恒等式、指数界与极限。",
+          "coverage_gaps": null
+        },
+        "issues": [
+          {
+            "code": "SOURCE_NONCONTIGUOUS_SPLICE",
+            "location": "statement_latex",
+            "message": "演化展示式与末尾and since ... desired average.之间原页另有整段测试平均公式和有界性说明，JSON未标记省略而拼成连续引文。现将演化式与完整末句分开存放，不改原书数学。"
+          },
+          {
+            "code": "EXTRA_STALE_CROSS_REFERENCE",
+            "location": "extra_assumptions[0:3]",
+            "message": "“S需识别……下一条登记”是过时顺序描述；本条已经显式以前一条语义资格作用于实际周期Langevin核，不能同时称联系尚未编码。资格存在/证明仍不能视为完成。"
+          }
+        ],
+        "evidence": [
+          "A：附件第17页，印刷258、原书PDF279；演化展示式位于中部，而and since Re(λ1)<0 ...位于页末，中间确有Since all the eigenvalues ...及平均展示式。",
+          "C：D26为实际周期Langevin路径推前核；本条langevinForwardSemigroupMeaning以同一U、β、γ及该核为参数。D52为真正归一Gibbs密度。",
+          "C：A.graph仅提供0处右导数的充分条件；驻定态和本征向量图成员、ρ1≠0、ev.re<0均是显式前提。全时指数模式不是假设。",
+          "C：四组结论完整覆盖所有t≥0的模式公式、所有复L²测试的平均恒等式、Cauchy–Schwarz指数界以及t→∞的平均极限。"
+        ]
+      },
+      "audit": {
+        "lean_decl": "MD.Ch06.complexEigenmodeDecay",
+        "verdict": "PASS",
+        "explanation": "PASS。对象为真实T^n×R^n周期Langevin核、平直复L²空间E、复C₀半群S及复部分线性算子A。U光滑单位周期、力全局Lipschitz、Wiener驱动、β、γ正及噪声√(2γ/β)均显式；ρeq与真实归一Gibbs密度AE相等，并有complexInitialDensity的概率资格，不是把任意复扰动当概率。S和真实核的关联是明确前提。生成元仅需A.graph中的(v,w)推出S轨道0处右导数为w；为两个指定图成员推出指数轨道已足够，不必额外假定A等于整个最大生成元。其驻定、本征条件保留完整复ev及ev.re<0，结论中的Complex.exp((t:ℂ)*ev)及|α|‖f‖‖ρ1‖exp(ev.re*t)符号、系数均正确。复内积对第二变量线性，故αexp(t ev)在右侧不取共轭；对应普通实测试平均时取实f即可。身份、组合、强连续在语义资格之外重复列出虽冗余但无误。若ev非实且仅用单一模式，要使初始密度实而α≠0通常不相容；该定理仍正确，因为概率资格显式且允许α=0，未声称任意非实模式存在非平凡概率扰动。原页任意C∞的可积性疑误已在条目11保留NEEDS_HUMAN；本声明明确限定所有L²测试，未继承那个错误。本次只审校签名，未因sorry失败，也未把前向半群的存在与资格实现视为已证明。",
+        "counterexample": null,
+        "suggested_fix": "修复JSON的跨段拼接及过时交叉引用，保留现有Lean前提和四组结论；后续证明工作需另行建立实际S的存在和资格，不在本次补证。"
+      },
+      "subtask": "EAUDIT20c"
+    }
+  ],
+  "merged_from": "ch06_eaudit_merged"
+}

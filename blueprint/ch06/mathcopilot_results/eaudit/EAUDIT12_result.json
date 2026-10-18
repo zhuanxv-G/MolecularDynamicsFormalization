@@ -1,0 +1,213 @@
+{
+  "batch": "EAUDIT12",
+  "input_sha256": {
+    "Blueprint/Ch06.lean": "4a2a6cb72c1692f80e3537ab1a71701d429a482780a01226c3dc66a2ebb8b44b",
+    "blueprint/ch06/ch06_source.json": "d7f93cd20eb570744c710f3e07a88b319c082e4155812fee91db0920eb05944e"
+  },
+  "items": [
+    {
+      "source_id": "MD-6.4.3-BrownianRealEigenvalue",
+      "json_review": {
+        "status": "NEEDS_HUMAN",
+        "issue_codes": [
+          "SOURCE_NEGATIVE_DEFINITE_ERRATUM",
+          "COVERAGE_METADATA_INCOMPLETE"
+        ],
+        "corrected_json": {
+          "source_id": "MD-6.4.3-BrownianRealEigenvalue",
+          "kind": "unnumbered_claim",
+          "label": null,
+          "section": "6.4.3",
+          "printed_page": "250",
+          "pdf_page": "271",
+          "statement_latex": "so that $\\langle f,\\mathcal Lf\\rangle\\le0$ so the operator is negative definite and can only have non-positive eigenvalues.",
+          "proof_latex": null,
+          "proof_note": "原书未给独立完整证明。",
+          "proof_discussion_latex": null,
+          "context_notation": [],
+          "extra_assumptions": [
+            "[EXTRA]真正非零L²特征函数、C∞周期、正质量与β>0；不以特征值符号作假设。",
+            "[EXTRA] 25号：[ERRATUM?]原引文negative definite应为半负定，常数零模反例与BrownianNegativeDefinitePrinted共用；本条只证明已给实特征参数≤0，不冒称全部复谱实性。"
+          ],
+          "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
+          "coverage_gaps": [
+            "仅证明已给实特征参数非正；不单独证明复特征值实性，也不把原严格负定用语认作成立。"
+          ]
+        },
+        "issues": [
+          {
+            "code": "SOURCE_NEGATIVE_DEFINITE_ERRATUM",
+            "field": "statement_latex",
+            "message": "≤0只给出半负定；非零常数属于周期空间且为零特征模，原“negative definite”按严格意义不成立。"
+          },
+          {
+            "code": "COVERAGE_METADATA_INCOMPLETE",
+            "field": "coverage_gaps",
+            "message": "应记录这里只处理已给实参数的特征值符号，复谱实性及完整闭域结论不属于本签名。"
+          }
+        ],
+        "evidence": [
+          {
+            "source": "R2_PAGES.pdf",
+            "attachment_page": [
+              4
+            ],
+            "location": "印刷250页，非正二次型公式后的一句",
+            "observation": "原页确写negative definite并说non-positive eigenvalues。"
+          },
+          {
+            "source": "R2_任务.md",
+            "location": "条目4；附录D33–D34及hne、ℓ的类型",
+            "observation": "ℓ类型为ℝ，非零条件不是f≠0的错误点态替代。"
+          }
+        ]
+      },
+      "audit": {
+        "lean_decl": "MD.Ch06.brownianRealEigenvalue; MD.Ch06.brownianRealEigenvalue_corrected",
+        "verdict": "NEEDS_HUMAN",
+        "explanation": "A：原文确实同时写⟨f,Lf⟩≤0和“negative definite”，转录未错，不能在原引文中静默改成半负定。C：两份签名均PASS：正质量、β>0、C∞周期U及非零L²意义的C∞周期f，逐点满足Lf=ℓf，且参数ℓ预先属于ℝ，结论ℓ≤0。非零性相对于基本立方体Lebesgue几乎处处定义，正Gibbs权使其等价于Gibbs-L²非零；没有把特征值符号作为假设。声明不证明任意复特征值实性，也不证明严格负定；这些限制已由[EXTRA]说明。整条因原书严格负定用语的数学疑误需人工签核。",
+        "counterexample": "取Nc=1、m=1、U=0、β=1、f≡1。f在基本立方体上非零且C∞周期，Lf=0，故⟨f,Lf⟩β=0，而不是<0。ℓ=0完全符合本条两份正确签名。",
+        "suggested_fix": "保留原文negative definite并挂[ERRATUM?]；限定/修正版使用半负定及实特征参数非正，复谱实性另引闭自伴结果。"
+      },
+      "subtask": "EAUDIT12a"
+    },
+    {
+      "source_id": "MD-6.4.3-BrownianClosedSelfAdjoint",
+      "json_review": {
+        "status": "NEEDS_HUMAN",
+        "issue_codes": [
+          "SOURCE_ADJOINT_DOMAIN_AMBIGUITY",
+          "PROOF_NOTE_INCOMPLETE"
+        ],
+        "corrected_json": {
+          "source_id": "MD-6.4.3-BrownianClosedSelfAdjoint",
+          "kind": "unnumbered_claim",
+          "label": null,
+          "section": "6.4.3",
+          "printed_page": "249–250",
+          "pdf_page": "270–271",
+          "statement_latex": "Then $\\mathcal L$ is self-adjoint with respect to this inner product.",
+          "proof_latex": null,
+          "proof_note": "原书给出形式分部积分的论证，见印刷249–250页；未说明完整闭域及伴随域。",
+          "proof_discussion_latex": null,
+          "context_notation": [],
+          "extra_assumptions": [
+            "[EXTRA]使用现成实际Gibbs复L²闭实现及完整adjoint域；原C₀²核心对称不等于闭自伴。权重归一不改变自伴关系。",
+            "[EXTRA] 25号：明确采用周期紧环面的Gibbs L²图闭包/最大复图实现；此域修正替换原C₀²核心域，不能把核心上的形式对称当原域自伴，待人工签核。",
+            "[EXTRA] 原页先取单位质量；本条还推广至任意正对角质量。",
+            "[ERRATUM?] 原C₀²域上的形式对称不应直接等同于完整无界算子的自伴。"
+          ],
+          "statement_scope": "原文自伴句保持不变；Lean主版与corrected版均指周期Gibbs复L²上的闭/最大图实现。",
+          "coverage_gaps": [
+            "原C₀²核心域自伴的字面断言未由这两份签名实现，需人工确认作者原意。"
+          ]
+        },
+        "issues": [
+          {
+            "code": "SOURCE_ADJOINT_DOMAIN_AMBIGUITY",
+            "field": "statement_latex",
+            "message": "原C₀²域与闭实现的域并不相同，原页的形式分部积分不足以确认该域自伴。"
+          },
+          {
+            "code": "PROOF_NOTE_INCOMPLETE",
+            "field": "proof_note",
+            "message": "原页确有“The proof is straightforward”及随后分部积分；应保留这段原书论证的存在，并指出其域论证缺口。"
+          }
+        ],
+        "evidence": [
+          {
+            "source": "R2_PAGES.pdf",
+            "attachment_page": [
+              5,
+              6
+            ],
+            "location": "印刷249–250页，函数空间、内积、自伴句及分部积分",
+            "observation": "书中先取M=I、γ=1，定义C₀²(μ̄β)，然后声称自伴。"
+          },
+          {
+            "source": "R2_任务.md",
+            "location": "条目5；附录D48–D50、D54–D61、D62–D81",
+            "observation": "复算子依赖真实实闭算子的特征空间；核对了最大复图、完整Hilbert基及源光滑域。"
+          }
+        ]
+      },
+      "audit": {
+        "lean_decl": "MD.Ch06.brownianClosedSelfAdjoint; MD.Ch06.brownianClosedSelfAdjoint_corrected",
+        "verdict": "NEEDS_HUMAN",
+        "explanation": "A：印刷249页末的“Then L is self-adjoint with respect to this inner product.”摘录准确。C：两份签名相同且作为修正版均PASS：正对角质量、β>0、C∞单位周期势；对象为归一Gibbs复L²上的实际部分线性算子，结论为完整IsSelfAdjoint。已展开光滑周期空间→L²嵌入→光滑域算子→实图闭包→由实际闭算子特征空间构成的复Hilbert基→最大复图。复图约束的是所有谱系数，并非只在原光滑域验证对称；归一权重的常数缩放不改变自伴关系。原书该句的前置对象是C₀²(μ̄β)，并先取M=I、γ=1；本条采用周期闭实现及正对角质量推广，是明确披露的域修正而非原C₀²域的逐字实现。[EXTRA]已要求人工确认，整条据此为NEEDS_HUMAN。",
+        "counterexample": "一维周期Laplacian限制于C∞周期核心时是对称的；其自伴实现使用更大的周期H²域。核心对称不能消除这个域差别。",
+        "suggested_fix": "人工确认将原书C₀²措辞解释为相应闭实现；继续将现有两份签名标为正确限定版，并保留原域疑问。"
+      },
+      "subtask": "EAUDIT12b"
+    },
+    {
+      "source_id": "MD-6.4.3-BrownianCompactResolvent",
+      "json_review": {
+        "status": "NEEDS_HUMAN",
+        "issue_codes": [
+          "SOURCE_RESOLVENT_DOMAIN_AMBIGUITY",
+          "COVERAGE_METADATA_INCOMPLETE"
+        ],
+        "corrected_json": {
+          "source_id": "MD-6.4.3-BrownianCompactResolvent",
+          "kind": "unnumbered_claim",
+          "label": null,
+          "section": "6.4.3",
+          "printed_page": "250",
+          "pdf_page": "271",
+          "statement_latex": "In particular, it has a compact resolvent [360]; this can be shown to imply that the spectrum consists only of a countable collection of eigenvalues, i.e. that the operator has a discrete spectrum.",
+          "proof_latex": null,
+          "proof_note": "原书未给独立完整证明。",
+          "proof_discussion_latex": null,
+          "context_notation": [],
+          "extra_assumptions": [
+            "[EXTRA]实际Gibbs复L²闭实现的(1−L)⁻¹；全部离散谱子结论另条保留，未从本条自动声称原C₀²域自伴。",
+            "[EXTRA] 25号：仅断言紧torus上的闭实现具有紧预解式；原一般C₀²措辞未覆盖，域与紧配置假设需人工签核。",
+            "[ERRATUM?] 预解式必须属于明确的闭实现，不能仅以核心上的形式微分表达认定原域具有该预解式。"
+          ],
+          "statement_scope": "Lean仅覆盖紧环面Gibbs-L²闭实现的(1−L)⁻¹紧性；原文离散谱子句由条目7承接。",
+          "coverage_gaps": [
+            "原C₀²域及一般配置空间的解释待人工确认。",
+            "原句中的离散谱结论由BrownianDiscreteSpectrum及其eigenvalue补充声明另列。"
+          ]
+        },
+        "issues": [
+          {
+            "code": "SOURCE_RESOLVENT_DOMAIN_AMBIGUITY",
+            "field": "statement_latex",
+            "message": "原页未明确闭算子的定义域；预解式与紧性需针对正确的闭实现及相应配置空间。"
+          },
+          {
+            "code": "COVERAGE_METADATA_INCOMPLETE",
+            "field": "coverage_gaps",
+            "message": "引文含离散谱结论而本条只陈述紧性，需显式注明其余结论转至条目7。"
+          }
+        ],
+        "evidence": [
+          {
+            "source": "R2_PAGES.pdf",
+            "attachment_page": [
+              7
+            ],
+            "location": "印刷250页，自伴段后的compact resolvent句",
+            "observation": "原句以C₀²空间为背景，并连写紧预解式与离散谱。"
+          },
+          {
+            "source": "R2_任务.md",
+            "location": "条目6；附录D85–D91及ComplexResolventReal/ComplexResolvent定义",
+            "observation": "shift及其逆的对象和符号为1−L，已核对复化而非凭名称采信。"
+          }
+        ]
+      },
+      "audit": {
+        "lean_decl": "MD.Ch06.brownianCompactResolvent; MD.Ch06.brownianCompactResolvent_corrected",
+        "verdict": "NEEDS_HUMAN",
+        "explanation": "A：compact resolvent、引用[360]及随后可数离散特征值的原句准确。C：两份紧性签名作为周期闭实现的限定版均PASS。已展开D86–D91：实闭图上的shift为(x,y)↦x−y，逆映射后取第一坐标，所得确为(1−L)⁻¹；复预解式由实部、虚部分别作用该真实预解式并复线性化得到，不是一个仅名为resolvent的任意紧算子。正质量、β>0和紧配置环面是明确前提；没有将紧性本身假设进去。此条签名仅给预解式紧性，离散谱的对应条目为7。原页仍把性质归在C₀²函数空间上；与闭实现、紧配置假设之间的解释差别已在[EXTRA]要求签核，不能由本条自动认证原一般域表述。",
+        "counterexample": null,
+        "suggested_fix": "保留原文；签核周期闭实现的限定，并明确引用条目7承接离散谱子句。"
+      },
+      "subtask": "EAUDIT12c"
+    }
+  ],
+  "merged_from": "ch06_eaudit_merged"
+}

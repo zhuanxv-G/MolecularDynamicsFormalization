@@ -1,0 +1,41 @@
+{
+  "status": "PASS",
+  "frozen_files": 13786,
+  "frozen_changed": [],
+  "formal_lean_files": 298,
+  "formal_sorry": 0,
+  "formal_axiom": 0,
+  "reaudit": {
+    "PASS": 25,
+    "FAIL": 8,
+    "NEEDS_HUMAN": 27
+  },
+  "latest_website_pass": 203,
+  "fail_repaired": 8,
+  "repairing": 0,
+  "blueprint_items": 249,
+  "blueprint_sections_per_item": 7,
+  "declarations": {
+    "定义": 123,
+    "已证": 110,
+    "未证": 91
+  },
+  "unproved_reasons": {
+    "原书疑误不证": 21,
+    "时间盒止": 18,
+    "缺大型理论": 52
+  },
+  "errata": 32,
+  "context_records": 1,
+  "new_eaudit_packages": 0,
+  "website_resubmitted": false,
+  "final_compile_sha256": "ce343db6bd9ce1ea92c112d0c550f43dd29be714bc0dcec7e4ea3aaf8828ab48",
+  "full_check_sha256": "c0ba2cfe39f61150c4ae13ee6d31ba52075ab01fb23db6cab003801f6509cd84",
+  "lean_sha256": "11107c725ecf79187d25c93f4f34f162ce504a092a0012eaa18acf2218687d18",
+  "unverified": [
+    "八项修复后的再次网站审校（按用户决定不进行）",
+    "未证声明的完整证明",
+    "导师对原书疑误和限定解释的裁定",
+    "heartbeat额度中断自动接续端到端行为"
+  ]
+}

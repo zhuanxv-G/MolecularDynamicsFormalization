@@ -1,7 +1,7 @@
-# 第6章 Lean Blueprint 本地审阅材料
+# 第6章逐条形式化审阅材料
 
-249条；网站首轮179 PASS / 25 FAIL / 45 NEEDS_HUMAN。25条意见已修，修复中0；修改版待复审。34项合并疑误或范围解释。
-统计见[导师摘要](CH06_SUMMARY_FOR_MENTOR.zh-CN.md)；原书问题见[勘误清单](CH06_ERRATA.zh-CN.md)。
+正文249条；最新网站直接PASS 203条。本轮60条：25 PASS / 8 FAIL / 27 NEEDS_HUMAN；8条按意见处理且本地核验通过，未再送网站。32项合并疑误/范围问题及1项解释记录。
+统计见[导师摘要](CH06_SUMMARY_FOR_MENTOR.zh-CN.md)；原书问题见[勘误清单](CH06_ERRATA.zh-CN.md)。网站评价与证明完成情况分别统计。
 
 ## MD-6.1.1-Microcanonical
 
@@ -27,9 +27,9 @@ def microcanonical {n : ℕ} (H : MolecularDynamics.Chapter05Review.E n → ℝ)
 
 | 原文对象或结论 | 当前Lean与范围 |
 |---|---|
-| 原文所选陈述 | 本条所引原句及展示公式；单个记号归入context_notation。 |
-| 对象/域/量词/前提 | 完整当前Lean及依赖定义；新增资格见[EXTRA] |
-| 网站首轮 | PASS：对象为任意自然数维数n、实值Hamiltonian H:E n→ℝ及实能量energy。microcanonical直接返回microMeasure；展开为能量面上的1/‖gradient H‖加权面积测度再除以其总质量，符合Dirac记号的测度解释。它是总定义，不宣称任意H、energy均给概率测度；正则性及总质量正且有限的物理适用范围已在context_notation明确，不能把此定义计为coarea识别或归一化定理。原D由所选环境/相空间承载，此签名没有独立的任意区域D参数。 |
+| 所引原句 | 本条所引原句及展示公式；单个记号归入context_notation。 |
+| 对象、域、量词及前提 | 以上完整声明；额外资格与未覆盖部分见下一段 |
+| 最新网站原始评价 | PASS；首轮保留 |
 
 ### 5. [EXTRA] 与覆盖缺口
 
@@ -38,16 +38,17 @@ def microcanonical {n : ℕ} (H : MolecularDynamics.Chapter05Review.E n → ℝ)
 ### 6. 审计结论（含网站结论）
 
 网站原返回：PASS。对象为任意自然数维数n、实值Hamiltonian H:E n→ℝ及实能量energy。microcanonical直接返回microMeasure；展开为能量面上的1/‖gradient H‖加权面积测度再除以其总质量，符合Dirac记号的测度解释。它是总定义，不宣称任意H、energy均给概率测度；正则性及总质量正且有限的物理适用范围已在context_notation明确，不能把此定义计为coarea识别或归一化定理。原D由所选环境/相空间承载，此签名没有独立的任意区域D参数。
-本轮处理：保留原审阅版本结论；本轮未改签名。
-本地单文件及逐声明依赖检查通过；含未完成证明依赖的声明仍标未证。原书疑误及修正版分别见勘误，当前修改版未获网站复审结论。
+当前处理：网站PASS（首轮未改版本）。
+保留所交版本的明确结论。
+本地编译和逐声明依赖核对通过。原文疑误、各限定/修正版、反例的评价分别列出；有未完成证明依赖的声明仍为未证。
 
 ### 7. 状态与证明位置
 
-| 声明 | 状态 | 未证原因 |
-|---|---|---|
-| `MD.Ch06.microcanonical` | 定义 | — |
+| 声明 | 证明状态 | 未证原因 | 网站分版结论 |
+|---|---|---|---|
+| `MD.Ch06.microcanonical` | 定义 | — | PASS |
 
-位置：`Blueprint/Ch06.lean:65`；验证：`blueprint/ch06/closeout25/FINAL_COMPILE.log`。
+位置：`Blueprint/Ch06.lean:65`；本地核验记录：`blueprint/ch06/closeout26/FINAL_COMPILE.log`。
 
 ## MD-6.1.2-Entropy
 
@@ -72,9 +73,9 @@ def entropy (kB : ℝ) (Z : ℝ → ℝ) (E : ℝ) : ℝ := kB * Real.log (Z E)
 
 | 原文对象或结论 | 当前Lean与范围 |
 |---|---|
-| 原文所选陈述 | 本条所引原句及展示公式；单个记号归入context_notation。 |
-| 对象/域/量词/前提 | 完整当前Lean及依赖定义；新增资格见[EXTRA] |
-| 网站首轮 | PASS：kB∈ℝ、Z:ℝ→ℝ及能量E∈ℝ的定义值恰为kB*log(Z E)，与Boltzmann熵定义一致。把Z写成能量函数没有改变固定能量处的公式。Z>0及物理常量的适用说明已经列出；定义自身不证明正性、物理第二定律或极值。 |
+| 所引原句 | 本条所引原句及展示公式；单个记号归入context_notation。 |
+| 对象、域、量词及前提 | 以上完整声明；额外资格与未覆盖部分见下一段 |
+| 最新网站原始评价 | PASS；首轮保留 |
 
 ### 5. [EXTRA] 与覆盖缺口
 
@@ -83,16 +84,17 @@ def entropy (kB : ℝ) (Z : ℝ → ℝ) (E : ℝ) : ℝ := kB * Real.log (Z E)
 ### 6. 审计结论（含网站结论）
 
 网站原返回：PASS。kB∈ℝ、Z:ℝ→ℝ及能量E∈ℝ的定义值恰为kB*log(Z E)，与Boltzmann熵定义一致。把Z写成能量函数没有改变固定能量处的公式。Z>0及物理常量的适用说明已经列出；定义自身不证明正性、物理第二定律或极值。
-本轮处理：保留原审阅版本结论；本轮未改签名。
-本地单文件及逐声明依赖检查通过；含未完成证明依赖的声明仍标未证。原书疑误及修正版分别见勘误，当前修改版未获网站复审结论。
+当前处理：网站PASS（首轮未改版本）。
+保留所交版本的明确结论。
+本地编译和逐声明依赖核对通过。原文疑误、各限定/修正版、反例的评价分别列出；有未完成证明依赖的声明仍为未证。
 
 ### 7. 状态与证明位置
 
-| 声明 | 状态 | 未证原因 |
-|---|---|---|
-| `MD.Ch06.entropy` | 定义 | — |
+| 声明 | 证明状态 | 未证原因 | 网站分版结论 |
+|---|---|---|---|
+| `MD.Ch06.entropy` | 定义 | — | PASS |
 
-位置：`Blueprint/Ch06.lean:69`；验证：`blueprint/ch06/closeout25/FINAL_COMPILE.log`。
+位置：`Blueprint/Ch06.lean:69`；本地核验记录：`blueprint/ch06/closeout26/FINAL_COMPILE.log`。
 
 ## MD-6.1.2-IndependentPartition
 
@@ -130,28 +132,29 @@ theorem independentPartition :
 
 | 原文对象或结论 | 当前Lean与范围 |
 |---|---|
-| 原文所选陈述 | 本条所引原句及展示公式；单个记号归入context_notation。 |
-| 对象/域/量词/前提 | 完整当前Lean及依赖定义；新增资格见[EXTRA] |
-| 网站首轮 | NEEDS_HUMAN：签名量化n,m、HA、HB及EA,EB，并以两个regularEnergy为前提；μA、μB确为第1条所给microRaw，结论是乘积测度在univ上的质量等于两个总质量之积，符合已标[EXTRA]的分别固定能量独立乘积模型。但本任务没有摘录Chapter05Review.regularEnergy的定义，无法完成“全部前提”与物理正则能量含义的核对。质量乘法这一结论本身不依赖该谓词的内容；本条保留待人工补齐上下文，不臆造其定义。 |
+| 所引原句 | 本条所引原句及展示公式；单个记号归入context_notation。 |
+| 对象、域、量词及前提 | 以上完整声明；额外资格与未覆盖部分见下一段 |
+| 最新网站原始评价 | PASS；复审 |
 
 ### 5. [EXTRA] 与覆盖缺口
 
 - [EXTRA]独立、分别固定能量的真实加权能量面测度乘积；不将固定总能量partition的卷积偷换为乘积。
-- [EXTRA] 25号：只补regularEnergy的真实定义体；不因未摘录而认定原书有错，不删正则前提。
+- [EXTRA] 只补regularEnergy的真实定义体；不因未摘录而认定原书有错，不删正则前提。
 
 ### 6. 审计结论（含网站结论）
 
-网站原返回：NEEDS_HUMAN。签名量化n,m、HA、HB及EA,EB，并以两个regularEnergy为前提；μA、μB确为第1条所给microRaw，结论是乘积测度在univ上的质量等于两个总质量之积，符合已标[EXTRA]的分别固定能量独立乘积模型。但本任务没有摘录Chapter05Review.regularEnergy的定义，无法完成“全部前提”与物理正则能量含义的核对。质量乘法这一结论本身不依赖该谓词的内容；本条保留待人工补齐上下文，不臆造其定义。
-本轮处理：只补regularEnergy的真实定义体；不因未摘录而认定原书有错，不删正则前提。
-本地单文件及逐声明依赖检查通过；含未完成证明依赖的声明仍标未证。原书疑误及修正版分别见勘误，当前修改版未获网站复审结论。
+网站原返回：PASS。PASS：independentPartition 对任意维数n,m、实值Hamiltonian及分别固定的EA,EB，在regularEnergy前提下断言两个microRaw测度的乘积总质量等于总质量之积。E为EuclideanSpace；microRaw确为能量面Hausdorff测度乘以逆梯度范数，regularEnergy含非空、紧性、非零梯度、正有限质量，均已核对。前提比原书独立状态计数强，已由[EXTRA]披露。这里只把联合系统明确解释为独立测度乘积，未证明固定总能量的卷积公式，也没有偷换为该公式。
+当前处理：网站PASS（复审）。
+保留所交版本的明确结论。
+本地编译和逐声明依赖核对通过。原文疑误、各限定/修正版、反例的评价分别列出；有未完成证明依赖的声明仍为未证。
 
 ### 7. 状态与证明位置
 
-| 声明 | 状态 | 未证原因 |
-|---|---|---|
-| `MD.Ch06.independentPartition` | 已证 | — |
+| 声明 | 证明状态 | 未证原因 | 网站分版结论 |
+|---|---|---|---|
+| `MD.Ch06.independentPartition` | 已证 | — | PASS |
 
-位置：`Blueprint/Ch06.lean:74`；验证：`blueprint/ch06/closeout25/FINAL_COMPILE.log`。
+位置：`Blueprint/Ch06.lean:74`；本地核验记录：`blueprint/ch06/closeout26/FINAL_COMPILE.log`。
 
 ## MD-6.1.2-EntropyAdditivity
 
@@ -181,9 +184,9 @@ theorem entropyAdditivity :
 
 | 原文对象或结论 | 当前Lean与范围 |
 |---|---|
-| 原文所选陈述 | 本条所引原句及展示公式；单个记号归入context_notation。 |
-| 对象/域/量词/前提 | 完整当前Lean及依赖定义；新增资格见[EXTRA] |
-| 网站首轮 | PASS：量化任意实kB,ZA,ZB，并明确要求ZA,ZB>0；结论完整保留kB log(ZA ZB)=kB log ZA+kB log ZB，两边加号及乘法因子正确。把能量处的两个partition值作为实参数是合法抽象。取kB=1就是原页对数式；任意kB给出已标[EXTRA]的熵加法，没有添加独立性结论或偷换固定总能量的积分。 |
+| 所引原句 | 本条所引原句及展示公式；单个记号归入context_notation。 |
+| 对象、域、量词及前提 | 以上完整声明；额外资格与未覆盖部分见下一段 |
+| 最新网站原始评价 | PASS；首轮保留 |
 
 ### 5. [EXTRA] 与覆盖缺口
 
@@ -192,16 +195,17 @@ theorem entropyAdditivity :
 ### 6. 审计结论（含网站结论）
 
 网站原返回：PASS。量化任意实kB,ZA,ZB，并明确要求ZA,ZB>0；结论完整保留kB log(ZA ZB)=kB log ZA+kB log ZB，两边加号及乘法因子正确。把能量处的两个partition值作为实参数是合法抽象。取kB=1就是原页对数式；任意kB给出已标[EXTRA]的熵加法，没有添加独立性结论或偷换固定总能量的积分。
-本轮处理：保留原审阅版本结论；本轮未改签名。
-本地单文件及逐声明依赖检查通过；含未完成证明依赖的声明仍标未证。原书疑误及修正版分别见勘误，当前修改版未获网站复审结论。
+当前处理：网站PASS（首轮未改版本）。
+保留所交版本的明确结论。
+本地编译和逐声明依赖核对通过。原文疑误、各限定/修正版、反例的评价分别列出；有未完成证明依赖的声明仍为未证。
 
 ### 7. 状态与证明位置
 
-| 声明 | 状态 | 未证原因 |
-|---|---|---|
-| `MD.Ch06.entropyAdditivity` | 已证 | — |
+| 声明 | 证明状态 | 未证原因 | 网站分版结论 |
+|---|---|---|---|
+| `MD.Ch06.entropyAdditivity` | 已证 | — | PASS |
 
-位置：`Blueprint/Ch06.lean:91`；验证：`blueprint/ch06/closeout25/FINAL_COMPILE.log`。
+位置：`Blueprint/Ch06.lean:91`；本地核验记录：`blueprint/ch06/closeout26/FINAL_COMPILE.log`。
 
 ## MD-6.1.2-EntropyEquilibrium
 
@@ -236,9 +240,9 @@ theorem entropyEquilibrium :
 
 | 原文对象或结论 | 当前Lean与范围 |
 |---|---|
-| 原文所选陈述 | 本条所引原句及展示公式；单个记号归入context_notation。 |
-| 对象/域/量词/前提 | 完整当前Lean及依赖定义；新增资格见[EXTRA] |
-| 网站首轮 | PASS：SA,SB:ℝ→ℝ，E为固定总能量、e为A的能量；在e及E−e处可微，且x↦SA x+SB(E−x)在e有局部最大，是已明示的[EXTRA]内点情形。其导数为SA′(e)−SB′(E−e)，故结论SA′(e)=SB′(E−e)正确，链式求导负号没有遗漏。没有把该一阶必要条件表述成平衡存在、最大值充分性或热力学定律。 |
+| 所引原句 | 本条所引原句及展示公式；单个记号归入context_notation。 |
+| 对象、域、量词及前提 | 以上完整声明；额外资格与未覆盖部分见下一段 |
+| 最新网站原始评价 | PASS；首轮保留 |
 
 ### 5. [EXTRA] 与覆盖缺口
 
@@ -247,16 +251,17 @@ theorem entropyEquilibrium :
 ### 6. 审计结论（含网站结论）
 
 网站原返回：PASS。SA,SB:ℝ→ℝ，E为固定总能量、e为A的能量；在e及E−e处可微，且x↦SA x+SB(E−x)在e有局部最大，是已明示的[EXTRA]内点情形。其导数为SA′(e)−SB′(E−e)，故结论SA′(e)=SB′(E−e)正确，链式求导负号没有遗漏。没有把该一阶必要条件表述成平衡存在、最大值充分性或热力学定律。
-本轮处理：保留原审阅版本结论；本轮未改签名。
-本地单文件及逐声明依赖检查通过；含未完成证明依赖的声明仍标未证。原书疑误及修正版分别见勘误，当前修改版未获网站复审结论。
+当前处理：网站PASS（首轮未改版本）。
+保留所交版本的明确结论。
+本地编译和逐声明依赖核对通过。原文疑误、各限定/修正版、反例的评价分别列出；有未完成证明依赖的声明仍为未证。
 
 ### 7. 状态与证明位置
 
-| 声明 | 状态 | 未证原因 |
-|---|---|---|
-| `MD.Ch06.entropyEquilibrium` | 已证 | — |
+| 声明 | 证明状态 | 未证原因 | 网站分版结论 |
+|---|---|---|---|
+| `MD.Ch06.entropyEquilibrium` | 已证 | — | PASS |
 
-位置：`Blueprint/Ch06.lean:100`；验证：`blueprint/ch06/closeout25/FINAL_COMPILE.log`。
+位置：`Blueprint/Ch06.lean:100`；本地核验记录：`blueprint/ch06/closeout26/FINAL_COMPILE.log`。
 
 ## MD-6.1.2-Temperature
 
@@ -281,9 +286,9 @@ def temperature (S : ℝ → ℝ) (E : ℝ) : ℝ := (MolecularDynamics.Chapter0
 
 | 原文对象或结论 | 当前Lean与范围 |
 |---|---|
-| 原文所选陈述 | 本条所引原句及展示公式；单个记号归入context_notation。 |
-| 对象/域/量词/前提 | 完整当前Lean及依赖定义；新增资格见[EXTRA] |
-| 网站首轮 | PASS：S:ℝ→ℝ及实能量E的temperature定义为inverseTemperature S E的倒数；展开项目定义即(deriv S E)⁻¹，方向正确。固定其他物理参数后单变量导数承载原偏导。Lean逆元与deriv均为总定义，此条不宣称S必可微或T必正；context_notation已限定实际导数及非零情形下的温度解释。 |
+| 所引原句 | 本条所引原句及展示公式；单个记号归入context_notation。 |
+| 对象、域、量词及前提 | 以上完整声明；额外资格与未覆盖部分见下一段 |
+| 最新网站原始评价 | PASS；首轮保留 |
 
 ### 5. [EXTRA] 与覆盖缺口
 
@@ -292,16 +297,17 @@ def temperature (S : ℝ → ℝ) (E : ℝ) : ℝ := (MolecularDynamics.Chapter0
 ### 6. 审计结论（含网站结论）
 
 网站原返回：PASS。S:ℝ→ℝ及实能量E的temperature定义为inverseTemperature S E的倒数；展开项目定义即(deriv S E)⁻¹，方向正确。固定其他物理参数后单变量导数承载原偏导。Lean逆元与deriv均为总定义，此条不宣称S必可微或T必正；context_notation已限定实际导数及非零情形下的温度解释。
-本轮处理：保留原审阅版本结论；本轮未改签名。
-本地单文件及逐声明依赖检查通过；含未完成证明依赖的声明仍标未证。原书疑误及修正版分别见勘误，当前修改版未获网站复审结论。
+当前处理：网站PASS（首轮未改版本）。
+保留所交版本的明确结论。
+本地编译和逐声明依赖核对通过。原文疑误、各限定/修正版、反例的评价分别列出；有未完成证明依赖的声明仍为未证。
 
 ### 7. 状态与证明位置
 
-| 声明 | 状态 | 未证原因 |
-|---|---|---|
-| `MD.Ch06.temperature` | 定义 | — |
+| 声明 | 证明状态 | 未证原因 | 网站分版结论 |
+|---|---|---|---|
+| `MD.Ch06.temperature` | 定义 | — | PASS |
 
-位置：`Blueprint/Ch06.lean:110`；验证：`blueprint/ch06/closeout25/FINAL_COMPILE.log`。
+位置：`Blueprint/Ch06.lean:110`；本地核验记录：`blueprint/ch06/closeout26/FINAL_COMPILE.log`。
 
 ## MD-6.1.2-InverseThermal
 
@@ -327,9 +333,9 @@ def inverseThermal (kB T : ℝ) : ℝ := (kB * T)⁻¹
 
 | 原文对象或结论 | 当前Lean与范围 |
 |---|---|
-| 原文所选陈述 | 本条所引原句及展示公式；单个记号归入context_notation。 |
-| 对象/域/量词/前提 | 完整当前Lean及依赖定义；新增资格见[EXTRA] |
-| 网站首轮 | PASS：inverseThermal量化kB,T∈ℝ，值为(kB*T)⁻¹，恰好形式化β的定义。该定义自身没有A、B两个系统，不能被计作式(6.2)整条平衡导数关系的证明；输入context_notation已明确将导数关系分给EntropyEquilibrium及LogTemperature，并注明物理解释要求kB,T>0，因此定义范围匹配。 |
+| 所引原句 | 本条所引原句及展示公式；单个记号归入context_notation。 |
+| 对象、域、量词及前提 | 以上完整声明；额外资格与未覆盖部分见下一段 |
+| 最新网站原始评价 | PASS；首轮保留 |
 
 ### 5. [EXTRA] 与覆盖缺口
 
@@ -338,16 +344,17 @@ def inverseThermal (kB T : ℝ) : ℝ := (kB * T)⁻¹
 ### 6. 审计结论（含网站结论）
 
 网站原返回：PASS。inverseThermal量化kB,T∈ℝ，值为(kB*T)⁻¹，恰好形式化β的定义。该定义自身没有A、B两个系统，不能被计作式(6.2)整条平衡导数关系的证明；输入context_notation已明确将导数关系分给EntropyEquilibrium及LogTemperature，并注明物理解释要求kB,T>0，因此定义范围匹配。
-本轮处理：保留原审阅版本结论；本轮未改签名。
-本地单文件及逐声明依赖检查通过；含未完成证明依赖的声明仍标未证。原书疑误及修正版分别见勘误，当前修改版未获网站复审结论。
+当前处理：网站PASS（首轮未改版本）。
+保留所交版本的明确结论。
+本地编译和逐声明依赖核对通过。原文疑误、各限定/修正版、反例的评价分别列出；有未完成证明依赖的声明仍为未证。
 
 ### 7. 状态与证明位置
 
-| 声明 | 状态 | 未证原因 |
-|---|---|---|
-| `MD.Ch06.inverseThermal` | 定义 | — |
+| 声明 | 证明状态 | 未证原因 | 网站分版结论 |
+|---|---|---|---|
+| `MD.Ch06.inverseThermal` | 定义 | — | PASS |
 
-位置：`Blueprint/Ch06.lean:113`；验证：`blueprint/ch06/closeout25/FINAL_COMPILE.log`。
+位置：`Blueprint/Ch06.lean:113`；本地核验记录：`blueprint/ch06/closeout26/FINAL_COMPILE.log`。
 
 ## MD-6.1.2-BathTaylor
 
@@ -381,7 +388,7 @@ theorem bathBoltzmannPrinted_counterexample : Real.exp ((0 : ℝ)^2-1^2) ≠ Rea
   norm_num at hn
 ```
 
-同问题的独立修正版（位于另一source_id）：
+同问题的独立限定/修正版（位于另一条）：
 ```lean
 theorem bathBoltzmannPrinted_corrected : ∀ (S : ℝ → ℝ) (energy kB β : ℝ),
   Differentiable ℝ S → 0 < kB → (∀ e, deriv S e = kB * β) →
@@ -410,29 +417,31 @@ theorem bathBoltzmannPrinted_corrected : ∀ (S : ℝ → ℝ) (energy kB β : �
 
 | 原文对象或结论 | 当前Lean与范围 |
 |---|---|
-| 原文所选陈述 | 本条所引原句及展示公式；单个记号归入context_notation。 |
-| 对象/域/量词/前提 | 完整当前Lean及依赖定义；新增资格见[EXTRA] |
-| 网站首轮 | NEEDS_HUMAN：Printed声明量化任意C²实熵S及正energy,kB，只在energy处假设S′=kBβ。第一合取分量对任意s>0给闭区间中值点，数学上成立；第二分量却对所有0≤s≤energy断言精确指数比，单点斜率不足以推出。它忠实暴露原文从ξ到固定温度的缺口，按任务要求保留字面版并判NEEDS_HUMAN，不因命题一般为假而将忠实Printed版判签名FAIL。repair_log仅提到_corrected声明名称，没有提供其签名，本条未审定该修正版。 |
+| 所引原句 | 本条所引原句及展示公式；单个记号归入context_notation。 |
+| 对象、域、量词及前提 | 以上完整声明；额外资格与未覆盖部分见下一段 |
+| 最新网站原始评价 | NEEDS_HUMAN；复审 |
 
 ### 5. [EXTRA] 与覆盖缺口
 
 - [EXTRA]熵C²、正热浴能量及kB；β以原页固定温度关系表示，不假设所需中间点导数恒定。
-- [EXTRA] 25号：原文版忠实性与数学疑误分开；补齐所交条目所属的现有_corrected完整签名，不从repair_log名称推断网站已通过修正版。
+- [EXTRA] 原文版忠实性与数学疑误分开；补齐所交条目所属的现有_corrected完整签名，不从repair_log名称推断网站已通过修正版。
+- [EXTRA] 复审范围：修正版只是全局恒定熵导数（仿射熵）特例，未给一般热浴近似误差界。
 
 ### 6. 审计结论（含网站结论）
 
-网站原返回：NEEDS_HUMAN。Printed声明量化任意C²实熵S及正energy,kB，只在energy处假设S′=kBβ。第一合取分量对任意s>0给闭区间中值点，数学上成立；第二分量却对所有0≤s≤energy断言精确指数比，单点斜率不足以推出。它忠实暴露原文从ξ到固定温度的缺口，按任务要求保留字面版并判NEEDS_HUMAN，不因命题一般为假而将忠实Printed版判签名FAIL。repair_log仅提到_corrected声明名称，没有提供其签名，本条未审定该修正版。
-本轮处理：原文版忠实性与数学疑误分开；补齐所交条目所属的现有_corrected完整签名，不从repair_log名称推断网站已通过修正版。
-本地单文件及逐声明依赖检查通过；含未完成证明依赖的声明仍标未证。原书疑误及修正版分别见勘误，当前修改版未获网站复审结论。
+网站原返回：NEEDS_HUMAN。bathBoltzmannPrinted：中值部分在C²前提下正确；第二合取把只在energy处给定的导数扩张成全区间精确指数比，不是中值定理的推论。作为Printed，保留原书启发式而标NEEDS_HUMAN，不因其错误直接判签名FAIL。bathBoltzmannPrinted_counterexample：exp(-1)≠exp(-2)正确，代入S(e)=e²、energy=kB=s=1、β=2即见原断言失败。bathBoltzmannPrinted_corrected：所有e处deriv S e=kB*β且S可微、kB>0，足以推出任意实数s的精确比值；是正确的全局仿射熵限定版，但并非一般热浴近似的误差估计。
+当前处理：修正版/限定声明=网站PASS；原文疑误或范围解释待导师。
+修正版只是全局恒定熵导数（仿射熵）特例，未给一般热浴近似误差界。
+本地编译和逐声明依赖核对通过。原文疑误、各限定/修正版、反例的评价分别列出；有未完成证明依赖的声明仍为未证。
 
 ### 7. 状态与证明位置
 
-| 声明 | 状态 | 未证原因 |
-|---|---|---|
-| `MD.Ch06.bathBoltzmannPrinted` | 未证 | 原书疑误不证 |
-| `MD.Ch06.bathBoltzmannPrinted_counterexample` | 已证 | — |
+| 声明 | 证明状态 | 未证原因 | 网站分版结论 |
+|---|---|---|---|
+| `MD.Ch06.bathBoltzmannPrinted` | 未证 | 原书疑误不证 | 未获单独PASS；见分版意见 |
+| `MD.Ch06.bathBoltzmannPrinted_counterexample` | 已证 | — | PASS |
 
-位置：`Blueprint/Ch06.lean:119`；验证：`blueprint/ch06/closeout25/FINAL_COMPILE.log`。
+位置：`Blueprint/Ch06.lean:119`；本地核验记录：`blueprint/ch06/closeout26/FINAL_COMPILE.log`。
 
 ## MD-6.1.2-LogTemperature
 
@@ -469,9 +478,9 @@ theorem logTemperature : ∀ (kB : ℝ) (Z : ℝ → ℝ) (energy : ℝ),
 
 | 原文对象或结论 | 当前Lean与范围 |
 |---|---|
-| 原文所选陈述 | 本条所引原句及展示公式；单个记号归入context_notation。 |
-| 对象/域/量词/前提 | 完整当前Lean及依赖定义；新增资格见[EXTRA] |
-| 网站首轮 | PASS：量化实kB、函数Z及实能量；要求Z在该点可微且值为正。第一结论是(log∘Z)′=Z′/Z，第二结论展开项目定义后为(kB log Z)′=kB Z′/Z，均正确，kB不必非零即可成立。按已标[EXTRA]，这里只是单系统的实际微分关系；跨系统等温关系由第5条处理，显式的T、β及1/(kB T)关系不在本签名结论中，不能把本条单独计为完整式(6.2)已证。 |
+| 所引原句 | 本条所引原句及展示公式；单个记号归入context_notation。 |
+| 对象、域、量词及前提 | 以上完整声明；额外资格与未覆盖部分见下一段 |
+| 最新网站原始评价 | PASS；首轮保留 |
 
 ### 5. [EXTRA] 与覆盖缺口
 
@@ -480,16 +489,17 @@ theorem logTemperature : ∀ (kB : ℝ) (Z : ℝ → ℝ) (energy : ℝ),
 ### 6. 审计结论（含网站结论）
 
 网站原返回：PASS。量化实kB、函数Z及实能量；要求Z在该点可微且值为正。第一结论是(log∘Z)′=Z′/Z，第二结论展开项目定义后为(kB log Z)′=kB Z′/Z，均正确，kB不必非零即可成立。按已标[EXTRA]，这里只是单系统的实际微分关系；跨系统等温关系由第5条处理，显式的T、β及1/(kB T)关系不在本签名结论中，不能把本条单独计为完整式(6.2)已证。
-本轮处理：保留原审阅版本结论；本轮未改签名。
-本地单文件及逐声明依赖检查通过；含未完成证明依赖的声明仍标未证。原书疑误及修正版分别见勘误，当前修改版未获网站复审结论。
+当前处理：网站PASS（首轮未改版本）。
+保留所交版本的明确结论。
+本地编译和逐声明依赖核对通过。原文疑误、各限定/修正版、反例的评价分别列出；有未完成证明依赖的声明仍为未证。
 
 ### 7. 状态与证明位置
 
-| 声明 | 状态 | 未证原因 |
-|---|---|---|
-| `MD.Ch06.logTemperature` | 已证 | — |
+| 声明 | 证明状态 | 未证原因 | 网站分版结论 |
+|---|---|---|---|
+| `MD.Ch06.logTemperature` | 已证 | — | PASS |
 
-位置：`Blueprint/Ch06.lean:134`；验证：`blueprint/ch06/closeout25/FINAL_COMPILE.log`。
+位置：`Blueprint/Ch06.lean:134`；本地核验记录：`blueprint/ch06/closeout26/FINAL_COMPILE.log`。
 
 ## MD-6.1.2-BathMeanValue
 
@@ -524,9 +534,9 @@ theorem bathMeanValue : ∀ (S : ℝ → ℝ) (energy s : ℝ),
 
 | 原文对象或结论 | 当前Lean与范围 |
 |---|---|
-| 原文所选陈述 | 本条所引原句及展示公式；单个记号归入context_notation。 |
-| 对象/域/量词/前提 | 完整当前Lean及依赖定义；新增资格见[EXTRA] |
-| 网站首轮 | PASS：S:ℝ→ℝ，energy,s均为实数，C¹及s>0保证在[energy−s,energy]连续、内部可微；结论存在ξ∈Ioo(energy−s,energy)并满足所印等式，开区间条件比原页未指定ξ位置更精确。符号、区间端点及乘s的负号正确；不推出恒温指数因子。 |
+| 所引原句 | 本条所引原句及展示公式；单个记号归入context_notation。 |
+| 对象、域、量词及前提 | 以上完整声明；额外资格与未覆盖部分见下一段 |
+| 最新网站原始评价 | PASS；首轮保留 |
 
 ### 5. [EXTRA] 与覆盖缺口
 
@@ -535,16 +545,17 @@ theorem bathMeanValue : ∀ (S : ℝ → ℝ) (energy s : ℝ),
 ### 6. 审计结论（含网站结论）
 
 网站原返回：PASS。S:ℝ→ℝ，energy,s均为实数，C¹及s>0保证在[energy−s,energy]连续、内部可微；结论存在ξ∈Ioo(energy−s,energy)并满足所印等式，开区间条件比原页未指定ξ位置更精确。符号、区间端点及乘s的负号正确；不推出恒温指数因子。
-本轮处理：保留原审阅版本结论；本轮未改签名。
-本地单文件及逐声明依赖检查通过；含未完成证明依赖的声明仍标未证。原书疑误及修正版分别见勘误，当前修改版未获网站复审结论。
+当前处理：网站PASS（首轮未改版本）。
+保留所交版本的明确结论。
+本地编译和逐声明依赖核对通过。原文疑误、各限定/修正版、反例的评价分别列出；有未完成证明依赖的声明仍为未证。
 
 ### 7. 状态与证明位置
 
-| 声明 | 状态 | 未证原因 |
-|---|---|---|
-| `MD.Ch06.bathMeanValue` | 已证 | — |
+| 声明 | 证明状态 | 未证原因 | 网站分版结论 |
+|---|---|---|---|
+| `MD.Ch06.bathMeanValue` | 已证 | — | PASS |
 
-位置：`Blueprint/Ch06.lean:150`；验证：`blueprint/ch06/closeout25/FINAL_COMPILE.log`。
+位置：`Blueprint/Ch06.lean:150`；本地核验记录：`blueprint/ch06/closeout26/FINAL_COMPILE.log`。
 
 ## MD-6.1.2-BathTaylorEstimate
 
@@ -573,9 +584,9 @@ theorem bathTaylorEstimate :
 
 | 原文对象或结论 | 当前Lean与范围 |
 |---|---|
-| 原文所选陈述 | 本条所引原句及展示公式；单个记号归入context_notation。 |
-| 对象/域/量词/前提 | 完整当前Lean及依赖定义；新增资格见[EXTRA] |
-| 网站首轮 | PASS：签名对每个C²实函数S及展开点E，给出C≥0、δ>0，使所有\|e\|<δ满足\|S(E−e)−S(E)+S′(E)e\|≤C e²。量词顺序、双侧邻域和余项符号正确；C²保证局部二阶导数有界。该C·e²估计是已明确标记的[EXTRA]严格化，不是原页已有的独立定理，也没有推出一般热浴的精确Boltzmann式。 |
+| 所引原句 | 本条所引原句及展示公式；单个记号归入context_notation。 |
+| 对象、域、量词及前提 | 以上完整声明；额外资格与未覆盖部分见下一段 |
+| 最新网站原始评价 | PASS；首轮保留 |
 
 ### 5. [EXTRA] 与覆盖缺口
 
@@ -584,16 +595,17 @@ theorem bathTaylorEstimate :
 ### 6. 审计结论（含网站结论）
 
 网站原返回：PASS。签名对每个C²实函数S及展开点E，给出C≥0、δ>0，使所有|e|<δ满足|S(E−e)−S(E)+S′(E)e|≤C e²。量词顺序、双侧邻域和余项符号正确；C²保证局部二阶导数有界。该C·e²估计是已明确标记的[EXTRA]严格化，不是原页已有的独立定理，也没有推出一般热浴的精确Boltzmann式。
-本轮处理：保留原审阅版本结论；本轮未改签名。
-本地单文件及逐声明依赖检查通过；含未完成证明依赖的声明仍标未证。原书疑误及修正版分别见勘误，当前修改版未获网站复审结论。
+当前处理：网站PASS（首轮未改版本）。
+保留所交版本的明确结论。
+本地编译和逐声明依赖核对通过。原文疑误、各限定/修正版、反例的评价分别列出；有未完成证明依赖的声明仍为未证。
 
 ### 7. 状态与证明位置
 
-| 声明 | 状态 | 未证原因 |
-|---|---|---|
-| `MD.Ch06.bathTaylorEstimate` | 未证 | 时间盒止 |
+| 声明 | 证明状态 | 未证原因 | 网站分版结论 |
+|---|---|---|---|
+| `MD.Ch06.bathTaylorEstimate` | 未证 | 时间盒止 | PASS |
 
-位置：`Blueprint/Ch06.lean:164`；验证：`blueprint/ch06/closeout25/FINAL_COMPILE.log`。
+位置：`Blueprint/Ch06.lean:164`；本地核验记录：`blueprint/ch06/closeout26/FINAL_COMPILE.log`。
 
 ## MD-6.1.2-BoltzmannConstantSlope
 
@@ -662,9 +674,9 @@ theorem bathBoltzmannPrinted_corrected : ∀ (S : ℝ → ℝ) (energy kB β : �
 
 | 原文对象或结论 | 当前Lean与范围 |
 |---|---|
-| 原文所选陈述 | 本条所引原句及展示公式；单个记号归入context_notation。 |
-| 对象/域/量词/前提 | 完整当前Lean及依赖定义；新增资格见[EXTRA] |
-| 网站首轮 | PASS：量化可微实熵S、energy,kB,β；要求kB>0及所有实e处S′(e)=kBβ，再对所有实s给出精确指数比。全轴恒斜率意味着S是仿射函数，S(energy−s)−S(energy)=−kBβs，因此结论正确。恒斜率是明确标记的额外理想热浴假设，没有从单点温度偷推出此条件；与第8条Printed版严格区分。 |
+| 所引原句 | 本条所引原句及展示公式；单个记号归入context_notation。 |
+| 对象、域、量词及前提 | 以上完整声明；额外资格与未覆盖部分见下一段 |
+| 最新网站原始评价 | PASS；首轮保留 |
 
 ### 5. [EXTRA] 与覆盖缺口
 
@@ -673,17 +685,18 @@ theorem bathBoltzmannPrinted_corrected : ∀ (S : ℝ → ℝ) (energy kB β : �
 ### 6. 审计结论（含网站结论）
 
 网站原返回：PASS。量化可微实熵S、energy,kB,β；要求kB>0及所有实e处S′(e)=kBβ，再对所有实s给出精确指数比。全轴恒斜率意味着S是仿射函数，S(energy−s)−S(energy)=−kBβs，因此结论正确。恒斜率是明确标记的额外理想热浴假设，没有从单点温度偷推出此条件；与第8条Printed版严格区分。
-本轮处理：保留原审阅版本结论；本轮未改签名。
-本地单文件及逐声明依赖检查通过；含未完成证明依赖的声明仍标未证。原书疑误及修正版分别见勘误，当前修改版未获网站复审结论。
+当前处理：网站PASS（首轮未改版本）。
+保留所交版本的明确结论。
+本地编译和逐声明依赖核对通过。原文疑误、各限定/修正版、反例的评价分别列出；有未完成证明依赖的声明仍为未证。
 
 ### 7. 状态与证明位置
 
-| 声明 | 状态 | 未证原因 |
-|---|---|---|
-| `MD.Ch06.boltzmannConstantSlope` | 已证 | — |
-| `MD.Ch06.bathBoltzmannPrinted_corrected` | 已证 | — |
+| 声明 | 证明状态 | 未证原因 | 网站分版结论 |
+|---|---|---|---|
+| `MD.Ch06.boltzmannConstantSlope` | 已证 | — | PASS |
+| `MD.Ch06.bathBoltzmannPrinted_corrected` | 已证 | — | PASS |
 
-位置：`Blueprint/Ch06.lean:172`；验证：`blueprint/ch06/closeout25/FINAL_COMPILE.log`。
+位置：`Blueprint/Ch06.lean:172`；本地核验记录：`blueprint/ch06/closeout26/FINAL_COMPILE.log`。
 
 ## MD-6.1.2-CanonicalCDFPrinted
 
@@ -693,6 +706,7 @@ theorem bathBoltzmannPrinted_corrected : ∀ (S : ℝ → ℝ) (energy kB β : �
 
 > On the other hand the probability for the active system to have energy $\leq\alpha$ is the same as the probability of the bath having energy $\geq E-\alpha$, this must be
 > \[P(\alpha)=\Pr\{E_B\geq E-\alpha\}\propto\int_0^\alpha Z_B(E-s)ds.\]
+> [The intervening bath-entropy argument is quoted separately in MD-6.1.2-BathTaylor.]
 > Thus we have $P(\alpha)\propto\int_0^\alpha\exp(-\beta s)ds$.
 
 ### 2. 原文证明
@@ -718,28 +732,29 @@ def canonicalCDFPrinted_corrected (ZA ZB : ℝ → ℝ) (energy α : ℝ) : ℝ 
 
 | 原文对象或结论 | 当前Lean与范围 |
 |---|---|
-| 原文所选陈述 | 本条所引原句及展示公式；单个记号归入context_notation。 |
-| 对象/域/量词/前提 | 完整当前Lean及依赖定义；新增资格见[EXTRA] |
-| 网站首轮 | NEEDS_HUMAN：Printed签名对两个全实轴连续、处处正的函数ZA,ZB及0<α<energy，断言有ZA权重与无ZA权重的两个归一化CDF相等。分子、分母和能量约束都与字面省略ZA的主张相对应，但任意ZA不可能消去。按原文版审忠实性的要求判NEEDS_HUMAN；不能将其作为正确一般定理，也不能把repair_log中未附签名的_corrected定义视为已审通过。 |
+| 所引原句 | 本条所引原句及展示公式；单个记号归入context_notation。 |
+| 对象、域、量词及前提 | 以上完整声明；额外资格与未覆盖部分见下一段 |
+| 最新网站原始评价 | NEEDS_HUMAN；复审 |
 
 ### 5. [EXTRA] 与覆盖缺口
 
-- [EXTRA] 25号：原文版忠实性与数学疑误分开；补齐所交条目所属的现有_corrected完整签名，不从repair_log名称推断网站已通过修正版。
+- [EXTRA] 原文版忠实性与数学疑误分开；补齐所交条目所属的现有_corrected完整签名，不从repair_log名称推断网站已通过修正版。
 
 ### 6. 审计结论（含网站结论）
 
-网站原返回：NEEDS_HUMAN。Printed签名对两个全实轴连续、处处正的函数ZA,ZB及0<α<energy，断言有ZA权重与无ZA权重的两个归一化CDF相等。分子、分母和能量约束都与字面省略ZA的主张相对应，但任意ZA不可能消去。按原文版审忠实性的要求判NEEDS_HUMAN；不能将其作为正确一般定理，也不能把repair_log中未附签名的_corrected定义视为已审通过。
-本轮处理：原文版忠实性与数学疑误分开；补齐所交条目所属的现有_corrected完整签名，不从repair_log名称推断网站已通过修正版。
-本地单文件及逐声明依赖检查通过；含未完成证明依赖的声明仍标未证。原书疑误及修正版分别见勘误，当前修改版未获网站复审结论。
+网站原返回：NEEDS_HUMAN。canonicalCDFPrinted：任意连续、全实轴严格正ZA,ZB，0<α<energy，等同含ZA与不含ZA的两个归一化积分。它精确呈现原书忽略简并度的主张，其数学疑误保留为NEEDS_HUMAN。canonicalCDFPrinted_corrected：保留分子分母ZA的定义是正确候选CDF表达式；本定义对任意函数和实α总化，不保证非负、归一、单调或分母非零。作为公式定义PASS；只有在正可积权重及0≤α≤energy时才有概率解释；定义没有证明热浴熵近似后的指数形式。
+当前处理：修正版/限定声明=网站PASS；原文疑误或范围解释待导师。
+保留所交版本的明确结论。
+本地编译和逐声明依赖核对通过。原文疑误、各限定/修正版、反例的评价分别列出；有未完成证明依赖的声明仍为未证。
 
 ### 7. 状态与证明位置
 
-| 声明 | 状态 | 未证原因 |
-|---|---|---|
-| `MD.Ch06.canonicalCDFPrinted` | 未证 | 原书疑误不证 |
-| `MD.Ch06.canonicalCDFPrinted_corrected` | 定义 | — |
+| 声明 | 证明状态 | 未证原因 | 网站分版结论 |
+|---|---|---|---|
+| `MD.Ch06.canonicalCDFPrinted` | 未证 | 原书疑误不证 | 原文忠实性PASS；原书数学/范围NEEDS_HUMAN |
+| `MD.Ch06.canonicalCDFPrinted_corrected` | 定义 | — | PASS |
 
-位置：`Blueprint/Ch06.lean:220`；验证：`blueprint/ch06/closeout25/FINAL_COMPILE.log`。
+位置：`Blueprint/Ch06.lean:220`；本地核验记录：`blueprint/ch06/closeout26/FINAL_COMPILE.log`。
 
 ## MD-6.1.2-CanonicalEnergyDensity
 
@@ -764,9 +779,9 @@ def canonicalEnergyDensity (Z : ℝ → ℝ) (β E : ℝ) : ℝ :=
 
 | 原文对象或结论 | 当前Lean与范围 |
 |---|---|
-| 原文所选陈述 | 本条所引原句及展示公式；单个记号归入context_notation。 |
-| 对象/域/量词/前提 | 完整当前Lean及依赖定义；新增资格见[EXTRA] |
-| 网站首轮 | PASS：参数Z:ℝ→ℝ表示主动系统态密度，β,E为实数；定义分子为Z(E)exp(−βE)，分母为同一权重对全能量实轴的实际积分。比例系数不依赖E，符合所印比例关系。输入明确说明实际能量域可通过Z在域外取零表示，且正有限分母才有概率密度解释；本总定义不声称可积、非负或归一化自动成立。 |
+| 所引原句 | 本条所引原句及展示公式；单个记号归入context_notation。 |
+| 对象、域、量词及前提 | 以上完整声明；额外资格与未覆盖部分见下一段 |
+| 最新网站原始评价 | PASS；首轮保留 |
 
 ### 5. [EXTRA] 与覆盖缺口
 
@@ -775,16 +790,17 @@ def canonicalEnergyDensity (Z : ℝ → ℝ) (β E : ℝ) : ℝ :=
 ### 6. 审计结论（含网站结论）
 
 网站原返回：PASS。参数Z:ℝ→ℝ表示主动系统态密度，β,E为实数；定义分子为Z(E)exp(−βE)，分母为同一权重对全能量实轴的实际积分。比例系数不依赖E，符合所印比例关系。输入明确说明实际能量域可通过Z在域外取零表示，且正有限分母才有概率密度解释；本总定义不声称可积、非负或归一化自动成立。
-本轮处理：保留原审阅版本结论；本轮未改签名。
-本地单文件及逐声明依赖检查通过；含未完成证明依赖的声明仍标未证。原书疑误及修正版分别见勘误，当前修改版未获网站复审结论。
+当前处理：网站PASS（首轮未改版本）。
+保留所交版本的明确结论。
+本地编译和逐声明依赖核对通过。原文疑误、各限定/修正版、反例的评价分别列出；有未完成证明依赖的声明仍为未证。
 
 ### 7. 状态与证明位置
 
-| 声明 | 状态 | 未证原因 |
-|---|---|---|
-| `MD.Ch06.canonicalEnergyDensity` | 定义 | — |
+| 声明 | 证明状态 | 未证原因 | 网站分版结论 |
+|---|---|---|---|
+| `MD.Ch06.canonicalEnergyDensity` | 定义 | — | PASS |
 
-位置：`Blueprint/Ch06.lean:232`；验证：`blueprint/ch06/closeout25/FINAL_COMPILE.log`。
+位置：`Blueprint/Ch06.lean:232`；本地核验记录：`blueprint/ch06/closeout26/FINAL_COMPILE.log`。
 
 ## MD-6.1.3-EntropyFunctional
 
@@ -811,9 +827,9 @@ def entropyFunctional {D : Type*} [MeasurableSpace D] (ν : Measure D)
 
 | 原文对象或结论 | 当前Lean与范围 |
 |---|---|
-| 原文所选陈述 | 本条所引原句及展示公式；单个记号归入context_notation。 |
-| 对象/域/量词/前提 | 完整当前Lean及依赖定义；新增资格见[EXTRA] |
-| 网站首轮 | PASS：对象为任意可测空间D、测度ν、实kB及实函数ρ；返回−kB乘ρ logρ的Bochner积分，符号与权重正确。此条仅形式化熵泛函定义；归一化及平均能量约束由第16条另存，驻点分析由第17、18条另存，context_notation已明确拆分。ρ≥0、可积性及0 log0的总定义不在此签名中被证明，不应把它计成任意ρ的合法概率熵定理。 |
+| 所引原句 | 本条所引原句及展示公式；单个记号归入context_notation。 |
+| 对象、域、量词及前提 | 以上完整声明；额外资格与未覆盖部分见下一段 |
+| 最新网站原始评价 | PASS；首轮保留 |
 
 ### 5. [EXTRA] 与覆盖缺口
 
@@ -822,16 +838,17 @@ def entropyFunctional {D : Type*} [MeasurableSpace D] (ν : Measure D)
 ### 6. 审计结论（含网站结论）
 
 网站原返回：PASS。对象为任意可测空间D、测度ν、实kB及实函数ρ；返回−kB乘ρ logρ的Bochner积分，符号与权重正确。此条仅形式化熵泛函定义；归一化及平均能量约束由第16条另存，驻点分析由第17、18条另存，context_notation已明确拆分。ρ≥0、可积性及0 log0的总定义不在此签名中被证明，不应把它计成任意ρ的合法概率熵定理。
-本轮处理：保留原审阅版本结论；本轮未改签名。
-本地单文件及逐声明依赖检查通过；含未完成证明依赖的声明仍标未证。原书疑误及修正版分别见勘误，当前修改版未获网站复审结论。
+当前处理：网站PASS（首轮未改版本）。
+保留所交版本的明确结论。
+本地编译和逐声明依赖核对通过。原文疑误、各限定/修正版、反例的评价分别列出；有未完成证明依赖的声明仍为未证。
 
 ### 7. 状态与证明位置
 
-| 声明 | 状态 | 未证原因 |
-|---|---|---|
-| `MD.Ch06.entropyFunctional` | 定义 | — |
+| 声明 | 证明状态 | 未证原因 | 网站分版结论 |
+|---|---|---|---|
+| `MD.Ch06.entropyFunctional` | 定义 | — | PASS |
 
-位置：`Blueprint/Ch06.lean:236`；验证：`blueprint/ch06/closeout25/FINAL_COMPILE.log`。
+位置：`Blueprint/Ch06.lean:236`；本地核验记录：`blueprint/ch06/closeout26/FINAL_COMPILE.log`。
 
 ## MD-6.1.3-ConstrainedEntropyModel
 
@@ -862,9 +879,9 @@ def constrainedEntropyModel {D : Type*} [MeasurableSpace D] (ν : Measure D)
 
 | 原文对象或结论 | 当前Lean与范围 |
 |---|---|
-| 原文所选陈述 | 本条所引原句及展示公式；单个记号归入context_notation。 |
-| 对象/域/量词/前提 | 完整当前Lean及依赖定义；新增资格见[EXTRA] |
-| 网站首轮 | PASS：量化任意可测D、测度ν、实值H,ρ及四个实参数。返回的第一分量是S/kB−λ(∫ρ−1)−β(∫Hρ−meanEnergy)，常数项没有丢失；第二分量是两个约束的合取命题，不能把构造这个Prop误当成证明约束已成立。签名没有驻点或最大化断言，输入context_notation已把实际一阶变分和驻点结论分给第17、18条。kB≠0下S/kB与物理表达式一致；kB=0只保留Lean总定义，不冒充约消证明。 |
+| 所引原句 | 本条所引原句及展示公式；单个记号归入context_notation。 |
+| 对象、域、量词及前提 | 以上完整声明；额外资格与未覆盖部分见下一段 |
+| 最新网站原始评价 | PASS；首轮保留 |
 
 ### 5. [EXTRA] 与覆盖缺口
 
@@ -873,16 +890,17 @@ def constrainedEntropyModel {D : Type*} [MeasurableSpace D] (ν : Measure D)
 ### 6. 审计结论（含网站结论）
 
 网站原返回：PASS。量化任意可测D、测度ν、实值H,ρ及四个实参数。返回的第一分量是S/kB−λ(∫ρ−1)−β(∫Hρ−meanEnergy)，常数项没有丢失；第二分量是两个约束的合取命题，不能把构造这个Prop误当成证明约束已成立。签名没有驻点或最大化断言，输入context_notation已把实际一阶变分和驻点结论分给第17、18条。kB≠0下S/kB与物理表达式一致；kB=0只保留Lean总定义，不冒充约消证明。
-本轮处理：保留原审阅版本结论；本轮未改签名。
-本地单文件及逐声明依赖检查通过；含未完成证明依赖的声明仍标未证。原书疑误及修正版分别见勘误，当前修改版未获网站复审结论。
+当前处理：网站PASS（首轮未改版本）。
+保留所交版本的明确结论。
+本地编译和逐声明依赖核对通过。原文疑误、各限定/修正版、反例的评价分别列出；有未完成证明依赖的声明仍为未证。
 
 ### 7. 状态与证明位置
 
-| 声明 | 状态 | 未证原因 |
-|---|---|---|
-| `MD.Ch06.constrainedEntropyModel` | 定义 | — |
+| 声明 | 证明状态 | 未证原因 | 网站分版结论 |
+|---|---|---|---|
+| `MD.Ch06.constrainedEntropyModel` | 定义 | — | PASS |
 
-位置：`Blueprint/Ch06.lean:240`；验证：`blueprint/ch06/closeout25/FINAL_COMPILE.log`。
+位置：`Blueprint/Ch06.lean:240`；本地核验记录：`blueprint/ch06/closeout26/FINAL_COMPILE.log`。
 
 ## MD-6.1.3-EntropyFirstVariation
 
@@ -915,9 +933,9 @@ theorem entropyFirstVariation :
 
 | 原文对象或结论 | 当前Lean与范围 |
 |---|---|
-| 原文所选陈述 | 本条所引原句及展示公式；单个记号归入context_notation。 |
-| 对象/域/量词/前提 | 完整当前Lean及依赖定义；新增资格见[EXTRA] |
-| 网站首轮 | PASS：H,ρ定义在V n=Fin n→ℝ；H,ρ连续、ρ处处正，且ρ、ρ logρ、Hρ分别可积。对每个光滑紧支ψ，结论是沿实际ρ+eψ的entropyLagrangian在e=0处具有导数∫[−(1+logρ)−λ−βH]ψ，方向、负号、β因子及求导点均正确。正连续ρ在ψ的紧支集上有正下界，保证局部可保持密度正值并对积分求导。D17以kB=1消去熵因子，省去的λ+βĒ与ρ无关，正如[EXTRA]所述。本条只是一阶变分恒等式，原页EL及指数解由第18条承接，不误计本条已经给出点态EL。 |
+| 所引原句 | 本条所引原句及展示公式；单个记号归入context_notation。 |
+| 对象、域、量词及前提 | 以上完整声明；额外资格与未覆盖部分见下一段 |
+| 最新网站原始评价 | PASS；首轮保留 |
 
 ### 5. [EXTRA] 与覆盖缺口
 
@@ -927,16 +945,17 @@ theorem entropyFirstVariation :
 ### 6. 审计结论（含网站结论）
 
 网站原返回：PASS。H,ρ定义在V n=Fin n→ℝ；H,ρ连续、ρ处处正，且ρ、ρ logρ、Hρ分别可积。对每个光滑紧支ψ，结论是沿实际ρ+eψ的entropyLagrangian在e=0处具有导数∫[−(1+logρ)−λ−βH]ψ，方向、负号、β因子及求导点均正确。正连续ρ在ψ的紧支集上有正下界，保证局部可保持密度正值并对积分求导。D17以kB=1消去熵因子，省去的λ+βĒ与ρ无关，正如[EXTRA]所述。本条只是一阶变分恒等式，原页EL及指数解由第18条承接，不误计本条已经给出点态EL。
-本轮处理：保留原审阅版本结论；本轮未改签名。
-本地单文件及逐声明依赖检查通过；含未完成证明依赖的声明仍标未证。原书疑误及修正版分别见勘误，当前修改版未获网站复审结论。
+当前处理：网站PASS（首轮未改版本）。
+保留所交版本的明确结论。
+本地编译和逐声明依赖核对通过。原文疑误、各限定/修正版、反例的评价分别列出；有未完成证明依赖的声明仍为未证。
 
 ### 7. 状态与证明位置
 
-| 声明 | 状态 | 未证原因 |
-|---|---|---|
-| `MD.Ch06.entropyFirstVariation` | 未证 | 缺大型理论 |
+| 声明 | 证明状态 | 未证原因 | 网站分版结论 |
+|---|---|---|---|
+| `MD.Ch06.entropyFirstVariation` | 未证 | 缺大型理论 | PASS |
 
-位置：`Blueprint/Ch06.lean:249`；验证：`blueprint/ch06/closeout25/FINAL_COMPILE.log`。
+位置：`Blueprint/Ch06.lean:249`；本地核验记录：`blueprint/ch06/closeout26/FINAL_COMPILE.log`。
 
 ## MD-6.1.3-EntropyVariation
 
@@ -973,9 +992,9 @@ theorem entropyVariation :
 
 | 原文对象或结论 | 当前Lean与范围 |
 |---|---|
-| 原文所选陈述 | 本条所引原句及展示公式；单个记号归入context_notation。 |
-| 对象/域/量词/前提 | 完整当前Lean及依赖定义；新增资格见[EXTRA] |
-| 网站首轮 | PASS：与第17条相同的有限维空间及正性、连续性、三个可积性前提下，额外要求每个光滑紧支方向的实际Lagrangian在0处局部最大；没有把变分导数零或EL式直接当前提。由一阶变分及连续系数的基本变分引理得到每个x处EL式，再由ρ>0取指数得到ρ(x)=exp(−1−λ)exp(−βH(x))，两个合取结论完整且正确。此签名既不假设归一化/给定meanEnergy，也不证明λ或β存在、唯一或被指定能量确定；原文后续的约束说明仅由第16、30条记录，不能算成本定理额外结论。 |
+| 所引原句 | 本条所引原句及展示公式；单个记号归入context_notation。 |
+| 对象、域、量词及前提 | 以上完整声明；额外资格与未覆盖部分见下一段 |
+| 最新网站原始评价 | PASS；首轮保留 |
 
 ### 5. [EXTRA] 与覆盖缺口
 
@@ -984,16 +1003,17 @@ theorem entropyVariation :
 ### 6. 审计结论（含网站结论）
 
 网站原返回：PASS。与第17条相同的有限维空间及正性、连续性、三个可积性前提下，额外要求每个光滑紧支方向的实际Lagrangian在0处局部最大；没有把变分导数零或EL式直接当前提。由一阶变分及连续系数的基本变分引理得到每个x处EL式，再由ρ>0取指数得到ρ(x)=exp(−1−λ)exp(−βH(x))，两个合取结论完整且正确。此签名既不假设归一化/给定meanEnergy，也不证明λ或β存在、唯一或被指定能量确定；原文后续的约束说明仅由第16、30条记录，不能算成本定理额外结论。
-本轮处理：保留原审阅版本结论；本轮未改签名。
-本地单文件及逐声明依赖检查通过；含未完成证明依赖的声明仍标未证。原书疑误及修正版分别见勘误，当前修改版未获网站复审结论。
+当前处理：网站PASS（首轮未改版本）。
+保留所交版本的明确结论。
+本地编译和逐声明依赖核对通过。原文疑误、各限定/修正版、反例的评价分别列出；有未完成证明依赖的声明仍为未证。
 
 ### 7. 状态与证明位置
 
-| 声明 | 状态 | 未证原因 |
-|---|---|---|
-| `MD.Ch06.entropyVariation` | 未证 | 缺大型理论 |
+| 声明 | 证明状态 | 未证原因 | 网站分版结论 |
+|---|---|---|---|
+| `MD.Ch06.entropyVariation` | 未证 | 缺大型理论 | PASS |
 
-位置：`Blueprint/Ch06.lean:260`；验证：`blueprint/ch06/closeout25/FINAL_COMPILE.log`。
+位置：`Blueprint/Ch06.lean:260`；本地核验记录：`blueprint/ch06/closeout26/FINAL_COMPILE.log`。
 
 ## MD-6.1.3-CanonicalDensity
 
@@ -1022,9 +1042,9 @@ def canonicalDensity {D : Type*} [MeasurableSpace D] (ν : Measure D)
 
 | 原文对象或结论 | 当前Lean与范围 |
 |---|---|
-| 原文所选陈述 | 本条所引原句及展示公式；单个记号归入context_notation。 |
-| 对象/域/量词/前提 | 完整当前Lean及依赖定义；新增资格见[EXTRA] |
-| 网站首轮 | PASS：可测空间D、测度ν、实H及β与点x全部显式；canonicalDensity恰为exp(−βH x)除以同一权重的实际积分，分母不是独立任意常数。测度ν承载所选相空间域。定义对应原归一化表达式；没有宣称任意ν,H,β均有正有限partition或积分为1，context_notation已限定适用条件。输入中的β=1/(kB T)是参数解释，不是此函数隐含证明的平衡定理。 |
+| 所引原句 | 本条所引原句及展示公式；单个记号归入context_notation。 |
+| 对象、域、量词及前提 | 以上完整声明；额外资格与未覆盖部分见下一段 |
+| 最新网站原始评价 | PASS；首轮保留 |
 
 ### 5. [EXTRA] 与覆盖缺口
 
@@ -1033,16 +1053,17 @@ def canonicalDensity {D : Type*} [MeasurableSpace D] (ν : Measure D)
 ### 6. 审计结论（含网站结论）
 
 网站原返回：PASS。可测空间D、测度ν、实H及β与点x全部显式；canonicalDensity恰为exp(−βH x)除以同一权重的实际积分，分母不是独立任意常数。测度ν承载所选相空间域。定义对应原归一化表达式；没有宣称任意ν,H,β均有正有限partition或积分为1，context_notation已限定适用条件。输入中的β=1/(kB T)是参数解释，不是此函数隐含证明的平衡定理。
-本轮处理：保留原审阅版本结论；本轮未改签名。
-本地单文件及逐声明依赖检查通过；含未完成证明依赖的声明仍标未证。原书疑误及修正版分别见勘误，当前修改版未获网站复审结论。
+当前处理：网站PASS（首轮未改版本）。
+保留所交版本的明确结论。
+本地编译和逐声明依赖核对通过。原文疑误、各限定/修正版、反例的评价分别列出；有未完成证明依赖的声明仍为未证。
 
 ### 7. 状态与证明位置
 
-| 声明 | 状态 | 未证原因 |
-|---|---|---|
-| `MD.Ch06.canonicalDensity` | 定义 | — |
+| 声明 | 证明状态 | 未证原因 | 网站分版结论 |
+|---|---|---|---|
+| `MD.Ch06.canonicalDensity` | 定义 | — | PASS |
 
-位置：`Blueprint/Ch06.lean:271`；验证：`blueprint/ch06/closeout25/FINAL_COMPILE.log`。
+位置：`Blueprint/Ch06.lean:271`；本地核验记录：`blueprint/ch06/closeout26/FINAL_COMPILE.log`。
 
 ## MD-6.1.3-MassHamiltonian
 
@@ -1067,9 +1088,9 @@ def massHamiltonian {n : ℕ} (m : MolecularDynamics.Chapter06Review.V n) (U : M
 
 | 原文对象或结论 | 当前Lean与范围 |
 |---|---|
-| 原文所选陈述 | 本条所引原句及展示公式；单个记号归入context_notation。 |
-| 对象/域/量词/前提 | 完整当前Lean及依赖定义；新增资格见[EXTRA] |
-| 网站首轮 | PASS：n个实坐标的m∈V n、势能U:V n→ℝ及相点x∈Phase n全部显式；Phase n=V n×V n，x.1为q、x.2为p。动能是Σ_i p_i²/(2m_i)，等于对角质量矩阵的pᵀM⁻¹p/2，保留每个m_i，未偷换为单位质量。定义没有限制m_i，但context_notation明确物理模型为正对角质量，后续积分定理也逐坐标要求m_i>0；此处是总定义而非任意质量正定的断言。 |
+| 所引原句 | 本条所引原句及展示公式；单个记号归入context_notation。 |
+| 对象、域、量词及前提 | 以上完整声明；额外资格与未覆盖部分见下一段 |
+| 最新网站原始评价 | PASS；首轮保留 |
 
 ### 5. [EXTRA] 与覆盖缺口
 
@@ -1078,16 +1099,17 @@ def massHamiltonian {n : ℕ} (m : MolecularDynamics.Chapter06Review.V n) (U : M
 ### 6. 审计结论（含网站结论）
 
 网站原返回：PASS。n个实坐标的m∈V n、势能U:V n→ℝ及相点x∈Phase n全部显式；Phase n=V n×V n，x.1为q、x.2为p。动能是Σ_i p_i²/(2m_i)，等于对角质量矩阵的pᵀM⁻¹p/2，保留每个m_i，未偷换为单位质量。定义没有限制m_i，但context_notation明确物理模型为正对角质量，后续积分定理也逐坐标要求m_i>0；此处是总定义而非任意质量正定的断言。
-本轮处理：保留原审阅版本结论；本轮未改签名。
-本地单文件及逐声明依赖检查通过；含未完成证明依赖的声明仍标未证。原书疑误及修正版分别见勘误，当前修改版未获网站复审结论。
+当前处理：网站PASS（首轮未改版本）。
+保留所交版本的明确结论。
+本地编译和逐声明依赖核对通过。原文疑误、各限定/修正版、反例的评价分别列出；有未完成证明依赖的声明仍为未证。
 
 ### 7. 状态与证明位置
 
-| 声明 | 状态 | 未证原因 |
-|---|---|---|
-| `MD.Ch06.massHamiltonian` | 定义 | — |
+| 声明 | 证明状态 | 未证原因 | 网站分版结论 |
+|---|---|---|---|
+| `MD.Ch06.massHamiltonian` | 定义 | — | PASS |
 
-位置：`Blueprint/Ch06.lean:275`；验证：`blueprint/ch06/closeout25/FINAL_COMPILE.log`。
+位置：`Blueprint/Ch06.lean:275`；本地核验记录：`blueprint/ch06/closeout26/FINAL_COMPILE.log`。
 
 ## MD-6.1.3-PartitionMass
 
@@ -1118,9 +1140,9 @@ theorem partitionMass :
 
 | 原文对象或结论 | 当前Lean与范围 |
 |---|---|
-| 原文所选陈述 | 本条所引原句及展示公式；单个记号归入context_notation。 |
-| 对象/域/量词/前提 | 完整当前Lean及依赖定义；新增资格见[EXTRA] |
-| 网站首轮 | PASS：对任意n、正对角质量m、β>0及配置权重可积的U，结论给整个Phase n上的指数积分=配置积分×Π_i sqrt(2πm_i/β)。[EXTRA]已明确Q取全部配置实空间，n为任意自然数，不能把它当作一般区域Q结论。D19的质量Hamiltonian与第20条相同；高斯因子与每个质量、β的依赖正确，乘积次序交换无影响。可积性保证实际实值积分与Fubini分离合法，n=0时空乘积为1亦相容。 |
+| 所引原句 | 本条所引原句及展示公式；单个记号归入context_notation。 |
+| 对象、域、量词及前提 | 以上完整声明；额外资格与未覆盖部分见下一段 |
+| 最新网站原始评价 | PASS；首轮保留 |
 
 ### 5. [EXTRA] 与覆盖缺口
 
@@ -1129,16 +1151,17 @@ theorem partitionMass :
 ### 6. 审计结论（含网站结论）
 
 网站原返回：PASS。对任意n、正对角质量m、β>0及配置权重可积的U，结论给整个Phase n上的指数积分=配置积分×Π_i sqrt(2πm_i/β)。[EXTRA]已明确Q取全部配置实空间，n为任意自然数，不能把它当作一般区域Q结论。D19的质量Hamiltonian与第20条相同；高斯因子与每个质量、β的依赖正确，乘积次序交换无影响。可积性保证实际实值积分与Fubini分离合法，n=0时空乘积为1亦相容。
-本轮处理：保留原审阅版本结论；本轮未改签名。
-本地单文件及逐声明依赖检查通过；含未完成证明依赖的声明仍标未证。原书疑误及修正版分别见勘误，当前修改版未获网站复审结论。
+当前处理：网站PASS（首轮未改版本）。
+保留所交版本的明确结论。
+本地编译和逐声明依赖核对通过。原文疑误、各限定/修正版、反例的评价分别列出；有未完成证明依赖的声明仍为未证。
 
 ### 7. 状态与证明位置
 
-| 声明 | 状态 | 未证原因 |
-|---|---|---|
-| `MD.Ch06.partitionMass` | 未证 | 时间盒止 |
+| 声明 | 证明状态 | 未证原因 | 网站分版结论 |
+|---|---|---|---|
+| `MD.Ch06.partitionMass` | 未证 | 时间盒止 | PASS |
 
-位置：`Blueprint/Ch06.lean:280`；验证：`blueprint/ch06/closeout25/FINAL_COMPILE.log`。
+位置：`Blueprint/Ch06.lean:280`；本地核验记录：`blueprint/ch06/closeout26/FINAL_COMPILE.log`。
 
 ## MD-6.1.3-PartitionDomain
 
@@ -1171,9 +1194,9 @@ theorem partitionDomain : ∀ {n : ℕ}
 
 | 原文对象或结论 | 当前Lean与范围 |
 |---|---|
-| 原文所选陈述 | 本条所引原句及展示公式；单个记号归入context_notation。 |
-| 对象/域/量词/前提 | 完整当前Lean及依赖定义；新增资格见[EXTRA] |
-| 网站首轮 | PASS：量化任意n及配置测度μ:Measure(V n)，明确[SigmaFinite μ]；正逐坐标质量、β>0及配置权重关于μ可积为前提。左边实际使用μ.prod(volume)作用在(q,p)顺序的Phase n上，右边是关于同一μ的配置积分乘正确的高斯质量因子。[EXTRA]说明原Q由μ=volume.restrict Q表示；这既保留一般可测配置域，也未把Q改成torus或把质量改成1。任意σ有限μ的推广与原公式相容，不额外声称其归一化常数为正。 |
+| 所引原句 | 本条所引原句及展示公式；单个记号归入context_notation。 |
+| 对象、域、量词及前提 | 以上完整声明；额外资格与未覆盖部分见下一段 |
+| 最新网站原始评价 | PASS；首轮保留 |
 
 ### 5. [EXTRA] 与覆盖缺口
 
@@ -1182,16 +1205,17 @@ theorem partitionDomain : ∀ {n : ℕ}
 ### 6. 审计结论（含网站结论）
 
 网站原返回：PASS。量化任意n及配置测度μ:Measure(V n)，明确[SigmaFinite μ]；正逐坐标质量、β>0及配置权重关于μ可积为前提。左边实际使用μ.prod(volume)作用在(q,p)顺序的Phase n上，右边是关于同一μ的配置积分乘正确的高斯质量因子。[EXTRA]说明原Q由μ=volume.restrict Q表示；这既保留一般可测配置域，也未把Q改成torus或把质量改成1。任意σ有限μ的推广与原公式相容，不额外声称其归一化常数为正。
-本轮处理：保留原审阅版本结论；本轮未改签名。
-本地单文件及逐声明依赖检查通过；含未完成证明依赖的声明仍标未证。原书疑误及修正版分别见勘误，当前修改版未获网站复审结论。
+当前处理：网站PASS（首轮未改版本）。
+保留所交版本的明确结论。
+本地编译和逐声明依赖核对通过。原文疑误、各限定/修正版、反例的评价分别列出；有未完成证明依赖的声明仍为未证。
 
 ### 7. 状态与证明位置
 
-| 声明 | 状态 | 未证原因 |
-|---|---|---|
-| `MD.Ch06.partitionDomain` | 未证 | 时间盒止 |
+| 声明 | 证明状态 | 未证原因 | 网站分版结论 |
+|---|---|---|---|
+| `MD.Ch06.partitionDomain` | 未证 | 时间盒止 | PASS |
 
-位置：`Blueprint/Ch06.lean:289`；验证：`blueprint/ch06/closeout25/FINAL_COMPILE.log`。
+位置：`Blueprint/Ch06.lean:289`；本地核验记录：`blueprint/ch06/closeout26/FINAL_COMPILE.log`。
 
 ## MD-6.1.3-FiniteDomainPrinted
 
@@ -1225,28 +1249,30 @@ theorem finiteDomainPrinted_corrected {n : ℕ} (Q : Set (Fin n → ℝ))
 
 | 原文对象或结论 | 当前Lean与范围 |
 |---|---|
-| 原文所选陈述 | 本条所引原句及展示公式；单个记号归入context_notation。 |
-| 对象/域/量词/前提 | 完整当前Lean及依赖定义；新增资格见[EXTRA] |
-| 网站首轮 | NEEDS_HUMAN：Printed签名将finite解释为可测有限体积Q，将smooth解释为ContDiffOn U Q，且β>0，结论为exp(−βU)在Q可积。这种字面读法不足以控制U趋边界为−∞，即使Q有界也有反例。原文若意指紧配置空间且U在其上连续，则可成立，但不能由当前Printed前提直接获得。按任务要求对原文歧义/疑误判NEEDS_HUMAN，保留忠实版，不把它判为一般正确定理。repair_log所列_corrected签名未提供，本条不推断其内容。 |
+| 所引原句 | 本条所引原句及展示公式；单个记号归入context_notation。 |
+| 对象、域、量词及前提 | 以上完整声明；额外资格与未覆盖部分见下一段 |
+| 最新网站原始评价 | NEEDS_HUMAN；复审 |
 
 ### 5. [EXTRA] 与覆盖缺口
 
-- [EXTRA] 25号：原文版忠实性与数学疑误分开；补齐所交条目所属的现有_corrected完整签名，不从repair_log名称推断网站已通过修正版。
+- [EXTRA] 原文版忠实性与数学疑误分开；补齐所交条目所属的现有_corrected完整签名，不从repair_log名称推断网站已通过修正版。
+- [EXTRA] 复审范围：修正版只给紧域构型权重可积；正体积、正配分函数、动量积分与归一化没有随之成立。
 
 ### 6. 审计结论（含网站结论）
 
-网站原返回：NEEDS_HUMAN。Printed签名将finite解释为可测有限体积Q，将smooth解释为ContDiffOn U Q，且β>0，结论为exp(−βU)在Q可积。这种字面读法不足以控制U趋边界为−∞，即使Q有界也有反例。原文若意指紧配置空间且U在其上连续，则可成立，但不能由当前Printed前提直接获得。按任务要求对原文歧义/疑误判NEEDS_HUMAN，保留忠实版，不把它判为一般正确定理。repair_log所列_corrected签名未提供，本条不推断其内容。
-本轮处理：原文版忠实性与数学疑误分开；补齐所交条目所属的现有_corrected完整签名，不从repair_log名称推断网站已通过修正版。
-本地单文件及逐声明依赖检查通过；含未完成证明依赖的声明仍标未证。原书疑误及修正版分别见勘误，当前修改版未获网站复审结论。
+网站原返回：NEEDS_HUMAN。finiteDomainPrinted：将finite解释成可测有限体积，并只要求域内C∞、β>0，不足以保证exp(-βU)可积，原书含糊处需人工确认。finiteDomainPrinted_corrected：任意维n、紧Q、域上连续U、任意实β，指数权重在Q可积，正确且加强条件已明确。两版都只陈述构型积分的可积性，未陈述动量积分、正配分函数或密度归一化；紧集还可能体积为零。
+当前处理：修正版/限定声明=网站PASS；原文疑误或范围解释待导师。
+修正版只给紧域构型权重可积；正体积、正配分函数、动量积分与归一化没有随之成立。
+本地编译和逐声明依赖核对通过。原文疑误、各限定/修正版、反例的评价分别列出；有未完成证明依赖的声明仍为未证。
 
 ### 7. 状态与证明位置
 
-| 声明 | 状态 | 未证原因 |
-|---|---|---|
-| `MD.Ch06.finiteDomainPrinted` | 未证 | 原书疑误不证 |
-| `MD.Ch06.finiteDomainPrinted_corrected` | 已证 | — |
+| 声明 | 证明状态 | 未证原因 | 网站分版结论 |
+|---|---|---|---|
+| `MD.Ch06.finiteDomainPrinted` | 未证 | 原书疑误不证 | 未获单独PASS；见分版意见 |
+| `MD.Ch06.finiteDomainPrinted_corrected` | 已证 | — | PASS |
 
-位置：`Blueprint/Ch06.lean:303`；验证：`blueprint/ch06/closeout25/FINAL_COMPILE.log`。
+位置：`Blueprint/Ch06.lean:303`；本地核验记录：`blueprint/ch06/closeout26/FINAL_COMPILE.log`。
 
 ## MD-6.1.3-PeriodicPartitionBridge
 
@@ -1276,9 +1302,9 @@ theorem periodicPartitionBridge {N : ℕ}
 
 | 原文对象或结论 | 当前Lean与范围 |
 |---|---|
-| 原文所选陈述 | 本条所引原句及展示公式；单个记号归入context_notation。 |
-| 对象/域/量词/前提 | 完整当前Lean及依赖定义；新增资格见[EXTRA] |
-| 网站首轮 | PASS：U在Fin N→ℝ上C∞且对任意整数向量平移周期，β>0；左边由D20在单位配置torus Haar测度×全动量Lebesgue测度上积分D23 Gibbs权重。D21–D26把Hamiltonian固定为Σp_i²/2+U；D7的配置partition在Icc 0 1上积分exp(−βU)。周期性保证任意代表元选取不影响权重，torus积分与单位基本域积分一致，边界测度为0。右边sqrt(2πβ⁻¹)^N是单位质量高斯因子，等式正确。该[EXTRA]独立特例不覆盖第21、22条的一般质量/配置域。 |
+| 所引原句 | 本条所引原句及展示公式；单个记号归入context_notation。 |
+| 对象、域、量词及前提 | 以上完整声明；额外资格与未覆盖部分见下一段 |
+| 最新网站原始评价 | PASS；首轮保留 |
 
 ### 5. [EXTRA] 与覆盖缺口
 
@@ -1287,16 +1313,17 @@ theorem periodicPartitionBridge {N : ℕ}
 ### 6. 审计结论（含网站结论）
 
 网站原返回：PASS。U在Fin N→ℝ上C∞且对任意整数向量平移周期，β>0；左边由D20在单位配置torus Haar测度×全动量Lebesgue测度上积分D23 Gibbs权重。D21–D26把Hamiltonian固定为Σp_i²/2+U；D7的配置partition在Icc 0 1上积分exp(−βU)。周期性保证任意代表元选取不影响权重，torus积分与单位基本域积分一致，边界测度为0。右边sqrt(2πβ⁻¹)^N是单位质量高斯因子，等式正确。该[EXTRA]独立特例不覆盖第21、22条的一般质量/配置域。
-本轮处理：保留原审阅版本结论；本轮未改签名。
-本地单文件及逐声明依赖检查通过；含未完成证明依赖的声明仍标未证。原书疑误及修正版分别见勘误，当前修改版未获网站复审结论。
+当前处理：网站PASS（首轮未改版本）。
+保留所交版本的明确结论。
+本地编译和逐声明依赖核对通过。原文疑误、各限定/修正版、反例的评价分别列出；有未完成证明依赖的声明仍为未证。
 
 ### 7. 状态与证明位置
 
-| 声明 | 状态 | 未证原因 |
-|---|---|---|
-| `MD.Ch06.periodicPartitionBridge` | 已证 | — |
+| 声明 | 证明状态 | 未证原因 | 网站分版结论 |
+|---|---|---|---|
+| `MD.Ch06.periodicPartitionBridge` | 已证 | — | PASS |
 
-位置：`Blueprint/Ch06.lean:317`；验证：`blueprint/ch06/closeout25/FINAL_COMPILE.log`。
+位置：`Blueprint/Ch06.lean:317`；本地核验记录：`blueprint/ch06/closeout26/FINAL_COMPILE.log`。
 
 ## MD-6.1.3-ConfiningPartition
 
@@ -1327,9 +1354,9 @@ theorem confiningPartition :
 
 | 原文对象或结论 | 当前Lean与范围 |
 |---|---|
-| 原文所选陈述 | 本条所引原句及展示公式；单个记号归入context_notation。 |
-| 对象/域/量词/前提 | 完整当前Lean及依赖定义；新增资格见[EXTRA] |
-| 网站首轮 | PASS：对象是任意有限维V n上的连续U，以及实β,c,p,C；要求β,c,p>0并对全部q有c‖q‖^p−C≤U(q)。于是0<exp(−βU(q))≤exp(βC)exp(−βc‖q‖^p)，右侧在有限维空间任意p>0下可积，故结论正确。Pi范数与Euclidean范数等价，V n使用坐标函数范数不破坏可积性。C可为任意实数，无须额外C≥0。[EXTRA]已经把“足够快”量化，并明确只处理无奇点连续全空间充分条件，未声称涵盖一般奇点势或任意缓慢增长。 |
+| 所引原句 | 本条所引原句及展示公式；单个记号归入context_notation。 |
+| 对象、域、量词及前提 | 以上完整声明；额外资格与未覆盖部分见下一段 |
+| 最新网站原始评价 | PASS；首轮保留 |
 
 ### 5. [EXTRA] 与覆盖缺口
 
@@ -1338,16 +1365,17 @@ theorem confiningPartition :
 ### 6. 审计结论（含网站结论）
 
 网站原返回：PASS。对象是任意有限维V n上的连续U，以及实β,c,p,C；要求β,c,p>0并对全部q有c‖q‖^p−C≤U(q)。于是0<exp(−βU(q))≤exp(βC)exp(−βc‖q‖^p)，右侧在有限维空间任意p>0下可积，故结论正确。Pi范数与Euclidean范数等价，V n使用坐标函数范数不破坏可积性。C可为任意实数，无须额外C≥0。[EXTRA]已经把“足够快”量化，并明确只处理无奇点连续全空间充分条件，未声称涵盖一般奇点势或任意缓慢增长。
-本轮处理：保留原审阅版本结论；本轮未改签名。
-本地单文件及逐声明依赖检查通过；含未完成证明依赖的声明仍标未证。原书疑误及修正版分别见勘误，当前修改版未获网站复审结论。
+当前处理：网站PASS（首轮未改版本）。
+保留所交版本的明确结论。
+本地编译和逐声明依赖核对通过。原文疑误、各限定/修正版、反例的评价分别列出；有未完成证明依赖的声明仍为未证。
 
 ### 7. 状态与证明位置
 
-| 声明 | 状态 | 未证原因 |
-|---|---|---|
-| `MD.Ch06.confiningPartition` | 未证 | 缺大型理论 |
+| 声明 | 证明状态 | 未证原因 | 网站分版结论 |
+|---|---|---|---|
+| `MD.Ch06.confiningPartition` | 未证 | 缺大型理论 | PASS |
 
-位置：`Blueprint/Ch06.lean:326`；验证：`blueprint/ch06/closeout25/FINAL_COMPILE.log`。
+位置：`Blueprint/Ch06.lean:326`；本地核验记录：`blueprint/ch06/closeout26/FINAL_COMPILE.log`。
 
 ## MD-6.1.3-LennardJonesNonintegrable
 
@@ -1373,9 +1401,9 @@ theorem lennardJonesNonintegrable : ∀ β : ℝ, 0 < β →
 
 | 原文对象或结论 | 当前Lean与范围 |
 |---|---|
-| 原文所选陈述 | 本条所引原句及展示公式；单个记号归入context_notation。 |
-| 对象/域/量词/前提 | 完整当前Lean及依赖定义；新增资格见[EXTRA] |
-| 网站首轮 | PASS：量化任意β>0，结论恰为q>0上exp[−β((q⁻¹)^12−(q⁻¹)^6)]不可积。Lean的逆元幂在q>0与原q⁻¹²−q⁻⁶一致。对q≥1，此势≤0，故权重≥1，尾积分直接发散；无需把q=0奇点或数值轨迹作为理由。动量高斯有限且正，不能消去配置积分发散。[EXTRA]清楚限定为原书一自由度例子的配置结论，未声称凭此定理已证明任意多体Lennard-Jones系统的发散。 |
+| 所引原句 | 本条所引原句及展示公式；单个记号归入context_notation。 |
+| 对象、域、量词及前提 | 以上完整声明；额外资格与未覆盖部分见下一段 |
+| 最新网站原始评价 | PASS；首轮保留 |
 
 ### 5. [EXTRA] 与覆盖缺口
 
@@ -1384,16 +1412,17 @@ theorem lennardJonesNonintegrable : ∀ β : ℝ, 0 < β →
 ### 6. 审计结论（含网站结论）
 
 网站原返回：PASS。量化任意β>0，结论恰为q>0上exp[−β((q⁻¹)^12−(q⁻¹)^6)]不可积。Lean的逆元幂在q>0与原q⁻¹²−q⁻⁶一致。对q≥1，此势≤0，故权重≥1，尾积分直接发散；无需把q=0奇点或数值轨迹作为理由。动量高斯有限且正，不能消去配置积分发散。[EXTRA]清楚限定为原书一自由度例子的配置结论，未声称凭此定理已证明任意多体Lennard-Jones系统的发散。
-本轮处理：保留原审阅版本结论；本轮未改签名。
-本地单文件及逐声明依赖检查通过；含未完成证明依赖的声明仍标未证。原书疑误及修正版分别见勘误，当前修改版未获网站复审结论。
+当前处理：网站PASS（首轮未改版本）。
+保留所交版本的明确结论。
+本地编译和逐声明依赖核对通过。原文疑误、各限定/修正版、反例的评价分别列出；有未完成证明依赖的声明仍为未证。
 
 ### 7. 状态与证明位置
 
-| 声明 | 状态 | 未证原因 |
-|---|---|---|
-| `MD.Ch06.lennardJonesNonintegrable` | 未证 | 时间盒止 |
+| 声明 | 证明状态 | 未证原因 | 网站分版结论 |
+|---|---|---|---|
+| `MD.Ch06.lennardJonesNonintegrable` | 未证 | 时间盒止 | PASS |
 
-位置：`Blueprint/Ch06.lean:334`；验证：`blueprint/ch06/closeout25/FINAL_COMPILE.log`。
+位置：`Blueprint/Ch06.lean:334`；本地核验记录：`blueprint/ch06/closeout26/FINAL_COMPILE.log`。
 
 ## MD-6.1.3-LennardJonesConfinement
 
@@ -1425,9 +1454,9 @@ theorem lennardJonesConfinement : ∀ ε : ℝ, 0 < ε → ∃ C : ℝ,
 
 | 原文对象或结论 | 当前Lean与范围 |
 |---|---|
-| 原文所选陈述 | 本条所引原句及展示公式；单个记号归入context_notation。 |
-| 对象/域/量词/前提 | 完整当前Lean及依赖定义；新增资格见[EXTRA] |
-| 网站首轮 | PASS：对每个ε>0存在统一C，使所有实q满足εq²−C≤(q⁻¹)^12−(q⁻¹)^6+εq²。取t=(q⁻¹)^6，有t²−t=(t−1/2)²−1/4，因此C=1/4即可，且不依赖ε；实逆元在q=0的总定义也满足该下界。结论是正确的全局二次下界，包含原q>0域。[EXTRA]已明确它只保存公式与控制尾部的估计，签名没有β、可积性或概率归一化结论，不把此下界本身计为完整正则化模型已证。 |
+| 所引原句 | 本条所引原句及展示公式；单个记号归入context_notation。 |
+| 对象、域、量词及前提 | 以上完整声明；额外资格与未覆盖部分见下一段 |
+| 最新网站原始评价 | PASS；首轮保留 |
 
 ### 5. [EXTRA] 与覆盖缺口
 
@@ -1436,16 +1465,17 @@ theorem lennardJonesConfinement : ∀ ε : ℝ, 0 < ε → ∃ C : ℝ,
 ### 6. 审计结论（含网站结论）
 
 网站原返回：PASS。对每个ε>0存在统一C，使所有实q满足εq²−C≤(q⁻¹)^12−(q⁻¹)^6+εq²。取t=(q⁻¹)^6，有t²−t=(t−1/2)²−1/4，因此C=1/4即可，且不依赖ε；实逆元在q=0的总定义也满足该下界。结论是正确的全局二次下界，包含原q>0域。[EXTRA]已明确它只保存公式与控制尾部的估计，签名没有β、可积性或概率归一化结论，不把此下界本身计为完整正则化模型已证。
-本轮处理：保留原审阅版本结论；本轮未改签名。
-本地单文件及逐声明依赖检查通过；含未完成证明依赖的声明仍标未证。原书疑误及修正版分别见勘误，当前修改版未获网站复审结论。
+当前处理：网站PASS（首轮未改版本）。
+保留所交版本的明确结论。
+本地编译和逐声明依赖核对通过。原文疑误、各限定/修正版、反例的评价分别列出；有未完成证明依赖的声明仍为未证。
 
 ### 7. 状态与证明位置
 
-| 声明 | 状态 | 未证原因 |
-|---|---|---|
-| `MD.Ch06.lennardJonesConfinement` | 已证 | — |
+| 声明 | 证明状态 | 未证原因 | 网站分版结论 |
+|---|---|---|---|
+| `MD.Ch06.lennardJonesConfinement` | 已证 | — | PASS |
 
-位置：`Blueprint/Ch06.lean:340`；验证：`blueprint/ch06/closeout25/FINAL_COMPILE.log`。
+位置：`Blueprint/Ch06.lean:340`；本地核验记录：`blueprint/ch06/closeout26/FINAL_COMPILE.log`。
 
 ## MD-6.1.3-PeriodicWeightIntegrable
 
@@ -1474,9 +1504,9 @@ theorem periodicWeightIntegrable {n : ℕ} (U : (Fin n → ℝ) → ℝ)
 
 | 原文对象或结论 | 当前Lean与范围 |
 |---|---|
-| 原文所选陈述 | 本条所引原句及展示公式；单个记号归入context_notation。 |
-| 对象/域/量词/前提 | 完整当前Lean及依赖定义；新增资格见[EXTRA] |
-| 网站首轮 | PASS：实际声明是已标[EXTRA]的正确特例：U全轴C∞且单位周期，β>0，D23的真实周期Gibbs权重关于flatPhaseMeasure n可积。flatPhaseMeasure明确就是单位配置torus上的Haar体积×实动量Lebesgue体积，与权重的定义域一致；周期U在紧torus上有界，配置权重有界，β>0的动量高斯可积，故结论正确。原书一般有限域句子的疑误不使此严格特例的签名FAIL；json_review保留NEEDS_HUMAN以区分原文层面的歧义与本条数学结论PASS。 |
+| 所引原句 | 本条所引原句及展示公式；单个记号归入context_notation。 |
+| 对象、域、量词及前提 | 以上完整声明；额外资格与未覆盖部分见下一段 |
+| 最新网站原始评价 | PASS；首轮保留 |
 
 ### 5. [EXTRA] 与覆盖缺口
 
@@ -1485,16 +1515,17 @@ theorem periodicWeightIntegrable {n : ℕ} (U : (Fin n → ℝ) → ℝ)
 ### 6. 审计结论（含网站结论）
 
 网站原返回：PASS。实际声明是已标[EXTRA]的正确特例：U全轴C∞且单位周期，β>0，D23的真实周期Gibbs权重关于flatPhaseMeasure n可积。flatPhaseMeasure明确就是单位配置torus上的Haar体积×实动量Lebesgue体积，与权重的定义域一致；周期U在紧torus上有界，配置权重有界，β>0的动量高斯可积，故结论正确。原书一般有限域句子的疑误不使此严格特例的签名FAIL；json_review保留NEEDS_HUMAN以区分原文层面的歧义与本条数学结论PASS。
-本轮处理：保留原审阅版本结论；本轮未改签名。
-本地单文件及逐声明依赖检查通过；含未完成证明依赖的声明仍标未证。原书疑误及修正版分别见勘误，当前修改版未获网站复审结论。
+当前处理：网站PASS（首轮未改版本）。
+保留所交版本的明确结论。
+本地编译和逐声明依赖核对通过。原文疑误、各限定/修正版、反例的评价分别列出；有未完成证明依赖的声明仍为未证。
 
 ### 7. 状态与证明位置
 
-| 声明 | 状态 | 未证原因 |
-|---|---|---|
-| `MD.Ch06.periodicWeightIntegrable` | 已证 | — |
+| 声明 | 证明状态 | 未证原因 | 网站分版结论 |
+|---|---|---|---|
+| `MD.Ch06.periodicWeightIntegrable` | 已证 | — | PASS |
 
-位置：`Blueprint/Ch06.lean:352`；验证：`blueprint/ch06/closeout25/FINAL_COMPILE.log`。
+位置：`Blueprint/Ch06.lean:352`；本地核验记录：`blueprint/ch06/closeout26/FINAL_COMPILE.log`。
 
 ## MD-6.1.3-PeriodicPartitionPositive
 
@@ -1521,9 +1552,9 @@ theorem periodicPartitionPositive {N : ℕ}
 
 | 原文对象或结论 | 当前Lean与范围 |
 |---|---|
-| 原文所选陈述 | 本条所引原句及展示公式；单个记号归入context_notation。 |
-| 对象/域/量词/前提 | 完整当前Lean及依赖定义；新增资格见[EXTRA] |
-| 网站首轮 | PASS：U在Fin N→ℝ上光滑、单位周期且β>0，结论是实际实值周期canonical partition严格为正。D20中的积分域/测度与第28条一致，D23权重处处严格正；结合该情形的可积性与非零乘积体积，正性正确，N=0时也不例外。这里是[EXTRA]的真实周期单位质量特例，既未把正性当前提，也不宣称原书的“一般可归一化必需有限”本身等价于本签名；实值积分的有限性须由可积性支撑，不能只因结果类型是ℝ就略过第28条。reusable_proofs仅为复用线索，本轮未检查其未提供证明。 |
+| 所引原句 | 本条所引原句及展示公式；单个记号归入context_notation。 |
+| 对象、域、量词及前提 | 以上完整声明；额外资格与未覆盖部分见下一段 |
+| 最新网站原始评价 | PASS；首轮保留 |
 
 ### 5. [EXTRA] 与覆盖缺口
 
@@ -1532,16 +1563,17 @@ theorem periodicPartitionPositive {N : ℕ}
 ### 6. 审计结论（含网站结论）
 
 网站原返回：PASS。U在Fin N→ℝ上光滑、单位周期且β>0，结论是实际实值周期canonical partition严格为正。D20中的积分域/测度与第28条一致，D23权重处处严格正；结合该情形的可积性与非零乘积体积，正性正确，N=0时也不例外。这里是[EXTRA]的真实周期单位质量特例，既未把正性当前提，也不宣称原书的“一般可归一化必需有限”本身等价于本签名；实值积分的有限性须由可积性支撑，不能只因结果类型是ℝ就略过第28条。reusable_proofs仅为复用线索，本轮未检查其未提供证明。
-本轮处理：保留原审阅版本结论；本轮未改签名。
-本地单文件及逐声明依赖检查通过；含未完成证明依赖的声明仍标未证。原书疑误及修正版分别见勘误，当前修改版未获网站复审结论。
+当前处理：网站PASS（首轮未改版本）。
+保留所交版本的明确结论。
+本地编译和逐声明依赖核对通过。原文疑误、各限定/修正版、反例的评价分别列出；有未完成证明依赖的声明仍为未证。
 
 ### 7. 状态与证明位置
 
-| 声明 | 状态 | 未证原因 |
-|---|---|---|
-| `MD.Ch06.periodicPartitionPositive` | 已证 | — |
+| 声明 | 证明状态 | 未证原因 | 网站分版结论 |
+|---|---|---|---|
+| `MD.Ch06.periodicPartitionPositive` | 已证 | — | PASS |
 
-位置：`Blueprint/Ch06.lean:361`；验证：`blueprint/ch06/closeout25/FINAL_COMPILE.log`。
+位置：`Blueprint/Ch06.lean:361`；本地核验记录：`blueprint/ch06/closeout26/FINAL_COMPILE.log`。
 
 ## MD-6.1.4-PolynomialObservable
 
@@ -1568,9 +1600,9 @@ def polynomialObservable {n : ℕ} (f : textbookLangevinPeriodicPhase n → ℝ)
 
 | 原文对象或结论 | 当前Lean与范围 |
 |---|---|
-| 原文所选陈述 | 本条所引原句及展示公式；单个记号归入context_notation。 |
-| 对象/域/量词/前提 | 完整当前Lean及依赖定义；新增资格见[EXTRA] |
-| 网站首轮 | PASS：对象为单位配置环面×实动量空间。存在统一C≥0、自然数r，对全部配置和动量有全局界。该条件是明确标注的较强增长条件；仅靠环面紧性并不能把任意不连续函数的渐近界升级为全局界，不能把此定义宣称为对所有函数都与原大O等价。对连续可观测量和一致的大O，紧集有界后可作此替换。r=0也允许，仍满足某个正指数的渐近界。 |
+| 所引原句 | 本条所引原句及展示公式；单个记号归入context_notation。 |
+| 对象、域、量词及前提 | 以上完整声明；额外资格与未覆盖部分见下一段 |
+| 最新网站原始评价 | PASS；首轮保留 |
 
 ### 5. [EXTRA] 与覆盖缺口
 
@@ -1579,16 +1611,17 @@ def polynomialObservable {n : ℕ} (f : textbookLangevinPeriodicPhase n → ℝ)
 ### 6. 审计结论（含网站结论）
 
 网站原返回：PASS。对象为单位配置环面×实动量空间。存在统一C≥0、自然数r，对全部配置和动量有全局界。该条件是明确标注的较强增长条件；仅靠环面紧性并不能把任意不连续函数的渐近界升级为全局界，不能把此定义宣称为对所有函数都与原大O等价。对连续可观测量和一致的大O，紧集有界后可作此替换。r=0也允许，仍满足某个正指数的渐近界。
-本轮处理：保留原审阅版本结论；本轮未改签名。
-本地单文件及逐声明依赖检查通过；含未完成证明依赖的声明仍标未证。原书疑误及修正版分别见勘误，当前修改版未获网站复审结论。
+当前处理：网站PASS（首轮未改版本）。
+保留所交版本的明确结论。
+本地编译和逐声明依赖核对通过。原文疑误、各限定/修正版、反例的评价分别列出；有未完成证明依赖的声明仍为未证。
 
 ### 7. 状态与证明位置
 
-| 声明 | 状态 | 未证原因 |
-|---|---|---|
-| `MD.Ch06.polynomialObservable` | 定义 | — |
+| 声明 | 证明状态 | 未证原因 | 网站分版结论 |
+|---|---|---|---|
+| `MD.Ch06.polynomialObservable` | 定义 | — | PASS |
 
-位置：`Blueprint/Ch06.lean:368`；验证：`blueprint/ch06/closeout25/FINAL_COMPILE.log`。
+位置：`Blueprint/Ch06.lean:368`；本地核验记录：`blueprint/ch06/closeout26/FINAL_COMPILE.log`。
 
 ## MD-6.1.4-CanonicalAveragePrinted
 
@@ -1612,7 +1645,7 @@ def canonicalAveragePrinted {Nc : ℕ} (H : SymplecticCoordinates Nc → ℝ) (�
     ∫ z, f z * MolecularDynamics.Chapter06Review.canonicalDensity volume H β z
 ```
 
-同问题的独立修正版（位于另一source_id）：
+同问题的独立限定/修正版（位于另一条）：
 ```lean
 noncomputable def canonicalAveragePrinted_corrected {Nc : ℕ}
     (H : SymplecticCoordinates Nc → ℝ) (β : ℝ) (f : SymplecticCoordinates Nc → ℝ) : ℝ :=
@@ -1623,27 +1656,28 @@ noncomputable def canonicalAveragePrinted_corrected {Nc : ℕ}
 
 | 原文对象或结论 | 当前Lean与范围 |
 |---|---|
-| 原文所选陈述 | 本条所引原句及展示公式；单个记号归入context_notation。 |
-| 对象/域/量词/前提 | 完整当前Lean及依赖定义；新增资格见[EXTRA] |
-| 网站首轮 | NEEDS_HUMAN：Printed定义确实在D1已归一密度之外又乘D2的Z倒数；全实相空间、H、β、f的类型一致。作为原书字面定义忠实，不能因其非标准平均而判签名FAIL；原书与(6.3)及p.221用法冲突，须人工处理。修正版已在条目5给出，需分别看待。 |
+| 所引原句 | 本条所引原句及展示公式；单个记号归入context_notation。 |
+| 对象、域、量词及前提 | 以上完整声明；额外资格与未覆盖部分见下一段 |
+| 最新网站原始评价 | NEEDS_HUMAN；首轮保留 |
 
 ### 5. [EXTRA] 与覆盖缺口
 
-- [EXTRA] 25号：原文版忠实性与数学疑误分开；补齐所交条目所属的现有_corrected完整签名，不从repair_log名称推断网站已通过修正版。
+- [EXTRA] 原文版忠实性与数学疑误分开；补齐所交条目所属的现有_corrected完整签名，不从repair_log名称推断网站已通过修正版。
 
 ### 6. 审计结论（含网站结论）
 
 网站原返回：NEEDS_HUMAN。Printed定义确实在D1已归一密度之外又乘D2的Z倒数；全实相空间、H、β、f的类型一致。作为原书字面定义忠实，不能因其非标准平均而判签名FAIL；原书与(6.3)及p.221用法冲突，须人工处理。修正版已在条目5给出，需分别看待。
-本轮处理：原文版忠实性与数学疑误分开；补齐所交条目所属的现有_corrected完整签名，不从repair_log名称推断网站已通过修正版。
-本地单文件及逐声明依赖检查通过；含未完成证明依赖的声明仍标未证。原书疑误及修正版分别见勘误，当前修改版未获网站复审结论。
+当前处理：原文疑误或语义范围待导师；不冒称未提供版本已通过。
+保留所交版本的明确结论。
+本地编译和逐声明依赖核对通过。原文疑误、各限定/修正版、反例的评价分别列出；有未完成证明依赖的声明仍为未证。
 
 ### 7. 状态与证明位置
 
-| 声明 | 状态 | 未证原因 |
-|---|---|---|
-| `MD.Ch06.canonicalAveragePrinted` | 定义 | — |
+| 声明 | 证明状态 | 未证原因 | 网站分版结论 |
+|---|---|---|---|
+| `MD.Ch06.canonicalAveragePrinted` | 定义 | — | 原文忠实性PASS；原书数学/范围NEEDS_HUMAN |
 
-位置：`Blueprint/Ch06.lean:374`；验证：`blueprint/ch06/closeout25/FINAL_COMPILE.log`。
+位置：`Blueprint/Ch06.lean:374`；本地核验记录：`blueprint/ch06/closeout26/FINAL_COMPILE.log`。
 
 ## MD-6.1.4-CanonicalAverage
 
@@ -1675,9 +1709,9 @@ noncomputable def canonicalAveragePrinted_corrected {Nc : ℕ}
 
 | 原文对象或结论 | 当前Lean与范围 |
 |---|---|
-| 原文所选陈述 | 本条所引原句及展示公式；单个记号归入context_notation。 |
-| 对象/域/量词/前提 | 完整当前Lean及依赖定义；新增资格见[EXTRA] |
-| 网站首轮 | PASS：canonicalAverage与canonicalAveragePrinted_corrected均为D2真实partition倒数乘未归一权重积分，只含一个归一化因子。两者对同一全实相空间及任意H、β、f定义；无可积性前提是总定义的延拓，不表示任意输入都已是概率平均。修正与p.221一致，合理且定义正确。 |
+| 所引原句 | 本条所引原句及展示公式；单个记号归入context_notation。 |
+| 对象、域、量词及前提 | 以上完整声明；额外资格与未覆盖部分见下一段 |
+| 最新网站原始评价 | PASS；首轮保留 |
 
 ### 5. [EXTRA] 与覆盖缺口
 
@@ -1686,17 +1720,18 @@ noncomputable def canonicalAveragePrinted_corrected {Nc : ℕ}
 ### 6. 审计结论（含网站结论）
 
 网站原返回：PASS。canonicalAverage与canonicalAveragePrinted_corrected均为D2真实partition倒数乘未归一权重积分，只含一个归一化因子。两者对同一全实相空间及任意H、β、f定义；无可积性前提是总定义的延拓，不表示任意输入都已是概率平均。修正与p.221一致，合理且定义正确。
-本轮处理：保留原审阅版本结论；本轮未改签名。
-本地单文件及逐声明依赖检查通过；含未完成证明依赖的声明仍标未证。原书疑误及修正版分别见勘误，当前修改版未获网站复审结论。
+当前处理：网站PASS（首轮未改版本）。
+保留所交版本的明确结论。
+本地编译和逐声明依赖核对通过。原文疑误、各限定/修正版、反例的评价分别列出；有未完成证明依赖的声明仍为未证。
 
 ### 7. 状态与证明位置
 
-| 声明 | 状态 | 未证原因 |
-|---|---|---|
-| `MD.Ch06.canonicalAverage` | 定义 | — |
-| `MD.Ch06.canonicalAveragePrinted_corrected` | 定义 | — |
+| 声明 | 证明状态 | 未证原因 | 网站分版结论 |
+|---|---|---|---|
+| `MD.Ch06.canonicalAverage` | 定义 | — | PASS |
+| `MD.Ch06.canonicalAveragePrinted_corrected` | 定义 | — | 未获单独PASS；见分版意见 |
 
-位置：`Blueprint/Ch06.lean:381`；验证：`blueprint/ch06/closeout25/FINAL_COMPILE.log`。
+位置：`Blueprint/Ch06.lean:381`；本地核验记录：`blueprint/ch06/closeout26/FINAL_COMPILE.log`。
 
 ## MD-6.1.4-CanonicalAverageOne
 
@@ -1724,9 +1759,9 @@ theorem canonicalAverageOne {Nc : ℕ}
 
 | 原文对象或结论 | 当前Lean与范围 |
 |---|---|
-| 原文所选陈述 | 本条所引原句及展示公式；单个记号归入context_notation。 |
-| 对象/域/量词/前提 | 完整当前Lean及依赖定义；新增资格见[EXTRA] |
-| 网站首轮 | PASS：∀Nc、H、β；hρ为整个实相空间权重可积。正指数在非零Lebesgue测度上可积，积分自动严格正（Nc=0时单点体积亦为1），故不缺Z≠0前提。D4积分化为Z⁻¹Z=1。[EXTRA]正确地区分了Printed错误平均。 |
+| 所引原句 | 本条所引原句及展示公式；单个记号归入context_notation。 |
+| 对象、域、量词及前提 | 以上完整声明；额外资格与未覆盖部分见下一段 |
+| 最新网站原始评价 | PASS；首轮保留 |
 
 ### 5. [EXTRA] 与覆盖缺口
 
@@ -1735,16 +1770,17 @@ theorem canonicalAverageOne {Nc : ℕ}
 ### 6. 审计结论（含网站结论）
 
 网站原返回：PASS。∀Nc、H、β；hρ为整个实相空间权重可积。正指数在非零Lebesgue测度上可积，积分自动严格正（Nc=0时单点体积亦为1），故不缺Z≠0前提。D4积分化为Z⁻¹Z=1。[EXTRA]正确地区分了Printed错误平均。
-本轮处理：保留原审阅版本结论；本轮未改签名。
-本地单文件及逐声明依赖检查通过；含未完成证明依赖的声明仍标未证。原书疑误及修正版分别见勘误，当前修改版未获网站复审结论。
+当前处理：网站PASS（首轮未改版本）。
+保留所交版本的明确结论。
+本地编译和逐声明依赖核对通过。原文疑误、各限定/修正版、反例的评价分别列出；有未完成证明依赖的声明仍为未证。
 
 ### 7. 状态与证明位置
 
-| 声明 | 状态 | 未证原因 |
-|---|---|---|
-| `MD.Ch06.canonicalAverageOne` | 已证 | — |
+| 声明 | 证明状态 | 未证原因 | 网站分版结论 |
+|---|---|---|---|
+| `MD.Ch06.canonicalAverageOne` | 已证 | — | PASS |
 
-位置：`Blueprint/Ch06.lean:392`；验证：`blueprint/ch06/closeout25/FINAL_COMPILE.log`。
+位置：`Blueprint/Ch06.lean:392`；本地核验记录：`blueprint/ch06/closeout26/FINAL_COMPILE.log`。
 
 ## MD-6.1.5-Equipartition
 
@@ -1781,9 +1817,9 @@ theorem equipartition :
 
 | 原文对象或结论 | 当前Lean与范围 |
 |---|---|
-| 原文所选陈述 | 本条所引原句及展示公式；单个记号归入context_notation。 |
-| 对象/域/量词/前提 | 完整当前Lean及依赖定义；新增资格见[EXTRA] |
-| 网站首轮 | PASS：V n=Fin n→ℝ，Phase n=V n×V n；D5含每坐标质量。全部质量正、β正、配置权重可积且积分正；高斯动量因子给出每个i的p_i²平均=m_i/β及总和平均=n/β，二者均保留。n=0结论仍成立；β⁻¹=kBT作为物理记号替换已标明。 |
+| 所引原句 | 本条所引原句及展示公式；单个记号归入context_notation。 |
+| 对象、域、量词及前提 | 以上完整声明；额外资格与未覆盖部分见下一段 |
+| 最新网站原始评价 | PASS；首轮保留 |
 
 ### 5. [EXTRA] 与覆盖缺口
 
@@ -1792,16 +1828,17 @@ theorem equipartition :
 ### 6. 审计结论（含网站结论）
 
 网站原返回：PASS。V n=Fin n→ℝ，Phase n=V n×V n；D5含每坐标质量。全部质量正、β正、配置权重可积且积分正；高斯动量因子给出每个i的p_i²平均=m_i/β及总和平均=n/β，二者均保留。n=0结论仍成立；β⁻¹=kBT作为物理记号替换已标明。
-本轮处理：保留原审阅版本结论；本轮未改签名。
-本地单文件及逐声明依赖检查通过；含未完成证明依赖的声明仍标未证。原书疑误及修正版分别见勘误，当前修改版未获网站复审结论。
+当前处理：网站PASS（首轮未改版本）。
+保留所交版本的明确结论。
+本地编译和逐声明依赖核对通过。原文疑误、各限定/修正版、反例的评价分别列出；有未完成证明依赖的声明仍为未证。
 
 ### 7. 状态与证明位置
 
-| 声明 | 状态 | 未证原因 |
-|---|---|---|
-| `MD.Ch06.equipartition` | 未证 | 时间盒止 |
+| 声明 | 证明状态 | 未证原因 | 网站分版结论 |
+|---|---|---|---|
+| `MD.Ch06.equipartition` | 未证 | 时间盒止 | PASS |
 
-位置：`Blueprint/Ch06.lean:400`；验证：`blueprint/ch06/closeout25/FINAL_COMPILE.log`。
+位置：`Blueprint/Ch06.lean:400`；本地核验记录：`blueprint/ch06/closeout26/FINAL_COMPILE.log`。
 
 ## MD-6.1.5-ConfigurationalTemperature
 
@@ -1835,9 +1872,9 @@ theorem configTemperature :
 
 | 原文对象或结论 | 当前Lean与范围 |
 |---|---|
-| 原文所选陈述 | 本条所引原句及展示公式；单个记号归入context_notation。 |
-| 对象/域/量词/前提 | 完整当前Lean及依赖定义；新增资格见[EXTRA] |
-| 网站首轮 | PASS：C²U、β>0、配置权重可积、逐坐标三类加权导数可积及拉普拉斯加权积分正。D7为真实坐标偏导；分子为欧氏梯度平方的坐标和，分母为拉普拉斯。对∂iU exp(-βU)作全空间W¹,¹分部积分即有分母=β分子，正分母允许相除；共同partition消去，结论确为β⁻¹。 |
+| 所引原句 | 本条所引原句及展示公式；单个记号归入context_notation。 |
+| 对象、域、量词及前提 | 以上完整声明；额外资格与未覆盖部分见下一段 |
+| 最新网站原始评价 | PASS；首轮保留 |
 
 ### 5. [EXTRA] 与覆盖缺口
 
@@ -1846,16 +1883,17 @@ theorem configTemperature :
 ### 6. 审计结论（含网站结论）
 
 网站原返回：PASS。C²U、β>0、配置权重可积、逐坐标三类加权导数可积及拉普拉斯加权积分正。D7为真实坐标偏导；分子为欧氏梯度平方的坐标和，分母为拉普拉斯。对∂iU exp(-βU)作全空间W¹,¹分部积分即有分母=β分子，正分母允许相除；共同partition消去，结论确为β⁻¹。
-本轮处理：保留原审阅版本结论；本轮未改签名。
-本地单文件及逐声明依赖检查通过；含未完成证明依赖的声明仍标未证。原书疑误及修正版分别见勘误，当前修改版未获网站复审结论。
+当前处理：网站PASS（首轮未改版本）。
+保留所交版本的明确结论。
+本地编译和逐声明依赖核对通过。原文疑误、各限定/修正版、反例的评价分别列出；有未完成证明依赖的声明仍为未证。
 
 ### 7. 状态与证明位置
 
-| 声明 | 状态 | 未证原因 |
-|---|---|---|
-| `MD.Ch06.configTemperature` | 未证 | 缺大型理论 |
+| 声明 | 证明状态 | 未证原因 | 网站分版结论 |
+|---|---|---|---|
+| `MD.Ch06.configTemperature` | 未证 | 缺大型理论 | PASS |
 
-位置：`Blueprint/Ch06.lean:410`；验证：`blueprint/ch06/closeout25/FINAL_COMPILE.log`。
+位置：`Blueprint/Ch06.lean:410`；本地核验记录：`blueprint/ch06/closeout26/FINAL_COMPILE.log`。
 
 ## MD-6.1.5-Proposition61
 
@@ -1916,29 +1954,30 @@ theorem proposition61_corrected {Nc : ℕ}
 
 | 原文对象或结论 | 当前Lean与范围 |
 |---|---|
-| 原文所选陈述 | 本条所引原句及展示公式；单个记号归入context_notation。 |
-| 对象/域/量词/前提 | 完整当前Lean及依赖定义；新增资格见[EXTRA] |
-| 网站首轮 | NEEDS_HUMAN：相空间为(Fin Nc⊕Fin Nc)→ℝ，维数2Nc；kB,T正，H,G为C¹，真实权重及两个加权观测量可积，加权向量场有统一界，平均散度严格正。D8为导数迹、D9为dH(G)，比值方向正确。原文的逐点有限条件被明确加强为统一有界；原证明以球体积除两边后取极限只能得到0=0，不能据此恢复未缩放积分恒等式，不能按原证明认证。加强前提下的恒等式可另用权重层集截断证明，非此处已提供证明。 |
+| 所引原句 | 本条所引原句及展示公式；单个记号归入context_notation。 |
+| 对象、域、量词及前提 | 以上完整声明；额外资格与未覆盖部分见下一段 |
+| 最新网站原始评价 | NEEDS_HUMAN；复审 |
 
 ### 5. [EXTRA] 与覆盖缺口
 
 - [EXTRA]正kB,T、实际C¹ H,G、Gibbs及两个加权可观测量可积，分母严格正；原|Ge⁻βH|<∞解释为统一有界C≥0，不采用仅逐点有限的空洞条件。
-- [EXTRA] 25号：所交为显式加强条件的温度恒等式；原证明除以球体积后取极限只给0=0，保留原证明并登记缺口；原下标和体积元依网站原页修订，未认证原论证。
+- [EXTRA] 所交为显式加强条件的温度恒等式；原证明除以球体积后取极限只给0=0，保留原证明并登记缺口；原下标和体积元依网站原页修订，未认证原论证。
 
 ### 6. 审计结论（含网站结论）
 
-网站原返回：NEEDS_HUMAN。相空间为(Fin Nc⊕Fin Nc)→ℝ，维数2Nc；kB,T正，H,G为C¹，真实权重及两个加权观测量可积，加权向量场有统一界，平均散度严格正。D8为导数迹、D9为dH(G)，比值方向正确。原文的逐点有限条件被明确加强为统一有界；原证明以球体积除两边后取极限只能得到0=0，不能据此恢复未缩放积分恒等式，不能按原证明认证。加强前提下的恒等式可另用权重层集截断证明，非此处已提供证明。
-本轮处理：所交为显式加强条件的温度恒等式；原证明除以球体积后取极限只给0=0，保留原证明并登记缺口；原下标和体积元依网站原页修订，未认证原论证。
-本地单文件及逐声明依赖检查通过；含未完成证明依赖的声明仍标未证。原书疑误及修正版分别见勘误，当前修改版未获网站复审结论。
+网站原返回：NEEDS_HUMAN。proposition61及proposition61_corrected签名相同：在2Nc维实相空间，kB,T>0、H,G为C¹、Gibbs权重及散度/能量方向导数乘权重可积、权重乘G统一有界、归一散度平均严格正，推出kB*T为两归一平均之比。GibbsWeight=exp(-βH)、partition=积分、average=Z⁻¹乘加权积分、LieDerivative=fderiv H(G)、divergence=trace(DG)，均吻合。上述加强条件足以用截断IBP证明；两签名PASS。原书仅由边界/体积→0，不能推出未缩放积分相等，故本条整体NEEDS_HUMAN；不能把调用现有定理当作原书证明通过。
+当前处理：修正版/限定声明=网站PASS；原文疑误或范围解释待导师。
+保留所交版本的明确结论。
+本地编译和逐声明依赖核对通过。原文疑误、各限定/修正版、反例的评价分别列出；有未完成证明依赖的声明仍为未证。
 
 ### 7. 状态与证明位置
 
-| 声明 | 状态 | 未证原因 |
-|---|---|---|
-| `MD.Ch06.proposition61` | 已证 | — |
-| `MD.Ch06.proposition61_corrected` | 已证 | — |
+| 声明 | 证明状态 | 未证原因 | 网站分版结论 |
+|---|---|---|---|
+| `MD.Ch06.proposition61` | 已证 | — | PASS |
+| `MD.Ch06.proposition61_corrected` | 已证 | — | PASS |
 
-位置：`Blueprint/Ch06.lean:424`；验证：`blueprint/ch06/closeout25/FINAL_COMPILE.log`。
+位置：`Blueprint/Ch06.lean:424`；本地核验记录：`blueprint/ch06/closeout26/FINAL_COMPILE.log`。
 
 ## MD-6.1.5-WeightedFluxZero
 
@@ -1972,9 +2011,9 @@ theorem weightedFluxZero {Nc : ℕ}
 
 | 原文对象或结论 | 当前Lean与范围 |
 |---|---|
-| 原文所选陈述 | 本条所引原句及展示公式；单个记号归入context_notation。 |
-| 对象/域/量词/前提 | 完整当前Lean及依赖定义；新增资格见[EXTRA] |
-| 网站首轮 | PASS：任意β、C¹H,G；权重、散度项、能量项可积及F=exp(-βH)G统一有界。结论是实际∫divF=0而非将通量消失作前提。可用w=exp(-βH)>0的层集截断：divF和F·∇log w可积，w≥ε部分有限体积且F有界，空间截断后再令ε趋0。原书单纯除球体积的论证不够，但这里的加强前提可支持该结论。 |
+| 所引原句 | 本条所引原句及展示公式；单个记号归入context_notation。 |
+| 对象、域、量词及前提 | 以上完整声明；额外资格与未覆盖部分见下一段 |
+| 最新网站原始评价 | PASS；首轮保留 |
 
 ### 5. [EXTRA] 与覆盖缺口
 
@@ -1983,16 +2022,17 @@ theorem weightedFluxZero {Nc : ℕ}
 ### 6. 审计结论（含网站结论）
 
 网站原返回：PASS。任意β、C¹H,G；权重、散度项、能量项可积及F=exp(-βH)G统一有界。结论是实际∫divF=0而非将通量消失作前提。可用w=exp(-βH)>0的层集截断：divF和F·∇log w可积，w≥ε部分有限体积且F有界，空间截断后再令ε趋0。原书单纯除球体积的论证不够，但这里的加强前提可支持该结论。
-本轮处理：保留原审阅版本结论；本轮未改签名。
-本地单文件及逐声明依赖检查通过；含未完成证明依赖的声明仍标未证。原书疑误及修正版分别见勘误，当前修改版未获网站复审结论。
+当前处理：网站PASS（首轮未改版本）。
+保留所交版本的明确结论。
+本地编译和逐声明依赖核对通过。原文疑误、各限定/修正版、反例的评价分别列出；有未完成证明依赖的声明仍为未证。
 
 ### 7. 状态与证明位置
 
-| 声明 | 状态 | 未证原因 |
-|---|---|---|
-| `MD.Ch06.weightedFluxZero` | 已证 | — |
+| 声明 | 证明状态 | 未证原因 | 网站分版结论 |
+|---|---|---|---|
+| `MD.Ch06.weightedFluxZero` | 已证 | — | PASS |
 
-位置：`Blueprint/Ch06.lean:455`；验证：`blueprint/ch06/closeout25/FINAL_COMPILE.log`。
+位置：`Blueprint/Ch06.lean:455`；本地核验记录：`blueprint/ch06/closeout26/FINAL_COMPILE.log`。
 
 ## MD-6.1.5-CanonicalDivergenceIdentity
 
@@ -2026,9 +2066,9 @@ theorem canonicalDivergenceIdentity {Nc : ℕ}
 
 | 原文对象或结论 | 当前Lean与范围 |
 |---|---|
-| 原文所选陈述 | 本条所引原句及展示公式；单个记号归入context_notation。 |
-| 对象/域/量词/前提 | 完整当前Lean及依赖定义；新增资格见[EXTRA] |
-| 网站首轮 | PASS：与条目10相同完整对象及前提，D4仅在外面乘共同Z⁻¹。由div(wG)=w divG-βw dH(G)及条目10类型的积分恒等式得Av(divG)=βAv(dH(G))，无需β正也无需把恒等式预设；[EXTRA]与实际一致。 |
+| 所引原句 | 本条所引原句及展示公式；单个记号归入context_notation。 |
+| 对象、域、量词及前提 | 以上完整声明；额外资格与未覆盖部分见下一段 |
+| 最新网站原始评价 | PASS；首轮保留 |
 
 ### 5. [EXTRA] 与覆盖缺口
 
@@ -2037,16 +2077,17 @@ theorem canonicalDivergenceIdentity {Nc : ℕ}
 ### 6. 审计结论（含网站结论）
 
 网站原返回：PASS。与条目10相同完整对象及前提，D4仅在外面乘共同Z⁻¹。由div(wG)=w divG-βw dH(G)及条目10类型的积分恒等式得Av(divG)=βAv(dH(G))，无需β正也无需把恒等式预设；[EXTRA]与实际一致。
-本轮处理：保留原审阅版本结论；本轮未改签名。
-本地单文件及逐声明依赖检查通过；含未完成证明依赖的声明仍标未证。原书疑误及修正版分别见勘误，当前修改版未获网站复审结论。
+当前处理：网站PASS（首轮未改版本）。
+保留所交版本的明确结论。
+本地编译和逐声明依赖核对通过。原文疑误、各限定/修正版、反例的评价分别列出；有未完成证明依赖的声明仍为未证。
 
 ### 7. 状态与证明位置
 
-| 声明 | 状态 | 未证原因 |
-|---|---|---|
-| `MD.Ch06.canonicalDivergenceIdentity` | 已证 | — |
+| 声明 | 证明状态 | 未证原因 | 网站分版结论 |
+|---|---|---|---|
+| `MD.Ch06.canonicalDivergenceIdentity` | 已证 | — | PASS |
 
-位置：`Blueprint/Ch06.lean:468`；验证：`blueprint/ch06/closeout25/FINAL_COMPILE.log`。
+位置：`Blueprint/Ch06.lean:468`；本地核验记录：`blueprint/ch06/closeout26/FINAL_COMPILE.log`。
 
 ## MD-6.1.5-TemperatureChoiceDerivatives
 
@@ -2079,9 +2120,9 @@ theorem temperatureChoiceDerivatives :
 
 | 原文对象或结论 | 当前Lean与范围 |
 |---|---|
-| 原文所选陈述 | 本条所引原句及展示公式；单个记号归入context_notation。 |
-| 对象/域/量词/前提 | 完整当前Lean及依赖定义；新增资格见[EXTRA] |
-| 网站首轮 | PASS：∀n,m,U,q,p，全部质量正及C²U。D5在三个实际切向量(0,p)、(∂U,0)、(q,0)上的Fréchet导数，分别为动能二倍、梯度平方和、virial坐标和，三个合取完整。它没有计算散度或平均温度，但此范围缩小已由[EXTRA]明确说明，完整公式另列条目7、8、16。 |
+| 所引原句 | 本条所引原句及展示公式；单个记号归入context_notation。 |
+| 对象、域、量词及前提 | 以上完整声明；额外资格与未覆盖部分见下一段 |
+| 最新网站原始评价 | PASS；首轮保留 |
 
 ### 5. [EXTRA] 与覆盖缺口
 
@@ -2090,16 +2131,17 @@ theorem temperatureChoiceDerivatives :
 ### 6. 审计结论（含网站结论）
 
 网站原返回：PASS。∀n,m,U,q,p，全部质量正及C²U。D5在三个实际切向量(0,p)、(∂U,0)、(q,0)上的Fréchet导数，分别为动能二倍、梯度平方和、virial坐标和，三个合取完整。它没有计算散度或平均温度，但此范围缩小已由[EXTRA]明确说明，完整公式另列条目7、8、16。
-本轮处理：保留原审阅版本结论；本轮未改签名。
-本地单文件及逐声明依赖检查通过；含未完成证明依赖的声明仍标未证。原书疑误及修正版分别见勘误，当前修改版未获网站复审结论。
+当前处理：网站PASS（首轮未改版本）。
+保留所交版本的明确结论。
+本地编译和逐声明依赖核对通过。原文疑误、各限定/修正版、反例的评价分别列出；有未完成证明依赖的声明仍为未证。
 
 ### 7. 状态与证明位置
 
-| 声明 | 状态 | 未证原因 |
-|---|---|---|
-| `MD.Ch06.temperatureChoiceDerivatives` | 未证 | 时间盒止 |
+| 声明 | 证明状态 | 未证原因 | 网站分版结论 |
+|---|---|---|---|
+| `MD.Ch06.temperatureChoiceDerivatives` | 未证 | 时间盒止 | PASS |
 
-位置：`Blueprint/Ch06.lean:482`；验证：`blueprint/ch06/closeout25/FINAL_COMPILE.log`。
+位置：`Blueprint/Ch06.lean:482`；本地核验记录：`blueprint/ch06/closeout26/FINAL_COMPILE.log`。
 
 ## MD-6.1.5-PeriodicBoundaryCancellation
 
@@ -2129,9 +2171,9 @@ theorem periodicBoundaryCancellation {Nc : ℕ}
 
 | 原文对象或结论 | 当前Lean与范围 |
 |---|---|
-| 原文所选陈述 | 本条所引原句及展示公式；单个记号归入context_notation。 |
-| 对象/域/量词/前提 | 完整当前Lean及依赖定义；新增资格见[EXTRA] |
-| 网站首轮 | PASS：F为Fin Nc索引的真实配置向量场分量；各分量C∞且对全部整数向量平移周期。配置域为Icc 0 1，D7的同坐标偏导求和。逐坐标基本定理及对面周期值相等使积分为0。光滑性较原C¹强、单位盒及固定p截面均已标[EXTRA]，没有声称动量无穷尾部自动可积。 |
+| 所引原句 | 本条所引原句及展示公式；单个记号归入context_notation。 |
+| 对象、域、量词及前提 | 以上完整声明；额外资格与未覆盖部分见下一段 |
+| 最新网站原始评价 | PASS；首轮保留 |
 
 ### 5. [EXTRA] 与覆盖缺口
 
@@ -2140,16 +2182,17 @@ theorem periodicBoundaryCancellation {Nc : ℕ}
 ### 6. 审计结论（含网站结论）
 
 网站原返回：PASS。F为Fin Nc索引的真实配置向量场分量；各分量C∞且对全部整数向量平移周期。配置域为Icc 0 1，D7的同坐标偏导求和。逐坐标基本定理及对面周期值相等使积分为0。光滑性较原C¹强、单位盒及固定p截面均已标[EXTRA]，没有声称动量无穷尾部自动可积。
-本轮处理：保留原审阅版本结论；本轮未改签名。
-本地单文件及逐声明依赖检查通过；含未完成证明依赖的声明仍标未证。原书疑误及修正版分别见勘误，当前修改版未获网站复审结论。
+当前处理：网站PASS（首轮未改版本）。
+保留所交版本的明确结论。
+本地编译和逐声明依赖核对通过。原文疑误、各限定/修正版、反例的评价分别列出；有未完成证明依赖的声明仍为未证。
 
 ### 7. 状态与证明位置
 
-| 声明 | 状态 | 未证原因 |
-|---|---|---|
-| `MD.Ch06.periodicBoundaryCancellation` | 已证 | — |
+| 声明 | 证明状态 | 未证原因 | 网站分版结论 |
+|---|---|---|---|
+| `MD.Ch06.periodicBoundaryCancellation` | 已证 | — | PASS |
 
-位置：`Blueprint/Ch06.lean:493`；验证：`blueprint/ch06/closeout25/FINAL_COMPILE.log`。
+位置：`Blueprint/Ch06.lean:493`；本地核验记录：`blueprint/ch06/closeout26/FINAL_COMPILE.log`。
 
 ## MD-6.1.3-MeanEnergyConstraint
 
@@ -2177,9 +2220,9 @@ def meanEnergyConstraint {D : Type*} [MeasurableSpace D] (ν : Measure D)
 
 | 原文对象或结论 | 当前Lean与范围 |
 |---|---|
-| 原文所选陈述 | 本条所引原句及展示公式；单个记号归入context_notation。 |
-| 对象/域/量词/前提 | 完整当前Lean及依赖定义；新增资格见[EXTRA] |
-| 网站首轮 | PASS：对任意可测D、测度ν、实值Hamiltonian H及实β,meanEnergy，定义命题为∫H exp(−βH)/∫exp(−βH)=meanEnergy；两处测度相同，权重与分式方向正确。它只是确定β所需的约束定义，没有为任意给定能量伪造β存在或唯一性。Lean积分和实除法是总定义，若分母为0仍会得到形式命题，故必须连同输入已注明的物理适用条件理解，不能把定义本身当成非退化概率期望的存在定理。 |
+| 所引原句 | 本条所引原句及展示公式；单个记号归入context_notation。 |
+| 对象、域、量词及前提 | 以上完整声明；额外资格与未覆盖部分见下一段 |
+| 最新网站原始评价 | PASS；首轮保留 |
 
 ### 5. [EXTRA] 与覆盖缺口
 
@@ -2188,16 +2231,17 @@ def meanEnergyConstraint {D : Type*} [MeasurableSpace D] (ν : Measure D)
 ### 6. 审计结论（含网站结论）
 
 网站原返回：PASS。对任意可测D、测度ν、实值Hamiltonian H及实β,meanEnergy，定义命题为∫H exp(−βH)/∫exp(−βH)=meanEnergy；两处测度相同，权重与分式方向正确。它只是确定β所需的约束定义，没有为任意给定能量伪造β存在或唯一性。Lean积分和实除法是总定义，若分母为0仍会得到形式命题，故必须连同输入已注明的物理适用条件理解，不能把定义本身当成非退化概率期望的存在定理。
-本轮处理：保留原审阅版本结论；本轮未改签名。
-本地单文件及逐声明依赖检查通过；含未完成证明依赖的声明仍标未证。原书疑误及修正版分别见勘误，当前修改版未获网站复审结论。
+当前处理：网站PASS（首轮未改版本）。
+保留所交版本的明确结论。
+本地编译和逐声明依赖核对通过。原文疑误、各限定/修正版、反例的评价分别列出；有未完成证明依赖的声明仍为未证。
 
 ### 7. 状态与证明位置
 
-| 声明 | 状态 | 未证原因 |
-|---|---|---|
-| `MD.Ch06.meanEnergyConstraint` | 定义 | — |
+| 声明 | 证明状态 | 未证原因 | 网站分版结论 |
+|---|---|---|---|
+| `MD.Ch06.meanEnergyConstraint` | 定义 | — | PASS |
 
-位置：`Blueprint/Ch06.lean:502`；验证：`blueprint/ch06/closeout25/FINAL_COMPILE.log`。
+位置：`Blueprint/Ch06.lean:502`；本地核验记录：`blueprint/ch06/closeout26/FINAL_COMPILE.log`。
 
 ## MD-6.1.3-DensityNormalization
 
@@ -2228,9 +2272,9 @@ theorem densityNormalization : ∀ {D : Type*} [MeasurableSpace D] (ν : Measure
 
 | 原文对象或结论 | 当前Lean与范围 |
 |---|---|
-| 原文所选陈述 | 本条所引原句及展示公式；单个记号归入context_notation。 |
-| 对象/域/量词/前提 | 完整当前Lean及依赖定义；新增资格见[EXTRA] |
-| 网站首轮 | PASS：任意类型D及其可测结构、任意参考测度ν；H与β任意。D1为exp(-βH)/实际积分。权重可积及积分严格正恰使积分等于Z/Z=1；无循环前提。[EXTRA]准确。 |
+| 所引原句 | 本条所引原句及展示公式；单个记号归入context_notation。 |
+| 对象、域、量词及前提 | 以上完整声明；额外资格与未覆盖部分见下一段 |
+| 最新网站原始评价 | PASS；首轮保留 |
 
 ### 5. [EXTRA] 与覆盖缺口
 
@@ -2239,16 +2283,17 @@ theorem densityNormalization : ∀ {D : Type*} [MeasurableSpace D] (ν : Measure
 ### 6. 审计结论（含网站结论）
 
 网站原返回：PASS。任意类型D及其可测结构、任意参考测度ν；H与β任意。D1为exp(-βH)/实际积分。权重可积及积分严格正恰使积分等于Z/Z=1；无循环前提。[EXTRA]准确。
-本轮处理：保留原审阅版本结论；本轮未改签名。
-本地单文件及逐声明依赖检查通过；含未完成证明依赖的声明仍标未证。原书疑误及修正版分别见勘误，当前修改版未获网站复审结论。
+当前处理：网站PASS（首轮未改版本）。
+保留所交版本的明确结论。
+本地编译和逐声明依赖核对通过。原文疑误、各限定/修正版、反例的评价分别列出；有未完成证明依赖的声明仍为未证。
 
 ### 7. 状态与证明位置
 
-| 声明 | 状态 | 未证原因 |
-|---|---|---|
-| `MD.Ch06.densityNormalization` | 已证 | — |
+| 声明 | 证明状态 | 未证原因 | 网站分版结论 |
+|---|---|---|---|
+| `MD.Ch06.densityNormalization` | 已证 | — | PASS |
 
-位置：`Blueprint/Ch06.lean:508`；验证：`blueprint/ch06/closeout25/FINAL_COMPILE.log`。
+位置：`Blueprint/Ch06.lean:508`；本地核验记录：`blueprint/ch06/closeout26/FINAL_COMPILE.log`。
 
 ## MD-6.1.5-PartitionInversePrinted
 
@@ -2291,28 +2336,29 @@ def partitionInversePrinted_corrected {n : ℕ} (m : Fin n → ℝ)
 
 | 原文对象或结论 | 当前Lean与范围 |
 |---|---|
-| 原文所选陈述 | 本条所引原句及展示公式；单个记号归入context_notation。 |
-| 对象/域/量词/前提 | 完整当前Lean及依赖定义；新增资格见[EXTRA] |
-| 网站首轮 | NEEDS_HUMAN：字面原页确印Zcan⁻¹=积分，签名把既定Z=积分代入后断言Z⁻¹=Z，忠实保存这一原书矛盾，故按任务规则NEEDS_HUMAN而非因数学错误直接FAIL。n维、正质量、正β及全权重可积是额外限制，未在extra_assumptions中列出；并未消除错误。repair_log提及的partitionInversePrinted_corrected没有在本任务给出实际声明或定义，不能认证该修正版，仅其改动方向合理。 |
+| 所引原句 | 本条所引原句及展示公式；单个记号归入context_notation。 |
+| 对象、域、量词及前提 | 以上完整声明；额外资格与未覆盖部分见下一段 |
+| 最新网站原始评价 | NEEDS_HUMAN；复审 |
 
 ### 5. [EXTRA] 与覆盖缺口
 
-- [EXTRA] 25号：原文版忠实性与数学疑误分开；补齐所交条目所属的现有_corrected完整签名，不从repair_log名称推断网站已通过修正版。
+- [EXTRA] 原文版忠实性与数学疑误分开；补齐所交条目所属的现有_corrected完整签名，不从repair_log名称推断网站已通过修正版。
 
 ### 6. 审计结论（含网站结论）
 
-网站原返回：NEEDS_HUMAN。字面原页确印Zcan⁻¹=积分，签名把既定Z=积分代入后断言Z⁻¹=Z，忠实保存这一原书矛盾，故按任务规则NEEDS_HUMAN而非因数学错误直接FAIL。n维、正质量、正β及全权重可积是额外限制，未在extra_assumptions中列出；并未消除错误。repair_log提及的partitionInversePrinted_corrected没有在本任务给出实际声明或定义，不能认证该修正版，仅其改动方向合理。
-本轮处理：原文版忠实性与数学疑误分开；补齐所交条目所属的现有_corrected完整签名，不从repair_log名称推断网站已通过修正版。
-本地单文件及逐声明依赖检查通过；含未完成证明依赖的声明仍标未证。原书疑误及修正版分别见勘误，当前修改版未获网站复审结论。
+网站原返回：NEEDS_HUMAN。partitionInversePrinted把正质量、β>0且Gibbs权重可积时的积分Z写成Z⁻¹=Z，忠实记录归一因子印刷疑误，数学上一般不成立。维数n由一自由度原文推广到任意n；massHamiltonian的动能分母2m_i、Phase=位置×动量、全空间体积积分已核对。partitionInversePrinted_corrected只把积分定义为配分函数，PASS作为定义；未断言该任意参数总化积分正有限，也未证明密度归一化。
+当前处理：修正版/限定声明=网站PASS；原文疑误或范围解释待导师。
+保留所交版本的明确结论。
+本地编译和逐声明依赖核对通过。原文疑误、各限定/修正版、反例的评价分别列出；有未完成证明依赖的声明仍为未证。
 
 ### 7. 状态与证明位置
 
-| 声明 | 状态 | 未证原因 |
-|---|---|---|
-| `MD.Ch06.partitionInversePrinted` | 未证 | 原书疑误不证 |
-| `MD.Ch06.partitionInversePrinted_corrected` | 定义 | — |
+| 声明 | 证明状态 | 未证原因 | 网站分版结论 |
+|---|---|---|---|
+| `MD.Ch06.partitionInversePrinted` | 未证 | 原书疑误不证 | 原文忠实性PASS；原书数学/范围NEEDS_HUMAN |
+| `MD.Ch06.partitionInversePrinted_corrected` | 定义 | — | PASS |
 
-位置：`Blueprint/Ch06.lean:520`；验证：`blueprint/ch06/closeout25/FINAL_COMPILE.log`。
+位置：`Blueprint/Ch06.lean:520`；本地核验记录：`blueprint/ch06/closeout26/FINAL_COMPILE.log`。
 
 ## MD-6.1.5-WeightedFluxIdentity
 
@@ -2343,9 +2389,9 @@ theorem weightedFluxIdentity {Nc : ℕ}
 
 | 原文对象或结论 | 当前Lean与范围 |
 |---|---|
-| 原文所选陈述 | 本条所引原句及展示公式；单个记号归入context_notation。 |
-| 对象/域/量词/前提 | 完整当前Lean及依赖定义；新增资格见[EXTRA] |
-| 网站首轮 | PASS：∀Nc,H,G,β,z；只要求H和G在z可微。D3权重乘向量场、D8导数迹及D9方向导数满足乘积法则，恰为w(divG-βdH(G))，符号、β系数及全部量词正确；不需要全局积分前提。 |
+| 所引原句 | 本条所引原句及展示公式；单个记号归入context_notation。 |
+| 对象、域、量词及前提 | 以上完整声明；额外资格与未覆盖部分见下一段 |
+| 最新网站原始评价 | PASS；首轮保留 |
 
 ### 5. [EXTRA] 与覆盖缺口
 
@@ -2354,16 +2400,17 @@ theorem weightedFluxIdentity {Nc : ℕ}
 ### 6. 审计结论（含网站结论）
 
 网站原返回：PASS。∀Nc,H,G,β,z；只要求H和G在z可微。D3权重乘向量场、D8导数迹及D9方向导数满足乘积法则，恰为w(divG-βdH(G))，符号、β系数及全部量词正确；不需要全局积分前提。
-本轮处理：保留原审阅版本结论；本轮未改签名。
-本地单文件及逐声明依赖检查通过；含未完成证明依赖的声明仍标未证。原书疑误及修正版分别见勘误，当前修改版未获网站复审结论。
+当前处理：网站PASS（首轮未改版本）。
+保留所交版本的明确结论。
+本地编译和逐声明依赖核对通过。原文疑误、各限定/修正版、反例的评价分别列出；有未完成证明依赖的声明仍为未证。
 
 ### 7. 状态与证明位置
 
-| 声明 | 状态 | 未证原因 |
-|---|---|---|
-| `MD.Ch06.weightedFluxIdentity` | 已证 | — |
+| 声明 | 证明状态 | 未证原因 | 网站分版结论 |
+|---|---|---|---|
+| `MD.Ch06.weightedFluxIdentity` | 已证 | — | PASS |
 
-位置：`Blueprint/Ch06.lean:540`；验证：`blueprint/ch06/closeout25/FINAL_COMPILE.log`。
+位置：`Blueprint/Ch06.lean:540`；本地核验记录：`blueprint/ch06/closeout26/FINAL_COMPILE.log`。
 
 ## MD-6.1.5-VirialTemperature
 
@@ -2399,9 +2446,9 @@ theorem virialTemperature : ∀ {n : ℕ} (hn : 0 < n)
 
 | 原文对象或结论 | 当前Lean与范围 |
 |---|---|
-| 原文所选陈述 | 本条所引原句及展示公式；单个记号归入context_notation。 |
-| 对象/域/量词/前提 | 完整当前Lean及依赖定义；新增资格见[EXTRA] |
-| 网站首轮 | PASS：n>0、所有质量正、β正、C²U；配置权重及virial权重可积，并有‖q‖exp(-βU)统一界。光滑正权重可积使配置partition正；可由有界配置通量与权重截断得∫q·∇U w=nZ/β，再结合可分离高斯动量，得到全Phase平均除n=β⁻¹。没有假定温度公式；n>0确保相除合法。 |
+| 所引原句 | 本条所引原句及展示公式；单个记号归入context_notation。 |
+| 对象、域、量词及前提 | 以上完整声明；额外资格与未覆盖部分见下一段 |
+| 最新网站原始评价 | PASS；首轮保留 |
 
 ### 5. [EXTRA] 与覆盖缺口
 
@@ -2410,16 +2457,17 @@ theorem virialTemperature : ∀ {n : ℕ} (hn : 0 < n)
 ### 6. 审计结论（含网站结论）
 
 网站原返回：PASS。n>0、所有质量正、β正、C²U；配置权重及virial权重可积，并有‖q‖exp(-βU)统一界。光滑正权重可积使配置partition正；可由有界配置通量与权重截断得∫q·∇U w=nZ/β，再结合可分离高斯动量，得到全Phase平均除n=β⁻¹。没有假定温度公式；n>0确保相除合法。
-本轮处理：保留原审阅版本结论；本轮未改签名。
-本地单文件及逐声明依赖检查通过；含未完成证明依赖的声明仍标未证。原书疑误及修正版分别见勘误，当前修改版未获网站复审结论。
+当前处理：网站PASS（首轮未改版本）。
+保留所交版本的明确结论。
+本地编译和逐声明依赖核对通过。原文疑误、各限定/修正版、反例的评价分别列出；有未完成证明依赖的声明仍为未证。
 
 ### 7. 状态与证明位置
 
-| 声明 | 状态 | 未证原因 |
-|---|---|---|
-| `MD.Ch06.virialTemperature` | 未证 | 缺大型理论 |
+| 声明 | 证明状态 | 未证原因 | 网站分版结论 |
+|---|---|---|---|
+| `MD.Ch06.virialTemperature` | 未证 | 缺大型理论 | PASS |
 
-位置：`Blueprint/Ch06.lean:551`；验证：`blueprint/ch06/closeout25/FINAL_COMPILE.log`。
+位置：`Blueprint/Ch06.lean:551`；本地核验记录：`blueprint/ch06/closeout26/FINAL_COMPILE.log`。
 
 ## MD-6.1.5-VirialFieldNotPeriodic
 
@@ -2447,9 +2495,9 @@ theorem virialFieldNotPeriodic : ∀ {n : ℕ} (i : Fin n) (q : Fin n → ℝ),
 
 | 原文对象或结论 | 当前Lean与范围 |
 |---|---|
-| 原文所选陈述 | 本条所引原句及展示公式；单个记号归入context_notation。 |
-| 对象/域/量词/前提 | 完整当前Lean及依赖定义；新增资格见[EXTRA] |
-| 网站首轮 | PASS：∀n,i:Fin n,q；结论为q+e_i≠q。评价第i坐标即q_i+1≠q_i，准确表达virial配置部分不周期；i的存在已排除零维。没有错误地把环面上相等的商类与实空间代表相等混淆。 |
+| 所引原句 | 本条所引原句及展示公式；单个记号归入context_notation。 |
+| 对象、域、量词及前提 | 以上完整声明；额外资格与未覆盖部分见下一段 |
+| 最新网站原始评价 | PASS；首轮保留 |
 
 ### 5. [EXTRA] 与覆盖缺口
 
@@ -2458,16 +2506,17 @@ theorem virialFieldNotPeriodic : ∀ {n : ℕ} (i : Fin n) (q : Fin n → ℝ),
 ### 6. 审计结论（含网站结论）
 
 网站原返回：PASS。∀n,i:Fin n,q；结论为q+e_i≠q。评价第i坐标即q_i+1≠q_i，准确表达virial配置部分不周期；i的存在已排除零维。没有错误地把环面上相等的商类与实空间代表相等混淆。
-本轮处理：保留原审阅版本结论；本轮未改签名。
-本地单文件及逐声明依赖检查通过；含未完成证明依赖的声明仍标未证。原书疑误及修正版分别见勘误，当前修改版未获网站复审结论。
+当前处理：网站PASS（首轮未改版本）。
+保留所交版本的明确结论。
+本地编译和逐声明依赖核对通过。原文疑误、各限定/修正版、反例的评价分别列出；有未完成证明依赖的声明仍为未证。
 
 ### 7. 状态与证明位置
 
-| 声明 | 状态 | 未证原因 |
-|---|---|---|
-| `MD.Ch06.virialFieldNotPeriodic` | 已证 | — |
+| 声明 | 证明状态 | 未证原因 | 网站分版结论 |
+|---|---|---|---|
+| `MD.Ch06.virialFieldNotPeriodic` | 已证 | — | PASS |
 
-位置：`Blueprint/Ch06.lean:566`；验证：`blueprint/ch06/closeout25/FINAL_COMPILE.log`。
+位置：`Blueprint/Ch06.lean:566`；本地核验记录：`blueprint/ch06/closeout26/FINAL_COMPILE.log`。
 
 ## MD-6.1.3-DensityPositive
 
@@ -2496,9 +2545,9 @@ theorem densityPositive : ∀ {D : Type*} [MeasurableSpace D] (ν : Measure D)
 
 | 原文对象或结论 | 当前Lean与范围 |
 |---|---|
-| 原文所选陈述 | 本条所引原句及展示公式；单个记号归入context_notation。 |
-| 对象/域/量词/前提 | 完整当前Lean及依赖定义；新增资格见[EXTRA] |
-| 网站首轮 | PASS：同一D1、任意D、ν、H、β；唯一前提是实际分母严格正。指数逐点严格正，故对全部x密度严格正。此结论不需要另设可积性或β>0；没有把积分归一化混入结论。 |
+| 所引原句 | 本条所引原句及展示公式；单个记号归入context_notation。 |
+| 对象、域、量词及前提 | 以上完整声明；额外资格与未覆盖部分见下一段 |
+| 最新网站原始评价 | PASS；首轮保留 |
 
 ### 5. [EXTRA] 与覆盖缺口
 
@@ -2507,16 +2556,17 @@ theorem densityPositive : ∀ {D : Type*} [MeasurableSpace D] (ν : Measure D)
 ### 6. 审计结论（含网站结论）
 
 网站原返回：PASS。同一D1、任意D、ν、H、β；唯一前提是实际分母严格正。指数逐点严格正，故对全部x密度严格正。此结论不需要另设可积性或β>0；没有把积分归一化混入结论。
-本轮处理：保留原审阅版本结论；本轮未改签名。
-本地单文件及逐声明依赖检查通过；含未完成证明依赖的声明仍标未证。原书疑误及修正版分别见勘误，当前修改版未获网站复审结论。
+当前处理：网站PASS（首轮未改版本）。
+保留所交版本的明确结论。
+本地编译和逐声明依赖核对通过。原文疑误、各限定/修正版、反例的评价分别列出；有未完成证明依赖的声明仍为未证。
 
 ### 7. 状态与证明位置
 
-| 声明 | 状态 | 未证原因 |
-|---|---|---|
-| `MD.Ch06.densityPositive` | 已证 | — |
+| 声明 | 证明状态 | 未证原因 | 网站分版结论 |
+|---|---|---|---|
+| `MD.Ch06.densityPositive` | 已证 | — | PASS |
 
-位置：`Blueprint/Ch06.lean:574`；验证：`blueprint/ch06/closeout25/FINAL_COMPILE.log`。
+位置：`Blueprint/Ch06.lean:574`；本地核验记录：`blueprint/ch06/closeout26/FINAL_COMPILE.log`。
 
 ## MD-6.1.5-KineticWeightFactorization
 
@@ -2554,9 +2604,9 @@ theorem kineticWeightFactorization : ∀ {n : ℕ}
 
 | 原文对象或结论 | 当前Lean与范围 |
 |---|---|
-| 原文所选陈述 | 本条所引原句及展示公式；单个记号归入context_notation。 |
-| 对象/域/量词/前提 | 完整当前Lean及依赖定义；新增资格见[EXTRA] |
-| 网站首轮 | PASS：∀n,m,q,p,U,β均无符号限制；D5有限和及exp加法/有限和公式给出完整乘积。即使质量为0，Lean实数除法的总定义也使两边同样处理相应项，代数恒等式仍真；正质量仅是物理使用条件，[EXTRA]文字不应误读为实际签名前提。 |
+| 所引原句 | 本条所引原句及展示公式；单个记号归入context_notation。 |
+| 对象、域、量词及前提 | 以上完整声明；额外资格与未覆盖部分见下一段 |
+| 最新网站原始评价 | PASS；首轮保留 |
 
 ### 5. [EXTRA] 与覆盖缺口
 
@@ -2565,16 +2615,17 @@ theorem kineticWeightFactorization : ∀ {n : ℕ}
 ### 6. 审计结论（含网站结论）
 
 网站原返回：PASS。∀n,m,q,p,U,β均无符号限制；D5有限和及exp加法/有限和公式给出完整乘积。即使质量为0，Lean实数除法的总定义也使两边同样处理相应项，代数恒等式仍真；正质量仅是物理使用条件，[EXTRA]文字不应误读为实际签名前提。
-本轮处理：保留原审阅版本结论；本轮未改签名。
-本地单文件及逐声明依赖检查通过；含未完成证明依赖的声明仍标未证。原书疑误及修正版分别见勘误，当前修改版未获网站复审结论。
+当前处理：网站PASS（首轮未改版本）。
+保留所交版本的明确结论。
+本地编译和逐声明依赖核对通过。原文疑误、各限定/修正版、反例的评价分别列出；有未完成证明依赖的声明仍为未证。
 
 ### 7. 状态与证明位置
 
-| 声明 | 状态 | 未证原因 |
-|---|---|---|
-| `MD.Ch06.kineticWeightFactorization` | 已证 | — |
+| 声明 | 证明状态 | 未证原因 | 网站分版结论 |
+|---|---|---|---|
+| `MD.Ch06.kineticWeightFactorization` | 已证 | — | PASS |
 
-位置：`Blueprint/Ch06.lean:583`；验证：`blueprint/ch06/closeout25/FINAL_COMPILE.log`。
+位置：`Blueprint/Ch06.lean:583`；本地核验记录：`blueprint/ch06/closeout26/FINAL_COMPILE.log`。
 
 ## MD-6.2-EnergySupportObstruction
 
@@ -2607,9 +2658,9 @@ theorem energySupportObstruction :
 
 | 原文对象或结论 | 当前Lean与范围 |
 |---|---|
-| 原文所选陈述 | 本条所引原句及展示公式；单个记号归入context_notation。 |
-| 对象/域/量词/前提 | 完整当前Lean及依赖定义；新增资格见[EXTRA] |
-| 网站首轮 | PASS：∀n,H,E,z,μ；连续H、全部实时间能量守恒、另一能量集合测度正。结论同时给出所有时间避开该集合和目标集合非零测度，严格支持障碍。μ任意测度而非专门canonical，属于已标注的抽象推广；不冒称已建立时间平均反例。 |
+| 所引原句 | 本条所引原句及展示公式；单个记号归入context_notation。 |
+| 对象、域、量词及前提 | 以上完整声明；额外资格与未覆盖部分见下一段 |
+| 最新网站原始评价 | PASS；首轮保留 |
 
 ### 5. [EXTRA] 与覆盖缺口
 
@@ -2618,16 +2669,17 @@ theorem energySupportObstruction :
 ### 6. 审计结论（含网站结论）
 
 网站原返回：PASS。∀n,H,E,z,μ；连续H、全部实时间能量守恒、另一能量集合测度正。结论同时给出所有时间避开该集合和目标集合非零测度，严格支持障碍。μ任意测度而非专门canonical，属于已标注的抽象推广；不冒称已建立时间平均反例。
-本轮处理：保留原审阅版本结论；本轮未改签名。
-本地单文件及逐声明依赖检查通过；含未完成证明依赖的声明仍标未证。原书疑误及修正版分别见勘误，当前修改版未获网站复审结论。
+当前处理：网站PASS（首轮未改版本）。
+保留所交版本的明确结论。
+本地编译和逐声明依赖核对通过。原文疑误、各限定/修正版、反例的评价分别列出；有未完成证明依赖的声明仍为未证。
 
 ### 7. 状态与证明位置
 
-| 声明 | 状态 | 未证原因 |
-|---|---|---|
-| `MD.Ch06.energySupportObstruction` | 已证 | — |
+| 声明 | 证明状态 | 未证原因 | 网站分版结论 |
+|---|---|---|---|
+| `MD.Ch06.energySupportObstruction` | 已证 | — | PASS |
 
-位置：`Blueprint/Ch06.lean:599`；验证：`blueprint/ch06/closeout25/FINAL_COMPILE.log`。
+位置：`Blueprint/Ch06.lean:599`；本地核验记录：`blueprint/ch06/closeout26/FINAL_COMPILE.log`。
 
 ## MD-6.2-CanonicalSamplingObstruction
 
@@ -2675,9 +2727,9 @@ theorem canonicalSamplingObstruction : ∀ {n : ℕ}
 
 | 原文对象或结论 | 当前Lean与范围 |
 |---|---|
-| 原文所选陈述 | 本条所引原句及展示公式；单个记号归入context_notation。 |
-| 对象/域/量词/前提 | 完整当前Lean及依赖定义；新增资格见[EXTRA] |
-| 网站首轮 | PASS：同一实向量空间上任意概率μ，连续H、轨道能量恒定、补能层正测度。取g为开集{H≠energy}的示性函数，概率空间上可积，积分正，轨道上恒0，所以D时间平均在所有T均0且极限0。无需轨道连续或可测，因为复合函数恒0。结论完整保留积分/时间平均采样障碍。 |
+| 所引原句 | 本条所引原句及展示公式；单个记号归入context_notation。 |
+| 对象、域、量词及前提 | 以上完整声明；额外资格与未覆盖部分见下一段 |
+| 最新网站原始评价 | PASS；首轮保留 |
 
 ### 5. [EXTRA] 与覆盖缺口
 
@@ -2686,16 +2738,17 @@ theorem canonicalSamplingObstruction : ∀ {n : ℕ}
 ### 6. 审计结论（含网站结论）
 
 网站原返回：PASS。同一实向量空间上任意概率μ，连续H、轨道能量恒定、补能层正测度。取g为开集{H≠energy}的示性函数，概率空间上可积，积分正，轨道上恒0，所以D时间平均在所有T均0且极限0。无需轨道连续或可测，因为复合函数恒0。结论完整保留积分/时间平均采样障碍。
-本轮处理：保留原审阅版本结论；本轮未改签名。
-本地单文件及逐声明依赖检查通过；含未完成证明依赖的声明仍标未证。原书疑误及修正版分别见勘误，当前修改版未获网站复审结论。
+当前处理：网站PASS（首轮未改版本）。
+保留所交版本的明确结论。
+本地编译和逐声明依赖核对通过。原文疑误、各限定/修正版、反例的评价分别列出；有未完成证明依赖的声明仍为未证。
 
 ### 7. 状态与证明位置
 
-| 声明 | 状态 | 未证原因 |
-|---|---|---|
-| `MD.Ch06.canonicalSamplingObstruction` | 已证 | — |
+| 声明 | 证明状态 | 未证原因 | 网站分版结论 |
+|---|---|---|---|
+| `MD.Ch06.canonicalSamplingObstruction` | 已证 | — | PASS |
 
-位置：`Blueprint/Ch06.lean:613`；验证：`blueprint/ch06/closeout25/FINAL_COMPILE.log`。
+位置：`Blueprint/Ch06.lean:613`；本地核验记录：`blueprint/ch06/closeout26/FINAL_COMPILE.log`。
 
 ## MD-6.2.1-RademacherJumps
 
@@ -2724,9 +2777,9 @@ def rademacherJumps {Ω : Type*} [MeasurableSpace Ω] (P : Measure Ω)
 
 | 原文对象或结论 | 当前Lean与范围 |
 |---|---|
-| 原文所选陈述 | 本条所引原句及展示公式；单个记号归入context_notation。 |
-| 对象/域/量词/前提 | 完整当前Lean及依赖定义；新增资格见[EXTRA] |
-| 网站首轮 | PASS：任意可测概率空间、独立可测L²跳跃、AE取±1且均值0，推出两点概率各1/2，正确表达公平Rademacher列。[EXTRA]中独立性和可积性均为实际条件；AE版本是概率变量的适当语义，不要求零测集上逐点取值。 |
+| 所引原句 | 本条所引原句及展示公式；单个记号归入context_notation。 |
+| 对象、域、量词及前提 | 以上完整声明；额外资格与未覆盖部分见下一段 |
+| 最新网站原始评价 | PASS；首轮保留 |
 
 ### 5. [EXTRA] 与覆盖缺口
 
@@ -2735,16 +2788,17 @@ def rademacherJumps {Ω : Type*} [MeasurableSpace Ω] (P : Measure Ω)
 ### 6. 审计结论（含网站结论）
 
 网站原返回：PASS。任意可测概率空间、独立可测L²跳跃、AE取±1且均值0，推出两点概率各1/2，正确表达公平Rademacher列。[EXTRA]中独立性和可积性均为实际条件；AE版本是概率变量的适当语义，不要求零测集上逐点取值。
-本轮处理：保留原审阅版本结论；本轮未改签名。
-本地单文件及逐声明依赖检查通过；含未完成证明依赖的声明仍标未证。原书疑误及修正版分别见勘误，当前修改版未获网站复审结论。
+当前处理：网站PASS（首轮未改版本）。
+保留所交版本的明确结论。
+本地编译和逐声明依赖核对通过。原文疑误、各限定/修正版、反例的评价分别列出；有未完成证明依赖的声明仍为未证。
 
 ### 7. 状态与证明位置
 
-| 声明 | 状态 | 未证原因 |
-|---|---|---|
-| `MD.Ch06.rademacherJumps` | 定义 | — |
+| 声明 | 证明状态 | 未证原因 | 网站分版结论 |
+|---|---|---|---|
+| `MD.Ch06.rademacherJumps` | 定义 | — | PASS |
 
-位置：`Blueprint/Ch06.lean:642`；验证：`blueprint/ch06/closeout25/FINAL_COMPILE.log`。
+位置：`Blueprint/Ch06.lean:642`；本地核验记录：`blueprint/ch06/closeout26/FINAL_COMPILE.log`。
 
 ## MD-6.2.1-RandomWalk
 
@@ -2773,9 +2827,9 @@ def randomWalk {Ω : Type*} (J : ℕ → Ω → ℝ) (dx : ℝ) (n : ℕ) (sampl
 
 | 原文对象或结论 | 当前Lean与范围 |
 |---|---|
-| 原文所选陈述 | 本条所引原句及展示公式；单个记号归入context_notation。 |
-| 对象/域/量词/前提 | 完整当前Lean及依赖定义；新增资格见[EXTRA] |
-| 网站首轮 | PASS：∀样本空间、J、dx,n,sample；range n确为k=0,…,n-1，有限和乘dx准确，n=0为空和。定义本身无需概率结构；初始值及递推在独立条目23、24审查。 |
+| 所引原句 | 本条所引原句及展示公式；单个记号归入context_notation。 |
+| 对象、域、量词及前提 | 以上完整声明；额外资格与未覆盖部分见下一段 |
+| 最新网站原始评价 | PASS；首轮保留 |
 
 ### 5. [EXTRA] 与覆盖缺口
 
@@ -2784,16 +2838,17 @@ def randomWalk {Ω : Type*} (J : ℕ → Ω → ℝ) (dx : ℝ) (n : ℕ) (sampl
 ### 6. 审计结论（含网站结论）
 
 网站原返回：PASS。∀样本空间、J、dx,n,sample；range n确为k=0,…,n-1，有限和乘dx准确，n=0为空和。定义本身无需概率结构；初始值及递推在独立条目23、24审查。
-本轮处理：保留原审阅版本结论；本轮未改签名。
-本地单文件及逐声明依赖检查通过；含未完成证明依赖的声明仍标未证。原书疑误及修正版分别见勘误，当前修改版未获网站复审结论。
+当前处理：网站PASS（首轮未改版本）。
+保留所交版本的明确结论。
+本地编译和逐声明依赖核对通过。原文疑误、各限定/修正版、反例的评价分别列出；有未完成证明依赖的声明仍为未证。
 
 ### 7. 状态与证明位置
 
-| 声明 | 状态 | 未证原因 |
-|---|---|---|
-| `MD.Ch06.randomWalk` | 定义 | — |
+| 声明 | 证明状态 | 未证原因 | 网站分版结论 |
+|---|---|---|---|
+| `MD.Ch06.randomWalk` | 定义 | — | PASS |
 
-位置：`Blueprint/Ch06.lean:649`；验证：`blueprint/ch06/closeout25/FINAL_COMPILE.log`。
+位置：`Blueprint/Ch06.lean:649`；本地核验记录：`blueprint/ch06/closeout26/FINAL_COMPILE.log`。
 
 ## MD-6.2.1-WalkRecurrence
 
@@ -2823,9 +2878,9 @@ theorem walkRecurrence :
 
 | 原文对象或结论 | 当前Lean与范围 |
 |---|---|
-| 原文所选陈述 | 本条所引原句及展示公式；单个记号归入context_notation。 |
-| 对象/域/量词/前提 | 完整当前Lean及依赖定义；新增资格见[EXTRA] |
-| 网站首轮 | PASS：所有J、dx,n,sample，无概率或正步长假设；range(n+1)拆最后一项便得X_(n+1)=X_n+dxJ_n，量词、下标及结论完整。 |
+| 所引原句 | 本条所引原句及展示公式；单个记号归入context_notation。 |
+| 对象、域、量词及前提 | 以上完整声明；额外资格与未覆盖部分见下一段 |
+| 最新网站原始评价 | PASS；首轮保留 |
 
 ### 5. [EXTRA] 与覆盖缺口
 
@@ -2834,16 +2889,17 @@ theorem walkRecurrence :
 ### 6. 审计结论（含网站结论）
 
 网站原返回：PASS。所有J、dx,n,sample，无概率或正步长假设；range(n+1)拆最后一项便得X_(n+1)=X_n+dxJ_n，量词、下标及结论完整。
-本轮处理：保留原审阅版本结论；本轮未改签名。
-本地单文件及逐声明依赖检查通过；含未完成证明依赖的声明仍标未证。原书疑误及修正版分别见勘误，当前修改版未获网站复审结论。
+当前处理：网站PASS（首轮未改版本）。
+保留所交版本的明确结论。
+本地编译和逐声明依赖核对通过。原文疑误、各限定/修正版、反例的评价分别列出；有未完成证明依赖的声明仍为未证。
 
 ### 7. 状态与证明位置
 
-| 声明 | 状态 | 未证原因 |
-|---|---|---|
-| `MD.Ch06.walkRecurrence` | 已证 | — |
+| 声明 | 证明状态 | 未证原因 | 网站分版结论 |
+|---|---|---|---|
+| `MD.Ch06.walkRecurrence` | 已证 | — | PASS |
 
-位置：`Blueprint/Ch06.lean:653`；验证：`blueprint/ch06/closeout25/FINAL_COMPILE.log`。
+位置：`Blueprint/Ch06.lean:653`；本地核验记录：`blueprint/ch06/closeout26/FINAL_COMPILE.log`。
 
 ## MD-6.2.1-WalkInitial
 
@@ -2870,9 +2926,9 @@ theorem walkInitial : ∀ {Ω : Type*} (J : ℕ → Ω → ℝ) (dx : ℝ) (samp
 
 | 原文对象或结论 | 当前Lean与范围 |
 |---|---|
-| 原文所选陈述 | 本条所引原句及展示公式；单个记号归入context_notation。 |
-| 对象/域/量词/前提 | 完整当前Lean及依赖定义；新增资格见[EXTRA] |
-| 网站首轮 | PASS：所有J、dx,sample，n=0时range为空，定义直接给0；无需随机性或额外假设。 |
+| 所引原句 | 本条所引原句及展示公式；单个记号归入context_notation。 |
+| 对象、域、量词及前提 | 以上完整声明；额外资格与未覆盖部分见下一段 |
+| 最新网站原始评价 | PASS；首轮保留 |
 
 ### 5. [EXTRA] 与覆盖缺口
 
@@ -2881,16 +2937,17 @@ theorem walkInitial : ∀ {Ω : Type*} (J : ℕ → Ω → ℝ) (dx : ℝ) (samp
 ### 6. 审计结论（含网站结论）
 
 网站原返回：PASS。所有J、dx,sample，n=0时range为空，定义直接给0；无需随机性或额外假设。
-本轮处理：保留原审阅版本结论；本轮未改签名。
-本地单文件及逐声明依赖检查通过；含未完成证明依赖的声明仍标未证。原书疑误及修正版分别见勘误，当前修改版未获网站复审结论。
+当前处理：网站PASS（首轮未改版本）。
+保留所交版本的明确结论。
+本地编译和逐声明依赖核对通过。原文疑误、各限定/修正版、反例的评价分别列出；有未完成证明依赖的声明仍为未证。
 
 ### 7. 状态与证明位置
 
-| 声明 | 状态 | 未证原因 |
-|---|---|---|
-| `MD.Ch06.walkInitial` | 已证 | — |
+| 声明 | 证明状态 | 未证原因 | 网站分版结论 |
+|---|---|---|---|
+| `MD.Ch06.walkInitial` | 已证 | — | PASS |
 
-位置：`Blueprint/Ch06.lean:661`；验证：`blueprint/ch06/closeout25/FINAL_COMPILE.log`。
+位置：`Blueprint/Ch06.lean:661`；本地核验记录：`blueprint/ch06/closeout26/FINAL_COMPILE.log`。
 
 ## MD-6.2.1-WalkVariance
 
@@ -2921,9 +2978,9 @@ theorem walkVariance :
 
 | 原文对象或结论 | 当前Lean与范围 |
 |---|---|
-| 原文所选陈述 | 本条所引原句及展示公式；单个记号归入context_notation。 |
-| 对象/域/量词/前提 | 完整当前Lean及依赖定义；新增资格见[EXTRA] |
-| 网站首轮 | PASS：任意概率空间P、J、dx,n，在D14条件下零均值及完整二阶矩n dx²同时保留。独立性消去异指标乘积，AE的J_k²=1给对角项；L²使有限和及平方可积。因此二阶矩等于原方差，未将待证矩作为假设。 |
+| 所引原句 | 本条所引原句及展示公式；单个记号归入context_notation。 |
+| 对象、域、量词及前提 | 以上完整声明；额外资格与未覆盖部分见下一段 |
+| 最新网站原始评价 | PASS；首轮保留 |
 
 ### 5. [EXTRA] 与覆盖缺口
 
@@ -2932,16 +2989,17 @@ theorem walkVariance :
 ### 6. 审计结论（含网站结论）
 
 网站原返回：PASS。任意概率空间P、J、dx,n，在D14条件下零均值及完整二阶矩n dx²同时保留。独立性消去异指标乘积，AE的J_k²=1给对角项；L²使有限和及平方可积。因此二阶矩等于原方差，未将待证矩作为假设。
-本轮处理：保留原审阅版本结论；本轮未改签名。
-本地单文件及逐声明依赖检查通过；含未完成证明依赖的声明仍标未证。原书疑误及修正版分别见勘误，当前修改版未获网站复审结论。
+当前处理：网站PASS（首轮未改版本）。
+保留所交版本的明确结论。
+本地编译和逐声明依赖核对通过。原文疑误、各限定/修正版、反例的评价分别列出；有未完成证明依赖的声明仍为未证。
 
 ### 7. 状态与证明位置
 
-| 声明 | 状态 | 未证原因 |
-|---|---|---|
-| `MD.Ch06.walkVariance` | 未证 | 时间盒止 |
+| 声明 | 证明状态 | 未证原因 | 网站分版结论 |
+|---|---|---|---|
+| `MD.Ch06.walkVariance` | 未证 | 时间盒止 | PASS |
 
-位置：`Blueprint/Ch06.lean:668`；验证：`blueprint/ch06/closeout25/FINAL_COMPILE.log`。
+位置：`Blueprint/Ch06.lean:668`；本地核验记录：`blueprint/ch06/closeout26/FINAL_COMPILE.log`。
 
 ## MD-6.2.1-DiffusiveWalk
 
@@ -2968,9 +3026,9 @@ def diffusiveWalk {Ω : Type*} (J : ℕ → Ω → ℝ) (dt : ℝ) : ℕ → Ω 
 
 | 原文对象或结论 | 当前Lean与范围 |
 |---|---|
-| 原文所选陈述 | 本条所引原句及展示公式；单个记号归入context_notation。 |
-| 对象/域/量词/前提 | 完整当前Lean及依赖定义；新增资格见[EXTRA] |
-| 网站首轮 | PASS：定义是在全部自然数网格上取dx=sqrt(dt)的D22随机游走；原书有限窗口是其限制。物理使用dt>0时正确，定义对dt≤0的Lean总延拓不代表负时间步长物理主张。 |
+| 所引原句 | 本条所引原句及展示公式；单个记号归入context_notation。 |
+| 对象、域、量词及前提 | 以上完整声明；额外资格与未覆盖部分见下一段 |
+| 最新网站原始评价 | PASS；首轮保留 |
 
 ### 5. [EXTRA] 与覆盖缺口
 
@@ -2979,16 +3037,17 @@ def diffusiveWalk {Ω : Type*} (J : ℕ → Ω → ℝ) (dt : ℝ) : ℕ → Ω 
 ### 6. 审计结论（含网站结论）
 
 网站原返回：PASS。定义是在全部自然数网格上取dx=sqrt(dt)的D22随机游走；原书有限窗口是其限制。物理使用dt>0时正确，定义对dt≤0的Lean总延拓不代表负时间步长物理主张。
-本轮处理：保留原审阅版本结论；本轮未改签名。
-本地单文件及逐声明依赖检查通过；含未完成证明依赖的声明仍标未证。原书疑误及修正版分别见勘误，当前修改版未获网站复审结论。
+当前处理：网站PASS（首轮未改版本）。
+保留所交版本的明确结论。
+本地编译和逐声明依赖核对通过。原文疑误、各限定/修正版、反例的评价分别列出；有未完成证明依赖的声明仍为未证。
 
 ### 7. 状态与证明位置
 
-| 声明 | 状态 | 未证原因 |
-|---|---|---|
-| `MD.Ch06.diffusiveWalk` | 定义 | — |
+| 声明 | 证明状态 | 未证原因 | 网站分版结论 |
+|---|---|---|---|
+| `MD.Ch06.diffusiveWalk` | 定义 | — | PASS |
 
-位置：`Blueprint/Ch06.lean:675`；验证：`blueprint/ch06/closeout25/FINAL_COMPILE.log`。
+位置：`Blueprint/Ch06.lean:675`；本地核验记录：`blueprint/ch06/closeout26/FINAL_COMPILE.log`。
 
 ## MD-6.2.1-InterpolatedWalk
 
@@ -3016,9 +3075,9 @@ def interpolatedWalk {Ω : Type*} (J : ℕ → Ω → ℝ) (dt t : ℝ) (sample 
 
 | 原文对象或结论 | 当前Lean与范围 |
 |---|---|
-| 原文所选陈述 | 本条所引原句及展示公式；单个记号归入context_notation。 |
-| 对象/域/量词/前提 | 完整当前Lean及依赖定义；新增资格见[EXTRA] |
-| 网站首轮 | PASS：在dt>0、t≥0的原语境，n=Nat.floor(t/dt)正是网格区间编号；增量为Y_(n+1)-Y_n，系数(t-n dt)/dt正确，端点也与网格值一致。定义对其他实数的延拓未声称为原书正步长过程。A层公式因子位置须恢复原页顺序。 |
+| 所引原句 | 本条所引原句及展示公式；单个记号归入context_notation。 |
+| 对象、域、量词及前提 | 以上完整声明；额外资格与未覆盖部分见下一段 |
+| 最新网站原始评价 | PASS；首轮保留 |
 
 ### 5. [EXTRA] 与覆盖缺口
 
@@ -3027,16 +3086,17 @@ def interpolatedWalk {Ω : Type*} (J : ℕ → Ω → ℝ) (dt t : ℝ) (sample 
 ### 6. 审计结论（含网站结论）
 
 网站原返回：PASS。在dt>0、t≥0的原语境，n=Nat.floor(t/dt)正是网格区间编号；增量为Y_(n+1)-Y_n，系数(t-n dt)/dt正确，端点也与网格值一致。定义对其他实数的延拓未声称为原书正步长过程。A层公式因子位置须恢复原页顺序。
-本轮处理：保留原审阅版本结论；本轮未改签名。
-本地单文件及逐声明依赖检查通过；含未完成证明依赖的声明仍标未证。原书疑误及修正版分别见勘误，当前修改版未获网站复审结论。
+当前处理：网站PASS（首轮未改版本）。
+保留所交版本的明确结论。
+本地编译和逐声明依赖核对通过。原文疑误、各限定/修正版、反例的评价分别列出；有未完成证明依赖的声明仍为未证。
 
 ### 7. 状态与证明位置
 
-| 声明 | 状态 | 未证原因 |
-|---|---|---|
-| `MD.Ch06.interpolatedWalk` | 定义 | — |
+| 声明 | 证明状态 | 未证原因 | 网站分版结论 |
+|---|---|---|---|
+| `MD.Ch06.interpolatedWalk` | 定义 | — | PASS |
 
-位置：`Blueprint/Ch06.lean:679`；验证：`blueprint/ch06/closeout25/FINAL_COMPILE.log`。
+位置：`Blueprint/Ch06.lean:679`；本地核验记录：`blueprint/ch06/closeout26/FINAL_COMPILE.log`。
 
 ## MD-6.2.1-WalkIncrement
 
@@ -3062,28 +3122,29 @@ def walkIncrement {Ω : Type*} (J : ℕ → Ω → ℝ) (dx : ℝ) (n : ℕ) (sa
 
 | 原文对象或结论 | 当前Lean与范围 |
 |---|---|
-| 原文所选陈述 | 本条Lean覆盖范围：仅覆盖一步差分定义；dx·J、扩散缩放等式及独立增量尚未在本条声明。 |
-| 对象/域/量词/前提 | 完整当前Lean及依赖定义；新增资格见[EXTRA] |
-| 网站首轮 | FAIL：实际声明只有差分定义X_(n+1)-X_n；它没有声明差分=dx J_n，没有扩散增量sqrt(dt)J_n，也没有独立增量结论或概率前提。原文statement_latex同时包含这些结论，且本条没有[EXTRA]缩小范围说明，故按完整结论要求FAIL。定义差分本身正确；递推条目23可支持一个代数推论，但不替代本条缺失的独立性陈述。 |
+| 所引原句 | 本条Lean覆盖范围：仅覆盖一步差分定义；dx·J、扩散缩放等式及独立增量尚未在本条声明。 |
+| 对象、域、量词及前提 | 以上完整声明；额外资格与未覆盖部分见下一段 |
+| 最新网站原始评价 | PASS；复审 |
 
 ### 5. [EXTRA] 与覆盖缺口
 
-- [EXTRA] 25号：仅覆盖一步差分定义；dx·J、扩散缩放等式及独立增量尚未在本条声明。
+- [EXTRA] 仅覆盖一步差分定义；dx·J、扩散缩放等式及独立增量尚未在本条声明。
 - 覆盖缺口：仅覆盖一步差分定义；dx·J、扩散缩放等式及独立增量尚未在本条声明。
 
 ### 6. 审计结论（含网站结论）
 
-网站原返回：FAIL。实际声明只有差分定义X_(n+1)-X_n；它没有声明差分=dx J_n，没有扩散增量sqrt(dt)J_n，也没有独立增量结论或概率前提。原文statement_latex同时包含这些结论，且本条没有[EXTRA]缩小范围说明，故按完整结论要求FAIL。定义差分本身正确；递推条目23可支持一个代数推论，但不替代本条缺失的独立性陈述。
-本轮处理：仅覆盖一步差分定义；dx·J、扩散缩放等式及独立增量尚未在本条声明。
-本地单文件及逐声明依赖检查通过；含未完成证明依赖的声明仍标未证。原书疑误及修正版分别见勘误，当前修改版未获网站复审结论。
+网站原返回：PASS。walkIncrement对任意样本类型、任意实跳过程J及实dx，定义randomWalk(n+1)-randomWalk(n)。randomWalk=dx*Σ_{k<n}J_k，故是原文ΔX_(n+1)的重新编号。没有概率测度或J独立前提，因此没有宣称独立性。statement_scope和coverage_gaps已诚实注明只覆盖一步差分，未覆盖dx*J等式、扩散缩放或独立增量；按披露的局部范围PASS。
+当前处理：网站PASS（复审）。
+保留所交版本的明确结论。
+本地编译和逐声明依赖核对通过。原文疑误、各限定/修正版、反例的评价分别列出；有未完成证明依赖的声明仍为未证。
 
 ### 7. 状态与证明位置
 
-| 声明 | 状态 | 未证原因 |
-|---|---|---|
-| `MD.Ch06.walkIncrement` | 定义 | — |
+| 声明 | 证明状态 | 未证原因 | 网站分版结论 |
+|---|---|---|---|
+| `MD.Ch06.walkIncrement` | 定义 | — | PASS |
 
-位置：`Blueprint/Ch06.lean:686`；验证：`blueprint/ch06/closeout25/FINAL_COMPILE.log`。
+位置：`Blueprint/Ch06.lean:686`；本地核验记录：`blueprint/ch06/closeout26/FINAL_COMPILE.log`。
 
 ## MD-6.2.1-WalkGridMoments
 
@@ -3113,9 +3174,9 @@ theorem walkGridMoments :
 
 | 原文对象或结论 | 当前Lean与范围 |
 |---|---|
-| 原文所选陈述 | 本条所引原句及展示公式；单个记号归入context_notation。 |
-| 对象/域/量词/前提 | 完整当前Lean及依赖定义；新增资格见[EXTRA] |
-| 网站首轮 | PASS：∀P,J,dt,k,l，D14、dt>0、k≤l。结论含增量均值0及二阶矩((l:ℝ)-k)dt；由零均值与L²等于原Var，涵盖k=l时零增量。无有限ν限制是同一无限跳跃列上的直接推广，可限制到任一窗口。 |
+| 所引原句 | 本条所引原句及展示公式；单个记号归入context_notation。 |
+| 对象、域、量词及前提 | 以上完整声明；额外资格与未覆盖部分见下一段 |
+| 最新网站原始评价 | PASS；首轮保留 |
 
 ### 5. [EXTRA] 与覆盖缺口
 
@@ -3124,16 +3185,17 @@ theorem walkGridMoments :
 ### 6. 审计结论（含网站结论）
 
 网站原返回：PASS。∀P,J,dt,k,l，D14、dt>0、k≤l。结论含增量均值0及二阶矩((l:ℝ)-k)dt；由零均值与L²等于原Var，涵盖k=l时零增量。无有限ν限制是同一无限跳跃列上的直接推广，可限制到任一窗口。
-本轮处理：保留原审阅版本结论；本轮未改签名。
-本地单文件及逐声明依赖检查通过；含未完成证明依赖的声明仍标未证。原书疑误及修正版分别见勘误，当前修改版未获网站复审结论。
+当前处理：网站PASS（首轮未改版本）。
+保留所交版本的明确结论。
+本地编译和逐声明依赖核对通过。原文疑误、各限定/修正版、反例的评价分别列出；有未完成证明依赖的声明仍为未证。
 
 ### 7. 状态与证明位置
 
-| 声明 | 状态 | 未证原因 |
-|---|---|---|
-| `MD.Ch06.walkGridMoments` | 未证 | 时间盒止 |
+| 声明 | 证明状态 | 未证原因 | 网站分版结论 |
+|---|---|---|---|
+| `MD.Ch06.walkGridMoments` | 未证 | 时间盒止 | PASS |
 
-位置：`Blueprint/Ch06.lean:691`；验证：`blueprint/ch06/closeout25/FINAL_COMPILE.log`。
+位置：`Blueprint/Ch06.lean:691`；本地核验记录：`blueprint/ch06/closeout26/FINAL_COMPILE.log`。
 
 ## MD-6.2.1-InterpolatedWalkMean
 
@@ -3164,9 +3226,9 @@ theorem interpolatedWalkMean : ∀ {Ω : Type*} [MeasurableSpace Ω]
 
 | 原文对象或结论 | 当前Lean与范围 |
 |---|---|
-| 原文所选陈述 | 本条所引原句及展示公式；单个记号归入context_notation。 |
-| 对象/域/量词/前提 | 完整当前Lean及依赖定义；新增资格见[EXTRA] |
-| 网站首轮 | PASS：∀P,J,dt,t,s，D14、dt>0、0≤t≤s；D24插值值是有限个L²跳跃的确定线性组合，因此两插值之差可积且均值0。没有τ上界是可限制到任意有限窗口的推广；没有错误声称插值方差恰为s-t。 |
+| 所引原句 | 本条所引原句及展示公式；单个记号归入context_notation。 |
+| 对象、域、量词及前提 | 以上完整声明；额外资格与未覆盖部分见下一段 |
+| 最新网站原始评价 | PASS；首轮保留 |
 
 ### 5. [EXTRA] 与覆盖缺口
 
@@ -3175,16 +3237,17 @@ theorem interpolatedWalkMean : ∀ {Ω : Type*} [MeasurableSpace Ω]
 ### 6. 审计结论（含网站结论）
 
 网站原返回：PASS。∀P,J,dt,t,s，D14、dt>0、0≤t≤s；D24插值值是有限个L²跳跃的确定线性组合，因此两插值之差可积且均值0。没有τ上界是可限制到任意有限窗口的推广；没有错误声称插值方差恰为s-t。
-本轮处理：保留原审阅版本结论；本轮未改签名。
-本地单文件及逐声明依赖检查通过；含未完成证明依赖的声明仍标未证。原书疑误及修正版分别见勘误，当前修改版未获网站复审结论。
+当前处理：网站PASS（首轮未改版本）。
+保留所交版本的明确结论。
+本地编译和逐声明依赖核对通过。原文疑误、各限定/修正版、反例的评价分别列出；有未完成证明依赖的声明仍为未证。
 
 ### 7. 状态与证明位置
 
-| 声明 | 状态 | 未证原因 |
-|---|---|---|
-| `MD.Ch06.interpolatedWalkMean` | 未证 | 时间盒止 |
+| 声明 | 证明状态 | 未证原因 | 网站分版结论 |
+|---|---|---|---|
+| `MD.Ch06.interpolatedWalkMean` | 未证 | 时间盒止 | PASS |
 
-位置：`Blueprint/Ch06.lean:700`；验证：`blueprint/ch06/closeout25/FINAL_COMPILE.log`。
+位置：`Blueprint/Ch06.lean:700`；本地核验记录：`blueprint/ch06/closeout26/FINAL_COMPILE.log`。
 
 ## MD-6.2.1-WalkDiffusion
 
@@ -3223,9 +3286,9 @@ theorem walkDiffusion :
 
 | 原文对象或结论 | 当前Lean与范围 |
 |---|---|
-| 原文所选陈述 | 本条所引原句及展示公式；单个记号归入context_notation。 |
-| 对象/域/量词/前提 | 完整当前Lean及依赖定义；新增资格见[EXTRA] |
-| 网站首轮 | PASS：P为任意测度、J为可测独立零均值±1跳跃且P为概率；T>0。结论完整量化连续路径概率μ、所有单时边际、任意有序时刻增量法则和独立性，以及每个有界连续路径检验函数的积分极限。插值采用range n而非印刷含端点和，差至多√(T/K)（几乎处处）；与印刷扩散极限一致。[EXTRA]明确加强到路径弱收敛。Y虽在F之后存在，其K>0的值由插值唯一确定，未削弱检验族。 |
+| 所引原句 | 本条所引原句及展示公式；单个记号归入context_notation。 |
+| 对象、域、量词及前提 | 以上完整声明；额外资格与未覆盖部分见下一段 |
+| 最新网站原始评价 | PASS；首轮保留 |
 
 ### 5. [EXTRA] 与覆盖缺口
 
@@ -3235,16 +3298,17 @@ theorem walkDiffusion :
 ### 6. 审计结论（含网站结论）
 
 网站原返回：PASS。P为任意测度、J为可测独立零均值±1跳跃且P为概率；T>0。结论完整量化连续路径概率μ、所有单时边际、任意有序时刻增量法则和独立性，以及每个有界连续路径检验函数的积分极限。插值采用range n而非印刷含端点和，差至多√(T/K)（几乎处处）；与印刷扩散极限一致。[EXTRA]明确加强到路径弱收敛。Y虽在F之后存在，其K>0的值由插值唯一确定，未削弱检验族。
-本轮处理：保留原审阅版本结论；本轮未改签名。
-本地单文件及逐声明依赖检查通过；含未完成证明依赖的声明仍标未证。原书疑误及修正版分别见勘误，当前修改版未获网站复审结论。
+当前处理：网站PASS（首轮未改版本）。
+保留所交版本的明确结论。
+本地编译和逐声明依赖核对通过。原文疑误、各限定/修正版、反例的评价分别列出；有未完成证明依赖的声明仍为未证。
 
 ### 7. 状态与证明位置
 
-| 声明 | 状态 | 未证原因 |
-|---|---|---|
-| `MD.Ch06.walkDiffusion` | 未证 | 缺大型理论 |
+| 声明 | 证明状态 | 未证原因 | 网站分版结论 |
+|---|---|---|---|
+| `MD.Ch06.walkDiffusion` | 未证 | 缺大型理论 | PASS |
 
-位置：`Blueprint/Ch06.lean:710`；验证：`blueprint/ch06/closeout25/FINAL_COMPILE.log`。
+位置：`Blueprint/Ch06.lean:710`；本地核验记录：`blueprint/ch06/closeout26/FINAL_COMPILE.log`。
 
 ## MD-6.2.1-WienerVector
 
@@ -3272,9 +3336,9 @@ def wienerVector {n : ℕ} {Ω : Type*} [MeasurableSpace Ω]
 
 | 原文对象或结论 | 当前Lean与范围 |
 |---|---|
-| 原文所选陈述 | 本条所引原句及展示公式；单个记号归入context_notation。 |
-| 对象/域/量词/前提 | 完整当前Lean及依赖定义；新增资格见[EXTRA] |
-| 网站首轮 | PASS：定义接受任意维数n、非负时间过程B及P；D12要求联合Gaussian、零均值、同坐标min(s,t)协方差、异坐标0及AE连续。属于已在context_notation注明的多维Wiener结构别名；没有声称由单时CLT构造连续过程。标量边际/增量结论另见第3条。 |
+| 所引原句 | 本条所引原句及展示公式；单个记号归入context_notation。 |
+| 对象、域、量词及前提 | 以上完整声明；额外资格与未覆盖部分见下一段 |
+| 最新网站原始评价 | PASS；首轮保留 |
 
 ### 5. [EXTRA] 与覆盖缺口
 
@@ -3283,16 +3347,17 @@ def wienerVector {n : ℕ} {Ω : Type*} [MeasurableSpace Ω]
 ### 6. 审计结论（含网站结论）
 
 网站原返回：PASS。定义接受任意维数n、非负时间过程B及P；D12要求联合Gaussian、零均值、同坐标min(s,t)协方差、异坐标0及AE连续。属于已在context_notation注明的多维Wiener结构别名；没有声称由单时CLT构造连续过程。标量边际/增量结论另见第3条。
-本轮处理：保留原审阅版本结论；本轮未改签名。
-本地单文件及逐声明依赖检查通过；含未完成证明依赖的声明仍标未证。原书疑误及修正版分别见勘误，当前修改版未获网站复审结论。
+当前处理：网站PASS（首轮未改版本）。
+保留所交版本的明确结论。
+本地编译和逐声明依赖核对通过。原文疑误、各限定/修正版、反例的评价分别列出；有未完成证明依赖的声明仍为未证。
 
 ### 7. 状态与证明位置
 
-| 声明 | 状态 | 未证原因 |
-|---|---|---|
-| `MD.Ch06.wienerVector` | 定义 | — |
+| 声明 | 证明状态 | 未证原因 | 网站分版结论 |
+|---|---|---|---|
+| `MD.Ch06.wienerVector` | 定义 | — | PASS |
 
-位置：`Blueprint/Ch06.lean:726`；验证：`blueprint/ch06/closeout25/FINAL_COMPILE.log`。
+位置：`Blueprint/Ch06.lean:726`；本地核验记录：`blueprint/ch06/closeout26/FINAL_COMPILE.log`。
 
 ## MD-6.2.1-WienerIncrement
 
@@ -3332,9 +3397,9 @@ theorem wienerIncrement :
 
 | 原文对象或结论 | 当前Lean与范围 |
 |---|---|
-| 原文所选陈述 | 本条所引原句及展示公式；单个记号归入context_notation。 |
-| 对象/域/量词/前提 | 完整当前Lean及依赖定义；新增资格见[EXTRA] |
-| 网站首轮 | PASS：任意PreBrownian实过程、任意非负s,t，完整保留方差\|t−s\|的中心Gaussian法则及二阶矩。t<s亦以对称Gaussian分布处理；t=s允许退化法则。 |
+| 所引原句 | 本条所引原句及展示公式；单个记号归入context_notation。 |
+| 对象、域、量词及前提 | 以上完整声明；额外资格与未覆盖部分见下一段 |
+| 最新网站原始评价 | PASS；首轮保留 |
 
 ### 5. [EXTRA] 与覆盖缺口
 
@@ -3343,16 +3408,17 @@ theorem wienerIncrement :
 ### 6. 审计结论（含网站结论）
 
 网站原返回：PASS。任意PreBrownian实过程、任意非负s,t，完整保留方差|t−s|的中心Gaussian法则及二阶矩。t<s亦以对称Gaussian分布处理；t=s允许退化法则。
-本轮处理：保留原审阅版本结论；本轮未改签名。
-本地单文件及逐声明依赖检查通过；含未完成证明依赖的声明仍标未证。原书疑误及修正版分别见勘误，当前修改版未获网站复审结论。
+当前处理：网站PASS（首轮未改版本）。
+保留所交版本的明确结论。
+本地编译和逐声明依赖核对通过。原文疑误、各限定/修正版、反例的评价分别列出；有未完成证明依赖的声明仍为未证。
 
 ### 7. 状态与证明位置
 
-| 声明 | 状态 | 未证原因 |
-|---|---|---|
-| `MD.Ch06.wienerIncrement` | 已证 | — |
+| 声明 | 证明状态 | 未证原因 | 网站分版结论 |
+|---|---|---|---|
+| `MD.Ch06.wienerIncrement` | 已证 | — | PASS |
 
-位置：`Blueprint/Ch06.lean:732`；验证：`blueprint/ch06/closeout25/FINAL_COMPILE.log`。
+位置：`Blueprint/Ch06.lean:732`；本地核验记录：`blueprint/ch06/closeout26/FINAL_COMPILE.log`。
 
 ## MD-6.2.1-WienerContinuousVersion
 
@@ -3380,9 +3446,9 @@ theorem wienerContinuousVersion :
 
 | 原文对象或结论 | 当前Lean与范围 |
 |---|---|
-| 原文所选陈述 | 本条所引原句及展示公式；单个记号归入context_notation。 |
-| 对象/域/量词/前提 | 完整当前Lean及依赖定义；新增资格见[EXTRA] |
-| 网站首轮 | PASS：从PreBrownian假设存在逐时AE相等的修改V，且同一满测度集上V整条非负时间路径连续；没有把连续性作为构造前提。此处是修改而非任意原版本与V不可分辨，符合原文可取连续路径的含义。 |
+| 所引原句 | 本条所引原句及展示公式；单个记号归入context_notation。 |
+| 对象、域、量词及前提 | 以上完整声明；额外资格与未覆盖部分见下一段 |
+| 最新网站原始评价 | PASS；首轮保留 |
 
 ### 5. [EXTRA] 与覆盖缺口
 
@@ -3391,16 +3457,17 @@ theorem wienerContinuousVersion :
 ### 6. 审计结论（含网站结论）
 
 网站原返回：PASS。从PreBrownian假设存在逐时AE相等的修改V，且同一满测度集上V整条非负时间路径连续；没有把连续性作为构造前提。此处是修改而非任意原版本与V不可分辨，符合原文可取连续路径的含义。
-本轮处理：保留原审阅版本结论；本轮未改签名。
-本地单文件及逐声明依赖检查通过；含未完成证明依赖的声明仍标未证。原书疑误及修正版分别见勘误，当前修改版未获网站复审结论。
+当前处理：网站PASS（首轮未改版本）。
+保留所交版本的明确结论。
+本地编译和逐声明依赖核对通过。原文疑误、各限定/修正版、反例的评价分别列出；有未完成证明依赖的声明仍为未证。
 
 ### 7. 状态与证明位置
 
-| 声明 | 状态 | 未证原因 |
-|---|---|---|
-| `MD.Ch06.wienerContinuousVersion` | 未证 | 缺大型理论 |
+| 声明 | 证明状态 | 未证原因 | 网站分版结论 |
+|---|---|---|---|
+| `MD.Ch06.wienerContinuousVersion` | 未证 | 缺大型理论 | PASS |
 
-位置：`Blueprint/Ch06.lean:750`；验证：`blueprint/ch06/closeout25/FINAL_COMPILE.log`。
+位置：`Blueprint/Ch06.lean:750`；本地核验记录：`blueprint/ch06/closeout26/FINAL_COMPILE.log`。
 
 ## MD-6.2.1-WienerNondifferentiable
 
@@ -3429,9 +3496,9 @@ theorem wienerNondifferentiable :
 
 | 原文对象或结论 | 当前Lean与范围 |
 |---|---|
-| 原文所选陈述 | 本条所引原句及展示公式；单个记号归入context_notation。 |
-| 对象/域/量词/前提 | 完整当前Lean及依赖定义；新增资格见[EXTRA] |
-| 网站首轮 | PASS：加入原版本AE连续假设后，在同一满测度集上所有正实时间点均不可微；不是仅每个固定时刻分别AE不可微。toNNReal在正时刻邻域为恒等。时间0的单侧不可微未陈述，[EXTRA]已明确正时刻范围。 |
+| 所引原句 | 本条所引原句及展示公式；单个记号归入context_notation。 |
+| 对象、域、量词及前提 | 以上完整声明；额外资格与未覆盖部分见下一段 |
+| 最新网站原始评价 | PASS；首轮保留 |
 
 ### 5. [EXTRA] 与覆盖缺口
 
@@ -3440,16 +3507,17 @@ theorem wienerNondifferentiable :
 ### 6. 审计结论（含网站结论）
 
 网站原返回：PASS。加入原版本AE连续假设后，在同一满测度集上所有正实时间点均不可微；不是仅每个固定时刻分别AE不可微。toNNReal在正时刻邻域为恒等。时间0的单侧不可微未陈述，[EXTRA]已明确正时刻范围。
-本轮处理：保留原审阅版本结论；本轮未改签名。
-本地单文件及逐声明依赖检查通过；含未完成证明依赖的声明仍标未证。原书疑误及修正版分别见勘误，当前修改版未获网站复审结论。
+当前处理：网站PASS（首轮未改版本）。
+保留所交版本的明确结论。
+本地编译和逐声明依赖核对通过。原文疑误、各限定/修正版、反例的评价分别列出；有未完成证明依赖的声明仍为未证。
 
 ### 7. 状态与证明位置
 
-| 声明 | 状态 | 未证原因 |
-|---|---|---|
-| `MD.Ch06.wienerNondifferentiable` | 未证 | 缺大型理论 |
+| 声明 | 证明状态 | 未证原因 | 网站分版结论 |
+|---|---|---|---|
+| `MD.Ch06.wienerNondifferentiable` | 未证 | 缺大型理论 | PASS |
 
-位置：`Blueprint/Ch06.lean:758`；验证：`blueprint/ch06/closeout25/FINAL_COMPILE.log`。
+位置：`Blueprint/Ch06.lean:758`；本地核验记录：`blueprint/ch06/closeout26/FINAL_COMPILE.log`。
 
 ## MD-6.2.1-WienerFutureCompletedHistory
 
@@ -3479,9 +3547,9 @@ theorem wienerFutureCompletedHistory
 
 | 原文对象或结论 | 当前Lean与范围 |
 |---|---|
-| 原文所选陈述 | 本条所引原句及展示公式；单个记号归入context_notation。 |
-| 对象/域/量词/前提 | 完整当前Lean及依赖定义；新增资格见[EXTRA] |
-| 网站首轮 | PASS：D12真实Wiener向量；未来定义B(S+t)−B(S)，D13在不连续样本上置零。结论为完整未来C([0,T],ℝ^Nc)生成σ代数与所有r≤S的过去σ代数加P零集生成σ代数，在P.completion下独立。T任意实数，T<0的空区间情形无额外断言。确实为未来增量路径独立，非未来原值独立。 |
+| 所引原句 | 本条所引原句及展示公式；单个记号归入context_notation。 |
+| 对象、域、量词及前提 | 以上完整声明；额外资格与未覆盖部分见下一段 |
+| 最新网站原始评价 | PASS；首轮保留 |
 
 ### 5. [EXTRA] 与覆盖缺口
 
@@ -3490,16 +3558,17 @@ theorem wienerFutureCompletedHistory
 ### 6. 审计结论（含网站结论）
 
 网站原返回：PASS。D12真实Wiener向量；未来定义B(S+t)−B(S)，D13在不连续样本上置零。结论为完整未来C([0,T],ℝ^Nc)生成σ代数与所有r≤S的过去σ代数加P零集生成σ代数，在P.completion下独立。T任意实数，T<0的空区间情形无额外断言。确实为未来增量路径独立，非未来原值独立。
-本轮处理：保留原审阅版本结论；本轮未改签名。
-本地单文件及逐声明依赖检查通过；含未完成证明依赖的声明仍标未证。原书疑误及修正版分别见勘误，当前修改版未获网站复审结论。
+当前处理：网站PASS（首轮未改版本）。
+保留所交版本的明确结论。
+本地编译和逐声明依赖核对通过。原文疑误、各限定/修正版、反例的评价分别列出；有未完成证明依赖的声明仍为未证。
 
 ### 7. 状态与证明位置
 
-| 声明 | 状态 | 未证原因 |
-|---|---|---|
-| `MD.Ch06.wienerFutureCompletedHistory` | 已证 | — |
+| 声明 | 证明状态 | 未证原因 | 网站分版结论 |
+|---|---|---|---|
+| `MD.Ch06.wienerFutureCompletedHistory` | 已证 | — | PASS |
 
-位置：`Blueprint/Ch06.lean:767`；验证：`blueprint/ch06/closeout25/FINAL_COMPILE.log`。
+位置：`Blueprint/Ch06.lean:767`；本地核验记录：`blueprint/ch06/closeout26/FINAL_COMPILE.log`。
 
 ## MD-6.2.1-GridWienerIncrementLaw
 
@@ -3526,9 +3595,9 @@ theorem gridWienerIncrementLaw {Ω : Type*} [MeasurableSpace Ω] {P : Measure Ω
 
 | 原文对象或结论 | 当前Lean与范围 |
 |---|---|
-| 原文所选陈述 | 本条所引原句及展示公式；单个记号归入context_notation。 |
-| 对象/域/量词/前提 | 完整当前Lean及依赖定义；新增资格见[EXTRA] |
-| 网站首轮 | PASS：T为非负、K为自然数、k:Fin K自动使K>0。D14、D15给第k个T/K长度增量，结论为方差T/K的完整Gaussian法则。为已标明的网格辅助条，不冒充任意s,t定理。 |
+| 所引原句 | 本条所引原句及展示公式；单个记号归入context_notation。 |
+| 对象、域、量词及前提 | 以上完整声明；额外资格与未覆盖部分见下一段 |
+| 最新网站原始评价 | PASS；首轮保留 |
 
 ### 5. [EXTRA] 与覆盖缺口
 
@@ -3537,16 +3606,17 @@ theorem gridWienerIncrementLaw {Ω : Type*} [MeasurableSpace Ω] {P : Measure Ω
 ### 6. 审计结论（含网站结论）
 
 网站原返回：PASS。T为非负、K为自然数、k:Fin K自动使K>0。D14、D15给第k个T/K长度增量，结论为方差T/K的完整Gaussian法则。为已标明的网格辅助条，不冒充任意s,t定理。
-本轮处理：保留原审阅版本结论；本轮未改签名。
-本地单文件及逐声明依赖检查通过；含未完成证明依赖的声明仍标未证。原书疑误及修正版分别见勘误，当前修改版未获网站复审结论。
+当前处理：网站PASS（首轮未改版本）。
+保留所交版本的明确结论。
+本地编译和逐声明依赖核对通过。原文疑误、各限定/修正版、反例的评价分别列出；有未完成证明依赖的声明仍为未证。
 
 ### 7. 状态与证明位置
 
-| 声明 | 状态 | 未证原因 |
-|---|---|---|
-| `MD.Ch06.gridWienerIncrementLaw` | 已证 | — |
+| 声明 | 证明状态 | 未证原因 | 网站分版结论 |
+|---|---|---|---|
+| `MD.Ch06.gridWienerIncrementLaw` | 已证 | — | PASS |
 
-位置：`Blueprint/Ch06.lean:777`；验证：`blueprint/ch06/closeout25/FINAL_COMPILE.log`。
+位置：`Blueprint/Ch06.lean:777`；本地核验记录：`blueprint/ch06/closeout26/FINAL_COMPILE.log`。
 
 ## MD-6.2.1-GridIncrementIndependent
 
@@ -3573,9 +3643,9 @@ theorem gridIncrementIndependent {Ω : Type*} [MeasurableSpace Ω] {P : Measure 
 
 | 原文对象或结论 | 当前Lean与范围 |
 |---|---|
-| 原文所选陈述 | 本条所引原句及展示公式；单个记号归入context_notation。 |
-| 对象/域/量词/前提 | 完整当前Lean及依赖定义；新增资格见[EXTRA] |
-| 网站首轮 | PASS：任意K个相邻网格增量族整体iIndepFun，非仅两两独立；K=0为空族无碍。任意T≥0及PreBrownian假设与[EXTRA]一致；完整过去独立另在第6条。 |
+| 所引原句 | 本条所引原句及展示公式；单个记号归入context_notation。 |
+| 对象、域、量词及前提 | 以上完整声明；额外资格与未覆盖部分见下一段 |
+| 最新网站原始评价 | PASS；首轮保留 |
 
 ### 5. [EXTRA] 与覆盖缺口
 
@@ -3584,16 +3654,17 @@ theorem gridIncrementIndependent {Ω : Type*} [MeasurableSpace Ω] {P : Measure 
 ### 6. 审计结论（含网站结论）
 
 网站原返回：PASS。任意K个相邻网格增量族整体iIndepFun，非仅两两独立；K=0为空族无碍。任意T≥0及PreBrownian假设与[EXTRA]一致；完整过去独立另在第6条。
-本轮处理：保留原审阅版本结论；本轮未改签名。
-本地单文件及逐声明依赖检查通过；含未完成证明依赖的声明仍标未证。原书疑误及修正版分别见勘误，当前修改版未获网站复审结论。
+当前处理：网站PASS（首轮未改版本）。
+保留所交版本的明确结论。
+本地编译和逐声明依赖核对通过。原文疑误、各限定/修正版、反例的评价分别列出；有未完成证明依赖的声明仍为未证。
 
 ### 7. 状态与证明位置
 
-| 声明 | 状态 | 未证原因 |
-|---|---|---|
-| `MD.Ch06.gridIncrementIndependent` | 已证 | — |
+| 声明 | 证明状态 | 未证原因 | 网站分版结论 |
+|---|---|---|---|
+| `MD.Ch06.gridIncrementIndependent` | 已证 | — | PASS |
 
-位置：`Blueprint/Ch06.lean:784`；验证：`blueprint/ch06/closeout25/FINAL_COMPILE.log`。
+位置：`Blueprint/Ch06.lean:784`；本地核验记录：`blueprint/ch06/closeout26/FINAL_COMPILE.log`。
 
 ## MD-6.2.1-WienerContinuousPathEval
 
@@ -3621,9 +3692,9 @@ theorem wienerContinuousPathEval {Nc : ℕ} {Ω : Type*}
 
 | 原文对象或结论 | 当前Lean与范围 |
 |---|---|
-| 原文所选陈述 | 本条所引原句及展示公式；单个记号归入context_notation。 |
-| 对象/域/量词/前提 | 完整当前Lean及依赖定义；新增资格见[EXTRA] |
-| 网站首轮 | PASS：不要求概率空间或Wiener性质；给定一条连续样本，D13真分支在每个t:Icc 0 T的值恰为原B值。假设、全称时间及向量值均吻合辅助求值条。 |
+| 所引原句 | 本条所引原句及展示公式；单个记号归入context_notation。 |
+| 对象、域、量词及前提 | 以上完整声明；额外资格与未覆盖部分见下一段 |
+| 最新网站原始评价 | PASS；首轮保留 |
 
 ### 5. [EXTRA] 与覆盖缺口
 
@@ -3632,16 +3703,17 @@ theorem wienerContinuousPathEval {Nc : ℕ} {Ω : Type*}
 ### 6. 审计结论（含网站结论）
 
 网站原返回：PASS。不要求概率空间或Wiener性质；给定一条连续样本，D13真分支在每个t:Icc 0 T的值恰为原B值。假设、全称时间及向量值均吻合辅助求值条。
-本轮处理：保留原审阅版本结论；本轮未改签名。
-本地单文件及逐声明依赖检查通过；含未完成证明依赖的声明仍标未证。原书疑误及修正版分别见勘误，当前修改版未获网站复审结论。
+当前处理：网站PASS（首轮未改版本）。
+保留所交版本的明确结论。
+本地编译和逐声明依赖核对通过。原文疑误、各限定/修正版、反例的评价分别列出；有未完成证明依赖的声明仍为未证。
 
 ### 7. 状态与证明位置
 
-| 声明 | 状态 | 未证原因 |
-|---|---|---|
-| `MD.Ch06.wienerContinuousPathEval` | 已证 | — |
+| 声明 | 证明状态 | 未证原因 | 网站分版结论 |
+|---|---|---|---|
+| `MD.Ch06.wienerContinuousPathEval` | 已证 | — | PASS |
 
-位置：`Blueprint/Ch06.lean:791`；验证：`blueprint/ch06/closeout25/FINAL_COMPILE.log`。
+位置：`Blueprint/Ch06.lean:791`；本地核验记录：`blueprint/ch06/closeout26/FINAL_COMPILE.log`。
 
 ## MD-6.2.1-WienerContinuousPathMeasurable
 
@@ -3668,9 +3740,9 @@ theorem wienerContinuousPathMeasurable {Nc : ℕ} {Ω : Type*} [MeasurableSpace 
 
 | 原文对象或结论 | 当前Lean与范围 |
 |---|---|
-| 原文所选陈述 | 本条所引原句及展示公式；单个记号归入context_notation。 |
-| 对象/域/量词/前提 | 完整当前Lean及依赖定义；新增资格见[EXTRA] |
-| 网站首轮 | PASS：由真实Wiener向量结构（包括AE连续）得整个连续路径空间映射AEMeasurable；不是仅各个时间点可测，也没有将路径可测性当前提。 |
+| 所引原句 | 本条所引原句及展示公式；单个记号归入context_notation。 |
+| 对象、域、量词及前提 | 以上完整声明；额外资格与未覆盖部分见下一段 |
+| 最新网站原始评价 | PASS；首轮保留 |
 
 ### 5. [EXTRA] 与覆盖缺口
 
@@ -3679,16 +3751,17 @@ theorem wienerContinuousPathMeasurable {Nc : ℕ} {Ω : Type*} [MeasurableSpace 
 ### 6. 审计结论（含网站结论）
 
 网站原返回：PASS。由真实Wiener向量结构（包括AE连续）得整个连续路径空间映射AEMeasurable；不是仅各个时间点可测，也没有将路径可测性当前提。
-本轮处理：保留原审阅版本结论；本轮未改签名。
-本地单文件及逐声明依赖检查通过；含未完成证明依赖的声明仍标未证。原书疑误及修正版分别见勘误，当前修改版未获网站复审结论。
+当前处理：网站PASS（首轮未改版本）。
+保留所交版本的明确结论。
+本地编译和逐声明依赖核对通过。原文疑误、各限定/修正版、反例的评价分别列出；有未完成证明依赖的声明仍为未证。
 
 ### 7. 状态与证明位置
 
-| 声明 | 状态 | 未证原因 |
-|---|---|---|
-| `MD.Ch06.wienerContinuousPathMeasurable` | 已证 | — |
+| 声明 | 证明状态 | 未证原因 | 网站分版结论 |
+|---|---|---|---|
+| `MD.Ch06.wienerContinuousPathMeasurable` | 已证 | — | PASS |
 
-位置：`Blueprint/Ch06.lean:799`；验证：`blueprint/ch06/closeout25/FINAL_COMPILE.log`。
+位置：`Blueprint/Ch06.lean:799`；本地核验记录：`blueprint/ch06/closeout26/FINAL_COMPILE.log`。
 
 ## MD-6.2.1-CoarseMarkovPrinted
 
@@ -3717,7 +3790,7 @@ theorem coarseMarkovPrinted : ∀ {Ω : Type*} [MeasurableSpace Ω]
   sorry
 ```
 
-同问题的独立修正版（位于另一source_id）：
+同问题的独立限定/修正版（位于另一条）：
 ```lean
 def coarseMarkovPrinted_corrected {Ω : Type*} [MeasurableSpace Ω]
     (P : Measure Ω) (X : ℝ≥0 → Ω → ℝ) (history : ℝ≥0 → MeasurableSpace Ω) : Prop :=
@@ -3733,27 +3806,28 @@ def coarseMarkovPrinted_corrected {Ω : Type*} [MeasurableSpace Ω]
 
 | 原文对象或结论 | 当前Lean与范围 |
 |---|---|
-| 原文所选陈述 | 本条所引原句及展示公式；单个记号归入context_notation。 |
-| 对象/域/量词/前提 | 完整当前Lean及依赖定义；新增资格见[EXTRA] |
-| 网站首轮 | NEEDS_HUMAN：字面版在真实PreBrownian下量化任意可测事件a,b,c、past<present<future及正条件事件概率，ENNReal比值忠实表达印刷条件概率式。但原书把完整当前状态换成任意粗事件，一般错误，须保留疑误而不因字面忠实判数学正确。 |
+| 所引原句 | 本条所引原句及展示公式；单个记号归入context_notation。 |
+| 对象、域、量词及前提 | 以上完整声明；额外资格与未覆盖部分见下一段 |
+| 最新网站原始评价 | NEEDS_HUMAN；首轮保留 |
 
 ### 5. [EXTRA] 与覆盖缺口
 
-- [EXTRA] 25号：原文版忠实性与数学疑误分开；补齐所交条目所属的现有_corrected完整签名，不从repair_log名称推断网站已通过修正版。
+- [EXTRA] 原文版忠实性与数学疑误分开；补齐所交条目所属的现有_corrected完整签名，不从repair_log名称推断网站已通过修正版。
 
 ### 6. 审计结论（含网站结论）
 
 网站原返回：NEEDS_HUMAN。字面版在真实PreBrownian下量化任意可测事件a,b,c、past<present<future及正条件事件概率，ENNReal比值忠实表达印刷条件概率式。但原书把完整当前状态换成任意粗事件，一般错误，须保留疑误而不因字面忠实判数学正确。
-本轮处理：原文版忠实性与数学疑误分开；补齐所交条目所属的现有_corrected完整签名，不从repair_log名称推断网站已通过修正版。
-本地单文件及逐声明依赖检查通过；含未完成证明依赖的声明仍标未证。原书疑误及修正版分别见勘误，当前修改版未获网站复审结论。
+当前处理：原文疑误或语义范围待导师；不冒称未提供版本已通过。
+保留所交版本的明确结论。
+本地编译和逐声明依赖核对通过。原文疑误、各限定/修正版、反例的评价分别列出；有未完成证明依赖的声明仍为未证。
 
 ### 7. 状态与证明位置
 
-| 声明 | 状态 | 未证原因 |
-|---|---|---|
-| `MD.Ch06.coarseMarkovPrinted` | 未证 | 原书疑误不证 |
+| 声明 | 证明状态 | 未证原因 | 网站分版结论 |
+|---|---|---|---|
+| `MD.Ch06.coarseMarkovPrinted` | 未证 | 原书疑误不证 | 原文忠实性PASS；原书数学/范围NEEDS_HUMAN |
 
-位置：`Blueprint/Ch06.lean:807`；验证：`blueprint/ch06/closeout25/FINAL_COMPILE.log`。
+位置：`Blueprint/Ch06.lean:807`；本地核验记录：`blueprint/ch06/closeout26/FINAL_COMPILE.log`。
 
 ## MD-6.2.1-StateMarkovMeaning
 
@@ -3794,28 +3868,29 @@ def coarseMarkovPrinted_corrected {Ω : Type*} [MeasurableSpace Ω]
 
 | 原文对象或结论 | 当前Lean与范围 |
 |---|---|
-| 原文所选陈述 | 本条Lean覆盖范围：原版及coarseMarkovPrinted_corrected同时要求概率空间、X各时可测和history严格等于全部过去生成的自然过滤；排除任意history伪Markov。 |
-| 对象/域/量词/前提 | 完整当前Lean及依赖定义；新增资格见[EXTRA] |
-| 网站首轮 | FAIL：两个定义确实以条件期望比较history(s)与σ(Xs)，但history是完全任意的MeasurableSpace族；没有规定它包含截至s的过去、包含σ(Xs)、是环境子σ代数或构成自然过滤。因此作为完整Markov性质的无约束接口不足，修正版也有同一缺口。 |
+| 所引原句 | 本条Lean覆盖范围：原版及coarseMarkovPrinted_corrected同时要求概率空间、X各时可测和history严格等于全部过去生成的自然过滤；排除任意history伪Markov。 |
+| 对象、域、量词及前提 | 以上完整声明；额外资格与未覆盖部分见下一段 |
+| 最新网站原始评价 | PASS；复审 |
 
 ### 5. [EXTRA] 与覆盖缺口
 
-- [EXTRA] 25号：原版及coarseMarkovPrinted_corrected同时要求概率空间、X各时可测和history严格等于全部过去生成的自然过滤；排除任意history伪Markov。
+- [EXTRA] 原版及coarseMarkovPrinted_corrected同时要求概率空间、X各时可测和history严格等于全部过去生成的自然过滤；排除任意history伪Markov。
 
 ### 6. 审计结论（含网站结论）
 
-网站原返回：FAIL。两个定义确实以条件期望比较history(s)与σ(Xs)，但history是完全任意的MeasurableSpace族；没有规定它包含截至s的过去、包含σ(Xs)、是环境子σ代数或构成自然过滤。因此作为完整Markov性质的无约束接口不足，修正版也有同一缺口。
-本轮处理：原版及coarseMarkovPrinted_corrected同时要求概率空间、X各时可测和history严格等于全部过去生成的自然过滤；排除任意history伪Markov。
-本地单文件及逐声明依赖检查通过；含未完成证明依赖的声明仍标未证。原书疑误及修正版分别见勘误，当前修改版未获网站复审结论。
+网站原返回：PASS。stateMarkovMeaning与coarseMarkovPrinted_corrected完全相同：概率空间、每时X可测、history严格等于0≤r≤s的全部自然历史；对s≤t及所有可测实事件a，未来事件指标关于历史与当前状态的条件期望AE相等。指标可积且两个σ代数从X的可测性均小于环境σ代数，排除了任意history和默认零条件期望的伪性质。是实值过程标准自然历史Markov定义，两版PASS。
+当前处理：网站PASS（复审）。
+保留所交版本的明确结论。
+本地编译和逐声明依赖核对通过。原文疑误、各限定/修正版、反例的评价分别列出；有未完成证明依赖的声明仍为未证。
 
 ### 7. 状态与证明位置
 
-| 声明 | 状态 | 未证原因 |
-|---|---|---|
-| `MD.Ch06.stateMarkovMeaning` | 定义 | — |
-| `MD.Ch06.coarseMarkovPrinted_corrected` | 定义 | — |
+| 声明 | 证明状态 | 未证原因 | 网站分版结论 |
+|---|---|---|---|
+| `MD.Ch06.stateMarkovMeaning` | 定义 | — | PASS |
+| `MD.Ch06.coarseMarkovPrinted_corrected` | 定义 | — | PASS |
 
-位置：`Blueprint/Ch06.lean:819`；验证：`blueprint/ch06/closeout25/FINAL_COMPILE.log`。
+位置：`Blueprint/Ch06.lean:819`；本地核验记录：`blueprint/ch06/closeout26/FINAL_COMPILE.log`。
 
 ## MD-6.2.2-RiemannTags
 
@@ -3854,29 +3929,30 @@ theorem riemannTags_corrected : ∀ (g : ℝ → ℝ) (T : ℝ) (tags : ℕ → 
 
 | 原文对象或结论 | 当前Lean与范围 |
 |---|---|
-| 原文所选陈述 | 本条所引原句及展示公式；单个记号归入context_notation。 |
-| 对象/域/量词/前提 | 完整当前Lean及依赖定义；新增资格见[EXTRA] |
-| 网站首轮 | NEEDS_HUMAN：任意T≥0、[0,T]上连续g、每个K>0的所有k<K标签位于第k个闭子区间，结论为整族带标签和趋于区间积分。K=0不影响atTop；形式化正确地采用0起始索引。原书文字1≤k≤ν而公式0≤k<ν有索引冲突，需保留原貌并标疑误。 |
+| 所引原句 | 本条所引原句及展示公式；单个记号归入context_notation。 |
+| 对象、域、量词及前提 | 以上完整声明；额外资格与未覆盖部分见下一段 |
+| 最新网站原始评价 | NEEDS_HUMAN；复审 |
 
 ### 5. [EXTRA] 与覆盖缺口
 
 - [EXTRA]非负窗口和所有合法任意tags；完整标签无关性，没有缩减为仅左端点特例。
-- [EXTRA] 25号：原书文字1≤k≤ν与求和0≤k<ν冲突；本条数学修正版统一0≤k<ν，原句保留。
+- [EXTRA] 原书文字1≤k≤ν与求和0≤k<ν冲突；本条数学修正版统一0≤k<ν，原句保留。
 
 ### 6. 审计结论（含网站结论）
 
-网站原返回：NEEDS_HUMAN。任意T≥0、[0,T]上连续g、每个K>0的所有k<K标签位于第k个闭子区间，结论为整族带标签和趋于区间积分。K=0不影响atTop；形式化正确地采用0起始索引。原书文字1≤k≤ν而公式0≤k<ν有索引冲突，需保留原貌并标疑误。
-本轮处理：原书文字1≤k≤ν与求和0≤k<ν冲突；本条数学修正版统一0≤k<ν，原句保留。
-本地单文件及逐声明依赖检查通过；含未完成证明依赖的声明仍标未证。原书疑误及修正版分别见勘误，当前修改版未获网站复审结论。
+网站原返回：NEEDS_HUMAN。riemannTags与riemannTags_corrected都对任意连续于[0,T]的g、T≥0及所有合法tag族陈述均匀网格Riemann和趋于区间积分。K>0和k<K只用于标签条件，K=0单项不影响atTop极限；T=0也正确。任意端点或内部tag均包含，未降成左端点特例。两个数学签名PASS，但这是统一索引后的版本，原文索引疑误应保留NEEDS_HUMAN。
+当前处理：修正版/限定声明=网站PASS；原文疑误或范围解释待导师。
+保留所交版本的明确结论。
+本地编译和逐声明依赖核对通过。原文疑误、各限定/修正版、反例的评价分别列出；有未完成证明依赖的声明仍为未证。
 
 ### 7. 状态与证明位置
 
-| 声明 | 状态 | 未证原因 |
-|---|---|---|
-| `MD.Ch06.riemannTags` | 未证 | 时间盒止 |
-| `MD.Ch06.riemannTags_corrected` | 未证 | 缺大型理论 |
+| 声明 | 证明状态 | 未证原因 | 网站分版结论 |
+|---|---|---|---|
+| `MD.Ch06.riemannTags` | 未证 | 时间盒止 | PASS |
+| `MD.Ch06.riemannTags_corrected` | 未证 | 缺大型理论 | PASS |
 
-位置：`Blueprint/Ch06.lean:841`；验证：`blueprint/ch06/closeout25/FINAL_COMPILE.log`。
+位置：`Blueprint/Ch06.lean:841`；本地核验记录：`blueprint/ch06/closeout26/FINAL_COMPILE.log`。
 
 ## MD-6.2.2-ItoLeftSum
 
@@ -3904,9 +3980,9 @@ def itoLeftSum {Ω : Type*} (W g : ℝ → Ω → ℝ) (T : ℝ) (K : ℕ) (samp
 
 | 原文对象或结论 | 当前Lean与范围 |
 |---|---|
-| 原文所选陈述 | 本条所引原句及展示公式；单个记号归入context_notation。 |
-| 对象/域/量词/前提 | 完整当前Lean及依赖定义；新增资格见[EXTRA] |
-| 网站首轮 | PASS：W,g是实时间随机函数，任意T和K的有限和；左端点kT/K与相应W增量均正确，range K精确为0到K−1；仅定义有限和，不断言存在极限。 |
+| 所引原句 | 本条所引原句及展示公式；单个记号归入context_notation。 |
+| 对象、域、量词及前提 | 以上完整声明；额外资格与未覆盖部分见下一段 |
+| 最新网站原始评价 | PASS；首轮保留 |
 
 ### 5. [EXTRA] 与覆盖缺口
 
@@ -3915,16 +3991,17 @@ def itoLeftSum {Ω : Type*} (W g : ℝ → Ω → ℝ) (T : ℝ) (K : ℕ) (samp
 ### 6. 审计结论（含网站结论）
 
 网站原返回：PASS。W,g是实时间随机函数，任意T和K的有限和；左端点kT/K与相应W增量均正确，range K精确为0到K−1；仅定义有限和，不断言存在极限。
-本轮处理：保留原审阅版本结论；本轮未改签名。
-本地单文件及逐声明依赖检查通过；含未完成证明依赖的声明仍标未证。原书疑误及修正版分别见勘误，当前修改版未获网站复审结论。
+当前处理：网站PASS（首轮未改版本）。
+保留所交版本的明确结论。
+本地编译和逐声明依赖核对通过。原文疑误、各限定/修正版、反例的评价分别列出；有未完成证明依赖的声明仍为未证。
 
 ### 7. 状态与证明位置
 
-| 声明 | 状态 | 未证原因 |
-|---|---|---|
-| `MD.Ch06.itoLeftSum` | 定义 | — |
+| 声明 | 证明状态 | 未证原因 | 网站分版结论 |
+|---|---|---|---|
+| `MD.Ch06.itoLeftSum` | 定义 | — | PASS |
 
-位置：`Blueprint/Ch06.lean:857`；验证：`blueprint/ch06/closeout25/FINAL_COMPILE.log`。
+位置：`Blueprint/Ch06.lean:857`；本地核验记录：`blueprint/ch06/closeout26/FINAL_COMPILE.log`。
 
 ## MD-6.2.2-StrictItoIntegral
 
@@ -3963,9 +4040,9 @@ def weakItoAlias_corrected {Ω : Type*} [MeasurableSpace Ω] (P : Measure Ω)
 
 | 原文对象或结论 | 当前Lean与范围 |
 |---|---|
-| 原文所选陈述 | 本条所引原句及展示公式；单个记号归入context_notation。 |
-| 对象/域/量词/前提 | 完整当前Lean及依赖定义；新增资格见[EXTRA] |
-| 网站首轮 | PASS：任意P、W,g,T,Y；每个有限和及Y均MemLp 2，再要求误差平方积分趋零。D16取样相符。所附weakItoAlias_corrected逐项相同，合理修复第16条非可积默认值漏洞；作为L²均方积分定义不声称所有g可积。 |
+| 所引原句 | 本条所引原句及展示公式；单个记号归入context_notation。 |
+| 对象、域、量词及前提 | 以上完整声明；额外资格与未覆盖部分见下一段 |
+| 最新网站原始评价 | PASS；首轮保留 |
 
 ### 5. [EXTRA] 与覆盖缺口
 
@@ -3974,17 +4051,18 @@ def weakItoAlias_corrected {Ω : Type*} [MeasurableSpace Ω] (P : Measure Ω)
 ### 6. 审计结论（含网站结论）
 
 网站原返回：PASS。任意P、W,g,T,Y；每个有限和及Y均MemLp 2，再要求误差平方积分趋零。D16取样相符。所附weakItoAlias_corrected逐项相同，合理修复第16条非可积默认值漏洞；作为L²均方积分定义不声称所有g可积。
-本轮处理：保留原审阅版本结论；本轮未改签名。
-本地单文件及逐声明依赖检查通过；含未完成证明依赖的声明仍标未证。原书疑误及修正版分别见勘误，当前修改版未获网站复审结论。
+当前处理：网站PASS（首轮未改版本）。
+保留所交版本的明确结论。
+本地编译和逐声明依赖核对通过。原文疑误、各限定/修正版、反例的评价分别列出；有未完成证明依赖的声明仍为未证。
 
 ### 7. 状态与证明位置
 
-| 声明 | 状态 | 未证原因 |
-|---|---|---|
-| `MD.Ch06.strictItoIntegral` | 定义 | — |
-| `MD.Ch06.weakItoAlias_corrected` | 定义 | — |
+| 声明 | 证明状态 | 未证原因 | 网站分版结论 |
+|---|---|---|---|
+| `MD.Ch06.strictItoIntegral` | 定义 | — | PASS |
+| `MD.Ch06.weakItoAlias_corrected` | 定义 | — | 未获单独PASS；见分版意见 |
 
-位置：`Blueprint/Ch06.lean:863`；验证：`blueprint/ch06/closeout25/FINAL_COMPILE.log`。
+位置：`Blueprint/Ch06.lean:863`；本地核验记录：`blueprint/ch06/closeout26/FINAL_COMPILE.log`。
 
 ## MD-6.2.2-WeakItoAlias
 
@@ -3994,7 +4072,8 @@ def weakItoAlias_corrected {Ω : Type*} [MeasurableSpace Ω] (P : Measure Ω)
 
 > By analogy, we would like to write the stochastic integral of a function $g$, where $g$ may, itself, be defined in terms of a stochastic process, as the limit of a sum:
 > \[\sum_{k=0}^{\nu-1}g(t_k)[W((k+1)\delta t)-W(k\delta t)],\quad \nu\to\infty.\]
-> The first choice is commonly referred to as Itô integration, and the second as Stratonovich integration.
+> where the increments $W((k+1)\delta t)-W(k\delta t)$ identified here are the increments of a Wiener process whose properties are given above. (In particular they are normally distributed with mean zero and variance $\delta t$.) First, we should be careful regarding the sense in which we expect convergence, since sequences of random variables may converge in various ways.
+> Next, unlike in the case of the Riemann sums, it turns out that the result depends on where we place the points $t_k$. Using the properties of the Wiener process we may easily show that the choice $t_k=k\delta t$ (left endpoint) and the choice $t_k=(k+1/2)\delta t$ yield different formulas for the integral. The first choice is commonly referred to as Itô integration, and the second as Stratonovich integration.
 
 ### 2. 原文证明
 
@@ -4013,27 +4092,28 @@ def weakItoAlias {Ω : Type*} [MeasurableSpace Ω] (P : Measure Ω)
 
 | 原文对象或结论 | 当前Lean与范围 |
 |---|---|
-| 原文所选陈述 | 本条Lean覆盖范围：采用既有strictItoIntegral的全部有限和L²资格；极限及平方误差的可积性不再被Bochner默认零掩盖。正式库旧辅助保持冻结。 |
-| 对象/域/量词/前提 | 完整当前Lean及依赖定义；新增资格见[EXTRA] |
-| 网站首轮 | FAIL：仅Y∈L²，没有有限和或平方误差的可积资格。Lean的Bochner积分在非可积时取0，故该谓词会接受没有数学均方收敛的对象；[ERRATUM?]虽已提示，签名仍不合格。第15条附带的_corrected定义补全L²条件，审校为PASS。 |
+| 所引原句 | 本条Lean覆盖范围：采用既有strictItoIntegral的全部有限和L²资格；极限及平方误差的可积性不再被Bochner默认零掩盖。正式库旧辅助保持冻结。 |
+| 对象、域、量词及前提 | 以上完整声明；额外资格与未覆盖部分见下一段 |
+| 最新网站原始评价 | PASS；复审 |
 
 ### 5. [EXTRA] 与覆盖缺口
 
-- [EXTRA] 25号：采用既有strictItoIntegral的全部有限和L²资格；极限及平方误差的可积性不再被Bochner默认零掩盖。正式库旧辅助保持冻结。
+- [EXTRA] 采用既有strictItoIntegral的全部有限和L²资格；极限及平方误差的可积性不再被Bochner默认零掩盖。正式库旧辅助保持冻结。
 
 ### 6. 审计结论（含网站结论）
 
-网站原返回：FAIL。仅Y∈L²，没有有限和或平方误差的可积资格。Lean的Bochner积分在非可积时取0，故该谓词会接受没有数学均方收敛的对象；[ERRATUM?]虽已提示，签名仍不合格。第15条附带的_corrected定义补全L²条件，审校为PASS。
-本轮处理：采用既有strictItoIntegral的全部有限和L²资格；极限及平方误差的可积性不再被Bochner默认零掩盖。正式库旧辅助保持冻结。
-本地单文件及逐声明依赖检查通过；含未完成证明依赖的声明仍标未证。原书疑误及修正版分别见勘误，当前修改版未获网站复审结论。
+网站原返回：PASS。weakItoAlias是任意测度P、过程W,g、实T和候选Y的均方左和极限关系：每个K的itoLeftSum及Y均为L²，平方误差积分趋0。D3的和确用左端点kT/K和相邻W增量。L²前提排除了不可积函数Bochner默认零的漏洞。作为左和极限关系定义PASS；P不是自动概率、W不是自动Wiener、g不是自动适应，此定义本身不授予标准Itô积分的存在性或一般等距性质，不能扩充解释。
+当前处理：网站PASS（复审）。
+保留所交版本的明确结论。
+本地编译和逐声明依赖核对通过。原文疑误、各限定/修正版、反例的评价分别列出；有未完成证明依赖的声明仍为未证。
 
 ### 7. 状态与证明位置
 
-| 声明 | 状态 | 未证原因 |
-|---|---|---|
-| `MD.Ch06.weakItoAlias` | 定义 | — |
+| 声明 | 证明状态 | 未证原因 | 网站分版结论 |
+|---|---|---|---|
+| `MD.Ch06.weakItoAlias` | 定义 | — | PASS |
 
-位置：`Blueprint/Ch06.lean:878`；验证：`blueprint/ch06/closeout25/FINAL_COMPILE.log`。
+位置：`Blueprint/Ch06.lean:878`；本地核验记录：`blueprint/ch06/closeout26/FINAL_COMPILE.log`。
 
 ## MD-6.2.2-StratonovichSum
 
@@ -4061,9 +4141,9 @@ def stratonovichSum {Ω : Type*} (W g : ℝ → Ω → ℝ) (T : ℝ) (K : ℕ) 
 
 | 原文对象或结论 | 当前Lean与范围 |
 |---|---|
-| 原文所选陈述 | 本条所引原句及展示公式；单个记号归入context_notation。 |
-| 对象/域/量词/前提 | 完整当前Lean及依赖定义；新增资格见[EXTRA] |
-| 网站首轮 | PASS：真实时间中点((k+1/2)T/K)处取g值，而非端点g均值；W增量及0到K−1索引均正确。只定义原书中点和，不声称对任意随机g等于一般Stratonovich积分。 |
+| 所引原句 | 本条所引原句及展示公式；单个记号归入context_notation。 |
+| 对象、域、量词及前提 | 以上完整声明；额外资格与未覆盖部分见下一段 |
+| 最新网站原始评价 | PASS；首轮保留 |
 
 ### 5. [EXTRA] 与覆盖缺口
 
@@ -4072,16 +4152,17 @@ def stratonovichSum {Ω : Type*} (W g : ℝ → Ω → ℝ) (T : ℝ) (K : ℕ) 
 ### 6. 审计结论（含网站结论）
 
 网站原返回：PASS。真实时间中点((k+1/2)T/K)处取g值，而非端点g均值；W增量及0到K−1索引均正确。只定义原书中点和，不声称对任意随机g等于一般Stratonovich积分。
-本轮处理：保留原审阅版本结论；本轮未改签名。
-本地单文件及逐声明依赖检查通过；含未完成证明依赖的声明仍标未证。原书疑误及修正版分别见勘误，当前修改版未获网站复审结论。
+当前处理：网站PASS（首轮未改版本）。
+保留所交版本的明确结论。
+本地编译和逐声明依赖核对通过。原文疑误、各限定/修正版、反例的评价分别列出；有未完成证明依赖的声明仍为未证。
 
 ### 7. 状态与证明位置
 
-| 声明 | 状态 | 未证原因 |
-|---|---|---|
-| `MD.Ch06.stratonovichSum` | 定义 | — |
+| 声明 | 证明状态 | 未证原因 | 网站分版结论 |
+|---|---|---|---|
+| `MD.Ch06.stratonovichSum` | 定义 | — | PASS |
 
-位置：`Blueprint/Ch06.lean:884`；验证：`blueprint/ch06/closeout25/FINAL_COMPILE.log`。
+位置：`Blueprint/Ch06.lean:884`；本地核验记录：`blueprint/ch06/closeout26/FINAL_COMPILE.log`。
 
 ## MD-6.2.2-SelfItoFiniteIdentity
 
@@ -4112,9 +4193,9 @@ theorem selfItoFiniteIdentity {Ω : Type*} [MeasurableSpace Ω] {P : Measure Ω}
 
 | 原文对象或结论 | 当前Lean与范围 |
 |---|---|
-| 原文所选陈述 | 本条所引原句及展示公式；单个记号归入context_notation。 |
-| 对象/域/量词/前提 | 完整当前Lean及依赖定义；新增资格见[EXTRA] |
-| 网站首轮 | PASS：K>0，PreBrownian给W0=0几乎处处；D18左和与D17平方增量和构成2S=W(T)^2−Q的AE有限恒等，完整保留望远镜结果而没有把积分极限偷当前提。 |
+| 所引原句 | 本条所引原句及展示公式；单个记号归入context_notation。 |
+| 对象、域、量词及前提 | 以上完整声明；额外资格与未覆盖部分见下一段 |
+| 最新网站原始评价 | PASS；首轮保留 |
 
 ### 5. [EXTRA] 与覆盖缺口
 
@@ -4123,16 +4204,17 @@ theorem selfItoFiniteIdentity {Ω : Type*} [MeasurableSpace Ω] {P : Measure Ω}
 ### 6. 审计结论（含网站结论）
 
 网站原返回：PASS。K>0，PreBrownian给W0=0几乎处处；D18左和与D17平方增量和构成2S=W(T)^2−Q的AE有限恒等，完整保留望远镜结果而没有把积分极限偷当前提。
-本轮处理：保留原审阅版本结论；本轮未改签名。
-本地单文件及逐声明依赖检查通过；含未完成证明依赖的声明仍标未证。原书疑误及修正版分别见勘误，当前修改版未获网站复审结论。
+当前处理：网站PASS（首轮未改版本）。
+保留所交版本的明确结论。
+本地编译和逐声明依赖核对通过。原文疑误、各限定/修正版、反例的评价分别列出；有未完成证明依赖的声明仍为未证。
 
 ### 7. 状态与证明位置
 
-| 声明 | 状态 | 未证原因 |
-|---|---|---|
-| `MD.Ch06.selfItoFiniteIdentity` | 已证 | — |
+| 声明 | 证明状态 | 未证原因 | 网站分版结论 |
+|---|---|---|---|
+| `MD.Ch06.selfItoFiniteIdentity` | 已证 | — | PASS |
 
-位置：`Blueprint/Ch06.lean:890`；验证：`blueprint/ch06/closeout25/FINAL_COMPILE.log`。
+位置：`Blueprint/Ch06.lean:890`；本地核验记录：`blueprint/ch06/closeout26/FINAL_COMPILE.log`。
 
 ## MD-6.2.2-Proposition62
 
@@ -4159,8 +4241,8 @@ theorem selfItoFiniteIdentity {Ω : Type*} [MeasurableSpace Ω] {P : Measure Ω}
 > Also observe that $\Delta W_k$ is a normally distributed random variable with the following properties
 > \[\mathbb E\Delta W_k=0;\quad\mathbb E\Delta W_k^2=\delta t=\tau/\nu;\quad\mathbb E\Delta W_k^4=3\delta t^2=3(\tau/\nu)^2.\]
 > Thus we have
-> \[I_\nu=\sum_{k=0}^{\nu-1}\mathbb E(\Delta \Delta W_{\nu,k}^2-\delta t)^2
-> =\sum_{k=0}^{\nu-1}\mathbb E[\Delta \Delta W_{\nu,k}^4-2\delta t\Delta \Delta W_{\nu,k}^2+\delta t^2]
+> \[I_\nu=\sum_{k=0}^{\nu-1}\mathbb E(\Delta W_{\nu,k}^2-\delta t)^2
+> =\sum_{k=0}^{\nu-1}\mathbb E[\Delta W_{\nu,k}^4-2\delta t\Delta W_{\nu,k}^2+\delta t^2]
 > =\sum_{k=0}^{\nu-1}[3\delta t^2-2\delta t^2+\delta t^2]=2\nu\delta t^2=2\tau^2/\nu.\]
 > Thus $I_\nu\to0$ as $\nu\to0$, which is the desired result.
 
@@ -4195,32 +4277,33 @@ theorem proposition62Printed_counterexample : ¬ ((1+1 : ℝ)^2=1^2+1^2-4*1*1) :
 
 | 原文对象或结论 | 当前Lean与范围 |
 |---|---|
-| 原文所选陈述 | 本条所引原句及展示公式；单个记号归入context_notation。 |
-| 对象/域/量词/前提 | 完整当前Lean及依赖定义；新增资格见[EXTRA] |
-| 网站首轮 | NEEDS_HUMAN：任意T≥0和PreBrownian，结论为实际平方增量和减T的平方误差期望随K→∞趋0，吻合命题结论。原证明负交叉项和ν→0两处印刷疑误必须保留。repair_log列出的proposition62_corrected没有在本条给出签名，不能仅凭名称确认其完整内容。 |
+| 所引原句 | 本条所引原句及展示公式；单个记号归入context_notation。 |
+| 对象、域、量词及前提 | 以上完整声明；额外资格与未覆盖部分见下一段 |
+| 最新网站原始评价 | NEEDS_HUMAN；复审 |
 
 ### 5. [EXTRA] 与覆盖缺口
 
 - [EXTRA]实际PreBrownian law、τ≥0、全部均方极限；印刷最后K→0是笔误，更正K→∞。
-- [EXTRA] 25号：原文版忠实性与数学疑误分开；补齐所交条目所属的现有_corrected完整签名，不从repair_log名称推断网站已通过修正版。
+- [EXTRA] 原文版忠实性与数学疑误分开；补齐所交条目所属的现有_corrected完整签名，不从repair_log名称推断网站已通过修正版。
 
 ### 6. 审计结论（含网站结论）
 
-网站原返回：NEEDS_HUMAN。任意T≥0和PreBrownian，结论为实际平方增量和减T的平方误差期望随K→∞趋0，吻合命题结论。原证明负交叉项和ν→0两处印刷疑误必须保留。repair_log列出的proposition62_corrected没有在本条给出签名，不能仅凭名称确认其完整内容。
-本轮处理：原文版忠实性与数学疑误分开；补齐所交条目所属的现有_corrected完整签名，不从repair_log名称推断网站已通过修正版。
-本地单文件及逐声明依赖检查通过；含未完成证明依赖的声明仍标未证。原书疑误及修正版分别见勘误，当前修改版未获网站复审结论。
+网站原返回：NEEDS_HUMAN。proposition62及proposition62_corrected：实际IsPreBrownianReal、T≥0，均匀网格平方增量和的均方误差atTop趋0，签名正确。WienerTime=k*T/K、WienerIncrement为相邻差、QuadraticSum为Fin K平方和，均核对。proposition62Printed定义x²+y²-4xy，忠实记录按有序k≠l理解印刷展开的两变量表达；未将错误式当定理。proposition62Expansion_corrected的普通平方展开正确；proposition62Printed_counterexample在x=y=1正确。原书一般代数展开错误虽因独立零均值而不改变期望最终结果，仍需标疑误；末极限应为ν→∞。
+当前处理：修正版/限定声明=网站PASS；原文疑误或范围解释待导师。
+保留所交版本的明确结论。
+本地编译和逐声明依赖核对通过。原文疑误、各限定/修正版、反例的评价分别列出；有未完成证明依赖的声明仍为未证。
 
 ### 7. 状态与证明位置
 
-| 声明 | 状态 | 未证原因 |
-|---|---|---|
-| `MD.Ch06.proposition62` | 已证 | — |
-| `MD.Ch06.proposition62_corrected` | 已证 | — |
-| `MD.Ch06.proposition62Printed` | 定义 | — |
-| `MD.Ch06.proposition62Expansion_corrected` | 已证 | — |
-| `MD.Ch06.proposition62Printed_counterexample` | 已证 | — |
+| 声明 | 证明状态 | 未证原因 | 网站分版结论 |
+|---|---|---|---|
+| `MD.Ch06.proposition62` | 已证 | — | PASS |
+| `MD.Ch06.proposition62_corrected` | 已证 | — | PASS |
+| `MD.Ch06.proposition62Printed` | 定义 | — | 原文忠实性PASS；原书数学/范围NEEDS_HUMAN |
+| `MD.Ch06.proposition62Expansion_corrected` | 已证 | — | PASS |
+| `MD.Ch06.proposition62Printed_counterexample` | 已证 | — | 原文忠实性PASS；原书数学/范围NEEDS_HUMAN |
 
-位置：`Blueprint/Ch06.lean:900`；验证：`blueprint/ch06/closeout25/FINAL_COMPILE.log`。
+位置：`Blueprint/Ch06.lean:900`；本地核验记录：`blueprint/ch06/closeout26/FINAL_COMPILE.log`。
 
 ## MD-6.2.2-MeanSquareConvergence
 
@@ -4248,9 +4331,9 @@ def meanSquareConvergence {Ω : Type*} [MeasurableSpace Ω] (P : Measure Ω)
 
 | 原文对象或结论 | 当前Lean与范围 |
 |---|---|
-| 原文所选陈述 | 本条所引原句及展示公式；单个记号归入context_notation。 |
-| 对象/域/量词/前提 | 完整当前Lean及依赖定义；新增资格见[EXTRA] |
-| 网站首轮 | PASS：定义量化所有K的L²资格、B的L²资格及误差平方期望趋零；比印刷速记补足合法均方随机变量域，[EXTRA]已明确。并非仅形式Bochner默认0。 |
+| 所引原句 | 本条所引原句及展示公式；单个记号归入context_notation。 |
+| 对象、域、量词及前提 | 以上完整声明；额外资格与未覆盖部分见下一段 |
+| 最新网站原始评价 | PASS；首轮保留 |
 
 ### 5. [EXTRA] 与覆盖缺口
 
@@ -4259,16 +4342,17 @@ def meanSquareConvergence {Ω : Type*} [MeasurableSpace Ω] (P : Measure Ω)
 ### 6. 审计结论（含网站结论）
 
 网站原返回：PASS。定义量化所有K的L²资格、B的L²资格及误差平方期望趋零；比印刷速记补足合法均方随机变量域，[EXTRA]已明确。并非仅形式Bochner默认0。
-本轮处理：保留原审阅版本结论；本轮未改签名。
-本地单文件及逐声明依赖检查通过；含未完成证明依赖的声明仍标未证。原书疑误及修正版分别见勘误，当前修改版未获网站复审结论。
+当前处理：网站PASS（首轮未改版本）。
+保留所交版本的明确结论。
+本地编译和逐声明依赖核对通过。原文疑误、各限定/修正版、反例的评价分别列出；有未完成证明依赖的声明仍为未证。
 
 ### 7. 状态与证明位置
 
-| 声明 | 状态 | 未证原因 |
-|---|---|---|
-| `MD.Ch06.meanSquareConvergence` | 定义 | — |
+| 声明 | 证明状态 | 未证原因 | 网站分版结论 |
+|---|---|---|---|
+| `MD.Ch06.meanSquareConvergence` | 定义 | — | PASS |
 
-位置：`Blueprint/Ch06.lean:925`；验证：`blueprint/ch06/closeout25/FINAL_COMPILE.log`。
+位置：`Blueprint/Ch06.lean:925`；本地核验记录：`blueprint/ch06/closeout26/FINAL_COMPILE.log`。
 
 ## MD-6.2.2-WienerMidpointSum
 
@@ -4294,9 +4378,9 @@ noncomputable def wienerMidpointSum {Ω : Type*} [MeasurableSpace Ω] {P : Measu
 
 | 原文对象或结论 | 当前Lean与范围 |
 |---|---|
-| 原文所选陈述 | 本条所引原句及展示公式；单个记号归入context_notation。 |
-| 对象/域/量词/前提 | 完整当前Lean及依赖定义；新增资格见[EXTRA] |
-| 网站首轮 | PASS：Fin K上取W((2k+1)T/(2K))乘整步增量，K>0时精确时间中点；K=0为空和。虽有未使用的P隐参，不改变数学内容。仅g=W辅助定义。 |
+| 所引原句 | 本条所引原句及展示公式；单个记号归入context_notation。 |
+| 对象、域、量词及前提 | 以上完整声明；额外资格与未覆盖部分见下一段 |
+| 最新网站原始评价 | PASS；首轮保留 |
 
 ### 5. [EXTRA] 与覆盖缺口
 
@@ -4305,16 +4389,17 @@ noncomputable def wienerMidpointSum {Ω : Type*} [MeasurableSpace Ω] {P : Measu
 ### 6. 审计结论（含网站结论）
 
 网站原返回：PASS。Fin K上取W((2k+1)T/(2K))乘整步增量，K>0时精确时间中点；K=0为空和。虽有未使用的P隐参，不改变数学内容。仅g=W辅助定义。
-本轮处理：保留原审阅版本结论；本轮未改签名。
-本地单文件及逐声明依赖检查通过；含未完成证明依赖的声明仍标未证。原书疑误及修正版分别见勘误，当前修改版未获网站复审结论。
+当前处理：网站PASS（首轮未改版本）。
+保留所交版本的明确结论。
+本地编译和逐声明依赖核对通过。原文疑误、各限定/修正版、反例的评价分别列出；有未完成证明依赖的声明仍为未证。
 
 ### 7. 状态与证明位置
 
-| 声明 | 状态 | 未证原因 |
-|---|---|---|
-| `MD.Ch06.wienerMidpointSum` | 定义 | — |
+| 声明 | 证明状态 | 未证原因 | 网站分版结论 |
+|---|---|---|---|
+| `MD.Ch06.wienerMidpointSum` | 定义 | — | PASS |
 
-位置：`Blueprint/Ch06.lean:931`；验证：`blueprint/ch06/closeout25/FINAL_COMPILE.log`。
+位置：`Blueprint/Ch06.lean:931`；本地核验记录：`blueprint/ch06/closeout26/FINAL_COMPILE.log`。
 
 ## MD-6.2.2-GaussianIncrementMean
 
@@ -4342,9 +4427,9 @@ theorem gaussianIncrementMean {Ω : Type*} [MeasurableSpace Ω] {P : Measure Ω}
 
 | 原文对象或结论 | 当前Lean与范围 |
 |---|---|
-| 原文所选陈述 | 本条所引原句及展示公式；单个记号归入context_notation。 |
-| 对象/域/量词/前提 | 完整当前Lean及依赖定义；新增资格见[EXTRA] |
-| 网站首轮 | PASS：任意HasLaw X (gaussianReal 0 v) P，v≥0，推出期望0；真实增量法则在第7条提供。此条只承载三项矩公式的第一项，其余分别由第23、24条承载。 |
+| 所引原句 | 本条所引原句及展示公式；单个记号归入context_notation。 |
+| 对象、域、量词及前提 | 以上完整声明；额外资格与未覆盖部分见下一段 |
+| 最新网站原始评价 | PASS；首轮保留 |
 
 ### 5. [EXTRA] 与覆盖缺口
 
@@ -4353,16 +4438,17 @@ theorem gaussianIncrementMean {Ω : Type*} [MeasurableSpace Ω] {P : Measure Ω}
 ### 6. 审计结论（含网站结论）
 
 网站原返回：PASS。任意HasLaw X (gaussianReal 0 v) P，v≥0，推出期望0；真实增量法则在第7条提供。此条只承载三项矩公式的第一项，其余分别由第23、24条承载。
-本轮处理：保留原审阅版本结论；本轮未改签名。
-本地单文件及逐声明依赖检查通过；含未完成证明依赖的声明仍标未证。原书疑误及修正版分别见勘误，当前修改版未获网站复审结论。
+当前处理：网站PASS（首轮未改版本）。
+保留所交版本的明确结论。
+本地编译和逐声明依赖核对通过。原文疑误、各限定/修正版、反例的评价分别列出；有未完成证明依赖的声明仍为未证。
 
 ### 7. 状态与证明位置
 
-| 声明 | 状态 | 未证原因 |
-|---|---|---|
-| `MD.Ch06.gaussianIncrementMean` | 已证 | — |
+| 声明 | 证明状态 | 未证原因 | 网站分版结论 |
+|---|---|---|---|
+| `MD.Ch06.gaussianIncrementMean` | 已证 | — | PASS |
 
-位置：`Blueprint/Ch06.lean:937`；验证：`blueprint/ch06/closeout25/FINAL_COMPILE.log`。
+位置：`Blueprint/Ch06.lean:937`；本地核验记录：`blueprint/ch06/closeout26/FINAL_COMPILE.log`。
 
 ## MD-6.2.2-GaussianIncrementSecond
 
@@ -4390,9 +4476,9 @@ theorem gaussianIncrementSecond {Ω : Type*} [MeasurableSpace Ω] {P : Measure �
 
 | 原文对象或结论 | 当前Lean与范围 |
 |---|---|
-| 原文所选陈述 | 本条所引原句及展示公式；单个记号归入context_notation。 |
-| 对象/域/量词/前提 | 完整当前Lean及依赖定义；新增资格见[EXTRA] |
-| 网站首轮 | PASS：同一中心Gaussian完整法则推出二阶矩v，包括v=0；未把二阶矩作为前提，网格代入v=T/K与原式一致。 |
+| 所引原句 | 本条所引原句及展示公式；单个记号归入context_notation。 |
+| 对象、域、量词及前提 | 以上完整声明；额外资格与未覆盖部分见下一段 |
+| 最新网站原始评价 | PASS；首轮保留 |
 
 ### 5. [EXTRA] 与覆盖缺口
 
@@ -4401,16 +4487,17 @@ theorem gaussianIncrementSecond {Ω : Type*} [MeasurableSpace Ω] {P : Measure �
 ### 6. 审计结论（含网站结论）
 
 网站原返回：PASS。同一中心Gaussian完整法则推出二阶矩v，包括v=0；未把二阶矩作为前提，网格代入v=T/K与原式一致。
-本轮处理：保留原审阅版本结论；本轮未改签名。
-本地单文件及逐声明依赖检查通过；含未完成证明依赖的声明仍标未证。原书疑误及修正版分别见勘误，当前修改版未获网站复审结论。
+当前处理：网站PASS（首轮未改版本）。
+保留所交版本的明确结论。
+本地编译和逐声明依赖核对通过。原文疑误、各限定/修正版、反例的评价分别列出；有未完成证明依赖的声明仍为未证。
 
 ### 7. 状态与证明位置
 
-| 声明 | 状态 | 未证原因 |
-|---|---|---|
-| `MD.Ch06.gaussianIncrementSecond` | 已证 | — |
+| 声明 | 证明状态 | 未证原因 | 网站分版结论 |
+|---|---|---|---|
+| `MD.Ch06.gaussianIncrementSecond` | 已证 | — | PASS |
 
-位置：`Blueprint/Ch06.lean:944`；验证：`blueprint/ch06/closeout25/FINAL_COMPILE.log`。
+位置：`Blueprint/Ch06.lean:944`；本地核验记录：`blueprint/ch06/closeout26/FINAL_COMPILE.log`。
 
 ## MD-6.2.2-GaussianIncrementFourth
 
@@ -4438,9 +4525,9 @@ theorem gaussianIncrementFourth {Ω : Type*} [MeasurableSpace Ω] {P : Measure �
 
 | 原文对象或结论 | 当前Lean与范围 |
 |---|---|
-| 原文所选陈述 | 本条所引原句及展示公式；单个记号归入context_notation。 |
-| 对象/域/量词/前提 | 完整当前Lean及依赖定义；新增资格见[EXTRA] |
-| 网站首轮 | PASS：任意中心Gaussian完整法则推出四阶矩3v²，包括退化v=0；并未遗漏四次幂或误用标准差。 |
+| 所引原句 | 本条所引原句及展示公式；单个记号归入context_notation。 |
+| 对象、域、量词及前提 | 以上完整声明；额外资格与未覆盖部分见下一段 |
+| 最新网站原始评价 | PASS；首轮保留 |
 
 ### 5. [EXTRA] 与覆盖缺口
 
@@ -4449,16 +4536,17 @@ theorem gaussianIncrementFourth {Ω : Type*} [MeasurableSpace Ω] {P : Measure �
 ### 6. 审计结论（含网站结论）
 
 网站原返回：PASS。任意中心Gaussian完整法则推出四阶矩3v²，包括退化v=0；并未遗漏四次幂或误用标准差。
-本轮处理：保留原审阅版本结论；本轮未改签名。
-本地单文件及逐声明依赖检查通过；含未完成证明依赖的声明仍标未证。原书疑误及修正版分别见勘误，当前修改版未获网站复审结论。
+当前处理：网站PASS（首轮未改版本）。
+保留所交版本的明确结论。
+本地编译和逐声明依赖核对通过。原文疑误、各限定/修正版、反例的评价分别列出；有未完成证明依赖的声明仍为未证。
 
 ### 7. 状态与证明位置
 
-| 声明 | 状态 | 未证原因 |
-|---|---|---|
-| `MD.Ch06.gaussianIncrementFourth` | 已证 | — |
+| 声明 | 证明状态 | 未证原因 | 网站分版结论 |
+|---|---|---|---|
+| `MD.Ch06.gaussianIncrementFourth` | 已证 | — | PASS |
 
-位置：`Blueprint/Ch06.lean:951`；验证：`blueprint/ch06/closeout25/FINAL_COMPILE.log`。
+位置：`Blueprint/Ch06.lean:951`；本地核验记录：`blueprint/ch06/closeout26/FINAL_COMPILE.log`。
 
 ## MD-6.2.2-QuadraticMeanSquareError
 
@@ -4489,9 +4577,9 @@ theorem quadraticMeanSquareError {Ω : Type*} [MeasurableSpace Ω] {P : Measure 
 
 | 原文对象或结论 | 当前Lean与范围 |
 |---|---|
-| 原文所选陈述 | 本条所引原句及展示公式；单个记号归入context_notation。 |
-| 对象/域/量词/前提 | 完整当前Lean及依赖定义；新增资格见[EXTRA] |
-| 网站首轮 | PASS：T≥0，K>0，实际PreBrownian平方增量和的整体误差平方期望精确等于2T²/K；不是仅逐项矩或仅极限。D14、15、17的网格与原书一致。 |
+| 所引原句 | 本条所引原句及展示公式；单个记号归入context_notation。 |
+| 对象、域、量词及前提 | 以上完整声明；额外资格与未覆盖部分见下一段 |
+| 最新网站原始评价 | PASS；首轮保留 |
 
 ### 5. [EXTRA] 与覆盖缺口
 
@@ -4500,16 +4588,17 @@ theorem quadraticMeanSquareError {Ω : Type*} [MeasurableSpace Ω] {P : Measure 
 ### 6. 审计结论（含网站结论）
 
 网站原返回：PASS。T≥0，K>0，实际PreBrownian平方增量和的整体误差平方期望精确等于2T²/K；不是仅逐项矩或仅极限。D14、15、17的网格与原书一致。
-本轮处理：保留原审阅版本结论；本轮未改签名。
-本地单文件及逐声明依赖检查通过；含未完成证明依赖的声明仍标未证。原书疑误及修正版分别见勘误，当前修改版未获网站复审结论。
+当前处理：网站PASS（首轮未改版本）。
+保留所交版本的明确结论。
+本地编译和逐声明依赖核对通过。原文疑误、各限定/修正版、反例的评价分别列出；有未完成证明依赖的声明仍为未证。
 
 ### 7. 状态与证明位置
 
-| 声明 | 状态 | 未证原因 |
-|---|---|---|
-| `MD.Ch06.quadraticMeanSquareError` | 已证 | — |
+| 声明 | 证明状态 | 未证原因 | 网站分版结论 |
+|---|---|---|---|
+| `MD.Ch06.quadraticMeanSquareError` | 已证 | — | PASS |
 
-位置：`Blueprint/Ch06.lean:958`；验证：`blueprint/ch06/closeout25/FINAL_COMPILE.log`。
+位置：`Blueprint/Ch06.lean:958`；本地核验记录：`blueprint/ch06/closeout26/FINAL_COMPILE.log`。
 
 ## MD-6.2.2-SelfItoIntegral
 
@@ -4539,9 +4628,9 @@ theorem selfItoIntegral {Ω : Type*} [MeasurableSpace Ω] {P : Measure Ω} {W : 
 
 | 原文对象或结论 | 当前Lean与范围 |
 |---|---|
-| 原文所选陈述 | 本条所引原句及展示公式；单个记号归入context_notation。 |
-| 对象/域/量词/前提 | 完整当前Lean及依赖定义；新增资格见[EXTRA] |
-| 网站首轮 | PASS：存在Y∈L²、真实D18左和整体均方趋于Y、Y几乎处处等于(W(T)²−T)/2三项齐全。任意T≥0；没有把积分求值当前提。有限和L²不在此签名显式陈述，但对PreBrownian有限Gaussian乘积成立。 |
+| 所引原句 | 本条所引原句及展示公式；单个记号归入context_notation。 |
+| 对象、域、量词及前提 | 以上完整声明；额外资格与未覆盖部分见下一段 |
+| 最新网站原始评价 | PASS；首轮保留 |
 
 ### 5. [EXTRA] 与覆盖缺口
 
@@ -4550,16 +4639,17 @@ theorem selfItoIntegral {Ω : Type*} [MeasurableSpace Ω] {P : Measure Ω} {W : 
 ### 6. 审计结论（含网站结论）
 
 网站原返回：PASS。存在Y∈L²、真实D18左和整体均方趋于Y、Y几乎处处等于(W(T)²−T)/2三项齐全。任意T≥0；没有把积分求值当前提。有限和L²不在此签名显式陈述，但对PreBrownian有限Gaussian乘积成立。
-本轮处理：保留原审阅版本结论；本轮未改签名。
-本地单文件及逐声明依赖检查通过；含未完成证明依赖的声明仍标未证。原书疑误及修正版分别见勘误，当前修改版未获网站复审结论。
+当前处理：网站PASS（首轮未改版本）。
+保留所交版本的明确结论。
+本地编译和逐声明依赖核对通过。原文疑误、各限定/修正版、反例的评价分别列出；有未完成证明依赖的声明仍为未证。
 
 ### 7. 状态与证明位置
 
-| 声明 | 状态 | 未证原因 |
-|---|---|---|
-| `MD.Ch06.selfItoIntegral` | 已证 | — |
+| 声明 | 证明状态 | 未证原因 | 网站分版结论 |
+|---|---|---|---|
+| `MD.Ch06.selfItoIntegral` | 已证 | — | PASS |
 
-位置：`Blueprint/Ch06.lean:966`；验证：`blueprint/ch06/closeout25/FINAL_COMPILE.log`。
+位置：`Blueprint/Ch06.lean:966`；本地核验记录：`blueprint/ch06/closeout26/FINAL_COMPILE.log`。
 
 ## MD-6.2.2-SelfStratonovichIntegral
 
@@ -4567,7 +4657,7 @@ theorem selfItoIntegral {Ω : Type*} [MeasurableSpace Ω] {P : Measure Ω} {W : 
 
 ### 1. 原文陈述
 
-> In contrast, the Stratonovich (midpoint) integral can be calculated as
+> In contrast, the Stratonovich (midpoint) integral (denoted by $\int_0^\tau\circ dW(t)$) can be calculated as
 > \[\int_0^\tau W(t)\circ dW(t)=\operatorname{l.i.m.}_{\nu\to\infty}\sum_{k=0}^{\nu-1}W(k\delta t+\delta t/2)[W((k+1)\delta t)-W(k\delta t)].\]
 > Writing
 > \[W(k\delta t+\delta t/2)=W(\frac{(k+1)\delta t+k\delta t}{2})=\frac12(W((k+1)\delta t)+W(k\delta t))+O(\sqrt{\delta t}),\]
@@ -4601,29 +4691,30 @@ theorem selfStratonovichIntegral_corrected {Ω : Type*} [MeasurableSpace Ω] {P 
 
 | 原文对象或结论 | 当前Lean与范围 |
 |---|---|
-| 原文所选陈述 | 本条所引原句及展示公式；单个记号归入context_notation。 |
-| 对象/域/量词/前提 | 完整当前Lean及依赖定义；新增资格见[EXTRA] |
-| 网站首轮 | NEEDS_HUMAN：真实时间中点和存在L²极限Y且AE为W(T)²/2，结论数学正确。原文单步O(√δt)没有指定随机意义或控制累积误差，不能直接据此丢弃K项残差；需保留此原文论证疑点，正式签名本身并未依赖该大O假设。 |
+| 所引原句 | 本条所引原句及展示公式；单个记号归入context_notation。 |
+| 对象、域、量词及前提 | 以上完整声明；额外资格与未覆盖部分见下一段 |
+| 最新网站原始评价 | NEEDS_HUMAN；复审 |
 
 ### 5. [EXTRA] 与覆盖缺口
 
 - [EXTRA]真实时间中点和、L²见证、整体均方极限、AE求值；原O(√δt)单步启发不足，正式整体均方误差证明不直接丢弃逐步残项。
-- [EXTRA] 25号：仅覆盖真实时间中点和的均方结论；原单步O(√dt)推理未控制总误差，不能当成完整证明；所需Brownian桥残差估计未补建。
+- [EXTRA] 仅覆盖真实时间中点和的均方结论；原单步O(√dt)推理未控制总误差，不能当成完整证明；所需Brownian桥残差估计未补建。
 
 ### 6. 审计结论（含网站结论）
 
-网站原返回：NEEDS_HUMAN。真实时间中点和存在L²极限Y且AE为W(T)²/2，结论数学正确。原文单步O(√δt)没有指定随机意义或控制累积误差，不能直接据此丢弃K项残差；需保留此原文论证疑点，正式签名本身并未依赖该大O假设。
-本轮处理：仅覆盖真实时间中点和的均方结论；原单步O(√dt)推理未控制总误差，不能当成完整证明；所需Brownian桥残差估计未补建。
-本地单文件及逐声明依赖检查通过；含未完成证明依赖的声明仍标未证。原书疑误及修正版分别见勘误，当前修改版未获网站复审结论。
+网站原返回：NEEDS_HUMAN。selfStratonovichIntegral及_corrected在IsPreBrownianReal、T≥0下给出L²见证Y、真实时间中点和的均方收敛及Y=W(T)²/2的AE求值，数学签名PASS。MidpointSum确取2K细网格的2k+1时刻，并非端点值平均。布朗增量Gaussian四阶矩保证各和及极限的资格。原书将单步中点桥差O(sqrt(dt))直接舍掉未控制总和，不能单凭该行作完整证明；两相同定理签名没有解决原书论证缺口。
+当前处理：修正版/限定声明=网站PASS；原文疑误或范围解释待导师。
+保留所交版本的明确结论。
+本地编译和逐声明依赖核对通过。原文疑误、各限定/修正版、反例的评价分别列出；有未完成证明依赖的声明仍为未证。
 
 ### 7. 状态与证明位置
 
-| 声明 | 状态 | 未证原因 |
-|---|---|---|
-| `MD.Ch06.selfStratonovichIntegral` | 已证 | — |
-| `MD.Ch06.selfStratonovichIntegral_corrected` | 已证 | — |
+| 声明 | 证明状态 | 未证原因 | 网站分版结论 |
+|---|---|---|---|
+| `MD.Ch06.selfStratonovichIntegral` | 已证 | — | PASS |
+| `MD.Ch06.selfStratonovichIntegral_corrected` | 已证 | — | PASS |
 
-位置：`Blueprint/Ch06.lean:976`；验证：`blueprint/ch06/closeout25/FINAL_COMPILE.log`。
+位置：`Blueprint/Ch06.lean:976`；本地核验记录：`blueprint/ch06/closeout26/FINAL_COMPILE.log`。
 
 ## MD-6.2.2-Proposition63
 
@@ -4655,9 +4746,9 @@ theorem proposition63 {Ω : Type*} [MeasurableSpace Ω] {P : Measure Ω} {W : �
 
 | 原文对象或结论 | 当前Lean与范围 |
 |---|---|
-| 原文所选陈述 | 本条所引原句及展示公式；单个记号归入context_notation。 |
-| 对象/域/量词/前提 | 完整当前Lean及依赖定义；新增资格见[EXTRA] |
-| 网站首轮 | PASS：任意T≥0、PreBrownian及C¹实确定函数g；存在Y∈L²，实际左和均方收敛；Gaussian完整法则的方差是∫g²的toNNReal（非负故不截断值）；均值0及二阶矩等于∫g²齐全。C¹比原smooth弱且足够。 |
+| 所引原句 | 本条所引原句及展示公式；单个记号归入context_notation。 |
+| 对象、域、量词及前提 | 以上完整声明；额外资格与未覆盖部分见下一段 |
+| 最新网站原始评价 | PASS；首轮保留 |
 
 ### 5. [EXTRA] 与覆盖缺口
 
@@ -4666,16 +4757,17 @@ theorem proposition63 {Ω : Type*} [MeasurableSpace Ω] {P : Measure Ω} {W : �
 ### 6. 审计结论（含网站结论）
 
 网站原返回：PASS。任意T≥0、PreBrownian及C¹实确定函数g；存在Y∈L²，实际左和均方收敛；Gaussian完整法则的方差是∫g²的toNNReal（非负故不截断值）；均值0及二阶矩等于∫g²齐全。C¹比原smooth弱且足够。
-本轮处理：保留原审阅版本结论；本轮未改签名。
-本地单文件及逐声明依赖检查通过；含未完成证明依赖的声明仍标未证。原书疑误及修正版分别见勘误，当前修改版未获网站复审结论。
+当前处理：网站PASS（首轮未改版本）。
+保留所交版本的明确结论。
+本地编译和逐声明依赖核对通过。原文疑误、各限定/修正版、反例的评价分别列出；有未完成证明依赖的声明仍为未证。
 
 ### 7. 状态与证明位置
 
-| 声明 | 状态 | 未证原因 |
-|---|---|---|
-| `MD.Ch06.proposition63` | 已证 | — |
+| 声明 | 证明状态 | 未证原因 | 网站分版结论 |
+|---|---|---|---|
+| `MD.Ch06.proposition63` | 已证 | — | PASS |
 
-位置：`Blueprint/Ch06.lean:993`；验证：`blueprint/ch06/closeout25/FINAL_COMPILE.log`。
+位置：`Blueprint/Ch06.lean:993`；本地核验记录：`blueprint/ch06/closeout26/FINAL_COMPILE.log`。
 
 ## MD-6.2.2-QuadraticSumExpectation
 
@@ -4703,9 +4795,9 @@ theorem quadraticSumExpectation {Ω : Type*} [MeasurableSpace Ω] {P : Measure �
 
 | 原文对象或结论 | 当前Lean与范围 |
 |---|---|
-| 原文所选陈述 | 本条所引原句及展示公式；单个记号归入context_notation。 |
-| 对象/域/量词/前提 | 完整当前Lean及依赖定义；新增资格见[EXTRA] |
-| 网站首轮 | PASS：K>0时平方增量有限和期望已经等于T，较原文极限式强并直接蕴含它；[EXTRA]准确注明。非负窗口、真实PreBrownian及完整和均保留。 |
+| 所引原句 | 本条所引原句及展示公式；单个记号归入context_notation。 |
+| 对象、域、量词及前提 | 以上完整声明；额外资格与未覆盖部分见下一段 |
+| 最新网站原始评价 | PASS；首轮保留 |
 
 ### 5. [EXTRA] 与覆盖缺口
 
@@ -4714,16 +4806,17 @@ theorem quadraticSumExpectation {Ω : Type*} [MeasurableSpace Ω] {P : Measure �
 ### 6. 审计结论（含网站结论）
 
 网站原返回：PASS。K>0时平方增量有限和期望已经等于T，较原文极限式强并直接蕴含它；[EXTRA]准确注明。非负窗口、真实PreBrownian及完整和均保留。
-本轮处理：保留原审阅版本结论；本轮未改签名。
-本地单文件及逐声明依赖检查通过；含未完成证明依赖的声明仍标未证。原书疑误及修正版分别见勘误，当前修改版未获网站复审结论。
+当前处理：网站PASS（首轮未改版本）。
+保留所交版本的明确结论。
+本地编译和逐声明依赖核对通过。原文疑误、各限定/修正版、反例的评价分别列出；有未完成证明依赖的声明仍为未证。
 
 ### 7. 状态与证明位置
 
-| 声明 | 状态 | 未证原因 |
-|---|---|---|
-| `MD.Ch06.quadraticSumExpectation` | 已证 | — |
+| 声明 | 证明状态 | 未证原因 | 网站分版结论 |
+|---|---|---|---|
+| `MD.Ch06.quadraticSumExpectation` | 已证 | — | PASS |
 
-位置：`Blueprint/Ch06.lean:1004`；验证：`blueprint/ch06/closeout25/FINAL_COMPILE.log`。
+位置：`Blueprint/Ch06.lean:1004`；本地核验记录：`blueprint/ch06/closeout26/FINAL_COMPILE.log`。
 
 ## MD-6.2.2-SelfItoLimitL2
 
@@ -4750,9 +4843,9 @@ theorem selfItoLimitL2 {Ω : Type*} [MeasurableSpace Ω] {P : Measure Ω} {W : �
 
 | 原文对象或结论 | 当前Lean与范围 |
 |---|---|
-| 原文所选陈述 | 本条所引原句及展示公式；单个记号归入context_notation。 |
-| 对象/域/量词/前提 | 完整当前Lean及依赖定义；新增资格见[EXTRA] |
-| 网站首轮 | PASS：签名只证明候选极限(W(T)²−T)/2的MemLp 2 P，数学正确。extra_assumptions声称“有限和/候选极限”两者L²，但此签名没有有限和L²结论，须缩减标注。引文实际在印刷228页，并不在所配附件第39页（印刷230）。 |
+| 所引原句 | 本条所引原句及展示公式；单个记号归入context_notation。 |
+| 对象、域、量词及前提 | 以上完整声明；额外资格与未覆盖部分见下一段 |
+| 最新网站原始评价 | PASS；首轮保留 |
 
 ### 5. [EXTRA] 与覆盖缺口
 
@@ -4761,16 +4854,17 @@ theorem selfItoLimitL2 {Ω : Type*} [MeasurableSpace Ω] {P : Measure Ω} {W : �
 ### 6. 审计结论（含网站结论）
 
 网站原返回：PASS。签名只证明候选极限(W(T)²−T)/2的MemLp 2 P，数学正确。extra_assumptions声称“有限和/候选极限”两者L²，但此签名没有有限和L²结论，须缩减标注。引文实际在印刷228页，并不在所配附件第39页（印刷230）。
-本轮处理：保留原审阅版本结论；本轮未改签名。
-本地单文件及逐声明依赖检查通过；含未完成证明依赖的声明仍标未证。原书疑误及修正版分别见勘误，当前修改版未获网站复审结论。
+当前处理：网站PASS（首轮未改版本）。
+保留所交版本的明确结论。
+本地编译和逐声明依赖核对通过。原文疑误、各限定/修正版、反例的评价分别列出；有未完成证明依赖的声明仍为未证。
 
 ### 7. 状态与证明位置
 
-| 声明 | 状态 | 未证原因 |
-|---|---|---|
-| `MD.Ch06.selfItoLimitL2` | 已证 | — |
+| 声明 | 证明状态 | 未证原因 | 网站分版结论 |
+|---|---|---|---|
+| `MD.Ch06.selfItoLimitL2` | 已证 | — | PASS |
 
-位置：`Blueprint/Ch06.lean:1011`；验证：`blueprint/ch06/closeout25/FINAL_COMPILE.log`。
+位置：`Blueprint/Ch06.lean:1011`；本地核验记录：`blueprint/ch06/closeout26/FINAL_COMPILE.log`。
 
 ## MD-6.2.2-SelfItoSumsL2
 
@@ -4798,9 +4892,9 @@ theorem selfItoSumsL2 {Ω : Type*} [MeasurableSpace Ω] {P : Measure Ω} {W : �
 
 | 原文对象或结论 | 当前Lean与范围 |
 |---|---|
-| 原文所选陈述 | 本条所引原句及展示公式；单个记号归入context_notation。 |
-| 对象/域/量词/前提 | 完整当前Lean及依赖定义；新增资格见[EXTRA] |
-| 网站首轮 | PASS：Ω任意可测空间，P任意测度但hW给出PreBrownian资格；T非负、K正。结论仅左点有限乘积和属于L²，没有候选极限或收敛结论。有限联合Gaussian的四阶矩足够，签名正确；[EXTRA]中的“候选极限”超出本声明。 |
+| 所引原句 | 本条所引原句及展示公式；单个记号归入context_notation。 |
+| 对象、域、量词及前提 | 以上完整声明；额外资格与未覆盖部分见下一段 |
+| 最新网站原始评价 | PASS；首轮保留 |
 
 ### 5. [EXTRA] 与覆盖缺口
 
@@ -4809,16 +4903,17 @@ theorem selfItoSumsL2 {Ω : Type*} [MeasurableSpace Ω] {P : Measure Ω} {W : �
 ### 6. 审计结论（含网站结论）
 
 网站原返回：PASS。Ω任意可测空间，P任意测度但hW给出PreBrownian资格；T非负、K正。结论仅左点有限乘积和属于L²，没有候选极限或收敛结论。有限联合Gaussian的四阶矩足够，签名正确；[EXTRA]中的“候选极限”超出本声明。
-本轮处理：保留原审阅版本结论；本轮未改签名。
-本地单文件及逐声明依赖检查通过；含未完成证明依赖的声明仍标未证。原书疑误及修正版分别见勘误，当前修改版未获网站复审结论。
+当前处理：网站PASS（首轮未改版本）。
+保留所交版本的明确结论。
+本地编译和逐声明依赖核对通过。原文疑误、各限定/修正版、反例的评价分别列出；有未完成证明依赖的声明仍为未证。
 
 ### 7. 状态与证明位置
 
-| 声明 | 状态 | 未证原因 |
-|---|---|---|
-| `MD.Ch06.selfItoSumsL2` | 已证 | — |
+| 声明 | 证明状态 | 未证原因 | 网站分版结论 |
+|---|---|---|---|
+| `MD.Ch06.selfItoSumsL2` | 已证 | — | PASS |
 
-位置：`Blueprint/Ch06.lean:1018`；验证：`blueprint/ch06/closeout25/FINAL_COMPILE.log`。
+位置：`Blueprint/Ch06.lean:1018`；本地核验记录：`blueprint/ch06/closeout26/FINAL_COMPILE.log`。
 
 ## MD-6.2.2-MidpointSumsL2
 
@@ -4848,9 +4943,9 @@ theorem midpointSumsL2 {Ω : Type*} [MeasurableSpace Ω] {P : Measure Ω} {W : �
 
 | 原文对象或结论 | 当前Lean与范围 |
 |---|---|
-| 原文所选陈述 | 本条所引原句及展示公式；单个记号归入context_notation。 |
-| 对象/域/量词/前提 | 完整当前Lean及依赖定义；新增资格见[EXTRA] |
-| 网站首轮 | PASS：同第1条的空间/测度资格；T≥0、K>0；依D1、D2及所列定义，采样时间为(2k+1)T/(2K)，乘整段增量。仅有限和MemLp 2正确；未证明候选极限资格或收敛。 |
+| 所引原句 | 本条所引原句及展示公式；单个记号归入context_notation。 |
+| 对象、域、量词及前提 | 以上完整声明；额外资格与未覆盖部分见下一段 |
+| 最新网站原始评价 | PASS；首轮保留 |
 
 ### 5. [EXTRA] 与覆盖缺口
 
@@ -4859,16 +4954,17 @@ theorem midpointSumsL2 {Ω : Type*} [MeasurableSpace Ω] {P : Measure Ω} {W : �
 ### 6. 审计结论（含网站结论）
 
 网站原返回：PASS。同第1条的空间/测度资格；T≥0、K>0；依D1、D2及所列定义，采样时间为(2k+1)T/(2K)，乘整段增量。仅有限和MemLp 2正确；未证明候选极限资格或收敛。
-本轮处理：保留原审阅版本结论；本轮未改签名。
-本地单文件及逐声明依赖检查通过；含未完成证明依赖的声明仍标未证。原书疑误及修正版分别见勘误，当前修改版未获网站复审结论。
+当前处理：网站PASS（首轮未改版本）。
+保留所交版本的明确结论。
+本地编译和逐声明依赖核对通过。原文疑误、各限定/修正版、反例的评价分别列出；有未完成证明依赖的声明仍为未证。
 
 ### 7. 状态与证明位置
 
-| 声明 | 状态 | 未证原因 |
-|---|---|---|
-| `MD.Ch06.midpointSumsL2` | 已证 | — |
+| 声明 | 证明状态 | 未证原因 | 网站分版结论 |
+|---|---|---|---|
+| `MD.Ch06.midpointSumsL2` | 已证 | — | PASS |
 
-位置：`Blueprint/Ch06.lean:1025`；验证：`blueprint/ch06/closeout25/FINAL_COMPILE.log`。
+位置：`Blueprint/Ch06.lean:1025`；本地核验记录：`blueprint/ch06/closeout26/FINAL_COMPILE.log`。
 
 ## MD-6.2.2-DeterministicIntegralProcess
 
@@ -4895,9 +4991,9 @@ def deterministicIntegralProcess {Ω : Type*} [MeasurableSpace Ω] (P : Measure 
 
 | 原文对象或结论 | 当前Lean与范围 |
 |---|---|
-| 原文所选陈述 | 本条所引原句及展示公式；单个记号归入context_notation。 |
-| 对象/域/量词/前提 | 完整当前Lean及依赖定义；新增资格见[EXTRA] |
-| 网站首轮 | PASS：对同一W,Y以及确定g，量化全部T≥0，D5要求每个有限左点和及Y T的L²资格和均方收敛。T=0的和恒零，所以Y 0=0几乎处处。作为积分关系定义正确；未独立断言W是Wiener、过程路径连续或同时逐样本等式，使用时须另给W资格。 |
+| 所引原句 | 本条所引原句及展示公式；单个记号归入context_notation。 |
+| 对象、域、量词及前提 | 以上完整声明；额外资格与未覆盖部分见下一段 |
+| 最新网站原始评价 | PASS；首轮保留 |
 
 ### 5. [EXTRA] 与覆盖缺口
 
@@ -4906,16 +5002,17 @@ def deterministicIntegralProcess {Ω : Type*} [MeasurableSpace Ω] (P : Measure 
 ### 6. 审计结论（含网站结论）
 
 网站原返回：PASS。对同一W,Y以及确定g，量化全部T≥0，D5要求每个有限左点和及Y T的L²资格和均方收敛。T=0的和恒零，所以Y 0=0几乎处处。作为积分关系定义正确；未独立断言W是Wiener、过程路径连续或同时逐样本等式，使用时须另给W资格。
-本轮处理：保留原审阅版本结论；本轮未改签名。
-本地单文件及逐声明依赖检查通过；含未完成证明依赖的声明仍标未证。原书疑误及修正版分别见勘误，当前修改版未获网站复审结论。
+当前处理：网站PASS（首轮未改版本）。
+保留所交版本的明确结论。
+本地编译和逐声明依赖核对通过。原文疑误、各限定/修正版、反例的评价分别列出；有未完成证明依赖的声明仍为未证。
 
 ### 7. 状态与证明位置
 
-| 声明 | 状态 | 未证原因 |
-|---|---|---|
-| `MD.Ch06.deterministicIntegralProcess` | 定义 | — |
+| 声明 | 证明状态 | 未证原因 | 网站分版结论 |
+|---|---|---|---|
+| `MD.Ch06.deterministicIntegralProcess` | 定义 | — | PASS |
 
-位置：`Blueprint/Ch06.lean:1032`；验证：`blueprint/ch06/closeout25/FINAL_COMPILE.log`。
+位置：`Blueprint/Ch06.lean:1032`；本地核验记录：`blueprint/ch06/closeout26/FINAL_COMPILE.log`。
 
 ## MD-6.2.2-DeterministicStrobePrinted
 
@@ -4945,27 +5042,31 @@ theorem deterministicStrobePrinted : ∀ {Ω : Type*} [MeasurableSpace Ω] (P : 
 
 | 原文对象或结论 | 当前Lean与范围 |
 |---|---|
-| 原文所选陈述 | 本条Lean覆盖范围：Printed忠实保留原书N(0,σ(t_n))累计尺度，将标准差平方后传给gaussianReal方差参数；该印刷增量说法有疑。独立修正版保留相邻区间∫g²及整族独立性，以Y(times 0)为初始观测，不假设times 0=0。 |
-| 对象/域/量词/前提 | 完整当前Lean及依赖定义；新增资格见[EXTRA] |
-| 网站首轮 | FAIL：原书N的第二参数按标准差读时，Lean gaussianReal第二参数是方差，不能直接放sqrt(∫g²)。此外t_n至t_(n+1)的增量应取区间积分，且签名没有整个增量族独立性。即使保留原文错误，当前参数转换也不忠实。 |
+| 所引原句 | Printed保留增量/累计边际方差混淆。独立deterministicStrobePrinted_corrected位于DeterministicStrobeCorrected来源，已本地存在但本次附件未提供，不能冒称复审PASS。 |
+| 对象、域、量词及前提 | 以上完整声明；额外资格与未覆盖部分见下一段 |
+| 最新网站原始评价 | NEEDS_HUMAN；复审 |
 
 ### 5. [EXTRA] 与覆盖缺口
 
-- [EXTRA] 25号：Printed忠实保留原书N(0,σ(t_n))累计尺度，将标准差平方后传给gaussianReal方差参数；该印刷增量说法有疑。独立修正版保留相邻区间∫g²及整族独立性，以Y(times 0)为初始观测，不假设times 0=0。
+- [EXTRA] Printed保留原书累计尺度N(0,σ(t_n))；将第二参数解释为标准差并平方传入gaussianReal是额外约定，需确认。本条未摘录所称相邻区间方差与整族独立性的修正版，不能认证该修正版。
+- [EXTRA] 复审范围：Printed保留增量/累计边际方差混淆。独立deterministicStrobePrinted_corrected位于DeterministicStrobeCorrected来源，已本地存在但本次附件未提供，不能冒称复审PASS。
+- 覆盖缺口：本条未提供[EXTRA]声称的独立修正版完整声明，无法审校其相邻区间方差及整族独立性。
+- 覆盖缺口：Printed保留增量/累计边际方差混淆。独立deterministicStrobePrinted_corrected位于DeterministicStrobeCorrected来源，已本地存在但本次附件未提供，不能冒称复审PASS。
 
 ### 6. 审计结论（含网站结论）
 
-网站原返回：FAIL。原书N的第二参数按标准差读时，Lean gaussianReal第二参数是方差，不能直接放sqrt(∫g²)。此外t_n至t_(n+1)的增量应取区间积分，且签名没有整个增量族独立性。即使保留原文错误，当前参数转换也不忠实。
-本轮处理：Printed忠实保留原书N(0,σ(t_n))累计尺度，将标准差平方后传给gaussianReal方差参数；该印刷增量说法有疑。独立修正版保留相邻区间∫g²及整族独立性，以Y(times 0)为初始观测，不假设times 0=0。
-本地单文件及逐声明依赖检查通过；含未完成证明依赖的声明仍标未证。原书疑误及修正版分别见勘误，当前修改版未获网站复审结论。
+网站原返回：NEEDS_HUMAN。deterministicIntegralProcess为每个T≥0的严格均方积分资格，已核对。deterministicStrobePrinted把第k到k+1观测的增量分布方差写成0到times k的累计∫g²（对sqrt再平方），保留了原书增量/边际混淆。N(0,σ)按标准差理解是额外约定；此前书中W(t)∼N(0,t)使用方差式习惯，更需人工确认。[EXTRA]与statement_scope声称独立修正版包含相邻区间方差和整族独立性，但本条全部摘录没有任何相应_corrected声明；不能认证未提供的修正版，coverage_gaps=[]不实。
+当前处理：原文疑误或语义范围待导师；不冒称未提供版本已通过。
+Printed保留增量/累计边际方差混淆。独立deterministicStrobePrinted_corrected位于DeterministicStrobeCorrected来源，已本地存在但本次附件未提供，不能冒称复审PASS。
+本地编译和逐声明依赖核对通过。原文疑误、各限定/修正版、反例的评价分别列出；有未完成证明依赖的声明仍为未证。
 
 ### 7. 状态与证明位置
 
-| 声明 | 状态 | 未证原因 |
-|---|---|---|
-| `MD.Ch06.deterministicStrobePrinted` | 未证 | 原书疑误不证 |
+| 声明 | 证明状态 | 未证原因 | 网站分版结论 |
+|---|---|---|---|
+| `MD.Ch06.deterministicStrobePrinted` | 未证 | 原书疑误不证 | 未获单独PASS；见分版意见 |
 
-位置：`Blueprint/Ch06.lean:1039`；验证：`blueprint/ch06/closeout25/FINAL_COMPILE.log`。
+位置：`Blueprint/Ch06.lean:1039`；本地核验记录：`blueprint/ch06/closeout26/FINAL_COMPILE.log`。
 
 ## MD-6.2.2-DeterministicStrobeCorrected
 
@@ -5006,9 +5107,9 @@ theorem deterministicStrobePrinted_corrected : ∀ {Ω : Type*} [MeasurableSpace
 
 | 原文对象或结论 | 当前Lean与范围 |
 |---|---|
-| 原文所选陈述 | 本条所引原句及展示公式；单个记号归入context_notation。 |
-| 对象/域/量词/前提 | 完整当前Lean及依赖定义；新增资格见[EXTRA] |
-| 网站首轮 | PASS：PreBrownian、C¹确定g、全部时间严格积分关系、非负单调times足够；各相邻增量的variance为∫[times k,times(k+1)]g²，并断言整个族iIndepFun。允许相等时刻，退化零增量正确。修正数学合理；若称完整stroboscopic表示，应从实际Y(times 0)初始化，或另设times 0=0。 |
+| 所引原句 | 本条所引原句及展示公式；单个记号归入context_notation。 |
+| 对象、域、量词及前提 | 以上完整声明；额外资格与未覆盖部分见下一段 |
+| 最新网站原始评价 | PASS；首轮保留 |
 
 ### 5. [EXTRA] 与覆盖缺口
 
@@ -5017,17 +5118,18 @@ theorem deterministicStrobePrinted_corrected : ∀ {Ω : Type*} [MeasurableSpace
 ### 6. 审计结论（含网站结论）
 
 网站原返回：PASS。PreBrownian、C¹确定g、全部时间严格积分关系、非负单调times足够；各相邻增量的variance为∫[times k,times(k+1)]g²，并断言整个族iIndepFun。允许相等时刻，退化零增量正确。修正数学合理；若称完整stroboscopic表示，应从实际Y(times 0)初始化，或另设times 0=0。
-本轮处理：保留原审阅版本结论；本轮未改签名。
-本地单文件及逐声明依赖检查通过；含未完成证明依赖的声明仍标未证。原书疑误及修正版分别见勘误，当前修改版未获网站复审结论。
+当前处理：网站PASS（首轮未改版本）。
+保留所交版本的明确结论。
+本地编译和逐声明依赖核对通过。原文疑误、各限定/修正版、反例的评价分别列出；有未完成证明依赖的声明仍为未证。
 
 ### 7. 状态与证明位置
 
-| 声明 | 状态 | 未证原因 |
-|---|---|---|
-| `MD.Ch06.deterministicStrobeCorrected` | 未证 | 缺大型理论 |
-| `MD.Ch06.deterministicStrobePrinted_corrected` | 未证 | 缺大型理论 |
+| 声明 | 证明状态 | 未证原因 | 网站分版结论 |
+|---|---|---|---|
+| `MD.Ch06.deterministicStrobeCorrected` | 未证 | 缺大型理论 | PASS |
+| `MD.Ch06.deterministicStrobePrinted_corrected` | 未证 | 缺大型理论 | 未获单独PASS；见分版意见 |
 
-位置：`Blueprint/Ch06.lean:1049`；验证：`blueprint/ch06/closeout25/FINAL_COMPILE.log`。
+位置：`Blueprint/Ch06.lean:1049`；本地核验记录：`blueprint/ch06/closeout26/FINAL_COMPILE.log`。
 
 ## MD-6.2.2-StochasticDifferentialIntegral
 
@@ -5054,9 +5156,9 @@ def stochasticDifferentialIntegral {Ω : Type*} [MeasurableSpace Ω] (P : Measur
 
 | 原文对象或结论 | 当前Lean与范围 |
 |---|---|
-| 原文所选陈述 | 本条所引原句及展示公式；单个记号归入context_notation。 |
-| 对象/域/量词/前提 | 完整当前Lean及依赖定义；新增资格见[EXTRA] |
-| 网站首轮 | PASS：P,Y及integralOfDifferential均任意，对全部T≥0断言两随机变量几乎处处相等。按context_notation，这是积分符号的语义定义；没有循环地声称已构造一般积分或证明链式法则。无需样本普通导数。 |
+| 所引原句 | 本条所引原句及展示公式；单个记号归入context_notation。 |
+| 对象、域、量词及前提 | 以上完整声明；额外资格与未覆盖部分见下一段 |
+| 最新网站原始评价 | PASS；首轮保留 |
 
 ### 5. [EXTRA] 与覆盖缺口
 
@@ -5065,16 +5167,17 @@ def stochasticDifferentialIntegral {Ω : Type*} [MeasurableSpace Ω] (P : Measur
 ### 6. 审计结论（含网站结论）
 
 网站原返回：PASS。P,Y及integralOfDifferential均任意，对全部T≥0断言两随机变量几乎处处相等。按context_notation，这是积分符号的语义定义；没有循环地声称已构造一般积分或证明链式法则。无需样本普通导数。
-本轮处理：保留原审阅版本结论；本轮未改签名。
-本地单文件及逐声明依赖检查通过；含未完成证明依赖的声明仍标未证。原书疑误及修正版分别见勘误，当前修改版未获网站复审结论。
+当前处理：网站PASS（首轮未改版本）。
+保留所交版本的明确结论。
+本地编译和逐声明依赖核对通过。原文疑误、各限定/修正版、反例的评价分别列出；有未完成证明依赖的声明仍为未证。
 
 ### 7. 状态与证明位置
 
-| 声明 | 状态 | 未证原因 |
-|---|---|---|
-| `MD.Ch06.stochasticDifferentialIntegral` | 定义 | — |
+| 声明 | 证明状态 | 未证原因 | 网站分版结论 |
+|---|---|---|---|
+| `MD.Ch06.stochasticDifferentialIntegral` | 定义 | — | PASS |
 
-位置：`Blueprint/Ch06.lean:1069`；验证：`blueprint/ch06/closeout25/FINAL_COMPILE.log`。
+位置：`Blueprint/Ch06.lean:1069`；本地核验记录：`blueprint/ch06/closeout26/FINAL_COMPILE.log`。
 
 ## MD-6.3-BiasedWalk
 
@@ -5104,9 +5207,9 @@ def biasedWalk {Ω : Type*} (a b : ℝ → ℝ → ℝ) (J : ℕ → Ω → ℝ)
 
 | 原文对象或结论 | 当前Lean与范围 |
 |---|---|
-| 原文所选陈述 | 本条所引原句及展示公式；单个记号归入context_notation。 |
-| 对象/域/量词/前提 | 完整当前Lean及依赖定义；新增资格见[EXTRA] |
-| 网站首轮 | PASS：递归以x0起始；第n步在n*dt取a,b，漂移a*dt，噪声b*sqrt(dt)*J_n，次序和乘法正确。MD包装调用Chapter06Review的旧步值，按D10/D11展开逐步一致。作为确定性递归定义允许任意dt,a,b,J；随机游走解释另需dt>0和Rademacher资格。[EXTRA]将h解释为δt需标为解释而非书中显式等式。 |
+| 所引原句 | 本条所引原句及展示公式；单个记号归入context_notation。 |
+| 对象、域、量词及前提 | 以上完整声明；额外资格与未覆盖部分见下一段 |
+| 最新网站原始评价 | PASS；首轮保留 |
 
 ### 5. [EXTRA] 与覆盖缺口
 
@@ -5115,16 +5218,17 @@ def biasedWalk {Ω : Type*} (a b : ℝ → ℝ → ℝ) (J : ℕ → Ω → ℝ)
 ### 6. 审计结论（含网站结论）
 
 网站原返回：PASS。递归以x0起始；第n步在n*dt取a,b，漂移a*dt，噪声b*sqrt(dt)*J_n，次序和乘法正确。MD包装调用Chapter06Review的旧步值，按D10/D11展开逐步一致。作为确定性递归定义允许任意dt,a,b,J；随机游走解释另需dt>0和Rademacher资格。[EXTRA]将h解释为δt需标为解释而非书中显式等式。
-本轮处理：保留原审阅版本结论；本轮未改签名。
-本地单文件及逐声明依赖检查通过；含未完成证明依赖的声明仍标未证。原书疑误及修正版分别见勘误，当前修改版未获网站复审结论。
+当前处理：网站PASS（首轮未改版本）。
+保留所交版本的明确结论。
+本地编译和逐声明依赖核对通过。原文疑误、各限定/修正版、反例的评价分别列出；有未完成证明依赖的声明仍为未证。
 
 ### 7. 状态与证明位置
 
-| 声明 | 状态 | 未证原因 |
-|---|---|---|
-| `MD.Ch06.biasedWalk` | 定义 | — |
+| 声明 | 证明状态 | 未证原因 | 网站分版结论 |
+|---|---|---|---|
+| `MD.Ch06.biasedWalk` | 定义 | — | PASS |
 
-位置：`Blueprint/Ch06.lean:1075`；验证：`blueprint/ch06/closeout25/FINAL_COMPILE.log`。
+位置：`Blueprint/Ch06.lean:1075`；本地核验记录：`blueprint/ch06/closeout26/FINAL_COMPILE.log`。
 
 ## MD-6.3-BiasedWalkSum
 
@@ -5159,9 +5263,9 @@ theorem biasedWalkSum : ∀ {Ω : Type*} (a b : ℝ → ℝ → ℝ) (J : ℕ �
 
 | 原文对象或结论 | 当前Lean与范围 |
 |---|---|
-| 原文所选陈述 | 本条所引原句及展示公式；单个记号归入context_notation。 |
-| 对象/域/量词/前提 | 完整当前Lean及依赖定义；新增资格见[EXTRA] |
-| 网站首轮 | PASS：对任意K∈ℕ、任意sample作递归望远镜求和，K=0也成立。K泛化原ν，不丢失原结论；dt和系数无正性/随机性限制也不影响此代数恒等式。 |
+| 所引原句 | 本条所引原句及展示公式；单个记号归入context_notation。 |
+| 对象、域、量词及前提 | 以上完整声明；额外资格与未覆盖部分见下一段 |
+| 最新网站原始评价 | PASS；首轮保留 |
 
 ### 5. [EXTRA] 与覆盖缺口
 
@@ -5170,16 +5274,17 @@ theorem biasedWalkSum : ∀ {Ω : Type*} (a b : ℝ → ℝ → ℝ) (J : ℕ �
 ### 6. 审计结论（含网站结论）
 
 网站原返回：PASS。对任意K∈ℕ、任意sample作递归望远镜求和，K=0也成立。K泛化原ν，不丢失原结论；dt和系数无正性/随机性限制也不影响此代数恒等式。
-本轮处理：保留原审阅版本结论；本轮未改签名。
-本地单文件及逐声明依赖检查通过；含未完成证明依赖的声明仍标未证。原书疑误及修正版分别见勘误，当前修改版未获网站复审结论。
+当前处理：网站PASS（首轮未改版本）。
+保留所交版本的明确结论。
+本地编译和逐声明依赖核对通过。原文疑误、各限定/修正版、反例的评价分别列出；有未完成证明依赖的声明仍为未证。
 
 ### 7. 状态与证明位置
 
-| 声明 | 状态 | 未证原因 |
-|---|---|---|
-| `MD.Ch06.biasedWalkSum` | 已证 | — |
+| 声明 | 证明状态 | 未证原因 | 网站分版结论 |
+|---|---|---|---|
+| `MD.Ch06.biasedWalkSum` | 已证 | — | PASS |
 
-位置：`Blueprint/Ch06.lean:1082`；验证：`blueprint/ch06/closeout25/FINAL_COMPILE.log`。
+位置：`Blueprint/Ch06.lean:1082`；本地核验记录：`blueprint/ch06/closeout26/FINAL_COMPILE.log`。
 
 ## MD-6.3-ScalarSDE
 
@@ -5210,9 +5315,9 @@ def strictScalarSDE {Ω : Type*} [MeasurableSpace Ω] (P : Measure Ω)
 
 | 原文对象或结论 | 当前Lean与范围 |
 |---|---|
-| 原文所选陈述 | 本条所引原句及展示公式；单个记号归入context_notation。 |
-| 对象/域/量词/前提 | 完整当前Lean及依赖定义；新增资格见[EXTRA] |
-| 网站首轮 | PASS：D19保留连续路径和确定初值的共同AE集合；每个T≥0漂移路径区间可积，并以完整残差作严格Ito积分。a,b仍状态和时间依赖。作为方程关系定义可接受；[EXTRA]正确说明未由此证明游走极限，W及适应性资格应由使用环境另给。 |
+| 所引原句 | 本条所引原句及展示公式；单个记号归入context_notation。 |
+| 对象、域、量词及前提 | 以上完整声明；额外资格与未覆盖部分见下一段 |
+| 最新网站原始评价 | PASS；首轮保留 |
 
 ### 5. [EXTRA] 与覆盖缺口
 
@@ -5221,16 +5326,17 @@ def strictScalarSDE {Ω : Type*} [MeasurableSpace Ω] (P : Measure Ω)
 ### 6. 审计结论（含网站结论）
 
 网站原返回：PASS。D19保留连续路径和确定初值的共同AE集合；每个T≥0漂移路径区间可积，并以完整残差作严格Ito积分。a,b仍状态和时间依赖。作为方程关系定义可接受；[EXTRA]正确说明未由此证明游走极限，W及适应性资格应由使用环境另给。
-本轮处理：保留原审阅版本结论；本轮未改签名。
-本地单文件及逐声明依赖检查通过；含未完成证明依赖的声明仍标未证。原书疑误及修正版分别见勘误，当前修改版未获网站复审结论。
+当前处理：网站PASS（首轮未改版本）。
+保留所交版本的明确结论。
+本地编译和逐声明依赖核对通过。原文疑误、各限定/修正版、反例的评价分别列出；有未完成证明依赖的声明仍为未证。
 
 ### 7. 状态与证明位置
 
-| 声明 | 状态 | 未证原因 |
-|---|---|---|
-| `MD.Ch06.strictScalarSDE` | 定义 | — |
+| 声明 | 证明状态 | 未证原因 | 网站分版结论 |
+|---|---|---|---|
+| `MD.Ch06.strictScalarSDE` | 定义 | — | PASS |
 
-位置：`Blueprint/Ch06.lean:1096`；验证：`blueprint/ch06/closeout25/FINAL_COMPILE.log`。
+位置：`Blueprint/Ch06.lean:1096`；本地核验记录：`blueprint/ch06/closeout26/FINAL_COMPILE.log`。
 
 ## MD-6.3-VectorSDE
 
@@ -5268,27 +5374,30 @@ def strictVectorSDE {Ω : Type*} [MeasurableSpace Ω] {n r : ℕ} (P : Measure �
 
 | 原文对象或结论 | 当前Lean与范围 |
 |---|---|
-| 原文所选陈述 | 本条Lean覆盖范围：补真实标准向量Wiener资格；该结构给联合Gaussian、全部跨时协方差及连续路径，并有整坐标路径独立定理，不仅是同一时刻独立。其余方程关系保持。 |
-| 对象/域/量词/前提 | 完整当前Lean及依赖定义；新增资格见[EXTRA] |
-| 网站首轮 | FAIL：任意n,r；矩阵B为n×r并依赖X和时间；逐坐标漂移及r项真实积分齐全。但定义完全不要求W的坐标为Wiener，也不要求独立，且本条没有给出补充资格声明。故仅编码方程关系，未覆盖原文完整对象域“r independent Wiener processes”。 |
+| 所引原句 | strictVectorSDE只定义严格网格积分方程关系，未单独要求X联合可测/共同历史适应，不能等同完整通常Itô解定义。 |
+| 对象、域、量词及前提 | 以上完整声明；额外资格与未覆盖部分见下一段 |
+| 最新网站原始评价 | NEEDS_HUMAN；复审 |
 
 ### 5. [EXTRA] 与覆盖缺口
 
-- [EXTRA] 25号：补真实标准向量Wiener资格；该结构给联合Gaussian、全部跨时协方差及连续路径，并有整坐标路径独立定理，不仅是同一时刻独立。其余方程关系保持。
+- [EXTRA] 补真实标准向量Wiener资格；该结构给联合Gaussian、全部跨时协方差及连续路径，并有整坐标路径独立定理，不仅是同一时刻独立。其余方程关系保持。
+- [EXTRA] 复审范围：strictVectorSDE只定义严格网格积分方程关系，未单独要求X联合可测/共同历史适应，不能等同完整通常Itô解定义。
+- 覆盖缺口：strictVectorSDE只定义严格网格积分方程关系，未单独要求X联合可测/共同历史适应，不能等同完整通常Itô解定义。
 
 ### 6. 审计结论（含网站结论）
 
-网站原返回：FAIL。任意n,r；矩阵B为n×r并依赖X和时间；逐坐标漂移及r项真实积分齐全。但定义完全不要求W的坐标为Wiener，也不要求独立，且本条没有给出补充资格声明。故仅编码方程关系，未覆盖原文完整对象域“r independent Wiener processes”。
-本轮处理：补真实标准向量Wiener资格；该结构给联合Gaussian、全部跨时协方差及连续路径，并有整坐标路径独立定理，不仅是同一时刻独立。其余方程关系保持。
-本地单文件及逐声明依赖检查通过；含未完成证明依赖的声明仍标未证。原书疑误及修正版分别见勘误，当前修改版未获网站复审结论。
+网站原返回：NEEDS_HUMAN。strictVectorSDE对任意n,r、样本空间、实时间W和X、时变向量a与n×r矩阵B、确定初态x0，要求真实联合Gaussian向量Wiener、AE连续初态、逐坐标逐T漂移可积与各列严格左和积分，增量等于列积分和。D9的Gaussian、零均值、全部跨时协方差和AE连续确可给坐标过程独立，D10、D11已核对，未仅以同一时刻独立代替。但定义不要求X联合可测或相对共同W历史适应，不能未经限定当作标准适应Itô解的完整定义；第28条另外加这些资格印证区别。作为积分方程关系签名正确，作为完整SDE资格仍需人工确认范围。
+当前处理：原文疑误或语义范围待导师；不冒称未提供版本已通过。
+strictVectorSDE只定义严格网格积分方程关系，未单独要求X联合可测/共同历史适应，不能等同完整通常Itô解定义。
+本地编译和逐声明依赖核对通过。原文疑误、各限定/修正版、反例的评价分别列出；有未完成证明依赖的声明仍为未证。
 
 ### 7. 状态与证明位置
 
-| 声明 | 状态 | 未证原因 |
-|---|---|---|
-| `MD.Ch06.strictVectorSDE` | 定义 | — |
+| 声明 | 证明状态 | 未证原因 | 网站分版结论 |
+|---|---|---|---|
+| `MD.Ch06.strictVectorSDE` | 定义 | — | PASS |
 
-位置：`Blueprint/Ch06.lean:1105`；验证：`blueprint/ch06/closeout25/FINAL_COMPILE.log`。
+位置：`Blueprint/Ch06.lean:1105`；本地核验记录：`blueprint/ch06/closeout26/FINAL_COMPILE.log`。
 
 ## MD-6.3.1-ScalarItoFormula
 
@@ -5305,7 +5414,7 @@ def strictVectorSDE {Ω : Type*} [MeasurableSpace Ω] {n r : ℕ} (P : Measure �
 > \[\delta\phi\stackrel{\rm def}=\phi_{n+1}-\phi_n=\phi'(X_n)\delta X_n+\tfrac12\phi''(X_n)\delta X_n^2+o(\delta X_n^2)
 > =\phi'(X_n)(a(X_n,n\delta t)\delta t+b(X_n,n\delta t)J_n\delta x)
 > +\tfrac12\phi''(X_n)(a(X_n,n\delta t)\delta t+b(X_n,n\delta t)J_n\delta x)^2+o(\delta X_n^2).\]
-> Now we expand the 2nd order term and, working in the diffusion limit, recognize that $\delta x^2\approx\delta t$, thus we have
+> Now we expand the 2nd order term and, working in the diffusion limit, recognize that $\delta x^2\sim\delta t$, thus we have
 > \[\delta\phi=\phi'(X_n)(a(X_n,n\delta t)\delta t+b(X_n,n\delta t)J_n\delta x)+\tfrac12\phi''(X_n)b(X_n,n\delta t)^2\delta t+O(\delta t^{3/2}).\]
 > Passing to the limit, this leads to the SDE.
 
@@ -5332,27 +5441,28 @@ theorem scalarItoFormula :
 
 | 原文对象或结论 | 当前Lean与范围 |
 |---|---|
-| 原文所选陈述 | 本条Lean覆盖范围：补X联合可测及自然过滤适应、被积过程全部网格和L²与局部均方时间Hölder资格。仅时间积分平方可积的旧签名前提不足且有网站反例；新签名不假设所求积分公式/极限，仍缺一般Itô理论，不证明。Time版与_corrected同步，漏dt原文形式单列保留。 |
-| 对象/域/量词/前提 | 完整当前Lean及依赖定义；新增资格见[EXTRA] |
-| 网站首轮 | FAIL：完整漂移φ′a+φ″b²/2和噪声φ′b均正确，C²φ、C¹a,b及适应平方时间可积均已列出。然而D20只有时间积分的平方可积，不能保证D5所要求每一个网格点左和MemLp 2。下述光滑线性SDE反例满足全部前提，却在T=2,K=2失败。 |
+| 所引原句 | 本条Lean覆盖范围：补X联合可测及自然过滤适应、被积过程全部网格和L²与局部均方时间Hölder资格。仅时间积分平方可积的旧签名前提不足且有网站反例；新签名不假设所求积分公式/极限，仍缺一般Itô理论，不证明。Time版与_corrected同步，漏dt原文形式单列保留。 |
+| 对象、域、量词及前提 | 以上完整声明；额外资格与未覆盖部分见下一段 |
+| 最新网站原始评价 | NEEDS_HUMAN；复审 |
 
 ### 5. [EXTRA] 与覆盖缺口
 
-- [EXTRA] 25号：补X联合可测及自然过滤适应、被积过程全部网格和L²与局部均方时间Hölder资格。仅时间积分平方可积的旧签名前提不足且有网站反例；新签名不假设所求积分公式/极限，仍缺一般Itô理论，不证明。Time版与_corrected同步，漏dt原文形式单列保留。
+- [EXTRA] 补X联合可测及自然过滤适应、被积过程全部网格和L²与局部均方时间Hölder资格。仅时间积分平方可积的旧签名前提不足且有网站反例；新签名不假设所求积分公式/极限，仍缺一般Itô理论，不证明。Time版与_corrected同步，漏dt原文形式单列保留。
 
 ### 6. 审计结论（含网站结论）
 
-网站原返回：FAIL。完整漂移φ′a+φ″b²/2和噪声φ′b均正确，C²φ、C¹a,b及适应平方时间可积均已列出。然而D20只有时间积分的平方可积，不能保证D5所要求每一个网格点左和MemLp 2。下述光滑线性SDE反例满足全部前提，却在T=2,K=2失败。
-本轮处理：补X联合可测及自然过滤适应、被积过程全部网格和L²与局部均方时间Hölder资格。仅时间积分平方可积的旧签名前提不足且有网站反例；新签名不假设所求积分公式/极限，仍缺一般Itô理论，不证明。Time版与_corrected同步，漏dt原文形式单列保留。
-本地单文件及逐声明依赖检查通过；含未完成证明依赖的声明仍标未证。原书疑误及修正版分别见勘误，当前修改版未获网站复审结论。
+网站原返回：NEEDS_HUMAN。scalarItoFormula：P上的preBrownian、strictScalarSDE（AE连续、确定初态、逐终点漂移可积和严格均方左和关系）、φ为C²、a,b在状态时间上C¹，再加φ′(X)b适应平方可积、X联合可测及自然历史适应、gridItoQualification25。后者含P概率、联合可测和适应、每时L²、每个左和L²以及局部均方Hölder控制，并未假设所求结论。结论为每T≥0下φ(X_T)-φ(x0)-∫(φ′a+φ″b²/2)等于φ′b的严格均方积分，系数、初项、时变量和量词正确。限定签名PASS，不因sorry判FAIL；原文C²余项推成O(dt^(3/2))及直接过极限缺口保留NEEDS_HUMAN。
+当前处理：修正版/限定声明=网站PASS；原文疑误或范围解释待导师。
+保留所交版本的明确结论。
+本地编译和逐声明依赖核对通过。原文疑误、各限定/修正版、反例的评价分别列出；有未完成证明依赖的声明仍为未证。
 
 ### 7. 状态与证明位置
 
-| 声明 | 状态 | 未证原因 |
-|---|---|---|
-| `MD.Ch06.scalarItoFormula` | 未证 | 缺大型理论 |
+| 声明 | 证明状态 | 未证原因 | 网站分版结论 |
+|---|---|---|---|
+| `MD.Ch06.scalarItoFormula` | 未证 | 缺大型理论 | PASS |
 
-位置：`Blueprint/Ch06.lean:1120`；验证：`blueprint/ch06/closeout25/FINAL_COMPILE.log`。
+位置：`Blueprint/Ch06.lean:1120`；本地核验记录：`blueprint/ch06/closeout26/FINAL_COMPILE.log`。
 
 ## MD-6.3.1-DiffusiveTaylorPrinted
 
@@ -5388,28 +5498,29 @@ theorem diffusiveTaylorPrinted_corrected : ∀ (φ : ℝ → ℝ) (x a b : ℝ),
 
 | 原文对象或结论 | 当前Lean与范围 |
 |---|---|
-| 原文所选陈述 | 本条所引原句及展示公式；单个记号归入context_notation。 |
-| 对象/域/量词/前提 | 完整当前Lean及依赖定义；新增资格见[EXTRA] |
-| 网站首轮 | NEEDS_HUMAN：签名取J=+1及δx=√dt的字面特例，a,b可任意实数，故−1符号可吸收到b。右侧滤子dt→0+、二阶项及3/2指数对应。但C²只给o(dt)，不能保证O(dt^(3/2))。按原文疑误保留并NEEDS_HUMAN，不因sorry失败；C³修正合理但该修正声明不在本条展示范围内。 |
+| 所引原句 | 本条所引原句及展示公式；单个记号归入context_notation。 |
+| 对象、域、量词及前提 | 以上完整声明；额外资格与未覆盖部分见下一段 |
+| 最新网站原始评价 | NEEDS_HUMAN；复审 |
 
 ### 5. [EXTRA] 与覆盖缺口
 
-- [EXTRA] 25号：原文版忠实性与数学疑误分开；补齐所交条目所属的现有_corrected完整签名，不从repair_log名称推断网站已通过修正版。
+- [EXTRA] 原文版忠实性与数学疑误分开；补齐所交条目所属的现有_corrected完整签名，不从repair_log名称推断网站已通过修正版。
 
 ### 6. 审计结论（含网站结论）
 
-网站原返回：NEEDS_HUMAN。签名取J=+1及δx=√dt的字面特例，a,b可任意实数，故−1符号可吸收到b。右侧滤子dt→0+、二阶项及3/2指数对应。但C²只给o(dt)，不能保证O(dt^(3/2))。按原文疑误保留并NEEDS_HUMAN，不因sorry失败；C³修正合理但该修正声明不在本条展示范围内。
-本轮处理：原文版忠实性与数学疑误分开；补齐所交条目所属的现有_corrected完整签名，不从repair_log名称推断网站已通过修正版。
-本地单文件及逐声明依赖检查通过；含未完成证明依赖的声明仍标未证。原书疑误及修正版分别见勘误，当前修改版未获网站复审结论。
+网站原返回：NEEDS_HUMAN。diffusiveTaylorPrinted：任意C² φ、任意实x,a,b，沿dt→0+对增量a*dt+b*sqrt(dt)宣称三阶扩散余项BigO，忠实记录原书J=+1特例但断言过强。diffusiveTaylorPrinted_corrected：C³提供局部三阶Taylor界，混合二阶项也为O(dt^(3/2))，对固定实x,a,b正确。右滤子和实rpow的指数3/2均正确；b可负；此式只包含J=+1分支，J=-1可用替换b覆盖，但不是显式随机极限定理。
+当前处理：修正版/限定声明=网站PASS；原文疑误或范围解释待导师。
+保留所交版本的明确结论。
+本地编译和逐声明依赖核对通过。原文疑误、各限定/修正版、反例的评价分别列出；有未完成证明依赖的声明仍为未证。
 
 ### 7. 状态与证明位置
 
-| 声明 | 状态 | 未证原因 |
-|---|---|---|
-| `MD.Ch06.diffusiveTaylorPrinted` | 未证 | 原书疑误不证 |
-| `MD.Ch06.diffusiveTaylorPrinted_corrected` | 未证 | 时间盒止 |
+| 声明 | 证明状态 | 未证原因 | 网站分版结论 |
+|---|---|---|---|
+| `MD.Ch06.diffusiveTaylorPrinted` | 未证 | 原书疑误不证 | 原文忠实性PASS；原书数学/范围NEEDS_HUMAN |
+| `MD.Ch06.diffusiveTaylorPrinted_corrected` | 未证 | 时间盒止 | PASS |
 
-位置：`Blueprint/Ch06.lean:1138`；验证：`blueprint/ch06/closeout25/FINAL_COMPILE.log`。
+位置：`Blueprint/Ch06.lean:1138`；本地核验记录：`blueprint/ch06/closeout26/FINAL_COMPILE.log`。
 
 ## MD-6.3.1-TimeItoFormula
 
@@ -5472,29 +5583,30 @@ def timeItoFormulaPrinted (φ : ℝ×ℝ → ℝ) (x t dX dXX : ℝ) : ℝ :=
 
 | 原文对象或结论 | 当前Lean与范围 |
 |---|---|
-| 原文所选陈述 | 本条Lean覆盖范围：补X联合可测及自然过滤适应、被积过程全部网格和L²与局部均方时间Hölder资格。仅时间积分平方可积的旧签名前提不足且有网站反例；新签名不假设所求积分公式/极限，仍缺一般Itô理论，不证明。Time版与_corrected同步，漏dt原文形式单列保留。 |
-| 对象/域/量词/前提 | 完整当前Lean及依赖定义；新增资格见[EXTRA] |
-| 网站首轮 | FAIL：签名是补上φ_t dt后的完整积分修正版，(1,0)/(0,1)方向及二阶x导数正确，[EXTRA]已坦白修正。但仍有与第12条相同的全部有限和L²缺口；取下述φ(x,t)=Φ(x)即可，故当前积分版本在所列前提下也不成立。 |
+| 所引原句 | 本条Lean覆盖范围：补X联合可测及自然过滤适应、被积过程全部网格和L²与局部均方时间Hölder资格。仅时间积分平方可积的旧签名前提不足且有网站反例；新签名不假设所求积分公式/极限，仍缺一般Itô理论，不证明。Time版与_corrected同步，漏dt原文形式单列保留。 |
+| 对象、域、量词及前提 | 以上完整声明；额外资格与未覆盖部分见下一段 |
+| 最新网站原始评价 | NEEDS_HUMAN；复审 |
 
 ### 5. [EXTRA] 与覆盖缺口
 
-- [EXTRA] 25号：补X联合可测及自然过滤适应、被积过程全部网格和L²与局部均方时间Hölder资格。仅时间积分平方可积的旧签名前提不足且有网站反例；新签名不假设所求积分公式/极限，仍缺一般Itô理论，不证明。Time版与_corrected同步，漏dt原文形式单列保留。
+- [EXTRA] 补X联合可测及自然过滤适应、被积过程全部网格和L²与局部均方时间Hölder资格。仅时间积分平方可积的旧签名前提不足且有网站反例；新签名不假设所求积分公式/极限，仍缺一般Itô理论，不证明。Time版与_corrected同步，漏dt原文形式单列保留。
 
 ### 6. 审计结论（含网站结论）
 
-网站原返回：FAIL。签名是补上φ_t dt后的完整积分修正版，(1,0)/(0,1)方向及二阶x导数正确，[EXTRA]已坦白修正。但仍有与第12条相同的全部有限和L²缺口；取下述φ(x,t)=Φ(x)即可，故当前积分版本在所列前提下也不成立。
-本轮处理：补X联合可测及自然过滤适应、被积过程全部网格和L²与局部均方时间Hölder资格。仅时间积分平方可积的旧签名前提不足且有网站反例；新签名不假设所求积分公式/极限，仍缺一般Itô理论，不证明。Time版与_corrected同步，漏dt原文形式单列保留。
-本地单文件及逐声明依赖检查通过；含未完成证明依赖的声明仍标未证。原书疑误及修正版分别见勘误，当前修改版未获网站复审结论。
+网站原返回：NEEDS_HUMAN。timeItoFormula及timeItoFormula_corrected签名相同：在与标量版一致的preBrownian、严格SDE、C¹ a,b、C²联合φ、联合可测及自然适应X、被积过程适应平方可积和网格L²/Hölder资格下，给出任意T≥0完整积分公式。方向(1,0)为x偏导，(0,1)为t偏导，二次方向导数给φ_xx；漂移积分已正确包含φ_t，初值φ(x0,0)，扩散φ_x*b，系数b²/2均正确，两数学签名PASS。timeItoFormulaPrinted以dX,dXX形式占位保留漏dt的右端，是表达式定义，不是正确积分定理，其文档误标(6.17)，应为(6.18)。原书疑误与已修正主签名不能混认。
+当前处理：修正版/限定声明=网站PASS；原文疑误或范围解释待导师。
+保留所交版本的明确结论。
+本地编译和逐声明依赖核对通过。原文疑误、各限定/修正版、反例的评价分别列出；有未完成证明依赖的声明仍为未证。
 
 ### 7. 状态与证明位置
 
-| 声明 | 状态 | 未证原因 |
-|---|---|---|
-| `MD.Ch06.timeItoFormula` | 未证 | 缺大型理论 |
-| `MD.Ch06.timeItoFormula_corrected` | 未证 | 缺大型理论 |
-| `MD.Ch06.timeItoFormulaPrinted` | 定义 | — |
+| 声明 | 证明状态 | 未证原因 | 网站分版结论 |
+|---|---|---|---|
+| `MD.Ch06.timeItoFormula` | 未证 | 缺大型理论 | PASS |
+| `MD.Ch06.timeItoFormula_corrected` | 未证 | 缺大型理论 | PASS |
+| `MD.Ch06.timeItoFormulaPrinted` | 定义 | — | 未获单独PASS；见分版意见 |
 
-位置：`Blueprint/Ch06.lean:1154`；验证：`blueprint/ch06/closeout25/FINAL_COMPILE.log`。
+位置：`Blueprint/Ch06.lean:1154`；本地核验记录：`blueprint/ch06/closeout26/FINAL_COMPILE.log`。
 
 ## MD-6.3-BiasedWalkDiffusion
 
@@ -5536,9 +5648,9 @@ theorem biasedWalkDiffusion : ∀ {Ω : Type*} [MeasurableSpace Ω] (P : Measure
 
 | 原文对象或结论 | 当前Lean与范围 |
 |---|---|
-| 原文所选陈述 | 本条所引原句及展示公式；单个记号归入context_notation。 |
-| 对象/域/量词/前提 | 完整当前Lean及依赖定义；新增资格见[EXTRA] |
-| 网站首轮 | PASS：rademacherJumps含概率测度、独立、可测、±1、均值零。W另有PreBrownian和AE连续资格；a,b对(x,t)全局Lipschitz是明示[EXTRA]。结论含全时间严格标量SDE解、[0,T]连续路径版本、dt=T/K的线性插值及所有有界连续路径泛函积分收敛；不是仅参数或单时边际收敛。T>0且K=0不约束无碍atTop。J与W无需互相独立，因为结论只作分布极限。 |
+| 所引原句 | 本条所引原句及展示公式；单个记号归入context_notation。 |
+| 对象、域、量词及前提 | 以上完整声明；额外资格与未覆盖部分见下一段 |
+| 最新网站原始评价 | PASS；首轮保留 |
 
 ### 5. [EXTRA] 与覆盖缺口
 
@@ -5547,16 +5659,17 @@ theorem biasedWalkDiffusion : ∀ {Ω : Type*} [MeasurableSpace Ω] (P : Measure
 ### 6. 审计结论（含网站结论）
 
 网站原返回：PASS。rademacherJumps含概率测度、独立、可测、±1、均值零。W另有PreBrownian和AE连续资格；a,b对(x,t)全局Lipschitz是明示[EXTRA]。结论含全时间严格标量SDE解、[0,T]连续路径版本、dt=T/K的线性插值及所有有界连续路径泛函积分收敛；不是仅参数或单时边际收敛。T>0且K=0不约束无碍atTop。J与W无需互相独立，因为结论只作分布极限。
-本轮处理：保留原审阅版本结论；本轮未改签名。
-本地单文件及逐声明依赖检查通过；含未完成证明依赖的声明仍标未证。原书疑误及修正版分别见勘误，当前修改版未获网站复审结论。
+当前处理：网站PASS（首轮未改版本）。
+保留所交版本的明确结论。
+本地编译和逐声明依赖核对通过。原文疑误、各限定/修正版、反例的评价分别列出；有未完成证明依赖的声明仍为未证。
 
 ### 7. 状态与证明位置
 
-| 声明 | 状态 | 未证原因 |
-|---|---|---|
-| `MD.Ch06.biasedWalkDiffusion` | 未证 | 缺大型理论 |
+| 声明 | 证明状态 | 未证原因 | 网站分版结论 |
+|---|---|---|---|
+| `MD.Ch06.biasedWalkDiffusion` | 未证 | 缺大型理论 | PASS |
 
-位置：`Blueprint/Ch06.lean:1196`；验证：`blueprint/ch06/closeout25/FINAL_COMPILE.log`。
+位置：`Blueprint/Ch06.lean:1196`；本地核验记录：`blueprint/ch06/closeout26/FINAL_COMPILE.log`。
 
 ## MD-6.3.2-OUProcess
 
@@ -5584,9 +5697,9 @@ def strictOUProcess {Ω : Type*} [MeasurableSpace Ω] (P : Measure Ω)
 
 | 原文对象或结论 | 当前Lean与范围 |
 |---|---|
-| 原文所选陈述 | 本条所引原句及展示公式；单个记号归入context_notation。 |
-| 对象/域/量词/前提 | 完整当前Lean及依赖定义；新增资格见[EXTRA] |
-| 网站首轮 | PASS：D21明列γ>0并把a(x,t)=−γx、b(x,t)=σ、固定x0代入D19。保留负漂移、实常σ和严格积分语义；不是用Gaussian law定义OU。W资格仍需在使用处给出。 |
+| 所引原句 | 本条所引原句及展示公式；单个记号归入context_notation。 |
+| 对象、域、量词及前提 | 以上完整声明；额外资格与未覆盖部分见下一段 |
+| 最新网站原始评价 | PASS；首轮保留 |
 
 ### 5. [EXTRA] 与覆盖缺口
 
@@ -5595,16 +5708,17 @@ def strictOUProcess {Ω : Type*} [MeasurableSpace Ω] (P : Measure Ω)
 ### 6. 审计结论（含网站结论）
 
 网站原返回：PASS。D21明列γ>0并把a(x,t)=−γx、b(x,t)=σ、固定x0代入D19。保留负漂移、实常σ和严格积分语义；不是用Gaussian law定义OU。W资格仍需在使用处给出。
-本轮处理：保留原审阅版本结论；本轮未改签名。
-本地单文件及逐声明依赖检查通过；含未完成证明依赖的声明仍标未证。原书疑误及修正版分别见勘误，当前修改版未获网站复审结论。
+当前处理：网站PASS（首轮未改版本）。
+保留所交版本的明确结论。
+本地编译和逐声明依赖核对通过。原文疑误、各限定/修正版、反例的评价分别列出；有未完成证明依赖的声明仍为未证。
 
 ### 7. 状态与证明位置
 
-| 声明 | 状态 | 未证原因 |
-|---|---|---|
-| `MD.Ch06.strictOUProcess` | 定义 | — |
+| 声明 | 证明状态 | 未证原因 | 网站分版结论 |
+|---|---|---|---|
+| `MD.Ch06.strictOUProcess` | 定义 | — | PASS |
 
-位置：`Blueprint/Ch06.lean:1217`；验证：`blueprint/ch06/closeout25/FINAL_COMPILE.log`。
+位置：`Blueprint/Ch06.lean:1217`；本地核验记录：`blueprint/ch06/closeout26/FINAL_COMPILE.log`。
 
 ## MD-6.3.2-OUIntegratingFactor
 
@@ -5641,9 +5755,9 @@ theorem ouIntegratingFactor :
 
 | 原文对象或结论 | 当前Lean与范围 |
 |---|---|
-| 原文所选陈述 | 本条所引原句及展示公式；单个记号归入context_notation。 |
-| 对象/域/量词/前提 | 完整当前Lean及依赖定义；新增资格见[EXTRA] |
-| 网站首轮 | PASS：任意概率样本空间和PreBrownian W，真实OU关系、γ>0、T≥0；存在Y为exp(γs)的严格确定积分且X T几乎处处等于完整变常数解。σ=0也成立；额外重复γ>0无害。 |
+| 所引原句 | 本条所引原句及展示公式；单个记号归入context_notation。 |
+| 对象、域、量词及前提 | 以上完整声明；额外资格与未覆盖部分见下一段 |
+| 最新网站原始评价 | PASS；首轮保留 |
 
 ### 5. [EXTRA] 与覆盖缺口
 
@@ -5652,16 +5766,17 @@ theorem ouIntegratingFactor :
 ### 6. 审计结论（含网站结论）
 
 网站原返回：PASS。任意概率样本空间和PreBrownian W，真实OU关系、γ>0、T≥0；存在Y为exp(γs)的严格确定积分且X T几乎处处等于完整变常数解。σ=0也成立；额外重复γ>0无害。
-本轮处理：保留原审阅版本结论；本轮未改签名。
-本地单文件及逐声明依赖检查通过；含未完成证明依赖的声明仍标未证。原书疑误及修正版分别见勘误，当前修改版未获网站复审结论。
+当前处理：网站PASS（首轮未改版本）。
+保留所交版本的明确结论。
+本地编译和逐声明依赖核对通过。原文疑误、各限定/修正版、反例的评价分别列出；有未完成证明依赖的声明仍为未证。
 
 ### 7. 状态与证明位置
 
-| 声明 | 状态 | 未证原因 |
-|---|---|---|
-| `MD.Ch06.ouIntegratingFactor` | 未证 | 缺大型理论 |
+| 声明 | 证明状态 | 未证原因 | 网站分版结论 |
+|---|---|---|---|
+| `MD.Ch06.ouIntegratingFactor` | 未证 | 缺大型理论 | PASS |
 
-位置：`Blueprint/Ch06.lean:1223`；验证：`blueprint/ch06/closeout25/FINAL_COMPILE.log`。
+位置：`Blueprint/Ch06.lean:1223`；本地核验记录：`blueprint/ch06/closeout26/FINAL_COMPILE.log`。
 
 ## MD-6.3.2-OUVarianceIntegral
 
@@ -5700,28 +5815,29 @@ theorem ouVarianceIntegral : ∀ (γ T : ℝ), 0 < γ → 0 ≤ T →
 
 | 原文对象或结论 | 当前Lean与范围 |
 |---|---|
-| 原文所选陈述 | 本条Lean覆盖范围：仅覆盖确定性指数积分求值；随机积分的Gaussian法则、均值及方差由其他条目承接，本条不声称覆盖。 |
-| 对象/域/量词/前提 | 完整当前Lean及依赖定义；新增资格见[EXTRA] |
-| 网站首轮 | FAIL：签名只对γ>0,T≥0计算普通定积分，等式正确。但整条statement_scope未限制成仅末尾确定性等式，原文的Y为Gaussian、均值0、随机积分方差都没有出现在本声明结论中。[EXTRA]说由其他条目保留不能替代本条完整核对；应缩小来源范围或添加完整随机声明。 |
+| 所引原句 | 本条Lean覆盖范围：仅覆盖确定性指数积分求值；随机积分的Gaussian法则、均值及方差由其他条目承接，本条不声称覆盖。 |
+| 对象、域、量词及前提 | 以上完整声明；额外资格与未覆盖部分见下一段 |
+| 最新网站原始评价 | PASS；复审 |
 
 ### 5. [EXTRA] 与覆盖缺口
 
-- [EXTRA] 25号：仅覆盖确定性指数积分求值；随机积分的Gaussian法则、均值及方差由其他条目承接，本条不声称覆盖。
+- [EXTRA] 仅覆盖确定性指数积分求值；随机积分的Gaussian法则、均值及方差由其他条目承接，本条不声称覆盖。
 - 覆盖缺口：仅覆盖确定性指数积分求值；随机积分的Gaussian法则、均值及方差由其他条目承接，本条不声称覆盖。
 
 ### 6. 审计结论（含网站结论）
 
-网站原返回：FAIL。签名只对γ>0,T≥0计算普通定积分，等式正确。但整条statement_scope未限制成仅末尾确定性等式，原文的Y为Gaussian、均值0、随机积分方差都没有出现在本声明结论中。[EXTRA]说由其他条目保留不能替代本条完整核对；应缩小来源范围或添加完整随机声明。
-本轮处理：仅覆盖确定性指数积分求值；随机积分的Gaussian法则、均值及方差由其他条目承接，本条不声称覆盖。
-本地单文件及逐声明依赖检查通过；含未完成证明依赖的声明仍标未证。原书疑误及修正版分别见勘误，当前修改版未获网站复审结论。
+网站原返回：PASS。ouVarianceIntegral对任意γ>0、T≥0断言确定性区间积分∫exp(2γs)=(exp(2γT)-1)/(2γ)，签名正确。明确排除γ=0以免总化除零给错误值。scope和coverage_gaps已声明不覆盖随机积分Gaussian法则、均值或方差的识别；按此范围PASS。条目中额外列出的SymplecticCoordinates、textbookJ及复合辛映射声明与本积分结论无关，不把它们当证据。
+当前处理：网站PASS（复审）。
+保留所交版本的明确结论。
+本地编译和逐声明依赖核对通过。原文疑误、各限定/修正版、反例的评价分别列出；有未完成证明依赖的声明仍为未证。
 
 ### 7. 状态与证明位置
 
-| 声明 | 状态 | 未证原因 |
-|---|---|---|
-| `MD.Ch06.ouVarianceIntegral` | 已证 | — |
+| 声明 | 证明状态 | 未证原因 | 网站分版结论 |
+|---|---|---|---|
+| `MD.Ch06.ouVarianceIntegral` | 已证 | — | PASS |
 
-位置：`Blueprint/Ch06.lean:1233`；验证：`blueprint/ch06/closeout25/FINAL_COMPILE.log`。
+位置：`Blueprint/Ch06.lean:1233`；本地核验记录：`blueprint/ch06/closeout26/FINAL_COMPILE.log`。
 
 ## MD-6.3.2-OULawPrinted
 
@@ -5753,27 +5869,28 @@ theorem ouLawPrinted : ∀ {Ω : Type*} [MeasurableSpace Ω] (P : Measure Ω)
 
 | 原文对象或结论 | 当前Lean与范围 |
 |---|---|
-| 原文所选陈述 | 本条Lean覆盖范围：PDF256/印刷235已目视核对：根号覆盖完整(2γ)⁻¹(1−e^(−2γt))。Printed方差改σ²(1−e^(−2γT))/(2γ)，此前根号范围是转录错误，撤销原书疑误归因。 |
-| 对象/域/量词/前提 | 完整当前Lean及依赖定义；新增资格见[EXTRA] |
-| 网站首轮 | FAIL：所列前提下正确均值是exp(−γT)x0，正确variance为σ²(1−exp(−2γT))/(2γ)。签名却将(1−exp(−2γT))平方，既不忠实原页也数学错误；不能以Printed名称豁免。仅单时law无需指定Ŷ整族耦合。 |
+| 所引原句 | 本条Lean覆盖范围：PDF256/印刷235已目视核对：根号覆盖完整(2γ)⁻¹(1−e^(−2γt))。Printed方差改σ²(1−e^(−2γT))/(2γ)，此前根号范围是转录错误，撤销原书疑误归因。 |
+| 对象、域、量词及前提 | 以上完整声明；额外资格与未覆盖部分见下一段 |
+| 最新网站原始评价 | PASS；复审 |
 
 ### 5. [EXTRA] 与覆盖缺口
 
-- [EXTRA] 25号：PDF256/印刷235已目视核对：根号覆盖完整(2γ)⁻¹(1−e^(−2γt))。Printed方差改σ²(1−e^(−2γT))/(2γ)，此前根号范围是转录错误，撤销原书疑误归因。
+- [EXTRA] PDF256/印刷235已目视核对：根号覆盖完整(2γ)⁻¹(1−e^(−2γt))。Printed方差改σ²(1−e^(−2γT))/(2γ)，此前根号范围是转录错误，撤销原书疑误归因。
 
 ### 6. 审计结论（含网站结论）
 
-网站原返回：FAIL。所列前提下正确均值是exp(−γT)x0，正确variance为σ²(1−exp(−2γT))/(2γ)。签名却将(1−exp(−2γT))平方，既不忠实原页也数学错误；不能以Printed名称豁免。仅单时law无需指定Ŷ整族耦合。
-本轮处理：PDF256/印刷235已目视核对：根号覆盖完整(2γ)⁻¹(1−e^(−2γt))。Printed方差改σ²(1−e^(−2γT))/(2γ)，此前根号范围是转录错误，撤销原书疑误归因。
-本地单文件及逐声明依赖检查通过；含未完成证明依赖的声明仍标未证。原书疑误及修正版分别见勘误，当前修改版未获网站复审结论。
+网站原返回：PASS。ouLawPrinted：对实际preBrownian驱动与strictOUProcess（γ>0及线性漂移-γx、常扩散σ、确定初态x0的严格积分方程），任意T≥0，X_T有Gaussian法则，均值exp(-γT)x0、方差σ²(1-exp(-2γT))/(2γ)。方差非负，toNNReal不截掉任何合法量；σ为任意实数、T=0退化为初态Dirac也正确。原文只规定每时刻正态边际，签名没有错误声称各时刻独立或整路径法则，因此PASS；sorry不影响签名审校。
+当前处理：网站PASS（复审）。
+保留所交版本的明确结论。
+本地编译和逐声明依赖核对通过。原文疑误、各限定/修正版、反例的评价分别列出；有未完成证明依赖的声明仍为未证。
 
 ### 7. 状态与证明位置
 
-| 声明 | 状态 | 未证原因 |
-|---|---|---|
-| `MD.Ch06.ouLawPrinted` | 未证 | 缺大型理论 |
+| 声明 | 证明状态 | 未证原因 | 网站分版结论 |
+|---|---|---|---|
+| `MD.Ch06.ouLawPrinted` | 未证 | 缺大型理论 | PASS |
 
-位置：`Blueprint/Ch06.lean:1251`；验证：`blueprint/ch06/closeout25/FINAL_COMPILE.log`。
+位置：`Blueprint/Ch06.lean:1251`；本地核验记录：`blueprint/ch06/closeout26/FINAL_COMPILE.log`。
 
 ## MD-6.3.2-OULawCorrect
 
@@ -5811,9 +5928,9 @@ theorem ouLawPrinted_corrected :
 
 | 原文对象或结论 | 当前Lean与范围 |
 |---|---|
-| 原文所选陈述 | 本条所引原句及展示公式；单个记号归入context_notation。 |
-| 对象/域/量词/前提 | 完整当前Lean及依赖定义；新增资格见[EXTRA] |
-| 网站首轮 | PASS：ouMean和ouVariance的实际定义已给，完整均值及variance正确；PreBrownian、严格OU、γ>0及T≥0足够。σ任意实数由σ²消除符号，T=0退化为点质量正确。这一law忠实于实际PDF公式。 |
+| 所引原句 | 本条所引原句及展示公式；单个记号归入context_notation。 |
+| 对象、域、量词及前提 | 以上完整声明；额外资格与未覆盖部分见下一段 |
+| 最新网站原始评价 | PASS；首轮保留 |
 
 ### 5. [EXTRA] 与覆盖缺口
 
@@ -5822,17 +5939,18 @@ theorem ouLawPrinted_corrected :
 ### 6. 审计结论（含网站结论）
 
 网站原返回：PASS。ouMean和ouVariance的实际定义已给，完整均值及variance正确；PreBrownian、严格OU、γ>0及T≥0足够。σ任意实数由σ²消除符号，T=0退化为点质量正确。这一law忠实于实际PDF公式。
-本轮处理：保留原审阅版本结论；本轮未改签名。
-本地单文件及逐声明依赖检查通过；含未完成证明依赖的声明仍标未证。原书疑误及修正版分别见勘误，当前修改版未获网站复审结论。
+当前处理：网站PASS（首轮未改版本）。
+保留所交版本的明确结论。
+本地编译和逐声明依赖核对通过。原文疑误、各限定/修正版、反例的评价分别列出；有未完成证明依赖的声明仍为未证。
 
 ### 7. 状态与证明位置
 
-| 声明 | 状态 | 未证原因 |
-|---|---|---|
-| `MD.Ch06.ouLawCorrect` | 未证 | 缺大型理论 |
-| `MD.Ch06.ouLawPrinted_corrected` | 未证 | 缺大型理论 |
+| 声明 | 证明状态 | 未证原因 | 网站分版结论 |
+|---|---|---|---|
+| `MD.Ch06.ouLawCorrect` | 未证 | 缺大型理论 | PASS |
+| `MD.Ch06.ouLawPrinted_corrected` | 未证 | 缺大型理论 | 未获单独PASS；见分版意见 |
 
-位置：`Blueprint/Ch06.lean:1261`；验证：`blueprint/ch06/closeout25/FINAL_COMPILE.log`。
+位置：`Blueprint/Ch06.lean:1261`；本地核验记录：`blueprint/ch06/closeout26/FINAL_COMPILE.log`。
 
 ## MD-6.3.2-OUGibbsLimit
 
@@ -5865,9 +5983,9 @@ theorem ouGibbsLimit :
 
 | 原文对象或结论 | 当前Lean与范围 |
 |---|---|
-| 原文所选陈述 | 本条所引原句及展示公式；单个记号归入context_notation。 |
-| 对象/域/量词/前提 | 完整当前Lean及依赖定义；新增资格见[EXTRA] |
-| 网站首轮 | PASS：γ,θ,m均正，σ=√(2γθm)，全部实t沿atTop；对所有有界连续f检验Gaussian测度积分，极限variance θm，均值0。完整弱收敛，不只均值方差参数收敛。负t的toNNReal总化不影响长时极限；本条未声称随机路径几乎处处收敛。 |
+| 所引原句 | 本条所引原句及展示公式；单个记号归入context_notation。 |
+| 对象、域、量词及前提 | 以上完整声明；额外资格与未覆盖部分见下一段 |
+| 最新网站原始评价 | PASS；首轮保留 |
 
 ### 5. [EXTRA] 与覆盖缺口
 
@@ -5876,16 +5994,17 @@ theorem ouGibbsLimit :
 ### 6. 审计结论（含网站结论）
 
 网站原返回：PASS。γ,θ,m均正，σ=√(2γθm)，全部实t沿atTop；对所有有界连续f检验Gaussian测度积分，极限variance θm，均值0。完整弱收敛，不只均值方差参数收敛。负t的toNNReal总化不影响长时极限；本条未声称随机路径几乎处处收敛。
-本轮处理：保留原审阅版本结论；本轮未改签名。
-本地单文件及逐声明依赖检查通过；含未完成证明依赖的声明仍标未证。原书疑误及修正版分别见勘误，当前修改版未获网站复审结论。
+当前处理：网站PASS（首轮未改版本）。
+保留所交版本的明确结论。
+本地编译和逐声明依赖核对通过。原文疑误、各限定/修正版、反例的评价分别列出；有未完成证明依赖的声明仍为未证。
 
 ### 7. 状态与证明位置
 
-| 声明 | 状态 | 未证原因 |
-|---|---|---|
-| `MD.Ch06.ouGibbsLimit` | 未证 | 时间盒止 |
+| 声明 | 证明状态 | 未证原因 | 网站分版结论 |
+|---|---|---|---|
+| `MD.Ch06.ouGibbsLimit` | 未证 | 时间盒止 | PASS |
 
-位置：`Blueprint/Ch06.lean:1278`；验证：`blueprint/ch06/closeout25/FINAL_COMPILE.log`。
+位置：`Blueprint/Ch06.lean:1278`；本地核验记录：`blueprint/ch06/closeout26/FINAL_COMPILE.log`。
 
 ## MD-6.3.2-MomentumOU
 
@@ -5916,27 +6035,28 @@ def momentumOU {Ω : Type*} [MeasurableSpace Ω] {n : ℕ} (P : Measure Ω)
 
 | 原文对象或结论 | 当前Lean与范围 |
 |---|---|
-| 原文所选陈述 | 本条Lean覆盖范围：补真实标准向量Wiener资格；该结构给联合Gaussian、全部跨时协方差及连续路径，并有整坐标路径独立定理，不仅是同一时刻独立。其余方程关系保持。 |
-| 对象/域/量词/前提 | 完整当前Lean及依赖定义；新增资格见[EXTRA] |
-| 网站首轮 | FAIL：正质量、γ>0、θ>0、各坐标噪声√(2γθm_i)、任意确定p0都正确。但strictOUProcess和strictScalarSDE均不编码Wiener或坐标独立性；[EXTRA]称资格另给，本条未给任何可核对声明。因此该Prop允许完全相关甚至零驱动，未覆盖原文完整对象域。 |
+| 所引原句 | 本条Lean覆盖范围：补真实标准向量Wiener资格；该结构给联合Gaussian、全部跨时协方差及连续路径，并有整坐标路径独立定理，不仅是同一时刻独立。其余方程关系保持。 |
+| 对象、域、量词及前提 | 以上完整声明；额外资格与未覆盖部分见下一段 |
+| 最新网站原始评价 | PASS；复审 |
 
 ### 5. [EXTRA] 与覆盖缺口
 
-- [EXTRA] 25号：补真实标准向量Wiener资格；该结构给联合Gaussian、全部跨时协方差及连续路径，并有整坐标路径独立定理，不仅是同一时刻独立。其余方程关系保持。
+- [EXTRA] 补真实标准向量Wiener资格；该结构给联合Gaussian、全部跨时协方差及连续路径，并有整坐标路径独立定理，不仅是同一时刻独立。其余方程关系保持。
 
 ### 6. 审计结论（含网站结论）
 
-网站原返回：FAIL。正质量、γ>0、θ>0、各坐标噪声√(2γθm_i)、任意确定p0都正确。但strictOUProcess和strictScalarSDE均不编码Wiener或坐标独立性；[EXTRA]称资格另给，本条未给任何可核对声明。因此该Prop允许完全相关甚至零驱动，未覆盖原文完整对象域。
-本轮处理：补真实标准向量Wiener资格；该结构给联合Gaussian、全部跨时协方差及连续路径，并有整坐标路径独立定理，不仅是同一时刻独立。其余方程关系保持。
-本地单文件及逐声明依赖检查通过；含未完成证明依赖的声明仍标未证。原书疑误及修正版分别见勘误，当前修改版未获网站复审结论。
+网站原返回：PASS。momentumOU在任意n上要求整族向量Wiener（联合Gaussian、全跨时协方差、连续路径）、逐质量正、γ>0、θ>0，其中θ表示kBT；每坐标为γ相同、σ_i=sqrt(2γθm_i)、初态p0_i的strictOUProcess。各噪声来自同一真实独立坐标Wiener，并非任意彼此相关标量过程。常系数线性方程对应对角M^(1/2)，签名PASS；不把该定义当作长期采样或不变性定理。
+当前处理：网站PASS（复审）。
+保留所交版本的明确结论。
+本地编译和逐声明依赖核对通过。原文疑误、各限定/修正版、反例的评价分别列出；有未完成证明依赖的声明仍为未证。
 
 ### 7. 状态与证明位置
 
-| 声明 | 状态 | 未证原因 |
-|---|---|---|
-| `MD.Ch06.momentumOU` | 定义 | — |
+| 声明 | 证明状态 | 未证原因 | 网站分版结论 |
+|---|---|---|---|
+| `MD.Ch06.momentumOU` | 定义 | — | PASS |
 
-位置：`Blueprint/Ch06.lean:1288`；验证：`blueprint/ch06/closeout25/FINAL_COMPILE.log`。
+位置：`Blueprint/Ch06.lean:1288`；本地核验记录：`blueprint/ch06/closeout26/FINAL_COMPILE.log`。
 
 ## MD-6.3.2-GibbsGaussianDensity
 
@@ -5962,9 +6082,9 @@ def gibbsGaussianDensity (θ m u : ℝ) : ℝ :=
 
 | 原文对象或结论 | 当前Lean与范围 |
 |---|---|
-| 原文所选陈述 | 本条所引原句及展示公式；单个记号归入context_notation。 |
-| 对象/域/量词/前提 | 完整当前Lean及依赖定义；新增资格见[EXTRA] |
-| 网站首轮 | PASS：θ=kBT；exp(−(u²/(2m))/θ)/√(2πmθ)与原式相同。θ,m,u为实数；context明确θ,m>0才称概率密度。仅定义函数，不声称已证归一化或非正参数为密度，数学范围已注明。 |
+| 所引原句 | 本条所引原句及展示公式；单个记号归入context_notation。 |
+| 对象、域、量词及前提 | 以上完整声明；额外资格与未覆盖部分见下一段 |
+| 最新网站原始评价 | PASS；首轮保留 |
 
 ### 5. [EXTRA] 与覆盖缺口
 
@@ -5973,16 +6093,17 @@ def gibbsGaussianDensity (θ m u : ℝ) : ℝ :=
 ### 6. 审计结论（含网站结论）
 
 网站原返回：PASS。θ=kBT；exp(−(u²/(2m))/θ)/√(2πmθ)与原式相同。θ,m,u为实数；context明确θ,m>0才称概率密度。仅定义函数，不声称已证归一化或非正参数为密度，数学范围已注明。
-本轮处理：保留原审阅版本结论；本轮未改签名。
-本地单文件及逐声明依赖检查通过；含未完成证明依赖的声明仍标未证。原书疑误及修正版分别见勘误，当前修改版未获网站复审结论。
+当前处理：网站PASS（首轮未改版本）。
+保留所交版本的明确结论。
+本地编译和逐声明依赖核对通过。原文疑误、各限定/修正版、反例的评价分别列出；有未完成证明依赖的声明仍为未证。
 
 ### 7. 状态与证明位置
 
-| 声明 | 状态 | 未证原因 |
-|---|---|---|
-| `MD.Ch06.gibbsGaussianDensity` | 定义 | — |
+| 声明 | 证明状态 | 未证原因 | 网站分版结论 |
+|---|---|---|---|
+| `MD.Ch06.gibbsGaussianDensity` | 定义 | — | PASS |
 
-位置：`Blueprint/Ch06.lean:1295`；验证：`blueprint/ch06/closeout25/FINAL_COMPILE.log`。
+位置：`Blueprint/Ch06.lean:1295`；本地核验记录：`blueprint/ch06/closeout26/FINAL_COMPILE.log`。
 
 ## MD-6.3.3-BathHamiltonian
 
@@ -6009,9 +6130,9 @@ def bathHamiltonian {k : ℕ} (_hk : 0 < k) (μ : MolecularDynamics.Chapter06Rev
 
 | 原文对象或结论 | 当前Lean与范围 |
 |---|---|
-| 原文所选陈述 | 本条所引原句及展示公式；单个记号归入context_notation。 |
-| 对象/域/量词/前提 | 完整当前Lean及依赖定义；新增资格见[EXTRA] |
-| 网站首轮 | PASS：k>0、所有μ_i>0显式参数，Q,P实数，q,p为Fin k→ℝ，U任意实势函数。动能p_i²/(2μ_i)、势能U Q及耦合1/(2k)均正确。定义能量无需U可微。 |
+| 所引原句 | 本条所引原句及展示公式；单个记号归入context_notation。 |
+| 对象、域、量词及前提 | 以上完整声明；额外资格与未覆盖部分见下一段 |
+| 最新网站原始评价 | PASS；首轮保留 |
 
 ### 5. [EXTRA] 与覆盖缺口
 
@@ -6020,16 +6141,17 @@ def bathHamiltonian {k : ℕ} (_hk : 0 < k) (μ : MolecularDynamics.Chapter06Rev
 ### 6. 审计结论（含网站结论）
 
 网站原返回：PASS。k>0、所有μ_i>0显式参数，Q,P实数，q,p为Fin k→ℝ，U任意实势函数。动能p_i²/(2μ_i)、势能U Q及耦合1/(2k)均正确。定义能量无需U可微。
-本轮处理：保留原审阅版本结论；本轮未改签名。
-本地单文件及逐声明依赖检查通过；含未完成证明依赖的声明仍标未证。原书疑误及修正版分别见勘误，当前修改版未获网站复审结论。
+当前处理：网站PASS（首轮未改版本）。
+保留所交版本的明确结论。
+本地编译和逐声明依赖核对通过。原文疑误、各限定/修正版、反例的评价分别列出；有未完成证明依赖的声明仍为未证。
 
 ### 7. 状态与证明位置
 
-| 声明 | 状态 | 未证原因 |
-|---|---|---|
-| `MD.Ch06.bathHamiltonian` | 定义 | — |
+| 声明 | 证明状态 | 未证原因 | 网站分版结论 |
+|---|---|---|---|
+| `MD.Ch06.bathHamiltonian` | 定义 | — | PASS |
 
-位置：`Blueprint/Ch06.lean:1300`；验证：`blueprint/ch06/closeout25/FINAL_COMPILE.log`。
+位置：`Blueprint/Ch06.lean:1300`；本地核验记录：`blueprint/ch06/closeout26/FINAL_COMPILE.log`。
 
 ## MD-6.3.3-BathHamiltonEquations
 
@@ -6063,9 +6185,9 @@ theorem bathHamiltonEquations :
 
 | 原文对象或结论 | 当前Lean与范围 |
 |---|---|
-| 原文所选陈述 | 本条所引原句及展示公式；单个记号归入context_notation。 |
-| 对象/域/量词/前提 | 完整当前Lean及依赖定义；新增资格见[EXTRA] |
-| 网站首轮 | PASS：在k>0、μ_i>0及U在Q可微下，实际Hamiltonian对P,Q以及各p_i,q_i的方向导数完整给出四个Hamilton向量场分量。Pi.single i 1为第i坐标方向，负号分配正确。此为全部动力场分量的求导核验，不额外宣称轨道存在性。 |
+| 所引原句 | 本条所引原句及展示公式；单个记号归入context_notation。 |
+| 对象、域、量词及前提 | 以上完整声明；额外资格与未覆盖部分见下一段 |
+| 最新网站原始评价 | PASS；首轮保留 |
 
 ### 5. [EXTRA] 与覆盖缺口
 
@@ -6074,16 +6196,17 @@ theorem bathHamiltonEquations :
 ### 6. 审计结论（含网站结论）
 
 网站原返回：PASS。在k>0、μ_i>0及U在Q可微下，实际Hamiltonian对P,Q以及各p_i,q_i的方向导数完整给出四个Hamilton向量场分量。Pi.single i 1为第i坐标方向，负号分配正确。此为全部动力场分量的求导核验，不额外宣称轨道存在性。
-本轮处理：保留原审阅版本结论；本轮未改签名。
-本地单文件及逐声明依赖检查通过；含未完成证明依赖的声明仍标未证。原书疑误及修正版分别见勘误，当前修改版未获网站复审结论。
+当前处理：网站PASS（首轮未改版本）。
+保留所交版本的明确结论。
+本地编译和逐声明依赖核对通过。原文疑误、各限定/修正版、反例的评价分别列出；有未完成证明依赖的声明仍为未证。
 
 ### 7. 状态与证明位置
 
-| 声明 | 状态 | 未证原因 |
-|---|---|---|
-| `MD.Ch06.bathHamiltonEquations` | 未证 | 时间盒止 |
+| 声明 | 证明状态 | 未证原因 | 网站分版结论 |
+|---|---|---|---|
+| `MD.Ch06.bathHamiltonEquations` | 未证 | 时间盒止 | PASS |
 
-位置：`Blueprint/Ch06.lean:1305`；验证：`blueprint/ch06/closeout25/FINAL_COMPILE.log`。
+位置：`Blueprint/Ch06.lean:1305`；本地核验记录：`blueprint/ch06/closeout26/FINAL_COMPILE.log`。
 
 ## MD-6.3.3-BathFrequency
 
@@ -6107,9 +6230,9 @@ def bathFrequency {k : ℕ} (_hk : 0 < k) (μ : MolecularDynamics.Chapter06Revie
 
 | 原文对象或结论 | 当前Lean与范围 |
 |---|---|
-| 原文所选陈述 | 本条所引原句及展示公式；单个记号归入context_notation。 |
-| 对象/域/量词/前提 | 完整当前Lean及依赖定义；新增资格见[EXTRA] |
-| 网站首轮 | PASS：k>0和正μ_i确保sqrt(kμ_i)>0，其倒数与k^(−1/2)μ_i^(−1/2)等价。i:Fin k，未出现频率零或总化负质量问题。 |
+| 所引原句 | 本条所引原句及展示公式；单个记号归入context_notation。 |
+| 对象、域、量词及前提 | 以上完整声明；额外资格与未覆盖部分见下一段 |
+| 最新网站原始评价 | PASS；首轮保留 |
 
 ### 5. [EXTRA] 与覆盖缺口
 
@@ -6118,16 +6241,17 @@ def bathFrequency {k : ℕ} (_hk : 0 < k) (μ : MolecularDynamics.Chapter06Revie
 ### 6. 审计结论（含网站结论）
 
 网站原返回：PASS。k>0和正μ_i确保sqrt(kμ_i)>0，其倒数与k^(−1/2)μ_i^(−1/2)等价。i:Fin k，未出现频率零或总化负质量问题。
-本轮处理：保留原审阅版本结论；本轮未改签名。
-本地单文件及逐声明依赖检查通过；含未完成证明依赖的声明仍标未证。原书疑误及修正版分别见勘误，当前修改版未获网站复审结论。
+当前处理：网站PASS（首轮未改版本）。
+保留所交版本的明确结论。
+本地编译和逐声明依赖核对通过。原文疑误、各限定/修正版、反例的评价分别列出；有未完成证明依赖的声明仍为未证。
 
 ### 7. 状态与证明位置
 
-| 声明 | 状态 | 未证原因 |
-|---|---|---|
-| `MD.Ch06.bathFrequency` | 定义 | — |
+| 声明 | 证明状态 | 未证原因 | 网站分版结论 |
+|---|---|---|---|
+| `MD.Ch06.bathFrequency` | 定义 | — | PASS |
 
-位置：`Blueprint/Ch06.lean:1316`；验证：`blueprint/ch06/closeout25/FINAL_COMPILE.log`。
+位置：`Blueprint/Ch06.lean:1316`；本地核验记录：`blueprint/ch06/closeout26/FINAL_COMPILE.log`。
 
 ## MD-6.3.3-BathOscillatorSolution
 
@@ -6159,9 +6283,9 @@ theorem bathOscillatorSolution : ∀ (Q q : ℝ → ℝ) (k : ℕ) (μ p0 t : �
 
 | 原文对象或结论 | 当前Lean与范围 |
 |---|---|
-| 原文所选陈述 | 本条所引原句及展示公式；单个记号归入context_notation。 |
-| 对象/域/量词/前提 | 完整当前Lean及依赖定义；新增资格见[EXTRA] |
-| 网站首轮 | PASS：把任意一坐标写成实μ、k>0、p0，设q C²、Q连续、q′(0)=p0/μ及[0,t]上q″=(Q−q)/(kμ)。结论含q0、初始动量和完整受迫卷积；Ω=(√(kμ))⁻¹，k⁻¹μ⁻¹=Ω²，正确。仅证明q的表达式，原页展示也只给q；p可由μq′恢复。 |
+| 所引原句 | 本条所引原句及展示公式；单个记号归入context_notation。 |
+| 对象、域、量词及前提 | 以上完整声明；额外资格与未覆盖部分见下一段 |
+| 最新网站原始评价 | PASS；首轮保留 |
 
 ### 5. [EXTRA] 与覆盖缺口
 
@@ -6170,16 +6294,17 @@ theorem bathOscillatorSolution : ∀ (Q q : ℝ → ℝ) (k : ℕ) (μ p0 t : �
 ### 6. 审计结论（含网站结论）
 
 网站原返回：PASS。把任意一坐标写成实μ、k>0、p0，设q C²、Q连续、q′(0)=p0/μ及[0,t]上q″=(Q−q)/(kμ)。结论含q0、初始动量和完整受迫卷积；Ω=(√(kμ))⁻¹，k⁻¹μ⁻¹=Ω²，正确。仅证明q的表达式，原页展示也只给q；p可由μq′恢复。
-本轮处理：保留原审阅版本结论；本轮未改签名。
-本地单文件及逐声明依赖检查通过；含未完成证明依赖的声明仍标未证。原书疑误及修正版分别见勘误，当前修改版未获网站复审结论。
+当前处理：网站PASS（首轮未改版本）。
+保留所交版本的明确结论。
+本地编译和逐声明依赖核对通过。原文疑误、各限定/修正版、反例的评价分别列出；有未完成证明依赖的声明仍为未证。
 
 ### 7. 状态与证明位置
 
-| 声明 | 状态 | 未证原因 |
-|---|---|---|
-| `MD.Ch06.bathOscillatorSolution` | 未证 | 缺大型理论 |
+| 声明 | 证明状态 | 未证原因 | 网站分版结论 |
+|---|---|---|---|
+| `MD.Ch06.bathOscillatorSolution` | 未证 | 缺大型理论 | PASS |
 
-位置：`Blueprint/Ch06.lean:1320`；验证：`blueprint/ch06/closeout25/FINAL_COMPILE.log`。
+位置：`Blueprint/Ch06.lean:1320`；本地核验记录：`blueprint/ch06/closeout26/FINAL_COMPILE.log`。
 
 ## MD-6.3.3-BathConvolutionIBP
 
@@ -6210,9 +6335,9 @@ theorem bathConvolutionIBP :
 
 | 原文对象或结论 | 当前Lean与范围 |
 |---|---|
-| 原文所选陈述 | 本条所引原句及展示公式；单个记号归入context_notation。 |
-| 对象/域/量词/前提 | 完整当前Lean及依赖定义；新增资格见[EXTRA] |
-| 网站首轮 | PASS：Q C¹、处处Q′=P、t≥0，Ω任意实数。对s求导cos(Ω(t−s))为+Ω sin(Ω(t−s))，故端点Q t−cos(Ωt)Q0及−∫cos P符号正确。Ω=0仍成立，不需额外非零资格。 |
+| 所引原句 | 本条所引原句及展示公式；单个记号归入context_notation。 |
+| 对象、域、量词及前提 | 以上完整声明；额外资格与未覆盖部分见下一段 |
+| 最新网站原始评价 | PASS；首轮保留 |
 
 ### 5. [EXTRA] 与覆盖缺口
 
@@ -6221,16 +6346,17 @@ theorem bathConvolutionIBP :
 ### 6. 审计结论（含网站结论）
 
 网站原返回：PASS。Q C¹、处处Q′=P、t≥0，Ω任意实数。对s求导cos(Ω(t−s))为+Ω sin(Ω(t−s))，故端点Q t−cos(Ωt)Q0及−∫cos P符号正确。Ω=0仍成立，不需额外非零资格。
-本轮处理：保留原审阅版本结论；本轮未改签名。
-本地单文件及逐声明依赖检查通过；含未完成证明依赖的声明仍标未证。原书疑误及修正版分别见勘误，当前修改版未获网站复审结论。
+当前处理：网站PASS（首轮未改版本）。
+保留所交版本的明确结论。
+本地编译和逐声明依赖核对通过。原文疑误、各限定/修正版、反例的评价分别列出；有未完成证明依赖的声明仍为未证。
 
 ### 7. 状态与证明位置
 
-| 声明 | 状态 | 未证原因 |
-|---|---|---|
-| `MD.Ch06.bathConvolutionIBP` | 未证 | 时间盒止 |
+| 声明 | 证明状态 | 未证原因 | 网站分版结论 |
+|---|---|---|---|
+| `MD.Ch06.bathConvolutionIBP` | 未证 | 时间盒止 | PASS |
 
-位置：`Blueprint/Ch06.lean:1331`；验证：`blueprint/ch06/closeout25/FINAL_COMPILE.log`。
+位置：`Blueprint/Ch06.lean:1331`；本地核验记录：`blueprint/ch06/closeout26/FINAL_COMPILE.log`。
 
 ## MD-6.3.3-BathForce
 
@@ -6262,9 +6388,9 @@ def bathForcePrinted_corrected {k : ℕ} (_hk : 0 < k) (μ : MolecularDynamics.C
 
 | 原文对象或结论 | 当前Lean与范围 |
 |---|---|
-| 原文所选陈述 | 本条所引原句及展示公式；单个记号归入context_notation。 |
-| 对象/域/量词/前提 | 完整当前Lean及依赖定义；新增资格见[EXTRA] |
-| 网站首轮 | PASS：两份所示定义bathForce和bathForcePrinted_corrected都是正k⁻¹的同一表达式。按[EXTRA]作为明示修正版审校合理：从(6.23)−k⁻¹Σ(Q−q)=+k⁻¹Σ(q−Q)得到正初值力，再减记忆卷积。k>0、正μ齐全；不是原书负号的字面版。原书符号冲突保留待人工裁定。 |
+| 所引原句 | 本条所引原句及展示公式；单个记号归入context_notation。 |
+| 对象、域、量词及前提 | 以上完整声明；额外资格与未覆盖部分见下一段 |
+| 最新网站原始评价 | PASS；首轮保留 |
 
 ### 5. [EXTRA] 与覆盖缺口
 
@@ -6274,17 +6400,18 @@ def bathForcePrinted_corrected {k : ℕ} (_hk : 0 < k) (μ : MolecularDynamics.C
 ### 6. 审计结论（含网站结论）
 
 网站原返回：PASS。两份所示定义bathForce和bathForcePrinted_corrected都是正k⁻¹的同一表达式。按[EXTRA]作为明示修正版审校合理：从(6.23)−k⁻¹Σ(Q−q)=+k⁻¹Σ(q−Q)得到正初值力，再减记忆卷积。k>0、正μ齐全；不是原书负号的字面版。原书符号冲突保留待人工裁定。
-本轮处理：保留原审阅版本结论；本轮未改签名。
-本地单文件及逐声明依赖检查通过；含未完成证明依赖的声明仍标未证。原书疑误及修正版分别见勘误，当前修改版未获网站复审结论。
+当前处理：网站PASS（首轮未改版本）。
+保留所交版本的明确结论。
+本地编译和逐声明依赖核对通过。原文疑误、各限定/修正版、反例的评价分别列出；有未完成证明依赖的声明仍为未证。
 
 ### 7. 状态与证明位置
 
-| 声明 | 状态 | 未证原因 |
-|---|---|---|
-| `MD.Ch06.bathForce` | 定义 | — |
-| `MD.Ch06.bathForcePrinted_corrected` | 定义 | — |
+| 声明 | 证明状态 | 未证原因 | 网站分版结论 |
+|---|---|---|---|
+| `MD.Ch06.bathForce` | 定义 | — | PASS |
+| `MD.Ch06.bathForcePrinted_corrected` | 定义 | — | 未获单独PASS；见分版意见 |
 
-位置：`Blueprint/Ch06.lean:1341`；验证：`blueprint/ch06/closeout25/FINAL_COMPILE.log`。
+位置：`Blueprint/Ch06.lean:1341`；本地核验记录：`blueprint/ch06/closeout26/FINAL_COMPILE.log`。
 
 ## MD-6.3.3-BathForcePrinted
 
@@ -6309,9 +6436,9 @@ def bathForcePrinted {k : ℕ} (_hk : 0 < k) (μ : MolecularDynamics.Chapter06Re
 
 | 原文对象或结论 | 当前Lean与范围 |
 |---|---|
-| 原文所选陈述 | 本条所引原句及展示公式；单个记号归入context_notation。 |
-| 对象/域/量词/前提 | 完整当前Lean及依赖定义；新增资格见[EXTRA] |
-| 网站首轮 | PASS：实际Chapter06Review.bathForce为正k⁻¹和，外取负号得到原页字面f，括号内cos*(q0−Q0)及sin*p0/μ完全对应。k>0及μ>0齐全。作为Printed定义PASS，不能把它与保留+f的修正动力式同时当正确推导。 |
+| 所引原句 | 本条所引原句及展示公式；单个记号归入context_notation。 |
+| 对象、域、量词及前提 | 以上完整声明；额外资格与未覆盖部分见下一段 |
+| 最新网站原始评价 | PASS；首轮保留 |
 
 ### 5. [EXTRA] 与覆盖缺口
 
@@ -6320,16 +6447,17 @@ def bathForcePrinted {k : ℕ} (_hk : 0 < k) (μ : MolecularDynamics.Chapter06Re
 ### 6. 审计结论（含网站结论）
 
 网站原返回：PASS。实际Chapter06Review.bathForce为正k⁻¹和，外取负号得到原页字面f，括号内cos*(q0−Q0)及sin*p0/μ完全对应。k>0及μ>0齐全。作为Printed定义PASS，不能把它与保留+f的修正动力式同时当正确推导。
-本轮处理：保留原审阅版本结论；本轮未改签名。
-本地单文件及逐声明依赖检查通过；含未完成证明依赖的声明仍标未证。原书疑误及修正版分别见勘误，当前修改版未获网站复审结论。
+当前处理：网站PASS（首轮未改版本）。
+保留所交版本的明确结论。
+本地编译和逐声明依赖核对通过。原文疑误、各限定/修正版、反例的评价分别列出；有未完成证明依赖的声明仍为未证。
 
 ### 7. 状态与证明位置
 
-| 声明 | 状态 | 未证原因 |
-|---|---|---|
-| `MD.Ch06.bathForcePrinted` | 定义 | — |
+| 声明 | 证明状态 | 未证原因 | 网站分版结论 |
+|---|---|---|---|
+| `MD.Ch06.bathForcePrinted` | 定义 | — | PASS |
 
-位置：`Blueprint/Ch06.lean:1353`；验证：`blueprint/ch06/closeout25/FINAL_COMPILE.log`。
+位置：`Blueprint/Ch06.lean:1353`；本地核验记录：`blueprint/ch06/closeout26/FINAL_COMPILE.log`。
 
 ## MD-6.3.3-MemoryKernel
 
@@ -6354,9 +6482,9 @@ def memoryKernel {k : ℕ} (_hk : 0 < k) (μ : MolecularDynamics.Chapter06Review
 
 | 原文对象或结论 | 当前Lean与范围 |
 |---|---|
-| 原文所选陈述 | 本条所引原句及展示公式；单个记号归入context_notation。 |
-| 对象/域/量词/前提 | 完整当前Lean及依赖定义；新增资格见[EXTRA] |
-| 网站首轮 | PASS：正k、正μ，实际有限Fin k求和，系数1/k及cos频率乘时间正确。没有宣称有限核为Dirac δ，也未把它当已证明的随机极限。 |
+| 所引原句 | 本条所引原句及展示公式；单个记号归入context_notation。 |
+| 对象、域、量词及前提 | 以上完整声明；额外资格与未覆盖部分见下一段 |
+| 最新网站原始评价 | PASS；首轮保留 |
 
 ### 5. [EXTRA] 与覆盖缺口
 
@@ -6365,16 +6493,17 @@ def memoryKernel {k : ℕ} (_hk : 0 < k) (μ : MolecularDynamics.Chapter06Review
 ### 6. 审计结论（含网站结论）
 
 网站原返回：PASS。正k、正μ，实际有限Fin k求和，系数1/k及cos频率乘时间正确。没有宣称有限核为Dirac δ，也未把它当已证明的随机极限。
-本轮处理：保留原审阅版本结论；本轮未改签名。
-本地单文件及逐声明依赖检查通过；含未完成证明依赖的声明仍标未证。原书疑误及修正版分别见勘误，当前修改版未获网站复审结论。
+当前处理：网站PASS（首轮未改版本）。
+保留所交版本的明确结论。
+本地编译和逐声明依赖核对通过。原文疑误、各限定/修正版、反例的评价分别列出；有未完成证明依赖的声明仍为未证。
 
 ### 7. 状态与证明位置
 
-| 声明 | 状态 | 未证原因 |
-|---|---|---|
-| `MD.Ch06.memoryKernel` | 定义 | — |
+| 声明 | 证明状态 | 未证原因 | 网站分版结论 |
+|---|---|---|---|
+| `MD.Ch06.memoryKernel` | 定义 | — | PASS |
 
-位置：`Blueprint/Ch06.lean:1357`；验证：`blueprint/ch06/closeout25/FINAL_COMPILE.log`。
+位置：`Blueprint/Ch06.lean:1357`；本地核验记录：`blueprint/ch06/closeout26/FINAL_COMPILE.log`。
 
 ## MD-6.3.3-BathReduction
 
@@ -6421,9 +6550,9 @@ theorem bathReductionPrinted_corrected :
 
 | 原文对象或结论 | 当前Lean与范围 |
 |---|---|
-| 原文所选陈述 | 本条所引原句及展示公式；单个记号归入context_notation。 |
-| 对象/域/量词/前提 | 完整当前Lean及依赖定义；新增资格见[EXTRA] |
-| 网站首轮 | PASS：C：量化k、正质量μ、U/Q/P、浴坐标q/p及t≥0；Q与q为C²，四组ODE/导数条件均保留，初值由q 0、p 0、Q 0取出。D1正合力、D2频率和D3记忆核代入，结论为正确的正合力减实际卷积。Qdot=P和原动量ODE在前提中，不是用所求约化式作前提。[EXTRA]范围基本准确；这是对原书f符号的修正版本，应明确勘误，不能称原f的字面版。 |
+| 所引原句 | 本条所引原句及展示公式；单个记号归入context_notation。 |
+| 对象、域、量词及前提 | 以上完整声明；额外资格与未覆盖部分见下一段 |
+| 最新网站原始评价 | PASS；首轮保留 |
 
 ### 5. [EXTRA] 与覆盖缺口
 
@@ -6432,17 +6561,18 @@ theorem bathReductionPrinted_corrected :
 ### 6. 审计结论（含网站结论）
 
 网站原返回：PASS。C：量化k、正质量μ、U/Q/P、浴坐标q/p及t≥0；Q与q为C²，四组ODE/导数条件均保留，初值由q 0、p 0、Q 0取出。D1正合力、D2频率和D3记忆核代入，结论为正确的正合力减实际卷积。Qdot=P和原动量ODE在前提中，不是用所求约化式作前提。[EXTRA]范围基本准确；这是对原书f符号的修正版本，应明确勘误，不能称原f的字面版。
-本轮处理：保留原审阅版本结论；本轮未改签名。
-本地单文件及逐声明依赖检查通过；含未完成证明依赖的声明仍标未证。原书疑误及修正版分别见勘误，当前修改版未获网站复审结论。
+当前处理：网站PASS（首轮未改版本）。
+保留所交版本的明确结论。
+本地编译和逐声明依赖核对通过。原文疑误、各限定/修正版、反例的评价分别列出；有未完成证明依赖的声明仍为未证。
 
 ### 7. 状态与证明位置
 
-| 声明 | 状态 | 未证原因 |
-|---|---|---|
-| `MD.Ch06.bathReduction` | 未证 | 缺大型理论 |
-| `MD.Ch06.bathReductionPrinted_corrected` | 未证 | 缺大型理论 |
+| 声明 | 证明状态 | 未证原因 | 网站分版结论 |
+|---|---|---|---|
+| `MD.Ch06.bathReduction` | 未证 | 缺大型理论 | PASS |
+| `MD.Ch06.bathReductionPrinted_corrected` | 未证 | 缺大型理论 | PASS |
 
-位置：`Blueprint/Ch06.lean:1362`；验证：`blueprint/ch06/closeout25/FINAL_COMPILE.log`。
+位置：`Blueprint/Ch06.lean:1362`；本地核验记录：`blueprint/ch06/closeout26/FINAL_COMPILE.log`。
 
 ## MD-6.3.3-BathReductionPrinted
 
@@ -6472,7 +6602,7 @@ theorem bathReductionPrinted :
   sorry
 ```
 
-同问题的独立修正版（位于另一source_id）：
+同问题的独立限定/修正版（位于另一条）：
 ```lean
 theorem bathReductionPrinted_corrected :
   ∀ {k : ℕ} (μ : MolecularDynamics.Chapter06Review.V k) (U Q P : ℝ → ℝ)
@@ -6490,27 +6620,28 @@ theorem bathReductionPrinted_corrected :
 
 | 原文对象或结论 | 当前Lean与范围 |
 |---|---|
-| 原文所选陈述 | 本条所引原句及展示公式；单个记号归入context_notation。 |
-| 对象/域/量词/前提 | 完整当前Lean及依赖定义；新增资格见[EXTRA] |
-| 网站首轮 | NEEDS_HUMAN：C：原声明与条目1相同的全部对象、正质量、非负时刻、C²和四组ODE前提俱在；D7=-D1，完整卷积未丢失。按Printed只审忠实性，本签名忠实性PASS；其数学结论与原书一样有符号矛盾，按任务要求总判NEEDS_HUMAN。extra_assumptions=[]未记录新增C²及全实轴ODE范围。repair_log仅给出bathReductionPrinted_corrected名称，任务未提供其实际签名，无法独立审校该修正版。 |
+| 所引原句 | 本条所引原句及展示公式；单个记号归入context_notation。 |
+| 对象、域、量词及前提 | 以上完整声明；额外资格与未覆盖部分见下一段 |
+| 最新网站原始评价 | NEEDS_HUMAN；复审 |
 
 ### 5. [EXTRA] 与覆盖缺口
 
-- [EXTRA] 25号：原文版忠实性与数学疑误分开；补齐所交条目所属的现有_corrected完整签名，不从repair_log名称推断网站已通过修正版。
+- [EXTRA] 原文版忠实性与数学疑误分开；补齐所交条目所属的现有_corrected完整签名，不从repair_log名称推断网站已通过修正版。
 
 ### 6. 审计结论（含网站结论）
 
-网站原返回：NEEDS_HUMAN。C：原声明与条目1相同的全部对象、正质量、非负时刻、C²和四组ODE前提俱在；D7=-D1，完整卷积未丢失。按Printed只审忠实性，本签名忠实性PASS；其数学结论与原书一样有符号矛盾，按任务要求总判NEEDS_HUMAN。extra_assumptions=[]未记录新增C²及全实轴ODE范围。repair_log仅给出bathReductionPrinted_corrected名称，任务未提供其实际签名，无法独立审校该修正版。
-本轮处理：原文版忠实性与数学疑误分开；补齐所交条目所属的现有_corrected完整签名，不从repair_log名称推断网站已通过修正版。
-本地单文件及逐声明依赖检查通过；含未完成证明依赖的声明仍标未证。原书疑误及修正版分别见勘误，当前修改版未获网站复审结论。
+网站原返回：NEEDS_HUMAN。bathReductionPrinted：k>0、μ_i>0、t≥0、Q,q为C²，dot Q=P、重粒子与热浴坐标的完整动力学均已列出。bathFrequency=1/sqrt(kμ_i)、memoryKernel=(1/k)Σcos、bathForcePrinted=-bathForce均核对。Printed的力与由dot P=-U′+(1/k)Σ(q_i-Q)导出的力差一个负号，原版忠实但需NEEDS_HUMAN。bathReductionPrinted_corrected保持相同域量词前提，用正bathForce替换，记忆项仍为负卷积，数学上正确；p0/μ_i与Ω_i^(-1)因子吻合。
+当前处理：修正版/限定声明=网站PASS；原文疑误或范围解释待导师。
+保留所交版本的明确结论。
+本地编译和逐声明依赖核对通过。原文疑误、各限定/修正版、反例的评价分别列出；有未完成证明依赖的声明仍为未证。
 
 ### 7. 状态与证明位置
 
-| 声明 | 状态 | 未证原因 |
-|---|---|---|
-| `MD.Ch06.bathReductionPrinted` | 未证 | 原书疑误不证 |
+| 声明 | 证明状态 | 未证原因 | 网站分版结论 |
+|---|---|---|---|
+| `MD.Ch06.bathReductionPrinted` | 未证 | 原书疑误不证 | 原文忠实性PASS；原书数学/范围NEEDS_HUMAN |
 
-位置：`Blueprint/Ch06.lean:1388`；验证：`blueprint/ch06/closeout25/FINAL_COMPILE.log`。
+位置：`Blueprint/Ch06.lean:1388`；本地核验记录：`blueprint/ch06/closeout26/FINAL_COMPILE.log`。
 
 ## MD-6.3.3-MemoryKernelDeltaMeaning
 
@@ -6544,29 +6675,32 @@ def memoryKernelDeltaMeaning_corrected (masses : (k : ℕ) → (Fin k → ℝ)) 
 
 | 原文对象或结论 | 当前Lean与范围 |
 |---|---|
-| 原文所选陈述 | 本条所引原句及展示公式；单个记号归入context_notation。 |
-| 对象/域/量词/前提 | 完整当前Lean及依赖定义；新增资格见[EXTRA] |
-| 网站首轮 | NEEDS_HUMAN：C：原版和_corrected均为分布极限资格定义，测试所有实轴上的C∞紧支函数，k→∞，极限γ f(0)，γ>0；修正版额外要求所有质量为正。二者没有声称此极限已成立。但D3的1/k平均使\|ψk(t)\|≤1，故该固定归一化下任何族均不可能收敛到正质量δ。增加正质量不能修复此问题；此外全实轴γδ与单边Volterra摩擦γ之间的边界因子未说明。 |
+| 所引原句 | 两个δ收敛资格在现有1/k归一及γ>0时均不可实现；不能将_corrected名字解释为已获有效物理极限。需重标度、单边质量和边界约定。 |
+| 对象、域、量词及前提 | 以上完整声明；额外资格与未覆盖部分见下一段 |
+| 最新网站原始评价 | NEEDS_HUMAN；复审 |
 
 ### 5. [EXTRA] 与覆盖缺口
 
 - [EXTRA]明确ηk→γδ0的实际分布意义，仅定义该近似资格；不计极限或Langevin推导已证。
-- [EXTRA] 25号：旧_corrected只加正质量并非有效修复：固定1/k平均使|ψk|≤1，不可能收敛到正质量Dirac。此谓词在当前归一化下不可实现；原启发式与两版资格定义均留存，待确认时间/振幅重标度及单边边界因子；不把资格定义计成极限定理。
+- [EXTRA] 旧_corrected只加正质量并非有效修复：固定1/k平均使|ψk|≤1，不可能收敛到正质量Dirac。此谓词在当前归一化下不可实现；原启发式与两版资格定义均留存，待确认时间/振幅重标度及单边边界因子；不把资格定义计成极限定理。
+- [EXTRA] 复审范围：两个δ收敛资格在现有1/k归一及γ>0时均不可实现；不能将_corrected名字解释为已获有效物理极限。需重标度、单边质量和边界约定。
+- 覆盖缺口：两个δ收敛资格在现有1/k归一及γ>0时均不可实现；不能将_corrected名字解释为已获有效物理极限。需重标度、单边质量和边界约定。
 
 ### 6. 审计结论（含网站结论）
 
-网站原返回：NEEDS_HUMAN。C：原版和_corrected均为分布极限资格定义，测试所有实轴上的C∞紧支函数，k→∞，极限γ f(0)，γ>0；修正版额外要求所有质量为正。二者没有声称此极限已成立。但D3的1/k平均使|ψk(t)|≤1，故该固定归一化下任何族均不可能收敛到正质量δ。增加正质量不能修复此问题；此外全实轴γδ与单边Volterra摩擦γ之间的边界因子未说明。
-本轮处理：旧_corrected只加正质量并非有效修复：固定1/k平均使|ψk|≤1，不可能收敛到正质量Dirac。此谓词在当前归一化下不可实现；原启发式与两版资格定义均留存，待确认时间/振幅重标度及单边边界因子；不把资格定义计成极限定理。
-本地单文件及逐声明依赖检查通过；含未完成证明依赖的声明仍标未证。原书疑误及修正版分别见勘误，当前修改版未获网站复审结论。
+网站原返回：NEEDS_HUMAN。memoryKernelDeltaMeaning定义对全部C∞紧支测试f的全实轴分布收敛到γf(0)，γ>0；_corrected再要求所有质量正。两者作为收敛资格的形式表达准确，均非存在或Langevin推导定理。但memoryKernel的1/k归一使所有k,t的绝对值≤1，因此两谓词在γ>0时都不可实现；正质量未修复。[EXTRA]已披露这一点，故保留NEEDS_HUMAN，不把不可实现资格当有效修正版。全线γδ0与0到t卷积的边界因子尚需约定，(6.30)–(6.31)本身未被定义覆盖。
+当前处理：原文疑误或语义范围待导师；不冒称未提供版本已通过。
+两个δ收敛资格在现有1/k归一及γ>0时均不可实现；不能将_corrected名字解释为已获有效物理极限。需重标度、单边质量和边界约定。
+本地编译和逐声明依赖核对通过。原文疑误、各限定/修正版、反例的评价分别列出；有未完成证明依赖的声明仍为未证。
 
 ### 7. 状态与证明位置
 
-| 声明 | 状态 | 未证原因 |
-|---|---|---|
-| `MD.Ch06.memoryKernelDeltaMeaning` | 定义 | — |
-| `MD.Ch06.memoryKernelDeltaMeaning_corrected` | 定义 | — |
+| 声明 | 证明状态 | 未证原因 | 网站分版结论 |
+|---|---|---|---|
+| `MD.Ch06.memoryKernelDeltaMeaning` | 定义 | — | 未获单独PASS；见分版意见 |
+| `MD.Ch06.memoryKernelDeltaMeaning_corrected` | 定义 | — | 未获单独PASS；见分版意见 |
 
-位置：`Blueprint/Ch06.lean:1403`；验证：`blueprint/ch06/closeout25/FINAL_COMPILE.log`。
+位置：`Blueprint/Ch06.lean:1403`；本地核验记录：`blueprint/ch06/closeout26/FINAL_COMPILE.log`。
 
 ## MD-6.3.3-ScalarLangevin
 
@@ -6600,9 +6734,9 @@ def scalarLangevin {Ω : Type*} [MeasurableSpace Ω] (law : Measure Ω)
 
 | 原文对象或结论 | 当前Lean与范围 |
 |---|---|
-| 原文所选陈述 | 本条所引原句及展示公式；单个记号归入context_notation。 |
-| 对象/域/量词/前提 | 完整当前Lean及依赖定义；新增资格见[EXTRA] |
-| 网站首轮 | PASS：C：对任意样本空间和law定义随机Q/动量模型；γ>0、U光滑、真正一维Wiener driver均明示。几乎处处连续、p(0)=p0、Q的积分方程及两项漂移可积性齐全；T=0给Q(0)=q0。每个T≥0以D10的L²左端和极限表达常σ积分，动量残差正确。σ任意实数与原式一致；固定初值及光滑范围作为[EXTRA]已披露。此为模型定义，无存在性/极限结论。 |
+| 所引原句 | 本条所引原句及展示公式；单个记号归入context_notation。 |
+| 对象、域、量词及前提 | 以上完整声明；额外资格与未覆盖部分见下一段 |
+| 最新网站原始评价 | PASS；首轮保留 |
 
 ### 5. [EXTRA] 与覆盖缺口
 
@@ -6612,16 +6746,17 @@ def scalarLangevin {Ω : Type*} [MeasurableSpace Ω] (law : Measure Ω)
 ### 6. 审计结论（含网站结论）
 
 网站原返回：PASS。C：对任意样本空间和law定义随机Q/动量模型；γ>0、U光滑、真正一维Wiener driver均明示。几乎处处连续、p(0)=p0、Q的积分方程及两项漂移可积性齐全；T=0给Q(0)=q0。每个T≥0以D10的L²左端和极限表达常σ积分，动量残差正确。σ任意实数与原式一致；固定初值及光滑范围作为[EXTRA]已披露。此为模型定义，无存在性/极限结论。
-本轮处理：保留原审阅版本结论；本轮未改签名。
-本地单文件及逐声明依赖检查通过；含未完成证明依赖的声明仍标未证。原书疑误及修正版分别见勘误，当前修改版未获网站复审结论。
+当前处理：网站PASS（首轮未改版本）。
+保留所交版本的明确结论。
+本地编译和逐声明依赖核对通过。原文疑误、各限定/修正版、反例的评价分别列出；有未完成证明依赖的声明仍为未证。
 
 ### 7. 状态与证明位置
 
-| 声明 | 状态 | 未证原因 |
-|---|---|---|
-| `MD.Ch06.scalarLangevin` | 定义 | — |
+| 声明 | 证明状态 | 未证原因 | 网站分版结论 |
+|---|---|---|---|
+| `MD.Ch06.scalarLangevin` | 定义 | — | PASS |
 
-位置：`Blueprint/Ch06.lean:1417`；验证：`blueprint/ch06/closeout25/FINAL_COMPILE.log`。
+位置：`Blueprint/Ch06.lean:1417`；本地核验记录：`blueprint/ch06/closeout26/FINAL_COMPILE.log`。
 
 ## MD-6.3.3-MassLangevin
 
@@ -6658,9 +6793,9 @@ def langevinMassSDE {Ω : Type*} [MeasurableSpace Ω] {n : ℕ} (P : Measure Ω)
 
 | 原文对象或结论 | 当前Lean与范围 |
 |---|---|
-| 原文所选陈述 | 本条所引原句及展示公式；单个记号归入context_notation。 |
-| 对象/域/量词/前提 | 完整当前Lean及依赖定义；新增资格见[EXTRA] |
-| 网站首轮 | PASS：C：n维状态为V n×V n，m每个分量正，γ、θ=kBT正，U为C∞；n维Wiener、确定初值x0、非负时间连续路径与两漂移可积性均显式保留。坐标噪声√(2γθ m_i)(W_i(t)−W_i(0))与质量矩阵噪声相符；位置积分m_i⁻¹p_i和势偏导D13正确。[EXTRA]准确描述技术限制；不证明解存在或不变分布。 |
+| 所引原句 | 本条所引原句及展示公式；单个记号归入context_notation。 |
+| 对象、域、量词及前提 | 以上完整声明；额外资格与未覆盖部分见下一段 |
+| 最新网站原始评价 | PASS；首轮保留 |
 
 ### 5. [EXTRA] 与覆盖缺口
 
@@ -6669,16 +6804,17 @@ def langevinMassSDE {Ω : Type*} [MeasurableSpace Ω] {n : ℕ} (P : Measure Ω)
 ### 6. 审计结论（含网站结论）
 
 网站原返回：PASS。C：n维状态为V n×V n，m每个分量正，γ、θ=kBT正，U为C∞；n维Wiener、确定初值x0、非负时间连续路径与两漂移可积性均显式保留。坐标噪声√(2γθ m_i)(W_i(t)−W_i(0))与质量矩阵噪声相符；位置积分m_i⁻¹p_i和势偏导D13正确。[EXTRA]准确描述技术限制；不证明解存在或不变分布。
-本轮处理：保留原审阅版本结论；本轮未改签名。
-本地单文件及逐声明依赖检查通过；含未完成证明依赖的声明仍标未证。原书疑误及修正版分别见勘误，当前修改版未获网站复审结论。
+当前处理：网站PASS（首轮未改版本）。
+保留所交版本的明确结论。
+本地编译和逐声明依赖核对通过。原文疑误、各限定/修正版、反例的评价分别列出；有未完成证明依赖的声明仍为未证。
 
 ### 7. 状态与证明位置
 
-| 声明 | 状态 | 未证原因 |
-|---|---|---|
-| `MD.Ch06.langevinMassSDE` | 定义 | — |
+| 声明 | 证明状态 | 未证原因 | 网站分版结论 |
+|---|---|---|---|
+| `MD.Ch06.langevinMassSDE` | 定义 | — | PASS |
 
-位置：`Blueprint/Ch06.lean:1431`；验证：`blueprint/ch06/closeout25/FINAL_COMPILE.log`。
+位置：`Blueprint/Ch06.lean:1431`；本地核验记录：`blueprint/ch06/closeout26/FINAL_COMPILE.log`。
 
 ## MD-6.3.3-VariableFriction
 
@@ -6721,9 +6857,9 @@ def variableFriction {Ω : Type*} [MeasurableSpace Ω] {n r : ℕ} (P : Measure 
 
 | 原文对象或结论 | 当前Lean与范围 |
 |---|---|
-| 原文所选陈述 | 本条所引原句及展示公式；单个记号归入context_notation。 |
-| 对象/域/量词/前提 | 完整当前Lean及依赖定义；新增资格见[EXTRA] |
-| 网站首轮 | PASS：C：n/r独立量化，Γ为n×r的空间依赖矩阵；m_i>0、θ>0、U/Γ光滑，r维联合Wiener，连续初值路径与位置方程齐全。每个动量坐标i、每个T≥0存在全部r个严格积分，系数√(2θm_i)Γ_ij，漂移−∂iU−(ΓΓᵀp)_i，均正确，全部漂移可积性明示。没有单位质量或对角化偷换；严格L²积分模型比一般局部Itô解范围窄，[EXTRA]已说明严格积分范围。 |
+| 所引原句 | 本条所引原句及展示公式；单个记号归入context_notation。 |
+| 对象、域、量词及前提 | 以上完整声明；额外资格与未覆盖部分见下一段 |
+| 最新网站原始评价 | PASS；首轮保留 |
 
 ### 5. [EXTRA] 与覆盖缺口
 
@@ -6733,16 +6869,17 @@ def variableFriction {Ω : Type*} [MeasurableSpace Ω] {n r : ℕ} (P : Measure 
 ### 6. 审计结论（含网站结论）
 
 网站原返回：PASS。C：n/r独立量化，Γ为n×r的空间依赖矩阵；m_i>0、θ>0、U/Γ光滑，r维联合Wiener，连续初值路径与位置方程齐全。每个动量坐标i、每个T≥0存在全部r个严格积分，系数√(2θm_i)Γ_ij，漂移−∂iU−(ΓΓᵀp)_i，均正确，全部漂移可积性明示。没有单位质量或对角化偷换；严格L²积分模型比一般局部Itô解范围窄，[EXTRA]已说明严格积分范围。
-本轮处理：保留原审阅版本结论；本轮未改签名。
-本地单文件及逐声明依赖检查通过；含未完成证明依赖的声明仍标未证。原书疑误及修正版分别见勘误，当前修改版未获网站复审结论。
+当前处理：网站PASS（首轮未改版本）。
+保留所交版本的明确结论。
+本地编译和逐声明依赖核对通过。原文疑误、各限定/修正版、反例的评价分别列出；有未完成证明依赖的声明仍为未证。
 
 ### 7. 状态与证明位置
 
-| 声明 | 状态 | 未证原因 |
-|---|---|---|
-| `MD.Ch06.variableFriction` | 定义 | — |
+| 声明 | 证明状态 | 未证原因 | 网站分版结论 |
+|---|---|---|---|
+| `MD.Ch06.variableFriction` | 定义 | — | PASS |
 
-位置：`Blueprint/Ch06.lean:1448`；验证：`blueprint/ch06/closeout25/FINAL_COMPILE.log`。
+位置：`Blueprint/Ch06.lean:1448`；本地核验记录：`blueprint/ch06/closeout26/FINAL_COMPILE.log`。
 
 ## MD-6.3.3-ParticleDiagonalFriction
 
@@ -6769,9 +6906,9 @@ def particleDiagonalFriction {N : ℕ} (γ : Fin N → (Fin (N*3) → ℝ) → �
 
 | 原文对象或结论 | 当前Lean与范围 |
 |---|---|
-| 原文所选陈述 | 本条所引原句及展示公式；单个记号归入context_notation。 |
-| 对象/域/量词/前提 | 完整当前Lean及依赖定义；新增资格见[EXTRA] |
-| 网站首轮 | PASS：C：输出为(N*3)×(N*3)实矩阵，i.val/3从0起每组三坐标取同一粒子γ；输入γ允许依赖全部构型，Matrix.diagonal确保非对角项为0。未把γ静默替换为√γ；有限类型N=0为空矩阵，无越界对象。忠实于给出的Γ定义，而非把γ宣称为ΓΓᵀ中的系数。 |
+| 所引原句 | 本条所引原句及展示公式；单个记号归入context_notation。 |
+| 对象、域、量词及前提 | 以上完整声明；额外资格与未覆盖部分见下一段 |
+| 最新网站原始评价 | PASS；首轮保留 |
 
 ### 5. [EXTRA] 与覆盖缺口
 
@@ -6780,16 +6917,17 @@ def particleDiagonalFriction {N : ℕ} (γ : Fin N → (Fin (N*3) → ℝ) → �
 ### 6. 审计结论（含网站结论）
 
 网站原返回：PASS。C：输出为(N*3)×(N*3)实矩阵，i.val/3从0起每组三坐标取同一粒子γ；输入γ允许依赖全部构型，Matrix.diagonal确保非对角项为0。未把γ静默替换为√γ；有限类型N=0为空矩阵，无越界对象。忠实于给出的Γ定义，而非把γ宣称为ΓΓᵀ中的系数。
-本轮处理：保留原审阅版本结论；本轮未改签名。
-本地单文件及逐声明依赖检查通过；含未完成证明依赖的声明仍标未证。原书疑误及修正版分别见勘误，当前修改版未获网站复审结论。
+当前处理：网站PASS（首轮未改版本）。
+保留所交版本的明确结论。
+本地编译和逐声明依赖核对通过。原文疑误、各限定/修正版、反例的评价分别列出；有未完成证明依赖的声明仍为未证。
 
 ### 7. 状态与证明位置
 
-| 声明 | 状态 | 未证原因 |
-|---|---|---|
-| `MD.Ch06.particleDiagonalFriction` | 定义 | — |
+| 声明 | 证明状态 | 未证原因 | 网站分版结论 |
+|---|---|---|---|
+| `MD.Ch06.particleDiagonalFriction` | 定义 | — | PASS |
 
-位置：`Blueprint/Ch06.lean:1468`；验证：`blueprint/ch06/closeout25/FINAL_COMPILE.log`。
+位置：`Blueprint/Ch06.lean:1468`；本地核验记录：`blueprint/ch06/closeout26/FINAL_COMPILE.log`。
 
 ## MD-6.3.4-BrownianMassModel
 
@@ -6824,9 +6962,9 @@ def brownianMassSDE {Ω : Type*} [MeasurableSpace Ω] {n : ℕ} (P : Measure Ω)
 
 | 原文对象或结论 | 当前Lean与范围 |
 |---|---|
-| 原文所选陈述 | 本条所引原句及展示公式；单个记号归入context_notation。 |
-| 对象/域/量词/前提 | 完整当前Lean及依赖定义；新增资格见[EXTRA] |
-| 网站首轮 | PASS：C：任意维正m、γ>0、θ>0、光滑U、n维Wiener以及q0；真实连续路径积分方程的漂移−(γm_i)⁻¹∂iU、噪声√(2θ/(γm_i))均正确，全部漂移区间可积性已明示。此定义编码形式Brownian模型；不将令加速度为0当作已经证明小质量/大摩擦收敛，实际极限另见条目16。 |
+| 所引原句 | 本条所引原句及展示公式；单个记号归入context_notation。 |
+| 对象、域、量词及前提 | 以上完整声明；额外资格与未覆盖部分见下一段 |
+| 最新网站原始评价 | PASS；首轮保留 |
 
 ### 5. [EXTRA] 与覆盖缺口
 
@@ -6835,16 +6973,17 @@ def brownianMassSDE {Ω : Type*} [MeasurableSpace Ω] {n : ℕ} (P : Measure Ω)
 ### 6. 审计结论（含网站结论）
 
 网站原返回：PASS。C：任意维正m、γ>0、θ>0、光滑U、n维Wiener以及q0；真实连续路径积分方程的漂移−(γm_i)⁻¹∂iU、噪声√(2θ/(γm_i))均正确，全部漂移区间可积性已明示。此定义编码形式Brownian模型；不将令加速度为0当作已经证明小质量/大摩擦收敛，实际极限另见条目16。
-本轮处理：保留原审阅版本结论；本轮未改签名。
-本地单文件及逐声明依赖检查通过；含未完成证明依赖的声明仍标未证。原书疑误及修正版分别见勘误，当前修改版未获网站复审结论。
+当前处理：网站PASS（首轮未改版本）。
+保留所交版本的明确结论。
+本地编译和逐声明依赖核对通过。原文疑误、各限定/修正版、反例的评价分别列出；有未完成证明依赖的声明仍为未证。
 
 ### 7. 状态与证明位置
 
-| 声明 | 状态 | 未证原因 |
-|---|---|---|
-| `MD.Ch06.brownianMassSDE` | 定义 | — |
+| 声明 | 证明状态 | 未证原因 | 网站分版结论 |
+|---|---|---|---|
+| `MD.Ch06.brownianMassSDE` | 定义 | — | PASS |
 
-位置：`Blueprint/Ch06.lean:1474`；验证：`blueprint/ch06/closeout25/FINAL_COMPILE.log`。
+位置：`Blueprint/Ch06.lean:1474`；本地核验记录：`blueprint/ch06/closeout26/FINAL_COMPILE.log`。
 
 ## MD-6.3.3-FrequencyMemoryKernel
 
@@ -6869,9 +7008,9 @@ def frequencyMemoryKernel {k : ℕ} (Ω : Fin k → ℝ) (t : ℝ) : ℝ :=
 
 | 原文对象或结论 | 当前Lean与范围 |
 |---|---|
-| 原文所选陈述 | 本条所引原句及展示公式；单个记号归入context_notation。 |
-| 对象/域/量词/前提 | 完整当前Lean及依赖定义；新增资格见[EXTRA] |
-| 网站首轮 | PASS：C：任意有限频率族Ω和实t，函数为k⁻¹∑cos(Ω_i*t)，与D3相同的频率解释。k=0在Lean中定义为0；[EXTRA]所说k>0仅为物理解释，实际签名没有该前提，不应当作已验证的正k模型定理。此为核定义，无δ极限结论。 |
+| 所引原句 | 本条所引原句及展示公式；单个记号归入context_notation。 |
+| 对象、域、量词及前提 | 以上完整声明；额外资格与未覆盖部分见下一段 |
+| 最新网站原始评价 | PASS；首轮保留 |
 
 ### 5. [EXTRA] 与覆盖缺口
 
@@ -6880,16 +7019,17 @@ def frequencyMemoryKernel {k : ℕ} (Ω : Fin k → ℝ) (t : ℝ) : ℝ :=
 ### 6. 审计结论（含网站结论）
 
 网站原返回：PASS。C：任意有限频率族Ω和实t，函数为k⁻¹∑cos(Ω_i*t)，与D3相同的频率解释。k=0在Lean中定义为0；[EXTRA]所说k>0仅为物理解释，实际签名没有该前提，不应当作已验证的正k模型定理。此为核定义，无δ极限结论。
-本轮处理：保留原审阅版本结论；本轮未改签名。
-本地单文件及逐声明依赖检查通过；含未完成证明依赖的声明仍标未证。原书疑误及修正版分别见勘误，当前修改版未获网站复审结论。
+当前处理：网站PASS（首轮未改版本）。
+保留所交版本的明确结论。
+本地编译和逐声明依赖核对通过。原文疑误、各限定/修正版、反例的评价分别列出；有未完成证明依赖的声明仍为未证。
 
 ### 7. 状态与证明位置
 
-| 声明 | 状态 | 未证原因 |
-|---|---|---|
-| `MD.Ch06.frequencyMemoryKernel` | 定义 | — |
+| 声明 | 证明状态 | 未证原因 | 网站分版结论 |
+|---|---|---|---|
+| `MD.Ch06.frequencyMemoryKernel` | 定义 | — | PASS |
 
-位置：`Blueprint/Ch06.lean:1486`；验证：`blueprint/ch06/closeout25/FINAL_COMPILE.log`。
+位置：`Blueprint/Ch06.lean:1486`；本地核验记录：`blueprint/ch06/closeout26/FINAL_COMPILE.log`。
 
 ## MD-6.3.3-Figure64Frequencies
 
@@ -6917,9 +7057,9 @@ def figure64Frequencies {A : Type*} [MeasurableSpace A] (P : Measure A)
 
 | 原文对象或结论 | 当前Lean与范围 |
 |---|---|
-| 原文所选陈述 | 本条所引原句及展示公式；单个记号归入context_notation。 |
-| 对象/域/量词/前提 | 完整当前Lean及依赖定义；新增资格见[EXTRA] |
-| 网站首轮 | PASS：C：blue长度400且val+1恢复i=1,…,400；red/green各1000个随机频率，每个red服从区间限制Lebesgue测度，每个green/10同分布。区间长度1，故无需额外归一化；没有把边际law冒充联合独立law，图注也未明确独立性。此声明仅编码频率，不证明图形或随机核收敛；[EXTRA]范围准确。 |
+| 所引原句 | 本条所引原句及展示公式；单个记号归入context_notation。 |
+| 对象、域、量词及前提 | 以上完整声明；额外资格与未覆盖部分见下一段 |
+| 最新网站原始评价 | PASS；首轮保留 |
 
 ### 5. [EXTRA] 与覆盖缺口
 
@@ -6928,16 +7068,17 @@ def figure64Frequencies {A : Type*} [MeasurableSpace A] (P : Measure A)
 ### 6. 审计结论（含网站结论）
 
 网站原返回：PASS。C：blue长度400且val+1恢复i=1,…,400；red/green各1000个随机频率，每个red服从区间限制Lebesgue测度，每个green/10同分布。区间长度1，故无需额外归一化；没有把边际law冒充联合独立law，图注也未明确独立性。此声明仅编码频率，不证明图形或随机核收敛；[EXTRA]范围准确。
-本轮处理：保留原审阅版本结论；本轮未改签名。
-本地单文件及逐声明依赖检查通过；含未完成证明依赖的声明仍标未证。原书疑误及修正版分别见勘误，当前修改版未获网站复审结论。
+当前处理：网站PASS（首轮未改版本）。
+保留所交版本的明确结论。
+本地编译和逐声明依赖核对通过。原文疑误、各限定/修正版、反例的评价分别列出；有未完成证明依赖的声明仍为未证。
 
 ### 7. 状态与证明位置
 
-| 声明 | 状态 | 未证原因 |
-|---|---|---|
-| `MD.Ch06.figure64Frequencies` | 定义 | — |
+| 声明 | 证明状态 | 未证原因 | 网站分版结论 |
+|---|---|---|---|
+| `MD.Ch06.figure64Frequencies` | 定义 | — | PASS |
 
-位置：`Blueprint/Ch06.lean:1491`；验证：`blueprint/ch06/closeout25/FINAL_COMPILE.log`。
+位置：`Blueprint/Ch06.lean:1491`；本地核验记录：`blueprint/ch06/closeout26/FINAL_COMPILE.log`。
 
 ## MD-6.3.3-Figure65Frequencies
 
@@ -6970,9 +7111,9 @@ def figure65Frequencies {A : Type*} [MeasurableSpace A] (P : Measure A)
 
 | 原文对象或结论 | 当前Lean与范围 |
 |---|---|
-| 原文所选陈述 | 本条所引原句及展示公式；单个记号归入context_notation。 |
-| 对象/域/量词/前提 | 完整当前Lean及依赖定义；新增资格见[EXTRA] |
-| 网站首轮 | PASS：C：左列j∈range 7给k=25,100,…,1225和(i+1)/√k；中/右j∈range 10给k=10,20,…,100，并分别对center/√k和right/k断言U[0,1]边际，全部索引与量词正确。颜色对应与实际绘图不在本频率谓词内，不应计作图形验证；[EXTRA]未宣称极限成立。 |
+| 所引原句 | 本条所引原句及展示公式；单个记号归入context_notation。 |
+| 对象、域、量词及前提 | 以上完整声明；额外资格与未覆盖部分见下一段 |
+| 最新网站原始评价 | PASS；首轮保留 |
 
 ### 5. [EXTRA] 与覆盖缺口
 
@@ -6981,16 +7122,17 @@ def figure65Frequencies {A : Type*} [MeasurableSpace A] (P : Measure A)
 ### 6. 审计结论（含网站结论）
 
 网站原返回：PASS。C：左列j∈range 7给k=25,100,…,1225和(i+1)/√k；中/右j∈range 10给k=10,20,…,100，并分别对center/√k和right/k断言U[0,1]边际，全部索引与量词正确。颜色对应与实际绘图不在本频率谓词内，不应计作图形验证；[EXTRA]未宣称极限成立。
-本轮处理：保留原审阅版本结论；本轮未改签名。
-本地单文件及逐声明依赖检查通过；含未完成证明依赖的声明仍标未证。原书疑误及修正版分别见勘误，当前修改版未获网站复审结论。
+当前处理：网站PASS（首轮未改版本）。
+保留所交版本的明确结论。
+本地编译和逐声明依赖核对通过。原文疑误、各限定/修正版、反例的评价分别列出；有未完成证明依赖的声明仍为未证。
 
 ### 7. 状态与证明位置
 
-| 声明 | 状态 | 未证原因 |
-|---|---|---|
-| `MD.Ch06.figure65Frequencies` | 定义 | — |
+| 声明 | 证明状态 | 未证原因 | 网站分版结论 |
+|---|---|---|---|
+| `MD.Ch06.figure65Frequencies` | 定义 | — | PASS |
 
-位置：`Blueprint/Ch06.lean:1499`；验证：`blueprint/ch06/closeout25/FINAL_COMPILE.log`。
+位置：`Blueprint/Ch06.lean:1499`；本地核验记录：`blueprint/ch06/closeout26/FINAL_COMPILE.log`。
 
 ## MD-6.3.3-BathForceWeakLimitMeaning
 
@@ -7047,29 +7189,32 @@ def bathForceWeakLimitMeaning_corrected {A : Type*} [MeasurableSpace A] (P : Mea
 
 | 原文对象或结论 | 当前Lean与范围 |
 |---|---|
-| 原文所选陈述 | 本条所引原句及展示公式；单个记号归入context_notation。 |
-| 对象/域/量词/前提 | 完整当前Lean及依赖定义；新增资格见[EXTRA] |
-| 网站首轮 | NEEDS_HUMAN：C：原版量化正质量族、随机q0/p0、固定Q0和所有有限T的连续路径；把Printed负热浴力逐点识别为forcePaths，与有界连续路径泛函的期望收敛，确实强于单时均值。_corrected改为D1正力的时间积分并保留同一弱测试，改动在物理对象上合理，但不是原句字面版，且未证明任何频率/初值族满足。两版均未要求样本→连续路径映射可测（也未用HasLaw声明真正路径law）；对任意不可测对象，Lean的总定义积分不能直接当作概率弱收敛。需补足概率law和路径可测资格后才能认定为完整弱法则定义。 |
+| 所引原句 | 两个定义分别表达力路径及积分力路径的收敛资格；没有断言实现条件存在，也没有初态、频谱标度、σ及紧性定理，网站未认证实际热浴极限。 |
+| 对象、域、量词及前提 | 以上完整声明；额外资格与未覆盖部分见下一段 |
+| 最新网站原始评价 | NEEDS_HUMAN；复审 |
 
 ### 5. [EXTRA] 与覆盖缺口
 
 - [EXTRA]完整连续路径空间的弱法则，而非只收敛均值/某单时边际；实际有限热浴力路径与Wiener路径逐点关联，只定义原希望的资格，不宣称任意族满足。
-- [EXTRA] 25号：两版补概率空间与连续路径随机变量可测性；Printed是力路径、corrected是正力时间积分；物理标度和极限是否可实现仍待导师，不把弱收敛资格谓词当存在定理。
+- [EXTRA] 两版补概率空间与连续路径随机变量可测性；Printed是力路径、corrected是正力时间积分；物理标度和极限是否可实现仍待导师，不把弱收敛资格谓词当存在定理。
+- [EXTRA] 复审范围：两个定义分别表达力路径及积分力路径的收敛资格；没有断言实现条件存在，也没有初态、频谱标度、σ及紧性定理，网站未认证实际热浴极限。
+- 覆盖缺口：两个定义分别表达力路径及积分力路径的收敛资格；没有断言实现条件存在，也没有初态、频谱标度、σ及紧性定理，网站未认证实际热浴极限。
 
 ### 6. 审计结论（含网站结论）
 
-网站原返回：NEEDS_HUMAN。C：原版量化正质量族、随机q0/p0、固定Q0和所有有限T的连续路径；把Printed负热浴力逐点识别为forcePaths，与有界连续路径泛函的期望收敛，确实强于单时均值。_corrected改为D1正力的时间积分并保留同一弱测试，改动在物理对象上合理，但不是原句字面版，且未证明任何频率/初值族满足。两版均未要求样本→连续路径映射可测（也未用HasLaw声明真正路径law）；对任意不可测对象，Lean的总定义积分不能直接当作概率弱收敛。需补足概率law和路径可测资格后才能认定为完整弱法则定义。
-本轮处理：两版补概率空间与连续路径随机变量可测性；Printed是力路径、corrected是正力时间积分；物理标度和极限是否可实现仍待导师，不把弱收敛资格谓词当存在定理。
-本地单文件及逐声明依赖检查通过；含未完成证明依赖的声明仍标未证。原书疑误及修正版分别见勘误，当前修改版未获网站复审结论。
+网站原返回：NEEDS_HUMAN。bathForceWeakLimitMeaning：在概率空间、正质量下，将实际Printed力逐点嵌入C([0,T])，要求路径随机变量可测，W为preBrownian并有连续路径代表；对每T>0全部有界连续泛函的期望收敛，确为路径法则弱收敛而非仅边际。_corrected改成正bathForce的0至s时间积分，其余量词不变；这是与dP中的白噪声驱动更相符的候选。没有任何版本断言存在初态/质量族满足；也没有σ幅度或物理标度条件，所以不能认证实际热浴收敛或称“修复完成”。两版定义签名各自表达所说资格，但数学解释保留NEEDS_HUMAN。
+当前处理：原文疑误或语义范围待导师；不冒称未提供版本已通过。
+两个定义分别表达力路径及积分力路径的收敛资格；没有断言实现条件存在，也没有初态、频谱标度、σ及紧性定理，网站未认证实际热浴极限。
+本地编译和逐声明依赖核对通过。原文疑误、各限定/修正版、反例的评价分别列出；有未完成证明依赖的声明仍为未证。
 
 ### 7. 状态与证明位置
 
-| 声明 | 状态 | 未证原因 |
-|---|---|---|
-| `MD.Ch06.bathForceWeakLimitMeaning` | 定义 | — |
-| `MD.Ch06.bathForceWeakLimitMeaning_corrected` | 定义 | — |
+| 声明 | 证明状态 | 未证原因 | 网站分版结论 |
+|---|---|---|---|
+| `MD.Ch06.bathForceWeakLimitMeaning` | 定义 | — | 未获单独PASS；见分版意见 |
+| `MD.Ch06.bathForceWeakLimitMeaning_corrected` | 定义 | — | 未获单独PASS；见分版意见 |
 
-位置：`Blueprint/Ch06.lean:1514`；验证：`blueprint/ch06/closeout25/FINAL_COMPILE.log`。
+位置：`Blueprint/Ch06.lean:1514`；本地核验记录：`blueprint/ch06/closeout26/FINAL_COMPILE.log`。
 
 ## MD-6.3.4-OverdampedLimit
 
@@ -7105,9 +7250,9 @@ theorem overdampedLimit : ∀ {n : ℕ} {Ω : Type*} [MeasurableSpace Ω]
 
 | 原文对象或结论 | 当前Lean与范围 |
 |---|---|
-| 原文所选陈述 | 本条所引原句及展示公式；单个记号归入context_notation。 |
-| 对象/域/量词/前提 | 完整当前Lean及依赖定义；新增资格见[EXTRA] |
-| 网站首轮 | PASS：C：任意维正m、β>0、光滑单位周期势U，固定确定初始相点；B为共同n维Wiener。前提对所有γ>0给Chapter06Review.langevinMassSDE解族，q满足该命名空间brownianMassSDE且摩擦参数1、温度β⁻¹。结论仅在每个T>0对所有有界连续位置检验f有期望弱收敛，观察时间γT正确，未主张路径强收敛。核对了所引用的是项目Review模型，而非同名MD加强定义；在光滑周期势下梯度有界且Lipschitz，路径连续性使实际漂移积分有意义。周期、光滑、时间重标度和弱拓扑限制均已由[EXTRA]披露。 |
+| 所引原句 | 本条所引原句及展示公式；单个记号归入context_notation。 |
+| 对象、域、量词及前提 | 以上完整声明；额外资格与未覆盖部分见下一段 |
+| 最新网站原始评价 | PASS；首轮保留 |
 
 ### 5. [EXTRA] 与覆盖缺口
 
@@ -7116,16 +7261,17 @@ theorem overdampedLimit : ∀ {n : ℕ} {Ω : Type*} [MeasurableSpace Ω]
 ### 6. 审计结论（含网站结论）
 
 网站原返回：PASS。C：任意维正m、β>0、光滑单位周期势U，固定确定初始相点；B为共同n维Wiener。前提对所有γ>0给Chapter06Review.langevinMassSDE解族，q满足该命名空间brownianMassSDE且摩擦参数1、温度β⁻¹。结论仅在每个T>0对所有有界连续位置检验f有期望弱收敛，观察时间γT正确，未主张路径强收敛。核对了所引用的是项目Review模型，而非同名MD加强定义；在光滑周期势下梯度有界且Lipschitz，路径连续性使实际漂移积分有意义。周期、光滑、时间重标度和弱拓扑限制均已由[EXTRA]披露。
-本轮处理：保留原审阅版本结论；本轮未改签名。
-本地单文件及逐声明依赖检查通过；含未完成证明依赖的声明仍标未证。原书疑误及修正版分别见勘误，当前修改版未获网站复审结论。
+当前处理：网站PASS（首轮未改版本）。
+保留所交版本的明确结论。
+本地编译和逐声明依赖核对通过。原文疑误、各限定/修正版、反例的评价分别列出；有未完成证明依赖的声明仍为未证。
 
 ### 7. 状态与证明位置
 
-| 声明 | 状态 | 未证原因 |
-|---|---|---|
-| `MD.Ch06.overdampedLimit` | 未证 | 缺大型理论 |
+| 声明 | 证明状态 | 未证原因 | 网站分版结论 |
+|---|---|---|---|
+| `MD.Ch06.overdampedLimit` | 未证 | 缺大型理论 | PASS |
 
-位置：`Blueprint/Ch06.lean:1551`；验证：`blueprint/ch06/closeout25/FINAL_COMPILE.log`。
+位置：`Blueprint/Ch06.lean:1551`；本地核验记录：`blueprint/ch06/closeout26/FINAL_COMPILE.log`。
 
 ## MD-6.3.5-ScalarGenerator
 
@@ -7150,9 +7296,9 @@ def scalarGenerator (a b f : ℝ → ℝ) (x : ℝ) : ℝ := a x*deriv f x + b x
 
 | 原文对象或结论 | 当前Lean与范围 |
 |---|---|
-| 原文所选陈述 | 本条所引原句及展示公式；单个记号归入context_notation。 |
-| 对象/域/量词/前提 | 完整当前Lean及依赖定义；新增资格见[EXTRA] |
-| 网站首轮 | PASS：C：任意实函数a/b/f及实x，a(x)f′(x)+b(x)²f″(x)/2与原生成元动作完全对应，括号和平方位置正确。对非光滑函数deriv有总定义，但这里是形式算子定义，不含错误的对任意函数经典可微性断言；经典解释取C²测试函数。 |
+| 所引原句 | 本条所引原句及展示公式；单个记号归入context_notation。 |
+| 对象、域、量词及前提 | 以上完整声明；额外资格与未覆盖部分见下一段 |
+| 最新网站原始评价 | PASS；首轮保留 |
 
 ### 5. [EXTRA] 与覆盖缺口
 
@@ -7161,16 +7307,17 @@ def scalarGenerator (a b f : ℝ → ℝ) (x : ℝ) : ℝ := a x*deriv f x + b x
 ### 6. 审计结论（含网站结论）
 
 网站原返回：PASS。C：任意实函数a/b/f及实x，a(x)f′(x)+b(x)²f″(x)/2与原生成元动作完全对应，括号和平方位置正确。对非光滑函数deriv有总定义，但这里是形式算子定义，不含错误的对任意函数经典可微性断言；经典解释取C²测试函数。
-本轮处理：保留原审阅版本结论；本轮未改签名。
-本地单文件及逐声明依赖检查通过；含未完成证明依赖的声明仍标未证。原书疑误及修正版分别见勘误，当前修改版未获网站复审结论。
+当前处理：网站PASS（首轮未改版本）。
+保留所交版本的明确结论。
+本地编译和逐声明依赖核对通过。原文疑误、各限定/修正版、反例的评价分别列出；有未完成证明依赖的声明仍为未证。
 
 ### 7. 状态与证明位置
 
-| 声明 | 状态 | 未证原因 |
-|---|---|---|
-| `MD.Ch06.scalarGenerator` | 定义 | — |
+| 声明 | 证明状态 | 未证原因 | 网站分版结论 |
+|---|---|---|---|
+| `MD.Ch06.scalarGenerator` | 定义 | — | PASS |
 
-位置：`Blueprint/Ch06.lean:1566`；验证：`blueprint/ch06/closeout25/FINAL_COMPILE.log`。
+位置：`Blueprint/Ch06.lean:1566`；本地核验记录：`blueprint/ch06/closeout26/FINAL_COMPILE.log`。
 
 ## MD-6.3.5-GeneratorExpectation
 
@@ -7211,9 +7358,9 @@ theorem generatorExpectation :
 
 | 原文对象或结论 | 当前Lean与范围 |
 |---|---|
-| 原文所选陈述 | 本条所引原句及展示公式；单个记号归入context_notation。 |
-| 对象/域/量词/前提 | 完整当前Lean及依赖定义；新增资格见[EXTRA] |
-| 网站首轮 | PASS：C：完整量化样本测度、W/X、a/b/φ、确定x0；前提为PreBrownian、实际strictScalarSDE、C¹a/b、C²φ、φ′(X)b(X)自然历史适应且平方时间可积、每时刻Lφ可积、期望连续、X自然历史适应/联合可测，以及每个有限时间×样本上\|Lφ\|可积。结论为每个t>0期望函数的HasDerivAt，导数等于E[Lφ(Xt)]。Fubini和去随机积分期望所需范围已作为[EXTRA]披露，没有把所求导数或弱PDE当作前提。严格SDE给实际积分残差，结论强于只定义L而未偷换对象。 |
+| 所引原句 | 本条所引原句及展示公式；单个记号归入context_notation。 |
+| 对象、域、量词及前提 | 以上完整声明；额外资格与未覆盖部分见下一段 |
+| 最新网站原始评价 | PASS；首轮保留 |
 
 ### 5. [EXTRA] 与覆盖缺口
 
@@ -7223,16 +7370,17 @@ theorem generatorExpectation :
 ### 6. 审计结论（含网站结论）
 
 网站原返回：PASS。C：完整量化样本测度、W/X、a/b/φ、确定x0；前提为PreBrownian、实际strictScalarSDE、C¹a/b、C²φ、φ′(X)b(X)自然历史适应且平方时间可积、每时刻Lφ可积、期望连续、X自然历史适应/联合可测，以及每个有限时间×样本上|Lφ|可积。结论为每个t>0期望函数的HasDerivAt，导数等于E[Lφ(Xt)]。Fubini和去随机积分期望所需范围已作为[EXTRA]披露，没有把所求导数或弱PDE当作前提。严格SDE给实际积分残差，结论强于只定义L而未偷换对象。
-本轮处理：保留原审阅版本结论；本轮未改签名。
-本地单文件及逐声明依赖检查通过；含未完成证明依赖的声明仍标未证。原书疑误及修正版分别见勘误，当前修改版未获网站复审结论。
+当前处理：网站PASS（首轮未改版本）。
+保留所交版本的明确结论。
+本地编译和逐声明依赖核对通过。原文疑误、各限定/修正版、反例的评价分别列出；有未完成证明依赖的声明仍为未证。
 
 ### 7. 状态与证明位置
 
-| 声明 | 状态 | 未证原因 |
-|---|---|---|
-| `MD.Ch06.generatorExpectation` | 未证 | 缺大型理论 |
+| 声明 | 证明状态 | 未证原因 | 网站分版结论 |
+|---|---|---|---|
+| `MD.Ch06.generatorExpectation` | 未证 | 缺大型理论 | PASS |
 
-位置：`Blueprint/Ch06.lean:1571`；验证：`blueprint/ch06/closeout25/FINAL_COMPILE.log`。
+位置：`Blueprint/Ch06.lean:1571`；本地核验记录：`blueprint/ch06/closeout26/FINAL_COMPILE.log`。
 
 ## MD-6.3.6-PolynomialSmooth
 
@@ -7258,9 +7406,9 @@ def polynomialSmooth (f : ℝ → ℝ) : Prop :=
 
 | 原文对象或结论 | 当前Lean与范围 |
 |---|---|
-| 原文所选陈述 | 本条所引原句及展示公式；单个记号归入context_notation。 |
-| 对象/域/量词/前提 | 完整当前Lean及依赖定义；新增资格见[EXTRA] |
-| 网站首轮 | PASS：C：ContDiff ℝ ∞ f且存在统一C≥0、自然r、∀x的\|f(x)\|≤C(1+\|x\|)^r。光滑函数在紧区间有界，因此该全局界与原双侧无穷处Big-O等价。没有擅自把C_P∞强化为所有阶导数都多项式增长。 |
+| 所引原句 | 本条所引原句及展示公式；单个记号归入context_notation。 |
+| 对象、域、量词及前提 | 以上完整声明；额外资格与未覆盖部分见下一段 |
+| 最新网站原始评价 | PASS；首轮保留 |
 
 ### 5. [EXTRA] 与覆盖缺口
 
@@ -7269,16 +7417,17 @@ def polynomialSmooth (f : ℝ → ℝ) : Prop :=
 ### 6. 审计结论（含网站结论）
 
 网站原返回：PASS。C：ContDiff ℝ ∞ f且存在统一C≥0、自然r、∀x的|f(x)|≤C(1+|x|)^r。光滑函数在紧区间有界，因此该全局界与原双侧无穷处Big-O等价。没有擅自把C_P∞强化为所有阶导数都多项式增长。
-本轮处理：保留原审阅版本结论；本轮未改签名。
-本地单文件及逐声明依赖检查通过；含未完成证明依赖的声明仍标未证。原书疑误及修正版分别见勘误，当前修改版未获网站复审结论。
+当前处理：网站PASS（首轮未改版本）。
+保留所交版本的明确结论。
+本地编译和逐声明依赖核对通过。原文疑误、各限定/修正版、反例的评价分别列出；有未完成证明依赖的声明仍为未证。
 
 ### 7. 状态与证明位置
 
-| 声明 | 状态 | 未证原因 |
-|---|---|---|
-| `MD.Ch06.polynomialSmooth` | 定义 | — |
+| 声明 | 证明状态 | 未证原因 | 网站分版结论 |
+|---|---|---|---|
+| `MD.Ch06.polynomialSmooth` | 定义 | — | PASS |
 
-位置：`Blueprint/Ch06.lean:1589`；验证：`blueprint/ch06/closeout25/FINAL_COMPILE.log`。
+位置：`Blueprint/Ch06.lean:1589`；本地核验记录：`blueprint/ch06/closeout26/FINAL_COMPILE.log`。
 
 ## MD-6.3.6-DensityExpectation
 
@@ -7310,9 +7459,9 @@ theorem densityExpectation : ∀ {Ω : Type*} [MeasurableSpace Ω] (P : Measure 
 
 | 原文对象或结论 | 当前Lean与范围 |
 |---|---|
-| 原文所选陈述 | 本条所引原句及展示公式；单个记号归入context_notation。 |
-| 对象/域/量词/前提 | 完整当前Lean及依赖定义；新增资格见[EXTRA] |
-| 网站首轮 | PASS：C：HasLaw把真实X分布与volume.withDensity(ofRealρ)关联，额外ρ非负且可测，φ取D49（函数值多项式增长），ρ有全局正指数尾上界。无需假设导数增长即可得\|φ\|ρ可积；结论同时给样本上的Integrable和与∫φρ相等，乘积顺序无影响。指数尾和多项式界控制实轴尾部，law桥接真实随机变量，不把积分恒等作前提。[EXTRA]准确。 |
+| 所引原句 | 本条所引原句及展示公式；单个记号归入context_notation。 |
+| 对象、域、量词及前提 | 以上完整声明；额外资格与未覆盖部分见下一段 |
+| 最新网站原始评价 | PASS；首轮保留 |
 
 ### 5. [EXTRA] 与覆盖缺口
 
@@ -7321,16 +7470,17 @@ theorem densityExpectation : ∀ {Ω : Type*} [MeasurableSpace Ω] (P : Measure 
 ### 6. 审计结论（含网站结论）
 
 网站原返回：PASS。C：HasLaw把真实X分布与volume.withDensity(ofRealρ)关联，额外ρ非负且可测，φ取D49（函数值多项式增长），ρ有全局正指数尾上界。无需假设导数增长即可得|φ|ρ可积；结论同时给样本上的Integrable和与∫φρ相等，乘积顺序无影响。指数尾和多项式界控制实轴尾部，law桥接真实随机变量，不把积分恒等作前提。[EXTRA]准确。
-本轮处理：保留原审阅版本结论；本轮未改签名。
-本地单文件及逐声明依赖检查通过；含未完成证明依赖的声明仍标未证。原书疑误及修正版分别见勘误，当前修改版未获网站复审结论。
+当前处理：网站PASS（首轮未改版本）。
+保留所交版本的明确结论。
+本地编译和逐声明依赖核对通过。原文疑误、各限定/修正版、反例的评价分别列出；有未完成证明依赖的声明仍为未证。
 
 ### 7. 状态与证明位置
 
-| 声明 | 状态 | 未证原因 |
-|---|---|---|
-| `MD.Ch06.densityExpectation` | 未证 | 时间盒止 |
+| 声明 | 证明状态 | 未证原因 | 网站分版结论 |
+|---|---|---|---|
+| `MD.Ch06.densityExpectation` | 未证 | 时间盒止 | PASS |
 
-位置：`Blueprint/Ch06.lean:1594`；验证：`blueprint/ch06/closeout25/FINAL_COMPILE.log`。
+位置：`Blueprint/Ch06.lean:1594`；本地核验记录：`blueprint/ch06/closeout26/FINAL_COMPILE.log`。
 
 ## MD-6.3.6-ScalarForward
 
@@ -7357,9 +7507,9 @@ def scalarForward (a b ρ : ℝ → ℝ) (x : ℝ) : ℝ :=
 
 | 原文对象或结论 | 当前Lean与范围 |
 |---|---|
-| 原文所选陈述 | 本条所引原句及展示公式；单个记号归入context_notation。 |
-| 对象/域/量词/前提 | 完整当前Lean及依赖定义；新增资格见[EXTRA] |
-| 网站首轮 | PASS：C：任意实函数a/b/ρ及实x，−(aρ)′+(b²ρ)″/2完整正确。形式定义没有把ρ′′误写为φ′′，也没有带入条目23虚构的负扩散号。经典含义需相应可微性，此定义没有宣称PDE已从law推出。 |
+| 所引原句 | 本条所引原句及展示公式；单个记号归入context_notation。 |
+| 对象、域、量词及前提 | 以上完整声明；额外资格与未覆盖部分见下一段 |
+| 最新网站原始评价 | PASS；首轮保留 |
 
 ### 5. [EXTRA] 与覆盖缺口
 
@@ -7368,16 +7518,17 @@ def scalarForward (a b ρ : ℝ → ℝ) (x : ℝ) : ℝ :=
 ### 6. 审计结论（含网站结论）
 
 网站原返回：PASS。C：任意实函数a/b/ρ及实x，−(aρ)′+(b²ρ)″/2完整正确。形式定义没有把ρ′′误写为φ′′，也没有带入条目23虚构的负扩散号。经典含义需相应可微性，此定义没有宣称PDE已从law推出。
-本轮处理：保留原审阅版本结论；本轮未改签名。
-本地单文件及逐声明依赖检查通过；含未完成证明依赖的声明仍标未证。原书疑误及修正版分别见勘误，当前修改版未获网站复审结论。
+当前处理：网站PASS（首轮未改版本）。
+保留所交版本的明确结论。
+本地编译和逐声明依赖核对通过。原文疑误、各限定/修正版、反例的评价分别列出；有未完成证明依赖的声明仍为未证。
 
 ### 7. 状态与证明位置
 
-| 声明 | 状态 | 未证原因 |
-|---|---|---|
-| `MD.Ch06.scalarForward` | 定义 | — |
+| 声明 | 证明状态 | 未证原因 | 网站分版结论 |
+|---|---|---|---|
+| `MD.Ch06.scalarForward` | 定义 | — | PASS |
 
-位置：`Blueprint/Ch06.lean:1604`；验证：`blueprint/ch06/closeout25/FINAL_COMPILE.log`。
+位置：`Blueprint/Ch06.lean:1604`；本地核验记录：`blueprint/ch06/closeout26/FINAL_COMPILE.log`。
 
 ## MD-6.3.6-FPDriftAdjoint
 
@@ -7419,9 +7570,9 @@ theorem fpDriftAdjoint :
 
 | 原文对象或结论 | 当前Lean与范围 |
 |---|---|
-| 原文所选陈述 | 本条所引原句及展示公式；单个记号归入context_notation。 |
-| 对象/域/量词/前提 | 完整当前Lean及依赖定义；新增资格见[EXTRA] |
-| 网站首轮 | PASS：C：∀a/ρ/φ为C¹，且φ紧支；左积分aφ′ρ，右积分φ[−(aρ)′]，全实轴真实积分相等。紧支和C¹使两边连续紧支、可积，边界自动消失；未要求a或ρ紧支。仅证明[EXTRA]明示的紧支桥接，不能计为原所有多项式测试函数的全域版本。 |
+| 所引原句 | 本条所引原句及展示公式；单个记号归入context_notation。 |
+| 对象、域、量词及前提 | 以上完整声明；额外资格与未覆盖部分见下一段 |
+| 最新网站原始评价 | PASS；首轮保留 |
 
 ### 5. [EXTRA] 与覆盖缺口
 
@@ -7430,16 +7581,17 @@ theorem fpDriftAdjoint :
 ### 6. 审计结论（含网站结论）
 
 网站原返回：PASS。C：∀a/ρ/φ为C¹，且φ紧支；左积分aφ′ρ，右积分φ[−(aρ)′]，全实轴真实积分相等。紧支和C¹使两边连续紧支、可积，边界自动消失；未要求a或ρ紧支。仅证明[EXTRA]明示的紧支桥接，不能计为原所有多项式测试函数的全域版本。
-本轮处理：保留原审阅版本结论；本轮未改签名。
-本地单文件及逐声明依赖检查通过；含未完成证明依赖的声明仍标未证。原书疑误及修正版分别见勘误，当前修改版未获网站复审结论。
+当前处理：网站PASS（首轮未改版本）。
+保留所交版本的明确结论。
+本地编译和逐声明依赖核对通过。原文疑误、各限定/修正版、反例的评价分别列出；有未完成证明依赖的声明仍为未证。
 
 ### 7. 状态与证明位置
 
-| 声明 | 状态 | 未证原因 |
-|---|---|---|
-| `MD.Ch06.fpDriftAdjoint` | 已证 | — |
+| 声明 | 证明状态 | 未证原因 | 网站分版结论 |
+|---|---|---|---|
+| `MD.Ch06.fpDriftAdjoint` | 已证 | — | PASS |
 
-位置：`Blueprint/Ch06.lean:1609`；验证：`blueprint/ch06/closeout25/FINAL_COMPILE.log`。
+位置：`Blueprint/Ch06.lean:1609`；本地核验记录：`blueprint/ch06/closeout26/FINAL_COMPILE.log`。
 
 ## MD-6.3.6-FPDiffusionPrinted
 
@@ -7517,28 +7669,29 @@ theorem fpDiffusionPrinted_corrected : ∀ (b ρ φ : ℝ → ℝ),
 
 | 原文对象或结论 | 当前Lean与范围 |
 |---|---|
-| 原文所选陈述 | 本条Lean覆盖范围：PDF263/印刷242已目视核对：两次分部积分右端是正号并含(x,t)。删除错误外负号，Printed使用已有独立分部积分证明；撤销虚假原书疑误，旧_corrected名字仅兼容保留。 |
-| 对象/域/量词/前提 | 完整当前Lean及依赖定义；新增资格见[EXTRA] |
-| 网站首轮 | FAIL：C：Printed签名对所有C² b/ρ/φ及紧支φ断言负号积分恒等。此负号既不忠实也数学错误；两次分部积分应得正号。现有签名需FAIL，不因Printed名称而豁免与实际PDF不符的问题。repair_log提到fpDiffusionPrinted_corrected，但无实际签名，不能把修改描述当作独立签名已审；若仅删除外负号并保留这些C²/紧支前提，则数学陈述正确。 |
+| 所引原句 | 本条Lean覆盖范围：PDF263/印刷242已目视核对：两次分部积分右端是正号并含(x,t)。删除错误外负号，Printed使用已有独立分部积分证明；撤销虚假原书疑误，旧_corrected名字仅兼容保留。 |
+| 对象、域、量词及前提 | 以上完整声明；额外资格与未覆盖部分见下一段 |
+| 最新网站原始评价 | PASS；复审 |
 
 ### 5. [EXTRA] 与覆盖缺口
 
-- [EXTRA] 25号：PDF263/印刷242已目视核对：两次分部积分右端是正号并含(x,t)。删除错误外负号，Printed使用已有独立分部积分证明；撤销虚假原书疑误，旧_corrected名字仅兼容保留。
+- [EXTRA] PDF263/印刷242已目视核对：两次分部积分右端是正号并含(x,t)。删除错误外负号，Printed使用已有独立分部积分证明；撤销虚假原书疑误，旧_corrected名字仅兼容保留。
 
 ### 6. 审计结论（含网站结论）
 
-网站原返回：FAIL。C：Printed签名对所有C² b/ρ/φ及紧支φ断言负号积分恒等。此负号既不忠实也数学错误；两次分部积分应得正号。现有签名需FAIL，不因Printed名称而豁免与实际PDF不符的问题。repair_log提到fpDiffusionPrinted_corrected，但无实际签名，不能把修改描述当作独立签名已审；若仅删除外负号并保留这些C²/紧支前提，则数学陈述正确。
-本轮处理：PDF263/印刷242已目视核对：两次分部积分右端是正号并含(x,t)。删除错误外负号，Printed使用已有独立分部积分证明；撤销虚假原书疑误，旧_corrected名字仅兼容保留。
-本地单文件及逐声明依赖检查通过；含未完成证明依赖的声明仍标未证。原书疑误及修正版分别见勘误，当前修改版未获网站复审结论。
+网站原返回：PASS。fpDiffusionPrinted与_corrected同签名：b,ρ,φ为C²，φ紧支撑，则∫b²φ″ρ=∫φ(b²ρ)″。将时间固定后ρ为实函数符合原式；紧支撑φ及其导数消除边界项，C²使各紧支 integrand可积。没有外负号，亦没有在该纯扩散分部积分恒等式中额外放1/2。两版PASS；_corrected只是兼容同义名，不是原书勘误。fpDriftAdjoint的C¹紧支辅助式负号也正确。
+当前处理：网站PASS（复审）。
+保留所交版本的明确结论。
+本地编译和逐声明依赖核对通过。原文疑误、各限定/修正版、反例的评价分别列出；有未完成证明依赖的声明仍为未证。
 
 ### 7. 状态与证明位置
 
-| 声明 | 状态 | 未证原因 |
-|---|---|---|
-| `MD.Ch06.fpDiffusionPrinted` | 已证 | — |
-| `MD.Ch06.fpDiffusionPrinted_corrected` | 已证 | — |
+| 声明 | 证明状态 | 未证原因 | 网站分版结论 |
+|---|---|---|---|
+| `MD.Ch06.fpDiffusionPrinted` | 已证 | — | PASS |
+| `MD.Ch06.fpDiffusionPrinted_corrected` | 已证 | — | PASS |
 
-位置：`Blueprint/Ch06.lean:1629`；验证：`blueprint/ch06/closeout25/FINAL_COMPILE.log`。
+位置：`Blueprint/Ch06.lean:1629`；本地核验记录：`blueprint/ch06/closeout26/FINAL_COMPILE.log`。
 
 ## MD-6.3.6-FPAdjointCompact
 
@@ -7612,9 +7765,9 @@ theorem fpAdjointCompact :
 
 | 原文对象或结论 | 当前Lean与范围 |
 |---|---|
-| 原文所选陈述 | 本条所引原句及展示公式；单个记号归入context_notation。 |
-| 对象/域/量词/前提 | 完整当前Lean及依赖定义；新增资格见[EXTRA] |
-| 网站首轮 | PASS：C：对任意C² a/b/ρ/φ和紧支φ，真实全实轴∫(Lφ)ρ=∫φ(L†ρ)。D47/D50展开后正确，紧支使全部相关积分存在；紧支C²范围已在[EXTRA]明示，不把它计作所有C_P∞测试的完整伴随域结论。 |
+| 所引原句 | 本条所引原句及展示公式；单个记号归入context_notation。 |
+| 对象、域、量词及前提 | 以上完整声明；额外资格与未覆盖部分见下一段 |
+| 最新网站原始评价 | PASS；首轮保留 |
 
 ### 5. [EXTRA] 与覆盖缺口
 
@@ -7623,16 +7776,17 @@ theorem fpAdjointCompact :
 ### 6. 审计结论（含网站结论）
 
 网站原返回：PASS。C：对任意C² a/b/ρ/φ和紧支φ，真实全实轴∫(Lφ)ρ=∫φ(L†ρ)。D47/D50展开后正确，紧支使全部相关积分存在；紧支C²范围已在[EXTRA]明示，不把它计作所有C_P∞测试的完整伴随域结论。
-本轮处理：保留原审阅版本结论；本轮未改签名。
-本地单文件及逐声明依赖检查通过；含未完成证明依赖的声明仍标未证。原书疑误及修正版分别见勘误，当前修改版未获网站复审结论。
+当前处理：网站PASS（首轮未改版本）。
+保留所交版本的明确结论。
+本地编译和逐声明依赖核对通过。原文疑误、各限定/修正版、反例的评价分别列出；有未完成证明依赖的声明仍为未证。
 
 ### 7. 状态与证明位置
 
-| 声明 | 状态 | 未证原因 |
-|---|---|---|
-| `MD.Ch06.fpAdjointCompact` | 已证 | — |
+| 声明 | 证明状态 | 未证原因 | 网站分版结论 |
+|---|---|---|---|
+| `MD.Ch06.fpAdjointCompact` | 已证 | — | PASS |
 
-位置：`Blueprint/Ch06.lean:1686`；验证：`blueprint/ch06/closeout25/FINAL_COMPILE.log`。
+位置：`Blueprint/Ch06.lean:1686`；本地核验记录：`blueprint/ch06/closeout26/FINAL_COMPILE.log`。
 
 ## MD-6.3.6-FPPolynomialAdjoint
 
@@ -7642,7 +7796,24 @@ theorem fpAdjointCompact :
 
 > We assume that $\rho$ is $C^\infty$ for all $t$ and that the density tends to zero exponentially fast as $x\to\pm\infty$, whereas $a$ and $b$ are $C^\infty$ functions which grow at most polynomially fast in these limits, that is, there are constants $\eta_a$, $\eta_b$ such that
 > \[a(x)=\mathcal O(|x|^{\eta_a}),\quad b(x)=\mathcal O(|x|^{\eta_b}),\quad x\to\pm\infty.\]
-> [中间原文略]
+> This condition of polynomial growth of the coefficients is a common assumption in the analysis of SDEs. For future reference we define the space of functions which are $C^\infty$ smooth and satisfy the polynomial growth restriction by $CP^\infty$:
+> \[CP^\infty=\{\phi\in C^\infty\mid\exists\eta\in\mathbb N:\phi(x)=O(|x|^\eta),\ x\to\pm\infty\}.\]
+> For any $\phi\in CP^\infty$, the expectation with respect to $\rho(x,t)$ is well defined and we have
+> \[\mathbb E\phi(X(t))=\langle\phi,\rho\rangle=\int_{-\infty}^{+\infty}\phi(x)\rho(x,t)dx.\]
+> Taking the differential, we obtain an equation for $\mathbb E d\phi$ which must be equal to (6.37):
+> \[\int_{-\infty}^{+\infty}\phi(x)\frac{\partial\rho}{\partial t}dx=\int_{-\infty}^{+\infty}(\mathcal L\phi)(x)\rho(x,t)dx=\int_{-\infty}^{+\infty}(a(x)\phi'+\tfrac12 b^2(x)\phi''(x))\rho(x,t)dx.\]
+> Using the assumptions given above regarding the exponential rate of decay of the density, it is possible to recast the right hand side as an integral of a product with $\phi$. First, we find
+> \[\int_{-\infty}^{+\infty}a(x)\phi'(x)\rho(x,t)dx=[\phi(x)a(x)\rho(x,t)]_{-\infty}^{\infty}-\int_{-\infty}^{+\infty}\phi(x)(a(x)\rho(x,t))_x dx=-\int_{-\infty}^{+\infty}\phi(x)(a(x)\rho(x,t))_x dx.\]
+> With two rounds of integration by parts on the term involving $b(x)$, we find, using the fact that the boundary terms vanish,
+> \[\int_{-\infty}^{+\infty}b^2(x)\phi''(x)\rho(x,t)dx=\int_{-\infty}^{+\infty}\phi(x)(b^2(x)\rho)_{xx}(x,t)dx.\]
+> Finally, putting these results together, we have
+> \[\int_{-\infty}^{+\infty}\phi(x)\left[\frac{\partial\rho}{\partial t}+\frac{\partial}{\partial x}(a(x)\rho(x,t))-\frac12\frac{\partial^2}{\partial x^2}(b^2(x)\rho)\right]dx=0.\]
+> If this is to hold for all test functions $\phi$, we must have
+> \[\frac{\partial\rho}{\partial t}=-\frac{\partial}{\partial x}(a(x)\rho)+\frac12\frac{\partial^2}{\partial x^2}(b^2(x)\rho).\]
+> This partial differential equation is often called the Fokker-Planck equation. The great benefit of the Fokker-Planck equation is that it enables the macroscopic perspective on the solutions of an SDE.
+> The Fokker-Planck equation may be written in the compact form
+> \[\frac{\partial\rho}{\partial t}=\mathcal L^\dagger\rho,\]
+> where the operator appearing on the right hand side is the adjoint $\mathcal L^\dagger$ of the generator of the stochastic process, satisfying the relation
 > \[\langle\mathcal L\phi,\rho\rangle=\langle\phi,\mathcal L^\dagger\rho\rangle.\]
 
 ### 2. 原文证明
@@ -7689,30 +7860,31 @@ theorem fpPolynomialAdjointPrinted : ∀ (a b ρ φ : ℝ → ℝ),
 
 | 原文对象或结论 | 当前Lean与范围 |
 |---|---|
-| 原文所选陈述 | 本条所引原句及展示公式；单个记号归入context_notation。 |
-| 对象/域/量词/前提 | 完整当前Lean及依赖定义；新增资格见[EXTRA] |
-| 网站首轮 | NEEDS_HUMAN：C：实际fpPolynomialAdjoint已显式加强：a/b/ρ/φ全C∞；a、b、φ的0至2阶导数各有多项式全局界；ρ的0至2阶导数各有正指数衰减界。两边真实积分恒等由两次分部积分成立，这个已给出的加强版数学PASS，[EXTRA]准确披露了附加资格。但它不是仅原文值增长假设的定理；repair_log再列fpPolynomialAdjoint_corrected而无实际签名，不能独立确认命名修正版，所以本条整体NEEDS_HUMAN。 |
+| 所引原句 | 本条所引原句及展示公式；单个记号归入context_notation。 |
+| 对象、域、量词及前提 | 以上完整声明；额外资格与未覆盖部分见下一段 |
+| 最新网站原始评价 | NEEDS_HUMAN；复审 |
 
 ### 5. [EXTRA] 与覆盖缺口
 
 - [EXTRA]原C∞P值增长不足以控制所有IBP边界；明确一、二阶a,b,φ多项式增长及ρ导数指数尾，保存整个非紧支撑真实积分恒等。
-- [EXTRA] 25号：原文版忠实性与数学疑误分开；补齐所交条目所属的现有_corrected完整签名，不从repair_log名称推断网站已通过修正版。
+- [EXTRA] 原文版忠实性与数学疑误分开；补齐所交条目所属的现有_corrected完整签名，不从repair_log名称推断网站已通过修正版。
 
 ### 6. 审计结论（含网站结论）
 
-网站原返回：NEEDS_HUMAN。C：实际fpPolynomialAdjoint已显式加强：a/b/ρ/φ全C∞；a、b、φ的0至2阶导数各有多项式全局界；ρ的0至2阶导数各有正指数衰减界。两边真实积分恒等由两次分部积分成立，这个已给出的加强版数学PASS，[EXTRA]准确披露了附加资格。但它不是仅原文值增长假设的定理；repair_log再列fpPolynomialAdjoint_corrected而无实际签名，不能独立确认命名修正版，所以本条整体NEEDS_HUMAN。
-本轮处理：原文版忠实性与数学疑误分开；补齐所交条目所属的现有_corrected完整签名，不从repair_log名称推断网站已通过修正版。
-本地单文件及逐声明依赖检查通过；含未完成证明依赖的声明仍标未证。原书疑误及修正版分别见勘误，当前修改版未获网站复审结论。
+网站原返回：NEEDS_HUMAN。fpPolynomialAdjoint及_corrected：a,b,ρ,φ为C∞；a,b,φ的0至2阶导数逐阶有全局多项式界，ρ的0至2阶导数逐阶有正指数尾；这些明确加强条件保证真正非紧支撑积分可积与所需边界消失，scalarGenerator=aφ′+b²φ″/2、scalarForward=-(aρ)′+(b²ρ)″/2，签名正确。fpPolynomialAdjointPrinted只约束k=0的函数值，忠实于原书CP∞和密度衰减，不能据此控制导数、边界或积分；Printed保留NEEDS_HUMAN。原文并未证明任意此类测试函数的Lφ可积，不能让Bochner总化积分掩盖问题。
+当前处理：修正版/限定声明=网站PASS；原文疑误或范围解释待导师。
+保留所交版本的明确结论。
+本地编译和逐声明依赖核对通过。原文疑误、各限定/修正版、反例的评价分别列出；有未完成证明依赖的声明仍为未证。
 
 ### 7. 状态与证明位置
 
-| 声明 | 状态 | 未证原因 |
-|---|---|---|
-| `MD.Ch06.fpPolynomialAdjoint` | 未证 | 缺大型理论 |
-| `MD.Ch06.fpPolynomialAdjoint_corrected` | 未证 | 缺大型理论 |
-| `MD.Ch06.fpPolynomialAdjointPrinted` | 未证 | 原书疑误不证 |
+| 声明 | 证明状态 | 未证原因 | 网站分版结论 |
+|---|---|---|---|
+| `MD.Ch06.fpPolynomialAdjoint` | 未证 | 缺大型理论 | PASS |
+| `MD.Ch06.fpPolynomialAdjoint_corrected` | 未证 | 缺大型理论 | PASS |
+| `MD.Ch06.fpPolynomialAdjointPrinted` | 未证 | 原书疑误不证 | 原文忠实性PASS；原书数学/范围NEEDS_HUMAN |
 
-位置：`Blueprint/Ch06.lean:1739`；验证：`blueprint/ch06/closeout25/FINAL_COMPILE.log`。
+位置：`Blueprint/Ch06.lean:1739`；本地核验记录：`blueprint/ch06/closeout26/FINAL_COMPILE.log`。
 
 ## MD-6.3.6-FPEquation
 
@@ -7739,7 +7911,7 @@ theorem fpEquation : ∀ {Ω : Type*} [MeasurableSpace Ω] (P : Measure Ω)
   Measurable (Function.uncurry X) →
   (∀ t, 0 ≤ t → @Measurable Ω ℝ (naturalHistory25 W t) inferInstance (X t)) →
   MolecularDynamics.Chapter06Review.adaptedSquareIntegrand P W (fun t sample ↦ b (X t sample)) →
-  ContDiff ℝ ∞ a → ContDiff ℝ ∞ b → ContDiff ℝ ∞ (Function.uncurry ρ) →
+  ContDiff ℝ ∞ a → ContDiff ℝ ∞ b → ContDiffOn ℝ ∞ (Function.uncurry ρ) {z : ℝ × ℝ | 0 < z.1} →
   (∀ t : ℝ, 0 < t → (∀ x, 0 ≤ ρ t x) ∧
     HasLaw (X t) (volume.withDensity (fun x ↦ ENNReal.ofReal (ρ t x))) P) →
   (∃ C : ℝ, 0 ≤ C ∧ ∃ r : ℕ, ∀ x, |a x|+|b x| ≤ C*(1+|x|)^r) →
@@ -7753,28 +7925,29 @@ theorem fpEquation : ∀ {Ω : Type*} [MeasurableSpace Ω] (P : Measure Ω)
 
 | 原文对象或结论 | 当前Lean与范围 |
 |---|---|
-| 原文所选陈述 | 本条所引原句及展示公式；单个记号归入context_notation。 |
-| 对象/域/量词/前提 | 完整当前Lean及依赖定义；新增资格见[EXTRA] |
-| 网站首轮 | NEEDS_HUMAN：C：量化P、W/X、自治a/b、固定x0和光滑ρ(t,x)；有PreBrownian、strictScalarSDE、C∞系数、每t>0非负真实density law、a/b值多项式界及ρ和时间导数的局部一致指数尾。结论完整覆盖所有t>0、x∈R，等于D50的负漂移加正扩散；未把弱PDE作前提，时间微分的尾部资格足够。问题是本声明未如条目18一样要求X相对W的历史适应、联合可测，也没有扩散被积过程的适应资格；D48只要求固定时间均方左端和残差收敛，本身不是已经建立的标准适应Itô解定义。任务未给出从这一更弱定义恢复标准Itô/鞅问题的桥接。无法仅凭名为strictScalarSDE就直接认定标准FP推导成立，需人工核定或补足桥接/前提。 |
+| 所引原句 | 本条当前覆盖范围：密度联合光滑性只要求在(0,∞)×ℝ，保留确定初态及正时刻密度；不再要求密度跨t=0光滑。严格网格积分解到通常适应Itô解的桥接仍未证明，PDE结论不当作前提。 |
+| 对象、域、量词及前提 | 以上完整声明；额外资格与未覆盖部分见下一段 |
+| 最新网站原始评价 | FAIL；复审 |
 
 ### 5. [EXTRA] 与覆盖缺口
 
-- [EXTRA]实际严格SDE与其真实平滑非负密度law、局部一致指数尾可求导资格；没有把弱PDE或所求点态PDE当假设。
-- [EXTRA] 25号：补X联合可测和相对W自然历史适应、扩散被积过程的适应平方可积资格；未建立严格网格解到标准适应Itô解的完整桥接，仍未证明。
+- [EXTRA] 密度联合光滑性只要求在(0,∞)×ℝ，保留确定初态及正时刻密度；不再要求密度跨t=0光滑。严格网格积分解到通常适应Itô解的桥接仍未证明，PDE结论不当作前提。
+- 覆盖缺口：严格网格积分关系到通常适应Itô解、以及一般Fokker–Planck推导尚缺证明；不将单文件编译当作这些桥接已完成。
 
 ### 6. 审计结论（含网站结论）
 
-网站原返回：NEEDS_HUMAN。C：量化P、W/X、自治a/b、固定x0和光滑ρ(t,x)；有PreBrownian、strictScalarSDE、C∞系数、每t>0非负真实density law、a/b值多项式界及ρ和时间导数的局部一致指数尾。结论完整覆盖所有t>0、x∈R，等于D50的负漂移加正扩散；未把弱PDE作前提，时间微分的尾部资格足够。问题是本声明未如条目18一样要求X相对W的历史适应、联合可测，也没有扩散被积过程的适应资格；D48只要求固定时间均方左端和残差收敛，本身不是已经建立的标准适应Itô解定义。任务未给出从这一更弱定义恢复标准Itô/鞅问题的桥接。无法仅凭名为strictScalarSDE就直接认定标准FP推导成立，需人工核定或补足桥接/前提。
-本轮处理：补X联合可测和相对W自然历史适应、扩散被积过程的适应平方可积资格；未建立严格网格解到标准适应Itô解的完整桥接，仍未证明。
-本地单文件及逐声明依赖检查通过；含未完成证明依赖的声明仍标未证。原书疑误及修正版分别见勘误，当前修改版未获网站复审结论。
+网站原返回：FAIL。fpEquation的P、W,X、a,b、确定初态x0及ρ(t,x)量词、自然历史适应与联合可测X、扩散平方可积、真实正密度HasLaw、多项式值界及正时间紧窗一致指数尾均已核对；结论是每t>0、每x的经典PDE，scalarForward系数正确，未把目标PDE设为前提。但ContDiff ℝ ∞ (Function.uncurry ρ)要求ρ在包括t=0的整个ℝ²光滑，同时strictScalarSDE要求X0=x0且AE路径在0连续，HasLaw对所有t>0成立。这使整组前提不可能：连续初态的边际趋δ_x0，而跨t=0连续的Lebesgue密度在小紧矩形有一致界，不能产生该原子极限。因此该签名是空泛的加强，并非原书“给定初始密度”的FP陈述，判FAIL；与sorry无关。仅补适应性不能修复时间域和初始法则。
+当前处理：按网站审校意见修复，本地核验通过（未再送网站）。
+密度联合光滑性只要求在(0,∞)×ℝ，保留确定初态及正时刻密度；不再要求密度跨t=0光滑。严格网格积分解到通常适应Itô解的桥接仍未证明，PDE结论不当作前提。
+本地编译和逐声明依赖核对通过。原文疑误、各限定/修正版、反例的评价分别列出；有未完成证明依赖的声明仍为未证。
 
 ### 7. 状态与证明位置
 
-| 声明 | 状态 | 未证原因 |
-|---|---|---|
-| `MD.Ch06.fpEquation` | 未证 | 缺大型理论 |
+| 声明 | 证明状态 | 未证原因 | 网站分版结论 |
+|---|---|---|---|
+| `MD.Ch06.fpEquation` | 未证 | 缺大型理论 | 修复后未再送网站 |
 
-位置：`Blueprint/Ch06.lean:1774`；验证：`blueprint/ch06/closeout25/FINAL_COMPILE.log`。
+位置：`Blueprint/Ch06.lean:1775`；本地核验记录：`blueprint/ch06/closeout26/FINAL_COMPILE.log`。
 
 ## MD-6.3.6-ZeroNoise
 
@@ -7805,28 +7978,29 @@ theorem zeroNoise :
 
 | 原文对象或结论 | 当前Lean与范围 |
 |---|---|
-| 原文所选陈述 | 本条Lean覆盖范围：仅覆盖生成元和前向算子的零扩散代数简化；SDE解到ODE积分方程及经典导数桥接未覆盖。 |
-| 对象/域/量词/前提 | 完整当前Lean及依赖定义；新增资格见[EXTRA] |
-| 网站首轮 | FAIL：C：签名仅量化a/f/ρ/x并证明两个算子代数化简，D47/D50中的零扩散确实消去；无须额外光滑前提也可作Lean形式恒等。但完整原句还断言过程的SDE退化为ODE，当前声明没有W/X、SDE解前提、轨道积分方程或导数结论。[EXTRA]也未说明只覆盖算子子句，故按全部结论审校为遗漏，不能把算子化简当作整条已形式化。 |
+| 所引原句 | 本条Lean覆盖范围：仅覆盖生成元和前向算子的零扩散代数简化；SDE解到ODE积分方程及经典导数桥接未覆盖。 |
+| 对象、域、量词及前提 | 以上完整声明；额外资格与未覆盖部分见下一段 |
+| 最新网站原始评价 | PASS；复审 |
 
 ### 5. [EXTRA] 与覆盖缺口
 
-- [EXTRA] 25号：仅覆盖生成元和前向算子的零扩散代数简化；SDE解到ODE积分方程及经典导数桥接未覆盖。
+- [EXTRA] 仅覆盖生成元和前向算子的零扩散代数简化；SDE解到ODE积分方程及经典导数桥接未覆盖。
 - 覆盖缺口：仅覆盖生成元和前向算子的零扩散代数简化；SDE解到ODE积分方程及经典导数桥接未覆盖。
 
 ### 6. 审计结论（含网站结论）
 
-网站原返回：FAIL。C：签名仅量化a/f/ρ/x并证明两个算子代数化简，D47/D50中的零扩散确实消去；无须额外光滑前提也可作Lean形式恒等。但完整原句还断言过程的SDE退化为ODE，当前声明没有W/X、SDE解前提、轨道积分方程或导数结论。[EXTRA]也未说明只覆盖算子子句，故按全部结论审校为遗漏，不能把算子化简当作整条已形式化。
-本轮处理：仅覆盖生成元和前向算子的零扩散代数简化；SDE解到ODE积分方程及经典导数桥接未覆盖。
-本地单文件及逐声明依赖检查通过；含未完成证明依赖的声明仍标未证。原书疑误及修正版分别见勘误，当前修改版未获网站复审结论。
+网站原返回：PASS。zeroNoise对任意实函数a,f,ρ和任意x给两合取：scalarGenerator(a,0)f=a f′及scalarForward(a,0)ρ=-(aρ)′。展开D25、D26即得，扩散项为恒零故不需可微性前提。覆盖范围已注明只是算子代数化简，未声称SDE解成为经典ODE解，PASS。
+当前处理：网站PASS（复审）。
+保留所交版本的明确结论。
+本地编译和逐声明依赖核对通过。原文疑误、各限定/修正版、反例的评价分别列出；有未完成证明依赖的声明仍为未证。
 
 ### 7. 状态与证明位置
 
-| 声明 | 状态 | 未证原因 |
-|---|---|---|
-| `MD.Ch06.zeroNoise` | 已证 | — |
+| 声明 | 证明状态 | 未证原因 | 网站分版结论 |
+|---|---|---|---|
+| `MD.Ch06.zeroNoise` | 已证 | — | PASS |
 
-位置：`Blueprint/Ch06.lean:1792`；验证：`blueprint/ch06/closeout25/FINAL_COMPILE.log`。
+位置：`Blueprint/Ch06.lean:1793`；本地核验记录：`blueprint/ch06/closeout26/FINAL_COMPILE.log`。
 
 ## MD-6.3.7-VectorIto
 
@@ -7838,7 +8012,8 @@ theorem zeroNoise :
 > \[dZ=a(Z)dt+B dW;\tag{6.39}\]
 > where $a$ is a function in $\mathbb R^m$ and $B$ is a constant matrix, then we have
 > \[d\phi(Z(t))=\nabla\phi\cdot[adt+B dW]+\tfrac12dW^TB^T\phi''B dW;\tag{6.40}\]
-> [原页关于Hessian、常矩阵范围及Wiener乘法规则的连接文本略]
+> where $\phi''$ is the Hessian matrix of $\phi$, i.e. the matrix of second partial derivatives of $\phi$ with respect to pairs of the variables. In some applications $B=B(Z)$, in which case the SDE (6.39) is said to involve multiplicative noise (as oppose to the additive case we consider when $B$ is constant). For a discussion of the differences and applications of these types of noise, see [289, 324].
+> All components on the right hand side of (6.40) are evaluated at $Z(t)$. Then using the shorthand rules $dW_i dW_j=dt\delta_{ij}$ (where $\delta_{ij}$ is one if $i=j$, zero otherwise), we have
 > \[d\phi(Z(t))=\nabla\phi\cdot[adt+B dW]+\tfrac12\operatorname{Tr}(B^T\phi''B)dt.\tag{6.41}\]
 
 ### 2. 原文证明
@@ -7870,27 +8045,28 @@ theorem vectorIto : ∀ {Ω : Type*} [MeasurableSpace Ω] {n r : ℕ} (P : Measu
 
 | 原文对象或结论 | 当前Lean与范围 |
 |---|---|
-| 原文所选陈述 | 本条Lean覆盖范围：改为共同向量自然过滤上的适应性，补X联合可测、各被积过程全部左和L²及局部均方时间资格；strictVectorSDE已含整族Wiener资格。原文相隔公式按网站corrected_json恢复连接文本。仍缺一般多维Itô理论。 |
-| 对象/域/量词/前提 | 完整当前Lean及依赖定义；新增资格见[EXTRA] |
-| 网站首轮 | FAIL：C：n/r、全部噪声坐标、常B、C²φ和真实strictVectorSDE均保留，vectorGenerator为漂移加½ BBᵀ:Hessian。各j的adaptedSquareIntegrand仅给相对单独Wj历史可测及∫E[g_j²]dt有限；这比通常共同向量历史更窄，且未在[EXTRA]披露。更严重的是它不保证D10要求的每一个等距左端和均在L²，甚至不保证每个采样时刻g_j(t)∈L²。即使完全标准适应光滑扩散，这组前提也不足以推出当前“strict”结论，故FAIL。 |
+| 所引原句 | 本条Lean覆盖范围：改为共同向量自然过滤上的适应性，补X联合可测、各被积过程全部左和L²及局部均方时间资格；strictVectorSDE已含整族Wiener资格。原文相隔公式按网站corrected_json恢复连接文本。仍缺一般多维Itô理论。 |
+| 对象、域、量词及前提 | 以上完整声明；额外资格与未覆盖部分见下一段 |
+| 最新网站原始评价 | PASS；复审 |
 
 ### 5. [EXTRA] 与覆盖缺口
 
-- [EXTRA] 25号：改为共同向量自然过滤上的适应性，补X联合可测、各被积过程全部左和L²及局部均方时间资格；strictVectorSDE已含整族Wiener资格。原文相隔公式按网站corrected_json恢复连接文本。仍缺一般多维Itô理论。
+- [EXTRA] 改为共同向量自然过滤上的适应性，补X联合可测、各被积过程全部左和L²及局部均方时间资格；strictVectorSDE已含整族Wiener资格。原文相隔公式按网站corrected_json恢复连接文本。仍缺一般多维Itô理论。
 
 ### 6. 审计结论（含网站结论）
 
-网站原返回：FAIL。C：n/r、全部噪声坐标、常B、C²φ和真实strictVectorSDE均保留，vectorGenerator为漂移加½ BBᵀ:Hessian。各j的adaptedSquareIntegrand仅给相对单独Wj历史可测及∫E[g_j²]dt有限；这比通常共同向量历史更窄，且未在[EXTRA]披露。更严重的是它不保证D10要求的每一个等距左端和均在L²，甚至不保证每个采样时刻g_j(t)∈L²。即使完全标准适应光滑扩散，这组前提也不足以推出当前“strict”结论，故FAIL。
-本轮处理：改为共同向量自然过滤上的适应性，补X联合可测、各被积过程全部左和L²及局部均方时间资格；strictVectorSDE已含整族Wiener资格。原文相隔公式按网站corrected_json恢复连接文本。仍缺一般多维Itô理论。
-本地单文件及逐声明依赖检查通过；含未完成证明依赖的声明仍标未证。原书疑误及修正版分别见勘误，当前修改版未获网站复审结论。
+网站原返回：PASS。vectorIto：任意n,r、共同向量Wiener及strictVectorSDE、常n×r矩阵B、C² φ、联合可测且共同向量自然历史适应X；vectorGridItoQualification25对每列方向导数被积过程给共同历史适应、每时及每网格L²、局部均方Hölder资格。结论逐T≥0存在r个严格标量积分，且φ增量减∫vectorGenerator等于积分和AE。共同过滤不误限为各自单坐标过滤；vectorDiffusion=Σ_ij(BBᵀ)_ij∂i∂jφ，等价Tr(Bᵀ Hess φ B)，漂移fderiv φ(a)与1/2正确。资格未预设结论，签名PASS；只审签名，不认证sorry证明。
+当前处理：网站PASS（复审）。
+保留所交版本的明确结论。
+本地编译和逐声明依赖核对通过。原文疑误、各限定/修正版、反例的评价分别列出；有未完成证明依赖的声明仍为未证。
 
 ### 7. 状态与证明位置
 
-| 声明 | 状态 | 未证原因 |
-|---|---|---|
-| `MD.Ch06.vectorIto` | 未证 | 缺大型理论 |
+| 声明 | 证明状态 | 未证原因 | 网站分版结论 |
+|---|---|---|---|
+| `MD.Ch06.vectorIto` | 未证 | 缺大型理论 | PASS |
 
-位置：`Blueprint/Ch06.lean:1803`；验证：`blueprint/ch06/closeout25/FINAL_COMPILE.log`。
+位置：`Blueprint/Ch06.lean:1804`；本地核验记录：`blueprint/ch06/closeout26/FINAL_COMPILE.log`。
 
 ## MD-6.3.7-VectorForward
 
@@ -7922,9 +8098,9 @@ def cylinderForwardPrinted_corrected {n r : ℕ} (a : (Fin n → ℝ) → (Fin n
 
 | 原文对象或结论 | 当前Lean与范围 |
 |---|---|
-| 原文所选陈述 | 本条所引原句及展示公式；单个记号归入context_notation。 |
-| 对象/域/量词/前提 | 完整当前Lean及依赖定义；新增资格见[EXTRA] |
-| 网站首轮 | PASS：C：任意n/r、向量漂移a、常n×r矩阵B、标量ρ及状态x；MD包装的精确项目定义为−∑i∂i(a_iρ)+½ vectorDiffusion B ρ，D51给BBᵀ与ρ的混合二阶导数，次序和系数正确。context_notation已明示这里只定义前向算子，不算从law证明PDE。代码块附带的cylinderForwardPrinted_corrected是另一source_id的别名，目标相同且无额外数学断言，不把它混算为本条证明或独立条目。 |
+| 所引原句 | 本条所引原句及展示公式；单个记号归入context_notation。 |
+| 对象、域、量词及前提 | 以上完整声明；额外资格与未覆盖部分见下一段 |
+| 最新网站原始评价 | PASS；首轮保留 |
 
 ### 5. [EXTRA] 与覆盖缺口
 
@@ -7933,17 +8109,18 @@ def cylinderForwardPrinted_corrected {n r : ℕ} (a : (Fin n → ℝ) → (Fin n
 ### 6. 审计结论（含网站结论）
 
 网站原返回：PASS。C：任意n/r、向量漂移a、常n×r矩阵B、标量ρ及状态x；MD包装的精确项目定义为−∑i∂i(a_iρ)+½ vectorDiffusion B ρ，D51给BBᵀ与ρ的混合二阶导数，次序和系数正确。context_notation已明示这里只定义前向算子，不算从law证明PDE。代码块附带的cylinderForwardPrinted_corrected是另一source_id的别名，目标相同且无额外数学断言，不把它混算为本条证明或独立条目。
-本轮处理：保留原审阅版本结论；本轮未改签名。
-本地单文件及逐声明依赖检查通过；含未完成证明依赖的声明仍标未证。原书疑误及修正版分别见勘误，当前修改版未获网站复审结论。
+当前处理：网站PASS（首轮未改版本）。
+保留所交版本的明确结论。
+本地编译和逐声明依赖核对通过。原文疑误、各限定/修正版、反例的评价分别列出；有未完成证明依赖的声明仍为未证。
 
 ### 7. 状态与证明位置
 
-| 声明 | 状态 | 未证原因 |
-|---|---|---|
-| `MD.Ch06.vectorForward` | 定义 | — |
-| `MD.Ch06.cylinderForwardPrinted_corrected` | 定义 | — |
+| 声明 | 证明状态 | 未证原因 | 网站分版结论 |
+|---|---|---|---|
+| `MD.Ch06.vectorForward` | 定义 | — | PASS |
+| `MD.Ch06.cylinderForwardPrinted_corrected` | 定义 | — | PASS |
 
-位置：`Blueprint/Ch06.lean:1821`；验证：`blueprint/ch06/closeout25/FINAL_COMPILE.log`。
+位置：`Blueprint/Ch06.lean:1822`；本地核验记录：`blueprint/ch06/closeout26/FINAL_COMPILE.log`。
 
 ## MD-6.3.7-DiffusionTrace
 
@@ -7983,9 +8160,9 @@ theorem diffusionTrace :
 
 | 原文对象或结论 | 当前Lean与范围 |
 |---|---|
-| 原文所选陈述 | 本条所引原句及展示公式；单个记号归入context_notation。 |
-| 对象/域/量词/前提 | 完整当前Lean及依赖定义；新增资格见[EXTRA] |
-| 网站首轮 | PASS：C：签名将Hessian抽象为任意n×n实矩阵H，B为n×r；没有额外正定或对称前提。trace(BᵀHB)=∑ij(BBᵀ)ij H_ij对任意H成立：按矩阵乘法展开并用实数乘法交换律及BBᵀ对称性重排。包括n/r=0的空和情况。取H=ρ的Hessian即原式，强化为任意矩阵没有丢结论，也不需要用Hessian对称性作隐藏前提。 |
+| 所引原句 | 本条所引原句及展示公式；单个记号归入context_notation。 |
+| 对象、域、量词及前提 | 以上完整声明；额外资格与未覆盖部分见下一段 |
+| 最新网站原始评价 | PASS；首轮保留 |
 
 ### 5. [EXTRA] 与覆盖缺口
 
@@ -7994,16 +8171,17 @@ theorem diffusionTrace :
 ### 6. 审计结论（含网站结论）
 
 网站原返回：PASS。C：签名将Hessian抽象为任意n×n实矩阵H，B为n×r；没有额外正定或对称前提。trace(BᵀHB)=∑ij(BBᵀ)ij H_ij对任意H成立：按矩阵乘法展开并用实数乘法交换律及BBᵀ对称性重排。包括n/r=0的空和情况。取H=ρ的Hessian即原式，强化为任意矩阵没有丢结论，也不需要用Hessian对称性作隐藏前提。
-本轮处理：保留原审阅版本结论；本轮未改签名。
-本地单文件及逐声明依赖检查通过；含未完成证明依赖的声明仍标未证。原书疑误及修正版分别见勘误，当前修改版未获网站复审结论。
+当前处理：网站PASS（首轮未改版本）。
+保留所交版本的明确结论。
+本地编译和逐声明依赖核对通过。原文疑误、各限定/修正版、反例的评价分别列出；有未完成证明依赖的声明仍为未证。
 
 ### 7. 状态与证明位置
 
-| 声明 | 状态 | 未证原因 |
-|---|---|---|
-| `MD.Ch06.diffusionTrace` | 已证 | — |
+| 声明 | 证明状态 | 未证原因 | 网站分版结论 |
+|---|---|---|---|
+| `MD.Ch06.diffusionTrace` | 已证 | — | PASS |
 
-位置：`Blueprint/Ch06.lean:1831`；验证：`blueprint/ch06/closeout25/FINAL_COMPILE.log`。
+位置：`Blueprint/Ch06.lean:1832`；本地核验记录：`blueprint/ch06/closeout26/FINAL_COMPILE.log`。
 
 ## MD-6.3.7-VectorFPEquation
 
@@ -8040,9 +8218,9 @@ theorem vectorFPEquation : ∀ {Ω : Type*} [MeasurableSpace Ω] {n r : ℕ} (P 
 
 | 原文对象或结论 | 当前Lean与范围 |
 |---|---|
-| 原文所选陈述 | 本条所引原句及展示公式；单个记号归入context_notation。 |
-| 对象/域/量词/前提 | 完整当前Lean及依赖定义；新增资格见[EXTRA] |
-| 网站首轮 | PASS：全部n个状态、r个噪声、常矩形B、确定初值和任意正时刻/空间点均保留。D2/D7/D8给出负散度及(1/2)∑(BBᵀ)ij∂ijρ，等于原迹公式。D3/D4是实际L²左和积分及路径方程，没有把PDE作前提；光滑、多项式漂移增长、局部一致指数密度/时间导数尾界均属已标[EXTRA]的充分资格。 |
+| 所引原句 | 本条所引原句及展示公式；单个记号归入context_notation。 |
+| 对象、域、量词及前提 | 以上完整声明；额外资格与未覆盖部分见下一段 |
+| 最新网站原始评价 | PASS；首轮保留 |
 
 ### 5. [EXTRA] 与覆盖缺口
 
@@ -8051,16 +8229,17 @@ theorem vectorFPEquation : ∀ {Ω : Type*} [MeasurableSpace Ω] {n r : ℕ} (P 
 ### 6. 审计结论（含网站结论）
 
 网站原返回：PASS。全部n个状态、r个噪声、常矩形B、确定初值和任意正时刻/空间点均保留。D2/D7/D8给出负散度及(1/2)∑(BBᵀ)ij∂ijρ，等于原迹公式。D3/D4是实际L²左和积分及路径方程，没有把PDE作前提；光滑、多项式漂移增长、局部一致指数密度/时间导数尾界均属已标[EXTRA]的充分资格。
-本轮处理：保留原审阅版本结论；本轮未改签名。
-本地单文件及逐声明依赖检查通过；含未完成证明依赖的声明仍标未证。原书疑误及修正版分别见勘误，当前修改版未获网站复审结论。
+当前处理：网站PASS（首轮未改版本）。
+保留所交版本的明确结论。
+本地编译和逐声明依赖核对通过。原文疑误、各限定/修正版、反例的评价分别列出；有未完成证明依赖的声明仍为未证。
 
 ### 7. 状态与证明位置
 
-| 声明 | 状态 | 未证原因 |
-|---|---|---|
-| `MD.Ch06.vectorFPEquation` | 未证 | 缺大型理论 |
+| 声明 | 证明状态 | 未证原因 | 网站分版结论 |
+|---|---|---|---|
+| `MD.Ch06.vectorFPEquation` | 未证 | 缺大型理论 | PASS |
 
-位置：`Blueprint/Ch06.lean:1850`；验证：`blueprint/ch06/closeout25/FINAL_COMPILE.log`。
+位置：`Blueprint/Ch06.lean:1851`；本地核验记录：`blueprint/ch06/closeout26/FINAL_COMPILE.log`。
 
 ## MD-6.3.8-LangevinMassForward
 
@@ -8091,9 +8270,9 @@ def langevinMassForward {n : ℕ} (m : MolecularDynamics.Chapter06Review.V n) (U
 
 | 原文对象或结论 | 当前Lean与范围 |
 |---|---|
-| 原文所选陈述 | 本条所引原句及展示公式；单个记号归入context_notation。 |
-| 对象/域/量词/前提 | 完整当前Lean及依赖定义；新增资格见[EXTRA] |
-| 网站首轮 | PASS：Phase n明确是全部位置和动量的乘积。对每个i，位置项为−mi⁻¹pi∂qiρ，动量项对(∂iU+γpi)ρ整体求导，扩散为γβ⁻¹mi∂pi²ρ；β⁻¹=kBT。系数不依赖q，所以位置散度展开正确。此为算子定义，无须把密度law或PDE证明混入定义。 |
+| 所引原句 | 本条所引原句及展示公式；单个记号归入context_notation。 |
+| 对象、域、量词及前提 | 以上完整声明；额外资格与未覆盖部分见下一段 |
+| 最新网站原始评价 | PASS；首轮保留 |
 
 ### 5. [EXTRA] 与覆盖缺口
 
@@ -8102,16 +8281,17 @@ def langevinMassForward {n : ℕ} (m : MolecularDynamics.Chapter06Review.V n) (U
 ### 6. 审计结论（含网站结论）
 
 网站原返回：PASS。Phase n明确是全部位置和动量的乘积。对每个i，位置项为−mi⁻¹pi∂qiρ，动量项对(∂iU+γpi)ρ整体求导，扩散为γβ⁻¹mi∂pi²ρ；β⁻¹=kBT。系数不依赖q，所以位置散度展开正确。此为算子定义，无须把密度law或PDE证明混入定义。
-本轮处理：保留原审阅版本结论；本轮未改签名。
-本地单文件及逐声明依赖检查通过；含未完成证明依赖的声明仍标未证。原书疑误及修正版分别见勘误，当前修改版未获网站复审结论。
+当前处理：网站PASS（首轮未改版本）。
+保留所交版本的明确结论。
+本地编译和逐声明依赖核对通过。原文疑误、各限定/修正版、反例的评价分别列出；有未完成证明依赖的声明仍为未证。
 
 ### 7. 状态与证明位置
 
-| 声明 | 状态 | 未证原因 |
-|---|---|---|
-| `MD.Ch06.langevinMassForward` | 定义 | — |
+| 声明 | 证明状态 | 未证原因 | 网站分版结论 |
+|---|---|---|---|
+| `MD.Ch06.langevinMassForward` | 定义 | — | PASS |
 
-位置：`Blueprint/Ch06.lean:1865`；验证：`blueprint/ch06/closeout25/FINAL_COMPILE.log`。
+位置：`Blueprint/Ch06.lean:1866`；本地核验记录：`blueprint/ch06/closeout26/FINAL_COMPILE.log`。
 
 ## MD-6.3.8-MomentumMassLaplacian
 
@@ -8137,9 +8317,9 @@ def momentumMassLaplacian {n : ℕ} (m : Fin n → ℝ)
 
 | 原文对象或结论 | 当前Lean与范围 |
 |---|---|
-| 原文所选陈述 | 本条所引原句及展示公式；单个记号归入context_notation。 |
-| 对象/域/量词/前提 | 完整当前Lean及依赖定义；新增资格见[EXTRA] |
-| 网站首轮 | PASS：对所有Fin n动量方向(0,ei)作两次Fréchet导数，再以mi相乘求和，恰为原正质量权重动量Laplacian；没有误用mi⁻¹或位置方向。 |
+| 所引原句 | 本条所引原句及展示公式；单个记号归入context_notation。 |
+| 对象、域、量词及前提 | 以上完整声明；额外资格与未覆盖部分见下一段 |
+| 最新网站原始评价 | PASS；首轮保留 |
 
 ### 5. [EXTRA] 与覆盖缺口
 
@@ -8148,16 +8328,17 @@ def momentumMassLaplacian {n : ℕ} (m : Fin n → ℝ)
 ### 6. 审计结论（含网站结论）
 
 网站原返回：PASS。对所有Fin n动量方向(0,ei)作两次Fréchet导数，再以mi相乘求和，恰为原正质量权重动量Laplacian；没有误用mi⁻¹或位置方向。
-本轮处理：保留原审阅版本结论；本轮未改签名。
-本地单文件及逐声明依赖检查通过；含未完成证明依赖的声明仍标未证。原书疑误及修正版分别见勘误，当前修改版未获网站复审结论。
+当前处理：网站PASS（首轮未改版本）。
+保留所交版本的明确结论。
+本地编译和逐声明依赖核对通过。原文疑误、各限定/修正版、反例的评价分别列出；有未完成证明依赖的声明仍为未证。
 
 ### 7. 状态与证明位置
 
-| 声明 | 状态 | 未证原因 |
-|---|---|---|
-| `MD.Ch06.momentumMassLaplacian` | 定义 | — |
+| 声明 | 证明状态 | 未证原因 | 网站分版结论 |
+|---|---|---|---|
+| `MD.Ch06.momentumMassLaplacian` | 定义 | — | PASS |
 
-位置：`Blueprint/Ch06.lean:1872`；验证：`blueprint/ch06/closeout25/FINAL_COMPILE.log`。
+位置：`Blueprint/Ch06.lean:1873`；本地核验记录：`blueprint/ch06/closeout26/FINAL_COMPILE.log`。
 
 ## MD-6.3.8-LangevinFPEquation
 
@@ -8193,9 +8374,9 @@ theorem langevinFPEquation : ∀ {Ω : Type*} [MeasurableSpace Ω] {n : ℕ} (P 
 
 | 原文对象或结论 | 当前Lean与范围 |
 |---|---|
-| 原文所选陈述 | 本条所引原句及展示公式；单个记号归入context_notation。 |
-| 对象/域/量词/前提 | 完整当前Lean及依赖定义；新增资格见[EXTRA] |
-| 网站首轮 | PASS：实际前提调用的是Chapter06Review.langevinMassSDE，不是同名MD加强版；已逐字展开核对：它给出连续路径和所有非负t的q、p积分方程，噪声为sqrt(2γβ⁻¹mi)(Wi(t)−Wi(0))。正质量、γ/β正性及U光滑由定理另行补齐，连续路径保证这里的漂移沿有限区间可积。结论对任意t>0、全部相点给出真实law密度的时间导数等于D10算子；没有预设PDE。 |
+| 所引原句 | 本条所引原句及展示公式；单个记号归入context_notation。 |
+| 对象、域、量词及前提 | 以上完整声明；额外资格与未覆盖部分见下一段 |
+| 最新网站原始评价 | PASS；首轮保留 |
 
 ### 5. [EXTRA] 与覆盖缺口
 
@@ -8204,16 +8385,17 @@ theorem langevinFPEquation : ∀ {Ω : Type*} [MeasurableSpace Ω] {n : ℕ} (P 
 ### 6. 审计结论（含网站结论）
 
 网站原返回：PASS。实际前提调用的是Chapter06Review.langevinMassSDE，不是同名MD加强版；已逐字展开核对：它给出连续路径和所有非负t的q、p积分方程，噪声为sqrt(2γβ⁻¹mi)(Wi(t)−Wi(0))。正质量、γ/β正性及U光滑由定理另行补齐，连续路径保证这里的漂移沿有限区间可积。结论对任意t>0、全部相点给出真实law密度的时间导数等于D10算子；没有预设PDE。
-本轮处理：保留原审阅版本结论；本轮未改签名。
-本地单文件及逐声明依赖检查通过；含未完成证明依赖的声明仍标未证。原书疑误及修正版分别见勘误，当前修改版未获网站复审结论。
+当前处理：网站PASS（首轮未改版本）。
+保留所交版本的明确结论。
+本地编译和逐声明依赖核对通过。原文疑误、各限定/修正版、反例的评价分别列出；有未完成证明依赖的声明仍为未证。
 
 ### 7. 状态与证明位置
 
-| 声明 | 状态 | 未证原因 |
-|---|---|---|
-| `MD.Ch06.langevinFPEquation` | 未证 | 缺大型理论 |
+| 声明 | 证明状态 | 未证原因 | 网站分版结论 |
+|---|---|---|---|
+| `MD.Ch06.langevinFPEquation` | 未证 | 缺大型理论 | PASS |
 
-位置：`Blueprint/Ch06.lean:1878`；验证：`blueprint/ch06/closeout25/FINAL_COMPILE.log`。
+位置：`Blueprint/Ch06.lean:1879`；本地核验记录：`blueprint/ch06/closeout26/FINAL_COMPILE.log`。
 
 ## MD-6.4.2-MassGibbsStationary
 
@@ -8242,9 +8424,9 @@ theorem massGibbsStationary : ∀ {n : ℕ} (m : Fin n → ℝ) (U : (Fin n → 
 
 | 原文对象或结论 | 当前Lean与范围 |
 |---|---|
-| 原文所选陈述 | 本条所引原句及展示公式；单个记号归入context_notation。 |
-| 对象/域/量词/前提 | 完整当前Lean及依赖定义；新增资格见[EXTRA] |
-| 网站首轮 | PASS：D10与massHamiltonian的全部质量权重匹配：H=∑pi²/(2mi)+U，ρ=exp(−βH)。Hamilton项互消，摩擦项与γβ⁻¹mi的扩散项互消。正质量、光滑U及γ/β正性已明列。只断言形式算子为零，[EXTRA]已说明没有归一化或测度不变性结论；例如U=0时权重在非紧q空间不归一化也不影响该代数微分恒等式。 |
+| 所引原句 | 本条所引原句及展示公式；单个记号归入context_notation。 |
+| 对象、域、量词及前提 | 以上完整声明；额外资格与未覆盖部分见下一段 |
+| 最新网站原始评价 | PASS；首轮保留 |
 
 ### 5. [EXTRA] 与覆盖缺口
 
@@ -8253,16 +8435,17 @@ theorem massGibbsStationary : ∀ {n : ℕ} (m : Fin n → ℝ) (U : (Fin n → 
 ### 6. 审计结论（含网站结论）
 
 网站原返回：PASS。D10与massHamiltonian的全部质量权重匹配：H=∑pi²/(2mi)+U，ρ=exp(−βH)。Hamilton项互消，摩擦项与γβ⁻¹mi的扩散项互消。正质量、光滑U及γ/β正性已明列。只断言形式算子为零，[EXTRA]已说明没有归一化或测度不变性结论；例如U=0时权重在非紧q空间不归一化也不影响该代数微分恒等式。
-本轮处理：保留原审阅版本结论；本轮未改签名。
-本地单文件及逐声明依赖检查通过；含未完成证明依赖的声明仍标未证。原书疑误及修正版分别见勘误，当前修改版未获网站复审结论。
+当前处理：网站PASS（首轮未改版本）。
+保留所交版本的明确结论。
+本地编译和逐声明依赖核对通过。原文疑误、各限定/修正版、反例的评价分别列出；有未完成证明依赖的声明仍为未证。
 
 ### 7. 状态与证明位置
 
-| 声明 | 状态 | 未证原因 |
-|---|---|---|
-| `MD.Ch06.massGibbsStationary` | 未证 | 时间盒止 |
+| 声明 | 证明状态 | 未证原因 | 网站分版结论 |
+|---|---|---|---|
+| `MD.Ch06.massGibbsStationary` | 未证 | 时间盒止 | PASS |
 
-位置：`Blueprint/Ch06.lean:1893`；验证：`blueprint/ch06/closeout25/FINAL_COMPILE.log`。
+位置：`Blueprint/Ch06.lean:1894`；本地核验记录：`blueprint/ch06/closeout26/FINAL_COMPILE.log`。
 
 ## MD-6.4.2-UnitMassGibbsStationaryBridge
 
@@ -8291,9 +8474,9 @@ theorem unitMassGibbsStationaryBridge {N : ℕ}
 
 | 原文对象或结论 | 当前Lean与范围 |
 |---|---|
-| 原文所选陈述 | 本条所引原句及展示公式；单个记号归入context_notation。 |
-| 对象/域/量词/前提 | 完整当前Lean及依赖定义；新增资格见[EXTRA] |
-| 网站首轮 | PASS：单位质量相空间、机械Hamiltonian、Gibbs指数及σ²=2γ/β一致。给出的前向定义沿冻结漂移方向作一阶导数，加实际相空间散度及全部动量二阶导数；散度为−γN，势力只需U可微，因为散度只对动量力的动量变量求导。结论是任意z上的形式消去，不声称一般质量或概率测度不变性。 |
+| 所引原句 | 本条所引原句及展示公式；单个记号归入context_notation。 |
+| 对象、域、量词及前提 | 以上完整声明；额外资格与未覆盖部分见下一段 |
+| 最新网站原始评价 | PASS；首轮保留 |
 
 ### 5. [EXTRA] 与覆盖缺口
 
@@ -8302,16 +8485,17 @@ theorem unitMassGibbsStationaryBridge {N : ℕ}
 ### 6. 审计结论（含网站结论）
 
 网站原返回：PASS。单位质量相空间、机械Hamiltonian、Gibbs指数及σ²=2γ/β一致。给出的前向定义沿冻结漂移方向作一阶导数，加实际相空间散度及全部动量二阶导数；散度为−γN，势力只需U可微，因为散度只对动量力的动量变量求导。结论是任意z上的形式消去，不声称一般质量或概率测度不变性。
-本轮处理：保留原审阅版本结论；本轮未改签名。
-本地单文件及逐声明依赖检查通过；含未完成证明依赖的声明仍标未证。原书疑误及修正版分别见勘误，当前修改版未获网站复审结论。
+当前处理：网站PASS（首轮未改版本）。
+保留所交版本的明确结论。
+本地编译和逐声明依赖核对通过。原文疑误、各限定/修正版、反例的评价分别列出；有未完成证明依赖的声明仍为未证。
 
 ### 7. 状态与证明位置
 
-| 声明 | 状态 | 未证原因 |
-|---|---|---|
-| `MD.Ch06.unitMassGibbsStationaryBridge` | 已证 | — |
+| 声明 | 证明状态 | 未证原因 | 网站分版结论 |
+|---|---|---|---|
+| `MD.Ch06.unitMassGibbsStationaryBridge` | 已证 | — | PASS |
 
-位置：`Blueprint/Ch06.lean:1901`；验证：`blueprint/ch06/closeout25/FINAL_COMPILE.log`。
+位置：`Blueprint/Ch06.lean:1902`；本地核验记录：`blueprint/ch06/closeout26/FINAL_COMPILE.log`。
 
 ## MD-6.3.3-VariableFrictionForward
 
@@ -8342,9 +8526,9 @@ def variableFrictionForward {n r : ℕ} (m : Fin n → ℝ) (U : (Fin n → ℝ)
 
 | 原文对象或结论 | 当前Lean与范围 |
 |---|---|
-| 原文所选陈述 | 本条所引原句及展示公式；单个记号归入context_notation。 |
-| 对象/域/量词/前提 | 完整当前Lean及依赖定义；新增资格见[EXTRA] |
-| 网站首轮 | PASS：C：定义对任意n、r、m、U、空间依赖Γ、θ、密度ρ和相点x；位置项−m_i⁻¹p_i∂qiρ，动量项∂pi[(∂iU+(ΓΓᵀp)i)ρ]，扩散θ√m_i√m_k(ΓΓᵀ)ik∂pi∂pkρ，恰为该SDE协方差的一半。Γ只依赖q，不需动量导数落在Γ上。签名为形式算子，可在非正m上有Lean总定义；物理对应限于正质量、光滑密度，不把此定义当PDE或stationarity证明。[EXTRA]的任意质量应理解为任意正质量。 |
+| 所引原句 | 本条所引原句及展示公式；单个记号归入context_notation。 |
+| 对象、域、量词及前提 | 以上完整声明；额外资格与未覆盖部分见下一段 |
+| 最新网站原始评价 | PASS；首轮保留 |
 
 ### 5. [EXTRA] 与覆盖缺口
 
@@ -8353,16 +8537,17 @@ def variableFrictionForward {n r : ℕ} (m : Fin n → ℝ) (U : (Fin n → ℝ)
 ### 6. 审计结论（含网站结论）
 
 网站原返回：PASS。C：定义对任意n、r、m、U、空间依赖Γ、θ、密度ρ和相点x；位置项−m_i⁻¹p_i∂qiρ，动量项∂pi[(∂iU+(ΓΓᵀp)i)ρ]，扩散θ√m_i√m_k(ΓΓᵀ)ik∂pi∂pkρ，恰为该SDE协方差的一半。Γ只依赖q，不需动量导数落在Γ上。签名为形式算子，可在非正m上有Lean总定义；物理对应限于正质量、光滑密度，不把此定义当PDE或stationarity证明。[EXTRA]的任意质量应理解为任意正质量。
-本轮处理：保留原审阅版本结论；本轮未改签名。
-本地单文件及逐声明依赖检查通过；含未完成证明依赖的声明仍标未证。原书疑误及修正版分别见勘误，当前修改版未获网站复审结论。
+当前处理：网站PASS（首轮未改版本）。
+保留所交版本的明确结论。
+本地编译和逐声明依赖核对通过。原文疑误、各限定/修正版、反例的评价分别列出；有未完成证明依赖的声明仍为未证。
 
 ### 7. 状态与证明位置
 
-| 声明 | 状态 | 未证原因 |
-|---|---|---|
-| `MD.Ch06.variableFrictionForward` | 定义 | — |
+| 声明 | 证明状态 | 未证原因 | 网站分版结论 |
+|---|---|---|---|
+| `MD.Ch06.variableFrictionForward` | 定义 | — | PASS |
 
-位置：`Blueprint/Ch06.lean:1909`；验证：`blueprint/ch06/closeout25/FINAL_COMPILE.log`。
+位置：`Blueprint/Ch06.lean:1910`；本地核验记录：`blueprint/ch06/closeout26/FINAL_COMPILE.log`。
 
 ## MD-6.3.3-VariableFrictionCanonicalPrinted
 
@@ -8387,7 +8572,7 @@ theorem variableFrictionCanonicalPrinted : ∀ {n r : ℕ} (m : Fin n → ℝ) (
   sorry
 ```
 
-同问题的独立修正版（位于另一source_id）：
+同问题的独立限定/修正版（位于另一条）：
 ```lean
 theorem variableFrictionCanonicalPrinted_corrected : ∀ {n r : ℕ} (m : Fin n → ℝ) (U : (Fin n → ℝ) → ℝ)
     (Γ : (Fin n → ℝ) → Matrix (Fin n) (Fin r) ℝ) (θ : ℝ),
@@ -8402,28 +8587,29 @@ theorem variableFrictionCanonicalPrinted_corrected : ∀ {n r : ℕ} (m : Fin n 
 
 | 原文对象或结论 | 当前Lean与范围 |
 |---|---|
-| 原文所选陈述 | 本条所引原句及展示公式；单个记号归入context_notation。 |
-| 对象/域/量词/前提 | 完整当前Lean及依赖定义；新增资格见[EXTRA] |
-| 网站首轮 | NEEDS_HUMAN：C：量化任意n/r、正m、光滑U/Γ、θ>0以及所有相点，断言D42作用于未归一化exp(−H/θ)为0；对象、Hamiltonian质量分母和全部结论无遗漏。但该Printed全称命题不成立。作为原书canonical目标的必要检验可保留，不能认定数学PASS；也没有证明归一化存在或采样遍历性。[EXTRA]正确提醒必要性，不修复非交换问题。 |
+| 所引原句 | 本条所引原句及展示公式；单个记号归入context_notation。 |
+| 对象、域、量词及前提 | 以上完整声明；额外资格与未覆盖部分见下一段 |
+| 最新网站原始评价 | NEEDS_HUMAN；首轮保留 |
 
 ### 5. [EXTRA] 与覆盖缺口
 
 - [EXTRA]该条为原恢复canonical目标的必要形式stationarity检验；完整任意质量/Γ对象保留，不以必要检验计完整采样收敛已证。
-- [EXTRA] 25号：原文版忠实性与数学疑误分开；补齐所交条目所属的现有_corrected完整签名，不从repair_log名称推断网站已通过修正版。
+- [EXTRA] 原文版忠实性与数学疑误分开；补齐所交条目所属的现有_corrected完整签名，不从repair_log名称推断网站已通过修正版。
 
 ### 6. 审计结论（含网站结论）
 
 网站原返回：NEEDS_HUMAN。C：量化任意n/r、正m、光滑U/Γ、θ>0以及所有相点，断言D42作用于未归一化exp(−H/θ)为0；对象、Hamiltonian质量分母和全部结论无遗漏。但该Printed全称命题不成立。作为原书canonical目标的必要检验可保留，不能认定数学PASS；也没有证明归一化存在或采样遍历性。[EXTRA]正确提醒必要性，不修复非交换问题。
-本轮处理：原文版忠实性与数学疑误分开；补齐所交条目所属的现有_corrected完整签名，不从repair_log名称推断网站已通过修正版。
-本地单文件及逐声明依赖检查通过；含未完成证明依赖的声明仍标未证。原书疑误及修正版分别见勘误，当前修改版未获网站复审结论。
+当前处理：原文疑误或语义范围待导师；不冒称未提供版本已通过。
+保留所交版本的明确结论。
+本地编译和逐声明依赖核对通过。原文疑误、各限定/修正版、反例的评价分别列出；有未完成证明依赖的声明仍为未证。
 
 ### 7. 状态与证明位置
 
-| 声明 | 状态 | 未证原因 |
-|---|---|---|
-| `MD.Ch06.variableFrictionCanonicalPrinted` | 未证 | 原书疑误不证 |
+| 声明 | 证明状态 | 未证原因 | 网站分版结论 |
+|---|---|---|---|
+| `MD.Ch06.variableFrictionCanonicalPrinted` | 未证 | 原书疑误不证 | 未获单独PASS；见分版意见 |
 
-位置：`Blueprint/Ch06.lean:1922`；验证：`blueprint/ch06/closeout25/FINAL_COMPILE.log`。
+位置：`Blueprint/Ch06.lean:1923`；本地核验记录：`blueprint/ch06/closeout26/FINAL_COMPILE.log`。
 
 ## MD-6.3.3-VariableFrictionCommutingStationary
 
@@ -8462,9 +8648,9 @@ theorem variableFrictionCanonicalPrinted_corrected : ∀ {n r : ℕ} (m : Fin n 
 
 | 原文对象或结论 | 当前Lean与范围 |
 |---|---|
-| 原文所选陈述 | 本条所引原句及展示公式；单个记号归入context_notation。 |
-| 对象/域/量词/前提 | 完整当前Lean及依赖定义；新增资格见[EXTRA] |
-| 网站首轮 | PASS：C：除条目13所有对象/域/量词外，明确∀q，A(q)M=MA(q)，A=ΓΓᵀ。正对角M下A仅在同质量块内耦合，故M½AM½=AM，噪声协方差2θAM与摩擦Ap匹配。D43质量Hamiltonian给Hamilton输运抵消、动量部分抵消，所有x处形式Gibbs stationarity结论正确。无须Γ与M本身交换，实际条件正好作用于A。未预设结论，也未宣称归一化、遍历或平均收敛。 |
+| 所引原句 | 本条所引原句及展示公式；单个记号归入context_notation。 |
+| 对象、域、量词及前提 | 以上完整声明；额外资格与未覆盖部分见下一段 |
+| 最新网站原始评价 | PASS；首轮保留 |
 
 ### 5. [EXTRA] 与覆盖缺口
 
@@ -8473,17 +8659,18 @@ theorem variableFrictionCanonicalPrinted_corrected : ∀ {n r : ℕ} (m : Fin n 
 ### 6. 审计结论（含网站结论）
 
 网站原返回：PASS。C：除条目13所有对象/域/量词外，明确∀q，A(q)M=MA(q)，A=ΓΓᵀ。正对角M下A仅在同质量块内耦合，故M½AM½=AM，噪声协方差2θAM与摩擦Ap匹配。D43质量Hamiltonian给Hamilton输运抵消、动量部分抵消，所有x处形式Gibbs stationarity结论正确。无须Γ与M本身交换，实际条件正好作用于A。未预设结论，也未宣称归一化、遍历或平均收敛。
-本轮处理：保留原审阅版本结论；本轮未改签名。
-本地单文件及逐声明依赖检查通过；含未完成证明依赖的声明仍标未证。原书疑误及修正版分别见勘误，当前修改版未获网站复审结论。
+当前处理：网站PASS（首轮未改版本）。
+保留所交版本的明确结论。
+本地编译和逐声明依赖核对通过。原文疑误、各限定/修正版、反例的评价分别列出；有未完成证明依赖的声明仍为未证。
 
 ### 7. 状态与证明位置
 
-| 声明 | 状态 | 未证原因 |
-|---|---|---|
-| `MD.Ch06.variableFrictionCommutingStationary` | 未证 | 时间盒止 |
-| `MD.Ch06.variableFrictionCanonicalPrinted_corrected` | 未证 | 缺大型理论 |
+| 声明 | 证明状态 | 未证原因 | 网站分版结论 |
+|---|---|---|---|
+| `MD.Ch06.variableFrictionCommutingStationary` | 未证 | 时间盒止 | PASS |
+| `MD.Ch06.variableFrictionCanonicalPrinted_corrected` | 未证 | 缺大型理论 | 未获单独PASS；见分版意见 |
 
-位置：`Blueprint/Ch06.lean:1931`；验证：`blueprint/ch06/closeout25/FINAL_COMPILE.log`。
+位置：`Blueprint/Ch06.lean:1932`；本地核验记录：`blueprint/ch06/closeout26/FINAL_COMPILE.log`。
 
 ## MD-6.4.1-StochasticMatrix
 
@@ -8510,9 +8697,9 @@ def stochasticMatrix {k : ℕ} (PiMark : Matrix (Fin k) (Fin k) ℝ) : Prop :=
 
 | 原文对象或结论 | 当前Lean与范围 |
 |---|---|
-| 原文所选陈述 | 本条所引原句及展示公式；单个记号归入context_notation。 |
-| 对象/域/量词/前提 | 完整当前Lean及依赖定义；新增资格见[EXTRA] |
-| 网站首轮 | PASS：任意有限k×k实矩阵，所有元素非负且每行总和1，恰为右随机矩阵；每项≤1由这些条件推出，非遗漏。Fin k的0起始重编号与原{1,…,k}无语义差异；k=0为形式定义的空域推广。这里只定义矩阵资格，不伪称构造了随机过程。 |
+| 所引原句 | 本条所引原句及展示公式；单个记号归入context_notation。 |
+| 对象、域、量词及前提 | 以上完整声明；额外资格与未覆盖部分见下一段 |
+| 最新网站原始评价 | PASS；首轮保留 |
 
 ### 5. [EXTRA] 与覆盖缺口
 
@@ -8521,16 +8708,17 @@ def stochasticMatrix {k : ℕ} (PiMark : Matrix (Fin k) (Fin k) ℝ) : Prop :=
 ### 6. 审计结论（含网站结论）
 
 网站原返回：PASS。任意有限k×k实矩阵，所有元素非负且每行总和1，恰为右随机矩阵；每项≤1由这些条件推出，非遗漏。Fin k的0起始重编号与原{1,…,k}无语义差异；k=0为形式定义的空域推广。这里只定义矩阵资格，不伪称构造了随机过程。
-本轮处理：保留原审阅版本结论；本轮未改签名。
-本地单文件及逐声明依赖检查通过；含未完成证明依赖的声明仍标未证。原书疑误及修正版分别见勘误，当前修改版未获网站复审结论。
+当前处理：网站PASS（首轮未改版本）。
+保留所交版本的明确结论。
+本地编译和逐声明依赖核对通过。原文疑误、各限定/修正版、反例的评价分别列出；有未完成证明依赖的声明仍为未证。
 
 ### 7. 状态与证明位置
 
-| 声明 | 状态 | 未证原因 |
-|---|---|---|
-| `MD.Ch06.stochasticMatrix` | 定义 | — |
+| 声明 | 证明状态 | 未证原因 | 网站分版结论 |
+|---|---|---|---|
+| `MD.Ch06.stochasticMatrix` | 定义 | — | PASS |
 
-位置：`Blueprint/Ch06.lean:1949`；验证：`blueprint/ch06/closeout25/FINAL_COMPILE.log`。
+位置：`Blueprint/Ch06.lean:1950`；本地核验记录：`blueprint/ch06/closeout26/FINAL_COMPILE.log`。
 
 ## MD-6.4.1-FiniteDistribution
 
@@ -8576,9 +8764,9 @@ theorem finiteDistributionPrinted_counterexample :
 
 | 原文对象或结论 | 当前Lean与范围 |
 |---|---|
-| 原文所选陈述 | 本条所引原句及展示公式；单个记号归入context_notation。 |
-| 对象/域/量词/前提 | 完整当前Lean及依赖定义；新增资格见[EXTRA] |
-| 网站首轮 | PASS：逐个审校：finiteDistribution及_corrected均为非负且总和1的一般概率向量；finiteDistributionPrinted按概率权重上下文将nonzero保留为严格正且总和1；反例(1,0)确实满足前者且不满足后者。三种对象及counterexample相互吻合。原句含typically，不能无条件把原文认定为错误定义；应保留人审。 |
+| 所引原句 | 本条所引原句及展示公式；单个记号归入context_notation。 |
+| 对象、域、量词及前提 | 以上完整声明；额外资格与未覆盖部分见下一段 |
+| 最新网站原始评价 | PASS；首轮保留 |
 
 ### 5. [EXTRA] 与覆盖缺口
 
@@ -8587,19 +8775,20 @@ theorem finiteDistributionPrinted_counterexample :
 ### 6. 审计结论（含网站结论）
 
 网站原返回：PASS。逐个审校：finiteDistribution及_corrected均为非负且总和1的一般概率向量；finiteDistributionPrinted按概率权重上下文将nonzero保留为严格正且总和1；反例(1,0)确实满足前者且不满足后者。三种对象及counterexample相互吻合。原句含typically，不能无条件把原文认定为错误定义；应保留人审。
-本轮处理：保留原审阅版本结论；本轮未改签名。
-本地单文件及逐声明依赖检查通过；含未完成证明依赖的声明仍标未证。原书疑误及修正版分别见勘误，当前修改版未获网站复审结论。
+当前处理：网站PASS（首轮未改版本）。
+保留所交版本的明确结论。
+本地编译和逐声明依赖核对通过。原文疑误、各限定/修正版、反例的评价分别列出；有未完成证明依赖的声明仍为未证。
 
 ### 7. 状态与证明位置
 
-| 声明 | 状态 | 未证原因 |
-|---|---|---|
-| `MD.Ch06.finiteDistribution` | 定义 | — |
-| `MD.Ch06.finiteDistribution_corrected` | 定义 | — |
-| `MD.Ch06.finiteDistributionPrinted` | 定义 | — |
-| `MD.Ch06.finiteDistributionPrinted_counterexample` | 已证 | — |
+| 声明 | 证明状态 | 未证原因 | 网站分版结论 |
+|---|---|---|---|
+| `MD.Ch06.finiteDistribution` | 定义 | — | PASS |
+| `MD.Ch06.finiteDistribution_corrected` | 定义 | — | 未获单独PASS；见分版意见 |
+| `MD.Ch06.finiteDistributionPrinted` | 定义 | — | 未获单独PASS；见分版意见 |
+| `MD.Ch06.finiteDistributionPrinted_counterexample` | 已证 | — | 未获单独PASS；见分版意见 |
 
-位置：`Blueprint/Ch06.lean:1955`；验证：`blueprint/ch06/closeout25/FINAL_COMPILE.log`。
+位置：`Blueprint/Ch06.lean:1956`；本地核验记录：`blueprint/ch06/closeout26/FINAL_COMPILE.log`。
 
 ## MD-6.4.1-FiniteEvolution
 
@@ -8625,9 +8814,9 @@ def finiteEvolution {k : ℕ} (PiMark : Matrix (Fin k) (Fin k) ℝ) (ψ : Molecu
 
 | 原文对象或结论 | 当前Lean与范围 |
 |---|---|
-| 原文所选陈述 | 本条所引原句及展示公式；单个记号归入context_notation。 |
-| 对象/域/量词/前提 | 完整当前Lean及依赖定义；新增资格见[EXTRA] |
-| 网站首轮 | PASS：定义ψ_n=ψ₀Πⁿ，Matrix.vecMul方向是行向量右乘；n=0得到初值，全部分量保留。原递推式与此闭式等价（19另列完整递推定理）。作为线性演化定义允许任意实矩阵/向量，不声称它们都是概率；无需额外随机性前提。 |
+| 所引原句 | 本条所引原句及展示公式；单个记号归入context_notation。 |
+| 对象、域、量词及前提 | 以上完整声明；额外资格与未覆盖部分见下一段 |
+| 最新网站原始评价 | PASS；首轮保留 |
 
 ### 5. [EXTRA] 与覆盖缺口
 
@@ -8636,16 +8825,17 @@ def finiteEvolution {k : ℕ} (PiMark : Matrix (Fin k) (Fin k) ℝ) (ψ : Molecu
 ### 6. 审计结论（含网站结论）
 
 网站原返回：PASS。定义ψ_n=ψ₀Πⁿ，Matrix.vecMul方向是行向量右乘；n=0得到初值，全部分量保留。原递推式与此闭式等价（19另列完整递推定理）。作为线性演化定义允许任意实矩阵/向量，不声称它们都是概率；无需额外随机性前提。
-本轮处理：保留原审阅版本结论；本轮未改签名。
-本地单文件及逐声明依赖检查通过；含未完成证明依赖的声明仍标未证。原书疑误及修正版分别见勘误，当前修改版未获网站复审结论。
+当前处理：网站PASS（首轮未改版本）。
+保留所交版本的明确结论。
+本地编译和逐声明依赖核对通过。原文疑误、各限定/修正版、反例的评价分别列出；有未完成证明依赖的声明仍为未证。
 
 ### 7. 状态与证明位置
 
-| 声明 | 状态 | 未证原因 |
-|---|---|---|
-| `MD.Ch06.finiteEvolution` | 定义 | — |
+| 声明 | 证明状态 | 未证原因 | 网站分版结论 |
+|---|---|---|---|
+| `MD.Ch06.finiteEvolution` | 定义 | — | PASS |
 
-位置：`Blueprint/Ch06.lean:1979`；验证：`blueprint/ch06/closeout25/FINAL_COMPILE.log`。
+位置：`Blueprint/Ch06.lean:1980`；本地核验记录：`blueprint/ch06/closeout26/FINAL_COMPILE.log`。
 
 ## MD-6.4.1-FiniteEvolutionRecurrence
 
@@ -8675,9 +8865,9 @@ theorem finiteEvolutionRecurrence : ∀ {k : ℕ} (matrix : Matrix (Fin k) (Fin 
 
 | 原文对象或结论 | 当前Lean与范围 |
 |---|---|
-| 原文所选陈述 | 本条所引原句及展示公式；单个记号归入context_notation。 |
-| 对象/域/量词/前提 | 完整当前Lean及依赖定义；新增资格见[EXTRA] |
-| 网站首轮 | PASS：任意k、矩阵、初始向量及n均量化，结论把n+1步演化严格等于第n步行向量右乘同一个矩阵，是原递推的完整形式。由矩阵幂和行乘结合律成立，不需要随机矩阵或正初值。 |
+| 所引原句 | 本条所引原句及展示公式；单个记号归入context_notation。 |
+| 对象、域、量词及前提 | 以上完整声明；额外资格与未覆盖部分见下一段 |
+| 最新网站原始评价 | PASS；首轮保留 |
 
 ### 5. [EXTRA] 与覆盖缺口
 
@@ -8686,16 +8876,17 @@ theorem finiteEvolutionRecurrence : ∀ {k : ℕ} (matrix : Matrix (Fin k) (Fin 
 ### 6. 审计结论（含网站结论）
 
 网站原返回：PASS。任意k、矩阵、初始向量及n均量化，结论把n+1步演化严格等于第n步行向量右乘同一个矩阵，是原递推的完整形式。由矩阵幂和行乘结合律成立，不需要随机矩阵或正初值。
-本轮处理：保留原审阅版本结论；本轮未改签名。
-本地单文件及逐声明依赖检查通过；含未完成证明依赖的声明仍标未证。原书疑误及修正版分别见勘误，当前修改版未获网站复审结论。
+当前处理：网站PASS（首轮未改版本）。
+保留所交版本的明确结论。
+本地编译和逐声明依赖核对通过。原文疑误、各限定/修正版、反例的评价分别列出；有未完成证明依赖的声明仍为未证。
 
 ### 7. 状态与证明位置
 
-| 声明 | 状态 | 未证原因 |
-|---|---|---|
-| `MD.Ch06.finiteEvolutionRecurrence` | 已证 | — |
+| 声明 | 证明状态 | 未证原因 | 网站分版结论 |
+|---|---|---|---|
+| `MD.Ch06.finiteEvolutionRecurrence` | 已证 | — | PASS |
 
-位置：`Blueprint/Ch06.lean:1983`；验证：`blueprint/ch06/closeout25/FINAL_COMPILE.log`。
+位置：`Blueprint/Ch06.lean:1984`；本地核验记录：`blueprint/ch06/closeout26/FINAL_COMPILE.log`。
 
 ## MD-6.4.1-ReturnTimes
 
@@ -8720,9 +8911,9 @@ def returnTimes {k : ℕ} (PiMark : Matrix (Fin k) (Fin k) ℝ) (i : Fin k) : Se
 
 | 原文对象或结论 | 当前Lean与范围 |
 |---|---|
-| 原文所选陈述 | 本条所引原句及展示公式；单个记号归入context_notation。 |
-| 对象/域/量词/前提 | 完整当前Lean及依赖定义；新增资格见[EXTRA] |
-| 网站首轮 | PASS：返回时间集恰为所有正自然数n且(Πⁿ)ii>0，排除n=0恒等阵的平凡返回。[EXTRA]已明示这一解读，与原无返回时周期0的约定一致。 |
+| 所引原句 | 本条所引原句及展示公式；单个记号归入context_notation。 |
+| 对象、域、量词及前提 | 以上完整声明；额外资格与未覆盖部分见下一段 |
+| 最新网站原始评价 | PASS；首轮保留 |
 
 ### 5. [EXTRA] 与覆盖缺口
 
@@ -8731,16 +8922,17 @@ def returnTimes {k : ℕ} (PiMark : Matrix (Fin k) (Fin k) ℝ) (i : Fin k) : Se
 ### 6. 审计结论（含网站结论）
 
 网站原返回：PASS。返回时间集恰为所有正自然数n且(Πⁿ)ii>0，排除n=0恒等阵的平凡返回。[EXTRA]已明示这一解读，与原无返回时周期0的约定一致。
-本轮处理：保留原审阅版本结论；本轮未改签名。
-本地单文件及逐声明依赖检查通过；含未完成证明依赖的声明仍标未证。原书疑误及修正版分别见勘误，当前修改版未获网站复审结论。
+当前处理：网站PASS（首轮未改版本）。
+保留所交版本的明确结论。
+本地编译和逐声明依赖核对通过。原文疑误、各限定/修正版、反例的评价分别列出；有未完成证明依赖的声明仍为未证。
 
 ### 7. 状态与证明位置
 
-| 声明 | 状态 | 未证原因 |
-|---|---|---|
-| `MD.Ch06.returnTimes` | 定义 | — |
+| 声明 | 证明状态 | 未证原因 | 网站分版结论 |
+|---|---|---|---|
+| `MD.Ch06.returnTimes` | 定义 | — | PASS |
 
-位置：`Blueprint/Ch06.lean:1993`；验证：`blueprint/ch06/closeout25/FINAL_COMPILE.log`。
+位置：`Blueprint/Ch06.lean:1994`；本地核验记录：`blueprint/ch06/closeout26/FINAL_COMPILE.log`。
 
 ## MD-6.4.1-Period
 
@@ -8765,9 +8957,9 @@ def period {k : ℕ} (PiMark : Matrix (Fin k) (Fin k) ℝ) (i : Fin k) : ℕ :=
 
 | 原文对象或结论 | 当前Lean与范围 |
 |---|---|
-| 原文所选陈述 | 本条所引原句及展示公式；单个记号归入context_notation。 |
-| 对象/域/量词/前提 | 完整当前Lean及依赖定义；新增资格见[EXTRA] |
-| 网站首轮 | PASS：对正返回时间的公因子取自然数sSup：返回集非空时公因子被任一返回时间界住，最大者就是gcd；返回集空时公因子集为全部ℕ，Mathlib自然数条件完备序的无界sSup取0，符合书中特殊约定。不能把无界sSup误当作自然数中的无穷大而判错。 |
+| 所引原句 | 本条所引原句及展示公式；单个记号归入context_notation。 |
+| 对象、域、量词及前提 | 以上完整声明；额外资格与未覆盖部分见下一段 |
+| 最新网站原始评价 | PASS；首轮保留 |
 
 ### 5. [EXTRA] 与覆盖缺口
 
@@ -8776,16 +8968,17 @@ def period {k : ℕ} (PiMark : Matrix (Fin k) (Fin k) ℝ) (i : Fin k) : ℕ :=
 ### 6. 审计结论（含网站结论）
 
 网站原返回：PASS。对正返回时间的公因子取自然数sSup：返回集非空时公因子被任一返回时间界住，最大者就是gcd；返回集空时公因子集为全部ℕ，Mathlib自然数条件完备序的无界sSup取0，符合书中特殊约定。不能把无界sSup误当作自然数中的无穷大而判错。
-本轮处理：保留原审阅版本结论；本轮未改签名。
-本地单文件及逐声明依赖检查通过；含未完成证明依赖的声明仍标未证。原书疑误及修正版分别见勘误，当前修改版未获网站复审结论。
+当前处理：网站PASS（首轮未改版本）。
+保留所交版本的明确结论。
+本地编译和逐声明依赖核对通过。原文疑误、各限定/修正版、反例的评价分别列出；有未完成证明依赖的声明仍为未证。
 
 ### 7. 状态与证明位置
 
-| 声明 | 状态 | 未证原因 |
-|---|---|---|
-| `MD.Ch06.period` | 定义 | — |
+| 声明 | 证明状态 | 未证原因 | 网站分版结论 |
+|---|---|---|---|
+| `MD.Ch06.period` | 定义 | — | PASS |
 
-位置：`Blueprint/Ch06.lean:1997`；验证：`blueprint/ch06/closeout25/FINAL_COMPILE.log`。
+位置：`Blueprint/Ch06.lean:1998`；本地核验记录：`blueprint/ch06/closeout26/FINAL_COMPILE.log`。
 
 ## MD-6.4.1-Aperiodic
 
@@ -8809,9 +9002,9 @@ def aperiodic {k : ℕ} (PiMark : Matrix (Fin k) (Fin k) ℝ) : Prop := ∀ i, M
 
 | 原文对象或结论 | 当前Lean与范围 |
 |---|---|
-| 原文所选陈述 | 本条所引原句及展示公式；单个记号归入context_notation。 |
-| 对象/域/量词/前提 | 完整当前Lean及依赖定义；新增资格见[EXTRA] |
-| 网站首轮 | PASS：所有状态i均要求实际D18周期等于1；D16/D18与21所核对定义一致。没有偷换成单个状态、存在状态或仅自环条件。 |
+| 所引原句 | 本条所引原句及展示公式；单个记号归入context_notation。 |
+| 对象、域、量词及前提 | 以上完整声明；额外资格与未覆盖部分见下一段 |
+| 最新网站原始评价 | PASS；首轮保留 |
 
 ### 5. [EXTRA] 与覆盖缺口
 
@@ -8820,16 +9013,17 @@ def aperiodic {k : ℕ} (PiMark : Matrix (Fin k) (Fin k) ℝ) : Prop := ∀ i, M
 ### 6. 审计结论（含网站结论）
 
 网站原返回：PASS。所有状态i均要求实际D18周期等于1；D16/D18与21所核对定义一致。没有偷换成单个状态、存在状态或仅自环条件。
-本轮处理：保留原审阅版本结论；本轮未改签名。
-本地单文件及逐声明依赖检查通过；含未完成证明依赖的声明仍标未证。原书疑误及修正版分别见勘误，当前修改版未获网站复审结论。
+当前处理：网站PASS（首轮未改版本）。
+保留所交版本的明确结论。
+本地编译和逐声明依赖核对通过。原文疑误、各限定/修正版、反例的评价分别列出；有未完成证明依赖的声明仍为未证。
 
 ### 7. 状态与证明位置
 
-| 声明 | 状态 | 未证原因 |
-|---|---|---|
-| `MD.Ch06.aperiodic` | 定义 | — |
+| 声明 | 证明状态 | 未证原因 | 网站分版结论 |
+|---|---|---|---|
+| `MD.Ch06.aperiodic` | 定义 | — | PASS |
 
-位置：`Blueprint/Ch06.lean:2001`；验证：`blueprint/ch06/closeout25/FINAL_COMPILE.log`。
+位置：`Blueprint/Ch06.lean:2002`；本地核验记录：`blueprint/ch06/closeout26/FINAL_COMPILE.log`。
 
 ## MD-6.4.1-Irreducible
 
@@ -8854,9 +9048,9 @@ def irreducible {k : ℕ} (PiMark : Matrix (Fin k) (Fin k) ℝ) : Prop := ∀ i 
 
 | 原文对象或结论 | 当前Lean与范围 |
 |---|---|
-| 原文所选陈述 | 本条所引原句及展示公式；单个记号归入context_notation。 |
-| 对象/域/量词/前提 | 完整当前Lean及依赖定义；新增资格见[EXTRA] |
-| 网站首轮 | PASS：对每一对i,j存在有限自然数n使(Πⁿ)ij>0；交换全称变量即可得到反向存在，时间可不同，等价所有状态互相communicate。允许n=0只增加同状态的平凡可达性，不改变不同状态连通要求。原矩阵幂的文字方向有上下文笔误，但该全称双向定义不受影响。 |
+| 所引原句 | 本条所引原句及展示公式；单个记号归入context_notation。 |
+| 对象、域、量词及前提 | 以上完整声明；额外资格与未覆盖部分见下一段 |
+| 最新网站原始评价 | PASS；首轮保留 |
 
 ### 5. [EXTRA] 与覆盖缺口
 
@@ -8865,16 +9059,17 @@ def irreducible {k : ℕ} (PiMark : Matrix (Fin k) (Fin k) ℝ) : Prop := ∀ i 
 ### 6. 审计结论（含网站结论）
 
 网站原返回：PASS。对每一对i,j存在有限自然数n使(Πⁿ)ij>0；交换全称变量即可得到反向存在，时间可不同，等价所有状态互相communicate。允许n=0只增加同状态的平凡可达性，不改变不同状态连通要求。原矩阵幂的文字方向有上下文笔误，但该全称双向定义不受影响。
-本轮处理：保留原审阅版本结论；本轮未改签名。
-本地单文件及逐声明依赖检查通过；含未完成证明依赖的声明仍标未证。原书疑误及修正版分别见勘误，当前修改版未获网站复审结论。
+当前处理：网站PASS（首轮未改版本）。
+保留所交版本的明确结论。
+本地编译和逐声明依赖核对通过。原文疑误、各限定/修正版、反例的评价分别列出；有未完成证明依赖的声明仍为未证。
 
 ### 7. 状态与证明位置
 
-| 声明 | 状态 | 未证原因 |
-|---|---|---|
-| `MD.Ch06.irreducible` | 定义 | — |
+| 声明 | 证明状态 | 未证原因 | 网站分版结论 |
+|---|---|---|---|
+| `MD.Ch06.irreducible` | 定义 | — | PASS |
 
-位置：`Blueprint/Ch06.lean:2004`；验证：`blueprint/ch06/closeout25/FINAL_COMPILE.log`。
+位置：`Blueprint/Ch06.lean:2005`；本地核验记录：`blueprint/ch06/closeout26/FINAL_COMPILE.log`。
 
 ## MD-6.4.1-FiniteInvariant
 
@@ -8900,9 +9095,9 @@ def finiteInvariant {k : ℕ} (PiMark : Matrix (Fin k) (Fin k) ℝ) (ψ : Molecu
 
 | 原文对象或结论 | 当前Lean与范围 |
 |---|---|
-| 原文所选陈述 | 本条所引原句及展示公式；单个记号归入context_notation。 |
-| 对象/域/量词/前提 | 完整当前Lean及依赖定义；新增资格见[EXTRA] |
-| 网站首轮 | PASS：真实Chapter06Review.finiteDistribution要求非负且总和1，再以Matrix.vecMul ψ Π=ψ表达特征值1的左不变性；完整概率对象而不是未归一化/零特征向量。总和1由distribution的前文语义继承合理。 |
+| 所引原句 | 本条所引原句及展示公式；单个记号归入context_notation。 |
+| 对象、域、量词及前提 | 以上完整声明；额外资格与未覆盖部分见下一段 |
+| 最新网站原始评价 | PASS；首轮保留 |
 
 ### 5. [EXTRA] 与覆盖缺口
 
@@ -8911,16 +9106,17 @@ def finiteInvariant {k : ℕ} (PiMark : Matrix (Fin k) (Fin k) ℝ) (ψ : Molecu
 ### 6. 审计结论（含网站结论）
 
 网站原返回：PASS。真实Chapter06Review.finiteDistribution要求非负且总和1，再以Matrix.vecMul ψ Π=ψ表达特征值1的左不变性；完整概率对象而不是未归一化/零特征向量。总和1由distribution的前文语义继承合理。
-本轮处理：保留原审阅版本结论；本轮未改签名。
-本地单文件及逐声明依赖检查通过；含未完成证明依赖的声明仍标未证。原书疑误及修正版分别见勘误，当前修改版未获网站复审结论。
+当前处理：网站PASS（首轮未改版本）。
+保留所交版本的明确结论。
+本地编译和逐声明依赖核对通过。原文疑误、各限定/修正版、反例的评价分别列出；有未完成证明依赖的声明仍为未证。
 
 ### 7. 状态与证明位置
 
-| 声明 | 状态 | 未证原因 |
-|---|---|---|
-| `MD.Ch06.finiteInvariant` | 定义 | — |
+| 声明 | 证明状态 | 未证原因 | 网站分版结论 |
+|---|---|---|---|
+| `MD.Ch06.finiteInvariant` | 定义 | — | PASS |
 
-位置：`Blueprint/Ch06.lean:2007`；验证：`blueprint/ch06/closeout25/FINAL_COMPILE.log`。
+位置：`Blueprint/Ch06.lean:2008`；本地核验记录：`blueprint/ch06/closeout26/FINAL_COMPILE.log`。
 
 ## MD-6.4.1-FiniteErgodicity
 
@@ -8951,9 +9147,9 @@ theorem finiteErgodicity :
 
 | 原文对象或结论 | 当前Lean与范围 |
 |---|---|
-| 原文所选陈述 | 本条所引原句及展示公式；单个记号归入context_notation。 |
-| 对象/域/量词/前提 | 完整当前Lean及依赖定义；新增资格见[EXTRA] |
-| 网站首轮 | PASS：非空有限域、实际右随机性、所有状态不可约且非周期的前提完整；结论为概率不变向量存在、在全部概率不变向量中唯一，以及所有初始概率向量的Πⁿ演化向该向量收敛。没有把谱隙或收敛作为前提，[EXTRA]说明准确。完整定理的非周期性排除了原末句单独阅读时的周期反例。 |
+| 所引原句 | 本条所引原句及展示公式；单个记号归入context_notation。 |
+| 对象、域、量词及前提 | 以上完整声明；额外资格与未覆盖部分见下一段 |
+| 最新网站原始评价 | PASS；首轮保留 |
 
 ### 5. [EXTRA] 与覆盖缺口
 
@@ -8962,16 +9158,17 @@ theorem finiteErgodicity :
 ### 6. 审计结论（含网站结论）
 
 网站原返回：PASS。非空有限域、实际右随机性、所有状态不可约且非周期的前提完整；结论为概率不变向量存在、在全部概率不变向量中唯一，以及所有初始概率向量的Πⁿ演化向该向量收敛。没有把谱隙或收敛作为前提，[EXTRA]说明准确。完整定理的非周期性排除了原末句单独阅读时的周期反例。
-本轮处理：保留原审阅版本结论；本轮未改签名。
-本地单文件及逐声明依赖检查通过；含未完成证明依赖的声明仍标未证。原书疑误及修正版分别见勘误，当前修改版未获网站复审结论。
+当前处理：网站PASS（首轮未改版本）。
+保留所交版本的明确结论。
+本地编译和逐声明依赖核对通过。原文疑误、各限定/修正版、反例的评价分别列出；有未完成证明依赖的声明仍为未证。
 
 ### 7. 状态与证明位置
 
-| 声明 | 状态 | 未证原因 |
-|---|---|---|
-| `MD.Ch06.finiteErgodicity` | 未证 | 缺大型理论 |
+| 声明 | 证明状态 | 未证原因 | 网站分版结论 |
+|---|---|---|---|
+| `MD.Ch06.finiteErgodicity` | 未证 | 缺大型理论 | PASS |
 
-位置：`Blueprint/Ch06.lean:2012`；验证：`blueprint/ch06/closeout25/FINAL_COMPILE.log`。
+位置：`Blueprint/Ch06.lean:2013`；本地核验记录：`blueprint/ch06/closeout26/FINAL_COMPILE.log`。
 
 ## MD-6.4.1-StochasticEntryBound
 
@@ -8999,9 +9196,9 @@ theorem stochasticEntryBound : ∀ {k : ℕ} (matrix : Matrix (Fin k) (Fin k) �
 
 | 原文对象或结论 | 当前Lean与范围 |
 |---|---|
-| 原文所选陈述 | 本条所引原句及展示公式；单个记号归入context_notation。 |
-| 对象/域/量词/前提 | 完整当前Lean及依赖定义；新增资格见[EXTRA] |
-| 网站首轮 | PASS：输入实际stochasticMatrix已包含全部元素非负，结论逐一给出≤1；合在一起正是原条目全部[0,1]界。对任意k,i,j成立，来自行和1及其余元素非负，无遗漏。 |
+| 所引原句 | 本条所引原句及展示公式；单个记号归入context_notation。 |
+| 对象、域、量词及前提 | 以上完整声明；额外资格与未覆盖部分见下一段 |
+| 最新网站原始评价 | PASS；首轮保留 |
 
 ### 5. [EXTRA] 与覆盖缺口
 
@@ -9010,16 +9207,17 @@ theorem stochasticEntryBound : ∀ {k : ℕ} (matrix : Matrix (Fin k) (Fin k) �
 ### 6. 审计结论（含网站结论）
 
 网站原返回：PASS。输入实际stochasticMatrix已包含全部元素非负，结论逐一给出≤1；合在一起正是原条目全部[0,1]界。对任意k,i,j成立，来自行和1及其余元素非负，无遗漏。
-本轮处理：保留原审阅版本结论；本轮未改签名。
-本地单文件及逐声明依赖检查通过；含未完成证明依赖的声明仍标未证。原书疑误及修正版分别见勘误，当前修改版未获网站复审结论。
+当前处理：网站PASS（首轮未改版本）。
+保留所交版本的明确结论。
+本地编译和逐声明依赖核对通过。原文疑误、各限定/修正版、反例的评价分别列出；有未完成证明依赖的声明仍为未证。
 
 ### 7. 状态与证明位置
 
-| 声明 | 状态 | 未证原因 |
-|---|---|---|
-| `MD.Ch06.stochasticEntryBound` | 已证 | — |
+| 声明 | 证明状态 | 未证原因 | 网站分版结论 |
+|---|---|---|---|
+| `MD.Ch06.stochasticEntryBound` | 已证 | — | PASS |
 
-位置：`Blueprint/Ch06.lean:2020`；验证：`blueprint/ch06/closeout25/FINAL_COMPILE.log`。
+位置：`Blueprint/Ch06.lean:2021`；本地核验记录：`blueprint/ch06/closeout26/FINAL_COMPILE.log`。
 
 ## MD-6.4.1-FiniteChainExample
 
@@ -9049,9 +9247,9 @@ def finiteChainExample : Matrix (Fin 5) (Fin 5) ℝ :=
 
 | 原文对象或结论 | 当前Lean与范围 |
 |---|---|
-| 原文所选陈述 | 本条所引原句及展示公式；单个记号归入context_notation。 |
-| 对象/域/量词/前提 | 完整当前Lean及依赖定义；新增资格见[EXTRA] |
-| 网站首轮 | PASS：逐个核对图6.6矩阵25个数值及行列方向；1/5=0.2、1/10=0.1、7/10=0.7、3/10=0.3、2/5=0.4、1/2=0.5，全部零和1也一致。该定义只负责数值矩阵，不可约结论由29独立审校。 |
+| 所引原句 | 本条所引原句及展示公式；单个记号归入context_notation。 |
+| 对象、域、量词及前提 | 以上完整声明；额外资格与未覆盖部分见下一段 |
+| 最新网站原始评价 | PASS；首轮保留 |
 
 ### 5. [EXTRA] 与覆盖缺口
 
@@ -9060,16 +9258,17 @@ def finiteChainExample : Matrix (Fin 5) (Fin 5) ℝ :=
 ### 6. 审计结论（含网站结论）
 
 网站原返回：PASS。逐个核对图6.6矩阵25个数值及行列方向；1/5=0.2、1/10=0.1、7/10=0.7、3/10=0.3、2/5=0.4、1/2=0.5，全部零和1也一致。该定义只负责数值矩阵，不可约结论由29独立审校。
-本轮处理：保留原审阅版本结论；本轮未改签名。
-本地单文件及逐声明依赖检查通过；含未完成证明依赖的声明仍标未证。原书疑误及修正版分别见勘误，当前修改版未获网站复审结论。
+当前处理：网站PASS（首轮未改版本）。
+保留所交版本的明确结论。
+本地编译和逐声明依赖核对通过。原文疑误、各限定/修正版、反例的评价分别列出；有未完成证明依赖的声明仍为未证。
 
 ### 7. 状态与证明位置
 
-| 声明 | 状态 | 未证原因 |
-|---|---|---|
-| `MD.Ch06.finiteChainExample` | 定义 | — |
+| 声明 | 证明状态 | 未证原因 | 网站分版结论 |
+|---|---|---|---|
+| `MD.Ch06.finiteChainExample` | 定义 | — | PASS |
 
-位置：`Blueprint/Ch06.lean:2027`；验证：`blueprint/ch06/closeout25/FINAL_COMPILE.log`。
+位置：`Blueprint/Ch06.lean:2028`；本地核验记录：`blueprint/ch06/closeout26/FINAL_COMPILE.log`。
 
 ## MD-6.4.1-ExampleStochastic
 
@@ -9098,9 +9297,9 @@ theorem exampleStochastic : MolecularDynamics.Chapter06Review.stochasticMatrix f
 
 | 原文对象或结论 | 当前Lean与范围 |
 |---|---|
-| 原文所选陈述 | 本条所引原句及展示公式；单个记号归入context_notation。 |
-| 对象/域/量词/前提 | 完整当前Lean及依赖定义；新增资格见[EXTRA] |
-| 网站首轮 | PASS：真实谓词对27的完整数值矩阵逐项要求非负和行和1。五行分别为1、1、1、1、1，所有项非负；[EXTRA]是该具体例的资格检查，没有添加原例中不存在的假设。 |
+| 所引原句 | 本条所引原句及展示公式；单个记号归入context_notation。 |
+| 对象、域、量词及前提 | 以上完整声明；额外资格与未覆盖部分见下一段 |
+| 最新网站原始评价 | PASS；首轮保留 |
 
 ### 5. [EXTRA] 与覆盖缺口
 
@@ -9109,16 +9308,17 @@ theorem exampleStochastic : MolecularDynamics.Chapter06Review.stochasticMatrix f
 ### 6. 审计结论（含网站结论）
 
 网站原返回：PASS。真实谓词对27的完整数值矩阵逐项要求非负和行和1。五行分别为1、1、1、1、1，所有项非负；[EXTRA]是该具体例的资格检查，没有添加原例中不存在的假设。
-本轮处理：保留原审阅版本结论；本轮未改签名。
-本地单文件及逐声明依赖检查通过；含未完成证明依赖的声明仍标未证。原书疑误及修正版分别见勘误，当前修改版未获网站复审结论。
+当前处理：网站PASS（首轮未改版本）。
+保留所交版本的明确结论。
+本地编译和逐声明依赖核对通过。原文疑误、各限定/修正版、反例的评价分别列出；有未完成证明依赖的声明仍为未证。
 
 ### 7. 状态与证明位置
 
-| 声明 | 状态 | 未证原因 |
-|---|---|---|
-| `MD.Ch06.exampleStochastic` | 已证 | — |
+| 声明 | 证明状态 | 未证原因 | 网站分版结论 |
+|---|---|---|---|
+| `MD.Ch06.exampleStochastic` | 已证 | — | PASS |
 
-位置：`Blueprint/Ch06.lean:2036`；验证：`blueprint/ch06/closeout25/FINAL_COMPILE.log`。
+位置：`Blueprint/Ch06.lean:2037`；本地核验记录：`blueprint/ch06/closeout26/FINAL_COMPILE.log`。
 
 ## MD-6.4.1-ExampleNotIrreducible
 
@@ -9158,9 +9358,9 @@ theorem exampleNotIrreducible : ¬ MolecularDynamics.Chapter06Review.irreducible
 
 | 原文对象或结论 | 当前Lean与范围 |
 |---|---|
-| 原文所选陈述 | 本条所引原句及展示公式；单个记号归入context_notation。 |
-| 对象/域/量词/前提 | 完整当前Lean及依赖定义；新增资格见[EXTRA] |
-| 网站首轮 | PASS：实际irreducible是所有有序状态对存在正概率有限步转移。按书中1起始标签，{2,4,5}为闭类，无法达到1或3，因此矩阵确实不不可约。没有误把无向连通或单步全正性当作不可约。 |
+| 所引原句 | 本条所引原句及展示公式；单个记号归入context_notation。 |
+| 对象、域、量词及前提 | 以上完整声明；额外资格与未覆盖部分见下一段 |
+| 最新网站原始评价 | PASS；首轮保留 |
 
 ### 5. [EXTRA] 与覆盖缺口
 
@@ -9169,16 +9369,17 @@ theorem exampleNotIrreducible : ¬ MolecularDynamics.Chapter06Review.irreducible
 ### 6. 审计结论（含网站结论）
 
 网站原返回：PASS。实际irreducible是所有有序状态对存在正概率有限步转移。按书中1起始标签，{2,4,5}为闭类，无法达到1或3，因此矩阵确实不不可约。没有误把无向连通或单步全正性当作不可约。
-本轮处理：保留原审阅版本结论；本轮未改签名。
-本地单文件及逐声明依赖检查通过；含未完成证明依赖的声明仍标未证。原书疑误及修正版分别见勘误，当前修改版未获网站复审结论。
+当前处理：网站PASS（首轮未改版本）。
+保留所交版本的明确结论。
+本地编译和逐声明依赖核对通过。原文疑误、各限定/修正版、反例的评价分别列出；有未完成证明依赖的声明仍为未证。
 
 ### 7. 状态与证明位置
 
-| 声明 | 状态 | 未证原因 |
-|---|---|---|
-| `MD.Ch06.exampleNotIrreducible` | 已证 | — |
+| 声明 | 证明状态 | 未证原因 | 网站分版结论 |
+|---|---|---|---|
+| `MD.Ch06.exampleNotIrreducible` | 已证 | — | PASS |
 
-位置：`Blueprint/Ch06.lean:2044`；验证：`blueprint/ch06/closeout25/FINAL_COMPILE.log`。
+位置：`Blueprint/Ch06.lean:2045`；本地核验记录：`blueprint/ch06/closeout26/FINAL_COMPILE.log`。
 
 ## MD-6.4.1-Communicates
 
@@ -9203,9 +9404,9 @@ def communicates {k : ℕ} (matrix : Matrix (Fin k) (Fin k) ℝ) (i j : Fin k) :
 
 | 原文对象或结论 | 当前Lean与范围 |
 |---|---|
-| 原文所选陈述 | 本条所引原句及展示公式；单个记号归入context_notation。 |
-| 对象/域/量词/前提 | 完整当前Lean及依赖定义；新增资格见[EXTRA] |
-| 网站首轮 | PASS：两个方向分别使用存在自然数n，允许不同时间；矩阵幂正项忠实表达正概率可达。原句的integers结合Markov步数解读为非负整数，不能允许任意负幂；这是上下文限定而不是额外概率假设。 |
+| 所引原句 | 本条所引原句及展示公式；单个记号归入context_notation。 |
+| 对象、域、量词及前提 | 以上完整声明；额外资格与未覆盖部分见下一段 |
+| 最新网站原始评价 | PASS；首轮保留 |
 
 ### 5. [EXTRA] 与覆盖缺口
 
@@ -9214,16 +9415,17 @@ def communicates {k : ℕ} (matrix : Matrix (Fin k) (Fin k) ℝ) (i j : Fin k) :
 ### 6. 审计结论（含网站结论）
 
 网站原返回：PASS。两个方向分别使用存在自然数n，允许不同时间；矩阵幂正项忠实表达正概率可达。原句的integers结合Markov步数解读为非负整数，不能允许任意负幂；这是上下文限定而不是额外概率假设。
-本轮处理：保留原审阅版本结论；本轮未改签名。
-本地单文件及逐声明依赖检查通过；含未完成证明依赖的声明仍标未证。原书疑误及修正版分别见勘误，当前修改版未获网站复审结论。
+当前处理：网站PASS（首轮未改版本）。
+保留所交版本的明确结论。
+本地编译和逐声明依赖核对通过。原文疑误、各限定/修正版、反例的评价分别列出；有未完成证明依赖的声明仍为未证。
 
 ### 7. 状态与证明位置
 
-| 声明 | 状态 | 未证原因 |
-|---|---|---|
-| `MD.Ch06.communicates` | 定义 | — |
+| 声明 | 证明状态 | 未证原因 | 网站分版结论 |
+|---|---|---|---|
+| `MD.Ch06.communicates` | 定义 | — | PASS |
 
-位置：`Blueprint/Ch06.lean:2063`；验证：`blueprint/ch06/closeout25/FINAL_COMPILE.log`。
+位置：`Blueprint/Ch06.lean:2064`；本地核验记录：`blueprint/ch06/closeout26/FINAL_COMPILE.log`。
 
 ## MD-6.4.1-DirectedGraphIrreducible
 
@@ -9252,9 +9454,9 @@ theorem directedGraphIrreducible : ∀ {k : ℕ} (matrix : Matrix (Fin k) (Fin k
 
 | 原文对象或结论 | 当前Lean与范围 |
 |---|---|
-| 原文所选陈述 | 本条所引原句及展示公式；单个记号归入context_notation。 |
-| 对象/域/量词/前提 | 完整当前Lean及依赖定义；新增资格见[EXTRA] |
-| 网站首轮 | PASS：有限非负行随机矩阵；irreducible为任意i,j存在自然数次幂正元，右侧为正权边自反传递闭包。非负性排除路径贡献抵消；n=0与零长路径相合，k=0亦无遗漏。 |
+| 所引原句 | 本条所引原句及展示公式；单个记号归入context_notation。 |
+| 对象、域、量词及前提 | 以上完整声明；额外资格与未覆盖部分见下一段 |
+| 最新网站原始评价 | PASS；首轮保留 |
 
 ### 5. [EXTRA] 与覆盖缺口
 
@@ -9263,16 +9465,17 @@ theorem directedGraphIrreducible : ∀ {k : ℕ} (matrix : Matrix (Fin k) (Fin k
 ### 6. 审计结论（含网站结论）
 
 网站原返回：PASS。有限非负行随机矩阵；irreducible为任意i,j存在自然数次幂正元，右侧为正权边自反传递闭包。非负性排除路径贡献抵消；n=0与零长路径相合，k=0亦无遗漏。
-本轮处理：保留原审阅版本结论；本轮未改签名。
-本地单文件及逐声明依赖检查通过；含未完成证明依赖的声明仍标未证。原书疑误及修正版分别见勘误，当前修改版未获网站复审结论。
+当前处理：网站PASS（首轮未改版本）。
+保留所交版本的明确结论。
+本地编译和逐声明依赖核对通过。原文疑误、各限定/修正版、反例的评价分别列出；有未完成证明依赖的声明仍为未证。
 
 ### 7. 状态与证明位置
 
-| 声明 | 状态 | 未证原因 |
-|---|---|---|
-| `MD.Ch06.directedGraphIrreducible` | 未证 | 时间盒止 |
+| 声明 | 证明状态 | 未证原因 | 网站分版结论 |
+|---|---|---|---|
+| `MD.Ch06.directedGraphIrreducible` | 未证 | 时间盒止 | PASS |
 
-位置：`Blueprint/Ch06.lean:2068`；验证：`blueprint/ch06/closeout25/FINAL_COMPILE.log`。
+位置：`Blueprint/Ch06.lean:2069`；本地核验记录：`blueprint/ch06/closeout26/FINAL_COMPILE.log`。
 
 ## MD-6.4.2-CylinderCoordinates
 
@@ -9298,9 +9501,9 @@ def cylinderCoordinates {k₁ k₂ : ℕ} (z : Fin (k₁+k₂) → ℝ) :
 
 | 原文对象或结论 | 当前Lean与范围 |
 |---|---|
-| 原文所选陈述 | 本条所引原句及展示公式；单个记号归入context_notation。 |
-| 对象/域/量词/前提 | 完整当前Lean及依赖定义；新增资格见[EXTRA] |
-| 网站首轮 | PASS：k₁、k₂取任意自然数，允许零；前k₁个实坐标商到AddCircle 1，后k₂个保留为实数。维数及真正的圆环×非紧空间均正确，定义是坐标投影这一明确[EXTRA]构造。 |
+| 所引原句 | 本条所引原句及展示公式；单个记号归入context_notation。 |
+| 对象、域、量词及前提 | 以上完整声明；额外资格与未覆盖部分见下一段 |
+| 最新网站原始评价 | PASS；首轮保留 |
 
 ### 5. [EXTRA] 与覆盖缺口
 
@@ -9309,16 +9512,17 @@ def cylinderCoordinates {k₁ k₂ : ℕ} (z : Fin (k₁+k₂) → ℝ) :
 ### 6. 审计结论（含网站结论）
 
 网站原返回：PASS。k₁、k₂取任意自然数，允许零；前k₁个实坐标商到AddCircle 1，后k₂个保留为实数。维数及真正的圆环×非紧空间均正确，定义是坐标投影这一明确[EXTRA]构造。
-本轮处理：保留原审阅版本结论；本轮未改签名。
-本地单文件及逐声明依赖检查通过；含未完成证明依赖的声明仍标未证。原书疑误及修正版分别见勘误，当前修改版未获网站复审结论。
+当前处理：网站PASS（首轮未改版本）。
+保留所交版本的明确结论。
+本地编译和逐声明依赖核对通过。原文疑误、各限定/修正版、反例的评价分别列出；有未完成证明依赖的声明仍为未证。
 
 ### 7. 状态与证明位置
 
-| 声明 | 状态 | 未证原因 |
-|---|---|---|
-| `MD.Ch06.cylinderCoordinates` | 定义 | — |
+| 声明 | 证明状态 | 未证原因 | 网站分版结论 |
+|---|---|---|---|
+| `MD.Ch06.cylinderCoordinates` | 定义 | — | PASS |
 
-位置：`Blueprint/Ch06.lean:2076`；验证：`blueprint/ch06/closeout25/FINAL_COMPILE.log`。
+位置：`Blueprint/Ch06.lean:2077`；本地核验记录：`blueprint/ch06/closeout26/FINAL_COMPILE.log`。
 
 ## MD-6.4.2-CylinderSDE
 
@@ -9353,9 +9557,9 @@ def cylinderSDE {Ω : Type*} [MeasurableSpace Ω] {k₁ k₂ r : ℕ} (P : Measu
 
 | 原文对象或结论 | 当前Lean与范围 |
 |---|---|
-| 原文所选陈述 | 本条所引原句及展示公式；单个记号归入context_notation。 |
-| 对象/域/量词/前提 | 完整当前Lean及依赖定义；新增资格见[EXTRA] |
-| 网站首轮 | PASS：定义同时要求周期lift漂移C∞、D6独立标准Wiener向量、全部常噪声矩阵和D4严格路径方程；输出X确实在圆环×实空间中，且几乎处处对所有非负时刻等于lift投影。x0是选定实lift初值，[EXTRA]已明确；没有先假设遍历或不变性。 |
+| 所引原句 | 本条所引原句及展示公式；单个记号归入context_notation。 |
+| 对象、域、量词及前提 | 以上完整声明；额外资格与未覆盖部分见下一段 |
+| 最新网站原始评价 | PASS；首轮保留 |
 
 ### 5. [EXTRA] 与覆盖缺口
 
@@ -9364,16 +9568,17 @@ def cylinderSDE {Ω : Type*} [MeasurableSpace Ω] {k₁ k₂ r : ℕ} (P : Measu
 ### 6. 审计结论（含网站结论）
 
 网站原返回：PASS。定义同时要求周期lift漂移C∞、D6独立标准Wiener向量、全部常噪声矩阵和D4严格路径方程；输出X确实在圆环×实空间中，且几乎处处对所有非负时刻等于lift投影。x0是选定实lift初值，[EXTRA]已明确；没有先假设遍历或不变性。
-本轮处理：保留原审阅版本结论；本轮未改签名。
-本地单文件及逐声明依赖检查通过；含未完成证明依赖的声明仍标未证。原书疑误及修正版分别见勘误，当前修改版未获网站复审结论。
+当前处理：网站PASS（首轮未改版本）。
+保留所交版本的明确结论。
+本地编译和逐声明依赖核对通过。原文疑误、各限定/修正版、反例的评价分别列出；有未完成证明依赖的声明仍为未证。
 
 ### 7. 状态与证明位置
 
-| 声明 | 状态 | 未证原因 |
-|---|---|---|
-| `MD.Ch06.cylinderSDE` | 定义 | — |
+| 声明 | 证明状态 | 未证原因 | 网站分版结论 |
+|---|---|---|---|
+| `MD.Ch06.cylinderSDE` | 定义 | — | PASS |
 
-位置：`Blueprint/Ch06.lean:2082`；验证：`blueprint/ch06/closeout25/FINAL_COMPILE.log`。
+位置：`Blueprint/Ch06.lean:2083`；本地核验记录：`blueprint/ch06/closeout26/FINAL_COMPILE.log`。
 
 ## MD-6.4.2-CylinderGenerator
 
@@ -9403,9 +9608,9 @@ def cylinderGenerator {k₁ k₂ r : ℕ}
 
 | 原文对象或结论 | 当前Lean与范围 |
 |---|---|
-| 原文所选陈述 | 本条所引原句及展示公式；单个记号归入context_notation。 |
-| 对象/域/量词/前提 | 完整当前Lean及依赖定义；新增资格见[EXTRA] |
-| 网站首轮 | PASS：展开vectorGenerator后是一阶方向导数Dφ·b₀加D7扩散的一半；φ和b₀都经cylinderCoordinates拉回，输入空间和全部k₁+k₂方向正确。此处给出局部微分表达式的定义，不是另一个声称已证明强生成元域的定理。 |
+| 所引原句 | 本条所引原句及展示公式；单个记号归入context_notation。 |
+| 对象、域、量词及前提 | 以上完整声明；额外资格与未覆盖部分见下一段 |
+| 最新网站原始评价 | PASS；首轮保留 |
 
 ### 5. [EXTRA] 与覆盖缺口
 
@@ -9414,16 +9619,17 @@ def cylinderGenerator {k₁ k₂ r : ℕ}
 ### 6. 审计结论（含网站结论）
 
 网站原返回：PASS。展开vectorGenerator后是一阶方向导数Dφ·b₀加D7扩散的一半；φ和b₀都经cylinderCoordinates拉回，输入空间和全部k₁+k₂方向正确。此处给出局部微分表达式的定义，不是另一个声称已证明强生成元域的定理。
-本轮处理：保留原审阅版本结论；本轮未改签名。
-本地单文件及逐声明依赖检查通过；含未完成证明依赖的声明仍标未证。原书疑误及修正版分别见勘误，当前修改版未获网站复审结论。
+当前处理：网站PASS（首轮未改版本）。
+保留所交版本的明确结论。
+本地编译和逐声明依赖核对通过。原文疑误、各限定/修正版、反例的评价分别列出；有未完成证明依赖的声明仍为未证。
 
 ### 7. 状态与证明位置
 
-| 声明 | 状态 | 未证原因 |
-|---|---|---|
-| `MD.Ch06.cylinderGenerator` | 定义 | — |
+| 声明 | 证明状态 | 未证原因 | 网站分版结论 |
+|---|---|---|---|
+| `MD.Ch06.cylinderGenerator` | 定义 | — | PASS |
 
-位置：`Blueprint/Ch06.lean:2094`；验证：`blueprint/ch06/closeout25/FINAL_COMPILE.log`。
+位置：`Blueprint/Ch06.lean:2095`；本地核验记录：`blueprint/ch06/closeout26/FINAL_COMPILE.log`。
 
 ## MD-6.4.2-CylinderForwardPrinted
 
@@ -9431,8 +9637,8 @@ def cylinderGenerator {k₁ k₂ r : ℕ}
 
 ### 1. 原文陈述
 
-> Taking the adjoint, the forward Kolmogorov or Fokker-Planck operator is $\mathcal L^*$, acting on a density $\rho(X)$ as
-> \[\mathcal L^*\rho=-\nabla\cdot(b_0\rho)+\tfrac12\operatorname{Tr}(B^T\phi''B).\]
+> Taking the adjoint, the forward Kolmogorov or Fokker-Planck operator is $\mathcal L^\dagger$, acting on a density $\rho(X)$ as
+> \[\mathcal L^\dagger\rho=-\nabla\cdot(b_0\rho)+\tfrac12\operatorname{Tr}(B^T\phi''B).\]
 
 ### 2. 原文证明
 
@@ -9460,7 +9666,7 @@ def cylinderForwardPeriodic_corrected {n r : ℕ}
         (textbookLangevinCanonicalCoordinateDirection i) x)/2
 ```
 
-同问题的独立修正版（位于另一source_id）：
+同问题的独立限定/修正版（位于另一条）：
 ```lean
 def cylinderForwardPrinted_corrected {n r : ℕ} (a : (Fin n → ℝ) → (Fin n → ℝ))
     (B : Matrix (Fin n) (Fin r) ℝ) (ρ : (Fin n → ℝ) → ℝ) (x : Fin n → ℝ) : ℝ :=
@@ -9471,28 +9677,29 @@ def cylinderForwardPrinted_corrected {n r : ℕ} (a : (Fin n → ℝ) → (Fin n
 
 | 原文对象或结论 | 当前Lean与范围 |
 |---|---|
-| 原文所选陈述 | 本条Lean覆盖范围：Printed补原页1/2，保留印刷φ而不静默改ρ；独立corrected采用实际周期lift的前向密度表达式，与VectorForward相同。 |
-| 对象/域/量词/前提 | 完整当前Lean及依赖定义；新增资格见[EXTRA] |
-| 网站首轮 | FAIL：字面版确实保留了原页误写的φ而不是ρ，但漏掉原页清楚印出的1/2：D7的vectorDiffusion是完整∑ij(BBᵀ)ij∂ijφ，自身不含1/2。因此即使按Printed忠实标准也FAIL。[EXTRA]只说明错误φ，未记录新增的二倍系数错误；签名也没有圆环lift约束，只能视为欧氏局部表达。 |
+| 所引原句 | 本条Lean覆盖范围：Printed补原页1/2，保留印刷φ而不静默改ρ；独立corrected采用实际周期lift的前向密度表达式，与VectorForward相同。 |
+| 对象、域、量词及前提 | 以上完整声明；额外资格与未覆盖部分见下一段 |
+| 最新网站原始评价 | NEEDS_HUMAN；复审 |
 
 ### 5. [EXTRA] 与覆盖缺口
 
-- [EXTRA] 25号：Printed补原页1/2，保留印刷φ而不静默改ρ；独立corrected采用实际周期lift的前向密度表达式，与VectorForward相同。
+- [EXTRA] Printed补原页1/2，保留印刷φ而不静默改ρ；独立corrected采用实际周期lift的前向密度表达式，与VectorForward相同。
 
 ### 6. 审计结论（含网站结论）
 
-网站原返回：FAIL。字面版确实保留了原页误写的φ而不是ρ，但漏掉原页清楚印出的1/2：D7的vectorDiffusion是完整∑ij(BBᵀ)ij∂ijφ，自身不含1/2。因此即使按Printed忠实标准也FAIL。[EXTRA]只说明错误φ，未记录新增的二倍系数错误；签名也没有圆环lift约束，只能视为欧氏局部表达。
-本轮处理：Printed补原页1/2，保留印刷φ而不静默改ρ；独立corrected采用实际周期lift的前向密度表达式，与VectorForward相同。
-本地单文件及逐声明依赖检查通过；含未完成证明依赖的声明仍标未证。原书疑误及修正版分别见勘误，当前修改版未获网站复审结论。
+网站原返回：NEEDS_HUMAN。cylinderForwardPrinted：任意欧氏n维b0、n×r常B、密度ρ和独立测试φ，负散度作用于b0ρ，扩散作用φ并除2，忠实保留原书符号错误，但这是欧氏局部坐标表达式，不是完整一般T^k1×R^k2域。cylinderForwardPrinted_corrected调用vectorForward，将扩散改为ρ，欧氏辅助定义正确。cylinderForwardPeriodic_corrected在真实T^n×R^n上按Fin n⊕Fin n坐标方向求周期lift的一、二阶方向导数，用Σ_j B_ij B_kj和1/2给前向密度算子；维数与噪声列维一致，作为光滑周期密度的形式表达式正确。它只覆盖k1=k2=n的Langevin相空间，非原页全部k1,k2；且未在类型内强制光滑/密度资格，不能当算子域或不变性定理。
+当前处理：修正版/限定声明=网站PASS；原文疑误或范围解释待导师。
+保留所交版本的明确结论。
+本地编译和逐声明依赖核对通过。原文疑误、各限定/修正版、反例的评价分别列出；有未完成证明依赖的声明仍为未证。
 
 ### 7. 状态与证明位置
 
-| 声明 | 状态 | 未证原因 |
-|---|---|---|
-| `MD.Ch06.cylinderForwardPrinted` | 定义 | — |
-| `MD.Ch06.cylinderForwardPeriodic_corrected` | 定义 | — |
+| 声明 | 证明状态 | 未证原因 | 网站分版结论 |
+|---|---|---|---|
+| `MD.Ch06.cylinderForwardPrinted` | 定义 | — | 原文忠实性PASS；原书数学/范围NEEDS_HUMAN |
+| `MD.Ch06.cylinderForwardPeriodic_corrected` | 定义 | — | PASS |
 
-位置：`Blueprint/Ch06.lean:2104`；验证：`blueprint/ch06/closeout25/FINAL_COMPILE.log`。
+位置：`Blueprint/Ch06.lean:2105`；本地核验记录：`blueprint/ch06/closeout26/FINAL_COMPILE.log`。
 
 ## MD-6.4.2-StationaryDensity
 
@@ -9524,28 +9731,29 @@ def stationaryDensity {n r : ℕ} (a : (Fin n → ℝ) → (Fin n → ℝ))
 
 | 原文对象或结论 | 当前Lean与范围 |
 |---|---|
-| 原文所选陈述 | 本条Lean覆盖范围：保留总化平稳权重stationaryWeightRaw25作辅助；stationaryDensity补可测、非负、可积及体积积分1后才要求前向算子为零。 |
-| 对象/域/量词/前提 | 完整当前Lean及依赖定义；新增资格见[EXTRA] |
-| 网站首轮 | FAIL：定义只要求任意实函数ρ满足形式PDE，没有非负、可测、总质量1或可归一化条件；因此名称stationaryDensity及原句stationary distribution的对象资格没有完整保留。它可作为formalStationaryWeight的定义，但不能单独等同概率平稳密度。[EXTRA]也未标明这一缩减。 |
+| 所引原句 | 本条Lean覆盖范围：保留总化平稳权重stationaryWeightRaw25作辅助；stationaryDensity补可测、非负、可积及体积积分1后才要求前向算子为零。 |
+| 对象、域、量词及前提 | 以上完整声明；额外资格与未覆盖部分见下一段 |
+| 最新网站原始评价 | PASS；复审 |
 
 ### 5. [EXTRA] 与覆盖缺口
 
-- [EXTRA] 25号：保留总化平稳权重stationaryWeightRaw25作辅助；stationaryDensity补可测、非负、可积及体积积分1后才要求前向算子为零。
+- [EXTRA] 保留总化平稳权重stationaryWeightRaw25作辅助；stationaryDensity补可测、非负、可积及体积积分1后才要求前向算子为零。
 
 ### 6. 审计结论（含网站结论）
 
-网站原返回：FAIL。定义只要求任意实函数ρ满足形式PDE，没有非负、可测、总质量1或可归一化条件；因此名称stationaryDensity及原句stationary distribution的对象资格没有完整保留。它可作为formalStationaryWeight的定义，但不能单独等同概率平稳密度。[EXTRA]也未标明这一缩减。
-本轮处理：保留总化平稳权重stationaryWeightRaw25作辅助；stationaryDensity补可测、非负、可积及体积积分1后才要求前向算子为零。
-本地单文件及逐声明依赖检查通过；含未完成证明依赖的声明仍标未证。原书疑误及修正版分别见勘误，当前修改版未获网站复审结论。
+网站原返回：PASS。stationaryWeightRaw25只定义任意实函数的vectorForward逐点为0，是总化辅助。stationaryDensity另外要求ρ可测、处处非负、Lebesgue可积及积分1，再要求同一逐点形式方程，概率密度资格已补足，签名作为形式平稳密度定义PASS。D29为负散度加常B扩散半项；n,r任意，当前域为ℝ^n而非一般圆柱。类型未要求C²或适当generator域，Lean的不可微处导数总化为零；所以不能凭该谓词推出真实Markov核不变性，当前context_notation已明示形式stationarity且另给generator域/演化。该限制须持续保留，不把“correspond in general”误报为已证等价定理。
+当前处理：网站PASS（复审）。
+保留所交版本的明确结论。
+本地编译和逐声明依赖核对通过。原文疑误、各限定/修正版、反例的评价分别列出；有未完成证明依赖的声明仍为未证。
 
 ### 7. 状态与证明位置
 
-| 声明 | 状态 | 未证原因 |
-|---|---|---|
-| `MD.Ch06.stationaryWeightRaw25` | 定义 | — |
-| `MD.Ch06.stationaryDensity` | 定义 | — |
+| 声明 | 证明状态 | 未证原因 | 网站分版结论 |
+|---|---|---|---|
+| `MD.Ch06.stationaryWeightRaw25` | 定义 | — | PASS |
+| `MD.Ch06.stationaryDensity` | 定义 | — | PASS |
 
-位置：`Blueprint/Ch06.lean:2125`；验证：`blueprint/ch06/closeout25/FINAL_COMPILE.log`。
+位置：`Blueprint/Ch06.lean:2126`；本地核验记录：`blueprint/ch06/closeout26/FINAL_COMPILE.log`。
 
 ## MD-6.4.2-StationaryInvariant
 
@@ -9584,28 +9792,29 @@ theorem stationaryInvariant :
 
 | 原文对象或结论 | 当前Lean与范围 |
 |---|---|
-| 原文所选陈述 | 本条所引原句及展示公式；单个记号归入context_notation。 |
-| 对象/域/量词/前提 | 完整当前Lean及依赖定义；新增资格见[EXTRA] |
-| 网站首轮 | NEEDS_HUMAN：量词覆盖任意可测D、真实Markov半群K、概率μ和算子L；局部可积支配及演化检验函数导数关系均明确，没有直接假设不变结论。但终点谓词实际引用Chapter06Review.invariantKernel，它再调用该命名空间的kernelEvolution；附件只给出MD.Ch06.kernelEvolution，不能用不同命名空间的定义补齐。需确认真实kernelEvolution确为K t ∘ₘ μ。另外弱stationarity给在所有有界可测f上，而演化检验函数只有有界可测（由Markov核性质）时可套用，此处结构合理；不因sorry或未补证明判FAIL。 |
+| 所引原句 | 本条所引原句及展示公式；单个记号归入context_notation。 |
+| 对象、域、量词及前提 | 以上完整声明；额外资格与未覆盖部分见下一段 |
+| 最新网站原始评价 | PASS；复审 |
 
 ### 5. [EXTRA] 与覆盖缺口
 
 - [EXTRA]实际Markov kernel semigroup、真实generator对演化检验的导数关系与弱stationarity，并明确局部可积支配保证求导换积分；完整kernel测度不变，未假设不变结论或把形式exp当实际流。
-- [EXTRA] 25号：补实际Chapter06Review.invariantKernel及其kernelEvolution定义体；不以MD.Ch06同名定义替代。
+- [EXTRA] 补实际Chapter06Review.invariantKernel及其kernelEvolution定义体；不以MD.Ch06同名定义替代。
 
 ### 6. 审计结论（含网站结论）
 
-网站原返回：NEEDS_HUMAN。量词覆盖任意可测D、真实Markov半群K、概率μ和算子L；局部可积支配及演化检验函数导数关系均明确，没有直接假设不变结论。但终点谓词实际引用Chapter06Review.invariantKernel，它再调用该命名空间的kernelEvolution；附件只给出MD.Ch06.kernelEvolution，不能用不同命名空间的定义补齐。需确认真实kernelEvolution确为K t ∘ₘ μ。另外弱stationarity给在所有有界可测f上，而演化检验函数只有有界可测（由Markov核性质）时可套用，此处结构合理；不因sorry或未补证明判FAIL。
-本轮处理：补实际Chapter06Review.invariantKernel及其kernelEvolution定义体；不以MD.Ch06同名定义替代。
-本地单文件及逐声明依赖检查通过；含未完成证明依赖的声明仍标未证。原书疑误及修正版分别见勘误，当前修改版未获网站复审结论。
+网站原返回：PASS。A：引文、公式、节号及印刷247/PDF268页均与附件第1页相符。C：D为任意可测状态空间，K为非负时间的实际概率Markov核半群，μ为概率测度；逐一核对了全部有界可测检验函数、每个有限时间区间上的可积导数支配、演化检验函数的右侧导数关系、L作用后的可积性及弱平稳性前提。D3–D6中kernelAverage是真实核积分，kernelEvolution为K t ∘ₘ μ，invariantKernel量化所有非负时刻的测度相等。因此结论是完整的核不变性，未将形式指数、只对常数检验的恒等式或不变性本身作为前提。[EXTRA]清楚披露了这是一条在可交换微分与积分条件下由弱平稳推出不变的充分命题；不把它解读为无条件的形式偏微分方程等价定理。本次只审签名，不因sorry扣分。
+当前处理：网站PASS（复审）。
+保留所交版本的明确结论。
+本地编译和逐声明依赖核对通过。原文疑误、各限定/修正版、反例的评价分别列出；有未完成证明依赖的声明仍为未证。
 
 ### 7. 状态与证明位置
 
-| 声明 | 状态 | 未证原因 |
-|---|---|---|
-| `MD.Ch06.stationaryInvariant` | 未证 | 缺大型理论 |
+| 声明 | 证明状态 | 未证原因 | 网站分版结论 |
+|---|---|---|---|
+| `MD.Ch06.stationaryInvariant` | 未证 | 缺大型理论 | PASS |
 
-位置：`Blueprint/Ch06.lean:2137`；验证：`blueprint/ch06/closeout25/FINAL_COMPILE.log`。
+位置：`Blueprint/Ch06.lean:2138`；本地核验记录：`blueprint/ch06/closeout26/FINAL_COMPILE.log`。
 
 ## MD-6.4-CanonicalMixingMeaning
 
@@ -9632,9 +9841,9 @@ def canonicalMixingMeaning {D : Type*} [TopologicalSpace D] [MeasurableSpace D]
 
 | 原文对象或结论 | 当前Lean与范围 |
 |---|---|
-| 原文所选陈述 | 本条所引原句及展示公式；单个记号归入context_notation。 |
-| 对象/域/量词/前提 | 完整当前Lean及依赖定义；新增资格见[EXTRA] |
-| 网站首轮 | PASS：定义为概率目标及每个点初值、每个有界连续实检验的弱收敛；时间atTop下toNNReal不影响极限。此为[EXTRA]明确选择的含义，不是任意SDE的定理。Kernel本身不保证Markov，应避免把任意K称概率law。 |
+| 所引原句 | 本条所引原句及展示公式；单个记号归入context_notation。 |
+| 对象、域、量词及前提 | 以上完整声明；额外资格与未覆盖部分见下一段 |
+| 最新网站原始评价 | PASS；首轮保留 |
 
 ### 5. [EXTRA] 与覆盖缺口
 
@@ -9643,16 +9852,17 @@ def canonicalMixingMeaning {D : Type*} [TopologicalSpace D] [MeasurableSpace D]
 ### 6. 审计结论（含网站结论）
 
 网站原返回：PASS。定义为概率目标及每个点初值、每个有界连续实检验的弱收敛；时间atTop下toNNReal不影响极限。此为[EXTRA]明确选择的含义，不是任意SDE的定理。Kernel本身不保证Markov，应避免把任意K称概率law。
-本轮处理：保留原审阅版本结论；本轮未改签名。
-本地单文件及逐声明依赖检查通过；含未完成证明依赖的声明仍标未证。原书疑误及修正版分别见勘误，当前修改版未获网站复审结论。
+当前处理：网站PASS（首轮未改版本）。
+保留所交版本的明确结论。
+本地编译和逐声明依赖核对通过。原文疑误、各限定/修正版、反例的评价分别列出；有未完成证明依赖的声明仍为未证。
 
 ### 7. 状态与证明位置
 
-| 声明 | 状态 | 未证原因 |
-|---|---|---|
-| `MD.Ch06.canonicalMixingMeaning` | 定义 | — |
+| 声明 | 证明状态 | 未证原因 | 网站分版结论 |
+|---|---|---|---|
+| `MD.Ch06.canonicalMixingMeaning` | 定义 | — | PASS |
 
-位置：`Blueprint/Ch06.lean:2154`；验证：`blueprint/ch06/closeout25/FINAL_COMPILE.log`。
+位置：`Blueprint/Ch06.lean:2155`；本地核验记录：`blueprint/ch06/closeout26/FINAL_COMPILE.log`。
 
 ## MD-6.4.2-LangevinCanonicalMixing
 
@@ -9692,28 +9902,29 @@ theorem langevinCanonicalMixing :
 
 | 原文对象或结论 | 当前Lean与范围 |
 |---|---|
-| 原文所选陈述 | 本条所引原句及展示公式；单个记号归入context_notation。 |
-| 对象/域/量词/前提 | 完整当前Lean及依赖定义；新增资格见[EXTRA] |
-| 网站首轮 | NEEDS_HUMAN：明确只覆盖周期单位质量、光滑周期势、全局Lipschitz力及正γ/β的实际kernel，结论包括所有t>0、所有初值的严格正连续联合转移密度及所有有界连续检验的弱混合；[EXTRA]已披露这一范围。可见定义把路径解设为Classical.choose(actual_path_solution_exists ...)，但该项目存在命题的完整陈述未提供，因此无法只凭本任务证明choose出的对象确为指定Langevin路径而不是其他存在对象。另需核对该路径解在[0,T]上的方程/初值资格。数学结论在所列周期非退化Langevin条件下合理，缺失的是决定性项目定义依据。 |
+| 所引原句 | 本条所引原句及展示公式；单个记号归入context_notation。 |
+| 对象、域、量词及前提 | 以上完整声明；额外资格与未覆盖部分见下一段 |
+| 最新网站原始评价 | PASS；复审 |
 
 ### 5. [EXTRA] 与覆盖缺口
 
 - [EXTRA]真实现有周期单位质量Langevin kernel、正γ/β、原光滑力全局Lipschitz；完整任意点初值的正时刻严格正连续转移密度以及全部有界连续检验弱混合，原一般混合意义另条，不以单位质量特例替代一般定义。
-- [EXTRA] 25号：补所选真实路径的存在规格和初值/积分方程；范围仅周期、单位质量及已列全局Lipschitz力，不声称一般非周期Langevin结论。
+- [EXTRA] 补所选真实路径的存在规格和初值/积分方程；范围仅周期、单位质量及已列全局Lipschitz力，不声称一般非周期Langevin结论。
 
 ### 6. 审计结论（含网站结论）
 
-网站原返回：NEEDS_HUMAN。明确只覆盖周期单位质量、光滑周期势、全局Lipschitz力及正γ/β的实际kernel，结论包括所有t>0、所有初值的严格正连续联合转移密度及所有有界连续检验的弱混合；[EXTRA]已披露这一范围。可见定义把路径解设为Classical.choose(actual_path_solution_exists ...)，但该项目存在命题的完整陈述未提供，因此无法只凭本任务证明choose出的对象确为指定Langevin路径而不是其他存在对象。另需核对该路径解在[0,T]上的方程/初值资格。数学结论在所列周期非退化Langevin条件下合理，缺失的是决定性项目定义依据。
-本轮处理：补所选真实路径的存在规格和初值/积分方程；范围仅周期、单位质量及已列全局Lipschitz力，不声称一般非周期Langevin结论。
-本地单文件及逐声明依赖检查通过；含未完成证明依赖的声明仍标未证。原书疑误及修正版分别见勘误，当前修改版未获网站复审结论。
+网站原返回：PASS。A：印刷248/PDF269页中从“Even a single phase space point”到“entire phase space”的摘录准确。C：状态空间确为单位位置环面×实动量，U全局C∞且单位周期，力为−∇U并有显式全局Lipschitz常数；β、γ正，噪声幅度√(2γ/β)，B满足给定高斯、均值、协方差和几乎处处连续的Wiener规格。D17、D19–D23给出所选路径的存在、初值和两条积分方程；D28的核是该实际路径端点的推前，未任意选一个具有所需性质的核。flatPhaseMeasure为位置Haar×动量Lebesgue；canonicalMeasure为归一位置Gibbs×各坐标方差β⁻¹的独立高斯。第一结论对每个t>0提供在两个初末态变量上连续、处处严格正的密度及全测度相等；第二结论对每个点初值、每个有界连续f给出到该规范测度的弱收敛。[EXTRA]已明确周期、单位质量的范围；不把此声明扩大为任意退化SDE或非紧配置空间的结论。
+当前处理：网站PASS（复审）。
+保留所交版本的明确结论。
+本地编译和逐声明依赖核对通过。原文疑误、各限定/修正版、反例的评价分别列出；有未完成证明依赖的声明仍为未证。
 
 ### 7. 状态与证明位置
 
-| 声明 | 状态 | 未证原因 |
-|---|---|---|
-| `MD.Ch06.langevinCanonicalMixing` | 未证 | 缺大型理论 |
+| 声明 | 证明状态 | 未证原因 | 网站分版结论 |
+|---|---|---|---|
+| `MD.Ch06.langevinCanonicalMixing` | 未证 | 缺大型理论 | PASS |
 
-位置：`Blueprint/Ch06.lean:2162`；验证：`blueprint/ch06/closeout25/FINAL_COMPILE.log`。
+位置：`Blueprint/Ch06.lean:2163`；本地核验记录：`blueprint/ch06/closeout26/FINAL_COMPILE.log`。
 
 ## MD-6.4.3-BrownianGenerator
 
@@ -9745,9 +9956,9 @@ noncomputable def brownianGenerator {Nc : ℕ} (m : Fin Nc → ℝ)
 
 | 原文对象或结论 | 当前Lean与范围 |
 |---|---|
-| 原文所选陈述 | 本条所引原句及展示公式；单个记号归入context_notation。 |
-| 对象/域/量词/前提 | 完整当前Lean及依赖定义；新增资格见[EXTRA] |
-| 网站首轮 | PASS：逐坐标fderiv方向导数及二阶导数给出逆质量加权漂移和扩散；m≡1还原原式。[EXTRA]已披露推广。当前是代数算子定义，并非在任意β,m及任意f下断言存在相应扩散生成元。 |
+| 所引原句 | 本条所引原句及展示公式；单个记号归入context_notation。 |
+| 对象、域、量词及前提 | 以上完整声明；额外资格与未覆盖部分见下一段 |
+| 最新网站原始评价 | PASS；首轮保留 |
 
 ### 5. [EXTRA] 与覆盖缺口
 
@@ -9756,16 +9967,17 @@ noncomputable def brownianGenerator {Nc : ℕ} (m : Fin Nc → ℝ)
 ### 6. 审计结论（含网站结论）
 
 网站原返回：PASS。逐坐标fderiv方向导数及二阶导数给出逆质量加权漂移和扩散；m≡1还原原式。[EXTRA]已披露推广。当前是代数算子定义，并非在任意β,m及任意f下断言存在相应扩散生成元。
-本轮处理：保留原审阅版本结论；本轮未改签名。
-本地单文件及逐声明依赖检查通过；含未完成证明依赖的声明仍标未证。原书疑误及修正版分别见勘误，当前修改版未获网站复审结论。
+当前处理：网站PASS（首轮未改版本）。
+保留所交版本的明确结论。
+本地编译和逐声明依赖核对通过。原文疑误、各限定/修正版、反例的评价分别列出；有未完成证明依赖的声明仍为未证。
 
 ### 7. 状态与证明位置
 
-| 声明 | 状态 | 未证原因 |
-|---|---|---|
-| `MD.Ch06.brownianGenerator` | 定义 | — |
+| 声明 | 证明状态 | 未证原因 | 网站分版结论 |
+|---|---|---|---|
+| `MD.Ch06.brownianGenerator` | 定义 | — | PASS |
 
-位置：`Blueprint/Ch06.lean:2182`；验证：`blueprint/ch06/closeout25/FINAL_COMPILE.log`。
+位置：`Blueprint/Ch06.lean:2183`；本地核验记录：`blueprint/ch06/closeout26/FINAL_COMPILE.log`。
 
 ## MD-6.4.3-BrownianWeightedInner
 
@@ -9793,9 +10005,9 @@ def brownianWeightedInner {n : ℕ} (U : (Fin n → ℝ) → ℝ) (β : ℝ)
 
 | 原文对象或结论 | 当前Lean与范围 |
 |---|---|
-| 原文所选陈述 | 本条所引原句及展示公式；单个记号归入context_notation。 |
-| 对象/域/量词/前提 | 完整当前Lean及依赖定义；新增资格见[EXTRA] |
-| 网站首轮 | PASS：积分域确为Icc 0 1，权重exp(-βU)未除Z；f,g为任意函数的总定义，适当函数域上才是内积。周期基本域限制已披露；此定义没有形式化C₀²函数空间本身。 |
+| 所引原句 | 本条所引原句及展示公式；单个记号归入context_notation。 |
+| 对象、域、量词及前提 | 以上完整声明；额外资格与未覆盖部分见下一段 |
+| 最新网站原始评价 | PASS；首轮保留 |
 
 ### 5. [EXTRA] 与覆盖缺口
 
@@ -9804,16 +10016,17 @@ def brownianWeightedInner {n : ℕ} (U : (Fin n → ℝ) → ℝ) (β : ℝ)
 ### 6. 审计结论（含网站结论）
 
 网站原返回：PASS。积分域确为Icc 0 1，权重exp(-βU)未除Z；f,g为任意函数的总定义，适当函数域上才是内积。周期基本域限制已披露；此定义没有形式化C₀²函数空间本身。
-本轮处理：保留原审阅版本结论；本轮未改签名。
-本地单文件及逐声明依赖检查通过；含未完成证明依赖的声明仍标未证。原书疑误及修正版分别见勘误，当前修改版未获网站复审结论。
+当前处理：网站PASS（首轮未改版本）。
+保留所交版本的明确结论。
+本地编译和逐声明依赖核对通过。原文疑误、各限定/修正版、反例的评价分别列出；有未完成证明依赖的声明仍为未证。
 
 ### 7. 状态与证明位置
 
-| 声明 | 状态 | 未证原因 |
-|---|---|---|
-| `MD.Ch06.brownianWeightedInner` | 定义 | — |
+| 声明 | 证明状态 | 未证原因 | 网站分版结论 |
+|---|---|---|---|
+| `MD.Ch06.brownianWeightedInner` | 定义 | — | PASS |
 
-位置：`Blueprint/Ch06.lean:2191`；验证：`blueprint/ch06/closeout25/FINAL_COMPILE.log`。
+位置：`Blueprint/Ch06.lean:2192`；本地核验记录：`blueprint/ch06/closeout26/FINAL_COMPILE.log`。
 
 ## MD-6.4.3-BrownianDirichlet
 
@@ -9853,9 +10066,9 @@ theorem brownianDirichlet {Nc : ℕ} (m : Fin Nc → ℝ)
 
 | 原文对象或结论 | 当前Lean与范围 |
 |---|---|
-| 原文所选陈述 | 本条所引原句及展示公式；单个记号归入context_notation。 |
-| 对象/域/量词/前提 | 完整当前Lean及依赖定义；新增资格见[EXTRA] |
-| 网站首轮 | PASS：U,f,g全域C∞、整数平移周期及β≠0保证分部积分边界抵消；两侧使用同一未归一权重和全部逆质量坐标和。等式不需质量正性；m≡1还原原文。 |
+| 所引原句 | 本条所引原句及展示公式；单个记号归入context_notation。 |
+| 对象、域、量词及前提 | 以上完整声明；额外资格与未覆盖部分见下一段 |
+| 最新网站原始评价 | PASS；首轮保留 |
 
 ### 5. [EXTRA] 与覆盖缺口
 
@@ -9864,16 +10077,17 @@ theorem brownianDirichlet {Nc : ℕ} (m : Fin Nc → ℝ)
 ### 6. 审计结论（含网站结论）
 
 网站原返回：PASS。U,f,g全域C∞、整数平移周期及β≠0保证分部积分边界抵消；两侧使用同一未归一权重和全部逆质量坐标和。等式不需质量正性；m≡1还原原文。
-本轮处理：保留原审阅版本结论；本轮未改签名。
-本地单文件及逐声明依赖检查通过；含未完成证明依赖的声明仍标未证。原书疑误及修正版分别见勘误，当前修改版未获网站复审结论。
+当前处理：网站PASS（首轮未改版本）。
+保留所交版本的明确结论。
+本地编译和逐声明依赖核对通过。原文疑误、各限定/修正版、反例的评价分别列出；有未完成证明依赖的声明仍为未证。
 
 ### 7. 状态与证明位置
 
-| 声明 | 状态 | 未证原因 |
-|---|---|---|
-| `MD.Ch06.brownianDirichlet` | 已证 | — |
+| 声明 | 证明状态 | 未证原因 | 网站分版结论 |
+|---|---|---|---|
+| `MD.Ch06.brownianDirichlet` | 已证 | — | PASS |
 
-位置：`Blueprint/Ch06.lean:2197`；验证：`blueprint/ch06/closeout25/FINAL_COMPILE.log`。
+位置：`Blueprint/Ch06.lean:2198`；本地核验记录：`blueprint/ch06/closeout26/FINAL_COMPILE.log`。
 
 ## MD-6.4.3-BrownianSymmetry
 
@@ -9887,7 +10101,7 @@ theorem brownianDirichlet {Nc : ℕ} (m : Fin Nc → ℝ)
 
 ### 2. 原文证明
 
-> 原书未给独立完整证明。
+> 原书给出分部积分得到形式对称配对的论证；未给出无界算子闭域及伴随域相等的完整论证。
 
 ### 3. 完整当前Lean（原文版与修正版独立列出）
 
@@ -9926,29 +10140,33 @@ theorem brownianSymmetry_corrected {Nc : ℕ} (m : Fin Nc → ℝ)
 
 | 原文对象或结论 | 当前Lean与范围 |
 |---|---|
-| 原文所选陈述 | 本条所引原句及展示公式；单个记号归入context_notation。 |
-| 对象/域/量词/前提 | 完整当前Lean及依赖定义；新增资格见[EXTRA] |
-| 网站首轮 | NEEDS_HUMAN：Lean只陈述周期光滑核心上的对称配对，签名正确；原引文还推出L=L*，核心对称不等于完整伴随域相等。[EXTRA]承认缩小含义，却不能把原整段自伴结论视作已完全覆盖。 |
+| 所引原句 | 原文引文保持不变；两份Lean声明仅覆盖C∞单位周期核心上的加权配对对称。 |
+| 对象、域、量词及前提 | 以上完整声明；额外资格与未覆盖部分见下一段 |
+| 最新网站原始评价 | NEEDS_HUMAN；复审 |
 
 ### 5. [EXTRA] 与覆盖缺口
 
 - [EXTRA]完整未归一配对等式，由现成归一配对消去正Z⁻¹；C∞周期核心上的形式对称，不宣称C₀²核心本身已闭自伴。
-- [EXTRA] 25号：本条仅为周期光滑核心上的形式对称配对；核心对称不推出伴随域相等。闭实现自伴另见BrownianClosedSelfAdjoint，原C₀²域解释待签核。
+- [EXTRA] 本条仅为周期光滑核心上的形式对称配对；核心对称不推出伴随域相等。闭实现自伴另见BrownianClosedSelfAdjoint，原C₀²域解释待签核。
+- [ERRATUM?] 形式对称与闭自伴须区分；本条配对恒等式不等于已经忠实实现原C₀²域上的L†=L。
+- [EXTRA] 复审范围：两份相同签名只覆盖周期核心的形式配对对称；不覆盖原域与伴随域相等。
+- 覆盖缺口：原C₀²域的自伴解释待人工确认；闭实现的自伴性由BrownianClosedSelfAdjoint单独处理。
 
 ### 6. 审计结论（含网站结论）
 
-网站原返回：NEEDS_HUMAN。Lean只陈述周期光滑核心上的对称配对，签名正确；原引文还推出L=L*，核心对称不等于完整伴随域相等。[EXTRA]承认缩小含义，却不能把原整段自伴结论视作已完全覆盖。
-本轮处理：本条仅为周期光滑核心上的形式对称配对；核心对称不推出伴随域相等。闭实现自伴另见BrownianClosedSelfAdjoint，原C₀²域解释待签核。
-本地单文件及逐声明依赖检查通过；含未完成证明依赖的声明仍标未证。原书疑误及修正版分别见勘误，当前修改版未获网站复审结论。
+网站原返回：NEEDS_HUMAN。A：配对等式及随后L†=L的引文准确，原文的自伴措辞应保留。C：两份Lean签名完全相同，均为PASS的限定配对恒等式：积分在一个基本立方体上，权为exp(−βU)，U、f、g均C∞且单位周期，β≠0；m仅作实系数参数，形式对称本身不需要质量正性。D32–D34及归一配对定义表明取消正的配分函数因子不会改变等式。它们没有表达伴随算子的定义域等于原定义域。原页从对称积分直接说L†=L，但此前给出的C₀²域是否指闭实现并不清楚，不能把正确的核心对称等式当作原域已自伴。corrected版数学陈述通过；整条因原文域解释仍为NEEDS_HUMAN，而非因证明占位或定义缺失。
+当前处理：修正版/限定声明=网站PASS；原文疑误或范围解释待导师。
+两份相同签名只覆盖周期核心的形式配对对称；不覆盖原域与伴随域相等。
+本地编译和逐声明依赖核对通过。原文疑误、各限定/修正版、反例的评价分别列出；有未完成证明依赖的声明仍为未证。
 
 ### 7. 状态与证明位置
 
-| 声明 | 状态 | 未证原因 |
-|---|---|---|
-| `MD.Ch06.brownianSymmetry` | 已证 | — |
-| `MD.Ch06.brownianSymmetry_corrected` | 已证 | — |
+| 声明 | 证明状态 | 未证原因 | 网站分版结论 |
+|---|---|---|---|
+| `MD.Ch06.brownianSymmetry` | 已证 | — | PASS |
+| `MD.Ch06.brownianSymmetry_corrected` | 已证 | — | PASS |
 
-位置：`Blueprint/Ch06.lean:2212`；验证：`blueprint/ch06/closeout25/FINAL_COMPILE.log`。
+位置：`Blueprint/Ch06.lean:2213`；本地核验记录：`blueprint/ch06/closeout26/FINAL_COMPILE.log`。
 
 ## MD-6.4.3-BrownianNonpositive
 
@@ -10004,30 +10222,31 @@ theorem brownianNegativeDefinitePrinted_corrected {Nc : ℕ} (m : Fin Nc → ℝ
 
 | 原文对象或结论 | 当前Lean与范围 |
 |---|---|
-| 原文所选陈述 | 本条所引原句及展示公式；单个记号归入context_notation。 |
-| 对象/域/量词/前提 | 完整当前Lean及依赖定义；新增资格见[EXTRA] |
-| 网站首轮 | NEEDS_HUMAN：正质量、β>0及周期光滑域下未归一二次型≤0正确。原文negative definite错误，已有[ERRATUM?]保留；本签名仅保留正确的半负定子结论。 |
+| 所引原句 | 本条所引原句及展示公式；单个记号归入context_notation。 |
+| 对象、域、量词及前提 | 以上完整声明；额外资格与未覆盖部分见下一段 |
+| 最新网站原始评价 | NEEDS_HUMAN；首轮保留 |
 
 ### 5. [EXTRA] 与覆盖缺口
 
 - [EXTRA]正质量与β>0，未归一配对；本条结论精确保留≤0，原negative definite术语错误另记录。
-- [EXTRA] 25号：原文版忠实性与数学疑误分开；补齐所交条目所属的现有_corrected完整签名，不从repair_log名称推断网站已通过修正版。
+- [EXTRA] 原文版忠实性与数学疑误分开；补齐所交条目所属的现有_corrected完整签名，不从repair_log名称推断网站已通过修正版。
 
 ### 6. 审计结论（含网站结论）
 
 网站原返回：NEEDS_HUMAN。正质量、β>0及周期光滑域下未归一二次型≤0正确。原文negative definite错误，已有[ERRATUM?]保留；本签名仅保留正确的半负定子结论。
-本轮处理：原文版忠实性与数学疑误分开；补齐所交条目所属的现有_corrected完整签名，不从repair_log名称推断网站已通过修正版。
-本地单文件及逐声明依赖检查通过；含未完成证明依赖的声明仍标未证。原书疑误及修正版分别见勘误，当前修改版未获网站复审结论。
+当前处理：原文疑误或语义范围待导师；不冒称未提供版本已通过。
+保留所交版本的明确结论。
+本地编译和逐声明依赖核对通过。原文疑误、各限定/修正版、反例的评价分别列出；有未完成证明依赖的声明仍为未证。
 
 ### 7. 状态与证明位置
 
-| 声明 | 状态 | 未证原因 |
-|---|---|---|
-| `MD.Ch06.brownianNonpositive` | 已证 | — |
-| `MD.Ch06.brownianNonpositive_corrected` | 已证 | — |
-| `MD.Ch06.brownianNegativeDefinitePrinted_corrected` | 已证 | — |
+| 声明 | 证明状态 | 未证原因 | 网站分版结论 |
+|---|---|---|---|
+| `MD.Ch06.brownianNonpositive` | 已证 | — | 未获单独PASS；见分版意见 |
+| `MD.Ch06.brownianNonpositive_corrected` | 已证 | — | 未获单独PASS；见分版意见 |
+| `MD.Ch06.brownianNegativeDefinitePrinted_corrected` | 已证 | — | 未获单独PASS；见分版意见 |
 
-位置：`Blueprint/Ch06.lean:2245`；验证：`blueprint/ch06/closeout25/FINAL_COMPILE.log`。
+位置：`Blueprint/Ch06.lean:2246`；本地核验记录：`blueprint/ch06/closeout26/FINAL_COMPILE.log`。
 
 ## MD-6.4.3-BrownianRealEigenvalue
 
@@ -10068,29 +10287,31 @@ theorem brownianRealEigenvalue_corrected {Nc : ℕ} (m : Fin Nc → ℝ)
 
 | 原文对象或结论 | 当前Lean与范围 |
 |---|---|
-| 原文所选陈述 | 本条所引原句及展示公式；单个记号归入context_notation。 |
-| 对象/域/量词/前提 | 完整当前Lean及依赖定义；新增资格见[EXTRA] |
-| 网站首轮 | NEEDS_HUMAN：非零性为基本域Lebesgue几乎处处非零之否定，正权重下范数严格正；全域特征关系及二次型非正推出所给实数ℓ≤0。签名未声称证明所有复特征值实性。原引文仍含negative definite疑误，应补相同勘误标记。 |
+| 所引原句 | 本条所引原句及展示公式；单个记号归入context_notation。 |
+| 对象、域、量词及前提 | 以上完整声明；额外资格与未覆盖部分见下一段 |
+| 最新网站原始评价 | NEEDS_HUMAN；复审 |
 
 ### 5. [EXTRA] 与覆盖缺口
 
 - [EXTRA]真正非零L²特征函数、C∞周期、正质量与β>0；不以特征值符号作假设。
-- [EXTRA] 25号：[ERRATUM?]原引文negative definite应为半负定，常数零模反例与BrownianNegativeDefinitePrinted共用；本条只证明已给实特征参数≤0，不冒称全部复谱实性。
+- [EXTRA] [ERRATUM?]原引文negative definite应为半负定，常数零模反例与BrownianNegativeDefinitePrinted共用；本条只证明已给实特征参数≤0，不冒称全部复谱实性。
+- 覆盖缺口：仅证明已给实特征参数非正；不单独证明复特征值实性，也不把原严格负定用语认作成立。
 
 ### 6. 审计结论（含网站结论）
 
-网站原返回：NEEDS_HUMAN。非零性为基本域Lebesgue几乎处处非零之否定，正权重下范数严格正；全域特征关系及二次型非正推出所给实数ℓ≤0。签名未声称证明所有复特征值实性。原引文仍含negative definite疑误，应补相同勘误标记。
-本轮处理：[ERRATUM?]原引文negative definite应为半负定，常数零模反例与BrownianNegativeDefinitePrinted共用；本条只证明已给实特征参数≤0，不冒称全部复谱实性。
-本地单文件及逐声明依赖检查通过；含未完成证明依赖的声明仍标未证。原书疑误及修正版分别见勘误，当前修改版未获网站复审结论。
+网站原返回：NEEDS_HUMAN。A：原文确实同时写⟨f,Lf⟩≤0和“negative definite”，转录未错，不能在原引文中静默改成半负定。C：两份签名均PASS：正质量、β>0、C∞周期U及非零L²意义的C∞周期f，逐点满足Lf=ℓf，且参数ℓ预先属于ℝ，结论ℓ≤0。非零性相对于基本立方体Lebesgue几乎处处定义，正Gibbs权使其等价于Gibbs-L²非零；没有把特征值符号作为假设。声明不证明任意复特征值实性，也不证明严格负定；这些限制已由[EXTRA]说明。整条因原书严格负定用语的数学疑误需人工签核。
+当前处理：修正版/限定声明=网站PASS；原文疑误或范围解释待导师。
+保留所交版本的明确结论。
+本地编译和逐声明依赖核对通过。原文疑误、各限定/修正版、反例的评价分别列出；有未完成证明依赖的声明仍为未证。
 
 ### 7. 状态与证明位置
 
-| 声明 | 状态 | 未证原因 |
-|---|---|---|
-| `MD.Ch06.brownianRealEigenvalue` | 已证 | — |
-| `MD.Ch06.brownianRealEigenvalue_corrected` | 已证 | — |
+| 声明 | 证明状态 | 未证原因 | 网站分版结论 |
+|---|---|---|---|
+| `MD.Ch06.brownianRealEigenvalue` | 已证 | — | PASS |
+| `MD.Ch06.brownianRealEigenvalue_corrected` | 已证 | — | PASS |
 
-位置：`Blueprint/Ch06.lean:2280`；验证：`blueprint/ch06/closeout25/FINAL_COMPILE.log`。
+位置：`Blueprint/Ch06.lean:2281`；本地核验记录：`blueprint/ch06/closeout26/FINAL_COMPILE.log`。
 
 ## MD-6.4.3-BrownianClosedSelfAdjoint
 
@@ -10102,7 +10323,7 @@ theorem brownianRealEigenvalue_corrected {Nc : ℕ} (m : Fin Nc → ℝ)
 
 ### 2. 原文证明
 
-> 原书未给独立完整证明。
+> 原书给出形式分部积分的论证，见印刷249–250页；未说明完整闭域及伴随域。
 
 ### 3. 完整当前Lean（原文版与修正版独立列出）
 
@@ -10125,29 +10346,34 @@ theorem brownianClosedSelfAdjoint_corrected {Nc : ℕ} (m : Fin Nc → ℝ) (hm 
 
 | 原文对象或结论 | 当前Lean与范围 |
 |---|---|
-| 原文所选陈述 | 本条所引原句及展示公式；单个记号归入context_notation。 |
-| 对象/域/量词/前提 | 完整当前Lean及依赖定义；新增资格见[EXTRA] |
-| 网站首轮 | NEEDS_HUMAN：D11、D19、D20给出光滑周期实L²算子的图闭包；D12–D14给出完整复特征基上的最大图算子。正质量、β>0、光滑周期势下闭自伴陈述合理，归一化无碍；但这替换了原文C₀²核心域，不能以核心形式对称直接视作原域自伴。 |
+| 所引原句 | 原文自伴句保持不变；Lean主版与corrected版均指周期Gibbs复L²上的闭/最大图实现。 |
+| 对象、域、量词及前提 | 以上完整声明；额外资格与未覆盖部分见下一段 |
+| 最新网站原始评价 | NEEDS_HUMAN；复审 |
 
 ### 5. [EXTRA] 与覆盖缺口
 
 - [EXTRA]使用现成实际Gibbs复L²闭实现及完整adjoint域；原C₀²核心对称不等于闭自伴。权重归一不改变自伴关系。
-- [EXTRA] 25号：明确采用周期紧环面的Gibbs L²图闭包/最大复图实现；此域修正替换原C₀²核心域，不能把核心上的形式对称当原域自伴，待人工签核。
+- [EXTRA] 明确采用周期紧环面的Gibbs L²图闭包/最大复图实现；此域修正替换原C₀²核心域，不能把核心上的形式对称当原域自伴，待人工签核。
+- [EXTRA] 原页先取单位质量；本条还推广至任意正对角质量。
+- [ERRATUM?] 原C₀²域上的形式对称不应直接等同于完整无界算子的自伴。
+- [EXTRA] 复审范围：限定版正质量、β>0、C∞单位周期势、闭Gibbs复L²实现已获PASS；原C₀²措辞与闭实现的解释仍待导师。
+- 覆盖缺口：原C₀²核心域自伴的字面断言未由这两份签名实现，需人工确认作者原意。
 
 ### 6. 审计结论（含网站结论）
 
-网站原返回：NEEDS_HUMAN。D11、D19、D20给出光滑周期实L²算子的图闭包；D12–D14给出完整复特征基上的最大图算子。正质量、β>0、光滑周期势下闭自伴陈述合理，归一化无碍；但这替换了原文C₀²核心域，不能以核心形式对称直接视作原域自伴。
-本轮处理：明确采用周期紧环面的Gibbs L²图闭包/最大复图实现；此域修正替换原C₀²核心域，不能把核心上的形式对称当原域自伴，待人工签核。
-本地单文件及逐声明依赖检查通过；含未完成证明依赖的声明仍标未证。原书疑误及修正版分别见勘误，当前修改版未获网站复审结论。
+网站原返回：NEEDS_HUMAN。A：印刷249页末的“Then L is self-adjoint with respect to this inner product.”摘录准确。C：两份签名相同且作为修正版均PASS：正对角质量、β>0、C∞单位周期势；对象为归一Gibbs复L²上的实际部分线性算子，结论为完整IsSelfAdjoint。已展开光滑周期空间→L²嵌入→光滑域算子→实图闭包→由实际闭算子特征空间构成的复Hilbert基→最大复图。复图约束的是所有谱系数，并非只在原光滑域验证对称；归一权重的常数缩放不改变自伴关系。原书该句的前置对象是C₀²(μ̄β)，并先取M=I、γ=1；本条采用周期闭实现及正对角质量推广，是明确披露的域修正而非原C₀²域的逐字实现。[EXTRA]已要求人工确认，整条据此为NEEDS_HUMAN。
+当前处理：修正版/限定声明=网站PASS；原文疑误或范围解释待导师。
+限定版正质量、β>0、C∞单位周期势、闭Gibbs复L²实现已获PASS；原C₀²措辞与闭实现的解释仍待导师。
+本地编译和逐声明依赖核对通过。原文疑误、各限定/修正版、反例的评价分别列出；有未完成证明依赖的声明仍为未证。
 
 ### 7. 状态与证明位置
 
-| 声明 | 状态 | 未证原因 |
-|---|---|---|
-| `MD.Ch06.brownianClosedSelfAdjoint` | 已证 | — |
-| `MD.Ch06.brownianClosedSelfAdjoint_corrected` | 已证 | — |
+| 声明 | 证明状态 | 未证原因 | 网站分版结论 |
+|---|---|---|---|
+| `MD.Ch06.brownianClosedSelfAdjoint` | 已证 | — | PASS |
+| `MD.Ch06.brownianClosedSelfAdjoint_corrected` | 已证 | — | PASS |
 
-位置：`Blueprint/Ch06.lean:2302`；验证：`blueprint/ch06/closeout25/FINAL_COMPILE.log`。
+位置：`Blueprint/Ch06.lean:2303`；本地核验记录：`blueprint/ch06/closeout26/FINAL_COMPILE.log`。
 
 ## MD-6.4.3-BrownianCompactResolvent
 
@@ -10182,29 +10408,34 @@ theorem brownianCompactResolvent_corrected {Nc : ℕ} (m : Fin Nc → ℝ) (hm :
 
 | 原文对象或结论 | 当前Lean与范围 |
 |---|---|
-| 原文所选陈述 | 本条所引原句及展示公式；单个记号归入context_notation。 |
-| 对象/域/量词/前提 | 完整当前Lean及依赖定义；新增资格见[EXTRA] |
-| 网站首轮 | NEEDS_HUMAN：移位图映射为(x,y)↦x−y，逆映射再投影为(1−L)⁻¹，实部/虚部复化对应复L²预解式。周期紧域上紧性合理；原段在未明确紧配置域及闭算子域前泛称C₀²算子具有紧预解式，范围需签核。 |
+| 所引原句 | Lean仅覆盖紧环面Gibbs-L²闭实现的(1−L)⁻¹紧性；原文离散谱子句由条目7承接。 |
+| 对象、域、量词及前提 | 以上完整声明；额外资格与未覆盖部分见下一段 |
+| 最新网站原始评价 | NEEDS_HUMAN；复审 |
 
 ### 5. [EXTRA] 与覆盖缺口
 
 - [EXTRA]实际Gibbs复L²闭实现的(1−L)⁻¹；全部离散谱子结论另条保留，未从本条自动声称原C₀²域自伴。
-- [EXTRA] 25号：仅断言紧torus上的闭实现具有紧预解式；原一般C₀²措辞未覆盖，域与紧配置假设需人工签核。
+- [EXTRA] 仅断言紧torus上的闭实现具有紧预解式；原一般C₀²措辞未覆盖，域与紧配置假设需人工签核。
+- [ERRATUM?] 预解式必须属于明确的闭实现，不能仅以核心上的形式微分表达认定原域具有该预解式。
+- [EXTRA] 复审范围：只给实际(1−L)⁻¹紧性，离散谱由相邻独立条目承接；不把原域解释自动视为已认证。
+- 覆盖缺口：原C₀²域及一般配置空间的解释待人工确认。
+- 覆盖缺口：原句中的离散谱结论由BrownianDiscreteSpectrum及其eigenvalue补充声明另列。
 
 ### 6. 审计结论（含网站结论）
 
-网站原返回：NEEDS_HUMAN。移位图映射为(x,y)↦x−y，逆映射再投影为(1−L)⁻¹，实部/虚部复化对应复L²预解式。周期紧域上紧性合理；原段在未明确紧配置域及闭算子域前泛称C₀²算子具有紧预解式，范围需签核。
-本轮处理：仅断言紧torus上的闭实现具有紧预解式；原一般C₀²措辞未覆盖，域与紧配置假设需人工签核。
-本地单文件及逐声明依赖检查通过；含未完成证明依赖的声明仍标未证。原书疑误及修正版分别见勘误，当前修改版未获网站复审结论。
+网站原返回：NEEDS_HUMAN。A：compact resolvent、引用[360]及随后可数离散特征值的原句准确。C：两份紧性签名作为周期闭实现的限定版均PASS。已展开D86–D91：实闭图上的shift为(x,y)↦x−y，逆映射后取第一坐标，所得确为(1−L)⁻¹；复预解式由实部、虚部分别作用该真实预解式并复线性化得到，不是一个仅名为resolvent的任意紧算子。正质量、β>0和紧配置环面是明确前提；没有将紧性本身假设进去。此条签名仅给预解式紧性，离散谱的对应条目为7。原页仍把性质归在C₀²函数空间上；与闭实现、紧配置假设之间的解释差别已在[EXTRA]要求签核，不能由本条自动认证原一般域表述。
+当前处理：修正版/限定声明=网站PASS；原文疑误或范围解释待导师。
+只给实际(1−L)⁻¹紧性，离散谱由相邻独立条目承接；不把原域解释自动视为已认证。
+本地编译和逐声明依赖核对通过。原文疑误、各限定/修正版、反例的评价分别列出；有未完成证明依赖的声明仍为未证。
 
 ### 7. 状态与证明位置
 
-| 声明 | 状态 | 未证原因 |
-|---|---|---|
-| `MD.Ch06.brownianCompactResolvent` | 已证 | — |
-| `MD.Ch06.brownianCompactResolvent_corrected` | 已证 | — |
+| 声明 | 证明状态 | 未证原因 | 网站分版结论 |
+|---|---|---|---|
+| `MD.Ch06.brownianCompactResolvent` | 已证 | — | PASS |
+| `MD.Ch06.brownianCompactResolvent_corrected` | 已证 | — | PASS |
 
-位置：`Blueprint/Ch06.lean:2318`；验证：`blueprint/ch06/closeout25/FINAL_COMPILE.log`。
+位置：`Blueprint/Ch06.lean:2319`；本地核验记录：`blueprint/ch06/closeout26/FINAL_COMPILE.log`。
 
 ## MD-6.4.3-BrownianDiscreteSpectrum
 
@@ -10247,29 +10478,33 @@ theorem brownianDiscreteSpectrum_eigenvalue {Nc : ℕ} (m : Fin Nc → ℝ) (hm 
 
 | 原文对象或结论 | 当前Lean与范围 |
 |---|---|
-| 原文所选陈述 | 本条Lean覆盖范围：保留已证可数/实谱/孤立子句，新增“每谱点为特征值”的完整短陈述，尚未证明；有限重数与无有限聚点未冒称覆盖。 |
-| 对象/域/量词/前提 | 完整当前Lean及依赖定义；新增资格见[EXTRA] |
-| 网站首轮 | FAIL：签名保留全复谱可数、实值和每点孤立，但没有原句“谱只由特征值组成”的非零特征向量/特征图结论，也未写有限重数。[EXTRA]只列前三项不能代替全部离散特征谱结论。原C₀²域另有闭实现疑义。 |
+| 所引原句 | 本条Lean覆盖范围：保留已证可数/实谱/孤立子句，新增“每谱点为特征值”的完整短陈述，尚未证明；有限重数与无有限聚点未冒称覆盖。 |
+| 对象、域、量词及前提 | 以上完整声明；额外资格与未覆盖部分见下一段 |
+| 最新网站原始评价 | NEEDS_HUMAN；复审 |
 
 ### 5. [EXTRA] 与覆盖缺口
 
-- [EXTRA] 25号：保留已证可数/实谱/孤立子句，新增“每谱点为特征值”的完整短陈述，尚未证明；有限重数与无有限聚点未冒称覆盖。
+- [EXTRA] 保留已证可数/实谱/孤立子句，新增“每谱点为特征值”的完整短陈述，尚未证明；有限重数与无有限聚点未冒称覆盖。
+- [EXTRA] 全部谱结论针对正质量、β>0、C∞单位周期势的紧环面Gibbs复L²闭实现。
+- [ERRATUM?] 原C₀²域与上述闭实现的对应关系承接条目6，仍需人工签核。
+- [EXTRA] 复审范围：合并主声明与eigenvalue补充声明覆盖可数实孤立谱及每谱点为特征值；正质量、β>0、C∞单位周期势和闭Gibbs复L²域均为限定；有限重数等强化未单列。
 - 覆盖缺口：有限重数和无有限聚点的标准离散谱强化尚未单列。
 
 ### 6. 审计结论（含网站结论）
 
-网站原返回：FAIL。签名保留全复谱可数、实值和每点孤立，但没有原句“谱只由特征值组成”的非零特征向量/特征图结论，也未写有限重数。[EXTRA]只列前三项不能代替全部离散特征谱结论。原C₀²域另有闭实现疑义。
-本轮处理：保留已证可数/实谱/孤立子句，新增“每谱点为特征值”的完整短陈述，尚未证明；有限重数与无有限聚点未冒称覆盖。
-本地单文件及逐声明依赖检查通过；含未完成证明依赖的声明仍标未证。原书疑误及修正版分别见勘误，当前修改版未获网站复审结论。
+网站原返回：NEEDS_HUMAN。A：与条目6同一句原文，转录准确。C：两份签名分别PASS。主声明给出所定义复谱的可数性、虚部为零及每个谱点的开邻域孤立性；补充声明对每个谱点给出非零复L²向量及(v,z•v)在完整闭图中，准确表达它是特征值而非仅“谱点可数”。D92–D93的预解集要求有界复线性算子同时满足左右逆图关系，谱取其补集，未偷换成预先枚举的特征值集合。审校按两份声明合并覆盖原文的“countable collection of eigenvalues”，不因补充声明的sorry判FAIL。有限重数没有作为该两份签名的结论；不得把依赖中某定理的存在误计为这里显式列出的结论。整条仍承接条目6的原C₀²域/闭实现解释疑问。
+当前处理：修正版/限定声明=网站PASS；原文疑误或范围解释待导师。
+合并主声明与eigenvalue补充声明覆盖可数实孤立谱及每谱点为特征值；正质量、β>0、C∞单位周期势和闭Gibbs复L²域均为限定；有限重数等强化未单列。
+本地编译和逐声明依赖核对通过。原文疑误、各限定/修正版、反例的评价分别列出；有未完成证明依赖的声明仍为未证。
 
 ### 7. 状态与证明位置
 
-| 声明 | 状态 | 未证原因 |
-|---|---|---|
-| `MD.Ch06.brownianDiscreteSpectrum` | 已证 | — |
-| `MD.Ch06.brownianDiscreteSpectrum_eigenvalue` | 未证 | 缺大型理论 |
+| 声明 | 证明状态 | 未证原因 | 网站分版结论 |
+|---|---|---|---|
+| `MD.Ch06.brownianDiscreteSpectrum` | 已证 | — | PASS |
+| `MD.Ch06.brownianDiscreteSpectrum_eigenvalue` | 未证 | 缺大型理论 | PASS |
 
-位置：`Blueprint/Ch06.lean:2333`；验证：`blueprint/ch06/closeout25/FINAL_COMPILE.log`。
+位置：`Blueprint/Ch06.lean:2334`；本地核验记录：`blueprint/ch06/closeout26/FINAL_COMPILE.log`。
 
 ## MD-6.4.3-BrownianSpectralGap
 
@@ -10302,9 +10537,9 @@ theorem brownianSpectralGap {Nc : ℕ} (m : Fin Nc → ℝ) (hm : ∀ i, 0 < m i
 
 | 原文对象或结论 | 当前Lean与范围 |
 |---|---|
-| 原文所选陈述 | 本条所引原句及展示公式；单个记号归入context_notation。 |
-| 对象/域/量词/前提 | 完整当前Lean及依赖定义；新增资格见[EXTRA] |
-| 网站首轮 | PASS：存在统一α>0，对全复谱每个非零点同时给出虚部0和实部≤−α，未将谱隙作为假设；与原排除零特征值的陈述吻合。正质量、β>0、C∞周期及完整谱已明确。 |
+| 所引原句 | 本条所引原句及展示公式；单个记号归入context_notation。 |
+| 对象、域、量词及前提 | 以上完整声明；额外资格与未覆盖部分见下一段 |
+| 最新网站原始评价 | PASS；首轮保留 |
 
 ### 5. [EXTRA] 与覆盖缺口
 
@@ -10313,16 +10548,17 @@ theorem brownianSpectralGap {Nc : ℕ} (m : Fin Nc → ℝ) (hm : ∀ i, 0 < m i
 ### 6. 审计结论（含网站结论）
 
 网站原返回：PASS。存在统一α>0，对全复谱每个非零点同时给出虚部0和实部≤−α，未将谱隙作为假设；与原排除零特征值的陈述吻合。正质量、β>0、C∞周期及完整谱已明确。
-本轮处理：保留原审阅版本结论；本轮未改签名。
-本地单文件及逐声明依赖检查通过；含未完成证明依赖的声明仍标未证。原书疑误及修正版分别见勘误，当前修改版未获网站复审结论。
+当前处理：网站PASS（首轮未改版本）。
+保留所交版本的明确结论。
+本地编译和逐声明依赖核对通过。原文疑误、各限定/修正版、反例的评价分别列出；有未完成证明依赖的声明仍为未证。
 
 ### 7. 状态与证明位置
 
-| 声明 | 状态 | 未证原因 |
-|---|---|---|
-| `MD.Ch06.brownianSpectralGap` | 已证 | — |
+| 声明 | 证明状态 | 未证原因 | 网站分版结论 |
+|---|---|---|---|
+| `MD.Ch06.brownianSpectralGap` | 已证 | — | PASS |
 
-位置：`Blueprint/Ch06.lean:2357`；验证：`blueprint/ch06/closeout25/FINAL_COMPILE.log`。
+位置：`Blueprint/Ch06.lean:2358`；本地核验记录：`blueprint/ch06/closeout26/FINAL_COMPILE.log`。
 
 ## MD-6.4.3-Theorem61
 
@@ -10401,8 +10637,8 @@ theorem theorem61_corrected :
             K * ‖textbookPeriodicSmoothEmbedding U hU hp β f‖ * Real.exp (-α*(t : ℝ)) := by
   sorry
 
-/-- 【原书疑误】Theorem6.1三款并列，保留严格负定及(5.6)轨道时间平均；闭算子实现与质量Laplacian歧义另列，不证明此版。 -/
-theorem theorem61Printed :
+/-- 【限定摘录，非原域字面版】保留严格负定及(5.6)轨道时间平均的疑误，但算子为闭Gibbs复L²实现；不把另列质量表达式当成本声明的算子，不证明此版。 -/
+theorem theorem61ClosedRealizationExcerpt :
   ∀ {n : ℕ} (m : MolecularDynamics.Chapter06Review.V n) (hm : ∀ i, 0 < m i)
     (U : MolecularDynamics.Chapter06Review.V n → ℝ) (hU : ContDiff ℝ ∞ U) (hp : textbookUnitPeriodicPotential U)
     (β : ℝ) (hβ : 0 < β),
@@ -10431,7 +10667,7 @@ theorem theorem61Printed :
             K*‖textbookPeriodicSmoothEmbedding U hU hp β f‖*Real.exp (-α*t) := by
   sorry
 
-/-- 【原书疑误】按p.244既定ΔM=Σmi∂ii逐字代入Theorem6.1的形式表达；不宣称它是Brownian过程生成元。 -/
+/-- 【原书疑误】在ΔM=Σmi∂ii这一记号解释下的条件性代数表达；原页记号尚待核定，不宣称它是整个原定理或Brownian过程生成元。 -/
 def brownianMassGeneratorPrinted {n : ℕ} (m : Fin n → ℝ) (U f : (Fin n → ℝ) → ℝ)
     (β : ℝ) (x : Fin n → ℝ) : ℝ :=
   ∑ i, (-(m i)⁻¹*fderiv ℝ U x (Pi.single i 1)*fderiv ℝ f x (Pi.single i 1)+
@@ -10450,31 +10686,36 @@ noncomputable def brownianMassGeneratorPrinted_corrected {Nc : ℕ} (m : Fin Nc 
 
 | 原文对象或结论 | 当前Lean与范围 |
 |---|---|
-| 原文所选陈述 | 本条Lean覆盖范围：Theorem6.1主版、corrected和Printed同时补全部谱点特征值子句；仍保留闭域/半负定/L²相对初始密度的分布平均与原印刷严格负定/轨道平均两套版本，原文疑误不证。 |
-| 对象/域/量词/前提 | 完整当前Lean及依赖定义；新增资格见[EXTRA] |
-| 网站首轮 | FAIL：量词顺序保证K,α独立于检验函数和时间，可依赖初始L²密度；闭自伴、全谱非正、可数孤立和谱隙均在。但仍漏明确的“全谱点均为特征值”结论，亦将严格负定改为非正谱、原时间平均改为演化分布平均并缩限初始law。后者已[EXTRA]/[ERRATUM?]披露，属需人工确认的修订，不能当原定理完整忠实版。 |
+| 所引原句 | 本条当前覆盖范围：主版与_corrected保持网站已通过的闭实现/分布平均签名。旧theorem61Printed改名theorem61ClosedRealizationExcerpt，明确只是闭实现限定摘录，不能冒称C₀²原域及原ΔM生成元的整条字面实现。分布平均与轨道时间平均冲突、negative definite措辞保留为原书疑误。 |
+| 对象、域、量词及前提 | 以上完整声明；额外资格与未覆盖部分见下一段 |
+| 最新网站原始评价 | FAIL；复审 |
 
 ### 5. [EXTRA] 与覆盖缺口
 
-- [EXTRA] 25号：Theorem6.1主版、corrected和Printed同时补全部谱点特征值子句；仍保留闭域/半负定/L²相对初始密度的分布平均与原印刷严格负定/轨道平均两套版本，原文疑误不证。
+- [EXTRA] 主版与_corrected保持网站已通过的闭实现/分布平均签名。旧theorem61Printed改名theorem61ClosedRealizationExcerpt，明确只是闭实现限定摘录，不能冒称C₀²原域及原ΔM生成元的整条字面实现。分布平均与轨道时间平均冲突、negative definite措辞保留为原书疑误。
+- [ERRATUM?] 原书数学疑误与本次形式化修复分别记录，见CH06_ERRATA。
+- 覆盖缺口：原C₀²域及原ΔM生成元对应的整条字面形式化未提供；独立质量表达式不补足此联系。
+- 覆盖缺口：严格负定与几乎处处轨道时间平均的固定指数界不作为成立结论。
+- 覆盖缺口：本轮已目视核定印刷244/PDF265：ΔM=Σmi∂²/∂pi²。质量表达式注释中的“原页记号尚待核定”是复审时旧状态；核页不等于已建立原域/整条生成元联系。Theorem6.1的构型逆质量解释仍待导师。
 
 ### 6. 审计结论（含网站结论）
 
-网站原返回：FAIL。量词顺序保证K,α独立于检验函数和时间，可依赖初始L²密度；闭自伴、全谱非正、可数孤立和谱隙均在。但仍漏明确的“全谱点均为特征值”结论，亦将严格负定改为非正谱、原时间平均改为演化分布平均并缩限初始law。后者已[EXTRA]/[ERRATUM?]披露，属需人工确认的修订，不能当原定理完整忠实版。
-本轮处理：Theorem6.1主版、corrected和Printed同时补全部谱点特征值子句；仍保留闭域/半负定/L²相对初始密度的分布平均与原印刷严格负定/轨道平均两套版本，原文疑误不证。
-本地单文件及逐声明依赖检查通过；含未完成证明依赖的声明仍标未证。原书疑误及修正版分别见勘误，当前修改版未获网站复审结论。
+网站原返回：FAIL。A：Theorem 6.1的生成元、三款结论及最后明确指向(5.6)的time average均准确转录；书中分布平均与轨道时间平均的冲突以及negative definite措辞须保留为原书疑误。C分版本：theorem61和theorem61_corrected作为限定修正版均PASS，包含完整闭自伴、全部复谱实且非正、可数、每点有非零图特征向量、孤立、非零谱隙及对所有非负归一L²相对初始密度的演化分布平均指数界。K、α在ρ之后、在所有f和t之前选择，量词正确；DensityLaw为真实Brownian核作用初始ρμβ，DensityAverage的分母在这些概率条件下为1。修正生成元的扩散和漂移均用逆质量，匹配给出的实际Brownian路径系数。theorem61Printed的严格负定及几乎处处轨道平均指数界保留了原文疑误，但它仍使用与corrected相同的闭复L²算子，而原文明确以C₀²(μβ)为域；其全部谱/自伴断言也未与另列的brownianMassGeneratorPrinted建立对象联系。因此该名字为Printed的整条声明不是原域及原生成元的字面实现，忠实性FAIL；这与原书数学错误本身的NEEDS_HUMAN及sorry无关。brownianMassGeneratorPrinted的代数表达与其注释一致，但附件没有印刷244页，无法据本附件独立确认ΔM在该页的既定含义，应保留记号歧义而不能假称已逐页核实。
+当前处理：按网站审校意见修复，本地核验通过（未再送网站）。
+主版与_corrected保持网站已通过的闭实现/分布平均签名。旧theorem61Printed改名theorem61ClosedRealizationExcerpt，明确只是闭实现限定摘录，不能冒称C₀²原域及原ΔM生成元的整条字面实现。分布平均与轨道时间平均冲突、negative definite措辞保留为原书疑误。
+本地编译和逐声明依赖核对通过。原文疑误、各限定/修正版、反例的评价分别列出；有未完成证明依赖的声明仍为未证。
 
 ### 7. 状态与证明位置
 
-| 声明 | 状态 | 未证原因 |
-|---|---|---|
-| `MD.Ch06.theorem61` | 未证 | 缺大型理论 |
-| `MD.Ch06.theorem61_corrected` | 未证 | 缺大型理论 |
-| `MD.Ch06.theorem61Printed` | 未证 | 原书疑误不证 |
-| `MD.Ch06.brownianMassGeneratorPrinted` | 定义 | — |
-| `MD.Ch06.brownianMassGeneratorPrinted_corrected` | 定义 | — |
+| 声明 | 证明状态 | 未证原因 | 网站分版结论 |
+|---|---|---|---|
+| `MD.Ch06.theorem61` | 未证 | 缺大型理论 | PASS |
+| `MD.Ch06.theorem61_corrected` | 未证 | 缺大型理论 | PASS |
+| `MD.Ch06.theorem61ClosedRealizationExcerpt` | 未证 | 原书疑误不证 | 修复后未再送网站 |
+| `MD.Ch06.brownianMassGeneratorPrinted` | 定义 | — | 修复后未再送网站 |
+| `MD.Ch06.brownianMassGeneratorPrinted_corrected` | 定义 | — | 修复后未再送网站 |
 
-位置：`Blueprint/Ch06.lean:2371`；验证：`blueprint/ch06/closeout25/FINAL_COMPILE.log`。
+位置：`Blueprint/Ch06.lean:2373`；本地核验记录：`blueprint/ch06/closeout26/FINAL_COMPILE.log`。
 
 ## MD-6.4.3-Theorem61TimeAveragePrinted
 
@@ -10512,7 +10753,7 @@ theorem theorem61TimeAveragePrinted {Nc : ℕ} (m : Fin Nc → ℝ) (hm : ∀ i,
   sorry
 ```
 
-同问题的独立修正版（位于另一source_id）：
+同问题的独立限定/修正版（位于另一条）：
 ```lean
 theorem theorem61TimeAveragePrinted_corrected {Nc : ℕ} (m : Fin Nc → ℝ) (hm : ∀ i, 0 < m i)
     (U : (Fin Nc → ℝ) → ℝ) (hU : ContDiff ℝ ∞ U)
@@ -10536,28 +10777,29 @@ theorem theorem61TimeAveragePrinted_corrected {Nc : ℕ} (m : Fin Nc → ℝ) (h
 
 | 原文对象或结论 | 当前Lean与范围 |
 |---|---|
-| 原文所选陈述 | 本条所引原句及展示公式；单个记号归入context_notation。 |
-| 对象/域/量词/前提 | 完整当前Lean及依赖定义；新增资格见[EXTRA] |
-| 网站首轮 | NEEDS_HUMAN：按Printed规则核查：任意点初值、K,α先于f与AE样本、全部t>0的轨道时间积分，确为原末句时间平均读法的明确化。AE资格是额外选择；原文本身与前句分布平均冲突且该指数路径界一般错误。 |
+| 所引原句 | 本条所引原句及展示公式；单个记号归入context_notation。 |
+| 对象、域、量词及前提 | 以上完整声明；额外资格与未覆盖部分见下一段 |
+| 最新网站原始评价 | NEEDS_HUMAN；首轮保留 |
 
 ### 5. [EXTRA] 与覆盖缺口
 
 - [EXTRA]实际Brownian全时torus过程、任意点初值、AE路径资格和t>0明确；原C∞紧支检验在紧torus周期表示。
-- [EXTRA] 25号：原文版忠实性与数学疑误分开；补齐所交条目所属的现有_corrected完整签名，不从repair_log名称推断网站已通过修正版。
+- [EXTRA] 原文版忠实性与数学疑误分开；补齐所交条目所属的现有_corrected完整签名，不从repair_log名称推断网站已通过修正版。
 
 ### 6. 审计结论（含网站结论）
 
 网站原返回：NEEDS_HUMAN。按Printed规则核查：任意点初值、K,α先于f与AE样本、全部t>0的轨道时间积分，确为原末句时间平均读法的明确化。AE资格是额外选择；原文本身与前句分布平均冲突且该指数路径界一般错误。
-本轮处理：原文版忠实性与数学疑误分开；补齐所交条目所属的现有_corrected完整签名，不从repair_log名称推断网站已通过修正版。
-本地单文件及逐声明依赖检查通过；含未完成证明依赖的声明仍标未证。原书疑误及修正版分别见勘误，当前修改版未获网站复审结论。
+当前处理：原文疑误或语义范围待导师；不冒称未提供版本已通过。
+保留所交版本的明确结论。
+本地编译和逐声明依赖核对通过。原文疑误、各限定/修正版、反例的评价分别列出；有未完成证明依赖的声明仍为未证。
 
 ### 7. 状态与证明位置
 
-| 声明 | 状态 | 未证原因 |
-|---|---|---|
-| `MD.Ch06.theorem61TimeAveragePrinted` | 未证 | 原书疑误不证 |
+| 声明 | 证明状态 | 未证原因 | 网站分版结论 |
+|---|---|---|---|
+| `MD.Ch06.theorem61TimeAveragePrinted` | 未证 | 原书疑误不证 | 未获单独PASS；见分版意见 |
 
-位置：`Blueprint/Ch06.lean:2474`；验证：`blueprint/ch06/closeout25/FINAL_COMPILE.log`。
+位置：`Blueprint/Ch06.lean:2476`；本地核验记录：`blueprint/ch06/closeout26/FINAL_COMPILE.log`。
 
 ## MD-6.4.3-BrownianEnsembleExponential
 
@@ -10615,9 +10857,9 @@ theorem theorem61TimeAveragePrinted_corrected {Nc : ℕ} (m : Fin Nc → ℝ) (h
 
 | 原文对象或结论 | 当前Lean与范围 |
 |---|---|
-| 原文所选陈述 | 本条所引原句及展示公式；单个记号归入context_notation。 |
-| 对象/域/量词/前提 | 完整当前Lean及依赖定义；新增资格见[EXTRA] |
-| 网站首轮 | PASS：实际Wiener驱动转移kernel推动非负质量1的L²相对密度；DensityAverage是总质量归一的演化分布平均，右侧Z⁻¹积分与torus Gibbs平均一致。K,α统一于所有光滑周期f与t≥0；归一范数与原范数的常数差可吸收进K。[EXTRA]明确非轨道平均及不含奇异初始law。 |
+| 所引原句 | 本条所引原句及展示公式；单个记号归入context_notation。 |
+| 对象、域、量词及前提 | 以上完整声明；额外资格与未覆盖部分见下一段 |
+| 最新网站原始评价 | PASS；首轮保留 |
 
 ### 5. [EXTRA] 与覆盖缺口
 
@@ -10626,17 +10868,18 @@ theorem theorem61TimeAveragePrinted_corrected {Nc : ℕ} (m : Fin Nc → ℝ) (h
 ### 6. 审计结论（含网站结论）
 
 网站原返回：PASS。实际Wiener驱动转移kernel推动非负质量1的L²相对密度；DensityAverage是总质量归一的演化分布平均，右侧Z⁻¹积分与torus Gibbs平均一致。K,α统一于所有光滑周期f与t≥0；归一范数与原范数的常数差可吸收进K。[EXTRA]明确非轨道平均及不含奇异初始law。
-本轮处理：保留原审阅版本结论；本轮未改签名。
-本地单文件及逐声明依赖检查通过；含未完成证明依赖的声明仍标未证。原书疑误及修正版分别见勘误，当前修改版未获网站复审结论。
+当前处理：网站PASS（首轮未改版本）。
+保留所交版本的明确结论。
+本地编译和逐声明依赖核对通过。原文疑误、各限定/修正版、反例的评价分别列出；有未完成证明依赖的声明仍为未证。
 
 ### 7. 状态与证明位置
 
-| 声明 | 状态 | 未证原因 |
-|---|---|---|
-| `MD.Ch06.brownianEnsembleExponential` | 已证 | — |
-| `MD.Ch06.theorem61TimeAveragePrinted_corrected` | 已证 | — |
+| 声明 | 证明状态 | 未证原因 | 网站分版结论 |
+|---|---|---|---|
+| `MD.Ch06.brownianEnsembleExponential` | 已证 | — | PASS |
+| `MD.Ch06.theorem61TimeAveragePrinted_corrected` | 已证 | — | 未获单独PASS；见分版意见 |
 
-位置：`Blueprint/Ch06.lean:2490`；验证：`blueprint/ch06/closeout25/FINAL_COMPILE.log`。
+位置：`Blueprint/Ch06.lean:2492`；本地核验记录：`blueprint/ch06/closeout26/FINAL_COMPILE.log`。
 
 ## MD-6.4.3-BrownianNegativeDefinitePrinted
 
@@ -10662,7 +10905,7 @@ theorem brownianNegativeDefinitePrinted {Nc : ℕ} (m : Fin Nc → ℝ) (hm : �
   sorry
 ```
 
-同问题的独立修正版（位于另一source_id）：
+同问题的独立限定/修正版（位于另一条）：
 ```lean
 theorem brownianNegativeDefinitePrinted_corrected {Nc : ℕ} (m : Fin Nc → ℝ)
     (hm : ∀ i, 0 < m i) (U : (Fin Nc → ℝ) → ℝ) (β : ℝ) (hβ : 0 < β)
@@ -10679,28 +10922,29 @@ theorem brownianNegativeDefinitePrinted_corrected {Nc : ℕ} (m : Fin Nc → ℝ
 
 | 原文对象或结论 | 当前Lean与范围 |
 |---|---|
-| 原文所选陈述 | 本条所引原句及展示公式；单个记号归入context_notation。 |
-| 对象/域/量词/前提 | 完整当前Lean及依赖定义；新增资格见[EXTRA] |
-| 网站首轮 | NEEDS_HUMAN：Printed严格负定版准确编码任意非零周期光滑f的二次型<0；虽为假，按原文字面版规则不以不忠实判FAIL。已有[ERRATUM?]正确。 |
+| 所引原句 | 本条所引原句及展示公式；单个记号归入context_notation。 |
+| 对象、域、量词及前提 | 以上完整声明；额外资格与未覆盖部分见下一段 |
+| 最新网站原始评价 | NEEDS_HUMAN；首轮保留 |
 
 ### 5. [EXTRA] 与覆盖缺口
 
 - [EXTRA]明确严格负定含全部非零周期光滑L²函数的读法。
-- [EXTRA] 25号：原文版忠实性与数学疑误分开；补齐所交条目所属的现有_corrected完整签名，不从repair_log名称推断网站已通过修正版。
+- [EXTRA] 原文版忠实性与数学疑误分开；补齐所交条目所属的现有_corrected完整签名，不从repair_log名称推断网站已通过修正版。
 
 ### 6. 审计结论（含网站结论）
 
 网站原返回：NEEDS_HUMAN。Printed严格负定版准确编码任意非零周期光滑f的二次型<0；虽为假，按原文字面版规则不以不忠实判FAIL。已有[ERRATUM?]正确。
-本轮处理：原文版忠实性与数学疑误分开；补齐所交条目所属的现有_corrected完整签名，不从repair_log名称推断网站已通过修正版。
-本地单文件及逐声明依赖检查通过；含未完成证明依赖的声明仍标未证。原书疑误及修正版分别见勘误，当前修改版未获网站复审结论。
+当前处理：原文疑误或语义范围待导师；不冒称未提供版本已通过。
+保留所交版本的明确结论。
+本地编译和逐声明依赖核对通过。原文疑误、各限定/修正版、反例的评价分别列出；有未完成证明依赖的声明仍为未证。
 
 ### 7. 状态与证明位置
 
-| 声明 | 状态 | 未证原因 |
-|---|---|---|
-| `MD.Ch06.brownianNegativeDefinitePrinted` | 未证 | 原书疑误不证 |
+| 声明 | 证明状态 | 未证原因 | 网站分版结论 |
+|---|---|---|---|
+| `MD.Ch06.brownianNegativeDefinitePrinted` | 未证 | 原书疑误不证 | 原文忠实性PASS；原书数学/范围NEEDS_HUMAN |
 
-位置：`Blueprint/Ch06.lean:2529`；验证：`blueprint/ch06/closeout25/FINAL_COMPILE.log`。
+位置：`Blueprint/Ch06.lean:2531`；本地核验记录：`blueprint/ch06/closeout26/FINAL_COMPILE.log`。
 
 ## MD-6.4.2-OUDensityPrinted
 
@@ -10728,9 +10972,9 @@ def ouDensityPrinted (γ σ x0 t x : ℝ) : ℝ :=
 
 | 原文对象或结论 | 当前Lean与范围 |
 |---|---|
-| 原文所选陈述 | 本条所引原句及展示公式；单个记号归入context_notation。 |
-| 对象/域/量词/前提 | 完整当前Lean及依赖定义；新增资格见[EXTRA] |
-| 网站首轮 | PASS：Printed定义保留了原书未归一化指数。ouMean=exp(−γt)x0，ouVariance=σ_noise²(1−exp(−2γt))/(2γ)；取σ_noise²=2γkBTm就得到6.45。[EXTRA]已经说明参数转换。作为字面公式定义PASS，不把原书缺归一化或t=0问题算成该字面定义的签名错误。 |
+| 所引原句 | 本条所引原句及展示公式；单个记号归入context_notation。 |
+| 对象、域、量词及前提 | 以上完整声明；额外资格与未覆盖部分见下一段 |
+| 最新网站原始评价 | PASS；首轮保留 |
 
 ### 5. [EXTRA] 与覆盖缺口
 
@@ -10739,16 +10983,17 @@ def ouDensityPrinted (γ σ x0 t x : ℝ) : ℝ :=
 ### 6. 审计结论（含网站结论）
 
 网站原返回：PASS。Printed定义保留了原书未归一化指数。ouMean=exp(−γt)x0，ouVariance=σ_noise²(1−exp(−2γt))/(2γ)；取σ_noise²=2γkBTm就得到6.45。[EXTRA]已经说明参数转换。作为字面公式定义PASS，不把原书缺归一化或t=0问题算成该字面定义的签名错误。
-本轮处理：保留原审阅版本结论；本轮未改签名。
-本地单文件及逐声明依赖检查通过；含未完成证明依赖的声明仍标未证。原书疑误及修正版分别见勘误，当前修改版未获网站复审结论。
+当前处理：网站PASS（首轮未改版本）。
+保留所交版本的明确结论。
+本地编译和逐声明依赖核对通过。原文疑误、各限定/修正版、反例的评价分别列出；有未完成证明依赖的声明仍为未证。
 
 ### 7. 状态与证明位置
 
-| 声明 | 状态 | 未证原因 |
-|---|---|---|
-| `MD.Ch06.ouDensityPrinted` | 定义 | — |
+| 声明 | 证明状态 | 未证原因 | 网站分版结论 |
+|---|---|---|---|
+| `MD.Ch06.ouDensityPrinted` | 定义 | — | PASS |
 
-位置：`Blueprint/Ch06.lean:2540`；验证：`blueprint/ch06/closeout25/FINAL_COMPILE.log`。
+位置：`Blueprint/Ch06.lean:2542`；本地核验记录：`blueprint/ch06/closeout26/FINAL_COMPILE.log`。
 
 ## MD-6.4.2-OUDensityCorrect
 
@@ -10780,9 +11025,9 @@ def ouDensityPrinted_corrected (γ σ x0 t x : ℝ) : ℝ :=
 
 | 原文对象或结论 | 当前Lean与范围 |
 |---|---|
-| 原文所选陈述 | 本条所引原句及展示公式；单个记号归入context_notation。 |
-| 对象/域/量词/前提 | 完整当前Lean及依赖定义；新增资格见[EXTRA] |
-| 网站首轮 | PASS：ouDensity与ouDensityPrinted_corrected均用完整指数除以sqrt(2πv)，修正合理。γ>0、σ_noise≠0、t>0时v>0，得到通常正态密度；注释明确密度解释只在这一域成立。定义对全部实数全定义不意味着声称退化参数下也是密度；没有积分归一化或过程HasLaw定理可被误计为已证。 |
+| 所引原句 | 本条所引原句及展示公式；单个记号归入context_notation。 |
+| 对象、域、量词及前提 | 以上完整声明；额外资格与未覆盖部分见下一段 |
+| 最新网站原始评价 | PASS；首轮保留 |
 
 ### 5. [EXTRA] 与覆盖缺口
 
@@ -10791,17 +11036,18 @@ def ouDensityPrinted_corrected (γ σ x0 t x : ℝ) : ℝ :=
 ### 6. 审计结论（含网站结论）
 
 网站原返回：PASS。ouDensity与ouDensityPrinted_corrected均用完整指数除以sqrt(2πv)，修正合理。γ>0、σ_noise≠0、t>0时v>0，得到通常正态密度；注释明确密度解释只在这一域成立。定义对全部实数全定义不意味着声称退化参数下也是密度；没有积分归一化或过程HasLaw定理可被误计为已证。
-本轮处理：保留原审阅版本结论；本轮未改签名。
-本地单文件及逐声明依赖检查通过；含未完成证明依赖的声明仍标未证。原书疑误及修正版分别见勘误，当前修改版未获网站复审结论。
+当前处理：网站PASS（首轮未改版本）。
+保留所交版本的明确结论。
+本地编译和逐声明依赖核对通过。原文疑误、各限定/修正版、反例的评价分别列出；有未完成证明依赖的声明仍为未证。
 
 ### 7. 状态与证明位置
 
-| 声明 | 状态 | 未证原因 |
-|---|---|---|
-| `MD.Ch06.ouDensity` | 定义 | — |
-| `MD.Ch06.ouDensityPrinted_corrected` | 定义 | — |
+| 声明 | 证明状态 | 未证原因 | 网站分版结论 |
+|---|---|---|---|
+| `MD.Ch06.ouDensity` | 定义 | — | PASS |
+| `MD.Ch06.ouDensityPrinted_corrected` | 定义 | — | 未获单独PASS；见分版意见 |
 
-位置：`Blueprint/Ch06.lean:2545`；验证：`blueprint/ch06/closeout25/FINAL_COMPILE.log`。
+位置：`Blueprint/Ch06.lean:2547`；本地核验记录：`blueprint/ch06/closeout26/FINAL_COMPILE.log`。
 
 ## MD-6.4.4-Assumption1Printed
 
@@ -10833,7 +11079,7 @@ def assumption1Printed {D : Type*} [MetricSpace D] [MeasurableSpace D] [BorelSpa
     ContinuousOn (fun w : (D×D)×ℝ ↦ ρ w.1.1 w.1.2 w.2) ((C×ˢ C)×ˢ Ici 0)
 ```
 
-同问题的独立修正版（位于另一source_id）：
+同问题的独立限定/修正版（位于另一条）：
 ```lean
 def assumption1Printed_corrected {D : Type*} [MetricSpace D] [MeasurableSpace D] [BorelSpace D]
     (ν : Measure D) (K : ℝ≥0 → Kernel D D) (C : Set D) : Prop :=
@@ -10849,28 +11095,29 @@ def assumption1Printed_corrected {D : Type*} [MetricSpace D] [MeasurableSpace D]
 
 | 原文对象或结论 | 当前Lean与范围 |
 |---|---|
-| 原文所选陈述 | 本条所引原句及展示公式；单个记号归入context_notation。 |
-| 对象/域/量词/前提 | 完整当前Lean及依赖定义；新增资格见[EXTRA] |
-| 网站首轮 | NEEDS_HUMAN：Printed保留紧C、同一内点y、δ后选统一t、全部x和可测A⊆C及联合连续时间Ici 0；与原[0,∞)一致。ν是披露的参考测度推广，但Kernel本身不含Markov/半群资格；此定义只编码局部条件。原零时连续性疑误保留。 |
+| 所引原句 | 本条所引原句及展示公式；单个记号归入context_notation。 |
+| 对象、域、量词及前提 | 以上完整声明；额外资格与未覆盖部分见下一段 |
+| 最新网站原始评价 | NEEDS_HUMAN；首轮保留 |
 
 ### 5. [EXTRA] 与覆盖缺口
 
 - [EXTRA]真实Borel Markov kernel与局部参考测度；完整同一内点可达、全部初值与可测子集及联合连续资格。
-- [EXTRA] 25号：原文版忠实性与数学疑误分开；补齐所交条目所属的现有_corrected完整签名，不从repair_log名称推断网站已通过修正版。
+- [EXTRA] 原文版忠实性与数学疑误分开；补齐所交条目所属的现有_corrected完整签名，不从repair_log名称推断网站已通过修正版。
 
 ### 6. 审计结论（含网站结论）
 
 网站原返回：NEEDS_HUMAN。Printed保留紧C、同一内点y、δ后选统一t、全部x和可测A⊆C及联合连续时间Ici 0；与原[0,∞)一致。ν是披露的参考测度推广，但Kernel本身不含Markov/半群资格；此定义只编码局部条件。原零时连续性疑误保留。
-本轮处理：原文版忠实性与数学疑误分开；补齐所交条目所属的现有_corrected完整签名，不从repair_log名称推断网站已通过修正版。
-本地单文件及逐声明依赖检查通过；含未完成证明依赖的声明仍标未证。原书疑误及修正版分别见勘误，当前修改版未获网站复审结论。
+当前处理：原文疑误或语义范围待导师；不冒称未提供版本已通过。
+保留所交版本的明确结论。
+本地编译和逐声明依赖核对通过。原文疑误、各限定/修正版、反例的评价分别列出；有未完成证明依赖的声明仍为未证。
 
 ### 7. 状态与证明位置
 
-| 声明 | 状态 | 未证原因 |
-|---|---|---|
-| `MD.Ch06.assumption1Printed` | 定义 | — |
+| 声明 | 证明状态 | 未证原因 | 网站分版结论 |
+|---|---|---|---|
+| `MD.Ch06.assumption1Printed` | 定义 | — | 未获单独PASS；见分版意见 |
 
-位置：`Blueprint/Ch06.lean:2556`；验证：`blueprint/ch06/closeout25/FINAL_COMPILE.log`。
+位置：`Blueprint/Ch06.lean:2558`；本地核验记录：`blueprint/ch06/closeout26/FINAL_COMPILE.log`。
 
 ## MD-6.4.4-Assumption1Correct
 
@@ -10916,9 +11163,9 @@ def assumption1Printed_corrected {D : Type*} [MetricSpace D] [MeasurableSpace D]
 
 | 原文对象或结论 | 当前Lean与范围 |
 |---|---|
-| 原文所选陈述 | 本条所引原句及展示公式；单个记号归入context_notation。 |
-| 对象/域/量词/前提 | 完整当前Lean及依赖定义；新增资格见[EXTRA] |
-| 网站首轮 | PASS：assumption1与assumption1Printed_corrected两定义一致，唯一实质修正为Ici 0→Ioi 0；密度公式仍仅正时、x∈C及可测A⊆C，内点可达量词未变。作为修正条件定义合理，不是具体SDE满足它的断言。 |
+| 所引原句 | 本条所引原句及展示公式；单个记号归入context_notation。 |
+| 对象、域、量词及前提 | 以上完整声明；额外资格与未覆盖部分见下一段 |
+| 最新网站原始评价 | PASS；首轮保留 |
 
 ### 5. [EXTRA] 与覆盖缺口
 
@@ -10927,17 +11174,18 @@ def assumption1Printed_corrected {D : Type*} [MetricSpace D] [MeasurableSpace D]
 ### 6. 审计结论（含网站结论）
 
 网站原返回：PASS。assumption1与assumption1Printed_corrected两定义一致，唯一实质修正为Ici 0→Ioi 0；密度公式仍仅正时、x∈C及可测A⊆C，内点可达量词未变。作为修正条件定义合理，不是具体SDE满足它的断言。
-本轮处理：保留原审阅版本结论；本轮未改签名。
-本地单文件及逐声明依赖检查通过；含未完成证明依赖的声明仍标未证。原书疑误及修正版分别见勘误，当前修改版未获网站复审结论。
+当前处理：网站PASS（首轮未改版本）。
+保留所交版本的明确结论。
+本地编译和逐声明依赖核对通过。原文疑误、各限定/修正版、反例的评价分别列出；有未完成证明依赖的声明仍为未证。
 
 ### 7. 状态与证明位置
 
-| 声明 | 状态 | 未证原因 |
-|---|---|---|
-| `MD.Ch06.assumption1` | 定义 | — |
-| `MD.Ch06.assumption1Printed_corrected` | 定义 | — |
+| 声明 | 证明状态 | 未证原因 | 网站分版结论 |
+|---|---|---|---|
+| `MD.Ch06.assumption1` | 定义 | — | PASS |
+| `MD.Ch06.assumption1Printed_corrected` | 定义 | — | 未获单独PASS；见分版意见 |
 
-位置：`Blueprint/Ch06.lean:2567`；验证：`blueprint/ch06/closeout25/FINAL_COMPILE.log`。
+位置：`Blueprint/Ch06.lean:2569`；本地核验记录：`blueprint/ch06/closeout26/FINAL_COMPILE.log`。
 
 ## MD-6.4.4-Assumption2
 
@@ -10967,9 +11215,9 @@ local instance : MeasureSpace UnitAddCircle := ⟨AddCircle.haarAddCircle⟩
 
 | 原文对象或结论 | 当前Lean与范围 |
 |---|---|
-| 原文所选陈述 | 本条所引原句及展示公式；单个记号归入context_notation。 |
-| 对象/域/量词/前提 | 完整当前Lean及依赖定义；新增资格见[EXTRA] |
-| 网站首轮 | PASS：φ处处严格正、连续、所有实数水平的次水平集紧，α,δ>0及逐点漂移不等式完整。在欧氏/torus×欧氏常用状态空间上，这是披露的proper Lyapunov解释；一般拓扑上仅是所选推广。L的域资格未由该定义提供。 |
+| 所引原句 | 本条所引原句及展示公式；单个记号归入context_notation。 |
+| 对象、域、量词及前提 | 以上完整声明；额外资格与未覆盖部分见下一段 |
+| 最新网站原始评价 | PASS；首轮保留 |
 
 ### 5. [EXTRA] 与覆盖缺口
 
@@ -10978,16 +11226,17 @@ local instance : MeasureSpace UnitAddCircle := ⟨AddCircle.haarAddCircle⟩
 ### 6. 审计结论（含网站结论）
 
 网站原返回：PASS。φ处处严格正、连续、所有实数水平的次水平集紧，α,δ>0及逐点漂移不等式完整。在欧氏/torus×欧氏常用状态空间上，这是披露的proper Lyapunov解释；一般拓扑上仅是所选推广。L的域资格未由该定义提供。
-本轮处理：保留原审阅版本结论；本轮未改签名。
-本地单文件及逐声明依赖检查通过；含未完成证明依赖的声明仍标未证。原书疑误及修正版分别见勘误，当前修改版未获网站复审结论。
+当前处理：网站PASS（首轮未改版本）。
+保留所交版本的明确结论。
+本地编译和逐声明依赖核对通过。原文疑误、各限定/修正版、反例的评价分别列出；有未完成证明依赖的声明仍为未证。
 
 ### 7. 状态与证明位置
 
-| 声明 | 状态 | 未证原因 |
-|---|---|---|
-| `MD.Ch06.assumption2` | 定义 | — |
+| 声明 | 证明状态 | 未证原因 | 网站分版结论 |
+|---|---|---|---|
+| `MD.Ch06.assumption2` | 定义 | — | PASS |
 
-位置：`Blueprint/Ch06.lean:2588`；验证：`blueprint/ch06/closeout25/FINAL_COMPILE.log`。
+位置：`Blueprint/Ch06.lean:2590`；本地核验记录：`blueprint/ch06/closeout26/FINAL_COMPILE.log`。
 
 ## MD-6.4.4-MinorizationPrinted
 
@@ -11012,7 +11261,7 @@ theorem minorizationPrinted : ∀ {S : Type*} [MetricSpace S] [MeasurableSpace S
   sorry
 ```
 
-同问题的独立修正版（位于另一source_id）：
+同问题的独立限定/修正版（位于另一条）：
 ```lean
 theorem minorizationPrinted_corrected :
   ∀ {D : Type*} [MetricSpace D] [MeasurableSpace D] [BorelSpace D]
@@ -11030,27 +11279,28 @@ theorem minorizationPrinted_corrected :
 
 | 原文对象或结论 | 当前Lean与范围 |
 |---|---|
-| 原文所选陈述 | 本条所引原句及展示公式；单个记号归入context_notation。 |
-| 对象/域/量词/前提 | 完整当前Lean及依赖定义；新增资格见[EXTRA] |
-| 网站首轮 | NEEDS_HUMAN：Printed将tantamount忠实读为↔，右侧给一个正时刻、正ENNReal下界系数和同一概率μ，对全部x∈C作完整测度序下界。左侧仍为原零时连续版；抽象签名没有SDE或Markov半群假设，等价一般错误。 |
+| 所引原句 | 本条所引原句及展示公式；单个记号归入context_notation。 |
+| 对象、域、量词及前提 | 以上完整声明；额外资格与未覆盖部分见下一段 |
+| 最新网站原始评价 | NEEDS_HUMAN；首轮保留 |
 
 ### 5. [EXTRA] 与覆盖缺口
 
-- [EXTRA] 25号：原文版忠实性与数学疑误分开；补齐所交条目所属的现有_corrected完整签名，不从repair_log名称推断网站已通过修正版。
+- [EXTRA] 原文版忠实性与数学疑误分开；补齐所交条目所属的现有_corrected完整签名，不从repair_log名称推断网站已通过修正版。
 
 ### 6. 审计结论（含网站结论）
 
 网站原返回：NEEDS_HUMAN。Printed将tantamount忠实读为↔，右侧给一个正时刻、正ENNReal下界系数和同一概率μ，对全部x∈C作完整测度序下界。左侧仍为原零时连续版；抽象签名没有SDE或Markov半群假设，等价一般错误。
-本轮处理：原文版忠实性与数学疑误分开；补齐所交条目所属的现有_corrected完整签名，不从repair_log名称推断网站已通过修正版。
-本地单文件及逐声明依赖检查通过；含未完成证明依赖的声明仍标未证。原书疑误及修正版分别见勘误，当前修改版未获网站复审结论。
+当前处理：原文疑误或语义范围待导师；不冒称未提供版本已通过。
+保留所交版本的明确结论。
+本地编译和逐声明依赖核对通过。原文疑误、各限定/修正版、反例的评价分别列出；有未完成证明依赖的声明仍为未证。
 
 ### 7. 状态与证明位置
 
-| 声明 | 状态 | 未证原因 |
-|---|---|---|
-| `MD.Ch06.minorizationPrinted` | 未证 | 原书疑误不证 |
+| 声明 | 证明状态 | 未证原因 | 网站分版结论 |
+|---|---|---|---|
+| `MD.Ch06.minorizationPrinted` | 未证 | 原书疑误不证 | 原文忠实性PASS；原书数学/范围NEEDS_HUMAN |
 
-位置：`Blueprint/Ch06.lean:2597`；验证：`blueprint/ch06/closeout25/FINAL_COMPILE.log`。
+位置：`Blueprint/Ch06.lean:2599`；本地核验记录：`blueprint/ch06/closeout26/FINAL_COMPILE.log`。
 
 ## MD-6.4.4-MinorizationCorrectedImplication
 
@@ -11095,28 +11345,33 @@ theorem minorizationPrinted_corrected :
 
 | 原文对象或结论 | 当前Lean与范围 |
 |---|---|
-| 原文所选陈述 | 本条Lean覆盖范围：主版与minorizationPrinted_corrected同时补Chapman–Kolmogorov/Markov半群及参考测度全支撑。两步核局部共同下界仍需大型小集理论，未证明、未宣称数学结论已核定；交网站复审。 |
-| 对象/域/量词/前提 | 完整当前Lean及依赖定义；新增资格见[EXTRA] |
-| 网站首轮 | FAIL：即使修正正时连续并加每个正时刻所有非空开集可达，任意kernel族仍不能推出共同小集下界。签名缺少Chapman–Kolmogorov/Markov半群结构，新增全支撑不足以弥补。 |
+| 所引原句 | 只覆盖加强假设下由Assumption 1到共同小集下界的充分方向；不覆盖原tantamount所可能表示的必要方向。 |
+| 对象、域、量词及前提 | 以上完整声明；额外资格与未覆盖部分见下一段 |
+| 最新网站原始评价 | PASS；复审 |
 
 ### 5. [EXTRA] 与覆盖缺口
 
-- [EXTRA] 25号：主版与minorizationPrinted_corrected同时补Chapman–Kolmogorov/Markov半群及参考测度全支撑。两步核局部共同下界仍需大型小集理论，未证明、未宣称数学结论已核定；交网站复审。
+- [EXTRA] 主版与minorizationPrinted_corrected同时补Chapman–Kolmogorov/Markov半群及参考测度全支撑。两步核局部共同下界仍需大型小集理论，未证明、未宣称数学结论已核定；审阅结论按各版本分别记录。
+- [EXTRA] 还独立假设：对所有t>0、所有x及所有非空开集A，K t x A>0；这比原Assumption 1(i)强，不能省略于假设说明。
+- [EXTRA] assumption1中的密度联合连续性只在t>0要求；原书写到t=0的端点问题另见条目10、14。
+- [EXTRA] 复审范围：仅覆盖加强条件下充分方向；还独立要求所有点、所有正时刻对每个非空开集有正概率，以及Markov合成、参考测度全支撑，不覆盖原tantamount的必要方向。
+- 覆盖缺口：未声明或认证minorization反推原Assumption 1的必要方向。
 
 ### 6. 审计结论（含网站结论）
 
-网站原返回：FAIL。即使修正正时连续并加每个正时刻所有非空开集可达，任意kernel族仍不能推出共同小集下界。签名缺少Chapman–Kolmogorov/Markov半群结构，新增全支撑不足以弥补。
-本轮处理：主版与minorizationPrinted_corrected同时补Chapman–Kolmogorov/Markov半群及参考测度全支撑。两步核局部共同下界仍需大型小集理论，未证明、未宣称数学结论已核定；交网站复审。
-本地单文件及逐声明依赖检查通过；含未完成证明依赖的声明仍标未证。原书疑误及修正版分别见勘误，当前修改版未获网站复审结论。
+网站原返回：PASS。A：关于“tantamount”及small sets的两句原文准确。C：两份声明签名相同，作为明确加强前提的充分方向均PASS。逐项包含实际概率核半群/Chapman–Kolmogorov、参考测度对所有非空开集为正、紧C及其内点可达条件、仅正时刻在C×C上联合连续的实非负密度；此外还另行假设所有点、所有正时刻对每个非空开集都有正概率。这一全局开放集可达性是实质性加强，不能由原Assumption 1(i)的固定内点可达性直接冒充。结论的时间、ε>0及概率μ先于所有x∈C选择，测度序ε•μ≤K t x正是共同小集下界；ε不必额外假设≤1，因为K t x和μ为概率。连续局部密度、紧性和真实核合成足以支持此加强版的共同下界；未以sorry是否消除作为签名判据。这里只认证充分方向，未把原文“tantamount”解读为已经认证了必要方向。JSON须补记遗漏的全局可达前提。
+当前处理：网站PASS（复审）。
+仅覆盖加强条件下充分方向；还独立要求所有点、所有正时刻对每个非空开集有正概率，以及Markov合成、参考测度全支撑，不覆盖原tantamount的必要方向。
+本地编译和逐声明依赖核对通过。原文疑误、各限定/修正版、反例的评价分别列出；有未完成证明依赖的声明仍为未证。
 
 ### 7. 状态与证明位置
 
-| 声明 | 状态 | 未证原因 |
-|---|---|---|
-| `MD.Ch06.minorizationCorrectedImplication` | 未证 | 缺大型理论 |
-| `MD.Ch06.minorizationPrinted_corrected` | 未证 | 缺大型理论 |
+| 声明 | 证明状态 | 未证原因 | 网站分版结论 |
+|---|---|---|---|
+| `MD.Ch06.minorizationCorrectedImplication` | 未证 | 缺大型理论 | PASS |
+| `MD.Ch06.minorizationPrinted_corrected` | 未证 | 缺大型理论 | PASS |
 
-位置：`Blueprint/Ch06.lean:2606`；验证：`blueprint/ch06/closeout25/FINAL_COMPILE.log`。
+位置：`Blueprint/Ch06.lean:2608`；本地核验记录：`blueprint/ch06/closeout26/FINAL_COMPILE.log`。
 
 ## MD-6.4.4-Theorem62
 
@@ -11128,8 +11383,8 @@ theorem minorizationPrinted_corrected :
 > \[C=\{X\in D\mid\varphi(X)\le K_{\alpha,\delta}\},\]
 > where $K_{\alpha,\delta}$ is a particular positive value depending on $\alpha$ and $\delta$, then
 > (i) there exists a unique invariant measure $\rho_*$, with $\mathcal L^*\rho_*=0$, and
-> (ii) there exist positive constants $k$ and $\lambda$ such that for all suitable functions $f$ with $|f|\le\varphi$,
-> \[|e^{t\mathcal L}f(X_0)-\operatorname{Av}(f)|\le ke^{-\lambda t}\varphi(X_0);\tag{6.48}\]
+> (ii) there exist positive constants $\kappa$ and $\lambda$ such that for all suitable functions $f$ with $|f|\le\varphi$,
+> \[|e^{t\mathcal L}f(X_0)-\operatorname{Av}(f)|\le \kappa e^{-\lambda t}\varphi(X_0);\tag{6.48}\]
 > where $\operatorname{Av}(f)=\int_D f(z)\rho_*(z)dz$ is the spatial average.
 
 ### 2. 原文证明
@@ -11222,6 +11477,12 @@ theorem theorem62Printed :
       (∃ ρ : D → ℝ, Measurable ρ ∧ (∀ x, 0 ≤ ρ x) ∧
         μ=ν.withDensity (fun x ↦ ENNReal.ofReal (ρ x))) ∧
       (∀ f : D → ℝ, Continuous f → Bornology.IsBounded (Set.range f) →
+        (∀ x, HasDerivWithinAt
+          (fun t : ℝ ↦ MolecularDynamics.Chapter06Review.kernelAverage K f t.toNNReal x)
+          (MolecularDynamics.Chapter06Review.kernelGenerator K f x) (Ici 0) 0) →
+        (∃ ε : ℝ, 0 < ε ∧ ∃ bound : D → ℝ, Integrable bound μ ∧
+          ∀ t ∈ Ioo (0 : ℝ) ε, ∀ x,
+            |(MolecularDynamics.Chapter06Review.kernelAverage K f t.toNNReal x-f x)/t| ≤ bound x) →
         Integrable (MolecularDynamics.Chapter06Review.kernelGenerator K f) μ → (∫ x, MolecularDynamics.Chapter06Review.kernelGenerator K f x ∂μ)=0) ∧
       ∃ κ lambdaParam : ℝ, 0 < κ ∧ 0 < lambdaParam ∧ ∀ f : D → ℝ, Measurable f → (∀ x, |f x| ≤ φ x) →
         Integrable f μ ∧ ∀ (t : ℝ≥0) (x : D),
@@ -11233,30 +11494,32 @@ theorem theorem62Printed :
 
 | 原文对象或结论 | 当前Lean与范围 |
 |---|---|
-| 原文所选陈述 | 本条所引原句及展示公式；单个记号归入context_notation。 |
-| 对象/域/量词/前提 | 完整当前Lean及依赖定义；新增资格见[EXTRA] |
-| 网站首轮 | NEEDS_HUMAN：阈值在所有状态空间/过程前选择且仅依α,δ；全体测度不变概率唯一性、密度、弱生成元检验和统一加权指数界均写出。但kernelGenerator仅为derivWithin总定义，假设没有保证φ或测试函数的右导数真实存在，也没有C₀半群/扩展生成元域及交换积分极限条件；空间Feller不补这些时间域条件。原Assumption1已被正时修正。不能据此签核完整Harris推广定理。 |
+| 所引原句 | 本条当前覆盖范围：原文两处k按网站逐页核对改回κ（转录纠正）。Printed的弱平稳测试补主版同样的真实右导数及局部可积差商支配，排除derivWithin默认值；保留原[0,∞)连续密度端点疑误，阈值统一性和全部结论量词不变。 |
+| 对象、域、量词及前提 | 以上完整声明；额外资格与未覆盖部分见下一段 |
+| 最新网站原始评价 | FAIL；复审 |
 
 ### 5. [EXTRA] 与覆盖缺口
 
-- [EXTRA]阈值函数先于全部过程/Lyapunov量词选择，不能临时选使Assumption1假而空真；真实Markov semigroup/Feller、Polish局部紧状态及σ有限参考测度。全状态正时刻密度资格用于完整不变概率密度结论；L*ρ=0按真实generator检验的弱意义，不是先假定不变性。全部函数/初值/时刻统一加权指数界与唯一性均保留。
-- [EXTRA] 25号：主版与corrected补真实半群漂移估计；弱平稳测试限真实右导数且有局部可积差商支配，排除derivWithin总定义默认值。Printed保留原有疑误版不证；Harris桥接及统一阈值仍缺大型理论，未声称原全定理已认证。
+- [EXTRA] 原文两处k按网站逐页核对改回κ（转录纠正）。Printed的弱平稳测试补主版同样的真实右导数及局部可积差商支配，排除derivWithin默认值；保留原[0,∞)连续密度端点疑误，阈值统一性和全部结论量词不变。
+- [ERRATUM?] 原书数学疑误与本次形式化修复分别记录，见CH06_ERRATA。
+- 覆盖缺口：原Assumption 1(ii)在t=0要求连续密度的疑误保留；Printed含明确的实际生成元测试资格，并非无技术前提的整条字面翻译。
 
 ### 6. 审计结论（含网站结论）
 
-网站原返回：NEEDS_HUMAN。阈值在所有状态空间/过程前选择且仅依α,δ；全体测度不变概率唯一性、密度、弱生成元检验和统一加权指数界均写出。但kernelGenerator仅为derivWithin总定义，假设没有保证φ或测试函数的右导数真实存在，也没有C₀半群/扩展生成元域及交换积分极限条件；空间Feller不补这些时间域条件。原Assumption1已被正时修正。不能据此签核完整Harris推广定理。
-本轮处理：主版与corrected补真实半群漂移估计；弱平稳测试限真实右导数且有局部可积差商支配，排除derivWithin总定义默认值。Printed保留原有疑误版不证；Harris桥接及统一阈值仍缺大型理论，未声称原全定理已认证。
-本地单文件及逐声明依赖检查通过；含未完成证明依赖的声明仍标未证。原书疑误及修正版分别见勘误，当前修改版未获网站复审结论。
+网站原返回：FAIL。A：节号、页码、阈值集合、唯一不变测度、弱平稳意图、加权指数界及空间平均均核对；原页的正系数为κ，JSON两处写为k，应作转录纠正，其余原文数学措辞保留。C：theorem62及corrected作为加强的半群版本，签名PASS：阈值函数先于状态空间、过程及φ量化；完整Markov/Feller、局部紧Polish状态、σ有限ν、每个正时刻全部初值的绝对连续性；φ正连续且子水平紧，α、δ正；另有实际积分可积性和半群漂移估计；结论保留全部不变概率的唯一性、相对于ν的密度、受真实右导数及局部可积差商支配限制的弱平稳检验，以及统一于所有可测|f|≤φ、t≥0、x的指数界。没有把不变性或收敛结论作假设，也没有把有限个检验或单一初态替代全部量词。Printed保留[0,∞)连续密度的原书疑误，这一点本身应NEEDS_HUMAN；但其弱平稳分句量化所有有界连续f，仅假设kernelGenerator f可积，没有要求该f存在真实右导数/属于生成元测试域。D中kernelGenerator是总定义的derivWithin，不能把其无导数时的默认值当成原书实际SDE生成元。该超出原生成元域的Printed弱平稳断言不属于原书字面陈述，忠实性FAIL。主版新增的测试域保护没有在Printed中保留，这一偏差不是sorry问题，也不能全标成原书疑误。
+当前处理：按网站审校意见修复，本地核验通过（未再送网站）。
+原文两处k按网站逐页核对改回κ（转录纠正）。Printed的弱平稳测试补主版同样的真实右导数及局部可积差商支配，排除derivWithin默认值；保留原[0,∞)连续密度端点疑误，阈值统一性和全部结论量词不变。
+本地编译和逐声明依赖核对通过。原文疑误、各限定/修正版、反例的评价分别列出；有未完成证明依赖的声明仍为未证。
 
 ### 7. 状态与证明位置
 
-| 声明 | 状态 | 未证原因 |
-|---|---|---|
-| `MD.Ch06.theorem62` | 未证 | 缺大型理论 |
-| `MD.Ch06.theorem62_corrected` | 未证 | 缺大型理论 |
-| `MD.Ch06.theorem62Printed` | 未证 | 原书疑误不证 |
+| 声明 | 证明状态 | 未证原因 | 网站分版结论 |
+|---|---|---|---|
+| `MD.Ch06.theorem62` | 未证 | 缺大型理论 | PASS |
+| `MD.Ch06.theorem62_corrected` | 未证 | 缺大型理论 | PASS |
+| `MD.Ch06.theorem62Printed` | 未证 | 原书疑误不证 | 修复后未再送网站 |
 
-位置：`Blueprint/Ch06.lean:2633`；验证：`blueprint/ch06/closeout25/FINAL_COMPILE.log`。
+位置：`Blueprint/Ch06.lean:2636`；本地核验记录：`blueprint/ch06/closeout26/FINAL_COMPILE.log`。
 
 ## MD-6.4.4-PeriodicPotentialBound
 
@@ -11306,31 +11569,32 @@ theorem periodicPotentialBoundPrinted_counterexample :
 
 | 原文对象或结论 | 当前Lean与范围 |
 |---|---|
-| 原文所选陈述 | 本条所引原句及展示公式；单个记号归入context_notation。 |
-| 对象/域/量词/前提 | 完整当前Lean及依赖定义；新增资格见[EXTRA] |
-| 网站首轮 | NEEDS_HUMAN：连续周期势全域有界的签名正确，M≥0的范数界给−M≤U≤M。它未包含原1<Umin；该要求由下一条平移解释而非本条证明。原文同时要求周期与配置无穷远围束，本条[ERRATUM?]正确保留。 |
+| 所引原句 | 本条所引原句及展示公式；单个记号归入context_notation。 |
+| 对象、域、量词及前提 | 以上完整声明；额外资格与未覆盖部分见下一段 |
+| 最新网站原始评价 | NEEDS_HUMAN；首轮保留 |
 
 ### 5. [EXTRA] 与覆盖缺口
 
 - [EXTRA]完整全域有限范数界，给上下界±M；正下界>1需实际势能平移，另条给出。原周期与q→∞围束资格冲突另留字面记录，不由本条消去。
-- [EXTRA] 25号：原文版忠实性与数学疑误分开；补齐所交条目所属的现有_corrected完整签名，不从repair_log名称推断网站已通过修正版。
+- [EXTRA] 原文版忠实性与数学疑误分开；补齐所交条目所属的现有_corrected完整签名，不从repair_log名称推断网站已通过修正版。
 
 ### 6. 审计结论（含网站结论）
 
 网站原返回：NEEDS_HUMAN。连续周期势全域有界的签名正确，M≥0的范数界给−M≤U≤M。它未包含原1<Umin；该要求由下一条平移解释而非本条证明。原文同时要求周期与配置无穷远围束，本条[ERRATUM?]正确保留。
-本轮处理：原文版忠实性与数学疑误分开；补齐所交条目所属的现有_corrected完整签名，不从repair_log名称推断网站已通过修正版。
-本地单文件及逐声明依赖检查通过；含未完成证明依赖的声明仍标未证。原书疑误及修正版分别见勘误，当前修改版未获网站复审结论。
+当前处理：原文疑误或语义范围待导师；不冒称未提供版本已通过。
+保留所交版本的明确结论。
+本地编译和逐声明依赖核对通过。原文疑误、各限定/修正版、反例的评价分别列出；有未完成证明依赖的声明仍为未证。
 
 ### 7. 状态与证明位置
 
-| 声明 | 状态 | 未证原因 |
-|---|---|---|
-| `MD.Ch06.periodicPotentialBound` | 已证 | — |
-| `MD.Ch06.periodicPotentialBound_corrected` | 已证 | — |
-| `MD.Ch06.periodicPotentialBoundPrinted` | 未证 | 原书疑误不证 |
-| `MD.Ch06.periodicPotentialBoundPrinted_counterexample` | 已证 | — |
+| 声明 | 证明状态 | 未证原因 | 网站分版结论 |
+|---|---|---|---|
+| `MD.Ch06.periodicPotentialBound` | 已证 | — | 未获单独PASS；见分版意见 |
+| `MD.Ch06.periodicPotentialBound_corrected` | 已证 | — | 未获单独PASS；见分版意见 |
+| `MD.Ch06.periodicPotentialBoundPrinted` | 未证 | 原书疑误不证 | 未获单独PASS；见分版意见 |
+| `MD.Ch06.periodicPotentialBoundPrinted_counterexample` | 已证 | — | 未获单独PASS；见分版意见 |
 
-位置：`Blueprint/Ch06.lean:2726`；验证：`blueprint/ch06/closeout25/FINAL_COMPILE.log`。
+位置：`Blueprint/Ch06.lean:2735`；本地核验记录：`blueprint/ch06/closeout26/FINAL_COMPILE.log`。
 
 ## MD-6.4.4-PotentialNormalization
 
@@ -11363,9 +11627,9 @@ theorem potentialNormalization {n : ℕ} (U : (Fin n → ℝ) → ℝ)
 
 | 原文对象或结论 | 当前Lean与范围 |
 |---|---|
-| 原文所选陈述 | 本条所引原句及展示公式；单个记号归入context_notation。 |
-| 对象/域/量词/前提 | 完整当前Lean及依赖定义；新增资格见[EXTRA] |
-| 网站首轮 | PASS：存在单一c使所有q严格U(q)+c>1，且真实fderiv所定义势能力作为函数相等。连续周期已足以给有限下界，导数总定义对加常数保持相同，故不需额外假设原势处处可微。此为[EXTRA]明确的归一解释。 |
+| 所引原句 | 本条所引原句及展示公式；单个记号归入context_notation。 |
+| 对象、域、量词及前提 | 以上完整声明；额外资格与未覆盖部分见下一段 |
+| 最新网站原始评价 | PASS；首轮保留 |
 
 ### 5. [EXTRA] 与覆盖缺口
 
@@ -11374,16 +11638,17 @@ theorem potentialNormalization {n : ℕ} (U : (Fin n → ℝ) → ℝ)
 ### 6. 审计结论（含网站结论）
 
 网站原返回：PASS。存在单一c使所有q严格U(q)+c>1，且真实fderiv所定义势能力作为函数相等。连续周期已足以给有限下界，导数总定义对加常数保持相同，故不需额外假设原势处处可微。此为[EXTRA]明确的归一解释。
-本轮处理：保留原审阅版本结论；本轮未改签名。
-本地单文件及逐声明依赖检查通过；含未完成证明依赖的声明仍标未证。原书疑误及修正版分别见勘误，当前修改版未获网站复审结论。
+当前处理：网站PASS（首轮未改版本）。
+保留所交版本的明确结论。
+本地编译和逐声明依赖核对通过。原文疑误、各限定/修正版、反例的评价分别列出；有未完成证明依赖的声明仍为未证。
 
 ### 7. 状态与证明位置
 
-| 声明 | 状态 | 未证原因 |
-|---|---|---|
-| `MD.Ch06.potentialNormalization` | 已证 | — |
+| 声明 | 证明状态 | 未证原因 | 网站分版结论 |
+|---|---|---|---|
+| `MD.Ch06.potentialNormalization` | 已证 | — | PASS |
 
-位置：`Blueprint/Ch06.lean:2754`；验证：`blueprint/ch06/closeout25/FINAL_COMPILE.log`。
+位置：`Blueprint/Ch06.lean:2763`；本地核验记录：`blueprint/ch06/closeout26/FINAL_COMPILE.log`。
 
 ## MD-6.4.4-UnitLangevinModel
 
@@ -11411,9 +11676,9 @@ def unitLangevinModel {n : ℕ} {A : Type*} [MeasurableSpace A] (P : Measure A)
 
 | 原文对象或结论 | 当前Lean与范围 |
 |---|---|
-| 原文所选陈述 | 本条所引原句及展示公式；单个记号归入context_notation。 |
-| 对象/域/量词/前提 | 完整当前Lean及依赖定义；新增资格见[EXTRA] |
-| 网站首轮 | PASS：展开langevinMassSDE后有正γ、正温度β⁻¹、单位质量、完整两分量积分方程、AE连续/可积资格以及textbookIsWienerVector。故σ=√(2γβ⁻¹)、dq=pdt均正确。元数据说Wiener law另给与实际定义不符，须纠正。 |
+| 所引原句 | 本条所引原句及展示公式；单个记号归入context_notation。 |
+| 对象、域、量词及前提 | 以上完整声明；额外资格与未覆盖部分见下一段 |
+| 最新网站原始评价 | PASS；首轮保留 |
 
 ### 5. [EXTRA] 与覆盖缺口
 
@@ -11422,16 +11687,17 @@ def unitLangevinModel {n : ℕ} {A : Type*} [MeasurableSpace A] (P : Measure A)
 ### 6. 审计结论（含网站结论）
 
 网站原返回：PASS。展开langevinMassSDE后有正γ、正温度β⁻¹、单位质量、完整两分量积分方程、AE连续/可积资格以及textbookIsWienerVector。故σ=√(2γβ⁻¹)、dq=pdt均正确。元数据说Wiener law另给与实际定义不符，须纠正。
-本轮处理：保留原审阅版本结论；本轮未改签名。
-本地单文件及逐声明依赖检查通过；含未完成证明依赖的声明仍标未证。原书疑误及修正版分别见勘误，当前修改版未获网站复审结论。
+当前处理：网站PASS（首轮未改版本）。
+保留所交版本的明确结论。
+本地编译和逐声明依赖核对通过。原文疑误、各限定/修正版、反例的评价分别列出；有未完成证明依赖的声明仍为未证。
 
 ### 7. 状态与证明位置
 
-| 声明 | 状态 | 未证原因 |
-|---|---|---|
-| `MD.Ch06.unitLangevinModel` | 定义 | — |
+| 声明 | 证明状态 | 未证原因 | 网站分版结论 |
+|---|---|---|---|
+| `MD.Ch06.unitLangevinModel` | 定义 | — | PASS |
 
-位置：`Blueprint/Ch06.lean:2765`；验证：`blueprint/ch06/closeout25/FINAL_COMPILE.log`。
+位置：`Blueprint/Ch06.lean:2774`；本地核验记录：`blueprint/ch06/closeout26/FINAL_COMPILE.log`。
 
 ## MD-6.4.4-PeriodicConfiningPrinted
 
@@ -11453,7 +11719,7 @@ def periodicConfiningPrinted {n : ℕ} (_hn : 0 < n) (U : (Fin n → ℝ) → �
     Tendsto U (cocompact (Fin n → ℝ)) atTop
 ```
 
-同问题的独立修正版（位于另一source_id）：
+同问题的独立限定/修正版（位于另一条）：
 ```lean
 theorem periodicConfiningPrinted_corrected {Nc : ℕ}
     (U : (Fin Nc → ℝ) → ℝ) (hU : ContDiff ℝ ∞ U) (hP : textbookUnitPeriodicPotential U)
@@ -11474,28 +11740,29 @@ theorem periodicConfiningPrinted_corrected {Nc : ℕ}
 
 | 原文对象或结论 | 当前Lean与范围 |
 |---|---|
-| 原文所选陈述 | 本条所引原句及展示公式；单个记号归入context_notation。 |
-| 对象/域/量词/前提 | 完整当前Lean及依赖定义；新增资格见[EXTRA] |
-| 网站首轮 | NEEDS_HUMAN：Printed对正维欧氏lift同时要求C∞、整数平移周期、cocompact处趋∞，确实忠实表达原矛盾资格；hn排除零维真空情况。不应要求构造满足它的势。 |
+| 所引原句 | 本条所引原句及展示公式；单个记号归入context_notation。 |
+| 对象、域、量词及前提 | 以上完整声明；额外资格与未覆盖部分见下一段 |
+| 最新网站原始评价 | NEEDS_HUMAN；首轮保留 |
 
 ### 5. [EXTRA] 与覆盖缺口
 
 - [EXTRA]实际正维单位周期lift，cocompact表达配置无穷远；不是动量Hamiltonian的围束。
-- [EXTRA] 25号：原文版忠实性与数学疑误分开；补齐所交条目所属的现有_corrected完整签名，不从repair_log名称推断网站已通过修正版。
+- [EXTRA] 原文版忠实性与数学疑误分开；补齐所交条目所属的现有_corrected完整签名，不从repair_log名称推断网站已通过修正版。
 
 ### 6. 审计结论（含网站结论）
 
 网站原返回：NEEDS_HUMAN。Printed对正维欧氏lift同时要求C∞、整数平移周期、cocompact处趋∞，确实忠实表达原矛盾资格；hn排除零维真空情况。不应要求构造满足它的势。
-本轮处理：原文版忠实性与数学疑误分开；补齐所交条目所属的现有_corrected完整签名，不从repair_log名称推断网站已通过修正版。
-本地单文件及逐声明依赖检查通过；含未完成证明依赖的声明仍标未证。原书疑误及修正版分别见勘误，当前修改版未获网站复审结论。
+当前处理：原文疑误或语义范围待导师；不冒称未提供版本已通过。
+保留所交版本的明确结论。
+本地编译和逐声明依赖核对通过。原文疑误、各限定/修正版、反例的评价分别列出；有未完成证明依赖的声明仍为未证。
 
 ### 7. 状态与证明位置
 
-| 声明 | 状态 | 未证原因 |
-|---|---|---|
-| `MD.Ch06.periodicConfiningPrinted` | 定义 | — |
+| 声明 | 证明状态 | 未证原因 | 网站分版结论 |
+|---|---|---|---|
+| `MD.Ch06.periodicConfiningPrinted` | 定义 | — | 原文忠实性PASS；原书数学/范围NEEDS_HUMAN |
 
-位置：`Blueprint/Ch06.lean:2774`；验证：`blueprint/ch06/closeout25/FINAL_COMPILE.log`。
+位置：`Blueprint/Ch06.lean:2783`；本地核验记录：`blueprint/ch06/closeout26/FINAL_COMPILE.log`。
 
 ## MD-6.4.4-HamiltonianPower
 
@@ -11522,9 +11789,9 @@ noncomputable def hamiltonianPower {Nc : ℕ} (U : (Fin Nc → ℝ) → ℝ) (l 
 
 | 原文对象或结论 | 当前Lean与范围 |
 |---|---|
-| 原文所选陈述 | 本条所引原句及展示公式；单个记号归入context_notation。 |
-| 对象/域/量词/前提 | 完整当前Lean及依赖定义；新增资格见[EXTRA] |
-| 网站首轮 | PASS：真实相空间为两个Fin Nc→ℝ之积，Hamiltonian为坐标平方和/2+U；l:ℕ及1≤l表达固定正整数。定义只给候选函数，不断言它无条件满足全部Assumption2。 |
+| 所引原句 | 本条所引原句及展示公式；单个记号归入context_notation。 |
+| 对象、域、量词及前提 | 以上完整声明；额外资格与未覆盖部分见下一段 |
+| 最新网站原始评价 | PASS；首轮保留 |
 
 ### 5. [EXTRA] 与覆盖缺口
 
@@ -11533,16 +11800,17 @@ noncomputable def hamiltonianPower {Nc : ℕ} (U : (Fin Nc → ℝ) → ℝ) (l 
 ### 6. 审计结论（含网站结论）
 
 网站原返回：PASS。真实相空间为两个Fin Nc→ℝ之积，Hamiltonian为坐标平方和/2+U；l:ℕ及1≤l表达固定正整数。定义只给候选函数，不断言它无条件满足全部Assumption2。
-本轮处理：保留原审阅版本结论；本轮未改签名。
-本地单文件及逐声明依赖检查通过；含未完成证明依赖的声明仍标未证。原书疑误及修正版分别见勘误，当前修改版未获网站复审结论。
+当前处理：网站PASS（首轮未改版本）。
+保留所交版本的明确结论。
+本地编译和逐声明依赖核对通过。原文疑误、各限定/修正版、反例的评价分别列出；有未完成证明依赖的声明仍为未证。
 
 ### 7. 状态与证明位置
 
-| 声明 | 状态 | 未证原因 |
-|---|---|---|
-| `MD.Ch06.hamiltonianPower` | 定义 | — |
+| 声明 | 证明状态 | 未证原因 | 网站分版结论 |
+|---|---|---|---|
+| `MD.Ch06.hamiltonianPower` | 定义 | — | PASS |
 
-位置：`Blueprint/Ch06.lean:2780`；验证：`blueprint/ch06/closeout25/FINAL_COMPILE.log`。
+位置：`Blueprint/Ch06.lean:2789`；本地核验记录：`blueprint/ch06/closeout26/FINAL_COMPILE.log`。
 
 ## MD-6.4.4-HamiltonianPowerCancellation
 
@@ -11572,9 +11840,9 @@ theorem hamiltonianPowerCancellation {n : ℕ} (U : (Fin n → ℝ) → ℝ)
 
 | 原文对象或结论 | 当前Lean与范围 |
 |---|---|
-| 原文所选陈述 | 本条所引原句及展示公式；单个记号归入context_notation。 |
-| 对象/域/量词/前提 | 完整当前Lean及依赖定义；新增资格见[EXTRA] |
-| 网站首轮 | PASS：γ=0时真实drift=(p,−∇U)，HasDerivAt对直线z+t drift在t=0给导数0，正是Lie方向导数；不是声称直线轨道的Hamiltonian在所有t常值。全域Differentiable U足以给链式法则，l≥1。 |
+| 所引原句 | 本条所引原句及展示公式；单个记号归入context_notation。 |
+| 对象、域、量词及前提 | 以上完整声明；额外资格与未覆盖部分见下一段 |
+| 最新网站原始评价 | PASS；首轮保留 |
 
 ### 5. [EXTRA] 与覆盖缺口
 
@@ -11583,16 +11851,17 @@ theorem hamiltonianPowerCancellation {n : ℕ} (U : (Fin n → ℝ) → ℝ)
 ### 6. 审计结论（含网站结论）
 
 网站原返回：PASS。γ=0时真实drift=(p,−∇U)，HasDerivAt对直线z+t drift在t=0给导数0，正是Lie方向导数；不是声称直线轨道的Hamiltonian在所有t常值。全域Differentiable U足以给链式法则，l≥1。
-本轮处理：保留原审阅版本结论；本轮未改签名。
-本地单文件及逐声明依赖检查通过；含未完成证明依赖的声明仍标未证。原书疑误及修正版分别见勘误，当前修改版未获网站复审结论。
+当前处理：网站PASS（首轮未改版本）。
+保留所交版本的明确结论。
+本地编译和逐声明依赖核对通过。原文疑误、各限定/修正版、反例的评价分别列出；有未完成证明依赖的声明仍为未证。
 
 ### 7. 状态与证明位置
 
-| 声明 | 状态 | 未证原因 |
-|---|---|---|
-| `MD.Ch06.hamiltonianPowerCancellation` | 已证 | — |
+| 声明 | 证明状态 | 未证原因 | 网站分版结论 |
+|---|---|---|---|
+| `MD.Ch06.hamiltonianPowerCancellation` | 已证 | — | PASS |
 
-位置：`Blueprint/Ch06.lean:2785`；验证：`blueprint/ch06/closeout25/FINAL_COMPILE.log`。
+位置：`Blueprint/Ch06.lean:2794`；本地核验记录：`blueprint/ch06/closeout26/FINAL_COMPILE.log`。
 
 ## MD-6.4.4-HamiltonianPowerMomentumDerivative
 
@@ -11645,9 +11914,9 @@ theorem hamiltonianPowerMomentumDerivative : ∀ {n : ℕ} (U : (Fin n → ℝ) 
 
 | 原文对象或结论 | 当前Lean与范围 |
 |---|---|
-| 原文所选陈述 | 本条所引原句及展示公式；单个记号归入context_notation。 |
-| 对象/域/量词/前提 | 完整当前Lean及依赖定义；新增资格见[EXTRA] |
-| 网站首轮 | PASS：动量曲线(1+t)p在t=0的切向量为p，HasDerivAt给实际p·∇p H^l；第二合取保留2lH^l−2lH^(l−1)U的完整恒等式。U仅在固定q取值，故动量导数不需U光滑，l=1及H=0亦成立。 |
+| 所引原句 | 本条所引原句及展示公式；单个记号归入context_notation。 |
+| 对象、域、量词及前提 | 以上完整声明；额外资格与未覆盖部分见下一段 |
+| 最新网站原始评价 | PASS；首轮保留 |
 
 ### 5. [EXTRA] 与覆盖缺口
 
@@ -11656,16 +11925,17 @@ theorem hamiltonianPowerMomentumDerivative : ∀ {n : ℕ} (U : (Fin n → ℝ) 
 ### 6. 审计结论（含网站结论）
 
 网站原返回：PASS。动量曲线(1+t)p在t=0的切向量为p，HasDerivAt给实际p·∇p H^l；第二合取保留2lH^l−2lH^(l−1)U的完整恒等式。U仅在固定q取值，故动量导数不需U光滑，l=1及H=0亦成立。
-本轮处理：保留原审阅版本结论；本轮未改签名。
-本地单文件及逐声明依赖检查通过；含未完成证明依赖的声明仍标未证。原书疑误及修正版分别见勘误，当前修改版未获网站复审结论。
+当前处理：网站PASS（首轮未改版本）。
+保留所交版本的明确结论。
+本地编译和逐声明依赖核对通过。原文疑误、各限定/修正版、反例的评价分别列出；有未完成证明依赖的声明仍为未证。
 
 ### 7. 状态与证明位置
 
-| 声明 | 状态 | 未证原因 |
-|---|---|---|
-| `MD.Ch06.hamiltonianPowerMomentumDerivative` | 已证 | — |
+| 声明 | 证明状态 | 未证原因 | 网站分版结论 |
+|---|---|---|---|
+| `MD.Ch06.hamiltonianPowerMomentumDerivative` | 已证 | — | PASS |
 
-位置：`Blueprint/Ch06.lean:2793`；验证：`blueprint/ch06/closeout25/FINAL_COMPILE.log`。
+位置：`Blueprint/Ch06.lean:2802`；本地核验记录：`blueprint/ch06/closeout26/FINAL_COMPILE.log`。
 
 ## MD-6.4.4-HamiltonianPowerMomentumLaplacian
 
@@ -11691,32 +11961,48 @@ theorem hamiltonianPowerMomentumLaplacian {Nc : ℕ}
   apply MolecularDynamics.textbookLangevinHamiltonianPower_momentum_laplacian <;> assumption
 ```
 
+同问题的独立限定/修正版（位于另一条）：
+```lean
+theorem laplacianBoundCorrect {Nc : ℕ}
+    (U : (Fin Nc → ℝ) → ℝ) (hU : ∀ q, 1 ≤ U q) (l : ℕ) (hl : 1 ≤ l)
+    (z : textbookLangevinPhase Nc) :
+    (∑ i : Fin Nc, deriv (deriv (fun t : ℝ ↦ textbookLangevinHamiltonianPower U l
+      (z + t • ((0 : Fin Nc → ℝ), Pi.single i 1)))) 0) ≤
+      (2 * (l : ℝ) * ((l : ℝ) - 1) + (Nc : ℝ) * l) * textbookLangevinHamiltonian U z ^ (l - 1) := by
+  apply MolecularDynamics.textbookLangevinHamiltonianPower_momentum_laplacian_bound <;> assumption
+
+/-- 修正版，对应原文 MD-6.4.4-LaplacianBoundPrinted；改动：系数l(l+Nc−1)改为2l(l−1)+Nc·l。 -/
+```
+
 ### 4. 对照表
 
 | 原文对象或结论 | 当前Lean与范围 |
 |---|---|
-| 原文所选陈述 | 本条Lean覆盖范围：保留已证精确Laplacian等式；原错误上界Printed与修正系数分别由MD-6.4.4-LaplacianBoundPrinted/LaplacianBoundCorrect保存，不能把等式视为已覆盖原印刷不等式。 |
-| 对象/域/量词/前提 | 完整当前Lean及依赖定义；新增资格见[EXTRA] |
-| 网站首轮 | FAIL：实际坐标二阶导数和的等式正确，l=1时自然数截断指数乘零系数仍正确；但签名完全遗漏原文随后≤l(l+Nc−1)H^(l−1)结论。[EXTRA]说原不等式另存，却在本条没有独立Printed声明或勘误，不能通过完整结论审校。原不等式本身错误，须保留并判人工，不能静默删去。 |
+| 所引原句 | 原印刷等式及错误上界均保留。目标主声明只给精确等式；随包关联声明laplacianBoundPrinted和laplacianBoundCorrect分别作字面忠实性与修正正确性审校。 |
+| 对象、域、量词及前提 | 以上完整声明；额外资格与未覆盖部分见下一段 |
+| 最新网站原始评价 | NEEDS_HUMAN；复审 |
 
 ### 5. [EXTRA] 与覆盖缺口
 
-- [EXTRA] 25号：保留已证精确Laplacian等式；原错误上界Printed与修正系数分别由MD-6.4.4-LaplacianBoundPrinted/LaplacianBoundCorrect保存，不能把等式视为已覆盖原印刷不等式。
-- 覆盖缺口：原印刷上界不属于本条；见LaplacianBoundPrinted（原书疑误）及LaplacianBoundCorrect。
+- [EXTRA] 保留已证精确Laplacian等式；原错误上界Printed与修正系数分别由MD-6.4.4-LaplacianBoundPrinted/LaplacianBoundCorrect保存，不能把等式视为已覆盖原印刷不等式。
+- [ERRATUM?] 原上界缺少由‖p‖²<2H产生的因子2；正确的统一系数为2l(l−1)+Ncl。
+- [EXTRA] 复审范围：精确等式与修正版上界2l(l−1)+Ncl获PASS；随包原上界l(l+Nc−1)保留疑误，三者分别登记。
+- 覆盖缺口：Printed上界存在明确反例，不能被视为已成立；上界修正须人工认可。
 
 ### 6. 审计结论（含网站结论）
 
-网站原返回：FAIL。实际坐标二阶导数和的等式正确，l=1时自然数截断指数乘零系数仍正确；但签名完全遗漏原文随后≤l(l+Nc−1)H^(l−1)结论。[EXTRA]说原不等式另存，却在本条没有独立Printed声明或勘误，不能通过完整结论审校。原不等式本身错误，须保留并判人工，不能静默删去。
-本轮处理：保留已证精确Laplacian等式；原错误上界Printed与修正系数分别由MD-6.4.4-LaplacianBoundPrinted/LaplacianBoundCorrect保存，不能把等式视为已覆盖原印刷不等式。
-本地单文件及逐声明依赖检查通过；含未完成证明依赖的声明仍标未证。原书疑误及修正版分别见勘误，当前修改版未获网站复审结论。
+网站原返回：NEEDS_HUMAN。A：原页的动量Laplacian精确等式和上界系数l(l+Nc−1)均准确转录，应保留原错误系数作疑误。C分版本：hamiltonianPowerMomentumLaplacian为PASS；相空间两分量确为(q,p)，H=Σpᵢ²/2+U(q)，沿(0,eᵢ)作两次一元导数再求和，结论是完整精确等式。l为正自然数；l=1时(l−2)的自然数截断无害，因为前系数l(l−1)=0；对任意U也合理，因为只对动量微分。附带给出的laplacianBoundPrinted忠实保留原上界，但该不等式错误，应NEEDS_HUMAN而非因数学错误将字面忠实版判FAIL。laplacianBoundCorrect的系数2l(l−1)+Ncl，在U≥1前提下是正确上界，签名PASS。JSON现称上界“不属于本条”，但本包又列出了两份上界声明；应明确它们是随包核对的关联声明，不能只审等式后声称原不等式已成立。
+当前处理：修正版/限定声明=网站PASS；原文疑误或范围解释待导师。
+精确等式与修正版上界2l(l−1)+Ncl获PASS；随包原上界l(l+Nc−1)保留疑误，三者分别登记。
+本地编译和逐声明依赖核对通过。原文疑误、各限定/修正版、反例的评价分别列出；有未完成证明依赖的声明仍为未证。
 
 ### 7. 状态与证明位置
 
-| 声明 | 状态 | 未证原因 |
-|---|---|---|
-| `MD.Ch06.hamiltonianPowerMomentumLaplacian` | 已证 | — |
+| 声明 | 证明状态 | 未证原因 | 网站分版结论 |
+|---|---|---|---|
+| `MD.Ch06.hamiltonianPowerMomentumLaplacian` | 已证 | — | PASS |
 
-位置：`Blueprint/Ch06.lean:2825`；验证：`blueprint/ch06/closeout25/FINAL_COMPILE.log`。
+位置：`Blueprint/Ch06.lean:2834`；本地核验记录：`blueprint/ch06/closeout26/FINAL_COMPILE.log`。
 
 ## MD-6.4.4-LaplacianBoundPrinted
 
@@ -11741,7 +12027,7 @@ theorem laplacianBoundPrinted : ∀ {n : ℕ} (U : (Fin n → ℝ) → ℝ),
   sorry
 ```
 
-同问题的独立修正版（位于另一source_id）：
+同问题的独立限定/修正版（位于另一条）：
 ```lean
 theorem laplacianBoundPrinted_corrected {Nc : ℕ}
     (U : (Fin Nc → ℝ) → ℝ) (hU : ∀ q, 1 ≤ U q) (l : ℕ) (hl : 1 ≤ l)
@@ -11756,27 +12042,28 @@ theorem laplacianBoundPrinted_corrected {Nc : ℕ}
 
 | 原文对象或结论 | 当前Lean与范围 |
 |---|---|
-| 原文所选陈述 | 本条所引原句及展示公式；单个记号归入context_notation。 |
-| 对象/域/量词/前提 | 完整当前Lean及依赖定义；新增资格见[EXTRA] |
-| 网站首轮 | NEEDS_HUMAN：原字面上界的量词n、U≥1、l≥1、全部相点及系数l(l+n−1)忠实；原数学断言错误，按要求保留而不把原书错误算作转录失败。 |
+| 所引原句 | 本条所引原句及展示公式；单个记号归入context_notation。 |
+| 对象、域、量词及前提 | 以上完整声明；额外资格与未覆盖部分见下一段 |
+| 最新网站原始评价 | NEEDS_HUMAN；首轮保留 |
 
 ### 5. [EXTRA] 与覆盖缺口
 
-- [EXTRA] 25号：原文版忠实性与数学疑误分开；补齐所交条目所属的现有_corrected完整签名，不从repair_log名称推断网站已通过修正版。
+- [EXTRA] 原文版忠实性与数学疑误分开；补齐所交条目所属的现有_corrected完整签名，不从repair_log名称推断网站已通过修正版。
 
 ### 6. 审计结论（含网站结论）
 
 网站原返回：NEEDS_HUMAN。原字面上界的量词n、U≥1、l≥1、全部相点及系数l(l+n−1)忠实；原数学断言错误，按要求保留而不把原书错误算作转录失败。
-本轮处理：原文版忠实性与数学疑误分开；补齐所交条目所属的现有_corrected完整签名，不从repair_log名称推断网站已通过修正版。
-本地单文件及逐声明依赖检查通过；含未完成证明依赖的声明仍标未证。原书疑误及修正版分别见勘误，当前修改版未获网站复审结论。
+当前处理：原文疑误或语义范围待导师；不冒称未提供版本已通过。
+保留所交版本的明确结论。
+本地编译和逐声明依赖核对通过。原文疑误、各限定/修正版、反例的评价分别列出；有未完成证明依赖的声明仍为未证。
 
 ### 7. 状态与证明位置
 
-| 声明 | 状态 | 未证原因 |
-|---|---|---|
-| `MD.Ch06.laplacianBoundPrinted` | 未证 | 原书疑误不证 |
+| 声明 | 证明状态 | 未证原因 | 网站分版结论 |
+|---|---|---|---|
+| `MD.Ch06.laplacianBoundPrinted` | 未证 | 原书疑误不证 | 原文忠实性PASS；原书数学/范围NEEDS_HUMAN |
 
-位置：`Blueprint/Ch06.lean:2836`；验证：`blueprint/ch06/closeout25/FINAL_COMPILE.log`。
+位置：`Blueprint/Ch06.lean:2845`；本地核验记录：`blueprint/ch06/closeout26/FINAL_COMPILE.log`。
 
 ## MD-6.4.4-LaplacianBoundCounterexample
 
@@ -11804,9 +12091,9 @@ theorem laplacianBoundCounterexample :
 
 | 原文对象或结论 | 当前Lean与范围 |
 |---|---|
-| 原文所选陈述 | 本条所引原句及展示公式；单个记号归入context_notation。 |
-| 对象/域/量词/前提 | 完整当前Lean及依赖定义；新增资格见[EXTRA] |
-| 网站首轮 | PASS：真实一元二阶导数在p=4等于52，右侧40；n=1、U=2、l=2均由公式固定。[EXTRA]正确说明它仅是反例，不能替代全量词界。 |
+| 所引原句 | 本条所引原句及展示公式；单个记号归入context_notation。 |
+| 对象、域、量词及前提 | 以上完整声明；额外资格与未覆盖部分见下一段 |
+| 最新网站原始评价 | PASS；首轮保留 |
 
 ### 5. [EXTRA] 与覆盖缺口
 
@@ -11815,16 +12102,17 @@ theorem laplacianBoundCounterexample :
 ### 6. 审计结论（含网站结论）
 
 网站原返回：PASS。真实一元二阶导数在p=4等于52，右侧40；n=1、U=2、l=2均由公式固定。[EXTRA]正确说明它仅是反例，不能替代全量词界。
-本轮处理：保留原审阅版本结论；本轮未改签名。
-本地单文件及逐声明依赖检查通过；含未完成证明依赖的声明仍标未证。原书疑误及修正版分别见勘误，当前修改版未获网站复审结论。
+当前处理：网站PASS（首轮未改版本）。
+保留所交版本的明确结论。
+本地编译和逐声明依赖核对通过。原文疑误、各限定/修正版、反例的评价分别列出；有未完成证明依赖的声明仍为未证。
 
 ### 7. 状态与证明位置
 
-| 声明 | 状态 | 未证原因 |
-|---|---|---|
-| `MD.Ch06.laplacianBoundCounterexample` | 已证 | — |
+| 声明 | 证明状态 | 未证原因 | 网站分版结论 |
+|---|---|---|---|
+| `MD.Ch06.laplacianBoundCounterexample` | 已证 | — | PASS |
 
-位置：`Blueprint/Ch06.lean:2845`；验证：`blueprint/ch06/closeout25/FINAL_COMPILE.log`。
+位置：`Blueprint/Ch06.lean:2854`；本地核验记录：`blueprint/ch06/closeout26/FINAL_COMPILE.log`。
 
 ## MD-6.4.4-HamiltonianPowerGenerator
 
@@ -11858,9 +12146,9 @@ theorem hamiltonianPowerGenerator {Nc : ℕ}
 
 | 原文对象或结论 | 当前Lean与范围 |
 |---|---|
-| 原文所选陈述 | 本条所引原句及展示公式；单个记号归入context_notation。 |
-| 对象/域/量词/前提 | 完整当前Lean及依赖定义；新增资格见[EXTRA] |
-| 网站首轮 | PASS：D1–D5给出真实H、H^l、力和全相空间方向导数算子；hU仅一阶可微已足够，动量二阶导数来自多项式。l=1时(l−1)系数为零，Nat截断l−2无误；σ²/2保留通用参数，物理代入已明确标注。 |
+| 所引原句 | 本条所引原句及展示公式；单个记号归入context_notation。 |
+| 对象、域、量词及前提 | 以上完整声明；额外资格与未覆盖部分见下一段 |
+| 最新网站原始评价 | PASS；首轮保留 |
 
 ### 5. [EXTRA] 与覆盖缺口
 
@@ -11869,16 +12157,17 @@ theorem hamiltonianPowerGenerator {Nc : ℕ}
 ### 6. 审计结论（含网站结论）
 
 网站原返回：PASS。D1–D5给出真实H、H^l、力和全相空间方向导数算子；hU仅一阶可微已足够，动量二阶导数来自多项式。l=1时(l−1)系数为零，Nat截断l−2无误；σ²/2保留通用参数，物理代入已明确标注。
-本轮处理：保留原审阅版本结论；本轮未改签名。
-本地单文件及逐声明依赖检查通过；含未完成证明依赖的声明仍标未证。原书疑误及修正版分别见勘误，当前修改版未获网站复审结论。
+当前处理：网站PASS（首轮未改版本）。
+保留所交版本的明确结论。
+本地编译和逐声明依赖核对通过。原文疑误、各限定/修正版、反例的评价分别列出；有未完成证明依赖的声明仍为未证。
 
 ### 7. 状态与证明位置
 
-| 声明 | 状态 | 未证原因 |
-|---|---|---|
-| `MD.Ch06.hamiltonianPowerGenerator` | 已证 | — |
+| 声明 | 证明状态 | 未证原因 | 网站分版结论 |
+|---|---|---|---|
+| `MD.Ch06.hamiltonianPowerGenerator` | 已证 | — | PASS |
 
-位置：`Blueprint/Ch06.lean:2853`；验证：`blueprint/ch06/closeout25/FINAL_COMPILE.log`。
+位置：`Blueprint/Ch06.lean:2862`；本地核验记录：`blueprint/ch06/closeout26/FINAL_COMPILE.log`。
 
 ## MD-6.4.4-LaplacianBoundCorrect
 
@@ -11917,9 +12206,9 @@ theorem laplacianBoundPrinted_corrected {Nc : ℕ}
 
 | 原文对象或结论 | 当前Lean与范围 |
 |---|---|
-| 原文所选陈述 | 本条所引原句及展示公式；单个记号归入context_notation。 |
-| 对象/域/量词/前提 | 完整当前Lean及依赖定义；新增资格见[EXTRA] |
-| 网站首轮 | PASS：逐坐标动量二阶导数总和，n与l全量词，U≥1确保H≥1。由∑p_i²≤2H得正确系数2l(l−1)+nl；l=1也成立。[EXTRA]已明确这是勘误版。 |
+| 所引原句 | 本条所引原句及展示公式；单个记号归入context_notation。 |
+| 对象、域、量词及前提 | 以上完整声明；额外资格与未覆盖部分见下一段 |
+| 最新网站原始评价 | PASS；首轮保留 |
 
 ### 5. [EXTRA] 与覆盖缺口
 
@@ -11928,17 +12217,18 @@ theorem laplacianBoundPrinted_corrected {Nc : ℕ}
 ### 6. 审计结论（含网站结论）
 
 网站原返回：PASS。逐坐标动量二阶导数总和，n与l全量词，U≥1确保H≥1。由∑p_i²≤2H得正确系数2l(l−1)+nl；l=1也成立。[EXTRA]已明确这是勘误版。
-本轮处理：保留原审阅版本结论；本轮未改签名。
-本地单文件及逐声明依赖检查通过；含未完成证明依赖的声明仍标未证。原书疑误及修正版分别见勘误，当前修改版未获网站复审结论。
+当前处理：网站PASS（首轮未改版本）。
+保留所交版本的明确结论。
+本地编译和逐声明依赖核对通过。原文疑误、各限定/修正版、反例的评价分别列出；有未完成证明依赖的声明仍为未证。
 
 ### 7. 状态与证明位置
 
-| 声明 | 状态 | 未证原因 |
-|---|---|---|
-| `MD.Ch06.laplacianBoundCorrect` | 已证 | — |
-| `MD.Ch06.laplacianBoundPrinted_corrected` | 已证 | — |
+| 声明 | 证明状态 | 未证原因 | 网站分版结论 |
+|---|---|---|---|
+| `MD.Ch06.laplacianBoundCorrect` | 已证 | — | PASS |
+| `MD.Ch06.laplacianBoundPrinted_corrected` | 已证 | — | 未获单独PASS；见分版意见 |
 
-位置：`Blueprint/Ch06.lean:2864`；验证：`blueprint/ch06/closeout25/FINAL_COMPILE.log`。
+位置：`Blueprint/Ch06.lean:2873`；本地核验记录：`blueprint/ch06/closeout26/FINAL_COMPILE.log`。
 
 ## MD-6.4.4-LyapunovYoungBounds
 
@@ -12034,9 +12324,9 @@ theorem lyapunovYoungBoundsPrinted_counterexample :
 
 | 原文对象或结论 | 当前Lean与范围 |
 |---|---|
-| 原文所选陈述 | 本条所引原句及展示公式；单个记号归入context_notation。 |
-| 对象/域/量词/前提 | 完整当前Lean及依赖定义；新增资格见[EXTRA] |
-| 网站首轮 | PASS：量词顺序正确：c,d依赖l,n,Umax，独立于所有H≥1；正性、两条原有效非严格标量界及修正系数界同时覆盖。未编码U(q)的严格不等式，已在EXTRA/ERRATUM?说明是修正版；应保留该范围说明。 |
+| 所引原句 | 本条所引原句及展示公式；单个记号归入context_notation。 |
+| 对象、域、量词及前提 | 以上完整声明；额外资格与未覆盖部分见下一段 |
+| 最新网站原始评价 | PASS；首轮保留 |
 
 ### 5. [EXTRA] 与覆盖缺口
 
@@ -12045,19 +12335,20 @@ theorem lyapunovYoungBoundsPrinted_counterexample :
 ### 6. 审计结论（含网站结论）
 
 网站原返回：PASS。量词顺序正确：c,d依赖l,n,Umax，独立于所有H≥1；正性、两条原有效非严格标量界及修正系数界同时覆盖。未编码U(q)的严格不等式，已在EXTRA/ERRATUM?说明是修正版；应保留该范围说明。
-本轮处理：保留原审阅版本结论；本轮未改签名。
-本地单文件及逐声明依赖检查通过；含未完成证明依赖的声明仍标未证。原书疑误及修正版分别见勘误，当前修改版未获网站复审结论。
+当前处理：网站PASS（首轮未改版本）。
+保留所交版本的明确结论。
+本地编译和逐声明依赖核对通过。原文疑误、各限定/修正版、反例的评价分别列出；有未完成证明依赖的声明仍为未证。
 
 ### 7. 状态与证明位置
 
-| 声明 | 状态 | 未证原因 |
-|---|---|---|
-| `MD.Ch06.lyapunovYoungBounds` | 已证 | — |
-| `MD.Ch06.lyapunovYoungBounds_corrected` | 已证 | — |
-| `MD.Ch06.lyapunovYoungBoundsPrinted` | 未证 | 原书疑误不证 |
-| `MD.Ch06.lyapunovYoungBoundsPrinted_counterexample` | 已证 | — |
+| 声明 | 证明状态 | 未证原因 | 网站分版结论 |
+|---|---|---|---|
+| `MD.Ch06.lyapunovYoungBounds` | 已证 | — | PASS |
+| `MD.Ch06.lyapunovYoungBounds_corrected` | 已证 | — | 未获单独PASS；见分版意见 |
+| `MD.Ch06.lyapunovYoungBoundsPrinted` | 未证 | 原书疑误不证 | 未获单独PASS；见分版意见 |
+| `MD.Ch06.lyapunovYoungBoundsPrinted_counterexample` | 已证 | — | 未获单独PASS；见分版意见 |
 
-位置：`Blueprint/Ch06.lean:2884`；验证：`blueprint/ch06/closeout25/FINAL_COMPILE.log`。
+位置：`Blueprint/Ch06.lean:2893`；本地核验记录：`blueprint/ch06/closeout26/FINAL_COMPILE.log`。
 
 ## MD-6.4.4-LangevinLyapunov
 
@@ -12112,9 +12403,9 @@ theorem periodicConfiningPrinted_corrected {Nc : ℕ}
 
 | 原文对象或结论 | 当前Lean与范围 |
 |---|---|
-| 原文所选陈述 | 本条所引原句及展示公式；单个记号归入context_notation。 |
-| 对象/域/量词/前提 | 完整当前Lean及依赖定义；新增资格见[EXTRA] |
-| 网站首轮 | PASS：实际周期相空间、正γ和β、归一U≥1、l≥1、热系数恒等式、正性、全部子水平紧性、cocompact无穷远增长以及全域漂移界均完整。δ位于z之前；γl>0。结论为合理修正版，未声称证明原错误中间链。 |
+| 所引原句 | 本条所引原句及展示公式；单个记号归入context_notation。 |
+| 对象、域、量词及前提 | 以上完整声明；额外资格与未覆盖部分见下一段 |
+| 最新网站原始评价 | PASS；首轮保留 |
 
 ### 5. [EXTRA] 与覆盖缺口
 
@@ -12123,17 +12414,18 @@ theorem periodicConfiningPrinted_corrected {Nc : ℕ}
 ### 6. 审计结论（含网站结论）
 
 网站原返回：PASS。实际周期相空间、正γ和β、归一U≥1、l≥1、热系数恒等式、正性、全部子水平紧性、cocompact无穷远增长以及全域漂移界均完整。δ位于z之前；γl>0。结论为合理修正版，未声称证明原错误中间链。
-本轮处理：保留原审阅版本结论；本轮未改签名。
-本地单文件及逐声明依赖检查通过；含未完成证明依赖的声明仍标未证。原书疑误及修正版分别见勘误，当前修改版未获网站复审结论。
+当前处理：网站PASS（首轮未改版本）。
+保留所交版本的明确结论。
+本地编译和逐声明依赖核对通过。原文疑误、各限定/修正版、反例的评价分别列出；有未完成证明依赖的声明仍为未证。
 
 ### 7. 状态与证明位置
 
-| 声明 | 状态 | 未证原因 |
-|---|---|---|
-| `MD.Ch06.langevinLyapunov` | 已证 | — |
-| `MD.Ch06.periodicConfiningPrinted_corrected` | 已证 | — |
+| 声明 | 证明状态 | 未证原因 | 网站分版结论 |
+|---|---|---|---|
+| `MD.Ch06.langevinLyapunov` | 已证 | — | PASS |
+| `MD.Ch06.periodicConfiningPrinted_corrected` | 已证 | — | 未获单独PASS；见分版意见 |
 
-位置：`Blueprint/Ch06.lean:2959`；验证：`blueprint/ch06/closeout25/FINAL_COMPILE.log`。
+位置：`Blueprint/Ch06.lean:2968`；本地核验记录：`blueprint/ch06/closeout26/FINAL_COMPILE.log`。
 
 ## MD-6.4.4-LieBracket
 
@@ -12163,9 +12455,9 @@ def lieBracket {n : ℕ} (D : Set (Fin n → ℝ)) (_hD : IsOpen D)
 
 | 原文对象或结论 | 当前Lean与范围 |
 |---|---|
-| 原文所选陈述 | 本条所引原句及展示公式；单个记号归入context_notation。 |
-| 对象/域/量词/前提 | 完整当前Lean及依赖定义；新增资格见[EXTRA] |
-| 网站首轮 | PASS：D36连接标准VectorField.lieBracket，符号为Dv·u−Du·v；D开、x∈D及域内C¹保证真实局部导数。坐标表达可由基展开得到，未把域外总化值作经典导数。 |
+| 所引原句 | 本条所引原句及展示公式；单个记号归入context_notation。 |
+| 对象、域、量词及前提 | 以上完整声明；额外资格与未覆盖部分见下一段 |
+| 最新网站原始评价 | PASS；首轮保留 |
 
 ### 5. [EXTRA] 与覆盖缺口
 
@@ -12175,16 +12467,17 @@ def lieBracket {n : ℕ} (D : Set (Fin n → ℝ)) (_hD : IsOpen D)
 ### 6. 审计结论（含网站结论）
 
 网站原返回：PASS。D36连接标准VectorField.lieBracket，符号为Dv·u−Du·v；D开、x∈D及域内C¹保证真实局部导数。坐标表达可由基展开得到，未把域外总化值作经典导数。
-本轮处理：保留原审阅版本结论；本轮未改签名。
-本地单文件及逐声明依赖检查通过；含未完成证明依赖的声明仍标未证。原书疑误及修正版分别见勘误，当前修改版未获网站复审结论。
+当前处理：网站PASS（首轮未改版本）。
+保留所交版本的明确结论。
+本地编译和逐声明依赖核对通过。原文疑误、各限定/修正版、反例的评价分别列出；有未完成证明依赖的声明仍为未证。
 
 ### 7. 状态与证明位置
 
-| 声明 | 状态 | 未证原因 |
-|---|---|---|
-| `MD.Ch06.lieBracket` | 定义 | — |
+| 声明 | 证明状态 | 未证原因 | 网站分版结论 |
+|---|---|---|---|
+| `MD.Ch06.lieBracket` | 定义 | — | PASS |
 
-位置：`Blueprint/Ch06.lean:2991`；验证：`blueprint/ch06/closeout25/FINAL_COMPILE.log`。
+位置：`Blueprint/Ch06.lean:3000`；本地核验记录：`blueprint/ch06/closeout26/FINAL_COMPILE.log`。
 
 ## MD-6.4.4-LieBracketProperties
 
@@ -12236,9 +12529,9 @@ theorem lieBracketProperties : ∀ {n : ℕ} (u v w : (Fin n → ℝ) → (Fin n
 
 | 原文对象或结论 | 当前Lean与范围 |
 |---|---|
-| 原文所选陈述 | 本条所引原句及展示公式；单个记号归入context_notation。 |
-| 对象/域/量词/前提 | 完整当前Lean及依赖定义；新增资格见[EXTRA] |
-| 网站首轮 | PASS：两槽所有实线性组合、反对称、自括号零同时给出，字段全局可微确保导数线性；全局版本为已标注技术范围。 |
+| 所引原句 | 本条所引原句及展示公式；单个记号归入context_notation。 |
+| 对象、域、量词及前提 | 以上完整声明；额外资格与未覆盖部分见下一段 |
+| 最新网站原始评价 | PASS；首轮保留 |
 
 ### 5. [EXTRA] 与覆盖缺口
 
@@ -12247,16 +12540,17 @@ theorem lieBracketProperties : ∀ {n : ℕ} (u v w : (Fin n → ℝ) → (Fin n
 ### 6. 审计结论（含网站结论）
 
 网站原返回：PASS。两槽所有实线性组合、反对称、自括号零同时给出，字段全局可微确保导数线性；全局版本为已标注技术范围。
-本轮处理：保留原审阅版本结论；本轮未改签名。
-本地单文件及逐声明依赖检查通过；含未完成证明依赖的声明仍标未证。原书疑误及修正版分别见勘误，当前修改版未获网站复审结论。
+当前处理：网站PASS（首轮未改版本）。
+保留所交版本的明确结论。
+本地编译和逐声明依赖核对通过。原文疑误、各限定/修正版、反例的评价分别列出；有未完成证明依赖的声明仍为未证。
 
 ### 7. 状态与证明位置
 
-| 声明 | 状态 | 未证原因 |
-|---|---|---|
-| `MD.Ch06.lieBracketProperties` | 已证 | — |
+| 声明 | 证明状态 | 未证原因 | 网站分版结论 |
+|---|---|---|---|
+| `MD.Ch06.lieBracketProperties` | 已证 | — | PASS |
 
-位置：`Blueprint/Ch06.lean:2998`；验证：`blueprint/ch06/closeout25/FINAL_COMPILE.log`。
+位置：`Blueprint/Ch06.lean:3007`；本地核验记录：`blueprint/ch06/closeout26/FINAL_COMPILE.log`。
 
 ## MD-6.4.4-Definition61
 
@@ -12302,32 +12596,33 @@ def definition61Printed {m S : ℕ} (D : Set (Fin m → ℝ)) (_hD : IsOpen D)
 
 | 原文对象或结论 | 当前Lean与范围 |
 |---|---|
-| 原文所选陈述 | 本条所引原句及展示公式；单个记号归入context_notation。 |
-| 对象/域/量词/前提 | 完整当前Lean及依赖定义；新增资格见[EXTRA] |
-| 网站首轮 | NEEDS_HUMAN：definition61/Printed含全部b0及噪声，域内C∞和x∈D完整；corrected从噪声开始并反复与所有字段取括号，修正方向合理。但D38引用的项目谓词textbookIteratedBracket全文未提供，无法只据摘录核定原版究竟包含哪些迭代括号。原含漂移定义也不能一般推出抛物型密度。 |
+| 所引原句 | 本条所引原句及展示公式；单个记号归入context_notation。 |
+| 对象、域、量词及前提 | 以上完整声明；额外资格与未覆盖部分见下一段 |
+| 最新网站原始评价 | PASS；复审 |
 
 ### 5. [EXTRA] 与覆盖缺口
 
 - [EXTRA]Fin(S+1)完整包含原drift b0与全部噪声，实际无限次括号及实span；明确C∞字段资格。保留原定义含b0，不冒充一般parabolic噪声生成条件；具体Langevin rank另证。
 - [EXTRA]原开域U和域内点完整保留；坐标字段全空间任意总化只用于函数表示，C∞仅要求在原开域，不要求全局光滑延拓。开域内真实fderiv/全部迭代括号是局部对象。
-- [EXTRA] 25号：补textbookIteratedBracket定义体；原含漂移版仅为原书括号秩定义，密度用途必须用噪声起始的抛物型修正版。
+- [EXTRA] 补textbookIteratedBracket定义体；原含漂移版仅为原书括号秩定义，密度用途必须用噪声起始的抛物型修正版。
 
 ### 6. 审计结论（含网站结论）
 
-网站原返回：NEEDS_HUMAN。definition61/Printed含全部b0及噪声，域内C∞和x∈D完整；corrected从噪声开始并反复与所有字段取括号，修正方向合理。但D38引用的项目谓词textbookIteratedBracket全文未提供，无法只据摘录核定原版究竟包含哪些迭代括号。原含漂移定义也不能一般推出抛物型密度。
-本轮处理：补textbookIteratedBracket定义体；原含漂移版仅为原书括号秩定义，密度用途必须用噪声起始的抛物型修正版。
-本地单文件及逐声明依赖检查通过；含未完成证明依赖的声明仍标未证。原书疑误及修正版分别见勘误，当前修改版未获网站复审结论。
+网站原返回：PASS。A：Definition 6.1的开域、光滑向量场、域内点、包括b0的迭代括号及实线性张成等于ℝm均准确转录，省略号保持同一完整有限生成族。C：definition61与Printed逐项保留开域D、x∈D、所有Fin(S+1)字段在D上C∞以及包括漂移b0的全部迭代Lie括号；D95不是有限深度截断，D96–D97在x处取实span=⊤。全空间总化函数只用于表示局部字段，D开且光滑性只要求ContDiffOn D，因此不要求原书没有的全局光滑延拓。Bracket符号与原文v′u−u′v一致。corrected的第0层只用b1,…,bS，后续允许与任一bᵢ取括号再取并，最后量化所有自然数层并取实span，正确区分用于正时刻密度的抛物型条件。原定义包含漂移作为一个数学定义本身并不矛盾；不能据此对一般SDE断言转移密度，而本条也没有这样的定理结论。四个定义的角色及[EXTRA]一致。
+当前处理：网站PASS（复审）。
+保留所交版本的明确结论。
+本地编译和逐声明依赖核对通过。原文疑误、各限定/修正版、反例的评价分别列出；有未完成证明依赖的声明仍为未证。
 
 ### 7. 状态与证明位置
 
-| 声明 | 状态 | 未证原因 |
-|---|---|---|
-| `MD.Ch06.definition61` | 定义 | — |
-| `MD.Ch06.parabolicNoiseBracketLevels` | 定义 | — |
-| `MD.Ch06.definition61_corrected` | 定义 | — |
-| `MD.Ch06.definition61Printed` | 定义 | — |
+| 声明 | 证明状态 | 未证原因 | 网站分版结论 |
+|---|---|---|---|
+| `MD.Ch06.definition61` | 定义 | — | PASS |
+| `MD.Ch06.parabolicNoiseBracketLevels` | 定义 | — | PASS |
+| `MD.Ch06.definition61_corrected` | 定义 | — | PASS |
+| `MD.Ch06.definition61Printed` | 定义 | — | PASS |
 
-位置：`Blueprint/Ch06.lean:3031`；验证：`blueprint/ch06/closeout25/FINAL_COMPILE.log`。
+位置：`Blueprint/Ch06.lean:3040`；本地核验记录：`blueprint/ch06/closeout26/FINAL_COMPILE.log`。
 
 ## MD-6.4.4-LangevinFields
 
@@ -12358,9 +12653,9 @@ def langevinNoise (Nc : ℕ) (σ : ℝ) (i : Fin Nc) :
 
 | 原文对象或结论 | 当前Lean与范围 |
 |---|---|
-| 原文所选陈述 | 本条所引原句及展示公式；单个记号归入context_notation。 |
-| 对象/域/量词/前提 | 完整当前Lean及依赖定义；新增资格见[EXTRA] |
-| 网站首轮 | PASS：实际Drift为(p,−∇U−γp)，Noise为(0,σe_i)，Fin Nc覆盖全部坐标。C∞资格和通用σ/物理代入均已说明；噪声定义自身不是Wiener定律。 |
+| 所引原句 | 本条所引原句及展示公式；单个记号归入context_notation。 |
+| 对象、域、量词及前提 | 以上完整声明；额外资格与未覆盖部分见下一段 |
+| 最新网站原始评价 | PASS；首轮保留 |
 
 ### 5. [EXTRA] 与覆盖缺口
 
@@ -12369,17 +12664,18 @@ def langevinNoise (Nc : ℕ) (σ : ℝ) (i : Fin Nc) :
 ### 6. 审计结论（含网站结论）
 
 网站原返回：PASS。实际Drift为(p,−∇U−γp)，Noise为(0,σe_i)，Fin Nc覆盖全部坐标。C∞资格和通用σ/物理代入均已说明；噪声定义自身不是Wiener定律。
-本轮处理：保留原审阅版本结论；本轮未改签名。
-本地单文件及逐声明依赖检查通过；含未完成证明依赖的声明仍标未证。原书疑误及修正版分别见勘误，当前修改版未获网站复审结论。
+当前处理：网站PASS（首轮未改版本）。
+保留所交版本的明确结论。
+本地编译和逐声明依赖核对通过。原文疑误、各限定/修正版、反例的评价分别列出；有未完成证明依赖的声明仍为未证。
 
 ### 7. 状态与证明位置
 
-| 声明 | 状态 | 未证原因 |
-|---|---|---|
-| `MD.Ch06.langevinDrift` | 定义 | — |
-| `MD.Ch06.langevinNoise` | 定义 | — |
+| 声明 | 证明状态 | 未证原因 | 网站分版结论 |
+|---|---|---|---|
+| `MD.Ch06.langevinDrift` | 定义 | — | PASS |
+| `MD.Ch06.langevinNoise` | 定义 | — | 未获单独PASS；见分版意见 |
 
-位置：`Blueprint/Ch06.lean:3055`；验证：`blueprint/ch06/closeout25/FINAL_COMPILE.log`。
+位置：`Blueprint/Ch06.lean:3064`；本地核验记录：`blueprint/ch06/closeout26/FINAL_COMPILE.log`。
 
 ## MD-6.4.4-LangevinNoiseBracket
 
@@ -12410,9 +12706,9 @@ theorem langevinNoiseBracket {Nc : ℕ}
 
 | 原文对象或结论 | 当前Lean与范围 |
 |---|---|
-| 原文所选陈述 | 本条所引原句及展示公式；单个记号归入context_notation。 |
-| 对象/域/量词/前提 | 完整当前Lean及依赖定义；新增资格见[EXTRA] |
-| 网站首轮 | PASS：C²势足以使力可微；常字段导数为零，−Db0·bi=(−σe_i,σγe_i)，与原符号和全部i,z吻合；σ=0也允许本恒等式。 |
+| 所引原句 | 本条所引原句及展示公式；单个记号归入context_notation。 |
+| 对象、域、量词及前提 | 以上完整声明；额外资格与未覆盖部分见下一段 |
+| 最新网站原始评价 | PASS；首轮保留 |
 
 ### 5. [EXTRA] 与覆盖缺口
 
@@ -12421,16 +12717,17 @@ theorem langevinNoiseBracket {Nc : ℕ}
 ### 6. 审计结论（含网站结论）
 
 网站原返回：PASS。C²势足以使力可微；常字段导数为零，−Db0·bi=(−σe_i,σγe_i)，与原符号和全部i,z吻合；σ=0也允许本恒等式。
-本轮处理：保留原审阅版本结论；本轮未改签名。
-本地单文件及逐声明依赖检查通过；含未完成证明依赖的声明仍标未证。原书疑误及修正版分别见勘误，当前修改版未获网站复审结论。
+当前处理：网站PASS（首轮未改版本）。
+保留所交版本的明确结论。
+本地编译和逐声明依赖核对通过。原文疑误、各限定/修正版、反例的评价分别列出；有未完成证明依赖的声明仍为未证。
 
 ### 7. 状态与证明位置
 
-| 声明 | 状态 | 未证原因 |
-|---|---|---|
-| `MD.Ch06.langevinNoiseBracket` | 已证 | — |
+| 声明 | 证明状态 | 未证原因 | 网站分版结论 |
+|---|---|---|---|
+| `MD.Ch06.langevinNoiseBracket` | 已证 | — | PASS |
 
-位置：`Blueprint/Ch06.lean:3064`；验证：`blueprint/ch06/closeout25/FINAL_COMPILE.log`。
+位置：`Blueprint/Ch06.lean:3073`；本地核验记录：`blueprint/ch06/closeout26/FINAL_COMPILE.log`。
 
 ## MD-6.4.4-LangevinBracketIndependent
 
@@ -12456,9 +12753,9 @@ theorem langevinBracketIndependent (Nc : ℕ) (γ σ : ℝ) (hσ : σ ≠ 0) :
 
 | 原文对象或结论 | 当前Lean与范围 |
 |---|---|
-| 原文所选陈述 | 本条所引原句及展示公式；单个记号归入context_notation。 |
-| 对象/域/量词/前提 | 完整当前Lean及依赖定义；新增资格见[EXTRA] |
-| 网站首轮 | PASS：族定义Sum.elim分别为全部噪声及全部括号，Fin Nc⊕Fin Nc恰有2Nc个向量；σ≠0保证位置块再动量块消元独立，n=0为空族也正确。 |
+| 所引原句 | 本条所引原句及展示公式；单个记号归入context_notation。 |
+| 对象、域、量词及前提 | 以上完整声明；额外资格与未覆盖部分见下一段 |
+| 最新网站原始评价 | PASS；首轮保留 |
 
 ### 5. [EXTRA] 与覆盖缺口
 
@@ -12467,16 +12764,17 @@ theorem langevinBracketIndependent (Nc : ℕ) (γ σ : ℝ) (hσ : σ ≠ 0) :
 ### 6. 审计结论（含网站结论）
 
 网站原返回：PASS。族定义Sum.elim分别为全部噪声及全部括号，Fin Nc⊕Fin Nc恰有2Nc个向量；σ≠0保证位置块再动量块消元独立，n=0为空族也正确。
-本轮处理：保留原审阅版本结论；本轮未改签名。
-本地单文件及逐声明依赖检查通过；含未完成证明依赖的声明仍标未证。原书疑误及修正版分别见勘误，当前修改版未获网站复审结论。
+当前处理：网站PASS（首轮未改版本）。
+保留所交版本的明确结论。
+本地编译和逐声明依赖核对通过。原文疑误、各限定/修正版、反例的评价分别列出；有未完成证明依赖的声明仍为未证。
 
 ### 7. 状态与证明位置
 
-| 声明 | 状态 | 未证原因 |
-|---|---|---|
-| `MD.Ch06.langevinBracketIndependent` | 已证 | — |
+| 声明 | 证明状态 | 未证原因 | 网站分版结论 |
+|---|---|---|---|
+| `MD.Ch06.langevinBracketIndependent` | 已证 | — | PASS |
 
-位置：`Blueprint/Ch06.lean:3073`；验证：`blueprint/ch06/closeout25/FINAL_COMPILE.log`。
+位置：`Blueprint/Ch06.lean:3082`；本地核验记录：`blueprint/ch06/closeout26/FINAL_COMPILE.log`。
 
 ## MD-6.4.4-LangevinHormander
 
@@ -12488,7 +12786,7 @@ theorem langevinBracketIndependent (Nc : ℕ) (γ σ : ℝ) (hσ : σ ≠ 0) :
 
 ### 2. 原文证明
 
-> 原书未给独立完整证明。
+> 原书在结论前给出漂移、噪声、Lie括号计算及线性无关论证；本条仅摘录最后的结论句。
 
 ### 3. 完整当前Lean（原文版与修正版独立列出）
 
@@ -12504,28 +12802,33 @@ theorem langevinHormander {Nc : ℕ}
 
 | 原文对象或结论 | 当前Lean与范围 |
 |---|---|
-| 原文所选陈述 | 本条所引原句及展示公式；单个记号归入context_notation。 |
-| 对象/域/量词/前提 | 完整当前Lean及依赖定义；新增资格见[EXTRA] |
-| 网站首轮 | NEEDS_HUMAN：正γ、θ给非零物理噪声，实际seed包括drift/noise。但textbookIteratedBracket定义缺失，无法最终核定textbookHormanderAt语义；且签名仅为rank，不含原句Assumption 1(ii)的转移密度结论，后者虽另列14，当前条目scope需明确拆分。 |
+| 所引原句 | Lean仅覆盖实际Langevin向量场的原书括号秩条件；转移密度由条目14的正时刻修正版承接。 |
+| 对象、域、量词及前提 | 以上完整声明；额外资格与未覆盖部分见下一段 |
+| 最新网站原始评价 | NEEDS_HUMAN；复审 |
 
 ### 5. [EXTRA] 与覆盖缺口
 
 - [EXTRA]完整物理σ=√(2γθ)、γ/θ>0、C∞ U的实际噪声及括号span；本桥只证rank，转移密度存在另条未证。
-- [EXTRA] 25号：scope仅实际Langevin向量场括号rank；密度结论由LangevinTransitionDensity承接，补全部迭代括号定义。
+- [EXTRA] scope仅实际Langevin向量场括号rank；密度结论由LangevinTransitionDensity承接，补全部迭代括号定义。
+- [ERRATUM?] 原Assumption 1(ii)中的零时刻端点不能由此rank核验推出；仅正时刻密度可由相应抛物型条件讨论。
+- [EXTRA] 复审范围：原页已给噪声、漂移及第一层括号的线性独立论证。本条只给秩条件；正时刻密度另列，原Assumption1(ii)含零时刻端点仍有疑。
+- 覆盖缺口：本条rank签名不包含密度存在或连续性。
+- 覆盖缺口：原Assumption 1(ii)包含t=0的端点仍需人工处理。
 
 ### 6. 审计结论（含网站结论）
 
-网站原返回：NEEDS_HUMAN。正γ、θ给非零物理噪声，实际seed包括drift/noise。但textbookIteratedBracket定义缺失，无法最终核定textbookHormanderAt语义；且签名仅为rank，不含原句Assumption 1(ii)的转移密度结论，后者虽另列14，当前条目scope需明确拆分。
-本轮处理：scope仅实际Langevin向量场括号rank；密度结论由LangevinTransitionDensity承接，补全部迭代括号定义。
-本地单文件及逐声明依赖检查通过；含未完成证明依赖的声明仍标未证。原书疑误及修正版分别见勘误，当前修改版未获网站复审结论。
+网站原返回：NEEDS_HUMAN。A：所引两句与原页相符；原页在此前已明确计算漂移、噪声及第一层括号并说明2Nc个向量线性无关，proof_note不应让人误以为没有这段论证。C：rank声明自身PASS：状态为实配置×实动量，漂移(p,−∇U−γp)，噪声(0,σeᵢ)，σ=√(2γθ)且γ、θ正；给出每个z处的全部迭代括号span=整个相空间。Nc=0时是零维的无害情形。D95–D97以及实际seed均已展开，不是把rank结论当作假设。签名只给含漂移种子族的原书秩条件，没有直接给出转移密度或Assumption 1(ii)的联合连续性；这种拆分在EXTRA已有说明，需同步修正statement_scope和coverage_gaps。引文后半句的原Assumption 1(ii)实际写到t=0，正时刻密度即使正确，也不能自动覆盖这个端点，故原书层面的合并断言仍NEEDS_HUMAN。
+当前处理：修正版/限定声明=网站PASS；原文疑误或范围解释待导师。
+原页已给噪声、漂移及第一层括号的线性独立论证。本条只给秩条件；正时刻密度另列，原Assumption1(ii)含零时刻端点仍有疑。
+本地编译和逐声明依赖核对通过。原文疑误、各限定/修正版、反例的评价分别列出；有未完成证明依赖的声明仍为未证。
 
 ### 7. 状态与证明位置
 
-| 声明 | 状态 | 未证原因 |
-|---|---|---|
-| `MD.Ch06.langevinHormander` | 已证 | — |
+| 声明 | 证明状态 | 未证原因 | 网站分版结论 |
+|---|---|---|---|
+| `MD.Ch06.langevinHormander` | 已证 | — | PASS |
 
-位置：`Blueprint/Ch06.lean:3080`；验证：`blueprint/ch06/closeout25/FINAL_COMPILE.log`。
+位置：`Blueprint/Ch06.lean:3089`；本地核验记录：`blueprint/ch06/closeout26/FINAL_COMPILE.log`。
 
 ## MD-6.4.4-LangevinTransitionDensity
 
@@ -12562,28 +12865,32 @@ theorem langevinTransitionDensity :
 
 | 原文对象或结论 | 当前Lean与范围 |
 |---|---|
-| 原文所选陈述 | 本条所引原句及展示公式；单个记号归入context_notation。 |
-| 对象/域/量词/前提 | 完整当前Lean及依赖定义；新增资格见[EXTRA] |
-| 网站首轮 | NEEDS_HUMAN：签名有全部初值、正时间、非负联合连续密度和对任意可测集相对于flatPhaseMeasure的核表示，物理噪声、周期域正确。D52仅以Classical.choose(actual_path_solution_exists ...)选解，未提供该存在命题的完整签名；不能只据此确认所选轨迹满足哪一积分方程和初值。 |
+| 所引原句 | 原引文保留；Lean覆盖实际周期单位质量Langevin核在t>0的联合连续转移密度及全部可测集合表示。 |
+| 对象、域、量词及前提 | 以上完整声明；额外资格与未覆盖部分见下一段 |
+| 最新网站原始评价 | NEEDS_HUMAN；复审 |
 
 ### 5. [EXTRA] 与覆盖缺口
 
 - [EXTRA]具体实际单位周期Langevin、C∞势、正γ/β，全部点初值的正时间连续转移密度及真实平坦相空间测度表示；没有从含drift的任意原Definition6.1断言一般parabolic密度定理。
-- [EXTRA] 25号：补actual_path_solution_exists完整存在类型及所选解满足初值/积分方程的规格；不把缺摘录误记原书问题。
+- [EXTRA] 补actual_path_solution_exists完整存在类型及所选解满足初值/积分方程的规格；不把缺摘录误记原书问题。
+- [ERRATUM?] 原Assumption 1(ii)的[0,∞)应就转移密度连续性改为(0,∞)；点初值在零时刻是Dirac测度。
+- [EXTRA] 复审范围：网站PASS的是正时刻联合连续密度限定版；原[0,∞)连续密度端点需勘误。
+- 覆盖缺口：原Assumption 1(ii)在t=0的联合连续端点不成立/未按原文形式化，须勘误签核。
 
 ### 6. 审计结论（含网站结论）
 
-网站原返回：NEEDS_HUMAN。签名有全部初值、正时间、非负联合连续密度和对任意可测集相对于flatPhaseMeasure的核表示，物理噪声、周期域正确。D52仅以Classical.choose(actual_path_solution_exists ...)选解，未提供该存在命题的完整签名；不能只据此确认所选轨迹满足哪一积分方程和初值。
-本轮处理：补actual_path_solution_exists完整存在类型及所选解满足初值/积分方程的规格；不把缺摘录误记原书问题。
-本地单文件及逐声明依赖检查通过；含未完成证明依赖的声明仍标未证。原书疑误及修正版分别见勘误，当前修改版未获网站复审结论。
+网站原返回：NEEDS_HUMAN。A：所引“Thus Assumption 1(ii) holds in the case of Langevin dynamics.”原句准确；须连同其所引用的Assumption 1(ii)核对，不能只看该短句。C：当前正时刻限定签名PASS：真实周期单位质量Langevin端点核、C∞周期势和Lipschitz力、β和γ正、物理幅度√(2γ/β)、真实Wiener过程。D17、D19–D23及D28–D31说明是实际积分解的推前核；flatPhaseMeasure为真实平坦相空间测度。ρ先于所有t>0、x、可测A选择，在(x,z,t)联合变量上ContinuousOn(univ×(0,∞))，并给出全部可测集合上的限制积分表示；这是全密度结论，不是仅有限检验函数相等，也未把密度存在当作假设。原书Assumption 1(ii)却要求C×C×[0,∞)联合连续，当前声明有意改成t>0。该修改合理且必要，但应明标[ERRATUM?]并由人工认可；它不是原Assumption 1(ii)端点的完整忠实实现。
+当前处理：修正版/限定声明=网站PASS；原文疑误或范围解释待导师。
+网站PASS的是正时刻联合连续密度限定版；原[0,∞)连续密度端点需勘误。
+本地编译和逐声明依赖核对通过。原文疑误、各限定/修正版、反例的评价分别列出；有未完成证明依赖的声明仍为未证。
 
 ### 7. 状态与证明位置
 
-| 声明 | 状态 | 未证原因 |
-|---|---|---|
-| `MD.Ch06.langevinTransitionDensity` | 未证 | 缺大型理论 |
+| 声明 | 证明状态 | 未证原因 | 网站分版结论 |
+|---|---|---|---|
+| `MD.Ch06.langevinTransitionDensity` | 未证 | 缺大型理论 | PASS |
 
-位置：`Blueprint/Ch06.lean:3089`；验证：`blueprint/ch06/closeout25/FINAL_COMPILE.log`。
+位置：`Blueprint/Ch06.lean:3098`；本地核验记录：`blueprint/ch06/closeout26/FINAL_COMPILE.log`。
 
 ## MD-6.4.4-Lemma61Printed
 
@@ -12605,10 +12912,10 @@ theorem langevinTransitionDensity :
 theorem lemma61Printed {N : ℕ} {Ω : Type*} [MeasurableSpace Ω]
     (B : ℝ≥0 → Ω → (Fin N → ℝ)) (P : Measure Ω) (hB : textbookIsWienerVector B P)
     (U : (Fin N → ℝ) → ℝ) (hU : ContDiff ℝ ∞ U) (hp : textbookUnitPeriodicPotential U)
-    (L : ℝ≥0) (hF : LipschitzWith L (textbookPotentialForce U)) (γ σ : ℝ) (T : ℝ≥0) (hT : (0 : ℝ) < T)
-    (hσ : σ ≠ 0) (x : textbookLangevinPeriodicPhase N)
+    (L : ℝ≥0) (hF : LipschitzWith L (textbookPotentialForce U)) (γ θ : ℝ) (hγ : 0 < γ) (hθ : 0 < θ)
+    (T : ℝ≥0) (hT : (0 : ℝ) < T) (x : textbookLangevinPeriodicPhase N)
     (C : Set (textbookLangevinPeriodicPhase N)) (hC : IsOpen C) :
-    0 < textbookLangevinPeriodicTransitionKernel B P U hU hp L hF γ σ T x C := by
+    0 < textbookLangevinPeriodicTransitionKernel B P U hU hp L hF γ (Real.sqrt (2*γ*θ)) T x C := by
   sorry
 ```
 
@@ -12616,27 +12923,30 @@ theorem lemma61Printed {N : ℕ} {Ω : Type*} [MeasurableSpace Ω]
 
 | 原文对象或结论 | 当前Lean与范围 |
 |---|---|
-| 原文所选陈述 | 本条所引原句及展示公式；单个记号归入context_notation。 |
-| 对象/域/量词/前提 | 完整当前Lean及依赖定义；新增资格见[EXTRA] |
-| 网站首轮 | NEEDS_HUMAN：字面保留所有开集，空集确使断言错误；还把原单位质量周期相空间扩大为任意正质量、全欧氏Phase n，且extra_assumptions为空，故不是完整忠实的Printed形式。原书疑误按NEEDS_HUMAN处理，并记录额外的签名范围偏移。 |
+| 所引原句 | 本条当前覆盖范围：kind恢复编号lemma；Printed收回原(6.47)正摩擦γ>0及物理噪声σ=√(2γθ)、θ=kBT>0的参数域，保留所有开集（包括空集）的原断言。任意实γ/非零σ的推广只留在非空修正版；漏C.Nonempty是原书疑误，不证明Printed。 |
+| 对象、域、量词及前提 | 以上完整声明；额外资格与未覆盖部分见下一段 |
+| 最新网站原始评价 | FAIL；复审 |
 
 ### 5. [EXTRA] 与覆盖缺口
 
-- [EXTRA] 25号：Printed收回单位质量周期相空间，保留包括空集的原全称开集断言及原书疑误；非空修正版独立保留，真实核存在规格补入复审包。
+- [EXTRA] kind恢复编号lemma；Printed收回原(6.47)正摩擦γ>0及物理噪声σ=√(2γθ)、θ=kBT>0的参数域，保留所有开集（包括空集）的原断言。任意实γ/非零σ的推广只留在非空修正版；漏C.Nonempty是原书疑误，不证明Printed。
+- [ERRATUM?] 原书数学疑误与本次形式化修复分别记录，见CH06_ERRATA。
+- 覆盖缺口：原书漏非空目标；Printed忠实保留空集漏洞。
 
 ### 6. 审计结论（含网站结论）
 
-网站原返回：NEEDS_HUMAN。字面保留所有开集，空集确使断言错误；还把原单位质量周期相空间扩大为任意正质量、全欧氏Phase n，且extra_assumptions为空，故不是完整忠实的Printed形式。原书疑误按NEEDS_HUMAN处理，并记录额外的签名范围偏移。
-本轮处理：Printed收回单位质量周期相空间，保留包括空集的原全称开集断言及原书疑误；非空修正版独立保留，真实核存在规格补入复审包。
-本地单文件及逐声明依赖检查通过；含未完成证明依赖的声明仍标未证。原书疑误及修正版分别见勘误，当前修改版未获网站复审结论。
+网站原返回：FAIL。A：Lemma 6.1的标题、所有t>0、所有开集、全部点初值及原式准确；kind应为编号lemma而不是unnumbered_claim。C：缺少C.Nonempty忠实保留了原文的空集漏洞，这个数学错误应NEEDS_HUMAN，不能仅因此判Printed签名FAIL。实际端点核的定义、时间正性、全部点初值及周期单位质量相空间均已核对。不过原页把过程指定为(6.47)，其γ为正且噪声为√(2γkBT)；当前Printed却量化任意实γ和任意非零实σ，额外覆盖γ≤0及不满足物理噪声关系的过程。它们可用于有限时刻开放集可达性的正确推广，但该推广没有在本条EXTRA中完整披露，也不是(6.47)的字面参数域。按Printed必须审忠实性的要求，本条因参数域扩张FAIL；原书空集错误仍独立标NEEDS_HUMAN。此结论不依据sorry。
+当前处理：按网站审校意见修复，本地核验通过（未再送网站）。
+kind恢复编号lemma；Printed收回原(6.47)正摩擦γ>0及物理噪声σ=√(2γθ)、θ=kBT>0的参数域，保留所有开集（包括空集）的原断言。任意实γ/非零σ的推广只留在非空修正版；漏C.Nonempty是原书疑误，不证明Printed。
+本地编译和逐声明依赖核对通过。原文疑误、各限定/修正版、反例的评价分别列出；有未完成证明依赖的声明仍为未证。
 
 ### 7. 状态与证明位置
 
-| 声明 | 状态 | 未证原因 |
-|---|---|---|
-| `MD.Ch06.lemma61Printed` | 未证 | 原书疑误不证 |
+| 声明 | 证明状态 | 未证原因 | 网站分版结论 |
+|---|---|---|---|
+| `MD.Ch06.lemma61Printed` | 未证 | 原书疑误不证 | 修复后未再送网站 |
 
-位置：`Blueprint/Ch06.lean:3107`；验证：`blueprint/ch06/closeout25/FINAL_COMPILE.log`。
+位置：`Blueprint/Ch06.lean:3117`；本地核验记录：`blueprint/ch06/closeout26/FINAL_COMPILE.log`。
 
 ## MD-6.4.4-Lemma61Nonempty
 
@@ -12644,11 +12954,11 @@ theorem lemma61Printed {N : ℕ} {Ω : Type*} [MeasurableSpace Ω]
 
 ### 1. 原文陈述
 
-> \[\Pr(X(t)\in C\mid X(0)=X_0)>0,\quad\forall X_0\in D.\]
+> \[\Pr(X(t)\in C\mid X(0)=X_0)>0,\quad\forall X_0\in D,\]
 
 ### 2. 原文证明
 
-> 原书未给独立完整证明。
+> 原书给出Lemma 6.1的Proof论述；本条只摘录展示式，未重录证明。
 
 ### 3. 完整当前Lean（原文版与修正版独立列出）
 
@@ -12677,29 +12987,31 @@ theorem lemma61Printed_corrected {N : ℕ} {Ω : Type*} [MeasurableSpace Ω]
 
 | 原文对象或结论 | 当前Lean与范围 |
 |---|---|
-| 原文所选陈述 | 本条所引原句及展示公式；单个记号归入context_notation。 |
-| 对象/域/量词/前提 | 完整当前Lean及依赖定义；新增资格见[EXTRA] |
-| 网站首轮 | NEEDS_HUMAN：补C.Nonempty且T>0、σ≠0；全部点初值、真实周期核目标齐全。γ任意不妨碍有限时间可控性。缺D52所用actual_path_solution_exists的规格，尚不能核定此实际核确为所称Langevin解律。 |
+| 所引原句 | 原展示式保持原文；两份Lean声明均为增加目标非空条件、并将γ及σ参数推广后的实际周期单位质量核正概率命题。 |
+| 对象、域、量词及前提 | 以上完整声明；额外资格与未覆盖部分见下一段 |
+| 最新网站原始评价 | PASS；复审 |
 
 ### 5. [EXTRA] 与覆盖缺口
 
 - [EXTRA]补非空目标；桥接实际单位周期相空间、原单位质量、真实Wiener/实际完整Langevin核，σ≠0。原一般质量扩大版不计已证。
-- [EXTRA] 25号：补所选解存在规格；目标开集非空修正保持。
+- [EXTRA] 补所选解存在规格；目标开集非空修正保持。
+- [EXTRA] γ可为任意实数，σ可为任意非零实数，是有限正时刻支持性质的推广；原物理(6.47)为其中的特例。
 
 ### 6. 审计结论（含网站结论）
 
-网站原返回：NEEDS_HUMAN。补C.Nonempty且T>0、σ≠0；全部点初值、真实周期核目标齐全。γ任意不妨碍有限时间可控性。缺D52所用actual_path_solution_exists的规格，尚不能核定此实际核确为所称Langevin解律。
-本轮处理：补所选解存在规格；目标开集非空修正保持。
-本地单文件及逐声明依赖检查通过；含未完成证明依赖的声明仍标未证。原书疑误及修正版分别见勘误，当前修改版未获网站复审结论。
+网站原返回：PASS。A：该展示式来自同一Lemma 6.1；原页展示式以逗号承接where句，JSON改成句号，已还原。公式单独摘录时需补上原来的t>0、开集C、Langevin解及任意初值的上下文。原页下面有Proof段，当前proof_note应说明仅摘录命题，而不是遗漏这段原书论述。C：两份签名相同且作为修正/推广版均PASS：真实Wiener过程、C∞单位周期势及Lipschitz力、实际单位质量周期端点核；T>0、σ≠0、任意初值x以及非空开集C给出严格正概率。已展开路径存在规格和初值/积分方程、推前核定义，并核对所引open_pos定理的完整文件参数。增加C.Nonempty恰好消除条目15的空集漏洞；γ任意实数、σ任意非零实数是有限时刻可达性的合理推广，不需要为此引入规范不变测度或正摩擦。修正版并未声称一般质量矩阵版本已经覆盖。[EXTRA]应补全该参数推广，不把nonempty写进原文引文冒充原书已印出。
+当前处理：网站PASS（复审）。
+保留所交版本的明确结论。
+本地编译和逐声明依赖核对通过。原文疑误、各限定/修正版、反例的评价分别列出；有未完成证明依赖的声明仍为未证。
 
 ### 7. 状态与证明位置
 
-| 声明 | 状态 | 未证原因 |
-|---|---|---|
-| `MD.Ch06.lemma61Nonempty` | 已证 | — |
-| `MD.Ch06.lemma61Printed_corrected` | 已证 | — |
+| 声明 | 证明状态 | 未证原因 | 网站分版结论 |
+|---|---|---|---|
+| `MD.Ch06.lemma61Nonempty` | 已证 | — | PASS |
+| `MD.Ch06.lemma61Printed_corrected` | 已证 | — | PASS |
 
-位置：`Blueprint/Ch06.lean:3119`；验证：`blueprint/ch06/closeout25/FINAL_COMPILE.log`。
+位置：`Blueprint/Ch06.lean:3129`；本地核验记录：`blueprint/ch06/closeout26/FINAL_COMPILE.log`。
 
 ## MD-6.4.4-ControlPath
 
@@ -12735,9 +13047,9 @@ theorem controlPath {Nc : ℕ}
 
 | 原文对象或结论 | 当前Lean与范围 |
 |---|---|
-| 原文所选陈述 | 本条所引原句及展示公式；单个记号归入context_notation。 |
-| 对象/域/量词/前提 | 完整当前Lean及依赖定义；新增资格见[EXTRA] |
-| 网站首轮 | PASS：所有x,y、T>0、σ≠0，存在全光滑q,p,R，四个端点及R0=0，逐时q′=p与p′=−∇U−γp+σR′全部保留。欧氏提升的可控性足够用于环面投影，EXTRA范围清楚。 |
+| 所引原句 | 本条所引原句及展示公式；单个记号归入context_notation。 |
+| 对象、域、量词及前提 | 以上完整声明；额外资格与未覆盖部分见下一段 |
+| 最新网站原始评价 | PASS；首轮保留 |
 
 ### 5. [EXTRA] 与覆盖缺口
 
@@ -12746,16 +13058,17 @@ theorem controlPath {Nc : ℕ}
 ### 6. 审计结论（含网站结论）
 
 网站原返回：PASS。所有x,y、T>0、σ≠0，存在全光滑q,p,R，四个端点及R0=0，逐时q′=p与p′=−∇U−γp+σR′全部保留。欧氏提升的可控性足够用于环面投影，EXTRA范围清楚。
-本轮处理：保留原审阅版本结论；本轮未改签名。
-本地单文件及逐声明依赖检查通过；含未完成证明依赖的声明仍标未证。原书疑误及修正版分别见勘误，当前修改版未获网站复审结论。
+当前处理：网站PASS（首轮未改版本）。
+保留所交版本的明确结论。
+本地编译和逐声明依赖核对通过。原文疑误、各限定/修正版、反例的评价分别列出；有未完成证明依赖的声明仍为未证。
 
 ### 7. 状态与证明位置
 
-| 声明 | 状态 | 未证原因 |
-|---|---|---|
-| `MD.Ch06.controlPath` | 已证 | — |
+| 声明 | 证明状态 | 未证原因 | 网站分版结论 |
+|---|---|---|---|
+| `MD.Ch06.controlPath` | 已证 | — | PASS |
 
-位置：`Blueprint/Ch06.lean:3140`；验证：`blueprint/ch06/closeout25/FINAL_COMPILE.log`。
+位置：`Blueprint/Ch06.lean:3150`；本地核验记录：`blueprint/ch06/closeout26/FINAL_COMPILE.log`。
 
 ## MD-6.4.4-ControlEndpointStable
 
@@ -12788,9 +13101,9 @@ theorem controlEndpointStable {Nc : ℕ}
 
 | 原文对象或结论 | 当前Lean与范围 |
 |---|---|
-| 原文所选陈述 | 本条所引原句及展示公式；单个记号归入context_notation。 |
-| 对象/域/量词/前提 | 完整当前Lean及依赖定义；新增资格见[EXTRA] |
-| 网站首轮 | PASS：δ后选统一ε，再量化所有连续W,q,p；积分解定义包含初值、W0和两条真实积分方程。给定controlPosition/Momentum/Rate为Hermite三次路径及ODE反解，R为其积分；sup管道用逐时≤表达，端点严格dist<δ正确。 |
+| 所引原句 | 本条所引原句及展示公式；单个记号归入context_notation。 |
+| 对象、域、量词及前提 | 以上完整声明；额外资格与未覆盖部分见下一段 |
+| 最新网站原始评价 | PASS；首轮保留 |
 
 ### 5. [EXTRA] 与覆盖缺口
 
@@ -12799,16 +13112,17 @@ theorem controlEndpointStable {Nc : ℕ}
 ### 6. 审计结论（含网站结论）
 
 网站原返回：PASS。δ后选统一ε，再量化所有连续W,q,p；积分解定义包含初值、W0和两条真实积分方程。给定controlPosition/Momentum/Rate为Hermite三次路径及ODE反解，R为其积分；sup管道用逐时≤表达，端点严格dist<δ正确。
-本轮处理：保留原审阅版本结论；本轮未改签名。
-本地单文件及逐声明依赖检查通过；含未完成证明依赖的声明仍标未证。原书疑误及修正版分别见勘误，当前修改版未获网站复审结论。
+当前处理：网站PASS（首轮未改版本）。
+保留所交版本的明确结论。
+本地编译和逐声明依赖核对通过。原文疑误、各限定/修正版、反例的评价分别列出；有未完成证明依赖的声明仍为未证。
 
 ### 7. 状态与证明位置
 
-| 声明 | 状态 | 未证原因 |
-|---|---|---|
-| `MD.Ch06.controlEndpointStable` | 已证 | — |
+| 声明 | 证明状态 | 未证原因 | 网站分版结论 |
+|---|---|---|---|
+| `MD.Ch06.controlEndpointStable` | 已证 | — | PASS |
 
-位置：`Blueprint/Ch06.lean:3152`；验证：`blueprint/ch06/closeout25/FINAL_COMPILE.log`。
+位置：`Blueprint/Ch06.lean:3162`；本地核验记录：`blueprint/ch06/closeout26/FINAL_COMPILE.log`。
 
 ## MD-6.4.4-WienerControlTube
 
@@ -12837,9 +13151,9 @@ theorem wienerControlTube {Nc : ℕ} {Ω : Type*} [MeasurableSpace Ω]
 
 | 原文对象或结论 | 当前Lean与范围 |
 |---|---|
-| 原文所选陈述 | 本条所引原句及展示公式；单个记号归入context_notation。 |
-| 对象/域/量词/前提 | 完整当前Lean及依赖定义；新增资格见[EXTRA] |
-| 网站首轮 | PASS：D50规定联合高斯、均值、独立坐标Brownian协方差与几乎处处连续，管道定义在闭时间区间逐时≤ε，T/ε>0且连续R起于0。对象、时间和事件完整，未以单时边际替代路径规律。 |
+| 所引原句 | 本条所引原句及展示公式；单个记号归入context_notation。 |
+| 对象、域、量词及前提 | 以上完整声明；额外资格与未覆盖部分见下一段 |
+| 最新网站原始评价 | PASS；首轮保留 |
 
 ### 5. [EXTRA] 与覆盖缺口
 
@@ -12848,16 +13162,17 @@ theorem wienerControlTube {Nc : ℕ} {Ω : Type*} [MeasurableSpace Ω]
 ### 6. 审计结论（含网站结论）
 
 网站原返回：PASS。D50规定联合高斯、均值、独立坐标Brownian协方差与几乎处处连续，管道定义在闭时间区间逐时≤ε，T/ε>0且连续R起于0。对象、时间和事件完整，未以单时边际替代路径规律。
-本轮处理：保留原审阅版本结论；本轮未改签名。
-本地单文件及逐声明依赖检查通过；含未完成证明依赖的声明仍标未证。原书疑误及修正版分别见勘误，当前修改版未获网站复审结论。
+当前处理：网站PASS（首轮未改版本）。
+保留所交版本的明确结论。
+本地编译和逐声明依赖核对通过。原文疑误、各限定/修正版、反例的评价分别列出；有未完成证明依赖的声明仍为未证。
 
 ### 7. 状态与证明位置
 
-| 声明 | 状态 | 未证原因 |
-|---|---|---|
-| `MD.Ch06.wienerControlTube` | 已证 | — |
+| 声明 | 证明状态 | 未证原因 | 网站分版结论 |
+|---|---|---|---|
+| `MD.Ch06.wienerControlTube` | 已证 | — | PASS |
 
-位置：`Blueprint/Ch06.lean:3163`；验证：`blueprint/ch06/closeout25/FINAL_COMPILE.log`。
+位置：`Blueprint/Ch06.lean:3173`；本地核验记录：`blueprint/ch06/closeout26/FINAL_COMPILE.log`。
 
 ## MD-6.4.4-LangevinCanonicalStationary
 
@@ -12889,9 +13204,9 @@ theorem langevinCanonicalStationary {N : ℕ}
 
 | 原文对象或结论 | 当前Lean与范围 |
 |---|---|
-| 原文所选陈述 | 本条所引原句及展示公式；单个记号归入context_notation。 |
-| 对象/域/量词/前提 | 完整当前Lean及依赖定义；新增资格见[EXTRA] |
-| 网站首轮 | PASS：实际forward算子全文为−DF·b−div(b)F+σ²Δ_pF/2；散度由全部位置/动量对角方向导数定义，确为平坦前向算子。D56–D57给归一canonical密度，正β、γ及σ=√(2γ/β)完整，逐点平稳式正确。原几何遍历性另列21，本条scope已限stationary differential expression。 |
+| 所引原句 | 本条所引原句及展示公式；单个记号归入context_notation。 |
+| 对象、域、量词及前提 | 以上完整声明；额外资格与未覆盖部分见下一段 |
+| 最新网站原始评价 | PASS；首轮保留 |
 
 ### 5. [EXTRA] 与覆盖缺口
 
@@ -12900,16 +13215,17 @@ theorem langevinCanonicalStationary {N : ℕ}
 ### 6. 审计结论（含网站结论）
 
 网站原返回：PASS。实际forward算子全文为−DF·b−div(b)F+σ²Δ_pF/2；散度由全部位置/动量对角方向导数定义，确为平坦前向算子。D56–D57给归一canonical密度，正β、γ及σ=√(2γ/β)完整，逐点平稳式正确。原几何遍历性另列21，本条scope已限stationary differential expression。
-本轮处理：保留原审阅版本结论；本轮未改签名。
-本地单文件及逐声明依赖检查通过；含未完成证明依赖的声明仍标未证。原书疑误及修正版分别见勘误，当前修改版未获网站复审结论。
+当前处理：网站PASS（首轮未改版本）。
+保留所交版本的明确结论。
+本地编译和逐声明依赖核对通过。原文疑误、各限定/修正版、反例的评价分别列出；有未完成证明依赖的声明仍为未证。
 
 ### 7. 状态与证明位置
 
-| 声明 | 状态 | 未证原因 |
-|---|---|---|
-| `MD.Ch06.langevinCanonicalStationary` | 已证 | — |
+| 声明 | 证明状态 | 未证原因 | 网站分版结论 |
+|---|---|---|---|
+| `MD.Ch06.langevinCanonicalStationary` | 已证 | — | PASS |
 
-位置：`Blueprint/Ch06.lean:3172`；验证：`blueprint/ch06/closeout25/FINAL_COMPILE.log`。
+位置：`Blueprint/Ch06.lean:3182`；本地核验记录：`blueprint/ch06/closeout26/FINAL_COMPILE.log`。
 
 ## MD-6.4.4-LangevinGeometricErgodicity
 
@@ -12918,6 +13234,9 @@ theorem langevinCanonicalStationary {N : ℕ}
 ### 1. 原文陈述
 
 > Hence Langevin dynamics is geometrically ergodic with respect to the canonical distribution
+> \[\rho_\beta(q,p)=\exp(-\beta H(q,p)),\]
+> where it is easily checked that
+> \[\mathcal L_{LD}^{\dagger}\rho_\beta=0.\]
 
 ### 2. 原文证明
 
@@ -12952,28 +13271,32 @@ theorem langevinGeometricErgodicity :
 
 | 原文对象或结论 | 当前Lean与范围 |
 |---|---|
-| 原文所选陈述 | 本条所引原句及展示公式；单个记号归入context_notation。 |
-| 对象/域/量词/前提 | 完整当前Lean及依赖定义；新增资格见[EXTRA] |
-| 网站首轮 | NEEDS_HUMAN：不变性、唯一概率律、任意l≥1、统一C和λ、所有可测加权有界f及t≥0的指数估计齐全；(1+‖p‖²)^l与周期H^l权等价已说明。实际核依赖D52缺失的存在命题规格，故不能完整确认对象语义。 |
+| 所引原句 | 本条所引原句及展示公式；单个记号归入context_notation。 |
+| 对象、域、量词及前提 | 以上完整声明；额外资格与未覆盖部分见下一段 |
+| 最新网站原始评价 | PASS；复审 |
 
 ### 5. [EXTRA] 与覆盖缺口
 
-- [EXTRA]实际单位周期Langevin完整Gibbs不变/唯一概率及任意l≥1全部可测加权可积观测量的统一指数估计，常数在x/f/t之外；有界周期U使H^l与(1+‖p‖²)^l等价，没有弱化为紧支函数。
-- [EXTRA] 25号：补真实选解规格；可测观察量范围严格为点态多项式权界类，不写成任意仅加权可积函数。
+- [EXTRA] Lean采用单位周期、单位质量的实际Langevin核与归一Gibbs概率，显式要求U光滑周期、力全局Lipschitz及β,γ>0。
+- [EXTRA] 对每个l≥1，常数在x、f、t之外；f精确限定为可测且|f(y)|≤(1+‖p‖²)^l的点态权界类。一般常数倍由缩放处理；不能称任意仅加权可积函数。
+- [EXTRA] 固定有限维时可使用正平移后的Hamiltonian权重与(1+‖p‖²)^l比较，不能对未平移H^l作全局双边比较。
+- [ERRATUM?] 原页exp(-βH)未显示归一因子；保留原式，需人工确认省略Z的约定。Lean实际采用归一Gibbs概率。
+- [EXTRA] 复审范围：权界是对所有(q,p)逐点成立；Hamiltonian权比较采用充分正平移后的Hamiltonian，原展示式及归一约定见原文。
 
 ### 6. 审计结论（含网站结论）
 
-网站原返回：NEEDS_HUMAN。不变性、唯一概率律、任意l≥1、统一C和λ、所有可测加权有界f及t≥0的指数估计齐全；(1+‖p‖²)^l与周期H^l权等价已说明。实际核依赖D52缺失的存在命题规格，故不能完整确认对象语义。
-本轮处理：补真实选解规格；可测观察量范围严格为点态多项式权界类，不写成任意仅加权可积函数。
-本地单文件及逐声明依赖检查通过；含未完成证明依赖的声明仍标未证。原书疑误及修正版分别见勘误，当前修改版未获网站复审结论。
+网站原返回：PASS。PASS指所交Lean签名的语义审校。相空间确为T^n×R^n；U光滑且单位周期，力全局Lipschitz，β、γ严格为正，噪声幅度√(2γ/β)。核来自有限窗真实Langevin积分解及Wiener路径分布；结论依次是归一Gibbs不变、全部不变概率的唯一性、每个整数l≥1上的统一加权指数估计。观测量为所有可测且逐点满足|f(y)|≤(1+‖p‖²)^l的实函数，既不是仅紧支函数，也不是任意加权L¹函数。C、λ可依赖n、U、β、γ、l等此前参数，但不依赖x、f、t；t=0包括在内。Fin n→R的标准范数与欧氏范数在固定有限维可比，不改变这一增长类。归一Gibbs与原页未写Z的exp(-βH)有明确区别，因此A阶段保留归一约定疑问为NEEDS_HUMAN；该疑问及过时EXTRA措辞不构成此正确签名的FAIL。未检查证明完成度。
+当前处理：网站PASS（复审）。
+权界是对所有(q,p)逐点成立；Hamiltonian权比较采用充分正平移后的Hamiltonian，原展示式及归一约定见原文。
+本地编译和逐声明依赖核对通过。原文疑误、各限定/修正版、反例的评价分别列出；有未完成证明依赖的声明仍为未证。
 
 ### 7. 状态与证明位置
 
-| 声明 | 状态 | 未证原因 |
-|---|---|---|
-| `MD.Ch06.langevinGeometricErgodicity` | 未证 | 缺大型理论 |
+| 声明 | 证明状态 | 未证原因 | 网站分版结论 |
+|---|---|---|---|
+| `MD.Ch06.langevinGeometricErgodicity` | 未证 | 缺大型理论 | PASS |
 
-位置：`Blueprint/Ch06.lean:3182`；验证：`blueprint/ch06/closeout25/FINAL_COMPILE.log`。
+位置：`Blueprint/Ch06.lean:3192`；本地核验记录：`blueprint/ch06/closeout26/FINAL_COMPILE.log`。
 
 ## MD-6.4.4-LangevinTimeAverage
 
@@ -13009,28 +13332,29 @@ theorem langevinTimeAverage :
 
 | 原文对象或结论 | 当前Lean与范围 |
 |---|---|
-| 原文所选陈述 | 本条所引原句及展示公式；单个记号归入context_notation。 |
-| 对象/域/量词/前提 | 完整当前Lean及依赖定义；新增资格见[EXTRA] |
-| 网站首轮 | NEEDS_HUMAN：全部点初值、任意多项式增长可测f、sample几乎处处以及连续时间积分平均均明确，非ensemble平均。GlobalRandomPhase按ceil(t)+1选择有限时解；D52缺真实解规格，亦未给出这些有限时选择的一致性，无法据摘录确认其为同一全时轨迹。 |
+| 所引原句 | 本条所引原句及展示公式；单个记号归入context_notation。 |
+| 对象、域、量词及前提 | 以上完整声明；额外资格与未覆盖部分见下一段 |
+| 最新网站原始评价 | PASS；复审 |
 
 ### 5. [EXTRA] 与覆盖缺口
 
 - [EXTRA]实际同一全时随机周期Langevin轨迹，任意点初始状态、全部可测多项式动量增长观测量、几乎处处时间均值；不把初始density的ensemble衰减当轨迹时间均值。
-- [EXTRA] 25号：补实际选解存在、真实积分方程、唯一性、限制及同一全时随机过程一致性的完整声明类型；有限窗选择不能仅凭choose名称认定相容。
+- [EXTRA] 补实际选解存在、真实积分方程、唯一性、限制及同一全时随机过程一致性的完整声明类型；有限窗选择不能仅凭choose名称认定相容。
 
 ### 6. 审计结论（含网站结论）
 
-网站原返回：NEEDS_HUMAN。全部点初值、任意多项式增长可测f、sample几乎处处以及连续时间积分平均均明确，非ensemble平均。GlobalRandomPhase按ceil(t)+1选择有限时解；D52缺真实解规格，亦未给出这些有限时选择的一致性，无法据摘录确认其为同一全时轨迹。
-本轮处理：补实际选解存在、真实积分方程、唯一性、限制及同一全时随机过程一致性的完整声明类型；有限窗选择不能仅凭choose名称认定相容。
-本地单文件及逐声明依赖检查通过；含未完成证明依赖的声明仍标未证。原书疑误及修正版分别见勘误，当前修改版未获网站复审结论。
+网站原返回：PASS。相空间、归一Gibbs测度、β和γ及Wiener向量与上一条一致。结论确为沿同一随机轨迹的Cesàro时间均值：∀确定x、∀可测实f，若存在l∈N及C≥0使|f|≤C(1+‖p‖²)^l，则对P几乎所有样本，实数T→+∞时T⁻¹∫₀ᵀf(X_s)ds趋于Gibbs空间平均。l=0允许全部有界可测函数；零测例外集可以依赖x、f，并未声称所有x、f共享例外集。GlobalRandomPhase虽按ceil(t)+1选有限窗，但本任务同时提供真实积分解、全局唯一性、窗口一致性及∀T的AE规格，故不是把不相容choose选择误认成一条轨迹。周期过程由该全时解投影得到；hU、hp即便以下划线命名仍是显式前提。没有用初始密度ensemble收敛替代时间平均。sorry不参与本签名判定。
+当前处理：网站PASS（复审）。
+保留所交版本的明确结论。
+本地编译和逐声明依赖核对通过。原文疑误、各限定/修正版、反例的评价分别列出；有未完成证明依赖的声明仍为未证。
 
 ### 7. 状态与证明位置
 
-| 声明 | 状态 | 未证原因 |
-|---|---|---|
-| `MD.Ch06.langevinTimeAverage` | 未证 | 缺大型理论 |
+| 声明 | 证明状态 | 未证原因 | 网站分版结论 |
+|---|---|---|---|
+| `MD.Ch06.langevinTimeAverage` | 未证 | 缺大型理论 | PASS |
 
-位置：`Blueprint/Ch06.lean:3206`；验证：`blueprint/ch06/closeout25/FINAL_COMPILE.log`。
+位置：`Blueprint/Ch06.lean:3216`；本地核验记录：`blueprint/ch06/closeout26/FINAL_COMPILE.log`。
 
 ## MD-6.4.4-WeightedH1
 
@@ -13057,28 +13381,29 @@ def weightedH1 {N : ℕ} (U : (Fin N → ℝ) → ℝ)
 
 | 原文对象或结论 | 当前Lean与范围 |
 |---|---|
-| 原文所选陈述 | 本条所引原句及展示公式；单个记号归入context_notation。 |
-| 对象/域/量词/前提 | 完整当前Lean及依赖定义；新增资格见[EXTRA] |
-| 网站首轮 | NEEDS_HUMAN：H¹通过D61–D65的L² jet和弱导数图实现，值及全部位置/动量分量存在。但D62关键右侧textbookLangevinCanonicalCoordinateAdjointTestExpression_memLp_two所对应测试表达式没有定义或完整签名；无法确认分部积分符号及β∂U/βp项，故不能确认该图就是原加权弱H¹。 |
+| 所引原句 | 本条所引原句及展示公式；单个记号归入context_notation。 |
+| 对象、域、量词及前提 | 以上完整声明；额外资格与未覆盖部分见下一段 |
+| 最新网站原始评价 | PASS；复审 |
 
 ### 5. [EXTRA] 与覆盖缺口
 
 - [EXTRA]实际Gibbs加权弱导数闭图及AE商的完整Hilbert H1；不是smooth jet子集，函数/导数投影和范数下一条明确。
-- [EXTRA] 25号：补坐标伴随测试表达式及memLp_two完整规格；明确位置β∂U、动量βp项及分部积分符号，补摘录不算原书勘误。
+- [EXTRA] 补坐标伴随测试表达式及memLp_two完整规格；明确位置β∂U、动量βp项及分部积分符号，补摘录不算原书勘误。
 
 ### 6. 审计结论（含网站结论）
 
-网站原返回：NEEDS_HUMAN。H¹通过D61–D65的L² jet和弱导数图实现，值及全部位置/动量分量存在。但D62关键右侧textbookLangevinCanonicalCoordinateAdjointTestExpression_memLp_two所对应测试表达式没有定义或完整签名；无法确认分部积分符号及β∂U/βp项，故不能确认该图就是原加权弱H¹。
-本轮处理：补坐标伴随测试表达式及memLp_two完整规格；明确位置β∂U、动量βp项及分部积分符号，补摘录不算原书勘误。
-本地单文件及逐声明依赖检查通过；含未完成证明依赖的声明仍标未证。原书疑误及修正版分别见勘误，当前修改版未获网站复审结论。
+网站原返回：PASS。weightedH1是Gibbs权重下的完整实弱H¹实现：none分量为函数的AE等价类，some(inl i)、some(inr i)分别是q、p的L²弱导数。测试恒等式的负号和β∂U、βp项正确，因为dμβ正比于exp(-βH)dω。所有测试函数的伴随表达式MemLp规格已实际摘录，不能只看名称。每项均为L²类，PiLp 2给出平方和范数；测试恒等式是连续线性约束，数学上刻画闭弱导数图及通常的Sobolev完备空间。所加U光滑、单位周期、β>0和Gibbs权重专业化已有EXTRA说明。这里审查类型和定义语义，不另宣称项目已证明闭性、完备性或所有相关实例。
+当前处理：网站PASS（复审）。
+保留所交版本的明确结论。
+本地编译和逐声明依赖核对通过。原文疑误、各限定/修正版、反例的评价分别列出；有未完成证明依赖的声明仍为未证。
 
 ### 7. 状态与证明位置
 
-| 声明 | 状态 | 未证原因 |
-|---|---|---|
-| `MD.Ch06.weightedH1` | 定义 | — |
+| 声明 | 证明状态 | 未证原因 | 网站分版结论 |
+|---|---|---|---|
+| `MD.Ch06.weightedH1` | 定义 | — | PASS |
 
-位置：`Blueprint/Ch06.lean:3223`；验证：`blueprint/ch06/closeout25/FINAL_COMPILE.log`。
+位置：`Blueprint/Ch06.lean:3233`；本地核验记录：`blueprint/ch06/closeout26/FINAL_COMPILE.log`。
 
 ## MD-6.4.4-WeightedH1Norm
 
@@ -13086,8 +13411,10 @@ def weightedH1 {N : ℕ} (U : (Fin N → ℝ) → ℝ)
 
 ### 1. 原文陈述
 
-> \[\|f\|_{L^2(\mu)}^2=\int_D f^2\mu(d\omega);\qquad
-> \|w\|_{L^2(\mu)}^2=\sum_{i=1}^{N_c}\|w_i\|_{L^2(\mu)}^2.\]
+> where
+> \[\|f\|_{L^2(\mu)}^2=\int_D f^2\mu(d\omega),\]
+> and, for a vector function $w:D\to\mathbb R^{N_c}$, we have
+> \[\|w\|_{L^2(\mu)}^2=\sum_{i=1}^{N_c}\|w_i\|_{L^2(\mu)}^2.\]
 
 ### 2. 原文证明
 
@@ -13103,34 +13430,49 @@ theorem weightedH1Norm {N : ℕ}
       (∑ i : Fin N, ‖textbookLangevinCanonicalWeakH1Derivative U hU hp β hβ (Sum.inl i) f‖ ^ 2) +
       (∑ i : Fin N, ‖textbookLangevinCanonicalWeakH1Derivative U hU hp β hβ (Sum.inr i) f‖ ^ 2) := by
   apply MolecularDynamics.textbookLangevinCanonicalWeakH1_norm_sq <;> assumption
+
+/-- 原文第一式：实标量L²范数平方等于平方积分。 -/
+theorem weightedL2NormScalar26 {D : Type*} [MeasurableSpace D]
+    (μ : Measure D) (f : Lp ℝ 2 μ) :
+    ‖f‖ ^ 2 = ∫ x, (f x) ^ 2 ∂μ := by
+  sorry
+
+/-- 原文第二式：任意欧氏向量值L²函数的分量均属L²，范数平方为分量平方和。 -/
+theorem weightedL2NormVector26 {D : Type*} [MeasurableSpace D] {Nc : ℕ}
+    (μ : Measure D) (w : D → EuclideanSpace ℝ (Fin Nc)) (hw : MemLp w 2 μ) :
+    ∃ hc : ∀ i : Fin Nc, MemLp (fun x ↦ w x i) 2 μ,
+      ‖hw.toLp w‖ ^ 2 = ∑ i : Fin Nc, ‖(hc i).toLp (fun x ↦ w x i)‖ ^ 2 := by
+  sorry
 ```
 
 ### 4. 对照表
 
 | 原文对象或结论 | 当前Lean与范围 |
 |---|---|
-| 原文所选陈述 | 本条Lean覆盖范围：仅覆盖真实加权H¹的jet范数分解；原文标量L²积分及任意向量w的平方和等式未由本条覆盖。 |
-| 对象/域/量词/前提 | 完整当前Lean及依赖定义；新增资格见[EXTRA] |
-| 网站首轮 | FAIL：原JSON含标量L²积分恒等式和任意向量函数w的分量平方和；实际Lean仅断言H¹ jet范数分解，不包含上述标量积分式，也没有量化任意w。公式相关并不等于覆盖所选完整结论；原标量式还跨到了上一印刷页。 |
+| 所引原句 | 本条当前覆盖范围：保留已证H¹ jet范数分解为辅助；新增原文实标量L²平方积分式及任意欧氏向量值L²函数的分量范数平方和两条独立短陈述。新增陈述的证明状态单列，不用辅助等式代替原文两式。 |
+| 对象、域、量词及前提 | 以上完整声明；额外资格与未覆盖部分见下一段 |
+| 最新网站原始评价 | FAIL；复审 |
 
 ### 5. [EXTRA] 与覆盖缺口
 
-- [EXTRA] 25号：仅覆盖真实加权H¹的jet范数分解；原文标量L²积分及任意向量w的平方和等式未由本条覆盖。
-- 覆盖缺口：仅覆盖真实加权H¹的jet范数分解；原文标量L²积分及任意向量w的平方和等式未由本条覆盖。
+- [EXTRA] 保留已证H¹ jet范数分解为辅助；新增原文实标量L²平方积分式及任意欧氏向量值L²函数的分量范数平方和两条独立短陈述。新增陈述的证明状态单列，不用辅助等式代替原文两式。
 
 ### 6. 审计结论（含网站结论）
 
-网站原返回：FAIL。原JSON含标量L²积分恒等式和任意向量函数w的分量平方和；实际Lean仅断言H¹ jet范数分解，不包含上述标量积分式，也没有量化任意w。公式相关并不等于覆盖所选完整结论；原标量式还跨到了上一印刷页。
-本轮处理：仅覆盖真实加权H¹的jet范数分解；原文标量L²积分及任意向量w的平方和等式未由本条覆盖。
-本地单文件及逐声明依赖检查通过；含未完成证明依赖的声明仍标未证。原书疑误及修正版分别见勘误，当前修改版未获网站复审结论。
+网站原返回：FAIL。现有weightedH1Norm本身数学正确：它确实给出加权H¹范数等于函数值及全部位置、动量弱导数L²范数的平方和，N、β、U及坐标投影均正确。但原文JSON的两项主结论分别是‖f‖²L²=∫f²dμ，以及任意w:D→R^N的‖w‖²L²=Σ‖wᵢ‖²L²。该Lean结论没有积分，没有独立标量f:L²，也没有任意向量w，因此不能覆盖这些结论。FAIL仅指本条原文与声明的完整覆盖关系，不指jet等式错误，也不因证明或sorry。EXTRA承认缺口是准确的，但不能替代缺失声明。
+当前处理：按网站审校意见修复，本地核验通过（未再送网站）。
+保留已证H¹ jet范数分解为辅助；新增原文实标量L²平方积分式及任意欧氏向量值L²函数的分量范数平方和两条独立短陈述。新增陈述的证明状态单列，不用辅助等式代替原文两式。
+本地编译和逐声明依赖核对通过。原文疑误、各限定/修正版、反例的评价分别列出；有未完成证明依赖的声明仍为未证。
 
 ### 7. 状态与证明位置
 
-| 声明 | 状态 | 未证原因 |
-|---|---|---|
-| `MD.Ch06.weightedH1Norm` | 已证 | — |
+| 声明 | 证明状态 | 未证原因 | 网站分版结论 |
+|---|---|---|---|
+| `MD.Ch06.weightedH1Norm` | 已证 | — | PASS |
+| `MD.Ch06.weightedL2NormScalar26` | 未证 | 缺大型理论 | 修复后未再送网站 |
+| `MD.Ch06.weightedL2NormVector26` | 未证 | 缺大型理论 | 修复后未再送网站 |
 
-位置：`Blueprint/Ch06.lean:3229`；验证：`blueprint/ch06/closeout25/FINAL_COMPILE.log`。
+位置：`Blueprint/Ch06.lean:3240`；本地核验记录：`blueprint/ch06/closeout26/FINAL_COMPILE.log`。
 
 ## MD-6.4.4-Proposition64Printed
 
@@ -13173,27 +13515,30 @@ theorem proposition64Printed :
 
 | 原文对象或结论 | 当前Lean与范围 |
 |---|---|
-| 原文所选陈述 | 本条所引原句及展示公式；单个记号归入context_notation。 |
-| 对象/域/量词/前提 | 完整当前Lean及依赖定义；新增资格见[EXTRA] |
-| 网站首轮 | NEEDS_HUMAN：签名确实保留平坦forward弱PDE、Gibbs均值零、H¹存在及唯一模Gibbs密度这一有疑误组合。原书约定μ未澄清；当前弱PDE的H¹类过宽，还存在非Gibbs的零模，故原文必须保留疑误而不能判正确。H¹本身亦有缺失测试表达式定义。 |
+| 所引原句 | 本条所引原句及展示公式；单个记号归入context_notation。 |
+| 对象、域、量词及前提 | 以上完整声明；额外资格与未覆盖部分见下一段 |
+| 最新网站原始评价 | NEEDS_HUMAN；复审 |
 
 ### 5. [EXTRA] 与覆盖缺口
 
-- [EXTRA] 25号：保留原flat/Gibbs坐标混用疑误和非Gibbs恒通量反例；补H¹伴随测试表达式，修正版本由Proposition64Relative独立保存。
+- [EXTRA] 保留原flat/Gibbs坐标混用疑误和非Gibbs恒通量反例；补H¹伴随测试表达式，修正版本由Proposition64Relative独立保存。
+- [ERRATUM?] 原印刷同时混用Gibbs零均值与flat前向核的Gibbs倍数结论；所给弱域存在非Gibbs恒通量零模，须人工核定伴随坐标与算子域，原句不改。
+- [EXTRA] 本任务没有提供_counterexample声明；不能把“保留反例”当作已完成的Lean审查证据。
 
 ### 6. 审计结论（含网站结论）
 
-网站原返回：NEEDS_HUMAN。签名确实保留平坦forward弱PDE、Gibbs均值零、H¹存在及唯一模Gibbs密度这一有疑误组合。原书约定μ未澄清；当前弱PDE的H¹类过宽，还存在非Gibbs的零模，故原文必须保留疑误而不能判正确。H¹本身亦有缺失测试表达式定义。
-本轮处理：保留原flat/Gibbs坐标混用疑误和非Gibbs恒通量反例；补H¹伴随测试表达式，修正版本由Proposition64Relative独立保存。
-本地单文件及逐声明依赖检查通过；含未完成证明依赖的声明仍标未证。原书疑误及修正版分别见勘误，当前修改版未获网站复审结论。
+网站原返回：NEEDS_HUMAN。Printed忠实性：PASS。给定光滑周期U、β>0、γ>0，对每个Gibbs加权H¹且μβ零均值的g，确实逐项保留flat-forward弱Poisson方程、完整H¹解存在、以及全部H¹解唯一模Gibbs密度倍数。CanonicalDensity为D52–D59的归一exp(-βH)，与未归一Gibbs密度相差正常数，不改变唯一模其倍数的表述。但这一原文字面版本在所定义弱域上存在明确恒通量反例；不能将平直前向伴随与Gibbs Hilbert伴随混用。因此总判NEEDS_HUMAN，保留Printed；不是因sorry失败。修正版在条目6的独立声明另审，未用它替换此原文版。
+当前处理：原文疑误或语义范围待导师；不冒称未提供版本已通过。
+保留所交版本的明确结论。
+本地编译和逐声明依赖核对通过。原文疑误、各限定/修正版、反例的评价分别列出；有未完成证明依赖的声明仍为未证。
 
 ### 7. 状态与证明位置
 
-| 声明 | 状态 | 未证原因 |
-|---|---|---|
-| `MD.Ch06.proposition64Printed` | 未证 | 原书疑误不证 |
+| 声明 | 证明状态 | 未证原因 | 网站分版结论 |
+|---|---|---|---|
+| `MD.Ch06.proposition64Printed` | 未证 | 原书疑误不证 | 原文忠实性PASS；原书数学/范围NEEDS_HUMAN |
 
-位置：`Blueprint/Ch06.lean:3240`；验证：`blueprint/ch06/closeout25/FINAL_COMPILE.log`。
+位置：`Blueprint/Ch06.lean:3265`；本地核验记录：`blueprint/ch06/closeout26/FINAL_COMPILE.log`。
 
 ## MD-6.4.4-Proposition64Relative
 
@@ -13201,7 +13546,8 @@ theorem proposition64Printed :
 
 ### 1. 原文陈述
 
-> \[\mathcal L_{LD}^\dagger\varphi=g.\] The solution is unique up to addition of a constant multiple of the Gibbs density.
+> \[\mathcal L_{LD}^{\dagger}\varphi=g\]
+> has a solution $\varphi\in H^1(\mu)$ which is unique up to addition of a constant multiple of the Gibbs density.
 
 ### 2. 原文证明
 
@@ -13252,29 +13598,31 @@ theorem proposition64Printed_corrected :
 
 | 原文对象或结论 | 当前Lean与范围 |
 |---|---|
-| 原文所选陈述 | 本条所引原句及展示公式；单个记号归入context_notation。 |
-| 对象/域/量词/前提 | 完整当前Lean及依赖定义；新增资格见[EXTRA] |
-| 网站首轮 | NEEDS_HUMAN：相对Gibbs坐标中取真实闭backward算子的Hilbert adjoint，g均值零、H¹解存在、唯一模常数，数学修正合理；D67–D69给出原算子图。但H¹弱导数测试表达式仍缺，无法完成全部项目对象核查；不把该合理修正等同于已核定完整实现。 |
+| 所引原句 | 本条所引原句及展示公式；单个记号归入context_notation。 |
+| 对象、域、量词及前提 | 以上完整声明；额外资格与未覆盖部分见下一段 |
+| 最新网站原始评价 | PASS；复审 |
 
 ### 5. [EXTRA] 与覆盖缺口
 
 - [EXTRA]明确相对Gibbs密度坐标，实际加权Hilbert闭算子adjoint图与完整H1、加权零均值、解存在/唯一模常数；与印刷flat-density Gibbs倍数版分列，非静默纠错。
-- [EXTRA] 25号：补H¹坐标伴随测试表达式与memLp规格；相对Gibbs密度采用闭Hilbert adjoint，唯一模常数，不是flat Gibbs倍数。
+- [EXTRA] 补H¹坐标伴随测试表达式与memLp规格；相对Gibbs密度采用闭Hilbert adjoint，唯一模常数，不是flat Gibbs倍数。
+- [ERRATUM?] 原页为Gibbs density倍数，原文照录；本条Lean是相对Gibbs坐标下的明确修正版，因此唯一性改为模常数。原印刷坐标/域问题见Proposition64Printed。
 
 ### 6. 审计结论（含网站结论）
 
-网站原返回：NEEDS_HUMAN。相对Gibbs坐标中取真实闭backward算子的Hilbert adjoint，g均值零、H¹解存在、唯一模常数，数学修正合理；D67–D69给出原算子图。但H¹弱导数测试表达式仍缺，无法完成全部项目对象核查；不把该合理修正等同于已核定完整实现。
-本轮处理：补H¹坐标伴随测试表达式与memLp规格；相对Gibbs密度采用闭Hilbert adjoint，唯一模常数，不是flat Gibbs倍数。
-本地单文件及逐声明依赖检查通过；含未完成证明依赖的声明仍标未证。原书疑误及修正版分别见勘误，当前修改版未获网站复审结论。
+网站原返回：PASS。proposition64Relative：PASS；proposition64Printed_corrected：PASS。二者都在归一Gibbs L²中使用实际Langevin后向算子的闭图伴随，对全部完整弱H¹且μβ零均值的g，断言存在H¹解，(value φ,value g)属于A.graph；对任意另一H¹解，差值μβ-AE为实常数。β、γ正、U光滑周期、噪声√(2γ/β)均保留，未把解空间缩成光滑或紧支函数。加权伴随作用于相对Gibbs密度r，flat密度为ρβr，所以核从Gibbs倍数变成常数是合理而明确的修正；Weighted H¹的导数测试及闭Hilbert图的算子表达式均已核对。这里认可修正版陈述与坐标选择，不认定其大型存在/正则性证明已完成。A阶段原印刷问题仍为NEEDS_HUMAN，不静默改写原书。
+当前处理：网站PASS（复审）。
+保留所交版本的明确结论。
+本地编译和逐声明依赖核对通过。原文疑误、各限定/修正版、反例的评价分别列出；有未完成证明依赖的声明仍为未证。
 
 ### 7. 状态与证明位置
 
-| 声明 | 状态 | 未证原因 |
-|---|---|---|
-| `MD.Ch06.proposition64Relative` | 未证 | 缺大型理论 |
-| `MD.Ch06.proposition64Printed_corrected` | 未证 | 缺大型理论 |
+| 声明 | 证明状态 | 未证原因 | 网站分版结论 |
+|---|---|---|---|
+| `MD.Ch06.proposition64Relative` | 未证 | 缺大型理论 | PASS |
+| `MD.Ch06.proposition64Printed_corrected` | 未证 | 缺大型理论 | PASS |
 
-位置：`Blueprint/Ch06.lean:3260`；验证：`blueprint/ch06/closeout25/FINAL_COMPILE.log`。
+位置：`Blueprint/Ch06.lean:3285`；本地核验记录：`blueprint/ch06/closeout26/FINAL_COMPILE.log`。
 
 ## MD-6.4.4-FredholmAlternative
 
@@ -13307,9 +13655,9 @@ theorem fredholmAlternative :
 
 | 原文对象或结论 | 当前Lean与范围 |
 |---|---|
-| 原文所选陈述 | 本条所引原句及展示公式；单个记号归入context_notation。 |
-| 对象/域/量词/前提 | 完整当前Lean及依赖定义；新增资格见[EXTRA] |
-| 网站首轮 | PASS：实完备Hilbert空间、稠密定义域、闭图、紧R及(I−A)的存在与唯一性逆规格完整；固定实移位1是已明确的技术范围。对每个g，可解当且仅当与实际adjoint全部零模正交，等价于Fredholm二择一，不预设目标可解。 |
+| 所引原句 | 本条所引原句及展示公式；单个记号归入context_notation。 |
+| 对象、域、量词及前提 | 以上完整声明；额外资格与未覆盖部分见下一段 |
+| 最新网站原始评价 | PASS；首轮保留 |
 
 ### 5. [EXTRA] 与覆盖缺口
 
@@ -13318,16 +13666,17 @@ theorem fredholmAlternative :
 ### 6. 审计结论（含网站结论）
 
 网站原返回：PASS。实完备Hilbert空间、稠密定义域、闭图、紧R及(I−A)的存在与唯一性逆规格完整；固定实移位1是已明确的技术范围。对每个g，可解当且仅当与实际adjoint全部零模正交，等价于Fredholm二择一，不预设目标可解。
-本轮处理：保留原审阅版本结论；本轮未改签名。
-本地单文件及逐声明依赖检查通过；含未完成证明依赖的声明仍标未证。原书疑误及修正版分别见勘误，当前修改版未获网站复审结论。
+当前处理：网站PASS（首轮未改版本）。
+保留所交版本的明确结论。
+本地编译和逐声明依赖核对通过。原文疑误、各限定/修正版、反例的评价分别列出；有未完成证明依赖的声明仍为未证。
 
 ### 7. 状态与证明位置
 
-| 声明 | 状态 | 未证原因 |
-|---|---|---|
-| `MD.Ch06.fredholmAlternative` | 未证 | 缺大型理论 |
+| 声明 | 证明状态 | 未证原因 | 网站分版结论 |
+|---|---|---|---|
+| `MD.Ch06.fredholmAlternative` | 未证 | 缺大型理论 | PASS |
 
-位置：`Blueprint/Ch06.lean:3299`；验证：`blueprint/ch06/closeout25/FINAL_COMPILE.log`。
+位置：`Blueprint/Ch06.lean:3324`；本地核验记录：`blueprint/ch06/closeout26/FINAL_COMPILE.log`。
 
 ## MD-6.4.4-BackwardKernelConstants
 
@@ -13358,9 +13707,9 @@ theorem backwardKernelConstants :
 
 | 原文对象或结论 | 当前Lean与范围 |
 |---|---|
-| 原文所选陈述 | 本条所引原句及展示公式；单个记号归入context_notation。 |
-| 对象/域/量词/前提 | 完整当前Lean及依赖定义；新增资格见[EXTRA] |
-| 网站首轮 | PASS：所有L²粗域元素f在实际闭backward图内且Af=0蕴含AE常数；域及正参数、周期光滑势正确，未把连续函数特例当全部粗域。该句“only”是必要性，当前签名未断言常数均入域，不影响所选文字。 |
+| 所引原句 | 本条所引原句及展示公式；单个记号归入context_notation。 |
+| 对象、域、量词及前提 | 以上完整声明；额外资格与未覆盖部分见下一段 |
+| 最新网站原始评价 | PASS；首轮保留 |
 
 ### 5. [EXTRA] 与覆盖缺口
 
@@ -13369,16 +13718,17 @@ theorem backwardKernelConstants :
 ### 6. 审计结论（含网站结论）
 
 网站原返回：PASS。所有L²粗域元素f在实际闭backward图内且Af=0蕴含AE常数；域及正参数、周期光滑势正确，未把连续函数特例当全部粗域。该句“only”是必要性，当前签名未断言常数均入域，不影响所选文字。
-本轮处理：保留原审阅版本结论；本轮未改签名。
-本地单文件及逐声明依赖检查通过；含未完成证明依赖的声明仍标未证。原书疑误及修正版分别见勘误，当前修改版未获网站复审结论。
+当前处理：网站PASS（首轮未改版本）。
+保留所交版本的明确结论。
+本地编译和逐声明依赖核对通过。原文疑误、各限定/修正版、反例的评价分别列出；有未完成证明依赖的声明仍为未证。
 
 ### 7. 状态与证明位置
 
-| 声明 | 状态 | 未证原因 |
-|---|---|---|
-| `MD.Ch06.backwardKernelConstants` | 未证 | 缺大型理论 |
+| 声明 | 证明状态 | 未证原因 | 网站分版结论 |
+|---|---|---|---|
+| `MD.Ch06.backwardKernelConstants` | 未证 | 缺大型理论 | PASS |
 
-位置：`Blueprint/Ch06.lean:3310`；验证：`blueprint/ch06/closeout25/FINAL_COMPILE.log`。
+位置：`Blueprint/Ch06.lean:3335`；本地核验记录：`blueprint/ch06/closeout26/FINAL_COMPILE.log`。
 
 ## MD-6.4.4-ForwardKernelGibbs
 
@@ -13386,7 +13736,7 @@ theorem backwardKernelConstants :
 
 ### 1. 原文陈述
 
-> If we have two solutions $\varphi_1,\varphi_2$ of $\mathcal L_{LD}^\dagger\varphi=g$, then their difference $w$ must be a solution of $\mathcal L_{LD}^\daggerw=0$ and the only such solution is a constant multiple of the Gibbs density $\rho_\beta$.
+> If we have two solutions $\varphi_1,\varphi_2$ of $\mathcal L_{LD}^\dagger\varphi=g$, then their difference $w$ must be a solution of $\mathcal L_{LD}^{\dagger}w=0$ and the only such solution is a constant multiple of the Gibbs density $\rho_\beta$.
 
 ### 2. 原文证明
 
@@ -13410,27 +13760,31 @@ theorem forwardKernelGibbs : ∀ {n : ℕ} (U : (Fin n → ℝ) → ℝ)
 
 | 原文对象或结论 | 当前Lean与范围 |
 |---|---|
-| 原文所选陈述 | 本条Lean覆盖范围：改用相对Gibbs密度的Hilbert adjoint闭域，核结论为常数；旧flat紧支弱测试允许非Gibbs恒通量零模，网站反例保留。改后核定理尚缺大型理论，不证明；原印刷flat措辞由Proposition64Printed留存。 |
-| 对象/域/量词/前提 | 完整当前Lean及依赖定义；新增资格见[EXTRA] |
-| 网站首轮 | FAIL：D66的flatForwardWeak仅用紧支测试函数；w只要求Gibbs加权H¹，未要求相对于平坦测度可积或零通量。这样的定义包含额外平稳通量解，因此“所有零模为Gibbs倍数”本身错误，不只是缺证明。 |
+| 所引原句 | 本条Lean覆盖范围：改用相对Gibbs密度的Hilbert adjoint闭域，核结论为常数；旧flat紧支弱测试允许非Gibbs恒通量零模，网站反例保留。改后核定理尚缺大型理论，不证明；原印刷flat措辞由Proposition64Printed留存。 |
+| 对象、域、量词及前提 | 以上完整声明；额外资格与未覆盖部分见下一段 |
+| 最新网站原始评价 | PASS；复审 |
 
 ### 5. [EXTRA] 与覆盖缺口
 
-- [EXTRA] 25号：改用相对Gibbs密度的Hilbert adjoint闭域，核结论为常数；旧flat紧支弱测试允许非Gibbs恒通量零模，网站反例保留。改后核定理尚缺大型理论，不证明；原印刷flat措辞由Proposition64Printed留存。
+- [EXTRA] 改用相对Gibbs密度的Hilbert adjoint闭域，核结论为常数；旧flat紧支弱测试允许非Gibbs恒通量零模，网站反例保留。改后核定理尚缺大型理论，不证明；原印刷flat措辞由Proposition64Printed留存。
+- [ERRATUM?] 原flat-forward核结论需自然算子域/可积性约束；当前Lean明确改为相对Gibbs闭Hilbert伴随，核为常数。原书文字保留。
+- [EXTRA] 未提供_counterexample声明，不能以“网站保留”作为形式验证证据。
+- 覆盖缺口：本条只交付相对Gibbs修正版核结论，没有独立交付原flat坐标的两解差与Gibbs倍数核声明；原印刷Poisson命题在条目5保留，但不能据此称本条原核结论已证。
 
 ### 6. 审计结论（含网站结论）
 
-网站原返回：FAIL。D66的flatForwardWeak仅用紧支测试函数；w只要求Gibbs加权H¹，未要求相对于平坦测度可积或零通量。这样的定义包含额外平稳通量解，因此“所有零模为Gibbs倍数”本身错误，不只是缺证明。
-本轮处理：改用相对Gibbs密度的Hilbert adjoint闭域，核结论为常数；旧flat紧支弱测试允许非Gibbs恒通量零模，网站反例保留。改后核定理尚缺大型理论，不证明；原印刷flat措辞由Proposition64Printed留存。
-本地单文件及逐声明依赖检查通过；含未完成证明依赖的声明仍标未证。原书疑误及修正版分别见勘误，当前修改版未获网站复审结论。
+网站原返回：PASS。PASS限于EXTRA明确交付的相对Gibbs修正版。它保留所有光滑周期U、β>0、γ>0，对每个完整弱H¹零模w，在真实Langevin后向闭算子的Gibbs Hilbert伴随域内断言value(w)为常数。图成员资格不可省略，且这里没有使用旧flat紧支测试定义。这与r↦ρβr的密度转换一致，核陈述合理。原句的“两解差”可由伴随图线性化为此零模结论，但本条没有另外给出flat坐标的两解差等式；不能将常数直接说成原坐标的Gibbs密度倍数。EXTRA已经声明改动，故不当作静默纠错或签名FAIL；原书域/坐标问题在A阶段维持NEEDS_HUMAN。本结论尚待证明与签名是否正确是两回事。
+当前处理：网站PASS（复审）。
+保留所交版本的明确结论。
+本地编译和逐声明依赖核对通过。原文疑误、各限定/修正版、反例的评价分别列出；有未完成证明依赖的声明仍为未证。
 
 ### 7. 状态与证明位置
 
-| 声明 | 状态 | 未证原因 |
-|---|---|---|
-| `MD.Ch06.forwardKernelGibbs` | 未证 | 缺大型理论 |
+| 声明 | 证明状态 | 未证原因 | 网站分版结论 |
+|---|---|---|---|
+| `MD.Ch06.forwardKernelGibbs` | 未证 | 缺大型理论 | PASS |
 
-位置：`Blueprint/Ch06.lean:3321`；验证：`blueprint/ch06/closeout25/FINAL_COMPILE.log`。
+位置：`Blueprint/Ch06.lean:3346`；本地核验记录：`blueprint/ch06/closeout26/FINAL_COMPILE.log`。
 
 ## MD-6.4.4-WeightedFunctionNorm
 
@@ -13455,9 +13809,9 @@ def weightedFunctionNorm {n : ℕ} (U : (Fin n → ℝ) → ℝ) (β : ℝ) (hβ
 
 | 原文对象或结论 | 当前Lean与范围 |
 |---|---|
-| 原文所选陈述 | 本条所引原句及展示公式；单个记号归入context_notation。 |
-| 对象/域/量词/前提 | 完整当前Lean及依赖定义；新增资格见[EXTRA] |
-| 网站首轮 | PASS：weightedFunctionNorm命名易误读但实际返回‖f‖²，正好对应所引平方范数；f是canonical measure的实Lp² AE类，故标准L²积分等式适用，不包含不可积任意函数。β>0且真实Gibbs乘积测度明确。 |
+| 所引原句 | 本条所引原句及展示公式；单个记号归入context_notation。 |
+| 对象、域、量词及前提 | 以上完整声明；额外资格与未覆盖部分见下一段 |
+| 最新网站原始评价 | PASS；首轮保留 |
 
 ### 5. [EXTRA] 与覆盖缺口
 
@@ -13466,16 +13820,17 @@ def weightedFunctionNorm {n : ℕ} (U : (Fin n → ℝ) → ℝ) (β : ℝ) (hβ
 ### 6. 审计结论（含网站结论）
 
 网站原返回：PASS。weightedFunctionNorm命名易误读但实际返回‖f‖²，正好对应所引平方范数；f是canonical measure的实Lp² AE类，故标准L²积分等式适用，不包含不可积任意函数。β>0且真实Gibbs乘积测度明确。
-本轮处理：保留原审阅版本结论；本轮未改签名。
-本地单文件及逐声明依赖检查通过；含未完成证明依赖的声明仍标未证。原书疑误及修正版分别见勘误，当前修改版未获网站复审结论。
+当前处理：网站PASS（首轮未改版本）。
+保留所交版本的明确结论。
+本地编译和逐声明依赖核对通过。原文疑误、各限定/修正版、反例的评价分别列出；有未完成证明依赖的声明仍为未证。
 
 ### 7. 状态与证明位置
 
-| 声明 | 状态 | 未证原因 |
-|---|---|---|
-| `MD.Ch06.weightedFunctionNorm` | 定义 | — |
+| 声明 | 证明状态 | 未证原因 | 网站分版结论 |
+|---|---|---|---|
+| `MD.Ch06.weightedFunctionNorm` | 定义 | — | PASS |
 
-位置：`Blueprint/Ch06.lean:3333`；验证：`blueprint/ch06/closeout25/FINAL_COMPILE.log`。
+位置：`Blueprint/Ch06.lean:3358`；本地核验记录：`blueprint/ch06/closeout26/FINAL_COMPILE.log`。
 
 ## MD-6.4.4-WeightedVectorNorm
 
@@ -13501,9 +13856,9 @@ def weightedVectorNorm {n r : ℕ} (U : (Fin n → ℝ) → ℝ) (β : ℝ) (hβ
 
 | 原文对象或结论 | 当前Lean与范围 |
 |---|---|
-| 原文所选陈述 | 本条所引原句及展示公式；单个记号归入context_notation。 |
-| 对象/域/量词/前提 | 完整当前Lean及依赖定义；新增资格见[EXTRA] |
-| 网站首轮 | PASS：n为位置/动量坐标维数，r为向量分量数，二者独立且可任意有限；w各分量为同一真实canonical measure下的实L²等价类。返回值∑‖w i‖²恰为原公式的平方范数；并未开平方，故应按平方范数解释此名称。本条是定义而不是向量Lp范数等式定理。β>0保证动量高斯方差为正；U的平滑、周期及归一资格没有编码，因而只在原书Gibbs设置下解释为canonical probability。额外说明中的弱导数族在此声明中不存在，本条也无需弱导数。 |
+| 所引原句 | 本条所引原句及展示公式；单个记号归入context_notation。 |
+| 对象、域、量词及前提 | 以上完整声明；额外资格与未覆盖部分见下一段 |
+| 最新网站原始评价 | PASS；首轮保留 |
 
 ### 5. [EXTRA] 与覆盖缺口
 
@@ -13512,16 +13867,17 @@ def weightedVectorNorm {n r : ℕ} (U : (Fin n → ℝ) → ℝ) (β : ℝ) (hβ
 ### 6. 审计结论（含网站结论）
 
 网站原返回：PASS。n为位置/动量坐标维数，r为向量分量数，二者独立且可任意有限；w各分量为同一真实canonical measure下的实L²等价类。返回值∑‖w i‖²恰为原公式的平方范数；并未开平方，故应按平方范数解释此名称。本条是定义而不是向量Lp范数等式定理。β>0保证动量高斯方差为正；U的平滑、周期及归一资格没有编码，因而只在原书Gibbs设置下解释为canonical probability。额外说明中的弱导数族在此声明中不存在，本条也无需弱导数。
-本轮处理：保留原审阅版本结论；本轮未改签名。
-本地单文件及逐声明依赖检查通过；含未完成证明依赖的声明仍标未证。原书疑误及修正版分别见勘误，当前修改版未获网站复审结论。
+当前处理：网站PASS（首轮未改版本）。
+保留所交版本的明确结论。
+本地编译和逐声明依赖核对通过。原文疑误、各限定/修正版、反例的评价分别列出；有未完成证明依赖的声明仍为未证。
 
 ### 7. 状态与证明位置
 
-| 声明 | 状态 | 未证原因 |
-|---|---|---|
-| `MD.Ch06.weightedVectorNorm` | 定义 | — |
+| 声明 | 证明状态 | 未证原因 | 网站分版结论 |
+|---|---|---|---|
+| `MD.Ch06.weightedVectorNorm` | 定义 | — | PASS |
 
-位置：`Blueprint/Ch06.lean:3338`；验证：`blueprint/ch06/closeout25/FINAL_COMPILE.log`。
+位置：`Blueprint/Ch06.lean:3363`；本地核验记录：`blueprint/ch06/closeout26/FINAL_COMPILE.log`。
 
 ## MD-6.4.5-KernelEvolution
 
@@ -13550,29 +13906,30 @@ def kernelEvolution {D : Type*} [MeasurableSpace D] (K : ℝ≥0 → Kernel D D)
 
 | 原文对象或结论 | 当前Lean与范围 |
 |---|---|
-| 原文所选陈述 | 本条Lean覆盖范围：保留任意核作用的kernelEvolutionRaw25辅助；主入口加真正Markov半群资格。仅覆盖概率测度推进，实际Langevin生成元和密度关系须见DensityEvolutionMeaning，不把本条称作完整指数传播识别。 |
-| 对象/域/量词/前提 | 完整当前Lean及依赖定义；新增资格见[EXTRA] |
-| 网站首轮 | FAIL：签名是任意可测空间D、任意Kernel族K、任意测度μ及非负时刻t的measure bind定义，D9确认其含义正确。但Kernel本身不保证Markov，未要求K 0=id或半群律；无Langevin系数、生成元、初始density、绝对连续性或ρ。它是可用于原文的通用构件，尚未编码原文全部对象及密度前向指数传播关系。[EXTRA]称真实Markov及exp解释为实际演化，未由此签名实现。 |
+| 所引原句 | 本条当前覆盖范围：本source_id仅登记两个核作用于测度的辅助定义；hK要求真实Markov半群，但不因此提供特定Langevin前向密度或指数算子识别。明确原式尚未由本条形式化，缺口继续保留。 |
+| 对象、域、量词及前提 | 以上完整声明；额外资格与未覆盖部分见下一段 |
+| 最新网站原始评价 | FAIL；复审 |
 
 ### 5. [EXTRA] 与覆盖缺口
 
-- [EXTRA] 25号：保留任意核作用的kernelEvolutionRaw25辅助；主入口加真正Markov半群资格。仅覆盖概率测度推进，实际Langevin生成元和密度关系须见DensityEvolutionMeaning，不把本条称作完整指数传播识别。
-- 覆盖缺口：仅核推进，不覆盖Langevin密度存在、前向生成元或指数算子识别。
+- [EXTRA] 本source_id仅登记两个核作用于测度的辅助定义；hK要求真实Markov半群，但不因此提供特定Langevin前向密度或指数算子识别。明确原式尚未由本条形式化，缺口继续保留。
+- 覆盖缺口：特定Langevin核与前向密度半群的识别、ρt dω=Kt∘ₘ(ρ0 dω)及e^{tL†}解释未由本条给出。
 
 ### 6. 审计结论（含网站结论）
 
-网站原返回：FAIL。签名是任意可测空间D、任意Kernel族K、任意测度μ及非负时刻t的measure bind定义，D9确认其含义正确。但Kernel本身不保证Markov，未要求K 0=id或半群律；无Langevin系数、生成元、初始density、绝对连续性或ρ。它是可用于原文的通用构件，尚未编码原文全部对象及密度前向指数传播关系。[EXTRA]称真实Markov及exp解释为实际演化，未由此签名实现。
-本轮处理：保留任意核作用的kernelEvolutionRaw25辅助；主入口加真正Markov半群资格。仅覆盖概率测度推进，实际Langevin生成元和密度关系须见DensityEvolutionMeaning，不把本条称作完整指数传播识别。
-本地单文件及逐声明依赖检查通过；含未完成证明依赖的声明仍标未证。原书疑误及修正版分别见勘误，当前修改版未获网站复审结论。
+网站原返回：FAIL。A阶段APPROVED表示原文JSON与其“仅核推进”的限制说明真实。两个Lean辅助定义本身均正确：Raw25允许任意核族，主入口另要求真正Markov半群，D是任意可测类型，μ是任意测度，t≥0。即使μ未限定概率，该定义仍成立；仅在μ为概率时才得到概率推进。但原文完整结论是特定Langevin密度随前向指数算子演化。两个辅助体没有U、β、γ、ρ0、ρt、平直参考测度、生成元或密度等式。FAIL仅指该原文完整结论未由本条交付；EXTRA如实承认限制，不据此把缺失部分判成已经覆盖。条目10、13的资格定义另行审校，不能合并替代本条。
+当前处理：按网站审校意见修复，本地核验通过（未再送网站）。
+本source_id仅登记两个核作用于测度的辅助定义；hK要求真实Markov半群，但不因此提供特定Langevin前向密度或指数算子识别。明确原式尚未由本条形式化，缺口继续保留。
+本地编译和逐声明依赖核对通过。原文疑误、各限定/修正版、反例的评价分别列出；有未完成证明依赖的声明仍为未证。
 
 ### 7. 状态与证明位置
 
-| 声明 | 状态 | 未证原因 |
-|---|---|---|
-| `MD.Ch06.kernelEvolutionRaw25` | 定义 | — |
-| `MD.Ch06.kernelEvolution` | 定义 | — |
+| 声明 | 证明状态 | 未证原因 | 网站分版结论 |
+|---|---|---|---|
+| `MD.Ch06.kernelEvolutionRaw25` | 定义 | — | PASS（仅辅助定义） |
+| `MD.Ch06.kernelEvolution` | 定义 | — | PASS（仅辅助定义） |
 
-位置：`Blueprint/Ch06.lean:3343`；验证：`blueprint/ch06/closeout25/FINAL_COMPILE.log`。
+位置：`Blueprint/Ch06.lean:3369`；本地核验记录：`blueprint/ch06/closeout26/FINAL_COMPILE.log`。
 
 ## MD-6.4.5-KernelAverage
 
@@ -13591,34 +13948,49 @@ def kernelEvolution {D : Type*} [MeasurableSpace D] (K : ℝ≥0 → Kernel D D)
 ```lean
 def kernelAverage {D : Type*} [MeasurableSpace D] (K : ℝ≥0 → Kernel D D)
     (f : D → ℝ) (t : ℝ≥0) (x : D) : ℝ := ∫ z, f z ∂K t x
+
+/-- 原句的两种平均相等：明确初始/演化分布及可积资格。 -/
+theorem kernelAverage_distributionIdentity26 {D : Type*} [MeasurableSpace D]
+    (K : ℝ≥0 → Kernel D D) (μ0 μt : Measure D) (t : ℝ≥0) (f : D → ℝ)
+    (hμ0 : IsProbabilityMeasure μ0) (hK : IsMarkovKernel (K t))
+    (hμt : μt = K t ∘ₘ μ0) (hf : Measurable f) (hi : Integrable f μt) :
+    (∫ x, f x ∂μt) = ∫ x, kernelAverage K f t x ∂μ0 := by
+  subst μt
+  letI : IsProbabilityMeasure μ0 := hμ0
+  letI : IsMarkovKernel (K t) := hK
+  unfold kernelAverage
+  rw [Measure.comp_eq_comp_const_apply]
+  apply Kernel.integral_comp
+  simpa only [← Measure.comp_eq_comp_const_apply] using hi
 ```
 
 ### 4. 对照表
 
 | 原文对象或结论 | 当前Lean与范围 |
 |---|---|
-| 原文所选陈述 | 本条Lean覆盖范围：仅为检验函数核传播的总化辅助记号；原句两种平均相等由MD-6.4.5-KernelDuality对应，可积资格须见该条。 |
-| 对象/域/量词/前提 | 完整当前Lean及依赖定义；新增资格见[EXTRA] |
-| 网站首轮 | FAIL：f为任意实值函数，K为任意核族，t为非负时刻，x为起点；定义∫f d(K t x)确为核对检验函数的传播，D10一致。但原句断言两种平均相等，签名既无初始分布μ，也无演化分布或平均等式；没有可测、可积或Markov资格。Bochner积分在不满足可积条件时的默认值不能代替原书的有限平均。该[EXTRA]明确可积资格移至Duality，可作为辅助定义接受，但不足以单独覆盖所映射整句。 |
+| 所引原句 | 本条当前覆盖范围：保留kernelAverage总化辅助记号；新增实际分布平均恒等式，显式量化μ0、μt、μt=Kt∘ₘμ0、概率/Markov资格以及f可测可积，不再仅引用未随本条送审的KernelDuality名称。 |
+| 对象、域、量词及前提 | 以上完整声明；额外资格与未覆盖部分见下一段 |
+| 最新网站原始评价 | FAIL；复审 |
 
 ### 5. [EXTRA] 与覆盖缺口
 
-- [EXTRA] 25号：仅为检验函数核传播的总化辅助记号；原句两种平均相等由MD-6.4.5-KernelDuality对应，可积资格须见该条。
-- 覆盖缺口：仅为检验函数核传播的总化辅助记号；原句两种平均相等由MD-6.4.5-KernelDuality对应，可积资格须见该条。
+- [EXTRA] 保留kernelAverage总化辅助记号；新增实际分布平均恒等式，显式量化μ0、μt、μt=Kt∘ₘμ0、概率/Markov资格以及f可测可积，不再仅引用未随本条送审的KernelDuality名称。
 
 ### 6. 审计结论（含网站结论）
 
-网站原返回：FAIL。f为任意实值函数，K为任意核族，t为非负时刻，x为起点；定义∫f d(K t x)确为核对检验函数的传播，D10一致。但原句断言两种平均相等，签名既无初始分布μ，也无演化分布或平均等式；没有可测、可积或Markov资格。Bochner积分在不满足可积条件时的默认值不能代替原书的有限平均。该[EXTRA]明确可积资格移至Duality，可作为辅助定义接受，但不足以单独覆盖所映射整句。
-本轮处理：仅为检验函数核传播的总化辅助记号；原句两种平均相等由MD-6.4.5-KernelDuality对应，可积资格须见该条。
-本地单文件及逐声明依赖检查通过；含未完成证明依赖的声明仍标未证。原书疑误及修正版分别见勘误，当前修改版未获网站复审结论。
+网站原返回：FAIL。该辅助定义正确且与EXTRA所称“总化记号”相符：D为任意可测空间、K为任意核族、f为任意实函数；Lean积分对不合格函数仍有总化值。因此本定义不能解释为任意f都有概率平均，更不能推出原句的∫f dμt=∫Kt f dμ0。原句要求分布演化、可积资格及核积分交换的等式，而这些对象和结论均未在当前声明中出现。FAIL为完整原句覆盖不足，非定义或证明错误。原文JSON没有伪称它已覆盖，故A状态APPROVED并保留既有coverage_gaps。
+当前处理：按网站审校意见修复，本地核验通过（未再送网站）。
+保留kernelAverage总化辅助记号；新增实际分布平均恒等式，显式量化μ0、μt、μt=Kt∘ₘμ0、概率/Markov资格以及f可测可积，不再仅引用未随本条送审的KernelDuality名称。
+本地编译和逐声明依赖核对通过。原文疑误、各限定/修正版、反例的评价分别列出；有未完成证明依赖的声明仍为未证。
 
 ### 7. 状态与证明位置
 
-| 声明 | 状态 | 未证原因 |
-|---|---|---|
-| `MD.Ch06.kernelAverage` | 定义 | — |
+| 声明 | 证明状态 | 未证原因 | 网站分版结论 |
+|---|---|---|---|
+| `MD.Ch06.kernelAverage` | 定义 | — | PASS（仅辅助定义） |
+| `MD.Ch06.kernelAverage_distributionIdentity26` | 已证 | — | 修复后未再送网站 |
 
-位置：`Blueprint/Ch06.lean:3351`；验证：`blueprint/ch06/closeout25/FINAL_COMPILE.log`。
+位置：`Blueprint/Ch06.lean:3378`；本地核验记录：`blueprint/ch06/closeout26/FINAL_COMPILE.log`。
 
 ## MD-6.4.5-DensityEvolutionMeaning
 
@@ -13660,27 +14032,28 @@ def densityEvolutionMeaning {n : ℕ} (U : (Fin n → ℝ) → ℝ) (β γ : ℝ
 
 | 原文对象或结论 | 当前Lean与范围 |
 |---|---|
-| 原文所选陈述 | 本条Lean覆盖范围：补Markov/初值/半群及真实右生成元识别资格，补各时刻概率质量和初值；逐点非负为所选代表，显式列可积测试的变分等式。此为语义资格定义，未声称密度存在或任意核满足它。 |
-| 对象/域/量词/前提 | 完整当前Lean及依赖定义；新增资格见[EXTRA] |
-| 网站首轮 | FAIL：此Prop对ρ0逐点非负、flat可积、积分1，并对所有非负时刻ρ t逐点非负、可积以及withDensity测度等式编码完整。它不声称密度存在，这一点[EXTRA]准确。测度等式能导出合格检验函数的弱等式；逐点非负比AE非负更强，属于所选代表的附加要求。然而K仍完全任意，没有Markov或实际Langevin关联；ρ t的质量1、初值和Langevin前向生成元均未确保。故作为通用核密度关系定义有意义，作为原文完整Langevin密度演化解释不充分。 |
+| 所引原句 | 本条Lean覆盖范围：补Markov/初值/半群及真实右生成元识别资格，补各时刻概率质量和初值；逐点非负为所选代表，显式列可积测试的变分等式。此为语义资格定义，未声称密度存在或任意核满足它。 |
+| 对象、域、量词及前提 | 以上完整声明；额外资格与未覆盖部分见下一段 |
+| 最新网站原始评价 | PASS；复审 |
 
 ### 5. [EXTRA] 与覆盖缺口
 
-- [EXTRA] 25号：补Markov/初值/半群及真实右生成元识别资格，补各时刻概率质量和初值；逐点非负为所选代表，显式列可积测试的变分等式。此为语义资格定义，未声称密度存在或任意核满足它。
+- [EXTRA] 补Markov/初值/半群及真实右生成元识别资格，补各时刻概率质量和初值；逐点非负为所选代表，显式列可积测试的变分等式。此为语义资格定义，未声称密度存在或任意核满足它。
 
 ### 6. 审计结论（含网站结论）
 
-网站原返回：FAIL。此Prop对ρ0逐点非负、flat可积、积分1，并对所有非负时刻ρ t逐点非负、可积以及withDensity测度等式编码完整。它不声称密度存在，这一点[EXTRA]准确。测度等式能导出合格检验函数的弱等式；逐点非负比AE非负更强，属于所选代表的附加要求。然而K仍完全任意，没有Markov或实际Langevin关联；ρ t的质量1、初值和Langevin前向生成元均未确保。故作为通用核密度关系定义有意义，作为原文完整Langevin密度演化解释不充分。
-本轮处理：补Markov/初值/半群及真实右生成元识别资格，补各时刻概率质量和初值；逐点非负为所选代表，显式列可积测试的变分等式。此为语义资格定义，未声称密度存在或任意核满足它。
-本地单文件及逐声明依赖检查通过；含未完成证明依赖的声明仍标未证。原书疑误及修正版分别见勘误，当前修改版未获网站复审结论。
+网站原返回：PASS。这是对给定K、ρ0、ρ的语义资格定义，未声称任意K或任意输入都存在密度。位置与动量维数一致，t∈R≥0。langevinKernelQualification25包含真实表达式p·∇q-∇U·∇p-γp·∇p+(γ/β)Δp在0处的右导数条件，并包含Markov初值与组合律；它是明确的生成元资格，不是仅有Markov名称。密度均相对于flatPhaseMeasure；withDensity采用ofReal前已有逐点非负，不能以裁剪冒充负密度。ρ0和各ρt均为单位质量并可积，ρ(0)=ρ0逐点明确。最后对所有满足两侧明确Integrable条件的实测试函数给出积分等式，把原页模糊的suitable test function落实为可积范围，不声称所有C∞在非紧空间自动合格。没有构造指数算子或证明K唯一等于路径核；EXTRA已明确只交语义资格。这个定义的对象、条件和完整定义体正确。
+当前处理：网站PASS（复审）。
+保留所交版本的明确结论。
+本地编译和逐声明依赖核对通过。原文疑误、各限定/修正版、反例的评价分别列出；有未完成证明依赖的声明仍为未证。
 
 ### 7. 状态与证明位置
 
-| 声明 | 状态 | 未证原因 |
-|---|---|---|
-| `MD.Ch06.densityEvolutionMeaning` | 定义 | — |
+| 声明 | 证明状态 | 未证原因 | 网站分版结论 |
+|---|---|---|---|
+| `MD.Ch06.densityEvolutionMeaning` | 定义 | — | PASS |
 
-位置：`Blueprint/Ch06.lean:3356`；验证：`blueprint/ch06/closeout25/FINAL_COMPILE.log`。
+位置：`Blueprint/Ch06.lean:3398`；本地核验记录：`blueprint/ch06/closeout26/FINAL_COMPILE.log`。
 
 ## MD-6.4.5-KernelDuality
 
@@ -13717,9 +14090,9 @@ theorem kernelDuality :
 
 | 原文对象或结论 | 当前Lean与范围 |
 |---|---|
-| 原文所选陈述 | 本条所引原句及展示公式；单个记号归入context_notation。 |
-| 对象/域/量词/前提 | 完整当前Lean及依赖定义；新增资格见[EXTRA] |
-| 网站首轮 | PASS：对任意可测空间D、任意时刻t、初始概率μ、该时刻Markov核K t及可测实函数f，假设f对演化measure可积，结论恰是演化measure积分等于初始measure下的核平均积分。μ概率及K t Markov给出有限性，从总积分可积可获AE纤维可积，迭代积分有明确资格；无需所有时刻半群律即可证明该时刻对偶式。原文density×flat measure在此抽象为μ，泛化合理；本条未声称已把任意K识别为Langevin。所有量词、前提及等号方向与[EXTRA]一致。 |
+| 所引原句 | 本条所引原句及展示公式；单个记号归入context_notation。 |
+| 对象、域、量词及前提 | 以上完整声明；额外资格与未覆盖部分见下一段 |
+| 最新网站原始评价 | PASS；首轮保留 |
 
 ### 5. [EXTRA] 与覆盖缺口
 
@@ -13728,16 +14101,17 @@ theorem kernelDuality :
 ### 6. 审计结论（含网站结论）
 
 网站原返回：PASS。对任意可测空间D、任意时刻t、初始概率μ、该时刻Markov核K t及可测实函数f，假设f对演化measure可积，结论恰是演化measure积分等于初始measure下的核平均积分。μ概率及K t Markov给出有限性，从总积分可积可获AE纤维可积，迭代积分有明确资格；无需所有时刻半群律即可证明该时刻对偶式。原文density×flat measure在此抽象为μ，泛化合理；本条未声称已把任意K识别为Langevin。所有量词、前提及等号方向与[EXTRA]一致。
-本轮处理：保留原审阅版本结论；本轮未改签名。
-本地单文件及逐声明依赖检查通过；含未完成证明依赖的声明仍标未证。原书疑误及修正版分别见勘误，当前修改版未获网站复审结论。
+当前处理：网站PASS（首轮未改版本）。
+保留所交版本的明确结论。
+本地编译和逐声明依赖核对通过。原文疑误、各限定/修正版、反例的评价分别列出；有未完成证明依赖的声明仍为未证。
 
 ### 7. 状态与证明位置
 
-| 声明 | 状态 | 未证原因 |
-|---|---|---|
-| `MD.Ch06.kernelDuality` | 已证 | — |
+| 声明 | 证明状态 | 未证原因 | 网站分版结论 |
+|---|---|---|---|
+| `MD.Ch06.kernelDuality` | 已证 | — | PASS |
 
-位置：`Blueprint/Ch06.lean:3377`；验证：`blueprint/ch06/closeout25/FINAL_COMPILE.log`。
+位置：`Blueprint/Ch06.lean:3419`；本地核验记录：`blueprint/ch06/closeout26/FINAL_COMPILE.log`。
 
 ## MD-6.4.5-SmoothTestL2Printed
 
@@ -13747,7 +14121,7 @@ theorem kernelDuality :
 
 > Since all the eigenvalues lie to the left of a vertical line in the left half plane, for any $\varphi$ in $C^\infty$ we have
 > \[\int_D\varphi\rho(q,p,t)d\omega=\operatorname{Av}_\beta(\varphi)+\alpha e^{t\lambda_1}\int_D\varphi\rho^{(1)}d\omega.\]
-> The latter integral is bounded since both $\varphi$ and $\rho^{(1)}$ are in $L^2$.
+> The latter integral is bounded since both $\varphi$ and $\rho^{(1)}$ are in $L^2$, and since $\operatorname{Re}(\lambda_1)<0$, we see that this converges exponentially to the desired average.
 
 ### 2. 原文证明
 
@@ -13771,28 +14145,31 @@ def smoothTestL2Printed_corrected {n : ℕ} (f : textbookLangevinPeriodicPhase n
 
 | 原文对象或结论 | 当前Lean与范围 |
 |---|---|
-| 原文所选陈述 | 本条所引原句及展示公式；单个记号归入context_notation。 |
-| 对象/域/量词/前提 | 完整当前Lean及依赖定义；新增资格见[EXTRA] |
-| 网站首轮 | NEEDS_HUMAN：Printed签名∀n、∀实函数f，提升到欧氏相空间后ContDiff∞便推出flat MemLp 2，忠实暴露原书“光滑即L²”的错误，不因其不可证或sorry判FAIL。它只覆盖本条的一项字面子断言；原文平均恒等式及谱措辞的疑误仍需人工处理。原[ERRATUM?]关于flat常数反例及一般Gibbs下增长反例合理。repair_log称修正版已明示L²域，但实际修正签名未提供，不能确认它是否覆盖完整结论。 |
+| 所引原句 | 本条当前覆盖范围：恢复原文完整末句。Printed仅保留光滑蕴含平直L²的原书疑误子主张；_corrected仅是网站已PASS的C∞∩L²合格域定义。限定当前覆盖，不把该定义计作平均公式或积分有界定理。 |
+| 对象、域、量词及前提 | 以上完整声明；额外资格与未覆盖部分见下一段 |
+| 最新网站原始评价 | FAIL；复审 |
 
 ### 5. [EXTRA] 与覆盖缺口
 
-- [EXTRA] 25号：原文版忠实性与数学疑误分开；补齐所交条目所属的现有_corrected完整签名，不从repair_log名称推断网站已通过修正版。
+- [EXTRA] 恢复原文完整末句。Printed仅保留光滑蕴含平直L²的原书疑误子主张；_corrected仅是网站已PASS的C∞∩L²合格域定义。限定当前覆盖，不把该定义计作平均公式或积分有界定理。
+- [ERRATUM?] 原书数学疑误与本次形式化修复分别记录，见CH06_ERRATA。
+- 覆盖缺口：平均恒等式、ρ^(1)的L²资格及与测试函数配对的有界性没有在本条两声明中表达；未将这些内容标为已经形式化。
 
 ### 6. 审计结论（含网站结论）
 
-网站原返回：NEEDS_HUMAN。Printed签名∀n、∀实函数f，提升到欧氏相空间后ContDiff∞便推出flat MemLp 2，忠实暴露原书“光滑即L²”的错误，不因其不可证或sorry判FAIL。它只覆盖本条的一项字面子断言；原文平均恒等式及谱措辞的疑误仍需人工处理。原[ERRATUM?]关于flat常数反例及一般Gibbs下增长反例合理。repair_log称修正版已明示L²域，但实际修正签名未提供，不能确认它是否覆盖完整结论。
-本轮处理：原文版忠实性与数学疑误分开；补齐所交条目所属的现有_corrected完整签名，不从repair_log名称推断网站已通过修正版。
-本地单文件及逐声明依赖检查通过；含未完成证明依赖的声明仍标未证。原书疑误及修正版分别见勘误，当前修改版未获网站复审结论。
+网站原返回：FAIL。分版审校：smoothTestL2Printed忠实地保留原页隐含的“每个光滑测试函数均在平直L²”子主张；该子主张的原书数学疑误判NEEDS_HUMAN，而不因它为假就判Printed不忠实。smoothTestL2Printed_corrected是正确的限定域定义C∞∩L²，修正合理，局部签名PASS；但它是def，不是有界积分定理。本条scope仍称覆盖所引原句及展示公式，coverage_gaps却为null。实际两个声明都没有ρt、ρeq、ρ1、λ1、α、传播关系、平均恒等式或积分界，因此总audit为FAIL，理由是独立的完整结论覆盖缺口，而不是原书数学疑误或sorry。原文错误另在json_review中保留NEEDS_HUMAN。
+当前处理：按网站审校意见修复，本地核验通过（未再送网站）。
+恢复原文完整末句。Printed仅保留光滑蕴含平直L²的原书疑误子主张；_corrected仅是网站已PASS的C∞∩L²合格域定义。限定当前覆盖，不把该定义计作平均公式或积分有界定理。
+本地编译和逐声明依赖核对通过。原文疑误、各限定/修正版、反例的评价分别列出；有未完成证明依赖的声明仍为未证。
 
 ### 7. 状态与证明位置
 
-| 声明 | 状态 | 未证原因 |
-|---|---|---|
-| `MD.Ch06.smoothTestL2Printed` | 未证 | 原书疑误不证 |
-| `MD.Ch06.smoothTestL2Printed_corrected` | 定义 | — |
+| 声明 | 证明状态 | 未证原因 | 网站分版结论 |
+|---|---|---|---|
+| `MD.Ch06.smoothTestL2Printed` | 未证 | 原书疑误不证 | 原文子主张忠实性PASS；原书数学NEEDS_HUMAN |
+| `MD.Ch06.smoothTestL2Printed_corrected` | 定义 | — | PASS |
 
-位置：`Blueprint/Ch06.lean:3394`；验证：`blueprint/ch06/closeout25/FINAL_COMPILE.log`。
+位置：`Blueprint/Ch06.lean:3437`；本地核验记录：`blueprint/ch06/closeout26/FINAL_COMPILE.log`。
 
 ## MD-6.4.5-ComplexInitialDensity
 
@@ -13837,29 +14214,32 @@ def complexInitialDensity_corrected {n : ℕ}
 
 | 原文对象或结论 | 当前Lean与范围 |
 |---|---|
-| 原文所选陈述 | 本条所引原句及展示公式；单个记号归入context_notation。 |
-| 对象/域/量词/前提 | 完整当前Lean及依赖定义；新增资格见[EXTRA] |
-| 网站首轮 | NEEDS_HUMAN：n任意，ρeq、ρ1均为复flat L²等价类，α实数；谓词准确要求平衡候选和初始组合AE实、非负、可积、归一，并未缩为实负λ。α=0不约束ρ1是合理的概率资格行为。作为新增概率资格定义合理，但不证明或表达本征/平衡条件，本征条件在第9条另有编码。原书把单一复模式当概率初始分布的可行性需人工确认；不能把此限制后的谓词当原句对任意α成立的证明。 |
+| 所引原句 | 只定义给定复L²候选ρeq、ρ1及实α的平衡候选与初始组合的概率资格；不单独编码本征对、Reλ<0或实际Gibbs识别，也不声称所有α合格。 |
+| 对象、域、量词及前提 | 以上完整声明；额外资格与未覆盖部分见下一段 |
+| 最新网站原始评价 | PASS；复审 |
 
 ### 5. [EXTRA] 与覆盖缺口
 
 - [EXTRA]明确真实初始概率的实性/非负/积分1，原单复模式不自动是概率；保留复Lp空间与复本征值，未缩成实负λ玩具。复共轭成对构造可另建，但原单模式需这些资格。
-- [EXTRA] 25号：仅为给定复L²候选的概率资格辅助定义；本征关系、Reλ<0及平衡态识别须在使用处另列，单一非实模式须共轭配对后再查非负性，不能覆盖任意α的原句。
+- [EXTRA] 仅为给定复L²候选的概率资格辅助定义；本征关系、Reλ<0及平衡态识别须在使用处另列，单一非实模式须共轭配对后再查非负性，不能覆盖任意α的原句。
+- [ERRATUM?] 原文取initial distribution需隐含实性、非负和单位质量的额外限制；不能把任意α或任意单一复模式当作概率。原句保留。
+- 覆盖缺口：本条不含本征关系、Reλ<0与实际Gibbs平衡态识别；相关使用条件在ComplexEigenmodeDecay另列，不能据此称本定义包含这些条件。
 
 ### 6. 审计结论（含网站结论）
 
-网站原返回：NEEDS_HUMAN。n任意，ρeq、ρ1均为复flat L²等价类，α实数；谓词准确要求平衡候选和初始组合AE实、非负、可积、归一，并未缩为实负λ。α=0不约束ρ1是合理的概率资格行为。作为新增概率资格定义合理，但不证明或表达本征/平衡条件，本征条件在第9条另有编码。原书把单一复模式当概率初始分布的可行性需人工确认；不能把此限制后的谓词当原句对任意α成立的证明。
-本轮处理：仅为给定复L²候选的概率资格辅助定义；本征关系、Reλ<0及平衡态识别须在使用处另列，单一非实模式须共轭配对后再查非负性，不能覆盖任意α的原句。
-本地单文件及逐声明依赖检查通过；含未完成证明依赖的声明仍标未证。原书疑误及修正版分别见勘误，当前修改版未获网站复审结论。
+网站原返回：PASS。complexInitialDensity：作为EXTRA明确声明的概率资格辅助定义，PASS；complexInitialDensity_corrected：同样PASS，且二者实为同体，不是一个已证另一个待证。它们要求ρeq及给定组合ρeq+αρ1各自AE实且非负，实部可积且积分1；这些是复L²候选代表概率密度所需的正确条件。不要求ρ1本身非负，亦不要求α≠0，均正确；α=0时没有从单位质量倒推ρ1零积分。定义里没有λ或A，也没有声称所有α合格、ρeq确为Gibbs或ρ1确为本征函数；这些必须由使用处如条目14另列。因此这是合理的显式限定，不是对原页任意α的无条件实现；A阶段仍须人工核定原文中“initial distribution”的隐含范围。
+当前处理：网站PASS（复审）。
+保留所交版本的明确结论。
+本地编译和逐声明依赖核对通过。原文疑误、各限定/修正版、反例的评价分别列出；有未完成证明依赖的声明仍为未证。
 
 ### 7. 状态与证明位置
 
-| 声明 | 状态 | 未证原因 |
-|---|---|---|
-| `MD.Ch06.complexInitialDensity` | 定义 | — |
-| `MD.Ch06.complexInitialDensity_corrected` | 定义 | — |
+| 声明 | 证明状态 | 未证原因 | 网站分版结论 |
+|---|---|---|---|
+| `MD.Ch06.complexInitialDensity` | 定义 | — | PASS |
+| `MD.Ch06.complexInitialDensity_corrected` | 定义 | — | PASS |
 
-位置：`Blueprint/Ch06.lean:3407`；验证：`blueprint/ch06/closeout25/FINAL_COMPILE.log`。
+位置：`Blueprint/Ch06.lean:3450`；本地核验记录：`blueprint/ch06/closeout26/FINAL_COMPILE.log`。
 
 ## MD-6.4.5-LangevinForwardSemigroupMeaning
 
@@ -13899,27 +14279,28 @@ def langevinForwardSemigroupMeaning {n : ℕ} (U : (Fin n → ℝ) → ℝ) (β 
 
 | 原文对象或结论 | 当前Lean与范围 |
 |---|---|
-| 原文所选陈述 | 本条Lean覆盖范围：补C₀半群（初值/组合/强连续）、Markov核及实际Langevin右生成元联系；每个合格输入的输出AE实且非负并可积，排除(1+i)id和ofReal裁剪伪识别。此为资格定义，未证明存在。 |
-| 对象/域/量词/前提 | 完整当前Lean及依赖定义；新增资格见[EXTRA] |
-| 网站首轮 | FAIL：∀v量化整个复flat L²，前提是v AE实非负且实部L¹；不要求积分1是允许有限正密度的合理泛化。∀t的测度等式写对了输入核演化，但输出只保留实部正部。S t虽为复连续线性映射，却没有S 0=id、半群律、强连续或生成元条件；K也任意，未识别为实际Langevin。尤其不能由该Prop推出S t v就是原文真实前向密度，故[EXTRA]描述过强。 |
+| 所引原句 | 本条Lean覆盖范围：补C₀半群（初值/组合/强连续）、Markov核及实际Langevin右生成元联系；每个合格输入的输出AE实且非负并可积，排除(1+i)id和ofReal裁剪伪识别。此为资格定义，未证明存在。 |
+| 对象、域、量词及前提 | 以上完整声明；额外资格与未覆盖部分见下一段 |
+| 最新网站原始评价 | PASS；复审 |
 
 ### 5. [EXTRA] 与覆盖缺口
 
-- [EXTRA] 25号：补C₀半群（初值/组合/强连续）、Markov核及实际Langevin右生成元联系；每个合格输入的输出AE实且非负并可积，排除(1+i)id和ofReal裁剪伪识别。此为资格定义，未证明存在。
+- [EXTRA] 补C₀半群（初值/组合/强连续）、Markov核及实际Langevin右生成元联系；每个合格输入的输出AE实且非负并可积，排除(1+i)id和ofReal裁剪伪识别。此为资格定义，未证明存在。
 
 ### 6. 审计结论（含网站结论）
 
-网站原返回：FAIL。∀v量化整个复flat L²，前提是v AE实非负且实部L¹；不要求积分1是允许有限正密度的合理泛化。∀t的测度等式写对了输入核演化，但输出只保留实部正部。S t虽为复连续线性映射，却没有S 0=id、半群律、强连续或生成元条件；K也任意，未识别为实际Langevin。尤其不能由该Prop推出S t v就是原文真实前向密度，故[EXTRA]描述过强。
-本轮处理：补C₀半群（初值/组合/强连续）、Markov核及实际Langevin右生成元联系；每个合格输入的输出AE实且非负并可积，排除(1+i)id和ofReal裁剪伪识别。此为资格定义，未证明存在。
-本地单文件及逐声明依赖检查通过；含未完成证明依赖的声明仍标未证。原书疑误及修正版分别见勘误，当前修改版未获网站复审结论。
+网站原返回：PASS。对给定U、β、γ、K、S定义资格，非存在定理。S t为复L²(flatPhaseMeasure)上的有界复线性算子，S0=id、组合律及对每个v的强连续性齐全。K满足β、γ正、U光滑周期、Markov半群及紧支光滑函数的0处真实Langevin右生成元资格。对每个AE实非负且L¹的v，定义要求所有t的S t v也AE实非负且L¹，并将输入、输出平直密度测度精确关联为Kt推进。输入不必质量1，因此包括全部非负可积L²密度；质量由Markov性质保留。这些条件排除了(1+i)id及ofReal裁剪假象；双线性/复线性与非负可积类的线性生成关系可延伸识别，不必错误地对所有复v使用非负withDensity。该定义没有直接写出S的全域生成元图等于L†或证明K等于某条路径核；交付范围是EXTRA声明的生成元和测度推进语义资格，本次不把资格或存在性视为已证。
+当前处理：网站PASS（复审）。
+保留所交版本的明确结论。
+本地编译和逐声明依赖核对通过。原文疑误、各限定/修正版、反例的评价分别列出；有未完成证明依赖的声明仍为未证。
 
 ### 7. 状态与证明位置
 
-| 声明 | 状态 | 未证原因 |
-|---|---|---|
-| `MD.Ch06.langevinForwardSemigroupMeaning` | 定义 | — |
+| 声明 | 证明状态 | 未证原因 | 网站分版结论 |
+|---|---|---|---|
+| `MD.Ch06.langevinForwardSemigroupMeaning` | 定义 | — | PASS |
 
-位置：`Blueprint/Ch06.lean:3430`；验证：`blueprint/ch06/closeout25/FINAL_COMPILE.log`。
+位置：`Blueprint/Ch06.lean:3473`；本地核验记录：`blueprint/ch06/closeout26/FINAL_COMPILE.log`。
 
 ## MD-6.4.5-ComplexEigenmodeDecay
 
@@ -13928,11 +14309,10 @@ def langevinForwardSemigroupMeaning {n : ℕ} (U : (Fin n → ℝ) → ℝ) (β 
 ### 1. 原文陈述
 
 > \[\rho(q,p,t)=e^{t\mathcal L_{LD}^{\dagger}}\rho_0=e^{t\mathcal L_{LD}^{\dagger}}\rho_{eq}+\alpha e^{t\mathcal L_{LD}^{\dagger}}\rho^{(1)}=\rho_{eq}+\alpha e^{t\lambda_1}\rho^{(1)}.\]
-> and since $\operatorname{Re}(\lambda_1)<0$, we see that this converges exponentially to the desired average.
 
 ### 2. 原文证明
 
-> 原书未给独立完整证明。
+> The latter integral is bounded since both $\varphi$ and $\rho^{(1)}$ are in $L^2$, and since $\operatorname{Re}(\lambda_1)<0$, we see that this converges exponentially to the desired average.
 
 ### 3. 完整当前Lean（原文版与修正版独立列出）
 
@@ -13969,33 +14349,35 @@ theorem complexEigenmodeDecay : ∀ {n : ℕ} {Ω : Type*} [MeasurableSpace Ω]
 
 | 原文对象或结论 | 当前Lean与范围 |
 |---|---|
-| 原文所选陈述 | 本条所引原句及展示公式；单个记号归入context_notation。 |
-| 对象/域/量词/前提 | 完整当前Lean及依赖定义；新增资格见[EXTRA] |
-| 网站首轮 | PASS：此为有明确[EXTRA]资格的条件定理：n、噪声空间、B/P、平滑周期U、力的Lipschitz常数、正β/γ均量化；没有把存在性当结论。E为正确的complex flat L²；S有单位元、半群律和逐向量强连续。A为部分复线性算子，只需其图包含于S在0的右导数图，配合平衡/本征图关系，即可从半群推出S tρeq=ρeq和S tρ1=exp(t ev)ρ1，不需把A假设为整个最大生成元。ρ1非零、ev.re<0、α实及第7条概率资格明确。复内积对第二变量线性，故标量系数位置正确；对实检验函数即原书无共轭平均，复检验函数是合理的共轭配对推广。范数界系数\|α\|‖f‖‖ρ1‖exp(Re(ev)t)及极限正确，结论覆盖L²检验域内的指数收敛。实际核及Gibbs AE识别已作前提，forward existence/identification仍未证明。第8条谓词未保证S保实非负是独立缺陷，但不破坏本条由C0和本征前提推出的四个L²代数/极限结论。原书对所有光滑检验和任意复模式概率性的疑误分别保留在第6、7条，不以本条有资格的条件结论消除。 |
+| 所引原句 | statement_latex只存演化展示式；proof_discussion_latex存不相邻的原页完整末句。二者之间的平均段落见SmoothTestL2Printed，不冒充连续引文。本条Lean结论含模式演化、全部L²测试的平均恒等式、指数界与极限。 |
+| 对象、域、量词及前提 | 以上完整声明；额外资格与未覆盖部分见下一段 |
+| 最新网站原始评价 | PASS；复审 |
 
 ### 5. [EXTRA] 与覆盖缺口
 
-- [EXTRA]完整复λ/Reλ<0及原α∈ℝ，真实flat Lp² initial probability资格；实际C0 semigroup/0处generator图关系、stationary/eigenvector为前提，完整全时exp模式及所有L²检验CS衰减为结论，没有把全时模式演化作假设。S需识别为实际Langevin前向传播，下一条登记，不冒充已识别。
-- [EXTRA]S与原实际周期Langevin核在全部非负可积初始密度上的关联及rhoeq与真实归一Gibbs density的AE识别均显式编码；模式演化、平均恒等、CS界及极限全部为结论，仍未计forward semigroup的存在/识别已证。
-- [EXTRA] 25号：LangevinForwardSemigroupMeaning增加U、β、γ及资格后，ComplexEigenmodeDecay只在既有半群识别前提的调用处补同一U β γ；未改目标结论和证明体。该前提随被引用资格加强，进入复审。
+- [EXTRA] 采用平直复L²空间、实α和完整复特征值ev，要求ev.re<0、非零本征向量及真实初始概率资格；不把所有α、所有单一非实模式视为概率扰动。
+- [EXTRA] S以LangevinForwardSemigroupMeaning U β γ作用于本条真实周期Langevin路径核为前提；ρeq与归一Gibbs密度AE识别。资格已编码，实际半群存在及资格实现仍未视为已证。
+- [EXTRA] 0处生成元图成员、驻定态和本征关系为前提；全时指数模式、平均恒等式、Cauchy–Schwarz界与极限全部为结论。测试对象精确为复L²，未沿用原书任意C∞的可积性推断。
+- [ERRATUM?] 单个非实本征模式的初始概率资格及原页任意C∞的L²推断分别见ComplexInitialDensity和SmoothTestL2Printed；保留原书末句，不以该句证明本条。
 
 ### 6. 审计结论（含网站结论）
 
-网站原返回：PASS。此为有明确[EXTRA]资格的条件定理：n、噪声空间、B/P、平滑周期U、力的Lipschitz常数、正β/γ均量化；没有把存在性当结论。E为正确的complex flat L²；S有单位元、半群律和逐向量强连续。A为部分复线性算子，只需其图包含于S在0的右导数图，配合平衡/本征图关系，即可从半群推出S tρeq=ρeq和S tρ1=exp(t ev)ρ1，不需把A假设为整个最大生成元。ρ1非零、ev.re<0、α实及第7条概率资格明确。复内积对第二变量线性，故标量系数位置正确；对实检验函数即原书无共轭平均，复检验函数是合理的共轭配对推广。范数界系数|α|‖f‖‖ρ1‖exp(Re(ev)t)及极限正确，结论覆盖L²检验域内的指数收敛。实际核及Gibbs AE识别已作前提，forward existence/identification仍未证明。第8条谓词未保证S保实非负是独立缺陷，但不破坏本条由C0和本征前提推出的四个L²代数/极限结论。原书对所有光滑检验和任意复模式概率性的疑误分别保留在第6、7条，不以本条有资格的条件结论消除。
-本轮处理：LangevinForwardSemigroupMeaning增加U、β、γ及资格后，ComplexEigenmodeDecay只在既有半群识别前提的调用处补同一U β γ；未改目标结论和证明体。该前提随被引用资格加强，进入复审。
-本地单文件及逐声明依赖检查通过；含未完成证明依赖的声明仍标未证。原书疑误及修正版分别见勘误，当前修改版未获网站复审结论。
+网站原返回：PASS。PASS。对象为真实T^n×R^n周期Langevin核、平直复L²空间E、复C₀半群S及复部分线性算子A。U光滑单位周期、力全局Lipschitz、Wiener驱动、β、γ正及噪声√(2γ/β)均显式；ρeq与真实归一Gibbs密度AE相等，并有complexInitialDensity的概率资格，不是把任意复扰动当概率。S和真实核的关联是明确前提。生成元仅需A.graph中的(v,w)推出S轨道0处右导数为w；为两个指定图成员推出指数轨道已足够，不必额外假定A等于整个最大生成元。其驻定、本征条件保留完整复ev及ev.re<0，结论中的Complex.exp((t:ℂ)*ev)及|α|‖f‖‖ρ1‖exp(ev.re*t)符号、系数均正确。复内积对第二变量线性，故αexp(t ev)在右侧不取共轭；对应普通实测试平均时取实f即可。身份、组合、强连续在语义资格之外重复列出虽冗余但无误。若ev非实且仅用单一模式，要使初始密度实而α≠0通常不相容；该定理仍正确，因为概率资格显式且允许α=0，未声称任意非实模式存在非平凡概率扰动。原页任意C∞的可积性疑误已在条目11保留NEEDS_HUMAN；本声明明确限定所有L²测试，未继承那个错误。本次只审校签名，未因sorry失败，也未把前向半群的存在与资格实现视为已证明。
+当前处理：网站PASS（复审）。
+保留所交版本的明确结论。
+本地编译和逐声明依赖核对通过。原文疑误、各限定/修正版、反例的评价分别列出；有未完成证明依赖的声明仍为未证。
 
 ### 7. 状态与证明位置
 
-| 声明 | 状态 | 未证原因 |
-|---|---|---|
-| `MD.Ch06.complexEigenmodeDecay` | 未证 | 缺大型理论 |
+| 声明 | 证明状态 | 未证原因 | 网站分版结论 |
+|---|---|---|---|
+| `MD.Ch06.complexEigenmodeDecay` | 未证 | 缺大型理论 | PASS |
 
-位置：`Blueprint/Ch06.lean:3451`；验证：`blueprint/ch06/closeout25/FINAL_COMPILE.log`。
+位置：`Blueprint/Ch06.lean:3494`；本地核验记录：`blueprint/ch06/closeout26/FINAL_COMPILE.log`。
 
 ## 公共辅助资格定义
 
-以下共同定义由相应条目引用，计入定义数；定义本身不表示存在性或公式已经证明。
+以下共同定义由各条引用，计入定义数；定义本身不表示存在性或结论已经证明。
 
 ```lean
 def naturalHistory25 {Ω V : Type*} [MeasurableSpace Ω] [MeasurableSpace V]

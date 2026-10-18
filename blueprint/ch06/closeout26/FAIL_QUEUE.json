@@ -1,0 +1,495 @@
+[
+  {
+    "batch": "EAUDIT09",
+    "source_id": "MD-6.3.6-FPEquation",
+    "json_review": {
+      "status": "NEEDS_HUMAN",
+      "issue_codes": [
+        "INCONSISTENT_INITIAL_DENSITY_REGULARITY",
+        "INITIAL_LAW_SCOPE_MISMATCH"
+      ],
+      "corrected_json": null,
+      "issues": [
+        {
+          "stage": "A",
+          "description": "附件第32页PDE的负漂移、正半扩散及伴随紧写公式一致；未把原书数学问题误当转录问题。"
+        },
+        {
+          "stage": "C",
+          "description": "fpEquation的P、W,X、a,b、确定初态x0及ρ(t,x)量词、自然历史适应与联合可测X、扩散平方可积、真实正密度HasLaw、多项式值界及正时间紧窗一致指数尾均已核对；结论是每t>0、每x的经典PDE，scalarForward系数正确，未把目标PDE设为前提。但ContDiff ℝ ∞ (Function.uncurry ρ)要求ρ在包括t=0的整个ℝ²光滑，同时strictScalarSDE要求X0=x0且AE路径在0连续，HasLaw对所有t>0成立。这使整组前提不可能：连续初态的边际趋δ_x0，而跨t=0连续的Lebesgue密度在小紧矩形有一致界，不能产生该原子极限。因此该签名是空泛的加强，并非原书“给定初始密度”的FP陈述，判FAIL；与sorry无关。仅补适应性不能修复时间域和初始法则。"
+        }
+      ],
+      "evidence": [
+        "A：已核对R1_PAGES.pdf附件第32页，原书PDF页263、印刷页242。附件第32页PDE的负漂移、正半扩散及伴随紧写公式一致；未把原书数学问题误当转录问题。",
+        "C：只读核对本条完整Lean摘录及所引用附录项目定义；标准库按标准数学含义采信。fpEquation的P、W,X、a,b、确定初态x0及ρ(t,x)量词、自然历史适应与联合可测X、扩散平方可积、真实正密度HasLaw、多项式值界及正时间紧窗一致指数尾均已核对；结论是每t>0、每x的经典PDE，scalarForward系数正确，未把目标PDE设为前提。但ContDiff ℝ ∞ (Function.uncurry ρ)要求ρ在包括t=0的整个ℝ²光滑，同时strictScalarSDE要求X0=x0且AE路径在0连续，HasLaw对所有t>0成立。这使整组前提不可能：连续初态的边际趋δ_x0，而跨t=0连续的Lebesgue密度在小紧矩形有一致界，不能产生该原子极限。因此该签名是空泛的加强，并非原书“给定初始密度”的FP陈述，判FAIL；与sorry无关。仅补适应性不能修复时间域和初始法则。"
+      ]
+    },
+    "audit": {
+      "lean_decl": "MD.Ch06.naturalHistory25; MD.Ch06.strictItoIntegral; MD.Ch06.strictScalarSDE; MD.Ch06.fpEquation",
+      "verdict": "FAIL",
+      "explanation": "fpEquation的P、W,X、a,b、确定初态x0及ρ(t,x)量词、自然历史适应与联合可测X、扩散平方可积、真实正密度HasLaw、多项式值界及正时间紧窗一致指数尾均已核对；结论是每t>0、每x的经典PDE，scalarForward系数正确，未把目标PDE设为前提。但ContDiff ℝ ∞ (Function.uncurry ρ)要求ρ在包括t=0的整个ℝ²光滑，同时strictScalarSDE要求X0=x0且AE路径在0连续，HasLaw对所有t>0成立。这使整组前提不可能：连续初态的边际趋δ_x0，而跨t=0连续的Lebesgue密度在小紧矩形有一致界，不能产生该原子极限。因此该签名是空泛的加强，并非原书“给定初始密度”的FP陈述，判FAIL；与sorry无关。仅补适应性不能修复时间域和初始法则。",
+      "counterexample": "不相容性证明：联合连续给出小矩形[0,ε]×[x0-ε,x0+ε]上的有限界M；取δ<min(ε,1/(4(M+1)))，小正t时P(|X_t-x0|<δ)≤2δM<1/2；但X_t→x0 AE使该概率趋1，矛盾。",
+      "suggested_fix": "把ρ的光滑性限定在(0,∞)×ℝ，保留确定性初态；或改为随机初态具有给定平滑密度，并相应修改严格SDE定义。再核查严格网格解到适应Itô解的桥接；此处仅建议，不修改工程。"
+    },
+    "subtask": "EAUDIT09b"
+  },
+  {
+    "batch": "EAUDIT13",
+    "source_id": "MD-6.4.3-Theorem61",
+    "json_review": {
+      "status": "NEEDS_HUMAN",
+      "issue_codes": [
+        "SOURCE_NEGATIVE_DEFINITE_ERRATUM",
+        "SOURCE_TIME_AVERAGE_CONFLICT",
+        "PRINTED_OPERATOR_DOMAIN_SUBSTITUTION",
+        "PRINTED_GENERATOR_NOT_LINKED",
+        "SOURCE_MASS_LAPLACIAN_UNRESOLVED",
+        "COVERAGE_METADATA_INCOMPLETE"
+      ],
+      "corrected_json": {
+        "source_id": "MD-6.4.3-Theorem61",
+        "kind": "theorem",
+        "label": "Theorem 6.1",
+        "section": "6.4.3",
+        "printed_page": "250–251",
+        "pdf_page": "271–272",
+        "statement_latex": "Theorem 6.1 Define the generator of Brownian dynamics by\n\\[\\mathcal Lf\\stackrel{\\rm def}=-M^{-1}\\nabla U^T\\nabla f+\\beta^{-1}\\Delta_Mf.\\]\nSuppose that $U$ is smooth with periodic boundary conditions $\\mathcal Q=\\mathbb T^{N_c}$ ($\\mathbb T^{N_c}$ an $N_c$-dimensional torus). Then, with respect to the space $C_0^2(\\mu_\\beta)$ with inner product $\\langle f,g\\rangle_\\beta$ as defined above, we have:\n1. $\\mathcal L$ is self-adjoint, negative definite, with spectrum consisting of discrete eigenvalues on the half line $(-\\infty,0]$.\n2. $\\mathcal L$ has a spectral gap, meaning that, with exception of the zero eigenvalue, the remainder of the spectrum satisfies $\\sigma(\\mathcal L)\\subset(-\\infty,-\\alpha]$ for some $\\alpha>0$.\n3. averages with respect to the evolving, time-dependent distribution converge exponentially rapidly to averages with respect to the invariant distribution, and, for any smooth, compactly supported test function $\\varphi$, we have\n\\[|\\bar\\varphi(t)-\\operatorname{Av}_\\beta(\\varphi)|\\le K\\|\\varphi\\|_\\beta e^{-\\alpha t};\\]\nfor some positive $K$ and $\\alpha$, where recall $\\bar\\varphi(t)$ denotes the time average of $\\varphi$ defined in (5.6).",
+        "proof_latex": null,
+        "proof_note": "原书未给独立完整证明。",
+        "proof_discussion_latex": null,
+        "context_notation": [],
+        "extra_assumptions": [
+          "[EXTRA] 25号：Theorem6.1主版、corrected和Printed同时补全部谱点特征值子句；仍保留闭域/半负定/L²相对初始密度的分布平均与原印刷严格负定/轨道平均两套版本，原文疑误不证。",
+          "[ERRATUM?] 原negative definite应区分半负定；常数零模存在。",
+          "[ERRATUM?] 原文第三款的演化分布平均与(5.6)轨道时间平均不是同一对象；修正版只断言前者。",
+          "[EXTRA] Printed的闭域替换是当前形式化与原域的偏差，不能只归因于原书疑误。"
+        ],
+        "statement_scope": "本条Lean覆盖范围：Theorem6.1主版、corrected和Printed同时补全部谱点特征值子句；仍保留闭域/半负定/L²相对初始密度的分布平均与原印刷严格负定/轨道平均两套版本，原文疑误不证。",
+        "coverage_gaps": [
+          "原C₀²域与闭实现的解释尚需人工签核。",
+          "theorem61Printed尚未保持原域，且未连接另列的字面质量生成元。",
+          "原印刷严格负定及轨道时间平均指数界保留为疑误，不视为成立。",
+          "附件未含印刷244页，ΔM旧定义的解释未能由本附件独立核定。"
+        ]
+      },
+      "issues": [
+        {
+          "code": "SOURCE_NEGATIVE_DEFINITE_ERRATUM",
+          "field": "statement_latex",
+          "message": "零常数模与严格负定矛盾，原文应保留并标疑误。"
+        },
+        {
+          "code": "SOURCE_TIME_AVERAGE_CONFLICT",
+          "field": "statement_latex",
+          "message": "原文先说演化分布平均，末尾却明确说(5.6)轨道时间平均；后者一般没有所写路径级指数界。"
+        },
+        {
+          "code": "PRINTED_OPERATOR_DOMAIN_SUBSTITUTION",
+          "field": "theorem61Printed",
+          "message": "Printed仍将C₀²原域替换为corrected的闭Gibbs复L²域，属于形式化对象偏移而不是原书自身错误。"
+        },
+        {
+          "code": "PRINTED_GENERATOR_NOT_LINKED",
+          "field": "theorem61Printed / brownianMassGeneratorPrinted",
+          "message": "另有字面质量生成元定义并不能使Printed定理中采用的另一算子自动变为该原生成元。"
+        },
+        {
+          "code": "SOURCE_MASS_LAPLACIAN_UNRESOLVED",
+          "field": "context_notation",
+          "message": "附件只给出ΔM符号，未附所称印刷244页的定义，不能从本材料判定其质量系数解释。"
+        },
+        {
+          "code": "COVERAGE_METADATA_INCOMPLETE",
+          "field": "coverage_gaps",
+          "message": "原书疑误、Printed域偏移和ΔM解释尚未核定时，coverage_gaps不宜为空数组。"
+        }
+      ],
+      "evidence": [
+        {
+          "source": "R2_PAGES.pdf",
+          "attachment_page": [
+            9,
+            10
+          ],
+          "location": "印刷250页末及251页Theorem 6.1全文",
+          "observation": "原文明确写C₀²(μβ)、negative definite及time average defined in (5.6)。"
+        },
+        {
+          "source": "R2_任务.md",
+          "location": "条目8的三份theorem61声明及两份质量生成元；BrownianDensityLaw/Average、SDEDrift/Noise定义",
+          "observation": "Printed的IsSelfAdjoint对象与corrected完全相同；实际路径漂移/扩散使用逆质量，未调用brownianMassGeneratorPrinted。"
+        }
+      ]
+    },
+    "audit": {
+      "lean_decl": "MD.Ch06.theorem61; MD.Ch06.theorem61_corrected; MD.Ch06.theorem61Printed; MD.Ch06.brownianMassGeneratorPrinted; MD.Ch06.brownianMassGeneratorPrinted_corrected",
+      "verdict": "FAIL",
+      "explanation": "A：Theorem 6.1的生成元、三款结论及最后明确指向(5.6)的time average均准确转录；书中分布平均与轨道时间平均的冲突以及negative definite措辞须保留为原书疑误。C分版本：theorem61和theorem61_corrected作为限定修正版均PASS，包含完整闭自伴、全部复谱实且非正、可数、每点有非零图特征向量、孤立、非零谱隙及对所有非负归一L²相对初始密度的演化分布平均指数界。K、α在ρ之后、在所有f和t之前选择，量词正确；DensityLaw为真实Brownian核作用初始ρμβ，DensityAverage的分母在这些概率条件下为1。修正生成元的扩散和漂移均用逆质量，匹配给出的实际Brownian路径系数。theorem61Printed的严格负定及几乎处处轨道平均指数界保留了原文疑误，但它仍使用与corrected相同的闭复L²算子，而原文明确以C₀²(μβ)为域；其全部谱/自伴断言也未与另列的brownianMassGeneratorPrinted建立对象联系。因此该名字为Printed的整条声明不是原域及原生成元的字面实现，忠实性FAIL；这与原书数学错误本身的NEEDS_HUMAN及sorry无关。brownianMassGeneratorPrinted的代数表达与其注释一致，但附件没有印刷244页，无法据本附件独立确认ΔM在该页的既定含义，应保留记号歧义而不能假称已逐页核实。",
+      "counterexample": "严格负定：取一维、m=β=1、U=0、f≡1，有Lf=0且⟨f,Lf⟩=0。轨道指数界也不能用分布指数混合替代：在同一圆周Brownian模型、初值0、f(q)=cos(2πq)时，对每个固定t>0有正概率整段路径停在足够小的邻域，时间平均仍接近1而空间平均为0；当t足够大，任意固定Kexp(−αt)都会小于该偏差，故Printed所要求的几乎处处、所有t成立的固定常数界不能成立。此处反例说明原书疑误，不作为Printed忠实性FAIL的理由。",
+      "suggested_fix": "不改工程的建议：保留当前主版/corrected为闭实现和分布平均修正版。将现有Printed重命名为闭实现限定摘录，或另设真正保留C₀²原域及原ΔM记号的literal声明；不把单独质量表达式当作已经连接到整个Printed定理。原书数学疑误继续标[ERRATUM?]并待人工决定。"
+    },
+    "subtask": "EAUDIT13b"
+  },
+  {
+    "batch": "EAUDIT14",
+    "source_id": "MD-6.4.4-Theorem62",
+    "json_review": {
+      "status": "NEEDS_HUMAN",
+      "issue_codes": [
+        "TRANSCRIPTION_KAPPA",
+        "SOURCE_ZERO_TIME_DENSITY_ERRATUM",
+        "PRINTED_GENERATOR_TEST_DOMAIN_MISMATCH",
+        "COVERAGE_METADATA_INCOMPLETE"
+      ],
+      "corrected_json": {
+        "source_id": "MD-6.4.4-Theorem62",
+        "kind": "theorem",
+        "label": "Theorem 6.2",
+        "section": "6.4.4",
+        "printed_page": "252",
+        "pdf_page": "273",
+        "statement_latex": "Theorem 6.2 (Geometric Ergodicity) Let the solution to (6.43) be denoted $X(t)$. If Assumption 1 and Assumption 2 are satisfied for\n\\[C=\\{X\\in D\\mid\\varphi(X)\\le K_{\\alpha,\\delta}\\},\\]\nwhere $K_{\\alpha,\\delta}$ is a particular positive value depending on $\\alpha$ and $\\delta$, then\n(i) there exists a unique invariant measure $\\rho_*$, with $\\mathcal L^*\\rho_*=0$, and\n(ii) there exist positive constants $\\kappa$ and $\\lambda$ such that for all suitable functions $f$ with $|f|\\le\\varphi$,\n\\[|e^{t\\mathcal L}f(X_0)-\\operatorname{Av}(f)|\\le \\kappa e^{-\\lambda t}\\varphi(X_0);\\tag{6.48}\\]\nwhere $\\operatorname{Av}(f)=\\int_D f(z)\\rho_*(z)dz$ is the spatial average.",
+        "proof_latex": null,
+        "proof_note": "原书未给独立完整证明。",
+        "proof_discussion_latex": null,
+        "context_notation": [],
+        "extra_assumptions": [
+          "[EXTRA]阈值函数先于全部过程/Lyapunov量词选择，不能临时选使Assumption1假而空真；真实Markov semigroup/Feller、Polish局部紧状态及σ有限参考测度。全状态正时刻密度资格用于完整不变概率密度结论；L*ρ=0按真实generator检验的弱意义，不是先假定不变性。全部函数/初值/时刻统一加权指数界与唯一性均保留。",
+          "[EXTRA] 25号：主版与corrected补真实半群漂移估计；弱平稳测试限真实右导数且有局部可积差商支配，排除derivWithin总定义默认值。Printed保留原有疑误版不证；Harris桥接及统一阈值仍缺大型理论，未声称原全定理已认证。",
+          "[ERRATUM?] 原Assumption 1(ii)的[0,∞)端点保留；主版/corrected只要求正时刻连续密度。",
+          "[EXTRA] 主版/corrected的真实右导数及局部可积差商支配资格不适用于当前Printed；Printed这里存在独立的形式化域偏差。"
+        ],
+        "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
+        "coverage_gaps": [
+          "原Assumption 1的t=0联合连续密度表述需人工处理。",
+          "Printed的弱平稳测试未限制到实际生成元域，不能作为原L*ρ*=0的忠实实现。"
+        ]
+      },
+      "issues": [
+        {
+          "code": "TRANSCRIPTION_KAPPA",
+          "field": "statement_latex",
+          "message": "原页为κ和λ；JSON把κ转成k，包括式(6.48)的系数。"
+        },
+        {
+          "code": "SOURCE_ZERO_TIME_DENSITY_ERRATUM",
+          "field": "extra_assumptions / assumption1Printed",
+          "message": "原Assumption 1(ii)把密度联合连续区间写到t=0；对点初值的非原子扩散通常不成立，修正版限t>0合理。"
+        },
+        {
+          "code": "PRINTED_GENERATOR_TEST_DOMAIN_MISMATCH",
+          "field": "theorem62Printed",
+          "message": "将总定义derivWithin用于所有有界连续检验，未要求真实右导数，并非忠实表达实际生成元的L*ρ*=0。"
+        },
+        {
+          "code": "COVERAGE_METADATA_INCOMPLETE",
+          "field": "coverage_gaps",
+          "message": "应区分主版/修正版的资格保护与Printed的欠缺，不能把Printed剩余问题只归给原书。"
+        }
+      ],
+      "evidence": [
+        {
+          "source": "R2_PAGES.pdf",
+          "attachment_page": [
+            12
+          ],
+          "location": "印刷252页Theorem 6.2(ii)及式(6.48)",
+          "observation": "两个正系数的原字形为κ、λ；L明确是SDE的生成元。"
+        },
+        {
+          "source": "R2_PAGES.pdf",
+          "attachment_page": [
+            12
+          ],
+          "location": "同页Assumption 1(ii)",
+          "observation": "联合连续性区间确写C×C×[0,∞)。"
+        },
+        {
+          "source": "R2_任务.md",
+          "location": "条目10三份签名及kernelGenerator、assumption1/Printed、assumption2定义",
+          "observation": "主版/corrected有HasDerivWithinAt与局部可积差商支配前提，Printed没有这两项；后者仍对所有有界连续f作弱平稳断言。"
+        }
+      ]
+    },
+    "audit": {
+      "lean_decl": "MD.Ch06.theorem62; MD.Ch06.theorem62_corrected; MD.Ch06.theorem62Printed",
+      "verdict": "FAIL",
+      "explanation": "A：节号、页码、阈值集合、唯一不变测度、弱平稳意图、加权指数界及空间平均均核对；原页的正系数为κ，JSON两处写为k，应作转录纠正，其余原文数学措辞保留。C：theorem62及corrected作为加强的半群版本，签名PASS：阈值函数先于状态空间、过程及φ量化；完整Markov/Feller、局部紧Polish状态、σ有限ν、每个正时刻全部初值的绝对连续性；φ正连续且子水平紧，α、δ正；另有实际积分可积性和半群漂移估计；结论保留全部不变概率的唯一性、相对于ν的密度、受真实右导数及局部可积差商支配限制的弱平稳检验，以及统一于所有可测|f|≤φ、t≥0、x的指数界。没有把不变性或收敛结论作假设，也没有把有限个检验或单一初态替代全部量词。Printed保留[0,∞)连续密度的原书疑误，这一点本身应NEEDS_HUMAN；但其弱平稳分句量化所有有界连续f，仅假设kernelGenerator f可积，没有要求该f存在真实右导数/属于生成元测试域。D中kernelGenerator是总定义的derivWithin，不能把其无导数时的默认值当成原书实际SDE生成元。该超出原生成元域的Printed弱平稳断言不属于原书字面陈述，忠实性FAIL。主版新增的测试域保护没有在Printed中保留，这一偏差不是sorry问题，也不能全标成原书疑误。",
+      "counterexample": "端点问题：以一维Brownian运动、初值0、Lebesgue参考测度为例，t>0的热核在原点为(4πDt)⁻¹/²，t↓0时无界；t=0的分布是δ0，而不是在C×C×[0,∞)连续的有限实值密度。这是原书端点疑误；Printed测试域FAIL的理由是其总导数对象与原实际生成元不相同，而不是该热核例或sorry。",
+      "suggested_fix": "原文JSON的k改回κ，保留端点[ERRATUM?]。Printed中的L*ρ*=0应采用真实生成元的测试域/弱方程，至少保留主版的真实右导数与换积分资格；若需保留旧的总导数断言，应另名为形式化问题版，不称原书Printed。阈值统一性及所有结论量词应保持现状。"
+    },
+    "subtask": "EAUDIT14a"
+  },
+  {
+    "batch": "EAUDIT15",
+    "source_id": "MD-6.4.4-Lemma61Printed",
+    "json_review": {
+      "status": "NEEDS_HUMAN",
+      "issue_codes": [
+        "NUMBERED_LEMMA_KIND",
+        "SOURCE_EMPTY_OPEN_SET_ERRATUM",
+        "PRINTED_PHYSICAL_PARAMETER_DOMAIN_MISMATCH"
+      ],
+      "corrected_json": {
+        "source_id": "MD-6.4.4-Lemma61Printed",
+        "kind": "lemma",
+        "label": "Lemma 6.1",
+        "section": "6.4.4",
+        "printed_page": "255",
+        "pdf_page": "276",
+        "statement_latex": "Lemma 6.1 For all $t>0$ and all open $C\\subset D$, we have that\n\\[\\Pr(X(t)\\in C\\mid X(0)=X_0)>0,\\quad\\forall X_0\\in D,\\]\nwhere $X(t)=(q(t),p(t))^T$ is a solution to Langevin dynamics (6.47).",
+        "proof_latex": null,
+        "proof_note": "原书给出证明论述；本条仅摘录命题，相关论述见相邻原页，未在此补写。",
+        "proof_discussion_latex": null,
+        "context_notation": [],
+        "extra_assumptions": [
+          "[EXTRA] 25号：Printed收回单位质量周期相空间，保留包括空集的原全称开集断言及原书疑误；非空修正版独立保留，真实核存在规格补入复审包。",
+          "[ERRATUM?] 原所有开集应限制为非空开集；Printed仍应保留原空集漏洞用于忠实性审校。",
+          "[EXTRA] 当前声明还将γ推广为任意实数、σ推广为任意非零实数；这不是原(6.47)的字面参数域，须另行命名或恢复原域。"
+        ],
+        "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
+        "coverage_gaps": [
+          "原书漏非空目标的疑误仍保留。",
+          "当前Printed的γ、σ参数域比原(6.47)宽；需恢复原域或改名为推广版。"
+        ]
+      },
+      "issues": [
+        {
+          "code": "NUMBERED_LEMMA_KIND",
+          "field": "kind",
+          "message": "label和原页均为Lemma 6.1，kind=unnumbered_claim不符。"
+        },
+        {
+          "code": "SOURCE_EMPTY_OPEN_SET_ERRATUM",
+          "field": "statement_latex",
+          "message": "原书all open C包括空集；空事件概率为0，故严格正断言不成立。"
+        },
+        {
+          "code": "PRINTED_PHYSICAL_PARAMETER_DOMAIN_MISMATCH",
+          "field": "lemma61Printed / extra_assumptions",
+          "message": "原(6.47)的正摩擦和物理噪声关系被替换为γ任意实数、σ任意非零实数，Printed未保持原过程参数域。"
+        }
+      ],
+      "evidence": [
+        {
+          "source": "R2_PAGES.pdf",
+          "attachment_page": [
+            17
+          ],
+          "location": "印刷255页Lemma 6.1全文",
+          "observation": "原页确没有nonempty，且明确说解的是Langevin dynamics (6.47)。"
+        },
+        {
+          "source": "R2_PAGES.pdf",
+          "attachment_page": [
+            10
+          ],
+          "location": "印刷251页式(6.47)",
+          "observation": "原噪声为√(2γkBT)，不是独立的任意非零σ。"
+        },
+        {
+          "source": "R2_PAGES.pdf",
+          "attachment_page": [
+            17
+          ],
+          "location": "印刷255页Lemma 6.1证明中式(6.49)之后",
+          "observation": "原文明确称γ与σ为positive constants。"
+        },
+        {
+          "source": "R2_任务.md",
+          "location": "条目15完整签名",
+          "observation": "只有hσ : σ ≠ 0，没有0<γ或σ与温度、γ的关系；目标开集也无非空条件。"
+        }
+      ]
+    },
+    "audit": {
+      "lean_decl": "MD.Ch06.lemma61Printed",
+      "verdict": "FAIL",
+      "explanation": "A：Lemma 6.1的标题、所有t>0、所有开集、全部点初值及原式准确；kind应为编号lemma而不是unnumbered_claim。C：缺少C.Nonempty忠实保留了原文的空集漏洞，这个数学错误应NEEDS_HUMAN，不能仅因此判Printed签名FAIL。实际端点核的定义、时间正性、全部点初值及周期单位质量相空间均已核对。不过原页把过程指定为(6.47)，其γ为正且噪声为√(2γkBT)；当前Printed却量化任意实γ和任意非零实σ，额外覆盖γ≤0及不满足物理噪声关系的过程。它们可用于有限时刻开放集可达性的正确推广，但该推广没有在本条EXTRA中完整披露，也不是(6.47)的字面参数域。按Printed必须审忠实性的要求，本条因参数域扩张FAIL；原书空集错误仍独立标NEEDS_HUMAN。此结论不依据sorry。",
+      "counterexample": "仅针对原书数学错误：取任意允许的正时间、初值及物理参数，令C=∅。∅是开集，任何转移测度都有K t x ∅=0，故原严格不等式变成0<0。此反例不作为Printed忠实性FAIL的理由。",
+      "suggested_fix": "kind改为lemma。真正的Printed应保留原all open（包括空集）和原物理参数域，并挂[ERRATUM?]；任意实γ、非零σ的推广放到非空修正版中或另行命名。"
+    },
+    "subtask": "EAUDIT15c"
+  },
+  {
+    "batch": "EAUDIT17",
+    "source_id": "MD-6.4.4-WeightedH1Norm",
+    "json_review": {
+      "status": "CORRECTED",
+      "issue_codes": [
+        "SOURCE_DOMAIN_OMITTED",
+        "LEAN_CONCLUSION_COVERAGE_GAP"
+      ],
+      "corrected_json": {
+        "source_id": "MD-6.4.4-WeightedH1Norm",
+        "kind": "unnumbered_claim",
+        "label": null,
+        "section": "6.4.4",
+        "printed_page": "256–257",
+        "pdf_page": "277–278",
+        "statement_latex": "where\n\\[\\|f\\|_{L^2(\\mu)}^2=\\int_D f^2\\mu(d\\omega),\\]\nand, for a vector function $w:D\\to\\mathbb R^{N_c}$, we have\n\\[\\|w\\|_{L^2(\\mu)}^2=\\sum_{i=1}^{N_c}\\|w_i\\|_{L^2(\\mu)}^2.\\]",
+        "proof_latex": null,
+        "proof_note": "原书未给独立完整证明。",
+        "proof_discussion_latex": null,
+        "context_notation": [],
+        "extra_assumptions": [
+          "[EXTRA] 25号：仅覆盖真实加权H¹的jet范数分解；原文标量L²积分及任意向量w的平方和等式未由本条覆盖。"
+        ],
+        "statement_scope": "本条Lean覆盖范围：仅覆盖真实加权H¹的jet范数分解；原文标量L²积分及任意向量w的平方和等式未由本条覆盖。",
+        "coverage_gaps": [
+          "仅覆盖真实加权H¹的jet范数分解；原文标量L²积分及任意向量w的平方和等式未由本条覆盖。"
+        ]
+      },
+      "issues": [
+        {
+          "code": "SOURCE_DOMAIN_OMITTED",
+          "location": "statement_latex",
+          "message": "两个展示式数值结构正确，但JSON删去了原页为向量等式明确给出的w:D→R^{Nc}；宜补回标量/向量区别及连接文字。"
+        },
+        {
+          "code": "LEAN_CONCLUSION_COVERAGE_GAP",
+          "location": "weightedH1Norm / coverage_gaps",
+          "message": "所交定理仅是H¹ jet范数分解，没有原文的标量L²积分恒等式，也没有对任意向量函数w的L²分量平方和等式。现有coverage_gaps已如实承认，但不等于两项已覆盖。"
+        }
+      ],
+      "evidence": [
+        "A：附件第4页末尾是标量式；第5页开头明确写and, for a vector function w:D→R^{Nc}, we have后给出向量式，印刷256–257、原书PDF277–278。",
+        "C：Blueprint/Ch06.lean:3229只量化f:CanonicalWeakH1，结论仅含值投影和两组导数投影的范数。",
+        "C：已核对本条Derivative投影到some j、D50值投影到none、D42的PiLp 2及本条norm_sq完整签名。"
+      ]
+    },
+    "audit": {
+      "lean_decl": "MD.Ch06.weightedH1Norm",
+      "verdict": "FAIL",
+      "explanation": "现有weightedH1Norm本身数学正确：它确实给出加权H¹范数等于函数值及全部位置、动量弱导数L²范数的平方和，N、β、U及坐标投影均正确。但原文JSON的两项主结论分别是‖f‖²L²=∫f²dμ，以及任意w:D→R^N的‖w‖²L²=Σ‖wᵢ‖²L²。该Lean结论没有积分，没有独立标量f:L²，也没有任意向量w，因此不能覆盖这些结论。FAIL仅指本条原文与声明的完整覆盖关系，不指jet等式错误，也不因证明或sorry。EXTRA承认缺口是准确的，但不能替代缺失声明。",
+      "counterexample": null,
+      "suggested_fix": "保留已有H¹等式作为辅助结果；另列原文两个独立声明，使用实标量L²与欧氏向量值L²或明确的坐标PiLp 2，并写出积分恒等式和任意向量函数的分量平方和。此次只审校，不编辑工程。"
+    },
+    "subtask": "EAUDIT17b"
+  },
+  {
+    "batch": "EAUDIT18",
+    "source_id": "MD-6.4.5-KernelEvolution",
+    "json_review": {
+      "status": "APPROVED",
+      "issue_codes": [
+        "LEAN_CONCLUSION_COVERAGE_GAP"
+      ],
+      "corrected_json": null,
+      "issues": [
+        {
+          "code": "LEAN_CONCLUSION_COVERAGE_GAP",
+          "location": "kernelEvolutionRaw25 / kernelEvolution / coverage_gaps",
+          "message": "两个定义都只是核作用于测度；有Markov半群资格仍不包含实际Langevin生成元、ρ0与ρt的密度识别及e^{tL†}传播。现有coverage_gaps已准确登记。"
+        }
+      ],
+      "evidence": [
+        "A：附件第9页，印刷257、原书PDF278，6.4.5开头的引导句及ρ(q,p,t)=e^{tL†LD}ρ0(q,p)与JSON逐词/逐式一致。",
+        "C：D70的markovSemigroup确为每时Markov、K0=id、K(s+t)=Ks∘ₖKt。所交两个定义的体都为K t∘ₘμ。",
+        "C：MD.Ch06.kernelEvolution带_hK；D27的MolecularDynamics.Chapter06Review.kernelEvolution不带_hK。后续条目全限定调用的是后者，不能把两者的类型混淆。"
+      ]
+    },
+    "audit": {
+      "lean_decl": "MD.Ch06.kernelEvolutionRaw25; MD.Ch06.kernelEvolution",
+      "verdict": "FAIL",
+      "explanation": "A阶段APPROVED表示原文JSON与其“仅核推进”的限制说明真实。两个Lean辅助定义本身均正确：Raw25允许任意核族，主入口另要求真正Markov半群，D是任意可测类型，μ是任意测度，t≥0。即使μ未限定概率，该定义仍成立；仅在μ为概率时才得到概率推进。但原文完整结论是特定Langevin密度随前向指数算子演化。两个辅助体没有U、β、γ、ρ0、ρt、平直参考测度、生成元或密度等式。FAIL仅指该原文完整结论未由本条交付；EXTRA如实承认限制，不据此把缺失部分判成已经覆盖。条目10、13的资格定义另行审校，不能合并替代本条。",
+      "counterexample": null,
+      "suggested_fix": "保留两个辅助定义；若此source_id要求完整覆盖，应另外提供特定Langevin核与前向密度半群的识别及ρt dω=(Kt∘ₘ(ρ0dω))等关系。若仅登记辅助定义，应保持当前明确缺口，不能标成原式已形式化。"
+    },
+    "subtask": "EAUDIT18c"
+  },
+  {
+    "batch": "EAUDIT19",
+    "source_id": "MD-6.4.5-KernelAverage",
+    "json_review": {
+      "status": "APPROVED",
+      "issue_codes": [
+        "LEAN_CONCLUSION_COVERAGE_GAP"
+      ],
+      "corrected_json": null,
+      "issues": [
+        {
+          "code": "LEAN_CONCLUSION_COVERAGE_GAP",
+          "location": "kernelAverage / coverage_gaps",
+          "message": "定义仅给出x处的核测试积分，没有初始分布μ0、演化分布μt或两种平均相等的结论；所引KernelDuality不在本批提供，不能代审。"
+        }
+      ],
+      "evidence": [
+        "A：附件第10页，印刷258、原书PDF279，which says that ... initial distribution.整句与JSON逐词一致。",
+        "C：所交kernelAverage只有K、f、t、x，体为∫f d(Kt x)，没有任何等式结论或可积前提；D28共享定义相同。",
+        "C：原页前一个展示式是∫D[e^{tLLD}φ(q,p)]ρ0(q,p)dω，说明本句指整体分布平均的对偶恒等式。"
+      ]
+    },
+    "audit": {
+      "lean_decl": "MD.Ch06.kernelAverage",
+      "verdict": "FAIL",
+      "explanation": "该辅助定义正确且与EXTRA所称“总化记号”相符：D为任意可测空间、K为任意核族、f为任意实函数；Lean积分对不合格函数仍有总化值。因此本定义不能解释为任意f都有概率平均，更不能推出原句的∫f dμt=∫Kt f dμ0。原句要求分布演化、可积资格及核积分交换的等式，而这些对象和结论均未在当前声明中出现。FAIL为完整原句覆盖不足，非定义或证明错误。原文JSON没有伪称它已覆盖，故A状态APPROVED并保留既有coverage_gaps。",
+      "counterexample": null,
+      "suggested_fix": "保留kernelAverage；另交两种平均相等的实际声明，量化μ0、μt并关联μt=Kt∘ₘμ0，附相应可测与可积条件。不能只引用本任务未提供的KernelDuality名称。"
+    },
+    "subtask": "EAUDIT19a"
+  },
+  {
+    "batch": "EAUDIT19",
+    "source_id": "MD-6.4.5-SmoothTestL2Printed",
+    "json_review": {
+      "status": "NEEDS_HUMAN",
+      "issue_codes": [
+        "SOURCE_SENTENCE_TRUNCATION",
+        "ERRATUM_SMOOTH_NOT_L2",
+        "LEAN_CONCLUSION_COVERAGE_GAP"
+      ],
+      "corrected_json": {
+        "source_id": "MD-6.4.5-SmoothTestL2Printed",
+        "kind": "unnumbered_claim",
+        "label": null,
+        "section": "6.4.5",
+        "printed_page": "258",
+        "pdf_page": "279",
+        "statement_latex": "Since all the eigenvalues lie to the left of a vertical line in the left half plane, for any $\\varphi$ in $C^\\infty$ we have\n\\[\\int_D\\varphi\\rho(q,p,t)d\\omega=\\operatorname{Av}_\\beta(\\varphi)+\\alpha e^{t\\lambda_1}\\int_D\\varphi\\rho^{(1)}d\\omega.\\]\nThe latter integral is bounded since both $\\varphi$ and $\\rho^{(1)}$ are in $L^2$, and since $\\operatorname{Re}(\\lambda_1)<0$, we see that this converges exponentially to the desired average.",
+        "proof_latex": null,
+        "proof_note": "原书未给独立完整证明。",
+        "proof_discussion_latex": null,
+        "context_notation": [],
+        "extra_assumptions": [
+          "[EXTRA] 25号：原文版忠实性与数学疑误分开；补齐所交条目所属的现有_corrected完整签名，不从repair_log名称推断网站已通过修正版。",
+          "[ERRATUM?] 非紧平直相空间上光滑不蕴含L²。保留原句；修正版仅将测试域限定为C∞∩L²，不声称已证明平均公式或积分有界。"
+        ],
+        "statement_scope": "原文按页照录；当前Printed只表达光滑蕴含L²的疑误子主张，corrected只给出C∞∩L²测试函数域，不能标成整个平均公式已覆盖。",
+        "coverage_gaps": [
+          "原文展示的平均恒等式、ρ^(1)的L²资格及两者配对的有界性没有在当前两个声明中表达；corrected只是测试函数资格定义。"
+        ]
+      },
+      "issues": [
+        {
+          "code": "SOURCE_SENTENCE_TRUNCATION",
+          "location": "statement_latex",
+          "message": "原页L²之后为逗号并继续and since Re(λ1)<0, we see that this converges exponentially to the desired average.；JSON改成句号，应恢复原句或明确摘录截断。"
+        },
+        {
+          "code": "ERRATUM_SMOOTH_NOT_L2",
+          "location": "statement_latex / smoothTestL2Printed",
+          "message": "T^n×R^n在n≥1时平直测度无限，C∞不蕴含L²；原文的任意C∞及both are in L²推理需人工确认测试函数域。保持Printed字面结论，不静默改正。"
+        },
+        {
+          "code": "LEAN_CONCLUSION_COVERAGE_GAP",
+          "location": "smoothTestL2Printed_corrected / coverage_gaps",
+          "message": "Printed仅形式化C∞⇒L²这一原文隐含子主张；corrected仅定义C∞∩L²合格域。两者都没有本条JSON展示的平均恒等式、ρ1的L²资格或积分的Cauchy–Schwarz界。"
+        }
+      ],
+      "evidence": [
+        "A：附件第13页，印刷258、原书PDF279，已目视核对Since all the eigenvalues ...、平均恒等式及其后完整最后一句；原文确实把任意C∞与L²资格混用。",
+        "C：D60的flatPhaseMeasure包含R^n的Lebesgue测度；这不是有限质量Gibbs测度。",
+        "C：Blueprint/Ch06.lean:3394为∀n∀f，ContDiff lift→MemLp f 2 flat；:3400的corrected为两个谓词的合取，既非其证明，也非平均等式。"
+      ]
+    },
+    "audit": {
+      "lean_decl": "MD.Ch06.smoothTestL2Printed; MD.Ch06.smoothTestL2Printed_corrected",
+      "verdict": "FAIL",
+      "explanation": "分版审校：smoothTestL2Printed忠实地保留原页隐含的“每个光滑测试函数均在平直L²”子主张；该子主张的原书数学疑误判NEEDS_HUMAN，而不因它为假就判Printed不忠实。smoothTestL2Printed_corrected是正确的限定域定义C∞∩L²，修正合理，局部签名PASS；但它是def，不是有界积分定理。本条scope仍称覆盖所引原句及展示公式，coverage_gaps却为null。实际两个声明都没有ρt、ρeq、ρ1、λ1、α、传播关系、平均恒等式或积分界，因此总audit为FAIL，理由是独立的完整结论覆盖缺口，而不是原书数学疑误或sorry。原文错误另在json_review中保留NEEDS_HUMAN。",
+      "counterexample": "针对Printed数学主张：n=1取f(q,p)=1，周期提升处处C∞，但平直∫T×R|f|²dω=∞，故不在L²。也可取任意非零高次多项式。该反例不反驳corrected的C∞∩L²定义。",
+      "suggested_fix": "原文恢复完整末句并加[ERRATUM?]；保留Printed及正确的限定域定义。另列两种平均相等及ρ1、测试函数满足L²时的积分界，或如实登记当前缺口；不得把def合格域算成完整平均定理。"
+    },
+    "subtask": "EAUDIT19c"
+  }
+]

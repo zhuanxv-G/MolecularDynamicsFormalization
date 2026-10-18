@@ -1,0 +1,163 @@
+{
+  "batch": "EAUDIT04",
+  "input_sha256": {
+    "Blueprint/Ch06.lean": "4a2a6cb72c1692f80e3537ab1a71701d429a482780a01226c3dc66a2ebb8b44b",
+    "blueprint/ch06/ch06_source.json": "d7f93cd20eb570744c710f3e07a88b319c082e4155812fee91db0920eb05944e"
+  },
+  "items": [
+    {
+      "source_id": "MD-6.2.2-WeakItoAlias",
+      "json_review": {
+        "status": "CORRECTED",
+        "issue_codes": [
+          "SOURCE_OMITTED_CONNECTING_TEXT",
+          "LIMIT_RELATION_ONLY"
+        ],
+        "corrected_json": {
+          "source_id": "MD-6.2.2-WeakItoAlias",
+          "kind": "definition",
+          "label": null,
+          "section": "6.2.2",
+          "printed_page": "228–229",
+          "pdf_page": "249–250",
+          "statement_latex": "By analogy, we would like to write the stochastic integral of a function $g$, where $g$ may, itself, be defined in terms of a stochastic process, as the limit of a sum:\n\\[\\sum_{k=0}^{\\nu-1}g(t_k)[W((k+1)\\delta t)-W(k\\delta t)],\\quad \\nu\\to\\infty.\\]\nwhere the increments $W((k+1)\\delta t)-W(k\\delta t)$ identified here are the increments of a Wiener process whose properties are given above. (In particular they are normally distributed with mean zero and variance $\\delta t$.) First, we should be careful regarding the sense in which we expect convergence, since sequences of random variables may converge in various ways.\nNext, unlike in the case of the Riemann sums, it turns out that the result depends on where we place the points $t_k$. Using the properties of the Wiener process we may easily show that the choice $t_k=k\\delta t$ (left endpoint) and the choice $t_k=(k+1/2)\\delta t$ yield different formulas for the integral. The first choice is commonly referred to as Itô integration, and the second as Stratonovich integration.",
+          "proof_latex": null,
+          "proof_note": "原书未给独立完整证明。",
+          "proof_discussion_latex": null,
+          "context_notation": [],
+          "extra_assumptions": [
+            "[EXTRA] 25号：采用既有strictItoIntegral的全部有限和L²资格；极限及平方误差的可积性不再被Bochner默认零掩盖。正式库旧辅助保持冻结。"
+          ],
+          "statement_scope": "本条Lean覆盖范围：采用既有strictItoIntegral的全部有限和L²资格；极限及平方误差的可积性不再被Bochner默认零掩盖。正式库旧辅助保持冻结。",
+          "coverage_gaps": []
+        },
+        "issues": [
+          {
+            "stage": "A",
+            "description": "求和与Itô/Stratonovich命名正确，但中间关于Wiener增量、收敛方式、左右/时间中点选择的文字被直接略过，使first/second失去前指；需补全连续摘录。"
+          },
+          {
+            "stage": "C",
+            "description": "weakItoAlias是任意测度P、过程W,g、实T和候选Y的均方左和极限关系：每个K的itoLeftSum及Y均为L²，平方误差积分趋0。D3的和确用左端点kT/K和相邻W增量。L²前提排除了不可积函数Bochner默认零的漏洞。作为左和极限关系定义PASS；P不是自动概率、W不是自动Wiener、g不是自动适应，此定义本身不授予标准Itô积分的存在性或一般等距性质，不能扩充解释。"
+          }
+        ],
+        "evidence": [
+          "A：已核对R1_PAGES.pdf附件第11,12页，原书PDF页249–250、印刷页228–229。求和与Itô/Stratonovich命名正确，但中间关于Wiener增量、收敛方式、左右/时间中点选择的文字被直接略过，使first/second失去前指；需补全连续摘录。",
+          "C：只读核对本条完整Lean摘录及所引用附录项目定义；标准库按标准数学含义采信。weakItoAlias是任意测度P、过程W,g、实T和候选Y的均方左和极限关系：每个K的itoLeftSum及Y均为L²，平方误差积分趋0。D3的和确用左端点kT/K和相邻W增量。L²前提排除了不可积函数Bochner默认零的漏洞。作为左和极限关系定义PASS；P不是自动概率、W不是自动Wiener、g不是自动适应，此定义本身不授予标准Itô积分的存在性或一般等距性质，不能扩充解释。"
+        ]
+      },
+      "audit": {
+        "lean_decl": "MD.Ch06.weakItoAlias",
+        "verdict": "PASS",
+        "explanation": "weakItoAlias是任意测度P、过程W,g、实T和候选Y的均方左和极限关系：每个K的itoLeftSum及Y均为L²，平方误差积分趋0。D3的和确用左端点kT/K和相邻W增量。L²前提排除了不可积函数Bochner默认零的漏洞。作为左和极限关系定义PASS；P不是自动概率、W不是自动Wiener、g不是自动适应，此定义本身不授予标准Itô积分的存在性或一般等距性质，不能扩充解释。",
+        "counterexample": null,
+        "suggested_fix": "补回原文选择左端点与时间中点的连接段；保留“均方左和极限关系”的限定解释。"
+      },
+      "subtask": "EAUDIT04a"
+    },
+    {
+      "source_id": "MD-6.2.2-Proposition62",
+      "json_review": {
+        "status": "NEEDS_HUMAN",
+        "issue_codes": [
+          "SOURCE_DUPLICATED_DELTA",
+          "BOOK_CROSS_TERM_TYPO",
+          "BOOK_LIMIT_DIRECTION_TYPO"
+        ],
+        "corrected_json": {
+          "source_id": "MD-6.2.2-Proposition62",
+          "kind": "proposition",
+          "label": "Proposition 6.2",
+          "section": "6.2.2",
+          "printed_page": "229–230",
+          "pdf_page": "250–251",
+          "statement_latex": "Proposition 6.2 Let $\\nu\\delta t=\\tau$ then\n\\[\\operatorname{l.i.m.}_{\\nu\\to\\infty}\\sum_{k=0}^{\\nu-1}[(W((k+1)\\delta t)-W(k\\delta t))^2]=\\tau,\\]\nwhere, for a sequence of random variables, $A_\\nu$ and a random variable $B$, we have\n\\[\\operatorname{l.i.m.}_{\\nu\\to\\infty}A_\\nu=B\\iff\\lim_{\\nu\\to\\infty}\\mathbb E(A_\\nu-B)^2=0.\\]\n(This is referred to as convergence in the mean square sense.)",
+          "proof_latex": "With $\\tau,\\nu$ fixed, we have $\\delta t=\\tau/\\nu$.\nLet $\\Delta W_{\\nu,k}=W((k+1)\\delta t)-W(k\\delta t)=W((k+1)\\tau/\\nu)-W(k\\tau/\\nu)$ and observe that\n\\[\\sum_{k=0}^{\\nu-1}\\Delta W_{\\nu,k}^2-\\tau=\\sum_{k=0}^{\\nu-1}[\\Delta W_{\\nu,k}^2-\\delta t].\\]\nThen\n\\[I_\\nu\\stackrel{\\rm def}=\\mathbb E(\\sum_{k=0}^{\\nu-1}\\Delta W_{\\nu,k}^2-\\tau)^2=\\mathbb E(\\sum_{k=0}^{\\nu-1}[\\Delta W_{\\nu,k}^2-\\delta t])^2.\\]\nTerms of the form $Z_{\\nu,k}\\stackrel{\\rm def}=\\Delta W_{\\nu,k}^2-\\delta t$ are independent and have mean zero. Therefore\n\\[\\mathbb E(\\sum_{k=0}^{\\nu-1}Z_{\\nu,k})^2=\\mathbb E\\sum_{k=0}^{\\nu-1}Z_{\\nu,k}^2-2\\mathbb E\\sum_{k\\ne l}Z_{\\nu,k}Z_{\\nu,l}=\\mathbb E\\sum_{k=0}^{\\nu-1}Z_{\\nu,k}^2,\\]\nwhere the last equation follows from independence of the increments ($\\mathbb E Z_kZ_l=0$ if $k\\ne l$).\nAlso observe that $\\Delta W_k$ is a normally distributed random variable with the following properties\n\\[\\mathbb E\\Delta W_k=0;\\quad\\mathbb E\\Delta W_k^2=\\delta t=\\tau/\\nu;\\quad\\mathbb E\\Delta W_k^4=3\\delta t^2=3(\\tau/\\nu)^2.\\]\nThus we have\n\\[I_\\nu=\\sum_{k=0}^{\\nu-1}\\mathbb E(\\Delta W_{\\nu,k}^2-\\delta t)^2\n=\\sum_{k=0}^{\\nu-1}\\mathbb E[\\Delta W_{\\nu,k}^4-2\\delta t\\Delta W_{\\nu,k}^2+\\delta t^2]\n=\\sum_{k=0}^{\\nu-1}[3\\delta t^2-2\\delta t^2+\\delta t^2]=2\\nu\\delta t^2=2\\tau^2/\\nu.\\]\nThus $I_\\nu\\to0$ as $\\nu\\to0$, which is the desired result.",
+          "proof_note": "逐字保存含印刷负号与K→0；正式桥接使用正确独立平方和及K→∞。",
+          "proof_discussion_latex": null,
+          "context_notation": [],
+          "extra_assumptions": [
+            "[EXTRA]实际PreBrownian law、τ≥0、全部均方极限；印刷最后K→0是笔误，更正K→∞。",
+            "[EXTRA] 25号：原文版忠实性与数学疑误分开；补齐所交条目所属的现有_corrected完整签名，不从repair_log名称推断网站已通过修正版。"
+          ],
+          "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
+          "coverage_gaps": null
+        },
+        "issues": [
+          {
+            "stage": "A",
+            "description": "原文证明有转录错误：最后I_ν的展开在JSON多次写成ΔΔW，原页只有ΔW；原书交叉项的负号和最后ν→0确实印在原页，应保留为原书疑误。"
+          },
+          {
+            "stage": "C",
+            "description": "proposition62及proposition62_corrected：实际IsPreBrownianReal、T≥0，均匀网格平方增量和的均方误差atTop趋0，签名正确。WienerTime=k*T/K、WienerIncrement为相邻差、QuadraticSum为Fin K平方和，均核对。proposition62Printed定义x²+y²-4xy，忠实记录按有序k≠l理解印刷展开的两变量表达；未将错误式当定理。proposition62Expansion_corrected的普通平方展开正确；proposition62Printed_counterexample在x=y=1正确。原书一般代数展开错误虽因独立零均值而不改变期望最终结果，仍需标疑误；末极限应为ν→∞。"
+          }
+        ],
+        "evidence": [
+          "A：已核对R1_PAGES.pdf附件第13,14页，原书PDF页250–251、印刷页229–230。原文证明有转录错误：最后I_ν的展开在JSON多次写成ΔΔW，原页只有ΔW；原书交叉项的负号和最后ν→0确实印在原页，应保留为原书疑误。",
+          "C：只读核对本条完整Lean摘录及所引用附录项目定义；标准库按标准数学含义采信。proposition62及proposition62_corrected：实际IsPreBrownianReal、T≥0，均匀网格平方增量和的均方误差atTop趋0，签名正确。WienerTime=k*T/K、WienerIncrement为相邻差、QuadraticSum为Fin K平方和，均核对。proposition62Printed定义x²+y²-4xy，忠实记录按有序k≠l理解印刷展开的两变量表达；未将错误式当定理。proposition62Expansion_corrected的普通平方展开正确；proposition62Printed_counterexample在x=y=1正确。原书一般代数展开错误虽因独立零均值而不改变期望最终结果，仍需标疑误；末极限应为ν→∞。"
+        ]
+      },
+      "audit": {
+        "lean_decl": "MD.Ch06.proposition62; MD.Ch06.proposition62_corrected; MD.Ch06.proposition62Printed; MD.Ch06.proposition62Expansion_corrected; MD.Ch06.proposition62Printed_counterexample",
+        "verdict": "NEEDS_HUMAN",
+        "explanation": "proposition62及proposition62_corrected：实际IsPreBrownianReal、T≥0，均匀网格平方增量和的均方误差atTop趋0，签名正确。WienerTime=k*T/K、WienerIncrement为相邻差、QuadraticSum为Fin K平方和，均核对。proposition62Printed定义x²+y²-4xy，忠实记录按有序k≠l理解印刷展开的两变量表达；未将错误式当定理。proposition62Expansion_corrected的普通平方展开正确；proposition62Printed_counterexample在x=y=1正确。原书一般代数展开错误虽因独立零均值而不改变期望最终结果，仍需标疑误；末极限应为ν→∞。",
+        "counterexample": "x=y=1时(1+1)²=4，而印刷双变量式1+1-4=-2。",
+        "suggested_fix": "仅修正转录多出的Δ；原书负号和ν→0保留并注勘误，数学版采用atTop和正确展开。"
+      },
+      "subtask": "EAUDIT04b"
+    },
+    {
+      "source_id": "MD-6.2.2-SelfStratonovichIntegral",
+      "json_review": {
+        "status": "NEEDS_HUMAN",
+        "issue_codes": [
+          "SOURCE_OMITTED_PARENTHETICAL",
+          "BOOK_MIDPOINT_REMAINDER_GAP"
+        ],
+        "corrected_json": {
+          "source_id": "MD-6.2.2-SelfStratonovichIntegral",
+          "kind": "unnumbered_claim",
+          "label": null,
+          "section": "6.2.2",
+          "printed_page": "230",
+          "pdf_page": "251",
+          "statement_latex": "In contrast, the Stratonovich (midpoint) integral (denoted by $\\int_0^\\tau\\circ dW(t)$) can be calculated as\n\\[\\int_0^\\tau W(t)\\circ dW(t)=\\operatorname{l.i.m.}_{\\nu\\to\\infty}\\sum_{k=0}^{\\nu-1}W(k\\delta t+\\delta t/2)[W((k+1)\\delta t)-W(k\\delta t)].\\]\nWriting\n\\[W(k\\delta t+\\delta t/2)=W(\\frac{(k+1)\\delta t+k\\delta t}{2})=\\frac12(W((k+1)\\delta t)+W(k\\delta t))+O(\\sqrt{\\delta t}),\\]\nallows us to evaluate the integral as\n\\[\\int_0^\\tau W(t)\\circ dW(t)=\\frac12\\operatorname{l.i.m.}_{\\nu\\to\\infty}\\sum_{k=0}^{\\nu-1}[W((k+1)\\delta t)^2-W(k\\delta t)^2]=\\frac12W(\\tau)^2.\\]",
+          "proof_latex": null,
+          "proof_note": "原书未给独立完整证明。",
+          "proof_discussion_latex": null,
+          "context_notation": [],
+          "extra_assumptions": [
+            "[EXTRA]真实时间中点和、L²见证、整体均方极限、AE求值；原O(√δt)单步启发不足，正式整体均方误差证明不直接丢弃逐步残项。",
+            "[EXTRA] 25号：仅覆盖真实时间中点和的均方结论；原单步O(√dt)推理未控制总误差，不能当成完整证明；所需Brownian桥残差估计未补建。"
+          ],
+          "statement_scope": "本条所引原句及展示公式；单个记号归入context_notation。",
+          "coverage_gaps": null
+        },
+        "issues": [
+          {
+            "stage": "A",
+            "description": "附件第15页在Stratonovich (midpoint) integral后有积分记号说明括号，JSON略去；真实时间中点、O(sqrt(dt))及最后W(τ)²/2均正确转录。"
+          },
+          {
+            "stage": "C",
+            "description": "selfStratonovichIntegral及_corrected在IsPreBrownianReal、T≥0下给出L²见证Y、真实时间中点和的均方收敛及Y=W(T)²/2的AE求值，数学签名PASS。MidpointSum确取2K细网格的2k+1时刻，并非端点值平均。布朗增量Gaussian四阶矩保证各和及极限的资格。原书将单步中点桥差O(sqrt(dt))直接舍掉未控制总和，不能单凭该行作完整证明；两相同定理签名没有解决原书论证缺口。"
+          }
+        ],
+        "evidence": [
+          "A：已核对R1_PAGES.pdf附件第15页，原书PDF页251、印刷页230。附件第15页在Stratonovich (midpoint) integral后有积分记号说明括号，JSON略去；真实时间中点、O(sqrt(dt))及最后W(τ)²/2均正确转录。",
+          "C：只读核对本条完整Lean摘录及所引用附录项目定义；标准库按标准数学含义采信。selfStratonovichIntegral及_corrected在IsPreBrownianReal、T≥0下给出L²见证Y、真实时间中点和的均方收敛及Y=W(T)²/2的AE求值，数学签名PASS。MidpointSum确取2K细网格的2k+1时刻，并非端点值平均。布朗增量Gaussian四阶矩保证各和及极限的资格。原书将单步中点桥差O(sqrt(dt))直接舍掉未控制总和，不能单凭该行作完整证明；两相同定理签名没有解决原书论证缺口。"
+        ]
+      },
+      "audit": {
+        "lean_decl": "MD.Ch06.selfStratonovichIntegral; MD.Ch06.selfStratonovichIntegral_corrected",
+        "verdict": "NEEDS_HUMAN",
+        "explanation": "selfStratonovichIntegral及_corrected在IsPreBrownianReal、T≥0下给出L²见证Y、真实时间中点和的均方收敛及Y=W(T)²/2的AE求值，数学签名PASS。MidpointSum确取2K细网格的2k+1时刻，并非端点值平均。布朗增量Gaussian四阶矩保证各和及极限的资格。原书将单步中点桥差O(sqrt(dt))直接舍掉未控制总和，不能单凭该行作完整证明；两相同定理签名没有解决原书论证缺口。",
+        "counterexample": null,
+        "suggested_fix": "补回原文积分记号括号；保留启发式缺口，严谨证明应估计整体中点桥残差的L²范数。"
+      },
+      "subtask": "EAUDIT04c"
+    }
+  ],
+  "merged_from": "ch06_eaudit_merged"
+}

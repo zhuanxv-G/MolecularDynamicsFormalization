@@ -1,0 +1,208 @@
+[
+  {
+    "source_id": "MD-6.3.6-FPEquation",
+    "note": "密度联合光滑性只要求在(0,∞)×ℝ，保留确定初态及正时刻密度；不再要求密度跨t=0光滑。严格网格积分解到通常适应Itô解的桥接仍未证明，PDE结论不当作前提。",
+    "gaps": [
+      "严格网格积分关系到通常适应Itô解、以及一般Fokker–Planck推导尚缺证明；不将单文件编译当作这些桥接已完成。"
+    ],
+    "suggested_fix": "把ρ的光滑性限定在(0,∞)×ℝ，保留确定性初态；或改为随机初态具有给定平滑密度，并相应修改严格SDE定义。再核查严格网格解到适应Itô解的桥接；此处仅建议，不修改工程。",
+    "diff_file": "blueprint/ch06/closeout26/FPEquation.diff",
+    "command": [
+      "lake",
+      "--no-cache",
+      "env",
+      "lean",
+      "--server"
+    ],
+    "mode": "official Lean compiler single-file LSP elaboration",
+    "exit_code": 0,
+    "input_sha256": "97dbe2e7b5900cd7409543d0c916bfc2b796108628a3205330bba662a7d30076",
+    "log_sha256": "b5bbff8da538a87db1593682b4e7512f9925859ad08a430d5b32c6c603b0f33b",
+    "version": 1,
+    "uri": "file:///C:/Users/ustc/Desktop/formal%20math/MolecularDynamicsFormalization/blueprint/ch06/closeout26/ActiveCheck.lean",
+    "elapsed_seconds": 536.8448114395142,
+    "errors": [],
+    "missing_axiom_outputs": [],
+    "canonical_sha256": "16096b454721e3ffa9869d8dd639bb6b2758db4402104a714388fd151625fd28"
+  },
+  {
+    "source_id": "MD-6.4.3-Theorem61",
+    "note": "主版与_corrected保持网站已通过的闭实现/分布平均签名。旧theorem61Printed改名theorem61ClosedRealizationExcerpt，明确只是闭实现限定摘录，不能冒称C₀²原域及原ΔM生成元的整条字面实现。分布平均与轨道时间平均冲突、negative definite措辞保留为原书疑误。",
+    "gaps": [
+      "原C₀²域及原ΔM生成元对应的整条字面形式化未提供；独立质量表达式不补足此联系。",
+      "ΔM既定含义仍需核原页；闭实现限定摘录不作为该原域解释的签核。",
+      "严格负定与几乎处处轨道时间平均的固定指数界不作为成立结论。"
+    ],
+    "suggested_fix": "不改工程的建议：保留当前主版/corrected为闭实现和分布平均修正版。将现有Printed重命名为闭实现限定摘录，或另设真正保留C₀²原域及原ΔM记号的literal声明；不把单独质量表达式当作已经连接到整个Printed定理。原书数学疑误继续标[ERRATUM?]并待人工决定。",
+    "diff_file": "blueprint/ch06/closeout26/Theorem61.diff",
+    "command": [
+      "lake",
+      "--no-cache",
+      "env",
+      "lean",
+      "--server"
+    ],
+    "mode": "official Lean compiler single-file LSP elaboration",
+    "exit_code": 0,
+    "input_sha256": "a04340b827f3fa609e5089542ec01c09844a72c1ba15e630fcf78e2ccb2f9ac3",
+    "log_sha256": "082dbbd7aacbd598efe18ea016f5b2c8ba0626c4d784447ba6fbf93aa27efd64",
+    "version": 2,
+    "uri": "file:///C:/Users/ustc/Desktop/formal%20math/MolecularDynamicsFormalization/blueprint/ch06/closeout26/ActiveCheck.lean",
+    "elapsed_seconds": 5.151534080505371,
+    "errors": [],
+    "missing_axiom_outputs": [],
+    "canonical_sha256": "346fe8f621b17e51e56fd1854c7a79e18be4f9340609668c41c90dddebd66c78"
+  },
+  {
+    "source_id": "MD-6.4.4-Theorem62",
+    "note": "原文两处k按网站逐页核对改回κ（转录纠正）。Printed的弱平稳测试补主版同样的真实右导数及局部可积差商支配，排除derivWithin默认值；保留原[0,∞)连续密度端点疑误，阈值统一性和全部结论量词不变。",
+    "gaps": [
+      "原Assumption 1(ii)在t=0要求连续密度的疑误保留；Printed含明确的实际生成元测试资格，并非无技术前提的整条字面翻译。"
+    ],
+    "suggested_fix": "原文JSON的k改回κ，保留端点[ERRATUM?]。Printed中的L*ρ*=0应采用真实生成元的测试域/弱方程，至少保留主版的真实右导数与换积分资格；若需保留旧的总导数断言，应另名为形式化问题版，不称原书Printed。阈值统一性及所有结论量词应保持现状。",
+    "diff_file": "blueprint/ch06/closeout26/Theorem62.diff",
+    "command": [
+      "lake",
+      "--no-cache",
+      "env",
+      "lean",
+      "--server"
+    ],
+    "mode": "official Lean compiler single-file LSP elaboration",
+    "exit_code": 0,
+    "input_sha256": "1ae2e721936a303a1658db2af207e2eaeddfa776a4f34aeb631e4520c33fa0e2",
+    "log_sha256": "082dbbd7aacbd598efe18ea016f5b2c8ba0626c4d784447ba6fbf93aa27efd64",
+    "version": 3,
+    "uri": "file:///C:/Users/ustc/Desktop/formal%20math/MolecularDynamicsFormalization/blueprint/ch06/closeout26/ActiveCheck.lean",
+    "elapsed_seconds": 4.985822916030884,
+    "errors": [],
+    "missing_axiom_outputs": [],
+    "canonical_sha256": "936b574d5a9b5ea3cd55942af3109f26501ed5943cd4d85925e9010d300a932f"
+  },
+  {
+    "source_id": "MD-6.4.4-Lemma61Printed",
+    "note": "kind恢复编号lemma；Printed收回原(6.47)正摩擦γ>0及物理噪声σ=√(2γθ)、θ=kBT>0的参数域，保留所有开集（包括空集）的原断言。任意实γ/非零σ的推广只留在非空修正版；漏C.Nonempty是原书疑误，不证明Printed。",
+    "gaps": [
+      "原书漏非空目标；Printed忠实保留空集漏洞。"
+    ],
+    "suggested_fix": "kind改为lemma。真正的Printed应保留原all open（包括空集）和原物理参数域，并挂[ERRATUM?]；任意实γ、非零σ的推广放到非空修正版中或另行命名。",
+    "diff_file": "blueprint/ch06/closeout26/Lemma61Printed.diff",
+    "command": [
+      "lake",
+      "--no-cache",
+      "env",
+      "lean",
+      "--server"
+    ],
+    "mode": "official Lean compiler single-file LSP elaboration",
+    "exit_code": 0,
+    "input_sha256": "c0354e723de412221737a0c94377eca5a307da3bf6c4f2fcd2b0f38efded2542",
+    "log_sha256": "082dbbd7aacbd598efe18ea016f5b2c8ba0626c4d784447ba6fbf93aa27efd64",
+    "version": 4,
+    "uri": "file:///C:/Users/ustc/Desktop/formal%20math/MolecularDynamicsFormalization/blueprint/ch06/closeout26/ActiveCheck.lean",
+    "elapsed_seconds": 4.814181804656982,
+    "errors": [],
+    "missing_axiom_outputs": [],
+    "canonical_sha256": "f29b768eb7b70e11bab0779e6e7ed28390c1649feedddae5b633e0acb373ebe9"
+  },
+  {
+    "source_id": "MD-6.4.4-WeightedH1Norm",
+    "note": "保留已证H¹ jet范数分解为辅助；新增原文实标量L²平方积分式及任意欧氏向量值L²函数的分量范数平方和两条独立短陈述。新增陈述的证明状态单列，不用辅助等式代替原文两式。",
+    "gaps": [],
+    "suggested_fix": "保留已有H¹等式作为辅助结果；另列原文两个独立声明，使用实标量L²与欧氏向量值L²或明确的坐标PiLp 2，并写出积分恒等式和任意向量函数的分量平方和。此次只审校，不编辑工程。",
+    "diff_file": "blueprint/ch06/closeout26/WeightedH1Norm.diff",
+    "command": [
+      "lake",
+      "--no-cache",
+      "env",
+      "lean",
+      "--server"
+    ],
+    "mode": "official Lean compiler single-file LSP elaboration",
+    "exit_code": 0,
+    "input_sha256": "5934dffe16d339599325f0a267a337c806161f70f1ad65740651ff883f1f6ac9",
+    "log_sha256": "54050a2d61249225148011b6e34814b4663ca63b226fe02861a0728c51acb0a3",
+    "version": 5,
+    "uri": "file:///C:/Users/ustc/Desktop/formal%20math/MolecularDynamicsFormalization/blueprint/ch06/closeout26/ActiveCheck.lean",
+    "elapsed_seconds": 4.8650078773498535,
+    "errors": [],
+    "missing_axiom_outputs": [],
+    "canonical_sha256": "ecff82a4115c560767a009cc83367e0e674cde2da6dc23a56006b2e8fa07f24b"
+  },
+  {
+    "source_id": "MD-6.4.5-KernelEvolution",
+    "note": "本source_id仅登记两个核作用于测度的辅助定义；hK要求真实Markov半群，但不因此提供特定Langevin前向密度或指数算子识别。明确原式尚未由本条形式化，缺口继续保留。",
+    "gaps": [
+      "特定Langevin核与前向密度半群的识别、ρt dω=Kt∘ₘ(ρ0 dω)及e^{tL†}解释未由本条给出。"
+    ],
+    "suggested_fix": "保留两个辅助定义；若此source_id要求完整覆盖，应另外提供特定Langevin核与前向密度半群的识别及ρt dω=(Kt∘ₘ(ρ0dω))等关系。若仅登记辅助定义，应保持当前明确缺口，不能标成原式已形式化。",
+    "diff_file": "blueprint/ch06/closeout26/KernelEvolution.diff",
+    "command": [
+      "lake",
+      "--no-cache",
+      "env",
+      "lean",
+      "--server"
+    ],
+    "mode": "official Lean compiler single-file LSP elaboration",
+    "exit_code": 0,
+    "input_sha256": "5ea6488a5905cbbaeb9c7eb4a6728b3425a850505b502834c495df1732a09f1a",
+    "log_sha256": "54050a2d61249225148011b6e34814b4663ca63b226fe02861a0728c51acb0a3",
+    "version": 6,
+    "uri": "file:///C:/Users/ustc/Desktop/formal%20math/MolecularDynamicsFormalization/blueprint/ch06/closeout26/ActiveCheck.lean",
+    "elapsed_seconds": 4.883487701416016,
+    "errors": [],
+    "missing_axiom_outputs": [],
+    "canonical_sha256": "878ea9131ee989319adf02f95ab0c7f3ab36b125c8912cff5a1019af109f01ce"
+  },
+  {
+    "source_id": "MD-6.4.5-KernelAverage",
+    "note": "保留kernelAverage总化辅助记号；新增实际分布平均恒等式，显式量化μ0、μt、μt=Kt∘ₘμ0、概率/Markov资格以及f可测可积，不再仅引用未随本条送审的KernelDuality名称。",
+    "gaps": [],
+    "suggested_fix": "保留kernelAverage；另交两种平均相等的实际声明，量化μ0、μt并关联μt=Kt∘ₘμ0，附相应可测与可积条件。不能只引用本任务未提供的KernelDuality名称。",
+    "diff_file": "blueprint/ch06/closeout26/KernelAverage.diff",
+    "command": [
+      "lake",
+      "--no-cache",
+      "env",
+      "lean",
+      "--server"
+    ],
+    "mode": "official Lean compiler single-file LSP elaboration",
+    "exit_code": 0,
+    "input_sha256": "999ef89b64ed3c270d5c6640a2a204a7e33127742a65ada11f18deeef658304b",
+    "log_sha256": "1c2daed7e090cd6123a2e8a8d4c5ae6dd28ae88d124c3b7e6dc461f607388fca",
+    "version": 7,
+    "uri": "file:///C:/Users/ustc/Desktop/formal%20math/MolecularDynamicsFormalization/blueprint/ch06/closeout26/ActiveCheck.lean",
+    "elapsed_seconds": 4.91539192199707,
+    "errors": [],
+    "missing_axiom_outputs": [],
+    "canonical_sha256": "ea71d6a9cf4b2e83d3549156e8f58e9dfdfe920c4c8f3885d9fdf9feb25eec74"
+  },
+  {
+    "source_id": "MD-6.4.5-SmoothTestL2Printed",
+    "note": "恢复原文完整末句。Printed仅保留光滑蕴含平直L²的原书疑误子主张；_corrected仅是网站已PASS的C∞∩L²合格域定义。限定当前覆盖，不把该定义计作平均公式或积分有界定理。",
+    "gaps": [
+      "平均恒等式、ρ^(1)的L²资格及与测试函数配对的有界性没有在本条两声明中表达；未将这些内容标为已经形式化。"
+    ],
+    "suggested_fix": "原文恢复完整末句并加[ERRATUM?]；保留Printed及正确的限定域定义。另列两种平均相等及ρ1、测试函数满足L²时的积分界，或如实登记当前缺口；不得把def合格域算成完整平均定理。",
+    "diff_file": "blueprint/ch06/closeout26/SmoothTestL2Printed.diff",
+    "command": [
+      "lake",
+      "--no-cache",
+      "env",
+      "lean",
+      "--server"
+    ],
+    "mode": "official Lean compiler single-file LSP elaboration",
+    "exit_code": 0,
+    "input_sha256": "3e806ee30fb76239a69ff194aff963779b3fe7da10bbacf905820ee24d72dd24",
+    "log_sha256": "1c2daed7e090cd6123a2e8a8d4c5ae6dd28ae88d124c3b7e6dc461f607388fca",
+    "version": 8,
+    "uri": "file:///C:/Users/ustc/Desktop/formal%20math/MolecularDynamicsFormalization/blueprint/ch06/closeout26/ActiveCheck.lean",
+    "elapsed_seconds": 4.854330062866211,
+    "errors": [],
+    "missing_axiom_outputs": [],
+    "canonical_sha256": "11107c725ecf79187d25c93f4f34f162ce504a092a0012eaa18acf2218687d18"
+  }
+]

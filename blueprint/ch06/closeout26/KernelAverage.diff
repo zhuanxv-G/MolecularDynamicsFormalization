@@ -1,0 +1,71 @@
+--- Blueprint/Ch06.lean before
++++ Blueprint/Ch06.lean after
+@@ -3373,9 +3373,25 @@
+     (μ : Measure D) (_hK : MolecularDynamics.Chapter06Review.markovSemigroup K) (t : ℝ≥0) : Measure D := K t ∘ₘ μ
+ 
+ /-- source_id: MD-6.4.5-KernelAverage · definition · §6.4.5 · 印刷p.258 / PDFp.279
+-[EXTRA] 25号：仅为检验函数核传播的总化辅助记号；原句两种平均相等由MD-6.4.5-KernelDuality对应，可积资格须见该条。 -/
++[EXTRA] 25号：仅为检验函数核传播的总化辅助记号；原句两种平均相等由MD-6.4.5-KernelDuality对应，可积资格须见该条。 [EXTRA] 26号：保留kernelAverage总化辅助记号；新增实际分布平均恒等式，显式量化μ0、μt、μt=Kt∘ₘμ0、概率/Markov资格以及f可测可积，不再仅引用未随本条送审的KernelDuality名称。
++-/
+ def kernelAverage {D : Type*} [MeasurableSpace D] (K : ℝ≥0 → Kernel D D)
+     (f : D → ℝ) (t : ℝ≥0) (x : D) : ℝ := ∫ z, f z ∂K t x
++
++/-- 原句的两种平均相等：明确初始/演化分布及可积资格。 -/
++theorem kernelAverage_distributionIdentity26 {D : Type*} [MeasurableSpace D]
++    (K : ℝ≥0 → Kernel D D) (μ0 μt : Measure D) (t : ℝ≥0) (f : D → ℝ)
++    (hμ0 : IsProbabilityMeasure μ0) (hK : IsMarkovKernel (K t))
++    (hμt : μt = K t ∘ₘ μ0) (hf : Measurable f) (hi : Integrable f μt) :
++    (∫ x, f x ∂μt) = ∫ x, kernelAverage K f t x ∂μ0 := by
++  subst μt
++  letI : IsProbabilityMeasure μ0 := hμ0
++  letI : IsMarkovKernel (K t) := hK
++  unfold kernelAverage
++  rw [Measure.comp_eq_comp_const_apply]
++  apply Kernel.integral_comp
++  simpa only [← Measure.comp_eq_comp_const_apply] using hi
++
+ 
+ /-- source_id: MD-6.4.5-DensityEvolutionMeaning · definition · §6.4.5 · 印刷p.257–258 / PDFp.278–279
+ [EXTRA] 25号：补Markov/初值/半群及真实右生成元识别资格，补各时刻概率质量和初值；逐点非负为所选代表，显式列可积测试的变分等式。此为语义资格定义，未声称密度存在或任意核满足它。 -/
+
+--- source entry before
++++ source entry after
+@@ -19,21 +19,24 @@
+   "lean_decl": "MD.Ch06.kernelAverage",
+   "reusable_proofs": [],
+   "extra_assumptions": [
+-    "[EXTRA] 25号：仅为检验函数核传播的总化辅助记号；原句两种平均相等由MD-6.4.5-KernelDuality对应，可积资格须见该条。"
++    "[EXTRA] 26号：保留kernelAverage总化辅助记号；新增实际分布平均恒等式，显式量化μ0、μt、μt=Kt∘ₘμ0、概率/Markov资格以及f可测可积，不再仅引用未随本条送审的KernelDuality名称。"
+   ],
+-  "statement_scope": "本条Lean覆盖范围：仅为检验函数核传播的总化辅助记号；原句两种平均相等由MD-6.4.5-KernelDuality对应，可积资格须见该条。",
++  "statement_scope": "本条当前覆盖范围：保留kernelAverage总化辅助记号；新增实际分布平均恒等式，显式量化μ0、μt、μt=Kt∘ₘμ0、概率/Markov资格以及f可测可积，不再仅引用未随本条送审的KernelDuality名称。",
+   "review_status": "DRAFT",
+   "repair_log": [
+     {
+       "stage": "CLOSEOUT25",
+       "note": "仅为检验函数核传播的总化辅助记号；原句两种平均相等由MD-6.4.5-KernelDuality对应，可积资格须见该条。",
+       "suggested_fix": "将本条原文对应到kernelDuality，或添加带初始概率measure和可积资格的平均等式；kernelAverage仅登记为检验函数传播的辅助记号。"
++    },
++    {
++      "stage": "CLOSEOUT26",
++      "note": "保留kernelAverage总化辅助记号；新增实际分布平均恒等式，显式量化μ0、μt、μt=Kt∘ₘμ0、概率/Markov资格以及f可测可积，不再仅引用未随本条送审的KernelDuality名称。",
++      "suggested_fix": "保留kernelAverage；另交两种平均相等的实际声明，量化μ0、μt并关联μt=Kt∘ₘμ0，附相应可测与可积条件。不能只引用本任务未提供的KernelDuality名称。"
+     }
+   ],
+   "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json",
+-  "coverage_gaps": [
+-    "仅为检验函数核传播的总化辅助记号；原句两种平均相等由MD-6.4.5-KernelDuality对应，可积资格须见该条。"
+-  ],
++  "coverage_gaps": [],
+   "closeout25_source_changes": {
+     "statement_latex": {
+       "before": "The average of a function $\\varphi$ with respect to the distribution at time $t$ is equivalent to the average of the forward propagation of $\\varphi$ with respect to the initial distribution.",
+@@ -58,5 +61,8 @@
+       "direct_placeholder": false,
+       "source_id": "MD-6.4.5-KernelAverage"
+     }
++  ],
++  "superseded_extra_assumptions26": [
++    "[EXTRA] 25号：仅为检验函数核传播的总化辅助记号；原句两种平均相等由MD-6.4.5-KernelDuality对应，可积资格须见该条。"
+   ]
+ }

@@ -1,0 +1,84 @@
+--- Blueprint/Ch06.lean before
++++ Blueprint/Ch06.lean after
+@@ -3235,7 +3235,8 @@
+   textbookLangevinCanonicalWeakH1 U hU hp β hβ
+ 
+ /-- source_id: MD-6.4.4-WeightedH1Norm · unnumbered_claim · §6.4.4 · 印刷p.256–257 / PDFp.277–278
+-[EXTRA] 25号：仅覆盖真实加权H¹的jet范数分解；原文标量L²积分及任意向量w的平方和等式未由本条覆盖。 -/
++[EXTRA] 25号：仅覆盖真实加权H¹的jet范数分解；原文标量L²积分及任意向量w的平方和等式未由本条覆盖。 [EXTRA] 26号：保留已证H¹ jet范数分解为辅助；新增原文实标量L²平方积分式及任意欧氏向量值L²函数的分量范数平方和两条独立短陈述。新增陈述的证明状态单列，不用辅助等式代替原文两式。
++-/
+ theorem weightedH1Norm {N : ℕ}
+     (U : (Fin N → ℝ) → ℝ) (hU : ContDiff ℝ ∞ U) (hp : textbookUnitPeriodicPotential U)
+     (β : ℝ) (hβ : 0 < β) (f : textbookLangevinCanonicalWeakH1 U hU hp β hβ) :
+@@ -3243,6 +3244,20 @@
+       (∑ i : Fin N, ‖textbookLangevinCanonicalWeakH1Derivative U hU hp β hβ (Sum.inl i) f‖ ^ 2) +
+       (∑ i : Fin N, ‖textbookLangevinCanonicalWeakH1Derivative U hU hp β hβ (Sum.inr i) f‖ ^ 2) := by
+   apply MolecularDynamics.textbookLangevinCanonicalWeakH1_norm_sq <;> assumption
++
++/-- 原文第一式：实标量L²范数平方等于平方积分。 -/
++theorem weightedL2NormScalar26 {D : Type*} [MeasurableSpace D]
++    (μ : Measure D) (f : Lp ℝ 2 μ) :
++    ‖f‖ ^ 2 = ∫ x, (f x) ^ 2 ∂μ := by
++  sorry
++
++/-- 原文第二式：任意欧氏向量值L²函数的分量均属L²，范数平方为分量平方和。 -/
++theorem weightedL2NormVector26 {D : Type*} [MeasurableSpace D] {Nc : ℕ}
++    (μ : Measure D) (w : D → EuclideanSpace ℝ (Fin Nc)) (hw : MemLp w 2 μ) :
++    ∃ hc : ∀ i : Fin Nc, MemLp (fun x ↦ w x i) 2 μ,
++      ‖hw.toLp w‖ ^ 2 = ∑ i : Fin Nc, ‖(hc i).toLp (fun x ↦ w x i)‖ ^ 2 := by
++  sorry
++
+ 
+ /-- source_id: MD-6.4.4-Proposition64Printed · Proposition 6.4 · §6.4.4 · 印刷p.257 / PDFp.278
+ [ERRATUM?] 印刷flat forward PDE与Gibbs加权mean-zero/adjoint pairing混用；测度及density-vs-relative-density选择待导师，原式完整保留。 [EXTRA] 25号：保留原flat/Gibbs坐标混用疑误和非Gibbs恒通量反例；补H¹伴随测试表达式，修正版本由Proposition64Relative独立保存。
+
+--- source entry before
++++ source entry after
+@@ -5,7 +5,7 @@
+   "section": "6.4.4",
+   "printed_page": "256–257",
+   "pdf_page": "277–278",
+-  "statement_latex": "\\[\\|f\\|_{L^2(\\mu)}^2=\\int_D f^2\\mu(d\\omega);\\qquad\n\\|w\\|_{L^2(\\mu)}^2=\\sum_{i=1}^{N_c}\\|w_i\\|_{L^2(\\mu)}^2.\\]",
++  "statement_latex": "where\n\\[\\|f\\|_{L^2(\\mu)}^2=\\int_D f^2\\mu(d\\omega),\\]\nand, for a vector function $w:D\\to\\mathbb R^{N_c}$, we have\n\\[\\|w\\|_{L^2(\\mu)}^2=\\sum_{i=1}^{N_c}\\|w_i\\|_{L^2(\\mu)}^2.\\]",
+   "proof_latex": null,
+   "proof_note": "原书未给独立完整证明。",
+   "proof_discussion_latex": null,
+@@ -16,21 +16,24 @@
+     "MolecularDynamics.textbookLangevinCanonicalWeakH1_norm_sq"
+   ],
+   "extra_assumptions": [
+-    "[EXTRA] 25号：仅覆盖真实加权H¹的jet范数分解；原文标量L²积分及任意向量w的平方和等式未由本条覆盖。"
++    "[EXTRA] 26号：保留已证H¹ jet范数分解为辅助；新增原文实标量L²平方积分式及任意欧氏向量值L²函数的分量范数平方和两条独立短陈述。新增陈述的证明状态单列，不用辅助等式代替原文两式。"
+   ],
+-  "statement_scope": "本条Lean覆盖范围：仅覆盖真实加权H¹的jet范数分解；原文标量L²积分及任意向量w的平方和等式未由本条覆盖。",
++  "statement_scope": "本条当前覆盖范围：保留已证H¹ jet范数分解为辅助；新增原文实标量L²平方积分式及任意欧氏向量值L²函数的分量范数平方和两条独立短陈述。新增陈述的证明状态单列，不用辅助等式代替原文两式。",
+   "review_status": "DRAFT",
+   "repair_log": [
+     {
+       "stage": "CLOSEOUT25",
+       "note": "仅覆盖真实加权H¹的jet范数分解；原文标量L²积分及任意向量w的平方和等式未由本条覆盖。",
+       "suggested_fix": "分列并给出原两条L²恒等式的声明，或把本条明确重命名为H¹范数分解并限scope，另保留原条目；补正页码为256–257/277–278。"
++    },
++    {
++      "stage": "CLOSEOUT26",
++      "note": "保留已证H¹ jet范数分解为辅助；新增原文实标量L²平方积分式及任意欧氏向量值L²函数的分量范数平方和两条独立短陈述。新增陈述的证明状态单列，不用辅助等式代替原文两式。",
++      "suggested_fix": "保留已有H¹等式作为辅助结果；另列原文两个独立声明，使用实标量L²与欧氏向量值L²或明确的坐标PiLp 2，并写出积分恒等式和任意向量函数的分量平方和。此次只审校，不编辑工程。"
+     }
+   ],
+   "source_page_verification": "VERIFIED_RENDERED; source_page_checks.json",
+-  "coverage_gaps": [
+-    "仅覆盖真实加权H¹的jet范数分解；原文标量L²积分及任意向量w的平方和等式未由本条覆盖。"
+-  ],
++  "coverage_gaps": [],
+   "closeout25_source_changes": {
+     "printed_page": {
+       "before": "257",
+@@ -59,5 +62,8 @@
+       "direct_placeholder": false,
+       "source_id": "MD-6.4.4-WeightedH1Norm"
+     }
++  ],
++  "superseded_extra_assumptions26": [
++    "[EXTRA] 25号：仅覆盖真实加权H¹的jet范数分解；原文标量L²积分及任意向量w的平方和等式未由本条覆盖。"
+   ]
+ }
