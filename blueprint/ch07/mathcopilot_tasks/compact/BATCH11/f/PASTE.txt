@@ -1,0 +1,96 @@
+以附件/PASTE 为准，忽略 /workspace 旧文件；Mathlib 定义按标准含义采信。
+本任务只审本条：原文转录、对象资格、定义体、量词、全部结论及[EXTRA]是否一致；Lean编译不代替语义审阅。
+Lean/Mathlib均4.34.0。原页PDF映射：[310, 311]；印刷页=[289, 290].
+input_sha256请原样回显：
+{
+  "Blueprint/Ch07.lean": "781e32bf551c77c51cb520d83acc6f48b1ad26c8a775a3f03e81a31183741faf",
+  "blueprint/ch07/ch07_source.json": "bfa70cbee8d288824fddb5f675cbfa89071f1a4b5b24dab4fb372b848fdd97e6",
+  "BATCH11f_PAGES.pdf": "b089dc1b57980cf4ef241ee894d1b7a247322fee65579e90bf059f4890c201f3"
+}
+用代码将JSON对象(batch,input_sha256,items)写到 /workspace/.mathcopilot/reviews/ch07/BATCH11f_review.json；items仅含本source_id。
+items字段：source_id、verdict(PASS/FAIL/NEEDS_HUMAN)、transcription、semantic_review、counterexample、suggested_fix、printed_version、corrected_version。逐版区分原文疑误和修正版结论；缺材料必须具体指出，不猜测。写后json.loads自检，最后仅回复路径及统计。
+
+## 原文JSON
+```json
+{
+  "source_id": "MD-7.7.3-PerturbationCoefficientEquation",
+  "kind": "unnumbered_claim",
+  "label": "(7.19)",
+  "section": "7.7.3",
+  "printed_page": "289–290",
+  "pdf_page": "310–311",
+  "statement_latex": "Inserting this ansatz into the stationary Fokker-Planck equation $\\widehat{\\mathcal L}^\\dagger\\widehat\\rho=0$, we obtain\n\\[(\\mathcal L_{LD}^\\dagger+h\\mathcal L_1^\\dagger+h^2\\mathcal L_2^\\dagger+O(h^3))(\\rho_\\beta[1+hf_1+h^2f_2+O(h^3)])=0.\\]\nCombining like powers, we have at zero’th order, the equation $\\mathcal L_{LD}^\\dagger\\rho_\\beta=0$.\nAt first order we obtain\n\\[\\mathcal L_{LD}^\\dagger(\\rho_\\beta f_1)+\\mathcal L_1^\\dagger\\rho_\\beta=0.\\tag{7.19}\\]",
+  "proof_latex": "Insert the two formal series into the stationary equation and combine like powers of h.",
+  "proof_note": "按所列原页转录原书证明。",
+  "context_notation": [],
+  "extra_assumptions": [
+    "在真实线性作用的形式系数卷积上推导0阶和1阶必要方程；并未由这些必要方程证明原离散链存在不变分布。"
+  ],
+  "issues": [],
+  "statement_scope": "本条逐字引用的全部数学对象与公式；未纳入的上下文另列。",
+  "lean_decl": "MD.Ch07.actionCoefficient",
+  "lean_declarations": [
+    "MD.Ch07.actionCoefficient",
+    "MD.Ch07.perturbationCoefficientEquation"
+  ],
+  "source_page_verification": "见source_page_checks.json；必须已目视核对本条原页。",
+  "repair_log": [],
+  "documented_priors": []
+}
+```
+
+## 完整本条Lean
+```lean
+def actionCoefficient {E : Type*} [AddCommGroup E] [Module ℝ E]
+    (L : ℕ → Module.End ℝ E) (ρ : ℕ → E) (k : ℕ) : E :=
+  ∑ j ∈ Finset.range (k+1), L j (ρ (k-j))
+theorem perturbationCoefficientEquation {E : Type*} [AddCommGroup E] [Module ℝ E]
+    (L : ℕ → Module.End ℝ E) (ρ : ℕ → E)
+    (h0 : actionCoefficient L ρ 0 = 0) (h1 : actionCoefficient L ρ 1 = 0) :
+    L 0 (ρ 0) = 0 ∧ L 0 (ρ 1)+L 1 (ρ 0) = 0 := by
+  constructor
+  · simpa [actionCoefficient] using h0
+  · simpa [actionCoefficient, Finset.sum_range_succ] using h1
+```
+
+## 项目依赖定义体及选择规格
+以下def/abbrev/structure完整保留；定理列出完整类型，Mathlib标准定义无需摘录。
+
+### MD.Ch07.actionCoefficient (Blueprint/Ch07.lean:867)
+原文件上下文：
+```lean
+open Set Filter MeasureTheory ProbabilityTheory MolecularDynamics
+open scoped BigOperators Topology ContDiff ENNReal NNReal
+variable {Ω : Type*} [MeasurableSpace Ω]
+variable {n : ℕ}
+```
+```lean
+def actionCoefficient {E : Type*} [AddCommGroup E] [Module ℝ E]
+    (L : ℕ → Module.End ℝ E) (ρ : ℕ → E) (k : ℕ) : E :=
+  ∑ j ∈ Finset.range (k+1), L j (ρ (k-j))
+```
+
+### MD.Ch07.perturbationCoefficientEquation (Blueprint/Ch07.lean:870)
+原文件上下文：
+```lean
+open Set Filter MeasureTheory ProbabilityTheory MolecularDynamics
+open scoped BigOperators Topology ContDiff ENNReal NNReal
+variable {Ω : Type*} [MeasurableSpace Ω]
+variable {n : ℕ}
+```
+```lean
+theorem perturbationCoefficientEquation {E : Type*} [AddCommGroup E] [Module ℝ E]
+    (L : ℕ → Module.End ℝ E) (ρ : ℕ → E)
+    (h0 : actionCoefficient L ρ 0 = 0) (h1 : actionCoefficient L ρ 1 = 0) :
+    L 0 (ρ 0) = 0 ∧ L 0 (ρ 1)+L 1 (ρ 0) = 0
+```
+
+### MolecularDynamics.Chapter05Review.E (MolecularDynamics/Chapter05/ReviewDefinitions.lean:18)
+原文件上下文：
+```lean
+open Set Filter MeasureTheory Matrix
+open scoped BigOperators Topology ENNReal
+```
+```lean
+abbrev E (n : ℕ) := EuclideanSpace ℝ (Fin n)
+```

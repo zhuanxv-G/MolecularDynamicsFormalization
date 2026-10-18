@@ -1,0 +1,94 @@
+{
+  "batch": "BATCH11",
+  "subtask": "BATCH11a",
+  "source_ids": [
+    "MD-7.7.2-ScalarForwardOperators"
+  ],
+  "input_sha256": {
+    "Blueprint/Ch07.lean": "781e32bf551c77c51cb520d83acc6f48b1ad26c8a775a3f03e81a31183741faf",
+    "blueprint/ch07/ch07_source.json": "bfa70cbee8d288824fddb5f675cbfa89071f1a4b5b24dab4fb372b848fdd97e6",
+    "BATCH11a_PAGES.pdf": "1e88cea35e4f04a6b82c1dcf9623e448f4afdf1f90182cb9e0d3321534c1c423"
+  },
+  "page_mapping": [
+    {
+      "attachment_page": 1,
+      "original_pdf_page": 309,
+      "printed_page": 288
+    }
+  ],
+  "definition_excerpts": [
+    {
+      "full_name": "MD.Ch07.Density1",
+      "kind": "abbrev",
+      "path": "Blueprint/Ch07.lean",
+      "line": 818,
+      "code_sha256": "f5a1e313efb2108d7bf2a46ede4a1e29e9d9977a0aa8e7760a31a0b61956ec54"
+    },
+    {
+      "full_name": "MD.Ch07.dq",
+      "kind": "def",
+      "path": "Blueprint/Ch07.lean",
+      "line": 819,
+      "code_sha256": "64e560195b9f1a3526cf0742346a36be3b5aa96fb25a28533856122c9fb801a7"
+    },
+    {
+      "full_name": "MD.Ch07.dp",
+      "kind": "def",
+      "path": "Blueprint/Ch07.lean",
+      "line": 820,
+      "code_sha256": "81e7aa274ae0a5969d26875d7d258acd2db1b10153220dea6ce712c9239be0d2"
+    },
+    {
+      "full_name": "MD.Ch07.opA",
+      "kind": "def",
+      "path": "Blueprint/Ch07.lean",
+      "line": 821,
+      "code_sha256": "471e19e9d488e6a1f1bd5529e1f9f2b54221189682414d1d7110bf4608c28d4e"
+    },
+    {
+      "full_name": "MD.Ch07.opB",
+      "kind": "def",
+      "path": "Blueprint/Ch07.lean",
+      "line": 822,
+      "code_sha256": "933efc2d9c9df9412058cfbd9b381378a87dc48c6331d7a81f1b39e1df8fe1db"
+    },
+    {
+      "full_name": "MD.Ch07.opO",
+      "kind": "def",
+      "path": "Blueprint/Ch07.lean",
+      "line": 823,
+      "code_sha256": "9c253a2b1cec8df7b64254f901420d4ea2fbbef59a479428813f25a53ce0e6af"
+    },
+    {
+      "full_name": "MD.Ch07.opLD",
+      "kind": "def",
+      "path": "Blueprint/Ch07.lean",
+      "line": 824,
+      "code_sha256": "bc01792526b41a1dd1840164886afd92f1f4a28b40813a781d567ade38341d75"
+    },
+    {
+      "full_name": "MD.Ch07.opComm",
+      "kind": "def",
+      "path": "Blueprint/Ch07.lean",
+      "line": 825,
+      "code_sha256": "38afeeec2a8eee3f826ec20cfd731e30bb7f05650516ef556190b0476a6f6c4e"
+    }
+  ],
+  "validation": {
+    "project_constant_closure": "PASS",
+    "missing_project_definitions": [],
+    "full_page_render_equality_dpi": 72,
+    "website_submitted": false
+  },
+  "files": {
+    "PASTE.txt": {
+      "bytes": 6256,
+      "sha256": "7bf78d4a144dd2fc2af1c5efd51b4202368c83ffd6d89a1e3b7f9b525c785a74"
+    },
+    "BATCH11a_PAGES.pdf": {
+      "bytes": 71385,
+      "sha256": "1e88cea35e4f04a6b82c1dcf9623e448f4afdf1f90182cb9e0d3321534c1c423"
+    }
+  },
+  "total_task_bytes": 80516
+}

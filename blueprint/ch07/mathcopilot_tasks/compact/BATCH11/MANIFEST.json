@@ -1,0 +1,47 @@
+{
+  "batch": "BATCH11",
+  "subtasks": [
+    {
+      "subtask": "BATCH11a",
+      "source_id": "MD-7.7.2-ScalarForwardOperators",
+      "path": "blueprint/ch07/mathcopilot_tasks/compact/BATCH11/a",
+      "bytes": 80516,
+      "manifest_sha256": "5a86b6d949b22824f15a07d16d96820661ea569981ad3dce325bdad742f09151"
+    },
+    {
+      "subtask": "BATCH11b",
+      "source_id": "MD-7.7.2-CommutatorAB",
+      "path": "blueprint/ch07/mathcopilot_tasks/compact/BATCH11/b",
+      "bytes": 79521,
+      "manifest_sha256": "9214bd14106ad7e7058bda9a9cbb553ec47f7d0a3fa3ca5fb3d2e2d1350d7d84"
+    },
+    {
+      "subtask": "BATCH11c",
+      "source_id": "MD-7.7.2-CommutatorsAOBO",
+      "path": "blueprint/ch07/mathcopilot_tasks/compact/BATCH11/c",
+      "bytes": 86059,
+      "manifest_sha256": "a5e7059b7705140309512eb5458ccebfca9194cb811c6262557d00a9fb6a0df3"
+    },
+    {
+      "subtask": "BATCH11d",
+      "source_id": "MD-7.7.2-OBAModifiedOperator",
+      "path": "blueprint/ch07/mathcopilot_tasks/compact/BATCH11/d",
+      "bytes": 97291,
+      "manifest_sha256": "682b0e5807939c302ff34444ca09c4885faf064d3d66542c0f286fa590bf0474"
+    },
+    {
+      "subtask": "BATCH11e",
+      "source_id": "MD-7.7.2-SpectralQualification",
+      "path": "blueprint/ch07/mathcopilot_tasks/compact/BATCH11/e",
+      "bytes": 84057,
+      "manifest_sha256": "1fe53f65175841d7fa800b5ae6e5d9af5ede18b5ae04d980d309e1969a2ee35a"
+    },
+    {
+      "subtask": "BATCH11f",
+      "source_id": "MD-7.7.3-PerturbationCoefficientEquation",
+      "path": "blueprint/ch07/mathcopilot_tasks/compact/BATCH11/f",
+      "bytes": 93327,
+      "manifest_sha256": "f2e85872edd88c71d9dd4c3ada52a5bbfce9cd456e778f58bb1c8e211713e92c"
+    }
+  ]
+}

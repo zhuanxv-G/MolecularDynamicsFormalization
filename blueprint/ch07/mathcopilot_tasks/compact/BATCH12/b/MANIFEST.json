@@ -1,0 +1,52 @@
+{
+  "batch": "BATCH12",
+  "subtask": "BATCH12b",
+  "source_ids": [
+    "MD-7.7.3-PerturbativeSolvabilityCaution"
+  ],
+  "input_sha256": {
+    "Blueprint/Ch07.lean": "781e32bf551c77c51cb520d83acc6f48b1ad26c8a775a3f03e81a31183741faf",
+    "blueprint/ch07/ch07_source.json": "bfa70cbee8d288824fddb5f675cbfa89071f1a4b5b24dab4fb372b848fdd97e6",
+    "BATCH12b_PAGES.pdf": "8108a23edecc63dc2af4455ec6f685ddf70f48aab5ff1fbd0544a1a1767da700"
+  },
+  "page_mapping": [
+    {
+      "attachment_page": 1,
+      "original_pdf_page": 311,
+      "printed_page": 290
+    }
+  ],
+  "definition_excerpts": [
+    {
+      "full_name": "MD.Ch07.correctionSolvable",
+      "kind": "def",
+      "path": "Blueprint/Ch07.lean",
+      "line": 897,
+      "code_sha256": "a082bcf2a011232b4bbff3d9a123b42a80aaa1e14a6d20c908febd63ee88b8c5"
+    },
+    {
+      "full_name": "MolecularDynamics.Chapter05Review.E",
+      "kind": "abbrev",
+      "path": "MolecularDynamics/Chapter05/ReviewDefinitions.lean",
+      "line": 18,
+      "code_sha256": "b497c8ba7f01b62a3147d9ae65652772ff3f81e57aa19b116f1283fef7a3cc60"
+    }
+  ],
+  "validation": {
+    "project_constant_closure": "PASS",
+    "missing_project_definitions": [],
+    "full_page_render_equality_dpi": 72,
+    "website_submitted": false
+  },
+  "files": {
+    "PASTE.txt": {
+      "bytes": 4037,
+      "sha256": "6ef0c842ab2e9acc1cbf2b9d0eaa32d474a64f1085ffc80ae49289fee05ccb5f"
+    },
+    "BATCH12b_PAGES.pdf": {
+      "bytes": 75195,
+      "sha256": "8108a23edecc63dc2af4455ec6f685ddf70f48aab5ff1fbd0544a1a1767da700"
+    }
+  },
+  "total_task_bytes": 80863
+}

@@ -1,0 +1,19 @@
+{
+  "batch": "BATCH12",
+  "subtasks": [
+    {
+      "subtask": "BATCH12a",
+      "source_id": "MD-7.7.3-ObservableCorrectionExpansion",
+      "path": "blueprint/ch07/mathcopilot_tasks/compact/BATCH12/a",
+      "bytes": 80693,
+      "manifest_sha256": "f6e95ddcb1f918876021b938bd3376fd2427ca4fa2ca6af1e1bc55673d8c6db5"
+    },
+    {
+      "subtask": "BATCH12b",
+      "source_id": "MD-7.7.3-PerturbativeSolvabilityCaution",
+      "path": "blueprint/ch07/mathcopilot_tasks/compact/BATCH12/b",
+      "bytes": 80863,
+      "manifest_sha256": "4922fd9f65cd49ee8f8219832e5b278c1fb5445b525bba86a7a12f8d2a4a7287"
+    }
+  ]
+}

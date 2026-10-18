@@ -6,28 +6,42 @@
       "source_id": "MD-7.6-DivergenceFreeInvariant",
       "path": "blueprint/ch07/mathcopilot_tasks/compact/BATCH09/a",
       "bytes": 83485,
-      "manifest_sha256": "be82a405367e2ccd93aa84ddbdb551397c97c8ae237b93b3c8a8c05611d495d9"
+      "manifest_sha256": "bce4495eeede2137ef4103f507f5d5b623924f1c850203cc77638d3790e8db5a"
     },
     {
       "subtask": "BATCH09b",
       "source_id": "MD-7.6-GeMarsdenRestriction",
       "path": "blueprint/ch07/mathcopilot_tasks/compact/BATCH09/b",
       "bytes": 87486,
-      "manifest_sha256": "e92a6eab4c2a0bda4cefbc26c6f27ba0430954bf082ca99d22ffa9ea1db4eb5f"
+      "manifest_sha256": "22ea3b0330c55497a49a1f8ec6648a3c83b9681fbacd3c1d6262798138b9dcb5"
     },
     {
       "subtask": "BATCH09c",
       "source_id": "MD-7.6-JSplitting",
       "path": "blueprint/ch07/mathcopilot_tasks/compact/BATCH09/c",
       "bytes": 104433,
-      "manifest_sha256": "ee8fd3c54d2505131230c7329ae0f8cde991af97b494a538e6681663c97295ba"
+      "manifest_sha256": "6429c50a374aba56412cc7ee4e81f8d7e6fc5d835bc03dfa414886e7f56ce086"
     },
     {
       "subtask": "BATCH09d",
       "source_id": "MD-7.6-CoordinateJSplitting",
       "path": "blueprint/ch07/mathcopilot_tasks/compact/BATCH09/d",
       "bytes": 84779,
-      "manifest_sha256": "0ae76d3e09e70b9ffa50cc5d3923fa1c9d0a3957a47c3785312c0f9398beecea"
+      "manifest_sha256": "da98942719754b46a0c008803e6ac6732542975f92ca10571a5bae7afa876cc3"
+    },
+    {
+      "subtask": "BATCH09e",
+      "source_id": "MD-7.7-ModifiedGenerator",
+      "path": "blueprint/ch07/mathcopilot_tasks/compact/BATCH09/e",
+      "bytes": 125135,
+      "manifest_sha256": "b5571a46f102a6ef5d1f25ba0f9e9f5a79f1f8e717a86983586882375c992db7"
+    },
+    {
+      "subtask": "BATCH09f",
+      "source_id": "MD-7.7-InvariantDensityExpansion",
+      "path": "blueprint/ch07/mathcopilot_tasks/compact/BATCH09/f",
+      "bytes": 82543,
+      "manifest_sha256": "6f2c6e1c5b5b1045bfc82e8d12ccee8fccd2297e78c008cad366c7704782d225"
     }
   ]
 }

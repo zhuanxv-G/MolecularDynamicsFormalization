@@ -1,0 +1,64 @@
+{
+  "batch": "BATCH10",
+  "subtask": "BATCH10c",
+  "source_ids": [
+    "MD-7.7.1-StationaryModifiedPDE"
+  ],
+  "input_sha256": {
+    "Blueprint/Ch07.lean": "781e32bf551c77c51cb520d83acc6f48b1ad26c8a775a3f03e81a31183741faf",
+    "blueprint/ch07/ch07_source.json": "bfa70cbee8d288824fddb5f675cbfa89071f1a4b5b24dab4fb372b848fdd97e6",
+    "BATCH10c_PAGES.pdf": "f461bee4db09c1af6861a6ae631bb91ac20f55582085e56fa530d3b5876c502e"
+  },
+  "page_mapping": [
+    {
+      "attachment_page": 1,
+      "original_pdf_page": 306,
+      "printed_page": 285
+    },
+    {
+      "attachment_page": 2,
+      "original_pdf_page": 307,
+      "printed_page": 286
+    }
+  ],
+  "definition_excerpts": [
+    {
+      "full_name": "MD.Ch07.formalDensityEvolution",
+      "kind": "def",
+      "path": "Blueprint/Ch07.lean",
+      "line": 772,
+      "code_sha256": "de594c5a326563848505d13e8ae22f657501fe52cc47b21fc551a354f0d6d45e"
+    },
+    {
+      "full_name": "MD.Ch07.stationaryModifiedDensity",
+      "kind": "def",
+      "path": "Blueprint/Ch07.lean",
+      "line": 774,
+      "code_sha256": "f5be35f9c61615e4c64d2233d323d4511600121936dda39e2da3c53c1ed6c19c"
+    },
+    {
+      "full_name": "MolecularDynamics.Chapter05Review.E",
+      "kind": "abbrev",
+      "path": "MolecularDynamics/Chapter05/ReviewDefinitions.lean",
+      "line": 18,
+      "code_sha256": "b497c8ba7f01b62a3147d9ae65652772ff3f81e57aa19b116f1283fef7a3cc60"
+    }
+  ],
+  "validation": {
+    "project_constant_closure": "PASS",
+    "missing_project_definitions": [],
+    "full_page_render_equality_dpi": 72,
+    "website_submitted": false
+  },
+  "files": {
+    "PASTE.txt": {
+      "bytes": 4315,
+      "sha256": "318edde06637d77ec0565a9c52f5338c0971b52c979a6efb84025e5f3b3b6766"
+    },
+    "BATCH10c_PAGES.pdf": {
+      "bytes": 99065,
+      "sha256": "f461bee4db09c1af6861a6ae631bb91ac20f55582085e56fa530d3b5876c502e"
+    }
+  },
+  "total_task_bytes": 105352
+}

@@ -1,0 +1,94 @@
+{
+  "batch": "BATCH11",
+  "subtask": "BATCH11c",
+  "source_ids": [
+    "MD-7.7.2-CommutatorsAOBO"
+  ],
+  "input_sha256": {
+    "Blueprint/Ch07.lean": "781e32bf551c77c51cb520d83acc6f48b1ad26c8a775a3f03e81a31183741faf",
+    "blueprint/ch07/ch07_source.json": "bfa70cbee8d288824fddb5f675cbfa89071f1a4b5b24dab4fb372b848fdd97e6",
+    "BATCH11c_PAGES.pdf": "db59e696030e8d5dbd5a434e8de1bdf8f359e6930ae26c060f483340ebd70308"
+  },
+  "page_mapping": [
+    {
+      "attachment_page": 1,
+      "original_pdf_page": 310,
+      "printed_page": 289
+    }
+  ],
+  "definition_excerpts": [
+    {
+      "full_name": "MD.Ch07.Density1",
+      "kind": "abbrev",
+      "path": "Blueprint/Ch07.lean",
+      "line": 818,
+      "code_sha256": "f5a1e313efb2108d7bf2a46ede4a1e29e9d9977a0aa8e7760a31a0b61956ec54"
+    },
+    {
+      "full_name": "MD.Ch07.dq",
+      "kind": "def",
+      "path": "Blueprint/Ch07.lean",
+      "line": 819,
+      "code_sha256": "64e560195b9f1a3526cf0742346a36be3b5aa96fb25a28533856122c9fb801a7"
+    },
+    {
+      "full_name": "MD.Ch07.dp",
+      "kind": "def",
+      "path": "Blueprint/Ch07.lean",
+      "line": 820,
+      "code_sha256": "81e7aa274ae0a5969d26875d7d258acd2db1b10153220dea6ce712c9239be0d2"
+    },
+    {
+      "full_name": "MD.Ch07.opA",
+      "kind": "def",
+      "path": "Blueprint/Ch07.lean",
+      "line": 821,
+      "code_sha256": "471e19e9d488e6a1f1bd5529e1f9f2b54221189682414d1d7110bf4608c28d4e"
+    },
+    {
+      "full_name": "MD.Ch07.opB",
+      "kind": "def",
+      "path": "Blueprint/Ch07.lean",
+      "line": 822,
+      "code_sha256": "933efc2d9c9df9412058cfbd9b381378a87dc48c6331d7a81f1b39e1df8fe1db"
+    },
+    {
+      "full_name": "MD.Ch07.opO",
+      "kind": "def",
+      "path": "Blueprint/Ch07.lean",
+      "line": 823,
+      "code_sha256": "9c253a2b1cec8df7b64254f901420d4ea2fbbef59a479428813f25a53ce0e6af"
+    },
+    {
+      "full_name": "MD.Ch07.opComm",
+      "kind": "def",
+      "path": "Blueprint/Ch07.lean",
+      "line": 825,
+      "code_sha256": "38afeeec2a8eee3f826ec20cfd731e30bb7f05650516ef556190b0476a6f6c4e"
+    },
+    {
+      "full_name": "MD.Ch07.commutatorsAOBO",
+      "kind": "theorem",
+      "path": "Blueprint/Ch07.lean",
+      "line": 834,
+      "code_sha256": "a60ba4551a4cf037b5171d6463ff79c079badbd9f33256cd9ba814365d29282e"
+    }
+  ],
+  "validation": {
+    "project_constant_closure": "PASS",
+    "missing_project_definitions": [],
+    "full_page_render_equality_dpi": 72,
+    "website_submitted": false
+  },
+  "files": {
+    "PASTE.txt": {
+      "bytes": 5633,
+      "sha256": "3b22e1c5827f19e2085186a1cf991d96f9947a09039ab64c0f2c69110047c62e"
+    },
+    "BATCH11c_PAGES.pdf": {
+      "bytes": 77543,
+      "sha256": "db59e696030e8d5dbd5a434e8de1bdf8f359e6930ae26c060f483340ebd70308"
+    }
+  },
+  "total_task_bytes": 86059
+}

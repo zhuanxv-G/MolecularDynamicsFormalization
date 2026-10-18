@@ -1,0 +1,120 @@
+{
+  "batch": "BATCH11",
+  "subtask": "BATCH11d",
+  "source_ids": [
+    "MD-7.7.2-OBAModifiedOperator"
+  ],
+  "input_sha256": {
+    "Blueprint/Ch07.lean": "781e32bf551c77c51cb520d83acc6f48b1ad26c8a775a3f03e81a31183741faf",
+    "blueprint/ch07/ch07_source.json": "bfa70cbee8d288824fddb5f675cbfa89071f1a4b5b24dab4fb372b848fdd97e6",
+    "BATCH11d_PAGES.pdf": "2139960d1a9a985abe2891be8a117a9f1463b5546b11ce5b23cf9e44f7a4092d"
+  },
+  "page_mapping": [
+    {
+      "attachment_page": 1,
+      "original_pdf_page": 309,
+      "printed_page": 288
+    },
+    {
+      "attachment_page": 2,
+      "original_pdf_page": 310,
+      "printed_page": 289
+    }
+  ],
+  "definition_excerpts": [
+    {
+      "full_name": "MD.Ch07.Density1",
+      "kind": "abbrev",
+      "path": "Blueprint/Ch07.lean",
+      "line": 818,
+      "code_sha256": "f5a1e313efb2108d7bf2a46ede4a1e29e9d9977a0aa8e7760a31a0b61956ec54"
+    },
+    {
+      "full_name": "MD.Ch07.dq",
+      "kind": "def",
+      "path": "Blueprint/Ch07.lean",
+      "line": 819,
+      "code_sha256": "64e560195b9f1a3526cf0742346a36be3b5aa96fb25a28533856122c9fb801a7"
+    },
+    {
+      "full_name": "MD.Ch07.dp",
+      "kind": "def",
+      "path": "Blueprint/Ch07.lean",
+      "line": 820,
+      "code_sha256": "81e7aa274ae0a5969d26875d7d258acd2db1b10153220dea6ce712c9239be0d2"
+    },
+    {
+      "full_name": "MD.Ch07.opA",
+      "kind": "def",
+      "path": "Blueprint/Ch07.lean",
+      "line": 821,
+      "code_sha256": "471e19e9d488e6a1f1bd5529e1f9f2b54221189682414d1d7110bf4608c28d4e"
+    },
+    {
+      "full_name": "MD.Ch07.opB",
+      "kind": "def",
+      "path": "Blueprint/Ch07.lean",
+      "line": 822,
+      "code_sha256": "933efc2d9c9df9412058cfbd9b381378a87dc48c6331d7a81f1b39e1df8fe1db"
+    },
+    {
+      "full_name": "MD.Ch07.opO",
+      "kind": "def",
+      "path": "Blueprint/Ch07.lean",
+      "line": 823,
+      "code_sha256": "9c253a2b1cec8df7b64254f901420d4ea2fbbef59a479428813f25a53ce0e6af"
+    },
+    {
+      "full_name": "MD.Ch07.opComm",
+      "kind": "def",
+      "path": "Blueprint/Ch07.lean",
+      "line": 825,
+      "code_sha256": "38afeeec2a8eee3f826ec20cfd731e30bb7f05650516ef556190b0476a6f6c4e"
+    },
+    {
+      "full_name": "MD.Ch07.commutatorAB",
+      "kind": "theorem",
+      "path": "Blueprint/Ch07.lean",
+      "line": 828,
+      "code_sha256": "6aad0ca675e40cd423976e778d09a45464c3ff2bfcfb83d7dd3da0578d020b91"
+    },
+    {
+      "full_name": "MD.Ch07.commutatorsAOBO",
+      "kind": "theorem",
+      "path": "Blueprint/Ch07.lean",
+      "line": 834,
+      "code_sha256": "a60ba4551a4cf037b5171d6463ff79c079badbd9f33256cd9ba814365d29282e"
+    },
+    {
+      "full_name": "MD.Ch07.obaFirstCorrection",
+      "kind": "def",
+      "path": "Blueprint/Ch07.lean",
+      "line": 842,
+      "code_sha256": "0e678fd5a421a288763cdbb269fb6b7a53136f786e005996004fbca629d2d2e3"
+    },
+    {
+      "full_name": "MD.Ch07.obaFirstCorrection_commutators",
+      "kind": "theorem",
+      "path": "Blueprint/Ch07.lean",
+      "line": 845,
+      "code_sha256": "f1b648b6047fa6a30ea86d5757b7f1b9a21d6d9745a5ed6340c055e0cc0aca1a"
+    }
+  ],
+  "validation": {
+    "project_constant_closure": "PASS",
+    "missing_project_definitions": [],
+    "full_page_render_equality_dpi": 72,
+    "website_submitted": false
+  },
+  "files": {
+    "PASTE.txt": {
+      "bytes": 8076,
+      "sha256": "1d7df564d0db552448926c8e140a9994fff3ec77835eeade66ccf9a513f9eb34"
+    },
+    "BATCH11d_PAGES.pdf": {
+      "bytes": 85508,
+      "sha256": "2139960d1a9a985abe2891be8a117a9f1463b5546b11ce5b23cf9e44f7a4092d"
+    }
+  },
+  "total_task_bytes": 97291
+}

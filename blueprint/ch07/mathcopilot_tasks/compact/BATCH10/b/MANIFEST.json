@@ -1,0 +1,136 @@
+{
+  "batch": "BATCH10",
+  "subtask": "BATCH10b",
+  "source_ids": [
+    "MD-7.7.1-OperatorOrderReversal"
+  ],
+  "input_sha256": {
+    "Blueprint/Ch07.lean": "781e32bf551c77c51cb520d83acc6f48b1ad26c8a775a3f03e81a31183741faf",
+    "blueprint/ch07/ch07_source.json": "bfa70cbee8d288824fddb5f675cbfa89071f1a4b5b24dab4fb372b848fdd97e6",
+    "BATCH10b_PAGES.pdf": "8dbf5acba6542dda50a982b421401eeae7e4d7a1c662e2673a0846fe5cea63b4"
+  },
+  "page_mapping": [
+    {
+      "attachment_page": 1,
+      "original_pdf_page": 306,
+      "printed_page": 285
+    }
+  ],
+  "definition_excerpts": [
+    {
+      "full_name": "MD.Ch07.V",
+      "kind": "abbrev",
+      "path": "Blueprint/Ch07.lean",
+      "line": 172,
+      "code_sha256": "7ab0ad90462b274b03f5b929b5f09417c0b397b6cb908fa6e7bd56677a314027"
+    },
+    {
+      "full_name": "MD.Ch07.Phase",
+      "kind": "abbrev",
+      "path": "Blueprint/Ch07.lean",
+      "line": 173,
+      "code_sha256": "ef1520e3b22ac1c99a30a989deafe8d3da44a9f2a3e5b6c2cd3220218b88513e"
+    },
+    {
+      "full_name": "MD.Ch07.ouMomentum",
+      "kind": "def",
+      "path": "Blueprint/Ch07.lean",
+      "line": 198,
+      "code_sha256": "df5a3511ac6e0986b8293d21de91ddb40de94195595495bc71fa780b2962b8ae"
+    },
+    {
+      "full_name": "MD.Ch07.ouStep",
+      "kind": "def",
+      "path": "Blueprint/Ch07.lean",
+      "line": 211,
+      "code_sha256": "0f9aad04567b33cc7067304661e170a91deec512fcb772c226c1095acf25ffb5"
+    },
+    {
+      "full_name": "MD.Ch07.coordDerivative",
+      "kind": "def",
+      "path": "Blueprint/Ch07.lean",
+      "line": 221,
+      "code_sha256": "e782d789a13f5db6817e2c995f141805e81ac75720125b846f8ee14ba3833a4b"
+    },
+    {
+      "full_name": "MD.Ch07.gradient",
+      "kind": "def",
+      "path": "Blueprint/Ch07.lean",
+      "line": 250,
+      "code_sha256": "540c6af25c09d3a58da531bc32056ff1a1c070facc58d34c96b6653d781fba6f"
+    },
+    {
+      "full_name": "MD.Ch07.driftStep",
+      "kind": "def",
+      "path": "Blueprint/Ch07.lean",
+      "line": 279,
+      "code_sha256": "600d3de37df6b9ef23628e1495de886583ba0ded7bc74fa5eb3ce43ed25daa6c"
+    },
+    {
+      "full_name": "MD.Ch07.kickStep",
+      "kind": "def",
+      "path": "Blueprint/Ch07.lean",
+      "line": 282,
+      "code_sha256": "475506583d95af613a8e1c58ad474dbd3fc0c0cfc22ab985f0c251cb1567db37"
+    },
+    {
+      "full_name": "MD.Ch07.propagateA",
+      "kind": "def",
+      "path": "Blueprint/Ch07.lean",
+      "line": 756,
+      "code_sha256": "72a9f5e85fe2228aa84266c9a50cd38a5813cd0836e2e578a659695213ff84ed"
+    },
+    {
+      "full_name": "MD.Ch07.propagateB",
+      "kind": "def",
+      "path": "Blueprint/Ch07.lean",
+      "line": 757,
+      "code_sha256": "d61f773e1e539dede0044cddd539d9066553bf0daef66eefbb4dfc6c96c33ca4"
+    },
+    {
+      "full_name": "MD.Ch07.propagateO",
+      "kind": "def",
+      "path": "Blueprint/Ch07.lean",
+      "line": 758,
+      "code_sha256": "3effdfe57396cd9c81475f65465f70a42e16bf7e23e406dd71857ae6a7dc083e"
+    },
+    {
+      "full_name": "MD.Ch07.pullback_order",
+      "kind": "theorem",
+      "path": "Blueprint/Ch07.lean",
+      "line": 764,
+      "code_sha256": "19275da9837a9e751782db3b0e2d062da6e81da51b743f36cef94b5b2b71b949"
+    },
+    {
+      "full_name": "MD.Ch07.abaoBackward",
+      "kind": "def",
+      "path": "Blueprint/Ch07.lean",
+      "line": 766,
+      "code_sha256": "cd0832a390134aeddd84e70f6c0862ba03fe9150a59c51b89927d905756bf4df"
+    },
+    {
+      "full_name": "MolecularDynamics.Chapter05Review.E",
+      "kind": "abbrev",
+      "path": "MolecularDynamics/Chapter05/ReviewDefinitions.lean",
+      "line": 18,
+      "code_sha256": "b497c8ba7f01b62a3147d9ae65652772ff3f81e57aa19b116f1283fef7a3cc60"
+    }
+  ],
+  "validation": {
+    "project_constant_closure": "PASS",
+    "missing_project_definitions": [],
+    "full_page_render_equality_dpi": 72,
+    "website_submitted": false
+  },
+  "files": {
+    "PASTE.txt": {
+      "bytes": 8824,
+      "sha256": "d28537ad3d3163e34dbbbfd57a7f679728127bbd5613da9235338115b4d624f2"
+    },
+    "BATCH10b_PAGES.pdf": {
+      "bytes": 93056,
+      "sha256": "8dbf5acba6542dda50a982b421401eeae7e4d7a1c662e2673a0846fe5cea63b4"
+    }
+  },
+  "total_task_bytes": 106205
+}

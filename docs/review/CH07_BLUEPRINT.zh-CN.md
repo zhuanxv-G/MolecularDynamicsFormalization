@@ -1,6 +1,6 @@
 # 第7章 Lean Blueprint 本地审阅材料
 
-当前已整理52条；网站尚未审阅。正文范围为印刷261–326页（PDF282–347），末页仅取Exercises之前的正文。
+当前已整理68条；网站尚未审阅。正文范围为印刷261–326页（PDF282–347），末页仅取Exercises之前的正文。
 
 ## 1. MD-7.1-Bias · definition · 印刷p.263 / PDFp.284
 
@@ -2542,4 +2542,746 @@ def frozenPotential (U : V n → ℝ) (q : V n) (i : Fin n) (r : ℝ) : ℝ :=
 定义；单文件编译与逐声明公理核对通过。
 本条未登记待证缺项。
 位置：Blueprint/Ch07.lean；MD.Ch07.coordinateJField, MD.Ch07.frozenPotential。
+
+## 1. MD-7.7-ModifiedGenerator · (7.16) · 印刷p.284 / PDFp.305
+
+### 2. 原文陈述
+
+We begin by defining the generator $\widehat{\mathcal L}$ associated to the propagation of averages under the numerical method for an SDE. We think of this generator as a perturbation of the exact Langevin dynamics generator $\mathcal L_{LD}$, or
+\[\widehat{\mathcal L}=\mathcal L_{LD}+h\mathcal L_1+h^2\mathcal L_2+h^3\mathcal L_3+O(h^4).\tag{7.16}\]
+However, the operators involved are not equivalent to the operators that would arise from any stochastic differential equation (see [403]), so we must give up the direct analogy between the formal series and continuous SDE models (which is available in the deterministic setting).
+
+### 3. 原文证明
+
+原书未给独立完整证明。
+
+### 4. 完整当前Lean（原文与修正版独立列出）
+
+```lean
+def formalModifiedGenerator {R : Type*} [Ring R] [Algebra ℝ R]
+    (S : PowerSeries R) : PowerSeries R :=
+  PowerSeries.mk (fun k ↦ PowerSeries.coeff (k+1) (MolecularDynamics.textbookFormalOperatorLogarithm S))
+def formalGeneratorExpansion {R : Type*} [Ring R] [Algebra ℝ R]
+    (L : PowerSeries R) (L0 L1 L2 L3 : R) : Prop :=
+  PowerSeries.coeff 0 L = L0 ∧ PowerSeries.coeff 1 L = L1 ∧
+  PowerSeries.coeff 2 L = L2 ∧ PowerSeries.coeff 3 L = L3
+```
+
+### 5. 对照表
+
+| 原文成分 | Lean对应 | 说明 |
+|---|---|---|
+| 本条引用的对象与公式 | MD.Ch07.formalModifiedGenerator, MD.Ch07.formalGeneratorExpansion | 本条逐字引用的全部数学对象与公式；未纳入的上下文另列。 |
+
+[EXTRA] 只取形式幂级数系数；O(h⁴)在此意为0–3阶系数相等，不宣称无界算符级数收敛，也不声称是另一SDE的生成元。
+记号与上下文：见所列原文与Lean量化变量。
+
+### 6. 审计结论
+
+本地：已对照目视原页核对对象、量词、技术资格和所列覆盖范围；网站尚未审阅。
+疑点：本条暂未发现需单列的原书疑误。
+网站：尚未送审。
+
+### 7. 状态与证明位置
+
+定义；单文件编译与逐声明公理核对通过。
+本条未登记待证缺项。
+位置：Blueprint/Ch07.lean；MD.Ch07.formalModifiedGenerator, MD.Ch07.formalGeneratorExpansion。
+
+## 1. MD-7.7-InvariantDensityExpansion · (7.17) · 印刷p.284 / PDFp.305
+
+### 2. 原文陈述
+
+We write this invariant distribution as a perturbation of the (target) canonical distribution
+\[\widehat\rho=\rho_\beta[1+hf_1+h^2f_2+h^3f_3+O(h^4)],\tag{7.17}\]
+with each correction function $f_k(q,p)$ satisfying
+\[\int_{\mathcal D} f_k(q,p)\rho_\beta(q,p)d\omega=0,\]
+ensuring a useful equivalence in the partition function
+\[\int_{\mathcal D}\widehat\rho(q,p)d\omega=\int_{\mathcal D}\rho_\beta(q,p)d\omega.\]
+Our computed average is therefore $\langle\phi\rangle_h\stackrel{\rm def}=\int_{\mathcal D}\phi(q,p)\widehat\rho(q,p)d\omega$.
+
+### 3. 原文证明
+
+原书未给独立完整证明。
+
+### 4. 完整当前Lean（原文与修正版独立列出）
+
+```lean
+def densityExpansion (ρ : Ω → ℝ) (f : ℕ → Ω → ℝ) : ℕ → Ω → ℝ
+  | 0 => ρ
+  | k+1 => fun x ↦ ρ x*f (k+1) x
+def centeredCorrections (μ : Measure Ω) (f : ℕ → Ω → ℝ) : Prop :=
+  IsProbabilityMeasure μ ∧ ∀ k, 0 < k → Integrable (f k) μ ∧ (∫ x, f k x ∂μ) = 0
+def computedAverage (ν : Measure Ω) (φ ρhat : Ω → ℝ) : ℝ := ∫ x, φ x*ρhat x ∂ν
+theorem densityExpansion_zeroMass (ν : Measure Ω) (ρ : Ω → ℝ) (f : ℕ → Ω → ℝ)
+    (hρ : Integrable ρ ν)
+    (hf : ∀ k, 0 < k → Integrable (fun x ↦ ρ x*f k x) ν ∧ (∫ x, ρ x*f k x ∂ν) = 0) :
+    ∀ k, (∫ x, densityExpansion ρ f k x ∂ν) = if k = 0 then ∫ x, ρ x ∂ν else 0 := by
+  intro k
+  cases k with
+  | zero => simp [densityExpansion]
+  | succ k => simpa [densityExpansion] using (hf (k+1) (Nat.zero_lt_succ k)).2
+```
+
+### 5. 对照表
+
+| 原文成分 | Lean对应 | 说明 |
+|---|---|---|
+| 本条引用的对象与公式 | MD.Ch07.densityExpansion, MD.Ch07.centeredCorrections, MD.Ch07.computedAverage, MD.Ch07.densityExpansion_zeroMass | 本条逐字引用的全部数学对象与公式；未纳入的上下文另列。 |
+
+[EXTRA] 系数零质量不等于任意h的截断密度非负；概率密度仍须非负、可积且归一。余项质量也为零或完整级数可交换积分时才推出精确总质量一致。；此处证明所有形式系数的质量约束；未把有限截断表达式假称实际不变概率。
+记号与上下文：见所列原文与Lean量化变量。
+
+### 6. 审计结论
+
+本地：已对照目视原页核对对象、量词、技术资格和所列覆盖范围；网站尚未审阅。
+疑点：本条暂未发现需单列的原书疑误。
+网站：尚未送审。
+
+### 7. 状态与证明位置
+
+定义；单文件编译与逐声明公理核对通过。
+本条未登记待证缺项。
+位置：Blueprint/Ch07.lean；MD.Ch07.densityExpansion, MD.Ch07.centeredCorrections, MD.Ch07.computedAverage, MD.Ch07.densityExpansion_zeroMass。
+
+## 1. MD-7.7.1-ExactABOPropagators · definition · 印刷p.285 / PDFp.306
+
+### 2. 原文陈述
+
+\[(e^{t\mathcal L_A}\phi)(q,p)=\phi(q+tM^{-1}p,p),\qquad
+(e^{t\mathcal L_B}\phi)(q,p)=\phi(q,p-t\nabla U(q)),\]
+\[(e^{t\mathcal L_O}\phi)(q,p)=\int_{\mathcal P}\phi(q,e^{-\gamma t}p+\zeta M^{1/2}x)\frac{e^{-|x|^2/2}}{(2\pi)^{N_c/2}}dx,\]
+where $\zeta=[k_BT(1-e^{-2\gamma t})]^{1/2}$.
+
+### 3. 原文证明
+
+原书未给独立完整证明。
+
+### 4. 完整当前Lean（原文与修正版独立列出）
+
+```lean
+def propagateA (m : V n) (t : ℝ) (φ : Phase n → ℝ) : Phase n → ℝ := φ ∘ driftStep m t
+def propagateB (U : V n → ℝ) (t : ℝ) (φ : Phase n → ℝ) : Phase n → ℝ := φ ∘ kickStep U t
+def propagateO (m : V n) (γ θ t : ℝ) (φ : Phase n → ℝ) (x : Phase n) : ℝ :=
+  ∫ R, φ (ouStep m γ θ t R x) ∂Measure.pi (fun _ : Fin n ↦ gaussianReal 0 1)
+```
+
+### 5. 对照表
+
+| 原文成分 | Lean对应 | 说明 |
+|---|---|---|
+| 本条引用的对象与公式 | MD.Ch07.propagateA, MD.Ch07.propagateB, MD.Ch07.propagateO | 本条逐字引用的全部数学对象与公式；未纳入的上下文另列。 |
+
+[EXTRA] O用实际独立标准正态乘积测度；θ>0、γ≥0、t≥0、正质量时对应OU噪声。期望用于可积φ，未把不可积函数的默认积分当物理期望。；半群律及实际SDE生成元识别需OU转移律与Markov理论，本条只定义固定时刻传播子。
+记号与上下文：见所列原文与Lean量化变量。
+
+### 6. 审计结论
+
+本地：已对照目视原页核对对象、量词、技术资格和所列覆盖范围；网站尚未审阅。
+疑点：本条暂未发现需单列的原书疑误。
+网站：尚未送审。
+
+### 7. 状态与证明位置
+
+定义；单文件编译与逐声明公理核对通过。
+本条未登记待证缺项。
+位置：Blueprint/Ch07.lean；MD.Ch07.propagateA, MD.Ch07.propagateB, MD.Ch07.propagateO。
+
+## 1. MD-7.7.1-OperatorOrderReversal · unnumbered_claim · 印刷p.285 / PDFp.306
+
+### 2. 原文陈述
+
+For example, for the method labelled by the string $[ABAO]$, we have
+\[\exp(h\widehat{\mathcal L}_{[ABAO]})=\exp((h/2)\mathcal L_A)\exp(h\mathcal L_B)\exp((h/2)\mathcal L_A)\exp(h\mathcal L_O),\]
+where importantly note the apparent reversal of the sequence of products, known as the vertauschungssatz. We will find it more convenient to work with the adjoint of the perturbed generator, denoted $\widehat{\mathcal L}^\dagger$, which we may compute as
+\[\exp(h\widehat{\mathcal L}_{[ABAO]}^\dagger)=\exp(h\mathcal L_O^\dagger)\exp((h/2)\mathcal L_A^\dagger)\exp(h\mathcal L_B^\dagger)\exp((h/2)\mathcal L_A^\dagger).\]
+
+### 3. 原文证明
+
+原书未给独立完整证明。
+
+### 4. 完整当前Lean（原文与修正版独立列出）
+
+```lean
+theorem pullback_order {E F : Type*} (A B : E → E) (φ : E → F) :
+    φ ∘ (B ∘ A) = (φ ∘ B) ∘ A := rfl
+def abaoBackward (m : V n) (U : V n → ℝ) (γ θ h : ℝ) (φ : Phase n → ℝ) :=
+  propagateA m (h/2) (propagateB U h (propagateA m (h/2) (propagateO m γ θ h φ)))
+```
+
+### 5. 对照表
+
+| 原文成分 | Lean对应 | 说明 |
+|---|---|---|
+| 本条引用的对象与公式 | MD.Ch07.pullback_order, MD.Ch07.abaoBackward | 确定性拉回顺序及ABAO后向传播定义；无界算符指数/伴随识别尚缺。 |
+
+[EXTRA] 覆盖反向拉回组合恒等式和ABAO的全部四段期望传播式；其与前面随机abao映射期望相等仍需推前积分桥。；伴随前向传播子的四段顺序记录在原文；独立定义实际密度伴随的函数空间和边界条件列为覆盖缺口。
+记号与上下文：见所列原文与Lean量化变量。
+
+### 6. 审计结论
+
+本地：已对照目视原页核对对象、量词、技术资格和所列覆盖范围；网站尚未审阅。
+疑点：本条暂未发现需单列的原书疑误。
+网站：尚未送审。
+
+### 7. 状态与证明位置
+
+已证；单文件编译与逐声明公理核对通过。
+本条未登记待证缺项。
+位置：Blueprint/Ch07.lean；MD.Ch07.pullback_order, MD.Ch07.abaoBackward。
+
+## 1. MD-7.7.1-StationaryModifiedPDE · definition · 印刷p.285–286 / PDFp.306–307
+
+### 2. 原文陈述
+
+Under the propagation of the numerical scheme (or the discretized dynamics), the Fokker-Planck equation gives us that the evolution of a density of points $\rho$ is given by
+\[\frac\partial{\partial t}\rho(z,t)=\widehat{\mathcal L}^\dagger\rho,\]
+with the important case of its invariant distribution satisfying the partial differential equation
+\[\widehat{\mathcal L}^\dagger\widehat\rho=0.\]
+
+### 3. 原文证明
+
+原书未给独立完整证明。
+
+### 4. 完整当前Lean（原文与修正版独立列出）
+
+```lean
+def formalDensityEvolution {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
+    (L : E →L[ℝ] E) (ρ : ℝ → E) : Prop := ∀ t, HasDerivAt ρ (L (ρ t)) t
+def stationaryModifiedDensity {E : Type*} [AddCommGroup E] [Module ℝ E]
+    (L : Module.End ℝ E) (ρ : E) : Prop := L ρ = 0
+```
+
+### 5. 对照表
+
+| 原文成分 | Lean对应 | 说明 |
+|---|---|---|
+| 本条引用的对象与公式 | MD.Ch07.formalDensityEvolution, MD.Ch07.stationaryModifiedDensity | 本条逐字引用的全部数学对象与公式；未纳入的上下文另列。 |
+
+[EXTRA] 真实离散转移一般不嵌入连续Markov半群，修改方程仅为形式分析；不宣称任意离散SDE方法有上述真实Fokker–Planck演化。；Markov半群资格、密度正性归一、无界生成元定义域及嵌入性尚缺；此处仅明确定义方程，不证明等价。
+记号与上下文：见所列原文与Lean量化变量。
+
+### 6. 审计结论
+
+本地：已对照目视原页核对对象、量词、技术资格和所列覆盖范围；网站尚未审阅。
+疑点：本条暂未发现需单列的原书疑误。
+网站：尚未送审。
+
+### 7. 状态与证明位置
+
+定义；单文件编译与逐声明公理核对通过。
+本条未登记待证缺项。
+位置：Blueprint/Ch07.lean；MD.Ch07.formalDensityEvolution, MD.Ch07.stationaryModifiedDensity。
+
+## 1. MD-7.7.1-TwoOperatorBCH · unnumbered_claim · 印刷p.286 / PDFp.307
+
+### 2. 原文陈述
+
+Recall that for linear operators $X$ and $Y$, we can write the composition of their exponentials as
+\[\exp(hX)\exp(hY)=\exp(hZ),\]
+where we have the expansion
+\[Z=X+Y+\frac h2[X,Y]+\frac{h^2}{12}([X,[X,Y]]+[Y,[Y,X]])+O(h^3).\]
+The notation $[X,Y]\stackrel{\rm def}=XY-YX$ represents the commutator of the operators $X$ and $Y$.
+
+### 3. 原文证明
+
+原书未给独立完整证明。
+
+### 4. 完整当前Lean（原文与修正版独立列出）
+
+```lean
+def comm {R : Type*} [Ring R] (X Y : R) : R := X*Y-Y*X
+def twoStage {R : Type*} [Ring R] [Algebra ℝ R] (X Y : R) : PowerSeries R :=
+  MolecularDynamics.textbookFormalOperatorExponential X * MolecularDynamics.textbookFormalOperatorExponential Y
+theorem twoOperatorBCH {R : Type*} [Ring R] [Algebra ℝ R] (X Y : R) :
+    PowerSeries.coeff 0 (formalModifiedGenerator (twoStage X Y)) = X+Y ∧
+    PowerSeries.coeff 1 (formalModifiedGenerator (twoStage X Y)) = (1/2 : ℝ) • comm X Y ∧
+    PowerSeries.coeff 2 (formalModifiedGenerator (twoStage X Y)) =
+      (1/12 : ℝ) • (comm X (comm X Y)+comm Y (comm Y X)) := by
+  sorry
+```
+
+### 5. 对照表
+
+| 原文成分 | Lean对应 | 说明 |
+|---|---|---|
+| 本条引用的对象与公式 | MD.Ch07.comm, MD.Ch07.twoStage, MD.Ch07.twoOperatorBCH | 本条逐字引用的全部数学对象与公式；未纳入的上下文另列。 |
+
+[EXTRA] 任意实代数中的非交换形式幂级数；不要求无界算符指数收敛。本条完整记录所印0–2阶。
+记号与上下文：见所列原文与Lean量化变量。
+
+### 6. 审计结论
+
+本地：已对照目视原页核对对象、量词、技术资格和所列覆盖范围；网站尚未审阅。
+疑点：本条暂未发现需单列的原书疑误。
+网站：尚未送审。
+
+### 7. 状态与证明位置
+
+未证陈述；单文件编译与逐声明公理核对通过。
+未证原因：已有log与exp低阶系数，但非交换乘积展开到三阶的桥接仍未证明；不建立一般BCH理论。
+位置：Blueprint/Ch07.lean；MD.Ch07.comm, MD.Ch07.twoStage, MD.Ch07.twoOperatorBCH。
+
+## 1. MD-7.7.1-TaylorRemainder · unnumbered_claim · 印刷p.286–287 / PDFp.307–308
+
+### 2. 原文陈述
+
+We can make use of Taylor’s theorem to write the identity
+\[P_h=P_0+h\left.\frac{dP_t}{dt}\right|_{t=0}+\cdots+\frac{h^n}{n!}\left.\frac{d^nP_t}{dt^n}\right|_{t=0}
++\frac{h^{n+1}}{n!}\int_0^1(1-\lambda)^n\left.\frac{d^{n+1}P_t}{dt^{n+1}}\right|_{t=\lambda h}d\lambda,\]
+for some finite truncation index $n\in\{1,2,3,\ldots\}$. Hence for observables of sufficient smoothness with compact support, this remainder term will remain bounded (see [223]).
+
+### 3. 原文证明
+
+原书未给独立完整证明。
+
+### 4. 完整当前Lean（原文与修正版独立列出）
+
+```lean
+theorem taylorRemainder (F : ℝ → ℝ) (k : ℕ) (hF : ContDiff ℝ (k+1) F) (h : ℝ) :
+    F h = (∑ j ∈ Finset.range (k+1), h^j/(Nat.factorial j : ℝ)*iteratedDeriv j F 0) +
+      h^(k+1)/(Nat.factorial k : ℝ)*∫ t in (0 : ℝ)..1, (1-t)^k*iteratedDeriv (k+1) F (t*h) := by
+  sorry
+theorem taylorRemainder_bound (F : ℝ → ℝ) (k : ℕ) (hF : ContDiff ℝ (k+1) F) :
+    Asymptotics.IsBigO (𝓝 (0 : ℝ))
+      (fun h ↦ F h-∑ j ∈ Finset.range (k+1), h^j/(Nat.factorial j : ℝ)*iteratedDeriv j F 0)
+      (fun h ↦ h^(k+1)) := by
+  sorry
+```
+
+### 5. 对照表
+
+| 原文成分 | Lean对应 | 说明 |
+|---|---|---|
+| 本条引用的对象与公式 | MD.Ch07.taylorRemainder, MD.Ch07.taylorRemainder_bound | 本条逐字引用的全部数学对象与公式；未纳入的上下文另列。 |
+
+[EXTRA] 只覆盖作用于单个可观测量和点后的标量C^(n+1) Taylor恒等式及局部余项界；把ABO无界算符组合在紧支撑光滑测试函数上归约到这些假设仍是覆盖缺口。
+记号与上下文：见所列原文与Lean量化变量。
+
+### 6. 审计结论
+
+本地：已对照目视原页核对对象、量词、技术资格和所列覆盖范围；网站尚未审阅。
+疑点：本条暂未发现需单列的原书疑误。
+网站：尚未送审。
+
+### 7. 状态与证明位置
+
+未证陈述；单文件编译与逐声明公理核对通过。
+未证原因：需要Mathlib实函数Taylor积分余项桥；不建立通用弱误差展开。
+位置：Blueprint/Ch07.lean；MD.Ch07.taylorRemainder, MD.Ch07.taylorRemainder_bound。
+
+## 1. MD-7.7.2-ThreeOperatorBCH · (7.18) · 印刷p.287 / PDFp.308
+
+### 2. 原文陈述
+
+\[\exp(hS)=\exp(hZ)\exp(hY)\exp(hX).\tag{7.18}\]
+\[S=X+Y+Z+\frac h2([Z,Y]+[Z,X]+[Y,X])+\frac{h^2}{4}[Z,Y,X]
++\frac{h^2}{12}([Y,Y,X]+[X,X,Y]+[Z,Z,Y]+[Z,Z,X]+[Y+X,Y+X,Z])+\cdots\]
+where the notation $[A,B,C]$ is notation for $[A,[B,C]]$.
+
+### 3. 原文证明
+
+Apply the two-operator BCH formula first to exp(hY)exp(hX), and then to exp(hZ)exp(h(Y+X+...)); combine equal powers of h.
+
+### 4. 完整当前Lean（原文与修正版独立列出）
+
+```lean
+def threeStage {R : Type*} [Ring R] [Algebra ℝ R] (X Y Z : R) : PowerSeries R :=
+  MolecularDynamics.textbookFormalOperatorExponential Z *
+    MolecularDynamics.textbookFormalOperatorExponential Y * MolecularDynamics.textbookFormalOperatorExponential X
+theorem threeOperatorBCH {R : Type*} [Ring R] [Algebra ℝ R] (X Y Z : R) :
+    PowerSeries.coeff 0 (formalModifiedGenerator (threeStage X Y Z)) = X+Y+Z ∧
+    PowerSeries.coeff 1 (formalModifiedGenerator (threeStage X Y Z)) =
+      (1/2 : ℝ) • (comm Z Y+comm Z X+comm Y X) ∧
+    PowerSeries.coeff 2 (formalModifiedGenerator (threeStage X Y Z)) =
+      (1/4 : ℝ) • comm Z (comm Y X)+(1/12 : ℝ) •
+        (comm Y (comm Y X)+comm X (comm X Y)+comm Z (comm Z Y)+
+          comm Z (comm Z X)+comm (Y+X) (comm (Y+X) Z)) := by
+  sorry
+```
+
+### 5. 对照表
+
+| 原文成分 | Lean对应 | 说明 |
+|---|---|---|
+| 本条引用的对象与公式 | MD.Ch07.threeStage, MD.Ch07.threeOperatorBCH | 本条逐字引用的全部数学对象与公式；未纳入的上下文另列。 |
+
+[EXTRA] 完整记录最终0–2阶系数；中间未合并式作为原文推导说明，不另假装是完整精确算符相等。
+记号与上下文：见所列原文与Lean量化变量。
+
+### 6. 审计结论
+
+本地：已对照目视原页核对对象、量词、技术资格和所列覆盖范围；网站尚未审阅。
+疑点：本条暂未发现需单列的原书疑误。
+网站：尚未送审。
+
+### 7. 状态与证明位置
+
+未证陈述；单文件编译与逐声明公理核对通过。
+未证原因：需三重形式指数乘积的低阶log系数展开；不建设无界算符BCH收敛理论。
+位置：Blueprint/Ch07.lean；MD.Ch07.threeStage, MD.Ch07.threeOperatorBCH。
+
+## 1. MD-7.7.2-ScalarForwardOperators · definition · 印刷p.288 / PDFp.309
+
+### 2. 原文陈述
+
+In this one dimensional example, we substitute
+\[Z=\mathcal L_A^\dagger=-p\frac\partial{\partial q},\quad Y=\mathcal L_B^\dagger=U'(q)\frac\partial{\partial p},\quad
+X=\mathcal L_O^\dagger=\gamma\left({\rm Id}+p\frac\partial{\partial p}\right)+\frac{\sigma^2}{2}\frac{\partial^2}{\partial p^2},\]
+where $\sigma=\sqrt{2\gamma k_BT}$.
+
+### 3. 原文证明
+
+原书未给独立完整证明。
+
+### 4. 完整当前Lean（原文与修正版独立列出）
+
+```lean
+abbrev Density1 := (ℝ × ℝ) → ℝ
+def dq (f : Density1) (x : ℝ × ℝ) : ℝ := deriv (fun q ↦ f (q,x.2)) x.1
+def dp (f : Density1) (x : ℝ × ℝ) : ℝ := deriv (fun p ↦ f (x.1,p)) x.2
+def opA (f : Density1) (x : ℝ × ℝ) : ℝ := -x.2*dq f x
+def opB (U : ℝ → ℝ) (f : Density1) (x : ℝ × ℝ) : ℝ := deriv U x.1*dp f x
+def opO (γ θ : ℝ) (f : Density1) (x : ℝ × ℝ) : ℝ := γ*(f x+x.2*dp f x)+γ*θ*dp (dp f) x
+def opLD (U : ℝ → ℝ) (γ θ : ℝ) (f : Density1) : Density1 := opA f+opB U f+opO γ θ f
+def opComm (A B : Density1 → Density1) (f : Density1) : Density1 := A (B f)-B (A f)
+```
+
+### 5. 对照表
+
+| 原文成分 | Lean对应 | 说明 |
+|---|---|---|
+| 本条引用的对象与公式 | MD.Ch07.Density1, MD.Ch07.dq, MD.Ch07.dp, MD.Ch07.opA, MD.Ch07.opB, MD.Ch07.opO, MD.Ch07.opLD, MD.Ch07.opComm | 本条逐字引用的全部数学对象与公式；未纳入的上下文另列。 |
+
+[EXTRA] 所有偏导都是实际deriv，单位质量、θ=k_BT；用于光滑密度与γ≥0,θ>0。这里不把未规定定义域的微分表达式直接称闭算符。
+记号与上下文：见所列原文与Lean量化变量。
+
+### 6. 审计结论
+
+本地：已对照目视原页核对对象、量词、技术资格和所列覆盖范围；网站尚未审阅。
+疑点：本条暂未发现需单列的原书疑误。
+网站：尚未送审。
+
+### 7. 状态与证明位置
+
+定义；单文件编译与逐声明公理核对通过。
+本条未登记待证缺项。
+位置：Blueprint/Ch07.lean；MD.Ch07.Density1, MD.Ch07.dq, MD.Ch07.dp, MD.Ch07.opA, MD.Ch07.opB, MD.Ch07.opO, MD.Ch07.opLD, MD.Ch07.opComm。
+
+## 1. MD-7.7.2-CommutatorAB · unnumbered_claim · 印刷p.288 / PDFp.309
+
+### 2. 原文陈述
+
+\[[\mathcal L_A^\dagger,\mathcal L_B^\dagger]\rho=-p\frac\partial{\partial q}\left(U'(q)\frac{\partial\rho}{\partial p}\right)-U'(q)\frac\partial{\partial p}\left(-p\frac{\partial\rho}{\partial q}\right)
+=-pU''(q)\rho_p-pU'(q)\rho_{pq}+U'(q)\rho_q+U'(q)p\rho_{qp}.\]
+As this is the commutator of two 1st order differential operators, the mixed partial term vanishes, leaving
+\[[\mathcal L_A^\dagger,\mathcal L_B^\dagger]\rho=-pU''(q)\rho_p+U'(q)\rho_q.\]
+
+### 3. 原文证明
+
+Expand both product derivatives and cancel the mixed partials using equality of mixed partials.
+
+### 4. 完整当前Lean（原文与修正版独立列出）
+
+```lean
+theorem commutatorAB (U : ℝ → ℝ) (ρ : Density1)
+    (hU : ContDiff ℝ 2 U) (hρ : ContDiff ℝ 2 ρ) : ∀ x,
+    opComm opA (opB U) ρ x = -x.2*deriv (deriv U) x.1*dp ρ x+deriv U x.1*dq ρ x := by
+  sorry
+```
+
+### 5. 对照表
+
+| 原文成分 | Lean对应 | 说明 |
+|---|---|---|
+| 本条引用的对象与公式 | MD.Ch07.commutatorAB | 本条逐字引用的全部数学对象与公式；未纳入的上下文另列。 |
+
+[EXTRA] 本条没有另加数学前提。
+记号与上下文：见所列原文与Lean量化变量。
+
+### 6. 审计结论
+
+本地：已对照目视原页核对对象、量词、技术资格和所列覆盖范围；网站尚未审阅。
+疑点：本条暂未发现需单列的原书疑误。
+网站：尚未送审。
+
+### 7. 状态与证明位置
+
+未证陈述；单文件编译与逐声明公理核对通过。
+未证原因：需实二变量偏导乘积与混合偏导交换的短桥；不重建一般微分算符理论。
+位置：Blueprint/Ch07.lean；MD.Ch07.commutatorAB。
+
+## 1. MD-7.7.2-CommutatorsAOBO · unnumbered_claim · 印刷p.289 / PDFp.310
+
+### 2. 原文陈述
+
+Similar computations give
+\[[\mathcal L_A^\dagger,\mathcal L_O^\dagger]\rho=\gamma p\rho_q+\sigma^2\rho_{qp},\qquad
+[\mathcal L_B^\dagger,\mathcal L_O^\dagger]\rho=\gamma U'(q)\rho_p.\]
+
+### 3. 原文证明
+
+原书未给独立完整证明。
+
+### 4. 完整当前Lean（原文与修正版独立列出）
+
+```lean
+theorem commutatorsAOBO (U : ℝ → ℝ) (ρ : Density1) (γ θ : ℝ)
+    (hU : ContDiff ℝ 3 U) (hρ : ContDiff ℝ 3 ρ) : ∀ x,
+    opComm opA (opO γ θ) ρ x = γ*x.2*dq ρ x+2*γ*θ*dq (dp ρ) x ∧
+    opComm (opB U) (opO γ θ) ρ x = γ*deriv U x.1*dp ρ x := by
+  sorry
+```
+
+### 5. 对照表
+
+| 原文成分 | Lean对应 | 说明 |
+|---|---|---|
+| 本条引用的对象与公式 | MD.Ch07.commutatorsAOBO | 本条逐字引用的全部数学对象与公式；未纳入的上下文另列。 |
+
+[EXTRA] 本条没有另加数学前提。
+记号与上下文：见所列原文与Lean量化变量。
+
+### 6. 审计结论
+
+本地：已对照目视原页核对对象、量词、技术资格和所列覆盖范围；网站尚未审阅。
+疑点：本条暂未发现需单列的原书疑误。
+网站：尚未送审。
+
+### 7. 状态与证明位置
+
+未证陈述；单文件编译与逐声明公理核对通过。
+未证原因：需三阶偏导乘积展开与交换桥接；最多短路线，不建大型算符理论。
+位置：Blueprint/Ch07.lean；MD.Ch07.commutatorsAOBO。
+
+## 1. MD-7.7.2-OBAModifiedOperator · unnumbered_claim · 印刷p.288–289 / PDFp.309–310
+
+### 2. 原文陈述
+
+\[\exp(h\widehat{\mathcal L}_{[OBA]}^\dagger)=\exp(h\mathcal L_A^\dagger)\exp(h\mathcal L_B^\dagger)\exp(h\mathcal L_O^\dagger).\]
+\[\widehat{\mathcal L}_{[OBA]}^\dagger\rho=\mathcal L_{LD}^\dagger\rho+\frac h2[-pU''(q)\rho_p+U'(q)\rho_q+\gamma p\rho_q+\sigma^2\rho_{qp}+\gamma U'(q)\rho_p]+O(h^2).\]
+
+### 3. 原文证明
+
+原书未给独立完整证明。
+
+### 4. 完整当前Lean（原文与修正版独立列出）
+
+```lean
+def obaFirstCorrection (U : ℝ → ℝ) (γ θ : ℝ) (ρ : Density1) (x : ℝ × ℝ) : ℝ :=
+  (1/2)*(-x.2*deriv (deriv U) x.1*dp ρ x+deriv U x.1*dq ρ x+
+    γ*x.2*dq ρ x+2*γ*θ*dq (dp ρ) x+γ*deriv U x.1*dp ρ x)
+theorem obaFirstCorrection_commutators (U : ℝ → ℝ) (γ θ : ℝ) (ρ : Density1)
+    (hU : ContDiff ℝ 3 U) (hρ : ContDiff ℝ 3 ρ) : ∀ x,
+    obaFirstCorrection U γ θ ρ x = (1/2)*(opComm opA (opB U) ρ x+
+      opComm opA (opO γ θ) ρ x+opComm (opB U) (opO γ θ) ρ x) := by
+  intro x
+  rw [commutatorAB U ρ (hU.of_le (by norm_num)) (hρ.of_le (by norm_num)),
+    (commutatorsAOBO U ρ γ θ hU hρ x).1, (commutatorsAOBO U ρ γ θ hU hρ x).2]
+  dsimp [obaFirstCorrection]
+  ring
+```
+
+### 5. 对照表
+
+| 原文成分 | Lean对应 | 说明 |
+|---|---|---|
+| 本条引用的对象与公式 | MD.Ch07.obaFirstCorrection, MD.Ch07.obaFirstCorrection_commutators | 本条逐字引用的全部数学对象与公式；未纳入的上下文另列。 |
+
+[EXTRA] 只证明三个真实交换子表达式与所印一阶修正一致；整体离散传播子的余项界需Taylor/弱展开桥，不声称完成。
+记号与上下文：见所列原文与Lean量化变量。
+
+### 6. 审计结论
+
+本地：已对照目视原页核对对象、量词、技术资格和所列覆盖范围；网站尚未审阅。
+疑点：本条暂未发现需单列的原书疑误。
+网站：尚未送审。
+
+### 7. 状态与证明位置
+
+未证陈述；单文件编译与逐声明公理核对通过。
+本条未登记待证缺项。
+位置：Blueprint/Ch07.lean；MD.Ch07.obaFirstCorrection, MD.Ch07.obaFirstCorrection_commutators。
+
+## 1. MD-7.7.2-SpectralQualification · definition · 印刷p.289 / PDFp.310
+
+### 2. 原文陈述
+
+The assumption of validity becomes more credible as we find that the operator $\mathcal L_{LD}^\dagger$ has a compact resolvent and therefore a discrete spectrum, i.e. simple eigenvalues, as discussed in the previous chapter. It will have one zero eigenvalue corresponding to the invariant density $\rho_\beta$ and all the remaining eigenvalues lie in the negative half plane.
+
+### 3. 原文证明
+
+原书未给独立完整证明。
+
+### 4. 完整当前Lean（原文与修正版独立列出）
+
+```lean
+def simpleEigenvalue {E : Type*} [AddCommGroup E] [Module ℂ E]
+    (L : Module.End ℂ E) (eigen : ℂ) : Prop := Module.finrank ℂ (Module.End.eigenspace L eigen) = 1
+def printedSpectralConclusion {E : Type*} [AddCommGroup E] [Module ℂ E]
+    (L : Module.End ℂ E) (ρ : E) : Prop :=
+  ρ ≠ 0 ∧ L ρ = 0 ∧ ∀ eigen : ℂ, (∃ v : E, v ≠ 0 ∧ L v = eigen • v) →
+    simpleEigenvalue L eigen ∧ (eigen = 0 ∨ eigen.re < 0)
+```
+
+### 5. 对照表
+
+| 原文成分 | Lean对应 | 说明 |
+|---|---|---|
+| 本条引用的对象与公式 | MD.Ch07.simpleEigenvalue, MD.Ch07.printedSpectralConclusion | 原文谱断言已登记，Lean定义其点谱目标；尚缺无界算符对象和完整限定定理。 |
+
+[EXTRA] 只记录原文谱结论的精确目标命题，不宣称为定理；一般闭无界Langevin生成元、定义域及紧预解式资格未覆盖。
+记号与上下文：见所列原文与Lean量化变量。
+
+### 6. 审计结论
+
+本地：已对照目视原页核对对象、量词、技术资格和所列覆盖范围；网站尚未审阅。
+疑点：已目视核对PDF310：原文将discrete spectrum释为simple eigenvalues，这并非一般蕴含。紧预解式至多给离散谱及有限重数，不能直接给单重谱；Langevin谱还需前章所列势函数/空间条件。
+网站：尚未送审。
+
+### 7. 状态与证明位置
+
+定义；单文件编译与逐声明公理核对通过。
+本条未登记待证缺项。
+位置：Blueprint/Ch07.lean；MD.Ch07.simpleEigenvalue, MD.Ch07.printedSpectralConclusion。
+
+## 1. MD-7.7.3-PerturbationCoefficientEquation · (7.19) · 印刷p.289–290 / PDFp.310–311
+
+### 2. 原文陈述
+
+Inserting this ansatz into the stationary Fokker-Planck equation $\widehat{\mathcal L}^\dagger\widehat\rho=0$, we obtain
+\[(\mathcal L_{LD}^\dagger+h\mathcal L_1^\dagger+h^2\mathcal L_2^\dagger+O(h^3))(\rho_\beta[1+hf_1+h^2f_2+O(h^3)])=0.\]
+Combining like powers, we have at zero’th order, the equation $\mathcal L_{LD}^\dagger\rho_\beta=0$.
+At first order we obtain
+\[\mathcal L_{LD}^\dagger(\rho_\beta f_1)+\mathcal L_1^\dagger\rho_\beta=0.\tag{7.19}\]
+
+### 3. 原文证明
+
+Insert the two formal series into the stationary equation and combine like powers of h.
+
+### 4. 完整当前Lean（原文与修正版独立列出）
+
+```lean
+def actionCoefficient {E : Type*} [AddCommGroup E] [Module ℝ E]
+    (L : ℕ → Module.End ℝ E) (ρ : ℕ → E) (k : ℕ) : E :=
+  ∑ j ∈ Finset.range (k+1), L j (ρ (k-j))
+theorem perturbationCoefficientEquation {E : Type*} [AddCommGroup E] [Module ℝ E]
+    (L : ℕ → Module.End ℝ E) (ρ : ℕ → E)
+    (h0 : actionCoefficient L ρ 0 = 0) (h1 : actionCoefficient L ρ 1 = 0) :
+    L 0 (ρ 0) = 0 ∧ L 0 (ρ 1)+L 1 (ρ 0) = 0 := by
+  constructor
+  · simpa [actionCoefficient] using h0
+  · simpa [actionCoefficient, Finset.sum_range_succ] using h1
+```
+
+### 5. 对照表
+
+| 原文成分 | Lean对应 | 说明 |
+|---|---|---|
+| 本条引用的对象与公式 | MD.Ch07.actionCoefficient, MD.Ch07.perturbationCoefficientEquation | 本条逐字引用的全部数学对象与公式；未纳入的上下文另列。 |
+
+[EXTRA] 在真实线性作用的形式系数卷积上推导0阶和1阶必要方程；并未由这些必要方程证明原离散链存在不变分布。
+记号与上下文：见所列原文与Lean量化变量。
+
+### 6. 审计结论
+
+本地：已对照目视原页核对对象、量词、技术资格和所列覆盖范围；网站尚未审阅。
+疑点：本条暂未发现需单列的原书疑误。
+网站：尚未送审。
+
+### 7. 状态与证明位置
+
+已证；单文件编译与逐声明公理核对通过。
+本条未登记待证缺项。
+位置：Blueprint/Ch07.lean；MD.Ch07.actionCoefficient, MD.Ch07.perturbationCoefficientEquation。
+
+## 1. MD-7.7.3-ObservableCorrectionExpansion · unnumbered_claim · 印刷p.290 / PDFp.311
+
+### 2. 原文陈述
+
+For some observable $\vartheta(q,p)$, we have that
+\[\langle\vartheta\rangle_h=\int_{\mathcal D}\vartheta(q,p)\widehat\rho(q,p)d\omega
+=\int_{\mathcal D}\vartheta(q,p)\rho_\beta(q,p)(1+hf_1(q,p)+h^2f_2(q,p)+\cdots)d\omega
+=\langle\vartheta\rangle+h\langle\vartheta f_1\rangle+h^2\langle\vartheta f_2\rangle+\cdots.\]
+
+### 3. 原文证明
+
+Distribute the product and use linearity of integration at each finite order.
+
+### 4. 完整当前Lean（原文与修正版独立列出）
+
+```lean
+theorem observableCorrectionExpansion (ν : Measure Ω) (φ ρ f1 f2 : Ω → ℝ) (h : ℝ)
+    (h0 : Integrable (fun x ↦ φ x*ρ x) ν)
+    (h1 : Integrable (fun x ↦ φ x*ρ x*f1 x) ν)
+    (h2 : Integrable (fun x ↦ φ x*ρ x*f2 x) ν) :
+    (∫ x, φ x*ρ x*(1+h*f1 x+h^2*f2 x) ∂ν) =
+      (∫ x, φ x*ρ x ∂ν)+h*(∫ x, φ x*ρ x*f1 x ∂ν)+h^2*(∫ x, φ x*ρ x*f2 x ∂ν) := by
+  have heq : ∀ x, φ x*ρ x*(1+h*f1 x+h^2*f2 x) =
+      (φ x*ρ x+h*(φ x*ρ x*f1 x))+h^2*(φ x*ρ x*f2 x) := by intro x; ring
+  simp_rw [heq]
+  have hout := integral_add (h0.add (h1.const_mul h)) (h2.const_mul (h^2))
+  have hin := integral_add h0 (h1.const_mul h)
+  simp only [Pi.add_apply] at hout hin
+  rw [hout, hin, integral_const_mul, integral_const_mul]
+```
+
+### 5. 对照表
+
+| 原文成分 | Lean对应 | 说明 |
+|---|---|---|
+| 本条引用的对象与公式 | MD.Ch07.observableCorrectionExpansion | 本条逐字引用的全部数学对象与公式；未纳入的上下文另列。 |
+
+[EXTRA] 完整覆盖0–2阶有限截断积分；无限级数交换与实际误差余项仍需支配收敛及弱展开理论，明确不声称已证。
+记号与上下文：见所列原文与Lean量化变量。
+
+### 6. 审计结论
+
+本地：已对照目视原页核对对象、量词、技术资格和所列覆盖范围；网站尚未审阅。
+疑点：本条暂未发现需单列的原书疑误。
+网站：尚未送审。
+
+### 7. 状态与证明位置
+
+已证；单文件编译与逐声明公理核对通过。
+本条未登记待证缺项。
+位置：Blueprint/Ch07.lean；MD.Ch07.observableCorrectionExpansion。
+
+## 1. MD-7.7.3-PerturbativeSolvabilityCaution · definition · 印刷p.290 / PDFp.311
+
+### 2. 原文陈述
+
+It will be difficult to solve the perturbation equation (7.19) in general, although its linearity and the fact that $\mathcal L_{LD}^\dagger$ (with our assumptions) has a compact resolvent (and therefore a discrete spectrum) together imply that if the perturbation can be bounded, then it should be possible to solve for the correction function. We expect that this solution should be stable with respect to perturbation (and exponentially attracting). This also implies global existence (for all positive time) of the semigroup defining the solution of the time-dependent problem. We do not provide such a rigorous result here but simply plunge ahead, in the best tradition of applied mathematics, to obtain a perturbative expansion; verification of our results must therefore be obtained by numerical experiment, a posteriori.
+
+### 3. 原文证明
+
+原书未给独立完整证明。
+
+### 4. 完整当前Lean（原文与修正版独立列出）
+
+```lean
+def correctionSolvable {E : Type*} [AddCommGroup E] [Module ℝ E]
+    (L : Module.End ℝ E) (rhs : E) : Prop := ∃ u : E, L u = rhs
+```
+
+### 5. 对照表
+
+| 原文成分 | Lean对应 | 说明 |
+|---|---|---|
+| 本条引用的对象与公式 | MD.Ch07.correctionSolvable | 可解性目标与原书未证明的预期已登记；指数稳定和全局半群存在不作为已获定理。 |
+
+[EXTRA] 原书明确未给严格可解性/指数吸引/半群全局存在定理；保留其全部原文主张并定义可解性目标。；不能由紧预解式和有界扰动单独推出任意rhs可解；核方向的Fredholm相容条件、定义域与谱隙均是覆盖缺口。
+记号与上下文：见所列原文与Lean量化变量。
+
+### 6. 审计结论
+
+本地：已对照目视原页核对对象、量词、技术资格和所列覆盖范围；网站尚未审阅。
+疑点：本条暂未发现需单列的原书疑误。
+网站：尚未送审。
+
+### 7. 状态与证明位置
+
+定义；单文件编译与逐声明公理核对通过。
+本条未登记待证缺项。
+位置：Blueprint/Ch07.lean；MD.Ch07.correctionSolvable。
 

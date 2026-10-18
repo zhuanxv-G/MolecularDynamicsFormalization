@@ -24,7 +24,7 @@ for line in subprocess.check_output(['git','ls-files','--stage'],cwd=ROOT,text=T
         subprocess.run(['git','update-index','--add','--cacheinfo',mode,blob,'blueprint/ch07/'+name[len('Blueprint/ch07/'):]],cwd=ROOT,check=True)
 subprocess.run(['git','-c','core.ignorecase=false','add','--',*files],cwd=ROOT,check=True)
 logs=[p.relative_to(ROOT).as_posix() for p in (BASE/'validation').rglob('*.log')]
-if logs:subprocess.run(['git','add','-f','--',*logs],cwd=ROOT,check=True)
+if logs:subprocess.run(['git','-c','core.ignorecase=false','add','-f','--',*logs],cwd=ROOT,check=True)
 staged=subprocess.check_output(['git','diff','--cached','--name-only'],cwd=ROOT,text=True).splitlines()
 for name in staged:
     assert name.casefold() in {p.casefold() for p in files} or name.casefold().startswith('blueprint/ch07/'),('Unrelated staged file',name)

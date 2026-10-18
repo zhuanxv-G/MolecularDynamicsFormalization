@@ -1,0 +1,57 @@
+{
+  "batch": "BATCH10",
+  "subtask": "BATCH10e",
+  "source_ids": [
+    "MD-7.7.1-TaylorRemainder"
+  ],
+  "input_sha256": {
+    "Blueprint/Ch07.lean": "781e32bf551c77c51cb520d83acc6f48b1ad26c8a775a3f03e81a31183741faf",
+    "blueprint/ch07/ch07_source.json": "bfa70cbee8d288824fddb5f675cbfa89071f1a4b5b24dab4fb372b848fdd97e6",
+    "BATCH10e_PAGES.pdf": "d384c71001ed425895fc817f5426f38b9cc54f72ea0b07d329a8bcc356c46a6c"
+  },
+  "page_mapping": [
+    {
+      "attachment_page": 1,
+      "original_pdf_page": 307,
+      "printed_page": 286
+    },
+    {
+      "attachment_page": 2,
+      "original_pdf_page": 308,
+      "printed_page": 287
+    }
+  ],
+  "definition_excerpts": [
+    {
+      "full_name": "MD.Ch07.taylorRemainder",
+      "kind": "theorem",
+      "path": "Blueprint/Ch07.lean",
+      "line": 791,
+      "code_sha256": "c95d6c314ee1e516c42a45fa2a08e74197e85cb4408d51ae9e1d628569fc0812"
+    },
+    {
+      "full_name": "MD.Ch07.taylorRemainder_bound",
+      "kind": "theorem",
+      "path": "Blueprint/Ch07.lean",
+      "line": 795,
+      "code_sha256": "819b68485b06f090dc5f3a4424192db23e3bd15921d0256f96deef6ed11f0819"
+    }
+  ],
+  "validation": {
+    "project_constant_closure": "PASS",
+    "missing_project_definitions": [],
+    "full_page_render_equality_dpi": 72,
+    "website_submitted": false
+  },
+  "files": {
+    "PASTE.txt": {
+      "bytes": 4477,
+      "sha256": "5de46d168fb1218cce4f9981ce4c7425ef5ea08d48b413513e69eb97a4337d00"
+    },
+    "BATCH10e_PAGES.pdf": {
+      "bytes": 83876,
+      "sha256": "d384c71001ed425895fc817f5426f38b9cc54f72ea0b07d329a8bcc356c46a6c"
+    }
+  },
+  "total_task_bytes": 90039
+}

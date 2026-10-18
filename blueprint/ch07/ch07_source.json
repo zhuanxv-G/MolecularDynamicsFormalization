@@ -1348,5 +1348,414 @@
     "source_page_verification": "见source_page_checks.json；必须已目视核对本条原页。",
     "repair_log": [],
     "documented_priors": []
+  },
+  {
+    "source_id": "MD-7.7-ModifiedGenerator",
+    "kind": "definition",
+    "label": "(7.16)",
+    "section": "7.7",
+    "printed_page": "284",
+    "pdf_page": "305",
+    "statement_latex": "We begin by defining the generator $\\widehat{\\mathcal L}$ associated to the propagation of averages under the numerical method for an SDE. We think of this generator as a perturbation of the exact Langevin dynamics generator $\\mathcal L_{LD}$, or\n\\[\\widehat{\\mathcal L}=\\mathcal L_{LD}+h\\mathcal L_1+h^2\\mathcal L_2+h^3\\mathcal L_3+O(h^4).\\tag{7.16}\\]\nHowever, the operators involved are not equivalent to the operators that would arise from any stochastic differential equation (see [403]), so we must give up the direct analogy between the formal series and continuous SDE models (which is available in the deterministic setting).",
+    "proof_latex": null,
+    "proof_note": "原书未给独立完整证明。",
+    "context_notation": [],
+    "extra_assumptions": [
+      "只取形式幂级数系数；O(h⁴)在此意为0–3阶系数相等，不宣称无界算符级数收敛，也不声称是另一SDE的生成元。"
+    ],
+    "issues": [],
+    "statement_scope": "本条逐字引用的全部数学对象与公式；未纳入的上下文另列。",
+    "lean_decl": "MD.Ch07.formalModifiedGenerator",
+    "lean_declarations": [
+      "MD.Ch07.formalModifiedGenerator",
+      "MD.Ch07.formalGeneratorExpansion"
+    ],
+    "source_page_verification": "见source_page_checks.json；必须已目视核对本条原页。",
+    "repair_log": [],
+    "documented_priors": []
+  },
+  {
+    "source_id": "MD-7.7-InvariantDensityExpansion",
+    "kind": "definition",
+    "label": "(7.17)",
+    "section": "7.7",
+    "printed_page": "284",
+    "pdf_page": "305",
+    "statement_latex": "We write this invariant distribution as a perturbation of the (target) canonical distribution\n\\[\\widehat\\rho=\\rho_\\beta[1+hf_1+h^2f_2+h^3f_3+O(h^4)],\\tag{7.17}\\]\nwith each correction function $f_k(q,p)$ satisfying\n\\[\\int_{\\mathcal D} f_k(q,p)\\rho_\\beta(q,p)d\\omega=0,\\]\nensuring a useful equivalence in the partition function\n\\[\\int_{\\mathcal D}\\widehat\\rho(q,p)d\\omega=\\int_{\\mathcal D}\\rho_\\beta(q,p)d\\omega.\\]\nOur computed average is therefore $\\langle\\phi\\rangle_h\\stackrel{\\rm def}=\\int_{\\mathcal D}\\phi(q,p)\\widehat\\rho(q,p)d\\omega$.",
+    "proof_latex": null,
+    "proof_note": "原书未给独立完整证明。",
+    "context_notation": [],
+    "extra_assumptions": [
+      "系数零质量不等于任意h的截断密度非负；概率密度仍须非负、可积且归一。余项质量也为零或完整级数可交换积分时才推出精确总质量一致。",
+      "此处证明所有形式系数的质量约束；未把有限截断表达式假称实际不变概率。"
+    ],
+    "issues": [],
+    "statement_scope": "本条逐字引用的全部数学对象与公式；未纳入的上下文另列。",
+    "lean_decl": "MD.Ch07.densityExpansion",
+    "lean_declarations": [
+      "MD.Ch07.densityExpansion",
+      "MD.Ch07.centeredCorrections",
+      "MD.Ch07.computedAverage",
+      "MD.Ch07.densityExpansion_zeroMass"
+    ],
+    "source_page_verification": "见source_page_checks.json；必须已目视核对本条原页。",
+    "repair_log": [],
+    "documented_priors": []
+  },
+  {
+    "source_id": "MD-7.7.1-ExactABOPropagators",
+    "kind": "definition",
+    "label": null,
+    "section": "7.7.1",
+    "printed_page": "285",
+    "pdf_page": "306",
+    "statement_latex": "\\[(e^{t\\mathcal L_A}\\phi)(q,p)=\\phi(q+tM^{-1}p,p),\\qquad\n(e^{t\\mathcal L_B}\\phi)(q,p)=\\phi(q,p-t\\nabla U(q)),\\]\n\\[(e^{t\\mathcal L_O}\\phi)(q,p)=\\int_{\\mathcal P}\\phi(q,e^{-\\gamma t}p+\\zeta M^{1/2}x)\\frac{e^{-|x|^2/2}}{(2\\pi)^{N_c/2}}dx,\\]\nwhere $\\zeta=[k_BT(1-e^{-2\\gamma t})]^{1/2}$.",
+    "proof_latex": null,
+    "proof_note": "原书未给独立完整证明。",
+    "context_notation": [],
+    "extra_assumptions": [
+      "O用实际独立标准正态乘积测度；θ>0、γ≥0、t≥0、正质量时对应OU噪声。期望用于可积φ，未把不可积函数的默认积分当物理期望。",
+      "半群律及实际SDE生成元识别需OU转移律与Markov理论，本条只定义固定时刻传播子。"
+    ],
+    "issues": [],
+    "statement_scope": "本条逐字引用的全部数学对象与公式；未纳入的上下文另列。",
+    "lean_decl": "MD.Ch07.propagateA",
+    "lean_declarations": [
+      "MD.Ch07.propagateA",
+      "MD.Ch07.propagateB",
+      "MD.Ch07.propagateO"
+    ],
+    "source_page_verification": "见source_page_checks.json；必须已目视核对本条原页。",
+    "repair_log": [],
+    "documented_priors": []
+  },
+  {
+    "source_id": "MD-7.7.1-OperatorOrderReversal",
+    "kind": "unnumbered_claim",
+    "label": null,
+    "section": "7.7.1",
+    "printed_page": "285",
+    "pdf_page": "306",
+    "statement_latex": "For example, for the method labelled by the string $[ABAO]$, we have\n\\[\\exp(h\\widehat{\\mathcal L}_{[ABAO]})=\\exp((h/2)\\mathcal L_A)\\exp(h\\mathcal L_B)\\exp((h/2)\\mathcal L_A)\\exp(h\\mathcal L_O),\\]\nwhere importantly note the apparent reversal of the sequence of products, known as the vertauschungssatz. We will find it more convenient to work with the adjoint of the perturbed generator, denoted $\\widehat{\\mathcal L}^\\dagger$, which we may compute as\n\\[\\exp(h\\widehat{\\mathcal L}_{[ABAO]}^\\dagger)=\\exp(h\\mathcal L_O^\\dagger)\\exp((h/2)\\mathcal L_A^\\dagger)\\exp(h\\mathcal L_B^\\dagger)\\exp((h/2)\\mathcal L_A^\\dagger).\\]",
+    "proof_latex": null,
+    "proof_note": "原书未给独立完整证明。",
+    "context_notation": [],
+    "extra_assumptions": [
+      "覆盖反向拉回组合恒等式和ABAO的全部四段期望传播式；其与前面随机abao映射期望相等仍需推前积分桥。",
+      "伴随前向传播子的四段顺序记录在原文；独立定义实际密度伴随的函数空间和边界条件列为覆盖缺口。"
+    ],
+    "issues": [],
+    "statement_scope": "确定性拉回顺序及ABAO后向传播定义；无界算符指数/伴随识别尚缺。",
+    "lean_decl": "MD.Ch07.pullback_order",
+    "lean_declarations": [
+      "MD.Ch07.pullback_order",
+      "MD.Ch07.abaoBackward"
+    ],
+    "source_page_verification": "见source_page_checks.json；必须已目视核对本条原页。",
+    "repair_log": [],
+    "documented_priors": []
+  },
+  {
+    "source_id": "MD-7.7.1-StationaryModifiedPDE",
+    "kind": "definition",
+    "label": null,
+    "section": "7.7.1",
+    "printed_page": "285–286",
+    "pdf_page": "306–307",
+    "statement_latex": "Under the propagation of the numerical scheme (or the discretized dynamics), the Fokker-Planck equation gives us that the evolution of a density of points $\\rho$ is given by\n\\[\\frac\\partial{\\partial t}\\rho(z,t)=\\widehat{\\mathcal L}^\\dagger\\rho,\\]\nwith the important case of its invariant distribution satisfying the partial differential equation\n\\[\\widehat{\\mathcal L}^\\dagger\\widehat\\rho=0.\\]",
+    "proof_latex": null,
+    "proof_note": "原书未给独立完整证明。",
+    "context_notation": [],
+    "extra_assumptions": [
+      "真实离散转移一般不嵌入连续Markov半群，修改方程仅为形式分析；不宣称任意离散SDE方法有上述真实Fokker–Planck演化。",
+      "Markov半群资格、密度正性归一、无界生成元定义域及嵌入性尚缺；此处仅明确定义方程，不证明等价。"
+    ],
+    "issues": [],
+    "statement_scope": "本条逐字引用的全部数学对象与公式；未纳入的上下文另列。",
+    "lean_decl": "MD.Ch07.formalDensityEvolution",
+    "lean_declarations": [
+      "MD.Ch07.formalDensityEvolution",
+      "MD.Ch07.stationaryModifiedDensity"
+    ],
+    "source_page_verification": "见source_page_checks.json；必须已目视核对本条原页。",
+    "repair_log": [],
+    "documented_priors": []
+  },
+  {
+    "source_id": "MD-7.7.1-TwoOperatorBCH",
+    "kind": "unnumbered_claim",
+    "label": null,
+    "section": "7.7.1",
+    "printed_page": "286",
+    "pdf_page": "307",
+    "statement_latex": "Recall that for linear operators $X$ and $Y$, we can write the composition of their exponentials as\n\\[\\exp(hX)\\exp(hY)=\\exp(hZ),\\]\nwhere we have the expansion\n\\[Z=X+Y+\\frac h2[X,Y]+\\frac{h^2}{12}([X,[X,Y]]+[Y,[Y,X]])+O(h^3).\\]\nThe notation $[X,Y]\\stackrel{\\rm def}=XY-YX$ represents the commutator of the operators $X$ and $Y$.",
+    "proof_latex": null,
+    "proof_note": "原书未给独立完整证明。",
+    "context_notation": [],
+    "extra_assumptions": [
+      "任意实代数中的非交换形式幂级数；不要求无界算符指数收敛。本条完整记录所印0–2阶。"
+    ],
+    "issues": [],
+    "statement_scope": "本条逐字引用的全部数学对象与公式；未纳入的上下文另列。",
+    "lean_decl": "MD.Ch07.comm",
+    "lean_declarations": [
+      "MD.Ch07.comm",
+      "MD.Ch07.twoStage",
+      "MD.Ch07.twoOperatorBCH"
+    ],
+    "source_page_verification": "见source_page_checks.json；必须已目视核对本条原页。",
+    "repair_log": [],
+    "documented_priors": []
+  },
+  {
+    "source_id": "MD-7.7.1-TaylorRemainder",
+    "kind": "unnumbered_claim",
+    "label": null,
+    "section": "7.7.1",
+    "printed_page": "286–287",
+    "pdf_page": "307–308",
+    "statement_latex": "We can make use of Taylor’s theorem to write the identity\n\\[P_h=P_0+h\\left.\\frac{dP_t}{dt}\\right|_{t=0}+\\cdots+\\frac{h^n}{n!}\\left.\\frac{d^nP_t}{dt^n}\\right|_{t=0}\n+\\frac{h^{n+1}}{n!}\\int_0^1(1-\\lambda)^n\\left.\\frac{d^{n+1}P_t}{dt^{n+1}}\\right|_{t=\\lambda h}d\\lambda,\\]\nfor some finite truncation index $n\\in\\{1,2,3,\\ldots\\}$. Hence for observables of sufficient smoothness with compact support, this remainder term will remain bounded (see [223]).",
+    "proof_latex": null,
+    "proof_note": "原书未给独立完整证明。",
+    "context_notation": [],
+    "extra_assumptions": [
+      "只覆盖作用于单个可观测量和点后的标量C^(n+1) Taylor恒等式及局部余项界；把ABO无界算符组合在紧支撑光滑测试函数上归约到这些假设仍是覆盖缺口。"
+    ],
+    "issues": [],
+    "statement_scope": "本条逐字引用的全部数学对象与公式；未纳入的上下文另列。",
+    "lean_decl": "MD.Ch07.taylorRemainder",
+    "lean_declarations": [
+      "MD.Ch07.taylorRemainder",
+      "MD.Ch07.taylorRemainder_bound"
+    ],
+    "source_page_verification": "见source_page_checks.json；必须已目视核对本条原页。",
+    "repair_log": [],
+    "documented_priors": []
+  },
+  {
+    "source_id": "MD-7.7.2-ThreeOperatorBCH",
+    "kind": "unnumbered_claim",
+    "label": "(7.18)",
+    "section": "7.7.2",
+    "printed_page": "287",
+    "pdf_page": "308",
+    "statement_latex": "\\[\\exp(hS)=\\exp(hZ)\\exp(hY)\\exp(hX).\\tag{7.18}\\]\n\\[S=X+Y+Z+\\frac h2([Z,Y]+[Z,X]+[Y,X])+\\frac{h^2}{4}[Z,Y,X]\n+\\frac{h^2}{12}([Y,Y,X]+[X,X,Y]+[Z,Z,Y]+[Z,Z,X]+[Y+X,Y+X,Z])+\\cdots\\]\nwhere the notation $[A,B,C]$ is notation for $[A,[B,C]]$.",
+    "proof_latex": "Apply the two-operator BCH formula first to exp(hY)exp(hX), and then to exp(hZ)exp(h(Y+X+...)); combine equal powers of h.",
+    "proof_note": "按所列原页转录原书证明。",
+    "context_notation": [],
+    "extra_assumptions": [
+      "完整记录最终0–2阶系数；中间未合并式作为原文推导说明，不另假装是完整精确算符相等。"
+    ],
+    "issues": [],
+    "statement_scope": "本条逐字引用的全部数学对象与公式；未纳入的上下文另列。",
+    "lean_decl": "MD.Ch07.threeStage",
+    "lean_declarations": [
+      "MD.Ch07.threeStage",
+      "MD.Ch07.threeOperatorBCH"
+    ],
+    "source_page_verification": "见source_page_checks.json；必须已目视核对本条原页。",
+    "repair_log": [],
+    "documented_priors": []
+  },
+  {
+    "source_id": "MD-7.7.2-ScalarForwardOperators",
+    "kind": "definition",
+    "label": null,
+    "section": "7.7.2",
+    "printed_page": "288",
+    "pdf_page": "309",
+    "statement_latex": "In this one dimensional example, we substitute\n\\[Z=\\mathcal L_A^\\dagger=-p\\frac\\partial{\\partial q},\\quad Y=\\mathcal L_B^\\dagger=U'(q)\\frac\\partial{\\partial p},\\quad\nX=\\mathcal L_O^\\dagger=\\gamma\\left({\\rm Id}+p\\frac\\partial{\\partial p}\\right)+\\frac{\\sigma^2}{2}\\frac{\\partial^2}{\\partial p^2},\\]\nwhere $\\sigma=\\sqrt{2\\gamma k_BT}$.",
+    "proof_latex": null,
+    "proof_note": "原书未给独立完整证明。",
+    "context_notation": [],
+    "extra_assumptions": [
+      "所有偏导都是实际deriv，单位质量、θ=k_BT；用于光滑密度与γ≥0,θ>0。这里不把未规定定义域的微分表达式直接称闭算符。"
+    ],
+    "issues": [],
+    "statement_scope": "本条逐字引用的全部数学对象与公式；未纳入的上下文另列。",
+    "lean_decl": "MD.Ch07.Density1",
+    "lean_declarations": [
+      "MD.Ch07.Density1",
+      "MD.Ch07.dq",
+      "MD.Ch07.dp",
+      "MD.Ch07.opA",
+      "MD.Ch07.opB",
+      "MD.Ch07.opO",
+      "MD.Ch07.opLD",
+      "MD.Ch07.opComm"
+    ],
+    "source_page_verification": "见source_page_checks.json；必须已目视核对本条原页。",
+    "repair_log": [],
+    "documented_priors": []
+  },
+  {
+    "source_id": "MD-7.7.2-CommutatorAB",
+    "kind": "unnumbered_claim",
+    "label": null,
+    "section": "7.7.2",
+    "printed_page": "288",
+    "pdf_page": "309",
+    "statement_latex": "\\[[\\mathcal L_A^\\dagger,\\mathcal L_B^\\dagger]\\rho=-p\\frac\\partial{\\partial q}\\left(U'(q)\\frac{\\partial\\rho}{\\partial p}\\right)-U'(q)\\frac\\partial{\\partial p}\\left(-p\\frac{\\partial\\rho}{\\partial q}\\right)\n=-pU''(q)\\rho_p-pU'(q)\\rho_{pq}+U'(q)\\rho_q+U'(q)p\\rho_{qp}.\\]\nAs this is the commutator of two 1st order differential operators, the mixed partial term vanishes, leaving\n\\[[\\mathcal L_A^\\dagger,\\mathcal L_B^\\dagger]\\rho=-pU''(q)\\rho_p+U'(q)\\rho_q.\\]",
+    "proof_latex": "Expand both product derivatives and cancel the mixed partials using equality of mixed partials.",
+    "proof_note": "按所列原页转录原书证明。",
+    "context_notation": [],
+    "extra_assumptions": [],
+    "issues": [],
+    "statement_scope": "本条逐字引用的全部数学对象与公式；未纳入的上下文另列。",
+    "lean_decl": "MD.Ch07.commutatorAB",
+    "lean_declarations": [
+      "MD.Ch07.commutatorAB"
+    ],
+    "source_page_verification": "见source_page_checks.json；必须已目视核对本条原页。",
+    "repair_log": [],
+    "documented_priors": []
+  },
+  {
+    "source_id": "MD-7.7.2-CommutatorsAOBO",
+    "kind": "unnumbered_claim",
+    "label": null,
+    "section": "7.7.2",
+    "printed_page": "289",
+    "pdf_page": "310",
+    "statement_latex": "Similar computations give\n\\[[\\mathcal L_A^\\dagger,\\mathcal L_O^\\dagger]\\rho=\\gamma p\\rho_q+\\sigma^2\\rho_{qp},\\qquad\n[\\mathcal L_B^\\dagger,\\mathcal L_O^\\dagger]\\rho=\\gamma U'(q)\\rho_p.\\]",
+    "proof_latex": null,
+    "proof_note": "原书未给独立完整证明。",
+    "context_notation": [],
+    "extra_assumptions": [],
+    "issues": [],
+    "statement_scope": "本条逐字引用的全部数学对象与公式；未纳入的上下文另列。",
+    "lean_decl": "MD.Ch07.commutatorsAOBO",
+    "lean_declarations": [
+      "MD.Ch07.commutatorsAOBO"
+    ],
+    "source_page_verification": "见source_page_checks.json；必须已目视核对本条原页。",
+    "repair_log": [],
+    "documented_priors": []
+  },
+  {
+    "source_id": "MD-7.7.2-OBAModifiedOperator",
+    "kind": "unnumbered_claim",
+    "label": null,
+    "section": "7.7.2",
+    "printed_page": "288–289",
+    "pdf_page": "309–310",
+    "statement_latex": "\\[\\exp(h\\widehat{\\mathcal L}_{[OBA]}^\\dagger)=\\exp(h\\mathcal L_A^\\dagger)\\exp(h\\mathcal L_B^\\dagger)\\exp(h\\mathcal L_O^\\dagger).\\]\n\\[\\widehat{\\mathcal L}_{[OBA]}^\\dagger\\rho=\\mathcal L_{LD}^\\dagger\\rho+\\frac h2[-pU''(q)\\rho_p+U'(q)\\rho_q+\\gamma p\\rho_q+\\sigma^2\\rho_{qp}+\\gamma U'(q)\\rho_p]+O(h^2).\\]",
+    "proof_latex": null,
+    "proof_note": "原书未给独立完整证明。",
+    "context_notation": [],
+    "extra_assumptions": [
+      "只证明三个真实交换子表达式与所印一阶修正一致；整体离散传播子的余项界需Taylor/弱展开桥，不声称完成。"
+    ],
+    "issues": [],
+    "statement_scope": "本条逐字引用的全部数学对象与公式；未纳入的上下文另列。",
+    "lean_decl": "MD.Ch07.obaFirstCorrection",
+    "lean_declarations": [
+      "MD.Ch07.obaFirstCorrection",
+      "MD.Ch07.obaFirstCorrection_commutators"
+    ],
+    "source_page_verification": "见source_page_checks.json；必须已目视核对本条原页。",
+    "repair_log": [],
+    "documented_priors": []
+  },
+  {
+    "source_id": "MD-7.7.2-SpectralQualification",
+    "kind": "definition",
+    "label": null,
+    "section": "7.7.2",
+    "printed_page": "289",
+    "pdf_page": "310",
+    "statement_latex": "The assumption of validity becomes more credible as we find that the operator $\\mathcal L_{LD}^\\dagger$ has a compact resolvent and therefore a discrete spectrum, i.e. simple eigenvalues, as discussed in the previous chapter. It will have one zero eigenvalue corresponding to the invariant density $\\rho_\\beta$ and all the remaining eigenvalues lie in the negative half plane.",
+    "proof_latex": null,
+    "proof_note": "原书未给独立完整证明。",
+    "context_notation": [],
+    "extra_assumptions": [
+      "只记录原文谱结论的精确目标命题，不宣称为定理；一般闭无界Langevin生成元、定义域及紧预解式资格未覆盖。"
+    ],
+    "issues": [
+      "已目视核对PDF310：原文将discrete spectrum释为simple eigenvalues，这并非一般蕴含。紧预解式至多给离散谱及有限重数，不能直接给单重谱；Langevin谱还需前章所列势函数/空间条件。"
+    ],
+    "statement_scope": "原文谱断言已登记，Lean定义其点谱目标；尚缺无界算符对象和完整限定定理。",
+    "lean_decl": "MD.Ch07.simpleEigenvalue",
+    "lean_declarations": [
+      "MD.Ch07.simpleEigenvalue",
+      "MD.Ch07.printedSpectralConclusion"
+    ],
+    "source_page_verification": "见source_page_checks.json；必须已目视核对本条原页。",
+    "repair_log": [],
+    "documented_priors": []
+  },
+  {
+    "source_id": "MD-7.7.3-PerturbationCoefficientEquation",
+    "kind": "unnumbered_claim",
+    "label": "(7.19)",
+    "section": "7.7.3",
+    "printed_page": "289–290",
+    "pdf_page": "310–311",
+    "statement_latex": "Inserting this ansatz into the stationary Fokker-Planck equation $\\widehat{\\mathcal L}^\\dagger\\widehat\\rho=0$, we obtain\n\\[(\\mathcal L_{LD}^\\dagger+h\\mathcal L_1^\\dagger+h^2\\mathcal L_2^\\dagger+O(h^3))(\\rho_\\beta[1+hf_1+h^2f_2+O(h^3)])=0.\\]\nCombining like powers, we have at zero’th order, the equation $\\mathcal L_{LD}^\\dagger\\rho_\\beta=0$.\nAt first order we obtain\n\\[\\mathcal L_{LD}^\\dagger(\\rho_\\beta f_1)+\\mathcal L_1^\\dagger\\rho_\\beta=0.\\tag{7.19}\\]",
+    "proof_latex": "Insert the two formal series into the stationary equation and combine like powers of h.",
+    "proof_note": "按所列原页转录原书证明。",
+    "context_notation": [],
+    "extra_assumptions": [
+      "在真实线性作用的形式系数卷积上推导0阶和1阶必要方程；并未由这些必要方程证明原离散链存在不变分布。"
+    ],
+    "issues": [],
+    "statement_scope": "本条逐字引用的全部数学对象与公式；未纳入的上下文另列。",
+    "lean_decl": "MD.Ch07.actionCoefficient",
+    "lean_declarations": [
+      "MD.Ch07.actionCoefficient",
+      "MD.Ch07.perturbationCoefficientEquation"
+    ],
+    "source_page_verification": "见source_page_checks.json；必须已目视核对本条原页。",
+    "repair_log": [],
+    "documented_priors": []
+  },
+  {
+    "source_id": "MD-7.7.3-ObservableCorrectionExpansion",
+    "kind": "unnumbered_claim",
+    "label": null,
+    "section": "7.7.3",
+    "printed_page": "290",
+    "pdf_page": "311",
+    "statement_latex": "For some observable $\\vartheta(q,p)$, we have that\n\\[\\langle\\vartheta\\rangle_h=\\int_{\\mathcal D}\\vartheta(q,p)\\widehat\\rho(q,p)d\\omega\n=\\int_{\\mathcal D}\\vartheta(q,p)\\rho_\\beta(q,p)(1+hf_1(q,p)+h^2f_2(q,p)+\\cdots)d\\omega\n=\\langle\\vartheta\\rangle+h\\langle\\vartheta f_1\\rangle+h^2\\langle\\vartheta f_2\\rangle+\\cdots.\\]",
+    "proof_latex": "Distribute the product and use linearity of integration at each finite order.",
+    "proof_note": "按所列原页转录原书证明。",
+    "context_notation": [],
+    "extra_assumptions": [
+      "完整覆盖0–2阶有限截断积分；无限级数交换与实际误差余项仍需支配收敛及弱展开理论，明确不声称已证。"
+    ],
+    "issues": [],
+    "statement_scope": "本条逐字引用的全部数学对象与公式；未纳入的上下文另列。",
+    "lean_decl": "MD.Ch07.observableCorrectionExpansion",
+    "lean_declarations": [
+      "MD.Ch07.observableCorrectionExpansion"
+    ],
+    "source_page_verification": "见source_page_checks.json；必须已目视核对本条原页。",
+    "repair_log": [],
+    "documented_priors": []
+  },
+  {
+    "source_id": "MD-7.7.3-PerturbativeSolvabilityCaution",
+    "kind": "definition",
+    "label": null,
+    "section": "7.7.3",
+    "printed_page": "290",
+    "pdf_page": "311",
+    "statement_latex": "It will be difficult to solve the perturbation equation (7.19) in general, although its linearity and the fact that $\\mathcal L_{LD}^\\dagger$ (with our assumptions) has a compact resolvent (and therefore a discrete spectrum) together imply that if the perturbation can be bounded, then it should be possible to solve for the correction function. We expect that this solution should be stable with respect to perturbation (and exponentially attracting). This also implies global existence (for all positive time) of the semigroup defining the solution of the time-dependent problem. We do not provide such a rigorous result here but simply plunge ahead, in the best tradition of applied mathematics, to obtain a perturbative expansion; verification of our results must therefore be obtained by numerical experiment, a posteriori.",
+    "proof_latex": null,
+    "proof_note": "原书未给独立完整证明。",
+    "context_notation": [],
+    "extra_assumptions": [
+      "原书明确未给严格可解性/指数吸引/半群全局存在定理；保留其全部原文主张并定义可解性目标。",
+      "不能由紧预解式和有界扰动单独推出任意rhs可解；核方向的Fredholm相容条件、定义域与谱隙均是覆盖缺口。"
+    ],
+    "issues": [],
+    "statement_scope": "可解性目标与原书未证明的预期已登记；指数稳定和全局半群存在不作为已获定理。",
+    "lean_decl": "MD.Ch07.correctionSolvable",
+    "lean_declarations": [
+      "MD.Ch07.correctionSolvable"
+    ],
+    "source_page_verification": "见source_page_checks.json；必须已目视核对本条原页。",
+    "repair_log": [],
+    "documented_priors": []
   }
 ]

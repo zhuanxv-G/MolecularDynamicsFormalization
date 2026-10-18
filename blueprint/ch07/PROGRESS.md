@@ -1,6 +1,6 @@
 # 第7章逐条进度
 
-当前正文落盘：52条。全部正文完成：否。章末完整check：未执行。
+当前正文落盘：68条。全部正文完成：否。章末完整check：未执行。
 
 | source_id | 原页PDF | 本地对照 | 编译/公理 | 数学状态 | 网站 |
 |---|---|---|---|---|---|
@@ -56,3 +56,19 @@
 | MD-7.6-GeMarsdenRestriction | 303 | NEEDS_HUMAN | 通过 | 定义 | 待审 |
 | MD-7.6-JSplitting | 303–304 | PASS | 通过 | 未证陈述 | 待审 |
 | MD-7.6-CoordinateJSplitting | 304 | PASS | 通过 | 定义 | 待审 |
+| MD-7.7-ModifiedGenerator | 305 | PASS | 通过 | 定义 | 待审 |
+| MD-7.7-InvariantDensityExpansion | 305 | PASS | 通过 | 定义 | 待审 |
+| MD-7.7.1-ExactABOPropagators | 306 | PASS | 通过 | 定义 | 待审 |
+| MD-7.7.1-OperatorOrderReversal | 306 | PASS | 通过 | 已证 | 待审 |
+| MD-7.7.1-StationaryModifiedPDE | 306–307 | PASS | 通过 | 定义 | 待审 |
+| MD-7.7.1-TwoOperatorBCH | 307 | PASS | 通过 | 未证陈述 | 待审 |
+| MD-7.7.1-TaylorRemainder | 307–308 | PASS | 通过 | 未证陈述 | 待审 |
+| MD-7.7.2-ThreeOperatorBCH | 308 | PASS | 通过 | 未证陈述 | 待审 |
+| MD-7.7.2-ScalarForwardOperators | 309 | PASS | 通过 | 定义 | 待审 |
+| MD-7.7.2-CommutatorAB | 309 | PASS | 通过 | 未证陈述 | 待审 |
+| MD-7.7.2-CommutatorsAOBO | 310 | PASS | 通过 | 未证陈述 | 待审 |
+| MD-7.7.2-OBAModifiedOperator | 309–310 | PASS | 通过 | 未证陈述 | 待审 |
+| MD-7.7.2-SpectralQualification | 310 | NEEDS_HUMAN | 通过 | 定义 | 待审 |
+| MD-7.7.3-PerturbationCoefficientEquation | 310–311 | PASS | 通过 | 已证 | 待审 |
+| MD-7.7.3-ObservableCorrectionExpansion | 311 | PASS | 通过 | 已证 | 待审 |
+| MD-7.7.3-PerturbativeSolvabilityCaution | 311 | NEEDS_HUMAN | 通过 | 定义 | 待审 |

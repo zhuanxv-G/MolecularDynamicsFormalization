@@ -1,0 +1,45 @@
+{
+  "batch": "BATCH12",
+  "subtask": "BATCH12a",
+  "source_ids": [
+    "MD-7.7.3-ObservableCorrectionExpansion"
+  ],
+  "input_sha256": {
+    "Blueprint/Ch07.lean": "781e32bf551c77c51cb520d83acc6f48b1ad26c8a775a3f03e81a31183741faf",
+    "blueprint/ch07/ch07_source.json": "bfa70cbee8d288824fddb5f675cbfa89071f1a4b5b24dab4fb372b848fdd97e6",
+    "BATCH12a_PAGES.pdf": "bf792ddbfbd90c812141cfe67293b9e22e9d2049358298b939d1004fc5fb094c"
+  },
+  "page_mapping": [
+    {
+      "attachment_page": 1,
+      "original_pdf_page": 311,
+      "printed_page": 290
+    }
+  ],
+  "definition_excerpts": [
+    {
+      "full_name": "MD.Ch07.observableCorrectionExpansion",
+      "kind": "theorem",
+      "path": "Blueprint/Ch07.lean",
+      "line": 880,
+      "code_sha256": "8f7c85bf56802ab235bb873458c86f1f6c2c457a4c18dfba4d4450535457b11c"
+    }
+  ],
+  "validation": {
+    "project_constant_closure": "PASS",
+    "missing_project_definitions": [],
+    "full_page_render_equality_dpi": 72,
+    "website_submitted": false
+  },
+  "files": {
+    "PASTE.txt": {
+      "bytes": 4129,
+      "sha256": "b4d6b460ccd7a506a65eeede7666be48c483ebc436075aae74fe5e95c1fcc3a4"
+    },
+    "BATCH12a_PAGES.pdf": {
+      "bytes": 75195,
+      "sha256": "bf792ddbfbd90c812141cfe67293b9e22e9d2049358298b939d1004fc5fb094c"
+    }
+  },
+  "total_task_bytes": 80693
+}

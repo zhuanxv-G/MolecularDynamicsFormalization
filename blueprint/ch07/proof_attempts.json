@@ -146,5 +146,35 @@
     "category": "缺大型理论",
     "routes": [],
     "decision": "缺大型理论时直接记录缺项；否则最多三条短路线。"
+  },
+  "MD-7.7.1-TwoOperatorBCH": {
+    "reason": "已有log与exp低阶系数，但非交换乘积展开到三阶的桥接仍未证明；不建立一般BCH理论。",
+    "category": "缺大型理论",
+    "routes": [],
+    "decision": "缺大型理论时直接记录缺项；否则最多三条短路线。"
+  },
+  "MD-7.7.1-TaylorRemainder": {
+    "reason": "需要Mathlib实函数Taylor积分余项桥；不建立通用弱误差展开。",
+    "category": "缺大型理论",
+    "routes": [],
+    "decision": "缺大型理论时直接记录缺项；否则最多三条短路线。"
+  },
+  "MD-7.7.2-ThreeOperatorBCH": {
+    "reason": "需三重形式指数乘积的低阶log系数展开；不建设无界算符BCH收敛理论。",
+    "category": "缺大型理论",
+    "routes": [],
+    "decision": "缺大型理论时直接记录缺项；否则最多三条短路线。"
+  },
+  "MD-7.7.2-CommutatorAB": {
+    "reason": "需实二变量偏导乘积与混合偏导交换的短桥；不重建一般微分算符理论。",
+    "category": "缺大型理论",
+    "routes": [],
+    "decision": "缺大型理论时直接记录缺项；否则最多三条短路线。"
+  },
+  "MD-7.7.2-CommutatorsAOBO": {
+    "reason": "需三阶偏导乘积展开与交换桥接；最多短路线，不建大型算符理论。",
+    "category": "缺大型理论",
+    "routes": [],
+    "decision": "缺大型理论时直接记录缺项；否则最多三条短路线。"
   }
 }

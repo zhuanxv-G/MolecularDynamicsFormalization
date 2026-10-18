@@ -722,4 +722,179 @@ def coordinateJField (m : V n) (U : V n → ℝ) (i : Fin n) (x : Phase n) : Pha
 def frozenPotential (U : V n → ℝ) (q : V n) (i : Fin n) (r : ℝ) : ℝ :=
   U (Function.update q i r)
 
+/-- source_id: MD-7.7-ModifiedGenerator · 印刷p.284 / PDFp.305
+[EXTRA] 只取形式幂级数系数；O(h⁴)在此意为0–3阶系数相等，不宣称无界算符级数收敛，也不声称是另一SDE的生成元。 -/
+def formalModifiedGenerator {R : Type*} [Ring R] [Algebra ℝ R]
+    (S : PowerSeries R) : PowerSeries R :=
+  PowerSeries.mk (fun k ↦ PowerSeries.coeff (k+1) (MolecularDynamics.textbookFormalOperatorLogarithm S))
+def formalGeneratorExpansion {R : Type*} [Ring R] [Algebra ℝ R]
+    (L : PowerSeries R) (L0 L1 L2 L3 : R) : Prop :=
+  PowerSeries.coeff 0 L = L0 ∧ PowerSeries.coeff 1 L = L1 ∧
+  PowerSeries.coeff 2 L = L2 ∧ PowerSeries.coeff 3 L = L3
+
+/-- source_id: MD-7.7-InvariantDensityExpansion · 印刷p.284 / PDFp.305
+[EXTRA] 系数零质量不等于任意h的截断密度非负；概率密度仍须非负、可积且归一。余项质量也为零或完整级数可交换积分时才推出精确总质量一致。
+[EXTRA] 此处证明所有形式系数的质量约束；未把有限截断表达式假称实际不变概率。 -/
+def densityExpansion (ρ : Ω → ℝ) (f : ℕ → Ω → ℝ) : ℕ → Ω → ℝ
+  | 0 => ρ
+  | k+1 => fun x ↦ ρ x*f (k+1) x
+def centeredCorrections (μ : Measure Ω) (f : ℕ → Ω → ℝ) : Prop :=
+  IsProbabilityMeasure μ ∧ ∀ k, 0 < k → Integrable (f k) μ ∧ (∫ x, f k x ∂μ) = 0
+def computedAverage (ν : Measure Ω) (φ ρhat : Ω → ℝ) : ℝ := ∫ x, φ x*ρhat x ∂ν
+theorem densityExpansion_zeroMass (ν : Measure Ω) (ρ : Ω → ℝ) (f : ℕ → Ω → ℝ)
+    (hρ : Integrable ρ ν)
+    (hf : ∀ k, 0 < k → Integrable (fun x ↦ ρ x*f k x) ν ∧ (∫ x, ρ x*f k x ∂ν) = 0) :
+    ∀ k, (∫ x, densityExpansion ρ f k x ∂ν) = if k = 0 then ∫ x, ρ x ∂ν else 0 := by
+  intro k
+  cases k with
+  | zero => simp [densityExpansion]
+  | succ k => simpa [densityExpansion] using (hf (k+1) (Nat.zero_lt_succ k)).2
+
+/-- source_id: MD-7.7.1-ExactABOPropagators · 印刷p.285 / PDFp.306
+[EXTRA] O用实际独立标准正态乘积测度；θ>0、γ≥0、t≥0、正质量时对应OU噪声。期望用于可积φ，未把不可积函数的默认积分当物理期望。
+[EXTRA] 半群律及实际SDE生成元识别需OU转移律与Markov理论，本条只定义固定时刻传播子。 -/
+def propagateA (m : V n) (t : ℝ) (φ : Phase n → ℝ) : Phase n → ℝ := φ ∘ driftStep m t
+def propagateB (U : V n → ℝ) (t : ℝ) (φ : Phase n → ℝ) : Phase n → ℝ := φ ∘ kickStep U t
+def propagateO (m : V n) (γ θ t : ℝ) (φ : Phase n → ℝ) (x : Phase n) : ℝ :=
+  ∫ R, φ (ouStep m γ θ t R x) ∂Measure.pi (fun _ : Fin n ↦ gaussianReal 0 1)
+
+/-- source_id: MD-7.7.1-OperatorOrderReversal · 印刷p.285 / PDFp.306
+[EXTRA] 覆盖反向拉回组合恒等式和ABAO的全部四段期望传播式；其与前面随机abao映射期望相等仍需推前积分桥。
+[EXTRA] 伴随前向传播子的四段顺序记录在原文；独立定义实际密度伴随的函数空间和边界条件列为覆盖缺口。 -/
+theorem pullback_order {E F : Type*} (A B : E → E) (φ : E → F) :
+    φ ∘ (B ∘ A) = (φ ∘ B) ∘ A := rfl
+def abaoBackward (m : V n) (U : V n → ℝ) (γ θ h : ℝ) (φ : Phase n → ℝ) :=
+  propagateA m (h/2) (propagateB U h (propagateA m (h/2) (propagateO m γ θ h φ)))
+
+/-- source_id: MD-7.7.1-StationaryModifiedPDE · 印刷p.285–286 / PDFp.306–307
+[EXTRA] 真实离散转移一般不嵌入连续Markov半群，修改方程仅为形式分析；不宣称任意离散SDE方法有上述真实Fokker–Planck演化。
+[EXTRA] Markov半群资格、密度正性归一、无界生成元定义域及嵌入性尚缺；此处仅明确定义方程，不证明等价。 -/
+def formalDensityEvolution {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
+    (L : E →L[ℝ] E) (ρ : ℝ → E) : Prop := ∀ t, HasDerivAt ρ (L (ρ t)) t
+def stationaryModifiedDensity {E : Type*} [AddCommGroup E] [Module ℝ E]
+    (L : Module.End ℝ E) (ρ : E) : Prop := L ρ = 0
+
+/-- source_id: MD-7.7.1-TwoOperatorBCH · 印刷p.286 / PDFp.307
+[EXTRA] 任意实代数中的非交换形式幂级数；不要求无界算符指数收敛。本条完整记录所印0–2阶。 -/
+def comm {R : Type*} [Ring R] (X Y : R) : R := X*Y-Y*X
+def twoStage {R : Type*} [Ring R] [Algebra ℝ R] (X Y : R) : PowerSeries R :=
+  MolecularDynamics.textbookFormalOperatorExponential X * MolecularDynamics.textbookFormalOperatorExponential Y
+theorem twoOperatorBCH {R : Type*} [Ring R] [Algebra ℝ R] (X Y : R) :
+    PowerSeries.coeff 0 (formalModifiedGenerator (twoStage X Y)) = X+Y ∧
+    PowerSeries.coeff 1 (formalModifiedGenerator (twoStage X Y)) = (1/2 : ℝ) • comm X Y ∧
+    PowerSeries.coeff 2 (formalModifiedGenerator (twoStage X Y)) =
+      (1/12 : ℝ) • (comm X (comm X Y)+comm Y (comm Y X)) := by
+  sorry
+
+/-- source_id: MD-7.7.1-TaylorRemainder · 印刷p.286–287 / PDFp.307–308
+[EXTRA] 只覆盖作用于单个可观测量和点后的标量C^(n+1) Taylor恒等式及局部余项界；把ABO无界算符组合在紧支撑光滑测试函数上归约到这些假设仍是覆盖缺口。 -/
+theorem taylorRemainder (F : ℝ → ℝ) (k : ℕ) (hF : ContDiff ℝ (k+1) F) (h : ℝ) :
+    F h = (∑ j ∈ Finset.range (k+1), h^j/(Nat.factorial j : ℝ)*iteratedDeriv j F 0) +
+      h^(k+1)/(Nat.factorial k : ℝ)*∫ t in (0 : ℝ)..1, (1-t)^k*iteratedDeriv (k+1) F (t*h) := by
+  sorry
+theorem taylorRemainder_bound (F : ℝ → ℝ) (k : ℕ) (hF : ContDiff ℝ (k+1) F) :
+    Asymptotics.IsBigO (𝓝 (0 : ℝ))
+      (fun h ↦ F h-∑ j ∈ Finset.range (k+1), h^j/(Nat.factorial j : ℝ)*iteratedDeriv j F 0)
+      (fun h ↦ h^(k+1)) := by
+  sorry
+
+/-- source_id: MD-7.7.2-ThreeOperatorBCH · 印刷p.287 / PDFp.308
+[EXTRA] 完整记录最终0–2阶系数；中间未合并式作为原文推导说明，不另假装是完整精确算符相等。 -/
+def threeStage {R : Type*} [Ring R] [Algebra ℝ R] (X Y Z : R) : PowerSeries R :=
+  MolecularDynamics.textbookFormalOperatorExponential Z *
+    MolecularDynamics.textbookFormalOperatorExponential Y * MolecularDynamics.textbookFormalOperatorExponential X
+theorem threeOperatorBCH {R : Type*} [Ring R] [Algebra ℝ R] (X Y Z : R) :
+    PowerSeries.coeff 0 (formalModifiedGenerator (threeStage X Y Z)) = X+Y+Z ∧
+    PowerSeries.coeff 1 (formalModifiedGenerator (threeStage X Y Z)) =
+      (1/2 : ℝ) • (comm Z Y+comm Z X+comm Y X) ∧
+    PowerSeries.coeff 2 (formalModifiedGenerator (threeStage X Y Z)) =
+      (1/4 : ℝ) • comm Z (comm Y X)+(1/12 : ℝ) •
+        (comm Y (comm Y X)+comm X (comm X Y)+comm Z (comm Z Y)+
+          comm Z (comm Z X)+comm (Y+X) (comm (Y+X) Z)) := by
+  sorry
+
+/-- source_id: MD-7.7.2-ScalarForwardOperators · 印刷p.288 / PDFp.309
+[EXTRA] 所有偏导都是实际deriv，单位质量、θ=k_BT；用于光滑密度与γ≥0,θ>0。这里不把未规定定义域的微分表达式直接称闭算符。 -/
+abbrev Density1 := (ℝ × ℝ) → ℝ
+def dq (f : Density1) (x : ℝ × ℝ) : ℝ := deriv (fun q ↦ f (q,x.2)) x.1
+def dp (f : Density1) (x : ℝ × ℝ) : ℝ := deriv (fun p ↦ f (x.1,p)) x.2
+def opA (f : Density1) (x : ℝ × ℝ) : ℝ := -x.2*dq f x
+def opB (U : ℝ → ℝ) (f : Density1) (x : ℝ × ℝ) : ℝ := deriv U x.1*dp f x
+def opO (γ θ : ℝ) (f : Density1) (x : ℝ × ℝ) : ℝ := γ*(f x+x.2*dp f x)+γ*θ*dp (dp f) x
+def opLD (U : ℝ → ℝ) (γ θ : ℝ) (f : Density1) : Density1 := opA f+opB U f+opO γ θ f
+def opComm (A B : Density1 → Density1) (f : Density1) : Density1 := A (B f)-B (A f)
+
+/-- source_id: MD-7.7.2-CommutatorAB · 印刷p.288 / PDFp.309 -/
+theorem commutatorAB (U : ℝ → ℝ) (ρ : Density1)
+    (hU : ContDiff ℝ 2 U) (hρ : ContDiff ℝ 2 ρ) : ∀ x,
+    opComm opA (opB U) ρ x = -x.2*deriv (deriv U) x.1*dp ρ x+deriv U x.1*dq ρ x := by
+  sorry
+
+/-- source_id: MD-7.7.2-CommutatorsAOBO · 印刷p.289 / PDFp.310 -/
+theorem commutatorsAOBO (U : ℝ → ℝ) (ρ : Density1) (γ θ : ℝ)
+    (hU : ContDiff ℝ 3 U) (hρ : ContDiff ℝ 3 ρ) : ∀ x,
+    opComm opA (opO γ θ) ρ x = γ*x.2*dq ρ x+2*γ*θ*dq (dp ρ) x ∧
+    opComm (opB U) (opO γ θ) ρ x = γ*deriv U x.1*dp ρ x := by
+  sorry
+
+/-- source_id: MD-7.7.2-OBAModifiedOperator · 印刷p.288–289 / PDFp.309–310
+[EXTRA] 只证明三个真实交换子表达式与所印一阶修正一致；整体离散传播子的余项界需Taylor/弱展开桥，不声称完成。 -/
+def obaFirstCorrection (U : ℝ → ℝ) (γ θ : ℝ) (ρ : Density1) (x : ℝ × ℝ) : ℝ :=
+  (1/2)*(-x.2*deriv (deriv U) x.1*dp ρ x+deriv U x.1*dq ρ x+
+    γ*x.2*dq ρ x+2*γ*θ*dq (dp ρ) x+γ*deriv U x.1*dp ρ x)
+theorem obaFirstCorrection_commutators (U : ℝ → ℝ) (γ θ : ℝ) (ρ : Density1)
+    (hU : ContDiff ℝ 3 U) (hρ : ContDiff ℝ 3 ρ) : ∀ x,
+    obaFirstCorrection U γ θ ρ x = (1/2)*(opComm opA (opB U) ρ x+
+      opComm opA (opO γ θ) ρ x+opComm (opB U) (opO γ θ) ρ x) := by
+  intro x
+  rw [commutatorAB U ρ (hU.of_le (by norm_num)) (hρ.of_le (by norm_num)),
+    (commutatorsAOBO U ρ γ θ hU hρ x).1, (commutatorsAOBO U ρ γ θ hU hρ x).2]
+  dsimp [obaFirstCorrection]
+  ring
+
+/-- source_id: MD-7.7.2-SpectralQualification · 印刷p.289 / PDFp.310
+[EXTRA] 只记录原文谱结论的精确目标命题，不宣称为定理；一般闭无界Langevin生成元、定义域及紧预解式资格未覆盖。
+[ERRATUM?] 已目视核对PDF310：原文将discrete spectrum释为simple eigenvalues，这并非一般蕴含。紧预解式至多给离散谱及有限重数，不能直接给单重谱；Langevin谱还需前章所列势函数/空间条件。 -/
+def simpleEigenvalue {E : Type*} [AddCommGroup E] [Module ℂ E]
+    (L : Module.End ℂ E) (eigen : ℂ) : Prop := Module.finrank ℂ (Module.End.eigenspace L eigen) = 1
+def printedSpectralConclusion {E : Type*} [AddCommGroup E] [Module ℂ E]
+    (L : Module.End ℂ E) (ρ : E) : Prop :=
+  ρ ≠ 0 ∧ L ρ = 0 ∧ ∀ eigen : ℂ, (∃ v : E, v ≠ 0 ∧ L v = eigen • v) →
+    simpleEigenvalue L eigen ∧ (eigen = 0 ∨ eigen.re < 0)
+
+/-- source_id: MD-7.7.3-PerturbationCoefficientEquation · 印刷p.289–290 / PDFp.310–311
+[EXTRA] 在真实线性作用的形式系数卷积上推导0阶和1阶必要方程；并未由这些必要方程证明原离散链存在不变分布。 -/
+def actionCoefficient {E : Type*} [AddCommGroup E] [Module ℝ E]
+    (L : ℕ → Module.End ℝ E) (ρ : ℕ → E) (k : ℕ) : E :=
+  ∑ j ∈ Finset.range (k+1), L j (ρ (k-j))
+theorem perturbationCoefficientEquation {E : Type*} [AddCommGroup E] [Module ℝ E]
+    (L : ℕ → Module.End ℝ E) (ρ : ℕ → E)
+    (h0 : actionCoefficient L ρ 0 = 0) (h1 : actionCoefficient L ρ 1 = 0) :
+    L 0 (ρ 0) = 0 ∧ L 0 (ρ 1)+L 1 (ρ 0) = 0 := by
+  constructor
+  · simpa [actionCoefficient] using h0
+  · simpa [actionCoefficient, Finset.sum_range_succ] using h1
+
+/-- source_id: MD-7.7.3-ObservableCorrectionExpansion · 印刷p.290 / PDFp.311
+[EXTRA] 完整覆盖0–2阶有限截断积分；无限级数交换与实际误差余项仍需支配收敛及弱展开理论，明确不声称已证。 -/
+theorem observableCorrectionExpansion (ν : Measure Ω) (φ ρ f1 f2 : Ω → ℝ) (h : ℝ)
+    (h0 : Integrable (fun x ↦ φ x*ρ x) ν)
+    (h1 : Integrable (fun x ↦ φ x*ρ x*f1 x) ν)
+    (h2 : Integrable (fun x ↦ φ x*ρ x*f2 x) ν) :
+    (∫ x, φ x*ρ x*(1+h*f1 x+h^2*f2 x) ∂ν) =
+      (∫ x, φ x*ρ x ∂ν)+h*(∫ x, φ x*ρ x*f1 x ∂ν)+h^2*(∫ x, φ x*ρ x*f2 x ∂ν) := by
+  have heq : ∀ x, φ x*ρ x*(1+h*f1 x+h^2*f2 x) =
+      (φ x*ρ x+h*(φ x*ρ x*f1 x))+h^2*(φ x*ρ x*f2 x) := by intro x; ring
+  simp_rw [heq]
+  have hout := integral_add (h0.add (h1.const_mul h)) (h2.const_mul (h^2))
+  have hin := integral_add h0 (h1.const_mul h)
+  simp only [Pi.add_apply] at hout hin
+  rw [hout, hin, integral_const_mul, integral_const_mul]
+
+/-- source_id: MD-7.7.3-PerturbativeSolvabilityCaution · 印刷p.290 / PDFp.311
+[EXTRA] 原书明确未给严格可解性/指数吸引/半群全局存在定理；保留其全部原文主张并定义可解性目标。
+[EXTRA] 不能由紧预解式和有界扰动单独推出任意rhs可解；核方向的Fredholm相容条件、定义域与谱隙均是覆盖缺口。 -/
+def correctionSolvable {E : Type*} [AddCommGroup E] [Module ℝ E]
+    (L : Module.End ℝ E) (rhs : E) : Prop := ∃ u : E, L u = rhs
+
 end MD.Ch07

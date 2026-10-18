@@ -1,7 +1,7 @@
 {
-  "batches": 9,
-  "subtasks": 52,
-  "covered_entries": 52,
+  "batches": 12,
+  "subtasks": 68,
+  "covered_entries": 68,
   "checks": [
     {
       "source_id": "MD-7.1-Bias",
@@ -261,6 +261,86 @@
     {
       "source_id": "MD-7.6-CoordinateJSplitting",
       "project_constants": 6,
+      "missing": []
+    },
+    {
+      "source_id": "MD-7.7-ModifiedGenerator",
+      "project_constants": 49,
+      "missing": []
+    },
+    {
+      "source_id": "MD-7.7-InvariantDensityExpansion",
+      "project_constants": 4,
+      "missing": []
+    },
+    {
+      "source_id": "MD-7.7.1-ExactABOPropagators",
+      "project_constants": 11,
+      "missing": []
+    },
+    {
+      "source_id": "MD-7.7.1-OperatorOrderReversal",
+      "project_constants": 14,
+      "missing": []
+    },
+    {
+      "source_id": "MD-7.7.1-StationaryModifiedPDE",
+      "project_constants": 3,
+      "missing": []
+    },
+    {
+      "source_id": "MD-7.7.1-TwoOperatorBCH",
+      "project_constants": 52,
+      "missing": []
+    },
+    {
+      "source_id": "MD-7.7.1-TaylorRemainder",
+      "project_constants": 2,
+      "missing": []
+    },
+    {
+      "source_id": "MD-7.7.2-ThreeOperatorBCH",
+      "project_constants": 54,
+      "missing": []
+    },
+    {
+      "source_id": "MD-7.7.2-ScalarForwardOperators",
+      "project_constants": 8,
+      "missing": []
+    },
+    {
+      "source_id": "MD-7.7.2-CommutatorAB",
+      "project_constants": 7,
+      "missing": []
+    },
+    {
+      "source_id": "MD-7.7.2-CommutatorsAOBO",
+      "project_constants": 8,
+      "missing": []
+    },
+    {
+      "source_id": "MD-7.7.2-OBAModifiedOperator",
+      "project_constants": 11,
+      "missing": []
+    },
+    {
+      "source_id": "MD-7.7.2-SpectralQualification",
+      "project_constants": 3,
+      "missing": []
+    },
+    {
+      "source_id": "MD-7.7.3-PerturbationCoefficientEquation",
+      "project_constants": 3,
+      "missing": []
+    },
+    {
+      "source_id": "MD-7.7.3-ObservableCorrectionExpansion",
+      "project_constants": 1,
+      "missing": []
+    },
+    {
+      "source_id": "MD-7.7.3-PerturbativeSolvabilityCaution",
+      "project_constants": 2,
       "missing": []
     }
   ],

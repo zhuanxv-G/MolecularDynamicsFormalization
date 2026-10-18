@@ -1,0 +1,66 @@
+{
+  "batch": "BATCH09",
+  "subtask": "BATCH09f",
+  "source_ids": [
+    "MD-7.7-InvariantDensityExpansion"
+  ],
+  "input_sha256": {
+    "Blueprint/Ch07.lean": "781e32bf551c77c51cb520d83acc6f48b1ad26c8a775a3f03e81a31183741faf",
+    "blueprint/ch07/ch07_source.json": "bfa70cbee8d288824fddb5f675cbfa89071f1a4b5b24dab4fb372b848fdd97e6",
+    "BATCH09f_PAGES.pdf": "d5fda82c139378c1060311f2524cb8f65a5d22b6137550b1545e0d815ef3f70e"
+  },
+  "page_mapping": [
+    {
+      "attachment_page": 1,
+      "original_pdf_page": 305,
+      "printed_page": 284
+    }
+  ],
+  "definition_excerpts": [
+    {
+      "full_name": "MD.Ch07.densityExpansion",
+      "kind": "def",
+      "path": "Blueprint/Ch07.lean",
+      "line": 738,
+      "code_sha256": "d8e770e6d89dc08a92594c2de30505aa14761e22ec5a7df0ecd5f661efdabce0"
+    },
+    {
+      "full_name": "MD.Ch07.centeredCorrections",
+      "kind": "def",
+      "path": "Blueprint/Ch07.lean",
+      "line": 741,
+      "code_sha256": "00b11a0fe0b40ffc5849a92c08fff18d32828dc759016c68193bb7a162f5d16a"
+    },
+    {
+      "full_name": "MD.Ch07.computedAverage",
+      "kind": "def",
+      "path": "Blueprint/Ch07.lean",
+      "line": 743,
+      "code_sha256": "cf85499f8a41596d802c1b6614a89910efed48f6e824f4e6192d2200a946432e"
+    },
+    {
+      "full_name": "MD.Ch07.densityExpansion_zeroMass",
+      "kind": "theorem",
+      "path": "Blueprint/Ch07.lean",
+      "line": 744,
+      "code_sha256": "98bc82e1e78ab016a1fa9d1b65681a4fc1f8e259ef30129935b59347343e6092"
+    }
+  ],
+  "validation": {
+    "project_constant_closure": "PASS",
+    "missing_project_definitions": [],
+    "full_page_render_equality_dpi": 72,
+    "website_submitted": false
+  },
+  "files": {
+    "PASTE.txt": {
+      "bytes": 5844,
+      "sha256": "4dec65083223e6ca1bd2fc7fdc2111b0c8cbf55c93fb5e293ac4f129d96ec193"
+    },
+    "BATCH09f_PAGES.pdf": {
+      "bytes": 74642,
+      "sha256": "d5fda82c139378c1060311f2524cb8f65a5d22b6137550b1545e0d815ef3f70e"
+    }
+  },
+  "total_task_bytes": 82543
+}

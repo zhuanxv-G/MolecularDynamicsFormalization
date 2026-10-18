@@ -175,3 +175,89 @@ def coordinateJField (m : V n) (U : V n → ℝ) (i : Fin n) (x : Phase n) : Pha
 def frozenPotential (U : V n → ℝ) (q : V n) (i : Fin n) (r : ℝ) : ℝ :=
   U (Function.update q i r)
 ```
+
+## MD-7.7-ModifiedGenerator
+```json
+{
+  "source_id": "MD-7.7-ModifiedGenerator",
+  "kind": "definition",
+  "label": "(7.16)",
+  "section": "7.7",
+  "printed_page": "284",
+  "pdf_page": "305",
+  "statement_latex": "We begin by defining the generator $\\widehat{\\mathcal L}$ associated to the propagation of averages under the numerical method for an SDE. We think of this generator as a perturbation of the exact Langevin dynamics generator $\\mathcal L_{LD}$, or\n\\[\\widehat{\\mathcal L}=\\mathcal L_{LD}+h\\mathcal L_1+h^2\\mathcal L_2+h^3\\mathcal L_3+O(h^4).\\tag{7.16}\\]\nHowever, the operators involved are not equivalent to the operators that would arise from any stochastic differential equation (see [403]), so we must give up the direct analogy between the formal series and continuous SDE models (which is available in the deterministic setting).",
+  "proof_latex": null,
+  "proof_note": "原书未给独立完整证明。",
+  "context_notation": [],
+  "extra_assumptions": [
+    "只取形式幂级数系数；O(h⁴)在此意为0–3阶系数相等，不宣称无界算符级数收敛，也不声称是另一SDE的生成元。"
+  ],
+  "issues": [],
+  "statement_scope": "本条逐字引用的全部数学对象与公式；未纳入的上下文另列。",
+  "lean_decl": "MD.Ch07.formalModifiedGenerator",
+  "lean_declarations": [
+    "MD.Ch07.formalModifiedGenerator",
+    "MD.Ch07.formalGeneratorExpansion"
+  ],
+  "source_page_verification": "见source_page_checks.json；必须已目视核对本条原页。",
+  "repair_log": [],
+  "documented_priors": []
+}
+```
+```lean
+def formalModifiedGenerator {R : Type*} [Ring R] [Algebra ℝ R]
+    (S : PowerSeries R) : PowerSeries R :=
+  PowerSeries.mk (fun k ↦ PowerSeries.coeff (k+1) (MolecularDynamics.textbookFormalOperatorLogarithm S))
+def formalGeneratorExpansion {R : Type*} [Ring R] [Algebra ℝ R]
+    (L : PowerSeries R) (L0 L1 L2 L3 : R) : Prop :=
+  PowerSeries.coeff 0 L = L0 ∧ PowerSeries.coeff 1 L = L1 ∧
+  PowerSeries.coeff 2 L = L2 ∧ PowerSeries.coeff 3 L = L3
+```
+
+## MD-7.7-InvariantDensityExpansion
+```json
+{
+  "source_id": "MD-7.7-InvariantDensityExpansion",
+  "kind": "definition",
+  "label": "(7.17)",
+  "section": "7.7",
+  "printed_page": "284",
+  "pdf_page": "305",
+  "statement_latex": "We write this invariant distribution as a perturbation of the (target) canonical distribution\n\\[\\widehat\\rho=\\rho_\\beta[1+hf_1+h^2f_2+h^3f_3+O(h^4)],\\tag{7.17}\\]\nwith each correction function $f_k(q,p)$ satisfying\n\\[\\int_{\\mathcal D} f_k(q,p)\\rho_\\beta(q,p)d\\omega=0,\\]\nensuring a useful equivalence in the partition function\n\\[\\int_{\\mathcal D}\\widehat\\rho(q,p)d\\omega=\\int_{\\mathcal D}\\rho_\\beta(q,p)d\\omega.\\]\nOur computed average is therefore $\\langle\\phi\\rangle_h\\stackrel{\\rm def}=\\int_{\\mathcal D}\\phi(q,p)\\widehat\\rho(q,p)d\\omega$.",
+  "proof_latex": null,
+  "proof_note": "原书未给独立完整证明。",
+  "context_notation": [],
+  "extra_assumptions": [
+    "系数零质量不等于任意h的截断密度非负；概率密度仍须非负、可积且归一。余项质量也为零或完整级数可交换积分时才推出精确总质量一致。",
+    "此处证明所有形式系数的质量约束；未把有限截断表达式假称实际不变概率。"
+  ],
+  "issues": [],
+  "statement_scope": "本条逐字引用的全部数学对象与公式；未纳入的上下文另列。",
+  "lean_decl": "MD.Ch07.densityExpansion",
+  "lean_declarations": [
+    "MD.Ch07.densityExpansion",
+    "MD.Ch07.centeredCorrections",
+    "MD.Ch07.computedAverage",
+    "MD.Ch07.densityExpansion_zeroMass"
+  ],
+  "source_page_verification": "见source_page_checks.json；必须已目视核对本条原页。",
+  "repair_log": [],
+  "documented_priors": []
+}
+```
+```lean
+def densityExpansion (ρ : Ω → ℝ) (f : ℕ → Ω → ℝ) : ℕ → Ω → ℝ
+  | 0 => ρ
+  | k+1 => fun x ↦ ρ x*f (k+1) x
+def centeredCorrections (μ : Measure Ω) (f : ℕ → Ω → ℝ) : Prop :=
+  IsProbabilityMeasure μ ∧ ∀ k, 0 < k → Integrable (f k) μ ∧ (∫ x, f k x ∂μ) = 0
+def computedAverage (ν : Measure Ω) (φ ρhat : Ω → ℝ) : ℝ := ∫ x, φ x*ρhat x ∂ν
+theorem densityExpansion_zeroMass (ν : Measure Ω) (ρ : Ω → ℝ) (f : ℕ → Ω → ℝ)
+    (hρ : Integrable ρ ν)
+    (hf : ∀ k, 0 < k → Integrable (fun x ↦ ρ x*f k x) ν ∧ (∫ x, ρ x*f k x ∂ν) = 0) :
+    ∀ k, (∫ x, densityExpansion ρ f k x ∂ν) = if k = 0 then ∫ x, ρ x ∂ν else 0 := by
+  intro k
+  cases k with
+  | zero => simp [densityExpansion]
+  | succ k => simpa [densityExpansion] using (hf (k+1) (Nat.zero_lt_succ k)).2
+```

@@ -1,6 +1,6 @@
 # 第7章待用户提交的首轮任务包
 
-9批、52子包，覆盖52条；尚未提交网站。
+12批、68子包，覆盖68条；尚未提交网站。
 
 - BATCH01：MD-7.1-Bias, MD-7.2-ScalarSDE, MD-7.2-EulerMaruyama, MD-7.2-SDEIncrement, MD-7.2-StrongError, MD-7.2-MeanErrorExpectation
 - BATCH02：MD-7.2-StrongOrder, MD-7.2-WeakError, MD-7.2-StrongWeakComparison, MD-7.2-CanonicalAverage, MD-7.2-PartitionPrinted, MD-7.2-AverageNotationBias
@@ -10,4 +10,7 @@
 - BATCH06：MD-7.4-HarmonicHamiltonian, MD-7.4-HarmonicMoments, MD-7.4-LinearIteration, MD-7.4-BBKLinearForm, MD-7.4-QuadraticProducts, MD-7.4.1-StationaryMomentSystem
 - BATCH07：MD-7.4.1-ABOHarmonic, MD-7.4.1-ABOVariance, MD-7.4.1-Table71, MD-7.4.1-NonsymmetricExactMoments, MD-7.4.2-BBKStar, MD-7.4.2-BBKStarCorrelations
 - BATCH08：MD-7.4.2-BBKStarMomentSystemPrinted, MD-7.4.2-BBKStarStationary, MD-7.5-PerturbedHamiltonian, MD-7.5-PerturbedErrorExpansion, MD-7.5-PerturbedErrorOrders, MD-7.6-GibbsComposition
-- BATCH09：MD-7.6-DivergenceFreeInvariant, MD-7.6-GeMarsdenRestriction, MD-7.6-JSplitting, MD-7.6-CoordinateJSplitting
+- BATCH09：MD-7.6-DivergenceFreeInvariant, MD-7.6-GeMarsdenRestriction, MD-7.6-JSplitting, MD-7.6-CoordinateJSplitting, MD-7.7-ModifiedGenerator, MD-7.7-InvariantDensityExpansion
+- BATCH10：MD-7.7.1-ExactABOPropagators, MD-7.7.1-OperatorOrderReversal, MD-7.7.1-StationaryModifiedPDE, MD-7.7.1-TwoOperatorBCH, MD-7.7.1-TaylorRemainder, MD-7.7.2-ThreeOperatorBCH
+- BATCH11：MD-7.7.2-ScalarForwardOperators, MD-7.7.2-CommutatorAB, MD-7.7.2-CommutatorsAOBO, MD-7.7.2-OBAModifiedOperator, MD-7.7.2-SpectralQualification, MD-7.7.3-PerturbationCoefficientEquation
+- BATCH12：MD-7.7.3-ObservableCorrectionExpansion, MD-7.7.3-PerturbativeSolvabilityCaution

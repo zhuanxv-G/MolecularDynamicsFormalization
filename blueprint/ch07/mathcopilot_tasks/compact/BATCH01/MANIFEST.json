@@ -6,42 +6,42 @@
       "source_id": "MD-7.1-Bias",
       "path": "blueprint/ch07/mathcopilot_tasks/compact/BATCH01/a",
       "bytes": 127195,
-      "manifest_sha256": "f002e810bf979d892716afaf2df5bc8dd9c060be2a87bd1ac6a5e9ee9242f977"
+      "manifest_sha256": "4235b78a06ecc685804ccb9088aaf2385361d3bafe536cd3e61110cc8670a10c"
     },
     {
       "subtask": "BATCH01b",
       "source_id": "MD-7.2-ScalarSDE",
       "path": "blueprint/ch07/mathcopilot_tasks/compact/BATCH01/b",
       "bytes": 83984,
-      "manifest_sha256": "aa107b610649a748eab8b5be7a9b84b2ef215c8e946eaba999da1a2b515137fc"
+      "manifest_sha256": "bc99a54b29d316295bda34334f31e79ec0a4dc0a65cfbb58ed9e31560a0303c0"
     },
     {
       "subtask": "BATCH01c",
       "source_id": "MD-7.2-EulerMaruyama",
       "path": "blueprint/ch07/mathcopilot_tasks/compact/BATCH01/c",
       "bytes": 80993,
-      "manifest_sha256": "56b2cfd79b8bac8740f2fc4b4b51353c6ffb7feb0a101d547f0f95c75996bc53"
+      "manifest_sha256": "f97232e76a09e9a561817471a3557b088d7c6cd765f801b1223a632b2409bfb0"
     },
     {
       "subtask": "BATCH01d",
       "source_id": "MD-7.2-SDEIncrement",
       "path": "blueprint/ch07/mathcopilot_tasks/compact/BATCH01/d",
       "bytes": 85053,
-      "manifest_sha256": "605cce83c3e2c960bf19dfedb4cd1019fc726112957435941564d1ec7fcf57a0"
+      "manifest_sha256": "d4a4ed0ea7485231f9955f154bb4df6eac0572e7c7905aa9794d84da6e7140a4"
     },
     {
       "subtask": "BATCH01e",
       "source_id": "MD-7.2-StrongError",
       "path": "blueprint/ch07/mathcopilot_tasks/compact/BATCH01/e",
       "bytes": 79344,
-      "manifest_sha256": "991ad8b14a58db339804b5ec48b7b2cabb1e61d82e9804640087262a252dac9a"
+      "manifest_sha256": "5fb4528a66b105000c30f8ea08521381fddbacc2de35fdd3ca4f6cedfce8a03d"
     },
     {
       "subtask": "BATCH01f",
       "source_id": "MD-7.2-MeanErrorExpectation",
       "path": "blueprint/ch07/mathcopilot_tasks/compact/BATCH01/f",
       "bytes": 80225,
-      "manifest_sha256": "1eadb69179cf1aab84dd92729e87317a0e081cf728e4ab7efd1f7f851bca133a"
+      "manifest_sha256": "18641642d5620200ae5c122dc6b914eba7adf647c2a3d76a26284992f1699484"
     }
   ]
 }
