@@ -1,0 +1,26 @@
+{
+  "batch": "EAUDIT11",
+  "subtasks": [
+    {
+      "subtask": "EAUDIT11a",
+      "source_id": "MD-7.12-ConstrainedLangevin",
+      "path": "blueprint/ch07/mathcopilot_tasks/EAUDIT11/a",
+      "bytes": 114906,
+      "manifest_sha256": "42d94400d79526c7bd2d99bf47630441901f57de6e004804726f9c9f6893491f"
+    },
+    {
+      "subtask": "EAUDIT11b",
+      "source_id": "MD-7.12-ConstrainedCanonicalErgodicity",
+      "path": "blueprint/ch07/mathcopilot_tasks/EAUDIT11/b",
+      "bytes": 110767,
+      "manifest_sha256": "1e34d1e45d9fcf9ed0efe9748b5aaf071b531c51bef663c5a0aedba993d0c84d"
+    },
+    {
+      "subtask": "EAUDIT11c",
+      "source_id": "MD-7.12-ConstrainedHOSplitting",
+      "path": "blueprint/ch07/mathcopilot_tasks/EAUDIT11/c",
+      "bytes": 123903,
+      "manifest_sha256": "ddcc82ef97884770632d679f6ed1d62d3945acdee9eada91a454a2fdd4601bff"
+    }
+  ]
+}

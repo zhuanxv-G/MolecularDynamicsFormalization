@@ -1,0 +1,14 @@
+--- submitted
++++ repaired
+@@ -2,4 +2,11 @@
+   (fun j ↦ if j = i then x.2 i/m i else 0,
+    fun j ↦ if j = i then -gradient U x.1 i else 0)
+ def frozenPotential (U : V n → ℝ) (q : V n) (i : Fin n) (r : ℝ) : ℝ :=
+-  U (Function.update q i r)+  U (Function.update q i r)
++
++def coordinateJQualification (m : V n) (U : V n → ℝ) : Prop :=
++  (∀ i, 0 < m i) ∧ ContDiff ℝ 2 U
++
++theorem frozenPotential_deriv (m : V n) (U : V n → ℝ)
++    (hq : coordinateJQualification m U) (q : V n) (i : Fin n) :
++    deriv (frozenPotential U q i) (q i) = gradient U q i := rfl

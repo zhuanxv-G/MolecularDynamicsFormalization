@@ -1,0 +1,95 @@
+{
+  "source_id": "MD-7.9.2-OUHermiteIdentities",
+  "signature_changed": true,
+  "scope": "所列OU/Hermite微分恒等式，显式补H(ρν)=−p·∇νρ的中间式；无核唯一性或Fredholm可解性。",
+  "before": {
+    "source_id": "MD-7.9.2-OUHermiteIdentities",
+    "kind": "unnumbered_claim",
+    "label": "(7.33)–(7.34)",
+    "section": "7.9.2",
+    "printed_page": "302",
+    "pdf_page": "323",
+    "statement_latex": "\\[\\overline{\\mathcal L}_O^\\dagger(\\rho_\\beta\\nabla^3U:p\\otimes p\\otimes p)=-3\\rho_\\beta\\nabla^3U:p\\otimes p\\otimes p+\\tfrac{6\\rho_\\beta}{\\beta}p^T\\nabla_q\\Delta_qU,\\]\n\\[\\overline{\\mathcal L}_O^\\dagger(\\rho_\\beta p^T\\nabla_q\\Delta_qU)=-\\rho_\\beta p^T\\nabla_q\\Delta_qU,\\]\n\\[\\overline{\\mathcal L}_O^\\dagger(\\rho_\\beta p^T(\\nabla^2U)\\nabla U)=-\\rho_\\beta p^T(\\nabla^2U)\\nabla U.\\]\n\\[w\\rho_\\beta=\\tfrac\\beta{24}\\overline{\\mathcal L}_O^\\dagger([6p^T(\\nabla^2U)\\nabla U-\\tfrac13\\nabla^3U:p\\otimes p\\otimes p-\\tfrac2\\beta p^T\\nabla_q\\Delta_qU]\\rho_\\beta).\\tag{7.33}\\]\n\\[\\mathcal L_H^\\dagger(\\rho_\\beta\\nu)=-p^T\\nabla\\nu\\rho_\\beta=\\overline{\\mathcal L}_O^\\dagger([p^T\\nabla\\nu+\\mu(q)]\\rho_\\beta).\\tag{7.34}\\]",
+    "proof_latex": null,
+    "proof_outline": null,
+    "proof_note": "原页推导与上下文全文见original_page_text；数学符号的排版以随附原页PDF为准。",
+    "original_page_text": [
+      {
+        "pdf_page": 323,
+        "printed_page": 302,
+        "text": "302\n7\nNumerical Methods for Stochastic Molecular Dynamics\nHence we have\n\u0006\nNL\u0004\nO C \"L\u0004\nH\n\u0007 \u0004\n\u0005ˇ.f2;0;\u0002OABAO\u0003.q; p/ C \"f2;1;\u0002OABAO\u0003.q; p/C : : :/\n\u0005\nD \u0003 \"w.q; p/\u0005ˇ;\nand equating powers of the reciprocal friction \" gives us a sequence of equations to\nsolve\nOrder 1:\nNL\u0004\nO\n\u0004\n\u0005ˇf2;0;\u0002OABAO\u0003\n\u0005\nD 0;\nOrder \":\nL\u0004\nH\n\u0004\n\u0005ˇf2;0;\u0002OABAO\u0003\n\u0005\nC NL\u0004\nO\n\u0004\n\u0005ˇf2;1;\u0002OABAO\u0003\n\u0005\nD \u0003w.q; p/\u0005ˇ;\nOrder \"2:\nL\u0004\nH\n\u0004\n\u0005ˇf2;1;\u0002OABAO\u0003\n\u0005\nC NL\u0004\nO\n\u0004\n\u0005ˇf2;2;\u0002OABAO\u0003\n\u0005\nD 0;\nOrder \"3:\nL\u0004\nH\n\u0004\n\u0005ˇf2;2;\u0002OABAO\u0003\n\u0005\nC NL\u0004\nO\n\u0004\n\u0005ˇf2;3;\u0002OABAO\u0003\n\u0005\nD 0;\n:::\nThe ﬁrst equation at order one tells us that f2;0;\u0002OABAO\u0003.q; p/ must be a function of\nposition only, as the kernel of NL\u0004\nO is the set of functions that are constant with respect\nto p. Hence we shall denote\nf2;0;\u0002OABAO\u0003.q; p/ D \u0003.q/;\nwhere we our goal is now to explicitly ﬁnd \u0003.q/. Unfortunately, \u0003.q/ is not explicitly\ndetermined at this point, we only know that it is a function of position only such that\nh\u0003i D 0. This function will be determined as we solve the higher order equations.\nIn order to determine \u0003.q/, we will have to solve the next PDE at order \",\nNL\u0004\nO\n\u0004\u0005ˇf2;1;\u0002OABAO\u0003\n\u0005 C L\u0004\nH\n\u0004\u0005ˇf2;0;\u0002OABAO\u0003\n\u0005 D \u0003w.q; p/\u0005ˇ;\n(7.32)\nwhere we will make use of the formulas\nNL\u0004\nO\n\u0004\n\u0005ˇr3U W p ˝ p ˝ p\n\u0005\nD \u00033\u0005ˇr3U W p ˝ p ˝ p C 6\u0005ˇ\nˇ pTrq\u0016qU;\nNL\u0004\nO\n\u0004\n\u0005ˇpTrq\u0016qU\n\u0005\nD \u0003\u0005ˇpTrq\u0016qU;\nNL\u0004\nO\n\u0004\n\u0005ˇpT \u0004\nr2U\n\u0005\nrU\n\u0005\nD \u0003\u0005ˇpT \u0004\nr2U\n\u0005\nrU;\nto write\nw.q; p/\u0005ˇ D ˇ\n24\nNL\u0004\nO\n\b\u0002\n6pT \u0004r2U\u0005 rU \u0003 1\n3r3U W p ˝ p ˝ p \u0003 2\nˇ pTrq\u0016qU\n\u0003\n\u0005ˇ\n\t\n:\n(7.33)\nAdditionally, for \u0003.q/ we have the identity\nL\u0004\nH\n\u0004\n\u0005ˇ\u0003\n\u0005\nD \u0003pTr\u0003\u0005ˇ D NL\u0004\nO\n\u0004\npTr\u0003 C \u0006.q/\n\u000b\n\u0005ˇ\n\u0005\n;\n(7.34)\n"
+      }
+    ],
+    "transcription_note": "PDF文字层原样保留，陈述中的数学排版转写为LaTeX；文字层有特殊字形编码时以目视原页为准。PDF347的Exercises之后不在正文范围内。",
+    "context_notation": [],
+    "extra_assumptions": [
+      "OU仅对p微分，μ(q)不需对p额外正则；U,ν光滑且β>0。全部三个Hermite式和两个合成恒等式都在Lean结论中。"
+    ],
+    "issues": [],
+    "statement_scope": "本条逐字引用的全部数学对象与公式；未纳入的上下文另列。",
+    "lean_decl": "MD.Ch07.laplacian",
+    "lean_declarations": [
+      "MD.Ch07.laplacian",
+      "MD.Ch07.pGradLaplacian",
+      "MD.Ch07.hermitePrimitive",
+      "MD.Ch07.ouHermiteIdentities"
+    ],
+    "source_page_verification": "见source_page_checks.json；必须已目视核对本条原页。",
+    "repair_log": [
+      {
+        "instruction": 29,
+        "website_verdict": "FAIL",
+        "suggested_fix": "在ouHermiteIdentities的合取中显式加入phaseH(ρν)(q,p)=−(∑i p_i∂iν(q))ρ(q,p)；其余签名可保留。",
+        "actual_scope": "所列OU/Hermite微分恒等式，显式补H(ρν)=−p·∇νρ的中间式；无核唯一性或Fredholm可解性。",
+        "signature_changed": true
+      }
+    ],
+    "documented_priors": []
+  },
+  "after": {
+    "source_id": "MD-7.9.2-OUHermiteIdentities",
+    "kind": "unnumbered_claim",
+    "label": "(7.33)–(7.34)",
+    "section": "7.9.2",
+    "printed_page": "302",
+    "pdf_page": "323",
+    "statement_latex": "\\[\\overline{\\mathcal L}_O^\\dagger(\\rho_\\beta\\nabla^3U:p\\otimes p\\otimes p)=-3\\rho_\\beta\\nabla^3U:p\\otimes p\\otimes p+\\tfrac{6\\rho_\\beta}{\\beta}p^T\\nabla_q\\Delta_qU,\\]\n\\[\\overline{\\mathcal L}_O^\\dagger(\\rho_\\beta p^T\\nabla_q\\Delta_qU)=-\\rho_\\beta p^T\\nabla_q\\Delta_qU,\\]\n\\[\\overline{\\mathcal L}_O^\\dagger(\\rho_\\beta p^T(\\nabla^2U)\\nabla U)=-\\rho_\\beta p^T(\\nabla^2U)\\nabla U.\\]\n\\[w\\rho_\\beta=\\tfrac\\beta{24}\\overline{\\mathcal L}_O^\\dagger([6p^T(\\nabla^2U)\\nabla U-\\tfrac13\\nabla^3U:p\\otimes p\\otimes p-\\tfrac2\\beta p^T\\nabla_q\\Delta_qU]\\rho_\\beta).\\tag{7.33}\\]\n\\[\\mathcal L_H^\\dagger(\\rho_\\beta\\nu)=-p^T\\nabla\\nu\\rho_\\beta=\\overline{\\mathcal L}_O^\\dagger([p^T\\nabla\\nu+\\mu(q)]\\rho_\\beta).\\tag{7.34}\\]",
+    "proof_latex": null,
+    "proof_outline": null,
+    "proof_note": "原页推导与上下文全文见original_page_text；数学符号的排版以随附原页PDF为准。",
+    "original_page_text": [
+      {
+        "pdf_page": 323,
+        "printed_page": 302,
+        "text": "302\n7\nNumerical Methods for Stochastic Molecular Dynamics\nHence we have\n\u0006\nNL\u0004\nO C \"L\u0004\nH\n\u0007 \u0004\n\u0005ˇ.f2;0;\u0002OABAO\u0003.q; p/ C \"f2;1;\u0002OABAO\u0003.q; p/C : : :/\n\u0005\nD \u0003 \"w.q; p/\u0005ˇ;\nand equating powers of the reciprocal friction \" gives us a sequence of equations to\nsolve\nOrder 1:\nNL\u0004\nO\n\u0004\n\u0005ˇf2;0;\u0002OABAO\u0003\n\u0005\nD 0;\nOrder \":\nL\u0004\nH\n\u0004\n\u0005ˇf2;0;\u0002OABAO\u0003\n\u0005\nC NL\u0004\nO\n\u0004\n\u0005ˇf2;1;\u0002OABAO\u0003\n\u0005\nD \u0003w.q; p/\u0005ˇ;\nOrder \"2:\nL\u0004\nH\n\u0004\n\u0005ˇf2;1;\u0002OABAO\u0003\n\u0005\nC NL\u0004\nO\n\u0004\n\u0005ˇf2;2;\u0002OABAO\u0003\n\u0005\nD 0;\nOrder \"3:\nL\u0004\nH\n\u0004\n\u0005ˇf2;2;\u0002OABAO\u0003\n\u0005\nC NL\u0004\nO\n\u0004\n\u0005ˇf2;3;\u0002OABAO\u0003\n\u0005\nD 0;\n:::\nThe ﬁrst equation at order one tells us that f2;0;\u0002OABAO\u0003.q; p/ must be a function of\nposition only, as the kernel of NL\u0004\nO is the set of functions that are constant with respect\nto p. Hence we shall denote\nf2;0;\u0002OABAO\u0003.q; p/ D \u0003.q/;\nwhere we our goal is now to explicitly ﬁnd \u0003.q/. Unfortunately, \u0003.q/ is not explicitly\ndetermined at this point, we only know that it is a function of position only such that\nh\u0003i D 0. This function will be determined as we solve the higher order equations.\nIn order to determine \u0003.q/, we will have to solve the next PDE at order \",\nNL\u0004\nO\n\u0004\u0005ˇf2;1;\u0002OABAO\u0003\n\u0005 C L\u0004\nH\n\u0004\u0005ˇf2;0;\u0002OABAO\u0003\n\u0005 D \u0003w.q; p/\u0005ˇ;\n(7.32)\nwhere we will make use of the formulas\nNL\u0004\nO\n\u0004\n\u0005ˇr3U W p ˝ p ˝ p\n\u0005\nD \u00033\u0005ˇr3U W p ˝ p ˝ p C 6\u0005ˇ\nˇ pTrq\u0016qU;\nNL\u0004\nO\n\u0004\n\u0005ˇpTrq\u0016qU\n\u0005\nD \u0003\u0005ˇpTrq\u0016qU;\nNL\u0004\nO\n\u0004\n\u0005ˇpT \u0004\nr2U\n\u0005\nrU\n\u0005\nD \u0003\u0005ˇpT \u0004\nr2U\n\u0005\nrU;\nto write\nw.q; p/\u0005ˇ D ˇ\n24\nNL\u0004\nO\n\b\u0002\n6pT \u0004r2U\u0005 rU \u0003 1\n3r3U W p ˝ p ˝ p \u0003 2\nˇ pTrq\u0016qU\n\u0003\n\u0005ˇ\n\t\n:\n(7.33)\nAdditionally, for \u0003.q/ we have the identity\nL\u0004\nH\n\u0004\n\u0005ˇ\u0003\n\u0005\nD \u0003pTr\u0003\u0005ˇ D NL\u0004\nO\n\u0004\npTr\u0003 C \u0006.q/\n\u000b\n\u0005ˇ\n\u0005\n;\n(7.34)\n"
+      }
+    ],
+    "transcription_note": "PDF文字层原样保留，陈述中的数学排版转写为LaTeX；文字层有特殊字形编码时以目视原页为准。PDF347的Exercises之后不在正文范围内。",
+    "context_notation": [],
+    "extra_assumptions": [
+      "OU仅对p微分，μ(q)不需对p额外正则；U,ν光滑且β>0。全部三个Hermite式和两个合成恒等式都在Lean结论中。",
+      "29号覆盖限定：所列OU/Hermite微分恒等式，显式补H(ρν)=−p·∇νρ的中间式；无核唯一性或Fredholm可解性。"
+    ],
+    "issues": [],
+    "statement_scope": "所列OU/Hermite微分恒等式，显式补H(ρν)=−p·∇νρ的中间式；无核唯一性或Fredholm可解性。",
+    "lean_decl": "MD.Ch07.laplacian",
+    "lean_declarations": [
+      "MD.Ch07.laplacian",
+      "MD.Ch07.pGradLaplacian",
+      "MD.Ch07.hermitePrimitive",
+      "MD.Ch07.ouHermiteIdentities"
+    ],
+    "source_page_verification": "见source_page_checks.json；必须已目视核对本条原页。",
+    "repair_log": [
+      {
+        "instruction": 29,
+        "website_verdict": "FAIL",
+        "suggested_fix": "在ouHermiteIdentities的合取中显式加入phaseH(ρν)(q,p)=−(∑i p_i∂iν(q))ρ(q,p)；其余签名可保留。",
+        "actual_scope": "所列OU/Hermite微分恒等式，显式补H(ρν)=−p·∇νρ的中间式；无核唯一性或Fredholm可解性。",
+        "signature_changed": true
+      }
+    ],
+    "documented_priors": []
+  },
+  "diff": "--- submitted\n+++ repaired\n@@ -11,5 +11,7 @@\n     O (ρ*hessianGrad U) = -(ρ*hessianGrad U) ∧\n     (fun x ↦ -symmetricRHS false U β x*ρ x) = (fun x ↦ β/24*O (hermitePrimitive U β*ρ) x) ∧\n     phaseH U (fun x ↦ ρ x*ν x.1) =\n+      (fun x ↦ -(∑ i, x.2 i*gradient ν x.1 i)*ρ x) ∧\n+    phaseH U (fun x ↦ ρ x*ν x.1) =\n       O (fun x ↦ ((∑ i, x.2 i*gradient ν x.1 i)+μ x.1)*ρ x) := by\n   sorry"
+}

@@ -1,0 +1,122 @@
+{
+  "batch": "EAUDIT11",
+  "subtask": "EAUDIT11b",
+  "source_ids": [
+    "MD-7.12-ConstrainedCanonicalErgodicity"
+  ],
+  "input_sha256": {
+    "Blueprint/Ch07.lean": "f3bc0ee86ace9c825028f0cec8ebb2fb410d6be77213cc7fb41cb8889540a000",
+    "blueprint/ch07/ch07_source.json": "1a201887b51a249fb73f456237cb342963c5d98c612ec1912f21572a57924012",
+    "PAGES.pdf": "ac659ba3d25ab48d22c2bdda1167c93fdf9a12030058fc69532341417101727c"
+  },
+  "page_mapping": [
+    {
+      "attachment_page": 1,
+      "original_pdf_page": 338,
+      "printed_page": 317
+    }
+  ],
+  "definition_excerpts": [
+    {
+      "full_name": "MD.Ch07.V",
+      "kind": "abbrev",
+      "path": "Blueprint/Ch07.lean",
+      "line": 202,
+      "code_sha256": "7ab0ad90462b274b03f5b929b5f09417c0b397b6cb908fa6e7bd56677a314027"
+    },
+    {
+      "full_name": "MD.Ch07.Phase",
+      "kind": "abbrev",
+      "path": "Blueprint/Ch07.lean",
+      "line": 203,
+      "code_sha256": "ef1520e3b22ac1c99a30a989deafe8d3da44a9f2a3e5b6c2cd3220218b88513e"
+    },
+    {
+      "full_name": "MD.Ch07.coordDerivative",
+      "kind": "def",
+      "path": "Blueprint/Ch07.lean",
+      "line": 257,
+      "code_sha256": "e782d789a13f5db6817e2c995f141805e81ac75720125b846f8ee14ba3833a4b"
+    },
+    {
+      "full_name": "MD.Ch07.mechanicalHamiltonian",
+      "kind": "def",
+      "path": "Blueprint/Ch07.lean",
+      "line": 1113,
+      "code_sha256": "62d2e0a30b1f75b8d94db47d5f10585188510cf0bd5827e56eafaa0b12b507aa"
+    },
+    {
+      "full_name": "MD.Ch07.gibbsWeight",
+      "kind": "def",
+      "path": "Blueprint/Ch07.lean",
+      "line": 1115,
+      "code_sha256": "f25e4e3ead34a06695f3b9d9b5f607bc68063a1d6f159ec2c97866d0ac9b2e38"
+    },
+    {
+      "full_name": "MD.Ch07.constraintJacobian",
+      "kind": "def",
+      "path": "Blueprint/Ch07.lean",
+      "line": 1695,
+      "code_sha256": "b188cb797f84cc7aefa1f40fde389d28727a10452b1c9405e5f82d3db8e33aee"
+    },
+    {
+      "full_name": "MD.Ch07.hiddenConstraint",
+      "kind": "def",
+      "path": "Blueprint/Ch07.lean",
+      "line": 1699,
+      "code_sha256": "8113d82f13f1f574ed323d7f8494c4ca0771060a74bbe144135ec562e00ec3a2"
+    },
+    {
+      "full_name": "MD.Ch07.cotangentConstraint",
+      "kind": "def",
+      "path": "Blueprint/Ch07.lean",
+      "line": 1701,
+      "code_sha256": "63be0b3c75b6519689be70bc700da574682eedd2a2fe553decf3dfabf4f9472f"
+    },
+    {
+      "full_name": "MD.Ch07.constrainedCanonical",
+      "kind": "def",
+      "path": "Blueprint/Ch07.lean",
+      "line": 1750,
+      "code_sha256": "4e8842350389872007b7f721eed9f7e7cf9905ca88c87147c804d9e296939170"
+    },
+    {
+      "full_name": "MD.Ch07.constrainedReference",
+      "kind": "def",
+      "path": "Blueprint/Ch07.lean",
+      "line": 1752,
+      "code_sha256": "4dc76c0f0427203cf5ed4544f9cc6771c6f314b1fa2c19806e8b40f990309733"
+    },
+    {
+      "full_name": "MD.Ch07.constrainedErgodicAverages",
+      "kind": "def",
+      "path": "Blueprint/Ch07.lean",
+      "line": 1759,
+      "code_sha256": "94e3dd3722bc2788664b0a97937e6d8aa4a756efc8a6ee34407cebb9bd2b2fac"
+    },
+    {
+      "full_name": "MD.Ch07.constrainedCanonicalQualification",
+      "kind": "def",
+      "path": "Blueprint/Ch07.lean",
+      "line": 1764,
+      "code_sha256": "c2d9fa47f4bffa26daf79213e92fb812cdf93ae90fd92aab8682772e7078f30d"
+    }
+  ],
+  "validation": {
+    "project_constant_closure": "PASS",
+    "missing_project_definitions": [],
+    "full_page_render_equality_dpi": 72,
+    "website_submitted": false
+  },
+  "files": {
+    "PASTE.txt": {
+      "bytes": 13745,
+      "sha256": "77c97afcf4cf01b5543df8478837c83eaaa9d1885ad531c85d42fcc4627e4687"
+    },
+    "PAGES.pdf": {
+      "bytes": 93104,
+      "sha256": "ac659ba3d25ab48d22c2bdda1167c93fdf9a12030058fc69532341417101727c"
+    }
+  },
+  "total_task_bytes": 110767
+}

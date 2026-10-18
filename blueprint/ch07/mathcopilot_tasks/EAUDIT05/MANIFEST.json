@@ -1,0 +1,26 @@
+{
+  "batch": "EAUDIT05",
+  "subtasks": [
+    {
+      "subtask": "EAUDIT05a",
+      "source_id": "MD-7.8.1-CommutatorPermutationRelations",
+      "path": "blueprint/ch07/mathcopilot_tasks/EAUDIT05/a",
+      "bytes": 99479,
+      "manifest_sha256": "1181f580dad173b9a9977b8a413fadc5d0aa29bc6edb80f6dc36015ebd3297a1"
+    },
+    {
+      "subtask": "EAUDIT05b",
+      "source_id": "MD-7.8.1-GibbsDerivativeIdentities",
+      "path": "blueprint/ch07/mathcopilot_tasks/EAUDIT05/b",
+      "bytes": 110579,
+      "manifest_sha256": "4983e88ee994dca182e828f9c6e55ab02571ef24c034e3dfef6c029fb77ccb22"
+    },
+    {
+      "subtask": "EAUDIT05c",
+      "source_id": "MD-7.8.1-FirstCorrectionTablePrinted",
+      "path": "blueprint/ch07/mathcopilot_tasks/EAUDIT05/c",
+      "bytes": 107175,
+      "manifest_sha256": "37f72c62018afa9e10e48253efed75a66edb1ab089dbf2025506611ffdaf83f7"
+    }
+  ]
+}

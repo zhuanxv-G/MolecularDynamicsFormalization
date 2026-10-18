@@ -1,0 +1,1029 @@
+
+### MD-7.2-StrongWeakComparison 286
+{
+  "lean_decl": [
+    "MD.Ch07.strongWeakLipschitz",
+    "MD.Ch07.weakDoesNotImplyStrong"
+  ],
+  "verdict": "NEEDS_HUMAN",
+  "explanation": "正向strongWeakLipschitz的完整签名是L≥0、全局Lipschitz且f(X)、f(Y)、|X−Y|可积时的一阶绝对误差控制，不是原句对任意测试函数类、任意α的收敛阶结论。反向声明正确：等权±1、X=id、Y=−id使所有测试函数期望相等而E|X−Y|=2；它给出耦合层面的反例，未构造一个完整数值方法族。已披露覆盖缺口，但原书无条件措辞仍须人工限定。",
+  "counterexample": "若不限定测试类：在单点概率空间令X=0、X_h=h，L¹强误差为h；取φ(x)=sqrt(|x|)，弱误差为sqrt(h)，不保留阶1。反向反例见声明中的等权±1耦合，强误差为2而所有弱差为0。",
+  "suggested_fix": "保留原文；标注[ERRATUM?]测试类与矩条件待确认，并把正向Lean覆盖明确记为α=1的Lipschitz定量推论。"
+}
+{
+  "status": "NEEDS_HUMAN",
+  "issue_codes": [
+    "SOURCE_CLAIM_REQUIRES_TEST_CLASS",
+    "DECLARED_COVERAGE_GAP"
+  ],
+  "corrected_json": null,
+  "issues": [
+    "原书“高强阶蕴含高弱阶”没有在该句指定测试函数正则性及矩条件；现有Lean只覆盖可积全局Lipschitz测试的一阶误差控制。"
+  ],
+  "evidence": [
+    {
+      "stage": "A",
+      "attachment": "R1_PAGES.pdf",
+      "attachment_pages": [
+        9
+      ],
+      "printed_page": "265",
+      "result": "已目视核对原页；原书“高强阶蕴含高弱阶”没有在该句指定测试函数正则性及矩条件；现有Lean只覆盖可积全局Lipschitz测试的一阶误差控制。"
+    },
+    {
+      "stage": "C",
+      "result": "正向strongWeakLipschitz的完整签名是L≥0、全局Lipschitz且f(X)、f(Y)、|X−Y|可积时的一阶绝对误差控制，不是原句对任意测试函数类、任意α的收敛阶结论。反向声明正确：等权±1、X=id、Y=−id使所有测试函数期望相等而E|X−Y|=2；它给出耦合层面的反例，未构造一个完整数值方法族。已披露覆盖缺口，但原书无条件措辞仍须人工限定。",
+      "scope": "仅核对任务摘录的完整签名及MD/MolecularDynamics定义体；不修改工程，不补证明，不将sorry视为签名错误。"
+    }
+  ]
+}
+
+### MD-7.2-PartitionPrinted 287
+{
+  "lean_decl": [
+    "MD.Ch07.partitionPrinted",
+    "MD.Ch07.partitionPrinted_counterexample",
+    "MD.Ch07.partitionPrinted_corrected"
+  ],
+  "verdict": "NEEDS_HUMAN",
+  "explanation": "partitionPrinted忠实保留Z⁻¹=配分积分及其归一化结论，应按Printed规则判断忠实性而非强求错误命题成立。该原书结论数学上错误，须人工确认。partitionPrinted_counterexample的1/4≠1正确但只是测度反例的代数核心；partitionPrinted_corrected用Z=配分积分并显式要求正性和可积性，其非负、可积、总质量1三项结论正确。",
+  "counterexample": "D为单点，ν(D)=1/2，H=0、Z=2，配分积分=1/2=Z⁻¹；密度总积分=(1/2)(1/2)=1/4≠1。",
+  "suggested_fix": "保留Printed版并标[ERRATUM?]；修正版取Z_can=配分积分，附正性及可积性。"
+}
+{
+  "status": "NEEDS_HUMAN",
+  "issue_codes": [
+    "SOURCE_NORMALIZATION_ERRATUM"
+  ],
+  "corrected_json": null,
+  "issues": [
+    "原页确实印为Z_can^{-1}=积分；这是原书数学疑误，非转录错误。原文版忠实；修正版和代数反例正确，不能用修正版覆盖原文。"
+  ],
+  "evidence": [
+    {
+      "stage": "A",
+      "attachment": "R1_PAGES.pdf",
+      "attachment_pages": [
+        11
+      ],
+      "printed_page": "266",
+      "result": "已目视核对原页；原页确实印为Z_can^{-1}=积分；这是原书数学疑误，非转录错误。原文版忠实；修正版和代数反例正确，不能用修正版覆盖原文。"
+    },
+    {
+      "stage": "C",
+      "result": "partitionPrinted忠实保留Z⁻¹=配分积分及其归一化结论，应按Printed规则判断忠实性而非强求错误命题成立。该原书结论数学上错误，须人工确认。partitionPrinted_counterexample的1/4≠1正确但只是测度反例的代数核心；partitionPrinted_corrected用Z=配分积分并显式要求正性和可积性，其非负、可积、总质量1三项结论正确。",
+      "scope": "仅核对任务摘录的完整签名及MD/MolecularDynamics定义体；不修改工程，不补证明，不将sorry视为签名错误。"
+    }
+  ]
+}
+
+### MD-7.3-OUExactUpdate 289
+{
+  "lean_decl": [
+    "MD.Ch07.ouMomentum",
+    "MD.Ch07.ouTransitionLaw"
+  ],
+  "verdict": "NEEDS_HUMAN",
+  "explanation": "ouMomentum的衰减exp(−γh)、噪声方差θ(1−exp(−2γh))m_i正确。ouTransitionLaw对每个固定t≥0、h>0存在标准独立坐标向量Z，与p(t)独立并几乎处处给出更新；γ=0时噪声系数为0仍可由W区间增量提供Z。原书前导文字的乘数exp(−γt)疑为笔误，应为exp(−γ(t+h))；公式(7.3)本身正确，需人工确认该原书疑误。",
+  "counterexample": null,
+  "suggested_fix": "保留原文并标[ERRATUM?]前导文字乘数；不改动正确的(7.3)及更新签名。"
+}
+{
+  "status": "NEEDS_HUMAN",
+  "issue_codes": [
+    "SOURCE_INTEGRATING_FACTOR_ERRATUM"
+  ],
+  "corrected_json": null,
+  "issues": [
+    "原页与JSON均写积分后乘exp(−γt)，但应乘exp(−γ(t+h))才能得到(7.3)。公式(7.3)及两项Lean声明正确。"
+  ],
+  "evidence": [
+    {
+      "stage": "A",
+      "attachment": "R1_PAGES.pdf",
+      "attachment_pages": [
+        15
+      ],
+      "printed_page": "268",
+      "result": "已目视核对原页；原页与JSON均写积分后乘exp(−γt)，但应乘exp(−γ(t+h))才能得到(7.3)。公式(7.3)及两项Lean声明正确。"
+    },
+    {
+      "stage": "C",
+      "result": "ouMomentum的衰减exp(−γh)、噪声方差θ(1−exp(−2γh))m_i正确。ouTransitionLaw对每个固定t≥0、h>0存在标准独立坐标向量Z，与p(t)独立并几乎处处给出更新；γ=0时噪声系数为0仍可由W区间增量提供Z。原书前导文字的乘数exp(−γt)疑为笔误，应为exp(−γ(t+h))；公式(7.3)本身正确，需人工确认该原书疑误。",
+      "scope": "仅核对任务摘录的完整签名及MD/MolecularDynamics定义体；不修改工程，不补证明，不将sorry视为签名错误。"
+    }
+  ]
+}
+
+### MD-7.3.2-SPVPrinted 293
+{
+  "lean_decl": [
+    "MD.Ch07.spvPrinted",
+    "MD.Ch07.spvPrinted_corrected"
+  ],
+  "verdict": "NEEDS_HUMAN",
+  "explanation": "spvPrinted 忠实采用 q_n 计算梯度；spvPrinted_corrected 改为 qhalf，符合先漂移半步再精确求解冻结位置的 OU/力子步。θ 对应 k_BT，逐坐标质量为对角 M。两版均未单独限制物理参数，视为代数定义可接受；γ=0 时商的总化值不能代表连续延拓。",
+  "counterexample": "非恒力时 ∇U(q_n) 与 ∇U(q_n+h M⁻¹p_n/2) 一般不同。Printed 忠实性 PASS；corrected 的分裂解释 PASS；原书疑误交人工。",
+  "suggested_fix": "保留原文 q_n；将 qhalf 版本明确列为勘误候选，限制 γ>0、正质量及有效噪声方差；如要覆盖 γ=0，另定义 η=h。"
+}
+{
+  "status": "NEEDS_HUMAN",
+  "issue_codes": [
+    "SOURCE_ERRATUM"
+  ],
+  "corrected_json": null,
+  "issues": [
+    "spvPrinted 忠实采用 q_n 计算梯度；spvPrinted_corrected 改为 qhalf，符合先漂移半步再精确求解冻结位置的 OU/力子步。θ 对应 k_BT，逐坐标质量为对角 M。两版均未单独限制物理参数，视为代数定义可接受；γ=0 时商的总化值不能代表连续延拓。"
+  ],
+  "evidence": [
+    "A：已目视核对 R2_PAGES.pdf 附件第2页，原书PDF页293、印刷页272。数学公式、上下标、符号与摘录一致；允许 Q/P/C 替代已定义的平稳矩以及版式转换。原印动量式确为 ∇U(q_n)，没有 n+1/2。",
+    "C：只读核对本条完整 Lean 与所列项目依赖及附录 D1–D30；Mathlib 标准定义按任务要求采信。spvPrinted 忠实采用 q_n 计算梯度；spvPrinted_corrected 改为 qhalf，符合先漂移半步再精确求解冻结位置的 OU/力子步。θ 对应 k_BT，逐坐标质量为对角 M。两版均未单独限制物理参数，视为代数定义可接受；γ=0 时商的总化值不能代表连续延拓。",
+    "标注：本条未出现独立的 [EXTRA]/[ERRATUM?] 字面标签；已核对 extra_assumptions、issues、statement_scope 中的对应说明。未修改工程或补证明，未因 sorry 判 FAIL。"
+  ]
+}
+
+### MD-7.3.2-SPVLargeFriction 293–294
+{
+  "lean_decl": [
+    "MD.Ch07.spvEtaLimit"
+  ],
+  "verdict": "NEEDS_HUMAN",
+  "explanation": "spvEtaLimit 对每个固定 h>0 断言 γ→+∞ 时 η→0，正确，且未把任意负 h 包含在内。没有陈述分布采样不一致或随机游走极限，extra_assumptions 已披露此范围。",
+  "counterexample": null,
+  "suggested_fix": "保留定性文字，另指定步长/摩擦联合极限、时标、势与采样测试函数后判断不一致性；不得把固定 h 的极限称为对所有 h 的一致极限。"
+}
+{
+  "status": "NEEDS_HUMAN",
+  "issue_codes": [
+    "QUALITATIVE_CLAIM_UNFORMALIZED"
+  ],
+  "corrected_json": null,
+  "issues": [
+    "spvEtaLimit 对每个固定 h>0 断言 γ→+∞ 时 η→0，正确，且未把任意负 h 包含在内。没有陈述分布采样不一致或随机游走极限，extra_assumptions 已披露此范围。"
+  ],
+  "evidence": [
+    "A：已目视核对 R2_PAGES.pdf 附件第3–4页，原书PDF页293–294、印刷页272–273。数学公式、上下标、符号与摘录一致；允许 Q/P/C 替代已定义的平稳矩以及版式转换。",
+    "C：只读核对本条完整 Lean 与所列项目依赖及附录 D1–D30；Mathlib 标准定义按任务要求采信。spvEtaLimit 对每个固定 h>0 断言 γ→+∞ 时 η→0，正确，且未把任意负 h 包含在内。没有陈述分布采样不一致或随机游走极限，extra_assumptions 已披露此范围。",
+    "标注：本条未出现独立的 [EXTRA]/[ERRATUM?] 字面标签；已核对 extra_assumptions、issues、statement_scope 中的对应说明。未修改工程或补证明，未因 sorry 判 FAIL。"
+  ]
+}
+
+### MD-7.4.2-BBKStarMomentSystemPrinted 299–300
+{
+  "lean_decl": [
+    "MD.Ch07.bbkStarMomentSystemPrinted",
+    "MD.Ch07.bbkStarMomentSystemPrinted_corrected",
+    "MD.Ch07.bbkStarExtraFactor_counterexample"
+  ],
+  "verdict": "NEEDS_HUMAN",
+  "explanation": "Printed 前两式忠实保留原页相邻重复因子，第三式亦一致。corrected 用条目16及(7.8)–(7.10)恢复 2bκ1κ3、2dκ2κ3，改动正确。counterexample 的实数不等式是 4≠2，正确，说明重复因子不能一般删除为恒等变形；它不是完整随机平稳模型的反例。原文版忠实性 PASS、修正版代数正确性 PASS，原书排印勘误交人工。",
+  "counterexample": "取 b=d=κ1=κ2=κ3=1，原印附加项均为4，正确相关项均为2。",
+  "suggested_fix": "保留原印三式及勘误标记；由相关矩推导 corrected 三式时明确指出原页重复因子。"
+}
+{
+  "status": "NEEDS_HUMAN",
+  "issue_codes": [
+    "SOURCE_ERRATUM"
+  ],
+  "corrected_json": null,
+  "issues": [
+    "Printed 前两式忠实保留原页相邻重复因子，第三式亦一致。corrected 用条目16及(7.8)–(7.10)恢复 2bκ1κ3、2dκ2κ3，改动正确。counterexample 的实数不等式是 4≠2，正确，说明重复因子不能一般删除为恒等变形；它不是完整随机平稳模型的反例。原文版忠实性 PASS、修正版代数正确性 PASS，原书排印勘误交人工。"
+  ],
+  "evidence": [
+    "A：已目视核对 R2_PAGES.pdf 附件第21–22页，原书PDF页299–300、印刷页278–279。数学公式、上下标、符号与摘录一致；允许 Q/P/C 替代已定义的平稳矩以及版式转换。原页第一、第二方程确有相邻重复因子，不能在忠实转写时静默删除。",
+    "C：只读核对本条完整 Lean 与所列项目依赖及附录 D1–D30；Mathlib 标准定义按任务要求采信。Printed 前两式忠实保留原页相邻重复因子，第三式亦一致。corrected 用条目16及(7.8)–(7.10)恢复 2bκ1κ3、2dκ2κ3，改动正确。counterexample 的实数不等式是 4≠2，正确，说明重复因子不能一般删除为恒等变形；它不是完整随机平稳模型的反例。原文版忠实性 PASS、修正版代数正确性 PASS，原书排印勘误交人工。",
+    "标注：本条未出现独立的 [EXTRA]/[ERRATUM?] 字面标签；已核对 extra_assumptions、issues、statement_scope 中的对应说明。未修改工程或补证明，未因 sorry 判 FAIL。"
+  ]
+}
+
+### MD-7.5-PerturbedErrorExpansion 301
+{
+  "lean_decl": [
+    "MD.Ch07.perturbedLeading",
+    "MD.Ch07.perturbedRemainder",
+    "MD.Ch07.positivePairLimit",
+    "MD.Ch07.perturbedErrorExpansion"
+  ],
+  "verdict": "NEEDS_HUMAN",
+  "explanation": "四种 leading 和 remainder 的所有系数、正负号、幂次与(7.14)一致。positivePairLimit 是 (ε,h) 同时从正象限趋零；γ固定且为正。hinv 仅要求最终存在实际平稳 L² 概率分布；结论却给出任意该类族的统一双参数 Big-O。原页说明的是形式截断计算，未提供如此强的严格余项控制，不能以系数抄写一致批准严格定理。",
+  "counterexample": null,
+  "suggested_fix": "保留原书公式，将严格双参数估计标记为待人工确认；需要证明相关不变分布存在、选择一致性与足够高矩和余项的统一控制，或降低为明确的形式渐近陈述。"
+}
+{
+  "status": "NEEDS_HUMAN",
+  "issue_codes": [
+    "FORMAL_ASYMPTOTIC_TO_RIGOROUS"
+  ],
+  "corrected_json": null,
+  "issues": [
+    "四种 leading 和 remainder 的所有系数、正负号、幂次与(7.14)一致。positivePairLimit 是 (ε,h) 同时从正象限趋零；γ固定且为正。hinv 仅要求最终存在实际平稳 L² 概率分布；结论却给出任意该类族的统一双参数 Big-O。原页说明的是形式截断计算，未提供如此强的严格余项控制，不能以系数抄写一致批准严格定理。"
+  ],
+  "evidence": [
+    "A：已目视核对 R2_PAGES.pdf 附件第25页，原书PDF页301、印刷页280。数学公式、上下标、符号与摘录一致；允许 Q/P/C 替代已定义的平稳矩以及版式转换。",
+    "C：只读核对本条完整 Lean 与所列项目依赖及附录 D1–D30；Mathlib 标准定义按任务要求采信。四种 leading 和 remainder 的所有系数、正负号、幂次与(7.14)一致。positivePairLimit 是 (ε,h) 同时从正象限趋零；γ固定且为正。hinv 仅要求最终存在实际平稳 L² 概率分布；结论却给出任意该类族的统一双参数 Big-O。原页说明的是形式截断计算，未提供如此强的严格余项控制，不能以系数抄写一致批准严格定理。",
+    "标注：本条未出现独立的 [EXTRA]/[ERRATUM?] 字面标签；已核对 extra_assumptions、issues、statement_scope 中的对应说明。未修改工程或补证明，未因 sorry 判 FAIL。"
+  ]
+}
+
+### MD-7.5-PerturbedErrorOrders 301
+{
+  "lean_decl": [
+    "MD.Ch07.perturbedErrorScale",
+    "MD.Ch07.perturbedErrorOrders",
+    "MD.Ch07.baoabLeading_largeFriction"
+  ],
+  "verdict": "NEEDS_HUMAN",
+  "explanation": "perturbedErrorScale 四种公式对应(7.15)，绝对值与 IsBigO 的固定 γ 正向双参数极限一致。baoabLeading_largeFriction 只针对 -9h²ε²/(6γ²+8) 的大摩擦极限，正确；不证明完整误差关于 γ 的一致界。extra_assumptions 中称 ε³h² 余项不足以推出固定 γ 的 ε²h²+ε²h⁴ 界不正确：ε→0 时 ε³≤ε²，且固定 γ 的 1/(1+γ²)>0 是常数。严格平稳分布渐近仍继承条目20的待确认问题。",
+  "counterexample": "0<ε≤1 时 ε³h²≤ε²h²≤(1+γ²)[ε²h²/(1+γ²)+ε²h⁴]；常数依赖固定 γ。",
+  "suggested_fix": "修正 extra_assumptions：固定 γ 时(7.14)的余项足以推出(7.15)所列阶；若要求 γ 一致常数或完整误差大摩擦消失，则 ε³h² 项确实不能由当前信息控制。保留严格估计待人工审定。"
+}
+{
+  "status": "NEEDS_HUMAN",
+  "issue_codes": [
+    "INCORRECT_METADATA",
+    "UNIFORMITY_GAP"
+  ],
+  "corrected_json": {
+    "source_id": "MD-7.5-PerturbedErrorOrders",
+    "kind": "unnumbered_claim",
+    "label": "(7.15)",
+    "section": "7.5",
+    "printed_page": "280",
+    "pdf_page": "301",
+    "statement_latex": "The behavior of the methods can thus be summarized as\n\\[|\\langle q^2\\rangle_h^{[ABOBA]}-\\langle q^2\\rangle|=O(\\epsilon h^2),\\qquad\n|\\langle q^2\\rangle_h^{[BAOAB]}-\\langle q^2\\rangle|=O\\left(\\frac{\\epsilon^2h^2}{1+\\gamma^2}+\\epsilon^2h^4\\right),\\]\n\\[|\\langle q^2\\rangle_h^{[OBABO]}-\\langle q^2\\rangle|=O(h^2),\\qquad\n|\\langle q^2\\rangle_h^{[OABAO]}-\\langle q^2\\rangle|=O(h^2).\\tag{7.15}\\]\nThe twofold surprising result though, is that (a) the leading error of the $[BAOAB]$ scheme has behavior proportional to $\\epsilon^2$, while (b) the leading order term of the $[BAOAB]$ scheme is annihilated for large $\\gamma$.",
+    "proof_latex": null,
+    "proof_outline": null,
+    "proof_note": "原页推导与上下文全文见original_page_text；数学符号的排版以随附原页PDF为准。",
+    "original_page_text": [
+      {
+        "pdf_page": 301,
+        "printed_page": 280,
+        "text": "280\n7\nNumerical Methods for Stochastic Molecular Dynamics\nWe ﬁnd that truncating the update equations to O.\"3/ is sufﬁcient to explicitly\nresolve the leading order behavior of the error for these discretization schemes, and\nwe give the differences between observed numerical averages and exact averages\nbelow:\nhq2i\u0002ABOBA\u0003\nh\n\u0003 hq2i D 3h2\"\n\n48\" \u0003 4 C 3\n2.9\" \u0003 1/\n\u000b\n12\n2 C 16\nC O.\"h4 C \"3h2/;\nhq2i\u0002BAOAB\u0003\nh\n\u0003 hq2i D \u0003 9h2\"2\n6\n2 C 8 \u0003 3h4\"2 \n6\n4 C 19\n2 C 16\u000b\n8 .3\n2 C 4/2\nC O.\"2h6 C \"3h2/;\nhq2i\u0002OBABO\u0003\nh\n\u0003 hq2i D h2\n \n1\n4 C \"\n\n144\" C 81\"\n2 \u0003 9\n2 \u0003 12\n\u000b\n12\n2 C 16\n!\nC O.h4 C \"3h2/;\nhq2i\u0002OABAO\u0003\nh\n\u0003 hq2i D \u0003h2\n\b1\n4 C\n18\"2\n12\n2 C 16\n\t\nC O.h4 C \"3h2/:\n(7.14)\nThe behavior of the methods can thus be summarized as\nˇˇˇhq2i\u0002ABOBA\u0003\nh\n\u0003 hq2i\nˇˇˇ D O\n\u0004\n\"h2\u0005\n;\nˇˇˇhq2i\u0002BAOAB\u0003\nh\n\u0003 hq2i\nˇˇˇ D O\n\b \"2h2\n1 C \n2 C \"2h4\n\t\n;\nˇˇˇhq2i\u0002OBABO\u0003\nh\n\u0003 hq2i\nˇˇˇ D O\n\u0004\nh2\u0005\n;\nˇˇˇhq2i\u0002OABAO\u0003\nh\n\u0003 hq2i\nˇˇˇ D O\n\u0004\nh2\u0005\n:\n(7.15)\nWe would expect that both the \u0002ABOBA\u0003 and \u0002BAOAB\u0003 schemes would have a\nleading error term proportional to \", given that it was shown in Table 7.1 that in the\npure harmonic case (at \" D 0) these methods give perfect sampling. The twofold\nsurprising result though, is that (a) the leading error of the \u0002BAOAB\u0003 scheme has\nbehavior proportional to \"2, while (b) the leading order term of the \u0002BAOAB\u0003\nscheme is annihilated for large \n.\nIt would seem that by ordering the A, B and O update terms favourably in an\nalgorithm we are able to achieve signiﬁcant sampling improvements on systems\nthat are “nearly harmonic”, at no extra cost (in terms of force evaluations).\nTo illustrate this numerically, we use each of the four given second order methods\nto compute the absolute error in hq2ih using the one dimensional perturbed harmonic\noscillator with Hamiltonian given in (7.13) at a range of timesteps h 2 Œ0:1; 2\t and\nnonlinearity parameters \" 2 Œ0:0001; 1\t. We choose ˇ D \n D 1 for all experiments,\nand run the schemes using each parameter set for a ﬁxed time window of length 108.\nThe results are shown in Fig. 7.3, and qualitatively agree with the results of (7.15).\n"
+      }
+    ],
+    "transcription_note": "PDF文字层原样保留，陈述中的数学排版转写为LaTeX；文字层有特殊字形编码时以目视原页为准。PDF347的Exercises之后不在正文范围内。",
+    "context_notation": [],
+    "extra_assumptions": [
+      "双参数正向极限已明确；γ固定时(7.14)的余项足以推出(7.15)的阶。γ一致误差界及完整误差的大摩擦消失需要额外控制，当前声明未提供。"
+    ],
+    "issues": [],
+    "statement_scope": "本条逐字引用的全部数学对象与公式；未纳入的上下文另列。",
+    "lean_decl": "MD.Ch07.perturbedErrorScale",
+    "lean_declarations": [
+      "MD.Ch07.perturbedErrorScale",
+      "MD.Ch07.perturbedErrorOrders",
+      "MD.Ch07.baoabLeading_largeFriction"
+    ],
+    "source_page_verification": "见source_page_checks.json；必须已目视核对本条原页。",
+    "repair_log": [],
+    "documented_priors": []
+  },
+  "issues": [
+    "perturbedErrorScale 四种公式对应(7.15)，绝对值与 IsBigO 的固定 γ 正向双参数极限一致。baoabLeading_largeFriction 只针对 -9h²ε²/(6γ²+8) 的大摩擦极限，正确；不证明完整误差关于 γ 的一致界。extra_assumptions 中称 ε³h² 余项不足以推出固定 γ 的 ε²h²+ε²h⁴ 界不正确：ε→0 时 ε³≤ε²，且固定 γ 的 1/(1+γ²)>0 是常数。严格平稳分布渐近仍继承条目20的待确认问题。"
+  ],
+  "evidence": [
+    "A：已目视核对 R2_PAGES.pdf 附件第26页，原书PDF页301、印刷页280。数学公式、上下标、符号与摘录一致；允许 Q/P/C 替代已定义的平稳矩以及版式转换。",
+    "C：只读核对本条完整 Lean 与所列项目依赖及附录 D1–D30；Mathlib 标准定义按任务要求采信。perturbedErrorScale 四种公式对应(7.15)，绝对值与 IsBigO 的固定 γ 正向双参数极限一致。baoabLeading_largeFriction 只针对 -9h²ε²/(6γ²+8) 的大摩擦极限，正确；不证明完整误差关于 γ 的一致界。extra_assumptions 中称 ε³h² 余项不足以推出固定 γ 的 ε²h²+ε²h⁴ 界不正确：ε→0 时 ε³≤ε²，且固定 γ 的 1/(1+γ²)>0 是常数。严格平稳分布渐近仍继承条目20的待确认问题。",
+    "标注：本条未出现独立的 [EXTRA]/[ERRATUM?] 字面标签；已核对 extra_assumptions、issues、statement_scope 中的对应说明。未修改工程或补证明，未因 sorry 判 FAIL。"
+  ]
+}
+
+### MD-7.6-GeMarsdenRestriction 303
+{
+  "lean_decl": [
+    "MD.Ch07.onlyEnergyIntegrals",
+    "MD.Ch07.timeReparametrizes",
+    "MD.Ch07.geMarsdenConclusion"
+  ],
+  "verdict": "NEEDS_HUMAN",
+  "explanation": "onlyEnergyIntegrals在Fin n→ℝ上量化全部光滑第一积分，并要求全局分解I=g∘H；g没有光滑性条件。timeReparametrizes允许τ依赖步长和初值且无连续/单调/非退化条件。geMarsdenConclusion只定义“辛且保能量⇒沿给定flow轨道”，未包含onlyEnergyIntegrals，也未约束flow为H的精确流；三个定义没有连成原文限定定理，辛映射保体积亦未陈述。D3–D8的辛条件是C¹且DΦᵀJDΦ=J，含义本身正确。JSON已承认主要缺口，但原书简述的定理技术条件不能由本页确定，保留原文并交人工。",
+  "counterexample": "若脱离缺失条件把结论直接当定理：在非平凡相空间取H=0、G为非零平移、flow为恒等族，G辛且保H，却不沿该flow轨道。此例说明缺失关联，并非反驳具备完整条件的Ge–Marsden定理。",
+  "suggested_fix": "补充明确的哈密顿向量场/精确流关联、定理适用域及时间重参数条件后再给完整定理；不得把当前结论形式当作已成立命题。"
+}
+{
+  "status": "NEEDS_HUMAN",
+  "issue_codes": [
+    "C_INCOMPLETE_GE_MARSDEN_HYPOTHESES",
+    "C_UNLINKED_FLOW"
+  ],
+  "corrected_json": null,
+  "issues": [
+    {
+      "code": "C_INCOMPLETE_GE_MARSDEN_HYPOTHESES",
+      "detail": "onlyEnergyIntegrals在Fin n→ℝ上量化全部光滑第一积分，并要求全局分解I=g∘H；g没有光滑性条件。timeReparametrizes允许τ依赖步长和初值且无连续/单调/非退化条件。geMarsdenConclusion只定义“辛且保能量⇒沿给定flow轨道”，未包含onlyEnergyIntegrals，也未约束flow为H的精确流；三个定义没有连成原文限定定理，辛映射保体积亦未陈述。D3–D8的辛条件是C¹且DΦᵀJDΦ=J，含义本身正确。JSON已承认主要缺口，但原书简述的定理技术条件不能由本页确定，保留原文并交人工。"
+    },
+    {
+      "code": "C_UNLINKED_FLOW",
+      "detail": "onlyEnergyIntegrals在Fin n→ℝ上量化全部光滑第一积分，并要求全局分解I=g∘H；g没有光滑性条件。timeReparametrizes允许τ依赖步长和初值且无连续/单调/非退化条件。geMarsdenConclusion只定义“辛且保能量⇒沿给定flow轨道”，未包含onlyEnergyIntegrals，也未约束flow为H的精确流；三个定义没有连成原文限定定理，辛映射保体积亦未陈述。D3–D8的辛条件是C¹且DΦᵀJDΦ=J，含义本身正确。JSON已承认主要缺口，但原书简述的定理技术条件不能由本页确定，保留原文并交人工。"
+    }
+  ],
+  "evidence": {
+    "A": "附件1页（书282/PDF303）Ge–Marsden段的文字、否定词、except the energy及括号中的time-reparameterization均一致。",
+    "C": "onlyEnergyIntegrals在Fin n→ℝ上量化全部光滑第一积分，并要求全局分解I=g∘H；g没有光滑性条件。timeReparametrizes允许τ依赖步长和初值且无连续/单调/非退化条件。geMarsdenConclusion只定义“辛且保能量⇒沿给定flow轨道”，未包含onlyEnergyIntegrals，也未约束flow为H的精确流；三个定义没有连成原文限定定理，辛映射保体积亦未陈述。D3–D8的辛条件是C¹且DΦᵀJDΦ=J，含义本身正确。JSON已承认主要缺口，但原书简述的定理技术条件不能由本页确定，保留原文并交人工。",
+    "source": "R3_任务.md 本条完整Lean及项目依赖定义、附录；R3_PAGES.pdf 对应原页。",
+    "method": "目视原页并对照文字层；仅审查所摘录签名与定义的数学语义；未编译、未补证明。",
+    "annotation_check": "本条所列Lean未出现显式[EXTRA]或[ERRATUM?]标签；extra_assumptions和statement_scope按实际语义单独核对，不将覆盖缺口视为已经证明。"
+  }
+}
+
+### MD-7.7.1-StationaryModifiedPDE 306–307
+{
+  "lean_decl": [
+    "MD.Ch07.formalDensityEvolution",
+    "MD.Ch07.stationaryModifiedDensity"
+  ],
+  "verdict": "NEEDS_HUMAN",
+  "explanation": "formalDensityEvolution对所有实t用HasDerivAt，且L为有界连续线性算子E→L[ℝ]E；原书Langevin/修改微分算子通常无界并需定义域，时间通常t≥0。stationaryModifiedDensity只是任意代数线性自映射的核条件，无密度资格，也未与前一个L识别。二者作为抽象定义有意义，不能据此确认原离散分布真实满足连续Fokker–Planck演化。原页把离散传播与连续方程直接联结需要形式解释或嵌入条件；JSON已提醒，须人工限定，不能静默改成普遍真实PDE。",
+  "counterexample": null,
+  "suggested_fix": "保留原文，明确形式修改方程的地位；若要真实演化，给出半群、生成元定义域、时间区间及嵌入假设，并统一两个定义的算子对象。"
+}
+{
+  "status": "NEEDS_HUMAN",
+  "issue_codes": [
+    "C_DISCRETE_CONTINUOUS_EMBEDDING",
+    "C_BOUNDED_OPERATOR_RESTRICTION"
+  ],
+  "corrected_json": null,
+  "issues": [
+    {
+      "code": "C_DISCRETE_CONTINUOUS_EMBEDDING",
+      "detail": "formalDensityEvolution对所有实t用HasDerivAt，且L为有界连续线性算子E→L[ℝ]E；原书Langevin/修改微分算子通常无界并需定义域，时间通常t≥0。stationaryModifiedDensity只是任意代数线性自映射的核条件，无密度资格，也未与前一个L识别。二者作为抽象定义有意义，不能据此确认原离散分布真实满足连续Fokker–Planck演化。原页把离散传播与连续方程直接联结需要形式解释或嵌入条件；JSON已提醒，须人工限定，不能静默改成普遍真实PDE。"
+    },
+    {
+      "code": "C_BOUNDED_OPERATOR_RESTRICTION",
+      "detail": "formalDensityEvolution对所有实t用HasDerivAt，且L为有界连续线性算子E→L[ℝ]E；原书Langevin/修改微分算子通常无界并需定义域，时间通常t≥0。stationaryModifiedDensity只是任意代数线性自映射的核条件，无密度资格，也未与前一个L识别。二者作为抽象定义有意义，不能据此确认原离散分布真实满足连续Fokker–Planck演化。原页把离散传播与连续方程直接联结需要形式解释或嵌入条件；JSON已提醒，须人工限定，不能静默改成普遍真实PDE。"
+    }
+  ],
+  "evidence": {
+    "A": "附件9–10页（书285–286/PDF306–307）：时间密度演化式及稳态Lhat†ρhat=0均忠实转写，未漏伴随号。",
+    "C": "formalDensityEvolution对所有实t用HasDerivAt，且L为有界连续线性算子E→L[ℝ]E；原书Langevin/修改微分算子通常无界并需定义域，时间通常t≥0。stationaryModifiedDensity只是任意代数线性自映射的核条件，无密度资格，也未与前一个L识别。二者作为抽象定义有意义，不能据此确认原离散分布真实满足连续Fokker–Planck演化。原页把离散传播与连续方程直接联结需要形式解释或嵌入条件；JSON已提醒，须人工限定，不能静默改成普遍真实PDE。",
+    "source": "R3_任务.md 本条完整Lean及项目依赖定义、附录；R3_PAGES.pdf 对应原页。",
+    "method": "目视原页并对照文字层；仅审查所摘录签名与定义的数学语义；未编译、未补证明。",
+    "annotation_check": "本条所列Lean未出现显式[EXTRA]或[ERRATUM?]标签；extra_assumptions和statement_scope按实际语义单独核对，不将覆盖缺口视为已经证明。"
+  }
+}
+
+### MD-7.7.2-SpectralQualification 310
+{
+  "lean_decl": [
+    "MD.Ch07.simpleEigenvalue",
+    "MD.Ch07.printedSpectralConclusion",
+    "MD.Ch07.spectralConclusionPrinted",
+    "MD.Ch07.spectralConclusionPrinted_corrected"
+  ],
+  "verdict": "NEEDS_HUMAN",
+  "explanation": "分别审校：simpleEigenvalue定义的是特征空间维数1（几何单重），不是通常谱论的代数单重。printedSpectralConclusion及spectralConclusionPrinted忠实保留“所有特征值单重、0对应ρ、其他实部负”的点谱目标，但没有紧预解式或完整谱的对象，也没有代数重数。_corrected把所有特征空间改为有限维，改掉“离散⇒单重”的错误方向是合理的；然而同时删掉零特征值应为唯一不变密度方向的约束，且有限维几何特征空间不等同于离散谱及有限代数重数。它只是较弱目标谓词，不是已得到的Langevin谱定理，也不是完整修正。由于原书错误及应保留哪些额外结论需人工决定，总判NEEDS_HUMAN。",
+  "counterexample": "有限维diag(0,−1,−1)有紧预解式，却有二重负特征值，反驳“紧预解式⇒所有特征值单重”。2×2 Jordan块的特征空间维数1但代数重数2，说明当前simpleEigenvalue仅几何单重。diag(0,0,−1)、ρ=e1满足_corrected的全部条件，却有二维零空间，说明该修正丢失唯一稳态方向。",
+  "suggested_fix": "保留Printed文字版并注明simple的解释；修正版须区分完整谱、孤立性、有限代数重数和零谱点的单重性，在明确复Banach/Hilbert空间及闭生成元定义域后分别加资格，不把紧预解式单独当成负半平面谱或简单零谱的证明。"
+}
+{
+  "status": "NEEDS_HUMAN",
+  "issue_codes": [
+    "SOURCE_DISCRETE_NOT_SIMPLE",
+    "C_GEOMETRIC_NOT_ALGEBRAIC_SIMPLICITY",
+    "C_CORRECTION_LOSES_SIMPLE_ZERO",
+    "C_POINT_SPECTRUM_ONLY"
+  ],
+  "corrected_json": null,
+  "issues": [
+    {
+      "code": "SOURCE_DISCRETE_NOT_SIMPLE",
+      "detail": "分别审校：simpleEigenvalue定义的是特征空间维数1（几何单重），不是通常谱论的代数单重。printedSpectralConclusion及spectralConclusionPrinted忠实保留“所有特征值单重、0对应ρ、其他实部负”的点谱目标，但没有紧预解式或完整谱的对象，也没有代数重数。_corrected把所有特征空间改为有限维，改掉“离散⇒单重”的错误方向是合理的；然而同时删掉零特征值应为唯一不变密度方向的约束，且有限维几何特征空间不等同于离散谱及有限代数重数。它只是较弱目标谓词，不是已得到的Langevin谱定理，也不是完整修正。由于原书错误及应保留哪些额外结论需人工决定，总判NEEDS_HUMAN。"
+    },
+    {
+      "code": "C_GEOMETRIC_NOT_ALGEBRAIC_SIMPLICITY",
+      "detail": "分别审校：simpleEigenvalue定义的是特征空间维数1（几何单重），不是通常谱论的代数单重。printedSpectralConclusion及spectralConclusionPrinted忠实保留“所有特征值单重、0对应ρ、其他实部负”的点谱目标，但没有紧预解式或完整谱的对象，也没有代数重数。_corrected把所有特征空间改为有限维，改掉“离散⇒单重”的错误方向是合理的；然而同时删掉零特征值应为唯一不变密度方向的约束，且有限维几何特征空间不等同于离散谱及有限代数重数。它只是较弱目标谓词，不是已得到的Langevin谱定理，也不是完整修正。由于原书错误及应保留哪些额外结论需人工决定，总判NEEDS_HUMAN。"
+    },
+    {
+      "code": "C_CORRECTION_LOSES_SIMPLE_ZERO",
+      "detail": "分别审校：simpleEigenvalue定义的是特征空间维数1（几何单重），不是通常谱论的代数单重。printedSpectralConclusion及spectralConclusionPrinted忠实保留“所有特征值单重、0对应ρ、其他实部负”的点谱目标，但没有紧预解式或完整谱的对象，也没有代数重数。_corrected把所有特征空间改为有限维，改掉“离散⇒单重”的错误方向是合理的；然而同时删掉零特征值应为唯一不变密度方向的约束，且有限维几何特征空间不等同于离散谱及有限代数重数。它只是较弱目标谓词，不是已得到的Langevin谱定理，也不是完整修正。由于原书错误及应保留哪些额外结论需人工决定，总判NEEDS_HUMAN。"
+    },
+    {
+      "code": "C_POINT_SPECTRUM_ONLY",
+      "detail": "分别审校：simpleEigenvalue定义的是特征空间维数1（几何单重），不是通常谱论的代数单重。printedSpectralConclusion及spectralConclusionPrinted忠实保留“所有特征值单重、0对应ρ、其他实部负”的点谱目标，但没有紧预解式或完整谱的对象，也没有代数重数。_corrected把所有特征空间改为有限维，改掉“离散⇒单重”的错误方向是合理的；然而同时删掉零特征值应为唯一不变密度方向的约束，且有限维几何特征空间不等同于离散谱及有限代数重数。它只是较弱目标谓词，不是已得到的Langevin谱定理，也不是完整修正。由于原书错误及应保留哪些额外结论需人工决定，总判NEEDS_HUMAN。"
+    }
+  ],
+  "evidence": {
+    "A": "附件20页（书289/PDF310）：确实印为“discrete spectrum, i.e. simple eigenvalues”，后接一个零特征值和其余在负半平面；JSON保留了原书疑误，不能静默修正文句。",
+    "C": "分别审校：simpleEigenvalue定义的是特征空间维数1（几何单重），不是通常谱论的代数单重。printedSpectralConclusion及spectralConclusionPrinted忠实保留“所有特征值单重、0对应ρ、其他实部负”的点谱目标，但没有紧预解式或完整谱的对象，也没有代数重数。_corrected把所有特征空间改为有限维，改掉“离散⇒单重”的错误方向是合理的；然而同时删掉零特征值应为唯一不变密度方向的约束，且有限维几何特征空间不等同于离散谱及有限代数重数。它只是较弱目标谓词，不是已得到的Langevin谱定理，也不是完整修正。由于原书错误及应保留哪些额外结论需人工决定，总判NEEDS_HUMAN。",
+    "source": "R3_任务.md 本条完整Lean及项目依赖定义、附录；R3_PAGES.pdf 对应原页。",
+    "method": "目视原页并对照文字层；仅审查所摘录签名与定义的数学语义；未编译、未补证明。",
+    "annotation_check": "本条所列Lean未出现显式[EXTRA]或[ERRATUM?]标签；extra_assumptions和statement_scope按实际语义单独核对，不将覆盖缺口视为已经证明。"
+  }
+}
+
+### MD-7.7.3-PerturbativeSolvabilityCaution 311
+{
+  "lean_decl": [
+    "MD.Ch07.correctionSolvable"
+  ],
+  "verdict": "NEEDS_HUMAN",
+  "explanation": "correctionSolvable是任意实模线性自映射L下rhs属于range(L)的命题，数学含义正确。但没有ρβf1结构、零质量归一条件、Fredholm相容性、紧预解式/定义域、指数稳定或全局半群存在。JSON明确只登记目标，不证明预期；原书也明确未给严格结果，必须保留并NEEDS_HUMAN，不能把紧预解式及有界扰动升级为无条件可解性。",
+  "counterexample": "有限维L=diag(0,−1)有紧预解式且其非零谱在负半平面，但rhs=(1,0)不在range(L)，故Lu=rhs不可解；该rhs也可由有界扰动作用于核向量得到。这仅说明缺少相容条件，不能作为原书具备额外守质量条件的具体方案的反例。",
+  "suggested_fix": "保留原书预期与未证明说明；后续严格版本应在零质量子空间给相容条件和可逆/谱隙资格，另行给生成元与半群定理。"
+}
+{
+  "status": "NEEDS_HUMAN",
+  "issue_codes": [
+    "SOURCE_UNPROVED_SOLVABILITY_EXPECTATION",
+    "C_ONLY_RANGE_MEMBERSHIP_TARGET"
+  ],
+  "corrected_json": null,
+  "issues": [
+    {
+      "code": "SOURCE_UNPROVED_SOLVABILITY_EXPECTATION",
+      "detail": "correctionSolvable是任意实模线性自映射L下rhs属于range(L)的命题，数学含义正确。但没有ρβf1结构、零质量归一条件、Fredholm相容性、紧预解式/定义域、指数稳定或全局半群存在。JSON明确只登记目标，不证明预期；原书也明确未给严格结果，必须保留并NEEDS_HUMAN，不能把紧预解式及有界扰动升级为无条件可解性。"
+    },
+    {
+      "code": "C_ONLY_RANGE_MEMBERSHIP_TARGET",
+      "detail": "correctionSolvable是任意实模线性自映射L下rhs属于range(L)的命题，数学含义正确。但没有ρβf1结构、零质量归一条件、Fredholm相容性、紧预解式/定义域、指数稳定或全局半群存在。JSON明确只登记目标，不证明预期；原书也明确未给严格结果，必须保留并NEEDS_HUMAN，不能把紧预解式及有界扰动升级为无条件可解性。"
+    }
+  ],
+  "evidence": {
+    "A": "附件24页（书290/PDF311）：从“It will be difficult ...”到“a posteriori.”逐句对应，保留should、expect及“We do not provide such a rigorous result here”的非定理语气。",
+    "C": "correctionSolvable是任意实模线性自映射L下rhs属于range(L)的命题，数学含义正确。但没有ρβf1结构、零质量归一条件、Fredholm相容性、紧预解式/定义域、指数稳定或全局半群存在。JSON明确只登记目标，不证明预期；原书也明确未给严格结果，必须保留并NEEDS_HUMAN，不能把紧预解式及有界扰动升级为无条件可解性。",
+    "source": "R3_任务.md 本条完整Lean及项目依赖定义、附录；R3_PAGES.pdf 对应原页。",
+    "method": "目视原页并对照文字层；仅审查所摘录签名与定义的数学语义；未编译、未补证明。",
+    "annotation_check": "本条所列Lean未出现显式[EXTRA]或[ERRATUM?]标签；extra_assumptions和statement_scope按实际语义单独核对，不将覆盖缺口视为已经证明。"
+  }
+}
+
+### MD-7.9.1-TripleCommutatorPrinted 320
+{
+  "lean_decl": [
+    "MD.Ch07.hessianU",
+    "MD.Ch07.thirdU",
+    "MD.Ch07.hessianGrad",
+    "MD.Ch07.cubicThird",
+    "MD.Ch07.tripleCommutatorPrinted",
+    "MD.Ch07.tripleCommutatorPrinted_corrected",
+    "MD.Ch07.tripleCommutator_corrected",
+    "MD.Ch07.tripleCommutator_factor_counterexample"
+  ],
+  "verdict": "NEEDS_HUMAN",
+  "explanation": "C分项：hessianU、thirdU、hessianGrad、cubicThird的对象、域与求和指标正确；tripleCommutatorPrinted作为字面表达式PASS；_corrected以及其实际双重phaseComm定理在β>0、光滑U、单位质量下PASS。factor_counterexample的代数断言PASS但并未声称构造势函数。原书首式缺β是真正的数学疑误，按任务要求保留原文并汇总NEEDS_HUMAN；不能因修正版正确就把字面原书公式判为数学定理通过。",
+  "counterexample": "取n=1、m=1、U(q)=q⁴、β=2、q=p=1，则U′=4，U″=12，U‴=24，hessianGrad=48，cubicThird=24，ρ=e^(−3)。由A=−p∂q、B=U′∂p得[A,[A,B]]f=p²U‴∂p f−2pU″∂q f，作用于ρ得到β(2pU″U′−p³U‴)ρ=144e^(−3)。Printed给(2β·48−24)ρ=168e^(−3)，不同。四次势光滑且Gibbs可归一。",
+  "suggested_fix": "保留Printed字面式，在JSON问题登记中保留[ERRATUM?]三阶项缺β；修正版独立标注。若后续要正式反驳字面公式，可用下述光滑可归一势函数，而不只用系数代数。"
+}
+{
+  "status": "NEEDS_HUMAN",
+  "issue_codes": [
+    "ERRATUM_MISSING_BETA",
+    "COUNTEREXAMPLE_SCOPE_LIMITED"
+  ],
+  "corrected_json": {
+    "source_id": "MD-7.9.1-TripleCommutatorPrinted",
+    "kind": "unnumbered_claim",
+    "label": null,
+    "section": "7.9.1",
+    "printed_page": "299",
+    "pdf_page": "320",
+    "statement_latex": "\\[[\\mathcal L_A^\\dagger,\\mathcal L_A^\\dagger,\\mathcal L_B^\\dagger]\\rho_\\beta=(2\\beta p^T(\\nabla^2U)\\nabla U-\\nabla^3U:p\\otimes p\\otimes p)\\rho_\\beta,\\]\n\\[[\\mathcal L_B^\\dagger,\\mathcal L_B^\\dagger,\\mathcal L_A^\\dagger]\\rho_\\beta=-(2\\beta p^T(\\nabla^2U)\\nabla U)\\rho_\\beta.\\]",
+    "proof_latex": null,
+    "proof_outline": null,
+    "proof_note": "原页推导与上下文全文见original_page_text；数学符号的排版以随附原页PDF为准。",
+    "original_page_text": [
+      {
+        "pdf_page": 320,
+        "printed_page": 299,
+        "text": "7.9\nError Expansion for Symmetric Langevin Methods\n299\nsimplifying the computation to\nL\u0004\n2;\u0002OYZYO\u0003\u0005ˇ D 1\n12\nh\nL\u0004\nZ; L\u0004\nZ; L\u0004\nY\ni\n\u0005ˇ \u0003 1\n24ŒL\u0004\nY; L\u0004\nY; L\u0004\nZ\t\u0005ˇ:\n(7.29)\nThe inhomogeneity for the schemes \u0002OABAO\u0003 and \u0002OBABO\u0003 is hence a combina-\ntion of the two commutator terms\nh\nL\u0004\nA; L\u0004\nA; L\u0004\nB\ni\n\u0005ˇ D\n\u0004\n2ˇpT \u0004\nr2U\n\u0005\nrU \u0003 r3U W p ˝ p ˝ p\n\u0005\n\u0005ˇ;\nh\nL\u0004\nB; L\u0004\nB; L\u0004\nA\ni\n\u0005ˇ D \u0003 \u00042ˇpT \u0004r2U\u0005 rU\u0005 \u0005ˇ;\ngiving overall equations to solve\nL\u0004\nLD\n\u0004\n\u0005ˇf2;\u0002OABAO\u0003\n\u0005\nD \u0003L\u0004\n2;\u0002OABAO\u0003\u0005ˇ\nD ˇ\n24\n\u0004\n6pT \u0004\nr2U\n\u0005\nrU \u0003 r3U W p ˝ p ˝ p\n\u0005\n\u0005ˇ;\nL\u0004\nLD\n\u0004\n\u0005ˇf2;\u0002OBABO\u0003\n\u0005\nD \u0003L\u0004\n2;\u0002OBABO\u0003\u0005ˇ\nD ˇ\n24\n\u0004\n2r3U W p ˝ p ˝ p \u0003 6pT \u0004\nr2U\n\u0005\nrU\n\u0005\n\u0005ˇ:\nWe can see immediately that the Fredholm alternative holds in both cases, as both\nequations have right-hand sides that are of odd order in p, and hence will average\nto 0.\nIf we instead consider schemes which use a central Ornstein-Uhlenbeck update,\nthen the inhomogeneous term becomes signiﬁcantly more complex, as we no\nlonger have a signiﬁcant number of cancellations in L\u0004\n2\u0005ˇ. Instead, we shall avoid\ncomputing the right-hand side for these schemes altogether, in favor of utilizing the\nfollowing lemma [223]:\nLemma 7.1 Consider two numerical schemes with associated operators governing\nthe evolution of measure ST and T S, with unique associated invariant distributions\nO\u0005ST and O\u0005TS respectively, such that\nST O\u0005ST D O\u0005ST;\nT S O\u0005TS D O\u0005TS:\nUnder suitable ergodicity assumptions (such that in the long-time limit, all distribu-\ntions converge to the invariant distribution), we have\nO\u0005ST D S O\u0005TS;\nand\nO\u0005TS D T O\u0005ST:\n"
+      }
+    ],
+    "transcription_note": "PDF文字层原样保留，陈述中的数学排版转写为LaTeX；文字层有特殊字形编码时以目视原页为准。PDF347的Exercises之后不在正文范围内。",
+    "context_notation": [],
+    "extra_assumptions": [
+      "M=I；Hessian、三阶张量及张量缩并均为实际坐标导数；原文版仅定义，不证明。反例先给系数代数区别，完整势函数测度反例未构造。"
+    ],
+    "issues": [
+      "A：原页第一条三重交换子的三阶导数项确实没有β，第二条为−2β pᵀHess(U)∇U；JSON保留这一字面疑误是正确的，不应静默修正原文。",
+      "C：Printed定义忠实；_corrected及tripleCommutator_corrected给两项共同β，数学正确。已有factor_counterexample只是实数系数不等式，并非实际势函数反例；其范围在extra_assumptions已承认。"
+    ],
+    "statement_scope": "本条逐字引用的全部数学对象与公式；未纳入的上下文另列。",
+    "lean_decl": "MD.Ch07.hessianU",
+    "lean_declarations": [
+      "MD.Ch07.hessianU",
+      "MD.Ch07.thirdU",
+      "MD.Ch07.hessianGrad",
+      "MD.Ch07.cubicThird",
+      "MD.Ch07.tripleCommutatorPrinted",
+      "MD.Ch07.tripleCommutatorPrinted_corrected",
+      "MD.Ch07.tripleCommutator_corrected",
+      "MD.Ch07.tripleCommutator_factor_counterexample"
+    ],
+    "source_page_verification": "本次实际目视核对 R4_PAGES.pdf 对应页；重复页渲染SHA256一致。详见本条 evidence。",
+    "repair_log": [],
+    "documented_priors": []
+  },
+  "issues": [
+    "A：原页第一条三重交换子的三阶导数项确实没有β，第二条为−2β pᵀHess(U)∇U；JSON保留这一字面疑误是正确的，不应静默修正原文。",
+    "C：Printed定义忠实；_corrected及tripleCommutator_corrected给两项共同β，数学正确。已有factor_counterexample只是实数系数不等式，并非实际势函数反例；其范围在extra_assumptions已承认。"
+  ],
+  "evidence": [
+    "目视附件18（原PDF320／印刷299；与17、19、20同图）前两条三重交换子。其下方两个PDE又明确把β乘整个括号，支持同页内部不一致。",
+    "D73–D76给出真实二、三阶导数及缩并；M=I在gibbsWeight中通过m=1实现。对光滑U，混合偏导对称，坐标次序不改变缩并。",
+    "审校方式：只读R4_任务.md的本条Lean及其摘录项目定义，Mathlib按标准含义采信；未修改工程、未补证明、未调用Lean编译器，不因sorry判FAIL。未发现任何字面的[EXTRA]或[ERRATUM?]标签；额外假设与原书疑误按语义逐项核对，建议标签仅写入本审校JSON。",
+    "本次附件R4_PAGES.pdf SHA256=133d111b38c222acf5f8a9b401286106f513aca299e119dc65d034e915f0c931；本条input_sha256严格回显任务所列旧文件键和值，不宣称与当前文件重新计算一致。"
+  ]
+}
+
+### MD-7.9.1-ConjugateSymmetricCorrections 321–322
+{
+  "lean_decl": [
+    "MD.Ch07.gradNormSq",
+    "MD.Ch07.hessianQuadratic",
+    "MD.Ch07.conjugateCorrectionChange",
+    "MD.Ch07.conjugateCorrections",
+    "MD.Ch07.conjugateCorrection_coefficient",
+    "MD.Ch07.conjugateExpansionPrinted",
+    "MD.Ch07.conjugateExpansionPrinted_corrected"
+  ],
+  "verdict": "NEEDS_HUMAN",
+  "explanation": "C：V n=Fin n→ℝ，Phase n为位置/动量对；梯度、Hessian及pᵀHess(U)p的下标收缩正确，conjugateCorrections完整记录两条函数等式。coefficient对任意实模E及线性自同态L0,L1量化，在L0(p0)=0、p1=0和明确的二阶传递假设下消项正确。[EXTRA]这些是假设的系数，不是具体分裂传播子的系数识别；ρβ、具体ST/TS不变分布传递及Hamiltonian微分恒等式没有相应完整声明。Printed逐字保留原印，忠实性PASS；_corrected的1/8及平方修正合理，作为二阶截断定义PASS，不能当作完整指数等式。因原印疑误本条综合NEEDS_HUMAN。",
+  "counterexample": "取L0为实数上的恒等算符，L1=0，两种截断的二次项分别为h²/2与h²/8，说明不能把两版当成一般相等的算符；在L0ρβ=0时差项确实消失。",
+  "suggested_fix": "保留Printed；将展开疑误显式标[ERRATUM?]。将真实分裂传递、L1作用ρβ和(7.30)实际误差系数识别列为独立签名，勿用纯代数消项代替。"
+}
+{
+  "status": "NEEDS_HUMAN",
+  "issue_codes": [
+    "ERRATUM_PRINTED_EXPANSION",
+    "PARTIAL_FORMALIZATION"
+  ],
+  "corrected_json": null,
+  "issues": [
+    "A：附件1–2页的传播子顺序、1/4传递项、两条L1恒等式以及(7.30a,b)的正负号和β/8均吻合。原页确实把展开末项印成(h²/2)L_LD†，不是(h²/8)(L_LD†)²；须保留原印并标[ERRATUM?]。",
+    "C：V n=Fin n→ℝ，Phase n为位置/动量对；梯度、Hessian及pᵀHess(U)p的下标收缩正确，conjugateCorrections完整记录两条函数等式。coefficient对任意实模E及线性自同态L0,L1量化，在L0(p0)=0、p1=0和明确的二阶传递假设下消项正确。[EXTRA]这些是假设的系数，不是具体分裂传播子的系数识别；ρβ、具体ST/TS不变分布传递及Hamiltonian微分恒等式没有相应完整声明。Printed逐字保留原印，忠实性PASS；_corrected的1/8及平方修正合理，作为二阶截断定义PASS，不能当作完整指数等式。因原印疑误本条综合NEEDS_HUMAN。"
+  ],
+  "evidence": {
+    "A_source_comparison": "A：附件1–2页的传播子顺序、1/4传递项、两条L1恒等式以及(7.30a,b)的正负号和β/8均吻合。原页确实把展开末项印成(h²/2)L_LD†，不是(h²/8)(L_LD†)²；须保留原印并标[ERRATUM?]。",
+    "C_signature_comparison": "C：V n=Fin n→ℝ，Phase n为位置/动量对；梯度、Hessian及pᵀHess(U)p的下标收缩正确，conjugateCorrections完整记录两条函数等式。coefficient对任意实模E及线性自同态L0,L1量化，在L0(p0)=0、p1=0和明确的二阶传递假设下消项正确。[EXTRA]这些是假设的系数，不是具体分裂传播子的系数识别；ρβ、具体ST/TS不变分布传递及Hamiltonian微分恒等式没有相应完整声明。Printed逐字保留原印，忠实性PASS；_corrected的1/8及平方修正合理，作为二阶截断定义PASS，不能当作完整指数等式。因原印疑误本条综合NEEDS_HUMAN。",
+    "attachment": "R5_PAGES.pdf",
+    "attachment_pages": [
+      1,
+      2
+    ],
+    "original_pdf_pages": "321–322",
+    "printed_pages": "300–301",
+    "checked_lean_declarations": [
+      "MD.Ch07.gradNormSq",
+      "MD.Ch07.hessianQuadratic",
+      "MD.Ch07.conjugateCorrectionChange",
+      "MD.Ch07.conjugateCorrections",
+      "MD.Ch07.conjugateCorrection_coefficient",
+      "MD.Ch07.conjugateExpansionPrinted",
+      "MD.Ch07.conjugateExpansionPrinted_corrected"
+    ],
+    "dependency_scope": "仅使用R5_任务.md本条摘录、所列依赖及附录D1–D40；标准库按标准含义采信。未读旧工程，未修改或补证明，未因sorry判FAIL。",
+    "annotation_policy": "[EXTRA]和[ERRATUM?]按本条分析区分；原印数学疑误保留。逐字核对允许数学LaTeX排版及换行标准化，不把OCR特殊字符当数学勘误。"
+  }
+}
+
+### MD-7.9.2-OUKernelQualification 323
+{
+  "lean_decl": [
+    "MD.Ch07.ouKernelPrinted",
+    "MD.Ch07.ouKernelPrinted_corrected"
+  ],
+  "verdict": "NEEDS_HUMAN",
+  "explanation": "C：ouKernelPrinted对任意V n→ℝ函数量化，原印核的错误忠实保留，literal忠实性PASS。_corrected作用于ρβf，要求β>0、f全局光滑、每个q的f(q,·)属于动量Gaussian L²，结论对所有q,p给出f(q,p)=ν(q)，该共轭后核陈述正确；Gaussian L²是必要的域限定而非原印已有前提，应标[EXTRA]。结论不含⟨ν⟩=0，原页中心化须另行加上，不能由核自动推出。sorry不影响本次判断。",
+  "counterexample": "n=1、β>0，f(p)=exp(−βp²/2)满足前向OU f=0且非常数；反之常数1的前向OU像为1。修正版排除此反例，因为被约束的是ρβf中的f。",
+  "suggested_fix": "原印保留并标[ERRATUM?]；修正版保留L²及共轭，另设归一测度下的中心化前提。逐字引文恢复原页句子或显式标为摘述。"
+}
+{
+  "status": "NEEDS_HUMAN",
+  "issue_codes": [
+    "ERRATUM_FORWARD_OU_KERNEL",
+    "NONVERBATIM_EXCERPT"
+  ],
+  "corrected_json": null,
+  "issues": [
+    "A：附件5页原句确实声称前向OU核由动量常数函数组成；摘录末尾将原页关于ν的几句话压缩为where ⟨ν⟩=0，数学意思保留但不是连续逐字引文。核的原印错误不得静默修正。",
+    "C：ouKernelPrinted对任意V n→ℝ函数量化，原印核的错误忠实保留，literal忠实性PASS。_corrected作用于ρβf，要求β>0、f全局光滑、每个q的f(q,·)属于动量Gaussian L²，结论对所有q,p给出f(q,p)=ν(q)，该共轭后核陈述正确；Gaussian L²是必要的域限定而非原印已有前提，应标[EXTRA]。结论不含⟨ν⟩=0，原页中心化须另行加上，不能由核自动推出。sorry不影响本次判断。"
+  ],
+  "evidence": {
+    "A_source_comparison": "A：附件5页原句确实声称前向OU核由动量常数函数组成；摘录末尾将原页关于ν的几句话压缩为where ⟨ν⟩=0，数学意思保留但不是连续逐字引文。核的原印错误不得静默修正。",
+    "C_signature_comparison": "C：ouKernelPrinted对任意V n→ℝ函数量化，原印核的错误忠实保留，literal忠实性PASS。_corrected作用于ρβf，要求β>0、f全局光滑、每个q的f(q,·)属于动量Gaussian L²，结论对所有q,p给出f(q,p)=ν(q)，该共轭后核陈述正确；Gaussian L²是必要的域限定而非原印已有前提，应标[EXTRA]。结论不含⟨ν⟩=0，原页中心化须另行加上，不能由核自动推出。sorry不影响本次判断。",
+    "attachment": "R5_PAGES.pdf",
+    "attachment_pages": [
+      5
+    ],
+    "original_pdf_pages": "323",
+    "printed_pages": "302",
+    "checked_lean_declarations": [
+      "MD.Ch07.ouKernelPrinted",
+      "MD.Ch07.ouKernelPrinted_corrected"
+    ],
+    "dependency_scope": "仅使用R5_任务.md本条摘录、所列依赖及附录D1–D40；标准库按标准含义采信。未读旧工程，未修改或补证明，未因sorry判FAIL。",
+    "annotation_policy": "[EXTRA]和[ERRATUM?]按本条分析区分；原印数学疑误保留。逐字核对允许数学LaTeX排版及换行标准化，不把OCR特殊字符当数学勘误。"
+  }
+}
+
+### MD-7.9.2-FirstReciprocalCorrection 324–325
+{
+  "lean_decl": [
+    "MD.Ch07.firstReciprocalCorrection",
+    "MD.Ch07.momentumAverage",
+    "MD.Ch07.momentumAveragePrinted_corrected",
+    "MD.Ch07.momentumAveragePrinted",
+    "MD.Ch07.firstReciprocalCorrection_pde"
+  ],
+  "verdict": "NEEDS_HUMAN",
+  "explanation": "C：firstReciprocalCorrection和一阶PDE的正负号正确；β>0、U/ν光滑足够，μ任意q函数不会影响OU动量微分。momentumAverage是归一条件Gaussian平均；Printed是Lebesgue动量积分乘未归一gibbsWeight，原书ρβ则为归一联合密度，因此一般还差总配分常数。_corrected作为条件平均定义合理，但与Printed不是同一算符，必须说明位置边际因子及归一常数。完整声明没有f2,2对象、(7.35)、OU通量零积分或(7.36)的相容结论；extra_assumptions虽承认未证明，实际缺的是签名而非证明。",
+  "counterexample": "β=1、U=q²/2，测试函数1：momentumAverage=1，Printed=√(2π)exp(−q²/2)，联合归一ρβ的动量积分则为exp(−q²/2)/√(2π)，三者不同。",
+  "suggested_fix": "保留原书π̄并标[ERRATUM?]；把ρβ的全局归一、条件动量平均及ρβ⁻¹H†ρβ共轭算符逐一定义。补列带域/通量条件的二阶方程和可解性目标签名。"
+}
+{
+  "status": "NEEDS_HUMAN",
+  "issue_codes": [
+    "ERRATUM_WEIGHTED_AVERAGING",
+    "MISSING_SECOND_ORDER_SOLVABILITY",
+    "UNNORMALIZED_PRINTED_DENSITY"
+  ],
+  "corrected_json": null,
+  "issues": [
+    "A：附件7–8页f2,1的三个项和−μ均吻合；(7.35)、(7.36)以及π̄带联合ρβ的定义与原页相符。原页把∫H†(ρβf)dp等同于π̄H†f，而π̄已定义为带ρβ权，这在字面算符意义下有疑误。",
+    "C：firstReciprocalCorrection和一阶PDE的正负号正确；β>0、U/ν光滑足够，μ任意q函数不会影响OU动量微分。momentumAverage是归一条件Gaussian平均；Printed是Lebesgue动量积分乘未归一gibbsWeight，原书ρβ则为归一联合密度，因此一般还差总配分常数。_corrected作为条件平均定义合理，但与Printed不是同一算符，必须说明位置边际因子及归一常数。完整声明没有f2,2对象、(7.35)、OU通量零积分或(7.36)的相容结论；extra_assumptions虽承认未证明，实际缺的是签名而非证明。"
+  ],
+  "evidence": {
+    "A_source_comparison": "A：附件7–8页f2,1的三个项和−μ均吻合；(7.35)、(7.36)以及π̄带联合ρβ的定义与原页相符。原页把∫H†(ρβf)dp等同于π̄H†f，而π̄已定义为带ρβ权，这在字面算符意义下有疑误。",
+    "C_signature_comparison": "C：firstReciprocalCorrection和一阶PDE的正负号正确；β>0、U/ν光滑足够，μ任意q函数不会影响OU动量微分。momentumAverage是归一条件Gaussian平均；Printed是Lebesgue动量积分乘未归一gibbsWeight，原书ρβ则为归一联合密度，因此一般还差总配分常数。_corrected作为条件平均定义合理，但与Printed不是同一算符，必须说明位置边际因子及归一常数。完整声明没有f2,2对象、(7.35)、OU通量零积分或(7.36)的相容结论；extra_assumptions虽承认未证明，实际缺的是签名而非证明。",
+    "attachment": "R5_PAGES.pdf",
+    "attachment_pages": [
+      7,
+      8
+    ],
+    "original_pdf_pages": "324–325",
+    "printed_pages": "303–304",
+    "checked_lean_declarations": [
+      "MD.Ch07.firstReciprocalCorrection",
+      "MD.Ch07.momentumAverage",
+      "MD.Ch07.momentumAveragePrinted_corrected",
+      "MD.Ch07.momentumAveragePrinted",
+      "MD.Ch07.firstReciprocalCorrection_pde"
+    ],
+    "dependency_scope": "仅使用R5_任务.md本条摘录、所列依赖及附录D1–D40；标准库按标准含义采信。未读旧工程，未修改或补证明，未因sorry判FAIL。",
+    "annotation_policy": "[EXTRA]和[ERRATUM?]按本条分析区分；原印数学疑误保留。逐字核对允许数学LaTeX排版及换行标准化，不把OCR特殊字符当数学勘误。"
+  }
+}
+
+### MD-7.9.2-OverdampedSolvabilityOperators 325
+{
+  "lean_decl": [
+    "MD.Ch07.overdampedM",
+    "MD.Ch07.overdampedN",
+    "MD.Ch07.highFrictionOABAO",
+    "MD.Ch07.overdampedSolvability_choice"
+  ],
+  "verdict": "NEEDS_HUMAN",
+  "explanation": "C：overdampedM正确记录β⁻¹Δψ−∇U·∇ψ，N正确记录3M(Δψ)/β，候选ν正确。choice仅在β≠0时对所有q证明同一公式的代数改写，真实但远弱于可解性：没有M/N的平均算符识别、相容方程、ν的核唯一性或零均值声明。[EXTRA]β≠0足够代数运算，但物理Gaussian与积分分部需β>0、正则性、可积和边界资格。原印的算符不一致需人工决定采用哪一共轭约定。",
+  "counterexample": "n=1、U=q²/2、β=1、ψ=1，按裸前向定义A†ψ=0，故π̄H†A†ψ=0；而用ψ=q²等非恒定函数时裸H†A†ψ的力项符号为+U′ψ′，与M中的−U′ψ′不符。共轭后的算符才给正确负号。",
+  "suggested_fix": "显式区分裸前向算符和Gibbs共轭算符，保持原印并标[ERRATUM?]；补完整M/N识别、相容性及中心化签名，不能将choice称为解的识别定理。"
+}
+{
+  "status": "NEEDS_HUMAN",
+  "issue_codes": [
+    "ERRATUM_OPERATOR_CONJUGATION",
+    "MISSING_OPERATOR_IDENTITIES",
+    "MISSING_SOLVABILITY_AND_CENTERING"
+  ],
+  "corrected_json": null,
+  "issues": [
+    "A：附件9页M、N的完整链式等式、3/β系数、π̄H†ρβf式和ν候选均按原页转写。原页π̄及前向算符的组合并不能不加共轭直接得到这些右端。",
+    "C：overdampedM正确记录β⁻¹Δψ−∇U·∇ψ，N正确记录3M(Δψ)/β，候选ν正确。choice仅在β≠0时对所有q证明同一公式的代数改写，真实但远弱于可解性：没有M/N的平均算符识别、相容方程、ν的核唯一性或零均值声明。[EXTRA]β≠0足够代数运算，但物理Gaussian与积分分部需β>0、正则性、可积和边界资格。原印的算符不一致需人工决定采用哪一共轭约定。"
+  ],
+  "evidence": {
+    "A_source_comparison": "A：附件9页M、N的完整链式等式、3/β系数、π̄H†ρβf式和ν候选均按原页转写。原页π̄及前向算符的组合并不能不加共轭直接得到这些右端。",
+    "C_signature_comparison": "C：overdampedM正确记录β⁻¹Δψ−∇U·∇ψ，N正确记录3M(Δψ)/β，候选ν正确。choice仅在β≠0时对所有q证明同一公式的代数改写，真实但远弱于可解性：没有M/N的平均算符识别、相容方程、ν的核唯一性或零均值声明。[EXTRA]β≠0足够代数运算，但物理Gaussian与积分分部需β>0、正则性、可积和边界资格。原印的算符不一致需人工决定采用哪一共轭约定。",
+    "attachment": "R5_PAGES.pdf",
+    "attachment_pages": [
+      9
+    ],
+    "original_pdf_pages": "325",
+    "printed_pages": "304",
+    "checked_lean_declarations": [
+      "MD.Ch07.overdampedM",
+      "MD.Ch07.overdampedN",
+      "MD.Ch07.highFrictionOABAO",
+      "MD.Ch07.overdampedSolvability_choice"
+    ],
+    "dependency_scope": "仅使用R5_任务.md本条摘录、所列依赖及附录D1–D40；标准库按标准含义采信。未读旧工程，未修改或补证明，未因sorry判FAIL。",
+    "annotation_policy": "[EXTRA]和[ERRATUM?]按本条分析区分；原印数学疑误保留。逐字核对允许数学LaTeX排版及换行标准化，不把OCR特殊字符当数学勘误。"
+  }
+}
+
+### MD-7.10-LimitMethodAccuracy 329
+{
+  "lean_decl": [
+    "MD.Ch07.lmTransientErrorBound",
+    "MD.Ch07.limitAccuracyPrinted",
+    "MD.Ch07.limitAccuracyPrinted_corrected",
+    "MD.Ch07.limitAccuracy_rescale"
+  ],
+  "verdict": "NEEDS_HUMAN",
+  "explanation": "C：Printed忠实保留h²幂次，PASS；_corrected给h⁴合理对应无限时间不变平均，但必须限定该error为长期误差，不能直接用于固定有限T。lmTransientErrorBound正确记录C(e^(−aT)τ+τ²)的一种充分界，正C/a/δ及所有小τ、T≥0的量词明确，属于[EXTRA]精确定量目标；原书文字本身不保证该统一界。rescale恒等式正确。缺少LM真实平均误差与error的联系、势/观测/初值条件和实际误差满足该界的签名。",
+  "counterexample": "error(τ,T)=e^(−T)τ+τ²符合所列瞬态界；任意固定有限T下代入τ=h²/2，首项仍为e^(−T)h²/2，并非O(h⁴)。要得到同阶需T随h至少按对数尺度增大，或先取T→∞。",
+  "suggested_fix": "保留原印h²并标疑误；修正版明确先取无限时间。补LM误差对象与界的适用条件，说明有限T和联合T(h)极限；恢复原句或标摘述。"
+}
+{
+  "status": "NEEDS_HUMAN",
+  "issue_codes": [
+    "ERRATUM_STEPSIZE_ORDER",
+    "NONVERBATIM_SENTENCE",
+    "MISSING_METHOD_ERROR_LINK"
+  ],
+  "corrected_json": null,
+  "issues": [
+    "A：附件19页开头原句为“As we are in the overdamped regime, we would expect that this scheme should have an O(h⁴)=O(τ²) error in configurational averages, while inheriting ...”；摘录改成“We would expect ...”并截为句号，应标摘述或恢复逐字引文。末句原印确实为长时间O(h²)，与该段长期O(τ²)=O(h⁴)的记号相冲突/歧义，应保留并标[ERRATUM?]。",
+    "C：Printed忠实保留h²幂次，PASS；_corrected给h⁴合理对应无限时间不变平均，但必须限定该error为长期误差，不能直接用于固定有限T。lmTransientErrorBound正确记录C(e^(−aT)τ+τ²)的一种充分界，正C/a/δ及所有小τ、T≥0的量词明确，属于[EXTRA]精确定量目标；原书文字本身不保证该统一界。rescale恒等式正确。缺少LM真实平均误差与error的联系、势/观测/初值条件和实际误差满足该界的签名。"
+  ],
+  "evidence": {
+    "A_source_comparison": "A：附件19页开头原句为“As we are in the overdamped regime, we would expect that this scheme should have an O(h⁴)=O(τ²) error in configurational averages, while inheriting ...”；摘录改成“We would expect ...”并截为句号，应标摘述或恢复逐字引文。末句原印确实为长时间O(h²)，与该段长期O(τ²)=O(h⁴)的记号相冲突/歧义，应保留并标[ERRATUM?]。",
+    "C_signature_comparison": "C：Printed忠实保留h²幂次，PASS；_corrected给h⁴合理对应无限时间不变平均，但必须限定该error为长期误差，不能直接用于固定有限T。lmTransientErrorBound正确记录C(e^(−aT)τ+τ²)的一种充分界，正C/a/δ及所有小τ、T≥0的量词明确，属于[EXTRA]精确定量目标；原书文字本身不保证该统一界。rescale恒等式正确。缺少LM真实平均误差与error的联系、势/观测/初值条件和实际误差满足该界的签名。",
+    "attachment": "R5_PAGES.pdf",
+    "attachment_pages": [
+      19
+    ],
+    "original_pdf_pages": "329",
+    "printed_pages": "308",
+    "checked_lean_declarations": [
+      "MD.Ch07.lmTransientErrorBound",
+      "MD.Ch07.limitAccuracyPrinted",
+      "MD.Ch07.limitAccuracyPrinted_corrected",
+      "MD.Ch07.limitAccuracy_rescale"
+    ],
+    "dependency_scope": "仅使用R5_任务.md本条摘录、所列依赖及附录D1–D40；标准库按标准含义采信。未读旧工程，未修改或补证明，未因sorry判FAIL。",
+    "annotation_policy": "[EXTRA]和[ERRATUM?]按本条分析区分；原印数学疑误保留。逐字核对允许数学LaTeX排版及换行标准化，不把OCR特殊字符当数学勘误。"
+  }
+}
+
+### MD-7.12-ConstrainedLangevin 338
+{
+  "lean_decl": [
+    "MD.Ch07.constraintJacobian",
+    "MD.Ch07.constraintReaction",
+    "MD.Ch07.hiddenConstraint",
+    "MD.Ch07.cotangentConstraint",
+    "MD.Ch07.constrainedLangevin"
+  ],
+  "verdict": "NEEDS_HUMAN",
+  "explanation": "C：Jacobian、反力求和、g′M⁻¹p=0和约束相空间定义正确；vectorWiener确含概率、联合Gaussian、标准协方差、连续路径和坐标过程独立。积分式的m_i、γ、θ、W增量及初值无误。[EXTRA]正质量/温度、C²约束、自然W历史适应、确定初值及逐sample可积都是对解类的额外限制，非原页已给定全部资格。关键问题：Λ被限定为普通时间可积过程，反力只有有限变差∫g′ᵀΛds，无法抵消标准环境W的法向Brownian分量而保持隐藏约束；若原书λdt意指随机冲量，当前定义就不忠实于通常约束Langevin。若严格照字面则继承原印问题，不能据此断言有解。",
+  "counterexample": "n=l=1，m=1、g(q)=q、U=0、γ=θ=1、x0=(0,0)。约束及连续路径迫使q=p=0；动量方程给√2 W_t=∫0^t Λ_s ds。右侧有限变差，标准Brownian不具有有限变差，故此解类没有通常应存在的固定点约束过程。",
+  "suggested_fix": "保留原印并标[ERRATUM?]；人工确认λdt是否代表含dW的乘子冲量。标准修正版应使用投影噪声和匹配漂移，或允许随机约束乘子微分；把适应性及强解限制标[EXTRA]，不补存在性证明。"
+}
+{
+  "status": "NEEDS_HUMAN",
+  "issue_codes": [
+    "ERRATUM_CONSTRAINT_MULTIPLIER_NOISE",
+    "EXTRA_STRONG_SOLUTION_RESTRICTION"
+  ],
+  "corrected_json": null,
+  "issues": [
+    "A：附件23页(7.43)–(7.45)、噪声√(2γkBTM)dW、g′转置反力及隐藏约束均转写正确。原书把乘子写为λdt，而非独立随机约束冲量，需决定其约定。",
+    "C：Jacobian、反力求和、g′M⁻¹p=0和约束相空间定义正确；vectorWiener确含概率、联合Gaussian、标准协方差、连续路径和坐标过程独立。积分式的m_i、γ、θ、W增量及初值无误。[EXTRA]正质量/温度、C²约束、自然W历史适应、确定初值及逐sample可积都是对解类的额外限制，非原页已给定全部资格。关键问题：Λ被限定为普通时间可积过程，反力只有有限变差∫g′ᵀΛds，无法抵消标准环境W的法向Brownian分量而保持隐藏约束；若原书λdt意指随机冲量，当前定义就不忠实于通常约束Langevin。若严格照字面则继承原印问题，不能据此断言有解。"
+  ],
+  "evidence": {
+    "A_source_comparison": "A：附件23页(7.43)–(7.45)、噪声√(2γkBTM)dW、g′转置反力及隐藏约束均转写正确。原书把乘子写为λdt，而非独立随机约束冲量，需决定其约定。",
+    "C_signature_comparison": "C：Jacobian、反力求和、g′M⁻¹p=0和约束相空间定义正确；vectorWiener确含概率、联合Gaussian、标准协方差、连续路径和坐标过程独立。积分式的m_i、γ、θ、W增量及初值无误。[EXTRA]正质量/温度、C²约束、自然W历史适应、确定初值及逐sample可积都是对解类的额外限制，非原页已给定全部资格。关键问题：Λ被限定为普通时间可积过程，反力只有有限变差∫g′ᵀΛds，无法抵消标准环境W的法向Brownian分量而保持隐藏约束；若原书λdt意指随机冲量，当前定义就不忠实于通常约束Langevin。若严格照字面则继承原印问题，不能据此断言有解。",
+    "attachment": "R5_PAGES.pdf",
+    "attachment_pages": [
+      23
+    ],
+    "original_pdf_pages": "338",
+    "printed_pages": "317",
+    "checked_lean_declarations": [
+      "MD.Ch07.constraintJacobian",
+      "MD.Ch07.constraintReaction",
+      "MD.Ch07.hiddenConstraint",
+      "MD.Ch07.cotangentConstraint",
+      "MD.Ch07.constrainedLangevin"
+    ],
+    "dependency_scope": "仅使用R5_任务.md本条摘录、所列依赖及附录D1–D40；标准库按标准含义采信。未读旧工程，未修改或补证明，未因sorry判FAIL。",
+    "annotation_policy": "[EXTRA]和[ERRATUM?]按本条分析区分；原印数学疑误保留。逐字核对允许数学LaTeX排版及换行标准化，不把OCR特殊字符当数学勘误。"
+  }
+}
+
+### MD-7.12-ConstrainedCanonicalErgodicity 338
+{
+  "lean_decl": [
+    "MD.Ch07.constrainedCanonical",
+    "MD.Ch07.constrainedReference",
+    "MD.Ch07.constrainedErgodicAverages"
+  ],
+  "verdict": "NEEDS_HUMAN",
+  "explanation": "C：constrainedReference用(πε)^(−l)对2l个标量约束同时正则化，常数和ε幂正确，且显式要求支撑于cotangentConstraint；作为所印delta乘积的弱极限目标是忠实的。constrainedCanonical接受任意ν，未要求它满足constrainedReference、配分积分正有限或β>0，因此并非自动归一约束canonical。constrainedErgodicAverages仅是对任意P/X/μ的遍历目标定义，没有将μ连接到该canonical、也没有X满足约束SDE的前提或相应蕴涵声明。原书delta参考测度与自然约束相空间体积的Jacobian因子和遍历性条件需人工处理；extra_assumptions的提醒不足以连接这些签名。",
+  "counterexample": "非连通约束g(q)=q²−1、n=l=1且正质量时，隐藏约束令p=0，连续路径起于q=1便不能访问q=−1；正权重canonical在两点都有质量，取φ区分两点即使其时间平均不等于canonical平均。另将约束重参数化g→a(q)g会把所印双delta沿约束面的权重乘a(q)^(−2)，显示缺少Jacobian约定会改变目标测度。",
+  "suggested_fix": "保留原印并标[ERRATUM?]；明确delta参考测度与几何体积的换算，加入正有限配分积分、正则满秩/连通等资格。补把SDE、参考测度、canonical概率和遍历极限连接的完整目标签名。"
+}
+{
+  "status": "NEEDS_HUMAN",
+  "issue_codes": [
+    "ERRATUM_UNQUALIFIED_ERGODICITY",
+    "CONSTRAINT_MEASURE_JACOBIAN",
+    "UNLINKED_TARGET_DEFINITIONS"
+  ],
+  "corrected_json": null,
+  "issues": [
+    "A：附件24页时间平均极限、exp(−βH)δ[g]δ[g′M⁻¹p]及向量δ乘积定义均与原页一致，原印未写充分的遍历/正则/可归一条件。",
+    "C：constrainedReference用(πε)^(−l)对2l个标量约束同时正则化，常数和ε幂正确，且显式要求支撑于cotangentConstraint；作为所印delta乘积的弱极限目标是忠实的。constrainedCanonical接受任意ν，未要求它满足constrainedReference、配分积分正有限或β>0，因此并非自动归一约束canonical。constrainedErgodicAverages仅是对任意P/X/μ的遍历目标定义，没有将μ连接到该canonical、也没有X满足约束SDE的前提或相应蕴涵声明。原书delta参考测度与自然约束相空间体积的Jacobian因子和遍历性条件需人工处理；extra_assumptions的提醒不足以连接这些签名。"
+  ],
+  "evidence": {
+    "A_source_comparison": "A：附件24页时间平均极限、exp(−βH)δ[g]δ[g′M⁻¹p]及向量δ乘积定义均与原页一致，原印未写充分的遍历/正则/可归一条件。",
+    "C_signature_comparison": "C：constrainedReference用(πε)^(−l)对2l个标量约束同时正则化，常数和ε幂正确，且显式要求支撑于cotangentConstraint；作为所印delta乘积的弱极限目标是忠实的。constrainedCanonical接受任意ν，未要求它满足constrainedReference、配分积分正有限或β>0，因此并非自动归一约束canonical。constrainedErgodicAverages仅是对任意P/X/μ的遍历目标定义，没有将μ连接到该canonical、也没有X满足约束SDE的前提或相应蕴涵声明。原书delta参考测度与自然约束相空间体积的Jacobian因子和遍历性条件需人工处理；extra_assumptions的提醒不足以连接这些签名。",
+    "attachment": "R5_PAGES.pdf",
+    "attachment_pages": [
+      24
+    ],
+    "original_pdf_pages": "338",
+    "printed_pages": "317",
+    "checked_lean_declarations": [
+      "MD.Ch07.constrainedCanonical",
+      "MD.Ch07.constrainedReference",
+      "MD.Ch07.constrainedErgodicAverages"
+    ],
+    "dependency_scope": "仅使用R5_任务.md本条摘录、所列依赖及附录D1–D40；标准库按标准含义采信。未读旧工程，未修改或补证明，未因sorry判FAIL。",
+    "annotation_policy": "[EXTRA]和[ERRATUM?]按本条分析区分；原印数学疑误保留。逐字核对允许数学LaTeX排版及换行标准化，不把OCR特殊字符当数学勘误。"
+  }
+}
+
+### MD-7.13-HyperbolicPhaseTransform 345
+{
+  "lean_decl": [
+    "MD.Ch07.hyperbolicPhase",
+    "MD.Ch07.hyperbolicPhase_identity"
+  ],
+  "verdict": "NEEDS_HUMAN",
+  "explanation": "hyperbolicPhase_identity对实η≠0及|h/η|<1的等式正确，额外实域前提明确且必要；展开cosh差公式即得cosh(a)−r sinh(a)。它没有覆盖纯虚η或实|h/η|≥1，也未给整个稳定不等式的全参数等价声明。不能由这个有效的受限等式确认原书对所有γ>0的措辞。",
+  "counterexample": "例如γ=3、Ω=√2则η=1，取h=2有h/η=2；γ>0成立，但实atanh(2)与实平方根分支不能实现所印变换。",
+  "suggested_fix": "保留原文，并明确标[EXTRA]实η≠0及|h/η|<1；复域版本另指定sqrt/artanh分支，或直接保留双曲表达。"
+}
+{
+  "status": "NEEDS_HUMAN",
+  "issue_codes": [
+    "SOURCE_DOMAIN_AMBIGUITY",
+    "RESTRICTED_REAL_DOMAIN"
+  ],
+  "corrected_json": null,
+  "issues": [
+    {
+      "phase": "A",
+      "code": "SOURCE_DOMAIN_AMBIGUITY",
+      "detail": "附件14页确实只写γ>0，并使用atanh及√(1−h²/η²)；原文忠实，但γ>0并不足以保证其实函数表达有定义。"
+    },
+    {
+      "phase": "C",
+      "code": "RESTRICTED_REAL_DOMAIN",
+      "detail": "hyperbolicPhase_identity对实η≠0及|h/η|<1的等式正确，额外实域前提明确且必要；展开cosh差公式即得cosh(a)−r sinh(a)。它没有覆盖纯虚η或实|h/η|≥1，也未给整个稳定不等式的全参数等价声明。不能由这个有效的受限等式确认原书对所有γ>0的措辞。"
+    }
+  ],
+  "evidence": {
+    "source_pdf": "R6_PAGES.pdf",
+    "attachment_pages": "14",
+    "printed_page": "324",
+    "original_pdf_page": "345",
+    "A_source_check": "附件14页确实只写γ>0，并使用atanh及√(1−h²/η²)；原文忠实，但γ>0并不足以保证其实函数表达有定义。",
+    "C_signature_check": "hyperbolicPhase_identity对实η≠0及|h/η|<1的等式正确，额外实域前提明确且必要；展开cosh差公式即得cosh(a)−r sinh(a)。它没有覆盖纯虚η或实|h/η|≥1，也未给整个稳定不等式的全参数等价声明。不能由这个有效的受限等式确认原书对所有γ>0的措辞。",
+    "method": "先目视原页逐项核对正文与公式，再只读核对本条全部Lean声明、依赖定义及EXTRA说明；不编译、不修改工程、不补证明，不以sorry判FAIL。原书数学疑误保留。"
+  }
+}
+
+### MD-7.13-UnderdampedPhasePrinted 346
+{
+  "lean_decl": [
+    "MD.Ch07.underdampedPhasePrinted",
+    "MD.Ch07.underdampedPhasePrinted_corrected",
+    "MD.Ch07.underdampedPhase_identity"
+  ],
+  "verdict": "NEEDS_HUMAN",
+  "explanation": "Printed定义忠实表达字面公式。corrected定义以及对任意实a,r的underdampedPhase_identity均正确：cos(a)−r sin(a)=√(1+r²)cos(a+arctan(r))。这是代入η=iη̂后应得形式；η̂>0及η̂²=4Ω²−γ²的模型衔接未在该独立三角恒等式内声明。EXTRA正确承认这一点。",
+  "counterexample": "符号错误可直接从cos(a+arctan r)展开验证：其sin(a)项为负；若改成a−arctan r则该项为正。原书的atanh也不能给出所需cos/sin幅值。",
+  "suggested_fix": "保持Printed原样并标[ERRATUM?]；修正版使用+arctan，模型使用时另加0≤γ<2Ω及η̂=√(4Ω²−γ²)>0。"
+}
+{
+  "status": "NEEDS_HUMAN",
+  "issue_codes": [
+    "SOURCE_ERRATUM",
+    "PHASE_FUNCTION_AND_SIGN"
+  ],
+  "corrected_json": null,
+  "issues": [
+    {
+      "phase": "A",
+      "code": "SOURCE_ERRATUM",
+      "detail": "附件15页确实印−atanh(h/η̂)，JSON忠实，原书的函数及相位符号存在数学错误，不能静默改原文。"
+    },
+    {
+      "phase": "A",
+      "code": "PHASE_FUNCTION_AND_SIGN",
+      "detail": "附件15页确实印−atanh(h/η̂)，JSON忠实，原书的函数及相位符号存在数学错误，不能静默改原文。"
+    }
+  ],
+  "evidence": {
+    "source_pdf": "R6_PAGES.pdf",
+    "attachment_pages": "15",
+    "printed_page": "325",
+    "original_pdf_page": "346",
+    "A_source_check": "附件15页确实印−atanh(h/η̂)，JSON忠实，原书的函数及相位符号存在数学错误，不能静默改原文。",
+    "C_signature_check": "Printed定义忠实表达字面公式。corrected定义以及对任意实a,r的underdampedPhase_identity均正确：cos(a)−r sin(a)=√(1+r²)cos(a+arctan(r))。这是代入η=iη̂后应得形式；η̂>0及η̂²=4Ω²−γ²的模型衔接未在该独立三角恒等式内声明。EXTRA正确承认这一点。",
+    "method": "先目视原页逐项核对正文与公式，再只读核对本条全部Lean声明、依赖定义及EXTRA说明；不编译、不修改工程、不补证明，不以sorry判FAIL。原书数学疑误保留。"
+  }
+}
+
+### MD-7.13-FrictionThresholdPrinted 346
+{
+  "lean_decl": [
+    "MD.Ch07.frictionThresholdPrinted",
+    "MD.Ch07.frictionThresholdPrinted_corrected",
+    "MD.Ch07.frictionBoundPrinted",
+    "MD.Ch07.frictionBoundPrinted_corrected",
+    "MD.Ch07.frictionThreshold_rationalized",
+    "MD.Ch07.frictionThreshold_allSteps",
+    "MD.Ch07.frictionThreshold_asymptotic",
+    "MD.Ch07.frictionThreshold_squared_counterexample"
+  ],
+  "verdict": "NEEDS_HUMAN",
+  "explanation": "Printed定义及frictionBoundPrinted忠实保留错误链。rationalized在Ω≥1时正确；allSteps在Ω≥1、0<γ<2Ω及小步长包络斜率条件下推出所有h≥0的包络，正确；asymptotic极限为1正确。corrected的frictionBound保留隐式条件，避免仅用γ≥低根而漏掉高根上界。squared_counterexample只有1<8/5的数值真命题，并未将其联结至Ω=√5/2的根式，所以不是Lean中完整的原命题反例；EXTRA已说明。",
+  "counterexample": "取Ω=√5/2，Ω²=5/4，则精确阈值平方=2/(5/4+3/4)=1，而(√2/Ω)²=8/5>1，所印下界不成立。此外包络斜率条件等价γ²∈[2Ω²−2√(Ω⁴−1),2Ω²+2√(Ω⁴−1)]，不能只保留下界。",
+  "suggested_fix": "保留[ERRATUM?]；对Ω≥1阈值满足1/Ω≤阈值≤√2/Ω，大Ω渐近1/Ω；若陈述包络条件的充要γ范围，须保留高根上界。"
+}
+{
+  "status": "NEEDS_HUMAN",
+  "issue_codes": [
+    "SOURCE_ERRATUM",
+    "THRESHOLD_RANGE",
+    "COUNTEREXAMPLE_LINK_GAP"
+  ],
+  "corrected_json": null,
+  "issues": [
+    {
+      "phase": "A",
+      "code": "SOURCE_ERRATUM",
+      "detail": "附件17页链式下界确实印为≥√2/Ω；忠实转录应保留，但其方向和系数导致错误，须人工确认勘误。"
+    },
+    {
+      "phase": "C",
+      "code": "THRESHOLD_RANGE",
+      "detail": "Printed定义及frictionBoundPrinted忠实保留错误链。rationalized在Ω≥1时正确；allSteps在Ω≥1、0<γ<2Ω及小步长包络斜率条件下推出所有h≥0的包络，正确；asymptotic极限为1正确。corrected的frictionBound保留隐式条件，避免仅用γ≥低根而漏掉高根上界。squared_counterexample只有1<8/5的数值真命题，并未将其联结至Ω=√5/2的根式，所以不是Lean中完整的原命题反例；EXTRA已说明。"
+    },
+    {
+      "phase": "C",
+      "code": "COUNTEREXAMPLE_LINK_GAP",
+      "detail": "Printed定义及frictionBoundPrinted忠实保留错误链。rationalized在Ω≥1时正确；allSteps在Ω≥1、0<γ<2Ω及小步长包络斜率条件下推出所有h≥0的包络，正确；asymptotic极限为1正确。corrected的frictionBound保留隐式条件，避免仅用γ≥低根而漏掉高根上界。squared_counterexample只有1<8/5的数值真命题，并未将其联结至Ω=√5/2的根式，所以不是Lean中完整的原命题反例；EXTRA已说明。"
+    }
+  ],
+  "evidence": {
+    "source_pdf": "R6_PAGES.pdf",
+    "attachment_pages": "17",
+    "printed_page": "325",
+    "original_pdf_page": "346",
+    "A_source_check": "附件17页链式下界确实印为≥√2/Ω；忠实转录应保留，但其方向和系数导致错误，须人工确认勘误。",
+    "C_signature_check": "Printed定义及frictionBoundPrinted忠实保留错误链。rationalized在Ω≥1时正确；allSteps在Ω≥1、0<γ<2Ω及小步长包络斜率条件下推出所有h≥0的包络，正确；asymptotic极限为1正确。corrected的frictionBound保留隐式条件，避免仅用γ≥低根而漏掉高根上界。squared_counterexample只有1<8/5的数值真命题，并未将其联结至Ω=√5/2的根式，所以不是Lean中完整的原命题反例；EXTRA已说明。",
+    "method": "先目视原页逐项核对正文与公式，再只读核对本条全部Lean声明、依赖定义及EXTRA说明；不编译、不修改工程、不补证明，不以sorry判FAIL。原书数学疑误保留。"
+  }
+}
+
+### MD-7.1-HamiltonianSamplingObstruction 283
+{
+  "lean_decl": [
+    "MD.Ch07.energyConservingFlow",
+    "MD.Ch07.energySublevel_invariant",
+    "MD.Ch07.energyObstructionQualified"
+  ],
+  "verdict": "NEEDS_HUMAN",
+  "explanation": "energyConservingFlow具有F0=id、全实时间流合成律及保能；energySublevel_invariant对任意a,t给出原像集合相等，正确。Qualified补上概率、测度保持及一个可测且质量严格介于0和1的能量子水平集，足以解释全相空间遍历障碍，但它只是资格定义，不是非遍历性定理；尤其没有Liouvillian定义域、谱隙或多个平稳解的声明。statement_scope已经诚实缩小，不据此声称整段谱理论已形式化。",
+  "counterexample": "能量守恒不排除固定能量壳上的遍历；因此不能由子水平集不变推出所有参考概率空间都非遍历。",
+  "suggested_fix": "保留原文并标需人工限定；限定到具有非平凡能量分布的保测概率空间，登记非遍历性结论缺口；谱理论另须指定函数空间、算子与平稳解意义。"
+}
+{
+  "status": "NEEDS_HUMAN",
+  "issue_codes": [
+    "SOURCE_OVERGENERALIZATION",
+    "LEAN_COVERAGE_GAP",
+    "OPERATOR_DOMAIN_UNSPECIFIED"
+  ],
+  "corrected_json": null,
+  "issues": [
+    {
+      "phase": "A",
+      "code": "SOURCE_OVERGENERALIZATION",
+      "detail": "附件19页有关非遍历、Liouvillian无谱隙及平稳解不唯一的原句转录忠实，但未说明参考测度、能量壳与算子空间，不能作为无条件普遍命题接受。"
+    },
+    {
+      "phase": "C",
+      "code": "LEAN_COVERAGE_GAP",
+      "detail": "energyConservingFlow具有F0=id、全实时间流合成律及保能；energySublevel_invariant对任意a,t给出原像集合相等，正确。Qualified补上概率、测度保持及一个可测且质量严格介于0和1的能量子水平集，足以解释全相空间遍历障碍，但它只是资格定义，不是非遍历性定理；尤其没有Liouvillian定义域、谱隙或多个平稳解的声明。statement_scope已经诚实缩小，不据此声称整段谱理论已形式化。"
+    },
+    {
+      "phase": "C",
+      "code": "OPERATOR_DOMAIN_UNSPECIFIED",
+      "detail": "energyConservingFlow具有F0=id、全实时间流合成律及保能；energySublevel_invariant对任意a,t给出原像集合相等，正确。Qualified补上概率、测度保持及一个可测且质量严格介于0和1的能量子水平集，足以解释全相空间遍历障碍，但它只是资格定义，不是非遍历性定理；尤其没有Liouvillian定义域、谱隙或多个平稳解的声明。statement_scope已经诚实缩小，不据此声称整段谱理论已形式化。"
+    }
+  ],
+  "evidence": {
+    "source_pdf": "R6_PAGES.pdf",
+    "attachment_pages": "19",
+    "printed_page": "262",
+    "original_pdf_page": "283",
+    "A_source_check": "附件19页有关非遍历、Liouvillian无谱隙及平稳解不唯一的原句转录忠实，但未说明参考测度、能量壳与算子空间，不能作为无条件普遍命题接受。",
+    "C_signature_check": "energyConservingFlow具有F0=id、全实时间流合成律及保能；energySublevel_invariant对任意a,t给出原像集合相等，正确。Qualified补上概率、测度保持及一个可测且质量严格介于0和1的能量子水平集，足以解释全相空间遍历障碍，但它只是资格定义，不是非遍历性定理；尤其没有Liouvillian定义域、谱隙或多个平稳解的声明。statement_scope已经诚实缩小，不据此声称整段谱理论已形式化。",
+    "method": "先目视原页逐项核对正文与公式，再只读核对本条全部Lean声明、依赖定义及EXTRA说明；不编译、不修改工程、不补证明，不以sorry判FAIL。原书数学疑误保留。"
+  }
+}

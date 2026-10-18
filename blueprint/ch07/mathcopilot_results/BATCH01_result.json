@@ -1,0 +1,255 @@
+{
+  "batch": "BATCH01",
+  "chapter": "ch07",
+  "round": "first-merged",
+  "input_sha256": {
+    "Blueprint/Ch07.lean": "f30ea154ebfb07ae85c0b806ff74b35808d5a0c3dcaa647c0c3cc80a78239e37",
+    "blueprint/ch07/ch07_source.json": "c434892ebf63b06f7cadcdfa7af408c2c12d7b645d35db431d1855224163ba19"
+  },
+  "items": [
+    {
+      "source_id": "MD-7.1-Bias",
+      "json_review": {
+        "status": "APPROVED",
+        "issue_codes": [],
+        "corrected_json": null,
+        "issues": [],
+        "evidence": [
+          {
+            "stage": "A",
+            "attachment": "R1_PAGES.pdf",
+            "attachment_pages": [
+              1
+            ],
+            "printed_page": "263",
+            "result": "已目视核对该页正文及公式；同版重复附件页的渲染图逐字节相同。未发现改变数学含义的转录差异。"
+          },
+          {
+            "stage": "C",
+            "result": "实数 exact、computed 的绝对差与本段 bias 的含义及印刷266页公式一致。原段的概述没有被错误提升为所有算法的普遍定理；由后文具体化绝对误差的范围已显式披露。",
+            "scope": "仅核对任务摘录的完整签名及MD/MolecularDynamics定义体；不修改工程，不补证明，不将sorry视为签名错误。"
+          }
+        ]
+      },
+      "audit": {
+        "lean_decl": [
+          "MD.Ch07.bias"
+        ],
+        "verdict": "PASS",
+        "explanation": "实数 exact、computed 的绝对差与本段 bias 的含义及印刷266页公式一致。原段的概述没有被错误提升为所有算法的普遍定理；由后文具体化绝对误差的范围已显式披露。",
+        "counterexample": null,
+        "suggested_fix": null
+      },
+      "subtask": "BATCH01a",
+      "input_sha256": {
+        "Blueprint/Ch07.lean": "f30ea154ebfb07ae85c0b806ff74b35808d5a0c3dcaa647c0c3cc80a78239e37",
+        "blueprint/ch07/ch07_source.json": "c434892ebf63b06f7cadcdfa7af408c2c12d7b645d35db431d1855224163ba19",
+        "BATCH01a_PAGES.pdf": "95f80ff7a57aa1e50e86e55f7b8c3723ae3104f113ed37afa5d1ff5539bddffc"
+      }
+    },
+    {
+      "source_id": "MD-7.2-ScalarSDE",
+      "json_review": {
+        "status": "APPROVED",
+        "issue_codes": [],
+        "corrected_json": null,
+        "issues": [],
+        "evidence": [
+          {
+            "stage": "A",
+            "attachment": "R1_PAGES.pdf",
+            "attachment_pages": [
+              2
+            ],
+            "printed_page": "264",
+            "result": "已目视核对该页正文及公式；同版重复附件页的渲染图逐字节相同。未发现改变数学含义的转录差异。"
+          },
+          {
+            "stage": "C",
+            "result": "P、标量W、标量X、自治a,b及确定初值x0均明确。D2—D6保留初值、非负时间路径连续性、漂移路径可积、自然历史适应及扩散平方可积，并以均匀左和的L²极限表示Itô方程。这是已披露的确定初值、自然滤过及L²解范围，并非所有弱解的等价定义；未声称其一般等价性。",
+            "scope": "仅核对任务摘录的完整签名及MD/MolecularDynamics定义体；不修改工程，不补证明，不将sorry视为签名错误。"
+          }
+        ]
+      },
+      "audit": {
+        "lean_decl": [
+          "MD.Ch07.scalarSDE"
+        ],
+        "verdict": "PASS",
+        "explanation": "P、标量W、标量X、自治a,b及确定初值x0均明确。D2—D6保留初值、非负时间路径连续性、漂移路径可积、自然历史适应及扩散平方可积，并以均匀左和的L²极限表示Itô方程。这是已披露的确定初值、自然滤过及L²解范围，并非所有弱解的等价定义；未声称其一般等价性。",
+        "counterexample": null,
+        "suggested_fix": null
+      },
+      "subtask": "BATCH01b",
+      "input_sha256": {
+        "Blueprint/Ch07.lean": "f30ea154ebfb07ae85c0b806ff74b35808d5a0c3dcaa647c0c3cc80a78239e37",
+        "blueprint/ch07/ch07_source.json": "c434892ebf63b06f7cadcdfa7af408c2c12d7b645d35db431d1855224163ba19",
+        "BATCH01b_PAGES.pdf": "e7c13fe934c727dd5953f283686dc56f3dedb0bb96bda4a8a92fcbb5404d874f"
+      }
+    },
+    {
+      "source_id": "MD-7.2-EulerMaruyama",
+      "json_review": {
+        "status": "APPROVED",
+        "issue_codes": [],
+        "corrected_json": null,
+        "issues": [],
+        "evidence": [
+          {
+            "stage": "A",
+            "attachment": "R1_PAGES.pdf",
+            "attachment_pages": [
+              3
+            ],
+            "printed_page": "264",
+            "result": "已目视核对该页正文及公式；同版重复附件页的渲染图逐字节相同。未发现改变数学含义的转录差异。"
+          },
+          {
+            "stage": "C",
+            "result": "单步系数为h*a(x)与b(x)*sqrt(h)*R，无遗漏或符号错误。递归0步为x0，第k+1步使用R k。standardNormalSequence分别要求概率测度、跨步独立及每步N(0,1)；步长为总函数参数，h>0的数值使用限制已列明。",
+            "scope": "仅核对任务摘录的完整签名及MD/MolecularDynamics定义体；不修改工程，不补证明，不将sorry视为签名错误。"
+          }
+        ]
+      },
+      "audit": {
+        "lean_decl": [
+          "MD.Ch07.eulerMaruyamaStep",
+          "MD.Ch07.standardNormalSequence",
+          "MD.Ch07.eulerMaruyama"
+        ],
+        "verdict": "PASS",
+        "explanation": "单步系数为h*a(x)与b(x)*sqrt(h)*R，无遗漏或符号错误。递归0步为x0，第k+1步使用R k。standardNormalSequence分别要求概率测度、跨步独立及每步N(0,1)；步长为总函数参数，h>0的数值使用限制已列明。",
+        "counterexample": null,
+        "suggested_fix": null
+      },
+      "subtask": "BATCH01c",
+      "input_sha256": {
+        "Blueprint/Ch07.lean": "f30ea154ebfb07ae85c0b806ff74b35808d5a0c3dcaa647c0c3cc80a78239e37",
+        "blueprint/ch07/ch07_source.json": "c434892ebf63b06f7cadcdfa7af408c2c12d7b645d35db431d1855224163ba19",
+        "BATCH01c_PAGES.pdf": "d3a8a4933a4e65a5ffef78099a4b26e8d0583a94cd887c2064dccfb31eb7f6bf"
+      }
+    },
+    {
+      "source_id": "MD-7.2-SDEIncrement",
+      "json_review": {
+        "status": "APPROVED",
+        "issue_codes": [],
+        "corrected_json": null,
+        "issues": [],
+        "evidence": [
+          {
+            "stage": "A",
+            "attachment": "R1_PAGES.pdf",
+            "attachment_pages": [
+              4
+            ],
+            "printed_page": "264",
+            "result": "已目视核对该页正文及公式；同版重复附件页的渲染图逐字节相同。未发现改变数学含义的转录差异。"
+          },
+          {
+            "stage": "C",
+            "result": "固定t,h≥0及scalarSDE假设，结论第一分量给出t+h的从零Itô积分资格；t处同样资格由hX定义取得。第二分量的随机增量是这两个从零积分代表之差，漂移积分用区间可加性相减，等价于所引增量式。ha在hX中已蕴含但无害；这是固定t,h的几乎处处等式，并非声称一个公共零集外对所有时刻成立。",
+            "scope": "仅核对任务摘录的完整签名及MD/MolecularDynamics定义体；不修改工程，不补证明，不将sorry视为签名错误。"
+          }
+        ]
+      },
+      "audit": {
+        "lean_decl": [
+          "MD.Ch07.sdeIncrement"
+        ],
+        "verdict": "PASS",
+        "explanation": "固定t,h≥0及scalarSDE假设，结论第一分量给出t+h的从零Itô积分资格；t处同样资格由hX定义取得。第二分量的随机增量是这两个从零积分代表之差，漂移积分用区间可加性相减，等价于所引增量式。ha在hX中已蕴含但无害；这是固定t,h的几乎处处等式，并非声称一个公共零集外对所有时刻成立。",
+        "counterexample": null,
+        "suggested_fix": null
+      },
+      "subtask": "BATCH01d",
+      "input_sha256": {
+        "Blueprint/Ch07.lean": "f30ea154ebfb07ae85c0b806ff74b35808d5a0c3dcaa647c0c3cc80a78239e37",
+        "blueprint/ch07/ch07_source.json": "c434892ebf63b06f7cadcdfa7af408c2c12d7b645d35db431d1855224163ba19",
+        "BATCH01d_PAGES.pdf": "067e3d5657b0d8d9989211d8594c5c2e8cf3510b535c47c26267ad9b2a1e2a89"
+      }
+    },
+    {
+      "source_id": "MD-7.2-StrongError",
+      "json_review": {
+        "status": "APPROVED",
+        "issue_codes": [],
+        "corrected_json": null,
+        "issues": [],
+        "evidence": [
+          {
+            "stage": "A",
+            "attachment": "R1_PAGES.pdf",
+            "attachment_pages": [
+              5
+            ],
+            "printed_page": "264",
+            "result": "已目视核对该页正文及公式；同版重复附件页的渲染图逐字节相同。未发现改变数学含义的转录差异。"
+          },
+          {
+            "stage": "C",
+            "result": "k取range(N+1)，包含0和N；非空有限集合的sSup确为最大值。实指数α与1/α、绝对差及期望的位置都对应原式。定义是总化公式；α>0、概率测度与矩可积的适用资格在extra_assumptions中说明，不应将不可积时Lean的总化积分解释为误差。",
+            "scope": "仅核对任务摘录的完整签名及MD/MolecularDynamics定义体；不修改工程，不补证明，不将sorry视为签名错误。"
+          }
+        ]
+      },
+      "audit": {
+        "lean_decl": [
+          "MD.Ch07.strongError"
+        ],
+        "verdict": "PASS",
+        "explanation": "k取range(N+1)，包含0和N；非空有限集合的sSup确为最大值。实指数α与1/α、绝对差及期望的位置都对应原式。定义是总化公式；α>0、概率测度与矩可积的适用资格在extra_assumptions中说明，不应将不可积时Lean的总化积分解释为误差。",
+        "counterexample": null,
+        "suggested_fix": null
+      },
+      "subtask": "BATCH01e",
+      "input_sha256": {
+        "Blueprint/Ch07.lean": "f30ea154ebfb07ae85c0b806ff74b35808d5a0c3dcaa647c0c3cc80a78239e37",
+        "blueprint/ch07/ch07_source.json": "c434892ebf63b06f7cadcdfa7af408c2c12d7b645d35db431d1855224163ba19",
+        "BATCH01e_PAGES.pdf": "4e11a41f743bbbc209e3066b5789506890a608885377d500be8aec73e7fb262a"
+      }
+    },
+    {
+      "source_id": "MD-7.2-MeanErrorExpectation",
+      "json_review": {
+        "status": "APPROVED",
+        "issue_codes": [],
+        "corrected_json": null,
+        "issues": [],
+        "evidence": [
+          {
+            "stage": "A",
+            "attachment": "R1_PAGES.pdf",
+            "attachment_pages": [
+              6
+            ],
+            "printed_page": "264",
+            "result": "已目视核对该页正文及公式；同版重复附件页的渲染图逐字节相同。未发现改变数学含义的转录差异。"
+          },
+          {
+            "stage": "C",
+            "result": "在X、Y均可积的前提下给出期望差绝对值≤绝对误差期望，足以传递α=1收敛；meanSquareError为二阶矩平方根，与α=2强误差的均方根惯例一致。没有把期望收敛误称为L¹收敛的逆命题。",
+            "scope": "仅核对任务摘录的完整签名及MD/MolecularDynamics定义体；不修改工程，不补证明，不将sorry视为签名错误。"
+          }
+        ]
+      },
+      "audit": {
+        "lean_decl": [
+          "MD.Ch07.meanErrorExpectation",
+          "MD.Ch07.meanSquareError"
+        ],
+        "verdict": "PASS",
+        "explanation": "在X、Y均可积的前提下给出期望差绝对值≤绝对误差期望，足以传递α=1收敛；meanSquareError为二阶矩平方根，与α=2强误差的均方根惯例一致。没有把期望收敛误称为L¹收敛的逆命题。",
+        "counterexample": null,
+        "suggested_fix": null
+      },
+      "subtask": "BATCH01f",
+      "input_sha256": {
+        "Blueprint/Ch07.lean": "f30ea154ebfb07ae85c0b806ff74b35808d5a0c3dcaa647c0c3cc80a78239e37",
+        "blueprint/ch07/ch07_source.json": "c434892ebf63b06f7cadcdfa7af408c2c12d7b645d35db431d1855224163ba19",
+        "BATCH01f_PAGES.pdf": "b95a252c71821ec2f3d4ac9e5733011b3e67e6b1a1c48e9c40dd944c2fa504a8"
+      }
+    }
+  ],
+  "merged_from": "ch07_first_merged"
+}

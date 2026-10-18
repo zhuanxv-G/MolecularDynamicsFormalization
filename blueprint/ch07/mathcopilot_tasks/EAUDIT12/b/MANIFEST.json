@@ -1,0 +1,101 @@
+{
+  "batch": "EAUDIT12",
+  "subtask": "EAUDIT12b",
+  "source_ids": [
+    "MD-7.13-SpectralRadiusStability"
+  ],
+  "input_sha256": {
+    "Blueprint/Ch07.lean": "f3bc0ee86ace9c825028f0cec8ebb2fb410d6be77213cc7fb41cb8889540a000",
+    "blueprint/ch07/ch07_source.json": "1a201887b51a249fb73f456237cb342963c5d98c612ec1912f21572a57924012",
+    "PAGES.pdf": "c47bac9828ad1af6addb90f945c9fb7f765d543c5317458b9175ce9a542a2e9b"
+  },
+  "page_mapping": [
+    {
+      "attachment_page": 1,
+      "original_pdf_page": 345,
+      "printed_page": 324
+    }
+  ],
+  "definition_excerpts": [
+    {
+      "full_name": "MD.Ch07.Mat2",
+      "kind": "abbrev",
+      "path": "Blueprint/Ch07.lean",
+      "line": 1923,
+      "code_sha256": "b59a57ba7657676ba8267131b9fbc6b6f308017bb0aa3cde6fe6918bdb410f7e"
+    },
+    {
+      "full_name": "MD.Ch07.fastMatrix",
+      "kind": "def",
+      "path": "Blueprint/Ch07.lean",
+      "line": 1926,
+      "code_sha256": "fdfa7a59fe54847eae35d50bb0b5bba0ae9e1a507f54d95c3c8d37259943480b"
+    },
+    {
+      "full_name": "MD.Ch07.slowMatrix",
+      "kind": "def",
+      "path": "Blueprint/Ch07.lean",
+      "line": 1927,
+      "code_sha256": "848536920828e83ab1711b3004c6207c5a2a94ced0202237aed0d1ba2a85baa6"
+    },
+    {
+      "full_name": "MD.Ch07.fastExponential",
+      "kind": "def",
+      "path": "Blueprint/Ch07.lean",
+      "line": 1935,
+      "code_sha256": "60666624ba49fec7c76c3939e3ceac986b31c99b88c9e9a6ea5842577e7aca55"
+    },
+    {
+      "full_name": "MD.Ch07.multipleX",
+      "kind": "def",
+      "path": "Blueprint/Ch07.lean",
+      "line": 1951,
+      "code_sha256": "74fb0eb9df44c4e62be50f79b27411ab3f9cc1ba9ded7c4a50a2df074e887b1d"
+    },
+    {
+      "full_name": "MD.Ch07.characteristicUnitDisk",
+      "kind": "def",
+      "path": "Blueprint/Ch07.lean",
+      "line": 1975,
+      "code_sha256": "b76aa0dc5b3126a170f0bf8f5ee106a574c58ca0d323716ecdb33e95fd90ef77"
+    },
+    {
+      "full_name": "MD.Ch07.spectralRadiusStability",
+      "kind": "theorem",
+      "path": "Blueprint/Ch07.lean",
+      "line": 1977,
+      "code_sha256": "31fb6577fc0a0f07440c2e750dcfb65c46b86c1e1bce46e661f50072621331ae"
+    },
+    {
+      "full_name": "MD.Ch07.hyperbolicStability",
+      "kind": "def",
+      "path": "Blueprint/Ch07.lean",
+      "line": 1980,
+      "code_sha256": "7725275e237a3b8db6dc6ae5a7fd1003ede91d1c70134b2509f14716d50c696d"
+    },
+    {
+      "full_name": "MD.Ch07.multipleX_spectral_hyperbolic",
+      "kind": "theorem",
+      "path": "Blueprint/Ch07.lean",
+      "line": 1983,
+      "code_sha256": "7fea06940de85993cbd7abba2cdae7c3b8eb740f9b14cca68cb8ec8970acfb3c"
+    }
+  ],
+  "validation": {
+    "project_constant_closure": "PASS",
+    "missing_project_definitions": [],
+    "full_page_render_equality_dpi": 72,
+    "website_submitted": false
+  },
+  "files": {
+    "PASTE.txt": {
+      "bytes": 10126,
+      "sha256": "6038577234ab1395a002991170c3dc7a5dedddbc591113ca1cc4f34837c1879f"
+    },
+    "PAGES.pdf": {
+      "bytes": 81295,
+      "sha256": "c47bac9828ad1af6addb90f945c9fb7f765d543c5317458b9175ce9a542a2e9b"
+    }
+  },
+  "total_task_bytes": 94624
+}

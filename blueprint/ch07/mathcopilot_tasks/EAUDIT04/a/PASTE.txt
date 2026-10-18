@@ -1,0 +1,148 @@
+以附件/PASTE 为准，忽略 /workspace 旧文件；Mathlib 定义按标准含义采信。
+本任务只审本条：原文转录、对象资格、定义体、量词、全部结论及[EXTRA]是否一致；Lean编译不代替语义审阅。
+Lean/Mathlib均4.34.0。原页PDF映射：[307, 308]；印刷页=[286, 287].
+input_sha256请原样回显：
+{
+  "Blueprint/Ch07.lean": "f3bc0ee86ace9c825028f0cec8ebb2fb410d6be77213cc7fb41cb8889540a000",
+  "blueprint/ch07/ch07_source.json": "1a201887b51a249fb73f456237cb342963c5d98c612ec1912f21572a57924012",
+  "PAGES.pdf": "73bf1cc031e5e3fab5732af47e7093b3af67d7ae2c46244accf33db7dc37911d"
+}
+用代码将JSON对象(batch,input_sha256,items)写到 /workspace/.mathcopilot/reviews/ch07/EAUDIT04a_review.json；items仅含本source_id。
+items字段：source_id、verdict(PASS/FAIL/NEEDS_HUMAN)、transcription、semantic_review、counterexample、suggested_fix、printed_version、corrected_version。逐版区分原文疑误和修正版结论；缺材料必须具体指出，不猜测。写后json.loads自检，最后仅回复路径及统计。
+
+## 原文JSON
+```json
+{
+  "source_id": "MD-7.7.1-TaylorRemainder",
+  "kind": "unnumbered_claim",
+  "label": null,
+  "section": "7.7.1",
+  "printed_page": "286–287",
+  "pdf_page": "307–308",
+  "statement_latex": "We can make use of Taylor’s theorem to write the identity\n\\[P_h=P_0+h\\left.\\frac{dP_t}{dt}\\right|_{t=0}+\\cdots+\\frac{h^n}{n!}\\left.\\frac{d^nP_t}{dt^n}\\right|_{t=0}\n+\\frac{h^{n+1}}{n!}\\int_0^1(1-\\lambda)^n\\left.\\frac{d^{n+1}P_t}{dt^{n+1}}\\right|_{t=\\lambda h}d\\lambda,\\]\nfor some finite truncation index $n\\in\\{1,2,3,\\ldots\\}$. Hence for observables of sufficient smoothness with compact support, this remainder term will remain bounded (see [223]).",
+  "proof_latex": null,
+  "proof_outline": null,
+  "proof_note": "原页推导与上下文全文见original_page_text；数学符号的排版以随附原页PDF为准。",
+  "original_page_text": [
+    {
+      "pdf_page": 307,
+      "printed_page": 286,
+      "text": "286\n7\nNumerical Methods for Stochastic Molecular Dynamics\nwith the important case of its invariant distribution satisfying the partial differential\nequation\nOL\u0004 O\u0005 D 0:\nOur goal in the following section is to ﬁnd\nOL\u0004 and solve the PDE for the\ndistribution O\u0005 by using our ansatz (7.17). The solution gives us the corrupted\ninvariant distribution sampled by our numerical scheme, allowing us to correct\nour observed averages to achieve more accurate results. It also gives us a way of\nevaluating which schemes are best for sampling, by evaluating the error introduced\nby the discretization.\nThe terms of the perturbation expansion for OL\u0004 can be computed using the Baker-\nCampbell-Hausdorff(BCH) expansion already introduced in Chap. 3. Recall that for\nlinear operators X and Y, we can write the composition of their exponentials as\nexp .hX/ exp .hY/ D exp .hZ/ ;\nwhere we have the expansion\nZ D X C Y C h\n2ŒX; Y\t C h2\n12 .ŒX; ŒX; Y\t\t C ŒY; ŒY; X\t\t/ C O.h3/:\nThe notation ŒX; Y\t\ndef\nD XY \u0003 YX represents the commutator of the operators X\nand Y. By repeated application of the BCH formula, we can obtain such an\nexpansion for any splitting-based method, however the terms grow in complexity\nat successive powers of h, requiring commutators of increasing length that make\ncomputation cumbersome. Additionally any careful mathematician should question\nthe convergence of this sequence when computing OL, as we deal only with formal\nseries that offer no guidance on the boundedness of the resulting terms, which will\ninvolve high order derivatives in both q and p.\nTo offer some reassurance, let us deﬁne the evolution operator for our numerical\nmethod as\nPt D et OL D etL1etL2 : : : etLk;\nwhere the numerical method has k-many stages with each Li proportional to one of\nLA, LB and LO. We can make use of Taylor’s theorem to write the identity\nPh D P0 C h dPt\ndt\nˇˇˇˇ\ntD0\nC : : : C hn\nnŠ\ndnPt\ndtn\nˇˇˇˇ\ntD0\nC hnC1\nnŠ\n1\nZ\n0\n.1 \u0003 \u0013/n dnC1Pt\ndtnC1\nˇˇˇˇ\ntD\u0013h\nd\u0013;\n"
+    },
+    {
+      "pdf_page": 308,
+      "printed_page": 287,
+      "text": "7.7\nThe Evolution of the Distribution Using a Numerical Method\n287\nfor some ﬁnite truncation index n 2 f1; 2; 3; : : :g. The remainder term at order hnC1\nwill involve the integration of ﬁnitely many derivatives of its argument. Hence for\nobservables of sufﬁcient smoothness with compact support, this remainder term will\nremain bounded (see [223]).\n7.7.2\nFirst Order Operator Expansion\nAs we consider schemes involving compositions of three splitting pieces, the\nminimum number of stages to our methods (in order for it to be consistent) will\nbe three. The perturbed Fokker-Planck operator for a splitting method with three\nstages will be computed as\nexp.hS/ D exp.hZ/ exp.hY/ exp.hX/;\n(7.18)\nwhere X, Y and Z are one of L\u0004\nA, L\u0004\nB and L\u0004\nO. Let us work the ﬁrst terms of this\nexpansion out, retaining terms involving triple products only\nexp.hY/ exp.hX/ D exp\n \nh\n \n.Y C X/ C h\n2ŒY; X\t C h2\n12 .ŒY; Y; X\t C ŒX; X; Y\t/ C : : :\n!!\n;\nwhere the notation ŒA; B; C\t is notation for ŒA; ŒB; C\t\t. Applying this formula one\nmore time in (7.18), we ﬁnd\nS D X C Y C Z C h\n2ŒY; X\t C h2\n12 .ŒY; ŒY; X\t\t C ŒX; ŒX; Y\t\t/\nC h\n2\n\u0002\nZ; Y C X C h\n2ŒY; X\t\n\u0003\nC h2\n12 .ŒZ; ŒZ; Y C X\t\t \u0003 ŒY C X; ŒZ; Y C X\t\t/ C : : :\nD X C Y C Z C h\n2.ŒZ; Y\t C ŒZ; X\t C ŒY; X\t/ C h2\n4 ŒZ; Y; X\t\nC h2\n12 .ŒY; Y; X\t C ŒX; X; Y\t C ŒZ; Z; Y\t C ŒZ; Z; X\t\nCŒY C X; Y C X; Z\t/ C : : :\nIn general the terms in this expansion will lead to complicated expansions. In the\ncase of deterministic systems, the operators are always ﬁrst order due to equality\nof mixed partials (the 2nd order derivatives are cancelled). Due to the second\nderivatives present in the L\u0004\nO operator, derivatives of all orders will appear in the\n"
+    }
+  ],
+  "transcription_note": "PDF文字层原样保留，陈述中的数学排版转写为LaTeX；文字层有特殊字形编码时以目视原页为准。PDF347的Exercises之后不在正文范围内。",
+  "context_notation": [],
+  "extra_assumptions": [
+    "只覆盖作用于单个可观测量和点后的标量C^(n+1) Taylor恒等式及局部余项界；把ABO无界算符组合在紧支撑光滑测试函数上归约到这些假设仍是覆盖缺口。",
+    "29号覆盖限定：标量时间函数的Taylor积分余项和逐点O界，包括F(t)=P_tφ(z)已具备时间正则时的特化；未证明半群时间正则或空间统一界。"
+  ],
+  "issues": [],
+  "statement_scope": "标量时间函数的Taylor积分余项和逐点O界，包括F(t)=P_tφ(z)已具备时间正则时的特化；未证明半群时间正则或空间统一界。",
+  "lean_decl": "MD.Ch07.taylorRemainder",
+  "lean_declarations": [
+    "MD.Ch07.taylorRemainder",
+    "MD.Ch07.taylorRemainder_bound",
+    "MD.Ch07.propagatedObservable_remainder"
+  ],
+  "source_page_verification": "见source_page_checks.json；必须已目视核对本条原页。",
+  "repair_log": [
+    {
+      "instruction": 29,
+      "website_verdict": "FAIL",
+      "suggested_fix": "为固定光滑紧支撑观测量说明F(t)=P_tφ(z)并证明相应时间正则性；明确需要逐点还是统一余项界，并陈述该界。",
+      "actual_scope": "标量时间函数的Taylor积分余项和逐点O界，包括F(t)=P_tφ(z)已具备时间正则时的特化；未证明半群时间正则或空间统一界。",
+      "signature_changed": true
+    }
+  ],
+  "documented_priors": [],
+  "coverage_gaps": [
+    "29号覆盖限定：标量时间函数的Taylor积分余项和逐点O界，包括F(t)=P_tφ(z)已具备时间正则时的特化；未证明半群时间正则或空间统一界。"
+  ]
+}
+```
+
+## 完整本条Lean
+```lean
+theorem taylorRemainder (F : ℝ → ℝ) (k : ℕ) (hF : ContDiff ℝ (k+1) F) (h : ℝ) :
+    F h = (∑ j ∈ Finset.range (k+1), h^j/(Nat.factorial j : ℝ)*iteratedDeriv j F 0) +
+      h^(k+1)/(Nat.factorial k : ℝ)*∫ t in (0 : ℝ)..1, (1-t)^k*iteratedDeriv (k+1) F (t*h) := by
+  sorry
+theorem taylorRemainder_bound (F : ℝ → ℝ) (k : ℕ) (hF : ContDiff ℝ (k+1) F) :
+    Asymptotics.IsBigO (𝓝 (0 : ℝ))
+      (fun h ↦ F h-∑ j ∈ Finset.range (k+1), h^j/(Nat.factorial j : ℝ)*iteratedDeriv j F 0)
+      (fun h ↦ h^(k+1)) := by
+  sorry
+
+theorem propagatedObservable_remainder {E : Type*} (P : ℝ → (E → ℝ) → E → ℝ)
+    (φ : E → ℝ) (z : E) (k : ℕ)
+    (htime : ContDiff ℝ (k+1) (fun t ↦ P t φ z)) :
+    Asymptotics.IsBigO (𝓝 (0 : ℝ))
+      (fun h ↦ P h φ z-∑ j ∈ Finset.range (k+1),
+        h^j/(Nat.factorial j : ℝ)*iteratedDeriv j (fun t ↦ P t φ z) 0)
+      (fun h ↦ h^(k+1)) := taylorRemainder_bound _ k htime
+```
+
+## 项目依赖定义体及选择规格
+以下def/abbrev/structure完整保留；定理列出完整类型，Mathlib标准定义无需摘录。
+
+### MD.Ch07.taylorRemainder (Blueprint/Ch07.lean:929)
+原文件上下文：
+```lean
+open Set Filter MeasureTheory ProbabilityTheory MolecularDynamics
+open scoped BigOperators Topology ContDiff ENNReal NNReal Matrix
+variable {Ω : Type*} [MeasurableSpace Ω]
+variable {n : ℕ}
+```
+```lean
+theorem taylorRemainder (F : ℝ → ℝ) (k : ℕ) (hF : ContDiff ℝ (k+1) F) (h : ℝ) :
+    F h = (∑ j ∈ Finset.range (k+1), h^j/(Nat.factorial j : ℝ)*iteratedDeriv j F 0) +
+      h^(k+1)/(Nat.factorial k : ℝ)*∫ t in (0 : ℝ)..1, (1-t)^k*iteratedDeriv (k+1) F (t*h)
+```
+
+### MD.Ch07.taylorRemainder_bound (Blueprint/Ch07.lean:933)
+原文件上下文：
+```lean
+open Set Filter MeasureTheory ProbabilityTheory MolecularDynamics
+open scoped BigOperators Topology ContDiff ENNReal NNReal Matrix
+variable {Ω : Type*} [MeasurableSpace Ω]
+variable {n : ℕ}
+```
+```lean
+theorem taylorRemainder_bound (F : ℝ → ℝ) (k : ℕ) (hF : ContDiff ℝ (k+1) F) :
+    Asymptotics.IsBigO (𝓝 (0 : ℝ))
+      (fun h ↦ F h-∑ j ∈ Finset.range (k+1), h^j/(Nat.factorial j : ℝ)*iteratedDeriv j F 0)
+      (fun h ↦ h^(k+1))
+```
+
+### MD.Ch07.propagatedObservable_remainder (Blueprint/Ch07.lean:939)
+原文件上下文：
+```lean
+open Set Filter MeasureTheory ProbabilityTheory MolecularDynamics
+open scoped BigOperators Topology ContDiff ENNReal NNReal Matrix
+variable {Ω : Type*} [MeasurableSpace Ω]
+variable {n : ℕ}
+```
+```lean
+theorem propagatedObservable_remainder {E : Type*} (P : ℝ → (E → ℝ) → E → ℝ)
+    (φ : E → ℝ) (z : E) (k : ℕ)
+    (htime : ContDiff ℝ (k+1) (fun t ↦ P t φ z)) :
+    Asymptotics.IsBigO (𝓝 (0 : ℝ))
+      (fun h ↦ P h φ z-∑ j ∈ Finset.range (k+1),
+        h^j/(Nat.factorial j : ℝ)*iteratedDeriv j (fun t ↦ P t φ z) 0)
+      (fun h ↦ h^(k+1))
+```
+
+### MolecularDynamics.Chapter05Review.E (MolecularDynamics/Chapter05/ReviewDefinitions.lean:18)
+原文件上下文：
+```lean
+open Set Filter MeasureTheory Matrix
+open scoped BigOperators Topology ENNReal
+```
+```lean
+abbrev E (n : ℕ) := EuclideanSpace ℝ (Fin n)
+```

@@ -1,0 +1,15 @@
+--- submitted
++++ repaired
+@@ -10,5 +10,11 @@
+     (hq : MemLp (fun x ↦ x.1) 2 μ) (hp : MemLp (fun x ↦ x.2) 2 μ)
+     (hinv : Measure.map (fun z ↦ nonsymmetricHarmonicStep flip m Ω γ θ h z.2 z.1)
+       (μ.prod (gaussianReal 0 1)) = μ) :
+-    momentQ μ = θ/Ω^2 ∧ momentP μ = θ*m := by
++    momentQ μ = θ/Ω^2 ∧ momentP μ = θ*m ∧
++    (∫ x, x.1*x.2 ∂μ) = (if flip then -θ*h/2 else θ*h/2) := by
++  sorry
++
++theorem nonsymmetricMixedMoment_order (θ : ℝ) (flip : Bool) :
++    Asymptotics.IsBigO (𝓝 (0 : ℝ))
++      (fun h ↦ if flip then -θ*h/2 else θ*h/2) (fun h : ℝ ↦ h) := by
+   sorry

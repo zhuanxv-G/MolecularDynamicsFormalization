@@ -1,0 +1,12 @@
+--- submitted
++++ repaired
+@@ -8,4 +8,9 @@
+     (hF : ∀ x, H (F x) = H x) (hG : ∀ x, H (G x) = H x) :
+     ∀ x, H ((F ∘ G) x) = H x := by
+   intro x
+-  rw [Function.comp_apply, hF, hG]+  rw [Function.comp_apply, hF, hG]
++
++theorem jField_finiteDecomposition {K : ℕ} (J : Fin K → Matrix (Fin n) (Fin n) ℝ)
++    (H : V n → ℝ) (hJ : ∀ k i j, J k i j = -J k j i) :
++    jField (∑ k, J k) H = fun x ↦ ∑ k, jField (J k) H x := by
++  sorry

@@ -1,0 +1,196 @@
+{
+  "batch": "BATCH20",
+  "chapter": "ch07",
+  "round": "first-merged",
+  "input_sha256": {
+    "Blueprint/Ch07.lean": "f30ea154ebfb07ae85c0b806ff74b35808d5a0c3dcaa647c0c3cc80a78239e37",
+    "blueprint/ch07/ch07_source.json": "c434892ebf63b06f7cadcdfa7af408c2c12d7b645d35db431d1855224163ba19"
+  },
+  "items": [
+    {
+      "source_id": "MD-7.13-StabilityEnvelope",
+      "json_review": {
+        "status": "APPROVED",
+        "issue_codes": [],
+        "corrected_json": null,
+        "issues": [],
+        "evidence": {
+          "source_pdf": "R6_PAGES.pdf",
+          "attachment_pages": "16",
+          "printed_page": "325",
+          "original_pdf_page": "346",
+          "A_source_check": "附件16页(7.49)、h/√(4Ω²−γ²)≤sinh(γh/2)均一致；中间省去的解释句属于摘录范围选择。",
+          "C_signature_check": "sufficient对任意实参数，只从包络条件推出修正相位的绝对值界；利用|cos|≤1正确，包括Lean总化除法的退化参数也仅为形式代数结论。iff在η>0、γ≥0、h≥0下正确，因cosh²−1=sinh²及两边非负可等价平方/开方。模型中需另认η=η̂>0。量词是每个给定h的条件，不是单次验证即推出所有h。未声称噪声边界平稳性。",
+          "method": "先目视原页逐项核对正文与公式，再只读核对本条全部Lean声明、依赖定义及EXTRA说明；不编译、不修改工程、不补证明，不以sorry判FAIL。原书数学疑误保留。"
+        }
+      },
+      "audit": {
+        "lean_decl": [
+          "MD.Ch07.stabilityEnvelope",
+          "MD.Ch07.stabilityEnvelope_sufficient",
+          "MD.Ch07.stabilityEnvelope_iff"
+        ],
+        "verdict": "PASS",
+        "explanation": "sufficient对任意实参数，只从包络条件推出修正相位的绝对值界；利用|cos|≤1正确，包括Lean总化除法的退化参数也仅为形式代数结论。iff在η>0、γ≥0、h≥0下正确，因cosh²−1=sinh²及两边非负可等价平方/开方。模型中需另认η=η̂>0。量词是每个给定h的条件，不是单次验证即推出所有h。未声称噪声边界平稳性。",
+        "counterexample": null,
+        "suggested_fix": null
+      },
+      "subtask": "BATCH20a",
+      "input_sha256": {
+        "Blueprint/Ch07.lean": "f30ea154ebfb07ae85c0b806ff74b35808d5a0c3dcaa647c0c3cc80a78239e37",
+        "blueprint/ch07/ch07_source.json": "c434892ebf63b06f7cadcdfa7af408c2c12d7b645d35db431d1855224163ba19",
+        "BATCH20a_PAGES.pdf": "1e1d401a8c5878915fdbc0b226c5272bd1c8307e97c1aca23785806abc4eb21b"
+      }
+    },
+    {
+      "source_id": "MD-7.13-FrictionThresholdPrinted",
+      "json_review": {
+        "status": "NEEDS_HUMAN",
+        "issue_codes": [
+          "SOURCE_ERRATUM",
+          "THRESHOLD_RANGE",
+          "COUNTEREXAMPLE_LINK_GAP"
+        ],
+        "corrected_json": null,
+        "issues": [
+          {
+            "phase": "A",
+            "code": "SOURCE_ERRATUM",
+            "detail": "附件17页链式下界确实印为≥√2/Ω；忠实转录应保留，但其方向和系数导致错误，须人工确认勘误。"
+          },
+          {
+            "phase": "C",
+            "code": "THRESHOLD_RANGE",
+            "detail": "Printed定义及frictionBoundPrinted忠实保留错误链。rationalized在Ω≥1时正确；allSteps在Ω≥1、0<γ<2Ω及小步长包络斜率条件下推出所有h≥0的包络，正确；asymptotic极限为1正确。corrected的frictionBound保留隐式条件，避免仅用γ≥低根而漏掉高根上界。squared_counterexample只有1<8/5的数值真命题，并未将其联结至Ω=√5/2的根式，所以不是Lean中完整的原命题反例；EXTRA已说明。"
+          },
+          {
+            "phase": "C",
+            "code": "COUNTEREXAMPLE_LINK_GAP",
+            "detail": "Printed定义及frictionBoundPrinted忠实保留错误链。rationalized在Ω≥1时正确；allSteps在Ω≥1、0<γ<2Ω及小步长包络斜率条件下推出所有h≥0的包络，正确；asymptotic极限为1正确。corrected的frictionBound保留隐式条件，避免仅用γ≥低根而漏掉高根上界。squared_counterexample只有1<8/5的数值真命题，并未将其联结至Ω=√5/2的根式，所以不是Lean中完整的原命题反例；EXTRA已说明。"
+          }
+        ],
+        "evidence": {
+          "source_pdf": "R6_PAGES.pdf",
+          "attachment_pages": "17",
+          "printed_page": "325",
+          "original_pdf_page": "346",
+          "A_source_check": "附件17页链式下界确实印为≥√2/Ω；忠实转录应保留，但其方向和系数导致错误，须人工确认勘误。",
+          "C_signature_check": "Printed定义及frictionBoundPrinted忠实保留错误链。rationalized在Ω≥1时正确；allSteps在Ω≥1、0<γ<2Ω及小步长包络斜率条件下推出所有h≥0的包络，正确；asymptotic极限为1正确。corrected的frictionBound保留隐式条件，避免仅用γ≥低根而漏掉高根上界。squared_counterexample只有1<8/5的数值真命题，并未将其联结至Ω=√5/2的根式，所以不是Lean中完整的原命题反例；EXTRA已说明。",
+          "method": "先目视原页逐项核对正文与公式，再只读核对本条全部Lean声明、依赖定义及EXTRA说明；不编译、不修改工程、不补证明，不以sorry判FAIL。原书数学疑误保留。"
+        }
+      },
+      "audit": {
+        "lean_decl": [
+          "MD.Ch07.frictionThresholdPrinted",
+          "MD.Ch07.frictionThresholdPrinted_corrected",
+          "MD.Ch07.frictionBoundPrinted",
+          "MD.Ch07.frictionBoundPrinted_corrected",
+          "MD.Ch07.frictionThreshold_rationalized",
+          "MD.Ch07.frictionThreshold_allSteps",
+          "MD.Ch07.frictionThreshold_asymptotic",
+          "MD.Ch07.frictionThreshold_squared_counterexample"
+        ],
+        "verdict": "NEEDS_HUMAN",
+        "explanation": "Printed定义及frictionBoundPrinted忠实保留错误链。rationalized在Ω≥1时正确；allSteps在Ω≥1、0<γ<2Ω及小步长包络斜率条件下推出所有h≥0的包络，正确；asymptotic极限为1正确。corrected的frictionBound保留隐式条件，避免仅用γ≥低根而漏掉高根上界。squared_counterexample只有1<8/5的数值真命题，并未将其联结至Ω=√5/2的根式，所以不是Lean中完整的原命题反例；EXTRA已说明。",
+        "counterexample": "取Ω=√5/2，Ω²=5/4，则精确阈值平方=2/(5/4+3/4)=1，而(√2/Ω)²=8/5>1，所印下界不成立。此外包络斜率条件等价γ²∈[2Ω²−2√(Ω⁴−1),2Ω²+2√(Ω⁴−1)]，不能只保留下界。",
+        "suggested_fix": "保留[ERRATUM?]；对Ω≥1阈值满足1/Ω≤阈值≤√2/Ω，大Ω渐近1/Ω；若陈述包络条件的充要γ范围，须保留高根上界。"
+      },
+      "subtask": "BATCH20b",
+      "input_sha256": {
+        "Blueprint/Ch07.lean": "f30ea154ebfb07ae85c0b806ff74b35808d5a0c3dcaa647c0c3cc80a78239e37",
+        "blueprint/ch07/ch07_source.json": "c434892ebf63b06f7cadcdfa7af408c2c12d7b645d35db431d1855224163ba19",
+        "BATCH20b_PAGES.pdf": "04c366e966b06f365cbf0f592eb988f26753c66c9a938fc38bd35c401448ee45"
+      }
+    },
+    {
+      "source_id": "MD-7.1-ConfigurationalSampling",
+      "json_review": {
+        "status": "APPROVED",
+        "issue_codes": [],
+        "corrected_json": null,
+        "issues": [],
+        "evidence": {
+          "source_pdf": "R6_PAGES.pdf",
+          "attachment_pages": "18",
+          "printed_page": "262",
+          "original_pdf_page": "283",
+          "A_source_check": "附件18页φ(q)、exp(−βU(q))及英文原句相符（原书确为“with respect the”）。",
+          "C_signature_check": "positionGibbs依赖体明确为相对Lebesgue体积的归一指数密度；平均为该测度积分。Qualified对β>0、测度确为概率及φ可积单列资格，避免Lean总化积分在配分函数发散或不可积时被误作有效期望。n、U、φ全量化且域为Fin n→ℝ，对应配置空间。无偷加概率归一结论。",
+          "method": "先目视原页逐项核对正文与公式，再只读核对本条全部Lean声明、依赖定义及EXTRA说明；不编译、不修改工程、不补证明，不以sorry判FAIL。原书数学疑误保留。"
+        }
+      },
+      "audit": {
+        "lean_decl": [
+          "MD.Ch07.configurationalSamplingAverage",
+          "MD.Ch07.configurationalSamplingQualified"
+        ],
+        "verdict": "PASS",
+        "explanation": "positionGibbs依赖体明确为相对Lebesgue体积的归一指数密度；平均为该测度积分。Qualified对β>0、测度确为概率及φ可积单列资格，避免Lean总化积分在配分函数发散或不可积时被误作有效期望。n、U、φ全量化且域为Fin n→ℝ，对应配置空间。无偷加概率归一结论。",
+        "counterexample": null,
+        "suggested_fix": null
+      },
+      "subtask": "BATCH20c",
+      "input_sha256": {
+        "Blueprint/Ch07.lean": "f30ea154ebfb07ae85c0b806ff74b35808d5a0c3dcaa647c0c3cc80a78239e37",
+        "blueprint/ch07/ch07_source.json": "c434892ebf63b06f7cadcdfa7af408c2c12d7b645d35db431d1855224163ba19",
+        "BATCH20c_PAGES.pdf": "9f6f5edf7d38f4c749b866c28b6e2623c940b5dff32b25e7f37fbf3e71c7c0bf"
+      }
+    },
+    {
+      "source_id": "MD-7.1-HamiltonianSamplingObstruction",
+      "json_review": {
+        "status": "NEEDS_HUMAN",
+        "issue_codes": [
+          "SOURCE_OVERGENERALIZATION",
+          "LEAN_COVERAGE_GAP",
+          "OPERATOR_DOMAIN_UNSPECIFIED"
+        ],
+        "corrected_json": null,
+        "issues": [
+          {
+            "phase": "A",
+            "code": "SOURCE_OVERGENERALIZATION",
+            "detail": "附件19页有关非遍历、Liouvillian无谱隙及平稳解不唯一的原句转录忠实，但未说明参考测度、能量壳与算子空间，不能作为无条件普遍命题接受。"
+          },
+          {
+            "phase": "C",
+            "code": "LEAN_COVERAGE_GAP",
+            "detail": "energyConservingFlow具有F0=id、全实时间流合成律及保能；energySublevel_invariant对任意a,t给出原像集合相等，正确。Qualified补上概率、测度保持及一个可测且质量严格介于0和1的能量子水平集，足以解释全相空间遍历障碍，但它只是资格定义，不是非遍历性定理；尤其没有Liouvillian定义域、谱隙或多个平稳解的声明。statement_scope已经诚实缩小，不据此声称整段谱理论已形式化。"
+          },
+          {
+            "phase": "C",
+            "code": "OPERATOR_DOMAIN_UNSPECIFIED",
+            "detail": "energyConservingFlow具有F0=id、全实时间流合成律及保能；energySublevel_invariant对任意a,t给出原像集合相等，正确。Qualified补上概率、测度保持及一个可测且质量严格介于0和1的能量子水平集，足以解释全相空间遍历障碍，但它只是资格定义，不是非遍历性定理；尤其没有Liouvillian定义域、谱隙或多个平稳解的声明。statement_scope已经诚实缩小，不据此声称整段谱理论已形式化。"
+          }
+        ],
+        "evidence": {
+          "source_pdf": "R6_PAGES.pdf",
+          "attachment_pages": "19",
+          "printed_page": "262",
+          "original_pdf_page": "283",
+          "A_source_check": "附件19页有关非遍历、Liouvillian无谱隙及平稳解不唯一的原句转录忠实，但未说明参考测度、能量壳与算子空间，不能作为无条件普遍命题接受。",
+          "C_signature_check": "energyConservingFlow具有F0=id、全实时间流合成律及保能；energySublevel_invariant对任意a,t给出原像集合相等，正确。Qualified补上概率、测度保持及一个可测且质量严格介于0和1的能量子水平集，足以解释全相空间遍历障碍，但它只是资格定义，不是非遍历性定理；尤其没有Liouvillian定义域、谱隙或多个平稳解的声明。statement_scope已经诚实缩小，不据此声称整段谱理论已形式化。",
+          "method": "先目视原页逐项核对正文与公式，再只读核对本条全部Lean声明、依赖定义及EXTRA说明；不编译、不修改工程、不补证明，不以sorry判FAIL。原书数学疑误保留。"
+        }
+      },
+      "audit": {
+        "lean_decl": [
+          "MD.Ch07.energyConservingFlow",
+          "MD.Ch07.energySublevel_invariant",
+          "MD.Ch07.energyObstructionQualified"
+        ],
+        "verdict": "NEEDS_HUMAN",
+        "explanation": "energyConservingFlow具有F0=id、全实时间流合成律及保能；energySublevel_invariant对任意a,t给出原像集合相等，正确。Qualified补上概率、测度保持及一个可测且质量严格介于0和1的能量子水平集，足以解释全相空间遍历障碍，但它只是资格定义，不是非遍历性定理；尤其没有Liouvillian定义域、谱隙或多个平稳解的声明。statement_scope已经诚实缩小，不据此声称整段谱理论已形式化。",
+        "counterexample": "能量守恒不排除固定能量壳上的遍历；因此不能由子水平集不变推出所有参考概率空间都非遍历。",
+        "suggested_fix": "保留原文并标需人工限定；限定到具有非平凡能量分布的保测概率空间，登记非遍历性结论缺口；谱理论另须指定函数空间、算子与平稳解意义。"
+      },
+      "subtask": "BATCH20d",
+      "input_sha256": {
+        "Blueprint/Ch07.lean": "f30ea154ebfb07ae85c0b806ff74b35808d5a0c3dcaa647c0c3cc80a78239e37",
+        "blueprint/ch07/ch07_source.json": "c434892ebf63b06f7cadcdfa7af408c2c12d7b645d35db431d1855224163ba19",
+        "BATCH20d_PAGES.pdf": "4a67bd421826afd8ffbbcf2287bdde2401678a92e13b9e4a49110586850e54cb"
+      }
+    }
+  ],
+  "merged_from": "ch07_first_merged"
+}

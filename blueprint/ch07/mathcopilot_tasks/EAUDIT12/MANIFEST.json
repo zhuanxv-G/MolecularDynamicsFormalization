@@ -1,0 +1,19 @@
+{
+  "batch": "EAUDIT12",
+  "subtasks": [
+    {
+      "subtask": "EAUDIT12a",
+      "source_id": "MD-7.12.1-ApproximateGeodesicOrder",
+      "path": "blueprint/ch07/mathcopilot_tasks/EAUDIT12/a",
+      "bytes": 106407,
+      "manifest_sha256": "b8f017533e1c0e6697591c85e2f742a19537eb83aa3f07b6891c9c61352681af"
+    },
+    {
+      "subtask": "EAUDIT12b",
+      "source_id": "MD-7.13-SpectralRadiusStability",
+      "path": "blueprint/ch07/mathcopilot_tasks/EAUDIT12/b",
+      "bytes": 94624,
+      "manifest_sha256": "ccfec316f97777b5bfa078a52b85a1fc9e424064ae1275a6358d0d4a4c25a943"
+    }
+  ]
+}

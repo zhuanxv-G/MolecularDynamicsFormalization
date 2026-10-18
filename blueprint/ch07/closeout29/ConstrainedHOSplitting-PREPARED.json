@@ -1,0 +1,98 @@
+{
+  "source_id": "MD-7.12-ConstrainedHOSplitting",
+  "signature_changed": true,
+  "scope": "H/O总化漂移、O扩散，以及两段各自受约束积分解规格；组合仍为代数辅助，未构造随机核及两次独立噪声组合。",
+  "before": {
+    "source_id": "MD-7.12-ConstrainedHOSplitting",
+    "kind": "definition",
+    "label": null,
+    "section": "7.12",
+    "printed_page": "318",
+    "pdf_page": "339",
+    "statement_latex": "We could instead consider splitting the dynamics up and performing the integration using a splitting method. One uses\n\\[H_c:\\quad dq=M^{-1}pdt,\\quad dp=-\\nabla U(q)dt-g'(q)^T\\lambda dt,\\quad g(q)=0,\\]\n\\[O_c:\\quad dq=0,\\quad dp=-\\gamma pdt+\\sqrt{2\\gamma k_BTM}dW-g'(q)^T\\lambda dt,\\quad g(q)=0.\\]\nWe solve these two pieces symmetrically, where the constrained Hamiltonian part is solved over a step $h$, in between two solves of the Ornstein-Uhlenbeck SDE with stepsize $h/2$.",
+    "proof_latex": null,
+    "proof_outline": null,
+    "proof_note": "原页推导与上下文全文见original_page_text；数学符号的排版以随附原页PDF为准。",
+    "original_page_text": [
+      {
+        "pdf_page": 339,
+        "printed_page": 318,
+        "text": "318\n7\nNumerical Methods for Stochastic Molecular Dynamics\nWe could instead consider splitting the dynamics up and performing the integra-\ntion using a splitting method. Such a splitting strategy is considered in [232] where\none uses\n2\n4\ndq\ndp\n0\n3\n5 D\n2\n4\nM\u00021pdt\n\u0003rU.q/dt \u0003 g0.q/T\fdt\ng.q/\n3\n5\n„\nƒ‚\n…\nHc\nC\n2\n4\n0\n\u0003\npdt C\np\n2\nkBTMdW \u0003 g0.q/T\fdt\ng.q/\n3\n5\n„\nƒ‚\n…\nOc\n;\nsplitting the dynamics into two pieces: the constrained Hamiltonian (NVE) equa-\ntions, and a constrained Ornstein-Uhlenbeck piece.\nWe solve these two pieces symmetrically, where the constrained Hamiltonian\npart is solved over a step h, in between two solves of the Ornstein-Uhlenbeck\nSDE with stepsize h=2. The SHAKE (or RATTLE) algorithm can be used to solve\nthe constrained Hamiltonian part to a high degree of accuracy, while solving the\nOrnstein-Uhlenbeck piece along the manifold amounts to ﬁnding the solution of a\nlinear system. We observe the constraint in both solutions, so that the computed\npoints lie in the co-tangent bundle of the constraint manifold. Instead of solving the\nOrnstein-Uhlenbeck exactly, we discretize using a midpoint Euler scheme, yielding\nthe following scheme:\nMidpoint Euler - Verlet - Midpoint Euler (see [232])\nSolve\n(\npnC1=4 D pn \u0002 h\n4 .pn C pnC1=4/ C ph\nkBTMRn \u0002 g0.qn/T\fnC1=4\nSuch that g0.qn/M\u00021pnC1=4 D 0\nSolve\n8\nˆˆˆ<\nˆˆˆ:\npnC1=2 D pnC1=4 \u0002 h\n2rU.qn/ \u0002 g0.qn/T\fnC1=2\nqnC1 D qn C hM\u00021pnC1=2\npnC3=4 D pnC1=2 \u0002 h\n2rU.qnC1/ \u0002 g0.qnC1/T\fnC3=4\nSuch that g0.qnC1/M\u00021pnC3=4 D 0 and g.qnC1/ D 0:\nSolve\n(\npnC1 D pnC3=4 \u0002 h\n4 .pnC3=4 C pnC1/ C ph\nkBTMRnC1=2 \u0002 g0.qnC1/T\fnC1\nSuch that g0.qnC1/M\u00021pnC1 D 0\nThe vectors Rn and RnC1=2 are vectors of N.0; 1/ i.i.d. random numbers, with \n \b 0\nthe usual Langevin dynamics friction parameter. Setting \n D 0 reduces the scheme\nto the usual RATTLE scheme for solving holonomically constrained Hamiltonian\nequations of motion, whereas if \n is chosen large then this will be expected to\ncause instability in the scheme, as we are not solving the OU process exactly. The\n"
+      }
+    ],
+    "transcription_note": "PDF文字层原样保留，陈述中的数学排版转写为LaTeX；文字层有特殊字形编码时以目视原页为准。PDF347的Exercises之后不在正文范围内。",
+    "context_notation": [],
+    "extra_assumptions": [
+      "Hc、Oc分别使用各自乘子，不能将相同multiplier在求和中重复扣除；Oc噪声为前条真实Wiener常扩散项，向量场仅记录漂移。",
+      "每段都应满足cotangentConstraint，实际流或核、Oc半群律及约束Gaussian不变性尚未证明。"
+    ],
+    "issues": [],
+    "statement_scope": "本条逐字引用的全部数学对象与公式；未纳入的上下文另列。",
+    "lean_decl": "MD.Ch07.constrainedHField",
+    "lean_declarations": [
+      "MD.Ch07.constrainedHField",
+      "MD.Ch07.constrainedOField",
+      "MD.Ch07.constrainedHOComposition"
+    ],
+    "source_page_verification": "见source_page_checks.json；必须已目视核对本条原页。",
+    "repair_log": [
+      {
+        "instruction": 29,
+        "website_verdict": "FAIL",
+        "suggested_fix": "补Hc/Oc的积分解或随机核规格、Oc扩散和各段cotangentConstraint保持，并把H/O参数约束为这些解/核；分步乘子分别指定，保留当前组合为辅助定义。",
+        "actual_scope": "H/O总化漂移、O扩散，以及两段各自受约束积分解规格；组合仍为代数辅助，未构造随机核及两次独立噪声组合。",
+        "signature_changed": true
+      }
+    ],
+    "documented_priors": []
+  },
+  "after": {
+    "source_id": "MD-7.12-ConstrainedHOSplitting",
+    "kind": "definition",
+    "label": null,
+    "section": "7.12",
+    "printed_page": "318",
+    "pdf_page": "339",
+    "statement_latex": "We could instead consider splitting the dynamics up and performing the integration using a splitting method. One uses\n\\[H_c:\\quad dq=M^{-1}pdt,\\quad dp=-\\nabla U(q)dt-g'(q)^T\\lambda dt,\\quad g(q)=0,\\]\n\\[O_c:\\quad dq=0,\\quad dp=-\\gamma pdt+\\sqrt{2\\gamma k_BTM}dW-g'(q)^T\\lambda dt,\\quad g(q)=0.\\]\nWe solve these two pieces symmetrically, where the constrained Hamiltonian part is solved over a step $h$, in between two solves of the Ornstein-Uhlenbeck SDE with stepsize $h/2$.",
+    "proof_latex": null,
+    "proof_outline": null,
+    "proof_note": "原页推导与上下文全文见original_page_text；数学符号的排版以随附原页PDF为准。",
+    "original_page_text": [
+      {
+        "pdf_page": 339,
+        "printed_page": 318,
+        "text": "318\n7\nNumerical Methods for Stochastic Molecular Dynamics\nWe could instead consider splitting the dynamics up and performing the integra-\ntion using a splitting method. Such a splitting strategy is considered in [232] where\none uses\n2\n4\ndq\ndp\n0\n3\n5 D\n2\n4\nM\u00021pdt\n\u0003rU.q/dt \u0003 g0.q/T\fdt\ng.q/\n3\n5\n„\nƒ‚\n…\nHc\nC\n2\n4\n0\n\u0003\npdt C\np\n2\nkBTMdW \u0003 g0.q/T\fdt\ng.q/\n3\n5\n„\nƒ‚\n…\nOc\n;\nsplitting the dynamics into two pieces: the constrained Hamiltonian (NVE) equa-\ntions, and a constrained Ornstein-Uhlenbeck piece.\nWe solve these two pieces symmetrically, where the constrained Hamiltonian\npart is solved over a step h, in between two solves of the Ornstein-Uhlenbeck\nSDE with stepsize h=2. The SHAKE (or RATTLE) algorithm can be used to solve\nthe constrained Hamiltonian part to a high degree of accuracy, while solving the\nOrnstein-Uhlenbeck piece along the manifold amounts to ﬁnding the solution of a\nlinear system. We observe the constraint in both solutions, so that the computed\npoints lie in the co-tangent bundle of the constraint manifold. Instead of solving the\nOrnstein-Uhlenbeck exactly, we discretize using a midpoint Euler scheme, yielding\nthe following scheme:\nMidpoint Euler - Verlet - Midpoint Euler (see [232])\nSolve\n(\npnC1=4 D pn \u0002 h\n4 .pn C pnC1=4/ C ph\nkBTMRn \u0002 g0.qn/T\fnC1=4\nSuch that g0.qn/M\u00021pnC1=4 D 0\nSolve\n8\nˆˆˆ<\nˆˆˆ:\npnC1=2 D pnC1=4 \u0002 h\n2rU.qn/ \u0002 g0.qn/T\fnC1=2\nqnC1 D qn C hM\u00021pnC1=2\npnC3=4 D pnC1=2 \u0002 h\n2rU.qnC1/ \u0002 g0.qnC1/T\fnC3=4\nSuch that g0.qnC1/M\u00021pnC3=4 D 0 and g.qnC1/ D 0:\nSolve\n(\npnC1 D pnC3=4 \u0002 h\n4 .pnC3=4 C pnC1/ C ph\nkBTMRnC1=2 \u0002 g0.qnC1/T\fnC1\nSuch that g0.qnC1/M\u00021pnC1 D 0\nThe vectors Rn and RnC1=2 are vectors of N.0; 1/ i.i.d. random numbers, with \n \b 0\nthe usual Langevin dynamics friction parameter. Setting \n D 0 reduces the scheme\nto the usual RATTLE scheme for solving holonomically constrained Hamiltonian\nequations of motion, whereas if \n is chosen large then this will be expected to\ncause instability in the scheme, as we are not solving the OU process exactly. The\n"
+      }
+    ],
+    "transcription_note": "PDF文字层原样保留，陈述中的数学排版转写为LaTeX；文字层有特殊字形编码时以目视原页为准。PDF347的Exercises之后不在正文范围内。",
+    "context_notation": [],
+    "extra_assumptions": [
+      "Hc、Oc分别使用各自乘子，不能将相同multiplier在求和中重复扣除；Oc噪声为前条真实Wiener常扩散项，向量场仅记录漂移。",
+      "每段都应满足cotangentConstraint，实际流或核、Oc半群律及约束Gaussian不变性尚未证明。",
+      "29号覆盖限定：H/O总化漂移、O扩散，以及两段各自受约束积分解规格；组合仍为代数辅助，未构造随机核及两次独立噪声组合。"
+    ],
+    "issues": [],
+    "statement_scope": "H/O总化漂移、O扩散，以及两段各自受约束积分解规格；组合仍为代数辅助，未构造随机核及两次独立噪声组合。",
+    "lean_decl": "MD.Ch07.constrainedHField",
+    "lean_declarations": [
+      "MD.Ch07.constrainedHField",
+      "MD.Ch07.constrainedOField",
+      "MD.Ch07.constrainedHOComposition",
+      "MD.Ch07.constrainedONoise",
+      "MD.Ch07.constrainedHIntegralStep",
+      "MD.Ch07.constrainedOIntegralStep"
+    ],
+    "source_page_verification": "见source_page_checks.json；必须已目视核对本条原页。",
+    "repair_log": [
+      {
+        "instruction": 29,
+        "website_verdict": "FAIL",
+        "suggested_fix": "补Hc/Oc的积分解或随机核规格、Oc扩散和各段cotangentConstraint保持，并把H/O参数约束为这些解/核；分步乘子分别指定，保留当前组合为辅助定义。",
+        "actual_scope": "H/O总化漂移、O扩散，以及两段各自受约束积分解规格；组合仍为代数辅助，未构造随机核及两次独立噪声组合。",
+        "signature_changed": true
+      }
+    ],
+    "documented_priors": []
+  },
+  "diff": "--- submitted\n+++ repaired\n@@ -2,4 +2,34 @@\n   (fun i ↦ x.2 i/m i,fun i ↦ -gradient U x.1 i-constraintReaction g x.1 multiplier i)\n def constrainedOField {l : ℕ} (g : V n → V l) (γ : ℝ) (multiplier : V l) (x : Phase n) : Phase n :=\n   (0,fun i ↦ -γ*x.2 i-constraintReaction g x.1 multiplier i)\n-def constrainedHOComposition {E : Type*} (H O : ℝ → E → E) (h : ℝ) : E → E := O (h/2) ∘ H h ∘ O (h/2)+def constrainedHOComposition {E : Type*} (H O : ℝ → E → E) (h : ℝ) : E → E := O (h/2) ∘ H h ∘ O (h/2)\n+\n+def constrainedONoise (m : V n) (γ θ : ℝ) (j : Fin n) : Phase n :=\n+  (0,fun i ↦ if i=j then Real.sqrt (2*γ*θ*m i) else 0)\n+\n+def constrainedHIntegralStep {l : ℕ} (m : V n) (U : V n → ℝ) (g : V n → V l)\n+    (X : ℝ → Phase n) (Λ : ℝ → V l) (x0 : Phase n) (T : ℝ) : Prop :=\n+  (∀ i, 0 < m i) ∧ ContDiff ℝ 2 g ∧ ContDiff ℝ 1 U ∧ 0 ≤ T ∧\n+  ContinuousOn X (Icc 0 T) ∧ X 0=x0 ∧\n+  (∀ t ∈ Icc 0 T, X t ∈ cotangentConstraint m g) ∧\n+  ∀ i, IntervalIntegrable (fun t ↦ (X t).2 i/m i) volume 0 T ∧\n+    IntervalIntegrable (fun t ↦ -gradient U (X t).1 i-\n+      constraintReaction g (X t).1 (Λ t) i) volume 0 T ∧\n+    ∀ t ∈ Icc 0 T,\n+      (X t).1 i=x0.1 i+∫ s in (0 : ℝ)..t, (X s).2 i/m i ∧\n+      (X t).2 i=x0.2 i+∫ s in (0 : ℝ)..t,\n+        -gradient U (X s).1 i-constraintReaction g (X s).1 (Λ s) i\n+\n+/-- O乘子冲量允许含随机部分；不把它限为有限变差的λdt。 -/\n+def constrainedOIntegralStep {l : ℕ} (P : Measure Ω) (m : V n) (g : V n → V l)\n+    (γ θ : ℝ) (W : ℝ → Ω → V n) (X : ℝ → Ω → Phase n)\n+    (reactionImpulse : ℝ → Ω → V n) (x0 : Phase n) (T : ℝ) : Prop :=\n+  vectorWiener P W ∧ (∀ i, 0 < m i) ∧ 0 < γ ∧ 0 < θ ∧ ContDiff ℝ 2 g ∧ 0 ≤ T ∧\n+  (∀ t ∈ Icc 0 T, ∀ᵐ sample ∂P, X t sample ∈ cotangentConstraint m g) ∧\n+  (∀ᵐ sample ∂P, ContinuousOn (fun t ↦ X t sample) (Icc 0 T) ∧\n+    X 0 sample=x0 ∧ reactionImpulse 0 sample=0) ∧\n+  (∀ sample i, IntervalIntegrable (fun t ↦ -γ*(X t sample).2 i) volume 0 T) ∧\n+  ∀ t ∈ Icc 0 T, ∀ᵐ sample ∂P,\n+    (X t sample).1=x0.1 ∧ ∀ i,\n+      (X t sample).2 i=x0.2 i+(∫ s in (0 : ℝ)..t, -γ*(X s sample).2 i)-\n+        reactionImpulse t sample i+Real.sqrt (2*γ*θ*m i)*(W t sample i-W 0 sample i)\n"
+}

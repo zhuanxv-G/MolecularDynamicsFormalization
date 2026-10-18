@@ -1,0 +1,26 @@
+{
+  "batch": "EAUDIT10",
+  "subtasks": [
+    {
+      "subtask": "EAUDIT10a",
+      "source_id": "MD-7.10-BAOABLimitMethod",
+      "path": "blueprint/ch07/mathcopilot_tasks/EAUDIT10/a",
+      "bytes": 113341,
+      "manifest_sha256": "e933cf27f283e264f0bf15a748cc4f5efb1b1cd63062db64b3649b9a20cd0f78"
+    },
+    {
+      "subtask": "EAUDIT10b",
+      "source_id": "MD-7.10-ColoredNoiseAndExtension",
+      "path": "blueprint/ch07/mathcopilot_tasks/EAUDIT10/b",
+      "bytes": 107839,
+      "manifest_sha256": "6f086392d56a165c03106bd404a5d729aad6200dd493a29d286d9b13f8bed891"
+    },
+    {
+      "subtask": "EAUDIT10c",
+      "source_id": "MD-7.10-LimitMethodAccuracy",
+      "path": "blueprint/ch07/mathcopilot_tasks/EAUDIT10/c",
+      "bytes": 101154,
+      "manifest_sha256": "3ccc378f2eff7f33a6d4ef409d06aa04119184df8f4f8840863d9d164f79a23b"
+    }
+  ]
+}

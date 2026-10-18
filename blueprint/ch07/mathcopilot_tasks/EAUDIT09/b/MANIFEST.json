@@ -1,0 +1,136 @@
+{
+  "batch": "EAUDIT09",
+  "subtask": "EAUDIT09b",
+  "source_ids": [
+    "MD-7.9.3-SuperconvergenceScope"
+  ],
+  "input_sha256": {
+    "Blueprint/Ch07.lean": "f3bc0ee86ace9c825028f0cec8ebb2fb410d6be77213cc7fb41cb8889540a000",
+    "blueprint/ch07/ch07_source.json": "1a201887b51a249fb73f456237cb342963c5d98c612ec1912f21572a57924012",
+    "PAGES.pdf": "a217f8a9b7231fc0aad274473f701d0907b4b71cc4c0388997b3724762bb0241"
+  },
+  "page_mapping": [
+    {
+      "attachment_page": 1,
+      "original_pdf_page": 327,
+      "printed_page": 306
+    }
+  ],
+  "definition_excerpts": [
+    {
+      "full_name": "MD.Ch07.V",
+      "kind": "abbrev",
+      "path": "Blueprint/Ch07.lean",
+      "line": 202,
+      "code_sha256": "7ab0ad90462b274b03f5b929b5f09417c0b397b6cb908fa6e7bd56677a314027"
+    },
+    {
+      "full_name": "MD.Ch07.Phase",
+      "kind": "abbrev",
+      "path": "Blueprint/Ch07.lean",
+      "line": 203,
+      "code_sha256": "ef1520e3b22ac1c99a30a989deafe8d3da44a9f2a3e5b6c2cd3220218b88513e"
+    },
+    {
+      "full_name": "MD.Ch07.coordDerivative",
+      "kind": "def",
+      "path": "Blueprint/Ch07.lean",
+      "line": 257,
+      "code_sha256": "e782d789a13f5db6817e2c995f141805e81ac75720125b846f8ee14ba3833a4b"
+    },
+    {
+      "full_name": "MD.Ch07.gradient",
+      "kind": "def",
+      "path": "Blueprint/Ch07.lean",
+      "line": 288,
+      "code_sha256": "540c6af25c09d3a58da531bc32056ff1a1c070facc58d34c96b6653d781fba6f"
+    },
+    {
+      "full_name": "MD.Ch07.positionGibbs",
+      "kind": "def",
+      "path": "Blueprint/Ch07.lean",
+      "line": 1169,
+      "code_sha256": "82bb55e66a80fed509916dd4534bcc354cc9bd8df28c6b30af7e5a2e29632202"
+    },
+    {
+      "full_name": "MD.Ch07.momentumGibbs",
+      "kind": "def",
+      "path": "Blueprint/Ch07.lean",
+      "line": 1171,
+      "code_sha256": "37890e88a0521fb73fdcd58c2c02631a375383f9542a51cd2521500fb8692207"
+    },
+    {
+      "full_name": "MD.Ch07.productGibbs",
+      "kind": "def",
+      "path": "Blueprint/Ch07.lean",
+      "line": 1172,
+      "code_sha256": "a6ad2d129b80649e4904fb1e07f2591a5e7db814b84c01b8c47a02537a602ae8"
+    },
+    {
+      "full_name": "MD.Ch07.hessianU",
+      "kind": "def",
+      "path": "Blueprint/Ch07.lean",
+      "line": 1266,
+      "code_sha256": "8c2605253d3d70a39369a2c08eb2c758793a9cc41934f1f97c967d5eb2c776ee"
+    },
+    {
+      "full_name": "MD.Ch07.gradNormSq",
+      "kind": "def",
+      "path": "Blueprint/Ch07.lean",
+      "line": 1316,
+      "code_sha256": "4ac74933a6c274ae1355fc8b7cdd3820a81dec13cacd2c6e39768e45795792df"
+    },
+    {
+      "full_name": "MD.Ch07.laplacian",
+      "kind": "def",
+      "path": "Blueprint/Ch07.lean",
+      "line": 1378,
+      "code_sha256": "34815bde240a9d093117da74ea9ce745ee5f13888a61c42c94cfcecfc623a421"
+    },
+    {
+      "full_name": "MD.Ch07.highFrictionOABAO",
+      "kind": "def",
+      "path": "Blueprint/Ch07.lean",
+      "line": 1434,
+      "code_sha256": "a13e000bdcfee605e2261531ed7d396865be2ed9d54b7a27059c2eeab2db1cd9"
+    },
+    {
+      "full_name": "MD.Ch07.oabaoPositionCancellation",
+      "kind": "theorem",
+      "path": "Blueprint/Ch07.lean",
+      "line": 1494,
+      "code_sha256": "13d51e336c9338287471bc622a4212c463f24fd4b0ecab93c5affee8612da85c"
+    },
+    {
+      "full_name": "MD.Ch07.superconvergence_fromBound",
+      "kind": "theorem",
+      "path": "Blueprint/Ch07.lean",
+      "line": 1503,
+      "code_sha256": "1b47d2917964d3f1b0d67ba5923353fb4e292f09f05e0e03bc86f6a25af75ec4"
+    },
+    {
+      "full_name": "MD.Ch07.oabaoMomentumCancellation",
+      "kind": "theorem",
+      "path": "Blueprint/Ch07.lean",
+      "line": 1508,
+      "code_sha256": "effe6176d669da4a7412e4c0d68d12440563411cd4b796007e0c88931f51780c"
+    }
+  ],
+  "validation": {
+    "project_constant_closure": "PASS",
+    "missing_project_definitions": [],
+    "full_page_render_equality_dpi": 72,
+    "website_submitted": false
+  },
+  "files": {
+    "PASTE.txt": {
+      "bytes": 15084,
+      "sha256": "4af939b960570cf6094940530bdd295b81c1b8bc7d82d4e01d68957e09a05450"
+    },
+    "PAGES.pdf": {
+      "bytes": 93352,
+      "sha256": "a217f8a9b7231fc0aad274473f701d0907b4b71cc4c0388997b3724762bb0241"
+    }
+  },
+  "total_task_bytes": 112773
+}

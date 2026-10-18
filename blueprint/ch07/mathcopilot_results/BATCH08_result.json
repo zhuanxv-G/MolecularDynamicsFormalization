@@ -1,0 +1,282 @@
+{
+  "batch": "BATCH08",
+  "chapter": "ch07",
+  "round": "first-merged",
+  "input_sha256": {
+    "Blueprint/Ch07.lean": "f30ea154ebfb07ae85c0b806ff74b35808d5a0c3dcaa647c0c3cc80a78239e37",
+    "blueprint/ch07/ch07_source.json": "c434892ebf63b06f7cadcdfa7af408c2c12d7b645d35db431d1855224163ba19"
+  },
+  "items": [
+    {
+      "source_id": "MD-7.4.2-BBKStarMomentSystemPrinted",
+      "json_review": {
+        "status": "NEEDS_HUMAN",
+        "issue_codes": [
+          "SOURCE_ERRATUM"
+        ],
+        "corrected_json": null,
+        "issues": [
+          "Printed 前两式忠实保留原页相邻重复因子，第三式亦一致。corrected 用条目16及(7.8)–(7.10)恢复 2bκ1κ3、2dκ2κ3，改动正确。counterexample 的实数不等式是 4≠2，正确，说明重复因子不能一般删除为恒等变形；它不是完整随机平稳模型的反例。原文版忠实性 PASS、修正版代数正确性 PASS，原书排印勘误交人工。"
+        ],
+        "evidence": [
+          "A：已目视核对 R2_PAGES.pdf 附件第21–22页，原书PDF页299–300、印刷页278–279。数学公式、上下标、符号与摘录一致；允许 Q/P/C 替代已定义的平稳矩以及版式转换。原页第一、第二方程确有相邻重复因子，不能在忠实转写时静默删除。",
+          "C：只读核对本条完整 Lean 与所列项目依赖及附录 D1–D30；Mathlib 标准定义按任务要求采信。Printed 前两式忠实保留原页相邻重复因子，第三式亦一致。corrected 用条目16及(7.8)–(7.10)恢复 2bκ1κ3、2dκ2κ3，改动正确。counterexample 的实数不等式是 4≠2，正确，说明重复因子不能一般删除为恒等变形；它不是完整随机平稳模型的反例。原文版忠实性 PASS、修正版代数正确性 PASS，原书排印勘误交人工。",
+          "标注：本条未出现独立的 [EXTRA]/[ERRATUM?] 字面标签；已核对 extra_assumptions、issues、statement_scope 中的对应说明。未修改工程或补证明，未因 sorry 判 FAIL。"
+        ]
+      },
+      "audit": {
+        "lean_decl": [
+          "MD.Ch07.bbkStarMomentSystemPrinted",
+          "MD.Ch07.bbkStarMomentSystemPrinted_corrected",
+          "MD.Ch07.bbkStarExtraFactor_counterexample"
+        ],
+        "verdict": "NEEDS_HUMAN",
+        "explanation": "Printed 前两式忠实保留原页相邻重复因子，第三式亦一致。corrected 用条目16及(7.8)–(7.10)恢复 2bκ1κ3、2dκ2κ3，改动正确。counterexample 的实数不等式是 4≠2，正确，说明重复因子不能一般删除为恒等变形；它不是完整随机平稳模型的反例。原文版忠实性 PASS、修正版代数正确性 PASS，原书排印勘误交人工。",
+        "counterexample": "取 b=d=κ1=κ2=κ3=1，原印附加项均为4，正确相关项均为2。",
+        "suggested_fix": "保留原印三式及勘误标记；由相关矩推导 corrected 三式时明确指出原页重复因子。"
+      },
+      "subtask": "BATCH08a",
+      "input_sha256": {
+        "Blueprint/Ch07.lean": "f30ea154ebfb07ae85c0b806ff74b35808d5a0c3dcaa647c0c3cc80a78239e37",
+        "blueprint/ch07/ch07_source.json": "c434892ebf63b06f7cadcdfa7af408c2c12d7b645d35db431d1855224163ba19",
+        "BATCH08a_PAGES.pdf": "bfe25b1c373d1bad58d09bd78da146528ff44ad74bef4eeaf13af767700893fa"
+      }
+    },
+    {
+      "source_id": "MD-7.4.2-BBKStarStationary",
+      "json_review": {
+        "status": "APPROVED",
+        "issue_codes": [],
+        "corrected_json": null,
+        "issues": [],
+        "evidence": [
+          "A：已目视核对 R2_PAGES.pdf 附件第23页，原书PDF页300、印刷页279。数学公式、上下标、符号与摘录一致；允许 Q/P/C 替代已定义的平稳矩以及版式转换。",
+          "C：只读核对本条完整 Lean 与所列项目依赖及附录 D1–D30；Mathlib 标准定义按任务要求采信。hsys 明确采用 corrected 方程；四个矩阵投影与三项 κ 系数均与 bbkMatrix/bbkNoise 一致。正参数及 h²Ω²<4m 排除退化分母，结论与原页三个平稳观测值相符。该声明只求解代数方程组，未从跨步相关的实际平稳分布导出 hsys；JSON 已如实披露，不能据此宣称 BBK* 分布理论已完成。",
+          "标注：本条未出现独立的 [EXTRA]/[ERRATUM?] 字面标签；已核对 extra_assumptions、issues、statement_scope 中的对应说明。未修改工程或补证明，未因 sorry 判 FAIL。"
+        ]
+      },
+      "audit": {
+        "lean_decl": [
+          "MD.Ch07.bbkStarStationaryAlgebra"
+        ],
+        "verdict": "PASS",
+        "explanation": "hsys 明确采用 corrected 方程；四个矩阵投影与三项 κ 系数均与 bbkMatrix/bbkNoise 一致。正参数及 h²Ω²<4m 排除退化分母，结论与原页三个平稳观测值相符。该声明只求解代数方程组，未从跨步相关的实际平稳分布导出 hsys；JSON 已如实披露，不能据此宣称 BBK* 分布理论已完成。",
+        "counterexample": null,
+        "suggested_fix": null
+      },
+      "subtask": "BATCH08b",
+      "input_sha256": {
+        "Blueprint/Ch07.lean": "f30ea154ebfb07ae85c0b806ff74b35808d5a0c3dcaa647c0c3cc80a78239e37",
+        "blueprint/ch07/ch07_source.json": "c434892ebf63b06f7cadcdfa7af408c2c12d7b645d35db431d1855224163ba19",
+        "BATCH08b_PAGES.pdf": "92a5f5b8e951c8925b63fb3871c6877fcfa56356eb309b5448ed840e42256122"
+      }
+    },
+    {
+      "source_id": "MD-7.5-PerturbedHamiltonian",
+      "json_review": {
+        "status": "APPROVED",
+        "issue_codes": [],
+        "corrected_json": null,
+        "issues": [],
+        "evidence": [
+          "A：已目视核对 R2_PAGES.pdf 附件第24页，原书PDF页300、印刷页279。数学公式、上下标、符号与摘录一致；允许 Q/P/C 替代已定义的平稳矩以及版式转换。",
+          "C：只读核对本条完整 Lean 与所列项目依赖及附录 D1–D30；Mathlib 标准定义按任务要求采信。势、Hamiltonian 与(7.13)完全一致。perturbedGibbs 是单位温度归一权密度的定义；ε>0 时的可积性和归一性不是该定义自身的定理。方案顺序0,1,2,3为 ABOBA,BAOAB,OBABO,OABAO，和后两条一致；perturbedStationary 正确使用独立两份标准正态及 L² 不变概率分布。",
+          "标注：本条未出现独立的 [EXTRA]/[ERRATUM?] 字面标签；已核对 extra_assumptions、issues、statement_scope 中的对应说明。未修改工程或补证明，未因 sorry 判 FAIL。"
+        ]
+      },
+      "audit": {
+        "lean_decl": [
+          "MD.Ch07.perturbedPotential",
+          "MD.Ch07.perturbedHamiltonian",
+          "MD.Ch07.perturbedGibbs",
+          "MD.Ch07.perturbedStep",
+          "MD.Ch07.perturbedStationary"
+        ],
+        "verdict": "PASS",
+        "explanation": "势、Hamiltonian 与(7.13)完全一致。perturbedGibbs 是单位温度归一权密度的定义；ε>0 时的可积性和归一性不是该定义自身的定理。方案顺序0,1,2,3为 ABOBA,BAOAB,OBABO,OABAO，和后两条一致；perturbedStationary 正确使用独立两份标准正态及 L² 不变概率分布。",
+        "counterexample": null,
+        "suggested_fix": null
+      },
+      "subtask": "BATCH08c",
+      "input_sha256": {
+        "Blueprint/Ch07.lean": "f30ea154ebfb07ae85c0b806ff74b35808d5a0c3dcaa647c0c3cc80a78239e37",
+        "blueprint/ch07/ch07_source.json": "c434892ebf63b06f7cadcdfa7af408c2c12d7b645d35db431d1855224163ba19",
+        "BATCH08c_PAGES.pdf": "f1fe5fe605f08bbd2a483e30d83a77d7e94a0f9dca4cf9a99390344f453a0912"
+      }
+    },
+    {
+      "source_id": "MD-7.5-PerturbedErrorExpansion",
+      "json_review": {
+        "status": "NEEDS_HUMAN",
+        "issue_codes": [
+          "FORMAL_ASYMPTOTIC_TO_RIGOROUS"
+        ],
+        "corrected_json": null,
+        "issues": [
+          "四种 leading 和 remainder 的所有系数、正负号、幂次与(7.14)一致。positivePairLimit 是 (ε,h) 同时从正象限趋零；γ固定且为正。hinv 仅要求最终存在实际平稳 L² 概率分布；结论却给出任意该类族的统一双参数 Big-O。原页说明的是形式截断计算，未提供如此强的严格余项控制，不能以系数抄写一致批准严格定理。"
+        ],
+        "evidence": [
+          "A：已目视核对 R2_PAGES.pdf 附件第25页，原书PDF页301、印刷页280。数学公式、上下标、符号与摘录一致；允许 Q/P/C 替代已定义的平稳矩以及版式转换。",
+          "C：只读核对本条完整 Lean 与所列项目依赖及附录 D1–D30；Mathlib 标准定义按任务要求采信。四种 leading 和 remainder 的所有系数、正负号、幂次与(7.14)一致。positivePairLimit 是 (ε,h) 同时从正象限趋零；γ固定且为正。hinv 仅要求最终存在实际平稳 L² 概率分布；结论却给出任意该类族的统一双参数 Big-O。原页说明的是形式截断计算，未提供如此强的严格余项控制，不能以系数抄写一致批准严格定理。",
+          "标注：本条未出现独立的 [EXTRA]/[ERRATUM?] 字面标签；已核对 extra_assumptions、issues、statement_scope 中的对应说明。未修改工程或补证明，未因 sorry 判 FAIL。"
+        ]
+      },
+      "audit": {
+        "lean_decl": [
+          "MD.Ch07.perturbedLeading",
+          "MD.Ch07.perturbedRemainder",
+          "MD.Ch07.positivePairLimit",
+          "MD.Ch07.perturbedErrorExpansion"
+        ],
+        "verdict": "NEEDS_HUMAN",
+        "explanation": "四种 leading 和 remainder 的所有系数、正负号、幂次与(7.14)一致。positivePairLimit 是 (ε,h) 同时从正象限趋零；γ固定且为正。hinv 仅要求最终存在实际平稳 L² 概率分布；结论却给出任意该类族的统一双参数 Big-O。原页说明的是形式截断计算，未提供如此强的严格余项控制，不能以系数抄写一致批准严格定理。",
+        "counterexample": null,
+        "suggested_fix": "保留原书公式，将严格双参数估计标记为待人工确认；需要证明相关不变分布存在、选择一致性与足够高矩和余项的统一控制，或降低为明确的形式渐近陈述。"
+      },
+      "subtask": "BATCH08d",
+      "input_sha256": {
+        "Blueprint/Ch07.lean": "f30ea154ebfb07ae85c0b806ff74b35808d5a0c3dcaa647c0c3cc80a78239e37",
+        "blueprint/ch07/ch07_source.json": "c434892ebf63b06f7cadcdfa7af408c2c12d7b645d35db431d1855224163ba19",
+        "BATCH08d_PAGES.pdf": "482f533295fa223c17cfe7cc55c000c2ef9ca40c34f38676c8fad62c2829765e"
+      }
+    },
+    {
+      "source_id": "MD-7.5-PerturbedErrorOrders",
+      "json_review": {
+        "status": "NEEDS_HUMAN",
+        "issue_codes": [
+          "INCORRECT_METADATA",
+          "UNIFORMITY_GAP"
+        ],
+        "corrected_json": {
+          "source_id": "MD-7.5-PerturbedErrorOrders",
+          "kind": "unnumbered_claim",
+          "label": "(7.15)",
+          "section": "7.5",
+          "printed_page": "280",
+          "pdf_page": "301",
+          "statement_latex": "The behavior of the methods can thus be summarized as\n\\[|\\langle q^2\\rangle_h^{[ABOBA]}-\\langle q^2\\rangle|=O(\\epsilon h^2),\\qquad\n|\\langle q^2\\rangle_h^{[BAOAB]}-\\langle q^2\\rangle|=O\\left(\\frac{\\epsilon^2h^2}{1+\\gamma^2}+\\epsilon^2h^4\\right),\\]\n\\[|\\langle q^2\\rangle_h^{[OBABO]}-\\langle q^2\\rangle|=O(h^2),\\qquad\n|\\langle q^2\\rangle_h^{[OABAO]}-\\langle q^2\\rangle|=O(h^2).\\tag{7.15}\\]\nThe twofold surprising result though, is that (a) the leading error of the $[BAOAB]$ scheme has behavior proportional to $\\epsilon^2$, while (b) the leading order term of the $[BAOAB]$ scheme is annihilated for large $\\gamma$.",
+          "proof_latex": null,
+          "proof_outline": null,
+          "proof_note": "原页推导与上下文全文见original_page_text；数学符号的排版以随附原页PDF为准。",
+          "original_page_text": [
+            {
+              "pdf_page": 301,
+              "printed_page": 280,
+              "text": "280\n7\nNumerical Methods for Stochastic Molecular Dynamics\nWe ﬁnd that truncating the update equations to O.\"3/ is sufﬁcient to explicitly\nresolve the leading order behavior of the error for these discretization schemes, and\nwe give the differences between observed numerical averages and exact averages\nbelow:\nhq2i\u0002ABOBA\u0003\nh\n\u0003 hq2i D 3h2\"\n\n48\" \u0003 4 C 3\n2.9\" \u0003 1/\n\u000b\n12\n2 C 16\nC O.\"h4 C \"3h2/;\nhq2i\u0002BAOAB\u0003\nh\n\u0003 hq2i D \u0003 9h2\"2\n6\n2 C 8 \u0003 3h4\"2 \n6\n4 C 19\n2 C 16\u000b\n8 .3\n2 C 4/2\nC O.\"2h6 C \"3h2/;\nhq2i\u0002OBABO\u0003\nh\n\u0003 hq2i D h2\n \n1\n4 C \"\n\n144\" C 81\"\n2 \u0003 9\n2 \u0003 12\n\u000b\n12\n2 C 16\n!\nC O.h4 C \"3h2/;\nhq2i\u0002OABAO\u0003\nh\n\u0003 hq2i D \u0003h2\n\b1\n4 C\n18\"2\n12\n2 C 16\n\t\nC O.h4 C \"3h2/:\n(7.14)\nThe behavior of the methods can thus be summarized as\nˇˇˇhq2i\u0002ABOBA\u0003\nh\n\u0003 hq2i\nˇˇˇ D O\n\u0004\n\"h2\u0005\n;\nˇˇˇhq2i\u0002BAOAB\u0003\nh\n\u0003 hq2i\nˇˇˇ D O\n\b \"2h2\n1 C \n2 C \"2h4\n\t\n;\nˇˇˇhq2i\u0002OBABO\u0003\nh\n\u0003 hq2i\nˇˇˇ D O\n\u0004\nh2\u0005\n;\nˇˇˇhq2i\u0002OABAO\u0003\nh\n\u0003 hq2i\nˇˇˇ D O\n\u0004\nh2\u0005\n:\n(7.15)\nWe would expect that both the \u0002ABOBA\u0003 and \u0002BAOAB\u0003 schemes would have a\nleading error term proportional to \", given that it was shown in Table 7.1 that in the\npure harmonic case (at \" D 0) these methods give perfect sampling. The twofold\nsurprising result though, is that (a) the leading error of the \u0002BAOAB\u0003 scheme has\nbehavior proportional to \"2, while (b) the leading order term of the \u0002BAOAB\u0003\nscheme is annihilated for large \n.\nIt would seem that by ordering the A, B and O update terms favourably in an\nalgorithm we are able to achieve signiﬁcant sampling improvements on systems\nthat are “nearly harmonic”, at no extra cost (in terms of force evaluations).\nTo illustrate this numerically, we use each of the four given second order methods\nto compute the absolute error in hq2ih using the one dimensional perturbed harmonic\noscillator with Hamiltonian given in (7.13) at a range of timesteps h 2 Œ0:1; 2\t and\nnonlinearity parameters \" 2 Œ0:0001; 1\t. We choose ˇ D \n D 1 for all experiments,\nand run the schemes using each parameter set for a ﬁxed time window of length 108.\nThe results are shown in Fig. 7.3, and qualitatively agree with the results of (7.15).\n"
+            }
+          ],
+          "transcription_note": "PDF文字层原样保留，陈述中的数学排版转写为LaTeX；文字层有特殊字形编码时以目视原页为准。PDF347的Exercises之后不在正文范围内。",
+          "context_notation": [],
+          "extra_assumptions": [
+            "双参数正向极限已明确；γ固定时(7.14)的余项足以推出(7.15)的阶。γ一致误差界及完整误差的大摩擦消失需要额外控制，当前声明未提供。"
+          ],
+          "issues": [],
+          "statement_scope": "本条逐字引用的全部数学对象与公式；未纳入的上下文另列。",
+          "lean_decl": "MD.Ch07.perturbedErrorScale",
+          "lean_declarations": [
+            "MD.Ch07.perturbedErrorScale",
+            "MD.Ch07.perturbedErrorOrders",
+            "MD.Ch07.baoabLeading_largeFriction"
+          ],
+          "source_page_verification": "见source_page_checks.json；必须已目视核对本条原页。",
+          "repair_log": [],
+          "documented_priors": []
+        },
+        "issues": [
+          "perturbedErrorScale 四种公式对应(7.15)，绝对值与 IsBigO 的固定 γ 正向双参数极限一致。baoabLeading_largeFriction 只针对 -9h²ε²/(6γ²+8) 的大摩擦极限，正确；不证明完整误差关于 γ 的一致界。extra_assumptions 中称 ε³h² 余项不足以推出固定 γ 的 ε²h²+ε²h⁴ 界不正确：ε→0 时 ε³≤ε²，且固定 γ 的 1/(1+γ²)>0 是常数。严格平稳分布渐近仍继承条目20的待确认问题。"
+        ],
+        "evidence": [
+          "A：已目视核对 R2_PAGES.pdf 附件第26页，原书PDF页301、印刷页280。数学公式、上下标、符号与摘录一致；允许 Q/P/C 替代已定义的平稳矩以及版式转换。",
+          "C：只读核对本条完整 Lean 与所列项目依赖及附录 D1–D30；Mathlib 标准定义按任务要求采信。perturbedErrorScale 四种公式对应(7.15)，绝对值与 IsBigO 的固定 γ 正向双参数极限一致。baoabLeading_largeFriction 只针对 -9h²ε²/(6γ²+8) 的大摩擦极限，正确；不证明完整误差关于 γ 的一致界。extra_assumptions 中称 ε³h² 余项不足以推出固定 γ 的 ε²h²+ε²h⁴ 界不正确：ε→0 时 ε³≤ε²，且固定 γ 的 1/(1+γ²)>0 是常数。严格平稳分布渐近仍继承条目20的待确认问题。",
+          "标注：本条未出现独立的 [EXTRA]/[ERRATUM?] 字面标签；已核对 extra_assumptions、issues、statement_scope 中的对应说明。未修改工程或补证明，未因 sorry 判 FAIL。"
+        ]
+      },
+      "audit": {
+        "lean_decl": [
+          "MD.Ch07.perturbedErrorScale",
+          "MD.Ch07.perturbedErrorOrders",
+          "MD.Ch07.baoabLeading_largeFriction"
+        ],
+        "verdict": "NEEDS_HUMAN",
+        "explanation": "perturbedErrorScale 四种公式对应(7.15)，绝对值与 IsBigO 的固定 γ 正向双参数极限一致。baoabLeading_largeFriction 只针对 -9h²ε²/(6γ²+8) 的大摩擦极限，正确；不证明完整误差关于 γ 的一致界。extra_assumptions 中称 ε³h² 余项不足以推出固定 γ 的 ε²h²+ε²h⁴ 界不正确：ε→0 时 ε³≤ε²，且固定 γ 的 1/(1+γ²)>0 是常数。严格平稳分布渐近仍继承条目20的待确认问题。",
+        "counterexample": "0<ε≤1 时 ε³h²≤ε²h²≤(1+γ²)[ε²h²/(1+γ²)+ε²h⁴]；常数依赖固定 γ。",
+        "suggested_fix": "修正 extra_assumptions：固定 γ 时(7.14)的余项足以推出(7.15)所列阶；若要求 γ 一致常数或完整误差大摩擦消失，则 ε³h² 项确实不能由当前信息控制。保留严格估计待人工审定。"
+      },
+      "subtask": "BATCH08e",
+      "input_sha256": {
+        "Blueprint/Ch07.lean": "f30ea154ebfb07ae85c0b806ff74b35808d5a0c3dcaa647c0c3cc80a78239e37",
+        "blueprint/ch07/ch07_source.json": "c434892ebf63b06f7cadcdfa7af408c2c12d7b645d35db431d1855224163ba19",
+        "BATCH08e_PAGES.pdf": "9133439a5cc46292aee42b36bc4d5ac84fde06a068b2843ba11594f88cf349e3"
+      }
+    },
+    {
+      "source_id": "MD-7.6-GibbsComposition",
+      "json_review": {
+        "status": "CORRECTED",
+        "issue_codes": [
+          "COVERAGE_GAP"
+        ],
+        "corrected_json": {
+          "source_id": "MD-7.6-GibbsComposition",
+          "kind": "unnumbered_claim",
+          "label": null,
+          "section": "7.6",
+          "printed_page": "282",
+          "pdf_page": "303",
+          "statement_latex": "The flows of each of these systems individually preserves the Gibbs distribution: denoting the Fokker-Planck operators associated to these flows by $\\mathcal L_H^\\dagger$ and $\\mathcal L_O^\\dagger$ we have\n\\[\\mathcal L_H^\\dagger\\rho_\\beta=0,\\qquad\\mathcal L_O^\\dagger\\rho_\\beta=0,\\]\nand hence\n\\[\\exp(t\\mathcal L_H^\\dagger)\\rho_\\beta=\\exp(t\\mathcal L_O^\\dagger)\\rho_\\beta=\\rho_\\beta.\\]\nFor a scheme $[HO]$, we have\n\\[\\exp(h\\mathcal L_O^\\dagger)[\\exp(h\\mathcal L_H^\\dagger)\\rho_\\beta]=\\exp(h\\mathcal L_O^\\dagger)\\rho_\\beta=\\rho_\\beta.\\]",
+          "proof_latex": null,
+          "proof_outline": null,
+          "proof_note": "原页推导与上下文全文见original_page_text；数学符号的排版以随附原页PDF为准。",
+          "original_page_text": [
+            {
+              "pdf_page": 303,
+              "printed_page": 282,
+              "text": "282\n7\nNumerical Methods for Stochastic Molecular Dynamics\ndeterministic Hamiltonian system taken ﬁrst, followed by the Ornstein-Uhlenbeck\nequation for p. The ﬂows of each of these systems individually preserves the Gibbs\ndistribution: denoting the Fokker-Planck operators associated to these ﬂows by L\u0004\nH\nand L\u0004\nO we have\nL\u0004\nH\u0005ˇ D 0;\nL\u0004\nO\u0005ˇ D 0;\nand hence\nexp.tL\u0004\nH/\u0005ˇ D exp.tL\u0004\nO/\u0005ˇ D \u0005ˇ:\nWe can consider the propagation of measure resulting from a numerical discretiza-\ntion deﬁned by the composition of these two pieces. For a scheme \u0002HO\u0003, we have\nthe distribution ﬁrst propagated under Hamiltonian dynamics, and then the momenta\nare evolved as the solution to the Ornstein-Uhlenbeck process, which clearly will\npreserve the Gibbs measure\nexp.hL\u0004\nO/\n\u0006\nexp.hL\u0004\nH/\u0005ˇ\n\u0007\nD exp.hL\u0004\nO/\u0005ˇ D \u0005ˇ:\nThe problem with this “method” is of course that it requires the exact ﬂow map\nof the Hamiltonian system. However, this requirement can be relaxed. Given any\ndivergence free vector ﬁeld f, we have\n\u0003r \u0002 .f\u0005/ D \u0003f \u0002 r\u0005;\nthus\nL\u0004\nf \u0005 D \u0003Lf\u0005:\nIf Lf preserves a ﬁrst integral I, then Lf preserves any distribution which is a\nfunction of I. It follows that any energy-preserving, divergence free vector ﬁeld\nwill always preserve the Gibbs distribution.\nAll symplectic methods preserve the volume, but for a system with no ﬁrst\nintegrals except the energy, it is known from a theorem of Ge and Marsden [400]\nthat a symplectic method cannot preserve the system energy exactly (unless the\nsymplectic method is itself a time-reparameterization of the exact solution). The\noptions for volume preserving non-symplectic discretization methods that conserve\nenergy exactly are limited (standard form schemes that rely on calculation of the\nvector ﬁeld at a few points cannot achieve this [380]).\nA class of methods that do provide the necessary features can be found in the\nwork of Feng Kang [133], referred to as J-splitting by McLachlan and Quispel [261].\nLet J be the skew-symmetric canonical symplectic structure matrix. The idea is to\nconsider a splitting of J into a ﬁnite number K of skew-symmetric matrices Ji,\ni D 1; : : : ; K. This induces a splitting of the Hamiltonian vector ﬁeld into K vector\n"
+            }
+          ],
+          "transcription_note": "PDF文字层原样保留，陈述中的数学排版转写为LaTeX；文字层有特殊字形编码时以目视原页为准。PDF347的Exercises之后不在正文范围内。",
+          "context_notation": [],
+          "extra_assumptions": [
+            "只覆盖末尾不变对象的组合恒等式；P/Q可取实际测度推前或已定义的传播子。H/O各自Gibbs不变性由前面独立陈述承担，生成元零蕴含半群固定点还需半群域理论。"
+          ],
+          "issues": [
+            "gibbsComposition 对任意 E、自映射 P,Q 及共同固定点 ρ 的复合固定点恒等式正确。但原文包含 H/O 的实际生成元、Gibbs 密度、两个生成元为零及其半群固定点关系；这些对象均未在本条声明出现。把两种不变性直接当作 hP,hQ 只覆盖最后一步，extra_assumptions 的承认不补足整条结论。"
+          ],
+          "statement_scope": "传播子共同固定点的组合推论；前两条生成元及半群识别未新增证明。 审校：仅有部分结论被声明覆盖，详见本条审校结果。",
+          "lean_decl": "MD.Ch07.gibbsComposition",
+          "lean_declarations": [
+            "MD.Ch07.gibbsComposition"
+          ],
+          "source_page_verification": "见source_page_checks.json；必须已目视核对本条原页。",
+          "repair_log": [],
+          "documented_priors": []
+        },
+        "issues": [
+          "gibbsComposition 对任意 E、自映射 P,Q 及共同固定点 ρ 的复合固定点恒等式正确。但原文包含 H/O 的实际生成元、Gibbs 密度、两个生成元为零及其半群固定点关系；这些对象均未在本条声明出现。把两种不变性直接当作 hP,hQ 只覆盖最后一步，extra_assumptions 的承认不补足整条结论。"
+        ],
+        "evidence": [
+          "A：已目视核对 R2_PAGES.pdf 附件第27页，原书PDF页303、印刷页282。数学公式、上下标、符号与摘录一致；允许 Q/P/C 替代已定义的平稳矩以及版式转换。",
+          "C：只读核对本条完整 Lean 与所列项目依赖及附录 D1–D30；Mathlib 标准定义按任务要求采信。gibbsComposition 对任意 E、自映射 P,Q 及共同固定点 ρ 的复合固定点恒等式正确。但原文包含 H/O 的实际生成元、Gibbs 密度、两个生成元为零及其半群固定点关系；这些对象均未在本条声明出现。把两种不变性直接当作 hP,hQ 只覆盖最后一步，extra_assumptions 的承认不补足整条结论。",
+          "标注：本条未出现独立的 [EXTRA]/[ERRATUM?] 字面标签；已核对 extra_assumptions、issues、statement_scope 中的对应说明。未修改工程或补证明，未因 sorry 判 FAIL。"
+        ]
+      },
+      "audit": {
+        "lean_decl": [
+          "MD.Ch07.gibbsComposition"
+        ],
+        "verdict": "FAIL",
+        "explanation": "gibbsComposition 对任意 E、自映射 P,Q 及共同固定点 ρ 的复合固定点恒等式正确。但原文包含 H/O 的实际生成元、Gibbs 密度、两个生成元为零及其半群固定点关系；这些对象均未在本条声明出现。把两种不变性直接当作 hP,hQ 只覆盖最后一步，extra_assumptions 的承认不补足整条结论。",
+        "counterexample": null,
+        "suggested_fix": "补上具体 H/O 传播子对实际 Gibbs 测度的识别以及所需生成元/半群域前提；或将声明对应范围缩至末尾组合恒等式。"
+      },
+      "subtask": "BATCH08f",
+      "input_sha256": {
+        "Blueprint/Ch07.lean": "f30ea154ebfb07ae85c0b806ff74b35808d5a0c3dcaa647c0c3cc80a78239e37",
+        "blueprint/ch07/ch07_source.json": "c434892ebf63b06f7cadcdfa7af408c2c12d7b645d35db431d1855224163ba19",
+        "BATCH08f_PAGES.pdf": "04f4e93e19b0c4e7b389f1c04861b0337711e40d70c6c5e2b1a5b0031950bb42"
+      }
+    }
+  ],
+  "merged_from": "ch07_first_merged"
+}

@@ -1,0 +1,96 @@
+{
+  "source_id": "MD-7.3.1-ConjugateIteration",
+  "signature_changed": true,
+  "scope": "一般复合迭代恒等式、OABA定义及带噪声序号的OABA/BAOAB精确代数移位关系；不包含不变测度转移或遍历性。",
+  "before": {
+    "source_id": "MD-7.3.1-ConjugateIteration",
+    "kind": "unnumbered_claim",
+    "label": null,
+    "section": "7.3.1",
+    "printed_page": "272",
+    "pdf_page": "293",
+    "statement_latex": "When iterated $n+1$ times, we can see the scheme $[OABA]$ produces a mapping of the form\n\\[(\\mathcal U_h^{[OABA]})^{n+1}=\\mathcal U_{h/2}^A\\circ\\mathcal U_{h/2}^B\\circ(\\mathcal U_h^{[BAOAB]})^n\\circ\\mathcal U_{h/2}^B\\circ\\mathcal U_{h/2}^A\\circ\\mathcal U_h^O;\\]\ntherefore through a coordinate transformation the $[OABA]$ method can be morphed into the $[BAOAB]$ scheme.",
+    "proof_latex": null,
+    "proof_outline": null,
+    "proof_note": "原页推导与上下文全文见original_page_text；数学符号的排版以随附原页PDF为准。",
+    "original_page_text": [
+      {
+        "pdf_page": 293,
+        "printed_page": 272,
+        "text": "272\n7\nNumerical Methods for Stochastic Molecular Dynamics\nWhen iterated n C 1 times, we can see the scheme \u0002OABA\u0003 produces a mapping\nof the form\n\u0006\nU \u0002OABA\u0003\nh\n\u0007nC1\nD U A\nh=2 ı U B\nh=2 ı\n\u0006\nU \u0002BAOAB\u0003\nh\n\u0007n\nı U B\nh=2 ı U A\nh=2 ı U O\nh ;\ntherefore through a coordinate transformation the \u0002OABA\u0003 method can be morphed\ninto the \u0002BAOAB\u0003 scheme. To put this another way, if we compute an iteration using\n\u0002OABA\u0003 and simply evaluate it at different points within the step, we can recover\nthe same results as the \u0002BAOAB\u0003 method would provide. Another term to describe\nthis relationship is to say that one method is conjugate to the other.\n7.3.2\nOther Langevin Integrators\nWe may use our alphabet of A, B and O splitting pieces to create a wide variety\nof methods other than those given in the previous section (some requiring multiple\nforce evaluations). However, it is not obvious that there is any gain in increasing the\ncomplexity of the splitting scheme (in terms of the length of its codifying string).\nSome popular methods can be rewritten in terms of this splitting, for example the\nscheme considered in [62] is equivalent to \u0002OBABO\u0003. Examples of methods based\non this type of splitting were also proposed by De Fabritiis et al [96] and Thalmann\nand Farago [363], in the context of dissipative particle dynamics (see Chapter 8).\nOther Langevin dynamics splitting schemes in common use utilize a different\nadditive decomposition of the SDE vector ﬁeld. For example, the Stochastic Position\nVerlet (SPV) method of [265] relies on the splitting strategy\nd\n\u0002q\np\n\u0003\nD\n\u0002 M\u00021p\n0\n\u0003\ndt C\n\u0002\n0\n\u0003rU.q/dt \u0003 \npdt C \u0007M1=2dW\n\u0003\n:\nTo solve the splitting piece including the stochastic dW term, we note that q does not\nchange through its integration, and hence we may treat F D \u0003rU as constant during\nthis part of the step. The exact solution is hence given through the usual Ornstein-\nUhlenbeck formula, where the scheme itself derives from a symmetric integration\nof the two parts:\nStochastic Position Verlet (SPV)\nqnC1=2 D qn C .h=2/M\u00021pn\npnC1 D e\u0002h\npn \u0003 \u000frU.qn/ C \u0018M1=2Rn\nqnC1 D qnC1=2 C .h=2/M\u00021pnC1\nwhere \u000f D .1\u0003e\u0002h\n/=\n, \u0018 D\n\nkBT\n\u0004\n1 \u0003 e\u00022\nh\u0005\u000b1=2. It is important to note that in the\nlimit of inﬁnite friction, we have \u000f ! 0 independent of the timestep h. This suggests\nthat this splitting strategy is unsuitable for large choices of the parameter \n as the\n"
+      }
+    ],
+    "transcription_note": "PDF文字层原样保留，陈述中的数学排版转写为LaTeX；文字层有特殊字形编码时以目视原页为准。PDF347的Exercises之后不在正文范围内。",
+    "context_notation": [],
+    "extra_assumptions": [
+      "compositionIterate是任意确定性映射的真实复合恒等式；实际随机迭代应在扩展噪声序列空间中使用更新映射，不能把固定R重复使用当独立重抽样。",
+      "对所印OABA与BAOAB的随机分布/路径共轭仍需噪声移位包装，列入覆盖缺口；未把一般S,T恒等式冒称整段已覆盖。"
+    ],
+    "issues": [],
+    "statement_scope": "有限复合恒等式及OABA单步映射；独立随机序列上的共轭解释未形式化。",
+    "lean_decl": "MD.Ch07.compositionIterate",
+    "lean_declarations": [
+      "MD.Ch07.compositionIterate",
+      "MD.Ch07.oaba"
+    ],
+    "source_page_verification": "见source_page_checks.json；必须已目视核对本条原页。",
+    "repair_log": [
+      {
+        "instruction": 29,
+        "website_verdict": "FAIL",
+        "suggested_fix": "增加明确的 OABA/BAOAB 特化及扩展噪声空间上的移位关系；保持目前明确承认的覆盖缺口。",
+        "actual_scope": "一般复合迭代恒等式、OABA定义及带噪声序号的OABA/BAOAB精确代数移位关系；不包含不变测度转移或遍历性。",
+        "signature_changed": true
+      }
+    ],
+    "documented_priors": []
+  },
+  "after": {
+    "source_id": "MD-7.3.1-ConjugateIteration",
+    "kind": "unnumbered_claim",
+    "label": null,
+    "section": "7.3.1",
+    "printed_page": "272",
+    "pdf_page": "293",
+    "statement_latex": "When iterated $n+1$ times, we can see the scheme $[OABA]$ produces a mapping of the form\n\\[(\\mathcal U_h^{[OABA]})^{n+1}=\\mathcal U_{h/2}^A\\circ\\mathcal U_{h/2}^B\\circ(\\mathcal U_h^{[BAOAB]})^n\\circ\\mathcal U_{h/2}^B\\circ\\mathcal U_{h/2}^A\\circ\\mathcal U_h^O;\\]\ntherefore through a coordinate transformation the $[OABA]$ method can be morphed into the $[BAOAB]$ scheme.",
+    "proof_latex": null,
+    "proof_outline": null,
+    "proof_note": "原页推导与上下文全文见original_page_text；数学符号的排版以随附原页PDF为准。",
+    "original_page_text": [
+      {
+        "pdf_page": 293,
+        "printed_page": 272,
+        "text": "272\n7\nNumerical Methods for Stochastic Molecular Dynamics\nWhen iterated n C 1 times, we can see the scheme \u0002OABA\u0003 produces a mapping\nof the form\n\u0006\nU \u0002OABA\u0003\nh\n\u0007nC1\nD U A\nh=2 ı U B\nh=2 ı\n\u0006\nU \u0002BAOAB\u0003\nh\n\u0007n\nı U B\nh=2 ı U A\nh=2 ı U O\nh ;\ntherefore through a coordinate transformation the \u0002OABA\u0003 method can be morphed\ninto the \u0002BAOAB\u0003 scheme. To put this another way, if we compute an iteration using\n\u0002OABA\u0003 and simply evaluate it at different points within the step, we can recover\nthe same results as the \u0002BAOAB\u0003 method would provide. Another term to describe\nthis relationship is to say that one method is conjugate to the other.\n7.3.2\nOther Langevin Integrators\nWe may use our alphabet of A, B and O splitting pieces to create a wide variety\nof methods other than those given in the previous section (some requiring multiple\nforce evaluations). However, it is not obvious that there is any gain in increasing the\ncomplexity of the splitting scheme (in terms of the length of its codifying string).\nSome popular methods can be rewritten in terms of this splitting, for example the\nscheme considered in [62] is equivalent to \u0002OBABO\u0003. Examples of methods based\non this type of splitting were also proposed by De Fabritiis et al [96] and Thalmann\nand Farago [363], in the context of dissipative particle dynamics (see Chapter 8).\nOther Langevin dynamics splitting schemes in common use utilize a different\nadditive decomposition of the SDE vector ﬁeld. For example, the Stochastic Position\nVerlet (SPV) method of [265] relies on the splitting strategy\nd\n\u0002q\np\n\u0003\nD\n\u0002 M\u00021p\n0\n\u0003\ndt C\n\u0002\n0\n\u0003rU.q/dt \u0003 \npdt C \u0007M1=2dW\n\u0003\n:\nTo solve the splitting piece including the stochastic dW term, we note that q does not\nchange through its integration, and hence we may treat F D \u0003rU as constant during\nthis part of the step. The exact solution is hence given through the usual Ornstein-\nUhlenbeck formula, where the scheme itself derives from a symmetric integration\nof the two parts:\nStochastic Position Verlet (SPV)\nqnC1=2 D qn C .h=2/M\u00021pn\npnC1 D e\u0002h\npn \u0003 \u000frU.qn/ C \u0018M1=2Rn\nqnC1 D qnC1=2 C .h=2/M\u00021pnC1\nwhere \u000f D .1\u0003e\u0002h\n/=\n, \u0018 D\n\nkBT\n\u0004\n1 \u0003 e\u00022\nh\u0005\u000b1=2. It is important to note that in the\nlimit of inﬁnite friction, we have \u000f ! 0 independent of the timestep h. This suggests\nthat this splitting strategy is unsuitable for large choices of the parameter \n as the\n"
+      }
+    ],
+    "transcription_note": "PDF文字层原样保留，陈述中的数学排版转写为LaTeX；文字层有特殊字形编码时以目视原页为准。PDF347的Exercises之后不在正文范围内。",
+    "context_notation": [],
+    "extra_assumptions": [
+      "compositionIterate是任意确定性映射的真实复合恒等式；实际随机迭代应在扩展噪声序列空间中使用更新映射，不能把固定R重复使用当独立重抽样。",
+      "对所印OABA与BAOAB的随机分布/路径共轭仍需噪声移位包装，列入覆盖缺口；未把一般S,T恒等式冒称整段已覆盖。",
+      "29号覆盖限定：一般复合迭代恒等式、OABA定义及带噪声序号的OABA/BAOAB精确代数移位关系；不包含不变测度转移或遍历性。"
+    ],
+    "issues": [],
+    "statement_scope": "一般复合迭代恒等式、OABA定义及带噪声序号的OABA/BAOAB精确代数移位关系；不包含不变测度转移或遍历性。",
+    "lean_decl": "MD.Ch07.compositionIterate",
+    "lean_declarations": [
+      "MD.Ch07.compositionIterate",
+      "MD.Ch07.oaba",
+      "MD.Ch07.conjugateNoiseS",
+      "MD.Ch07.conjugateNoiseT",
+      "MD.Ch07.oaba_baoab_noiseShift"
+    ],
+    "source_page_verification": "见source_page_checks.json；必须已目视核对本条原页。",
+    "repair_log": [
+      {
+        "instruction": 29,
+        "website_verdict": "FAIL",
+        "suggested_fix": "增加明确的 OABA/BAOAB 特化及扩展噪声空间上的移位关系；保持目前明确承认的覆盖缺口。",
+        "actual_scope": "一般复合迭代恒等式、OABA定义及带噪声序号的OABA/BAOAB精确代数移位关系；不包含不变测度转移或遍历性。",
+        "signature_changed": true
+      }
+    ],
+    "documented_priors": []
+  },
+  "diff": "--- submitted\n+++ repaired\n@@ -8,4 +8,20 @@\n     rw [ih]\n \n def oaba (m : V n) (U : V n → ℝ) (γ θ h : ℝ) (R : V n) : Phase n → Phase n :=\n-  driftStep m (h/2) ∘ kickStep U h ∘ driftStep m (h/2) ∘ ouStep m γ θ h R+  driftStep m (h/2) ∘ kickStep U h ∘ driftStep m (h/2) ∘ ouStep m γ θ h R\n+\n+def conjugateNoiseS (m : V n) (U : V n → ℝ) (γ θ h : ℝ)\n+    (R : ℕ → V n) (z : Phase n × ℕ) : Phase n × ℕ :=\n+  ((kickStep U (h/2) ∘ driftStep m (h/2) ∘ ouStep m γ θ h (R z.2)) z.1,z.2+1)\n+\n+def conjugateNoiseT (m : V n) (U : V n → ℝ) (h : ℝ)\n+    (z : Phase n × ℕ) : Phase n × ℕ :=\n+  ((driftStep m (h/2) ∘ kickStep U (h/2)) z.1,z.2)\n+\n+theorem oaba_baoab_noiseShift (m : V n) (U : V n → ℝ) (γ θ h : ℝ)\n+    (R : ℕ → V n) (k : ℕ) :\n+    (fun z : Phase n × ℕ ↦ (oaba m U γ θ h (R z.2) z.1,z.2+1))^[k+1] =\n+      conjugateNoiseT m U h ∘\n+      (fun z : Phase n × ℕ ↦ (baoab m U γ θ h (R z.2) z.1,z.2+1))^[k] ∘\n+      conjugateNoiseS m U γ θ h R := by\n+  sorry"
+}

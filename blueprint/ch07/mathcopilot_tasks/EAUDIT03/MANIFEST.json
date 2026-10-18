@@ -1,0 +1,26 @@
+{
+  "batch": "EAUDIT03",
+  "subtasks": [
+    {
+      "subtask": "EAUDIT03a",
+      "source_id": "MD-7.6-JSplitting",
+      "path": "blueprint/ch07/mathcopilot_tasks/EAUDIT03/a",
+      "bytes": 112279,
+      "manifest_sha256": "1bc1502acc0abbb73dfdda54172533282a84fe1ff0762a7cc515dbb1a8fab5ae"
+    },
+    {
+      "subtask": "EAUDIT03b",
+      "source_id": "MD-7.6-CoordinateJSplitting",
+      "path": "blueprint/ch07/mathcopilot_tasks/EAUDIT03/b",
+      "bytes": 90765,
+      "manifest_sha256": "bd785d3b2557190e646ed42df141bc0099933e19ff1c6f9c7b078f512e91fc3e"
+    },
+    {
+      "subtask": "EAUDIT03c",
+      "source_id": "MD-7.7.1-OperatorOrderReversal",
+      "path": "blueprint/ch07/mathcopilot_tasks/EAUDIT03/c",
+      "bytes": 111048,
+      "manifest_sha256": "ccfac91949084eae8d0ce70ec610f5089f9bad6c37bc27d0bd82c5f33d0fa2c3"
+    }
+  ]
+}

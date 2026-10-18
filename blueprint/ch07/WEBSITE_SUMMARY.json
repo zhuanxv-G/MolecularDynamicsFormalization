@@ -1,0 +1,29 @@
+{
+  "total": 118,
+  "first_round": {
+    "PASS": 66,
+    "FAIL": 28,
+    "NEEDS_HUMAN": 24
+  },
+  "website_pass": 66,
+  "local_repairs": 28,
+  "repairing": 0,
+  "human_triaged": 24,
+  "issue_records": 25,
+  "declarations": {
+    "定义": 250,
+    "未证": 69,
+    "已证": 50
+  },
+  "unproved_reasons": {
+    "缺大型理论": 65,
+    "原书疑误不证": 1,
+    "时间盒止": 3
+  },
+  "awaiting_reaudit": 35,
+  "packages": 12,
+  "scope_self_check": 118,
+  "current_lean_sha256": "f3bc0ee86ace9c825028f0cec8ebb2fb410d6be77213cc7fb41cb8889540a000",
+  "current_source_sha256": "1a201887b51a249fb73f456237cb342963c5d98c612ec1912f21572a57924012",
+  "website_submitted": false
+}

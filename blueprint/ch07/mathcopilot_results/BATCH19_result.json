@@ -1,0 +1,309 @@
+{
+  "batch": "BATCH19",
+  "chapter": "ch07",
+  "round": "first-merged",
+  "input_sha256": {
+    "Blueprint/Ch07.lean": "f30ea154ebfb07ae85c0b806ff74b35808d5a0c3dcaa647c0c3cc80a78239e37",
+    "blueprint/ch07/ch07_source.json": "c434892ebf63b06f7cadcdfa7af408c2c12d7b645d35db431d1855224163ba19"
+  },
+  "items": [
+    {
+      "source_id": "MD-7.13-ExactFastGaussianLaw",
+      "json_review": {
+        "status": "APPROVED",
+        "issue_codes": [],
+        "corrected_json": null,
+        "issues": [],
+        "evidence": {
+          "source_pdf": "R6_PAGES.pdf",
+          "attachment_pages": "9–10",
+          "printed_page": "323–324",
+          "original_pdf_page": "344–345",
+          "A_source_check": "附件9–10页F、均值、BtBtᵀ及2γ/β系数逐项一致。",
+          "C_signature_check": "对任意满足fastLangevin的真实过程、t≥0及任意满足BBᵀ=协方差的实2×2矩阵，结论是时刻t状态的HasLaw；乘积gaussianReal 0 1正确表达两独立标准正态。协方差末因子(exp(F(t−s)))ᵀ等于exp(Fᵀ(t−s))。确定初值、β正及γ非负由hX内含；结论是单时刻分布，不是用同一R构造整个过程。假定B因子而不证存在与EXTRA相符。sorry不影响本次签名判定。",
+          "method": "先目视原页逐项核对正文与公式，再只读核对本条全部Lean声明、依赖定义及EXTRA说明；不编译、不修改工程、不补证明，不以sorry判FAIL。原书数学疑误保留。"
+        }
+      },
+      "audit": {
+        "lean_decl": [
+          "MD.Ch07.fastExponential",
+          "MD.Ch07.fastCovariance",
+          "MD.Ch07.exactFastGaussianLaw"
+        ],
+        "verdict": "PASS",
+        "explanation": "对任意满足fastLangevin的真实过程、t≥0及任意满足BBᵀ=协方差的实2×2矩阵，结论是时刻t状态的HasLaw；乘积gaussianReal 0 1正确表达两独立标准正态。协方差末因子(exp(F(t−s)))ᵀ等于exp(Fᵀ(t−s))。确定初值、β正及γ非负由hX内含；结论是单时刻分布，不是用同一R构造整个过程。假定B因子而不证存在与EXTRA相符。sorry不影响本次签名判定。",
+        "counterexample": null,
+        "suggested_fix": null
+      },
+      "subtask": "BATCH19a",
+      "input_sha256": {
+        "Blueprint/Ch07.lean": "f30ea154ebfb07ae85c0b806ff74b35808d5a0c3dcaa647c0c3cc80a78239e37",
+        "blueprint/ch07/ch07_source.json": "c434892ebf63b06f7cadcdfa7af408c2c12d7b645d35db431d1855224163ba19",
+        "BATCH19a_PAGES.pdf": "43b31b16fa9b8e5de3aae007c6d2ba5c326f45a0e9cc77efd292b92dbe1eada8"
+      }
+    },
+    {
+      "source_id": "MD-7.13-MultipleTimestepUpdate",
+      "json_review": {
+        "status": "CORRECTED",
+        "issue_codes": [
+          "SOURCE_WORDING"
+        ],
+        "corrected_json": {
+          "source_id": "MD-7.13-MultipleTimestepUpdate",
+          "kind": "definition",
+          "label": null,
+          "section": "7.13",
+          "printed_page": "324",
+          "pdf_page": "345",
+          "statement_latex": "The solution to the slow part of our splitting is just\n\\[\\binom{q(t)}{p(t)}=\\begin{bmatrix}1&0\\\\-t&1\\end{bmatrix}\\binom{q(0)}{p(0)}.\\]\nThus for a method taking one step of the fast system followed by a step of the slow system, using fixed step size $h>0$, we can write the update scheme for $z=[q,p]^T$ as\n\\[z_{n+1}=Xz_n+YR_n,\\qquad X=\\begin{bmatrix}1&0\\\\-h&1\\end{bmatrix}\\exp(hF),\\quad Y=\\begin{bmatrix}1&0\\\\-h&1\\end{bmatrix}B_h.\\]",
+          "proof_latex": null,
+          "proof_outline": null,
+          "proof_note": "原页推导与上下文全文见original_page_text；数学符号的排版以随附原页PDF为准。",
+          "original_page_text": [
+            {
+              "pdf_page": 345,
+              "printed_page": 324,
+              "text": "324\n7\nNumerical Methods for Stochastic Molecular Dynamics\nwhere R is a column vector of two i.i.d. random normal numbers distributed as\nN.0; 1/, and\nBtBT\nt D 2\nˇ\nt\nZ\n0\nexp.F.t \u0003 s//\n\u0002 0 0\n0 1\n\u0003\nexp.FT.t \u0003 s//ds:\nThe solution to the slow part of our splitting is just\n\u0002q.t/\np.t/\n\u0003\nD\n\u0002 1 0\n\u0003t 1\n\u0003 \u0002 q.0/\np.0/\n\u0003\n:\nThus for a method taking one step of the fast system followed by a step of the\nslow system, using ﬁxed step size h > 0, we can write the update scheme for z D\nŒq; p\tT as\nznC1 D Xzn C YRn;\nfor\nX D\n\u0002 1 0\n\u0003h 1\n\u0003\nexp.hF/;\nY D\n\u0002 1 0\n\u0003h 1\n\u0003\nBh:\nThe stability of the method therefore depends solely on the spectral radius of the\nmatrix X. Denoting \u000f D\np\n\n2 \u0003 4˝2, then we compute\ndet.X/ D e\u0002\nh;\ntr.X/ D \u000f \u0003 h\n\u000f\ne.\u000f\u0002\n/h=2 C \u000f C h\n\u000f\ne.\u0002\u000f\u0002\n/h=2;\ngiving a stability condition\nˇˇˇˇ\n\u000f \u0003 h\n\u000f\ne.\u000f\u0002\n/h=2 C \u000f C h\n\u000f\ne.\u0002\u000f\u0002\n/h=2\nˇˇˇˇ \t 1 C e\u0002\nh:\nMultiplying by e\nh=2 gives\nˇˇˇˇcosh\n\b\u000fh\n2\n\t\nC h\n\u000f sinh\n\b\n\u0003\u000fh\n2\n\tˇˇˇˇ \t cosh\n\b\nh\n2\n\t\n;\nwhich reduces to the deterministic stability condition as expected in the limit \n D 0.\nFor \n > 0, we can simplify to\nˇˇˇˇˇˇ\ncosh\n\b\u000fh\n2 \u0003 atanh\n\bh\n\u000f\n\t\t s\n1 \u0003 h2\n\u000f2\nˇˇˇˇˇˇ\n\t cosh\n\b\nh\n2\n\t\n:\n"
+            }
+          ],
+          "transcription_note": "PDF文字层原样保留，陈述中的数学排版转写为LaTeX；文字层有特殊字形编码时以目视原页为准。PDF347的Exercises之后不在正文范围内。",
+          "context_notation": [],
+          "extra_assumptions": [
+            "Rn为每步独立标准二维Gaussian；稳定分布分析仍要求真实独立序列及有限协方差，不能只以更新定义宣称存在平稳解。"
+          ],
+          "issues": [
+            "附件11页原句是“Thus for a method”，JSON写“For a method”，漏Thus并改变首字母；公式、h>0及乘法次序均正确。公式合排不改变含义。",
+            "multipleX=S(h)exp(hF)、multipleY=S(h)B及向量更新保留快后慢次序。composition对所有实参数、B,R,z的代数恒等式正确，不需要h>0；将性质推广至任意实h无害。B作为前条Bh传入，Gaussian与协方差资格是作为随机步使用时的前提，当前声明仅定义给定B,R的更新，不宣称平稳分布存在。"
+          ],
+          "statement_scope": "本条逐字引用的全部数学对象与公式；未纳入的上下文另列。",
+          "lean_decl": "MD.Ch07.multipleX",
+          "lean_declarations": [
+            "MD.Ch07.multipleX",
+            "MD.Ch07.multipleY",
+            "MD.Ch07.multipleStep",
+            "MD.Ch07.multipleStep_composition"
+          ],
+          "source_page_verification": "本轮直接目视核对R6_PAGES.pdf附件第11页；不依赖旧source_page_checks.json。",
+          "repair_log": [],
+          "documented_priors": []
+        },
+        "issues": [
+          {
+            "phase": "A",
+            "code": "SOURCE_WORDING",
+            "detail": "附件11页原句是“Thus for a method”，JSON写“For a method”，漏Thus并改变首字母；公式、h>0及乘法次序均正确。公式合排不改变含义。"
+          }
+        ],
+        "evidence": {
+          "source_pdf": "R6_PAGES.pdf",
+          "attachment_pages": "11",
+          "printed_page": "324",
+          "original_pdf_page": "345",
+          "A_source_check": "附件11页原句是“Thus for a method”，JSON写“For a method”，漏Thus并改变首字母；公式、h>0及乘法次序均正确。公式合排不改变含义。",
+          "C_signature_check": "multipleX=S(h)exp(hF)、multipleY=S(h)B及向量更新保留快后慢次序。composition对所有实参数、B,R,z的代数恒等式正确，不需要h>0；将性质推广至任意实h无害。B作为前条Bh传入，Gaussian与协方差资格是作为随机步使用时的前提，当前声明仅定义给定B,R的更新，不宣称平稳分布存在。",
+          "method": "先目视原页逐项核对正文与公式，再只读核对本条全部Lean声明、依赖定义及EXTRA说明；不编译、不修改工程、不补证明，不以sorry判FAIL。原书数学疑误保留。"
+        }
+      },
+      "audit": {
+        "lean_decl": [
+          "MD.Ch07.multipleX",
+          "MD.Ch07.multipleY",
+          "MD.Ch07.multipleStep",
+          "MD.Ch07.multipleStep_composition"
+        ],
+        "verdict": "PASS",
+        "explanation": "multipleX=S(h)exp(hF)、multipleY=S(h)B及向量更新保留快后慢次序。composition对所有实参数、B,R,z的代数恒等式正确，不需要h>0；将性质推广至任意实h无害。B作为前条Bh传入，Gaussian与协方差资格是作为随机步使用时的前提，当前声明仅定义给定B,R的更新，不宣称平稳分布存在。",
+        "counterexample": null,
+        "suggested_fix": "恢复“Thus for a method”；使用随机版本时必须引用前条的BBᵀ资格和步间独立Gaussian条件。"
+      },
+      "subtask": "BATCH19b",
+      "input_sha256": {
+        "Blueprint/Ch07.lean": "f30ea154ebfb07ae85c0b806ff74b35808d5a0c3dcaa647c0c3cc80a78239e37",
+        "blueprint/ch07/ch07_source.json": "c434892ebf63b06f7cadcdfa7af408c2c12d7b645d35db431d1855224163ba19",
+        "BATCH19b_PAGES.pdf": "ab46d84694137259f44ba64e67138552344bbb7a62062a928b476471ac09330e"
+      }
+    },
+    {
+      "source_id": "MD-7.13-DeterminantTrace",
+      "json_review": {
+        "status": "APPROVED",
+        "issue_codes": [],
+        "corrected_json": null,
+        "issues": [],
+        "evidence": {
+          "source_pdf": "R6_PAGES.pdf",
+          "attachment_pages": "12",
+          "printed_page": "324",
+          "original_pdf_page": "345",
+          "A_source_check": "附件12页两个指数中的±η、系数(η∓h)/η及行列式e^(−γh)均忠实。",
+          "C_signature_check": "任意实Ω,γ,h及复η满足η²=γ²−4Ω²且η≠0时，行列式和复数化实迹等式正确；选择另一个平方根只交换两项。取复η正确容纳欠阻尼；hne排除原式本来未定义的临界点，EXTRA已标覆盖缺口。临界η=0没有被此定理证明，不能将其当作含临界点的全域声明。",
+          "method": "先目视原页逐项核对正文与公式，再只读核对本条全部Lean声明、依赖定义及EXTRA说明；不编译、不修改工程、不补证明，不以sorry判FAIL。原书数学疑误保留。"
+        }
+      },
+      "audit": {
+        "lean_decl": [
+          "MD.Ch07.traceFormula",
+          "MD.Ch07.determinantTrace"
+        ],
+        "verdict": "PASS",
+        "explanation": "任意实Ω,γ,h及复η满足η²=γ²−4Ω²且η≠0时，行列式和复数化实迹等式正确；选择另一个平方根只交换两项。取复η正确容纳欠阻尼；hne排除原式本来未定义的临界点，EXTRA已标覆盖缺口。临界η=0没有被此定理证明，不能将其当作含临界点的全域声明。",
+        "counterexample": null,
+        "suggested_fix": "临界阻尼可另列tr(X)=e^(−γh/2)(2−h²)，本次不更改项目。"
+      },
+      "subtask": "BATCH19c",
+      "input_sha256": {
+        "Blueprint/Ch07.lean": "f30ea154ebfb07ae85c0b806ff74b35808d5a0c3dcaa647c0c3cc80a78239e37",
+        "blueprint/ch07/ch07_source.json": "c434892ebf63b06f7cadcdfa7af408c2c12d7b645d35db431d1855224163ba19",
+        "BATCH19c_PAGES.pdf": "3a36afc6537a611dc227b9cfd269b6365ca880920b61853de4dc19a261e27c1d"
+      }
+    },
+    {
+      "source_id": "MD-7.13-SpectralRadiusStability",
+      "json_review": {
+        "status": "NEEDS_HUMAN",
+        "issue_codes": [
+          "LEAN_COVERAGE_GAP",
+          "STOCHASTIC_BOUNDARY_AMBIGUITY"
+        ],
+        "corrected_json": null,
+        "issues": [
+          {
+            "phase": "C",
+            "code": "LEAN_COVERAGE_GAP",
+            "detail": "characteristicUnitDisk量化所有复特征根的模≤1；对实2×2矩阵且0<det<1，与|tr|≤1+det等价，抽象定理签名正确。hyperbolicStability只定义不等式；没有把multipleX、traceFormula、η²关系及η≠0联结到该条件的等价定理，故原条完整结论尚缺桥梁。EXTRA已说明此缺口，不能替代完整形式化。谱边界不等于Gaussian驱动的平稳有限方差条件。"
+          },
+          {
+            "phase": "C",
+            "code": "STOCHASTIC_BOUNDARY_AMBIGUITY",
+            "detail": "characteristicUnitDisk量化所有复特征根的模≤1；对实2×2矩阵且0<det<1，与|tr|≤1+det等价，抽象定理签名正确。hyperbolicStability只定义不等式；没有把multipleX、traceFormula、η²关系及η≠0联结到该条件的等价定理，故原条完整结论尚缺桥梁。EXTRA已说明此缺口，不能替代完整形式化。谱边界不等于Gaussian驱动的平稳有限方差条件。"
+          }
+        ],
+        "evidence": {
+          "source_pdf": "R6_PAGES.pdf",
+          "attachment_pages": "13",
+          "printed_page": "324",
+          "original_pdf_page": "345",
+          "A_source_check": "附件13页谱半径说明、迹不等式及双曲不等式均忠实。原书“stability”未区分谱闭单位圆与有噪声时二阶矩长期稳定，边界解释需人工确认。",
+          "C_signature_check": "characteristicUnitDisk量化所有复特征根的模≤1；对实2×2矩阵且0<det<1，与|tr|≤1+det等价，抽象定理签名正确。hyperbolicStability只定义不等式；没有把multipleX、traceFormula、η²关系及η≠0联结到该条件的等价定理，故原条完整结论尚缺桥梁。EXTRA已说明此缺口，不能替代完整形式化。谱边界不等于Gaussian驱动的平稳有限方差条件。",
+          "method": "先目视原页逐项核对正文与公式，再只读核对本条全部Lean声明、依赖定义及EXTRA说明；不编译、不修改工程、不补证明，不以sorry判FAIL。原书数学疑误保留。"
+        }
+      },
+      "audit": {
+        "lean_decl": [
+          "MD.Ch07.characteristicUnitDisk",
+          "MD.Ch07.spectralRadiusStability",
+          "MD.Ch07.hyperbolicStability"
+        ],
+        "verdict": "FAIL",
+        "explanation": "characteristicUnitDisk量化所有复特征根的模≤1；对实2×2矩阵且0<det<1，与|tr|≤1+det等价，抽象定理签名正确。hyperbolicStability只定义不等式；没有把multipleX、traceFormula、η²关系及η≠0联结到该条件的等价定理，故原条完整结论尚缺桥梁。EXTRA已说明此缺口，不能替代完整形式化。谱边界不等于Gaussian驱动的平稳有限方差条件。",
+        "counterexample": "X=diag(1,1/2)满足0<det<1及迹等号，但若在第一坐标每步加入独立标准Gaussian，该坐标是随机游走，方差随步数增长。",
+        "suggested_fix": "补充带γ>0,h>0、η²关系与η≠0的代数等价声明，并把谱条件与随机稳定性分开。"
+      },
+      "subtask": "BATCH19d",
+      "input_sha256": {
+        "Blueprint/Ch07.lean": "f30ea154ebfb07ae85c0b806ff74b35808d5a0c3dcaa647c0c3cc80a78239e37",
+        "blueprint/ch07/ch07_source.json": "c434892ebf63b06f7cadcdfa7af408c2c12d7b645d35db431d1855224163ba19",
+        "BATCH19d_PAGES.pdf": "775577760c779aba018094adbd8bd1209f3f4abf45c17f35a4d1ddb965d10a48"
+      }
+    },
+    {
+      "source_id": "MD-7.13-HyperbolicPhaseTransform",
+      "json_review": {
+        "status": "NEEDS_HUMAN",
+        "issue_codes": [
+          "SOURCE_DOMAIN_AMBIGUITY",
+          "RESTRICTED_REAL_DOMAIN"
+        ],
+        "corrected_json": null,
+        "issues": [
+          {
+            "phase": "A",
+            "code": "SOURCE_DOMAIN_AMBIGUITY",
+            "detail": "附件14页确实只写γ>0，并使用atanh及√(1−h²/η²)；原文忠实，但γ>0并不足以保证其实函数表达有定义。"
+          },
+          {
+            "phase": "C",
+            "code": "RESTRICTED_REAL_DOMAIN",
+            "detail": "hyperbolicPhase_identity对实η≠0及|h/η|<1的等式正确，额外实域前提明确且必要；展开cosh差公式即得cosh(a)−r sinh(a)。它没有覆盖纯虚η或实|h/η|≥1，也未给整个稳定不等式的全参数等价声明。不能由这个有效的受限等式确认原书对所有γ>0的措辞。"
+          }
+        ],
+        "evidence": {
+          "source_pdf": "R6_PAGES.pdf",
+          "attachment_pages": "14",
+          "printed_page": "324",
+          "original_pdf_page": "345",
+          "A_source_check": "附件14页确实只写γ>0，并使用atanh及√(1−h²/η²)；原文忠实，但γ>0并不足以保证其实函数表达有定义。",
+          "C_signature_check": "hyperbolicPhase_identity对实η≠0及|h/η|<1的等式正确，额外实域前提明确且必要；展开cosh差公式即得cosh(a)−r sinh(a)。它没有覆盖纯虚η或实|h/η|≥1，也未给整个稳定不等式的全参数等价声明。不能由这个有效的受限等式确认原书对所有γ>0的措辞。",
+          "method": "先目视原页逐项核对正文与公式，再只读核对本条全部Lean声明、依赖定义及EXTRA说明；不编译、不修改工程、不补证明，不以sorry判FAIL。原书数学疑误保留。"
+        }
+      },
+      "audit": {
+        "lean_decl": [
+          "MD.Ch07.hyperbolicPhase",
+          "MD.Ch07.hyperbolicPhase_identity"
+        ],
+        "verdict": "NEEDS_HUMAN",
+        "explanation": "hyperbolicPhase_identity对实η≠0及|h/η|<1的等式正确，额外实域前提明确且必要；展开cosh差公式即得cosh(a)−r sinh(a)。它没有覆盖纯虚η或实|h/η|≥1，也未给整个稳定不等式的全参数等价声明。不能由这个有效的受限等式确认原书对所有γ>0的措辞。",
+        "counterexample": "例如γ=3、Ω=√2则η=1，取h=2有h/η=2；γ>0成立，但实atanh(2)与实平方根分支不能实现所印变换。",
+        "suggested_fix": "保留原文，并明确标[EXTRA]实η≠0及|h/η|<1；复域版本另指定sqrt/artanh分支，或直接保留双曲表达。"
+      },
+      "subtask": "BATCH19e",
+      "input_sha256": {
+        "Blueprint/Ch07.lean": "f30ea154ebfb07ae85c0b806ff74b35808d5a0c3dcaa647c0c3cc80a78239e37",
+        "blueprint/ch07/ch07_source.json": "c434892ebf63b06f7cadcdfa7af408c2c12d7b645d35db431d1855224163ba19",
+        "BATCH19e_PAGES.pdf": "d7e13cc8d95345a15e682c055277f0289e44b3535d8ffeca24bd551959a69a3e"
+      }
+    },
+    {
+      "source_id": "MD-7.13-UnderdampedPhasePrinted",
+      "json_review": {
+        "status": "NEEDS_HUMAN",
+        "issue_codes": [
+          "SOURCE_ERRATUM",
+          "PHASE_FUNCTION_AND_SIGN"
+        ],
+        "corrected_json": null,
+        "issues": [
+          {
+            "phase": "A",
+            "code": "SOURCE_ERRATUM",
+            "detail": "附件15页确实印−atanh(h/η̂)，JSON忠实，原书的函数及相位符号存在数学错误，不能静默改原文。"
+          },
+          {
+            "phase": "A",
+            "code": "PHASE_FUNCTION_AND_SIGN",
+            "detail": "附件15页确实印−atanh(h/η̂)，JSON忠实，原书的函数及相位符号存在数学错误，不能静默改原文。"
+          }
+        ],
+        "evidence": {
+          "source_pdf": "R6_PAGES.pdf",
+          "attachment_pages": "15",
+          "printed_page": "325",
+          "original_pdf_page": "346",
+          "A_source_check": "附件15页确实印−atanh(h/η̂)，JSON忠实，原书的函数及相位符号存在数学错误，不能静默改原文。",
+          "C_signature_check": "Printed定义忠实表达字面公式。corrected定义以及对任意实a,r的underdampedPhase_identity均正确：cos(a)−r sin(a)=√(1+r²)cos(a+arctan(r))。这是代入η=iη̂后应得形式；η̂>0及η̂²=4Ω²−γ²的模型衔接未在该独立三角恒等式内声明。EXTRA正确承认这一点。",
+          "method": "先目视原页逐项核对正文与公式，再只读核对本条全部Lean声明、依赖定义及EXTRA说明；不编译、不修改工程、不补证明，不以sorry判FAIL。原书数学疑误保留。"
+        }
+      },
+      "audit": {
+        "lean_decl": [
+          "MD.Ch07.underdampedPhasePrinted",
+          "MD.Ch07.underdampedPhasePrinted_corrected",
+          "MD.Ch07.underdampedPhase_identity"
+        ],
+        "verdict": "NEEDS_HUMAN",
+        "explanation": "Printed定义忠实表达字面公式。corrected定义以及对任意实a,r的underdampedPhase_identity均正确：cos(a)−r sin(a)=√(1+r²)cos(a+arctan(r))。这是代入η=iη̂后应得形式；η̂>0及η̂²=4Ω²−γ²的模型衔接未在该独立三角恒等式内声明。EXTRA正确承认这一点。",
+        "counterexample": "符号错误可直接从cos(a+arctan r)展开验证：其sin(a)项为负；若改成a−arctan r则该项为正。原书的atanh也不能给出所需cos/sin幅值。",
+        "suggested_fix": "保持Printed原样并标[ERRATUM?]；修正版使用+arctan，模型使用时另加0≤γ<2Ω及η̂=√(4Ω²−γ²)>0。"
+      },
+      "subtask": "BATCH19f",
+      "input_sha256": {
+        "Blueprint/Ch07.lean": "f30ea154ebfb07ae85c0b806ff74b35808d5a0c3dcaa647c0c3cc80a78239e37",
+        "blueprint/ch07/ch07_source.json": "c434892ebf63b06f7cadcdfa7af408c2c12d7b645d35db431d1855224163ba19",
+        "BATCH19f_PAGES.pdf": "db1e6cb33629c82782dead3635e1fb618e838b27b9e55cabf7b1ba970a536ed6"
+      }
+    }
+  ],
+  "merged_from": "ch07_first_merged"
+}

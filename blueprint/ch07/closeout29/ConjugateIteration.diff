@@ -1,0 +1,23 @@
+--- submitted
++++ repaired
+@@ -8,4 +8,20 @@
+     rw [ih]
+ 
+ def oaba (m : V n) (U : V n → ℝ) (γ θ h : ℝ) (R : V n) : Phase n → Phase n :=
+-  driftStep m (h/2) ∘ kickStep U h ∘ driftStep m (h/2) ∘ ouStep m γ θ h R+  driftStep m (h/2) ∘ kickStep U h ∘ driftStep m (h/2) ∘ ouStep m γ θ h R
++
++def conjugateNoiseS (m : V n) (U : V n → ℝ) (γ θ h : ℝ)
++    (R : ℕ → V n) (z : Phase n × ℕ) : Phase n × ℕ :=
++  ((kickStep U (h/2) ∘ driftStep m (h/2) ∘ ouStep m γ θ h (R z.2)) z.1,z.2+1)
++
++def conjugateNoiseT (m : V n) (U : V n → ℝ) (h : ℝ)
++    (z : Phase n × ℕ) : Phase n × ℕ :=
++  ((driftStep m (h/2) ∘ kickStep U (h/2)) z.1,z.2)
++
++theorem oaba_baoab_noiseShift (m : V n) (U : V n → ℝ) (γ θ h : ℝ)
++    (R : ℕ → V n) (k : ℕ) :
++    (fun z : Phase n × ℕ ↦ (oaba m U γ θ h (R z.2) z.1,z.2+1))^[k+1] =
++      conjugateNoiseT m U h ∘
++      (fun z : Phase n × ℕ ↦ (baoab m U γ θ h (R z.2) z.1,z.2+1))^[k] ∘
++      conjugateNoiseS m U γ θ h R := by
++  sorry

@@ -1,0 +1,26 @@
+{
+  "batch": "EAUDIT09",
+  "subtasks": [
+    {
+      "subtask": "EAUDIT09a",
+      "source_id": "MD-7.9.3-BAOABMarginalCancellation",
+      "path": "blueprint/ch07/mathcopilot_tasks/EAUDIT09/a",
+      "bytes": 103184,
+      "manifest_sha256": "dc1473c1bb78d75a395a7fec990ab8b0f6f983c64d49142e7ad31b89d891b4af"
+    },
+    {
+      "subtask": "EAUDIT09b",
+      "source_id": "MD-7.9.3-SuperconvergenceScope",
+      "path": "blueprint/ch07/mathcopilot_tasks/EAUDIT09/b",
+      "bytes": 112773,
+      "manifest_sha256": "0c5a2227c7248ccd08fd3f41c58b3a8d04adab2e2da141c42ca4bf0be519ff9a"
+    },
+    {
+      "subtask": "EAUDIT09c",
+      "source_id": "MD-7.10-MomentumRedrawLimit",
+      "path": "blueprint/ch07/mathcopilot_tasks/EAUDIT09/c",
+      "bytes": 107104,
+      "manifest_sha256": "f69810a8125db01bd50599522b381011f409087d9da0eb5773deddfd2ec96f8e"
+    }
+  ]
+}

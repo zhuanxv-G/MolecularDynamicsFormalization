@@ -1,0 +1,12 @@
+--- submitted
++++ repaired
+@@ -1,7 +1,8 @@
+ def firstCorrectionTablePrinted (s : Fin 6) (m : V n) (U : V n → ℝ) (β γ c : ℝ) (x : Phase n) : ℝ :=
+   let v := ∑ i, x.2 i/m i*gradient U x.1 i
+   if s = 0 ∨ s = 1 then β/2*(γ*U x.1-v-c)
+-  else if s = 2 ∨ s = 3 ∨ s = 4 then -β/2*(γ*U x.1-v-c)
++  else if s = 2 ∨ s = 3 then -β/2*(γ*U x.1-v-c)
++  else if s = 4 then -β/2*(γ*U x.1+v-c)
+   else β/2*(γ*U x.1+v-c)
+ def firstCorrectionTablePrinted_corrected (s : Fin 6) (m : V n) (U : V n → ℝ) (β γ c : ℝ) (x : Phase n) : ℝ :=
+   if s = 4 then -β/2*(γ*U x.1+(∑ i, x.2 i/m i*gradient U x.1 i)-c)

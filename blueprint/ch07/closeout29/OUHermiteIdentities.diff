@@ -1,0 +1,10 @@
+--- submitted
++++ repaired
+@@ -11,5 +11,7 @@
+     O (ρ*hessianGrad U) = -(ρ*hessianGrad U) ∧
+     (fun x ↦ -symmetricRHS false U β x*ρ x) = (fun x ↦ β/24*O (hermitePrimitive U β*ρ) x) ∧
+     phaseH U (fun x ↦ ρ x*ν x.1) =
++      (fun x ↦ -(∑ i, x.2 i*gradient ν x.1 i)*ρ x) ∧
++    phaseH U (fun x ↦ ρ x*ν x.1) =
+       O (fun x ↦ ((∑ i, x.2 i*gradient ν x.1 i)+μ x.1)*ρ x) := by
+   sorry

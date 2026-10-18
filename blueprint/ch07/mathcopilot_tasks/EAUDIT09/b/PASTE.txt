@@ -1,0 +1,277 @@
+以附件/PASTE 为准，忽略 /workspace 旧文件；Mathlib 定义按标准含义采信。
+本任务只审本条：原文转录、对象资格、定义体、量词、全部结论及[EXTRA]是否一致；Lean编译不代替语义审阅。
+Lean/Mathlib均4.34.0。原页PDF映射：[327]；印刷页=[306].
+input_sha256请原样回显：
+{
+  "Blueprint/Ch07.lean": "f3bc0ee86ace9c825028f0cec8ebb2fb410d6be77213cc7fb41cb8889540a000",
+  "blueprint/ch07/ch07_source.json": "1a201887b51a249fb73f456237cb342963c5d98c612ec1912f21572a57924012",
+  "PAGES.pdf": "a217f8a9b7231fc0aad274473f701d0907b4b71cc4c0388997b3724762bb0241"
+}
+用代码将JSON对象(batch,input_sha256,items)写到 /workspace/.mathcopilot/reviews/ch07/EAUDIT09b_review.json；items仅含本source_id。
+items字段：source_id、verdict(PASS/FAIL/NEEDS_HUMAN)、transcription、semantic_review、counterexample、suggested_fix、printed_version、corrected_version。逐版区分原文疑误和修正版结论；缺材料必须具体指出，不猜测。写后json.loads自检，最后仅回复路径及统计。
+
+## 原文JSON
+```json
+{
+  "source_id": "MD-7.9.3-SuperconvergenceScope",
+  "kind": "unnumbered_claim",
+  "label": null,
+  "section": "7.9.3",
+  "printed_page": "306",
+  "pdf_page": "327",
+  "statement_latex": "Thus we expect that the $[BAOAB]$ scheme recovers $O(h^4)$ configurational averages in the limit of infinite friction.\nIts conjugate method, the $[OABAO]$ scheme, has the property\n\\[\\int_{\\mathcal Q}f_{2,0,[OABAO]}(q,p)\\rho_\\beta(q,p)d\\omega_q=0,\\]\nimplying that we obtain high-order averages for functions purely of the momenta in the limit of infinite friction.\nIt is important to note that this superconvergence property is only present in the limit of large time, i.e. this is an attribute of the invariant distribution of the discretization schemes $\\widehat\\rho$. As such, there are no bonuses to the weak or strong order of the superconvergent schemes.",
+  "proof_latex": null,
+  "proof_outline": null,
+  "proof_note": "原页推导与上下文全文见original_page_text；数学符号的排版以随附原页PDF为准。",
+  "original_page_text": [
+    {
+      "pdf_page": 327,
+      "printed_page": 306,
+      "text": "306\n7\nNumerical Methods for Stochastic Molecular Dynamics\nThus we expect that the \u0002BAOAB\u0003 scheme recovers O.h4/ conﬁgurational averages\nin the limit of inﬁnite friction. This scheme requires no extra force evaluations, and\nthis particular feature appears to simply be a serendipitous result of the form of the\ncorrection function.\nThis is a property common to no other Langevin splitting scheme that we are\naware of. Though curiously its conjugate method, the \u0002OABAO\u0003 scheme, has the\nproperty\nZ\nQ\nf2;0;\u0002OABAO\u0003.q; p/\u0005ˇ.q; p/d!q D 0;\nimplying that we obtain high-order averages for functions purely of the momenta\nin the limit of inﬁnite friction. However, as the momenta are always Gaussian\ndistributed in canonical sampling, we are far more interested in functions of position\nto high accuracy (and sampling exp.\u0003ˇU.q// rather than the Gaussian-distributed\nmomenta).\nIt is important to note that this superconvergence property is only present in\nthe limit of large time, i.e. this is an attribute of the invariant distribution of the\ndiscretization schemes O\u0005. As such, there are no bonuses to the weak or strong order\nof the superconvergent schemes, though equally there is no added cost to using the\nmethods.\nAll of the symmetric splitting schemes discussed are very easy to implement\nrelative to other popular Langevin integrators, as many codes already implement\nthe standard velocity Verlet \u0002BAB\u0003 style integration. An exact Ornstein-Uhlenbeck\nsolve can be added where it is required in the scheme in order to effectively integrate\nLangevin dynamics: then setting \n D 0 reduces the integrator to a standard Verlet\nscheme, integrating deterministic Newtonian dynamics.\n7.10\nThe Limit Method\nWe now consider schemes in the limit \n ! 1, where the exact solution of the\nvector OU process reduces to redrawing momenta from the canonical distribution,\nso pnC1 D pkBTM1=2R, where R is a vector of i.i.d. normal random numbers.\nAlternatively, we could consider the limit of the particle mass going to 0, although\nthis requires a reformulation of Langevin dynamics (7.4) so that the friction is\nproportional to the velocity instead of the momentum [233]. Whichever limit\nis taken, we would expect the ultimate result to be the same. (Here we have\nreintroduced the masses in order to present the method, since they may be useful\nscaling parameters in simulation.)\nThe ﬁrst order schemes of the form \u0002XYZ\u0003, as well as schemes such as\n\u0002XOYOX\u0003 are not consistent in this overdamped limit: the errors in computed\n"
+    }
+  ],
+  "transcription_note": "PDF文字层原样保留，陈述中的数学排版转写为LaTeX；文字层有特殊字形编码时以目视原页为准。PDF347的Exercises之后不在正文范围内。",
+  "context_notation": [],
+  "extra_assumptions": [
+    "显式归一Gibbs构型边界通量消失和积分可积条件；此处只给OABAO积分消项。",
+    "四阶推论仅在已有有效h⁴余项界下成立，不能从固定有限γ的h²/γ余项直接推出；弱/强有限时间阶数不因此提高。",
+    "29号覆盖限定：积分分部的配置消项及其纯动量观测乘积消项；fromBound仅代数辅助，真实BAOAB先大摩擦后h→0的四阶结论未覆盖。"
+  ],
+  "issues": [],
+  "statement_scope": "积分分部的配置消项及其纯动量观测乘积消项；fromBound仅代数辅助，真实BAOAB先大摩擦后h→0的四阶结论未覆盖。",
+  "lean_decl": "MD.Ch07.oabaoPositionCancellation",
+  "lean_declarations": [
+    "MD.Ch07.oabaoPositionCancellation",
+    "MD.Ch07.superconvergence_fromBound",
+    "MD.Ch07.oabaoMomentumCancellation"
+  ],
+  "source_page_verification": "见source_page_checks.json；必须已目视核对本条原页。",
+  "repair_log": [
+    {
+      "instruction": 29,
+      "website_verdict": "FAIL",
+      "suggested_fix": "补方法相关的不变平均、明确极限顺序及统一余项资格；补OABAO动量观测消项桥。把fromBound标为代数辅助结果。",
+      "actual_scope": "积分分部的配置消项及其纯动量观测乘积消项；fromBound仅代数辅助，真实BAOAB先大摩擦后h→0的四阶结论未覆盖。",
+      "signature_changed": true
+    }
+  ],
+  "documented_priors": [],
+  "coverage_gaps": [
+    "29号覆盖限定：积分分部的配置消项及其纯动量观测乘积消项；fromBound仅代数辅助，真实BAOAB先大摩擦后h→0的四阶结论未覆盖。"
+  ]
+}
+```
+
+## 完整本条Lean
+```lean
+theorem oabaoPositionCancellation (U : V n → ℝ) (β : ℝ) (hβ : 0 < β)
+    (hU : ContDiff ℝ ⊤ U)
+    (hweight : Integrable (fun q ↦ Real.exp (-β*U q)) volume)
+    (hgrad : ∀ i, Integrable (fun q ↦ (hessianU U q i i-β*gradient U q i^2)*Real.exp (-β*U q)) volume)
+    (hboundary : ∀ q i, Filter.Tendsto
+      (fun r : ℝ ↦ gradient U (Function.update q i r) i*Real.exp (-β*U (Function.update q i r))) Filter.atTop (𝓝 0) ∧
+      Filter.Tendsto (fun r : ℝ ↦ gradient U (Function.update q i r) i*Real.exp (-β*U (Function.update q i r))) Filter.atBot (𝓝 0)) :
+    (∫ q, highFrictionOABAO U β q ∂positionGibbs U β) = 0 := by
+  sorry
+theorem superconvergence_fromBound (A : ℝ → ℝ) (exact : ℝ)
+    (hA : Asymptotics.IsBigO (𝓝 (0 : ℝ)) (fun h ↦ A h-exact-h^2*(0 : ℝ)) (fun h ↦ h^4)) :
+    Asymptotics.IsBigO (𝓝 (0 : ℝ)) (fun h ↦ A h-exact) (fun h ↦ h^4) := by
+  simpa using hA
+
+theorem oabaoMomentumCancellation (U χ : V n → ℝ) (β : ℝ) (hβ : 0 < β)
+    (hprob : IsProbabilityMeasure (positionGibbs U β))
+    (hf : Integrable (highFrictionOABAO U β) (positionGibbs U β))
+    (hχ : Integrable χ (momentumGibbs (fun _ ↦ 1) β))
+    (hc : ∫ q, highFrictionOABAO U β q ∂positionGibbs U β = 0) :
+    (∫ x, χ x.2*highFrictionOABAO U β x.1 ∂productGibbs (fun _ ↦ 1) U β) = 0 := by
+  sorry
+```
+
+## 项目依赖定义体及选择规格
+以下def/abbrev/structure完整保留；定理列出完整类型，Mathlib标准定义无需摘录。
+
+### MD.Ch07.V (Blueprint/Ch07.lean:202)
+原文件上下文：
+```lean
+open Set Filter MeasureTheory ProbabilityTheory MolecularDynamics
+open scoped BigOperators Topology ContDiff ENNReal NNReal Matrix
+variable {Ω : Type*} [MeasurableSpace Ω]
+variable {n : ℕ}
+```
+```lean
+abbrev V (n : ℕ) := Fin n → ℝ
+```
+
+### MD.Ch07.Phase (Blueprint/Ch07.lean:203)
+原文件上下文：
+```lean
+open Set Filter MeasureTheory ProbabilityTheory MolecularDynamics
+open scoped BigOperators Topology ContDiff ENNReal NNReal Matrix
+variable {Ω : Type*} [MeasurableSpace Ω]
+variable {n : ℕ}
+```
+```lean
+abbrev Phase (n : ℕ) := V n × V n
+```
+
+### MD.Ch07.coordDerivative (Blueprint/Ch07.lean:257)
+原文件上下文：
+```lean
+open Set Filter MeasureTheory ProbabilityTheory MolecularDynamics
+open scoped BigOperators Topology ContDiff ENNReal NNReal Matrix
+variable {Ω : Type*} [MeasurableSpace Ω]
+variable {n : ℕ}
+```
+```lean
+def coordDerivative (f : V n → ℝ) (x : V n) (i : Fin n) : ℝ :=
+  deriv (fun z ↦ f (Function.update x i z)) (x i)
+```
+
+### MD.Ch07.gradient (Blueprint/Ch07.lean:288)
+原文件上下文：
+```lean
+open Set Filter MeasureTheory ProbabilityTheory MolecularDynamics
+open scoped BigOperators Topology ContDiff ENNReal NNReal Matrix
+variable {Ω : Type*} [MeasurableSpace Ω]
+variable {n : ℕ}
+```
+```lean
+def gradient (U : V n → ℝ) (q : V n) : V n := fun i ↦ coordDerivative U q i
+```
+
+### MD.Ch07.positionGibbs (Blueprint/Ch07.lean:1169)
+原文件上下文：
+```lean
+open Set Filter MeasureTheory ProbabilityTheory MolecularDynamics
+open scoped BigOperators Topology ContDiff ENNReal NNReal Matrix
+variable {Ω : Type*} [MeasurableSpace Ω]
+variable {n : ℕ}
+```
+```lean
+def positionGibbs (U : V n → ℝ) (β : ℝ) : Measure (V n) :=
+  volume.withDensity (fun q ↦ ENNReal.ofReal (Real.exp (-β*U q)/(∫ y, Real.exp (-β*U y))))
+```
+
+### MD.Ch07.momentumGibbs (Blueprint/Ch07.lean:1171)
+原文件上下文：
+```lean
+open Set Filter MeasureTheory ProbabilityTheory MolecularDynamics
+open scoped BigOperators Topology ContDiff ENNReal NNReal Matrix
+variable {Ω : Type*} [MeasurableSpace Ω]
+variable {n : ℕ}
+```
+```lean
+def momentumGibbs (m : V n) (β : ℝ) : Measure (V n) := Measure.pi (fun i ↦ gaussianReal 0 (Real.toNNReal (m i/β)))
+```
+
+### MD.Ch07.productGibbs (Blueprint/Ch07.lean:1172)
+原文件上下文：
+```lean
+open Set Filter MeasureTheory ProbabilityTheory MolecularDynamics
+open scoped BigOperators Topology ContDiff ENNReal NNReal Matrix
+variable {Ω : Type*} [MeasurableSpace Ω]
+variable {n : ℕ}
+```
+```lean
+def productGibbs (m : V n) (U : V n → ℝ) (β : ℝ) : Measure (Phase n) :=
+  (positionGibbs U β).prod (momentumGibbs m β)
+```
+
+### MD.Ch07.hessianU (Blueprint/Ch07.lean:1266)
+原文件上下文：
+```lean
+open Set Filter MeasureTheory ProbabilityTheory MolecularDynamics
+open scoped BigOperators Topology ContDiff ENNReal NNReal Matrix
+variable {Ω : Type*} [MeasurableSpace Ω]
+variable {n : ℕ}
+```
+```lean
+def hessianU (U : V n → ℝ) (q : V n) (i j : Fin n) : ℝ := coordDerivative (fun y ↦ gradient U y j) q i
+```
+
+### MD.Ch07.gradNormSq (Blueprint/Ch07.lean:1316)
+原文件上下文：
+```lean
+open Set Filter MeasureTheory ProbabilityTheory MolecularDynamics
+open scoped BigOperators Topology ContDiff ENNReal NNReal Matrix
+variable {Ω : Type*} [MeasurableSpace Ω]
+variable {n : ℕ}
+```
+```lean
+def gradNormSq (U : V n → ℝ) (q : V n) : ℝ := ∑ i, gradient U q i^2
+```
+
+### MD.Ch07.laplacian (Blueprint/Ch07.lean:1378)
+原文件上下文：
+```lean
+open Set Filter MeasureTheory ProbabilityTheory MolecularDynamics
+open scoped BigOperators Topology ContDiff ENNReal NNReal Matrix
+variable {Ω : Type*} [MeasurableSpace Ω]
+variable {n : ℕ}
+```
+```lean
+def laplacian (U : V n → ℝ) (q : V n) : ℝ := ∑ i, hessianU U q i i
+```
+
+### MD.Ch07.highFrictionOABAO (Blueprint/Ch07.lean:1434)
+原文件上下文：
+```lean
+open Set Filter MeasureTheory ProbabilityTheory MolecularDynamics
+open scoped BigOperators Topology ContDiff ENNReal NNReal Matrix
+variable {Ω : Type*} [MeasurableSpace Ω]
+variable {n : ℕ}
+```
+```lean
+def highFrictionOABAO (U : V n → ℝ) (β : ℝ) (q : V n) : ℝ :=
+  (laplacian U q-β*gradNormSq U q)/8
+```
+
+### MD.Ch07.oabaoPositionCancellation (Blueprint/Ch07.lean:1494)
+原文件上下文：
+```lean
+open Set Filter MeasureTheory ProbabilityTheory MolecularDynamics
+open scoped BigOperators Topology ContDiff ENNReal NNReal Matrix
+variable {Ω : Type*} [MeasurableSpace Ω]
+variable {n : ℕ}
+```
+```lean
+theorem oabaoPositionCancellation (U : V n → ℝ) (β : ℝ) (hβ : 0 < β)
+    (hU : ContDiff ℝ ⊤ U)
+    (hweight : Integrable (fun q ↦ Real.exp (-β*U q)) volume)
+    (hgrad : ∀ i, Integrable (fun q ↦ (hessianU U q i i-β*gradient U q i^2)*Real.exp (-β*U q)) volume)
+    (hboundary : ∀ q i, Filter.Tendsto
+      (fun r : ℝ ↦ gradient U (Function.update q i r) i*Real.exp (-β*U (Function.update q i r))) Filter.atTop (𝓝 0) ∧
+      Filter.Tendsto (fun r : ℝ ↦ gradient U (Function.update q i r) i*Real.exp (-β*U (Function.update q i r))) Filter.atBot (𝓝 0)) :
+    (∫ q, highFrictionOABAO U β q ∂positionGibbs U β) = 0
+```
+
+### MD.Ch07.superconvergence_fromBound (Blueprint/Ch07.lean:1503)
+原文件上下文：
+```lean
+open Set Filter MeasureTheory ProbabilityTheory MolecularDynamics
+open scoped BigOperators Topology ContDiff ENNReal NNReal Matrix
+variable {Ω : Type*} [MeasurableSpace Ω]
+variable {n : ℕ}
+```
+```lean
+theorem superconvergence_fromBound (A : ℝ → ℝ) (exact : ℝ)
+    (hA : Asymptotics.IsBigO (𝓝 (0 : ℝ)) (fun h ↦ A h-exact-h^2*(0 : ℝ)) (fun h ↦ h^4)) :
+    Asymptotics.IsBigO (𝓝 (0 : ℝ)) (fun h ↦ A h-exact) (fun h ↦ h^4)
+```
+
+### MD.Ch07.oabaoMomentumCancellation (Blueprint/Ch07.lean:1508)
+原文件上下文：
+```lean
+open Set Filter MeasureTheory ProbabilityTheory MolecularDynamics
+open scoped BigOperators Topology ContDiff ENNReal NNReal Matrix
+variable {Ω : Type*} [MeasurableSpace Ω]
+variable {n : ℕ}
+```
+```lean
+theorem oabaoMomentumCancellation (U χ : V n → ℝ) (β : ℝ) (hβ : 0 < β)
+    (hprob : IsProbabilityMeasure (positionGibbs U β))
+    (hf : Integrable (highFrictionOABAO U β) (positionGibbs U β))
+    (hχ : Integrable χ (momentumGibbs (fun _ ↦ 1) β))
+    (hc : ∫ q, highFrictionOABAO U β q ∂positionGibbs U β = 0) :
+    (∫ x, χ x.2*highFrictionOABAO U β x.1 ∂productGibbs (fun _ ↦ 1) U β) = 0
+```

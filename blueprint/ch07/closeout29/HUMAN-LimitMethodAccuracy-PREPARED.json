@@ -1,0 +1,8 @@
+{
+  "source_id": "MD-7.10-LimitMethodAccuracy",
+  "signature_changed": true,
+  "scope": "瞬态界只是量化目标；h⁴修正版明确指先T→∞所得误差，固定有限T仍可能仅h²；实际LM误差及其满足界的定理未覆盖。",
+  "diff": "--- \n+++ \n@@ -7,4 +7,8 @@\n def limitAccuracyPrinted_corrected (error : ℝ → ℝ) : Prop :=\n   Asymptotics.IsBigO (𝓝[Set.Ioi (0 : ℝ)] 0) error (fun h ↦ h^4)\n \n-theorem limitAccuracy_rescale (h : ℝ) : (h^2/2)^2 = h^4/4 := by ring+theorem limitAccuracy_rescale (h : ℝ) : (h^2/2)^2 = h^4/4 := by ring\n+\n+def limitAccuracyInfiniteTime_corrected (error : ℝ → ℝ → ℝ) (longtime : ℝ → ℝ) : Prop :=\n+  (∀ h, 0 < h → Tendsto (fun T ↦ error (h^2/2) T) atTop (𝓝 (longtime h))) ∧\n+  limitAccuracyPrinted_corrected longtime\n",
+  "printed_version": "原书表述保留；公式类已目视核对原页",
+  "corrected_version": "见独立_corrected或限定目标；不将较弱目标称为完整修正"
+}

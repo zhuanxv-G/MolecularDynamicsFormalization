@@ -1,0 +1,19 @@
+{
+  "command": [
+    "lake",
+    "--no-cache",
+    "env",
+    "lean",
+    "--server"
+  ],
+  "mode": "official Lean compiler single-file LSP elaboration",
+  "exit_code": 0,
+  "input_sha256": "0f63391a552d10b9afcd448353cf2e5153e8f34fad6882baf532c16c5853be6b",
+  "log_sha256": "219bd9b514e1ae169b91f10a826d253520115581a7b4fab94de6a6e553a0a1dc",
+  "version": 9,
+  "uri": "file:///C:/Users/ustc/Desktop/formal%20math/MolecularDynamicsFormalization/blueprint/ch07/closeout29/ActiveCheck.lean",
+  "elapsed_seconds": 5.195943832397461,
+  "errors": [],
+  "missing_axiom_outputs": [],
+  "canonical_sha256": "5d06a709e70fea56e5c9493e190bd6756110c1492b05f0fff00de2b2dc80159c"
+}

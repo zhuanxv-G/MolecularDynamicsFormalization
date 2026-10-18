@@ -1,0 +1,433 @@
+{
+  "batch": "BATCH14",
+  "chapter": "ch07",
+  "round": "first-merged",
+  "input_sha256": {
+    "Blueprint/Ch07.lean": "f30ea154ebfb07ae85c0b806ff74b35808d5a0c3dcaa647c0c3cc80a78239e37",
+    "blueprint/ch07/ch07_source.json": "c434892ebf63b06f7cadcdfa7af408c2c12d7b645d35db431d1855224163ba19"
+  },
+  "items": [
+    {
+      "source_id": "MD-7.9.1-OYZYOInhomogeneity",
+      "json_review": {
+        "status": "CORRECTED",
+        "issue_codes": [
+          "EDITORIAL_PARAPHRASE"
+        ],
+        "corrected_json": {
+          "source_id": "MD-7.9.1-OYZYOInhomogeneity",
+          "kind": "unnumbered_claim",
+          "label": "(7.29)",
+          "section": "7.9.1",
+          "printed_page": "298–299",
+          "pdf_page": "319–320",
+          "statement_latex": "From the form of the $\\mathcal L_2^\\dagger$ operator in Proposition 7.1, we can see that our life is made considerably easier if we initially consider methods $[OYZYO]$, which substitutes\n\\[\\mathcal L_X^\\dagger=\\mathcal L_O^\\dagger,\\qquad\\mathcal L_Y^\\dagger+\\mathcal L_Z^\\dagger=\\mathcal L_A^\\dagger+\\mathcal L_B^\\dagger=\\mathcal L_H^\\dagger,\\]\nsimplifying the computation to\n\\[\\mathcal L_{2,[OYZYO]}^\\dagger\\rho_\\beta=\\frac1{12}[\\mathcal L_Z^\\dagger,\\mathcal L_Z^\\dagger,\\mathcal L_Y^\\dagger]\\rho_\\beta-\\frac1{24}[\\mathcal L_Y^\\dagger,\\mathcal L_Y^\\dagger,\\mathcal L_Z^\\dagger]\\rho_\\beta.\\tag{7.29}\\]",
+          "proof_latex": null,
+          "proof_outline": null,
+          "proof_note": "原页推导与上下文全文见original_page_text；数学符号的排版以随附原页PDF为准。",
+          "original_page_text": [
+            {
+              "pdf_page": 319,
+              "printed_page": 298,
+              "text": "298\n7\nNumerical Methods for Stochastic Molecular Dynamics\nFor a scheme \u0002XYZYX\u0003, we assume that each of the X, Y and Z characters in\nthe string are distinct, and correspond to one of the A, B or O pieces of our splitting\nstrategy. Thus we have L\u0004\n0 D L\u0004\nLD.\nEvidently, the scheme’s associated Fokker-Planck operator OL\u0004 no longer has a\nleading order term that is linear in the stepsize, so it makes sense to revise our\nassumption on the form of the scheme’s corresponding invariant measure, and\nreplace it with a series with solely even order terms. If we suppose that the odd\norder correction functions are zero, then we are left with\nO\u0005 D \u0005ˇ.1 C h2f2 C h4f4 C : : :/;\n(7.27)\nwhere each hfii D 0 as usual. Thus the stationarity equation OL\u0004 O\u0005 D 0 becomes\n\u0006\nL\u0004\nLD C h2L\u0004\n2 C : : :\n\u0007 \u0004\n\u0005ˇ C h2\u0005ˇf2 C : : :\n\u0005\nD 0:\nThe equation is satisﬁed at zeroth order, and equating the second order terms we\nobtain\nL\u0004\nLD\n\u0004\u0005ˇf2\n\u0005 D \u0003L\u0004\n2\u0005ˇ:\n(7.28)\nThe procedure then follows just as in the case of the ﬁrst order schemes. The\nform of the right-hand side L\u0004\n2\u0005ˇ will be dependent on the choice of the update\nscheme, and can be computed using the BCH formula using Proposition 7.1. More\ncomplicated symmetric schemes involving more than ﬁve stages can be utilized,\nbut these schemes may require more than one force evaluation per iteration, while\nincreasing the complexity of the PDE to solve.\nThe condition on the existence of such a solution requires us to use the Fredholm\nalternative, which requires us to verify that the inhomogeneous term L\u0004\n2\u0005ˇ integrates\nto zero.\n7.9.1\nCalculation of the Inhomogeneous Term\nThe computation of the right hand side in (7.28) is required in order to solve the\ncorresponding partial differential equation and obtain the leading order correction\nfunction for our symmetric scheme \u0002XYZYX\u0003. From the form of the L\u0004\n2 operator in\nProposition 7.1, we can see that our life is made considerably easier if we initially\nconsider methods \u0002OYZYO\u0003, which substitutes\nL\u0004\nX D L\u0004\nO;\nL\u0004\nY C L\u0004\nZ D L\u0004\nA C L\u0004\nB D L\u0004\nH;\n"
+            },
+            {
+              "pdf_page": 320,
+              "printed_page": 299,
+              "text": "7.9\nError Expansion for Symmetric Langevin Methods\n299\nsimplifying the computation to\nL\u0004\n2;\u0002OYZYO\u0003\u0005ˇ D 1\n12\nh\nL\u0004\nZ; L\u0004\nZ; L\u0004\nY\ni\n\u0005ˇ \u0003 1\n24ŒL\u0004\nY; L\u0004\nY; L\u0004\nZ\t\u0005ˇ:\n(7.29)\nThe inhomogeneity for the schemes \u0002OABAO\u0003 and \u0002OBABO\u0003 is hence a combina-\ntion of the two commutator terms\nh\nL\u0004\nA; L\u0004\nA; L\u0004\nB\ni\n\u0005ˇ D\n\u0004\n2ˇpT \u0004\nr2U\n\u0005\nrU \u0003 r3U W p ˝ p ˝ p\n\u0005\n\u0005ˇ;\nh\nL\u0004\nB; L\u0004\nB; L\u0004\nA\ni\n\u0005ˇ D \u0003 \u00042ˇpT \u0004r2U\u0005 rU\u0005 \u0005ˇ;\ngiving overall equations to solve\nL\u0004\nLD\n\u0004\n\u0005ˇf2;\u0002OABAO\u0003\n\u0005\nD \u0003L\u0004\n2;\u0002OABAO\u0003\u0005ˇ\nD ˇ\n24\n\u0004\n6pT \u0004\nr2U\n\u0005\nrU \u0003 r3U W p ˝ p ˝ p\n\u0005\n\u0005ˇ;\nL\u0004\nLD\n\u0004\n\u0005ˇf2;\u0002OBABO\u0003\n\u0005\nD \u0003L\u0004\n2;\u0002OBABO\u0003\u0005ˇ\nD ˇ\n24\n\u0004\n2r3U W p ˝ p ˝ p \u0003 6pT \u0004\nr2U\n\u0005\nrU\n\u0005\n\u0005ˇ:\nWe can see immediately that the Fredholm alternative holds in both cases, as both\nequations have right-hand sides that are of odd order in p, and hence will average\nto 0.\nIf we instead consider schemes which use a central Ornstein-Uhlenbeck update,\nthen the inhomogeneous term becomes signiﬁcantly more complex, as we no\nlonger have a signiﬁcant number of cancellations in L\u0004\n2\u0005ˇ. Instead, we shall avoid\ncomputing the right-hand side for these schemes altogether, in favor of utilizing the\nfollowing lemma [223]:\nLemma 7.1 Consider two numerical schemes with associated operators governing\nthe evolution of measure ST and T S, with unique associated invariant distributions\nO\u0005ST and O\u0005TS respectively, such that\nST O\u0005ST D O\u0005ST;\nT S O\u0005TS D O\u0005TS:\nUnder suitable ergodicity assumptions (such that in the long-time limit, all distribu-\ntions converge to the invariant distribution), we have\nO\u0005ST D S O\u0005TS;\nand\nO\u0005TS D T O\u0005ST:\n"
+            }
+          ],
+          "transcription_note": "PDF文字层原样保留，陈述中的数学排版转写为LaTeX；文字层有特殊字形编码时以目视原页为准。PDF347的Exercises之后不在正文范围内。",
+          "context_notation": [],
+          "extra_assumptions": [],
+          "issues": [
+            "A：数学替换及(7.29)准确；“For methods … substituting … simplifies the computation to”是跨两页的编辑性合句，而非原页逐字句子。恢复原页连续文字。"
+          ],
+          "statement_scope": "本条逐字引用的全部数学对象与公式；未纳入的上下文另列。",
+          "lean_decl": "MD.Ch07.oyzyoInhomogeneity",
+          "lean_declarations": [
+            "MD.Ch07.oyzyoInhomogeneity"
+          ],
+          "source_page_verification": "本次实际目视核对 R4_PAGES.pdf 对应页；重复页渲染SHA256一致。详见本条 evidence。",
+          "repair_log": [],
+          "documented_priors": []
+        },
+        "issues": [
+          "A：数学替换及(7.29)准确；“For methods … substituting … simplifies the computation to”是跨两页的编辑性合句，而非原页逐字句子。恢复原页连续文字。"
+        ],
+        "evidence": [
+          "目视附件16–17（原PDF319–320／印刷298–299）；分别与15、18–20同图。原页系数为1/12和−1/24。",
+          "D72中额外两项是[H,[H,O]]和[O,[O,H]]；hO与hH使两者作用于ρ均为零。",
+          "审校方式：只读R4_任务.md的本条Lean及其摘录项目定义，Mathlib按标准含义采信；未修改工程、未补证明、未调用Lean编译器，不因sorry判FAIL。未发现任何字面的[EXTRA]或[ERRATUM?]标签；额外假设与原书疑误按语义逐项核对，建议标签仅写入本审校JSON。",
+          "本次附件R4_PAGES.pdf SHA256=133d111b38c222acf5f8a9b401286106f513aca299e119dc65d034e915f0c931；本条input_sha256严格回显任务所列旧文件键和值，不宣称与当前文件重新计算一致。"
+        ]
+      },
+      "audit": {
+        "lean_decl": [
+          "MD.Ch07.oyzyoInhomogeneity"
+        ],
+        "verdict": "PASS",
+        "explanation": "C：O,Y,Z为任意实模上的线性自同态，Oρ=0及(Y+Z)ρ=0恰是消去交叉嵌套项需要的前提。完整L2由D72给定，余下Z,Z,Y与Y,Y,Z项的次序、负号及标量正确。抽象结果覆盖原文对两种Hamiltonian排列的特化；不声称证明实际Gibbs不变性。",
+        "counterexample": null,
+        "suggested_fix": "只恢复连续原句；Lean签名无需改动。"
+      },
+      "subtask": "BATCH14a",
+      "input_sha256": {
+        "Blueprint/Ch07.lean": "f30ea154ebfb07ae85c0b806ff74b35808d5a0c3dcaa647c0c3cc80a78239e37",
+        "blueprint/ch07/ch07_source.json": "c434892ebf63b06f7cadcdfa7af408c2c12d7b645d35db431d1855224163ba19",
+        "BATCH14a_PAGES.pdf": "d8a46583f0561cb7446a6c5f56f054def0fd84f7e1cb16667a2bc2330e47e715"
+      }
+    },
+    {
+      "source_id": "MD-7.9.1-TripleCommutatorPrinted",
+      "json_review": {
+        "status": "NEEDS_HUMAN",
+        "issue_codes": [
+          "ERRATUM_MISSING_BETA",
+          "COUNTEREXAMPLE_SCOPE_LIMITED"
+        ],
+        "corrected_json": {
+          "source_id": "MD-7.9.1-TripleCommutatorPrinted",
+          "kind": "unnumbered_claim",
+          "label": null,
+          "section": "7.9.1",
+          "printed_page": "299",
+          "pdf_page": "320",
+          "statement_latex": "\\[[\\mathcal L_A^\\dagger,\\mathcal L_A^\\dagger,\\mathcal L_B^\\dagger]\\rho_\\beta=(2\\beta p^T(\\nabla^2U)\\nabla U-\\nabla^3U:p\\otimes p\\otimes p)\\rho_\\beta,\\]\n\\[[\\mathcal L_B^\\dagger,\\mathcal L_B^\\dagger,\\mathcal L_A^\\dagger]\\rho_\\beta=-(2\\beta p^T(\\nabla^2U)\\nabla U)\\rho_\\beta.\\]",
+          "proof_latex": null,
+          "proof_outline": null,
+          "proof_note": "原页推导与上下文全文见original_page_text；数学符号的排版以随附原页PDF为准。",
+          "original_page_text": [
+            {
+              "pdf_page": 320,
+              "printed_page": 299,
+              "text": "7.9\nError Expansion for Symmetric Langevin Methods\n299\nsimplifying the computation to\nL\u0004\n2;\u0002OYZYO\u0003\u0005ˇ D 1\n12\nh\nL\u0004\nZ; L\u0004\nZ; L\u0004\nY\ni\n\u0005ˇ \u0003 1\n24ŒL\u0004\nY; L\u0004\nY; L\u0004\nZ\t\u0005ˇ:\n(7.29)\nThe inhomogeneity for the schemes \u0002OABAO\u0003 and \u0002OBABO\u0003 is hence a combina-\ntion of the two commutator terms\nh\nL\u0004\nA; L\u0004\nA; L\u0004\nB\ni\n\u0005ˇ D\n\u0004\n2ˇpT \u0004\nr2U\n\u0005\nrU \u0003 r3U W p ˝ p ˝ p\n\u0005\n\u0005ˇ;\nh\nL\u0004\nB; L\u0004\nB; L\u0004\nA\ni\n\u0005ˇ D \u0003 \u00042ˇpT \u0004r2U\u0005 rU\u0005 \u0005ˇ;\ngiving overall equations to solve\nL\u0004\nLD\n\u0004\n\u0005ˇf2;\u0002OABAO\u0003\n\u0005\nD \u0003L\u0004\n2;\u0002OABAO\u0003\u0005ˇ\nD ˇ\n24\n\u0004\n6pT \u0004\nr2U\n\u0005\nrU \u0003 r3U W p ˝ p ˝ p\n\u0005\n\u0005ˇ;\nL\u0004\nLD\n\u0004\n\u0005ˇf2;\u0002OBABO\u0003\n\u0005\nD \u0003L\u0004\n2;\u0002OBABO\u0003\u0005ˇ\nD ˇ\n24\n\u0004\n2r3U W p ˝ p ˝ p \u0003 6pT \u0004\nr2U\n\u0005\nrU\n\u0005\n\u0005ˇ:\nWe can see immediately that the Fredholm alternative holds in both cases, as both\nequations have right-hand sides that are of odd order in p, and hence will average\nto 0.\nIf we instead consider schemes which use a central Ornstein-Uhlenbeck update,\nthen the inhomogeneous term becomes signiﬁcantly more complex, as we no\nlonger have a signiﬁcant number of cancellations in L\u0004\n2\u0005ˇ. Instead, we shall avoid\ncomputing the right-hand side for these schemes altogether, in favor of utilizing the\nfollowing lemma [223]:\nLemma 7.1 Consider two numerical schemes with associated operators governing\nthe evolution of measure ST and T S, with unique associated invariant distributions\nO\u0005ST and O\u0005TS respectively, such that\nST O\u0005ST D O\u0005ST;\nT S O\u0005TS D O\u0005TS:\nUnder suitable ergodicity assumptions (such that in the long-time limit, all distribu-\ntions converge to the invariant distribution), we have\nO\u0005ST D S O\u0005TS;\nand\nO\u0005TS D T O\u0005ST:\n"
+            }
+          ],
+          "transcription_note": "PDF文字层原样保留，陈述中的数学排版转写为LaTeX；文字层有特殊字形编码时以目视原页为准。PDF347的Exercises之后不在正文范围内。",
+          "context_notation": [],
+          "extra_assumptions": [
+            "M=I；Hessian、三阶张量及张量缩并均为实际坐标导数；原文版仅定义，不证明。反例先给系数代数区别，完整势函数测度反例未构造。"
+          ],
+          "issues": [
+            "A：原页第一条三重交换子的三阶导数项确实没有β，第二条为−2β pᵀHess(U)∇U；JSON保留这一字面疑误是正确的，不应静默修正原文。",
+            "C：Printed定义忠实；_corrected及tripleCommutator_corrected给两项共同β，数学正确。已有factor_counterexample只是实数系数不等式，并非实际势函数反例；其范围在extra_assumptions已承认。"
+          ],
+          "statement_scope": "本条逐字引用的全部数学对象与公式；未纳入的上下文另列。",
+          "lean_decl": "MD.Ch07.hessianU",
+          "lean_declarations": [
+            "MD.Ch07.hessianU",
+            "MD.Ch07.thirdU",
+            "MD.Ch07.hessianGrad",
+            "MD.Ch07.cubicThird",
+            "MD.Ch07.tripleCommutatorPrinted",
+            "MD.Ch07.tripleCommutatorPrinted_corrected",
+            "MD.Ch07.tripleCommutator_corrected",
+            "MD.Ch07.tripleCommutator_factor_counterexample"
+          ],
+          "source_page_verification": "本次实际目视核对 R4_PAGES.pdf 对应页；重复页渲染SHA256一致。详见本条 evidence。",
+          "repair_log": [],
+          "documented_priors": []
+        },
+        "issues": [
+          "A：原页第一条三重交换子的三阶导数项确实没有β，第二条为−2β pᵀHess(U)∇U；JSON保留这一字面疑误是正确的，不应静默修正原文。",
+          "C：Printed定义忠实；_corrected及tripleCommutator_corrected给两项共同β，数学正确。已有factor_counterexample只是实数系数不等式，并非实际势函数反例；其范围在extra_assumptions已承认。"
+        ],
+        "evidence": [
+          "目视附件18（原PDF320／印刷299；与17、19、20同图）前两条三重交换子。其下方两个PDE又明确把β乘整个括号，支持同页内部不一致。",
+          "D73–D76给出真实二、三阶导数及缩并；M=I在gibbsWeight中通过m=1实现。对光滑U，混合偏导对称，坐标次序不改变缩并。",
+          "审校方式：只读R4_任务.md的本条Lean及其摘录项目定义，Mathlib按标准含义采信；未修改工程、未补证明、未调用Lean编译器，不因sorry判FAIL。未发现任何字面的[EXTRA]或[ERRATUM?]标签；额外假设与原书疑误按语义逐项核对，建议标签仅写入本审校JSON。",
+          "本次附件R4_PAGES.pdf SHA256=133d111b38c222acf5f8a9b401286106f513aca299e119dc65d034e915f0c931；本条input_sha256严格回显任务所列旧文件键和值，不宣称与当前文件重新计算一致。"
+        ]
+      },
+      "audit": {
+        "lean_decl": [
+          "MD.Ch07.hessianU",
+          "MD.Ch07.thirdU",
+          "MD.Ch07.hessianGrad",
+          "MD.Ch07.cubicThird",
+          "MD.Ch07.tripleCommutatorPrinted",
+          "MD.Ch07.tripleCommutatorPrinted_corrected",
+          "MD.Ch07.tripleCommutator_corrected",
+          "MD.Ch07.tripleCommutator_factor_counterexample"
+        ],
+        "verdict": "NEEDS_HUMAN",
+        "explanation": "C分项：hessianU、thirdU、hessianGrad、cubicThird的对象、域与求和指标正确；tripleCommutatorPrinted作为字面表达式PASS；_corrected以及其实际双重phaseComm定理在β>0、光滑U、单位质量下PASS。factor_counterexample的代数断言PASS但并未声称构造势函数。原书首式缺β是真正的数学疑误，按任务要求保留原文并汇总NEEDS_HUMAN；不能因修正版正确就把字面原书公式判为数学定理通过。",
+        "counterexample": "取n=1、m=1、U(q)=q⁴、β=2、q=p=1，则U′=4，U″=12，U‴=24，hessianGrad=48，cubicThird=24，ρ=e^(−3)。由A=−p∂q、B=U′∂p得[A,[A,B]]f=p²U‴∂p f−2pU″∂q f，作用于ρ得到β(2pU″U′−p³U‴)ρ=144e^(−3)。Printed给(2β·48−24)ρ=168e^(−3)，不同。四次势光滑且Gibbs可归一。",
+        "suggested_fix": "保留Printed字面式，在JSON问题登记中保留[ERRATUM?]三阶项缺β；修正版独立标注。若后续要正式反驳字面公式，可用下述光滑可归一势函数，而不只用系数代数。"
+      },
+      "subtask": "BATCH14b",
+      "input_sha256": {
+        "Blueprint/Ch07.lean": "f30ea154ebfb07ae85c0b806ff74b35808d5a0c3dcaa647c0c3cc80a78239e37",
+        "blueprint/ch07/ch07_source.json": "c434892ebf63b06f7cadcdfa7af408c2c12d7b645d35db431d1855224163ba19",
+        "BATCH14b_PAGES.pdf": "981dd07210cbd25ce06896f611bb405066793ef06ebeda4bb3e646b60663d2bf"
+      }
+    },
+    {
+      "source_id": "MD-7.9.1-SymmetricRHS",
+      "json_review": {
+        "status": "NEEDS_HUMAN",
+        "issue_codes": [
+          "LEAN_COVERAGE_GAP",
+          "MASS_IDENTITY_MISSING",
+          "FREDHOLM_SUFFICIENCY_UNJUSTIFIED"
+        ],
+        "corrected_json": {
+          "source_id": "MD-7.9.1-SymmetricRHS",
+          "kind": "unnumbered_claim",
+          "label": null,
+          "section": "7.9.1",
+          "printed_page": "299",
+          "pdf_page": "320",
+          "statement_latex": "\\[\\mathcal L_{LD}^\\dagger(\\rho_\\beta f_{2,[OABAO]})=\\frac\\beta{24}(6p^T(\\nabla^2U)\\nabla U-\\nabla^3U:p\\otimes p\\otimes p)\\rho_\\beta,\\]\n\\[\\mathcal L_{LD}^\\dagger(\\rho_\\beta f_{2,[OBABO]})=\\frac\\beta{24}(2\\nabla^3U:p\\otimes p\\otimes p-6p^T(\\nabla^2U)\\nabla U)\\rho_\\beta.\\]\nWe can see immediately that the Fredholm alternative holds in both cases, as both equations have right-hand sides that are of odd order in $p$, and hence will average to 0.",
+          "proof_latex": null,
+          "proof_outline": null,
+          "proof_note": "原页推导与上下文全文见original_page_text；数学符号的排版以随附原页PDF为准。",
+          "original_page_text": [
+            {
+              "pdf_page": 320,
+              "printed_page": 299,
+              "text": "7.9\nError Expansion for Symmetric Langevin Methods\n299\nsimplifying the computation to\nL\u0004\n2;\u0002OYZYO\u0003\u0005ˇ D 1\n12\nh\nL\u0004\nZ; L\u0004\nZ; L\u0004\nY\ni\n\u0005ˇ \u0003 1\n24ŒL\u0004\nY; L\u0004\nY; L\u0004\nZ\t\u0005ˇ:\n(7.29)\nThe inhomogeneity for the schemes \u0002OABAO\u0003 and \u0002OBABO\u0003 is hence a combina-\ntion of the two commutator terms\nh\nL\u0004\nA; L\u0004\nA; L\u0004\nB\ni\n\u0005ˇ D\n\u0004\n2ˇpT \u0004\nr2U\n\u0005\nrU \u0003 r3U W p ˝ p ˝ p\n\u0005\n\u0005ˇ;\nh\nL\u0004\nB; L\u0004\nB; L\u0004\nA\ni\n\u0005ˇ D \u0003 \u00042ˇpT \u0004r2U\u0005 rU\u0005 \u0005ˇ;\ngiving overall equations to solve\nL\u0004\nLD\n\u0004\n\u0005ˇf2;\u0002OABAO\u0003\n\u0005\nD \u0003L\u0004\n2;\u0002OABAO\u0003\u0005ˇ\nD ˇ\n24\n\u0004\n6pT \u0004\nr2U\n\u0005\nrU \u0003 r3U W p ˝ p ˝ p\n\u0005\n\u0005ˇ;\nL\u0004\nLD\n\u0004\n\u0005ˇf2;\u0002OBABO\u0003\n\u0005\nD \u0003L\u0004\n2;\u0002OBABO\u0003\u0005ˇ\nD ˇ\n24\n\u0004\n2r3U W p ˝ p ˝ p \u0003 6pT \u0004\nr2U\n\u0005\nrU\n\u0005\n\u0005ˇ:\nWe can see immediately that the Fredholm alternative holds in both cases, as both\nequations have right-hand sides that are of odd order in p, and hence will average\nto 0.\nIf we instead consider schemes which use a central Ornstein-Uhlenbeck update,\nthen the inhomogeneous term becomes signiﬁcantly more complex, as we no\nlonger have a signiﬁcant number of cancellations in L\u0004\n2\u0005ˇ. Instead, we shall avoid\ncomputing the right-hand side for these schemes altogether, in favor of utilizing the\nfollowing lemma [223]:\nLemma 7.1 Consider two numerical schemes with associated operators governing\nthe evolution of measure ST and T S, with unique associated invariant distributions\nO\u0005ST and O\u0005TS respectively, such that\nST O\u0005ST D O\u0005ST;\nT S O\u0005TS D O\u0005TS:\nUnder suitable ergodicity assumptions (such that in the long-time limit, all distribu-\ntions converge to the invariant distribution), we have\nO\u0005ST D S O\u0005TS;\nand\nO\u0005TS D T O\u0005ST:\n"
+            }
+          ],
+          "transcription_note": "PDF文字层原样保留，陈述中的数学排版转写为LaTeX；文字层有特殊字形编码时以目视原页为准。PDF347的Exercises之后不在正文范围内。",
+          "context_notation": [
+            "本节M=I；flip=false表示OABAO，flip=true表示OBABO；symmetricRHS为除去Gibbs权后的右端多项式。"
+          ],
+          "extra_assumptions": [
+            "右端去掉共同正Gibbs权，改用真实乘积Gibbs测度积分；奇性与零均值不等于完整Fredholm充分可解性。PDE左端与L2识别另需三重交换子桥。"
+          ],
+          "issues": [
+            "A：两个PDE的系数、项次与原文“Fredholm alternative holds”文字均忠实，应保留原书原话。",
+            "C：symmetricRHS仅定义去掉ρ的多项式；odd和zeroMean只证明奇性及可积时零均值。没有实际L2或LD(ρf2)等式，没有解f2。",
+            "原书由动量奇性直接宣称Fredholm条件成立，隐含可积性和算符空间资格；单凭奇性不能推出Fredholm充分可解性，属需人工限定的原书表述。"
+          ],
+          "statement_scope": "原文两个PDE及Fredholm文字全部保留；Lean只覆盖右端多项式、动量奇性和在productGibbs上的可积零均值；PDE识别及Fredholm理论未覆盖。",
+          "lean_decl": "MD.Ch07.symmetricRHS",
+          "lean_declarations": [
+            "MD.Ch07.symmetricRHS",
+            "MD.Ch07.symmetricRHS_odd",
+            "MD.Ch07.symmetricRHS_zeroMean"
+          ],
+          "source_page_verification": "本次实际目视核对 R4_PAGES.pdf 对应页；重复页渲染SHA256一致。详见本条 evidence。",
+          "repair_log": [],
+          "documented_priors": []
+        },
+        "issues": [
+          "A：两个PDE的系数、项次与原文“Fredholm alternative holds”文字均忠实，应保留原书原话。",
+          "C：symmetricRHS仅定义去掉ρ的多项式；odd和zeroMean只证明奇性及可积时零均值。没有实际L2或LD(ρf2)等式，没有解f2。",
+          "原书由动量奇性直接宣称Fredholm条件成立，隐含可积性和算符空间资格；单凭奇性不能推出Fredholm充分可解性，属需人工限定的原书表述。"
+        ],
+        "evidence": [
+          "目视附件19（原PDF320／印刷299；与17、18、20完全同图）：OABAO为β(6H−T)/24，OBABO为β(2T−6H)/24。",
+          "symmetricRHS的flip=false/true分别是OABAO/OBABO；动量取负时H与T均取负。",
+          "zeroMean在任意U、β下以Integrable为明确前提，中心高斯的对称性成立，未将均值为零当作假设。但零均值是在productGibbs上，不是原页含ρ的Lebesgue积分；归一换算需要正有限配分函数。",
+          "审校方式：只读R4_任务.md的本条Lean及其摘录项目定义，Mathlib按标准含义采信；未修改工程、未补证明、未调用Lean编译器，不因sorry判FAIL。未发现任何字面的[EXTRA]或[ERRATUM?]标签；额外假设与原书疑误按语义逐项核对，建议标签仅写入本审校JSON。",
+          "本次附件R4_PAGES.pdf SHA256=133d111b38c222acf5f8a9b401286106f513aca299e119dc65d034e915f0c931；本条input_sha256严格回显任务所列旧文件键和值，不宣称与当前文件重新计算一致。"
+        ]
+      },
+      "audit": {
+        "lean_decl": [
+          "MD.Ch07.symmetricRHS",
+          "MD.Ch07.symmetricRHS_odd",
+          "MD.Ch07.symmetricRHS_zeroMean"
+        ],
+        "verdict": "FAIL",
+        "explanation": "C分项：symmetricRHS的两种标量多项式PASS；odd对所有flip,U,β,x成立，PASS；zeroMean带可积性时PASS。完整原文覆盖FAIL：未将多项式乘Gibbs权识别为−L2ρ或LD(ρf2)，也未建立真实原页积分和productGibbs积分的正有限归一化桥。奇性与零均值不构成给定闭算符的Fredholm替代定理。A中的原书充分性措辞另外判NEEDS_HUMAN，保留而不篡改。",
+        "counterexample": null,
+        "suggested_fix": "补登记M=I和flip对应关系；将PDE右端识别、正有限配分函数桥、Fredholm空间及兼容/充分条件列为独立义务。保留原书文字并标[ERRATUM?]适用条件不足。"
+      },
+      "subtask": "BATCH14c",
+      "input_sha256": {
+        "Blueprint/Ch07.lean": "f30ea154ebfb07ae85c0b806ff74b35808d5a0c3dcaa647c0c3cc80a78239e37",
+        "blueprint/ch07/ch07_source.json": "c434892ebf63b06f7cadcdfa7af408c2c12d7b645d35db431d1855224163ba19",
+        "BATCH14c_PAGES.pdf": "1d78b47c98943f933cc0156a03d913a9365670aff91374a9a20427176fecf4fb"
+      }
+    },
+    {
+      "source_id": "MD-7.9.1-Lemma71",
+      "json_review": {
+        "status": "NEEDS_HUMAN",
+        "issue_codes": [
+          "PRINTED_PROOF_REFERENCE_TYPO"
+        ],
+        "corrected_json": {
+          "source_id": "MD-7.9.1-Lemma71",
+          "kind": "lemma",
+          "label": "Lemma 7.1",
+          "section": "7.9.1",
+          "printed_page": "299–300",
+          "pdf_page": "320–321",
+          "statement_latex": "Lemma 7.1 Consider two numerical schemes with associated operators governing the evolution of measure $ST$ and $TS$, with unique associated invariant distributions $\\widehat\\rho_{ST}$ and $\\widehat\\rho_{TS}$ respectively, such that\n\\[ST\\widehat\\rho_{ST}=\\widehat\\rho_{ST},\\qquad TS\\widehat\\rho_{TS}=\\widehat\\rho_{TS}.\\]\nUnder suitable ergodicity assumptions (such that in the long-time limit, all distributions converge to the invariant distribution), we have\n\\[\\widehat\\rho_{ST}=S\\widehat\\rho_{TS},\\qquad\\widehat\\rho_{TS}=T\\widehat\\rho_{ST}.\\]",
+          "proof_latex": "If we assume that $\\lim_{n\\to\\infty}(ST)^n\\rho=\\widehat\\rho_{ST}$, for any initial distribution $\\rho$, then we have\n$\\widehat\\rho_{ST}=\\lim_{n\\to\\infty}(ST)^n\\widehat\\rho_{ST}=\\lim_{n\\to\\infty}S(TS)^{n-1}T\\widehat\\rho_{ST}=S\\widehat\\rho_{TS}$.\nA similar statement holds for $\\widehat\\rho_{ST}$.",
+          "proof_outline": null,
+          "proof_note": "原页推导与上下文全文见original_page_text；数学符号的排版以随附原页PDF为准。",
+          "original_page_text": [
+            {
+              "pdf_page": 320,
+              "printed_page": 299,
+              "text": "7.9\nError Expansion for Symmetric Langevin Methods\n299\nsimplifying the computation to\nL\u0004\n2;\u0002OYZYO\u0003\u0005ˇ D 1\n12\nh\nL\u0004\nZ; L\u0004\nZ; L\u0004\nY\ni\n\u0005ˇ \u0003 1\n24ŒL\u0004\nY; L\u0004\nY; L\u0004\nZ\t\u0005ˇ:\n(7.29)\nThe inhomogeneity for the schemes \u0002OABAO\u0003 and \u0002OBABO\u0003 is hence a combina-\ntion of the two commutator terms\nh\nL\u0004\nA; L\u0004\nA; L\u0004\nB\ni\n\u0005ˇ D\n\u0004\n2ˇpT \u0004\nr2U\n\u0005\nrU \u0003 r3U W p ˝ p ˝ p\n\u0005\n\u0005ˇ;\nh\nL\u0004\nB; L\u0004\nB; L\u0004\nA\ni\n\u0005ˇ D \u0003 \u00042ˇpT \u0004r2U\u0005 rU\u0005 \u0005ˇ;\ngiving overall equations to solve\nL\u0004\nLD\n\u0004\n\u0005ˇf2;\u0002OABAO\u0003\n\u0005\nD \u0003L\u0004\n2;\u0002OABAO\u0003\u0005ˇ\nD ˇ\n24\n\u0004\n6pT \u0004\nr2U\n\u0005\nrU \u0003 r3U W p ˝ p ˝ p\n\u0005\n\u0005ˇ;\nL\u0004\nLD\n\u0004\n\u0005ˇf2;\u0002OBABO\u0003\n\u0005\nD \u0003L\u0004\n2;\u0002OBABO\u0003\u0005ˇ\nD ˇ\n24\n\u0004\n2r3U W p ˝ p ˝ p \u0003 6pT \u0004\nr2U\n\u0005\nrU\n\u0005\n\u0005ˇ:\nWe can see immediately that the Fredholm alternative holds in both cases, as both\nequations have right-hand sides that are of odd order in p, and hence will average\nto 0.\nIf we instead consider schemes which use a central Ornstein-Uhlenbeck update,\nthen the inhomogeneous term becomes signiﬁcantly more complex, as we no\nlonger have a signiﬁcant number of cancellations in L\u0004\n2\u0005ˇ. Instead, we shall avoid\ncomputing the right-hand side for these schemes altogether, in favor of utilizing the\nfollowing lemma [223]:\nLemma 7.1 Consider two numerical schemes with associated operators governing\nthe evolution of measure ST and T S, with unique associated invariant distributions\nO\u0005ST and O\u0005TS respectively, such that\nST O\u0005ST D O\u0005ST;\nT S O\u0005TS D O\u0005TS:\nUnder suitable ergodicity assumptions (such that in the long-time limit, all distribu-\ntions converge to the invariant distribution), we have\nO\u0005ST D S O\u0005TS;\nand\nO\u0005TS D T O\u0005ST:\n"
+            },
+            {
+              "pdf_page": 321,
+              "printed_page": 300,
+              "text": "300\n7\nNumerical Methods for Stochastic Molecular Dynamics\nProof The proof is very simple, and follows almost directly from our ergodicity\nassumption. If we assume that\nlim\nn!1 .ST /n \u0005 D O\u0005ST;\nfor any initial distribution \u0005, then we have\nO\u0005ST D lim\nn!1 .ST /n O\u0005ST D lim\nn!1 S .T S/n\u00021 T O\u0005ST D S O\u0005TS:\nA similar statement holds for O\u0005ST.\n\u0002\nIf we return to our scheme \u0002OYZYO\u0003, which has a simple inhomogeneity, then\nwe can relate its invariant distribution to invariant distributions of schemes with a\ncentral OU update by writing its evolution operator as\neh OL\u0004\n\u0002OYZYO\u0003 D e.h=2/L\u0004\nOe.h=2/L\u0004\nYe.h=2/L\u0004\nZ\n„\nƒ‚\n…\nS\ne.h=2/L\u0004\nZe.h=2/L\u0004\nYe.h=2/L\u0004\nO\n„\nƒ‚\n…\nT\nD ST :\nBy applying Lemma 7.1, we can equate the invariant distributions directly as\nO\u0005\u0002ZYOYZ\u0003 D exp..h=2/L\u0004\nZ/ exp..h=2/L\u0004\nY/ exp..h=2/L\u0004\nO/ O\u0005\u0002OYZYO\u0003:\nRewriting our ansatz (7.27) in place of the distributions, and expanding the\nexponential series gives\n\u0005ˇ\n\u0004\n1 C h2f2;\u0002ZYOYZ\u0003 C : : :\n\u0005\nD\n\b\nIdCh\n2L\u0004\nLDCh2\n4 L\u0004\n1;\u0002OYZ\u0003 C h2\n2 L\u0004\nLD C : : :\n\t \u0004\n\u0005ˇ\n\u0004\n1 C h2f2;\u0002OYZYO\u0003 C : : :\n\u0005\u0005\n;\nand hence equating powers we have\nf2;\u0002ZYOYZ\u0003\u0005ˇ D f2;\u0002OYZYO\u0003\u0005ˇ C 1\n4L\u0004\n1;\u0002OYZ\u0003\u0005ˇ:\nBy virtue of (7.20), we have\nL\u0004\n1;\u0002OAB\u0003\u0005ˇ D 1\n2L\u0004\nH\n\u0004\ng\u0005ˇ\n\u0005\nL\u0004\n1;\u0002OBA\u0003\u0005ˇ D \u00031\n2L\u0004\nH\n\u0004\ng\u0005ˇ\n\u0005\n;\nwhere recall g.q; p/\u0005ˇ D L\u0004\nA\u0005ˇ D ˇpTM\u00021rU.q/\u0005ˇ. Computing\nL\u0004\nH\n\u0004\ng\u0005ˇ\n\u0005\nD ˇ\n\u0004\njrU.q/j2 \u0003 pTr2U.q/p\n\u0005\n\u0005ˇ;\n"
+            }
+          ],
+          "transcription_note": "PDF文字层原样保留，陈述中的数学排版转写为LaTeX；文字层有特殊字形编码时以目视原页为准。PDF347的Exercises之后不在正文范围内。",
+          "context_notation": [],
+          "extra_assumptions": [
+            "真实Markov核、真实概率与不变概率的唯一性完整；借助不变性和唯一性即足够，不要求额外极限交换。保留原书证明文本，Lean采用已证更弱假设路线。"
+          ],
+          "issues": [
+            "A：引理陈述、两条不变性及两条互换结论与附件20相符；proof_latex忠实保留附件21的“A similar statement holds for ρ̂_ST”。此处按上下文应指第二个关系/ρ̂_TS，属于原书证明末句的下标疑误，不宜静默改写原书。"
+          ],
+          "statement_scope": "本条逐字引用的全部数学对象与公式；未纳入的上下文另列。",
+          "lean_decl": "MD.Ch07.lemma71",
+          "lean_declarations": [
+            "MD.Ch07.lemma71"
+          ],
+          "source_page_verification": "本次实际目视核对 R4_PAGES.pdf 对应页；重复页渲染SHA256一致。详见本条 evidence。",
+          "repair_log": [],
+          "documented_priors": [
+            "MolecularDynamics.textbookUniqueInvariantProbability",
+            "MolecularDynamics.textbookInvariantDistributionSwap"
+          ]
+        },
+        "issues": [
+          "A：引理陈述、两条不变性及两条互换结论与附件20相符；proof_latex忠实保留附件21的“A similar statement holds for ρ̂_ST”。此处按上下文应指第二个关系/ρ̂_TS，属于原书证明末句的下标疑误，不宜静默改写原书。"
+        ],
+        "evidence": [
+          "目视附件20–21（原PDF320–321／印刷299–300）；20与17–19同图。证明确实写(ST)^n=S(TS)^(n−1)T并把S提出极限。",
+          "textbookUniqueInvariantProbability定义同时要求真实概率、不变性及对所有不变概率的唯一性；S、T均显式要求IsMarkovKernel。",
+          "所摘textbookInvariantDistributionSwap的完整类型与lemma71包装完全相同，核复合和作用于测度的次序匹配。",
+          "审校方式：只读R4_任务.md的本条Lean及其摘录项目定义，Mathlib按标准含义采信；未修改工程、未补证明、未调用Lean编译器，不因sorry判FAIL。未发现任何字面的[EXTRA]或[ERRATUM?]标签；额外假设与原书疑误按语义逐项核对，建议标签仅写入本审校JSON。",
+          "本次附件R4_PAGES.pdf SHA256=133d111b38c222acf5f8a9b401286106f513aca299e119dc65d034e915f0c931；本条input_sha256严格回显任务所列旧文件键和值，不宣称与当前文件重新计算一致。"
+        ]
+      },
+      "audit": {
+        "lean_decl": [
+          "MD.Ch07.lemma71"
+        ],
+        "verdict": "PASS",
+        "explanation": "C：在任意可测空间Ω上，S,T为Markov核，ρST,ρTS为真实测度，hST/hTS给出两种复合核唯一不变概率。由SρTS是ST不变概率及唯一性得第一式，第二式同理，故无需额外遍历极限或连续性，采用更弱充分假设合理。结论恰为ρST=SρTS与ρTS=TρST，全部PASS。证明原文末句的重复ST下标另留人工处理；不把该印刷文字问题误判为Lean签名失败。",
+        "counterexample": null,
+        "suggested_fix": "原书证明文字保持原样，在issues中标[ERRATUM?]末句ST疑应为TS；说明Lean用不变性与唯一性而无需交换极限。"
+      },
+      "subtask": "BATCH14d",
+      "input_sha256": {
+        "Blueprint/Ch07.lean": "f30ea154ebfb07ae85c0b806ff74b35808d5a0c3dcaa647c0c3cc80a78239e37",
+        "blueprint/ch07/ch07_source.json": "c434892ebf63b06f7cadcdfa7af408c2c12d7b645d35db431d1855224163ba19",
+        "BATCH14d_PAGES.pdf": "302fed3beb6e564b2f196a7360f493b13c0e54acb764505733ad272d69e90be4"
+      }
+    },
+    {
+      "source_id": "MD-7.9.1-ConjugateSymmetricCorrections",
+      "json_review": {
+        "status": "NEEDS_HUMAN",
+        "issue_codes": [
+          "ERRATUM_PRINTED_EXPANSION",
+          "PARTIAL_FORMALIZATION"
+        ],
+        "corrected_json": null,
+        "issues": [
+          "A：附件1–2页的传播子顺序、1/4传递项、两条L1恒等式以及(7.30a,b)的正负号和β/8均吻合。原页确实把展开末项印成(h²/2)L_LD†，不是(h²/8)(L_LD†)²；须保留原印并标[ERRATUM?]。",
+          "C：V n=Fin n→ℝ，Phase n为位置/动量对；梯度、Hessian及pᵀHess(U)p的下标收缩正确，conjugateCorrections完整记录两条函数等式。coefficient对任意实模E及线性自同态L0,L1量化，在L0(p0)=0、p1=0和明确的二阶传递假设下消项正确。[EXTRA]这些是假设的系数，不是具体分裂传播子的系数识别；ρβ、具体ST/TS不变分布传递及Hamiltonian微分恒等式没有相应完整声明。Printed逐字保留原印，忠实性PASS；_corrected的1/8及平方修正合理，作为二阶截断定义PASS，不能当作完整指数等式。因原印疑误本条综合NEEDS_HUMAN。"
+        ],
+        "evidence": {
+          "A_source_comparison": "A：附件1–2页的传播子顺序、1/4传递项、两条L1恒等式以及(7.30a,b)的正负号和β/8均吻合。原页确实把展开末项印成(h²/2)L_LD†，不是(h²/8)(L_LD†)²；须保留原印并标[ERRATUM?]。",
+          "C_signature_comparison": "C：V n=Fin n→ℝ，Phase n为位置/动量对；梯度、Hessian及pᵀHess(U)p的下标收缩正确，conjugateCorrections完整记录两条函数等式。coefficient对任意实模E及线性自同态L0,L1量化，在L0(p0)=0、p1=0和明确的二阶传递假设下消项正确。[EXTRA]这些是假设的系数，不是具体分裂传播子的系数识别；ρβ、具体ST/TS不变分布传递及Hamiltonian微分恒等式没有相应完整声明。Printed逐字保留原印，忠实性PASS；_corrected的1/8及平方修正合理，作为二阶截断定义PASS，不能当作完整指数等式。因原印疑误本条综合NEEDS_HUMAN。",
+          "attachment": "R5_PAGES.pdf",
+          "attachment_pages": [
+            1,
+            2
+          ],
+          "original_pdf_pages": "321–322",
+          "printed_pages": "300–301",
+          "checked_lean_declarations": [
+            "MD.Ch07.gradNormSq",
+            "MD.Ch07.hessianQuadratic",
+            "MD.Ch07.conjugateCorrectionChange",
+            "MD.Ch07.conjugateCorrections",
+            "MD.Ch07.conjugateCorrection_coefficient",
+            "MD.Ch07.conjugateExpansionPrinted",
+            "MD.Ch07.conjugateExpansionPrinted_corrected"
+          ],
+          "dependency_scope": "仅使用R5_任务.md本条摘录、所列依赖及附录D1–D40；标准库按标准含义采信。未读旧工程，未修改或补证明，未因sorry判FAIL。",
+          "annotation_policy": "[EXTRA]和[ERRATUM?]按本条分析区分；原印数学疑误保留。逐字核对允许数学LaTeX排版及换行标准化，不把OCR特殊字符当数学勘误。"
+        }
+      },
+      "audit": {
+        "lean_decl": [
+          "MD.Ch07.gradNormSq",
+          "MD.Ch07.hessianQuadratic",
+          "MD.Ch07.conjugateCorrectionChange",
+          "MD.Ch07.conjugateCorrections",
+          "MD.Ch07.conjugateCorrection_coefficient",
+          "MD.Ch07.conjugateExpansionPrinted",
+          "MD.Ch07.conjugateExpansionPrinted_corrected"
+        ],
+        "verdict": "NEEDS_HUMAN",
+        "explanation": "C：V n=Fin n→ℝ，Phase n为位置/动量对；梯度、Hessian及pᵀHess(U)p的下标收缩正确，conjugateCorrections完整记录两条函数等式。coefficient对任意实模E及线性自同态L0,L1量化，在L0(p0)=0、p1=0和明确的二阶传递假设下消项正确。[EXTRA]这些是假设的系数，不是具体分裂传播子的系数识别；ρβ、具体ST/TS不变分布传递及Hamiltonian微分恒等式没有相应完整声明。Printed逐字保留原印，忠实性PASS；_corrected的1/8及平方修正合理，作为二阶截断定义PASS，不能当作完整指数等式。因原印疑误本条综合NEEDS_HUMAN。",
+        "counterexample": "取L0为实数上的恒等算符，L1=0，两种截断的二次项分别为h²/2与h²/8，说明不能把两版当成一般相等的算符；在L0ρβ=0时差项确实消失。",
+        "suggested_fix": "保留Printed；将展开疑误显式标[ERRATUM?]。将真实分裂传递、L1作用ρβ和(7.30)实际误差系数识别列为独立签名，勿用纯代数消项代替。"
+      },
+      "subtask": "BATCH14e",
+      "input_sha256": {
+        "Blueprint/Ch07.lean": "f30ea154ebfb07ae85c0b806ff74b35808d5a0c3dcaa647c0c3cc80a78239e37",
+        "blueprint/ch07/ch07_source.json": "c434892ebf63b06f7cadcdfa7af408c2c12d7b645d35db431d1855224163ba19",
+        "BATCH14e_PAGES.pdf": "ccc1149d18fda0166ca06f64a312e4574d07d069042e3e613a3bdd70e2c636a8"
+      }
+    },
+    {
+      "source_id": "MD-7.9.2-ReciprocalFrictionExpansion",
+      "json_review": {
+        "status": "APPROVED",
+        "issue_codes": [
+          "MISSING_CENTERING",
+          "MISSING_SERIES_AND_SCALED_EQUATION",
+          "EXTRA_DOMAIN_NOT_IN_SIGNATURE"
+        ],
+        "corrected_json": null,
+        "issues": [
+          "A：附件3–4页的(7.31)、各阶零均值、缩放前向OU、w的−β/24和(7.32)各阶方程与摘录一致；(7.32)标签指一阶方程，分组转写未改变数学内容。",
+          "C：phaseH采用单位质量，aForward为−p·∇q，bForward为∇U·∇p；phaseO以γ=1、θ=β⁻¹给出缩放OU。symmetricRHS false=β(6pH∇U−U‴:p³)/24=−w，故双负号右端确实为−wρβ；k>0覆盖所有后续阶。FAIL在完整性：reciprocalHierarchy只定义层级，没有(7.31)级数/形式系数对象、ε=1/γ缩放方程或每阶Gibbs零均值。extra_assumptions提及centeredCorrections，但该定义既未提供也未并入本条命题；β>0也未进入此签名。对任意实β的裸形式表达式可以定义，但不能声称已含物理域资格。"
+        ],
+        "evidence": {
+          "A_source_comparison": "A：附件3–4页的(7.31)、各阶零均值、缩放前向OU、w的−β/24和(7.32)各阶方程与摘录一致；(7.32)标签指一阶方程，分组转写未改变数学内容。",
+          "C_signature_comparison": "C：phaseH采用单位质量，aForward为−p·∇q，bForward为∇U·∇p；phaseO以γ=1、θ=β⁻¹给出缩放OU。symmetricRHS false=β(6pH∇U−U‴:p³)/24=−w，故双负号右端确实为−wρβ；k>0覆盖所有后续阶。FAIL在完整性：reciprocalHierarchy只定义层级，没有(7.31)级数/形式系数对象、ε=1/γ缩放方程或每阶Gibbs零均值。extra_assumptions提及centeredCorrections，但该定义既未提供也未并入本条命题；β>0也未进入此签名。对任意实β的裸形式表达式可以定义，但不能声称已含物理域资格。",
+          "attachment": "R5_PAGES.pdf",
+          "attachment_pages": [
+            3,
+            4
+          ],
+          "original_pdf_pages": "322–323",
+          "printed_pages": "301–302",
+          "checked_lean_declarations": [
+            "MD.Ch07.phaseH",
+            "MD.Ch07.reciprocalHierarchy"
+          ],
+          "dependency_scope": "仅使用R5_任务.md本条摘录、所列依赖及附录D1–D40；标准库按标准含义采信。未读旧工程，未修改或补证明，未因sorry判FAIL。",
+          "annotation_policy": "[EXTRA]和[ERRATUM?]按本条分析区分；原印数学疑误保留。逐字核对允许数学LaTeX排版及换行标准化，不把OCR特殊字符当数学勘误。"
+        }
+      },
+      "audit": {
+        "lean_decl": [
+          "MD.Ch07.phaseH",
+          "MD.Ch07.reciprocalHierarchy"
+        ],
+        "verdict": "FAIL",
+        "explanation": "C：phaseH采用单位质量，aForward为−p·∇q，bForward为∇U·∇p；phaseO以γ=1、θ=β⁻¹给出缩放OU。symmetricRHS false=β(6pH∇U−U‴:p³)/24=−w，故双负号右端确实为−wρβ；k>0覆盖所有后续阶。FAIL在完整性：reciprocalHierarchy只定义层级，没有(7.31)级数/形式系数对象、ε=1/γ缩放方程或每阶Gibbs零均值。extra_assumptions提及centeredCorrections，但该定义既未提供也未并入本条命题；β>0也未进入此签名。对任意实β的裸形式表达式可以定义，但不能声称已含物理域资格。",
+        "counterexample": "U(q)=|q|²/2、β>0时，给层级中f0加任意常数不改变其方程，因为Hρβ=Oρβ=0；因此层级本身不强制零均值。",
+        "suggested_fix": "在不改摘录的前提下，补列形式级数及缩放方程的目标签名、β>0与γ>0资格、各阶Integrable及零均值的合取；或把statement_scope明确限为未中心化的形式层级。"
+      },
+      "subtask": "BATCH14f",
+      "input_sha256": {
+        "Blueprint/Ch07.lean": "f30ea154ebfb07ae85c0b806ff74b35808d5a0c3dcaa647c0c3cc80a78239e37",
+        "blueprint/ch07/ch07_source.json": "c434892ebf63b06f7cadcdfa7af408c2c12d7b645d35db431d1855224163ba19",
+        "BATCH14f_PAGES.pdf": "57b69fc761adeedcc78d22e366bf10955db9ed2b1f9c4c6dcd1c0da73a919577"
+      }
+    }
+  ],
+  "merged_from": "ch07_first_merged"
+}

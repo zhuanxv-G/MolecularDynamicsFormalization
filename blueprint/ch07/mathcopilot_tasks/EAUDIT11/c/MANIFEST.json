@@ -1,0 +1,178 @@
+{
+  "batch": "EAUDIT11",
+  "subtask": "EAUDIT11c",
+  "source_ids": [
+    "MD-7.12-ConstrainedHOSplitting"
+  ],
+  "input_sha256": {
+    "Blueprint/Ch07.lean": "f3bc0ee86ace9c825028f0cec8ebb2fb410d6be77213cc7fb41cb8889540a000",
+    "blueprint/ch07/ch07_source.json": "1a201887b51a249fb73f456237cb342963c5d98c612ec1912f21572a57924012",
+    "PAGES.pdf": "a6e178743fe9b2ef83294d844cf3beb7ade06a11325eeae606e7bdb1127f09b4"
+  },
+  "page_mapping": [
+    {
+      "attachment_page": 1,
+      "original_pdf_page": 339,
+      "printed_page": 318
+    }
+  ],
+  "definition_excerpts": [
+    {
+      "full_name": "MD.Ch07.V",
+      "kind": "abbrev",
+      "path": "Blueprint/Ch07.lean",
+      "line": 202,
+      "code_sha256": "7ab0ad90462b274b03f5b929b5f09417c0b397b6cb908fa6e7bd56677a314027"
+    },
+    {
+      "full_name": "MD.Ch07.Phase",
+      "kind": "abbrev",
+      "path": "Blueprint/Ch07.lean",
+      "line": 203,
+      "code_sha256": "ef1520e3b22ac1c99a30a989deafe8d3da44a9f2a3e5b6c2cd3220218b88513e"
+    },
+    {
+      "full_name": "MD.Ch07.vectorWiener",
+      "kind": "def",
+      "path": "Blueprint/Ch07.lean",
+      "line": 205,
+      "code_sha256": "a24b0b3d4e3f48ea3c5384e0ec083b953b2b03d743d1687b43010c41ccaebf93"
+    },
+    {
+      "full_name": "MD.Ch07.coordDerivative",
+      "kind": "def",
+      "path": "Blueprint/Ch07.lean",
+      "line": 257,
+      "code_sha256": "e782d789a13f5db6817e2c995f141805e81ac75720125b846f8ee14ba3833a4b"
+    },
+    {
+      "full_name": "MD.Ch07.gradient",
+      "kind": "def",
+      "path": "Blueprint/Ch07.lean",
+      "line": 288,
+      "code_sha256": "540c6af25c09d3a58da531bc32056ff1a1c070facc58d34c96b6653d781fba6f"
+    },
+    {
+      "full_name": "MD.Ch07.constraintJacobian",
+      "kind": "def",
+      "path": "Blueprint/Ch07.lean",
+      "line": 1695,
+      "code_sha256": "b188cb797f84cc7aefa1f40fde389d28727a10452b1c9405e5f82d3db8e33aee"
+    },
+    {
+      "full_name": "MD.Ch07.constraintReaction",
+      "kind": "def",
+      "path": "Blueprint/Ch07.lean",
+      "line": 1697,
+      "code_sha256": "7e6ff0331529b1edc72fedfd2725f8763477c4b3afa8cd315c30c75bb7a95bc9"
+    },
+    {
+      "full_name": "MD.Ch07.hiddenConstraint",
+      "kind": "def",
+      "path": "Blueprint/Ch07.lean",
+      "line": 1699,
+      "code_sha256": "8113d82f13f1f574ed323d7f8494c4ca0771060a74bbe144135ec562e00ec3a2"
+    },
+    {
+      "full_name": "MD.Ch07.cotangentConstraint",
+      "kind": "def",
+      "path": "Blueprint/Ch07.lean",
+      "line": 1701,
+      "code_sha256": "63be0b3c75b6519689be70bc700da574682eedd2a2fe553decf3dfabf4f9472f"
+    },
+    {
+      "full_name": "MD.Ch07.constrainedHField",
+      "kind": "def",
+      "path": "Blueprint/Ch07.lean",
+      "line": 1775,
+      "code_sha256": "17737ec4fc1bf6192642dd642611e2b4465365db7558b02bd0f62cf265e1d502"
+    },
+    {
+      "full_name": "MD.Ch07.constrainedOField",
+      "kind": "def",
+      "path": "Blueprint/Ch07.lean",
+      "line": 1777,
+      "code_sha256": "31fd37488dd13e9fddb3cc43742ecfbf4abb5b9910fb168e420b35457beb6080"
+    },
+    {
+      "full_name": "MD.Ch07.constrainedHOComposition",
+      "kind": "def",
+      "path": "Blueprint/Ch07.lean",
+      "line": 1779,
+      "code_sha256": "0fc504ca9a0c3fdfdc5fca2a5fb4290ab445b4c10def588feb2adc05e2e3875b"
+    },
+    {
+      "full_name": "MD.Ch07.constrainedONoise",
+      "kind": "def",
+      "path": "Blueprint/Ch07.lean",
+      "line": 1781,
+      "code_sha256": "a5b4bed66f3fb52f4e18e77e12170d758162d0d30c514059cf14bf60a3b6e6b3"
+    },
+    {
+      "full_name": "MD.Ch07.constrainedHIntegralStep",
+      "kind": "def",
+      "path": "Blueprint/Ch07.lean",
+      "line": 1784,
+      "code_sha256": "ef5d80a368684e3e598def517a18a5b1d201ff494e3bb1ce26856bdcf29805fd"
+    },
+    {
+      "full_name": "MD.Ch07.constrainedOIntegralStep",
+      "kind": "def",
+      "path": "Blueprint/Ch07.lean",
+      "line": 1798,
+      "code_sha256": "5aa8642f1c03fc3178d39ad490be028d57726c32ad7d0c10b7f7855ddbb93547"
+    },
+    {
+      "full_name": "MD.Ch07.constrainedHMapQualification",
+      "kind": "def",
+      "path": "Blueprint/Ch07.lean",
+      "line": 1816,
+      "code_sha256": "cb60418380f9510f92d0baa0978e16c97146de54962c850f9400ad2a9a1cf568"
+    },
+    {
+      "full_name": "MD.Ch07.constrainedOMapQualification",
+      "kind": "def",
+      "path": "Blueprint/Ch07.lean",
+      "line": 1821,
+      "code_sha256": "f10e0bc121d7b3c09091e604d351ad24d010d10c771e69c5757751a6e343a6c7"
+    },
+    {
+      "full_name": "MD.Ch07.constrainedHOQualifiedComposition",
+      "kind": "def",
+      "path": "Blueprint/Ch07.lean",
+      "line": 1827,
+      "code_sha256": "caf80f60d9fb70550af77649d184ad375b0f9609e357d4cfc292227d4131e945"
+    },
+    {
+      "full_name": "MolecularDynamics.Chapter05Review.E",
+      "kind": "abbrev",
+      "path": "MolecularDynamics/Chapter05/ReviewDefinitions.lean",
+      "line": 18,
+      "code_sha256": "b497c8ba7f01b62a3147d9ae65652772ff3f81e57aa19b116f1283fef7a3cc60"
+    },
+    {
+      "full_name": "MolecularDynamics.textbookIsWienerVector",
+      "kind": "structure",
+      "path": "MolecularDynamics/Chapter06/WienerVectorSupport.lean",
+      "line": 13,
+      "code_sha256": "030040a9146ab99e095c5a3e84fa3feed1dc8f0dd916643d371a0bb7e6efb622"
+    }
+  ],
+  "validation": {
+    "project_constant_closure": "PASS",
+    "missing_project_definitions": [],
+    "full_page_render_equality_dpi": 72,
+    "website_submitted": false
+  },
+  "files": {
+    "PASTE.txt": {
+      "bytes": 22419,
+      "sha256": "1c4380ee79c512c6f158caee7884439d63fc70d9ee92364e018405250aabd48b"
+    },
+    "PAGES.pdf": {
+      "bytes": 95593,
+      "sha256": "a6e178743fe9b2ef83294d844cf3beb7ade06a11325eeae606e7bdb1127f09b4"
+    }
+  },
+  "total_task_bytes": 123903
+}

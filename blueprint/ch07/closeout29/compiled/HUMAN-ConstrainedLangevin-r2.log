@@ -1,0 +1,492 @@
+declaration uses `sorry`
+Variable name `hL` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _hL
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+declaration uses `sorry`
+declaration uses `sorry`
+declaration uses `sorry`
+declaration uses `sorry`
+declaration uses `sorry`
+declaration uses `sorry`
+declaration uses `sorry`
+Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+declaration uses `sorry`
+declaration uses `sorry`
+declaration uses `sorry`
+declaration uses `sorry`
+declaration uses `sorry`
+declaration uses `sorry`
+declaration uses `sorry`
+declaration uses `sorry`
+declaration uses `sorry`
+declaration uses `sorry`
+declaration uses `sorry`
+declaration uses `sorry`
+declaration uses `sorry`
+declaration uses `sorry`
+declaration uses `sorry`
+declaration uses `sorry`
+declaration uses `sorry`
+declaration uses `sorry`
+Variable name `hq` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _hq
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+Variable name `hρ` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _hρ
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+declaration uses `sorry`
+declaration uses `sorry`
+declaration uses `sorry`
+declaration uses `sorry`
+declaration uses `sorry`
+declaration uses `sorry`
+declaration uses `sorry`
+declaration uses `sorry`
+declaration uses `sorry`
+declaration uses `sorry`
+declaration uses `sorry`
+declaration uses `sorry`
+declaration uses `sorry`
+declaration uses `sorry`
+declaration uses `sorry`
+declaration uses `sorry`
+declaration uses `sorry`
+declaration uses `sorry`
+declaration uses `sorry`
+declaration uses `sorry`
+Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+declaration uses `sorry`
+declaration uses `sorry`
+declaration uses `sorry`
+declaration uses `sorry`
+declaration uses `sorry`
+declaration uses `sorry`
+declaration uses `sorry`
+declaration uses `sorry`
+declaration uses `sorry`
+Variable name `hstep` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _hstep
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+declaration uses `sorry`
+declaration uses `sorry`
+Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+declaration uses `sorry`
+Variable name `hH` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _hH
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+Variable name `hO` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _hO
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+declaration uses `sorry`
+declaration uses `sorry`
+declaration uses `sorry`
+declaration uses `sorry`
+Variable name `hη` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _hη
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+declaration uses `sorry`
+declaration uses `sorry`
+declaration uses `sorry`
+declaration uses `sorry`
+'MD.Ch07.bias' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch07.scalarSDE' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch07.eulerMaruyamaStep' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch07.standardNormalSequence' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch07.eulerMaruyama' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch07.sdeIncrement' depends on axioms: [propext, sorryAx, Classical.choice, Quot.sound]
+'MD.Ch07.strongError' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch07.meanErrorExpectation' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch07.meanSquareError' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch07.hasStrongOrder' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch07.weakError' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch07.hasWeakOrder' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch07.strongWeakLipschitz' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch07.weakDoesNotImplyStrong' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch07.densityWithPartition' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch07.canonicalAverage' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch07.probabilityDensity' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch07.partitionPrinted' depends on axioms: [propext, sorryAx, Classical.choice, Quot.sound]
+'MD.Ch07.partitionPrinted_counterexample' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch07.partitionPrinted_corrected' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch07.observableBias' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch07.bias_nonnegative' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch07.V' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch07.Phase' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch07.vectorWiener' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch07.momentumOU' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch07.ouIntegratingFactor' depends on axioms: [propext, sorryAx, Classical.choice, Quot.sound]
+'MD.Ch07.ouMomentum' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch07.ouTransitionLaw' depends on axioms: [propext, sorryAx, Classical.choice, Quot.sound]
+'MD.Ch07.ouStep' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch07.vectorNormalSequence' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch07.coordDerivative' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch07.ouForward' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch07.ouBackward' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch07.ouForward_adjoint' depends on axioms: [propext, sorryAx, Classical.choice, Quot.sound]
+'MD.Ch07.ouGaussianInvariant' depends on axioms: [propext, sorryAx, Classical.choice, Quot.sound]
+'MD.Ch07.gradient' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch07.langevin' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch07.hamiltonianGibbs' depends on axioms: [propext, sorryAx, Classical.choice, Quot.sound]
+'MD.Ch07.driftStep' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch07.kickStep' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch07.aField' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch07.bField' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch07.oDrift' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch07.splittingDrift' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch07.driftStep_derivative' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch07.kickStep_derivative' depends on axioms: [propext, sorryAx, Classical.choice, Quot.sound]
+'MD.Ch07.aForward' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch07.bForward' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch07.abo' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch07.babo' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch07.oabaobaoPrinted' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch07.oabaobaoPrinted_corrected' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch07.oabaobaoCount' does not depend on any axioms
+'MD.Ch07.abao' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch07.aboba' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch07.baoab' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch07.oabao' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch07.obabo' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch07.compositionIterate' depends on axioms: [propext, Quot.sound]
+'MD.Ch07.oaba' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch07.conjugateNoiseS' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch07.conjugateNoiseT' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch07.oaba_baoab_noiseShift' depends on axioms: [propext, sorryAx, Classical.choice, Quot.sound]
+'MD.Ch07.spvPrinted' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch07.spvPrinted_corrected' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch07.spvQualification' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch07.spvEtaLimit' depends on axioms: [propext, sorryAx, Classical.choice, Quot.sound]
+'MD.Ch07.bbk' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch07.bbkSameNoise' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch07.harmonicHamiltonian' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch07.harmonicLaw' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch07.harmonicMoments' depends on axioms: [propext, sorryAx, Classical.choice, Quot.sound]
+'MD.Ch07.linearUpdate' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch07.momentQ' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch07.momentP' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch07.momentQP' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch07.bbkMatrix' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch07.bbkNoise' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch07.quadraticProducts' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch07.momentSystem' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch07.invariantLinearLaw' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch07.stationaryMomentSystem' depends on axioms: [propext, sorryAx, Classical.choice, Quot.sound]
+'MD.Ch07.aboHarmonic' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch07.aboStationaryMean' depends on axioms: [propext, sorryAx, Classical.choice, Quot.sound]
+'MD.Ch07.aboVarianceRatio' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch07.aboVarianceRatio_expansion' depends on axioms: [propext, sorryAx, Classical.choice, Quot.sound]
+'MD.Ch07.aboStationaryVariance' depends on axioms: [propext, sorryAx, Classical.choice, Quot.sound]
+'MD.Ch07.scalarLift' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch07.symmetricHarmonicStep' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch07.symmetricInvariant' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch07.table71' depends on axioms: [propext, sorryAx, Classical.choice, Quot.sound]
+'MD.Ch07.nonsymmetricHarmonicStep' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch07.nonsymmetricExactMoments' depends on axioms: [propext, sorryAx, Classical.choice, Quot.sound]
+'MD.Ch07.nonsymmetricMixedMoment_order' depends on axioms: [propext, sorryAx, Classical.choice, Quot.sound]
+'MD.Ch07.bbkStarTrajectory' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch07.bbkStarNoise' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch07.bbkStarCorrelations' depends on axioms: [propext, sorryAx, Classical.choice, Quot.sound]
+'MD.Ch07.bbkStarMomentSystemPrinted' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch07.bbkStarMomentSystemPrinted_corrected' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch07.bbkStarExtraFactor_counterexample' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch07.bbkStarStationaryAlgebra' depends on axioms: [propext, sorryAx, Classical.choice, Quot.sound]
+'MD.Ch07.perturbedPotential' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch07.perturbedHamiltonian' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch07.perturbedGibbs' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch07.perturbedStep' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch07.perturbedStationary' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch07.perturbedLeading' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch07.perturbedRemainder' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch07.positivePairLimit' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch07.perturbedErrorExpansion' depends on axioms: [propext, sorryAx, Classical.choice, Quot.sound]
+'MD.Ch07.perturbedErrorScale' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch07.perturbedErrorOrders' depends on axioms: [propext, sorryAx, Classical.choice, Quot.sound]
+'MD.Ch07.baoabLeading_largeFriction' depends on axioms: [propext, sorryAx, Classical.choice, Quot.sound]
+'MD.Ch07.gibbsComposition' depends on axioms: [propext]
+'MD.Ch07.lieField' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch07.divergenceField' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch07.forwardField' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch07.divergenceFreeInvariant' depends on axioms: [propext, sorryAx, Classical.choice, Quot.sound]
+'MD.Ch07.firstIntegral_density' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch07.onlyEnergyIntegrals' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch07.timeReparametrizes' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch07.geMarsdenConclusion' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch07.jField' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch07.jSplitting_energy' depends on axioms: [propext, sorryAx, Classical.choice, Quot.sound]
+'MD.Ch07.composition_preservesEnergy' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch07.jField_finiteDecomposition' depends on axioms: [propext, sorryAx, Classical.choice, Quot.sound]
+'MD.Ch07.coordinateJField' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch07.frozenPotential' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch07.coordinateJQualification' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch07.frozenPotential_deriv' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch07.formalModifiedGenerator' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch07.formalGeneratorExpansion' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch07.densityExpansion' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch07.centeredCorrections' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch07.computedAverage' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch07.densityExpansion_zeroMass' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch07.propagateA' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch07.propagateB' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch07.propagateO' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch07.pullback_order' does not depend on any axioms
+'MD.Ch07.abaoBackward' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch07.fourStage_duality' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch07.formalDensityEvolution' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch07.stationaryModifiedDensity' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch07.comm' does not depend on any axioms
+'MD.Ch07.twoStage' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch07.twoOperatorBCH' depends on axioms: [propext, sorryAx, Classical.choice, Quot.sound]
+'MD.Ch07.taylorRemainder' depends on axioms: [propext, sorryAx, Classical.choice, Quot.sound]
+'MD.Ch07.taylorRemainder_bound' depends on axioms: [propext, sorryAx, Classical.choice, Quot.sound]
+'MD.Ch07.propagatedObservable_remainder' depends on axioms: [propext, sorryAx, Classical.choice, Quot.sound]
+'MD.Ch07.threeStage' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch07.threeOperatorBCH' depends on axioms: [propext, sorryAx, Classical.choice, Quot.sound]
+'MD.Ch07.Density1' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch07.dq' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch07.dp' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch07.opA' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch07.opB' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch07.opO' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch07.opLD' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch07.opComm' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch07.commutatorAB' depends on axioms: [propext, sorryAx, Classical.choice, Quot.sound]
+'MD.Ch07.commutatorsAOBO' depends on axioms: [propext, sorryAx, Classical.choice, Quot.sound]
+'MD.Ch07.obaFirstCorrection' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch07.obaFirstCorrection_commutators' depends on axioms: [propext, sorryAx, Classical.choice, Quot.sound]
+'MD.Ch07.simpleEigenvalue' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch07.printedSpectralConclusion' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch07.spectralConclusionPrinted' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch07.spectralConclusionPrinted_corrected' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch07.actionCoefficient' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch07.perturbationCoefficientEquation' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch07.observableCorrectionExpansion' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch07.correctionSolvable' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch07.firstOrderOperator' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch07.firstOrderOperator_coefficient' depends on axioms: [propext, sorryAx, Classical.choice, Quot.sound]
+'MD.Ch07.correctionEquation' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch07.homogeneousNormalization' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch07.centeredParticular' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch07.commutatorPermutationRelations' depends on axioms: [propext, sorryAx, Classical.choice, Quot.sound]
+'MD.Ch07.mechanicalHamiltonian' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch07.gibbsWeight' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch07.gFunction' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch07.phaseO' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch07.phaseLD' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch07.gibbsDerivativeIdentities' depends on axioms: [propext, sorryAx, Classical.choice, Quot.sound]
+'MD.Ch07.firstCorrectionTablePrinted' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch07.firstCorrectionTablePrinted_corrected' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch07.firstCorrection_sign_counterexample' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch07.phaseComm' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch07.firstCorrectionRHS' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch07.firstCorrectionTable_pde' depends on axioms: [propext, sorryAx, Classical.choice, Quot.sound]
+'MD.Ch07.positionGibbs' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch07.momentumGibbs' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch07.productGibbs' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch07.positionMomentumCorrections' depends on axioms: [propext, sorryAx, Classical.choice, Quot.sound]
+'MD.Ch07.aoab' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch07.aoabInfiniteFriction' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch07.aoabFrictionLimit' depends on axioms: [propext, sorryAx, Classical.choice, Quot.sound]
+'MD.Ch07.biasedDoubleWell' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch07.doubleWellObservable' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch07.doubleWellGibbs' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch07.doubleWellBOACorrection' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch07.doubleWellExact' depends on axioms: [propext, sorryAx, Classical.choice, Quot.sound]
+'MD.Ch07.doubleWellCritical' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch07.doubleWellCritical_integral' depends on axioms: [propext, sorryAx, Classical.choice, Quot.sound]
+'MD.Ch07.proposition71' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch07.symmetricOddCorrections' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch07.evenDensityExpansion' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch07.evenPerturbationEquation' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch07.oyzyoInhomogeneity' depends on axioms: [propext, sorryAx, Classical.choice, Quot.sound]
+'MD.Ch07.hessianU' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch07.thirdU' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch07.hessianGrad' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch07.cubicThird' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch07.tripleCommutatorPrinted' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch07.tripleCommutatorPrinted_corrected' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch07.tripleCommutator_corrected' depends on axioms: [propext, sorryAx, Classical.choice, Quot.sound]
+'MD.Ch07.tripleCommutator_factor_counterexample' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch07.symmetricRHS' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch07.symmetricRHS_odd' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch07.symmetricRHS_zeroMean' depends on axioms: [propext, sorryAx, Classical.choice, Quot.sound]
+'MD.Ch07.lemma71' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch07.gradNormSq' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch07.hessianQuadratic' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch07.conjugateCorrectionChange' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch07.conjugateCorrections' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch07.conjugateCorrection_coefficient' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch07.conjugateExpansionPrinted' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch07.conjugateExpansionPrinted_corrected' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch07.phaseH' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch07.reciprocalHierarchy' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch07.ouKernelPrinted' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch07.ouKernelPrinted_corrected' depends on axioms: [propext, sorryAx, Classical.choice, Quot.sound]
+'MD.Ch07.ouKernelCentered_corrected' depends on axioms: [propext, sorryAx, Classical.choice, Quot.sound]
+'MD.Ch07.laplacian' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch07.pGradLaplacian' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch07.hermitePrimitive' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch07.ouHermiteIdentities' depends on axioms: [propext, sorryAx, Classical.choice, Quot.sound]
+'MD.Ch07.firstReciprocalCorrection' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch07.momentumAverage' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch07.momentumAveragePrinted_corrected' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch07.momentumAveragePrinted' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch07.firstReciprocalCorrection_pde' depends on axioms: [propext, sorryAx, Classical.choice, Quot.sound]
+'MD.Ch07.conjugatedPhaseH' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch07.jointGibbsQualification' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch07.overdampedM' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch07.overdampedN' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch07.highFrictionOABAO' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch07.overdampedSolvability_choice' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch07.highFrictionCorrection' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch07.doublyAsymptoticAverage' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch07.highFrictionCorrection_conjugacy' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch07.highFrictionMeanLaplacian' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch07.highFrictionCenteredQualification' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch07.baoabMarginalCancellation' depends on axioms: [propext, sorryAx, Classical.choice, Quot.sound]
+'MD.Ch07.baoabConfigurationalCancellation' depends on axioms: [propext, sorryAx, Classical.choice, Quot.sound]
+'MD.Ch07.oabaoPositionCancellation' depends on axioms: [propext, sorryAx, Classical.choice, Quot.sound]
+'MD.Ch07.superconvergence_fromBound' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch07.oabaoMomentumCancellation' depends on axioms: [propext, sorryAx, Classical.choice, Quot.sound]
+'MD.Ch07.redrawMomentum' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch07.redrawStep' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch07.momentumRedrawLimit' depends on axioms: [propext, sorryAx, Classical.choice, Quot.sound]
+'MD.Ch07.redrawMomentum_law' depends on axioms: [propext, sorryAx, Classical.choice, Quot.sound]
+'MD.Ch07.obaboInfinite' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch07.overdampedEulerH' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch07.overdampedEuler' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch07.obaboInfinite_position' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch07.overdampedEuler_rescale' depends on axioms: [propext, sorryAx, Classical.choice, Quot.sound]
+'MD.Ch07.baoabInfinite' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch07.lmStepH' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch07.lmStep' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch07.baoabInfinite_position' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch07.lmStepH_rescale' depends on axioms: [propext, sorryAx, Classical.choice, Quot.sound]
+'MD.Ch07.coloredNoise' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch07.coloredNoise_covariance' depends on axioms: [propext, sorryAx, Classical.choice, Quot.sound]
+'MD.Ch07.lmExtendedStep' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch07.lmExtendedKernel' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch07.lmExtendedChain' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch07.lmExtendedChain_markov' depends on axioms: [propext, sorryAx, Classical.choice, Quot.sound]
+'MD.Ch07.lmTransientErrorBound' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch07.limitAccuracyPrinted' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch07.limitAccuracyPrinted_corrected' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch07.limitAccuracy_rescale' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch07.limitAccuracyInfiniteTime_corrected' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch07.zeroFrictionOU' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch07.zeroFrictionBAOAB' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch07.kineticTemperatureObservable' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch07.configurationTemperatureObservable' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch07.kineticTemperature' depends on axioms: [propext, sorryAx, Classical.choice, Quot.sound]
+'MD.Ch07.configurationTemperature' depends on axioms: [propext, sorryAx, Classical.choice, Quot.sound]
+'MD.Ch07.velocityAutocorrelation' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch07.greenKuboDiffusion' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch07.autocorrelation_rescale' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch07.constraintJacobian' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch07.constraintReaction' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch07.hiddenConstraint' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch07.cotangentConstraint' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch07.constrainedLangevin' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch07.constrainedLangevin_corrected' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch07.constrainedCanonical' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch07.constrainedReference' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch07.constrainedErgodicAverages' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch07.constrainedCanonicalQualification' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch07.constrainedHField' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch07.constrainedOField' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch07.constrainedHOComposition' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch07.constrainedONoise' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch07.constrainedHIntegralStep' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch07.constrainedOIntegralStep' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch07.constrainedHMapQualification' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch07.constrainedOMapQualification' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch07.constrainedHOQualifiedComposition' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch07.midpointConstrainedORelation' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch07.constrainedVerletRelation' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch07.mevmeRelation' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch07.multiplierLinearSystem' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch07.midpointAmplification' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch07.midpointStabilityPrinted' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch07.midpointStabilityPrinted_corrected' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch07.midpointStability_counterexample' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch07.constrainedAField' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch07.constrainedBField' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch07.geodesicConstraintFlow' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch07.constrainedKickRelation' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch07.constrainedExactORelation' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch07.constrainedBAOABRelation' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch07.constrainedBAOAB_constraint' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch07.localMapErrorBound' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch07.geodesicReplacementSecondOrder' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch07.Mat2' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch07.fastPotential' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch07.slowPotential' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch07.fastMatrix' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch07.slowMatrix' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch07.fastLangevin' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch07.fastExponential' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch07.fastCovariance' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch07.exactFastGaussianLaw' depends on axioms: [propext, sorryAx, Classical.choice, Quot.sound]
+'MD.Ch07.multipleX' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch07.multipleY' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch07.multipleStep' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch07.multipleStep_composition' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch07.traceFormula' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch07.determinantTrace' depends on axioms: [propext, sorryAx, Classical.choice, Quot.sound]
+'MD.Ch07.characteristicUnitDisk' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch07.spectralRadiusStability' depends on axioms: [propext, sorryAx, Classical.choice, Quot.sound]
+'MD.Ch07.hyperbolicStability' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch07.multipleX_spectral_hyperbolic' depends on axioms: [propext, sorryAx, Classical.choice, Quot.sound]
+'MD.Ch07.hyperbolicPhase' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch07.hyperbolicPhase_identity' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch07.underdampedPhasePrinted' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch07.underdampedPhasePrinted_corrected' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch07.underdampedPhase_identity' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch07.stabilityEnvelope' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch07.stabilityEnvelope_sufficient' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch07.stabilityEnvelope_iff' depends on axioms: [propext, sorryAx, Classical.choice, Quot.sound]
+'MD.Ch07.frictionThresholdPrinted' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch07.frictionThresholdPrinted_corrected' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch07.frictionBoundPrinted' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch07.frictionBoundPrinted_corrected' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch07.frictionThreshold_rationalized' depends on axioms: [propext, sorryAx, Classical.choice, Quot.sound]
+'MD.Ch07.frictionThreshold_allSteps' depends on axioms: [propext, sorryAx, Classical.choice, Quot.sound]
+'MD.Ch07.frictionThreshold_asymptotic' depends on axioms: [propext, sorryAx, Classical.choice, Quot.sound]
+'MD.Ch07.frictionThreshold_squared_counterexample' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch07.configurationalSamplingAverage' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch07.configurationalSamplingQualified' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch07.energyConservingFlow' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch07.energySublevel_invariant' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MD.Ch07.energyObstructionQualified' depends on axioms: [propext, Classical.choice, Quot.sound]
+Unused tactic linter: `ring` does nothing
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+this tactic is never executed
+
+Note: This linter can be disabled with `set_option linter.unreachableTactic false`

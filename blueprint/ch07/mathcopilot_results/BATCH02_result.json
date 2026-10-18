@@ -1,0 +1,268 @@
+{
+  "batch": "BATCH02",
+  "chapter": "ch07",
+  "round": "first-merged",
+  "input_sha256": {
+    "Blueprint/Ch07.lean": "f30ea154ebfb07ae85c0b806ff74b35808d5a0c3dcaa647c0c3cc80a78239e37",
+    "blueprint/ch07/ch07_source.json": "c434892ebf63b06f7cadcdfa7af408c2c12d7b645d35db431d1855224163ba19"
+  },
+  "items": [
+    {
+      "source_id": "MD-7.2-StrongOrder",
+      "json_review": {
+        "status": "APPROVED",
+        "issue_codes": [],
+        "corrected_json": null,
+        "issues": [],
+        "evidence": [
+          {
+            "stage": "A",
+            "attachment": "R1_PAGES.pdf",
+            "attachment_pages": [
+              7
+            ],
+            "printed_page": "264",
+            "result": "已目视核对该页正文及公式；同版重复附件页的渲染图逐字节相同。未发现改变数学含义的转录差异。"
+          },
+          {
+            "stage": "C",
+            "result": "α,r>0，P为概率测度；对每个T>0存在正C和正N0，对所有N≥N0统一控制h=T/N的全部网格误差，并要求α次矩可积。C不依赖N，严格小于号保留。h=T/N的渐近量词及r>0均已明示，忠实于数值收敛阶的通常正阶范围。",
+            "scope": "仅核对任务摘录的完整签名及MD/MolecularDynamics定义体；不修改工程，不补证明，不将sorry视为签名错误。"
+          }
+        ]
+      },
+      "audit": {
+        "lean_decl": [
+          "MD.Ch07.hasStrongOrder"
+        ],
+        "verdict": "PASS",
+        "explanation": "α,r>0，P为概率测度；对每个T>0存在正C和正N0，对所有N≥N0统一控制h=T/N的全部网格误差，并要求α次矩可积。C不依赖N，严格小于号保留。h=T/N的渐近量词及r>0均已明示，忠实于数值收敛阶的通常正阶范围。",
+        "counterexample": null,
+        "suggested_fix": null
+      },
+      "subtask": "BATCH02a",
+      "input_sha256": {
+        "Blueprint/Ch07.lean": "f30ea154ebfb07ae85c0b806ff74b35808d5a0c3dcaa647c0c3cc80a78239e37",
+        "blueprint/ch07/ch07_source.json": "c434892ebf63b06f7cadcdfa7af408c2c12d7b645d35db431d1855224163ba19",
+        "BATCH02a_PAGES.pdf": "6d8948da11b9308a32874d56d153f6985a9d9311a40d9838a3f73002e37f8206"
+      }
+    },
+    {
+      "source_id": "MD-7.2-WeakError",
+      "json_review": {
+        "status": "APPROVED",
+        "issue_codes": [],
+        "corrected_json": null,
+        "issues": [],
+        "evidence": [
+          {
+            "stage": "A",
+            "attachment": "R1_PAGES.pdf",
+            "attachment_pages": [
+              8
+            ],
+            "printed_page": "265",
+            "result": "已目视核对该页正文及公式；同版重复附件页的渲染图逐字节相同。未发现改变数学含义的转录差异。"
+          },
+          {
+            "stage": "C",
+            "result": "weakError为0…N各期望差绝对值的最大值。hasWeakOrder先对测试函数再对T量化，再选择D,N0，故D可依赖f,T而不依赖N；每个测试函数两侧均要求可积。不是对整个无界函数类使用同一常数；此解释已显式披露。",
+            "scope": "仅核对任务摘录的完整签名及MD/MolecularDynamics定义体；不修改工程，不补证明，不将sorry视为签名错误。"
+          }
+        ]
+      },
+      "audit": {
+        "lean_decl": [
+          "MD.Ch07.weakError",
+          "MD.Ch07.hasWeakOrder"
+        ],
+        "verdict": "PASS",
+        "explanation": "weakError为0…N各期望差绝对值的最大值。hasWeakOrder先对测试函数再对T量化，再选择D,N0，故D可依赖f,T而不依赖N；每个测试函数两侧均要求可积。不是对整个无界函数类使用同一常数；此解释已显式披露。",
+        "counterexample": null,
+        "suggested_fix": null
+      },
+      "subtask": "BATCH02b",
+      "input_sha256": {
+        "Blueprint/Ch07.lean": "f30ea154ebfb07ae85c0b806ff74b35808d5a0c3dcaa647c0c3cc80a78239e37",
+        "blueprint/ch07/ch07_source.json": "c434892ebf63b06f7cadcdfa7af408c2c12d7b645d35db431d1855224163ba19",
+        "BATCH02b_PAGES.pdf": "41673794f46b570f2a804e69eb4b2d3cdba97f3522ef2694baa5826ade9ccf80"
+      }
+    },
+    {
+      "source_id": "MD-7.2-StrongWeakComparison",
+      "json_review": {
+        "status": "NEEDS_HUMAN",
+        "issue_codes": [
+          "SOURCE_CLAIM_REQUIRES_TEST_CLASS",
+          "DECLARED_COVERAGE_GAP"
+        ],
+        "corrected_json": null,
+        "issues": [
+          "原书“高强阶蕴含高弱阶”没有在该句指定测试函数正则性及矩条件；现有Lean只覆盖可积全局Lipschitz测试的一阶误差控制。"
+        ],
+        "evidence": [
+          {
+            "stage": "A",
+            "attachment": "R1_PAGES.pdf",
+            "attachment_pages": [
+              9
+            ],
+            "printed_page": "265",
+            "result": "已目视核对原页；原书“高强阶蕴含高弱阶”没有在该句指定测试函数正则性及矩条件；现有Lean只覆盖可积全局Lipschitz测试的一阶误差控制。"
+          },
+          {
+            "stage": "C",
+            "result": "正向strongWeakLipschitz的完整签名是L≥0、全局Lipschitz且f(X)、f(Y)、|X−Y|可积时的一阶绝对误差控制，不是原句对任意测试函数类、任意α的收敛阶结论。反向声明正确：等权±1、X=id、Y=−id使所有测试函数期望相等而E|X−Y|=2；它给出耦合层面的反例，未构造一个完整数值方法族。已披露覆盖缺口，但原书无条件措辞仍须人工限定。",
+            "scope": "仅核对任务摘录的完整签名及MD/MolecularDynamics定义体；不修改工程，不补证明，不将sorry视为签名错误。"
+          }
+        ]
+      },
+      "audit": {
+        "lean_decl": [
+          "MD.Ch07.strongWeakLipschitz",
+          "MD.Ch07.weakDoesNotImplyStrong"
+        ],
+        "verdict": "NEEDS_HUMAN",
+        "explanation": "正向strongWeakLipschitz的完整签名是L≥0、全局Lipschitz且f(X)、f(Y)、|X−Y|可积时的一阶绝对误差控制，不是原句对任意测试函数类、任意α的收敛阶结论。反向声明正确：等权±1、X=id、Y=−id使所有测试函数期望相等而E|X−Y|=2；它给出耦合层面的反例，未构造一个完整数值方法族。已披露覆盖缺口，但原书无条件措辞仍须人工限定。",
+        "counterexample": "若不限定测试类：在单点概率空间令X=0、X_h=h，L¹强误差为h；取φ(x)=sqrt(|x|)，弱误差为sqrt(h)，不保留阶1。反向反例见声明中的等权±1耦合，强误差为2而所有弱差为0。",
+        "suggested_fix": "保留原文；标注[ERRATUM?]测试类与矩条件待确认，并把正向Lean覆盖明确记为α=1的Lipschitz定量推论。"
+      },
+      "subtask": "BATCH02c",
+      "input_sha256": {
+        "Blueprint/Ch07.lean": "f30ea154ebfb07ae85c0b806ff74b35808d5a0c3dcaa647c0c3cc80a78239e37",
+        "blueprint/ch07/ch07_source.json": "c434892ebf63b06f7cadcdfa7af408c2c12d7b645d35db431d1855224163ba19",
+        "BATCH02c_PAGES.pdf": "6f07365a3ae2c645b96cc51be45eec40396eb32171041558bc5a3aa5ec3ff83c"
+      }
+    },
+    {
+      "source_id": "MD-7.2-CanonicalAverage",
+      "json_review": {
+        "status": "APPROVED",
+        "issue_codes": [],
+        "corrected_json": null,
+        "issues": [],
+        "evidence": [
+          {
+            "stage": "A",
+            "attachment": "R1_PAGES.pdf",
+            "attachment_pages": [
+              10
+            ],
+            "printed_page": "266",
+            "result": "已目视核对该页正文及公式；同版重复附件页的渲染图逐字节相同。未发现改变数学含义的转录差异。"
+          },
+          {
+            "stage": "C",
+            "result": "一般可测空间D和基准测度ν抽象了相空间及其积分域。densityWithPartition用Z⁻¹ exp(−βH)，canonicalAverage积分f乘密度；probabilityDensity另外检查非负、可积与归一化。Z被保持为显式参数，本条没有沿用下一条印刷错误推出归一化。",
+            "scope": "仅核对任务摘录的完整签名及MD/MolecularDynamics定义体；不修改工程，不补证明，不将sorry视为签名错误。"
+          }
+        ]
+      },
+      "audit": {
+        "lean_decl": [
+          "MD.Ch07.densityWithPartition",
+          "MD.Ch07.canonicalAverage",
+          "MD.Ch07.probabilityDensity"
+        ],
+        "verdict": "PASS",
+        "explanation": "一般可测空间D和基准测度ν抽象了相空间及其积分域。densityWithPartition用Z⁻¹ exp(−βH)，canonicalAverage积分f乘密度；probabilityDensity另外检查非负、可积与归一化。Z被保持为显式参数，本条没有沿用下一条印刷错误推出归一化。",
+        "counterexample": null,
+        "suggested_fix": null
+      },
+      "subtask": "BATCH02d",
+      "input_sha256": {
+        "Blueprint/Ch07.lean": "f30ea154ebfb07ae85c0b806ff74b35808d5a0c3dcaa647c0c3cc80a78239e37",
+        "blueprint/ch07/ch07_source.json": "c434892ebf63b06f7cadcdfa7af408c2c12d7b645d35db431d1855224163ba19",
+        "BATCH02d_PAGES.pdf": "1537c26c7933ab6446723bf457f96d6619c8103e2f3403567c20c1ee9ca26673"
+      }
+    },
+    {
+      "source_id": "MD-7.2-PartitionPrinted",
+      "json_review": {
+        "status": "NEEDS_HUMAN",
+        "issue_codes": [
+          "SOURCE_NORMALIZATION_ERRATUM"
+        ],
+        "corrected_json": null,
+        "issues": [
+          "原页确实印为Z_can^{-1}=积分；这是原书数学疑误，非转录错误。原文版忠实；修正版和代数反例正确，不能用修正版覆盖原文。"
+        ],
+        "evidence": [
+          {
+            "stage": "A",
+            "attachment": "R1_PAGES.pdf",
+            "attachment_pages": [
+              11
+            ],
+            "printed_page": "266",
+            "result": "已目视核对原页；原页确实印为Z_can^{-1}=积分；这是原书数学疑误，非转录错误。原文版忠实；修正版和代数反例正确，不能用修正版覆盖原文。"
+          },
+          {
+            "stage": "C",
+            "result": "partitionPrinted忠实保留Z⁻¹=配分积分及其归一化结论，应按Printed规则判断忠实性而非强求错误命题成立。该原书结论数学上错误，须人工确认。partitionPrinted_counterexample的1/4≠1正确但只是测度反例的代数核心；partitionPrinted_corrected用Z=配分积分并显式要求正性和可积性，其非负、可积、总质量1三项结论正确。",
+            "scope": "仅核对任务摘录的完整签名及MD/MolecularDynamics定义体；不修改工程，不补证明，不将sorry视为签名错误。"
+          }
+        ]
+      },
+      "audit": {
+        "lean_decl": [
+          "MD.Ch07.partitionPrinted",
+          "MD.Ch07.partitionPrinted_counterexample",
+          "MD.Ch07.partitionPrinted_corrected"
+        ],
+        "verdict": "NEEDS_HUMAN",
+        "explanation": "partitionPrinted忠实保留Z⁻¹=配分积分及其归一化结论，应按Printed规则判断忠实性而非强求错误命题成立。该原书结论数学上错误，须人工确认。partitionPrinted_counterexample的1/4≠1正确但只是测度反例的代数核心；partitionPrinted_corrected用Z=配分积分并显式要求正性和可积性，其非负、可积、总质量1三项结论正确。",
+        "counterexample": "D为单点，ν(D)=1/2，H=0、Z=2，配分积分=1/2=Z⁻¹；密度总积分=(1/2)(1/2)=1/4≠1。",
+        "suggested_fix": "保留Printed版并标[ERRATUM?]；修正版取Z_can=配分积分，附正性及可积性。"
+      },
+      "subtask": "BATCH02e",
+      "input_sha256": {
+        "Blueprint/Ch07.lean": "f30ea154ebfb07ae85c0b806ff74b35808d5a0c3dcaa647c0c3cc80a78239e37",
+        "blueprint/ch07/ch07_source.json": "c434892ebf63b06f7cadcdfa7af408c2c12d7b645d35db431d1855224163ba19",
+        "BATCH02e_PAGES.pdf": "7cab8edb14f362fb61bd8ecee370df37136908c2596a69481446e4af006c549e"
+      }
+    },
+    {
+      "source_id": "MD-7.2-AverageNotationBias",
+      "json_review": {
+        "status": "APPROVED",
+        "issue_codes": [],
+        "corrected_json": null,
+        "issues": [],
+        "evidence": [
+          {
+            "stage": "A",
+            "attachment": "R1_PAGES.pdf",
+            "attachment_pages": [
+              12
+            ],
+            "printed_page": "266",
+            "result": "已目视核对该页正文及公式；同版重复附件页的渲染图逐字节相同。未发现改变数学含义的转录差异。"
+          },
+          {
+            "stage": "C",
+            "result": "observableBias把精确canonicalAverage与computed作绝对差，bias_nonnegative对全部实参数成立。computed按明示约定代表步长h的完美采样平均；没有将有限样本统计误差合入。h没有独立参数是因为已被computed吸收，未声称已构造长期平均。",
+            "scope": "仅核对任务摘录的完整签名及MD/MolecularDynamics定义体；不修改工程，不补证明，不将sorry视为签名错误。"
+          }
+        ]
+      },
+      "audit": {
+        "lean_decl": [
+          "MD.Ch07.observableBias",
+          "MD.Ch07.bias_nonnegative"
+        ],
+        "verdict": "PASS",
+        "explanation": "observableBias把精确canonicalAverage与computed作绝对差，bias_nonnegative对全部实参数成立。computed按明示约定代表步长h的完美采样平均；没有将有限样本统计误差合入。h没有独立参数是因为已被computed吸收，未声称已构造长期平均。",
+        "counterexample": null,
+        "suggested_fix": null
+      },
+      "subtask": "BATCH02f",
+      "input_sha256": {
+        "Blueprint/Ch07.lean": "f30ea154ebfb07ae85c0b806ff74b35808d5a0c3dcaa647c0c3cc80a78239e37",
+        "blueprint/ch07/ch07_source.json": "c434892ebf63b06f7cadcdfa7af408c2c12d7b645d35db431d1855224163ba19",
+        "BATCH02f_PAGES.pdf": "fd3ff6a6c8a445f56136ac9899d96d93475be961ff5722c1a3cfeef37666d624"
+      }
+    }
+  ],
+  "merged_from": "ch07_first_merged"
+}

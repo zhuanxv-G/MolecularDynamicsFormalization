@@ -1,0 +1,94 @@
+{
+  "batch": "EAUDIT03",
+  "subtask": "EAUDIT03b",
+  "source_ids": [
+    "MD-7.6-CoordinateJSplitting"
+  ],
+  "input_sha256": {
+    "Blueprint/Ch07.lean": "f3bc0ee86ace9c825028f0cec8ebb2fb410d6be77213cc7fb41cb8889540a000",
+    "blueprint/ch07/ch07_source.json": "1a201887b51a249fb73f456237cb342963c5d98c612ec1912f21572a57924012",
+    "PAGES.pdf": "3a641080bc59f0c9acc572f0fb50c4db054b477ad833542e319d2df96e19b950"
+  },
+  "page_mapping": [
+    {
+      "attachment_page": 1,
+      "original_pdf_page": 304,
+      "printed_page": 283
+    }
+  ],
+  "definition_excerpts": [
+    {
+      "full_name": "MD.Ch07.V",
+      "kind": "abbrev",
+      "path": "Blueprint/Ch07.lean",
+      "line": 202,
+      "code_sha256": "7ab0ad90462b274b03f5b929b5f09417c0b397b6cb908fa6e7bd56677a314027"
+    },
+    {
+      "full_name": "MD.Ch07.Phase",
+      "kind": "abbrev",
+      "path": "Blueprint/Ch07.lean",
+      "line": 203,
+      "code_sha256": "ef1520e3b22ac1c99a30a989deafe8d3da44a9f2a3e5b6c2cd3220218b88513e"
+    },
+    {
+      "full_name": "MD.Ch07.coordDerivative",
+      "kind": "def",
+      "path": "Blueprint/Ch07.lean",
+      "line": 257,
+      "code_sha256": "e782d789a13f5db6817e2c995f141805e81ac75720125b846f8ee14ba3833a4b"
+    },
+    {
+      "full_name": "MD.Ch07.gradient",
+      "kind": "def",
+      "path": "Blueprint/Ch07.lean",
+      "line": 288,
+      "code_sha256": "540c6af25c09d3a58da531bc32056ff1a1c070facc58d34c96b6653d781fba6f"
+    },
+    {
+      "full_name": "MD.Ch07.coordinateJField",
+      "kind": "def",
+      "path": "Blueprint/Ch07.lean",
+      "line": 831,
+      "code_sha256": "17bd78a11691b3e0f7e77739e73a498441e118eb4de9c2bb7f774ac79ec5c600"
+    },
+    {
+      "full_name": "MD.Ch07.frozenPotential",
+      "kind": "def",
+      "path": "Blueprint/Ch07.lean",
+      "line": 834,
+      "code_sha256": "47ed6678ccadf1dc94c623d03ca0c8c25273a37ade9821eb33c7935e0887da00"
+    },
+    {
+      "full_name": "MD.Ch07.coordinateJQualification",
+      "kind": "def",
+      "path": "Blueprint/Ch07.lean",
+      "line": 837,
+      "code_sha256": "2a1f5ed4ae665fea922b9178271a220d5c7e6078bedb700a4ea1adb806244f97"
+    },
+    {
+      "full_name": "MD.Ch07.frozenPotential_deriv",
+      "kind": "theorem",
+      "path": "Blueprint/Ch07.lean",
+      "line": 840,
+      "code_sha256": "4eee067bf10ec0c12cab323a17e3ac111b9a4b1f9a7bce48938d514aff6f4dd4"
+    }
+  ],
+  "validation": {
+    "project_constant_closure": "PASS",
+    "missing_project_definitions": [],
+    "full_page_render_equality_dpi": 72,
+    "website_submitted": false
+  },
+  "files": {
+    "PASTE.txt": {
+      "bytes": 10948,
+      "sha256": "d41c7263f504a60744abebec0efe16417c0d7c27f49f46a1457f2b115c0d61ea"
+    },
+    "PAGES.pdf": {
+      "bytes": 76880,
+      "sha256": "3a641080bc59f0c9acc572f0fb50c4db054b477ad833542e319d2df96e19b950"
+    }
+  },
+  "total_task_bytes": 90765
+}

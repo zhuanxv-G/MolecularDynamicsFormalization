@@ -1,0 +1,115 @@
+{
+  "batch": "EAUDIT10",
+  "subtask": "EAUDIT10b",
+  "source_ids": [
+    "MD-7.10-ColoredNoiseAndExtension"
+  ],
+  "input_sha256": {
+    "Blueprint/Ch07.lean": "f3bc0ee86ace9c825028f0cec8ebb2fb410d6be77213cc7fb41cb8889540a000",
+    "blueprint/ch07/ch07_source.json": "1a201887b51a249fb73f456237cb342963c5d98c612ec1912f21572a57924012",
+    "PAGES.pdf": "e3877b76220ea59e02c54a3df054e8de8a227b44dce3201f28b906d3ee4fe7fc"
+  },
+  "page_mapping": [
+    {
+      "attachment_page": 1,
+      "original_pdf_page": 329,
+      "printed_page": 308
+    }
+  ],
+  "definition_excerpts": [
+    {
+      "full_name": "MD.Ch07.V",
+      "kind": "abbrev",
+      "path": "Blueprint/Ch07.lean",
+      "line": 202,
+      "code_sha256": "7ab0ad90462b274b03f5b929b5f09417c0b397b6cb908fa6e7bd56677a314027"
+    },
+    {
+      "full_name": "MD.Ch07.vectorNormalSequence",
+      "kind": "def",
+      "path": "Blueprint/Ch07.lean",
+      "line": 249,
+      "code_sha256": "e59c2576bf4e07eb9914c2a94f2ace591a6a39d4f4841df27c9e4fcd41169a5e"
+    },
+    {
+      "full_name": "MD.Ch07.coordDerivative",
+      "kind": "def",
+      "path": "Blueprint/Ch07.lean",
+      "line": 257,
+      "code_sha256": "e782d789a13f5db6817e2c995f141805e81ac75720125b846f8ee14ba3833a4b"
+    },
+    {
+      "full_name": "MD.Ch07.gradient",
+      "kind": "def",
+      "path": "Blueprint/Ch07.lean",
+      "line": 288,
+      "code_sha256": "540c6af25c09d3a58da531bc32056ff1a1c070facc58d34c96b6653d781fba6f"
+    },
+    {
+      "full_name": "MD.Ch07.lmStep",
+      "kind": "def",
+      "path": "Blueprint/Ch07.lean",
+      "line": 1560,
+      "code_sha256": "ab7623c00b633a7e810ae93208fd469c71ad2d6a430419933d03204097920b45"
+    },
+    {
+      "full_name": "MD.Ch07.coloredNoise",
+      "kind": "def",
+      "path": "Blueprint/Ch07.lean",
+      "line": 1579,
+      "code_sha256": "98e2234b5df6524972003467adc0b6362a50ecf15fdbfd3f15755a70443c5436"
+    },
+    {
+      "full_name": "MD.Ch07.coloredNoise_covariance",
+      "kind": "theorem",
+      "path": "Blueprint/Ch07.lean",
+      "line": 1580,
+      "code_sha256": "cee29b15ec9c708a4da8de813a60e82396f8fc9d198b88fef9510525ad64806e"
+    },
+    {
+      "full_name": "MD.Ch07.lmExtendedStep",
+      "kind": "def",
+      "path": "Blueprint/Ch07.lean",
+      "line": 1585,
+      "code_sha256": "396001db4c1ae33c9fe71d726a6e9798c7257ca53f42c6b8c6a807e962efead1"
+    },
+    {
+      "full_name": "MD.Ch07.lmExtendedKernel",
+      "kind": "def",
+      "path": "Blueprint/Ch07.lean",
+      "line": 1588,
+      "code_sha256": "cfa508776691cb62a216e69d5a33823af71f766a1ef3815f439c987ad9d3a13a"
+    },
+    {
+      "full_name": "MD.Ch07.lmExtendedChain",
+      "kind": "def",
+      "path": "Blueprint/Ch07.lean",
+      "line": 1594,
+      "code_sha256": "baaf323c9fa22a71faf7e44518edecf446395f6eb1c8f2f94d03582b3cba3036"
+    },
+    {
+      "full_name": "MD.Ch07.lmExtendedChain_markov",
+      "kind": "theorem",
+      "path": "Blueprint/Ch07.lean",
+      "line": 1601,
+      "code_sha256": "dc9a28b892371cec70bb25109d4f7ed972022548429622c0e891053d956e1095"
+    }
+  ],
+  "validation": {
+    "project_constant_closure": "PASS",
+    "missing_project_definitions": [],
+    "full_page_render_equality_dpi": 72,
+    "website_submitted": false
+  },
+  "files": {
+    "PASTE.txt": {
+      "bytes": 15785,
+      "sha256": "8b27799a3394c71dec864384e734f13cd5bc5cc6b053eb046dd738126e61d02b"
+    },
+    "PAGES.pdf": {
+      "bytes": 88408,
+      "sha256": "e3877b76220ea59e02c54a3df054e8de8a227b44dce3201f28b906d3ee4fe7fc"
+    }
+  },
+  "total_task_bytes": 107839
+}

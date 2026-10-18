@@ -1,0 +1,8 @@
+{
+  "source_id": "MD-7.9.2-OUKernelQualification",
+  "signature_changed": true,
+  "scope": "原印裸前向OU核为常数的错误命题保留；修正版为Gibbs共轭及动量Gaussian L²中的核刻画，中心化推论另加概率及零均值。",
+  "diff": "--- \n+++ \n@@ -5,4 +5,15 @@\n     (hL2 : ∀ q, MemLp (fun p ↦ f (q,p)) 2 (momentumGibbs (fun _ ↦ 1) β))\n     (hzero : phaseO (fun _ ↦ 1) 1 β (gibbsWeight (fun _ ↦ 1) U β*f) = 0) :\n     ∃ ν : V n → ℝ, ∀ q p, f (q,p) = ν q := by\n+  sorry\n+\n+theorem ouKernelCentered_corrected (U : V n → ℝ) (β : ℝ) (f : Phase n → ℝ)\n+    (hβ : 0 < β) (hf : ContDiff ℝ ⊤ f)\n+    (hprob : IsProbabilityMeasure (positionGibbs U β))\n+    (hi : Integrable f (productGibbs (fun _ ↦ 1) U β))\n+    (hL2 : ∀ q, MemLp (fun p ↦ f (q,p)) 2 (momentumGibbs (fun _ ↦ 1) β))\n+    (hzero : phaseO (fun _ ↦ 1) 1 β (gibbsWeight (fun _ ↦ 1) U β*f) = 0)\n+    (hmean : ∫ x, f x ∂productGibbs (fun _ ↦ 1) U β = 0) :\n+    ∃ ν : V n → ℝ, (∀ q p, f (q,p)=ν q) ∧\n+      Integrable ν (positionGibbs U β) ∧ (∫ q, ν q ∂positionGibbs U β)=0 := by\n   sorry",
+  "printed_version": "原书表述保留；公式类已目视核对原页",
+  "corrected_version": "见独立_corrected或限定目标；不将较弱目标称为完整修正"
+}

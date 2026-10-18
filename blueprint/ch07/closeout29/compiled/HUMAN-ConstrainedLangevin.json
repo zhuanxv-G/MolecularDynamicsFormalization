@@ -1,0 +1,73 @@
+{
+  "command": [
+    "lake",
+    "--no-cache",
+    "env",
+    "lean",
+    "--server"
+  ],
+  "mode": "official Lean compiler single-file LSP elaboration",
+  "exit_code": 1,
+  "input_sha256": "94db8058e09c7db786f75d7d4f42e11fbf74a84dc6fbc87a41ada5fc42d94b72",
+  "log_sha256": "9542cf8ea9ccd0d006c3fc389f88eb60a7f59cce67bd401c24bcd8c90c86b5f5",
+  "version": 6,
+  "uri": "file:///C:/Users/ustc/Desktop/formal%20math/MolecularDynamicsFormalization/blueprint/ch07/closeout29/ActiveCheck.lean",
+  "elapsed_seconds": 5.280672073364258,
+  "errors": [
+    {
+      "fullRange": {
+        "end": {
+          "character": 6,
+          "line": 1603
+        },
+        "start": {
+          "character": 5,
+          "line": 1603
+        }
+      },
+      "message": "unexpected token 'Π'; expected '_' or identifier",
+      "range": {
+        "end": {
+          "character": 6,
+          "line": 1603
+        },
+        "start": {
+          "character": 5,
+          "line": 1603
+        }
+      },
+      "severity": 1,
+      "source": "Lean 4"
+    },
+    {
+      "code": "lean.unknownIdentifier",
+      "fullRange": {
+        "end": {
+          "character": 51,
+          "line": 2220
+        },
+        "start": {
+          "character": 14,
+          "line": 2220
+        }
+      },
+      "message": "Unknown constant `MD.Ch07.constrainedLangevin_corrected`",
+      "range": {
+        "end": {
+          "character": 51,
+          "line": 2220
+        },
+        "start": {
+          "character": 14,
+          "line": 2220
+        }
+      },
+      "severity": 1,
+      "source": "Lean 4"
+    }
+  ],
+  "missing_axiom_outputs": [
+    "MD.Ch07.constrainedLangevin_corrected"
+  ],
+  "canonical_sha256": "618db9f9ddfc276d546868cfcc0aa29b70197fdbfbbbe9ef4a3486143632cbf6"
+}

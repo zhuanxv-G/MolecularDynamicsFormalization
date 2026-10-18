@@ -1,0 +1,12 @@
+--- 
++++ 
+@@ -10,4 +10,9 @@
+ def constrainedErgodicAverages (P : Measure Ω) (X : ℝ → Ω → Phase n) (μ : Measure (Phase n)) : Prop :=
+   IsProbabilityMeasure P ∧ IsProbabilityMeasure μ ∧
+   ∀ φ : Phase n → ℝ, Integrable φ μ →
+-    ∀ᵐ sample ∂P, Filter.Tendsto (fun T : ℝ ↦ T⁻¹*∫ t in (0 : ℝ)..T, φ (X t sample)) Filter.atTop (𝓝 (∫ x, φ x ∂μ))+    ∀ᵐ sample ∂P, Filter.Tendsto (fun T : ℝ ↦ T⁻¹*∫ t in (0 : ℝ)..T, φ (X t sample)) Filter.atTop (𝓝 (∫ x, φ x ∂μ))
++
++def constrainedCanonicalQualification {l : ℕ} (ν : Measure (Phase n))
++    (m : V n) (g : V n → V l) (U : V n → ℝ) (β : ℝ) : Prop :=
++  (∀ i, 0 < m i) ∧ 0 < β ∧ ContDiff ℝ 2 g ∧ constrainedReference ν m g ∧
++  Integrable (gibbsWeight m U β) ν ∧ (0 < ∫ x, gibbsWeight m U β x ∂ν)

@@ -1,0 +1,26 @@
+{
+  "batch": "EAUDIT02",
+  "subtasks": [
+    {
+      "subtask": "EAUDIT02a",
+      "source_id": "MD-7.4.1-NonsymmetricExactMoments",
+      "path": "blueprint/ch07/mathcopilot_tasks/EAUDIT02/a",
+      "bytes": 106268,
+      "manifest_sha256": "ac5b7f7c409df05b9f63da3480068b65c03ea7c3ca72acaada8c284421696dd0"
+    },
+    {
+      "subtask": "EAUDIT02b",
+      "source_id": "MD-7.6-GibbsComposition",
+      "path": "blueprint/ch07/mathcopilot_tasks/EAUDIT02/b",
+      "bytes": 83993,
+      "manifest_sha256": "a8b39fe473c060ec15ac270a22b20fed3120a4ad1d2f9d00ee962824cb5467f2"
+    },
+    {
+      "subtask": "EAUDIT02c",
+      "source_id": "MD-7.6-DivergenceFreeInvariant",
+      "path": "blueprint/ch07/mathcopilot_tasks/EAUDIT02/c",
+      "bytes": 87215,
+      "manifest_sha256": "605f8ce3797aa65e602a3e6683c1f98182027fb71af2324eee8c81b0e890e8c6"
+    }
+  ]
+}

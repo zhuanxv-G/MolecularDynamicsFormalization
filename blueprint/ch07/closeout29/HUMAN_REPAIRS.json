@@ -1,0 +1,194 @@
+[
+  {
+    "source_id": "MD-7.2-StrongWeakComparison",
+    "signature_changed": false,
+    "scope": "仅覆盖α=1、Lipschitz测试类且有相应矩条件的定量蕴涵；一般强弱阶关系需测试类与矩条件，原书措辞待裁定。",
+    "diff": "",
+    "printed_version": "原书表述保留；公式类已目视核对原页",
+    "corrected_version": "见独立_corrected或限定目标；不将较弱目标称为完整修正"
+  },
+  {
+    "source_id": "MD-7.2-PartitionPrinted",
+    "signature_changed": false,
+    "scope": "原文Z⁻¹与配分积分的字面断言及反例独立保留；修正版取Z为积分且正有限，已证概率密度归一化。",
+    "diff": "",
+    "printed_version": "原书表述保留；公式类已目视核对原页",
+    "corrected_version": "见独立_corrected或限定目标；不将较弱目标称为完整修正"
+  },
+  {
+    "source_id": "MD-7.3-OUExactUpdate",
+    "signature_changed": false,
+    "scope": "只覆盖正确(7.3)和转移随机表示；原页前导乘数exp(−γt)应为exp(−γ(t+h))，文字笔误不影响(7.3)。",
+    "diff": "",
+    "printed_version": "原书表述保留；公式类已目视核对原页",
+    "corrected_version": "见独立_corrected或限定目标；不将较弱目标称为完整修正"
+  },
+  {
+    "source_id": "MD-7.3.2-SPVPrinted",
+    "signature_changed": true,
+    "scope": "Printed保留原页q_n力，候选修正版使用qhalf；总化函数需在正质量、γ>0、θ>0、h≥0下解释为物理单步，未覆盖γ=0延拓。",
+    "diff": "--- \n+++ \n@@ -6,4 +6,8 @@\n def spvPrinted_corrected (m : V n) (U : V n → ℝ) (γ θ h : ℝ) (R : V n) (x : Phase n) : Phase n :=\n   let qhalf := (driftStep m (h/2) x).1\n   let pnew := fun i ↦ ouMomentum m γ θ h x.2 R i - (1-Real.exp (-h*γ))/γ * gradient U qhalf i\n-  driftStep m (h/2) (qhalf,pnew)+  driftStep m (h/2) (qhalf,pnew)\n+\n+/-- 两个总化映射的物理适用域；γ=0另需定义η=h，此处不含该延拓。 -/\n+def spvQualification (m : V n) (γ θ h : ℝ) : Prop :=\n+  (∀ i, 0 < m i) ∧ 0 < γ ∧ 0 < θ ∧ 0 ≤ h\n",
+    "printed_version": "原书表述保留；公式类已目视核对原页",
+    "corrected_version": "见独立_corrected或限定目标；不将较弱目标称为完整修正"
+  },
+  {
+    "source_id": "MD-7.3.2-SPVLargeFriction",
+    "signature_changed": false,
+    "scope": "固定h的大摩擦单步极限及相应代数关系；未声称联合h/γ极限的一致性或完整采样不一致性。",
+    "diff": "",
+    "printed_version": "原书表述保留；公式类已目视核对原页",
+    "corrected_version": "见独立_corrected或限定目标；不将较弱目标称为完整修正"
+  },
+  {
+    "source_id": "MD-7.4.2-BBKStarMomentSystemPrinted",
+    "signature_changed": false,
+    "scope": "保留三条原印矩方程及修正系数；原页混合矩重复ψ因子已目视确认，未从相关噪声过程重新证明整组矩方程。",
+    "diff": "",
+    "printed_version": "原书表述保留；公式类已目视核对原页",
+    "corrected_version": "见独立_corrected或限定目标；不将较弱目标称为完整修正"
+  },
+  {
+    "source_id": "MD-7.5-PerturbedErrorExpansion",
+    "signature_changed": false,
+    "scope": "(7.14)作为待证严格双参数渐近目标；不变测度选择、矩与统一余项资格不足，原书此处是形式展开而非已证严格估计。",
+    "diff": "",
+    "printed_version": "原书表述保留；公式类已目视核对原页",
+    "corrected_version": "见独立_corrected或限定目标；不将较弱目标称为完整修正"
+  },
+  {
+    "source_id": "MD-7.5-PerturbedErrorOrders",
+    "signature_changed": false,
+    "scope": "固定γ>0时(7.14)的余项足以推出(7.15)阶；γ一致常数或整个误差在γ→∞消失另需控制ε³h²项，不将固定γ和一致γ结论混淆。",
+    "diff": "",
+    "printed_version": "原书表述保留；公式类已目视核对原页",
+    "corrected_version": "见独立_corrected或限定目标；不将较弱目标称为完整修正"
+  },
+  {
+    "source_id": "MD-7.6-GeMarsdenRestriction",
+    "signature_changed": false,
+    "scope": "只定义全部光滑第一积分全局依赖H、任意时间重参数和辛保能蕴涵目标；未连结精确哈密顿流、非退化时间变换及定理适用域，未声明Ge–Marsden定理已形式化。",
+    "diff": "",
+    "printed_version": "原书表述保留；公式类已目视核对原页",
+    "corrected_version": "见独立_corrected或限定目标；不将较弱目标称为完整修正"
+  },
+  {
+    "source_id": "MD-7.7.1-StationaryModifiedPDE",
+    "signature_changed": false,
+    "scope": "仅有界连续线性算子的全实时间演化目标、代数算子的核目标；二者未识别，也非实际Langevin无界生成元或离散嵌入定理。",
+    "diff": "",
+    "printed_version": "原书表述保留；公式类已目视核对原页",
+    "corrected_version": "见独立_corrected或限定目标；不将较弱目标称为完整修正"
+  },
+  {
+    "source_id": "MD-7.7.2-SpectralQualification",
+    "signature_changed": true,
+    "scope": "Printed的simpleEigenvalue仅几何单重；修正版是较弱点谱目标并补零核方向唯一，不含完整谱、孤立性或有限代数重数，绝非紧预解式谱定理。",
+    "diff": "--- \n+++ \n@@ -10,5 +10,7 @@\n \n def spectralConclusionPrinted_corrected {E : Type*} [AddCommGroup E] [Module ℂ E]\n     (L : Module.End ℂ E) (ρ : E) : Prop :=\n-  ρ ≠ 0 ∧ L ρ = 0 ∧ ∀ eigen : ℂ, (∃ v : E, v ≠ 0 ∧ L v = eigen • v) →\n+  ρ ≠ 0 ∧ L ρ = 0 ∧\n+  (∀ v : E, L v = 0 → v ∈ Submodule.span ℂ ({ρ} : Set E)) ∧\n+  ∀ eigen : ℂ, (∃ v : E, v ≠ 0 ∧ L v = eigen • v) →\n     FiniteDimensional ℂ (Module.End.eigenspace L eigen) ∧ (eigen = 0 ∨ eigen.re < 0)",
+    "printed_version": "原书表述保留；公式类已目视核对原页",
+    "corrected_version": "见独立_corrected或限定目标；不将较弱目标称为完整修正"
+  },
+  {
+    "source_id": "MD-7.7.3-PerturbativeSolvabilityCaution",
+    "signature_changed": false,
+    "scope": "仅rhs属于线性映射值域的目标定义；没有ρf结构、零质量相容性、闭生成元域或半群/谱隙，原文预期不作定理。",
+    "diff": "",
+    "printed_version": "原书表述保留；公式类已目视核对原页",
+    "corrected_version": "见独立_corrected或限定目标；不将较弱目标称为完整修正"
+  },
+  {
+    "source_id": "MD-7.9.1-TripleCommutatorPrinted",
+    "signature_changed": false,
+    "scope": "字面式忠实保留缺β；单位质量修正版和实际双交换子恒等式独立，数值系数反例只是代数反例，网站给四次势的数学反例另记。",
+    "diff": "",
+    "printed_version": "原书表述保留；公式类已目视核对原页",
+    "corrected_version": "见独立_corrected或限定目标；不将较弱目标称为完整修正"
+  },
+  {
+    "source_id": "MD-7.9.1-ConjugateSymmetricCorrections",
+    "signature_changed": false,
+    "scope": "两条候选修正函数关系、给定二阶传递系数后的代数消项、原印展开及二阶截断修正版；不含真实分裂不变分布传递、L1ρ或实际误差系数识别。",
+    "diff": "",
+    "printed_version": "原书表述保留；公式类已目视核对原页",
+    "corrected_version": "见独立_corrected或限定目标；不将较弱目标称为完整修正"
+  },
+  {
+    "source_id": "MD-7.9.2-OUKernelQualification",
+    "signature_changed": true,
+    "scope": "原印裸前向OU核为常数的错误命题保留；修正版为Gibbs共轭及动量Gaussian L²中的核刻画，中心化推论另加概率及零均值。",
+    "diff": "--- \n+++ \n@@ -5,4 +5,15 @@\n     (hL2 : ∀ q, MemLp (fun p ↦ f (q,p)) 2 (momentumGibbs (fun _ ↦ 1) β))\n     (hzero : phaseO (fun _ ↦ 1) 1 β (gibbsWeight (fun _ ↦ 1) U β*f) = 0) :\n     ∃ ν : V n → ℝ, ∀ q p, f (q,p) = ν q := by\n+  sorry\n+\n+theorem ouKernelCentered_corrected (U : V n → ℝ) (β : ℝ) (f : Phase n → ℝ)\n+    (hβ : 0 < β) (hf : ContDiff ℝ ⊤ f)\n+    (hprob : IsProbabilityMeasure (positionGibbs U β))\n+    (hi : Integrable f (productGibbs (fun _ ↦ 1) U β))\n+    (hL2 : ∀ q, MemLp (fun p ↦ f (q,p)) 2 (momentumGibbs (fun _ ↦ 1) β))\n+    (hzero : phaseO (fun _ ↦ 1) 1 β (gibbsWeight (fun _ ↦ 1) U β*f) = 0)\n+    (hmean : ∫ x, f x ∂productGibbs (fun _ ↦ 1) U β = 0) :\n+    ∃ ν : V n → ℝ, (∀ q p, f (q,p)=ν q) ∧\n+      Integrable ν (positionGibbs U β) ∧ (∫ q, ν q ∂positionGibbs U β)=0 := by\n   sorry",
+    "printed_version": "原书表述保留；公式类已目视核对原页",
+    "corrected_version": "见独立_corrected或限定目标；不将较弱目标称为完整修正"
+  },
+  {
+    "source_id": "MD-7.9.2-FirstReciprocalCorrection",
+    "signature_changed": true,
+    "scope": "一阶候选及PDE、条件Gaussian平均和原印联合归一密度的动量积分；二者不是同一算子；f2,2、(7.35)/(7.36)通量与可解性未覆盖。",
+    "diff": "--- \n+++ \n@@ -6,10 +6,18 @@\n   momentumAverage β f q\n \n def momentumAveragePrinted (U : V n → ℝ) (β : ℝ) (f : Phase n → ℝ) (q : V n) : ℝ :=\n-  ∫ p, f (q,p)*gibbsWeight (fun _ ↦ 1) U β (q,p)\n+  ∫ p, f (q,p)*(gibbsWeight (fun _ ↦ 1) U β (q,p)/\n+    (∫ x : Phase n, gibbsWeight (fun _ ↦ 1) U β x))\n theorem firstReciprocalCorrection_pde (U ν μ : V n → ℝ) (β : ℝ) (hβ : 0 < β)\n     (hU : ContDiff ℝ ⊤ U) (hν : ContDiff ℝ ⊤ ν) :\n     let ρ := gibbsWeight (fun _ ↦ 1) U β\n     phaseO (fun _ ↦ 1) 1 β (ρ*firstReciprocalCorrection U ν μ β)+\n       phaseH U (fun x ↦ ρ x*ν x.1) = (fun x ↦ symmetricRHS false U β x*ρ x) := by\n-  sorry+  sorry\n+\n+def conjugatedPhaseH (U : V n → ℝ) (β : ℝ) (f : Phase n → ℝ) (x : Phase n) : ℝ :=\n+  phaseH U (gibbsWeight (fun _ ↦ 1) U β*f) x/gibbsWeight (fun _ ↦ 1) U β x\n+\n+def jointGibbsQualification (U : V n → ℝ) (β : ℝ) : Prop :=\n+  0 < β ∧ Integrable (gibbsWeight (fun _ ↦ 1) U β) volume ∧\n+  0 < ∫ x : Phase n, gibbsWeight (fun _ ↦ 1) U β x\n",
+    "printed_version": "原书表述保留；公式类已目视核对原页",
+    "corrected_version": "见独立_corrected或限定目标；不将较弱目标称为完整修正"
+  },
+  {
+    "source_id": "MD-7.9.2-OverdampedSolvabilityOperators",
+    "signature_changed": false,
+    "scope": "M/N和候选函数定义以及β≠0下代数改写；Gibbs共轭与裸前向算子区分，未含平均识别、相容性、核唯一或零均值结论。",
+    "diff": "",
+    "printed_version": "原书表述保留；公式类已目视核对原页",
+    "corrected_version": "见独立_corrected或限定目标；不将较弱目标称为完整修正"
+  },
+  {
+    "source_id": "MD-7.10-LimitMethodAccuracy",
+    "signature_changed": true,
+    "scope": "瞬态界只是量化目标；h⁴修正版明确指先T→∞所得误差，固定有限T仍可能仅h²；实际LM误差及其满足界的定理未覆盖。",
+    "diff": "--- \n+++ \n@@ -7,4 +7,8 @@\n def limitAccuracyPrinted_corrected (error : ℝ → ℝ) : Prop :=\n   Asymptotics.IsBigO (𝓝[Set.Ioi (0 : ℝ)] 0) error (fun h ↦ h^4)\n \n-theorem limitAccuracy_rescale (h : ℝ) : (h^2/2)^2 = h^4/4 := by ring+theorem limitAccuracy_rescale (h : ℝ) : (h^2/2)^2 = h^4/4 := by ring\n+\n+def limitAccuracyInfiniteTime_corrected (error : ℝ → ℝ → ℝ) (longtime : ℝ → ℝ) : Prop :=\n+  (∀ h, 0 < h → Tendsto (fun T ↦ error (h^2/2) T) atTop (𝓝 (longtime h))) ∧\n+  limitAccuracyPrinted_corrected longtime\n",
+    "printed_version": "原书表述保留；公式类已目视核对原页",
+    "corrected_version": "见独立_corrected或限定目标；不将较弱目标称为完整修正"
+  },
+  {
+    "source_id": "MD-7.12-ConstrainedLangevin",
+    "signature_changed": true,
+    "scope": "原印λdt的有限变差解类独立保留，不声称存在；修正版只覆盖单位质量线性约束和常正交投影噪声，非线性随机乘子/几何漂移理论未覆盖。",
+    "diff": "--- \n+++ \n@@ -25,4 +25,25 @@\n     (∀ i, (X t sample).2 i = x0.2 i+\n       (∫ s in (0 : ℝ)..t, -gradient U (X s sample).1 i-γ*(X s sample).2 i-\n         constraintReaction g (X s sample).1 (Λ s sample) i)+\n-      Real.sqrt (2*γ*θ*m i)*(W t sample i-W 0 sample i))+      Real.sqrt (2*γ*θ*m i)*(W t sample i-W 0 sample i))\n+\n+/-- 限制到单位质量、常正交投影的线性约束修正版；未声称一般非线性情形。 -/\n+def constrainedLangevin_corrected {l : ℕ} (P : Measure Ω) (C : Matrix (Fin l) (Fin n) ℝ)\n+    (Π : Matrix (Fin n) (Fin n) ℝ) (U : V n → ℝ) (γ θ : ℝ)\n+    (W : ℝ → Ω → V n) (X : ℝ → Ω → Phase n) (x0 : Phase n) : Prop :=\n+  vectorWiener P W ∧ 0 < γ ∧ 0 < θ ∧ ContDiff ℝ 2 U ∧\n+  Π*Π=Π ∧ Π.transpose=Π ∧ C*Π=0 ∧\n+  (∀ v : V n, C *ᵥ v=0 → Π *ᵥ v=v) ∧\n+  C *ᵥ x0.1=0 ∧ C *ᵥ x0.2=0 ∧\n+  (∀ t : ℝ, 0 ≤ t → Measurable[MeasurableSpace.comap\n+    (fun (sample : Ω) (s : Icc (0 : ℝ) t) ↦ W s sample) inferInstance] (X t)) ∧\n+  (∀ᵐ sample ∂P, ContinuousOn (fun t ↦ X t sample) (Ici 0) ∧ X 0 sample=x0) ∧\n+  (∀ sample i T, 0 ≤ T →\n+    IntervalIntegrable (fun s ↦ (X s sample).2 i) volume 0 T ∧\n+    IntervalIntegrable (fun s ↦ -(Π *ᵥ gradient U (X s sample).1) i-γ*(X s sample).2 i) volume 0 T) ∧\n+  ∀ t, 0 ≤ t → ∀ᵐ sample ∂P,\n+    C *ᵥ (X t sample).1=0 ∧ C *ᵥ (X t sample).2=0 ∧\n+    (∀ i, (X t sample).1 i=x0.1 i+∫ s in (0 : ℝ)..t, (X s sample).2 i) ∧\n+    ∀ i, (X t sample).2 i=x0.2 i+\n+      (∫ s in (0 : ℝ)..t, -(Π *ᵥ gradient U (X s sample).1) i-γ*(X s sample).2 i)+\n+      Real.sqrt (2*γ*θ)*(Π *ᵥ (W t sample-W 0 sample)) i\n",
+    "printed_version": "原书表述保留；公式类已目视核对原页",
+    "corrected_version": "见独立_corrected或限定目标；不将较弱目标称为完整修正"
+  },
+  {
+    "source_id": "MD-7.12-ConstrainedCanonicalErgodicity",
+    "signature_changed": true,
+    "scope": "delta参考弱极限、总化权重和任意过程遍历目标；补正质量/β/正有限配分与参考资格谓词，未证明参考等于几何体积或SDE遍历性，连通反例另记。",
+    "diff": "--- \n+++ \n@@ -10,4 +10,9 @@\n def constrainedErgodicAverages (P : Measure Ω) (X : ℝ → Ω → Phase n) (μ : Measure (Phase n)) : Prop :=\n   IsProbabilityMeasure P ∧ IsProbabilityMeasure μ ∧\n   ∀ φ : Phase n → ℝ, Integrable φ μ →\n-    ∀ᵐ sample ∂P, Filter.Tendsto (fun T : ℝ ↦ T⁻¹*∫ t in (0 : ℝ)..T, φ (X t sample)) Filter.atTop (𝓝 (∫ x, φ x ∂μ))+    ∀ᵐ sample ∂P, Filter.Tendsto (fun T : ℝ ↦ T⁻¹*∫ t in (0 : ℝ)..T, φ (X t sample)) Filter.atTop (𝓝 (∫ x, φ x ∂μ))\n+\n+def constrainedCanonicalQualification {l : ℕ} (ν : Measure (Phase n))\n+    (m : V n) (g : V n → V l) (U : V n → ℝ) (β : ℝ) : Prop :=\n+  (∀ i, 0 < m i) ∧ 0 < β ∧ ContDiff ℝ 2 g ∧ constrainedReference ν m g ∧\n+  Integrable (gibbsWeight m U β) ν ∧ (0 < ∫ x, gibbsWeight m U β x ∂ν)\n",
+    "printed_version": "原书表述保留；公式类已目视核对原页",
+    "corrected_version": "见独立_corrected或限定目标；不将较弱目标称为完整修正"
+  },
+  {
+    "source_id": "MD-7.13-HyperbolicPhaseTransform",
+    "signature_changed": false,
+    "scope": "仅实η≠0、|h/η|<1分支恒等式；未含复η、其他实参数或全稳定不等式等价。",
+    "diff": "",
+    "printed_version": "原书表述保留；公式类已目视核对原页",
+    "corrected_version": "见独立_corrected或限定目标；不将较弱目标称为完整修正"
+  },
+  {
+    "source_id": "MD-7.13-UnderdampedPhasePrinted",
+    "signature_changed": false,
+    "scope": "字面三角式及+arctan修正版、任意实a/r的恒等式；模型代入须0≤γ<2Ω及ηhat>0，未由此声称全稳定定理。",
+    "diff": "",
+    "printed_version": "原书表述保留；公式类已目视核对原页",
+    "corrected_version": "见独立_corrected或限定目标；不将较弱目标称为完整修正"
+  },
+  {
+    "source_id": "MD-7.13-FrictionThresholdPrinted",
+    "signature_changed": false,
+    "scope": "字面错误阈值、保留隐式条件的修正版、Ω≥1有理化/渐近/包络充分性；简化成γ区间须保留高根上界，数值反例不是完整Lean势模型反例。",
+    "diff": "",
+    "printed_version": "原书表述保留；公式类已目视核对原页",
+    "corrected_version": "见独立_corrected或限定目标；不将较弱目标称为完整修正"
+  },
+  {
+    "source_id": "MD-7.1-HamiltonianSamplingObstruction",
+    "signature_changed": false,
+    "scope": "保能流、子水平集不变和非平凡能量分布的保测概率资格定义；非遍历性及Liouvillian谱隙/多稳态定理未覆盖，不排除固定能壳遍历。",
+    "diff": "",
+    "printed_version": "原书表述保留；公式类已目视核对原页",
+    "corrected_version": "见独立_corrected或限定目标；不将较弱目标称为完整修正"
+  }
+]

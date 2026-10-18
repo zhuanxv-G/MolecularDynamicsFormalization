@@ -1,0 +1,173 @@
+以附件/PASTE 为准，忽略 /workspace 旧文件；Mathlib 定义按标准含义采信。
+本任务只审本条：原文转录、对象资格、定义体、量词、全部结论及[EXTRA]是否一致；Lean编译不代替语义审阅。
+Lean/Mathlib均4.34.0。原页PDF映射：[313]；印刷页=[292].
+input_sha256请原样回显：
+{
+  "Blueprint/Ch07.lean": "f3bc0ee86ace9c825028f0cec8ebb2fb410d6be77213cc7fb41cb8889540a000",
+  "blueprint/ch07/ch07_source.json": "1a201887b51a249fb73f456237cb342963c5d98c612ec1912f21572a57924012",
+  "PAGES.pdf": "9981fc48dfd3506be58ee2e021d9d0a45b905e1e43033ef4fe058e9110651a39"
+}
+用代码将JSON对象(batch,input_sha256,items)写到 /workspace/.mathcopilot/reviews/ch07/EAUDIT05a_review.json；items仅含本source_id。
+items字段：source_id、verdict(PASS/FAIL/NEEDS_HUMAN)、transcription、semantic_review、counterexample、suggested_fix、printed_version、corrected_version。逐版区分原文疑误和修正版结论；缺材料必须具体指出，不猜测。写后json.loads自检，最后仅回复路径及统计。
+
+## 原文JSON
+```json
+{
+  "source_id": "MD-7.8.1-CommutatorPermutationRelations",
+  "kind": "unnumbered_claim",
+  "label": "(7.22)–(7.24)",
+  "section": "7.8.1",
+  "printed_page": "292",
+  "pdf_page": "313",
+  "statement_latex": "\\[([\\mathcal L_O^\\dagger,\\mathcal L_A^\\dagger]+[\\mathcal L_O^\\dagger,\\mathcal L_B^\\dagger])\\rho_\\beta=[\\mathcal L_O^\\dagger,\\mathcal L_A^\\dagger+\\mathcal L_B^\\dagger]\\rho_\\beta=0.\\]\n\\[\\mathcal L_{1,[ABO]}^\\dagger\\rho_\\beta=\\mathcal L_{1,[OAB]}^\\dagger\\rho_\\beta=-\\mathcal L_{1,[OBA]}^\\dagger\\rho_\\beta=-\\mathcal L_{1,[BAO]}^\\dagger\\rho_\\beta=-\\frac12[\\mathcal L_A^\\dagger,\\mathcal L_B^\\dagger]\\rho_\\beta.\\tag{7.22}\\]\n\\[f_{1,[ABO]}=f_{1,[OAB]}=-f_{1,[OBA]}=-f_{1,[BAO]}.\\tag{7.23}\\]\n\\[\\mathcal L_{1,[AOB]}^\\dagger\\rho_\\beta=-\\mathcal L_{1,[BOA]}^\\dagger\\rho_\\beta=-\\frac12[\\mathcal L_A^\\dagger-\\mathcal L_B^\\dagger,\\mathcal L_O^\\dagger]\\rho_\\beta+\\mathcal L_{1,[ABO]}^\\dagger\\rho_\\beta.\\tag{7.24}\\]",
+  "proof_latex": null,
+  "proof_outline": null,
+  "proof_note": "原页推导与上下文全文见original_page_text；数学符号的排版以随附原页PDF为准。",
+  "original_page_text": [
+    {
+      "pdf_page": 313,
+      "printed_page": 292,
+      "text": "292\n7\nNumerical Methods for Stochastic Molecular Dynamics\n7.8.1\nComputing the Correction Functions f1.q; p/\nAt this point we may plow ahead and compute the PDE for each corresponding\nscheme, but a more efﬁcient route is offered by working with the structure of the\ninhomogeneity in (7.21). We may make use of the identity\n\u0006\nŒL\u0004\nO; L\u0004\nA\t C ŒL\u0004\nO; L\u0004\nB\t\n\u0007\n\u0005ˇ D\n\u0006\nŒL\u0004\nO; L\u0004\nA C L\u0004\nB\t\n\u0007\n\u0005ˇ D 0;\nas of course L\u0004\nH D L\u0004\nA C L\u0004\nB is the Liouvillian of our Hamiltonian system,\nwhich preserves any function of the energy. Thus, by the skew-symmetry of the\ncommutator (ŒP; Q\t D \u0003ŒQ; P\t) we can relate four of the six methods as\nL\u0004\n1;\u0002ABO\u0003\u0005ˇ D L\u0004\n1;\u0002OAB\u0003\u0005ˇ D \u0003L\u0004\n1;\u0002OBA\u0003\u0005ˇ D \u0003L\u0004\n1;\u0002BAO\u0003\u0005ˇ D \u00031\n2ŒL\u0004\nA; L\u0004\nB\t\u0005ˇ;\n(7.22)\nby virtue of (7.20). Hence the leading order correction functions of the schemes are\nrelated through\nf1;\u0002ABO\u0003 D f1;\u0002OAB\u0003 D \u0003f1;\u0002OBA\u0003 D \u0003f1;\u0002BAO\u0003:\n(7.23)\nThe remaining two permutations of the possible \u0002XYZ\u0003 schemes have a similar\nrelationship, with\nL\u0004\n1;\u0002AOB\u0003\u0005ˇ D \u0003L\u0004\n1;\u0002BOA\u0003\u0005ˇ D \u00031\n2ŒL\u0004\nA \u0003 L\u0004\nB; L\u0004\nO\t\u0005ˇ C L\u0004\n1;\u0002ABO\u0003\u0005ˇ:\n(7.24)\nThis reduces our workload as we can ﬁnd the leading order behavior for all six\nmethods by computing the solution to two PDEs. This is not necessarily trivial, but\nit turns out that the structure of the equations is simple enough that we can ﬁnd exact\nsolutions. We work now to compute the right-hand side of the governing PDE given\nin (7.21).\nIn order to solve (7.21) for the \u0002ABO\u0003 scheme, we need to compute the right\nhand side of (7.22). First, note that if we deﬁne the function g.q; p/ as\ng.q; p/ D ˇpTM\u00021rU.q/;\nthen through simple computation we have\nL\u0004\nA\u0005ˇ D \u0003L\u0004\nB\u0005ˇ D g.q; p/\u0005ˇ:\n"
+    }
+  ],
+  "transcription_note": "PDF文字层原样保留，陈述中的数学排版转写为LaTeX；文字层有特殊字形编码时以目视原页为准。PDF347的Exercises之后不在正文范围内。",
+  "context_notation": [],
+  "extra_assumptions": [
+    "实际线性作用与Oρ=0,(A+B)ρ=0明示。修正函数的符号关系还需统一零均值和核唯一性；本条只证明/陈述交换子与右端项关系，函数关系列缺口。",
+    "29号覆盖限定：所列七个抽象交换子关系；(7.23)四个零均值解的关系未覆盖，需要同一方程、核唯一性与域。"
+  ],
+  "issues": [],
+  "statement_scope": "所列七个抽象交换子关系；(7.23)四个零均值解的关系未覆盖，需要同一方程、核唯一性与域。",
+  "lean_decl": "MD.Ch07.commutatorPermutationRelations",
+  "lean_declarations": [
+    "MD.Ch07.commutatorPermutationRelations"
+  ],
+  "source_page_verification": "见source_page_checks.json；必须已目视核对本条原页。",
+  "repair_log": [
+    {
+      "instruction": 29,
+      "website_verdict": "FAIL",
+      "suggested_fix": "保留现有交换子定理；另列(7.23)的待形式化义务，明确同一线性方程、核条件和统一零均值，再给出四个修正函数的关系。只修正JSON中的覆盖说明，本次不改工程。",
+      "actual_scope": "所列七个抽象交换子关系；(7.23)四个零均值解的关系未覆盖，需要同一方程、核唯一性与域。",
+      "signature_changed": false
+    }
+  ],
+  "documented_priors": [],
+  "coverage_gaps": [
+    "实际线性作用与Oρ=0,(A+B)ρ=0明示。修正函数的符号关系还需统一零均值和核唯一性；本条只证明/陈述交换子与右端项关系，函数关系列缺口。",
+    "29号覆盖限定：所列七个抽象交换子关系；(7.23)四个零均值解的关系未覆盖，需要同一方程、核唯一性与域。"
+  ]
+}
+```
+
+## 完整本条Lean
+```lean
+theorem commutatorPermutationRelations {E : Type*} [AddCommGroup E] [Module ℝ E]
+    (A B O : Module.End ℝ E) (ρ : E) (hO : O ρ = 0) (hH : (A+B) ρ = 0) :
+    (comm O A+comm O B) ρ = 0 ∧
+    firstOrderOperator A B O ρ = firstOrderOperator O A B ρ ∧
+    firstOrderOperator A B O ρ = -firstOrderOperator O B A ρ ∧
+    firstOrderOperator A B O ρ = -firstOrderOperator B A O ρ ∧
+    firstOrderOperator A B O ρ = (-1/2 : ℝ) • comm A B ρ ∧
+    firstOrderOperator A O B ρ = -firstOrderOperator B O A ρ ∧
+    firstOrderOperator A O B ρ = (-1/2 : ℝ) • comm (A-B) O ρ+firstOrderOperator A B O ρ := by
+  sorry
+```
+
+## 项目依赖定义体及选择规格
+以下def/abbrev/structure完整保留；定理列出完整类型，Mathlib标准定义无需摘录。
+
+### MD.Ch07.comm (Blueprint/Ch07.lean:915)
+原文件上下文：
+```lean
+open Set Filter MeasureTheory ProbabilityTheory MolecularDynamics
+open scoped BigOperators Topology ContDiff ENNReal NNReal Matrix
+variable {Ω : Type*} [MeasurableSpace Ω]
+variable {n : ℕ}
+```
+```lean
+def comm {R : Type*} [Ring R] (X Y : R) : R := X*Y-Y*X
+```
+
+### MD.Ch07.firstOrderOperator (Blueprint/Ch07.lean:1071)
+原文件上下文：
+```lean
+open Set Filter MeasureTheory ProbabilityTheory MolecularDynamics
+open scoped BigOperators Topology ContDiff ENNReal NNReal Matrix
+variable {Ω : Type*} [MeasurableSpace Ω]
+variable {n : ℕ}
+```
+```lean
+def firstOrderOperator {R : Type*} [Ring R] [Algebra ℝ R] (X Y Z : R) : R :=
+  (-1/2 : ℝ) • (comm X Y+comm X Z+comm Y Z)
+```
+
+### MD.Ch07.commutatorPermutationRelations (Blueprint/Ch07.lean:1097)
+原文件上下文：
+```lean
+open Set Filter MeasureTheory ProbabilityTheory MolecularDynamics
+open scoped BigOperators Topology ContDiff ENNReal NNReal Matrix
+variable {Ω : Type*} [MeasurableSpace Ω]
+variable {n : ℕ}
+```
+```lean
+theorem commutatorPermutationRelations {E : Type*} [AddCommGroup E] [Module ℝ E]
+    (A B O : Module.End ℝ E) (ρ : E) (hO : O ρ = 0) (hH : (A+B) ρ = 0) :
+    (comm O A+comm O B) ρ = 0 ∧
+    firstOrderOperator A B O ρ = firstOrderOperator O A B ρ ∧
+    firstOrderOperator A B O ρ = -firstOrderOperator O B A ρ ∧
+    firstOrderOperator A B O ρ = -firstOrderOperator B A O ρ ∧
+    firstOrderOperator A B O ρ = (-1/2 : ℝ) • comm A B ρ ∧
+    firstOrderOperator A O B ρ = -firstOrderOperator B O A ρ ∧
+    firstOrderOperator A O B ρ = (-1/2 : ℝ) • comm (A-B) O ρ+firstOrderOperator A B O ρ
+```
+
+### MolecularDynamics.Chapter02Review.Q (MolecularDynamics/Chapter02/ReviewDefinitions.lean:17)
+原文件上下文：
+```lean
+open Set Filter Matrix
+open scoped BigOperators Topology
+```
+```lean
+abbrev Q (n : ℕ) := Fin n → ℝ
+```
+
+### MolecularDynamics.Chapter02Review.Z (MolecularDynamics/Chapter02/ReviewDefinitions.lean:18)
+原文件上下文：
+```lean
+open Set Filter Matrix
+open scoped BigOperators Topology
+```
+```lean
+abbrev Z (n : ℕ) := Q n × Q n
+```
+
+### MolecularDynamics.Chapter04Review.Q (MolecularDynamics/Chapter04/ReviewDefinitions.lean:15)
+原文件上下文：
+```lean
+open Set Matrix
+open scoped BigOperators Topology Matrix.Norms.Elementwise
+```
+```lean
+abbrev Q (n : ℕ) := Fin n → ℝ
+```
+
+### MolecularDynamics.Chapter04Review.Z (MolecularDynamics/Chapter04/ReviewDefinitions.lean:16)
+原文件上下文：
+```lean
+open Set Matrix
+open scoped BigOperators Topology Matrix.Norms.Elementwise
+```
+```lean
+abbrev Z (n : ℕ) := Q n × Q n
+```
+
+### MolecularDynamics.Chapter05Review.E (MolecularDynamics/Chapter05/ReviewDefinitions.lean:18)
+原文件上下文：
+```lean
+open Set Filter MeasureTheory Matrix
+open scoped BigOperators Topology ENNReal
+```
+```lean
+abbrev E (n : ℕ) := EuclideanSpace ℝ (Fin n)
+```

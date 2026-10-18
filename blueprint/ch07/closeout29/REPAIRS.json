@@ -1,0 +1,226 @@
+[
+  {
+    "source_id": "MD-7.3.1-WordConvention",
+    "receipt": "WordConvention",
+    "checked": true,
+    "signature_changed": true,
+    "scope": "九字母OABOAOBAO的确定性单步映射、四次O更新与计数；独立噪声序列的概率资格由vectorNormalSequence另列。",
+    "diff": "--- submitted\n+++ repaired\n@@ -1,13 +1,12 @@\n def oabaobaoPrinted (m : V n) (U : V n → ℝ) (γ θ h : ℝ)\n-    (R : Fin 3 → V n) : Phase n → Phase n :=\n-  ouStep m γ θ (h/4) (R 2) ∘ driftStep m (h/3) ∘ kickStep U (h/2) ∘\n-  ouStep m γ θ (h/4) (R 1) ∘ driftStep m (h/3) ∘ kickStep U (h/2) ∘\n+    (R : Fin 4 → V n) : Phase n → Phase n :=\n+  ouStep m γ θ (h/4) (R 3) ∘ driftStep m (h/3) ∘ kickStep U (h/2) ∘\n+  ouStep m γ θ (h/4) (R 2) ∘ driftStep m (h/3) ∘\n+  ouStep m γ θ (h/4) (R 1) ∘ kickStep U (h/2) ∘\n   driftStep m (h/3) ∘ ouStep m γ θ (h/4) (R 0)\n \n+/-- 恢复原页的兼容名称；原书此处没有计数勘误。 -/\n def oabaobaoPrinted_corrected (m : V n) (U : V n → ℝ) (γ θ h : ℝ)\n-    (R : Fin 3 → V n) : Phase n → Phase n :=\n-  ouStep m γ θ (h/3) (R 2) ∘ driftStep m (h/3) ∘ kickStep U (h/2) ∘\n-  ouStep m γ θ (h/3) (R 1) ∘ driftStep m (h/3) ∘ kickStep U (h/2) ∘\n-  driftStep m (h/3) ∘ ouStep m γ θ (h/3) (R 0)\n+    (R : Fin 4 → V n) : Phase n → Phase n := oabaobaoPrinted m U γ θ h R\n \n-theorem oabaobaoCount : ([\"O\",\"A\",\"B\",\"A\",\"O\",\"B\",\"A\",\"O\"] : List String).count \"O\" = 3 := by decide+theorem oabaobaoCount : ([\"O\",\"A\",\"B\",\"O\",\"A\",\"O\",\"B\",\"A\",\"O\"] : List String).count \"O\" = 4 := by decide"
+  },
+  {
+    "source_id": "MD-7.3.1-ConjugateIteration",
+    "receipt": "ConjugateIteration",
+    "checked": true,
+    "signature_changed": true,
+    "scope": "一般复合迭代恒等式、OABA定义及带噪声序号的OABA/BAOAB精确代数移位关系；不包含不变测度转移或遍历性。",
+    "diff": "--- submitted\n+++ repaired\n@@ -8,4 +8,20 @@\n     rw [ih]\n \n def oaba (m : V n) (U : V n → ℝ) (γ θ h : ℝ) (R : V n) : Phase n → Phase n :=\n-  driftStep m (h/2) ∘ kickStep U h ∘ driftStep m (h/2) ∘ ouStep m γ θ h R+  driftStep m (h/2) ∘ kickStep U h ∘ driftStep m (h/2) ∘ ouStep m γ θ h R\n+\n+def conjugateNoiseS (m : V n) (U : V n → ℝ) (γ θ h : ℝ)\n+    (R : ℕ → V n) (z : Phase n × ℕ) : Phase n × ℕ :=\n+  ((kickStep U (h/2) ∘ driftStep m (h/2) ∘ ouStep m γ θ h (R z.2)) z.1,z.2+1)\n+\n+def conjugateNoiseT (m : V n) (U : V n → ℝ) (h : ℝ)\n+    (z : Phase n × ℕ) : Phase n × ℕ :=\n+  ((driftStep m (h/2) ∘ kickStep U (h/2)) z.1,z.2)\n+\n+theorem oaba_baoab_noiseShift (m : V n) (U : V n → ℝ) (γ θ h : ℝ)\n+    (R : ℕ → V n) (k : ℕ) :\n+    (fun z : Phase n × ℕ ↦ (oaba m U γ θ h (R z.2) z.1,z.2+1))^[k+1] =\n+      conjugateNoiseT m U h ∘\n+      (fun z : Phase n × ℕ ↦ (baoab m U γ θ h (R z.2) z.1,z.2+1))^[k] ∘\n+      conjugateNoiseS m U γ θ h R := by\n+  sorry"
+  },
+  {
+    "source_id": "MD-7.4.1-NonsymmetricExactMoments",
+    "receipt": "NonsymmetricExactMoments",
+    "checked": true,
+    "signature_changed": true,
+    "scope": "正质量和稳定范围内AOAB/BAOA不变概率的两个方差、精确混合矩；固定参数下混合矩为O(h)的量化界另列。",
+    "diff": "--- submitted\n+++ repaired\n@@ -10,5 +10,11 @@\n     (hq : MemLp (fun x ↦ x.1) 2 μ) (hp : MemLp (fun x ↦ x.2) 2 μ)\n     (hinv : Measure.map (fun z ↦ nonsymmetricHarmonicStep flip m Ω γ θ h z.2 z.1)\n       (μ.prod (gaussianReal 0 1)) = μ) :\n-    momentQ μ = θ/Ω^2 ∧ momentP μ = θ*m := by\n+    momentQ μ = θ/Ω^2 ∧ momentP μ = θ*m ∧\n+    (∫ x, x.1*x.2 ∂μ) = (if flip then -θ*h/2 else θ*h/2) := by\n+  sorry\n+\n+theorem nonsymmetricMixedMoment_order (θ : ℝ) (flip : Bool) :\n+    Asymptotics.IsBigO (𝓝 (0 : ℝ))\n+      (fun h ↦ if flip then -θ*h/2 else θ*h/2) (fun h : ℝ ↦ h) := by\n   sorry"
+  },
+  {
+    "source_id": "MD-7.6-GibbsComposition",
+    "receipt": "GibbsComposition",
+    "checked": true,
+    "signature_changed": false,
+    "scope": "只覆盖两个已给定共同固定点映射的末尾组合恒等式；未识别实际H/O生成元、Gibbs测度及其半群。",
+    "diff": ""
+  },
+  {
+    "source_id": "MD-7.6-DivergenceFreeInvariant",
+    "receipt": "DivergenceFreeInvariant",
+    "checked": true,
+    "signature_changed": false,
+    "scope": "只覆盖C¹向量场的散度乘积恒等式和可微第一积分的链式法则；不包含归一Gibbs测度或全局流保测。",
+    "diff": ""
+  },
+  {
+    "source_id": "MD-7.6-JSplitting",
+    "receipt": "JSplitting",
+    "checked": true,
+    "signature_changed": true,
+    "scope": "有限反对称常矩阵及向量场的和分解、单个子场能量导数/散度为零、已保能映射的复合保能；未含流保体积和一致逼近。",
+    "diff": "--- submitted\n+++ repaired\n@@ -8,4 +8,9 @@\n     (hF : ∀ x, H (F x) = H x) (hG : ∀ x, H (G x) = H x) :\n     ∀ x, H ((F ∘ G) x) = H x := by\n   intro x\n-  rw [Function.comp_apply, hF, hG]+  rw [Function.comp_apply, hF, hG]\n+\n+theorem jField_finiteDecomposition {K : ℕ} (J : Fin K → Matrix (Fin n) (Fin n) ℝ)\n+    (H : V n → ℝ) (hJ : ∀ k i j, J k i j = -J k j i) :\n+    jField (∑ k, J k) H = fun x ↦ ∑ k, jField (J k) H x := by\n+  sorry"
+  },
+  {
+    "source_id": "MD-7.6-CoordinateJSplitting",
+    "receipt": "CoordinateJSplitting",
+    "checked": true,
+    "signature_changed": true,
+    "scope": "两个总化辅助定义、正质量光滑势资格和冻结势单坐标导数关系；不含分段求积、转折点或一自由度全局流。",
+    "diff": "--- submitted\n+++ repaired\n@@ -2,4 +2,11 @@\n   (fun j ↦ if j = i then x.2 i/m i else 0,\n    fun j ↦ if j = i then -gradient U x.1 i else 0)\n def frozenPotential (U : V n → ℝ) (q : V n) (i : Fin n) (r : ℝ) : ℝ :=\n-  U (Function.update q i r)+  U (Function.update q i r)\n+\n+def coordinateJQualification (m : V n) (U : V n → ℝ) : Prop :=\n+  (∀ i, 0 < m i) ∧ ContDiff ℝ 2 U\n+\n+theorem frozenPotential_deriv (m : V n) (U : V n → ℝ)\n+    (hq : coordinateJQualification m U) (q : V n) (i : Fin n) :\n+    deriv (frozenPotential U q i) (q i) = gradient U q i := rfl"
+  },
+  {
+    "source_id": "MD-7.7.1-OperatorOrderReversal",
+    "receipt": "OperatorOrderReversal",
+    "checked": true,
+    "signature_changed": true,
+    "scope": "拉回复合结合律、ABAO后向定义及四个线性算子的反序对偶配对恒等式；实际随机传播子识别及闭算子域未覆盖。",
+    "diff": "--- submitted\n+++ repaired\n@@ -1,4 +1,13 @@\n theorem pullback_order {E F : Type*} (A B : E → E) (φ : E → F) :\n     φ ∘ (B ∘ A) = (φ ∘ B) ∘ A := rfl\n def abaoBackward (m : V n) (U : V n → ℝ) (γ θ h : ℝ) (φ : Phase n → ℝ) :=\n-  propagateA m (h/2) (propagateB U h (propagateA m (h/2) (propagateO m γ θ h φ)))+  propagateA m (h/2) (propagateB U h (propagateA m (h/2) (propagateO m γ θ h φ)))\n+\n+theorem fourStage_duality {E : Type*} [AddCommGroup E] [Module ℝ E]\n+    (pair : E → E → ℝ) (A B C D a b c d : Module.End ℝ E)\n+    (hA : ∀ x y, pair (A x) y = pair x (a y))\n+    (hB : ∀ x y, pair (B x) y = pair x (b y))\n+    (hC : ∀ x y, pair (C x) y = pair x (c y))\n+    (hD : ∀ x y, pair (D x) y = pair x (d y)) (x y : E) :\n+    pair (A (B (C (D x)))) y = pair x (d (c (b (a y)))) := by\n+  rw [hA,hB,hC,hD]"
+  },
+  {
+    "source_id": "MD-7.7.1-TaylorRemainder",
+    "receipt": "TaylorRemainder",
+    "checked": true,
+    "signature_changed": true,
+    "scope": "标量时间函数的Taylor积分余项和逐点O界，包括F(t)=P_tφ(z)已具备时间正则时的特化；未证明半群时间正则或空间统一界。",
+    "diff": "--- submitted\n+++ repaired\n@@ -6,4 +6,12 @@\n     Asymptotics.IsBigO (𝓝 (0 : ℝ))\n       (fun h ↦ F h-∑ j ∈ Finset.range (k+1), h^j/(Nat.factorial j : ℝ)*iteratedDeriv j F 0)\n       (fun h ↦ h^(k+1)) := by\n-  sorry+  sorry\n+\n+theorem propagatedObservable_remainder {E : Type*} (P : ℝ → (E → ℝ) → E → ℝ)\n+    (φ : E → ℝ) (z : E) (k : ℕ)\n+    (htime : ContDiff ℝ (k+1) (fun t ↦ P t φ z)) :\n+    Asymptotics.IsBigO (𝓝 (0 : ℝ))\n+      (fun h ↦ P h φ z-∑ j ∈ Finset.range (k+1),\n+        h^j/(Nat.factorial j : ℝ)*iteratedDeriv j (fun t ↦ P t φ z) 0)\n+      (fun h ↦ h^(k+1)) := taylorRemainder_bound _ k htime"
+  },
+  {
+    "source_id": "MD-7.7.2-OBAModifiedOperator",
+    "receipt": "OBAModifiedOperator",
+    "checked": true,
+    "signature_changed": false,
+    "scope": "OBA候选一阶微分表达式及其与三个真实交换子和的恒等式；未识别OBA乘积的log/h或弱修改生成元余项。",
+    "diff": ""
+  },
+  {
+    "source_id": "MD-7.8.1-CommutatorPermutationRelations",
+    "receipt": "CommutatorPermutationRelations",
+    "checked": true,
+    "signature_changed": false,
+    "scope": "所列七个抽象交换子关系；(7.23)四个零均值解的关系未覆盖，需要同一方程、核唯一性与域。",
+    "diff": ""
+  },
+  {
+    "source_id": "MD-7.8.1-GibbsDerivativeIdentities",
+    "receipt": "GibbsDerivativeIdentities",
+    "checked": true,
+    "signature_changed": false,
+    "scope": "所列五个Gibbs权微分恒等式；未覆盖本段交换子等式及其他OU中间式。",
+    "diff": ""
+  },
+  {
+    "source_id": "MD-7.8.1-FirstCorrectionTablePrinted",
+    "receipt": "FirstCorrectionTablePrinted",
+    "checked": true,
+    "signature_changed": true,
+    "scope": "恢复原页正号后的六个候选函数与六个PDE；常数仍任意，零均值选择义务独立登记。旧corrected名称只作兼容。",
+    "diff": "--- submitted\n+++ repaired\n@@ -1,7 +1,8 @@\n def firstCorrectionTablePrinted (s : Fin 6) (m : V n) (U : V n → ℝ) (β γ c : ℝ) (x : Phase n) : ℝ :=\n   let v := ∑ i, x.2 i/m i*gradient U x.1 i\n   if s = 0 ∨ s = 1 then β/2*(γ*U x.1-v-c)\n-  else if s = 2 ∨ s = 3 ∨ s = 4 then -β/2*(γ*U x.1-v-c)\n+  else if s = 2 ∨ s = 3 then -β/2*(γ*U x.1-v-c)\n+  else if s = 4 then -β/2*(γ*U x.1+v-c)\n   else β/2*(γ*U x.1+v-c)\n def firstCorrectionTablePrinted_corrected (s : Fin 6) (m : V n) (U : V n → ℝ) (β γ c : ℝ) (x : Phase n) : ℝ :=\n   if s = 4 then -β/2*(γ*U x.1+(∑ i, x.2 i/m i*gradient U x.1 i)-c)\n"
+  },
+  {
+    "source_id": "MD-7.8.1-OverdampedFirstOrderCaution",
+    "receipt": "OverdampedFirstOrderCaution",
+    "checked": true,
+    "signature_changed": true,
+    "scope": "固定h>0及固定噪声的AOAB逐路径大摩擦单步极限，带正质量；六种XYZ不一致性及有效时标一致性未覆盖。",
+    "diff": "--- submitted\n+++ repaired\n@@ -3,6 +3,6 @@\n def aoabInfiniteFriction (m : V n) (U : V n → ℝ) (θ h : ℝ) (R : V n) : Phase n → Phase n :=\n   kickStep U h ∘ driftStep m (h/2) ∘ (fun x ↦ (x.1,fun i ↦ Real.sqrt θ*Real.sqrt (m i)*R i)) ∘ driftStep m (h/2)\n theorem aoabFrictionLimit (m : V n) (U : V n → ℝ) (θ h : ℝ) (R : V n) (x : Phase n)\n-    (hh : 0 < h) (hθ : 0 < θ) (hU : ContDiff ℝ 1 U) :\n+    (hm : ∀ i, 0 < m i) (hh : 0 < h) (hθ : 0 < θ) (hU : ContDiff ℝ 1 U) :\n     Filter.Tendsto (fun γ : ℝ ↦ aoab m U γ θ h R x) Filter.atTop (𝓝 (aoabInfiniteFriction m U θ h R x)) := by\n   sorry"
+  },
+  {
+    "source_id": "MD-7.8.2-BiasedDoubleWellExact",
+    "receipt": "BiasedDoubleWellExact",
+    "checked": true,
+    "signature_changed": true,
+    "scope": "双阱Gibbs的两个精确积分及γ=2时第二积分消项；推广到任意β>0；真实算法O(h²)和中间积分推导未覆盖。",
+    "diff": "--- submitted\n+++ repaired\n@@ -10,4 +10,8 @@\n     (∫ x, doubleWellObservable x ∂doubleWellGibbs β) = 0 ∧\n     (∫ x, doubleWellObservable x*doubleWellBOACorrection β γ x ∂doubleWellGibbs β) = (2-γ)/(2*β) := by\n   sorry\n-theorem doubleWellCritical (β : ℝ) : (2-(2 : ℝ))/(2*β) = 0 := by ring+theorem doubleWellCritical (β : ℝ) : (2-(2 : ℝ))/(2*β) = 0 := by ring\n+\n+theorem doubleWellCritical_integral (β : ℝ) (hβ : 0 < β) :\n+    (∫ x, doubleWellObservable x*doubleWellBOACorrection β 2 x ∂doubleWellGibbs β) = 0 := by\n+  simpa using (doubleWellExact β 2 hβ).2"
+  },
+  {
+    "source_id": "MD-7.9-EvenDensityPerturbation",
+    "receipt": "EvenDensityPerturbation",
+    "checked": true,
+    "signature_changed": false,
+    "scope": "偶形式系数定义与二阶必要代数方程；修正项零均值、Fredholm兼容性和充分可解性未覆盖。",
+    "diff": ""
+  },
+  {
+    "source_id": "MD-7.9.1-SymmetricRHS",
+    "receipt": "SymmetricRHS",
+    "checked": true,
+    "signature_changed": false,
+    "scope": "单位质量下flip=true为OBABO、false为OABAO的多项式、奇性及给定可积性下零积分；PDE右端识别、概率归一和Fredholm充分性未覆盖。",
+    "diff": ""
+  },
+  {
+    "source_id": "MD-7.9.2-ReciprocalFrictionExpansion",
+    "receipt": "ReciprocalFrictionExpansion",
+    "checked": true,
+    "signature_changed": false,
+    "scope": "仅未中心化形式层级的定义；任意β的总化表达式不表示物理Gaussian资格。(7.31)级数、ε=1/γ方程、逐阶可积零均值未覆盖。",
+    "diff": ""
+  },
+  {
+    "source_id": "MD-7.9.2-OUHermiteIdentities",
+    "receipt": "OUHermiteIdentities",
+    "checked": true,
+    "signature_changed": true,
+    "scope": "所列OU/Hermite微分恒等式，显式补H(ρν)=−p·∇νρ的中间式；无核唯一性或Fredholm可解性。",
+    "diff": "--- submitted\n+++ repaired\n@@ -11,5 +11,7 @@\n     O (ρ*hessianGrad U) = -(ρ*hessianGrad U) ∧\n     (fun x ↦ -symmetricRHS false U β x*ρ x) = (fun x ↦ β/24*O (hermitePrimitive U β*ρ) x) ∧\n     phaseH U (fun x ↦ ρ x*ν x.1) =\n+      (fun x ↦ -(∑ i, x.2 i*gradient ν x.1 i)*ρ x) ∧\n+    phaseH U (fun x ↦ ρ x*ν x.1) =\n       O (fun x ↦ ((∑ i, x.2 i*gradient ν x.1 i)+μ x.1)*ρ x) := by\n   sorry"
+  },
+  {
+    "source_id": "MD-7.9.2-HighFrictionCorrectionTable",
+    "receipt": "HighFrictionCorrectionTable",
+    "checked": true,
+    "signature_changed": true,
+    "scope": "四种候选、其代数共轭、c的实际Gibbs期望与中心化资格定义；双渐近只为抽象目标，真实平稳均值识别未覆盖。",
+    "diff": "--- submitted\n+++ repaired\n@@ -11,4 +11,15 @@\n       (highFrictionCorrection 3 U β c) (highFrictionCorrection 0 U β c) := by\n   constructor <;> funext x <;>\n     norm_num [conjugateCorrections,highFrictionCorrection,highFrictionOABAO,conjugateCorrectionChange]\n-    <;> ring+    <;> ring\n+\n+def highFrictionMeanLaplacian (U : V n → ℝ) (β : ℝ) : ℝ :=\n+  ∫ q, laplacian U q ∂positionGibbs U β\n+\n+def highFrictionCenteredQualification (U : V n → ℝ) (β : ℝ) : Prop :=\n+  0 < β ∧ IsProbabilityMeasure (positionGibbs U β) ∧\n+  Integrable (laplacian U) (positionGibbs U β) ∧\n+  ∀ s : Fin 4, Integrable (highFrictionCorrection s U β (highFrictionMeanLaplacian U β))\n+    (productGibbs (fun _ ↦ 1) U β) ∧\n+    (∫ x, highFrictionCorrection s U β (highFrictionMeanLaplacian U β) x\n+      ∂productGibbs (fun _ ↦ 1) U β) = 0"
+  },
+  {
+    "source_id": "MD-7.9.3-BAOABMarginalCancellation",
+    "receipt": "BAOABMarginalCancellation",
+    "checked": true,
+    "signature_changed": true,
+    "scope": "Gaussian条件动量消项和归一位置Gibbs资格下的构型消项；真实数值平稳平均及(7.37)双渐近余项未覆盖。",
+    "diff": "--- submitted\n+++ repaired\n@@ -2,6 +2,7 @@\n     momentumAverage β (highFrictionCorrection 3 U β 0) q = 0 := by\n   sorry\n theorem baoabConfigurationalCancellation (U φ : V n → ℝ) (β : ℝ) (hβ : 0 < β)\n+    (hprob : IsProbabilityMeasure (positionGibbs U β))\n     (hint : Integrable (fun x ↦ φ x.1*highFrictionCorrection 3 U β 0 x)\n       (productGibbs (fun _ ↦ 1) U β)) :\n     (∫ x, φ x.1*highFrictionCorrection 3 U β 0 x ∂productGibbs (fun _ ↦ 1) U β) = 0 := by\n"
+  },
+  {
+    "source_id": "MD-7.9.3-SuperconvergenceScope",
+    "receipt": "SuperconvergenceScope",
+    "checked": true,
+    "signature_changed": true,
+    "scope": "积分分部的配置消项及其纯动量观测乘积消项；fromBound仅代数辅助，真实BAOAB先大摩擦后h→0的四阶结论未覆盖。",
+    "diff": "--- submitted\n+++ repaired\n@@ -10,4 +10,12 @@\n theorem superconvergence_fromBound (A : ℝ → ℝ) (exact : ℝ)\n     (hA : Asymptotics.IsBigO (𝓝 (0 : ℝ)) (fun h ↦ A h-exact-h^2*(0 : ℝ)) (fun h ↦ h^4)) :\n     Asymptotics.IsBigO (𝓝 (0 : ℝ)) (fun h ↦ A h-exact) (fun h ↦ h^4) := by\n-  simpa using hA+  simpa using hA\n+\n+theorem oabaoMomentumCancellation (U χ : V n → ℝ) (β : ℝ) (hβ : 0 < β)\n+    (hprob : IsProbabilityMeasure (positionGibbs U β))\n+    (hf : Integrable (highFrictionOABAO U β) (positionGibbs U β))\n+    (hχ : Integrable χ (momentumGibbs (fun _ ↦ 1) β))\n+    (hc : ∫ q, highFrictionOABAO U β q ∂positionGibbs U β = 0) :\n+    (∫ x, χ x.2*highFrictionOABAO U β x.1 ∂productGibbs (fun _ ↦ 1) U β) = 0 := by\n+  sorry"
+  },
+  {
+    "source_id": "MD-7.10-MomentumRedrawLimit",
+    "receipt": "MomentumRedrawLimit",
+    "checked": true,
+    "signature_changed": true,
+    "scope": "正质量下固定噪声的确定性大摩擦极限，以及标准Gaussian向量重抽的实际momentumGibbs分布；随机变量的弱收敛未覆盖。",
+    "diff": "--- submitted\n+++ repaired\n@@ -1,5 +1,11 @@\n def redrawMomentum (m : V n) (θ : ℝ) (R : V n) : V n := fun i ↦ Real.sqrt θ*Real.sqrt (m i)*R i\n def redrawStep (m : V n) (θ : ℝ) (R : V n) (x : Phase n) : Phase n := (x.1,redrawMomentum m θ R)\n-theorem momentumRedrawLimit (m : V n) (θ h : ℝ) (p R : V n) (hh : 0 < h) (hθ : 0 < θ) :\n+theorem momentumRedrawLimit (m : V n) (θ h : ℝ) (p R : V n) (hm : ∀ i, 0 < m i) (hh : 0 < h) (hθ : 0 < θ) :\n     Filter.Tendsto (fun γ : ℝ ↦ ouMomentum m γ θ h p R) Filter.atTop (𝓝 (redrawMomentum m θ R)) := by\n+  sorry\n+\n+theorem redrawMomentum_law (P : Measure Ω) (m : V n) (θ : ℝ) (R : Ω → V n)\n+    (hm : ∀ i, 0 < m i) (hθ : 0 < θ)\n+    (hR : HasLaw R (Measure.pi (fun _ : Fin n ↦ gaussianReal 0 1)) P) :\n+    HasLaw (fun sample ↦ redrawMomentum m θ (R sample)) (momentumGibbs m θ⁻¹) P := by\n   sorry"
+  },
+  {
+    "source_id": "MD-7.10-BAOABLimitMethod",
+    "receipt": "BAOABLimitMethod",
+    "checked": true,
+    "signature_changed": true,
+    "scope": "带显式尾kick初值的BAOAB位置消元及双噪声LM在τ=h²/2的重标度等式；不含长期精度。",
+    "diff": "--- submitted\n+++ repaired\n@@ -9,4 +9,9 @@\n       lmStepH m U θ h R S q := by\n   funext i\n   dsimp [baoabInfinite,lmStepH,kickStep,driftStep,redrawStep,Function.comp_def]\n-  ring+  ring\n+\n+theorem lmStepH_rescale (m : V n) (U : V n → ℝ) (θ h : ℝ) (R S q : V n)\n+    (hm : ∀ i, 0 < m i) (hθ : 0 ≤ θ) (hh : 0 ≤ h) :\n+    lmStepH m U θ h R S q = lmStep m U θ (h^2/2) R S q := by\n+  sorry"
+  },
+  {
+    "source_id": "MD-7.10-ColoredNoiseAndExtension",
+    "receipt": "ColoredNoiseAndExtension",
+    "checked": true,
+    "signature_changed": true,
+    "scope": "邻接噪声定义与协方差、扩展状态映射及可测Markov核定义；过程相对过去的新噪声独立性/Markov定理未覆盖，位置非Markov不作全称断言。",
+    "diff": "--- submitted\n+++ repaired\n@@ -5,4 +5,10 @@\n       if j = k then 1/2 else if j+1 = k ∨ k+1 = j then 1/4 else 0 := by\n   sorry\n def lmExtendedStep (m : V n) (U : V n → ℝ) (θ τ : ℝ) (R : V n) (x : V n × V n) : V n × V n :=\n-  (lmStep m U θ τ R x.2 x.1,R)+  (lmStep m U θ τ R x.2 x.1,R)\n+\n+def lmExtendedKernel (m : V n) (U : V n → ℝ) (θ τ : ℝ)\n+    (hstep : Measurable (fun z : (V n × V n) × V n ↦\n+      lmExtendedStep m U θ τ z.2 z.1)) : Kernel (V n × V n) (V n × V n) :=\n+  (Kernel.id.prod (Kernel.const (V n × V n) (Measure.pi (fun _ : Fin n ↦ gaussianReal 0 1)))).map\n+    (fun z ↦ lmExtendedStep m U θ τ z.2 z.1)\n"
+  },
+  {
+    "source_id": "MD-7.12-ConstrainedHOSplitting",
+    "receipt": "ConstrainedHOSplitting",
+    "checked": true,
+    "signature_changed": true,
+    "scope": "H/O总化漂移、O扩散，以及两段各自受约束积分解规格；组合仍为代数辅助，未构造随机核及两次独立噪声组合。",
+    "diff": "--- submitted\n+++ repaired\n@@ -2,4 +2,34 @@\n   (fun i ↦ x.2 i/m i,fun i ↦ -gradient U x.1 i-constraintReaction g x.1 multiplier i)\n def constrainedOField {l : ℕ} (g : V n → V l) (γ : ℝ) (multiplier : V l) (x : Phase n) : Phase n :=\n   (0,fun i ↦ -γ*x.2 i-constraintReaction g x.1 multiplier i)\n-def constrainedHOComposition {E : Type*} (H O : ℝ → E → E) (h : ℝ) : E → E := O (h/2) ∘ H h ∘ O (h/2)+def constrainedHOComposition {E : Type*} (H O : ℝ → E → E) (h : ℝ) : E → E := O (h/2) ∘ H h ∘ O (h/2)\n+\n+def constrainedONoise (m : V n) (γ θ : ℝ) (j : Fin n) : Phase n :=\n+  (0,fun i ↦ if i=j then Real.sqrt (2*γ*θ*m i) else 0)\n+\n+def constrainedHIntegralStep {l : ℕ} (m : V n) (U : V n → ℝ) (g : V n → V l)\n+    (X : ℝ → Phase n) (Λ : ℝ → V l) (x0 : Phase n) (T : ℝ) : Prop :=\n+  (∀ i, 0 < m i) ∧ ContDiff ℝ 2 g ∧ ContDiff ℝ 1 U ∧ 0 ≤ T ∧\n+  ContinuousOn X (Icc 0 T) ∧ X 0=x0 ∧\n+  (∀ t ∈ Icc 0 T, X t ∈ cotangentConstraint m g) ∧\n+  ∀ i, IntervalIntegrable (fun t ↦ (X t).2 i/m i) volume 0 T ∧\n+    IntervalIntegrable (fun t ↦ -gradient U (X t).1 i-\n+      constraintReaction g (X t).1 (Λ t) i) volume 0 T ∧\n+    ∀ t ∈ Icc 0 T,\n+      (X t).1 i=x0.1 i+∫ s in (0 : ℝ)..t, (X s).2 i/m i ∧\n+      (X t).2 i=x0.2 i+∫ s in (0 : ℝ)..t,\n+        -gradient U (X s).1 i-constraintReaction g (X s).1 (Λ s) i\n+\n+/-- O乘子冲量允许含随机部分；不把它限为有限变差的λdt。 -/\n+def constrainedOIntegralStep {l : ℕ} (P : Measure Ω) (m : V n) (g : V n → V l)\n+    (γ θ : ℝ) (W : ℝ → Ω → V n) (X : ℝ → Ω → Phase n)\n+    (reactionImpulse : ℝ → Ω → V n) (x0 : Phase n) (T : ℝ) : Prop :=\n+  vectorWiener P W ∧ (∀ i, 0 < m i) ∧ 0 < γ ∧ 0 < θ ∧ ContDiff ℝ 2 g ∧ 0 ≤ T ∧\n+  (∀ t ∈ Icc 0 T, ∀ᵐ sample ∂P, X t sample ∈ cotangentConstraint m g) ∧\n+  (∀ᵐ sample ∂P, ContinuousOn (fun t ↦ X t sample) (Icc 0 T) ∧\n+    X 0 sample=x0 ∧ reactionImpulse 0 sample=0) ∧\n+  (∀ sample i, IntervalIntegrable (fun t ↦ -γ*(X t sample).2 i) volume 0 T) ∧\n+  ∀ t ∈ Icc 0 T, ∀ᵐ sample ∂P,\n+    (X t sample).1=x0.1 ∧ ∀ i,\n+      (X t sample).2 i=x0.2 i+(∫ s in (0 : ℝ)..t, -γ*(X s sample).2 i)-\n+        reactionImpulse t sample i+Real.sqrt (2*γ*θ*m i)*(W t sample i-W 0 sample i)\n"
+  },
+  {
+    "source_id": "MD-7.12.1-ApproximateGeodesicOrder",
+    "receipt": "ApproximateGeodesicOrder",
+    "checked": true,
+    "signature_changed": false,
+    "scope": "仅一致局部O(h³)误差资格定义；原文替换测地流后整体保二阶的命题未形式化。",
+    "diff": ""
+  },
+  {
+    "source_id": "MD-7.13-SpectralRadiusStability",
+    "receipt": "SpectralRadiusStability",
+    "checked": true,
+    "signature_changed": true,
+    "scope": "实二阶矩阵的闭单位圆谱判据及实际multipleX在γη资格下的双曲条件等价；不含Gaussian驱动有限方差平稳性。",
+    "diff": "--- submitted\n+++ repaired\n@@ -4,4 +4,10 @@\n     characteristicUnitDisk X ↔ |Matrix.trace X| ≤ 1+Matrix.det X := by\n   sorry\n def hyperbolicStability (γ h : ℝ) (η : ℂ) : Prop :=\n-  ‖Complex.cosh (η*(h : ℂ)/2)+(h : ℂ)/η*Complex.sinh (-η*(h : ℂ)/2)‖ ≤ Real.cosh (γ*h/2)+  ‖Complex.cosh (η*(h : ℂ)/2)+(h : ℂ)/η*Complex.sinh (-η*(h : ℂ)/2)‖ ≤ Real.cosh (γ*h/2)\n+\n+theorem multipleX_spectral_hyperbolic (Ω γ h : ℝ) (η : ℂ)\n+    (hγ : 0 < γ) (hh : 0 < h)\n+    (hη : η^2=(γ : ℂ)^2-4*(Ω : ℂ)^2) (hne : η ≠ 0) :\n+    characteristicUnitDisk (multipleX Ω γ h) ↔ hyperbolicStability γ h η := by\n+  sorry"
+  }
+]

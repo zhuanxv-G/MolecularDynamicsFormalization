@@ -1,0 +1,22 @@
+--- 
++++ 
+@@ -6,10 +6,18 @@
+   momentumAverage β f q
+ 
+ def momentumAveragePrinted (U : V n → ℝ) (β : ℝ) (f : Phase n → ℝ) (q : V n) : ℝ :=
+-  ∫ p, f (q,p)*gibbsWeight (fun _ ↦ 1) U β (q,p)
++  ∫ p, f (q,p)*(gibbsWeight (fun _ ↦ 1) U β (q,p)/
++    (∫ x : Phase n, gibbsWeight (fun _ ↦ 1) U β x))
+ theorem firstReciprocalCorrection_pde (U ν μ : V n → ℝ) (β : ℝ) (hβ : 0 < β)
+     (hU : ContDiff ℝ ⊤ U) (hν : ContDiff ℝ ⊤ ν) :
+     let ρ := gibbsWeight (fun _ ↦ 1) U β
+     phaseO (fun _ ↦ 1) 1 β (ρ*firstReciprocalCorrection U ν μ β)+
+       phaseH U (fun x ↦ ρ x*ν x.1) = (fun x ↦ symmetricRHS false U β x*ρ x) := by
+-  sorry+  sorry
++
++def conjugatedPhaseH (U : V n → ℝ) (β : ℝ) (f : Phase n → ℝ) (x : Phase n) : ℝ :=
++  phaseH U (gibbsWeight (fun _ ↦ 1) U β*f) x/gibbsWeight (fun _ ↦ 1) U β x
++
++def jointGibbsQualification (U : V n → ℝ) (β : ℝ) : Prop :=
++  0 < β ∧ Integrable (gibbsWeight (fun _ ↦ 1) U β) volume ∧
++  0 < ∫ x : Phase n, gibbsWeight (fun _ ↦ 1) U β x

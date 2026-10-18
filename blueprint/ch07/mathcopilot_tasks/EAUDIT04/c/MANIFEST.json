@@ -1,0 +1,73 @@
+{
+  "batch": "EAUDIT04",
+  "subtask": "EAUDIT04c",
+  "source_ids": [
+    "MD-7.7.2-SpectralQualification"
+  ],
+  "input_sha256": {
+    "Blueprint/Ch07.lean": "f3bc0ee86ace9c825028f0cec8ebb2fb410d6be77213cc7fb41cb8889540a000",
+    "blueprint/ch07/ch07_source.json": "1a201887b51a249fb73f456237cb342963c5d98c612ec1912f21572a57924012",
+    "PAGES.pdf": "6acd47322cf23d5b70ce4d60d31189eda8ed037bfe9e3118e0f8a81e72471b8b"
+  },
+  "page_mapping": [
+    {
+      "attachment_page": 1,
+      "original_pdf_page": 310,
+      "printed_page": 289
+    }
+  ],
+  "definition_excerpts": [
+    {
+      "full_name": "MD.Ch07.simpleEigenvalue",
+      "kind": "def",
+      "path": "Blueprint/Ch07.lean",
+      "line": 1012,
+      "code_sha256": "ecbbfef9833807d966566bc24f56503024b27fff5a446a3b4d0bb9779b8d7ea4"
+    },
+    {
+      "full_name": "MD.Ch07.printedSpectralConclusion",
+      "kind": "def",
+      "path": "Blueprint/Ch07.lean",
+      "line": 1014,
+      "code_sha256": "dfd8de6536f06bfce52d3b3150eababe9bc5dcc3ccce39cc1ce5c6273789eb94"
+    },
+    {
+      "full_name": "MD.Ch07.spectralConclusionPrinted",
+      "kind": "def",
+      "path": "Blueprint/Ch07.lean",
+      "line": 1019,
+      "code_sha256": "c91b30064fc05efc19731e517caa438d84787cbb578310cc35b67f57d41ac86f"
+    },
+    {
+      "full_name": "MD.Ch07.spectralConclusionPrinted_corrected",
+      "kind": "def",
+      "path": "Blueprint/Ch07.lean",
+      "line": 1022,
+      "code_sha256": "538c3bca37582efa807bf566a0022e6eb2dca70dbae6d3b481a1cede1547c199"
+    },
+    {
+      "full_name": "MolecularDynamics.Chapter05Review.E",
+      "kind": "abbrev",
+      "path": "MolecularDynamics/Chapter05/ReviewDefinitions.lean",
+      "line": 18,
+      "code_sha256": "b497c8ba7f01b62a3147d9ae65652772ff3f81e57aa19b116f1283fef7a3cc60"
+    }
+  ],
+  "validation": {
+    "project_constant_closure": "PASS",
+    "missing_project_definitions": [],
+    "full_page_render_equality_dpi": 72,
+    "website_submitted": false
+  },
+  "files": {
+    "PASTE.txt": {
+      "bytes": 9805,
+      "sha256": "fcb255c96bc9d4d4c159ed8c2286eb96a010188906bd6c3847c58936748f6ac9"
+    },
+    "PAGES.pdf": {
+      "bytes": 77543,
+      "sha256": "6acd47322cf23d5b70ce4d60d31189eda8ed037bfe9e3118e0f8a81e72471b8b"
+    }
+  },
+  "total_task_bytes": 89689
+}

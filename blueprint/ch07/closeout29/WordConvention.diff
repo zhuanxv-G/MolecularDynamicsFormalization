@@ -1,0 +1,22 @@
+--- submitted
++++ repaired
+@@ -1,13 +1,12 @@
+ def oabaobaoPrinted (m : V n) (U : V n → ℝ) (γ θ h : ℝ)
+-    (R : Fin 3 → V n) : Phase n → Phase n :=
+-  ouStep m γ θ (h/4) (R 2) ∘ driftStep m (h/3) ∘ kickStep U (h/2) ∘
+-  ouStep m γ θ (h/4) (R 1) ∘ driftStep m (h/3) ∘ kickStep U (h/2) ∘
++    (R : Fin 4 → V n) : Phase n → Phase n :=
++  ouStep m γ θ (h/4) (R 3) ∘ driftStep m (h/3) ∘ kickStep U (h/2) ∘
++  ouStep m γ θ (h/4) (R 2) ∘ driftStep m (h/3) ∘
++  ouStep m γ θ (h/4) (R 1) ∘ kickStep U (h/2) ∘
+   driftStep m (h/3) ∘ ouStep m γ θ (h/4) (R 0)
+ 
++/-- 恢复原页的兼容名称；原书此处没有计数勘误。 -/
+ def oabaobaoPrinted_corrected (m : V n) (U : V n → ℝ) (γ θ h : ℝ)
+-    (R : Fin 3 → V n) : Phase n → Phase n :=
+-  ouStep m γ θ (h/3) (R 2) ∘ driftStep m (h/3) ∘ kickStep U (h/2) ∘
+-  ouStep m γ θ (h/3) (R 1) ∘ driftStep m (h/3) ∘ kickStep U (h/2) ∘
+-  driftStep m (h/3) ∘ ouStep m γ θ (h/3) (R 0)
++    (R : Fin 4 → V n) : Phase n → Phase n := oabaobaoPrinted m U γ θ h R
+ 
+-theorem oabaobaoCount : (["O","A","B","A","O","B","A","O"] : List String).count "O" = 3 := by decide+theorem oabaobaoCount : (["O","A","B","O","A","O","B","A","O"] : List String).count "O" = 4 := by decide

@@ -1,0 +1,16 @@
+--- submitted
++++ repaired
+@@ -1,4 +1,13 @@
+ theorem pullback_order {E F : Type*} (A B : E → E) (φ : E → F) :
+     φ ∘ (B ∘ A) = (φ ∘ B) ∘ A := rfl
+ def abaoBackward (m : V n) (U : V n → ℝ) (γ θ h : ℝ) (φ : Phase n → ℝ) :=
+-  propagateA m (h/2) (propagateB U h (propagateA m (h/2) (propagateO m γ θ h φ)))+  propagateA m (h/2) (propagateB U h (propagateA m (h/2) (propagateO m γ θ h φ)))
++
++theorem fourStage_duality {E : Type*} [AddCommGroup E] [Module ℝ E]
++    (pair : E → E → ℝ) (A B C D a b c d : Module.End ℝ E)
++    (hA : ∀ x y, pair (A x) y = pair x (a y))
++    (hB : ∀ x y, pair (B x) y = pair x (b y))
++    (hC : ∀ x y, pair (C x) y = pair x (c y))
++    (hD : ∀ x y, pair (D x) y = pair x (d y)) (x y : E) :
++    pair (A (B (C (D x)))) y = pair x (d (c (b (a y)))) := by
++  rw [hA,hB,hC,hD]

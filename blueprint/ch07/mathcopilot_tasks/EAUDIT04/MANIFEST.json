@@ -1,0 +1,26 @@
+{
+  "batch": "EAUDIT04",
+  "subtasks": [
+    {
+      "subtask": "EAUDIT04a",
+      "source_id": "MD-7.7.1-TaylorRemainder",
+      "path": "blueprint/ch07/mathcopilot_tasks/EAUDIT04/a",
+      "bytes": 97379,
+      "manifest_sha256": "62003c74583487b45f0d600fb75ad8651049d002844ac0dab814ec9de1211196"
+    },
+    {
+      "subtask": "EAUDIT04b",
+      "source_id": "MD-7.7.2-OBAModifiedOperator",
+      "path": "blueprint/ch07/mathcopilot_tasks/EAUDIT04/b",
+      "bytes": 102704,
+      "manifest_sha256": "067013c5f53238918e548de0dd9c038de2613b8aae8f75a8972971785b71c15a"
+    },
+    {
+      "subtask": "EAUDIT04c",
+      "source_id": "MD-7.7.2-SpectralQualification",
+      "path": "blueprint/ch07/mathcopilot_tasks/EAUDIT04/c",
+      "bytes": 89689,
+      "manifest_sha256": "b06e8bc053c6cbe314ff49ccaf527865df10b0b70fbd7e7fdfe092be8ca32b0c"
+    }
+  ]
+}

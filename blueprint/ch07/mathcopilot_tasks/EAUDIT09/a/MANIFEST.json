@@ -1,0 +1,150 @@
+{
+  "batch": "EAUDIT09",
+  "subtask": "EAUDIT09a",
+  "source_ids": [
+    "MD-7.9.3-BAOABMarginalCancellation"
+  ],
+  "input_sha256": {
+    "Blueprint/Ch07.lean": "f3bc0ee86ace9c825028f0cec8ebb2fb410d6be77213cc7fb41cb8889540a000",
+    "blueprint/ch07/ch07_source.json": "1a201887b51a249fb73f456237cb342963c5d98c612ec1912f21572a57924012",
+    "PAGES.pdf": "32d82e1a0c3338ee618f4e864ec456468fa71a682f08440e16a497ce498dcbdd"
+  },
+  "page_mapping": [
+    {
+      "attachment_page": 1,
+      "original_pdf_page": 326,
+      "printed_page": 305
+    }
+  ],
+  "definition_excerpts": [
+    {
+      "full_name": "MD.Ch07.V",
+      "kind": "abbrev",
+      "path": "Blueprint/Ch07.lean",
+      "line": 202,
+      "code_sha256": "7ab0ad90462b274b03f5b929b5f09417c0b397b6cb908fa6e7bd56677a314027"
+    },
+    {
+      "full_name": "MD.Ch07.Phase",
+      "kind": "abbrev",
+      "path": "Blueprint/Ch07.lean",
+      "line": 203,
+      "code_sha256": "ef1520e3b22ac1c99a30a989deafe8d3da44a9f2a3e5b6c2cd3220218b88513e"
+    },
+    {
+      "full_name": "MD.Ch07.coordDerivative",
+      "kind": "def",
+      "path": "Blueprint/Ch07.lean",
+      "line": 257,
+      "code_sha256": "e782d789a13f5db6817e2c995f141805e81ac75720125b846f8ee14ba3833a4b"
+    },
+    {
+      "full_name": "MD.Ch07.gradient",
+      "kind": "def",
+      "path": "Blueprint/Ch07.lean",
+      "line": 288,
+      "code_sha256": "540c6af25c09d3a58da531bc32056ff1a1c070facc58d34c96b6653d781fba6f"
+    },
+    {
+      "full_name": "MD.Ch07.positionGibbs",
+      "kind": "def",
+      "path": "Blueprint/Ch07.lean",
+      "line": 1169,
+      "code_sha256": "82bb55e66a80fed509916dd4534bcc354cc9bd8df28c6b30af7e5a2e29632202"
+    },
+    {
+      "full_name": "MD.Ch07.momentumGibbs",
+      "kind": "def",
+      "path": "Blueprint/Ch07.lean",
+      "line": 1171,
+      "code_sha256": "37890e88a0521fb73fdcd58c2c02631a375383f9542a51cd2521500fb8692207"
+    },
+    {
+      "full_name": "MD.Ch07.productGibbs",
+      "kind": "def",
+      "path": "Blueprint/Ch07.lean",
+      "line": 1172,
+      "code_sha256": "a6ad2d129b80649e4904fb1e07f2591a5e7db814b84c01b8c47a02537a602ae8"
+    },
+    {
+      "full_name": "MD.Ch07.hessianU",
+      "kind": "def",
+      "path": "Blueprint/Ch07.lean",
+      "line": 1266,
+      "code_sha256": "8c2605253d3d70a39369a2c08eb2c758793a9cc41934f1f97c967d5eb2c776ee"
+    },
+    {
+      "full_name": "MD.Ch07.gradNormSq",
+      "kind": "def",
+      "path": "Blueprint/Ch07.lean",
+      "line": 1316,
+      "code_sha256": "4ac74933a6c274ae1355fc8b7cdd3820a81dec13cacd2c6e39768e45795792df"
+    },
+    {
+      "full_name": "MD.Ch07.hessianQuadratic",
+      "kind": "def",
+      "path": "Blueprint/Ch07.lean",
+      "line": 1317,
+      "code_sha256": "a6a3143b1913df6460ab70c1909c2d7201e4434efc287c2634a325c9281a5215"
+    },
+    {
+      "full_name": "MD.Ch07.laplacian",
+      "kind": "def",
+      "path": "Blueprint/Ch07.lean",
+      "line": 1378,
+      "code_sha256": "34815bde240a9d093117da74ea9ce745ee5f13888a61c42c94cfcecfc623a421"
+    },
+    {
+      "full_name": "MD.Ch07.momentumAverage",
+      "kind": "def",
+      "path": "Blueprint/Ch07.lean",
+      "line": 1403,
+      "code_sha256": "029603720be2e70dcd6e7ba8314456dc87368ecad39507b81040d923db2ab02f"
+    },
+    {
+      "full_name": "MD.Ch07.highFrictionOABAO",
+      "kind": "def",
+      "path": "Blueprint/Ch07.lean",
+      "line": 1434,
+      "code_sha256": "a13e000bdcfee605e2261531ed7d396865be2ed9d54b7a27059c2eeab2db1cd9"
+    },
+    {
+      "full_name": "MD.Ch07.highFrictionCorrection",
+      "kind": "def",
+      "path": "Blueprint/Ch07.lean",
+      "line": 1449,
+      "code_sha256": "2c4fdb65659cb32bc88c5580ab6d9dfc69ee1d5abbe7782dbcb368b6c9c3c512"
+    },
+    {
+      "full_name": "MD.Ch07.baoabMarginalCancellation",
+      "kind": "theorem",
+      "path": "Blueprint/Ch07.lean",
+      "line": 1479,
+      "code_sha256": "5a693224f117eed0a05b31f7c0872572b7cd0ba497997a05b1d87dddc00c6e26"
+    },
+    {
+      "full_name": "MD.Ch07.baoabConfigurationalCancellation",
+      "kind": "theorem",
+      "path": "Blueprint/Ch07.lean",
+      "line": 1482,
+      "code_sha256": "268761a48d3a401c335334df9dbdd9ad6c50813ee002606ca85cab56b5e2bb49"
+    }
+  ],
+  "validation": {
+    "project_constant_closure": "PASS",
+    "missing_project_definitions": [],
+    "full_page_render_equality_dpi": 72,
+    "website_submitted": false
+  },
+  "files": {
+    "PASTE.txt": {
+      "bytes": 13447,
+      "sha256": "6c47e3b6b7e5200fe9bf001dfd597973bc39207c03a77a344c29ebb994947052"
+    },
+    "PAGES.pdf": {
+      "bytes": 84932,
+      "sha256": "32d82e1a0c3338ee618f4e864ec456468fa71a682f08440e16a497ce498dcbdd"
+    }
+  },
+  "total_task_bytes": 103184
+}

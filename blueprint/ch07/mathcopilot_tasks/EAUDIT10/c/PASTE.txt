@@ -1,0 +1,154 @@
+以附件/PASTE 为准，忽略 /workspace 旧文件；Mathlib 定义按标准含义采信。
+本任务只审本条：原文转录、对象资格、定义体、量词、全部结论及[EXTRA]是否一致；Lean编译不代替语义审阅。
+Lean/Mathlib均4.34.0。原页PDF映射：[329]；印刷页=[308].
+input_sha256请原样回显：
+{
+  "Blueprint/Ch07.lean": "f3bc0ee86ace9c825028f0cec8ebb2fb410d6be77213cc7fb41cb8889540a000",
+  "blueprint/ch07/ch07_source.json": "1a201887b51a249fb73f456237cb342963c5d98c612ec1912f21572a57924012",
+  "PAGES.pdf": "b60d79f0451f809906444f1eaabfb5e39897a74603b8435b7804ec65fd590b61"
+}
+用代码将JSON对象(batch,input_sha256,items)写到 /workspace/.mathcopilot/reviews/ch07/EAUDIT10c_review.json；items仅含本source_id。
+items字段：source_id、verdict(PASS/FAIL/NEEDS_HUMAN)、transcription、semantic_review、counterexample、suggested_fix、printed_version、corrected_version。逐版区分原文疑误和修正版结论；缺材料必须具体指出，不猜测。写后json.loads自检，最后仅回复路径及统计。
+
+## 原文JSON
+```json
+{
+  "source_id": "MD-7.10-LimitMethodAccuracy",
+  "kind": "definition",
+  "label": null,
+  "section": "7.10",
+  "printed_page": "308",
+  "pdf_page": "329",
+  "statement_latex": "We would expect that this scheme should have an $O(h^4)=O(\\tau^2)$ error in configurational averages. For averages computed in finite time, work in [224] has shown that (7.40) does indeed give a first order error, albeit one that vanishes exponentially fast in time as the simulation progresses. Hence for suitably long simulations, the observed error will be $O(h^2)$.",
+  "proof_latex": null,
+  "proof_outline": null,
+  "proof_note": "原页推导与上下文全文见original_page_text；数学符号的排版以随附原页PDF为准。",
+  "original_page_text": [
+    {
+      "pdf_page": 329,
+      "printed_page": 308,
+      "text": "308\n7\nNumerical Methods for Stochastic Molecular Dynamics\nwhere Rnis an independent normal random vector with mean zero and unit variance.\nExpressing this as an update solely for the conﬁgurations, we obtain\nqnC1 D qn \u0003 h2\n2 M\u00021rU.qn/ C h\n2\np\nkBTM\u00021=2 .Rn C Rn\u00021/ ;\nand substituting \u0002 D h2=2 gives the BAOAB Limit Method (Leimkuhler-Matthews\nmethod) [221]\nqnC1 D qn \u0003 \u0002M\u00021rU.qn/ C\np\n2\u0002kBTM\u00021=2\n\bRn C Rn\u00021\n2\n\t\n:\n(7.40)\nAs we are in the overdamped regime, we would expect that this scheme should\nhave an O.h4/ D O.\u00022/ error in conﬁgurational averages, while inheriting the\nother properties of the \u0002BAOAB\u0003 scheme for the harmonic and perturbed harmonic\nmodels considered in Sects. 7.4 and 7.5. Moreover, since we completely remove the\nsecond order term in the Langevin dynamics conﬁgurational density expansion, we\nexpect to observe this behavior across all values of h and \u0002. This is quite a surprising\nresult, given the qualitative similarity between Eqs. (7.39) and (7.40).\nThe beneﬁt of (7.40) over the Euler-Maruyama scheme is that we can get second\norder accuracy in averages with only a single evaluation of the force at each\ntimestep. However, our analysis presented here is only for the inﬁnite time case.\nFor averages computed in ﬁnite time, work in [224] has shown that (7.40) does\nindeed give a ﬁrst order error, albeit one that vanishes exponentially fast in time as\nthe simulation progresses. Hence for suitably long simulations, the observed error\nwill be O.h2/.\nWe can think of the noise process in (7.40) as corresponding to a colored noise\nwhich has characteristics that directly depend on the stepsize, although the noise\ndecorrelates in just a couple of timesteps. This is therefore no longer a Markov\nprocess, however it can be reformulated as such if one considers the appropriate\nextended space (or keeping the momenta pn).\n7.11\nApplying the Schemes to a Biomolecule\nNumerical analysis of a scheme should always be supported (and informed by)\nthorough numerical testing. Often salient features of a discretization method can be\nmissed because of a shallow scope of experimentation. Our goal will be to evaluate\nthe efﬁcacy of the numerical schemes for Langevin dynamics presented thus far. We\nshall look at the invariant (long-time) averages resulting from computations using\nthe four symmetric Langevin integrators that we derived using our splitting, for\nwhich results for the harmonic oscillator are detailed in (7.15), and for which a more\ngeneral error analysis was considered in Sect. 7.9.2. Additionally we will compare\ntheir results to the performance of the standard SPV and BBK schemes considered\nin Sect. 7.3.2.\n"
+    }
+  ],
+  "transcription_note": "PDF文字层原样保留，陈述中的数学排版转写为LaTeX；文字层有特殊字形编码时以目视原页为准。PDF347的Exercises之后不在正文范围内。",
+  "context_notation": [],
+  "extra_assumptions": [
+    "用显式瞬态上界命题保留指数衰减的一阶项和二阶项，不宣称该命题已对任意势成立；其成立所需的增长/耗散与正则条件及真实分布误差识别尚缺。",
+    "原文称all values of h and τ亦不能由局部渐近展开推出全步长阶数结论。",
+    "29号覆盖限定：瞬态界只是量化目标；h⁴修正版明确指先T→∞所得误差，固定有限T仍可能仅h²；实际LM误差及其满足界的定理未覆盖。"
+  ],
+  "issues": [
+    "已目视核对PDF329：本段前面以τ为实际过阻尼步长并称长期二阶，末句却写O(h²)。若仍沿用τ=h²/2，应区分长期O(τ²)=O(h⁴)和有限时一阶O(τ)=O(h²)；原文符号存在歧义。"
+  ],
+  "statement_scope": "瞬态界只是量化目标；h⁴修正版明确指先T→∞所得误差，固定有限T仍可能仅h²；实际LM误差及其满足界的定理未覆盖。",
+  "lean_decl": "MD.Ch07.lmTransientErrorBound",
+  "lean_declarations": [
+    "MD.Ch07.lmTransientErrorBound",
+    "MD.Ch07.limitAccuracyPrinted",
+    "MD.Ch07.limitAccuracyPrinted_corrected",
+    "MD.Ch07.limitAccuracy_rescale",
+    "MD.Ch07.limitAccuracyInfiniteTime_corrected"
+  ],
+  "source_page_verification": "见source_page_checks.json；必须已目视核对本条原页。",
+  "repair_log": [
+    {
+      "instruction": 29,
+      "website_verdict": "NEEDS_HUMAN",
+      "suggested_fix": "保留原印h²并标疑误；修正版明确先取无限时间。补LM误差对象与界的适用条件，说明有限T和联合T(h)极限；恢复原句或标摘述。",
+      "actual_scope": "瞬态界只是量化目标；h⁴修正版明确指先T→∞所得误差，固定有限T仍可能仅h²；实际LM误差及其满足界的定理未覆盖。",
+      "signature_changed": true
+    }
+  ],
+  "documented_priors": [],
+  "coverage_gaps": [
+    "29号覆盖限定：瞬态界只是量化目标；h⁴修正版明确指先T→∞所得误差，固定有限T仍可能仅h²；实际LM误差及其满足界的定理未覆盖。"
+  ]
+}
+```
+
+## 完整本条Lean
+```lean
+def lmTransientErrorBound (error : ℝ → ℝ → ℝ) : Prop :=
+  ∃ C > 0, ∃ multiplier > 0, ∃ δ > 0, ∀ τ ∈ Set.Ioo 0 δ, ∀ T ≥ 0,
+    |error τ T| ≤ C*(Real.exp (-multiplier*T)*τ+τ^2)
+def limitAccuracyPrinted (error : ℝ → ℝ) : Prop :=
+  Asymptotics.IsBigO (𝓝[Set.Ioi (0 : ℝ)] 0) error (fun h ↦ h^2)
+
+def limitAccuracyPrinted_corrected (error : ℝ → ℝ) : Prop :=
+  Asymptotics.IsBigO (𝓝[Set.Ioi (0 : ℝ)] 0) error (fun h ↦ h^4)
+
+theorem limitAccuracy_rescale (h : ℝ) : (h^2/2)^2 = h^4/4 := by ring
+
+def limitAccuracyInfiniteTime_corrected (error : ℝ → ℝ → ℝ) (longtime : ℝ → ℝ) : Prop :=
+  (∀ h, 0 < h → Tendsto (fun T ↦ error (h^2/2) T) atTop (𝓝 (longtime h))) ∧
+  limitAccuracyPrinted_corrected longtime
+```
+
+## 项目依赖定义体及选择规格
+以下def/abbrev/structure完整保留；定理列出完整类型，Mathlib标准定义无需摘录。
+
+### MD.Ch07.lmTransientErrorBound (Blueprint/Ch07.lean:1621)
+原文件上下文：
+```lean
+open Set Filter MeasureTheory ProbabilityTheory MolecularDynamics
+open scoped BigOperators Topology ContDiff ENNReal NNReal Matrix
+variable {Ω : Type*} [MeasurableSpace Ω]
+variable {n : ℕ}
+```
+```lean
+def lmTransientErrorBound (error : ℝ → ℝ → ℝ) : Prop :=
+  ∃ C > 0, ∃ multiplier > 0, ∃ δ > 0, ∀ τ ∈ Set.Ioo 0 δ, ∀ T ≥ 0,
+    |error τ T| ≤ C*(Real.exp (-multiplier*T)*τ+τ^2)
+```
+
+### MD.Ch07.limitAccuracyPrinted (Blueprint/Ch07.lean:1624)
+原文件上下文：
+```lean
+open Set Filter MeasureTheory ProbabilityTheory MolecularDynamics
+open scoped BigOperators Topology ContDiff ENNReal NNReal Matrix
+variable {Ω : Type*} [MeasurableSpace Ω]
+variable {n : ℕ}
+```
+```lean
+def limitAccuracyPrinted (error : ℝ → ℝ) : Prop :=
+  Asymptotics.IsBigO (𝓝[Set.Ioi (0 : ℝ)] 0) error (fun h ↦ h^2)
+```
+
+### MD.Ch07.limitAccuracyPrinted_corrected (Blueprint/Ch07.lean:1627)
+原文件上下文：
+```lean
+open Set Filter MeasureTheory ProbabilityTheory MolecularDynamics
+open scoped BigOperators Topology ContDiff ENNReal NNReal Matrix
+variable {Ω : Type*} [MeasurableSpace Ω]
+variable {n : ℕ}
+```
+```lean
+def limitAccuracyPrinted_corrected (error : ℝ → ℝ) : Prop :=
+  Asymptotics.IsBigO (𝓝[Set.Ioi (0 : ℝ)] 0) error (fun h ↦ h^4)
+```
+
+### MD.Ch07.limitAccuracy_rescale (Blueprint/Ch07.lean:1630)
+原文件上下文：
+```lean
+open Set Filter MeasureTheory ProbabilityTheory MolecularDynamics
+open scoped BigOperators Topology ContDiff ENNReal NNReal Matrix
+variable {Ω : Type*} [MeasurableSpace Ω]
+variable {n : ℕ}
+```
+```lean
+theorem limitAccuracy_rescale (h : ℝ) : (h^2/2)^2 = h^4/4
+```
+
+### MD.Ch07.limitAccuracyInfiniteTime_corrected (Blueprint/Ch07.lean:1632)
+原文件上下文：
+```lean
+open Set Filter MeasureTheory ProbabilityTheory MolecularDynamics
+open scoped BigOperators Topology ContDiff ENNReal NNReal Matrix
+variable {Ω : Type*} [MeasurableSpace Ω]
+variable {n : ℕ}
+```
+```lean
+def limitAccuracyInfiniteTime_corrected (error : ℝ → ℝ → ℝ) (longtime : ℝ → ℝ) : Prop :=
+  (∀ h, 0 < h → Tendsto (fun T ↦ error (h^2/2) T) atTop (𝓝 (longtime h))) ∧
+  limitAccuracyPrinted_corrected longtime
+```

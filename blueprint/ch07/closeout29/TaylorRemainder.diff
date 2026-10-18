@@ -1,0 +1,15 @@
+--- submitted
++++ repaired
+@@ -6,4 +6,12 @@
+     Asymptotics.IsBigO (𝓝 (0 : ℝ))
+       (fun h ↦ F h-∑ j ∈ Finset.range (k+1), h^j/(Nat.factorial j : ℝ)*iteratedDeriv j F 0)
+       (fun h ↦ h^(k+1)) := by
+-  sorry+  sorry
++
++theorem propagatedObservable_remainder {E : Type*} (P : ℝ → (E → ℝ) → E → ℝ)
++    (φ : E → ℝ) (z : E) (k : ℕ)
++    (htime : ContDiff ℝ (k+1) (fun t ↦ P t φ z)) :
++    Asymptotics.IsBigO (𝓝 (0 : ℝ))
++      (fun h ↦ P h φ z-∑ j ∈ Finset.range (k+1),
++        h^j/(Nat.factorial j : ℝ)*iteratedDeriv j (fun t ↦ P t φ z) 0)
++      (fun h ↦ h^(k+1)) := taylorRemainder_bound _ k htime

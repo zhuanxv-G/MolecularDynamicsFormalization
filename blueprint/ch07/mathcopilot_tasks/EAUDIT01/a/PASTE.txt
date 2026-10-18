@@ -1,0 +1,223 @@
+以附件/PASTE 为准，忽略 /workspace 旧文件；Mathlib 定义按标准含义采信。
+本任务只审本条：原文转录、对象资格、定义体、量词、全部结论及[EXTRA]是否一致；Lean编译不代替语义审阅。
+Lean/Mathlib均4.34.0。原页PDF映射：[291]；印刷页=[270].
+input_sha256请原样回显：
+{
+  "Blueprint/Ch07.lean": "f3bc0ee86ace9c825028f0cec8ebb2fb410d6be77213cc7fb41cb8889540a000",
+  "blueprint/ch07/ch07_source.json": "1a201887b51a249fb73f456237cb342963c5d98c612ec1912f21572a57924012",
+  "PAGES.pdf": "15a89468e106a076dd43815a406b9ff50a1e17db43c4bf0d8d15dbcd6ea91ff6"
+}
+用代码将JSON对象(batch,input_sha256,items)写到 /workspace/.mathcopilot/reviews/ch07/EAUDIT01a_review.json；items仅含本source_id。
+items字段：source_id、verdict(PASS/FAIL/NEEDS_HUMAN)、transcription、semantic_review、counterexample、suggested_fix、printed_version、corrected_version。逐版区分原文疑误和修正版结论；缺材料必须具体指出，不猜测。写后json.loads自检，最后仅回复路径及统计。
+
+## 原文JSON
+```json
+{
+  "source_id": "MD-7.3.1-WordConvention",
+  "kind": "definition",
+  "label": null,
+  "section": "7.3.1",
+  "printed_page": "270",
+  "pdf_page": "291",
+  "statement_latex": "As a result we use the convention that if a letter appears $k$ times in a method's string, then each individual update piece uses a timestep $h/k$. For example, the scheme denoted $[OABOAOBAO]$ has an update\n\\[\\mathcal U_h^{[OABOAOBAO]}=\\mathcal U_{h/4}^O\\circ\\mathcal U_{h/3}^A\\circ\\mathcal U_{h/2}^B\\circ\\mathcal U_{h/4}^O\\circ\\mathcal U_{h/3}^A\\circ\\mathcal U_{h/4}^O\\circ\\mathcal U_{h/2}^B\\circ\\mathcal U_{h/3}^A\\circ\\mathcal U_{h/4}^O,\\]\nwhere the random numbers used in each O update are independent. This scheme will require a total of $4N_c$ normal random numbers and two force evaluations per step (the force must be recomputed at the first B step following an A step); the number of force evaluations required is not directly related to the length of the string.",
+  "proof_latex": null,
+  "proof_outline": null,
+  "proof_note": "原页推导与上下文全文见original_page_text；数学符号的排版以随附原页PDF为准。",
+  "original_page_text": [
+    {
+      "pdf_page": 291,
+      "printed_page": 270,
+      "text": "270\n7\nNumerical Methods for Stochastic Molecular Dynamics\nwhich we label A, B and O, where each of the three parts may be solved “exactly”,\nwith individual updates given as\nU A\nh .q; p/ D .q C hM\u00021p; p/;\nU B\nh .q; p/ D .q; p \u0003 hrU.q//;\nU O\nh .q; p/ D .q; e\u0002\nhp C\np\nkBT .1 \u0003 e\u00022\nh/M1=2R/;\nwhere R is a vector of i.i.d. normal random numbers. For the deterministic pieces\nA and B, the updates correspond to their ﬂow maps, while the update for the O\npiece corresponds to the solution derived in (7.3). The relevant forward propagators\nfor each piece of the Hamiltonian part are computed through the adjoint of the Lie\nderivative as\nL\u0004\nA D \u0003M\u00021p \u0002 rq;\nL\u0004\nB D rU.q/ \u0002 rp:\nUsing this splitting strategy, we can deﬁne a family of schemes by the desired\nsequence of updates, codiﬁed as a string using the alphabet “ABO”. For example,\nthe method denoted \u0002ABO\u0003 (acting from left to right) has a resulting update\nU \u0002ABO\u0003\nh\nD U O\nh ı U B\nh ı U A\nh :\nThis corresponds to using the adjoint symplectic Euler scheme to solve the\nNewtonian part of the Langevin dynamics SDE, followed by an exact OU solve. An\nalternative is to use velocity Verlet for the Hamiltonian part, resulting in a scheme\ndenoted \u0002BABO\u0003 with associated map\nU \u0002BABO\u0003\nh\nD U O\nh ı U B\nh=2 ı U A\nh ı U B\nh=2:\nNote that the presence of two B characters in the string results in halving the\ncorresponding piece’s time step length. As we need the method to be consistent,\nwe require that the each of the A, B and O pieces are propagated in time for a\ntotal time of h. As a result we use the convention that if a letter appears k times in a\nmethod’s string, then each individual update piece uses a timestep h=k. For example,\nthe scheme denoted \u0002OABOAOBAO\u0003 has an update\nU \u0002OABOAOBAO\u0003\nh\nD U O\nh=4 ı U A\nh=3 ı U B\nh=2 ı U O\nh=4 ı U A\nh=3 ı U O\nh=4 ı U B\nh=2 ı U A\nh=3 ı U O\nh=4;\nwhere the random numbers used in each O update are independent. This scheme will\nrequire a total of 4Nc normal random numbers and two force evaluations per step\n(the force must be recomputed at the ﬁrst B step following an A step; the number of\nforce evaluations required is not directly related to the length of the string).\nA class of methods like those considered above were discussed in [46] and given\nthe general title of “Geometric” Langevin Algorithm (GLA). The idea of a GLA\n"
+    }
+  ],
+  "transcription_note": "PDF文字层原样保留，陈述中的数学排版转写为LaTeX；文字层有特殊字形编码时以目视原页为准。PDF347的Exercises之后不在正文范围内。",
+  "context_notation": [],
+  "extra_assumptions": [
+    "每个O的向量噪声需联合独立标准正态；字母计数结论独立证明。",
+    "29号覆盖限定：九字母OABOAOBAO的确定性单步映射、四次O更新与计数；独立噪声序列的概率资格由vectorNormalSequence另列。",
+    "PDF291已目视核对：原书九字母OABOAOBAO、四次O(h/4)、4N_c均正确；撤销转录造成的假疑误。"
+  ],
+  "issues": [],
+  "statement_scope": "九字母OABOAOBAO的确定性单步映射、四次O更新与计数；独立噪声序列的概率资格由vectorNormalSequence另列。",
+  "lean_decl": "MD.Ch07.oabaobaoPrinted",
+  "lean_declarations": [
+    "MD.Ch07.oabaobaoPrinted",
+    "MD.Ch07.oabaobaoPrinted_corrected",
+    "MD.Ch07.oabaobaoCount"
+  ],
+  "source_page_verification": "见source_page_checks.json；必须已目视核对本条原页。",
+  "repair_log": [
+    {
+      "instruction": 29,
+      "website_verdict": "FAIL",
+      "suggested_fix": "按原页恢复九字母OABOAOBAO，Fin 4独立噪声，四个O均用h/4；删除把原书判为计数错误的标注，撤销无依据的h/3修正。保持原页4N_c。",
+      "actual_scope": "九字母OABOAOBAO的确定性单步映射、四次O更新与计数；独立噪声序列的概率资格由vectorNormalSequence另列。",
+      "signature_changed": true
+    }
+  ],
+  "documented_priors": [],
+  "coverage_gaps": []
+}
+```
+
+## 完整本条Lean
+```lean
+def oabaobaoPrinted (m : V n) (U : V n → ℝ) (γ θ h : ℝ)
+    (R : Fin 4 → V n) : Phase n → Phase n :=
+  ouStep m γ θ (h/4) (R 3) ∘ driftStep m (h/3) ∘ kickStep U (h/2) ∘
+  ouStep m γ θ (h/4) (R 2) ∘ driftStep m (h/3) ∘
+  ouStep m γ θ (h/4) (R 1) ∘ kickStep U (h/2) ∘
+  driftStep m (h/3) ∘ ouStep m γ θ (h/4) (R 0)
+
+/-- 恢复原页的兼容名称；原书此处没有计数勘误。 -/
+def oabaobaoPrinted_corrected (m : V n) (U : V n → ℝ) (γ θ h : ℝ)
+    (R : Fin 4 → V n) : Phase n → Phase n := oabaobaoPrinted m U γ θ h R
+
+theorem oabaobaoCount : (["O","A","B","O","A","O","B","A","O"] : List String).count "O" = 4 := by decide
+```
+
+## 项目依赖定义体及选择规格
+以下def/abbrev/structure完整保留；定理列出完整类型，Mathlib标准定义无需摘录。
+
+### MD.Ch07.V (Blueprint/Ch07.lean:202)
+原文件上下文：
+```lean
+open Set Filter MeasureTheory ProbabilityTheory MolecularDynamics
+open scoped BigOperators Topology ContDiff ENNReal NNReal Matrix
+variable {Ω : Type*} [MeasurableSpace Ω]
+variable {n : ℕ}
+```
+```lean
+abbrev V (n : ℕ) := Fin n → ℝ
+```
+
+### MD.Ch07.Phase (Blueprint/Ch07.lean:203)
+原文件上下文：
+```lean
+open Set Filter MeasureTheory ProbabilityTheory MolecularDynamics
+open scoped BigOperators Topology ContDiff ENNReal NNReal Matrix
+variable {Ω : Type*} [MeasurableSpace Ω]
+variable {n : ℕ}
+```
+```lean
+abbrev Phase (n : ℕ) := V n × V n
+```
+
+### MD.Ch07.ouMomentum (Blueprint/Ch07.lean:232)
+原文件上下文：
+```lean
+open Set Filter MeasureTheory ProbabilityTheory MolecularDynamics
+open scoped BigOperators Topology ContDiff ENNReal NNReal Matrix
+variable {Ω : Type*} [MeasurableSpace Ω]
+variable {n : ℕ}
+```
+```lean
+def ouMomentum (m : V n) (γ θ h : ℝ) (p R : V n) : V n :=
+  fun i ↦ Real.exp (-γ*h)*p i + Real.sqrt (θ*(1-Real.exp (-2*γ*h))) * Real.sqrt (m i) * R i
+```
+
+### MD.Ch07.ouStep (Blueprint/Ch07.lean:246)
+原文件上下文：
+```lean
+open Set Filter MeasureTheory ProbabilityTheory MolecularDynamics
+open scoped BigOperators Topology ContDiff ENNReal NNReal Matrix
+variable {Ω : Type*} [MeasurableSpace Ω]
+variable {n : ℕ}
+```
+```lean
+def ouStep (m : V n) (γ θ h : ℝ) (R : V n) (x : Phase n) : Phase n :=
+  (x.1, ouMomentum m γ θ h x.2 R)
+```
+
+### MD.Ch07.coordDerivative (Blueprint/Ch07.lean:257)
+原文件上下文：
+```lean
+open Set Filter MeasureTheory ProbabilityTheory MolecularDynamics
+open scoped BigOperators Topology ContDiff ENNReal NNReal Matrix
+variable {Ω : Type*} [MeasurableSpace Ω]
+variable {n : ℕ}
+```
+```lean
+def coordDerivative (f : V n → ℝ) (x : V n) (i : Fin n) : ℝ :=
+  deriv (fun z ↦ f (Function.update x i z)) (x i)
+```
+
+### MD.Ch07.gradient (Blueprint/Ch07.lean:288)
+原文件上下文：
+```lean
+open Set Filter MeasureTheory ProbabilityTheory MolecularDynamics
+open scoped BigOperators Topology ContDiff ENNReal NNReal Matrix
+variable {Ω : Type*} [MeasurableSpace Ω]
+variable {n : ℕ}
+```
+```lean
+def gradient (U : V n → ℝ) (q : V n) : V n := fun i ↦ coordDerivative U q i
+```
+
+### MD.Ch07.driftStep (Blueprint/Ch07.lean:319)
+原文件上下文：
+```lean
+open Set Filter MeasureTheory ProbabilityTheory MolecularDynamics
+open scoped BigOperators Topology ContDiff ENNReal NNReal Matrix
+variable {Ω : Type*} [MeasurableSpace Ω]
+variable {n : ℕ}
+```
+```lean
+def driftStep (m : V n) (h : ℝ) (x : Phase n) : Phase n :=
+  (fun i ↦ x.1 i + h * x.2 i / m i, x.2)
+```
+
+### MD.Ch07.kickStep (Blueprint/Ch07.lean:322)
+原文件上下文：
+```lean
+open Set Filter MeasureTheory ProbabilityTheory MolecularDynamics
+open scoped BigOperators Topology ContDiff ENNReal NNReal Matrix
+variable {Ω : Type*} [MeasurableSpace Ω]
+variable {n : ℕ}
+```
+```lean
+def kickStep (U : V n → ℝ) (h : ℝ) (x : Phase n) : Phase n :=
+  (x.1, fun i ↦ x.2 i - h * gradient U x.1 i)
+```
+
+### MD.Ch07.oabaobaoPrinted (Blueprint/Ch07.lean:366)
+原文件上下文：
+```lean
+open Set Filter MeasureTheory ProbabilityTheory MolecularDynamics
+open scoped BigOperators Topology ContDiff ENNReal NNReal Matrix
+variable {Ω : Type*} [MeasurableSpace Ω]
+variable {n : ℕ}
+```
+```lean
+def oabaobaoPrinted (m : V n) (U : V n → ℝ) (γ θ h : ℝ)
+    (R : Fin 4 → V n) : Phase n → Phase n :=
+  ouStep m γ θ (h/4) (R 3) ∘ driftStep m (h/3) ∘ kickStep U (h/2) ∘
+  ouStep m γ θ (h/4) (R 2) ∘ driftStep m (h/3) ∘
+  ouStep m γ θ (h/4) (R 1) ∘ kickStep U (h/2) ∘
+  driftStep m (h/3) ∘ ouStep m γ θ (h/4) (R 0)
+```
+
+### MD.Ch07.oabaobaoPrinted_corrected (Blueprint/Ch07.lean:374)
+原文件上下文：
+```lean
+open Set Filter MeasureTheory ProbabilityTheory MolecularDynamics
+open scoped BigOperators Topology ContDiff ENNReal NNReal Matrix
+variable {Ω : Type*} [MeasurableSpace Ω]
+variable {n : ℕ}
+```
+```lean
+def oabaobaoPrinted_corrected (m : V n) (U : V n → ℝ) (γ θ h : ℝ)
+    (R : Fin 4 → V n) : Phase n → Phase n := oabaobaoPrinted m U γ θ h R
+```
+
+### MD.Ch07.oabaobaoCount (Blueprint/Ch07.lean:377)
+原文件上下文：
+```lean
+open Set Filter MeasureTheory ProbabilityTheory MolecularDynamics
+open scoped BigOperators Topology ContDiff ENNReal NNReal Matrix
+variable {Ω : Type*} [MeasurableSpace Ω]
+variable {n : ℕ}
+```
+```lean
+theorem oabaobaoCount : (["O","A","B","O","A","O","B","A","O"] : List String).count "O" = 4
+```

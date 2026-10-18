@@ -1,0 +1,313 @@
+{
+  "batch": "BATCH15",
+  "chapter": "ch07",
+  "round": "first-merged",
+  "input_sha256": {
+    "Blueprint/Ch07.lean": "f30ea154ebfb07ae85c0b806ff74b35808d5a0c3dcaa647c0c3cc80a78239e37",
+    "blueprint/ch07/ch07_source.json": "c434892ebf63b06f7cadcdfa7af408c2c12d7b645d35db431d1855224163ba19"
+  },
+  "items": [
+    {
+      "source_id": "MD-7.9.2-OUKernelQualification",
+      "json_review": {
+        "status": "NEEDS_HUMAN",
+        "issue_codes": [
+          "ERRATUM_FORWARD_OU_KERNEL",
+          "NONVERBATIM_EXCERPT"
+        ],
+        "corrected_json": null,
+        "issues": [
+          "A：附件5页原句确实声称前向OU核由动量常数函数组成；摘录末尾将原页关于ν的几句话压缩为where ⟨ν⟩=0，数学意思保留但不是连续逐字引文。核的原印错误不得静默修正。",
+          "C：ouKernelPrinted对任意V n→ℝ函数量化，原印核的错误忠实保留，literal忠实性PASS。_corrected作用于ρβf，要求β>0、f全局光滑、每个q的f(q,·)属于动量Gaussian L²，结论对所有q,p给出f(q,p)=ν(q)，该共轭后核陈述正确；Gaussian L²是必要的域限定而非原印已有前提，应标[EXTRA]。结论不含⟨ν⟩=0，原页中心化须另行加上，不能由核自动推出。sorry不影响本次判断。"
+        ],
+        "evidence": {
+          "A_source_comparison": "A：附件5页原句确实声称前向OU核由动量常数函数组成；摘录末尾将原页关于ν的几句话压缩为where ⟨ν⟩=0，数学意思保留但不是连续逐字引文。核的原印错误不得静默修正。",
+          "C_signature_comparison": "C：ouKernelPrinted对任意V n→ℝ函数量化，原印核的错误忠实保留，literal忠实性PASS。_corrected作用于ρβf，要求β>0、f全局光滑、每个q的f(q,·)属于动量Gaussian L²，结论对所有q,p给出f(q,p)=ν(q)，该共轭后核陈述正确；Gaussian L²是必要的域限定而非原印已有前提，应标[EXTRA]。结论不含⟨ν⟩=0，原页中心化须另行加上，不能由核自动推出。sorry不影响本次判断。",
+          "attachment": "R5_PAGES.pdf",
+          "attachment_pages": [
+            5
+          ],
+          "original_pdf_pages": "323",
+          "printed_pages": "302",
+          "checked_lean_declarations": [
+            "MD.Ch07.ouKernelPrinted",
+            "MD.Ch07.ouKernelPrinted_corrected"
+          ],
+          "dependency_scope": "仅使用R5_任务.md本条摘录、所列依赖及附录D1–D40；标准库按标准含义采信。未读旧工程，未修改或补证明，未因sorry判FAIL。",
+          "annotation_policy": "[EXTRA]和[ERRATUM?]按本条分析区分；原印数学疑误保留。逐字核对允许数学LaTeX排版及换行标准化，不把OCR特殊字符当数学勘误。"
+        }
+      },
+      "audit": {
+        "lean_decl": [
+          "MD.Ch07.ouKernelPrinted",
+          "MD.Ch07.ouKernelPrinted_corrected"
+        ],
+        "verdict": "NEEDS_HUMAN",
+        "explanation": "C：ouKernelPrinted对任意V n→ℝ函数量化，原印核的错误忠实保留，literal忠实性PASS。_corrected作用于ρβf，要求β>0、f全局光滑、每个q的f(q,·)属于动量Gaussian L²，结论对所有q,p给出f(q,p)=ν(q)，该共轭后核陈述正确；Gaussian L²是必要的域限定而非原印已有前提，应标[EXTRA]。结论不含⟨ν⟩=0，原页中心化须另行加上，不能由核自动推出。sorry不影响本次判断。",
+        "counterexample": "n=1、β>0，f(p)=exp(−βp²/2)满足前向OU f=0且非常数；反之常数1的前向OU像为1。修正版排除此反例，因为被约束的是ρβf中的f。",
+        "suggested_fix": "原印保留并标[ERRATUM?]；修正版保留L²及共轭，另设归一测度下的中心化前提。逐字引文恢复原页句子或显式标为摘述。"
+      },
+      "subtask": "BATCH15a",
+      "input_sha256": {
+        "Blueprint/Ch07.lean": "f30ea154ebfb07ae85c0b806ff74b35808d5a0c3dcaa647c0c3cc80a78239e37",
+        "blueprint/ch07/ch07_source.json": "c434892ebf63b06f7cadcdfa7af408c2c12d7b645d35db431d1855224163ba19",
+        "BATCH15a_PAGES.pdf": "381f3ea98f7f8e0afb0882bfa43e31faa41ec112fe681c7ebe959b7f6fd0340e"
+      }
+    },
+    {
+      "source_id": "MD-7.9.2-OUHermiteIdentities",
+      "json_review": {
+        "status": "APPROVED",
+        "issue_codes": [
+          "MISSING_INTERMEDIATE_EQUALITY"
+        ],
+        "corrected_json": null,
+        "issues": [
+          "A：附件6页三条Hermite式、(7.33)和(7.34)的−3、6/β、−1/3、−2/β及μ(q)均吻合。",
+          "C：β>0、U和ν全局光滑足以使三阶张量对称并合法交换所需偏导；μ只依赖q，OU不对q微分，故不要求μ光滑合理。三个Hermite等式及wρβ的符号正确，最后phaseH(ρν)=O((p·∇ν+μ)ρ)也正确。但完整(7.34)中的中间结论phaseH(ρν)=−p·∇νρ未出现在合取中；现有两端等式不能作为已列出该独立等式。此为完整结论缺项，不是sorry或数学错误。光滑性和β>0是合理[EXTRA]资格。"
+        ],
+        "evidence": {
+          "A_source_comparison": "A：附件6页三条Hermite式、(7.33)和(7.34)的−3、6/β、−1/3、−2/β及μ(q)均吻合。",
+          "C_signature_comparison": "C：β>0、U和ν全局光滑足以使三阶张量对称并合法交换所需偏导；μ只依赖q，OU不对q微分，故不要求μ光滑合理。三个Hermite等式及wρβ的符号正确，最后phaseH(ρν)=O((p·∇ν+μ)ρ)也正确。但完整(7.34)中的中间结论phaseH(ρν)=−p·∇νρ未出现在合取中；现有两端等式不能作为已列出该独立等式。此为完整结论缺项，不是sorry或数学错误。光滑性和β>0是合理[EXTRA]资格。",
+          "attachment": "R5_PAGES.pdf",
+          "attachment_pages": [
+            6
+          ],
+          "original_pdf_pages": "323",
+          "printed_pages": "302",
+          "checked_lean_declarations": [
+            "MD.Ch07.laplacian",
+            "MD.Ch07.pGradLaplacian",
+            "MD.Ch07.hermitePrimitive",
+            "MD.Ch07.ouHermiteIdentities"
+          ],
+          "dependency_scope": "仅使用R5_任务.md本条摘录、所列依赖及附录D1–D40；标准库按标准含义采信。未读旧工程，未修改或补证明，未因sorry判FAIL。",
+          "annotation_policy": "[EXTRA]和[ERRATUM?]按本条分析区分；原印数学疑误保留。逐字核对允许数学LaTeX排版及换行标准化，不把OCR特殊字符当数学勘误。"
+        }
+      },
+      "audit": {
+        "lean_decl": [
+          "MD.Ch07.laplacian",
+          "MD.Ch07.pGradLaplacian",
+          "MD.Ch07.hermitePrimitive",
+          "MD.Ch07.ouHermiteIdentities"
+        ],
+        "verdict": "FAIL",
+        "explanation": "C：β>0、U和ν全局光滑足以使三阶张量对称并合法交换所需偏导；μ只依赖q，OU不对q微分，故不要求μ光滑合理。三个Hermite等式及wρβ的符号正确，最后phaseH(ρν)=O((p·∇ν+μ)ρ)也正确。但完整(7.34)中的中间结论phaseH(ρν)=−p·∇νρ未出现在合取中；现有两端等式不能作为已列出该独立等式。此为完整结论缺项，不是sorry或数学错误。光滑性和β>0是合理[EXTRA]资格。",
+        "counterexample": null,
+        "suggested_fix": "在ouHermiteIdentities的合取中显式加入phaseH(ρν)(q,p)=−(∑i p_i∂iν(q))ρ(q,p)；其余签名可保留。"
+      },
+      "subtask": "BATCH15b",
+      "input_sha256": {
+        "Blueprint/Ch07.lean": "f30ea154ebfb07ae85c0b806ff74b35808d5a0c3dcaa647c0c3cc80a78239e37",
+        "blueprint/ch07/ch07_source.json": "c434892ebf63b06f7cadcdfa7af408c2c12d7b645d35db431d1855224163ba19",
+        "BATCH15b_PAGES.pdf": "4b8fb565f87bf4d68d2ed5bb87d3ab3b4865ffa73c9fe7c8991eb4770ab96267"
+      }
+    },
+    {
+      "source_id": "MD-7.9.2-FirstReciprocalCorrection",
+      "json_review": {
+        "status": "NEEDS_HUMAN",
+        "issue_codes": [
+          "ERRATUM_WEIGHTED_AVERAGING",
+          "MISSING_SECOND_ORDER_SOLVABILITY",
+          "UNNORMALIZED_PRINTED_DENSITY"
+        ],
+        "corrected_json": null,
+        "issues": [
+          "A：附件7–8页f2,1的三个项和−μ均吻合；(7.35)、(7.36)以及π̄带联合ρβ的定义与原页相符。原页把∫H†(ρβf)dp等同于π̄H†f，而π̄已定义为带ρβ权，这在字面算符意义下有疑误。",
+          "C：firstReciprocalCorrection和一阶PDE的正负号正确；β>0、U/ν光滑足够，μ任意q函数不会影响OU动量微分。momentumAverage是归一条件Gaussian平均；Printed是Lebesgue动量积分乘未归一gibbsWeight，原书ρβ则为归一联合密度，因此一般还差总配分常数。_corrected作为条件平均定义合理，但与Printed不是同一算符，必须说明位置边际因子及归一常数。完整声明没有f2,2对象、(7.35)、OU通量零积分或(7.36)的相容结论；extra_assumptions虽承认未证明，实际缺的是签名而非证明。"
+        ],
+        "evidence": {
+          "A_source_comparison": "A：附件7–8页f2,1的三个项和−μ均吻合；(7.35)、(7.36)以及π̄带联合ρβ的定义与原页相符。原页把∫H†(ρβf)dp等同于π̄H†f，而π̄已定义为带ρβ权，这在字面算符意义下有疑误。",
+          "C_signature_comparison": "C：firstReciprocalCorrection和一阶PDE的正负号正确；β>0、U/ν光滑足够，μ任意q函数不会影响OU动量微分。momentumAverage是归一条件Gaussian平均；Printed是Lebesgue动量积分乘未归一gibbsWeight，原书ρβ则为归一联合密度，因此一般还差总配分常数。_corrected作为条件平均定义合理，但与Printed不是同一算符，必须说明位置边际因子及归一常数。完整声明没有f2,2对象、(7.35)、OU通量零积分或(7.36)的相容结论；extra_assumptions虽承认未证明，实际缺的是签名而非证明。",
+          "attachment": "R5_PAGES.pdf",
+          "attachment_pages": [
+            7,
+            8
+          ],
+          "original_pdf_pages": "324–325",
+          "printed_pages": "303–304",
+          "checked_lean_declarations": [
+            "MD.Ch07.firstReciprocalCorrection",
+            "MD.Ch07.momentumAverage",
+            "MD.Ch07.momentumAveragePrinted_corrected",
+            "MD.Ch07.momentumAveragePrinted",
+            "MD.Ch07.firstReciprocalCorrection_pde"
+          ],
+          "dependency_scope": "仅使用R5_任务.md本条摘录、所列依赖及附录D1–D40；标准库按标准含义采信。未读旧工程，未修改或补证明，未因sorry判FAIL。",
+          "annotation_policy": "[EXTRA]和[ERRATUM?]按本条分析区分；原印数学疑误保留。逐字核对允许数学LaTeX排版及换行标准化，不把OCR特殊字符当数学勘误。"
+        }
+      },
+      "audit": {
+        "lean_decl": [
+          "MD.Ch07.firstReciprocalCorrection",
+          "MD.Ch07.momentumAverage",
+          "MD.Ch07.momentumAveragePrinted_corrected",
+          "MD.Ch07.momentumAveragePrinted",
+          "MD.Ch07.firstReciprocalCorrection_pde"
+        ],
+        "verdict": "NEEDS_HUMAN",
+        "explanation": "C：firstReciprocalCorrection和一阶PDE的正负号正确；β>0、U/ν光滑足够，μ任意q函数不会影响OU动量微分。momentumAverage是归一条件Gaussian平均；Printed是Lebesgue动量积分乘未归一gibbsWeight，原书ρβ则为归一联合密度，因此一般还差总配分常数。_corrected作为条件平均定义合理，但与Printed不是同一算符，必须说明位置边际因子及归一常数。完整声明没有f2,2对象、(7.35)、OU通量零积分或(7.36)的相容结论；extra_assumptions虽承认未证明，实际缺的是签名而非证明。",
+        "counterexample": "β=1、U=q²/2，测试函数1：momentumAverage=1，Printed=√(2π)exp(−q²/2)，联合归一ρβ的动量积分则为exp(−q²/2)/√(2π)，三者不同。",
+        "suggested_fix": "保留原书π̄并标[ERRATUM?]；把ρβ的全局归一、条件动量平均及ρβ⁻¹H†ρβ共轭算符逐一定义。补列带域/通量条件的二阶方程和可解性目标签名。"
+      },
+      "subtask": "BATCH15c",
+      "input_sha256": {
+        "Blueprint/Ch07.lean": "f30ea154ebfb07ae85c0b806ff74b35808d5a0c3dcaa647c0c3cc80a78239e37",
+        "blueprint/ch07/ch07_source.json": "c434892ebf63b06f7cadcdfa7af408c2c12d7b645d35db431d1855224163ba19",
+        "BATCH15c_PAGES.pdf": "719506b803fac7791047bc8aa34b599e8552ea3bb5535c41d50566c06f4a14ec"
+      }
+    },
+    {
+      "source_id": "MD-7.9.2-OverdampedSolvabilityOperators",
+      "json_review": {
+        "status": "NEEDS_HUMAN",
+        "issue_codes": [
+          "ERRATUM_OPERATOR_CONJUGATION",
+          "MISSING_OPERATOR_IDENTITIES",
+          "MISSING_SOLVABILITY_AND_CENTERING"
+        ],
+        "corrected_json": null,
+        "issues": [
+          "A：附件9页M、N的完整链式等式、3/β系数、π̄H†ρβf式和ν候选均按原页转写。原页π̄及前向算符的组合并不能不加共轭直接得到这些右端。",
+          "C：overdampedM正确记录β⁻¹Δψ−∇U·∇ψ，N正确记录3M(Δψ)/β，候选ν正确。choice仅在β≠0时对所有q证明同一公式的代数改写，真实但远弱于可解性：没有M/N的平均算符识别、相容方程、ν的核唯一性或零均值声明。[EXTRA]β≠0足够代数运算，但物理Gaussian与积分分部需β>0、正则性、可积和边界资格。原印的算符不一致需人工决定采用哪一共轭约定。"
+        ],
+        "evidence": {
+          "A_source_comparison": "A：附件9页M、N的完整链式等式、3/β系数、π̄H†ρβf式和ν候选均按原页转写。原页π̄及前向算符的组合并不能不加共轭直接得到这些右端。",
+          "C_signature_comparison": "C：overdampedM正确记录β⁻¹Δψ−∇U·∇ψ，N正确记录3M(Δψ)/β，候选ν正确。choice仅在β≠0时对所有q证明同一公式的代数改写，真实但远弱于可解性：没有M/N的平均算符识别、相容方程、ν的核唯一性或零均值声明。[EXTRA]β≠0足够代数运算，但物理Gaussian与积分分部需β>0、正则性、可积和边界资格。原印的算符不一致需人工决定采用哪一共轭约定。",
+          "attachment": "R5_PAGES.pdf",
+          "attachment_pages": [
+            9
+          ],
+          "original_pdf_pages": "325",
+          "printed_pages": "304",
+          "checked_lean_declarations": [
+            "MD.Ch07.overdampedM",
+            "MD.Ch07.overdampedN",
+            "MD.Ch07.highFrictionOABAO",
+            "MD.Ch07.overdampedSolvability_choice"
+          ],
+          "dependency_scope": "仅使用R5_任务.md本条摘录、所列依赖及附录D1–D40；标准库按标准含义采信。未读旧工程，未修改或补证明，未因sorry判FAIL。",
+          "annotation_policy": "[EXTRA]和[ERRATUM?]按本条分析区分；原印数学疑误保留。逐字核对允许数学LaTeX排版及换行标准化，不把OCR特殊字符当数学勘误。"
+        }
+      },
+      "audit": {
+        "lean_decl": [
+          "MD.Ch07.overdampedM",
+          "MD.Ch07.overdampedN",
+          "MD.Ch07.highFrictionOABAO",
+          "MD.Ch07.overdampedSolvability_choice"
+        ],
+        "verdict": "NEEDS_HUMAN",
+        "explanation": "C：overdampedM正确记录β⁻¹Δψ−∇U·∇ψ，N正确记录3M(Δψ)/β，候选ν正确。choice仅在β≠0时对所有q证明同一公式的代数改写，真实但远弱于可解性：没有M/N的平均算符识别、相容方程、ν的核唯一性或零均值声明。[EXTRA]β≠0足够代数运算，但物理Gaussian与积分分部需β>0、正则性、可积和边界资格。原印的算符不一致需人工决定采用哪一共轭约定。",
+        "counterexample": "n=1、U=q²/2、β=1、ψ=1，按裸前向定义A†ψ=0，故π̄H†A†ψ=0；而用ψ=q²等非恒定函数时裸H†A†ψ的力项符号为+U′ψ′，与M中的−U′ψ′不符。共轭后的算符才给正确负号。",
+        "suggested_fix": "显式区分裸前向算符和Gibbs共轭算符，保持原印并标[ERRATUM?]；补完整M/N识别、相容性及中心化签名，不能将choice称为解的识别定理。"
+      },
+      "subtask": "BATCH15d",
+      "input_sha256": {
+        "Blueprint/Ch07.lean": "f30ea154ebfb07ae85c0b806ff74b35808d5a0c3dcaa647c0c3cc80a78239e37",
+        "blueprint/ch07/ch07_source.json": "c434892ebf63b06f7cadcdfa7af408c2c12d7b645d35db431d1855224163ba19",
+        "BATCH15d_PAGES.pdf": "d25519addccc298ad0f9e59392de0e909f1ee3927402714dcb2411a0294941c1"
+      }
+    },
+    {
+      "source_id": "MD-7.9.2-HighFrictionCorrectionTable",
+      "json_review": {
+        "status": "APPROVED",
+        "issue_codes": [
+          "MISSING_CONSTANT_CHOICE",
+          "UNLINKED_ASYMPTOTIC_PREDICATE"
+        ],
+        "corrected_json": null,
+        "issues": [
+          "A：附件10–11页四种方法的系数、c=⟨ΔU⟩及O(εh²+h⁴)均匹配。",
+          "C：s=0,1,2,3依次为OABAO、OBABO、ABOBA、BAOAB，四个公式及共轭关系正确；任意β,c的纯代数定理无需物理资格。positivePairLimit是(ε,h)从正象限趋于(0,0)，doublyAsymptoticAverage的幂次和变量顺序正确。但c只是任意实数，未定义/限制为⟨ΔU⟩，也无四种候选的零均值签名；A、exact、correction完全抽象，未与真实数值均值、Gibbs均值及⟨ϑf2,0⟩建立联系。其为平稳系数和余项尚未证明与尚未声明应分别记录。"
+        ],
+        "evidence": {
+          "A_source_comparison": "A：附件10–11页四种方法的系数、c=⟨ΔU⟩及O(εh²+h⁴)均匹配。",
+          "C_signature_comparison": "C：s=0,1,2,3依次为OABAO、OBABO、ABOBA、BAOAB，四个公式及共轭关系正确；任意β,c的纯代数定理无需物理资格。positivePairLimit是(ε,h)从正象限趋于(0,0)，doublyAsymptoticAverage的幂次和变量顺序正确。但c只是任意实数，未定义/限制为⟨ΔU⟩，也无四种候选的零均值签名；A、exact、correction完全抽象，未与真实数值均值、Gibbs均值及⟨ϑf2,0⟩建立联系。其为平稳系数和余项尚未证明与尚未声明应分别记录。",
+          "attachment": "R5_PAGES.pdf",
+          "attachment_pages": [
+            10,
+            11
+          ],
+          "original_pdf_pages": "325–326",
+          "printed_pages": "304–305",
+          "checked_lean_declarations": [
+            "MD.Ch07.highFrictionCorrection",
+            "MD.Ch07.doublyAsymptoticAverage",
+            "MD.Ch07.highFrictionCorrection_conjugacy"
+          ],
+          "dependency_scope": "仅使用R5_任务.md本条摘录、所列依赖及附录D1–D40；标准库按标准含义采信。未读旧工程，未修改或补证明，未因sorry判FAIL。",
+          "annotation_policy": "[EXTRA]和[ERRATUM?]按本条分析区分；原印数学疑误保留。逐字核对允许数学LaTeX排版及换行标准化，不把OCR特殊字符当数学勘误。"
+        }
+      },
+      "audit": {
+        "lean_decl": [
+          "MD.Ch07.highFrictionCorrection",
+          "MD.Ch07.doublyAsymptoticAverage",
+          "MD.Ch07.highFrictionCorrection_conjugacy"
+        ],
+        "verdict": "FAIL",
+        "explanation": "C：s=0,1,2,3依次为OABAO、OBABO、ABOBA、BAOAB，四个公式及共轭关系正确；任意β,c的纯代数定理无需物理资格。positivePairLimit是(ε,h)从正象限趋于(0,0)，doublyAsymptoticAverage的幂次和变量顺序正确。但c只是任意实数，未定义/限制为⟨ΔU⟩，也无四种候选的零均值签名；A、exact、correction完全抽象，未与真实数值均值、Gibbs均值及⟨ϑf2,0⟩建立联系。其为平稳系数和余项尚未证明与尚未声明应分别记录。",
+        "counterexample": "U=q²/2、β=1、c=0时OBABO候选为(q²−2)/8，其Gibbs均值为−1/8；原页应取c=1。",
+        "suggested_fix": "增加c的实际Gibbs期望定义及相应可积/中心化资格，并用四方法的真实平稳平均实例化双渐近命题。"
+      },
+      "subtask": "BATCH15e",
+      "input_sha256": {
+        "Blueprint/Ch07.lean": "f30ea154ebfb07ae85c0b806ff74b35808d5a0c3dcaa647c0c3cc80a78239e37",
+        "blueprint/ch07/ch07_source.json": "c434892ebf63b06f7cadcdfa7af408c2c12d7b645d35db431d1855224163ba19",
+        "BATCH15e_PAGES.pdf": "b984cd5b61b8953ff5322cd010aa8549b0e06cdceddfc9511da54172b63c81e3"
+      }
+    },
+    {
+      "source_id": "MD-7.9.3-BAOABMarginalCancellation",
+      "json_review": {
+        "status": "APPROVED",
+        "issue_codes": [
+          "MISSING_ASYMPTOTIC_EQUATION",
+          "MISSING_NORMALIZATION_QUALIFICATION"
+        ],
+        "corrected_json": null,
+        "issues": [
+          "A：附件12页(7.37)、BAOAB的1/8候选、动量边际与构型观测积分消项均与原页吻合。",
+          "C：两个零积分声明正确：单位质量Gaussian协方差β⁻¹I使平均βpᵀHess(U)p=ΔU；对配置任意U的逐q系数无需U光滑。构型声明显式要求被积函数可积，足以使用条件零均值。productGibbs未要求位置分布为概率，U=0等情况下positionGibbs可退化为零测度，因此它并不自动是原文的canonical expectation。更主要的是完整(7.37)没有在本条出现，既无真实均值对象也无余项声明；不能用前条未实例化的抽象定义当作本条已覆盖。"
+        ],
+        "evidence": {
+          "A_source_comparison": "A：附件12页(7.37)、BAOAB的1/8候选、动量边际与构型观测积分消项均与原页吻合。",
+          "C_signature_comparison": "C：两个零积分声明正确：单位质量Gaussian协方差β⁻¹I使平均βpᵀHess(U)p=ΔU；对配置任意U的逐q系数无需U光滑。构型声明显式要求被积函数可积，足以使用条件零均值。productGibbs未要求位置分布为概率，U=0等情况下positionGibbs可退化为零测度，因此它并不自动是原文的canonical expectation。更主要的是完整(7.37)没有在本条出现，既无真实均值对象也无余项声明；不能用前条未实例化的抽象定义当作本条已覆盖。",
+          "attachment": "R5_PAGES.pdf",
+          "attachment_pages": [
+            12
+          ],
+          "original_pdf_pages": "326",
+          "printed_pages": "305",
+          "checked_lean_declarations": [
+            "MD.Ch07.baoabMarginalCancellation",
+            "MD.Ch07.baoabConfigurationalCancellation"
+          ],
+          "dependency_scope": "仅使用R5_任务.md本条摘录、所列依赖及附录D1–D40；标准库按标准含义采信。未读旧工程，未修改或补证明，未因sorry判FAIL。",
+          "annotation_policy": "[EXTRA]和[ERRATUM?]按本条分析区分；原印数学疑误保留。逐字核对允许数学LaTeX排版及换行标准化，不把OCR特殊字符当数学勘误。"
+        }
+      },
+      "audit": {
+        "lean_decl": [
+          "MD.Ch07.baoabMarginalCancellation",
+          "MD.Ch07.baoabConfigurationalCancellation"
+        ],
+        "verdict": "FAIL",
+        "explanation": "C：两个零积分声明正确：单位质量Gaussian协方差β⁻¹I使平均βpᵀHess(U)p=ΔU；对配置任意U的逐q系数无需U光滑。构型声明显式要求被积函数可积，足以使用条件零均值。productGibbs未要求位置分布为概率，U=0等情况下positionGibbs可退化为零测度，因此它并不自动是原文的canonical expectation。更主要的是完整(7.37)没有在本条出现，既无真实均值对象也无余项声明；不能用前条未实例化的抽象定义当作本条已覆盖。",
+        "counterexample": "U=0且n≥1时exp(−βU)的Lebesgue积分不有限，Lean的实数积分取0，positionGibbs为零测度；此时零积分依然成立却没有可解释的canonical平均。",
+        "suggested_fix": "增加正有限配分积分或概率资格，补列(7.37)的真实均值及双渐近目标；保留现有两个消项定理。"
+      },
+      "subtask": "BATCH15f",
+      "input_sha256": {
+        "Blueprint/Ch07.lean": "f30ea154ebfb07ae85c0b806ff74b35808d5a0c3dcaa647c0c3cc80a78239e37",
+        "blueprint/ch07/ch07_source.json": "c434892ebf63b06f7cadcdfa7af408c2c12d7b645d35db431d1855224163ba19",
+        "BATCH15f_PAGES.pdf": "dee0c1017df3a855701479a5d8b7a60ab9c029a20c2a879d90e8cd36e842f72b"
+      }
+    }
+  ],
+  "merged_from": "ch07_first_merged"
+}

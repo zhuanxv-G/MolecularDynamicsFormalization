@@ -1,0 +1,12 @@
+--- submitted
++++ repaired
+@@ -9,4 +9,9 @@
+       lmStepH m U θ h R S q := by
+   funext i
+   dsimp [baoabInfinite,lmStepH,kickStep,driftStep,redrawStep,Function.comp_def]
+-  ring+  ring
++
++theorem lmStepH_rescale (m : V n) (U : V n → ℝ) (θ h : ℝ) (R S q : V n)
++    (hm : ∀ i, 0 < m i) (hθ : 0 ≤ θ) (hh : 0 ≤ h) :
++    lmStepH m U θ h R S q = lmStep m U θ (h^2/2) R S q := by
++  sorry

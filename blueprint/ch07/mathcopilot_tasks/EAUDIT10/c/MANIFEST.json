@@ -1,0 +1,73 @@
+{
+  "batch": "EAUDIT10",
+  "subtask": "EAUDIT10c",
+  "source_ids": [
+    "MD-7.10-LimitMethodAccuracy"
+  ],
+  "input_sha256": {
+    "Blueprint/Ch07.lean": "f3bc0ee86ace9c825028f0cec8ebb2fb410d6be77213cc7fb41cb8889540a000",
+    "blueprint/ch07/ch07_source.json": "1a201887b51a249fb73f456237cb342963c5d98c612ec1912f21572a57924012",
+    "PAGES.pdf": "b60d79f0451f809906444f1eaabfb5e39897a74603b8435b7804ec65fd590b61"
+  },
+  "page_mapping": [
+    {
+      "attachment_page": 1,
+      "original_pdf_page": 329,
+      "printed_page": 308
+    }
+  ],
+  "definition_excerpts": [
+    {
+      "full_name": "MD.Ch07.lmTransientErrorBound",
+      "kind": "def",
+      "path": "Blueprint/Ch07.lean",
+      "line": 1621,
+      "code_sha256": "5c477c8f0a072aaf436f7a5d3364177df814b2ca866e82e3c4671a48318c045e"
+    },
+    {
+      "full_name": "MD.Ch07.limitAccuracyPrinted",
+      "kind": "def",
+      "path": "Blueprint/Ch07.lean",
+      "line": 1624,
+      "code_sha256": "fbe1c6e57cddbc7cd3b8fa78940f108d5af784017e4fd6682df967f030631274"
+    },
+    {
+      "full_name": "MD.Ch07.limitAccuracyPrinted_corrected",
+      "kind": "def",
+      "path": "Blueprint/Ch07.lean",
+      "line": 1627,
+      "code_sha256": "28efc67e9654096f99dcf21e237637c2acb777d76cfa3f420747e51cc3e97665"
+    },
+    {
+      "full_name": "MD.Ch07.limitAccuracy_rescale",
+      "kind": "theorem",
+      "path": "Blueprint/Ch07.lean",
+      "line": 1630,
+      "code_sha256": "d3525892802b8c61183346c3bed34703e8fc0d062383855bc8ecec5684b28f41"
+    },
+    {
+      "full_name": "MD.Ch07.limitAccuracyInfiniteTime_corrected",
+      "kind": "def",
+      "path": "Blueprint/Ch07.lean",
+      "line": 1632,
+      "code_sha256": "ab3b73d13fa52a0bbaa5fdb56f58490a34e99ecffd60a00ebebffd4036f9560c"
+    }
+  ],
+  "validation": {
+    "project_constant_closure": "PASS",
+    "missing_project_definitions": [],
+    "full_page_render_equality_dpi": 72,
+    "website_submitted": false
+  },
+  "files": {
+    "PASTE.txt": {
+      "bytes": 10435,
+      "sha256": "70e876d398f08e19856373de1724e58ead2d0f191db8c284be97fb409873cb73"
+    },
+    "PAGES.pdf": {
+      "bytes": 88408,
+      "sha256": "b60d79f0451f809906444f1eaabfb5e39897a74603b8435b7804ec65fd590b61"
+    }
+  },
+  "total_task_bytes": 101154
+}

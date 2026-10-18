@@ -1,0 +1,71 @@
+{
+  "batch": "EAUDIT04",
+  "subtask": "EAUDIT04a",
+  "source_ids": [
+    "MD-7.7.1-TaylorRemainder"
+  ],
+  "input_sha256": {
+    "Blueprint/Ch07.lean": "f3bc0ee86ace9c825028f0cec8ebb2fb410d6be77213cc7fb41cb8889540a000",
+    "blueprint/ch07/ch07_source.json": "1a201887b51a249fb73f456237cb342963c5d98c612ec1912f21572a57924012",
+    "PAGES.pdf": "73bf1cc031e5e3fab5732af47e7093b3af67d7ae2c46244accf33db7dc37911d"
+  },
+  "page_mapping": [
+    {
+      "attachment_page": 1,
+      "original_pdf_page": 307,
+      "printed_page": 286
+    },
+    {
+      "attachment_page": 2,
+      "original_pdf_page": 308,
+      "printed_page": 287
+    }
+  ],
+  "definition_excerpts": [
+    {
+      "full_name": "MD.Ch07.taylorRemainder",
+      "kind": "theorem",
+      "path": "Blueprint/Ch07.lean",
+      "line": 929,
+      "code_sha256": "c95d6c314ee1e516c42a45fa2a08e74197e85cb4408d51ae9e1d628569fc0812"
+    },
+    {
+      "full_name": "MD.Ch07.taylorRemainder_bound",
+      "kind": "theorem",
+      "path": "Blueprint/Ch07.lean",
+      "line": 933,
+      "code_sha256": "819b68485b06f090dc5f3a4424192db23e3bd15921d0256f96deef6ed11f0819"
+    },
+    {
+      "full_name": "MD.Ch07.propagatedObservable_remainder",
+      "kind": "theorem",
+      "path": "Blueprint/Ch07.lean",
+      "line": 939,
+      "code_sha256": "4a9db551a1c7555dc99cf8cb8c33c96d031bbc932d0132e20df5399ff4dcec5b"
+    },
+    {
+      "full_name": "MolecularDynamics.Chapter05Review.E",
+      "kind": "abbrev",
+      "path": "MolecularDynamics/Chapter05/ReviewDefinitions.lean",
+      "line": 18,
+      "code_sha256": "b497c8ba7f01b62a3147d9ae65652772ff3f81e57aa19b116f1283fef7a3cc60"
+    }
+  ],
+  "validation": {
+    "project_constant_closure": "PASS",
+    "missing_project_definitions": [],
+    "full_page_render_equality_dpi": 72,
+    "website_submitted": false
+  },
+  "files": {
+    "PASTE.txt": {
+      "bytes": 11306,
+      "sha256": "691e76f88f63cc020be4cbd0e7d28da86e626722fc276adadb42a6b69a1c9f58"
+    },
+    "PAGES.pdf": {
+      "bytes": 83876,
+      "sha256": "73bf1cc031e5e3fab5732af47e7093b3af67d7ae2c46244accf33db7dc37911d"
+    }
+  },
+  "total_task_bytes": 97379
+}

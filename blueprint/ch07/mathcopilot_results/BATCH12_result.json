@@ -1,0 +1,383 @@
+{
+  "batch": "BATCH12",
+  "chapter": "ch07",
+  "round": "first-merged",
+  "input_sha256": {
+    "Blueprint/Ch07.lean": "f30ea154ebfb07ae85c0b806ff74b35808d5a0c3dcaa647c0c3cc80a78239e37",
+    "blueprint/ch07/ch07_source.json": "c434892ebf63b06f7cadcdfa7af408c2c12d7b645d35db431d1855224163ba19"
+  },
+  "items": [
+    {
+      "source_id": "MD-7.7.3-ObservableCorrectionExpansion",
+      "json_review": {
+        "status": "CORRECTED",
+        "issue_codes": [
+          "A_OMITTED_INTEGRAL_LINE"
+        ],
+        "corrected_json": {
+          "source_id": "MD-7.7.3-ObservableCorrectionExpansion",
+          "kind": "unnumbered_claim",
+          "label": null,
+          "section": "7.7.3",
+          "printed_page": "290",
+          "pdf_page": "311",
+          "statement_latex": "For some observable $\\vartheta(q,p)$, we have that\n\\[\\begin{aligned}\n\\langle\\vartheta\\rangle_h&=\\int_{\\mathcal D}\\vartheta(q,p)\\widehat\\rho(q,p)d\\omega,\\\\\n&=\\int_{\\mathcal D}\\vartheta(q,p)\\rho_\\beta(q,p)(1+hf_1(q,p)+h^2f_2(q,p)+\\cdots)d\\omega,\\\\\n&=\\int_{\\mathcal D}\\vartheta(q,p)\\rho_\\beta(q,p)d\\omega+h\\int_{\\mathcal D}\\vartheta(q,p)f_1(q,p)\\rho_\\beta(q,p)d\\omega+\\cdots,\\\\\n&=\\langle\\vartheta\\rangle+h\\langle\\vartheta f_1\\rangle+h^2\\langle\\vartheta f_2\\rangle+\\cdots.\n\\end{aligned}\\]",
+          "proof_latex": null,
+          "proof_outline": "Distribute the product and use linearity of integration at each finite order.",
+          "proof_note": "原页推导与上下文全文见original_page_text；数学符号的排版以随附原页PDF为准。",
+          "original_page_text": [
+            {
+              "pdf_page": 311,
+              "printed_page": 290,
+              "text": "290\n7\nNumerical Methods for Stochastic Molecular Dynamics\nwe obtain\n\u0006\nL\u0004\nLD C hL\u0004\n1 C h2L\u0004\n2 C O.h3/\n\u0007 \u0004\n\u0005ˇŒ1 C hf1 C h2f2 C O.h3/\t\n\u0005\nD 0:\nCombining like powers, we have at zero’th order, the equation\nL\u0004\nLD\u0005ˇ D 0;\nwhich we know to hold since Langevin dynamics preserves the canonical ensemble.\nAt ﬁrst order we obtain\nL\u0004\nLD.\u0005ˇf1/ C L\u0004\n1\u0005ˇ D 0:\n(7.19)\nIf L\u0004\n1 is known, we can calculate its action on \u0005ˇ, giving an inhomogeneity for\nthe above partial differential equation. It will be difﬁcult to solve the perturbation\nequation (7.19) in general, although its linearity and the fact that L\u0004\nLD (with our\nassumptions) has a compact resolvent (and therefore a discrete spectrum) together\nimply that if the perturbation can be bounded, then it should be possible to solve for\nthe correction function. We expect that this solution should be stable with respect\nto perturbation (and exponentially attracting). This also implies global existence\n(for all positive time) of the semigroup deﬁning the solution of the time-dependent\nproblem. We do not provide such a rigorous result here but simply plunge ahead,\nin the best tradition of applied mathematics, to obtain a perturbative expansion;\nveriﬁcation of our results must therefore be obtained by numerical experiment, a\nposteriori.\nThe leading order errors can be computed in simulation by exploiting the speciﬁc\nform of our ansatz for the invariant measure associated to the discretized dynamics.\nFor some observable #.q; p/, we have that\nh#ih D\nZ\nD\n#.q; p/ O\u0005.q; p/d!;\nD\nZ\nD\n#.q; p/\u0005ˇ.q; p/.1 C hf1.q; p/ C h2f2.q; p/ C : : :/d!;\nD\nZ\nD\n#.q; p/\u0005ˇ.q; p/d! C h\nZ\nD\n#.q; p/f1.q; p/\u0005ˇ.q; p/d! C : : : ;\nD h#i C hh#f1i C h2h#f2i C : : : :\nHence by obtaining the correction functions fi, we are able to apply a modiﬁcation\nto our computed expectation in order to recover the true canonical average.\n"
+            }
+          ],
+          "transcription_note": "PDF文字层原样保留，陈述中的数学排版转写为LaTeX；文字层有特殊字形编码时以目视原页为准。PDF347的Exercises之后不在正文范围内。",
+          "context_notation": [],
+          "extra_assumptions": [
+            "完整覆盖0–2阶有限截断积分；无限级数交换与实际误差余项仍需支配收敛及弱展开理论，明确不声称已证。"
+          ],
+          "issues": [],
+          "statement_scope": "本条逐字引用的全部数学对象与公式；未纳入的上下文另列。",
+          "lean_decl": "MD.Ch07.observableCorrectionExpansion",
+          "lean_declarations": [
+            "MD.Ch07.observableCorrectionExpansion"
+          ],
+          "source_page_verification": "见source_page_checks.json；必须已目视核对本条原页。",
+          "repair_log": [],
+          "documented_priors": []
+        },
+        "issues": [
+          {
+            "code": "A_OMITTED_INTEGRAL_LINE",
+            "detail": "附件23页（书290/PDF311）：原页在代入密度积分与最终平均值展开之间还有一行“∫ϑρβ+h∫ϑf1ρβ+⋯”；JSON将该行无标记折叠。数学内容等价，corrected_json恢复原页四行结构，保留ϑ及系数次序。"
+          }
+        ],
+        "evidence": {
+          "A": "附件23页（书290/PDF311）：原页在代入密度积分与最终平均值展开之间还有一行“∫ϑρβ+h∫ϑf1ρβ+⋯”；JSON将该行无标记折叠。数学内容等价，corrected_json恢复原页四行结构，保留ϑ及系数次序。",
+          "C": "observableCorrectionExpansion针对任意实h和三项分别可积的φρ、φρf1、φρf2，给出完整0–2阶截断积分线性性等式。乘法顺序因实标量交换而无差别；不需概率性或fk零均值。它不证明无限求和交换积分或实际h误差；extra_assumptions已清楚限定有限形式阶数，在这一明确范围内签名PASS。",
+          "source": "R3_任务.md 本条完整Lean及项目依赖定义、附录；R3_PAGES.pdf 对应原页。",
+          "method": "目视原页并对照文字层；仅审查所摘录签名与定义的数学语义；未编译、未补证明。",
+          "annotation_check": "本条所列Lean未出现显式[EXTRA]或[ERRATUM?]标签；extra_assumptions和statement_scope按实际语义单独核对，不将覆盖缺口视为已经证明。"
+        }
+      },
+      "audit": {
+        "lean_decl": [
+          "MD.Ch07.observableCorrectionExpansion"
+        ],
+        "verdict": "PASS",
+        "explanation": "observableCorrectionExpansion针对任意实h和三项分别可积的φρ、φρf1、φρf2，给出完整0–2阶截断积分线性性等式。乘法顺序因实标量交换而无差别；不需概率性或fk零均值。它不证明无限求和交换积分或实际h误差；extra_assumptions已清楚限定有限形式阶数，在这一明确范围内签名PASS。",
+        "counterexample": null,
+        "suggested_fix": "原文JSON恢复中间积分行；无限展开如需解析意义，应另给支配/收敛与余项条件。"
+      },
+      "subtask": "BATCH12a",
+      "input_sha256": {
+        "Blueprint/Ch07.lean": "f30ea154ebfb07ae85c0b806ff74b35808d5a0c3dcaa647c0c3cc80a78239e37",
+        "blueprint/ch07/ch07_source.json": "c434892ebf63b06f7cadcdfa7af408c2c12d7b645d35db431d1855224163ba19",
+        "BATCH12a_PAGES.pdf": "683b12b382bbe483785d4262e9e5a1677bdfa64aae472f0c7c67f8c14bdea1db"
+      }
+    },
+    {
+      "source_id": "MD-7.7.3-PerturbativeSolvabilityCaution",
+      "json_review": {
+        "status": "NEEDS_HUMAN",
+        "issue_codes": [
+          "SOURCE_UNPROVED_SOLVABILITY_EXPECTATION",
+          "C_ONLY_RANGE_MEMBERSHIP_TARGET"
+        ],
+        "corrected_json": null,
+        "issues": [
+          {
+            "code": "SOURCE_UNPROVED_SOLVABILITY_EXPECTATION",
+            "detail": "correctionSolvable是任意实模线性自映射L下rhs属于range(L)的命题，数学含义正确。但没有ρβf1结构、零质量归一条件、Fredholm相容性、紧预解式/定义域、指数稳定或全局半群存在。JSON明确只登记目标，不证明预期；原书也明确未给严格结果，必须保留并NEEDS_HUMAN，不能把紧预解式及有界扰动升级为无条件可解性。"
+          },
+          {
+            "code": "C_ONLY_RANGE_MEMBERSHIP_TARGET",
+            "detail": "correctionSolvable是任意实模线性自映射L下rhs属于range(L)的命题，数学含义正确。但没有ρβf1结构、零质量归一条件、Fredholm相容性、紧预解式/定义域、指数稳定或全局半群存在。JSON明确只登记目标，不证明预期；原书也明确未给严格结果，必须保留并NEEDS_HUMAN，不能把紧预解式及有界扰动升级为无条件可解性。"
+          }
+        ],
+        "evidence": {
+          "A": "附件24页（书290/PDF311）：从“It will be difficult ...”到“a posteriori.”逐句对应，保留should、expect及“We do not provide such a rigorous result here”的非定理语气。",
+          "C": "correctionSolvable是任意实模线性自映射L下rhs属于range(L)的命题，数学含义正确。但没有ρβf1结构、零质量归一条件、Fredholm相容性、紧预解式/定义域、指数稳定或全局半群存在。JSON明确只登记目标，不证明预期；原书也明确未给严格结果，必须保留并NEEDS_HUMAN，不能把紧预解式及有界扰动升级为无条件可解性。",
+          "source": "R3_任务.md 本条完整Lean及项目依赖定义、附录；R3_PAGES.pdf 对应原页。",
+          "method": "目视原页并对照文字层；仅审查所摘录签名与定义的数学语义；未编译、未补证明。",
+          "annotation_check": "本条所列Lean未出现显式[EXTRA]或[ERRATUM?]标签；extra_assumptions和statement_scope按实际语义单独核对，不将覆盖缺口视为已经证明。"
+        }
+      },
+      "audit": {
+        "lean_decl": [
+          "MD.Ch07.correctionSolvable"
+        ],
+        "verdict": "NEEDS_HUMAN",
+        "explanation": "correctionSolvable是任意实模线性自映射L下rhs属于range(L)的命题，数学含义正确。但没有ρβf1结构、零质量归一条件、Fredholm相容性、紧预解式/定义域、指数稳定或全局半群存在。JSON明确只登记目标，不证明预期；原书也明确未给严格结果，必须保留并NEEDS_HUMAN，不能把紧预解式及有界扰动升级为无条件可解性。",
+        "counterexample": "有限维L=diag(0,−1)有紧预解式且其非零谱在负半平面，但rhs=(1,0)不在range(L)，故Lu=rhs不可解；该rhs也可由有界扰动作用于核向量得到。这仅说明缺少相容条件，不能作为原书具备额外守质量条件的具体方案的反例。",
+        "suggested_fix": "保留原书预期与未证明说明；后续严格版本应在零质量子空间给相容条件和可逆/谱隙资格，另行给生成元与半群定理。"
+      },
+      "subtask": "BATCH12b",
+      "input_sha256": {
+        "Blueprint/Ch07.lean": "f30ea154ebfb07ae85c0b806ff74b35808d5a0c3dcaa647c0c3cc80a78239e37",
+        "blueprint/ch07/ch07_source.json": "c434892ebf63b06f7cadcdfa7af408c2c12d7b645d35db431d1855224163ba19",
+        "BATCH12b_PAGES.pdf": "e67f533366d8f60faf2f36b7b4743913ad70178cb233e30ae6245236030b22d6"
+      }
+    },
+    {
+      "source_id": "MD-7.8-FirstOrderOperator",
+      "json_review": {
+        "status": "CORRECTED",
+        "issue_codes": [
+          "TRANSCRIPTION_OPERATOR_HAT"
+        ],
+        "corrected_json": {
+          "source_id": "MD-7.8-FirstOrderOperator",
+          "kind": "unnumbered_claim",
+          "label": "(7.20)–(7.21)",
+          "section": "7.8",
+          "printed_page": "291",
+          "pdf_page": "312",
+          "statement_latex": "By composing the semigroup operators\n\\[\\exp(h\\mathcal L_{[XYZ]}^\\dagger)=\\exp(h\\mathcal L_Z^\\dagger)\\exp(h\\mathcal L_Y^\\dagger)\\exp(h\\mathcal L_X^\\dagger),\\]\nand computing the terms in the BCH expansion, we have\n\\[\\widehat{\\mathcal L}_{[XYZ]}^\\dagger=\\mathcal L_{LD}^\\dagger+h\\mathcal L_{1,[XYZ]}^\\dagger+O(h^2),\\]\nwhere\n\\[\\mathcal L_{1,[XYZ]}^\\dagger=-\\frac12([\\mathcal L_X^\\dagger,\\mathcal L_Y^\\dagger]+[\\mathcal L_X^\\dagger,\\mathcal L_Z^\\dagger]+[\\mathcal L_Y^\\dagger,\\mathcal L_Z^\\dagger]).\\tag{7.20}\\]\nThe first order correction function for this scheme is then given by the particular solution to the PDE,\n\\[\\mathcal L_{LD}^\\dagger(f_{1,[XYZ]}\\rho_\\beta)=-\\mathcal L_{1,[XYZ]}^\\dagger\\rho_\\beta.\\tag{7.21}\\]",
+          "proof_latex": null,
+          "proof_outline": null,
+          "proof_note": "原页推导与上下文全文见original_page_text；数学符号的排版以随附原页PDF为准。",
+          "original_page_text": [
+            {
+              "pdf_page": 312,
+              "printed_page": 291,
+              "text": "7.8\nFirst Order Schemes\n291\n7.8\nFirst Order Schemes\nLet us consider a scheme of the form \u0002XYZ\u0003, where each letter in the string is\ndistinct and corresponds to one of the A, B or O Langevin splitting pieces (giving six\npossible schemes). Given the simple structure of the scheme, we expect to recover a\nﬁrst order error in our invariant (long-time) averages. By composing the semigroup\noperators\nexp.hL\u0004\n\u0002XYZ\u0003/ D exp.hL\u0004\nZ/ exp.hL\u0004\nY/ exp.hL\u0004\nX/;\nand computing the terms in the BCH expansion, we have\nOL\u0004\n\u0002XYZ\u0003 D L\u0004\nLD C hL\u0004\n1;\u0002XYZ\u0003 C O.h2/;\nwhere\nL\u0004\n1;\u0002XYZ\u0003 D \u00031\n2\n\u0006\nŒL\u0004\nX; L\u0004\nY\t C ŒL\u0004\nX; L\u0004\nZ\t C ŒL\u0004\nY; L\u0004\nZ\t\n\u0007\n:\n(7.20)\nThe ﬁrst order correction function for this scheme is then given by the particular\nsolution to the PDE,\nL\u0004\nLD\n\u0004\nf1;\u0002XYZ\u0003\u0005ˇ\n\u0005\nD \u0003L\u0004\n1;\u0002XYZ\u0003\u0005ˇ:\n(7.21)\nThe general solution of (7.21) will consist of the sum of the homogeneous solution\nf ŒHS\t\n1;\u0002XYZ\u0003.q; p/ and particular solution f ŒPS\t\n1;\u0002XYZ\u0003.q; p/ in the usual way. However, since\nL\u0004\nLD# D 0 has as its only solution # / \u0005ˇ, the homogeneous solution of (7.21) is\nf ŒHS\t\n1;\u0002XYZ\u0003.q; p/ D c;\nfor some constant c. Our assumption that hf1;\u0002XYZ\u0003i D 0 means that c D \u0003hf ŒPS\t\n1;\u0002XYZ\u0003i,\nand hence we only require a particular solution f ŒPS\t\n1;\u0002XYZ\u0003.q; p/.\nThus for any ﬁrst order scheme our line of attack will be to compute the\nperturbation operator L\u0004\n1, plug it into the right hand side and solve the PDE to ﬁnd\nthe suitable correction function. It turns out that this is not so difﬁcult at leading\norder, for simple ﬁrst order schemes such as this. However at higher orders the\ncomplexity of the terms often limits our progress.\n"
+            }
+          ],
+          "transcription_note": "PDF文字层原样保留，陈述中的数学排版转写为LaTeX；文字层有特殊字形编码时以目视原页为准。PDF347的Exercises之后不在正文范围内。",
+          "context_notation": [],
+          "extra_assumptions": [
+            "前向组合采用Z,Y,X顺序；正式级数系数推论覆盖所有六个排列，L0为三者和。修正方程为必要形式方程，可解性独立。"
+          ],
+          "issues": [
+            "A：附件第1页的首个指数左端印作 exp(h L†_[XYZ])，没有帽号；statement_latex 加了帽号。紧接的修改生成元展开才印有帽号。需按原页保留这一区别。"
+          ],
+          "statement_scope": "本条逐字引用的全部数学对象与公式；未纳入的上下文另列。",
+          "lean_decl": "MD.Ch07.firstOrderOperator",
+          "lean_declarations": [
+            "MD.Ch07.firstOrderOperator",
+            "MD.Ch07.firstOrderOperator_coefficient",
+            "MD.Ch07.correctionEquation"
+          ],
+          "source_page_verification": "本次实际目视核对 R4_PAGES.pdf 对应页；重复页渲染SHA256一致。详见本条 evidence。",
+          "repair_log": [],
+          "documented_priors": []
+        },
+        "issues": [
+          "A：附件第1页的首个指数左端印作 exp(h L†_[XYZ])，没有帽号；statement_latex 加了帽号。紧接的修改生成元展开才印有帽号。需按原页保留这一区别。"
+        ],
+        "evidence": [
+          "目视附件1（原PDF312／印刷291）；附件2与1的PNG渲染SHA256相同。三因子次序确为Z、Y、X；(7.20)为三项交换子之和乘−1/2，(7.21)右端负号。",
+          "依赖D1：comm X Y=X*Y−Y*X；D14：exp的第n系数为A^n/n!；D53：log逐阶截断，formalModifiedGenerator取log的第k+1系数。",
+          "审校方式：只读R4_任务.md的本条Lean及其摘录项目定义，Mathlib按标准含义采信；未修改工程、未补证明、未调用Lean编译器，不因sorry判FAIL。未发现任何字面的[EXTRA]或[ERRATUM?]标签；额外假设与原书疑误按语义逐项核对，建议标签仅写入本审校JSON。",
+          "本次附件R4_PAGES.pdf SHA256=133d111b38c222acf5f8a9b401286106f513aca299e119dc65d034e915f0c931；本条input_sha256严格回显任务所列旧文件键和值，不宣称与当前文件重新计算一致。"
+        ]
+      },
+      "audit": {
+        "lean_decl": [
+          "MD.Ch07.firstOrderOperator",
+          "MD.Ch07.firstOrderOperator_coefficient",
+          "MD.Ch07.correctionEquation"
+        ],
+        "verdict": "PASS",
+        "explanation": "C：firstOrderOperator 对任意实代数（允许非交换环）准确给出(7.20)。threeStage=exp Z*exp Y*exp X，log的二阶系数为−([X,Y]+[X,Z]+[Y,Z])/2，firstOrderOperator_coefficient的次序与符号正确。correctionEquation在任意实模上线性地表达L(ρf)=−L1ρ；ρf是独立输入的乘积密度对象，未冒充可解性定理。没有引入算符收敛断言；这属于已登记的形式级数解释。sorry不参与本次判定。",
+        "counterexample": null,
+        "suggested_fix": "仅在原文JSON的首个指数公式中去掉帽号；Lean无需据此改动。"
+      },
+      "subtask": "BATCH12c",
+      "input_sha256": {
+        "Blueprint/Ch07.lean": "f30ea154ebfb07ae85c0b806ff74b35808d5a0c3dcaa647c0c3cc80a78239e37",
+        "blueprint/ch07/ch07_source.json": "c434892ebf63b06f7cadcdfa7af408c2c12d7b645d35db431d1855224163ba19",
+        "BATCH12c_PAGES.pdf": "750af902bccbbd27480b3fef9cfa824cf35fc5f62e32b6d8efc62b0f1538dab0"
+      }
+    },
+    {
+      "source_id": "MD-7.8-HomogeneousNormalization",
+      "json_review": {
+        "status": "APPROVED",
+        "issue_codes": [],
+        "corrected_json": null,
+        "issues": [],
+        "evidence": [
+          "目视附件2（原PDF312／印刷291；与附件1完全相同）：齐次解为常数，c=−〈f^[PS]〉。",
+          "hker明确量化所有w，仅声称ker L包含于span{ρ}；hu、hv共用rhs。中心化定理使用真实概率测度及Integrable f。",
+          "审校方式：只读R4_任务.md的本条Lean及其摘录项目定义，Mathlib按标准含义采信；未修改工程、未补证明、未调用Lean编译器，不因sorry判FAIL。未发现任何字面的[EXTRA]或[ERRATUM?]标签；额外假设与原书疑误按语义逐项核对，建议标签仅写入本审校JSON。",
+          "本次附件R4_PAGES.pdf SHA256=133d111b38c222acf5f8a9b401286106f513aca299e119dc65d034e915f0c931；本条input_sha256严格回显任务所列旧文件键和值，不宣称与当前文件重新计算一致。"
+        ]
+      },
+      "audit": {
+        "lean_decl": [
+          "MD.Ch07.homogeneousNormalization",
+          "MD.Ch07.centeredParticular"
+        ],
+        "verdict": "PASS",
+        "explanation": "C：homogeneousNormalization在任意实模上从L(u−v)=0推出u=v+cρ，完全符合密度层面的通解差；不把未证明的Langevin核唯一性藏入结论。centeredParticular表达∫(f−∫f)=0，概率质量1和可积性均明确。由Gibbs权严格正可将密度差还原成修正函数相差常数；本条采用抽象密度表述及独立中心化恒等式的范围已明示，签名无错误。",
+        "counterexample": null,
+        "suggested_fix": null
+      },
+      "subtask": "BATCH12d",
+      "input_sha256": {
+        "Blueprint/Ch07.lean": "f30ea154ebfb07ae85c0b806ff74b35808d5a0c3dcaa647c0c3cc80a78239e37",
+        "blueprint/ch07/ch07_source.json": "c434892ebf63b06f7cadcdfa7af408c2c12d7b645d35db431d1855224163ba19",
+        "BATCH12d_PAGES.pdf": "c3a4990c71ff89b2dfd487de1400a09ddad85a44324ec884bf0e67dc5762f531"
+      }
+    },
+    {
+      "source_id": "MD-7.8.1-CommutatorPermutationRelations",
+      "json_review": {
+        "status": "CORRECTED",
+        "issue_codes": [
+          "LEAN_COVERAGE_GAP",
+          "SCOPE_INCONSISTENCY"
+        ],
+        "corrected_json": {
+          "source_id": "MD-7.8.1-CommutatorPermutationRelations",
+          "kind": "unnumbered_claim",
+          "label": "(7.22)–(7.24)",
+          "section": "7.8.1",
+          "printed_page": "292",
+          "pdf_page": "313",
+          "statement_latex": "\\[([\\mathcal L_O^\\dagger,\\mathcal L_A^\\dagger]+[\\mathcal L_O^\\dagger,\\mathcal L_B^\\dagger])\\rho_\\beta=[\\mathcal L_O^\\dagger,\\mathcal L_A^\\dagger+\\mathcal L_B^\\dagger]\\rho_\\beta=0.\\]\n\\[\\mathcal L_{1,[ABO]}^\\dagger\\rho_\\beta=\\mathcal L_{1,[OAB]}^\\dagger\\rho_\\beta=-\\mathcal L_{1,[OBA]}^\\dagger\\rho_\\beta=-\\mathcal L_{1,[BAO]}^\\dagger\\rho_\\beta=-\\frac12[\\mathcal L_A^\\dagger,\\mathcal L_B^\\dagger]\\rho_\\beta.\\tag{7.22}\\]\n\\[f_{1,[ABO]}=f_{1,[OAB]}=-f_{1,[OBA]}=-f_{1,[BAO]}.\\tag{7.23}\\]\n\\[\\mathcal L_{1,[AOB]}^\\dagger\\rho_\\beta=-\\mathcal L_{1,[BOA]}^\\dagger\\rho_\\beta=-\\frac12[\\mathcal L_A^\\dagger-\\mathcal L_B^\\dagger,\\mathcal L_O^\\dagger]\\rho_\\beta+\\mathcal L_{1,[ABO]}^\\dagger\\rho_\\beta.\\tag{7.24}\\]",
+          "proof_latex": null,
+          "proof_outline": null,
+          "proof_note": "原页推导与上下文全文见original_page_text；数学符号的排版以随附原页PDF为准。",
+          "original_page_text": [
+            {
+              "pdf_page": 313,
+              "printed_page": 292,
+              "text": "292\n7\nNumerical Methods for Stochastic Molecular Dynamics\n7.8.1\nComputing the Correction Functions f1.q; p/\nAt this point we may plow ahead and compute the PDE for each corresponding\nscheme, but a more efﬁcient route is offered by working with the structure of the\ninhomogeneity in (7.21). We may make use of the identity\n\u0006\nŒL\u0004\nO; L\u0004\nA\t C ŒL\u0004\nO; L\u0004\nB\t\n\u0007\n\u0005ˇ D\n\u0006\nŒL\u0004\nO; L\u0004\nA C L\u0004\nB\t\n\u0007\n\u0005ˇ D 0;\nas of course L\u0004\nH D L\u0004\nA C L\u0004\nB is the Liouvillian of our Hamiltonian system,\nwhich preserves any function of the energy. Thus, by the skew-symmetry of the\ncommutator (ŒP; Q\t D \u0003ŒQ; P\t) we can relate four of the six methods as\nL\u0004\n1;\u0002ABO\u0003\u0005ˇ D L\u0004\n1;\u0002OAB\u0003\u0005ˇ D \u0003L\u0004\n1;\u0002OBA\u0003\u0005ˇ D \u0003L\u0004\n1;\u0002BAO\u0003\u0005ˇ D \u00031\n2ŒL\u0004\nA; L\u0004\nB\t\u0005ˇ;\n(7.22)\nby virtue of (7.20). Hence the leading order correction functions of the schemes are\nrelated through\nf1;\u0002ABO\u0003 D f1;\u0002OAB\u0003 D \u0003f1;\u0002OBA\u0003 D \u0003f1;\u0002BAO\u0003:\n(7.23)\nThe remaining two permutations of the possible \u0002XYZ\u0003 schemes have a similar\nrelationship, with\nL\u0004\n1;\u0002AOB\u0003\u0005ˇ D \u0003L\u0004\n1;\u0002BOA\u0003\u0005ˇ D \u00031\n2ŒL\u0004\nA \u0003 L\u0004\nB; L\u0004\nO\t\u0005ˇ C L\u0004\n1;\u0002ABO\u0003\u0005ˇ:\n(7.24)\nThis reduces our workload as we can ﬁnd the leading order behavior for all six\nmethods by computing the solution to two PDEs. This is not necessarily trivial, but\nit turns out that the structure of the equations is simple enough that we can ﬁnd exact\nsolutions. We work now to compute the right-hand side of the governing PDE given\nin (7.21).\nIn order to solve (7.21) for the \u0002ABO\u0003 scheme, we need to compute the right\nhand side of (7.22). First, note that if we deﬁne the function g.q; p/ as\ng.q; p/ D ˇpTM\u00021rU.q/;\nthen through simple computation we have\nL\u0004\nA\u0005ˇ D \u0003L\u0004\nB\u0005ˇ D g.q; p/\u0005ˇ:\n"
+            }
+          ],
+          "transcription_note": "PDF文字层原样保留，陈述中的数学排版转写为LaTeX；文字层有特殊字形编码时以目视原页为准。PDF347的Exercises之后不在正文范围内。",
+          "context_notation": [],
+          "extra_assumptions": [
+            "实际线性作用与Oρ=0,(A+B)ρ=0明示。修正函数的符号关系还需统一零均值和核唯一性；本条只证明/陈述交换子与右端项关系，函数关系列缺口。"
+          ],
+          "issues": [
+            "A：公式及文字与附件3相符。C：statement_latex包含完整(7.23)，Lean却没有任何修正函数、零均值或归一解唯一性结论；statement_scope把(7.23)排除，与所摘录的完整陈述不同。缺口虽已在extra_assumptions说明，不能视为完整覆盖。"
+          ],
+          "statement_scope": "原文保留首式及(7.22)–(7.24)；Lean仅覆盖首式、(7.22)、(7.24)，(7.23)明确未覆盖。",
+          "lean_decl": "MD.Ch07.commutatorPermutationRelations",
+          "lean_declarations": [
+            "MD.Ch07.commutatorPermutationRelations"
+          ],
+          "source_page_verification": "本次实际目视核对 R4_PAGES.pdf 对应页；重复页渲染SHA256一致。详见本条 evidence。",
+          "repair_log": [],
+          "documented_priors": []
+        },
+        "issues": [
+          "A：公式及文字与附件3相符。C：statement_latex包含完整(7.23)，Lean却没有任何修正函数、零均值或归一解唯一性结论；statement_scope把(7.23)排除，与所摘录的完整陈述不同。缺口虽已在extra_assumptions说明，不能视为完整覆盖。"
+        ],
+        "evidence": [
+          "目视附件3（原PDF313／印刷292）；附件4与3渲染相同。原页(7.23)单独明确给出四个f1的等式链。",
+          "Lean的七个合取项依次是交换子作用为零、三个排列关系、−1/2[A,B]ρ及AOB/BOA的两项关系，均不含f1。",
+          "审校方式：只读R4_任务.md的本条Lean及其摘录项目定义，Mathlib按标准含义采信；未修改工程、未补证明、未调用Lean编译器，不因sorry判FAIL。未发现任何字面的[EXTRA]或[ERRATUM?]标签；额外假设与原书疑误按语义逐项核对，建议标签仅写入本审校JSON。",
+          "本次附件R4_PAGES.pdf SHA256=133d111b38c222acf5f8a9b401286106f513aca299e119dc65d034e915f0c931；本条input_sha256严格回显任务所列旧文件键和值，不宣称与当前文件重新计算一致。"
+        ]
+      },
+      "audit": {
+        "lean_decl": [
+          "MD.Ch07.commutatorPermutationRelations"
+        ],
+        "verdict": "FAIL",
+        "explanation": "C：现有commutatorPermutationRelations的七个结论在Oρ=0和(A+B)ρ=0下均正确；实模、线性自同态与ρ的量词没有错误，交换子按复合定义。FAIL仅针对本条完整原文结论的覆盖：没有从相同PDE右端推出零均值解相等及相反的桥接定理。不能以“需要唯一性”为由把(7.23)当作已核对通过。",
+        "counterexample": null,
+        "suggested_fix": "保留现有交换子定理；另列(7.23)的待形式化义务，明确同一线性方程、核条件和统一零均值，再给出四个修正函数的关系。只修正JSON中的覆盖说明，本次不改工程。"
+      },
+      "subtask": "BATCH12e",
+      "input_sha256": {
+        "Blueprint/Ch07.lean": "f30ea154ebfb07ae85c0b806ff74b35808d5a0c3dcaa647c0c3cc80a78239e37",
+        "blueprint/ch07/ch07_source.json": "c434892ebf63b06f7cadcdfa7af408c2c12d7b645d35db431d1855224163ba19",
+        "BATCH12e_PAGES.pdf": "ab06dbcabb1f11e9f7fc8dc7f9676e7b1e76f8b49b41dc40782a98598c240efb"
+      }
+    },
+    {
+      "source_id": "MD-7.8.1-GibbsDerivativeIdentities",
+      "json_review": {
+        "status": "CORRECTED",
+        "issue_codes": [
+          "LEAN_COVERAGE_GAP",
+          "SCOPE_INCONSISTENCY"
+        ],
+        "corrected_json": {
+          "source_id": "MD-7.8.1-GibbsDerivativeIdentities",
+          "kind": "unnumbered_claim",
+          "label": null,
+          "section": "7.8.1",
+          "printed_page": "292–293",
+          "pdf_page": "313–314",
+          "statement_latex": "If we define the function $g(q,p)$ as $g(q,p)=\\beta p^TM^{-1}\\nabla U(q)$, then through simple computation we have\n\\[\\mathcal L_A^\\dagger\\rho_\\beta=-\\mathcal L_B^\\dagger\\rho_\\beta=g(q,p)\\rho_\\beta.\\]\n\\[[\\mathcal L_A^\\dagger,\\mathcal L_B^\\dagger]\\rho_\\beta=-(\\mathcal L_A^\\dagger+\\mathcal L_B^\\dagger)(g\\rho_\\beta)=(\\mathcal L_O^\\dagger-\\mathcal L_{LD}^\\dagger)(g\\rho_\\beta).\\]\nFor a function $\\psi(q)$ purely of position, we have\n\\[\\mathcal L_{LD}^\\dagger(\\psi(q)\\rho_\\beta)=-(p^TM^{-1}\\nabla\\psi(q))\\rho_\\beta(q,p),\\]\nand hence we can compute\n\\[\\mathcal L_O^\\dagger(g(q,p)\\rho_\\beta)=\\gamma\\rho_\\beta(-p\\cdot\\nabla_pg+\\beta^{-1}\\nabla_p\\cdot M\\nabla_pg)\n=-\\gamma g\\rho_\\beta=\\gamma\\beta\\mathcal L_{LD}^\\dagger(U(q)\\rho_\\beta).\\]",
+          "proof_latex": null,
+          "proof_outline": null,
+          "proof_note": "原页推导与上下文全文见original_page_text；数学符号的排版以随附原页PDF为准。",
+          "original_page_text": [
+            {
+              "pdf_page": 313,
+              "printed_page": 292,
+              "text": "292\n7\nNumerical Methods for Stochastic Molecular Dynamics\n7.8.1\nComputing the Correction Functions f1.q; p/\nAt this point we may plow ahead and compute the PDE for each corresponding\nscheme, but a more efﬁcient route is offered by working with the structure of the\ninhomogeneity in (7.21). We may make use of the identity\n\u0006\nŒL\u0004\nO; L\u0004\nA\t C ŒL\u0004\nO; L\u0004\nB\t\n\u0007\n\u0005ˇ D\n\u0006\nŒL\u0004\nO; L\u0004\nA C L\u0004\nB\t\n\u0007\n\u0005ˇ D 0;\nas of course L\u0004\nH D L\u0004\nA C L\u0004\nB is the Liouvillian of our Hamiltonian system,\nwhich preserves any function of the energy. Thus, by the skew-symmetry of the\ncommutator (ŒP; Q\t D \u0003ŒQ; P\t) we can relate four of the six methods as\nL\u0004\n1;\u0002ABO\u0003\u0005ˇ D L\u0004\n1;\u0002OAB\u0003\u0005ˇ D \u0003L\u0004\n1;\u0002OBA\u0003\u0005ˇ D \u0003L\u0004\n1;\u0002BAO\u0003\u0005ˇ D \u00031\n2ŒL\u0004\nA; L\u0004\nB\t\u0005ˇ;\n(7.22)\nby virtue of (7.20). Hence the leading order correction functions of the schemes are\nrelated through\nf1;\u0002ABO\u0003 D f1;\u0002OAB\u0003 D \u0003f1;\u0002OBA\u0003 D \u0003f1;\u0002BAO\u0003:\n(7.23)\nThe remaining two permutations of the possible \u0002XYZ\u0003 schemes have a similar\nrelationship, with\nL\u0004\n1;\u0002AOB\u0003\u0005ˇ D \u0003L\u0004\n1;\u0002BOA\u0003\u0005ˇ D \u00031\n2ŒL\u0004\nA \u0003 L\u0004\nB; L\u0004\nO\t\u0005ˇ C L\u0004\n1;\u0002ABO\u0003\u0005ˇ:\n(7.24)\nThis reduces our workload as we can ﬁnd the leading order behavior for all six\nmethods by computing the solution to two PDEs. This is not necessarily trivial, but\nit turns out that the structure of the equations is simple enough that we can ﬁnd exact\nsolutions. We work now to compute the right-hand side of the governing PDE given\nin (7.21).\nIn order to solve (7.21) for the \u0002ABO\u0003 scheme, we need to compute the right\nhand side of (7.22). First, note that if we deﬁne the function g.q; p/ as\ng.q; p/ D ˇpTM\u00021rU.q/;\nthen through simple computation we have\nL\u0004\nA\u0005ˇ D \u0003L\u0004\nB\u0005ˇ D g.q; p/\u0005ˇ:\n"
+            },
+            {
+              "pdf_page": 314,
+              "printed_page": 293,
+              "text": "7.8\nFirst Order Schemes\n293\nThis is particularly useful as\nŒL\u0004\nA; L\u0004\nB\t\u0005ˇ D\n\u0006\nL\u0004\nAL\u0004\nB \u0003 L\u0004\nBL\u0004\nA\n\u0007\n\u0005ˇ D \u0003\n\u0006\nL\u0004\nA C L\u0004\nB\n\u0007 \u0004\ng.q; p/\u0005ˇ\n\u0005\nD\n\u0006\nL\u0004\nO \u0003 L\u0004\nLD\n\u0007 \u0004\ng.q; p/\u0005ˇ\n\u0005\n:\nNow notice that for a function .q/ purely of position, we have\nL\u0004\nLD\n\u0004\n .q/\u0005ˇ\n\u0005\nD \u0003\n\u0004\npTM\u00021r .q/\n\u0005\n\u0005ˇ.q; p/;\nand hence we can compute\nL\u0004\nO\n\u0004\ng.q; p/\u0005ˇ\n\u0005\nD \n\u0005ˇ\n\u0004\n\u0003p \u0002 rpg.q; p/ C ˇ\u00021rp \u0002 Mrpg.q; p/\n\u0005\n;\nD \u0003\ng.q; p/\u0005ˇ;\nD \nˇL\u0004\nLD\n\u0004\nU.q/\u0005ˇ\n\u0005\n:\nThis means that\nL\u0004\n1;\u0002ABO\u0003\u0005ˇ D \u00031\n2ŒL\u0004\nA; L\u0004\nB\t\u0005ˇ D \u00031\n2L\u0004\nLD\n\u0004\nŒ\nˇU.q/ \u0003 g.q; p/\t \u0005ˇ\n\u0005\n:\nHence, we can combine this equation with (7.21) to yield\nL\u0004\nLDf1;\u0002ABO\u0003\u0005ˇ D 1\n2L\u0004\nLD\n\u0004\nŒ\nˇU.q/ \u0003 g.q; p/\t \u0005ˇ\n\u0005\n;\nwith the general solution\nf1;\u0002ABO\u0003 D ˇ\n2\n\u0004\n\nU.q/ \u0003 pTM\u00021rU.q/ \u0003 c\n\u0005\n;\nwhere c D \nhU.q/i is a constant, chosen to ensure that the average of the correction\nfunction is zero. This solution gives the leading order correction for the three related\nschemes in (7.23).\nFor the ﬁnal two schemes, we can compute the correction function through the\nuse of (7.24). Our previous work has computed the second term on the right hand\nside already, so we are left with the initial term. However, its expression reduces\nquite easily, as\nŒL\u0004\nA \u0003 L\u0004\nB; L\u0004\nO\t\u0005ˇ D \u0003L\u0004\nO\n\u0006\nL\u0004\nA \u0003 L\u0004\nB\n\u0007\n\u0005ˇ;\nD \u00032L\u0004\nO\n\u0004\ng.q; p/\u0005ˇ\n\u0005\n;\nD \u00032\nˇL\u0004\nLD\n\u0004\nU.q/\u0005ˇ\n\u0005\n:\n"
+            }
+          ],
+          "transcription_note": "PDF文字层原样保留，陈述中的数学排版转写为LaTeX；文字层有特殊字形编码时以目视原页为准。PDF347的Exercises之后不在正文范围内。",
+          "context_notation": [],
+          "extra_assumptions": [
+            "ρ为未归一Gibbs权，所有微分等式对常数归一化同样成立；实际概率还要正有限配分积分。所有质量正、β>0、光滑资格明示。",
+            "覆盖g、A/B作用、纯位置ψ作用及O(gρ)两种等价写法；交换子作用与中间OU共轭式在原文登记但另列覆盖缺口。"
+          ],
+          "issues": [
+            "A：所引公式与附件4–5相符。C：未覆盖[A†,B†]ρ=−(A†+B†)(gρ)=(O†−LD†)(gρ)，也没有原页OU共轭微分算子的中间表达式。extra_assumptions承认缺口，而statement_scope仍声称全部数学对象与公式。"
+          ],
+          "statement_scope": "原文全部保留；Lean覆盖g定义及Aρ、Bρ、LD(ψρ)、O(gρ)两种最终形式。交换子作用等式与OU共轭中间表达式未覆盖。",
+          "lean_decl": "MD.Ch07.mechanicalHamiltonian",
+          "lean_declarations": [
+            "MD.Ch07.mechanicalHamiltonian",
+            "MD.Ch07.gibbsWeight",
+            "MD.Ch07.gFunction",
+            "MD.Ch07.phaseO",
+            "MD.Ch07.phaseLD",
+            "MD.Ch07.gibbsDerivativeIdentities"
+          ],
+          "source_page_verification": "本次实际目视核对 R4_PAGES.pdf 对应页；重复页渲染SHA256一致。详见本条 evidence。",
+          "repair_log": [],
+          "documented_priors": []
+        },
+        "issues": [
+          "A：所引公式与附件4–5相符。C：未覆盖[A†,B†]ρ=−(A†+B†)(gρ)=(O†−LD†)(gρ)，也没有原页OU共轭微分算子的中间表达式。extra_assumptions承认缺口，而statement_scope仍声称全部数学对象与公式。"
+        ],
+        "evidence": [
+          "目视附件4–5（原PDF313–314／印刷292–293）；附件4与3、附件5与6分别为完全相同的渲染。",
+          "gibbsDerivativeIdentities仅有五个合取结论：Aρ、Bρ、LD(ψρ)、O(gρ)=−γgρ及其与γβLD(Uρ)的等式。",
+          "D56、D58–D64给出真实坐标导数、梯度、A/B/O/LD、机械Hamiltonian与未归一Gibbs权，均与对角正质量模型一致。",
+          "审校方式：只读R4_任务.md的本条Lean及其摘录项目定义，Mathlib按标准含义采信；未修改工程、未补证明、未调用Lean编译器，不因sorry判FAIL。未发现任何字面的[EXTRA]或[ERRATUM?]标签；额外假设与原书疑误按语义逐项核对，建议标签仅写入本审校JSON。",
+          "本次附件R4_PAGES.pdf SHA256=133d111b38c222acf5f8a9b401286106f513aca299e119dc65d034e915f0c931；本条input_sha256严格回显任务所列旧文件键和值，不宣称与当前文件重新计算一致。"
+        ]
+      },
+      "audit": {
+        "lean_decl": [
+          "MD.Ch07.mechanicalHamiltonian",
+          "MD.Ch07.gibbsWeight",
+          "MD.Ch07.gFunction",
+          "MD.Ch07.phaseO",
+          "MD.Ch07.phaseLD",
+          "MD.Ch07.gibbsDerivativeIdentities"
+        ],
+        "verdict": "FAIL",
+        "explanation": "C：现有五项结论在m_i>0、β>0、U和ψ光滑的全称量词下均正确；γ任意实数不影响这些代数微分恒等式。未归一权与归一密度只差常数，额外资格明确。FAIL源于原文含有但Lean未陈述的交换子等式及OU中间公式，非sorry问题。",
+        "counterexample": null,
+        "suggested_fix": "把缺失等式登记为独立Lean覆盖义务，或将已形式化范围准确写为五个已列结论；不可把现有定理称为全部原文公式的形式化。"
+      },
+      "subtask": "BATCH12f",
+      "input_sha256": {
+        "Blueprint/Ch07.lean": "f30ea154ebfb07ae85c0b806ff74b35808d5a0c3dcaa647c0c3cc80a78239e37",
+        "blueprint/ch07/ch07_source.json": "c434892ebf63b06f7cadcdfa7af408c2c12d7b645d35db431d1855224163ba19",
+        "BATCH12f_PAGES.pdf": "fc8644a71bf570c72f042d96bb111ef40281924ff934aba61b9fea77fe60cc55"
+      }
+    }
+  ],
+  "merged_from": "ch07_first_merged"
+}

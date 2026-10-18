@@ -1,0 +1,275 @@
+{
+  "batch": "BATCH10",
+  "chapter": "ch07",
+  "round": "first-merged",
+  "input_sha256": {
+    "Blueprint/Ch07.lean": "f30ea154ebfb07ae85c0b806ff74b35808d5a0c3dcaa647c0c3cc80a78239e37",
+    "blueprint/ch07/ch07_source.json": "c434892ebf63b06f7cadcdfa7af408c2c12d7b645d35db431d1855224163ba19"
+  },
+  "items": [
+    {
+      "source_id": "MD-7.7.1-ExactABOPropagators",
+      "json_review": {
+        "status": "APPROVED",
+        "issue_codes": [],
+        "corrected_json": null,
+        "issues": [],
+        "evidence": {
+          "A": "附件7页（书285/PDF306）：A的q+tM⁻¹p、B的p−t∇U、O的e^(−γt)p、ζM^(1/2)及标准高斯归一因子一致。",
+          "C": "D55–D61：A/B分别拉回driftStep/kickStep；OU的噪声是sqrt(θ(1−exp(−2γt)))sqrt(mi)Ri，R服从Fin n各分量gaussianReal 0 1的乘积测度，正确对应θ=kBT和对角正质量。固定时刻定义不包含指数生成元等式或半群律；JSON明确该限制。物理解读需要正质量、θ>0、γ≥0、t≥0和被积函数可积，这些写于extra_assumptions，不是Lean隐含前提；在不满足时总函数仍可定义但不能作OU物理传播子解释。",
+          "source": "R3_任务.md 本条完整Lean及项目依赖定义、附录；R3_PAGES.pdf 对应原页。",
+          "method": "目视原页并对照文字层；仅审查所摘录签名与定义的数学语义；未编译、未补证明。",
+          "annotation_check": "本条所列Lean未出现显式[EXTRA]或[ERRATUM?]标签；extra_assumptions和statement_scope按实际语义单独核对，不将覆盖缺口视为已经证明。"
+        }
+      },
+      "audit": {
+        "lean_decl": [
+          "MD.Ch07.propagateA",
+          "MD.Ch07.propagateB",
+          "MD.Ch07.propagateO"
+        ],
+        "verdict": "PASS",
+        "explanation": "D55–D61：A/B分别拉回driftStep/kickStep；OU的噪声是sqrt(θ(1−exp(−2γt)))sqrt(mi)Ri，R服从Fin n各分量gaussianReal 0 1的乘积测度，正确对应θ=kBT和对角正质量。固定时刻定义不包含指数生成元等式或半群律；JSON明确该限制。物理解读需要正质量、θ>0、γ≥0、t≥0和被积函数可积，这些写于extra_assumptions，不是Lean隐含前提；在不满足时总函数仍可定义但不能作OU物理传播子解释。",
+        "counterexample": null,
+        "suggested_fix": null
+      },
+      "subtask": "BATCH10a",
+      "input_sha256": {
+        "Blueprint/Ch07.lean": "f30ea154ebfb07ae85c0b806ff74b35808d5a0c3dcaa647c0c3cc80a78239e37",
+        "blueprint/ch07/ch07_source.json": "c434892ebf63b06f7cadcdfa7af408c2c12d7b645d35db431d1855224163ba19",
+        "BATCH10a_PAGES.pdf": "d3020dd966c24471f9f8cf8ef384f0d99a4b139e08f318686d2e1447843d76e0"
+      }
+    },
+    {
+      "source_id": "MD-7.7.1-OperatorOrderReversal",
+      "json_review": {
+        "status": "APPROVED",
+        "issue_codes": [
+          "C_MISSING_ADJOINT_PRODUCT"
+        ],
+        "corrected_json": null,
+        "issues": [
+          {
+            "code": "C_MISSING_ADJOINT_PRODUCT",
+            "detail": "pullback_order是φ∘(B∘A)=(φ∘B)∘A；结合拉回算子定义可说明顺序反转，但它本身仅为复合结合律。abaoBackward的嵌套次序和h/2系数正确。没有任何伴随对象或前向O A B A四段乘积，因而原文明确给出的第二条主等式未覆盖；extra_assumptions只登记缺口。也未将此定义与实际离散随机映射的期望识别。"
+          }
+        ],
+        "evidence": {
+          "A": "附件8页（书285/PDF306）：后向ABAO的A半步/B整步/A半步/O整步及伴随的O/B夹在两次A半步之间的反序均与原页一致。省略了原页解释性流映射关系，但保留的原句及两条式子无误。",
+          "C": "pullback_order是φ∘(B∘A)=(φ∘B)∘A；结合拉回算子定义可说明顺序反转，但它本身仅为复合结合律。abaoBackward的嵌套次序和h/2系数正确。没有任何伴随对象或前向O A B A四段乘积，因而原文明确给出的第二条主等式未覆盖；extra_assumptions只登记缺口。也未将此定义与实际离散随机映射的期望识别。",
+          "source": "R3_任务.md 本条完整Lean及项目依赖定义、附录；R3_PAGES.pdf 对应原页。",
+          "method": "目视原页并对照文字层；仅审查所摘录签名与定义的数学语义；未编译、未补证明。",
+          "annotation_check": "本条所列Lean未出现显式[EXTRA]或[ERRATUM?]标签；extra_assumptions和statement_scope按实际语义单独核对，不将覆盖缺口视为已经证明。"
+        }
+      },
+      "audit": {
+        "lean_decl": [
+          "MD.Ch07.pullback_order",
+          "MD.Ch07.abaoBackward"
+        ],
+        "verdict": "FAIL",
+        "explanation": "pullback_order是φ∘(B∘A)=(φ∘B)∘A；结合拉回算子定义可说明顺序反转，但它本身仅为复合结合律。abaoBackward的嵌套次序和h/2系数正确。没有任何伴随对象或前向O A B A四段乘积，因而原文明确给出的第二条主等式未覆盖；extra_assumptions只登记缺口。也未将此定义与实际离散随机映射的期望识别。",
+        "counterexample": null,
+        "suggested_fix": "在合适对偶空间上增加四段前向算子及反序伴随等式，或明确拆分“后向定义”与仍未形式化的伴随条目。"
+      },
+      "subtask": "BATCH10b",
+      "input_sha256": {
+        "Blueprint/Ch07.lean": "f30ea154ebfb07ae85c0b806ff74b35808d5a0c3dcaa647c0c3cc80a78239e37",
+        "blueprint/ch07/ch07_source.json": "c434892ebf63b06f7cadcdfa7af408c2c12d7b645d35db431d1855224163ba19",
+        "BATCH10b_PAGES.pdf": "e21708ea89e31c5b220a690397e4c33579a660f3144423c924bd9ac6f977ae49"
+      }
+    },
+    {
+      "source_id": "MD-7.7.1-StationaryModifiedPDE",
+      "json_review": {
+        "status": "NEEDS_HUMAN",
+        "issue_codes": [
+          "C_DISCRETE_CONTINUOUS_EMBEDDING",
+          "C_BOUNDED_OPERATOR_RESTRICTION"
+        ],
+        "corrected_json": null,
+        "issues": [
+          {
+            "code": "C_DISCRETE_CONTINUOUS_EMBEDDING",
+            "detail": "formalDensityEvolution对所有实t用HasDerivAt，且L为有界连续线性算子E→L[ℝ]E；原书Langevin/修改微分算子通常无界并需定义域，时间通常t≥0。stationaryModifiedDensity只是任意代数线性自映射的核条件，无密度资格，也未与前一个L识别。二者作为抽象定义有意义，不能据此确认原离散分布真实满足连续Fokker–Planck演化。原页把离散传播与连续方程直接联结需要形式解释或嵌入条件；JSON已提醒，须人工限定，不能静默改成普遍真实PDE。"
+          },
+          {
+            "code": "C_BOUNDED_OPERATOR_RESTRICTION",
+            "detail": "formalDensityEvolution对所有实t用HasDerivAt，且L为有界连续线性算子E→L[ℝ]E；原书Langevin/修改微分算子通常无界并需定义域，时间通常t≥0。stationaryModifiedDensity只是任意代数线性自映射的核条件，无密度资格，也未与前一个L识别。二者作为抽象定义有意义，不能据此确认原离散分布真实满足连续Fokker–Planck演化。原页把离散传播与连续方程直接联结需要形式解释或嵌入条件；JSON已提醒，须人工限定，不能静默改成普遍真实PDE。"
+          }
+        ],
+        "evidence": {
+          "A": "附件9–10页（书285–286/PDF306–307）：时间密度演化式及稳态Lhat†ρhat=0均忠实转写，未漏伴随号。",
+          "C": "formalDensityEvolution对所有实t用HasDerivAt，且L为有界连续线性算子E→L[ℝ]E；原书Langevin/修改微分算子通常无界并需定义域，时间通常t≥0。stationaryModifiedDensity只是任意代数线性自映射的核条件，无密度资格，也未与前一个L识别。二者作为抽象定义有意义，不能据此确认原离散分布真实满足连续Fokker–Planck演化。原页把离散传播与连续方程直接联结需要形式解释或嵌入条件；JSON已提醒，须人工限定，不能静默改成普遍真实PDE。",
+          "source": "R3_任务.md 本条完整Lean及项目依赖定义、附录；R3_PAGES.pdf 对应原页。",
+          "method": "目视原页并对照文字层；仅审查所摘录签名与定义的数学语义；未编译、未补证明。",
+          "annotation_check": "本条所列Lean未出现显式[EXTRA]或[ERRATUM?]标签；extra_assumptions和statement_scope按实际语义单独核对，不将覆盖缺口视为已经证明。"
+        }
+      },
+      "audit": {
+        "lean_decl": [
+          "MD.Ch07.formalDensityEvolution",
+          "MD.Ch07.stationaryModifiedDensity"
+        ],
+        "verdict": "NEEDS_HUMAN",
+        "explanation": "formalDensityEvolution对所有实t用HasDerivAt，且L为有界连续线性算子E→L[ℝ]E；原书Langevin/修改微分算子通常无界并需定义域，时间通常t≥0。stationaryModifiedDensity只是任意代数线性自映射的核条件，无密度资格，也未与前一个L识别。二者作为抽象定义有意义，不能据此确认原离散分布真实满足连续Fokker–Planck演化。原页把离散传播与连续方程直接联结需要形式解释或嵌入条件；JSON已提醒，须人工限定，不能静默改成普遍真实PDE。",
+        "counterexample": null,
+        "suggested_fix": "保留原文，明确形式修改方程的地位；若要真实演化，给出半群、生成元定义域、时间区间及嵌入假设，并统一两个定义的算子对象。"
+      },
+      "subtask": "BATCH10c",
+      "input_sha256": {
+        "Blueprint/Ch07.lean": "f30ea154ebfb07ae85c0b806ff74b35808d5a0c3dcaa647c0c3cc80a78239e37",
+        "blueprint/ch07/ch07_source.json": "c434892ebf63b06f7cadcdfa7af408c2c12d7b645d35db431d1855224163ba19",
+        "BATCH10c_PAGES.pdf": "1a37c4fa789cc3c72095868878389eaad38989cbd084b556da57b4a3acbe5aaf"
+      }
+    },
+    {
+      "source_id": "MD-7.7.1-TwoOperatorBCH",
+      "json_review": {
+        "status": "APPROVED",
+        "issue_codes": [],
+        "corrected_json": null,
+        "issues": [],
+        "evidence": {
+          "A": "附件11页（书286/PDF307）：exp(hX)exp(hY)、h[X,Y]/2和h²([X,[X,Y]]+[Y,[Y,X]])/12逐项一致。",
+          "C": "D62交换子为XY−YX，D63形式指数系数Aⁿ/n!，twoStage顺序X后乘Y；形式log/h的0、1、2阶与原文完整展示的三阶系数一致。任意实结合代数足够，不要求交换、收敛或有界性；twoStage常数项为1，满足D54形式对数的使用条件。sorry仅是未填证明，不影响本次签名判定。",
+          "source": "R3_任务.md 本条完整Lean及项目依赖定义、附录；R3_PAGES.pdf 对应原页。",
+          "method": "目视原页并对照文字层；仅审查所摘录签名与定义的数学语义；未编译、未补证明。",
+          "annotation_check": "本条所列Lean未出现显式[EXTRA]或[ERRATUM?]标签；extra_assumptions和statement_scope按实际语义单独核对，不将覆盖缺口视为已经证明。"
+        }
+      },
+      "audit": {
+        "lean_decl": [
+          "MD.Ch07.comm",
+          "MD.Ch07.twoStage",
+          "MD.Ch07.twoOperatorBCH"
+        ],
+        "verdict": "PASS",
+        "explanation": "D62交换子为XY−YX，D63形式指数系数Aⁿ/n!，twoStage顺序X后乘Y；形式log/h的0、1、2阶与原文完整展示的三阶系数一致。任意实结合代数足够，不要求交换、收敛或有界性；twoStage常数项为1，满足D54形式对数的使用条件。sorry仅是未填证明，不影响本次签名判定。",
+        "counterexample": null,
+        "suggested_fix": null
+      },
+      "subtask": "BATCH10d",
+      "input_sha256": {
+        "Blueprint/Ch07.lean": "f30ea154ebfb07ae85c0b806ff74b35808d5a0c3dcaa647c0c3cc80a78239e37",
+        "blueprint/ch07/ch07_source.json": "c434892ebf63b06f7cadcdfa7af408c2c12d7b645d35db431d1855224163ba19",
+        "BATCH10d_PAGES.pdf": "103c52d2e6f4eddb6fb313da09057fb5bb03d2c3827b0a9070c85a9c832c60c7"
+      }
+    },
+    {
+      "source_id": "MD-7.7.1-TaylorRemainder",
+      "json_review": {
+        "status": "CORRECTED",
+        "issue_codes": [
+          "A_UNMARKED_OMITTED_SENTENCE",
+          "C_ONLY_POINTWISE_SCALAR_REMAINDER"
+        ],
+        "corrected_json": {
+          "source_id": "MD-7.7.1-TaylorRemainder",
+          "kind": "unnumbered_claim",
+          "label": null,
+          "section": "7.7.1",
+          "printed_page": "286–287",
+          "pdf_page": "307–308",
+          "statement_latex": "We can make use of Taylor’s theorem to write the identity\n\\[P_h=P_0+h\\left.\\frac{dP_t}{dt}\\right|_{t=0}+\\cdots+\\frac{h^n}{n!}\\left.\\frac{d^nP_t}{dt^n}\\right|_{t=0}\n+\\frac{h^{n+1}}{n!}\\int_0^1(1-\\lambda)^n\\left.\\frac{d^{n+1}P_t}{dt^{n+1}}\\right|_{t=\\lambda h}d\\lambda,\\]\nfor some finite truncation index $n\\in\\{1,2,3,\\ldots\\}$. The remainder term at order $h^{n+1}$ will involve the integration of finitely many derivatives of its argument. Hence for observables of sufficient smoothness with compact support, this remainder term will remain bounded (see [223]).",
+          "proof_latex": null,
+          "proof_outline": null,
+          "proof_note": "原页推导与上下文全文见original_page_text；数学符号的排版以随附原页PDF为准。",
+          "original_page_text": [
+            {
+              "pdf_page": 307,
+              "printed_page": 286,
+              "text": "286\n7\nNumerical Methods for Stochastic Molecular Dynamics\nwith the important case of its invariant distribution satisfying the partial differential\nequation\nOL\u0004 O\u0005 D 0:\nOur goal in the following section is to ﬁnd\nOL\u0004 and solve the PDE for the\ndistribution O\u0005 by using our ansatz (7.17). The solution gives us the corrupted\ninvariant distribution sampled by our numerical scheme, allowing us to correct\nour observed averages to achieve more accurate results. It also gives us a way of\nevaluating which schemes are best for sampling, by evaluating the error introduced\nby the discretization.\nThe terms of the perturbation expansion for OL\u0004 can be computed using the Baker-\nCampbell-Hausdorff(BCH) expansion already introduced in Chap. 3. Recall that for\nlinear operators X and Y, we can write the composition of their exponentials as\nexp .hX/ exp .hY/ D exp .hZ/ ;\nwhere we have the expansion\nZ D X C Y C h\n2ŒX; Y\t C h2\n12 .ŒX; ŒX; Y\t\t C ŒY; ŒY; X\t\t/ C O.h3/:\nThe notation ŒX; Y\t\ndef\nD XY \u0003 YX represents the commutator of the operators X\nand Y. By repeated application of the BCH formula, we can obtain such an\nexpansion for any splitting-based method, however the terms grow in complexity\nat successive powers of h, requiring commutators of increasing length that make\ncomputation cumbersome. Additionally any careful mathematician should question\nthe convergence of this sequence when computing OL, as we deal only with formal\nseries that offer no guidance on the boundedness of the resulting terms, which will\ninvolve high order derivatives in both q and p.\nTo offer some reassurance, let us deﬁne the evolution operator for our numerical\nmethod as\nPt D et OL D etL1etL2 : : : etLk;\nwhere the numerical method has k-many stages with each Li proportional to one of\nLA, LB and LO. We can make use of Taylor’s theorem to write the identity\nPh D P0 C h dPt\ndt\nˇˇˇˇ\ntD0\nC : : : C hn\nnŠ\ndnPt\ndtn\nˇˇˇˇ\ntD0\nC hnC1\nnŠ\n1\nZ\n0\n.1 \u0003 \u0013/n dnC1Pt\ndtnC1\nˇˇˇˇ\ntD\u0013h\nd\u0013;\n"
+            },
+            {
+              "pdf_page": 308,
+              "printed_page": 287,
+              "text": "7.7\nThe Evolution of the Distribution Using a Numerical Method\n287\nfor some ﬁnite truncation index n 2 f1; 2; 3; : : :g. The remainder term at order hnC1\nwill involve the integration of ﬁnitely many derivatives of its argument. Hence for\nobservables of sufﬁcient smoothness with compact support, this remainder term will\nremain bounded (see [223]).\n7.7.2\nFirst Order Operator Expansion\nAs we consider schemes involving compositions of three splitting pieces, the\nminimum number of stages to our methods (in order for it to be consistent) will\nbe three. The perturbed Fokker-Planck operator for a splitting method with three\nstages will be computed as\nexp.hS/ D exp.hZ/ exp.hY/ exp.hX/;\n(7.18)\nwhere X, Y and Z are one of L\u0004\nA, L\u0004\nB and L\u0004\nO. Let us work the ﬁrst terms of this\nexpansion out, retaining terms involving triple products only\nexp.hY/ exp.hX/ D exp\n \nh\n \n.Y C X/ C h\n2ŒY; X\t C h2\n12 .ŒY; Y; X\t C ŒX; X; Y\t/ C : : :\n!!\n;\nwhere the notation ŒA; B; C\t is notation for ŒA; ŒB; C\t\t. Applying this formula one\nmore time in (7.18), we ﬁnd\nS D X C Y C Z C h\n2ŒY; X\t C h2\n12 .ŒY; ŒY; X\t\t C ŒX; ŒX; Y\t\t/\nC h\n2\n\u0002\nZ; Y C X C h\n2ŒY; X\t\n\u0003\nC h2\n12 .ŒZ; ŒZ; Y C X\t\t \u0003 ŒY C X; ŒZ; Y C X\t\t/ C : : :\nD X C Y C Z C h\n2.ŒZ; Y\t C ŒZ; X\t C ŒY; X\t/ C h2\n4 ŒZ; Y; X\t\nC h2\n12 .ŒY; Y; X\t C ŒX; X; Y\t C ŒZ; Z; Y\t C ŒZ; Z; X\t\nCŒY C X; Y C X; Z\t/ C : : :\nIn general the terms in this expansion will lead to complicated expansions. In the\ncase of deterministic systems, the operators are always ﬁrst order due to equality\nof mixed partials (the 2nd order derivatives are cancelled). Due to the second\nderivatives present in the L\u0004\nO operator, derivatives of all orders will appear in the\n"
+            }
+          ],
+          "transcription_note": "PDF文字层原样保留，陈述中的数学排版转写为LaTeX；文字层有特殊字形编码时以目视原页为准。PDF347的Exercises之后不在正文范围内。",
+          "context_notation": [],
+          "extra_assumptions": [
+            "只覆盖作用于单个可观测量和点后的标量C^(n+1) Taylor恒等式及局部余项界；把ABO无界算符组合在紧支撑光滑测试函数上归约到这些假设仍是覆盖缺口。"
+          ],
+          "issues": [],
+          "statement_scope": "本条逐字引用的全部数学对象与公式；未纳入的上下文另列。",
+          "lean_decl": "MD.Ch07.taylorRemainder",
+          "lean_declarations": [
+            "MD.Ch07.taylorRemainder",
+            "MD.Ch07.taylorRemainder_bound"
+          ],
+          "source_page_verification": "见source_page_checks.json；必须已目视核对本条原页。",
+          "repair_log": [],
+          "documented_priors": []
+        },
+        "issues": [
+          {
+            "code": "A_UNMARKED_OMITTED_SENTENCE",
+            "detail": "附件12–13页（书286–287/PDF307–308）：余项h^(n+1)/n!、区间0到1、(1−λ)^n及t=λh均正确。JSON在truncation index句后无省略标记删去“The remainder term at order h^(n+1) ... derivatives of its argument.”，corrected_json恢复。"
+          },
+          {
+            "code": "C_ONLY_POINTWISE_SCALAR_REMAINDER",
+            "detail": "taylorRemainder对标量F∈C^(k+1)、所有实h给出正确积分余项，k∈ℕ还合法扩展到0阶。taylorRemainder_bound是h→0的标量局部O(h^(k+1))，正确但其常数可依赖F。没有P_t作用在紧支撑可观测量后满足这些假设的桥，也无相空间/算子范数意义下的余项界；不能把逐点标量结论作为原文算子/观测量余项资格的完整审校通过。extra_assumptions已承认范围缩减。"
+          }
+        ],
+        "evidence": {
+          "A": "附件12–13页（书286–287/PDF307–308）：余项h^(n+1)/n!、区间0到1、(1−λ)^n及t=λh均正确。JSON在truncation index句后无省略标记删去“The remainder term at order h^(n+1) ... derivatives of its argument.”，corrected_json恢复。",
+          "C": "taylorRemainder对标量F∈C^(k+1)、所有实h给出正确积分余项，k∈ℕ还合法扩展到0阶。taylorRemainder_bound是h→0的标量局部O(h^(k+1))，正确但其常数可依赖F。没有P_t作用在紧支撑可观测量后满足这些假设的桥，也无相空间/算子范数意义下的余项界；不能把逐点标量结论作为原文算子/观测量余项资格的完整审校通过。extra_assumptions已承认范围缩减。",
+          "source": "R3_任务.md 本条完整Lean及项目依赖定义、附录；R3_PAGES.pdf 对应原页。",
+          "method": "目视原页并对照文字层；仅审查所摘录签名与定义的数学语义；未编译、未补证明。",
+          "annotation_check": "本条所列Lean未出现显式[EXTRA]或[ERRATUM?]标签；extra_assumptions和statement_scope按实际语义单独核对，不将覆盖缺口视为已经证明。"
+        }
+      },
+      "audit": {
+        "lean_decl": [
+          "MD.Ch07.taylorRemainder",
+          "MD.Ch07.taylorRemainder_bound"
+        ],
+        "verdict": "FAIL",
+        "explanation": "taylorRemainder对标量F∈C^(k+1)、所有实h给出正确积分余项，k∈ℕ还合法扩展到0阶。taylorRemainder_bound是h→0的标量局部O(h^(k+1))，正确但其常数可依赖F。没有P_t作用在紧支撑可观测量后满足这些假设的桥，也无相空间/算子范数意义下的余项界；不能把逐点标量结论作为原文算子/观测量余项资格的完整审校通过。extra_assumptions已承认范围缩减。",
+        "counterexample": null,
+        "suggested_fix": "为固定光滑紧支撑观测量说明F(t)=P_tφ(z)并证明相应时间正则性；明确需要逐点还是统一余项界，并陈述该界。"
+      },
+      "subtask": "BATCH10e",
+      "input_sha256": {
+        "Blueprint/Ch07.lean": "f30ea154ebfb07ae85c0b806ff74b35808d5a0c3dcaa647c0c3cc80a78239e37",
+        "blueprint/ch07/ch07_source.json": "c434892ebf63b06f7cadcdfa7af408c2c12d7b645d35db431d1855224163ba19",
+        "BATCH10e_PAGES.pdf": "3ae62c65ee974716d9ca9d959e12bcbdc633d1bd1e3b88ebeeef60a3b05abf3b"
+      }
+    },
+    {
+      "source_id": "MD-7.7.2-ThreeOperatorBCH",
+      "json_review": {
+        "status": "APPROVED",
+        "issue_codes": [],
+        "corrected_json": null,
+        "issues": [],
+        "evidence": {
+          "A": "附件14页（书287/PDF308）：(7.18)乘积顺序ZYX、h阶三个交换子、h²/4[Z,Y,X]及h²/12五项与最终合并式一致；[A,B,C]=[A,[B,C]]一致。",
+          "C": "threeStage按Z、Y、X相乘；threeOperatorBCH的0–2阶系数逐项匹配最终印式。comm (Y+X) (comm (Y+X) Z)的括号正确；h²/4项是[Z,[Y,X]]，无交换子符号反转。任意实结合代数上的形式论证足够，常数项为1。中间未合并推导省略不改变所审最终公式。",
+          "source": "R3_任务.md 本条完整Lean及项目依赖定义、附录；R3_PAGES.pdf 对应原页。",
+          "method": "目视原页并对照文字层；仅审查所摘录签名与定义的数学语义；未编译、未补证明。",
+          "annotation_check": "本条所列Lean未出现显式[EXTRA]或[ERRATUM?]标签；extra_assumptions和statement_scope按实际语义单独核对，不将覆盖缺口视为已经证明。"
+        }
+      },
+      "audit": {
+        "lean_decl": [
+          "MD.Ch07.threeStage",
+          "MD.Ch07.threeOperatorBCH"
+        ],
+        "verdict": "PASS",
+        "explanation": "threeStage按Z、Y、X相乘；threeOperatorBCH的0–2阶系数逐项匹配最终印式。comm (Y+X) (comm (Y+X) Z)的括号正确；h²/4项是[Z,[Y,X]]，无交换子符号反转。任意实结合代数上的形式论证足够，常数项为1。中间未合并推导省略不改变所审最终公式。",
+        "counterexample": null,
+        "suggested_fix": null
+      },
+      "subtask": "BATCH10f",
+      "input_sha256": {
+        "Blueprint/Ch07.lean": "f30ea154ebfb07ae85c0b806ff74b35808d5a0c3dcaa647c0c3cc80a78239e37",
+        "blueprint/ch07/ch07_source.json": "c434892ebf63b06f7cadcdfa7af408c2c12d7b645d35db431d1855224163ba19",
+        "BATCH10f_PAGES.pdf": "14474203f3a7ce8ddfdd1d8faefb432527c9b71a3ff125315c22aee2475ff1bd"
+      }
+    }
+  ],
+  "merged_from": "ch07_first_merged"
+}

@@ -1,0 +1,26 @@
+{
+  "batch": "EAUDIT06",
+  "subtasks": [
+    {
+      "subtask": "EAUDIT06a",
+      "source_id": "MD-7.8.1-OverdampedFirstOrderCaution",
+      "path": "blueprint/ch07/mathcopilot_tasks/EAUDIT06/a",
+      "bytes": 93547,
+      "manifest_sha256": "9da223f1eaf52bc65584c1b26f4e46c1afcd756387bd639df84be037e33c6d2a"
+    },
+    {
+      "subtask": "EAUDIT06b",
+      "source_id": "MD-7.8.2-BiasedDoubleWellExact",
+      "path": "blueprint/ch07/mathcopilot_tasks/EAUDIT06/b",
+      "bytes": 189003,
+      "manifest_sha256": "ea2982a34b7003fb7554a423bd1df737875e1128b5677d0217941c5e38bccdde"
+    },
+    {
+      "subtask": "EAUDIT06c",
+      "source_id": "MD-7.9-EvenDensityPerturbation",
+      "path": "blueprint/ch07/mathcopilot_tasks/EAUDIT06/c",
+      "bytes": 84622,
+      "manifest_sha256": "57edc39e46f1c8d53e74ab12ae4abd9f74322ba43a04ffb39da4d1f8bc91e028"
+    }
+  ]
+}

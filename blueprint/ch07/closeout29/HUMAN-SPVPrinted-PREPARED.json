@@ -1,0 +1,8 @@
+{
+  "source_id": "MD-7.3.2-SPVPrinted",
+  "signature_changed": true,
+  "scope": "Printed保留原页q_n力，候选修正版使用qhalf；总化函数需在正质量、γ>0、θ>0、h≥0下解释为物理单步，未覆盖γ=0延拓。",
+  "diff": "--- \n+++ \n@@ -6,4 +6,8 @@\n def spvPrinted_corrected (m : V n) (U : V n → ℝ) (γ θ h : ℝ) (R : V n) (x : Phase n) : Phase n :=\n   let qhalf := (driftStep m (h/2) x).1\n   let pnew := fun i ↦ ouMomentum m γ θ h x.2 R i - (1-Real.exp (-h*γ))/γ * gradient U qhalf i\n-  driftStep m (h/2) (qhalf,pnew)+  driftStep m (h/2) (qhalf,pnew)\n+\n+/-- 两个总化映射的物理适用域；γ=0另需定义η=h，此处不含该延拓。 -/\n+def spvQualification (m : V n) (γ θ h : ℝ) : Prop :=\n+  (∀ i, 0 < m i) ∧ 0 < γ ∧ 0 < θ ∧ 0 ≤ h\n",
+  "printed_version": "原书表述保留；公式类已目视核对原页",
+  "corrected_version": "见独立_corrected或限定目标；不将较弱目标称为完整修正"
+}

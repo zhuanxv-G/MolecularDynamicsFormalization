@@ -1,0 +1,234 @@
+{
+  "batch": "BATCH07",
+  "chapter": "ch07",
+  "round": "first-merged",
+  "input_sha256": {
+    "Blueprint/Ch07.lean": "f30ea154ebfb07ae85c0b806ff74b35808d5a0c3dcaa647c0c3cc80a78239e37",
+    "blueprint/ch07/ch07_source.json": "c434892ebf63b06f7cadcdfa7af408c2c12d7b645d35db431d1855224163ba19"
+  },
+  "items": [
+    {
+      "source_id": "MD-7.4.1-ABOHarmonic",
+      "json_review": {
+        "status": "APPROVED",
+        "issue_codes": [],
+        "corrected_json": null,
+        "issues": [],
+        "evidence": [
+          "A：已目视核对 R2_PAGES.pdf 附件第13–14页，原书PDF页296–297、印刷页275–276。数学公式、上下标、符号与摘录一致；允许 Q/P/C 替代已定义的平稳矩以及版式转换。",
+          "C：只读核对本条完整 Lean 与所列项目依赖及附录 D1–D30；Mathlib 标准定义按任务要求采信。aboHarmonic 的矩阵和动量噪声与(7.12)一致。aboStationaryMean 在正 m,h,γ、Ω≠0 和坐标可积的实际不变概率分布下给出两个均值零；不要求 θ>0 仍不损害该均值结论。hinv 中 z.1 为状态、z.2 为标准正态噪声，顺序正确。只替代原文已取到的平稳极限，不证明趋平稳。",
+          "标注：本条未出现独立的 [EXTRA]/[ERRATUM?] 字面标签；已核对 extra_assumptions、issues、statement_scope 中的对应说明。未修改工程或补证明，未因 sorry 判 FAIL。"
+        ]
+      },
+      "audit": {
+        "lean_decl": [
+          "MD.Ch07.aboHarmonic",
+          "MD.Ch07.aboStationaryMean"
+        ],
+        "verdict": "PASS",
+        "explanation": "aboHarmonic 的矩阵和动量噪声与(7.12)一致。aboStationaryMean 在正 m,h,γ、Ω≠0 和坐标可积的实际不变概率分布下给出两个均值零；不要求 θ>0 仍不损害该均值结论。hinv 中 z.1 为状态、z.2 为标准正态噪声，顺序正确。只替代原文已取到的平稳极限，不证明趋平稳。",
+        "counterexample": null,
+        "suggested_fix": null
+      },
+      "subtask": "BATCH07a",
+      "input_sha256": {
+        "Blueprint/Ch07.lean": "f30ea154ebfb07ae85c0b806ff74b35808d5a0c3dcaa647c0c3cc80a78239e37",
+        "blueprint/ch07/ch07_source.json": "c434892ebf63b06f7cadcdfa7af408c2c12d7b645d35db431d1855224163ba19",
+        "BATCH07a_PAGES.pdf": "06110035ccbfea4546e9f28610b44198aff014071d1c44bd689c4fe8107a1fbd"
+      }
+    },
+    {
+      "source_id": "MD-7.4.1-ABOVariance",
+      "json_review": {
+        "status": "APPROVED",
+        "issue_codes": [],
+        "corrected_json": null,
+        "issues": [],
+        "evidence": [
+          "A：已目视核对 R2_PAGES.pdf 附件第15页，原书PDF页297、印刷页276。数学公式、上下标、符号与摘录一致；允许 Q/P/C 替代已定义的平稳矩以及版式转换。",
+          "C：只读核对本条完整 Lean 与所列项目依赖及附录 D1–D30；Mathlib 标准定义按任务要求采信。有理式的 exp(hγ)、(1+exp(-hγ))² 及分母完全一致；IsBigO 在 h→0 的双侧邻域表达三阶余项，m>0 保证零点附近分母非零。实际平稳方差结论有正参数、L²、不变推前及正稳定分母，不循环假设目标比值。",
+          "标注：本条未出现独立的 [EXTRA]/[ERRATUM?] 字面标签；已核对 extra_assumptions、issues、statement_scope 中的对应说明。未修改工程或补证明，未因 sorry 判 FAIL。"
+        ]
+      },
+      "audit": {
+        "lean_decl": [
+          "MD.Ch07.aboVarianceRatio",
+          "MD.Ch07.aboVarianceRatio_expansion",
+          "MD.Ch07.aboStationaryVariance"
+        ],
+        "verdict": "PASS",
+        "explanation": "有理式的 exp(hγ)、(1+exp(-hγ))² 及分母完全一致；IsBigO 在 h→0 的双侧邻域表达三阶余项，m>0 保证零点附近分母非零。实际平稳方差结论有正参数、L²、不变推前及正稳定分母，不循环假设目标比值。",
+        "counterexample": null,
+        "suggested_fix": null
+      },
+      "subtask": "BATCH07b",
+      "input_sha256": {
+        "Blueprint/Ch07.lean": "f30ea154ebfb07ae85c0b806ff74b35808d5a0c3dcaa647c0c3cc80a78239e37",
+        "blueprint/ch07/ch07_source.json": "c434892ebf63b06f7cadcdfa7af408c2c12d7b645d35db431d1855224163ba19",
+        "BATCH07b_PAGES.pdf": "47fa34872194cfbb3af3ff929d76e14ead38886253bebafe60cb3311b4c27afc"
+      }
+    },
+    {
+      "source_id": "MD-7.4.1-Table71",
+      "json_review": {
+        "status": "APPROVED",
+        "issue_codes": [],
+        "corrected_json": null,
+        "issues": [],
+        "evidence": [
+          "A：已目视核对 R2_PAGES.pdf 附件第16页，原书PDF页298、印刷页277。数学公式、上下标、符号与摘录一致；允许 Q/P/C 替代已定义的平稳矩以及版式转换。",
+          "C：只读核对本条完整 Lean 与所列项目依赖及附录 D1–D30；Mathlib 标准定义按任务要求采信。Fin 4 的方案0,1,2,3依次为 ABOBA,OBABO,BAOAB,OABAO。依赖中各复合从右向左执行，两个 O/2 子步使用独立 R,S。h²Ω²<4m 保证表内正因子；三项结论逐行覆盖表7.1的两个比值与零混合矩。hinv 是实际概率推前不变性及 L²，并未假设表内矩值。",
+          "标注：本条未出现独立的 [EXTRA]/[ERRATUM?] 字面标签；已核对 extra_assumptions、issues、statement_scope 中的对应说明。未修改工程或补证明，未因 sorry 判 FAIL。"
+        ]
+      },
+      "audit": {
+        "lean_decl": [
+          "MD.Ch07.scalarLift",
+          "MD.Ch07.symmetricHarmonicStep",
+          "MD.Ch07.symmetricInvariant",
+          "MD.Ch07.table71"
+        ],
+        "verdict": "PASS",
+        "explanation": "Fin 4 的方案0,1,2,3依次为 ABOBA,OBABO,BAOAB,OABAO。依赖中各复合从右向左执行，两个 O/2 子步使用独立 R,S。h²Ω²<4m 保证表内正因子；三项结论逐行覆盖表7.1的两个比值与零混合矩。hinv 是实际概率推前不变性及 L²，并未假设表内矩值。",
+        "counterexample": null,
+        "suggested_fix": null
+      },
+      "subtask": "BATCH07c",
+      "input_sha256": {
+        "Blueprint/Ch07.lean": "f30ea154ebfb07ae85c0b806ff74b35808d5a0c3dcaa647c0c3cc80a78239e37",
+        "blueprint/ch07/ch07_source.json": "c434892ebf63b06f7cadcdfa7af408c2c12d7b645d35db431d1855224163ba19",
+        "BATCH07c_PAGES.pdf": "ceafd7b22d3385cf025d1127a25d4f73a3a1d0acc43e5a9c6864d9bfb5cbf1d6"
+      }
+    },
+    {
+      "source_id": "MD-7.4.1-NonsymmetricExactMoments",
+      "json_review": {
+        "status": "CORRECTED",
+        "issue_codes": [
+          "COVERAGE_GAP"
+        ],
+        "corrected_json": {
+          "source_id": "MD-7.4.1-NonsymmetricExactMoments",
+          "kind": "unnumbered_claim",
+          "label": null,
+          "section": "7.4.1",
+          "printed_page": "277",
+          "pdf_page": "298",
+          "statement_latex": "For example, analysis shows that the schemes denoted $[AOAB]$ or $[BAOA]$ both exhibit a first order error in the covariance $\\langle qp\\rangle_h=O(h)$, however they give exact results for both $\\langle q^2\\rangle_h$ and $\\langle p^2\\rangle_h$.",
+          "proof_latex": null,
+          "proof_outline": null,
+          "proof_note": "原页推导与上下文全文见original_page_text；数学符号的排版以随附原页PDF为准。",
+          "original_page_text": [
+            {
+              "pdf_page": 298,
+              "printed_page": 277,
+              "text": "7.4\nError Results for Harmonic Problems\n277\nTable 7.1 The expected long-time computed average using the given second-order Langevin\ndynamics discretization scheme\nScheme\nhq2ih=hq2i\nhp2ih=hp2i\nhqpi\n\u0002ABOBA\u0003\n1\nŒ1 \u0002 h2˝2=.4m/\t\u00021\n0\n\u0002OBABO\u0003\nŒ1 \u0002 h2˝2=.4m/\t\u00021\n1\n0\n\u0002BAOAB\u0003\n1\n1 \u0002 h2˝2=.4m/\n0\n\u0002OABAO\u0003\n1 \u0002 h2˝2=.4m/\n1\n0\nschemes, we are able to compute the exact expected average by solving the linear\nequations. The results are summarized in Table 7.1, where we have not considered\nthe \u0002AOBOA\u0003 and \u0002BOAOB\u0003 schemes due to their inconsistency at large friction\n(this does not preclude the analysis, but limits each those method’s usefulness in\nsimulation). Similar analysis can be conducted for more complicated composition\nschemes involving multiple force evaluations.\nThe mentioned splitting schemes give a second-order error in the computed\naverages, but surprisingly each gives an exact result for computed averages of either\nposition or momentum. The exactness property is not born out of the symmetry of\nthe method, but rather of the speciﬁc order of terms and choice of splitting “building\nblocks”. Even non-symmetric ﬁrst-order schemes can exhibit similar qualities. For\nexample, analysis shows that the schemes denoted \u0002AOAB\u0003 or \u0002BAOA\u0003 both exhibit\na ﬁrst order error in the covariance hqpih D O.h/, however they give exact results\nfor both hq2ih and hp2ih.\n7.4.2\nMore General Schemes\nWe can conduct a similar analysis for any integrator that we can express in the\nform (7.7), simply by plugging in the relevant constants and solving a linear\nequation. The difﬁculty lies when random numbers are reused, leading to correlation\nbetween steps. This requires careful treatment to compute the expectation.\nExample 7.2 Consider the variant of the BBK integrator that recycles the random\nnumber between steps:\nBrünger-Brooks-Karplus with post-step re-use of random number (BBK*)\npnC1=2 D .1 \u0003 h\n=2/pn \u0003 .h=2/rU.qn/ C 1\n2\np2kBTh\nM1=2Rn\nqnC1 D qn C hM\u00021pnC1=2\npnC1 D ŒpnC1=2 \u0003 .h=2/rU.qnC1/ C 1\n2\np2kBTh\nM1=2RnC1\t=.1 C h\n=2/,\nwhere Rn is a vector of normal random numbers with zero mean and unit variance.\nIn some systems, it can be computationally expensive to generate normal random\nnumbers for each degree of freedom, hence algorithms may re-use the random\n"
+            }
+          ],
+          "transcription_note": "PDF文字层原样保留，陈述中的数学排版转写为LaTeX；文字层有特殊字形编码时以目视原页为准。PDF347的Exercises之后不在正文范围内。",
+          "context_notation": [],
+          "extra_assumptions": [
+            "AOAB和BAOA按字母总时间h定义；实际平稳概率、L²、稳定参数显式。",
+            "本条仅覆盖两个精确方差；O(h)协方差及其随h统一常数未陈述，列入覆盖缺口。"
+          ],
+          "issues": [
+            "flip=true 执行 AOAB（两段 A 各 h/2），false 执行 BAOA；正参数、稳定范围、L² 和不变推前下两个精确二阶矩结论合理。但是原文另外断言的 ⟨qp⟩_h=O(h) 完全未出现在结论中，尽管 extra_assumptions 承认缺口，仍不是原文完整结论的形式化。"
+          ],
+          "statement_scope": "两个非对称算法精确位置/动量二阶矩；协方差阶数暂缺。 审校：仅有部分结论被声明覆盖，详见本条审校结果。",
+          "lean_decl": "MD.Ch07.nonsymmetricHarmonicStep",
+          "lean_declarations": [
+            "MD.Ch07.nonsymmetricHarmonicStep",
+            "MD.Ch07.nonsymmetricExactMoments"
+          ],
+          "source_page_verification": "见source_page_checks.json；必须已目视核对本条原页。",
+          "repair_log": [],
+          "documented_priors": []
+        },
+        "issues": [
+          "flip=true 执行 AOAB（两段 A 各 h/2），false 执行 BAOA；正参数、稳定范围、L² 和不变推前下两个精确二阶矩结论合理。但是原文另外断言的 ⟨qp⟩_h=O(h) 完全未出现在结论中，尽管 extra_assumptions 承认缺口，仍不是原文完整结论的形式化。"
+        ],
+        "evidence": [
+          "A：已目视核对 R2_PAGES.pdf 附件第17页，原书PDF页298、印刷页277。数学公式、上下标、符号与摘录一致；允许 Q/P/C 替代已定义的平稳矩以及版式转换。",
+          "C：只读核对本条完整 Lean 与所列项目依赖及附录 D1–D30；Mathlib 标准定义按任务要求采信。flip=true 执行 AOAB（两段 A 各 h/2），false 执行 BAOA；正参数、稳定范围、L² 和不变推前下两个精确二阶矩结论合理。但是原文另外断言的 ⟨qp⟩_h=O(h) 完全未出现在结论中，尽管 extra_assumptions 承认缺口，仍不是原文完整结论的形式化。",
+          "标注：本条未出现独立的 [EXTRA]/[ERRATUM?] 字面标签；已核对 extra_assumptions、issues、statement_scope 中的对应说明。未修改工程或补证明，未因 sorry 判 FAIL。"
+        ]
+      },
+      "audit": {
+        "lean_decl": [
+          "MD.Ch07.nonsymmetricHarmonicStep",
+          "MD.Ch07.nonsymmetricExactMoments"
+        ],
+        "verdict": "FAIL",
+        "explanation": "flip=true 执行 AOAB（两段 A 各 h/2），false 执行 BAOA；正参数、稳定范围、L² 和不变推前下两个精确二阶矩结论合理。但是原文另外断言的 ⟨qp⟩_h=O(h) 完全未出现在结论中，尽管 extra_assumptions 承认缺口，仍不是原文完整结论的形式化。",
+        "counterexample": null,
+        "suggested_fix": "增加混合矩公式：AOAB 为 -θh/2，BAOA 为 θh/2，并据此给出固定物理参数的 O(h)；或者明确把本条标为仅覆盖两个方差。"
+      },
+      "subtask": "BATCH07d",
+      "input_sha256": {
+        "Blueprint/Ch07.lean": "f30ea154ebfb07ae85c0b806ff74b35808d5a0c3dcaa647c0c3cc80a78239e37",
+        "blueprint/ch07/ch07_source.json": "c434892ebf63b06f7cadcdfa7af408c2c12d7b645d35db431d1855224163ba19",
+        "BATCH07d_PAGES.pdf": "937c02e2fbe1974450004807ec2ec3066761c26126f8f6e7d088b85038d77519"
+      }
+    },
+    {
+      "source_id": "MD-7.4.2-BBKStar",
+      "json_review": {
+        "status": "APPROVED",
+        "issue_codes": [],
+        "corrected_json": null,
+        "issues": [],
+        "evidence": [
+          "A：已目视核对 R2_PAGES.pdf 附件第18–19页，原书PDF页298–299、印刷页277–278。数学公式、上下标、符号与摘录一致；允许 Q/P/C 替代已定义的平稳矩以及版式转换。",
+          "C：只读核对本条完整 Lean 与所列项目依赖及附录 D1–D30；Mathlib 标准定义按任务要求采信。递归基点为 x0；第 k 次更新用 R k 与 R(k+1)，精确实现上一步末尾噪声在下一步开头重用。bbkStarNoise 记录 (κ1R,κ2R+κ3S)。R 是任意序列的确定性输入，此定义不宣称其本身具有标准正态或 iid 性；随机解释需要 JSON 已列出的 iid 假设。",
+          "标注：本条未出现独立的 [EXTRA]/[ERRATUM?] 字面标签；已核对 extra_assumptions、issues、statement_scope 中的对应说明。未修改工程或补证明，未因 sorry 判 FAIL。"
+        ]
+      },
+      "audit": {
+        "lean_decl": [
+          "MD.Ch07.bbkStarTrajectory",
+          "MD.Ch07.bbkStarNoise"
+        ],
+        "verdict": "PASS",
+        "explanation": "递归基点为 x0；第 k 次更新用 R k 与 R(k+1)，精确实现上一步末尾噪声在下一步开头重用。bbkStarNoise 记录 (κ1R,κ2R+κ3S)。R 是任意序列的确定性输入，此定义不宣称其本身具有标准正态或 iid 性；随机解释需要 JSON 已列出的 iid 假设。",
+        "counterexample": null,
+        "suggested_fix": null
+      },
+      "subtask": "BATCH07e",
+      "input_sha256": {
+        "Blueprint/Ch07.lean": "f30ea154ebfb07ae85c0b806ff74b35808d5a0c3dcaa647c0c3cc80a78239e37",
+        "blueprint/ch07/ch07_source.json": "c434892ebf63b06f7cadcdfa7af408c2c12d7b645d35db431d1855224163ba19",
+        "BATCH07e_PAGES.pdf": "7e28de86f0a8dc4c3d5e38c61477943d3636e762c00bbdaf3d1a42458ed03fb2"
+      }
+    },
+    {
+      "source_id": "MD-7.4.2-BBKStarCorrelations",
+      "json_review": {
+        "status": "APPROVED",
+        "issue_codes": [],
+        "corrected_json": null,
+        "issues": [],
+        "evidence": [
+          "A：已目视核对 R2_PAGES.pdf 附件第20页，原书PDF页299、印刷页278。数学公式、上下标、符号与摘录一致；允许 Q/P/C 替代已定义的平稳矩以及版式转换。",
+          "C：只读核对本条完整 Lean 与所列项目依赖及附录 D1–D30；Mathlib 标准定义按任务要求采信。七个相关矩逐项与原页相同。标准正态边缘、R与S独立、旧状态二元组与未来噪声二元组独立，以及旧状态 L² 足够。q=aQold+bPold 不含 R；p=cQold+dPold+κ3R 含当前噪声，因而保留了所需 κ1κ3 和 κ2κ3。该局部模型未自动证明由完整历史产生的旧状态满足这些资格。",
+          "标注：本条未出现独立的 [EXTRA]/[ERRATUM?] 字面标签；已核对 extra_assumptions、issues、statement_scope 中的对应说明。未修改工程或补证明，未因 sorry 判 FAIL。"
+        ]
+      },
+      "audit": {
+        "lean_decl": [
+          "MD.Ch07.bbkStarCorrelations"
+        ],
+        "verdict": "PASS",
+        "explanation": "七个相关矩逐项与原页相同。标准正态边缘、R与S独立、旧状态二元组与未来噪声二元组独立，以及旧状态 L² 足够。q=aQold+bPold 不含 R；p=cQold+dPold+κ3R 含当前噪声，因而保留了所需 κ1κ3 和 κ2κ3。该局部模型未自动证明由完整历史产生的旧状态满足这些资格。",
+        "counterexample": null,
+        "suggested_fix": null
+      },
+      "subtask": "BATCH07f",
+      "input_sha256": {
+        "Blueprint/Ch07.lean": "f30ea154ebfb07ae85c0b806ff74b35808d5a0c3dcaa647c0c3cc80a78239e37",
+        "blueprint/ch07/ch07_source.json": "c434892ebf63b06f7cadcdfa7af408c2c12d7b645d35db431d1855224163ba19",
+        "BATCH07f_PAGES.pdf": "6dba11989af13c8f010ffc0499e3171ca84583675b7e98906581471b2007a080"
+      }
+    }
+  ],
+  "merged_from": "ch07_first_merged"
+}

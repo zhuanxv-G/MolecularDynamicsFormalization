@@ -1,0 +1,275 @@
+以附件/PASTE 为准，忽略 /workspace 旧文件；Mathlib 定义按标准含义采信。
+本任务只审本条：原文转录、对象资格、定义体、量词、全部结论及[EXTRA]是否一致；Lean编译不代替语义审阅。
+Lean/Mathlib均4.34.0。原页PDF映射：[306]；印刷页=[285].
+input_sha256请原样回显：
+{
+  "Blueprint/Ch07.lean": "f3bc0ee86ace9c825028f0cec8ebb2fb410d6be77213cc7fb41cb8889540a000",
+  "blueprint/ch07/ch07_source.json": "1a201887b51a249fb73f456237cb342963c5d98c612ec1912f21572a57924012",
+  "PAGES.pdf": "d2a073a77225737f2d487e0ea8ca6ae4d8fa1c21aa9fda75a084a13010db0459"
+}
+用代码将JSON对象(batch,input_sha256,items)写到 /workspace/.mathcopilot/reviews/ch07/EAUDIT03c_review.json；items仅含本source_id。
+items字段：source_id、verdict(PASS/FAIL/NEEDS_HUMAN)、transcription、semantic_review、counterexample、suggested_fix、printed_version、corrected_version。逐版区分原文疑误和修正版结论；缺材料必须具体指出，不猜测。写后json.loads自检，最后仅回复路径及统计。
+
+## 原文JSON
+```json
+{
+  "source_id": "MD-7.7.1-OperatorOrderReversal",
+  "kind": "unnumbered_claim",
+  "label": null,
+  "section": "7.7.1",
+  "printed_page": "285",
+  "pdf_page": "306",
+  "statement_latex": "For example, for the method labelled by the string $[ABAO]$, we have\n\\[\\exp(h\\widehat{\\mathcal L}_{[ABAO]})=\\exp((h/2)\\mathcal L_A)\\exp(h\\mathcal L_B)\\exp((h/2)\\mathcal L_A)\\exp(h\\mathcal L_O),\\]\nwhere importantly note the apparent reversal of the sequence of products, known as the vertauschungssatz. We will find it more convenient to work with the adjoint of the perturbed generator, denoted $\\widehat{\\mathcal L}^\\dagger$, which we may compute as\n\\[\\exp(h\\widehat{\\mathcal L}_{[ABAO]}^\\dagger)=\\exp(h\\mathcal L_O^\\dagger)\\exp((h/2)\\mathcal L_A^\\dagger)\\exp(h\\mathcal L_B^\\dagger)\\exp((h/2)\\mathcal L_A^\\dagger).\\]",
+  "proof_latex": null,
+  "proof_outline": null,
+  "proof_note": "原页推导与上下文全文见original_page_text；数学符号的排版以随附原页PDF为准。",
+  "original_page_text": [
+    {
+      "pdf_page": 306,
+      "printed_page": 285,
+      "text": "7.7\nThe Evolution of the Distribution Using a Numerical Method\n285\n7.7.1\nExpansion of the Operator OL\nConsider a Langevin splitting method using the A, B and O splitting pieces, where\nwe compose exact solves of each of the vector ﬁelds in a prescribed sequence to\ndeﬁne our discretization scheme. Because we solve each piece exactly, we are able\nto write down the action of each individual solve on the initial distribution in terms\nof the vector ﬁeld’s evolution operator (using the respective generators for each\npiece as in [99]), where\n\u0004\netLA\b\n\u0005\n.q; p/ D \b.q C tM\u00021p; p/;\n\u0004\netLB\b\n\u0005\n.q; p/ D \b.q; p \u0003 trU.q//;\n\u0004\netLO\b\n\u0005\n.q; p/ D\nZ\nP\n\b\n\u0006\nq; e\u0002\ntp C \u0018M1=2x\n\u0007 e\u0002jxj2=2\n.2\u0014/Nc=2 dx;\nwhere \u0018 D\n\nkBT\n\u0004\n1 \u0003 e\u00022\nt\u0005\u000b1=2. The overall generator for an associated Langevin\nsplitting method\nOL can be computed by composing each individual operator\nassociated to the terms in the splitting. For example, for the method labelled by\nthe string \u0002ABAO\u0003, we have\nexp.h OL\u0002ABAO\u0003/ D exp..h=2/LA/ exp.hLB/ exp..h=2/LA/ exp.hLO/;\nwhere importantly note the apparent reversal of the sequence of products, known\nas the vertauschungssatz (see the discussion in [164, Section III.5.1]), which is a\nconsequence of the relation\n\b.U f1\nt .z// D\n\u0004\netLf1\b\n\u0005\n.z/;\nfor some vector ﬁeld f1 with associated ﬂow map U f1\nt\nand generator Lf1, where the\nchoice of \b.z/ D U f2\nt .z/ D .etLf2Id/.z/ demonstrates this reversal.\nWe will ﬁnd it more convenient to work with the adjoint of the perturbed\ngenerator, denoted OL\u0004, which we may compute as\nexp.h OL\u0004\n\u0002ABAO\u0003/ D exp.hL\u0004\nO/ exp..h=2/L\u0004\nA/ exp.hL\u0004\nB/ exp..h=2/L\u0004\nA/:\nUnder the propagation of the numerical scheme (or the discretized dynamics),\nthe Fokker-Planck equation gives us that the evolution of a density of points \u0005 is\ngiven by\n@\n@t\u0005.z; t/ D OL\u0004\u0005;\n"
+    }
+  ],
+  "transcription_note": "PDF文字层原样保留，陈述中的数学排版转写为LaTeX；文字层有特殊字形编码时以目视原页为准。PDF347的Exercises之后不在正文范围内。",
+  "context_notation": [],
+  "extra_assumptions": [
+    "覆盖反向拉回组合恒等式和ABAO的全部四段期望传播式；其与前面随机abao映射期望相等仍需推前积分桥。",
+    "伴随前向传播子的四段顺序记录在原文；独立定义实际密度伴随的函数空间和边界条件列为覆盖缺口。",
+    "29号覆盖限定：拉回复合结合律、ABAO后向定义及四个线性算子的反序对偶配对恒等式；实际随机传播子识别及闭算子域未覆盖。"
+  ],
+  "issues": [],
+  "statement_scope": "拉回复合结合律、ABAO后向定义及四个线性算子的反序对偶配对恒等式；实际随机传播子识别及闭算子域未覆盖。",
+  "lean_decl": "MD.Ch07.pullback_order",
+  "lean_declarations": [
+    "MD.Ch07.pullback_order",
+    "MD.Ch07.abaoBackward",
+    "MD.Ch07.fourStage_duality"
+  ],
+  "source_page_verification": "见source_page_checks.json；必须已目视核对本条原页。",
+  "repair_log": [
+    {
+      "instruction": 29,
+      "website_verdict": "FAIL",
+      "suggested_fix": "在合适对偶空间上增加四段前向算子及反序伴随等式，或明确拆分“后向定义”与仍未形式化的伴随条目。",
+      "actual_scope": "拉回复合结合律、ABAO后向定义及四个线性算子的反序对偶配对恒等式；实际随机传播子识别及闭算子域未覆盖。",
+      "signature_changed": true
+    }
+  ],
+  "documented_priors": [],
+  "coverage_gaps": [
+    "29号覆盖限定：拉回复合结合律、ABAO后向定义及四个线性算子的反序对偶配对恒等式；实际随机传播子识别及闭算子域未覆盖。"
+  ]
+}
+```
+
+## 完整本条Lean
+```lean
+theorem pullback_order {E F : Type*} (A B : E → E) (φ : E → F) :
+    φ ∘ (B ∘ A) = (φ ∘ B) ∘ A := rfl
+def abaoBackward (m : V n) (U : V n → ℝ) (γ θ h : ℝ) (φ : Phase n → ℝ) :=
+  propagateA m (h/2) (propagateB U h (propagateA m (h/2) (propagateO m γ θ h φ)))
+
+theorem fourStage_duality {E : Type*} [AddCommGroup E] [Module ℝ E]
+    (pair : E → E → ℝ) (A B C D a b c d : Module.End ℝ E)
+    (hA : ∀ x y, pair (A x) y = pair x (a y))
+    (hB : ∀ x y, pair (B x) y = pair x (b y))
+    (hC : ∀ x y, pair (C x) y = pair x (c y))
+    (hD : ∀ x y, pair (D x) y = pair x (d y)) (x y : E) :
+    pair (A (B (C (D x)))) y = pair x (d (c (b (a y)))) := by
+  rw [hA,hB,hC,hD]
+```
+
+## 项目依赖定义体及选择规格
+以下def/abbrev/structure完整保留；定理列出完整类型，Mathlib标准定义无需摘录。
+
+### MD.Ch07.V (Blueprint/Ch07.lean:202)
+原文件上下文：
+```lean
+open Set Filter MeasureTheory ProbabilityTheory MolecularDynamics
+open scoped BigOperators Topology ContDiff ENNReal NNReal Matrix
+variable {Ω : Type*} [MeasurableSpace Ω]
+variable {n : ℕ}
+```
+```lean
+abbrev V (n : ℕ) := Fin n → ℝ
+```
+
+### MD.Ch07.Phase (Blueprint/Ch07.lean:203)
+原文件上下文：
+```lean
+open Set Filter MeasureTheory ProbabilityTheory MolecularDynamics
+open scoped BigOperators Topology ContDiff ENNReal NNReal Matrix
+variable {Ω : Type*} [MeasurableSpace Ω]
+variable {n : ℕ}
+```
+```lean
+abbrev Phase (n : ℕ) := V n × V n
+```
+
+### MD.Ch07.ouMomentum (Blueprint/Ch07.lean:232)
+原文件上下文：
+```lean
+open Set Filter MeasureTheory ProbabilityTheory MolecularDynamics
+open scoped BigOperators Topology ContDiff ENNReal NNReal Matrix
+variable {Ω : Type*} [MeasurableSpace Ω]
+variable {n : ℕ}
+```
+```lean
+def ouMomentum (m : V n) (γ θ h : ℝ) (p R : V n) : V n :=
+  fun i ↦ Real.exp (-γ*h)*p i + Real.sqrt (θ*(1-Real.exp (-2*γ*h))) * Real.sqrt (m i) * R i
+```
+
+### MD.Ch07.ouStep (Blueprint/Ch07.lean:246)
+原文件上下文：
+```lean
+open Set Filter MeasureTheory ProbabilityTheory MolecularDynamics
+open scoped BigOperators Topology ContDiff ENNReal NNReal Matrix
+variable {Ω : Type*} [MeasurableSpace Ω]
+variable {n : ℕ}
+```
+```lean
+def ouStep (m : V n) (γ θ h : ℝ) (R : V n) (x : Phase n) : Phase n :=
+  (x.1, ouMomentum m γ θ h x.2 R)
+```
+
+### MD.Ch07.coordDerivative (Blueprint/Ch07.lean:257)
+原文件上下文：
+```lean
+open Set Filter MeasureTheory ProbabilityTheory MolecularDynamics
+open scoped BigOperators Topology ContDiff ENNReal NNReal Matrix
+variable {Ω : Type*} [MeasurableSpace Ω]
+variable {n : ℕ}
+```
+```lean
+def coordDerivative (f : V n → ℝ) (x : V n) (i : Fin n) : ℝ :=
+  deriv (fun z ↦ f (Function.update x i z)) (x i)
+```
+
+### MD.Ch07.gradient (Blueprint/Ch07.lean:288)
+原文件上下文：
+```lean
+open Set Filter MeasureTheory ProbabilityTheory MolecularDynamics
+open scoped BigOperators Topology ContDiff ENNReal NNReal Matrix
+variable {Ω : Type*} [MeasurableSpace Ω]
+variable {n : ℕ}
+```
+```lean
+def gradient (U : V n → ℝ) (q : V n) : V n := fun i ↦ coordDerivative U q i
+```
+
+### MD.Ch07.driftStep (Blueprint/Ch07.lean:319)
+原文件上下文：
+```lean
+open Set Filter MeasureTheory ProbabilityTheory MolecularDynamics
+open scoped BigOperators Topology ContDiff ENNReal NNReal Matrix
+variable {Ω : Type*} [MeasurableSpace Ω]
+variable {n : ℕ}
+```
+```lean
+def driftStep (m : V n) (h : ℝ) (x : Phase n) : Phase n :=
+  (fun i ↦ x.1 i + h * x.2 i / m i, x.2)
+```
+
+### MD.Ch07.kickStep (Blueprint/Ch07.lean:322)
+原文件上下文：
+```lean
+open Set Filter MeasureTheory ProbabilityTheory MolecularDynamics
+open scoped BigOperators Topology ContDiff ENNReal NNReal Matrix
+variable {Ω : Type*} [MeasurableSpace Ω]
+variable {n : ℕ}
+```
+```lean
+def kickStep (U : V n → ℝ) (h : ℝ) (x : Phase n) : Phase n :=
+  (x.1, fun i ↦ x.2 i - h * gradient U x.1 i)
+```
+
+### MD.Ch07.propagateA (Blueprint/Ch07.lean:878)
+原文件上下文：
+```lean
+open Set Filter MeasureTheory ProbabilityTheory MolecularDynamics
+open scoped BigOperators Topology ContDiff ENNReal NNReal Matrix
+variable {Ω : Type*} [MeasurableSpace Ω]
+variable {n : ℕ}
+```
+```lean
+def propagateA (m : V n) (t : ℝ) (φ : Phase n → ℝ) : Phase n → ℝ := φ ∘ driftStep m t
+```
+
+### MD.Ch07.propagateB (Blueprint/Ch07.lean:879)
+原文件上下文：
+```lean
+open Set Filter MeasureTheory ProbabilityTheory MolecularDynamics
+open scoped BigOperators Topology ContDiff ENNReal NNReal Matrix
+variable {Ω : Type*} [MeasurableSpace Ω]
+variable {n : ℕ}
+```
+```lean
+def propagateB (U : V n → ℝ) (t : ℝ) (φ : Phase n → ℝ) : Phase n → ℝ := φ ∘ kickStep U t
+```
+
+### MD.Ch07.propagateO (Blueprint/Ch07.lean:880)
+原文件上下文：
+```lean
+open Set Filter MeasureTheory ProbabilityTheory MolecularDynamics
+open scoped BigOperators Topology ContDiff ENNReal NNReal Matrix
+variable {Ω : Type*} [MeasurableSpace Ω]
+variable {n : ℕ}
+```
+```lean
+def propagateO (m : V n) (γ θ t : ℝ) (φ : Phase n → ℝ) (x : Phase n) : ℝ :=
+  ∫ R, φ (ouStep m γ θ t R x) ∂Measure.pi (fun _ : Fin n ↦ gaussianReal 0 1)
+```
+
+### MD.Ch07.pullback_order (Blueprint/Ch07.lean:888)
+原文件上下文：
+```lean
+open Set Filter MeasureTheory ProbabilityTheory MolecularDynamics
+open scoped BigOperators Topology ContDiff ENNReal NNReal Matrix
+variable {Ω : Type*} [MeasurableSpace Ω]
+variable {n : ℕ}
+```
+```lean
+theorem pullback_order {E F : Type*} (A B : E → E) (φ : E → F) :
+    φ ∘ (B ∘ A) = (φ ∘ B) ∘ A
+```
+
+### MD.Ch07.abaoBackward (Blueprint/Ch07.lean:890)
+原文件上下文：
+```lean
+open Set Filter MeasureTheory ProbabilityTheory MolecularDynamics
+open scoped BigOperators Topology ContDiff ENNReal NNReal Matrix
+variable {Ω : Type*} [MeasurableSpace Ω]
+variable {n : ℕ}
+```
+```lean
+def abaoBackward (m : V n) (U : V n → ℝ) (γ θ h : ℝ) (φ : Phase n → ℝ) :=
+  propagateA m (h/2) (propagateB U h (propagateA m (h/2) (propagateO m γ θ h φ)))
+```
+
+### MD.Ch07.fourStage_duality (Blueprint/Ch07.lean:893)
+原文件上下文：
+```lean
+open Set Filter MeasureTheory ProbabilityTheory MolecularDynamics
+open scoped BigOperators Topology ContDiff ENNReal NNReal Matrix
+variable {Ω : Type*} [MeasurableSpace Ω]
+variable {n : ℕ}
+```
+```lean
+theorem fourStage_duality {E : Type*} [AddCommGroup E] [Module ℝ E]
+    (pair : E → E → ℝ) (A B C D a b c d : Module.End ℝ E)
+    (hA : ∀ x y, pair (A x) y = pair x (a y))
+    (hB : ∀ x y, pair (B x) y = pair x (b y))
+    (hC : ∀ x y, pair (C x) y = pair x (c y))
+    (hD : ∀ x y, pair (D x) y = pair x (d y)) (x y : E) :
+    pair (A (B (C (D x)))) y = pair x (d (c (b (a y))))
+```
+
+### MolecularDynamics.Chapter05Review.E (MolecularDynamics/Chapter05/ReviewDefinitions.lean:18)
+原文件上下文：
+```lean
+open Set Filter MeasureTheory Matrix
+open scoped BigOperators Topology ENNReal
+```
+```lean
+abbrev E (n : ℕ) := EuclideanSpace ℝ (Fin n)
+```

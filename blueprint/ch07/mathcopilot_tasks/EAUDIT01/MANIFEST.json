@@ -1,0 +1,26 @@
+{
+  "batch": "EAUDIT01",
+  "subtasks": [
+    {
+      "subtask": "EAUDIT01a",
+      "source_id": "MD-7.3.1-WordConvention",
+      "path": "blueprint/ch07/mathcopilot_tasks/EAUDIT01/a",
+      "bytes": 108635,
+      "manifest_sha256": "34259123003f9728866082b67464e0db687cab0d4f43cacda67503882468fbfc"
+    },
+    {
+      "subtask": "EAUDIT01b",
+      "source_id": "MD-7.3.1-ConjugateIteration",
+      "path": "blueprint/ch07/mathcopilot_tasks/EAUDIT01/b",
+      "bytes": 113908,
+      "manifest_sha256": "a9841d8e0ec8877b97bb12ea4cb46f0da27c941a87c43a85bca5f84139e7e983"
+    },
+    {
+      "subtask": "EAUDIT01c",
+      "source_id": "MD-7.3.2-SPVPrinted",
+      "path": "blueprint/ch07/mathcopilot_tasks/EAUDIT01/c",
+      "bytes": 109950,
+      "manifest_sha256": "374a2b9ec8a0ef7eb7fa0960d851df06beb1d72fa38e9bf7bf6006e4f62cfe9a"
+    }
+  ]
+}

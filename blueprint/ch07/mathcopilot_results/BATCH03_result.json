@@ -1,0 +1,264 @@
+{
+  "batch": "BATCH03",
+  "chapter": "ch07",
+  "round": "first-merged",
+  "input_sha256": {
+    "Blueprint/Ch07.lean": "f30ea154ebfb07ae85c0b806ff74b35808d5a0c3dcaa647c0c3cc80a78239e37",
+    "blueprint/ch07/ch07_source.json": "c434892ebf63b06f7cadcdfa7af408c2c12d7b645d35db431d1855224163ba19"
+  },
+  "items": [
+    {
+      "source_id": "MD-7.3-VectorOU",
+      "json_review": {
+        "status": "APPROVED",
+        "issue_codes": [],
+        "corrected_json": null,
+        "issues": [],
+        "evidence": [
+          {
+            "stage": "A",
+            "attachment": "R1_PAGES.pdf",
+            "attachment_pages": [
+              13
+            ],
+            "printed_page": "267",
+            "result": "已目视核对该页正文及公式；同版重复附件页的渲染图逐字节相同。未发现改变数学含义的转录差异。"
+          },
+          {
+            "stage": "C",
+            "result": "V n为Fin n→ℝ，Phase为位置动量对。vectorWiener的D20含联合高斯、零均值、min(s,t)对角协方差、路径连续，并额外要求坐标路径独立；momentumOU逐坐标系数−γp和sqrt(2γθm_i)一致。确定初值、正对角质量、θ=k_BT>0、γ≥0及自然滤过L²解范围均显式可见。",
+            "scope": "仅核对任务摘录的完整签名及MD/MolecularDynamics定义体；不修改工程，不补证明，不将sorry视为签名错误。"
+          }
+        ]
+      },
+      "audit": {
+        "lean_decl": [
+          "MD.Ch07.V",
+          "MD.Ch07.Phase",
+          "MD.Ch07.vectorWiener",
+          "MD.Ch07.momentumOU"
+        ],
+        "verdict": "PASS",
+        "explanation": "V n为Fin n→ℝ，Phase为位置动量对。vectorWiener的D20含联合高斯、零均值、min(s,t)对角协方差、路径连续，并额外要求坐标路径独立；momentumOU逐坐标系数−γp和sqrt(2γθm_i)一致。确定初值、正对角质量、θ=k_BT>0、γ≥0及自然滤过L²解范围均显式可见。",
+        "counterexample": null,
+        "suggested_fix": null
+      },
+      "subtask": "BATCH03a",
+      "input_sha256": {
+        "Blueprint/Ch07.lean": "f30ea154ebfb07ae85c0b806ff74b35808d5a0c3dcaa647c0c3cc80a78239e37",
+        "blueprint/ch07/ch07_source.json": "c434892ebf63b06f7cadcdfa7af408c2c12d7b645d35db431d1855224163ba19",
+        "BATCH03a_PAGES.pdf": "e8f96b43184ad20a8903060629b85b740499c1669309e1473f91ac17802e3cbc"
+      }
+    },
+    {
+      "source_id": "MD-7.3-OUIntegratingFactor",
+      "json_review": {
+        "status": "APPROVED",
+        "issue_codes": [],
+        "corrected_json": null,
+        "issues": [],
+        "evidence": [
+          {
+            "stage": "A",
+            "attachment": "R1_PAGES.pdf",
+            "attachment_pages": [
+              14
+            ],
+            "printed_page": "267",
+            "result": "已目视核对该页正文及公式；同版重复附件页的渲染图逐字节相同。未发现改变数学含义的转录差异。"
+          },
+          {
+            "stage": "C",
+            "result": "固定t≥0，逐坐标的加权积分 integrand=exp(γs)sqrt(2γθm_i)，终值=exp(γt)p_i(t)−p0_i，与乘积法则及从0积分一致。hp包含正确的OU方程与确定初值；没有用积分因子等式本身充当假设。",
+            "scope": "仅核对任务摘录的完整签名及MD/MolecularDynamics定义体；不修改工程，不补证明，不将sorry视为签名错误。"
+          }
+        ]
+      },
+      "audit": {
+        "lean_decl": [
+          "MD.Ch07.ouIntegratingFactor"
+        ],
+        "verdict": "PASS",
+        "explanation": "固定t≥0，逐坐标的加权积分 integrand=exp(γs)sqrt(2γθm_i)，终值=exp(γt)p_i(t)−p0_i，与乘积法则及从0积分一致。hp包含正确的OU方程与确定初值；没有用积分因子等式本身充当假设。",
+        "counterexample": null,
+        "suggested_fix": null
+      },
+      "subtask": "BATCH03b",
+      "input_sha256": {
+        "Blueprint/Ch07.lean": "f30ea154ebfb07ae85c0b806ff74b35808d5a0c3dcaa647c0c3cc80a78239e37",
+        "blueprint/ch07/ch07_source.json": "c434892ebf63b06f7cadcdfa7af408c2c12d7b645d35db431d1855224163ba19",
+        "BATCH03b_PAGES.pdf": "f504bb570230b36b1c96bbf94b1bdbe8549c26e192261c15ab6e75c3bc60b2fb"
+      }
+    },
+    {
+      "source_id": "MD-7.3-OUExactUpdate",
+      "json_review": {
+        "status": "NEEDS_HUMAN",
+        "issue_codes": [
+          "SOURCE_INTEGRATING_FACTOR_ERRATUM"
+        ],
+        "corrected_json": null,
+        "issues": [
+          "原页与JSON均写积分后乘exp(−γt)，但应乘exp(−γ(t+h))才能得到(7.3)。公式(7.3)及两项Lean声明正确。"
+        ],
+        "evidence": [
+          {
+            "stage": "A",
+            "attachment": "R1_PAGES.pdf",
+            "attachment_pages": [
+              15
+            ],
+            "printed_page": "268",
+            "result": "已目视核对原页；原页与JSON均写积分后乘exp(−γt)，但应乘exp(−γ(t+h))才能得到(7.3)。公式(7.3)及两项Lean声明正确。"
+          },
+          {
+            "stage": "C",
+            "result": "ouMomentum的衰减exp(−γh)、噪声方差θ(1−exp(−2γh))m_i正确。ouTransitionLaw对每个固定t≥0、h>0存在标准独立坐标向量Z，与p(t)独立并几乎处处给出更新；γ=0时噪声系数为0仍可由W区间增量提供Z。原书前导文字的乘数exp(−γt)疑为笔误，应为exp(−γ(t+h))；公式(7.3)本身正确，需人工确认该原书疑误。",
+            "scope": "仅核对任务摘录的完整签名及MD/MolecularDynamics定义体；不修改工程，不补证明，不将sorry视为签名错误。"
+          }
+        ]
+      },
+      "audit": {
+        "lean_decl": [
+          "MD.Ch07.ouMomentum",
+          "MD.Ch07.ouTransitionLaw"
+        ],
+        "verdict": "NEEDS_HUMAN",
+        "explanation": "ouMomentum的衰减exp(−γh)、噪声方差θ(1−exp(−2γh))m_i正确。ouTransitionLaw对每个固定t≥0、h>0存在标准独立坐标向量Z，与p(t)独立并几乎处处给出更新；γ=0时噪声系数为0仍可由W区间增量提供Z。原书前导文字的乘数exp(−γt)疑为笔误，应为exp(−γ(t+h))；公式(7.3)本身正确，需人工确认该原书疑误。",
+        "counterexample": null,
+        "suggested_fix": "保留原文并标[ERRATUM?]前导文字乘数；不改动正确的(7.3)及更新签名。"
+      },
+      "subtask": "BATCH03c",
+      "input_sha256": {
+        "Blueprint/Ch07.lean": "f30ea154ebfb07ae85c0b806ff74b35808d5a0c3dcaa647c0c3cc80a78239e37",
+        "blueprint/ch07/ch07_source.json": "c434892ebf63b06f7cadcdfa7af408c2c12d7b645d35db431d1855224163ba19",
+        "BATCH03c_PAGES.pdf": "0cd9f01322632c0ca3a0c179c1744ee6a2ccd0abadd11446de72820d97812fbb"
+      }
+    },
+    {
+      "source_id": "MD-7.3-OUPhaseIteration",
+      "json_review": {
+        "status": "APPROVED",
+        "issue_codes": [],
+        "corrected_json": null,
+        "issues": [],
+        "evidence": [
+          {
+            "stage": "A",
+            "attachment": "R1_PAGES.pdf",
+            "attachment_pages": [
+              16
+            ],
+            "printed_page": "268",
+            "result": "已目视核对该页正文及公式；同版重复附件页的渲染图逐字节相同。未发现改变数学含义的转录差异。"
+          },
+          {
+            "stage": "C",
+            "result": "ouStep保持q不变，p分量完全复用ouMomentum。vectorNormalSequence规定跨步独立及每步乘积标准正态分布，涵盖分量独立；总化单步映射本身没有伪称任意R都具有正态分布。",
+            "scope": "仅核对任务摘录的完整签名及MD/MolecularDynamics定义体；不修改工程，不补证明，不将sorry视为签名错误。"
+          }
+        ]
+      },
+      "audit": {
+        "lean_decl": [
+          "MD.Ch07.ouStep",
+          "MD.Ch07.vectorNormalSequence"
+        ],
+        "verdict": "PASS",
+        "explanation": "ouStep保持q不变，p分量完全复用ouMomentum。vectorNormalSequence规定跨步独立及每步乘积标准正态分布，涵盖分量独立；总化单步映射本身没有伪称任意R都具有正态分布。",
+        "counterexample": null,
+        "suggested_fix": null
+      },
+      "subtask": "BATCH03d",
+      "input_sha256": {
+        "Blueprint/Ch07.lean": "f30ea154ebfb07ae85c0b806ff74b35808d5a0c3dcaa647c0c3cc80a78239e37",
+        "blueprint/ch07/ch07_source.json": "c434892ebf63b06f7cadcdfa7af408c2c12d7b645d35db431d1855224163ba19",
+        "BATCH03d_PAGES.pdf": "b830cffa3865082d50a12c539a6d4cfb0b0b57b3630f99e06d037504433877aa"
+      }
+    },
+    {
+      "source_id": "MD-7.3-OUForward",
+      "json_review": {
+        "status": "APPROVED",
+        "issue_codes": [],
+        "corrected_json": null,
+        "issues": [],
+        "evidence": [
+          {
+            "stage": "A",
+            "attachment": "R1_PAGES.pdf",
+            "attachment_pages": [
+              17
+            ],
+            "printed_page": "268",
+            "result": "已目视核对该页正文及公式；同版重复附件页的渲染图逐字节相同。未发现改变数学含义的转录差异。"
+          },
+          {
+            "stage": "C",
+            "result": "ouForward第一项是γ∑∂_i(p_i f)，第二项γθ∑m_i∂²_i f；ouBackward漂移为−γ∑p_i∂_i f，扩散符号相同。真实偏导D23已核对。两紧支撑C²函数上的积分伴随关系边界项为0，签名正确；q固定参数，未声称半群的完整强生成元域。",
+            "scope": "仅核对任务摘录的完整签名及MD/MolecularDynamics定义体；不修改工程，不补证明，不将sorry视为签名错误。"
+          }
+        ]
+      },
+      "audit": {
+        "lean_decl": [
+          "MD.Ch07.coordDerivative",
+          "MD.Ch07.ouForward",
+          "MD.Ch07.ouBackward",
+          "MD.Ch07.ouForward_adjoint"
+        ],
+        "verdict": "PASS",
+        "explanation": "ouForward第一项是γ∑∂_i(p_i f)，第二项γθ∑m_i∂²_i f；ouBackward漂移为−γ∑p_i∂_i f，扩散符号相同。真实偏导D23已核对。两紧支撑C²函数上的积分伴随关系边界项为0，签名正确；q固定参数，未声称半群的完整强生成元域。",
+        "counterexample": null,
+        "suggested_fix": null
+      },
+      "subtask": "BATCH03e",
+      "input_sha256": {
+        "Blueprint/Ch07.lean": "f30ea154ebfb07ae85c0b806ff74b35808d5a0c3dcaa647c0c3cc80a78239e37",
+        "blueprint/ch07/ch07_source.json": "c434892ebf63b06f7cadcdfa7af408c2c12d7b645d35db431d1855224163ba19",
+        "BATCH03e_PAGES.pdf": "2b12aa5212056f62fda067a598aeb6e2807a25c510ebab852ee991b0037b3ef9"
+      }
+    },
+    {
+      "source_id": "MD-7.3-OUGaussianInvariant",
+      "json_review": {
+        "status": "APPROVED",
+        "issue_codes": [],
+        "corrected_json": null,
+        "issues": [],
+        "evidence": [
+          {
+            "stage": "A",
+            "attachment": "R1_PAGES.pdf",
+            "attachment_pages": [
+              18
+            ],
+            "printed_page": "268",
+            "result": "已目视核对该页正文及公式；同版重复附件页的渲染图逐字节相同。未发现改变数学含义的转录差异。"
+          },
+          {
+            "stage": "C",
+            "result": "输入分布是独立的p~⊗N(0,θm_i)与R~⊗N(0,1)，映射逐坐标线性组合的方差为exp(−2γh)θm_i+θ(1−exp(−2γh))m_i=θm_i，输出仍为独立高斯。m>0、θ>0、γ,h≥0保证全部方差合法；γ=0或h=0只表示不变性，不包含遍历收敛断言。",
+            "scope": "仅核对任务摘录的完整签名及MD/MolecularDynamics定义体；不修改工程，不补证明，不将sorry视为签名错误。"
+          }
+        ]
+      },
+      "audit": {
+        "lean_decl": [
+          "MD.Ch07.ouGaussianInvariant"
+        ],
+        "verdict": "PASS",
+        "explanation": "输入分布是独立的p~⊗N(0,θm_i)与R~⊗N(0,1)，映射逐坐标线性组合的方差为exp(−2γh)θm_i+θ(1−exp(−2γh))m_i=θm_i，输出仍为独立高斯。m>0、θ>0、γ,h≥0保证全部方差合法；γ=0或h=0只表示不变性，不包含遍历收敛断言。",
+        "counterexample": null,
+        "suggested_fix": null
+      },
+      "subtask": "BATCH03f",
+      "input_sha256": {
+        "Blueprint/Ch07.lean": "f30ea154ebfb07ae85c0b806ff74b35808d5a0c3dcaa647c0c3cc80a78239e37",
+        "blueprint/ch07/ch07_source.json": "c434892ebf63b06f7cadcdfa7af408c2c12d7b645d35db431d1855224163ba19",
+        "BATCH03f_PAGES.pdf": "092f08982dfa28003ffeb5a412cf41222914fcd13308f37f25801f7d215a9451"
+      }
+    }
+  ],
+  "merged_from": "ch07_first_merged"
+}

@@ -1,0 +1,4484 @@
+[
+  {
+    "name": "MD.Ch07.bias",
+    "kind": "def",
+    "status": "定义",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "reason": null,
+    "source_id": "MD-7.1-Bias"
+  },
+  {
+    "name": "MD.Ch07.scalarSDE",
+    "kind": "def",
+    "status": "定义",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "reason": null,
+    "source_id": "MD-7.2-ScalarSDE"
+  },
+  {
+    "name": "MD.Ch07.eulerMaruyamaStep",
+    "kind": "def",
+    "status": "定义",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "reason": null,
+    "source_id": "MD-7.2-EulerMaruyama"
+  },
+  {
+    "name": "MD.Ch07.standardNormalSequence",
+    "kind": "def",
+    "status": "定义",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "reason": null,
+    "source_id": "MD-7.2-EulerMaruyama"
+  },
+  {
+    "name": "MD.Ch07.eulerMaruyama",
+    "kind": "def",
+    "status": "定义",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "reason": null,
+    "source_id": "MD-7.2-EulerMaruyama"
+  },
+  {
+    "name": "MD.Ch07.sdeIncrement",
+    "kind": "theorem",
+    "status": "未证",
+    "axioms": [
+      "propext",
+      "sorryAx",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "reason": "缺大型理论",
+    "source_id": "MD-7.2-SDEIncrement"
+  },
+  {
+    "name": "MD.Ch07.strongError",
+    "kind": "def",
+    "status": "定义",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "reason": null,
+    "source_id": "MD-7.2-StrongError"
+  },
+  {
+    "name": "MD.Ch07.meanErrorExpectation",
+    "kind": "theorem",
+    "status": "已证",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "reason": null,
+    "source_id": "MD-7.2-MeanErrorExpectation"
+  },
+  {
+    "name": "MD.Ch07.meanSquareError",
+    "kind": "def",
+    "status": "定义",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "reason": null,
+    "source_id": "MD-7.2-MeanErrorExpectation"
+  },
+  {
+    "name": "MD.Ch07.hasStrongOrder",
+    "kind": "def",
+    "status": "定义",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "reason": null,
+    "source_id": "MD-7.2-StrongOrder"
+  },
+  {
+    "name": "MD.Ch07.weakError",
+    "kind": "def",
+    "status": "定义",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "reason": null,
+    "source_id": "MD-7.2-WeakError"
+  },
+  {
+    "name": "MD.Ch07.hasWeakOrder",
+    "kind": "def",
+    "status": "定义",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "reason": null,
+    "source_id": "MD-7.2-WeakError"
+  },
+  {
+    "name": "MD.Ch07.strongWeakLipschitz",
+    "kind": "theorem",
+    "status": "已证",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "reason": null,
+    "source_id": "MD-7.2-StrongWeakComparison"
+  },
+  {
+    "name": "MD.Ch07.weakDoesNotImplyStrong",
+    "kind": "theorem",
+    "status": "已证",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "reason": null,
+    "source_id": "MD-7.2-StrongWeakComparison"
+  },
+  {
+    "name": "MD.Ch07.densityWithPartition",
+    "kind": "def",
+    "status": "定义",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "reason": null,
+    "source_id": "MD-7.2-CanonicalAverage"
+  },
+  {
+    "name": "MD.Ch07.canonicalAverage",
+    "kind": "def",
+    "status": "定义",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "reason": null,
+    "source_id": "MD-7.2-CanonicalAverage"
+  },
+  {
+    "name": "MD.Ch07.probabilityDensity",
+    "kind": "def",
+    "status": "定义",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "reason": null,
+    "source_id": "MD-7.2-CanonicalAverage"
+  },
+  {
+    "name": "MD.Ch07.partitionPrinted",
+    "kind": "theorem",
+    "status": "未证",
+    "axioms": [
+      "propext",
+      "sorryAx",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "reason": "原书疑误不证",
+    "source_id": "MD-7.2-PartitionPrinted"
+  },
+  {
+    "name": "MD.Ch07.partitionPrinted_counterexample",
+    "kind": "theorem",
+    "status": "已证",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "reason": null,
+    "source_id": "MD-7.2-PartitionPrinted"
+  },
+  {
+    "name": "MD.Ch07.partitionPrinted_corrected",
+    "kind": "theorem",
+    "status": "已证",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "reason": null,
+    "source_id": "MD-7.2-PartitionPrinted"
+  },
+  {
+    "name": "MD.Ch07.observableBias",
+    "kind": "def",
+    "status": "定义",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "reason": null,
+    "source_id": "MD-7.2-AverageNotationBias"
+  },
+  {
+    "name": "MD.Ch07.bias_nonnegative",
+    "kind": "theorem",
+    "status": "已证",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "reason": null,
+    "source_id": "MD-7.2-AverageNotationBias"
+  },
+  {
+    "name": "MD.Ch07.V",
+    "kind": "abbrev",
+    "status": "定义",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "reason": null,
+    "source_id": "MD-7.3-VectorOU"
+  },
+  {
+    "name": "MD.Ch07.Phase",
+    "kind": "abbrev",
+    "status": "定义",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "reason": null,
+    "source_id": "MD-7.3-VectorOU"
+  },
+  {
+    "name": "MD.Ch07.vectorWiener",
+    "kind": "def",
+    "status": "定义",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "reason": null,
+    "source_id": "MD-7.3-VectorOU"
+  },
+  {
+    "name": "MD.Ch07.momentumOU",
+    "kind": "def",
+    "status": "定义",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "reason": null,
+    "source_id": "MD-7.3-VectorOU"
+  },
+  {
+    "name": "MD.Ch07.ouIntegratingFactor",
+    "kind": "theorem",
+    "status": "未证",
+    "axioms": [
+      "propext",
+      "sorryAx",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "reason": "缺大型理论",
+    "source_id": "MD-7.3-OUIntegratingFactor"
+  },
+  {
+    "name": "MD.Ch07.ouMomentum",
+    "kind": "def",
+    "status": "定义",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "reason": null,
+    "source_id": "MD-7.3-OUExactUpdate"
+  },
+  {
+    "name": "MD.Ch07.ouTransitionLaw",
+    "kind": "theorem",
+    "status": "未证",
+    "axioms": [
+      "propext",
+      "sorryAx",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "reason": "缺大型理论",
+    "source_id": "MD-7.3-OUExactUpdate"
+  },
+  {
+    "name": "MD.Ch07.ouStep",
+    "kind": "def",
+    "status": "定义",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "reason": null,
+    "source_id": "MD-7.3-OUPhaseIteration"
+  },
+  {
+    "name": "MD.Ch07.vectorNormalSequence",
+    "kind": "def",
+    "status": "定义",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "reason": null,
+    "source_id": "MD-7.3-OUPhaseIteration"
+  },
+  {
+    "name": "MD.Ch07.coordDerivative",
+    "kind": "def",
+    "status": "定义",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "reason": null,
+    "source_id": "MD-7.3-OUForward"
+  },
+  {
+    "name": "MD.Ch07.ouForward",
+    "kind": "def",
+    "status": "定义",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "reason": null,
+    "source_id": "MD-7.3-OUForward"
+  },
+  {
+    "name": "MD.Ch07.ouBackward",
+    "kind": "def",
+    "status": "定义",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "reason": null,
+    "source_id": "MD-7.3-OUForward"
+  },
+  {
+    "name": "MD.Ch07.ouForward_adjoint",
+    "kind": "theorem",
+    "status": "未证",
+    "axioms": [
+      "propext",
+      "sorryAx",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "reason": "缺大型理论",
+    "source_id": "MD-7.3-OUForward"
+  },
+  {
+    "name": "MD.Ch07.ouGaussianInvariant",
+    "kind": "theorem",
+    "status": "未证",
+    "axioms": [
+      "propext",
+      "sorryAx",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "reason": "缺大型理论",
+    "source_id": "MD-7.3-OUGaussianInvariant"
+  },
+  {
+    "name": "MD.Ch07.gradient",
+    "kind": "def",
+    "status": "定义",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "reason": null,
+    "source_id": "MD-7.3.1-Langevin"
+  },
+  {
+    "name": "MD.Ch07.langevin",
+    "kind": "def",
+    "status": "定义",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "reason": null,
+    "source_id": "MD-7.3.1-Langevin"
+  },
+  {
+    "name": "MD.Ch07.hamiltonianGibbs",
+    "kind": "theorem",
+    "status": "未证",
+    "axioms": [
+      "propext",
+      "sorryAx",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "reason": "缺大型理论",
+    "source_id": "MD-7.3.1-HamiltonianGibbs"
+  },
+  {
+    "name": "MD.Ch07.driftStep",
+    "kind": "def",
+    "status": "定义",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "reason": null,
+    "source_id": "MD-7.3.1-ABOPieces"
+  },
+  {
+    "name": "MD.Ch07.kickStep",
+    "kind": "def",
+    "status": "定义",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "reason": null,
+    "source_id": "MD-7.3.1-ABOPieces"
+  },
+  {
+    "name": "MD.Ch07.aField",
+    "kind": "def",
+    "status": "定义",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "reason": null,
+    "source_id": "MD-7.3.1-ABOPieces"
+  },
+  {
+    "name": "MD.Ch07.bField",
+    "kind": "def",
+    "status": "定义",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "reason": null,
+    "source_id": "MD-7.3.1-ABOPieces"
+  },
+  {
+    "name": "MD.Ch07.oDrift",
+    "kind": "def",
+    "status": "定义",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "reason": null,
+    "source_id": "MD-7.3.1-ABOPieces"
+  },
+  {
+    "name": "MD.Ch07.splittingDrift",
+    "kind": "theorem",
+    "status": "已证",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "reason": null,
+    "source_id": "MD-7.3.1-ABOPieces"
+  },
+  {
+    "name": "MD.Ch07.driftStep_derivative",
+    "kind": "theorem",
+    "status": "已证",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "reason": null,
+    "source_id": "MD-7.3.1-ABExactFlows"
+  },
+  {
+    "name": "MD.Ch07.kickStep_derivative",
+    "kind": "theorem",
+    "status": "未证",
+    "axioms": [
+      "propext",
+      "sorryAx",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "reason": "缺大型理论",
+    "source_id": "MD-7.3.1-ABExactFlows"
+  },
+  {
+    "name": "MD.Ch07.aForward",
+    "kind": "def",
+    "status": "定义",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "reason": null,
+    "source_id": "MD-7.3.1-ABForward"
+  },
+  {
+    "name": "MD.Ch07.bForward",
+    "kind": "def",
+    "status": "定义",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "reason": null,
+    "source_id": "MD-7.3.1-ABForward"
+  },
+  {
+    "name": "MD.Ch07.abo",
+    "kind": "def",
+    "status": "定义",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "reason": null,
+    "source_id": "MD-7.3.1-ABOBABO"
+  },
+  {
+    "name": "MD.Ch07.babo",
+    "kind": "def",
+    "status": "定义",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "reason": null,
+    "source_id": "MD-7.3.1-ABOBABO"
+  },
+  {
+    "name": "MD.Ch07.oabaobaoPrinted",
+    "kind": "def",
+    "status": "定义",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "reason": null,
+    "source_id": "MD-7.3.1-WordConvention"
+  },
+  {
+    "name": "MD.Ch07.oabaobaoPrinted_corrected",
+    "kind": "def",
+    "status": "定义",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "reason": null,
+    "source_id": "MD-7.3.1-WordConvention"
+  },
+  {
+    "name": "MD.Ch07.oabaobaoCount",
+    "kind": "theorem",
+    "status": "已证",
+    "axioms": [],
+    "reason": null,
+    "source_id": "MD-7.3.1-WordConvention"
+  },
+  {
+    "name": "MD.Ch07.abao",
+    "kind": "def",
+    "status": "定义",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "reason": null,
+    "source_id": "MD-7.3.1-SixSchemes"
+  },
+  {
+    "name": "MD.Ch07.aboba",
+    "kind": "def",
+    "status": "定义",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "reason": null,
+    "source_id": "MD-7.3.1-SixSchemes"
+  },
+  {
+    "name": "MD.Ch07.baoab",
+    "kind": "def",
+    "status": "定义",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "reason": null,
+    "source_id": "MD-7.3.1-SixSchemes"
+  },
+  {
+    "name": "MD.Ch07.oabao",
+    "kind": "def",
+    "status": "定义",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "reason": null,
+    "source_id": "MD-7.3.1-SixSchemes"
+  },
+  {
+    "name": "MD.Ch07.obabo",
+    "kind": "def",
+    "status": "定义",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "reason": null,
+    "source_id": "MD-7.3.1-SixSchemes"
+  },
+  {
+    "name": "MD.Ch07.compositionIterate",
+    "kind": "theorem",
+    "status": "已证",
+    "axioms": [
+      "propext",
+      "Quot.sound"
+    ],
+    "reason": null,
+    "source_id": "MD-7.3.1-ConjugateIteration"
+  },
+  {
+    "name": "MD.Ch07.oaba",
+    "kind": "def",
+    "status": "定义",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "reason": null,
+    "source_id": "MD-7.3.1-ConjugateIteration"
+  },
+  {
+    "name": "MD.Ch07.conjugateNoiseS",
+    "kind": "def",
+    "status": "定义",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "reason": null,
+    "source_id": "MD-7.3.1-ConjugateIteration"
+  },
+  {
+    "name": "MD.Ch07.conjugateNoiseT",
+    "kind": "def",
+    "status": "定义",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "reason": null,
+    "source_id": "MD-7.3.1-ConjugateIteration"
+  },
+  {
+    "name": "MD.Ch07.oaba_baoab_noiseShift",
+    "kind": "theorem",
+    "status": "未证",
+    "axioms": [
+      "propext",
+      "sorryAx",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "reason": "缺大型理论",
+    "source_id": "MD-7.3.1-ConjugateIteration"
+  },
+  {
+    "name": "MD.Ch07.spvPrinted",
+    "kind": "def",
+    "status": "定义",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "reason": null,
+    "source_id": "MD-7.3.2-SPVPrinted"
+  },
+  {
+    "name": "MD.Ch07.spvPrinted_corrected",
+    "kind": "def",
+    "status": "定义",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "reason": null,
+    "source_id": "MD-7.3.2-SPVPrinted"
+  },
+  {
+    "name": "MD.Ch07.spvQualification",
+    "kind": "def",
+    "status": "定义",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "reason": null,
+    "source_id": "MD-7.3.2-SPVPrinted"
+  },
+  {
+    "name": "MD.Ch07.spvEtaLimit",
+    "kind": "theorem",
+    "status": "未证",
+    "axioms": [
+      "propext",
+      "sorryAx",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "reason": "缺大型理论",
+    "source_id": "MD-7.3.2-SPVLargeFriction"
+  },
+  {
+    "name": "MD.Ch07.bbk",
+    "kind": "def",
+    "status": "定义",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "reason": null,
+    "source_id": "MD-7.3.2-BBK"
+  },
+  {
+    "name": "MD.Ch07.bbkSameNoise",
+    "kind": "def",
+    "status": "定义",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "reason": null,
+    "source_id": "MD-7.3.2-BBK"
+  },
+  {
+    "name": "MD.Ch07.harmonicHamiltonian",
+    "kind": "def",
+    "status": "定义",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "reason": null,
+    "source_id": "MD-7.4-HarmonicHamiltonian"
+  },
+  {
+    "name": "MD.Ch07.harmonicLaw",
+    "kind": "def",
+    "status": "定义",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "reason": null,
+    "source_id": "MD-7.4-HarmonicHamiltonian"
+  },
+  {
+    "name": "MD.Ch07.harmonicMoments",
+    "kind": "theorem",
+    "status": "未证",
+    "axioms": [
+      "propext",
+      "sorryAx",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "reason": "缺大型理论",
+    "source_id": "MD-7.4-HarmonicMoments"
+  },
+  {
+    "name": "MD.Ch07.linearUpdate",
+    "kind": "def",
+    "status": "定义",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "reason": null,
+    "source_id": "MD-7.4-LinearIteration"
+  },
+  {
+    "name": "MD.Ch07.momentQ",
+    "kind": "def",
+    "status": "定义",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "reason": null,
+    "source_id": "MD-7.4-LinearIteration"
+  },
+  {
+    "name": "MD.Ch07.momentP",
+    "kind": "def",
+    "status": "定义",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "reason": null,
+    "source_id": "MD-7.4-LinearIteration"
+  },
+  {
+    "name": "MD.Ch07.momentQP",
+    "kind": "def",
+    "status": "定义",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "reason": null,
+    "source_id": "MD-7.4-LinearIteration"
+  },
+  {
+    "name": "MD.Ch07.bbkMatrix",
+    "kind": "def",
+    "status": "定义",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "reason": null,
+    "source_id": "MD-7.4-BBKLinearForm"
+  },
+  {
+    "name": "MD.Ch07.bbkNoise",
+    "kind": "def",
+    "status": "定义",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "reason": null,
+    "source_id": "MD-7.4-BBKLinearForm"
+  },
+  {
+    "name": "MD.Ch07.quadraticProducts",
+    "kind": "theorem",
+    "status": "已证",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "reason": null,
+    "source_id": "MD-7.4-QuadraticProducts"
+  },
+  {
+    "name": "MD.Ch07.momentSystem",
+    "kind": "def",
+    "status": "定义",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "reason": null,
+    "source_id": "MD-7.4.1-StationaryMomentSystem"
+  },
+  {
+    "name": "MD.Ch07.invariantLinearLaw",
+    "kind": "def",
+    "status": "定义",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "reason": null,
+    "source_id": "MD-7.4.1-StationaryMomentSystem"
+  },
+  {
+    "name": "MD.Ch07.stationaryMomentSystem",
+    "kind": "theorem",
+    "status": "未证",
+    "axioms": [
+      "propext",
+      "sorryAx",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "reason": "缺大型理论",
+    "source_id": "MD-7.4.1-StationaryMomentSystem"
+  },
+  {
+    "name": "MD.Ch07.aboHarmonic",
+    "kind": "def",
+    "status": "定义",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "reason": null,
+    "source_id": "MD-7.4.1-ABOHarmonic"
+  },
+  {
+    "name": "MD.Ch07.aboStationaryMean",
+    "kind": "theorem",
+    "status": "未证",
+    "axioms": [
+      "propext",
+      "sorryAx",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "reason": "缺大型理论",
+    "source_id": "MD-7.4.1-ABOHarmonic"
+  },
+  {
+    "name": "MD.Ch07.aboVarianceRatio",
+    "kind": "def",
+    "status": "定义",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "reason": null,
+    "source_id": "MD-7.4.1-ABOVariance"
+  },
+  {
+    "name": "MD.Ch07.aboVarianceRatio_expansion",
+    "kind": "theorem",
+    "status": "未证",
+    "axioms": [
+      "propext",
+      "sorryAx",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "reason": "缺大型理论",
+    "source_id": "MD-7.4.1-ABOVariance"
+  },
+  {
+    "name": "MD.Ch07.aboStationaryVariance",
+    "kind": "theorem",
+    "status": "未证",
+    "axioms": [
+      "propext",
+      "sorryAx",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "reason": "缺大型理论",
+    "source_id": "MD-7.4.1-ABOVariance"
+  },
+  {
+    "name": "MD.Ch07.scalarLift",
+    "kind": "def",
+    "status": "定义",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "reason": null,
+    "source_id": "MD-7.4.1-Table71"
+  },
+  {
+    "name": "MD.Ch07.symmetricHarmonicStep",
+    "kind": "def",
+    "status": "定义",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "reason": null,
+    "source_id": "MD-7.4.1-Table71"
+  },
+  {
+    "name": "MD.Ch07.symmetricInvariant",
+    "kind": "def",
+    "status": "定义",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "reason": null,
+    "source_id": "MD-7.4.1-Table71"
+  },
+  {
+    "name": "MD.Ch07.table71",
+    "kind": "theorem",
+    "status": "未证",
+    "axioms": [
+      "propext",
+      "sorryAx",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "reason": "缺大型理论",
+    "source_id": "MD-7.4.1-Table71"
+  },
+  {
+    "name": "MD.Ch07.nonsymmetricHarmonicStep",
+    "kind": "def",
+    "status": "定义",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "reason": null,
+    "source_id": "MD-7.4.1-NonsymmetricExactMoments"
+  },
+  {
+    "name": "MD.Ch07.nonsymmetricExactMoments",
+    "kind": "theorem",
+    "status": "未证",
+    "axioms": [
+      "propext",
+      "sorryAx",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "reason": "缺大型理论",
+    "source_id": "MD-7.4.1-NonsymmetricExactMoments"
+  },
+  {
+    "name": "MD.Ch07.nonsymmetricMixedMoment_order",
+    "kind": "theorem",
+    "status": "未证",
+    "axioms": [
+      "propext",
+      "sorryAx",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "reason": "时间盒止",
+    "source_id": "MD-7.4.1-NonsymmetricExactMoments"
+  },
+  {
+    "name": "MD.Ch07.bbkStarTrajectory",
+    "kind": "def",
+    "status": "定义",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "reason": null,
+    "source_id": "MD-7.4.2-BBKStar"
+  },
+  {
+    "name": "MD.Ch07.bbkStarNoise",
+    "kind": "def",
+    "status": "定义",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "reason": null,
+    "source_id": "MD-7.4.2-BBKStar"
+  },
+  {
+    "name": "MD.Ch07.bbkStarCorrelations",
+    "kind": "theorem",
+    "status": "未证",
+    "axioms": [
+      "propext",
+      "sorryAx",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "reason": "缺大型理论",
+    "source_id": "MD-7.4.2-BBKStarCorrelations"
+  },
+  {
+    "name": "MD.Ch07.bbkStarMomentSystemPrinted",
+    "kind": "def",
+    "status": "定义",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "reason": null,
+    "source_id": "MD-7.4.2-BBKStarMomentSystemPrinted"
+  },
+  {
+    "name": "MD.Ch07.bbkStarMomentSystemPrinted_corrected",
+    "kind": "def",
+    "status": "定义",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "reason": null,
+    "source_id": "MD-7.4.2-BBKStarMomentSystemPrinted"
+  },
+  {
+    "name": "MD.Ch07.bbkStarExtraFactor_counterexample",
+    "kind": "theorem",
+    "status": "已证",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "reason": null,
+    "source_id": "MD-7.4.2-BBKStarMomentSystemPrinted"
+  },
+  {
+    "name": "MD.Ch07.bbkStarStationaryAlgebra",
+    "kind": "theorem",
+    "status": "未证",
+    "axioms": [
+      "propext",
+      "sorryAx",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "reason": "缺大型理论",
+    "source_id": "MD-7.4.2-BBKStarStationary"
+  },
+  {
+    "name": "MD.Ch07.perturbedPotential",
+    "kind": "def",
+    "status": "定义",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "reason": null,
+    "source_id": "MD-7.5-PerturbedHamiltonian"
+  },
+  {
+    "name": "MD.Ch07.perturbedHamiltonian",
+    "kind": "def",
+    "status": "定义",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "reason": null,
+    "source_id": "MD-7.5-PerturbedHamiltonian"
+  },
+  {
+    "name": "MD.Ch07.perturbedGibbs",
+    "kind": "def",
+    "status": "定义",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "reason": null,
+    "source_id": "MD-7.5-PerturbedHamiltonian"
+  },
+  {
+    "name": "MD.Ch07.perturbedStep",
+    "kind": "def",
+    "status": "定义",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "reason": null,
+    "source_id": "MD-7.5-PerturbedHamiltonian"
+  },
+  {
+    "name": "MD.Ch07.perturbedStationary",
+    "kind": "def",
+    "status": "定义",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "reason": null,
+    "source_id": "MD-7.5-PerturbedHamiltonian"
+  },
+  {
+    "name": "MD.Ch07.perturbedLeading",
+    "kind": "def",
+    "status": "定义",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "reason": null,
+    "source_id": "MD-7.5-PerturbedErrorExpansion"
+  },
+  {
+    "name": "MD.Ch07.perturbedRemainder",
+    "kind": "def",
+    "status": "定义",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "reason": null,
+    "source_id": "MD-7.5-PerturbedErrorExpansion"
+  },
+  {
+    "name": "MD.Ch07.positivePairLimit",
+    "kind": "def",
+    "status": "定义",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "reason": null,
+    "source_id": "MD-7.5-PerturbedErrorExpansion"
+  },
+  {
+    "name": "MD.Ch07.perturbedErrorExpansion",
+    "kind": "theorem",
+    "status": "未证",
+    "axioms": [
+      "propext",
+      "sorryAx",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "reason": "缺大型理论",
+    "source_id": "MD-7.5-PerturbedErrorExpansion"
+  },
+  {
+    "name": "MD.Ch07.perturbedErrorScale",
+    "kind": "def",
+    "status": "定义",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "reason": null,
+    "source_id": "MD-7.5-PerturbedErrorOrders"
+  },
+  {
+    "name": "MD.Ch07.perturbedErrorOrders",
+    "kind": "theorem",
+    "status": "未证",
+    "axioms": [
+      "propext",
+      "sorryAx",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "reason": "缺大型理论",
+    "source_id": "MD-7.5-PerturbedErrorOrders"
+  },
+  {
+    "name": "MD.Ch07.baoabLeading_largeFriction",
+    "kind": "theorem",
+    "status": "未证",
+    "axioms": [
+      "propext",
+      "sorryAx",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "reason": "缺大型理论",
+    "source_id": "MD-7.5-PerturbedErrorOrders"
+  },
+  {
+    "name": "MD.Ch07.gibbsComposition",
+    "kind": "theorem",
+    "status": "已证",
+    "axioms": [
+      "propext"
+    ],
+    "reason": null,
+    "source_id": "MD-7.6-GibbsComposition"
+  },
+  {
+    "name": "MD.Ch07.lieField",
+    "kind": "def",
+    "status": "定义",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "reason": null,
+    "source_id": "MD-7.6-DivergenceFreeInvariant"
+  },
+  {
+    "name": "MD.Ch07.divergenceField",
+    "kind": "def",
+    "status": "定义",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "reason": null,
+    "source_id": "MD-7.6-DivergenceFreeInvariant"
+  },
+  {
+    "name": "MD.Ch07.forwardField",
+    "kind": "def",
+    "status": "定义",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "reason": null,
+    "source_id": "MD-7.6-DivergenceFreeInvariant"
+  },
+  {
+    "name": "MD.Ch07.divergenceFreeInvariant",
+    "kind": "theorem",
+    "status": "未证",
+    "axioms": [
+      "propext",
+      "sorryAx",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "reason": "缺大型理论",
+    "source_id": "MD-7.6-DivergenceFreeInvariant"
+  },
+  {
+    "name": "MD.Ch07.firstIntegral_density",
+    "kind": "theorem",
+    "status": "已证",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "reason": null,
+    "source_id": "MD-7.6-DivergenceFreeInvariant"
+  },
+  {
+    "name": "MD.Ch07.onlyEnergyIntegrals",
+    "kind": "def",
+    "status": "定义",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "reason": null,
+    "source_id": "MD-7.6-GeMarsdenRestriction"
+  },
+  {
+    "name": "MD.Ch07.timeReparametrizes",
+    "kind": "def",
+    "status": "定义",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "reason": null,
+    "source_id": "MD-7.6-GeMarsdenRestriction"
+  },
+  {
+    "name": "MD.Ch07.geMarsdenConclusion",
+    "kind": "def",
+    "status": "定义",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "reason": null,
+    "source_id": "MD-7.6-GeMarsdenRestriction"
+  },
+  {
+    "name": "MD.Ch07.jField",
+    "kind": "def",
+    "status": "定义",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "reason": null,
+    "source_id": "MD-7.6-JSplitting"
+  },
+  {
+    "name": "MD.Ch07.jSplitting_energy",
+    "kind": "theorem",
+    "status": "未证",
+    "axioms": [
+      "propext",
+      "sorryAx",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "reason": "缺大型理论",
+    "source_id": "MD-7.6-JSplitting"
+  },
+  {
+    "name": "MD.Ch07.composition_preservesEnergy",
+    "kind": "theorem",
+    "status": "已证",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "reason": null,
+    "source_id": "MD-7.6-JSplitting"
+  },
+  {
+    "name": "MD.Ch07.jField_finiteDecomposition",
+    "kind": "theorem",
+    "status": "未证",
+    "axioms": [
+      "propext",
+      "sorryAx",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "reason": "时间盒止",
+    "source_id": "MD-7.6-JSplitting"
+  },
+  {
+    "name": "MD.Ch07.coordinateJField",
+    "kind": "def",
+    "status": "定义",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "reason": null,
+    "source_id": "MD-7.6-CoordinateJSplitting"
+  },
+  {
+    "name": "MD.Ch07.frozenPotential",
+    "kind": "def",
+    "status": "定义",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "reason": null,
+    "source_id": "MD-7.6-CoordinateJSplitting"
+  },
+  {
+    "name": "MD.Ch07.coordinateJQualification",
+    "kind": "def",
+    "status": "定义",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "reason": null,
+    "source_id": "MD-7.6-CoordinateJSplitting"
+  },
+  {
+    "name": "MD.Ch07.frozenPotential_deriv",
+    "kind": "theorem",
+    "status": "已证",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "reason": null,
+    "source_id": "MD-7.6-CoordinateJSplitting"
+  },
+  {
+    "name": "MD.Ch07.formalModifiedGenerator",
+    "kind": "def",
+    "status": "定义",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "reason": null,
+    "source_id": "MD-7.7-ModifiedGenerator"
+  },
+  {
+    "name": "MD.Ch07.formalGeneratorExpansion",
+    "kind": "def",
+    "status": "定义",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "reason": null,
+    "source_id": "MD-7.7-ModifiedGenerator"
+  },
+  {
+    "name": "MD.Ch07.densityExpansion",
+    "kind": "def",
+    "status": "定义",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "reason": null,
+    "source_id": "MD-7.7-InvariantDensityExpansion"
+  },
+  {
+    "name": "MD.Ch07.centeredCorrections",
+    "kind": "def",
+    "status": "定义",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "reason": null,
+    "source_id": "MD-7.7-InvariantDensityExpansion"
+  },
+  {
+    "name": "MD.Ch07.computedAverage",
+    "kind": "def",
+    "status": "定义",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "reason": null,
+    "source_id": "MD-7.7-InvariantDensityExpansion"
+  },
+  {
+    "name": "MD.Ch07.densityExpansion_zeroMass",
+    "kind": "theorem",
+    "status": "已证",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "reason": null,
+    "source_id": "MD-7.7-InvariantDensityExpansion"
+  },
+  {
+    "name": "MD.Ch07.propagateA",
+    "kind": "def",
+    "status": "定义",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "reason": null,
+    "source_id": "MD-7.7.1-ExactABOPropagators"
+  },
+  {
+    "name": "MD.Ch07.propagateB",
+    "kind": "def",
+    "status": "定义",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "reason": null,
+    "source_id": "MD-7.7.1-ExactABOPropagators"
+  },
+  {
+    "name": "MD.Ch07.propagateO",
+    "kind": "def",
+    "status": "定义",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "reason": null,
+    "source_id": "MD-7.7.1-ExactABOPropagators"
+  },
+  {
+    "name": "MD.Ch07.pullback_order",
+    "kind": "theorem",
+    "status": "已证",
+    "axioms": [],
+    "reason": null,
+    "source_id": "MD-7.7.1-OperatorOrderReversal"
+  },
+  {
+    "name": "MD.Ch07.abaoBackward",
+    "kind": "def",
+    "status": "定义",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "reason": null,
+    "source_id": "MD-7.7.1-OperatorOrderReversal"
+  },
+  {
+    "name": "MD.Ch07.fourStage_duality",
+    "kind": "theorem",
+    "status": "已证",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "reason": null,
+    "source_id": "MD-7.7.1-OperatorOrderReversal"
+  },
+  {
+    "name": "MD.Ch07.formalDensityEvolution",
+    "kind": "def",
+    "status": "定义",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "reason": null,
+    "source_id": "MD-7.7.1-StationaryModifiedPDE"
+  },
+  {
+    "name": "MD.Ch07.stationaryModifiedDensity",
+    "kind": "def",
+    "status": "定义",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "reason": null,
+    "source_id": "MD-7.7.1-StationaryModifiedPDE"
+  },
+  {
+    "name": "MD.Ch07.comm",
+    "kind": "def",
+    "status": "定义",
+    "axioms": [],
+    "reason": null,
+    "source_id": "MD-7.7.1-TwoOperatorBCH"
+  },
+  {
+    "name": "MD.Ch07.twoStage",
+    "kind": "def",
+    "status": "定义",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "reason": null,
+    "source_id": "MD-7.7.1-TwoOperatorBCH"
+  },
+  {
+    "name": "MD.Ch07.twoOperatorBCH",
+    "kind": "theorem",
+    "status": "未证",
+    "axioms": [
+      "propext",
+      "sorryAx",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "reason": "缺大型理论",
+    "source_id": "MD-7.7.1-TwoOperatorBCH"
+  },
+  {
+    "name": "MD.Ch07.taylorRemainder",
+    "kind": "theorem",
+    "status": "未证",
+    "axioms": [
+      "propext",
+      "sorryAx",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "reason": "缺大型理论",
+    "source_id": "MD-7.7.1-TaylorRemainder"
+  },
+  {
+    "name": "MD.Ch07.taylorRemainder_bound",
+    "kind": "theorem",
+    "status": "未证",
+    "axioms": [
+      "propext",
+      "sorryAx",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "reason": "缺大型理论",
+    "source_id": "MD-7.7.1-TaylorRemainder"
+  },
+  {
+    "name": "MD.Ch07.propagatedObservable_remainder",
+    "kind": "theorem",
+    "status": "未证",
+    "axioms": [
+      "propext",
+      "sorryAx",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "reason": "缺大型理论",
+    "source_id": "MD-7.7.1-TaylorRemainder"
+  },
+  {
+    "name": "MD.Ch07.threeStage",
+    "kind": "def",
+    "status": "定义",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "reason": null,
+    "source_id": "MD-7.7.2-ThreeOperatorBCH"
+  },
+  {
+    "name": "MD.Ch07.threeOperatorBCH",
+    "kind": "theorem",
+    "status": "未证",
+    "axioms": [
+      "propext",
+      "sorryAx",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "reason": "缺大型理论",
+    "source_id": "MD-7.7.2-ThreeOperatorBCH"
+  },
+  {
+    "name": "MD.Ch07.Density1",
+    "kind": "abbrev",
+    "status": "定义",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "reason": null,
+    "source_id": "MD-7.7.2-ScalarForwardOperators"
+  },
+  {
+    "name": "MD.Ch07.dq",
+    "kind": "def",
+    "status": "定义",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "reason": null,
+    "source_id": "MD-7.7.2-ScalarForwardOperators"
+  },
+  {
+    "name": "MD.Ch07.dp",
+    "kind": "def",
+    "status": "定义",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "reason": null,
+    "source_id": "MD-7.7.2-ScalarForwardOperators"
+  },
+  {
+    "name": "MD.Ch07.opA",
+    "kind": "def",
+    "status": "定义",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "reason": null,
+    "source_id": "MD-7.7.2-ScalarForwardOperators"
+  },
+  {
+    "name": "MD.Ch07.opB",
+    "kind": "def",
+    "status": "定义",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "reason": null,
+    "source_id": "MD-7.7.2-ScalarForwardOperators"
+  },
+  {
+    "name": "MD.Ch07.opO",
+    "kind": "def",
+    "status": "定义",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "reason": null,
+    "source_id": "MD-7.7.2-ScalarForwardOperators"
+  },
+  {
+    "name": "MD.Ch07.opLD",
+    "kind": "def",
+    "status": "定义",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "reason": null,
+    "source_id": "MD-7.7.2-ScalarForwardOperators"
+  },
+  {
+    "name": "MD.Ch07.opComm",
+    "kind": "def",
+    "status": "定义",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "reason": null,
+    "source_id": "MD-7.7.2-ScalarForwardOperators"
+  },
+  {
+    "name": "MD.Ch07.commutatorAB",
+    "kind": "theorem",
+    "status": "未证",
+    "axioms": [
+      "propext",
+      "sorryAx",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "reason": "缺大型理论",
+    "source_id": "MD-7.7.2-CommutatorAB"
+  },
+  {
+    "name": "MD.Ch07.commutatorsAOBO",
+    "kind": "theorem",
+    "status": "未证",
+    "axioms": [
+      "propext",
+      "sorryAx",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "reason": "缺大型理论",
+    "source_id": "MD-7.7.2-CommutatorsAOBO"
+  },
+  {
+    "name": "MD.Ch07.obaFirstCorrection",
+    "kind": "def",
+    "status": "定义",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "reason": null,
+    "source_id": "MD-7.7.2-OBAModifiedOperator"
+  },
+  {
+    "name": "MD.Ch07.obaFirstCorrection_commutators",
+    "kind": "theorem",
+    "status": "未证",
+    "axioms": [
+      "propext",
+      "sorryAx",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "reason": "缺大型理论",
+    "source_id": "MD-7.7.2-OBAModifiedOperator"
+  },
+  {
+    "name": "MD.Ch07.simpleEigenvalue",
+    "kind": "def",
+    "status": "定义",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "reason": null,
+    "source_id": "MD-7.7.2-SpectralQualification"
+  },
+  {
+    "name": "MD.Ch07.printedSpectralConclusion",
+    "kind": "def",
+    "status": "定义",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "reason": null,
+    "source_id": "MD-7.7.2-SpectralQualification"
+  },
+  {
+    "name": "MD.Ch07.spectralConclusionPrinted",
+    "kind": "def",
+    "status": "定义",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "reason": null,
+    "source_id": "MD-7.7.2-SpectralQualification"
+  },
+  {
+    "name": "MD.Ch07.spectralConclusionPrinted_corrected",
+    "kind": "def",
+    "status": "定义",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "reason": null,
+    "source_id": "MD-7.7.2-SpectralQualification"
+  },
+  {
+    "name": "MD.Ch07.actionCoefficient",
+    "kind": "def",
+    "status": "定义",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "reason": null,
+    "source_id": "MD-7.7.3-PerturbationCoefficientEquation"
+  },
+  {
+    "name": "MD.Ch07.perturbationCoefficientEquation",
+    "kind": "theorem",
+    "status": "已证",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "reason": null,
+    "source_id": "MD-7.7.3-PerturbationCoefficientEquation"
+  },
+  {
+    "name": "MD.Ch07.observableCorrectionExpansion",
+    "kind": "theorem",
+    "status": "已证",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "reason": null,
+    "source_id": "MD-7.7.3-ObservableCorrectionExpansion"
+  },
+  {
+    "name": "MD.Ch07.correctionSolvable",
+    "kind": "def",
+    "status": "定义",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "reason": null,
+    "source_id": "MD-7.7.3-PerturbativeSolvabilityCaution"
+  },
+  {
+    "name": "MD.Ch07.firstOrderOperator",
+    "kind": "def",
+    "status": "定义",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "reason": null,
+    "source_id": "MD-7.8-FirstOrderOperator"
+  },
+  {
+    "name": "MD.Ch07.firstOrderOperator_coefficient",
+    "kind": "theorem",
+    "status": "未证",
+    "axioms": [
+      "propext",
+      "sorryAx",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "reason": "缺大型理论",
+    "source_id": "MD-7.8-FirstOrderOperator"
+  },
+  {
+    "name": "MD.Ch07.correctionEquation",
+    "kind": "def",
+    "status": "定义",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "reason": null,
+    "source_id": "MD-7.8-FirstOrderOperator"
+  },
+  {
+    "name": "MD.Ch07.homogeneousNormalization",
+    "kind": "theorem",
+    "status": "已证",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "reason": null,
+    "source_id": "MD-7.8-HomogeneousNormalization"
+  },
+  {
+    "name": "MD.Ch07.centeredParticular",
+    "kind": "theorem",
+    "status": "已证",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "reason": null,
+    "source_id": "MD-7.8-HomogeneousNormalization"
+  },
+  {
+    "name": "MD.Ch07.commutatorPermutationRelations",
+    "kind": "theorem",
+    "status": "未证",
+    "axioms": [
+      "propext",
+      "sorryAx",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "reason": "缺大型理论",
+    "source_id": "MD-7.8.1-CommutatorPermutationRelations"
+  },
+  {
+    "name": "MD.Ch07.mechanicalHamiltonian",
+    "kind": "def",
+    "status": "定义",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "reason": null,
+    "source_id": "MD-7.8.1-GibbsDerivativeIdentities"
+  },
+  {
+    "name": "MD.Ch07.gibbsWeight",
+    "kind": "def",
+    "status": "定义",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "reason": null,
+    "source_id": "MD-7.8.1-GibbsDerivativeIdentities"
+  },
+  {
+    "name": "MD.Ch07.gFunction",
+    "kind": "def",
+    "status": "定义",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "reason": null,
+    "source_id": "MD-7.8.1-GibbsDerivativeIdentities"
+  },
+  {
+    "name": "MD.Ch07.phaseO",
+    "kind": "def",
+    "status": "定义",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "reason": null,
+    "source_id": "MD-7.8.1-GibbsDerivativeIdentities"
+  },
+  {
+    "name": "MD.Ch07.phaseLD",
+    "kind": "def",
+    "status": "定义",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "reason": null,
+    "source_id": "MD-7.8.1-GibbsDerivativeIdentities"
+  },
+  {
+    "name": "MD.Ch07.gibbsDerivativeIdentities",
+    "kind": "theorem",
+    "status": "未证",
+    "axioms": [
+      "propext",
+      "sorryAx",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "reason": "缺大型理论",
+    "source_id": "MD-7.8.1-GibbsDerivativeIdentities"
+  },
+  {
+    "name": "MD.Ch07.firstCorrectionTablePrinted",
+    "kind": "def",
+    "status": "定义",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "reason": null,
+    "source_id": "MD-7.8.1-FirstCorrectionTablePrinted"
+  },
+  {
+    "name": "MD.Ch07.firstCorrectionTablePrinted_corrected",
+    "kind": "def",
+    "status": "定义",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "reason": null,
+    "source_id": "MD-7.8.1-FirstCorrectionTablePrinted"
+  },
+  {
+    "name": "MD.Ch07.firstCorrection_sign_counterexample",
+    "kind": "theorem",
+    "status": "已证",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "reason": null,
+    "source_id": "MD-7.8.1-FirstCorrectionTablePrinted"
+  },
+  {
+    "name": "MD.Ch07.phaseComm",
+    "kind": "def",
+    "status": "定义",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "reason": null,
+    "source_id": "MD-7.8.1-FirstCorrectionTablePrinted"
+  },
+  {
+    "name": "MD.Ch07.firstCorrectionRHS",
+    "kind": "def",
+    "status": "定义",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "reason": null,
+    "source_id": "MD-7.8.1-FirstCorrectionTablePrinted"
+  },
+  {
+    "name": "MD.Ch07.firstCorrectionTable_pde",
+    "kind": "theorem",
+    "status": "未证",
+    "axioms": [
+      "propext",
+      "sorryAx",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "reason": "缺大型理论",
+    "source_id": "MD-7.8.1-FirstCorrectionTablePrinted"
+  },
+  {
+    "name": "MD.Ch07.positionGibbs",
+    "kind": "def",
+    "status": "定义",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "reason": null,
+    "source_id": "MD-7.8.1-PositionMomentumCorrections"
+  },
+  {
+    "name": "MD.Ch07.momentumGibbs",
+    "kind": "def",
+    "status": "定义",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "reason": null,
+    "source_id": "MD-7.8.1-PositionMomentumCorrections"
+  },
+  {
+    "name": "MD.Ch07.productGibbs",
+    "kind": "def",
+    "status": "定义",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "reason": null,
+    "source_id": "MD-7.8.1-PositionMomentumCorrections"
+  },
+  {
+    "name": "MD.Ch07.positionMomentumCorrections",
+    "kind": "theorem",
+    "status": "未证",
+    "axioms": [
+      "propext",
+      "sorryAx",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "reason": "缺大型理论",
+    "source_id": "MD-7.8.1-PositionMomentumCorrections"
+  },
+  {
+    "name": "MD.Ch07.aoab",
+    "kind": "def",
+    "status": "定义",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "reason": null,
+    "source_id": "MD-7.8.1-OverdampedFirstOrderCaution"
+  },
+  {
+    "name": "MD.Ch07.aoabInfiniteFriction",
+    "kind": "def",
+    "status": "定义",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "reason": null,
+    "source_id": "MD-7.8.1-OverdampedFirstOrderCaution"
+  },
+  {
+    "name": "MD.Ch07.aoabFrictionLimit",
+    "kind": "theorem",
+    "status": "未证",
+    "axioms": [
+      "propext",
+      "sorryAx",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "reason": "缺大型理论",
+    "source_id": "MD-7.8.1-OverdampedFirstOrderCaution"
+  },
+  {
+    "name": "MD.Ch07.biasedDoubleWell",
+    "kind": "def",
+    "status": "定义",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "reason": null,
+    "source_id": "MD-7.8.2-BiasedDoubleWellExact"
+  },
+  {
+    "name": "MD.Ch07.doubleWellObservable",
+    "kind": "def",
+    "status": "定义",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "reason": null,
+    "source_id": "MD-7.8.2-BiasedDoubleWellExact"
+  },
+  {
+    "name": "MD.Ch07.doubleWellGibbs",
+    "kind": "def",
+    "status": "定义",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "reason": null,
+    "source_id": "MD-7.8.2-BiasedDoubleWellExact"
+  },
+  {
+    "name": "MD.Ch07.doubleWellBOACorrection",
+    "kind": "def",
+    "status": "定义",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "reason": null,
+    "source_id": "MD-7.8.2-BiasedDoubleWellExact"
+  },
+  {
+    "name": "MD.Ch07.doubleWellExact",
+    "kind": "theorem",
+    "status": "未证",
+    "axioms": [
+      "propext",
+      "sorryAx",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "reason": "缺大型理论",
+    "source_id": "MD-7.8.2-BiasedDoubleWellExact"
+  },
+  {
+    "name": "MD.Ch07.doubleWellCritical",
+    "kind": "theorem",
+    "status": "已证",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "reason": null,
+    "source_id": "MD-7.8.2-BiasedDoubleWellExact"
+  },
+  {
+    "name": "MD.Ch07.doubleWellCritical_integral",
+    "kind": "theorem",
+    "status": "未证",
+    "axioms": [
+      "propext",
+      "sorryAx",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "reason": "缺大型理论",
+    "source_id": "MD-7.8.2-BiasedDoubleWellExact"
+  },
+  {
+    "name": "MD.Ch07.proposition71",
+    "kind": "theorem",
+    "status": "已证",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "reason": null,
+    "source_id": "MD-7.9-Proposition71"
+  },
+  {
+    "name": "MD.Ch07.symmetricOddCorrections",
+    "kind": "theorem",
+    "status": "已证",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "reason": null,
+    "source_id": "MD-7.9-Proposition71"
+  },
+  {
+    "name": "MD.Ch07.evenDensityExpansion",
+    "kind": "def",
+    "status": "定义",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "reason": null,
+    "source_id": "MD-7.9-EvenDensityPerturbation"
+  },
+  {
+    "name": "MD.Ch07.evenPerturbationEquation",
+    "kind": "theorem",
+    "status": "已证",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "reason": null,
+    "source_id": "MD-7.9-EvenDensityPerturbation"
+  },
+  {
+    "name": "MD.Ch07.oyzyoInhomogeneity",
+    "kind": "theorem",
+    "status": "未证",
+    "axioms": [
+      "propext",
+      "sorryAx",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "reason": "缺大型理论",
+    "source_id": "MD-7.9.1-OYZYOInhomogeneity"
+  },
+  {
+    "name": "MD.Ch07.hessianU",
+    "kind": "def",
+    "status": "定义",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "reason": null,
+    "source_id": "MD-7.9.1-TripleCommutatorPrinted"
+  },
+  {
+    "name": "MD.Ch07.thirdU",
+    "kind": "def",
+    "status": "定义",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "reason": null,
+    "source_id": "MD-7.9.1-TripleCommutatorPrinted"
+  },
+  {
+    "name": "MD.Ch07.hessianGrad",
+    "kind": "def",
+    "status": "定义",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "reason": null,
+    "source_id": "MD-7.9.1-TripleCommutatorPrinted"
+  },
+  {
+    "name": "MD.Ch07.cubicThird",
+    "kind": "def",
+    "status": "定义",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "reason": null,
+    "source_id": "MD-7.9.1-TripleCommutatorPrinted"
+  },
+  {
+    "name": "MD.Ch07.tripleCommutatorPrinted",
+    "kind": "def",
+    "status": "定义",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "reason": null,
+    "source_id": "MD-7.9.1-TripleCommutatorPrinted"
+  },
+  {
+    "name": "MD.Ch07.tripleCommutatorPrinted_corrected",
+    "kind": "def",
+    "status": "定义",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "reason": null,
+    "source_id": "MD-7.9.1-TripleCommutatorPrinted"
+  },
+  {
+    "name": "MD.Ch07.tripleCommutator_corrected",
+    "kind": "theorem",
+    "status": "未证",
+    "axioms": [
+      "propext",
+      "sorryAx",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "reason": "缺大型理论",
+    "source_id": "MD-7.9.1-TripleCommutatorPrinted"
+  },
+  {
+    "name": "MD.Ch07.tripleCommutator_factor_counterexample",
+    "kind": "theorem",
+    "status": "已证",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "reason": null,
+    "source_id": "MD-7.9.1-TripleCommutatorPrinted"
+  },
+  {
+    "name": "MD.Ch07.symmetricRHS",
+    "kind": "def",
+    "status": "定义",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "reason": null,
+    "source_id": "MD-7.9.1-SymmetricRHS"
+  },
+  {
+    "name": "MD.Ch07.symmetricRHS_odd",
+    "kind": "theorem",
+    "status": "已证",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "reason": null,
+    "source_id": "MD-7.9.1-SymmetricRHS"
+  },
+  {
+    "name": "MD.Ch07.symmetricRHS_zeroMean",
+    "kind": "theorem",
+    "status": "未证",
+    "axioms": [
+      "propext",
+      "sorryAx",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "reason": "缺大型理论",
+    "source_id": "MD-7.9.1-SymmetricRHS"
+  },
+  {
+    "name": "MD.Ch07.lemma71",
+    "kind": "theorem",
+    "status": "已证",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "reason": null,
+    "source_id": "MD-7.9.1-Lemma71"
+  },
+  {
+    "name": "MD.Ch07.gradNormSq",
+    "kind": "def",
+    "status": "定义",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "reason": null,
+    "source_id": "MD-7.9.1-ConjugateSymmetricCorrections"
+  },
+  {
+    "name": "MD.Ch07.hessianQuadratic",
+    "kind": "def",
+    "status": "定义",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "reason": null,
+    "source_id": "MD-7.9.1-ConjugateSymmetricCorrections"
+  },
+  {
+    "name": "MD.Ch07.conjugateCorrectionChange",
+    "kind": "def",
+    "status": "定义",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "reason": null,
+    "source_id": "MD-7.9.1-ConjugateSymmetricCorrections"
+  },
+  {
+    "name": "MD.Ch07.conjugateCorrections",
+    "kind": "def",
+    "status": "定义",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "reason": null,
+    "source_id": "MD-7.9.1-ConjugateSymmetricCorrections"
+  },
+  {
+    "name": "MD.Ch07.conjugateCorrection_coefficient",
+    "kind": "theorem",
+    "status": "已证",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "reason": null,
+    "source_id": "MD-7.9.1-ConjugateSymmetricCorrections"
+  },
+  {
+    "name": "MD.Ch07.conjugateExpansionPrinted",
+    "kind": "def",
+    "status": "定义",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "reason": null,
+    "source_id": "MD-7.9.1-ConjugateSymmetricCorrections"
+  },
+  {
+    "name": "MD.Ch07.conjugateExpansionPrinted_corrected",
+    "kind": "def",
+    "status": "定义",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "reason": null,
+    "source_id": "MD-7.9.1-ConjugateSymmetricCorrections"
+  },
+  {
+    "name": "MD.Ch07.phaseH",
+    "kind": "def",
+    "status": "定义",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "reason": null,
+    "source_id": "MD-7.9.2-ReciprocalFrictionExpansion"
+  },
+  {
+    "name": "MD.Ch07.reciprocalHierarchy",
+    "kind": "def",
+    "status": "定义",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "reason": null,
+    "source_id": "MD-7.9.2-ReciprocalFrictionExpansion"
+  },
+  {
+    "name": "MD.Ch07.ouKernelPrinted",
+    "kind": "def",
+    "status": "定义",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "reason": null,
+    "source_id": "MD-7.9.2-OUKernelQualification"
+  },
+  {
+    "name": "MD.Ch07.ouKernelPrinted_corrected",
+    "kind": "theorem",
+    "status": "未证",
+    "axioms": [
+      "propext",
+      "sorryAx",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "reason": "缺大型理论",
+    "source_id": "MD-7.9.2-OUKernelQualification"
+  },
+  {
+    "name": "MD.Ch07.ouKernelCentered_corrected",
+    "kind": "theorem",
+    "status": "未证",
+    "axioms": [
+      "propext",
+      "sorryAx",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "reason": "缺大型理论",
+    "source_id": "MD-7.9.2-OUKernelQualification"
+  },
+  {
+    "name": "MD.Ch07.laplacian",
+    "kind": "def",
+    "status": "定义",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "reason": null,
+    "source_id": "MD-7.9.2-OUHermiteIdentities"
+  },
+  {
+    "name": "MD.Ch07.pGradLaplacian",
+    "kind": "def",
+    "status": "定义",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "reason": null,
+    "source_id": "MD-7.9.2-OUHermiteIdentities"
+  },
+  {
+    "name": "MD.Ch07.hermitePrimitive",
+    "kind": "def",
+    "status": "定义",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "reason": null,
+    "source_id": "MD-7.9.2-OUHermiteIdentities"
+  },
+  {
+    "name": "MD.Ch07.ouHermiteIdentities",
+    "kind": "theorem",
+    "status": "未证",
+    "axioms": [
+      "propext",
+      "sorryAx",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "reason": "缺大型理论",
+    "source_id": "MD-7.9.2-OUHermiteIdentities"
+  },
+  {
+    "name": "MD.Ch07.firstReciprocalCorrection",
+    "kind": "def",
+    "status": "定义",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "reason": null,
+    "source_id": "MD-7.9.2-FirstReciprocalCorrection"
+  },
+  {
+    "name": "MD.Ch07.momentumAverage",
+    "kind": "def",
+    "status": "定义",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "reason": null,
+    "source_id": "MD-7.9.2-FirstReciprocalCorrection"
+  },
+  {
+    "name": "MD.Ch07.momentumAveragePrinted_corrected",
+    "kind": "def",
+    "status": "定义",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "reason": null,
+    "source_id": "MD-7.9.2-FirstReciprocalCorrection"
+  },
+  {
+    "name": "MD.Ch07.momentumAveragePrinted",
+    "kind": "def",
+    "status": "定义",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "reason": null,
+    "source_id": "MD-7.9.2-FirstReciprocalCorrection"
+  },
+  {
+    "name": "MD.Ch07.firstReciprocalCorrection_pde",
+    "kind": "theorem",
+    "status": "未证",
+    "axioms": [
+      "propext",
+      "sorryAx",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "reason": "缺大型理论",
+    "source_id": "MD-7.9.2-FirstReciprocalCorrection"
+  },
+  {
+    "name": "MD.Ch07.conjugatedPhaseH",
+    "kind": "def",
+    "status": "定义",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "reason": null,
+    "source_id": "MD-7.9.2-FirstReciprocalCorrection"
+  },
+  {
+    "name": "MD.Ch07.jointGibbsQualification",
+    "kind": "def",
+    "status": "定义",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "reason": null,
+    "source_id": "MD-7.9.2-FirstReciprocalCorrection"
+  },
+  {
+    "name": "MD.Ch07.overdampedM",
+    "kind": "def",
+    "status": "定义",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "reason": null,
+    "source_id": "MD-7.9.2-OverdampedSolvabilityOperators"
+  },
+  {
+    "name": "MD.Ch07.overdampedN",
+    "kind": "def",
+    "status": "定义",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "reason": null,
+    "source_id": "MD-7.9.2-OverdampedSolvabilityOperators"
+  },
+  {
+    "name": "MD.Ch07.highFrictionOABAO",
+    "kind": "def",
+    "status": "定义",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "reason": null,
+    "source_id": "MD-7.9.2-OverdampedSolvabilityOperators"
+  },
+  {
+    "name": "MD.Ch07.overdampedSolvability_choice",
+    "kind": "theorem",
+    "status": "已证",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "reason": null,
+    "source_id": "MD-7.9.2-OverdampedSolvabilityOperators"
+  },
+  {
+    "name": "MD.Ch07.highFrictionCorrection",
+    "kind": "def",
+    "status": "定义",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "reason": null,
+    "source_id": "MD-7.9.2-HighFrictionCorrectionTable"
+  },
+  {
+    "name": "MD.Ch07.doublyAsymptoticAverage",
+    "kind": "def",
+    "status": "定义",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "reason": null,
+    "source_id": "MD-7.9.2-HighFrictionCorrectionTable"
+  },
+  {
+    "name": "MD.Ch07.highFrictionCorrection_conjugacy",
+    "kind": "theorem",
+    "status": "已证",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "reason": null,
+    "source_id": "MD-7.9.2-HighFrictionCorrectionTable"
+  },
+  {
+    "name": "MD.Ch07.highFrictionMeanLaplacian",
+    "kind": "def",
+    "status": "定义",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "reason": null,
+    "source_id": "MD-7.9.2-HighFrictionCorrectionTable"
+  },
+  {
+    "name": "MD.Ch07.highFrictionCenteredQualification",
+    "kind": "def",
+    "status": "定义",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "reason": null,
+    "source_id": "MD-7.9.2-HighFrictionCorrectionTable"
+  },
+  {
+    "name": "MD.Ch07.baoabMarginalCancellation",
+    "kind": "theorem",
+    "status": "未证",
+    "axioms": [
+      "propext",
+      "sorryAx",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "reason": "缺大型理论",
+    "source_id": "MD-7.9.3-BAOABMarginalCancellation"
+  },
+  {
+    "name": "MD.Ch07.baoabConfigurationalCancellation",
+    "kind": "theorem",
+    "status": "未证",
+    "axioms": [
+      "propext",
+      "sorryAx",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "reason": "缺大型理论",
+    "source_id": "MD-7.9.3-BAOABMarginalCancellation"
+  },
+  {
+    "name": "MD.Ch07.oabaoPositionCancellation",
+    "kind": "theorem",
+    "status": "未证",
+    "axioms": [
+      "propext",
+      "sorryAx",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "reason": "缺大型理论",
+    "source_id": "MD-7.9.3-SuperconvergenceScope"
+  },
+  {
+    "name": "MD.Ch07.superconvergence_fromBound",
+    "kind": "theorem",
+    "status": "已证",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "reason": null,
+    "source_id": "MD-7.9.3-SuperconvergenceScope"
+  },
+  {
+    "name": "MD.Ch07.oabaoMomentumCancellation",
+    "kind": "theorem",
+    "status": "未证",
+    "axioms": [
+      "propext",
+      "sorryAx",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "reason": "缺大型理论",
+    "source_id": "MD-7.9.3-SuperconvergenceScope"
+  },
+  {
+    "name": "MD.Ch07.redrawMomentum",
+    "kind": "def",
+    "status": "定义",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "reason": null,
+    "source_id": "MD-7.10-MomentumRedrawLimit"
+  },
+  {
+    "name": "MD.Ch07.redrawStep",
+    "kind": "def",
+    "status": "定义",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "reason": null,
+    "source_id": "MD-7.10-MomentumRedrawLimit"
+  },
+  {
+    "name": "MD.Ch07.momentumRedrawLimit",
+    "kind": "theorem",
+    "status": "未证",
+    "axioms": [
+      "propext",
+      "sorryAx",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "reason": "缺大型理论",
+    "source_id": "MD-7.10-MomentumRedrawLimit"
+  },
+  {
+    "name": "MD.Ch07.redrawMomentum_law",
+    "kind": "theorem",
+    "status": "未证",
+    "axioms": [
+      "propext",
+      "sorryAx",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "reason": "缺大型理论",
+    "source_id": "MD-7.10-MomentumRedrawLimit"
+  },
+  {
+    "name": "MD.Ch07.obaboInfinite",
+    "kind": "def",
+    "status": "定义",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "reason": null,
+    "source_id": "MD-7.10-OBABOOverdampedEuler"
+  },
+  {
+    "name": "MD.Ch07.overdampedEulerH",
+    "kind": "def",
+    "status": "定义",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "reason": null,
+    "source_id": "MD-7.10-OBABOOverdampedEuler"
+  },
+  {
+    "name": "MD.Ch07.overdampedEuler",
+    "kind": "def",
+    "status": "定义",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "reason": null,
+    "source_id": "MD-7.10-OBABOOverdampedEuler"
+  },
+  {
+    "name": "MD.Ch07.obaboInfinite_position",
+    "kind": "theorem",
+    "status": "已证",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "reason": null,
+    "source_id": "MD-7.10-OBABOOverdampedEuler"
+  },
+  {
+    "name": "MD.Ch07.overdampedEuler_rescale",
+    "kind": "theorem",
+    "status": "未证",
+    "axioms": [
+      "propext",
+      "sorryAx",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "reason": "缺大型理论",
+    "source_id": "MD-7.10-OBABOOverdampedEuler"
+  },
+  {
+    "name": "MD.Ch07.baoabInfinite",
+    "kind": "def",
+    "status": "定义",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "reason": null,
+    "source_id": "MD-7.10-BAOABLimitMethod"
+  },
+  {
+    "name": "MD.Ch07.lmStepH",
+    "kind": "def",
+    "status": "定义",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "reason": null,
+    "source_id": "MD-7.10-BAOABLimitMethod"
+  },
+  {
+    "name": "MD.Ch07.lmStep",
+    "kind": "def",
+    "status": "定义",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "reason": null,
+    "source_id": "MD-7.10-BAOABLimitMethod"
+  },
+  {
+    "name": "MD.Ch07.baoabInfinite_position",
+    "kind": "theorem",
+    "status": "已证",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "reason": null,
+    "source_id": "MD-7.10-BAOABLimitMethod"
+  },
+  {
+    "name": "MD.Ch07.lmStepH_rescale",
+    "kind": "theorem",
+    "status": "未证",
+    "axioms": [
+      "propext",
+      "sorryAx",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "reason": "时间盒止",
+    "source_id": "MD-7.10-BAOABLimitMethod"
+  },
+  {
+    "name": "MD.Ch07.coloredNoise",
+    "kind": "def",
+    "status": "定义",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "reason": null,
+    "source_id": "MD-7.10-ColoredNoiseAndExtension"
+  },
+  {
+    "name": "MD.Ch07.coloredNoise_covariance",
+    "kind": "theorem",
+    "status": "未证",
+    "axioms": [
+      "propext",
+      "sorryAx",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "reason": "缺大型理论",
+    "source_id": "MD-7.10-ColoredNoiseAndExtension"
+  },
+  {
+    "name": "MD.Ch07.lmExtendedStep",
+    "kind": "def",
+    "status": "定义",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "reason": null,
+    "source_id": "MD-7.10-ColoredNoiseAndExtension"
+  },
+  {
+    "name": "MD.Ch07.lmExtendedKernel",
+    "kind": "def",
+    "status": "定义",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "reason": null,
+    "source_id": "MD-7.10-ColoredNoiseAndExtension"
+  },
+  {
+    "name": "MD.Ch07.lmExtendedChain",
+    "kind": "def",
+    "status": "定义",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "reason": null,
+    "source_id": "MD-7.10-ColoredNoiseAndExtension"
+  },
+  {
+    "name": "MD.Ch07.lmExtendedChain_markov",
+    "kind": "theorem",
+    "status": "未证",
+    "axioms": [
+      "propext",
+      "sorryAx",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "reason": "缺大型理论",
+    "source_id": "MD-7.10-ColoredNoiseAndExtension"
+  },
+  {
+    "name": "MD.Ch07.lmTransientErrorBound",
+    "kind": "def",
+    "status": "定义",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "reason": null,
+    "source_id": "MD-7.10-LimitMethodAccuracy"
+  },
+  {
+    "name": "MD.Ch07.limitAccuracyPrinted",
+    "kind": "def",
+    "status": "定义",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "reason": null,
+    "source_id": "MD-7.10-LimitMethodAccuracy"
+  },
+  {
+    "name": "MD.Ch07.limitAccuracyPrinted_corrected",
+    "kind": "def",
+    "status": "定义",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "reason": null,
+    "source_id": "MD-7.10-LimitMethodAccuracy"
+  },
+  {
+    "name": "MD.Ch07.limitAccuracy_rescale",
+    "kind": "theorem",
+    "status": "已证",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "reason": null,
+    "source_id": "MD-7.10-LimitMethodAccuracy"
+  },
+  {
+    "name": "MD.Ch07.limitAccuracyInfiniteTime_corrected",
+    "kind": "def",
+    "status": "定义",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "reason": null,
+    "source_id": "MD-7.10-LimitMethodAccuracy"
+  },
+  {
+    "name": "MD.Ch07.zeroFrictionOU",
+    "kind": "theorem",
+    "status": "已证",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "reason": null,
+    "source_id": "MD-7.9.3-ZeroFrictionVerlet"
+  },
+  {
+    "name": "MD.Ch07.zeroFrictionBAOAB",
+    "kind": "theorem",
+    "status": "已证",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "reason": null,
+    "source_id": "MD-7.9.3-ZeroFrictionVerlet"
+  },
+  {
+    "name": "MD.Ch07.kineticTemperatureObservable",
+    "kind": "def",
+    "status": "定义",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "reason": null,
+    "source_id": "MD-7.11.1-TemperatureObservables"
+  },
+  {
+    "name": "MD.Ch07.configurationTemperatureObservable",
+    "kind": "def",
+    "status": "定义",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "reason": null,
+    "source_id": "MD-7.11.1-TemperatureObservables"
+  },
+  {
+    "name": "MD.Ch07.kineticTemperature",
+    "kind": "theorem",
+    "status": "未证",
+    "axioms": [
+      "propext",
+      "sorryAx",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "reason": "缺大型理论",
+    "source_id": "MD-7.11.1-TemperatureObservables"
+  },
+  {
+    "name": "MD.Ch07.configurationTemperature",
+    "kind": "theorem",
+    "status": "未证",
+    "axioms": [
+      "propext",
+      "sorryAx",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "reason": "缺大型理论",
+    "source_id": "MD-7.11.1-TemperatureObservables"
+  },
+  {
+    "name": "MD.Ch07.velocityAutocorrelation",
+    "kind": "def",
+    "status": "定义",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "reason": null,
+    "source_id": "MD-7.11.1-VelocityAutocorrelationDefinition"
+  },
+  {
+    "name": "MD.Ch07.greenKuboDiffusion",
+    "kind": "def",
+    "status": "定义",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "reason": null,
+    "source_id": "MD-7.11.1-VelocityAutocorrelationDefinition"
+  },
+  {
+    "name": "MD.Ch07.autocorrelation_rescale",
+    "kind": "theorem",
+    "status": "已证",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "reason": null,
+    "source_id": "MD-7.11.1-VelocityAutocorrelationDefinition"
+  },
+  {
+    "name": "MD.Ch07.constraintJacobian",
+    "kind": "def",
+    "status": "定义",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "reason": null,
+    "source_id": "MD-7.12-ConstrainedLangevin"
+  },
+  {
+    "name": "MD.Ch07.constraintReaction",
+    "kind": "def",
+    "status": "定义",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "reason": null,
+    "source_id": "MD-7.12-ConstrainedLangevin"
+  },
+  {
+    "name": "MD.Ch07.hiddenConstraint",
+    "kind": "def",
+    "status": "定义",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "reason": null,
+    "source_id": "MD-7.12-ConstrainedLangevin"
+  },
+  {
+    "name": "MD.Ch07.cotangentConstraint",
+    "kind": "def",
+    "status": "定义",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "reason": null,
+    "source_id": "MD-7.12-ConstrainedLangevin"
+  },
+  {
+    "name": "MD.Ch07.constrainedLangevin",
+    "kind": "def",
+    "status": "定义",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "reason": null,
+    "source_id": "MD-7.12-ConstrainedLangevin"
+  },
+  {
+    "name": "MD.Ch07.constrainedLangevin_corrected",
+    "kind": "def",
+    "status": "定义",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "reason": null,
+    "source_id": "MD-7.12-ConstrainedLangevin"
+  },
+  {
+    "name": "MD.Ch07.constrainedCanonical",
+    "kind": "def",
+    "status": "定义",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "reason": null,
+    "source_id": "MD-7.12-ConstrainedCanonicalErgodicity"
+  },
+  {
+    "name": "MD.Ch07.constrainedReference",
+    "kind": "def",
+    "status": "定义",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "reason": null,
+    "source_id": "MD-7.12-ConstrainedCanonicalErgodicity"
+  },
+  {
+    "name": "MD.Ch07.constrainedErgodicAverages",
+    "kind": "def",
+    "status": "定义",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "reason": null,
+    "source_id": "MD-7.12-ConstrainedCanonicalErgodicity"
+  },
+  {
+    "name": "MD.Ch07.constrainedCanonicalQualification",
+    "kind": "def",
+    "status": "定义",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "reason": null,
+    "source_id": "MD-7.12-ConstrainedCanonicalErgodicity"
+  },
+  {
+    "name": "MD.Ch07.constrainedHField",
+    "kind": "def",
+    "status": "定义",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "reason": null,
+    "source_id": "MD-7.12-ConstrainedHOSplitting"
+  },
+  {
+    "name": "MD.Ch07.constrainedOField",
+    "kind": "def",
+    "status": "定义",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "reason": null,
+    "source_id": "MD-7.12-ConstrainedHOSplitting"
+  },
+  {
+    "name": "MD.Ch07.constrainedHOComposition",
+    "kind": "def",
+    "status": "定义",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "reason": null,
+    "source_id": "MD-7.12-ConstrainedHOSplitting"
+  },
+  {
+    "name": "MD.Ch07.constrainedONoise",
+    "kind": "def",
+    "status": "定义",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "reason": null,
+    "source_id": "MD-7.12-ConstrainedHOSplitting"
+  },
+  {
+    "name": "MD.Ch07.constrainedHIntegralStep",
+    "kind": "def",
+    "status": "定义",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "reason": null,
+    "source_id": "MD-7.12-ConstrainedHOSplitting"
+  },
+  {
+    "name": "MD.Ch07.constrainedOIntegralStep",
+    "kind": "def",
+    "status": "定义",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "reason": null,
+    "source_id": "MD-7.12-ConstrainedHOSplitting"
+  },
+  {
+    "name": "MD.Ch07.constrainedHMapQualification",
+    "kind": "def",
+    "status": "定义",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "reason": null,
+    "source_id": "MD-7.12-ConstrainedHOSplitting"
+  },
+  {
+    "name": "MD.Ch07.constrainedOMapQualification",
+    "kind": "def",
+    "status": "定义",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "reason": null,
+    "source_id": "MD-7.12-ConstrainedHOSplitting"
+  },
+  {
+    "name": "MD.Ch07.constrainedHOQualifiedComposition",
+    "kind": "def",
+    "status": "定义",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "reason": null,
+    "source_id": "MD-7.12-ConstrainedHOSplitting"
+  },
+  {
+    "name": "MD.Ch07.midpointConstrainedORelation",
+    "kind": "def",
+    "status": "定义",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "reason": null,
+    "source_id": "MD-7.12-MEVMEAlgorithm"
+  },
+  {
+    "name": "MD.Ch07.constrainedVerletRelation",
+    "kind": "def",
+    "status": "定义",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "reason": null,
+    "source_id": "MD-7.12-MEVMEAlgorithm"
+  },
+  {
+    "name": "MD.Ch07.mevmeRelation",
+    "kind": "def",
+    "status": "定义",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "reason": null,
+    "source_id": "MD-7.12-MEVMEAlgorithm"
+  },
+  {
+    "name": "MD.Ch07.multiplierLinearSystem",
+    "kind": "def",
+    "status": "定义",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "reason": null,
+    "source_id": "MD-7.12-MidpointStabilityPrinted"
+  },
+  {
+    "name": "MD.Ch07.midpointAmplification",
+    "kind": "def",
+    "status": "定义",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "reason": null,
+    "source_id": "MD-7.12-MidpointStabilityPrinted"
+  },
+  {
+    "name": "MD.Ch07.midpointStabilityPrinted",
+    "kind": "def",
+    "status": "定义",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "reason": null,
+    "source_id": "MD-7.12-MidpointStabilityPrinted"
+  },
+  {
+    "name": "MD.Ch07.midpointStabilityPrinted_corrected",
+    "kind": "theorem",
+    "status": "已证",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "reason": null,
+    "source_id": "MD-7.12-MidpointStabilityPrinted"
+  },
+  {
+    "name": "MD.Ch07.midpointStability_counterexample",
+    "kind": "theorem",
+    "status": "已证",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "reason": null,
+    "source_id": "MD-7.12-MidpointStabilityPrinted"
+  },
+  {
+    "name": "MD.Ch07.constrainedAField",
+    "kind": "def",
+    "status": "定义",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "reason": null,
+    "source_id": "MD-7.12.1-ConstrainedABOSplitting"
+  },
+  {
+    "name": "MD.Ch07.constrainedBField",
+    "kind": "def",
+    "status": "定义",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "reason": null,
+    "source_id": "MD-7.12.1-ConstrainedABOSplitting"
+  },
+  {
+    "name": "MD.Ch07.geodesicConstraintFlow",
+    "kind": "def",
+    "status": "定义",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "reason": null,
+    "source_id": "MD-7.12.1-ConstrainedABOSplitting"
+  },
+  {
+    "name": "MD.Ch07.constrainedKickRelation",
+    "kind": "def",
+    "status": "定义",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "reason": null,
+    "source_id": "MD-7.12.1-ConstrainedABOSplitting"
+  },
+  {
+    "name": "MD.Ch07.constrainedExactORelation",
+    "kind": "def",
+    "status": "定义",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "reason": null,
+    "source_id": "MD-7.12.1-ConstrainedABOSplitting"
+  },
+  {
+    "name": "MD.Ch07.constrainedBAOABRelation",
+    "kind": "def",
+    "status": "定义",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "reason": null,
+    "source_id": "MD-7.12.1-ConstrainedBAOABAlgorithm"
+  },
+  {
+    "name": "MD.Ch07.constrainedBAOAB_constraint",
+    "kind": "theorem",
+    "status": "已证",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "reason": null,
+    "source_id": "MD-7.12.1-ConstrainedBAOABAlgorithm"
+  },
+  {
+    "name": "MD.Ch07.localMapErrorBound",
+    "kind": "def",
+    "status": "定义",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "reason": null,
+    "source_id": "MD-7.12.1-ApproximateGeodesicOrder"
+  },
+  {
+    "name": "MD.Ch07.geodesicReplacementSecondOrder",
+    "kind": "def",
+    "status": "定义",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "reason": null,
+    "source_id": "MD-7.12.1-ApproximateGeodesicOrder"
+  },
+  {
+    "name": "MD.Ch07.Mat2",
+    "kind": "abbrev",
+    "status": "定义",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "reason": null,
+    "source_id": "MD-7.13-FastSlowHarmonicModel"
+  },
+  {
+    "name": "MD.Ch07.fastPotential",
+    "kind": "def",
+    "status": "定义",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "reason": null,
+    "source_id": "MD-7.13-FastSlowHarmonicModel"
+  },
+  {
+    "name": "MD.Ch07.slowPotential",
+    "kind": "def",
+    "status": "定义",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "reason": null,
+    "source_id": "MD-7.13-FastSlowHarmonicModel"
+  },
+  {
+    "name": "MD.Ch07.fastMatrix",
+    "kind": "def",
+    "status": "定义",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "reason": null,
+    "source_id": "MD-7.13-FastSlowHarmonicModel"
+  },
+  {
+    "name": "MD.Ch07.slowMatrix",
+    "kind": "def",
+    "status": "定义",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "reason": null,
+    "source_id": "MD-7.13-FastSlowHarmonicModel"
+  },
+  {
+    "name": "MD.Ch07.fastLangevin",
+    "kind": "def",
+    "status": "定义",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "reason": null,
+    "source_id": "MD-7.13-FastSlowHarmonicModel"
+  },
+  {
+    "name": "MD.Ch07.fastExponential",
+    "kind": "def",
+    "status": "定义",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "reason": null,
+    "source_id": "MD-7.13-ExactFastGaussianLaw"
+  },
+  {
+    "name": "MD.Ch07.fastCovariance",
+    "kind": "def",
+    "status": "定义",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "reason": null,
+    "source_id": "MD-7.13-ExactFastGaussianLaw"
+  },
+  {
+    "name": "MD.Ch07.exactFastGaussianLaw",
+    "kind": "theorem",
+    "status": "未证",
+    "axioms": [
+      "propext",
+      "sorryAx",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "reason": "缺大型理论",
+    "source_id": "MD-7.13-ExactFastGaussianLaw"
+  },
+  {
+    "name": "MD.Ch07.multipleX",
+    "kind": "def",
+    "status": "定义",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "reason": null,
+    "source_id": "MD-7.13-MultipleTimestepUpdate"
+  },
+  {
+    "name": "MD.Ch07.multipleY",
+    "kind": "def",
+    "status": "定义",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "reason": null,
+    "source_id": "MD-7.13-MultipleTimestepUpdate"
+  },
+  {
+    "name": "MD.Ch07.multipleStep",
+    "kind": "def",
+    "status": "定义",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "reason": null,
+    "source_id": "MD-7.13-MultipleTimestepUpdate"
+  },
+  {
+    "name": "MD.Ch07.multipleStep_composition",
+    "kind": "theorem",
+    "status": "已证",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "reason": null,
+    "source_id": "MD-7.13-MultipleTimestepUpdate"
+  },
+  {
+    "name": "MD.Ch07.traceFormula",
+    "kind": "def",
+    "status": "定义",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "reason": null,
+    "source_id": "MD-7.13-DeterminantTrace"
+  },
+  {
+    "name": "MD.Ch07.determinantTrace",
+    "kind": "theorem",
+    "status": "未证",
+    "axioms": [
+      "propext",
+      "sorryAx",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "reason": "缺大型理论",
+    "source_id": "MD-7.13-DeterminantTrace"
+  },
+  {
+    "name": "MD.Ch07.characteristicUnitDisk",
+    "kind": "def",
+    "status": "定义",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "reason": null,
+    "source_id": "MD-7.13-SpectralRadiusStability"
+  },
+  {
+    "name": "MD.Ch07.spectralRadiusStability",
+    "kind": "theorem",
+    "status": "未证",
+    "axioms": [
+      "propext",
+      "sorryAx",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "reason": "缺大型理论",
+    "source_id": "MD-7.13-SpectralRadiusStability"
+  },
+  {
+    "name": "MD.Ch07.hyperbolicStability",
+    "kind": "def",
+    "status": "定义",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "reason": null,
+    "source_id": "MD-7.13-SpectralRadiusStability"
+  },
+  {
+    "name": "MD.Ch07.multipleX_spectral_hyperbolic",
+    "kind": "theorem",
+    "status": "未证",
+    "axioms": [
+      "propext",
+      "sorryAx",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "reason": "缺大型理论",
+    "source_id": "MD-7.13-SpectralRadiusStability"
+  },
+  {
+    "name": "MD.Ch07.hyperbolicPhase",
+    "kind": "def",
+    "status": "定义",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "reason": null,
+    "source_id": "MD-7.13-HyperbolicPhaseTransform"
+  },
+  {
+    "name": "MD.Ch07.hyperbolicPhase_identity",
+    "kind": "theorem",
+    "status": "已证",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "reason": null,
+    "source_id": "MD-7.13-HyperbolicPhaseTransform"
+  },
+  {
+    "name": "MD.Ch07.underdampedPhasePrinted",
+    "kind": "def",
+    "status": "定义",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "reason": null,
+    "source_id": "MD-7.13-UnderdampedPhasePrinted"
+  },
+  {
+    "name": "MD.Ch07.underdampedPhasePrinted_corrected",
+    "kind": "def",
+    "status": "定义",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "reason": null,
+    "source_id": "MD-7.13-UnderdampedPhasePrinted"
+  },
+  {
+    "name": "MD.Ch07.underdampedPhase_identity",
+    "kind": "theorem",
+    "status": "已证",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "reason": null,
+    "source_id": "MD-7.13-UnderdampedPhasePrinted"
+  },
+  {
+    "name": "MD.Ch07.stabilityEnvelope",
+    "kind": "def",
+    "status": "定义",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "reason": null,
+    "source_id": "MD-7.13-StabilityEnvelope"
+  },
+  {
+    "name": "MD.Ch07.stabilityEnvelope_sufficient",
+    "kind": "theorem",
+    "status": "已证",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "reason": null,
+    "source_id": "MD-7.13-StabilityEnvelope"
+  },
+  {
+    "name": "MD.Ch07.stabilityEnvelope_iff",
+    "kind": "theorem",
+    "status": "未证",
+    "axioms": [
+      "propext",
+      "sorryAx",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "reason": "缺大型理论",
+    "source_id": "MD-7.13-StabilityEnvelope"
+  },
+  {
+    "name": "MD.Ch07.frictionThresholdPrinted",
+    "kind": "def",
+    "status": "定义",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "reason": null,
+    "source_id": "MD-7.13-FrictionThresholdPrinted"
+  },
+  {
+    "name": "MD.Ch07.frictionThresholdPrinted_corrected",
+    "kind": "def",
+    "status": "定义",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "reason": null,
+    "source_id": "MD-7.13-FrictionThresholdPrinted"
+  },
+  {
+    "name": "MD.Ch07.frictionBoundPrinted",
+    "kind": "def",
+    "status": "定义",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "reason": null,
+    "source_id": "MD-7.13-FrictionThresholdPrinted"
+  },
+  {
+    "name": "MD.Ch07.frictionBoundPrinted_corrected",
+    "kind": "def",
+    "status": "定义",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "reason": null,
+    "source_id": "MD-7.13-FrictionThresholdPrinted"
+  },
+  {
+    "name": "MD.Ch07.frictionThreshold_rationalized",
+    "kind": "theorem",
+    "status": "未证",
+    "axioms": [
+      "propext",
+      "sorryAx",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "reason": "缺大型理论",
+    "source_id": "MD-7.13-FrictionThresholdPrinted"
+  },
+  {
+    "name": "MD.Ch07.frictionThreshold_allSteps",
+    "kind": "theorem",
+    "status": "未证",
+    "axioms": [
+      "propext",
+      "sorryAx",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "reason": "缺大型理论",
+    "source_id": "MD-7.13-FrictionThresholdPrinted"
+  },
+  {
+    "name": "MD.Ch07.frictionThreshold_asymptotic",
+    "kind": "theorem",
+    "status": "未证",
+    "axioms": [
+      "propext",
+      "sorryAx",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "reason": "缺大型理论",
+    "source_id": "MD-7.13-FrictionThresholdPrinted"
+  },
+  {
+    "name": "MD.Ch07.frictionThreshold_squared_counterexample",
+    "kind": "theorem",
+    "status": "已证",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "reason": null,
+    "source_id": "MD-7.13-FrictionThresholdPrinted"
+  },
+  {
+    "name": "MD.Ch07.configurationalSamplingAverage",
+    "kind": "def",
+    "status": "定义",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "reason": null,
+    "source_id": "MD-7.1-ConfigurationalSampling"
+  },
+  {
+    "name": "MD.Ch07.configurationalSamplingQualified",
+    "kind": "def",
+    "status": "定义",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "reason": null,
+    "source_id": "MD-7.1-ConfigurationalSampling"
+  },
+  {
+    "name": "MD.Ch07.energyConservingFlow",
+    "kind": "def",
+    "status": "定义",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "reason": null,
+    "source_id": "MD-7.1-HamiltonianSamplingObstruction"
+  },
+  {
+    "name": "MD.Ch07.energySublevel_invariant",
+    "kind": "theorem",
+    "status": "已证",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "reason": null,
+    "source_id": "MD-7.1-HamiltonianSamplingObstruction"
+  },
+  {
+    "name": "MD.Ch07.energyObstructionQualified",
+    "kind": "def",
+    "status": "定义",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "reason": null,
+    "source_id": "MD-7.1-HamiltonianSamplingObstruction"
+  }
+]

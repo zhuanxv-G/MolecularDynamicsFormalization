@@ -1,0 +1,13 @@
+--- submitted
++++ repaired
+@@ -5,4 +5,10 @@
+       if j = k then 1/2 else if j+1 = k ∨ k+1 = j then 1/4 else 0 := by
+   sorry
+ def lmExtendedStep (m : V n) (U : V n → ℝ) (θ τ : ℝ) (R : V n) (x : V n × V n) : V n × V n :=
+-  (lmStep m U θ τ R x.2 x.1,R)+  (lmStep m U θ τ R x.2 x.1,R)
++
++def lmExtendedKernel (m : V n) (U : V n → ℝ) (θ τ : ℝ)
++    (hstep : Measurable (fun z : (V n × V n) × V n ↦
++      lmExtendedStep m U θ τ z.2 z.1)) : Kernel (V n × V n) (V n × V n) :=
++  (Kernel.id.prod (Kernel.const (V n × V n) (Measure.pi (fun _ : Fin n ↦ gaussianReal 0 1)))).map
++    (fun z ↦ lmExtendedStep m U θ τ z.2 z.1)

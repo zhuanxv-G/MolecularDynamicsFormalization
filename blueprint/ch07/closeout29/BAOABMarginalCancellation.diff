@@ -1,0 +1,10 @@
+--- submitted
++++ repaired
+@@ -2,6 +2,7 @@
+     momentumAverage β (highFrictionCorrection 3 U β 0) q = 0 := by
+   sorry
+ theorem baoabConfigurationalCancellation (U φ : V n → ℝ) (β : ℝ) (hβ : 0 < β)
++    (hprob : IsProbabilityMeasure (positionGibbs U β))
+     (hint : Integrable (fun x ↦ φ x.1*highFrictionCorrection 3 U β 0 x)
+       (productGibbs (fun _ ↦ 1) U β)) :
+     (∫ x, φ x.1*highFrictionCorrection 3 U β 0 x ∂productGibbs (fun _ ↦ 1) U β) = 0 := by

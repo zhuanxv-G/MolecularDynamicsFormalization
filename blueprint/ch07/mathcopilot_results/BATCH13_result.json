@@ -1,0 +1,462 @@
+{
+  "batch": "BATCH13",
+  "chapter": "ch07",
+  "round": "first-merged",
+  "input_sha256": {
+    "Blueprint/Ch07.lean": "f30ea154ebfb07ae85c0b806ff74b35808d5a0c3dcaa647c0c3cc80a78239e37",
+    "blueprint/ch07/ch07_source.json": "c434892ebf63b06f7cadcdfa7af408c2c12d7b645d35db431d1855224163ba19"
+  },
+  "items": [
+    {
+      "source_id": "MD-7.8.1-FirstCorrectionTablePrinted",
+      "json_review": {
+        "status": "CORRECTED",
+        "issue_codes": [
+          "TRANSCRIPTION_SIGN_ERROR",
+          "FALSE_ERRATUM_CLAIM",
+          "LITERAL_LEAN_MISMATCH",
+          "LEAN_COVERAGE_GAP"
+        ],
+        "corrected_json": {
+          "source_id": "MD-7.8.1-FirstCorrectionTablePrinted",
+          "kind": "unnumbered_claim",
+          "label": "(7.25a)–(7.25d)",
+          "section": "7.8.1",
+          "printed_page": "293–294",
+          "pdf_page": "314–315",
+          "statement_latex": "In summary, we find that\n\\[f_{1,[ABO]}(q,p)=f_{1,[OAB]}(q,p)=\\frac\\beta2(\\gamma U(q)-p^TM^{-1}\\nabla U(q)-c),\\tag{7.25a}\\]\n\\[f_{1,[OBA]}(q,p)=f_{1,[BAO]}(q,p)=-\\frac\\beta2(\\gamma U(q)-p^TM^{-1}\\nabla U(q)-c),\\tag{7.25b}\\]\n\\[f_{1,[AOB]}(q,p)=-\\frac\\beta2(\\gamma U(q)+p^TM^{-1}\\nabla U(q)-c),\\tag{7.25c}\\]\n\\[f_{1,[BOA]}(q,p)=\\frac\\beta2(\\gamma U(q)+p^TM^{-1}\\nabla U(q)-c),\\tag{7.25d}\\]\nwhere the constant $c$ is chosen to ensure each correction function has average 0, giving $c=\\gamma\\langle U(q)\\rangle$.",
+          "proof_latex": null,
+          "proof_outline": null,
+          "proof_note": "原页推导与上下文全文见original_page_text；数学符号的排版以随附原页PDF为准。",
+          "original_page_text": [
+            {
+              "pdf_page": 314,
+              "printed_page": 293,
+              "text": "7.8\nFirst Order Schemes\n293\nThis is particularly useful as\nŒL\u0004\nA; L\u0004\nB\t\u0005ˇ D\n\u0006\nL\u0004\nAL\u0004\nB \u0003 L\u0004\nBL\u0004\nA\n\u0007\n\u0005ˇ D \u0003\n\u0006\nL\u0004\nA C L\u0004\nB\n\u0007 \u0004\ng.q; p/\u0005ˇ\n\u0005\nD\n\u0006\nL\u0004\nO \u0003 L\u0004\nLD\n\u0007 \u0004\ng.q; p/\u0005ˇ\n\u0005\n:\nNow notice that for a function .q/ purely of position, we have\nL\u0004\nLD\n\u0004\n .q/\u0005ˇ\n\u0005\nD \u0003\n\u0004\npTM\u00021r .q/\n\u0005\n\u0005ˇ.q; p/;\nand hence we can compute\nL\u0004\nO\n\u0004\ng.q; p/\u0005ˇ\n\u0005\nD \n\u0005ˇ\n\u0004\n\u0003p \u0002 rpg.q; p/ C ˇ\u00021rp \u0002 Mrpg.q; p/\n\u0005\n;\nD \u0003\ng.q; p/\u0005ˇ;\nD \nˇL\u0004\nLD\n\u0004\nU.q/\u0005ˇ\n\u0005\n:\nThis means that\nL\u0004\n1;\u0002ABO\u0003\u0005ˇ D \u00031\n2ŒL\u0004\nA; L\u0004\nB\t\u0005ˇ D \u00031\n2L\u0004\nLD\n\u0004\nŒ\nˇU.q/ \u0003 g.q; p/\t \u0005ˇ\n\u0005\n:\nHence, we can combine this equation with (7.21) to yield\nL\u0004\nLDf1;\u0002ABO\u0003\u0005ˇ D 1\n2L\u0004\nLD\n\u0004\nŒ\nˇU.q/ \u0003 g.q; p/\t \u0005ˇ\n\u0005\n;\nwith the general solution\nf1;\u0002ABO\u0003 D ˇ\n2\n\u0004\n\nU.q/ \u0003 pTM\u00021rU.q/ \u0003 c\n\u0005\n;\nwhere c D \nhU.q/i is a constant, chosen to ensure that the average of the correction\nfunction is zero. This solution gives the leading order correction for the three related\nschemes in (7.23).\nFor the ﬁnal two schemes, we can compute the correction function through the\nuse of (7.24). Our previous work has computed the second term on the right hand\nside already, so we are left with the initial term. However, its expression reduces\nquite easily, as\nŒL\u0004\nA \u0003 L\u0004\nB; L\u0004\nO\t\u0005ˇ D \u0003L\u0004\nO\n\u0006\nL\u0004\nA \u0003 L\u0004\nB\n\u0007\n\u0005ˇ;\nD \u00032L\u0004\nO\n\u0004\ng.q; p/\u0005ˇ\n\u0005\n;\nD \u00032\nˇL\u0004\nLD\n\u0004\nU.q/\u0005ˇ\n\u0005\n:\n"
+            },
+            {
+              "pdf_page": 315,
+              "printed_page": 294,
+              "text": "294\n7\nNumerical Methods for Stochastic Molecular Dynamics\nAnd hence we have\nL\u0004\nLD\n\u0004\nf1;\u0002AOB\u0003\u0005ˇ\n\u0005\nD L\u0004\nLD\n\u0004\nf1;\u0002ABO\u0003\u0005ˇ\n\u0005\n\u0003 \nˇL\u0004\nLD\n\u0004\nU.q/\u0005ˇ\n\u0005\n;\ngiving the general solution\nf1;\u0002AOB\u0003 D \u0003ˇ\n2\n\u0004\n\nU.q/ C pTM\u00021rU.q/ \u0003 c\n\u0005\n;\nfor the same choice of c.\nHence using the symmetry in the commutators we are able to solve for the leading\norder corrections for each of the schemes of the form \u0002XYZ\u0003. In summary, we ﬁnd\nthat\nf1;\u0002ABO\u0003.q; p/ D f1;\u0002OAB\u0003.q; p/ D ˇ\n2\n\u0004\n\nU.q/ \u0003 pTM\u00021rU.q/ \u0003 c\n\u0005\n;\n(7.25a)\nf1;\u0002OBA\u0003.q; p/ D f1;\u0002BAO\u0003.q; p/ D \u0003ˇ\n2\n\u0004\n\nU.q/ \u0003 pTM\u00021rU.q/ \u0003 c\n\u0005\n;\n(7.25b)\nf1;\u0002AOB\u0003.q; p/ D \u0003ˇ\n2\n\u0004\n\nU.q/ C pTM\u00021rU.q/ \u0003 c\n\u0005\n;\n(7.25c)\nf1;\u0002BOA\u0003.q; p/ D ˇ\n2\n\u0004\n\nU.q/ C pTM\u00021rU.q/ \u0003 c\n\u0005\n;\n(7.25d)\nwhere the constant c is chosen to ensure each correction function has average 0,\ngiving c D \nhU.q/i. If required, we may continue this procedure in order to ﬁnd\ncorrection functions for higher orders, though the added complexity means that we\ncannot always solve to ﬁnd an explicit solution.\nThe results of our analysis suggest that to leading order the error scales linearly\nwith the reciprocal temperature ˇ, but more importantly a non-constant term appears\nwhich is of order \n. As our correction is of the form h#f1i we can see that if # D\n#1.p/ then this O.\n/ term will not trouble us, as\nh#1.p/f1.q; p/i D ˙ˇ\n2\n˝\n.\nU.q/ \u0003 c/#1.p/ ˙ pTM\u00021rU.q/#1.p/\n˛\nD ˙ˇ\n2\n˝\npTM\u00021rU.q/#1.p/\n˛\n;\nwhere the sign depends on the particular scheme used (which governs the form of\nf1). Thus in the case of a function of pure momentum the order \n term does not\n"
+            }
+          ],
+          "transcription_note": "PDF文字层原样保留，陈述中的数学排版转写为LaTeX；文字层有特殊字形编码时以目视原页为准。PDF347的Exercises之后不在正文范围内。",
+          "context_notation": [],
+          "extra_assumptions": [
+            "六个排列依次为ABO,OAB,OBA,BAO,AOB,BOA。现有_corrected恢复PDF字面正号，非原书勘误。",
+            "PDE对任意c成立；c=γ〈U〉和零均值需另行陈述。"
+          ],
+          "issues": [
+            "A：附件第7页(7.25c)括号内清楚印为“γU(q)+pᵀM⁻¹∇U(q)−c”，而非JSON所引负号；同页上方推导也为正号。本条issues声称“原书印负号”与附件矛盾，必须删除该伪勘误。",
+            "C：firstCorrectionTablePrinted把s=4和s=2,3合并，故所谓Printed字面版不忠实。_corrected的s=4实际上恢复了原书本来就有的正号；数值不等式只是两种转写不同，不能充当原书错误的反例。",
+            "C：firstCorrectionTable_pde对修复后的六种排列陈述正确，但c任意；c=γ〈U〉及各方案零均值没有在本条Lean中陈述。"
+          ],
+          "statement_scope": "完整原文(7.25a)–(7.25d)及c=γ〈U〉保留；Printed的s=4有转写错误，PDE覆盖正确六式但本条未形式化中心化。",
+          "lean_decl": "MD.Ch07.firstCorrectionTablePrinted",
+          "lean_declarations": [
+            "MD.Ch07.firstCorrectionTablePrinted",
+            "MD.Ch07.firstCorrectionTablePrinted_corrected",
+            "MD.Ch07.firstCorrection_sign_counterexample",
+            "MD.Ch07.phaseComm",
+            "MD.Ch07.firstCorrectionRHS",
+            "MD.Ch07.firstCorrectionTable_pde"
+          ],
+          "source_page_verification": "本次实际目视核对 R4_PAGES.pdf 对应页；重复页渲染SHA256一致。详见本条 evidence。",
+          "repair_log": [
+            "R4审校：附件(7.25c)原本就是正号；撤销“原书负号”的勘误判断，恢复原文转写。"
+          ],
+          "documented_priors": []
+        },
+        "issues": [
+          "A：附件第7页(7.25c)括号内清楚印为“γU(q)+pᵀM⁻¹∇U(q)−c”，而非JSON所引负号；同页上方推导也为正号。本条issues声称“原书印负号”与附件矛盾，必须删除该伪勘误。",
+          "C：firstCorrectionTablePrinted把s=4和s=2,3合并，故所谓Printed字面版不忠实。_corrected的s=4实际上恢复了原书本来就有的正号；数值不等式只是两种转写不同，不能充当原书错误的反例。",
+          "C：firstCorrectionTable_pde对修复后的六种排列陈述正确，但c任意；c=γ〈U〉及各方案零均值没有在本条Lean中陈述。"
+        ],
+        "evidence": [
+          "目视附件6–7（原PDF314–315／印刷293–294），尤其附件7中部(7.25c)；附件8与7逐字节同图。",
+          "原页四行对应ABO/OAB：+β/2(γU−v−c)，OBA/BAO：−β/2(γU−v−c)，AOB：−β/2(γU+v−c)，BOA：+β/2(γU+v−c)。",
+          "原页(7.25d)下方明确c=γ〈U(q)〉。firstCorrectionRHS的正1/2交换子和为−L1ρ，排列元组与s=0,…,5对应正确。",
+          "审校方式：只读R4_任务.md的本条Lean及其摘录项目定义，Mathlib按标准含义采信；未修改工程、未补证明、未调用Lean编译器，不因sorry判FAIL。未发现任何字面的[EXTRA]或[ERRATUM?]标签；额外假设与原书疑误按语义逐项核对，建议标签仅写入本审校JSON。",
+          "本次附件R4_PAGES.pdf SHA256=133d111b38c222acf5f8a9b401286106f513aca299e119dc65d034e915f0c931；本条input_sha256严格回显任务所列旧文件键和值，不宣称与当前文件重新计算一致。"
+        ]
+      },
+      "audit": {
+        "lean_decl": [
+          "MD.Ch07.firstCorrectionTablePrinted",
+          "MD.Ch07.firstCorrectionTablePrinted_corrected",
+          "MD.Ch07.firstCorrection_sign_counterexample",
+          "MD.Ch07.phaseComm",
+          "MD.Ch07.firstCorrectionRHS",
+          "MD.Ch07.firstCorrectionTable_pde"
+        ],
+        "verdict": "FAIL",
+        "explanation": "C分项：Printed定义FAIL（s=4字面符号错误）；_corrected定义PASS（其数学公式就是PDF字面正确式）；firstCorrection_sign_counterexample的实数不等式PASS，但仅说明错误转写与正确转写不等；phaseComm与firstCorrectionRHS PASS；firstCorrectionTable_pde的正质量、正β、光滑U、任意常数c下的全部六个PDE签名PASS。汇总FAIL因为Printed不忠实且完整零均值结论缺失。不能把本条问题归为原书勘误。",
+        "counterexample": "取n=1，m=β=γ=1，U(q)=(q²+1)/2，q=p=1，c=0，则U=1、v=1。PDF的AOB值为−1；现有firstCorrectionTablePrinted(s=4)值为0。势函数光滑且Gibbs可归一。",
+        "suggested_fix": "在JSON中将(7.25c)恢复正号，删除原书印负号的issues；把现有_corrected登记为恢复转写而非数学勘误。以后修订工程时修复Printed分支并另列中心化义务；本次仅报告。"
+      },
+      "subtask": "BATCH13a",
+      "input_sha256": {
+        "Blueprint/Ch07.lean": "f30ea154ebfb07ae85c0b806ff74b35808d5a0c3dcaa647c0c3cc80a78239e37",
+        "blueprint/ch07/ch07_source.json": "c434892ebf63b06f7cadcdfa7af408c2c12d7b645d35db431d1855224163ba19",
+        "BATCH13a_PAGES.pdf": "5936441fce2f6b97ec999c65899b87765f917af4e87defa8099f4fd45fa7bdf4"
+      }
+    },
+    {
+      "source_id": "MD-7.8.1-PositionMomentumCorrections",
+      "json_review": {
+        "status": "CORRECTED",
+        "issue_codes": [
+          "EDITORIAL_PARAPHRASE"
+        ],
+        "corrected_json": {
+          "source_id": "MD-7.8.1-PositionMomentumCorrections",
+          "kind": "unnumbered_claim",
+          "label": null,
+          "section": "7.8.1",
+          "printed_page": "294–295",
+          "pdf_page": "315–316",
+          "statement_latex": "As our correction is of the form $h\\langle\\vartheta f_1\\rangle$ we can see that if $\\vartheta=\\vartheta_1(p)$ then this $O(\\gamma)$ term will not trouble us, as\n\\[\\langle\\vartheta_1(p)f_1(q,p)\\rangle=\\pm\\frac\\beta2\\langle(\\gamma U(q)-c)\\vartheta_1(p)\\pm p^TM^{-1}\\nabla U(q)\\vartheta_1(p)\\rangle\n=\\pm\\frac\\beta2\\langle p^TM^{-1}\\nabla U(q)\\vartheta_1(p)\\rangle.\\]\nHowever, if we instead set $\\vartheta=\\vartheta_2(q)$, then\n\\[\\langle\\vartheta_2(q)f_1(q,p)\\rangle=\\pm\\frac{\\gamma\\beta}{2}\\langle(U(q)-\\langle U(q)\\rangle)\\vartheta_2(q)\\rangle.\\]",
+          "proof_latex": null,
+          "proof_outline": null,
+          "proof_note": "原页推导与上下文全文见original_page_text；数学符号的排版以随附原页PDF为准。",
+          "original_page_text": [
+            {
+              "pdf_page": 315,
+              "printed_page": 294,
+              "text": "294\n7\nNumerical Methods for Stochastic Molecular Dynamics\nAnd hence we have\nL\u0004\nLD\n\u0004\nf1;\u0002AOB\u0003\u0005ˇ\n\u0005\nD L\u0004\nLD\n\u0004\nf1;\u0002ABO\u0003\u0005ˇ\n\u0005\n\u0003 \nˇL\u0004\nLD\n\u0004\nU.q/\u0005ˇ\n\u0005\n;\ngiving the general solution\nf1;\u0002AOB\u0003 D \u0003ˇ\n2\n\u0004\n\nU.q/ C pTM\u00021rU.q/ \u0003 c\n\u0005\n;\nfor the same choice of c.\nHence using the symmetry in the commutators we are able to solve for the leading\norder corrections for each of the schemes of the form \u0002XYZ\u0003. In summary, we ﬁnd\nthat\nf1;\u0002ABO\u0003.q; p/ D f1;\u0002OAB\u0003.q; p/ D ˇ\n2\n\u0004\n\nU.q/ \u0003 pTM\u00021rU.q/ \u0003 c\n\u0005\n;\n(7.25a)\nf1;\u0002OBA\u0003.q; p/ D f1;\u0002BAO\u0003.q; p/ D \u0003ˇ\n2\n\u0004\n\nU.q/ \u0003 pTM\u00021rU.q/ \u0003 c\n\u0005\n;\n(7.25b)\nf1;\u0002AOB\u0003.q; p/ D \u0003ˇ\n2\n\u0004\n\nU.q/ C pTM\u00021rU.q/ \u0003 c\n\u0005\n;\n(7.25c)\nf1;\u0002BOA\u0003.q; p/ D ˇ\n2\n\u0004\n\nU.q/ C pTM\u00021rU.q/ \u0003 c\n\u0005\n;\n(7.25d)\nwhere the constant c is chosen to ensure each correction function has average 0,\ngiving c D \nhU.q/i. If required, we may continue this procedure in order to ﬁnd\ncorrection functions for higher orders, though the added complexity means that we\ncannot always solve to ﬁnd an explicit solution.\nThe results of our analysis suggest that to leading order the error scales linearly\nwith the reciprocal temperature ˇ, but more importantly a non-constant term appears\nwhich is of order \n. As our correction is of the form h#f1i we can see that if # D\n#1.p/ then this O.\n/ term will not trouble us, as\nh#1.p/f1.q; p/i D ˙ˇ\n2\n˝\n.\nU.q/ \u0003 c/#1.p/ ˙ pTM\u00021rU.q/#1.p/\n˛\nD ˙ˇ\n2\n˝\npTM\u00021rU.q/#1.p/\n˛\n;\nwhere the sign depends on the particular scheme used (which governs the form of\nf1). Thus in the case of a function of pure momentum the order \n term does not\n"
+            },
+            {
+              "pdf_page": 316,
+              "printed_page": 295,
+              "text": "7.8\nFirst Order Schemes\n295\nappear. However, if we instead set # D #2.q/, then\nh#2.q/f1.q; p/i D ˙ˇ\n2\n˝\n.\nU.q/ \u0003 c/#2.q/ ˙ pTM\u00021rU.q/#2.q/\n˛\nD ˙\nˇ\n2 h.U.q/ \u0003 hU.q/i/#2.q/i ;\nin which case our correction becomes O.\n/. This is potentially disastrous if we\nchoose the friction to be large (consider \n\u0005 h\u00021), as the error introduced\nthrough discretization will dominate the true average to be sampled. Examining\nthe algorithms themselves this is unsurprising, as although we have integrated\nthe Ornstein-Uhlenbeck process exactly, when considering the limit of inﬁnite\nfriction in the \u0002XYZ\u0003 schemes we obtain an inconsistent discretization. Hence these\nﬁrst-order schemes will be unsuitable for the integration of overdamped Langevin\ndynamics.\nThis is not always the case for ﬁrst order schemes, however. For example the\nscheme denoted \u0002AOAB\u0003 is consistent with the dynamics, and may be used for\nintegrating the overdamped (\n D 1) Langevin equation.\n7.8.2\nNumerical Experiment\nLet us consider testing the computed ﬁrst order corrections on a one dimensional\nexample. Let M D ˇ D 1 and deﬁne the biased double-well potential as\nU.q/ D .q2 \u0003 1/2 C q=2:\nWe shall consider computing the average of a speciﬁc observable #.q; p/, and\nestimating the error due to discretization using the correction functions given\nin (7.25), where we choose the observable\n#.q; p/ D p2 \u0003 qU0.q/ C 2qp;\nh#i D 0:\nThe low dimensionality of the problem and the simplicity of the observable and\npotential energy function make resolving the perfect sampling bias to leading order\nan easy task, allowing us to give a good estimate (to order h2) of the discretization\nerror. In Fig. 7.4 we plot the results of h#ih computed via numerical experiment,\nusing each of the six ﬁrst order schemes at either \n D 1 or \n D 2, and compare\nthem to our ﬁrst order prediction\nh#ih \u0007 h#i C hhf1#i:\nThe numerical experiment at each timestep is averaged from 16 independent\nexperiments, each running over a time interval of 108. The results match our\n"
+            }
+          ],
+          "transcription_note": "PDF文字层原样保留，陈述中的数学排版转写为LaTeX；文字层有特殊字形编码时以目视原页为准。PDF347的Exercises之后不在正文范围内。",
+          "context_notation": [],
+          "extra_assumptions": [
+            "产品Gibbs实际含位置概率及独立中心Gaussian动量；所有显示期望需可积，未把待求修正值作为假设。",
+            "六个算法分别给符号；大摩擦O(γ)的解释来自明确线性γ项，随γ,h的统一误差界未证明。"
+          ],
+          "issues": [
+            "A：数学公式与附件8–9相符；开头“If … then this O(γ) term …”是编辑重组，并非原页连续逐字引用。原页为“As our correction is of the form h〈ϑf1〉 we can see that if …”。按逐字要求恢复此句；原文两层±是方案相关的独立符号，不能固定成同一符号。"
+          ],
+          "statement_scope": "本条逐字引用的全部数学对象与公式；未纳入的上下文另列。",
+          "lean_decl": "MD.Ch07.positionGibbs",
+          "lean_declarations": [
+            "MD.Ch07.positionGibbs",
+            "MD.Ch07.momentumGibbs",
+            "MD.Ch07.productGibbs",
+            "MD.Ch07.positionMomentumCorrections"
+          ],
+          "source_page_verification": "本次实际目视核对 R4_PAGES.pdf 对应页；重复页渲染SHA256一致。详见本条 evidence。",
+          "repair_log": [],
+          "documented_priors": []
+        },
+        "issues": [
+          "A：数学公式与附件8–9相符；开头“If … then this O(γ) term …”是编辑重组，并非原页连续逐字引用。原页为“As our correction is of the form h〈ϑf1〉 we can see that if …”。按逐字要求恢复此句；原文两层±是方案相关的独立符号，不能固定成同一符号。"
+        ],
+        "evidence": [
+          "目视附件8–9（原PDF315–316／印刷294–295；分别与附件7、10–11同图）。纯位置式系数为±γβ/2。",
+          "按s=0,…,5，Lean的sign为(+,+,−,−,−,+)，vsign为(−,−,+,+,−,+)，分别吻合六个正确修正函数的U项和v项。",
+          "审校方式：只读R4_任务.md的本条Lean及其摘录项目定义，Mathlib按标准含义采信；未修改工程、未补证明、未调用Lean编译器，不因sorry判FAIL。未发现任何字面的[EXTRA]或[ERRATUM?]标签；额外假设与原书疑误按语义逐项核对，建议标签仅写入本审校JSON。",
+          "本次附件R4_PAGES.pdf SHA256=133d111b38c222acf5f8a9b401286106f513aca299e119dc65d034e915f0c931；本条input_sha256严格回显任务所列旧文件键和值，不宣称与当前文件重新计算一致。"
+        ]
+      },
+      "audit": {
+        "lean_decl": [
+          "MD.Ch07.positionGibbs",
+          "MD.Ch07.momentumGibbs",
+          "MD.Ch07.productGibbs",
+          "MD.Ch07.positionMomentumCorrections"
+        ],
+        "verdict": "PASS",
+        "explanation": "C：positionGibbs是真实归一位置权；hprob明确保证其质量1而不依赖未经说明的配分函数资格。momentumGibbs为方差m_i/β的独立中心高斯，正质量及正β排除非物理退化。productGibbs保留(q,p)次序。U、ψ、χ、各梯度及所有六种加权修正期望可积均有明示前提；动量均值零消去位置观测的v项，独立性与c=γ〈U〉消去动量观测的γ项。所有s、两条积分结论与符号正确。无大摩擦统一余项的虚假结论。",
+        "counterexample": null,
+        "suggested_fix": "仅将摘录开头恢复为原页连续原句；Lean签名无需修改。"
+      },
+      "subtask": "BATCH13b",
+      "input_sha256": {
+        "Blueprint/Ch07.lean": "f30ea154ebfb07ae85c0b806ff74b35808d5a0c3dcaa647c0c3cc80a78239e37",
+        "blueprint/ch07/ch07_source.json": "c434892ebf63b06f7cadcdfa7af408c2c12d7b645d35db431d1855224163ba19",
+        "BATCH13b_PAGES.pdf": "9948b568d85d88ab87556c60e8de5304a8dc1637011dcb8f56efa002db153494"
+      }
+    },
+    {
+      "source_id": "MD-7.8.1-OverdampedFirstOrderCaution",
+      "json_review": {
+        "status": "CORRECTED",
+        "issue_codes": [
+          "LEAN_COVERAGE_GAP",
+          "LIMIT_NOT_CONSISTENCY",
+          "EDITORIAL_EXCERPT_BOUNDARY"
+        ],
+        "corrected_json": {
+          "source_id": "MD-7.8.1-OverdampedFirstOrderCaution",
+          "kind": "unnumbered_claim",
+          "label": null,
+          "section": "7.8.1",
+          "printed_page": "295",
+          "pdf_page": "316",
+          "statement_latex": "Examining the algorithms themselves this is unsurprising, as although we have integrated the Ornstein-Uhlenbeck process exactly, when considering the limit of infinite friction in the $[XYZ]$ schemes we obtain an inconsistent discretization. Hence these first-order schemes will be unsuitable for the integration of overdamped Langevin dynamics.\nThis is not always the case for first order schemes, however. For example the scheme denoted $[AOAB]$ is consistent with the dynamics, and may be used for integrating the overdamped ($\\gamma=\\infty$) Langevin equation.",
+          "proof_latex": null,
+          "proof_outline": null,
+          "proof_note": "原页推导与上下文全文见original_page_text；数学符号的排版以随附原页PDF为准。",
+          "original_page_text": [
+            {
+              "pdf_page": 316,
+              "printed_page": 295,
+              "text": "7.8\nFirst Order Schemes\n295\nappear. However, if we instead set # D #2.q/, then\nh#2.q/f1.q; p/i D ˙ˇ\n2\n˝\n.\nU.q/ \u0003 c/#2.q/ ˙ pTM\u00021rU.q/#2.q/\n˛\nD ˙\nˇ\n2 h.U.q/ \u0003 hU.q/i/#2.q/i ;\nin which case our correction becomes O.\n/. This is potentially disastrous if we\nchoose the friction to be large (consider \n\u0005 h\u00021), as the error introduced\nthrough discretization will dominate the true average to be sampled. Examining\nthe algorithms themselves this is unsurprising, as although we have integrated\nthe Ornstein-Uhlenbeck process exactly, when considering the limit of inﬁnite\nfriction in the \u0002XYZ\u0003 schemes we obtain an inconsistent discretization. Hence these\nﬁrst-order schemes will be unsuitable for the integration of overdamped Langevin\ndynamics.\nThis is not always the case for ﬁrst order schemes, however. For example the\nscheme denoted \u0002AOAB\u0003 is consistent with the dynamics, and may be used for\nintegrating the overdamped (\n D 1) Langevin equation.\n7.8.2\nNumerical Experiment\nLet us consider testing the computed ﬁrst order corrections on a one dimensional\nexample. Let M D ˇ D 1 and deﬁne the biased double-well potential as\nU.q/ D .q2 \u0003 1/2 C q=2:\nWe shall consider computing the average of a speciﬁc observable #.q; p/, and\nestimating the error due to discretization using the correction functions given\nin (7.25), where we choose the observable\n#.q; p/ D p2 \u0003 qU0.q/ C 2qp;\nh#i D 0:\nThe low dimensionality of the problem and the simplicity of the observable and\npotential energy function make resolving the perfect sampling bias to leading order\nan easy task, allowing us to give a good estimate (to order h2) of the discretization\nerror. In Fig. 7.4 we plot the results of h#ih computed via numerical experiment,\nusing each of the six ﬁrst order schemes at either \n D 1 or \n D 2, and compare\nthem to our ﬁrst order prediction\nh#ih \u0007 h#i C hhf1#i:\nThe numerical experiment at each timestep is averaged from 16 independent\nexperiments, each running over a time interval of 108. The results match our\n"
+            }
+          ],
+          "transcription_note": "PDF文字层原样保留，陈述中的数学排版转写为LaTeX；文字层有特殊字形编码时以目视原页为准。PDF347的Exercises之后不在正文范围内。",
+          "context_notation": [],
+          "extra_assumptions": [
+            "覆盖AOAB全部更新与固定噪声/固定h下的摩擦极限；不把摩擦极限本身称作过阻尼一致性证明。六个XYZ不一致及AOAB有效时间重标度的一致性仍是明确覆盖缺口。"
+          ],
+          "issues": [
+            "A：原页确有六种XYZ无限摩擦不一致、AOAB可用于过阻尼动力学的结论；摘录以“When considering …”新起句，原文为前句中的“when considering …”，属于截句而非连续逐字引用。",
+            "C：现有Lean只给定固定h、固定噪声R、固定初态的单步γ→∞极限；没有六个XYZ的不一致性，也没有AOAB在有效时间重标度下对过阻尼动力学的一致性。原JSON已说明缺口，但statement_scope仍称全部。"
+          ],
+          "statement_scope": "原文结论全部保留。Lean只覆盖AOAB更新与固定h、固定R下γ→∞单步极限；XYZ不一致性及AOAB过阻尼一致性均未覆盖。",
+          "lean_decl": "MD.Ch07.aoab",
+          "lean_declarations": [
+            "MD.Ch07.aoab",
+            "MD.Ch07.aoabInfiniteFriction",
+            "MD.Ch07.aoabFrictionLimit"
+          ],
+          "source_page_verification": "本次实际目视核对 R4_PAGES.pdf 对应页；重复页渲染SHA256一致。详见本条 evidence。",
+          "repair_log": [],
+          "documented_priors": []
+        },
+        "issues": [
+          "A：原页确有六种XYZ无限摩擦不一致、AOAB可用于过阻尼动力学的结论；摘录以“When considering …”新起句，原文为前句中的“when considering …”，属于截句而非连续逐字引用。",
+          "C：现有Lean只给定固定h、固定噪声R、固定初态的单步γ→∞极限；没有六个XYZ的不一致性，也没有AOAB在有效时间重标度下对过阻尼动力学的一致性。原JSON已说明缺口，但statement_scope仍称全部。"
+        ],
+        "evidence": [
+          "目视附件10（原PDF316／印刷295；与附件9、11同图）第一个完整段落及下一段AOAB。",
+          "ouMomentum=e^(−γh)p+sqrt(θ(1−e^(−2γh)))sqrt(m)R；driftStep与kickStep依次执行A(h/2),O(h),A(h/2),B(h)。",
+          "审校方式：只读R4_任务.md的本条Lean及其摘录项目定义，Mathlib按标准含义采信；未修改工程、未补证明、未调用Lean编译器，不因sorry判FAIL。未发现任何字面的[EXTRA]或[ERRATUM?]标签；额外假设与原书疑误按语义逐项核对，建议标签仅写入本审校JSON。",
+          "本次附件R4_PAGES.pdf SHA256=133d111b38c222acf5f8a9b401286106f513aca299e119dc65d034e915f0c931；本条input_sha256严格回显任务所列旧文件键和值，不宣称与当前文件重新计算一致。"
+        ]
+      },
+      "audit": {
+        "lean_decl": [
+          "MD.Ch07.aoab",
+          "MD.Ch07.aoabInfiniteFriction",
+          "MD.Ch07.aoabFrictionLimit"
+        ],
+        "verdict": "FAIL",
+        "explanation": "C：aoab、aoabInfiniteFriction、aoabFrictionLimit彼此匹配；h>0确保指数衰减，U为C¹保证最终kick中梯度连续，θ>0明示。m没有正性前提，但作为Lean全定义实函数的单步极限仍成立，不能据此把任意m解释为物理质量。该极限定理本身PASS。完整原文断言的汇总FAIL，因为单步噪声替换极限不能替代对过阻尼SDE的一致性，更没有陈述六种XYZ的否定结论。",
+        "counterexample": null,
+        "suggested_fix": "原文精确摘录恢复完整“Examining …”句；另登记六种XYZ不一致性和AOAB带有效时间尺度的一致性义务，不能将aoabFrictionLimit重命名即视为已完成。"
+      },
+      "subtask": "BATCH13c",
+      "input_sha256": {
+        "Blueprint/Ch07.lean": "f30ea154ebfb07ae85c0b806ff74b35808d5a0c3dcaa647c0c3cc80a78239e37",
+        "blueprint/ch07/ch07_source.json": "c434892ebf63b06f7cadcdfa7af408c2c12d7b645d35db431d1855224163ba19",
+        "BATCH13c_PAGES.pdf": "b0055fd9405bec20621964608bc64b606f8b22d0ecae1a30588de8d2fd5b293b"
+      }
+    },
+    {
+      "source_id": "MD-7.8.2-BiasedDoubleWellExact",
+      "json_review": {
+        "status": "CORRECTED",
+        "issue_codes": [
+          "LEAN_COVERAGE_GAP",
+          "UNLINKED_CRITICAL_COROLLARY",
+          "EDITORIAL_PARAPHRASE",
+          "EXTRA_GENERALIZATION"
+        ],
+        "corrected_json": {
+          "source_id": "MD-7.8.2-BiasedDoubleWellExact",
+          "kind": "unnumbered_claim",
+          "label": null,
+          "section": "7.8.2",
+          "printed_page": "295–297",
+          "pdf_page": "316–318",
+          "statement_latex": "Let $M=\\beta=1$ and define the biased double-well potential as\n\\[U(q)=(q^2-1)^2+q/2.\\]\nWe shall consider computing the average of a specific observable $\\vartheta(q,p)$, and estimating the error due to discretization using the correction functions given in (7.25), where we choose the observable\n\\[\\vartheta(q,p)=p^2-qU'(q)+2qp,\\qquad\\langle\\vartheta\\rangle=0.\\]\nThe first order correction term for the $[BOA]$ scheme is given by the formula\n\\[\\langle\\vartheta f_{1,[BOA]}\\rangle=\\frac\\beta2\\int_{\\mathcal D}(p^2-qU'(q)+2qp)(pU'(q)+\\gamma U(q)-c)\\rho_\\beta d\\omega\n=\\frac1\\beta+\\frac\\gamma2\\langle U\\rangle-\\frac{\\gamma\\beta}{2}\\langle qUU'\\rangle=\\frac{2-\\gamma}{2\\beta}.\\]\nHence for the critical value of $\\gamma=2$, the leading order correction will be zero, giving\n\\[\\langle\\vartheta\\rangle_h^{[BOA]}=\\langle\\vartheta\\rangle+O(h^2).\\]",
+          "proof_latex": null,
+          "proof_outline": null,
+          "proof_note": "原页推导与上下文全文见original_page_text；数学符号的排版以随附原页PDF为准。",
+          "original_page_text": [
+            {
+              "pdf_page": 316,
+              "printed_page": 295,
+              "text": "7.8\nFirst Order Schemes\n295\nappear. However, if we instead set # D #2.q/, then\nh#2.q/f1.q; p/i D ˙ˇ\n2\n˝\n.\nU.q/ \u0003 c/#2.q/ ˙ pTM\u00021rU.q/#2.q/\n˛\nD ˙\nˇ\n2 h.U.q/ \u0003 hU.q/i/#2.q/i ;\nin which case our correction becomes O.\n/. This is potentially disastrous if we\nchoose the friction to be large (consider \n\u0005 h\u00021), as the error introduced\nthrough discretization will dominate the true average to be sampled. Examining\nthe algorithms themselves this is unsurprising, as although we have integrated\nthe Ornstein-Uhlenbeck process exactly, when considering the limit of inﬁnite\nfriction in the \u0002XYZ\u0003 schemes we obtain an inconsistent discretization. Hence these\nﬁrst-order schemes will be unsuitable for the integration of overdamped Langevin\ndynamics.\nThis is not always the case for ﬁrst order schemes, however. For example the\nscheme denoted \u0002AOAB\u0003 is consistent with the dynamics, and may be used for\nintegrating the overdamped (\n D 1) Langevin equation.\n7.8.2\nNumerical Experiment\nLet us consider testing the computed ﬁrst order corrections on a one dimensional\nexample. Let M D ˇ D 1 and deﬁne the biased double-well potential as\nU.q/ D .q2 \u0003 1/2 C q=2:\nWe shall consider computing the average of a speciﬁc observable #.q; p/, and\nestimating the error due to discretization using the correction functions given\nin (7.25), where we choose the observable\n#.q; p/ D p2 \u0003 qU0.q/ C 2qp;\nh#i D 0:\nThe low dimensionality of the problem and the simplicity of the observable and\npotential energy function make resolving the perfect sampling bias to leading order\nan easy task, allowing us to give a good estimate (to order h2) of the discretization\nerror. In Fig. 7.4 we plot the results of h#ih computed via numerical experiment,\nusing each of the six ﬁrst order schemes at either \n D 1 or \n D 2, and compare\nthem to our ﬁrst order prediction\nh#ih \u0007 h#i C hhf1#i:\nThe numerical experiment at each timestep is averaged from 16 independent\nexperiments, each running over a time interval of 108. The results match our\n"
+            },
+            {
+              "pdf_page": 317,
+              "printed_page": 296,
+              "text": "296\n7\nNumerical Methods for Stochastic Molecular Dynamics\n100\n10-1\n10-2\n10-3\n100\n10-1\n10-2\n10-3\nAbsolute error\nTimestep\n0.05\n0.1\n0.2\nAbsolute error\nTimestep\n0.05\n0.1\n0.2\nTimestep\n0.05\n0.1\n0.2\nTimestep\n0.05\n0.1\n0.2\nObserved average\n-0.6\n-0.4\n-0.2\n0\n0.2\n0.4\n0.6\nObserved average\n-0.6\n-0.4\n-0.2\n0\n0.2\n0.4\n0.6\nABO\nBAO\nOBA\nOAB\nAOB\nBOA\nSecond-order line\nFirst-order lines\n=1\n=1\n=2\n=2\nFig. 7.4 We plot the absolute error in the computed value of h#ih (left) and the observed value of\nh#ih (right) as symbols, while our prediction computed using (7.25) is plotted as a solid line. For\n\n D 1 we ﬁnd ﬁrst order behavior (as expected), but for \n D 2 two methods exhibit higher order\nbehavior. This is a special case for this observable that can be understood through our analysis\nprediction extremely well, though at large stepsize there is evidence of higher order\nbehavior O.h2/ having an effect on the computed average, evident by the divergence\naway from our prediction line.\nThe \u0002AOB\u0003 and \u0002BOA\u0003 schemes also demonstrate a surprising second order\nbehavior for the experiments at \n D 2, that we would not necessarily expect. This\nis due to a felicitous choice of our observable, where the leading order correction\ncan be shown to be zero. The fact that both of these schemes share this property is\nunsurprising, as f1;\u0002AOB\u0003 D \u0003f1;\u0002BOA\u0003, although for a general observable we would\nnot expect second order averages for these methods. We could similarly construct\nspecial cases for other observables that would give higher order behavior for other\nschemes.\nThe ﬁrst order correction term for the \u0002BOA\u0003 scheme is given by the formula\nh#f1;\u0002BOA\u0003i D ˇ\n2\nZ\nD\n\u0004\np2 \u0003 qU0.q/ C 2qp\n\u0005\u0004\npU0.q/ C \nU.q/ \u0003 c\n\u0005\n\u0005ˇd!;\nD 1\nˇ C \n2 hUi \u0003 \nˇ\n2 hqUU0i;\nD .2 \u0003 \n/\n2ˇ\n:\n"
+            },
+            {
+              "pdf_page": 318,
+              "printed_page": 297,
+              "text": "7.9\nError Expansion for Symmetric Langevin Methods\n297\nHence for the critical value of \n D 2, the leading order correction will be zero,\ngiving\nh#i\u0002BOA\u0003\nh\nD h#i C O.h2/:\nThis is exactly the behavior we see in Fig. 7.4.\n7.9\nError Expansion for Symmetric Langevin Methods\nOf particular interest for sampling the canonical distribution are symmetric\nLangevin methods. We believe these are likely to be the most useful class of\nmethods for practitioners, as by symmetrizing the expansion the odd order terms\nin (7.16) vanish identically using the Jacobi identity in the BCH expansions. This\nimplies that a symmetric scheme gives a second order error in computed averages.\nMany symmetric methods can be constructed that require only one evaluation of the\nforce per iteration (effectively making them as inexpensive as a ﬁrst order method).\nIn order to simplify the algebra, we will use M D I throughout this section,\nwhich will not alter the major results and amounts to a linear change of variables.\nWe shall consider general symmetric schemes of the form \u0002XYZYX\u0003, and perform\na similar analysis to the previous section. The terms appearing in the expansions\nwill be signiﬁcantly more complex than those encountered in ﬁrst order methods.\nWe make use of the following proposition for symmetric compositions:\nProposition 7.1 Let L\u0004\nX, L\u0004\nY and L\u0004\nZ be general operators to which BCH can be\napplied, then deﬁning\neh OL\u0004 D e\nh\n2 L\u0004\nXe\nh\n2 L\u0004\nYehL\u0004\nZe\nh\n2 L\u0004\nYe\nh\n2 L\u0004\nX;\n(7.26)\ngives\nOL\u0004 D L\u0004\n0 C h2L\u0004\n2 C O.h4/;\nwhere\nL\u0004\n0 DL\u0004\nX C L\u0004\nY C L\u0004\nZ;\nL\u0004\n2 D 1\n12\n\u0006\nŒL\u0004\nZ; L\u0004\nZ; L\u0004\nY\t C ŒL\u0004\nY C L\u0004\nZ; L\u0004\nY C L\u0004\nZ; L\u0004\nX\t\n\u0007\n\u0003 1\n24\n\u0006\nŒL\u0004\nY; L\u0004\nY; L\u0004\nZ\t C ŒL\u0004\nX; L\u0004\nX; L\u0004\nY C L\u0004\nZ\t\n\u0007\n:\n"
+            }
+          ],
+          "transcription_note": "PDF文字层原样保留，陈述中的数学排版转写为LaTeX；文字层有特殊字形编码时以目视原页为准。PDF347的Exercises之后不在正文范围内。",
+          "context_notation": [],
+          "extra_assumptions": [
+            "保留数值例中的精确数学积分和解析消项；原文虽起初β=1，推导中保留β，本条正β形式需同样积分分部理论。",
+            "中间〈qUU′〉公式及γ=2实际误差O(h²)需先有严格弱展开，本条不声称已获该余项。",
+            "[EXTRA] doubleWellExact对任意β>0成立，超出原实验M=β=1；由四次势的尾部衰减及分部积分支持。"
+          ],
+          "issues": [
+            "A：势函数、观测量、BOA积分及(2−γ)/(2β)、γ=2时O(h²)均忠实；“We choose the observable”是重述，原页是长句末的“where we choose the observable”。",
+            "C：doubleWellExact推广到任意β>0，数学上合理但属于[EXTRA]；doubleWellCritical仅为实数代数恒等式，不含Gibbs积分，更不含离散不变测度或O(h²)；中间积分等式也未独立陈述。"
+          ],
+          "statement_scope": "原文全部保留。Lean覆盖势、观测量和两个精确积分；任意β>0为明确推广。中间积分等式、与积分相连的临界推论及真实算法O(h²)余项未完整覆盖。",
+          "lean_decl": "MD.Ch07.biasedDoubleWell",
+          "lean_declarations": [
+            "MD.Ch07.biasedDoubleWell",
+            "MD.Ch07.doubleWellObservable",
+            "MD.Ch07.doubleWellGibbs",
+            "MD.Ch07.doubleWellBOACorrection",
+            "MD.Ch07.doubleWellExact",
+            "MD.Ch07.doubleWellCritical"
+          ],
+          "source_page_verification": "本次实际目视核对 R4_PAGES.pdf 对应页；重复页渲染SHA256一致。详见本条 evidence。",
+          "repair_log": [],
+          "documented_priors": []
+        },
+        "issues": [
+          "A：势函数、观测量、BOA积分及(2−γ)/(2β)、γ=2时O(h²)均忠实；“We choose the observable”是重述，原页是长句末的“where we choose the observable”。",
+          "C：doubleWellExact推广到任意β>0，数学上合理但属于[EXTRA]；doubleWellCritical仅为实数代数恒等式，不含Gibbs积分，更不含离散不变测度或O(h²)；中间积分等式也未独立陈述。"
+        ],
+        "evidence": [
+          "目视附件11–13（原PDF316–318／印刷295–297）；11与9相同，13与14相同。原页从β=1的实验出发，在精确积分中保留β。",
+          "对任意β>0，四次势函数保证正有限配分函数及所需多项式矩；分部积分给〈qU′〉=1/β和〈qUU′〉=〈U〉/β+1/β²，中心高斯给〈p²〉=1/β，故给出的积分推广成立。",
+          "审校方式：只读R4_任务.md的本条Lean及其摘录项目定义，Mathlib按标准含义采信；未修改工程、未补证明、未调用Lean编译器，不因sorry判FAIL。未发现任何字面的[EXTRA]或[ERRATUM?]标签；额外假设与原书疑误按语义逐项核对，建议标签仅写入本审校JSON。",
+          "本次附件R4_PAGES.pdf SHA256=133d111b38c222acf5f8a9b401286106f513aca299e119dc65d034e915f0c931；本条input_sha256严格回显任务所列旧文件键和值，不宣称与当前文件重新计算一致。"
+        ]
+      },
+      "audit": {
+        "lean_decl": [
+          "MD.Ch07.biasedDoubleWell",
+          "MD.Ch07.doubleWellObservable",
+          "MD.Ch07.doubleWellGibbs",
+          "MD.Ch07.doubleWellBOACorrection",
+          "MD.Ch07.doubleWellExact",
+          "MD.Ch07.doubleWellCritical"
+        ],
+        "verdict": "FAIL",
+        "explanation": "C：biasedDoubleWell、doubleWellObservable、doubleWellGibbs、doubleWellBOACorrection全部正确，密度以整个ℝ²积分归一且c=γ〈U〉。doubleWellExact的两个结论在β>0、γ任意下正确；没有把目标积分当作前提。doubleWellCritical代数等式虽对所有β成立，却未把β>0和doubleWellExact连接成积分消项推论。原文最后声称的真实算法平均O(h²)需要离散不变平均、h→0及弱展开余项，这些对象均不存在；因此完整覆盖FAIL。",
+        "counterexample": null,
+        "suggested_fix": "明确标[EXTRA]任意β>0推广；将γ=2时实际积分为零列为与doubleWellExact相连的推论，并把O(h²)余项及中间积分等式登记为未形式化，不能用ring恒等式代替。"
+      },
+      "subtask": "BATCH13d",
+      "input_sha256": {
+        "Blueprint/Ch07.lean": "f30ea154ebfb07ae85c0b806ff74b35808d5a0c3dcaa647c0c3cc80a78239e37",
+        "blueprint/ch07/ch07_source.json": "c434892ebf63b06f7cadcdfa7af408c2c12d7b645d35db431d1855224163ba19",
+        "BATCH13d_PAGES.pdf": "61fb0bb7aa397fa97372ffa6f0f4044ffc8cfb2ba097e90c131915ede79bc6a3"
+      }
+    },
+    {
+      "source_id": "MD-7.9-Proposition71",
+      "json_review": {
+        "status": "APPROVED",
+        "issue_codes": [],
+        "corrected_json": null,
+        "issues": [],
+        "evidence": [
+          "目视附件14（原PDF318／印刷297；与13同图）：五因子次序X/2,Y/2,Z,Y/2,X/2；1/12和−1/24的两个嵌套交换子组全部匹配。",
+          "本条摘录的textbookSymmetricOperatorComposition、textbookSymmetricModifiedGenerator及D53、D71–D72明确给出实际非交换形式指数、log和修正算符，不是以名字代替定义。",
+          "审校方式：只读R4_任务.md的本条Lean及其摘录项目定义，Mathlib按标准含义采信；未修改工程、未补证明、未调用Lean编译器，不因sorry判FAIL。未发现任何字面的[EXTRA]或[ERRATUM?]标签；额外假设与原书疑误按语义逐项核对，建议标签仅写入本审校JSON。",
+          "本次附件R4_PAGES.pdf SHA256=133d111b38c222acf5f8a9b401286106f513aca299e119dc65d034e915f0c931；本条input_sha256严格回显任务所列旧文件键和值，不宣称与当前文件重新计算一致。"
+        ]
+      },
+      "audit": {
+        "lean_decl": [
+          "MD.Ch07.proposition71",
+          "MD.Ch07.symmetricOddCorrections"
+        ],
+        "verdict": "PASS",
+        "explanation": "C：任意实代数中的X,Y,Z，无交换性假设。proposition71用∃Q并以X^4*Q准确表达形式O(h⁴)，二阶项为完整D72而非缩减项。symmetricOddCorrections对全部k:ℕ断言第2k+1系数为零，是对称组合的合理强化；不推导密度奇阶自动为零，也不声称无界算符解析收敛。所引用项目定理的完整类型与包装一致。",
+        "counterexample": null,
+        "suggested_fix": null
+      },
+      "subtask": "BATCH13e",
+      "input_sha256": {
+        "Blueprint/Ch07.lean": "f30ea154ebfb07ae85c0b806ff74b35808d5a0c3dcaa647c0c3cc80a78239e37",
+        "blueprint/ch07/ch07_source.json": "c434892ebf63b06f7cadcdfa7af408c2c12d7b645d35db431d1855224163ba19",
+        "BATCH13e_PAGES.pdf": "3e1c9f17b1861ec29be7fa714a755d228069f06080e54f86a3e94142b7bb0aa1"
+      }
+    },
+    {
+      "source_id": "MD-7.9-EvenDensityPerturbation",
+      "json_review": {
+        "status": "CORRECTED",
+        "issue_codes": [
+          "LEAN_COVERAGE_GAP",
+          "NORMALIZATION_NOT_ENCODED",
+          "FREDHOLM_FRAMEWORK_MISSING"
+        ],
+        "corrected_json": {
+          "source_id": "MD-7.9-EvenDensityPerturbation",
+          "kind": "unnumbered_claim",
+          "label": "(7.27)–(7.28)",
+          "section": "7.9",
+          "printed_page": "298",
+          "pdf_page": "319",
+          "statement_latex": "If we suppose that the odd order correction functions are zero, then we are left with\n\\[\\widehat\\rho=\\rho_\\beta(1+h^2f_2+h^4f_4+\\cdots),\\tag{7.27}\\]\nwhere each $\\langle f_i\\rangle=0$ as usual. Equating the second order terms we obtain\n\\[\\mathcal L_{LD}^\\dagger(\\rho_\\beta f_2)=-\\mathcal L_2^\\dagger\\rho_\\beta.\\tag{7.28}\\]\nThe condition on the existence of such a solution requires us to use the Fredholm alternative, which requires us to verify that the inhomogeneous term $\\mathcal L_2^\\dagger\\rho_\\beta$ integrates to zero.",
+          "proof_latex": null,
+          "proof_outline": null,
+          "proof_note": "原页推导与上下文全文见original_page_text；数学符号的排版以随附原页PDF为准。",
+          "original_page_text": [
+            {
+              "pdf_page": 319,
+              "printed_page": 298,
+              "text": "298\n7\nNumerical Methods for Stochastic Molecular Dynamics\nFor a scheme \u0002XYZYX\u0003, we assume that each of the X, Y and Z characters in\nthe string are distinct, and correspond to one of the A, B or O pieces of our splitting\nstrategy. Thus we have L\u0004\n0 D L\u0004\nLD.\nEvidently, the scheme’s associated Fokker-Planck operator OL\u0004 no longer has a\nleading order term that is linear in the stepsize, so it makes sense to revise our\nassumption on the form of the scheme’s corresponding invariant measure, and\nreplace it with a series with solely even order terms. If we suppose that the odd\norder correction functions are zero, then we are left with\nO\u0005 D \u0005ˇ.1 C h2f2 C h4f4 C : : :/;\n(7.27)\nwhere each hfii D 0 as usual. Thus the stationarity equation OL\u0004 O\u0005 D 0 becomes\n\u0006\nL\u0004\nLD C h2L\u0004\n2 C : : :\n\u0007 \u0004\n\u0005ˇ C h2\u0005ˇf2 C : : :\n\u0005\nD 0:\nThe equation is satisﬁed at zeroth order, and equating the second order terms we\nobtain\nL\u0004\nLD\n\u0004\u0005ˇf2\n\u0005 D \u0003L\u0004\n2\u0005ˇ:\n(7.28)\nThe procedure then follows just as in the case of the ﬁrst order schemes. The\nform of the right-hand side L\u0004\n2\u0005ˇ will be dependent on the choice of the update\nscheme, and can be computed using the BCH formula using Proposition 7.1. More\ncomplicated symmetric schemes involving more than ﬁve stages can be utilized,\nbut these schemes may require more than one force evaluation per iteration, while\nincreasing the complexity of the PDE to solve.\nThe condition on the existence of such a solution requires us to use the Fredholm\nalternative, which requires us to verify that the inhomogeneous term L\u0004\n2\u0005ˇ integrates\nto zero.\n7.9.1\nCalculation of the Inhomogeneous Term\nThe computation of the right hand side in (7.28) is required in order to solve the\ncorresponding partial differential equation and obtain the leading order correction\nfunction for our symmetric scheme \u0002XYZYX\u0003. From the form of the L\u0004\n2 operator in\nProposition 7.1, we can see that our life is made considerably easier if we initially\nconsider methods \u0002OYZYO\u0003, which substitutes\nL\u0004\nX D L\u0004\nO;\nL\u0004\nY C L\u0004\nZ D L\u0004\nA C L\u0004\nB D L\u0004\nH;\n"
+            }
+          ],
+          "transcription_note": "PDF文字层原样保留，陈述中的数学排版转写为LaTeX；文字层有特殊字形编码时以目视原页为准。PDF347的Exercises之后不在正文范围内。",
+          "context_notation": [],
+          "extra_assumptions": [
+            "系数相消得到必要方程；Fredholm可解性的充分性需核、余核、函数空间和域的闭值域资格，本条不证明。原书将奇阶修正零作为假设，本条保留。"
+          ],
+          "issues": [
+            "A：附件15中(7.27)、每个〈fi〉=0、(7.28)及Fredholm必要零积分条件均与摘录相符。",
+            "C：evenDensityExpansion只编码偶数系数形状，不含任何测度、均值或可积性；evenPerturbationEquation只给二阶系数的抽象线性相消，没有Fredholm对象或右端零积分结论。"
+          ],
+          "statement_scope": "原文全部保留。Lean仅编码偶数形式系数及二阶必要方程；〈fi〉=0、右端零积分及Fredholm可解性框架未覆盖。",
+          "lean_decl": "MD.Ch07.evenDensityExpansion",
+          "lean_declarations": [
+            "MD.Ch07.evenDensityExpansion",
+            "MD.Ch07.evenPerturbationEquation"
+          ],
+          "source_page_verification": "本次实际目视核对 R4_PAGES.pdf 对应页；重复页渲染SHA256一致。详见本条 evidence。",
+          "repair_log": [],
+          "documented_priors": []
+        },
+        "issues": [
+          "A：附件15中(7.27)、每个〈fi〉=0、(7.28)及Fredholm必要零积分条件均与摘录相符。",
+          "C：evenDensityExpansion只编码偶数系数形状，不含任何测度、均值或可积性；evenPerturbationEquation只给二阶系数的抽象线性相消，没有Fredholm对象或右端零积分结论。"
+        ],
+        "evidence": [
+          "目视附件15（原PDF319／印刷298；与16同图）。原页明确把奇阶为零作为假设，不能从对称算符直接推出。",
+          "actionCoefficient L ρ 2= L0(ρ2)+L1(ρ1)+L2(ρ0)；hL1、hρ1、h2足以推出所列结论，没有循环假设。",
+          "审校方式：只读R4_任务.md的本条Lean及其摘录项目定义，Mathlib按标准含义采信；未修改工程、未补证明、未调用Lean编译器，不因sorry判FAIL。未发现任何字面的[EXTRA]或[ERRATUM?]标签；额外假设与原书疑误按语义逐项核对，建议标签仅写入本审校JSON。",
+          "本次附件R4_PAGES.pdf SHA256=133d111b38c222acf5f8a9b401286106f513aca299e119dc65d034e915f0c931；本条input_sha256严格回显任务所列旧文件键和值，不宣称与当前文件重新计算一致。"
+        ]
+      },
+      "audit": {
+        "lean_decl": [
+          "MD.Ch07.evenDensityExpansion",
+          "MD.Ch07.evenPerturbationEquation"
+        ],
+        "verdict": "FAIL",
+        "explanation": "C：evenDensityExpansion在k=0给ρ，在正偶数k给ρ f_k，奇数k给零，定义正确。evenPerturbationEquation在任意实模上正确，hL1与hρ1同时列出虽可弱化但不造成错误。FAIL是完整原文覆盖不足：所有修正项的零均值缺失，且未陈述在适当域/边界下由方程导出的∫L2ρ=0。Fredholm可解性需函数空间、核/余核及算符域，原文并未提供足以在任意空间中采信的充分性框架；这里不能声称已证明Fredholm结论。",
+        "counterexample": null,
+        "suggested_fix": "保留抽象必要系数方程；单独登记零均值及Fredholm兼容性义务，并明确所需空间和域。此审校不增补证明。"
+      },
+      "subtask": "BATCH13f",
+      "input_sha256": {
+        "Blueprint/Ch07.lean": "f30ea154ebfb07ae85c0b806ff74b35808d5a0c3dcaa647c0c3cc80a78239e37",
+        "blueprint/ch07/ch07_source.json": "c434892ebf63b06f7cadcdfa7af408c2c12d7b645d35db431d1855224163ba19",
+        "BATCH13f_PAGES.pdf": "2d31dd374c5d8afb1c23cbb2529d009b0a01c51e6c34127bb63b5cf6da173fc9"
+      }
+    }
+  ],
+  "merged_from": "ch07_first_merged"
+}

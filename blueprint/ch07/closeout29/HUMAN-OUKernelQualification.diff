@@ -1,0 +1,18 @@
+--- 
++++ 
+@@ -5,4 +5,15 @@
+     (hL2 : ∀ q, MemLp (fun p ↦ f (q,p)) 2 (momentumGibbs (fun _ ↦ 1) β))
+     (hzero : phaseO (fun _ ↦ 1) 1 β (gibbsWeight (fun _ ↦ 1) U β*f) = 0) :
+     ∃ ν : V n → ℝ, ∀ q p, f (q,p) = ν q := by
++  sorry
++
++theorem ouKernelCentered_corrected (U : V n → ℝ) (β : ℝ) (f : Phase n → ℝ)
++    (hβ : 0 < β) (hf : ContDiff ℝ ⊤ f)
++    (hprob : IsProbabilityMeasure (positionGibbs U β))
++    (hi : Integrable f (productGibbs (fun _ ↦ 1) U β))
++    (hL2 : ∀ q, MemLp (fun p ↦ f (q,p)) 2 (momentumGibbs (fun _ ↦ 1) β))
++    (hzero : phaseO (fun _ ↦ 1) 1 β (gibbsWeight (fun _ ↦ 1) U β*f) = 0)
++    (hmean : ∫ x, f x ∂productGibbs (fun _ ↦ 1) U β = 0) :
++    ∃ ν : V n → ℝ, (∀ q p, f (q,p)=ν q) ∧
++      Integrable ν (positionGibbs U β) ∧ (∫ q, ν q ∂positionGibbs U β)=0 := by
+   sorry

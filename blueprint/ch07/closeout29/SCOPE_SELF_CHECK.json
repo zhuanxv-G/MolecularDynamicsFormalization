@@ -1,0 +1,1991 @@
+{
+  "total": 118,
+  "all_scopes_match": true,
+  "checks": [
+    {
+      "source_id": "MD-7.1-Bias",
+      "review": "逐条核对实际声明与网站逐项意见，缩小范围或补短声明；PASS原声明逐字复用",
+      "website_first": "PASS",
+      "original_block_unchanged": true,
+      "signature_changed": false,
+      "actual_declarations": [
+        "MD.Ch07.bias"
+      ],
+      "actual_scope": "仅覆盖 bias 所列对象、量词、前提和结论。范围说明：实数 exact、computed 的绝对差与本段 bias 的含义及印刷266页公式一致。原段的概述没有被错误提升为所有算法的普遍定理；由后文具体化绝对误差的范围已显式披露。",
+      "coverage_gaps": [],
+      "block_sha256": "9379b2023224de49efd2c0973ce1f42b80ddf08c504eff1d57e4fa7152c03649",
+      "scope_matches_lean": true
+    },
+    {
+      "source_id": "MD-7.2-ScalarSDE",
+      "review": "逐条核对实际声明与网站逐项意见，缩小范围或补短声明；PASS原声明逐字复用",
+      "website_first": "PASS",
+      "original_block_unchanged": true,
+      "signature_changed": false,
+      "actual_declarations": [
+        "MD.Ch07.scalarSDE"
+      ],
+      "actual_scope": "仅覆盖 scalarSDE 所列对象、量词、前提和结论。范围说明：P、标量W、标量X、自治a,b及确定初值x0均明确。D2—D6保留初值、非负时间路径连续性、漂移路径可积、自然历史适应及扩散平方可积，并以均匀左和的L²极限表示Itô方程。这是已披露的确定初值、自然滤过及L²解范围，并非所有弱解的等价定义；未声称其一般等价性。",
+      "coverage_gaps": [],
+      "block_sha256": "325d5e8f1e66b666c42a7abb02bdc2a495ff0976a8f9b1bccb55858862ee3f4c",
+      "scope_matches_lean": true
+    },
+    {
+      "source_id": "MD-7.2-EulerMaruyama",
+      "review": "逐条核对实际声明与网站逐项意见，缩小范围或补短声明；PASS原声明逐字复用",
+      "website_first": "PASS",
+      "original_block_unchanged": true,
+      "signature_changed": false,
+      "actual_declarations": [
+        "MD.Ch07.eulerMaruyamaStep",
+        "MD.Ch07.standardNormalSequence",
+        "MD.Ch07.eulerMaruyama"
+      ],
+      "actual_scope": "仅覆盖 eulerMaruyamaStep, standardNormalSequence, eulerMaruyama 所列对象、量词、前提和结论。范围说明：单步系数为h*a(x)与b(x)*sqrt(h)*R，无遗漏或符号错误。递归0步为x0，第k+1步使用R k。standardNormalSequence分别要求概率测度、跨步独立及每步N(0,1)；步长为总函数参数，h>0的数值使用限制已列明。",
+      "coverage_gaps": [],
+      "block_sha256": "dad7a593244059b6639c730bcf4e1b476cf836894c1bae505367e855a93d3a7d",
+      "scope_matches_lean": true
+    },
+    {
+      "source_id": "MD-7.2-SDEIncrement",
+      "review": "逐条核对实际声明与网站逐项意见，缩小范围或补短声明；PASS原声明逐字复用",
+      "website_first": "PASS",
+      "original_block_unchanged": true,
+      "signature_changed": false,
+      "actual_declarations": [
+        "MD.Ch07.sdeIncrement"
+      ],
+      "actual_scope": "仅覆盖 sdeIncrement 所列对象、量词、前提和结论。范围说明：固定t,h≥0及scalarSDE假设，结论第一分量给出t+h的从零Itô积分资格；t处同样资格由hX定义取得。第二分量的随机增量是这两个从零积分代表之差，漂移积分用区间可加性相减，等价于所引增量式。ha在hX中已蕴含但无害；这是固定t,h的几乎处处等式，并非声称一个公共零集外对所有时刻成立。",
+      "coverage_gaps": [],
+      "block_sha256": "a1833247ce765c2c5fb43a1b6017ad3b8c0be5809c96197f1a3d289b3714337a",
+      "scope_matches_lean": true
+    },
+    {
+      "source_id": "MD-7.2-StrongError",
+      "review": "逐条核对实际声明与网站逐项意见，缩小范围或补短声明；PASS原声明逐字复用",
+      "website_first": "PASS",
+      "original_block_unchanged": true,
+      "signature_changed": false,
+      "actual_declarations": [
+        "MD.Ch07.strongError"
+      ],
+      "actual_scope": "仅覆盖 strongError 所列对象、量词、前提和结论。范围说明：k取range(N+1)，包含0和N；非空有限集合的sSup确为最大值。实指数α与1/α、绝对差及期望的位置都对应原式。定义是总化公式；α>0、概率测度与矩可积的适用资格在extra_assumptions中说明，不应将不可积时Lean的总化积分解释为误差。",
+      "coverage_gaps": [],
+      "block_sha256": "bd789e766c7a12357624f98fc7f64d6373a1b035b9a028ddd15e0e4cba8f3a78",
+      "scope_matches_lean": true
+    },
+    {
+      "source_id": "MD-7.2-MeanErrorExpectation",
+      "review": "逐条核对实际声明与网站逐项意见，缩小范围或补短声明；PASS原声明逐字复用",
+      "website_first": "PASS",
+      "original_block_unchanged": true,
+      "signature_changed": false,
+      "actual_declarations": [
+        "MD.Ch07.meanErrorExpectation",
+        "MD.Ch07.meanSquareError"
+      ],
+      "actual_scope": "仅覆盖 meanErrorExpectation, meanSquareError 所列对象、量词、前提和结论。范围说明：在X、Y均可积的前提下给出期望差绝对值≤绝对误差期望，足以传递α=1收敛；meanSquareError为二阶矩平方根，与α=2强误差的均方根惯例一致。没有把期望收敛误称为L¹收敛的逆命题。",
+      "coverage_gaps": [],
+      "block_sha256": "cae87d422ee326165247af424e55d2bdeed7f201bf987e13f2f29a55374dfb92",
+      "scope_matches_lean": true
+    },
+    {
+      "source_id": "MD-7.2-StrongOrder",
+      "review": "逐条核对实际声明与网站逐项意见，缩小范围或补短声明；PASS原声明逐字复用",
+      "website_first": "PASS",
+      "original_block_unchanged": true,
+      "signature_changed": false,
+      "actual_declarations": [
+        "MD.Ch07.hasStrongOrder"
+      ],
+      "actual_scope": "仅覆盖 hasStrongOrder 所列对象、量词、前提和结论。范围说明：α,r>0，P为概率测度；对每个T>0存在正C和正N0，对所有N≥N0统一控制h=T/N的全部网格误差，并要求α次矩可积。C不依赖N，严格小于号保留。h=T/N的渐近量词及r>0均已明示，忠实于数值收敛阶的通常正阶范围。",
+      "coverage_gaps": [],
+      "block_sha256": "41be27c203d283c278c12542e80b25635c4203d10754d14d59583f42b050d085",
+      "scope_matches_lean": true
+    },
+    {
+      "source_id": "MD-7.2-WeakError",
+      "review": "逐条核对实际声明与网站逐项意见，缩小范围或补短声明；PASS原声明逐字复用",
+      "website_first": "PASS",
+      "original_block_unchanged": true,
+      "signature_changed": false,
+      "actual_declarations": [
+        "MD.Ch07.weakError",
+        "MD.Ch07.hasWeakOrder"
+      ],
+      "actual_scope": "仅覆盖 weakError, hasWeakOrder 所列对象、量词、前提和结论。范围说明：weakError为0…N各期望差绝对值的最大值。hasWeakOrder先对测试函数再对T量化，再选择D,N0，故D可依赖f,T而不依赖N；每个测试函数两侧均要求可积。不是对整个无界函数类使用同一常数；此解释已显式披露。",
+      "coverage_gaps": [],
+      "block_sha256": "5508f0e4be21f4786135f6c9a9e34bc87e1e372dfeda17ced7c1c5fd08b21098",
+      "scope_matches_lean": true
+    },
+    {
+      "source_id": "MD-7.2-StrongWeakComparison",
+      "review": "逐条核对实际声明与网站逐项意见，缩小范围或补短声明；PASS原声明逐字复用",
+      "website_first": "NEEDS_HUMAN",
+      "original_block_unchanged": true,
+      "signature_changed": false,
+      "actual_declarations": [
+        "MD.Ch07.strongWeakLipschitz",
+        "MD.Ch07.weakDoesNotImplyStrong"
+      ],
+      "actual_scope": "仅覆盖α=1、Lipschitz测试类且有相应矩条件的定量蕴涵；一般强弱阶关系需测试类与矩条件，原书措辞待裁定。",
+      "coverage_gaps": [],
+      "block_sha256": "6025ef1b611f3ee6b80b200bfbd4c1dfa11caed501bb15ec3abe82fd842efdb9",
+      "scope_matches_lean": true
+    },
+    {
+      "source_id": "MD-7.2-CanonicalAverage",
+      "review": "逐条核对实际声明与网站逐项意见，缩小范围或补短声明；PASS原声明逐字复用",
+      "website_first": "PASS",
+      "original_block_unchanged": true,
+      "signature_changed": false,
+      "actual_declarations": [
+        "MD.Ch07.densityWithPartition",
+        "MD.Ch07.canonicalAverage",
+        "MD.Ch07.probabilityDensity"
+      ],
+      "actual_scope": "仅覆盖 densityWithPartition, canonicalAverage, probabilityDensity 所列对象、量词、前提和结论。范围说明：一般可测空间D和基准测度ν抽象了相空间及其积分域。densityWithPartition用Z⁻¹ exp(−βH)，canonicalAverage积分f乘密度；probabilityDensity另外检查非负、可积与归一化。Z被保持为显式参数，本条没有沿用下一条印刷错误推出归一化。",
+      "coverage_gaps": [],
+      "block_sha256": "94a0576e620b5e3b883be71b7239d528c57182061f18890a4400afefd2c48ee2",
+      "scope_matches_lean": true
+    },
+    {
+      "source_id": "MD-7.2-PartitionPrinted",
+      "review": "逐条核对实际声明与网站逐项意见，缩小范围或补短声明；PASS原声明逐字复用",
+      "website_first": "NEEDS_HUMAN",
+      "original_block_unchanged": true,
+      "signature_changed": false,
+      "actual_declarations": [
+        "MD.Ch07.partitionPrinted",
+        "MD.Ch07.partitionPrinted_counterexample",
+        "MD.Ch07.partitionPrinted_corrected"
+      ],
+      "actual_scope": "原文Z⁻¹与配分积分的字面断言及反例独立保留；修正版取Z为积分且正有限，已证概率密度归一化。",
+      "coverage_gaps": [],
+      "block_sha256": "e1871b4eab5af4589d08c13d340255f0e7e568e0276fdc3829a28d4f85ded11c",
+      "scope_matches_lean": true
+    },
+    {
+      "source_id": "MD-7.2-AverageNotationBias",
+      "review": "逐条核对实际声明与网站逐项意见，缩小范围或补短声明；PASS原声明逐字复用",
+      "website_first": "PASS",
+      "original_block_unchanged": true,
+      "signature_changed": false,
+      "actual_declarations": [
+        "MD.Ch07.observableBias",
+        "MD.Ch07.bias_nonnegative"
+      ],
+      "actual_scope": "仅覆盖 observableBias, bias_nonnegative 所列对象、量词、前提和结论。范围说明：observableBias把精确canonicalAverage与computed作绝对差，bias_nonnegative对全部实参数成立。computed按明示约定代表步长h的完美采样平均；没有将有限样本统计误差合入。h没有独立参数是因为已被computed吸收，未声称已构造长期平均。",
+      "coverage_gaps": [],
+      "block_sha256": "0e35414f32b0193d1d4234ba580c301cfc331dc50daf541f2a0533bd18a9789b",
+      "scope_matches_lean": true
+    },
+    {
+      "source_id": "MD-7.3-VectorOU",
+      "review": "逐条核对实际声明与网站逐项意见，缩小范围或补短声明；PASS原声明逐字复用",
+      "website_first": "PASS",
+      "original_block_unchanged": true,
+      "signature_changed": false,
+      "actual_declarations": [
+        "MD.Ch07.V",
+        "MD.Ch07.Phase",
+        "MD.Ch07.vectorWiener",
+        "MD.Ch07.momentumOU"
+      ],
+      "actual_scope": "仅覆盖 V, Phase, vectorWiener, momentumOU 所列对象、量词、前提和结论。范围说明：V n为Fin n→ℝ，Phase为位置动量对。vectorWiener的D20含联合高斯、零均值、min(s,t)对角协方差、路径连续，并额外要求坐标路径独立；momentumOU逐坐标系数−γp和sqrt(2γθm_i)一致。确定初值、正对角质量、θ=k_BT>0、γ≥0及自然滤过L²解范围均显式可见。",
+      "coverage_gaps": [],
+      "block_sha256": "298bab540b009e8676f0642841084aa2fecf4a8a1f05f73a17f9511113bd0370",
+      "scope_matches_lean": true
+    },
+    {
+      "source_id": "MD-7.3-OUIntegratingFactor",
+      "review": "逐条核对实际声明与网站逐项意见，缩小范围或补短声明；PASS原声明逐字复用",
+      "website_first": "PASS",
+      "original_block_unchanged": true,
+      "signature_changed": false,
+      "actual_declarations": [
+        "MD.Ch07.ouIntegratingFactor"
+      ],
+      "actual_scope": "仅覆盖 ouIntegratingFactor 所列对象、量词、前提和结论。范围说明：固定t≥0，逐坐标的加权积分 integrand=exp(γs)sqrt(2γθm_i)，终值=exp(γt)p_i(t)−p0_i，与乘积法则及从0积分一致。hp包含正确的OU方程与确定初值；没有用积分因子等式本身充当假设。",
+      "coverage_gaps": [],
+      "block_sha256": "a19eebb3db79433e5e887d06100ec621887274e54d24284222761512a7e3c36d",
+      "scope_matches_lean": true
+    },
+    {
+      "source_id": "MD-7.3-OUExactUpdate",
+      "review": "逐条核对实际声明与网站逐项意见，缩小范围或补短声明；PASS原声明逐字复用",
+      "website_first": "NEEDS_HUMAN",
+      "original_block_unchanged": true,
+      "signature_changed": false,
+      "actual_declarations": [
+        "MD.Ch07.ouMomentum",
+        "MD.Ch07.ouTransitionLaw"
+      ],
+      "actual_scope": "只覆盖正确(7.3)和转移随机表示；原页前导乘数exp(−γt)应为exp(−γ(t+h))，文字笔误不影响(7.3)。",
+      "coverage_gaps": [],
+      "block_sha256": "4162ca1ee5dd062be10335db4750a5f33461b198dfdd2fe877d949d59fb822a5",
+      "scope_matches_lean": true
+    },
+    {
+      "source_id": "MD-7.3-OUPhaseIteration",
+      "review": "逐条核对实际声明与网站逐项意见，缩小范围或补短声明；PASS原声明逐字复用",
+      "website_first": "PASS",
+      "original_block_unchanged": true,
+      "signature_changed": false,
+      "actual_declarations": [
+        "MD.Ch07.ouStep",
+        "MD.Ch07.vectorNormalSequence"
+      ],
+      "actual_scope": "仅覆盖 ouStep, vectorNormalSequence 所列对象、量词、前提和结论。范围说明：ouStep保持q不变，p分量完全复用ouMomentum。vectorNormalSequence规定跨步独立及每步乘积标准正态分布，涵盖分量独立；总化单步映射本身没有伪称任意R都具有正态分布。",
+      "coverage_gaps": [],
+      "block_sha256": "b1ee5ec96da578d460932ff64d5beb0571ed9f68ecac2e20589fba2519e19357",
+      "scope_matches_lean": true
+    },
+    {
+      "source_id": "MD-7.3-OUForward",
+      "review": "逐条核对实际声明与网站逐项意见，缩小范围或补短声明；PASS原声明逐字复用",
+      "website_first": "PASS",
+      "original_block_unchanged": true,
+      "signature_changed": false,
+      "actual_declarations": [
+        "MD.Ch07.coordDerivative",
+        "MD.Ch07.ouForward",
+        "MD.Ch07.ouBackward",
+        "MD.Ch07.ouForward_adjoint"
+      ],
+      "actual_scope": "仅覆盖 coordDerivative, ouForward, ouBackward, ouForward_adjoint 所列对象、量词、前提和结论。范围说明：ouForward第一项是γ∑∂_i(p_i f)，第二项γθ∑m_i∂²_i f；ouBackward漂移为−γ∑p_i∂_i f，扩散符号相同。真实偏导D23已核对。两紧支撑C²函数上的积分伴随关系边界项为0，签名正确；q固定参数，未声称半群的完整强生成元域。",
+      "coverage_gaps": [],
+      "block_sha256": "93a945fc43a82a12c2fc0e679830917f13f4b02ef9cad6236d6fee3203913cf9",
+      "scope_matches_lean": true
+    },
+    {
+      "source_id": "MD-7.3-OUGaussianInvariant",
+      "review": "逐条核对实际声明与网站逐项意见，缩小范围或补短声明；PASS原声明逐字复用",
+      "website_first": "PASS",
+      "original_block_unchanged": true,
+      "signature_changed": false,
+      "actual_declarations": [
+        "MD.Ch07.ouGaussianInvariant"
+      ],
+      "actual_scope": "仅覆盖 ouGaussianInvariant 所列对象、量词、前提和结论。范围说明：输入分布是独立的p~⊗N(0,θm_i)与R~⊗N(0,1)，映射逐坐标线性组合的方差为exp(−2γh)θm_i+θ(1−exp(−2γh))m_i=θm_i，输出仍为独立高斯。m>0、θ>0、γ,h≥0保证全部方差合法；γ=0或h=0只表示不变性，不包含遍历收敛断言。",
+      "coverage_gaps": [],
+      "block_sha256": "0090797bbedbfab8ea0a6c6acdf73982050b742382c84aec6afce9c0ba8d3acb",
+      "scope_matches_lean": true
+    },
+    {
+      "source_id": "MD-7.3.1-Langevin",
+      "review": "逐条核对实际声明与网站逐项意见，缩小范围或补短声明；PASS原声明逐字复用",
+      "website_first": "PASS",
+      "original_block_unchanged": true,
+      "signature_changed": false,
+      "actual_declarations": [
+        "MD.Ch07.gradient",
+        "MD.Ch07.langevin"
+      ],
+      "actual_scope": "仅覆盖 gradient, langevin 所列对象、量词、前提和结论。范围说明：langevin的自然历史适应、确定初值与公共几乎处处连续路径均明确；同一公共满测集上对所有非负t及全部坐标给出可积性与位置/动量积分方程。位置漂移p_i/m_i，动量漂移−∂_iU−γp_i，噪声sqrt(2γθm_i)(W_i(t)−W_i(0))，完整对应(7.4)。U的导数使用真实deriv总化定义，经典动力学解释限于偏导存在的势能，不声称任意U均有解。",
+      "coverage_gaps": [],
+      "block_sha256": "2d296349acdec44b4316684f1e48f25ec3fd13f7982e0cd7a803156c44c97faf",
+      "scope_matches_lean": true
+    },
+    {
+      "source_id": "MD-7.3.1-HamiltonianGibbs",
+      "review": "逐条核对实际声明与网站逐项意见，缩小范围或补短声明；PASS原声明逐字复用",
+      "website_first": "PASS",
+      "original_block_unchanged": true,
+      "signature_changed": false,
+      "actual_declarations": [
+        "MD.Ch07.hamiltonianGibbs"
+      ],
+      "actual_scope": "仅覆盖 hamiltonianGibbs 所列对象、量词、前提和结论。范围说明：对任意可测D、基准ν，F可测且保持ν，H逐点沿F守恒，权重可测，结论是未归一化Gibbs加权测度的真实推前不变性。能量守恒使权重与F复合不变，体积保持使积分变量替换成立；无需F可逆。存在性及体积/能量保持作为已披露前提，不是已证明一般Hamilton流存在；如称概率另需正有限配分积分。",
+      "coverage_gaps": [],
+      "block_sha256": "7e037548a9bbb51e65358a4808e739a162b465cd1760f42d9539de9156cc48a0",
+      "scope_matches_lean": true
+    },
+    {
+      "source_id": "MD-7.3.1-ABOPieces",
+      "review": "逐条核对实际声明与网站逐项意见，缩小范围或补短声明；PASS原声明逐字复用",
+      "website_first": "PASS",
+      "original_block_unchanged": true,
+      "signature_changed": false,
+      "actual_declarations": [
+        "MD.Ch07.driftStep",
+        "MD.Ch07.kickStep",
+        "MD.Ch07.aField",
+        "MD.Ch07.bField",
+        "MD.Ch07.oDrift",
+        "MD.Ch07.splittingDrift"
+      ],
+      "actual_scope": "仅覆盖 driftStep, kickStep, aField, bField, oDrift, splittingDrift 所列对象、量词、前提和结论。范围说明：aField=(M⁻¹p,0)、bField=(0,−∇U)、oDrift=(0,−γp)，splittingDrift只证明漂移和而未冒充随机扩散恒等式。driftStep、kickStep及引用ouStep给出三种更新；真实扩散与正态资格及O精确性分别由VectorOU、OUPhaseIteration、OUExactUpdate承担，A/B流另由下条承担。",
+      "coverage_gaps": [],
+      "block_sha256": "8922c6a97893d1645bd19ad504f18ed3dd98aa51ab5198f308562b1ca40bd115",
+      "scope_matches_lean": true
+    },
+    {
+      "source_id": "MD-7.3.1-ABExactFlows",
+      "review": "逐条核对实际声明与网站逐项意见，缩小范围或补短声明；PASS原声明逐字复用",
+      "website_first": "PASS",
+      "original_block_unchanged": true,
+      "signature_changed": false,
+      "actual_declarations": [
+        "MD.Ch07.driftStep_derivative",
+        "MD.Ch07.kickStep_derivative"
+      ],
+      "actual_scope": "仅覆盖 driftStep_derivative, kickStep_derivative 所列对象、量词、前提和结论。范围说明：driftStep_derivative和kickStep_derivative对任意固定初态、时间、坐标给出真实时间导数，另一分量恒定且t=0为初态可直接由定义读取，分别等于aField和bField沿轨道的分量。B中q恒定，故不需对U再作时间求导。O的精确性由ouTransitionLaw签名覆盖，未因其sorry判失败。",
+      "coverage_gaps": [],
+      "block_sha256": "13ab49cc4f484cd3fe8231b250d00bacbb49d055559c0142794dc4d3d2266308",
+      "scope_matches_lean": true
+    },
+    {
+      "source_id": "MD-7.3.1-ABForward",
+      "review": "逐条核对实际声明与网站逐项意见，缩小范围或补短声明；PASS原声明逐字复用",
+      "website_first": "PASS",
+      "original_block_unchanged": true,
+      "signature_changed": false,
+      "actual_declarations": [
+        "MD.Ch07.aForward",
+        "MD.Ch07.bForward"
+      ],
+      "actual_scope": "仅覆盖 aForward, bForward 所列对象、量词、前提和结论。范围说明：aForward为−∑(p_i/m_i)∂_{q_i}f，bForward为+∑∂_{q_i}U ∂_{p_i}f，符号及变量均匹配；系数分别对被求导变量独立，因此无遗漏的散度零阶项。仅定义形式微分表达式；边界和算子域限制已说明。",
+      "coverage_gaps": [],
+      "block_sha256": "1da0465cd572d231b7aa41bbf04dc86f358ba32dbbd0aa6440d3f5acfc52e9a0",
+      "scope_matches_lean": true
+    },
+    {
+      "source_id": "MD-7.3.1-ABOBABO",
+      "review": "逐条核对实际声明与网站逐项意见，缩小范围或补短声明；PASS原声明逐字复用",
+      "website_first": "PASS",
+      "original_block_unchanged": true,
+      "signature_changed": false,
+      "actual_declarations": [
+        "MD.Ch07.abo",
+        "MD.Ch07.babo"
+      ],
+      "actual_scope": "仅覆盖 abo, babo 所列对象、量词、前提和结论。范围说明：从右至左展开复合，abo执行A(h),B(h),O(h)；babo执行B(h/2),A(h),B(h/2),O(h)，与原页从左至右执行字母约定完全一致。噪声分布资格与函数映射分开披露。",
+      "coverage_gaps": [],
+      "block_sha256": "494b33c0f2f38e999c1de9bdbd9557e906afed98e21774a7a4aa07a16cd3a1d4",
+      "scope_matches_lean": true
+    },
+    {
+      "source_id": "MD-7.3.1-WordConvention",
+      "review": "逐条核对实际声明与网站逐项意见，缩小范围或补短声明；PASS原声明逐字复用",
+      "website_first": "FAIL",
+      "original_block_unchanged": false,
+      "signature_changed": true,
+      "actual_declarations": [
+        "MD.Ch07.oabaobaoPrinted",
+        "MD.Ch07.oabaobaoPrinted_corrected",
+        "MD.Ch07.oabaobaoCount"
+      ],
+      "actual_scope": "九字母OABOAOBAO的确定性单步映射、四次O更新与计数；独立噪声序列的概率资格由vectorNormalSequence另列。",
+      "coverage_gaps": [],
+      "block_sha256": "906eb93b6da78246c661470f7b9a08b1add1a28134fc86de48294e59482e8224",
+      "scope_matches_lean": true
+    },
+    {
+      "source_id": "MD-7.3.1-SixSchemes",
+      "review": "逐条核对实际声明与网站逐项意见，缩小范围或补短声明；PASS原声明逐字复用",
+      "website_first": "PASS",
+      "original_block_unchanged": true,
+      "signature_changed": false,
+      "actual_declarations": [
+        "MD.Ch07.abao",
+        "MD.Ch07.aboba",
+        "MD.Ch07.baoab",
+        "MD.Ch07.oabao",
+        "MD.Ch07.obabo"
+      ],
+      "actual_scope": "仅覆盖 abao, aboba, baoab, oabao, obabo 所列对象、量词、前提和结论。范围说明：逐项展开abao、aboba、baoab、oabao、obabo及前条babo，全部中间q、p和力求值位置吻合原页六种算法；全O步对应ζ₂，半O步对应ζ₁，两次O使用不同R,S。独立正态是资格条件，不是任意确定R,S的属性；可用vectorNormalSequence相邻两索引实现。未将跨步缓存的成本说明伪作数学定理。",
+      "coverage_gaps": [],
+      "block_sha256": "569c6ccf525f2f51b84107e7d3f5e9282b91a67981eac8167324b07e75ed7251",
+      "scope_matches_lean": true
+    },
+    {
+      "source_id": "MD-7.3.1-ConjugateIteration",
+      "review": "逐条核对实际声明与网站逐项意见，缩小范围或补短声明；PASS原声明逐字复用",
+      "website_first": "FAIL",
+      "original_block_unchanged": false,
+      "signature_changed": true,
+      "actual_declarations": [
+        "MD.Ch07.compositionIterate",
+        "MD.Ch07.oaba",
+        "MD.Ch07.conjugateNoiseS",
+        "MD.Ch07.conjugateNoiseT",
+        "MD.Ch07.oaba_baoab_noiseShift"
+      ],
+      "actual_scope": "一般复合迭代恒等式、OABA定义及带噪声序号的OABA/BAOAB精确代数移位关系；不包含不变测度转移或遍历性。",
+      "coverage_gaps": [
+        "29号覆盖限定：一般复合迭代恒等式、OABA定义及带噪声序号的OABA/BAOAB精确代数移位关系；不包含不变测度转移或遍历性。"
+      ],
+      "block_sha256": "c3719aae7ce7ac1ebe286244007e4ab54b3bdd28a1a44b33438f4fb029d33bde",
+      "scope_matches_lean": true
+    },
+    {
+      "source_id": "MD-7.3.2-SPVPrinted",
+      "review": "逐条核对实际声明与网站逐项意见，缩小范围或补短声明；PASS原声明逐字复用",
+      "website_first": "NEEDS_HUMAN",
+      "original_block_unchanged": false,
+      "signature_changed": true,
+      "actual_declarations": [
+        "MD.Ch07.spvPrinted",
+        "MD.Ch07.spvPrinted_corrected",
+        "MD.Ch07.spvQualification"
+      ],
+      "actual_scope": "Printed保留原页q_n力，候选修正版使用qhalf；总化函数需在正质量、γ>0、θ>0、h≥0下解释为物理单步，未覆盖γ=0延拓。",
+      "coverage_gaps": [
+        "29号覆盖限定：Printed保留原页q_n力，候选修正版使用qhalf；总化函数需在正质量、γ>0、θ>0、h≥0下解释为物理单步，未覆盖γ=0延拓。"
+      ],
+      "block_sha256": "a65cef5c1bdaa5d75a6224137b8c22ba4699d884d1fc781059c599c445c23974",
+      "scope_matches_lean": true
+    },
+    {
+      "source_id": "MD-7.3.2-SPVLargeFriction",
+      "review": "逐条核对实际声明与网站逐项意见，缩小范围或补短声明；PASS原声明逐字复用",
+      "website_first": "NEEDS_HUMAN",
+      "original_block_unchanged": true,
+      "signature_changed": false,
+      "actual_declarations": [
+        "MD.Ch07.spvEtaLimit"
+      ],
+      "actual_scope": "固定h的大摩擦单步极限及相应代数关系；未声称联合h/γ极限的一致性或完整采样不一致性。",
+      "coverage_gaps": [],
+      "block_sha256": "bfe33b749a43b22f4d65f9f872b5090efff1dbd462ef18004adeb9865fcc6bad",
+      "scope_matches_lean": true
+    },
+    {
+      "source_id": "MD-7.3.2-BBK",
+      "review": "逐条核对实际声明与网站逐项意见，缩小范围或补短声明；PASS原声明逐字复用",
+      "website_first": "PASS",
+      "original_block_unchanged": true,
+      "signature_changed": false,
+      "actual_declarations": [
+        "MD.Ch07.bbk",
+        "MD.Ch07.bbkSameNoise"
+      ],
+      "actual_scope": "仅覆盖 bbk, bbkSameNoise 所列对象、量词、前提和结论。范围说明：bbk 的两次力分别在旧位置与新位置；两个噪声系数均为 1/2，末步除以 1+hγ/2。bbkSameNoise 精确取 S=R。向量逐坐标版本与所印三式相符。R′_n=R_{n+1} 的跨步耦合由条目15另给出，不由单步函数自动保证。",
+      "coverage_gaps": [],
+      "block_sha256": "cb3df5f46a9660de824601e3d2adbc0cb6532505b9b323a966a501a15d3e5076",
+      "scope_matches_lean": true
+    },
+    {
+      "source_id": "MD-7.4-HarmonicHamiltonian",
+      "review": "逐条核对实际声明与网站逐项意见，缩小范围或补短声明；PASS原声明逐字复用",
+      "website_first": "PASS",
+      "original_block_unchanged": true,
+      "signature_changed": false,
+      "actual_declarations": [
+        "MD.Ch07.harmonicHamiltonian",
+        "MD.Ch07.harmonicLaw"
+      ],
+      "actual_scope": "仅覆盖 harmonicHamiltonian, harmonicLaw 所列对象、量词、前提和结论。范围说明：harmonicHamiltonian 的 x.1 为 q、x.2 为 p，两项系数与(7.6)一致。harmonicLaw 是方差 θ/Ω² 与 θm 的零均值正态乘积；正 m、正 θ、Ω≠0 的 Gibbs 解释需要所列条件，不是对任意参数的概率密度识别定理。",
+      "coverage_gaps": [],
+      "block_sha256": "0754a18a12f66fcf1ebab72d5b1e70c82675b90ae9ced86aa7439db0fcdeca1d",
+      "scope_matches_lean": true
+    },
+    {
+      "source_id": "MD-7.4-HarmonicMoments",
+      "review": "逐条核对实际声明与网站逐项意见，缩小范围或补短声明；PASS原声明逐字复用",
+      "website_first": "PASS",
+      "original_block_unchanged": true,
+      "signature_changed": false,
+      "actual_declarations": [
+        "MD.Ch07.harmonicMoments"
+      ],
+      "actual_scope": "仅覆盖 harmonicMoments 所列对象、量词、前提和结论。范围说明：五个积分结论完整对应两个一阶矩、两个能量二阶矩和混合矩；正 m、Ω≠0、正 θ 保证 Real.toNNReal 不改变目标方差。harmonicLaw 为实际乘积概率测度，未把结论作为前提；其与 exp(-H/θ) 的密度识别未在该签名中证明，已披露。",
+      "coverage_gaps": [],
+      "block_sha256": "ce14b3dbddd988d1077ddfa12b86aec92dec1e1919d60bf9391c5d0e93fb4441",
+      "scope_matches_lean": true
+    },
+    {
+      "source_id": "MD-7.4-LinearIteration",
+      "review": "逐条核对实际声明与网站逐项意见，缩小范围或补短声明；PASS原声明逐字复用",
+      "website_first": "PASS",
+      "original_block_unchanged": true,
+      "signature_changed": false,
+      "actual_declarations": [
+        "MD.Ch07.linearUpdate",
+        "MD.Ch07.momentQ",
+        "MD.Ch07.momentP",
+        "MD.Ch07.momentQP"
+      ],
+      "actual_scope": "仅覆盖 linearUpdate, momentQ, momentP, momentQP 所列对象、量词、前提和结论。范围说明：linearUpdate 以四个实数表示任意常实 2×2 矩阵，状态和噪声均为 ℝ×ℝ；两个分量完整对应(7.7)。momentQ/P/QP 是原始二阶矩，不误作中心方差。该定义不自动保证特定算法线性或噪声与状态独立。",
+      "coverage_gaps": [],
+      "block_sha256": "826bb2cb0edfd6ab89e4ff5fa6ebfd230fa7fc25b9350771327f17016949937b",
+      "scope_matches_lean": true
+    },
+    {
+      "source_id": "MD-7.4-BBKLinearForm",
+      "review": "逐条核对实际声明与网站逐项意见，缩小范围或补短声明；PASS原声明逐字复用",
+      "website_first": "PASS",
+      "original_block_unchanged": true,
+      "signature_changed": false,
+      "actual_declarations": [
+        "MD.Ch07.bbkMatrix",
+        "MD.Ch07.bbkNoise"
+      ],
+      "actual_scope": "仅覆盖 bbkMatrix, bbkNoise 所列对象、量词、前提和结论。范围说明：bbkMatrix 的四个嵌套积投影依次为 ψ11,ψ12,ψ21,ψ22；bbkNoise 的两坐标、共同分母和 R,S 系数均与原页一致。它们是记录所印系数的定义，不是从 bbk 推导这些系数的等式定理，extra_assumptions 已明确此缺口。",
+      "coverage_gaps": [
+        "完整记录所印矩阵与噪声；从BBK更新代入谐势的代数识别暂未证明，不以定义计为已证识别。"
+      ],
+      "block_sha256": "bdbed74743563f9dffcc51acfc365257a9b3dc8f260b59ca934b526701123094",
+      "scope_matches_lean": true
+    },
+    {
+      "source_id": "MD-7.4-QuadraticProducts",
+      "review": "逐条核对实际声明与网站逐项意见，缩小范围或补短声明；PASS原声明逐字复用",
+      "website_first": "PASS",
+      "original_block_unchanged": true,
+      "signature_changed": false,
+      "actual_declarations": [
+        "MD.Ch07.quadraticProducts"
+      ],
+      "actual_scope": "仅覆盖 quadraticProducts 所列对象、量词、前提和结论。范围说明：对全部八个任意实数，三个合取项分别展开 q_new²、p_new²、q_new p_new。交叉项 (a*d+b*c)、(a*s+c*r)、(d*r+b*s) 均正确；不需要概率或独立性前提。",
+      "coverage_gaps": [],
+      "block_sha256": "f47c27f23f3330c1ce367705a1a95a0428e2afa96293427909c1a72b6255e27f",
+      "scope_matches_lean": true
+    },
+    {
+      "source_id": "MD-7.4.1-StationaryMomentSystem",
+      "review": "逐条核对实际声明与网站逐项意见，缩小范围或补短声明；PASS原声明逐字复用",
+      "website_first": "PASS",
+      "original_block_unchanged": true,
+      "signature_changed": false,
+      "actual_declarations": [
+        "MD.Ch07.momentSystem",
+        "MD.Ch07.invariantLinearLaw",
+        "MD.Ch07.stationaryMomentSystem"
+      ],
+      "actual_scope": "仅覆盖 momentSystem, invariantLinearLaw, stationaryMomentSystem 所列对象、量词、前提和结论。范围说明：momentSystem 三式与(7.11)一致，噪声矩的参数次序 u,v,w 对应 qq,qp,pp。invariantLinearLaw 用独立乘积 μ.prodη 及实际推前不变性；四个坐标 L²、噪声均值零足够确保各乘积可积及状态噪声混合项消失。结论是已有平稳分布的矩方程；不是从任意初始状态收敛到平稳的定理，此差别已披露。",
+      "coverage_gaps": [
+        "只讨论已存在的平稳分布矩，初值分布趋平稳及长时间平均的遍历收敛未证明。"
+      ],
+      "block_sha256": "568f7c2e1c65d2423f94de66cbcd42bf0dd2539dc3153bc5c7275b2b61b169d8",
+      "scope_matches_lean": true
+    },
+    {
+      "source_id": "MD-7.4.1-ABOHarmonic",
+      "review": "逐条核对实际声明与网站逐项意见，缩小范围或补短声明；PASS原声明逐字复用",
+      "website_first": "PASS",
+      "original_block_unchanged": true,
+      "signature_changed": false,
+      "actual_declarations": [
+        "MD.Ch07.aboHarmonic",
+        "MD.Ch07.aboStationaryMean"
+      ],
+      "actual_scope": "仅覆盖 aboHarmonic, aboStationaryMean 所列对象、量词、前提和结论。范围说明：aboHarmonic 的矩阵和动量噪声与(7.12)一致。aboStationaryMean 在正 m,h,γ、Ω≠0 和坐标可积的实际不变概率分布下给出两个均值零；不要求 θ>0 仍不损害该均值结论。hinv 中 z.1 为状态、z.2 为标准正态噪声，顺序正确。只替代原文已取到的平稳极限，不证明趋平稳。",
+      "coverage_gaps": [],
+      "block_sha256": "fa6485d0ba1b3195cd6fcbc4d6f88fed5f6a12355006a36581e42537c1420e18",
+      "scope_matches_lean": true
+    },
+    {
+      "source_id": "MD-7.4.1-ABOVariance",
+      "review": "逐条核对实际声明与网站逐项意见，缩小范围或补短声明；PASS原声明逐字复用",
+      "website_first": "PASS",
+      "original_block_unchanged": true,
+      "signature_changed": false,
+      "actual_declarations": [
+        "MD.Ch07.aboVarianceRatio",
+        "MD.Ch07.aboVarianceRatio_expansion",
+        "MD.Ch07.aboStationaryVariance"
+      ],
+      "actual_scope": "仅覆盖 aboVarianceRatio, aboVarianceRatio_expansion, aboStationaryVariance 所列对象、量词、前提和结论。范围说明：有理式的 exp(hγ)、(1+exp(-hγ))² 及分母完全一致；IsBigO 在 h→0 的双侧邻域表达三阶余项，m>0 保证零点附近分母非零。实际平稳方差结论有正参数、L²、不变推前及正稳定分母，不循环假设目标比值。",
+      "coverage_gaps": [],
+      "block_sha256": "0107a21f3f62b6ff97f808486711a8b1455655b5484e4e2d02f868e38be7a771",
+      "scope_matches_lean": true
+    },
+    {
+      "source_id": "MD-7.4.1-Table71",
+      "review": "逐条核对实际声明与网站逐项意见，缩小范围或补短声明；PASS原声明逐字复用",
+      "website_first": "PASS",
+      "original_block_unchanged": true,
+      "signature_changed": false,
+      "actual_declarations": [
+        "MD.Ch07.scalarLift",
+        "MD.Ch07.symmetricHarmonicStep",
+        "MD.Ch07.symmetricInvariant",
+        "MD.Ch07.table71"
+      ],
+      "actual_scope": "仅覆盖 scalarLift, symmetricHarmonicStep, symmetricInvariant, table71 所列对象、量词、前提和结论。范围说明：Fin 4 的方案0,1,2,3依次为 ABOBA,OBABO,BAOAB,OABAO。依赖中各复合从右向左执行，两个 O/2 子步使用独立 R,S。h²Ω²<4m 保证表内正因子；三项结论逐行覆盖表7.1的两个比值与零混合矩。hinv 是实际概率推前不变性及 L²，并未假设表内矩值。",
+      "coverage_gaps": [
+        "只陈述已存在平稳概率的矩；长期收敛和遍历解释另列缺口。"
+      ],
+      "block_sha256": "c4528a1069f9a237ac688305846f04d856120ca11fc9dca76e07539480db5f4d",
+      "scope_matches_lean": true
+    },
+    {
+      "source_id": "MD-7.4.1-NonsymmetricExactMoments",
+      "review": "逐条核对实际声明与网站逐项意见，缩小范围或补短声明；PASS原声明逐字复用",
+      "website_first": "FAIL",
+      "original_block_unchanged": false,
+      "signature_changed": true,
+      "actual_declarations": [
+        "MD.Ch07.nonsymmetricHarmonicStep",
+        "MD.Ch07.nonsymmetricExactMoments",
+        "MD.Ch07.nonsymmetricMixedMoment_order"
+      ],
+      "actual_scope": "正质量和稳定范围内AOAB/BAOA不变概率的两个方差、精确混合矩；固定参数下混合矩为O(h)的量化界另列。",
+      "coverage_gaps": [],
+      "block_sha256": "838dbfd8d7bde22a5d181b2575663e8cd11bd6668b1fa3d9ee304a4e721c3443",
+      "scope_matches_lean": true
+    },
+    {
+      "source_id": "MD-7.4.2-BBKStar",
+      "review": "逐条核对实际声明与网站逐项意见，缩小范围或补短声明；PASS原声明逐字复用",
+      "website_first": "PASS",
+      "original_block_unchanged": true,
+      "signature_changed": false,
+      "actual_declarations": [
+        "MD.Ch07.bbkStarTrajectory",
+        "MD.Ch07.bbkStarNoise"
+      ],
+      "actual_scope": "仅覆盖 bbkStarTrajectory, bbkStarNoise 所列对象、量词、前提和结论。范围说明：递归基点为 x0；第 k 次更新用 R k 与 R(k+1)，精确实现上一步末尾噪声在下一步开头重用。bbkStarNoise 记录 (κ1R,κ2R+κ3S)。R 是任意序列的确定性输入，此定义不宣称其本身具有标准正态或 iid 性；随机解释需要 JSON 已列出的 iid 假设。",
+      "coverage_gaps": [],
+      "block_sha256": "3edd1480483f41805e8350ef30da0ae5401bf912196a89b8e31cdb8ee8601ca8",
+      "scope_matches_lean": true
+    },
+    {
+      "source_id": "MD-7.4.2-BBKStarCorrelations",
+      "review": "逐条核对实际声明与网站逐项意见，缩小范围或补短声明；PASS原声明逐字复用",
+      "website_first": "PASS",
+      "original_block_unchanged": true,
+      "signature_changed": false,
+      "actual_declarations": [
+        "MD.Ch07.bbkStarCorrelations"
+      ],
+      "actual_scope": "仅覆盖 bbkStarCorrelations 所列对象、量词、前提和结论。范围说明：七个相关矩逐项与原页相同。标准正态边缘、R与S独立、旧状态二元组与未来噪声二元组独立，以及旧状态 L² 足够。q=aQold+bPold 不含 R；p=cQold+dPold+κ3R 含当前噪声，因而保留了所需 κ1κ3 和 κ2κ3。该局部模型未自动证明由完整历史产生的旧状态满足这些资格。",
+      "coverage_gaps": [],
+      "block_sha256": "c7bff9c92a2243dff3dfd608b3dc638b252b8005d6be025207f84f1460adb6bb",
+      "scope_matches_lean": true
+    },
+    {
+      "source_id": "MD-7.4.2-BBKStarMomentSystemPrinted",
+      "review": "逐条核对实际声明与网站逐项意见，缩小范围或补短声明；PASS原声明逐字复用",
+      "website_first": "NEEDS_HUMAN",
+      "original_block_unchanged": true,
+      "signature_changed": false,
+      "actual_declarations": [
+        "MD.Ch07.bbkStarMomentSystemPrinted",
+        "MD.Ch07.bbkStarMomentSystemPrinted_corrected",
+        "MD.Ch07.bbkStarExtraFactor_counterexample"
+      ],
+      "actual_scope": "保留三条原印矩方程及修正系数；原页混合矩重复ψ因子已目视确认，未从相关噪声过程重新证明整组矩方程。",
+      "coverage_gaps": [],
+      "block_sha256": "8fe259efe95ff461f56b0318a07f39137a5c9d988d3a90a0abd04e4aff253227",
+      "scope_matches_lean": true
+    },
+    {
+      "source_id": "MD-7.4.2-BBKStarStationary",
+      "review": "逐条核对实际声明与网站逐项意见，缩小范围或补短声明；PASS原声明逐字复用",
+      "website_first": "PASS",
+      "original_block_unchanged": true,
+      "signature_changed": false,
+      "actual_declarations": [
+        "MD.Ch07.bbkStarStationaryAlgebra"
+      ],
+      "actual_scope": "仅覆盖 bbkStarStationaryAlgebra 所列对象、量词、前提和结论。范围说明：hsys 明确采用 corrected 方程；四个矩阵投影与三项 κ 系数均与 bbkMatrix/bbkNoise 一致。正参数及 h²Ω²<4m 排除退化分母，结论与原页三个平稳观测值相符。该声明只求解代数方程组，未从跨步相关的实际平稳分布导出 hsys；JSON 已如实披露，不能据此宣称 BBK* 分布理论已完成。",
+      "coverage_gaps": [],
+      "block_sha256": "f60d48f1fcdb1d00ca728b6c1959bb030b968fb8ffda7834ec337ea69a4f1223",
+      "scope_matches_lean": true
+    },
+    {
+      "source_id": "MD-7.5-PerturbedHamiltonian",
+      "review": "逐条核对实际声明与网站逐项意见，缩小范围或补短声明；PASS原声明逐字复用",
+      "website_first": "PASS",
+      "original_block_unchanged": true,
+      "signature_changed": false,
+      "actual_declarations": [
+        "MD.Ch07.perturbedPotential",
+        "MD.Ch07.perturbedHamiltonian",
+        "MD.Ch07.perturbedGibbs",
+        "MD.Ch07.perturbedStep",
+        "MD.Ch07.perturbedStationary"
+      ],
+      "actual_scope": "仅覆盖 perturbedPotential, perturbedHamiltonian, perturbedGibbs, perturbedStep, perturbedStationary 所列对象、量词、前提和结论。范围说明：势、Hamiltonian 与(7.13)完全一致。perturbedGibbs 是单位温度归一权密度的定义；ε>0 时的可积性和归一性不是该定义自身的定理。方案顺序0,1,2,3为 ABOBA,BAOAB,OBABO,OABAO，和后两条一致；perturbedStationary 正确使用独立两份标准正态及 L² 不变概率分布。",
+      "coverage_gaps": [],
+      "block_sha256": "ceace2f1917de0a3ce2ffe6bf7e7a58e8b40686be2bbca3b8d19f29773b0666d",
+      "scope_matches_lean": true
+    },
+    {
+      "source_id": "MD-7.5-PerturbedErrorExpansion",
+      "review": "逐条核对实际声明与网站逐项意见，缩小范围或补短声明；PASS原声明逐字复用",
+      "website_first": "NEEDS_HUMAN",
+      "original_block_unchanged": true,
+      "signature_changed": false,
+      "actual_declarations": [
+        "MD.Ch07.perturbedLeading",
+        "MD.Ch07.perturbedRemainder",
+        "MD.Ch07.positivePairLimit",
+        "MD.Ch07.perturbedErrorExpansion"
+      ],
+      "actual_scope": "(7.14)作为待证严格双参数渐近目标；不变测度选择、矩与统一余项资格不足，原书此处是形式展开而非已证严格估计。",
+      "coverage_gaps": [],
+      "block_sha256": "e7253e18b6aeaf273af9e2b024b9d56cbd95935e01aed9bc706a2a8e9b30afc6",
+      "scope_matches_lean": true
+    },
+    {
+      "source_id": "MD-7.5-PerturbedErrorOrders",
+      "review": "逐条核对实际声明与网站逐项意见，缩小范围或补短声明；PASS原声明逐字复用",
+      "website_first": "NEEDS_HUMAN",
+      "original_block_unchanged": true,
+      "signature_changed": false,
+      "actual_declarations": [
+        "MD.Ch07.perturbedErrorScale",
+        "MD.Ch07.perturbedErrorOrders",
+        "MD.Ch07.baoabLeading_largeFriction"
+      ],
+      "actual_scope": "固定γ>0时(7.14)的余项足以推出(7.15)阶；γ一致常数或整个误差在γ→∞消失另需控制ε³h²项，不将固定γ和一致γ结论混淆。",
+      "coverage_gaps": [],
+      "block_sha256": "ed5104c4dcc7c2cfa983e8cb815947e6e18b2b35cff5a27fd6238f2ff48ff005",
+      "scope_matches_lean": true
+    },
+    {
+      "source_id": "MD-7.6-GibbsComposition",
+      "review": "逐条核对实际声明与网站逐项意见，缩小范围或补短声明；PASS原声明逐字复用",
+      "website_first": "FAIL",
+      "original_block_unchanged": true,
+      "signature_changed": false,
+      "actual_declarations": [
+        "MD.Ch07.gibbsComposition"
+      ],
+      "actual_scope": "只覆盖两个已给定共同固定点映射的末尾组合恒等式；未识别实际H/O生成元、Gibbs测度及其半群。",
+      "coverage_gaps": [
+        "29号覆盖限定：只覆盖两个已给定共同固定点映射的末尾组合恒等式；未识别实际H/O生成元、Gibbs测度及其半群。"
+      ],
+      "block_sha256": "422b7ca3e6c85540f629e392cec603eab4c8ea31d88985fc9dcf69e203c77cd4",
+      "scope_matches_lean": true
+    },
+    {
+      "source_id": "MD-7.6-DivergenceFreeInvariant",
+      "review": "逐条核对实际声明与网站逐项意见，缩小范围或补短声明；PASS原声明逐字复用",
+      "website_first": "FAIL",
+      "original_block_unchanged": true,
+      "signature_changed": false,
+      "actual_declarations": [
+        "MD.Ch07.lieField",
+        "MD.Ch07.divergenceField",
+        "MD.Ch07.forwardField",
+        "MD.Ch07.divergenceFreeInvariant",
+        "MD.Ch07.firstIntegral_density"
+      ],
+      "actual_scope": "只覆盖C¹向量场的散度乘积恒等式和可微第一积分的链式法则；不包含归一Gibbs测度或全局流保测。",
+      "coverage_gaps": [
+        "29号覆盖限定：只覆盖C¹向量场的散度乘积恒等式和可微第一积分的链式法则；不包含归一Gibbs测度或全局流保测。"
+      ],
+      "block_sha256": "9680bd5f20fc58243646b2782940e430f26049aa5ee5dcf9f107f75034d91416",
+      "scope_matches_lean": true
+    },
+    {
+      "source_id": "MD-7.6-GeMarsdenRestriction",
+      "review": "逐条核对实际声明与网站逐项意见，缩小范围或补短声明；PASS原声明逐字复用",
+      "website_first": "NEEDS_HUMAN",
+      "original_block_unchanged": true,
+      "signature_changed": false,
+      "actual_declarations": [
+        "MD.Ch07.onlyEnergyIntegrals",
+        "MD.Ch07.timeReparametrizes",
+        "MD.Ch07.geMarsdenConclusion"
+      ],
+      "actual_scope": "只定义全部光滑第一积分全局依赖H、任意时间重参数和辛保能蕴涵目标；未连结精确哈密顿流、非退化时间变换及定理适用域，未声明Ge–Marsden定理已形式化。",
+      "coverage_gaps": [],
+      "block_sha256": "15f94b8de04485f98b908fce62ef4bcb7e6f761575107d01b0af136e4adb6e22",
+      "scope_matches_lean": true
+    },
+    {
+      "source_id": "MD-7.6-JSplitting",
+      "review": "逐条核对实际声明与网站逐项意见，缩小范围或补短声明；PASS原声明逐字复用",
+      "website_first": "FAIL",
+      "original_block_unchanged": false,
+      "signature_changed": true,
+      "actual_declarations": [
+        "MD.Ch07.jField",
+        "MD.Ch07.jSplitting_energy",
+        "MD.Ch07.composition_preservesEnergy",
+        "MD.Ch07.jField_finiteDecomposition"
+      ],
+      "actual_scope": "有限反对称常矩阵及向量场的和分解、单个子场能量导数/散度为零、已保能映射的复合保能；未含流保体积和一致逼近。",
+      "coverage_gaps": [
+        "29号覆盖限定：有限反对称常矩阵及向量场的和分解、单个子场能量导数/散度为零、已保能映射的复合保能；未含流保体积和一致逼近。"
+      ],
+      "block_sha256": "618788ea5a9d4af245e388364874ec941d919a91ed248ea732e80a00c5e2ea81",
+      "scope_matches_lean": true
+    },
+    {
+      "source_id": "MD-7.6-CoordinateJSplitting",
+      "review": "逐条核对实际声明与网站逐项意见，缩小范围或补短声明；PASS原声明逐字复用",
+      "website_first": "FAIL",
+      "original_block_unchanged": false,
+      "signature_changed": true,
+      "actual_declarations": [
+        "MD.Ch07.coordinateJField",
+        "MD.Ch07.frozenPotential",
+        "MD.Ch07.coordinateJQualification",
+        "MD.Ch07.frozenPotential_deriv"
+      ],
+      "actual_scope": "两个总化辅助定义、正质量光滑势资格和冻结势单坐标导数关系；不含分段求积、转折点或一自由度全局流。",
+      "coverage_gaps": [
+        "完整记录冻结坐标的一自由度向量场；形式quadrature可积性的分支、转折点及积分反演尚未形式化，明确列入覆盖缺口。"
+      ],
+      "block_sha256": "58633c57f8e2796fee5fc9112d94b79e3b2a0285ed8a96beea3e22b240a8c5c2",
+      "scope_matches_lean": true
+    },
+    {
+      "source_id": "MD-7.7-ModifiedGenerator",
+      "review": "逐条核对实际声明与网站逐项意见，缩小范围或补短声明；PASS原声明逐字复用",
+      "website_first": "PASS",
+      "original_block_unchanged": true,
+      "signature_changed": false,
+      "actual_declarations": [
+        "MD.Ch07.formalModifiedGenerator",
+        "MD.Ch07.formalGeneratorExpansion"
+      ],
+      "actual_scope": "仅覆盖 formalModifiedGenerator, formalGeneratorExpansion 所列对象、量词、前提和结论。范围说明：formalGeneratorExpansion逐一固定0–3阶系数，与形式O(h⁴)一致；formalModifiedGenerator取log(S)的k+1阶系数，相当于形式除以h。D54中n=0的实数除零项为0；在S常数项为1时，其余有限和确为该阶形式对数。任意S仍有定义，但不能因此称为真实传播子的log/h；原文的数值传播子要求S₀=1。extra_assumptions明确只取形式系数、不承诺收敛或另一SDE，因此本条作为定义通过；未声称已识别实际Langevin生成元。",
+      "coverage_gaps": [],
+      "block_sha256": "ed558913e61c2efe8a4d3c6f1fcd81fb3fd5e44cf7fd8df71f1b11e9f026272d",
+      "scope_matches_lean": true
+    },
+    {
+      "source_id": "MD-7.7-InvariantDensityExpansion",
+      "review": "逐条核对实际声明与网站逐项意见，缩小范围或补短声明；PASS原声明逐字复用",
+      "website_first": "PASS",
+      "original_block_unchanged": true,
+      "signature_changed": false,
+      "actual_declarations": [
+        "MD.Ch07.densityExpansion",
+        "MD.Ch07.centeredCorrections",
+        "MD.Ch07.computedAverage",
+        "MD.Ch07.densityExpansion_zeroMass"
+      ],
+      "actual_scope": "仅覆盖 densityExpansion, centeredCorrections, computedAverage, densityExpansion_zeroMass 所列对象、量词、前提和结论。范围说明：densityExpansion第0系数为ρ，第k≥1系数为ρfk，索引无偏移。centeredCorrections针对概率μ、k>0同时要求可积及零积分；用于原文时须μ=ρβdω。densityExpansion_zeroMass直接假设每个ρfk相对ν可积且零质量，完整推出所有系数的积分值。computedAverage是φρhat相对ν积分。这里只得到形式系数的质量一致，未得到实际正密度或余项积分为零；extra_assumptions已明确限制，不能扩读成精确截断概率或离散不变性定理。",
+      "coverage_gaps": [],
+      "block_sha256": "a23c8edf310d947bf579cc871af41702ca48ec2162e8d248f492b217ecdf5ccd",
+      "scope_matches_lean": true
+    },
+    {
+      "source_id": "MD-7.7.1-ExactABOPropagators",
+      "review": "逐条核对实际声明与网站逐项意见，缩小范围或补短声明；PASS原声明逐字复用",
+      "website_first": "PASS",
+      "original_block_unchanged": true,
+      "signature_changed": false,
+      "actual_declarations": [
+        "MD.Ch07.propagateA",
+        "MD.Ch07.propagateB",
+        "MD.Ch07.propagateO"
+      ],
+      "actual_scope": "仅覆盖 propagateA, propagateB, propagateO 所列对象、量词、前提和结论。范围说明：D55–D61：A/B分别拉回driftStep/kickStep；OU的噪声是sqrt(θ(1−exp(−2γt)))sqrt(mi)Ri，R服从Fin n各分量gaussianReal 0 1的乘积测度，正确对应θ=kBT和对角正质量。固定时刻定义不包含指数生成元等式或半群律；JSON明确该限制。物理解读需要正质量、θ>0、γ≥0、t≥0和被积函数可积，这些写于extra_assumptions，不是Lean隐含前提；在不满足时总函数仍可定义但不能作OU物理传播子解释。",
+      "coverage_gaps": [],
+      "block_sha256": "d061373ca33817d967f21f9d58752a1b14c77515ff42389e282e59b95b1fd073",
+      "scope_matches_lean": true
+    },
+    {
+      "source_id": "MD-7.7.1-OperatorOrderReversal",
+      "review": "逐条核对实际声明与网站逐项意见，缩小范围或补短声明；PASS原声明逐字复用",
+      "website_first": "FAIL",
+      "original_block_unchanged": false,
+      "signature_changed": true,
+      "actual_declarations": [
+        "MD.Ch07.pullback_order",
+        "MD.Ch07.abaoBackward",
+        "MD.Ch07.fourStage_duality"
+      ],
+      "actual_scope": "拉回复合结合律、ABAO后向定义及四个线性算子的反序对偶配对恒等式；实际随机传播子识别及闭算子域未覆盖。",
+      "coverage_gaps": [
+        "29号覆盖限定：拉回复合结合律、ABAO后向定义及四个线性算子的反序对偶配对恒等式；实际随机传播子识别及闭算子域未覆盖。"
+      ],
+      "block_sha256": "cf4d804cdd42860b1cb9b3ac05e7c9767187737752d08328c945577556a7be8c",
+      "scope_matches_lean": true
+    },
+    {
+      "source_id": "MD-7.7.1-StationaryModifiedPDE",
+      "review": "逐条核对实际声明与网站逐项意见，缩小范围或补短声明；PASS原声明逐字复用",
+      "website_first": "NEEDS_HUMAN",
+      "original_block_unchanged": true,
+      "signature_changed": false,
+      "actual_declarations": [
+        "MD.Ch07.formalDensityEvolution",
+        "MD.Ch07.stationaryModifiedDensity"
+      ],
+      "actual_scope": "仅有界连续线性算子的全实时间演化目标、代数算子的核目标；二者未识别，也非实际Langevin无界生成元或离散嵌入定理。",
+      "coverage_gaps": [
+        "29号覆盖限定：仅有界连续线性算子的全实时间演化目标、代数算子的核目标；二者未识别，也非实际Langevin无界生成元或离散嵌入定理。"
+      ],
+      "block_sha256": "f733ddfa78064ec056f2ef7a0702e9766d3ea82194c28073f85bd7db9d17fa66",
+      "scope_matches_lean": true
+    },
+    {
+      "source_id": "MD-7.7.1-TwoOperatorBCH",
+      "review": "逐条核对实际声明与网站逐项意见，缩小范围或补短声明；PASS原声明逐字复用",
+      "website_first": "PASS",
+      "original_block_unchanged": true,
+      "signature_changed": false,
+      "actual_declarations": [
+        "MD.Ch07.comm",
+        "MD.Ch07.twoStage",
+        "MD.Ch07.twoOperatorBCH"
+      ],
+      "actual_scope": "仅覆盖 comm, twoStage, twoOperatorBCH 所列对象、量词、前提和结论。范围说明：D62交换子为XY−YX，D63形式指数系数Aⁿ/n!，twoStage顺序X后乘Y；形式log/h的0、1、2阶与原文完整展示的三阶系数一致。任意实结合代数足够，不要求交换、收敛或有界性；twoStage常数项为1，满足D54形式对数的使用条件。sorry仅是未填证明，不影响本次签名判定。",
+      "coverage_gaps": [],
+      "block_sha256": "7d011dbe8b359e05fdd3b397d91ea368fedc39abaa123224d8aba778fe838c90",
+      "scope_matches_lean": true
+    },
+    {
+      "source_id": "MD-7.7.1-TaylorRemainder",
+      "review": "逐条核对实际声明与网站逐项意见，缩小范围或补短声明；PASS原声明逐字复用",
+      "website_first": "FAIL",
+      "original_block_unchanged": false,
+      "signature_changed": true,
+      "actual_declarations": [
+        "MD.Ch07.taylorRemainder",
+        "MD.Ch07.taylorRemainder_bound",
+        "MD.Ch07.propagatedObservable_remainder"
+      ],
+      "actual_scope": "标量时间函数的Taylor积分余项和逐点O界，包括F(t)=P_tφ(z)已具备时间正则时的特化；未证明半群时间正则或空间统一界。",
+      "coverage_gaps": [
+        "29号覆盖限定：标量时间函数的Taylor积分余项和逐点O界，包括F(t)=P_tφ(z)已具备时间正则时的特化；未证明半群时间正则或空间统一界。"
+      ],
+      "block_sha256": "64f818c65c8ec4886954fc17efd9d5d5dffe573f49e55e49a50bb73bcab5e9a5",
+      "scope_matches_lean": true
+    },
+    {
+      "source_id": "MD-7.7.2-ThreeOperatorBCH",
+      "review": "逐条核对实际声明与网站逐项意见，缩小范围或补短声明；PASS原声明逐字复用",
+      "website_first": "PASS",
+      "original_block_unchanged": true,
+      "signature_changed": false,
+      "actual_declarations": [
+        "MD.Ch07.threeStage",
+        "MD.Ch07.threeOperatorBCH"
+      ],
+      "actual_scope": "仅覆盖 threeStage, threeOperatorBCH 所列对象、量词、前提和结论。范围说明：threeStage按Z、Y、X相乘；threeOperatorBCH的0–2阶系数逐项匹配最终印式。comm (Y+X) (comm (Y+X) Z)的括号正确；h²/4项是[Z,[Y,X]]，无交换子符号反转。任意实结合代数上的形式论证足够，常数项为1。中间未合并推导省略不改变所审最终公式。",
+      "coverage_gaps": [],
+      "block_sha256": "91a949e0839f58abb1ca450b8f9d8d5bd5abdaa982266869e6ce3a1f6db49867",
+      "scope_matches_lean": true
+    },
+    {
+      "source_id": "MD-7.7.2-ScalarForwardOperators",
+      "review": "逐条核对实际声明与网站逐项意见，缩小范围或补短声明；PASS原声明逐字复用",
+      "website_first": "PASS",
+      "original_block_unchanged": true,
+      "signature_changed": false,
+      "actual_declarations": [
+        "MD.Ch07.Density1",
+        "MD.Ch07.dq",
+        "MD.Ch07.dp",
+        "MD.Ch07.opA",
+        "MD.Ch07.opB",
+        "MD.Ch07.opO",
+        "MD.Ch07.opLD",
+        "MD.Ch07.opComm"
+      ],
+      "actual_scope": "仅覆盖 Density1, dq, dp, opA, opB, opO, opLD, opComm 所列对象、量词、前提和结论。范围说明：Density1=(ℝ×ℝ)→ℝ，dq固定p，dp固定q，opA负号、opB力项正号、opO的γf零阶项及γθ二阶项均正确，θ=kBT。opLD是三者和，opComm是先AB再减BA。全函数空间上的deriv是总定义；光滑性、物理正参数及闭算子定义域资格仅在解释中使用，JSON明确没有把这些表达式直接宣称为闭生成元。",
+      "coverage_gaps": [],
+      "block_sha256": "411373a30e2d7e0017b95e59746c4fe7ef69fcc3f4a5a741df54fac7d7a85450",
+      "scope_matches_lean": true
+    },
+    {
+      "source_id": "MD-7.7.2-CommutatorAB",
+      "review": "逐条核对实际声明与网站逐项意见，缩小范围或补短声明；PASS原声明逐字复用",
+      "website_first": "PASS",
+      "original_block_unchanged": true,
+      "signature_changed": false,
+      "actual_declarations": [
+        "MD.Ch07.commutatorAB"
+      ],
+      "actual_scope": "仅覆盖 commutatorAB 所列对象、量词、前提和结论。范围说明：commutatorAB量化任意C²势U及C²二元ρ、每一点x；D65–D70给出实际偏导和AB−BA。C²保证混合偏导相等，乘积展开后恰为结论的两项。无质量/γ/温度遗漏，因为这是单位质量A、B的交换子。",
+      "coverage_gaps": [],
+      "block_sha256": "82a82c0283d3e00811446f97e1065ab3cf6a10d742ea9f59f5e23b9fa56e2da5",
+      "scope_matches_lean": true
+    },
+    {
+      "source_id": "MD-7.7.2-CommutatorsAOBO",
+      "review": "逐条核对实际声明与网站逐项意见，缩小范围或补短声明；PASS原声明逐字复用",
+      "website_first": "PASS",
+      "original_block_unchanged": true,
+      "signature_changed": false,
+      "actual_declarations": [
+        "MD.Ch07.commutatorsAOBO"
+      ],
+      "actual_scope": "仅覆盖 commutatorsAOBO 所列对象、量词、前提和结论。范围说明：commutatorsAOBO在U、ρ均C³下对每一点同时给出两式；2γθ=σ²，dq(dpρ)在此光滑性下等于印式混合偏导，BO符号为正。对所有实γ、θ的代数恒等式成立，不需物理正性。U∈C³比必要条件强但足够，未改变所给物理光滑对象上的结论。",
+      "coverage_gaps": [],
+      "block_sha256": "ddc7a300744688bdc82702191e70fe3700890e12cc58c2b3268db62ed6f2f874",
+      "scope_matches_lean": true
+    },
+    {
+      "source_id": "MD-7.7.2-OBAModifiedOperator",
+      "review": "逐条核对实际声明与网站逐项意见，缩小范围或补短声明；PASS原声明逐字复用",
+      "website_first": "FAIL",
+      "original_block_unchanged": true,
+      "signature_changed": false,
+      "actual_declarations": [
+        "MD.Ch07.obaFirstCorrection",
+        "MD.Ch07.obaFirstCorrection_commutators"
+      ],
+      "actual_scope": "OBA候选一阶微分表达式及其与三个真实交换子和的恒等式；未识别OBA乘积的log/h或弱修改生成元余项。",
+      "coverage_gaps": [
+        "29号覆盖限定：OBA候选一阶微分表达式及其与三个真实交换子和的恒等式；未识别OBA乘积的log/h或弱修改生成元余项。"
+      ],
+      "block_sha256": "f30a6f07e63ce02fc4efe2bf0c4afa608cef8011aeea23189607e139c145a3f8",
+      "scope_matches_lean": true
+    },
+    {
+      "source_id": "MD-7.7.2-SpectralQualification",
+      "review": "逐条核对实际声明与网站逐项意见，缩小范围或补短声明；PASS原声明逐字复用",
+      "website_first": "NEEDS_HUMAN",
+      "original_block_unchanged": false,
+      "signature_changed": true,
+      "actual_declarations": [
+        "MD.Ch07.simpleEigenvalue",
+        "MD.Ch07.printedSpectralConclusion",
+        "MD.Ch07.spectralConclusionPrinted",
+        "MD.Ch07.spectralConclusionPrinted_corrected"
+      ],
+      "actual_scope": "Printed的simpleEigenvalue仅几何单重；修正版是较弱点谱目标并补零核方向唯一，不含完整谱、孤立性或有限代数重数，绝非紧预解式谱定理。",
+      "coverage_gaps": [
+        "只记录原文谱结论的精确目标命题，不宣称为定理；一般闭无界Langevin生成元、定义域及紧预解式资格未覆盖。"
+      ],
+      "block_sha256": "7cf64a09020ade342fed9bef4aee823158815e2ba49f20fb5295ef0fa7b2f798",
+      "scope_matches_lean": true
+    },
+    {
+      "source_id": "MD-7.7.3-PerturbationCoefficientEquation",
+      "review": "逐条核对实际声明与网站逐项意见，缩小范围或补短声明；PASS原声明逐字复用",
+      "website_first": "PASS",
+      "original_block_unchanged": true,
+      "signature_changed": false,
+      "actual_declarations": [
+        "MD.Ch07.actionCoefficient",
+        "MD.Ch07.perturbationCoefficientEquation"
+      ],
+      "actual_scope": "仅覆盖 actionCoefficient, perturbationCoefficientEquation 所列对象、量词、前提和结论。范围说明：actionCoefficient取j=0,…,k的线性作用卷积Lj(ρ(k−j))；k=0仅L0ρ0，k=1为L0ρ1+L1ρ0。定理以这两个系数为0为前提准确给出两条结论。实例化ρ0=ρβ、ρ1=ρβf1、L0=LLD†、L1=一阶扰动即为原式。假设与必要条件没有偷换为不变密度存在性，也未假定各系数算子可交换。",
+      "coverage_gaps": [],
+      "block_sha256": "6d826c50f16e2c6c332e02d28840e0ab8877903334c879f30af06300198da969",
+      "scope_matches_lean": true
+    },
+    {
+      "source_id": "MD-7.7.3-ObservableCorrectionExpansion",
+      "review": "逐条核对实际声明与网站逐项意见，缩小范围或补短声明；PASS原声明逐字复用",
+      "website_first": "PASS",
+      "original_block_unchanged": true,
+      "signature_changed": false,
+      "actual_declarations": [
+        "MD.Ch07.observableCorrectionExpansion"
+      ],
+      "actual_scope": "仅覆盖 observableCorrectionExpansion 所列对象、量词、前提和结论。范围说明：observableCorrectionExpansion针对任意实h和三项分别可积的φρ、φρf1、φρf2，给出完整0–2阶截断积分线性性等式。乘法顺序因实标量交换而无差别；不需概率性或fk零均值。它不证明无限求和交换积分或实际h误差；extra_assumptions已清楚限定有限形式阶数，在这一明确范围内签名PASS。",
+      "coverage_gaps": [],
+      "block_sha256": "cf64e1f449d1da126fa764318e5b5dd4860b1a9ff073075f9af520a4f016fea5",
+      "scope_matches_lean": true
+    },
+    {
+      "source_id": "MD-7.7.3-PerturbativeSolvabilityCaution",
+      "review": "逐条核对实际声明与网站逐项意见，缩小范围或补短声明；PASS原声明逐字复用",
+      "website_first": "NEEDS_HUMAN",
+      "original_block_unchanged": true,
+      "signature_changed": false,
+      "actual_declarations": [
+        "MD.Ch07.correctionSolvable"
+      ],
+      "actual_scope": "仅rhs属于线性映射值域的目标定义；没有ρf结构、零质量相容性、闭生成元域或半群/谱隙，原文预期不作定理。",
+      "coverage_gaps": [],
+      "block_sha256": "a082bcf2a011232b4bbff3d9a123b42a80aaa1e14a6d20c908febd63ee88b8c5",
+      "scope_matches_lean": true
+    },
+    {
+      "source_id": "MD-7.8-FirstOrderOperator",
+      "review": "逐条核对实际声明与网站逐项意见，缩小范围或补短声明；PASS原声明逐字复用",
+      "website_first": "PASS",
+      "original_block_unchanged": true,
+      "signature_changed": false,
+      "actual_declarations": [
+        "MD.Ch07.firstOrderOperator",
+        "MD.Ch07.firstOrderOperator_coefficient",
+        "MD.Ch07.correctionEquation"
+      ],
+      "actual_scope": "仅覆盖 firstOrderOperator, firstOrderOperator_coefficient, correctionEquation 所列对象、量词、前提和结论。范围说明：C：firstOrderOperator 对任意实代数（允许非交换环）准确给出(7.20)。threeStage=exp Z*exp Y*exp X，log的二阶系数为−([X,Y]+[X,Z]+[Y,Z])/2，firstOrderOperator_coefficient的次序与符号正确。correctionEquation在任意实模上线性地表达L(ρf)=−L1ρ；ρf是独立输入的乘积密度对象，未冒充可解性定理。没有引入算符收敛断言；这属于已登记的形式级数解释。sorry不参与本次判定。",
+      "coverage_gaps": [],
+      "block_sha256": "b9b66ca7b4992f59f9e7f9bf4ec0fb844462a298f702f3f0747dc9b5863a78d5",
+      "scope_matches_lean": true
+    },
+    {
+      "source_id": "MD-7.8-HomogeneousNormalization",
+      "review": "逐条核对实际声明与网站逐项意见，缩小范围或补短声明；PASS原声明逐字复用",
+      "website_first": "PASS",
+      "original_block_unchanged": true,
+      "signature_changed": false,
+      "actual_declarations": [
+        "MD.Ch07.homogeneousNormalization",
+        "MD.Ch07.centeredParticular"
+      ],
+      "actual_scope": "仅覆盖 homogeneousNormalization, centeredParticular 所列对象、量词、前提和结论。范围说明：C：homogeneousNormalization在任意实模上从L(u−v)=0推出u=v+cρ，完全符合密度层面的通解差；不把未证明的Langevin核唯一性藏入结论。centeredParticular表达∫(f−∫f)=0，概率质量1和可积性均明确。由Gibbs权严格正可将密度差还原成修正函数相差常数；本条采用抽象密度表述及独立中心化恒等式的范围已明示，签名无错误。",
+      "coverage_gaps": [],
+      "block_sha256": "773d94dab73bef3540c455a6aee1b03d26e54bc95ca39bf00b74f25c9326f296",
+      "scope_matches_lean": true
+    },
+    {
+      "source_id": "MD-7.8.1-CommutatorPermutationRelations",
+      "review": "逐条核对实际声明与网站逐项意见，缩小范围或补短声明；PASS原声明逐字复用",
+      "website_first": "FAIL",
+      "original_block_unchanged": true,
+      "signature_changed": false,
+      "actual_declarations": [
+        "MD.Ch07.commutatorPermutationRelations"
+      ],
+      "actual_scope": "所列七个抽象交换子关系；(7.23)四个零均值解的关系未覆盖，需要同一方程、核唯一性与域。",
+      "coverage_gaps": [
+        "实际线性作用与Oρ=0,(A+B)ρ=0明示。修正函数的符号关系还需统一零均值和核唯一性；本条只证明/陈述交换子与右端项关系，函数关系列缺口。",
+        "29号覆盖限定：所列七个抽象交换子关系；(7.23)四个零均值解的关系未覆盖，需要同一方程、核唯一性与域。"
+      ],
+      "block_sha256": "e7c66b95a00548926c065013a23e92a0e064e7afc4a910ebe5fdf3ebf1852ac6",
+      "scope_matches_lean": true
+    },
+    {
+      "source_id": "MD-7.8.1-GibbsDerivativeIdentities",
+      "review": "逐条核对实际声明与网站逐项意见，缩小范围或补短声明；PASS原声明逐字复用",
+      "website_first": "FAIL",
+      "original_block_unchanged": true,
+      "signature_changed": false,
+      "actual_declarations": [
+        "MD.Ch07.mechanicalHamiltonian",
+        "MD.Ch07.gibbsWeight",
+        "MD.Ch07.gFunction",
+        "MD.Ch07.phaseO",
+        "MD.Ch07.phaseLD",
+        "MD.Ch07.gibbsDerivativeIdentities"
+      ],
+      "actual_scope": "所列五个Gibbs权微分恒等式；未覆盖本段交换子等式及其他OU中间式。",
+      "coverage_gaps": [
+        "29号覆盖限定：所列五个Gibbs权微分恒等式；未覆盖本段交换子等式及其他OU中间式。"
+      ],
+      "block_sha256": "9d67be638b6edde4422c14d7c0bdd6641af8c7e62f977da85cfd4cecb32ac8e5",
+      "scope_matches_lean": true
+    },
+    {
+      "source_id": "MD-7.8.1-FirstCorrectionTablePrinted",
+      "review": "逐条核对实际声明与网站逐项意见，缩小范围或补短声明；PASS原声明逐字复用",
+      "website_first": "FAIL",
+      "original_block_unchanged": false,
+      "signature_changed": true,
+      "actual_declarations": [
+        "MD.Ch07.firstCorrectionTablePrinted",
+        "MD.Ch07.firstCorrectionTablePrinted_corrected",
+        "MD.Ch07.firstCorrection_sign_counterexample",
+        "MD.Ch07.phaseComm",
+        "MD.Ch07.firstCorrectionRHS",
+        "MD.Ch07.firstCorrectionTable_pde"
+      ],
+      "actual_scope": "恢复原页正号后的六个候选函数与六个PDE；常数仍任意，零均值选择义务独立登记。旧corrected名称只作兼容。",
+      "coverage_gaps": [],
+      "block_sha256": "c94a23f77fee48583ae4300e8207ad0286a9c2738071f811a6f5e687876fe48e",
+      "scope_matches_lean": true
+    },
+    {
+      "source_id": "MD-7.8.1-PositionMomentumCorrections",
+      "review": "逐条核对实际声明与网站逐项意见，缩小范围或补短声明；PASS原声明逐字复用",
+      "website_first": "PASS",
+      "original_block_unchanged": true,
+      "signature_changed": false,
+      "actual_declarations": [
+        "MD.Ch07.positionGibbs",
+        "MD.Ch07.momentumGibbs",
+        "MD.Ch07.productGibbs",
+        "MD.Ch07.positionMomentumCorrections"
+      ],
+      "actual_scope": "仅覆盖 positionGibbs, momentumGibbs, productGibbs, positionMomentumCorrections 所列对象、量词、前提和结论。范围说明：C：positionGibbs是真实归一位置权；hprob明确保证其质量1而不依赖未经说明的配分函数资格。momentumGibbs为方差m_i/β的独立中心高斯，正质量及正β排除非物理退化。productGibbs保留(q,p)次序。U、ψ、χ、各梯度及所有六种加权修正期望可积均有明示前提；动量均值零消去位置观测的v项，独立性与c=γ〈U〉消去动量观测的γ项。所有s、两条积分结论与符号正确。无大摩擦统一余项的虚假结论。",
+      "coverage_gaps": [
+        "六个算法分别给符号；大摩擦O(γ)的解释来自明确线性γ项，随γ,h的统一误差界未证明。"
+      ],
+      "block_sha256": "3837debaacc67fac4582d721fa5c7ead4289f5add8221aab014b5df75a3b2bc1",
+      "scope_matches_lean": true
+    },
+    {
+      "source_id": "MD-7.8.1-OverdampedFirstOrderCaution",
+      "review": "逐条核对实际声明与网站逐项意见，缩小范围或补短声明；PASS原声明逐字复用",
+      "website_first": "FAIL",
+      "original_block_unchanged": false,
+      "signature_changed": true,
+      "actual_declarations": [
+        "MD.Ch07.aoab",
+        "MD.Ch07.aoabInfiniteFriction",
+        "MD.Ch07.aoabFrictionLimit"
+      ],
+      "actual_scope": "固定h>0及固定噪声的AOAB逐路径大摩擦单步极限，带正质量；六种XYZ不一致性及有效时标一致性未覆盖。",
+      "coverage_gaps": [
+        "29号覆盖限定：固定h>0及固定噪声的AOAB逐路径大摩擦单步极限，带正质量；六种XYZ不一致性及有效时标一致性未覆盖。"
+      ],
+      "block_sha256": "025a5222e64d242f51bf9fac5408200ecc54e41a4563e6dd0d8cda4240b03b3b",
+      "scope_matches_lean": true
+    },
+    {
+      "source_id": "MD-7.8.2-BiasedDoubleWellExact",
+      "review": "逐条核对实际声明与网站逐项意见，缩小范围或补短声明；PASS原声明逐字复用",
+      "website_first": "FAIL",
+      "original_block_unchanged": false,
+      "signature_changed": true,
+      "actual_declarations": [
+        "MD.Ch07.biasedDoubleWell",
+        "MD.Ch07.doubleWellObservable",
+        "MD.Ch07.doubleWellGibbs",
+        "MD.Ch07.doubleWellBOACorrection",
+        "MD.Ch07.doubleWellExact",
+        "MD.Ch07.doubleWellCritical",
+        "MD.Ch07.doubleWellCritical_integral"
+      ],
+      "actual_scope": "双阱Gibbs的两个精确积分及γ=2时第二积分消项；推广到任意β>0；真实算法O(h²)和中间积分推导未覆盖。",
+      "coverage_gaps": [
+        "29号覆盖限定：双阱Gibbs的两个精确积分及γ=2时第二积分消项；推广到任意β>0；真实算法O(h²)和中间积分推导未覆盖。"
+      ],
+      "block_sha256": "714fc64196bf51c59086c9cabae67c8dbeed8935cda821d485fd7b6ed8ee97ac",
+      "scope_matches_lean": true
+    },
+    {
+      "source_id": "MD-7.9-Proposition71",
+      "review": "逐条核对实际声明与网站逐项意见，缩小范围或补短声明；PASS原声明逐字复用",
+      "website_first": "PASS",
+      "original_block_unchanged": true,
+      "signature_changed": false,
+      "actual_declarations": [
+        "MD.Ch07.proposition71",
+        "MD.Ch07.symmetricOddCorrections"
+      ],
+      "actual_scope": "仅覆盖 proposition71, symmetricOddCorrections 所列对象、量词、前提和结论。范围说明：C：任意实代数中的X,Y,Z，无交换性假设。proposition71用∃Q并以X^4*Q准确表达形式O(h⁴)，二阶项为完整D72而非缩减项。symmetricOddCorrections对全部k:ℕ断言第2k+1系数为零，是对称组合的合理强化；不推导密度奇阶自动为零，也不声称无界算符解析收敛。所引用项目定理的完整类型与包装一致。",
+      "coverage_gaps": [],
+      "block_sha256": "b063860233d4385f659ff3ba0654b53ef87c287dd64892c5aca89ef4e30ff0b1",
+      "scope_matches_lean": true
+    },
+    {
+      "source_id": "MD-7.9-EvenDensityPerturbation",
+      "review": "逐条核对实际声明与网站逐项意见，缩小范围或补短声明；PASS原声明逐字复用",
+      "website_first": "FAIL",
+      "original_block_unchanged": true,
+      "signature_changed": false,
+      "actual_declarations": [
+        "MD.Ch07.evenDensityExpansion",
+        "MD.Ch07.evenPerturbationEquation"
+      ],
+      "actual_scope": "偶形式系数定义与二阶必要代数方程；修正项零均值、Fredholm兼容性和充分可解性未覆盖。",
+      "coverage_gaps": [
+        "29号覆盖限定：偶形式系数定义与二阶必要代数方程；修正项零均值、Fredholm兼容性和充分可解性未覆盖。"
+      ],
+      "block_sha256": "1a1f203d1ad958ba1a69e38feeb7b65cdfa452fe1e92615447737cc2ec727417",
+      "scope_matches_lean": true
+    },
+    {
+      "source_id": "MD-7.9.1-OYZYOInhomogeneity",
+      "review": "逐条核对实际声明与网站逐项意见，缩小范围或补短声明；PASS原声明逐字复用",
+      "website_first": "PASS",
+      "original_block_unchanged": true,
+      "signature_changed": false,
+      "actual_declarations": [
+        "MD.Ch07.oyzyoInhomogeneity"
+      ],
+      "actual_scope": "仅覆盖 oyzyoInhomogeneity 所列对象、量词、前提和结论。范围说明：C：O,Y,Z为任意实模上的线性自同态，Oρ=0及(Y+Z)ρ=0恰是消去交叉嵌套项需要的前提。完整L2由D72给定，余下Z,Z,Y与Y,Y,Z项的次序、负号及标量正确。抽象结果覆盖原文对两种Hamiltonian排列的特化；不声称证明实际Gibbs不变性。",
+      "coverage_gaps": [],
+      "block_sha256": "4c2f28a91190da6826da3fcc5866b438a89b9c40a943cb59fbcf60a23e8b659f",
+      "scope_matches_lean": true
+    },
+    {
+      "source_id": "MD-7.9.1-TripleCommutatorPrinted",
+      "review": "逐条核对实际声明与网站逐项意见，缩小范围或补短声明；PASS原声明逐字复用",
+      "website_first": "NEEDS_HUMAN",
+      "original_block_unchanged": true,
+      "signature_changed": false,
+      "actual_declarations": [
+        "MD.Ch07.hessianU",
+        "MD.Ch07.thirdU",
+        "MD.Ch07.hessianGrad",
+        "MD.Ch07.cubicThird",
+        "MD.Ch07.tripleCommutatorPrinted",
+        "MD.Ch07.tripleCommutatorPrinted_corrected",
+        "MD.Ch07.tripleCommutator_corrected",
+        "MD.Ch07.tripleCommutator_factor_counterexample"
+      ],
+      "actual_scope": "字面式忠实保留缺β；单位质量修正版和实际双交换子恒等式独立，数值系数反例只是代数反例，网站给四次势的数学反例另记。",
+      "coverage_gaps": [],
+      "block_sha256": "f93e39c79880b50a042a96921a2a7c50f2a5dc845a5bffc4502b58d2cb5e197d",
+      "scope_matches_lean": true
+    },
+    {
+      "source_id": "MD-7.9.1-SymmetricRHS",
+      "review": "逐条核对实际声明与网站逐项意见，缩小范围或补短声明；PASS原声明逐字复用",
+      "website_first": "FAIL",
+      "original_block_unchanged": true,
+      "signature_changed": false,
+      "actual_declarations": [
+        "MD.Ch07.symmetricRHS",
+        "MD.Ch07.symmetricRHS_odd",
+        "MD.Ch07.symmetricRHS_zeroMean"
+      ],
+      "actual_scope": "单位质量下flip=true为OBABO、false为OABAO的多项式、奇性及给定可积性下零积分；PDE右端识别、概率归一和Fredholm充分性未覆盖。",
+      "coverage_gaps": [
+        "29号覆盖限定：单位质量下flip=true为OBABO、false为OABAO的多项式、奇性及给定可积性下零积分；PDE右端识别、概率归一和Fredholm充分性未覆盖。"
+      ],
+      "block_sha256": "e67ec86970e918665df43786377e1668b67c5e266af62d73a68d8f00e19d13d3",
+      "scope_matches_lean": true
+    },
+    {
+      "source_id": "MD-7.9.1-Lemma71",
+      "review": "逐条核对实际声明与网站逐项意见，缩小范围或补短声明；PASS原声明逐字复用",
+      "website_first": "PASS",
+      "original_block_unchanged": true,
+      "signature_changed": false,
+      "actual_declarations": [
+        "MD.Ch07.lemma71"
+      ],
+      "actual_scope": "仅覆盖 lemma71 所列对象、量词、前提和结论。范围说明：C：在任意可测空间Ω上，S,T为Markov核，ρST,ρTS为真实测度，hST/hTS给出两种复合核唯一不变概率。由SρTS是ST不变概率及唯一性得第一式，第二式同理，故无需额外遍历极限或连续性，采用更弱充分假设合理。结论恰为ρST=SρTS与ρTS=TρST，全部PASS。证明原文末句的重复ST下标另留人工处理；不把该印刷文字问题误判为Lean签名失败。",
+      "coverage_gaps": [],
+      "block_sha256": "525c8150d90b38820bdef50063608a6b0656ac7e186197440cc355bcb6d9ef17",
+      "scope_matches_lean": true
+    },
+    {
+      "source_id": "MD-7.9.1-ConjugateSymmetricCorrections",
+      "review": "逐条核对实际声明与网站逐项意见，缩小范围或补短声明；PASS原声明逐字复用",
+      "website_first": "NEEDS_HUMAN",
+      "original_block_unchanged": true,
+      "signature_changed": false,
+      "actual_declarations": [
+        "MD.Ch07.gradNormSq",
+        "MD.Ch07.hessianQuadratic",
+        "MD.Ch07.conjugateCorrectionChange",
+        "MD.Ch07.conjugateCorrections",
+        "MD.Ch07.conjugateCorrection_coefficient",
+        "MD.Ch07.conjugateExpansionPrinted",
+        "MD.Ch07.conjugateExpansionPrinted_corrected"
+      ],
+      "actual_scope": "两条候选修正函数关系、给定二阶传递系数后的代数消项、原印展开及二阶截断修正版；不含真实分裂不变分布传递、L1ρ或实际误差系数识别。",
+      "coverage_gaps": [
+        "Lean证明给定真实二阶传递系数的消项，(7.30)完整作为两关系的命题定义；ST/TS指数系数识别、Hamiltonian微分及实际两组修正系数识别仍列缺口。"
+      ],
+      "block_sha256": "5eceab350f9aeb3241a2492e2e04390bcd08edb3d8acb43b1a4e766d12590f59",
+      "scope_matches_lean": true
+    },
+    {
+      "source_id": "MD-7.9.2-ReciprocalFrictionExpansion",
+      "review": "逐条核对实际声明与网站逐项意见，缩小范围或补短声明；PASS原声明逐字复用",
+      "website_first": "FAIL",
+      "original_block_unchanged": true,
+      "signature_changed": false,
+      "actual_declarations": [
+        "MD.Ch07.phaseH",
+        "MD.Ch07.reciprocalHierarchy"
+      ],
+      "actual_scope": "仅未中心化形式层级的定义；任意β的总化表达式不表示物理Gaussian资格。(7.31)级数、ε=1/γ方程、逐阶可积零均值未覆盖。",
+      "coverage_gaps": [
+        "29号覆盖限定：仅未中心化形式层级的定义；任意β的总化表达式不表示物理Gaussian资格。(7.31)级数、ε=1/γ方程、逐阶可积零均值未覆盖。"
+      ],
+      "block_sha256": "2426833a5213ccce177749d0e249bf17887bb79b5a78c6ae6d3ed3b394dcbf87",
+      "scope_matches_lean": true
+    },
+    {
+      "source_id": "MD-7.9.2-OUKernelQualification",
+      "review": "逐条核对实际声明与网站逐项意见，缩小范围或补短声明；PASS原声明逐字复用",
+      "website_first": "NEEDS_HUMAN",
+      "original_block_unchanged": false,
+      "signature_changed": true,
+      "actual_declarations": [
+        "MD.Ch07.ouKernelPrinted",
+        "MD.Ch07.ouKernelPrinted_corrected",
+        "MD.Ch07.ouKernelCentered_corrected"
+      ],
+      "actual_scope": "原印裸前向OU核为常数的错误命题保留；修正版为Gibbs共轭及动量Gaussian L²中的核刻画，中心化推论另加概率及零均值。",
+      "coverage_gaps": [],
+      "block_sha256": "9b787bc2067ea3693274871eb7b11aa86872c1f06165a564bcb1f0c60125036e",
+      "scope_matches_lean": true
+    },
+    {
+      "source_id": "MD-7.9.2-OUHermiteIdentities",
+      "review": "逐条核对实际声明与网站逐项意见，缩小范围或补短声明；PASS原声明逐字复用",
+      "website_first": "FAIL",
+      "original_block_unchanged": false,
+      "signature_changed": true,
+      "actual_declarations": [
+        "MD.Ch07.laplacian",
+        "MD.Ch07.pGradLaplacian",
+        "MD.Ch07.hermitePrimitive",
+        "MD.Ch07.ouHermiteIdentities"
+      ],
+      "actual_scope": "所列OU/Hermite微分恒等式，显式补H(ρν)=−p·∇νρ的中间式；无核唯一性或Fredholm可解性。",
+      "coverage_gaps": [],
+      "block_sha256": "aa44a6311b934bca342441b4239f6a6cc32a4ea5144900489dd9c6747da28e77",
+      "scope_matches_lean": true
+    },
+    {
+      "source_id": "MD-7.9.2-FirstReciprocalCorrection",
+      "review": "逐条核对实际声明与网站逐项意见，缩小范围或补短声明；PASS原声明逐字复用",
+      "website_first": "NEEDS_HUMAN",
+      "original_block_unchanged": false,
+      "signature_changed": true,
+      "actual_declarations": [
+        "MD.Ch07.firstReciprocalCorrection",
+        "MD.Ch07.momentumAverage",
+        "MD.Ch07.momentumAveragePrinted_corrected",
+        "MD.Ch07.momentumAveragePrinted",
+        "MD.Ch07.firstReciprocalCorrection_pde",
+        "MD.Ch07.conjugatedPhaseH",
+        "MD.Ch07.jointGibbsQualification"
+      ],
+      "actual_scope": "一阶候选及PDE、条件Gaussian平均和原印联合归一密度的动量积分；二者不是同一算子；f2,2、(7.35)/(7.36)通量与可解性未覆盖。",
+      "coverage_gaps": [
+        "给出全部f2,1公式并陈述其一阶PDE；二阶可解相容性需OU积分通量消失及实际域条件，尚未证明。",
+        "29号覆盖限定：一阶候选及PDE、条件Gaussian平均和原印联合归一密度的动量积分；二者不是同一算子；f2,2、(7.35)/(7.36)通量与可解性未覆盖。"
+      ],
+      "block_sha256": "df96ae4b60742cd0dc9bc28b07f2417a32acc04830a9110f5b5b633b4c90a453",
+      "scope_matches_lean": true
+    },
+    {
+      "source_id": "MD-7.9.2-OverdampedSolvabilityOperators",
+      "review": "逐条核对实际声明与网站逐项意见，缩小范围或补短声明；PASS原声明逐字复用",
+      "website_first": "NEEDS_HUMAN",
+      "original_block_unchanged": true,
+      "signature_changed": false,
+      "actual_declarations": [
+        "MD.Ch07.overdampedM",
+        "MD.Ch07.overdampedN",
+        "MD.Ch07.highFrictionOABAO",
+        "MD.Ch07.overdampedSolvability_choice"
+      ],
+      "actual_scope": "M/N和候选函数定义以及β≠0下代数改写；Gibbs共轭与裸前向算子区分，未含平均识别、相容性、核唯一或零均值结论。",
+      "coverage_gaps": [
+        "29号覆盖限定：M/N和候选函数定义以及β≠0下代数改写；Gibbs共轭与裸前向算子区分，未含平均识别、相容性、核唯一或零均值结论。"
+      ],
+      "block_sha256": "87b9ef83c88365cc2c2e91677095dfb7c5fd5db67424d7fdbad774da56929c22",
+      "scope_matches_lean": true
+    },
+    {
+      "source_id": "MD-7.9.2-HighFrictionCorrectionTable",
+      "review": "逐条核对实际声明与网站逐项意见，缩小范围或补短声明；PASS原声明逐字复用",
+      "website_first": "FAIL",
+      "original_block_unchanged": false,
+      "signature_changed": true,
+      "actual_declarations": [
+        "MD.Ch07.highFrictionCorrection",
+        "MD.Ch07.doublyAsymptoticAverage",
+        "MD.Ch07.highFrictionCorrection_conjugacy",
+        "MD.Ch07.highFrictionMeanLaplacian",
+        "MD.Ch07.highFrictionCenteredQualification"
+      ],
+      "actual_scope": "四种候选、其代数共轭、c的实际Gibbs期望与中心化资格定义；双渐近只为抽象目标，真实平稳均值识别未覆盖。",
+      "coverage_gaps": [
+        "29号覆盖限定：四种候选、其代数共轭、c的实际Gibbs期望与中心化资格定义；双渐近只为抽象目标，真实平稳均值识别未覆盖。"
+      ],
+      "block_sha256": "ca29fe9289f90d46610ee16d1bd303e20ebabaf7a21e058e95b62905c61c55d8",
+      "scope_matches_lean": true
+    },
+    {
+      "source_id": "MD-7.9.3-BAOABMarginalCancellation",
+      "review": "逐条核对实际声明与网站逐项意见，缩小范围或补短声明；PASS原声明逐字复用",
+      "website_first": "FAIL",
+      "original_block_unchanged": false,
+      "signature_changed": true,
+      "actual_declarations": [
+        "MD.Ch07.baoabMarginalCancellation",
+        "MD.Ch07.baoabConfigurationalCancellation"
+      ],
+      "actual_scope": "Gaussian条件动量消项和归一位置Gibbs资格下的构型消项；真实数值平稳平均及(7.37)双渐近余项未覆盖。",
+      "coverage_gaps": [
+        "29号覆盖限定：Gaussian条件动量消项和归一位置Gibbs资格下的构型消项；真实数值平稳平均及(7.37)双渐近余项未覆盖。"
+      ],
+      "block_sha256": "e3a22702613a9387a716be126ab8985657b6982516085d71c77c4230742c27ee",
+      "scope_matches_lean": true
+    },
+    {
+      "source_id": "MD-7.9.3-SuperconvergenceScope",
+      "review": "逐条核对实际声明与网站逐项意见，缩小范围或补短声明；PASS原声明逐字复用",
+      "website_first": "FAIL",
+      "original_block_unchanged": false,
+      "signature_changed": true,
+      "actual_declarations": [
+        "MD.Ch07.oabaoPositionCancellation",
+        "MD.Ch07.superconvergence_fromBound",
+        "MD.Ch07.oabaoMomentumCancellation"
+      ],
+      "actual_scope": "积分分部的配置消项及其纯动量观测乘积消项；fromBound仅代数辅助，真实BAOAB先大摩擦后h→0的四阶结论未覆盖。",
+      "coverage_gaps": [
+        "29号覆盖限定：积分分部的配置消项及其纯动量观测乘积消项；fromBound仅代数辅助，真实BAOAB先大摩擦后h→0的四阶结论未覆盖。"
+      ],
+      "block_sha256": "3b6e163a170a454ad4f9acdb8dc13e48067c492c2b011ac76be49ef51091d06f",
+      "scope_matches_lean": true
+    },
+    {
+      "source_id": "MD-7.10-MomentumRedrawLimit",
+      "review": "逐条核对实际声明与网站逐项意见，缩小范围或补短声明；PASS原声明逐字复用",
+      "website_first": "FAIL",
+      "original_block_unchanged": false,
+      "signature_changed": true,
+      "actual_declarations": [
+        "MD.Ch07.redrawMomentum",
+        "MD.Ch07.redrawStep",
+        "MD.Ch07.momentumRedrawLimit",
+        "MD.Ch07.redrawMomentum_law"
+      ],
+      "actual_scope": "正质量下固定噪声的确定性大摩擦极限，以及标准Gaussian向量重抽的实际momentumGibbs分布；随机变量的弱收敛未覆盖。",
+      "coverage_gaps": [
+        "29号覆盖限定：正质量下固定噪声的确定性大摩擦极限，以及标准Gaussian向量重抽的实际momentumGibbs分布；随机变量的弱收敛未覆盖。"
+      ],
+      "block_sha256": "64571b66bca2ec499f4a3f3c95f0831b61fe06fefeb172b2cb7b75eb7e073433",
+      "scope_matches_lean": true
+    },
+    {
+      "source_id": "MD-7.10-OBABOOverdampedEuler",
+      "review": "逐条核对实际声明与网站逐项意见，缩小范围或补短声明；PASS原声明逐字复用",
+      "website_first": "PASS",
+      "original_block_unchanged": true,
+      "signature_changed": false,
+      "actual_declarations": [
+        "MD.Ch07.obaboInfinite",
+        "MD.Ch07.overdampedEulerH",
+        "MD.Ch07.overdampedEuler",
+        "MD.Ch07.obaboInfinite_position",
+        "MD.Ch07.overdampedEuler_rescale"
+      ],
+      "actual_scope": "仅覆盖 obaboInfinite, overdampedEulerH, overdampedEuler, obaboInfinite_position, overdampedEuler_rescale 所列对象、量词、前提和结论。范围说明：C：组合按右至左执行redraw R、半kick、全drift、半kick、redraw S，位置消元不依赖原动量或尾噪声。overdampedEulerH及overdampedEuler各坐标质量因子正确；rescale显式要求m_i>0、θ≥0、h≥0，恰好保证√(h²θ)=h√θ，等式成立。普遍实参数的position定理仅是代数恒等式，不宣称其全域为物理算法。[EXTRA]正质量及非负温度/步长合理；R/S的随机独立资格未进入纯代数式，不将该定理解释为随机弱误差结论。原摘录未包含长期O(τ)断言，故不将其列为本条签名缺项。sorry不影响PASS。",
+      "coverage_gaps": [],
+      "block_sha256": "5e5dddba4d85224bab08818946c1f9262ef2e38b9167894f2683a9f556fca819",
+      "scope_matches_lean": true
+    },
+    {
+      "source_id": "MD-7.10-BAOABLimitMethod",
+      "review": "逐条核对实际声明与网站逐项意见，缩小范围或补短声明；PASS原声明逐字复用",
+      "website_first": "FAIL",
+      "original_block_unchanged": false,
+      "signature_changed": true,
+      "actual_declarations": [
+        "MD.Ch07.baoabInfinite",
+        "MD.Ch07.lmStepH",
+        "MD.Ch07.lmStep",
+        "MD.Ch07.baoabInfinite_position",
+        "MD.Ch07.lmStepH_rescale"
+      ],
+      "actual_scope": "带显式尾kick初值的BAOAB位置消元及双噪声LM在τ=h²/2的重标度等式；不含长期精度。",
+      "coverage_gaps": [],
+      "block_sha256": "71d0c227e764fdcf555aea941d22aac31df30b3cb088405b77af9e6442e3a135",
+      "scope_matches_lean": true
+    },
+    {
+      "source_id": "MD-7.10-ColoredNoiseAndExtension",
+      "review": "逐条核对实际声明与网站逐项意见，缩小范围或补短声明；PASS原声明逐字复用",
+      "website_first": "FAIL",
+      "original_block_unchanged": false,
+      "signature_changed": true,
+      "actual_declarations": [
+        "MD.Ch07.coloredNoise",
+        "MD.Ch07.coloredNoise_covariance",
+        "MD.Ch07.lmExtendedStep",
+        "MD.Ch07.lmExtendedKernel",
+        "MD.Ch07.lmExtendedChain",
+        "MD.Ch07.lmExtendedChain_markov"
+      ],
+      "actual_scope": "邻接噪声协方差（额外推论）、扩展状态映射和真实Gaussian转移核；给定可测性及每步新噪声对初态/全部过去独立时，扩展过程的Markov集合积分式。位置过程非Markov仅作一般情形说明，不作无例外全称定理。",
+      "coverage_gaps": [
+        "一般位置过程非Markov需额外非退化参数与初态；此处未作无条件断言。",
+        "29号覆盖限定：邻接噪声定义与协方差、扩展状态映射及可测Markov核定义；过程相对过去的新噪声独立性/Markov定理未覆盖，位置非Markov不作全称断言。"
+      ],
+      "block_sha256": "9863ce24ea9100b45f3ba85aa95b645c39a90502e0a6b8437f8e0ecf9821c5b5",
+      "scope_matches_lean": true
+    },
+    {
+      "source_id": "MD-7.10-LimitMethodAccuracy",
+      "review": "逐条核对实际声明与网站逐项意见，缩小范围或补短声明；PASS原声明逐字复用",
+      "website_first": "NEEDS_HUMAN",
+      "original_block_unchanged": false,
+      "signature_changed": true,
+      "actual_declarations": [
+        "MD.Ch07.lmTransientErrorBound",
+        "MD.Ch07.limitAccuracyPrinted",
+        "MD.Ch07.limitAccuracyPrinted_corrected",
+        "MD.Ch07.limitAccuracy_rescale",
+        "MD.Ch07.limitAccuracyInfiniteTime_corrected"
+      ],
+      "actual_scope": "瞬态界只是量化目标；h⁴修正版明确指先T→∞所得误差，固定有限T仍可能仅h²；实际LM误差及其满足界的定理未覆盖。",
+      "coverage_gaps": [
+        "29号覆盖限定：瞬态界只是量化目标；h⁴修正版明确指先T→∞所得误差，固定有限T仍可能仅h²；实际LM误差及其满足界的定理未覆盖。"
+      ],
+      "block_sha256": "21da0b97e94e12a6048d4fd0a66b1d8db92e29d4d10d16538f982fca5ce2f219",
+      "scope_matches_lean": true
+    },
+    {
+      "source_id": "MD-7.9.3-ZeroFrictionVerlet",
+      "review": "逐条核对实际声明与网站逐项意见，缩小范围或补短声明；PASS原声明逐字复用",
+      "website_first": "PASS",
+      "original_block_unchanged": true,
+      "signature_changed": false,
+      "actual_declarations": [
+        "MD.Ch07.zeroFrictionOU",
+        "MD.Ch07.zeroFrictionBAOAB"
+      ],
+      "actual_scope": "仅覆盖 zeroFrictionOU, zeroFrictionBAOAB 所列对象、量词、前提和结论。范围说明：C：ouStep使用exp(−γh)及√(θ(1−exp(−2γh)))，γ=0时前者为1、后者为0，对任意实m/θ/h及R的函数等式都成立。BAOAB组合中OU成为恒等，两个半drift合成全drift，得到B(h/2)A(h)B(h/2)的velocity Verlet，次序及步长正确。签名专指BAOAB，extra_assumptions说明其他排列可得到ABA/BAB，没有把所有排列冒称同一版本。无新增物理结论或遗漏本句核心结论。",
+      "coverage_gaps": [],
+      "block_sha256": "b2b2d31dcd75d9ac14a94b8c0a013f8e613e3659b6b19478ffe2f6b0237976bf",
+      "scope_matches_lean": true
+    },
+    {
+      "source_id": "MD-7.11.1-TemperatureObservables",
+      "review": "逐条核对实际声明与网站逐项意见，缩小范围或补短声明；PASS原声明逐字复用",
+      "website_first": "PASS",
+      "original_block_unchanged": true,
+      "signature_changed": false,
+      "actual_declarations": [
+        "MD.Ch07.kineticTemperatureObservable",
+        "MD.Ch07.configurationTemperatureObservable",
+        "MD.Ch07.kineticTemperature",
+        "MD.Ch07.configurationTemperature"
+      ],
+      "actual_scope": "仅覆盖 kineticTemperatureObservable, configurationTemperatureObservable, kineticTemperature, configurationTemperature 所列对象、量词、前提和结论。范围说明：C：无约束n维、θ=1/β时，kinetic观测∑p_i²/m_i及configuration观测∑q_i∂iU正确。kinetic定理要求正质量、β>0和位置Gibbs概率，动量Gaussian为概率且二阶矩有限，结论n/β成立。configuration定理要求C¹、权重可积、正配分积分、各q_i∂iU权重可积、各坐标r exp(−βU)两端消失，足够积分分部得到n/β；这些合理[EXTRA]明确限制为ℝⁿ非约束情形。原页周期边界的提醒不等于这些ℝⁿ公式可直接用于任意周期坐标。两式在实际Gibbs下成立，未冒称离散链自动满足。",
+      "coverage_gaps": [],
+      "block_sha256": "a308c4125c54b811e524e8f16f53620790755bb086d3ae0e8b7a08b0a78ac6d8",
+      "scope_matches_lean": true
+    },
+    {
+      "source_id": "MD-7.11.1-VelocityAutocorrelationDefinition",
+      "review": "逐条核对实际声明与网站逐项意见，缩小范围或补短声明；PASS原声明逐字复用",
+      "website_first": "PASS",
+      "original_block_unchanged": true,
+      "signature_changed": false,
+      "actual_declarations": [
+        "MD.Ch07.velocityAutocorrelation",
+        "MD.Ch07.greenKuboDiffusion",
+        "MD.Ch07.autocorrelation_rescale"
+      ],
+      "actual_scope": "仅覆盖 velocityAutocorrelation, greenKuboDiffusion, autocorrelation_rescale 所列对象、量词、前提和结论。范围说明：C：velocityAutocorrelation定义v(0)·v(t)的期望，autocorrelation_rescale对任意测度、任意函数和实c给出c²缩放，是合法Bochner积分标量提取，结论不需额外可积性假设也成立。greenKuboDiffusion中1/n为各向同性平均每坐标的惯例，是[EXTRA]而非原书逐字公式；其被定义为实数不自动保证物理意义。extra_assumptions已正确限定概率、平稳、中心化、自相关可积等解释条件；还应注明n>0，n=0的Lean逆元为0仅是总定义。未声称或证明Einstein关系，故不把该理论算作签名漏项。",
+      "coverage_gaps": [
+        "已证的缩放恒等式说明动量观测被缩放时自相关改变；扩散系数与Einstein关系的等价仍需混合与积分极限理论，未证明。"
+      ],
+      "block_sha256": "21792b7b7039f476b58b8b3f4602afb6073ffddfdcfde5fecdf0edaaa3a67a2b",
+      "scope_matches_lean": true
+    },
+    {
+      "source_id": "MD-7.12-ConstrainedLangevin",
+      "review": "逐条核对实际声明与网站逐项意见，缩小范围或补短声明；PASS原声明逐字复用",
+      "website_first": "NEEDS_HUMAN",
+      "original_block_unchanged": false,
+      "signature_changed": true,
+      "actual_declarations": [
+        "MD.Ch07.constraintJacobian",
+        "MD.Ch07.constraintReaction",
+        "MD.Ch07.hiddenConstraint",
+        "MD.Ch07.cotangentConstraint",
+        "MD.Ch07.constrainedLangevin",
+        "MD.Ch07.constrainedLangevin_corrected"
+      ],
+      "actual_scope": "原印λdt的有限变差解类独立保留，不声称存在；修正版只覆盖单位质量线性约束和常正交投影噪声，非线性随机乘子/几何漂移理论未覆盖。",
+      "coverage_gaps": [
+        "定义保留存在给定乘子过程的积分解，不证明一般约束SDE存在唯一。状态及乘子适应W自然历史，状态路径连续与初值完整；一般强解存在唯一仍未证明。",
+        "29号覆盖限定：原印λdt的有限变差解类独立保留，不声称存在；修正版只覆盖单位质量线性约束和常正交投影噪声，非线性随机乘子/几何漂移理论未覆盖。"
+      ],
+      "block_sha256": "c1c1145f9f51dcc1d8a60d5fc042641d4467af94a2c68977db514d918dbe2529",
+      "scope_matches_lean": true
+    },
+    {
+      "source_id": "MD-7.12-ConstrainedCanonicalErgodicity",
+      "review": "逐条核对实际声明与网站逐项意见，缩小范围或补短声明；PASS原声明逐字复用",
+      "website_first": "NEEDS_HUMAN",
+      "original_block_unchanged": false,
+      "signature_changed": true,
+      "actual_declarations": [
+        "MD.Ch07.constrainedCanonical",
+        "MD.Ch07.constrainedReference",
+        "MD.Ch07.constrainedErgodicAverages",
+        "MD.Ch07.constrainedCanonicalQualification"
+      ],
+      "actual_scope": "delta参考弱极限、总化权重和任意过程遍历目标；补正质量/β/正有限配分与参考资格谓词，未证明参考等于几何体积或SDE遍历性，连通反例另记。",
+      "coverage_gaps": [
+        "29号覆盖限定：delta参考弱极限、总化权重和任意过程遍历目标；补正质量/β/正有限配分与参考资格谓词，未证明参考等于几何体积或SDE遍历性，连通反例另记。"
+      ],
+      "block_sha256": "045b5791c2b7cb7bc35fecd9e7baed9b779ad333fd242c34bdcee2e144802d13",
+      "scope_matches_lean": true
+    },
+    {
+      "source_id": "MD-7.12-ConstrainedHOSplitting",
+      "review": "逐条核对实际声明与网站逐项意见，缩小范围或补短声明；PASS原声明逐字复用",
+      "website_first": "FAIL",
+      "original_block_unchanged": false,
+      "signature_changed": true,
+      "actual_declarations": [
+        "MD.Ch07.constrainedHField",
+        "MD.Ch07.constrainedOField",
+        "MD.Ch07.constrainedHOComposition",
+        "MD.Ch07.constrainedONoise",
+        "MD.Ch07.constrainedHIntegralStep",
+        "MD.Ch07.constrainedOIntegralStep",
+        "MD.Ch07.constrainedHMapQualification",
+        "MD.Ch07.constrainedOMapQualification",
+        "MD.Ch07.constrainedHOQualifiedComposition"
+      ],
+      "actual_scope": "H/O漂移与O扩散、各段约束保持的积分解规格、满足这些规格的H/O随机映射组合；两次O用乘积概率空间的独立样本。未构造这些解的存在性或一般非线性投影漂移理论。",
+      "coverage_gaps": [
+        "每段都应满足cotangentConstraint，实际流或核、Oc半群律及约束Gaussian不变性尚未证明。"
+      ],
+      "block_sha256": "e1caa96fe28f3fd8dcd99fb8168c3af216d7caa37741b3755bd6c8ac29abb36f",
+      "scope_matches_lean": true
+    },
+    {
+      "source_id": "MD-7.12-MEVMEAlgorithm",
+      "review": "逐条核对实际声明与网站逐项意见，缩小范围或补短声明；PASS原声明逐字复用",
+      "website_first": "PASS",
+      "original_block_unchanged": true,
+      "signature_changed": false,
+      "actual_declarations": [
+        "MD.Ch07.midpointConstrainedORelation",
+        "MD.Ch07.constrainedVerletRelation",
+        "MD.Ch07.mevmeRelation"
+      ],
+      "actual_scope": "仅覆盖 midpointConstrainedORelation, constrainedVerletRelation, mevmeRelation 所列对象、量词、前提和结论。范围说明：三个关系按任意维数n、约束数l逐坐标编码；θ对应k_BT，m为对角质量。D3–D8给出真正坐标偏导、Jacobian转置反力、g′M⁻¹p=0及g=0。mevmeRelation存在量化pa/ph/pb及四组乘子，最后位置固定且终动量满足隐约束。其性质是给定R,S的代数关系；独立标准正态、正质量等应用资格按EXTRA另加，不据此宣称随机算法或解的存在唯一。",
+      "coverage_gaps": [],
+      "block_sha256": "65a1acbc2a7cf6b8dc98ffbe992807ae882cb5aa612e69c3722938ba921da667",
+      "scope_matches_lean": true
+    },
+    {
+      "source_id": "MD-7.12-MidpointStabilityPrinted",
+      "review": "逐条核对实际声明与网站逐项意见，缩小范围或补短声明；PASS原声明逐字复用",
+      "website_first": "PASS",
+      "original_block_unchanged": true,
+      "signature_changed": false,
+      "actual_declarations": [
+        "MD.Ch07.multiplierLinearSystem",
+        "MD.Ch07.midpointAmplification",
+        "MD.Ch07.midpointStabilityPrinted",
+        "MD.Ch07.midpointStabilityPrinted_corrected",
+        "MD.Ch07.midpointStability_counterexample"
+      ],
+      "actual_scope": "仅覆盖 multiplierLinearSystem, midpointAmplification, midpointStabilityPrinted, midpointStabilityPrinted_corrected, midpointStability_counterexample 所列对象、量词、前提和结论。范围说明：multiplierLinearSystem与D7展开后正是原式，无遗漏的分母；中点求解产生的公共因子不影响零约束。Printed仅定义a<4，未伪造充要稳定性。corrected对所有a≥0给出单独OU放大因子绝对值≤1，counterexample在a=8给出同一性质且8不小于4，均正确。不能用这个例子否定整套Verlet算法的充分限制，EXTRA对此区分正确。",
+      "coverage_gaps": [],
+      "block_sha256": "68b7ea602f745fa7e620a4d5feaca589fd1f7f3b651bb8faf635918d9ea29024",
+      "scope_matches_lean": true
+    },
+    {
+      "source_id": "MD-7.12.1-ConstrainedABOSplitting",
+      "review": "逐条核对实际声明与网站逐项意见，缩小范围或补短声明；PASS原声明逐字复用",
+      "website_first": "PASS",
+      "original_block_unchanged": true,
+      "signature_changed": false,
+      "actual_declarations": [
+        "MD.Ch07.constrainedAField",
+        "MD.Ch07.constrainedBField",
+        "MD.Ch07.geodesicConstraintFlow",
+        "MD.Ch07.constrainedKickRelation",
+        "MD.Ch07.constrainedExactORelation"
+      ],
+      "actual_scope": "仅覆盖 constrainedAField, constrainedBField, geodesicConstraintFlow, constrainedKickRelation, constrainedExactORelation 所列对象、量词、前提和结论。范围说明：Ac、Bc反力符号及零位置漂移正确；geodesicConstraintFlow对全部时间给出流合成律，并仅在余切约束初值上要求导数方程与约束保持。Bc的积分反力吸收到乘子中。Oc由D9及constrainedExactORelation给出固定位置下精确OU再作质量度量约束投影的关系，与本节求解方式一致。θ=k_BT，R的Gaussian资格及正质量/满秩等在EXTRA明确另加；未把隐式可解性当成结论。",
+      "coverage_gaps": [],
+      "block_sha256": "295a42050b68a4a6485be276ce1fee10b292415af5bdb7acf800d05054f25103",
+      "scope_matches_lean": true
+    },
+    {
+      "source_id": "MD-7.12.1-ConstrainedBAOABAlgorithm",
+      "review": "逐条核对实际声明与网站逐项意见，缩小范围或补短声明；PASS原声明逐字复用",
+      "website_first": "PASS",
+      "original_block_unchanged": true,
+      "signature_changed": false,
+      "actual_declarations": [
+        "MD.Ch07.constrainedBAOABRelation",
+        "MD.Ch07.constrainedBAOAB_constraint"
+      ],
+      "actual_scope": "仅覆盖 constrainedBAOABRelation, constrainedBAOAB_constraint 所列对象、量词、前提和结论。范围说明：关系包含B(h/2)→F(h/2)→O(h)→F(h/2)→B(h/2)，中间相点b,o存在量化，另外两相点由F表达，无需独立命名。D11–D13保留全体位置及隐约束。终点约束定理只从最后kick取出out∈cotangentConstraint，结论范围准确，没有声称二阶或不变测度。",
+      "coverage_gaps": [],
+      "block_sha256": "8f9b80de680f3dfbeb61b2c8b31e87c40ae6c439152f2207aaeb8eea2fd0580f",
+      "scope_matches_lean": true
+    },
+    {
+      "source_id": "MD-7.12.1-ApproximateGeodesicOrder",
+      "review": "逐条核对实际声明与网站逐项意见，缩小范围或补短声明；PASS原声明逐字复用",
+      "website_first": "FAIL",
+      "original_block_unchanged": true,
+      "signature_changed": false,
+      "actual_declarations": [
+        "MD.Ch07.localMapErrorBound",
+        "MD.Ch07.geodesicReplacementSecondOrder"
+      ],
+      "actual_scope": "仅一致局部O(h³)误差资格定义；原文替换测地流后整体保二阶的命题未形式化。",
+      "coverage_gaps": [
+        "29号覆盖限定：仅一致局部O(h³)误差资格定义；原文替换测地流后整体保二阶的命题未形式化。"
+      ],
+      "block_sha256": "40e24a44557dd09251f5f553f7e7f1024b9da83cc7c94da4fa67905a57b12e2d",
+      "scope_matches_lean": true
+    },
+    {
+      "source_id": "MD-7.13-FastSlowHarmonicModel",
+      "review": "逐条核对实际声明与网站逐项意见，缩小范围或补短声明；PASS原声明逐字复用",
+      "website_first": "PASS",
+      "original_block_unchanged": true,
+      "signature_changed": false,
+      "actual_declarations": [
+        "MD.Ch07.Mat2",
+        "MD.Ch07.fastPotential",
+        "MD.Ch07.slowPotential",
+        "MD.Ch07.fastMatrix",
+        "MD.Ch07.slowMatrix",
+        "MD.Ch07.fastLangevin"
+      ],
+      "actual_scope": "仅覆盖 Mat2, fastPotential, slowPotential, fastMatrix, slowMatrix, fastLangevin 所列对象、量词、前提和结论。范围说明：状态为一维实位置/动量、质量1；fast/slow势与F矩阵正确，slowMatrix是慢子系统精确流。D15、D20展开后快SDE具有适应性、连续轨道、确定初值、正β、γ≥0及完整积分方程；噪声θ=β⁻¹产生所需系数。总势及H由两势与单位质量动能直接组成，未另命名。Ω≫1作为本节背景，未被错误编码为任意定量常数。",
+      "coverage_gaps": [],
+      "block_sha256": "72016c2f3eff2ff04bb0d8c048a91c0466235ccfa9a23ab869b377e5a157e4fd",
+      "scope_matches_lean": true
+    },
+    {
+      "source_id": "MD-7.13-ExactFastGaussianLaw",
+      "review": "逐条核对实际声明与网站逐项意见，缩小范围或补短声明；PASS原声明逐字复用",
+      "website_first": "PASS",
+      "original_block_unchanged": true,
+      "signature_changed": false,
+      "actual_declarations": [
+        "MD.Ch07.fastExponential",
+        "MD.Ch07.fastCovariance",
+        "MD.Ch07.exactFastGaussianLaw"
+      ],
+      "actual_scope": "仅覆盖 fastExponential, fastCovariance, exactFastGaussianLaw 所列对象、量词、前提和结论。范围说明：对任意满足fastLangevin的真实过程、t≥0及任意满足BBᵀ=协方差的实2×2矩阵，结论是时刻t状态的HasLaw；乘积gaussianReal 0 1正确表达两独立标准正态。协方差末因子(exp(F(t−s)))ᵀ等于exp(Fᵀ(t−s))。确定初值、β正及γ非负由hX内含；结论是单时刻分布，不是用同一R构造整个过程。假定B因子而不证存在与EXTRA相符。sorry不影响本次签名判定。",
+      "coverage_gaps": [],
+      "block_sha256": "c36f4888fad6576011eca6722760f213c3252ab2419742c2371e334d4370c3ed",
+      "scope_matches_lean": true
+    },
+    {
+      "source_id": "MD-7.13-MultipleTimestepUpdate",
+      "review": "逐条核对实际声明与网站逐项意见，缩小范围或补短声明；PASS原声明逐字复用",
+      "website_first": "PASS",
+      "original_block_unchanged": true,
+      "signature_changed": false,
+      "actual_declarations": [
+        "MD.Ch07.multipleX",
+        "MD.Ch07.multipleY",
+        "MD.Ch07.multipleStep",
+        "MD.Ch07.multipleStep_composition"
+      ],
+      "actual_scope": "仅覆盖 multipleX, multipleY, multipleStep, multipleStep_composition 所列对象、量词、前提和结论。范围说明：multipleX=S(h)exp(hF)、multipleY=S(h)B及向量更新保留快后慢次序。composition对所有实参数、B,R,z的代数恒等式正确，不需要h>0；将性质推广至任意实h无害。B作为前条Bh传入，Gaussian与协方差资格是作为随机步使用时的前提，当前声明仅定义给定B,R的更新，不宣称平稳分布存在。",
+      "coverage_gaps": [],
+      "block_sha256": "6b383c596793f8fe17302b03f81fd6f8646a7b41775194359baf530bcffaa7b3",
+      "scope_matches_lean": true
+    },
+    {
+      "source_id": "MD-7.13-DeterminantTrace",
+      "review": "逐条核对实际声明与网站逐项意见，缩小范围或补短声明；PASS原声明逐字复用",
+      "website_first": "PASS",
+      "original_block_unchanged": true,
+      "signature_changed": false,
+      "actual_declarations": [
+        "MD.Ch07.traceFormula",
+        "MD.Ch07.determinantTrace"
+      ],
+      "actual_scope": "仅覆盖 traceFormula, determinantTrace 所列对象、量词、前提和结论。范围说明：任意实Ω,γ,h及复η满足η²=γ²−4Ω²且η≠0时，行列式和复数化实迹等式正确；选择另一个平方根只交换两项。取复η正确容纳欠阻尼；hne排除原式本来未定义的临界点，EXTRA已标覆盖缺口。临界η=0没有被此定理证明，不能将其当作含临界点的全域声明。",
+      "coverage_gaps": [],
+      "block_sha256": "9da49638603fe8e1375237569772bb1926f273c34ccb13a49f3b981696470373",
+      "scope_matches_lean": true
+    },
+    {
+      "source_id": "MD-7.13-SpectralRadiusStability",
+      "review": "逐条核对实际声明与网站逐项意见，缩小范围或补短声明；PASS原声明逐字复用",
+      "website_first": "FAIL",
+      "original_block_unchanged": false,
+      "signature_changed": true,
+      "actual_declarations": [
+        "MD.Ch07.characteristicUnitDisk",
+        "MD.Ch07.spectralRadiusStability",
+        "MD.Ch07.hyperbolicStability",
+        "MD.Ch07.multipleX_spectral_hyperbolic"
+      ],
+      "actual_scope": "实二阶矩阵的闭单位圆谱判据及实际multipleX在γη资格下的双曲条件等价；不含Gaussian驱动有限方差平稳性。",
+      "coverage_gaps": [
+        "正摩擦正h给0<det<1；γ=0、Jordan边界、临界η=0均需另审。trace到双曲式的代数/指数桥未证明。"
+      ],
+      "block_sha256": "ce282dfb92fd1fd5f9cc20b816d2df1793c36005f4580513c5feb9f93fe773e9",
+      "scope_matches_lean": true
+    },
+    {
+      "source_id": "MD-7.13-HyperbolicPhaseTransform",
+      "review": "逐条核对实际声明与网站逐项意见，缩小范围或补短声明；PASS原声明逐字复用",
+      "website_first": "NEEDS_HUMAN",
+      "original_block_unchanged": true,
+      "signature_changed": false,
+      "actual_declarations": [
+        "MD.Ch07.hyperbolicPhase",
+        "MD.Ch07.hyperbolicPhase_identity"
+      ],
+      "actual_scope": "仅实η≠0、|h/η|<1分支恒等式；未含复η、其他实参数或全稳定不等式等价。",
+      "coverage_gaps": [
+        "29号覆盖限定：仅实η≠0、|h/η|<1分支恒等式；未含复η、其他实参数或全稳定不等式等价。"
+      ],
+      "block_sha256": "0a0bda403efdb7933def0a6deb13e4a3fee29f107eac71740e2bdf7e2e8fef4c",
+      "scope_matches_lean": true
+    },
+    {
+      "source_id": "MD-7.13-UnderdampedPhasePrinted",
+      "review": "逐条核对实际声明与网站逐项意见，缩小范围或补短声明；PASS原声明逐字复用",
+      "website_first": "NEEDS_HUMAN",
+      "original_block_unchanged": true,
+      "signature_changed": false,
+      "actual_declarations": [
+        "MD.Ch07.underdampedPhasePrinted",
+        "MD.Ch07.underdampedPhasePrinted_corrected",
+        "MD.Ch07.underdampedPhase_identity"
+      ],
+      "actual_scope": "字面三角式及+arctan修正版、任意实a/r的恒等式；模型代入须0≤γ<2Ω及ηhat>0，未由此声称全稳定定理。",
+      "coverage_gaps": [],
+      "block_sha256": "ddda8d28cd856b6ea8698e9ae0fe3ebe1f173bd4f23549e9369c2d48a8ce4fb4",
+      "scope_matches_lean": true
+    },
+    {
+      "source_id": "MD-7.13-StabilityEnvelope",
+      "review": "逐条核对实际声明与网站逐项意见，缩小范围或补短声明；PASS原声明逐字复用",
+      "website_first": "PASS",
+      "original_block_unchanged": true,
+      "signature_changed": false,
+      "actual_declarations": [
+        "MD.Ch07.stabilityEnvelope",
+        "MD.Ch07.stabilityEnvelope_sufficient",
+        "MD.Ch07.stabilityEnvelope_iff"
+      ],
+      "actual_scope": "仅覆盖 stabilityEnvelope, stabilityEnvelope_sufficient, stabilityEnvelope_iff 所列对象、量词、前提和结论。范围说明：sufficient对任意实参数，只从包络条件推出修正相位的绝对值界；利用|cos|≤1正确，包括Lean总化除法的退化参数也仅为形式代数结论。iff在η>0、γ≥0、h≥0下正确，因cosh²−1=sinh²及两边非负可等价平方/开方。模型中需另认η=η̂>0。量词是每个给定h的条件，不是单次验证即推出所有h。未声称噪声边界平稳性。",
+      "coverage_gaps": [],
+      "block_sha256": "44666749711bf7ea8dbc51fc65b9e26b4548c172959d2fba13847683b1cf8427",
+      "scope_matches_lean": true
+    },
+    {
+      "source_id": "MD-7.13-FrictionThresholdPrinted",
+      "review": "逐条核对实际声明与网站逐项意见，缩小范围或补短声明；PASS原声明逐字复用",
+      "website_first": "NEEDS_HUMAN",
+      "original_block_unchanged": true,
+      "signature_changed": false,
+      "actual_declarations": [
+        "MD.Ch07.frictionThresholdPrinted",
+        "MD.Ch07.frictionThresholdPrinted_corrected",
+        "MD.Ch07.frictionBoundPrinted",
+        "MD.Ch07.frictionBoundPrinted_corrected",
+        "MD.Ch07.frictionThreshold_rationalized",
+        "MD.Ch07.frictionThreshold_allSteps",
+        "MD.Ch07.frictionThreshold_asymptotic",
+        "MD.Ch07.frictionThreshold_squared_counterexample"
+      ],
+      "actual_scope": "字面错误阈值、保留隐式条件的修正版、Ω≥1有理化/渐近/包络充分性；简化成γ区间须保留高根上界，数值反例不是完整Lean势模型反例。",
+      "coverage_gaps": [],
+      "block_sha256": "b4d238704b597f4a50c326d5c0472504730536e1197ad0e0f3eb8caf1bef3ac5",
+      "scope_matches_lean": true
+    },
+    {
+      "source_id": "MD-7.1-ConfigurationalSampling",
+      "review": "逐条核对实际声明与网站逐项意见，缩小范围或补短声明；PASS原声明逐字复用",
+      "website_first": "PASS",
+      "original_block_unchanged": true,
+      "signature_changed": false,
+      "actual_declarations": [
+        "MD.Ch07.configurationalSamplingAverage",
+        "MD.Ch07.configurationalSamplingQualified"
+      ],
+      "actual_scope": "仅覆盖 configurationalSamplingAverage, configurationalSamplingQualified 所列对象、量词、前提和结论。范围说明：positionGibbs依赖体明确为相对Lebesgue体积的归一指数密度；平均为该测度积分。Qualified对β>0、测度确为概率及φ可积单列资格，避免Lean总化积分在配分函数发散或不可积时被误作有效期望。n、U、φ全量化且域为Fin n→ℝ，对应配置空间。无偷加概率归一结论。",
+      "coverage_gaps": [],
+      "block_sha256": "afa1ce3d55ec1dbde71fc46924aa1f642e86aebd7f606b490dbe2117ad0d8608",
+      "scope_matches_lean": true
+    },
+    {
+      "source_id": "MD-7.1-HamiltonianSamplingObstruction",
+      "review": "逐条核对实际声明与网站逐项意见，缩小范围或补短声明；PASS原声明逐字复用",
+      "website_first": "NEEDS_HUMAN",
+      "original_block_unchanged": true,
+      "signature_changed": false,
+      "actual_declarations": [
+        "MD.Ch07.energyConservingFlow",
+        "MD.Ch07.energySublevel_invariant",
+        "MD.Ch07.energyObstructionQualified"
+      ],
+      "actual_scope": "保能流、子水平集不变和非平凡能量分布的保测概率资格定义；非遍历性及Liouvillian谱隙/多稳态定理未覆盖，不排除固定能壳遍历。",
+      "coverage_gaps": [
+        "29号覆盖限定：保能流、子水平集不变和非平凡能量分布的保测概率资格定义；非遍历性及Liouvillian谱隙/多稳态定理未覆盖，不排除固定能壳遍历。"
+      ],
+      "block_sha256": "e3682b72199bba100f60c9c3f3b6a76c31113a9c9addab899c9e0ae0f3055c67",
+      "scope_matches_lean": true
+    }
+  ]
+}

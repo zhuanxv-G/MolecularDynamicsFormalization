@@ -1,0 +1,11 @@
+--- 
++++ 
+@@ -6,4 +6,8 @@
+ def spvPrinted_corrected (m : V n) (U : V n → ℝ) (γ θ h : ℝ) (R : V n) (x : Phase n) : Phase n :=
+   let qhalf := (driftStep m (h/2) x).1
+   let pnew := fun i ↦ ouMomentum m γ θ h x.2 R i - (1-Real.exp (-h*γ))/γ * gradient U qhalf i
+-  driftStep m (h/2) (qhalf,pnew)+  driftStep m (h/2) (qhalf,pnew)
++
++/-- 两个总化映射的物理适用域；γ=0另需定义η=h，此处不含该延拓。 -/
++def spvQualification (m : V n) (γ θ h : ℝ) : Prop :=
++  (∀ i, 0 < m i) ∧ 0 < γ ∧ 0 < θ ∧ 0 ≤ h

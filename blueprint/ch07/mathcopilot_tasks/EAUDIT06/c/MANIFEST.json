@@ -1,0 +1,66 @@
+{
+  "batch": "EAUDIT06",
+  "subtask": "EAUDIT06c",
+  "source_ids": [
+    "MD-7.9-EvenDensityPerturbation"
+  ],
+  "input_sha256": {
+    "Blueprint/Ch07.lean": "f3bc0ee86ace9c825028f0cec8ebb2fb410d6be77213cc7fb41cb8889540a000",
+    "blueprint/ch07/ch07_source.json": "1a201887b51a249fb73f456237cb342963c5d98c612ec1912f21572a57924012",
+    "PAGES.pdf": "264310efd4739e0a621af323f3f72a09fc6afc048f45d59f6a4dc5dce5b0428d"
+  },
+  "page_mapping": [
+    {
+      "attachment_page": 1,
+      "original_pdf_page": 319,
+      "printed_page": 298
+    }
+  ],
+  "definition_excerpts": [
+    {
+      "full_name": "MD.Ch07.actionCoefficient",
+      "kind": "def",
+      "path": "Blueprint/Ch07.lean",
+      "line": 1032,
+      "code_sha256": "bf68f102bca2ca022764cda0a017ca0e4b5d8214e81c10e531acae45c9a50159"
+    },
+    {
+      "full_name": "MD.Ch07.evenDensityExpansion",
+      "kind": "def",
+      "path": "Blueprint/Ch07.lean",
+      "line": 1243,
+      "code_sha256": "ab9c30398e08604ff9b04a399dc165b4132d9aa2341b77cab6ed0784a2414b2c"
+    },
+    {
+      "full_name": "MD.Ch07.evenPerturbationEquation",
+      "kind": "theorem",
+      "path": "Blueprint/Ch07.lean",
+      "line": 1245,
+      "code_sha256": "92ff61e8c31e30700c20597414873511ca837acdba52a59c9186db2036f119a4"
+    },
+    {
+      "full_name": "MolecularDynamics.Chapter05Review.E",
+      "kind": "abbrev",
+      "path": "MolecularDynamics/Chapter05/ReviewDefinitions.lean",
+      "line": 18,
+      "code_sha256": "b497c8ba7f01b62a3147d9ae65652772ff3f81e57aa19b116f1283fef7a3cc60"
+    }
+  ],
+  "validation": {
+    "project_constant_closure": "PASS",
+    "missing_project_definitions": [],
+    "full_page_render_equality_dpi": 72,
+    "website_submitted": false
+  },
+  "files": {
+    "PASTE.txt": {
+      "bytes": 8698,
+      "sha256": "eba089c68761c0cd828c6982204518ecf027737c5014680c4e0bd636f62d920f"
+    },
+    "PAGES.pdf": {
+      "bytes": 73836,
+      "sha256": "264310efd4739e0a621af323f3f72a09fc6afc048f45d59f6a4dc5dce5b0428d"
+    }
+  },
+  "total_task_bytes": 84622
+}

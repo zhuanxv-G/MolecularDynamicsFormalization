@@ -1,0 +1,26 @@
+{
+  "batch": "EAUDIT07",
+  "subtasks": [
+    {
+      "subtask": "EAUDIT07a",
+      "source_id": "MD-7.9.1-SymmetricRHS",
+      "path": "blueprint/ch07/mathcopilot_tasks/EAUDIT07/a",
+      "bytes": 101773,
+      "manifest_sha256": "012f274d39ad1d1d40561369aaa752f775f24aef0345339e18e60212ee150ebc"
+    },
+    {
+      "subtask": "EAUDIT07b",
+      "source_id": "MD-7.9.2-ReciprocalFrictionExpansion",
+      "path": "blueprint/ch07/mathcopilot_tasks/EAUDIT07/b",
+      "bytes": 111693,
+      "manifest_sha256": "7fb2402231630f7c2ddb88d0ff9311f8351280db42df6e35143bf86a5c5770ea"
+    },
+    {
+      "subtask": "EAUDIT07c",
+      "source_id": "MD-7.9.2-OUKernelQualification",
+      "path": "blueprint/ch07/mathcopilot_tasks/EAUDIT07/c",
+      "bytes": 91121,
+      "manifest_sha256": "ddcd9d58c65d08cd07a12b7341be5102d297c528d1d3398cf1658a497ef6c883"
+    }
+  ]
+}

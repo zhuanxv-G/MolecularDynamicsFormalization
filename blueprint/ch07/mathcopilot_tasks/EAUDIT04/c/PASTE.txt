@@ -1,0 +1,156 @@
+以附件/PASTE 为准，忽略 /workspace 旧文件；Mathlib 定义按标准含义采信。
+本任务只审本条：原文转录、对象资格、定义体、量词、全部结论及[EXTRA]是否一致；Lean编译不代替语义审阅。
+Lean/Mathlib均4.34.0。原页PDF映射：[310]；印刷页=[289].
+input_sha256请原样回显：
+{
+  "Blueprint/Ch07.lean": "f3bc0ee86ace9c825028f0cec8ebb2fb410d6be77213cc7fb41cb8889540a000",
+  "blueprint/ch07/ch07_source.json": "1a201887b51a249fb73f456237cb342963c5d98c612ec1912f21572a57924012",
+  "PAGES.pdf": "6acd47322cf23d5b70ce4d60d31189eda8ed037bfe9e3118e0f8a81e72471b8b"
+}
+用代码将JSON对象(batch,input_sha256,items)写到 /workspace/.mathcopilot/reviews/ch07/EAUDIT04c_review.json；items仅含本source_id。
+items字段：source_id、verdict(PASS/FAIL/NEEDS_HUMAN)、transcription、semantic_review、counterexample、suggested_fix、printed_version、corrected_version。逐版区分原文疑误和修正版结论；缺材料必须具体指出，不猜测。写后json.loads自检，最后仅回复路径及统计。
+
+## 原文JSON
+```json
+{
+  "source_id": "MD-7.7.2-SpectralQualification",
+  "kind": "definition",
+  "label": null,
+  "section": "7.7.2",
+  "printed_page": "289",
+  "pdf_page": "310",
+  "statement_latex": "The assumption of validity becomes more credible as we find that the operator $\\mathcal L_{LD}^\\dagger$ has a compact resolvent and therefore a discrete spectrum, i.e. simple eigenvalues, as discussed in the previous chapter. It will have one zero eigenvalue corresponding to the invariant density $\\rho_\\beta$ and all the remaining eigenvalues lie in the negative half plane.",
+  "proof_latex": null,
+  "proof_outline": null,
+  "proof_note": "原页推导与上下文全文见original_page_text；数学符号的排版以随附原页PDF为准。",
+  "original_page_text": [
+    {
+      "pdf_page": 310,
+      "printed_page": 289,
+      "text": "7.7\nThe Evolution of the Distribution Using a Numerical Method\n289\nSimilar computations give\nŒL\u0004\nA; L\u0004\nO\t\u0005 D \np\u0005q C \u00072\u0005qp;\nŒL\u0004\nB; L\u0004\nO\t\u0005 D \nU0.q/\u0005p:\nTo ﬁrst order, the discretization map corresponding to scheme \u0002OBA\u0003 alters the\nphase space density at each step as if it were solving the time dependent PDE\n\u0005t D OL\u0004\u0005;\nwhere\nOL\u0004\u0005DL\u0004\nLD\u0005 C h\n2\n\n\u0003pU00.q/\u0005p C U0.q/\u0005qC\np\u0005q C \u00072\u0005qp C \nU0.q/\u0005p\n\u000b\nC O.h2/:\nThe validity of this sort of expansion, even for small h, should be considered\ncarefully. Deﬁning\nL\u0004\nLD D L\u0004\nA C L\u0004\nB C L\u0004\nO\nas the Kolmogorov operator for Langevin dynamics, the assumption of validity\nbecomes more credible as we ﬁnd that the operator L\u0004\nLD has a compact resolvent and\ntherefore a discrete spectrum, i.e. simple eigenvalues, as discussed in the previous\nchapter. It will have one zero eigenvalue corresponding to the invariant density \u0005ˇ\nand all the remaining eigenvalues lie in the negative half plane. Of course it is not\njust this operator whose properties are important, but also all the other operators\narising in the expansion, and bounding these in relation to L\u0004\nLD is not a simple task\n(particularly for higher orders).\n7.7.3\nPerturbation Technique\nSuppose we are able to derive a series expansion for OL\u0004 of the form\nOL\u0004 D L\u0004\nLD C hL\u0004\n1 C h2L\u0004\n2 C O.h3/;\nfor some perturbation operators L\u0004\ni . We assume that the invariant density has a\nsimilar expansion in powers of the stepsize, of the form given in (7.17). Inserting\nthis ansatz into the stationary Fokker-Planck equation\nOL\u0004 O\u0005 D 0;\n"
+    }
+  ],
+  "transcription_note": "PDF文字层原样保留，陈述中的数学排版转写为LaTeX；文字层有特殊字形编码时以目视原页为准。PDF347的Exercises之后不在正文范围内。",
+  "context_notation": [],
+  "extra_assumptions": [
+    "只记录原文谱结论的精确目标命题，不宣称为定理；一般闭无界Langevin生成元、定义域及紧预解式资格未覆盖。",
+    "29号覆盖限定：Printed的simpleEigenvalue仅几何单重；修正版是较弱点谱目标并补零核方向唯一，不含完整谱、孤立性或有限代数重数，绝非紧预解式谱定理。"
+  ],
+  "issues": [
+    "已目视核对PDF310：原文将discrete spectrum释为simple eigenvalues，这并非一般蕴含。紧预解式至多给离散谱及有限重数，不能直接给单重谱；Langevin谱还需前章所列势函数/空间条件。"
+  ],
+  "statement_scope": "Printed的simpleEigenvalue仅几何单重；修正版是较弱点谱目标并补零核方向唯一，不含完整谱、孤立性或有限代数重数，绝非紧预解式谱定理。",
+  "lean_decl": "MD.Ch07.simpleEigenvalue",
+  "lean_declarations": [
+    "MD.Ch07.simpleEigenvalue",
+    "MD.Ch07.printedSpectralConclusion",
+    "MD.Ch07.spectralConclusionPrinted",
+    "MD.Ch07.spectralConclusionPrinted_corrected"
+  ],
+  "source_page_verification": "见source_page_checks.json；必须已目视核对本条原页。",
+  "repair_log": [
+    {
+      "instruction": 29,
+      "website_verdict": "NEEDS_HUMAN",
+      "suggested_fix": "保留Printed文字版并注明simple的解释；修正版须区分完整谱、孤立性、有限代数重数和零谱点的单重性，在明确复Banach/Hilbert空间及闭生成元定义域后分别加资格，不把紧预解式单独当成负半平面谱或简单零谱的证明。",
+      "actual_scope": "Printed的simpleEigenvalue仅几何单重；修正版是较弱点谱目标并补零核方向唯一，不含完整谱、孤立性或有限代数重数，绝非紧预解式谱定理。",
+      "signature_changed": true
+    }
+  ],
+  "documented_priors": [],
+  "coverage_gaps": [
+    "只记录原文谱结论的精确目标命题，不宣称为定理；一般闭无界Langevin生成元、定义域及紧预解式资格未覆盖。"
+  ]
+}
+```
+
+## 完整本条Lean
+```lean
+def simpleEigenvalue {E : Type*} [AddCommGroup E] [Module ℂ E]
+    (L : Module.End ℂ E) (eigen : ℂ) : Prop := Module.finrank ℂ (Module.End.eigenspace L eigen) = 1
+def printedSpectralConclusion {E : Type*} [AddCommGroup E] [Module ℂ E]
+    (L : Module.End ℂ E) (ρ : E) : Prop :=
+  ρ ≠ 0 ∧ L ρ = 0 ∧ ∀ eigen : ℂ, (∃ v : E, v ≠ 0 ∧ L v = eigen • v) →
+    simpleEigenvalue L eigen ∧ (eigen = 0 ∨ eigen.re < 0)
+
+def spectralConclusionPrinted {E : Type*} [AddCommGroup E] [Module ℂ E]
+    (L : Module.End ℂ E) (ρ : E) : Prop := printedSpectralConclusion L ρ
+
+def spectralConclusionPrinted_corrected {E : Type*} [AddCommGroup E] [Module ℂ E]
+    (L : Module.End ℂ E) (ρ : E) : Prop :=
+  ρ ≠ 0 ∧ L ρ = 0 ∧
+  (∀ v : E, L v = 0 → v ∈ Submodule.span ℂ ({ρ} : Set E)) ∧
+  ∀ eigen : ℂ, (∃ v : E, v ≠ 0 ∧ L v = eigen • v) →
+    FiniteDimensional ℂ (Module.End.eigenspace L eigen) ∧ (eigen = 0 ∨ eigen.re < 0)
+```
+
+## 项目依赖定义体及选择规格
+以下def/abbrev/structure完整保留；定理列出完整类型，Mathlib标准定义无需摘录。
+
+### MD.Ch07.simpleEigenvalue (Blueprint/Ch07.lean:1012)
+原文件上下文：
+```lean
+open Set Filter MeasureTheory ProbabilityTheory MolecularDynamics
+open scoped BigOperators Topology ContDiff ENNReal NNReal Matrix
+variable {Ω : Type*} [MeasurableSpace Ω]
+variable {n : ℕ}
+```
+```lean
+def simpleEigenvalue {E : Type*} [AddCommGroup E] [Module ℂ E]
+    (L : Module.End ℂ E) (eigen : ℂ) : Prop := Module.finrank ℂ (Module.End.eigenspace L eigen) = 1
+```
+
+### MD.Ch07.printedSpectralConclusion (Blueprint/Ch07.lean:1014)
+原文件上下文：
+```lean
+open Set Filter MeasureTheory ProbabilityTheory MolecularDynamics
+open scoped BigOperators Topology ContDiff ENNReal NNReal Matrix
+variable {Ω : Type*} [MeasurableSpace Ω]
+variable {n : ℕ}
+```
+```lean
+def printedSpectralConclusion {E : Type*} [AddCommGroup E] [Module ℂ E]
+    (L : Module.End ℂ E) (ρ : E) : Prop :=
+  ρ ≠ 0 ∧ L ρ = 0 ∧ ∀ eigen : ℂ, (∃ v : E, v ≠ 0 ∧ L v = eigen • v) →
+    simpleEigenvalue L eigen ∧ (eigen = 0 ∨ eigen.re < 0)
+```
+
+### MD.Ch07.spectralConclusionPrinted (Blueprint/Ch07.lean:1019)
+原文件上下文：
+```lean
+open Set Filter MeasureTheory ProbabilityTheory MolecularDynamics
+open scoped BigOperators Topology ContDiff ENNReal NNReal Matrix
+variable {Ω : Type*} [MeasurableSpace Ω]
+variable {n : ℕ}
+```
+```lean
+def spectralConclusionPrinted {E : Type*} [AddCommGroup E] [Module ℂ E]
+    (L : Module.End ℂ E) (ρ : E) : Prop := printedSpectralConclusion L ρ
+```
+
+### MD.Ch07.spectralConclusionPrinted_corrected (Blueprint/Ch07.lean:1022)
+原文件上下文：
+```lean
+open Set Filter MeasureTheory ProbabilityTheory MolecularDynamics
+open scoped BigOperators Topology ContDiff ENNReal NNReal Matrix
+variable {Ω : Type*} [MeasurableSpace Ω]
+variable {n : ℕ}
+```
+```lean
+def spectralConclusionPrinted_corrected {E : Type*} [AddCommGroup E] [Module ℂ E]
+    (L : Module.End ℂ E) (ρ : E) : Prop :=
+  ρ ≠ 0 ∧ L ρ = 0 ∧
+  (∀ v : E, L v = 0 → v ∈ Submodule.span ℂ ({ρ} : Set E)) ∧
+  ∀ eigen : ℂ, (∃ v : E, v ≠ 0 ∧ L v = eigen • v) →
+    FiniteDimensional ℂ (Module.End.eigenspace L eigen) ∧ (eigen = 0 ∨ eigen.re < 0)
+```
+
+### MolecularDynamics.Chapter05Review.E (MolecularDynamics/Chapter05/ReviewDefinitions.lean:18)
+原文件上下文：
+```lean
+open Set Filter MeasureTheory Matrix
+open scoped BigOperators Topology ENNReal
+```
+```lean
+abbrev E (n : ℕ) := EuclideanSpace ℝ (Fin n)
+```

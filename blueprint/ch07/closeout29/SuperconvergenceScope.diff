@@ -1,0 +1,15 @@
+--- submitted
++++ repaired
+@@ -10,4 +10,12 @@
+ theorem superconvergence_fromBound (A : ℝ → ℝ) (exact : ℝ)
+     (hA : Asymptotics.IsBigO (𝓝 (0 : ℝ)) (fun h ↦ A h-exact-h^2*(0 : ℝ)) (fun h ↦ h^4)) :
+     Asymptotics.IsBigO (𝓝 (0 : ℝ)) (fun h ↦ A h-exact) (fun h ↦ h^4) := by
+-  simpa using hA+  simpa using hA
++
++theorem oabaoMomentumCancellation (U χ : V n → ℝ) (β : ℝ) (hβ : 0 < β)
++    (hprob : IsProbabilityMeasure (positionGibbs U β))
++    (hf : Integrable (highFrictionOABAO U β) (positionGibbs U β))
++    (hχ : Integrable χ (momentumGibbs (fun _ ↦ 1) β))
++    (hc : ∫ q, highFrictionOABAO U β q ∂positionGibbs U β = 0) :
++    (∫ x, χ x.2*highFrictionOABAO U β x.1 ∂productGibbs (fun _ ↦ 1) U β) = 0 := by
++  sorry

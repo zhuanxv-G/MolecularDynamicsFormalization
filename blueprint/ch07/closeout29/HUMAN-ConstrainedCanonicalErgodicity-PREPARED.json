@@ -1,0 +1,8 @@
+{
+  "source_id": "MD-7.12-ConstrainedCanonicalErgodicity",
+  "signature_changed": true,
+  "scope": "delta参考弱极限、总化权重和任意过程遍历目标；补正质量/β/正有限配分与参考资格谓词，未证明参考等于几何体积或SDE遍历性，连通反例另记。",
+  "diff": "--- \n+++ \n@@ -10,4 +10,9 @@\n def constrainedErgodicAverages (P : Measure Ω) (X : ℝ → Ω → Phase n) (μ : Measure (Phase n)) : Prop :=\n   IsProbabilityMeasure P ∧ IsProbabilityMeasure μ ∧\n   ∀ φ : Phase n → ℝ, Integrable φ μ →\n-    ∀ᵐ sample ∂P, Filter.Tendsto (fun T : ℝ ↦ T⁻¹*∫ t in (0 : ℝ)..T, φ (X t sample)) Filter.atTop (𝓝 (∫ x, φ x ∂μ))+    ∀ᵐ sample ∂P, Filter.Tendsto (fun T : ℝ ↦ T⁻¹*∫ t in (0 : ℝ)..T, φ (X t sample)) Filter.atTop (𝓝 (∫ x, φ x ∂μ))\n+\n+def constrainedCanonicalQualification {l : ℕ} (ν : Measure (Phase n))\n+    (m : V n) (g : V n → V l) (U : V n → ℝ) (β : ℝ) : Prop :=\n+  (∀ i, 0 < m i) ∧ 0 < β ∧ ContDiff ℝ 2 g ∧ constrainedReference ν m g ∧\n+  Integrable (gibbsWeight m U β) ν ∧ (0 < ∫ x, gibbsWeight m U β x ∂ν)\n",
+  "printed_version": "原书表述保留；公式类已目视核对原页",
+  "corrected_version": "见独立_corrected或限定目标；不将较弱目标称为完整修正"
+}

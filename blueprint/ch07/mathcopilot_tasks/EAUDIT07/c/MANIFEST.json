@@ -1,0 +1,129 @@
+{
+  "batch": "EAUDIT07",
+  "subtask": "EAUDIT07c",
+  "source_ids": [
+    "MD-7.9.2-OUKernelQualification"
+  ],
+  "input_sha256": {
+    "Blueprint/Ch07.lean": "f3bc0ee86ace9c825028f0cec8ebb2fb410d6be77213cc7fb41cb8889540a000",
+    "blueprint/ch07/ch07_source.json": "1a201887b51a249fb73f456237cb342963c5d98c612ec1912f21572a57924012",
+    "PAGES.pdf": "5d8e99269c0f3f6dcfeade9070c264d458c752272817cf0705d6ad6cfc77df7b"
+  },
+  "page_mapping": [
+    {
+      "attachment_page": 1,
+      "original_pdf_page": 323,
+      "printed_page": 302
+    }
+  ],
+  "definition_excerpts": [
+    {
+      "full_name": "MD.Ch07.V",
+      "kind": "abbrev",
+      "path": "Blueprint/Ch07.lean",
+      "line": 202,
+      "code_sha256": "7ab0ad90462b274b03f5b929b5f09417c0b397b6cb908fa6e7bd56677a314027"
+    },
+    {
+      "full_name": "MD.Ch07.Phase",
+      "kind": "abbrev",
+      "path": "Blueprint/Ch07.lean",
+      "line": 203,
+      "code_sha256": "ef1520e3b22ac1c99a30a989deafe8d3da44a9f2a3e5b6c2cd3220218b88513e"
+    },
+    {
+      "full_name": "MD.Ch07.coordDerivative",
+      "kind": "def",
+      "path": "Blueprint/Ch07.lean",
+      "line": 257,
+      "code_sha256": "e782d789a13f5db6817e2c995f141805e81ac75720125b846f8ee14ba3833a4b"
+    },
+    {
+      "full_name": "MD.Ch07.ouForward",
+      "kind": "def",
+      "path": "Blueprint/Ch07.lean",
+      "line": 260,
+      "code_sha256": "ada8fa685075ac3ed7161cba49ec5ecfe0edd30b3dc8d4f60a04214f8d375f3a"
+    },
+    {
+      "full_name": "MD.Ch07.mechanicalHamiltonian",
+      "kind": "def",
+      "path": "Blueprint/Ch07.lean",
+      "line": 1113,
+      "code_sha256": "62d2e0a30b1f75b8d94db47d5f10585188510cf0bd5827e56eafaa0b12b507aa"
+    },
+    {
+      "full_name": "MD.Ch07.gibbsWeight",
+      "kind": "def",
+      "path": "Blueprint/Ch07.lean",
+      "line": 1115,
+      "code_sha256": "f25e4e3ead34a06695f3b9d9b5f607bc68063a1d6f159ec2c97866d0ac9b2e38"
+    },
+    {
+      "full_name": "MD.Ch07.phaseO",
+      "kind": "def",
+      "path": "Blueprint/Ch07.lean",
+      "line": 1119,
+      "code_sha256": "b752c7d36edbc3a3c5ebe1f512411652587250d3883672146862196dd5a49140"
+    },
+    {
+      "full_name": "MD.Ch07.positionGibbs",
+      "kind": "def",
+      "path": "Blueprint/Ch07.lean",
+      "line": 1169,
+      "code_sha256": "82bb55e66a80fed509916dd4534bcc354cc9bd8df28c6b30af7e5a2e29632202"
+    },
+    {
+      "full_name": "MD.Ch07.momentumGibbs",
+      "kind": "def",
+      "path": "Blueprint/Ch07.lean",
+      "line": 1171,
+      "code_sha256": "37890e88a0521fb73fdcd58c2c02631a375383f9542a51cd2521500fb8692207"
+    },
+    {
+      "full_name": "MD.Ch07.productGibbs",
+      "kind": "def",
+      "path": "Blueprint/Ch07.lean",
+      "line": 1172,
+      "code_sha256": "a6ad2d129b80649e4904fb1e07f2591a5e7db814b84c01b8c47a02537a602ae8"
+    },
+    {
+      "full_name": "MD.Ch07.ouKernelPrinted",
+      "kind": "def",
+      "path": "Blueprint/Ch07.lean",
+      "line": 1354,
+      "code_sha256": "c1688d501c9b1844f49664dfc7270938b618a95ca2d69caebf866b9bfa34b425"
+    },
+    {
+      "full_name": "MD.Ch07.ouKernelPrinted_corrected",
+      "kind": "theorem",
+      "path": "Blueprint/Ch07.lean",
+      "line": 1356,
+      "code_sha256": "421d1f550d0c7afcce76c85b9dad86b219a7fea933ebbcdde36fc29c4b72ea93"
+    },
+    {
+      "full_name": "MD.Ch07.ouKernelCentered_corrected",
+      "kind": "theorem",
+      "path": "Blueprint/Ch07.lean",
+      "line": 1363,
+      "code_sha256": "7572cc407383bdfa036027b7cf5a03fb1787bb48dfa8baa4227551f0305b3e78"
+    }
+  ],
+  "validation": {
+    "project_constant_closure": "PASS",
+    "missing_project_definitions": [],
+    "full_page_render_equality_dpi": 72,
+    "website_submitted": false
+  },
+  "files": {
+    "PASTE.txt": {
+      "bytes": 13710,
+      "sha256": "51ec5d22bf466e927c09529d3340d022a1e644a79925fd6496b6c708da9fb3c5"
+    },
+    "PAGES.pdf": {
+      "bytes": 73311,
+      "sha256": "5d8e99269c0f3f6dcfeade9070c264d458c752272817cf0705d6ad6cfc77df7b"
+    }
+  },
+  "total_task_bytes": 91121
+}

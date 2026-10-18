@@ -1,0 +1,11 @@
+--- submitted
++++ repaired
+@@ -10,4 +10,8 @@
+     (∫ x, doubleWellObservable x ∂doubleWellGibbs β) = 0 ∧
+     (∫ x, doubleWellObservable x*doubleWellBOACorrection β γ x ∂doubleWellGibbs β) = (2-γ)/(2*β) := by
+   sorry
+-theorem doubleWellCritical (β : ℝ) : (2-(2 : ℝ))/(2*β) = 0 := by ring+theorem doubleWellCritical (β : ℝ) : (2-(2 : ℝ))/(2*β) = 0 := by ring
++
++theorem doubleWellCritical_integral (β : ℝ) (hβ : 0 < β) :
++    (∫ x, doubleWellObservable x*doubleWellBOACorrection β 2 x ∂doubleWellGibbs β) = 0 := by
++  simpa using (doubleWellExact β 2 hβ).2

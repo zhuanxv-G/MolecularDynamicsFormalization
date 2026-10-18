@@ -1,0 +1,450 @@
+以附件/PASTE 为准，忽略 /workspace 旧文件；Mathlib 定义按标准含义采信。
+本任务只审本条：原文转录、对象资格、定义体、量词、全部结论及[EXTRA]是否一致；Lean编译不代替语义审阅。
+Lean/Mathlib均4.34.0。原页PDF映射：[324, 325]；印刷页=[303, 304].
+input_sha256请原样回显：
+{
+  "Blueprint/Ch07.lean": "f3bc0ee86ace9c825028f0cec8ebb2fb410d6be77213cc7fb41cb8889540a000",
+  "blueprint/ch07/ch07_source.json": "1a201887b51a249fb73f456237cb342963c5d98c612ec1912f21572a57924012",
+  "PAGES.pdf": "fc24c5a6a710a8a826583088622dde40fb2b71ce8a1fbc8478fbaef42976ee9c"
+}
+用代码将JSON对象(batch,input_sha256,items)写到 /workspace/.mathcopilot/reviews/ch07/EAUDIT08b_review.json；items仅含本source_id。
+items字段：source_id、verdict(PASS/FAIL/NEEDS_HUMAN)、transcription、semantic_review、counterexample、suggested_fix、printed_version、corrected_version。逐版区分原文疑误和修正版结论；缺材料必须具体指出，不猜测。写后json.loads自检，最后仅回复路径及统计。
+
+## 原文JSON
+```json
+{
+  "source_id": "MD-7.9.2-FirstReciprocalCorrection",
+  "kind": "unnumbered_claim",
+  "label": "(7.35)–(7.36)",
+  "section": "7.9.2",
+  "printed_page": "303–304",
+  "pdf_page": "324–325",
+  "statement_latex": "\\[f_{2,1,[OABAO]}=-\\tfrac\\beta{24}(6p^T(\\nabla^2U)\\nabla U-\\tfrac13\\nabla^3U:p\\otimes p\\otimes p-\\tfrac2\\beta p^T\\nabla_q\\Delta_qU)-p^T\\nabla\\nu-\\mu.\\]\n\\[\\overline{\\mathcal L}_O^\\dagger(\\rho_\\beta f_{2,2,[OABAO]})=-\\mathcal L_H^\\dagger(\\rho_\\beta f_{2,1,[OABAO]}).\\tag{7.35}\\]\n\\[\\int_{\\mathcal P}\\overline{\\mathcal L}_O^\\dagger(\\rho_\\beta f_{2,2,[OABAO]})d\\omega_p=0,\\qquad\n\\int_{\\mathcal P}\\mathcal L_H^\\dagger(\\rho_\\beta f_{2,1,[OABAO]})d\\omega_p=\\overline\\pi\\mathcal L_H^\\dagger f_{2,1,[OABAO]}=0,\\tag{7.36}\\]\nwhere $(\\overline\\pi f)(q)=\\int_{\\mathcal P}f(q,p)\\rho_\\beta d\\omega_p$.",
+  "proof_latex": null,
+  "proof_outline": null,
+  "proof_note": "原页推导与上下文全文见original_page_text；数学符号的排版以随附原页PDF为准。",
+  "original_page_text": [
+    {
+      "pdf_page": 324,
+      "printed_page": 303,
+      "text": "7.9\nError Expansion for Symmetric Langevin Methods\n303\nfor some function of position \u0006.q/. Plugging (7.33) and (7.34) into the PDE (7.32)\ngives\nNL\u0004\nO\n\u0004\n\u0005ˇf2;1;\u0002OABAO\u0003\n\u0005\nD \u0003w.q; p/\u0005ˇ \u0003 L\u0004\nH\n\u0004\n\u0005ˇ\u0003\n\u0005\n;\nD \u0003 ˇ\n24\nNL\u0004\nO\n\b\u0002\n6pT \u0004\nr2U\n\u0005\nrU \u0003 1\n3r3U W p ˝ p ˝ p\n\u0003 2\nˇ pTrq\u0016qU\n\u0003\n\u0005ˇ\n\t\n\u0003 NL\u0004\nO\n\u0004\npTr\u0003 C \u0006\n\u000b\n\u0005ˇ\n\u0005\n;\nand hence\nf2;1;\u0002OABAO\u0003 D \u0003 ˇ\n24\n\b\n6pT \u0004\nr2U\n\u0005\nrU \u0003 1\n3r3U W p ˝ p ˝ p \u0003 2\nˇ pTrq\u0016qU\n\t\n\u0003 pTr\u0003 \u0003 \u0006:\nAt this point, we might consider abandoning the prospect of determining the leading\norder correction altogether, as we now have two arbitrary functions of position \u0003.q/\nand \u0006.q/ creeping into our solution. However, the form of \u0003.q/ is determined by\nconsidering the next order PDE at \"2:\nNL\u0004\nO\n\u0004\u0005ˇf2;2;\u0002OABAO\u0003\n\u0005 D \u0003L\u0004\nH\n\u0004\u0005ˇf2;1;\u0002OABAO\u0003\n\u0005 :\n(7.35)\nWe are spared solving this equation by virtue of a solvability condition. Integrating\nthe left hand side of (7.35) with respect to the momenta, we ﬁnd\nZ\nP\nNL\u0004\nO\n\u0004\n\u0005ˇf2;2;\u0002OABAO\u0003\n\u0005\nd!p D 0;\nby simple computation. Hence we also require the average of the right-hand side\nof (7.35) to be zero with respect to the momentum, or\nZ\nP\nL\u0004\nH\n\u0004\n\u0005ˇf2;1;\u0002OABAO\u0003\n\u0005\nd!p D N\u0014L\u0004\nHf2;1;\u0002OABAO\u0003 D 0;\n(7.36)\nwhere N\u0014 is the averaging operator\n. N\u0014f/ .q/ D\nZ\nP\nf.q; p/\u0005ˇd!p:\n"
+    },
+    {
+      "pdf_page": 325,
+      "printed_page": 304,
+      "text": "304\n7\nNumerical Methods for Stochastic Molecular Dynamics\nHence by rewriting the correction function as\nf2;1;\u0002OABAO\u0003 D ˇ\n24\n\b\n3L\u0004\nAjrUj2 \u0003 1\n3\n\u0006\nL\u0004\nA\n\u00073\nU \u0003 2\nˇ L\u0004\nA\u0016qU\n\t\nC L\u0004\nA\u0003 \u0003 \u0006;\nwe have\nN\u0014L\u0004\nHf2;1;\u0002OABAO\u0003 D ˇ\n24\n\b\n3MjrUj2 \u0003 1\n3NU \u0003 2\nˇ M\u0016qU\n\t\nC M\u0003;\nwhere we abbreviate\nM .q/D N\u0014L\u0004\nHL\u0004\nA .q/D N\u0014\n\u0006\n.L\u0004\nA/2 C L\u0004\nBL\u0004\nA\n\u0007\n .q/ D 1\nˇ \u0016q .q/ \u0003 rU \u0002 rq .q/;\nN .q/ D N\u0014L\u0004\nH.L\u0004\nA/3 .q/ D N\u0014\n\u0006\n.L\u0004\nA/4 C L\u0004\nB.L\u0004\nA/3\u0007\n .q/ D 3\nˇ M\n\u0004\n\u0016q .q/\n\u0005\n:\nThus we have\nN\u0014L\u0004\nH\u0005ˇf2;1;\u0002OABAO\u0003 D ˇ\n8 M\n\b\njrUj2 \u0003 1\nˇ \u0016qU\n\t\nC M\u0003;\nand hence by (7.36) we ﬁnally obtain\n\u0003.q/ D 1\n8\n\u0004\n\u0016qU \u0003 ˇjrUj2\u0005\n;\nwhere it is easily veriﬁed that h\u0003i D 0. This gives us our leading order solution\nf2;0;\u0002OABAO\u0003 D 1\n8\n\u0004\n\u0016qU \u0003 ˇjrUj2\u0005\n:\nApplying the same procedure for the \u0002OBABO\u0003 scheme yields\nf2;0;\u0002OBABO\u0003 D 1\n8\n\u0004\nˇjrUj2 \u0003 2\u0010qU C c\n\u0005\n;\nwhere c D h\u0016Ui is a constant chosen to ensure zero average. We can relate these\nschemes to their conjugate schemes with centralized OU update via Lemma 7.1 and\nEq. (7.30), to give\nf2;0;\u0002ABOBA\u0003 D 1\n8\n\u0004\nˇpTr2U.q/p \u0003 2\u0016qU C c\n\u0005\n;\nf2;0;\u0002BAOAB\u0003 D 1\n8\n\u0004\n\u0016U \u0003 ˇpTr2U.q/p\n\u0005\n:\n"
+    }
+  ],
+  "transcription_note": "PDF文字层原样保留，陈述中的数学排版转写为LaTeX；文字层有特殊字形编码时以目视原页为准。PDF347的Exercises之后不在正文范围内。",
+  "context_notation": [],
+  "extra_assumptions": [
+    "给出全部f2,1公式并陈述其一阶PDE；二阶可解相容性需OU积分通量消失及实际域条件，尚未证明。",
+    "29号覆盖限定：一阶候选及PDE、条件Gaussian平均和原印联合归一密度的动量积分；二者不是同一算子；f2,2、(7.35)/(7.36)通量与可解性未覆盖。"
+  ],
+  "issues": [
+    "已目视核对PDF324–325：π̄定义带联合ρβ权，后续M公式却使用归一条件动量平均并隐含ρβ共轭。本文区分原文加权积分与修正的条件Gaussian平均，避免遗漏位置密度因子。"
+  ],
+  "statement_scope": "一阶候选及PDE、条件Gaussian平均和原印联合归一密度的动量积分；二者不是同一算子；f2,2、(7.35)/(7.36)通量与可解性未覆盖。",
+  "lean_decl": "MD.Ch07.firstReciprocalCorrection",
+  "lean_declarations": [
+    "MD.Ch07.firstReciprocalCorrection",
+    "MD.Ch07.momentumAverage",
+    "MD.Ch07.momentumAveragePrinted_corrected",
+    "MD.Ch07.momentumAveragePrinted",
+    "MD.Ch07.firstReciprocalCorrection_pde",
+    "MD.Ch07.conjugatedPhaseH",
+    "MD.Ch07.jointGibbsQualification"
+  ],
+  "source_page_verification": "见source_page_checks.json；必须已目视核对本条原页。",
+  "repair_log": [
+    {
+      "instruction": 29,
+      "website_verdict": "NEEDS_HUMAN",
+      "suggested_fix": "保留原书π̄并标[ERRATUM?]；把ρβ的全局归一、条件动量平均及ρβ⁻¹H†ρβ共轭算符逐一定义。补列带域/通量条件的二阶方程和可解性目标签名。",
+      "actual_scope": "一阶候选及PDE、条件Gaussian平均和原印联合归一密度的动量积分；二者不是同一算子；f2,2、(7.35)/(7.36)通量与可解性未覆盖。",
+      "signature_changed": true
+    }
+  ],
+  "documented_priors": [],
+  "coverage_gaps": [
+    "给出全部f2,1公式并陈述其一阶PDE；二阶可解相容性需OU积分通量消失及实际域条件，尚未证明。",
+    "29号覆盖限定：一阶候选及PDE、条件Gaussian平均和原印联合归一密度的动量积分；二者不是同一算子；f2,2、(7.35)/(7.36)通量与可解性未覆盖。"
+  ]
+}
+```
+
+## 完整本条Lean
+```lean
+def firstReciprocalCorrection (U ν μ : V n → ℝ) (β : ℝ) (x : Phase n) : ℝ :=
+  -β/24*hermitePrimitive U β x-(∑ i, x.2 i*gradient ν x.1 i)-μ x.1
+def momentumAverage (β : ℝ) (f : Phase n → ℝ) (q : V n) : ℝ :=
+  ∫ p, f (q,p) ∂momentumGibbs (fun _ ↦ 1) β
+def momentumAveragePrinted_corrected (β : ℝ) (f : Phase n → ℝ) (q : V n) : ℝ :=
+  momentumAverage β f q
+
+def momentumAveragePrinted (U : V n → ℝ) (β : ℝ) (f : Phase n → ℝ) (q : V n) : ℝ :=
+  ∫ p, f (q,p)*(gibbsWeight (fun _ ↦ 1) U β (q,p)/
+    (∫ x : Phase n, gibbsWeight (fun _ ↦ 1) U β x))
+theorem firstReciprocalCorrection_pde (U ν μ : V n → ℝ) (β : ℝ) (hβ : 0 < β)
+    (hU : ContDiff ℝ ⊤ U) (hν : ContDiff ℝ ⊤ ν) :
+    let ρ := gibbsWeight (fun _ ↦ 1) U β
+    phaseO (fun _ ↦ 1) 1 β (ρ*firstReciprocalCorrection U ν μ β)+
+      phaseH U (fun x ↦ ρ x*ν x.1) = (fun x ↦ symmetricRHS false U β x*ρ x) := by
+  sorry
+
+def conjugatedPhaseH (U : V n → ℝ) (β : ℝ) (f : Phase n → ℝ) (x : Phase n) : ℝ :=
+  phaseH U (gibbsWeight (fun _ ↦ 1) U β*f) x/gibbsWeight (fun _ ↦ 1) U β x
+
+def jointGibbsQualification (U : V n → ℝ) (β : ℝ) : Prop :=
+  0 < β ∧ Integrable (gibbsWeight (fun _ ↦ 1) U β) volume ∧
+  0 < ∫ x : Phase n, gibbsWeight (fun _ ↦ 1) U β x
+```
+
+## 项目依赖定义体及选择规格
+以下def/abbrev/structure完整保留；定理列出完整类型，Mathlib标准定义无需摘录。
+
+### MD.Ch07.V (Blueprint/Ch07.lean:202)
+原文件上下文：
+```lean
+open Set Filter MeasureTheory ProbabilityTheory MolecularDynamics
+open scoped BigOperators Topology ContDiff ENNReal NNReal Matrix
+variable {Ω : Type*} [MeasurableSpace Ω]
+variable {n : ℕ}
+```
+```lean
+abbrev V (n : ℕ) := Fin n → ℝ
+```
+
+### MD.Ch07.Phase (Blueprint/Ch07.lean:203)
+原文件上下文：
+```lean
+open Set Filter MeasureTheory ProbabilityTheory MolecularDynamics
+open scoped BigOperators Topology ContDiff ENNReal NNReal Matrix
+variable {Ω : Type*} [MeasurableSpace Ω]
+variable {n : ℕ}
+```
+```lean
+abbrev Phase (n : ℕ) := V n × V n
+```
+
+### MD.Ch07.coordDerivative (Blueprint/Ch07.lean:257)
+原文件上下文：
+```lean
+open Set Filter MeasureTheory ProbabilityTheory MolecularDynamics
+open scoped BigOperators Topology ContDiff ENNReal NNReal Matrix
+variable {Ω : Type*} [MeasurableSpace Ω]
+variable {n : ℕ}
+```
+```lean
+def coordDerivative (f : V n → ℝ) (x : V n) (i : Fin n) : ℝ :=
+  deriv (fun z ↦ f (Function.update x i z)) (x i)
+```
+
+### MD.Ch07.ouForward (Blueprint/Ch07.lean:260)
+原文件上下文：
+```lean
+open Set Filter MeasureTheory ProbabilityTheory MolecularDynamics
+open scoped BigOperators Topology ContDiff ENNReal NNReal Matrix
+variable {Ω : Type*} [MeasurableSpace Ω]
+variable {n : ℕ}
+```
+```lean
+def ouForward (m : V n) (γ θ : ℝ) (f : V n → ℝ) (p : V n) : ℝ :=
+  γ * (∑ i, coordDerivative (fun x ↦ x i*f x) p i) +
+    γ*θ * ∑ i, m i * coordDerivative (fun x ↦ coordDerivative f x i) p i
+```
+
+### MD.Ch07.gradient (Blueprint/Ch07.lean:288)
+原文件上下文：
+```lean
+open Set Filter MeasureTheory ProbabilityTheory MolecularDynamics
+open scoped BigOperators Topology ContDiff ENNReal NNReal Matrix
+variable {Ω : Type*} [MeasurableSpace Ω]
+variable {n : ℕ}
+```
+```lean
+def gradient (U : V n → ℝ) (q : V n) : V n := fun i ↦ coordDerivative U q i
+```
+
+### MD.Ch07.aForward (Blueprint/Ch07.lean:348)
+原文件上下文：
+```lean
+open Set Filter MeasureTheory ProbabilityTheory MolecularDynamics
+open scoped BigOperators Topology ContDiff ENNReal NNReal Matrix
+variable {Ω : Type*} [MeasurableSpace Ω]
+variable {n : ℕ}
+```
+```lean
+def aForward (m : V n) (f : Phase n → ℝ) (x : Phase n) : ℝ :=
+  -∑ i, x.2 i / m i * coordDerivative (fun q ↦ f (q,x.2)) x.1 i
+```
+
+### MD.Ch07.bForward (Blueprint/Ch07.lean:350)
+原文件上下文：
+```lean
+open Set Filter MeasureTheory ProbabilityTheory MolecularDynamics
+open scoped BigOperators Topology ContDiff ENNReal NNReal Matrix
+variable {Ω : Type*} [MeasurableSpace Ω]
+variable {n : ℕ}
+```
+```lean
+def bForward (U : V n → ℝ) (f : Phase n → ℝ) (x : Phase n) : ℝ :=
+  ∑ i, gradient U x.1 i * coordDerivative (fun p ↦ f (x.1,p)) x.2 i
+```
+
+### MD.Ch07.mechanicalHamiltonian (Blueprint/Ch07.lean:1113)
+原文件上下文：
+```lean
+open Set Filter MeasureTheory ProbabilityTheory MolecularDynamics
+open scoped BigOperators Topology ContDiff ENNReal NNReal Matrix
+variable {Ω : Type*} [MeasurableSpace Ω]
+variable {n : ℕ}
+```
+```lean
+def mechanicalHamiltonian (m : V n) (U : V n → ℝ) (x : Phase n) : ℝ :=
+  (∑ i, x.2 i^2/(2*m i))+U x.1
+```
+
+### MD.Ch07.gibbsWeight (Blueprint/Ch07.lean:1115)
+原文件上下文：
+```lean
+open Set Filter MeasureTheory ProbabilityTheory MolecularDynamics
+open scoped BigOperators Topology ContDiff ENNReal NNReal Matrix
+variable {Ω : Type*} [MeasurableSpace Ω]
+variable {n : ℕ}
+```
+```lean
+def gibbsWeight (m : V n) (U : V n → ℝ) (β : ℝ) (x : Phase n) : ℝ :=
+  Real.exp (-β*mechanicalHamiltonian m U x)
+```
+
+### MD.Ch07.phaseO (Blueprint/Ch07.lean:1119)
+原文件上下文：
+```lean
+open Set Filter MeasureTheory ProbabilityTheory MolecularDynamics
+open scoped BigOperators Topology ContDiff ENNReal NNReal Matrix
+variable {Ω : Type*} [MeasurableSpace Ω]
+variable {n : ℕ}
+```
+```lean
+def phaseO (m : V n) (γ β : ℝ) (ρ : Phase n → ℝ) (x : Phase n) : ℝ :=
+  ouForward m γ β⁻¹ (fun p ↦ ρ (x.1,p)) x.2
+```
+
+### MD.Ch07.momentumGibbs (Blueprint/Ch07.lean:1171)
+原文件上下文：
+```lean
+open Set Filter MeasureTheory ProbabilityTheory MolecularDynamics
+open scoped BigOperators Topology ContDiff ENNReal NNReal Matrix
+variable {Ω : Type*} [MeasurableSpace Ω]
+variable {n : ℕ}
+```
+```lean
+def momentumGibbs (m : V n) (β : ℝ) : Measure (V n) := Measure.pi (fun i ↦ gaussianReal 0 (Real.toNNReal (m i/β)))
+```
+
+### MD.Ch07.hessianU (Blueprint/Ch07.lean:1266)
+原文件上下文：
+```lean
+open Set Filter MeasureTheory ProbabilityTheory MolecularDynamics
+open scoped BigOperators Topology ContDiff ENNReal NNReal Matrix
+variable {Ω : Type*} [MeasurableSpace Ω]
+variable {n : ℕ}
+```
+```lean
+def hessianU (U : V n → ℝ) (q : V n) (i j : Fin n) : ℝ := coordDerivative (fun y ↦ gradient U y j) q i
+```
+
+### MD.Ch07.thirdU (Blueprint/Ch07.lean:1267)
+原文件上下文：
+```lean
+open Set Filter MeasureTheory ProbabilityTheory MolecularDynamics
+open scoped BigOperators Topology ContDiff ENNReal NNReal Matrix
+variable {Ω : Type*} [MeasurableSpace Ω]
+variable {n : ℕ}
+```
+```lean
+def thirdU (U : V n → ℝ) (q : V n) (i j k : Fin n) : ℝ := coordDerivative (fun y ↦ hessianU U y j k) q i
+```
+
+### MD.Ch07.hessianGrad (Blueprint/Ch07.lean:1268)
+原文件上下文：
+```lean
+open Set Filter MeasureTheory ProbabilityTheory MolecularDynamics
+open scoped BigOperators Topology ContDiff ENNReal NNReal Matrix
+variable {Ω : Type*} [MeasurableSpace Ω]
+variable {n : ℕ}
+```
+```lean
+def hessianGrad (U : V n → ℝ) (x : Phase n) : ℝ := ∑ i, ∑ j, x.2 i*hessianU U x.1 i j*gradient U x.1 j
+```
+
+### MD.Ch07.cubicThird (Blueprint/Ch07.lean:1269)
+原文件上下文：
+```lean
+open Set Filter MeasureTheory ProbabilityTheory MolecularDynamics
+open scoped BigOperators Topology ContDiff ENNReal NNReal Matrix
+variable {Ω : Type*} [MeasurableSpace Ω]
+variable {n : ℕ}
+```
+```lean
+def cubicThird (U : V n → ℝ) (x : Phase n) : ℝ := ∑ i, ∑ j, ∑ k, thirdU U x.1 i j k*x.2 i*x.2 j*x.2 k
+```
+
+### MD.Ch07.symmetricRHS (Blueprint/Ch07.lean:1287)
+原文件上下文：
+```lean
+open Set Filter MeasureTheory ProbabilityTheory MolecularDynamics
+open scoped BigOperators Topology ContDiff ENNReal NNReal Matrix
+variable {Ω : Type*} [MeasurableSpace Ω]
+variable {n : ℕ}
+```
+```lean
+def symmetricRHS (flip : Bool) (U : V n → ℝ) (β : ℝ) (x : Phase n) : ℝ :=
+  β/24*(if flip then 2*cubicThird U x-6*hessianGrad U x else 6*hessianGrad U x-cubicThird U x)
+```
+
+### MD.Ch07.phaseH (Blueprint/Ch07.lean:1342)
+原文件上下文：
+```lean
+open Set Filter MeasureTheory ProbabilityTheory MolecularDynamics
+open scoped BigOperators Topology ContDiff ENNReal NNReal Matrix
+variable {Ω : Type*} [MeasurableSpace Ω]
+variable {n : ℕ}
+```
+```lean
+def phaseH (U : V n → ℝ) (ρ : Phase n → ℝ) : Phase n → ℝ := aForward (fun _ ↦ 1) ρ+bForward U ρ
+```
+
+### MD.Ch07.laplacian (Blueprint/Ch07.lean:1378)
+原文件上下文：
+```lean
+open Set Filter MeasureTheory ProbabilityTheory MolecularDynamics
+open scoped BigOperators Topology ContDiff ENNReal NNReal Matrix
+variable {Ω : Type*} [MeasurableSpace Ω]
+variable {n : ℕ}
+```
+```lean
+def laplacian (U : V n → ℝ) (q : V n) : ℝ := ∑ i, hessianU U q i i
+```
+
+### MD.Ch07.pGradLaplacian (Blueprint/Ch07.lean:1379)
+原文件上下文：
+```lean
+open Set Filter MeasureTheory ProbabilityTheory MolecularDynamics
+open scoped BigOperators Topology ContDiff ENNReal NNReal Matrix
+variable {Ω : Type*} [MeasurableSpace Ω]
+variable {n : ℕ}
+```
+```lean
+def pGradLaplacian (U : V n → ℝ) (x : Phase n) : ℝ := ∑ i, x.2 i*gradient (laplacian U) x.1 i
+```
+
+### MD.Ch07.hermitePrimitive (Blueprint/Ch07.lean:1380)
+原文件上下文：
+```lean
+open Set Filter MeasureTheory ProbabilityTheory MolecularDynamics
+open scoped BigOperators Topology ContDiff ENNReal NNReal Matrix
+variable {Ω : Type*} [MeasurableSpace Ω]
+variable {n : ℕ}
+```
+```lean
+def hermitePrimitive (U : V n → ℝ) (β : ℝ) (x : Phase n) : ℝ :=
+  6*hessianGrad U x-(1/3)*cubicThird U x-2/β*pGradLaplacian U x
+```
+
+### MD.Ch07.firstReciprocalCorrection (Blueprint/Ch07.lean:1401)
+原文件上下文：
+```lean
+open Set Filter MeasureTheory ProbabilityTheory MolecularDynamics
+open scoped BigOperators Topology ContDiff ENNReal NNReal Matrix
+variable {Ω : Type*} [MeasurableSpace Ω]
+variable {n : ℕ}
+```
+```lean
+def firstReciprocalCorrection (U ν μ : V n → ℝ) (β : ℝ) (x : Phase n) : ℝ :=
+  -β/24*hermitePrimitive U β x-(∑ i, x.2 i*gradient ν x.1 i)-μ x.1
+```
+
+### MD.Ch07.momentumAverage (Blueprint/Ch07.lean:1403)
+原文件上下文：
+```lean
+open Set Filter MeasureTheory ProbabilityTheory MolecularDynamics
+open scoped BigOperators Topology ContDiff ENNReal NNReal Matrix
+variable {Ω : Type*} [MeasurableSpace Ω]
+variable {n : ℕ}
+```
+```lean
+def momentumAverage (β : ℝ) (f : Phase n → ℝ) (q : V n) : ℝ :=
+  ∫ p, f (q,p) ∂momentumGibbs (fun _ ↦ 1) β
+```
+
+### MD.Ch07.momentumAveragePrinted_corrected (Blueprint/Ch07.lean:1405)
+原文件上下文：
+```lean
+open Set Filter MeasureTheory ProbabilityTheory MolecularDynamics
+open scoped BigOperators Topology ContDiff ENNReal NNReal Matrix
+variable {Ω : Type*} [MeasurableSpace Ω]
+variable {n : ℕ}
+```
+```lean
+def momentumAveragePrinted_corrected (β : ℝ) (f : Phase n → ℝ) (q : V n) : ℝ :=
+  momentumAverage β f q
+```
+
+### MD.Ch07.momentumAveragePrinted (Blueprint/Ch07.lean:1408)
+原文件上下文：
+```lean
+open Set Filter MeasureTheory ProbabilityTheory MolecularDynamics
+open scoped BigOperators Topology ContDiff ENNReal NNReal Matrix
+variable {Ω : Type*} [MeasurableSpace Ω]
+variable {n : ℕ}
+```
+```lean
+def momentumAveragePrinted (U : V n → ℝ) (β : ℝ) (f : Phase n → ℝ) (q : V n) : ℝ :=
+  ∫ p, f (q,p)*(gibbsWeight (fun _ ↦ 1) U β (q,p)/
+    (∫ x : Phase n, gibbsWeight (fun _ ↦ 1) U β x))
+```
+
+### MD.Ch07.firstReciprocalCorrection_pde (Blueprint/Ch07.lean:1411)
+原文件上下文：
+```lean
+open Set Filter MeasureTheory ProbabilityTheory MolecularDynamics
+open scoped BigOperators Topology ContDiff ENNReal NNReal Matrix
+variable {Ω : Type*} [MeasurableSpace Ω]
+variable {n : ℕ}
+```
+```lean
+theorem firstReciprocalCorrection_pde (U ν μ : V n → ℝ) (β : ℝ) (hβ : 0 < β)
+    (hU : ContDiff ℝ ⊤ U) (hν : ContDiff ℝ ⊤ ν) :
+    let ρ := gibbsWeight (fun _ ↦ 1) U β
+    phaseO (fun _ ↦ 1) 1 β (ρ*firstReciprocalCorrection U ν μ β)+
+      phaseH U (fun x ↦ ρ x*ν x.1) = (fun x ↦ symmetricRHS false U β x*ρ x)
+```
+
+### MD.Ch07.conjugatedPhaseH (Blueprint/Ch07.lean:1418)
+原文件上下文：
+```lean
+open Set Filter MeasureTheory ProbabilityTheory MolecularDynamics
+open scoped BigOperators Topology ContDiff ENNReal NNReal Matrix
+variable {Ω : Type*} [MeasurableSpace Ω]
+variable {n : ℕ}
+```
+```lean
+def conjugatedPhaseH (U : V n → ℝ) (β : ℝ) (f : Phase n → ℝ) (x : Phase n) : ℝ :=
+  phaseH U (gibbsWeight (fun _ ↦ 1) U β*f) x/gibbsWeight (fun _ ↦ 1) U β x
+```
+
+### MD.Ch07.jointGibbsQualification (Blueprint/Ch07.lean:1421)
+原文件上下文：
+```lean
+open Set Filter MeasureTheory ProbabilityTheory MolecularDynamics
+open scoped BigOperators Topology ContDiff ENNReal NNReal Matrix
+variable {Ω : Type*} [MeasurableSpace Ω]
+variable {n : ℕ}
+```
+```lean
+def jointGibbsQualification (U : V n → ℝ) (β : ℝ) : Prop :=
+  0 < β ∧ Integrable (gibbsWeight (fun _ ↦ 1) U β) volume ∧
+  0 < ∫ x : Phase n, gibbsWeight (fun _ ↦ 1) U β x
+```

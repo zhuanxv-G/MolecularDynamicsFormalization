@@ -1,0 +1,26 @@
+{
+  "batch": "EAUDIT08",
+  "subtasks": [
+    {
+      "subtask": "EAUDIT08a",
+      "source_id": "MD-7.9.2-OUHermiteIdentities",
+      "path": "blueprint/ch07/mathcopilot_tasks/EAUDIT08/a",
+      "bytes": 95465,
+      "manifest_sha256": "b3efdb49aba8d46f16bc1c8f09b86c78ba9247412031127c74d4526f67d52d6c"
+    },
+    {
+      "subtask": "EAUDIT08b",
+      "source_id": "MD-7.9.2-FirstReciprocalCorrection",
+      "path": "blueprint/ch07/mathcopilot_tasks/EAUDIT08/b",
+      "bytes": 112427,
+      "manifest_sha256": "33d7db7b37ca8edd6ddeab573be1d31de05ac17d5d18b7cffa919d110eca720c"
+    },
+    {
+      "subtask": "EAUDIT08c",
+      "source_id": "MD-7.9.2-HighFrictionCorrectionTable",
+      "path": "blueprint/ch07/mathcopilot_tasks/EAUDIT08/c",
+      "bytes": 116489,
+      "manifest_sha256": "4d6cfbb32cd0465848e91b58de4dec699bfa0e0f239d3ff2ebbbec40df8eec6f"
+    }
+  ]
+}

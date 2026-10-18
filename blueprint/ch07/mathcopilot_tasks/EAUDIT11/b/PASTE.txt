@@ -1,0 +1,252 @@
+以附件/PASTE 为准，忽略 /workspace 旧文件；Mathlib 定义按标准含义采信。
+本任务只审本条：原文转录、对象资格、定义体、量词、全部结论及[EXTRA]是否一致；Lean编译不代替语义审阅。
+Lean/Mathlib均4.34.0。原页PDF映射：[338]；印刷页=[317].
+input_sha256请原样回显：
+{
+  "Blueprint/Ch07.lean": "f3bc0ee86ace9c825028f0cec8ebb2fb410d6be77213cc7fb41cb8889540a000",
+  "blueprint/ch07/ch07_source.json": "1a201887b51a249fb73f456237cb342963c5d98c612ec1912f21572a57924012",
+  "PAGES.pdf": "ac659ba3d25ab48d22c2bdda1167c93fdf9a12030058fc69532341417101727c"
+}
+用代码将JSON对象(batch,input_sha256,items)写到 /workspace/.mathcopilot/reviews/ch07/EAUDIT11b_review.json；items仅含本source_id。
+items字段：source_id、verdict(PASS/FAIL/NEEDS_HUMAN)、transcription、semantic_review、counterexample、suggested_fix、printed_version、corrected_version。逐版区分原文疑误和修正版结论；缺材料必须具体指出，不猜测。写后json.loads自检，最后仅回复路径及统计。
+
+## 原文JSON
+```json
+{
+  "source_id": "MD-7.12-ConstrainedCanonicalErgodicity",
+  "kind": "definition",
+  "label": null,
+  "section": "7.12",
+  "printed_page": "317",
+  "pdf_page": "338",
+  "statement_latex": "In the infinite time limit, we have that solution trajectories of constrained Langevin (7.43)–(7.45) sample $\\widetilde\\rho_\\beta$ ergodically, such that\n\\[\\lim_{T\\to\\infty}\\frac1T\\int_0^T\\phi(q(t),p(t))dt=\\int_{\\mathcal D}\\phi(q,p)\\widetilde\\rho_\\beta d\\omega,\\]\nwhere $\\widetilde\\rho_\\beta$ is the normalized constrained canonical distribution\n\\[\\widetilde\\rho_\\beta=Z^{-1}\\exp(-\\beta H(q,p))\\delta[g(q)]\\delta[g'(q)M^{-1}p],\\]\nfor normalizing constant $Z$ and where $\\delta[z]:=\\prod_i\\delta[z_i]$ for a vector $z$.",
+  "proof_latex": null,
+  "proof_outline": null,
+  "proof_note": "原页推导与上下文全文见original_page_text；数学符号的排版以随附原页PDF为准。",
+  "original_page_text": [
+    {
+      "pdf_page": 338,
+      "printed_page": 317,
+      "text": "7.12\nConstrained Langevin Dynamics\n317\n7.12\nConstrained Langevin Dynamics\nWe may use a splitting approach to develop discretization algorithms for other forms\nof dynamics. In Chap. 4, we included holonomic constraints to the ODEs deﬁning\nconstant-energy Hamiltonian dynamics, as a way to increase the stability of our\nalgorithms and increase the usable timestep. We can add constraints to the Langevin\ndynamics SDEs similarly as\ndq D M\u00021pdt;\n(7.43)\ndp D \u0003rU.q/dt \u0003 \npdt C\np\n2\nkBTMdW \u0003 g0.q/T\fdt;\n(7.44)\n0 D g.q/;\n(7.45)\nwhere the vector of l constraints is given by g W RNc ! Rl and \f is an l-dimensional\nvector of Lagrange multipliers. W is a vector of standard Wiener processes, with\nthe usual friction parameter \n > 0. As in the constant energy dynamics, permissible\nphase points lie in the co-tangent bundle deﬁned by the constraint and hidden\nconstraint\ng.q/ D 0;\ng0.q/M\u00021p D 0;\nwhile in the inﬁnite time limit, we have that solution trajectories of constrained\nLangevin (7.43)–(7.45) sample Q\u0005ˇ ergodically, such that\nlim\nT!1\n1\nT\nT\nZ\n0\n\b.q.t/; p.t//dt D\nZ\nD\n\b.q; p/ Q\u0005ˇd!;\nwhere Q\u0005ˇ is the normalized constrained canonical distribution\nQ\u0005ˇ D Z\u00021 exp.\u0003ˇH.q; p//ıŒg.q/\tıŒg0.q/M\u00021p\t;\nfor normalizing constant Z and where ıŒz\t :D Q\ni ıŒzi\t for a vector z. The goal is\nnow to ﬁnd solutions to the constrained dynamics, in order to sample the target\ndistribution.\nOne approach for algorithms is simply to evolve unconstrained Langevin dynam-\nics using any algorithm of choice, then follow each step by a step of the SHAKE\nalgorithm (see Chapter 4 or [322]) to pull the system back on to the manifold\nsatisfying the holonomic constraints.\n"
+    }
+  ],
+  "transcription_note": "PDF文字层原样保留，陈述中的数学排版转写为LaTeX；文字层有特殊字形编码时以目视原页为准。PDF347的Exercises之后不在正文范围内。",
+  "context_notation": [],
+  "extra_assumptions": [
+    "δ不是普通Lebesgue密度；用有支撑测度ν和正则化δ的弱积分极限规定其含义，不能用任意面测度替代而省略Jacobian因子。",
+    "实际概率要求配分积分正有限；遍历性还需连通性、正则满秩约束、势增长及不可约等条件。原书省略这些条件，本条仅记录目标，不宣称无条件遍历定理。",
+    "29号覆盖限定：delta参考弱极限、总化权重和任意过程遍历目标；补正质量/β/正有限配分与参考资格谓词，未证明参考等于几何体积或SDE遍历性，连通反例另记。"
+  ],
+  "issues": [],
+  "statement_scope": "delta参考弱极限、总化权重和任意过程遍历目标；补正质量/β/正有限配分与参考资格谓词，未证明参考等于几何体积或SDE遍历性，连通反例另记。",
+  "lean_decl": "MD.Ch07.constrainedCanonical",
+  "lean_declarations": [
+    "MD.Ch07.constrainedCanonical",
+    "MD.Ch07.constrainedReference",
+    "MD.Ch07.constrainedErgodicAverages",
+    "MD.Ch07.constrainedCanonicalQualification"
+  ],
+  "source_page_verification": "见source_page_checks.json；必须已目视核对本条原页。",
+  "repair_log": [
+    {
+      "instruction": 29,
+      "website_verdict": "NEEDS_HUMAN",
+      "suggested_fix": "保留原印并标[ERRATUM?]；明确delta参考测度与几何体积的换算，加入正有限配分积分、正则满秩/连通等资格。补把SDE、参考测度、canonical概率和遍历极限连接的完整目标签名。",
+      "actual_scope": "delta参考弱极限、总化权重和任意过程遍历目标；补正质量/β/正有限配分与参考资格谓词，未证明参考等于几何体积或SDE遍历性，连通反例另记。",
+      "signature_changed": true
+    }
+  ],
+  "documented_priors": [],
+  "coverage_gaps": [
+    "29号覆盖限定：delta参考弱极限、总化权重和任意过程遍历目标；补正质量/β/正有限配分与参考资格谓词，未证明参考等于几何体积或SDE遍历性，连通反例另记。"
+  ]
+}
+```
+
+## 完整本条Lean
+```lean
+def constrainedCanonical (ν : Measure (Phase n)) (m : V n) (U : V n → ℝ) (β : ℝ) : Measure (Phase n) :=
+  ν.withDensity (fun x ↦ ENNReal.ofReal (gibbsWeight m U β x/(∫ y, gibbsWeight m U β y ∂ν)))
+def constrainedReference {l : ℕ} (ν : Measure (Phase n)) (m : V n) (g : V n → V l) : Prop :=
+  ν (cotangentConstraint m g)ᶜ = 0 ∧
+  ∀ φ : Phase n → ℝ, Continuous φ → HasCompactSupport φ →
+    Filter.Tendsto (fun ε : ℝ ↦ ∫ x, φ x*(Real.pi*ε)^(-(l : ℝ))*
+      Real.exp (-((∑ j, (g x.1 j)^2)+
+        (∑ j, (∑ i, constraintJacobian g x.1 j i*(x.2 i/m i))^2))/ε))
+      (𝓝[Set.Ioi (0 : ℝ)] 0) (𝓝 (∫ x, φ x ∂ν))
+def constrainedErgodicAverages (P : Measure Ω) (X : ℝ → Ω → Phase n) (μ : Measure (Phase n)) : Prop :=
+  IsProbabilityMeasure P ∧ IsProbabilityMeasure μ ∧
+  ∀ φ : Phase n → ℝ, Integrable φ μ →
+    ∀ᵐ sample ∂P, Filter.Tendsto (fun T : ℝ ↦ T⁻¹*∫ t in (0 : ℝ)..T, φ (X t sample)) Filter.atTop (𝓝 (∫ x, φ x ∂μ))
+
+def constrainedCanonicalQualification {l : ℕ} (ν : Measure (Phase n))
+    (m : V n) (g : V n → V l) (U : V n → ℝ) (β : ℝ) : Prop :=
+  (∀ i, 0 < m i) ∧ 0 < β ∧ ContDiff ℝ 2 g ∧ constrainedReference ν m g ∧
+  Integrable (gibbsWeight m U β) ν ∧ (0 < ∫ x, gibbsWeight m U β x ∂ν)
+```
+
+## 项目依赖定义体及选择规格
+以下def/abbrev/structure完整保留；定理列出完整类型，Mathlib标准定义无需摘录。
+
+### MD.Ch07.V (Blueprint/Ch07.lean:202)
+原文件上下文：
+```lean
+open Set Filter MeasureTheory ProbabilityTheory MolecularDynamics
+open scoped BigOperators Topology ContDiff ENNReal NNReal Matrix
+variable {Ω : Type*} [MeasurableSpace Ω]
+variable {n : ℕ}
+```
+```lean
+abbrev V (n : ℕ) := Fin n → ℝ
+```
+
+### MD.Ch07.Phase (Blueprint/Ch07.lean:203)
+原文件上下文：
+```lean
+open Set Filter MeasureTheory ProbabilityTheory MolecularDynamics
+open scoped BigOperators Topology ContDiff ENNReal NNReal Matrix
+variable {Ω : Type*} [MeasurableSpace Ω]
+variable {n : ℕ}
+```
+```lean
+abbrev Phase (n : ℕ) := V n × V n
+```
+
+### MD.Ch07.coordDerivative (Blueprint/Ch07.lean:257)
+原文件上下文：
+```lean
+open Set Filter MeasureTheory ProbabilityTheory MolecularDynamics
+open scoped BigOperators Topology ContDiff ENNReal NNReal Matrix
+variable {Ω : Type*} [MeasurableSpace Ω]
+variable {n : ℕ}
+```
+```lean
+def coordDerivative (f : V n → ℝ) (x : V n) (i : Fin n) : ℝ :=
+  deriv (fun z ↦ f (Function.update x i z)) (x i)
+```
+
+### MD.Ch07.mechanicalHamiltonian (Blueprint/Ch07.lean:1113)
+原文件上下文：
+```lean
+open Set Filter MeasureTheory ProbabilityTheory MolecularDynamics
+open scoped BigOperators Topology ContDiff ENNReal NNReal Matrix
+variable {Ω : Type*} [MeasurableSpace Ω]
+variable {n : ℕ}
+```
+```lean
+def mechanicalHamiltonian (m : V n) (U : V n → ℝ) (x : Phase n) : ℝ :=
+  (∑ i, x.2 i^2/(2*m i))+U x.1
+```
+
+### MD.Ch07.gibbsWeight (Blueprint/Ch07.lean:1115)
+原文件上下文：
+```lean
+open Set Filter MeasureTheory ProbabilityTheory MolecularDynamics
+open scoped BigOperators Topology ContDiff ENNReal NNReal Matrix
+variable {Ω : Type*} [MeasurableSpace Ω]
+variable {n : ℕ}
+```
+```lean
+def gibbsWeight (m : V n) (U : V n → ℝ) (β : ℝ) (x : Phase n) : ℝ :=
+  Real.exp (-β*mechanicalHamiltonian m U x)
+```
+
+### MD.Ch07.constraintJacobian (Blueprint/Ch07.lean:1695)
+原文件上下文：
+```lean
+open Set Filter MeasureTheory ProbabilityTheory MolecularDynamics
+open scoped BigOperators Topology ContDiff ENNReal NNReal Matrix
+variable {Ω : Type*} [MeasurableSpace Ω]
+variable {n : ℕ}
+```
+```lean
+def constraintJacobian {l : ℕ} (g : V n → V l) (q : V n) (j : Fin l) (i : Fin n) : ℝ :=
+  coordDerivative (fun x ↦ g x j) q i
+```
+
+### MD.Ch07.hiddenConstraint (Blueprint/Ch07.lean:1699)
+原文件上下文：
+```lean
+open Set Filter MeasureTheory ProbabilityTheory MolecularDynamics
+open scoped BigOperators Topology ContDiff ENNReal NNReal Matrix
+variable {Ω : Type*} [MeasurableSpace Ω]
+variable {n : ℕ}
+```
+```lean
+def hiddenConstraint {l : ℕ} (m : V n) (g : V n → V l) (x : Phase n) : Prop :=
+  ∀ j, (∑ i, constraintJacobian g x.1 j i*(x.2 i/m i)) = 0
+```
+
+### MD.Ch07.cotangentConstraint (Blueprint/Ch07.lean:1701)
+原文件上下文：
+```lean
+open Set Filter MeasureTheory ProbabilityTheory MolecularDynamics
+open scoped BigOperators Topology ContDiff ENNReal NNReal Matrix
+variable {Ω : Type*} [MeasurableSpace Ω]
+variable {n : ℕ}
+```
+```lean
+def cotangentConstraint {l : ℕ} (m : V n) (g : V n → V l) : Set (Phase n) :=
+  {x | g x.1 = 0 ∧ hiddenConstraint m g x}
+```
+
+### MD.Ch07.constrainedCanonical (Blueprint/Ch07.lean:1750)
+原文件上下文：
+```lean
+open Set Filter MeasureTheory ProbabilityTheory MolecularDynamics
+open scoped BigOperators Topology ContDiff ENNReal NNReal Matrix
+variable {Ω : Type*} [MeasurableSpace Ω]
+variable {n : ℕ}
+```
+```lean
+def constrainedCanonical (ν : Measure (Phase n)) (m : V n) (U : V n → ℝ) (β : ℝ) : Measure (Phase n) :=
+  ν.withDensity (fun x ↦ ENNReal.ofReal (gibbsWeight m U β x/(∫ y, gibbsWeight m U β y ∂ν)))
+```
+
+### MD.Ch07.constrainedReference (Blueprint/Ch07.lean:1752)
+原文件上下文：
+```lean
+open Set Filter MeasureTheory ProbabilityTheory MolecularDynamics
+open scoped BigOperators Topology ContDiff ENNReal NNReal Matrix
+variable {Ω : Type*} [MeasurableSpace Ω]
+variable {n : ℕ}
+```
+```lean
+def constrainedReference {l : ℕ} (ν : Measure (Phase n)) (m : V n) (g : V n → V l) : Prop :=
+  ν (cotangentConstraint m g)ᶜ = 0 ∧
+  ∀ φ : Phase n → ℝ, Continuous φ → HasCompactSupport φ →
+    Filter.Tendsto (fun ε : ℝ ↦ ∫ x, φ x*(Real.pi*ε)^(-(l : ℝ))*
+      Real.exp (-((∑ j, (g x.1 j)^2)+
+        (∑ j, (∑ i, constraintJacobian g x.1 j i*(x.2 i/m i))^2))/ε))
+      (𝓝[Set.Ioi (0 : ℝ)] 0) (𝓝 (∫ x, φ x ∂ν))
+```
+
+### MD.Ch07.constrainedErgodicAverages (Blueprint/Ch07.lean:1759)
+原文件上下文：
+```lean
+open Set Filter MeasureTheory ProbabilityTheory MolecularDynamics
+open scoped BigOperators Topology ContDiff ENNReal NNReal Matrix
+variable {Ω : Type*} [MeasurableSpace Ω]
+variable {n : ℕ}
+```
+```lean
+def constrainedErgodicAverages (P : Measure Ω) (X : ℝ → Ω → Phase n) (μ : Measure (Phase n)) : Prop :=
+  IsProbabilityMeasure P ∧ IsProbabilityMeasure μ ∧
+  ∀ φ : Phase n → ℝ, Integrable φ μ →
+    ∀ᵐ sample ∂P, Filter.Tendsto (fun T : ℝ ↦ T⁻¹*∫ t in (0 : ℝ)..T, φ (X t sample)) Filter.atTop (𝓝 (∫ x, φ x ∂μ))
+```
+
+### MD.Ch07.constrainedCanonicalQualification (Blueprint/Ch07.lean:1764)
+原文件上下文：
+```lean
+open Set Filter MeasureTheory ProbabilityTheory MolecularDynamics
+open scoped BigOperators Topology ContDiff ENNReal NNReal Matrix
+variable {Ω : Type*} [MeasurableSpace Ω]
+variable {n : ℕ}
+```
+```lean
+def constrainedCanonicalQualification {l : ℕ} (ν : Measure (Phase n))
+    (m : V n) (g : V n → V l) (U : V n → ℝ) (β : ℝ) : Prop :=
+  (∀ i, 0 < m i) ∧ 0 < β ∧ ContDiff ℝ 2 g ∧ constrainedReference ν m g ∧
+  Integrable (gibbsWeight m U β) ν ∧ (0 < ∫ x, gibbsWeight m U β x ∂ν)
+```

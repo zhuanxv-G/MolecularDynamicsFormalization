@@ -1,0 +1,11 @@
+--- 
++++ 
+@@ -7,4 +7,8 @@
+ def limitAccuracyPrinted_corrected (error : ℝ → ℝ) : Prop :=
+   Asymptotics.IsBigO (𝓝[Set.Ioi (0 : ℝ)] 0) error (fun h ↦ h^4)
+ 
+-theorem limitAccuracy_rescale (h : ℝ) : (h^2/2)^2 = h^4/4 := by ring+theorem limitAccuracy_rescale (h : ℝ) : (h^2/2)^2 = h^4/4 := by ring
++
++def limitAccuracyInfiniteTime_corrected (error : ℝ → ℝ → ℝ) (longtime : ℝ → ℝ) : Prop :=
++  (∀ h, 0 < h → Tendsto (fun T ↦ error (h^2/2) T) atTop (𝓝 (longtime h))) ∧
++  limitAccuracyPrinted_corrected longtime

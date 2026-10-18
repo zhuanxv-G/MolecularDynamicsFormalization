@@ -1,0 +1,301 @@
+{
+  "batch": "BATCH04",
+  "chapter": "ch07",
+  "round": "first-merged",
+  "input_sha256": {
+    "Blueprint/Ch07.lean": "f30ea154ebfb07ae85c0b806ff74b35808d5a0c3dcaa647c0c3cc80a78239e37",
+    "blueprint/ch07/ch07_source.json": "c434892ebf63b06f7cadcdfa7af408c2c12d7b645d35db431d1855224163ba19"
+  },
+  "items": [
+    {
+      "source_id": "MD-7.3.1-Langevin",
+      "json_review": {
+        "status": "APPROVED",
+        "issue_codes": [],
+        "corrected_json": null,
+        "issues": [],
+        "evidence": [
+          {
+            "stage": "A",
+            "attachment": "R1_PAGES.pdf",
+            "attachment_pages": [
+              19
+            ],
+            "printed_page": "268",
+            "result": "已目视核对该页正文及公式；同版重复附件页的渲染图逐字节相同。未发现改变数学含义的转录差异。"
+          },
+          {
+            "stage": "C",
+            "result": "langevin的自然历史适应、确定初值与公共几乎处处连续路径均明确；同一公共满测集上对所有非负t及全部坐标给出可积性与位置/动量积分方程。位置漂移p_i/m_i，动量漂移−∂_iU−γp_i，噪声sqrt(2γθm_i)(W_i(t)−W_i(0))，完整对应(7.4)。U的导数使用真实deriv总化定义，经典动力学解释限于偏导存在的势能，不声称任意U均有解。",
+            "scope": "仅核对任务摘录的完整签名及MD/MolecularDynamics定义体；不修改工程，不补证明，不将sorry视为签名错误。"
+          }
+        ]
+      },
+      "audit": {
+        "lean_decl": [
+          "MD.Ch07.gradient",
+          "MD.Ch07.langevin"
+        ],
+        "verdict": "PASS",
+        "explanation": "langevin的自然历史适应、确定初值与公共几乎处处连续路径均明确；同一公共满测集上对所有非负t及全部坐标给出可积性与位置/动量积分方程。位置漂移p_i/m_i，动量漂移−∂_iU−γp_i，噪声sqrt(2γθm_i)(W_i(t)−W_i(0))，完整对应(7.4)。U的导数使用真实deriv总化定义，经典动力学解释限于偏导存在的势能，不声称任意U均有解。",
+        "counterexample": null,
+        "suggested_fix": null
+      },
+      "subtask": "BATCH04a",
+      "input_sha256": {
+        "Blueprint/Ch07.lean": "f30ea154ebfb07ae85c0b806ff74b35808d5a0c3dcaa647c0c3cc80a78239e37",
+        "blueprint/ch07/ch07_source.json": "c434892ebf63b06f7cadcdfa7af408c2c12d7b645d35db431d1855224163ba19",
+        "BATCH04a_PAGES.pdf": "74cf8e6e50d41748344365fb176d51f352e4e3c59f1405639f6966c337d08f59"
+      }
+    },
+    {
+      "source_id": "MD-7.3.1-HamiltonianGibbs",
+      "json_review": {
+        "status": "APPROVED",
+        "issue_codes": [],
+        "corrected_json": null,
+        "issues": [],
+        "evidence": [
+          {
+            "stage": "A",
+            "attachment": "R1_PAGES.pdf",
+            "attachment_pages": [
+              20
+            ],
+            "printed_page": "269",
+            "result": "已目视核对该页正文及公式；同版重复附件页的渲染图逐字节相同。未发现改变数学含义的转录差异。"
+          },
+          {
+            "stage": "C",
+            "result": "对任意可测D、基准ν，F可测且保持ν，H逐点沿F守恒，权重可测，结论是未归一化Gibbs加权测度的真实推前不变性。能量守恒使权重与F复合不变，体积保持使积分变量替换成立；无需F可逆。存在性及体积/能量保持作为已披露前提，不是已证明一般Hamilton流存在；如称概率另需正有限配分积分。",
+            "scope": "仅核对任务摘录的完整签名及MD/MolecularDynamics定义体；不修改工程，不补证明，不将sorry视为签名错误。"
+          }
+        ]
+      },
+      "audit": {
+        "lean_decl": [
+          "MD.Ch07.hamiltonianGibbs"
+        ],
+        "verdict": "PASS",
+        "explanation": "对任意可测D、基准ν，F可测且保持ν，H逐点沿F守恒，权重可测，结论是未归一化Gibbs加权测度的真实推前不变性。能量守恒使权重与F复合不变，体积保持使积分变量替换成立；无需F可逆。存在性及体积/能量保持作为已披露前提，不是已证明一般Hamilton流存在；如称概率另需正有限配分积分。",
+        "counterexample": null,
+        "suggested_fix": null
+      },
+      "subtask": "BATCH04b",
+      "input_sha256": {
+        "Blueprint/Ch07.lean": "f30ea154ebfb07ae85c0b806ff74b35808d5a0c3dcaa647c0c3cc80a78239e37",
+        "blueprint/ch07/ch07_source.json": "c434892ebf63b06f7cadcdfa7af408c2c12d7b645d35db431d1855224163ba19",
+        "BATCH04b_PAGES.pdf": "c0e9420275abfe496ee97c24fb5214aa92e1f194b297ad641b07ccc4d6952556"
+      }
+    },
+    {
+      "source_id": "MD-7.3.1-ABOPieces",
+      "json_review": {
+        "status": "APPROVED",
+        "issue_codes": [],
+        "corrected_json": null,
+        "issues": [],
+        "evidence": [
+          {
+            "stage": "A",
+            "attachment": "R1_PAGES.pdf",
+            "attachment_pages": [
+              21,
+              22
+            ],
+            "printed_page": "269–270",
+            "result": "已目视核对该页正文及公式；同版重复附件页的渲染图逐字节相同。未发现改变数学含义的转录差异。"
+          },
+          {
+            "stage": "C",
+            "result": "aField=(M⁻¹p,0)、bField=(0,−∇U)、oDrift=(0,−γp)，splittingDrift只证明漂移和而未冒充随机扩散恒等式。driftStep、kickStep及引用ouStep给出三种更新；真实扩散与正态资格及O精确性分别由VectorOU、OUPhaseIteration、OUExactUpdate承担，A/B流另由下条承担。",
+            "scope": "仅核对任务摘录的完整签名及MD/MolecularDynamics定义体；不修改工程，不补证明，不将sorry视为签名错误。"
+          }
+        ]
+      },
+      "audit": {
+        "lean_decl": [
+          "MD.Ch07.driftStep",
+          "MD.Ch07.kickStep",
+          "MD.Ch07.aField",
+          "MD.Ch07.bField",
+          "MD.Ch07.oDrift",
+          "MD.Ch07.splittingDrift"
+        ],
+        "verdict": "PASS",
+        "explanation": "aField=(M⁻¹p,0)、bField=(0,−∇U)、oDrift=(0,−γp)，splittingDrift只证明漂移和而未冒充随机扩散恒等式。driftStep、kickStep及引用ouStep给出三种更新；真实扩散与正态资格及O精确性分别由VectorOU、OUPhaseIteration、OUExactUpdate承担，A/B流另由下条承担。",
+        "counterexample": null,
+        "suggested_fix": null
+      },
+      "subtask": "BATCH04c",
+      "input_sha256": {
+        "Blueprint/Ch07.lean": "f30ea154ebfb07ae85c0b806ff74b35808d5a0c3dcaa647c0c3cc80a78239e37",
+        "blueprint/ch07/ch07_source.json": "c434892ebf63b06f7cadcdfa7af408c2c12d7b645d35db431d1855224163ba19",
+        "BATCH04c_PAGES.pdf": "c0395ba474a879b41a3598c27a29ab33e2bee491953ca659e0f0d54a7c2649c8"
+      }
+    },
+    {
+      "source_id": "MD-7.3.1-ABExactFlows",
+      "json_review": {
+        "status": "APPROVED",
+        "issue_codes": [],
+        "corrected_json": null,
+        "issues": [],
+        "evidence": [
+          {
+            "stage": "A",
+            "attachment": "R1_PAGES.pdf",
+            "attachment_pages": [
+              23
+            ],
+            "printed_page": "270",
+            "result": "已目视核对该页正文及公式；同版重复附件页的渲染图逐字节相同。未发现改变数学含义的转录差异。"
+          },
+          {
+            "stage": "C",
+            "result": "driftStep_derivative和kickStep_derivative对任意固定初态、时间、坐标给出真实时间导数，另一分量恒定且t=0为初态可直接由定义读取，分别等于aField和bField沿轨道的分量。B中q恒定，故不需对U再作时间求导。O的精确性由ouTransitionLaw签名覆盖，未因其sorry判失败。",
+            "scope": "仅核对任务摘录的完整签名及MD/MolecularDynamics定义体；不修改工程，不补证明，不将sorry视为签名错误。"
+          }
+        ]
+      },
+      "audit": {
+        "lean_decl": [
+          "MD.Ch07.driftStep_derivative",
+          "MD.Ch07.kickStep_derivative"
+        ],
+        "verdict": "PASS",
+        "explanation": "driftStep_derivative和kickStep_derivative对任意固定初态、时间、坐标给出真实时间导数，另一分量恒定且t=0为初态可直接由定义读取，分别等于aField和bField沿轨道的分量。B中q恒定，故不需对U再作时间求导。O的精确性由ouTransitionLaw签名覆盖，未因其sorry判失败。",
+        "counterexample": null,
+        "suggested_fix": null
+      },
+      "subtask": "BATCH04d",
+      "input_sha256": {
+        "Blueprint/Ch07.lean": "f30ea154ebfb07ae85c0b806ff74b35808d5a0c3dcaa647c0c3cc80a78239e37",
+        "blueprint/ch07/ch07_source.json": "c434892ebf63b06f7cadcdfa7af408c2c12d7b645d35db431d1855224163ba19",
+        "BATCH04d_PAGES.pdf": "f526228e4ce004610a235f14b65162fb886452cf58bccdf466d096f1abe0ffaf"
+      }
+    },
+    {
+      "source_id": "MD-7.3.1-ABForward",
+      "json_review": {
+        "status": "CORRECTED",
+        "issue_codes": [
+          "VERBATIM_WORDING"
+        ],
+        "corrected_json": {
+          "source_id": "MD-7.3.1-ABForward",
+          "kind": "definition",
+          "label": null,
+          "section": "7.3.1",
+          "printed_page": "270",
+          "pdf_page": "291",
+          "statement_latex": "The relevant forward propagators for each piece of the Hamiltonian part are computed through the adjoint of the Lie derivative as\n\\[\\mathcal L_A^\\dagger=-M^{-1}p\\cdot\\nabla_q,\\qquad\n\\mathcal L_B^\\dagger=\\nabla U(q)\\cdot\\nabla_p.\\]",
+          "proof_latex": null,
+          "proof_outline": null,
+          "proof_note": "原页推导与上下文全文见original_page_text；数学符号的排版以随附原页PDF为准。",
+          "original_page_text": [
+            {
+              "pdf_page": 291,
+              "printed_page": 270,
+              "text": "270\n7\nNumerical Methods for Stochastic Molecular Dynamics\nwhich we label A, B and O, where each of the three parts may be solved “exactly”,\nwith individual updates given as\nU A\nh .q; p/ D .q C hM\u00021p; p/;\nU B\nh .q; p/ D .q; p \u0003 hrU.q//;\nU O\nh .q; p/ D .q; e\u0002\nhp C\np\nkBT .1 \u0003 e\u00022\nh/M1=2R/;\nwhere R is a vector of i.i.d. normal random numbers. For the deterministic pieces\nA and B, the updates correspond to their ﬂow maps, while the update for the O\npiece corresponds to the solution derived in (7.3). The relevant forward propagators\nfor each piece of the Hamiltonian part are computed through the adjoint of the Lie\nderivative as\nL\u0004\nA D \u0003M\u00021p \u0002 rq;\nL\u0004\nB D rU.q/ \u0002 rp:\nUsing this splitting strategy, we can deﬁne a family of schemes by the desired\nsequence of updates, codiﬁed as a string using the alphabet “ABO”. For example,\nthe method denoted \u0002ABO\u0003 (acting from left to right) has a resulting update\nU \u0002ABO\u0003\nh\nD U O\nh ı U B\nh ı U A\nh :\nThis corresponds to using the adjoint symplectic Euler scheme to solve the\nNewtonian part of the Langevin dynamics SDE, followed by an exact OU solve. An\nalternative is to use velocity Verlet for the Hamiltonian part, resulting in a scheme\ndenoted \u0002BABO\u0003 with associated map\nU \u0002BABO\u0003\nh\nD U O\nh ı U B\nh=2 ı U A\nh ı U B\nh=2:\nNote that the presence of two B characters in the string results in halving the\ncorresponding piece’s time step length. As we need the method to be consistent,\nwe require that the each of the A, B and O pieces are propagated in time for a\ntotal time of h. As a result we use the convention that if a letter appears k times in a\nmethod’s string, then each individual update piece uses a timestep h=k. For example,\nthe scheme denoted \u0002OABOAOBAO\u0003 has an update\nU \u0002OABOAOBAO\u0003\nh\nD U O\nh=4 ı U A\nh=3 ı U B\nh=2 ı U O\nh=4 ı U A\nh=3 ı U O\nh=4 ı U B\nh=2 ı U A\nh=3 ı U O\nh=4;\nwhere the random numbers used in each O update are independent. This scheme will\nrequire a total of 4Nc normal random numbers and two force evaluations per step\n(the force must be recomputed at the ﬁrst B step following an A step; the number of\nforce evaluations required is not directly related to the length of the string).\nA class of methods like those considered above were discussed in [46] and given\nthe general title of “Geometric” Langevin Algorithm (GLA). The idea of a GLA\n"
+            }
+          ],
+          "transcription_note": "PDF文字层原样保留，陈述中的数学排版转写为LaTeX；文字层有特殊字形编码时以目视原页为准。PDF347的Exercises之后不在正文范围内。",
+          "context_notation": [],
+          "extra_assumptions": [
+            "以真实偏导定义所印微分表达式；形式伴随解释要求足够光滑及边界通量消失，未声称一般强算子域。"
+          ],
+          "issues": [],
+          "statement_scope": "本条逐字引用的全部数学对象与公式；未纳入的上下文另列。",
+          "lean_decl": "MD.Ch07.aForward",
+          "lean_declarations": [
+            "MD.Ch07.aForward",
+            "MD.Ch07.bForward"
+          ],
+          "source_page_verification": "本次实际目视核对R1_PAGES.pdf附件第[24]页；本次更正见repair_log。",
+          "repair_log": [
+            "原文为“adjoint of the Lie derivative as”，JSON写成“Lie derivatives as”。公式无误。"
+          ],
+          "documented_priors": []
+        },
+        "issues": [
+          "原文为“adjoint of the Lie derivative as”，JSON写成“Lie derivatives as”。公式无误。"
+        ],
+        "evidence": [
+          {
+            "stage": "A",
+            "attachment": "R1_PAGES.pdf",
+            "attachment_pages": [
+              24
+            ],
+            "printed_page": "270",
+            "result": "已目视核对原页；原文为“adjoint of the Lie derivative as”，JSON写成“Lie derivatives as”。公式无误。"
+          },
+          {
+            "stage": "C",
+            "result": "aForward为−∑(p_i/m_i)∂_{q_i}f，bForward为+∑∂_{q_i}U ∂_{p_i}f，符号及变量均匹配；系数分别对被求导变量独立，因此无遗漏的散度零阶项。仅定义形式微分表达式；边界和算子域限制已说明。",
+            "scope": "仅核对任务摘录的完整签名及MD/MolecularDynamics定义体；不修改工程，不补证明，不将sorry视为签名错误。"
+          }
+        ]
+      },
+      "audit": {
+        "lean_decl": [
+          "MD.Ch07.aForward",
+          "MD.Ch07.bForward"
+        ],
+        "verdict": "PASS",
+        "explanation": "aForward为−∑(p_i/m_i)∂_{q_i}f，bForward为+∑∂_{q_i}U ∂_{p_i}f，符号及变量均匹配；系数分别对被求导变量独立，因此无遗漏的散度零阶项。仅定义形式微分表达式；边界和算子域限制已说明。",
+        "counterexample": null,
+        "suggested_fix": "将statement_latex中的Lie derivatives改回Lie derivative。"
+      },
+      "subtask": "BATCH04e",
+      "input_sha256": {
+        "Blueprint/Ch07.lean": "f30ea154ebfb07ae85c0b806ff74b35808d5a0c3dcaa647c0c3cc80a78239e37",
+        "blueprint/ch07/ch07_source.json": "c434892ebf63b06f7cadcdfa7af408c2c12d7b645d35db431d1855224163ba19",
+        "BATCH04e_PAGES.pdf": "0c72b2d7398fc972b5b0ff61a8f75ba50b042e5a6f2672ca359eb55c885bbb94"
+      }
+    },
+    {
+      "source_id": "MD-7.3.1-ABOBABO",
+      "json_review": {
+        "status": "APPROVED",
+        "issue_codes": [],
+        "corrected_json": null,
+        "issues": [],
+        "evidence": [
+          {
+            "stage": "A",
+            "attachment": "R1_PAGES.pdf",
+            "attachment_pages": [
+              25
+            ],
+            "printed_page": "270",
+            "result": "已目视核对该页正文及公式；同版重复附件页的渲染图逐字节相同。未发现改变数学含义的转录差异。"
+          },
+          {
+            "stage": "C",
+            "result": "从右至左展开复合，abo执行A(h),B(h),O(h)；babo执行B(h/2),A(h),B(h/2),O(h)，与原页从左至右执行字母约定完全一致。噪声分布资格与函数映射分开披露。",
+            "scope": "仅核对任务摘录的完整签名及MD/MolecularDynamics定义体；不修改工程，不补证明，不将sorry视为签名错误。"
+          }
+        ]
+      },
+      "audit": {
+        "lean_decl": [
+          "MD.Ch07.abo",
+          "MD.Ch07.babo"
+        ],
+        "verdict": "PASS",
+        "explanation": "从右至左展开复合，abo执行A(h),B(h),O(h)；babo执行B(h/2),A(h),B(h/2),O(h)，与原页从左至右执行字母约定完全一致。噪声分布资格与函数映射分开披露。",
+        "counterexample": null,
+        "suggested_fix": null
+      },
+      "subtask": "BATCH04f",
+      "input_sha256": {
+        "Blueprint/Ch07.lean": "f30ea154ebfb07ae85c0b806ff74b35808d5a0c3dcaa647c0c3cc80a78239e37",
+        "blueprint/ch07/ch07_source.json": "c434892ebf63b06f7cadcdfa7af408c2c12d7b645d35db431d1855224163ba19",
+        "BATCH04f_PAGES.pdf": "f32a86a8ac59c3c63ffc959ea6b52aeea0fa6de86a24c389a6e56b1caa04d5dd"
+      }
+    }
+  ],
+  "merged_from": "ch07_first_merged"
+}

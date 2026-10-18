@@ -1,0 +1,277 @@
+{
+  "batch": "BATCH18",
+  "chapter": "ch07",
+  "round": "first-merged",
+  "input_sha256": {
+    "Blueprint/Ch07.lean": "f30ea154ebfb07ae85c0b806ff74b35808d5a0c3dcaa647c0c3cc80a78239e37",
+    "blueprint/ch07/ch07_source.json": "c434892ebf63b06f7cadcdfa7af408c2c12d7b645d35db431d1855224163ba19"
+  },
+  "items": [
+    {
+      "source_id": "MD-7.12-MEVMEAlgorithm",
+      "json_review": {
+        "status": "APPROVED",
+        "issue_codes": [],
+        "corrected_json": null,
+        "issues": [],
+        "evidence": {
+          "source_pdf": "R6_PAGES.pdf",
+          "attachment_pages": "1–2",
+          "printed_page": "318–319",
+          "original_pdf_page": "339–340",
+          "A_source_check": "四段更新公式、两个独立噪声标签及各动量/位置约束与附件1页一致；附件2页为后续乘子说明。",
+          "C_signature_check": "三个关系按任意维数n、约束数l逐坐标编码；θ对应k_BT，m为对角质量。D3–D8给出真正坐标偏导、Jacobian转置反力、g′M⁻¹p=0及g=0。mevmeRelation存在量化pa/ph/pb及四组乘子，最后位置固定且终动量满足隐约束。其性质是给定R,S的代数关系；独立标准正态、正质量等应用资格按EXTRA另加，不据此宣称随机算法或解的存在唯一。",
+          "method": "先目视原页逐项核对正文与公式，再只读核对本条全部Lean声明、依赖定义及EXTRA说明；不编译、不修改工程、不补证明，不以sorry判FAIL。原书数学疑误保留。"
+        }
+      },
+      "audit": {
+        "lean_decl": [
+          "MD.Ch07.midpointConstrainedORelation",
+          "MD.Ch07.constrainedVerletRelation",
+          "MD.Ch07.mevmeRelation"
+        ],
+        "verdict": "PASS",
+        "explanation": "三个关系按任意维数n、约束数l逐坐标编码；θ对应k_BT，m为对角质量。D3–D8给出真正坐标偏导、Jacobian转置反力、g′M⁻¹p=0及g=0。mevmeRelation存在量化pa/ph/pb及四组乘子，最后位置固定且终动量满足隐约束。其性质是给定R,S的代数关系；独立标准正态、正质量等应用资格按EXTRA另加，不据此宣称随机算法或解的存在唯一。",
+        "counterexample": null,
+        "suggested_fix": "使用时明确附加R,S的独立标准正态分布和初值约束、质量正性。"
+      },
+      "subtask": "BATCH18a",
+      "input_sha256": {
+        "Blueprint/Ch07.lean": "f30ea154ebfb07ae85c0b806ff74b35808d5a0c3dcaa647c0c3cc80a78239e37",
+        "blueprint/ch07/ch07_source.json": "c434892ebf63b06f7cadcdfa7af408c2c12d7b645d35db431d1855224163ba19",
+        "BATCH18a_PAGES.pdf": "b543182bb2acda2f38fe0170336c5094f1219a26f79a82b47b4e31101b8665b4"
+      }
+    },
+    {
+      "source_id": "MD-7.12-MidpointStabilityPrinted",
+      "json_review": {
+        "status": "APPROVED",
+        "issue_codes": [],
+        "corrected_json": null,
+        "issues": [],
+        "evidence": {
+          "source_pdf": "R6_PAGES.pdf",
+          "attachment_pages": "3",
+          "printed_page": "319",
+          "original_pdf_page": "340",
+          "A_source_check": "附件3页线性系统中的(1−hγ/4)、噪声系数及(7.46)γh<4均一致。",
+          "C_signature_check": "multiplierLinearSystem与D7展开后正是原式，无遗漏的分母；中点求解产生的公共因子不影响零约束。Printed仅定义a<4，未伪造充要稳定性。corrected对所有a≥0给出单独OU放大因子绝对值≤1，counterexample在a=8给出同一性质且8不小于4，均正确。不能用这个例子否定整套Verlet算法的充分限制，EXTRA对此区分正确。",
+          "method": "先目视原页逐项核对正文与公式，再只读核对本条全部Lean声明、依赖定义及EXTRA说明；不编译、不修改工程、不补证明，不以sorry判FAIL。原书数学疑误保留。"
+        }
+      },
+      "audit": {
+        "lean_decl": [
+          "MD.Ch07.multiplierLinearSystem",
+          "MD.Ch07.midpointAmplification",
+          "MD.Ch07.midpointStabilityPrinted",
+          "MD.Ch07.midpointStabilityPrinted_corrected",
+          "MD.Ch07.midpointStability_counterexample"
+        ],
+        "verdict": "PASS",
+        "explanation": "multiplierLinearSystem与D7展开后正是原式，无遗漏的分母；中点求解产生的公共因子不影响零约束。Printed仅定义a<4，未伪造充要稳定性。corrected对所有a≥0给出单独OU放大因子绝对值≤1，counterexample在a=8给出同一性质且8不小于4，均正确。不能用这个例子否定整套Verlet算法的充分限制，EXTRA对此区分正确。",
+        "counterexample": null,
+        "suggested_fix": "保留原文条件；补充结果明确标成OU单模态绝对稳定性。"
+      },
+      "subtask": "BATCH18b",
+      "input_sha256": {
+        "Blueprint/Ch07.lean": "f30ea154ebfb07ae85c0b806ff74b35808d5a0c3dcaa647c0c3cc80a78239e37",
+        "blueprint/ch07/ch07_source.json": "c434892ebf63b06f7cadcdfa7af408c2c12d7b645d35db431d1855224163ba19",
+        "BATCH18b_PAGES.pdf": "bc7b64cebb28289f96588383191130815e08717568c8acddf010dcd975c4809a"
+      }
+    },
+    {
+      "source_id": "MD-7.12.1-ConstrainedABOSplitting",
+      "json_review": {
+        "status": "APPROVED",
+        "issue_codes": [],
+        "corrected_json": null,
+        "issues": [],
+        "evidence": {
+          "source_pdf": "R6_PAGES.pdf",
+          "attachment_pages": "4–5",
+          "printed_page": "319–320",
+          "original_pdf_page": "340–341",
+          "A_source_check": "附件4–5页三块的漂移、摩擦、噪声系数及保持两种约束的说明相符；矩阵分块改写为分别列方程属等价排版。",
+          "C_signature_check": "Ac、Bc反力符号及零位置漂移正确；geodesicConstraintFlow对全部时间给出流合成律，并仅在余切约束初值上要求导数方程与约束保持。Bc的积分反力吸收到乘子中。Oc由D9及constrainedExactORelation给出固定位置下精确OU再作质量度量约束投影的关系，与本节求解方式一致。θ=k_BT，R的Gaussian资格及正质量/满秩等在EXTRA明确另加；未把隐式可解性当成结论。",
+          "method": "先目视原页逐项核对正文与公式，再只读核对本条全部Lean声明、依赖定义及EXTRA说明；不编译、不修改工程、不补证明，不以sorry判FAIL。原书数学疑误保留。"
+        }
+      },
+      "audit": {
+        "lean_decl": [
+          "MD.Ch07.constrainedAField",
+          "MD.Ch07.constrainedBField",
+          "MD.Ch07.geodesicConstraintFlow",
+          "MD.Ch07.constrainedKickRelation",
+          "MD.Ch07.constrainedExactORelation"
+        ],
+        "verdict": "PASS",
+        "explanation": "Ac、Bc反力符号及零位置漂移正确；geodesicConstraintFlow对全部时间给出流合成律，并仅在余切约束初值上要求导数方程与约束保持。Bc的积分反力吸收到乘子中。Oc由D9及constrainedExactORelation给出固定位置下精确OU再作质量度量约束投影的关系，与本节求解方式一致。θ=k_BT，R的Gaussian资格及正质量/满秩等在EXTRA明确另加；未把隐式可解性当成结论。",
+        "counterexample": null,
+        "suggested_fix": "保留EXTRA中的资格，关系本身不应被引用为存在性或概率定理。"
+      },
+      "subtask": "BATCH18c",
+      "input_sha256": {
+        "Blueprint/Ch07.lean": "f30ea154ebfb07ae85c0b806ff74b35808d5a0c3dcaa647c0c3cc80a78239e37",
+        "blueprint/ch07/ch07_source.json": "c434892ebf63b06f7cadcdfa7af408c2c12d7b645d35db431d1855224163ba19",
+        "BATCH18c_PAGES.pdf": "d03a56d462994f08c1937394532e3be0924dcf7200de619cad0262986a49e3a7"
+      }
+    },
+    {
+      "source_id": "MD-7.12.1-ConstrainedBAOABAlgorithm",
+      "json_review": {
+        "status": "APPROVED",
+        "issue_codes": [],
+        "corrected_json": null,
+        "issues": [],
+        "evidence": {
+          "source_pdf": "R6_PAGES.pdf",
+          "attachment_pages": "6",
+          "printed_page": "320",
+          "original_pdf_page": "341",
+          "A_source_check": "附件6页所印λ_{n+1/3}、λ_{n+2/3}虽与动量五分索引不同，转录忠实；两段Ac均为h/2，O段为h。",
+          "C_signature_check": "关系包含B(h/2)→F(h/2)→O(h)→F(h/2)→B(h/2)，中间相点b,o存在量化，另外两相点由F表达，无需独立命名。D11–D13保留全体位置及隐约束。终点约束定理只从最后kick取出out∈cotangentConstraint，结论范围准确，没有声称二阶或不变测度。",
+          "method": "先目视原页逐项核对正文与公式，再只读核对本条全部Lean声明、依赖定义及EXTRA说明；不编译、不修改工程、不补证明，不以sorry判FAIL。原书数学疑误保留。"
+        }
+      },
+      "audit": {
+        "lean_decl": [
+          "MD.Ch07.constrainedBAOABRelation",
+          "MD.Ch07.constrainedBAOAB_constraint"
+        ],
+        "verdict": "PASS",
+        "explanation": "关系包含B(h/2)→F(h/2)→O(h)→F(h/2)→B(h/2)，中间相点b,o存在量化，另外两相点由F表达，无需独立命名。D11–D13保留全体位置及隐约束。终点约束定理只从最后kick取出out∈cotangentConstraint，结论范围准确，没有声称二阶或不变测度。",
+        "counterexample": null,
+        "suggested_fix": null
+      },
+      "subtask": "BATCH18d",
+      "input_sha256": {
+        "Blueprint/Ch07.lean": "f30ea154ebfb07ae85c0b806ff74b35808d5a0c3dcaa647c0c3cc80a78239e37",
+        "blueprint/ch07/ch07_source.json": "c434892ebf63b06f7cadcdfa7af408c2c12d7b645d35db431d1855224163ba19",
+        "BATCH18d_PAGES.pdf": "df1b46ccd5600e49ce4c6b5647abfe7d81872757affaf45dad936e1ac974e59a"
+      }
+    },
+    {
+      "source_id": "MD-7.12.1-ApproximateGeodesicOrder",
+      "json_review": {
+        "status": "CORRECTED",
+        "issue_codes": [
+          "LEAN_COVERAGE_GAP",
+          "ORDER_NOT_FORMALIZED"
+        ],
+        "corrected_json": {
+          "source_id": "MD-7.12.1-ApproximateGeodesicOrder",
+          "kind": "definition",
+          "label": null,
+          "section": "7.12.1",
+          "printed_page": "320",
+          "pdf_page": "341",
+          "statement_latex": "We do not necessarily need to solve the geodesic flow exactly in practice, though for the purposes of analysis we shall assume we do. If we are considering a second order scheme, then solving the $A_c$ piece to at least second order would be sufficient to preserve the overall order of the scheme, although a scheme may have potentially better accuracy and stability properties if a higher order solve is used.",
+          "proof_latex": null,
+          "proof_outline": null,
+          "proof_note": "原页推导与上下文全文见original_page_text；数学符号的排版以随附原页PDF为准。",
+          "original_page_text": [
+            {
+              "pdf_page": 341,
+              "printed_page": 320,
+              "text": "320\n7\nNumerical Methods for Stochastic Molecular Dynamics\nmanifold deﬁned by g.q/ D 0. We will denote schemes using this splitting in a\nsimilar fashion to the unconstrained case, but precede the schemes with “c-” to label\nthe constrained form (for example c-\u0002BAOAB\u0003 rather than the more cumbersome\nnotation \u0002BcAcOcAcBc\u0003). Such a constrained scheme would be:\nc-\u0002BAOAB\u0003\nSolve\n\f pnC1=5 D pn \u0003 h\n2rU.qn/ \u0003 g0.qn/T\fnC1=3\nSuch that g0.qn/M\u00021pnC1=5 D 0\nSolve the geodesic ﬂow Ac for h=2, and map Œqn; pnC1=5\t ! ŒqnC1=2; pnC2=5\t\nSolve\n\f pnC3=5 D e\u0002\nhpnC2=5 C\np\n.1 \u0003 e\u00022\nh/kBTMRn \u0003 g0.qnC1=2/T\fnC2=3\nSuch that g0.qnC1=2/M\u00021pnC3=5 D 0\nSolve the geodesic ﬂow Ac for h=2, and map ŒqnC1=2; pnC3=5\t ! ŒqnC1; pnC4=5\t\nSolve\n\f pnC1 D pnC4=5 \u0003 h\n2rU.qnC1/ \u0003 g0.qnC1/T\fnC1\nSuch that g0.qnC1/M\u00021pnC1 D 0;\nwhere Rn is a vector of i.i.d N.0; 1/ random numbers and the Lagrange multipliers\n\f, ensuring that the hidden constraint is satisﬁed, can be computed through a linear\nsolve. We do not necessarily need to solve the geodesic ﬂow exactly in practice,\nthough for the purposes of analysis we shall assume we do. If we are considering\na second order scheme, then solving the Ac piece to at least second order would be\nsufﬁcient to preserve the overall order of the scheme, although a scheme may have\npotentially better accuracy and stability properties if a higher order solve is used.\nIn practice, we can solve the Ac piece using any constraint algorithm for constant\nenergy dynamics (see Sect. 4.3.6) and subsituting zero force. A more accurate\nsolution is obtained for the geodesic drift by either using a number of small steps\nto integrate over the total time, or composing steps in a certain order to obtain a\nhigher order solution (see Sect. 3.3.3). Relative to the force calculation, solving the\ngeodesic drift step (even to high accuracy) can, in typical molecular systems, be\nconsidered computationally cheap. Given these splitting pieces, one may write down\nconstrained equivalents of any of the schemes described in Sect. 7.3.1.\nWe then ask how to analyze such schemes using the algebraic machinery\ndeveloped throughout this chapter. As we solve each vector ﬁeld on the constraint\nmanifold, it is natural to consider the associated Lie derivatives on these manifolds\nand solve the corresponding Fokker-Planck equation for the discretization to ﬁnd an\ninvariant distribution, just as we did in the unconstrained case. This is a complicated\nprogramme and we do not develop this in detail here.\nTo compare the performance of the various schemes we perform a numerical\nexperiment to quantify the discretization error caused by the schemes. We imple-\nment the c-\u0002BAOAB\u0003 and c-\u0002OBABO\u0003 schemes into the NAMD-lite [170, 302]\npackage and consider 233 TIP3P water molecules in a periodic box with dimensions\n20 \u0004 20 \u0004 20 Angstroms at 300 K. We constrain the angles and bond lengths\nof each molecule so that the only forces felt are due to the van der Waals and\nelectronic interations, parameterized by the CHARMM22 forceﬁeld [246] with an\n8-Angstrom cutoff. The system was simulated for a ﬁxed total time of 3ns, after a\n"
+            }
+          ],
+          "transcription_note": "PDF文字层原样保留，陈述中的数学排版转写为LaTeX；文字层有特殊字形编码时以目视原页为准。PDF347的Exercises之后不在正文范围内。",
+          "context_notation": [],
+          "extra_assumptions": [
+            "用实际范数误差与统一C,δ明确二阶局部替换资格。完整对称随机组合需稳定性、Lipschitz、矩界及采用强阶/弱阶的区分，原段未列齐；此处不把定义当作保阶定理。"
+          ],
+          "issues": [
+            "附件7页关于二阶近似Ac足以保持整体二阶的句子与转录一致。",
+            "localMapErrorBound对同一C≥0、δ>0以及全部0<h<δ、x∈D给出O(h^(r+1))误差；r=2即局部O(h³)，定义本身合理。但geodesicReplacementSecondOrder只是该定义的别名，无任何组合方法、随机强/弱误差、稳定性前提或整体二阶结论。EXTRA诚实说明缺口，却不能使“本条全部数学对象与公式”的statement_scope成立。FAIL基于完整结论缺失，与是否有sorry无关。"
+          ],
+          "statement_scope": "仅形式化二阶Ac替换的统一局部O(h³)误差资格定义；原文关于组合方法整体保阶的结论尚未形式化。",
+          "lean_decl": "MD.Ch07.localMapErrorBound",
+          "lean_declarations": [
+            "MD.Ch07.localMapErrorBound",
+            "MD.Ch07.geodesicReplacementSecondOrder"
+          ],
+          "source_page_verification": "本轮直接目视核对R6_PAGES.pdf附件第7页；不依赖旧source_page_checks.json。",
+          "repair_log": [],
+          "documented_priors": []
+        },
+        "issues": [
+          {
+            "phase": "C",
+            "code": "LEAN_COVERAGE_GAP",
+            "detail": "localMapErrorBound对同一C≥0、δ>0以及全部0<h<δ、x∈D给出O(h^(r+1))误差；r=2即局部O(h³)，定义本身合理。但geodesicReplacementSecondOrder只是该定义的别名，无任何组合方法、随机强/弱误差、稳定性前提或整体二阶结论。EXTRA诚实说明缺口，却不能使“本条全部数学对象与公式”的statement_scope成立。FAIL基于完整结论缺失，与是否有sorry无关。"
+          },
+          {
+            "phase": "C",
+            "code": "ORDER_NOT_FORMALIZED",
+            "detail": "localMapErrorBound对同一C≥0、δ>0以及全部0<h<δ、x∈D给出O(h^(r+1))误差；r=2即局部O(h³)，定义本身合理。但geodesicReplacementSecondOrder只是该定义的别名，无任何组合方法、随机强/弱误差、稳定性前提或整体二阶结论。EXTRA诚实说明缺口，却不能使“本条全部数学对象与公式”的statement_scope成立。FAIL基于完整结论缺失，与是否有sorry无关。"
+          }
+        ],
+        "evidence": {
+          "source_pdf": "R6_PAGES.pdf",
+          "attachment_pages": "7",
+          "printed_page": "320",
+          "original_pdf_page": "341",
+          "A_source_check": "附件7页关于二阶近似Ac足以保持整体二阶的句子与转录一致。",
+          "C_signature_check": "localMapErrorBound对同一C≥0、δ>0以及全部0<h<δ、x∈D给出O(h^(r+1))误差；r=2即局部O(h³)，定义本身合理。但geodesicReplacementSecondOrder只是该定义的别名，无任何组合方法、随机强/弱误差、稳定性前提或整体二阶结论。EXTRA诚实说明缺口，却不能使“本条全部数学对象与公式”的statement_scope成立。FAIL基于完整结论缺失，与是否有sorry无关。",
+          "method": "先目视原页逐项核对正文与公式，再只读核对本条全部Lean声明、依赖定义及EXTRA说明；不编译、不修改工程、不补证明，不以sorry判FAIL。原书数学疑误保留。"
+        }
+      },
+      "audit": {
+        "lean_decl": [
+          "MD.Ch07.localMapErrorBound",
+          "MD.Ch07.geodesicReplacementSecondOrder"
+        ],
+        "verdict": "FAIL",
+        "explanation": "localMapErrorBound对同一C≥0、δ>0以及全部0<h<δ、x∈D给出O(h^(r+1))误差；r=2即局部O(h³)，定义本身合理。但geodesicReplacementSecondOrder只是该定义的别名，无任何组合方法、随机强/弱误差、稳定性前提或整体二阶结论。EXTRA诚实说明缺口，却不能使“本条全部数学对象与公式”的statement_scope成立。FAIL基于完整结论缺失，与是否有sorry无关。",
+        "counterexample": null,
+        "suggested_fix": "缩小statement_scope为局部误差资格定义，并明确原文保阶命题未形式化；或另行陈述带必要稳定性等假设的组合保阶定理。本次仅登记，不补证明。"
+      },
+      "subtask": "BATCH18e",
+      "input_sha256": {
+        "Blueprint/Ch07.lean": "f30ea154ebfb07ae85c0b806ff74b35808d5a0c3dcaa647c0c3cc80a78239e37",
+        "blueprint/ch07/ch07_source.json": "c434892ebf63b06f7cadcdfa7af408c2c12d7b645d35db431d1855224163ba19",
+        "BATCH18e_PAGES.pdf": "3e19d587df2dedeffac65964f09541b6a33a5db3e7a327654d2f2d8c703fed2f"
+      }
+    },
+    {
+      "source_id": "MD-7.13-FastSlowHarmonicModel",
+      "json_review": {
+        "status": "APPROVED",
+        "issue_codes": [],
+        "corrected_json": null,
+        "issues": [],
+        "evidence": {
+          "source_pdf": "R6_PAGES.pdf",
+          "attachment_pages": "8",
+          "printed_page": "323",
+          "original_pdf_page": "344",
+          "A_source_check": "附件8页(7.47)、(7.48)中的1/2、Ω²、−γp和√(2γ/β)均一致。",
+          "C_signature_check": "状态为一维实位置/动量、质量1；fast/slow势与F矩阵正确，slowMatrix是慢子系统精确流。D15、D20展开后快SDE具有适应性、连续轨道、确定初值、正β、γ≥0及完整积分方程；噪声θ=β⁻¹产生所需系数。总势及H由两势与单位质量动能直接组成，未另命名。Ω≫1作为本节背景，未被错误编码为任意定量常数。",
+          "method": "先目视原页逐项核对正文与公式，再只读核对本条全部Lean声明、依赖定义及EXTRA说明；不编译、不修改工程、不补证明，不以sorry判FAIL。原书数学疑误保留。"
+        }
+      },
+      "audit": {
+        "lean_decl": [
+          "MD.Ch07.Mat2",
+          "MD.Ch07.fastPotential",
+          "MD.Ch07.slowPotential",
+          "MD.Ch07.fastMatrix",
+          "MD.Ch07.slowMatrix",
+          "MD.Ch07.fastLangevin"
+        ],
+        "verdict": "PASS",
+        "explanation": "状态为一维实位置/动量、质量1；fast/slow势与F矩阵正确，slowMatrix是慢子系统精确流。D15、D20展开后快SDE具有适应性、连续轨道、确定初值、正β、γ≥0及完整积分方程；噪声θ=β⁻¹产生所需系数。总势及H由两势与单位质量动能直接组成，未另命名。Ω≫1作为本节背景，未被错误编码为任意定量常数。",
+        "counterexample": null,
+        "suggested_fix": null
+      },
+      "subtask": "BATCH18f",
+      "input_sha256": {
+        "Blueprint/Ch07.lean": "f30ea154ebfb07ae85c0b806ff74b35808d5a0c3dcaa647c0c3cc80a78239e37",
+        "blueprint/ch07/ch07_source.json": "c434892ebf63b06f7cadcdfa7af408c2c12d7b645d35db431d1855224163ba19",
+        "BATCH18f_PAGES.pdf": "45232ed86492c202d6c82ad3b6b3be22934acea4d279a41f397f05be009fa309"
+      }
+    }
+  ],
+  "merged_from": "ch07_first_merged"
+}

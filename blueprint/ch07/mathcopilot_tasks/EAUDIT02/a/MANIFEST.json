@@ -1,0 +1,136 @@
+{
+  "batch": "EAUDIT02",
+  "subtask": "EAUDIT02a",
+  "source_ids": [
+    "MD-7.4.1-NonsymmetricExactMoments"
+  ],
+  "input_sha256": {
+    "Blueprint/Ch07.lean": "f3bc0ee86ace9c825028f0cec8ebb2fb410d6be77213cc7fb41cb8889540a000",
+    "blueprint/ch07/ch07_source.json": "1a201887b51a249fb73f456237cb342963c5d98c612ec1912f21572a57924012",
+    "PAGES.pdf": "3102adca71c6e7b745759995d355eb68ce24cc3900e6c52759599f995f418051"
+  },
+  "page_mapping": [
+    {
+      "attachment_page": 1,
+      "original_pdf_page": 298,
+      "printed_page": 277
+    }
+  ],
+  "definition_excerpts": [
+    {
+      "full_name": "MD.Ch07.V",
+      "kind": "abbrev",
+      "path": "Blueprint/Ch07.lean",
+      "line": 202,
+      "code_sha256": "7ab0ad90462b274b03f5b929b5f09417c0b397b6cb908fa6e7bd56677a314027"
+    },
+    {
+      "full_name": "MD.Ch07.Phase",
+      "kind": "abbrev",
+      "path": "Blueprint/Ch07.lean",
+      "line": 203,
+      "code_sha256": "ef1520e3b22ac1c99a30a989deafe8d3da44a9f2a3e5b6c2cd3220218b88513e"
+    },
+    {
+      "full_name": "MD.Ch07.ouMomentum",
+      "kind": "def",
+      "path": "Blueprint/Ch07.lean",
+      "line": 232,
+      "code_sha256": "df5a3511ac6e0986b8293d21de91ddb40de94195595495bc71fa780b2962b8ae"
+    },
+    {
+      "full_name": "MD.Ch07.ouStep",
+      "kind": "def",
+      "path": "Blueprint/Ch07.lean",
+      "line": 246,
+      "code_sha256": "0f9aad04567b33cc7067304661e170a91deec512fcb772c226c1095acf25ffb5"
+    },
+    {
+      "full_name": "MD.Ch07.coordDerivative",
+      "kind": "def",
+      "path": "Blueprint/Ch07.lean",
+      "line": 257,
+      "code_sha256": "e782d789a13f5db6817e2c995f141805e81ac75720125b846f8ee14ba3833a4b"
+    },
+    {
+      "full_name": "MD.Ch07.gradient",
+      "kind": "def",
+      "path": "Blueprint/Ch07.lean",
+      "line": 288,
+      "code_sha256": "540c6af25c09d3a58da531bc32056ff1a1c070facc58d34c96b6653d781fba6f"
+    },
+    {
+      "full_name": "MD.Ch07.driftStep",
+      "kind": "def",
+      "path": "Blueprint/Ch07.lean",
+      "line": 319,
+      "code_sha256": "600d3de37df6b9ef23628e1495de886583ba0ded7bc74fa5eb3ce43ed25daa6c"
+    },
+    {
+      "full_name": "MD.Ch07.kickStep",
+      "kind": "def",
+      "path": "Blueprint/Ch07.lean",
+      "line": 322,
+      "code_sha256": "475506583d95af613a8e1c58ad474dbd3fc0c0cfc22ab985f0c251cb1567db37"
+    },
+    {
+      "full_name": "MD.Ch07.momentQ",
+      "kind": "def",
+      "path": "Blueprint/Ch07.lean",
+      "line": 489,
+      "code_sha256": "3a1f882d971889b4d4dff8c89259d586f56734fe1cf50aeb1b8abea63f47d6ff"
+    },
+    {
+      "full_name": "MD.Ch07.momentP",
+      "kind": "def",
+      "path": "Blueprint/Ch07.lean",
+      "line": 490,
+      "code_sha256": "4cb4723e6914995473ede9722248cfc4b5b618ea790f419bdfbb19424d4a135d"
+    },
+    {
+      "full_name": "MD.Ch07.scalarLift",
+      "kind": "def",
+      "path": "Blueprint/Ch07.lean",
+      "line": 580,
+      "code_sha256": "08e8232eba4af8a83ee16ee71730aa6d86fbe250365ceddbea305d14869295ea"
+    },
+    {
+      "full_name": "MD.Ch07.nonsymmetricHarmonicStep",
+      "kind": "def",
+      "path": "Blueprint/Ch07.lean",
+      "line": 611,
+      "code_sha256": "4534c47dded22afad2670fc7adb4fe91343ff48e7a9880ed732a6bf943ce4069"
+    },
+    {
+      "full_name": "MD.Ch07.nonsymmetricExactMoments",
+      "kind": "theorem",
+      "path": "Blueprint/Ch07.lean",
+      "line": 617,
+      "code_sha256": "1ddd7b5eab245f58e15b31d39e1f36faad21da9cb86eca5569dadf3044ccc951"
+    },
+    {
+      "full_name": "MD.Ch07.nonsymmetricMixedMoment_order",
+      "kind": "theorem",
+      "path": "Blueprint/Ch07.lean",
+      "line": 627,
+      "code_sha256": "c1dc7701c363bea00d4bf996fab1840f274d91733db5fcd8793e165d10421148"
+    }
+  ],
+  "validation": {
+    "project_constant_closure": "PASS",
+    "missing_project_definitions": [],
+    "full_page_render_equality_dpi": 72,
+    "website_submitted": false
+  },
+  "files": {
+    "PASTE.txt": {
+      "bytes": 13839,
+      "sha256": "87f9174e94ca154ab7877823a8c134d00ad439b339aa3fa40ba1bac240258df2"
+    },
+    "PAGES.pdf": {
+      "bytes": 88127,
+      "sha256": "3102adca71c6e7b745759995d355eb68ce24cc3900e6c52759599f995f418051"
+    }
+  },
+  "total_task_bytes": 106268
+}

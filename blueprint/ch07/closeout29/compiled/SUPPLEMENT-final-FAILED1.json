@@ -1,0 +1,45 @@
+{
+  "command": [
+    "lake",
+    "--no-cache",
+    "env",
+    "lean",
+    "--server"
+  ],
+  "mode": "official Lean compiler single-file LSP elaboration",
+  "exit_code": 1,
+  "input_sha256": "89e16190aadb6555a98483a709d538fe9194a17fdb73de58d8b06f5014c1d025",
+  "log_sha256": "d9b97881d777857a686202e5e487cb3f18476202ceab1808daac800d2c2b3b1d",
+  "version": 3,
+  "uri": "file:///C:/Users/ustc/Desktop/formal%20math/MolecularDynamicsFormalization/blueprint/ch07/closeout29/ActiveCheck.lean",
+  "elapsed_seconds": 9.691084146499634,
+  "errors": [
+    {
+      "fullRange": {
+        "end": {
+          "character": 18,
+          "line": 1703
+        },
+        "start": {
+          "character": 16,
+          "line": 1703
+        }
+      },
+      "message": "unexpected token 'λ'; expected '(', '_' or identifier",
+      "range": {
+        "end": {
+          "character": 18,
+          "line": 1703
+        },
+        "start": {
+          "character": 16,
+          "line": 1703
+        }
+      },
+      "severity": 1,
+      "source": "Lean 4"
+    }
+  ],
+  "missing_axiom_outputs": [],
+  "canonical_sha256": "7ab160b5c5e0d09a51d0b3638fe44db088594fea759202dc0366a36a9a30ee86"
+}

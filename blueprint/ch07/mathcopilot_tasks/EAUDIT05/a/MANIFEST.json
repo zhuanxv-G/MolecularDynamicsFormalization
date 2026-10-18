@@ -1,0 +1,94 @@
+{
+  "batch": "EAUDIT05",
+  "subtask": "EAUDIT05a",
+  "source_ids": [
+    "MD-7.8.1-CommutatorPermutationRelations"
+  ],
+  "input_sha256": {
+    "Blueprint/Ch07.lean": "f3bc0ee86ace9c825028f0cec8ebb2fb410d6be77213cc7fb41cb8889540a000",
+    "blueprint/ch07/ch07_source.json": "1a201887b51a249fb73f456237cb342963c5d98c612ec1912f21572a57924012",
+    "PAGES.pdf": "9981fc48dfd3506be58ee2e021d9d0a45b905e1e43033ef4fe058e9110651a39"
+  },
+  "page_mapping": [
+    {
+      "attachment_page": 1,
+      "original_pdf_page": 313,
+      "printed_page": 292
+    }
+  ],
+  "definition_excerpts": [
+    {
+      "full_name": "MD.Ch07.comm",
+      "kind": "def",
+      "path": "Blueprint/Ch07.lean",
+      "line": 915,
+      "code_sha256": "b6c563e8cb91cb486da6bfb5f26e3dd94c0588818d31f0ed58028346af78d534"
+    },
+    {
+      "full_name": "MD.Ch07.firstOrderOperator",
+      "kind": "def",
+      "path": "Blueprint/Ch07.lean",
+      "line": 1071,
+      "code_sha256": "3c352c2129a7fc5f639c506cebe23490c313f6ef83dfb5fbddc75fc56dca421c"
+    },
+    {
+      "full_name": "MD.Ch07.commutatorPermutationRelations",
+      "kind": "theorem",
+      "path": "Blueprint/Ch07.lean",
+      "line": 1097,
+      "code_sha256": "6997b85f603a1bd114ce67196fd2b92fa7e753168708bb843abe9e6f8988a4dc"
+    },
+    {
+      "full_name": "MolecularDynamics.Chapter02Review.Q",
+      "kind": "abbrev",
+      "path": "MolecularDynamics/Chapter02/ReviewDefinitions.lean",
+      "line": 17,
+      "code_sha256": "d01d4518aed3668e7c982afee1cd3820fb858a94438e5b8960aa0557f5a57ef1"
+    },
+    {
+      "full_name": "MolecularDynamics.Chapter02Review.Z",
+      "kind": "abbrev",
+      "path": "MolecularDynamics/Chapter02/ReviewDefinitions.lean",
+      "line": 18,
+      "code_sha256": "5c03b9b4c74d753cfe2d9b89534d4a9a6c9c137e38273514b8c3e6d35f4c4af1"
+    },
+    {
+      "full_name": "MolecularDynamics.Chapter04Review.Q",
+      "kind": "abbrev",
+      "path": "MolecularDynamics/Chapter04/ReviewDefinitions.lean",
+      "line": 15,
+      "code_sha256": "d01d4518aed3668e7c982afee1cd3820fb858a94438e5b8960aa0557f5a57ef1"
+    },
+    {
+      "full_name": "MolecularDynamics.Chapter04Review.Z",
+      "kind": "abbrev",
+      "path": "MolecularDynamics/Chapter04/ReviewDefinitions.lean",
+      "line": 16,
+      "code_sha256": "5c03b9b4c74d753cfe2d9b89534d4a9a6c9c137e38273514b8c3e6d35f4c4af1"
+    },
+    {
+      "full_name": "MolecularDynamics.Chapter05Review.E",
+      "kind": "abbrev",
+      "path": "MolecularDynamics/Chapter05/ReviewDefinitions.lean",
+      "line": 18,
+      "code_sha256": "b497c8ba7f01b62a3147d9ae65652772ff3f81e57aa19b116f1283fef7a3cc60"
+    }
+  ],
+  "validation": {
+    "project_constant_closure": "PASS",
+    "missing_project_definitions": [],
+    "full_page_render_equality_dpi": 72,
+    "website_submitted": false
+  },
+  "files": {
+    "PASTE.txt": {
+      "bytes": 10334,
+      "sha256": "5001a37da8b9261ee688cede02fcd23011eb2a3619da1ffc0b89961bf967a7bd"
+    },
+    "PAGES.pdf": {
+      "bytes": 85953,
+      "sha256": "9981fc48dfd3506be58ee2e021d9d0a45b905e1e43033ef4fe058e9110651a39"
+    }
+  },
+  "total_task_bytes": 99479
+}

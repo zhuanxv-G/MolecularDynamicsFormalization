@@ -1,0 +1,306 @@
+{
+  "batch": "BATCH16",
+  "chapter": "ch07",
+  "round": "first-merged",
+  "input_sha256": {
+    "Blueprint/Ch07.lean": "f30ea154ebfb07ae85c0b806ff74b35808d5a0c3dcaa647c0c3cc80a78239e37",
+    "blueprint/ch07/ch07_source.json": "c434892ebf63b06f7cadcdfa7af408c2c12d7b645d35db431d1855224163ba19"
+  },
+  "items": [
+    {
+      "source_id": "MD-7.9.3-SuperconvergenceScope",
+      "json_review": {
+        "status": "APPROVED",
+        "issue_codes": [
+          "MAIN_CLAIM_REPLACED_BY_ASSUMED_BOUND",
+          "MISSING_MOMENTUM_AVERAGE_LINK"
+        ],
+        "corrected_json": null,
+        "issues": [
+          "A：附件13页O(h⁴)的无限摩擦/不变分布范围、OABAO位置积分消项和有限时弱强阶不提高的文字意思吻合；摘录是跨段选择，未修改所选公式。",
+          "C：oabaoPositionCancellation中β>0、U光滑、权重与每项通量可积、各坐标两端通量消失，是可执行积分分部资格，结论合理。[EXTRA]这些条件原页省略。superconvergence_fromBound对任意A和exact假设的h⁴余项界仅消去h²·0，正确但没有BAOAB、γ→∞、实际平稳分布或OABAO任意动量观测对象；它将主要结论所需阶数直接放入前提。缺少由双渐近界及积分消项推出实际方法四阶的完整签名，也未表达有限时间弱/强阶的范围。"
+        ],
+        "evidence": {
+          "A_source_comparison": "A：附件13页O(h⁴)的无限摩擦/不变分布范围、OABAO位置积分消项和有限时弱强阶不提高的文字意思吻合；摘录是跨段选择，未修改所选公式。",
+          "C_signature_comparison": "C：oabaoPositionCancellation中β>0、U光滑、权重与每项通量可积、各坐标两端通量消失，是可执行积分分部资格，结论合理。[EXTRA]这些条件原页省略。superconvergence_fromBound对任意A和exact假设的h⁴余项界仅消去h²·0，正确但没有BAOAB、γ→∞、实际平稳分布或OABAO任意动量观测对象；它将主要结论所需阶数直接放入前提。缺少由双渐近界及积分消项推出实际方法四阶的完整签名，也未表达有限时间弱/强阶的范围。",
+          "attachment": "R5_PAGES.pdf",
+          "attachment_pages": [
+            13
+          ],
+          "original_pdf_pages": "327",
+          "printed_pages": "306",
+          "checked_lean_declarations": [
+            "MD.Ch07.oabaoPositionCancellation",
+            "MD.Ch07.superconvergence_fromBound"
+          ],
+          "dependency_scope": "仅使用R5_任务.md本条摘录、所列依赖及附录D1–D40；标准库按标准含义采信。未读旧工程，未修改或补证明，未因sorry判FAIL。",
+          "annotation_policy": "[EXTRA]和[ERRATUM?]按本条分析区分；原印数学疑误保留。逐字核对允许数学LaTeX排版及换行标准化，不把OCR特殊字符当数学勘误。"
+        }
+      },
+      "audit": {
+        "lean_decl": [
+          "MD.Ch07.oabaoPositionCancellation",
+          "MD.Ch07.superconvergence_fromBound"
+        ],
+        "verdict": "FAIL",
+        "explanation": "C：oabaoPositionCancellation中β>0、U光滑、权重与每项通量可积、各坐标两端通量消失，是可执行积分分部资格，结论合理。[EXTRA]这些条件原页省略。superconvergence_fromBound对任意A和exact假设的h⁴余项界仅消去h²·0，正确但没有BAOAB、γ→∞、实际平稳分布或OABAO任意动量观测对象；它将主要结论所需阶数直接放入前提。缺少由双渐近界及积分消项推出实际方法四阶的完整签名，也未表达有限时间弱/强阶的范围。",
+        "counterexample": "固定γ有限时，误差h²/γ满足原页双渐近余项，却不是h→0时的O(h⁴)；所以不能省略先取γ→∞或相应联合尺度控制。",
+        "suggested_fix": "补方法相关的不变平均、明确极限顺序及统一余项资格；补OABAO动量观测消项桥。把fromBound标为代数辅助结果。"
+      },
+      "subtask": "BATCH16a",
+      "input_sha256": {
+        "Blueprint/Ch07.lean": "f30ea154ebfb07ae85c0b806ff74b35808d5a0c3dcaa647c0c3cc80a78239e37",
+        "blueprint/ch07/ch07_source.json": "c434892ebf63b06f7cadcdfa7af408c2c12d7b645d35db431d1855224163ba19",
+        "BATCH16a_PAGES.pdf": "36012b5fa4f6562763e67183147bdc82e8884462762f1c347fc63a1aadec2d07"
+      }
+    },
+    {
+      "source_id": "MD-7.10-MomentumRedrawLimit",
+      "json_review": {
+        "status": "APPROVED",
+        "issue_codes": [
+          "MISSING_GAUSSIAN_LAW_AND_POSITIVE_MASS"
+        ],
+        "corrected_json": null,
+        "issues": [
+          "A：附件14页无限摩擦重抽动量的公式和i.i.d.正态向量说明一致。",
+          "C：固定h>0、θ>0，对任意固定p,R的逐噪声路径极限正确，有限维逐坐标拓扑也匹配。m不需正值即可使这个经Real.sqrt截断的纯实函数极限成立；但要忠实表达M正质量与canonical重抽，应加∀i m_i>0，并给随机R及独立标准Gaussian的分布对象。当前R只是确定向量，无P、HasLaw或随机变量资格；extra_assumptions称“实际独立Gaussian R”超出了签名。此FAIL是原文分布结论缺失，不否认现有确定性极限定理。"
+        ],
+        "evidence": {
+          "A_source_comparison": "A：附件14页无限摩擦重抽动量的公式和i.i.d.正态向量说明一致。",
+          "C_signature_comparison": "C：固定h>0、θ>0，对任意固定p,R的逐噪声路径极限正确，有限维逐坐标拓扑也匹配。m不需正值即可使这个经Real.sqrt截断的纯实函数极限成立；但要忠实表达M正质量与canonical重抽，应加∀i m_i>0，并给随机R及独立标准Gaussian的分布对象。当前R只是确定向量，无P、HasLaw或随机变量资格；extra_assumptions称“实际独立Gaussian R”超出了签名。此FAIL是原文分布结论缺失，不否认现有确定性极限定理。",
+          "attachment": "R5_PAGES.pdf",
+          "attachment_pages": [
+            14
+          ],
+          "original_pdf_pages": "327",
+          "printed_pages": "306",
+          "checked_lean_declarations": [
+            "MD.Ch07.redrawMomentum",
+            "MD.Ch07.redrawStep",
+            "MD.Ch07.momentumRedrawLimit"
+          ],
+          "dependency_scope": "仅使用R5_任务.md本条摘录、所列依赖及附录D1–D40；标准库按标准含义采信。未读旧工程，未修改或补证明，未因sorry判FAIL。",
+          "annotation_policy": "[EXTRA]和[ERRATUM?]按本条分析区分；原印数学疑误保留。逐字核对允许数学LaTeX排版及换行标准化，不把OCR特殊字符当数学勘误。"
+        }
+      },
+      "audit": {
+        "lean_decl": [
+          "MD.Ch07.redrawMomentum",
+          "MD.Ch07.redrawStep",
+          "MD.Ch07.momentumRedrawLimit"
+        ],
+        "verdict": "FAIL",
+        "explanation": "C：固定h>0、θ>0，对任意固定p,R的逐噪声路径极限正确，有限维逐坐标拓扑也匹配。m不需正值即可使这个经Real.sqrt截断的纯实函数极限成立；但要忠实表达M正质量与canonical重抽，应加∀i m_i>0，并给随机R及独立标准Gaussian的分布对象。当前R只是确定向量，无P、HasLaw或随机变量资格；extra_assumptions称“实际独立Gaussian R”超出了签名。此FAIL是原文分布结论缺失，不否认现有确定性极限定理。",
+        "counterexample": "令R恒为0，现有签名完全适用且极限为0；它本身无法排除Dirac重抽，更不能推出正温canonical Gaussian分布。",
+        "suggested_fix": "保留确定性极限定理，另列P上的标准独立Gaussian R、正质量和redrawMomentum的momentumGibbs分布等式，以及必要的分布极限目标。"
+      },
+      "subtask": "BATCH16b",
+      "input_sha256": {
+        "Blueprint/Ch07.lean": "f30ea154ebfb07ae85c0b806ff74b35808d5a0c3dcaa647c0c3cc80a78239e37",
+        "blueprint/ch07/ch07_source.json": "c434892ebf63b06f7cadcdfa7af408c2c12d7b645d35db431d1855224163ba19",
+        "BATCH16b_PAGES.pdf": "aae9e0940505db81f32105dc0c87dde3b7e164c7461cd13e9e324ab533a42464"
+      }
+    },
+    {
+      "source_id": "MD-7.10-OBABOOverdampedEuler",
+      "json_review": {
+        "status": "APPROVED",
+        "issue_codes": [],
+        "corrected_json": null,
+        "issues": [],
+        "evidence": {
+          "A_source_comparison": "A：附件15页五段OBABO更新及(7.38)、(7.39)的1/2、噪声系数和τ=h²/2均吻合。",
+          "C_signature_comparison": "C：组合按右至左执行redraw R、半kick、全drift、半kick、redraw S，位置消元不依赖原动量或尾噪声。overdampedEulerH及overdampedEuler各坐标质量因子正确；rescale显式要求m_i>0、θ≥0、h≥0，恰好保证√(h²θ)=h√θ，等式成立。普遍实参数的position定理仅是代数恒等式，不宣称其全域为物理算法。[EXTRA]正质量及非负温度/步长合理；R/S的随机独立资格未进入纯代数式，不将该定理解释为随机弱误差结论。原摘录未包含长期O(τ)断言，故不将其列为本条签名缺项。sorry不影响PASS。",
+          "attachment": "R5_PAGES.pdf",
+          "attachment_pages": [
+            15
+          ],
+          "original_pdf_pages": "328",
+          "printed_pages": "307",
+          "checked_lean_declarations": [
+            "MD.Ch07.obaboInfinite",
+            "MD.Ch07.overdampedEulerH",
+            "MD.Ch07.overdampedEuler",
+            "MD.Ch07.obaboInfinite_position",
+            "MD.Ch07.overdampedEuler_rescale"
+          ],
+          "dependency_scope": "仅使用R5_任务.md本条摘录、所列依赖及附录D1–D40；标准库按标准含义采信。未读旧工程，未修改或补证明，未因sorry判FAIL。",
+          "annotation_policy": "[EXTRA]和[ERRATUM?]按本条分析区分；原印数学疑误保留。逐字核对允许数学LaTeX排版及换行标准化，不把OCR特殊字符当数学勘误。"
+        }
+      },
+      "audit": {
+        "lean_decl": [
+          "MD.Ch07.obaboInfinite",
+          "MD.Ch07.overdampedEulerH",
+          "MD.Ch07.overdampedEuler",
+          "MD.Ch07.obaboInfinite_position",
+          "MD.Ch07.overdampedEuler_rescale"
+        ],
+        "verdict": "PASS",
+        "explanation": "C：组合按右至左执行redraw R、半kick、全drift、半kick、redraw S，位置消元不依赖原动量或尾噪声。overdampedEulerH及overdampedEuler各坐标质量因子正确；rescale显式要求m_i>0、θ≥0、h≥0，恰好保证√(h²θ)=h√θ，等式成立。普遍实参数的position定理仅是代数恒等式，不宣称其全域为物理算法。[EXTRA]正质量及非负温度/步长合理；R/S的随机独立资格未进入纯代数式，不将该定理解释为随机弱误差结论。原摘录未包含长期O(τ)断言，故不将其列为本条签名缺项。sorry不影响PASS。",
+        "counterexample": null,
+        "suggested_fix": "无需修改所列代数及重标度签名；若另称完整随机算法，应另行记录独立标准Gaussian输入。"
+      },
+      "subtask": "BATCH16c",
+      "input_sha256": {
+        "Blueprint/Ch07.lean": "f30ea154ebfb07ae85c0b806ff74b35808d5a0c3dcaa647c0c3cc80a78239e37",
+        "blueprint/ch07/ch07_source.json": "c434892ebf63b06f7cadcdfa7af408c2c12d7b645d35db431d1855224163ba19",
+        "BATCH16c_PAGES.pdf": "893e9cc0e8e59c6ce18af9862c054e433dc741873895ea52ce04080552a658ce"
+      }
+    },
+    {
+      "source_id": "MD-7.10-BAOABLimitMethod",
+      "json_review": {
+        "status": "APPROVED",
+        "issue_codes": [
+          "MISSING_LM_RESCALE_EQUALITY"
+        ],
+        "corrected_json": null,
+        "issues": [
+          "A：附件16–17页五段BAOAB、连续两次噪声R_n与R_{n−1}、h²/2及(7.40)均匹配。",
+          "C：组合次序正确；baoabInfinite_position显式把初始p写为上一步redraw S减半kick，恰好避免对任意初始p错误地声称位置闭合。lmStepH与lmStep的两个公式正确；但只证明/声明了h形式消元，没有在正质量、θ≥0、h≥0下声明lmStepH=lmStep(τ=h²/2)。前条rescale只作用单噪声Euler，不能自动成为此双噪声声明。该完整结论缺项已在extra_assumptions承认，但未给目标签名。"
+        ],
+        "evidence": {
+          "A_source_comparison": "A：附件16–17页五段BAOAB、连续两次噪声R_n与R_{n−1}、h²/2及(7.40)均匹配。",
+          "C_signature_comparison": "C：组合次序正确；baoabInfinite_position显式把初始p写为上一步redraw S减半kick，恰好避免对任意初始p错误地声称位置闭合。lmStepH与lmStep的两个公式正确；但只证明/声明了h形式消元，没有在正质量、θ≥0、h≥0下声明lmStepH=lmStep(τ=h²/2)。前条rescale只作用单噪声Euler，不能自动成为此双噪声声明。该完整结论缺项已在extra_assumptions承认，但未给目标签名。",
+          "attachment": "R5_PAGES.pdf",
+          "attachment_pages": [
+            16,
+            17
+          ],
+          "original_pdf_pages": "328–329",
+          "printed_pages": "307–308",
+          "checked_lean_declarations": [
+            "MD.Ch07.baoabInfinite",
+            "MD.Ch07.lmStepH",
+            "MD.Ch07.lmStep",
+            "MD.Ch07.baoabInfinite_position"
+          ],
+          "dependency_scope": "仅使用R5_任务.md本条摘录、所列依赖及附录D1–D40；标准库按标准含义采信。未读旧工程，未修改或补证明，未因sorry判FAIL。",
+          "annotation_policy": "[EXTRA]和[ERRATUM?]按本条分析区分；原印数学疑误保留。逐字核对允许数学LaTeX排版及换行标准化，不把OCR特殊字符当数学勘误。"
+        }
+      },
+      "audit": {
+        "lean_decl": [
+          "MD.Ch07.baoabInfinite",
+          "MD.Ch07.lmStepH",
+          "MD.Ch07.lmStep",
+          "MD.Ch07.baoabInfinite_position"
+        ],
+        "verdict": "FAIL",
+        "explanation": "C：组合次序正确；baoabInfinite_position显式把初始p写为上一步redraw S减半kick，恰好避免对任意初始p错误地声称位置闭合。lmStepH与lmStep的两个公式正确；但只证明/声明了h形式消元，没有在正质量、θ≥0、h≥0下声明lmStepH=lmStep(τ=h²/2)。前条rescale只作用单噪声Euler，不能自动成为此双噪声声明。该完整结论缺项已在extra_assumptions承认，但未给目标签名。",
+        "counterexample": null,
+        "suggested_fix": "增加双噪声LM的重标度等式签名，保留显式尾kick初值关系；不要求补证明。"
+      },
+      "subtask": "BATCH16d",
+      "input_sha256": {
+        "Blueprint/Ch07.lean": "f30ea154ebfb07ae85c0b806ff74b35808d5a0c3dcaa647c0c3cc80a78239e37",
+        "blueprint/ch07/ch07_source.json": "c434892ebf63b06f7cadcdfa7af408c2c12d7b645d35db431d1855224163ba19",
+        "BATCH16d_PAGES.pdf": "753c53e2f134ef2db2da4e5b16b920bb191fd33ceb511960a44dfeb02cc34002"
+      }
+    },
+    {
+      "source_id": "MD-7.10-ColoredNoiseAndExtension",
+      "json_review": {
+        "status": "APPROVED",
+        "issue_codes": [
+          "EXTRA_COVARIANCE_FORMULA",
+          "MISSING_EXTENDED_MARKOV_CLAIM"
+        ],
+        "corrected_json": null,
+        "issues": [
+          "A：附件18页彩色噪声、几步内去相关和扩展状态可恢复Markov性的文字与摘录相符；原页没有给出显式协方差数值。",
+          "C：coloredNoise采用相邻标准独立Gaussian平均，索引(R_k,R_{k+1})与原页(R_n,R_{n−1})仅差移位；covariance对概率P、iIndepFun和HasLaw量化，方差1/2、邻接协方差1/4、其余0正确，应标[EXTRA]推导结论。lmExtendedStep把(q,R旧)映射到(lmStep(R新,R旧,q),R新)正确。但未有新噪声独立于过去的过程条件、Markov核/条件分布或扩展Markov性声明；只给一个确定性状态映射不能覆盖原页的核心Markov断言。一般位置过程非Markov也不宜无条件量化。"
+        ],
+        "evidence": {
+          "A_source_comparison": "A：附件18页彩色噪声、几步内去相关和扩展状态可恢复Markov性的文字与摘录相符；原页没有给出显式协方差数值。",
+          "C_signature_comparison": "C：coloredNoise采用相邻标准独立Gaussian平均，索引(R_k,R_{k+1})与原页(R_n,R_{n−1})仅差移位；covariance对概率P、iIndepFun和HasLaw量化，方差1/2、邻接协方差1/4、其余0正确，应标[EXTRA]推导结论。lmExtendedStep把(q,R旧)映射到(lmStep(R新,R旧,q),R新)正确。但未有新噪声独立于过去的过程条件、Markov核/条件分布或扩展Markov性声明；只给一个确定性状态映射不能覆盖原页的核心Markov断言。一般位置过程非Markov也不宜无条件量化。",
+          "attachment": "R5_PAGES.pdf",
+          "attachment_pages": [
+            18
+          ],
+          "original_pdf_pages": "329",
+          "printed_pages": "308",
+          "checked_lean_declarations": [
+            "MD.Ch07.coloredNoise",
+            "MD.Ch07.coloredNoise_covariance",
+            "MD.Ch07.lmExtendedStep"
+          ],
+          "dependency_scope": "仅使用R5_任务.md本条摘录、所列依赖及附录D1–D40；标准库按标准含义采信。未读旧工程，未修改或补证明，未因sorry判FAIL。",
+          "annotation_policy": "[EXTRA]和[ERRATUM?]按本条分析区分；原印数学疑误保留。逐字核对允许数学LaTeX排版及换行标准化，不把OCR特殊字符当数学勘误。"
+        }
+      },
+      "audit": {
+        "lean_decl": [
+          "MD.Ch07.coloredNoise",
+          "MD.Ch07.coloredNoise_covariance",
+          "MD.Ch07.lmExtendedStep"
+        ],
+        "verdict": "FAIL",
+        "explanation": "C：coloredNoise采用相邻标准独立Gaussian平均，索引(R_k,R_{k+1})与原页(R_n,R_{n−1})仅差移位；covariance对概率P、iIndepFun和HasLaw量化，方差1/2、邻接协方差1/4、其余0正确，应标[EXTRA]推导结论。lmExtendedStep把(q,R旧)映射到(lmStep(R新,R旧,q),R新)正确。但未有新噪声独立于过去的过程条件、Markov核/条件分布或扩展Markov性声明；只给一个确定性状态映射不能覆盖原页的核心Markov断言。一般位置过程非Markov也不宜无条件量化。",
+        "counterexample": "若θ=0，位置更新是确定性Euler映射，位置过程本身可为Markov；故原页“no longer a Markov process”应作为一般情形说明，不能改成无例外全称定理。",
+        "suggested_fix": "把协方差标[EXTRA]；加入合适可测性、每步独立新Gaussian输入和扩展过程的Markov声明；对位置非Markov表述限定参数和初始分布。"
+      },
+      "subtask": "BATCH16e",
+      "input_sha256": {
+        "Blueprint/Ch07.lean": "f30ea154ebfb07ae85c0b806ff74b35808d5a0c3dcaa647c0c3cc80a78239e37",
+        "blueprint/ch07/ch07_source.json": "c434892ebf63b06f7cadcdfa7af408c2c12d7b645d35db431d1855224163ba19",
+        "BATCH16e_PAGES.pdf": "cb97adce7aa372dbbb73c2af1da783faeab095784b230538ca88b52da25d5ec0"
+      }
+    },
+    {
+      "source_id": "MD-7.10-LimitMethodAccuracy",
+      "json_review": {
+        "status": "NEEDS_HUMAN",
+        "issue_codes": [
+          "ERRATUM_STEPSIZE_ORDER",
+          "NONVERBATIM_SENTENCE",
+          "MISSING_METHOD_ERROR_LINK"
+        ],
+        "corrected_json": null,
+        "issues": [
+          "A：附件19页开头原句为“As we are in the overdamped regime, we would expect that this scheme should have an O(h⁴)=O(τ²) error in configurational averages, while inheriting ...”；摘录改成“We would expect ...”并截为句号，应标摘述或恢复逐字引文。末句原印确实为长时间O(h²)，与该段长期O(τ²)=O(h⁴)的记号相冲突/歧义，应保留并标[ERRATUM?]。",
+          "C：Printed忠实保留h²幂次，PASS；_corrected给h⁴合理对应无限时间不变平均，但必须限定该error为长期误差，不能直接用于固定有限T。lmTransientErrorBound正确记录C(e^(−aT)τ+τ²)的一种充分界，正C/a/δ及所有小τ、T≥0的量词明确，属于[EXTRA]精确定量目标；原书文字本身不保证该统一界。rescale恒等式正确。缺少LM真实平均误差与error的联系、势/观测/初值条件和实际误差满足该界的签名。"
+        ],
+        "evidence": {
+          "A_source_comparison": "A：附件19页开头原句为“As we are in the overdamped regime, we would expect that this scheme should have an O(h⁴)=O(τ²) error in configurational averages, while inheriting ...”；摘录改成“We would expect ...”并截为句号，应标摘述或恢复逐字引文。末句原印确实为长时间O(h²)，与该段长期O(τ²)=O(h⁴)的记号相冲突/歧义，应保留并标[ERRATUM?]。",
+          "C_signature_comparison": "C：Printed忠实保留h²幂次，PASS；_corrected给h⁴合理对应无限时间不变平均，但必须限定该error为长期误差，不能直接用于固定有限T。lmTransientErrorBound正确记录C(e^(−aT)τ+τ²)的一种充分界，正C/a/δ及所有小τ、T≥0的量词明确，属于[EXTRA]精确定量目标；原书文字本身不保证该统一界。rescale恒等式正确。缺少LM真实平均误差与error的联系、势/观测/初值条件和实际误差满足该界的签名。",
+          "attachment": "R5_PAGES.pdf",
+          "attachment_pages": [
+            19
+          ],
+          "original_pdf_pages": "329",
+          "printed_pages": "308",
+          "checked_lean_declarations": [
+            "MD.Ch07.lmTransientErrorBound",
+            "MD.Ch07.limitAccuracyPrinted",
+            "MD.Ch07.limitAccuracyPrinted_corrected",
+            "MD.Ch07.limitAccuracy_rescale"
+          ],
+          "dependency_scope": "仅使用R5_任务.md本条摘录、所列依赖及附录D1–D40；标准库按标准含义采信。未读旧工程，未修改或补证明，未因sorry判FAIL。",
+          "annotation_policy": "[EXTRA]和[ERRATUM?]按本条分析区分；原印数学疑误保留。逐字核对允许数学LaTeX排版及换行标准化，不把OCR特殊字符当数学勘误。"
+        }
+      },
+      "audit": {
+        "lean_decl": [
+          "MD.Ch07.lmTransientErrorBound",
+          "MD.Ch07.limitAccuracyPrinted",
+          "MD.Ch07.limitAccuracyPrinted_corrected",
+          "MD.Ch07.limitAccuracy_rescale"
+        ],
+        "verdict": "NEEDS_HUMAN",
+        "explanation": "C：Printed忠实保留h²幂次，PASS；_corrected给h⁴合理对应无限时间不变平均，但必须限定该error为长期误差，不能直接用于固定有限T。lmTransientErrorBound正确记录C(e^(−aT)τ+τ²)的一种充分界，正C/a/δ及所有小τ、T≥0的量词明确，属于[EXTRA]精确定量目标；原书文字本身不保证该统一界。rescale恒等式正确。缺少LM真实平均误差与error的联系、势/观测/初值条件和实际误差满足该界的签名。",
+        "counterexample": "error(τ,T)=e^(−T)τ+τ²符合所列瞬态界；任意固定有限T下代入τ=h²/2，首项仍为e^(−T)h²/2，并非O(h⁴)。要得到同阶需T随h至少按对数尺度增大，或先取T→∞。",
+        "suggested_fix": "保留原印h²并标疑误；修正版明确先取无限时间。补LM误差对象与界的适用条件，说明有限T和联合T(h)极限；恢复原句或标摘述。"
+      },
+      "subtask": "BATCH16f",
+      "input_sha256": {
+        "Blueprint/Ch07.lean": "f30ea154ebfb07ae85c0b806ff74b35808d5a0c3dcaa647c0c3cc80a78239e37",
+        "blueprint/ch07/ch07_source.json": "c434892ebf63b06f7cadcdfa7af408c2c12d7b645d35db431d1855224163ba19",
+        "BATCH16f_PAGES.pdf": "c09b7077a7874ec2563f610450580016dcceaeaf201cc3bc0832b5c8a1c77e09"
+      }
+    }
+  ],
+  "merged_from": "ch07_first_merged"
+}

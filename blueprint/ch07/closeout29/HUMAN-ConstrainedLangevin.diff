@@ -1,0 +1,28 @@
+--- 
++++ 
+@@ -25,4 +25,25 @@
+     (∀ i, (X t sample).2 i = x0.2 i+
+       (∫ s in (0 : ℝ)..t, -gradient U (X s sample).1 i-γ*(X s sample).2 i-
+         constraintReaction g (X s sample).1 (Λ s sample) i)+
+-      Real.sqrt (2*γ*θ*m i)*(W t sample i-W 0 sample i))+      Real.sqrt (2*γ*θ*m i)*(W t sample i-W 0 sample i))
++
++/-- 限制到单位质量、常正交投影的线性约束修正版；未声称一般非线性情形。 -/
++def constrainedLangevin_corrected {l : ℕ} (P : Measure Ω) (C : Matrix (Fin l) (Fin n) ℝ)
++    (Π : Matrix (Fin n) (Fin n) ℝ) (U : V n → ℝ) (γ θ : ℝ)
++    (W : ℝ → Ω → V n) (X : ℝ → Ω → Phase n) (x0 : Phase n) : Prop :=
++  vectorWiener P W ∧ 0 < γ ∧ 0 < θ ∧ ContDiff ℝ 2 U ∧
++  Π*Π=Π ∧ Π.transpose=Π ∧ C*Π=0 ∧
++  (∀ v : V n, C *ᵥ v=0 → Π *ᵥ v=v) ∧
++  C *ᵥ x0.1=0 ∧ C *ᵥ x0.2=0 ∧
++  (∀ t : ℝ, 0 ≤ t → Measurable[MeasurableSpace.comap
++    (fun (sample : Ω) (s : Icc (0 : ℝ) t) ↦ W s sample) inferInstance] (X t)) ∧
++  (∀ᵐ sample ∂P, ContinuousOn (fun t ↦ X t sample) (Ici 0) ∧ X 0 sample=x0) ∧
++  (∀ sample i T, 0 ≤ T →
++    IntervalIntegrable (fun s ↦ (X s sample).2 i) volume 0 T ∧
++    IntervalIntegrable (fun s ↦ -(Π *ᵥ gradient U (X s sample).1) i-γ*(X s sample).2 i) volume 0 T) ∧
++  ∀ t, 0 ≤ t → ∀ᵐ sample ∂P,
++    C *ᵥ (X t sample).1=0 ∧ C *ᵥ (X t sample).2=0 ∧
++    (∀ i, (X t sample).1 i=x0.1 i+∫ s in (0 : ℝ)..t, (X s sample).2 i) ∧
++    ∀ i, (X t sample).2 i=x0.2 i+
++      (∫ s in (0 : ℝ)..t, -(Π *ᵥ gradient U (X s sample).1) i-γ*(X s sample).2 i)+
++      Real.sqrt (2*γ*θ)*(Π *ᵥ (W t sample-W 0 sample)) i

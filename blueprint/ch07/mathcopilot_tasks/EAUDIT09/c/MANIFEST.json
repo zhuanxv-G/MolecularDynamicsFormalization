@@ -1,0 +1,94 @@
+{
+  "batch": "EAUDIT09",
+  "subtask": "EAUDIT09c",
+  "source_ids": [
+    "MD-7.10-MomentumRedrawLimit"
+  ],
+  "input_sha256": {
+    "Blueprint/Ch07.lean": "f3bc0ee86ace9c825028f0cec8ebb2fb410d6be77213cc7fb41cb8889540a000",
+    "blueprint/ch07/ch07_source.json": "1a201887b51a249fb73f456237cb342963c5d98c612ec1912f21572a57924012",
+    "PAGES.pdf": "ad0c145764b78932a46bac6e228aa234194ee3ed674d0431032abcc0727fb15a"
+  },
+  "page_mapping": [
+    {
+      "attachment_page": 1,
+      "original_pdf_page": 327,
+      "printed_page": 306
+    }
+  ],
+  "definition_excerpts": [
+    {
+      "full_name": "MD.Ch07.V",
+      "kind": "abbrev",
+      "path": "Blueprint/Ch07.lean",
+      "line": 202,
+      "code_sha256": "7ab0ad90462b274b03f5b929b5f09417c0b397b6cb908fa6e7bd56677a314027"
+    },
+    {
+      "full_name": "MD.Ch07.Phase",
+      "kind": "abbrev",
+      "path": "Blueprint/Ch07.lean",
+      "line": 203,
+      "code_sha256": "ef1520e3b22ac1c99a30a989deafe8d3da44a9f2a3e5b6c2cd3220218b88513e"
+    },
+    {
+      "full_name": "MD.Ch07.ouMomentum",
+      "kind": "def",
+      "path": "Blueprint/Ch07.lean",
+      "line": 232,
+      "code_sha256": "df5a3511ac6e0986b8293d21de91ddb40de94195595495bc71fa780b2962b8ae"
+    },
+    {
+      "full_name": "MD.Ch07.momentumGibbs",
+      "kind": "def",
+      "path": "Blueprint/Ch07.lean",
+      "line": 1171,
+      "code_sha256": "37890e88a0521fb73fdcd58c2c02631a375383f9542a51cd2521500fb8692207"
+    },
+    {
+      "full_name": "MD.Ch07.redrawMomentum",
+      "kind": "def",
+      "path": "Blueprint/Ch07.lean",
+      "line": 1520,
+      "code_sha256": "53bc68097ec7590b04b8658f34c1928a46e5713a64e327aa4dd6aaae0b7dbeef"
+    },
+    {
+      "full_name": "MD.Ch07.redrawStep",
+      "kind": "def",
+      "path": "Blueprint/Ch07.lean",
+      "line": 1521,
+      "code_sha256": "69a118a321e602e701f287bae9576b431eb8e1d46331221e6c8932a413097df5"
+    },
+    {
+      "full_name": "MD.Ch07.momentumRedrawLimit",
+      "kind": "theorem",
+      "path": "Blueprint/Ch07.lean",
+      "line": 1522,
+      "code_sha256": "972f44b566a743ca7b4dbb46ec4b7c2301c7c703e56d9f6de41868db43e67feb"
+    },
+    {
+      "full_name": "MD.Ch07.redrawMomentum_law",
+      "kind": "theorem",
+      "path": "Blueprint/Ch07.lean",
+      "line": 1526,
+      "code_sha256": "6d0751cb5341dec56f722cc68b327870eb87dea5b3c205310cc2f616bc7ea3a8"
+    }
+  ],
+  "validation": {
+    "project_constant_closure": "PASS",
+    "missing_project_definitions": [],
+    "full_page_render_equality_dpi": 72,
+    "website_submitted": false
+  },
+  "files": {
+    "PASTE.txt": {
+      "bytes": 10820,
+      "sha256": "f682fa3f37b461e29d13542eb06abea1c4c82d2c1bc93a9b22676264ea38cbb6"
+    },
+    "PAGES.pdf": {
+      "bytes": 93352,
+      "sha256": "ad0c145764b78932a46bac6e228aa234194ee3ed674d0431032abcc0727fb15a"
+    }
+  },
+  "total_task_bytes": 107104
+}

@@ -1,0 +1,11 @@
+--- 
++++ 
+@@ -10,5 +10,7 @@
+ 
+ def spectralConclusionPrinted_corrected {E : Type*} [AddCommGroup E] [Module ℂ E]
+     (L : Module.End ℂ E) (ρ : E) : Prop :=
+-  ρ ≠ 0 ∧ L ρ = 0 ∧ ∀ eigen : ℂ, (∃ v : E, v ≠ 0 ∧ L v = eigen • v) →
++  ρ ≠ 0 ∧ L ρ = 0 ∧
++  (∀ v : E, L v = 0 → v ∈ Submodule.span ℂ ({ρ} : Set E)) ∧
++  ∀ eigen : ℂ, (∃ v : E, v ≠ 0 ∧ L v = eigen • v) →
+     FiniteDimensional ℂ (Module.End.eigenspace L eigen) ∧ (eigen = 0 ∨ eigen.re < 0)

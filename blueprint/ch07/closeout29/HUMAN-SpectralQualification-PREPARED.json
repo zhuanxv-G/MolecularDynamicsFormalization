@@ -1,0 +1,8 @@
+{
+  "source_id": "MD-7.7.2-SpectralQualification",
+  "signature_changed": true,
+  "scope": "Printed的simpleEigenvalue仅几何单重；修正版是较弱点谱目标并补零核方向唯一，不含完整谱、孤立性或有限代数重数，绝非紧预解式谱定理。",
+  "diff": "--- \n+++ \n@@ -10,5 +10,7 @@\n \n def spectralConclusionPrinted_corrected {E : Type*} [AddCommGroup E] [Module ℂ E]\n     (L : Module.End ℂ E) (ρ : E) : Prop :=\n-  ρ ≠ 0 ∧ L ρ = 0 ∧ ∀ eigen : ℂ, (∃ v : E, v ≠ 0 ∧ L v = eigen • v) →\n+  ρ ≠ 0 ∧ L ρ = 0 ∧\n+  (∀ v : E, L v = 0 → v ∈ Submodule.span ℂ ({ρ} : Set E)) ∧\n+  ∀ eigen : ℂ, (∃ v : E, v ≠ 0 ∧ L v = eigen • v) →\n     FiniteDimensional ℂ (Module.End.eigenspace L eigen) ∧ (eigen = 0 ∨ eigen.re < 0)",
+  "printed_version": "原书表述保留；公式类已目视核对原页",
+  "corrected_version": "见独立_corrected或限定目标；不将较弱目标称为完整修正"
+}

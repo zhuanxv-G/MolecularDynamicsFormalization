@@ -1,0 +1,37 @@
+--- submitted
++++ repaired
+@@ -2,4 +2,34 @@
+   (fun i ↦ x.2 i/m i,fun i ↦ -gradient U x.1 i-constraintReaction g x.1 multiplier i)
+ def constrainedOField {l : ℕ} (g : V n → V l) (γ : ℝ) (multiplier : V l) (x : Phase n) : Phase n :=
+   (0,fun i ↦ -γ*x.2 i-constraintReaction g x.1 multiplier i)
+-def constrainedHOComposition {E : Type*} (H O : ℝ → E → E) (h : ℝ) : E → E := O (h/2) ∘ H h ∘ O (h/2)+def constrainedHOComposition {E : Type*} (H O : ℝ → E → E) (h : ℝ) : E → E := O (h/2) ∘ H h ∘ O (h/2)
++
++def constrainedONoise (m : V n) (γ θ : ℝ) (j : Fin n) : Phase n :=
++  (0,fun i ↦ if i=j then Real.sqrt (2*γ*θ*m i) else 0)
++
++def constrainedHIntegralStep {l : ℕ} (m : V n) (U : V n → ℝ) (g : V n → V l)
++    (X : ℝ → Phase n) (Λ : ℝ → V l) (x0 : Phase n) (T : ℝ) : Prop :=
++  (∀ i, 0 < m i) ∧ ContDiff ℝ 2 g ∧ ContDiff ℝ 1 U ∧ 0 ≤ T ∧
++  ContinuousOn X (Icc 0 T) ∧ X 0=x0 ∧
++  (∀ t ∈ Icc 0 T, X t ∈ cotangentConstraint m g) ∧
++  ∀ i, IntervalIntegrable (fun t ↦ (X t).2 i/m i) volume 0 T ∧
++    IntervalIntegrable (fun t ↦ -gradient U (X t).1 i-
++      constraintReaction g (X t).1 (Λ t) i) volume 0 T ∧
++    ∀ t ∈ Icc 0 T,
++      (X t).1 i=x0.1 i+∫ s in (0 : ℝ)..t, (X s).2 i/m i ∧
++      (X t).2 i=x0.2 i+∫ s in (0 : ℝ)..t,
++        -gradient U (X s).1 i-constraintReaction g (X s).1 (Λ s) i
++
++/-- O乘子冲量允许含随机部分；不把它限为有限变差的λdt。 -/
++def constrainedOIntegralStep {l : ℕ} (P : Measure Ω) (m : V n) (g : V n → V l)
++    (γ θ : ℝ) (W : ℝ → Ω → V n) (X : ℝ → Ω → Phase n)
++    (reactionImpulse : ℝ → Ω → V n) (x0 : Phase n) (T : ℝ) : Prop :=
++  vectorWiener P W ∧ (∀ i, 0 < m i) ∧ 0 < γ ∧ 0 < θ ∧ ContDiff ℝ 2 g ∧ 0 ≤ T ∧
++  (∀ t ∈ Icc 0 T, ∀ᵐ sample ∂P, X t sample ∈ cotangentConstraint m g) ∧
++  (∀ᵐ sample ∂P, ContinuousOn (fun t ↦ X t sample) (Icc 0 T) ∧
++    X 0 sample=x0 ∧ reactionImpulse 0 sample=0) ∧
++  (∀ sample i, IntervalIntegrable (fun t ↦ -γ*(X t sample).2 i) volume 0 T) ∧
++  ∀ t ∈ Icc 0 T, ∀ᵐ sample ∂P,
++    (X t sample).1=x0.1 ∧ ∀ i,
++      (X t sample).2 i=x0.2 i+(∫ s in (0 : ℝ)..t, -γ*(X s sample).2 i)-
++        reactionImpulse t sample i+Real.sqrt (2*γ*θ*m i)*(W t sample i-W 0 sample i)

@@ -1,0 +1,18 @@
+--- submitted
++++ repaired
+@@ -11,4 +11,15 @@
+       (highFrictionCorrection 3 U β c) (highFrictionCorrection 0 U β c) := by
+   constructor <;> funext x <;>
+     norm_num [conjugateCorrections,highFrictionCorrection,highFrictionOABAO,conjugateCorrectionChange]
+-    <;> ring+    <;> ring
++
++def highFrictionMeanLaplacian (U : V n → ℝ) (β : ℝ) : ℝ :=
++  ∫ q, laplacian U q ∂positionGibbs U β
++
++def highFrictionCenteredQualification (U : V n → ℝ) (β : ℝ) : Prop :=
++  0 < β ∧ IsProbabilityMeasure (positionGibbs U β) ∧
++  Integrable (laplacian U) (positionGibbs U β) ∧
++  ∀ s : Fin 4, Integrable (highFrictionCorrection s U β (highFrictionMeanLaplacian U β))
++    (productGibbs (fun _ ↦ 1) U β) ∧
++    (∫ x, highFrictionCorrection s U β (highFrictionMeanLaplacian U β) x
++      ∂productGibbs (fun _ ↦ 1) U β) = 0

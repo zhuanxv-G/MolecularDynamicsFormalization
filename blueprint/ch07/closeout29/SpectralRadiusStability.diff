@@ -1,0 +1,13 @@
+--- submitted
++++ repaired
+@@ -4,4 +4,10 @@
+     characteristicUnitDisk X ↔ |Matrix.trace X| ≤ 1+Matrix.det X := by
+   sorry
+ def hyperbolicStability (γ h : ℝ) (η : ℂ) : Prop :=
+-  ‖Complex.cosh (η*(h : ℂ)/2)+(h : ℂ)/η*Complex.sinh (-η*(h : ℂ)/2)‖ ≤ Real.cosh (γ*h/2)+  ‖Complex.cosh (η*(h : ℂ)/2)+(h : ℂ)/η*Complex.sinh (-η*(h : ℂ)/2)‖ ≤ Real.cosh (γ*h/2)
++
++theorem multipleX_spectral_hyperbolic (Ω γ h : ℝ) (η : ℂ)
++    (hγ : 0 < γ) (hh : 0 < h)
++    (hη : η^2=(γ : ℂ)^2-4*(Ω : ℂ)^2) (hne : η ≠ 0) :
++    characteristicUnitDisk (multipleX Ω γ h) ↔ hyperbolicStability γ h η := by
++  sorry

@@ -1,0 +1,101 @@
+{
+  "batch": "EAUDIT01",
+  "subtask": "EAUDIT01c",
+  "source_ids": [
+    "MD-7.3.2-SPVPrinted"
+  ],
+  "input_sha256": {
+    "Blueprint/Ch07.lean": "f3bc0ee86ace9c825028f0cec8ebb2fb410d6be77213cc7fb41cb8889540a000",
+    "blueprint/ch07/ch07_source.json": "1a201887b51a249fb73f456237cb342963c5d98c612ec1912f21572a57924012",
+    "PAGES.pdf": "5914223a7cbd75bdf9e01943e3ae0e75efc264e64b67218b9ad40b99a1730c82"
+  },
+  "page_mapping": [
+    {
+      "attachment_page": 1,
+      "original_pdf_page": 293,
+      "printed_page": 272
+    }
+  ],
+  "definition_excerpts": [
+    {
+      "full_name": "MD.Ch07.V",
+      "kind": "abbrev",
+      "path": "Blueprint/Ch07.lean",
+      "line": 202,
+      "code_sha256": "7ab0ad90462b274b03f5b929b5f09417c0b397b6cb908fa6e7bd56677a314027"
+    },
+    {
+      "full_name": "MD.Ch07.Phase",
+      "kind": "abbrev",
+      "path": "Blueprint/Ch07.lean",
+      "line": 203,
+      "code_sha256": "ef1520e3b22ac1c99a30a989deafe8d3da44a9f2a3e5b6c2cd3220218b88513e"
+    },
+    {
+      "full_name": "MD.Ch07.ouMomentum",
+      "kind": "def",
+      "path": "Blueprint/Ch07.lean",
+      "line": 232,
+      "code_sha256": "df5a3511ac6e0986b8293d21de91ddb40de94195595495bc71fa780b2962b8ae"
+    },
+    {
+      "full_name": "MD.Ch07.coordDerivative",
+      "kind": "def",
+      "path": "Blueprint/Ch07.lean",
+      "line": 257,
+      "code_sha256": "e782d789a13f5db6817e2c995f141805e81ac75720125b846f8ee14ba3833a4b"
+    },
+    {
+      "full_name": "MD.Ch07.gradient",
+      "kind": "def",
+      "path": "Blueprint/Ch07.lean",
+      "line": 288,
+      "code_sha256": "540c6af25c09d3a58da531bc32056ff1a1c070facc58d34c96b6653d781fba6f"
+    },
+    {
+      "full_name": "MD.Ch07.driftStep",
+      "kind": "def",
+      "path": "Blueprint/Ch07.lean",
+      "line": 319,
+      "code_sha256": "600d3de37df6b9ef23628e1495de886583ba0ded7bc74fa5eb3ce43ed25daa6c"
+    },
+    {
+      "full_name": "MD.Ch07.spvPrinted",
+      "kind": "def",
+      "path": "Blueprint/Ch07.lean",
+      "line": 433,
+      "code_sha256": "a26c3ddea661a85145dece118dfc985ab805c9b84eca6f6d3334c2d64749e667"
+    },
+    {
+      "full_name": "MD.Ch07.spvPrinted_corrected",
+      "kind": "def",
+      "path": "Blueprint/Ch07.lean",
+      "line": 438,
+      "code_sha256": "df2755d51341c3681404b2b382998e7c6f29fdbd5e56ec4a9b2c81c814e72775"
+    },
+    {
+      "full_name": "MD.Ch07.spvQualification",
+      "kind": "def",
+      "path": "Blueprint/Ch07.lean",
+      "line": 444,
+      "code_sha256": "453863710fe7f10f3e2a767a6bc04ee76985c2d5f615a097159b1c57fca19e46"
+    }
+  ],
+  "validation": {
+    "project_constant_closure": "PASS",
+    "missing_project_definitions": [],
+    "full_page_render_equality_dpi": 72,
+    "website_submitted": false
+  },
+  "files": {
+    "PASTE.txt": {
+      "bytes": 11345,
+      "sha256": "92e466d3b5d38808eb6154423d587ffea3d95eb70ff52dc77ec424eaa54cee98"
+    },
+    "PAGES.pdf": {
+      "bytes": 95474,
+      "sha256": "5914223a7cbd75bdf9e01943e3ae0e75efc264e64b67218b9ad40b99a1730c82"
+    }
+  },
+  "total_task_bytes": 109950
+}

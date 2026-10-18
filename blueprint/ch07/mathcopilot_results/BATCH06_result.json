@@ -1,0 +1,193 @@
+{
+  "batch": "BATCH06",
+  "chapter": "ch07",
+  "round": "first-merged",
+  "input_sha256": {
+    "Blueprint/Ch07.lean": "f30ea154ebfb07ae85c0b806ff74b35808d5a0c3dcaa647c0c3cc80a78239e37",
+    "blueprint/ch07/ch07_source.json": "c434892ebf63b06f7cadcdfa7af408c2c12d7b645d35db431d1855224163ba19"
+  },
+  "items": [
+    {
+      "source_id": "MD-7.4-HarmonicHamiltonian",
+      "json_review": {
+        "status": "APPROVED",
+        "issue_codes": [],
+        "corrected_json": null,
+        "issues": [],
+        "evidence": [
+          "A：已目视核对 R2_PAGES.pdf 附件第6页，原书PDF页294、印刷页273。数学公式、上下标、符号与摘录一致；允许 Q/P/C 替代已定义的平稳矩以及版式转换。",
+          "C：只读核对本条完整 Lean 与所列项目依赖及附录 D1–D30；Mathlib 标准定义按任务要求采信。harmonicHamiltonian 的 x.1 为 q、x.2 为 p，两项系数与(7.6)一致。harmonicLaw 是方差 θ/Ω² 与 θm 的零均值正态乘积；正 m、正 θ、Ω≠0 的 Gibbs 解释需要所列条件，不是对任意参数的概率密度识别定理。",
+          "标注：本条未出现独立的 [EXTRA]/[ERRATUM?] 字面标签；已核对 extra_assumptions、issues、statement_scope 中的对应说明。未修改工程或补证明，未因 sorry 判 FAIL。"
+        ]
+      },
+      "audit": {
+        "lean_decl": [
+          "MD.Ch07.harmonicHamiltonian",
+          "MD.Ch07.harmonicLaw"
+        ],
+        "verdict": "PASS",
+        "explanation": "harmonicHamiltonian 的 x.1 为 q、x.2 为 p，两项系数与(7.6)一致。harmonicLaw 是方差 θ/Ω² 与 θm 的零均值正态乘积；正 m、正 θ、Ω≠0 的 Gibbs 解释需要所列条件，不是对任意参数的概率密度识别定理。",
+        "counterexample": null,
+        "suggested_fix": null
+      },
+      "subtask": "BATCH06a",
+      "input_sha256": {
+        "Blueprint/Ch07.lean": "f30ea154ebfb07ae85c0b806ff74b35808d5a0c3dcaa647c0c3cc80a78239e37",
+        "blueprint/ch07/ch07_source.json": "c434892ebf63b06f7cadcdfa7af408c2c12d7b645d35db431d1855224163ba19",
+        "BATCH06a_PAGES.pdf": "94eab49d53df11156a7db3c221d4deba4f072befed15610e796d72c61c43c155"
+      }
+    },
+    {
+      "source_id": "MD-7.4-HarmonicMoments",
+      "json_review": {
+        "status": "APPROVED",
+        "issue_codes": [],
+        "corrected_json": null,
+        "issues": [],
+        "evidence": [
+          "A：已目视核对 R2_PAGES.pdf 附件第7–8页，原书PDF页294–295、印刷页273–274。数学公式、上下标、符号与摘录一致；允许 Q/P/C 替代已定义的平稳矩以及版式转换。",
+          "C：只读核对本条完整 Lean 与所列项目依赖及附录 D1–D30；Mathlib 标准定义按任务要求采信。五个积分结论完整对应两个一阶矩、两个能量二阶矩和混合矩；正 m、Ω≠0、正 θ 保证 Real.toNNReal 不改变目标方差。harmonicLaw 为实际乘积概率测度，未把结论作为前提；其与 exp(-H/θ) 的密度识别未在该签名中证明，已披露。",
+          "标注：本条未出现独立的 [EXTRA]/[ERRATUM?] 字面标签；已核对 extra_assumptions、issues、statement_scope 中的对应说明。未修改工程或补证明，未因 sorry 判 FAIL。"
+        ]
+      },
+      "audit": {
+        "lean_decl": [
+          "MD.Ch07.harmonicMoments"
+        ],
+        "verdict": "PASS",
+        "explanation": "五个积分结论完整对应两个一阶矩、两个能量二阶矩和混合矩；正 m、Ω≠0、正 θ 保证 Real.toNNReal 不改变目标方差。harmonicLaw 为实际乘积概率测度，未把结论作为前提；其与 exp(-H/θ) 的密度识别未在该签名中证明，已披露。",
+        "counterexample": null,
+        "suggested_fix": null
+      },
+      "subtask": "BATCH06b",
+      "input_sha256": {
+        "Blueprint/Ch07.lean": "f30ea154ebfb07ae85c0b806ff74b35808d5a0c3dcaa647c0c3cc80a78239e37",
+        "blueprint/ch07/ch07_source.json": "c434892ebf63b06f7cadcdfa7af408c2c12d7b645d35db431d1855224163ba19",
+        "BATCH06b_PAGES.pdf": "d0a10feb597dad2209b3170fe00c5d08c6ce9e5cf5400f0afcc522f1a822fa55"
+      }
+    },
+    {
+      "source_id": "MD-7.4-LinearIteration",
+      "json_review": {
+        "status": "APPROVED",
+        "issue_codes": [],
+        "corrected_json": null,
+        "issues": [],
+        "evidence": [
+          "A：已目视核对 R2_PAGES.pdf 附件第9页，原书PDF页295、印刷页274。数学公式、上下标、符号与摘录一致；允许 Q/P/C 替代已定义的平稳矩以及版式转换。",
+          "C：只读核对本条完整 Lean 与所列项目依赖及附录 D1–D30；Mathlib 标准定义按任务要求采信。linearUpdate 以四个实数表示任意常实 2×2 矩阵，状态和噪声均为 ℝ×ℝ；两个分量完整对应(7.7)。momentQ/P/QP 是原始二阶矩，不误作中心方差。该定义不自动保证特定算法线性或噪声与状态独立。",
+          "标注：本条未出现独立的 [EXTRA]/[ERRATUM?] 字面标签；已核对 extra_assumptions、issues、statement_scope 中的对应说明。未修改工程或补证明，未因 sorry 判 FAIL。"
+        ]
+      },
+      "audit": {
+        "lean_decl": [
+          "MD.Ch07.linearUpdate",
+          "MD.Ch07.momentQ",
+          "MD.Ch07.momentP",
+          "MD.Ch07.momentQP"
+        ],
+        "verdict": "PASS",
+        "explanation": "linearUpdate 以四个实数表示任意常实 2×2 矩阵，状态和噪声均为 ℝ×ℝ；两个分量完整对应(7.7)。momentQ/P/QP 是原始二阶矩，不误作中心方差。该定义不自动保证特定算法线性或噪声与状态独立。",
+        "counterexample": null,
+        "suggested_fix": null
+      },
+      "subtask": "BATCH06c",
+      "input_sha256": {
+        "Blueprint/Ch07.lean": "f30ea154ebfb07ae85c0b806ff74b35808d5a0c3dcaa647c0c3cc80a78239e37",
+        "blueprint/ch07/ch07_source.json": "c434892ebf63b06f7cadcdfa7af408c2c12d7b645d35db431d1855224163ba19",
+        "BATCH06c_PAGES.pdf": "4c413f96b94fb7f5f4e5a133624fb0c484955abeebd756e4dea94a9f27a47e3a"
+      }
+    },
+    {
+      "source_id": "MD-7.4-BBKLinearForm",
+      "json_review": {
+        "status": "APPROVED",
+        "issue_codes": [],
+        "corrected_json": null,
+        "issues": [],
+        "evidence": [
+          "A：已目视核对 R2_PAGES.pdf 附件第10页，原书PDF页295、印刷页274。数学公式、上下标、符号与摘录一致；允许 Q/P/C 替代已定义的平稳矩以及版式转换。",
+          "C：只读核对本条完整 Lean 与所列项目依赖及附录 D1–D30；Mathlib 标准定义按任务要求采信。bbkMatrix 的四个嵌套积投影依次为 ψ11,ψ12,ψ21,ψ22；bbkNoise 的两坐标、共同分母和 R,S 系数均与原页一致。它们是记录所印系数的定义，不是从 bbk 推导这些系数的等式定理，extra_assumptions 已明确此缺口。",
+          "标注：本条未出现独立的 [EXTRA]/[ERRATUM?] 字面标签；已核对 extra_assumptions、issues、statement_scope 中的对应说明。未修改工程或补证明，未因 sorry 判 FAIL。"
+        ]
+      },
+      "audit": {
+        "lean_decl": [
+          "MD.Ch07.bbkMatrix",
+          "MD.Ch07.bbkNoise"
+        ],
+        "verdict": "PASS",
+        "explanation": "bbkMatrix 的四个嵌套积投影依次为 ψ11,ψ12,ψ21,ψ22；bbkNoise 的两坐标、共同分母和 R,S 系数均与原页一致。它们是记录所印系数的定义，不是从 bbk 推导这些系数的等式定理，extra_assumptions 已明确此缺口。",
+        "counterexample": null,
+        "suggested_fix": null
+      },
+      "subtask": "BATCH06d",
+      "input_sha256": {
+        "Blueprint/Ch07.lean": "f30ea154ebfb07ae85c0b806ff74b35808d5a0c3dcaa647c0c3cc80a78239e37",
+        "blueprint/ch07/ch07_source.json": "c434892ebf63b06f7cadcdfa7af408c2c12d7b645d35db431d1855224163ba19",
+        "BATCH06d_PAGES.pdf": "703ae838c32e0212f3ac8df1feddca2acce9786ed3844509d0773fbaaae8049c"
+      }
+    },
+    {
+      "source_id": "MD-7.4-QuadraticProducts",
+      "json_review": {
+        "status": "APPROVED",
+        "issue_codes": [],
+        "corrected_json": null,
+        "issues": [],
+        "evidence": [
+          "A：已目视核对 R2_PAGES.pdf 附件第11页，原书PDF页295、印刷页274。数学公式、上下标、符号与摘录一致；允许 Q/P/C 替代已定义的平稳矩以及版式转换。",
+          "C：只读核对本条完整 Lean 与所列项目依赖及附录 D1–D30；Mathlib 标准定义按任务要求采信。对全部八个任意实数，三个合取项分别展开 q_new²、p_new²、q_new p_new。交叉项 (a*d+b*c)、(a*s+c*r)、(d*r+b*s) 均正确；不需要概率或独立性前提。",
+          "标注：本条未出现独立的 [EXTRA]/[ERRATUM?] 字面标签；已核对 extra_assumptions、issues、statement_scope 中的对应说明。未修改工程或补证明，未因 sorry 判 FAIL。"
+        ]
+      },
+      "audit": {
+        "lean_decl": [
+          "MD.Ch07.quadraticProducts"
+        ],
+        "verdict": "PASS",
+        "explanation": "对全部八个任意实数，三个合取项分别展开 q_new²、p_new²、q_new p_new。交叉项 (a*d+b*c)、(a*s+c*r)、(d*r+b*s) 均正确；不需要概率或独立性前提。",
+        "counterexample": null,
+        "suggested_fix": null
+      },
+      "subtask": "BATCH06e",
+      "input_sha256": {
+        "Blueprint/Ch07.lean": "f30ea154ebfb07ae85c0b806ff74b35808d5a0c3dcaa647c0c3cc80a78239e37",
+        "blueprint/ch07/ch07_source.json": "c434892ebf63b06f7cadcdfa7af408c2c12d7b645d35db431d1855224163ba19",
+        "BATCH06e_PAGES.pdf": "aaabcf1838f2f7a305a3bd2c102781fa2b0e498de7f9100620149e459e0dd28f"
+      }
+    },
+    {
+      "source_id": "MD-7.4.1-StationaryMomentSystem",
+      "json_review": {
+        "status": "APPROVED",
+        "issue_codes": [],
+        "corrected_json": null,
+        "issues": [],
+        "evidence": [
+          "A：已目视核对 R2_PAGES.pdf 附件第12页，原书PDF页296、印刷页275。数学公式、上下标、符号与摘录一致；允许 Q/P/C 替代已定义的平稳矩以及版式转换。",
+          "C：只读核对本条完整 Lean 与所列项目依赖及附录 D1–D30；Mathlib 标准定义按任务要求采信。momentSystem 三式与(7.11)一致，噪声矩的参数次序 u,v,w 对应 qq,qp,pp。invariantLinearLaw 用独立乘积 μ.prodη 及实际推前不变性；四个坐标 L²、噪声均值零足够确保各乘积可积及状态噪声混合项消失。结论是已有平稳分布的矩方程；不是从任意初始状态收敛到平稳的定理，此差别已披露。",
+          "标注：本条未出现独立的 [EXTRA]/[ERRATUM?] 字面标签；已核对 extra_assumptions、issues、statement_scope 中的对应说明。未修改工程或补证明，未因 sorry 判 FAIL。"
+        ]
+      },
+      "audit": {
+        "lean_decl": [
+          "MD.Ch07.momentSystem",
+          "MD.Ch07.invariantLinearLaw",
+          "MD.Ch07.stationaryMomentSystem"
+        ],
+        "verdict": "PASS",
+        "explanation": "momentSystem 三式与(7.11)一致，噪声矩的参数次序 u,v,w 对应 qq,qp,pp。invariantLinearLaw 用独立乘积 μ.prodη 及实际推前不变性；四个坐标 L²、噪声均值零足够确保各乘积可积及状态噪声混合项消失。结论是已有平稳分布的矩方程；不是从任意初始状态收敛到平稳的定理，此差别已披露。",
+        "counterexample": null,
+        "suggested_fix": null
+      },
+      "subtask": "BATCH06f",
+      "input_sha256": {
+        "Blueprint/Ch07.lean": "f30ea154ebfb07ae85c0b806ff74b35808d5a0c3dcaa647c0c3cc80a78239e37",
+        "blueprint/ch07/ch07_source.json": "c434892ebf63b06f7cadcdfa7af408c2c12d7b645d35db431d1855224163ba19",
+        "BATCH06f_PAGES.pdf": "159c8706f6b0e83d84cf74e9a383a2c3a5304f5cbbe90824a350ed4dcd53b387"
+      }
+    }
+  ],
+  "merged_from": "ch07_first_merged"
+}

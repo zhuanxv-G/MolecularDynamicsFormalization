@@ -1,0 +1,239 @@
+{
+  "batch": "BATCH11",
+  "chapter": "ch07",
+  "round": "first-merged",
+  "input_sha256": {
+    "Blueprint/Ch07.lean": "f30ea154ebfb07ae85c0b806ff74b35808d5a0c3dcaa647c0c3cc80a78239e37",
+    "blueprint/ch07/ch07_source.json": "c434892ebf63b06f7cadcdfa7af408c2c12d7b645d35db431d1855224163ba19"
+  },
+  "items": [
+    {
+      "source_id": "MD-7.7.2-ScalarForwardOperators",
+      "json_review": {
+        "status": "APPROVED",
+        "issue_codes": [],
+        "corrected_json": null,
+        "issues": [],
+        "evidence": {
+          "A": "附件15页（书288/PDF309）：单位质量下LA†=−p∂q、LB†=U′∂p、LO†=γ(Id+p∂p)+σ²∂pp/2及σ=sqrt(2γkBT)一致。",
+          "C": "Density1=(ℝ×ℝ)→ℝ，dq固定p，dp固定q，opA负号、opB力项正号、opO的γf零阶项及γθ二阶项均正确，θ=kBT。opLD是三者和，opComm是先AB再减BA。全函数空间上的deriv是总定义；光滑性、物理正参数及闭算子定义域资格仅在解释中使用，JSON明确没有把这些表达式直接宣称为闭生成元。",
+          "source": "R3_任务.md 本条完整Lean及项目依赖定义、附录；R3_PAGES.pdf 对应原页。",
+          "method": "目视原页并对照文字层；仅审查所摘录签名与定义的数学语义；未编译、未补证明。",
+          "annotation_check": "本条所列Lean未出现显式[EXTRA]或[ERRATUM?]标签；extra_assumptions和statement_scope按实际语义单独核对，不将覆盖缺口视为已经证明。"
+        }
+      },
+      "audit": {
+        "lean_decl": [
+          "MD.Ch07.Density1",
+          "MD.Ch07.dq",
+          "MD.Ch07.dp",
+          "MD.Ch07.opA",
+          "MD.Ch07.opB",
+          "MD.Ch07.opO",
+          "MD.Ch07.opLD",
+          "MD.Ch07.opComm"
+        ],
+        "verdict": "PASS",
+        "explanation": "Density1=(ℝ×ℝ)→ℝ，dq固定p，dp固定q，opA负号、opB力项正号、opO的γf零阶项及γθ二阶项均正确，θ=kBT。opLD是三者和，opComm是先AB再减BA。全函数空间上的deriv是总定义；光滑性、物理正参数及闭算子定义域资格仅在解释中使用，JSON明确没有把这些表达式直接宣称为闭生成元。",
+        "counterexample": null,
+        "suggested_fix": null
+      },
+      "subtask": "BATCH11a",
+      "input_sha256": {
+        "Blueprint/Ch07.lean": "f30ea154ebfb07ae85c0b806ff74b35808d5a0c3dcaa647c0c3cc80a78239e37",
+        "blueprint/ch07/ch07_source.json": "c434892ebf63b06f7cadcdfa7af408c2c12d7b645d35db431d1855224163ba19",
+        "BATCH11a_PAGES.pdf": "70f04d205f8a722878d594ce720cc3c935220f9043cde0820b66d2f0ca2d8529"
+      }
+    },
+    {
+      "source_id": "MD-7.7.2-CommutatorAB",
+      "json_review": {
+        "status": "APPROVED",
+        "issue_codes": [],
+        "corrected_json": null,
+        "issues": [],
+        "evidence": {
+          "A": "附件16页（书288/PDF309）：两个乘积导数及四项展开的正负号、最终−pU″ρp+U′ρq均一致。JSON略去的中间−p(U′ρp)q+U′(pρq)p仅为等价的乘积记号。",
+          "C": "commutatorAB量化任意C²势U及C²二元ρ、每一点x；D65–D70给出实际偏导和AB−BA。C²保证混合偏导相等，乘积展开后恰为结论的两项。无质量/γ/温度遗漏，因为这是单位质量A、B的交换子。",
+          "source": "R3_任务.md 本条完整Lean及项目依赖定义、附录；R3_PAGES.pdf 对应原页。",
+          "method": "目视原页并对照文字层；仅审查所摘录签名与定义的数学语义；未编译、未补证明。",
+          "annotation_check": "本条所列Lean未出现显式[EXTRA]或[ERRATUM?]标签；extra_assumptions和statement_scope按实际语义单独核对，不将覆盖缺口视为已经证明。"
+        }
+      },
+      "audit": {
+        "lean_decl": [
+          "MD.Ch07.commutatorAB"
+        ],
+        "verdict": "PASS",
+        "explanation": "commutatorAB量化任意C²势U及C²二元ρ、每一点x；D65–D70给出实际偏导和AB−BA。C²保证混合偏导相等，乘积展开后恰为结论的两项。无质量/γ/温度遗漏，因为这是单位质量A、B的交换子。",
+        "counterexample": null,
+        "suggested_fix": null
+      },
+      "subtask": "BATCH11b",
+      "input_sha256": {
+        "Blueprint/Ch07.lean": "f30ea154ebfb07ae85c0b806ff74b35808d5a0c3dcaa647c0c3cc80a78239e37",
+        "blueprint/ch07/ch07_source.json": "c434892ebf63b06f7cadcdfa7af408c2c12d7b645d35db431d1855224163ba19",
+        "BATCH11b_PAGES.pdf": "68391cfa56825e1dbc3ad6471d5312d64c3dbd3c6ba9c5aef395336c6287ccb3"
+      }
+    },
+    {
+      "source_id": "MD-7.7.2-CommutatorsAOBO",
+      "json_review": {
+        "status": "APPROVED",
+        "issue_codes": [],
+        "corrected_json": null,
+        "issues": [],
+        "evidence": {
+          "A": "附件17页（书289/PDF310）：AO为γpρq+σ²ρqp，BO为γU′ρp，原页确有γ；与JSON一致。",
+          "C": "commutatorsAOBO在U、ρ均C³下对每一点同时给出两式；2γθ=σ²，dq(dpρ)在此光滑性下等于印式混合偏导，BO符号为正。对所有实γ、θ的代数恒等式成立，不需物理正性。U∈C³比必要条件强但足够，未改变所给物理光滑对象上的结论。",
+          "source": "R3_任务.md 本条完整Lean及项目依赖定义、附录；R3_PAGES.pdf 对应原页。",
+          "method": "目视原页并对照文字层；仅审查所摘录签名与定义的数学语义；未编译、未补证明。",
+          "annotation_check": "本条所列Lean未出现显式[EXTRA]或[ERRATUM?]标签；extra_assumptions和statement_scope按实际语义单独核对，不将覆盖缺口视为已经证明。"
+        }
+      },
+      "audit": {
+        "lean_decl": [
+          "MD.Ch07.commutatorsAOBO"
+        ],
+        "verdict": "PASS",
+        "explanation": "commutatorsAOBO在U、ρ均C³下对每一点同时给出两式；2γθ=σ²，dq(dpρ)在此光滑性下等于印式混合偏导，BO符号为正。对所有实γ、θ的代数恒等式成立，不需物理正性。U∈C³比必要条件强但足够，未改变所给物理光滑对象上的结论。",
+        "counterexample": null,
+        "suggested_fix": null
+      },
+      "subtask": "BATCH11c",
+      "input_sha256": {
+        "Blueprint/Ch07.lean": "f30ea154ebfb07ae85c0b806ff74b35808d5a0c3dcaa647c0c3cc80a78239e37",
+        "blueprint/ch07/ch07_source.json": "c434892ebf63b06f7cadcdfa7af408c2c12d7b645d35db431d1855224163ba19",
+        "BATCH11c_PAGES.pdf": "5dc9b1dc4bc0900dbcbda0d1d32c7f789fae15ddb0c6156d18cfe8c16b35831e"
+      }
+    },
+    {
+      "source_id": "MD-7.7.2-OBAModifiedOperator",
+      "json_review": {
+        "status": "APPROVED",
+        "issue_codes": [
+          "C_MISSING_MODIFIED_OPERATOR_EXPANSION"
+        ],
+        "corrected_json": null,
+        "issues": [
+          {
+            "code": "C_MISSING_MODIFIED_OPERATOR_EXPANSION",
+            "detail": "obaFirstCorrection以θ替代kBT，五项各乘1/2，正确。obaFirstCorrection_commutators在C³下仅证明此表达式等于三个实际交换子之和的一半，完全正确。但没有OBA前向乘积对象、log/h系数、LLD零阶或余项陈述，未把该函数认定为数值方案修改生成元的一阶系数。extra_assumptions承认该桥未做，因而完整两条原式的覆盖仍FAIL；不是因sorry或证明状态。"
+          }
+        ],
+        "evidence": {
+          "A": "附件18–19页（书288–289/PDF309–310）：前向乘积A B O以及一阶括号内五项、h/2及O(h²)均忠实；σ²混合导数项无缺项。",
+          "C": "obaFirstCorrection以θ替代kBT，五项各乘1/2，正确。obaFirstCorrection_commutators在C³下仅证明此表达式等于三个实际交换子之和的一半，完全正确。但没有OBA前向乘积对象、log/h系数、LLD零阶或余项陈述，未把该函数认定为数值方案修改生成元的一阶系数。extra_assumptions承认该桥未做，因而完整两条原式的覆盖仍FAIL；不是因sorry或证明状态。",
+          "source": "R3_任务.md 本条完整Lean及项目依赖定义、附录；R3_PAGES.pdf 对应原页。",
+          "method": "目视原页并对照文字层；仅审查所摘录签名与定义的数学语义；未编译、未补证明。",
+          "annotation_check": "本条所列Lean未出现显式[EXTRA]或[ERRATUM?]标签；extra_assumptions和statement_scope按实际语义单独核对，不将覆盖缺口视为已经证明。"
+        }
+      },
+      "audit": {
+        "lean_decl": [
+          "MD.Ch07.obaFirstCorrection",
+          "MD.Ch07.obaFirstCorrection_commutators"
+        ],
+        "verdict": "FAIL",
+        "explanation": "obaFirstCorrection以θ替代kBT，五项各乘1/2，正确。obaFirstCorrection_commutators在C³下仅证明此表达式等于三个实际交换子之和的一半，完全正确。但没有OBA前向乘积对象、log/h系数、LLD零阶或余项陈述，未把该函数认定为数值方案修改生成元的一阶系数。extra_assumptions承认该桥未做，因而完整两条原式的覆盖仍FAIL；不是因sorry或证明状态。",
+        "counterexample": null,
+        "suggested_fix": "增加OBA传播子与形式/弱修改生成元的关联及0、1阶系数结论；若主张O(h²)，还需注明余项采用的测试函数类与意义。"
+      },
+      "subtask": "BATCH11d",
+      "input_sha256": {
+        "Blueprint/Ch07.lean": "f30ea154ebfb07ae85c0b806ff74b35808d5a0c3dcaa647c0c3cc80a78239e37",
+        "blueprint/ch07/ch07_source.json": "c434892ebf63b06f7cadcdfa7af408c2c12d7b645d35db431d1855224163ba19",
+        "BATCH11d_PAGES.pdf": "da5b00adad485bdc506114c8133d94b861470359b31c018736a8305e2d3d91fd"
+      }
+    },
+    {
+      "source_id": "MD-7.7.2-SpectralQualification",
+      "json_review": {
+        "status": "NEEDS_HUMAN",
+        "issue_codes": [
+          "SOURCE_DISCRETE_NOT_SIMPLE",
+          "C_GEOMETRIC_NOT_ALGEBRAIC_SIMPLICITY",
+          "C_CORRECTION_LOSES_SIMPLE_ZERO",
+          "C_POINT_SPECTRUM_ONLY"
+        ],
+        "corrected_json": null,
+        "issues": [
+          {
+            "code": "SOURCE_DISCRETE_NOT_SIMPLE",
+            "detail": "分别审校：simpleEigenvalue定义的是特征空间维数1（几何单重），不是通常谱论的代数单重。printedSpectralConclusion及spectralConclusionPrinted忠实保留“所有特征值单重、0对应ρ、其他实部负”的点谱目标，但没有紧预解式或完整谱的对象，也没有代数重数。_corrected把所有特征空间改为有限维，改掉“离散⇒单重”的错误方向是合理的；然而同时删掉零特征值应为唯一不变密度方向的约束，且有限维几何特征空间不等同于离散谱及有限代数重数。它只是较弱目标谓词，不是已得到的Langevin谱定理，也不是完整修正。由于原书错误及应保留哪些额外结论需人工决定，总判NEEDS_HUMAN。"
+          },
+          {
+            "code": "C_GEOMETRIC_NOT_ALGEBRAIC_SIMPLICITY",
+            "detail": "分别审校：simpleEigenvalue定义的是特征空间维数1（几何单重），不是通常谱论的代数单重。printedSpectralConclusion及spectralConclusionPrinted忠实保留“所有特征值单重、0对应ρ、其他实部负”的点谱目标，但没有紧预解式或完整谱的对象，也没有代数重数。_corrected把所有特征空间改为有限维，改掉“离散⇒单重”的错误方向是合理的；然而同时删掉零特征值应为唯一不变密度方向的约束，且有限维几何特征空间不等同于离散谱及有限代数重数。它只是较弱目标谓词，不是已得到的Langevin谱定理，也不是完整修正。由于原书错误及应保留哪些额外结论需人工决定，总判NEEDS_HUMAN。"
+          },
+          {
+            "code": "C_CORRECTION_LOSES_SIMPLE_ZERO",
+            "detail": "分别审校：simpleEigenvalue定义的是特征空间维数1（几何单重），不是通常谱论的代数单重。printedSpectralConclusion及spectralConclusionPrinted忠实保留“所有特征值单重、0对应ρ、其他实部负”的点谱目标，但没有紧预解式或完整谱的对象，也没有代数重数。_corrected把所有特征空间改为有限维，改掉“离散⇒单重”的错误方向是合理的；然而同时删掉零特征值应为唯一不变密度方向的约束，且有限维几何特征空间不等同于离散谱及有限代数重数。它只是较弱目标谓词，不是已得到的Langevin谱定理，也不是完整修正。由于原书错误及应保留哪些额外结论需人工决定，总判NEEDS_HUMAN。"
+          },
+          {
+            "code": "C_POINT_SPECTRUM_ONLY",
+            "detail": "分别审校：simpleEigenvalue定义的是特征空间维数1（几何单重），不是通常谱论的代数单重。printedSpectralConclusion及spectralConclusionPrinted忠实保留“所有特征值单重、0对应ρ、其他实部负”的点谱目标，但没有紧预解式或完整谱的对象，也没有代数重数。_corrected把所有特征空间改为有限维，改掉“离散⇒单重”的错误方向是合理的；然而同时删掉零特征值应为唯一不变密度方向的约束，且有限维几何特征空间不等同于离散谱及有限代数重数。它只是较弱目标谓词，不是已得到的Langevin谱定理，也不是完整修正。由于原书错误及应保留哪些额外结论需人工决定，总判NEEDS_HUMAN。"
+          }
+        ],
+        "evidence": {
+          "A": "附件20页（书289/PDF310）：确实印为“discrete spectrum, i.e. simple eigenvalues”，后接一个零特征值和其余在负半平面；JSON保留了原书疑误，不能静默修正文句。",
+          "C": "分别审校：simpleEigenvalue定义的是特征空间维数1（几何单重），不是通常谱论的代数单重。printedSpectralConclusion及spectralConclusionPrinted忠实保留“所有特征值单重、0对应ρ、其他实部负”的点谱目标，但没有紧预解式或完整谱的对象，也没有代数重数。_corrected把所有特征空间改为有限维，改掉“离散⇒单重”的错误方向是合理的；然而同时删掉零特征值应为唯一不变密度方向的约束，且有限维几何特征空间不等同于离散谱及有限代数重数。它只是较弱目标谓词，不是已得到的Langevin谱定理，也不是完整修正。由于原书错误及应保留哪些额外结论需人工决定，总判NEEDS_HUMAN。",
+          "source": "R3_任务.md 本条完整Lean及项目依赖定义、附录；R3_PAGES.pdf 对应原页。",
+          "method": "目视原页并对照文字层；仅审查所摘录签名与定义的数学语义；未编译、未补证明。",
+          "annotation_check": "本条所列Lean未出现显式[EXTRA]或[ERRATUM?]标签；extra_assumptions和statement_scope按实际语义单独核对，不将覆盖缺口视为已经证明。"
+        }
+      },
+      "audit": {
+        "lean_decl": [
+          "MD.Ch07.simpleEigenvalue",
+          "MD.Ch07.printedSpectralConclusion",
+          "MD.Ch07.spectralConclusionPrinted",
+          "MD.Ch07.spectralConclusionPrinted_corrected"
+        ],
+        "verdict": "NEEDS_HUMAN",
+        "explanation": "分别审校：simpleEigenvalue定义的是特征空间维数1（几何单重），不是通常谱论的代数单重。printedSpectralConclusion及spectralConclusionPrinted忠实保留“所有特征值单重、0对应ρ、其他实部负”的点谱目标，但没有紧预解式或完整谱的对象，也没有代数重数。_corrected把所有特征空间改为有限维，改掉“离散⇒单重”的错误方向是合理的；然而同时删掉零特征值应为唯一不变密度方向的约束，且有限维几何特征空间不等同于离散谱及有限代数重数。它只是较弱目标谓词，不是已得到的Langevin谱定理，也不是完整修正。由于原书错误及应保留哪些额外结论需人工决定，总判NEEDS_HUMAN。",
+        "counterexample": "有限维diag(0,−1,−1)有紧预解式，却有二重负特征值，反驳“紧预解式⇒所有特征值单重”。2×2 Jordan块的特征空间维数1但代数重数2，说明当前simpleEigenvalue仅几何单重。diag(0,0,−1)、ρ=e1满足_corrected的全部条件，却有二维零空间，说明该修正丢失唯一稳态方向。",
+        "suggested_fix": "保留Printed文字版并注明simple的解释；修正版须区分完整谱、孤立性、有限代数重数和零谱点的单重性，在明确复Banach/Hilbert空间及闭生成元定义域后分别加资格，不把紧预解式单独当成负半平面谱或简单零谱的证明。"
+      },
+      "subtask": "BATCH11e",
+      "input_sha256": {
+        "Blueprint/Ch07.lean": "f30ea154ebfb07ae85c0b806ff74b35808d5a0c3dcaa647c0c3cc80a78239e37",
+        "blueprint/ch07/ch07_source.json": "c434892ebf63b06f7cadcdfa7af408c2c12d7b645d35db431d1855224163ba19",
+        "BATCH11e_PAGES.pdf": "adf5b958de40a5f8391a31a35bb0a8771bbbd7d7a6d4141b1880be97378c1fe6"
+      }
+    },
+    {
+      "source_id": "MD-7.7.3-PerturbationCoefficientEquation",
+      "json_review": {
+        "status": "APPROVED",
+        "issue_codes": [],
+        "corrected_json": null,
+        "issues": [],
+        "evidence": {
+          "A": "附件21–22页（书289–290/PDF310–311）：展开乘积、零阶LLD†ρβ=0与(7.19)的两项及正号均一致。",
+          "C": "actionCoefficient取j=0,…,k的线性作用卷积Lj(ρ(k−j))；k=0仅L0ρ0，k=1为L0ρ1+L1ρ0。定理以这两个系数为0为前提准确给出两条结论。实例化ρ0=ρβ、ρ1=ρβf1、L0=LLD†、L1=一阶扰动即为原式。假设与必要条件没有偷换为不变密度存在性，也未假定各系数算子可交换。",
+          "source": "R3_任务.md 本条完整Lean及项目依赖定义、附录；R3_PAGES.pdf 对应原页。",
+          "method": "目视原页并对照文字层；仅审查所摘录签名与定义的数学语义；未编译、未补证明。",
+          "annotation_check": "本条所列Lean未出现显式[EXTRA]或[ERRATUM?]标签；extra_assumptions和statement_scope按实际语义单独核对，不将覆盖缺口视为已经证明。"
+        }
+      },
+      "audit": {
+        "lean_decl": [
+          "MD.Ch07.actionCoefficient",
+          "MD.Ch07.perturbationCoefficientEquation"
+        ],
+        "verdict": "PASS",
+        "explanation": "actionCoefficient取j=0,…,k的线性作用卷积Lj(ρ(k−j))；k=0仅L0ρ0，k=1为L0ρ1+L1ρ0。定理以这两个系数为0为前提准确给出两条结论。实例化ρ0=ρβ、ρ1=ρβf1、L0=LLD†、L1=一阶扰动即为原式。假设与必要条件没有偷换为不变密度存在性，也未假定各系数算子可交换。",
+        "counterexample": null,
+        "suggested_fix": null
+      },
+      "subtask": "BATCH11f",
+      "input_sha256": {
+        "Blueprint/Ch07.lean": "f30ea154ebfb07ae85c0b806ff74b35808d5a0c3dcaa647c0c3cc80a78239e37",
+        "blueprint/ch07/ch07_source.json": "c434892ebf63b06f7cadcdfa7af408c2c12d7b645d35db431d1855224163ba19",
+        "BATCH11f_PAGES.pdf": "1d8441d1d6f942f5e73fb79a008423dd60f1579561cf0b5ccfeb478b2ff175cd"
+      }
+    }
+  ],
+  "merged_from": "ch07_first_merged"
+}
