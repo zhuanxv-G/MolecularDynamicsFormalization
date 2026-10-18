@@ -184,5 +184,53 @@
     "category": "缺大型理论",
     "routes": [],
     "decision": "缺大型理论时直接记录缺项；否则最多三条短路线。"
+  },
+  "MD-8.8-NPTBathTaylor": {
+    "reason": "可微定义的线性近似及负号仿射换元；短桥接未完成。",
+    "category": "缺大型理论",
+    "routes": [],
+    "decision": "缺大型理论时直接记录缺项；否则最多三条短路线。"
+  },
+  "MD-8.8-AndersenCoordinates": {
+    "reason": "正数实幂求导与指数和法则的短桥接。",
+    "category": "缺大型理论",
+    "routes": [],
+    "decision": "缺大型理论时直接记录缺项；否则最多三条短路线。"
+  },
+  "MD-8.8-AndersenKineticEnergy": {
+    "reason": "正V的rpow乘法与有限和平方展开桥接。",
+    "category": "缺大型理论",
+    "routes": [],
+    "decision": "缺大型理论时直接记录缺项；否则最多三条短路线。"
+  },
+  "MD-8.8-AndersenHamiltonianPrinted": {
+    "reason": "一维Gaussian积分及常数因子桥接。",
+    "category": "原书疑误不证",
+    "routes": [],
+    "decision": "缺大型理论时直接记录缺项；否则最多三条短路线。"
+  },
+  "MD-8.8.1-PistonHamiltonianSubfield": {
+    "reason": "有限维Hamiltonian散度与冻结辅助变量的链式法则桥接。",
+    "category": "缺大型理论",
+    "routes": [],
+    "decision": "缺大型理论时直接记录缺项；否则最多三条短路线。"
+  },
+  "MD-8.8.1-PistonThermostatWeightPrinted": {
+    "reason": "权重指数链式法则与实际散度计算。",
+    "category": "原书疑误不证",
+    "routes": [],
+    "decision": "缺大型理论时直接记录缺项；否则最多三条短路线。"
+  },
+  "MD-8.8.1-PistonReducedPDE": {
+    "reason": "实际Fréchet导数代入及压力定义消项。",
+    "category": "缺大型理论",
+    "routes": [],
+    "decision": "缺大型理论时直接记录缺项；否则最多三条短路线。"
+  },
+  "MD-8.8.1-PistonStationaryWeight": {
+    "reason": "Hamiltonian/热浴/活塞/OU四部分的局部通量与二阶导数计算；不建立NPT半群理论。",
+    "category": "缺大型理论",
+    "routes": [],
+    "decision": "缺大型理论时直接记录缺项；否则最多三条短路线。"
   }
 }

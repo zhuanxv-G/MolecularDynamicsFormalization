@@ -1,6 +1,6 @@
 # 第8章逐条进度
 
-当前正文落盘：69条。全部正文完成：否。章末完整check：未完成。
+当前正文落盘：82条。全部正文完成：否。章末完整check：未完成。
 
 | source_id | 原页PDF | 本地对照 | 编译/公理 | 数学状态 | 网站 |
 |---|---|---|---|---|---|
@@ -73,3 +73,16 @@
 | MD-8.7.1-PronyLangevinLimit | 397–398 | PASS | 通过 | 未证陈述 | 待审 |
 | MD-8.7.1-GeneralizedLangevinIntegrator | 398 | PASS | 通过 | 定义 | 待审 |
 | MD-8.7.1-GLEConsistentCoefficients | 398 | PASS | 通过 | 未证陈述 | 待审 |
+| MD-8.8-NPTThermodynamics | 399 | PASS | 通过 | 已证 | 待审 |
+| MD-8.8-NPTBathTaylor | 399 | PASS | 通过 | 未证陈述 | 待审 |
+| MD-8.8-NPTDensity | 399–400 | PASS | 通过 | 已证 | 待审 |
+| MD-8.8-AndersenCoordinates | 400–401 | PASS | 通过 | 未证陈述 | 待审 |
+| MD-8.8-AndersenKineticEnergy | 400 | PASS | 通过 | 未证陈述 | 待审 |
+| MD-8.8-AndersenHamiltonianPrinted | 401 | NEEDS_HUMAN | 通过 | 未证陈述 | 待审 |
+| MD-8.8.1-NHLPistonEquations | 402–403 | PASS | 通过 | 定义 | 待审 |
+| MD-8.8.1-PistonHamiltonianSubfield | 402 | PASS | 通过 | 未证陈述 | 待审 |
+| MD-8.8.1-PistonThermostatWeightPrinted | 402 | NEEDS_HUMAN | 通过 | 未证陈述 | 待审 |
+| MD-8.8.1-PistonReducedPDE | 403 | PASS | 通过 | 未证陈述 | 待审 |
+| MD-8.8.1-PistonStationaryWeight | 403 | PASS | 通过 | 未证陈述 | 待审 |
+| MD-8.8.2-PistonIntegrator | 404 | PASS | 通过 | 定义 | 待审 |
+| MD-8.8.3-ParrinelloRahman | 406 | PASS | 通过 | 定义 | 待审 |
