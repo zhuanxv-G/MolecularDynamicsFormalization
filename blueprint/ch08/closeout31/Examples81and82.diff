@@ -1,0 +1,26 @@
+--- first-round
++++ repaired
+@@ -2,11 +2,22 @@
+   (fderiv ℝ H z (G z) - textbookDivergence G z/β)/Q
+ def configurationalFeedback (U K : Vec n → ℝ) (β Q : ℝ) (q : Vec n) : ℝ :=
+   (dot (gradient U q) (gradient K q) - textbookDivergence (gradient K) q/β)/Q
+-theorem generalizedFeedback_stationary (J : Matrix (Fin n) (Fin n) ℝ)
++/-- 原文正号组合的驻定声称；原书疑误，保留字面版，不作为有效定理。 -/
++theorem generalizedFeedback_stationaryPrinted (J : Matrix (Fin n) (Fin n) ℝ)
+     (H : Vec n → ℝ) (G : Vec n → Vec n) (β Q : ℝ)
+     (hJ : skewMatrix J) (hH : ContDiff ℝ 3 H) (hG : ContDiff ℝ 2 G)
+     (hβ : 0 < β) (hQ : 0 < Q) :
+     textbookLiouvilleStationary
+       (fun z : Vec n × ℝ ↦ (J *ᵥ gradient H z.1 + z.2 • G z.1, generalizedFeedback H G β Q z.1))
+       (fun z ↦ Real.exp (-β*(H z.1+Q*z.2^2/2))) := by
++  sorry
++
++/-- 修正版：仅将耦合改为负号，反馈保留原式；原文例8.2另存。 -/
++theorem generalizedFeedback_stationary_corrected (J : Matrix (Fin n) (Fin n) ℝ)
++    (H : Vec n → ℝ) (G : Vec n → Vec n) (β Q : ℝ)
++    (hJ : skewMatrix J) (hH : ContDiff ℝ 3 H) (hG : ContDiff ℝ 2 G)
++    (hβ : 0 < β) (hQ : 0 < Q) :
++    textbookLiouvilleStationary
++      (fun z : Vec n × ℝ ↦ (J *ᵥ gradient H z.1 - z.2 • G z.1, generalizedFeedback H G β Q z.1))
++      (fun z ↦ Real.exp (-β*(H z.1+Q*z.2^2/2))) := by
+   sorry

@@ -1,0 +1,10 @@
+{
+  "mode": "update",
+  "id": "lean-2",
+  "kind": "heartbeat",
+  "name": "lean",
+  "prompt": "按31号继续第8章网站结果整合与修复。\n先核对AGENTS、CURRENT_STATE顶部、WORK_LOG最新及blueprint/ch08/PROGRESS.md，从最近已验证检查点接续；先 git status 并复用已通过证据。\n唯一任务为第8章；第1–7章与MolecularDynamics/正式库字节冻结，网站只生成复审包，不提交、不等待。\n\n第31号全文见C:\\Users\\ustc\\Desktop\\formal math\\MolecularDynamicsFormalization\\blueprint\\ch08\\USER_INSTRUCTION_31.zh-CN.md。登记103条首轮返回（74 PASS/5 FAIL/24 NEEDS_HUMAN），严格按suggested_fix局部修复；公式疑误先目视原页，Printed/corrected分开登记。完成编译、公理、一次完整check、三份文档及EAUDIT复审包，提交并push。\n\n每次唤醒先读上述入口及WORK_LOG最新、PROGRESS，再用wait_threads(timeoutMs:0)核对原执行目标。只做状态核对与授权额度恢复接续，不写工程共享文件、不运行Lean/构建/Git、不操作或轮询网站。执行目标沿用原resume_state.json记录，不改变target或模型设置。运行或已有排队消息时保持安静，不发送不打断。只有最新未完成轮明确usage limit/quota/rate limit或可信检查点明确记此次额度中断时，才用get_usage_limits检查；额度可用、任务未完成且原执行目标仍停止时，再核对状态，然后发送前3行完整接续消息。非额度故障首次通知，不擅自重启；notLoaded不能认定额度中断。禁止购买、重置、切换账号或模型。\n\n沿用C:\\Users\\ustc\\.codex\\automations\\lean\\resume_state.json既存去重路径和记录，不新建清空：每个失败轮最多成功发送一次，两次自动发送至少相隔30分钟；同章同检查点连续3次无进展中断则停发并通知。发送含糊时先核对消息/新一轮，不盲目重发；发送后一次compact snapshot确认运行，未端到端实测不声称恢复成功。保持ACTIVE、原15分钟和原target。只在meaningful change、确认恢复、完成、新失败或必须用户行动时通知；其余保持安静。\n\n停止条件为31号第6节：FAIL修复中=0；单文件编译、逐条#print axioms、一次完整check通过；正式库0 sorry、0 axiom；第1–7章文件字节未变；复审包已生成并报告包数和条数；提交并push；CURRENT_STATE顶部为“第8章首轮结果已整合，复审包待用户提交”。达到后停止发送，ACTIVE配置保留，然后停止。",
+  "status": "ACTIVE",
+  "rrule": "FREQ=MINUTELY;INTERVAL=15",
+  "targetThreadId": "01a10bc0-bc8d-7043-8df9-21a6b0bde09a"
+}

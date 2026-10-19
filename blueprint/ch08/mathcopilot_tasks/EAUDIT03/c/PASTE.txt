@@ -1,0 +1,206 @@
+以附件/PASTE 为准，忽略 /workspace 旧文件；Mathlib 定义按标准含义采信。
+本任务只审本条：原文转录、对象资格、定义体、量词、全部结论及[EXTRA]是否一致；Lean编译不代替语义审阅。
+Lean/Mathlib均4.34.0。原页PDF映射：[397]；印刷页=[376].
+input_sha256请原样回显：
+{
+  "Blueprint/Ch08.lean": "a58849c40e30a4a6b189163f42a49e0cbdf00bd48a39a77048bfd04ff88f8a16",
+  "blueprint/ch08/ch08_source.json": "c7fea45d785f740f26c7b50c5e37abd14cb1a8b05b51f4e7ad215cd5059ebdd5",
+  "PAGES.pdf": "dfbc09b5b5d63bd0d30d72e4804e4777ad3e7bebdf369777b438eea2780fee04"
+}
+用代码将JSON对象(batch,input_sha256,items)写到 /workspace/.mathcopilot/reviews/ch08/EAUDIT03c_review.json；items仅含本source_id。
+items字段：source_id、verdict(PASS/FAIL/NEEDS_HUMAN)、transcription、semantic_review、counterexample、suggested_fix、printed_version、corrected_version。逐版区分原文疑误和修正版结论；缺材料必须具体指出，不猜测。写后json.loads自检，最后仅回复路径及统计。
+
+## 原文JSON
+```json
+{
+  "source_id": "MD-8.7.1-PronyOUStationarity",
+  "kind": "unnumbered_claim",
+  "label": null,
+  "section": "8.7.1",
+  "printed_page": "376",
+  "pdf_page": "397",
+  "statement_latex": "dRᵢₖ=−Rᵢₖdt/τₖ+√(2k_BT cₖ)dWᵢₖ/τₖ; E Rᵢₖ=0 and E[Rᵢₖ(t+s)Rᵢₖ(t)]=(k_BT cₖ/τₖ)e^(−s/τₖ). Rᵢ=ΣₖRᵢₖ. (8.65)–(8.67).",
+  "statement_verbatim": "376\n8\nExtended Variable Methods\nTo calculate the random forces associated to the kth term of the expansion, we\nnote that these can be viewed as the solution of a linear SDE, speciﬁcally\ndRi;k D \u0003 1\n\u0002k\nRi;k.t/dt C 1\n\u0002k\np\n2kBTckdWi;k.t/\n(8.65)\nwhere Wi;k is a standard Wiener process. The random force is seen to be deﬁned as\nthe solution of an Ornstein-Uhlenbeck process induced by the Prony representation.\nIt is easily shown that Ri;k.t/ has zero mean and autocorrelation deﬁned by\nhRi;k.t C s/Ri;k.t/i D kBTck\n\u0002k\nexp\n\u0002\n\u0003 1\n\u0002k\ns\n\u0003\n;\ns \b 0\n(8.66)\nThe total random force is then obtained by summation\nRi D\nkmax\nX\nkD1\nRi;k:\n(8.67)\nObserve that both random and drag forces are incorporated via summation of the\ncomponents \u000fi;k and Ri;k deﬁned by linear equations, respectively the ODE (8.64)\nand SDE (8.65). It is therefore possible to replace these components by their sum\n\u0007i;k D \u000fi;k C Ri;k\nwhich may be evolved by a single SDE. The equations therefore become\ndqi D m\u00021\ni pidt;\n(8.68)\ndpi D Fidt C\nkmax\nX\nkD1\n\u0007i;kdt;\n(8.69)\nd\u0007i;k D \u0003 1\n\u0002k\n\u0007i;kdt \u0003 ck\n\u0002k\npidt C 1\n\u0002k\np\n2kBTckdWi;k:\n(8.70)\nThe relation between the Prony series representation and Langevin dynamics can be\nseen in an informal sense by multiplying the equation for \u0007i;k equation by \u0002k, and\nconsidering \u0002k ! 0, giving\n\u0007i;kdt D \u0003ckpidt C\np\n2kBTckdWi;k;\nwhich results in\ndpi D Fidt \u0003\n kmax\nX\nkD1\nck\n!\npidt C\np\n2kBT\n`\nX\nkD1\npckdWi;k:\n",
+  "verbatim_scope": "完整对应原页文字层，逐字保留；本条数学成分由statement_latex及statement_scope定位。",
+  "proof_latex": null,
+  "proof_note": "对应原页推导逐字保存在statement_verbatim/original_page_text；排版以原页PDF为准。",
+  "original_page_text": [
+    {
+      "pdf_page": 397,
+      "printed_page": 376,
+      "text": "376\n8\nExtended Variable Methods\nTo calculate the random forces associated to the kth term of the expansion, we\nnote that these can be viewed as the solution of a linear SDE, speciﬁcally\ndRi;k D \u0003 1\n\u0002k\nRi;k.t/dt C 1\n\u0002k\np\n2kBTckdWi;k.t/\n(8.65)\nwhere Wi;k is a standard Wiener process. The random force is seen to be deﬁned as\nthe solution of an Ornstein-Uhlenbeck process induced by the Prony representation.\nIt is easily shown that Ri;k.t/ has zero mean and autocorrelation deﬁned by\nhRi;k.t C s/Ri;k.t/i D kBTck\n\u0002k\nexp\n\u0002\n\u0003 1\n\u0002k\ns\n\u0003\n;\ns \b 0\n(8.66)\nThe total random force is then obtained by summation\nRi D\nkmax\nX\nkD1\nRi;k:\n(8.67)\nObserve that both random and drag forces are incorporated via summation of the\ncomponents \u000fi;k and Ri;k deﬁned by linear equations, respectively the ODE (8.64)\nand SDE (8.65). It is therefore possible to replace these components by their sum\n\u0007i;k D \u000fi;k C Ri;k\nwhich may be evolved by a single SDE. The equations therefore become\ndqi D m\u00021\ni pidt;\n(8.68)\ndpi D Fidt C\nkmax\nX\nkD1\n\u0007i;kdt;\n(8.69)\nd\u0007i;k D \u0003 1\n\u0002k\n\u0007i;kdt \u0003 ck\n\u0002k\npidt C 1\n\u0002k\np\n2kBTckdWi;k:\n(8.70)\nThe relation between the Prony series representation and Langevin dynamics can be\nseen in an informal sense by multiplying the equation for \u0007i;k equation by \u0002k, and\nconsidering \u0002k ! 0, giving\n\u0007i;kdt D \u0003ckpidt C\np\n2kBTckdWi;k;\nwhich results in\ndpi D Fidt \u0003\n kmax\nX\nkD1\nck\n!\npidt C\np\n2kBT\n`\nX\nkD1\npckdWi;k:\n"
+    }
+  ],
+  "numbered_equations": [
+    "8.65",
+    "8.66",
+    "8.67"
+  ],
+  "transcription_note": "文字层逐字保留；数学排版另行转写，原页中的特殊字形编码不静默替换。",
+  "context_notation": [],
+  "extra_assumptions": [
+    "为(8.66)补平稳Gaussian初态及其与未来整条W独立；确定初态OU一般没有所印不依赖t的协方差。多分量实际实现使用独立W坐标。",
+    "已目视核对原页PDF397：(8.66)未声明平稳初态；保留原句，_corrected明确引用stationaryPronyOU的Gaussian初态和整条W独立性。总随机力只定义有限和，未证跨模式独立或总协方差。"
+  ],
+  "issues": [
+    "[ERRATUM?] 保留原印相关式并加[ERRATUM?]，明确它在平稳初态下成立；保留已写入Lean的Gaussian初态及独立性。",
+    "[ERRATUM?] 原页(8.66)省略平稳初态；Lean补入的初始Gaussian律及其与W独立是必要资格。",
+    "已目视核对原页PDF397：(8.66)未声明平稳初态；保留原句，_corrected明确引用stationaryPronyOU的Gaussian初态和整条W独立性。总随机力只定义有限和，未证跨模式独立或总协方差。"
+  ],
+  "statement_scope": "单个Prony OU的完整资格及平稳均值/协方差目标、总随机力定义。",
+  "lean_decl": "MD.Ch08.stationaryPronyOU",
+  "lean_declarations": [
+    "MD.Ch08.stationaryPronyOU",
+    "MD.Ch08.pronyOU_covariance",
+    "MD.Ch08.totalPronyRandomForce",
+    "MD.Ch08.pronyOU_covariance_corrected"
+  ],
+  "source_page_verification": "R5本次审校：已核对R5_PAGES.pdf附件第8页文字层及相应原书页面图像；文字层特殊字形保留。",
+  "repair_log": [
+    {
+      "instruction": 31,
+      "stage": "json_review",
+      "status": "NEEDS_HUMAN",
+      "issue_codes": [
+        "STALE_TRANSCRIPTION_NOTE",
+        "STATIONARY_INITIAL_LAW_MISSING_IN_SOURCE"
+      ],
+      "change": "合并经原页和现有签名核对的元数据更正；原页全文未改。"
+    },
+    {
+      "instruction": 31,
+      "stage": "human_triage",
+      "change": "已目视核对原页PDF397：(8.66)未声明平稳初态；保留原句，_corrected明确引用stationaryPronyOU的Gaussian初态和整条W独立性。总随机力只定义有限和，未证跨模式独立或总协方差。",
+      "suggested_fix": "保留原印相关式并加[ERRATUM?]，明确它在平稳初态下成立；保留已写入Lean的Gaussian初态及独立性。"
+    }
+  ],
+  "documented_priors": [],
+  "coverage_gaps": [
+    "已目视核对原页PDF397：(8.66)未声明平稳初态；保留原句，_corrected明确引用stationaryPronyOU的Gaussian初态和整条W独立性。总随机力只定义有限和，未证跨模式独立或总协方差。"
+  ]
+}
+```
+
+## 完整本条Lean
+```lean
+def stationaryPronyOU (P : Measure Ω) (W : ℝ → Ω → Vec 1) (R : ℝ → Ω → ℝ)
+    (c τ θ : ℝ) : Prop :=
+  independentWiener P 1 W ∧ 0 < c ∧ 0 < τ ∧ 0 < θ ∧
+  HasLaw (R 0) (gaussianReal 0 (Real.toNNReal (θ*c/τ))) P ∧
+  IndepFun (R 0) (fun sample t ↦ W t sample) P ∧
+  (∀ᵐ sample ∂P, ContinuousOn (fun t ↦ R t sample) (Ici 0)) ∧
+  (∀ t, 0 ≤ t → MemLp (R t) 2 P) ∧
+  ∀ t, 0 ≤ t → ∀ᵐ sample ∂P,
+    R t sample=R 0 sample+(∫ s in (0 : ℝ)..t, -R s sample/τ)+
+      Real.sqrt (2*θ*c)/τ*(W t sample 0-W 0 sample 0)
+theorem pronyOU_covariance (P : Measure Ω) (W : ℝ → Ω → Vec 1)
+    (R : ℝ → Ω → ℝ) (c τ θ : ℝ) (hR : stationaryPronyOU P W R c τ θ)
+    (t s : ℝ) (ht : 0 ≤ t) (hs : 0 ≤ s) :
+    (∫ sample, R t sample ∂P)=0 ∧
+      (∫ sample, R (t+s) sample*R t sample ∂P)=θ*c/τ*Real.exp (-s/τ) := by
+  sorry
+def totalPronyRandomForce {K : ℕ} (R : Fin K → ℝ → Ω → ℝ) (t : ℝ) (sample : Ω) : ℝ :=
+  ∑ k, R k t sample
+
+/-- 修正版显式使用已定义的平稳Gaussian初态及与W独立资格；原印未写该前提。 -/
+theorem pronyOU_covariance_corrected (P : Measure Ω) (W : ℝ → Ω → Vec 1)
+    (R : ℝ → Ω → ℝ) (c τ θ : ℝ) (hR : stationaryPronyOU P W R c τ θ)
+    (t s : ℝ) (ht : 0 ≤ t) (hs : 0 ≤ s) :
+    (∫ sample, R t sample ∂P)=0 ∧
+      (∫ sample, R (t+s) sample*R t sample ∂P)=θ*c/τ*Real.exp (-s/τ) := pronyOU_covariance P W R c τ θ hR t s ht hs
+```
+
+## 项目依赖定义体及选择规格
+以下def/abbrev/structure完整保留；定理列出完整类型，Mathlib标准定义无需摘录。
+
+### MD.Ch08.Vec (Blueprint/Ch08.lean:18)
+原文件上下文：
+```lean
+open Set Filter MeasureTheory ProbabilityTheory MolecularDynamics
+open scoped BigOperators Topology ContDiff ENNReal NNReal Matrix
+variable {Ω : Type*} [MeasurableSpace Ω]
+variable {n : ℕ}
+```
+```lean
+abbrev Vec (n : ℕ) := Fin n → ℝ
+```
+
+### MD.Ch08.independentWiener (Blueprint/Ch08.lean:354)
+原文件上下文：
+```lean
+open Set Filter MeasureTheory ProbabilityTheory MolecularDynamics
+open scoped BigOperators Topology ContDiff ENNReal NNReal Matrix
+variable {Ω : Type*} [MeasurableSpace Ω]
+variable {n : ℕ}
+```
+```lean
+def independentWiener (P : Measure Ω) (k : ℕ) (W : ℝ → Ω → Vec k) : Prop :=
+  IsProbabilityMeasure P ∧ (∀ j, IsBrownianReal (fun t sample ↦ W t sample j) P) ∧
+    iIndepFun (fun j sample ↦ fun t : ℝ ↦ W t sample j) P
+```
+
+### MD.Ch08.stationaryPronyOU (Blueprint/Ch08.lean:1147)
+原文件上下文：
+```lean
+open Set Filter MeasureTheory ProbabilityTheory MolecularDynamics
+open scoped BigOperators Topology ContDiff ENNReal NNReal Matrix
+variable {Ω : Type*} [MeasurableSpace Ω]
+variable {n : ℕ}
+```
+```lean
+def stationaryPronyOU (P : Measure Ω) (W : ℝ → Ω → Vec 1) (R : ℝ → Ω → ℝ)
+    (c τ θ : ℝ) : Prop :=
+  independentWiener P 1 W ∧ 0 < c ∧ 0 < τ ∧ 0 < θ ∧
+  HasLaw (R 0) (gaussianReal 0 (Real.toNNReal (θ*c/τ))) P ∧
+  IndepFun (R 0) (fun sample t ↦ W t sample) P ∧
+  (∀ᵐ sample ∂P, ContinuousOn (fun t ↦ R t sample) (Ici 0)) ∧
+  (∀ t, 0 ≤ t → MemLp (R t) 2 P) ∧
+  ∀ t, 0 ≤ t → ∀ᵐ sample ∂P,
+    R t sample=R 0 sample+(∫ s in (0 : ℝ)..t, -R s sample/τ)+
+      Real.sqrt (2*θ*c)/τ*(W t sample 0-W 0 sample 0)
+```
+
+### MD.Ch08.pronyOU_covariance (Blueprint/Ch08.lean:1157)
+原文件上下文：
+```lean
+open Set Filter MeasureTheory ProbabilityTheory MolecularDynamics
+open scoped BigOperators Topology ContDiff ENNReal NNReal Matrix
+variable {Ω : Type*} [MeasurableSpace Ω]
+variable {n : ℕ}
+```
+```lean
+theorem pronyOU_covariance (P : Measure Ω) (W : ℝ → Ω → Vec 1)
+    (R : ℝ → Ω → ℝ) (c τ θ : ℝ) (hR : stationaryPronyOU P W R c τ θ)
+    (t s : ℝ) (ht : 0 ≤ t) (hs : 0 ≤ s) :
+    (∫ sample, R t sample ∂P)=0 ∧
+      (∫ sample, R (t+s) sample*R t sample ∂P)=θ*c/τ*Real.exp (-s/τ)
+```
+
+### MD.Ch08.totalPronyRandomForce (Blueprint/Ch08.lean:1163)
+原文件上下文：
+```lean
+open Set Filter MeasureTheory ProbabilityTheory MolecularDynamics
+open scoped BigOperators Topology ContDiff ENNReal NNReal Matrix
+variable {Ω : Type*} [MeasurableSpace Ω]
+variable {n : ℕ}
+```
+```lean
+def totalPronyRandomForce {K : ℕ} (R : Fin K → ℝ → Ω → ℝ) (t : ℝ) (sample : Ω) : ℝ :=
+  ∑ k, R k t sample
+```
+
+### MD.Ch08.pronyOU_covariance_corrected (Blueprint/Ch08.lean:1167)
+原文件上下文：
+```lean
+open Set Filter MeasureTheory ProbabilityTheory MolecularDynamics
+open scoped BigOperators Topology ContDiff ENNReal NNReal Matrix
+variable {Ω : Type*} [MeasurableSpace Ω]
+variable {n : ℕ}
+```
+```lean
+theorem pronyOU_covariance_corrected (P : Measure Ω) (W : ℝ → Ω → Vec 1)
+    (R : ℝ → Ω → ℝ) (c τ θ : ℝ) (hR : stationaryPronyOU P W R c τ θ)
+    (t s : ℝ) (ht : 0 ≤ t) (hs : 0 ≤ s) :
+    (∫ sample, R t sample ∂P)=0 ∧
+      (∫ sample, R (t+s) sample*R t sample ∂P)=θ*c/τ*Real.exp (-s/τ)
+```

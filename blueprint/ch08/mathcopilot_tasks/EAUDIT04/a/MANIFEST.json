@@ -1,0 +1,115 @@
+{
+  "batch": "EAUDIT04",
+  "subtask": "EAUDIT04a",
+  "source_ids": [
+    "MD-8.8.1-PistonHamiltonianSubfield"
+  ],
+  "input_sha256": {
+    "Blueprint/Ch08.lean": "a58849c40e30a4a6b189163f42a49e0cbdf00bd48a39a77048bfd04ff88f8a16",
+    "blueprint/ch08/ch08_source.json": "c7fea45d785f740f26c7b50c5e37abd14cb1a8b05b51f4e7ad215cd5059ebdd5",
+    "PAGES.pdf": "15987a16bc53e6ea15d7b45b5eaf1e163ebdd90c27dc2f0b1802f97503981e13"
+  },
+  "page_mapping": [
+    {
+      "attachment_page": 1,
+      "original_pdf_page": 402,
+      "printed_page": 381
+    }
+  ],
+  "definition_excerpts": [
+    {
+      "full_name": "MD.Ch08.Vec",
+      "kind": "abbrev",
+      "path": "Blueprint/Ch08.lean",
+      "line": 18,
+      "code_sha256": "6f4b254a8a7cc4115fb35265b77caa663bdd18567cd1e664cc5bbd080d02fcff"
+    },
+    {
+      "full_name": "MD.Ch08.Phase",
+      "kind": "abbrev",
+      "path": "Blueprint/Ch08.lean",
+      "line": 19,
+      "code_sha256": "377b8086105169a0d2deaa2dd84218cb6ea1d04d27b576cd82794d54e5b84300"
+    },
+    {
+      "full_name": "MD.Ch08.gradient",
+      "kind": "def",
+      "path": "Blueprint/Ch08.lean",
+      "line": 21,
+      "code_sha256": "a9a017b15c584dec720a71840d896ddb8d0e05e149030bce523362af481b101e"
+    },
+    {
+      "full_name": "MD.Ch08.kineticTwice",
+      "kind": "def",
+      "path": "Blueprint/Ch08.lean",
+      "line": 69,
+      "code_sha256": "74e9a17210c40ab25bfb4d66c78bf295ed45ebc01a50292e3e9961df7d0ced46"
+    },
+    {
+      "full_name": "MD.Ch08.PistonState",
+      "kind": "abbrev",
+      "path": "Blueprint/Ch08.lean",
+      "line": 1352,
+      "code_sha256": "37b9995e23300baa28d3ffab4fd556a4c71bdb3f8811ccee0c4c94ebc403f10a"
+    },
+    {
+      "full_name": "MD.Ch08.pistonHamiltonianPart",
+      "kind": "def",
+      "path": "Blueprint/Ch08.lean",
+      "line": 1377,
+      "code_sha256": "4f30eb2037cc9859254bafe0ba2badc2770a19e6c72bb7207cf8ae37831ffd4a"
+    },
+    {
+      "full_name": "MD.Ch08.pistonHamiltonianWeight_stationary",
+      "kind": "theorem",
+      "path": "Blueprint/Ch08.lean",
+      "line": 1380,
+      "code_sha256": "74c758b92443894909c707a7c84031f37787bc420f7387b72da8b3b928916fd3"
+    },
+    {
+      "full_name": "MD.Ch08.pistonHamiltonianPartPrinted",
+      "kind": "def",
+      "path": "Blueprint/Ch08.lean",
+      "line": 1389,
+      "code_sha256": "939d3549cdb7a22ba62a1540e226642da9ce47f329e94740c8729a6a0d9843d1"
+    },
+    {
+      "full_name": "MD.Ch08.pistonHamiltonianPart_corrected",
+      "kind": "def",
+      "path": "Blueprint/Ch08.lean",
+      "line": 1394,
+      "code_sha256": "6a0970522803f0b036d7c9a3cd82f74410708fea40031b1902fd903f39c7d931"
+    },
+    {
+      "full_name": "MolecularDynamics.Chapter05Review.E",
+      "kind": "abbrev",
+      "path": "MolecularDynamics/Chapter05/ReviewDefinitions.lean",
+      "line": 18,
+      "code_sha256": "b497c8ba7f01b62a3147d9ae65652772ff3f81e57aa19b116f1283fef7a3cc60"
+    },
+    {
+      "full_name": "MolecularDynamics.textbookDivergence",
+      "kind": "def",
+      "path": "MolecularDynamics/Chapter08/ThermostatDensity.lean",
+      "line": 18,
+      "code_sha256": "1b45cabec3bf68bd209da969759334d158c263b7e5a40ed527bd3a4f48e25c48"
+    }
+  ],
+  "validation": {
+    "project_constant_closure": "PASS",
+    "missing_project_definitions": [],
+    "full_page_render_equality_dpi": 72,
+    "website_submitted": false
+  },
+  "files": {
+    "PASTE.txt": {
+      "bytes": 13606,
+      "sha256": "0421199dcd2a728090f93c77da8be3adde814f3b63ab55265bb2460306a74c47"
+    },
+    "PAGES.pdf": {
+      "bytes": 77803,
+      "sha256": "15987a16bc53e6ea15d7b45b5eaf1e163ebdd90c27dc2f0b1802f97503981e13"
+    }
+  },
+  "total_task_bytes": 95171
+}

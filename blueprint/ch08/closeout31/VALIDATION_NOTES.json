@@ -1,0 +1,14 @@
+{
+  "local_compile": "lake --no-cache env lean --server的官方编译器逐文件完整elaboration，逐条#print axioms均输出；5条FAIL各有独立保存的源码、诊断和公理收据。",
+  "repaired_compile_error": "综合编译首次遇连续docstring语法错误；将npDeltaN前内部说明改普通块注释，r2全文件与396声明公理通过；失败证据保留。",
+  "proof_attempts": {
+    "sinLyapunovTail_corrected": [
+      "路线1：引用原有生成元式、约束界，按ξ₂符号分情况，nlinarith完成。"
+    ],
+    "pronyOU_covariance_corrected": [
+      "路线1：引用原有带平稳初态定理，完成；两者均仍传递依赖sorryAx，记未证。"
+    ]
+  },
+  "website": "未提交复审；没有把本地编译通过改写为网站PASS。",
+  "freeze_scope": "工作树开工快照；此前四份第2–5章日志的无关改动及旧临时文件原样保留，不纳入本轮提交。"
+}

@@ -1,0 +1,58 @@
+{
+  "batches": 4,
+  "subtasks": 10,
+  "covered_entries": 10,
+  "checks": [
+    {
+      "source_id": "MD-8.1.2.1-NPEquations",
+      "project_constants": 9,
+      "missing": []
+    },
+    {
+      "source_id": "MD-8.2.1-Examples81and82",
+      "project_constants": 13,
+      "missing": []
+    },
+    {
+      "source_id": "MD-8.4-AdditiveThermostatSDE",
+      "project_constants": 10,
+      "missing": []
+    },
+    {
+      "source_id": "MD-8.4.1-NHL",
+      "project_constants": 15,
+      "missing": []
+    },
+    {
+      "source_id": "MD-8.4.3-PreEquilibriumMeans",
+      "project_constants": 8,
+      "missing": []
+    },
+    {
+      "source_id": "MD-8.4.4-RescalingStationary",
+      "project_constants": 15,
+      "missing": []
+    },
+    {
+      "source_id": "MD-8.5-SLSLeapfrog",
+      "project_constants": 12,
+      "missing": []
+    },
+    {
+      "source_id": "MD-8.6.2-SINLyapunov",
+      "project_constants": 12,
+      "missing": []
+    },
+    {
+      "source_id": "MD-8.7.1-PronyOUStationarity",
+      "project_constants": 6,
+      "missing": []
+    },
+    {
+      "source_id": "MD-8.8.1-PistonHamiltonianSubfield",
+      "project_constants": 11,
+      "missing": []
+    }
+  ],
+  "website_submitted": false
+}

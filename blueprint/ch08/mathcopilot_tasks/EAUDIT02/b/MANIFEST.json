@@ -1,0 +1,99 @@
+{
+  "batch": "EAUDIT02",
+  "subtask": "EAUDIT02b",
+  "source_ids": [
+    "MD-8.4.3-PreEquilibriumMeans"
+  ],
+  "input_sha256": {
+    "Blueprint/Ch08.lean": "a58849c40e30a4a6b189163f42a49e0cbdf00bd48a39a77048bfd04ff88f8a16",
+    "blueprint/ch08/ch08_source.json": "c7fea45d785f740f26c7b50c5e37abd14cb1a8b05b51f4e7ad215cd5059ebdd5",
+    "PAGES.pdf": "562b7d1c63fcf904a00c0d4d97ccdb18e574c37e50bb751512d045a41a98a544"
+  },
+  "page_mapping": [
+    {
+      "attachment_page": 1,
+      "original_pdf_page": 375,
+      "printed_page": 354
+    },
+    {
+      "attachment_page": 2,
+      "original_pdf_page": 376,
+      "printed_page": 355
+    }
+  ],
+  "definition_excerpts": [
+    {
+      "full_name": "MD.Ch08.Vec",
+      "kind": "abbrev",
+      "path": "Blueprint/Ch08.lean",
+      "line": 18,
+      "code_sha256": "6f4b254a8a7cc4115fb35265b77caa663bdd18567cd1e664cc5bbd080d02fcff"
+    },
+    {
+      "full_name": "MD.Ch08.Phase",
+      "kind": "abbrev",
+      "path": "Blueprint/Ch08.lean",
+      "line": 19,
+      "code_sha256": "377b8086105169a0d2deaa2dd84218cb6ea1d04d27b576cd82794d54e5b84300"
+    },
+    {
+      "full_name": "MD.Ch08.probabilityDensity",
+      "kind": "def",
+      "path": "Blueprint/Ch08.lean",
+      "line": 25,
+      "code_sha256": "273a20a340df892158ae6bb7b929ef8c57e9d95f5785ff9729ead4dba069d0f6"
+    },
+    {
+      "full_name": "MD.Ch08.kineticTwice",
+      "kind": "def",
+      "path": "Blueprint/Ch08.lean",
+      "line": 69,
+      "code_sha256": "74e9a17210c40ab25bfb4d66c78bf295ed45ebc01a50292e3e9961df7d0ced46"
+    },
+    {
+      "full_name": "MD.Ch08.meanKineticTwice",
+      "kind": "def",
+      "path": "Blueprint/Ch08.lean",
+      "line": 600,
+      "code_sha256": "122d67114cf2729958a39d45719304ce3a477b44eddb354f09a9df31f2f6f0ff"
+    },
+    {
+      "full_name": "MD.Ch08.meanBath",
+      "kind": "def",
+      "path": "Blueprint/Ch08.lean",
+      "line": 602,
+      "code_sha256": "686624288c9273577d6c737f520d7e971f59cf0924afd7d3c2ae9df79f4608ab"
+    },
+    {
+      "full_name": "MD.Ch08.preEquilibriumDensity",
+      "kind": "def",
+      "path": "Blueprint/Ch08.lean",
+      "line": 603,
+      "code_sha256": "0bb8dcda458b017263c4bf22efe16a431c37d149361ba7f1251068fc35e99d4a"
+    },
+    {
+      "full_name": "MolecularDynamics.Chapter05Review.E",
+      "kind": "abbrev",
+      "path": "MolecularDynamics/Chapter05/ReviewDefinitions.lean",
+      "line": 18,
+      "code_sha256": "b497c8ba7f01b62a3147d9ae65652772ff3f81e57aa19b116f1283fef7a3cc60"
+    }
+  ],
+  "validation": {
+    "project_constant_closure": "PASS",
+    "missing_project_definitions": [],
+    "full_page_render_equality_dpi": 90,
+    "website_submitted": false
+  },
+  "files": {
+    "PASTE.txt": {
+      "bytes": 17408,
+      "sha256": "58f42016b84b7310d18a8f8d837a14fb25ae2dc23a067e709c00f9250b8bcd2c"
+    },
+    "PAGES.pdf": {
+      "bytes": 167123,
+      "sha256": "562b7d1c63fcf904a00c0d4d97ccdb18e574c37e50bb751512d045a41a98a544"
+    }
+  },
+  "total_task_bytes": 187605
+}

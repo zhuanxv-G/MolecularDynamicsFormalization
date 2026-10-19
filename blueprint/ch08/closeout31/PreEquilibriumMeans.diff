@@ -1,0 +1,12 @@
+--- first-round
++++ repaired
+@@ -1,5 +1,8 @@
+ def meanKineticTwice (invm : Vec n) (ρ : ℝ → Phase n × ℝ → ℝ) (t : ℝ) : ℝ :=
+   ∫ z, kineticTwice invm z.1.2 * ρ t z
+ def meanBath (ρ : ℝ → Phase n × ℝ → ℝ) (t : ℝ) : ℝ := ∫ z, z.2 * ρ t z
+-def preEquilibriumDensity (ρ : ℝ → Phase n × ℝ → ℝ) : Prop :=
+-  ∀ t, 0 ≤ t → probabilityDensity volume (ρ t)+def preEquilibriumDensity (invm : Vec n) (ρ : ℝ → Phase n × ℝ → ℝ) : Prop :=
++  (∀ i, 0 < invm i) ∧ ∀ t, 0 ≤ t →
++    probabilityDensity volume (ρ t) ∧
++    Integrable (fun z : Phase n × ℝ ↦ kineticTwice invm z.1.2 * ρ t z) volume ∧
++    Integrable (fun z : Phase n × ℝ ↦ z.2 * ρ t z) volume

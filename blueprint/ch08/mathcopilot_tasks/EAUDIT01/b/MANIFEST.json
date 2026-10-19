@@ -1,0 +1,134 @@
+{
+  "batch": "EAUDIT01",
+  "subtask": "EAUDIT01b",
+  "source_ids": [
+    "MD-8.2.1-Examples81and82"
+  ],
+  "input_sha256": {
+    "Blueprint/Ch08.lean": "a58849c40e30a4a6b189163f42a49e0cbdf00bd48a39a77048bfd04ff88f8a16",
+    "blueprint/ch08/ch08_source.json": "c7fea45d785f740f26c7b50c5e37abd14cb1a8b05b51f4e7ad215cd5059ebdd5",
+    "PAGES.pdf": "2b545dc16e2082831c04e51757e7b4f3911c1b03d4fe1c1dc8959d4a17e0709a"
+  },
+  "page_mapping": [
+    {
+      "attachment_page": 1,
+      "original_pdf_page": 358,
+      "printed_page": 337
+    },
+    {
+      "attachment_page": 2,
+      "original_pdf_page": 359,
+      "printed_page": 338
+    }
+  ],
+  "definition_excerpts": [
+    {
+      "full_name": "MD.Ch08.Vec",
+      "kind": "abbrev",
+      "path": "Blueprint/Ch08.lean",
+      "line": 18,
+      "code_sha256": "6f4b254a8a7cc4115fb35265b77caa663bdd18567cd1e664cc5bbd080d02fcff"
+    },
+    {
+      "full_name": "MD.Ch08.dot",
+      "kind": "def",
+      "path": "Blueprint/Ch08.lean",
+      "line": 20,
+      "code_sha256": "bb45cec5def0e642f7dde399650df8a6486048be491d116502106e187aa99348"
+    },
+    {
+      "full_name": "MD.Ch08.gradient",
+      "kind": "def",
+      "path": "Blueprint/Ch08.lean",
+      "line": 21,
+      "code_sha256": "a9a017b15c584dec720a71840d896ddb8d0e05e149030bce523362af481b101e"
+    },
+    {
+      "full_name": "MD.Ch08.skewMatrix",
+      "kind": "def",
+      "path": "Blueprint/Ch08.lean",
+      "line": 226,
+      "code_sha256": "d9b6b15f9fa1129821f6ada07e2ca6a96f1b9fbe079d9f4e7f62241e0a82f3b7"
+    },
+    {
+      "full_name": "MD.Ch08.generalizedFeedback",
+      "kind": "def",
+      "path": "Blueprint/Ch08.lean",
+      "line": 263,
+      "code_sha256": "c3e7e4456a1d56ea5ebdc383f1ab3875564df761a2fa336a8db694b4d8dd7736"
+    },
+    {
+      "full_name": "MD.Ch08.configurationalFeedback",
+      "kind": "def",
+      "path": "Blueprint/Ch08.lean",
+      "line": 265,
+      "code_sha256": "d925c668450c55ae982d2594c579e84b5dfd4b0d43a5d980f3be9b4e81837474"
+    },
+    {
+      "full_name": "MD.Ch08.generalizedFeedback_stationaryPrinted",
+      "kind": "theorem",
+      "path": "Blueprint/Ch08.lean",
+      "line": 268,
+      "code_sha256": "dcfa5acb209b69712bcf6f6db6eb453748e5beab5d14fe6ac24b5bbb79b8a292"
+    },
+    {
+      "full_name": "MD.Ch08.generalizedFeedback_stationary_corrected",
+      "kind": "theorem",
+      "path": "Blueprint/Ch08.lean",
+      "line": 278,
+      "code_sha256": "663c84ba79822d9a5dc334519e5914e541fd5119d98249e560cd6570cb7394b3"
+    },
+    {
+      "full_name": "MolecularDynamics.Chapter02Review.Q",
+      "kind": "abbrev",
+      "path": "MolecularDynamics/Chapter02/ReviewDefinitions.lean",
+      "line": 17,
+      "code_sha256": "d01d4518aed3668e7c982afee1cd3820fb858a94438e5b8960aa0557f5a57ef1"
+    },
+    {
+      "full_name": "MolecularDynamics.Chapter04Review.Q",
+      "kind": "abbrev",
+      "path": "MolecularDynamics/Chapter04/ReviewDefinitions.lean",
+      "line": 15,
+      "code_sha256": "d01d4518aed3668e7c982afee1cd3820fb858a94438e5b8960aa0557f5a57ef1"
+    },
+    {
+      "full_name": "MolecularDynamics.Chapter05Review.E",
+      "kind": "abbrev",
+      "path": "MolecularDynamics/Chapter05/ReviewDefinitions.lean",
+      "line": 18,
+      "code_sha256": "b497c8ba7f01b62a3147d9ae65652772ff3f81e57aa19b116f1283fef7a3cc60"
+    },
+    {
+      "full_name": "MolecularDynamics.textbookDivergence",
+      "kind": "def",
+      "path": "MolecularDynamics/Chapter08/ThermostatDensity.lean",
+      "line": 18,
+      "code_sha256": "1b45cabec3bf68bd209da969759334d158c263b7e5a40ed527bd3a4f48e25c48"
+    },
+    {
+      "full_name": "MolecularDynamics.textbookLiouvilleStationary",
+      "kind": "def",
+      "path": "MolecularDynamics/Chapter08/ThermostatDensity.lean",
+      "line": 22,
+      "code_sha256": "f508a347a748f1f3bf44848b427a82bfe147392454daa2e910628a63a8fad1ae"
+    }
+  ],
+  "validation": {
+    "project_constant_closure": "PASS",
+    "missing_project_definitions": [],
+    "full_page_render_equality_dpi": 72,
+    "website_submitted": false
+  },
+  "files": {
+    "PASTE.txt": {
+      "bytes": 18215,
+      "sha256": "3fb2cd158cbb23cb5ea5b11cd70935f5162b4955f825b15245f5c35bfa788a92"
+    },
+    "PAGES.pdf": {
+      "bytes": 97271,
+      "sha256": "2b545dc16e2082831c04e51757e7b4f3911c1b03d4fe1c1dc8959d4a17e0709a"
+    }
+  },
+  "total_task_bytes": 119946
+}

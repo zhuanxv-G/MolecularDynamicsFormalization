@@ -1,0 +1,688 @@
+{
+  "batch": "BATCH10",
+  "chapter": "ch08",
+  "round": "first-merged",
+  "input_sha256": {
+    "Blueprint/Ch08.lean": "2800812fadd8e2557013f1941e4570401f7903d46f44baf07e23d5531da22a72",
+    "blueprint/ch08/ch08_source.json": "9b994b0f64cd22c85c2ad4123fbfdbd064bd7a6d070fe13b721794432f9f7a63"
+  },
+  "items": [
+    {
+      "source_id": "MD-8.6.2-SINBracketRank",
+      "json_review": {
+        "status": "CORRECTED",
+        "issue_codes": [
+          "STALE_TRANSCRIPTION_NOTE",
+          "SUMMARY_DOMAIN_NEEDS_EXPLICIT_XI1"
+        ],
+        "corrected_json": {
+          "source_id": "MD-8.6.2-SINBracketRank",
+          "kind": "unnumbered_claim",
+          "label": null,
+          "section": "8.6.2",
+          "printed_page": "366–368",
+          "pdf_page": "387–389",
+          "statement_latex": "For θ>0, γ>0, on p²+ξ₁²/2=θ with ξ₁≠0 and outside M₀, the fields f,g,[f,g],[f,[f,g]],[f,[f,[f,g]]] span the three-dimensional tangent space of the isokinetic cylinder.",
+          "statement_verbatim": "366\n8\nExtended Variable Methods\n8.6.2\nErgodicity\nFollowing the discussion in [220], let us show ergodicity for the stochastic isokinetic\nharmonic oscillator:\ndq D pdt\ndp D Œ\u0003q \u0003 \u0013p\tdt\nd\u00121 D Œ\u0003\u0013\u00121 \u0003 \u00122\u00121\tdt\nd\u00122 D Œ\u00122\n1 \u0003 kBT \u0003 \n\u00122\tdt C \u0007dW\n(8.45)\nwith \u0013 D \u0002qp\u0002\u00122\u00122\n1=2\np2C\u00122\n1=2\nand \u0007 D p2\nkBT. We have taken the coupling coefﬁcients\n\u00061; \u00062 both one for simplicity as their particular values (as long as nonzero) have\nno bearing on the ergodic property.\nThe constraint, p2 C \u00122\n1=2 D const, deﬁnes a three-dimensional manifold M, a\ngeneralized cylinder. \u00121 D 0 is an invariant manifold of the isokinetic equations,\nwith solutions therefore conﬁned for all time to one or the other half-space (\u00121 < 0\nor \u00121 > 0). It is enough to sample one or the other of the two half spaces. To show\nthat the solutions do so, we need to demonstrate that an appropriate Hörmander\ncondition holds. Deﬁne f and g as the vector ﬁelds\nf D p@q \u0003 .q C \u0013p/@p \u0003 .\u0013\u00121 C \u00122\u00121/@\u00121 C\n\n.\u00122\n1 \u0003 kBT/ \u0003 \n\u00122\n\u000b\n@\u00122;\n(8.46)\nand\ng D \u0007@\u00122:\n(8.47)\nWe will show that the dimension of the ideal spanned by the iterated commutators\nof the vector ﬁelds f and g is three, i.e. that it spans the tangent space to M at any\npoint. For this purpose, we use the collection of vectors\nf; g; Œf; g\t; Œf; Œf; g\t\t; Œf; Œf; Œf; g\t\t\t:\nWe will see that these provide a basis at every point excluding the one-dimensional\nset deﬁned by the union M0 of the two lines `C, `\u0002 deﬁned by\nq D 0;\np D 0;\n\u00121 D ˙\nq\n2\u0006\u00021\n1 kBT;\nand arbitrary \u00122. [Note: the choice \u00121 D ˙\nq\n2\u0006\u00021\n1 kBT is made so that the isokinetic\nconstraint is satisﬁed. In [220] this value was incorrectly deﬁned.] The vectors f and\ng are linearly independent except on M0.\n\n8.6\nIsokinetic Methods and Integration with Very Large Timestep\n367\nThe proof requires calculation of the vector ﬁelds\nu0 D ˘ f;\nu1 D ˘ Œf; g\t ;\nu2 D ˘ Œf; Œf; g\t\t;\nu3 D ˘ Œf; Œf; Œf; g\t\t\t;\nwhere ˘ is the projector onto the ﬁrst three components. Because g D \u0007e4,\nit is enough to show that any pair from among these four vectors are linearly\nindependent, except possibly on M0. Note that projection can only be performed\nafter the full calculation of the relevant commutator. Because the commutators\nquickly become quite messy, we used a symbolic computing package to assist in\nthese calculations.\nThe ﬁrst two vectors are:\nu0 D p@q \u0003 .q C \u0013p/@p \u0003 .\u0013\u00121 C \u00121\u00122/@\u00121;\n(8.48)\nand\nu1 D \u0007p @\u0013\n@\u00122\n@p C \u00121\n\b\n1 C @\u0013\n@\u00122\n\t\n@\u00121:\n(8.49)\nAfter expanding the derivatives of \u0013 we have\nu1 D p@q C \u00122\n1\n\b\u0003q C p\u00122\nD\n\t\n@p \u0003 2\u00121p\n\b\u0003q C p\u00122\nD\n\t\n@\u00121;\n(8.50)\nand\nu2 D \u0003\u0007.\u00122\n1p=D/@p C .2\u0007\u00121p2=D/@\u00121;\n(8.51)\nwhere D D 2p2 C \u00122\n1.\nIf q ¤ 0 and p ¤ 0, then clearly u1 and u2 are linearly independent. However, if\np D 0 then u2 D 0. We proceed to compute the commutator Œf; Œf; g\t\t. Projecting to\nthe ﬁrst three components results in\nu2 D \u0007\n\b\u00122\n1p\nD\n\t\n@q \u0003 \u0007\n\b2\np3 C \n\u00122\n1p \u0003 \u00122\n1q\nD2\n\t\n@p C 2\u0007\u00121p\n\b2\np3 C \n\u00122\n1p \u0003 \u00122\n1q\nD2\n\t\n@\u00121:\n(8.52)\nAgain, we substitute p D 0 and ﬁnd that\nu2jpD0 D .\u0007\u00122\n1q=D2/@p:\n(8.53)\nUnfortunately, this is parallel to u1 (for p D 0), and hence yet one more commutator\nis required in this case.\n\n368\n8\nExtended Variable Methods\nWe calculate Œf; Œf; Œf; g\t\t\t and project onto the space spanned by the ﬁrst three\ncomponents to ﬁnd\nu3 D \u0007\n\b2\np3 \u0003 4p3\u00122 C 4p2q C \u00122\n1p\u00122 C \n\u00122\n1p \u0003 2\u00122\n1q\nD2\n\t\n@q\n\u0003 \u0007\u00122\n1\n\u0006 \u000f\nD3\n\u0007\n@p C 2\u0007\u00121p\n\u0006 \u000f\nD3\n\u0007\n@\u00121:\n(8.54)\nwith\n\u000f D 4p5\n2 \u0003 8p5\u00122\n1 \u0003 4\u00122\n1p3 C 4p3\n2\u00122\n1 \u0003 4p3\u00124\n1\n\u0003 2\n\u00122\n1p2q C 4p2q\u00122\u00122\n1 \u0003 4\u00122\n1q2p \u0003 2\u00124\n1p C p\n2\u00124\n1 \u0003 q\n\u00124\n1 C \u00124\n1\u00122q:\n(8.55)\nAlong p D 0, u3 becomes\nu3jpD0 D \u00032\u0007q@q \u0003 \u0007\n\b\u0003q\n\u00124\n1 C \u00124\n1\u00122q\n\u00124\n1\n\t\n@p\nD \u00032\u0007q@q \u0003 \u0007q.\u0003\n C \u00122/@p:\n(8.56)\nTogether with u0 we obtain a linearly independent set as long as q ¤ 0.\nIf p D 0 and q D 0 then we are on M0. If p ¤ 0 then u2 and u0 are linearly\nindependent. If q ¤ 0 then u3 and u0 are linearly independent. From these we\nestablish that the Hörmander condition holds everywhere except on a space of co-\ndimension 2 (that is except on the one-dimensional set M0).\nIn this case, it is possible to complete the proof by introducing a Lyapunov\nfunction \b to demonstrate the necessary contractivity in the \u00122 direction. The\ngenerator of this system is\nLisok D p @\n@q C\n\nF \u0003 .p2=\u0017/F\n\u000b @\n@p \u0003 p\u00121F\n\u0017\n@\n@\u00121\nC LN C LO\nwith \u0017 D p2 C \u00122\n1=2,\nLN D 1\n2\n\u00122\n1\u00122p\n\u0017\n@\n@p C 1\n2\n\u00123\n1\u00122\n\u0017\n@\n@\u00121\n\u0003 \u00122\u00121\n@\n@\u00121\nC Œ\u00122\n1 \u0003 ˇ\u00021\t @\n@\u00122\n;\nand\nLO D \u0003\n\u00122\n@\n@\u00122\nC \u00072\n2\n@2\n@\u00122\n2\n:\n",
+          "verbatim_scope": "完整对应原页文字层，逐字保留；本条数学成分由statement_latex及statement_scope定位。",
+          "proof_latex": null,
+          "proof_note": "对应原页推导逐字保存在statement_verbatim/original_page_text；排版以原页PDF为准。",
+          "original_page_text": [
+            {
+              "pdf_page": 387,
+              "printed_page": 366,
+              "text": "366\n8\nExtended Variable Methods\n8.6.2\nErgodicity\nFollowing the discussion in [220], let us show ergodicity for the stochastic isokinetic\nharmonic oscillator:\ndq D pdt\ndp D Œ\u0003q \u0003 \u0013p\tdt\nd\u00121 D Œ\u0003\u0013\u00121 \u0003 \u00122\u00121\tdt\nd\u00122 D Œ\u00122\n1 \u0003 kBT \u0003 \n\u00122\tdt C \u0007dW\n(8.45)\nwith \u0013 D \u0002qp\u0002\u00122\u00122\n1=2\np2C\u00122\n1=2\nand \u0007 D p2\nkBT. We have taken the coupling coefﬁcients\n\u00061; \u00062 both one for simplicity as their particular values (as long as nonzero) have\nno bearing on the ergodic property.\nThe constraint, p2 C \u00122\n1=2 D const, deﬁnes a three-dimensional manifold M, a\ngeneralized cylinder. \u00121 D 0 is an invariant manifold of the isokinetic equations,\nwith solutions therefore conﬁned for all time to one or the other half-space (\u00121 < 0\nor \u00121 > 0). It is enough to sample one or the other of the two half spaces. To show\nthat the solutions do so, we need to demonstrate that an appropriate Hörmander\ncondition holds. Deﬁne f and g as the vector ﬁelds\nf D p@q \u0003 .q C \u0013p/@p \u0003 .\u0013\u00121 C \u00122\u00121/@\u00121 C\n\n.\u00122\n1 \u0003 kBT/ \u0003 \n\u00122\n\u000b\n@\u00122;\n(8.46)\nand\ng D \u0007@\u00122:\n(8.47)\nWe will show that the dimension of the ideal spanned by the iterated commutators\nof the vector ﬁelds f and g is three, i.e. that it spans the tangent space to M at any\npoint. For this purpose, we use the collection of vectors\nf; g; Œf; g\t; Œf; Œf; g\t\t; Œf; Œf; Œf; g\t\t\t:\nWe will see that these provide a basis at every point excluding the one-dimensional\nset deﬁned by the union M0 of the two lines `C, `\u0002 deﬁned by\nq D 0;\np D 0;\n\u00121 D ˙\nq\n2\u0006\u00021\n1 kBT;\nand arbitrary \u00122. [Note: the choice \u00121 D ˙\nq\n2\u0006\u00021\n1 kBT is made so that the isokinetic\nconstraint is satisﬁed. In [220] this value was incorrectly deﬁned.] The vectors f and\ng are linearly independent except on M0.\n"
+            },
+            {
+              "pdf_page": 388,
+              "printed_page": 367,
+              "text": "8.6\nIsokinetic Methods and Integration with Very Large Timestep\n367\nThe proof requires calculation of the vector ﬁelds\nu0 D ˘ f;\nu1 D ˘ Œf; g\t ;\nu2 D ˘ Œf; Œf; g\t\t;\nu3 D ˘ Œf; Œf; Œf; g\t\t\t;\nwhere ˘ is the projector onto the ﬁrst three components. Because g D \u0007e4,\nit is enough to show that any pair from among these four vectors are linearly\nindependent, except possibly on M0. Note that projection can only be performed\nafter the full calculation of the relevant commutator. Because the commutators\nquickly become quite messy, we used a symbolic computing package to assist in\nthese calculations.\nThe ﬁrst two vectors are:\nu0 D p@q \u0003 .q C \u0013p/@p \u0003 .\u0013\u00121 C \u00121\u00122/@\u00121;\n(8.48)\nand\nu1 D \u0007p @\u0013\n@\u00122\n@p C \u00121\n\b\n1 C @\u0013\n@\u00122\n\t\n@\u00121:\n(8.49)\nAfter expanding the derivatives of \u0013 we have\nu1 D p@q C \u00122\n1\n\b\u0003q C p\u00122\nD\n\t\n@p \u0003 2\u00121p\n\b\u0003q C p\u00122\nD\n\t\n@\u00121;\n(8.50)\nand\nu2 D \u0003\u0007.\u00122\n1p=D/@p C .2\u0007\u00121p2=D/@\u00121;\n(8.51)\nwhere D D 2p2 C \u00122\n1.\nIf q ¤ 0 and p ¤ 0, then clearly u1 and u2 are linearly independent. However, if\np D 0 then u2 D 0. We proceed to compute the commutator Œf; Œf; g\t\t. Projecting to\nthe ﬁrst three components results in\nu2 D \u0007\n\b\u00122\n1p\nD\n\t\n@q \u0003 \u0007\n\b2\np3 C \n\u00122\n1p \u0003 \u00122\n1q\nD2\n\t\n@p C 2\u0007\u00121p\n\b2\np3 C \n\u00122\n1p \u0003 \u00122\n1q\nD2\n\t\n@\u00121:\n(8.52)\nAgain, we substitute p D 0 and ﬁnd that\nu2jpD0 D .\u0007\u00122\n1q=D2/@p:\n(8.53)\nUnfortunately, this is parallel to u1 (for p D 0), and hence yet one more commutator\nis required in this case.\n"
+            },
+            {
+              "pdf_page": 389,
+              "printed_page": 368,
+              "text": "368\n8\nExtended Variable Methods\nWe calculate Œf; Œf; Œf; g\t\t\t and project onto the space spanned by the ﬁrst three\ncomponents to ﬁnd\nu3 D \u0007\n\b2\np3 \u0003 4p3\u00122 C 4p2q C \u00122\n1p\u00122 C \n\u00122\n1p \u0003 2\u00122\n1q\nD2\n\t\n@q\n\u0003 \u0007\u00122\n1\n\u0006 \u000f\nD3\n\u0007\n@p C 2\u0007\u00121p\n\u0006 \u000f\nD3\n\u0007\n@\u00121:\n(8.54)\nwith\n\u000f D 4p5\n2 \u0003 8p5\u00122\n1 \u0003 4\u00122\n1p3 C 4p3\n2\u00122\n1 \u0003 4p3\u00124\n1\n\u0003 2\n\u00122\n1p2q C 4p2q\u00122\u00122\n1 \u0003 4\u00122\n1q2p \u0003 2\u00124\n1p C p\n2\u00124\n1 \u0003 q\n\u00124\n1 C \u00124\n1\u00122q:\n(8.55)\nAlong p D 0, u3 becomes\nu3jpD0 D \u00032\u0007q@q \u0003 \u0007\n\b\u0003q\n\u00124\n1 C \u00124\n1\u00122q\n\u00124\n1\n\t\n@p\nD \u00032\u0007q@q \u0003 \u0007q.\u0003\n C \u00122/@p:\n(8.56)\nTogether with u0 we obtain a linearly independent set as long as q ¤ 0.\nIf p D 0 and q D 0 then we are on M0. If p ¤ 0 then u2 and u0 are linearly\nindependent. If q ¤ 0 then u3 and u0 are linearly independent. From these we\nestablish that the Hörmander condition holds everywhere except on a space of co-\ndimension 2 (that is except on the one-dimensional set M0).\nIn this case, it is possible to complete the proof by introducing a Lyapunov\nfunction \b to demonstrate the necessary contractivity in the \u00122 direction. The\ngenerator of this system is\nLisok D p @\n@q C\n\nF \u0003 .p2=\u0017/F\n\u000b @\n@p \u0003 p\u00121F\n\u0017\n@\n@\u00121\nC LN C LO\nwith \u0017 D p2 C \u00122\n1=2,\nLN D 1\n2\n\u00122\n1\u00122p\n\u0017\n@\n@p C 1\n2\n\u00123\n1\u00122\n\u0017\n@\n@\u00121\n\u0003 \u00122\u00121\n@\n@\u00121\nC Œ\u00122\n1 \u0003 ˇ\u00021\t @\n@\u00122\n;\nand\nLO D \u0003\n\u00122\n@\n@\u00122\nC \u00072\n2\n@2\n@\u00122\n2\n:\n"
+            }
+          ],
+          "numbered_equations": [],
+          "transcription_note": "文字层逐字保留；数学排版另行转写，原页中的特殊字形编码不静默替换。本条范围按R4_任务.md与R4_PAGES.pdf对应附件页核对。",
+          "context_notation": [
+            "R4：SIN相关条目的θ=k_BT=β⁻¹、Q1=μ₁、Q2=μ₂，坐标顺序(q,p,ξ₁,ξ₂)；SLS条目的Q=μ、invm=M⁻¹对角元。仅按本条适用的符号对应解释。"
+          ],
+          "extra_assumptions": [
+            "θ,γ正，ξ₁≠0且在正约束面；仅声明有限向量族张成实际切空间，Hörmander理论推出平滑密度或遍历性未覆盖。"
+          ],
+          "issues": [
+            "PDF387–389列出的五个场和M0吻合。原页先说明运动限制在ξ₁>0或ξ₁<0半空间；statement_latex应显式带上这一域，避免把“除M0外”误读为包含ξ₁=0的整个圆柱。"
+          ],
+          "statement_scope": "例外直线外的有限括号张成目标；非完整遍历性定理。",
+          "lean_decl": "MD.Ch08.sinBracket_tangentSpan",
+          "lean_declarations": [
+            "MD.Ch08.sinBracket_tangentSpan"
+          ],
+          "source_page_verification": "R4独立审校：original_page_text与附件逐页提取文本逐字一致；statement_verbatim与各页文本以单个换行连接后逐字一致；数学排版另经原页图像核对。",
+          "repair_log": [
+            "R4：删除无关PDF420模板残句；核对来源替换为本次附件检查。",
+            "R4：摘要显式补回extra_assumptions和Lean已有的半柱及正参数域；不更改原文逐字字段。"
+          ],
+          "documented_priors": []
+        },
+        "issues": [
+          {
+            "code": "STALE_TRANSCRIPTION_NOTE",
+            "severity": "metadata",
+            "message": "transcription_note末句“PDF420仅取Exercises之前”与本批第8章附件无关，删除该旧模板残句。"
+          },
+          {
+            "code": "SUMMARY_DOMAIN_NEEDS_EXPLICIT_XI1",
+            "severity": "scope",
+            "message": "PDF387–389列出的五个场和M0吻合。原页先说明运动限制在ξ₁>0或ξ₁<0半空间；statement_latex应显式带上这一域，避免把“除M0外”误读为包含ξ₁=0的整个圆柱。"
+          }
+        ],
+        "evidence": {
+          "A_text_comparison": {
+            "method": "PyMuPDF逐页get_text()与任务JSON中text作Python字符串全等比较；statement_verbatim与原页提取文本按单换行连接作全等比较",
+            "pages": [
+              {
+                "attachment_page": 16,
+                "exact": true,
+                "whitespace_equal": true,
+                "len": [
+                  1675,
+                  1675
+                ]
+              },
+              {
+                "attachment_page": 17,
+                "exact": true,
+                "whitespace_equal": true,
+                "len": [
+                  1393,
+                  1393
+                ]
+              },
+              {
+                "attachment_page": 18,
+                "exact": true,
+                "whitespace_equal": true,
+                "len": [
+                  1243,
+                  1243
+                ]
+              }
+            ],
+            "statement_verbatim_exact": true,
+            "pdf_math_layout_checked": true,
+            "finding": "PDF387–389列出的五个场和M0吻合。原页先说明运动限制在ξ₁>0或ξ₁<0半空间；statement_latex应显式带上这一域，避免把“除M0外”误读为包含ξ₁=0的整个圆柱。"
+          },
+          "C_readonly_signature_review": {
+            "scope": "仅R4_任务.md摘录及附录D1–D19、列出的MolecularDynamics依赖；Mathlib标准定义按题意采信。未修改或编译工程，未补证明，不因sorry判失败。",
+            "declarations": [
+              "MD.Ch08.sinBracket_tangentSpan"
+            ],
+            "findings": [
+              "sinBracket_tangentSpan：PASS，完整结论是子模等式，而非只给出向量数目或rank下界。",
+              "[EXTRA] 正参数和非零ξ₁已列在extra_assumptions；其作用须在摘要可见。",
+              "未声称已从括号条件推出密度光滑、可达性或遍历性。"
+            ],
+            "annotation_check": "本条Lean摘录没有字面[EXTRA]/[ERRATUM?]标签；按JSON的extra_assumptions、issues、statement_scope及Printed/_corrected命名分别核对。原书疑误保留；文中PASS仅表示签名/忠实性，不表示sorry已消除。"
+          }
+        }
+      },
+      "audit": {
+        "lean_decl": "MD.Ch08.sinBracket_tangentSpan",
+        "verdict": "PASS",
+        "explanation": "sinBracket_tangentSpan假设θ>0、γ>0、K(z)=θ、ξ₁≠0及z∉M0。左侧是噪声g与j=0,1,2,3四个真实sinBracket值的实线性张成；右侧是实际K微分的核，即三维切空间。它没有使用Printed错式作定义。γ、θ正使σ非零，ξ₁≠0排除不受噪声横向驱动的边界；在p≠0时f的q分量与首括号的非零p分量提供两个独立投影，在p=0且不在M0时q≠0，f及真实三重括号提供两个独立投影，连同g张成三维。该签名正确；sorry不使签名FAIL。 sinBracket_tangentSpan：PASS，完整结论是子模等式，而非只给出向量数目或rank下界。 [EXTRA] 正参数和非零ξ₁已列在extra_assumptions；其作用须在摘要可见。 未声称已从括号条件推出密度光滑、可达性或遍历性。",
+        "counterexample": "若删掉ξ₁≠0：取θ=γ=1、z=(0,1,0,0)，它在K=1且不在M0，但ξ₁=0是不变面，所有这些场的ξ₁分量为0，只能张成切空间的至多二维部分。此反例针对遗漏域的摘要，不针对现有Lean定理。",
+        "suggested_fix": "在statement_latex显式加入θ,γ>0、K=θ及ξ₁≠0；保留现有Lean全部前提，不将半柱结论扩大到ξ₁=0边界。"
+      },
+      "subtask": "BATCH10a",
+      "input_sha256": {
+        "Blueprint/Ch08.lean": "2800812fadd8e2557013f1941e4570401f7903d46f44baf07e23d5531da22a72",
+        "blueprint/ch08/ch08_source.json": "9b994b0f64cd22c85c2ad4123fbfdbd064bd7a6d070fe13b721794432f9f7a63",
+        "BATCH10a_PAGES.pdf": "108b5d53e040afa103862344bb88d3c35f633d8ca0eea70460f79443d3df1a6b"
+      }
+    },
+    {
+      "source_id": "MD-8.6.2-SINLyapunov",
+      "json_review": {
+        "status": "NEEDS_HUMAN",
+        "issue_codes": [
+          "STALE_TRANSCRIPTION_NOTE",
+          "SOURCE_LYAPUNOV_SIGNED_BOUND",
+          "SOURCE_ERGODICITY_GAP"
+        ],
+        "corrected_json": {
+          "source_id": "MD-8.6.2-SINLyapunov",
+          "kind": "unnumbered_claim",
+          "label": null,
+          "section": "8.6.2",
+          "printed_page": "368–369",
+          "pdf_page": "389–390",
+          "statement_latex": "For φ=ξ₂²/2, L_isok φ=(ξ₁²-β⁻¹)ξ₂-γξ₂²+σ²/2, and the isokinetic constraint bounds ξ₁. The negative tail drift supports the ergodicity argument with further assumptions.",
+          "statement_verbatim": "368\n8\nExtended Variable Methods\nWe calculate Œf; Œf; Œf; g\t\t\t and project onto the space spanned by the ﬁrst three\ncomponents to ﬁnd\nu3 D \u0007\n\b2\np3 \u0003 4p3\u00122 C 4p2q C \u00122\n1p\u00122 C \n\u00122\n1p \u0003 2\u00122\n1q\nD2\n\t\n@q\n\u0003 \u0007\u00122\n1\n\u0006 \u000f\nD3\n\u0007\n@p C 2\u0007\u00121p\n\u0006 \u000f\nD3\n\u0007\n@\u00121:\n(8.54)\nwith\n\u000f D 4p5\n2 \u0003 8p5\u00122\n1 \u0003 4\u00122\n1p3 C 4p3\n2\u00122\n1 \u0003 4p3\u00124\n1\n\u0003 2\n\u00122\n1p2q C 4p2q\u00122\u00122\n1 \u0003 4\u00122\n1q2p \u0003 2\u00124\n1p C p\n2\u00124\n1 \u0003 q\n\u00124\n1 C \u00124\n1\u00122q:\n(8.55)\nAlong p D 0, u3 becomes\nu3jpD0 D \u00032\u0007q@q \u0003 \u0007\n\b\u0003q\n\u00124\n1 C \u00124\n1\u00122q\n\u00124\n1\n\t\n@p\nD \u00032\u0007q@q \u0003 \u0007q.\u0003\n C \u00122/@p:\n(8.56)\nTogether with u0 we obtain a linearly independent set as long as q ¤ 0.\nIf p D 0 and q D 0 then we are on M0. If p ¤ 0 then u2 and u0 are linearly\nindependent. If q ¤ 0 then u3 and u0 are linearly independent. From these we\nestablish that the Hörmander condition holds everywhere except on a space of co-\ndimension 2 (that is except on the one-dimensional set M0).\nIn this case, it is possible to complete the proof by introducing a Lyapunov\nfunction \b to demonstrate the necessary contractivity in the \u00122 direction. The\ngenerator of this system is\nLisok D p @\n@q C\n\nF \u0003 .p2=\u0017/F\n\u000b @\n@p \u0003 p\u00121F\n\u0017\n@\n@\u00121\nC LN C LO\nwith \u0017 D p2 C \u00122\n1=2,\nLN D 1\n2\n\u00122\n1\u00122p\n\u0017\n@\n@p C 1\n2\n\u00123\n1\u00122\n\u0017\n@\n@\u00121\n\u0003 \u00122\u00121\n@\n@\u00121\nC Œ\u00122\n1 \u0003 ˇ\u00021\t @\n@\u00122\n;\nand\nLO D \u0003\n\u00122\n@\n@\u00122\nC \u00072\n2\n@2\n@\u00122\n2\n:\n\n8.6\nIsokinetic Methods and Integration with Very Large Timestep\n369\nLet us apply the operator Lisok to \b\ndef\nD \u00122\n2=2. As this is only a function of \u00122, many\nterms vanish and we are left with\nLisok\b D LN\b C LO\b;\nLN\b D Œ\u00122\n1 \u0003 ˇ\u00021\t\u00122;\nand\nLO\b D \u0003\n\u00122\n2 C \u00072\n2 :\nBecause \u00121 is uniformly bounded due to the isokinetic constraint, we have\nLisok\b \t \u0003\n\u00122\n2 C K\u00122 C \u00072\n2 :\nFor j\u00122j sufﬁciently large this term is negative. This contractivity, together with\nassumptions of boundedness of conﬁgurations (the use of periodic boundary\nconditions) and the isokinetic constraints on p and \u00121, as well as the existence\nof a candidate measure which is positive on open sets, will ultimately ensure the\nergodicity of the system, relying on arguments similar to those in [256, 257].\n8.6.3\nMultiple Timestepping Using the Stochastic Isokinetic\nFormulation\nThe numerical integration of the equations of the stochastic isokinetic system can be\nperformed using splitting, in a style that should by now be familiar, with the proviso\nthat the isokinetic condition itself should be satisﬁed exactly (i.e. to rounding error).\nMolecular sampling using Langevin dynamics and other methods involves\nintegration over the inﬁnite cylinder TNc\u0004RNc. The power of the isokinetic method is\nthat it allows us to reformulate the conﬁgurational sampling problem as integration\non a compact manifold. The fact that we also slightly extend the domain by\nintroducing auxiliary variables is more than offset by the stabilizing effect of the\nisokinetic constraints. One approach would be to introduce an isokinetic constraint\non the entire system, but in practice it is found that no great crime is committed\nin conﬁgurational sampling by constraining each degree of freedom (together with\nassociated auxiliary variables).\nTo develop a multiple timestepping method, we begin by supposing that the\npotential energy function and therefore the force can be decomposed into fast and\nslow terms, thus U.q/ D US.q/ C UF.q/ and the force acting on the jth degree\nof freedom is Fj D FS\nj C FF\nj . Because the SIN(R) method is based on a non-\nHamiltonian formulation, we do not obtain a symplectic integrator (in the absence\n",
+          "verbatim_scope": "完整对应原页文字层，逐字保留；本条数学成分由statement_latex及statement_scope定位。",
+          "proof_latex": null,
+          "proof_note": "对应原页推导逐字保存在statement_verbatim/original_page_text；排版以原页PDF为准。",
+          "original_page_text": [
+            {
+              "pdf_page": 389,
+              "printed_page": 368,
+              "text": "368\n8\nExtended Variable Methods\nWe calculate Œf; Œf; Œf; g\t\t\t and project onto the space spanned by the ﬁrst three\ncomponents to ﬁnd\nu3 D \u0007\n\b2\np3 \u0003 4p3\u00122 C 4p2q C \u00122\n1p\u00122 C \n\u00122\n1p \u0003 2\u00122\n1q\nD2\n\t\n@q\n\u0003 \u0007\u00122\n1\n\u0006 \u000f\nD3\n\u0007\n@p C 2\u0007\u00121p\n\u0006 \u000f\nD3\n\u0007\n@\u00121:\n(8.54)\nwith\n\u000f D 4p5\n2 \u0003 8p5\u00122\n1 \u0003 4\u00122\n1p3 C 4p3\n2\u00122\n1 \u0003 4p3\u00124\n1\n\u0003 2\n\u00122\n1p2q C 4p2q\u00122\u00122\n1 \u0003 4\u00122\n1q2p \u0003 2\u00124\n1p C p\n2\u00124\n1 \u0003 q\n\u00124\n1 C \u00124\n1\u00122q:\n(8.55)\nAlong p D 0, u3 becomes\nu3jpD0 D \u00032\u0007q@q \u0003 \u0007\n\b\u0003q\n\u00124\n1 C \u00124\n1\u00122q\n\u00124\n1\n\t\n@p\nD \u00032\u0007q@q \u0003 \u0007q.\u0003\n C \u00122/@p:\n(8.56)\nTogether with u0 we obtain a linearly independent set as long as q ¤ 0.\nIf p D 0 and q D 0 then we are on M0. If p ¤ 0 then u2 and u0 are linearly\nindependent. If q ¤ 0 then u3 and u0 are linearly independent. From these we\nestablish that the Hörmander condition holds everywhere except on a space of co-\ndimension 2 (that is except on the one-dimensional set M0).\nIn this case, it is possible to complete the proof by introducing a Lyapunov\nfunction \b to demonstrate the necessary contractivity in the \u00122 direction. The\ngenerator of this system is\nLisok D p @\n@q C\n\nF \u0003 .p2=\u0017/F\n\u000b @\n@p \u0003 p\u00121F\n\u0017\n@\n@\u00121\nC LN C LO\nwith \u0017 D p2 C \u00122\n1=2,\nLN D 1\n2\n\u00122\n1\u00122p\n\u0017\n@\n@p C 1\n2\n\u00123\n1\u00122\n\u0017\n@\n@\u00121\n\u0003 \u00122\u00121\n@\n@\u00121\nC Œ\u00122\n1 \u0003 ˇ\u00021\t @\n@\u00122\n;\nand\nLO D \u0003\n\u00122\n@\n@\u00122\nC \u00072\n2\n@2\n@\u00122\n2\n:\n"
+            },
+            {
+              "pdf_page": 390,
+              "printed_page": 369,
+              "text": "8.6\nIsokinetic Methods and Integration with Very Large Timestep\n369\nLet us apply the operator Lisok to \b\ndef\nD \u00122\n2=2. As this is only a function of \u00122, many\nterms vanish and we are left with\nLisok\b D LN\b C LO\b;\nLN\b D Œ\u00122\n1 \u0003 ˇ\u00021\t\u00122;\nand\nLO\b D \u0003\n\u00122\n2 C \u00072\n2 :\nBecause \u00121 is uniformly bounded due to the isokinetic constraint, we have\nLisok\b \t \u0003\n\u00122\n2 C K\u00122 C \u00072\n2 :\nFor j\u00122j sufﬁciently large this term is negative. This contractivity, together with\nassumptions of boundedness of conﬁgurations (the use of periodic boundary\nconditions) and the isokinetic constraints on p and \u00121, as well as the existence\nof a candidate measure which is positive on open sets, will ultimately ensure the\nergodicity of the system, relying on arguments similar to those in [256, 257].\n8.6.3\nMultiple Timestepping Using the Stochastic Isokinetic\nFormulation\nThe numerical integration of the equations of the stochastic isokinetic system can be\nperformed using splitting, in a style that should by now be familiar, with the proviso\nthat the isokinetic condition itself should be satisﬁed exactly (i.e. to rounding error).\nMolecular sampling using Langevin dynamics and other methods involves\nintegration over the inﬁnite cylinder TNc\u0004RNc. The power of the isokinetic method is\nthat it allows us to reformulate the conﬁgurational sampling problem as integration\non a compact manifold. The fact that we also slightly extend the domain by\nintroducing auxiliary variables is more than offset by the stabilizing effect of the\nisokinetic constraints. One approach would be to introduce an isokinetic constraint\non the entire system, but in practice it is found that no great crime is committed\nin conﬁgurational sampling by constraining each degree of freedom (together with\nassociated auxiliary variables).\nTo develop a multiple timestepping method, we begin by supposing that the\npotential energy function and therefore the force can be decomposed into fast and\nslow terms, thus U.q/ D US.q/ C UF.q/ and the force acting on the jth degree\nof freedom is Fj D FS\nj C FF\nj . Because the SIN(R) method is based on a non-\nHamiltonian formulation, we do not obtain a symplectic integrator (in the absence\n"
+            }
+          ],
+          "numbered_equations": [],
+          "transcription_note": "文字层逐字保留；数学排版另行转写，原页中的特殊字形编码不静默替换。本条范围按R4_任务.md与R4_PAGES.pdf对应附件页核对。",
+          "context_notation": [
+            "R4：SIN相关条目的θ=k_BT=β⁻¹、Q1=μ₁、Q2=μ₂，坐标顺序(q,p,ξ₁,ξ₂)；SLS条目的Q=μ、invm=M⁻¹对角元。仅按本条适用的符号对应解释。"
+          ],
+          "extra_assumptions": [
+            "仅生成元作用和约束界；原文有符号ξ₂的Kξ₂上界须区分尾部方向，严谨负漂移应使用K|ξ₂|并要求γ>0。",
+            "紧性、正密度、小集与Markov半群遍历定理均列覆盖缺口。"
+          ],
+          "issues": [
+            "PDF390生成元计算与statement_latex吻合；但原书随后给−γξ₂²+Kξ₂+σ²/2作为全局上界，未对ξ₂正负分情况。原文须保留并注明此上界疑误。仅在ξ₂方向的负漂移也不能单独推出非紧q方向的遍历性。",
+            "原文从局部负漂移到遍历性的论证需要额外全局条件；现有Lean没有此结论。"
+          ],
+          "statement_scope": "真实局部生成元Lyapunov计算及热浴变量界；不包含由此推出遍历性的充分性。",
+          "lean_decl": "MD.Ch08.sinGenerator",
+          "lean_declarations": [
+            "MD.Ch08.sinGenerator",
+            "MD.Ch08.sinGenerator_lyapunov",
+            "MD.Ch08.sinConstraint_bathBound"
+          ],
+          "source_page_verification": "R4独立审校：original_page_text与附件逐页提取文本逐字一致；statement_verbatim与各页文本以单个换行连接后逐字一致；数学排版另经原页图像核对。",
+          "repair_log": [
+            "R4：删除无关PDF420模板残句；核对来源替换为本次附件检查。"
+          ],
+          "documented_priors": []
+        },
+        "issues": [
+          {
+            "code": "STALE_TRANSCRIPTION_NOTE",
+            "severity": "metadata",
+            "message": "transcription_note末句“PDF420仅取Exercises之前”与本批第8章附件无关，删除该旧模板残句。"
+          },
+          {
+            "code": "SOURCE_LYAPUNOV_SIGNED_BOUND",
+            "severity": "source_math",
+            "message": "PDF390生成元计算与statement_latex吻合；但原书随后给−γξ₂²+Kξ₂+σ²/2作为全局上界，未对ξ₂正负分情况。原文须保留并注明此上界疑误。仅在ξ₂方向的负漂移也不能单独推出非紧q方向的遍历性。"
+          },
+          {
+            "code": "SOURCE_ERGODICITY_GAP",
+            "severity": "source_math",
+            "message": "原文从局部负漂移到遍历性的论证需要额外全局条件；现有Lean没有此结论。"
+          }
+        ],
+        "evidence": {
+          "A_text_comparison": {
+            "method": "PyMuPDF逐页get_text()与任务JSON中text作Python字符串全等比较；statement_verbatim与原页提取文本按单换行连接作全等比较",
+            "pages": [
+              {
+                "attachment_page": 19,
+                "exact": true,
+                "whitespace_equal": true,
+                "len": [
+                  1243,
+                  1243
+                ]
+              },
+              {
+                "attachment_page": 20,
+                "exact": true,
+                "whitespace_equal": true,
+                "len": [
+                  2173,
+                  2173
+                ]
+              }
+            ],
+            "statement_verbatim_exact": true,
+            "pdf_math_layout_checked": true,
+            "finding": "PDF390生成元计算与statement_latex吻合；但原书随后给−γξ₂²+Kξ₂+σ²/2作为全局上界，未对ξ₂正负分情况。原文须保留并注明此上界疑误。仅在ξ₂方向的负漂移也不能单独推出非紧q方向的遍历性。"
+          },
+          "C_readonly_signature_review": {
+            "scope": "仅R4_任务.md摘录及附录D1–D19、列出的MolecularDynamics依赖；Mathlib标准定义按题意采信。未修改或编译工程，未补证明，不因sorry判失败。",
+            "declarations": [
+              "MD.Ch08.sinGenerator",
+              "MD.Ch08.sinGenerator_lyapunov",
+              "MD.Ch08.sinConstraint_bathBound"
+            ],
+            "findings": [
+              "sinGenerator、sinGenerator_lyapunov、sinConstraint_bathBound：PASS。",
+              "[EXTRA] hθ,hγ保证扩散平方为2γθ；hK排除物理奇点，未用它替代完整约束面结论。",
+              "原文正开集候选测度、周期边界及收缩性论证未被当作已形式化的遍历定理。"
+            ],
+            "annotation_check": "本条Lean摘录没有字面[EXTRA]/[ERRATUM?]标签；按JSON的extra_assumptions、issues、statement_scope及Printed/_corrected命名分别核对。原书疑误保留；文中PASS仅表示签名/忠实性，不表示sorry已消除。"
+          }
+        }
+      },
+      "audit": {
+        "lean_decl": "MD.Ch08.sinGenerator",
+        "verdict": "NEEDS_HUMAN",
+        "explanation": "additiveGenerator= Df(z)[b(z)]+D(Df(·)[B])(z)[B]/2；sinGenerator用单位热浴质量的sinDrift和第四坐标噪声B。sinGenerator_lyapunov对θ,γ>0、任意F和K(z)≠0断言L(ξ₂²/2)=(ξ₁²−θ)ξ₂−γξ₂²+γθ，正确；无需F可微，因为被求导的测试函数仅依赖ξ₂。sinConstraint_bathBound对任意θ和满足K=θ的z给ξ₁²≤2θ，正确。两个定理均未断言原印有符号尾界或遍历性。 sinGenerator、sinGenerator_lyapunov、sinConstraint_bathBound：PASS。 [EXTRA] hθ,hγ保证扩散平方为2γθ；hK排除物理奇点，未用它替代完整约束面结论。 原文正开集候选测度、周期边界及收缩性论证未被当作已形式化的遍历定理。",
+        "counterexample": "θ=γ=1、σ²/2=1、ξ₁=0、p=1、ξ₂=−R(R>0)：真实Lφ=−R²+R+1；取常见界常数K=1，原印右侧为−R²−R+1，不能作为上界。一般固定有符号K也无法同时覆盖系数ξ₁²−θ在[−θ,θ]的两个端点及ξ₂的两侧尾部。",
+        "suggested_fix": "保留原页有符号式并标[ERRATUM?]；独立修正版可用Lφ≤−γξ₂²+θ|ξ₂|+γθ。遍历性需另核实配置紧性、可达性及Markov过程条件；当前Lean局部计算不需修改。"
+      },
+      "subtask": "BATCH10b",
+      "input_sha256": {
+        "Blueprint/Ch08.lean": "2800812fadd8e2557013f1941e4570401f7903d46f44baf07e23d5531da22a72",
+        "blueprint/ch08/ch08_source.json": "9b994b0f64cd22c85c2ad4123fbfdbd064bd7a6d070fe13b721794432f9f7a63",
+        "BATCH10b_PAGES.pdf": "3586f5ae0e3ab8bdf3c2a3beaf59c4324637a5a66272ee4922bc87f68e8a9991"
+      }
+    },
+    {
+      "source_id": "MD-8.6.3-SINForceSplitting",
+      "json_review": {
+        "status": "CORRECTED",
+        "issue_codes": [
+          "STALE_TRANSCRIPTION_NOTE"
+        ],
+        "corrected_json": {
+          "source_id": "MD-8.6.3-SINForceSplitting",
+          "kind": "unnumbered_claim",
+          "label": null,
+          "section": "8.6.3",
+          "printed_page": "370–371",
+          "pdf_page": "391–392",
+          "statement_latex": "U=U_S+U_F and F=F_S+F_F. The generators split into kinetic, isokinetic fast force, isokinetic slow force, Nosé and OU terms; each preserves Λ=p²+μ₁ξ₁²/2.",
+          "statement_verbatim": "370\n8\nExtended Variable Methods\nof stochastic perturbation). Unlike for r-RESPA, the splitting needs to be performed\nat the level of the differential equations. We suppress the index of the degree of\nfreedom, takes its mass to be one for simplicity of presentation, and write the\nequations of motion for the variables associated to a single physical degree of\nfreedom in the form\ndq D pdt;\ndp D Fdt \u0003\n \np.FF C FS/ \u0003 1\n2\u00061\u00122\n1\u00122\n\u0017\n!\npdt;\nd\u00121 D \u0003\n \np.FF C FS/ \u0003 1\n2\u00061\u00122\n1\u00122\n\u0017\n!\n\u00121dt \u0003 \u00122\u00121dt;\nd\u00122 D \u0006\u00021\n2 .\u00061\u00122\n1 \u0003 ˇ\u00021/dt \u0003 \n\u00122dt C \u0007dW;\nwhere \u0017 D p2 C 1\n2\u00061\u00122\n1. \u0017 D ˇ\u00021 is constant of motion.\nBecause of the form of the coupling, we observe that this vector ﬁeld can be addi-\ntively decomposed based on the various terms in the stochastic isokinetic equations,\nincluding the fast-slow splitting of the forces, into the following generators:\nKinetic part:\nLK D p @\n@q;\nisokinetic Fast force:\nLF D \nFF \u0003 .p2=\u0017/FF\u000b @\n@p \u0003 p\u00121FF\n\u0017\n@\n@\u00121\n;\nisokinetic Slow force:\nLS D\n\nFS \u0003 .p2=\u0017/FS\u000b @\n@p \u0003 p\u00121FS\n\u0017\n@\n@\u00121\n;\nisokinetic Nosé terms:\nLN D 1\n2\n\u00061\u00122\n1\u00122p\n\u0017\n@\n@p C 1\n2\n\u00061\u00123\n1\u00122\n\u0017\n@\n@\u00121\n\u0003 \u00122\u00121\n@\n@\u00121\nC \u0006\u00021\n2 Œ\u00061\u00122\n1 \u0003 ˇ\u00021\t @\n@\u00122\n;\nOrnstein-Uhlenbeck term:\nLO D \u0003\n\u00122\n@\n@\u00122\nC \u00072\n2\n@2\n@\u00122\n2\n:\n\n8.6\nIsokinetic Methods and Integration with Very Large Timestep\n371\nIt is straightforward to show that each of the terms of the corresponding vector\nﬁeld splitting preserves the ﬁrst integral \u0017 D constant. For example\nLF\u0017 D \nFF \u0003 .p2=\u0017/FF\u000b @\u0017\n@p \u0003 p\u00121FF\n\u0017\n@\u0017\n@\u00121\nD\n\nFF \u0003 .p2=\u0017/FF\u000b\n.2p/ \u0003 p\u00121FF\n\u0017\n.\u00061\u00121/\nD pFF \n2 \u0003 \u0017\u00021.2p2 C \u00061\u00122\n1/\u000b\nD 2pFF \n1 \u0003 \u0017\u00021\u0017\n\u000b\nD 0:\nThe proof for the other terms is similar.\nThe given decomposition can be used to construct a variety of algorithms,\nfor example the following which we term the Stochastic Isokinetic Nosé-Hoover\nRESPA algorithm.\nSIN(R) Algorithm\nPropagate p, \u00121, \u00122 by exp Œ.h=2/LN\t.\nPropagate p, \u00121 by exp \n.Qh=2/LF C .h=2/LS\n\u000b,\n.Qh D h=r/:\nPropagate q by exp\n\nQhLK\n\u000b\n.\nPropagate \u00122 by exp\n\nQhLO\n\u000b\n.\nPropagate p, \u00121 by exp\n\n.Qh=2/LF\n\u000b\n.\nRepeat r \u0003 2 times:\nPropagate p, \u00121 by exp\n\n.Qh=2/LF\n\u000b\n.\nPropagate q by exp\n\n.Qh=2/LK\n\u000b\n.\nPropagate \u00122 by exp\n\n.Qh/LO\n\u000b\n.\nPropagate q by exp\n\n.Qh=2/LK\n\u000b\n.\nPropagate p, \u00121 by exp\n\n.Qh=2/LF\n\u000b\n.\nPropagate p, \u00121 by exp \n.Qh=2/LF\n\u000b.\nPropagate \u00122 by exp\n\nQhLO\n\u000b\n.\nPropagate q by exp\n\nQhLK\n\u000b\n.\nPropagate p, \u00121 by exp\n\n.Qh=2/LF C .h=2/LS\n\u000b\n.\nPropagate p, \u00121, \u00122 by exp Œ.h=2/LN\t.\n",
+          "verbatim_scope": "完整对应原页文字层，逐字保留；本条数学成分由statement_latex及statement_scope定位。",
+          "proof_latex": null,
+          "proof_note": "对应原页推导逐字保存在statement_verbatim/original_page_text；排版以原页PDF为准。",
+          "original_page_text": [
+            {
+              "pdf_page": 391,
+              "printed_page": 370,
+              "text": "370\n8\nExtended Variable Methods\nof stochastic perturbation). Unlike for r-RESPA, the splitting needs to be performed\nat the level of the differential equations. We suppress the index of the degree of\nfreedom, takes its mass to be one for simplicity of presentation, and write the\nequations of motion for the variables associated to a single physical degree of\nfreedom in the form\ndq D pdt;\ndp D Fdt \u0003\n \np.FF C FS/ \u0003 1\n2\u00061\u00122\n1\u00122\n\u0017\n!\npdt;\nd\u00121 D \u0003\n \np.FF C FS/ \u0003 1\n2\u00061\u00122\n1\u00122\n\u0017\n!\n\u00121dt \u0003 \u00122\u00121dt;\nd\u00122 D \u0006\u00021\n2 .\u00061\u00122\n1 \u0003 ˇ\u00021/dt \u0003 \n\u00122dt C \u0007dW;\nwhere \u0017 D p2 C 1\n2\u00061\u00122\n1. \u0017 D ˇ\u00021 is constant of motion.\nBecause of the form of the coupling, we observe that this vector ﬁeld can be addi-\ntively decomposed based on the various terms in the stochastic isokinetic equations,\nincluding the fast-slow splitting of the forces, into the following generators:\nKinetic part:\nLK D p @\n@q;\nisokinetic Fast force:\nLF D \nFF \u0003 .p2=\u0017/FF\u000b @\n@p \u0003 p\u00121FF\n\u0017\n@\n@\u00121\n;\nisokinetic Slow force:\nLS D\n\nFS \u0003 .p2=\u0017/FS\u000b @\n@p \u0003 p\u00121FS\n\u0017\n@\n@\u00121\n;\nisokinetic Nosé terms:\nLN D 1\n2\n\u00061\u00122\n1\u00122p\n\u0017\n@\n@p C 1\n2\n\u00061\u00123\n1\u00122\n\u0017\n@\n@\u00121\n\u0003 \u00122\u00121\n@\n@\u00121\nC \u0006\u00021\n2 Œ\u00061\u00122\n1 \u0003 ˇ\u00021\t @\n@\u00122\n;\nOrnstein-Uhlenbeck term:\nLO D \u0003\n\u00122\n@\n@\u00122\nC \u00072\n2\n@2\n@\u00122\n2\n:\n"
+            },
+            {
+              "pdf_page": 392,
+              "printed_page": 371,
+              "text": "8.6\nIsokinetic Methods and Integration with Very Large Timestep\n371\nIt is straightforward to show that each of the terms of the corresponding vector\nﬁeld splitting preserves the ﬁrst integral \u0017 D constant. For example\nLF\u0017 D \nFF \u0003 .p2=\u0017/FF\u000b @\u0017\n@p \u0003 p\u00121FF\n\u0017\n@\u0017\n@\u00121\nD\n\nFF \u0003 .p2=\u0017/FF\u000b\n.2p/ \u0003 p\u00121FF\n\u0017\n.\u00061\u00121/\nD pFF \n2 \u0003 \u0017\u00021.2p2 C \u00061\u00122\n1/\u000b\nD 2pFF \n1 \u0003 \u0017\u00021\u0017\n\u000b\nD 0:\nThe proof for the other terms is similar.\nThe given decomposition can be used to construct a variety of algorithms,\nfor example the following which we term the Stochastic Isokinetic Nosé-Hoover\nRESPA algorithm.\nSIN(R) Algorithm\nPropagate p, \u00121, \u00122 by exp Œ.h=2/LN\t.\nPropagate p, \u00121 by exp \n.Qh=2/LF C .h=2/LS\n\u000b,\n.Qh D h=r/:\nPropagate q by exp\n\nQhLK\n\u000b\n.\nPropagate \u00122 by exp\n\nQhLO\n\u000b\n.\nPropagate p, \u00121 by exp\n\n.Qh=2/LF\n\u000b\n.\nRepeat r \u0003 2 times:\nPropagate p, \u00121 by exp\n\n.Qh=2/LF\n\u000b\n.\nPropagate q by exp\n\n.Qh=2/LK\n\u000b\n.\nPropagate \u00122 by exp\n\n.Qh/LO\n\u000b\n.\nPropagate q by exp\n\n.Qh=2/LK\n\u000b\n.\nPropagate p, \u00121 by exp\n\n.Qh=2/LF\n\u000b\n.\nPropagate p, \u00121 by exp \n.Qh=2/LF\n\u000b.\nPropagate \u00122 by exp\n\nQhLO\n\u000b\n.\nPropagate q by exp\n\nQhLK\n\u000b\n.\nPropagate p, \u00121 by exp\n\n.Qh=2/LF C .h=2/LS\n\u000b\n.\nPropagate p, \u00121, \u00122 by exp Œ.h=2/LN\t.\n"
+            }
+          ],
+          "numbered_equations": [],
+          "transcription_note": "文字层逐字保留；数学排版另行转写，原页中的特殊字形编码不静默替换。本条范围按R4_任务.md与R4_PAGES.pdf对应附件页核对。",
+          "context_notation": [
+            "R4：SIN相关条目的θ=k_BT=β⁻¹、Q1=μ₁、Q2=μ₂，坐标顺序(q,p,ξ₁,ξ₂)；SLS条目的Q=μ、invm=M⁻¹对角元。仅按本条适用的符号对应解释。"
+          ],
+          "extra_assumptions": [
+            "Q₁,Q₂,θ>0且Λ=θ为物理域，总化场保留作辅助；本条含完整漂移和分解及力子场瞬时约束平衡，其他子场的流存在/保约束列缺口。"
+          ],
+          "issues": [],
+          "statement_scope": "五个子场及其实际和分解、力子场瞬时约束平衡；不含整体方法阶数。",
+          "lean_decl": "MD.Ch08.sinKField",
+          "lean_declarations": [
+            "MD.Ch08.sinKField",
+            "MD.Ch08.sinForceField",
+            "MD.Ch08.sinNField",
+            "MD.Ch08.sinOField",
+            "MD.Ch08.sinSplit_fields",
+            "MD.Ch08.sinForce_constraintBalance"
+          ],
+          "source_page_verification": "R4独立审校：original_page_text与附件逐页提取文本逐字一致；statement_verbatim与各页文本以单个换行连接后逐字一致；数学排版另经原页图像核对。",
+          "repair_log": [
+            "R4：删除无关PDF420模板残句；核对来源替换为本次附件检查。"
+          ],
+          "documented_priors": []
+        },
+        "issues": [
+          {
+            "code": "STALE_TRANSCRIPTION_NOTE",
+            "severity": "metadata",
+            "message": "transcription_note末句“PDF420仅取Exercises之前”与本批第8章附件无关，删除该旧模板残句。"
+          }
+        ],
+        "evidence": {
+          "A_text_comparison": {
+            "method": "PyMuPDF逐页get_text()与任务JSON中text作Python字符串全等比较；statement_verbatim与原页提取文本按单换行连接作全等比较",
+            "pages": [
+              {
+                "attachment_page": 21,
+                "exact": true,
+                "whitespace_equal": true,
+                "len": [
+                  1176,
+                  1176
+                ]
+              },
+              {
+                "attachment_page": 22,
+                "exact": true,
+                "whitespace_equal": true,
+                "len": [
+                  1149,
+                  1149
+                ]
+              }
+            ],
+            "statement_verbatim_exact": true,
+            "pdf_math_layout_checked": true,
+            "finding": "PDF391的动力学、LK/LF/LS/LN/LO及PDF392的LFΛ=0逐项吻合。sinOField只对应LO的一阶漂移部分；二阶噪声不应混写成普通向量场。"
+          },
+          "C_readonly_signature_review": {
+            "scope": "仅R4_任务.md摘录及附录D1–D19、列出的MolecularDynamics依赖；Mathlib标准定义按题意采信。未修改或编译工程，未补证明，不因sorry判失败。",
+            "declarations": [
+              "MD.Ch08.sinKField",
+              "MD.Ch08.sinForceField",
+              "MD.Ch08.sinNField",
+              "MD.Ch08.sinOField",
+              "MD.Ch08.sinSplit_fields",
+              "MD.Ch08.sinForce_constraintBalance"
+            ],
+            "findings": [
+              "sinKField、sinForceField、sinNField、sinOField、sinSplit_fields、sinForce_constraintBalance：PASS。",
+              "[EXTRA] 任意实参数的代数推广不会改变正参数物理域结论；分母非零前提清楚。",
+              "未把五个漂移场之和冒称为包含二阶噪声的生成元等式。"
+            ],
+            "annotation_check": "本条Lean摘录没有字面[EXTRA]/[ERRATUM?]标签；按JSON的extra_assumptions、issues、statement_scope及Printed/_corrected命名分别核对。原书疑误保留；文中PASS仅表示签名/忠实性，不表示sorry已消除。"
+          }
+        }
+      },
+      "audit": {
+        "lean_decl": "MD.Ch08.sinKField",
+        "verdict": "PASS",
+        "explanation": "sinKField仅q分量p；sinForceField(Q1,F)给p速度F−p²F/K与ξ₁速度−pξ₁F/K；sinNField给三个Nosé分量，保留Q1与Q2因子；sinOField给第四分量−γξ₂。sinSplit_fields对任意Q1,Q2,θ,γ、快慢力函数和K≠0的z，断言完整sinDrift(FF+FS)等于K、两个力场、N、O五场之和，代数正确。sinForce_constraintBalance对任意Q1、标量F及K≠0断言2p b_p+Q1ξ₁ b_ξ₁=0，完整结论正确。 sinKField、sinForceField、sinNField、sinOField、sinSplit_fields、sinForce_constraintBalance：PASS。 [EXTRA] 任意实参数的代数推广不会改变正参数物理域结论；分母非零前提清楚。 未把五个漂移场之和冒称为包含二阶噪声的生成元等式。",
+        "counterexample": null,
+        "suggested_fix": "保留当前签名；若需要覆盖“生成元完整分裂”，应另加第四坐标扩散二阶算子；若需要覆盖“各子流保持约束”，应另立沿解结论。"
+      },
+      "subtask": "BATCH10c",
+      "input_sha256": {
+        "Blueprint/Ch08.lean": "2800812fadd8e2557013f1941e4570401f7903d46f44baf07e23d5531da22a72",
+        "blueprint/ch08/ch08_source.json": "9b994b0f64cd22c85c2ad4123fbfdbd064bd7a6d070fe13b721794432f9f7a63",
+        "BATCH10c_PAGES.pdf": "978eb1b4e59885496e511906edc25b2626f5a7985cc697ab30f3d1425f153101"
+      }
+    },
+    {
+      "source_id": "MD-8.6.3-SINRAlgorithm",
+      "json_review": {
+        "status": "CORRECTED",
+        "issue_codes": [
+          "STALE_TRANSCRIPTION_NOTE"
+        ],
+        "corrected_json": {
+          "source_id": "MD-8.6.3-SINRAlgorithm",
+          "kind": "definition",
+          "label": null,
+          "section": "8.6.3",
+          "printed_page": "371",
+          "pdf_page": "392",
+          "statement_latex": "The SIN(R) algorithm uses h̃=h/r, r−2 repeated inner blocks, outer Nosé half-steps, combined fast/slow force half-steps and independent OU substeps.",
+          "statement_verbatim": "8.6\nIsokinetic Methods and Integration with Very Large Timestep\n371\nIt is straightforward to show that each of the terms of the corresponding vector\nﬁeld splitting preserves the ﬁrst integral \u0017 D constant. For example\nLF\u0017 D \nFF \u0003 .p2=\u0017/FF\u000b @\u0017\n@p \u0003 p\u00121FF\n\u0017\n@\u0017\n@\u00121\nD\n\nFF \u0003 .p2=\u0017/FF\u000b\n.2p/ \u0003 p\u00121FF\n\u0017\n.\u00061\u00121/\nD pFF \n2 \u0003 \u0017\u00021.2p2 C \u00061\u00122\n1/\u000b\nD 2pFF \n1 \u0003 \u0017\u00021\u0017\n\u000b\nD 0:\nThe proof for the other terms is similar.\nThe given decomposition can be used to construct a variety of algorithms,\nfor example the following which we term the Stochastic Isokinetic Nosé-Hoover\nRESPA algorithm.\nSIN(R) Algorithm\nPropagate p, \u00121, \u00122 by exp Œ.h=2/LN\t.\nPropagate p, \u00121 by exp \n.Qh=2/LF C .h=2/LS\n\u000b,\n.Qh D h=r/:\nPropagate q by exp\n\nQhLK\n\u000b\n.\nPropagate \u00122 by exp\n\nQhLO\n\u000b\n.\nPropagate p, \u00121 by exp\n\n.Qh=2/LF\n\u000b\n.\nRepeat r \u0003 2 times:\nPropagate p, \u00121 by exp\n\n.Qh=2/LF\n\u000b\n.\nPropagate q by exp\n\n.Qh=2/LK\n\u000b\n.\nPropagate \u00122 by exp\n\n.Qh/LO\n\u000b\n.\nPropagate q by exp\n\n.Qh=2/LK\n\u000b\n.\nPropagate p, \u00121 by exp\n\n.Qh=2/LF\n\u000b\n.\nPropagate p, \u00121 by exp \n.Qh=2/LF\n\u000b.\nPropagate \u00122 by exp\n\nQhLO\n\u000b\n.\nPropagate q by exp\n\nQhLK\n\u000b\n.\nPropagate p, \u00121 by exp\n\n.Qh=2/LF C .h=2/LS\n\u000b\n.\nPropagate p, \u00121, \u00122 by exp Œ.h=2/LN\t.\n",
+          "verbatim_scope": "完整对应原页文字层，逐字保留；本条数学成分由statement_latex及statement_scope定位。",
+          "proof_latex": null,
+          "proof_note": "对应原页推导逐字保存在statement_verbatim/original_page_text；排版以原页PDF为准。",
+          "original_page_text": [
+            {
+              "pdf_page": 392,
+              "printed_page": 371,
+              "text": "8.6\nIsokinetic Methods and Integration with Very Large Timestep\n371\nIt is straightforward to show that each of the terms of the corresponding vector\nﬁeld splitting preserves the ﬁrst integral \u0017 D constant. For example\nLF\u0017 D \nFF \u0003 .p2=\u0017/FF\u000b @\u0017\n@p \u0003 p\u00121FF\n\u0017\n@\u0017\n@\u00121\nD\n\nFF \u0003 .p2=\u0017/FF\u000b\n.2p/ \u0003 p\u00121FF\n\u0017\n.\u00061\u00121/\nD pFF \n2 \u0003 \u0017\u00021.2p2 C \u00061\u00122\n1/\u000b\nD 2pFF \n1 \u0003 \u0017\u00021\u0017\n\u000b\nD 0:\nThe proof for the other terms is similar.\nThe given decomposition can be used to construct a variety of algorithms,\nfor example the following which we term the Stochastic Isokinetic Nosé-Hoover\nRESPA algorithm.\nSIN(R) Algorithm\nPropagate p, \u00121, \u00122 by exp Œ.h=2/LN\t.\nPropagate p, \u00121 by exp \n.Qh=2/LF C .h=2/LS\n\u000b,\n.Qh D h=r/:\nPropagate q by exp\n\nQhLK\n\u000b\n.\nPropagate \u00122 by exp\n\nQhLO\n\u000b\n.\nPropagate p, \u00121 by exp\n\n.Qh=2/LF\n\u000b\n.\nRepeat r \u0003 2 times:\nPropagate p, \u00121 by exp\n\n.Qh=2/LF\n\u000b\n.\nPropagate q by exp\n\n.Qh=2/LK\n\u000b\n.\nPropagate \u00122 by exp\n\n.Qh/LO\n\u000b\n.\nPropagate q by exp\n\n.Qh=2/LK\n\u000b\n.\nPropagate p, \u00121 by exp\n\n.Qh=2/LF\n\u000b\n.\nPropagate p, \u00121 by exp \n.Qh=2/LF\n\u000b.\nPropagate \u00122 by exp\n\nQhLO\n\u000b\n.\nPropagate q by exp\n\nQhLK\n\u000b\n.\nPropagate p, \u00121 by exp\n\n.Qh=2/LF C .h=2/LS\n\u000b\n.\nPropagate p, \u00121, \u00122 by exp Œ.h=2/LN\t.\n"
+            }
+          ],
+          "numbered_equations": [],
+          "transcription_note": "文字层逐字保留；数学排版另行转写，原页中的特殊字形编码不静默替换。本条范围按R4_任务.md与R4_PAGES.pdf对应附件页核对。",
+          "context_notation": [],
+          "extra_assumptions": [
+            "算法有效域h>0、r≥2；一组中多个场表示同一次合并传播，并非擅自换为两个非交换流。每次OU用独立标准正态新噪声。",
+            "这里只记录精确阶段表，具体随机核实现、保约束及全局误差/阶数列覆盖缺口。"
+          ],
+          "issues": [],
+          "statement_scope": "原印算法的阶段顺序与步长；不声称构造了各非线性子流。",
+          "lean_decl": "MD.Ch08.SINStage",
+          "lean_declarations": [
+            "MD.Ch08.SINStage",
+            "MD.Ch08.sinRStages"
+          ],
+          "source_page_verification": "R4独立审校：original_page_text与附件逐页提取文本逐字一致；statement_verbatim与各页文本以单个换行连接后逐字一致；数学排版另经原页图像核对。",
+          "repair_log": [
+            "R4：删除无关PDF420模板残句；核对来源替换为本次附件检查。"
+          ],
+          "documented_priors": []
+        },
+        "issues": [
+          {
+            "code": "STALE_TRANSCRIPTION_NOTE",
+            "severity": "metadata",
+            "message": "transcription_note末句“PDF420仅取Exercises之前”与本批第8章附件无关，删除该旧模板残句。"
+          }
+        ],
+        "evidence": {
+          "A_text_comparison": {
+            "method": "PyMuPDF逐页get_text()与任务JSON中text作Python字符串全等比较；statement_verbatim与原页提取文本按单换行连接作全等比较",
+            "pages": [
+              {
+                "attachment_page": 23,
+                "exact": true,
+                "whitespace_equal": true,
+                "len": [
+                  1149,
+                  1149
+                ]
+              }
+            ],
+            "statement_verbatim_exact": true,
+            "pdf_math_layout_checked": true,
+            "finding": "PDF392的算法表：外侧N半步，首尾合并快慢力半步，中间r−2个内块及所有K、OU、快力步长和顺序，与sinRStages逐项一致。"
+          },
+          "C_readonly_signature_review": {
+            "scope": "仅R4_任务.md摘录及附录D1–D19、列出的MolecularDynamics依赖；Mathlib标准定义按题意采信。未修改或编译工程，未补证明，不因sorry判失败。",
+            "declarations": [
+              "MD.Ch08.SINStage",
+              "MD.Ch08.sinRStages"
+            ],
+            "findings": [
+              "SINStage、sinRStages：PASS。",
+              "合并传播未被替换为非交换流的顺序复合。",
+              "[EXTRA] 独立OU噪声是执行时要求；当前List未构造随机核、正态变量、子流或收敛阶数。"
+            ],
+            "annotation_check": "本条Lean摘录没有字面[EXTRA]/[ERRATUM?]标签；按JSON的extra_assumptions、issues、statement_scope及Printed/_corrected命名分别核对。原书疑误保留；文中PASS仅表示签名/忠实性，不表示sorry已消除。"
+          }
+        }
+      },
+      "audit": {
+        "lean_decl": "MD.Ch08.SINStage",
+        "verdict": "PASS",
+        "explanation": "SINStage的五个构造子对应K/F/S/N/OU。sinRStages输出List(List(stage×步长))；内层含fast和slow两个条目表示同一次合并指数传播。a=h/r，开头N(h/2)、[F(a/2),S(h/2)]、K(a)、OU(a)、F(a/2)；重复r−2次F(a/2)、K(a/2)、OU(a)、K(a/2)、F(a/2)；结尾F(a/2)、OU(a)、K(a)、[F(a/2),S(h/2)]、N(h/2)，全部吻合。r:ℕ的减法截断和实数零除使定义在r<2也有总化值，但本条有效算法域已明确h>0、r≥2，不把其他值解释为原书算法。 SINStage、sinRStages：PASS。 合并传播未被替换为非交换流的顺序复合。 [EXTRA] 独立OU噪声是执行时要求；当前List未构造随机核、正态变量、子流或收敛阶数。",
+        "counterexample": null,
+        "suggested_fix": "保留阶段表定义；如供其他代码执行，宜在接口显式携带r≥2及步长有效域，并由执行器实现每次OU独立新噪声，不能仅凭阶段标签宣称这些概率性质已证。"
+      },
+      "subtask": "BATCH10d",
+      "input_sha256": {
+        "Blueprint/Ch08.lean": "2800812fadd8e2557013f1941e4570401f7903d46f44baf07e23d5531da22a72",
+        "blueprint/ch08/ch08_source.json": "9b994b0f64cd22c85c2ad4123fbfdbd064bd7a6d070fe13b721794432f9f7a63",
+        "BATCH10d_PAGES.pdf": "ae0db62fb383bedb30e70ea69e5abe5933c8110e95daa75153b26640da1564b7"
+      }
+    },
+    {
+      "source_id": "MD-8.6.3-SINNoseSubsplitting",
+      "json_review": {
+        "status": "CORRECTED",
+        "issue_codes": [
+          "STALE_TRANSCRIPTION_NOTE"
+        ],
+        "corrected_json": {
+          "source_id": "MD-8.6.3-SINNoseSubsplitting",
+          "kind": "unnumbered_claim",
+          "label": null,
+          "section": "8.6.3",
+          "printed_page": "372",
+          "pdf_page": "393",
+          "statement_latex": "L_N=L_N^(1)+L_N^(2). The first term acts on p,ξ₁, the second has μ₂⁻¹(μ₁ξ₁²-β⁻¹)∂ξ₂.",
+          "statement_verbatim": "372\n8\nExtended Variable Methods\nWe stress that the implementation of this method is in fact quite straightforward,\ndespite its apparent complexity. The following details regarding the implementation\nare discussed in [220]:\n•\nFor the integration of the Nosé terms, it is recommended to use a further splitting:\nLN D L.1/\nN C L.2/\nN ;\nwhere\nL.1/\nN D 1\n2\n\u00061\u00122\n1\u00122p\n\u0017\n@\n@p C 1\n2\n\u00061\u00123\n1\u00122\n\u0017\n@\n@\u00121\n\u0003 \u00122\u00121\n@\n@\u00121\n;\nand\nL.2/\nN D \u0006\u00021\n2 Œ\u00061\u00122\n1 \u0003 ˇ\u00021\t @\n@\u00122\n:\nMoreover a Yoshida/Suzuki type higher order decomposition is used to obtain\nmore accuracy in this component.\n•\nThe term exp ŒhLF\t (like similar terms) is completely integrable. Note that in\ngeneral this reduces to solving\nPp D F \u0003 p2F=\u0017;\nP\u00121 D p\u00121F=\u0017;\nwith F a constant.\nThe solution in a timestep h is\np.h/ D p.0/ C .F=m/s.h/\nPs.h/\n;\n\u00121.h/ D \u00121.0/\nPs.h/ ;\nwhere\ns.t/ D b\u00021=2 sinh.t\np\nb/ C a\nb.cosh.t\np\nb/ \u0003 1/\nwith a D Fp.0/=\u0017 and b D F2=\u0017, \u0017 D ˇ\u00021.\nCare must be taken in the evaluation of s and Ps for a; b close to zero.\nNote that other decompositions are possible [220].\n",
+          "verbatim_scope": "完整对应原页文字层，逐字保留；本条数学成分由statement_latex及statement_scope定位。",
+          "proof_latex": null,
+          "proof_note": "对应原页推导逐字保存在statement_verbatim/original_page_text；排版以原页PDF为准。",
+          "original_page_text": [
+            {
+              "pdf_page": 393,
+              "printed_page": 372,
+              "text": "372\n8\nExtended Variable Methods\nWe stress that the implementation of this method is in fact quite straightforward,\ndespite its apparent complexity. The following details regarding the implementation\nare discussed in [220]:\n•\nFor the integration of the Nosé terms, it is recommended to use a further splitting:\nLN D L.1/\nN C L.2/\nN ;\nwhere\nL.1/\nN D 1\n2\n\u00061\u00122\n1\u00122p\n\u0017\n@\n@p C 1\n2\n\u00061\u00123\n1\u00122\n\u0017\n@\n@\u00121\n\u0003 \u00122\u00121\n@\n@\u00121\n;\nand\nL.2/\nN D \u0006\u00021\n2 Œ\u00061\u00122\n1 \u0003 ˇ\u00021\t @\n@\u00122\n:\nMoreover a Yoshida/Suzuki type higher order decomposition is used to obtain\nmore accuracy in this component.\n•\nThe term exp ŒhLF\t (like similar terms) is completely integrable. Note that in\ngeneral this reduces to solving\nPp D F \u0003 p2F=\u0017;\nP\u00121 D p\u00121F=\u0017;\nwith F a constant.\nThe solution in a timestep h is\np.h/ D p.0/ C .F=m/s.h/\nPs.h/\n;\n\u00121.h/ D \u00121.0/\nPs.h/ ;\nwhere\ns.t/ D b\u00021=2 sinh.t\np\nb/ C a\nb.cosh.t\np\nb/ \u0003 1/\nwith a D Fp.0/=\u0017 and b D F2=\u0017, \u0017 D ˇ\u00021.\nCare must be taken in the evaluation of s and Ps for a; b close to zero.\nNote that other decompositions are possible [220].\n"
+            }
+          ],
+          "numbered_equations": [],
+          "transcription_note": "文字层逐字保留；数学排版另行转写，原页中的特殊字形编码不静默替换。",
+          "context_notation": [],
+          "extra_assumptions": [
+            "正质量、温度及Λ>0作为物理资格；高阶Yoshida/Suzuki组合的系数和误差阶未在原页给出，列覆盖缺口。"
+          ],
+          "issues": [],
+          "statement_scope": "Nosé场的两项分解恒等式。",
+          "lean_decl": "MD.Ch08.sinN1Field",
+          "lean_declarations": [
+            "MD.Ch08.sinN1Field",
+            "MD.Ch08.sinN2Field",
+            "MD.Ch08.sinN_split"
+          ],
+          "source_page_verification": "R5本次审校：已核对R5_PAGES.pdf附件第1页文字层及相应原书页面图像；文字层特殊字形保留。",
+          "repair_log": [],
+          "documented_priors": []
+        },
+        "issues": [
+          {
+            "code": "STALE_TRANSCRIPTION_NOTE",
+            "field": "transcription_note",
+            "severity": "metadata",
+            "description": "本条对应第8章本附件页；通用注记“PDF420仅取Exercises之前”与本条无关，应删除。原文正文及乱码字形不改。"
+          }
+        ],
+        "evidence": {
+          "attachment": "R5_PAGES.pdf",
+          "attachment_pages": [
+            1
+          ],
+          "book_pdf_pages": "393",
+          "printed_pages": "372",
+          "A_verbatim": "已与附件原页逐段核对完整statement_verbatim和original_page_text；无正文增删。保留原文字层的控制字形；不同提取器的ﬁ/fi、ﬂ/fl以及原页ℓ的字形映射差别不判作原书错字。statement_latex按目视公式核对。",
+          "A_formula": "原页393的Nosé分解及两场系数，与附件第1页一致。",
+          "C_definitions": "只使用本任务摘录的MD.*及MolecularDynamics项目定义；已展开本条依赖及附录相关定义，Mathlib按标准含义采信。未使用旧工程、旧任务或旧审校结论。",
+          "C_annotations": "本条未出现独立的[EXTRA]/[ERRATUM?]代码注释；已逐项审查extra_assumptions、issues、statement_scope中的等效标注。",
+          "validation_scope": "只读语义及签名审校；未编译Lean、未改工程、未补证明；sorry未作为FAIL理由。"
+        }
+      },
+      "audit": {
+        "lean_decl": [
+          "MD.Ch08.sinN1Field",
+          "MD.Ch08.sinN2Field",
+          "MD.Ch08.sinN_split"
+        ],
+        "verdict": "PASS",
+        "explanation": "Q1、Q2、θ及z∈Fin 4→ℝ均全称量化。z=(q,p,ξ₁,ξ₂)，Λ=p²+Q1 ξ₁²/2。sinN1Field的p、ξ₁两分量分别为Q1 ξ₁²ξ₂p/(2Λ)、Q1 ξ₁³ξ₂/(2Λ)−ξ₂ξ₁；sinN2Field仅ξ₂分量为(Q1 ξ₁²−θ)/Q2。sinNField恰为两者逐分量和，完整结论无遗漏。恒等式在Lean总化除法下对零分母也成立；物理正域属已披露[EXTRA]。Yoshida/Suzuki阶数未声明，属于明示范围外。",
+        "counterexample": null,
+        "suggested_fix": null
+      },
+      "subtask": "BATCH10e",
+      "input_sha256": {
+        "Blueprint/Ch08.lean": "2800812fadd8e2557013f1941e4570401f7903d46f44baf07e23d5531da22a72",
+        "blueprint/ch08/ch08_source.json": "9b994b0f64cd22c85c2ad4123fbfdbd064bd7a6d070fe13b721794432f9f7a63",
+        "BATCH10e_PAGES.pdf": "e488633e226e80c93f8fca2291d14e58b9a9741fcdef10807f4647251388ec3c"
+      }
+    },
+    {
+      "source_id": "MD-8.6.3-SINForceExactPrinted",
+      "json_review": {
+        "status": "NEEDS_HUMAN",
+        "issue_codes": [
+          "STALE_TRANSCRIPTION_NOTE",
+          "PRINTED_FORCE_SIGN_CONFLICT"
+        ],
+        "corrected_json": {
+          "source_id": "MD-8.6.3-SINForceExactPrinted",
+          "kind": "unnumbered_claim",
+          "label": null,
+          "section": "8.6.3",
+          "printed_page": "372",
+          "pdf_page": "393",
+          "statement_latex": "ṗ=F−p²F/Λ, ξ̇₁=pξ₁F/Λ. The printed solution is p(h)=(p(0)+(F/m)s(h))/ṡ(h), ξ₁(h)=ξ₁(0)/ṡ(h), with s(t)=b⁻¹/²sinh(t√b)+(a/b)(cosh(t√b)−1), a=Fp(0)/Λ, b=F²/Λ.",
+          "statement_verbatim": "372\n8\nExtended Variable Methods\nWe stress that the implementation of this method is in fact quite straightforward,\ndespite its apparent complexity. The following details regarding the implementation\nare discussed in [220]:\n•\nFor the integration of the Nosé terms, it is recommended to use a further splitting:\nLN D L.1/\nN C L.2/\nN ;\nwhere\nL.1/\nN D 1\n2\n\u00061\u00122\n1\u00122p\n\u0017\n@\n@p C 1\n2\n\u00061\u00123\n1\u00122\n\u0017\n@\n@\u00121\n\u0003 \u00122\u00121\n@\n@\u00121\n;\nand\nL.2/\nN D \u0006\u00021\n2 Œ\u00061\u00122\n1 \u0003 ˇ\u00021\t @\n@\u00122\n:\nMoreover a Yoshida/Suzuki type higher order decomposition is used to obtain\nmore accuracy in this component.\n•\nThe term exp ŒhLF\t (like similar terms) is completely integrable. Note that in\ngeneral this reduces to solving\nPp D F \u0003 p2F=\u0017;\nP\u00121 D p\u00121F=\u0017;\nwith F a constant.\nThe solution in a timestep h is\np.h/ D p.0/ C .F=m/s.h/\nPs.h/\n;\n\u00121.h/ D \u00121.0/\nPs.h/ ;\nwhere\ns.t/ D b\u00021=2 sinh.t\np\nb/ C a\nb.cosh.t\np\nb/ \u0003 1/\nwith a D Fp.0/=\u0017 and b D F2=\u0017, \u0017 D ˇ\u00021.\nCare must be taken in the evaluation of s and Ps for a; b close to zero.\nNote that other decompositions are possible [220].\n",
+          "verbatim_scope": "完整对应原页文字层，逐字保留；本条数学成分由statement_latex及statement_scope定位。",
+          "proof_latex": null,
+          "proof_note": "对应原页推导逐字保存在statement_verbatim/original_page_text；排版以原页PDF为准。",
+          "original_page_text": [
+            {
+              "pdf_page": 393,
+              "printed_page": 372,
+              "text": "372\n8\nExtended Variable Methods\nWe stress that the implementation of this method is in fact quite straightforward,\ndespite its apparent complexity. The following details regarding the implementation\nare discussed in [220]:\n•\nFor the integration of the Nosé terms, it is recommended to use a further splitting:\nLN D L.1/\nN C L.2/\nN ;\nwhere\nL.1/\nN D 1\n2\n\u00061\u00122\n1\u00122p\n\u0017\n@\n@p C 1\n2\n\u00061\u00123\n1\u00122\n\u0017\n@\n@\u00121\n\u0003 \u00122\u00121\n@\n@\u00121\n;\nand\nL.2/\nN D \u0006\u00021\n2 Œ\u00061\u00122\n1 \u0003 ˇ\u00021\t @\n@\u00122\n:\nMoreover a Yoshida/Suzuki type higher order decomposition is used to obtain\nmore accuracy in this component.\n•\nThe term exp ŒhLF\t (like similar terms) is completely integrable. Note that in\ngeneral this reduces to solving\nPp D F \u0003 p2F=\u0017;\nP\u00121 D p\u00121F=\u0017;\nwith F a constant.\nThe solution in a timestep h is\np.h/ D p.0/ C .F=m/s.h/\nPs.h/\n;\n\u00121.h/ D \u00121.0/\nPs.h/ ;\nwhere\ns.t/ D b\u00021=2 sinh.t\np\nb/ C a\nb.cosh.t\np\nb/ \u0003 1/\nwith a D Fp.0/=\u0017 and b D F2=\u0017, \u0017 D ˇ\u00021.\nCare must be taken in the evaluation of s and Ps for a; b close to zero.\nNote that other decompositions are possible [220].\n"
+            }
+          ],
+          "numbered_equations": [],
+          "transcription_note": "文字层逐字保留；数学排版另行转写，原页中的特殊字形编码不静默替换。",
+          "context_notation": [],
+          "extra_assumptions": [
+            "质量按本节假设取1；Q₁、Λ正，排除ṡ=0；F=0用b=0的解析延拓，避免总化除法假装极限。",
+            "只声明候选流在有效域满足校正ODE，不证明全局流、组合方法精度或遍历性。"
+          ],
+          "issues": [
+            "已目视核对原页PDF393：所印ξ̇₁为正号，与前页力子场及ξ₁(h)=ξ₁(0)/ṡ(h)的负号导数冲突。保留原印和负号工作修正版。",
+            "[ERRATUM?] 保留Printed，给ξ₁负号版添加[ERRATUM?]；保留m=1的[EXTRA]，不要把工作修正版回填为原文。"
+          ],
+          "statement_scope": "原印子场、显式候选与校正ODE的局部导数目标。",
+          "lean_decl": "MD.Ch08.sinForceAux",
+          "lean_declarations": [
+            "MD.Ch08.sinForceAux",
+            "MD.Ch08.sinForceFlow",
+            "MD.Ch08.sinForceODEPrinted",
+            "MD.Ch08.sinForceODE_corrected",
+            "MD.Ch08.sinForceFlow_solution_corrected"
+          ],
+          "source_page_verification": "R5本次审校：已核对R5_PAGES.pdf附件第2页文字层及相应原书页面图像；文字层特殊字形保留。",
+          "repair_log": [],
+          "documented_priors": []
+        },
+        "issues": [
+          {
+            "code": "STALE_TRANSCRIPTION_NOTE",
+            "field": "transcription_note",
+            "severity": "metadata",
+            "description": "本条对应第8章本附件页；通用注记“PDF420仅取Exercises之前”与本条无关，应删除。原文正文及乱码字形不改。"
+          },
+          {
+            "code": "PRINTED_FORCE_SIGN_CONFLICT",
+            "field": "statement_latex / original_page_text / extra_assumptions",
+            "severity": "needs_human",
+            "description": "Printed正号ODE忠实于原页；sinForceAux在b≠0为所印双曲函数，b=0分支为解析延拓；sinForceFlow以m=1省去F/m，属于已披露[EXTRA]，不得称一般质量字面解。corrected定义为负号sinForceField。导数定理对任意Q1,F,z,t，在Q1>0、Λ(z)>0和s′(t)≠0下声明完整四维HasDerivAt，数学正确：校正场保持Λ，候选在0时返回z，其他q、ξ₂不动。没有全局流或误差阶结论。原印正号与显式候选冲突，须人工确认勘误。",
+            "suggestion": "保留Printed，给ξ₁负号版添加[ERRATUM?]；保留m=1的[EXTRA]，不要把工作修正版回填为原文。"
+          }
+        ],
+        "evidence": {
+          "attachment": "R5_PAGES.pdf",
+          "attachment_pages": [
+            2
+          ],
+          "book_pdf_pages": "393",
+          "printed_pages": "372",
+          "A_verbatim": "已与附件原页逐段核对完整statement_verbatim和original_page_text；无正文增删。保留原文字层的控制字形；不同提取器的ﬁ/fi、ﬂ/fl以及原页ℓ的字形映射差别不判作原书错字。statement_latex按目视公式核对。",
+          "A_formula": "附件第2页：ξ̇₁=pξ₁F/Λ为正号；其下ξ₁(h)=ξ₁(0)/ṡ(h)，p分子明确印F/m。",
+          "C_definitions": "只使用本任务摘录的MD.*及MolecularDynamics项目定义；已展开本条依赖及附录相关定义，Mathlib按标准含义采信。未使用旧工程、旧任务或旧审校结论。",
+          "C_annotations": "本条未出现独立的[EXTRA]/[ERRATUM?]代码注释；已逐项审查extra_assumptions、issues、statement_scope中的等效标注。",
+          "validation_scope": "只读语义及签名审校；未编译Lean、未改工程、未补证明；sorry未作为FAIL理由。"
+        }
+      },
+      "audit": {
+        "lean_decl": [
+          "MD.Ch08.sinForceAux",
+          "MD.Ch08.sinForceFlow",
+          "MD.Ch08.sinForceODEPrinted",
+          "MD.Ch08.sinForceODE_corrected",
+          "MD.Ch08.sinForceFlow_solution_corrected"
+        ],
+        "verdict": "NEEDS_HUMAN",
+        "explanation": "Printed正号ODE忠实于原页；sinForceAux在b≠0为所印双曲函数，b=0分支为解析延拓；sinForceFlow以m=1省去F/m，属于已披露[EXTRA]，不得称一般质量字面解。corrected定义为负号sinForceField。导数定理对任意Q1,F,z,t，在Q1>0、Λ(z)>0和s′(t)≠0下声明完整四维HasDerivAt，数学正确：校正场保持Λ，候选在0时返回z，其他q、ξ₂不动。没有全局流或误差阶结论。原印正号与显式候选冲突，须人工确认勘误。",
+        "counterexample": "取Q1=2、z=(0,1,1,0)、F=1，则Λ=2、s′(0)=1、s″(0)=1/2。候选ξ₁′(0)=−1/2，Printed场给+1/2；负号校正版给−1/2。",
+        "suggested_fix": "保留Printed，给ξ₁负号版添加[ERRATUM?]；保留m=1的[EXTRA]，不要把工作修正版回填为原文。"
+      },
+      "subtask": "BATCH10f",
+      "input_sha256": {
+        "Blueprint/Ch08.lean": "2800812fadd8e2557013f1941e4570401f7903d46f44baf07e23d5531da22a72",
+        "blueprint/ch08/ch08_source.json": "9b994b0f64cd22c85c2ad4123fbfdbd064bd7a6d070fe13b721794432f9f7a63",
+        "BATCH10f_PAGES.pdf": "0b5625a74cd4e9af1e24cff88b1783af2c1e4fbf4f5fc5b1349d265e2157500d"
+      }
+    }
+  ],
+  "merged_from": "ch08_first_merged"
+}

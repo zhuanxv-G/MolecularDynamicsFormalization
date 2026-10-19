@@ -1,0 +1,172 @@
+[
+  {
+    "source_id": "MD-8.1.1-NHFirstIntegralPrinted",
+    "signature_changed": false,
+    "notes": [],
+    "website_explanation": "nhIntegral逐项忠实于(8.8)。nhIntegralPrinted的hs忠实于原印s′=ξ，结论忠实于所印守恒声称；不因原书错误判忠实签名FAIL。但原印命题通常不成立：沿NH解，I′=(n/β)ξ(1/s−1)。nhIntegral_corrected只将hs改为s′=sξ，保持s>0、正参数、U∈C²和全实时间解量词，其零导数结论正确。"
+  },
+  {
+    "source_id": "MD-8.1.2.1-NoseHamiltoniansPrinted",
+    "signature_changed": false,
+    "notes": [],
+    "website_explanation": "noseHamiltonian的对数系数(n+1)/β与原页第一式一致；npHamiltonian的n/β与(8.9)展开一致。nosePoincarePrinted忠实保留两个原印公式间不相容的等号。nosePoincare_corrected显式减去log s/β，代数正确；其无正参数/正s假设是Lean总函数上的代数恒等式，不代表物理域扩展。"
+  },
+  {
+    "source_id": "MD-8.1.2.1-NPEquations",
+    "signature_changed": true,
+    "notes": [
+      "已目视核对原页PDF355：delta取H_N^(n)−E_N，不能与上式(n+1)/β版本混同。",
+      "[EXTRA] npValidDomain明确列有效物理域；使用npField作NP方程时必须另具此资格，总函数自身不强制。"
+    ],
+    "website_explanation": "四个分量形式逐项匹配(8.10)–(8.13)，s为z.2.1、π为z.2.2，力为−∇U。有效域β,Q,s>0与对角逆质量已说明，但没有在总函数def中强制。delta明确取(8.9)展开的n/β版本；原页却把ΔH_N定义成先前H_N−H_N⁰，若沿用(n+1)/β版本就不同。因此这是合理而已披露的展开式选择，仍需人工解决原书同名歧义，不判签名FAIL。"
+  },
+  {
+    "source_id": "MD-8.4-OUStationarityPrinted",
+    "signature_changed": false,
+    "notes": [],
+    "website_explanation": "逐声明：ouFokkerPlanck PASS，采用正div(ρΓp)对应漂移-Γp，扩散项为½ΣC_ij∂_i∂_jρ；ouStationarity_corrected PASS，β>0、M正定、Γ半正定与BBᵀ=(2/β)ΓM使M、Γ交换，Gaussian协方差M/β满足Lyapunov方程，结论是∀p局部Fokker–Planck算子为零。diffusionPrinted是原错误等式M=Γ=1,p=0的忠实标量实例，忠实性PASS、原书真值NEEDS_HUMAN。diffusionPrinted_counterexample PASS。没有把局部算子恒零升级为全局过程存在或唯一不变律；没有因sorry判FAIL。整条因原书疑误NEEDS_HUMAN。"
+  },
+  {
+    "source_id": "MD-8.4-Proposition82",
+    "signature_changed": false,
+    "notes": [],
+    "website_explanation": "Printed忠实性PASS、原命题数学资格NEEDS_HUMAN；corrected PASS。n任意，F/G/g均C∞，γ任意实数，w是ℝⁿ×ℝ中的任意点，hspan在w.1点要求{F,G}的Lie点值张成全空间，结论在同一提升点w要求{b₀,b₁}张成全空间。原文“spans ℝᵐ”以点态方式表达，适用于相应点。σ≠0时可从b₁得到垂直方向，从[b₀,b₁]得到G的水平提升，再通过光滑系数组合得到F的水平提升；迭代括号的点值张成保留全部方向。改正的前提不是假定目标结论，也未引入无关遍历性结论。"
+  },
+  {
+    "source_id": "MD-8.4.1-Theorem81",
+    "signature_changed": false,
+    "notes": [
+      "[EXTRA] 当前_corrected为σ独立非零的括号结论；如解释为物理NHL，还须σ²=2γθ/Q。未推到全局遍历性。"
+    ],
+    "website_explanation": "逐声明：theorem81Printed按所印定理字面保留正定、不同本征值、D×ℝ及任意Q,θ,γ,σ，字面对应PASS，但未限定参数的数学真值NEEDS_HUMAN。theorem81_corrected PASS：A正定、谱单射、Q,θ,γ正、σ非零，w.1∈D；结论是同一点w的实际迭代Lie括号张成全空间。D29/D30及textbookNHLDrift展开为((p,-Aq-ξp),Q⁻¹(Σp_i²-nθ)-γξ)，噪声是(0,σ)。负号G与书中正G生成同一个Lie代数。结论强度限于包含漂移的Hörmander点态条件，不是解存在、转移核光滑、可达性或几何遍历性。corrected将σ视为独立非零参数是有效的更一般括号结论，物理NHL需再作σ=sqrt(2γθ/Q)专门化。"
+  },
+  {
+    "source_id": "MD-8.4.1-LyapunovRatePrinted",
+    "signature_changed": false,
+    "notes": [],
+    "website_explanation": "lyapunovAlphaPrinted与lyapunovRatePrinted忠实保留原书α=min(2a,γμ)及δ，按字面忠实性PASS，不能作为正确漂移定理使用。_counterexample的正参数满足全部前提；_corrected改为min(2a,γ)合理且正确：ξ能量的系数是Q/2，故须α≤γ；结合平方不等式及U≤Umax得所写δ。修正版没有额外宣称几何遍历。"
+  },
+  {
+    "source_id": "MD-8.5-SLSBracketPrinted",
+    "signature_changed": false,
+    "notes": [],
+    "website_explanation": "slsBracketPrinted逐字对应原书(p,0,1)，字面忠实性PASS；数学上在标准Lie括号约定下不正确。按VectorField.lieBracket V W=DW·V−DV·W，常向量Yξ给[D,Yξ]=−∂ξD=(−p,0,1)，故_corrected签名正确。反向括号会整体变为(p,0,−1)，不能仅靠约定得到原书(p,0,1)。二次括号的整体符号不影响张成。"
+  },
+  {
+    "source_id": "MD-8.5-SLSLeapfrog",
+    "signature_changed": true,
+    "notes": [
+      "已目视核对原页PDF379：η约化式的ξ导数漏μ⁻¹，新增Printed与恢复1/Q的_corrected；Q>0、正质量与U可微为物理域。分裂映射原有定义未改。"
+    ],
+    "website_explanation": "Vec n=Fin n→ℝ，Phase n=(q,p)，z.2=ξ，invm为对角逆质量，Q对应原书μ。slsBathKick对任意n、invm、U、Q、h、z只更新ξ；slsDriftStep只更新q且保留p、ξ。函数复合从右往左执行，slsLeapfrog精确给出半kick、全drift、半kick，第二次梯度在新q处。slsCoordinateField只激活所选i的q分量，并给出−invm_i p_i ∂iU/Q。四个定义均忠实对应算法；未把有疑误的η约化方程作为已证结论。 半kick、drift、半kick和逐坐标场：PASS。 [EXTRA] Q≠0、正质量及U可微是物理解释的域；Lean定义作总函数，不据此声称Q=0时有物理意义。 覆盖边界：无η约化方程定理、体积/面积保持定理、二阶稳态误差或OU随机步骤定理。"
+  },
+  {
+    "source_id": "MD-8.6-IsokineticDivergencePrinted",
+    "signature_changed": false,
+    "notes": [
+      "已目视核对原页PDF383–384：散度与∇w·f等式须同时改负号，w=(n−1)U/K的正号保留。"
+    ],
+    "website_explanation": "isoAnsatz对任意实函数w、Φ给exp(−w)Φ(K)，是权重表达式而非已归一概率密度。isoDivergencePrinted以任意n、invm、C¹力场F和K≠0为前提，完整保留原印正号：字面忠实PASS，数学疑误NEEDS_HUMAN。isoDivergence_corrected使用完全相同的对象和前提，仅改为−(n−1)λ，数学陈述PASS。textbookDivergence是fderiv的迹，不是负散度约定；λ对p为−1次齐次，故div_p(F−λp)=−nλ−p·∇pλ=−(n−1)λ。 isoAnsatz：PASS；isoDivergencePrinted：忠实PASS/数学NEEDS_HUMAN；isoDivergence_corrected：PASS。 [EXTRA] C¹和K≠0支持实际散度的定义与局部微分；Φ的正性、光滑性未由裸权重定义保证，未据此推出概率不变性。 w方程、不变曲面测度和归一化均不在当前完整结论中。"
+  },
+  {
+    "source_id": "MD-8.6.1-SINWeightPrinted",
+    "signature_changed": false,
+    "notes": [],
+    "website_explanation": "sinWeightPrinted是原印exp(−w)，没有把w和密度混淆。sinWeight_corrected把二次项改成Q2 ξ₂²/2，合理且正确。sinWeight_stationary_corrected量化C²势U、Q1,Q2,θ>0和K(z)=θ，在γ=0且F=−U′时断言div(ρb)(z)=0；这是环境空间通量散度在壳面处的逐点等式，不是曲面测度不变性或包含OU的完整Fokker–Planck定理。沿b有K̇=0；div b=−pF/K+Q1ξ₁²ξ₂/K−ξ₂，而b·∇logρ=(pF−ξ₂(Q1ξ₁²−θ))/K，两者相加为ξ₂(θ/K−1)，壳面上为0。 sinWeightPrinted：忠实PASS/一般质量数学NEEDS_HUMAN；sinWeight_corrected、sinWeight_stationary_corrected：PASS。 正约束保证分母非零；C²假设略强但不构成偷换。 印刷式在μ₂=1时消除此项疑误，但原节并未把μ₂固定为1。"
+  },
+  {
+    "source_id": "MD-8.6.2-SINProjectedBracketsPrinted",
+    "signature_changed": false,
+    "notes": [
+      "已目视核对原页PDF388：(8.49)–(8.53)及“any pair”/平行论据需导师核查；修正版仅以完整四维真实括号再投影为准，不把改下标当作长式校正。"
+    ],
+    "website_explanation": "bracket4采用Dg·f−Df·g；sinBracket的0=f、1=[f,g]、k+2=[f,sinBracket(k+1)]递归及projectFirstThree均正确。sinU0Printed是(8.48)展开式；sinU1Printed重复它，忠实于(8.50)；sinU2Printed忠实于(8.51)；sinU1DerivativePrinted的d=∂ξ₂λ且第三分量未乘σ，忠实于(8.49)。sinProjected_corrected先在完整四维计算再投影，对j:Fin 4给出真实迭代括号的定义，无冒充显式公式等式。sinU2LongPrinted逐项对应(8.52)，sinU2Long_at_p0对所有σ、γ、z只假设p=0，得到[0,σξ₁²q/D²,0]，即(8.53)，在Lean总除法约定下也成立。 真实括号与投影定义：PASS；所有Printed表达式的字面忠实性：PASS。 sinU2Long_at_p0：内部代数特化PASS；它没有断言Printed长式等于真实二重括号。 原页“any pair”也应人工复核：p=0时首括号投影为0，并非任意一对均独立。 [EXTRA] θ>0且K=θ时D=2θ>0，裸Printed定义对零分母的总化不代表物理延拓。"
+  },
+  {
+    "source_id": "MD-8.6.2-SINThirdBracketPrinted",
+    "signature_changed": false,
+    "notes": [
+      "_corrected只修正(8.54)在p=0的内部代数特化，不能据此声称Printed长式等于真实三重括号。"
+    ],
+    "website_explanation": "sinEtaPrinted完整保留γ²、ξ₁幂次及各交叉项；sinU3Printed的三个分量完整对应(8.54)。sinU3ZeroPrinted忠实于(8.56)；sinU3Zero_corrected仅修正从(8.54)出发的p=0内部代数特化，q分量为−2σq/ξ₁²，p分量仍为−σq(−γ+ξ₂)。sinU3Zero_specialize量化任意σ、γ、z，假设p=0和ξ₁≠0，断言Printed长式等于上述内部修正版，陈述正确。该修正版没有宣称已校正真实三重括号；scope的这一限制必不可少。 sinEtaPrinted、sinU3Printed、sinU3ZeroPrinted：忠实PASS；sinU3Zero_corrected及sinU3Zero_specialize：在明确的内部代数意义下PASS。 ξ₁≠0是约去幂次所需的有效前提；无θ、γ、σ正性需求。 原印长式是否等于真实三重括号未由本条签名断言或证明。"
+  },
+  {
+    "source_id": "MD-8.6.2-SINLyapunov",
+    "signature_changed": true,
+    "notes": [
+      "已目视核对原页PDF390：有符号Cξ₂尾界不能统一控制两侧；工作修正版为−γξ₂²+θ|ξ₂|+γθ。它依赖尚未证明的局部生成元恒等式，不代表遍历性证明。"
+    ],
+    "website_explanation": "additiveGenerator= Df(z)[b(z)]+D(Df(·)[B])(z)[B]/2；sinGenerator用单位热浴质量的sinDrift和第四坐标噪声B。sinGenerator_lyapunov对θ,γ>0、任意F和K(z)≠0断言L(ξ₂²/2)=(ξ₁²−θ)ξ₂−γξ₂²+γθ，正确；无需F可微，因为被求导的测试函数仅依赖ξ₂。sinConstraint_bathBound对任意θ和满足K=θ的z给ξ₁²≤2θ，正确。两个定理均未断言原印有符号尾界或遍历性。 sinGenerator、sinGenerator_lyapunov、sinConstraint_bathBound：PASS。 [EXTRA] hθ,hγ保证扩散平方为2γθ；hK排除物理奇点，未用它替代完整约束面结论。 原文正开集候选测度、周期边界及收缩性论证未被当作已形式化的遍历定理。"
+  },
+  {
+    "source_id": "MD-8.6.3-SINForceExactPrinted",
+    "signature_changed": false,
+    "notes": [],
+    "website_explanation": "Printed正号ODE忠实于原页；sinForceAux在b≠0为所印双曲函数，b=0分支为解析延拓；sinForceFlow以m=1省去F/m，属于已披露[EXTRA]，不得称一般质量字面解。corrected定义为负号sinForceField。导数定理对任意Q1,F,z,t，在Q1>0、Λ(z)>0和s′(t)≠0下声明完整四维HasDerivAt，数学正确：校正场保持Λ，候选在0时返回z，其他q、ξ₂不动。没有全局流或误差阶结论。原印正号与显式候选冲突，须人工确认勘误。"
+  },
+  {
+    "source_id": "MD-8.7-GeneralizedLangevin",
+    "signature_changed": false,
+    "notes": [
+      "已目视核对原页PDF395：colored-noise后的non-Gaussian不是同义解释。有色Gaussian过程存在（如平稳OU）；原句保留，修正说明为“有色性指跨时相关，Gaussian性另定”。此处属文字修正，不引入无关定理。",
+      "[EXTRA] generalizedLangevin仅为给定加性驱动B的积分方程，噪声分布、有色性及FD未在本定义内强制，由另条规格给出。"
+    ],
+    "website_explanation": "memoryDrag对矩阵核Γ和动量p取负区间卷积；generalizedLangevin在任意概率空间Ω上，以正逆质量、C¹势、非负时间连续核及a.s.连续路径为[EXTRA]强解资格。对每个t≥0要求自然B历史可测性、漂移可积性和a.s.两条积分等式；t=0推出X0=x0，动量增量B(t)−B(0)正确，未将B当作Brownian。定义没有FD或有色性资格，也不要求非Gaussian，因而只应视为给定B的方程规格。原页将colored-noise与non-Gaussian并列，容易误导，原书疑误保留。"
+  },
+  {
+    "source_id": "MD-8.7-GLEFluctuationDissipationPrinted",
+    "signature_changed": false,
+    "notes": [],
+    "website_explanation": "P、R、矩阵Γ及θ全称作为定义参数。randomForceQualification含概率性、所有t≥0各坐标L²及零均值。gleFDPrinted对所有t,s≥0及i,j使用if i=j then θΓij(s) else 0，忠实编码原印δij；gleFD_corrected去掉δ，作为单位质量一般矩阵协方差目标合理，但不声称任意Γ存在实现。scalarMemoryMatrix为γ(t)I，因此两版本在标量核特化相同。θ>0及零均值、L²均为明确资格，不是原文额外定理。"
+  },
+  {
+    "source_id": "MD-8.7.1-PronyOUStationarity",
+    "signature_changed": true,
+    "notes": [
+      "已目视核对原页PDF397：(8.66)未声明平稳初态；保留原句，_corrected明确引用stationaryPronyOU的Gaussian初态和整条W独立性。总随机力只定义有限和，未证跨模式独立或总协方差。"
+    ],
+    "website_explanation": "stationaryPronyOU明确含概率及标准Wiener资格、cτθ>0、R0~N(0,θc/τ)、R0与整条W独立、非负时间a.s.连续及各时刻L²，并以积分方程表示噪声系数sqrt(2θc)/τ。covariance在这些假设及t,s≥0下给出零均值和θc/τ·exp(−s/τ)，正确。totalPronyRandomForce只定义有限和，不证明跨模式独立或总协方差。原页未写平稳初态，原印无条件均值与相关性断言需人工确认；所加初态属于必要[EXTRA]，不是照录原文前提。"
+  },
+  {
+    "source_id": "MD-8.8-AndersenHamiltonianPrinted",
+    "signature_changed": false,
+    "notes": [
+      "[EXTRA] andersenMarginal_corrected仅是除以参数Z的权重，不声称自动归一。若作概率密度，须在相同坐标和V>0域上可积，且Z为相同权重的正有限配分积分；任意Z>0不足。"
+    ],
+    "website_explanation": "Hamiltonian对象z=((qbar,pbar),V),pV的嵌套投影正确，包含Σpbar_i²/(2m_i V^(2/3))、U(V^(1/3)qbar)、pV²/(2QV)、PV。Printed定义忠实于原印平方根系数及实pV的Lebesgue积分。Gaussian_marginal在QV,β,V>0下给未归一权重，点态积分消元正确；m正性并非该高斯消元恒等式必要条件。corrected除以独立参数Z，作为权重公式合理，但定义无Z>0或Z等于配分积分条件，不能单凭名称称归一概率。原印把该未归一权重称ρ_NPT，与前页Z_NPT⁻¹相差因子，保留并交人工确认。"
+  },
+  {
+    "source_id": "MD-8.8.1-PistonHamiltonianSubfield",
+    "signature_changed": true,
+    "notes": [
+      "已目视核对原页PDF402：文字子场印为(p,−∇U,0,0,0)，一般质量应为(M⁻¹p,−∇U,0,0,0)或另限单位质量。旧pistonHamiltonianPart及其驻定目标属于合理修正，新增Printed与_corrected明确区分。"
+    ],
+    "website_explanation": "pistonHamiltonianPart实际使用(M⁻¹p,−∇qU,0)，权重使用K/2+U及任意C¹冻结变量乘子；U为C²、φ与ψ为C¹，结论为任意z处真实通量散度为零，对任意逆质量参数该恒等式成立，无需概率资格。但是原页在文字中把向量场印为(p,−∇U,0,0,0)，不是Lean中的M⁻¹p。原JSON只称Hamiltonian part，未揭示这个原印与合理修正的差别，不能将修正默认为逐字忠实。"
+  },
+  {
+    "source_id": "MD-8.8.1-PistonThermostatWeightPrinted",
+    "signature_changed": false,
+    "notes": [],
+    "website_explanation": "pistonThermostatPart在p上为−ξp、ξ上为(K−nθ)/QT，其他坐标冻结。pistonRho2Printed忠实保留原页动能项缺少1/2；pistonRho2_corrected恢复K/2。stationary_corrected量化所有正逆质量、β、QT和任意z，并把θ设为β⁻¹，结论div(ρF)=0正确。ψ₂=1的覆盖缩减在extra_assumptions已明示，不要求补任意冻结乘子或归一性。原印驻定断言数学错误仍须人工确认勘误；Printed定义自身忠实，修正版签名正确。"
+  },
+  {
+    "source_id": "MD-8.9.1-DPDMassOrderPrinted",
+    "signature_changed": false,
+    "notes": [],
+    "website_explanation": "dpdMatrixFDPrinted保留原印左乘M⁻¹，dpdMatrixFD_corrected将其放在右侧；两者只定义矩阵等式，无正定性或θ>0前提并不使定义失真，物理解释须使用标出的资格。dpdMassOrder_counterexample量化的是两个明确2×2矩阵的不交换性，(0,1)元已足以区分。对于成对DPD的对称阻尼核A=BBᵀ/(2θ)，作用于速度M⁻¹p的耗散给Γ=AM⁻¹，修正合理。原印关系对一般不等质量不成立，需保留并人工确认；此处没有声称该右乘关系是所有可能非对称OU阻尼的唯一驻定条件。"
+  },
+  {
+    "source_id": "MD-8.9.2-DPDPairGeneratorPrinted",
+    "signature_changed": false,
+    "notes": [],
+    "website_explanation": "分别审校：pairDerivative 是沿 e 在 i 增、j 减的方向导数。dpdPairGeneratorPrinted 的漂移只沿 Pi.single i e，扩散为 (σ²wr²/2)D_ij∂i，忠实保留(8.100)的最外层 ∂pi；该原文版忠实性 PASS。dpdPairGenerator_corrected 将漂移和扩散的最外层都换为 D_ij，得到 −γwd u D_ij+(σ²wr²/2)D_ij²，符合独立单对守恒 SDE，修正版数学陈述 PASS。i,j、e及实参数在两定义中均无物理资格限制；单对物理解释须 i≠j、单位方向、正质量及涨落耗散条件，定义本身并未声称不变分布。原书紧随其后的单对保动量叶不变密度说法与原印算子冲突，需保留原式并人工确认勘误；不能因忠实原式存在疑误而判该 Printed 定义 FAIL。"
+  },
+  {
+    "source_id": "MD-8.9.2-DPDPairOUUpdate",
+    "signature_changed": false,
+    "notes": [
+      "[EXTRA] 零率分支仅用于涨落耗散使噪声同时退化的情形；不用于任意独立非零扩散的零漂移OU。物理转移需正约化质量、正温度、a,t≥0及独立标准正态R。"
+    ],
+    "website_explanation": "分别审校 reducedMass8、其正性定理、dpdPairOUPrinted、dpdPairOU_corrected、零率定理、dpdPairMomentumStep 及其守恒定理。约化质量 mi*mj/(mi+mj) 及正质量前提正确；Printed 完全忠实(8.104)。a≠0 时修正版将确定性项改写为 exp(−at)u+(F/mr)(1−exp(−at))/a，与原式相同；a=0 分支为 u+(F/mr)t，噪声根号退化为零，符合涨落耗散关联下的连续零率延拓。动量更新为 ±mr*du*e，总动量等式对任意 i,j,e,mr,du,p 都成立；不需要单位方向或质量正性。要解释为相对速度精确流还需不同粒子、单位方向及正质量；物理 OU 转移还需 mr,θ>0、a,t≥0 和独立标准正态 R。原印公式在零率没有通常实数意义，而本条已正确另设修正版；原书边界域约定应人工确认，Printed 忠实性和 corrected 数学正确性均 PASS。"
+  }
+]

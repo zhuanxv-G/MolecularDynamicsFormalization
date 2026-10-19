@@ -1,0 +1,6213 @@
+{
+  "declarations": [
+    {
+      "name": "MD.Ch08.Vec",
+      "kind": "abbrev",
+      "status": "定义",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "reason": null,
+      "source_id": "MD-8.1-CanonicalCorrelation",
+      "direct_placeholder": false,
+      "transitive_placeholder": false
+    },
+    {
+      "name": "MD.Ch08.Phase",
+      "kind": "abbrev",
+      "status": "定义",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "reason": null,
+      "source_id": "MD-8.1-CanonicalCorrelation",
+      "direct_placeholder": false,
+      "transitive_placeholder": false
+    },
+    {
+      "name": "MD.Ch08.dot",
+      "kind": "def",
+      "status": "定义",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "reason": null,
+      "source_id": "MD-8.1-CanonicalCorrelation",
+      "direct_placeholder": false,
+      "transitive_placeholder": false
+    },
+    {
+      "name": "MD.Ch08.gradient",
+      "kind": "def",
+      "status": "定义",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "reason": null,
+      "source_id": "MD-8.1-CanonicalCorrelation",
+      "direct_placeholder": false,
+      "transitive_placeholder": false
+    },
+    {
+      "name": "MD.Ch08.gibbsWeight",
+      "kind": "def",
+      "status": "定义",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "reason": null,
+      "source_id": "MD-8.1-CanonicalCorrelation",
+      "direct_placeholder": false,
+      "transitive_placeholder": false
+    },
+    {
+      "name": "MD.Ch08.canonicalAverage",
+      "kind": "def",
+      "status": "定义",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "reason": null,
+      "source_id": "MD-8.1-CanonicalCorrelation",
+      "direct_placeholder": false,
+      "transitive_placeholder": false
+    },
+    {
+      "name": "MD.Ch08.probabilityDensity",
+      "kind": "def",
+      "status": "定义",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "reason": null,
+      "source_id": "MD-8.1-CanonicalCorrelation",
+      "direct_placeholder": false,
+      "transitive_placeholder": false
+    },
+    {
+      "name": "MD.Ch08.correlation",
+      "kind": "def",
+      "status": "定义",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "reason": null,
+      "source_id": "MD-8.1-CanonicalCorrelation",
+      "direct_placeholder": false,
+      "transitive_placeholder": false
+    },
+    {
+      "name": "MD.Ch08.correlation_zero",
+      "kind": "theorem",
+      "status": "已证",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "reason": null,
+      "source_id": "MD-8.1-CanonicalCorrelation",
+      "direct_placeholder": false,
+      "transitive_placeholder": false
+    },
+    {
+      "name": "MD.Ch08.hamiltonianField",
+      "kind": "def",
+      "status": "定义",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "reason": null,
+      "source_id": "MD-8.1-HamiltonianStationary",
+      "direct_placeholder": false,
+      "transitive_placeholder": false
+    },
+    {
+      "name": "MD.Ch08.hamiltonianGibbsStationary",
+      "kind": "theorem",
+      "status": "已证",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "reason": null,
+      "source_id": "MD-8.1-HamiltonianStationary",
+      "direct_placeholder": false,
+      "transitive_placeholder": false
+    },
+    {
+      "name": "MD.Ch08.extendedDensity",
+      "kind": "def",
+      "status": "定义",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "reason": null,
+      "source_id": "MD-8.1-ExtendedDensity",
+      "direct_placeholder": false,
+      "transitive_placeholder": false
+    },
+    {
+      "name": "MD.Ch08.extendedAverage",
+      "kind": "theorem",
+      "status": "已证",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "reason": null,
+      "source_id": "MD-8.1-ExtendedDensity",
+      "direct_placeholder": false,
+      "transitive_placeholder": false
+    },
+    {
+      "name": "MD.Ch08.thermostatParameters",
+      "kind": "def",
+      "status": "定义",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "reason": null,
+      "source_id": "MD-8.1.1-NoseHoover",
+      "direct_placeholder": false,
+      "transitive_placeholder": false
+    },
+    {
+      "name": "MD.Ch08.kineticTwice",
+      "kind": "def",
+      "status": "定义",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "reason": null,
+      "source_id": "MD-8.1.1-NoseHoover",
+      "direct_placeholder": false,
+      "transitive_placeholder": false
+    },
+    {
+      "name": "MD.Ch08.nhField",
+      "kind": "def",
+      "status": "定义",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "reason": null,
+      "source_id": "MD-8.1.1-NoseHoover",
+      "direct_placeholder": false,
+      "transitive_placeholder": false
+    },
+    {
+      "name": "MD.Ch08.isNHSolution",
+      "kind": "def",
+      "status": "定义",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "reason": null,
+      "source_id": "MD-8.1.1-NoseHoover",
+      "direct_placeholder": false,
+      "transitive_placeholder": false
+    },
+    {
+      "name": "MD.Ch08.nhWeight",
+      "kind": "def",
+      "status": "定义",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "reason": null,
+      "source_id": "MD-8.1.1-NHDensitySplit",
+      "direct_placeholder": false,
+      "transitive_placeholder": false
+    },
+    {
+      "name": "MD.Ch08.nhBathField",
+      "kind": "def",
+      "status": "定义",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "reason": null,
+      "source_id": "MD-8.1.1-NHDensitySplit",
+      "direct_placeholder": false,
+      "transitive_placeholder": false
+    },
+    {
+      "name": "MD.Ch08.nhField_split",
+      "kind": "theorem",
+      "status": "已证",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "reason": null,
+      "source_id": "MD-8.1.1-NHDensitySplit",
+      "direct_placeholder": false,
+      "transitive_placeholder": false
+    },
+    {
+      "name": "MD.Ch08.nhWeight_stationary",
+      "kind": "theorem",
+      "status": "未证",
+      "axioms": [
+        "propext",
+        "sorryAx",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "reason": "缺大型理论",
+      "source_id": "MD-8.1.1-NHDensitySplit",
+      "direct_placeholder": true,
+      "transitive_placeholder": false
+    },
+    {
+      "name": "MD.Ch08.nhIntegral",
+      "kind": "def",
+      "status": "定义",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "reason": null,
+      "source_id": "MD-8.1.1-NHFirstIntegralPrinted",
+      "direct_placeholder": false,
+      "transitive_placeholder": false
+    },
+    {
+      "name": "MD.Ch08.nhIntegralPrinted",
+      "kind": "theorem",
+      "status": "未证",
+      "axioms": [
+        "propext",
+        "sorryAx",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "reason": "原书疑误不证",
+      "source_id": "MD-8.1.1-NHFirstIntegralPrinted",
+      "direct_placeholder": true,
+      "transitive_placeholder": false
+    },
+    {
+      "name": "MD.Ch08.nhIntegral_corrected",
+      "kind": "theorem",
+      "status": "未证",
+      "axioms": [
+        "propext",
+        "sorryAx",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "reason": "缺大型理论",
+      "source_id": "MD-8.1.1-NHFirstIntegralPrinted",
+      "direct_placeholder": true,
+      "transitive_placeholder": false
+    },
+    {
+      "name": "MD.Ch08.nhReversal",
+      "kind": "def",
+      "status": "定义",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "reason": null,
+      "source_id": "MD-8.1.2-NHReversal",
+      "direct_placeholder": false,
+      "transitive_placeholder": false
+    },
+    {
+      "name": "MD.Ch08.nhReversal_involutive",
+      "kind": "theorem",
+      "status": "已证",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "reason": null,
+      "source_id": "MD-8.1.2-NHReversal",
+      "direct_placeholder": false,
+      "transitive_placeholder": false
+    },
+    {
+      "name": "MD.Ch08.nhReversal_field",
+      "kind": "theorem",
+      "status": "已证",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "reason": null,
+      "source_id": "MD-8.1.2-NHReversal",
+      "direct_placeholder": false,
+      "transitive_placeholder": false
+    },
+    {
+      "name": "MD.Ch08.dampedCoefficient",
+      "kind": "def",
+      "status": "定义",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "reason": null,
+      "source_id": "MD-8.1.2-NHTimestep",
+      "direct_placeholder": false,
+      "transitive_placeholder": false
+    },
+    {
+      "name": "MD.Ch08.nhDrift",
+      "kind": "def",
+      "status": "定义",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "reason": null,
+      "source_id": "MD-8.1.2-NHTimestep",
+      "direct_placeholder": false,
+      "transitive_placeholder": false
+    },
+    {
+      "name": "MD.Ch08.nhKick",
+      "kind": "def",
+      "status": "定义",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "reason": null,
+      "source_id": "MD-8.1.2-NHTimestep",
+      "direct_placeholder": false,
+      "transitive_placeholder": false
+    },
+    {
+      "name": "MD.Ch08.nhFeedback",
+      "kind": "def",
+      "status": "定义",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "reason": null,
+      "source_id": "MD-8.1.2-NHTimestep",
+      "direct_placeholder": false,
+      "transitive_placeholder": false
+    },
+    {
+      "name": "MD.Ch08.nhStep",
+      "kind": "def",
+      "status": "定义",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "reason": null,
+      "source_id": "MD-8.1.2-NHTimestep",
+      "direct_placeholder": false,
+      "transitive_placeholder": false
+    },
+    {
+      "name": "MD.Ch08.dampedCoefficient_zero",
+      "kind": "theorem",
+      "status": "已证",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "reason": null,
+      "source_id": "MD-8.1.2-NHTimestep",
+      "direct_placeholder": false,
+      "transitive_placeholder": false
+    },
+    {
+      "name": "MD.Ch08.nhStep_reversible",
+      "kind": "theorem",
+      "status": "未证",
+      "axioms": [
+        "propext",
+        "sorryAx",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "reason": "缺大型理论",
+      "source_id": "MD-8.1.2-NHTimestepReversible",
+      "direct_placeholder": true,
+      "transitive_placeholder": false
+    },
+    {
+      "name": "MD.Ch08.nhStep_inverse",
+      "kind": "theorem",
+      "status": "未证",
+      "axioms": [
+        "propext",
+        "sorryAx",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "reason": "缺大型理论",
+      "source_id": "MD-8.1.2-NHTimestepReversible",
+      "direct_placeholder": true,
+      "transitive_placeholder": false
+    },
+    {
+      "name": "MD.Ch08.noseHamiltonian",
+      "kind": "def",
+      "status": "定义",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "reason": null,
+      "source_id": "MD-8.1.2.1-NoseHamiltoniansPrinted",
+      "direct_placeholder": false,
+      "transitive_placeholder": false
+    },
+    {
+      "name": "MD.Ch08.npHamiltonian",
+      "kind": "def",
+      "status": "定义",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "reason": null,
+      "source_id": "MD-8.1.2.1-NoseHamiltoniansPrinted",
+      "direct_placeholder": false,
+      "transitive_placeholder": false
+    },
+    {
+      "name": "MD.Ch08.nosePoincarePrinted",
+      "kind": "theorem",
+      "status": "未证",
+      "axioms": [
+        "propext",
+        "sorryAx",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "reason": "原书疑误不证",
+      "source_id": "MD-8.1.2.1-NoseHamiltoniansPrinted",
+      "direct_placeholder": true,
+      "transitive_placeholder": false
+    },
+    {
+      "name": "MD.Ch08.nosePoincare_corrected",
+      "kind": "theorem",
+      "status": "已证",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "reason": null,
+      "source_id": "MD-8.1.2.1-NoseHamiltoniansPrinted",
+      "direct_placeholder": false,
+      "transitive_placeholder": false
+    },
+    {
+      "name": "MD.Ch08.npDeltaN_corrected",
+      "kind": "def",
+      "status": "定义",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "reason": null,
+      "source_id": "MD-8.1.2.1-NPEquations",
+      "direct_placeholder": false,
+      "transitive_placeholder": false
+    },
+    {
+      "name": "MD.Ch08.npValidDomain",
+      "kind": "def",
+      "status": "定义",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "reason": null,
+      "source_id": "MD-8.1.2.1-NPEquations",
+      "direct_placeholder": false,
+      "transitive_placeholder": false
+    },
+    {
+      "name": "MD.Ch08.npField",
+      "kind": "def",
+      "status": "定义",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "reason": null,
+      "source_id": "MD-8.1.2.1-NPEquations",
+      "direct_placeholder": false,
+      "transitive_placeholder": false
+    },
+    {
+      "name": "MD.Ch08.npProjection",
+      "kind": "def",
+      "status": "定义",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "reason": null,
+      "source_id": "MD-8.1.2.1-NPtoNH",
+      "direct_placeholder": false,
+      "transitive_placeholder": false
+    },
+    {
+      "name": "MD.Ch08.npProjection_equations",
+      "kind": "theorem",
+      "status": "未证",
+      "axioms": [
+        "propext",
+        "sorryAx",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "reason": "缺大型理论",
+      "source_id": "MD-8.1.2.1-NPtoNH",
+      "direct_placeholder": true,
+      "transitive_placeholder": false
+    },
+    {
+      "name": "MD.Ch08.fourthOrderRemainder",
+      "kind": "def",
+      "status": "定义",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "reason": null,
+      "source_id": "MD-8.1.2.1-NPShadowDensity",
+      "direct_placeholder": false,
+      "transitive_placeholder": false
+    },
+    {
+      "name": "MD.Ch08.correctedFiniteAverage",
+      "kind": "def",
+      "status": "定义",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "reason": null,
+      "source_id": "MD-8.1.2.1-NPShadowDensity",
+      "direct_placeholder": false,
+      "transitive_placeholder": false
+    },
+    {
+      "name": "MD.Ch08.npShadowAnsatz",
+      "kind": "def",
+      "status": "定义",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "reason": null,
+      "source_id": "MD-8.1.2.1-NPShadowDensity",
+      "direct_placeholder": false,
+      "transitive_placeholder": false
+    },
+    {
+      "name": "MD.Ch08.npDensityAnsatz",
+      "kind": "def",
+      "status": "定义",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "reason": null,
+      "source_id": "MD-8.1.2.1-NPShadowDensity",
+      "direct_placeholder": false,
+      "transitive_placeholder": false
+    },
+    {
+      "name": "MD.Ch08.generalThermostat",
+      "kind": "def",
+      "status": "定义",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "reason": null,
+      "source_id": "MD-8.2-GeneralThermostat",
+      "direct_placeholder": false,
+      "transitive_placeholder": false
+    },
+    {
+      "name": "MD.Ch08.skewMatrix",
+      "kind": "def",
+      "status": "定义",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "reason": null,
+      "source_id": "MD-8.2-GeneralThermostat",
+      "direct_placeholder": false,
+      "transitive_placeholder": false
+    },
+    {
+      "name": "MD.Ch08.continuityRHS",
+      "kind": "def",
+      "status": "定义",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "reason": null,
+      "source_id": "MD-8.2.1-ContinuityProductRule",
+      "direct_placeholder": false,
+      "transitive_placeholder": false
+    },
+    {
+      "name": "MD.Ch08.continuity_productRule",
+      "kind": "theorem",
+      "status": "已证",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "reason": null,
+      "source_id": "MD-8.2.1-ContinuityProductRule",
+      "direct_placeholder": false,
+      "transitive_placeholder": false
+    },
+    {
+      "name": "MD.Ch08.thermalWeight",
+      "kind": "def",
+      "status": "定义",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "reason": null,
+      "source_id": "MD-8.2.1-ThermostatCriterion",
+      "direct_placeholder": false,
+      "transitive_placeholder": false
+    },
+    {
+      "name": "MD.Ch08.thermostatCriterion",
+      "kind": "theorem",
+      "status": "未证",
+      "axioms": [
+        "propext",
+        "sorryAx",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "reason": "缺大型理论",
+      "source_id": "MD-8.2.1-ThermostatCriterion",
+      "direct_placeholder": true,
+      "transitive_placeholder": false
+    },
+    {
+      "name": "MD.Ch08.generalizedFeedback",
+      "kind": "def",
+      "status": "定义",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "reason": null,
+      "source_id": "MD-8.2.1-Examples81and82",
+      "direct_placeholder": false,
+      "transitive_placeholder": false
+    },
+    {
+      "name": "MD.Ch08.configurationalFeedback",
+      "kind": "def",
+      "status": "定义",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "reason": null,
+      "source_id": "MD-8.2.1-Examples81and82",
+      "direct_placeholder": false,
+      "transitive_placeholder": false
+    },
+    {
+      "name": "MD.Ch08.generalizedFeedback_stationaryPrinted",
+      "kind": "theorem",
+      "status": "未证",
+      "axioms": [
+        "propext",
+        "sorryAx",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "reason": "原书疑误不证",
+      "source_id": "MD-8.2.1-Examples81and82",
+      "direct_placeholder": true,
+      "transitive_placeholder": false
+    },
+    {
+      "name": "MD.Ch08.generalizedFeedback_stationary_corrected",
+      "kind": "theorem",
+      "status": "未证",
+      "axioms": [
+        "propext",
+        "sorryAx",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "reason": "缺大型理论",
+      "source_id": "MD-8.2.1-Examples81and82",
+      "direct_placeholder": true,
+      "transitive_placeholder": false
+    },
+    {
+      "name": "MD.Ch08.temperatureIdentity",
+      "kind": "theorem",
+      "status": "未证",
+      "axioms": [
+        "propext",
+        "sorryAx",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "reason": "缺大型理论",
+      "source_id": "MD-8.2.1-TemperatureIdentity",
+      "direct_placeholder": true,
+      "transitive_placeholder": false
+    },
+    {
+      "name": "MD.Ch08.phaseTemperature",
+      "kind": "def",
+      "status": "定义",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "reason": null,
+      "source_id": "MD-8.2.1-TemperatureIdentity",
+      "direct_placeholder": false,
+      "transitive_placeholder": false
+    },
+    {
+      "name": "MD.Ch08.proposition81",
+      "kind": "theorem",
+      "status": "已证",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "reason": null,
+      "source_id": "MD-8.2.1-Proposition81",
+      "direct_placeholder": false,
+      "transitive_placeholder": false
+    },
+    {
+      "name": "MD.Ch08.nhChainField",
+      "kind": "def",
+      "status": "定义",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "reason": null,
+      "source_id": "MD-8.2.2-NHChains",
+      "direct_placeholder": false,
+      "transitive_placeholder": false
+    },
+    {
+      "name": "MD.Ch08.nhChain_stationary",
+      "kind": "theorem",
+      "status": "未证",
+      "axioms": [
+        "propext",
+        "sorryAx",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "reason": "缺大型理论",
+      "source_id": "MD-8.2.2-NHChains",
+      "direct_placeholder": true,
+      "transitive_placeholder": false
+    },
+    {
+      "name": "MD.Ch08.arrheniusRate",
+      "kind": "def",
+      "status": "定义",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "reason": null,
+      "source_id": "MD-8.3-ArrheniusRate",
+      "direct_placeholder": false,
+      "transitive_placeholder": false
+    },
+    {
+      "name": "MD.Ch08.arrheniusRate_nonneg",
+      "kind": "theorem",
+      "status": "已证",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "reason": null,
+      "source_id": "MD-8.3-ArrheniusRate",
+      "direct_placeholder": false,
+      "transitive_placeholder": false
+    },
+    {
+      "name": "MD.Ch08.independentWiener",
+      "kind": "def",
+      "status": "定义",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "reason": null,
+      "source_id": "MD-8.4-AdditiveThermostatSDE",
+      "direct_placeholder": false,
+      "transitive_placeholder": false
+    },
+    {
+      "name": "MD.Ch08.additiveSDE",
+      "kind": "def",
+      "status": "定义",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "reason": null,
+      "source_id": "MD-8.4-AdditiveThermostatSDE",
+      "direct_placeholder": false,
+      "transitive_placeholder": false
+    },
+    {
+      "name": "MD.Ch08.stochasticThermostatDrift",
+      "kind": "def",
+      "status": "定义",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "reason": null,
+      "source_id": "MD-8.4-AdditiveThermostatSDE",
+      "direct_placeholder": false,
+      "transitive_placeholder": false
+    },
+    {
+      "name": "MD.Ch08.fluctuationDissipation",
+      "kind": "def",
+      "status": "定义",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "reason": null,
+      "source_id": "MD-8.4-AdditiveThermostatSDE",
+      "direct_placeholder": false,
+      "transitive_placeholder": false
+    },
+    {
+      "name": "MD.Ch08.thermostatBlockNoise",
+      "kind": "def",
+      "status": "定义",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "reason": null,
+      "source_id": "MD-8.4-AdditiveThermostatSDE",
+      "direct_placeholder": false,
+      "transitive_placeholder": false
+    },
+    {
+      "name": "MD.Ch08.stochasticThermostatSolution",
+      "kind": "def",
+      "status": "定义",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "reason": null,
+      "source_id": "MD-8.4-AdditiveThermostatSDE",
+      "direct_placeholder": false,
+      "transitive_placeholder": false
+    },
+    {
+      "name": "MD.Ch08.ouFokkerPlanck",
+      "kind": "def",
+      "status": "定义",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "reason": null,
+      "source_id": "MD-8.4-OUStationarityPrinted",
+      "direct_placeholder": false,
+      "transitive_placeholder": false
+    },
+    {
+      "name": "MD.Ch08.ouStationarity_corrected",
+      "kind": "theorem",
+      "status": "未证",
+      "axioms": [
+        "propext",
+        "sorryAx",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "reason": "缺大型理论",
+      "source_id": "MD-8.4-OUStationarityPrinted",
+      "direct_placeholder": true,
+      "transitive_placeholder": false
+    },
+    {
+      "name": "MD.Ch08.diffusionPrinted",
+      "kind": "theorem",
+      "status": "未证",
+      "axioms": [
+        "propext",
+        "sorryAx",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "reason": "原书疑误不证",
+      "source_id": "MD-8.4-OUStationarityPrinted",
+      "direct_placeholder": true,
+      "transitive_placeholder": false
+    },
+    {
+      "name": "MD.Ch08.diffusionPrinted_counterexample",
+      "kind": "theorem",
+      "status": "已证",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "reason": null,
+      "source_id": "MD-8.4-OUStationarityPrinted",
+      "direct_placeholder": false,
+      "transitive_placeholder": false
+    },
+    {
+      "name": "MD.Ch08.liftedThermostat",
+      "kind": "def",
+      "status": "定义",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "reason": null,
+      "source_id": "MD-8.4-LiftedThermostat",
+      "direct_placeholder": false,
+      "transitive_placeholder": false
+    },
+    {
+      "name": "MD.Ch08.proposition82Printed",
+      "kind": "theorem",
+      "status": "未证",
+      "axioms": [
+        "propext",
+        "sorryAx",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "reason": "原书疑误不证",
+      "source_id": "MD-8.4-Proposition82",
+      "direct_placeholder": true,
+      "transitive_placeholder": false
+    },
+    {
+      "name": "MD.Ch08.proposition82_corrected",
+      "kind": "theorem",
+      "status": "已证",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "reason": null,
+      "source_id": "MD-8.4-Proposition82",
+      "direct_placeholder": false,
+      "transitive_placeholder": false
+    },
+    {
+      "name": "MD.Ch08.nhlDrift",
+      "kind": "def",
+      "status": "定义",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "reason": null,
+      "source_id": "MD-8.4.1-NHL",
+      "direct_placeholder": false,
+      "transitive_placeholder": false
+    },
+    {
+      "name": "MD.Ch08.isNHLSolution",
+      "kind": "def",
+      "status": "定义",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "reason": null,
+      "source_id": "MD-8.4.1-NHL",
+      "direct_placeholder": false,
+      "transitive_placeholder": false
+    },
+    {
+      "name": "MD.Ch08.harmonicPotential",
+      "kind": "def",
+      "status": "定义",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "reason": null,
+      "source_id": "MD-8.4.1-NHL",
+      "direct_placeholder": false,
+      "transitive_placeholder": false
+    },
+    {
+      "name": "MD.Ch08.lemma81",
+      "kind": "theorem",
+      "status": "已证",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "reason": null,
+      "source_id": "MD-8.4.1-Lemma81",
+      "direct_placeholder": false,
+      "transitive_placeholder": false
+    },
+    {
+      "name": "MD.Ch08.proposition83",
+      "kind": "theorem",
+      "status": "已证",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "reason": null,
+      "source_id": "MD-8.4.1-Proposition83",
+      "direct_placeholder": false,
+      "transitive_placeholder": false
+    },
+    {
+      "name": "MD.Ch08.theorem81Printed",
+      "kind": "theorem",
+      "status": "未证",
+      "axioms": [
+        "propext",
+        "sorryAx",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "reason": "原书疑误不证",
+      "source_id": "MD-8.4.1-Theorem81",
+      "direct_placeholder": true,
+      "transitive_placeholder": false
+    },
+    {
+      "name": "MD.Ch08.theorem81_corrected",
+      "kind": "theorem",
+      "status": "已证",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "reason": null,
+      "source_id": "MD-8.4.1-Theorem81",
+      "direct_placeholder": false,
+      "transitive_placeholder": false
+    },
+    {
+      "name": "MD.Ch08.modeDomain_complement",
+      "kind": "theorem",
+      "status": "已证",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "reason": null,
+      "source_id": "MD-8.4.1-ZeroModeInvariant",
+      "direct_placeholder": false,
+      "transitive_placeholder": false
+    },
+    {
+      "name": "MD.Ch08.zeroMode_invariant",
+      "kind": "theorem",
+      "status": "已证",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "reason": null,
+      "source_id": "MD-8.4.1-ZeroModeInvariant",
+      "direct_placeholder": false,
+      "transitive_placeholder": false
+    },
+    {
+      "name": "MD.Ch08.additiveGenerator",
+      "kind": "def",
+      "status": "定义",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "reason": null,
+      "source_id": "MD-8.4.1-NHLGenerator",
+      "direct_placeholder": false,
+      "transitive_placeholder": false
+    },
+    {
+      "name": "MD.Ch08.nhlGenerator",
+      "kind": "def",
+      "status": "定义",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "reason": null,
+      "source_id": "MD-8.4.1-NHLGenerator",
+      "direct_placeholder": false,
+      "transitive_placeholder": false
+    },
+    {
+      "name": "MD.Ch08.nhlLyapunov",
+      "kind": "def",
+      "status": "定义",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "reason": null,
+      "source_id": "MD-8.4.1-NHLGenerator",
+      "direct_placeholder": false,
+      "transitive_placeholder": false
+    },
+    {
+      "name": "MD.Ch08.geometricDriftBound",
+      "kind": "def",
+      "status": "定义",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "reason": null,
+      "source_id": "MD-8.4.1-NHLGenerator",
+      "direct_placeholder": false,
+      "transitive_placeholder": false
+    },
+    {
+      "name": "MD.Ch08.nhlLyapunovExpression",
+      "kind": "def",
+      "status": "定义",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "reason": null,
+      "source_id": "MD-8.4.1-LyapunovCalculation",
+      "direct_placeholder": false,
+      "transitive_placeholder": false
+    },
+    {
+      "name": "MD.Ch08.nhlLyapunov_calculation",
+      "kind": "theorem",
+      "status": "未证",
+      "axioms": [
+        "propext",
+        "sorryAx",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "reason": "缺大型理论",
+      "source_id": "MD-8.4.1-LyapunovCalculation",
+      "direct_placeholder": true,
+      "transitive_placeholder": false
+    },
+    {
+      "name": "MD.Ch08.shiftedSquare_bound",
+      "kind": "theorem",
+      "status": "已证",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "reason": null,
+      "source_id": "MD-8.4.1-LyapunovCalculation",
+      "direct_placeholder": false,
+      "transitive_placeholder": false
+    },
+    {
+      "name": "MD.Ch08.lyapunovAlphaPrinted",
+      "kind": "def",
+      "status": "定义",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "reason": null,
+      "source_id": "MD-8.4.1-LyapunovRatePrinted",
+      "direct_placeholder": false,
+      "transitive_placeholder": false
+    },
+    {
+      "name": "MD.Ch08.lyapunovAlpha_corrected",
+      "kind": "def",
+      "status": "定义",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "reason": null,
+      "source_id": "MD-8.4.1-LyapunovRatePrinted",
+      "direct_placeholder": false,
+      "transitive_placeholder": false
+    },
+    {
+      "name": "MD.Ch08.lyapunovRatePrinted",
+      "kind": "theorem",
+      "status": "未证",
+      "axioms": [
+        "propext",
+        "sorryAx",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "reason": "原书疑误不证",
+      "source_id": "MD-8.4.1-LyapunovRatePrinted",
+      "direct_placeholder": true,
+      "transitive_placeholder": false
+    },
+    {
+      "name": "MD.Ch08.lyapunovRate_counterexample",
+      "kind": "theorem",
+      "status": "已证",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "reason": null,
+      "source_id": "MD-8.4.1-LyapunovRatePrinted",
+      "direct_placeholder": false,
+      "transitive_placeholder": false
+    },
+    {
+      "name": "MD.Ch08.lyapunovRate_corrected",
+      "kind": "theorem",
+      "status": "未证",
+      "axioms": [
+        "propext",
+        "sorryAx",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "reason": "缺大型理论",
+      "source_id": "MD-8.4.1-LyapunovRatePrinted",
+      "direct_placeholder": true,
+      "transitive_placeholder": false
+    },
+    {
+      "name": "MD.Ch08.nhlOU",
+      "kind": "def",
+      "status": "定义",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "reason": null,
+      "source_id": "MD-8.4.2-NHLTimestep",
+      "direct_placeholder": false,
+      "transitive_placeholder": false
+    },
+    {
+      "name": "MD.Ch08.forceKick",
+      "kind": "def",
+      "status": "定义",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "reason": null,
+      "source_id": "MD-8.4.2-NHLTimestep",
+      "direct_placeholder": false,
+      "transitive_placeholder": false
+    },
+    {
+      "name": "MD.Ch08.bathDamping",
+      "kind": "def",
+      "status": "定义",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "reason": null,
+      "source_id": "MD-8.4.2-NHLTimestep",
+      "direct_placeholder": false,
+      "transitive_placeholder": false
+    },
+    {
+      "name": "MD.Ch08.nhlStep",
+      "kind": "def",
+      "status": "定义",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "reason": null,
+      "source_id": "MD-8.4.2-NHLTimestep",
+      "direct_placeholder": false,
+      "transitive_placeholder": false
+    },
+    {
+      "name": "MD.Ch08.standardNormalSequence",
+      "kind": "def",
+      "status": "定义",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "reason": null,
+      "source_id": "MD-8.4.2-NHLTimestep",
+      "direct_placeholder": false,
+      "transitive_placeholder": false
+    },
+    {
+      "name": "MD.Ch08.weakStationaryNHL",
+      "kind": "def",
+      "status": "定义",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "reason": null,
+      "source_id": "MD-8.4.1-NHLWeakStationary",
+      "direct_placeholder": false,
+      "transitive_placeholder": false
+    },
+    {
+      "name": "MD.Ch08.nhlWeakStationary",
+      "kind": "theorem",
+      "status": "未证",
+      "axioms": [
+        "propext",
+        "sorryAx",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "reason": "缺大型理论",
+      "source_id": "MD-8.4.1-NHLWeakStationary",
+      "direct_placeholder": true,
+      "transitive_placeholder": false
+    },
+    {
+      "name": "MD.Ch08.meanKineticTwice",
+      "kind": "def",
+      "status": "定义",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "reason": null,
+      "source_id": "MD-8.4.3-PreEquilibriumMeans",
+      "direct_placeholder": false,
+      "transitive_placeholder": false
+    },
+    {
+      "name": "MD.Ch08.meanBath",
+      "kind": "def",
+      "status": "定义",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "reason": null,
+      "source_id": "MD-8.4.3-PreEquilibriumMeans",
+      "direct_placeholder": false,
+      "transitive_placeholder": false
+    },
+    {
+      "name": "MD.Ch08.preEquilibriumDensity",
+      "kind": "def",
+      "status": "定义",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "reason": null,
+      "source_id": "MD-8.4.3-PreEquilibriumMeans",
+      "direct_placeholder": false,
+      "transitive_placeholder": false
+    },
+    {
+      "name": "MD.Ch08.rescalingPsi",
+      "kind": "def",
+      "status": "定义",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "reason": null,
+      "source_id": "MD-8.4.4-VelocityRescaling",
+      "direct_placeholder": false,
+      "transitive_placeholder": false
+    },
+    {
+      "name": "MD.Ch08.rescalingDrift",
+      "kind": "def",
+      "status": "定义",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "reason": null,
+      "source_id": "MD-8.4.4-VelocityRescaling",
+      "direct_placeholder": false,
+      "transitive_placeholder": false
+    },
+    {
+      "name": "MD.Ch08.rescalingNoise",
+      "kind": "def",
+      "status": "定义",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "reason": null,
+      "source_id": "MD-8.4.4-VelocityRescaling",
+      "direct_placeholder": false,
+      "transitive_placeholder": false
+    },
+    {
+      "name": "MD.Ch08.originalRescalingPhi",
+      "kind": "def",
+      "status": "定义",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "reason": null,
+      "source_id": "MD-8.4.4-VelocityRescaling",
+      "direct_placeholder": false,
+      "transitive_placeholder": false
+    },
+    {
+      "name": "MD.Ch08.rescalingAdmissible",
+      "kind": "def",
+      "status": "定义",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "reason": null,
+      "source_id": "MD-8.4.4-VelocityRescaling",
+      "direct_placeholder": false,
+      "transitive_placeholder": false
+    },
+    {
+      "name": "MD.Ch08.rescalingPsi_original",
+      "kind": "theorem",
+      "status": "未证",
+      "axioms": [
+        "propext",
+        "sorryAx",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "reason": "缺大型理论",
+      "source_id": "MD-8.4.4-VelocityRescaling",
+      "direct_placeholder": true,
+      "transitive_placeholder": false
+    },
+    {
+      "name": "MD.Ch08.rescalingStationary",
+      "kind": "theorem",
+      "status": "未证",
+      "axioms": [
+        "propext",
+        "sorryAx",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "reason": "缺大型理论",
+      "source_id": "MD-8.4.4-RescalingStationary",
+      "direct_placeholder": true,
+      "transitive_placeholder": false
+    },
+    {
+      "name": "MD.Ch08.thermostatEfficiency",
+      "kind": "def",
+      "status": "定义",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "reason": null,
+      "source_id": "MD-8.4.5-ThermostatEfficiency",
+      "direct_placeholder": false,
+      "transitive_placeholder": false
+    },
+    {
+      "name": "MD.Ch08.langevinErrorEstimate",
+      "kind": "def",
+      "status": "定义",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "reason": null,
+      "source_id": "MD-8.4.5-ThermostatEfficiency",
+      "direct_placeholder": false,
+      "transitive_placeholder": false
+    },
+    {
+      "name": "MD.Ch08.rescalingRateEstimate",
+      "kind": "def",
+      "status": "定义",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "reason": null,
+      "source_id": "MD-8.4.5-ThermostatEfficiency",
+      "direct_placeholder": false,
+      "transitive_placeholder": false
+    },
+    {
+      "name": "MD.Ch08.rescalingErrorEstimate",
+      "kind": "def",
+      "status": "定义",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "reason": null,
+      "source_id": "MD-8.4.5-ThermostatEfficiency",
+      "direct_placeholder": false,
+      "transitive_placeholder": false
+    },
+    {
+      "name": "MD.Ch08.nhlRateEstimate",
+      "kind": "def",
+      "status": "定义",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "reason": null,
+      "source_id": "MD-8.4.5-ThermostatEfficiency",
+      "direct_placeholder": false,
+      "transitive_placeholder": false
+    },
+    {
+      "name": "MD.Ch08.nhlErrorEstimate",
+      "kind": "def",
+      "status": "定义",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "reason": null,
+      "source_id": "MD-8.4.5-ThermostatEfficiency",
+      "direct_placeholder": false,
+      "transitive_placeholder": false
+    },
+    {
+      "name": "MD.Ch08.langevinRateEstimate",
+      "kind": "def",
+      "status": "定义",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "reason": null,
+      "source_id": "MD-8.4.5-ThermostatEfficiency",
+      "direct_placeholder": false,
+      "transitive_placeholder": false
+    },
+    {
+      "name": "MD.Ch08.langevinEfficiencyEstimate",
+      "kind": "def",
+      "status": "定义",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "reason": null,
+      "source_id": "MD-8.4.5-ThermostatEfficiency",
+      "direct_placeholder": false,
+      "transitive_placeholder": false
+    },
+    {
+      "name": "MD.Ch08.originalRescalingRateEstimate",
+      "kind": "def",
+      "status": "定义",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "reason": null,
+      "source_id": "MD-8.4.5-ThermostatEfficiency",
+      "direct_placeholder": false,
+      "transitive_placeholder": false
+    },
+    {
+      "name": "MD.Ch08.originalRescalingErrorEstimate",
+      "kind": "def",
+      "status": "定义",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "reason": null,
+      "source_id": "MD-8.4.5-ThermostatEfficiency",
+      "direct_placeholder": false,
+      "transitive_placeholder": false
+    },
+    {
+      "name": "MD.Ch08.originalRescalingEfficiencyEstimate",
+      "kind": "def",
+      "status": "定义",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "reason": null,
+      "source_id": "MD-8.4.5-ThermostatEfficiency",
+      "direct_placeholder": false,
+      "transitive_placeholder": false
+    },
+    {
+      "name": "MD.Ch08.nhlCriticalEfficiencyEstimate",
+      "kind": "def",
+      "status": "定义",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "reason": null,
+      "source_id": "MD-8.4.5-ThermostatEfficiency",
+      "direct_placeholder": false,
+      "transitive_placeholder": false
+    },
+    {
+      "name": "MD.Ch08.rescalingEfficiencyOrder",
+      "kind": "def",
+      "status": "定义",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "reason": null,
+      "source_id": "MD-8.4.5-ThermostatEfficiency",
+      "direct_placeholder": false,
+      "transitive_placeholder": false
+    },
+    {
+      "name": "MD.Ch08.slsDrift",
+      "kind": "def",
+      "status": "定义",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "reason": null,
+      "source_id": "MD-8.5-SLS",
+      "direct_placeholder": false,
+      "transitive_placeholder": false
+    },
+    {
+      "name": "MD.Ch08.slsNoise",
+      "kind": "def",
+      "status": "定义",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "reason": null,
+      "source_id": "MD-8.5-SLS",
+      "direct_placeholder": false,
+      "transitive_placeholder": false
+    },
+    {
+      "name": "MD.Ch08.isSLSSolution",
+      "kind": "def",
+      "status": "定义",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "reason": null,
+      "source_id": "MD-8.5-SLS",
+      "direct_placeholder": false,
+      "transitive_placeholder": false
+    },
+    {
+      "name": "MD.Ch08.slsDeterministic",
+      "kind": "def",
+      "status": "定义",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "reason": null,
+      "source_id": "MD-8.5-SLS",
+      "direct_placeholder": false,
+      "transitive_placeholder": false
+    },
+    {
+      "name": "MD.Ch08.slsBathNoise",
+      "kind": "def",
+      "status": "定义",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "reason": null,
+      "source_id": "MD-8.5-SLSBracketPrinted",
+      "direct_placeholder": false,
+      "transitive_placeholder": false
+    },
+    {
+      "name": "MD.Ch08.slsBracketPrinted",
+      "kind": "theorem",
+      "status": "未证",
+      "axioms": [
+        "propext",
+        "sorryAx",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "reason": "原书疑误不证",
+      "source_id": "MD-8.5-SLSBracketPrinted",
+      "direct_placeholder": true,
+      "transitive_placeholder": false
+    },
+    {
+      "name": "MD.Ch08.slsBracket_corrected",
+      "kind": "theorem",
+      "status": "未证",
+      "axioms": [
+        "propext",
+        "sorryAx",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "reason": "缺大型理论",
+      "source_id": "MD-8.5-SLSBracketPrinted",
+      "direct_placeholder": true,
+      "transitive_placeholder": false
+    },
+    {
+      "name": "MD.Ch08.slsHormander",
+      "kind": "theorem",
+      "status": "未证",
+      "axioms": [
+        "propext",
+        "sorryAx",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "reason": "缺大型理论",
+      "source_id": "MD-8.5-SLSHormander",
+      "direct_placeholder": true,
+      "transitive_placeholder": false
+    },
+    {
+      "name": "MD.Ch08.slsDeterministic_stationary",
+      "kind": "theorem",
+      "status": "未证",
+      "axioms": [
+        "propext",
+        "sorryAx",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "reason": "缺大型理论",
+      "source_id": "MD-8.5-SLSConservation",
+      "direct_placeholder": true,
+      "transitive_placeholder": false
+    },
+    {
+      "name": "MD.Ch08.slsDeterministic_divergence",
+      "kind": "theorem",
+      "status": "未证",
+      "axioms": [
+        "propext",
+        "sorryAx",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "reason": "缺大型理论",
+      "source_id": "MD-8.5-SLSConservation",
+      "direct_placeholder": true,
+      "transitive_placeholder": false
+    },
+    {
+      "name": "MD.Ch08.slsBathKick",
+      "kind": "def",
+      "status": "定义",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "reason": null,
+      "source_id": "MD-8.5-SLSLeapfrog",
+      "direct_placeholder": false,
+      "transitive_placeholder": false
+    },
+    {
+      "name": "MD.Ch08.slsDriftStep",
+      "kind": "def",
+      "status": "定义",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "reason": null,
+      "source_id": "MD-8.5-SLSLeapfrog",
+      "direct_placeholder": false,
+      "transitive_placeholder": false
+    },
+    {
+      "name": "MD.Ch08.slsLeapfrog",
+      "kind": "def",
+      "status": "定义",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "reason": null,
+      "source_id": "MD-8.5-SLSLeapfrog",
+      "direct_placeholder": false,
+      "transitive_placeholder": false
+    },
+    {
+      "name": "MD.Ch08.slsCoordinateField",
+      "kind": "def",
+      "status": "定义",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "reason": null,
+      "source_id": "MD-8.5-SLSLeapfrog",
+      "direct_placeholder": false,
+      "transitive_placeholder": false
+    },
+    {
+      "name": "MD.Ch08.slsReducedPrinted",
+      "kind": "def",
+      "status": "定义",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "reason": null,
+      "source_id": "MD-8.5-SLSLeapfrog",
+      "direct_placeholder": false,
+      "transitive_placeholder": false
+    },
+    {
+      "name": "MD.Ch08.slsReduced_corrected",
+      "kind": "def",
+      "status": "定义",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "reason": null,
+      "source_id": "MD-8.5-SLSLeapfrog",
+      "direct_placeholder": false,
+      "transitive_placeholder": false
+    },
+    {
+      "name": "MD.Ch08.slsDoubleWell",
+      "kind": "def",
+      "status": "定义",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "reason": null,
+      "source_id": "MD-8.5-SLSDoubleWell",
+      "direct_placeholder": false,
+      "transitive_placeholder": false
+    },
+    {
+      "name": "MD.Ch08.slsDoubleWell_nonneg",
+      "kind": "theorem",
+      "status": "已证",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "reason": null,
+      "source_id": "MD-8.5-SLSDoubleWell",
+      "direct_placeholder": false,
+      "transitive_placeholder": false
+    },
+    {
+      "name": "MD.Ch08.isoMultiplier",
+      "kind": "def",
+      "status": "定义",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "reason": null,
+      "source_id": "MD-8.6-IsokineticField",
+      "direct_placeholder": false,
+      "transitive_placeholder": false
+    },
+    {
+      "name": "MD.Ch08.isoField",
+      "kind": "def",
+      "status": "定义",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "reason": null,
+      "source_id": "MD-8.6-IsokineticField",
+      "direct_placeholder": false,
+      "transitive_placeholder": false
+    },
+    {
+      "name": "MD.Ch08.isoKinetic_balance",
+      "kind": "theorem",
+      "status": "已证",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "reason": null,
+      "source_id": "MD-8.6-IsokineticField",
+      "direct_placeholder": false,
+      "transitive_placeholder": false
+    },
+    {
+      "name": "MD.Ch08.isoProjection",
+      "kind": "def",
+      "status": "定义",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "reason": null,
+      "source_id": "MD-8.6-IsokineticProjector",
+      "direct_placeholder": false,
+      "transitive_placeholder": false
+    },
+    {
+      "name": "MD.Ch08.isoProjection_self",
+      "kind": "theorem",
+      "status": "已证",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "reason": null,
+      "source_id": "MD-8.6-IsokineticProjector",
+      "direct_placeholder": false,
+      "transitive_placeholder": false
+    },
+    {
+      "name": "MD.Ch08.isoProjection_idempotent",
+      "kind": "theorem",
+      "status": "未证",
+      "axioms": [
+        "propext",
+        "sorryAx",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "reason": "时间盒止",
+      "source_id": "MD-8.6-IsokineticProjector",
+      "direct_placeholder": true,
+      "transitive_placeholder": false
+    },
+    {
+      "name": "MD.Ch08.isoAnsatz",
+      "kind": "def",
+      "status": "定义",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "reason": null,
+      "source_id": "MD-8.6-IsokineticDivergencePrinted",
+      "direct_placeholder": false,
+      "transitive_placeholder": false
+    },
+    {
+      "name": "MD.Ch08.isoDivergencePrinted",
+      "kind": "theorem",
+      "status": "未证",
+      "axioms": [
+        "propext",
+        "sorryAx",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "reason": "原书疑误不证",
+      "source_id": "MD-8.6-IsokineticDivergencePrinted",
+      "direct_placeholder": true,
+      "transitive_placeholder": false
+    },
+    {
+      "name": "MD.Ch08.isoDivergence_corrected",
+      "kind": "theorem",
+      "status": "未证",
+      "axioms": [
+        "propext",
+        "sorryAx",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "reason": "缺大型理论",
+      "source_id": "MD-8.6-IsokineticDivergencePrinted",
+      "direct_placeholder": true,
+      "transitive_placeholder": false
+    },
+    {
+      "name": "MD.Ch08.isokineticShell",
+      "kind": "def",
+      "status": "定义",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "reason": null,
+      "source_id": "MD-8.6-IsokineticGibbsShell",
+      "direct_placeholder": false,
+      "transitive_placeholder": false
+    },
+    {
+      "name": "MD.Ch08.isoShellWeight",
+      "kind": "def",
+      "status": "定义",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "reason": null,
+      "source_id": "MD-8.6-IsokineticGibbsShell",
+      "direct_placeholder": false,
+      "transitive_placeholder": false
+    },
+    {
+      "name": "MD.Ch08.isoShell_gibbsFactor",
+      "kind": "theorem",
+      "status": "已证",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "reason": null,
+      "source_id": "MD-8.6-IsokineticGibbsShell",
+      "direct_placeholder": false,
+      "transitive_placeholder": false
+    },
+    {
+      "name": "MD.Ch08.sinConstraint",
+      "kind": "def",
+      "status": "定义",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "reason": null,
+      "source_id": "MD-8.6.1-StochasticIsokinetic",
+      "direct_placeholder": false,
+      "transitive_placeholder": false
+    },
+    {
+      "name": "MD.Ch08.sinMultiplier",
+      "kind": "def",
+      "status": "定义",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "reason": null,
+      "source_id": "MD-8.6.1-StochasticIsokinetic",
+      "direct_placeholder": false,
+      "transitive_placeholder": false
+    },
+    {
+      "name": "MD.Ch08.sinDrift",
+      "kind": "def",
+      "status": "定义",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "reason": null,
+      "source_id": "MD-8.6.1-StochasticIsokinetic",
+      "direct_placeholder": false,
+      "transitive_placeholder": false
+    },
+    {
+      "name": "MD.Ch08.isSINSolution",
+      "kind": "def",
+      "status": "定义",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "reason": null,
+      "source_id": "MD-8.6.1-StochasticIsokinetic",
+      "direct_placeholder": false,
+      "transitive_placeholder": false
+    },
+    {
+      "name": "MD.Ch08.sinConstraint_balance",
+      "kind": "theorem",
+      "status": "已证",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "reason": null,
+      "source_id": "MD-8.6.1-StochasticIsokinetic",
+      "direct_placeholder": false,
+      "transitive_placeholder": false
+    },
+    {
+      "name": "MD.Ch08.sinWeightPrinted",
+      "kind": "def",
+      "status": "定义",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "reason": null,
+      "source_id": "MD-8.6.1-SINWeightPrinted",
+      "direct_placeholder": false,
+      "transitive_placeholder": false
+    },
+    {
+      "name": "MD.Ch08.sinWeight_corrected",
+      "kind": "def",
+      "status": "定义",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "reason": null,
+      "source_id": "MD-8.6.1-SINWeightPrinted",
+      "direct_placeholder": false,
+      "transitive_placeholder": false
+    },
+    {
+      "name": "MD.Ch08.sinWeight_stationary_corrected",
+      "kind": "theorem",
+      "status": "未证",
+      "axioms": [
+        "propext",
+        "sorryAx",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "reason": "缺大型理论",
+      "source_id": "MD-8.6.1-SINWeightPrinted",
+      "direct_placeholder": true,
+      "transitive_placeholder": false
+    },
+    {
+      "name": "MD.Ch08.sinHarmonicF",
+      "kind": "def",
+      "status": "定义",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "reason": null,
+      "source_id": "MD-8.6.2-SINHarmonic",
+      "direct_placeholder": false,
+      "transitive_placeholder": false
+    },
+    {
+      "name": "MD.Ch08.sinHarmonicG",
+      "kind": "def",
+      "status": "定义",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "reason": null,
+      "source_id": "MD-8.6.2-SINHarmonic",
+      "direct_placeholder": false,
+      "transitive_placeholder": false
+    },
+    {
+      "name": "MD.Ch08.isSINHarmonicSolution",
+      "kind": "def",
+      "status": "定义",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "reason": null,
+      "source_id": "MD-8.6.2-SINHarmonic",
+      "direct_placeholder": false,
+      "transitive_placeholder": false
+    },
+    {
+      "name": "MD.Ch08.sinExceptional",
+      "kind": "def",
+      "status": "定义",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "reason": null,
+      "source_id": "MD-8.6.2-SINHarmonic",
+      "direct_placeholder": false,
+      "transitive_placeholder": false
+    },
+    {
+      "name": "MD.Ch08.sinHalfCylinder",
+      "kind": "def",
+      "status": "定义",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "reason": null,
+      "source_id": "MD-8.6.2-SINHarmonic",
+      "direct_placeholder": false,
+      "transitive_placeholder": false
+    },
+    {
+      "name": "MD.Ch08.sinHalfCylinder_disjoint",
+      "kind": "theorem",
+      "status": "已证",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "reason": null,
+      "source_id": "MD-8.6.2-SINHarmonic",
+      "direct_placeholder": false,
+      "transitive_placeholder": false
+    },
+    {
+      "name": "MD.Ch08.bracket4",
+      "kind": "def",
+      "status": "定义",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "reason": null,
+      "source_id": "MD-8.6.2-SINProjectedBracketsPrinted",
+      "direct_placeholder": false,
+      "transitive_placeholder": false
+    },
+    {
+      "name": "MD.Ch08.sinBracket",
+      "kind": "def",
+      "status": "定义",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "reason": null,
+      "source_id": "MD-8.6.2-SINProjectedBracketsPrinted",
+      "direct_placeholder": false,
+      "transitive_placeholder": false
+    },
+    {
+      "name": "MD.Ch08.projectFirstThree",
+      "kind": "def",
+      "status": "定义",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "reason": null,
+      "source_id": "MD-8.6.2-SINProjectedBracketsPrinted",
+      "direct_placeholder": false,
+      "transitive_placeholder": false
+    },
+    {
+      "name": "MD.Ch08.sinD",
+      "kind": "def",
+      "status": "定义",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "reason": null,
+      "source_id": "MD-8.6.2-SINProjectedBracketsPrinted",
+      "direct_placeholder": false,
+      "transitive_placeholder": false
+    },
+    {
+      "name": "MD.Ch08.sinU0Printed",
+      "kind": "def",
+      "status": "定义",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "reason": null,
+      "source_id": "MD-8.6.2-SINProjectedBracketsPrinted",
+      "direct_placeholder": false,
+      "transitive_placeholder": false
+    },
+    {
+      "name": "MD.Ch08.sinU1Printed",
+      "kind": "def",
+      "status": "定义",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "reason": null,
+      "source_id": "MD-8.6.2-SINProjectedBracketsPrinted",
+      "direct_placeholder": false,
+      "transitive_placeholder": false
+    },
+    {
+      "name": "MD.Ch08.sinU2Printed",
+      "kind": "def",
+      "status": "定义",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "reason": null,
+      "source_id": "MD-8.6.2-SINProjectedBracketsPrinted",
+      "direct_placeholder": false,
+      "transitive_placeholder": false
+    },
+    {
+      "name": "MD.Ch08.sinU1DerivativePrinted",
+      "kind": "def",
+      "status": "定义",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "reason": null,
+      "source_id": "MD-8.6.2-SINProjectedBracketsPrinted",
+      "direct_placeholder": false,
+      "transitive_placeholder": false
+    },
+    {
+      "name": "MD.Ch08.sinProjected_corrected",
+      "kind": "def",
+      "status": "定义",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "reason": null,
+      "source_id": "MD-8.6.2-SINProjectedBracketsPrinted",
+      "direct_placeholder": false,
+      "transitive_placeholder": false
+    },
+    {
+      "name": "MD.Ch08.sinU2LongPrinted",
+      "kind": "def",
+      "status": "定义",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "reason": null,
+      "source_id": "MD-8.6.2-SINProjectedBracketsPrinted",
+      "direct_placeholder": false,
+      "transitive_placeholder": false
+    },
+    {
+      "name": "MD.Ch08.sinU2Long_at_p0",
+      "kind": "theorem",
+      "status": "已证",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "reason": null,
+      "source_id": "MD-8.6.2-SINProjectedBracketsPrinted",
+      "direct_placeholder": false,
+      "transitive_placeholder": false
+    },
+    {
+      "name": "MD.Ch08.sinEtaPrinted",
+      "kind": "def",
+      "status": "定义",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "reason": null,
+      "source_id": "MD-8.6.2-SINThirdBracketPrinted",
+      "direct_placeholder": false,
+      "transitive_placeholder": false
+    },
+    {
+      "name": "MD.Ch08.sinU3Printed",
+      "kind": "def",
+      "status": "定义",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "reason": null,
+      "source_id": "MD-8.6.2-SINThirdBracketPrinted",
+      "direct_placeholder": false,
+      "transitive_placeholder": false
+    },
+    {
+      "name": "MD.Ch08.sinU3ZeroPrinted",
+      "kind": "def",
+      "status": "定义",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "reason": null,
+      "source_id": "MD-8.6.2-SINThirdBracketPrinted",
+      "direct_placeholder": false,
+      "transitive_placeholder": false
+    },
+    {
+      "name": "MD.Ch08.sinU3Zero_corrected",
+      "kind": "def",
+      "status": "定义",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "reason": null,
+      "source_id": "MD-8.6.2-SINThirdBracketPrinted",
+      "direct_placeholder": false,
+      "transitive_placeholder": false
+    },
+    {
+      "name": "MD.Ch08.sinU3Zero_specialize",
+      "kind": "theorem",
+      "status": "已证",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "reason": null,
+      "source_id": "MD-8.6.2-SINThirdBracketPrinted",
+      "direct_placeholder": false,
+      "transitive_placeholder": false
+    },
+    {
+      "name": "MD.Ch08.sinBracket_tangentSpan",
+      "kind": "theorem",
+      "status": "未证",
+      "axioms": [
+        "propext",
+        "sorryAx",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "reason": "缺大型理论",
+      "source_id": "MD-8.6.2-SINBracketRank",
+      "direct_placeholder": true,
+      "transitive_placeholder": false
+    },
+    {
+      "name": "MD.Ch08.sinGenerator",
+      "kind": "def",
+      "status": "定义",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "reason": null,
+      "source_id": "MD-8.6.2-SINLyapunov",
+      "direct_placeholder": false,
+      "transitive_placeholder": false
+    },
+    {
+      "name": "MD.Ch08.sinGenerator_lyapunov",
+      "kind": "theorem",
+      "status": "未证",
+      "axioms": [
+        "propext",
+        "sorryAx",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "reason": "缺大型理论",
+      "source_id": "MD-8.6.2-SINLyapunov",
+      "direct_placeholder": true,
+      "transitive_placeholder": false
+    },
+    {
+      "name": "MD.Ch08.sinConstraint_bathBound",
+      "kind": "theorem",
+      "status": "已证",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "reason": null,
+      "source_id": "MD-8.6.2-SINLyapunov",
+      "direct_placeholder": false,
+      "transitive_placeholder": false
+    },
+    {
+      "name": "MD.Ch08.sinLyapunovTailPrinted",
+      "kind": "def",
+      "status": "定义",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "reason": null,
+      "source_id": "MD-8.6.2-SINLyapunov",
+      "direct_placeholder": false,
+      "transitive_placeholder": false
+    },
+    {
+      "name": "MD.Ch08.sinLyapunovTail_corrected",
+      "kind": "theorem",
+      "status": "未证",
+      "axioms": [
+        "propext",
+        "sorryAx",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "reason": "缺大型理论",
+      "source_id": "MD-8.6.2-SINLyapunov",
+      "direct_placeholder": false,
+      "transitive_placeholder": true
+    },
+    {
+      "name": "MD.Ch08.sinKField",
+      "kind": "def",
+      "status": "定义",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "reason": null,
+      "source_id": "MD-8.6.3-SINForceSplitting",
+      "direct_placeholder": false,
+      "transitive_placeholder": false
+    },
+    {
+      "name": "MD.Ch08.sinForceField",
+      "kind": "def",
+      "status": "定义",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "reason": null,
+      "source_id": "MD-8.6.3-SINForceSplitting",
+      "direct_placeholder": false,
+      "transitive_placeholder": false
+    },
+    {
+      "name": "MD.Ch08.sinNField",
+      "kind": "def",
+      "status": "定义",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "reason": null,
+      "source_id": "MD-8.6.3-SINForceSplitting",
+      "direct_placeholder": false,
+      "transitive_placeholder": false
+    },
+    {
+      "name": "MD.Ch08.sinOField",
+      "kind": "def",
+      "status": "定义",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "reason": null,
+      "source_id": "MD-8.6.3-SINForceSplitting",
+      "direct_placeholder": false,
+      "transitive_placeholder": false
+    },
+    {
+      "name": "MD.Ch08.sinSplit_fields",
+      "kind": "theorem",
+      "status": "已证",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "reason": null,
+      "source_id": "MD-8.6.3-SINForceSplitting",
+      "direct_placeholder": false,
+      "transitive_placeholder": false
+    },
+    {
+      "name": "MD.Ch08.sinForce_constraintBalance",
+      "kind": "theorem",
+      "status": "已证",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "reason": null,
+      "source_id": "MD-8.6.3-SINForceSplitting",
+      "direct_placeholder": false,
+      "transitive_placeholder": false
+    },
+    {
+      "name": "MD.Ch08.sinRStages",
+      "kind": "def",
+      "status": "定义",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "reason": null,
+      "source_id": "MD-8.6.3-SINRAlgorithm",
+      "direct_placeholder": false,
+      "transitive_placeholder": false
+    },
+    {
+      "name": "MD.Ch08.sinN1Field",
+      "kind": "def",
+      "status": "定义",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "reason": null,
+      "source_id": "MD-8.6.3-SINNoseSubsplitting",
+      "direct_placeholder": false,
+      "transitive_placeholder": false
+    },
+    {
+      "name": "MD.Ch08.sinN2Field",
+      "kind": "def",
+      "status": "定义",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "reason": null,
+      "source_id": "MD-8.6.3-SINNoseSubsplitting",
+      "direct_placeholder": false,
+      "transitive_placeholder": false
+    },
+    {
+      "name": "MD.Ch08.sinN_split",
+      "kind": "theorem",
+      "status": "已证",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "reason": null,
+      "source_id": "MD-8.6.3-SINNoseSubsplitting",
+      "direct_placeholder": false,
+      "transitive_placeholder": false
+    },
+    {
+      "name": "MD.Ch08.sinForceAux",
+      "kind": "def",
+      "status": "定义",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "reason": null,
+      "source_id": "MD-8.6.3-SINForceExactPrinted",
+      "direct_placeholder": false,
+      "transitive_placeholder": false
+    },
+    {
+      "name": "MD.Ch08.sinForceFlow",
+      "kind": "def",
+      "status": "定义",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "reason": null,
+      "source_id": "MD-8.6.3-SINForceExactPrinted",
+      "direct_placeholder": false,
+      "transitive_placeholder": false
+    },
+    {
+      "name": "MD.Ch08.sinForceODEPrinted",
+      "kind": "def",
+      "status": "定义",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "reason": null,
+      "source_id": "MD-8.6.3-SINForceExactPrinted",
+      "direct_placeholder": false,
+      "transitive_placeholder": false
+    },
+    {
+      "name": "MD.Ch08.sinForceODE_corrected",
+      "kind": "def",
+      "status": "定义",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "reason": null,
+      "source_id": "MD-8.6.3-SINForceExactPrinted",
+      "direct_placeholder": false,
+      "transitive_placeholder": false
+    },
+    {
+      "name": "MD.Ch08.sinForceFlow_solution_corrected",
+      "kind": "theorem",
+      "status": "未证",
+      "axioms": [
+        "propext",
+        "sorryAx",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "reason": "缺大型理论",
+      "source_id": "MD-8.6.3-SINForceExactPrinted",
+      "direct_placeholder": true,
+      "transitive_placeholder": false
+    },
+    {
+      "name": "MD.Ch08.threeLevelPotential",
+      "kind": "def",
+      "status": "定义",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "reason": null,
+      "source_id": "MD-8.6.4-SINThreeLevelPotential",
+      "direct_placeholder": false,
+      "transitive_placeholder": false
+    },
+    {
+      "name": "MD.Ch08.nestedTimeSteps",
+      "kind": "def",
+      "status": "定义",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "reason": null,
+      "source_id": "MD-8.6.4-SINThreeLevelPotential",
+      "direct_placeholder": false,
+      "transitive_placeholder": false
+    },
+    {
+      "name": "MD.Ch08.memoryDrag",
+      "kind": "def",
+      "status": "定义",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "reason": null,
+      "source_id": "MD-8.7-GeneralizedLangevin",
+      "direct_placeholder": false,
+      "transitive_placeholder": false
+    },
+    {
+      "name": "MD.Ch08.generalizedLangevin",
+      "kind": "def",
+      "status": "定义",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "reason": null,
+      "source_id": "MD-8.7-GeneralizedLangevin",
+      "direct_placeholder": false,
+      "transitive_placeholder": false
+    },
+    {
+      "name": "MD.Ch08.randomForceQualification",
+      "kind": "def",
+      "status": "定义",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "reason": null,
+      "source_id": "MD-8.7-GLEFluctuationDissipationPrinted",
+      "direct_placeholder": false,
+      "transitive_placeholder": false
+    },
+    {
+      "name": "MD.Ch08.gleFDPrinted",
+      "kind": "def",
+      "status": "定义",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "reason": null,
+      "source_id": "MD-8.7-GLEFluctuationDissipationPrinted",
+      "direct_placeholder": false,
+      "transitive_placeholder": false
+    },
+    {
+      "name": "MD.Ch08.gleFD_corrected",
+      "kind": "def",
+      "status": "定义",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "reason": null,
+      "source_id": "MD-8.7-GLEFluctuationDissipationPrinted",
+      "direct_placeholder": false,
+      "transitive_placeholder": false
+    },
+    {
+      "name": "MD.Ch08.scalarMemoryMatrix",
+      "kind": "def",
+      "status": "定义",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "reason": null,
+      "source_id": "MD-8.7-GLEFluctuationDissipationPrinted",
+      "direct_placeholder": false,
+      "transitive_placeholder": false
+    },
+    {
+      "name": "MD.Ch08.pronyKernel",
+      "kind": "def",
+      "status": "定义",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "reason": null,
+      "source_id": "MD-8.7-PronyKernel",
+      "direct_placeholder": false,
+      "transitive_placeholder": false
+    },
+    {
+      "name": "MD.Ch08.pronyQualification",
+      "kind": "def",
+      "status": "定义",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "reason": null,
+      "source_id": "MD-8.7-PronyKernel",
+      "direct_placeholder": false,
+      "transitive_placeholder": false
+    },
+    {
+      "name": "MD.Ch08.pronyKernel_nonneg",
+      "kind": "theorem",
+      "status": "已证",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "reason": null,
+      "source_id": "MD-8.7-PronyKernel",
+      "direct_placeholder": false,
+      "transitive_placeholder": false
+    },
+    {
+      "name": "MD.Ch08.pronyMemory",
+      "kind": "def",
+      "status": "定义",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "reason": null,
+      "source_id": "MD-8.7.1-PronyMemoryODE",
+      "direct_placeholder": false,
+      "transitive_placeholder": false
+    },
+    {
+      "name": "MD.Ch08.pronyMemory_derivative",
+      "kind": "theorem",
+      "status": "未证",
+      "axioms": [
+        "propext",
+        "sorryAx",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "reason": "缺大型理论",
+      "source_id": "MD-8.7.1-PronyMemoryODE",
+      "direct_placeholder": true,
+      "transitive_placeholder": false
+    },
+    {
+      "name": "MD.Ch08.pronyMomentumDrift",
+      "kind": "def",
+      "status": "定义",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "reason": null,
+      "source_id": "MD-8.7.1-PronyMemoryODE",
+      "direct_placeholder": false,
+      "transitive_placeholder": false
+    },
+    {
+      "name": "MD.Ch08.pronyMemory_sum",
+      "kind": "theorem",
+      "status": "未证",
+      "axioms": [
+        "propext",
+        "sorryAx",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "reason": "缺大型理论",
+      "source_id": "MD-8.7.1-PronyMemoryODE",
+      "direct_placeholder": true,
+      "transitive_placeholder": false
+    },
+    {
+      "name": "MD.Ch08.stationaryPronyOU",
+      "kind": "def",
+      "status": "定义",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "reason": null,
+      "source_id": "MD-8.7.1-PronyOUStationarity",
+      "direct_placeholder": false,
+      "transitive_placeholder": false
+    },
+    {
+      "name": "MD.Ch08.pronyOU_covariance",
+      "kind": "theorem",
+      "status": "未证",
+      "axioms": [
+        "propext",
+        "sorryAx",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "reason": "缺大型理论",
+      "source_id": "MD-8.7.1-PronyOUStationarity",
+      "direct_placeholder": true,
+      "transitive_placeholder": false
+    },
+    {
+      "name": "MD.Ch08.totalPronyRandomForce",
+      "kind": "def",
+      "status": "定义",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "reason": null,
+      "source_id": "MD-8.7.1-PronyOUStationarity",
+      "direct_placeholder": false,
+      "transitive_placeholder": false
+    },
+    {
+      "name": "MD.Ch08.pronyOU_covariance_corrected",
+      "kind": "theorem",
+      "status": "未证",
+      "axioms": [
+        "propext",
+        "sorryAx",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "reason": "缺大型理论",
+      "source_id": "MD-8.7.1-PronyOUStationarity",
+      "direct_placeholder": false,
+      "transitive_placeholder": true
+    },
+    {
+      "name": "MD.Ch08.GLEState",
+      "kind": "abbrev",
+      "status": "定义",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "reason": null,
+      "source_id": "MD-8.7.1-CombinedPronyVariable",
+      "direct_placeholder": false,
+      "transitive_placeholder": false
+    },
+    {
+      "name": "MD.Ch08.gleDrift",
+      "kind": "def",
+      "status": "定义",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "reason": null,
+      "source_id": "MD-8.7.1-CombinedPronyVariable",
+      "direct_placeholder": false,
+      "transitive_placeholder": false
+    },
+    {
+      "name": "MD.Ch08.gleNoise",
+      "kind": "def",
+      "status": "定义",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "reason": null,
+      "source_id": "MD-8.7.1-CombinedPronyVariable",
+      "direct_placeholder": false,
+      "transitive_placeholder": false
+    },
+    {
+      "name": "MD.Ch08.isExtendedGLESolution",
+      "kind": "def",
+      "status": "定义",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "reason": null,
+      "source_id": "MD-8.7.1-CombinedPronyVariable",
+      "direct_placeholder": false,
+      "transitive_placeholder": false
+    },
+    {
+      "name": "MD.Ch08.combinedProny_drift",
+      "kind": "theorem",
+      "status": "已证",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "reason": null,
+      "source_id": "MD-8.7.1-CombinedPronyVariable",
+      "direct_placeholder": false,
+      "transitive_placeholder": false
+    },
+    {
+      "name": "MD.Ch08.pronyEffectiveFriction",
+      "kind": "def",
+      "status": "定义",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "reason": null,
+      "source_id": "MD-8.7.1-PronyLangevinLimit",
+      "direct_placeholder": false,
+      "transitive_placeholder": false
+    },
+    {
+      "name": "MD.Ch08.pronyLimit_drift",
+      "kind": "theorem",
+      "status": "已证",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "reason": null,
+      "source_id": "MD-8.7.1-PronyLangevinLimit",
+      "direct_placeholder": false,
+      "transitive_placeholder": false
+    },
+    {
+      "name": "MD.Ch08.independentGaussian_varianceSum",
+      "kind": "theorem",
+      "status": "未证",
+      "axioms": [
+        "propext",
+        "sorryAx",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "reason": "缺大型理论",
+      "source_id": "MD-8.7.1-PronyLangevinLimit",
+      "direct_placeholder": true,
+      "transitive_placeholder": false
+    },
+    {
+      "name": "MD.Ch08.gleIntegrator",
+      "kind": "def",
+      "status": "定义",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "reason": null,
+      "source_id": "MD-8.7.1-GeneralizedLangevinIntegrator",
+      "direct_placeholder": false,
+      "transitive_placeholder": false
+    },
+    {
+      "name": "MD.Ch08.gleNormalSequence",
+      "kind": "def",
+      "status": "定义",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "reason": null,
+      "source_id": "MD-8.7.1-GeneralizedLangevinIntegrator",
+      "direct_placeholder": false,
+      "transitive_placeholder": false
+    },
+    {
+      "name": "MD.Ch08.gleDecay",
+      "kind": "def",
+      "status": "定义",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "reason": null,
+      "source_id": "MD-8.7.1-GLEConsistentCoefficients",
+      "direct_placeholder": false,
+      "transitive_placeholder": false
+    },
+    {
+      "name": "MD.Ch08.gleNoiseCoefficient",
+      "kind": "def",
+      "status": "定义",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "reason": null,
+      "source_id": "MD-8.7.1-GLEConsistentCoefficients",
+      "direct_placeholder": false,
+      "transitive_placeholder": false
+    },
+    {
+      "name": "MD.Ch08.gleCoefficientConsistency",
+      "kind": "def",
+      "status": "定义",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "reason": null,
+      "source_id": "MD-8.7.1-GLEConsistentCoefficients",
+      "direct_placeholder": false,
+      "transitive_placeholder": false
+    },
+    {
+      "name": "MD.Ch08.gleCoefficients_consistent",
+      "kind": "theorem",
+      "status": "未证",
+      "axioms": [
+        "propext",
+        "sorryAx",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "reason": "缺大型理论",
+      "source_id": "MD-8.7.1-GLEConsistentCoefficients",
+      "direct_placeholder": true,
+      "transitive_placeholder": false
+    },
+    {
+      "name": "MD.Ch08.gleCoefficient_smallMemory",
+      "kind": "theorem",
+      "status": "未证",
+      "axioms": [
+        "propext",
+        "sorryAx",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "reason": "缺大型理论",
+      "source_id": "MD-8.7.1-GLEConsistentCoefficients",
+      "direct_placeholder": true,
+      "transitive_placeholder": false
+    },
+    {
+      "name": "MD.Ch08.thermodynamicPressure",
+      "kind": "def",
+      "status": "定义",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "reason": null,
+      "source_id": "MD-8.8-NPTThermodynamics",
+      "direct_placeholder": false,
+      "transitive_placeholder": false
+    },
+    {
+      "name": "MD.Ch08.maxwellCycle",
+      "kind": "def",
+      "status": "定义",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "reason": null,
+      "source_id": "MD-8.8-NPTThermodynamics",
+      "direct_placeholder": false,
+      "transitive_placeholder": false
+    },
+    {
+      "name": "MD.Ch08.maxwellPressureRelation",
+      "kind": "theorem",
+      "status": "已证",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "reason": null,
+      "source_id": "MD-8.8-NPTThermodynamics",
+      "direct_placeholder": false,
+      "transitive_placeholder": false
+    },
+    {
+      "name": "MD.Ch08.nptBathLinear",
+      "kind": "def",
+      "status": "定义",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "reason": null,
+      "source_id": "MD-8.8-NPTBathTaylor",
+      "direct_placeholder": false,
+      "transitive_placeholder": false
+    },
+    {
+      "name": "MD.Ch08.nptEntropy_firstOrder",
+      "kind": "theorem",
+      "status": "未证",
+      "axioms": [
+        "propext",
+        "sorryAx",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "reason": "缺大型理论",
+      "source_id": "MD-8.8-NPTBathTaylor",
+      "direct_placeholder": true,
+      "transitive_placeholder": false
+    },
+    {
+      "name": "MD.Ch08.volumeScale",
+      "kind": "def",
+      "status": "定义",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "reason": null,
+      "source_id": "MD-8.8-NPTDensity",
+      "direct_placeholder": false,
+      "transitive_placeholder": false
+    },
+    {
+      "name": "MD.Ch08.nptBox",
+      "kind": "def",
+      "status": "定义",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "reason": null,
+      "source_id": "MD-8.8-NPTDensity",
+      "direct_placeholder": false,
+      "transitive_placeholder": false
+    },
+    {
+      "name": "MD.Ch08.nptWeight",
+      "kind": "def",
+      "status": "定义",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "reason": null,
+      "source_id": "MD-8.8-NPTDensity",
+      "direct_placeholder": false,
+      "transitive_placeholder": false
+    },
+    {
+      "name": "MD.Ch08.nptDensity",
+      "kind": "def",
+      "status": "定义",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "reason": null,
+      "source_id": "MD-8.8-NPTDensity",
+      "direct_placeholder": false,
+      "transitive_placeholder": false
+    },
+    {
+      "name": "MD.Ch08.nptDensity_normalizes",
+      "kind": "theorem",
+      "status": "已证",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "reason": null,
+      "source_id": "MD-8.8-NPTDensity",
+      "direct_placeholder": false,
+      "transitive_placeholder": false
+    },
+    {
+      "name": "MD.Ch08.andersenPosition",
+      "kind": "def",
+      "status": "定义",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "reason": null,
+      "source_id": "MD-8.8-AndersenCoordinates",
+      "direct_placeholder": false,
+      "transitive_placeholder": false
+    },
+    {
+      "name": "MD.Ch08.andersenVelocity",
+      "kind": "def",
+      "status": "定义",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "reason": null,
+      "source_id": "MD-8.8-AndersenCoordinates",
+      "direct_placeholder": false,
+      "transitive_placeholder": false
+    },
+    {
+      "name": "MD.Ch08.andersenMomentum",
+      "kind": "def",
+      "status": "定义",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "reason": null,
+      "source_id": "MD-8.8-AndersenCoordinates",
+      "direct_placeholder": false,
+      "transitive_placeholder": false
+    },
+    {
+      "name": "MD.Ch08.andersenPosition_derivative",
+      "kind": "theorem",
+      "status": "未证",
+      "axioms": [
+        "propext",
+        "sorryAx",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "reason": "缺大型理论",
+      "source_id": "MD-8.8-AndersenCoordinates",
+      "direct_placeholder": true,
+      "transitive_placeholder": false
+    },
+    {
+      "name": "MD.Ch08.andersenMomentum_velocity",
+      "kind": "theorem",
+      "status": "未证",
+      "axioms": [
+        "propext",
+        "sorryAx",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "reason": "缺大型理论",
+      "source_id": "MD-8.8-AndersenCoordinates",
+      "direct_placeholder": true,
+      "transitive_placeholder": false
+    },
+    {
+      "name": "MD.Ch08.andersenKinetic",
+      "kind": "def",
+      "status": "定义",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "reason": null,
+      "source_id": "MD-8.8-AndersenKineticEnergy",
+      "direct_placeholder": false,
+      "transitive_placeholder": false
+    },
+    {
+      "name": "MD.Ch08.andersenKineticExpanded",
+      "kind": "def",
+      "status": "定义",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "reason": null,
+      "source_id": "MD-8.8-AndersenKineticEnergy",
+      "direct_placeholder": false,
+      "transitive_placeholder": false
+    },
+    {
+      "name": "MD.Ch08.andersenKinetic_expansion",
+      "kind": "theorem",
+      "status": "未证",
+      "axioms": [
+        "propext",
+        "sorryAx",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "reason": "缺大型理论",
+      "source_id": "MD-8.8-AndersenKineticEnergy",
+      "direct_placeholder": true,
+      "transitive_placeholder": false
+    },
+    {
+      "name": "MD.Ch08.andersenHamiltonian",
+      "kind": "def",
+      "status": "定义",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "reason": null,
+      "source_id": "MD-8.8-AndersenHamiltonianPrinted",
+      "direct_placeholder": false,
+      "transitive_placeholder": false
+    },
+    {
+      "name": "MD.Ch08.andersenMarginalPrinted",
+      "kind": "def",
+      "status": "定义",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "reason": null,
+      "source_id": "MD-8.8-AndersenHamiltonianPrinted",
+      "direct_placeholder": false,
+      "transitive_placeholder": false
+    },
+    {
+      "name": "MD.Ch08.andersenMarginal_corrected",
+      "kind": "def",
+      "status": "定义",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "reason": null,
+      "source_id": "MD-8.8-AndersenHamiltonianPrinted",
+      "direct_placeholder": false,
+      "transitive_placeholder": false
+    },
+    {
+      "name": "MD.Ch08.andersenGaussian_marginal",
+      "kind": "theorem",
+      "status": "未证",
+      "axioms": [
+        "propext",
+        "sorryAx",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "reason": "原书疑误不证",
+      "source_id": "MD-8.8-AndersenHamiltonianPrinted",
+      "direct_placeholder": true,
+      "transitive_placeholder": false
+    },
+    {
+      "name": "MD.Ch08.PistonState",
+      "kind": "abbrev",
+      "status": "定义",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "reason": null,
+      "source_id": "MD-8.8.1-NHLPistonEquations",
+      "direct_placeholder": false,
+      "transitive_placeholder": false
+    },
+    {
+      "name": "MD.Ch08.pistonPressure",
+      "kind": "def",
+      "status": "定义",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "reason": null,
+      "source_id": "MD-8.8.1-NHLPistonEquations",
+      "direct_placeholder": false,
+      "transitive_placeholder": false
+    },
+    {
+      "name": "MD.Ch08.pistonDrift",
+      "kind": "def",
+      "status": "定义",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "reason": null,
+      "source_id": "MD-8.8.1-NHLPistonEquations",
+      "direct_placeholder": false,
+      "transitive_placeholder": false
+    },
+    {
+      "name": "MD.Ch08.pistonNoise",
+      "kind": "def",
+      "status": "定义",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "reason": null,
+      "source_id": "MD-8.8.1-NHLPistonEquations",
+      "direct_placeholder": false,
+      "transitive_placeholder": false
+    },
+    {
+      "name": "MD.Ch08.isNHLPistonSolution",
+      "kind": "def",
+      "status": "定义",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "reason": null,
+      "source_id": "MD-8.8.1-NHLPistonEquations",
+      "direct_placeholder": false,
+      "transitive_placeholder": false
+    },
+    {
+      "name": "MD.Ch08.pistonHamiltonianPart",
+      "kind": "def",
+      "status": "定义",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "reason": null,
+      "source_id": "MD-8.8.1-PistonHamiltonianSubfield",
+      "direct_placeholder": false,
+      "transitive_placeholder": false
+    },
+    {
+      "name": "MD.Ch08.pistonHamiltonianWeight_stationary",
+      "kind": "theorem",
+      "status": "未证",
+      "axioms": [
+        "propext",
+        "sorryAx",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "reason": "缺大型理论",
+      "source_id": "MD-8.8.1-PistonHamiltonianSubfield",
+      "direct_placeholder": true,
+      "transitive_placeholder": false
+    },
+    {
+      "name": "MD.Ch08.pistonHamiltonianPartPrinted",
+      "kind": "def",
+      "status": "定义",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "reason": null,
+      "source_id": "MD-8.8.1-PistonHamiltonianSubfield",
+      "direct_placeholder": false,
+      "transitive_placeholder": false
+    },
+    {
+      "name": "MD.Ch08.pistonHamiltonianPart_corrected",
+      "kind": "def",
+      "status": "定义",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "reason": null,
+      "source_id": "MD-8.8.1-PistonHamiltonianSubfield",
+      "direct_placeholder": false,
+      "transitive_placeholder": false
+    },
+    {
+      "name": "MD.Ch08.pistonThermostatPart",
+      "kind": "def",
+      "status": "定义",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "reason": null,
+      "source_id": "MD-8.8.1-PistonThermostatWeightPrinted",
+      "direct_placeholder": false,
+      "transitive_placeholder": false
+    },
+    {
+      "name": "MD.Ch08.pistonRho2Printed",
+      "kind": "def",
+      "status": "定义",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "reason": null,
+      "source_id": "MD-8.8.1-PistonThermostatWeightPrinted",
+      "direct_placeholder": false,
+      "transitive_placeholder": false
+    },
+    {
+      "name": "MD.Ch08.pistonRho2_corrected",
+      "kind": "def",
+      "status": "定义",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "reason": null,
+      "source_id": "MD-8.8.1-PistonThermostatWeightPrinted",
+      "direct_placeholder": false,
+      "transitive_placeholder": false
+    },
+    {
+      "name": "MD.Ch08.pistonRho2_stationary_corrected",
+      "kind": "theorem",
+      "status": "未证",
+      "axioms": [
+        "propext",
+        "sorryAx",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "reason": "缺大型理论",
+      "source_id": "MD-8.8.1-PistonThermostatWeightPrinted",
+      "direct_placeholder": true,
+      "transitive_placeholder": false
+    },
+    {
+      "name": "MD.Ch08.pistonReducedOperator",
+      "kind": "def",
+      "status": "定义",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "reason": null,
+      "source_id": "MD-8.8.1-PistonReducedPDE",
+      "direct_placeholder": false,
+      "transitive_placeholder": false
+    },
+    {
+      "name": "MD.Ch08.pistonReduced_boltzmann",
+      "kind": "theorem",
+      "status": "未证",
+      "axioms": [
+        "propext",
+        "sorryAx",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "reason": "缺大型理论",
+      "source_id": "MD-8.8.1-PistonReducedPDE",
+      "direct_placeholder": true,
+      "transitive_placeholder": false
+    },
+    {
+      "name": "MD.Ch08.pistonWeight",
+      "kind": "def",
+      "status": "定义",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "reason": null,
+      "source_id": "MD-8.8.1-PistonStationaryWeight",
+      "direct_placeholder": false,
+      "transitive_placeholder": false
+    },
+    {
+      "name": "MD.Ch08.pistonForward",
+      "kind": "def",
+      "status": "定义",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "reason": null,
+      "source_id": "MD-8.8.1-PistonStationaryWeight",
+      "direct_placeholder": false,
+      "transitive_placeholder": false
+    },
+    {
+      "name": "MD.Ch08.pistonWeight_stationary",
+      "kind": "theorem",
+      "status": "未证",
+      "axioms": [
+        "propext",
+        "sorryAx",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "reason": "缺大型理论",
+      "source_id": "MD-8.8.1-PistonStationaryWeight",
+      "direct_placeholder": true,
+      "transitive_placeholder": false
+    },
+    {
+      "name": "MD.Ch08.expIntegrated",
+      "kind": "def",
+      "status": "定义",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "reason": null,
+      "source_id": "MD-8.8.2-PistonIntegrator",
+      "direct_placeholder": false,
+      "transitive_placeholder": false
+    },
+    {
+      "name": "MD.Ch08.pistonWrap",
+      "kind": "def",
+      "status": "定义",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "reason": null,
+      "source_id": "MD-8.8.2-PistonIntegrator",
+      "direct_placeholder": false,
+      "transitive_placeholder": false
+    },
+    {
+      "name": "MD.Ch08.pistonMomentumKick",
+      "kind": "def",
+      "status": "定义",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "reason": null,
+      "source_id": "MD-8.8.2-PistonIntegrator",
+      "direct_placeholder": false,
+      "transitive_placeholder": false
+    },
+    {
+      "name": "MD.Ch08.pistonFeedback",
+      "kind": "def",
+      "status": "定义",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "reason": null,
+      "source_id": "MD-8.8.2-PistonIntegrator",
+      "direct_placeholder": false,
+      "transitive_placeholder": false
+    },
+    {
+      "name": "MD.Ch08.pistonOU",
+      "kind": "def",
+      "status": "定义",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "reason": null,
+      "source_id": "MD-8.8.2-PistonIntegrator",
+      "direct_placeholder": false,
+      "transitive_placeholder": false
+    },
+    {
+      "name": "MD.Ch08.pistonIntegrator",
+      "kind": "def",
+      "status": "定义",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "reason": null,
+      "source_id": "MD-8.8.2-PistonIntegrator",
+      "direct_placeholder": false,
+      "transitive_placeholder": false
+    },
+    {
+      "name": "MD.Ch08.pistonOU_volume",
+      "kind": "theorem",
+      "status": "已证",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "reason": null,
+      "source_id": "MD-8.8.2-PistonIntegrator",
+      "direct_placeholder": false,
+      "transitive_placeholder": false
+    },
+    {
+      "name": "MD.Ch08.pistonVolume_positive",
+      "kind": "theorem",
+      "status": "已证",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "reason": null,
+      "source_id": "MD-8.8.2-PistonIntegrator",
+      "direct_placeholder": false,
+      "transitive_placeholder": false
+    },
+    {
+      "name": "MD.Ch08.cellVolume",
+      "kind": "def",
+      "status": "定义",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "reason": null,
+      "source_id": "MD-8.8.3-ParrinelloRahman",
+      "direct_placeholder": false,
+      "transitive_placeholder": false
+    },
+    {
+      "name": "MD.Ch08.cellMetric",
+      "kind": "def",
+      "status": "定义",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "reason": null,
+      "source_id": "MD-8.8.3-ParrinelloRahman",
+      "direct_placeholder": false,
+      "transitive_placeholder": false
+    },
+    {
+      "name": "MD.Ch08.cellPosition",
+      "kind": "def",
+      "status": "定义",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "reason": null,
+      "source_id": "MD-8.8.3-ParrinelloRahman",
+      "direct_placeholder": false,
+      "transitive_placeholder": false
+    },
+    {
+      "name": "MD.Ch08.cross3",
+      "kind": "def",
+      "status": "定义",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "reason": null,
+      "source_id": "MD-8.8.3-ParrinelloRahman",
+      "direct_placeholder": false,
+      "transitive_placeholder": false
+    },
+    {
+      "name": "MD.Ch08.cellVolume_triple",
+      "kind": "theorem",
+      "status": "已证",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "reason": null,
+      "source_id": "MD-8.8.3-ParrinelloRahman",
+      "direct_placeholder": false,
+      "transitive_placeholder": false
+    },
+    {
+      "name": "MD.Ch08.parrinelloRahmanLagrangian",
+      "kind": "def",
+      "status": "定义",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "reason": null,
+      "source_id": "MD-8.8.3-ParrinelloRahman",
+      "direct_placeholder": false,
+      "transitive_placeholder": false
+    },
+    {
+      "name": "MD.Ch08.cellQualification",
+      "kind": "def",
+      "status": "定义",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "reason": null,
+      "source_id": "MD-8.8.3-ParrinelloRahman",
+      "direct_placeholder": false,
+      "transitive_placeholder": false
+    },
+    {
+      "name": "MD.Ch08.ParticleConfig",
+      "kind": "abbrev",
+      "status": "定义",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "reason": null,
+      "source_id": "MD-8.9-TotalMomentum",
+      "direct_placeholder": false,
+      "transitive_placeholder": false
+    },
+    {
+      "name": "MD.Ch08.ParticlePhase",
+      "kind": "abbrev",
+      "status": "定义",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "reason": null,
+      "source_id": "MD-8.9-TotalMomentum",
+      "direct_placeholder": false,
+      "transitive_placeholder": false
+    },
+    {
+      "name": "MD.Ch08.totalMomentum",
+      "kind": "def",
+      "status": "定义",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "reason": null,
+      "source_id": "MD-8.9-TotalMomentum",
+      "direct_placeholder": false,
+      "transitive_placeholder": false
+    },
+    {
+      "name": "MD.Ch08.noseTotalForce",
+      "kind": "theorem",
+      "status": "已证",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "reason": null,
+      "source_id": "MD-8.9-TotalMomentum",
+      "direct_placeholder": false,
+      "transitive_placeholder": false
+    },
+    {
+      "name": "MD.Ch08.noseTotalForce_zero",
+      "kind": "theorem",
+      "status": "已证",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "reason": null,
+      "source_id": "MD-8.9-TotalMomentum",
+      "direct_placeholder": false,
+      "transitive_placeholder": false
+    },
+    {
+      "name": "MD.Ch08.pairDistance",
+      "kind": "def",
+      "status": "定义",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "reason": null,
+      "source_id": "MD-8.9.1-DPDSoftPotential",
+      "direct_placeholder": false,
+      "transitive_placeholder": false
+    },
+    {
+      "name": "MD.Ch08.pairDirection",
+      "kind": "def",
+      "status": "定义",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "reason": null,
+      "source_id": "MD-8.9.1-DPDSoftPotential",
+      "direct_placeholder": false,
+      "transitive_placeholder": false
+    },
+    {
+      "name": "MD.Ch08.dpdSoftPotential",
+      "kind": "def",
+      "status": "定义",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "reason": null,
+      "source_id": "MD-8.9.1-DPDSoftPotential",
+      "direct_placeholder": false,
+      "transitive_placeholder": false
+    },
+    {
+      "name": "MD.Ch08.dpdPairConservative",
+      "kind": "def",
+      "status": "定义",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "reason": null,
+      "source_id": "MD-8.9.1-DPDSoftPotential",
+      "direct_placeholder": false,
+      "transitive_placeholder": false
+    },
+    {
+      "name": "MD.Ch08.dpdPotential",
+      "kind": "def",
+      "status": "定义",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "reason": null,
+      "source_id": "MD-8.9.1-DPDSoftPotential",
+      "direct_placeholder": false,
+      "transitive_placeholder": false
+    },
+    {
+      "name": "MD.Ch08.dpdConservative",
+      "kind": "def",
+      "status": "定义",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "reason": null,
+      "source_id": "MD-8.9.1-DPDSoftPotential",
+      "direct_placeholder": false,
+      "transitive_placeholder": false
+    },
+    {
+      "name": "MD.Ch08.particleGradient",
+      "kind": "def",
+      "status": "定义",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "reason": null,
+      "source_id": "MD-8.9.1-DPDSoftPotential",
+      "direct_placeholder": false,
+      "transitive_placeholder": false
+    },
+    {
+      "name": "MD.Ch08.dpdConservative_gradient",
+      "kind": "theorem",
+      "status": "未证",
+      "axioms": [
+        "propext",
+        "sorryAx",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "reason": "缺大型理论",
+      "source_id": "MD-8.9.1-DPDSoftPotential",
+      "direct_placeholder": true,
+      "transitive_placeholder": false
+    },
+    {
+      "name": "MD.Ch08.dpdWeightR",
+      "kind": "def",
+      "status": "定义",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "reason": null,
+      "source_id": "MD-8.9.1-DPDPairForces",
+      "direct_placeholder": false,
+      "transitive_placeholder": false
+    },
+    {
+      "name": "MD.Ch08.relativeVelocity",
+      "kind": "def",
+      "status": "定义",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "reason": null,
+      "source_id": "MD-8.9.1-DPDPairForces",
+      "direct_placeholder": false,
+      "transitive_placeholder": false
+    },
+    {
+      "name": "MD.Ch08.dpdPairDissipative",
+      "kind": "def",
+      "status": "定义",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "reason": null,
+      "source_id": "MD-8.9.1-DPDPairForces",
+      "direct_placeholder": false,
+      "transitive_placeholder": false
+    },
+    {
+      "name": "MD.Ch08.dpdPairRandom",
+      "kind": "def",
+      "status": "定义",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "reason": null,
+      "source_id": "MD-8.9.1-DPDPairForces",
+      "direct_placeholder": false,
+      "transitive_placeholder": false
+    },
+    {
+      "name": "MD.Ch08.dpdDissipative",
+      "kind": "def",
+      "status": "定义",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "reason": null,
+      "source_id": "MD-8.9.1-DPDPairForces",
+      "direct_placeholder": false,
+      "transitive_placeholder": false
+    },
+    {
+      "name": "MD.Ch08.pairImpulseVector",
+      "kind": "def",
+      "status": "定义",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "reason": null,
+      "source_id": "MD-8.9.1-DPDPairForces",
+      "direct_placeholder": false,
+      "transitive_placeholder": false
+    },
+    {
+      "name": "MD.Ch08.dpdNoise",
+      "kind": "def",
+      "status": "定义",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "reason": null,
+      "source_id": "MD-8.9.1-DPDPairForces",
+      "direct_placeholder": false,
+      "transitive_placeholder": false
+    },
+    {
+      "name": "MD.Ch08.pairEnumeration",
+      "kind": "def",
+      "status": "定义",
+      "axioms": [],
+      "reason": null,
+      "source_id": "MD-8.9.1-DPDPairWiener",
+      "direct_placeholder": false,
+      "transitive_placeholder": false
+    },
+    {
+      "name": "MD.Ch08.pairNoiseIncrement",
+      "kind": "def",
+      "status": "定义",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "reason": null,
+      "source_id": "MD-8.9.1-DPDPairWiener",
+      "direct_placeholder": false,
+      "transitive_placeholder": false
+    },
+    {
+      "name": "MD.Ch08.pairNoiseIncrement_symmetric",
+      "kind": "theorem",
+      "status": "未证",
+      "axioms": [
+        "propext",
+        "sorryAx",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "reason": "时间盒止",
+      "source_id": "MD-8.9.1-DPDPairWiener",
+      "direct_placeholder": true,
+      "transitive_placeholder": false
+    },
+    {
+      "name": "MD.Ch08.pairNoiseIncrement_covariance",
+      "kind": "theorem",
+      "status": "未证",
+      "axioms": [
+        "propext",
+        "sorryAx",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "reason": "时间盒止",
+      "source_id": "MD-8.9.1-DPDPairWiener",
+      "direct_placeholder": true,
+      "transitive_placeholder": false
+    },
+    {
+      "name": "MD.Ch08.strictItoIntegral8",
+      "kind": "def",
+      "status": "定义",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "reason": null,
+      "source_id": "MD-8.9.1-DPDIntegralSystem",
+      "direct_placeholder": false,
+      "transitive_placeholder": false
+    },
+    {
+      "name": "MD.Ch08.multiplicativeSDE8",
+      "kind": "def",
+      "status": "定义",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "reason": null,
+      "source_id": "MD-8.9.1-DPDIntegralSystem",
+      "direct_placeholder": false,
+      "transitive_placeholder": false
+    },
+    {
+      "name": "MD.Ch08.dpdDrift",
+      "kind": "def",
+      "status": "定义",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "reason": null,
+      "source_id": "MD-8.9.1-DPDIntegralSystem",
+      "direct_placeholder": false,
+      "transitive_placeholder": false
+    },
+    {
+      "name": "MD.Ch08.isDPDSolution",
+      "kind": "def",
+      "status": "定义",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "reason": null,
+      "source_id": "MD-8.9.1-DPDIntegralSystem",
+      "direct_placeholder": false,
+      "transitive_placeholder": false
+    },
+    {
+      "name": "MD.Ch08.dpdFluctuationDissipation",
+      "kind": "def",
+      "status": "定义",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "reason": null,
+      "source_id": "MD-8.9.1-DPDCanonicalLeaf",
+      "direct_placeholder": false,
+      "transitive_placeholder": false
+    },
+    {
+      "name": "MD.Ch08.momentumLeaf",
+      "kind": "def",
+      "status": "定义",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "reason": null,
+      "source_id": "MD-8.9.1-DPDCanonicalLeaf",
+      "direct_placeholder": false,
+      "transitive_placeholder": false
+    },
+    {
+      "name": "MD.Ch08.particleHamiltonian",
+      "kind": "def",
+      "status": "定义",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "reason": null,
+      "source_id": "MD-8.9.1-DPDCanonicalLeaf",
+      "direct_placeholder": false,
+      "transitive_placeholder": false
+    },
+    {
+      "name": "MD.Ch08.momentumCanonical",
+      "kind": "def",
+      "status": "定义",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "reason": null,
+      "source_id": "MD-8.9.1-DPDCanonicalLeaf",
+      "direct_placeholder": false,
+      "transitive_placeholder": false
+    },
+    {
+      "name": "MD.Ch08.momentumCanonicalQualification",
+      "kind": "def",
+      "status": "定义",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "reason": null,
+      "source_id": "MD-8.9.1-DPDCanonicalLeaf",
+      "direct_placeholder": false,
+      "transitive_placeholder": false
+    },
+    {
+      "name": "MD.Ch08.dpdMatrixFDPrinted",
+      "kind": "def",
+      "status": "定义",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "reason": null,
+      "source_id": "MD-8.9.1-DPDMassOrderPrinted",
+      "direct_placeholder": false,
+      "transitive_placeholder": false
+    },
+    {
+      "name": "MD.Ch08.dpdMatrixFD_corrected",
+      "kind": "def",
+      "status": "定义",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "reason": null,
+      "source_id": "MD-8.9.1-DPDMassOrderPrinted",
+      "direct_placeholder": false,
+      "transitive_placeholder": false
+    },
+    {
+      "name": "MD.Ch08.dpdMassOrder_counterexample",
+      "kind": "theorem",
+      "status": "已证",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "reason": null,
+      "source_id": "MD-8.9.1-DPDMassOrderPrinted",
+      "direct_placeholder": false,
+      "transitive_placeholder": false
+    },
+    {
+      "name": "MD.Ch08.dpdRandomForce",
+      "kind": "def",
+      "status": "定义",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "reason": null,
+      "source_id": "MD-8.9.2-DPDVelocityVerlet",
+      "direct_placeholder": false,
+      "transitive_placeholder": false
+    },
+    {
+      "name": "MD.Ch08.dpdVerlet",
+      "kind": "def",
+      "status": "定义",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "reason": null,
+      "source_id": "MD-8.9.2-DPDVelocityVerlet",
+      "direct_placeholder": false,
+      "transitive_placeholder": false
+    },
+    {
+      "name": "MD.Ch08.dpdVerlet_reuse",
+      "kind": "theorem",
+      "status": "已证",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "reason": null,
+      "source_id": "MD-8.9.2-DPDVelocityVerlet",
+      "direct_placeholder": false,
+      "transitive_placeholder": false
+    },
+    {
+      "name": "MD.Ch08.dpdA",
+      "kind": "def",
+      "status": "定义",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "reason": null,
+      "source_id": "MD-8.9.2-DPDSplitGenerator",
+      "direct_placeholder": false,
+      "transitive_placeholder": false
+    },
+    {
+      "name": "MD.Ch08.dpdB",
+      "kind": "def",
+      "status": "定义",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "reason": null,
+      "source_id": "MD-8.9.2-DPDSplitGenerator",
+      "direct_placeholder": false,
+      "transitive_placeholder": false
+    },
+    {
+      "name": "MD.Ch08.dpdO",
+      "kind": "def",
+      "status": "定义",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "reason": null,
+      "source_id": "MD-8.9.2-DPDSplitGenerator",
+      "direct_placeholder": false,
+      "transitive_placeholder": false
+    },
+    {
+      "name": "MD.Ch08.firstOrder8",
+      "kind": "def",
+      "status": "定义",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "reason": null,
+      "source_id": "MD-8.9.2-DPDSplitGenerator",
+      "direct_placeholder": false,
+      "transitive_placeholder": false
+    },
+    {
+      "name": "MD.Ch08.dpdLO",
+      "kind": "def",
+      "status": "定义",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "reason": null,
+      "source_id": "MD-8.9.2-DPDSplitGenerator",
+      "direct_placeholder": false,
+      "transitive_placeholder": false
+    },
+    {
+      "name": "MD.Ch08.dpdGenerator",
+      "kind": "def",
+      "status": "定义",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "reason": null,
+      "source_id": "MD-8.9.2-DPDSplitGenerator",
+      "direct_placeholder": false,
+      "transitive_placeholder": false
+    },
+    {
+      "name": "MD.Ch08.dpdDrift_split",
+      "kind": "theorem",
+      "status": "已证",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "reason": null,
+      "source_id": "MD-8.9.2-DPDSplitGenerator",
+      "direct_placeholder": false,
+      "transitive_placeholder": false
+    },
+    {
+      "name": "MD.Ch08.pairDerivative",
+      "kind": "def",
+      "status": "定义",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "reason": null,
+      "source_id": "MD-8.9.2-DPDPairGeneratorPrinted",
+      "direct_placeholder": false,
+      "transitive_placeholder": false
+    },
+    {
+      "name": "MD.Ch08.dpdPairGeneratorPrinted",
+      "kind": "def",
+      "status": "定义",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "reason": null,
+      "source_id": "MD-8.9.2-DPDPairGeneratorPrinted",
+      "direct_placeholder": false,
+      "transitive_placeholder": false
+    },
+    {
+      "name": "MD.Ch08.dpdPairGenerator_corrected",
+      "kind": "def",
+      "status": "定义",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "reason": null,
+      "source_id": "MD-8.9.2-DPDPairGeneratorPrinted",
+      "direct_placeholder": false,
+      "transitive_placeholder": false
+    },
+    {
+      "name": "MD.Ch08.dpdShardlowComposition",
+      "kind": "def",
+      "status": "定义",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "reason": null,
+      "source_id": "MD-8.9.2-DPDSplittingCompositions",
+      "direct_placeholder": false,
+      "transitive_placeholder": false
+    },
+    {
+      "name": "MD.Ch08.dpdTrotterComposition",
+      "kind": "def",
+      "status": "定义",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "reason": null,
+      "source_id": "MD-8.9.2-DPDSplittingCompositions",
+      "direct_placeholder": false,
+      "transitive_placeholder": false
+    },
+    {
+      "name": "MD.Ch08.sequentialPairComposition",
+      "kind": "def",
+      "status": "定义",
+      "axioms": [],
+      "reason": null,
+      "source_id": "MD-8.9.2-DPDSplittingCompositions",
+      "direct_placeholder": false,
+      "transitive_placeholder": false
+    },
+    {
+      "name": "MD.Ch08.dpdSGenerator",
+      "kind": "def",
+      "status": "定义",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "reason": null,
+      "source_id": "MD-8.9.2-DPDSplittingCompositions",
+      "direct_placeholder": false,
+      "transitive_placeholder": false
+    },
+    {
+      "name": "MD.Ch08.reducedMass8",
+      "kind": "def",
+      "status": "定义",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "reason": null,
+      "source_id": "MD-8.9.2-DPDPairOUUpdate",
+      "direct_placeholder": false,
+      "transitive_placeholder": false
+    },
+    {
+      "name": "MD.Ch08.reducedMass8_pos",
+      "kind": "theorem",
+      "status": "已证",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "reason": null,
+      "source_id": "MD-8.9.2-DPDPairOUUpdate",
+      "direct_placeholder": false,
+      "transitive_placeholder": false
+    },
+    {
+      "name": "MD.Ch08.dpdPairOUPrinted",
+      "kind": "def",
+      "status": "定义",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "reason": null,
+      "source_id": "MD-8.9.2-DPDPairOUUpdate",
+      "direct_placeholder": false,
+      "transitive_placeholder": false
+    },
+    {
+      "name": "MD.Ch08.dpdPairOU_corrected",
+      "kind": "def",
+      "status": "定义",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "reason": null,
+      "source_id": "MD-8.9.2-DPDPairOUUpdate",
+      "direct_placeholder": false,
+      "transitive_placeholder": false
+    },
+    {
+      "name": "MD.Ch08.dpdPairOU_zeroRate",
+      "kind": "theorem",
+      "status": "已证",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "reason": null,
+      "source_id": "MD-8.9.2-DPDPairOUUpdate",
+      "direct_placeholder": false,
+      "transitive_placeholder": false
+    },
+    {
+      "name": "MD.Ch08.dpdPairMomentumStep",
+      "kind": "def",
+      "status": "定义",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "reason": null,
+      "source_id": "MD-8.9.2-DPDPairOUUpdate",
+      "direct_placeholder": false,
+      "transitive_placeholder": false
+    },
+    {
+      "name": "MD.Ch08.dpdPairMomentumStep_conserves",
+      "kind": "theorem",
+      "status": "已证",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "reason": null,
+      "source_id": "MD-8.9.2-DPDPairOUUpdate",
+      "direct_placeholder": false,
+      "transitive_placeholder": false
+    },
+    {
+      "name": "MD.Ch08.PNHLState",
+      "kind": "abbrev",
+      "status": "定义",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "reason": null,
+      "source_id": "MD-8.9.3-PairwiseNoseHoover",
+      "direct_placeholder": false,
+      "transitive_placeholder": false
+    },
+    {
+      "name": "MD.Ch08.pairwiseFeedback",
+      "kind": "def",
+      "status": "定义",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "reason": null,
+      "source_id": "MD-8.9.3-PairwiseNoseHoover",
+      "direct_placeholder": false,
+      "transitive_placeholder": false
+    },
+    {
+      "name": "MD.Ch08.pnhDrift",
+      "kind": "def",
+      "status": "定义",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "reason": null,
+      "source_id": "MD-8.9.3-PairwiseNoseHoover",
+      "direct_placeholder": false,
+      "transitive_placeholder": false
+    },
+    {
+      "name": "MD.Ch08.isPNHSolution",
+      "kind": "def",
+      "status": "定义",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "reason": null,
+      "source_id": "MD-8.9.3-PairwiseNoseHoover",
+      "direct_placeholder": false,
+      "transitive_placeholder": false
+    },
+    {
+      "name": "MD.Ch08.pairwiseWeight",
+      "kind": "def",
+      "status": "定义",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "reason": null,
+      "source_id": "MD-8.9.3-PairwiseCanonicalWeight",
+      "direct_placeholder": false,
+      "transitive_placeholder": false
+    },
+    {
+      "name": "MD.Ch08.pairwiseCanonicalDensity",
+      "kind": "def",
+      "status": "定义",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "reason": null,
+      "source_id": "MD-8.9.3-PairwiseCanonicalWeight",
+      "direct_placeholder": false,
+      "transitive_placeholder": false
+    },
+    {
+      "name": "MD.Ch08.pairwiseCanonicalQualification",
+      "kind": "def",
+      "status": "定义",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "reason": null,
+      "source_id": "MD-8.9.3-PairwiseCanonicalWeight",
+      "direct_placeholder": false,
+      "transitive_placeholder": false
+    },
+    {
+      "name": "MD.Ch08.pnhlDrift",
+      "kind": "def",
+      "status": "定义",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "reason": null,
+      "source_id": "MD-8.9.4-PairwiseNHLSDE",
+      "direct_placeholder": false,
+      "transitive_placeholder": false
+    },
+    {
+      "name": "MD.Ch08.pnhlNoise",
+      "kind": "def",
+      "status": "定义",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "reason": null,
+      "source_id": "MD-8.9.4-PairwiseNHLSDE",
+      "direct_placeholder": false,
+      "transitive_placeholder": false
+    },
+    {
+      "name": "MD.Ch08.isPNHLSolution",
+      "kind": "def",
+      "status": "定义",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "reason": null,
+      "source_id": "MD-8.9.4-PairwiseNHLSDE",
+      "direct_placeholder": false,
+      "transitive_placeholder": false
+    },
+    {
+      "name": "MD.Ch08.pnhlA",
+      "kind": "def",
+      "status": "定义",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "reason": null,
+      "source_id": "MD-8.9.4-PairwiseNHLGenerator",
+      "direct_placeholder": false,
+      "transitive_placeholder": false
+    },
+    {
+      "name": "MD.Ch08.pnhlB",
+      "kind": "def",
+      "status": "定义",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "reason": null,
+      "source_id": "MD-8.9.4-PairwiseNHLGenerator",
+      "direct_placeholder": false,
+      "transitive_placeholder": false
+    },
+    {
+      "name": "MD.Ch08.pnhlC",
+      "kind": "def",
+      "status": "定义",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "reason": null,
+      "source_id": "MD-8.9.4-PairwiseNHLGenerator",
+      "direct_placeholder": false,
+      "transitive_placeholder": false
+    },
+    {
+      "name": "MD.Ch08.pnhlD",
+      "kind": "def",
+      "status": "定义",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "reason": null,
+      "source_id": "MD-8.9.4-PairwiseNHLGenerator",
+      "direct_placeholder": false,
+      "transitive_placeholder": false
+    },
+    {
+      "name": "MD.Ch08.pnhlO",
+      "kind": "def",
+      "status": "定义",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "reason": null,
+      "source_id": "MD-8.9.4-PairwiseNHLGenerator",
+      "direct_placeholder": false,
+      "transitive_placeholder": false
+    },
+    {
+      "name": "MD.Ch08.pnhlGenerator",
+      "kind": "def",
+      "status": "定义",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "reason": null,
+      "source_id": "MD-8.9.4-PairwiseNHLGenerator",
+      "direct_placeholder": false,
+      "transitive_placeholder": false
+    },
+    {
+      "name": "MD.Ch08.pnhlDrift_split",
+      "kind": "theorem",
+      "status": "已证",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "reason": null,
+      "source_id": "MD-8.9.4-PairwiseNHLGenerator",
+      "direct_placeholder": false,
+      "transitive_placeholder": false
+    },
+    {
+      "name": "MD.Ch08.pairwiseWeight_localStationary",
+      "kind": "theorem",
+      "status": "未证",
+      "axioms": [
+        "propext",
+        "sorryAx",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "reason": "缺大型理论",
+      "source_id": "MD-8.9.4-PairwiseNHLGenerator",
+      "direct_placeholder": true,
+      "transitive_placeholder": false
+    },
+    {
+      "name": "MD.Ch08.pnhlAStep",
+      "kind": "def",
+      "status": "定义",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "reason": null,
+      "source_id": "MD-8.9.4-PNHLSplittingAlgorithms",
+      "direct_placeholder": false,
+      "transitive_placeholder": false
+    },
+    {
+      "name": "MD.Ch08.pnhlBStep",
+      "kind": "def",
+      "status": "定义",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "reason": null,
+      "source_id": "MD-8.9.4-PNHLSplittingAlgorithms",
+      "direct_placeholder": false,
+      "transitive_placeholder": false
+    },
+    {
+      "name": "MD.Ch08.pnhlDStep",
+      "kind": "def",
+      "status": "定义",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "reason": null,
+      "source_id": "MD-8.9.4-PNHLSplittingAlgorithms",
+      "direct_placeholder": false,
+      "transitive_placeholder": false
+    },
+    {
+      "name": "MD.Ch08.pnhlOStep",
+      "kind": "def",
+      "status": "定义",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "reason": null,
+      "source_id": "MD-8.9.4-PNHLSplittingAlgorithms",
+      "direct_placeholder": false,
+      "transitive_placeholder": false
+    },
+    {
+      "name": "MD.Ch08.pnhlPairCStep",
+      "kind": "def",
+      "status": "定义",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "reason": null,
+      "source_id": "MD-8.9.4-PNHLSplittingAlgorithms",
+      "direct_placeholder": false,
+      "transitive_placeholder": false
+    },
+    {
+      "name": "MD.Ch08.pnhlSComposition",
+      "kind": "def",
+      "status": "定义",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "reason": null,
+      "source_id": "MD-8.9.4-PNHLSplittingAlgorithms",
+      "direct_placeholder": false,
+      "transitive_placeholder": false
+    },
+    {
+      "name": "MD.Ch08.pnhlNComposition",
+      "kind": "def",
+      "status": "定义",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "reason": null,
+      "source_id": "MD-8.9.4-PNHLSplittingAlgorithms",
+      "direct_placeholder": false,
+      "transitive_placeholder": false
+    },
+    {
+      "name": "MD.Ch08.berendsenTemperature",
+      "kind": "def",
+      "status": "定义",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "reason": null,
+      "source_id": "MD-8.10-BerendsenRelaxation",
+      "direct_placeholder": false,
+      "transitive_placeholder": false
+    },
+    {
+      "name": "MD.Ch08.berendsenTemperature_derivative",
+      "kind": "theorem",
+      "status": "已证",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "reason": null,
+      "source_id": "MD-8.10-BerendsenRelaxation",
+      "direct_placeholder": false,
+      "transitive_placeholder": false
+    },
+    {
+      "name": "MD.Ch08.berendsenRadicand",
+      "kind": "def",
+      "status": "定义",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "reason": null,
+      "source_id": "MD-8.10-BerendsenRelaxation",
+      "direct_placeholder": false,
+      "transitive_placeholder": false
+    },
+    {
+      "name": "MD.Ch08.berendsenScale",
+      "kind": "def",
+      "status": "定义",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "reason": null,
+      "source_id": "MD-8.10-BerendsenRelaxation",
+      "direct_placeholder": false,
+      "transitive_placeholder": false
+    },
+    {
+      "name": "MD.Ch08.berendsenScaleQualification",
+      "kind": "def",
+      "status": "定义",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "reason": null,
+      "source_id": "MD-8.10-BerendsenRelaxation",
+      "direct_placeholder": false,
+      "transitive_placeholder": false
+    },
+    {
+      "name": "MD.Ch08.dot_smul_same",
+      "kind": "theorem",
+      "status": "已证",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "reason": null,
+      "source_id": "MD-8.10-BerendsenRelaxation",
+      "direct_placeholder": false,
+      "transitive_placeholder": false
+    },
+    {
+      "name": "MD.Ch08.berendsenScale_energy",
+      "kind": "theorem",
+      "status": "已证",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "reason": null,
+      "source_id": "MD-8.10-BerendsenRelaxation",
+      "direct_placeholder": false,
+      "transitive_placeholder": false
+    },
+    {
+      "name": "MD.Ch08.totalMomentum_gaussian",
+      "kind": "theorem",
+      "status": "未证",
+      "axioms": [
+        "propext",
+        "sorryAx",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "reason": "缺大型理论",
+      "source_id": "MD-8.10-CanonicalTotalMomentumGaussian",
+      "direct_placeholder": true,
+      "transitive_placeholder": false
+    },
+    {
+      "name": "MD.Ch08.nhlMomentumFactor",
+      "kind": "def",
+      "status": "定义",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "reason": null,
+      "source_id": "MD-8.10-NHLTotalMomentumSign",
+      "direct_placeholder": false,
+      "transitive_placeholder": false
+    },
+    {
+      "name": "MD.Ch08.nhlMomentumFactor_pos",
+      "kind": "theorem",
+      "status": "已证",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "reason": null,
+      "source_id": "MD-8.10-NHLTotalMomentumSign",
+      "direct_placeholder": false,
+      "transitive_placeholder": false
+    },
+    {
+      "name": "MD.Ch08.nhlMomentum_sign",
+      "kind": "theorem",
+      "status": "已证",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "reason": null,
+      "source_id": "MD-8.10-NHLTotalMomentumSign",
+      "direct_placeholder": false,
+      "transitive_placeholder": false
+    },
+    {
+      "name": "MD.Ch08.nhlTotalMomentum_odeSolution",
+      "kind": "theorem",
+      "status": "未证",
+      "axioms": [
+        "propext",
+        "sorryAx",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "reason": "缺大型理论",
+      "source_id": "MD-8.10-NHLTotalMomentumSign",
+      "direct_placeholder": true,
+      "transitive_placeholder": false
+    }
+  ],
+  "entries": [
+    {
+      "source_id": "MD-8.1-CanonicalCorrelation",
+      "scope": "规范平均、标量相关函数及零时归一；混合时的大时间极限定性说明另列。",
+      "gaps": []
+    },
+    {
+      "source_id": "MD-8.1-HamiltonianStationary",
+      "scope": "光滑Hamiltonian Gibbs权重的Liouville驻定方程；其余三项列覆盖缺口。",
+      "gaps": []
+    },
+    {
+      "source_id": "MD-8.1-ExtendedDensity",
+      "scope": "乘积权定义及辅助因子积分为1时的边缘积分等式；不额外证明概率正性或一般流不变性。",
+      "gaps": []
+    },
+    {
+      "source_id": "MD-8.1.1-NoseHoover",
+      "scope": "正参数资格、动能平方和、NH实际向量场及全实时间ODE规格。",
+      "gaps": []
+    },
+    {
+      "source_id": "MD-8.1.1-NHDensitySplit",
+      "scope": "权重、分裂及完整场驻定；伴随算子分裂可由散度线性导出但未另作声明。",
+      "gaps": []
+    },
+    {
+      "source_id": "MD-8.1.1-NHFirstIntegralPrinted",
+      "scope": "第一积分候选、原印s导数与修正s导数各自对应的沿解零导数目标；原印版不证。",
+      "gaps": []
+    },
+    {
+      "source_id": "MD-8.1.2-NHReversal",
+      "scope": "反演为对合及向量场反演等式；不另称一般ODE流的全局反演定理。",
+      "gaps": []
+    },
+    {
+      "source_id": "MD-8.1.2-NHTimestep",
+      "scope": "五段单步算法与c的可去奇点延拓；Taylor展开及二阶收敛列覆盖缺口。",
+      "gaps": []
+    },
+    {
+      "source_id": "MD-8.1.2-NHTimestepReversible",
+      "scope": "五段单步的反演等式及负步长左逆两个目标；未建立误差阶数。",
+      "gaps": []
+    },
+    {
+      "source_id": "MD-8.1.2.1-NoseHamiltoniansPrinted",
+      "scope": "两个原印Hamiltonian定义、所印等式目标及减去对数差项后的代数修正。",
+      "gaps": []
+    },
+    {
+      "source_id": "MD-8.1.2.1-NPEquations",
+      "scope": "NP四漂移分量、n/β版本的命名能量差及正质量、β,Q,s>0有效域谓词；npField仍为总函数，未证明Hamilton方程。",
+      "gaps": [
+        "NP四漂移分量、n/β版本的命名能量差及正质量、β,Q,s>0有效域谓词；npField仍为总函数，未证明Hamilton方程。"
+      ]
+    },
+    {
+      "source_id": "MD-8.1.2.1-NPtoNH",
+      "scope": "给定零能量NP解投影为NH解；NP零能量初值传播和非零能量修正列缺口。",
+      "gaps": []
+    },
+    {
+      "source_id": "MD-8.1.2.1-NPShadowDensity",
+      "scope": "三条公式的定义及渐近条件；不声称已构造ζ或证明有限样本等于精确平均。",
+      "gaps": [
+        "三条公式的定义及渐近条件；不声称已构造ζ或证明有限样本等于精确平均。",
+        "[EXTRA]仅给O(h⁴)余项与有限重加权公式的精确定义；存在修正Hamiltonian/密度和采样误差定理未覆盖，列入缺口。"
+      ]
+    },
+    {
+      "source_id": "MD-8.2-GeneralThermostat",
+      "scope": "常矩阵一般热浴场及矩阵反对称资格的定义；不声称已证驻定或采样。",
+      "gaps": [
+        "常矩阵一般热浴场及矩阵反对称资格的定义；不声称已证驻定或采样。"
+      ]
+    },
+    {
+      "source_id": "MD-8.2.1-ContinuityProductRule",
+      "scope": "实际Fréchet散度的乘积展开；未声称连续性方程解的存在唯一性。",
+      "gaps": []
+    },
+    {
+      "source_id": "MD-8.2.1-ThermostatCriterion",
+      "scope": "给定正参数与光滑性后，局部Liouville驻定与所列标量散度条件的等价目标。",
+      "gaps": []
+    },
+    {
+      "source_id": "MD-8.2.1-Examples81and82",
+      "scope": "原印一般G与构型反馈、正号组合Printed驻定声称，以及负号耦合的局部驻定修正版；不含全局过程不变性。",
+      "gaps": [
+        "原印一般G与构型反馈、正号组合Printed驻定声称，以及负号耦合的局部驻定修正版；不含全局过程不变性。"
+      ]
+    },
+    {
+      "source_id": "MD-8.2.1-TemperatureIdentity",
+      "scope": "紧支撑G的Gibbs积分分部目标及温度比值定义；一般边界衰减条件和比值推导未另证。",
+      "gaps": []
+    },
+    {
+      "source_id": "MD-8.2.1-Proposition81",
+      "scope": "两个标量热浴的局部Liouville驻定相加命题；不含多维热浴或全局流保测性。",
+      "gaps": [
+        "两个标量热浴的局部Liouville驻定相加命题；不含多维热浴或全局流保测性。",
+        "两个标量辅助变量的实际Liouville驻定版本；非负、归一后称概率密度，流保测性另需完整流存在与Jacobian条件。多维辅助变量未覆盖。"
+      ]
+    },
+    {
+      "source_id": "MD-8.2.2-NHChains",
+      "scope": "任意正链长、正对角质量且无约束的NH链场与未归一Gaussian权的局部Liouville驻定；不含一般非对角M、约束流形、唯一不变概率或遍历性。",
+      "gaps": [
+        "任意正链长、正对角质量且无约束的NH链场与未归一Gaussian权的局部Liouville驻定；不含一般非对角M、约束流形、唯一不变概率或遍历性。",
+        "链长k>0，各热质量Q_j>0、β>0，实辅助变量；未归一Gaussian权重不声称唯一不变概率或遍历性。"
+      ]
+    },
+    {
+      "source_id": "MD-8.3-ArrheniusRate",
+      "scope": "Arrhenius指数速率公式定义及A≥0时非负性；不含亚稳跃迁率渐近定理或温度单调性。",
+      "gaps": [
+        "Arrhenius指数速率公式定义及A≥0时非负性；不含亚稳跃迁率渐近定理或温度单调性。",
+        "A≥0,k_B>0,T>0为速率解释域；只定义原页模型，不声称一般能垒动力学服从此经验律。"
+      ]
+    },
+    {
+      "source_id": "MD-8.4-AdditiveThermostatSDE",
+      "scope": "常噪声积分SDE模板与正对角物理质量的统一恒温器解规格；同一n+k维独立Wiener、分块噪声、两组协方差和漂移质量已绑定。未含一般非对角物理质量、存在唯一性或不变律。",
+      "gaps": [
+        "[EXTRA] 正逆质量、C¹势；物理质量固定为diag(invm⁻¹)，Mhat为热浴协方差质量；两组涨落耗散均绑定同一β及实际阻尼。未构造矩阵平方根，未证明确定性热浴保权或完整过程不变性。",
+        "完整两组SDE需要一个统一的n+k维独立Wiener向量、分块噪声因子、对应漂移及两组协方差约束；本条尚无这项组装声明。"
+      ]
+    },
+    {
+      "source_id": "MD-8.4-OUStationarityPrinted",
+      "scope": "协方差匹配的完整OU局部驻定目标；所印扩散抵消的标量特例及数值反例。",
+      "gaps": []
+    },
+    {
+      "source_id": "MD-8.4-LiftedThermostat",
+      "scope": "一般单热浴提升场的实际加性Wiener积分解规格。",
+      "gaps": []
+    },
+    {
+      "source_id": "MD-8.4-Proposition82",
+      "scope": "所印及补σ≠0后的真实Lie括号张成命题；不含解存在、平滑转移核或遍历性。",
+      "gaps": [
+        "所印及补σ≠0后的真实Lie括号张成命题；不含解存在、平滑转移核或遍历性。",
+        "Printed版保留未要求非零σ的原文强度，不证明；修正版完整使用真实迭代Lie括号张成定义。"
+      ]
+    },
+    {
+      "source_id": "MD-8.4.1-NHL",
+      "scope": "仅正对角质量、无约束Nd=n的NHL漂移与单ξ噪声积分解规格；harmonicPotential仅定义二次函数。一般矩阵质量、单位质量二次专门化声明及原书重缩放均未覆盖。",
+      "gaps": [
+        "仅正对角质量、无约束Nd=n的NHL漂移与单ξ噪声积分解规格；harmonicPotential仅定义二次函数。一般矩阵质量、单位质量二次专门化声明及原书重缩放均未覆盖。",
+        "[EXTRA]M⁻¹=diag(invm)，N_d=n；一般非对角M未覆盖。harmonicPotential本身未要求A对称正定，相关物理资格在应用时另加。"
+      ]
+    },
+    {
+      "source_id": "MD-8.4.1-Lemma81",
+      "scope": "线性向量场C、D在实际Lie生成空间中的归属；Lean零起始索引对应原文正索引。",
+      "gaps": []
+    },
+    {
+      "source_id": "MD-8.4.1-Proposition83",
+      "scope": "指定模态域内的2n个实际线性场值线性无关；不扩大到例外零模态。",
+      "gaps": []
+    },
+    {
+      "source_id": "MD-8.4.1-Theorem81",
+      "scope": "所印及补参数资格后的NHL点态Hörmander条件；不含由其推出全局几何遍历性。",
+      "gaps": [
+        "所印及补参数资格后的NHL点态Hörmander条件；不含由其推出全局几何遍历性。"
+      ]
+    },
+    {
+      "source_id": "MD-8.4.1-ZeroModeInvariant",
+      "scope": "模态域的补集表达及连续热浴路径驱动的模态ODE零模态不变。",
+      "gaps": []
+    },
+    {
+      "source_id": "MD-8.4.1-NHLGenerator",
+      "scope": "实际加性扩散的Fréchet形式生成元、Lyapunov候选及漂移界性质的定义。",
+      "gaps": []
+    },
+    {
+      "source_id": "MD-8.4.1-LyapunovCalculation",
+      "scope": "实际NHL生成元作用于平移二次能量的目标及标量平方不等式；未据此证明遍历。",
+      "gaps": []
+    },
+    {
+      "source_id": "MD-8.4.1-LyapunovRatePrinted",
+      "scope": "所印与修正衰减系数、两版漂移界目标及所印界的正参数数值反例。",
+      "gaps": []
+    },
+    {
+      "source_id": "MD-8.4.2-NHLTimestep",
+      "scope": "实际九阶段NHL单步映射、OU随机输入及独立标准正态序列资格；不含整体稳定性。",
+      "gaps": [
+        "实际九阶段NHL单步映射、OU随机输入及独立标准正态序列资格；不含整体稳定性。"
+      ]
+    },
+    {
+      "source_id": "MD-8.4.1-NHLWeakStationary",
+      "scope": "归一概率密度的弱驻定积分式目标；Markov半群不变性、唯一性和遍历性未覆盖。",
+      "gaps": [
+        "归一概率密度的弱驻定积分式目标；Markov半群不变性、唯一性和遍历性未覆盖。"
+      ]
+    },
+    {
+      "source_id": "MD-8.4.3-PreEquilibriumMeans",
+      "scope": "任意随时间概率密度的两项有限平均与正质量、加权可积资格；preEquilibriumDensity仅是历史名称，未要求或覆盖NHL Fokker–Planck演化、闭合方程及局部稳定性。",
+      "gaps": [
+        "任意随时间概率密度的两项有限平均与正质量、加权可积资格；preEquilibriumDensity仅是历史名称，未要求或覆盖NHL Fokker–Planck演化、闭合方程及局部稳定性。",
+        "[EXTRA] 每个t≥0同时要求两项加权函数Integrable，故均值不是不可积时的总化积分。NHL Fokker–Planck演化未形式化，名称不代表完整预平衡动力学资格。"
+      ]
+    },
+    {
+      "source_id": "MD-8.4.4-VelocityRescaling",
+      "scope": "实际漂移扩散、Φ有效性和原始Φ对应Ψ的化简目标；没有完整乘性SDE解规格。",
+      "gaps": []
+    },
+    {
+      "source_id": "MD-8.4.4-RescalingStationary",
+      "scope": "闭包支撑tsupport避开零动量的光滑紧支撑测试函数弱驻定目标；零动量边界及半群不变性未覆盖。",
+      "gaps": [
+        "闭包支撑tsupport避开零动量的光滑紧支撑测试函数弱驻定目标；零动量边界及半群不变性未覆盖。",
+        "二阶项冻结噪声方向，正确表示Itô Hessian；完整随机解、奇异边界与半群不变性未覆盖。"
+      ]
+    },
+    {
+      "source_id": "MD-8.4.5-ThermostatEfficiency",
+      "scope": "效率比值、表8.1四行解析速率/低阶误差/效率估计及一般VR的O(N)含义；外引估计定理未证，经验曲线排除。",
+      "gaps": [
+        "效率比值、表8.1四行解析速率/低阶误差/效率估计及一般VR的O(N)含义；外引估计定理未证，经验曲线排除。"
+      ]
+    },
+    {
+      "source_id": "MD-8.5-SLS",
+      "scope": "完整SLS加性SDE积分解规格、噪声方向与确定性子场定义。",
+      "gaps": []
+    },
+    {
+      "source_id": "MD-8.5-SLSBracketPrinted",
+      "scope": "第一漂移/热浴括号的原印与符号修正目标；二重括号在Hörmander另条处理。",
+      "gaps": []
+    },
+    {
+      "source_id": "MD-8.5-SLSHormander",
+      "scope": "单位参数实际SLS场与噪声方向的点态Lie张成目标；不含几何遍历性。",
+      "gaps": [
+        "单位参数实际SLS场与噪声方向的点态Lie张成目标；不含几何遍历性。"
+      ]
+    },
+    {
+      "source_id": "MD-8.5-SLSConservation",
+      "scope": "确定性SLS子场的局部驻定及零散度目标；完整SDE概率不变、独立第一积分未另证。",
+      "gaps": []
+    },
+    {
+      "source_id": "MD-8.5-SLSLeapfrog",
+      "scope": "原有半kick–drift–半kick与坐标场定义，另列原印η约化场和恢复1/Q的修正版；体积保持、误差阶及η变换推导未证明。",
+      "gaps": [
+        "原有半kick–drift–半kick与坐标场定义，另列原印η约化场和恢复1/Q的修正版；体积保持、误差阶及η变换推导未证明。",
+        "原文η约化方程漏μ⁻¹，算法保留Q⁻¹；本条覆盖原页算法及逐坐标场，不声称二阶不变分布误差或精确求积实现。"
+      ]
+    },
+    {
+      "source_id": "MD-8.5-SLSDoubleWell",
+      "scope": "一维双阱势定义与非负性。",
+      "gaps": []
+    },
+    {
+      "source_id": "MD-8.6-IsokineticField",
+      "scope": "无约束向量场与瞬时动能导数的代数消去；沿解的完整第一积分列缺口。",
+      "gaps": []
+    },
+    {
+      "source_id": "MD-8.6-IsokineticProjector",
+      "scope": "实际投影定义、固定p及幂等性目标；完整像空间刻画未覆盖。",
+      "gaps": [
+        "实际投影定义、固定p及幂等性目标；完整像空间刻画未覆盖。"
+      ]
+    },
+    {
+      "source_id": "MD-8.6-IsokineticDivergencePrinted",
+      "scope": "一般光滑力的原印/符号修正散度目标及权重ansatz；w方程和概率不变另列缺口。",
+      "gaps": []
+    },
+    {
+      "source_id": "MD-8.6-IsokineticGibbsShell",
+      "scope": "动能壳与Gibbs因子的逐点关系；不声称完整曲面概率测度定理。",
+      "gaps": [
+        "动能壳与Gibbs因子的逐点关系；不声称完整曲面概率测度定理。"
+      ]
+    },
+    {
+      "source_id": "MD-8.6.1-StochasticIsokinetic",
+      "scope": "实际SIN漂移、正参数Wiener积分解和瞬时约束平衡；约束沿全路径保持未另证。",
+      "gaps": []
+    },
+    {
+      "source_id": "MD-8.6.1-SINWeightPrinted",
+      "scope": "原印及补热浴质量的权重、正约束面局部驻定目标；曲面边缘分布及遍历性未覆盖。",
+      "gaps": [
+        "原印及补热浴质量的权重、正约束面局部驻定目标；曲面边缘分布及遍历性未覆盖。"
+      ]
+    },
+    {
+      "source_id": "MD-8.6.2-SINHarmonic",
+      "scope": "谐振SIN实际SDE、例外直线和半柱定义及半柱不交；不含全局遍历定理。",
+      "gaps": [
+        "谐振SIN实际SDE、例外直线和半柱定义及半柱不交；不含全局遍历定理。"
+      ]
+    },
+    {
+      "source_id": "MD-8.6.2-SINProjectedBracketsPrinted",
+      "scope": "原印(8.48)–(8.53)的主要分量与实际交换子定义，(8.49)导数写法保存在逐字原页；未把错标指标视为已证恒等式。",
+      "gaps": [
+        "本条记录原印显式式和真实微分定义；显式式与真实二/三重交换子的等式尚未证明，列覆盖缺口。"
+      ]
+    },
+    {
+      "source_id": "MD-8.6.2-SINThirdBracketPrinted",
+      "scope": "原印三重交换子候选及p=0内部代数核对；真实三重交换子等式列覆盖缺口。",
+      "gaps": [
+        "ξ₁≠0用于分式化简；此处只核对原印(8.54)与(8.56)内部的代数关系，不声称(8.54)已被确认为实际三重交换子。"
+      ]
+    },
+    {
+      "source_id": "MD-8.6.2-SINBracketRank",
+      "scope": "例外直线外的有限括号张成目标；非完整遍历性定理。",
+      "gaps": [
+        "θ,γ正，ξ₁≠0且在正约束面；仅声明有限向量族张成实际切空间，Hörmander理论推出平滑密度或遍历性未覆盖。"
+      ]
+    },
+    {
+      "source_id": "MD-8.6.2-SINLyapunov",
+      "scope": "局部生成元恒等式、约束上的热浴界、原印有符号尾项表达式与绝对值尾界修正版；不含遍历性充分性。",
+      "gaps": [
+        "局部生成元恒等式、约束上的热浴界、原印有符号尾项表达式与绝对值尾界修正版；不含遍历性充分性。",
+        "已目视核对原页PDF390：有符号Cξ₂尾界不能统一控制两侧；工作修正版为−γξ₂²+θ|ξ₂|+γθ。它依赖尚未证明的局部生成元恒等式，不代表遍历性证明。"
+      ]
+    },
+    {
+      "source_id": "MD-8.6.3-SINForceSplitting",
+      "scope": "五个子场及其实际和分解、力子场瞬时约束平衡；不含整体方法阶数。",
+      "gaps": [
+        "五个子场及其实际和分解、力子场瞬时约束平衡；不含整体方法阶数。"
+      ]
+    },
+    {
+      "source_id": "MD-8.6.3-SINRAlgorithm",
+      "scope": "原印算法的阶段顺序与步长；不声称构造了各非线性子流。",
+      "gaps": [
+        "原印算法的阶段顺序与步长；不声称构造了各非线性子流。"
+      ]
+    },
+    {
+      "source_id": "MD-8.6.3-SINNoseSubsplitting",
+      "scope": "Nosé场的两项分解恒等式。",
+      "gaps": []
+    },
+    {
+      "source_id": "MD-8.6.3-SINForceExactPrinted",
+      "scope": "原印子场、显式候选与校正ODE的局部导数目标。",
+      "gaps": []
+    },
+    {
+      "source_id": "MD-8.6.4-SINThreeLevelPotential",
+      "scope": "三层势与步长嵌套的定义。",
+      "gaps": []
+    },
+    {
+      "source_id": "MD-8.7-GeneralizedLangevin",
+      "scope": "连续矩阵记忆核下的卷积及GLE积分解类定义。",
+      "gaps": []
+    },
+    {
+      "source_id": "MD-8.7-GLEFluctuationDissipationPrinted",
+      "scope": "Printed与一般矩阵协方差目标及标量核定义；不包含涨落耗散定理的物理推导。",
+      "gaps": [
+        "Printed与一般矩阵协方差目标及标量核定义；不包含涨落耗散定理的物理推导。",
+        "修正版作为单位质量下的一般矩阵协方差目标，不声称任意Γ均可实现为随机过程；正定协方差/核存在性列缺口。"
+      ]
+    },
+    {
+      "source_id": "MD-8.7-PronyKernel",
+      "scope": "正指数系数/记忆时间资格、Prony核定义及非负性；不包含过程极限。",
+      "gaps": [
+        "正指数系数/记忆时间资格、Prony核定义及非负性；不包含过程极限。",
+        "正cₖ、τₖ为后文OU实现所用域；此处只定义Prony核并证明非负，不声称任意记忆核的逼近误差。"
+      ]
+    },
+    {
+      "source_id": "MD-8.7.1-PronyMemoryODE",
+      "scope": "卷积辅助定义、微分关系和有限和等式；与扩展随机解的完整等价列缺口。",
+      "gaps": []
+    },
+    {
+      "source_id": "MD-8.7.1-PronyOUStationarity",
+      "scope": "单个Prony OU的完整资格及平稳均值/协方差目标、总随机力定义。",
+      "gaps": [
+        "已目视核对原页PDF397：(8.66)未声明平稳初态；保留原句，_corrected明确引用stationaryPronyOU的Gaussian初态和整条W独立性。总随机力只定义有限和，未证跨模式独立或总协方差。"
+      ]
+    },
+    {
+      "source_id": "MD-8.7.1-CombinedPronyVariable",
+      "scope": "有限维扩展SDE完整积分规格及σ=η+R的漂移恒等式。",
+      "gaps": []
+    },
+    {
+      "source_id": "MD-8.7.1-PronyLangevinLimit",
+      "scope": "有效摩擦定义、合并漂移和有限Gaussian求和分布，不是小记忆时间极限定理。",
+      "gaps": []
+    },
+    {
+      "source_id": "MD-8.7.1-GeneralizedLangevinIntegrator",
+      "scope": "四个实际更新及其全部噪声资格。",
+      "gaps": [
+        "此处完整单步定义，不包含离散不变分布、全局弱阶或Langevin极限保持的定理。"
+      ]
+    },
+    {
+      "source_id": "MD-8.7.1-GLEConsistentCoefficients",
+      "scope": "两项一致性渐近和所选单步系数的τ→0极限。",
+      "gaps": []
+    },
+    {
+      "source_id": "MD-8.8-NPTThermodynamics",
+      "scope": "压力定义和给定非零温度/循环关系后的代数推论。",
+      "gaps": []
+    },
+    {
+      "source_id": "MD-8.8-NPTBathTaylor",
+      "scope": "线性熵近似与明确的一阶小o余项目标。",
+      "gaps": []
+    },
+    {
+      "source_id": "MD-8.8-NPTDensity",
+      "scope": "正体积盒内NPT权重和有资格时的概率归一化。",
+      "gaps": []
+    },
+    {
+      "source_id": "MD-8.8-AndersenCoordinates",
+      "scope": "位置、速度、共轭动量的实际变换式与两个局部等式目标。",
+      "gaps": [
+        "V>0用于实分数幂的导数与乘法；质量物理解读取正，等式本身是坐标变换，不包含随体积变化的全局正则流或规范测度。"
+      ]
+    },
+    {
+      "source_id": "MD-8.8-AndersenKineticEnergy",
+      "scope": "所印动能展开的逐标量坐标版本。",
+      "gaps": []
+    },
+    {
+      "source_id": "MD-8.8-AndersenHamiltonianPrinted",
+      "scope": "活塞Hamiltonian、原印/修正边缘权重和Gaussian积分目标。",
+      "gaps": [
+        "[EXTRA] andersenMarginal_corrected仅是除以参数Z的权重，不声称自动归一。若作概率密度，须在相同坐标和V>0域上可积，且Z为相同权重的正有限配分积分；任意Z>0不足。"
+      ]
+    },
+    {
+      "source_id": "MD-8.8.1-NHLPistonEquations",
+      "scope": "实际压力、反馈、漂移扩散和正体积NHL活塞积分解规格。",
+      "gaps": []
+    },
+    {
+      "source_id": "MD-8.8.1-PistonHamiltonianSubfield",
+      "scope": "原印p子场、M⁻¹p修正子场及修正子场光滑复合权的局部驻定目标；不把修正场说成逐字原印场。",
+      "gaps": []
+    },
+    {
+      "source_id": "MD-8.8.1-PistonThermostatWeightPrinted",
+      "scope": "原印/修正权重及ψ₂=1时的实际子场驻定目标。",
+      "gaps": []
+    },
+    {
+      "source_id": "MD-8.8.1-PistonReducedPDE",
+      "scope": "完整(8.74)及Boltzmann权代入目标。",
+      "gaps": [
+        "只核对所印局部微分方程；正V消去压力分母，概率归一、边界通量与遍历性未覆盖。"
+      ]
+    },
+    {
+      "source_id": "MD-8.8.1-PistonStationaryWeight",
+      "scope": "候选权重与实际局部前向算子的驻定目标。",
+      "gaps": []
+    },
+    {
+      "source_id": "MD-8.8.2-PistonIntegrator",
+      "scope": "完整分步算法、周期映射及OU保持V和指数体积正性的短结论。",
+      "gaps": []
+    },
+    {
+      "source_id": "MD-8.8.3-ParrinelloRahman",
+      "scope": "各向异性盒的体积/位置/度量/Lagrangian及标量三重积恒等式。",
+      "gaps": []
+    },
+    {
+      "source_id": "MD-8.9-TotalMomentum",
+      "scope": "总动量定义和Nosé瞬时总力/零总动量时总力为零。",
+      "gaps": []
+    },
+    {
+      "source_id": "MD-8.9.1-DPDSoftPotential",
+      "scope": "软势、保守成对力/总力与光滑有效域的梯度目标；完整SDE见后条。",
+      "gaps": []
+    },
+    {
+      "source_id": "MD-8.9.1-DPDPairForces",
+      "scope": "全部成对/总耗散力、软随机权与成对守恒扩散方向。",
+      "gaps": []
+    },
+    {
+      "source_id": "MD-8.9.1-DPDPairWiener",
+      "scope": "对称噪声增量和对应所印δ协方差的积分版本。",
+      "gaps": []
+    },
+    {
+      "source_id": "MD-8.9.1-DPDIntegralSystem",
+      "scope": "配置依赖扩散的真实积分解规格及正质量/涨落耗散/无序噪声资格。",
+      "gaps": [
+        "选择强L²、非碰撞解类；不声称与所有弱解等价，也不建立SDE存在唯一或Markov半群。"
+      ]
+    },
+    {
+      "source_id": "MD-8.9.1-DPDCanonicalLeaf",
+      "scope": "涨落耗散资格、动量约束叶及其可归一canonical测度定义。",
+      "gaps": []
+    },
+    {
+      "source_id": "MD-8.9.1-DPDMassOrderPrinted",
+      "scope": "原印/校正的质量矩阵次序及具体代数反例。",
+      "gaps": [
+        "M应正定、θ>0；本条记录两个矩阵关系目标与不交换反例，不声称由形式关系自动得到不变概率。"
+      ]
+    },
+    {
+      "source_id": "MD-8.9.2-DPDVelocityVerlet",
+      "scope": "三条更新式和新噪声在下一步复用的状态机制。",
+      "gaps": [
+        "尚未证明书中预期的一阶弱收敛；未把随机输入映射称为对称确定性流。"
+      ]
+    },
+    {
+      "source_id": "MD-8.9.2-DPDSplitGenerator",
+      "scope": "实际三个漂移、无序对扩散生成元和漂移分解恒等式。",
+      "gaps": [
+        "采用独立无序对的Itô二阶导数形式，实现(8.97)有序双和的合并表达；未证明有序/无序表达等价。"
+      ]
+    },
+    {
+      "source_id": "MD-8.9.2-DPDPairGeneratorPrinted",
+      "scope": "冻结配置下单对动量生成元的原式和守恒方向修正版。",
+      "gaps": [
+        "本条只分别定义原印和成对修正版；不声称已证明驻定概率或原书单对不变性。"
+      ]
+    },
+    {
+      "source_id": "MD-8.9.2-DPDSplittingCompositions",
+      "scope": "两种外层组合、固定顺序逐对执行及S形式生成元；实际OU单对步骤见后条。",
+      "gaps": []
+    },
+    {
+      "source_id": "MD-8.9.2-DPDPairOUUpdate",
+      "scope": "原印/零率延拓的OU转移公式、速度增量所用动量更新及总动量守恒。",
+      "gaps": [
+        "单对精确分布律及其随机积分推导未证明；已证明质量正性、零率值与逐对总动量代数守恒。"
+      ]
+    },
+    {
+      "source_id": "MD-8.9.3-PairwiseNoseHoover",
+      "scope": "PNH场、反馈和正质量/正热浴质量的ODE规格。",
+      "gaps": []
+    },
+    {
+      "source_id": "MD-8.9.3-PairwiseCanonicalWeight",
+      "scope": "动量约束下扩展Gibbs权、配分积分和概率密度资格。",
+      "gaps": []
+    },
+    {
+      "source_id": "MD-8.9.4-PairwiseNHLSDE",
+      "scope": "带正质量资格、涨落耗散关系及真实独立标准Wiener的PNHL积分解规格。",
+      "gaps": [
+        "未证明该非碰撞解类存在、唯一、保测或遍历；“改善遍历性”是动机不是已证结论。"
+      ]
+    },
+    {
+      "source_id": "MD-8.9.4-PairwiseNHLGenerator",
+      "scope": "五子场、形式生成元、漂移分解；扩展权的局部驻定目标。",
+      "gaps": []
+    },
+    {
+      "source_id": "MD-8.9.4-PNHLSplittingAlgorithms",
+      "scope": "A/B/D/O实际更新、单对C更新和S/N的原印外层组合；全C指数与误差理论列缺口。",
+      "gaps": []
+    },
+    {
+      "source_id": "MD-8.10-BerendsenRelaxation",
+      "scope": "Berendsen温度方程的显式解、动量缩放、有效域和单次能量恒等式。",
+      "gaps": [
+        "只证明所印温度ODE的显式解及动量缩放能量恒等式；不声称温度控制必然正则采样。完整Verlet耦合的统计行为未证。"
+      ]
+    },
+    {
+      "source_id": "MD-8.10-CanonicalTotalMomentumGaussian",
+      "scope": "实际独立Gaussian动量假设下的一坐标总动量分布；非采样收敛定理。",
+      "gaps": []
+    },
+    {
+      "source_id": "MD-8.10-NHLTotalMomentumSign",
+      "scope": "总动量标量ODE解目标、正指数因子及显式表达式的符号保持。",
+      "gaps": []
+    }
+  ]
+}

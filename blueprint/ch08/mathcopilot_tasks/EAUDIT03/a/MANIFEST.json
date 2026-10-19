@@ -1,0 +1,127 @@
+{
+  "batch": "EAUDIT03",
+  "subtask": "EAUDIT03a",
+  "source_ids": [
+    "MD-8.5-SLSLeapfrog"
+  ],
+  "input_sha256": {
+    "Blueprint/Ch08.lean": "a58849c40e30a4a6b189163f42a49e0cbdf00bd48a39a77048bfd04ff88f8a16",
+    "blueprint/ch08/ch08_source.json": "c7fea45d785f740f26c7b50c5e37abd14cb1a8b05b51f4e7ad215cd5059ebdd5",
+    "PAGES.pdf": "442791e8a5a00f0a3f8b60d8245585660a02cf43d1a17d0b7c683096e1162010"
+  },
+  "page_mapping": [
+    {
+      "attachment_page": 1,
+      "original_pdf_page": 379,
+      "printed_page": 358
+    },
+    {
+      "attachment_page": 2,
+      "original_pdf_page": 380,
+      "printed_page": 359
+    }
+  ],
+  "definition_excerpts": [
+    {
+      "full_name": "MD.Ch08.Vec",
+      "kind": "abbrev",
+      "path": "Blueprint/Ch08.lean",
+      "line": 18,
+      "code_sha256": "6f4b254a8a7cc4115fb35265b77caa663bdd18567cd1e664cc5bbd080d02fcff"
+    },
+    {
+      "full_name": "MD.Ch08.Phase",
+      "kind": "abbrev",
+      "path": "Blueprint/Ch08.lean",
+      "line": 19,
+      "code_sha256": "377b8086105169a0d2deaa2dd84218cb6ea1d04d27b576cd82794d54e5b84300"
+    },
+    {
+      "full_name": "MD.Ch08.dot",
+      "kind": "def",
+      "path": "Blueprint/Ch08.lean",
+      "line": 20,
+      "code_sha256": "bb45cec5def0e642f7dde399650df8a6486048be491d116502106e187aa99348"
+    },
+    {
+      "full_name": "MD.Ch08.gradient",
+      "kind": "def",
+      "path": "Blueprint/Ch08.lean",
+      "line": 21,
+      "code_sha256": "a9a017b15c584dec720a71840d896ddb8d0e05e149030bce523362af481b101e"
+    },
+    {
+      "full_name": "MD.Ch08.slsBathKick",
+      "kind": "def",
+      "path": "Blueprint/Ch08.lean",
+      "line": 724,
+      "code_sha256": "2199126620d465b6e3f198bb58222ef0b8ea74e1d79dc38fb92ed8c9aa0ea4c6"
+    },
+    {
+      "full_name": "MD.Ch08.slsDriftStep",
+      "kind": "def",
+      "path": "Blueprint/Ch08.lean",
+      "line": 726,
+      "code_sha256": "aa6eeff40b15a80a857763918b971f37a383c90cd9c3b63889db14741b952f3e"
+    },
+    {
+      "full_name": "MD.Ch08.slsLeapfrog",
+      "kind": "def",
+      "path": "Blueprint/Ch08.lean",
+      "line": 728,
+      "code_sha256": "242c626195875e6e7de229a37ebd6658d6e9e817febb3ec477119be4dcf0901f"
+    },
+    {
+      "full_name": "MD.Ch08.slsCoordinateField",
+      "kind": "def",
+      "path": "Blueprint/Ch08.lean",
+      "line": 730,
+      "code_sha256": "63fc0cf511374d5d61dfb2206f2c2ac843c2700712dd7f08c57c7419933738a1"
+    },
+    {
+      "full_name": "MD.Ch08.slsReducedPrinted",
+      "kind": "def",
+      "path": "Blueprint/Ch08.lean",
+      "line": 735,
+      "code_sha256": "4905ecbf3ec928938a6e26d0b70b1d76823ab4b2122f9a3dc1a452cfc4cd4870"
+    },
+    {
+      "full_name": "MD.Ch08.slsReduced_corrected",
+      "kind": "def",
+      "path": "Blueprint/Ch08.lean",
+      "line": 740,
+      "code_sha256": "99f2dcceeace25894869b0aec355e8cce9ef45dac8676472fb2defed4db570e2"
+    },
+    {
+      "full_name": "MolecularDynamics.Chapter02Review.Q",
+      "kind": "abbrev",
+      "path": "MolecularDynamics/Chapter02/ReviewDefinitions.lean",
+      "line": 17,
+      "code_sha256": "d01d4518aed3668e7c982afee1cd3820fb858a94438e5b8960aa0557f5a57ef1"
+    },
+    {
+      "full_name": "MolecularDynamics.Chapter04Review.Q",
+      "kind": "abbrev",
+      "path": "MolecularDynamics/Chapter04/ReviewDefinitions.lean",
+      "line": 15,
+      "code_sha256": "d01d4518aed3668e7c982afee1cd3820fb858a94438e5b8960aa0557f5a57ef1"
+    }
+  ],
+  "validation": {
+    "project_constant_closure": "PASS",
+    "missing_project_definitions": [],
+    "full_page_render_equality_dpi": 72,
+    "website_submitted": false
+  },
+  "files": {
+    "PASTE.txt": {
+      "bytes": 22382,
+      "sha256": "cdc4a9fbb2377c966d57e14671ab8a2e6d4be524347106cc17955a9abfc66680"
+    },
+    "PAGES.pdf": {
+      "bytes": 85683,
+      "sha256": "442791e8a5a00f0a3f8b60d8245585660a02cf43d1a17d0b7c683096e1162010"
+    }
+  },
+  "total_task_bytes": 112077
+}

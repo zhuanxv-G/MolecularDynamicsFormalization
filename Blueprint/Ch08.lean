@@ -13,7 +13,8 @@ variable {n : ℕ}
 
 /-- source_id: MD-8.1-CanonicalCorrelation · 印刷p.329–330 / PDFp.350–351
 [SCOPE] 规范平均、标量相关函数及零时归一；混合时的大时间极限定性说明另列。
-[EXTRA] 相关分母非零才有C(0)=1；向量观测的点积由标量乘积表示，其余分量情形未展开。 -/
+[EXTRA] 相关分母非零才有C(0)=1；向量观测的点积由标量乘积表示，其余分量情形未展开。
+[EXTRA] [EXTRA/范围说明] 无需修改签名；将flow 0=id及分母非零也显式列入[EXTRA]，不要把标量特例说成已覆盖任意向量观测。 -/
 abbrev Vec (n : ℕ) := Fin n → ℝ
 abbrev Phase (n : ℕ) := Vec n × Vec n
 def dot (v w : Vec n) : ℝ := ∑ i, v i * w i
@@ -33,7 +34,8 @@ theorem correlation_zero {E : Type*} [MeasurableSpace E] (μ : Measure E)
 
 /-- source_id: MD-8.1-HamiltonianStationary · 印刷p.330 / PDFp.351
 [SCOPE] 光滑Hamiltonian Gibbs权重的Liouville驻定方程；其余三项列覆盖缺口。
-[EXTRA] 只桥接光滑Hamiltonian的Gibbs权重驻定方程；一般φ(H)、算子偏斜伴随及流的保测性未由本条覆盖。 -/
+[EXTRA] 只桥接光滑Hamiltonian的Gibbs权重驻定方程；一般φ(H)、算子偏斜伴随及流的保测性未由本条覆盖。
+[EXTRA] [EXTRA/范围说明] 保留有限范围说明；若以后声称完整覆盖原文，应另列一般φ(H)、形式伴随及流不变性。 -/
 def hamiltonianField (invm : Vec n) (U : Vec n → ℝ) (z : Phase n) : Phase n :=
   (fun i ↦ invm i * z.2 i, fun i ↦ - gradient U z.1 i)
 theorem hamiltonianGibbsStationary (H : SymplecticCoordinates n → ℝ)
@@ -44,7 +46,8 @@ theorem hamiltonianGibbsStationary (H : SymplecticCoordinates n → ℝ)
 
 /-- source_id: MD-8.1-ExtendedDensity · 印刷p.331 / PDFp.352
 [SCOPE] 乘积权定义及辅助因子积分为1时的边缘积分等式；不额外证明概率正性或一般流不变性。
-[EXTRA] 辅助密度归一、乘积积分可积；使用有限/σ有限测度条件。 -/
+[EXTRA] 辅助密度归一、乘积积分可积；使用有限/σ有限测度条件。
+[EXTRA] [EXTRA/范围说明] 保留[EXTRA]辅助归一、可积、SFinite条件；不要据此声称已证明遍历性或采样正确。 -/
 def extendedDensity {E B : Type*} (ρ : E → ℝ) (a : B → ℝ) (z : E × B) : ℝ := ρ z.1 * a z.2
 theorem extendedAverage {E B : Type*} [MeasurableSpace E] [MeasurableSpace B]
     (μ : Measure E) (ν : Measure B) [SFinite μ] [SFinite ν]
@@ -59,7 +62,8 @@ theorem extendedAverage {E B : Type*} [MeasurableSpace E] [MeasurableSpace B]
 
 /-- source_id: MD-8.1.1-NoseHoover · 印刷p.331 / PDFp.352
 [SCOPE] 正参数资格、动能平方和、NH实际向量场及全实时间ODE规格。
-[EXTRA] μ记为Q且Q>0，β>0，正质量，热浴变量ξ∈ℝ；总函数nhField配合资格谓词使用。 -/
+[EXTRA] μ记为Q且Q>0，β>0，正质量，热浴变量ξ∈ℝ；总函数nhField配合资格谓词使用。
+[EXTRA] [EXTRA/范围说明] 补充[EXTRA]采用对角质量、C¹经典解及全实时间解规格；局部解应用需另作区间版本。 -/
 def thermostatParameters (invm : Vec n) (β Q : ℝ) : Prop :=
   (∀ i, 0 < invm i) ∧ 0 < β ∧ 0 < Q
 def kineticTwice (invm p : Vec n) : ℝ := ∑ i, invm i * p i ^ 2
@@ -73,7 +77,8 @@ def isNHSolution (invm : Vec n) (U : Vec n → ℝ) (β Q : ℝ)
 
 /-- source_id: MD-8.1.1-NHDensitySplit · 印刷p.332 / PDFp.353
 [SCOPE] 权重、分裂及完整场驻定；伴随算子分裂可由散度线性导出但未另作声明。
-[EXTRA] 指数为未归一权重；若称概率密度还要求有限正配分积分并归一化。 -/
+[EXTRA] 指数为未归一权重；若称概率密度还要求有限正配分积分并归一化。
+[EXTRA] [EXTRA/范围说明] 可保留现有范围；把热浴单独驻定未单列也写入覆盖缺口。权重未归一。 -/
 def nhWeight (invm : Vec n) (U : Vec n → ℝ) (β Q : ℝ) (z : Phase n × ℝ) : ℝ :=
   Real.exp (-β * (kineticTwice invm z.1.2 / 2 + U z.1.1 + Q*z.2^2/2))
 def nhBathField (invm : Vec n) (β Q : ℝ) (z : Phase n × ℝ) : Phase n × ℝ :=
@@ -117,7 +122,8 @@ theorem nhReversal_field (invm : Vec n) (U : Vec n → ℝ) (β Q : ℝ) (z : Ph
 
 /-- source_id: MD-8.1.2-NHTimestep · 印刷p.333 / PDFp.354
 [SCOPE] 五段单步算法与c的可去奇点延拓；Taylor展开及二阶收敛列覆盖缺口。
-[EXTRA] c在ξ=0处取连续延拓t；系数Taylor级数与二阶全局误差未由单步定义证明。 -/
+[EXTRA] c在ξ=0处取连续延拓t；系数Taylor级数与二阶全局误差未由单步定义证明。
+[EXTRA] [EXTRA/范围说明] 保留零点连续延拓[EXTRA]及Taylor/收敛阶覆盖缺口；有效物理域仍是正质量、β,Q。 -/
 def dampedCoefficient (t ξ : ℝ) : ℝ := if ξ = 0 then t else (1-Real.exp (-t*ξ))/ξ
 def nhDrift (invm : Vec n) (h : ℝ) (z : Phase n × ℝ) : Phase n × ℝ :=
   ((fun i ↦ z.1.1 i + h*invm i*z.1.2 i, z.1.2), z.2)
@@ -160,19 +166,33 @@ theorem nosePoincare_corrected (invm : Vec n) (U : Vec n → ℝ) (β Q EN : ℝ
   ring
 
 /-- source_id: MD-8.1.2.1-NPEquations · 印刷p.334 / PDFp.355
-[SCOPE] 四个NP漂移分量的实际定义；从Hamiltonian求导得到这些分量未证。
-[EXTRA] ΔH采用(8.9)展开内的N_d版本；β,Q>0及s>0为有效域；尚未桥接实际Hamiltonian梯度。 -/
+[SCOPE] NP四漂移分量、n/β版本的命名能量差及正质量、β,Q,s>0有效域谓词；npField仍为总函数，未证明Hamilton方程。
+[EXTRA] ΔH采用(8.9)展开内的N_d版本；β,Q>0及s>0为有效域；尚未桥接实际Hamiltonian梯度。
+[EXTRA] 已目视核对原页PDF355：delta取H_N^(n)−E_N，不能与上式(n+1)/β版本混同。
+[EXTRA] [EXTRA] npValidDomain明确列有效物理域；使用npField作NP方程时必须另具此资格，总函数自身不强制。
+[ERRATUM?] [ERRATUM?] ΔH_N采用(8.9)展开中的N_d版本，与前一定义(N_d+1)版本不同，须明确区分。
+[ERRATUM?] 已目视核对原页PDF355：delta取H_N^(n)−E_N，不能与上式(n+1)/β版本混同。 -/
+/- 修正版采用(8.9)展开中的n/β版本，区别于前文(n+1)/β的同名H_N。 -/
+def npDeltaN_corrected (invm : Vec n) (U : Vec n → ℝ) (β Q EN : ℝ)
+    (z : Phase n × (ℝ × ℝ)) : ℝ :=
+  kineticTwice invm z.1.2/(2*z.2.1^2) + z.2.2^2/(2*Q) + U z.1.1 +
+    (n : ℝ)/β*Real.log z.2.1 - EN
+
+def npValidDomain (invm : Vec n) (β Q : ℝ) (z : Phase n × (ℝ × ℝ)) : Prop :=
+  (∀ i, 0 < invm i) ∧ 0 < β ∧ 0 < Q ∧ 0 < z.2.1
+
 def npField (invm : Vec n) (U : Vec n → ℝ) (β Q EN : ℝ)
     (z : Phase n × (ℝ × ℝ)) : Phase n × (ℝ × ℝ) :=
   let s := z.2.1
   let π := z.2.2
-  let delta := kineticTwice invm z.1.2/(2*s^2) + π^2/(2*Q) + U z.1.1 + (n : ℝ)/β*Real.log s - EN
+  let delta := npDeltaN_corrected invm U β Q EN z
   ((fun i ↦ invm i*z.1.2 i/s, fun i ↦ -s*gradient U z.1.1 i),
    (s*π/Q, kineticTwice invm z.1.2/s^2-(n : ℝ)/β-delta))
 
 /-- source_id: MD-8.1.2.1-NPtoNH · 印刷p.335 / PDFp.356
 [SCOPE] 给定零能量NP解投影为NH解；NP零能量初值传播和非零能量修正列缺口。
-[EXTRA] 明确零能量面及s>0；零能量守恒本身未假作普遍结论。 -/
+[EXTRA] 明确零能量面及s>0；零能量守恒本身未假作普遍结论。
+[EXTRA] [EXTRA/范围说明] 保留[EXTRA]全时零能量与s>0；标明这是采用第11条展开式定义的NP版本。原文“沿精确解消失”须理解为正确初始化的零能量解。 -/
 def npProjection (z : Phase n × (ℝ × ℝ)) (Q : ℝ) : Phase n × ℝ :=
   ((z.1.1, fun i ↦ z.1.2 i/z.2.1), z.2.2/Q)
 theorem npProjection_equations (invm : Vec n) (U : Vec n → ℝ) (β Q EN : ℝ)
@@ -185,7 +205,8 @@ theorem npProjection_equations (invm : Vec n) (U : Vec n → ℝ) (β Q EN : ℝ
 
 /-- source_id: MD-8.1.2.1-NPShadowDensity · 印刷p.335 / PDFp.356
 [SCOPE] 三条公式的定义及渐近条件；不声称已构造ζ或证明有限样本等于精确平均。
-[EXTRA] [EXTRA]仅给O(h⁴)余项与有限重加权公式的精确定义；存在修正Hamiltonian/密度和采样误差定理未覆盖，列入缺口。 -/
+[EXTRA] [EXTRA]仅给O(h⁴)余项与有限重加权公式的精确定义；存在修正Hamiltonian/密度和采样误差定理未覆盖，列入缺口。
+[EXTRA] [EXTRA/范围说明] 补充[EXTRA]：这里Phase n是示意状态域，未桥接实际扩展NP域Phase n×(ℝ×ℝ)；仅逐点O(h⁴)，非一致估计。实际重加权需ζ_k≠0；有限样本统计误差不能并入单独O(h⁴)。 -/
 def fourthOrderRemainder (r : ℝ → ℝ) : Prop :=
   ∃ C ε : ℝ, 0 < C ∧ 0 < ε ∧ ∀ h, |h| < ε → |r h| ≤ C*|h|^4
 def correctedFiniteAverage (g ζ : ℕ → ℝ) (N : ℕ) : ℝ :=
@@ -197,7 +218,8 @@ def npDensityAnsatz (ρ : Phase n → ℝ) (ζ ρtilde : ℝ → Phase n → ℝ
 
 /-- source_id: MD-8.2-GeneralThermostat · 印刷p.336 / PDFp.357
 [SCOPE] 常矩阵一般热浴场及矩阵反对称资格的定义；不声称已证驻定或采样。
-[EXTRA] J为常矩阵，Jᵀ=-J；z、ξ为实向量，光滑资格在结论中给出。 -/
+[EXTRA] J为常矩阵，Jᵀ=-J；z、ξ为实向量，光滑资格在结论中给出。
+[EXTRA] [EXTRA/范围说明] 补充[EXTRA]辅助维数k可独立于n；不要把任意J的总函数定义视为已满足Hamiltonian资格或已驻定。 -/
 def generalThermostat {k : ℕ} (J : Matrix (Fin n) (Fin n) ℝ)
     (H : Vec n → ℝ) (Φ : Vec n × Vec k → Vec n) (g : Vec n × Vec k → Vec k)
     (z : Vec n × Vec k) : Vec n × Vec k := (J *ᵥ gradient H z.1 + Φ z, g z)
@@ -205,7 +227,8 @@ def skewMatrix (J : Matrix (Fin n) (Fin n) ℝ) : Prop := J.transpose = -J
 
 /-- source_id: MD-8.2.1-ContinuityProductRule · 印刷p.336–337 / PDFp.357–358
 [SCOPE] 实际Fréchet散度的乘积展开；未声称连续性方程解的存在唯一性。
-[EXTRA] 覆盖总散度乘积公式；按z/ξ分拆四项的分量等式与完整连续性方程解理论另列缺口。 -/
+[EXTRA] 覆盖总散度乘积公式；按z/ξ分拆四项的分量等式与完整连续性方程解理论另列缺口。
+[EXTRA] [EXTRA/范围说明] 保留总散度展开的范围说明；四项分块恒等式和完整连续性方程不得算作本条已形式覆盖。 -/
 def continuityRHS {k : ℕ} (F : Vec n × Vec k → Vec n × Vec k)
     (ρ : Vec n × Vec k → ℝ) (z : Vec n × Vec k) : ℝ :=
   -textbookDivergence (fun x ↦ ρ x • F x) z
@@ -217,7 +240,8 @@ theorem continuity_productRule {k : ℕ} (F : Vec n × Vec k → Vec n × Vec k)
 
 /-- source_id: MD-8.2.1-ThermostatCriterion · 印刷p.337 / PDFp.358
 [SCOPE] 给定正参数与光滑性后，局部Liouville驻定与所列标量散度条件的等价目标。
-[EXTRA] 原文μ_i在指数中是热质量，统一写Q_i；矩阵μ⁻¹的记号按对角热质量解释。归一化概率密度需另加有限正配分积分。 -/
+[EXTRA] 原文μ_i在指数中是热质量，统一写Q_i；矩阵μ⁻¹的记号按对角热质量解释。归一化概率密度需另加有限正配分积分。
+[EXTRA] [EXTRA/范围说明] 补充明确记号字典Q_i=原文标量μ_i，原文矩阵μ⁻¹=diag(Q_i)，矩阵μ=diag(1/Q_i)。若原书 intended μ=diag(μ_i)，则该矩阵记号需[ERRATUM?]人工确认。 -/
 def thermalWeight {k : ℕ} (H : Vec n → ℝ) (Q : Vec k) (β : ℝ)
     (z : Vec n × Vec k) : ℝ := Real.exp (-β*(H z.1 + (∑ i, Q i*z.2 i^2)/2))
 theorem thermostatCriterion {k : ℕ} (J : Matrix (Fin n) (Fin n) ℝ)
@@ -231,13 +255,17 @@ theorem thermostatCriterion {k : ℕ} (J : Matrix (Fin n) (Fin n) ℝ)
   sorry
 
 /-- source_id: MD-8.2.1-Examples81and82 · 印刷p.337–338 / PDFp.358–359
-[SCOPE] 单热浴一般G反馈及构型反馈公式、一般G的局部驻定目标；Example8.1由NH另条覆盖。
-[EXTRA] Example8.1使用此前完整NH定义；本条单热浴一般G与构型反馈公式，构型全场与驻定证明未单列。 -/
+[SCOPE] 原印一般G与构型反馈、正号组合Printed驻定声称，以及负号耦合的局部驻定修正版；不含全局过程不变性。
+[EXTRA] Example8.1使用此前完整NH定义；本条单热浴一般G与构型反馈公式，构型全场与驻定证明未单列。
+[EXTRA] generalizedFeedback/configurationalFeedback忠实保留原式；corrected将Φ改为−ξG。构型反馈在正号耦合下同样须反号。
+[ERRATUM?] 已目视核对原页PDF358–359：例8.2确实印为正号耦合与正反馈，驻定声称有符号疑误，不是转录错误。
+[ERRATUM?] [ERRATUM?] 例8.2正号耦合与所印正反馈不能保持所列高斯Gibbs权；额外generalizedFeedback_stationary签名错误，见本次审校反例。 -/
 def generalizedFeedback (H : Vec n → ℝ) (G : Vec n → Vec n) (β Q : ℝ) (z : Vec n) : ℝ :=
   (fderiv ℝ H z (G z) - textbookDivergence G z/β)/Q
 def configurationalFeedback (U K : Vec n → ℝ) (β Q : ℝ) (q : Vec n) : ℝ :=
   (dot (gradient U q) (gradient K q) - textbookDivergence (gradient K) q/β)/Q
-theorem generalizedFeedback_stationary (J : Matrix (Fin n) (Fin n) ℝ)
+/-- 原文正号组合的驻定声称；原书疑误，保留字面版，不作为有效定理。 -/
+theorem generalizedFeedback_stationaryPrinted (J : Matrix (Fin n) (Fin n) ℝ)
     (H : Vec n → ℝ) (G : Vec n → Vec n) (β Q : ℝ)
     (hJ : skewMatrix J) (hH : ContDiff ℝ 3 H) (hG : ContDiff ℝ 2 G)
     (hβ : 0 < β) (hQ : 0 < Q) :
@@ -246,9 +274,20 @@ theorem generalizedFeedback_stationary (J : Matrix (Fin n) (Fin n) ℝ)
       (fun z ↦ Real.exp (-β*(H z.1+Q*z.2^2/2))) := by
   sorry
 
+/-- 修正版：仅将耦合改为负号，反馈保留原式；原文例8.2另存。 -/
+theorem generalizedFeedback_stationary_corrected (J : Matrix (Fin n) (Fin n) ℝ)
+    (H : Vec n → ℝ) (G : Vec n → Vec n) (β Q : ℝ)
+    (hJ : skewMatrix J) (hH : ContDiff ℝ 3 H) (hG : ContDiff ℝ 2 G)
+    (hβ : 0 < β) (hQ : 0 < Q) :
+    textbookLiouvilleStationary
+      (fun z : Vec n × ℝ ↦ (J *ᵥ gradient H z.1 - z.2 • G z.1, generalizedFeedback H G β Q z.1))
+      (fun z ↦ Real.exp (-β*(H z.1+Q*z.2^2/2))) := by
+  sorry
+
 /-- source_id: MD-8.2.1-TemperatureIdentity · 印刷p.338 / PDFp.359
 [SCOPE] 紧支撑G的Gibbs积分分部目标及温度比值定义；一般边界衰减条件和比值推导未另证。
-[EXTRA] 以G紧支撑替代原文未量化的足够快边界衰减；温度比值解释另要求k_B>0、分母非零。 -/
+[EXTRA] 以G紧支撑替代原文未量化的足够快边界衰减；温度比值解释另要求k_B>0、分母非零。
+[EXTRA] [EXTRA/范围说明] 保留紧支撑替代衰减的[EXTRA]；若解释归一平均或推导T，须另外有有限正配分函数、kB>0、分母非零及β⁻¹=kB T。 -/
 theorem temperatureIdentity (H : Vec n → ℝ) (G : Vec n → Vec n) (β : ℝ)
     (hH : ContDiff ℝ 2 H) (hG : ContDiff ℝ 1 G) (hcompact : HasCompactSupport G)
     (hβ : 0 < β) :
@@ -278,8 +317,9 @@ theorem proposition81 {H : SymplecticCoordinates n → ℝ} (hH : ContDiff ℝ 2
   exact textbookThermostats_additive_proposition81 hH β c hφ₁ hφ₂ hg₁ hg₂ ha hb hs₁ hs₂
 
 /-- source_id: MD-8.2.2-NHChains · 印刷p.339–340 / PDFp.360–361
-[SCOPE] 任意正链长的完整NH链场及Gaussian权局部驻定目标；不含遍历性。
-[EXTRA] 链长k>0，各热质量Q_j>0、β>0，实辅助变量；未归一Gaussian权重不声称唯一不变概率或遍历性。 -/
+[SCOPE] 任意正链长、正对角质量且无约束的NH链场与未归一Gaussian权的局部Liouville驻定；不含一般非对角M、约束流形、唯一不变概率或遍历性。
+[EXTRA] 链长k>0，各热质量Q_j>0、β>0，实辅助变量；未归一Gaussian权重不声称唯一不变概率或遍历性。
+[EXTRA] [EXTRA] M⁻¹=diag(invm)，∀i,invm_i>0，N_d=n；U∈C²。仅形式化正对角质量、无约束情形。 -/
 def nhChainField (k : ℕ) (invm : Vec n) (U : Vec n → ℝ) (β : ℝ)
     (Q : Fin k → ℝ) (z : Phase n × (Fin k → ℝ)) : Phase n × (Fin k → ℝ) :=
   ((fun i ↦ invm i*z.1.2 i,
@@ -302,8 +342,15 @@ theorem arrheniusRate_nonneg (A ΔE kB T : ℝ) (hA : 0 ≤ A) :
     0 ≤ arrheniusRate A ΔE kB T := mul_nonneg hA (Real.exp_pos _).le
 
 /-- source_id: MD-8.4-AdditiveThermostatSDE · 印刷p.342–343 / PDFp.363–364
-[SCOPE] 一般漂移、常噪声SDE与协方差关系；未构造矩阵平方根。
-[EXTRA] 加性噪声用独立Wiener路径增量的精确积分方程；漂移可积、路径连续且适应自然历史。完整矩阵噪声给因子B和涨落耗散资格，物理/热浴两组坐标共同独立。 -/
+[SCOPE] 常噪声积分SDE模板与正对角物理质量的统一恒温器解规格；同一n+k维独立Wiener、分块噪声、两组协方差和漂移质量已绑定。未含一般非对角物理质量、存在唯一性或不变律。
+[EXTRA] 加性噪声用独立Wiener路径增量的精确积分方程；漂移可积、路径连续且适应自然历史。完整矩阵噪声给因子B和涨落耗散资格，物理/热浴两组坐标共同独立。
+[EXTRA] [EXTRA] 正逆质量、C¹势；物理质量固定为diag(invm⁻¹)，Mhat为热浴协方差质量；两组涨落耗散均绑定同一β及实际阻尼。未构造矩阵平方根，未证明确定性热浴保权或完整过程不变性。
+[EXTRA] [EXTRA]漂移采用M⁻¹=diag(invm)的正对角、无约束特例；现有定义尚未把独立的M参数绑定到invm。
+[EXTRA] [ERRATUM?]原矩阵平方根噪声须补半正定性及协方差相容条件。fluctuationDissipation规定BBᵀ=(2/β)ΓM，对称M、Γ下还强制ΓM=MΓ，是明确限制后的修正资格。
+[EXTRA] 完整两组SDE需要一个统一的n+k维独立Wiener向量、分块噪声因子、对应漂移及两组协方差约束；本条尚无这项组装声明。
+[ERRATUM?] 已目视核对原页PDF364：(8.23)的−Φ项确实漏dt；漂移解释补dt。矩阵不交换时原平方根噪声与驻定协方差未必相容。
+[ERRATUM?] [ERRATUM?]原书矩阵噪声的对称性不足以保证Gibbs相容。
+[ERRATUM?] 现有声明只是未组装的定义组件。 -/
 def independentWiener (P : Measure Ω) (k : ℕ) (W : ℝ → Ω → Vec k) : Prop :=
   IsProbabilityMeasure P ∧ (∀ j, IsBrownianReal (fun t sample ↦ W t sample j) P) ∧
     iIndepFun (fun j sample ↦ fun t : ℝ ↦ W t sample j) P
@@ -326,10 +373,33 @@ def stochasticThermostatDrift {k : ℕ} (invm : Vec n) (U : Vec n → ℝ)
 def fluctuationDissipation (M Γ B : Matrix (Fin n) (Fin n) ℝ) (β : ℝ) : Prop :=
   0 < β ∧ M.PosDef ∧ Γ.PosSemidef ∧ B*B.transpose = (2/β) • (Γ*M)
 
+/-- 两组噪声共用一个n+k维独立Wiener过程，分块只作用于p和ξ。 -/
+def thermostatBlockNoise {k : ℕ}
+    (B : Matrix (Fin n) (Fin n) ℝ) (Bhat : Matrix (Fin k) (Fin k) ℝ)
+    (j : Fin (n+k)) : Phase n × Vec k :=
+  if hj : j.val < n then
+    ((0,fun i ↦ B i ⟨j.val,hj⟩),0)
+  else ((0,0),fun i ↦ Bhat i ⟨j.val-n,by omega⟩)
+
+/-- 正对角物理质量特例的统一积分解规格；两组协方差与实际漂移使用同一质量。
+不含一般非对角物理质量，也不声称由此已证明存在、唯一或不变分布。 -/
+def stochasticThermostatSolution {k : ℕ} (P : Measure Ω)
+    (W : ℝ → Ω → Vec (n+k)) (X : ℝ → Ω → Phase n × Vec k)
+    (x0 : Phase n × Vec k) (invm : Vec n) (U : Vec n → ℝ)
+    (Φ : Phase n × Vec k → Vec n) (g : Phase n × Vec k → Vec k)
+    (Γ B : Matrix (Fin n) (Fin n) ℝ)
+    (Mhat Γhat Bhat : Matrix (Fin k) (Fin k) ℝ) (β : ℝ) : Prop :=
+  (∀ i, 0 < invm i) ∧ ContDiff ℝ 1 U ∧
+  fluctuationDissipation (Matrix.diagonal (fun i ↦ (invm i)⁻¹)) Γ B β ∧
+  fluctuationDissipation Mhat Γhat Bhat β ∧
+  additiveSDE P (n+k) W X x0 (stochasticThermostatDrift invm U Φ g Γ Γhat)
+    (thermostatBlockNoise B Bhat)
+
 /-- source_id: MD-8.4-OUStationarityPrinted · 印刷p.343–344 / PDFp.364–365
 [SCOPE] 协方差匹配的完整OU局部驻定目标；所印扩散抵消的标量特例及数值反例。
 [EXTRA] Printed保留显示抵消式的M=Γ=1,p=0标量特例；修正版为完整匹配协方差后的OU驻定式；不将转移分布存在性作为已证。
-[ERRATUM?] 已目视核对原页PDF364–365：一般M与Γ仅对称不足保证原噪声协方差匹配，应加ΓM=MΓ或直接给涨落耗散关系；PDF365将Hessian的β提取后仍留β⁻¹，标量β=2,p=0已反例。 -/
+[ERRATUM?] 已目视核对原页PDF364–365：一般M与Γ仅对称不足保证原噪声协方差匹配，应加ΓM=MΓ或直接给涨落耗散关系；PDF365将Hessian的β提取后仍留β⁻¹，标量β=2,p=0已反例。
+[ERRATUM?] [ERRATUM?]保留原所印等式及β=2反例；修正版的BBᵀ=(2/β)ΓM为明确额外资格，在对称情形蕴含交换性。 -/
 def ouFokkerPlanck (A C : Matrix (Fin n) (Fin n) ℝ) (ρ : Vec n → ℝ) (p : Vec n) : ℝ :=
   textbookDivergence (fun x ↦ ρ x • (A *ᵥ x)) p +
     (∑ i, ∑ j, C i j * fderiv ℝ (fun x ↦ gradient ρ x j) p (Pi.single i 1))/2
@@ -354,7 +424,8 @@ def liftedThermostat (F G : Vec n → Vec n) (g : Vec n → ℝ) (γ σ : ℝ)
 /-- source_id: MD-8.4-Proposition82 · 印刷p.344–345 / PDFp.365–366
 [SCOPE] 所印及补σ≠0后的真实Lie括号张成命题；不含解存在、平滑转移核或遍历性。
 [EXTRA] Printed版保留未要求非零σ的原文强度，不证明；修正版完整使用真实迭代Lie括号张成定义。
-[ERRATUM?] 已目视核对原页PDF365–366：证明除以σ，定理需σ≠0；光滑向量场资格明确补足。 -/
+[ERRATUM?] 已目视核对原页PDF365–366：证明除以σ，定理需σ≠0；光滑向量场资格明确补足。
+[ERRATUM?] [ERRATUM?]σ=0反例；Printed仅作忠实记录，corrected在σ≠0下通过。 -/
 theorem proposition82Printed (F G : Vec n → Vec n) (g : Vec n → ℝ) (γ σ : ℝ)
     (hF : ContDiff ℝ ∞ F) (hG : ContDiff ℝ ∞ G) (hg : ContDiff ℝ ∞ g)
     (w : Vec n × ℝ) (hspan : textbookHormanderAt {F,G} w.1) :
@@ -367,8 +438,12 @@ theorem proposition82_corrected (F G : Vec n → Vec n) (g : Vec n → ℝ) (γ 
   exact textbookThermostatHormanderLift F G g γ σ hF hG hg hσ w hspan
 
 /-- source_id: MD-8.4.1-NHL · 印刷p.345–346 / PDFp.366–367
-[SCOPE] NHL全SDE与二次势；一般质量重缩放和NHL概率不变性在其他条目/缺口中列。
-[EXTRA] Q>0、β>0、γ>0及单独立Wiener；二次系统A对称正定、M=I；高维无约束自由度n。 -/
+[SCOPE] 仅正对角质量、无约束Nd=n的NHL漂移与单ξ噪声积分解规格；harmonicPotential仅定义二次函数。一般矩阵质量、单位质量二次专门化声明及原书重缩放均未覆盖。
+[EXTRA] Q>0、β>0、γ>0及单独立Wiener；二次系统A对称正定、M=I；高维无约束自由度n。
+[EXTRA] [EXTRA/覆盖缺口] invm_i,β,Q,γ均正；不宣称覆盖一般M或已把isNHLSolution特化到正定二次势(8.30)–(8.32)。原印重缩放疑误另列。
+[EXTRA] [EXTRA]M⁻¹=diag(invm)，N_d=n；一般非对角M未覆盖。harmonicPotential本身未要求A对称正定，相关物理资格在应用时另加。
+[ERRATUM?] 已目视核对原页PDF367：原印q̃=M⁻¹ᐟ²q、p̃=M¹ᐟ²p不产生单位质量方程；正确方向相反并须同步变换势。
+[ERRATUM?] [ERRATUM?]原书所印质量重缩放方向有误，原文保留待人工处理。 -/
 def nhlDrift (invm : Vec n) (U : Vec n → ℝ) (β Q γ : ℝ) (z : Phase n × ℝ) : Phase n × ℝ :=
   (nhField invm U β Q z).1 |> fun physical ↦ (physical, (nhField invm U β Q z).2-γ*z.2)
 def isNHLSolution (invm : Vec n) (U : Vec n → ℝ) (β Q γ : ℝ)
@@ -389,7 +464,8 @@ theorem lemma81 (A : Matrix (Fin n) (Fin n) ℝ) (k : ℕ) :
 
 /-- source_id: MD-8.4.1-Proposition83 · 印刷p.347–348 / PDFp.368–369
 [SCOPE] 指定模态域内的2n个实际线性场值线性无关；不扩大到例外零模态。
-[EXTRA] D的每个特征模态中q、p不能同时为0；有限族用Fin n⊕Fin n索引；完整证明消去两组系数。 -/
+[EXTRA] D的每个特征模态中q、p不能同时为0；有限族用Fin n⊕Fin n索引；完整证明消去两组系数。
+[ERRATUM?] [ERRATUM?]原证明下标、模态标量式及第二组系数消去需核对；命题与Lean签名正确。 -/
 theorem proposition83 (A : Matrix (Fin n) (Fin n) ℝ) (hA : A.PosDef)
     (hdist : Function.Injective hA.1.eigenvalues) (z : textbookThermostatPhase n)
     (hz : z ∈ textbookThermostatModeDomain hA.1) :
@@ -399,7 +475,10 @@ theorem proposition83 (A : Matrix (Fin n) (Fin n) ℝ) (hA : A.PosDef)
 /-- source_id: MD-8.4.1-Theorem81 · 印刷p.346–348 / PDFp.367–369
 [SCOPE] 所印及补参数资格后的NHL点态Hörmander条件；不含由其推出全局几何遍历性。
 [EXTRA] D严格采用每个特征模态q、p不同时为零；正温度、质量、摩擦及非零噪声明确写出。
-[ERRATUM?] 已目视核对原页PDF367–369：继承Proposition8.2证明，必须排除σ=0；只证明Hörmander张成，不自动获得全局几何遍历性。 -/
+[EXTRA] [EXTRA]θ=k_BT，Q=μ；corrected的Q,θ,γ>0是物理资格，括号结论本身只额外需要σ≠0。σ在此是独立实参数，未声明满足NHL涨落耗散幅度。
+[EXTRA] [EXTRA] 当前_corrected为σ独立非零的括号结论；如解释为物理NHL，还须σ²=2γθ/Q。未推到全局遍历性。
+[ERRATUM?] 已目视核对原页PDF367–369：继承Proposition8.2证明，必须排除σ=0；只证明Hörmander张成，不自动获得全局几何遍历性。
+[ERRATUM?] [ERRATUM?]字面版含σ=0反例；物理上下文的参数资格与字面版分开。原质量重缩放与所引证明的局部排印/推导疑误亦应保留。 -/
 theorem theorem81Printed (A : Matrix (Fin n) (Fin n) ℝ) (hA : A.PosDef)
     (hdist : Function.Injective hA.1.eigenvalues) (Q θ γ σ : ℝ)
     (w : textbookThermostatPhase n × ℝ) (hw : w.1 ∈ textbookThermostatModeDomain hA.1) :
@@ -459,7 +538,8 @@ theorem shiftedSquare_bound (ξ a : ℝ) : -ξ^2-a^2 ≤ -(ξ-a)^2/2 := by
 /-- source_id: MD-8.4.1-LyapunovRatePrinted · 印刷p.349 / PDFp.370
 [SCOPE] 所印与修正衰减系数、两版漂移界目标及所印界的正参数数值反例。
 [EXTRA] 修正为min(2a,γ)，仅修正漂移代数估计；几何遍历还需完整概率半群、小集条件和解理论，未声称已证。
-[ERRATUM?] 已目视核对原页PDF370：与φ热浴项μ(ξ-a)²/2比较时衰减系数应≤γ，所印min(2a,γμ)对一般μ不足；正参数数值反例已列。 -/
+[ERRATUM?] 已目视核对原页PDF370：与φ热浴项μ(ξ-a)²/2比较时衰减系数应≤γ，所印min(2a,γμ)对一般μ不足；正参数数值反例已列。
+[ERRATUM?] {"codes": ["ERRATUM_LYAPUNOV_RATE"], "detail": "lyapunovAlphaPrinted与lyapunovRatePrinted忠实保留原书α=min(2a,γμ)及δ，按字面忠实性PASS，不能作为正确漂移定理使用。_counterexample的正参数满足全部前提；_corrected改为min(2a,γ)合理且正确：ξ能量的系数是Q/2，故须α≤γ；结合平方不等式及U≤Umax得所写δ。修正版没有额外宣称几何遍历。", "suggested_fix": "原书字面版保留并加[ERRATUM?]，不以sorry假装其数学正确；正式使用_corrected版本，α=min(2a,γ)。"} -/
 def lyapunovAlphaPrinted (a γ Q : ℝ) : ℝ := min (2*a) (γ*Q)
 def lyapunovAlpha_corrected (a γ : ℝ) : ℝ := min (2*a) γ
 theorem lyapunovRatePrinted (P2 U Umax ξ Q θ γ a N : ℝ)
@@ -513,13 +593,18 @@ theorem nhlWeakStationary (invm : Vec n) (U : Vec n → ℝ) (β Q γ Z : ℝ)
   sorry
 
 /-- source_id: MD-8.4.3-PreEquilibriumMeans · 印刷p.354–355 / PDFp.375–376
-[SCOPE] 两项瞬时分布平均及随时间非负归一密度的资格；局部稳定性和闭合方程未覆盖。
-[EXTRA] ρ非负、可积且归一；外引局部稳定性分析未给闭合方程，列覆盖缺口。 -/
+[SCOPE] 任意随时间概率密度的两项有限平均与正质量、加权可积资格；preEquilibriumDensity仅是历史名称，未要求或覆盖NHL Fokker–Planck演化、闭合方程及局部稳定性。
+[EXTRA] ρ非负、可积且归一；外引局部稳定性分析未给闭合方程，列覆盖缺口。
+[EXTRA] [EXTRA] 每个t≥0同时要求两项加权函数Integrable，故均值不是不可积时的总化积分。NHL Fokker–Planck演化未形式化，名称不代表完整预平衡动力学资格。
+[ERRATUM?] {"codes": ["MISSING_MOMENT_INTEGRABILITY", "MISSING_DENSITY_EVOLUTION_SPEC"], "detail": "两积分的变量、2K=kineticTwice invm p及ξ权重与原页一致，preEquilibriumDensity仅要求每个t≥0非负可积归一。该条件不保证两项加权函数可积，因而Lean总化Bochner积分未必代表原文有限分布平均；还没有限定ρ满足原文明说的NHL Fokker–Planck演化。局部稳定性/闭合方程缺口已披露，但不应将上述资格定义称为完整的预平衡密度资格。", "suggested_fix": "增加每个t≥0的Integrable (kineticTwice invm z.1.2*ρ t z)与Integrable (z.2*ρ t z)，并明确正质量。若保留pre-equilibrium命名，应添加FP演化规格；否则声明仅定义任意随时间概率密度的形式积分，并明确演化未覆盖。"} -/
 def meanKineticTwice (invm : Vec n) (ρ : ℝ → Phase n × ℝ → ℝ) (t : ℝ) : ℝ :=
   ∫ z, kineticTwice invm z.1.2 * ρ t z
 def meanBath (ρ : ℝ → Phase n × ℝ → ℝ) (t : ℝ) : ℝ := ∫ z, z.2 * ρ t z
-def preEquilibriumDensity (ρ : ℝ → Phase n × ℝ → ℝ) : Prop :=
-  ∀ t, 0 ≤ t → probabilityDensity volume (ρ t)
+def preEquilibriumDensity (invm : Vec n) (ρ : ℝ → Phase n × ℝ → ℝ) : Prop :=
+  (∀ i, 0 < invm i) ∧ ∀ t, 0 ≤ t →
+    probabilityDensity volume (ρ t) ∧
+    Integrable (fun z : Phase n × ℝ ↦ kineticTwice invm z.1.2 * ρ t z) volume ∧
+    Integrable (fun z : Phase n × ℝ ↦ z.2 * ρ t z) volume
 
 /-- source_id: MD-8.4.4-VelocityRescaling · 印刷p.355 / PDFp.376
 [SCOPE] 实际漂移扩散、Φ有效性和原始Φ对应Ψ的化简目标；没有完整乘性SDE解规格。
@@ -541,14 +626,18 @@ theorem rescalingPsi_original (γ θ K : ℝ) (hK : K ≠ 0) :
   sorry
 
 /-- source_id: MD-8.4.4-RescalingStationary · 印刷p.355 / PDFp.376
-[SCOPE] 支撑避开零动量的测试函数弱驻定目标；零动量边界与半群不变性未覆盖。
-[EXTRA] 测试函数支撑远离K=0，覆盖弱驻定式；完整随机解与半群不变性列缺口。二阶项冻结f的一阶微分求导，表示Itô Hessian而不混入Stratonovich漂移。 -/
+[SCOPE] 闭包支撑tsupport避开零动量的光滑紧支撑测试函数弱驻定目标；零动量边界及半群不变性未覆盖。
+[EXTRA] 测试函数支撑远离K=0，覆盖弱驻定式；完整随机解与半群不变性列缺口。二阶项冻结f的一阶微分求导，表示Itô Hessian而不混入Stratonovich漂移。
+[EXTRA] havoid现对tsupport f量化，与HasCompactSupport的闭包支撑一致；未扩大到闭包接触p=0的测试函数。
+[EXTRA] 应要求tsupport f避开p=0（或K有统一正下界），当前Lean havoid尚未实现这一条件。
+[EXTRA] 二阶项冻结噪声方向，正确表示Itô Hessian；完整随机解、奇异边界与半群不变性未覆盖。
+[ERRATUM?] {"codes": ["SUPPORT_NOT_SEPARATED_FROM_ZERO", "SINGULAR_BOUNDARY_CONTROL_MISSING"], "detail": "Itô二阶项确实冻结rescalingNoise Φ θ z，不含噪声导数，正确；C²势、正θ,Z和归一密度亦正确。但havoid量化Function.support f，即f≠0的集合，而HasCompactSupport约束的是其闭包；这不保证闭包与p=0分离。JSON所称“支撑远离K=0”比实际前提强。Admissible不控制Φ′在0附近的增长，因此不能直接用避开奇点的紧支撑分部积分论证覆盖所有给定测试函数。本项FAIL指所宣称的域/边界规格不足，并非已提供该Lean等式的数值反例。", "suggested_fix": "将havoid改为∀z∈tsupport f,z.2≠0，或明确存在ε>0使f的支撑上K≥ε。若希望包含接触p=0的测试函数，应另设边界、噪声正则性及生成元可积性条件并论证；不能静默扩大弱驻定范围。"} -/
 theorem rescalingStationary (U : Vec n → ℝ) (Φ : ℝ → ℝ) (θ Z : ℝ)
     (hU : ContDiff ℝ 2 U) (hΦ : rescalingAdmissible Φ) (hθ : 0 < θ) (hZ : 0 < Z)
     (hρ : probabilityDensity volume (fun z : Phase n ↦
       Real.exp (-(kineticTwice (fun _ ↦ 1) z.2/2+U z.1)/θ)/Z))
     (f : Phase n → ℝ) (hf : ContDiff ℝ ∞ f) (hc : HasCompactSupport f)
-    (havoid : ∀ z ∈ Function.support f, z.2 ≠ 0) :
+    (havoid : ∀ z ∈ tsupport f, z.2 ≠ 0) :
     (∫ z, (fderiv ℝ f z (rescalingDrift U Φ θ z) +
       fderiv ℝ (fun x ↦ fderiv ℝ f x (rescalingNoise Φ θ z)) z (rescalingNoise Φ θ z)/2) *
       (Real.exp (-(kineticTwice (fun _ ↦ 1) z.2/2+U z.1)/θ)/Z)) = 0 := by
@@ -595,7 +684,8 @@ def slsDeterministic (invm : Vec n) (U : Vec n → ℝ) (Q : ℝ) (z : Phase n �
 /-- source_id: MD-8.5-SLSBracketPrinted · 印刷p.358 / PDFp.379
 [SCOPE] 第一漂移/热浴括号的原印与符号修正目标；二重括号在Hörmander另条处理。
 [EXTRA] 只纠正第一括号；二次括号的整体符号不影响生成空间张成。
-[ERRATUM?] 已目视核对原页PDF379：沿用Proposition8.2所用括号约定[D,Y]=DY·D-DD·Y，q分量应为-p；整体反号也不能同时保留热浴分量+1。 -/
+[ERRATUM?] 已目视核对原页PDF379：沿用Proposition8.2所用括号约定[D,Y]=DY·D-DD·Y，q分量应为-p；整体反号也不能同时保留热浴分量+1。
+[ERRATUM?] {"codes": ["ERRATUM_LIE_BRACKET_SIGN"], "detail": "slsBracketPrinted逐字对应原书(p,0,1)，字面忠实性PASS；数学上在标准Lie括号约定下不正确。按VectorField.lieBracket V W=DW·V−DV·W，常向量Yξ给[D,Yξ]=−∂ξD=(−p,0,1)，故_corrected签名正确。反向括号会整体变为(p,0,−1)，不能仅靠约定得到原书(p,0,1)。二次括号的整体符号不影响张成。", "suggested_fix": "保留Printed原书字面版并加[ERRATUM?]；实际计算引用_corrected，第一分量应为−p。"} -/
 def slsBathNoise : Phase n × ℝ → Phase n × ℝ := fun _ ↦ ((0,0),1)
 theorem slsBracketPrinted (U : Vec n → ℝ) (hU : ContDiff ℝ ∞ U) (z : Phase n × ℝ) :
     VectorField.lieBracket ℝ (slsDrift (fun _ ↦ 1) U 1 1 1) slsBathNoise z = ((z.1.2,0),1) := by
@@ -626,8 +716,11 @@ theorem slsDeterministic_divergence (invm : Vec n) (U : Vec n → ℝ) (Q : ℝ)
   sorry
 
 /-- source_id: MD-8.5-SLSLeapfrog · 印刷p.358–359 / PDFp.379–380
-[SCOPE] 线方向与两种确定性分裂公式；原文η方程、体积/面积保持和二阶长时误差有明确覆盖缺口。
-[EXTRA] 原文η约化方程漏μ⁻¹，算法保留Q⁻¹；本条覆盖原页算法及逐坐标场，不声称二阶不变分布误差或精确求积实现。 -/
+[SCOPE] 原有半kick–drift–半kick与坐标场定义，另列原印η约化场和恢复1/Q的修正版；体积保持、误差阶及η变换推导未证明。
+[EXTRA] 原文η约化方程漏μ⁻¹，算法保留Q⁻¹；本条覆盖原页算法及逐坐标场，不声称二阶不变分布误差或精确求积实现。
+[EXTRA] 已目视核对原页PDF379：η约化式的ξ导数漏μ⁻¹，新增Printed与恢复1/Q的_corrected；Q>0、正质量与U可微为物理域。分裂映射原有定义未改。
+[ERRATUM?] 原书PDF379末段确实印作 ξ̇=−∂ηU，未带μ⁻¹；PDF380的两次kick及逐坐标场则都含μ⁻¹。statement_latex忠实保留了这个不一致。
+[ERRATUM?] 已目视核对原页PDF379：η约化式的ξ导数漏μ⁻¹，新增Printed与恢复1/Q的_corrected；Q>0、正质量与U可微为物理域。分裂映射原有定义未改。 -/
 def slsBathKick (invm : Vec n) (U : Vec n → ℝ) (Q h : ℝ) (z : Phase n × ℝ) : Phase n × ℝ :=
   (z.1, z.2-h*dot (fun i ↦ invm i*z.1.2 i) (gradient U z.1.1)/Q)
 def slsDriftStep (invm : Vec n) (h : ℝ) (z : Phase n × ℝ) : Phase n × ℝ :=
@@ -637,6 +730,16 @@ def slsLeapfrog (invm : Vec n) (U : Vec n → ℝ) (Q h : ℝ) : Phase n × ℝ 
 def slsCoordinateField (i : Fin n) (invm : Vec n) (U : Vec n → ℝ) (Q : ℝ)
     (z : Phase n × ℝ) : Phase n × ℝ :=
   ((Pi.single i (z.2*invm i*z.1.2 i),0), -invm i*z.1.2 i*gradient U z.1.1 i/Q)
+
+/-- 原印η约化方程，ξ导数未含μ⁻¹；保留原书字面式。 -/
+def slsReducedPrinted (invm : Vec n) (U : Vec n → ℝ) (q0 p : Vec n)
+    (z : ℝ × ℝ) : ℝ × ℝ :=
+  (z.2, -deriv (fun η : ℝ ↦ U (q0+η • (fun i ↦ invm i*p i))) z.1)
+
+/-- 修正版：恢复热浴质量因子1/Q，对应(8.36)的η方向导数。 -/
+def slsReduced_corrected (invm : Vec n) (U : Vec n → ℝ) (q0 p : Vec n)
+    (Q : ℝ) (z : ℝ × ℝ) : ℝ × ℝ :=
+  (z.2, -deriv (fun η : ℝ ↦ U (q0+η • (fun i ↦ invm i*p i))) z.1/Q)
 
 /-- source_id: MD-8.5-SLSDoubleWell · 印刷p.359 / PDFp.380
 [SCOPE] 一维双阱势定义与非负性。
@@ -677,7 +780,10 @@ theorem isoProjection_idempotent (invm p : Vec n) (hK : kineticTwice invm p ≠ 
 /-- source_id: MD-8.6-IsokineticDivergencePrinted · 印刷p.362–363 / PDFp.383–384
 [SCOPE] 一般光滑力的原印/符号修正散度目标及权重ansatz；w方程和概率不变另列缺口。
 [EXTRA] Φ为正光滑非零函数时称权重；使用K≠0域上的实际散度。
-[ERRATUM?] 已目视核对原页PDF383–384：ṗ=F-λp的散度应为-(N_c-1)λ，所印正号与后续w=(N_c-1)U/K也冲突。 -/
+[EXTRA] 已目视核对原页PDF383–384：散度与∇w·f等式须同时改负号，w=(n−1)U/K的正号保留。
+[ERRATUM?] 已目视核对原页PDF383–384：ṗ=F-λp的散度应为-(N_c-1)λ，所印正号与后续w=(N_c-1)U/K也冲突。
+[ERRATUM?] PDF383确实印正号div f=(Nc−1)λ，PDF384随后仍用正号的∇w·f等式并给w=(Nc−1)U/K；原文逐字内容应保留。
+[ERRATUM?] 已目视核对原页PDF383–384：散度与∇w·f等式须同时改负号，w=(n−1)U/K的正号保留。 -/
 def isoAnsatz (w : Phase n → ℝ) (Φ : ℝ → ℝ) (invm : Vec n) (z : Phase n) : ℝ :=
   Real.exp (-w z)*Φ (kineticTwice invm z.2)
 theorem isoDivergencePrinted (invm : Vec n) (F : Vec n → Vec n)
@@ -737,7 +843,8 @@ theorem sinConstraint_balance (Q1 Q2 θ γ : ℝ) (F : ℝ → ℝ) (z : Vec 4)
 /-- source_id: MD-8.6.1-SINWeightPrinted · 印刷p.365 / PDFp.386
 [SCOPE] 原印及补热浴质量的权重、正约束面局部驻定目标；曲面边缘分布及遍历性未覆盖。
 [EXTRA] 仅证明正约束面处的实际通量散度陈述；曲面概率测度、边缘分布和遍历性列缺口。
-[ERRATUM?] 已目视核对原页PDF386：ξ₂方程含μ₂⁻¹，而w的ξ₂二次项缺μ₂；一般μ₂时应为μ₂ξ₂²/2。 -/
+[ERRATUM?] 已目视核对原页PDF386：ξ₂方程含μ₂⁻¹，而w的ξ₂二次项缺μ₂；一般μ₂时应为μ₂ξ₂²/2。
+[ERRATUM?] PDF386确实印w=(U+ξ₂²/2)/(p²+μ₁ξ₁²/2)，未含μ₂；statement_latex忠实，不能静默把原印式改成修正式。 -/
 def sinWeightPrinted (U : ℝ → ℝ) (Q1 : ℝ) (z : Vec 4) : ℝ :=
   Real.exp (-(U (z 0)+z 3^2/2)/sinConstraint Q1 z)
 def sinWeight_corrected (U : ℝ → ℝ) (Q1 Q2 : ℝ) (z : Vec 4) : ℝ :=
@@ -771,7 +878,10 @@ theorem sinHalfCylinder_disjoint (θ : ℝ) :
 [SCOPE] 原印(8.48)–(8.53)的主要分量与实际交换子定义，(8.49)导数写法保存在逐字原页；未把错标指标视为已证恒等式。
 [EXTRA] 总化分式只在θ>0的约束面D=2θ>0使用；实际交换子先在四维完整计算再投影。
 [EXTRA] 本条记录原印显式式和真实微分定义；显式式与真实二/三重交换子的等式尚未证明，列覆盖缺口。
-[ERRATUM?] 已目视核对原页PDF388：(8.50)的u₁公式实际重写u₀，(8.51)的u₂公式实际为首交换子；(8.49)第三分量似缺共同σ。原印与真实迭代交换子独立保留。 -/
+[EXTRA] 已目视核对原页PDF388：(8.49)–(8.53)及“any pair”/平行论据需导师核查；修正版仅以完整四维真实括号再投影为准，不把改下标当作长式校正。
+[ERRATUM?] 已目视核对原页PDF388：(8.50)的u₁公式实际重写u₀，(8.51)的u₂公式实际为首交换子；(8.49)第三分量似缺共同σ。原印与真实迭代交换子独立保留。
+[ERRATUM?] PDF388逐式核对：(8.48)为u0；(8.49)ξ₁分量前确无共同σ；(8.50)印u1却重复u0展开式；(8.51)印u2却是首交换子的投影。(8.52)的p分量确为−σa而非−σξ₁²a，故Lean忠实保留了原印式，不应替书改系数。
+[ERRATUM?] 已目视核对原页PDF388：(8.49)–(8.53)及“any pair”/平行论据需导师核查；修正版仅以完整四维真实括号再投影为准，不把改下标当作长式校正。 -/
 def bracket4 (f g : Vec 4 → Vec 4) (z : Vec 4) : Vec 4 :=
   fderiv ℝ g z (f z)-fderiv ℝ f z (g z)
 def sinBracket (θ γ : ℝ) : ℕ → Vec 4 → Vec 4
@@ -800,7 +910,9 @@ theorem sinU2Long_at_p0 (σ γ : ℝ) (z : Vec 4) (hp : z 1=0) :
 /-- source_id: MD-8.6.2-SINThirdBracketPrinted · 印刷p.368 / PDFp.389
 [SCOPE] 原印三重交换子候选及p=0内部代数核对；真实三重交换子等式列覆盖缺口。
 [EXTRA] ξ₁≠0用于分式化简；此处只核对原印(8.54)与(8.56)内部的代数关系，不声称(8.54)已被确认为实际三重交换子。
-[ERRATUM?] 已目视核对原页PDF389：(8.54)q分量代p=0得到-2σq/ξ₁²，(8.56)遗漏ξ₁²分母；原印多项式的其他系数仍待独立微分核对。 -/
+[EXTRA] _corrected只修正(8.54)在p=0的内部代数特化，不能据此声称Printed长式等于真实三重括号。
+[ERRATUM?] 已目视核对原页PDF389：(8.54)q分量代p=0得到-2σq/ξ₁²，(8.56)遗漏ξ₁²分母；原印多项式的其他系数仍待独立微分核对。
+[ERRATUM?] PDF389的(8.54)q分量分母为D²，(8.55)的13项多项式逐项与sinEtaPrinted一致；(8.56)原印q分量为−2σq，确无ξ₁²分母。 -/
 def sinEtaPrinted (γ : ℝ) (z : Vec 4) : ℝ :=
   4*z 1^5*γ^2-8*z 1^5*z 2^2-4*z 2^2*z 1^3+4*z 1^3*γ^2*z 2^2-4*z 1^3*z 2^4-
   2*γ*z 2^2*z 1^2*z 0+4*z 1^2*z 0*z 3*z 2^2-4*z 2^2*z 0^2*z 1-
@@ -819,7 +931,8 @@ theorem sinU3Zero_specialize (σ γ : ℝ) (z : Vec 4) (hp : z 1=0) (hξ : z 2 �
 
 /-- source_id: MD-8.6.2-SINBracketRank · 印刷p.366–368 / PDFp.387–389
 [SCOPE] 例外直线外的有限括号张成目标；非完整遍历性定理。
-[EXTRA] θ,γ正，ξ₁≠0且在正约束面；仅声明有限向量族张成实际切空间，Hörmander理论推出平滑密度或遍历性未覆盖。 -/
+[EXTRA] θ,γ正，ξ₁≠0且在正约束面；仅声明有限向量族张成实际切空间，Hörmander理论推出平滑密度或遍历性未覆盖。
+[ERRATUM?] PDF387–389列出的五个场和M0吻合。原页先说明运动限制在ξ₁>0或ξ₁<0半空间；statement_latex应显式带上这一域，避免把“除M0外”误读为包含ξ₁=0的整个圆柱。 -/
 theorem sinBracket_tangentSpan (θ γ : ℝ) (hθ : 0 < θ) (hγ : 0 < γ)
     (z : Vec 4) (hz : sinConstraint 1 z=θ) (hξ : z 2 ≠ 0)
     (hout : z ∉ sinExceptional θ) :
@@ -829,9 +942,13 @@ theorem sinBracket_tangentSpan (θ γ : ℝ) (hθ : 0 < θ) (hγ : 0 < γ)
   sorry
 
 /-- source_id: MD-8.6.2-SINLyapunov · 印刷p.368–369 / PDFp.389–390
-[SCOPE] 真实局部生成元Lyapunov计算及热浴变量界；不包含由此推出遍历性的充分性。
+[SCOPE] 局部生成元恒等式、约束上的热浴界、原印有符号尾项表达式与绝对值尾界修正版；不含遍历性充分性。
 [EXTRA] 仅生成元作用和约束界；原文有符号ξ₂的Kξ₂上界须区分尾部方向，严谨负漂移应使用K|ξ₂|并要求γ>0。
-[EXTRA] 紧性、正密度、小集与Markov半群遍历定理均列覆盖缺口。 -/
+[EXTRA] 紧性、正密度、小集与Markov半群遍历定理均列覆盖缺口。
+[EXTRA] 已目视核对原页PDF390：有符号Cξ₂尾界不能统一控制两侧；工作修正版为−γξ₂²+θ|ξ₂|+γθ。它依赖尚未证明的局部生成元恒等式，不代表遍历性证明。
+[ERRATUM?] PDF390生成元计算与statement_latex吻合；但原书随后给−γξ₂²+Kξ₂+σ²/2作为全局上界，未对ξ₂正负分情况。原文须保留并注明此上界疑误。仅在ξ₂方向的负漂移也不能单独推出非紧q方向的遍历性。
+[ERRATUM?] 原文从局部负漂移到遍历性的论证需要额外全局条件；现有Lean没有此结论。
+[ERRATUM?] 已目视核对原页PDF390：有符号Cξ₂尾界不能统一控制两侧；工作修正版为−γξ₂²+θ|ξ₂|+γθ。它依赖尚未证明的局部生成元恒等式，不代表遍历性证明。 -/
 def sinGenerator (θ γ : ℝ) (F : ℝ → ℝ) (f : Vec 4 → ℝ) (z : Vec 4) : ℝ :=
   additiveGenerator (sinDrift 1 1 θ γ F) (sinHarmonicG θ γ) f z
 theorem sinGenerator_lyapunov (θ γ : ℝ) (hθ : 0 < θ) (hγ : 0 < γ)
@@ -843,6 +960,24 @@ theorem sinConstraint_bathBound (θ : ℝ) (z : Vec 4) (hz : sinConstraint 1 z=�
     z 2^2 ≤ 2*θ := by
   dsimp [sinConstraint] at hz
   nlinarith [sq_nonneg (z 1)]
+
+/-- 原页带有符号的线性尾项，只保留其表达式。 -/
+def sinLyapunovTailPrinted (θ γ C : ℝ) (z : Vec 4) : ℝ :=
+  -γ*z 3^2+C*z 3+γ*θ
+
+/-- 修正版：对两侧尾部均适用的绝对值界。 -/
+theorem sinLyapunovTail_corrected (θ γ : ℝ) (hθ : 0 < θ) (hγ : 0 < γ)
+    (F : ℝ → ℝ) (z : Vec 4) (hz : sinConstraint 1 z=θ) :
+    sinGenerator θ γ F (fun x ↦ x 3^2/2) z ≤
+      -γ*z 3^2+θ*|z 3|+γ*θ := by
+  have hk : sinConstraint 1 z ≠ 0 := by rw [hz]; exact ne_of_gt hθ
+  rw [sinGenerator_lyapunov θ γ hθ hγ F z hk]
+  have hb := sinConstraint_bathBound θ z hz
+  rcases le_total 0 (z 3) with h | h
+  · rw [abs_of_nonneg h]
+    nlinarith [mul_nonneg (sub_nonneg.mpr hb) h]
+  · rw [abs_of_nonpos h]
+    nlinarith [mul_nonneg (sq_nonneg (z 2)) (neg_nonneg.mpr h)]
 
 /-- source_id: MD-8.6.3-SINForceSplitting · 印刷p.370–371 / PDFp.391–392
 [SCOPE] 五个子场及其实际和分解、力子场瞬时约束平衡；不含整体方法阶数。
@@ -901,7 +1036,8 @@ theorem sinN_split (Q1 Q2 θ : ℝ) (z : Vec 4) :
 [SCOPE] 原印子场、显式候选与校正ODE的局部导数目标。
 [EXTRA] 质量按本节假设取1；Q₁、Λ正，排除ṡ=0；F=0用b=0的解析延拓，避免总化除法假装极限。
 [EXTRA] 只声明候选流在有效域满足校正ODE，不证明全局流、组合方法精度或遍历性。
-[ERRATUM?] 已目视核对原页PDF393：所印ξ̇₁为正号，与前页力子场及ξ₁(h)=ξ₁(0)/ṡ(h)的负号导数冲突。保留原印和负号工作修正版。 -/
+[ERRATUM?] 已目视核对原页PDF393：所印ξ̇₁为正号，与前页力子场及ξ₁(h)=ξ₁(0)/ṡ(h)的负号导数冲突。保留原印和负号工作修正版。
+[ERRATUM?] [ERRATUM?] 保留Printed，给ξ₁负号版添加[ERRATUM?]；保留m=1的[EXTRA]，不要把工作修正版回填为原文。 -/
 def sinForceAux (a b t : ℝ) : ℝ :=
   if b=0 then t+a*t^2/2 else Real.sinh (t*Real.sqrt b)/Real.sqrt b+a/b*(Real.cosh (t*Real.sqrt b)-1)
 def sinForceFlow (Q1 F t : ℝ) (z : Vec 4) : Vec 4 :=
@@ -928,7 +1064,12 @@ def nestedTimeSteps (inner middle outer : ℝ) : Prop :=
 /-- source_id: MD-8.7-GeneralizedLangevin · 印刷p.374 / PDFp.395
 [SCOPE] 连续矩阵记忆核下的卷积及GLE积分解类定义。
 [EXTRA] B不是Wiener；这里是加性有色噪声增量的积分方程，未把R(t)dt当作白噪声的普通导数。
-[EXTRA] 本条取非负时间连续记忆核以保证内部卷积可积；自然历史适应和正质量为选定强解范围。一般粗糙核与解存在唯一性列缺口。 -/
+[EXTRA] 本条取非负时间连续记忆核以保证内部卷积可积；自然历史适应和正质量为选定强解范围。一般粗糙核与解存在唯一性列缺口。
+[EXTRA] [EXTRA] generalizedLangevin仅为给定B的方程规格；未在此谓词约束有色性、非Gaussian性或涨落耗散关系。
+[EXTRA] 已目视核对原页PDF395：colored-noise后的non-Gaussian不是同义解释。有色Gaussian过程存在（如平稳OU）；原句保留，修正说明为“有色性指跨时相关，Gaussian性另定”。此处属文字修正，不引入无关定理。
+[EXTRA] [EXTRA] generalizedLangevin仅为给定加性驱动B的积分方程，噪声分布、有色性及FD未在本定义内强制，由另条规格给出。
+[ERRATUM?] [ERRATUM?] 保留原句并加[ERRATUM?]；注明generalizedLangevin仅为给定加性驱动的积分方程，噪声分布及FD在其他规格中另行约束。
+[ERRATUM?] 已目视核对原页PDF395：colored-noise后的non-Gaussian不是同义解释。有色Gaussian过程存在（如平稳OU）；原句保留，修正说明为“有色性指跨时相关，Gaussian性另定”。此处属文字修正，不引入无关定理。 -/
 def memoryDrag (Γ : ℝ → Matrix (Fin n) (Fin n) ℝ) (p : ℝ → Vec n) (t : ℝ) : Vec n :=
   -∫ s in (0 : ℝ)..t, Γ (t-s) *ᵥ p s
 def generalizedLangevin (P : Measure Ω) (invm : Vec n) (U : Vec n → ℝ)
@@ -950,7 +1091,8 @@ def generalizedLangevin (P : Measure Ω) (invm : Vec n) (U : Vec n → ℝ)
 /-- source_id: MD-8.7-GLEFluctuationDissipationPrinted · 印刷p.374 / PDFp.395
 [SCOPE] Printed与一般矩阵协方差目标及标量核定义；不包含涨落耗散定理的物理推导。
 [EXTRA] 修正版作为单位质量下的一般矩阵协方差目标，不声称任意Γ均可实现为随机过程；正定协方差/核存在性列缺口。
-[ERRATUM?] 已目视核对原页PDF395：一般矩阵核后额外乘δᵢⱼ会消掉交叉相关，只在对角核/独立分量解释下成立；标量核特化没有此问题。颜色与非Gaussian不是同义条件。 -/
+[ERRATUM?] 已目视核对原页PDF395：一般矩阵核后额外乘δᵢⱼ会消掉交叉相关，只在对角核/独立分量解释下成立；标量核特化没有此问题。颜色与非Gaussian不是同义条件。
+[ERRATUM?] [ERRATUM?] 保留Printed并加[ERRATUM?]；一般矩阵版删除δ或把适用域限制为对角核，注明核可实现性另需正定条件。 -/
 def randomForceQualification (P : Measure Ω) (R : ℝ → Ω → Vec n) : Prop :=
   IsProbabilityMeasure P ∧ ∀ t, 0 ≤ t → ∀ i, MemLp (fun sample ↦ R t sample i) 2 P ∧
     (∫ sample, R t sample i ∂P)=0
@@ -997,7 +1139,11 @@ theorem pronyMemory_sum {K : ℕ} (c τ : Fin K → ℝ) (p : ℝ → Vec n)
 
 /-- source_id: MD-8.7.1-PronyOUStationarity · 印刷p.376 / PDFp.397
 [SCOPE] 单个Prony OU的完整资格及平稳均值/协方差目标、总随机力定义。
-[EXTRA] 为(8.66)补平稳Gaussian初态及其与未来整条W独立；确定初态OU一般没有所印不依赖t的协方差。多分量实际实现使用独立W坐标。 -/
+[EXTRA] 为(8.66)补平稳Gaussian初态及其与未来整条W独立；确定初态OU一般没有所印不依赖t的协方差。多分量实际实现使用独立W坐标。
+[EXTRA] 已目视核对原页PDF397：(8.66)未声明平稳初态；保留原句，_corrected明确引用stationaryPronyOU的Gaussian初态和整条W独立性。总随机力只定义有限和，未证跨模式独立或总协方差。
+[ERRATUM?] [ERRATUM?] 保留原印相关式并加[ERRATUM?]，明确它在平稳初态下成立；保留已写入Lean的Gaussian初态及独立性。
+[ERRATUM?] [ERRATUM?] 原页(8.66)省略平稳初态；Lean补入的初始Gaussian律及其与W独立是必要资格。
+[ERRATUM?] 已目视核对原页PDF397：(8.66)未声明平稳初态；保留原句，_corrected明确引用stationaryPronyOU的Gaussian初态和整条W独立性。总随机力只定义有限和，未证跨模式独立或总协方差。 -/
 def stationaryPronyOU (P : Measure Ω) (W : ℝ → Ω → Vec 1) (R : ℝ → Ω → ℝ)
     (c τ θ : ℝ) : Prop :=
   independentWiener P 1 W ∧ 0 < c ∧ 0 < τ ∧ 0 < θ ∧
@@ -1016,6 +1162,13 @@ theorem pronyOU_covariance (P : Measure Ω) (W : ℝ → Ω → Vec 1)
   sorry
 def totalPronyRandomForce {K : ℕ} (R : Fin K → ℝ → Ω → ℝ) (t : ℝ) (sample : Ω) : ℝ :=
   ∑ k, R k t sample
+
+/-- 修正版显式使用已定义的平稳Gaussian初态及与W独立资格；原印未写该前提。 -/
+theorem pronyOU_covariance_corrected (P : Measure Ω) (W : ℝ → Ω → Vec 1)
+    (R : ℝ → Ω → ℝ) (c τ θ : ℝ) (hR : stationaryPronyOU P W R c τ θ)
+    (t s : ℝ) (ht : 0 ≤ t) (hs : 0 ≤ s) :
+    (∫ sample, R t sample ∂P)=0 ∧
+      (∫ sample, R (t+s) sample*R t sample ∂P)=θ*c/τ*Real.exp (-s/τ) := pronyOU_covariance P W R c τ θ hR t s ht hs
 
 /-- source_id: MD-8.7.1-CombinedPronyVariable · 印刷p.376 / PDFp.397
 [SCOPE] 有限维扩展SDE完整积分规格及σ=η+R的漂移恒等式。
@@ -1172,7 +1325,10 @@ theorem andersenKinetic_expansion (m : Vec n) (V Vdot : ℝ) (qbar vbar : Vec n)
 /-- source_id: MD-8.8-AndersenHamiltonianPrinted · 印刷p.380 / PDFp.401
 [SCOPE] 活塞Hamiltonian、原印/修正边缘权重和Gaussian积分目标。
 [EXTRA] m,QV,V,β正为物理域；QV是活塞质量，pV取实数。仅高斯消元的点态权重式，不把它当成任意U下的归一概率或完整坐标Jacobian定理。
-[ERRATUM?] 已目视核对原页PDF401：边缘公式未写此前ρ_NPT定义中的Z_NPT⁻¹；字面右端给未归一Boltzmann权。修正版独立加入正配分常数，需导师确认作者是否在此省略归一因子。 -/
+[EXTRA] [EXTRA] andersenMarginal_corrected本身仅为除以Z的函数定义；要解释为概率密度须另证明Z等于正确域上正有限配分积分。
+[EXTRA] [EXTRA] andersenMarginal_corrected仅是除以参数Z的权重，不声称自动归一。若作概率密度，须在相同坐标和V>0域上可积，且Z为相同权重的正有限配分积分；任意Z>0不足。
+[ERRATUM?] 已目视核对原页PDF401：边缘公式未写此前ρ_NPT定义中的Z_NPT⁻¹；字面右端给未归一Boltzmann权。修正版独立加入正配分常数，需导师确认作者是否在此省略归一因子。
+[ERRATUM?] [ERRATUM?] 保留Printed并标[ERRATUM?]；corrected如作密度须另要求Z是相同坐标/域下的正有限配分积分，不能只要求任意Z>0。 -/
 def andersenHamiltonian (m : Vec n) (U : Vec n → ℝ) (QV P : ℝ)
     (z : (Phase n × ℝ) × ℝ) : ℝ :=
   (∑ i, z.1.1.2 i^2/(2*m i*Real.rpow z.1.2 (2/3 : ℝ)))+
@@ -1213,8 +1369,11 @@ def isNHLPistonSolution (invm : Vec n) (U : Vec n × ℝ → ℝ) (θ P QT QP γ
   additiveSDE μ 2 W X x0 (pistonDrift invm U θ P QT QP γT γP) (pistonNoise θ QT QP γT γP)
 
 /-- source_id: MD-8.8.1-PistonHamiltonianSubfield · 印刷p.381 / PDFp.402
-[SCOPE] Hamiltonian子场和其光滑复合权的局部驻定式。
-[EXTRA] 只陈述实际通量散度为零；φ,ψ是权重而非自动概率密度，归一、可积和全局保测流不在本条。 -/
+[SCOPE] 原印p子场、M⁻¹p修正子场及修正子场光滑复合权的局部驻定目标；不把修正场说成逐字原印场。
+[EXTRA] 只陈述实际通量散度为零；φ,ψ是权重而非自动概率密度，归一、可积和全局保测流不在本条。
+[EXTRA] 已目视核对原页PDF402：文字子场印为(p,−∇U,0,0,0)，一般质量应为(M⁻¹p,−∇U,0,0,0)或另限单位质量。旧pistonHamiltonianPart及其驻定目标属于合理修正，新增Printed与_corrected明确区分。
+[ERRATUM?] 保留原页文字；在issues显式标[ERRATUM?]：原印p应为M⁻¹p（或注明单位质量约定）。给现有Hamiltonian子场标为合理修正，不将其与原印向量场混同。
+[ERRATUM?] 已目视核对原页PDF402：文字子场印为(p,−∇U,0,0,0)，一般质量应为(M⁻¹p,−∇U,0,0,0)或另限单位质量。旧pistonHamiltonianPart及其驻定目标属于合理修正，新增Printed与_corrected明确区分。 -/
 def pistonHamiltonianPart (invm : Vec n) (U : Vec n × ℝ → ℝ)
     (z : PistonState n) : PistonState n :=
   ((fun i ↦ invm i*z.1.2 i,-gradient (fun q ↦ U (q,z.2 0)) z.1.1),0)
@@ -1226,10 +1385,20 @@ theorem pistonHamiltonianWeight_stationary (invm : Vec n) (U : Vec n × ℝ → 
         pistonHamiltonianPart invm U x) z=0 := by
   sorry
 
+/-- 原印Hamiltonian子场：第一分量为p，忠实保留其一般质量疑误。 -/
+def pistonHamiltonianPartPrinted (U : Vec n × ℝ → ℝ)
+    (z : PistonState n) : PistonState n :=
+  ((z.1.2,-gradient (fun q ↦ U (q,z.2 0)) z.1.1),0)
+
+/-- 修正版第一分量为M⁻¹p；现有驻定目标已采用此场。 -/
+def pistonHamiltonianPart_corrected (invm : Vec n) (U : Vec n × ℝ → ℝ)
+    (z : PistonState n) : PistonState n := pistonHamiltonianPart invm U z
+
 /-- source_id: MD-8.8.1-PistonThermostatWeightPrinted · 印刷p.381 / PDFp.402
 [SCOPE] 原印/修正权重及ψ₂=1时的实际子场驻定目标。
 [EXTRA] 仅取ψ₂=1的局部权重等式；任意冻结变量乘子和可归一概率还需额外资格，列覆盖缺口。
-[ERRATUM?] 已目视核对原页PDF402：ρ₂动能项缺1/2；所印反馈仍为pᵀM⁻¹p−N_dk_BT。原印权重保留，工作修正采用标准动能的一半。 -/
+[ERRATUM?] 已目视核对原页PDF402：ρ₂动能项缺1/2；所印反馈仍为pᵀM⁻¹p−N_dk_BT。原印权重保留，工作修正采用标准动能的一半。
+[ERRATUM?] 保留Printed定义和原文；[ERRATUM?]记录动能系数缺1/2，继续将_corrected与原印版分开。 -/
 def pistonThermostatPart (invm : Vec n) (θ QT : ℝ) (z : PistonState n) : PistonState n :=
   ((0,fun i ↦ -z.2 1*z.1.2 i),![0,(kineticTwice invm z.1.2-n*θ)/QT,0])
 def pistonRho2Printed (invm : Vec n) (β QT : ℝ) (z : PistonState n) : ℝ :=
@@ -1463,7 +1632,8 @@ def momentumCanonicalQualification {N d : ℕ} (ν : Measure (ParticlePhase N d)
 /-- source_id: MD-8.9.1-DPDMassOrderPrinted · 印刷p.389 / PDFp.410
 [SCOPE] 原印/校正的质量矩阵次序及具体代数反例。
 [EXTRA] M应正定、θ>0；本条记录两个矩阵关系目标与不交换反例，不声称由形式关系自动得到不变概率。
-[ERRATUM?] 已目视核对原页PDF410：对动量漂移−Δp、动量协方差k_BT M，应为Δ=ΣΣᵀM⁻¹/(2k_BT)；原印左乘仅在相应矩阵可交换（如等质量）时一致。两粒子不等质量的矩阵反例已证。 -/
+[ERRATUM?] 已目视核对原页PDF410：对动量漂移−Δp、动量协方差k_BT M，应为Δ=ΣΣᵀM⁻¹/(2k_BT)；原印左乘仅在相应矩阵可交换（如等质量）时一致。两粒子不等质量的矩阵反例已证。
+[ERRATUM?] 保留Printed等式；[ERRATUM?]记录一般质量情形改为ΣΣᵀM⁻¹/(2kBT)，标注等质量或交换条件下两者相同。 -/
 def dpdMatrixFDPrinted {s r : ℕ} (M Γ : Matrix (Fin s) (Fin s) ℝ)
     (B : Matrix (Fin s) (Fin r) ℝ) (θ : ℝ) : Prop := Γ=(1/(2*θ)) • (M⁻¹*(B*B.transpose))
 def dpdMatrixFD_corrected {s r : ℕ} (M Γ : Matrix (Fin s) (Fin s) ℝ)
@@ -1557,6 +1727,7 @@ def dpdSGenerator {N d K : ℕ} (pairs : Fin K → Fin N × Fin N) (m : Fin N �
 [SCOPE] 原印/零率延拓的OU转移公式、速度增量所用动量更新及总动量守恒。
 [EXTRA] 原印转移律要求mr>0、a>0、θ>0、t≥0及R独立标准正态；F为冻结配置的成对保守力标量，FDT用于方差。
 [EXTRA] 单对精确分布律及其随机积分推导未证明；已证明质量正性、零率值与逐对总动量代数守恒。
+[EXTRA] [EXTRA] 零率分支仅用于涨落耗散使噪声同时退化的情形；不用于任意独立非零扩散的零漂移OU。物理转移需正约化质量、正温度、a,t≥0及独立标准正态R。
 [ERRATUM?] 已目视核对原页PDF414：原印F/(amred)须a>0；γ=0或截断外ωᴰ=0时需用积分系数连续延拓。修正版显式定义a=0为自由加速，噪声退化为零。 -/
 def reducedMass8 (mi mj : ℝ) : ℝ := mi*mj/(mi+mj)
 theorem reducedMass8_pos (mi mj : ℝ) (hi : 0 < mi) (hj : 0 < mj) : 0 < reducedMass8 mi mj :=

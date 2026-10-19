@@ -1,0 +1,313 @@
+{
+  "batch": "BATCH16",
+  "chapter": "ch08",
+  "round": "first-merged",
+  "input_sha256": {
+    "Blueprint/Ch08.lean": "2800812fadd8e2557013f1941e4570401f7903d46f44baf07e23d5531da22a72",
+    "blueprint/ch08/ch08_source.json": "9b994b0f64cd22c85c2ad4123fbfdbd064bd7a6d070fe13b721794432f9f7a63"
+  },
+  "items": [
+    {
+      "source_id": "MD-8.9.2-DPDVelocityVerlet",
+      "json_review": {
+        "status": "APPROVED",
+        "issue_codes": [],
+        "corrected_json": null,
+        "issues": [],
+        "evidence": {
+          "source_text_comparison": "以附件实际文字层逐字比较；18页均与 original_page_text 完全相同，statement_verbatim 为各页文本以单个换行连接，未替换控制字符、连字、断行或原书拼写。数学公式另按PDF可视排版核对，文字层的乱码不作为数学符号错误。",
+          "pages": [
+            {
+              "attachment_page": 1,
+              "pdf_page": 410,
+              "printed_page": 389,
+              "original_page_text_exact_match": true,
+              "text_sha256": "e47acf0671eaaf82bb0df1ec01abf89c56b4f573dd135031a19031b9b5583b91"
+            },
+            {
+              "attachment_page": 2,
+              "pdf_page": 411,
+              "printed_page": 390,
+              "original_page_text_exact_match": true,
+              "text_sha256": "4d2faede6099745912d5492d4fbc2a8d647ab23f5741df7147af74c0a562e2b2"
+            },
+            {
+              "attachment_page": 3,
+              "pdf_page": 412,
+              "printed_page": 391,
+              "original_page_text_exact_match": true,
+              "text_sha256": "5d4574d5707d5af47988ea5fc968b644582f0e86c947e9f927d193f4e61cd41d"
+            }
+          ],
+          "scope": "三条更新式和新噪声在下一步复用的状态机制。",
+          "lean_declarations_checked": [
+            "MD.Ch08.dpdRandomForce",
+            "MD.Ch08.dpdVerlet",
+            "MD.Ch08.dpdVerlet_reuse"
+          ],
+          "annotations": "本条摘录没有字面 [EXTRA] 或 [ERRATUM?] 标签；已逐项检查 extra_assumptions、issues、statement_scope 所承载的额外资格、勘误说明及范围限制。现有范围说明与实际声明相符；未将定义/规格或局部目标当成已证动力学结论。",
+          "method": "仅依据本任务所附 Lean 全部声明、项目依赖定义及附录 D1–D31 做只读语义审校；Mathlib 标准定义按标准含义采信，未编译或改动工程、未补证明、未因 sorry 降级。"
+        }
+      },
+      "audit": {
+        "lean_decl": "MD.Ch08.dpdRandomForce",
+        "verdict": "PASS",
+        "explanation": "逐一核对 dpdRandomForce、dpdVerlet、dpdVerlet_reuse：N,d,K 均为自然数，配置为 Fin N → Fin d → ℝ，扩展状态为 ((q,p),Rold)，Rnew 为显式输入。成对噪声使用 σwR、反向等量冲量；两次动量半步的系数分别为 h/2、sqrt(h)/2，第二次耗散使用更新配置及半步动量；位置步 h/m_i 与 hM⁻¹ 一致。返回 Rnew，复用定理对全部实参数无条件成立。物理域正质量、非负步长、每个无序对恰枚举一次及独立标准正态输入已在 extra_assumptions 说明；这些不是定义自身的前提。按声明范围只审给定随机输入的状态映射，不把复用恒等式当作分布或收敛定理。",
+        "counterexample": null,
+        "suggested_fix": null
+      },
+      "subtask": "BATCH16a",
+      "input_sha256": {
+        "Blueprint/Ch08.lean": "2800812fadd8e2557013f1941e4570401f7903d46f44baf07e23d5531da22a72",
+        "blueprint/ch08/ch08_source.json": "9b994b0f64cd22c85c2ad4123fbfdbd064bd7a6d070fe13b721794432f9f7a63",
+        "BATCH16a_PAGES.pdf": "1b96eea7a1b0a5c464201b6b3d34e6ae3348db786cbd9550c1615a4937670fe5"
+      }
+    },
+    {
+      "source_id": "MD-8.9.2-DPDSplitGenerator",
+      "json_review": {
+        "status": "APPROVED",
+        "issue_codes": [],
+        "corrected_json": null,
+        "issues": [],
+        "evidence": {
+          "source_text_comparison": "以附件实际文字层逐字比较；18页均与 original_page_text 完全相同，statement_verbatim 为各页文本以单个换行连接，未替换控制字符、连字、断行或原书拼写。数学公式另按PDF可视排版核对，文字层的乱码不作为数学符号错误。",
+          "pages": [
+            {
+              "attachment_page": 4,
+              "pdf_page": 412,
+              "printed_page": 391,
+              "original_page_text_exact_match": true,
+              "text_sha256": "5d4574d5707d5af47988ea5fc968b644582f0e86c947e9f927d193f4e61cd41d"
+            }
+          ],
+          "scope": "实际三个漂移、无序对扩散生成元和漂移分解恒等式。",
+          "lean_declarations_checked": [
+            "MD.Ch08.dpdA",
+            "MD.Ch08.dpdB",
+            "MD.Ch08.dpdO",
+            "MD.Ch08.firstOrder8",
+            "MD.Ch08.dpdLO",
+            "MD.Ch08.dpdGenerator",
+            "MD.Ch08.dpdDrift_split"
+          ],
+          "annotations": "本条摘录没有字面 [EXTRA] 或 [ERRATUM?] 标签；已逐项检查 extra_assumptions、issues、statement_scope 所承载的额外资格、勘误说明及范围限制。现有范围说明与实际声明相符；未将定义/规格或局部目标当成已证动力学结论。",
+          "method": "仅依据本任务所附 Lean 全部声明、项目依赖定义及附录 D1–D31 做只读语义审校；Mathlib 标准定义按标准含义采信，未编译或改动工程、未补证明、未因 sorry 降级。"
+        }
+      },
+      "audit": {
+        "lean_decl": "MD.Ch08.dpdA",
+        "verdict": "PASS",
+        "explanation": "逐一核对 dpdA/B/O、firstOrder8、dpdLO、dpdGenerator、dpdDrift_split：三个场的坐标和动量分量与(8.94)一致；firstOrder8 是 fderiv 沿场作用；dpdLO 是耗散一阶项加每个独立无序对噪声方向的 Hessian/2，dpdGenerator 再加入 A、B。漂移分解对任意 N,d、质量函数及实参数、状态成立，不需要正性。对于 i≠j 的无序对完整枚举和二阶光滑测试函数，原印(8.97)中两方向有序项合并成 −γωD u D_ij+(σ²ωR²/2)D_ij²，与定义一致；没有把外层仅 ∂pi 的单个有序项误判为完整成对算子。枚举性质、测试函数光滑性、半群及算子定义域未进入裸定义，已在文字规格限定，不存在相应已证等价定理。",
+        "counterexample": null,
+        "suggested_fix": null
+      },
+      "subtask": "BATCH16b",
+      "input_sha256": {
+        "Blueprint/Ch08.lean": "2800812fadd8e2557013f1941e4570401f7903d46f44baf07e23d5531da22a72",
+        "blueprint/ch08/ch08_source.json": "9b994b0f64cd22c85c2ad4123fbfdbd064bd7a6d070fe13b721794432f9f7a63",
+        "BATCH16b_PAGES.pdf": "116e2cd56547ce8622c6785d53f5607f131138eb97016f8f90ff8104278f7fb0"
+      }
+    },
+    {
+      "source_id": "MD-8.9.2-DPDPairGeneratorPrinted",
+      "json_review": {
+        "status": "NEEDS_HUMAN",
+        "issue_codes": [
+          "ERRATUM_PAIR_GENERATOR_OUTER_DERIVATIVE"
+        ],
+        "corrected_json": null,
+        "issues": [
+          {
+            "stage": "A/C",
+            "severity": "NEEDS_HUMAN",
+            "location": "原书PDF413，式(8.100)及其后 Each interacting pair thus preserves…；dpdPairGeneratorPrinted",
+            "message": "PDF 的最外层确实只有 e·∂pi，转录与 Printed 定义均忠实；但作为单个无序对算子不保持总动量叶。项目已有合理的 D_ij 守恒方向修正版，原书是否勘误须人工确认。"
+          }
+        ],
+        "evidence": {
+          "source_text_comparison": "以附件实际文字层逐字比较；18页均与 original_page_text 完全相同，statement_verbatim 为各页文本以单个换行连接，未替换控制字符、连字、断行或原书拼写。数学公式另按PDF可视排版核对，文字层的乱码不作为数学符号错误。",
+          "pages": [
+            {
+              "attachment_page": 5,
+              "pdf_page": 413,
+              "printed_page": 392,
+              "original_page_text_exact_match": true,
+              "text_sha256": "d6552dca5f2191919530af3ba0f8d1d2b4b14515c582f833ee1f3fd66d18b975"
+            }
+          ],
+          "scope": "冻结配置下单对动量生成元的原式和守恒方向修正版。",
+          "lean_declarations_checked": [
+            "MD.Ch08.pairDerivative",
+            "MD.Ch08.dpdPairGeneratorPrinted",
+            "MD.Ch08.dpdPairGenerator_corrected"
+          ],
+          "annotations": "本条摘录没有字面 [EXTRA] 或 [ERRATUM?] 标签；已逐项检查 extra_assumptions、issues、statement_scope 所承载的额外资格、勘误说明及范围限制。本条原书疑误应补显式 [ERRATUM?]，判 NEEDS_HUMAN；未擅改原文。",
+          "method": "仅依据本任务所附 Lean 全部声明、项目依赖定义及附录 D1–D31 做只读语义审校；Mathlib 标准定义按标准含义采信，未编译或改动工程、未补证明、未因 sorry 降级。"
+        }
+      },
+      "audit": {
+        "lean_decl": "MD.Ch08.pairDerivative",
+        "verdict": "NEEDS_HUMAN",
+        "explanation": "分别审校：pairDerivative 是沿 e 在 i 增、j 减的方向导数。dpdPairGeneratorPrinted 的漂移只沿 Pi.single i e，扩散为 (σ²wr²/2)D_ij∂i，忠实保留(8.100)的最外层 ∂pi；该原文版忠实性 PASS。dpdPairGenerator_corrected 将漂移和扩散的最外层都换为 D_ij，得到 −γwd u D_ij+(σ²wr²/2)D_ij²，符合独立单对守恒 SDE，修正版数学陈述 PASS。i,j、e及实参数在两定义中均无物理资格限制；单对物理解释须 i≠j、单位方向、正质量及涨落耗散条件，定义本身并未声称不变分布。原书紧随其后的单对保动量叶不变密度说法与原印算子冲突，需保留原式并人工确认勘误；不能因忠实原式存在疑误而判该 Printed 定义 FAIL。",
+        "counterexample": "符号反例：N=2,d=1,i=0,j=1,e=1，m_i=m_j=1，γ=wd=1，p_i=1,p_j=0；取 f(p)=p_i+p_j。原印算子作用于 f 得 −1（二阶项为0），修正版得0。固定总动量叶上的单对动力学必须湮灭总动量函数，故原印单对解释有误；这不否定有序双和(8.97)。",
+        "suggested_fix": "保留原文和 Printed 定义；显式标 [ERRATUM?] 指向最外层 ∂pi，另列 corrected 使用 D_ij= e·(∂pi−∂pj)。不得把 Printed 定义改成修正版后仍称逐字忠实。"
+      },
+      "subtask": "BATCH16c",
+      "input_sha256": {
+        "Blueprint/Ch08.lean": "2800812fadd8e2557013f1941e4570401f7903d46f44baf07e23d5531da22a72",
+        "blueprint/ch08/ch08_source.json": "9b994b0f64cd22c85c2ad4123fbfdbd064bd7a6d070fe13b721794432f9f7a63",
+        "BATCH16c_PAGES.pdf": "122ba63f05299af289dbce4bbfe08f96fb2905603e64f4eeecfe915db2a87c8b"
+      }
+    },
+    {
+      "source_id": "MD-8.9.2-DPDSplittingCompositions",
+      "json_review": {
+        "status": "APPROVED",
+        "issue_codes": [],
+        "corrected_json": null,
+        "issues": [],
+        "evidence": {
+          "source_text_comparison": "以附件实际文字层逐字比较；18页均与 original_page_text 完全相同，statement_verbatim 为各页文本以单个换行连接，未替换控制字符、连字、断行或原书拼写。数学公式另按PDF可视排版核对，文字层的乱码不作为数学符号错误。",
+          "pages": [
+            {
+              "attachment_page": 6,
+              "pdf_page": 413,
+              "printed_page": 392,
+              "original_page_text_exact_match": true,
+              "text_sha256": "d6552dca5f2191919530af3ba0f8d1d2b4b14515c582f833ee1f3fd66d18b975"
+            },
+            {
+              "attachment_page": 7,
+              "pdf_page": 414,
+              "printed_page": 393,
+              "original_page_text_exact_match": true,
+              "text_sha256": "8b699c92862315a266f45e4cd3b82d1b35868cfbf592bdbb57b137faffac3df4"
+            }
+          ],
+          "scope": "两种外层组合、固定顺序逐对执行及S形式生成元；实际OU单对步骤见后条。",
+          "lean_declarations_checked": [
+            "MD.Ch08.dpdShardlowComposition",
+            "MD.Ch08.dpdTrotterComposition",
+            "MD.Ch08.sequentialPairComposition",
+            "MD.Ch08.dpdSGenerator"
+          ],
+          "annotations": "本条摘录没有字面 [EXTRA] 或 [ERRATUM?] 标签；已逐项检查 extra_assumptions、issues、statement_scope 所承载的额外资格、勘误说明及范围限制。现有范围说明与实际声明相符；未将定义/规格或局部目标当成已证动力学结论。",
+          "method": "仅依据本任务所附 Lean 全部声明、项目依赖定义及附录 D1–D31 做只读语义审校；Mathlib 标准定义按标准含义采信，未编译或改动工程、未补证明、未因 sorry 降级。"
+        }
+      },
+      "audit": {
+        "lean_decl": "MD.Ch08.dpdShardlowComposition",
+        "verdict": "PASS",
+        "explanation": "逐一核对 dpdShardlowComposition、dpdTrotterComposition、sequentialPairComposition、dpdSGenerator。任意类型 E 上的实时间输入映射按 Lean 函数组合从右向左作用，正好保留(8.99) O B½ A B½ 和原印 S½ A S½；foldl 将列表中的第一对最先执行，等于书中最后写在右侧的首个对因子先作用。S 的形式生成元为 B+O。没有增加 i<j 的自动枚举机制；列表内容和顺序由调用者给定。未实现 BBK、全 O/S 精确流或指数映射，也未声称相同逐对顺序的两次 S 自动产生对称法；这些范围限制均明确列在 extra_assumptions。",
+        "counterexample": null,
+        "suggested_fix": null
+      },
+      "subtask": "BATCH16d",
+      "input_sha256": {
+        "Blueprint/Ch08.lean": "2800812fadd8e2557013f1941e4570401f7903d46f44baf07e23d5531da22a72",
+        "blueprint/ch08/ch08_source.json": "9b994b0f64cd22c85c2ad4123fbfdbd064bd7a6d070fe13b721794432f9f7a63",
+        "BATCH16d_PAGES.pdf": "d3e9cc06848ebd2aa66167a9e24106698acfcafe0b3804d5e7253172e61d462c"
+      }
+    },
+    {
+      "source_id": "MD-8.9.2-DPDPairOUUpdate",
+      "json_review": {
+        "status": "NEEDS_HUMAN",
+        "issue_codes": [
+          "ERRATUM_ZERO_RATE_DOMAIN"
+        ],
+        "corrected_json": null,
+        "issues": [
+          {
+            "stage": "A/C",
+            "severity": "NEEDS_HUMAN",
+            "location": "原书PDF414，式(8.104)–(8.105)的 τ=γωD/mred 和 F/(τmred)",
+            "message": "原文及 Printed 公式忠实，正率域内正确；当 γ=0 或 ωD=0 时原式有零分母。项目给出的 corrected 零率延拓正确；原书对零率/截断外非相互作用对的处理未在本页说明，需人工确认域约定，不静默修正文献原式。"
+          }
+        ],
+        "evidence": {
+          "source_text_comparison": "以附件实际文字层逐字比较；18页均与 original_page_text 完全相同，statement_verbatim 为各页文本以单个换行连接，未替换控制字符、连字、断行或原书拼写。数学公式另按PDF可视排版核对，文字层的乱码不作为数学符号错误。",
+          "pages": [
+            {
+              "attachment_page": 8,
+              "pdf_page": 414,
+              "printed_page": 393,
+              "original_page_text_exact_match": true,
+              "text_sha256": "8b699c92862315a266f45e4cd3b82d1b35868cfbf592bdbb57b137faffac3df4"
+            }
+          ],
+          "scope": "原印/零率延拓的OU转移公式、速度增量所用动量更新及总动量守恒。",
+          "lean_declarations_checked": [
+            "MD.Ch08.reducedMass8",
+            "MD.Ch08.reducedMass8_pos",
+            "MD.Ch08.dpdPairOUPrinted",
+            "MD.Ch08.dpdPairOU_corrected",
+            "MD.Ch08.dpdPairOU_zeroRate",
+            "MD.Ch08.dpdPairMomentumStep",
+            "MD.Ch08.dpdPairMomentumStep_conserves"
+          ],
+          "annotations": "本条摘录没有字面 [EXTRA] 或 [ERRATUM?] 标签；已逐项检查 extra_assumptions、issues、statement_scope 所承载的额外资格、勘误说明及范围限制。本条原书疑误应补显式 [ERRATUM?]，判 NEEDS_HUMAN；未擅改原文。",
+          "method": "仅依据本任务所附 Lean 全部声明、项目依赖定义及附录 D1–D31 做只读语义审校；Mathlib 标准定义按标准含义采信，未编译或改动工程、未补证明、未因 sorry 降级。"
+        }
+      },
+      "audit": {
+        "lean_decl": "MD.Ch08.reducedMass8",
+        "verdict": "NEEDS_HUMAN",
+        "explanation": "分别审校 reducedMass8、其正性定理、dpdPairOUPrinted、dpdPairOU_corrected、零率定理、dpdPairMomentumStep 及其守恒定理。约化质量 mi*mj/(mi+mj) 及正质量前提正确；Printed 完全忠实(8.104)。a≠0 时修正版将确定性项改写为 exp(−at)u+(F/mr)(1−exp(−at))/a，与原式相同；a=0 分支为 u+(F/mr)t，噪声根号退化为零，符合涨落耗散关联下的连续零率延拓。动量更新为 ±mr*du*e，总动量等式对任意 i,j,e,mr,du,p 都成立；不需要单位方向或质量正性。要解释为相对速度精确流还需不同粒子、单位方向及正质量；物理 OU 转移还需 mr,θ>0、a,t≥0 和独立标准正态 R。原印公式在零率没有通常实数意义，而本条已正确另设修正版；原书边界域约定应人工确认，Printed 忠实性和 corrected 数学正确性均 PASS。",
+        "counterexample": "边界示例（不是正率域反例）：mr=F=θ=t=1，a=u=R=0。通常实数原式含 1/0 未定义；Lean 总化除法使 dpdPairOUPrinted 得0，而零率强迫 ODE 的终值及 corrected 值均为1。物理截断外若同时 F=0 则此强迫示例不适用，但原式零分母仍须分支约定。",
+        "suggested_fix": "保留 Printed，标 [ERRATUM?]/域限制 a>0；a=0 的适用场景使用已给 corrected，并明确 FDT 下噪声同时退化，不能把该分支用于任意独立的非零扩散零漂移 OU。"
+      },
+      "subtask": "BATCH16e",
+      "input_sha256": {
+        "Blueprint/Ch08.lean": "2800812fadd8e2557013f1941e4570401f7903d46f44baf07e23d5531da22a72",
+        "blueprint/ch08/ch08_source.json": "9b994b0f64cd22c85c2ad4123fbfdbd064bd7a6d070fe13b721794432f9f7a63",
+        "BATCH16e_PAGES.pdf": "9844bb6e709791c0bff8d548c9d35e401ff6ca3274d2d0ba869896439810ccfc"
+      }
+    },
+    {
+      "source_id": "MD-8.9.3-PairwiseNoseHoover",
+      "json_review": {
+        "status": "APPROVED",
+        "issue_codes": [],
+        "corrected_json": null,
+        "issues": [],
+        "evidence": {
+          "source_text_comparison": "以附件实际文字层逐字比较；18页均与 original_page_text 完全相同，statement_verbatim 为各页文本以单个换行连接，未替换控制字符、连字、断行或原书拼写。数学公式另按PDF可视排版核对，文字层的乱码不作为数学符号错误。",
+          "pages": [
+            {
+              "attachment_page": 9,
+              "pdf_page": 415,
+              "printed_page": 394,
+              "original_page_text_exact_match": true,
+              "text_sha256": "4649eb77e6794c6b5b6d0e10d587366a65b76c24b83bbe56cf18baa912939f54"
+            }
+          ],
+          "scope": "PNH场、反馈和正质量/正热浴质量的ODE规格。",
+          "lean_declarations_checked": [
+            "MD.Ch08.PNHLState",
+            "MD.Ch08.pairwiseFeedback",
+            "MD.Ch08.pnhDrift",
+            "MD.Ch08.isPNHSolution"
+          ],
+          "annotations": "本条摘录没有字面 [EXTRA] 或 [ERRATUM?] 标签；已逐项检查 extra_assumptions、issues、statement_scope 所承载的额外资格、勘误说明及范围限制。现有范围说明与实际声明相符；未将定义/规格或局部目标当成已证动力学结论。",
+          "method": "仅依据本任务所附 Lean 全部声明、项目依赖定义及附录 D1–D31 做只读语义审校；Mathlib 标准定义按标准含义采信，未编译或改动工程、未补证明、未因 sorry 降级。"
+        }
+      },
+      "audit": {
+        "lean_decl": "MD.Ch08.PNHLState",
+        "verdict": "PASS",
+        "explanation": "逐一核对 PNHLState、pairwiseFeedback、pnhDrift、isPNHSolution。扩展态 ((q,p),ξ)；位置速度 p_i/m_i；动量场 Fᶜ+ξF̃ᴰ，其中 F̃ᴰ 使用 γ=1；反馈按 i<j 单次求和并除 Q，热修正为 θ/mred，Q 对应原文 μ、θ 对应 kBT，符合(8.108)–(8.109)。isPNHSolution 明列 N,d>0、每个质量正、rc,θ,Q>0，并对每个 t≥0 使用 Ici 0 上的导数。未把 wD 非负及全轨道非碰撞写进该 Prop，这两项只在 extra_assumptions 说明物理解释；因此该总化 ODE 规格本身也包含非物理解，不能从它直接宣称所有解非碰撞。此限定与已给 statement_scope 一致；不变性、守恒沿轨道及存在唯一性均未冒充已证。",
+        "counterexample": null,
+        "suggested_fix": null
+      },
+      "subtask": "BATCH16f",
+      "input_sha256": {
+        "Blueprint/Ch08.lean": "2800812fadd8e2557013f1941e4570401f7903d46f44baf07e23d5531da22a72",
+        "blueprint/ch08/ch08_source.json": "9b994b0f64cd22c85c2ad4123fbfdbd064bd7a6d070fe13b721794432f9f7a63",
+        "BATCH16f_PAGES.pdf": "35d97dc9d1412d1b84ca82bf78508fc0277a3d420e61725f350d0d67941c0161"
+      }
+    }
+  ],
+  "merged_from": "ch08_first_merged"
+}

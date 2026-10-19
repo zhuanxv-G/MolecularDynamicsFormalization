@@ -1,0 +1,26 @@
+{
+  "batch": "EAUDIT03",
+  "subtasks": [
+    {
+      "subtask": "EAUDIT03a",
+      "source_id": "MD-8.5-SLSLeapfrog",
+      "path": "blueprint/ch08/mathcopilot_tasks/EAUDIT03/a",
+      "bytes": 112077,
+      "manifest_sha256": "336c9d1dfd1a5ed23085a19d3cd391aedafe1facba2e8c69aedac66fed2c9e60"
+    },
+    {
+      "subtask": "EAUDIT03b",
+      "source_id": "MD-8.6.2-SINLyapunov",
+      "path": "blueprint/ch08/mathcopilot_tasks/EAUDIT03/b",
+      "bytes": 122332,
+      "manifest_sha256": "fb917025043afe5304c8cf7c8db53f63b2fbf1255f04ea693b8dd8f19d2d00ba"
+    },
+    {
+      "subtask": "EAUDIT03c",
+      "source_id": "MD-8.7.1-PronyOUStationarity",
+      "path": "blueprint/ch08/mathcopilot_tasks/EAUDIT03/c",
+      "bytes": 78141,
+      "manifest_sha256": "16be8214fd4250e339eb2546b3c2fcd0bcb70391f8408e8131bef0659ba27d31"
+    }
+  ]
+}

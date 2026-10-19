@@ -1,0 +1,29 @@
+--- first-round
++++ repaired
+@@ -18,4 +18,26 @@
+   ((fun i ↦ invm i*z.1.2 i, fun i ↦ -gradient U z.1.1 i-Φ z i-(Γ *ᵥ z.1.2) i),
+    g z - Γhat *ᵥ z.2)
+ def fluctuationDissipation (M Γ B : Matrix (Fin n) (Fin n) ℝ) (β : ℝ) : Prop :=
+-  0 < β ∧ M.PosDef ∧ Γ.PosSemidef ∧ B*B.transpose = (2/β) • (Γ*M)+  0 < β ∧ M.PosDef ∧ Γ.PosSemidef ∧ B*B.transpose = (2/β) • (Γ*M)
++
++/-- 两组噪声共用一个n+k维独立Wiener过程，分块只作用于p和ξ。 -/
++def thermostatBlockNoise {k : ℕ}
++    (B : Matrix (Fin n) (Fin n) ℝ) (Bhat : Matrix (Fin k) (Fin k) ℝ)
++    (j : Fin (n+k)) : Phase n × Vec k :=
++  if hj : j.val < n then
++    ((0,fun i ↦ B i ⟨j.val,hj⟩),0)
++  else ((0,0),fun i ↦ Bhat i ⟨j.val-n,by omega⟩)
++
++/-- 正对角物理质量特例的统一积分解规格；两组协方差与实际漂移使用同一质量。
++不含一般非对角物理质量，也不声称由此已证明存在、唯一或不变分布。 -/
++def stochasticThermostatSolution {k : ℕ} (P : Measure Ω)
++    (W : ℝ → Ω → Vec (n+k)) (X : ℝ → Ω → Phase n × Vec k)
++    (x0 : Phase n × Vec k) (invm : Vec n) (U : Vec n → ℝ)
++    (Φ : Phase n × Vec k → Vec n) (g : Phase n × Vec k → Vec k)
++    (Γ B : Matrix (Fin n) (Fin n) ℝ)
++    (Mhat Γhat Bhat : Matrix (Fin k) (Fin k) ℝ) (β : ℝ) : Prop :=
++  (∀ i, 0 < invm i) ∧ ContDiff ℝ 1 U ∧
++  fluctuationDissipation (Matrix.diagonal (fun i ↦ (invm i)⁻¹)) Γ B β ∧
++  fluctuationDissipation Mhat Γhat Bhat β ∧
++  additiveSDE P (n+k) W X x0 (stochasticThermostatDrift invm U Φ g Γ Γhat)
++    (thermostatBlockNoise B Bhat)

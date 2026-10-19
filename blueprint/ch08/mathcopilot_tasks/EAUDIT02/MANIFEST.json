@@ -1,0 +1,26 @@
+{
+  "batch": "EAUDIT02",
+  "subtasks": [
+    {
+      "subtask": "EAUDIT02a",
+      "source_id": "MD-8.4.1-NHL",
+      "path": "blueprint/ch08/mathcopilot_tasks/EAUDIT02/a",
+      "bytes": 118996,
+      "manifest_sha256": "f69841b82ccc5dd7abf47ea4bef4ff2fd030e26f1db92bdbde9869a22193f5a4"
+    },
+    {
+      "subtask": "EAUDIT02b",
+      "source_id": "MD-8.4.3-PreEquilibriumMeans",
+      "path": "blueprint/ch08/mathcopilot_tasks/EAUDIT02/b",
+      "bytes": 187605,
+      "manifest_sha256": "91165fd82e3e5c75b9cfbcc5b6d3caec1f38b2ff60edab8940e53c0daa23037a"
+    },
+    {
+      "subtask": "EAUDIT02c",
+      "source_id": "MD-8.4.4-RescalingStationary",
+      "path": "blueprint/ch08/mathcopilot_tasks/EAUDIT02/c",
+      "bytes": 97429,
+      "manifest_sha256": "5af6a33922e7f245df5381ddacd101521079002ea71c5721976b04a89c3e1d44"
+    }
+  ]
+}

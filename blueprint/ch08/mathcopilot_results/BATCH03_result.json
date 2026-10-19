@@ -1,0 +1,636 @@
+{
+  "batch": "BATCH03",
+  "chapter": "ch08",
+  "round": "first-merged",
+  "input_sha256": {
+    "Blueprint/Ch08.lean": "2800812fadd8e2557013f1941e4570401f7903d46f44baf07e23d5531da22a72",
+    "blueprint/ch08/ch08_source.json": "9b994b0f64cd22c85c2ad4123fbfdbd064bd7a6d070fe13b721794432f9f7a63"
+  },
+  "items": [
+    {
+      "source_id": "MD-8.1.2.1-NPShadowDensity",
+      "json_review": {
+        "status": "CORRECTED",
+        "issue_codes": [
+          "IRRELEVANT_TRANSCRIPTION_NOTE",
+          "STALE_VERIFICATION_REFERENCE",
+          "EXPLICIT_SCOPE_OR_EXTRA_CLARIFICATION"
+        ],
+        "corrected_json": {
+          "source_id": "MD-8.1.2.1-NPShadowDensity",
+          "kind": "definition",
+          "label": null,
+          "section": "8.1.2.1",
+          "printed_page": "335",
+          "pdf_page": "356",
+          "statement_latex": "H̃_h=H_NP+h²H_[2]+O(h⁴); ρ̃=ρ_βζ(q,p,h)+O(h⁴). Canonical averages are approximated by (ν+1)⁻¹Σg_nζ_n⁻¹+O(h⁴).",
+          "statement_verbatim": "8.1\nDynamics-Based Thermostat Techniques\n335\nThe relation between (8.10)–(8.13) and (8.2)–(8.4) becomes evident through the\nsubstitution p D Qp=s and \u0012 D ps=\u0006. Then (8.10)–(8.11) are seen to be the same\nas the corresponding equations in the Nosé-Hoover method, and the ﬁnal pair of\nequations become\nd\ndts D s\u0012;\nd\ndt\u0012 D 1\n\u0006\n\u0004\npTM\u00021p \u0003 NdkBT \u0003 \u0016HN\n\u0005\n:\nThe only difference between the last equation and (8.4) lies in the perturbation\n\u0006\u00021\u0016HN, which is zero along the exact solution. Under discretization, however,\nwe do not expect \u0016HN to vanish, so trajectories obtained from Nosé-Poincaré and\nNosé-Hoover will differ considerably over long time simulations.\nA beneﬁt of respecting the symplectic structure lies in the prospect of using\nbackward error analysis to analyze the behavior of the method. As shown in [40] it\nis possible to work out the terms of the perturbative expansion of the Nosé-Poincaré\nHamiltonian, i.e. to calculate the expansion\nQHh D HNP C h2HŒ2\t C O.h4/\nfor a second order, symmetric, symplectic numerical method. Then one may\ndetermine the effective distribution associated to the symplectic discretization\nmethod by “integrating out” the microcanonical density with respect to the auxiliary\nvariable and its conjugate momentum. One obtains in this way\nQ\u0005 .q; p/ D \u0005ˇ.q; p/\u0018.q; p; h/ C O\n\u0004\nh4\u0005\n:\nAn explicit formula for \u0018 is given in [40] for several symplectic methods. During\nsimulation, one may calculate the factor \u0018 and use this quantity to adjust averages.\nFor example, if we wish to calculate the average of a function g.q; p/, we may\nperform the calculation using \u0003 steps of the Nosé-Poincaré method with the given\nsymplectic, time-reversible, second order integrator, calculate gn and \u0018n at each\ntimestep, and approximate the canonical average from\nhgi D\n1\n\u0003 C 1\n\u0003\nX\nnD0\ngn\u0018\u00021\nn\nC O.h4/:\nFor further details, refer to [40]. Technically, a similar calculation can be carried out\nfor the Nosé-Hoover formulation, but the calculations are more involved.\nA good symplectic integrator for Nosé-Poincaré has been given by Nosé [287].\nFor further discussion and numerical experiments using this idea, see [94] (which\nalso considers stochastic methods).\n",
+          "verbatim_scope": "完整对应原页文字层，逐字保留；本条数学成分由statement_latex及statement_scope定位。",
+          "proof_latex": null,
+          "proof_note": "对应原页推导逐字保存在statement_verbatim/original_page_text；排版以原页PDF为准。",
+          "original_page_text": [
+            {
+              "pdf_page": 356,
+              "printed_page": 335,
+              "text": "8.1\nDynamics-Based Thermostat Techniques\n335\nThe relation between (8.10)–(8.13) and (8.2)–(8.4) becomes evident through the\nsubstitution p D Qp=s and \u0012 D ps=\u0006. Then (8.10)–(8.11) are seen to be the same\nas the corresponding equations in the Nosé-Hoover method, and the ﬁnal pair of\nequations become\nd\ndts D s\u0012;\nd\ndt\u0012 D 1\n\u0006\n\u0004\npTM\u00021p \u0003 NdkBT \u0003 \u0016HN\n\u0005\n:\nThe only difference between the last equation and (8.4) lies in the perturbation\n\u0006\u00021\u0016HN, which is zero along the exact solution. Under discretization, however,\nwe do not expect \u0016HN to vanish, so trajectories obtained from Nosé-Poincaré and\nNosé-Hoover will differ considerably over long time simulations.\nA beneﬁt of respecting the symplectic structure lies in the prospect of using\nbackward error analysis to analyze the behavior of the method. As shown in [40] it\nis possible to work out the terms of the perturbative expansion of the Nosé-Poincaré\nHamiltonian, i.e. to calculate the expansion\nQHh D HNP C h2HŒ2\t C O.h4/\nfor a second order, symmetric, symplectic numerical method. Then one may\ndetermine the effective distribution associated to the symplectic discretization\nmethod by “integrating out” the microcanonical density with respect to the auxiliary\nvariable and its conjugate momentum. One obtains in this way\nQ\u0005 .q; p/ D \u0005ˇ.q; p/\u0018.q; p; h/ C O\n\u0004\nh4\u0005\n:\nAn explicit formula for \u0018 is given in [40] for several symplectic methods. During\nsimulation, one may calculate the factor \u0018 and use this quantity to adjust averages.\nFor example, if we wish to calculate the average of a function g.q; p/, we may\nperform the calculation using \u0003 steps of the Nosé-Poincaré method with the given\nsymplectic, time-reversible, second order integrator, calculate gn and \u0018n at each\ntimestep, and approximate the canonical average from\nhgi D\n1\n\u0003 C 1\n\u0003\nX\nnD0\ngn\u0018\u00021\nn\nC O.h4/:\nFor further details, refer to [40]. Technically, a similar calculation can be carried out\nfor the Nosé-Hoover formulation, but the calculations are more involved.\nA good symplectic integrator for Nosé-Poincaré has been given by Nosé [287].\nFor further discussion and numerical experiments using this idea, see [94] (which\nalso considers stochastic methods).\n"
+            }
+          ],
+          "numbered_equations": [],
+          "transcription_note": "文字层逐字保留；数学排版另行转写，原页中的特殊字形编码不静默替换。",
+          "context_notation": [],
+          "extra_assumptions": [
+            "[EXTRA]仅给O(h⁴)余项与有限重加权公式的精确定义；存在修正Hamiltonian/密度和采样误差定理未覆盖，列入缺口。",
+            "[EXTRA/范围说明] 补充[EXTRA]：这里Phase n是示意状态域，未桥接实际扩展NP域Phase n×(ℝ×ℝ)；仅逐点O(h⁴)，非一致估计。实际重加权需ζ_k≠0；有限样本统计误差不能并入单独O(h⁴)。"
+          ],
+          "issues": [],
+          "statement_scope": "三条公式的定义及渐近条件；不声称已构造ζ或证明有限样本等于精确平均。",
+          "lean_decl": "MD.Ch08.fourthOrderRemainder",
+          "lean_declarations": [
+            "MD.Ch08.fourthOrderRemainder",
+            "MD.Ch08.correctedFiniteAverage",
+            "MD.Ch08.npShadowAnsatz",
+            "MD.Ch08.npDensityAnsatz"
+          ],
+          "source_page_verification": "本次R1审校：已比对R1_PAGES.pdf附件第14页的页面图像及文字层；以页面数学排版为准。",
+          "repair_log": [],
+          "documented_priors": []
+        },
+        "issues": [
+          {
+            "stage": "A",
+            "code": "IRRELEVANT_TRANSCRIPTION_NOTE",
+            "detail": "transcription_note末句“PDF420仅取Exercises之前”与本批PDF350–359及附件21页无关，应删除。"
+          },
+          {
+            "stage": "A",
+            "code": "STALE_VERIFICATION_REFERENCE",
+            "detail": "source_page_verification引用未在本任务中提供的source_page_checks.json，不能作为本次审校证据；改为本次附件定位。"
+          },
+          {
+            "stage": "C",
+            "code": "EXPLICIT_SCOPE_OR_EXTRA_CLARIFICATION",
+            "detail": "补充[EXTRA]：这里Phase n是示意状态域，未桥接实际扩展NP域Phase n×(ℝ×ℝ)；仅逐点O(h⁴)，非一致估计。实际重加权需ζ_k≠0；有限样本统计误差不能并入单独O(h⁴)。"
+          }
+        ],
+        "evidence": [
+          {
+            "stage": "A",
+            "attachment": "R1_PAGES.pdf",
+            "attachment_pages": [
+              14
+            ],
+            "original_pdf_pages": "356",
+            "printed_pages": "335",
+            "finding": "已逐条比对英文正文、数学排版、所列公式编号与本条statement_latex；statement_verbatim与original_page_text拼接一致。现有控制字符、数学字形乱码、连字与提取换行属于已声明的文字层编码；不同提取器的字符顺序不同，不据此伪报原书内容错误。PDF数学排版优先。"
+          },
+          {
+            "stage": "C",
+            "definition_evidence": "本任务完整本条Lean、项目依赖定义体及附录D1–D25；div定义为Fréchet导数的迹，驻定为∀z,div(ρF)=0。仅只读核对签名和语义，不修改工程、不补证明，不以sorry判FAIL。",
+            "finding": "fourthOrderRemainder正C、正ε与∀|h|<ε的界正确表达零点四阶大O；两个ansatz均为逐状态命题，常数可依赖z。有限平均包含k=0,…,N共N+1项，除以实数N+1。它们只是谓词和公式定义，没有声称存在修正Hamiltonian/密度或有限采样误差为O(h⁴)，范围已明确。"
+          },
+          {
+            "stage": "A",
+            "finding": "附件第14页将H_NP作为扩展Hamiltonian，并给出修正密度及ν+1项重加权式；没有在此页提供采样误差定理或ζ构造，现有Lean仅定义ansatz，不能作更强结论。"
+          }
+        ]
+      },
+      "audit": {
+        "lean_decl": [
+          "MD.Ch08.fourthOrderRemainder",
+          "MD.Ch08.correctedFiniteAverage",
+          "MD.Ch08.npShadowAnsatz",
+          "MD.Ch08.npDensityAnsatz"
+        ],
+        "verdict": "PASS",
+        "explanation": "fourthOrderRemainder正C、正ε与∀|h|<ε的界正确表达零点四阶大O；两个ansatz均为逐状态命题，常数可依赖z。有限平均包含k=0,…,N共N+1项，除以实数N+1。它们只是谓词和公式定义，没有声称存在修正Hamiltonian/密度或有限采样误差为O(h⁴)，范围已明确。",
+        "counterexample": null,
+        "suggested_fix": "补充[EXTRA]：这里Phase n是示意状态域，未桥接实际扩展NP域Phase n×(ℝ×ℝ)；仅逐点O(h⁴)，非一致估计。实际重加权需ζ_k≠0；有限样本统计误差不能并入单独O(h⁴)。"
+      },
+      "subtask": "BATCH03a",
+      "input_sha256": {
+        "Blueprint/Ch08.lean": "2800812fadd8e2557013f1941e4570401f7903d46f44baf07e23d5531da22a72",
+        "blueprint/ch08/ch08_source.json": "9b994b0f64cd22c85c2ad4123fbfdbd064bd7a6d070fe13b721794432f9f7a63",
+        "BATCH03a_PAGES.pdf": "8877fe01c77456a61f502fa04fffba0163af019b2b5bbe4f7f0fc37991020a26"
+      }
+    },
+    {
+      "source_id": "MD-8.2-GeneralThermostat",
+      "json_review": {
+        "status": "CORRECTED",
+        "issue_codes": [
+          "IRRELEVANT_TRANSCRIPTION_NOTE",
+          "STALE_VERIFICATION_REFERENCE",
+          "EXPLICIT_SCOPE_OR_EXTRA_CLARIFICATION"
+        ],
+        "corrected_json": {
+          "source_id": "MD-8.2-GeneralThermostat",
+          "kind": "definition",
+          "label": null,
+          "section": "8.2",
+          "printed_page": "336",
+          "pdf_page": "357",
+          "statement_latex": "ż=J∇H, J constant skew-symmetric; ż=J∇H+Φ(ξ,z), ξ̇=g(ξ,z).",
+          "statement_verbatim": "336\n8\nExtended Variable Methods\n8.2\nMore General Deterministic Thermostats\nWe have now seen that it is possible to construct stochastic differential equations\nthat preserve the Gibbs distribution or to design deterministic perturbations of\nHamiltonian dynamics, in an extended phase space, that do the same thing.\nThe latter class of methods are not rigorously ergodic, but the dynamics based\nthermostatting technique adds a great deal of ﬂexibility. For example it is easy to\ncontrol the ensemble using dynamic perturbations introduced only in some special\nphase space directions. In this section, we show how to design distributional controls\nwhich blend deterministic dynamics with restricted stochastic perturbations, with,\nin some cases, provable ergodicity. We will present the methods of this section in\nsome generality.\nLet a system be provided with Hamiltonian (energy) function H D H.z/, z 2 Rm,\nand microcanonical dynamics\nPz D JrH;\n(8.14)\nwhere J is skew symmetric. In principle, J need not be constant, as long as it satisﬁes\ncertain constraints, but as the extra generality is not needed for our current purposes,\nwe restrict the case J constant. We describe dynamical and stochastic-dynamical\ntechniques for computing averages with respect to a smooth density, for simplicity\nthe Gibbsian one, \u0005ˇ / exp.\u0003ˇH/.\nWe ﬁrst consider methods that are based on perturbation of the conservative\nsystem (8.14), i.e.\nPz D JrH C ˚.\u0002; z/;\n(8.15)\nwhere \u0002 2 Rm is controlled by the dynamical system\nd\u0002\ndt D g.\u0002; z/:\n8.2.1\nContinuity Equation\nGiven a deterministic thermostatting method, the density will evolve under the\ncontinuity equation,\n@\u0005\n@t D \u0003rz \u0002 Œ\u0005.JrzH C ˚/\t \u0003 r\u0002 \u0002 .\u0005g.\u0002; z// DW L\u0004\u0005:\nWe have, using product rule,\nL\u0004\u0005 D \u0003.rz\u0005/ \u0002 .JrzH C ˚/ \u0003 \u0005rz \u0002 .JrzH C ˚/ \u0003 .r\u0002\u0005/ \u0002 g \u0003 \u0005r\u0002 \u0002 g:\n",
+          "verbatim_scope": "完整对应原页文字层，逐字保留；本条数学成分由statement_latex及statement_scope定位。",
+          "proof_latex": null,
+          "proof_note": "对应原页推导逐字保存在statement_verbatim/original_page_text；排版以原页PDF为准。",
+          "original_page_text": [
+            {
+              "pdf_page": 357,
+              "printed_page": 336,
+              "text": "336\n8\nExtended Variable Methods\n8.2\nMore General Deterministic Thermostats\nWe have now seen that it is possible to construct stochastic differential equations\nthat preserve the Gibbs distribution or to design deterministic perturbations of\nHamiltonian dynamics, in an extended phase space, that do the same thing.\nThe latter class of methods are not rigorously ergodic, but the dynamics based\nthermostatting technique adds a great deal of ﬂexibility. For example it is easy to\ncontrol the ensemble using dynamic perturbations introduced only in some special\nphase space directions. In this section, we show how to design distributional controls\nwhich blend deterministic dynamics with restricted stochastic perturbations, with,\nin some cases, provable ergodicity. We will present the methods of this section in\nsome generality.\nLet a system be provided with Hamiltonian (energy) function H D H.z/, z 2 Rm,\nand microcanonical dynamics\nPz D JrH;\n(8.14)\nwhere J is skew symmetric. In principle, J need not be constant, as long as it satisﬁes\ncertain constraints, but as the extra generality is not needed for our current purposes,\nwe restrict the case J constant. We describe dynamical and stochastic-dynamical\ntechniques for computing averages with respect to a smooth density, for simplicity\nthe Gibbsian one, \u0005ˇ / exp.\u0003ˇH/.\nWe ﬁrst consider methods that are based on perturbation of the conservative\nsystem (8.14), i.e.\nPz D JrH C ˚.\u0002; z/;\n(8.15)\nwhere \u0002 2 Rm is controlled by the dynamical system\nd\u0002\ndt D g.\u0002; z/:\n8.2.1\nContinuity Equation\nGiven a deterministic thermostatting method, the density will evolve under the\ncontinuity equation,\n@\u0005\n@t D \u0003rz \u0002 Œ\u0005.JrzH C ˚/\t \u0003 r\u0002 \u0002 .\u0005g.\u0002; z// DW L\u0004\u0005:\nWe have, using product rule,\nL\u0004\u0005 D \u0003.rz\u0005/ \u0002 .JrzH C ˚/ \u0003 \u0005rz \u0002 .JrzH C ˚/ \u0003 .r\u0002\u0005/ \u0002 g \u0003 \u0005r\u0002 \u0002 g:\n"
+            }
+          ],
+          "numbered_equations": [
+            "8.14",
+            "8.15"
+          ],
+          "transcription_note": "文字层逐字保留；数学排版另行转写，原页中的特殊字形编码不静默替换。",
+          "context_notation": [],
+          "extra_assumptions": [
+            "J为常矩阵，Jᵀ=-J；z、ξ为实向量，光滑资格在结论中给出。",
+            "[EXTRA/范围说明] 补充[EXTRA]辅助维数k可独立于n；不要把任意J的总函数定义视为已满足Hamiltonian资格或已驻定。"
+          ],
+          "issues": [],
+          "statement_scope": "常矩阵一般热浴场及矩阵反对称资格的定义；不声称已证驻定或采样。",
+          "lean_decl": "MD.Ch08.generalThermostat",
+          "lean_declarations": [
+            "MD.Ch08.generalThermostat",
+            "MD.Ch08.skewMatrix"
+          ],
+          "source_page_verification": "本次R1审校：已比对R1_PAGES.pdf附件第15页的页面图像及文字层；以页面数学排版为准。",
+          "repair_log": [],
+          "documented_priors": []
+        },
+        "issues": [
+          {
+            "stage": "A",
+            "code": "IRRELEVANT_TRANSCRIPTION_NOTE",
+            "detail": "transcription_note末句“PDF420仅取Exercises之前”与本批PDF350–359及附件21页无关，应删除。"
+          },
+          {
+            "stage": "A",
+            "code": "STALE_VERIFICATION_REFERENCE",
+            "detail": "source_page_verification引用未在本任务中提供的source_page_checks.json，不能作为本次审校证据；改为本次附件定位。"
+          },
+          {
+            "stage": "C",
+            "code": "EXPLICIT_SCOPE_OR_EXTRA_CLARIFICATION",
+            "detail": "补充[EXTRA]辅助维数k可独立于n；不要把任意J的总函数定义视为已满足Hamiltonian资格或已驻定。"
+          }
+        ],
+        "evidence": [
+          {
+            "stage": "A",
+            "attachment": "R1_PAGES.pdf",
+            "attachment_pages": [
+              15
+            ],
+            "original_pdf_pages": "357",
+            "printed_pages": "336",
+            "finding": "已逐条比对英文正文、数学排版、所列公式编号与本条statement_latex；statement_verbatim与original_page_text拼接一致。现有控制字符、数学字形乱码、连字与提取换行属于已声明的文字层编码；不同提取器的字符顺序不同，不据此伪报原书内容错误。PDF数学排版优先。"
+          },
+          {
+            "stage": "C",
+            "definition_evidence": "本任务完整本条Lean、项目依赖定义体及附录D1–D25；div定义为Fréchet导数的迹，驻定为∀z,div(ρF)=0。仅只读核对签名和语义，不修改工程、不补证明，不以sorry判FAIL。",
+            "finding": "generalThermostat定义在Vec n×Vec k，使用常实矩阵J、实值H及同状态上的Φ,g，返回(J∇H+Φ,g)；skewMatrix确为Jᵀ=−J。把原文输入顺序(ξ,z)改为(z,ξ)一致。允许k独立于n是已选的一般化，应明确[EXTRA]；def本身不带反对称假设，由资格谓词及后续定理限定。"
+          }
+        ]
+      },
+      "audit": {
+        "lean_decl": [
+          "MD.Ch08.generalThermostat",
+          "MD.Ch08.skewMatrix"
+        ],
+        "verdict": "PASS",
+        "explanation": "generalThermostat定义在Vec n×Vec k，使用常实矩阵J、实值H及同状态上的Φ,g，返回(J∇H+Φ,g)；skewMatrix确为Jᵀ=−J。把原文输入顺序(ξ,z)改为(z,ξ)一致。允许k独立于n是已选的一般化，应明确[EXTRA]；def本身不带反对称假设，由资格谓词及后续定理限定。",
+        "counterexample": null,
+        "suggested_fix": "补充[EXTRA]辅助维数k可独立于n；不要把任意J的总函数定义视为已满足Hamiltonian资格或已驻定。"
+      },
+      "subtask": "BATCH03b",
+      "input_sha256": {
+        "Blueprint/Ch08.lean": "2800812fadd8e2557013f1941e4570401f7903d46f44baf07e23d5531da22a72",
+        "blueprint/ch08/ch08_source.json": "9b994b0f64cd22c85c2ad4123fbfdbd064bd7a6d070fe13b721794432f9f7a63",
+        "BATCH03b_PAGES.pdf": "f59462701b38918817e36cc02e456ff0b8e0c6cc28b38494490f605b424d7fca"
+      }
+    },
+    {
+      "source_id": "MD-8.2.1-ContinuityProductRule",
+      "json_review": {
+        "status": "CORRECTED",
+        "issue_codes": [
+          "IRRELEVANT_TRANSCRIPTION_NOTE",
+          "STALE_VERIFICATION_REFERENCE",
+          "EXPLICIT_SCOPE_OR_EXTRA_CLARIFICATION"
+        ],
+        "corrected_json": {
+          "source_id": "MD-8.2.1-ContinuityProductRule",
+          "kind": "unnumbered_claim",
+          "label": null,
+          "section": "8.2.1",
+          "printed_page": "336–337",
+          "pdf_page": "357–358",
+          "statement_latex": "∂tρ=-div_z[ρ(J∇H+Φ)]-div_ξ(ρg)=L†ρ; the product rule gives four terms W₁+W₂+W₃+W₄.",
+          "statement_verbatim": "336\n8\nExtended Variable Methods\n8.2\nMore General Deterministic Thermostats\nWe have now seen that it is possible to construct stochastic differential equations\nthat preserve the Gibbs distribution or to design deterministic perturbations of\nHamiltonian dynamics, in an extended phase space, that do the same thing.\nThe latter class of methods are not rigorously ergodic, but the dynamics based\nthermostatting technique adds a great deal of ﬂexibility. For example it is easy to\ncontrol the ensemble using dynamic perturbations introduced only in some special\nphase space directions. In this section, we show how to design distributional controls\nwhich blend deterministic dynamics with restricted stochastic perturbations, with,\nin some cases, provable ergodicity. We will present the methods of this section in\nsome generality.\nLet a system be provided with Hamiltonian (energy) function H D H.z/, z 2 Rm,\nand microcanonical dynamics\nPz D JrH;\n(8.14)\nwhere J is skew symmetric. In principle, J need not be constant, as long as it satisﬁes\ncertain constraints, but as the extra generality is not needed for our current purposes,\nwe restrict the case J constant. We describe dynamical and stochastic-dynamical\ntechniques for computing averages with respect to a smooth density, for simplicity\nthe Gibbsian one, \u0005ˇ / exp.\u0003ˇH/.\nWe ﬁrst consider methods that are based on perturbation of the conservative\nsystem (8.14), i.e.\nPz D JrH C ˚.\u0002; z/;\n(8.15)\nwhere \u0002 2 Rm is controlled by the dynamical system\nd\u0002\ndt D g.\u0002; z/:\n8.2.1\nContinuity Equation\nGiven a deterministic thermostatting method, the density will evolve under the\ncontinuity equation,\n@\u0005\n@t D \u0003rz \u0002 Œ\u0005.JrzH C ˚/\t \u0003 r\u0002 \u0002 .\u0005g.\u0002; z// DW L\u0004\u0005:\nWe have, using product rule,\nL\u0004\u0005 D \u0003.rz\u0005/ \u0002 .JrzH C ˚/ \u0003 \u0005rz \u0002 .JrzH C ˚/ \u0003 .r\u0002\u0005/ \u0002 g \u0003 \u0005r\u0002 \u0002 g:\n\n8.2\nMore General Deterministic Thermostats\n337\nWe divide this into four parts: L\u0004\u0005 D W1 C W2 C W3 C W4, where\nW1 D \u0003.rz\u0005/ \u0002 .JrzH C ˚/; W2 D \u0003\u0005rz \u0002 .JrzH C ˚/;\nW3 D \u0003.r\u0002\u0005/ \u0002 g;\nW4 D \u0003\u0005r\u0002 \u0002 g:\nWe seek perturbations of Hamiltonian dynamics with separable equilibria, i.e., such\nthat \u0005 D \u0005ˇ.H.z// O\u0005.\u0002/ is a stationary solution.\nTaking this as an ansatz, the ﬁrst term can be simpliﬁed as follows:\nW1 D \u0003 O\u0005.\u0002/\u00050\nˇ.H/rzH \u0002 .JrzH C ˚/\nD ˇ O\u0005.\u0002/\u0005ˇ.H/rzH \u0002 ˚ D ˇ\u0005rzH \u0002 ˚\nas J is skew-symmetric.\nUsing the volume preservation of Hamiltonian systems, the second term satisﬁes\nW2 D \u0003\u0005rz \u0002 .JrzH C ˚/ D \u0003\u0005rz \u0002 ˚;\nhence\nW1 C W2 D \u0003\u0005Œrz \u0003 ˇrzH\t \u0002 ˚:\nThere are many possibilities for the distribution of \u0002, of course, but we will\nassume this is Gaussian for simplicity: O\u0005.\u0002/\nD\nexp\n\u0004\n\u0003ˇ Pm\niD1 \u0006i\u00122\ni =2\n\u0005\nD\nexp.\u0003ˇ\u0002T\u0007\u00021\u0002=2/ to get\nW3 D \u0003.r\u0002\u0005/ \u0002 g.\u0002; z/ D ˇ\u0005\u0002T\u0007\u00021g:\nFinally, for an equilibrium solution we must have W1 C W2 C W3 C W4 D 0, so\n\u0003Œrz \u0003 ˇrzH\t \u0002 ˚ C ˇ\u0002T\u0007\u00021g \u0003 r\u0002 \u0002 g D 0:\nThis equation is the fundamental one for deterministic thermostats.\nExample 8.1 To recover Nosé-Hoover, assume an even dimensional phase space,\nz D .q; p/, Nd degrees of freedom, and \u0012 2 R,\n˚ D \u0003\u0012\n\u0002 0\np\n\u0003\n;\ng.z/ D \u0006\u00021.p \u0002 rpH \u0003 NdkBT/:\nExample 8.2 Slightly more generally, let\n˚ D \u0012G.z/;\ng.\u0012; z/ D g.z/ D \u0006\u00021ŒrzH \u0003 kBTrz\t \u0002 G.z/:\n",
+          "verbatim_scope": "完整对应原页文字层，逐字保留；本条数学成分由statement_latex及statement_scope定位。",
+          "proof_latex": null,
+          "proof_note": "对应原页推导逐字保存在statement_verbatim/original_page_text；排版以原页PDF为准。",
+          "original_page_text": [
+            {
+              "pdf_page": 357,
+              "printed_page": 336,
+              "text": "336\n8\nExtended Variable Methods\n8.2\nMore General Deterministic Thermostats\nWe have now seen that it is possible to construct stochastic differential equations\nthat preserve the Gibbs distribution or to design deterministic perturbations of\nHamiltonian dynamics, in an extended phase space, that do the same thing.\nThe latter class of methods are not rigorously ergodic, but the dynamics based\nthermostatting technique adds a great deal of ﬂexibility. For example it is easy to\ncontrol the ensemble using dynamic perturbations introduced only in some special\nphase space directions. In this section, we show how to design distributional controls\nwhich blend deterministic dynamics with restricted stochastic perturbations, with,\nin some cases, provable ergodicity. We will present the methods of this section in\nsome generality.\nLet a system be provided with Hamiltonian (energy) function H D H.z/, z 2 Rm,\nand microcanonical dynamics\nPz D JrH;\n(8.14)\nwhere J is skew symmetric. In principle, J need not be constant, as long as it satisﬁes\ncertain constraints, but as the extra generality is not needed for our current purposes,\nwe restrict the case J constant. We describe dynamical and stochastic-dynamical\ntechniques for computing averages with respect to a smooth density, for simplicity\nthe Gibbsian one, \u0005ˇ / exp.\u0003ˇH/.\nWe ﬁrst consider methods that are based on perturbation of the conservative\nsystem (8.14), i.e.\nPz D JrH C ˚.\u0002; z/;\n(8.15)\nwhere \u0002 2 Rm is controlled by the dynamical system\nd\u0002\ndt D g.\u0002; z/:\n8.2.1\nContinuity Equation\nGiven a deterministic thermostatting method, the density will evolve under the\ncontinuity equation,\n@\u0005\n@t D \u0003rz \u0002 Œ\u0005.JrzH C ˚/\t \u0003 r\u0002 \u0002 .\u0005g.\u0002; z// DW L\u0004\u0005:\nWe have, using product rule,\nL\u0004\u0005 D \u0003.rz\u0005/ \u0002 .JrzH C ˚/ \u0003 \u0005rz \u0002 .JrzH C ˚/ \u0003 .r\u0002\u0005/ \u0002 g \u0003 \u0005r\u0002 \u0002 g:\n"
+            },
+            {
+              "pdf_page": 358,
+              "printed_page": 337,
+              "text": "8.2\nMore General Deterministic Thermostats\n337\nWe divide this into four parts: L\u0004\u0005 D W1 C W2 C W3 C W4, where\nW1 D \u0003.rz\u0005/ \u0002 .JrzH C ˚/; W2 D \u0003\u0005rz \u0002 .JrzH C ˚/;\nW3 D \u0003.r\u0002\u0005/ \u0002 g;\nW4 D \u0003\u0005r\u0002 \u0002 g:\nWe seek perturbations of Hamiltonian dynamics with separable equilibria, i.e., such\nthat \u0005 D \u0005ˇ.H.z// O\u0005.\u0002/ is a stationary solution.\nTaking this as an ansatz, the ﬁrst term can be simpliﬁed as follows:\nW1 D \u0003 O\u0005.\u0002/\u00050\nˇ.H/rzH \u0002 .JrzH C ˚/\nD ˇ O\u0005.\u0002/\u0005ˇ.H/rzH \u0002 ˚ D ˇ\u0005rzH \u0002 ˚\nas J is skew-symmetric.\nUsing the volume preservation of Hamiltonian systems, the second term satisﬁes\nW2 D \u0003\u0005rz \u0002 .JrzH C ˚/ D \u0003\u0005rz \u0002 ˚;\nhence\nW1 C W2 D \u0003\u0005Œrz \u0003 ˇrzH\t \u0002 ˚:\nThere are many possibilities for the distribution of \u0002, of course, but we will\nassume this is Gaussian for simplicity: O\u0005.\u0002/\nD\nexp\n\u0004\n\u0003ˇ Pm\niD1 \u0006i\u00122\ni =2\n\u0005\nD\nexp.\u0003ˇ\u0002T\u0007\u00021\u0002=2/ to get\nW3 D \u0003.r\u0002\u0005/ \u0002 g.\u0002; z/ D ˇ\u0005\u0002T\u0007\u00021g:\nFinally, for an equilibrium solution we must have W1 C W2 C W3 C W4 D 0, so\n\u0003Œrz \u0003 ˇrzH\t \u0002 ˚ C ˇ\u0002T\u0007\u00021g \u0003 r\u0002 \u0002 g D 0:\nThis equation is the fundamental one for deterministic thermostats.\nExample 8.1 To recover Nosé-Hoover, assume an even dimensional phase space,\nz D .q; p/, Nd degrees of freedom, and \u0012 2 R,\n˚ D \u0003\u0012\n\u0002 0\np\n\u0003\n;\ng.z/ D \u0006\u00021.p \u0002 rpH \u0003 NdkBT/:\nExample 8.2 Slightly more generally, let\n˚ D \u0012G.z/;\ng.\u0012; z/ D g.z/ D \u0006\u00021ŒrzH \u0003 kBTrz\t \u0002 G.z/:\n"
+            }
+          ],
+          "numbered_equations": [],
+          "transcription_note": "文字层逐字保留；数学排版另行转写，原页中的特殊字形编码不静默替换。",
+          "context_notation": [],
+          "extra_assumptions": [
+            "覆盖总散度乘积公式；按z/ξ分拆四项的分量等式与完整连续性方程解理论另列缺口。",
+            "[EXTRA/范围说明] 保留总散度展开的范围说明；四项分块恒等式和完整连续性方程不得算作本条已形式覆盖。"
+          ],
+          "issues": [],
+          "statement_scope": "实际Fréchet散度的乘积展开；未声称连续性方程解的存在唯一性。",
+          "lean_decl": "MD.Ch08.continuityRHS",
+          "lean_declarations": [
+            "MD.Ch08.continuityRHS",
+            "MD.Ch08.continuity_productRule"
+          ],
+          "source_page_verification": "本次R1审校：已比对R1_PAGES.pdf附件第16,17页的页面图像及文字层；以页面数学排版为准。",
+          "repair_log": [],
+          "documented_priors": []
+        },
+        "issues": [
+          {
+            "stage": "A",
+            "code": "IRRELEVANT_TRANSCRIPTION_NOTE",
+            "detail": "transcription_note末句“PDF420仅取Exercises之前”与本批PDF350–359及附件21页无关，应删除。"
+          },
+          {
+            "stage": "A",
+            "code": "STALE_VERIFICATION_REFERENCE",
+            "detail": "source_page_verification引用未在本任务中提供的source_page_checks.json，不能作为本次审校证据；改为本次附件定位。"
+          },
+          {
+            "stage": "C",
+            "code": "EXPLICIT_SCOPE_OR_EXTRA_CLARIFICATION",
+            "detail": "保留总散度展开的范围说明；四项分块恒等式和完整连续性方程不得算作本条已形式覆盖。"
+          }
+        ],
+        "evidence": [
+          {
+            "stage": "A",
+            "attachment": "R1_PAGES.pdf",
+            "attachment_pages": [
+              16,
+              17
+            ],
+            "original_pdf_pages": "357–358",
+            "printed_pages": "336–337",
+            "finding": "已逐条比对英文正文、数学排版、所列公式编号与本条statement_latex；statement_verbatim与original_page_text拼接一致。现有控制字符、数学字形乱码、连字与提取换行属于已声明的文字层编码；不同提取器的字符顺序不同，不据此伪报原书内容错误。PDF数学排版优先。"
+          },
+          {
+            "stage": "C",
+            "definition_evidence": "本任务完整本条Lean、项目依赖定义体及附录D1–D25；div定义为Fréchet导数的迹，驻定为∀z,div(ρF)=0。仅只读核对签名和语义，不修改工程、不补证明，不以sorry判FAIL。",
+            "finding": "F是整个乘积空间上的任意向量场，ρ实值，二者仅需在给定z可微。continuityRHS为−div(ρF)，所断言−Dρ[F]−ρ div F符号和乘积次序正确，依赖项目textbookDivergence_density类型精确匹配。把F代入一般热浴场并按两个坐标块拆开可得四项，但本声明未实际列四项、未陈述时间依赖PDE解。"
+          }
+        ]
+      },
+      "audit": {
+        "lean_decl": [
+          "MD.Ch08.continuityRHS",
+          "MD.Ch08.continuity_productRule"
+        ],
+        "verdict": "PASS",
+        "explanation": "F是整个乘积空间上的任意向量场，ρ实值，二者仅需在给定z可微。continuityRHS为−div(ρF)，所断言−Dρ[F]−ρ div F符号和乘积次序正确，依赖项目textbookDivergence_density类型精确匹配。把F代入一般热浴场并按两个坐标块拆开可得四项，但本声明未实际列四项、未陈述时间依赖PDE解。",
+        "counterexample": null,
+        "suggested_fix": "保留总散度展开的范围说明；四项分块恒等式和完整连续性方程不得算作本条已形式覆盖。"
+      },
+      "subtask": "BATCH03c",
+      "input_sha256": {
+        "Blueprint/Ch08.lean": "2800812fadd8e2557013f1941e4570401f7903d46f44baf07e23d5531da22a72",
+        "blueprint/ch08/ch08_source.json": "9b994b0f64cd22c85c2ad4123fbfdbd064bd7a6d070fe13b721794432f9f7a63",
+        "BATCH03c_PAGES.pdf": "9776fb2dc30923255a4e2719be2b22146cf59f1a09f9b1c8f58ec3b37a66f47a"
+      }
+    },
+    {
+      "source_id": "MD-8.2.1-ThermostatCriterion",
+      "json_review": {
+        "status": "CORRECTED",
+        "issue_codes": [
+          "IRRELEVANT_TRANSCRIPTION_NOTE",
+          "STALE_VERIFICATION_REFERENCE",
+          "EXPLICIT_SCOPE_OR_EXTRA_CLARIFICATION"
+        ],
+        "corrected_json": {
+          "source_id": "MD-8.2.1-ThermostatCriterion",
+          "kind": "unnumbered_claim",
+          "label": null,
+          "section": "8.2.1",
+          "printed_page": "337",
+          "pdf_page": "358",
+          "statement_latex": "- [∇z-β∇zH]·Φ + βξᵀμ⁻¹g - ∇ξ·g=0 is the fundamental equation for deterministic thermostats.",
+          "statement_verbatim": "8.2\nMore General Deterministic Thermostats\n337\nWe divide this into four parts: L\u0004\u0005 D W1 C W2 C W3 C W4, where\nW1 D \u0003.rz\u0005/ \u0002 .JrzH C ˚/; W2 D \u0003\u0005rz \u0002 .JrzH C ˚/;\nW3 D \u0003.r\u0002\u0005/ \u0002 g;\nW4 D \u0003\u0005r\u0002 \u0002 g:\nWe seek perturbations of Hamiltonian dynamics with separable equilibria, i.e., such\nthat \u0005 D \u0005ˇ.H.z// O\u0005.\u0002/ is a stationary solution.\nTaking this as an ansatz, the ﬁrst term can be simpliﬁed as follows:\nW1 D \u0003 O\u0005.\u0002/\u00050\nˇ.H/rzH \u0002 .JrzH C ˚/\nD ˇ O\u0005.\u0002/\u0005ˇ.H/rzH \u0002 ˚ D ˇ\u0005rzH \u0002 ˚\nas J is skew-symmetric.\nUsing the volume preservation of Hamiltonian systems, the second term satisﬁes\nW2 D \u0003\u0005rz \u0002 .JrzH C ˚/ D \u0003\u0005rz \u0002 ˚;\nhence\nW1 C W2 D \u0003\u0005Œrz \u0003 ˇrzH\t \u0002 ˚:\nThere are many possibilities for the distribution of \u0002, of course, but we will\nassume this is Gaussian for simplicity: O\u0005.\u0002/\nD\nexp\n\u0004\n\u0003ˇ Pm\niD1 \u0006i\u00122\ni =2\n\u0005\nD\nexp.\u0003ˇ\u0002T\u0007\u00021\u0002=2/ to get\nW3 D \u0003.r\u0002\u0005/ \u0002 g.\u0002; z/ D ˇ\u0005\u0002T\u0007\u00021g:\nFinally, for an equilibrium solution we must have W1 C W2 C W3 C W4 D 0, so\n\u0003Œrz \u0003 ˇrzH\t \u0002 ˚ C ˇ\u0002T\u0007\u00021g \u0003 r\u0002 \u0002 g D 0:\nThis equation is the fundamental one for deterministic thermostats.\nExample 8.1 To recover Nosé-Hoover, assume an even dimensional phase space,\nz D .q; p/, Nd degrees of freedom, and \u0012 2 R,\n˚ D \u0003\u0012\n\u0002 0\np\n\u0003\n;\ng.z/ D \u0006\u00021.p \u0002 rpH \u0003 NdkBT/:\nExample 8.2 Slightly more generally, let\n˚ D \u0012G.z/;\ng.\u0012; z/ D g.z/ D \u0006\u00021ŒrzH \u0003 kBTrz\t \u0002 G.z/:\n",
+          "verbatim_scope": "完整对应原页文字层，逐字保留；本条数学成分由statement_latex及statement_scope定位。",
+          "proof_latex": null,
+          "proof_note": "对应原页推导逐字保存在statement_verbatim/original_page_text；排版以原页PDF为准。",
+          "original_page_text": [
+            {
+              "pdf_page": 358,
+              "printed_page": 337,
+              "text": "8.2\nMore General Deterministic Thermostats\n337\nWe divide this into four parts: L\u0004\u0005 D W1 C W2 C W3 C W4, where\nW1 D \u0003.rz\u0005/ \u0002 .JrzH C ˚/; W2 D \u0003\u0005rz \u0002 .JrzH C ˚/;\nW3 D \u0003.r\u0002\u0005/ \u0002 g;\nW4 D \u0003\u0005r\u0002 \u0002 g:\nWe seek perturbations of Hamiltonian dynamics with separable equilibria, i.e., such\nthat \u0005 D \u0005ˇ.H.z// O\u0005.\u0002/ is a stationary solution.\nTaking this as an ansatz, the ﬁrst term can be simpliﬁed as follows:\nW1 D \u0003 O\u0005.\u0002/\u00050\nˇ.H/rzH \u0002 .JrzH C ˚/\nD ˇ O\u0005.\u0002/\u0005ˇ.H/rzH \u0002 ˚ D ˇ\u0005rzH \u0002 ˚\nas J is skew-symmetric.\nUsing the volume preservation of Hamiltonian systems, the second term satisﬁes\nW2 D \u0003\u0005rz \u0002 .JrzH C ˚/ D \u0003\u0005rz \u0002 ˚;\nhence\nW1 C W2 D \u0003\u0005Œrz \u0003 ˇrzH\t \u0002 ˚:\nThere are many possibilities for the distribution of \u0002, of course, but we will\nassume this is Gaussian for simplicity: O\u0005.\u0002/\nD\nexp\n\u0004\n\u0003ˇ Pm\niD1 \u0006i\u00122\ni =2\n\u0005\nD\nexp.\u0003ˇ\u0002T\u0007\u00021\u0002=2/ to get\nW3 D \u0003.r\u0002\u0005/ \u0002 g.\u0002; z/ D ˇ\u0005\u0002T\u0007\u00021g:\nFinally, for an equilibrium solution we must have W1 C W2 C W3 C W4 D 0, so\n\u0003Œrz \u0003 ˇrzH\t \u0002 ˚ C ˇ\u0002T\u0007\u00021g \u0003 r\u0002 \u0002 g D 0:\nThis equation is the fundamental one for deterministic thermostats.\nExample 8.1 To recover Nosé-Hoover, assume an even dimensional phase space,\nz D .q; p/, Nd degrees of freedom, and \u0012 2 R,\n˚ D \u0003\u0012\n\u0002 0\np\n\u0003\n;\ng.z/ D \u0006\u00021.p \u0002 rpH \u0003 NdkBT/:\nExample 8.2 Slightly more generally, let\n˚ D \u0012G.z/;\ng.\u0012; z/ D g.z/ D \u0006\u00021ŒrzH \u0003 kBTrz\t \u0002 G.z/:\n"
+            }
+          ],
+          "numbered_equations": [],
+          "transcription_note": "文字层逐字保留；数学排版另行转写，原页中的特殊字形编码不静默替换。",
+          "context_notation": [],
+          "extra_assumptions": [
+            "原文μ_i在指数中是热质量，统一写Q_i；矩阵μ⁻¹的记号按对角热质量解释。归一化概率密度需另加有限正配分积分。",
+            "[EXTRA/范围说明] 补充明确记号字典Q_i=原文标量μ_i，原文矩阵μ⁻¹=diag(Q_i)，矩阵μ=diag(1/Q_i)。若原书 intended μ=diag(μ_i)，则该矩阵记号需[ERRATUM?]人工确认。"
+          ],
+          "issues": [],
+          "statement_scope": "给定正参数与光滑性后，局部Liouville驻定与所列标量散度条件的等价目标。",
+          "lean_decl": "MD.Ch08.thermalWeight",
+          "lean_declarations": [
+            "MD.Ch08.thermalWeight",
+            "MD.Ch08.thermostatCriterion"
+          ],
+          "source_page_verification": "本次R1审校：已比对R1_PAGES.pdf附件第18页的页面图像及文字层；以页面数学排版为准。",
+          "repair_log": [],
+          "documented_priors": []
+        },
+        "issues": [
+          {
+            "stage": "A",
+            "code": "IRRELEVANT_TRANSCRIPTION_NOTE",
+            "detail": "transcription_note末句“PDF420仅取Exercises之前”与本批PDF350–359及附件21页无关，应删除。"
+          },
+          {
+            "stage": "A",
+            "code": "STALE_VERIFICATION_REFERENCE",
+            "detail": "source_page_verification引用未在本任务中提供的source_page_checks.json，不能作为本次审校证据；改为本次附件定位。"
+          },
+          {
+            "stage": "C",
+            "code": "EXPLICIT_SCOPE_OR_EXTRA_CLARIFICATION",
+            "detail": "补充明确记号字典Q_i=原文标量μ_i，原文矩阵μ⁻¹=diag(Q_i)，矩阵μ=diag(1/Q_i)。若原书 intended μ=diag(μ_i)，则该矩阵记号需[ERRATUM?]人工确认。"
+          }
+        ],
+        "evidence": [
+          {
+            "stage": "A",
+            "attachment": "R1_PAGES.pdf",
+            "attachment_pages": [
+              18
+            ],
+            "original_pdf_pages": "358",
+            "printed_pages": "337",
+            "finding": "已逐条比对英文正文、数学排版、所列公式编号与本条statement_latex；statement_verbatim与original_page_text拼接一致。现有控制字符、数学字形乱码、连字与提取换行属于已声明的文字层编码；不同提取器的字符顺序不同，不据此伪报原书内容错误。PDF数学排版优先。"
+          },
+          {
+            "stage": "C",
+            "definition_evidence": "本任务完整本条Lean、项目依赖定义体及附录D1–D25；div定义为Fréchet导数的迹，驻定为∀z,div(ρF)=0。仅只读核对签名和语义，不修改工程、不补证明，不以sorry判FAIL。",
+            "finding": "thermalWeight用exp[−β(H+ΣQ_i ξ_i²/2)]。驻定等价条件含−div_z Φ+βDH[Φ]+βΣQ_i ξ_i g_i−div_ξ g=0，符号、权重系数和全状态量词均正确；J常反对称、H∈C²、Φ,g∈C¹及正β,Q均明确。原文同时写Σμ_iξ_i²和ξᵀμ⁻¹ξ，须把矩阵μ⁻¹解释为diag(Q_i)，而非把同一个对角矩阵及其逆混用；代码选定标量质量系数，解释已披露。"
+          },
+          {
+            "stage": "A",
+            "finding": "附件第18页同时出现标量和矩阵热质量记号；未擅自把原文μ⁻¹改成μ。代码Q_i的解释以Gaussian指数系数为准。"
+          }
+        ]
+      },
+      "audit": {
+        "lean_decl": [
+          "MD.Ch08.thermalWeight",
+          "MD.Ch08.thermostatCriterion"
+        ],
+        "verdict": "PASS",
+        "explanation": "thermalWeight用exp[−β(H+ΣQ_i ξ_i²/2)]。驻定等价条件含−div_z Φ+βDH[Φ]+βΣQ_i ξ_i g_i−div_ξ g=0，符号、权重系数和全状态量词均正确；J常反对称、H∈C²、Φ,g∈C¹及正β,Q均明确。原文同时写Σμ_iξ_i²和ξᵀμ⁻¹ξ，须把矩阵μ⁻¹解释为diag(Q_i)，而非把同一个对角矩阵及其逆混用；代码选定标量质量系数，解释已披露。",
+        "counterexample": null,
+        "suggested_fix": "补充明确记号字典Q_i=原文标量μ_i，原文矩阵μ⁻¹=diag(Q_i)，矩阵μ=diag(1/Q_i)。若原书 intended μ=diag(μ_i)，则该矩阵记号需[ERRATUM?]人工确认。"
+      },
+      "subtask": "BATCH03d",
+      "input_sha256": {
+        "Blueprint/Ch08.lean": "2800812fadd8e2557013f1941e4570401f7903d46f44baf07e23d5531da22a72",
+        "blueprint/ch08/ch08_source.json": "9b994b0f64cd22c85c2ad4123fbfdbd064bd7a6d070fe13b721794432f9f7a63",
+        "BATCH03d_PAGES.pdf": "cb070042328955367b7e007c6a0c51066297ec8acb044727fb80a3b3f56acfad"
+      }
+    },
+    {
+      "source_id": "MD-8.2.1-Examples81and82",
+      "json_review": {
+        "status": "NEEDS_HUMAN",
+        "issue_codes": [
+          "IRRELEVANT_TRANSCRIPTION_NOTE",
+          "STALE_VERIFICATION_REFERENCE",
+          "SOURCE_MATHEMATICAL_ERRATUM",
+          "FALSE_STATIONARITY_SIGNATURE"
+        ],
+        "corrected_json": {
+          "source_id": "MD-8.2.1-Examples81and82",
+          "kind": "unnumbered_claim",
+          "label": "Examples 8.1, 8.2",
+          "section": "8.2.1",
+          "printed_page": "337–338",
+          "pdf_page": "358–359",
+          "statement_latex": "Example 8.1 Φ=-ξ(0,p), g=μ⁻¹(p·∇pH-N_d k_BT). Example 8.2 Φ=ξG(z), g=μ⁻¹[∇H-k_BT∇]·G. Configurational choice G=(∇qK,0).",
+          "statement_verbatim": "8.2\nMore General Deterministic Thermostats\n337\nWe divide this into four parts: L\u0004\u0005 D W1 C W2 C W3 C W4, where\nW1 D \u0003.rz\u0005/ \u0002 .JrzH C ˚/; W2 D \u0003\u0005rz \u0002 .JrzH C ˚/;\nW3 D \u0003.r\u0002\u0005/ \u0002 g;\nW4 D \u0003\u0005r\u0002 \u0002 g:\nWe seek perturbations of Hamiltonian dynamics with separable equilibria, i.e., such\nthat \u0005 D \u0005ˇ.H.z// O\u0005.\u0002/ is a stationary solution.\nTaking this as an ansatz, the ﬁrst term can be simpliﬁed as follows:\nW1 D \u0003 O\u0005.\u0002/\u00050\nˇ.H/rzH \u0002 .JrzH C ˚/\nD ˇ O\u0005.\u0002/\u0005ˇ.H/rzH \u0002 ˚ D ˇ\u0005rzH \u0002 ˚\nas J is skew-symmetric.\nUsing the volume preservation of Hamiltonian systems, the second term satisﬁes\nW2 D \u0003\u0005rz \u0002 .JrzH C ˚/ D \u0003\u0005rz \u0002 ˚;\nhence\nW1 C W2 D \u0003\u0005Œrz \u0003 ˇrzH\t \u0002 ˚:\nThere are many possibilities for the distribution of \u0002, of course, but we will\nassume this is Gaussian for simplicity: O\u0005.\u0002/\nD\nexp\n\u0004\n\u0003ˇ Pm\niD1 \u0006i\u00122\ni =2\n\u0005\nD\nexp.\u0003ˇ\u0002T\u0007\u00021\u0002=2/ to get\nW3 D \u0003.r\u0002\u0005/ \u0002 g.\u0002; z/ D ˇ\u0005\u0002T\u0007\u00021g:\nFinally, for an equilibrium solution we must have W1 C W2 C W3 C W4 D 0, so\n\u0003Œrz \u0003 ˇrzH\t \u0002 ˚ C ˇ\u0002T\u0007\u00021g \u0003 r\u0002 \u0002 g D 0:\nThis equation is the fundamental one for deterministic thermostats.\nExample 8.1 To recover Nosé-Hoover, assume an even dimensional phase space,\nz D .q; p/, Nd degrees of freedom, and \u0012 2 R,\n˚ D \u0003\u0012\n\u0002 0\np\n\u0003\n;\ng.z/ D \u0006\u00021.p \u0002 rpH \u0003 NdkBT/:\nExample 8.2 Slightly more generally, let\n˚ D \u0012G.z/;\ng.\u0012; z/ D g.z/ D \u0006\u00021ŒrzH \u0003 kBTrz\t \u0002 G.z/:\n\n338\n8\nExtended Variable Methods\nThis is a slightly generalized form of the technique suggested by Bulgac and\nKusnezov [58].\nAssuming \u0005 goes to zero sufﬁciently rapidly at inﬁnity, we have\nZ\nrz \u0002 G.z/\u0005d! D \u0003\nZ\n.rz\u0005/ \u0002 G.z/d! D ˇ\nZ\nrzH \u0002 G.z/\u0005d!;\nusing integration by parts, therefore, since ˇ\u00021 D kBT,\nT D k\u00021\nB\nhrzH \u0002 Gi\nhr \u0002 Gi ;\nwhich gives formulas for temperature in terms of phase space averages (compare\nChap. 6, Proposition 6.1).\nSuppose we let K be a scalar valued function of position, and set\nG.z/ D\n\u0002 rqK.q/\n0\n\u0003\nthen we arrive at\ng.z/ D \u0006\u00021ŒrqU \u0003 kBTrq\t \u0002 rqK.q/:\nThis is an example of a “conﬁgurational thermostat” [193, 211, 319].\nA useful fact about thermostats is the following:\nProposition 8.1 (Thermostats are Additive) Suppose we are given two ther-\nmostats,\nPz D JrH C ˚1.\u0002; z/;\nP\u0002 D g1.\u0002; z/;\nwith stationary density O\u00051.\u0002/\u0005ˇ, and another\nPz D JrH C ˚2.\u0003; z/;\nP\u0003 D g2.\u0003; z/;\nwith stationary density O\u00052.\u0003/\u0005ˇ, then\nPz D JrH C ˚1.\u0002; z/ C ˚2.\u0003; z/;\nP\u0002 D g1.\u0002; z/;\nP\u0003 D g2.\u0003; z/\nis another thermostat and has stationary density Q\u0005 D O\u00051.\u0002/ O\u00052.\u0003/\u0005ˇ.\n",
+          "verbatim_scope": "完整对应原页文字层，逐字保留；本条数学成分由statement_latex及statement_scope定位。",
+          "proof_latex": null,
+          "proof_note": "对应原页推导逐字保存在statement_verbatim/original_page_text；排版以原页PDF为准。",
+          "original_page_text": [
+            {
+              "pdf_page": 358,
+              "printed_page": 337,
+              "text": "8.2\nMore General Deterministic Thermostats\n337\nWe divide this into four parts: L\u0004\u0005 D W1 C W2 C W3 C W4, where\nW1 D \u0003.rz\u0005/ \u0002 .JrzH C ˚/; W2 D \u0003\u0005rz \u0002 .JrzH C ˚/;\nW3 D \u0003.r\u0002\u0005/ \u0002 g;\nW4 D \u0003\u0005r\u0002 \u0002 g:\nWe seek perturbations of Hamiltonian dynamics with separable equilibria, i.e., such\nthat \u0005 D \u0005ˇ.H.z// O\u0005.\u0002/ is a stationary solution.\nTaking this as an ansatz, the ﬁrst term can be simpliﬁed as follows:\nW1 D \u0003 O\u0005.\u0002/\u00050\nˇ.H/rzH \u0002 .JrzH C ˚/\nD ˇ O\u0005.\u0002/\u0005ˇ.H/rzH \u0002 ˚ D ˇ\u0005rzH \u0002 ˚\nas J is skew-symmetric.\nUsing the volume preservation of Hamiltonian systems, the second term satisﬁes\nW2 D \u0003\u0005rz \u0002 .JrzH C ˚/ D \u0003\u0005rz \u0002 ˚;\nhence\nW1 C W2 D \u0003\u0005Œrz \u0003 ˇrzH\t \u0002 ˚:\nThere are many possibilities for the distribution of \u0002, of course, but we will\nassume this is Gaussian for simplicity: O\u0005.\u0002/\nD\nexp\n\u0004\n\u0003ˇ Pm\niD1 \u0006i\u00122\ni =2\n\u0005\nD\nexp.\u0003ˇ\u0002T\u0007\u00021\u0002=2/ to get\nW3 D \u0003.r\u0002\u0005/ \u0002 g.\u0002; z/ D ˇ\u0005\u0002T\u0007\u00021g:\nFinally, for an equilibrium solution we must have W1 C W2 C W3 C W4 D 0, so\n\u0003Œrz \u0003 ˇrzH\t \u0002 ˚ C ˇ\u0002T\u0007\u00021g \u0003 r\u0002 \u0002 g D 0:\nThis equation is the fundamental one for deterministic thermostats.\nExample 8.1 To recover Nosé-Hoover, assume an even dimensional phase space,\nz D .q; p/, Nd degrees of freedom, and \u0012 2 R,\n˚ D \u0003\u0012\n\u0002 0\np\n\u0003\n;\ng.z/ D \u0006\u00021.p \u0002 rpH \u0003 NdkBT/:\nExample 8.2 Slightly more generally, let\n˚ D \u0012G.z/;\ng.\u0012; z/ D g.z/ D \u0006\u00021ŒrzH \u0003 kBTrz\t \u0002 G.z/:\n"
+            },
+            {
+              "pdf_page": 359,
+              "printed_page": 338,
+              "text": "338\n8\nExtended Variable Methods\nThis is a slightly generalized form of the technique suggested by Bulgac and\nKusnezov [58].\nAssuming \u0005 goes to zero sufﬁciently rapidly at inﬁnity, we have\nZ\nrz \u0002 G.z/\u0005d! D \u0003\nZ\n.rz\u0005/ \u0002 G.z/d! D ˇ\nZ\nrzH \u0002 G.z/\u0005d!;\nusing integration by parts, therefore, since ˇ\u00021 D kBT,\nT D k\u00021\nB\nhrzH \u0002 Gi\nhr \u0002 Gi ;\nwhich gives formulas for temperature in terms of phase space averages (compare\nChap. 6, Proposition 6.1).\nSuppose we let K be a scalar valued function of position, and set\nG.z/ D\n\u0002 rqK.q/\n0\n\u0003\nthen we arrive at\ng.z/ D \u0006\u00021ŒrqU \u0003 kBTrq\t \u0002 rqK.q/:\nThis is an example of a “conﬁgurational thermostat” [193, 211, 319].\nA useful fact about thermostats is the following:\nProposition 8.1 (Thermostats are Additive) Suppose we are given two ther-\nmostats,\nPz D JrH C ˚1.\u0002; z/;\nP\u0002 D g1.\u0002; z/;\nwith stationary density O\u00051.\u0002/\u0005ˇ, and another\nPz D JrH C ˚2.\u0003; z/;\nP\u0003 D g2.\u0003; z/;\nwith stationary density O\u00052.\u0003/\u0005ˇ, then\nPz D JrH C ˚1.\u0002; z/ C ˚2.\u0003; z/;\nP\u0002 D g1.\u0002; z/;\nP\u0003 D g2.\u0003; z/\nis another thermostat and has stationary density Q\u0005 D O\u00051.\u0002/ O\u00052.\u0003/\u0005ˇ.\n"
+            }
+          ],
+          "numbered_equations": [],
+          "transcription_note": "文字层逐字保留；数学排版另行转写，原页中的特殊字形编码不静默替换。",
+          "context_notation": [],
+          "extra_assumptions": [
+            "Example8.1使用此前完整NH定义；本条单热浴一般G与构型反馈公式，构型全场与驻定证明未单列。"
+          ],
+          "issues": [
+            "[ERRATUM?] 例8.2正号耦合与所印正反馈不能保持所列高斯Gibbs权；额外generalizedFeedback_stationary签名错误，见本次审校反例。"
+          ],
+          "statement_scope": "单热浴一般G反馈及构型反馈公式、一般G的局部驻定目标；Example8.1由NH另条覆盖。",
+          "lean_decl": "MD.Ch08.generalizedFeedback",
+          "lean_declarations": [
+            "MD.Ch08.generalizedFeedback",
+            "MD.Ch08.configurationalFeedback",
+            "MD.Ch08.generalizedFeedback_stationary"
+          ],
+          "source_page_verification": "本次R1审校：已比对R1_PAGES.pdf附件第19,20页的页面图像及文字层；以页面数学排版为准。",
+          "repair_log": [],
+          "documented_priors": []
+        },
+        "issues": [
+          {
+            "stage": "A",
+            "code": "IRRELEVANT_TRANSCRIPTION_NOTE",
+            "detail": "transcription_note末句“PDF420仅取Exercises之前”与本批PDF350–359及附件21页无关，应删除。"
+          },
+          {
+            "stage": "A",
+            "code": "STALE_VERIFICATION_REFERENCE",
+            "detail": "source_page_verification引用未在本任务中提供的source_page_checks.json，不能作为本次审校证据；改为本次附件定位。"
+          },
+          {
+            "stage": "A/C",
+            "code": "SOURCE_MATHEMATICAL_ERRATUM",
+            "detail": "generalizedFeedback和configurationalFeedback逐项忠实转写例8.2与构型公式；但与正号耦合Φ=+ξG及高斯exp[−β(H+Qξ²/2)]组合时，generalizedFeedback_stationary是错误命题，不能因有sorry而忽略其签名问题。令A=βDH[G]−div G，驻定条件变成ξA+βQξg=2ξA，而不是0。原书例8.2的正号组合本身也有数学疑误，须NEEDS_HUMAN；额外驻定定理没有Printed/literal标识，故该签名判FAIL。"
+          },
+          {
+            "stage": "C",
+            "code": "FALSE_STATIONARITY_SIGNATURE",
+            "detail": "n=1，J=0，H(x)=x²/2，G(x)=1，β=Q=1，均满足全部光滑性及正性前提。代码给F(x,ξ)=(ξ,x)，ρ=exp[−(x²+ξ²)/2]。在(x,ξ)=(1,1)，div(ρF)=−2 exp(−1)≠0。"
+          }
+        ],
+        "evidence": [
+          {
+            "stage": "A",
+            "attachment": "R1_PAGES.pdf",
+            "attachment_pages": [
+              19,
+              20
+            ],
+            "original_pdf_pages": "358–359",
+            "printed_pages": "337–338",
+            "finding": "已逐条比对英文正文、数学排版、所列公式编号与本条statement_latex；statement_verbatim与original_page_text拼接一致。现有控制字符、数学字形乱码、连字与提取换行属于已声明的文字层编码；不同提取器的字符顺序不同，不据此伪报原书内容错误。PDF数学排版优先。"
+          },
+          {
+            "stage": "C",
+            "definition_evidence": "本任务完整本条Lean、项目依赖定义体及附录D1–D25；div定义为Fréchet导数的迹，驻定为∀z,div(ρF)=0。仅只读核对签名和语义，不修改工程、不补证明，不以sorry判FAIL。",
+            "finding": "generalizedFeedback和configurationalFeedback逐项忠实转写例8.2与构型公式；但与正号耦合Φ=+ξG及高斯exp[−β(H+Qξ²/2)]组合时，generalizedFeedback_stationary是错误命题，不能因有sorry而忽略其签名问题。令A=βDH[G]−div G，驻定条件变成ξA+βQξg=2ξA，而不是0。原书例8.2的正号组合本身也有数学疑误，须NEEDS_HUMAN；额外驻定定理没有Printed/literal标识，故该签名判FAIL。"
+          }
+        ]
+      },
+      "audit": {
+        "lean_decl": [
+          "MD.Ch08.generalizedFeedback",
+          "MD.Ch08.configurationalFeedback",
+          "MD.Ch08.generalizedFeedback_stationary"
+        ],
+        "verdict": "FAIL",
+        "explanation": "generalizedFeedback和configurationalFeedback逐项忠实转写例8.2与构型公式；但与正号耦合Φ=+ξG及高斯exp[−β(H+Qξ²/2)]组合时，generalizedFeedback_stationary是错误命题，不能因有sorry而忽略其签名问题。令A=βDH[G]−div G，驻定条件变成ξA+βQξg=2ξA，而不是0。原书例8.2的正号组合本身也有数学疑误，须NEEDS_HUMAN；额外驻定定理没有Printed/literal标识，故该签名判FAIL。",
+        "counterexample": "n=1，J=0，H(x)=x²/2，G(x)=1，β=Q=1，均满足全部光滑性及正性前提。代码给F(x,ξ)=(ξ,x)，ρ=exp[−(x²+ξ²)/2]。在(x,ξ)=(1,1)，div(ρF)=−2 exp(−1)≠0。",
+        "suggested_fix": "[ERRATUM?] 忠实原文的两个反馈def可保留并标Printed/literal；正确驻定版应取Φ=−ξG，或保留Φ=+ξG而改g=(div G/β−DH[G])/Q。构型反馈若配正号耦合也须相应反号。例8.1的负号耦合与正反馈不受影响。"
+      },
+      "subtask": "BATCH03e",
+      "input_sha256": {
+        "Blueprint/Ch08.lean": "2800812fadd8e2557013f1941e4570401f7903d46f44baf07e23d5531da22a72",
+        "blueprint/ch08/ch08_source.json": "9b994b0f64cd22c85c2ad4123fbfdbd064bd7a6d070fe13b721794432f9f7a63",
+        "BATCH03e_PAGES.pdf": "9c064f884d66606b9880b372d10599b35ec046c8e38420d996d02dd5b5898b5d"
+      }
+    },
+    {
+      "source_id": "MD-8.2.1-TemperatureIdentity",
+      "json_review": {
+        "status": "CORRECTED",
+        "issue_codes": [
+          "IRRELEVANT_TRANSCRIPTION_NOTE",
+          "STALE_VERIFICATION_REFERENCE",
+          "EXPLICIT_SCOPE_OR_EXTRA_CLARIFICATION"
+        ],
+        "corrected_json": {
+          "source_id": "MD-8.2.1-TemperatureIdentity",
+          "kind": "unnumbered_claim",
+          "label": null,
+          "section": "8.2.1",
+          "printed_page": "338",
+          "pdf_page": "359",
+          "statement_latex": "∫ divG ρ dω = -∫∇ρ·G dω = β∫∇H·G ρ dω. T=k_B⁻¹〈∇H·G〉/〈divG〉.",
+          "statement_verbatim": "338\n8\nExtended Variable Methods\nThis is a slightly generalized form of the technique suggested by Bulgac and\nKusnezov [58].\nAssuming \u0005 goes to zero sufﬁciently rapidly at inﬁnity, we have\nZ\nrz \u0002 G.z/\u0005d! D \u0003\nZ\n.rz\u0005/ \u0002 G.z/d! D ˇ\nZ\nrzH \u0002 G.z/\u0005d!;\nusing integration by parts, therefore, since ˇ\u00021 D kBT,\nT D k\u00021\nB\nhrzH \u0002 Gi\nhr \u0002 Gi ;\nwhich gives formulas for temperature in terms of phase space averages (compare\nChap. 6, Proposition 6.1).\nSuppose we let K be a scalar valued function of position, and set\nG.z/ D\n\u0002 rqK.q/\n0\n\u0003\nthen we arrive at\ng.z/ D \u0006\u00021ŒrqU \u0003 kBTrq\t \u0002 rqK.q/:\nThis is an example of a “conﬁgurational thermostat” [193, 211, 319].\nA useful fact about thermostats is the following:\nProposition 8.1 (Thermostats are Additive) Suppose we are given two ther-\nmostats,\nPz D JrH C ˚1.\u0002; z/;\nP\u0002 D g1.\u0002; z/;\nwith stationary density O\u00051.\u0002/\u0005ˇ, and another\nPz D JrH C ˚2.\u0003; z/;\nP\u0003 D g2.\u0003; z/;\nwith stationary density O\u00052.\u0003/\u0005ˇ, then\nPz D JrH C ˚1.\u0002; z/ C ˚2.\u0003; z/;\nP\u0002 D g1.\u0002; z/;\nP\u0003 D g2.\u0003; z/\nis another thermostat and has stationary density Q\u0005 D O\u00051.\u0002/ O\u00052.\u0003/\u0005ˇ.\n",
+          "verbatim_scope": "完整对应原页文字层，逐字保留；本条数学成分由statement_latex及statement_scope定位。",
+          "proof_latex": null,
+          "proof_note": "对应原页推导逐字保存在statement_verbatim/original_page_text；排版以原页PDF为准。",
+          "original_page_text": [
+            {
+              "pdf_page": 359,
+              "printed_page": 338,
+              "text": "338\n8\nExtended Variable Methods\nThis is a slightly generalized form of the technique suggested by Bulgac and\nKusnezov [58].\nAssuming \u0005 goes to zero sufﬁciently rapidly at inﬁnity, we have\nZ\nrz \u0002 G.z/\u0005d! D \u0003\nZ\n.rz\u0005/ \u0002 G.z/d! D ˇ\nZ\nrzH \u0002 G.z/\u0005d!;\nusing integration by parts, therefore, since ˇ\u00021 D kBT,\nT D k\u00021\nB\nhrzH \u0002 Gi\nhr \u0002 Gi ;\nwhich gives formulas for temperature in terms of phase space averages (compare\nChap. 6, Proposition 6.1).\nSuppose we let K be a scalar valued function of position, and set\nG.z/ D\n\u0002 rqK.q/\n0\n\u0003\nthen we arrive at\ng.z/ D \u0006\u00021ŒrqU \u0003 kBTrq\t \u0002 rqK.q/:\nThis is an example of a “conﬁgurational thermostat” [193, 211, 319].\nA useful fact about thermostats is the following:\nProposition 8.1 (Thermostats are Additive) Suppose we are given two ther-\nmostats,\nPz D JrH C ˚1.\u0002; z/;\nP\u0002 D g1.\u0002; z/;\nwith stationary density O\u00051.\u0002/\u0005ˇ, and another\nPz D JrH C ˚2.\u0003; z/;\nP\u0003 D g2.\u0003; z/;\nwith stationary density O\u00052.\u0003/\u0005ˇ, then\nPz D JrH C ˚1.\u0002; z/ C ˚2.\u0003; z/;\nP\u0002 D g1.\u0002; z/;\nP\u0003 D g2.\u0003; z/\nis another thermostat and has stationary density Q\u0005 D O\u00051.\u0002/ O\u00052.\u0003/\u0005ˇ.\n"
+            }
+          ],
+          "numbered_equations": [],
+          "transcription_note": "文字层逐字保留；数学排版另行转写，原页中的特殊字形编码不静默替换。",
+          "context_notation": [],
+          "extra_assumptions": [
+            "以G紧支撑替代原文未量化的足够快边界衰减；温度比值解释另要求k_B>0、分母非零。",
+            "[EXTRA/范围说明] 保留紧支撑替代衰减的[EXTRA]；若解释归一平均或推导T，须另外有有限正配分函数、kB>0、分母非零及β⁻¹=kB T。"
+          ],
+          "issues": [],
+          "statement_scope": "紧支撑G的Gibbs积分分部目标及温度比值定义；一般边界衰减条件和比值推导未另证。",
+          "lean_decl": "MD.Ch08.temperatureIdentity",
+          "lean_declarations": [
+            "MD.Ch08.temperatureIdentity",
+            "MD.Ch08.phaseTemperature"
+          ],
+          "source_page_verification": "本次R1审校：已比对R1_PAGES.pdf附件第21页的页面图像及文字层；以页面数学排版为准。",
+          "repair_log": [],
+          "documented_priors": []
+        },
+        "issues": [
+          {
+            "stage": "A",
+            "code": "IRRELEVANT_TRANSCRIPTION_NOTE",
+            "detail": "transcription_note末句“PDF420仅取Exercises之前”与本批PDF350–359及附件21页无关，应删除。"
+          },
+          {
+            "stage": "A",
+            "code": "STALE_VERIFICATION_REFERENCE",
+            "detail": "source_page_verification引用未在本任务中提供的source_page_checks.json，不能作为本次审校证据；改为本次附件定位。"
+          },
+          {
+            "stage": "C",
+            "code": "EXPLICIT_SCOPE_OR_EXTRA_CLARIFICATION",
+            "detail": "保留紧支撑替代衰减的[EXTRA]；若解释归一平均或推导T，须另外有有限正配分函数、kB>0、分母非零及β⁻¹=kB T。"
+          }
+        ],
+        "evidence": [
+          {
+            "stage": "A",
+            "attachment": "R1_PAGES.pdf",
+            "attachment_pages": [
+              21
+            ],
+            "original_pdf_pages": "359",
+            "printed_pages": "338",
+            "finding": "已逐条比对英文正文、数学排版、所列公式编号与本条statement_latex；statement_verbatim与original_page_text拼接一致。现有控制字符、数学字形乱码、连字与提取换行属于已声明的文字层编码；不同提取器的字符顺序不同，不据此伪报原书内容错误。PDF数学排版优先。"
+          },
+          {
+            "stage": "C",
+            "definition_evidence": "本任务完整本条Lean、项目依赖定义体及附录D1–D25；div定义为Fréchet导数的迹，驻定为∀z,div(ρF)=0。仅只读核对签名和语义，不修改工程、不补证明，不以sorry判FAIL。",
+            "finding": "Vec n上的Lebesgue积分；H∈C²、G∈C¹且紧支撑，正β。紧支撑使Gρ及其散度相关被积函数具有紧支撑，足够保证积分分部边界项为零；结论∫divG ρ=β∫DH[G]ρ正确，不需全空间配分函数有限。phaseTemperature为numerator/(kB*denominator)，等于原页比值，但只是总函数定义，没有证明等于给定物理T。"
+          }
+        ]
+      },
+      "audit": {
+        "lean_decl": [
+          "MD.Ch08.temperatureIdentity",
+          "MD.Ch08.phaseTemperature"
+        ],
+        "verdict": "PASS",
+        "explanation": "Vec n上的Lebesgue积分；H∈C²、G∈C¹且紧支撑，正β。紧支撑使Gρ及其散度相关被积函数具有紧支撑，足够保证积分分部边界项为零；结论∫divG ρ=β∫DH[G]ρ正确，不需全空间配分函数有限。phaseTemperature为numerator/(kB*denominator)，等于原页比值，但只是总函数定义，没有证明等于给定物理T。",
+        "counterexample": null,
+        "suggested_fix": "保留紧支撑替代衰减的[EXTRA]；若解释归一平均或推导T，须另外有有限正配分函数、kB>0、分母非零及β⁻¹=kB T。"
+      },
+      "subtask": "BATCH03f",
+      "input_sha256": {
+        "Blueprint/Ch08.lean": "2800812fadd8e2557013f1941e4570401f7903d46f44baf07e23d5531da22a72",
+        "blueprint/ch08/ch08_source.json": "9b994b0f64cd22c85c2ad4123fbfdbd064bd7a6d070fe13b721794432f9f7a63",
+        "BATCH03f_PAGES.pdf": "ddbc3141be289a4bf9c543a931dbb793a74bbdc675dcc6ef9940d4a34ccdacfa"
+      }
+    }
+  ],
+  "merged_from": "ch08_first_merged"
+}

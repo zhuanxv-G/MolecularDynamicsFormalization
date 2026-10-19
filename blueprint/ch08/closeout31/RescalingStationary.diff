@@ -1,0 +1,11 @@
+--- first-round
++++ repaired
+@@ -3,7 +3,7 @@
+     (hρ : probabilityDensity volume (fun z : Phase n ↦
+       Real.exp (-(kineticTwice (fun _ ↦ 1) z.2/2+U z.1)/θ)/Z))
+     (f : Phase n → ℝ) (hf : ContDiff ℝ ∞ f) (hc : HasCompactSupport f)
+-    (havoid : ∀ z ∈ Function.support f, z.2 ≠ 0) :
++    (havoid : ∀ z ∈ tsupport f, z.2 ≠ 0) :
+     (∫ z, (fderiv ℝ f z (rescalingDrift U Φ θ z) +
+       fderiv ℝ (fun x ↦ fderiv ℝ f x (rescalingNoise Φ θ z)) z (rescalingNoise Φ θ z)/2) *
+       (Real.exp (-(kineticTwice (fun _ ↦ 1) z.2/2+U z.1)/θ)/Z)) = 0 := by

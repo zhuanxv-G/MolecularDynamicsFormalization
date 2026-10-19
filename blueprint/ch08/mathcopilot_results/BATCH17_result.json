@@ -1,0 +1,289 @@
+{
+  "batch": "BATCH17",
+  "chapter": "ch08",
+  "round": "first-merged",
+  "input_sha256": {
+    "Blueprint/Ch08.lean": "2800812fadd8e2557013f1941e4570401f7903d46f44baf07e23d5531da22a72",
+    "blueprint/ch08/ch08_source.json": "9b994b0f64cd22c85c2ad4123fbfdbd064bd7a6d070fe13b721794432f9f7a63"
+  },
+  "items": [
+    {
+      "source_id": "MD-8.9.3-PairwiseCanonicalWeight",
+      "json_review": {
+        "status": "APPROVED",
+        "issue_codes": [],
+        "corrected_json": null,
+        "issues": [],
+        "evidence": {
+          "source_text_comparison": "以附件实际文字层逐字比较；18页均与 original_page_text 完全相同，statement_verbatim 为各页文本以单个换行连接，未替换控制字符、连字、断行或原书拼写。数学公式另按PDF可视排版核对，文字层的乱码不作为数学符号错误。",
+          "pages": [
+            {
+              "attachment_page": 10,
+              "pdf_page": 415,
+              "printed_page": 394,
+              "original_page_text_exact_match": true,
+              "text_sha256": "4649eb77e6794c6b5b6d0e10d587366a65b76c24b83bbe56cf18baa912939f54"
+            }
+          ],
+          "scope": "动量约束下扩展Gibbs权、配分积分和概率密度资格。",
+          "lean_declarations_checked": [
+            "MD.Ch08.pairwiseWeight",
+            "MD.Ch08.pairwiseCanonicalDensity",
+            "MD.Ch08.pairwiseCanonicalQualification"
+          ],
+          "annotations": "本条摘录没有字面 [EXTRA] 或 [ERRATUM?] 标签；已逐项检查 extra_assumptions、issues、statement_scope 所承载的额外资格、勘误说明及范围限制。现有范围说明与实际声明相符；未将定义/规格或局部目标当成已证动力学结论。",
+          "method": "仅依据本任务所附 Lean 全部声明、项目依赖定义及附录 D1–D31 做只读语义审校；Mathlib 标准定义按标准含义采信，未编译或改动工程、未补证明、未因 sorry 降级。"
+        }
+      },
+      "audit": {
+        "lean_decl": "MD.Ch08.pairwiseWeight",
+        "verdict": "PASS",
+        "explanation": "逐一核对 pairwiseWeight、pairwiseCanonicalDensity、pairwiseCanonicalQualification。Hamiltonian 为 Σ|p_i|²/(2m_i)+U(q)，扩展权是 exp(−βH)exp(−βQξ²/2)，无遗漏 1/2 或负号；归一分母为对给定 ν 的真实积分。qualification 明列质量、β,Q 正，ν 几乎处处支持在总动量 π 的叶上、权重可积、配分积分严格正及 probabilityDensity 的非负/可积/积分为1条件。所有 N,d、U、ν、π 都显式量化，未把任意 ν 当作标准叶体积，亦未声称 ν 下所得密度自动为动力学不变测度。概率资格是定义的合取条件而不是已经证明的存在性结论；与本条限定范围一致。",
+        "counterexample": null,
+        "suggested_fix": null
+      },
+      "subtask": "BATCH17a",
+      "input_sha256": {
+        "Blueprint/Ch08.lean": "2800812fadd8e2557013f1941e4570401f7903d46f44baf07e23d5531da22a72",
+        "blueprint/ch08/ch08_source.json": "9b994b0f64cd22c85c2ad4123fbfdbd064bd7a6d070fe13b721794432f9f7a63",
+        "BATCH17a_PAGES.pdf": "bfa70f70acfe995197f1a4502e2a03dd28fceabaf713f48aa0887cb40b50bbcd"
+      }
+    },
+    {
+      "source_id": "MD-8.9.4-PairwiseNHLSDE",
+      "json_review": {
+        "status": "APPROVED",
+        "issue_codes": [],
+        "corrected_json": null,
+        "issues": [],
+        "evidence": {
+          "source_text_comparison": "以附件实际文字层逐字比较；18页均与 original_page_text 完全相同，statement_verbatim 为各页文本以单个换行连接，未替换控制字符、连字、断行或原书拼写。数学公式另按PDF可视排版核对，文字层的乱码不作为数学符号错误。",
+          "pages": [
+            {
+              "attachment_page": 11,
+              "pdf_page": 416,
+              "printed_page": 395,
+              "original_page_text_exact_match": true,
+              "text_sha256": "026455927d13d838f4baabfb9ad0b14ddaf95d47ae555338015a03ba8143d7f1"
+            }
+          ],
+          "scope": "带正质量资格、涨落耗散关系及真实独立标准Wiener的PNHL积分解规格。",
+          "lean_declarations_checked": [
+            "MD.Ch08.pnhlDrift",
+            "MD.Ch08.pnhlNoise",
+            "MD.Ch08.isPNHLSolution"
+          ],
+          "annotations": "本条摘录没有字面 [EXTRA] 或 [ERRATUM?] 标签；已逐项检查 extra_assumptions、issues、statement_scope 所承载的额外资格、勘误说明及范围限制。现有范围说明与实际声明相符；未将定义/规格或局部目标当成已证动力学结论。",
+          "method": "仅依据本任务所附 Lean 全部声明、项目依赖定义及附录 D1–D31 做只读语义审校；Mathlib 标准定义按标准含义采信，未编译或改动工程、未补证明、未因 sorry 降级。"
+        }
+      },
+      "audit": {
+        "lean_decl": "MD.Ch08.pnhlDrift",
+        "verdict": "PASS",
+        "explanation": "逐一核对 pnhlDrift、pnhlNoise、isPNHLSolution 及 independentWiener、additiveSDE。只在 ξ 分量增加 −γξ 漂移及 σ 噪声，粒子 q,p 无直接随机项；σ²=2γθ/Q 与(8.112)一致。Prop 明列 N,d、质量、rc,θ,Q 正，γ≥0，wD 全域非负，且每个 t≥0 几乎处处不同粒子距离正。additiveSDE 要求概率测度、各分量标准 Brownian、分量过程独立、几乎处处连续路径、相对噪声历史的可测性、每个非负时刻的漂移可积及完整积分等式（包含 x0 与 W_t−W_0）；Fin 1 表明只有一个实 Wiener。非碰撞使用 ∀t ∀ᵐ 的逐时刻资格，而非定义中直接写出的共同满测集全时刻非碰撞；未将前者夸大为后者。声明是解规格，没有隐含解存在、唯一或遍历结论。",
+        "counterexample": null,
+        "suggested_fix": null
+      },
+      "subtask": "BATCH17b",
+      "input_sha256": {
+        "Blueprint/Ch08.lean": "2800812fadd8e2557013f1941e4570401f7903d46f44baf07e23d5531da22a72",
+        "blueprint/ch08/ch08_source.json": "9b994b0f64cd22c85c2ad4123fbfdbd064bd7a6d070fe13b721794432f9f7a63",
+        "BATCH17b_PAGES.pdf": "7a63324a14f006f290b7bff50e69e56ccfc2f37379bce0a75e6162032ae187a7"
+      }
+    },
+    {
+      "source_id": "MD-8.9.4-PairwiseNHLGenerator",
+      "json_review": {
+        "status": "APPROVED",
+        "issue_codes": [],
+        "corrected_json": null,
+        "issues": [],
+        "evidence": {
+          "source_text_comparison": "以附件实际文字层逐字比较；18页均与 original_page_text 完全相同，statement_verbatim 为各页文本以单个换行连接，未替换控制字符、连字、断行或原书拼写。数学公式另按PDF可视排版核对，文字层的乱码不作为数学符号错误。",
+          "pages": [
+            {
+              "attachment_page": 12,
+              "pdf_page": 416,
+              "printed_page": 395,
+              "original_page_text_exact_match": true,
+              "text_sha256": "026455927d13d838f4baabfb9ad0b14ddaf95d47ae555338015a03ba8143d7f1"
+            }
+          ],
+          "scope": "五子场、形式生成元、漂移分解；扩展权的局部驻定目标。",
+          "lean_declarations_checked": [
+            "MD.Ch08.pnhlA",
+            "MD.Ch08.pnhlB",
+            "MD.Ch08.pnhlC",
+            "MD.Ch08.pnhlD",
+            "MD.Ch08.pnhlO",
+            "MD.Ch08.pnhlGenerator",
+            "MD.Ch08.pnhlDrift_split",
+            "MD.Ch08.pairwiseWeight_localStationary"
+          ],
+          "annotations": "本条摘录没有字面 [EXTRA] 或 [ERRATUM?] 标签；已逐项检查 extra_assumptions、issues、statement_scope 所承载的额外资格、勘误说明及范围限制。现有范围说明与实际声明相符；未将定义/规格或局部目标当成已证动力学结论。",
+          "method": "仅依据本任务所附 Lean 全部声明、项目依赖定义及附录 D1–D31 做只读语义审校；Mathlib 标准定义按标准含义采信，未编译或改动工程、未补证明、未因 sorry 降级。"
+        }
+      },
+      "audit": {
+        "lean_decl": "MD.Ch08.pnhlA",
+        "verdict": "PASS",
+        "explanation": "逐一核对 pnhlA/B/C/D/O、pnhlGenerator、pnhlDrift_split、pairwiseWeight_localStationary。五子场逐坐标对应(8.113)，O 仅作用 ξ；additiveGenerator 的一阶项加噪声方向二阶项/2 给出 σ²∂ξ²/2，漂移分解对任意实参数和状态成立。局部驻定定理完整保留正质量、rc,θ,Q>0、γ≥0、σ²=2γθ/Q、不同粒子不碰撞且距离不等于 rc 的前提；使用特定 wD=(dpdWeightR rc)²、U=dpdPotential、β=θ⁻¹。textbookDivergence 为 fderiv 的线性迹，结论正是 −div(ρb)+(σ²/2)∂ξ²ρ=0。该式局部成立：Hamiltonian 项抵消；每个对的耗散对密度的贡献由 ξ 反馈项抵消；剩下 ξ 的 OU 项由 FDT 抵消。没有将局部式升级成全局归一、不变概率或遍历性；sorry 不影响本次签名审校。",
+        "counterexample": null,
+        "suggested_fix": null
+      },
+      "subtask": "BATCH17c",
+      "input_sha256": {
+        "Blueprint/Ch08.lean": "2800812fadd8e2557013f1941e4570401f7903d46f44baf07e23d5531da22a72",
+        "blueprint/ch08/ch08_source.json": "9b994b0f64cd22c85c2ad4123fbfdbd064bd7a6d070fe13b721794432f9f7a63",
+        "BATCH17c_PAGES.pdf": "fe19f4efa3f5a3473dc65623c7c6fff014bc0f5f0a072b9d10e5d08ecece4c56"
+      }
+    },
+    {
+      "source_id": "MD-8.9.4-PNHLSplittingAlgorithms",
+      "json_review": {
+        "status": "APPROVED",
+        "issue_codes": [],
+        "corrected_json": null,
+        "issues": [],
+        "evidence": {
+          "source_text_comparison": "以附件实际文字层逐字比较；18页均与 original_page_text 完全相同，statement_verbatim 为各页文本以单个换行连接，未替换控制字符、连字、断行或原书拼写。数学公式另按PDF可视排版核对，文字层的乱码不作为数学符号错误。",
+          "pages": [
+            {
+              "attachment_page": 13,
+              "pdf_page": 417,
+              "printed_page": 396,
+              "original_page_text_exact_match": true,
+              "text_sha256": "992469af85fda47b667bb46f3bdf4228b513507d23201e6e3109039d68fa73f3"
+            }
+          ],
+          "scope": "A/B/D/O实际更新、单对C更新和S/N的原印外层组合；全C指数与误差理论列缺口。",
+          "lean_declarations_checked": [
+            "MD.Ch08.pnhlAStep",
+            "MD.Ch08.pnhlBStep",
+            "MD.Ch08.pnhlDStep",
+            "MD.Ch08.pnhlOStep",
+            "MD.Ch08.pnhlPairCStep",
+            "MD.Ch08.pnhlSComposition",
+            "MD.Ch08.pnhlNComposition"
+          ],
+          "annotations": "本条摘录没有字面 [EXTRA] 或 [ERRATUM?] 标签；已逐项检查 extra_assumptions、issues、statement_scope 所承载的额外资格、勘误说明及范围限制。现有范围说明与实际声明相符；未将定义/规格或局部目标当成已证动力学结论。",
+          "method": "仅依据本任务所附 Lean 全部声明、项目依赖定义及附录 D1–D31 做只读语义审校；Mathlib 标准定义按标准含义采信，未编译或改动工程、未补证明、未因 sorry 降级。"
+        }
+      },
+      "audit": {
+        "lean_decl": "MD.Ch08.pnhlAStep",
+        "verdict": "PASS",
+        "explanation": "逐一核对 pnhlAStep/BStep/DStep/OStep/PairCStep 和 pnhlSComposition/NComposition。A 为 q+=h p/m；B 为 p+=hFᶜ；D 为 ξ+=hG；O 衰减 exp(−γh)，方差 θ/Q*(1−exp(−2γh)) 正确。单对 C 冻结 q,ξ，由 du=u(exp(−ξwD h/mred)−1) 及 ±mred du e 更新，物理解释需不同粒子、非碰撞单位 e、正质量；ξ 可以为任意实数。S 的九因子和 N 的末尾 A½B½ 均与原页从左至右列出的因子一致，Lean 实际执行为从右向左，未把印刷顺序误称时间顺序。E 为任意类型、子流为调用者提供的映射，未在组合定义中额外绑定具体子步；随机 OU 的资格、全 C 的逐对近似及误差缺口均明列，未宣称单对 C 是全 C 的精确流。",
+        "counterexample": null,
+        "suggested_fix": null
+      },
+      "subtask": "BATCH17d",
+      "input_sha256": {
+        "Blueprint/Ch08.lean": "2800812fadd8e2557013f1941e4570401f7903d46f44baf07e23d5531da22a72",
+        "blueprint/ch08/ch08_source.json": "9b994b0f64cd22c85c2ad4123fbfdbd064bd7a6d070fe13b721794432f9f7a63",
+        "BATCH17d_PAGES.pdf": "0a7a1a507971dc3177067faa5228e2ce9aa491e11119bd9607858690f20f8857"
+      }
+    },
+    {
+      "source_id": "MD-8.10-BerendsenRelaxation",
+      "json_review": {
+        "status": "APPROVED",
+        "issue_codes": [],
+        "corrected_json": null,
+        "issues": [],
+        "evidence": {
+          "source_text_comparison": "以附件实际文字层逐字比较；18页均与 original_page_text 完全相同，statement_verbatim 为各页文本以单个换行连接，未替换控制字符、连字、断行或原书拼写。数学公式另按PDF可视排版核对，文字层的乱码不作为数学符号错误。",
+          "pages": [
+            {
+              "attachment_page": 14,
+              "pdf_page": 417,
+              "printed_page": 396,
+              "original_page_text_exact_match": true,
+              "text_sha256": "992469af85fda47b667bb46f3bdf4228b513507d23201e6e3109039d68fa73f3"
+            },
+            {
+              "attachment_page": 15,
+              "pdf_page": 418,
+              "printed_page": 397,
+              "original_page_text_exact_match": true,
+              "text_sha256": "9c3ffa989518987833cf22f825c6201845a3b6233b50a1897fddf8cf61a00272"
+            }
+          ],
+          "scope": "Berendsen温度方程的显式解、动量缩放、有效域和单次能量恒等式。",
+          "lean_declarations_checked": [
+            "MD.Ch08.berendsenTemperature",
+            "MD.Ch08.berendsenTemperature_derivative",
+            "MD.Ch08.berendsenRadicand",
+            "MD.Ch08.berendsenScale",
+            "MD.Ch08.berendsenScaleQualification",
+            "MD.Ch08.dot_smul_same",
+            "MD.Ch08.berendsenScale_energy"
+          ],
+          "annotations": "本条摘录没有字面 [EXTRA] 或 [ERRATUM?] 标签；已逐项检查 extra_assumptions、issues、statement_scope 所承载的额外资格、勘误说明及范围限制。现有范围说明与实际声明相符；未将定义/规格或局部目标当成已证动力学结论。",
+          "method": "仅依据本任务所附 Lean 全部声明、项目依赖定义及附录 D1–D31 做只读语义审校；Mathlib 标准定义按标准含义采信，未编译或改动工程、未补证明、未因 sorry 降级。"
+        }
+      },
+      "audit": {
+        "lean_decl": "MD.Ch08.berendsenTemperature",
+        "verdict": "PASS",
+        "explanation": "逐一核对 berendsenTemperature、导数定理、berendsenRadicand/Scale/ScaleQualification、dot_smul_same、berendsenScale_energy。温度解为 θ+(T0−θ)exp(−γt)，导数等于 γ(θ−T(t))，对任意实参数成立；物理衰减另需 γ>0。缩放使用 n 个实动量坐标（n=Nd）、单位质量、θ=kBT，根号 1+γh(nθ/Σp²−1) 与原页相符。能量定理完整保留 n,θ,γ>0、h≥0、Σp²>0 和根号非负的 qualification，结论为 (1−γh)Σp²+γh nθ，未遗漏根号或分母的有效域。dot_smul_same 是任意实缩放的代数恒等式。没有将单次缩放恒等式当成完整 Verlet 耦合后真实温度必然满足连续 ODE，也没有声称正则采样。",
+        "counterexample": null,
+        "suggested_fix": null
+      },
+      "subtask": "BATCH17e",
+      "input_sha256": {
+        "Blueprint/Ch08.lean": "2800812fadd8e2557013f1941e4570401f7903d46f44baf07e23d5531da22a72",
+        "blueprint/ch08/ch08_source.json": "9b994b0f64cd22c85c2ad4123fbfdbd064bd7a6d070fe13b721794432f9f7a63",
+        "BATCH17e_PAGES.pdf": "f68f1e92fd777686db28f058b70dd4ba09b4152be17b9e0641434313424db1f1"
+      }
+    },
+    {
+      "source_id": "MD-8.10-CanonicalTotalMomentumGaussian",
+      "json_review": {
+        "status": "APPROVED",
+        "issue_codes": [],
+        "corrected_json": null,
+        "issues": [],
+        "evidence": {
+          "source_text_comparison": "以附件实际文字层逐字比较；18页均与 original_page_text 完全相同，statement_verbatim 为各页文本以单个换行连接，未替换控制字符、连字、断行或原书拼写。数学公式另按PDF可视排版核对，文字层的乱码不作为数学符号错误。",
+          "pages": [
+            {
+              "attachment_page": 16,
+              "pdf_page": 418,
+              "printed_page": 397,
+              "original_page_text_exact_match": true,
+              "text_sha256": "9c3ffa989518987833cf22f825c6201845a3b6233b50a1897fddf8cf61a00272"
+            },
+            {
+              "attachment_page": 17,
+              "pdf_page": 419,
+              "printed_page": 398,
+              "original_page_text_exact_match": true,
+              "text_sha256": "54152333af8063cc14f8105806cb3582888c62719218f8d4aaf94f8f2267c9ed"
+            }
+          ],
+          "scope": "实际独立Gaussian动量假设下的一坐标总动量分布；非采样收敛定理。",
+          "lean_declarations_checked": [
+            "MD.Ch08.totalMomentum_gaussian"
+          ],
+          "annotations": "本条摘录没有字面 [EXTRA] 或 [ERRATUM?] 标签；已逐项检查 extra_assumptions、issues、statement_scope 所承载的额外资格、勘误说明及范围限制。现有范围说明与实际声明相符；未将定义/规格或局部目标当成已证动力学结论。",
+          "method": "仅依据本任务所附 Lean 全部声明、项目依赖定义及附录 D1–D31 做只读语义审校；Mathlib 标准定义按标准含义采信，未编译或改动工程、未补证明、未因 sorry 降级。"
+        }
+      },
+      "audit": {
+        "lean_decl": "MD.Ch08.totalMomentum_gaussian",
+        "verdict": "PASS",
+        "explanation": "核对 totalMomentum_gaussian 的全部量化：Ω 可测、P 概率测度，N,d 自然数，粒子随机动量 p、正质量 m、θ>0、坐标 a:Fin d；hind 明确该坐标跨粒子独立，hlaw 明确各粒子该坐标服从均值0、方差 m_iθ 的 gaussianReal。结论为该坐标的总动量均值0、方差 (Σm_i)θ 的 HasLaw，gaussianReal 的第二参数是非负方差；Real.toNNReal 在所给正性条件下未改变方差。N=0 时是退化零方差正态，d=0 时不存在待选 a，均无逻辑例外。不需要跨坐标独立；结论也没有声称整个向量的联合高斯性或采样收敛。独立性是从正则平衡动量模型中明确补出的前提，不是由仅有各边缘正态推出。sorry 不构成签名 FAIL。",
+        "counterexample": null,
+        "suggested_fix": null
+      },
+      "subtask": "BATCH17f",
+      "input_sha256": {
+        "Blueprint/Ch08.lean": "2800812fadd8e2557013f1941e4570401f7903d46f44baf07e23d5531da22a72",
+        "blueprint/ch08/ch08_source.json": "9b994b0f64cd22c85c2ad4123fbfdbd064bd7a6d070fe13b721794432f9f7a63",
+        "BATCH17f_PAGES.pdf": "c80dabe517b7b2bad27a0be9cbf4f752e5be69acb631792c2e2f798c53bfa1d4"
+      }
+    }
+  ],
+  "merged_from": "ch08_first_merged"
+}

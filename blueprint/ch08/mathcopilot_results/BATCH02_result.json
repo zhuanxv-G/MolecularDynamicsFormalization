@@ -1,0 +1,605 @@
+{
+  "batch": "BATCH02",
+  "chapter": "ch08",
+  "round": "first-merged",
+  "input_sha256": {
+    "Blueprint/Ch08.lean": "2800812fadd8e2557013f1941e4570401f7903d46f44baf07e23d5531da22a72",
+    "blueprint/ch08/ch08_source.json": "9b994b0f64cd22c85c2ad4123fbfdbd064bd7a6d070fe13b721794432f9f7a63"
+  },
+  "items": [
+    {
+      "source_id": "MD-8.1.2-NHReversal",
+      "json_review": {
+        "status": "CORRECTED",
+        "issue_codes": [
+          "IRRELEVANT_TRANSCRIPTION_NOTE",
+          "STALE_VERIFICATION_REFERENCE"
+        ],
+        "corrected_json": {
+          "source_id": "MD-8.1.2-NHReversal",
+          "kind": "unnumbered_claim",
+          "label": null,
+          "section": "8.1.2",
+          "printed_page": "333",
+          "pdf_page": "354",
+          "statement_latex": "Nosé-Hoover is time-reversible: changing the sign of p and ξ is equivalent to reversing time.",
+          "statement_verbatim": "8.1\nDynamics-Based Thermostat Techniques\n333\nLet a further dynamical variable s be deﬁned by\nds\ndt D \u0012:\nThe extended Nosé-Hoover system then has a conserved quantity (see Exercise 2):\nINH.q; p; \u0012; s/ D H.q; p/ C \u0006\u00122\n2\nC Ndˇ\u00021 ln s:\n(8.8)\nThis integral can be used to monitor the performance of numerical methods.\n8.1.2\nNumerical Methods for Extended System Thermostats\nWe next describe some numerical procedures (based on the concept of splitting\nintroduced in Chaps. 2 and 3) which are appropriate for thermostats based on the\nincorporation of auxiliary variables.\nNosé-Hoover dynamics is not a Hamiltonian system, despite the presence of the\nmentioned ﬁrst integral. It is, however, time-reversible: changing the sign of p and\n\u0012 simultaneously in the equations of motion is equivalent to reversing the arrow of\ntime t ! \u0003t. For this reason, time-reversible numerical methods are often proposed\nfor Nosé-Hoover. A typical integrator is described below.\nTo simplify the notation and to use a format that might more closely match what\nwould be implemented in software, we write the algorithm for a single timestep of\nthe method in which positions, momenta and auxiliary variables are updated in situ.\nNosé-Hoover Timestep Map\nq :D q C .h=2/M\u00021p\np :D e\u0002h\u0012=2p \u0003 c.h=2; \u0012/rU.q/\n\u0012 :D \u0012 C h\u0006\u00021 \npTM\u00021p \u0003 NdkBT\n\u000b\np :D e\u0002h\u0012=2p \u0003 c.h=2; \u0012/rU.q/\nq :D q C .h=2/M\u00021p\nHere we have solved successively, the ﬁrst, second and third equations, sequen-\ntially, and then in reverse order to make a symmetric (and second order) integrator.\nThe auxiliary function involved c.t; \u0012/ D 1\u0002e\u0002t\u0012\n\u0012\nis easily evaluated from a few terms\nof its Maclaurin series expansion\nc.t; \u0012/ D t \u0003 t2\u0012=2 C : : :\nIt is easy to verify that this method is time-reversible. If we write the timestep map\nas .q; p; \u0012/ 7! Gh.q; p; \u0012/, then we may check that\nR ı Gh ı R D G \u00021\nh ;\nR.q; p; \u0012/ D .q; \u0003p; \u0003\u0012/:\n",
+          "verbatim_scope": "完整对应原页文字层，逐字保留；本条数学成分由statement_latex及statement_scope定位。",
+          "proof_latex": null,
+          "proof_note": "对应原页推导逐字保存在statement_verbatim/original_page_text；排版以原页PDF为准。",
+          "original_page_text": [
+            {
+              "pdf_page": 354,
+              "printed_page": 333,
+              "text": "8.1\nDynamics-Based Thermostat Techniques\n333\nLet a further dynamical variable s be deﬁned by\nds\ndt D \u0012:\nThe extended Nosé-Hoover system then has a conserved quantity (see Exercise 2):\nINH.q; p; \u0012; s/ D H.q; p/ C \u0006\u00122\n2\nC Ndˇ\u00021 ln s:\n(8.8)\nThis integral can be used to monitor the performance of numerical methods.\n8.1.2\nNumerical Methods for Extended System Thermostats\nWe next describe some numerical procedures (based on the concept of splitting\nintroduced in Chaps. 2 and 3) which are appropriate for thermostats based on the\nincorporation of auxiliary variables.\nNosé-Hoover dynamics is not a Hamiltonian system, despite the presence of the\nmentioned ﬁrst integral. It is, however, time-reversible: changing the sign of p and\n\u0012 simultaneously in the equations of motion is equivalent to reversing the arrow of\ntime t ! \u0003t. For this reason, time-reversible numerical methods are often proposed\nfor Nosé-Hoover. A typical integrator is described below.\nTo simplify the notation and to use a format that might more closely match what\nwould be implemented in software, we write the algorithm for a single timestep of\nthe method in which positions, momenta and auxiliary variables are updated in situ.\nNosé-Hoover Timestep Map\nq :D q C .h=2/M\u00021p\np :D e\u0002h\u0012=2p \u0003 c.h=2; \u0012/rU.q/\n\u0012 :D \u0012 C h\u0006\u00021 \npTM\u00021p \u0003 NdkBT\n\u000b\np :D e\u0002h\u0012=2p \u0003 c.h=2; \u0012/rU.q/\nq :D q C .h=2/M\u00021p\nHere we have solved successively, the ﬁrst, second and third equations, sequen-\ntially, and then in reverse order to make a symmetric (and second order) integrator.\nThe auxiliary function involved c.t; \u0012/ D 1\u0002e\u0002t\u0012\n\u0012\nis easily evaluated from a few terms\nof its Maclaurin series expansion\nc.t; \u0012/ D t \u0003 t2\u0012=2 C : : :\nIt is easy to verify that this method is time-reversible. If we write the timestep map\nas .q; p; \u0012/ 7! Gh.q; p; \u0012/, then we may check that\nR ı Gh ı R D G \u00021\nh ;\nR.q; p; \u0012/ D .q; \u0003p; \u0003\u0012/:\n"
+            }
+          ],
+          "numbered_equations": [],
+          "transcription_note": "文字层逐字保留；数学排版另行转写，原页中的特殊字形编码不静默替换。",
+          "context_notation": [],
+          "extra_assumptions": [],
+          "issues": [],
+          "statement_scope": "反演为对合及向量场反演等式；不另称一般ODE流的全局反演定理。",
+          "lean_decl": "MD.Ch08.nhReversal",
+          "lean_declarations": [
+            "MD.Ch08.nhReversal",
+            "MD.Ch08.nhReversal_involutive",
+            "MD.Ch08.nhReversal_field"
+          ],
+          "source_page_verification": "本次R1审校：已比对R1_PAGES.pdf附件第8页的页面图像及文字层；以页面数学排版为准。",
+          "repair_log": [],
+          "documented_priors": []
+        },
+        "issues": [
+          {
+            "stage": "A",
+            "code": "IRRELEVANT_TRANSCRIPTION_NOTE",
+            "detail": "transcription_note末句“PDF420仅取Exercises之前”与本批PDF350–359及附件21页无关，应删除。"
+          },
+          {
+            "stage": "A",
+            "code": "STALE_VERIFICATION_REFERENCE",
+            "detail": "source_page_verification引用未在本任务中提供的source_page_checks.json，不能作为本次审校证据；改为本次附件定位。"
+          }
+        ],
+        "evidence": [
+          {
+            "stage": "A",
+            "attachment": "R1_PAGES.pdf",
+            "attachment_pages": [
+              8
+            ],
+            "original_pdf_pages": "354",
+            "printed_pages": "333",
+            "finding": "已逐条比对英文正文、数学排版、所列公式编号与本条statement_latex；statement_verbatim与original_page_text拼接一致。现有控制字符、数学字形乱码、连字与提取换行属于已声明的文字层编码；不同提取器的字符顺序不同，不据此伪报原书内容错误。PDF数学排版优先。"
+          },
+          {
+            "stage": "C",
+            "definition_evidence": "本任务完整本条Lean、项目依赖定义体及附录D1–D25；div定义为Fréchet导数的迹，驻定为∀z,div(ρF)=0。仅只读核对签名和语义，不修改工程、不补证明，不以sorry判FAIL。",
+            "finding": "nhReversal仅翻转p和ξ且为对合。nhReversal_field右端符号是−DR·F：q速度取负，p与ξ速度不变；与F(Rz)逐分量一致。所有实参数和任意U均可作代数核对，不需ODE解存在条件；结论没有冒称全局流可逆。"
+          }
+        ]
+      },
+      "audit": {
+        "lean_decl": [
+          "MD.Ch08.nhReversal",
+          "MD.Ch08.nhReversal_involutive",
+          "MD.Ch08.nhReversal_field"
+        ],
+        "verdict": "PASS",
+        "explanation": "nhReversal仅翻转p和ξ且为对合。nhReversal_field右端符号是−DR·F：q速度取负，p与ξ速度不变；与F(Rz)逐分量一致。所有实参数和任意U均可作代数核对，不需ODE解存在条件；结论没有冒称全局流可逆。",
+        "counterexample": null,
+        "suggested_fix": "无需修改；若另推流反演，需另加解存在唯一性与相应时间区间条件。"
+      },
+      "subtask": "BATCH02a",
+      "input_sha256": {
+        "Blueprint/Ch08.lean": "2800812fadd8e2557013f1941e4570401f7903d46f44baf07e23d5531da22a72",
+        "blueprint/ch08/ch08_source.json": "9b994b0f64cd22c85c2ad4123fbfdbd064bd7a6d070fe13b721794432f9f7a63",
+        "BATCH02a_PAGES.pdf": "7a8b6afc6a8f32124490858fc86dab8a76b27da0545f7dbfc4697c84a18fb42e"
+      }
+    },
+    {
+      "source_id": "MD-8.1.2-NHTimestep",
+      "json_review": {
+        "status": "CORRECTED",
+        "issue_codes": [
+          "IRRELEVANT_TRANSCRIPTION_NOTE",
+          "STALE_VERIFICATION_REFERENCE",
+          "EXPLICIT_SCOPE_OR_EXTRA_CLARIFICATION"
+        ],
+        "corrected_json": {
+          "source_id": "MD-8.1.2-NHTimestep",
+          "kind": "definition",
+          "label": null,
+          "section": "8.1.2",
+          "printed_page": "333",
+          "pdf_page": "354",
+          "statement_latex": "Nosé-Hoover Timestep Map: drift(h/2), damped force(h/2), ξ-update(h), damped force(h/2), drift(h/2). c(t,ξ)=(1-e^{-tξ})/ξ=t-t²ξ/2+⋯.",
+          "statement_verbatim": "8.1\nDynamics-Based Thermostat Techniques\n333\nLet a further dynamical variable s be deﬁned by\nds\ndt D \u0012:\nThe extended Nosé-Hoover system then has a conserved quantity (see Exercise 2):\nINH.q; p; \u0012; s/ D H.q; p/ C \u0006\u00122\n2\nC Ndˇ\u00021 ln s:\n(8.8)\nThis integral can be used to monitor the performance of numerical methods.\n8.1.2\nNumerical Methods for Extended System Thermostats\nWe next describe some numerical procedures (based on the concept of splitting\nintroduced in Chaps. 2 and 3) which are appropriate for thermostats based on the\nincorporation of auxiliary variables.\nNosé-Hoover dynamics is not a Hamiltonian system, despite the presence of the\nmentioned ﬁrst integral. It is, however, time-reversible: changing the sign of p and\n\u0012 simultaneously in the equations of motion is equivalent to reversing the arrow of\ntime t ! \u0003t. For this reason, time-reversible numerical methods are often proposed\nfor Nosé-Hoover. A typical integrator is described below.\nTo simplify the notation and to use a format that might more closely match what\nwould be implemented in software, we write the algorithm for a single timestep of\nthe method in which positions, momenta and auxiliary variables are updated in situ.\nNosé-Hoover Timestep Map\nq :D q C .h=2/M\u00021p\np :D e\u0002h\u0012=2p \u0003 c.h=2; \u0012/rU.q/\n\u0012 :D \u0012 C h\u0006\u00021 \npTM\u00021p \u0003 NdkBT\n\u000b\np :D e\u0002h\u0012=2p \u0003 c.h=2; \u0012/rU.q/\nq :D q C .h=2/M\u00021p\nHere we have solved successively, the ﬁrst, second and third equations, sequen-\ntially, and then in reverse order to make a symmetric (and second order) integrator.\nThe auxiliary function involved c.t; \u0012/ D 1\u0002e\u0002t\u0012\n\u0012\nis easily evaluated from a few terms\nof its Maclaurin series expansion\nc.t; \u0012/ D t \u0003 t2\u0012=2 C : : :\nIt is easy to verify that this method is time-reversible. If we write the timestep map\nas .q; p; \u0012/ 7! Gh.q; p; \u0012/, then we may check that\nR ı Gh ı R D G \u00021\nh ;\nR.q; p; \u0012/ D .q; \u0003p; \u0003\u0012/:\n",
+          "verbatim_scope": "完整对应原页文字层，逐字保留；本条数学成分由statement_latex及statement_scope定位。",
+          "proof_latex": null,
+          "proof_note": "对应原页推导逐字保存在statement_verbatim/original_page_text；排版以原页PDF为准。",
+          "original_page_text": [
+            {
+              "pdf_page": 354,
+              "printed_page": 333,
+              "text": "8.1\nDynamics-Based Thermostat Techniques\n333\nLet a further dynamical variable s be deﬁned by\nds\ndt D \u0012:\nThe extended Nosé-Hoover system then has a conserved quantity (see Exercise 2):\nINH.q; p; \u0012; s/ D H.q; p/ C \u0006\u00122\n2\nC Ndˇ\u00021 ln s:\n(8.8)\nThis integral can be used to monitor the performance of numerical methods.\n8.1.2\nNumerical Methods for Extended System Thermostats\nWe next describe some numerical procedures (based on the concept of splitting\nintroduced in Chaps. 2 and 3) which are appropriate for thermostats based on the\nincorporation of auxiliary variables.\nNosé-Hoover dynamics is not a Hamiltonian system, despite the presence of the\nmentioned ﬁrst integral. It is, however, time-reversible: changing the sign of p and\n\u0012 simultaneously in the equations of motion is equivalent to reversing the arrow of\ntime t ! \u0003t. For this reason, time-reversible numerical methods are often proposed\nfor Nosé-Hoover. A typical integrator is described below.\nTo simplify the notation and to use a format that might more closely match what\nwould be implemented in software, we write the algorithm for a single timestep of\nthe method in which positions, momenta and auxiliary variables are updated in situ.\nNosé-Hoover Timestep Map\nq :D q C .h=2/M\u00021p\np :D e\u0002h\u0012=2p \u0003 c.h=2; \u0012/rU.q/\n\u0012 :D \u0012 C h\u0006\u00021 \npTM\u00021p \u0003 NdkBT\n\u000b\np :D e\u0002h\u0012=2p \u0003 c.h=2; \u0012/rU.q/\nq :D q C .h=2/M\u00021p\nHere we have solved successively, the ﬁrst, second and third equations, sequen-\ntially, and then in reverse order to make a symmetric (and second order) integrator.\nThe auxiliary function involved c.t; \u0012/ D 1\u0002e\u0002t\u0012\n\u0012\nis easily evaluated from a few terms\nof its Maclaurin series expansion\nc.t; \u0012/ D t \u0003 t2\u0012=2 C : : :\nIt is easy to verify that this method is time-reversible. If we write the timestep map\nas .q; p; \u0012/ 7! Gh.q; p; \u0012/, then we may check that\nR ı Gh ı R D G \u00021\nh ;\nR.q; p; \u0012/ D .q; \u0003p; \u0003\u0012/:\n"
+            }
+          ],
+          "numbered_equations": [],
+          "transcription_note": "文字层逐字保留；数学排版另行转写，原页中的特殊字形编码不静默替换。",
+          "context_notation": [],
+          "extra_assumptions": [
+            "c在ξ=0处取连续延拓t；系数Taylor级数与二阶全局误差未由单步定义证明。",
+            "[EXTRA/范围说明] 保留零点连续延拓[EXTRA]及Taylor/收敛阶覆盖缺口；有效物理域仍是正质量、β,Q。"
+          ],
+          "issues": [],
+          "statement_scope": "五段单步算法与c的可去奇点延拓；Taylor展开及二阶收敛列覆盖缺口。",
+          "lean_decl": "MD.Ch08.dampedCoefficient",
+          "lean_declarations": [
+            "MD.Ch08.dampedCoefficient",
+            "MD.Ch08.nhDrift",
+            "MD.Ch08.nhKick",
+            "MD.Ch08.nhFeedback",
+            "MD.Ch08.nhStep",
+            "MD.Ch08.dampedCoefficient_zero"
+          ],
+          "source_page_verification": "本次R1审校：已比对R1_PAGES.pdf附件第9页的页面图像及文字层；以页面数学排版为准。",
+          "repair_log": [],
+          "documented_priors": []
+        },
+        "issues": [
+          {
+            "stage": "A",
+            "code": "IRRELEVANT_TRANSCRIPTION_NOTE",
+            "detail": "transcription_note末句“PDF420仅取Exercises之前”与本批PDF350–359及附件21页无关，应删除。"
+          },
+          {
+            "stage": "A",
+            "code": "STALE_VERIFICATION_REFERENCE",
+            "detail": "source_page_verification引用未在本任务中提供的source_page_checks.json，不能作为本次审校证据；改为本次附件定位。"
+          },
+          {
+            "stage": "C",
+            "code": "EXPLICIT_SCOPE_OR_EXTRA_CLARIFICATION",
+            "detail": "保留零点连续延拓[EXTRA]及Taylor/收敛阶覆盖缺口；有效物理域仍是正质量、β,Q。"
+          }
+        ],
+        "evidence": [
+          {
+            "stage": "A",
+            "attachment": "R1_PAGES.pdf",
+            "attachment_pages": [
+              9
+            ],
+            "original_pdf_pages": "354",
+            "printed_pages": "333",
+            "finding": "已逐条比对英文正文、数学排版、所列公式编号与本条statement_latex；statement_verbatim与original_page_text拼接一致。现有控制字符、数学字形乱码、连字与提取换行属于已声明的文字层编码；不同提取器的字符顺序不同，不据此伪报原书内容错误。PDF数学排版优先。"
+          },
+          {
+            "stage": "C",
+            "definition_evidence": "本任务完整本条Lean、项目依赖定义体及附录D1–D25；div定义为Fréchet导数的迹，驻定为∀z,div(ρF)=0。仅只读核对签名和语义，不修改工程、不补证明，不以sorry判FAIL。",
+            "finding": "c(t,ξ)在ξ≠0时为(1−exp(−tξ))/ξ，在ξ=0取t。drift、带阻尼force、feedback五段更新参数依次h/2,h/2,h,h/2,h/2，符合原页原位更新顺序；函数复合从右至左执行，回文顺序无歧义。反馈使用已经更新的动量。dampedCoefficient_zero仅断言可去奇点值，未证明Taylor展开和二阶误差。"
+          }
+        ]
+      },
+      "audit": {
+        "lean_decl": [
+          "MD.Ch08.dampedCoefficient",
+          "MD.Ch08.nhDrift",
+          "MD.Ch08.nhKick",
+          "MD.Ch08.nhFeedback",
+          "MD.Ch08.nhStep",
+          "MD.Ch08.dampedCoefficient_zero"
+        ],
+        "verdict": "PASS",
+        "explanation": "c(t,ξ)在ξ≠0时为(1−exp(−tξ))/ξ，在ξ=0取t。drift、带阻尼force、feedback五段更新参数依次h/2,h/2,h,h/2,h/2，符合原页原位更新顺序；函数复合从右至左执行，回文顺序无歧义。反馈使用已经更新的动量。dampedCoefficient_zero仅断言可去奇点值，未证明Taylor展开和二阶误差。",
+        "counterexample": null,
+        "suggested_fix": "保留零点连续延拓[EXTRA]及Taylor/收敛阶覆盖缺口；有效物理域仍是正质量、β,Q。"
+      },
+      "subtask": "BATCH02b",
+      "input_sha256": {
+        "Blueprint/Ch08.lean": "2800812fadd8e2557013f1941e4570401f7903d46f44baf07e23d5531da22a72",
+        "blueprint/ch08/ch08_source.json": "9b994b0f64cd22c85c2ad4123fbfdbd064bd7a6d070fe13b721794432f9f7a63",
+        "BATCH02b_PAGES.pdf": "1729eb99b3c232d58630a5857f1037abd8019f39a805ad6297326528f8c2b703"
+      }
+    },
+    {
+      "source_id": "MD-8.1.2-NHTimestepReversible",
+      "json_review": {
+        "status": "CORRECTED",
+        "issue_codes": [
+          "IRRELEVANT_TRANSCRIPTION_NOTE",
+          "STALE_VERIFICATION_REFERENCE"
+        ],
+        "corrected_json": {
+          "source_id": "MD-8.1.2-NHTimestepReversible",
+          "kind": "unnumbered_claim",
+          "label": null,
+          "section": "8.1.2",
+          "printed_page": "333",
+          "pdf_page": "354",
+          "statement_latex": "R∘G_h∘R=G_h^{-1}, R(q,p,ξ)=(q,-p,-ξ).",
+          "statement_verbatim": "8.1\nDynamics-Based Thermostat Techniques\n333\nLet a further dynamical variable s be deﬁned by\nds\ndt D \u0012:\nThe extended Nosé-Hoover system then has a conserved quantity (see Exercise 2):\nINH.q; p; \u0012; s/ D H.q; p/ C \u0006\u00122\n2\nC Ndˇ\u00021 ln s:\n(8.8)\nThis integral can be used to monitor the performance of numerical methods.\n8.1.2\nNumerical Methods for Extended System Thermostats\nWe next describe some numerical procedures (based on the concept of splitting\nintroduced in Chaps. 2 and 3) which are appropriate for thermostats based on the\nincorporation of auxiliary variables.\nNosé-Hoover dynamics is not a Hamiltonian system, despite the presence of the\nmentioned ﬁrst integral. It is, however, time-reversible: changing the sign of p and\n\u0012 simultaneously in the equations of motion is equivalent to reversing the arrow of\ntime t ! \u0003t. For this reason, time-reversible numerical methods are often proposed\nfor Nosé-Hoover. A typical integrator is described below.\nTo simplify the notation and to use a format that might more closely match what\nwould be implemented in software, we write the algorithm for a single timestep of\nthe method in which positions, momenta and auxiliary variables are updated in situ.\nNosé-Hoover Timestep Map\nq :D q C .h=2/M\u00021p\np :D e\u0002h\u0012=2p \u0003 c.h=2; \u0012/rU.q/\n\u0012 :D \u0012 C h\u0006\u00021 \npTM\u00021p \u0003 NdkBT\n\u000b\np :D e\u0002h\u0012=2p \u0003 c.h=2; \u0012/rU.q/\nq :D q C .h=2/M\u00021p\nHere we have solved successively, the ﬁrst, second and third equations, sequen-\ntially, and then in reverse order to make a symmetric (and second order) integrator.\nThe auxiliary function involved c.t; \u0012/ D 1\u0002e\u0002t\u0012\n\u0012\nis easily evaluated from a few terms\nof its Maclaurin series expansion\nc.t; \u0012/ D t \u0003 t2\u0012=2 C : : :\nIt is easy to verify that this method is time-reversible. If we write the timestep map\nas .q; p; \u0012/ 7! Gh.q; p; \u0012/, then we may check that\nR ı Gh ı R D G \u00021\nh ;\nR.q; p; \u0012/ D .q; \u0003p; \u0003\u0012/:\n",
+          "verbatim_scope": "完整对应原页文字层，逐字保留；本条数学成分由statement_latex及statement_scope定位。",
+          "proof_latex": null,
+          "proof_note": "对应原页推导逐字保存在statement_verbatim/original_page_text；排版以原页PDF为准。",
+          "original_page_text": [
+            {
+              "pdf_page": 354,
+              "printed_page": 333,
+              "text": "8.1\nDynamics-Based Thermostat Techniques\n333\nLet a further dynamical variable s be deﬁned by\nds\ndt D \u0012:\nThe extended Nosé-Hoover system then has a conserved quantity (see Exercise 2):\nINH.q; p; \u0012; s/ D H.q; p/ C \u0006\u00122\n2\nC Ndˇ\u00021 ln s:\n(8.8)\nThis integral can be used to monitor the performance of numerical methods.\n8.1.2\nNumerical Methods for Extended System Thermostats\nWe next describe some numerical procedures (based on the concept of splitting\nintroduced in Chaps. 2 and 3) which are appropriate for thermostats based on the\nincorporation of auxiliary variables.\nNosé-Hoover dynamics is not a Hamiltonian system, despite the presence of the\nmentioned ﬁrst integral. It is, however, time-reversible: changing the sign of p and\n\u0012 simultaneously in the equations of motion is equivalent to reversing the arrow of\ntime t ! \u0003t. For this reason, time-reversible numerical methods are often proposed\nfor Nosé-Hoover. A typical integrator is described below.\nTo simplify the notation and to use a format that might more closely match what\nwould be implemented in software, we write the algorithm for a single timestep of\nthe method in which positions, momenta and auxiliary variables are updated in situ.\nNosé-Hoover Timestep Map\nq :D q C .h=2/M\u00021p\np :D e\u0002h\u0012=2p \u0003 c.h=2; \u0012/rU.q/\n\u0012 :D \u0012 C h\u0006\u00021 \npTM\u00021p \u0003 NdkBT\n\u000b\np :D e\u0002h\u0012=2p \u0003 c.h=2; \u0012/rU.q/\nq :D q C .h=2/M\u00021p\nHere we have solved successively, the ﬁrst, second and third equations, sequen-\ntially, and then in reverse order to make a symmetric (and second order) integrator.\nThe auxiliary function involved c.t; \u0012/ D 1\u0002e\u0002t\u0012\n\u0012\nis easily evaluated from a few terms\nof its Maclaurin series expansion\nc.t; \u0012/ D t \u0003 t2\u0012=2 C : : :\nIt is easy to verify that this method is time-reversible. If we write the timestep map\nas .q; p; \u0012/ 7! Gh.q; p; \u0012/, then we may check that\nR ı Gh ı R D G \u00021\nh ;\nR.q; p; \u0012/ D .q; \u0003p; \u0003\u0012/:\n"
+            }
+          ],
+          "numbered_equations": [],
+          "transcription_note": "文字层逐字保留；数学排版另行转写，原页中的特殊字形编码不静默替换。",
+          "context_notation": [],
+          "extra_assumptions": [
+            "逆映射以负步长映射及LeftInverse表达；不假设算法可逆作为结论的前提。"
+          ],
+          "issues": [],
+          "statement_scope": "五段单步的反演等式及负步长左逆两个目标；未建立误差阶数。",
+          "lean_decl": "MD.Ch08.nhStep_reversible",
+          "lean_declarations": [
+            "MD.Ch08.nhStep_reversible",
+            "MD.Ch08.nhStep_inverse"
+          ],
+          "source_page_verification": "本次R1审校：已比对R1_PAGES.pdf附件第10页的页面图像及文字层；以页面数学排版为准。",
+          "repair_log": [],
+          "documented_priors": []
+        },
+        "issues": [
+          {
+            "stage": "A",
+            "code": "IRRELEVANT_TRANSCRIPTION_NOTE",
+            "detail": "transcription_note末句“PDF420仅取Exercises之前”与本批PDF350–359及附件21页无关，应删除。"
+          },
+          {
+            "stage": "A",
+            "code": "STALE_VERIFICATION_REFERENCE",
+            "detail": "source_page_verification引用未在本任务中提供的source_page_checks.json，不能作为本次审校证据；改为本次附件定位。"
+          }
+        ],
+        "evidence": [
+          {
+            "stage": "A",
+            "attachment": "R1_PAGES.pdf",
+            "attachment_pages": [
+              10
+            ],
+            "original_pdf_pages": "354",
+            "printed_pages": "333",
+            "finding": "已逐条比对英文正文、数学排版、所列公式编号与本条statement_latex；statement_verbatim与original_page_text拼接一致。现有控制字符、数学字形乱码、连字与提取换行属于已声明的文字层编码；不同提取器的字符顺序不同，不据此伪报原书内容错误。PDF数学排版优先。"
+          },
+          {
+            "stage": "C",
+            "definition_evidence": "本任务完整本条Lean、项目依赖定义体及附录D1–D25；div定义为Fréchet导数的迹，驻定为∀z,div(ρF)=0。仅只读核对签名和语义，不修改工程、不补证明，不以sorry判FAIL。",
+            "finding": "对每个invm,U,β,Q,h，反演共轭等于负步长映射，负步长为原映射左逆，均正确。每个子步具有相反步长逆，回文复合保证结论；将h替换为−h即可获得另一侧逆。因此LeftInverse加全h量词足够支持原文逆映射式，不存在假设可逆来证明可逆的问题。"
+          }
+        ]
+      },
+      "audit": {
+        "lean_decl": [
+          "MD.Ch08.nhStep_reversible",
+          "MD.Ch08.nhStep_inverse"
+        ],
+        "verdict": "PASS",
+        "explanation": "对每个invm,U,β,Q,h，反演共轭等于负步长映射，负步长为原映射左逆，均正确。每个子步具有相反步长逆，回文复合保证结论；将h替换为−h即可获得另一侧逆。因此LeftInverse加全h量词足够支持原文逆映射式，不存在假设可逆来证明可逆的问题。",
+        "counterexample": null,
+        "suggested_fix": "无需修改；实除法总定义使β=0或Q=0仍有代数恒等式，但这些参数不作物理解释。"
+      },
+      "subtask": "BATCH02c",
+      "input_sha256": {
+        "Blueprint/Ch08.lean": "2800812fadd8e2557013f1941e4570401f7903d46f44baf07e23d5531da22a72",
+        "blueprint/ch08/ch08_source.json": "9b994b0f64cd22c85c2ad4123fbfdbd064bd7a6d070fe13b721794432f9f7a63",
+        "BATCH02c_PAGES.pdf": "9678cd767a87bf5fbf42f9199a2f62ca62efa8a63b7e91d055ce7e346f0d2434"
+      }
+    },
+    {
+      "source_id": "MD-8.1.2.1-NoseHamiltoniansPrinted",
+      "json_review": {
+        "status": "NEEDS_HUMAN",
+        "issue_codes": [
+          "IRRELEVANT_TRANSCRIPTION_NOTE",
+          "STALE_VERIFICATION_REFERENCE",
+          "SOURCE_MATHEMATICAL_ERRATUM"
+        ],
+        "corrected_json": {
+          "source_id": "MD-8.1.2.1-NoseHamiltoniansPrinted",
+          "kind": "unnumbered_claim",
+          "label": null,
+          "section": "8.1.2.1",
+          "printed_page": "334",
+          "pdf_page": "355",
+          "statement_latex": "H_N= p̃ᵀM⁻¹p̃/(2s²)+π²/(2μ)+U(q)+(N_d+1)k_BT ln s; H_NP=s[H_N-E_N]=s[p̃ᵀM⁻¹p̃/(2s²)+π²/(2μ)+U(q)+N_d k_BT ln s-E_N].",
+          "statement_verbatim": "334\n8\nExtended Variable Methods\n8.1.2.1\nNosé-Poincaré Dynamics: A Symplectic Approach\nAs we have seen in earlier chapters, there is a strong foundation for using symplectic\nintegrators, for example the existence of perturbative backward error expansions\nwhich are relatively easily calculated, it is desirable to work within this class. On\nthe other hand, as we have mentioned, Nosé-Hoover dynamics is not a Hamiltonian\nsystem. The Nosé-Poincaré method resolves this issue by providing a Hamiltonian-\nbased extension of the physical system whose projected trajectories are actually\nequivalent to Nosé-Hoover trajectories, in the absence of numerical errors. This\nextended Hamiltonian system can then be discretized using a symplectic method.\nNosé’s original proposal involved using the dynamics of the Hamiltonian\nHN D 1\n2s2 QpTM\u00021Qp C \u00142\n2\u0006 C U.q/ C .Nd C 1/kBT ln s\nto deﬁne an extension which can be used for canonical sampling. The dynamics\nfor constant Nosé extended energy, when reduced to the .q; p D Qp=s/ plane will\npreserve the canonical measure \u0005ˇ. However, the scaling of kinetic energy induces\na time transformation, which is inconvenient for molecular modelling purposes. The\nNosé-Poincaré method introduces an explicit unraveling of the time transformation.\nOne works with the modiﬁed Nosé-Poincaré (NP) Hamiltonian [41, 102]:\nHNP D sŒHN \u0003 EN\t D s\n\u0002 1\n2s2 QpTM\u00021Qp C \u00142\n2\u0006 C U.q/ C NdkBT ln s \u0003 EN\n\u0003\n;\n(8.9)\nwhere EN is a constant equal to the initial Nosé energy of the system. Trajectories of\nthis system unfold on a timescale which is in some sense commensurate with that of\nHamiltonian dynamics. The NP Hamiltonian system can be treated with symplectic\nintegrators, conferring a possible stability advantage. Symplectic integrators for this\nsystem are compared in [41].\nThe equations of motion associated to (8.9) are\nd\ndtq D M\u00021Qp=s;\n(8.10)\nd\ndt Qp D sF;\n(8.11)\nd\ndts D sps=\u0006;\n(8.12)\nd\ndtps D QpTM\u00021Qp\ns2\n\u0003 NdkBT \u0003 \u0016HN;\n(8.13)\nwhere \u0016HN D HN \u0003 H0\nN (H0\nN represents the value of the Nosé Hamiltonian at the\ninitial point).\n",
+          "verbatim_scope": "完整对应原页文字层，逐字保留；本条数学成分由statement_latex及statement_scope定位。",
+          "proof_latex": null,
+          "proof_note": "对应原页推导逐字保存在statement_verbatim/original_page_text；排版以原页PDF为准。",
+          "original_page_text": [
+            {
+              "pdf_page": 355,
+              "printed_page": 334,
+              "text": "334\n8\nExtended Variable Methods\n8.1.2.1\nNosé-Poincaré Dynamics: A Symplectic Approach\nAs we have seen in earlier chapters, there is a strong foundation for using symplectic\nintegrators, for example the existence of perturbative backward error expansions\nwhich are relatively easily calculated, it is desirable to work within this class. On\nthe other hand, as we have mentioned, Nosé-Hoover dynamics is not a Hamiltonian\nsystem. The Nosé-Poincaré method resolves this issue by providing a Hamiltonian-\nbased extension of the physical system whose projected trajectories are actually\nequivalent to Nosé-Hoover trajectories, in the absence of numerical errors. This\nextended Hamiltonian system can then be discretized using a symplectic method.\nNosé’s original proposal involved using the dynamics of the Hamiltonian\nHN D 1\n2s2 QpTM\u00021Qp C \u00142\n2\u0006 C U.q/ C .Nd C 1/kBT ln s\nto deﬁne an extension which can be used for canonical sampling. The dynamics\nfor constant Nosé extended energy, when reduced to the .q; p D Qp=s/ plane will\npreserve the canonical measure \u0005ˇ. However, the scaling of kinetic energy induces\na time transformation, which is inconvenient for molecular modelling purposes. The\nNosé-Poincaré method introduces an explicit unraveling of the time transformation.\nOne works with the modiﬁed Nosé-Poincaré (NP) Hamiltonian [41, 102]:\nHNP D sŒHN \u0003 EN\t D s\n\u0002 1\n2s2 QpTM\u00021Qp C \u00142\n2\u0006 C U.q/ C NdkBT ln s \u0003 EN\n\u0003\n;\n(8.9)\nwhere EN is a constant equal to the initial Nosé energy of the system. Trajectories of\nthis system unfold on a timescale which is in some sense commensurate with that of\nHamiltonian dynamics. The NP Hamiltonian system can be treated with symplectic\nintegrators, conferring a possible stability advantage. Symplectic integrators for this\nsystem are compared in [41].\nThe equations of motion associated to (8.9) are\nd\ndtq D M\u00021Qp=s;\n(8.10)\nd\ndt Qp D sF;\n(8.11)\nd\ndts D sps=\u0006;\n(8.12)\nd\ndtps D QpTM\u00021Qp\ns2\n\u0003 NdkBT \u0003 \u0016HN;\n(8.13)\nwhere \u0016HN D HN \u0003 H0\nN (H0\nN represents the value of the Nosé Hamiltonian at the\ninitial point).\n"
+            }
+          ],
+          "numbered_equations": [
+            "8.9"
+          ],
+          "transcription_note": "文字层逐字保留；数学排版另行转写，原页中的特殊字形编码不静默替换。",
+          "context_notation": [],
+          "extra_assumptions": [
+            "物理定义域s>0、β,Q及质量正；总函数在此域外不作物理解释。"
+          ],
+          "issues": [
+            "已目视核对原页PDF355：H_N先用(N_d+1)，(8.9)展开却用N_d；同名H_N等号不一致。工作修正显式减去β⁻¹ln s。"
+          ],
+          "statement_scope": "两个原印Hamiltonian定义、所印等式目标及减去对数差项后的代数修正。",
+          "lean_decl": "MD.Ch08.noseHamiltonian",
+          "lean_declarations": [
+            "MD.Ch08.noseHamiltonian",
+            "MD.Ch08.npHamiltonian",
+            "MD.Ch08.nosePoincarePrinted",
+            "MD.Ch08.nosePoincare_corrected"
+          ],
+          "source_page_verification": "本次R1审校：已比对R1_PAGES.pdf附件第11页的页面图像及文字层；以页面数学排版为准。",
+          "repair_log": [],
+          "documented_priors": []
+        },
+        "issues": [
+          {
+            "stage": "A",
+            "code": "IRRELEVANT_TRANSCRIPTION_NOTE",
+            "detail": "transcription_note末句“PDF420仅取Exercises之前”与本批PDF350–359及附件21页无关，应删除。"
+          },
+          {
+            "stage": "A",
+            "code": "STALE_VERIFICATION_REFERENCE",
+            "detail": "source_page_verification引用未在本任务中提供的source_page_checks.json，不能作为本次审校证据；改为本次附件定位。"
+          },
+          {
+            "stage": "A/C",
+            "code": "SOURCE_MATHEMATICAL_ERRATUM",
+            "detail": "noseHamiltonian的对数系数(n+1)/β与原页第一式一致；npHamiltonian的n/β与(8.9)展开一致。nosePoincarePrinted忠实保留两个原印公式间不相容的等号。nosePoincare_corrected显式减去log s/β，代数正确；其无正参数/正s假设是Lean总函数上的代数恒等式，不代表物理域扩展。"
+          }
+        ],
+        "evidence": [
+          {
+            "stage": "A",
+            "attachment": "R1_PAGES.pdf",
+            "attachment_pages": [
+              11
+            ],
+            "original_pdf_pages": "355",
+            "printed_pages": "334",
+            "finding": "已逐条比对英文正文、数学排版、所列公式编号与本条statement_latex；statement_verbatim与original_page_text拼接一致。现有控制字符、数学字形乱码、连字与提取换行属于已声明的文字层编码；不同提取器的字符顺序不同，不据此伪报原书内容错误。PDF数学排版优先。"
+          },
+          {
+            "stage": "C",
+            "definition_evidence": "本任务完整本条Lean、项目依赖定义体及附录D1–D25；div定义为Fréchet导数的迹，驻定为∀z,div(ρF)=0。仅只读核对签名和语义，不修改工程、不补证明，不以sorry判FAIL。",
+            "finding": "noseHamiltonian的对数系数(n+1)/β与原页第一式一致；npHamiltonian的n/β与(8.9)展开一致。nosePoincarePrinted忠实保留两个原印公式间不相容的等号。nosePoincare_corrected显式减去log s/β，代数正确；其无正参数/正s假设是Lean总函数上的代数恒等式，不代表物理域扩展。"
+          }
+        ]
+      },
+      "audit": {
+        "lean_decl": [
+          "MD.Ch08.noseHamiltonian",
+          "MD.Ch08.npHamiltonian",
+          "MD.Ch08.nosePoincarePrinted",
+          "MD.Ch08.nosePoincare_corrected"
+        ],
+        "verdict": "NEEDS_HUMAN",
+        "explanation": "noseHamiltonian的对数系数(n+1)/β与原页第一式一致；npHamiltonian的n/β与(8.9)展开一致。nosePoincarePrinted忠实保留两个原印公式间不相容的等号。nosePoincare_corrected显式减去log s/β，代数正确；其无正参数/正s假设是Lean总函数上的代数恒等式，不代表物理域扩展。",
+        "counterexample": "n=1，invm₀=β=Q=1，U=0，q=p=0，π=EN=0，s=exp(1)>0：npHamiltonian=exp(1)，s*(noseHamiltonian−EN)=2 exp(1)。一般左右之差为−s log(s)/β。",
+        "suggested_fix": "[ERRATUM?] 保留Printed原文；修正版减去log s/β合理。若要坚持H_NP=s(H_N−E_N)，须另定义对数系数为n/β的H_N，不能与先前(n+1)/β版本混称。"
+      },
+      "subtask": "BATCH02d",
+      "input_sha256": {
+        "Blueprint/Ch08.lean": "2800812fadd8e2557013f1941e4570401f7903d46f44baf07e23d5531da22a72",
+        "blueprint/ch08/ch08_source.json": "9b994b0f64cd22c85c2ad4123fbfdbd064bd7a6d070fe13b721794432f9f7a63",
+        "BATCH02d_PAGES.pdf": "710c7b16c11761b8fa82e28f2cc1eb21ef07122c8b4353bf48b76bfdac77b0e6"
+      }
+    },
+    {
+      "source_id": "MD-8.1.2.1-NPEquations",
+      "json_review": {
+        "status": "NEEDS_HUMAN",
+        "issue_codes": [
+          "IRRELEVANT_TRANSCRIPTION_NOTE",
+          "STALE_VERIFICATION_REFERENCE",
+          "SOURCE_MATHEMATICAL_ERRATUM"
+        ],
+        "corrected_json": {
+          "source_id": "MD-8.1.2.1-NPEquations",
+          "kind": "definition",
+          "label": null,
+          "section": "8.1.2.1",
+          "printed_page": "334",
+          "pdf_page": "355",
+          "statement_latex": "q̇=M⁻¹p̃/s, p̃̇=sF, ṡ=sp_s/μ, ṗ_s=p̃ᵀM⁻¹p̃/s²-N_d k_BT-ΔH_N.",
+          "statement_verbatim": "334\n8\nExtended Variable Methods\n8.1.2.1\nNosé-Poincaré Dynamics: A Symplectic Approach\nAs we have seen in earlier chapters, there is a strong foundation for using symplectic\nintegrators, for example the existence of perturbative backward error expansions\nwhich are relatively easily calculated, it is desirable to work within this class. On\nthe other hand, as we have mentioned, Nosé-Hoover dynamics is not a Hamiltonian\nsystem. The Nosé-Poincaré method resolves this issue by providing a Hamiltonian-\nbased extension of the physical system whose projected trajectories are actually\nequivalent to Nosé-Hoover trajectories, in the absence of numerical errors. This\nextended Hamiltonian system can then be discretized using a symplectic method.\nNosé’s original proposal involved using the dynamics of the Hamiltonian\nHN D 1\n2s2 QpTM\u00021Qp C \u00142\n2\u0006 C U.q/ C .Nd C 1/kBT ln s\nto deﬁne an extension which can be used for canonical sampling. The dynamics\nfor constant Nosé extended energy, when reduced to the .q; p D Qp=s/ plane will\npreserve the canonical measure \u0005ˇ. However, the scaling of kinetic energy induces\na time transformation, which is inconvenient for molecular modelling purposes. The\nNosé-Poincaré method introduces an explicit unraveling of the time transformation.\nOne works with the modiﬁed Nosé-Poincaré (NP) Hamiltonian [41, 102]:\nHNP D sŒHN \u0003 EN\t D s\n\u0002 1\n2s2 QpTM\u00021Qp C \u00142\n2\u0006 C U.q/ C NdkBT ln s \u0003 EN\n\u0003\n;\n(8.9)\nwhere EN is a constant equal to the initial Nosé energy of the system. Trajectories of\nthis system unfold on a timescale which is in some sense commensurate with that of\nHamiltonian dynamics. The NP Hamiltonian system can be treated with symplectic\nintegrators, conferring a possible stability advantage. Symplectic integrators for this\nsystem are compared in [41].\nThe equations of motion associated to (8.9) are\nd\ndtq D M\u00021Qp=s;\n(8.10)\nd\ndt Qp D sF;\n(8.11)\nd\ndts D sps=\u0006;\n(8.12)\nd\ndtps D QpTM\u00021Qp\ns2\n\u0003 NdkBT \u0003 \u0016HN;\n(8.13)\nwhere \u0016HN D HN \u0003 H0\nN (H0\nN represents the value of the Nosé Hamiltonian at the\ninitial point).\n",
+          "verbatim_scope": "完整对应原页文字层，逐字保留；本条数学成分由statement_latex及statement_scope定位。",
+          "proof_latex": null,
+          "proof_note": "对应原页推导逐字保存在statement_verbatim/original_page_text；排版以原页PDF为准。",
+          "original_page_text": [
+            {
+              "pdf_page": 355,
+              "printed_page": 334,
+              "text": "334\n8\nExtended Variable Methods\n8.1.2.1\nNosé-Poincaré Dynamics: A Symplectic Approach\nAs we have seen in earlier chapters, there is a strong foundation for using symplectic\nintegrators, for example the existence of perturbative backward error expansions\nwhich are relatively easily calculated, it is desirable to work within this class. On\nthe other hand, as we have mentioned, Nosé-Hoover dynamics is not a Hamiltonian\nsystem. The Nosé-Poincaré method resolves this issue by providing a Hamiltonian-\nbased extension of the physical system whose projected trajectories are actually\nequivalent to Nosé-Hoover trajectories, in the absence of numerical errors. This\nextended Hamiltonian system can then be discretized using a symplectic method.\nNosé’s original proposal involved using the dynamics of the Hamiltonian\nHN D 1\n2s2 QpTM\u00021Qp C \u00142\n2\u0006 C U.q/ C .Nd C 1/kBT ln s\nto deﬁne an extension which can be used for canonical sampling. The dynamics\nfor constant Nosé extended energy, when reduced to the .q; p D Qp=s/ plane will\npreserve the canonical measure \u0005ˇ. However, the scaling of kinetic energy induces\na time transformation, which is inconvenient for molecular modelling purposes. The\nNosé-Poincaré method introduces an explicit unraveling of the time transformation.\nOne works with the modiﬁed Nosé-Poincaré (NP) Hamiltonian [41, 102]:\nHNP D sŒHN \u0003 EN\t D s\n\u0002 1\n2s2 QpTM\u00021Qp C \u00142\n2\u0006 C U.q/ C NdkBT ln s \u0003 EN\n\u0003\n;\n(8.9)\nwhere EN is a constant equal to the initial Nosé energy of the system. Trajectories of\nthis system unfold on a timescale which is in some sense commensurate with that of\nHamiltonian dynamics. The NP Hamiltonian system can be treated with symplectic\nintegrators, conferring a possible stability advantage. Symplectic integrators for this\nsystem are compared in [41].\nThe equations of motion associated to (8.9) are\nd\ndtq D M\u00021Qp=s;\n(8.10)\nd\ndt Qp D sF;\n(8.11)\nd\ndts D sps=\u0006;\n(8.12)\nd\ndtps D QpTM\u00021Qp\ns2\n\u0003 NdkBT \u0003 \u0016HN;\n(8.13)\nwhere \u0016HN D HN \u0003 H0\nN (H0\nN represents the value of the Nosé Hamiltonian at the\ninitial point).\n"
+            }
+          ],
+          "numbered_equations": [
+            "8.10",
+            "8.11",
+            "8.12",
+            "8.13"
+          ],
+          "transcription_note": "文字层逐字保留；数学排版另行转写，原页中的特殊字形编码不静默替换。",
+          "context_notation": [],
+          "extra_assumptions": [
+            "ΔH采用(8.9)展开内的N_d版本；β,Q>0及s>0为有效域；尚未桥接实际Hamiltonian梯度。"
+          ],
+          "issues": [
+            "[ERRATUM?] ΔH_N采用(8.9)展开中的N_d版本，与前一定义(N_d+1)版本不同，须明确区分。"
+          ],
+          "statement_scope": "四个NP漂移分量的实际定义；从Hamiltonian求导得到这些分量未证。",
+          "lean_decl": "MD.Ch08.npField",
+          "lean_declarations": [
+            "MD.Ch08.npField"
+          ],
+          "source_page_verification": "本次R1审校：已比对R1_PAGES.pdf附件第12页的页面图像及文字层；以页面数学排版为准。",
+          "repair_log": [],
+          "documented_priors": []
+        },
+        "issues": [
+          {
+            "stage": "A",
+            "code": "IRRELEVANT_TRANSCRIPTION_NOTE",
+            "detail": "transcription_note末句“PDF420仅取Exercises之前”与本批PDF350–359及附件21页无关，应删除。"
+          },
+          {
+            "stage": "A",
+            "code": "STALE_VERIFICATION_REFERENCE",
+            "detail": "source_page_verification引用未在本任务中提供的source_page_checks.json，不能作为本次审校证据；改为本次附件定位。"
+          },
+          {
+            "stage": "A/C",
+            "code": "SOURCE_MATHEMATICAL_ERRATUM",
+            "detail": "四个分量形式逐项匹配(8.10)–(8.13)，s为z.2.1、π为z.2.2，力为−∇U。有效域β,Q,s>0与对角逆质量已说明，但没有在总函数def中强制。delta明确取(8.9)展开的n/β版本；原页却把ΔH_N定义成先前H_N−H_N⁰，若沿用(n+1)/β版本就不同。因此这是合理而已披露的展开式选择，仍需人工解决原书同名歧义，不判签名FAIL。"
+          }
+        ],
+        "evidence": [
+          {
+            "stage": "A",
+            "attachment": "R1_PAGES.pdf",
+            "attachment_pages": [
+              12
+            ],
+            "original_pdf_pages": "355",
+            "printed_pages": "334",
+            "finding": "已逐条比对英文正文、数学排版、所列公式编号与本条statement_latex；statement_verbatim与original_page_text拼接一致。现有控制字符、数学字形乱码、连字与提取换行属于已声明的文字层编码；不同提取器的字符顺序不同，不据此伪报原书内容错误。PDF数学排版优先。"
+          },
+          {
+            "stage": "C",
+            "definition_evidence": "本任务完整本条Lean、项目依赖定义体及附录D1–D25；div定义为Fréchet导数的迹，驻定为∀z,div(ρF)=0。仅只读核对签名和语义，不修改工程、不补证明，不以sorry判FAIL。",
+            "finding": "四个分量形式逐项匹配(8.10)–(8.13)，s为z.2.1、π为z.2.2，力为−∇U。有效域β,Q,s>0与对角逆质量已说明，但没有在总函数def中强制。delta明确取(8.9)展开的n/β版本；原页却把ΔH_N定义成先前H_N−H_N⁰，若沿用(n+1)/β版本就不同。因此这是合理而已披露的展开式选择，仍需人工解决原书同名歧义，不判签名FAIL。"
+          }
+        ]
+      },
+      "audit": {
+        "lean_decl": [
+          "MD.Ch08.npField"
+        ],
+        "verdict": "NEEDS_HUMAN",
+        "explanation": "四个分量形式逐项匹配(8.10)–(8.13)，s为z.2.1、π为z.2.2，力为−∇U。有效域β,Q,s>0与对角逆质量已说明，但没有在总函数def中强制。delta明确取(8.9)展开的n/β版本；原页却把ΔH_N定义成先前H_N−H_N⁰，若沿用(n+1)/β版本就不同。因此这是合理而已披露的展开式选择，仍需人工解决原书同名歧义，不判签名FAIL。",
+        "counterexample": "在固定EN下，先前(n+1)/β版H_N−EN与代码delta相差log s/β；s=exp(1)、β=1时差为1，π′随之相差−1。",
+        "suggested_fix": "[ERRATUM?] 给delta命名为H_N^(n)−E_N，保留原页定义并与原印H_N^(n+1)区分。明确本def未证明是Hamilton方程。"
+      },
+      "subtask": "BATCH02e",
+      "input_sha256": {
+        "Blueprint/Ch08.lean": "2800812fadd8e2557013f1941e4570401f7903d46f44baf07e23d5531da22a72",
+        "blueprint/ch08/ch08_source.json": "9b994b0f64cd22c85c2ad4123fbfdbd064bd7a6d070fe13b721794432f9f7a63",
+        "BATCH02e_PAGES.pdf": "62380af573b8adedcc9fd7e05236681197f01f05b49ca3ef8564c712b3a8b793"
+      }
+    },
+    {
+      "source_id": "MD-8.1.2.1-NPtoNH",
+      "json_review": {
+        "status": "CORRECTED",
+        "issue_codes": [
+          "IRRELEVANT_TRANSCRIPTION_NOTE",
+          "STALE_VERIFICATION_REFERENCE",
+          "EXPLICIT_SCOPE_OR_EXTRA_CLARIFICATION"
+        ],
+        "corrected_json": {
+          "source_id": "MD-8.1.2.1-NPtoNH",
+          "kind": "unnumbered_claim",
+          "label": null,
+          "section": "8.1.2.1",
+          "printed_page": "335",
+          "pdf_page": "356",
+          "statement_latex": "p=p̃/s, ξ=p_s/μ; ṡ=sξ, ξ̇=μ⁻¹(pᵀM⁻¹p-N_d k_BT-ΔH_N). The perturbation vanishes along the exact solution.",
+          "statement_verbatim": "8.1\nDynamics-Based Thermostat Techniques\n335\nThe relation between (8.10)–(8.13) and (8.2)–(8.4) becomes evident through the\nsubstitution p D Qp=s and \u0012 D ps=\u0006. Then (8.10)–(8.11) are seen to be the same\nas the corresponding equations in the Nosé-Hoover method, and the ﬁnal pair of\nequations become\nd\ndts D s\u0012;\nd\ndt\u0012 D 1\n\u0006\n\u0004\npTM\u00021p \u0003 NdkBT \u0003 \u0016HN\n\u0005\n:\nThe only difference between the last equation and (8.4) lies in the perturbation\n\u0006\u00021\u0016HN, which is zero along the exact solution. Under discretization, however,\nwe do not expect \u0016HN to vanish, so trajectories obtained from Nosé-Poincaré and\nNosé-Hoover will differ considerably over long time simulations.\nA beneﬁt of respecting the symplectic structure lies in the prospect of using\nbackward error analysis to analyze the behavior of the method. As shown in [40] it\nis possible to work out the terms of the perturbative expansion of the Nosé-Poincaré\nHamiltonian, i.e. to calculate the expansion\nQHh D HNP C h2HŒ2\t C O.h4/\nfor a second order, symmetric, symplectic numerical method. Then one may\ndetermine the effective distribution associated to the symplectic discretization\nmethod by “integrating out” the microcanonical density with respect to the auxiliary\nvariable and its conjugate momentum. One obtains in this way\nQ\u0005 .q; p/ D \u0005ˇ.q; p/\u0018.q; p; h/ C O\n\u0004\nh4\u0005\n:\nAn explicit formula for \u0018 is given in [40] for several symplectic methods. During\nsimulation, one may calculate the factor \u0018 and use this quantity to adjust averages.\nFor example, if we wish to calculate the average of a function g.q; p/, we may\nperform the calculation using \u0003 steps of the Nosé-Poincaré method with the given\nsymplectic, time-reversible, second order integrator, calculate gn and \u0018n at each\ntimestep, and approximate the canonical average from\nhgi D\n1\n\u0003 C 1\n\u0003\nX\nnD0\ngn\u0018\u00021\nn\nC O.h4/:\nFor further details, refer to [40]. Technically, a similar calculation can be carried out\nfor the Nosé-Hoover formulation, but the calculations are more involved.\nA good symplectic integrator for Nosé-Poincaré has been given by Nosé [287].\nFor further discussion and numerical experiments using this idea, see [94] (which\nalso considers stochastic methods).\n",
+          "verbatim_scope": "完整对应原页文字层，逐字保留；本条数学成分由statement_latex及statement_scope定位。",
+          "proof_latex": null,
+          "proof_note": "对应原页推导逐字保存在statement_verbatim/original_page_text；排版以原页PDF为准。",
+          "original_page_text": [
+            {
+              "pdf_page": 356,
+              "printed_page": 335,
+              "text": "8.1\nDynamics-Based Thermostat Techniques\n335\nThe relation between (8.10)–(8.13) and (8.2)–(8.4) becomes evident through the\nsubstitution p D Qp=s and \u0012 D ps=\u0006. Then (8.10)–(8.11) are seen to be the same\nas the corresponding equations in the Nosé-Hoover method, and the ﬁnal pair of\nequations become\nd\ndts D s\u0012;\nd\ndt\u0012 D 1\n\u0006\n\u0004\npTM\u00021p \u0003 NdkBT \u0003 \u0016HN\n\u0005\n:\nThe only difference between the last equation and (8.4) lies in the perturbation\n\u0006\u00021\u0016HN, which is zero along the exact solution. Under discretization, however,\nwe do not expect \u0016HN to vanish, so trajectories obtained from Nosé-Poincaré and\nNosé-Hoover will differ considerably over long time simulations.\nA beneﬁt of respecting the symplectic structure lies in the prospect of using\nbackward error analysis to analyze the behavior of the method. As shown in [40] it\nis possible to work out the terms of the perturbative expansion of the Nosé-Poincaré\nHamiltonian, i.e. to calculate the expansion\nQHh D HNP C h2HŒ2\t C O.h4/\nfor a second order, symmetric, symplectic numerical method. Then one may\ndetermine the effective distribution associated to the symplectic discretization\nmethod by “integrating out” the microcanonical density with respect to the auxiliary\nvariable and its conjugate momentum. One obtains in this way\nQ\u0005 .q; p/ D \u0005ˇ.q; p/\u0018.q; p; h/ C O\n\u0004\nh4\u0005\n:\nAn explicit formula for \u0018 is given in [40] for several symplectic methods. During\nsimulation, one may calculate the factor \u0018 and use this quantity to adjust averages.\nFor example, if we wish to calculate the average of a function g.q; p/, we may\nperform the calculation using \u0003 steps of the Nosé-Poincaré method with the given\nsymplectic, time-reversible, second order integrator, calculate gn and \u0018n at each\ntimestep, and approximate the canonical average from\nhgi D\n1\n\u0003 C 1\n\u0003\nX\nnD0\ngn\u0018\u00021\nn\nC O.h4/:\nFor further details, refer to [40]. Technically, a similar calculation can be carried out\nfor the Nosé-Hoover formulation, but the calculations are more involved.\nA good symplectic integrator for Nosé-Poincaré has been given by Nosé [287].\nFor further discussion and numerical experiments using this idea, see [94] (which\nalso considers stochastic methods).\n"
+            }
+          ],
+          "numbered_equations": [],
+          "transcription_note": "文字层逐字保留；数学排版另行转写，原页中的特殊字形编码不静默替换。",
+          "context_notation": [],
+          "extra_assumptions": [
+            "明确零能量面及s>0；零能量守恒本身未假作普遍结论。",
+            "[EXTRA/范围说明] 保留[EXTRA]全时零能量与s>0；标明这是采用第11条展开式定义的NP版本。原文“沿精确解消失”须理解为正确初始化的零能量解。"
+          ],
+          "issues": [],
+          "statement_scope": "给定零能量NP解投影为NH解；NP零能量初值传播和非零能量修正列缺口。",
+          "lean_decl": "MD.Ch08.npProjection",
+          "lean_declarations": [
+            "MD.Ch08.npProjection",
+            "MD.Ch08.npProjection_equations"
+          ],
+          "source_page_verification": "本次R1审校：已比对R1_PAGES.pdf附件第13页的页面图像及文字层；以页面数学排版为准。",
+          "repair_log": [],
+          "documented_priors": []
+        },
+        "issues": [
+          {
+            "stage": "A",
+            "code": "IRRELEVANT_TRANSCRIPTION_NOTE",
+            "detail": "transcription_note末句“PDF420仅取Exercises之前”与本批PDF350–359及附件21页无关，应删除。"
+          },
+          {
+            "stage": "A",
+            "code": "STALE_VERIFICATION_REFERENCE",
+            "detail": "source_page_verification引用未在本任务中提供的source_page_checks.json，不能作为本次审校证据；改为本次附件定位。"
+          },
+          {
+            "stage": "C",
+            "code": "EXPLICIT_SCOPE_OR_EXTRA_CLARIFICATION",
+            "detail": "保留[EXTRA]全时零能量与s>0；标明这是采用第11条展开式定义的NP版本。原文“沿精确解消失”须理解为正确初始化的零能量解。"
+          }
+        ],
+        "evidence": [
+          {
+            "stage": "A",
+            "attachment": "R1_PAGES.pdf",
+            "attachment_pages": [
+              13
+            ],
+            "original_pdf_pages": "356",
+            "printed_pages": "335",
+            "finding": "已逐条比对英文正文、数学排版、所列公式编号与本条statement_latex；statement_verbatim与original_page_text拼接一致。现有控制字符、数学字形乱码、连字与提取换行属于已声明的文字层编码；不同提取器的字符顺序不同，不据此伪报原书内容错误。PDF数学排版优先。"
+          },
+          {
+            "stage": "C",
+            "definition_evidence": "本任务完整本条Lean、项目依赖定义体及附录D1–D25；div定义为Fréchet导数的迹，驻定为∀z,div(ρF)=0。仅只读核对签名和语义，不修改工程、不补证明，不以sorry判FAIL。",
+            "finding": "npProjection保持q，将p̃除以s，将π除以Q。对正参数、全实时间NP经典解、所有时间s>0及H_NP=0，delta=H_NP/s=0；商求导给出p′=−∇U−ξp，ξ′=(pᵀM⁻¹p−n/β)/Q，故结论isNHSolution包括参数资格与全部NH方程。显式全时零能量前提足以成立，未把“任意NP解均零能量”当结论。"
+          }
+        ]
+      },
+      "audit": {
+        "lean_decl": [
+          "MD.Ch08.npProjection",
+          "MD.Ch08.npProjection_equations"
+        ],
+        "verdict": "PASS",
+        "explanation": "npProjection保持q，将p̃除以s，将π除以Q。对正参数、全实时间NP经典解、所有时间s>0及H_NP=0，delta=H_NP/s=0；商求导给出p′=−∇U−ξp，ξ′=(pᵀM⁻¹p−n/β)/Q，故结论isNHSolution包括参数资格与全部NH方程。显式全时零能量前提足以成立，未把“任意NP解均零能量”当结论。",
+        "counterexample": null,
+        "suggested_fix": "保留[EXTRA]全时零能量与s>0；标明这是采用第11条展开式定义的NP版本。原文“沿精确解消失”须理解为正确初始化的零能量解。"
+      },
+      "subtask": "BATCH02f",
+      "input_sha256": {
+        "Blueprint/Ch08.lean": "2800812fadd8e2557013f1941e4570401f7903d46f44baf07e23d5531da22a72",
+        "blueprint/ch08/ch08_source.json": "9b994b0f64cd22c85c2ad4123fbfdbd064bd7a6d070fe13b721794432f9f7a63",
+        "BATCH02f_PAGES.pdf": "23fdaddd72578c89786ad97d54b3c94d269126a2607b37a08c1ef253d67afb12"
+      }
+    }
+  ],
+  "merged_from": "ch08_first_merged"
+}

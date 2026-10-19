@@ -1,0 +1,47 @@
+[
+  {
+    "source_id": "MD-8.2.1-Examples81and82",
+    "signature_changed": true,
+    "change": "generalizedFeedback/configurationalFeedback忠实保留原式；corrected将Φ改为−ξG。构型反馈在正号耦合下同样须反号。",
+    "suggested_fix": "[ERRATUM?] 忠实原文的两个反馈def可保留并标Printed/literal；正确驻定版应取Φ=−ξG，或保留Φ=+ξG而改g=(div G/β−DH[G])/Q。构型反馈若配正号耦合也须相应反号。例8.1的负号耦合与正反馈不受影响。",
+    "receipt": "Examples81and82",
+    "compile": "PASS",
+    "axioms": "PASS"
+  },
+  {
+    "source_id": "MD-8.4-AdditiveThermostatSDE",
+    "signature_changed": true,
+    "change": "[EXTRA] 正逆质量、C¹势；物理质量固定为diag(invm⁻¹)，Mhat为热浴协方差质量；两组涨落耗散均绑定同一β及实际阻尼。未构造矩阵平方根，未证明确定性热浴保权或完整过程不变性。",
+    "suggested_fix": "只修JSON范围可保留现有组件；如要完成原模型，另定义统一解谓词，绑定对角逆质量或直接用一般M⁻¹，构造分块B和共同n+k维独立W，并分别加入两组明确的协方差匹配条件。保留原文并注明(8.23)的dt疑误和矩阵相容疑误。本次不修改工程。",
+    "receipt": "AdditiveThermostatSDE",
+    "compile": "PASS",
+    "axioms": "PASS"
+  },
+  {
+    "source_id": "MD-8.4.1-NHL",
+    "signature_changed": false,
+    "change": "[EXTRA/覆盖缺口] invm_i,β,Q,γ均正；不宣称覆盖一般M或已把isNHLSolution特化到正定二次势(8.30)–(8.32)。原印重缩放疑误另列。",
+    "suggested_fix": "将JSON范围限制为现有正对角质量、无约束模型，并明确尚无二次专门化声明；若要宣称全模型，需一般矩阵质量及参数关联。原书重缩放保留[ERRATUM?]，可另陈列正确变换q̃=M^{1/2}q,p̃=M^{-1/2}p及变换后的势；不改原文。本次不修改工程。",
+    "receipt": "NHL",
+    "compile": "PASS",
+    "axioms": "PASS"
+  },
+  {
+    "source_id": "MD-8.4.3-PreEquilibriumMeans",
+    "signature_changed": true,
+    "change": "[EXTRA] 每个t≥0同时要求两项加权函数Integrable，故均值不是不可积时的总化积分。NHL Fokker–Planck演化未形式化，名称不代表完整预平衡动力学资格。",
+    "suggested_fix": "增加每个t≥0的Integrable (kineticTwice invm z.1.2*ρ t z)与Integrable (z.2*ρ t z)，并明确正质量。若保留pre-equilibrium命名，应添加FP演化规格；否则声明仅定义任意随时间概率密度的形式积分，并明确演化未覆盖。",
+    "receipt": "PreEquilibriumMeans",
+    "compile": "PASS",
+    "axioms": "PASS"
+  },
+  {
+    "source_id": "MD-8.4.4-RescalingStationary",
+    "signature_changed": true,
+    "change": "havoid现对tsupport f量化，与HasCompactSupport的闭包支撑一致；未扩大到闭包接触p=0的测试函数。",
+    "suggested_fix": "将havoid改为∀z∈tsupport f,z.2≠0，或明确存在ε>0使f的支撑上K≥ε。若希望包含接触p=0的测试函数，应另设边界、噪声正则性及生成元可积性条件并论证；不能静默扩大弱驻定范围。",
+    "receipt": "RescalingStationary",
+    "compile": "PASS",
+    "axioms": "PASS"
+  }
+]

@@ -1,0 +1,143 @@
+{
+  "batch": "EAUDIT02",
+  "subtask": "EAUDIT02c",
+  "source_ids": [
+    "MD-8.4.4-RescalingStationary"
+  ],
+  "input_sha256": {
+    "Blueprint/Ch08.lean": "a58849c40e30a4a6b189163f42a49e0cbdf00bd48a39a77048bfd04ff88f8a16",
+    "blueprint/ch08/ch08_source.json": "c7fea45d785f740f26c7b50c5e37abd14cb1a8b05b51f4e7ad215cd5059ebdd5",
+    "PAGES.pdf": "33901796eb76a27d869dae26db761b7bd3151f1901b2b3634f4451f9db89909e"
+  },
+  "page_mapping": [
+    {
+      "attachment_page": 1,
+      "original_pdf_page": 376,
+      "printed_page": 355
+    }
+  ],
+  "definition_excerpts": [
+    {
+      "full_name": "MD.Ch08.Vec",
+      "kind": "abbrev",
+      "path": "Blueprint/Ch08.lean",
+      "line": 18,
+      "code_sha256": "6f4b254a8a7cc4115fb35265b77caa663bdd18567cd1e664cc5bbd080d02fcff"
+    },
+    {
+      "full_name": "MD.Ch08.Phase",
+      "kind": "abbrev",
+      "path": "Blueprint/Ch08.lean",
+      "line": 19,
+      "code_sha256": "377b8086105169a0d2deaa2dd84218cb6ea1d04d27b576cd82794d54e5b84300"
+    },
+    {
+      "full_name": "MD.Ch08.gradient",
+      "kind": "def",
+      "path": "Blueprint/Ch08.lean",
+      "line": 21,
+      "code_sha256": "a9a017b15c584dec720a71840d896ddb8d0e05e149030bce523362af481b101e"
+    },
+    {
+      "full_name": "MD.Ch08.probabilityDensity",
+      "kind": "def",
+      "path": "Blueprint/Ch08.lean",
+      "line": 25,
+      "code_sha256": "273a20a340df892158ae6bb7b929ef8c57e9d95f5785ff9729ead4dba069d0f6"
+    },
+    {
+      "full_name": "MD.Ch08.kineticTwice",
+      "kind": "def",
+      "path": "Blueprint/Ch08.lean",
+      "line": 69,
+      "code_sha256": "74e9a17210c40ab25bfb4d66c78bf295ed45ebc01a50292e3e9961df7d0ced46"
+    },
+    {
+      "full_name": "MD.Ch08.rescalingPsi",
+      "kind": "def",
+      "path": "Blueprint/Ch08.lean",
+      "line": 612,
+      "code_sha256": "e8fd24e1058647eb38e63678ff65fd5fdf3bfd737377070c799d8132bcbf018b"
+    },
+    {
+      "full_name": "MD.Ch08.rescalingDrift",
+      "kind": "def",
+      "path": "Blueprint/Ch08.lean",
+      "line": 614,
+      "code_sha256": "7119bb298c0b77efdb1aebeda179855197bfce487f2584074e2916c52e6cc59b"
+    },
+    {
+      "full_name": "MD.Ch08.rescalingNoise",
+      "kind": "def",
+      "path": "Blueprint/Ch08.lean",
+      "line": 616,
+      "code_sha256": "003de2b47ac12f3afb7f55fa1bca15155a35803b1094c12c5d524cce0f3fe2ec"
+    },
+    {
+      "full_name": "MD.Ch08.rescalingAdmissible",
+      "kind": "def",
+      "path": "Blueprint/Ch08.lean",
+      "line": 619,
+      "code_sha256": "024afc992c6b47d56718481fa9310c74b7675a568d81b9224d9e1ad3c4eaeb6c"
+    },
+    {
+      "full_name": "MD.Ch08.rescalingStationary",
+      "kind": "theorem",
+      "path": "Blueprint/Ch08.lean",
+      "line": 635,
+      "code_sha256": "9691db4ca4f7b265d358ba3d6989480f7609e1b17f4b1b79ad0f897d3818ed53"
+    },
+    {
+      "full_name": "MolecularDynamics.Chapter02Review.Q",
+      "kind": "abbrev",
+      "path": "MolecularDynamics/Chapter02/ReviewDefinitions.lean",
+      "line": 17,
+      "code_sha256": "d01d4518aed3668e7c982afee1cd3820fb858a94438e5b8960aa0557f5a57ef1"
+    },
+    {
+      "full_name": "MolecularDynamics.Chapter02Review.Z",
+      "kind": "abbrev",
+      "path": "MolecularDynamics/Chapter02/ReviewDefinitions.lean",
+      "line": 18,
+      "code_sha256": "5c03b9b4c74d753cfe2d9b89534d4a9a6c9c137e38273514b8c3e6d35f4c4af1"
+    },
+    {
+      "full_name": "MolecularDynamics.Chapter04Review.Q",
+      "kind": "abbrev",
+      "path": "MolecularDynamics/Chapter04/ReviewDefinitions.lean",
+      "line": 15,
+      "code_sha256": "d01d4518aed3668e7c982afee1cd3820fb858a94438e5b8960aa0557f5a57ef1"
+    },
+    {
+      "full_name": "MolecularDynamics.Chapter04Review.Z",
+      "kind": "abbrev",
+      "path": "MolecularDynamics/Chapter04/ReviewDefinitions.lean",
+      "line": 16,
+      "code_sha256": "5c03b9b4c74d753cfe2d9b89534d4a9a6c9c137e38273514b8c3e6d35f4c4af1"
+    },
+    {
+      "full_name": "MolecularDynamics.Chapter05Review.E",
+      "kind": "abbrev",
+      "path": "MolecularDynamics/Chapter05/ReviewDefinitions.lean",
+      "line": 18,
+      "code_sha256": "b497c8ba7f01b62a3147d9ae65652772ff3f81e57aa19b116f1283fef7a3cc60"
+    }
+  ],
+  "validation": {
+    "project_constant_closure": "PASS",
+    "missing_project_definitions": [],
+    "full_page_render_equality_dpi": 72,
+    "website_submitted": false
+  },
+  "files": {
+    "PASTE.txt": {
+      "bytes": 15514,
+      "sha256": "f1dd1331aa315d5d047db176bfc8465ff2d62e2ece60fd8594b5e44d0f31eef6"
+    },
+    "PAGES.pdf": {
+      "bytes": 77151,
+      "sha256": "33901796eb76a27d869dae26db761b7bd3151f1901b2b3634f4451f9db89909e"
+    }
+  },
+  "total_task_bytes": 97429
+}

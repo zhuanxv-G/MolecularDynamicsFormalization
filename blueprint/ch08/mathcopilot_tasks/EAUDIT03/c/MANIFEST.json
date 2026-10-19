@@ -1,0 +1,80 @@
+{
+  "batch": "EAUDIT03",
+  "subtask": "EAUDIT03c",
+  "source_ids": [
+    "MD-8.7.1-PronyOUStationarity"
+  ],
+  "input_sha256": {
+    "Blueprint/Ch08.lean": "a58849c40e30a4a6b189163f42a49e0cbdf00bd48a39a77048bfd04ff88f8a16",
+    "blueprint/ch08/ch08_source.json": "c7fea45d785f740f26c7b50c5e37abd14cb1a8b05b51f4e7ad215cd5059ebdd5",
+    "PAGES.pdf": "dfbc09b5b5d63bd0d30d72e4804e4777ad3e7bebdf369777b438eea2780fee04"
+  },
+  "page_mapping": [
+    {
+      "attachment_page": 1,
+      "original_pdf_page": 397,
+      "printed_page": 376
+    }
+  ],
+  "definition_excerpts": [
+    {
+      "full_name": "MD.Ch08.Vec",
+      "kind": "abbrev",
+      "path": "Blueprint/Ch08.lean",
+      "line": 18,
+      "code_sha256": "6f4b254a8a7cc4115fb35265b77caa663bdd18567cd1e664cc5bbd080d02fcff"
+    },
+    {
+      "full_name": "MD.Ch08.independentWiener",
+      "kind": "def",
+      "path": "Blueprint/Ch08.lean",
+      "line": 354,
+      "code_sha256": "244c6d2d9a686d3df1fc2abd2a1c945a448896d7397bd79928618c58bcc75f4d"
+    },
+    {
+      "full_name": "MD.Ch08.stationaryPronyOU",
+      "kind": "def",
+      "path": "Blueprint/Ch08.lean",
+      "line": 1147,
+      "code_sha256": "e2504ef1c4d9bdb9c617d138bfcf8920640f5e1f24fa2001caf8531220d8af73"
+    },
+    {
+      "full_name": "MD.Ch08.pronyOU_covariance",
+      "kind": "theorem",
+      "path": "Blueprint/Ch08.lean",
+      "line": 1157,
+      "code_sha256": "c397b5a8f5ff85596fef75ccbdc57d815ef91372d013fa8233235dea1a1da682"
+    },
+    {
+      "full_name": "MD.Ch08.totalPronyRandomForce",
+      "kind": "def",
+      "path": "Blueprint/Ch08.lean",
+      "line": 1163,
+      "code_sha256": "92f45bce91445ea21574d4466bc0e721ca248501d7743c7e23cc28c9883df312"
+    },
+    {
+      "full_name": "MD.Ch08.pronyOU_covariance_corrected",
+      "kind": "theorem",
+      "path": "Blueprint/Ch08.lean",
+      "line": 1167,
+      "code_sha256": "af014eef7c6cbd692e349dee540e24dc2941d7e27804ab5dc8cd2a75c5f5c9db"
+    }
+  ],
+  "validation": {
+    "project_constant_closure": "PASS",
+    "missing_project_definitions": [],
+    "full_page_render_equality_dpi": 72,
+    "website_submitted": false
+  },
+  "files": {
+    "PASTE.txt": {
+      "bytes": 13147,
+      "sha256": "4c14a51a0bf8102d1ffa6d92f3821ff90971e16602d2cfd37b7814a70d20eefc"
+    },
+    "PAGES.pdf": {
+      "bytes": 62485,
+      "sha256": "dfbc09b5b5d63bd0d30d72e4804e4777ad3e7bebdf369777b438eea2780fee04"
+    }
+  },
+  "total_task_bytes": 78141
+}

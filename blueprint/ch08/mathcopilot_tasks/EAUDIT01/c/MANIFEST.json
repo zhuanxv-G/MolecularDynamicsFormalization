@@ -1,0 +1,113 @@
+{
+  "batch": "EAUDIT01",
+  "subtask": "EAUDIT01c",
+  "source_ids": [
+    "MD-8.4-AdditiveThermostatSDE"
+  ],
+  "input_sha256": {
+    "Blueprint/Ch08.lean": "a58849c40e30a4a6b189163f42a49e0cbdf00bd48a39a77048bfd04ff88f8a16",
+    "blueprint/ch08/ch08_source.json": "c7fea45d785f740f26c7b50c5e37abd14cb1a8b05b51f4e7ad215cd5059ebdd5",
+    "PAGES.pdf": "82bc935882117b47aa86826697c3d1cdd4001809d33ba69e7a878d5f4f340ebe"
+  },
+  "page_mapping": [
+    {
+      "attachment_page": 1,
+      "original_pdf_page": 363,
+      "printed_page": 342
+    },
+    {
+      "attachment_page": 2,
+      "original_pdf_page": 364,
+      "printed_page": 343
+    }
+  ],
+  "definition_excerpts": [
+    {
+      "full_name": "MD.Ch08.Vec",
+      "kind": "abbrev",
+      "path": "Blueprint/Ch08.lean",
+      "line": 18,
+      "code_sha256": "6f4b254a8a7cc4115fb35265b77caa663bdd18567cd1e664cc5bbd080d02fcff"
+    },
+    {
+      "full_name": "MD.Ch08.Phase",
+      "kind": "abbrev",
+      "path": "Blueprint/Ch08.lean",
+      "line": 19,
+      "code_sha256": "377b8086105169a0d2deaa2dd84218cb6ea1d04d27b576cd82794d54e5b84300"
+    },
+    {
+      "full_name": "MD.Ch08.gradient",
+      "kind": "def",
+      "path": "Blueprint/Ch08.lean",
+      "line": 21,
+      "code_sha256": "a9a017b15c584dec720a71840d896ddb8d0e05e149030bce523362af481b101e"
+    },
+    {
+      "full_name": "MD.Ch08.independentWiener",
+      "kind": "def",
+      "path": "Blueprint/Ch08.lean",
+      "line": 354,
+      "code_sha256": "244c6d2d9a686d3df1fc2abd2a1c945a448896d7397bd79928618c58bcc75f4d"
+    },
+    {
+      "full_name": "MD.Ch08.additiveSDE",
+      "kind": "def",
+      "path": "Blueprint/Ch08.lean",
+      "line": 357,
+      "code_sha256": "81838b29ec807319905a573d048fd44c90ff95cc891ddf131b6c3a2e73df657a"
+    },
+    {
+      "full_name": "MD.Ch08.stochasticThermostatDrift",
+      "kind": "def",
+      "path": "Blueprint/Ch08.lean",
+      "line": 367,
+      "code_sha256": "f40dbdcd3d013a0e849d761974fee1e7b231602eaeb4e70fb882492873e74ccf"
+    },
+    {
+      "full_name": "MD.Ch08.fluctuationDissipation",
+      "kind": "def",
+      "path": "Blueprint/Ch08.lean",
+      "line": 373,
+      "code_sha256": "2a5efb6764b9762ce80603dcfbb8f8d6f6e207feddd3495b437844815f80be6a"
+    },
+    {
+      "full_name": "MD.Ch08.thermostatBlockNoise",
+      "kind": "def",
+      "path": "Blueprint/Ch08.lean",
+      "line": 377,
+      "code_sha256": "d0ef1da501d36093f36eeb4797a910d567156205a794f26dd8f147d92ab9b8e3"
+    },
+    {
+      "full_name": "MD.Ch08.stochasticThermostatSolution",
+      "kind": "def",
+      "path": "Blueprint/Ch08.lean",
+      "line": 386,
+      "code_sha256": "71f89c2727666f52bad61a27c32096f0134c80dd6889c1b3a9e195a9aab1c7d5"
+    },
+    {
+      "full_name": "MolecularDynamics.Chapter05Review.E",
+      "kind": "abbrev",
+      "path": "MolecularDynamics/Chapter05/ReviewDefinitions.lean",
+      "line": 18,
+      "code_sha256": "b497c8ba7f01b62a3147d9ae65652772ff3f81e57aa19b116f1283fef7a3cc60"
+    }
+  ],
+  "validation": {
+    "project_constant_closure": "PASS",
+    "missing_project_definitions": [],
+    "full_page_render_equality_dpi": 72,
+    "website_submitted": false
+  },
+  "files": {
+    "PASTE.txt": {
+      "bytes": 23533,
+      "sha256": "5828686b7f80719b22e94a081ef5b8120028287dc160029f59eed7f4e6fc560a"
+    },
+    "PAGES.pdf": {
+      "bytes": 92985,
+      "sha256": "82bc935882117b47aa86826697c3d1cdd4001809d33ba69e7a878d5f4f340ebe"
+    }
+  },
+  "total_task_bytes": 120080
+}

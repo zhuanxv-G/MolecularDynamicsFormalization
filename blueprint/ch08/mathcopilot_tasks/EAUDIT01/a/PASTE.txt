@@ -1,0 +1,220 @@
+以附件/PASTE 为准，忽略 /workspace 旧文件；Mathlib 定义按标准含义采信。
+本任务只审本条：原文转录、对象资格、定义体、量词、全部结论及[EXTRA]是否一致；Lean编译不代替语义审阅。
+Lean/Mathlib均4.34.0。原页PDF映射：[355]；印刷页=[334].
+input_sha256请原样回显：
+{
+  "Blueprint/Ch08.lean": "a58849c40e30a4a6b189163f42a49e0cbdf00bd48a39a77048bfd04ff88f8a16",
+  "blueprint/ch08/ch08_source.json": "c7fea45d785f740f26c7b50c5e37abd14cb1a8b05b51f4e7ad215cd5059ebdd5",
+  "PAGES.pdf": "bb9ad009deed26783f8ffa6b0ee4208a66f9ae73bc8906e961045e4b84253b64"
+}
+用代码将JSON对象(batch,input_sha256,items)写到 /workspace/.mathcopilot/reviews/ch08/EAUDIT01a_review.json；items仅含本source_id。
+items字段：source_id、verdict(PASS/FAIL/NEEDS_HUMAN)、transcription、semantic_review、counterexample、suggested_fix、printed_version、corrected_version。逐版区分原文疑误和修正版结论；缺材料必须具体指出，不猜测。写后json.loads自检，最后仅回复路径及统计。
+
+## 原文JSON
+```json
+{
+  "source_id": "MD-8.1.2.1-NPEquations",
+  "kind": "definition",
+  "label": null,
+  "section": "8.1.2.1",
+  "printed_page": "334",
+  "pdf_page": "355",
+  "statement_latex": "q̇=M⁻¹p̃/s, p̃̇=sF, ṡ=sp_s/μ, ṗ_s=p̃ᵀM⁻¹p̃/s²-N_d k_BT-ΔH_N.",
+  "statement_verbatim": "334\n8\nExtended Variable Methods\n8.1.2.1\nNosé-Poincaré Dynamics: A Symplectic Approach\nAs we have seen in earlier chapters, there is a strong foundation for using symplectic\nintegrators, for example the existence of perturbative backward error expansions\nwhich are relatively easily calculated, it is desirable to work within this class. On\nthe other hand, as we have mentioned, Nosé-Hoover dynamics is not a Hamiltonian\nsystem. The Nosé-Poincaré method resolves this issue by providing a Hamiltonian-\nbased extension of the physical system whose projected trajectories are actually\nequivalent to Nosé-Hoover trajectories, in the absence of numerical errors. This\nextended Hamiltonian system can then be discretized using a symplectic method.\nNosé’s original proposal involved using the dynamics of the Hamiltonian\nHN D 1\n2s2 QpTM\u00021Qp C \u00142\n2\u0006 C U.q/ C .Nd C 1/kBT ln s\nto deﬁne an extension which can be used for canonical sampling. The dynamics\nfor constant Nosé extended energy, when reduced to the .q; p D Qp=s/ plane will\npreserve the canonical measure \u0005ˇ. However, the scaling of kinetic energy induces\na time transformation, which is inconvenient for molecular modelling purposes. The\nNosé-Poincaré method introduces an explicit unraveling of the time transformation.\nOne works with the modiﬁed Nosé-Poincaré (NP) Hamiltonian [41, 102]:\nHNP D sŒHN \u0003 EN\t D s\n\u0002 1\n2s2 QpTM\u00021Qp C \u00142\n2\u0006 C U.q/ C NdkBT ln s \u0003 EN\n\u0003\n;\n(8.9)\nwhere EN is a constant equal to the initial Nosé energy of the system. Trajectories of\nthis system unfold on a timescale which is in some sense commensurate with that of\nHamiltonian dynamics. The NP Hamiltonian system can be treated with symplectic\nintegrators, conferring a possible stability advantage. Symplectic integrators for this\nsystem are compared in [41].\nThe equations of motion associated to (8.9) are\nd\ndtq D M\u00021Qp=s;\n(8.10)\nd\ndt Qp D sF;\n(8.11)\nd\ndts D sps=\u0006;\n(8.12)\nd\ndtps D QpTM\u00021Qp\ns2\n\u0003 NdkBT \u0003 \u0016HN;\n(8.13)\nwhere \u0016HN D HN \u0003 H0\nN (H0\nN represents the value of the Nosé Hamiltonian at the\ninitial point).\n",
+  "verbatim_scope": "完整对应原页文字层，逐字保留；本条数学成分由statement_latex及statement_scope定位。",
+  "proof_latex": null,
+  "proof_note": "对应原页推导逐字保存在statement_verbatim/original_page_text；排版以原页PDF为准。",
+  "original_page_text": [
+    {
+      "pdf_page": 355,
+      "printed_page": 334,
+      "text": "334\n8\nExtended Variable Methods\n8.1.2.1\nNosé-Poincaré Dynamics: A Symplectic Approach\nAs we have seen in earlier chapters, there is a strong foundation for using symplectic\nintegrators, for example the existence of perturbative backward error expansions\nwhich are relatively easily calculated, it is desirable to work within this class. On\nthe other hand, as we have mentioned, Nosé-Hoover dynamics is not a Hamiltonian\nsystem. The Nosé-Poincaré method resolves this issue by providing a Hamiltonian-\nbased extension of the physical system whose projected trajectories are actually\nequivalent to Nosé-Hoover trajectories, in the absence of numerical errors. This\nextended Hamiltonian system can then be discretized using a symplectic method.\nNosé’s original proposal involved using the dynamics of the Hamiltonian\nHN D 1\n2s2 QpTM\u00021Qp C \u00142\n2\u0006 C U.q/ C .Nd C 1/kBT ln s\nto deﬁne an extension which can be used for canonical sampling. The dynamics\nfor constant Nosé extended energy, when reduced to the .q; p D Qp=s/ plane will\npreserve the canonical measure \u0005ˇ. However, the scaling of kinetic energy induces\na time transformation, which is inconvenient for molecular modelling purposes. The\nNosé-Poincaré method introduces an explicit unraveling of the time transformation.\nOne works with the modiﬁed Nosé-Poincaré (NP) Hamiltonian [41, 102]:\nHNP D sŒHN \u0003 EN\t D s\n\u0002 1\n2s2 QpTM\u00021Qp C \u00142\n2\u0006 C U.q/ C NdkBT ln s \u0003 EN\n\u0003\n;\n(8.9)\nwhere EN is a constant equal to the initial Nosé energy of the system. Trajectories of\nthis system unfold on a timescale which is in some sense commensurate with that of\nHamiltonian dynamics. The NP Hamiltonian system can be treated with symplectic\nintegrators, conferring a possible stability advantage. Symplectic integrators for this\nsystem are compared in [41].\nThe equations of motion associated to (8.9) are\nd\ndtq D M\u00021Qp=s;\n(8.10)\nd\ndt Qp D sF;\n(8.11)\nd\ndts D sps=\u0006;\n(8.12)\nd\ndtps D QpTM\u00021Qp\ns2\n\u0003 NdkBT \u0003 \u0016HN;\n(8.13)\nwhere \u0016HN D HN \u0003 H0\nN (H0\nN represents the value of the Nosé Hamiltonian at the\ninitial point).\n"
+    }
+  ],
+  "numbered_equations": [
+    "8.10",
+    "8.11",
+    "8.12",
+    "8.13"
+  ],
+  "transcription_note": "文字层逐字保留；数学排版另行转写，原页中的特殊字形编码不静默替换。",
+  "context_notation": [],
+  "extra_assumptions": [
+    "ΔH采用(8.9)展开内的N_d版本；β,Q>0及s>0为有效域；尚未桥接实际Hamiltonian梯度。",
+    "已目视核对原页PDF355：delta取H_N^(n)−E_N，不能与上式(n+1)/β版本混同。",
+    "[EXTRA] npValidDomain明确列有效物理域；使用npField作NP方程时必须另具此资格，总函数自身不强制。"
+  ],
+  "issues": [
+    "[ERRATUM?] ΔH_N采用(8.9)展开中的N_d版本，与前一定义(N_d+1)版本不同，须明确区分。",
+    "已目视核对原页PDF355：delta取H_N^(n)−E_N，不能与上式(n+1)/β版本混同。"
+  ],
+  "statement_scope": "NP四漂移分量、n/β版本的命名能量差及正质量、β,Q,s>0有效域谓词；npField仍为总函数，未证明Hamilton方程。",
+  "lean_decl": "MD.Ch08.npField",
+  "lean_declarations": [
+    "MD.Ch08.npDeltaN_corrected",
+    "MD.Ch08.npValidDomain",
+    "MD.Ch08.npField"
+  ],
+  "source_page_verification": "本次R1审校：已比对R1_PAGES.pdf附件第12页的页面图像及文字层；以页面数学排版为准。",
+  "repair_log": [
+    {
+      "instruction": 31,
+      "stage": "json_review",
+      "status": "NEEDS_HUMAN",
+      "issue_codes": [
+        "IRRELEVANT_TRANSCRIPTION_NOTE",
+        "STALE_VERIFICATION_REFERENCE",
+        "SOURCE_MATHEMATICAL_ERRATUM"
+      ],
+      "change": "合并经原页和现有签名核对的元数据更正；原页全文未改。"
+    },
+    {
+      "instruction": 31,
+      "stage": "human_triage",
+      "change": "已目视核对原页PDF355：delta取H_N^(n)−E_N，不能与上式(n+1)/β版本混同。；[EXTRA] npValidDomain明确列有效物理域；使用npField作NP方程时必须另具此资格，总函数自身不强制。",
+      "suggested_fix": "[ERRATUM?] 给delta命名为H_N^(n)−E_N，保留原页定义并与原印H_N^(n+1)区分。明确本def未证明是Hamilton方程。"
+    }
+  ],
+  "documented_priors": [],
+  "coverage_gaps": [
+    "NP四漂移分量、n/β版本的命名能量差及正质量、β,Q,s>0有效域谓词；npField仍为总函数，未证明Hamilton方程。"
+  ]
+}
+```
+
+## 完整本条Lean
+```lean
+/- 修正版采用(8.9)展开中的n/β版本，区别于前文(n+1)/β的同名H_N。 -/
+def npDeltaN_corrected (invm : Vec n) (U : Vec n → ℝ) (β Q EN : ℝ)
+    (z : Phase n × (ℝ × ℝ)) : ℝ :=
+  kineticTwice invm z.1.2/(2*z.2.1^2) + z.2.2^2/(2*Q) + U z.1.1 +
+    (n : ℝ)/β*Real.log z.2.1 - EN
+
+def npValidDomain (invm : Vec n) (β Q : ℝ) (z : Phase n × (ℝ × ℝ)) : Prop :=
+  (∀ i, 0 < invm i) ∧ 0 < β ∧ 0 < Q ∧ 0 < z.2.1
+
+def npField (invm : Vec n) (U : Vec n → ℝ) (β Q EN : ℝ)
+    (z : Phase n × (ℝ × ℝ)) : Phase n × (ℝ × ℝ) :=
+  let s := z.2.1
+  let π := z.2.2
+  let delta := npDeltaN_corrected invm U β Q EN z
+  ((fun i ↦ invm i*z.1.2 i/s, fun i ↦ -s*gradient U z.1.1 i),
+   (s*π/Q, kineticTwice invm z.1.2/s^2-(n : ℝ)/β-delta))
+```
+
+## 项目依赖定义体及选择规格
+以下def/abbrev/structure完整保留；定理列出完整类型，Mathlib标准定义无需摘录。
+
+### MD.Ch08.Vec (Blueprint/Ch08.lean:18)
+原文件上下文：
+```lean
+open Set Filter MeasureTheory ProbabilityTheory MolecularDynamics
+open scoped BigOperators Topology ContDiff ENNReal NNReal Matrix
+variable {Ω : Type*} [MeasurableSpace Ω]
+variable {n : ℕ}
+```
+```lean
+abbrev Vec (n : ℕ) := Fin n → ℝ
+```
+
+### MD.Ch08.Phase (Blueprint/Ch08.lean:19)
+原文件上下文：
+```lean
+open Set Filter MeasureTheory ProbabilityTheory MolecularDynamics
+open scoped BigOperators Topology ContDiff ENNReal NNReal Matrix
+variable {Ω : Type*} [MeasurableSpace Ω]
+variable {n : ℕ}
+```
+```lean
+abbrev Phase (n : ℕ) := Vec n × Vec n
+```
+
+### MD.Ch08.gradient (Blueprint/Ch08.lean:21)
+原文件上下文：
+```lean
+open Set Filter MeasureTheory ProbabilityTheory MolecularDynamics
+open scoped BigOperators Topology ContDiff ENNReal NNReal Matrix
+variable {Ω : Type*} [MeasurableSpace Ω]
+variable {n : ℕ}
+```
+```lean
+def gradient (U : Vec n → ℝ) (q : Vec n) : Vec n := fun i ↦ fderiv ℝ U q (Pi.single i 1)
+```
+
+### MD.Ch08.kineticTwice (Blueprint/Ch08.lean:69)
+原文件上下文：
+```lean
+open Set Filter MeasureTheory ProbabilityTheory MolecularDynamics
+open scoped BigOperators Topology ContDiff ENNReal NNReal Matrix
+variable {Ω : Type*} [MeasurableSpace Ω]
+variable {n : ℕ}
+```
+```lean
+def kineticTwice (invm p : Vec n) : ℝ := ∑ i, invm i * p i ^ 2
+```
+
+### MD.Ch08.npDeltaN_corrected (Blueprint/Ch08.lean:176)
+原文件上下文：
+```lean
+open Set Filter MeasureTheory ProbabilityTheory MolecularDynamics
+open scoped BigOperators Topology ContDiff ENNReal NNReal Matrix
+variable {Ω : Type*} [MeasurableSpace Ω]
+variable {n : ℕ}
+```
+```lean
+def npDeltaN_corrected (invm : Vec n) (U : Vec n → ℝ) (β Q EN : ℝ)
+    (z : Phase n × (ℝ × ℝ)) : ℝ :=
+  kineticTwice invm z.1.2/(2*z.2.1^2) + z.2.2^2/(2*Q) + U z.1.1 +
+    (n : ℝ)/β*Real.log z.2.1 - EN
+```
+
+### MD.Ch08.npValidDomain (Blueprint/Ch08.lean:181)
+原文件上下文：
+```lean
+open Set Filter MeasureTheory ProbabilityTheory MolecularDynamics
+open scoped BigOperators Topology ContDiff ENNReal NNReal Matrix
+variable {Ω : Type*} [MeasurableSpace Ω]
+variable {n : ℕ}
+```
+```lean
+def npValidDomain (invm : Vec n) (β Q : ℝ) (z : Phase n × (ℝ × ℝ)) : Prop :=
+  (∀ i, 0 < invm i) ∧ 0 < β ∧ 0 < Q ∧ 0 < z.2.1
+```
+
+### MD.Ch08.npField (Blueprint/Ch08.lean:184)
+原文件上下文：
+```lean
+open Set Filter MeasureTheory ProbabilityTheory MolecularDynamics
+open scoped BigOperators Topology ContDiff ENNReal NNReal Matrix
+variable {Ω : Type*} [MeasurableSpace Ω]
+variable {n : ℕ}
+```
+```lean
+def npField (invm : Vec n) (U : Vec n → ℝ) (β Q EN : ℝ)
+    (z : Phase n × (ℝ × ℝ)) : Phase n × (ℝ × ℝ) :=
+  let s := z.2.1
+  let π := z.2.2
+  let delta := npDeltaN_corrected invm U β Q EN z
+  ((fun i ↦ invm i*z.1.2 i/s, fun i ↦ -s*gradient U z.1.1 i),
+   (s*π/Q, kineticTwice invm z.1.2/s^2-(n : ℝ)/β-delta))
+```
+
+### MolecularDynamics.Chapter02Review.Q (MolecularDynamics/Chapter02/ReviewDefinitions.lean:17)
+原文件上下文：
+```lean
+open Set Filter Matrix
+open scoped BigOperators Topology
+```
+```lean
+abbrev Q (n : ℕ) := Fin n → ℝ
+```
+
+### MolecularDynamics.Chapter04Review.Q (MolecularDynamics/Chapter04/ReviewDefinitions.lean:15)
+原文件上下文：
+```lean
+open Set Matrix
+open scoped BigOperators Topology Matrix.Norms.Elementwise
+```
+```lean
+abbrev Q (n : ℕ) := Fin n → ℝ
+```

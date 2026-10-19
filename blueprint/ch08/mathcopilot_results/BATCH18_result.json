@@ -1,0 +1,55 @@
+{
+  "batch": "BATCH18",
+  "chapter": "ch08",
+  "round": "first-merged",
+  "input_sha256": {
+    "Blueprint/Ch08.lean": "2800812fadd8e2557013f1941e4570401f7903d46f44baf07e23d5531da22a72",
+    "blueprint/ch08/ch08_source.json": "9b994b0f64cd22c85c2ad4123fbfdbd064bd7a6d070fe13b721794432f9f7a63"
+  },
+  "items": [
+    {
+      "source_id": "MD-8.10-NHLTotalMomentumSign",
+      "json_review": {
+        "status": "APPROVED",
+        "issue_codes": [],
+        "corrected_json": null,
+        "issues": [],
+        "evidence": {
+          "source_text_comparison": "以附件实际文字层逐字比较；18页均与 original_page_text 完全相同，statement_verbatim 为各页文本以单个换行连接，未替换控制字符、连字、断行或原书拼写。数学公式另按PDF可视排版核对，文字层的乱码不作为数学符号错误。",
+          "pages": [
+            {
+              "attachment_page": 18,
+              "pdf_page": 419,
+              "printed_page": 398,
+              "original_page_text_exact_match": true,
+              "text_sha256": "54152333af8063cc14f8105806cb3582888c62719218f8d4aaf94f8f2267c9ed"
+            }
+          ],
+          "scope": "总动量标量ODE解目标、正指数因子及显式表达式的符号保持。",
+          "lean_declarations_checked": [
+            "MD.Ch08.nhlMomentumFactor",
+            "MD.Ch08.nhlMomentumFactor_pos",
+            "MD.Ch08.nhlMomentum_sign",
+            "MD.Ch08.nhlTotalMomentum_odeSolution"
+          ],
+          "annotations": "本条摘录没有字面 [EXTRA] 或 [ERRATUM?] 标签；已逐项检查 extra_assumptions、issues、statement_scope 所承载的额外资格、勘误说明及范围限制。现有范围说明与实际声明相符；未将定义/规格或局部目标当成已证动力学结论。",
+          "method": "仅依据本任务所附 Lean 全部声明、项目依赖定义及附录 D1–D31 做只读语义审校；Mathlib 标准定义按标准含义采信，未编译或改动工程、未补证明、未因 sorry 降级。"
+        }
+      },
+      "audit": {
+        "lean_decl": "MD.Ch08.nhlMomentumFactor",
+        "verdict": "PASS",
+        "explanation": "逐一核对 nhlMomentumFactor、其正性定理、nhlMomentum_sign、nhlTotalMomentum_odeSolution。因子 exp(−∫₀ᵗξ) 对任意实函数 ξ 和实 t 的 Lean 总化积分均严格正，因此显式表达式与 P0 的正、负符号分别等价；P0=0 时表达式也为0。真正的解公式定理另外要求 ξ 连续、对所有实 t 有 HasDerivAt P (−ξ(t)P(t)) t，结论 P(t)=factor(t)P(0) 的起点、符号及量词均正确，可由积分因子法推出。未把任意 ξ 上正性定理误当成任意 ξ 上的 ODE 解定理；从 NHL 粒子系统到总动量 ODE 的桥接在 extra_assumptions 已列缺口，原页关于符号及遍历性限定的说法被保留。sorry 不影响签名审校。",
+        "counterexample": null,
+        "suggested_fix": null
+      },
+      "subtask": "BATCH18a",
+      "input_sha256": {
+        "Blueprint/Ch08.lean": "2800812fadd8e2557013f1941e4570401f7903d46f44baf07e23d5531da22a72",
+        "blueprint/ch08/ch08_source.json": "9b994b0f64cd22c85c2ad4123fbfdbd064bd7a6d070fe13b721794432f9f7a63",
+        "BATCH18a_PAGES.pdf": "b8a8c31771b27a41d6b86d67d7d59c6f860493e92e7a09ec0b32a3b730cf8b62"
+      }
+    }
+  ],
+  "merged_from": "ch08_first_merged"
+}

@@ -1,0 +1,110 @@
+[
+  {
+    "batch": "EAUDIT01",
+    "source_ids": [
+      "MD-8.1.2.1-NPEquations",
+      "MD-8.2.1-Examples81and82",
+      "MD-8.4-AdditiveThermostatSDE"
+    ],
+    "subtasks": [
+      {
+        "subtask": "EAUDIT01a",
+        "source_id": "MD-8.1.2.1-NPEquations",
+        "path": "blueprint/ch08/mathcopilot_tasks/EAUDIT01/a",
+        "bytes": 97618,
+        "manifest_sha256": "cf4508719158a98974c3cbfca1f4236b6a911656d818a5c258dea3b762398383"
+      },
+      {
+        "subtask": "EAUDIT01b",
+        "source_id": "MD-8.2.1-Examples81and82",
+        "path": "blueprint/ch08/mathcopilot_tasks/EAUDIT01/b",
+        "bytes": 119946,
+        "manifest_sha256": "9c1c8e0096820a1a04ce444467d53e2583fc4bdc2de5df8b894f7317c5a43b06"
+      },
+      {
+        "subtask": "EAUDIT01c",
+        "source_id": "MD-8.4-AdditiveThermostatSDE",
+        "path": "blueprint/ch08/mathcopilot_tasks/EAUDIT01/c",
+        "bytes": 120080,
+        "manifest_sha256": "b2b13bdbaa74c2a06d32991c904df1ed543cca39d305bd8872d05f2bef68410d"
+      }
+    ]
+  },
+  {
+    "batch": "EAUDIT02",
+    "source_ids": [
+      "MD-8.4.1-NHL",
+      "MD-8.4.3-PreEquilibriumMeans",
+      "MD-8.4.4-RescalingStationary"
+    ],
+    "subtasks": [
+      {
+        "subtask": "EAUDIT02a",
+        "source_id": "MD-8.4.1-NHL",
+        "path": "blueprint/ch08/mathcopilot_tasks/EAUDIT02/a",
+        "bytes": 118996,
+        "manifest_sha256": "f69841b82ccc5dd7abf47ea4bef4ff2fd030e26f1db92bdbde9869a22193f5a4"
+      },
+      {
+        "subtask": "EAUDIT02b",
+        "source_id": "MD-8.4.3-PreEquilibriumMeans",
+        "path": "blueprint/ch08/mathcopilot_tasks/EAUDIT02/b",
+        "bytes": 187605,
+        "manifest_sha256": "91165fd82e3e5c75b9cfbcc5b6d3caec1f38b2ff60edab8940e53c0daa23037a"
+      },
+      {
+        "subtask": "EAUDIT02c",
+        "source_id": "MD-8.4.4-RescalingStationary",
+        "path": "blueprint/ch08/mathcopilot_tasks/EAUDIT02/c",
+        "bytes": 97429,
+        "manifest_sha256": "5af6a33922e7f245df5381ddacd101521079002ea71c5721976b04a89c3e1d44"
+      }
+    ]
+  },
+  {
+    "batch": "EAUDIT03",
+    "source_ids": [
+      "MD-8.5-SLSLeapfrog",
+      "MD-8.6.2-SINLyapunov",
+      "MD-8.7.1-PronyOUStationarity"
+    ],
+    "subtasks": [
+      {
+        "subtask": "EAUDIT03a",
+        "source_id": "MD-8.5-SLSLeapfrog",
+        "path": "blueprint/ch08/mathcopilot_tasks/EAUDIT03/a",
+        "bytes": 112077,
+        "manifest_sha256": "336c9d1dfd1a5ed23085a19d3cd391aedafe1facba2e8c69aedac66fed2c9e60"
+      },
+      {
+        "subtask": "EAUDIT03b",
+        "source_id": "MD-8.6.2-SINLyapunov",
+        "path": "blueprint/ch08/mathcopilot_tasks/EAUDIT03/b",
+        "bytes": 122332,
+        "manifest_sha256": "fb917025043afe5304c8cf7c8db53f63b2fbf1255f04ea693b8dd8f19d2d00ba"
+      },
+      {
+        "subtask": "EAUDIT03c",
+        "source_id": "MD-8.7.1-PronyOUStationarity",
+        "path": "blueprint/ch08/mathcopilot_tasks/EAUDIT03/c",
+        "bytes": 78141,
+        "manifest_sha256": "16be8214fd4250e339eb2546b3c2fcd0bcb70391f8408e8131bef0659ba27d31"
+      }
+    ]
+  },
+  {
+    "batch": "EAUDIT04",
+    "source_ids": [
+      "MD-8.8.1-PistonHamiltonianSubfield"
+    ],
+    "subtasks": [
+      {
+        "subtask": "EAUDIT04a",
+        "source_id": "MD-8.8.1-PistonHamiltonianSubfield",
+        "path": "blueprint/ch08/mathcopilot_tasks/EAUDIT04/a",
+        "bytes": 95171,
+        "manifest_sha256": "fccee23d7b4303cf101b4e94fd73b80b62cd67438b63c214695904477446f4f9"
+      }
+    ]
+  }
+]

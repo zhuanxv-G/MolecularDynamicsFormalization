@@ -1,0 +1,1634 @@
+{
+  "total": 103,
+  "checks": [
+    {
+      "source_id": "MD-8.1-CanonicalCorrelation",
+      "signature_changed": false,
+      "first_verdict": "PASS",
+      "scope": "规范平均、标量相关函数及零时归一；混合时的大时间极限定性说明另列。",
+      "coverage_gaps": [],
+      "actual_declarations": [
+        "MD.Ch08.Vec",
+        "MD.Ch08.Phase",
+        "MD.Ch08.dot",
+        "MD.Ch08.gradient",
+        "MD.Ch08.gibbsWeight",
+        "MD.Ch08.canonicalAverage",
+        "MD.Ch08.probabilityDensity",
+        "MD.Ch08.correlation",
+        "MD.Ch08.correlation_zero"
+      ],
+      "block_sha256": "76762869e1100ca2a798777c132d95d950e6be220c8478df909d8d9f7afee662",
+      "scope_matches_lean": true
+    },
+    {
+      "source_id": "MD-8.1-HamiltonianStationary",
+      "signature_changed": false,
+      "first_verdict": "PASS",
+      "scope": "光滑Hamiltonian Gibbs权重的Liouville驻定方程；其余三项列覆盖缺口。",
+      "coverage_gaps": [],
+      "actual_declarations": [
+        "MD.Ch08.hamiltonianField",
+        "MD.Ch08.hamiltonianGibbsStationary"
+      ],
+      "block_sha256": "703b95ce035461f0642eb917a77ea707191a27a6a6a0109133d67201c6c91c57",
+      "scope_matches_lean": true
+    },
+    {
+      "source_id": "MD-8.1-ExtendedDensity",
+      "signature_changed": false,
+      "first_verdict": "PASS",
+      "scope": "乘积权定义及辅助因子积分为1时的边缘积分等式；不额外证明概率正性或一般流不变性。",
+      "coverage_gaps": [],
+      "actual_declarations": [
+        "MD.Ch08.extendedDensity",
+        "MD.Ch08.extendedAverage"
+      ],
+      "block_sha256": "31c8bc80e84ddac00352ea4a3a0c086de19b38f8fd6fa4633c0ea6fb3eee1e45",
+      "scope_matches_lean": true
+    },
+    {
+      "source_id": "MD-8.1.1-NoseHoover",
+      "signature_changed": false,
+      "first_verdict": "PASS",
+      "scope": "正参数资格、动能平方和、NH实际向量场及全实时间ODE规格。",
+      "coverage_gaps": [],
+      "actual_declarations": [
+        "MD.Ch08.thermostatParameters",
+        "MD.Ch08.kineticTwice",
+        "MD.Ch08.nhField",
+        "MD.Ch08.isNHSolution"
+      ],
+      "block_sha256": "fc4b9086f48c23a13965cad9c7b8467618d671c347adb85fa392bfae40e2acfc",
+      "scope_matches_lean": true
+    },
+    {
+      "source_id": "MD-8.1.1-NHDensitySplit",
+      "signature_changed": false,
+      "first_verdict": "PASS",
+      "scope": "权重、分裂及完整场驻定；伴随算子分裂可由散度线性导出但未另作声明。",
+      "coverage_gaps": [],
+      "actual_declarations": [
+        "MD.Ch08.nhWeight",
+        "MD.Ch08.nhBathField",
+        "MD.Ch08.nhField_split",
+        "MD.Ch08.nhWeight_stationary"
+      ],
+      "block_sha256": "b4b4c5cea02c1ea90738fd48f568f3ffa6f753b51c40de23faaa93b0d5115e53",
+      "scope_matches_lean": true
+    },
+    {
+      "source_id": "MD-8.1.1-NHFirstIntegralPrinted",
+      "signature_changed": false,
+      "first_verdict": "NEEDS_HUMAN",
+      "scope": "第一积分候选、原印s导数与修正s导数各自对应的沿解零导数目标；原印版不证。",
+      "coverage_gaps": [],
+      "actual_declarations": [
+        "MD.Ch08.nhIntegral",
+        "MD.Ch08.nhIntegralPrinted",
+        "MD.Ch08.nhIntegral_corrected"
+      ],
+      "block_sha256": "d1780f9071a1f030c5aee03c8b9be738d17cb34ba816c45a972d464b607ffaa0",
+      "scope_matches_lean": true
+    },
+    {
+      "source_id": "MD-8.1.2-NHReversal",
+      "signature_changed": false,
+      "first_verdict": "PASS",
+      "scope": "反演为对合及向量场反演等式；不另称一般ODE流的全局反演定理。",
+      "coverage_gaps": [],
+      "actual_declarations": [
+        "MD.Ch08.nhReversal",
+        "MD.Ch08.nhReversal_involutive",
+        "MD.Ch08.nhReversal_field"
+      ],
+      "block_sha256": "564287ce946dd4f117d6f6b2815f82f608c434c0252478887860c919c76e125d",
+      "scope_matches_lean": true
+    },
+    {
+      "source_id": "MD-8.1.2-NHTimestep",
+      "signature_changed": false,
+      "first_verdict": "PASS",
+      "scope": "五段单步算法与c的可去奇点延拓；Taylor展开及二阶收敛列覆盖缺口。",
+      "coverage_gaps": [],
+      "actual_declarations": [
+        "MD.Ch08.dampedCoefficient",
+        "MD.Ch08.nhDrift",
+        "MD.Ch08.nhKick",
+        "MD.Ch08.nhFeedback",
+        "MD.Ch08.nhStep",
+        "MD.Ch08.dampedCoefficient_zero"
+      ],
+      "block_sha256": "d1902bd7903331b694bacc4840d9132380e254da98cf746c9a1b97dd56565c0d",
+      "scope_matches_lean": true
+    },
+    {
+      "source_id": "MD-8.1.2-NHTimestepReversible",
+      "signature_changed": false,
+      "first_verdict": "PASS",
+      "scope": "五段单步的反演等式及负步长左逆两个目标；未建立误差阶数。",
+      "coverage_gaps": [],
+      "actual_declarations": [
+        "MD.Ch08.nhStep_reversible",
+        "MD.Ch08.nhStep_inverse"
+      ],
+      "block_sha256": "5c2e5f55cff0f304da98ece24035dfe1f8695abba62d2544d2df5800d3db070c",
+      "scope_matches_lean": true
+    },
+    {
+      "source_id": "MD-8.1.2.1-NoseHamiltoniansPrinted",
+      "signature_changed": false,
+      "first_verdict": "NEEDS_HUMAN",
+      "scope": "两个原印Hamiltonian定义、所印等式目标及减去对数差项后的代数修正。",
+      "coverage_gaps": [],
+      "actual_declarations": [
+        "MD.Ch08.noseHamiltonian",
+        "MD.Ch08.npHamiltonian",
+        "MD.Ch08.nosePoincarePrinted",
+        "MD.Ch08.nosePoincare_corrected"
+      ],
+      "block_sha256": "df3fe14a0ef43edb8a572848e02c6ab17d6b6a650234adf0597b9bbf682b6161",
+      "scope_matches_lean": true
+    },
+    {
+      "source_id": "MD-8.1.2.1-NPEquations",
+      "signature_changed": true,
+      "first_verdict": "NEEDS_HUMAN",
+      "scope": "NP四漂移分量、n/β版本的命名能量差及正质量、β,Q,s>0有效域谓词；npField仍为总函数，未证明Hamilton方程。",
+      "coverage_gaps": [
+        "NP四漂移分量、n/β版本的命名能量差及正质量、β,Q,s>0有效域谓词；npField仍为总函数，未证明Hamilton方程。"
+      ],
+      "actual_declarations": [
+        "MD.Ch08.npDeltaN_corrected",
+        "MD.Ch08.npValidDomain",
+        "MD.Ch08.npField"
+      ],
+      "block_sha256": "129019fea2cee6fe2cbae5275fd563f24d692c6ca428ee20ed7f7aea5903e64a",
+      "scope_matches_lean": true
+    },
+    {
+      "source_id": "MD-8.1.2.1-NPtoNH",
+      "signature_changed": false,
+      "first_verdict": "PASS",
+      "scope": "给定零能量NP解投影为NH解；NP零能量初值传播和非零能量修正列缺口。",
+      "coverage_gaps": [],
+      "actual_declarations": [
+        "MD.Ch08.npProjection",
+        "MD.Ch08.npProjection_equations"
+      ],
+      "block_sha256": "8b10690be713917bba1c4d739d8bc94381d7e323440b617294cf502724525400",
+      "scope_matches_lean": true
+    },
+    {
+      "source_id": "MD-8.1.2.1-NPShadowDensity",
+      "signature_changed": false,
+      "first_verdict": "PASS",
+      "scope": "三条公式的定义及渐近条件；不声称已构造ζ或证明有限样本等于精确平均。",
+      "coverage_gaps": [
+        "三条公式的定义及渐近条件；不声称已构造ζ或证明有限样本等于精确平均。",
+        "[EXTRA]仅给O(h⁴)余项与有限重加权公式的精确定义；存在修正Hamiltonian/密度和采样误差定理未覆盖，列入缺口。"
+      ],
+      "actual_declarations": [
+        "MD.Ch08.fourthOrderRemainder",
+        "MD.Ch08.correctedFiniteAverage",
+        "MD.Ch08.npShadowAnsatz",
+        "MD.Ch08.npDensityAnsatz"
+      ],
+      "block_sha256": "8b7f24a1b6b0795f54d87c5502cd3292c872c7eb82e69a0202a293f3060427cb",
+      "scope_matches_lean": true
+    },
+    {
+      "source_id": "MD-8.2-GeneralThermostat",
+      "signature_changed": false,
+      "first_verdict": "PASS",
+      "scope": "常矩阵一般热浴场及矩阵反对称资格的定义；不声称已证驻定或采样。",
+      "coverage_gaps": [
+        "常矩阵一般热浴场及矩阵反对称资格的定义；不声称已证驻定或采样。"
+      ],
+      "actual_declarations": [
+        "MD.Ch08.generalThermostat",
+        "MD.Ch08.skewMatrix"
+      ],
+      "block_sha256": "82520d1d3800e76379090f4e7d5f4eaca3d2e7fdc4d2dc8c40513ebca6dd36f6",
+      "scope_matches_lean": true
+    },
+    {
+      "source_id": "MD-8.2.1-ContinuityProductRule",
+      "signature_changed": false,
+      "first_verdict": "PASS",
+      "scope": "实际Fréchet散度的乘积展开；未声称连续性方程解的存在唯一性。",
+      "coverage_gaps": [],
+      "actual_declarations": [
+        "MD.Ch08.continuityRHS",
+        "MD.Ch08.continuity_productRule"
+      ],
+      "block_sha256": "40aa6f81256a24a215b11e77f4c0004be9fe35247d55332fde044c9839c2c562",
+      "scope_matches_lean": true
+    },
+    {
+      "source_id": "MD-8.2.1-ThermostatCriterion",
+      "signature_changed": false,
+      "first_verdict": "PASS",
+      "scope": "给定正参数与光滑性后，局部Liouville驻定与所列标量散度条件的等价目标。",
+      "coverage_gaps": [],
+      "actual_declarations": [
+        "MD.Ch08.thermalWeight",
+        "MD.Ch08.thermostatCriterion"
+      ],
+      "block_sha256": "3a33cdbadd1df1da44846ad1b81a7735be66b3ad822c35a29a4743b8e212672c",
+      "scope_matches_lean": true
+    },
+    {
+      "source_id": "MD-8.2.1-Examples81and82",
+      "signature_changed": true,
+      "first_verdict": "FAIL",
+      "scope": "原印一般G与构型反馈、正号组合Printed驻定声称，以及负号耦合的局部驻定修正版；不含全局过程不变性。",
+      "coverage_gaps": [
+        "原印一般G与构型反馈、正号组合Printed驻定声称，以及负号耦合的局部驻定修正版；不含全局过程不变性。"
+      ],
+      "actual_declarations": [
+        "MD.Ch08.generalizedFeedback",
+        "MD.Ch08.configurationalFeedback",
+        "MD.Ch08.generalizedFeedback_stationaryPrinted",
+        "MD.Ch08.generalizedFeedback_stationary_corrected"
+      ],
+      "block_sha256": "60dacba365cacff27609b1c5d729d80404fdf4a660b4d5dc0a951e90cf7e4b13",
+      "scope_matches_lean": true
+    },
+    {
+      "source_id": "MD-8.2.1-TemperatureIdentity",
+      "signature_changed": false,
+      "first_verdict": "PASS",
+      "scope": "紧支撑G的Gibbs积分分部目标及温度比值定义；一般边界衰减条件和比值推导未另证。",
+      "coverage_gaps": [],
+      "actual_declarations": [
+        "MD.Ch08.temperatureIdentity",
+        "MD.Ch08.phaseTemperature"
+      ],
+      "block_sha256": "45a621d5e3294718d2b03c7a2c67f2978be95d0c8c62198e891d3ccdce1351ee",
+      "scope_matches_lean": true
+    },
+    {
+      "source_id": "MD-8.2.1-Proposition81",
+      "signature_changed": false,
+      "first_verdict": "PASS",
+      "scope": "两个标量热浴的局部Liouville驻定相加命题；不含多维热浴或全局流保测性。",
+      "coverage_gaps": [
+        "两个标量热浴的局部Liouville驻定相加命题；不含多维热浴或全局流保测性。",
+        "两个标量辅助变量的实际Liouville驻定版本；非负、归一后称概率密度，流保测性另需完整流存在与Jacobian条件。多维辅助变量未覆盖。"
+      ],
+      "actual_declarations": [
+        "MD.Ch08.proposition81"
+      ],
+      "block_sha256": "c52e74aee84eea7a986527a110072b1e5d9ebf64f05b1bd13442ff25681a3aaa",
+      "scope_matches_lean": true
+    },
+    {
+      "source_id": "MD-8.2.2-NHChains",
+      "signature_changed": false,
+      "first_verdict": "PASS",
+      "scope": "任意正链长、正对角质量且无约束的NH链场与未归一Gaussian权的局部Liouville驻定；不含一般非对角M、约束流形、唯一不变概率或遍历性。",
+      "coverage_gaps": [
+        "任意正链长、正对角质量且无约束的NH链场与未归一Gaussian权的局部Liouville驻定；不含一般非对角M、约束流形、唯一不变概率或遍历性。",
+        "链长k>0，各热质量Q_j>0、β>0，实辅助变量；未归一Gaussian权重不声称唯一不变概率或遍历性。"
+      ],
+      "actual_declarations": [
+        "MD.Ch08.nhChainField",
+        "MD.Ch08.nhChain_stationary"
+      ],
+      "block_sha256": "357f4b971a7b854cd7e1ba857daa293eaecbf070cd5871efd52e302ca10ab1f0",
+      "scope_matches_lean": true
+    },
+    {
+      "source_id": "MD-8.3-ArrheniusRate",
+      "signature_changed": false,
+      "first_verdict": "PASS",
+      "scope": "Arrhenius指数速率公式定义及A≥0时非负性；不含亚稳跃迁率渐近定理或温度单调性。",
+      "coverage_gaps": [
+        "Arrhenius指数速率公式定义及A≥0时非负性；不含亚稳跃迁率渐近定理或温度单调性。",
+        "A≥0,k_B>0,T>0为速率解释域；只定义原页模型，不声称一般能垒动力学服从此经验律。"
+      ],
+      "actual_declarations": [
+        "MD.Ch08.arrheniusRate",
+        "MD.Ch08.arrheniusRate_nonneg"
+      ],
+      "block_sha256": "348e69507bd1b8e330901db29f65cedd842c5496c41d335faa012f75ac035dbd",
+      "scope_matches_lean": true
+    },
+    {
+      "source_id": "MD-8.4-AdditiveThermostatSDE",
+      "signature_changed": true,
+      "first_verdict": "FAIL",
+      "scope": "常噪声积分SDE模板与正对角物理质量的统一恒温器解规格；同一n+k维独立Wiener、分块噪声、两组协方差和漂移质量已绑定。未含一般非对角物理质量、存在唯一性或不变律。",
+      "coverage_gaps": [
+        "[EXTRA] 正逆质量、C¹势；物理质量固定为diag(invm⁻¹)，Mhat为热浴协方差质量；两组涨落耗散均绑定同一β及实际阻尼。未构造矩阵平方根，未证明确定性热浴保权或完整过程不变性。",
+        "完整两组SDE需要一个统一的n+k维独立Wiener向量、分块噪声因子、对应漂移及两组协方差约束；本条尚无这项组装声明。"
+      ],
+      "actual_declarations": [
+        "MD.Ch08.independentWiener",
+        "MD.Ch08.additiveSDE",
+        "MD.Ch08.stochasticThermostatDrift",
+        "MD.Ch08.fluctuationDissipation",
+        "MD.Ch08.thermostatBlockNoise",
+        "MD.Ch08.stochasticThermostatSolution"
+      ],
+      "block_sha256": "a6c5eaad6c2bf28012cc69313568df5aaaee8e5413199d543a1769182d4e84d7",
+      "scope_matches_lean": true
+    },
+    {
+      "source_id": "MD-8.4-OUStationarityPrinted",
+      "signature_changed": false,
+      "first_verdict": "NEEDS_HUMAN",
+      "scope": "协方差匹配的完整OU局部驻定目标；所印扩散抵消的标量特例及数值反例。",
+      "coverage_gaps": [],
+      "actual_declarations": [
+        "MD.Ch08.ouFokkerPlanck",
+        "MD.Ch08.ouStationarity_corrected",
+        "MD.Ch08.diffusionPrinted",
+        "MD.Ch08.diffusionPrinted_counterexample"
+      ],
+      "block_sha256": "df5a70002443e1602cccceeb606922a11d6155f9c498b731b1bd1f2d506f38b4",
+      "scope_matches_lean": true
+    },
+    {
+      "source_id": "MD-8.4-LiftedThermostat",
+      "signature_changed": false,
+      "first_verdict": "PASS",
+      "scope": "一般单热浴提升场的实际加性Wiener积分解规格。",
+      "coverage_gaps": [],
+      "actual_declarations": [
+        "MD.Ch08.liftedThermostat"
+      ],
+      "block_sha256": "4f23a46d640d286368d5eb6ff538be83da07284a107fc96699eb0e7c79b85e87",
+      "scope_matches_lean": true
+    },
+    {
+      "source_id": "MD-8.4-Proposition82",
+      "signature_changed": false,
+      "first_verdict": "NEEDS_HUMAN",
+      "scope": "所印及补σ≠0后的真实Lie括号张成命题；不含解存在、平滑转移核或遍历性。",
+      "coverage_gaps": [
+        "所印及补σ≠0后的真实Lie括号张成命题；不含解存在、平滑转移核或遍历性。",
+        "Printed版保留未要求非零σ的原文强度，不证明；修正版完整使用真实迭代Lie括号张成定义。"
+      ],
+      "actual_declarations": [
+        "MD.Ch08.proposition82Printed",
+        "MD.Ch08.proposition82_corrected"
+      ],
+      "block_sha256": "bc784f94e03651f141d534f3befd4a724ceadf915dc5819eccd8866acfc225f3",
+      "scope_matches_lean": true
+    },
+    {
+      "source_id": "MD-8.4.1-NHL",
+      "signature_changed": false,
+      "first_verdict": "FAIL",
+      "scope": "仅正对角质量、无约束Nd=n的NHL漂移与单ξ噪声积分解规格；harmonicPotential仅定义二次函数。一般矩阵质量、单位质量二次专门化声明及原书重缩放均未覆盖。",
+      "coverage_gaps": [
+        "仅正对角质量、无约束Nd=n的NHL漂移与单ξ噪声积分解规格；harmonicPotential仅定义二次函数。一般矩阵质量、单位质量二次专门化声明及原书重缩放均未覆盖。",
+        "[EXTRA]M⁻¹=diag(invm)，N_d=n；一般非对角M未覆盖。harmonicPotential本身未要求A对称正定，相关物理资格在应用时另加。"
+      ],
+      "actual_declarations": [
+        "MD.Ch08.nhlDrift",
+        "MD.Ch08.isNHLSolution",
+        "MD.Ch08.harmonicPotential"
+      ],
+      "block_sha256": "e421101afac7344264a93c2674a0bfa60a257b5fbf64022c860cb286a79817e3",
+      "scope_matches_lean": true
+    },
+    {
+      "source_id": "MD-8.4.1-Lemma81",
+      "signature_changed": false,
+      "first_verdict": "PASS",
+      "scope": "线性向量场C、D在实际Lie生成空间中的归属；Lean零起始索引对应原文正索引。",
+      "coverage_gaps": [],
+      "actual_declarations": [
+        "MD.Ch08.lemma81"
+      ],
+      "block_sha256": "9ce994a0816fc131839eb7d73d85ee229c6a77d340eadb4b6dd986af4bcd4327",
+      "scope_matches_lean": true
+    },
+    {
+      "source_id": "MD-8.4.1-Proposition83",
+      "signature_changed": false,
+      "first_verdict": "PASS",
+      "scope": "指定模态域内的2n个实际线性场值线性无关；不扩大到例外零模态。",
+      "coverage_gaps": [],
+      "actual_declarations": [
+        "MD.Ch08.proposition83"
+      ],
+      "block_sha256": "0a80a5eac0a7e55b828a93862a3cc48099719ca3570c9de08afae7618d9bdd4e",
+      "scope_matches_lean": true
+    },
+    {
+      "source_id": "MD-8.4.1-Theorem81",
+      "signature_changed": false,
+      "first_verdict": "NEEDS_HUMAN",
+      "scope": "所印及补参数资格后的NHL点态Hörmander条件；不含由其推出全局几何遍历性。",
+      "coverage_gaps": [
+        "所印及补参数资格后的NHL点态Hörmander条件；不含由其推出全局几何遍历性。"
+      ],
+      "actual_declarations": [
+        "MD.Ch08.theorem81Printed",
+        "MD.Ch08.theorem81_corrected"
+      ],
+      "block_sha256": "c2cdc21f9aea7cd2fe9694eb55fd223f4fd6f03b8e743af958e5176227aa162d",
+      "scope_matches_lean": true
+    },
+    {
+      "source_id": "MD-8.4.1-ZeroModeInvariant",
+      "signature_changed": false,
+      "first_verdict": "PASS",
+      "scope": "模态域的补集表达及连续热浴路径驱动的模态ODE零模态不变。",
+      "coverage_gaps": [],
+      "actual_declarations": [
+        "MD.Ch08.modeDomain_complement",
+        "MD.Ch08.zeroMode_invariant"
+      ],
+      "block_sha256": "5b4e677c1a282b3bec7e58c04e0a6cf38a2b6db21186c8cf178c772f00add894",
+      "scope_matches_lean": true
+    },
+    {
+      "source_id": "MD-8.4.1-NHLGenerator",
+      "signature_changed": false,
+      "first_verdict": "PASS",
+      "scope": "实际加性扩散的Fréchet形式生成元、Lyapunov候选及漂移界性质的定义。",
+      "coverage_gaps": [],
+      "actual_declarations": [
+        "MD.Ch08.additiveGenerator",
+        "MD.Ch08.nhlGenerator",
+        "MD.Ch08.nhlLyapunov",
+        "MD.Ch08.geometricDriftBound"
+      ],
+      "block_sha256": "e73a7eb07cb3b5e70d96def799f6936c1be5fe200b249827e82cf8e3d5df5ecc",
+      "scope_matches_lean": true
+    },
+    {
+      "source_id": "MD-8.4.1-LyapunovCalculation",
+      "signature_changed": false,
+      "first_verdict": "PASS",
+      "scope": "实际NHL生成元作用于平移二次能量的目标及标量平方不等式；未据此证明遍历。",
+      "coverage_gaps": [],
+      "actual_declarations": [
+        "MD.Ch08.nhlLyapunovExpression",
+        "MD.Ch08.nhlLyapunov_calculation",
+        "MD.Ch08.shiftedSquare_bound"
+      ],
+      "block_sha256": "00733c56c27382c44a98f9bd768bace0a50785ec5331e7e3d983a802b03f4198",
+      "scope_matches_lean": true
+    },
+    {
+      "source_id": "MD-8.4.1-LyapunovRatePrinted",
+      "signature_changed": false,
+      "first_verdict": "NEEDS_HUMAN",
+      "scope": "所印与修正衰减系数、两版漂移界目标及所印界的正参数数值反例。",
+      "coverage_gaps": [],
+      "actual_declarations": [
+        "MD.Ch08.lyapunovAlphaPrinted",
+        "MD.Ch08.lyapunovAlpha_corrected",
+        "MD.Ch08.lyapunovRatePrinted",
+        "MD.Ch08.lyapunovRate_counterexample",
+        "MD.Ch08.lyapunovRate_corrected"
+      ],
+      "block_sha256": "2d9e8d0a9d9b2ed47e0407bc3fc3e6de93d4f35f2083ef34c0f73df965970841",
+      "scope_matches_lean": true
+    },
+    {
+      "source_id": "MD-8.4.2-NHLTimestep",
+      "signature_changed": false,
+      "first_verdict": "PASS",
+      "scope": "实际九阶段NHL单步映射、OU随机输入及独立标准正态序列资格；不含整体稳定性。",
+      "coverage_gaps": [
+        "实际九阶段NHL单步映射、OU随机输入及独立标准正态序列资格；不含整体稳定性。"
+      ],
+      "actual_declarations": [
+        "MD.Ch08.nhlOU",
+        "MD.Ch08.forceKick",
+        "MD.Ch08.bathDamping",
+        "MD.Ch08.nhlStep",
+        "MD.Ch08.standardNormalSequence"
+      ],
+      "block_sha256": "fcf080f340edd29a8fc3244ba803ab61d78172559981c8adeb36e5f31bf22c78",
+      "scope_matches_lean": true
+    },
+    {
+      "source_id": "MD-8.4.1-NHLWeakStationary",
+      "signature_changed": false,
+      "first_verdict": "PASS",
+      "scope": "归一概率密度的弱驻定积分式目标；Markov半群不变性、唯一性和遍历性未覆盖。",
+      "coverage_gaps": [
+        "归一概率密度的弱驻定积分式目标；Markov半群不变性、唯一性和遍历性未覆盖。"
+      ],
+      "actual_declarations": [
+        "MD.Ch08.weakStationaryNHL",
+        "MD.Ch08.nhlWeakStationary"
+      ],
+      "block_sha256": "6fe7b7c1af16a6b548d05b18be7eef248c95ae93729683a58fbe1ecbd54c82a8",
+      "scope_matches_lean": true
+    },
+    {
+      "source_id": "MD-8.4.3-PreEquilibriumMeans",
+      "signature_changed": true,
+      "first_verdict": "FAIL",
+      "scope": "任意随时间概率密度的两项有限平均与正质量、加权可积资格；preEquilibriumDensity仅是历史名称，未要求或覆盖NHL Fokker–Planck演化、闭合方程及局部稳定性。",
+      "coverage_gaps": [
+        "任意随时间概率密度的两项有限平均与正质量、加权可积资格；preEquilibriumDensity仅是历史名称，未要求或覆盖NHL Fokker–Planck演化、闭合方程及局部稳定性。",
+        "[EXTRA] 每个t≥0同时要求两项加权函数Integrable，故均值不是不可积时的总化积分。NHL Fokker–Planck演化未形式化，名称不代表完整预平衡动力学资格。"
+      ],
+      "actual_declarations": [
+        "MD.Ch08.meanKineticTwice",
+        "MD.Ch08.meanBath",
+        "MD.Ch08.preEquilibriumDensity"
+      ],
+      "block_sha256": "32bd4d54edffb7457342cd2fec6d1ce7989ad9636abec49eaf1f6dd7a46f15ae",
+      "scope_matches_lean": true
+    },
+    {
+      "source_id": "MD-8.4.4-VelocityRescaling",
+      "signature_changed": false,
+      "first_verdict": "PASS",
+      "scope": "实际漂移扩散、Φ有效性和原始Φ对应Ψ的化简目标；没有完整乘性SDE解规格。",
+      "coverage_gaps": [],
+      "actual_declarations": [
+        "MD.Ch08.rescalingPsi",
+        "MD.Ch08.rescalingDrift",
+        "MD.Ch08.rescalingNoise",
+        "MD.Ch08.originalRescalingPhi",
+        "MD.Ch08.rescalingAdmissible",
+        "MD.Ch08.rescalingPsi_original"
+      ],
+      "block_sha256": "3445f26157dad3f23ae061c1af3b41537a2d56cdc31695198bf4b953fd684e67",
+      "scope_matches_lean": true
+    },
+    {
+      "source_id": "MD-8.4.4-RescalingStationary",
+      "signature_changed": true,
+      "first_verdict": "FAIL",
+      "scope": "闭包支撑tsupport避开零动量的光滑紧支撑测试函数弱驻定目标；零动量边界及半群不变性未覆盖。",
+      "coverage_gaps": [
+        "闭包支撑tsupport避开零动量的光滑紧支撑测试函数弱驻定目标；零动量边界及半群不变性未覆盖。",
+        "二阶项冻结噪声方向，正确表示Itô Hessian；完整随机解、奇异边界与半群不变性未覆盖。"
+      ],
+      "actual_declarations": [
+        "MD.Ch08.rescalingStationary"
+      ],
+      "block_sha256": "f1bd730dcc3290d2860966209bea663f95cfdb2d904f853327497f00c3506141",
+      "scope_matches_lean": true
+    },
+    {
+      "source_id": "MD-8.4.5-ThermostatEfficiency",
+      "signature_changed": false,
+      "first_verdict": "PASS",
+      "scope": "效率比值、表8.1四行解析速率/低阶误差/效率估计及一般VR的O(N)含义；外引估计定理未证，经验曲线排除。",
+      "coverage_gaps": [
+        "效率比值、表8.1四行解析速率/低阶误差/效率估计及一般VR的O(N)含义；外引估计定理未证，经验曲线排除。"
+      ],
+      "actual_declarations": [
+        "MD.Ch08.thermostatEfficiency",
+        "MD.Ch08.langevinErrorEstimate",
+        "MD.Ch08.rescalingRateEstimate",
+        "MD.Ch08.rescalingErrorEstimate",
+        "MD.Ch08.nhlRateEstimate",
+        "MD.Ch08.nhlErrorEstimate",
+        "MD.Ch08.langevinRateEstimate",
+        "MD.Ch08.langevinEfficiencyEstimate",
+        "MD.Ch08.originalRescalingRateEstimate",
+        "MD.Ch08.originalRescalingErrorEstimate",
+        "MD.Ch08.originalRescalingEfficiencyEstimate",
+        "MD.Ch08.nhlCriticalEfficiencyEstimate",
+        "MD.Ch08.rescalingEfficiencyOrder"
+      ],
+      "block_sha256": "32d10cdb3eb5bb10d29c45ab8ec0d828575a45aeaefe26db3d88d4cfc2aee644",
+      "scope_matches_lean": true
+    },
+    {
+      "source_id": "MD-8.5-SLS",
+      "signature_changed": false,
+      "first_verdict": "PASS",
+      "scope": "完整SLS加性SDE积分解规格、噪声方向与确定性子场定义。",
+      "coverage_gaps": [],
+      "actual_declarations": [
+        "MD.Ch08.slsDrift",
+        "MD.Ch08.slsNoise",
+        "MD.Ch08.isSLSSolution",
+        "MD.Ch08.slsDeterministic"
+      ],
+      "block_sha256": "4642dc695b84ced153f31c7a277b7d6d33e0ad398f01a30abbbc632170f38cd3",
+      "scope_matches_lean": true
+    },
+    {
+      "source_id": "MD-8.5-SLSBracketPrinted",
+      "signature_changed": false,
+      "first_verdict": "NEEDS_HUMAN",
+      "scope": "第一漂移/热浴括号的原印与符号修正目标；二重括号在Hörmander另条处理。",
+      "coverage_gaps": [],
+      "actual_declarations": [
+        "MD.Ch08.slsBathNoise",
+        "MD.Ch08.slsBracketPrinted",
+        "MD.Ch08.slsBracket_corrected"
+      ],
+      "block_sha256": "be26bbd86e90b0dc1bdc14ff6729ebfe7400036f39f79a9f7b9c01b328e90ec9",
+      "scope_matches_lean": true
+    },
+    {
+      "source_id": "MD-8.5-SLSHormander",
+      "signature_changed": false,
+      "first_verdict": "PASS",
+      "scope": "单位参数实际SLS场与噪声方向的点态Lie张成目标；不含几何遍历性。",
+      "coverage_gaps": [
+        "单位参数实际SLS场与噪声方向的点态Lie张成目标；不含几何遍历性。"
+      ],
+      "actual_declarations": [
+        "MD.Ch08.slsHormander"
+      ],
+      "block_sha256": "52713bfefbaf7ed0605c84b45debbad4b4b6eb0374e0dbe74f8362bfa00141c8",
+      "scope_matches_lean": true
+    },
+    {
+      "source_id": "MD-8.5-SLSConservation",
+      "signature_changed": false,
+      "first_verdict": "PASS",
+      "scope": "确定性SLS子场的局部驻定及零散度目标；完整SDE概率不变、独立第一积分未另证。",
+      "coverage_gaps": [],
+      "actual_declarations": [
+        "MD.Ch08.slsDeterministic_stationary",
+        "MD.Ch08.slsDeterministic_divergence"
+      ],
+      "block_sha256": "c484f6090697ca31171840375cbdc310b8081c1d8df1c56d5211e8cdc3bff374",
+      "scope_matches_lean": true
+    },
+    {
+      "source_id": "MD-8.5-SLSLeapfrog",
+      "signature_changed": true,
+      "first_verdict": "NEEDS_HUMAN",
+      "scope": "原有半kick–drift–半kick与坐标场定义，另列原印η约化场和恢复1/Q的修正版；体积保持、误差阶及η变换推导未证明。",
+      "coverage_gaps": [
+        "原有半kick–drift–半kick与坐标场定义，另列原印η约化场和恢复1/Q的修正版；体积保持、误差阶及η变换推导未证明。",
+        "原文η约化方程漏μ⁻¹，算法保留Q⁻¹；本条覆盖原页算法及逐坐标场，不声称二阶不变分布误差或精确求积实现。"
+      ],
+      "actual_declarations": [
+        "MD.Ch08.slsBathKick",
+        "MD.Ch08.slsDriftStep",
+        "MD.Ch08.slsLeapfrog",
+        "MD.Ch08.slsCoordinateField",
+        "MD.Ch08.slsReducedPrinted",
+        "MD.Ch08.slsReduced_corrected"
+      ],
+      "block_sha256": "78c23443e0a485e8f2b1fa60b9b0bd88b9d3786acc94558bf996406cd3fb422f",
+      "scope_matches_lean": true
+    },
+    {
+      "source_id": "MD-8.5-SLSDoubleWell",
+      "signature_changed": false,
+      "first_verdict": "PASS",
+      "scope": "一维双阱势定义与非负性。",
+      "coverage_gaps": [],
+      "actual_declarations": [
+        "MD.Ch08.slsDoubleWell",
+        "MD.Ch08.slsDoubleWell_nonneg"
+      ],
+      "block_sha256": "56197169296fb5ef154611db1d1b68596f7ec6ab131a1255de5c346759d8a05d",
+      "scope_matches_lean": true
+    },
+    {
+      "source_id": "MD-8.6-IsokineticField",
+      "signature_changed": false,
+      "first_verdict": "PASS",
+      "scope": "无约束向量场与瞬时动能导数的代数消去；沿解的完整第一积分列缺口。",
+      "coverage_gaps": [],
+      "actual_declarations": [
+        "MD.Ch08.isoMultiplier",
+        "MD.Ch08.isoField",
+        "MD.Ch08.isoKinetic_balance"
+      ],
+      "block_sha256": "3acef02086dd954e7e4e735419a8fc0dfce67e910288b3382d18e50ae83b90f4",
+      "scope_matches_lean": true
+    },
+    {
+      "source_id": "MD-8.6-IsokineticProjector",
+      "signature_changed": false,
+      "first_verdict": "PASS",
+      "scope": "实际投影定义、固定p及幂等性目标；完整像空间刻画未覆盖。",
+      "coverage_gaps": [
+        "实际投影定义、固定p及幂等性目标；完整像空间刻画未覆盖。"
+      ],
+      "actual_declarations": [
+        "MD.Ch08.isoProjection",
+        "MD.Ch08.isoProjection_self",
+        "MD.Ch08.isoProjection_idempotent"
+      ],
+      "block_sha256": "092e4cb926c209e391a717fb45b7b401230e3c69c2d9ff1271a0c99dfe1333c4",
+      "scope_matches_lean": true
+    },
+    {
+      "source_id": "MD-8.6-IsokineticDivergencePrinted",
+      "signature_changed": false,
+      "first_verdict": "NEEDS_HUMAN",
+      "scope": "一般光滑力的原印/符号修正散度目标及权重ansatz；w方程和概率不变另列缺口。",
+      "coverage_gaps": [],
+      "actual_declarations": [
+        "MD.Ch08.isoAnsatz",
+        "MD.Ch08.isoDivergencePrinted",
+        "MD.Ch08.isoDivergence_corrected"
+      ],
+      "block_sha256": "8e662316f6487d3a65dd498754deaf6b8e0ca2bd0aeb0f328788fb1639faa7e5",
+      "scope_matches_lean": true
+    },
+    {
+      "source_id": "MD-8.6-IsokineticGibbsShell",
+      "signature_changed": false,
+      "first_verdict": "PASS",
+      "scope": "动能壳与Gibbs因子的逐点关系；不声称完整曲面概率测度定理。",
+      "coverage_gaps": [
+        "动能壳与Gibbs因子的逐点关系；不声称完整曲面概率测度定理。"
+      ],
+      "actual_declarations": [
+        "MD.Ch08.isokineticShell",
+        "MD.Ch08.isoShellWeight",
+        "MD.Ch08.isoShell_gibbsFactor"
+      ],
+      "block_sha256": "e083fbc0e905a15edf0b566e7b7f8587d69127d868cb61f1b30e99a9e14339d2",
+      "scope_matches_lean": true
+    },
+    {
+      "source_id": "MD-8.6.1-StochasticIsokinetic",
+      "signature_changed": false,
+      "first_verdict": "PASS",
+      "scope": "实际SIN漂移、正参数Wiener积分解和瞬时约束平衡；约束沿全路径保持未另证。",
+      "coverage_gaps": [],
+      "actual_declarations": [
+        "MD.Ch08.sinConstraint",
+        "MD.Ch08.sinMultiplier",
+        "MD.Ch08.sinDrift",
+        "MD.Ch08.isSINSolution",
+        "MD.Ch08.sinConstraint_balance"
+      ],
+      "block_sha256": "3e2a6ab65b3ec0710beed19ff46c3695c817b92bbeaa2c9165b320183bb8a128",
+      "scope_matches_lean": true
+    },
+    {
+      "source_id": "MD-8.6.1-SINWeightPrinted",
+      "signature_changed": false,
+      "first_verdict": "NEEDS_HUMAN",
+      "scope": "原印及补热浴质量的权重、正约束面局部驻定目标；曲面边缘分布及遍历性未覆盖。",
+      "coverage_gaps": [
+        "原印及补热浴质量的权重、正约束面局部驻定目标；曲面边缘分布及遍历性未覆盖。"
+      ],
+      "actual_declarations": [
+        "MD.Ch08.sinWeightPrinted",
+        "MD.Ch08.sinWeight_corrected",
+        "MD.Ch08.sinWeight_stationary_corrected"
+      ],
+      "block_sha256": "fb2f392102effe1b85378af3e92da3df64daae2f22c03bd3fdae57ccbc1901c8",
+      "scope_matches_lean": true
+    },
+    {
+      "source_id": "MD-8.6.2-SINHarmonic",
+      "signature_changed": false,
+      "first_verdict": "PASS",
+      "scope": "谐振SIN实际SDE、例外直线和半柱定义及半柱不交；不含全局遍历定理。",
+      "coverage_gaps": [
+        "谐振SIN实际SDE、例外直线和半柱定义及半柱不交；不含全局遍历定理。"
+      ],
+      "actual_declarations": [
+        "MD.Ch08.sinHarmonicF",
+        "MD.Ch08.sinHarmonicG",
+        "MD.Ch08.isSINHarmonicSolution",
+        "MD.Ch08.sinExceptional",
+        "MD.Ch08.sinHalfCylinder",
+        "MD.Ch08.sinHalfCylinder_disjoint"
+      ],
+      "block_sha256": "991e59e52ea0124352ff1118f592add4d1783a03fb39147a50c7717e5d45893f",
+      "scope_matches_lean": true
+    },
+    {
+      "source_id": "MD-8.6.2-SINProjectedBracketsPrinted",
+      "signature_changed": false,
+      "first_verdict": "NEEDS_HUMAN",
+      "scope": "原印(8.48)–(8.53)的主要分量与实际交换子定义，(8.49)导数写法保存在逐字原页；未把错标指标视为已证恒等式。",
+      "coverage_gaps": [
+        "本条记录原印显式式和真实微分定义；显式式与真实二/三重交换子的等式尚未证明，列覆盖缺口。"
+      ],
+      "actual_declarations": [
+        "MD.Ch08.bracket4",
+        "MD.Ch08.sinBracket",
+        "MD.Ch08.projectFirstThree",
+        "MD.Ch08.sinD",
+        "MD.Ch08.sinU0Printed",
+        "MD.Ch08.sinU1Printed",
+        "MD.Ch08.sinU2Printed",
+        "MD.Ch08.sinU1DerivativePrinted",
+        "MD.Ch08.sinProjected_corrected",
+        "MD.Ch08.sinU2LongPrinted",
+        "MD.Ch08.sinU2Long_at_p0"
+      ],
+      "block_sha256": "60e911436385253dc9acc13e1366440bfef465ed2a4f842396c3cf2c4ec8d1c3",
+      "scope_matches_lean": true
+    },
+    {
+      "source_id": "MD-8.6.2-SINThirdBracketPrinted",
+      "signature_changed": false,
+      "first_verdict": "NEEDS_HUMAN",
+      "scope": "原印三重交换子候选及p=0内部代数核对；真实三重交换子等式列覆盖缺口。",
+      "coverage_gaps": [
+        "ξ₁≠0用于分式化简；此处只核对原印(8.54)与(8.56)内部的代数关系，不声称(8.54)已被确认为实际三重交换子。"
+      ],
+      "actual_declarations": [
+        "MD.Ch08.sinEtaPrinted",
+        "MD.Ch08.sinU3Printed",
+        "MD.Ch08.sinU3ZeroPrinted",
+        "MD.Ch08.sinU3Zero_corrected",
+        "MD.Ch08.sinU3Zero_specialize"
+      ],
+      "block_sha256": "18266e83f76583d981c57ab6c3d09c17093c081b4f78fec14c655b64bde113d3",
+      "scope_matches_lean": true
+    },
+    {
+      "source_id": "MD-8.6.2-SINBracketRank",
+      "signature_changed": false,
+      "first_verdict": "PASS",
+      "scope": "例外直线外的有限括号张成目标；非完整遍历性定理。",
+      "coverage_gaps": [
+        "θ,γ正，ξ₁≠0且在正约束面；仅声明有限向量族张成实际切空间，Hörmander理论推出平滑密度或遍历性未覆盖。"
+      ],
+      "actual_declarations": [
+        "MD.Ch08.sinBracket_tangentSpan"
+      ],
+      "block_sha256": "56882c8bbeacf34fcd4adb004757faefb872a572ffe858630093eb288f502fdf",
+      "scope_matches_lean": true
+    },
+    {
+      "source_id": "MD-8.6.2-SINLyapunov",
+      "signature_changed": true,
+      "first_verdict": "NEEDS_HUMAN",
+      "scope": "局部生成元恒等式、约束上的热浴界、原印有符号尾项表达式与绝对值尾界修正版；不含遍历性充分性。",
+      "coverage_gaps": [
+        "局部生成元恒等式、约束上的热浴界、原印有符号尾项表达式与绝对值尾界修正版；不含遍历性充分性。",
+        "已目视核对原页PDF390：有符号Cξ₂尾界不能统一控制两侧；工作修正版为−γξ₂²+θ|ξ₂|+γθ。它依赖尚未证明的局部生成元恒等式，不代表遍历性证明。"
+      ],
+      "actual_declarations": [
+        "MD.Ch08.sinGenerator",
+        "MD.Ch08.sinGenerator_lyapunov",
+        "MD.Ch08.sinConstraint_bathBound",
+        "MD.Ch08.sinLyapunovTailPrinted",
+        "MD.Ch08.sinLyapunovTail_corrected"
+      ],
+      "block_sha256": "0fa4917a764e052f8811d621cf6b5bf2702b7ef09ee4d30118203950c09d50f9",
+      "scope_matches_lean": true
+    },
+    {
+      "source_id": "MD-8.6.3-SINForceSplitting",
+      "signature_changed": false,
+      "first_verdict": "PASS",
+      "scope": "五个子场及其实际和分解、力子场瞬时约束平衡；不含整体方法阶数。",
+      "coverage_gaps": [
+        "五个子场及其实际和分解、力子场瞬时约束平衡；不含整体方法阶数。"
+      ],
+      "actual_declarations": [
+        "MD.Ch08.sinKField",
+        "MD.Ch08.sinForceField",
+        "MD.Ch08.sinNField",
+        "MD.Ch08.sinOField",
+        "MD.Ch08.sinSplit_fields",
+        "MD.Ch08.sinForce_constraintBalance"
+      ],
+      "block_sha256": "56c182f80970d9ecfb9a7e53385d92e0dac6bba75d8711afe817ca855f3d8492",
+      "scope_matches_lean": true
+    },
+    {
+      "source_id": "MD-8.6.3-SINRAlgorithm",
+      "signature_changed": false,
+      "first_verdict": "PASS",
+      "scope": "原印算法的阶段顺序与步长；不声称构造了各非线性子流。",
+      "coverage_gaps": [
+        "原印算法的阶段顺序与步长；不声称构造了各非线性子流。"
+      ],
+      "actual_declarations": [
+        "MD.Ch08.sinRStages"
+      ],
+      "block_sha256": "2894839a1b362a0c88b95b8fd81f6d64d652bf226585924d5604763192114ddf",
+      "scope_matches_lean": true
+    },
+    {
+      "source_id": "MD-8.6.3-SINNoseSubsplitting",
+      "signature_changed": false,
+      "first_verdict": "PASS",
+      "scope": "Nosé场的两项分解恒等式。",
+      "coverage_gaps": [],
+      "actual_declarations": [
+        "MD.Ch08.sinN1Field",
+        "MD.Ch08.sinN2Field",
+        "MD.Ch08.sinN_split"
+      ],
+      "block_sha256": "b5fb9b26fd83138babf137af9888e60d1110d41ec7d4c1aaeb4c43c31aa135ce",
+      "scope_matches_lean": true
+    },
+    {
+      "source_id": "MD-8.6.3-SINForceExactPrinted",
+      "signature_changed": false,
+      "first_verdict": "NEEDS_HUMAN",
+      "scope": "原印子场、显式候选与校正ODE的局部导数目标。",
+      "coverage_gaps": [],
+      "actual_declarations": [
+        "MD.Ch08.sinForceAux",
+        "MD.Ch08.sinForceFlow",
+        "MD.Ch08.sinForceODEPrinted",
+        "MD.Ch08.sinForceODE_corrected",
+        "MD.Ch08.sinForceFlow_solution_corrected"
+      ],
+      "block_sha256": "b80422753b531ba5f8e03be7b3201d4ad2c8b755f439e60f2b810fcce90372db",
+      "scope_matches_lean": true
+    },
+    {
+      "source_id": "MD-8.6.4-SINThreeLevelPotential",
+      "signature_changed": false,
+      "first_verdict": "PASS",
+      "scope": "三层势与步长嵌套的定义。",
+      "coverage_gaps": [],
+      "actual_declarations": [
+        "MD.Ch08.threeLevelPotential",
+        "MD.Ch08.nestedTimeSteps"
+      ],
+      "block_sha256": "d536fa6213dab821619caf5d27846c2329eb487daed4931cc6e07fed11357e3a",
+      "scope_matches_lean": true
+    },
+    {
+      "source_id": "MD-8.7-GeneralizedLangevin",
+      "signature_changed": false,
+      "first_verdict": "NEEDS_HUMAN",
+      "scope": "连续矩阵记忆核下的卷积及GLE积分解类定义。",
+      "coverage_gaps": [],
+      "actual_declarations": [
+        "MD.Ch08.memoryDrag",
+        "MD.Ch08.generalizedLangevin"
+      ],
+      "block_sha256": "69c9abe3d22cdebf105bd2464aa4ef5580045f2ef2bc68899ea07fee3af34855",
+      "scope_matches_lean": true
+    },
+    {
+      "source_id": "MD-8.7-GLEFluctuationDissipationPrinted",
+      "signature_changed": false,
+      "first_verdict": "NEEDS_HUMAN",
+      "scope": "Printed与一般矩阵协方差目标及标量核定义；不包含涨落耗散定理的物理推导。",
+      "coverage_gaps": [
+        "Printed与一般矩阵协方差目标及标量核定义；不包含涨落耗散定理的物理推导。",
+        "修正版作为单位质量下的一般矩阵协方差目标，不声称任意Γ均可实现为随机过程；正定协方差/核存在性列缺口。"
+      ],
+      "actual_declarations": [
+        "MD.Ch08.randomForceQualification",
+        "MD.Ch08.gleFDPrinted",
+        "MD.Ch08.gleFD_corrected",
+        "MD.Ch08.scalarMemoryMatrix"
+      ],
+      "block_sha256": "7dc7aa3d158860d5bb93eb7eef91df2e08f20d3d6f0d159109c613b6d20611d7",
+      "scope_matches_lean": true
+    },
+    {
+      "source_id": "MD-8.7-PronyKernel",
+      "signature_changed": false,
+      "first_verdict": "PASS",
+      "scope": "正指数系数/记忆时间资格、Prony核定义及非负性；不包含过程极限。",
+      "coverage_gaps": [
+        "正指数系数/记忆时间资格、Prony核定义及非负性；不包含过程极限。",
+        "正cₖ、τₖ为后文OU实现所用域；此处只定义Prony核并证明非负，不声称任意记忆核的逼近误差。"
+      ],
+      "actual_declarations": [
+        "MD.Ch08.pronyKernel",
+        "MD.Ch08.pronyQualification",
+        "MD.Ch08.pronyKernel_nonneg"
+      ],
+      "block_sha256": "72504bc9fb978882dc36db09630e976d7d0b49067d66048693277977a3665df9",
+      "scope_matches_lean": true
+    },
+    {
+      "source_id": "MD-8.7.1-PronyMemoryODE",
+      "signature_changed": false,
+      "first_verdict": "PASS",
+      "scope": "卷积辅助定义、微分关系和有限和等式；与扩展随机解的完整等价列缺口。",
+      "coverage_gaps": [],
+      "actual_declarations": [
+        "MD.Ch08.pronyMemory",
+        "MD.Ch08.pronyMemory_derivative",
+        "MD.Ch08.pronyMomentumDrift",
+        "MD.Ch08.pronyMemory_sum"
+      ],
+      "block_sha256": "0c810575c15641a7f1a8b74c657d1d3aa776b1064db7ca1c51d85fc774e9b58f",
+      "scope_matches_lean": true
+    },
+    {
+      "source_id": "MD-8.7.1-PronyOUStationarity",
+      "signature_changed": true,
+      "first_verdict": "NEEDS_HUMAN",
+      "scope": "单个Prony OU的完整资格及平稳均值/协方差目标、总随机力定义。",
+      "coverage_gaps": [
+        "已目视核对原页PDF397：(8.66)未声明平稳初态；保留原句，_corrected明确引用stationaryPronyOU的Gaussian初态和整条W独立性。总随机力只定义有限和，未证跨模式独立或总协方差。"
+      ],
+      "actual_declarations": [
+        "MD.Ch08.stationaryPronyOU",
+        "MD.Ch08.pronyOU_covariance",
+        "MD.Ch08.totalPronyRandomForce",
+        "MD.Ch08.pronyOU_covariance_corrected"
+      ],
+      "block_sha256": "8de33cfc98654af020693ff76cc1c2828609d490bbe3220c06c24cc2f872a1b6",
+      "scope_matches_lean": true
+    },
+    {
+      "source_id": "MD-8.7.1-CombinedPronyVariable",
+      "signature_changed": false,
+      "first_verdict": "PASS",
+      "scope": "有限维扩展SDE完整积分规格及σ=η+R的漂移恒等式。",
+      "coverage_gaps": [],
+      "actual_declarations": [
+        "MD.Ch08.GLEState",
+        "MD.Ch08.gleDrift",
+        "MD.Ch08.gleNoise",
+        "MD.Ch08.isExtendedGLESolution",
+        "MD.Ch08.combinedProny_drift"
+      ],
+      "block_sha256": "300499a2a599db0dc3621aadadab06f27bde41cc5d481a1530cd7e7ca05e847b",
+      "scope_matches_lean": true
+    },
+    {
+      "source_id": "MD-8.7.1-PronyLangevinLimit",
+      "signature_changed": false,
+      "first_verdict": "PASS",
+      "scope": "有效摩擦定义、合并漂移和有限Gaussian求和分布，不是小记忆时间极限定理。",
+      "coverage_gaps": [],
+      "actual_declarations": [
+        "MD.Ch08.pronyEffectiveFriction",
+        "MD.Ch08.pronyLimit_drift",
+        "MD.Ch08.independentGaussian_varianceSum"
+      ],
+      "block_sha256": "abc964013004960d0bface4455cebf6fd15374498e824afb289c4d7407a50609",
+      "scope_matches_lean": true
+    },
+    {
+      "source_id": "MD-8.7.1-GeneralizedLangevinIntegrator",
+      "signature_changed": false,
+      "first_verdict": "PASS",
+      "scope": "四个实际更新及其全部噪声资格。",
+      "coverage_gaps": [
+        "此处完整单步定义，不包含离散不变分布、全局弱阶或Langevin极限保持的定理。"
+      ],
+      "actual_declarations": [
+        "MD.Ch08.gleIntegrator",
+        "MD.Ch08.gleNormalSequence"
+      ],
+      "block_sha256": "7b04e30b8790a742cd8aeae5853267c46aba92a51a465faddf9edd7930527076",
+      "scope_matches_lean": true
+    },
+    {
+      "source_id": "MD-8.7.1-GLEConsistentCoefficients",
+      "signature_changed": false,
+      "first_verdict": "PASS",
+      "scope": "两项一致性渐近和所选单步系数的τ→0极限。",
+      "coverage_gaps": [],
+      "actual_declarations": [
+        "MD.Ch08.gleDecay",
+        "MD.Ch08.gleNoiseCoefficient",
+        "MD.Ch08.gleCoefficientConsistency",
+        "MD.Ch08.gleCoefficients_consistent",
+        "MD.Ch08.gleCoefficient_smallMemory"
+      ],
+      "block_sha256": "3fa13a449196d2df6800e2b91eb1152b0570ab7c1907289f38b92b4afca79515",
+      "scope_matches_lean": true
+    },
+    {
+      "source_id": "MD-8.8-NPTThermodynamics",
+      "signature_changed": false,
+      "first_verdict": "PASS",
+      "scope": "压力定义和给定非零温度/循环关系后的代数推论。",
+      "coverage_gaps": [],
+      "actual_declarations": [
+        "MD.Ch08.thermodynamicPressure",
+        "MD.Ch08.maxwellCycle",
+        "MD.Ch08.maxwellPressureRelation"
+      ],
+      "block_sha256": "4063201844ba842b12e03a3bae553b0c1bb238d9a6c2be012c5373debaf577b5",
+      "scope_matches_lean": true
+    },
+    {
+      "source_id": "MD-8.8-NPTBathTaylor",
+      "signature_changed": false,
+      "first_verdict": "PASS",
+      "scope": "线性熵近似与明确的一阶小o余项目标。",
+      "coverage_gaps": [],
+      "actual_declarations": [
+        "MD.Ch08.nptBathLinear",
+        "MD.Ch08.nptEntropy_firstOrder"
+      ],
+      "block_sha256": "ac4b293910967d72edd448196b4617335052da219c387b2521c28360171b657d",
+      "scope_matches_lean": true
+    },
+    {
+      "source_id": "MD-8.8-NPTDensity",
+      "signature_changed": false,
+      "first_verdict": "PASS",
+      "scope": "正体积盒内NPT权重和有资格时的概率归一化。",
+      "coverage_gaps": [],
+      "actual_declarations": [
+        "MD.Ch08.volumeScale",
+        "MD.Ch08.nptBox",
+        "MD.Ch08.nptWeight",
+        "MD.Ch08.nptDensity",
+        "MD.Ch08.nptDensity_normalizes"
+      ],
+      "block_sha256": "bbe286d5993cab2c523860dbf586598eab8d9702d28d6e4a5c07fcec2c72b27e",
+      "scope_matches_lean": true
+    },
+    {
+      "source_id": "MD-8.8-AndersenCoordinates",
+      "signature_changed": false,
+      "first_verdict": "PASS",
+      "scope": "位置、速度、共轭动量的实际变换式与两个局部等式目标。",
+      "coverage_gaps": [
+        "V>0用于实分数幂的导数与乘法；质量物理解读取正，等式本身是坐标变换，不包含随体积变化的全局正则流或规范测度。"
+      ],
+      "actual_declarations": [
+        "MD.Ch08.andersenPosition",
+        "MD.Ch08.andersenVelocity",
+        "MD.Ch08.andersenMomentum",
+        "MD.Ch08.andersenPosition_derivative",
+        "MD.Ch08.andersenMomentum_velocity"
+      ],
+      "block_sha256": "d68dfb5e3e5e0a41507d103f56fa96de87ce5de745c9e04165661a7ea906025b",
+      "scope_matches_lean": true
+    },
+    {
+      "source_id": "MD-8.8-AndersenKineticEnergy",
+      "signature_changed": false,
+      "first_verdict": "PASS",
+      "scope": "所印动能展开的逐标量坐标版本。",
+      "coverage_gaps": [],
+      "actual_declarations": [
+        "MD.Ch08.andersenKinetic",
+        "MD.Ch08.andersenKineticExpanded",
+        "MD.Ch08.andersenKinetic_expansion"
+      ],
+      "block_sha256": "092ab6b1c6c04c0c41a34d0ceb16cbadbd601a7e2f9d93e51ef27ef7ade40c17",
+      "scope_matches_lean": true
+    },
+    {
+      "source_id": "MD-8.8-AndersenHamiltonianPrinted",
+      "signature_changed": false,
+      "first_verdict": "NEEDS_HUMAN",
+      "scope": "活塞Hamiltonian、原印/修正边缘权重和Gaussian积分目标。",
+      "coverage_gaps": [
+        "[EXTRA] andersenMarginal_corrected仅是除以参数Z的权重，不声称自动归一。若作概率密度，须在相同坐标和V>0域上可积，且Z为相同权重的正有限配分积分；任意Z>0不足。"
+      ],
+      "actual_declarations": [
+        "MD.Ch08.andersenHamiltonian",
+        "MD.Ch08.andersenMarginalPrinted",
+        "MD.Ch08.andersenMarginal_corrected",
+        "MD.Ch08.andersenGaussian_marginal"
+      ],
+      "block_sha256": "3f38e775973fc597204deb49c0fb55843a31b8586917573e750f107c777194d8",
+      "scope_matches_lean": true
+    },
+    {
+      "source_id": "MD-8.8.1-NHLPistonEquations",
+      "signature_changed": false,
+      "first_verdict": "PASS",
+      "scope": "实际压力、反馈、漂移扩散和正体积NHL活塞积分解规格。",
+      "coverage_gaps": [],
+      "actual_declarations": [
+        "MD.Ch08.PistonState",
+        "MD.Ch08.pistonPressure",
+        "MD.Ch08.pistonDrift",
+        "MD.Ch08.pistonNoise",
+        "MD.Ch08.isNHLPistonSolution"
+      ],
+      "block_sha256": "61e26fd14934a5182ff50b1543bc69cb801de702899b53903b849f59474428fc",
+      "scope_matches_lean": true
+    },
+    {
+      "source_id": "MD-8.8.1-PistonHamiltonianSubfield",
+      "signature_changed": true,
+      "first_verdict": "NEEDS_HUMAN",
+      "scope": "原印p子场、M⁻¹p修正子场及修正子场光滑复合权的局部驻定目标；不把修正场说成逐字原印场。",
+      "coverage_gaps": [],
+      "actual_declarations": [
+        "MD.Ch08.pistonHamiltonianPart",
+        "MD.Ch08.pistonHamiltonianWeight_stationary",
+        "MD.Ch08.pistonHamiltonianPartPrinted",
+        "MD.Ch08.pistonHamiltonianPart_corrected"
+      ],
+      "block_sha256": "45bebfab5137018c39a9a62189c388ce36b73a41d85ae54b9e36cb936e643a18",
+      "scope_matches_lean": true
+    },
+    {
+      "source_id": "MD-8.8.1-PistonThermostatWeightPrinted",
+      "signature_changed": false,
+      "first_verdict": "NEEDS_HUMAN",
+      "scope": "原印/修正权重及ψ₂=1时的实际子场驻定目标。",
+      "coverage_gaps": [],
+      "actual_declarations": [
+        "MD.Ch08.pistonThermostatPart",
+        "MD.Ch08.pistonRho2Printed",
+        "MD.Ch08.pistonRho2_corrected",
+        "MD.Ch08.pistonRho2_stationary_corrected"
+      ],
+      "block_sha256": "eb341e132ec09d19b987b85aab1b382d0400146e8d7b045f46a9b44d15fc3d5f",
+      "scope_matches_lean": true
+    },
+    {
+      "source_id": "MD-8.8.1-PistonReducedPDE",
+      "signature_changed": false,
+      "first_verdict": "PASS",
+      "scope": "完整(8.74)及Boltzmann权代入目标。",
+      "coverage_gaps": [
+        "只核对所印局部微分方程；正V消去压力分母，概率归一、边界通量与遍历性未覆盖。"
+      ],
+      "actual_declarations": [
+        "MD.Ch08.pistonReducedOperator",
+        "MD.Ch08.pistonReduced_boltzmann"
+      ],
+      "block_sha256": "892b06c910d79f6c688b451f3a13753175c37a49a691682725e264cb03ef82aa",
+      "scope_matches_lean": true
+    },
+    {
+      "source_id": "MD-8.8.1-PistonStationaryWeight",
+      "signature_changed": false,
+      "first_verdict": "PASS",
+      "scope": "候选权重与实际局部前向算子的驻定目标。",
+      "coverage_gaps": [],
+      "actual_declarations": [
+        "MD.Ch08.pistonWeight",
+        "MD.Ch08.pistonForward",
+        "MD.Ch08.pistonWeight_stationary"
+      ],
+      "block_sha256": "eda1d640c264699a35988340d5f555e7e53c0a527df6003abca3836383472d33",
+      "scope_matches_lean": true
+    },
+    {
+      "source_id": "MD-8.8.2-PistonIntegrator",
+      "signature_changed": false,
+      "first_verdict": "PASS",
+      "scope": "完整分步算法、周期映射及OU保持V和指数体积正性的短结论。",
+      "coverage_gaps": [],
+      "actual_declarations": [
+        "MD.Ch08.expIntegrated",
+        "MD.Ch08.pistonWrap",
+        "MD.Ch08.pistonMomentumKick",
+        "MD.Ch08.pistonFeedback",
+        "MD.Ch08.pistonOU",
+        "MD.Ch08.pistonIntegrator",
+        "MD.Ch08.pistonOU_volume",
+        "MD.Ch08.pistonVolume_positive"
+      ],
+      "block_sha256": "46cd33fbdd91a9626769ba605f4319d91459bf9113d9709539785ed7d3193e30",
+      "scope_matches_lean": true
+    },
+    {
+      "source_id": "MD-8.8.3-ParrinelloRahman",
+      "signature_changed": false,
+      "first_verdict": "PASS",
+      "scope": "各向异性盒的体积/位置/度量/Lagrangian及标量三重积恒等式。",
+      "coverage_gaps": [],
+      "actual_declarations": [
+        "MD.Ch08.cellVolume",
+        "MD.Ch08.cellMetric",
+        "MD.Ch08.cellPosition",
+        "MD.Ch08.cross3",
+        "MD.Ch08.cellVolume_triple",
+        "MD.Ch08.parrinelloRahmanLagrangian",
+        "MD.Ch08.cellQualification"
+      ],
+      "block_sha256": "263ec7fd3d15b6e9745ea2001ae47cc997fab83b681f4e5c9657b4f2279baabe",
+      "scope_matches_lean": true
+    },
+    {
+      "source_id": "MD-8.9-TotalMomentum",
+      "signature_changed": false,
+      "first_verdict": "PASS",
+      "scope": "总动量定义和Nosé瞬时总力/零总动量时总力为零。",
+      "coverage_gaps": [],
+      "actual_declarations": [
+        "MD.Ch08.ParticleConfig",
+        "MD.Ch08.ParticlePhase",
+        "MD.Ch08.totalMomentum",
+        "MD.Ch08.noseTotalForce",
+        "MD.Ch08.noseTotalForce_zero"
+      ],
+      "block_sha256": "87444d98653546cc75bc67e4ad5da4f3d84106c2a18dbc8f9575f1749ddf7ccf",
+      "scope_matches_lean": true
+    },
+    {
+      "source_id": "MD-8.9.1-DPDSoftPotential",
+      "signature_changed": false,
+      "first_verdict": "PASS",
+      "scope": "软势、保守成对力/总力与光滑有效域的梯度目标；完整SDE见后条。",
+      "coverage_gaps": [],
+      "actual_declarations": [
+        "MD.Ch08.pairDistance",
+        "MD.Ch08.pairDirection",
+        "MD.Ch08.dpdSoftPotential",
+        "MD.Ch08.dpdPairConservative",
+        "MD.Ch08.dpdPotential",
+        "MD.Ch08.dpdConservative",
+        "MD.Ch08.particleGradient",
+        "MD.Ch08.dpdConservative_gradient"
+      ],
+      "block_sha256": "897ad5b6f53340fa5dc769f456a03abc000609f483db94aaefc951bbb04ee713",
+      "scope_matches_lean": true
+    },
+    {
+      "source_id": "MD-8.9.1-DPDPairForces",
+      "signature_changed": false,
+      "first_verdict": "PASS",
+      "scope": "全部成对/总耗散力、软随机权与成对守恒扩散方向。",
+      "coverage_gaps": [],
+      "actual_declarations": [
+        "MD.Ch08.dpdWeightR",
+        "MD.Ch08.relativeVelocity",
+        "MD.Ch08.dpdPairDissipative",
+        "MD.Ch08.dpdPairRandom",
+        "MD.Ch08.dpdDissipative",
+        "MD.Ch08.pairImpulseVector",
+        "MD.Ch08.dpdNoise"
+      ],
+      "block_sha256": "e853bdb29c90526c1c900e12c92e7b5886d2846466d93bd3df827000ece7967b",
+      "scope_matches_lean": true
+    },
+    {
+      "source_id": "MD-8.9.1-DPDPairWiener",
+      "signature_changed": false,
+      "first_verdict": "PASS",
+      "scope": "对称噪声增量和对应所印δ协方差的积分版本。",
+      "coverage_gaps": [],
+      "actual_declarations": [
+        "MD.Ch08.pairEnumeration",
+        "MD.Ch08.pairNoiseIncrement",
+        "MD.Ch08.pairNoiseIncrement_symmetric",
+        "MD.Ch08.pairNoiseIncrement_covariance"
+      ],
+      "block_sha256": "7ab9f612179655ffd243b8639cfb0cfb43ce8e80287da2eb85224e2bb23af309",
+      "scope_matches_lean": true
+    },
+    {
+      "source_id": "MD-8.9.1-DPDIntegralSystem",
+      "signature_changed": false,
+      "first_verdict": "PASS",
+      "scope": "配置依赖扩散的真实积分解规格及正质量/涨落耗散/无序噪声资格。",
+      "coverage_gaps": [
+        "选择强L²、非碰撞解类；不声称与所有弱解等价，也不建立SDE存在唯一或Markov半群。"
+      ],
+      "actual_declarations": [
+        "MD.Ch08.strictItoIntegral8",
+        "MD.Ch08.multiplicativeSDE8",
+        "MD.Ch08.dpdDrift",
+        "MD.Ch08.isDPDSolution"
+      ],
+      "block_sha256": "17dd0042a7ce6e06b9c2917b6b6ff1acb01c964816155b500e5e2cd3e10d8fbe",
+      "scope_matches_lean": true
+    },
+    {
+      "source_id": "MD-8.9.1-DPDCanonicalLeaf",
+      "signature_changed": false,
+      "first_verdict": "PASS",
+      "scope": "涨落耗散资格、动量约束叶及其可归一canonical测度定义。",
+      "coverage_gaps": [],
+      "actual_declarations": [
+        "MD.Ch08.dpdFluctuationDissipation",
+        "MD.Ch08.momentumLeaf",
+        "MD.Ch08.particleHamiltonian",
+        "MD.Ch08.momentumCanonical",
+        "MD.Ch08.momentumCanonicalQualification"
+      ],
+      "block_sha256": "5acef6bee6a511507d750b420e43e6f043c95f0f876e16e276854c590d9af546",
+      "scope_matches_lean": true
+    },
+    {
+      "source_id": "MD-8.9.1-DPDMassOrderPrinted",
+      "signature_changed": false,
+      "first_verdict": "NEEDS_HUMAN",
+      "scope": "原印/校正的质量矩阵次序及具体代数反例。",
+      "coverage_gaps": [
+        "M应正定、θ>0；本条记录两个矩阵关系目标与不交换反例，不声称由形式关系自动得到不变概率。"
+      ],
+      "actual_declarations": [
+        "MD.Ch08.dpdMatrixFDPrinted",
+        "MD.Ch08.dpdMatrixFD_corrected",
+        "MD.Ch08.dpdMassOrder_counterexample"
+      ],
+      "block_sha256": "f3fcd30902b005d31e0fa6540400dbe13be2545aa2c007005f7d2a762cee0ba4",
+      "scope_matches_lean": true
+    },
+    {
+      "source_id": "MD-8.9.2-DPDVelocityVerlet",
+      "signature_changed": false,
+      "first_verdict": "PASS",
+      "scope": "三条更新式和新噪声在下一步复用的状态机制。",
+      "coverage_gaps": [
+        "尚未证明书中预期的一阶弱收敛；未把随机输入映射称为对称确定性流。"
+      ],
+      "actual_declarations": [
+        "MD.Ch08.dpdRandomForce",
+        "MD.Ch08.dpdVerlet",
+        "MD.Ch08.dpdVerlet_reuse"
+      ],
+      "block_sha256": "161739f01938524ba1906d7919057b12eb746651dafdc1b684049f2c5fabbecf",
+      "scope_matches_lean": true
+    },
+    {
+      "source_id": "MD-8.9.2-DPDSplitGenerator",
+      "signature_changed": false,
+      "first_verdict": "PASS",
+      "scope": "实际三个漂移、无序对扩散生成元和漂移分解恒等式。",
+      "coverage_gaps": [
+        "采用独立无序对的Itô二阶导数形式，实现(8.97)有序双和的合并表达；未证明有序/无序表达等价。"
+      ],
+      "actual_declarations": [
+        "MD.Ch08.dpdA",
+        "MD.Ch08.dpdB",
+        "MD.Ch08.dpdO",
+        "MD.Ch08.firstOrder8",
+        "MD.Ch08.dpdLO",
+        "MD.Ch08.dpdGenerator",
+        "MD.Ch08.dpdDrift_split"
+      ],
+      "block_sha256": "2edcb82b8dd38a32d5ae4a3d2fed4fd2b121cb973d79ba8b510166e40a0ac6c3",
+      "scope_matches_lean": true
+    },
+    {
+      "source_id": "MD-8.9.2-DPDPairGeneratorPrinted",
+      "signature_changed": false,
+      "first_verdict": "NEEDS_HUMAN",
+      "scope": "冻结配置下单对动量生成元的原式和守恒方向修正版。",
+      "coverage_gaps": [
+        "本条只分别定义原印和成对修正版；不声称已证明驻定概率或原书单对不变性。"
+      ],
+      "actual_declarations": [
+        "MD.Ch08.pairDerivative",
+        "MD.Ch08.dpdPairGeneratorPrinted",
+        "MD.Ch08.dpdPairGenerator_corrected"
+      ],
+      "block_sha256": "7af5bc674f1ce40fd9d02fa025c7a10b2812ddbb94628092ae92bfb047c37518",
+      "scope_matches_lean": true
+    },
+    {
+      "source_id": "MD-8.9.2-DPDSplittingCompositions",
+      "signature_changed": false,
+      "first_verdict": "PASS",
+      "scope": "两种外层组合、固定顺序逐对执行及S形式生成元；实际OU单对步骤见后条。",
+      "coverage_gaps": [],
+      "actual_declarations": [
+        "MD.Ch08.dpdShardlowComposition",
+        "MD.Ch08.dpdTrotterComposition",
+        "MD.Ch08.sequentialPairComposition",
+        "MD.Ch08.dpdSGenerator"
+      ],
+      "block_sha256": "a61382b744eed30dfa651698de57b6246298ddb56f96e504c347f122ed7650e7",
+      "scope_matches_lean": true
+    },
+    {
+      "source_id": "MD-8.9.2-DPDPairOUUpdate",
+      "signature_changed": false,
+      "first_verdict": "NEEDS_HUMAN",
+      "scope": "原印/零率延拓的OU转移公式、速度增量所用动量更新及总动量守恒。",
+      "coverage_gaps": [
+        "单对精确分布律及其随机积分推导未证明；已证明质量正性、零率值与逐对总动量代数守恒。"
+      ],
+      "actual_declarations": [
+        "MD.Ch08.reducedMass8",
+        "MD.Ch08.reducedMass8_pos",
+        "MD.Ch08.dpdPairOUPrinted",
+        "MD.Ch08.dpdPairOU_corrected",
+        "MD.Ch08.dpdPairOU_zeroRate",
+        "MD.Ch08.dpdPairMomentumStep",
+        "MD.Ch08.dpdPairMomentumStep_conserves"
+      ],
+      "block_sha256": "2de0cc0a87bf658d0e260f240be38a983eed15d2114de56c3e9bc7e85e40cc93",
+      "scope_matches_lean": true
+    },
+    {
+      "source_id": "MD-8.9.3-PairwiseNoseHoover",
+      "signature_changed": false,
+      "first_verdict": "PASS",
+      "scope": "PNH场、反馈和正质量/正热浴质量的ODE规格。",
+      "coverage_gaps": [],
+      "actual_declarations": [
+        "MD.Ch08.PNHLState",
+        "MD.Ch08.pairwiseFeedback",
+        "MD.Ch08.pnhDrift",
+        "MD.Ch08.isPNHSolution"
+      ],
+      "block_sha256": "7a2c5072a2a4072e390ece13bda7d0811741e9fd1290e1b050b2efec69b99793",
+      "scope_matches_lean": true
+    },
+    {
+      "source_id": "MD-8.9.3-PairwiseCanonicalWeight",
+      "signature_changed": false,
+      "first_verdict": "PASS",
+      "scope": "动量约束下扩展Gibbs权、配分积分和概率密度资格。",
+      "coverage_gaps": [],
+      "actual_declarations": [
+        "MD.Ch08.pairwiseWeight",
+        "MD.Ch08.pairwiseCanonicalDensity",
+        "MD.Ch08.pairwiseCanonicalQualification"
+      ],
+      "block_sha256": "9c658d06ceaa94f06dfc92a65a6cce9143ee254eb604c25b8f30d900eed617eb",
+      "scope_matches_lean": true
+    },
+    {
+      "source_id": "MD-8.9.4-PairwiseNHLSDE",
+      "signature_changed": false,
+      "first_verdict": "PASS",
+      "scope": "带正质量资格、涨落耗散关系及真实独立标准Wiener的PNHL积分解规格。",
+      "coverage_gaps": [
+        "未证明该非碰撞解类存在、唯一、保测或遍历；“改善遍历性”是动机不是已证结论。"
+      ],
+      "actual_declarations": [
+        "MD.Ch08.pnhlDrift",
+        "MD.Ch08.pnhlNoise",
+        "MD.Ch08.isPNHLSolution"
+      ],
+      "block_sha256": "9b3929c5b0327ee11aaae41aa7e46a419710196e61d311ffa109d9cdb233134e",
+      "scope_matches_lean": true
+    },
+    {
+      "source_id": "MD-8.9.4-PairwiseNHLGenerator",
+      "signature_changed": false,
+      "first_verdict": "PASS",
+      "scope": "五子场、形式生成元、漂移分解；扩展权的局部驻定目标。",
+      "coverage_gaps": [],
+      "actual_declarations": [
+        "MD.Ch08.pnhlA",
+        "MD.Ch08.pnhlB",
+        "MD.Ch08.pnhlC",
+        "MD.Ch08.pnhlD",
+        "MD.Ch08.pnhlO",
+        "MD.Ch08.pnhlGenerator",
+        "MD.Ch08.pnhlDrift_split",
+        "MD.Ch08.pairwiseWeight_localStationary"
+      ],
+      "block_sha256": "7ffb34e4439383929bf6099b58a8219c2b3838c8d33ca89b1aac44865c7372dc",
+      "scope_matches_lean": true
+    },
+    {
+      "source_id": "MD-8.9.4-PNHLSplittingAlgorithms",
+      "signature_changed": false,
+      "first_verdict": "PASS",
+      "scope": "A/B/D/O实际更新、单对C更新和S/N的原印外层组合；全C指数与误差理论列缺口。",
+      "coverage_gaps": [],
+      "actual_declarations": [
+        "MD.Ch08.pnhlAStep",
+        "MD.Ch08.pnhlBStep",
+        "MD.Ch08.pnhlDStep",
+        "MD.Ch08.pnhlOStep",
+        "MD.Ch08.pnhlPairCStep",
+        "MD.Ch08.pnhlSComposition",
+        "MD.Ch08.pnhlNComposition"
+      ],
+      "block_sha256": "ef87670acf0ff2c298c3ad4d25dd322ab9dc6db2eb06749199dab0fdb5d2e63f",
+      "scope_matches_lean": true
+    },
+    {
+      "source_id": "MD-8.10-BerendsenRelaxation",
+      "signature_changed": false,
+      "first_verdict": "PASS",
+      "scope": "Berendsen温度方程的显式解、动量缩放、有效域和单次能量恒等式。",
+      "coverage_gaps": [
+        "只证明所印温度ODE的显式解及动量缩放能量恒等式；不声称温度控制必然正则采样。完整Verlet耦合的统计行为未证。"
+      ],
+      "actual_declarations": [
+        "MD.Ch08.berendsenTemperature",
+        "MD.Ch08.berendsenTemperature_derivative",
+        "MD.Ch08.berendsenRadicand",
+        "MD.Ch08.berendsenScale",
+        "MD.Ch08.berendsenScaleQualification",
+        "MD.Ch08.dot_smul_same",
+        "MD.Ch08.berendsenScale_energy"
+      ],
+      "block_sha256": "3b2dd66dae2b8a4c09f94faa3ad1c59b27af776a76c51997be17f70869b54d17",
+      "scope_matches_lean": true
+    },
+    {
+      "source_id": "MD-8.10-CanonicalTotalMomentumGaussian",
+      "signature_changed": false,
+      "first_verdict": "PASS",
+      "scope": "实际独立Gaussian动量假设下的一坐标总动量分布；非采样收敛定理。",
+      "coverage_gaps": [],
+      "actual_declarations": [
+        "MD.Ch08.totalMomentum_gaussian"
+      ],
+      "block_sha256": "7a743fd350edab84ea5e3c80833826f099b32ed72bae269cb0fb3026952ec5a4",
+      "scope_matches_lean": true
+    },
+    {
+      "source_id": "MD-8.10-NHLTotalMomentumSign",
+      "signature_changed": false,
+      "first_verdict": "PASS",
+      "scope": "总动量标量ODE解目标、正指数因子及显式表达式的符号保持。",
+      "coverage_gaps": [],
+      "actual_declarations": [
+        "MD.Ch08.nhlMomentumFactor",
+        "MD.Ch08.nhlMomentumFactor_pos",
+        "MD.Ch08.nhlMomentum_sign",
+        "MD.Ch08.nhlTotalMomentum_odeSolution"
+      ],
+      "block_sha256": "2213c5d894195e74982553e3865225585d3fc36a32102d22fcfb38e342d70241",
+      "scope_matches_lean": true
+    }
+  ],
+  "all_scopes_match": true
+}

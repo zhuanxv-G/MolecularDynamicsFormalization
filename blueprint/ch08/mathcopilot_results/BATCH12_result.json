@@ -1,0 +1,532 @@
+{
+  "batch": "BATCH12",
+  "chapter": "ch08",
+  "round": "first-merged",
+  "input_sha256": {
+    "Blueprint/Ch08.lean": "2800812fadd8e2557013f1941e4570401f7903d46f44baf07e23d5531da22a72",
+    "blueprint/ch08/ch08_source.json": "9b994b0f64cd22c85c2ad4123fbfdbd064bd7a6d070fe13b721794432f9f7a63"
+  },
+  "items": [
+    {
+      "source_id": "MD-8.7.1-CombinedPronyVariable",
+      "json_review": {
+        "status": "CORRECTED",
+        "issue_codes": [
+          "STALE_TRANSCRIPTION_NOTE"
+        ],
+        "corrected_json": {
+          "source_id": "MD-8.7.1-CombinedPronyVariable",
+          "kind": "definition",
+          "label": null,
+          "section": "8.7.1",
+          "printed_page": "376",
+          "pdf_page": "397",
+          "statement_latex": "σᵢₖ=ηᵢₖ+Rᵢₖ yields dσᵢₖ=−σᵢₖdt/τₖ−cₖpᵢdt/τₖ+√(2k_BT cₖ)dWᵢₖ/τₖ. (8.68)–(8.70).",
+          "statement_verbatim": "376\n8\nExtended Variable Methods\nTo calculate the random forces associated to the kth term of the expansion, we\nnote that these can be viewed as the solution of a linear SDE, speciﬁcally\ndRi;k D \u0003 1\n\u0002k\nRi;k.t/dt C 1\n\u0002k\np\n2kBTckdWi;k.t/\n(8.65)\nwhere Wi;k is a standard Wiener process. The random force is seen to be deﬁned as\nthe solution of an Ornstein-Uhlenbeck process induced by the Prony representation.\nIt is easily shown that Ri;k.t/ has zero mean and autocorrelation deﬁned by\nhRi;k.t C s/Ri;k.t/i D kBTck\n\u0002k\nexp\n\u0002\n\u0003 1\n\u0002k\ns\n\u0003\n;\ns \b 0\n(8.66)\nThe total random force is then obtained by summation\nRi D\nkmax\nX\nkD1\nRi;k:\n(8.67)\nObserve that both random and drag forces are incorporated via summation of the\ncomponents \u000fi;k and Ri;k deﬁned by linear equations, respectively the ODE (8.64)\nand SDE (8.65). It is therefore possible to replace these components by their sum\n\u0007i;k D \u000fi;k C Ri;k\nwhich may be evolved by a single SDE. The equations therefore become\ndqi D m\u00021\ni pidt;\n(8.68)\ndpi D Fidt C\nkmax\nX\nkD1\n\u0007i;kdt;\n(8.69)\nd\u0007i;k D \u0003 1\n\u0002k\n\u0007i;kdt \u0003 ck\n\u0002k\npidt C 1\n\u0002k\np\n2kBTckdWi;k:\n(8.70)\nThe relation between the Prony series representation and Langevin dynamics can be\nseen in an informal sense by multiplying the equation for \u0007i;k equation by \u0002k, and\nconsidering \u0002k ! 0, giving\n\u0007i;kdt D \u0003ckpidt C\np\n2kBTckdWi;k;\nwhich results in\ndpi D Fidt \u0003\n kmax\nX\nkD1\nck\n!\npidt C\np\n2kBT\n`\nX\nkD1\npckdWi;k:\n",
+          "verbatim_scope": "完整对应原页文字层，逐字保留；本条数学成分由statement_latex及statement_scope定位。",
+          "proof_latex": null,
+          "proof_note": "对应原页推导逐字保存在statement_verbatim/original_page_text；排版以原页PDF为准。",
+          "original_page_text": [
+            {
+              "pdf_page": 397,
+              "printed_page": 376,
+              "text": "376\n8\nExtended Variable Methods\nTo calculate the random forces associated to the kth term of the expansion, we\nnote that these can be viewed as the solution of a linear SDE, speciﬁcally\ndRi;k D \u0003 1\n\u0002k\nRi;k.t/dt C 1\n\u0002k\np\n2kBTckdWi;k.t/\n(8.65)\nwhere Wi;k is a standard Wiener process. The random force is seen to be deﬁned as\nthe solution of an Ornstein-Uhlenbeck process induced by the Prony representation.\nIt is easily shown that Ri;k.t/ has zero mean and autocorrelation deﬁned by\nhRi;k.t C s/Ri;k.t/i D kBTck\n\u0002k\nexp\n\u0002\n\u0003 1\n\u0002k\ns\n\u0003\n;\ns \b 0\n(8.66)\nThe total random force is then obtained by summation\nRi D\nkmax\nX\nkD1\nRi;k:\n(8.67)\nObserve that both random and drag forces are incorporated via summation of the\ncomponents \u000fi;k and Ri;k deﬁned by linear equations, respectively the ODE (8.64)\nand SDE (8.65). It is therefore possible to replace these components by their sum\n\u0007i;k D \u000fi;k C Ri;k\nwhich may be evolved by a single SDE. The equations therefore become\ndqi D m\u00021\ni pidt;\n(8.68)\ndpi D Fidt C\nkmax\nX\nkD1\n\u0007i;kdt;\n(8.69)\nd\u0007i;k D \u0003 1\n\u0002k\n\u0007i;kdt \u0003 ck\n\u0002k\npidt C 1\n\u0002k\np\n2kBTckdWi;k:\n(8.70)\nThe relation between the Prony series representation and Langevin dynamics can be\nseen in an informal sense by multiplying the equation for \u0007i;k equation by \u0002k, and\nconsidering \u0002k ! 0, giving\n\u0007i;kdt D \u0003ckpidt C\np\n2kBTckdWi;k;\nwhich results in\ndpi D Fidt \u0003\n kmax\nX\nkD1\nck\n!\npidt C\np\n2kBT\n`\nX\nkD1\npckdWi;k:\n"
+            }
+          ],
+          "numbered_equations": [
+            "8.68",
+            "8.69",
+            "8.70"
+          ],
+          "transcription_note": "文字层逐字保留；数学排版另行转写，原页中的特殊字形编码不静默替换。",
+          "context_notation": [],
+          "extra_assumptions": [
+            "额外变量取实数；正质量、c、τ、温度和独立标准向量Wiener写入解规格。e仅把有限噪声坐标编号为(k,i)。",
+            "本条实际是加性扩展SDE和漂移合并恒等式；Markov半群构造、解存在唯一及与非Markov GLE分布等价列缺口。"
+          ],
+          "issues": [],
+          "statement_scope": "有限维扩展SDE完整积分规格及σ=η+R的漂移恒等式。",
+          "lean_decl": "MD.Ch08.GLEState",
+          "lean_declarations": [
+            "MD.Ch08.GLEState",
+            "MD.Ch08.gleDrift",
+            "MD.Ch08.gleNoise",
+            "MD.Ch08.isExtendedGLESolution",
+            "MD.Ch08.combinedProny_drift"
+          ],
+          "source_page_verification": "R5本次审校：已核对R5_PAGES.pdf附件第9页文字层及相应原书页面图像；文字层特殊字形保留。",
+          "repair_log": [],
+          "documented_priors": []
+        },
+        "issues": [
+          {
+            "code": "STALE_TRANSCRIPTION_NOTE",
+            "field": "transcription_note",
+            "severity": "metadata",
+            "description": "本条对应第8章本附件页；通用注记“PDF420仅取Exercises之前”与本条无关，应删除。原文正文及乱码字形不改。"
+          }
+        ],
+        "evidence": {
+          "attachment": "R5_PAGES.pdf",
+          "attachment_pages": [
+            9
+          ],
+          "book_pdf_pages": "397",
+          "printed_pages": "376",
+          "A_verbatim": "已与附件原页逐段核对完整statement_verbatim和original_page_text；无正文增删。保留原文字层的控制字形；不同提取器的ﬁ/fi、ﬂ/fl以及原页ℓ的字形映射差别不判作原书错字。statement_latex按目视公式核对。",
+          "A_formula": "附件第9页(8.68)–(8.70)，以及σ=η+R。",
+          "C_definitions": "只使用本任务摘录的MD.*及MolecularDynamics项目定义；已展开本条依赖及附录相关定义，Mathlib按标准含义采信。未使用旧工程、旧任务或旧审校结论。",
+          "C_annotations": "本条未出现独立的[EXTRA]/[ERRATUM?]代码注释；已逐项审查extra_assumptions、issues、statement_scope中的等效标注。",
+          "validation_scope": "只读语义及签名审校；未编译Lean、未改工程、未补证明；sorry未作为FAIL理由。"
+        }
+      },
+      "audit": {
+        "lean_decl": [
+          "MD.Ch08.GLEState",
+          "MD.Ch08.gleDrift",
+          "MD.Ch08.gleNoise",
+          "MD.Ch08.isExtendedGLESolution",
+          "MD.Ch08.combinedProny_drift"
+        ],
+        "verdict": "PASS",
+        "explanation": "GLEState=(q,p,σ)，共有n个位置、n个动量和K·n个辅助分量。gleDrift三块为invm·p、−∇U+Σσ、−σ/τ−cp/τ；gleNoise仅在由等价e编号的(k,i)辅助分量注入sqrt(2θc_k)/τ_k。isExtendedGLESolution要求正逆质量、温度、Prony资格、C¹势，并展开additiveSDE的独立Wiener、路径连续、自然历史可测、漂移可积和每个非负t的积分方程；x0为确定态。additiveSDE额外对整个实轴要求连续，虽较物理半轴范围强，属于选定解规格。combinedProny_drift是所有实η,R,c,τ,p上的代数恒等式，包括总化τ=0。未把确定初态规格声称为平稳GLE的分布等价。",
+        "counterexample": null,
+        "suggested_fix": null
+      },
+      "subtask": "BATCH12a",
+      "input_sha256": {
+        "Blueprint/Ch08.lean": "2800812fadd8e2557013f1941e4570401f7903d46f44baf07e23d5531da22a72",
+        "blueprint/ch08/ch08_source.json": "9b994b0f64cd22c85c2ad4123fbfdbd064bd7a6d070fe13b721794432f9f7a63",
+        "BATCH12a_PAGES.pdf": "efeaff61a40f44097e61288c87f43fddd26cecc34de5eb077b9204ebdc0802d9"
+      }
+    },
+    {
+      "source_id": "MD-8.7.1-PronyLangevinLimit",
+      "json_review": {
+        "status": "CORRECTED",
+        "issue_codes": [
+          "STALE_TRANSCRIPTION_NOTE"
+        ],
+        "corrected_json": {
+          "source_id": "MD-8.7.1-PronyLangevinLimit",
+          "kind": "unnumbered_claim",
+          "label": null,
+          "section": "8.7.1",
+          "printed_page": "376–377",
+          "pdf_page": "397–398",
+          "statement_latex": "Formally τₖ→0 gives σᵢₖdt=−cₖpᵢdt+√(2k_BT cₖ)dWᵢₖ and Langevin friction γ̂=Σₖcₖ. Independent Gaussian variances add.",
+          "statement_verbatim": "376\n8\nExtended Variable Methods\nTo calculate the random forces associated to the kth term of the expansion, we\nnote that these can be viewed as the solution of a linear SDE, speciﬁcally\ndRi;k D \u0003 1\n\u0002k\nRi;k.t/dt C 1\n\u0002k\np\n2kBTckdWi;k.t/\n(8.65)\nwhere Wi;k is a standard Wiener process. The random force is seen to be deﬁned as\nthe solution of an Ornstein-Uhlenbeck process induced by the Prony representation.\nIt is easily shown that Ri;k.t/ has zero mean and autocorrelation deﬁned by\nhRi;k.t C s/Ri;k.t/i D kBTck\n\u0002k\nexp\n\u0002\n\u0003 1\n\u0002k\ns\n\u0003\n;\ns \b 0\n(8.66)\nThe total random force is then obtained by summation\nRi D\nkmax\nX\nkD1\nRi;k:\n(8.67)\nObserve that both random and drag forces are incorporated via summation of the\ncomponents \u000fi;k and Ri;k deﬁned by linear equations, respectively the ODE (8.64)\nand SDE (8.65). It is therefore possible to replace these components by their sum\n\u0007i;k D \u000fi;k C Ri;k\nwhich may be evolved by a single SDE. The equations therefore become\ndqi D m\u00021\ni pidt;\n(8.68)\ndpi D Fidt C\nkmax\nX\nkD1\n\u0007i;kdt;\n(8.69)\nd\u0007i;k D \u0003 1\n\u0002k\n\u0007i;kdt \u0003 ck\n\u0002k\npidt C 1\n\u0002k\np\n2kBTckdWi;k:\n(8.70)\nThe relation between the Prony series representation and Langevin dynamics can be\nseen in an informal sense by multiplying the equation for \u0007i;k equation by \u0002k, and\nconsidering \u0002k ! 0, giving\n\u0007i;kdt D \u0003ckpidt C\np\n2kBTckdWi;k;\nwhich results in\ndpi D Fidt \u0003\n kmax\nX\nkD1\nck\n!\npidt C\np\n2kBT\n`\nX\nkD1\npckdWi;k:\n\n8.7\nGeneralized Langevin Dynamics\n377\nObserving that the sum of ` independent Guassian random variables of variance ck\nis a Gaussian random variable with variance P`\nkD1 ck, we see that this is in the form\nof Langevin dynamics\ndpi D Fidt \u0003 O\npidt C\np\n2kBT O\ndWi;k;\nwith\nO\n D\nNk\nX\nkD1\nck:\n(For the formal treatment of this limit refer to [293].)\nFor numerical integration, the system (8.68)–(8.70) can be handled via splitting.\nA natural family of methods based on Verlet is the following [19]:\nGeneralized Langevin Dynamics Method\npnC1=2 :D pn C h\n2F.qn/ C h\n2\nkmax\nX\nkD1\n\u0012 n;k;\nqnC1 :D qn C hM\u00021pnC1=2;\n\u0012 nC1;k :D \u000ek\u0012 n;k \u0003 .1 \u0003 \u000ek/ ckpnC1=2 C ˛k\np\n2kBTckZn\nk;\npnC1 :D pnC1=2 C h\n2F.qnC1/ C h\n2\nkmax\nX\nkD1\n\u0012 nC1;k;\nwhere \u0012 n;k is a Nc-dimensional vector, and the components of the Nc-dimensional\nvectors Zn;k are independent standard normal random variables.\nThe real-valued coefﬁcients \u000ek and ˛k which must satisfy, for consistency, the\nequations\n\u000ek D 1 \u0003 h\n\u0002k\nC O.h2/;\n˛k D\np\nh\n\u0002k\nC O.h/:\nAn argument is given in [19] that ˛k and \u000ek should be taken as\n\u000ek D exp.\u0003h=\u0002k/;\n˛k D\ns\n.1 \u0003 \u000ek/2\nh\n;\nsince, for this choice, the Langevin limit is preserved. Alternative methods are\npossible. For many comparisons and numerical experiments, refer to [19].\n",
+          "verbatim_scope": "完整对应原页文字层，逐字保留；本条数学成分由statement_latex及statement_scope定位。",
+          "proof_latex": null,
+          "proof_note": "对应原页推导逐字保存在statement_verbatim/original_page_text；排版以原页PDF为准。",
+          "original_page_text": [
+            {
+              "pdf_page": 397,
+              "printed_page": 376,
+              "text": "376\n8\nExtended Variable Methods\nTo calculate the random forces associated to the kth term of the expansion, we\nnote that these can be viewed as the solution of a linear SDE, speciﬁcally\ndRi;k D \u0003 1\n\u0002k\nRi;k.t/dt C 1\n\u0002k\np\n2kBTckdWi;k.t/\n(8.65)\nwhere Wi;k is a standard Wiener process. The random force is seen to be deﬁned as\nthe solution of an Ornstein-Uhlenbeck process induced by the Prony representation.\nIt is easily shown that Ri;k.t/ has zero mean and autocorrelation deﬁned by\nhRi;k.t C s/Ri;k.t/i D kBTck\n\u0002k\nexp\n\u0002\n\u0003 1\n\u0002k\ns\n\u0003\n;\ns \b 0\n(8.66)\nThe total random force is then obtained by summation\nRi D\nkmax\nX\nkD1\nRi;k:\n(8.67)\nObserve that both random and drag forces are incorporated via summation of the\ncomponents \u000fi;k and Ri;k deﬁned by linear equations, respectively the ODE (8.64)\nand SDE (8.65). It is therefore possible to replace these components by their sum\n\u0007i;k D \u000fi;k C Ri;k\nwhich may be evolved by a single SDE. The equations therefore become\ndqi D m\u00021\ni pidt;\n(8.68)\ndpi D Fidt C\nkmax\nX\nkD1\n\u0007i;kdt;\n(8.69)\nd\u0007i;k D \u0003 1\n\u0002k\n\u0007i;kdt \u0003 ck\n\u0002k\npidt C 1\n\u0002k\np\n2kBTckdWi;k:\n(8.70)\nThe relation between the Prony series representation and Langevin dynamics can be\nseen in an informal sense by multiplying the equation for \u0007i;k equation by \u0002k, and\nconsidering \u0002k ! 0, giving\n\u0007i;kdt D \u0003ckpidt C\np\n2kBTckdWi;k;\nwhich results in\ndpi D Fidt \u0003\n kmax\nX\nkD1\nck\n!\npidt C\np\n2kBT\n`\nX\nkD1\npckdWi;k:\n"
+            },
+            {
+              "pdf_page": 398,
+              "printed_page": 377,
+              "text": "8.7\nGeneralized Langevin Dynamics\n377\nObserving that the sum of ` independent Guassian random variables of variance ck\nis a Gaussian random variable with variance P`\nkD1 ck, we see that this is in the form\nof Langevin dynamics\ndpi D Fidt \u0003 O\npidt C\np\n2kBT O\ndWi;k;\nwith\nO\n D\nNk\nX\nkD1\nck:\n(For the formal treatment of this limit refer to [293].)\nFor numerical integration, the system (8.68)–(8.70) can be handled via splitting.\nA natural family of methods based on Verlet is the following [19]:\nGeneralized Langevin Dynamics Method\npnC1=2 :D pn C h\n2F.qn/ C h\n2\nkmax\nX\nkD1\n\u0012 n;k;\nqnC1 :D qn C hM\u00021pnC1=2;\n\u0012 nC1;k :D \u000ek\u0012 n;k \u0003 .1 \u0003 \u000ek/ ckpnC1=2 C ˛k\np\n2kBTckZn\nk;\npnC1 :D pnC1=2 C h\n2F.qnC1/ C h\n2\nkmax\nX\nkD1\n\u0012 nC1;k;\nwhere \u0012 n;k is a Nc-dimensional vector, and the components of the Nc-dimensional\nvectors Zn;k are independent standard normal random variables.\nThe real-valued coefﬁcients \u000ek and ˛k which must satisfy, for consistency, the\nequations\n\u000ek D 1 \u0003 h\n\u0002k\nC O.h2/;\n˛k D\np\nh\n\u0002k\nC O.h/:\nAn argument is given in [19] that ˛k and \u000ek should be taken as\n\u000ek D exp.\u0003h=\u0002k/;\n˛k D\ns\n.1 \u0003 \u000ek/2\nh\n;\nsince, for this choice, the Langevin limit is preserved. Alternative methods are\npossible. For many comparisons and numerical experiments, refer to [19].\n"
+            }
+          ],
+          "numbered_equations": [],
+          "transcription_note": "文字层逐字保留；数学排版另行转写，原页中的特殊字形编码不静默替换。",
+          "context_notation": [],
+          "extra_assumptions": [
+            "仅形式极限系数与真实有限个独立Gaussian线性组合；τ→0过程弱收敛、初始层、统一时间界不在本条声明，列覆盖缺口。"
+          ],
+          "issues": [],
+          "statement_scope": "有效摩擦定义、合并漂移和有限Gaussian求和分布，不是小记忆时间极限定理。",
+          "lean_decl": "MD.Ch08.pronyEffectiveFriction",
+          "lean_declarations": [
+            "MD.Ch08.pronyEffectiveFriction",
+            "MD.Ch08.pronyLimit_drift",
+            "MD.Ch08.independentGaussian_varianceSum"
+          ],
+          "source_page_verification": "R5本次审校：已核对R5_PAGES.pdf附件第10,11页文字层及相应原书页面图像；文字层特殊字形保留。",
+          "repair_log": [],
+          "documented_priors": []
+        },
+        "issues": [
+          {
+            "code": "STALE_TRANSCRIPTION_NOTE",
+            "field": "transcription_note",
+            "severity": "metadata",
+            "description": "本条对应第8章本附件页；通用注记“PDF420仅取Exercises之前”与本条无关，应删除。原文正文及乱码字形不改。"
+          }
+        ],
+        "evidence": {
+          "attachment": "R5_PAGES.pdf",
+          "attachment_pages": [
+            10,
+            11
+          ],
+          "book_pdf_pages": "397–398",
+          "printed_pages": "376–377",
+          "A_verbatim": "已与附件原页逐段核对完整statement_verbatim和original_page_text；无正文增删。保留原文字层的控制字形；不同提取器的ﬁ/fi、ﬂ/fl以及原页ℓ的字形映射差别不判作原书错字。statement_latex按目视公式核对。",
+          "A_formula": "附件第10–11页：明确informal sense与formal treatment另见[293]，并述独立Gaussian方差相加。",
+          "C_definitions": "只使用本任务摘录的MD.*及MolecularDynamics项目定义；已展开本条依赖及附录相关定义，Mathlib按标准含义采信。未使用旧工程、旧任务或旧审校结论。",
+          "C_annotations": "本条未出现独立的[EXTRA]/[ERRATUM?]代码注释；已逐项审查extra_assumptions、issues、statement_scope中的等效标注。",
+          "validation_scope": "只读语义及签名审校；未编译Lean、未改工程、未补证明；sorry未作为FAIL理由。"
+        }
+      },
+      "audit": {
+        "lean_decl": [
+          "MD.Ch08.pronyEffectiveFriction",
+          "MD.Ch08.pronyLimit_drift",
+          "MD.Ch08.independentGaussian_varianceSum"
+        ],
+        "verdict": "PASS",
+        "explanation": "pronyEffectiveFriction是任意有限系数和。drift对任意实c,F,p给F−Σ(c_kp)=F−(Σc_k)p，是形式系数合并。Gaussian定理要求c_k≥0和R的完整联合分布为标准正态乘积，故其sqrt(c)加权和确为均值0、方差Σc的Gaussian；K=0退化为δ0亦正确。HasLaw结论不是仅方差计算。没有τ参数或过程收敛断言；原页τ→0只属informal sense，现有缺口标注准确。原页求和上限kmax、ℓ、N_k书写不统一，本条统一有限K，不据此添加实际极限定理。",
+        "counterexample": null,
+        "suggested_fix": null
+      },
+      "subtask": "BATCH12b",
+      "input_sha256": {
+        "Blueprint/Ch08.lean": "2800812fadd8e2557013f1941e4570401f7903d46f44baf07e23d5531da22a72",
+        "blueprint/ch08/ch08_source.json": "9b994b0f64cd22c85c2ad4123fbfdbd064bd7a6d070fe13b721794432f9f7a63",
+        "BATCH12b_PAGES.pdf": "20435c0487d4596ebe3bc97bb6b812b2a44abd378907ce0b6fa8abfa7b1f9e61"
+      }
+    },
+    {
+      "source_id": "MD-8.7.1-GeneralizedLangevinIntegrator",
+      "json_review": {
+        "status": "CORRECTED",
+        "issue_codes": [
+          "STALE_TRANSCRIPTION_NOTE"
+        ],
+        "corrected_json": {
+          "source_id": "MD-8.7.1-GeneralizedLangevinIntegrator",
+          "kind": "definition",
+          "label": null,
+          "section": "8.7.1",
+          "printed_page": "377",
+          "pdf_page": "398",
+          "statement_latex": "The four-step method updates p_half, q_new, σ_new,k=θₖσₖ−(1−θₖ)cₖp_half+αₖ√(2k_BT cₖ)Zₖ, then p_new with the new force and new σ.",
+          "statement_verbatim": "8.7\nGeneralized Langevin Dynamics\n377\nObserving that the sum of ` independent Guassian random variables of variance ck\nis a Gaussian random variable with variance P`\nkD1 ck, we see that this is in the form\nof Langevin dynamics\ndpi D Fidt \u0003 O\npidt C\np\n2kBT O\ndWi;k;\nwith\nO\n D\nNk\nX\nkD1\nck:\n(For the formal treatment of this limit refer to [293].)\nFor numerical integration, the system (8.68)–(8.70) can be handled via splitting.\nA natural family of methods based on Verlet is the following [19]:\nGeneralized Langevin Dynamics Method\npnC1=2 :D pn C h\n2F.qn/ C h\n2\nkmax\nX\nkD1\n\u0012 n;k;\nqnC1 :D qn C hM\u00021pnC1=2;\n\u0012 nC1;k :D \u000ek\u0012 n;k \u0003 .1 \u0003 \u000ek/ ckpnC1=2 C ˛k\np\n2kBTckZn\nk;\npnC1 :D pnC1=2 C h\n2F.qnC1/ C h\n2\nkmax\nX\nkD1\n\u0012 nC1;k;\nwhere \u0012 n;k is a Nc-dimensional vector, and the components of the Nc-dimensional\nvectors Zn;k are independent standard normal random variables.\nThe real-valued coefﬁcients \u000ek and ˛k which must satisfy, for consistency, the\nequations\n\u000ek D 1 \u0003 h\n\u0002k\nC O.h2/;\n˛k D\np\nh\n\u0002k\nC O.h/:\nAn argument is given in [19] that ˛k and \u000ek should be taken as\n\u000ek D exp.\u0003h=\u0002k/;\n˛k D\ns\n.1 \u0003 \u000ek/2\nh\n;\nsince, for this choice, the Langevin limit is preserved. Alternative methods are\npossible. For many comparisons and numerical experiments, refer to [19].\n",
+          "verbatim_scope": "完整对应原页文字层，逐字保留；本条数学成分由statement_latex及statement_scope定位。",
+          "proof_latex": null,
+          "proof_note": "对应原页推导逐字保存在statement_verbatim/original_page_text；排版以原页PDF为准。",
+          "original_page_text": [
+            {
+              "pdf_page": 398,
+              "printed_page": 377,
+              "text": "8.7\nGeneralized Langevin Dynamics\n377\nObserving that the sum of ` independent Guassian random variables of variance ck\nis a Gaussian random variable with variance P`\nkD1 ck, we see that this is in the form\nof Langevin dynamics\ndpi D Fidt \u0003 O\npidt C\np\n2kBT O\ndWi;k;\nwith\nO\n D\nNk\nX\nkD1\nck:\n(For the formal treatment of this limit refer to [293].)\nFor numerical integration, the system (8.68)–(8.70) can be handled via splitting.\nA natural family of methods based on Verlet is the following [19]:\nGeneralized Langevin Dynamics Method\npnC1=2 :D pn C h\n2F.qn/ C h\n2\nkmax\nX\nkD1\n\u0012 n;k;\nqnC1 :D qn C hM\u00021pnC1=2;\n\u0012 nC1;k :D \u000ek\u0012 n;k \u0003 .1 \u0003 \u000ek/ ckpnC1=2 C ˛k\np\n2kBTckZn\nk;\npnC1 :D pnC1=2 C h\n2F.qnC1/ C h\n2\nkmax\nX\nkD1\n\u0012 nC1;k;\nwhere \u0012 n;k is a Nc-dimensional vector, and the components of the Nc-dimensional\nvectors Zn;k are independent standard normal random variables.\nThe real-valued coefﬁcients \u000ek and ˛k which must satisfy, for consistency, the\nequations\n\u000ek D 1 \u0003 h\n\u0002k\nC O.h2/;\n˛k D\np\nh\n\u0002k\nC O.h/:\nAn argument is given in [19] that ˛k and \u000ek should be taken as\n\u000ek D exp.\u0003h=\u0002k/;\n˛k D\ns\n.1 \u0003 \u000ek/2\nh\n;\nsince, for this choice, the Langevin limit is preserved. Alternative methods are\npossible. For many comparisons and numerical experiments, refer to [19].\n"
+            }
+          ],
+          "numbered_equations": [],
+          "transcription_note": "文字层逐字保留；数学排版另行转写，原页中的特殊字形编码不静默替换。",
+          "context_notation": [],
+          "extra_assumptions": [
+            "h>0，正质量/c/τ/温度下作物理解读；跨步、模式与空间分量的完整独立正态资格另列gleNormalSequence。",
+            "此处完整单步定义，不包含离散不变分布、全局弱阶或Langevin极限保持的定理。"
+          ],
+          "issues": [],
+          "statement_scope": "四个实际更新及其全部噪声资格。",
+          "lean_decl": "MD.Ch08.gleIntegrator",
+          "lean_declarations": [
+            "MD.Ch08.gleIntegrator",
+            "MD.Ch08.gleNormalSequence"
+          ],
+          "source_page_verification": "R5本次审校：已核对R5_PAGES.pdf附件第12页文字层及相应原书页面图像；文字层特殊字形保留。",
+          "repair_log": [],
+          "documented_priors": []
+        },
+        "issues": [
+          {
+            "code": "STALE_TRANSCRIPTION_NOTE",
+            "field": "transcription_note",
+            "severity": "metadata",
+            "description": "本条对应第8章本附件页；通用注记“PDF420仅取Exercises之前”与本条无关，应删除。原文正文及乱码字形不改。"
+          }
+        ],
+        "evidence": {
+          "attachment": "R5_PAGES.pdf",
+          "attachment_pages": [
+            12
+          ],
+          "book_pdf_pages": "398",
+          "printed_pages": "377",
+          "A_verbatim": "已与附件原页逐段核对完整statement_verbatim和original_page_text；无正文增删。保留原文字层的控制字形；不同提取器的ﬁ/fi、ﬂ/fl以及原页ℓ的字形映射差别不判作原书错字。statement_latex按目视公式核对。",
+          "A_formula": "附件第12页Generalized Langevin Dynamics Method四行，包括最后一行使用新σ与新力。",
+          "C_definitions": "只使用本任务摘录的MD.*及MolecularDynamics项目定义；已展开本条依赖及附录相关定义，Mathlib按标准含义采信。未使用旧工程、旧任务或旧审校结论。",
+          "C_annotations": "本条未出现独立的[EXTRA]/[ERRATUM?]代码注释；已逐项审查extra_assumptions、issues、statement_scope中的等效标注。",
+          "validation_scope": "只读语义及签名审校；未编译Lean、未改工程、未补证明；sorry未作为FAIL理由。"
+        }
+      },
+      "audit": {
+        "lean_decl": [
+          "MD.Ch08.gleIntegrator",
+          "MD.Ch08.gleNormalSequence"
+        ],
+        "verdict": "PASS",
+        "explanation": "gleIntegrator定义四步完整映射：旧σ与旧力得到ph；正向位置用invm·ph；sn使用旧σ、ph和各Z分量；新动量使用新位置力及sn。decay对应原θ_k，noise对应α_k，θ参数对应kBT，避免同名混淆。gleNormalSequence包含概率性、跨步iIndepFun及每步模式×坐标的标准正态乘积律；由此保证所有有限噪声坐标独立。单步函数本身对任意实参数定义，物理h、质量、c、τ、温度正域在[EXTRA]中明示，未声明任意参数下的精度、稳定或采样定理。",
+        "counterexample": null,
+        "suggested_fix": null
+      },
+      "subtask": "BATCH12c",
+      "input_sha256": {
+        "Blueprint/Ch08.lean": "2800812fadd8e2557013f1941e4570401f7903d46f44baf07e23d5531da22a72",
+        "blueprint/ch08/ch08_source.json": "9b994b0f64cd22c85c2ad4123fbfdbd064bd7a6d070fe13b721794432f9f7a63",
+        "BATCH12c_PAGES.pdf": "cd1fd86a5b843c42b2b76603ea13001d0ef5618886b83c26224c54c1c592f11e"
+      }
+    },
+    {
+      "source_id": "MD-8.7.1-GLEConsistentCoefficients",
+      "json_review": {
+        "status": "CORRECTED",
+        "issue_codes": [
+          "STALE_TRANSCRIPTION_NOTE"
+        ],
+        "corrected_json": {
+          "source_id": "MD-8.7.1-GLEConsistentCoefficients",
+          "kind": "unnumbered_claim",
+          "label": null,
+          "section": "8.7.1",
+          "printed_page": "377",
+          "pdf_page": "398",
+          "statement_latex": "For consistency θₖ=1−h/τₖ+O(h²), αₖ=√h/τₖ+O(h). Choose θₖ=exp(−h/τₖ), αₖ=√((1−θₖ)²/h).",
+          "statement_verbatim": "8.7\nGeneralized Langevin Dynamics\n377\nObserving that the sum of ` independent Guassian random variables of variance ck\nis a Gaussian random variable with variance P`\nkD1 ck, we see that this is in the form\nof Langevin dynamics\ndpi D Fidt \u0003 O\npidt C\np\n2kBT O\ndWi;k;\nwith\nO\n D\nNk\nX\nkD1\nck:\n(For the formal treatment of this limit refer to [293].)\nFor numerical integration, the system (8.68)–(8.70) can be handled via splitting.\nA natural family of methods based on Verlet is the following [19]:\nGeneralized Langevin Dynamics Method\npnC1=2 :D pn C h\n2F.qn/ C h\n2\nkmax\nX\nkD1\n\u0012 n;k;\nqnC1 :D qn C hM\u00021pnC1=2;\n\u0012 nC1;k :D \u000ek\u0012 n;k \u0003 .1 \u0003 \u000ek/ ckpnC1=2 C ˛k\np\n2kBTckZn\nk;\npnC1 :D pnC1=2 C h\n2F.qnC1/ C h\n2\nkmax\nX\nkD1\n\u0012 nC1;k;\nwhere \u0012 n;k is a Nc-dimensional vector, and the components of the Nc-dimensional\nvectors Zn;k are independent standard normal random variables.\nThe real-valued coefﬁcients \u000ek and ˛k which must satisfy, for consistency, the\nequations\n\u000ek D 1 \u0003 h\n\u0002k\nC O.h2/;\n˛k D\np\nh\n\u0002k\nC O.h/:\nAn argument is given in [19] that ˛k and \u000ek should be taken as\n\u000ek D exp.\u0003h=\u0002k/;\n˛k D\ns\n.1 \u0003 \u000ek/2\nh\n;\nsince, for this choice, the Langevin limit is preserved. Alternative methods are\npossible. For many comparisons and numerical experiments, refer to [19].\n",
+          "verbatim_scope": "完整对应原页文字层，逐字保留；本条数学成分由statement_latex及statement_scope定位。",
+          "proof_latex": null,
+          "proof_note": "对应原页推导逐字保存在statement_verbatim/original_page_text；排版以原页PDF为准。",
+          "original_page_text": [
+            {
+              "pdf_page": 398,
+              "printed_page": 377,
+              "text": "8.7\nGeneralized Langevin Dynamics\n377\nObserving that the sum of ` independent Guassian random variables of variance ck\nis a Gaussian random variable with variance P`\nkD1 ck, we see that this is in the form\nof Langevin dynamics\ndpi D Fidt \u0003 O\npidt C\np\n2kBT O\ndWi;k;\nwith\nO\n D\nNk\nX\nkD1\nck:\n(For the formal treatment of this limit refer to [293].)\nFor numerical integration, the system (8.68)–(8.70) can be handled via splitting.\nA natural family of methods based on Verlet is the following [19]:\nGeneralized Langevin Dynamics Method\npnC1=2 :D pn C h\n2F.qn/ C h\n2\nkmax\nX\nkD1\n\u0012 n;k;\nqnC1 :D qn C hM\u00021pnC1=2;\n\u0012 nC1;k :D \u000ek\u0012 n;k \u0003 .1 \u0003 \u000ek/ ckpnC1=2 C ˛k\np\n2kBTckZn\nk;\npnC1 :D pnC1=2 C h\n2F.qnC1/ C h\n2\nkmax\nX\nkD1\n\u0012 nC1;k;\nwhere \u0012 n;k is a Nc-dimensional vector, and the components of the Nc-dimensional\nvectors Zn;k are independent standard normal random variables.\nThe real-valued coefﬁcients \u000ek and ˛k which must satisfy, for consistency, the\nequations\n\u000ek D 1 \u0003 h\n\u0002k\nC O.h2/;\n˛k D\np\nh\n\u0002k\nC O.h/:\nAn argument is given in [19] that ˛k and \u000ek should be taken as\n\u000ek D exp.\u0003h=\u0002k/;\n˛k D\ns\n.1 \u0003 \u000ek/2\nh\n;\nsince, for this choice, the Langevin limit is preserved. Alternative methods are\npossible. For many comparisons and numerical experiments, refer to [19].\n"
+            }
+          ],
+          "numbered_equations": [],
+          "transcription_note": "文字层逐字保留；数学排版另行转写，原页中的特殊字形编码不静默替换。",
+          "context_notation": [],
+          "extra_assumptions": [
+            "h从正侧趋0、τ固定正；小记忆极限另固定h>0，只陈述单步系数极限，未把它当成随机过程极限或长期采样结论。"
+          ],
+          "issues": [],
+          "statement_scope": "两项一致性渐近和所选单步系数的τ→0极限。",
+          "lean_decl": "MD.Ch08.gleDecay",
+          "lean_declarations": [
+            "MD.Ch08.gleDecay",
+            "MD.Ch08.gleNoiseCoefficient",
+            "MD.Ch08.gleCoefficientConsistency",
+            "MD.Ch08.gleCoefficients_consistent",
+            "MD.Ch08.gleCoefficient_smallMemory"
+          ],
+          "source_page_verification": "R5本次审校：已核对R5_PAGES.pdf附件第13页文字层及相应原书页面图像；文字层特殊字形保留。",
+          "repair_log": [],
+          "documented_priors": []
+        },
+        "issues": [
+          {
+            "code": "STALE_TRANSCRIPTION_NOTE",
+            "field": "transcription_note",
+            "severity": "metadata",
+            "description": "本条对应第8章本附件页；通用注记“PDF420仅取Exercises之前”与本条无关，应删除。原文正文及乱码字形不改。"
+          }
+        ],
+        "evidence": {
+          "attachment": "R5_PAGES.pdf",
+          "attachment_pages": [
+            13
+          ],
+          "book_pdf_pages": "398",
+          "printed_pages": "377",
+          "A_verbatim": "已与附件原页逐段核对完整statement_verbatim和original_page_text；无正文增删。保留原文字层的控制字形；不同提取器的ﬁ/fi、ﬂ/fl以及原页ℓ的字形映射差别不判作原书错字。statement_latex按目视公式核对。",
+          "A_formula": "附件第13页系数一致性两式与所选指数/平方根公式。",
+          "C_definitions": "只使用本任务摘录的MD.*及MolecularDynamics项目定义；已展开本条依赖及附录相关定义，Mathlib按标准含义采信。未使用旧工程、旧任务或旧审校结论。",
+          "C_annotations": "本条未出现独立的[EXTRA]/[ERRATUM?]代码注释；已逐项审查extra_assumptions、issues、statement_scope中的等效标注。",
+          "validation_scope": "只读语义及签名审校；未编译Lean、未改工程、未补证明；sorry未作为FAIL理由。"
+        }
+      },
+      "audit": {
+        "lean_decl": [
+          "MD.Ch08.gleDecay",
+          "MD.Ch08.gleNoiseCoefficient",
+          "MD.Ch08.gleCoefficientConsistency",
+          "MD.Ch08.gleCoefficients_consistent",
+          "MD.Ch08.gleCoefficient_smallMemory"
+        ],
+        "verdict": "PASS",
+        "explanation": "gleDecay=exp(−h/τ)，gleNoiseCoefficient=sqrt((1−decay)²/h)，平方位置与原页一致。consistency谓词两项BigO均取h→0⁺：decay−(1−h/τ)=O(h²)，noise−sqrt(h)/τ=O(h)。τ固定正时noise=(1−exp(−h/τ))/sqrt(h)，余项实际O(h^(3/2))，故所要求O(h)成立。smallMemory固定h>0取τ→0⁺，极限为(0,1/sqrt(h))，结论正确。未把两个不同参数极限混为过程极限或长期采样结论。",
+        "counterexample": null,
+        "suggested_fix": null
+      },
+      "subtask": "BATCH12d",
+      "input_sha256": {
+        "Blueprint/Ch08.lean": "2800812fadd8e2557013f1941e4570401f7903d46f44baf07e23d5531da22a72",
+        "blueprint/ch08/ch08_source.json": "9b994b0f64cd22c85c2ad4123fbfdbd064bd7a6d070fe13b721794432f9f7a63",
+        "BATCH12d_PAGES.pdf": "3bdd33f133a655edb1a16ea20b3ec14b38c228c31bc4ff3e9bd40dbb11c9b9c9"
+      }
+    },
+    {
+      "source_id": "MD-8.8-NPTThermodynamics",
+      "json_review": {
+        "status": "CORRECTED",
+        "issue_codes": [
+          "STALE_TRANSCRIPTION_NOTE"
+        ],
+        "corrected_json": {
+          "source_id": "MD-8.8-NPTThermodynamics",
+          "kind": "unnumbered_claim",
+          "label": null,
+          "section": "8.8",
+          "printed_page": "378",
+          "pdf_page": "399",
+          "statement_latex": "P=−(∂E/∂V)_{S,N}; the Maxwell cyclic relation gives (∂S/∂V)_{E,N}=P/T and (∂S/∂E)_{V,N}=1/T.",
+          "statement_verbatim": "378\n8\nExtended Variable Methods\n8.8\nConstant Temperature and Pressure Molecular\nDynamics\nThe isobaric, isothermal or NPT ensemble models a system in contact with a heat\nbath (temperature T) and a “pressure reservoir” maintained at pressure P. The\npressure is deﬁned by the formula\nP D \u0003\n\u0002 @E\n@V\n\u0003\nS;N\nwhere E is the energy, V is volume, S is entropy. The notation Œ: : :\tx;y means that the\nindicated partial derivatives should be taken with respect to constant values of the\nindicated variables.\nAn isothermal-isobaric system exchanges energy with the bath in such a way\nas to maintain the constant temperature; at the same time the volume ﬂuctuates to\ncontrol the pressure. The state of the system can be expressed in terms of particle\npositions and momenta as well as the volume V, i.e. we think of the probability\ndensity as a function of q, p and V.\nLet N, V, E be the number of atoms, volume and energy, respectively, of the\nsystem of interest, and N2, V2, E2 be the corresponding quantities describing the\nbath system; we have NCN2 D QN, VCV2 D QV, ECE2 D QE all constant. We view\nthe entropy as a function of the other variables and expand in a Taylor series in both\nvolume and energy:\nS.N2; V2; E2/ D S. QN \u0003 N; QV \u0003 V; QE \u0003 E/ \u0007 S.N2; QV; QE/ \u0003 @S\n@EE \u0003 @S\n@VV:\nBear in mind that here E and V are small relative perturbations of the total energy\nand volume. The quantity @S\n@E is the reciprocal temperature.\nTo calculate @S\n@V we may use Maxwell’s thermodynamic relation [372]:\n\u0002@S\n@E\n\u0003\nV;N\n\u0002 @E\n@V\n\u0003\nS;N\n\u0002@V\n@S\n\u0003\nE;N\nD \u00031:\nSince\n\n @S\n@E\n\u000b\nV;N is T\u00021 and\n\n @E\n@V\n\u000b\nS;N is \u0003P, we obtain\n\u0002 @S\n@V\n\u0003\nE;N\nD\n1\n\n @V\n@S\n\u000b\nE;N\nD P=T:\nThis results in the formula\nS.N2; V2; E2/ \u0007 constant \u0003 E C PV\nT\n;\n",
+          "verbatim_scope": "完整对应原页文字层，逐字保留；本条数学成分由statement_latex及statement_scope定位。",
+          "proof_latex": null,
+          "proof_note": "对应原页推导逐字保存在statement_verbatim/original_page_text；排版以原页PDF为准。",
+          "original_page_text": [
+            {
+              "pdf_page": 399,
+              "printed_page": 378,
+              "text": "378\n8\nExtended Variable Methods\n8.8\nConstant Temperature and Pressure Molecular\nDynamics\nThe isobaric, isothermal or NPT ensemble models a system in contact with a heat\nbath (temperature T) and a “pressure reservoir” maintained at pressure P. The\npressure is deﬁned by the formula\nP D \u0003\n\u0002 @E\n@V\n\u0003\nS;N\nwhere E is the energy, V is volume, S is entropy. The notation Œ: : :\tx;y means that the\nindicated partial derivatives should be taken with respect to constant values of the\nindicated variables.\nAn isothermal-isobaric system exchanges energy with the bath in such a way\nas to maintain the constant temperature; at the same time the volume ﬂuctuates to\ncontrol the pressure. The state of the system can be expressed in terms of particle\npositions and momenta as well as the volume V, i.e. we think of the probability\ndensity as a function of q, p and V.\nLet N, V, E be the number of atoms, volume and energy, respectively, of the\nsystem of interest, and N2, V2, E2 be the corresponding quantities describing the\nbath system; we have NCN2 D QN, VCV2 D QV, ECE2 D QE all constant. We view\nthe entropy as a function of the other variables and expand in a Taylor series in both\nvolume and energy:\nS.N2; V2; E2/ D S. QN \u0003 N; QV \u0003 V; QE \u0003 E/ \u0007 S.N2; QV; QE/ \u0003 @S\n@EE \u0003 @S\n@VV:\nBear in mind that here E and V are small relative perturbations of the total energy\nand volume. The quantity @S\n@E is the reciprocal temperature.\nTo calculate @S\n@V we may use Maxwell’s thermodynamic relation [372]:\n\u0002@S\n@E\n\u0003\nV;N\n\u0002 @E\n@V\n\u0003\nS;N\n\u0002@V\n@S\n\u0003\nE;N\nD \u00031:\nSince\n\n @S\n@E\n\u000b\nV;N is T\u00021 and\n\n @E\n@V\n\u000b\nS;N is \u0003P, we obtain\n\u0002 @S\n@V\n\u0003\nE;N\nD\n1\n\n @V\n@S\n\u000b\nE;N\nD P=T:\nThis results in the formula\nS.N2; V2; E2/ \u0007 constant \u0003 E C PV\nT\n;\n"
+            }
+          ],
+          "numbered_equations": [],
+          "transcription_note": "文字层逐字保留；数学排版另行转写，原页中的特殊字形编码不静默替换。",
+          "context_notation": [],
+          "extra_assumptions": [
+            "E的熵、体积、粒子数参数固定顺序明示；Maxwell循环作为热力学可逆导数资格，并非从任意E无条件推出。"
+          ],
+          "issues": [],
+          "statement_scope": "压力定义和给定非零温度/循环关系后的代数推论。",
+          "lean_decl": "MD.Ch08.thermodynamicPressure",
+          "lean_declarations": [
+            "MD.Ch08.thermodynamicPressure",
+            "MD.Ch08.maxwellCycle",
+            "MD.Ch08.maxwellPressureRelation"
+          ],
+          "source_page_verification": "R5本次审校：已核对R5_PAGES.pdf附件第14页文字层及相应原书页面图像；文字层特殊字形保留。",
+          "repair_log": [],
+          "documented_priors": []
+        },
+        "issues": [
+          {
+            "code": "STALE_TRANSCRIPTION_NOTE",
+            "field": "transcription_note",
+            "severity": "metadata",
+            "description": "本条对应第8章本附件页；通用注记“PDF420仅取Exercises之前”与本条无关，应删除。原文正文及乱码字形不改。"
+          }
+        ],
+        "evidence": {
+          "attachment": "R5_PAGES.pdf",
+          "attachment_pages": [
+            14
+          ],
+          "book_pdf_pages": "399",
+          "printed_pages": "378",
+          "A_verbatim": "已与附件原页逐段核对完整statement_verbatim和original_page_text；无正文增删。保留原文字层的控制字形；不同提取器的ﬁ/fi、ﬂ/fl以及原页ℓ的字形映射差别不判作原书错字。statement_latex按目视公式核对。",
+          "A_formula": "附件第14页压力定义、三导数循环积−1及倒数关系。",
+          "C_definitions": "只使用本任务摘录的MD.*及MolecularDynamics项目定义；已展开本条依赖及附录相关定义，Mathlib按标准含义采信。未使用旧工程、旧任务或旧审校结论。",
+          "C_annotations": "本条未出现独立的[EXTRA]/[ERRATUM?]代码注释；已逐项审查extra_assumptions、issues、statement_scope中的等效标注。",
+          "validation_scope": "只读语义及签名审校；未编译Lean、未改工程、未补证明；sorry未作为FAIL理由。"
+        }
+      },
+      "audit": {
+        "lean_decl": [
+          "MD.Ch08.thermodynamicPressure",
+          "MD.Ch08.maxwellCycle",
+          "MD.Ch08.maxwellPressureRelation"
+        ],
+        "verdict": "PASS",
+        "explanation": "thermodynamicPressure的E参数顺序S,V,N明确，固定S,N对V取导再取负，忠实。maxwellCycle只是三个实数乘积等于−1的资格；maxwellPressureRelation量化T,P,dVdS，前提T≠0及(1/T)(−P)dVdS=−1，推出(dVdS)⁻¹=P/T，正确且前提自动排除P和dVdS为0。这里未从任意E构造熵反函数，也未独立证明dSdE=1/T；将其作为热力学识别及循环资格的[EXTRA]是已披露的范围选择。",
+        "counterexample": null,
+        "suggested_fix": null
+      },
+      "subtask": "BATCH12e",
+      "input_sha256": {
+        "Blueprint/Ch08.lean": "2800812fadd8e2557013f1941e4570401f7903d46f44baf07e23d5531da22a72",
+        "blueprint/ch08/ch08_source.json": "9b994b0f64cd22c85c2ad4123fbfdbd064bd7a6d070fe13b721794432f9f7a63",
+        "BATCH12e_PAGES.pdf": "47148430b2ee3978f8727637fd6f2083d2072d19b5043fe43d746f2a53493574"
+      }
+    },
+    {
+      "source_id": "MD-8.8-NPTBathTaylor",
+      "json_review": {
+        "status": "CORRECTED",
+        "issue_codes": [
+          "STALE_TRANSCRIPTION_NOTE"
+        ],
+        "corrected_json": {
+          "source_id": "MD-8.8-NPTBathTaylor",
+          "kind": "unnumbered_claim",
+          "label": null,
+          "section": "8.8",
+          "printed_page": "378",
+          "pdf_page": "399",
+          "statement_latex": "S(N₂,V₂,E₂)=S(Ñ−N,Ṽ−V,Ẽ−E)≈S(N₂,Ṽ,Ẽ)−(E+PV)/T.",
+          "statement_verbatim": "378\n8\nExtended Variable Methods\n8.8\nConstant Temperature and Pressure Molecular\nDynamics\nThe isobaric, isothermal or NPT ensemble models a system in contact with a heat\nbath (temperature T) and a “pressure reservoir” maintained at pressure P. The\npressure is deﬁned by the formula\nP D \u0003\n\u0002 @E\n@V\n\u0003\nS;N\nwhere E is the energy, V is volume, S is entropy. The notation Œ: : :\tx;y means that the\nindicated partial derivatives should be taken with respect to constant values of the\nindicated variables.\nAn isothermal-isobaric system exchanges energy with the bath in such a way\nas to maintain the constant temperature; at the same time the volume ﬂuctuates to\ncontrol the pressure. The state of the system can be expressed in terms of particle\npositions and momenta as well as the volume V, i.e. we think of the probability\ndensity as a function of q, p and V.\nLet N, V, E be the number of atoms, volume and energy, respectively, of the\nsystem of interest, and N2, V2, E2 be the corresponding quantities describing the\nbath system; we have NCN2 D QN, VCV2 D QV, ECE2 D QE all constant. We view\nthe entropy as a function of the other variables and expand in a Taylor series in both\nvolume and energy:\nS.N2; V2; E2/ D S. QN \u0003 N; QV \u0003 V; QE \u0003 E/ \u0007 S.N2; QV; QE/ \u0003 @S\n@EE \u0003 @S\n@VV:\nBear in mind that here E and V are small relative perturbations of the total energy\nand volume. The quantity @S\n@E is the reciprocal temperature.\nTo calculate @S\n@V we may use Maxwell’s thermodynamic relation [372]:\n\u0002@S\n@E\n\u0003\nV;N\n\u0002 @E\n@V\n\u0003\nS;N\n\u0002@V\n@S\n\u0003\nE;N\nD \u00031:\nSince\n\n @S\n@E\n\u000b\nV;N is T\u00021 and\n\n @E\n@V\n\u000b\nS;N is \u0003P, we obtain\n\u0002 @S\n@V\n\u0003\nE;N\nD\n1\n\n @V\n@S\n\u000b\nE;N\nD P=T:\nThis results in the formula\nS.N2; V2; E2/ \u0007 constant \u0003 E C PV\nT\n;\n",
+          "verbatim_scope": "完整对应原页文字层，逐字保留；本条数学成分由statement_latex及statement_scope定位。",
+          "proof_latex": null,
+          "proof_note": "对应原页推导逐字保存在statement_verbatim/original_page_text；排版以原页PDF为准。",
+          "original_page_text": [
+            {
+              "pdf_page": 399,
+              "printed_page": 378,
+              "text": "378\n8\nExtended Variable Methods\n8.8\nConstant Temperature and Pressure Molecular\nDynamics\nThe isobaric, isothermal or NPT ensemble models a system in contact with a heat\nbath (temperature T) and a “pressure reservoir” maintained at pressure P. The\npressure is deﬁned by the formula\nP D \u0003\n\u0002 @E\n@V\n\u0003\nS;N\nwhere E is the energy, V is volume, S is entropy. The notation Œ: : :\tx;y means that the\nindicated partial derivatives should be taken with respect to constant values of the\nindicated variables.\nAn isothermal-isobaric system exchanges energy with the bath in such a way\nas to maintain the constant temperature; at the same time the volume ﬂuctuates to\ncontrol the pressure. The state of the system can be expressed in terms of particle\npositions and momenta as well as the volume V, i.e. we think of the probability\ndensity as a function of q, p and V.\nLet N, V, E be the number of atoms, volume and energy, respectively, of the\nsystem of interest, and N2, V2, E2 be the corresponding quantities describing the\nbath system; we have NCN2 D QN, VCV2 D QV, ECE2 D QE all constant. We view\nthe entropy as a function of the other variables and expand in a Taylor series in both\nvolume and energy:\nS.N2; V2; E2/ D S. QN \u0003 N; QV \u0003 V; QE \u0003 E/ \u0007 S.N2; QV; QE/ \u0003 @S\n@EE \u0003 @S\n@VV:\nBear in mind that here E and V are small relative perturbations of the total energy\nand volume. The quantity @S\n@E is the reciprocal temperature.\nTo calculate @S\n@V we may use Maxwell’s thermodynamic relation [372]:\n\u0002@S\n@E\n\u0003\nV;N\n\u0002 @E\n@V\n\u0003\nS;N\n\u0002@V\n@S\n\u0003\nE;N\nD \u00031:\nSince\n\n @S\n@E\n\u000b\nV;N is T\u00021 and\n\n @E\n@V\n\u000b\nS;N is \u0003P, we obtain\n\u0002 @S\n@V\n\u0003\nE;N\nD\n1\n\n @V\n@S\n\u000b\nE;N\nD P=T:\nThis results in the formula\nS.N2; V2; E2/ \u0007 constant \u0003 E C PV\nT\n;\n"
+            }
+          ],
+          "numbered_equations": [],
+          "transcription_note": "文字层逐字保留；数学排版另行转写，原页中的特殊字形编码不静默替换。",
+          "context_notation": [],
+          "extra_assumptions": [
+            "固定粒子数参数，只对E,V的小扰动；显式Fréchet可微及热力学导数识别，不把原文≈当作精确等式。"
+          ],
+          "issues": [],
+          "statement_scope": "线性熵近似与明确的一阶小o余项目标。",
+          "lean_decl": "MD.Ch08.nptBathLinear",
+          "lean_declarations": [
+            "MD.Ch08.nptBathLinear",
+            "MD.Ch08.nptEntropy_firstOrder"
+          ],
+          "source_page_verification": "R5本次审校：已核对R5_PAGES.pdf附件第15页文字层及相应原书页面图像；文字层特殊字形保留。",
+          "repair_log": [],
+          "documented_priors": []
+        },
+        "issues": [
+          {
+            "code": "STALE_TRANSCRIPTION_NOTE",
+            "field": "transcription_note",
+            "severity": "metadata",
+            "description": "本条对应第8章本附件页；通用注记“PDF420仅取Exercises之前”与本条无关，应删除。原文正文及乱码字形不改。"
+          }
+        ],
+        "evidence": {
+          "attachment": "R5_PAGES.pdf",
+          "attachment_pages": [
+            15
+          ],
+          "book_pdf_pages": "399",
+          "printed_pages": "378",
+          "A_verbatim": "已与附件原页逐段核对完整statement_verbatim和original_page_text；无正文增删。保留原文字层的控制字形；不同提取器的ﬁ/fi、ﬂ/fl以及原页ℓ的字形映射差别不判作原书错字。statement_latex按目视公式核对。",
+          "A_formula": "附件第15页两变量Taylor式及最终−(E+PV)/T。",
+          "C_definitions": "只使用本任务摘录的MD.*及MolecularDynamics项目定义；已展开本条依赖及附录相关定义，Mathlib按标准含义采信。未使用旧工程、旧任务或旧审校结论。",
+          "C_annotations": "本条未出现独立的[EXTRA]/[ERRATUM?]代码注释；已逐项审查extra_assumptions、issues、statement_scope中的等效标注。",
+          "validation_scope": "只读语义及签名审校；未编译Lean、未改工程、未补证明；sorry未作为FAIL理由。"
+        }
+      },
+      "audit": {
+        "lean_decl": [
+          "MD.Ch08.nptBathLinear",
+          "MD.Ch08.nptEntropy_firstOrder"
+        ],
+        "verdict": "PASS",
+        "explanation": "nptBathLinear=S0−(E+PV)/T，与原页正压力项及整体负号相符。定理固定E0,V0,T,P，以T>0、S在(E0,V0)可微及完整Fréchet导数v↦v1/T+(P/T)v2为前提，结论对z→0的二维扰动给出误差o(‖z‖)。参数顺序在Lean为(E,V)，与原页S(N,V,E)的固定N切片需对应，已有说明；没有把≈强化成精确等号或O(‖z‖²)，亦不涉及粒子数变化。",
+        "counterexample": null,
+        "suggested_fix": null
+      },
+      "subtask": "BATCH12f",
+      "input_sha256": {
+        "Blueprint/Ch08.lean": "2800812fadd8e2557013f1941e4570401f7903d46f44baf07e23d5531da22a72",
+        "blueprint/ch08/ch08_source.json": "9b994b0f64cd22c85c2ad4123fbfdbd064bd7a6d070fe13b721794432f9f7a63",
+        "BATCH12f_PAGES.pdf": "0c725015e90c33bec234e8c6ae7c4f8b52fdf250c2cabc629cb5a98599a8e6e8"
+      }
+    }
+  ],
+  "merged_from": "ch08_first_merged"
+}

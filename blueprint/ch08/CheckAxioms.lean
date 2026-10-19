@@ -39,6 +39,8 @@ import Blueprint.Ch08
 #print axioms MD.Ch08.npHamiltonian
 #print axioms MD.Ch08.nosePoincarePrinted
 #print axioms MD.Ch08.nosePoincare_corrected
+#print axioms MD.Ch08.npDeltaN_corrected
+#print axioms MD.Ch08.npValidDomain
 #print axioms MD.Ch08.npField
 #print axioms MD.Ch08.npProjection
 #print axioms MD.Ch08.npProjection_equations
@@ -54,7 +56,8 @@ import Blueprint.Ch08
 #print axioms MD.Ch08.thermostatCriterion
 #print axioms MD.Ch08.generalizedFeedback
 #print axioms MD.Ch08.configurationalFeedback
-#print axioms MD.Ch08.generalizedFeedback_stationary
+#print axioms MD.Ch08.generalizedFeedback_stationaryPrinted
+#print axioms MD.Ch08.generalizedFeedback_stationary_corrected
 #print axioms MD.Ch08.temperatureIdentity
 #print axioms MD.Ch08.phaseTemperature
 #print axioms MD.Ch08.proposition81
@@ -66,6 +69,8 @@ import Blueprint.Ch08
 #print axioms MD.Ch08.additiveSDE
 #print axioms MD.Ch08.stochasticThermostatDrift
 #print axioms MD.Ch08.fluctuationDissipation
+#print axioms MD.Ch08.thermostatBlockNoise
+#print axioms MD.Ch08.stochasticThermostatSolution
 #print axioms MD.Ch08.ouFokkerPlanck
 #print axioms MD.Ch08.ouStationarity_corrected
 #print axioms MD.Ch08.diffusionPrinted
@@ -138,6 +143,8 @@ import Blueprint.Ch08
 #print axioms MD.Ch08.slsDriftStep
 #print axioms MD.Ch08.slsLeapfrog
 #print axioms MD.Ch08.slsCoordinateField
+#print axioms MD.Ch08.slsReducedPrinted
+#print axioms MD.Ch08.slsReduced_corrected
 #print axioms MD.Ch08.slsDoubleWell
 #print axioms MD.Ch08.slsDoubleWell_nonneg
 #print axioms MD.Ch08.isoMultiplier
@@ -186,13 +193,14 @@ import Blueprint.Ch08
 #print axioms MD.Ch08.sinGenerator
 #print axioms MD.Ch08.sinGenerator_lyapunov
 #print axioms MD.Ch08.sinConstraint_bathBound
+#print axioms MD.Ch08.sinLyapunovTailPrinted
+#print axioms MD.Ch08.sinLyapunovTail_corrected
 #print axioms MD.Ch08.sinKField
 #print axioms MD.Ch08.sinForceField
 #print axioms MD.Ch08.sinNField
 #print axioms MD.Ch08.sinOField
 #print axioms MD.Ch08.sinSplit_fields
 #print axioms MD.Ch08.sinForce_constraintBalance
-#print axioms MD.Ch08.SINStage
 #print axioms MD.Ch08.sinRStages
 #print axioms MD.Ch08.sinN1Field
 #print axioms MD.Ch08.sinN2Field
@@ -220,6 +228,7 @@ import Blueprint.Ch08
 #print axioms MD.Ch08.stationaryPronyOU
 #print axioms MD.Ch08.pronyOU_covariance
 #print axioms MD.Ch08.totalPronyRandomForce
+#print axioms MD.Ch08.pronyOU_covariance_corrected
 #print axioms MD.Ch08.GLEState
 #print axioms MD.Ch08.gleDrift
 #print axioms MD.Ch08.gleNoise
@@ -264,6 +273,8 @@ import Blueprint.Ch08
 #print axioms MD.Ch08.isNHLPistonSolution
 #print axioms MD.Ch08.pistonHamiltonianPart
 #print axioms MD.Ch08.pistonHamiltonianWeight_stationary
+#print axioms MD.Ch08.pistonHamiltonianPartPrinted
+#print axioms MD.Ch08.pistonHamiltonianPart_corrected
 #print axioms MD.Ch08.pistonThermostatPart
 #print axioms MD.Ch08.pistonRho2Printed
 #print axioms MD.Ch08.pistonRho2_corrected

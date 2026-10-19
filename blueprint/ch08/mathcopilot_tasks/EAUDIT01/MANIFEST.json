@@ -1,0 +1,26 @@
+{
+  "batch": "EAUDIT01",
+  "subtasks": [
+    {
+      "subtask": "EAUDIT01a",
+      "source_id": "MD-8.1.2.1-NPEquations",
+      "path": "blueprint/ch08/mathcopilot_tasks/EAUDIT01/a",
+      "bytes": 97618,
+      "manifest_sha256": "cf4508719158a98974c3cbfca1f4236b6a911656d818a5c258dea3b762398383"
+    },
+    {
+      "subtask": "EAUDIT01b",
+      "source_id": "MD-8.2.1-Examples81and82",
+      "path": "blueprint/ch08/mathcopilot_tasks/EAUDIT01/b",
+      "bytes": 119946,
+      "manifest_sha256": "9c1c8e0096820a1a04ce444467d53e2583fc4bdc2de5df8b894f7317c5a43b06"
+    },
+    {
+      "subtask": "EAUDIT01c",
+      "source_id": "MD-8.4-AdditiveThermostatSDE",
+      "path": "blueprint/ch08/mathcopilot_tasks/EAUDIT01/c",
+      "bytes": 120080,
+      "manifest_sha256": "b2b13bdbaa74c2a06d32991c904df1ed543cca39d305bd8872d05f2bef68410d"
+    }
+  ]
+}
