@@ -1,0 +1,44 @@
+{
+  "status": "PASS",
+  "frozen_files": 16457,
+  "chapter08_frozen_files": 678,
+  "changed_frozen_files": [],
+  "formal_lean_files": 298,
+  "formal_sorry": 0,
+  "formal_custom_axiom_declarations": 0,
+  "website_returns": 35,
+  "website_return_files": 12,
+  "raw_reaudit_counts": {
+    "PASS": 24,
+    "NEEDS_HUMAN": 10,
+    "FAIL": 1
+  },
+  "declarations": 373,
+  "proven": 53,
+  "unproved": 69,
+  "definition_count": 251,
+  "new_proofs_without_placeholders": [
+    "MD.Ch07.constrainedHOQualifiedComposition_measurable",
+    "MD.Ch07.constrainedHOOutput_hasLaw",
+    "MD.Ch07.constrainedHOOutputLaw_probability"
+  ],
+  "semantic_changed_source_groups": [
+    "MD-7.12-ConstrainedHOSplitting"
+  ],
+  "full_check": "passed",
+  "full_check_inputs": 310,
+  "full_check_logs": 14,
+  "lean_sha256": "f29545ff841fbd83cb6b4e6d35f7935eb7524369693de59871ab365bc4071330",
+  "source_sha256": "25a086089783fcb1e8d8d183e4c88727f2af9b3f8020fc959489f1ba7cb6124a",
+  "compile_receipt_sha256": "093d4fba9da85c30fc065bf5149e6905c50f708a7403e2d026625524a621389e",
+  "full_report_sha256": "00b7f6aea63fbf44a662b118bc0417f39900d3f17a139a9175d51060f547fd97",
+  "repairing": 0,
+  "website_resubmitted": false,
+  "new_eaudit_packages": 0,
+  "unverified": [
+    "69 unproved draft statements",
+    "conditional solution/constraint preservation for random initial data",
+    "mentor decisions on errata/scope",
+    "website re-review of the one local repair (intentionally not performed)"
+  ]
+}

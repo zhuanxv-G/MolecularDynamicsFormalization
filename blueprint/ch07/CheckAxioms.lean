@@ -312,6 +312,10 @@ import Blueprint.Ch07
 #print axioms MD.Ch07.constrainedHMapQualification
 #print axioms MD.Ch07.constrainedOMapQualification
 #print axioms MD.Ch07.constrainedHOQualifiedComposition
+#print axioms MD.Ch07.constrainedHOQualifiedComposition_measurable
+#print axioms MD.Ch07.constrainedHOOutputLaw
+#print axioms MD.Ch07.constrainedHOOutput_hasLaw
+#print axioms MD.Ch07.constrainedHOOutputLaw_probability
 #print axioms MD.Ch07.midpointConstrainedORelation
 #print axioms MD.Ch07.constrainedVerletRelation
 #print axioms MD.Ch07.mevmeRelation

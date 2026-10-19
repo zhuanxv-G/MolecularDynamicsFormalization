@@ -1,0 +1,193 @@
+{
+  "batch": "EAUDIT03",
+  "input_sha256": {
+    "Blueprint/Ch07.lean": "f3bc0ee86ace9c825028f0cec8ebb2fb410d6be77213cc7fb41cb8889540a000",
+    "blueprint/ch07/ch07_source.json": "1a201887b51a249fb73f456237cb342963c5d98c612ec1912f21572a57924012"
+  },
+  "items": [
+    {
+      "source_id": "MD-7.6-JSplitting",
+      "json_review": {
+        "status": "APPROVED",
+        "issue_codes": [
+          "DECLARED_COVERAGE_GAP"
+        ],
+        "corrected_json": null,
+        "issues": [
+          "原文有限子流复合的全局保体积和一致逼近尚未形式化，已在范围与覆盖缺口中披露。"
+        ],
+        "evidence": [
+          "A：附件第7–8页＝PDF303–304／印刷282–283。J的反对称性、有限K、f_i=J_i∇H、各场保H、保体积以及假设可精确积分后复合的文字均与原页相符。",
+          "C：jField使用与x无关的实常矩阵J，gradient由坐标导数定义。jSplitting_energy要求所有i,j有Jij=−Jji及H为C²；对所有x同时结论能量方向导数和散度为零。",
+          "C：反对称常矩阵与对称Hessian配对给零散度，反对称二次型给零能量导数；即使J退化也成立，不要求每个子J都是可逆标准辛矩阵。",
+          "C逐声明：jField、jSplitting_energy、composition_preservesEnergy、jField_finiteDecomposition均PASS。最后一条对任意K:ℕ（含0）和Fin K索引族陈述向量场对矩阵求和的线性性；复合保能定理要求F,G各自保同一个H。",
+          "C审校对象仅为R1_任务.md本条完整Lean、摘录的项目依赖和附录D1–D20；Mathlib标准定义按任务规定采信。未读取旧Ch0x/source文件作替代输入，未修改工程或补证明，未运行Lean。PASS仅评价明示覆盖范围内的声明签名与定义，不表示原文全部内容已形式化，也不表示含sorry的证明已经验证。",
+          "本条摘录未出现字面[EXTRA]或[ERRATUM?]标签；对应内容按extra_assumptions、issues、statement_scope、coverage_gaps及Printed/corrected名称分别核查。"
+        ]
+      },
+      "audit": {
+        "lean_decl": "MD.Ch07.jField",
+        "verdict": "PASS",
+        "explanation": "所列定义与三个定理完整覆盖明示的常反对称矩阵代数、微分结论及已保能映射复合，不把散度为零直接冒称为已建立全局保体积流。有限分解定理没有将矩阵和固定为标准J，但适用于原文J=∑J_i的代入；hJ对线性求和恒等式虽非必要，仍与原文条件一致。",
+        "counterexample": null,
+        "suggested_fix": null
+      },
+      "subtask": "EAUDIT03a"
+    },
+    {
+      "source_id": "MD-7.6-CoordinateJSplitting",
+      "json_review": {
+        "status": "CORRECTED",
+        "issue_codes": [
+          "UNMARKED_SOURCE_OMISSION",
+          "DECLARED_COVERAGE_GAP"
+        ],
+        "corrected_json": {
+          "source_id": "MD-7.6-CoordinateJSplitting",
+          "kind": "definition",
+          "label": null,
+          "section": "7.6",
+          "printed_page": "283",
+          "pdf_page": "304",
+          "statement_latex": "As an example of such a $J$-splitting, we may take $K=N_c$ with each $J_i$ to be defined by the components of the canonical symplectic structure matrix having to do with the $i$th position and momentum pair, thus the equations of motion for the $i$th vector field become\n\\[\\dot q_i=p_i/m_i,\\qquad \\dot p_i=-\\frac{\\partial U}{\\partial q_i}(\\bar q_1,\\ldots,\\bar q_{i-1},q_i,\\bar q_{i+1},\\ldots,\\bar q_{N_c}),\\]\nwhere components with a bar over them are fixed during the calculation. […] Any such 1-dof Hamiltonian system is formally integrable (albeit in quadratures).",
+          "proof_latex": null,
+          "proof_outline": null,
+          "proof_note": "原页推导与上下文全文见original_page_text；数学符号的排版以随附原页PDF为准。",
+          "original_page_text": [
+            {
+              "pdf_page": 304,
+              "printed_page": 283,
+              "text": "7.7\nThe Evolution of the Distribution Using a Numerical Method\n283\nﬁelds f i D JirH. Each of these vector ﬁelds preserves H and, because they are\nthemselves Hamiltonian, their ﬂows are also volume-preserving. Assuming each\nsuch vector ﬁeld is exactly integrable, the system dynamics may be approximated\nby composing the ﬂow maps for each vector ﬁeld.\nAs an example of such a J-splitting, we may take K D Nc with each Ji to be\ndeﬁned by the components of the canonical symplectic structure matrix having to\ndo with the ith position and momentum pair, thus the equations of motion for the ith\nvector ﬁeld become\nPqi D pi\nmi\n;\nPpi D \u0003@U\n@qi\n.Nq1; : : : ; Nqi\u00021; qi; NqiC1; : : : ; NqNc/;\nwhere components with a bar over them are ﬁxed during the calculation. This is,\nitself, a Hamiltonian system with a single degree of freedom qi and the potential\nOUi.qi/ obtained by freezing all other components in the original potential function.\nAny such 1-dof Hamiltonian system is formally integrable (albeit in quadratures).\nThus, if we are willing to solve a system using quadrature, we have a numerical\nmethod for the Hamiltonian system which preserves volume and energy. We solve\neach such dynamics from i D 1 to Nc, updating the values of each .qi; pi/ in\nsequence (the temporally contiguous nature of the updates rules it out as a strategy\nfor parallel computation).\nAlthough this method can be applied to molecular systems, its implementation\nis challenging and it is not recommended for general computation. Some systems\nmay have a structure amenable to exploitation via this splitting strategy, or it could\npotentially serve as a starting point in some special purpose methods. For another\nuse of J-splitting in the setting of Metropolis correction of deterministic methods,\nsee [48].\n7.7\nThe Evolution of the Distribution Using a Numerical\nMethod\nIn this section, we shall give an approach that allows the computation of the errors\nintroduced by the discretization of Langevin dynamics for more general potential\nenergy functions. The discretization schemes we shall consider will be those created\nby composition of the A, B and O splitting pieces described earlier in this chapter,\nbut in principle we can apply this analysis to a wider class of SDE methods.\nWe outline the basic approach for determining the leading order behavior of the\ndiscretization error introduced by our SDE integration scheme (see [221–223]),\nbased on expansions due to Talay and Tubaro [357, 358].\nIn Chap.3 we employed an asymptotic expansion of the conserved energy-like\nquantity of a numerical method in powers of the stepsize. By positing such an\nexpansion we are able to calculate the term of any order directly, using a recursive\napproach. Given such an expansion of the Hamiltonian, we have a corresponding\n"
+            }
+          ],
+          "transcription_note": "PDF文字层原样保留，陈述中的数学排版转写为LaTeX；文字层有特殊字形编码时以目视原页为准。PDF347的Exercises之后不在正文范围内。",
+          "context_notation": [],
+          "extra_assumptions": [
+            "完整记录冻结坐标的一自由度向量场；形式quadrature可积性的分支、转折点及积分反演尚未形式化，明确列入覆盖缺口。",
+            "29号覆盖限定：两个总化辅助定义、正质量光滑势资格和冻结势单坐标导数关系；不含分段求积、转折点或一自由度全局流。"
+          ],
+          "issues": [],
+          "statement_scope": "两个总化辅助定义、正质量光滑势资格和冻结势单坐标导数关系；不含分段求积、转折点或一自由度全局流。",
+          "lean_decl": "MD.Ch07.coordinateJField",
+          "lean_declarations": [
+            "MD.Ch07.coordinateJField",
+            "MD.Ch07.frozenPotential",
+            "MD.Ch07.coordinateJQualification",
+            "MD.Ch07.frozenPotential_deriv"
+          ],
+          "source_page_verification": "本次R1审校已逐页目视核对 /workspace/R1_PAGES.pdf，页位及具体发现见本条 json_review.evidence；不依赖旧 source_page_checks.json。",
+          "repair_log": [
+            {
+              "instruction": 29,
+              "website_verdict": "FAIL",
+              "suggested_fix": "补齐适用的正质量、光滑性、冻结势导数关系和分段求积/转折点资格；或者明确将形式化范围缩为两个定义，不标为完整覆盖。",
+              "actual_scope": "两个总化辅助定义、正质量光滑势资格和冻结势单坐标导数关系；不含分段求积、转折点或一自由度全局流。",
+              "signature_changed": true
+            }
+          ],
+          "documented_priors": [],
+          "coverage_gaps": [
+            "完整记录冻结坐标的一自由度向量场；形式quadrature可积性的分支、转折点及积分反演尚未形式化，明确列入覆盖缺口。"
+          ]
+        },
+        "issues": [
+          "A：在“fixed during the calculation.”与“Any such 1-dof ...”之间省略了一整句，未标示删节；在corrected_json中添加明确的[…]，不改变所保留的原句或方程。",
+          "C范围提示：frozenPotential_deriv是定义展开得到的单坐标导数恒等式，不能被当成一自由度求积可积性证明。"
+        ],
+        "evidence": [
+          "A：附件第9页＝PDF304／印刷283。K=N_c、q_i点导数=p_i/m_i、p_i点导数=−∂U/∂q_i，且其余带横线坐标冻结，均与原页一致。原页在两句之间另有一句解释冻结势的一自由度Hamiltonian系统。",
+          "C：coordinateJField在j=i时给出两个运动分量，在其他坐标给0；frozenPotential用Function.update只改变第i个位置。两个函数均为总化定义。",
+          "C：coordinateJQualification明确正质量、U为C²。frozenPotential_deriv对任意q、i在r=q_i处求导，右边为gradient U q i；两边按D5/D6定义相同，rfl合理。其资格假设足够且对这个定义性等式非必要。逐声明均PASS。",
+          "C审校对象仅为R1_任务.md本条完整Lean、摘录的项目依赖和附录D1–D20；Mathlib标准定义按任务规定采信。未读取旧Ch0x/source文件作替代输入，未修改工程或补证明，未运行Lean。PASS仅评价明示覆盖范围内的声明签名与定义，不表示原文全部内容已形式化，也不表示含sorry的证明已经验证。",
+          "本条摘录未出现字面[EXTRA]或[ERRATUM?]标签；对应内容按extra_assumptions、issues、statement_scope、coverage_gaps及Printed/corrected名称分别核查。"
+        ]
+      },
+      "audit": {
+        "lean_decl": "MD.Ch07.coordinateJField",
+        "verdict": "PASS",
+        "explanation": "对象均为Phase n或V n，索引i:Fin n，未遗漏冻结坐标。资格命题不自动限制coordinateJField的所有调用，物理使用时需引用。Lean的结论只是冻结势的导数识别，分支、转折点、积分反演和全局流未覆盖，已披露；不因此否定当前限定范围内的正确签名。",
+        "counterexample": null,
+        "suggested_fix": "为源文删节加标记；继续保留求积、转折点和全局流义务，不能把rfl导数等式宣传成可积性定理。"
+      },
+      "subtask": "EAUDIT03b"
+    },
+    {
+      "source_id": "MD-7.7.1-OperatorOrderReversal",
+      "json_review": {
+        "status": "CORRECTED",
+        "issue_codes": [
+          "SOURCE_TEXT_NOT_VERBATIM",
+          "DECLARED_COVERAGE_GAP"
+        ],
+        "corrected_json": {
+          "source_id": "MD-7.7.1-OperatorOrderReversal",
+          "kind": "unnumbered_claim",
+          "label": null,
+          "section": "7.7.1",
+          "printed_page": "285",
+          "pdf_page": "306",
+          "statement_latex": "For example, for the method labelled by the string $[ABAO]$, we have\n\\[\\exp(h\\widehat{\\mathcal L}_{[ABAO]})=\\exp((h/2)\\mathcal L_A)\\exp(h\\mathcal L_B)\\exp((h/2)\\mathcal L_A)\\exp(h\\mathcal L_O),\\]\nwhere importantly note the apparent reversal of the sequence of products, known as the vertauschungssatz (see the discussion in [164, Section III.5.1]), which is a consequence of the relation\n\\[\\phi(\\mathcal U_t^{f_1}(z))=(e^{t\\mathcal L_{f_1}}\\phi)(z),\\]\nfor some vector field $f_1$ with associated flow map $\\mathcal U_t^{f_1}$ and generator $\\mathcal L_{f_1}$, where the choice of $\\phi(z)=\\mathcal U_t^{f_2}(z)=(e^{t\\mathcal L_{f_2}}\\mathrm{Id})(z)$ demonstrates this reversal. We will find it more convenient to work with the adjoint of the perturbed generator, denoted $\\widehat{\\mathcal L}^\\dagger$, which we may compute as\n\\[\\exp(h\\widehat{\\mathcal L}_{[ABAO]}^\\dagger)=\\exp(h\\mathcal L_O^\\dagger)\\exp((h/2)\\mathcal L_A^\\dagger)\\exp(h\\mathcal L_B^\\dagger)\\exp((h/2)\\mathcal L_A^\\dagger).\\]",
+          "proof_latex": null,
+          "proof_outline": null,
+          "proof_note": "原页推导与上下文全文见original_page_text；数学符号的排版以随附原页PDF为准。",
+          "original_page_text": [
+            {
+              "pdf_page": 306,
+              "printed_page": 285,
+              "text": "7.7\nThe Evolution of the Distribution Using a Numerical Method\n285\n7.7.1\nExpansion of the Operator OL\nConsider a Langevin splitting method using the A, B and O splitting pieces, where\nwe compose exact solves of each of the vector ﬁelds in a prescribed sequence to\ndeﬁne our discretization scheme. Because we solve each piece exactly, we are able\nto write down the action of each individual solve on the initial distribution in terms\nof the vector ﬁeld’s evolution operator (using the respective generators for each\npiece as in [99]), where\n\u0004\netLA\b\n\u0005\n.q; p/ D \b.q C tM\u00021p; p/;\n\u0004\netLB\b\n\u0005\n.q; p/ D \b.q; p \u0003 trU.q//;\n\u0004\netLO\b\n\u0005\n.q; p/ D\nZ\nP\n\b\n\u0006\nq; e\u0002\ntp C \u0018M1=2x\n\u0007 e\u0002jxj2=2\n.2\u0014/Nc=2 dx;\nwhere \u0018 D\n\nkBT\n\u0004\n1 \u0003 e\u00022\nt\u0005\u000b1=2. The overall generator for an associated Langevin\nsplitting method\nOL can be computed by composing each individual operator\nassociated to the terms in the splitting. For example, for the method labelled by\nthe string \u0002ABAO\u0003, we have\nexp.h OL\u0002ABAO\u0003/ D exp..h=2/LA/ exp.hLB/ exp..h=2/LA/ exp.hLO/;\nwhere importantly note the apparent reversal of the sequence of products, known\nas the vertauschungssatz (see the discussion in [164, Section III.5.1]), which is a\nconsequence of the relation\n\b.U f1\nt .z// D\n\u0004\netLf1\b\n\u0005\n.z/;\nfor some vector ﬁeld f1 with associated ﬂow map U f1\nt\nand generator Lf1, where the\nchoice of \b.z/ D U f2\nt .z/ D .etLf2Id/.z/ demonstrates this reversal.\nWe will ﬁnd it more convenient to work with the adjoint of the perturbed\ngenerator, denoted OL\u0004, which we may compute as\nexp.h OL\u0004\n\u0002ABAO\u0003/ D exp.hL\u0004\nO/ exp..h=2/L\u0004\nA/ exp.hL\u0004\nB/ exp..h=2/L\u0004\nA/:\nUnder the propagation of the numerical scheme (or the discretized dynamics),\nthe Fokker-Planck equation gives us that the evolution of a density of points \u0005 is\ngiven by\n@\n@t\u0005.z; t/ D OL\u0004\u0005;\n"
+            }
+          ],
+          "transcription_note": "PDF文字层原样保留，陈述中的数学排版转写为LaTeX；文字层有特殊字形编码时以目视原页为准。PDF347的Exercises之后不在正文范围内。",
+          "context_notation": [],
+          "extra_assumptions": [
+            "覆盖反向拉回组合恒等式和ABAO的全部四段期望传播式；其与前面随机abao映射期望相等仍需推前积分桥。",
+            "伴随前向传播子的四段顺序记录在原文；独立定义实际密度伴随的函数空间和边界条件列为覆盖缺口。",
+            "29号覆盖限定：拉回复合结合律、ABAO后向定义及四个线性算子的反序对偶配对恒等式；实际随机传播子识别及闭算子域未覆盖。"
+          ],
+          "issues": [],
+          "statement_scope": "拉回复合结合律、ABAO后向定义及四个线性算子的反序对偶配对恒等式；实际随机传播子识别及闭算子域未覆盖。",
+          "lean_decl": "MD.Ch07.pullback_order",
+          "lean_declarations": [
+            "MD.Ch07.pullback_order",
+            "MD.Ch07.abaoBackward",
+            "MD.Ch07.fourStage_duality"
+          ],
+          "source_page_verification": "本次R1审校已逐页目视核对 /workspace/R1_PAGES.pdf，页位及具体发现见本条 json_review.evidence；不依赖旧 source_page_checks.json。",
+          "repair_log": [
+            {
+              "instruction": 29,
+              "website_verdict": "FAIL",
+              "suggested_fix": "在合适对偶空间上增加四段前向算子及反序伴随等式，或明确拆分“后向定义”与仍未形式化的伴随条目。",
+              "actual_scope": "拉回复合结合律、ABAO后向定义及四个线性算子的反序对偶配对恒等式；实际随机传播子识别及闭算子域未覆盖。",
+              "signature_changed": true
+            }
+          ],
+          "documented_priors": [],
+          "coverage_gaps": [
+            "29号覆盖限定：拉回复合结合律、ABAO后向定义及四个线性算子的反序对偶配对恒等式；实际随机传播子识别及闭算子域未覆盖。"
+          ]
+        },
+        "issues": [
+          "A：输入在vertauschungssatz后将原页仍未结束的句子提前句号截断，并无删节标记；恢复引用、关系式及后续解释。",
+          "C范围提示：实际随机传播子与定义的期望之间的识别、实际伴随的函数空间和定义域没有在本条证明，已有明确缺口。"
+        ],
+        "evidence": [
+          "A：附件第10页＝PDF306／印刷285。ABAO的后向乘积按A(h/2),B(h),A(h/2),O(h)书写；前向伴随按O(h),A(h/2),B(h),A(h/2)书写。两式时长、顺序和dagger均正确。",
+          "C：propagateA、propagateB是与实际driftStep/kickStep复合；propagateO对Fin n维独立标准高斯乘积测度积分。abaoBackward的四个嵌套传播子与后向原式相同。",
+          "C：pullback_order是φ∘(B∘A)=(φ∘B)∘A，对任意E,F成立。fourStage_duality对任意配对pair及八个实线性自同态，显式给出四个对偶关系，由此将A B C D反序为d c b a；不需要额外假设pair非退化或双线性。三个本条声明均PASS。",
+          "C审校对象仅为R1_任务.md本条完整Lean、摘录的项目依赖和附录D1–D20；Mathlib标准定义按任务规定采信。未读取旧Ch0x/source文件作替代输入，未修改工程或补证明，未运行Lean。PASS仅评价明示覆盖范围内的声明签名与定义，不表示原文全部内容已形式化，也不表示含sorry的证明已经验证。",
+          "本条摘录未出现字面[EXTRA]或[ERRATUM?]标签；对应内容按extra_assumptions、issues、statement_scope、coverage_gaps及Printed/corrected名称分别核查。"
+        ]
+      },
+      "audit": {
+        "lean_decl": "MD.Ch07.pullback_order",
+        "verdict": "PASS",
+        "explanation": "后向定义、拉回等式及抽象反序对偶定理的对象和顺序正确。propagateO作为积分的总化定义对任意实参数和φ都有Lean值，但物理Markov半群解释还需适用参数、可测/可积资格；本条没有提出无条件半群识别定理。fourStage_duality的结论完全由已给出的hA–hD推出，没有将未定义的密度伴随或无界算子域隐含为已完成。",
+        "counterexample": null,
+        "suggested_fix": "恢复原文被截断的解释；保留随机传播子识别和实际密度伴随的已披露覆盖缺口。"
+      },
+      "subtask": "EAUDIT03c"
+    }
+  ],
+  "merged_from": "ch07_eaudit_merged"
+}

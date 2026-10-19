@@ -827,5 +827,29 @@
   "MD-7.1-HamiltonianSamplingObstruction": {
     "declaration_reasons": {},
     "decision": "修复阶段允许只补陈述；未建设大型理论，原书错误字面不证明。"
+  },
+  "closeout30": {
+    "counts": {
+      "定义": 251,
+      "未证": 69,
+      "已证": 53
+    },
+    "unproved_reasons": {
+      "缺大型理论": 65,
+      "原书疑误不证": 1,
+      "时间盒止": 3
+    },
+    "new_proofs": [
+      "MD.Ch07.constrainedHOQualifiedComposition_measurable",
+      "MD.Ch07.constrainedHOOutput_hasLaw",
+      "MD.Ch07.constrainedHOOutputLaw_probability"
+    ],
+    "compile_receipt": "blueprint/ch07/closeout30/FINAL_COMPILE.json",
+    "attempts": [
+      {
+        "route": "推前概率引理方向",
+        "result": "首次方向用反；改用HasLaw.isProbabilityMeasure_iff.mp，未增加占位"
+      }
+    ]
   }
 }

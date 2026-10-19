@@ -1,0 +1,325 @@
+{
+  "batch": "EAUDIT12",
+  "input_sha256": {
+    "Blueprint/Ch07.lean": "f3bc0ee86ace9c825028f0cec8ebb2fb410d6be77213cc7fb41cb8889540a000",
+    "blueprint/ch07/ch07_source.json": "1a201887b51a249fb73f456237cb342963c5d98c612ec1912f21572a57924012"
+  },
+  "items": [
+    {
+      "source_id": "MD-7.12.1-ApproximateGeodesicOrder",
+      "json_review": {
+        "status": "CORRECTED",
+        "issue_codes": [
+          "A_KIND_IS_CLAIM",
+          "C_SCOPE_LOCAL_BOUND_ONLY",
+          "EXTRA_UNIFORMITY_AND_ORDER_NOTION"
+        ],
+        "corrected_json": {
+          "source_id": "MD-7.12.1-ApproximateGeodesicOrder",
+          "kind": "unnumbered_claim",
+          "label": null,
+          "section": "7.12.1",
+          "printed_page": "320",
+          "pdf_page": "341",
+          "statement_latex": "We do not necessarily need to solve the geodesic flow exactly in practice, though for the purposes of analysis we shall assume we do. If we are considering a second order scheme, then solving the $A_c$ piece to at least second order would be sufficient to preserve the overall order of the scheme, although a scheme may have potentially better accuracy and stability properties if a higher order solve is used.",
+          "proof_latex": null,
+          "proof_outline": null,
+          "proof_note": "原页推导与上下文全文见original_page_text；数学符号的排版以随附原页PDF为准。",
+          "original_page_text": [
+            {
+              "pdf_page": 341,
+              "printed_page": 320,
+              "text": "320\n7\nNumerical Methods for Stochastic Molecular Dynamics\nmanifold deﬁned by g.q/ D 0. We will denote schemes using this splitting in a\nsimilar fashion to the unconstrained case, but precede the schemes with “c-” to label\nthe constrained form (for example c-\u0002BAOAB\u0003 rather than the more cumbersome\nnotation \u0002BcAcOcAcBc\u0003). Such a constrained scheme would be:\nc-\u0002BAOAB\u0003\nSolve\n\f pnC1=5 D pn \u0003 h\n2rU.qn/ \u0003 g0.qn/T\fnC1=3\nSuch that g0.qn/M\u00021pnC1=5 D 0\nSolve the geodesic ﬂow Ac for h=2, and map Œqn; pnC1=5\t ! ŒqnC1=2; pnC2=5\t\nSolve\n\f pnC3=5 D e\u0002\nhpnC2=5 C\np\n.1 \u0003 e\u00022\nh/kBTMRn \u0003 g0.qnC1=2/T\fnC2=3\nSuch that g0.qnC1=2/M\u00021pnC3=5 D 0\nSolve the geodesic ﬂow Ac for h=2, and map ŒqnC1=2; pnC3=5\t ! ŒqnC1; pnC4=5\t\nSolve\n\f pnC1 D pnC4=5 \u0003 h\n2rU.qnC1/ \u0003 g0.qnC1/T\fnC1\nSuch that g0.qnC1/M\u00021pnC1 D 0;\nwhere Rn is a vector of i.i.d N.0; 1/ random numbers and the Lagrange multipliers\n\f, ensuring that the hidden constraint is satisﬁed, can be computed through a linear\nsolve. We do not necessarily need to solve the geodesic ﬂow exactly in practice,\nthough for the purposes of analysis we shall assume we do. If we are considering\na second order scheme, then solving the Ac piece to at least second order would be\nsufﬁcient to preserve the overall order of the scheme, although a scheme may have\npotentially better accuracy and stability properties if a higher order solve is used.\nIn practice, we can solve the Ac piece using any constraint algorithm for constant\nenergy dynamics (see Sect. 4.3.6) and subsituting zero force. A more accurate\nsolution is obtained for the geodesic drift by either using a number of small steps\nto integrate over the total time, or composing steps in a certain order to obtain a\nhigher order solution (see Sect. 3.3.3). Relative to the force calculation, solving the\ngeodesic drift step (even to high accuracy) can, in typical molecular systems, be\nconsidered computationally cheap. Given these splitting pieces, one may write down\nconstrained equivalents of any of the schemes described in Sect. 7.3.1.\nWe then ask how to analyze such schemes using the algebraic machinery\ndeveloped throughout this chapter. As we solve each vector ﬁeld on the constraint\nmanifold, it is natural to consider the associated Lie derivatives on these manifolds\nand solve the corresponding Fokker-Planck equation for the discretization to ﬁnd an\ninvariant distribution, just as we did in the unconstrained case. This is a complicated\nprogramme and we do not develop this in detail here.\nTo compare the performance of the various schemes we perform a numerical\nexperiment to quantify the discretization error caused by the schemes. We imple-\nment the c-\u0002BAOAB\u0003 and c-\u0002OBABO\u0003 schemes into the NAMD-lite [170, 302]\npackage and consider 233 TIP3P water molecules in a periodic box with dimensions\n20 \u0004 20 \u0004 20 Angstroms at 300 K. We constrain the angles and bond lengths\nof each molecule so that the only forces felt are due to the van der Waals and\nelectronic interations, parameterized by the CHARMM22 forceﬁeld [246] with an\n8-Angstrom cutoff. The system was simulated for a ﬁxed total time of 3ns, after a\n"
+            }
+          ],
+          "transcription_note": "PDF文字层原样保留，陈述中的数学排版转写为LaTeX；文字层有特殊字形编码时以目视原页为准。PDF347的Exercises之后不在正文范围内。",
+          "context_notation": [],
+          "extra_assumptions": [
+            "[EXTRA] 用实际范数误差与统一C,δ明确二阶局部替换资格。完整对称随机组合需稳定性、Lipschitz、矩界及采用强阶/弱阶的区分，原段未列齐；此处不把定义当作保阶定理。",
+            "[EXTRA] 29号覆盖限定：仅一致局部O(h³)误差资格定义；原文替换测地流后整体保二阶的命题未形式化。",
+            "[EXTRA] localMapErrorBound的C、δ在整个D上统一；D可为空，F/G为任意时间依赖自映射，未要求它们是测地流、保持约束或构成稳定迭代。",
+            "[EXTRA] 本次PASS只确认已声明的局部误差资格；若以后声称整体保阶，须另有包含实际组合及稳定性等前提的定理，并明确强阶或弱阶。"
+          ],
+          "issues": [
+            {
+              "code": "A_KIND_IS_CLAIM",
+              "stage": "A",
+              "severity": "error",
+              "location": "kind",
+              "explanation": "英文陈述与原页逐句一致（仅消除换行/排版差别）；但原文是关于整体阶数的未编号论断，kind=definition不当，改为unnumbered_claim。"
+            },
+            {
+              "code": "C_SCOPE_LOCAL_BOUND_ONLY",
+              "stage": "C",
+              "severity": "information",
+              "location": "statement_scope; lean_declarations",
+              "explanation": "两条def仅给一致局部O(h³)误差资格，不包含其他分裂块、原方案阶数、迭代终止时刻或替换后整体阶数结论。输入已经明示该缩小范围，按该范围PASS；不得把PASS理解为原文保阶命题已被形式化。"
+            },
+            {
+              "code": "EXTRA_UNIFORMITY_AND_ORDER_NOTION",
+              "stage": "C",
+              "severity": "warning",
+              "location": "extra_assumptions",
+              "explanation": "[EXTRA] 单一C、δ对D中全部x统一，且仅正h；这是明确选择的局部资格。原页没有给D、统一性、稳定性或强/弱阶定义。这些补充必须与原文字面分开标注。"
+            }
+          ],
+          "statement_scope": "仅一致局部O(h³)误差资格定义；原文替换测地流后整体保二阶的命题未形式化。",
+          "lean_decl": "MD.Ch07.localMapErrorBound",
+          "lean_declarations": [
+            "MD.Ch07.localMapErrorBound",
+            "MD.Ch07.geodesicReplacementSecondOrder"
+          ],
+          "source_page_verification": "已目视核对R3_PAGES.pdf附件第3页；证据：/workspace/.mathcopilot/reviews/ch07_eaudit/R3_evidence/page-3.png。此处不援引未提供的source_page_checks.json。",
+          "repair_log": [
+            {
+              "instruction": 29,
+              "website_verdict": "FAIL",
+              "suggested_fix": "缩小statement_scope为局部误差资格定义，并明确原文保阶命题未形式化；或另行陈述带必要稳定性等假设的组合保阶定理。本次仅登记，不补证明。",
+              "actual_scope": "仅一致局部O(h³)误差资格定义；原文替换测地流后整体保二阶的命题未形式化。",
+              "signature_changed": false
+            }
+          ],
+          "documented_priors": [],
+          "coverage_gaps": [
+            "29号覆盖限定：仅一致局部O(h³)误差资格定义；原文替换测地流后整体保二阶的命题未形式化。"
+          ]
+        },
+        "issues": [
+          {
+            "code": "A_KIND_IS_CLAIM",
+            "stage": "A",
+            "severity": "error",
+            "location": "kind",
+            "explanation": "英文陈述与原页逐句一致（仅消除换行/排版差别）；但原文是关于整体阶数的未编号论断，kind=definition不当，改为unnumbered_claim。"
+          },
+          {
+            "code": "C_SCOPE_LOCAL_BOUND_ONLY",
+            "stage": "C",
+            "severity": "information",
+            "location": "statement_scope; lean_declarations",
+            "explanation": "两条def仅给一致局部O(h³)误差资格，不包含其他分裂块、原方案阶数、迭代终止时刻或替换后整体阶数结论。输入已经明示该缩小范围，按该范围PASS；不得把PASS理解为原文保阶命题已被形式化。"
+          },
+          {
+            "code": "EXTRA_UNIFORMITY_AND_ORDER_NOTION",
+            "stage": "C",
+            "severity": "warning",
+            "location": "extra_assumptions",
+            "explanation": "[EXTRA] 单一C、δ对D中全部x统一，且仅正h；这是明确选择的局部资格。原页没有给D、统一性、稳定性或强/弱阶定义。这些补充必须与原文字面分开标注。"
+          }
+        ],
+        "evidence": {
+          "authoritative_inputs": [
+            "R3_任务.md",
+            "R3_PAGES.pdf"
+          ],
+          "attachment_page": 3,
+          "printed_page": 320,
+          "original_pdf_page": 341,
+          "visual_check": "已实际渲染并目视核对该附件页；公式以页图为准，未使用旧任务、旧JSON或旧Lean文件。",
+          "page_image": "/workspace/.mathcopilot/reviews/ch07_eaudit/R3_evidence/page-3.png",
+          "text_extraction": "/workspace/.mathcopilot/reviews/ch07_eaudit/R3_evidence/R3_PAGES.txt",
+          "attachment_sha256_actual": "1b3e3776543b75fdf91ab5ee1e43044cf2af87cfc7a11db418423d61f0cc5cc7",
+          "input_sha256_policy": "本条input_sha256按任务逐键逐值回显；其中PAGES.pdf为任务指定的本条输入哈希，不声称等于当前四页合并附件的实测哈希。",
+          "A_transcription": "目视确认从“We do not necessarily need…”到“…if a higher order solve is used.”整段与输入一致，包括“at least second order”和“would be sufficient to preserve the overall order”。段落前后的c-BAOAB算法和数值实验不是本条所选陈述。",
+          "C_signature": {
+            "objects": "E是任意NormedAddCommGroup，F,G:ℝ→E→E，D:Set E，r:ℕ；仅用到群差及其范数，无需擅自把E视为已定义的约束流形或另一个项目的EuclideanSpace E n。附录D7并未被这两个泛型def实际调用。",
+            "quantifiers": "∃C≥0，∃δ>0，∀h∈(0,δ)，∀x∈D，‖F h x−G h x‖≤C h^(r+1)。C、δ先于h、x，所以确实是统一界；不含负步长。r=2时指数是3。",
+            "complete_conclusion": "geodesicReplacementSecondOrder exact approx D恰定义为localMapErrorBound exact approx D 2；没有把局部界当成已经证明的全局误差结论。D为空时命题可平凡成立，符合资格定义的总化含义。",
+            "scope_and_annotations": "按已明示缩小的statement_scope判PASS；原文整体保阶仍是登记的coverage_gap。补[EXTRA]标注统一性、适用域和阶数解释，不人为添加数学勘误。"
+          },
+          "review_method": "只读语义审校任务内完整声明及项目依赖定义；未编辑工程、未补证明、未运行Lean编译；没有因sorry或未证明辅助结论判FAIL。"
+        }
+      },
+      "audit": {
+        "lean_decl": [
+          "MD.Ch07.localMapErrorBound",
+          "MD.Ch07.geodesicReplacementSecondOrder"
+        ],
+        "verdict": "PASS",
+        "explanation": "按本条明确声明的“一致局部O(h³)误差资格定义”范围，域、范数、全部量词和r+1指数均正确。两个def未声称替换后整体二阶，故不以缺少该定理否定其已缩小范围的签名。原文完整保阶论断仍未形式化，不能由本PASS消除该覆盖缺口。",
+        "counterexample": null,
+        "suggested_fix": "保留当前Lean及statement_scope；将kind改为unnumbered_claim并显式标[EXTRA]。如将来补原文完整结论，另列实际分裂组合、误差阶定义、稳定性/正则性与必要矩界等前提及整体误差结论；本次不补证明。"
+      },
+      "subtask": "EAUDIT12a"
+    },
+    {
+      "source_id": "MD-7.13-SpectralRadiusStability",
+      "json_review": {
+        "status": "NEEDS_HUMAN",
+        "issue_codes": [
+          "A_NONLITERAL_SPECTRAL_TRANSITION",
+          "ERRATUM_STOCHASTIC_UNIT_BOUNDARY",
+          "EXTRA_COMPLEX_ETA_AND_EXCLUSIONS",
+          "C_PROOF_STATUS_NOT_SIGNATURE_ERROR"
+        ],
+        "corrected_json": {
+          "source_id": "MD-7.13-SpectralRadiusStability",
+          "kind": "unnumbered_claim",
+          "label": null,
+          "section": "7.13",
+          "printed_page": "324",
+          "pdf_page": "345",
+          "statement_latex": "The stability of the method therefore depends solely on the spectral radius of the matrix $X$. Denoting $\\eta=\\sqrt{\\gamma^2-4\\Omega^2}$, then we compute\n\\[\\det(X)=e^{-\\gamma h},\\qquad \\operatorname{tr}(X)=\\frac{\\eta-h}{\\eta}e^{(\\eta-\\gamma)h/2}+\\frac{\\eta+h}{\\eta}e^{(-\\eta-\\gamma)h/2};\\]\ngiving a stability condition\n\\[\\left|\\frac{\\eta-h}{\\eta}e^{(\\eta-\\gamma)h/2}+\\frac{\\eta+h}{\\eta}e^{(-\\eta-\\gamma)h/2}\\right|\\le1+e^{-\\gamma h}.\\]\nMultiplying by $e^{\\gamma h/2}$ gives\n\\[|\\cosh(\\eta h/2)+(h/\\eta)\\sinh(-\\eta h/2)|\\le\\cosh(\\gamma h/2).\\]",
+          "proof_latex": null,
+          "proof_outline": null,
+          "proof_note": "原页推导与上下文全文见original_page_text；数学符号的排版以随附原页PDF为准。",
+          "original_page_text": [
+            {
+              "pdf_page": 345,
+              "printed_page": 324,
+              "text": "324\n7\nNumerical Methods for Stochastic Molecular Dynamics\nwhere R is a column vector of two i.i.d. random normal numbers distributed as\nN.0; 1/, and\nBtBT\nt D 2\nˇ\nt\nZ\n0\nexp.F.t \u0003 s//\n\u0002 0 0\n0 1\n\u0003\nexp.FT.t \u0003 s//ds:\nThe solution to the slow part of our splitting is just\n\u0002q.t/\np.t/\n\u0003\nD\n\u0002 1 0\n\u0003t 1\n\u0003 \u0002 q.0/\np.0/\n\u0003\n:\nThus for a method taking one step of the fast system followed by a step of the\nslow system, using ﬁxed step size h > 0, we can write the update scheme for z D\nŒq; p\tT as\nznC1 D Xzn C YRn;\nfor\nX D\n\u0002 1 0\n\u0003h 1\n\u0003\nexp.hF/;\nY D\n\u0002 1 0\n\u0003h 1\n\u0003\nBh:\nThe stability of the method therefore depends solely on the spectral radius of the\nmatrix X. Denoting \u000f D\np\n\n2 \u0003 4˝2, then we compute\ndet.X/ D e\u0002\nh;\ntr.X/ D \u000f \u0003 h\n\u000f\ne.\u000f\u0002\n/h=2 C \u000f C h\n\u000f\ne.\u0002\u000f\u0002\n/h=2;\ngiving a stability condition\nˇˇˇˇ\n\u000f \u0003 h\n\u000f\ne.\u000f\u0002\n/h=2 C \u000f C h\n\u000f\ne.\u0002\u000f\u0002\n/h=2\nˇˇˇˇ \t 1 C e\u0002\nh:\nMultiplying by e\nh=2 gives\nˇˇˇˇcosh\n\b\u000fh\n2\n\t\nC h\n\u000f sinh\n\b\n\u0003\u000fh\n2\n\tˇˇˇˇ \t cosh\n\b\nh\n2\n\t\n;\nwhich reduces to the deterministic stability condition as expected in the limit \n D 0.\nFor \n > 0, we can simplify to\nˇˇˇˇˇˇ\ncosh\n\b\u000fh\n2 \u0003 atanh\n\bh\n\u000f\n\t\t s\n1 \u0003 h2\n\u000f2\nˇˇˇˇˇˇ\n\t cosh\n\b\nh\n2\n\t\n:\n"
+            }
+          ],
+          "transcription_note": "PDF文字层原样保留，陈述中的数学排版转写为LaTeX；文字层有特殊字形编码时以目视原页为准。PDF347的Exercises之后不在正文范围内。",
+          "context_notation": [
+            {
+              "symbol": "X",
+              "meaning": "原页X=[[1,0],[-h,1]]exp(hF)，先快子步、后慢子步；任务给定F=[[0,1],[-Ω²,-γ]]。"
+            },
+            {
+              "symbol": "η",
+              "meaning": "原印η=√(γ²−4Ω²)；Lean使用任意满足η²=γ²−4Ω²的非零复数根，两个根给出相同双曲式。"
+            },
+            {
+              "symbol": "stability",
+              "meaning": "[ERRATUM?] 原页术语保留；此条Lean仅解释为特征根位于闭单位圆，不解释为Gaussian驱动的有限方差平稳性。"
+            }
+          ],
+          "extra_assumptions": [
+            "[EXTRA] 只陈述谱半径≤1的确定性边界资格；有非退化随机驱动时平稳二阶矩一般要求严格谱半径<1，等号并不自动给随机长期稳定。",
+            "[EXTRA] 正摩擦正h给0<det<1；γ=0、Jordan边界、临界η=0均需另审。trace到双曲式的代数/指数桥未证明。",
+            "[EXTRA] 29号覆盖限定：实二阶矩阵的闭单位圆谱判据及实际multipleX在γη资格下的双曲条件等价；不含Gaussian驱动有限方差平稳性。",
+            "[EXTRA] η是非零复根，γ>0且h>0；ρ≤1的闭圆盘判据与Gaussian驱动稳定平稳分布的严格谱条件分开。",
+            "[ERRATUM?] 原印≤保留；单位模特征根若被随机噪声激发，通常出现沿该方向的方差增长。原页“稳定”需人工确定其定义。"
+          ],
+          "issues": [
+            {
+              "code": "A_NONLITERAL_SPECTRAL_TRANSITION",
+              "stage": "A",
+              "severity": "error",
+              "location": "statement_latex; context_notation",
+              "explanation": "输入将原页“Denoting η=√(γ²−4Ω²), then we compute ... giving a stability condition”缩写成“This gives a stability condition”，并省略η定义及det/trace上下文。恢复原印上下文和过渡语；两个核心不等式的系数、符号、指数均抄对。"
+            },
+            {
+              "code": "ERRATUM_STOCHASTIC_UNIT_BOUNDARY",
+              "stage": "A/C",
+              "severity": "error",
+              "location": "statement_latex; extra_assumptions",
+              "explanation": "[ERRATUM?] 原页在z_{n+1}=Xz_n+YR_n语境下将闭单位圆条件称为稳定条件。ρ(X)≤1是此处Lean审查的确定性谱资格；当噪声激发单位模特征方向时，不能保证有限二阶矩平稳性。需要人工明确原书“stability”的含义，不能把≤静默改成<。"
+            },
+            {
+              "code": "EXTRA_COMPLEX_ETA_AND_EXCLUSIONS",
+              "stage": "C",
+              "severity": "warning",
+              "location": "hyperbolicStability; multipleX_spectral_hyperbolic",
+              "explanation": "[EXTRA] Lean令η∈ℂ，假设η²=γ²−4Ω²且η≠0，γ>0,h>0；这合理覆盖欠阻尼纯虚η，但排除临界η=0以及γ=0、h=0边界。应明示这些限制而非当成原页无条件命题。"
+            },
+            {
+              "code": "C_PROOF_STATUS_NOT_SIGNATURE_ERROR",
+              "stage": "C",
+              "severity": "information",
+              "location": "repair_log; coverage_gaps",
+              "explanation": "代数/矩阵指数桥已存在于multipleX_spectral_hyperbolic的完整定理类型，证明体仍sorry。“未证明”不能说成“没有陈述该桥”，也不能单凭sorry判签名FAIL。"
+            }
+          ],
+          "statement_scope": "实二阶矩阵的闭单位圆谱判据及实际multipleX在γη资格下的双曲条件等价；不含Gaussian驱动有限方差平稳性。",
+          "lean_decl": "MD.Ch07.characteristicUnitDisk",
+          "lean_declarations": [
+            "MD.Ch07.characteristicUnitDisk",
+            "MD.Ch07.spectralRadiusStability",
+            "MD.Ch07.hyperbolicStability",
+            "MD.Ch07.multipleX_spectral_hyperbolic"
+          ],
+          "source_page_verification": "已目视核对R3_PAGES.pdf附件第4页；证据：/workspace/.mathcopilot/reviews/ch07_eaudit/R3_evidence/page-4.png。此处不援引未提供的source_page_checks.json。",
+          "repair_log": [
+            {
+              "instruction": 29,
+              "website_verdict": "FAIL",
+              "suggested_fix": "补充带γ>0,h>0、η²关系与η≠0的代数等价声明，并把谱条件与随机稳定性分开。",
+              "actual_scope": "实二阶矩阵的闭单位圆谱判据及实际multipleX在γη资格下的双曲条件等价；不含Gaussian驱动有限方差平稳性。",
+              "signature_changed": true
+            }
+          ],
+          "documented_priors": [],
+          "coverage_gaps": [
+            "γ=0、h=0及η=0不在multipleX_spectral_hyperbolic的量词资格内；临界η=0须用极限式另列。",
+            "矩阵指数到双曲判据的桥已有完整定理声明，但给定证明体仍sorry；本次不审补证明。",
+            "没有Gaussian驱动下平稳二阶矩存在性定理或ρ=1边界的随机稳定结论。"
+          ]
+        },
+        "issues": [
+          {
+            "code": "A_NONLITERAL_SPECTRAL_TRANSITION",
+            "stage": "A",
+            "severity": "error",
+            "location": "statement_latex; context_notation",
+            "explanation": "输入将原页“Denoting η=√(γ²−4Ω²), then we compute ... giving a stability condition”缩写成“This gives a stability condition”，并省略η定义及det/trace上下文。恢复原印上下文和过渡语；两个核心不等式的系数、符号、指数均抄对。"
+          },
+          {
+            "code": "ERRATUM_STOCHASTIC_UNIT_BOUNDARY",
+            "stage": "A/C",
+            "severity": "error",
+            "location": "statement_latex; extra_assumptions",
+            "explanation": "[ERRATUM?] 原页在z_{n+1}=Xz_n+YR_n语境下将闭单位圆条件称为稳定条件。ρ(X)≤1是此处Lean审查的确定性谱资格；当噪声激发单位模特征方向时，不能保证有限二阶矩平稳性。需要人工明确原书“stability”的含义，不能把≤静默改成<。"
+          },
+          {
+            "code": "EXTRA_COMPLEX_ETA_AND_EXCLUSIONS",
+            "stage": "C",
+            "severity": "warning",
+            "location": "hyperbolicStability; multipleX_spectral_hyperbolic",
+            "explanation": "[EXTRA] Lean令η∈ℂ，假设η²=γ²−4Ω²且η≠0，γ>0,h>0；这合理覆盖欠阻尼纯虚η，但排除临界η=0以及γ=0、h=0边界。应明示这些限制而非当成原页无条件命题。"
+          },
+          {
+            "code": "C_PROOF_STATUS_NOT_SIGNATURE_ERROR",
+            "stage": "C",
+            "severity": "information",
+            "location": "repair_log; coverage_gaps",
+            "explanation": "代数/矩阵指数桥已存在于multipleX_spectral_hyperbolic的完整定理类型，证明体仍sorry。“未证明”不能说成“没有陈述该桥”，也不能单凭sorry判签名FAIL。"
+          }
+        ],
+        "evidence": {
+          "authoritative_inputs": [
+            "R3_任务.md",
+            "R3_PAGES.pdf"
+          ],
+          "attachment_page": 4,
+          "printed_page": 324,
+          "original_pdf_page": 345,
+          "visual_check": "已实际渲染并目视核对该附件页；公式以页图为准，未使用旧任务、旧JSON或旧Lean文件。",
+          "page_image": "/workspace/.mathcopilot/reviews/ch07_eaudit/R3_evidence/page-4.png",
+          "text_extraction": "/workspace/.mathcopilot/reviews/ch07_eaudit/R3_evidence/R3_PAGES.txt",
+          "attachment_sha256_actual": "1b3e3776543b75fdf91ab5ee1e43044cf2af87cfc7a11db418423d61f0cc5cc7",
+          "input_sha256_policy": "本条input_sha256按任务逐键逐值回显；其中PAGES.pdf为任务指定的本条输入哈希，不声称等于当前四页合并附件的实测哈希。",
+          "A_transcription": "目视确认原页η=√(γ²−4Ω²)、det X=e^(−γh)、trace的(η−h)/η与(η+h)/η，以及两条含≤的不等式。由指数式化成双曲式时约去左右共同因子2；未发现公式漏2。末尾atanh变形不在本条statement_latex或Lean声明的覆盖范围。",
+          "C_signature": {
+            "matrix_definitions": "Mat2=Matrix(Fin 2)(Fin 2)ℝ；fastMatrix=[[0,1],[-Ω²,-γ]]；slowMatrix(h)=[[1,0],[-h,1]]；fastExponential=exp(h•fastMatrix)；multipleX=slowMatrix(h)·fastExponential(h)，乘法顺序与原页一致。Ω只是实频率参数，并非样本空间类型Ω。",
+            "characteristicUnitDisk": "对所有z∈ℂ，z²−tr(X)z+det(X)=0→‖z‖≤1；实2×2矩阵的全部复特征根均被覆盖，等价于谱半径≤1，不等价于一般幂有界或随机方差有界。",
+            "spectralRadiusStability": "对任意实Mat2，在0<d=det X<1前提下，闭单位圆根条件↔|tr X|≤1+d。复共轭根时模为√d<1；实根时p(1)=1−tr+d≥0、p(−1)=1+tr+d≥0结合0<d<1排除越过±1。边界可有简单±1及另一根±d，类型正确。",
+            "hyperbolicStability": "η∈ℂ并取复范数；第二项使用sinh(−ηh/2)，所以等于cosh(ηh/2)−(h/η)sinh(ηh/2)，符号正确；右侧为实cosh(γh/2)。η改成−η不改变左侧。",
+            "multipleX_bridge": "设F=fastMatrix，B=F+(γ/2)I，则B²=(η²/4)I。η≠0时exp(hF)=e^(−γh/2)[cosh(ηh/2)I+(2/η)sinh(ηh/2)B]，于是det X=e^(−γh)，tr X=2e^(−γh/2)[cosh(ηh/2)−(h/η)sinh(ηh/2)]。γ,h>0给0<det X<1，且1+e^(−γh)=2e^(−γh/2)cosh(γh/2)，故声明的等价式正确。以上是签名的纸面代数核对，不宣称已检查Lean证明。",
+            "annotation_result": "所给两条定理签名在各自前提下成立，sorry不影响本次签名判断。全条NEEDS_HUMAN只来自任务要求保留原书随机稳定性边界疑误，不是这些限定定理存在反例。"
+          },
+          "review_method": "只读语义审校任务内完整声明及项目依赖定义；未编辑工程、未补证明、未运行Lean编译；没有因sorry或未证明辅助结论判FAIL。"
+        }
+      },
+      "audit": {
+        "lean_decl": [
+          "MD.Ch07.characteristicUnitDisk",
+          "MD.Ch07.spectralRadiusStability",
+          "MD.Ch07.hyperbolicStability",
+          "MD.Ch07.multipleX_spectral_hyperbolic"
+        ],
+        "verdict": "NEEDS_HUMAN",
+        "explanation": "四条Lean声明的对象、域、全部假设与结论均核对正确；在0<det X<1及γ>0,h>0,η²=γ²−4Ω²,η≠0的前提下，两个等价定理的签名成立。若只看明确缩小的确定性谱范围，可判PASS。全条依任务“原书数学疑误保留并判NEEDS_HUMAN”的规则，仍需人工界定原印随机系统中的稳定性；不能把闭圆盘条件当成有限方差平稳性，也不能因sorry判FAIL。",
+        "counterexample": {
+          "generic_noisy_unit_root": "X=diag(1,d)，0<d<1，Y=I，Rn为独立标准Gaussian。det X=d，|tr X|=1+d，characteristicUnitDisk成立；第一坐标是随机游走，若初始二阶矩有限，则Var(z_n,1)=Var(z_0,1)+n。因此闭圆盘条件不能保证随机长期二阶矩稳定。不是对spectralRadiusStability的反例。",
+          "actual_multipleX_boundary": "亦可在实际multipleX族取Ω=0,γ=η=1，令h*>0满足h*tanh(h*/2)=2。函数h*tanh(h/2)严格递增，从0趋于∞，故该h*存在唯一。此时hyperbolicStability恰取等号，tr X=−(1+e^(−h*))，特征根为−1和−e^(−h*)。原页OU噪声的协方差在h*>0时正定（F=[[0,1],[0,−1]]的噪声响应含(1−e^(−s),e^(−s))，不落在固定一维子空间），乘可逆slowMatrix后仍正定；−1左特征方向因此有逐步方差增长，不能有有限二阶矩平稳分布。",
+          "scope": "以上反驳的是不区分随机稳定性含义的原印叙述；对四条限定Lean声明没有发现反例。"
+        },
+        "suggested_fix": "保留原印≤及两条现有等价签名，标[ERRATUM?]并明确其仅是闭单位圆谱判据；另把Gaussian噪声激发方向下的二阶矩平稳性与严格谱半径<1条件分开。显式标[EXTRA]的γ/h/非零复η资格，临界η=0另列极限式。本次不补任何证明。"
+      },
+      "subtask": "EAUDIT12b"
+    }
+  ],
+  "merged_from": "ch07_eaudit_merged"
+}

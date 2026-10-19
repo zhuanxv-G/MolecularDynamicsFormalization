@@ -1,0 +1,46 @@
+{
+  "command": [
+    "lake",
+    "--no-cache",
+    "env",
+    "lean",
+    "--server"
+  ],
+  "mode": "official Lean compiler single-file LSP elaboration",
+  "exit_code": 1,
+  "input_sha256": "e3f393da7d2eb6f6691e6637ec3214ca08689f4dd28e8b40bbb68b6d272a4bb8",
+  "log_sha256": "0d6591bdc2c27c799e7458427468742df110148824e58300a681a3ee2598cde2",
+  "version": 1,
+  "uri": "file:///C:/Users/ustc/Desktop/formal%20math/MolecularDynamicsFormalization/blueprint/ch07/closeout30/ActiveCheck.lean",
+  "elapsed_seconds": 259.73201727867126,
+  "errors": [
+    {
+      "code": "lean.synthInstanceFailed",
+      "fullRange": {
+        "end": {
+          "character": 91,
+          "line": 1879
+        },
+        "start": {
+          "character": 8,
+          "line": 1879
+        }
+      },
+      "message": "failed to synthesize instance of type class\n  IsProbabilityMeasure (constrainedHOOutputLaw P m U g γ θ W H O hH hO h hh x hx)\n\nHint: Type class instance resolution failures can be inspected with the `set_option trace.Meta.synthInstance true` command.",
+      "range": {
+        "end": {
+          "character": 91,
+          "line": 1879
+        },
+        "start": {
+          "character": 8,
+          "line": 1879
+        }
+      },
+      "severity": 1,
+      "source": "Lean 4"
+    }
+  ],
+  "missing_axiom_outputs": [],
+  "canonical_sha256": "68d05d31b86753526121e15c718b7422fb9600204b0417488fa7d4c81eb01f92"
+}

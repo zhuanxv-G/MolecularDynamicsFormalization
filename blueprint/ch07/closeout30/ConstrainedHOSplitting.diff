@@ -1,0 +1,70 @@
+--- website-submitted
++++ locally-repaired
+@@ -41,19 +41,64 @@
+ 
+ def constrainedHMapQualification {l : ℕ} (m : V n) (U : V n → ℝ) (g : V n → V l)
+     (H : ℝ → Phase n → Phase n) : Prop :=
++  (∀ T, 0 ≤ T → Measurable (H T)) ∧
+   ∀ x ∈ cotangentConstraint m g, ∀ T, 0 ≤ T → ∃ Λ : ℝ → V l,
+     constrainedHIntegralStep m U g (fun t ↦ H t x) Λ x T
+ 
+ def constrainedOMapQualification {l : ℕ} (P : Measure Ω) (m : V n) (g : V n → V l)
+     (γ θ : ℝ) (W : ℝ → Ω → V n) (O : ℝ → Ω → Phase n → Phase n) : Prop :=
++  IsProbabilityMeasure P ∧ vectorWiener P W ∧
++  (∀ T, 0 ≤ T → Measurable (fun z : Ω × Phase n ↦ O T z.1 z.2)) ∧
+   ∀ x ∈ cotangentConstraint m g, ∀ T, 0 ≤ T → ∃ reaction : ℝ → Ω → V n,
+     constrainedOIntegralStep P m g γ θ W (fun t sample ↦ O t sample x) reaction x T
+ 
+-/-- 两次O使用乘积概率空间上的独立样本；H/O都须满足各自受约束解规格。 -/
++/-- 非负步长、合规确定初值下的输出；底层概率测度明确为P.prod P。 -/
+ def constrainedHOQualifiedComposition {l : ℕ} (P : Measure Ω) (m : V n)
+     (U : V n → ℝ) (g : V n → V l) (γ θ : ℝ) (W : ℝ → Ω → V n)
+     (H : ℝ → Phase n → Phase n) (O : ℝ → Ω → Phase n → Phase n)
+     (hH : constrainedHMapQualification m U g H)
+-    (hO : constrainedOMapQualification P m g γ θ W O) (h : ℝ) :
+-    Ω × Ω → Phase n → Phase n :=
+-  fun sample x ↦ O (h/2) sample.2 (H h (O (h/2) sample.1 x))+    (hO : constrainedOMapQualification P m g γ θ W O) (h : ℝ) (hh : 0 ≤ h)
++    (x : Phase n) (hx : x ∈ cotangentConstraint m g) : Ω × Ω → Phase n :=
++  fun sample ↦ O (h/2) sample.2 (H h (O (h/2) sample.1 x))
++
++theorem constrainedHOQualifiedComposition_measurable {l : ℕ} (P : Measure Ω) (m : V n)
++    (U : V n → ℝ) (g : V n → V l) (γ θ : ℝ) (W : ℝ → Ω → V n)
++    (H : ℝ → Phase n → Phase n) (O : ℝ → Ω → Phase n → Phase n)
++    (hH : constrainedHMapQualification m U g H)
++    (hO : constrainedOMapQualification P m g γ θ W O) (h : ℝ) (hh : 0 ≤ h)
++    (x : Phase n) (hx : x ∈ cotangentConstraint m g) :
++    Measurable (constrainedHOQualifiedComposition P m U g γ θ W H O hH hO h hh x hx) := by
++  have hhalf : 0 ≤ h/2 := by positivity
++  have hmO := hO.2.2.1 (h/2) hhalf
++  have hfirst : Measurable (fun sample : Ω × Ω ↦ O (h/2) sample.1 x) :=
++    hmO.comp (measurable_fst.prodMk measurable_const)
++  exact hmO.comp (measurable_snd.prodMk ((hH.1 h hh).comp hfirst))
++
++/-- 输出律由乘积概率上的可测推前给出；不声称已识别条件积分解。 -/
++def constrainedHOOutputLaw {l : ℕ} (P : Measure Ω) (m : V n)
++    (U : V n → ℝ) (g : V n → V l) (γ θ : ℝ) (W : ℝ → Ω → V n)
++    (H : ℝ → Phase n → Phase n) (O : ℝ → Ω → Phase n → Phase n)
++    (hH : constrainedHMapQualification m U g H)
++    (hO : constrainedOMapQualification P m g γ θ W O) (h : ℝ) (hh : 0 ≤ h)
++    (x : Phase n) (hx : x ∈ cotangentConstraint m g) : Measure (Phase n) :=
++  (P.prod P).map (constrainedHOQualifiedComposition P m U g γ θ W H O hH hO h hh x hx)
++
++theorem constrainedHOOutput_hasLaw {l : ℕ} (P : Measure Ω) (m : V n)
++    (U : V n → ℝ) (g : V n → V l) (γ θ : ℝ) (W : ℝ → Ω → V n)
++    (H : ℝ → Phase n → Phase n) (O : ℝ → Ω → Phase n → Phase n)
++    (hH : constrainedHMapQualification m U g H)
++    (hO : constrainedOMapQualification P m g γ θ W O) (h : ℝ) (hh : 0 ≤ h)
++    (x : Phase n) (hx : x ∈ cotangentConstraint m g) :
++    HasLaw (constrainedHOQualifiedComposition P m U g γ θ W H O hH hO h hh x hx)
++      (constrainedHOOutputLaw P m U g γ θ W H O hH hO h hh x hx) (P.prod P) := by
++  exact hasLaw_map (constrainedHOQualifiedComposition_measurable P m U g γ θ W H O hH hO h hh x hx).aemeasurable
++
++theorem constrainedHOOutputLaw_probability {l : ℕ} (P : Measure Ω) (m : V n)
++    (U : V n → ℝ) (g : V n → V l) (γ θ : ℝ) (W : ℝ → Ω → V n)
++    (H : ℝ → Phase n → Phase n) (O : ℝ → Ω → Phase n → Phase n)
++    (hH : constrainedHMapQualification m U g H)
++    (hO : constrainedOMapQualification P m g γ θ W O) (h : ℝ) (hh : 0 ≤ h)
++    (x : Phase n) (hx : x ∈ cotangentConstraint m g) :
++    IsProbabilityMeasure (constrainedHOOutputLaw P m U g γ θ W H O hH hO h hh x hx) := by
++  letI : IsProbabilityMeasure P := hO.1
++  exact (constrainedHOOutput_hasLaw P m U g γ θ W H O hH hO h hh x hx).isProbabilityMeasure_iff.mp inferInstance

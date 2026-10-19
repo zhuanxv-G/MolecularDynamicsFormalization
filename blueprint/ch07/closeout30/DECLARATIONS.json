@@ -1,0 +1,6024 @@
+[
+  {
+    "name": "MD.Ch07.bias",
+    "kind": "def",
+    "source_id": "MD-7.1-Bias",
+    "status": "定义",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "reason": null,
+    "direct_placeholder": false,
+    "unchanged_submitted_statement": true,
+    "website_verdict": "PASS（送审签名未变）",
+    "website_signature_pass": true
+  },
+  {
+    "name": "MD.Ch07.scalarSDE",
+    "kind": "def",
+    "source_id": "MD-7.2-ScalarSDE",
+    "status": "定义",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "reason": null,
+    "direct_placeholder": false,
+    "unchanged_submitted_statement": true,
+    "website_verdict": "PASS（送审签名未变）",
+    "website_signature_pass": true
+  },
+  {
+    "name": "MD.Ch07.eulerMaruyamaStep",
+    "kind": "def",
+    "source_id": "MD-7.2-EulerMaruyama",
+    "status": "定义",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "reason": null,
+    "direct_placeholder": false,
+    "unchanged_submitted_statement": true,
+    "website_verdict": "PASS（送审签名未变）",
+    "website_signature_pass": true
+  },
+  {
+    "name": "MD.Ch07.standardNormalSequence",
+    "kind": "def",
+    "source_id": "MD-7.2-EulerMaruyama",
+    "status": "定义",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "reason": null,
+    "direct_placeholder": false,
+    "unchanged_submitted_statement": true,
+    "website_verdict": "PASS（送审签名未变）",
+    "website_signature_pass": true
+  },
+  {
+    "name": "MD.Ch07.eulerMaruyama",
+    "kind": "def",
+    "source_id": "MD-7.2-EulerMaruyama",
+    "status": "定义",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "reason": null,
+    "direct_placeholder": false,
+    "unchanged_submitted_statement": true,
+    "website_verdict": "PASS（送审签名未变）",
+    "website_signature_pass": true
+  },
+  {
+    "name": "MD.Ch07.sdeIncrement",
+    "kind": "theorem",
+    "source_id": "MD-7.2-SDEIncrement",
+    "status": "未证",
+    "axioms": [
+      "propext",
+      "sorryAx",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "reason": "缺大型理论",
+    "direct_placeholder": true,
+    "unchanged_submitted_statement": true,
+    "website_verdict": "PASS（送审签名未变）",
+    "website_signature_pass": true
+  },
+  {
+    "name": "MD.Ch07.strongError",
+    "kind": "def",
+    "source_id": "MD-7.2-StrongError",
+    "status": "定义",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "reason": null,
+    "direct_placeholder": false,
+    "unchanged_submitted_statement": true,
+    "website_verdict": "PASS（送审签名未变）",
+    "website_signature_pass": true
+  },
+  {
+    "name": "MD.Ch07.meanErrorExpectation",
+    "kind": "theorem",
+    "source_id": "MD-7.2-MeanErrorExpectation",
+    "status": "已证",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "reason": null,
+    "direct_placeholder": false,
+    "unchanged_submitted_statement": true,
+    "website_verdict": "PASS（送审签名未变）",
+    "website_signature_pass": true
+  },
+  {
+    "name": "MD.Ch07.meanSquareError",
+    "kind": "def",
+    "source_id": "MD-7.2-MeanErrorExpectation",
+    "status": "定义",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "reason": null,
+    "direct_placeholder": false,
+    "unchanged_submitted_statement": true,
+    "website_verdict": "PASS（送审签名未变）",
+    "website_signature_pass": true
+  },
+  {
+    "name": "MD.Ch07.hasStrongOrder",
+    "kind": "def",
+    "source_id": "MD-7.2-StrongOrder",
+    "status": "定义",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "reason": null,
+    "direct_placeholder": false,
+    "unchanged_submitted_statement": true,
+    "website_verdict": "PASS（送审签名未变）",
+    "website_signature_pass": true
+  },
+  {
+    "name": "MD.Ch07.weakError",
+    "kind": "def",
+    "source_id": "MD-7.2-WeakError",
+    "status": "定义",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "reason": null,
+    "direct_placeholder": false,
+    "unchanged_submitted_statement": true,
+    "website_verdict": "PASS（送审签名未变）",
+    "website_signature_pass": true
+  },
+  {
+    "name": "MD.Ch07.hasWeakOrder",
+    "kind": "def",
+    "source_id": "MD-7.2-WeakError",
+    "status": "定义",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "reason": null,
+    "direct_placeholder": false,
+    "unchanged_submitted_statement": true,
+    "website_verdict": "PASS（送审签名未变）",
+    "website_signature_pass": true
+  },
+  {
+    "name": "MD.Ch07.strongWeakLipschitz",
+    "kind": "theorem",
+    "source_id": "MD-7.2-StrongWeakComparison",
+    "status": "已证",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "reason": null,
+    "direct_placeholder": false,
+    "unchanged_submitted_statement": true,
+    "website_verdict": "见原始报告的分版本意见；不推定完整定理PASS",
+    "website_signature_pass": false
+  },
+  {
+    "name": "MD.Ch07.weakDoesNotImplyStrong",
+    "kind": "theorem",
+    "source_id": "MD-7.2-StrongWeakComparison",
+    "status": "已证",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "reason": null,
+    "direct_placeholder": false,
+    "unchanged_submitted_statement": true,
+    "website_verdict": "见原始报告的分版本意见；不推定完整定理PASS",
+    "website_signature_pass": false
+  },
+  {
+    "name": "MD.Ch07.densityWithPartition",
+    "kind": "def",
+    "source_id": "MD-7.2-CanonicalAverage",
+    "status": "定义",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "reason": null,
+    "direct_placeholder": false,
+    "unchanged_submitted_statement": true,
+    "website_verdict": "PASS（送审签名未变）",
+    "website_signature_pass": true
+  },
+  {
+    "name": "MD.Ch07.canonicalAverage",
+    "kind": "def",
+    "source_id": "MD-7.2-CanonicalAverage",
+    "status": "定义",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "reason": null,
+    "direct_placeholder": false,
+    "unchanged_submitted_statement": true,
+    "website_verdict": "PASS（送审签名未变）",
+    "website_signature_pass": true
+  },
+  {
+    "name": "MD.Ch07.probabilityDensity",
+    "kind": "def",
+    "source_id": "MD-7.2-CanonicalAverage",
+    "status": "定义",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "reason": null,
+    "direct_placeholder": false,
+    "unchanged_submitted_statement": true,
+    "website_verdict": "PASS（送审签名未变）",
+    "website_signature_pass": true
+  },
+  {
+    "name": "MD.Ch07.partitionPrinted",
+    "kind": "theorem",
+    "source_id": "MD-7.2-PartitionPrinted",
+    "status": "未证",
+    "axioms": [
+      "propext",
+      "sorryAx",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "reason": "原书疑误不证",
+    "direct_placeholder": true,
+    "unchanged_submitted_statement": true,
+    "website_verdict": "见原始报告的分版本意见；不推定完整定理PASS",
+    "website_signature_pass": false
+  },
+  {
+    "name": "MD.Ch07.partitionPrinted_counterexample",
+    "kind": "theorem",
+    "source_id": "MD-7.2-PartitionPrinted",
+    "status": "已证",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "reason": null,
+    "direct_placeholder": false,
+    "unchanged_submitted_statement": true,
+    "website_verdict": "见原始报告的分版本意见；不推定完整定理PASS",
+    "website_signature_pass": false
+  },
+  {
+    "name": "MD.Ch07.partitionPrinted_corrected",
+    "kind": "theorem",
+    "source_id": "MD-7.2-PartitionPrinted",
+    "status": "已证",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "reason": null,
+    "direct_placeholder": false,
+    "unchanged_submitted_statement": true,
+    "website_verdict": "见原始报告的分版本意见；不推定完整定理PASS",
+    "website_signature_pass": false
+  },
+  {
+    "name": "MD.Ch07.observableBias",
+    "kind": "def",
+    "source_id": "MD-7.2-AverageNotationBias",
+    "status": "定义",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "reason": null,
+    "direct_placeholder": false,
+    "unchanged_submitted_statement": true,
+    "website_verdict": "PASS（送审签名未变）",
+    "website_signature_pass": true
+  },
+  {
+    "name": "MD.Ch07.bias_nonnegative",
+    "kind": "theorem",
+    "source_id": "MD-7.2-AverageNotationBias",
+    "status": "已证",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "reason": null,
+    "direct_placeholder": false,
+    "unchanged_submitted_statement": true,
+    "website_verdict": "PASS（送审签名未变）",
+    "website_signature_pass": true
+  },
+  {
+    "name": "MD.Ch07.V",
+    "kind": "abbrev",
+    "source_id": "MD-7.3-VectorOU",
+    "status": "定义",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "reason": null,
+    "direct_placeholder": false,
+    "unchanged_submitted_statement": true,
+    "website_verdict": "PASS（送审签名未变）",
+    "website_signature_pass": true
+  },
+  {
+    "name": "MD.Ch07.Phase",
+    "kind": "abbrev",
+    "source_id": "MD-7.3-VectorOU",
+    "status": "定义",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "reason": null,
+    "direct_placeholder": false,
+    "unchanged_submitted_statement": true,
+    "website_verdict": "PASS（送审签名未变）",
+    "website_signature_pass": true
+  },
+  {
+    "name": "MD.Ch07.vectorWiener",
+    "kind": "def",
+    "source_id": "MD-7.3-VectorOU",
+    "status": "定义",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "reason": null,
+    "direct_placeholder": false,
+    "unchanged_submitted_statement": true,
+    "website_verdict": "PASS（送审签名未变）",
+    "website_signature_pass": true
+  },
+  {
+    "name": "MD.Ch07.momentumOU",
+    "kind": "def",
+    "source_id": "MD-7.3-VectorOU",
+    "status": "定义",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "reason": null,
+    "direct_placeholder": false,
+    "unchanged_submitted_statement": true,
+    "website_verdict": "PASS（送审签名未变）",
+    "website_signature_pass": true
+  },
+  {
+    "name": "MD.Ch07.ouIntegratingFactor",
+    "kind": "theorem",
+    "source_id": "MD-7.3-OUIntegratingFactor",
+    "status": "未证",
+    "axioms": [
+      "propext",
+      "sorryAx",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "reason": "缺大型理论",
+    "direct_placeholder": true,
+    "unchanged_submitted_statement": true,
+    "website_verdict": "PASS（送审签名未变）",
+    "website_signature_pass": true
+  },
+  {
+    "name": "MD.Ch07.ouMomentum",
+    "kind": "def",
+    "source_id": "MD-7.3-OUExactUpdate",
+    "status": "定义",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "reason": null,
+    "direct_placeholder": false,
+    "unchanged_submitted_statement": true,
+    "website_verdict": "见原始报告的分版本意见；不推定完整定理PASS",
+    "website_signature_pass": false
+  },
+  {
+    "name": "MD.Ch07.ouTransitionLaw",
+    "kind": "theorem",
+    "source_id": "MD-7.3-OUExactUpdate",
+    "status": "未证",
+    "axioms": [
+      "propext",
+      "sorryAx",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "reason": "缺大型理论",
+    "direct_placeholder": true,
+    "unchanged_submitted_statement": true,
+    "website_verdict": "见原始报告的分版本意见；不推定完整定理PASS",
+    "website_signature_pass": false
+  },
+  {
+    "name": "MD.Ch07.ouStep",
+    "kind": "def",
+    "source_id": "MD-7.3-OUPhaseIteration",
+    "status": "定义",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "reason": null,
+    "direct_placeholder": false,
+    "unchanged_submitted_statement": true,
+    "website_verdict": "PASS（送审签名未变）",
+    "website_signature_pass": true
+  },
+  {
+    "name": "MD.Ch07.vectorNormalSequence",
+    "kind": "def",
+    "source_id": "MD-7.3-OUPhaseIteration",
+    "status": "定义",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "reason": null,
+    "direct_placeholder": false,
+    "unchanged_submitted_statement": true,
+    "website_verdict": "PASS（送审签名未变）",
+    "website_signature_pass": true
+  },
+  {
+    "name": "MD.Ch07.coordDerivative",
+    "kind": "def",
+    "source_id": "MD-7.3-OUForward",
+    "status": "定义",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "reason": null,
+    "direct_placeholder": false,
+    "unchanged_submitted_statement": true,
+    "website_verdict": "PASS（送审签名未变）",
+    "website_signature_pass": true
+  },
+  {
+    "name": "MD.Ch07.ouForward",
+    "kind": "def",
+    "source_id": "MD-7.3-OUForward",
+    "status": "定义",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "reason": null,
+    "direct_placeholder": false,
+    "unchanged_submitted_statement": true,
+    "website_verdict": "PASS（送审签名未变）",
+    "website_signature_pass": true
+  },
+  {
+    "name": "MD.Ch07.ouBackward",
+    "kind": "def",
+    "source_id": "MD-7.3-OUForward",
+    "status": "定义",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "reason": null,
+    "direct_placeholder": false,
+    "unchanged_submitted_statement": true,
+    "website_verdict": "PASS（送审签名未变）",
+    "website_signature_pass": true
+  },
+  {
+    "name": "MD.Ch07.ouForward_adjoint",
+    "kind": "theorem",
+    "source_id": "MD-7.3-OUForward",
+    "status": "未证",
+    "axioms": [
+      "propext",
+      "sorryAx",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "reason": "缺大型理论",
+    "direct_placeholder": true,
+    "unchanged_submitted_statement": true,
+    "website_verdict": "PASS（送审签名未变）",
+    "website_signature_pass": true
+  },
+  {
+    "name": "MD.Ch07.ouGaussianInvariant",
+    "kind": "theorem",
+    "source_id": "MD-7.3-OUGaussianInvariant",
+    "status": "未证",
+    "axioms": [
+      "propext",
+      "sorryAx",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "reason": "缺大型理论",
+    "direct_placeholder": true,
+    "unchanged_submitted_statement": true,
+    "website_verdict": "PASS（送审签名未变）",
+    "website_signature_pass": true
+  },
+  {
+    "name": "MD.Ch07.gradient",
+    "kind": "def",
+    "source_id": "MD-7.3.1-Langevin",
+    "status": "定义",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "reason": null,
+    "direct_placeholder": false,
+    "unchanged_submitted_statement": true,
+    "website_verdict": "PASS（送审签名未变）",
+    "website_signature_pass": true
+  },
+  {
+    "name": "MD.Ch07.langevin",
+    "kind": "def",
+    "source_id": "MD-7.3.1-Langevin",
+    "status": "定义",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "reason": null,
+    "direct_placeholder": false,
+    "unchanged_submitted_statement": true,
+    "website_verdict": "PASS（送审签名未变）",
+    "website_signature_pass": true
+  },
+  {
+    "name": "MD.Ch07.hamiltonianGibbs",
+    "kind": "theorem",
+    "source_id": "MD-7.3.1-HamiltonianGibbs",
+    "status": "未证",
+    "axioms": [
+      "propext",
+      "sorryAx",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "reason": "缺大型理论",
+    "direct_placeholder": true,
+    "unchanged_submitted_statement": true,
+    "website_verdict": "PASS（送审签名未变）",
+    "website_signature_pass": true
+  },
+  {
+    "name": "MD.Ch07.driftStep",
+    "kind": "def",
+    "source_id": "MD-7.3.1-ABOPieces",
+    "status": "定义",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "reason": null,
+    "direct_placeholder": false,
+    "unchanged_submitted_statement": true,
+    "website_verdict": "PASS（送审签名未变）",
+    "website_signature_pass": true
+  },
+  {
+    "name": "MD.Ch07.kickStep",
+    "kind": "def",
+    "source_id": "MD-7.3.1-ABOPieces",
+    "status": "定义",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "reason": null,
+    "direct_placeholder": false,
+    "unchanged_submitted_statement": true,
+    "website_verdict": "PASS（送审签名未变）",
+    "website_signature_pass": true
+  },
+  {
+    "name": "MD.Ch07.aField",
+    "kind": "def",
+    "source_id": "MD-7.3.1-ABOPieces",
+    "status": "定义",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "reason": null,
+    "direct_placeholder": false,
+    "unchanged_submitted_statement": true,
+    "website_verdict": "PASS（送审签名未变）",
+    "website_signature_pass": true
+  },
+  {
+    "name": "MD.Ch07.bField",
+    "kind": "def",
+    "source_id": "MD-7.3.1-ABOPieces",
+    "status": "定义",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "reason": null,
+    "direct_placeholder": false,
+    "unchanged_submitted_statement": true,
+    "website_verdict": "PASS（送审签名未变）",
+    "website_signature_pass": true
+  },
+  {
+    "name": "MD.Ch07.oDrift",
+    "kind": "def",
+    "source_id": "MD-7.3.1-ABOPieces",
+    "status": "定义",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "reason": null,
+    "direct_placeholder": false,
+    "unchanged_submitted_statement": true,
+    "website_verdict": "PASS（送审签名未变）",
+    "website_signature_pass": true
+  },
+  {
+    "name": "MD.Ch07.splittingDrift",
+    "kind": "theorem",
+    "source_id": "MD-7.3.1-ABOPieces",
+    "status": "已证",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "reason": null,
+    "direct_placeholder": false,
+    "unchanged_submitted_statement": true,
+    "website_verdict": "PASS（送审签名未变）",
+    "website_signature_pass": true
+  },
+  {
+    "name": "MD.Ch07.driftStep_derivative",
+    "kind": "theorem",
+    "source_id": "MD-7.3.1-ABExactFlows",
+    "status": "已证",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "reason": null,
+    "direct_placeholder": false,
+    "unchanged_submitted_statement": true,
+    "website_verdict": "PASS（送审签名未变）",
+    "website_signature_pass": true
+  },
+  {
+    "name": "MD.Ch07.kickStep_derivative",
+    "kind": "theorem",
+    "source_id": "MD-7.3.1-ABExactFlows",
+    "status": "未证",
+    "axioms": [
+      "propext",
+      "sorryAx",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "reason": "缺大型理论",
+    "direct_placeholder": true,
+    "unchanged_submitted_statement": true,
+    "website_verdict": "PASS（送审签名未变）",
+    "website_signature_pass": true
+  },
+  {
+    "name": "MD.Ch07.aForward",
+    "kind": "def",
+    "source_id": "MD-7.3.1-ABForward",
+    "status": "定义",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "reason": null,
+    "direct_placeholder": false,
+    "unchanged_submitted_statement": true,
+    "website_verdict": "PASS（送审签名未变）",
+    "website_signature_pass": true
+  },
+  {
+    "name": "MD.Ch07.bForward",
+    "kind": "def",
+    "source_id": "MD-7.3.1-ABForward",
+    "status": "定义",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "reason": null,
+    "direct_placeholder": false,
+    "unchanged_submitted_statement": true,
+    "website_verdict": "PASS（送审签名未变）",
+    "website_signature_pass": true
+  },
+  {
+    "name": "MD.Ch07.abo",
+    "kind": "def",
+    "source_id": "MD-7.3.1-ABOBABO",
+    "status": "定义",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "reason": null,
+    "direct_placeholder": false,
+    "unchanged_submitted_statement": true,
+    "website_verdict": "PASS（送审签名未变）",
+    "website_signature_pass": true
+  },
+  {
+    "name": "MD.Ch07.babo",
+    "kind": "def",
+    "source_id": "MD-7.3.1-ABOBABO",
+    "status": "定义",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "reason": null,
+    "direct_placeholder": false,
+    "unchanged_submitted_statement": true,
+    "website_verdict": "PASS（送审签名未变）",
+    "website_signature_pass": true
+  },
+  {
+    "name": "MD.Ch07.oabaobaoPrinted",
+    "kind": "def",
+    "source_id": "MD-7.3.1-WordConvention",
+    "status": "定义",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "reason": null,
+    "direct_placeholder": false,
+    "unchanged_submitted_statement": true,
+    "website_verdict": "PASS（送审签名未变）",
+    "website_signature_pass": true
+  },
+  {
+    "name": "MD.Ch07.oabaobaoPrinted_corrected",
+    "kind": "def",
+    "source_id": "MD-7.3.1-WordConvention",
+    "status": "定义",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "reason": null,
+    "direct_placeholder": false,
+    "unchanged_submitted_statement": true,
+    "website_verdict": "PASS（送审签名未变）",
+    "website_signature_pass": true
+  },
+  {
+    "name": "MD.Ch07.oabaobaoCount",
+    "kind": "theorem",
+    "source_id": "MD-7.3.1-WordConvention",
+    "status": "已证",
+    "axioms": [],
+    "reason": null,
+    "direct_placeholder": false,
+    "unchanged_submitted_statement": true,
+    "website_verdict": "PASS（送审签名未变）",
+    "website_signature_pass": true
+  },
+  {
+    "name": "MD.Ch07.abao",
+    "kind": "def",
+    "source_id": "MD-7.3.1-SixSchemes",
+    "status": "定义",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "reason": null,
+    "direct_placeholder": false,
+    "unchanged_submitted_statement": true,
+    "website_verdict": "PASS（送审签名未变）",
+    "website_signature_pass": true
+  },
+  {
+    "name": "MD.Ch07.aboba",
+    "kind": "def",
+    "source_id": "MD-7.3.1-SixSchemes",
+    "status": "定义",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "reason": null,
+    "direct_placeholder": false,
+    "unchanged_submitted_statement": true,
+    "website_verdict": "PASS（送审签名未变）",
+    "website_signature_pass": true
+  },
+  {
+    "name": "MD.Ch07.baoab",
+    "kind": "def",
+    "source_id": "MD-7.3.1-SixSchemes",
+    "status": "定义",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "reason": null,
+    "direct_placeholder": false,
+    "unchanged_submitted_statement": true,
+    "website_verdict": "PASS（送审签名未变）",
+    "website_signature_pass": true
+  },
+  {
+    "name": "MD.Ch07.oabao",
+    "kind": "def",
+    "source_id": "MD-7.3.1-SixSchemes",
+    "status": "定义",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "reason": null,
+    "direct_placeholder": false,
+    "unchanged_submitted_statement": true,
+    "website_verdict": "PASS（送审签名未变）",
+    "website_signature_pass": true
+  },
+  {
+    "name": "MD.Ch07.obabo",
+    "kind": "def",
+    "source_id": "MD-7.3.1-SixSchemes",
+    "status": "定义",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "reason": null,
+    "direct_placeholder": false,
+    "unchanged_submitted_statement": true,
+    "website_verdict": "PASS（送审签名未变）",
+    "website_signature_pass": true
+  },
+  {
+    "name": "MD.Ch07.compositionIterate",
+    "kind": "theorem",
+    "source_id": "MD-7.3.1-ConjugateIteration",
+    "status": "已证",
+    "axioms": [
+      "propext",
+      "Quot.sound"
+    ],
+    "reason": null,
+    "direct_placeholder": false,
+    "unchanged_submitted_statement": true,
+    "website_verdict": "PASS（送审签名未变）",
+    "website_signature_pass": true
+  },
+  {
+    "name": "MD.Ch07.oaba",
+    "kind": "def",
+    "source_id": "MD-7.3.1-ConjugateIteration",
+    "status": "定义",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "reason": null,
+    "direct_placeholder": false,
+    "unchanged_submitted_statement": true,
+    "website_verdict": "PASS（送审签名未变）",
+    "website_signature_pass": true
+  },
+  {
+    "name": "MD.Ch07.conjugateNoiseS",
+    "kind": "def",
+    "source_id": "MD-7.3.1-ConjugateIteration",
+    "status": "定义",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "reason": null,
+    "direct_placeholder": false,
+    "unchanged_submitted_statement": true,
+    "website_verdict": "PASS（送审签名未变）",
+    "website_signature_pass": true
+  },
+  {
+    "name": "MD.Ch07.conjugateNoiseT",
+    "kind": "def",
+    "source_id": "MD-7.3.1-ConjugateIteration",
+    "status": "定义",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "reason": null,
+    "direct_placeholder": false,
+    "unchanged_submitted_statement": true,
+    "website_verdict": "PASS（送审签名未变）",
+    "website_signature_pass": true
+  },
+  {
+    "name": "MD.Ch07.oaba_baoab_noiseShift",
+    "kind": "theorem",
+    "source_id": "MD-7.3.1-ConjugateIteration",
+    "status": "未证",
+    "axioms": [
+      "propext",
+      "sorryAx",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "reason": "缺大型理论",
+    "direct_placeholder": true,
+    "unchanged_submitted_statement": true,
+    "website_verdict": "PASS（送审签名未变）",
+    "website_signature_pass": true
+  },
+  {
+    "name": "MD.Ch07.spvPrinted",
+    "kind": "def",
+    "source_id": "MD-7.3.2-SPVPrinted",
+    "status": "定义",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "reason": null,
+    "direct_placeholder": false,
+    "unchanged_submitted_statement": true,
+    "website_verdict": "见原始报告的分版本意见；不推定完整定理PASS",
+    "website_signature_pass": false
+  },
+  {
+    "name": "MD.Ch07.spvPrinted_corrected",
+    "kind": "def",
+    "source_id": "MD-7.3.2-SPVPrinted",
+    "status": "定义",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "reason": null,
+    "direct_placeholder": false,
+    "unchanged_submitted_statement": true,
+    "website_verdict": "PASS（送审签名未变）",
+    "website_signature_pass": true
+  },
+  {
+    "name": "MD.Ch07.spvQualification",
+    "kind": "def",
+    "source_id": "MD-7.3.2-SPVPrinted",
+    "status": "定义",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "reason": null,
+    "direct_placeholder": false,
+    "unchanged_submitted_statement": true,
+    "website_verdict": "见原始报告的分版本意见；不推定完整定理PASS",
+    "website_signature_pass": false
+  },
+  {
+    "name": "MD.Ch07.spvEtaLimit",
+    "kind": "theorem",
+    "source_id": "MD-7.3.2-SPVLargeFriction",
+    "status": "未证",
+    "axioms": [
+      "propext",
+      "sorryAx",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "reason": "缺大型理论",
+    "direct_placeholder": true,
+    "unchanged_submitted_statement": true,
+    "website_verdict": "见原始报告的分版本意见；不推定完整定理PASS",
+    "website_signature_pass": false
+  },
+  {
+    "name": "MD.Ch07.bbk",
+    "kind": "def",
+    "source_id": "MD-7.3.2-BBK",
+    "status": "定义",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "reason": null,
+    "direct_placeholder": false,
+    "unchanged_submitted_statement": true,
+    "website_verdict": "PASS（送审签名未变）",
+    "website_signature_pass": true
+  },
+  {
+    "name": "MD.Ch07.bbkSameNoise",
+    "kind": "def",
+    "source_id": "MD-7.3.2-BBK",
+    "status": "定义",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "reason": null,
+    "direct_placeholder": false,
+    "unchanged_submitted_statement": true,
+    "website_verdict": "PASS（送审签名未变）",
+    "website_signature_pass": true
+  },
+  {
+    "name": "MD.Ch07.harmonicHamiltonian",
+    "kind": "def",
+    "source_id": "MD-7.4-HarmonicHamiltonian",
+    "status": "定义",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "reason": null,
+    "direct_placeholder": false,
+    "unchanged_submitted_statement": true,
+    "website_verdict": "PASS（送审签名未变）",
+    "website_signature_pass": true
+  },
+  {
+    "name": "MD.Ch07.harmonicLaw",
+    "kind": "def",
+    "source_id": "MD-7.4-HarmonicHamiltonian",
+    "status": "定义",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "reason": null,
+    "direct_placeholder": false,
+    "unchanged_submitted_statement": true,
+    "website_verdict": "PASS（送审签名未变）",
+    "website_signature_pass": true
+  },
+  {
+    "name": "MD.Ch07.harmonicMoments",
+    "kind": "theorem",
+    "source_id": "MD-7.4-HarmonicMoments",
+    "status": "未证",
+    "axioms": [
+      "propext",
+      "sorryAx",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "reason": "缺大型理论",
+    "direct_placeholder": true,
+    "unchanged_submitted_statement": true,
+    "website_verdict": "PASS（送审签名未变）",
+    "website_signature_pass": true
+  },
+  {
+    "name": "MD.Ch07.linearUpdate",
+    "kind": "def",
+    "source_id": "MD-7.4-LinearIteration",
+    "status": "定义",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "reason": null,
+    "direct_placeholder": false,
+    "unchanged_submitted_statement": true,
+    "website_verdict": "PASS（送审签名未变）",
+    "website_signature_pass": true
+  },
+  {
+    "name": "MD.Ch07.momentQ",
+    "kind": "def",
+    "source_id": "MD-7.4-LinearIteration",
+    "status": "定义",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "reason": null,
+    "direct_placeholder": false,
+    "unchanged_submitted_statement": true,
+    "website_verdict": "PASS（送审签名未变）",
+    "website_signature_pass": true
+  },
+  {
+    "name": "MD.Ch07.momentP",
+    "kind": "def",
+    "source_id": "MD-7.4-LinearIteration",
+    "status": "定义",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "reason": null,
+    "direct_placeholder": false,
+    "unchanged_submitted_statement": true,
+    "website_verdict": "PASS（送审签名未变）",
+    "website_signature_pass": true
+  },
+  {
+    "name": "MD.Ch07.momentQP",
+    "kind": "def",
+    "source_id": "MD-7.4-LinearIteration",
+    "status": "定义",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "reason": null,
+    "direct_placeholder": false,
+    "unchanged_submitted_statement": true,
+    "website_verdict": "PASS（送审签名未变）",
+    "website_signature_pass": true
+  },
+  {
+    "name": "MD.Ch07.bbkMatrix",
+    "kind": "def",
+    "source_id": "MD-7.4-BBKLinearForm",
+    "status": "定义",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "reason": null,
+    "direct_placeholder": false,
+    "unchanged_submitted_statement": true,
+    "website_verdict": "PASS（送审签名未变）",
+    "website_signature_pass": true
+  },
+  {
+    "name": "MD.Ch07.bbkNoise",
+    "kind": "def",
+    "source_id": "MD-7.4-BBKLinearForm",
+    "status": "定义",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "reason": null,
+    "direct_placeholder": false,
+    "unchanged_submitted_statement": true,
+    "website_verdict": "PASS（送审签名未变）",
+    "website_signature_pass": true
+  },
+  {
+    "name": "MD.Ch07.quadraticProducts",
+    "kind": "theorem",
+    "source_id": "MD-7.4-QuadraticProducts",
+    "status": "已证",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "reason": null,
+    "direct_placeholder": false,
+    "unchanged_submitted_statement": true,
+    "website_verdict": "PASS（送审签名未变）",
+    "website_signature_pass": true
+  },
+  {
+    "name": "MD.Ch07.momentSystem",
+    "kind": "def",
+    "source_id": "MD-7.4.1-StationaryMomentSystem",
+    "status": "定义",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "reason": null,
+    "direct_placeholder": false,
+    "unchanged_submitted_statement": true,
+    "website_verdict": "PASS（送审签名未变）",
+    "website_signature_pass": true
+  },
+  {
+    "name": "MD.Ch07.invariantLinearLaw",
+    "kind": "def",
+    "source_id": "MD-7.4.1-StationaryMomentSystem",
+    "status": "定义",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "reason": null,
+    "direct_placeholder": false,
+    "unchanged_submitted_statement": true,
+    "website_verdict": "PASS（送审签名未变）",
+    "website_signature_pass": true
+  },
+  {
+    "name": "MD.Ch07.stationaryMomentSystem",
+    "kind": "theorem",
+    "source_id": "MD-7.4.1-StationaryMomentSystem",
+    "status": "未证",
+    "axioms": [
+      "propext",
+      "sorryAx",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "reason": "缺大型理论",
+    "direct_placeholder": true,
+    "unchanged_submitted_statement": true,
+    "website_verdict": "PASS（送审签名未变）",
+    "website_signature_pass": true
+  },
+  {
+    "name": "MD.Ch07.aboHarmonic",
+    "kind": "def",
+    "source_id": "MD-7.4.1-ABOHarmonic",
+    "status": "定义",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "reason": null,
+    "direct_placeholder": false,
+    "unchanged_submitted_statement": true,
+    "website_verdict": "PASS（送审签名未变）",
+    "website_signature_pass": true
+  },
+  {
+    "name": "MD.Ch07.aboStationaryMean",
+    "kind": "theorem",
+    "source_id": "MD-7.4.1-ABOHarmonic",
+    "status": "未证",
+    "axioms": [
+      "propext",
+      "sorryAx",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "reason": "缺大型理论",
+    "direct_placeholder": true,
+    "unchanged_submitted_statement": true,
+    "website_verdict": "PASS（送审签名未变）",
+    "website_signature_pass": true
+  },
+  {
+    "name": "MD.Ch07.aboVarianceRatio",
+    "kind": "def",
+    "source_id": "MD-7.4.1-ABOVariance",
+    "status": "定义",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "reason": null,
+    "direct_placeholder": false,
+    "unchanged_submitted_statement": true,
+    "website_verdict": "PASS（送审签名未变）",
+    "website_signature_pass": true
+  },
+  {
+    "name": "MD.Ch07.aboVarianceRatio_expansion",
+    "kind": "theorem",
+    "source_id": "MD-7.4.1-ABOVariance",
+    "status": "未证",
+    "axioms": [
+      "propext",
+      "sorryAx",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "reason": "缺大型理论",
+    "direct_placeholder": true,
+    "unchanged_submitted_statement": true,
+    "website_verdict": "PASS（送审签名未变）",
+    "website_signature_pass": true
+  },
+  {
+    "name": "MD.Ch07.aboStationaryVariance",
+    "kind": "theorem",
+    "source_id": "MD-7.4.1-ABOVariance",
+    "status": "未证",
+    "axioms": [
+      "propext",
+      "sorryAx",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "reason": "缺大型理论",
+    "direct_placeholder": true,
+    "unchanged_submitted_statement": true,
+    "website_verdict": "PASS（送审签名未变）",
+    "website_signature_pass": true
+  },
+  {
+    "name": "MD.Ch07.scalarLift",
+    "kind": "def",
+    "source_id": "MD-7.4.1-Table71",
+    "status": "定义",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "reason": null,
+    "direct_placeholder": false,
+    "unchanged_submitted_statement": true,
+    "website_verdict": "PASS（送审签名未变）",
+    "website_signature_pass": true
+  },
+  {
+    "name": "MD.Ch07.symmetricHarmonicStep",
+    "kind": "def",
+    "source_id": "MD-7.4.1-Table71",
+    "status": "定义",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "reason": null,
+    "direct_placeholder": false,
+    "unchanged_submitted_statement": true,
+    "website_verdict": "PASS（送审签名未变）",
+    "website_signature_pass": true
+  },
+  {
+    "name": "MD.Ch07.symmetricInvariant",
+    "kind": "def",
+    "source_id": "MD-7.4.1-Table71",
+    "status": "定义",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "reason": null,
+    "direct_placeholder": false,
+    "unchanged_submitted_statement": true,
+    "website_verdict": "PASS（送审签名未变）",
+    "website_signature_pass": true
+  },
+  {
+    "name": "MD.Ch07.table71",
+    "kind": "theorem",
+    "source_id": "MD-7.4.1-Table71",
+    "status": "未证",
+    "axioms": [
+      "propext",
+      "sorryAx",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "reason": "缺大型理论",
+    "direct_placeholder": true,
+    "unchanged_submitted_statement": true,
+    "website_verdict": "PASS（送审签名未变）",
+    "website_signature_pass": true
+  },
+  {
+    "name": "MD.Ch07.nonsymmetricHarmonicStep",
+    "kind": "def",
+    "source_id": "MD-7.4.1-NonsymmetricExactMoments",
+    "status": "定义",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "reason": null,
+    "direct_placeholder": false,
+    "unchanged_submitted_statement": true,
+    "website_verdict": "PASS（送审签名未变）",
+    "website_signature_pass": true
+  },
+  {
+    "name": "MD.Ch07.nonsymmetricExactMoments",
+    "kind": "theorem",
+    "source_id": "MD-7.4.1-NonsymmetricExactMoments",
+    "status": "未证",
+    "axioms": [
+      "propext",
+      "sorryAx",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "reason": "缺大型理论",
+    "direct_placeholder": true,
+    "unchanged_submitted_statement": true,
+    "website_verdict": "PASS（送审签名未变）",
+    "website_signature_pass": true
+  },
+  {
+    "name": "MD.Ch07.nonsymmetricMixedMoment_order",
+    "kind": "theorem",
+    "source_id": "MD-7.4.1-NonsymmetricExactMoments",
+    "status": "未证",
+    "axioms": [
+      "propext",
+      "sorryAx",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "reason": "时间盒止",
+    "direct_placeholder": true,
+    "unchanged_submitted_statement": true,
+    "website_verdict": "PASS（送审签名未变）",
+    "website_signature_pass": true
+  },
+  {
+    "name": "MD.Ch07.bbkStarTrajectory",
+    "kind": "def",
+    "source_id": "MD-7.4.2-BBKStar",
+    "status": "定义",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "reason": null,
+    "direct_placeholder": false,
+    "unchanged_submitted_statement": true,
+    "website_verdict": "PASS（送审签名未变）",
+    "website_signature_pass": true
+  },
+  {
+    "name": "MD.Ch07.bbkStarNoise",
+    "kind": "def",
+    "source_id": "MD-7.4.2-BBKStar",
+    "status": "定义",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "reason": null,
+    "direct_placeholder": false,
+    "unchanged_submitted_statement": true,
+    "website_verdict": "PASS（送审签名未变）",
+    "website_signature_pass": true
+  },
+  {
+    "name": "MD.Ch07.bbkStarCorrelations",
+    "kind": "theorem",
+    "source_id": "MD-7.4.2-BBKStarCorrelations",
+    "status": "未证",
+    "axioms": [
+      "propext",
+      "sorryAx",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "reason": "缺大型理论",
+    "direct_placeholder": true,
+    "unchanged_submitted_statement": true,
+    "website_verdict": "PASS（送审签名未变）",
+    "website_signature_pass": true
+  },
+  {
+    "name": "MD.Ch07.bbkStarMomentSystemPrinted",
+    "kind": "def",
+    "source_id": "MD-7.4.2-BBKStarMomentSystemPrinted",
+    "status": "定义",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "reason": null,
+    "direct_placeholder": false,
+    "unchanged_submitted_statement": true,
+    "website_verdict": "见原始报告的分版本意见；不推定完整定理PASS",
+    "website_signature_pass": false
+  },
+  {
+    "name": "MD.Ch07.bbkStarMomentSystemPrinted_corrected",
+    "kind": "def",
+    "source_id": "MD-7.4.2-BBKStarMomentSystemPrinted",
+    "status": "定义",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "reason": null,
+    "direct_placeholder": false,
+    "unchanged_submitted_statement": true,
+    "website_verdict": "见原始报告的分版本意见；不推定完整定理PASS",
+    "website_signature_pass": false
+  },
+  {
+    "name": "MD.Ch07.bbkStarExtraFactor_counterexample",
+    "kind": "theorem",
+    "source_id": "MD-7.4.2-BBKStarMomentSystemPrinted",
+    "status": "已证",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "reason": null,
+    "direct_placeholder": false,
+    "unchanged_submitted_statement": true,
+    "website_verdict": "见原始报告的分版本意见；不推定完整定理PASS",
+    "website_signature_pass": false
+  },
+  {
+    "name": "MD.Ch07.bbkStarStationaryAlgebra",
+    "kind": "theorem",
+    "source_id": "MD-7.4.2-BBKStarStationary",
+    "status": "未证",
+    "axioms": [
+      "propext",
+      "sorryAx",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "reason": "缺大型理论",
+    "direct_placeholder": true,
+    "unchanged_submitted_statement": true,
+    "website_verdict": "PASS（送审签名未变）",
+    "website_signature_pass": true
+  },
+  {
+    "name": "MD.Ch07.perturbedPotential",
+    "kind": "def",
+    "source_id": "MD-7.5-PerturbedHamiltonian",
+    "status": "定义",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "reason": null,
+    "direct_placeholder": false,
+    "unchanged_submitted_statement": true,
+    "website_verdict": "PASS（送审签名未变）",
+    "website_signature_pass": true
+  },
+  {
+    "name": "MD.Ch07.perturbedHamiltonian",
+    "kind": "def",
+    "source_id": "MD-7.5-PerturbedHamiltonian",
+    "status": "定义",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "reason": null,
+    "direct_placeholder": false,
+    "unchanged_submitted_statement": true,
+    "website_verdict": "PASS（送审签名未变）",
+    "website_signature_pass": true
+  },
+  {
+    "name": "MD.Ch07.perturbedGibbs",
+    "kind": "def",
+    "source_id": "MD-7.5-PerturbedHamiltonian",
+    "status": "定义",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "reason": null,
+    "direct_placeholder": false,
+    "unchanged_submitted_statement": true,
+    "website_verdict": "PASS（送审签名未变）",
+    "website_signature_pass": true
+  },
+  {
+    "name": "MD.Ch07.perturbedStep",
+    "kind": "def",
+    "source_id": "MD-7.5-PerturbedHamiltonian",
+    "status": "定义",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "reason": null,
+    "direct_placeholder": false,
+    "unchanged_submitted_statement": true,
+    "website_verdict": "PASS（送审签名未变）",
+    "website_signature_pass": true
+  },
+  {
+    "name": "MD.Ch07.perturbedStationary",
+    "kind": "def",
+    "source_id": "MD-7.5-PerturbedHamiltonian",
+    "status": "定义",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "reason": null,
+    "direct_placeholder": false,
+    "unchanged_submitted_statement": true,
+    "website_verdict": "PASS（送审签名未变）",
+    "website_signature_pass": true
+  },
+  {
+    "name": "MD.Ch07.perturbedLeading",
+    "kind": "def",
+    "source_id": "MD-7.5-PerturbedErrorExpansion",
+    "status": "定义",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "reason": null,
+    "direct_placeholder": false,
+    "unchanged_submitted_statement": true,
+    "website_verdict": "见原始报告的分版本意见；不推定完整定理PASS",
+    "website_signature_pass": false
+  },
+  {
+    "name": "MD.Ch07.perturbedRemainder",
+    "kind": "def",
+    "source_id": "MD-7.5-PerturbedErrorExpansion",
+    "status": "定义",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "reason": null,
+    "direct_placeholder": false,
+    "unchanged_submitted_statement": true,
+    "website_verdict": "见原始报告的分版本意见；不推定完整定理PASS",
+    "website_signature_pass": false
+  },
+  {
+    "name": "MD.Ch07.positivePairLimit",
+    "kind": "def",
+    "source_id": "MD-7.5-PerturbedErrorExpansion",
+    "status": "定义",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "reason": null,
+    "direct_placeholder": false,
+    "unchanged_submitted_statement": true,
+    "website_verdict": "见原始报告的分版本意见；不推定完整定理PASS",
+    "website_signature_pass": false
+  },
+  {
+    "name": "MD.Ch07.perturbedErrorExpansion",
+    "kind": "theorem",
+    "source_id": "MD-7.5-PerturbedErrorExpansion",
+    "status": "未证",
+    "axioms": [
+      "propext",
+      "sorryAx",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "reason": "缺大型理论",
+    "direct_placeholder": true,
+    "unchanged_submitted_statement": true,
+    "website_verdict": "见原始报告的分版本意见；不推定完整定理PASS",
+    "website_signature_pass": false
+  },
+  {
+    "name": "MD.Ch07.perturbedErrorScale",
+    "kind": "def",
+    "source_id": "MD-7.5-PerturbedErrorOrders",
+    "status": "定义",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "reason": null,
+    "direct_placeholder": false,
+    "unchanged_submitted_statement": true,
+    "website_verdict": "见原始报告的分版本意见；不推定完整定理PASS",
+    "website_signature_pass": false
+  },
+  {
+    "name": "MD.Ch07.perturbedErrorOrders",
+    "kind": "theorem",
+    "source_id": "MD-7.5-PerturbedErrorOrders",
+    "status": "未证",
+    "axioms": [
+      "propext",
+      "sorryAx",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "reason": "缺大型理论",
+    "direct_placeholder": true,
+    "unchanged_submitted_statement": true,
+    "website_verdict": "见原始报告的分版本意见；不推定完整定理PASS",
+    "website_signature_pass": false
+  },
+  {
+    "name": "MD.Ch07.baoabLeading_largeFriction",
+    "kind": "theorem",
+    "source_id": "MD-7.5-PerturbedErrorOrders",
+    "status": "未证",
+    "axioms": [
+      "propext",
+      "sorryAx",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "reason": "缺大型理论",
+    "direct_placeholder": true,
+    "unchanged_submitted_statement": true,
+    "website_verdict": "见原始报告的分版本意见；不推定完整定理PASS",
+    "website_signature_pass": false
+  },
+  {
+    "name": "MD.Ch07.gibbsComposition",
+    "kind": "theorem",
+    "source_id": "MD-7.6-GibbsComposition",
+    "status": "已证",
+    "axioms": [
+      "propext"
+    ],
+    "reason": null,
+    "direct_placeholder": false,
+    "unchanged_submitted_statement": true,
+    "website_verdict": "PASS（送审签名未变）",
+    "website_signature_pass": true
+  },
+  {
+    "name": "MD.Ch07.lieField",
+    "kind": "def",
+    "source_id": "MD-7.6-DivergenceFreeInvariant",
+    "status": "定义",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "reason": null,
+    "direct_placeholder": false,
+    "unchanged_submitted_statement": true,
+    "website_verdict": "PASS（送审签名未变）",
+    "website_signature_pass": true
+  },
+  {
+    "name": "MD.Ch07.divergenceField",
+    "kind": "def",
+    "source_id": "MD-7.6-DivergenceFreeInvariant",
+    "status": "定义",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "reason": null,
+    "direct_placeholder": false,
+    "unchanged_submitted_statement": true,
+    "website_verdict": "PASS（送审签名未变）",
+    "website_signature_pass": true
+  },
+  {
+    "name": "MD.Ch07.forwardField",
+    "kind": "def",
+    "source_id": "MD-7.6-DivergenceFreeInvariant",
+    "status": "定义",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "reason": null,
+    "direct_placeholder": false,
+    "unchanged_submitted_statement": true,
+    "website_verdict": "PASS（送审签名未变）",
+    "website_signature_pass": true
+  },
+  {
+    "name": "MD.Ch07.divergenceFreeInvariant",
+    "kind": "theorem",
+    "source_id": "MD-7.6-DivergenceFreeInvariant",
+    "status": "未证",
+    "axioms": [
+      "propext",
+      "sorryAx",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "reason": "缺大型理论",
+    "direct_placeholder": true,
+    "unchanged_submitted_statement": true,
+    "website_verdict": "PASS（送审签名未变）",
+    "website_signature_pass": true
+  },
+  {
+    "name": "MD.Ch07.firstIntegral_density",
+    "kind": "theorem",
+    "source_id": "MD-7.6-DivergenceFreeInvariant",
+    "status": "已证",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "reason": null,
+    "direct_placeholder": false,
+    "unchanged_submitted_statement": true,
+    "website_verdict": "PASS（送审签名未变）",
+    "website_signature_pass": true
+  },
+  {
+    "name": "MD.Ch07.onlyEnergyIntegrals",
+    "kind": "def",
+    "source_id": "MD-7.6-GeMarsdenRestriction",
+    "status": "定义",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "reason": null,
+    "direct_placeholder": false,
+    "unchanged_submitted_statement": true,
+    "website_verdict": "见原始报告的分版本意见；不推定完整定理PASS",
+    "website_signature_pass": false
+  },
+  {
+    "name": "MD.Ch07.timeReparametrizes",
+    "kind": "def",
+    "source_id": "MD-7.6-GeMarsdenRestriction",
+    "status": "定义",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "reason": null,
+    "direct_placeholder": false,
+    "unchanged_submitted_statement": true,
+    "website_verdict": "见原始报告的分版本意见；不推定完整定理PASS",
+    "website_signature_pass": false
+  },
+  {
+    "name": "MD.Ch07.geMarsdenConclusion",
+    "kind": "def",
+    "source_id": "MD-7.6-GeMarsdenRestriction",
+    "status": "定义",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "reason": null,
+    "direct_placeholder": false,
+    "unchanged_submitted_statement": true,
+    "website_verdict": "见原始报告的分版本意见；不推定完整定理PASS",
+    "website_signature_pass": false
+  },
+  {
+    "name": "MD.Ch07.jField",
+    "kind": "def",
+    "source_id": "MD-7.6-JSplitting",
+    "status": "定义",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "reason": null,
+    "direct_placeholder": false,
+    "unchanged_submitted_statement": true,
+    "website_verdict": "PASS（送审签名未变）",
+    "website_signature_pass": true
+  },
+  {
+    "name": "MD.Ch07.jSplitting_energy",
+    "kind": "theorem",
+    "source_id": "MD-7.6-JSplitting",
+    "status": "未证",
+    "axioms": [
+      "propext",
+      "sorryAx",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "reason": "缺大型理论",
+    "direct_placeholder": true,
+    "unchanged_submitted_statement": true,
+    "website_verdict": "PASS（送审签名未变）",
+    "website_signature_pass": true
+  },
+  {
+    "name": "MD.Ch07.composition_preservesEnergy",
+    "kind": "theorem",
+    "source_id": "MD-7.6-JSplitting",
+    "status": "已证",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "reason": null,
+    "direct_placeholder": false,
+    "unchanged_submitted_statement": true,
+    "website_verdict": "PASS（送审签名未变）",
+    "website_signature_pass": true
+  },
+  {
+    "name": "MD.Ch07.jField_finiteDecomposition",
+    "kind": "theorem",
+    "source_id": "MD-7.6-JSplitting",
+    "status": "未证",
+    "axioms": [
+      "propext",
+      "sorryAx",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "reason": "时间盒止",
+    "direct_placeholder": true,
+    "unchanged_submitted_statement": true,
+    "website_verdict": "PASS（送审签名未变）",
+    "website_signature_pass": true
+  },
+  {
+    "name": "MD.Ch07.coordinateJField",
+    "kind": "def",
+    "source_id": "MD-7.6-CoordinateJSplitting",
+    "status": "定义",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "reason": null,
+    "direct_placeholder": false,
+    "unchanged_submitted_statement": true,
+    "website_verdict": "PASS（送审签名未变）",
+    "website_signature_pass": true
+  },
+  {
+    "name": "MD.Ch07.frozenPotential",
+    "kind": "def",
+    "source_id": "MD-7.6-CoordinateJSplitting",
+    "status": "定义",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "reason": null,
+    "direct_placeholder": false,
+    "unchanged_submitted_statement": true,
+    "website_verdict": "PASS（送审签名未变）",
+    "website_signature_pass": true
+  },
+  {
+    "name": "MD.Ch07.coordinateJQualification",
+    "kind": "def",
+    "source_id": "MD-7.6-CoordinateJSplitting",
+    "status": "定义",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "reason": null,
+    "direct_placeholder": false,
+    "unchanged_submitted_statement": true,
+    "website_verdict": "PASS（送审签名未变）",
+    "website_signature_pass": true
+  },
+  {
+    "name": "MD.Ch07.frozenPotential_deriv",
+    "kind": "theorem",
+    "source_id": "MD-7.6-CoordinateJSplitting",
+    "status": "已证",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "reason": null,
+    "direct_placeholder": false,
+    "unchanged_submitted_statement": true,
+    "website_verdict": "PASS（送审签名未变）",
+    "website_signature_pass": true
+  },
+  {
+    "name": "MD.Ch07.formalModifiedGenerator",
+    "kind": "def",
+    "source_id": "MD-7.7-ModifiedGenerator",
+    "status": "定义",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "reason": null,
+    "direct_placeholder": false,
+    "unchanged_submitted_statement": true,
+    "website_verdict": "PASS（送审签名未变）",
+    "website_signature_pass": true
+  },
+  {
+    "name": "MD.Ch07.formalGeneratorExpansion",
+    "kind": "def",
+    "source_id": "MD-7.7-ModifiedGenerator",
+    "status": "定义",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "reason": null,
+    "direct_placeholder": false,
+    "unchanged_submitted_statement": true,
+    "website_verdict": "PASS（送审签名未变）",
+    "website_signature_pass": true
+  },
+  {
+    "name": "MD.Ch07.densityExpansion",
+    "kind": "def",
+    "source_id": "MD-7.7-InvariantDensityExpansion",
+    "status": "定义",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "reason": null,
+    "direct_placeholder": false,
+    "unchanged_submitted_statement": true,
+    "website_verdict": "PASS（送审签名未变）",
+    "website_signature_pass": true
+  },
+  {
+    "name": "MD.Ch07.centeredCorrections",
+    "kind": "def",
+    "source_id": "MD-7.7-InvariantDensityExpansion",
+    "status": "定义",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "reason": null,
+    "direct_placeholder": false,
+    "unchanged_submitted_statement": true,
+    "website_verdict": "PASS（送审签名未变）",
+    "website_signature_pass": true
+  },
+  {
+    "name": "MD.Ch07.computedAverage",
+    "kind": "def",
+    "source_id": "MD-7.7-InvariantDensityExpansion",
+    "status": "定义",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "reason": null,
+    "direct_placeholder": false,
+    "unchanged_submitted_statement": true,
+    "website_verdict": "PASS（送审签名未变）",
+    "website_signature_pass": true
+  },
+  {
+    "name": "MD.Ch07.densityExpansion_zeroMass",
+    "kind": "theorem",
+    "source_id": "MD-7.7-InvariantDensityExpansion",
+    "status": "已证",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "reason": null,
+    "direct_placeholder": false,
+    "unchanged_submitted_statement": true,
+    "website_verdict": "PASS（送审签名未变）",
+    "website_signature_pass": true
+  },
+  {
+    "name": "MD.Ch07.propagateA",
+    "kind": "def",
+    "source_id": "MD-7.7.1-ExactABOPropagators",
+    "status": "定义",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "reason": null,
+    "direct_placeholder": false,
+    "unchanged_submitted_statement": true,
+    "website_verdict": "PASS（送审签名未变）",
+    "website_signature_pass": true
+  },
+  {
+    "name": "MD.Ch07.propagateB",
+    "kind": "def",
+    "source_id": "MD-7.7.1-ExactABOPropagators",
+    "status": "定义",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "reason": null,
+    "direct_placeholder": false,
+    "unchanged_submitted_statement": true,
+    "website_verdict": "PASS（送审签名未变）",
+    "website_signature_pass": true
+  },
+  {
+    "name": "MD.Ch07.propagateO",
+    "kind": "def",
+    "source_id": "MD-7.7.1-ExactABOPropagators",
+    "status": "定义",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "reason": null,
+    "direct_placeholder": false,
+    "unchanged_submitted_statement": true,
+    "website_verdict": "PASS（送审签名未变）",
+    "website_signature_pass": true
+  },
+  {
+    "name": "MD.Ch07.pullback_order",
+    "kind": "theorem",
+    "source_id": "MD-7.7.1-OperatorOrderReversal",
+    "status": "已证",
+    "axioms": [],
+    "reason": null,
+    "direct_placeholder": false,
+    "unchanged_submitted_statement": true,
+    "website_verdict": "PASS（送审签名未变）",
+    "website_signature_pass": true
+  },
+  {
+    "name": "MD.Ch07.abaoBackward",
+    "kind": "def",
+    "source_id": "MD-7.7.1-OperatorOrderReversal",
+    "status": "定义",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "reason": null,
+    "direct_placeholder": false,
+    "unchanged_submitted_statement": true,
+    "website_verdict": "PASS（送审签名未变）",
+    "website_signature_pass": true
+  },
+  {
+    "name": "MD.Ch07.fourStage_duality",
+    "kind": "theorem",
+    "source_id": "MD-7.7.1-OperatorOrderReversal",
+    "status": "已证",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "reason": null,
+    "direct_placeholder": false,
+    "unchanged_submitted_statement": true,
+    "website_verdict": "PASS（送审签名未变）",
+    "website_signature_pass": true
+  },
+  {
+    "name": "MD.Ch07.formalDensityEvolution",
+    "kind": "def",
+    "source_id": "MD-7.7.1-StationaryModifiedPDE",
+    "status": "定义",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "reason": null,
+    "direct_placeholder": false,
+    "unchanged_submitted_statement": true,
+    "website_verdict": "见原始报告的分版本意见；不推定完整定理PASS",
+    "website_signature_pass": false
+  },
+  {
+    "name": "MD.Ch07.stationaryModifiedDensity",
+    "kind": "def",
+    "source_id": "MD-7.7.1-StationaryModifiedPDE",
+    "status": "定义",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "reason": null,
+    "direct_placeholder": false,
+    "unchanged_submitted_statement": true,
+    "website_verdict": "见原始报告的分版本意见；不推定完整定理PASS",
+    "website_signature_pass": false
+  },
+  {
+    "name": "MD.Ch07.comm",
+    "kind": "def",
+    "source_id": "MD-7.7.1-TwoOperatorBCH",
+    "status": "定义",
+    "axioms": [],
+    "reason": null,
+    "direct_placeholder": false,
+    "unchanged_submitted_statement": true,
+    "website_verdict": "PASS（送审签名未变）",
+    "website_signature_pass": true
+  },
+  {
+    "name": "MD.Ch07.twoStage",
+    "kind": "def",
+    "source_id": "MD-7.7.1-TwoOperatorBCH",
+    "status": "定义",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "reason": null,
+    "direct_placeholder": false,
+    "unchanged_submitted_statement": true,
+    "website_verdict": "PASS（送审签名未变）",
+    "website_signature_pass": true
+  },
+  {
+    "name": "MD.Ch07.twoOperatorBCH",
+    "kind": "theorem",
+    "source_id": "MD-7.7.1-TwoOperatorBCH",
+    "status": "未证",
+    "axioms": [
+      "propext",
+      "sorryAx",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "reason": "缺大型理论",
+    "direct_placeholder": true,
+    "unchanged_submitted_statement": true,
+    "website_verdict": "PASS（送审签名未变）",
+    "website_signature_pass": true
+  },
+  {
+    "name": "MD.Ch07.taylorRemainder",
+    "kind": "theorem",
+    "source_id": "MD-7.7.1-TaylorRemainder",
+    "status": "未证",
+    "axioms": [
+      "propext",
+      "sorryAx",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "reason": "缺大型理论",
+    "direct_placeholder": true,
+    "unchanged_submitted_statement": true,
+    "website_verdict": "PASS（送审签名未变）",
+    "website_signature_pass": true
+  },
+  {
+    "name": "MD.Ch07.taylorRemainder_bound",
+    "kind": "theorem",
+    "source_id": "MD-7.7.1-TaylorRemainder",
+    "status": "未证",
+    "axioms": [
+      "propext",
+      "sorryAx",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "reason": "缺大型理论",
+    "direct_placeholder": true,
+    "unchanged_submitted_statement": true,
+    "website_verdict": "PASS（送审签名未变）",
+    "website_signature_pass": true
+  },
+  {
+    "name": "MD.Ch07.propagatedObservable_remainder",
+    "kind": "theorem",
+    "source_id": "MD-7.7.1-TaylorRemainder",
+    "status": "未证",
+    "axioms": [
+      "propext",
+      "sorryAx",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "reason": "缺大型理论",
+    "direct_placeholder": false,
+    "unchanged_submitted_statement": true,
+    "website_verdict": "PASS（送审签名未变）",
+    "website_signature_pass": true
+  },
+  {
+    "name": "MD.Ch07.threeStage",
+    "kind": "def",
+    "source_id": "MD-7.7.2-ThreeOperatorBCH",
+    "status": "定义",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "reason": null,
+    "direct_placeholder": false,
+    "unchanged_submitted_statement": true,
+    "website_verdict": "PASS（送审签名未变）",
+    "website_signature_pass": true
+  },
+  {
+    "name": "MD.Ch07.threeOperatorBCH",
+    "kind": "theorem",
+    "source_id": "MD-7.7.2-ThreeOperatorBCH",
+    "status": "未证",
+    "axioms": [
+      "propext",
+      "sorryAx",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "reason": "缺大型理论",
+    "direct_placeholder": true,
+    "unchanged_submitted_statement": true,
+    "website_verdict": "PASS（送审签名未变）",
+    "website_signature_pass": true
+  },
+  {
+    "name": "MD.Ch07.Density1",
+    "kind": "abbrev",
+    "source_id": "MD-7.7.2-ScalarForwardOperators",
+    "status": "定义",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "reason": null,
+    "direct_placeholder": false,
+    "unchanged_submitted_statement": true,
+    "website_verdict": "PASS（送审签名未变）",
+    "website_signature_pass": true
+  },
+  {
+    "name": "MD.Ch07.dq",
+    "kind": "def",
+    "source_id": "MD-7.7.2-ScalarForwardOperators",
+    "status": "定义",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "reason": null,
+    "direct_placeholder": false,
+    "unchanged_submitted_statement": true,
+    "website_verdict": "PASS（送审签名未变）",
+    "website_signature_pass": true
+  },
+  {
+    "name": "MD.Ch07.dp",
+    "kind": "def",
+    "source_id": "MD-7.7.2-ScalarForwardOperators",
+    "status": "定义",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "reason": null,
+    "direct_placeholder": false,
+    "unchanged_submitted_statement": true,
+    "website_verdict": "PASS（送审签名未变）",
+    "website_signature_pass": true
+  },
+  {
+    "name": "MD.Ch07.opA",
+    "kind": "def",
+    "source_id": "MD-7.7.2-ScalarForwardOperators",
+    "status": "定义",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "reason": null,
+    "direct_placeholder": false,
+    "unchanged_submitted_statement": true,
+    "website_verdict": "PASS（送审签名未变）",
+    "website_signature_pass": true
+  },
+  {
+    "name": "MD.Ch07.opB",
+    "kind": "def",
+    "source_id": "MD-7.7.2-ScalarForwardOperators",
+    "status": "定义",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "reason": null,
+    "direct_placeholder": false,
+    "unchanged_submitted_statement": true,
+    "website_verdict": "PASS（送审签名未变）",
+    "website_signature_pass": true
+  },
+  {
+    "name": "MD.Ch07.opO",
+    "kind": "def",
+    "source_id": "MD-7.7.2-ScalarForwardOperators",
+    "status": "定义",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "reason": null,
+    "direct_placeholder": false,
+    "unchanged_submitted_statement": true,
+    "website_verdict": "PASS（送审签名未变）",
+    "website_signature_pass": true
+  },
+  {
+    "name": "MD.Ch07.opLD",
+    "kind": "def",
+    "source_id": "MD-7.7.2-ScalarForwardOperators",
+    "status": "定义",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "reason": null,
+    "direct_placeholder": false,
+    "unchanged_submitted_statement": true,
+    "website_verdict": "PASS（送审签名未变）",
+    "website_signature_pass": true
+  },
+  {
+    "name": "MD.Ch07.opComm",
+    "kind": "def",
+    "source_id": "MD-7.7.2-ScalarForwardOperators",
+    "status": "定义",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "reason": null,
+    "direct_placeholder": false,
+    "unchanged_submitted_statement": true,
+    "website_verdict": "PASS（送审签名未变）",
+    "website_signature_pass": true
+  },
+  {
+    "name": "MD.Ch07.commutatorAB",
+    "kind": "theorem",
+    "source_id": "MD-7.7.2-CommutatorAB",
+    "status": "未证",
+    "axioms": [
+      "propext",
+      "sorryAx",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "reason": "缺大型理论",
+    "direct_placeholder": true,
+    "unchanged_submitted_statement": true,
+    "website_verdict": "PASS（送审签名未变）",
+    "website_signature_pass": true
+  },
+  {
+    "name": "MD.Ch07.commutatorsAOBO",
+    "kind": "theorem",
+    "source_id": "MD-7.7.2-CommutatorsAOBO",
+    "status": "未证",
+    "axioms": [
+      "propext",
+      "sorryAx",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "reason": "缺大型理论",
+    "direct_placeholder": true,
+    "unchanged_submitted_statement": true,
+    "website_verdict": "PASS（送审签名未变）",
+    "website_signature_pass": true
+  },
+  {
+    "name": "MD.Ch07.obaFirstCorrection",
+    "kind": "def",
+    "source_id": "MD-7.7.2-OBAModifiedOperator",
+    "status": "定义",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "reason": null,
+    "direct_placeholder": false,
+    "unchanged_submitted_statement": true,
+    "website_verdict": "PASS（送审签名未变）",
+    "website_signature_pass": true
+  },
+  {
+    "name": "MD.Ch07.obaFirstCorrection_commutators",
+    "kind": "theorem",
+    "source_id": "MD-7.7.2-OBAModifiedOperator",
+    "status": "未证",
+    "axioms": [
+      "propext",
+      "sorryAx",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "reason": "缺大型理论",
+    "direct_placeholder": false,
+    "unchanged_submitted_statement": true,
+    "website_verdict": "PASS（送审签名未变）",
+    "website_signature_pass": true
+  },
+  {
+    "name": "MD.Ch07.simpleEigenvalue",
+    "kind": "def",
+    "source_id": "MD-7.7.2-SpectralQualification",
+    "status": "定义",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "reason": null,
+    "direct_placeholder": false,
+    "unchanged_submitted_statement": true,
+    "website_verdict": "见原始报告的分版本意见；不推定完整定理PASS",
+    "website_signature_pass": false
+  },
+  {
+    "name": "MD.Ch07.printedSpectralConclusion",
+    "kind": "def",
+    "source_id": "MD-7.7.2-SpectralQualification",
+    "status": "定义",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "reason": null,
+    "direct_placeholder": false,
+    "unchanged_submitted_statement": true,
+    "website_verdict": "见原始报告的分版本意见；不推定完整定理PASS",
+    "website_signature_pass": false
+  },
+  {
+    "name": "MD.Ch07.spectralConclusionPrinted",
+    "kind": "def",
+    "source_id": "MD-7.7.2-SpectralQualification",
+    "status": "定义",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "reason": null,
+    "direct_placeholder": false,
+    "unchanged_submitted_statement": true,
+    "website_verdict": "见原始报告的分版本意见；不推定完整定理PASS",
+    "website_signature_pass": false
+  },
+  {
+    "name": "MD.Ch07.spectralConclusionPrinted_corrected",
+    "kind": "def",
+    "source_id": "MD-7.7.2-SpectralQualification",
+    "status": "定义",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "reason": null,
+    "direct_placeholder": false,
+    "unchanged_submitted_statement": true,
+    "website_verdict": "见原始报告的分版本意见；不推定完整定理PASS",
+    "website_signature_pass": false
+  },
+  {
+    "name": "MD.Ch07.actionCoefficient",
+    "kind": "def",
+    "source_id": "MD-7.7.3-PerturbationCoefficientEquation",
+    "status": "定义",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "reason": null,
+    "direct_placeholder": false,
+    "unchanged_submitted_statement": true,
+    "website_verdict": "PASS（送审签名未变）",
+    "website_signature_pass": true
+  },
+  {
+    "name": "MD.Ch07.perturbationCoefficientEquation",
+    "kind": "theorem",
+    "source_id": "MD-7.7.3-PerturbationCoefficientEquation",
+    "status": "已证",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "reason": null,
+    "direct_placeholder": false,
+    "unchanged_submitted_statement": true,
+    "website_verdict": "PASS（送审签名未变）",
+    "website_signature_pass": true
+  },
+  {
+    "name": "MD.Ch07.observableCorrectionExpansion",
+    "kind": "theorem",
+    "source_id": "MD-7.7.3-ObservableCorrectionExpansion",
+    "status": "已证",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "reason": null,
+    "direct_placeholder": false,
+    "unchanged_submitted_statement": true,
+    "website_verdict": "PASS（送审签名未变）",
+    "website_signature_pass": true
+  },
+  {
+    "name": "MD.Ch07.correctionSolvable",
+    "kind": "def",
+    "source_id": "MD-7.7.3-PerturbativeSolvabilityCaution",
+    "status": "定义",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "reason": null,
+    "direct_placeholder": false,
+    "unchanged_submitted_statement": true,
+    "website_verdict": "见原始报告的分版本意见；不推定完整定理PASS",
+    "website_signature_pass": false
+  },
+  {
+    "name": "MD.Ch07.firstOrderOperator",
+    "kind": "def",
+    "source_id": "MD-7.8-FirstOrderOperator",
+    "status": "定义",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "reason": null,
+    "direct_placeholder": false,
+    "unchanged_submitted_statement": true,
+    "website_verdict": "PASS（送审签名未变）",
+    "website_signature_pass": true
+  },
+  {
+    "name": "MD.Ch07.firstOrderOperator_coefficient",
+    "kind": "theorem",
+    "source_id": "MD-7.8-FirstOrderOperator",
+    "status": "未证",
+    "axioms": [
+      "propext",
+      "sorryAx",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "reason": "缺大型理论",
+    "direct_placeholder": true,
+    "unchanged_submitted_statement": true,
+    "website_verdict": "PASS（送审签名未变）",
+    "website_signature_pass": true
+  },
+  {
+    "name": "MD.Ch07.correctionEquation",
+    "kind": "def",
+    "source_id": "MD-7.8-FirstOrderOperator",
+    "status": "定义",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "reason": null,
+    "direct_placeholder": false,
+    "unchanged_submitted_statement": true,
+    "website_verdict": "PASS（送审签名未变）",
+    "website_signature_pass": true
+  },
+  {
+    "name": "MD.Ch07.homogeneousNormalization",
+    "kind": "theorem",
+    "source_id": "MD-7.8-HomogeneousNormalization",
+    "status": "已证",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "reason": null,
+    "direct_placeholder": false,
+    "unchanged_submitted_statement": true,
+    "website_verdict": "PASS（送审签名未变）",
+    "website_signature_pass": true
+  },
+  {
+    "name": "MD.Ch07.centeredParticular",
+    "kind": "theorem",
+    "source_id": "MD-7.8-HomogeneousNormalization",
+    "status": "已证",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "reason": null,
+    "direct_placeholder": false,
+    "unchanged_submitted_statement": true,
+    "website_verdict": "PASS（送审签名未变）",
+    "website_signature_pass": true
+  },
+  {
+    "name": "MD.Ch07.commutatorPermutationRelations",
+    "kind": "theorem",
+    "source_id": "MD-7.8.1-CommutatorPermutationRelations",
+    "status": "未证",
+    "axioms": [
+      "propext",
+      "sorryAx",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "reason": "缺大型理论",
+    "direct_placeholder": true,
+    "unchanged_submitted_statement": true,
+    "website_verdict": "PASS（送审签名未变）",
+    "website_signature_pass": true
+  },
+  {
+    "name": "MD.Ch07.mechanicalHamiltonian",
+    "kind": "def",
+    "source_id": "MD-7.8.1-GibbsDerivativeIdentities",
+    "status": "定义",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "reason": null,
+    "direct_placeholder": false,
+    "unchanged_submitted_statement": true,
+    "website_verdict": "PASS（送审签名未变）",
+    "website_signature_pass": true
+  },
+  {
+    "name": "MD.Ch07.gibbsWeight",
+    "kind": "def",
+    "source_id": "MD-7.8.1-GibbsDerivativeIdentities",
+    "status": "定义",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "reason": null,
+    "direct_placeholder": false,
+    "unchanged_submitted_statement": true,
+    "website_verdict": "PASS（送审签名未变）",
+    "website_signature_pass": true
+  },
+  {
+    "name": "MD.Ch07.gFunction",
+    "kind": "def",
+    "source_id": "MD-7.8.1-GibbsDerivativeIdentities",
+    "status": "定义",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "reason": null,
+    "direct_placeholder": false,
+    "unchanged_submitted_statement": true,
+    "website_verdict": "PASS（送审签名未变）",
+    "website_signature_pass": true
+  },
+  {
+    "name": "MD.Ch07.phaseO",
+    "kind": "def",
+    "source_id": "MD-7.8.1-GibbsDerivativeIdentities",
+    "status": "定义",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "reason": null,
+    "direct_placeholder": false,
+    "unchanged_submitted_statement": true,
+    "website_verdict": "PASS（送审签名未变）",
+    "website_signature_pass": true
+  },
+  {
+    "name": "MD.Ch07.phaseLD",
+    "kind": "def",
+    "source_id": "MD-7.8.1-GibbsDerivativeIdentities",
+    "status": "定义",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "reason": null,
+    "direct_placeholder": false,
+    "unchanged_submitted_statement": true,
+    "website_verdict": "PASS（送审签名未变）",
+    "website_signature_pass": true
+  },
+  {
+    "name": "MD.Ch07.gibbsDerivativeIdentities",
+    "kind": "theorem",
+    "source_id": "MD-7.8.1-GibbsDerivativeIdentities",
+    "status": "未证",
+    "axioms": [
+      "propext",
+      "sorryAx",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "reason": "缺大型理论",
+    "direct_placeholder": true,
+    "unchanged_submitted_statement": true,
+    "website_verdict": "PASS（送审签名未变）",
+    "website_signature_pass": true
+  },
+  {
+    "name": "MD.Ch07.firstCorrectionTablePrinted",
+    "kind": "def",
+    "source_id": "MD-7.8.1-FirstCorrectionTablePrinted",
+    "status": "定义",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "reason": null,
+    "direct_placeholder": false,
+    "unchanged_submitted_statement": true,
+    "website_verdict": "PASS（送审签名未变）",
+    "website_signature_pass": true
+  },
+  {
+    "name": "MD.Ch07.firstCorrectionTablePrinted_corrected",
+    "kind": "def",
+    "source_id": "MD-7.8.1-FirstCorrectionTablePrinted",
+    "status": "定义",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "reason": null,
+    "direct_placeholder": false,
+    "unchanged_submitted_statement": true,
+    "website_verdict": "PASS（送审签名未变）",
+    "website_signature_pass": true
+  },
+  {
+    "name": "MD.Ch07.firstCorrection_sign_counterexample",
+    "kind": "theorem",
+    "source_id": "MD-7.8.1-FirstCorrectionTablePrinted",
+    "status": "已证",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "reason": null,
+    "direct_placeholder": false,
+    "unchanged_submitted_statement": true,
+    "website_verdict": "PASS（送审签名未变）",
+    "website_signature_pass": true
+  },
+  {
+    "name": "MD.Ch07.phaseComm",
+    "kind": "def",
+    "source_id": "MD-7.8.1-FirstCorrectionTablePrinted",
+    "status": "定义",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "reason": null,
+    "direct_placeholder": false,
+    "unchanged_submitted_statement": true,
+    "website_verdict": "PASS（送审签名未变）",
+    "website_signature_pass": true
+  },
+  {
+    "name": "MD.Ch07.firstCorrectionRHS",
+    "kind": "def",
+    "source_id": "MD-7.8.1-FirstCorrectionTablePrinted",
+    "status": "定义",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "reason": null,
+    "direct_placeholder": false,
+    "unchanged_submitted_statement": true,
+    "website_verdict": "PASS（送审签名未变）",
+    "website_signature_pass": true
+  },
+  {
+    "name": "MD.Ch07.firstCorrectionTable_pde",
+    "kind": "theorem",
+    "source_id": "MD-7.8.1-FirstCorrectionTablePrinted",
+    "status": "未证",
+    "axioms": [
+      "propext",
+      "sorryAx",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "reason": "缺大型理论",
+    "direct_placeholder": true,
+    "unchanged_submitted_statement": true,
+    "website_verdict": "PASS（送审签名未变）",
+    "website_signature_pass": true
+  },
+  {
+    "name": "MD.Ch07.positionGibbs",
+    "kind": "def",
+    "source_id": "MD-7.8.1-PositionMomentumCorrections",
+    "status": "定义",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "reason": null,
+    "direct_placeholder": false,
+    "unchanged_submitted_statement": true,
+    "website_verdict": "PASS（送审签名未变）",
+    "website_signature_pass": true
+  },
+  {
+    "name": "MD.Ch07.momentumGibbs",
+    "kind": "def",
+    "source_id": "MD-7.8.1-PositionMomentumCorrections",
+    "status": "定义",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "reason": null,
+    "direct_placeholder": false,
+    "unchanged_submitted_statement": true,
+    "website_verdict": "PASS（送审签名未变）",
+    "website_signature_pass": true
+  },
+  {
+    "name": "MD.Ch07.productGibbs",
+    "kind": "def",
+    "source_id": "MD-7.8.1-PositionMomentumCorrections",
+    "status": "定义",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "reason": null,
+    "direct_placeholder": false,
+    "unchanged_submitted_statement": true,
+    "website_verdict": "PASS（送审签名未变）",
+    "website_signature_pass": true
+  },
+  {
+    "name": "MD.Ch07.positionMomentumCorrections",
+    "kind": "theorem",
+    "source_id": "MD-7.8.1-PositionMomentumCorrections",
+    "status": "未证",
+    "axioms": [
+      "propext",
+      "sorryAx",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "reason": "缺大型理论",
+    "direct_placeholder": true,
+    "unchanged_submitted_statement": true,
+    "website_verdict": "PASS（送审签名未变）",
+    "website_signature_pass": true
+  },
+  {
+    "name": "MD.Ch07.aoab",
+    "kind": "def",
+    "source_id": "MD-7.8.1-OverdampedFirstOrderCaution",
+    "status": "定义",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "reason": null,
+    "direct_placeholder": false,
+    "unchanged_submitted_statement": true,
+    "website_verdict": "PASS（送审签名未变）",
+    "website_signature_pass": true
+  },
+  {
+    "name": "MD.Ch07.aoabInfiniteFriction",
+    "kind": "def",
+    "source_id": "MD-7.8.1-OverdampedFirstOrderCaution",
+    "status": "定义",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "reason": null,
+    "direct_placeholder": false,
+    "unchanged_submitted_statement": true,
+    "website_verdict": "PASS（送审签名未变）",
+    "website_signature_pass": true
+  },
+  {
+    "name": "MD.Ch07.aoabFrictionLimit",
+    "kind": "theorem",
+    "source_id": "MD-7.8.1-OverdampedFirstOrderCaution",
+    "status": "未证",
+    "axioms": [
+      "propext",
+      "sorryAx",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "reason": "缺大型理论",
+    "direct_placeholder": true,
+    "unchanged_submitted_statement": true,
+    "website_verdict": "PASS（送审签名未变）",
+    "website_signature_pass": true
+  },
+  {
+    "name": "MD.Ch07.biasedDoubleWell",
+    "kind": "def",
+    "source_id": "MD-7.8.2-BiasedDoubleWellExact",
+    "status": "定义",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "reason": null,
+    "direct_placeholder": false,
+    "unchanged_submitted_statement": true,
+    "website_verdict": "PASS（送审签名未变）",
+    "website_signature_pass": true
+  },
+  {
+    "name": "MD.Ch07.doubleWellObservable",
+    "kind": "def",
+    "source_id": "MD-7.8.2-BiasedDoubleWellExact",
+    "status": "定义",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "reason": null,
+    "direct_placeholder": false,
+    "unchanged_submitted_statement": true,
+    "website_verdict": "PASS（送审签名未变）",
+    "website_signature_pass": true
+  },
+  {
+    "name": "MD.Ch07.doubleWellGibbs",
+    "kind": "def",
+    "source_id": "MD-7.8.2-BiasedDoubleWellExact",
+    "status": "定义",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "reason": null,
+    "direct_placeholder": false,
+    "unchanged_submitted_statement": true,
+    "website_verdict": "PASS（送审签名未变）",
+    "website_signature_pass": true
+  },
+  {
+    "name": "MD.Ch07.doubleWellBOACorrection",
+    "kind": "def",
+    "source_id": "MD-7.8.2-BiasedDoubleWellExact",
+    "status": "定义",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "reason": null,
+    "direct_placeholder": false,
+    "unchanged_submitted_statement": true,
+    "website_verdict": "PASS（送审签名未变）",
+    "website_signature_pass": true
+  },
+  {
+    "name": "MD.Ch07.doubleWellExact",
+    "kind": "theorem",
+    "source_id": "MD-7.8.2-BiasedDoubleWellExact",
+    "status": "未证",
+    "axioms": [
+      "propext",
+      "sorryAx",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "reason": "缺大型理论",
+    "direct_placeholder": true,
+    "unchanged_submitted_statement": true,
+    "website_verdict": "PASS（送审签名未变）",
+    "website_signature_pass": true
+  },
+  {
+    "name": "MD.Ch07.doubleWellCritical",
+    "kind": "theorem",
+    "source_id": "MD-7.8.2-BiasedDoubleWellExact",
+    "status": "已证",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "reason": null,
+    "direct_placeholder": false,
+    "unchanged_submitted_statement": true,
+    "website_verdict": "PASS（送审签名未变）",
+    "website_signature_pass": true
+  },
+  {
+    "name": "MD.Ch07.doubleWellCritical_integral",
+    "kind": "theorem",
+    "source_id": "MD-7.8.2-BiasedDoubleWellExact",
+    "status": "未证",
+    "axioms": [
+      "propext",
+      "sorryAx",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "reason": "缺大型理论",
+    "direct_placeholder": false,
+    "unchanged_submitted_statement": true,
+    "website_verdict": "PASS（送审签名未变）",
+    "website_signature_pass": true
+  },
+  {
+    "name": "MD.Ch07.proposition71",
+    "kind": "theorem",
+    "source_id": "MD-7.9-Proposition71",
+    "status": "已证",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "reason": null,
+    "direct_placeholder": false,
+    "unchanged_submitted_statement": true,
+    "website_verdict": "PASS（送审签名未变）",
+    "website_signature_pass": true
+  },
+  {
+    "name": "MD.Ch07.symmetricOddCorrections",
+    "kind": "theorem",
+    "source_id": "MD-7.9-Proposition71",
+    "status": "已证",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "reason": null,
+    "direct_placeholder": false,
+    "unchanged_submitted_statement": true,
+    "website_verdict": "PASS（送审签名未变）",
+    "website_signature_pass": true
+  },
+  {
+    "name": "MD.Ch07.evenDensityExpansion",
+    "kind": "def",
+    "source_id": "MD-7.9-EvenDensityPerturbation",
+    "status": "定义",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "reason": null,
+    "direct_placeholder": false,
+    "unchanged_submitted_statement": true,
+    "website_verdict": "PASS（送审签名未变）",
+    "website_signature_pass": true
+  },
+  {
+    "name": "MD.Ch07.evenPerturbationEquation",
+    "kind": "theorem",
+    "source_id": "MD-7.9-EvenDensityPerturbation",
+    "status": "已证",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "reason": null,
+    "direct_placeholder": false,
+    "unchanged_submitted_statement": true,
+    "website_verdict": "PASS（送审签名未变）",
+    "website_signature_pass": true
+  },
+  {
+    "name": "MD.Ch07.oyzyoInhomogeneity",
+    "kind": "theorem",
+    "source_id": "MD-7.9.1-OYZYOInhomogeneity",
+    "status": "未证",
+    "axioms": [
+      "propext",
+      "sorryAx",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "reason": "缺大型理论",
+    "direct_placeholder": true,
+    "unchanged_submitted_statement": true,
+    "website_verdict": "PASS（送审签名未变）",
+    "website_signature_pass": true
+  },
+  {
+    "name": "MD.Ch07.hessianU",
+    "kind": "def",
+    "source_id": "MD-7.9.1-TripleCommutatorPrinted",
+    "status": "定义",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "reason": null,
+    "direct_placeholder": false,
+    "unchanged_submitted_statement": true,
+    "website_verdict": "见原始报告的分版本意见；不推定完整定理PASS",
+    "website_signature_pass": false
+  },
+  {
+    "name": "MD.Ch07.thirdU",
+    "kind": "def",
+    "source_id": "MD-7.9.1-TripleCommutatorPrinted",
+    "status": "定义",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "reason": null,
+    "direct_placeholder": false,
+    "unchanged_submitted_statement": true,
+    "website_verdict": "见原始报告的分版本意见；不推定完整定理PASS",
+    "website_signature_pass": false
+  },
+  {
+    "name": "MD.Ch07.hessianGrad",
+    "kind": "def",
+    "source_id": "MD-7.9.1-TripleCommutatorPrinted",
+    "status": "定义",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "reason": null,
+    "direct_placeholder": false,
+    "unchanged_submitted_statement": true,
+    "website_verdict": "见原始报告的分版本意见；不推定完整定理PASS",
+    "website_signature_pass": false
+  },
+  {
+    "name": "MD.Ch07.cubicThird",
+    "kind": "def",
+    "source_id": "MD-7.9.1-TripleCommutatorPrinted",
+    "status": "定义",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "reason": null,
+    "direct_placeholder": false,
+    "unchanged_submitted_statement": true,
+    "website_verdict": "见原始报告的分版本意见；不推定完整定理PASS",
+    "website_signature_pass": false
+  },
+  {
+    "name": "MD.Ch07.tripleCommutatorPrinted",
+    "kind": "def",
+    "source_id": "MD-7.9.1-TripleCommutatorPrinted",
+    "status": "定义",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "reason": null,
+    "direct_placeholder": false,
+    "unchanged_submitted_statement": true,
+    "website_verdict": "见原始报告的分版本意见；不推定完整定理PASS",
+    "website_signature_pass": false
+  },
+  {
+    "name": "MD.Ch07.tripleCommutatorPrinted_corrected",
+    "kind": "def",
+    "source_id": "MD-7.9.1-TripleCommutatorPrinted",
+    "status": "定义",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "reason": null,
+    "direct_placeholder": false,
+    "unchanged_submitted_statement": true,
+    "website_verdict": "见原始报告的分版本意见；不推定完整定理PASS",
+    "website_signature_pass": false
+  },
+  {
+    "name": "MD.Ch07.tripleCommutator_corrected",
+    "kind": "theorem",
+    "source_id": "MD-7.9.1-TripleCommutatorPrinted",
+    "status": "未证",
+    "axioms": [
+      "propext",
+      "sorryAx",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "reason": "缺大型理论",
+    "direct_placeholder": true,
+    "unchanged_submitted_statement": true,
+    "website_verdict": "见原始报告的分版本意见；不推定完整定理PASS",
+    "website_signature_pass": false
+  },
+  {
+    "name": "MD.Ch07.tripleCommutator_factor_counterexample",
+    "kind": "theorem",
+    "source_id": "MD-7.9.1-TripleCommutatorPrinted",
+    "status": "已证",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "reason": null,
+    "direct_placeholder": false,
+    "unchanged_submitted_statement": true,
+    "website_verdict": "见原始报告的分版本意见；不推定完整定理PASS",
+    "website_signature_pass": false
+  },
+  {
+    "name": "MD.Ch07.symmetricRHS",
+    "kind": "def",
+    "source_id": "MD-7.9.1-SymmetricRHS",
+    "status": "定义",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "reason": null,
+    "direct_placeholder": false,
+    "unchanged_submitted_statement": true,
+    "website_verdict": "PASS（送审签名未变）",
+    "website_signature_pass": true
+  },
+  {
+    "name": "MD.Ch07.symmetricRHS_odd",
+    "kind": "theorem",
+    "source_id": "MD-7.9.1-SymmetricRHS",
+    "status": "已证",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "reason": null,
+    "direct_placeholder": false,
+    "unchanged_submitted_statement": true,
+    "website_verdict": "PASS（送审签名未变）",
+    "website_signature_pass": true
+  },
+  {
+    "name": "MD.Ch07.symmetricRHS_zeroMean",
+    "kind": "theorem",
+    "source_id": "MD-7.9.1-SymmetricRHS",
+    "status": "未证",
+    "axioms": [
+      "propext",
+      "sorryAx",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "reason": "缺大型理论",
+    "direct_placeholder": true,
+    "unchanged_submitted_statement": true,
+    "website_verdict": "PASS（送审签名未变）",
+    "website_signature_pass": true
+  },
+  {
+    "name": "MD.Ch07.lemma71",
+    "kind": "theorem",
+    "source_id": "MD-7.9.1-Lemma71",
+    "status": "已证",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "reason": null,
+    "direct_placeholder": false,
+    "unchanged_submitted_statement": true,
+    "website_verdict": "PASS（送审签名未变）",
+    "website_signature_pass": true
+  },
+  {
+    "name": "MD.Ch07.gradNormSq",
+    "kind": "def",
+    "source_id": "MD-7.9.1-ConjugateSymmetricCorrections",
+    "status": "定义",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "reason": null,
+    "direct_placeholder": false,
+    "unchanged_submitted_statement": true,
+    "website_verdict": "见原始报告的分版本意见；不推定完整定理PASS",
+    "website_signature_pass": false
+  },
+  {
+    "name": "MD.Ch07.hessianQuadratic",
+    "kind": "def",
+    "source_id": "MD-7.9.1-ConjugateSymmetricCorrections",
+    "status": "定义",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "reason": null,
+    "direct_placeholder": false,
+    "unchanged_submitted_statement": true,
+    "website_verdict": "见原始报告的分版本意见；不推定完整定理PASS",
+    "website_signature_pass": false
+  },
+  {
+    "name": "MD.Ch07.conjugateCorrectionChange",
+    "kind": "def",
+    "source_id": "MD-7.9.1-ConjugateSymmetricCorrections",
+    "status": "定义",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "reason": null,
+    "direct_placeholder": false,
+    "unchanged_submitted_statement": true,
+    "website_verdict": "见原始报告的分版本意见；不推定完整定理PASS",
+    "website_signature_pass": false
+  },
+  {
+    "name": "MD.Ch07.conjugateCorrections",
+    "kind": "def",
+    "source_id": "MD-7.9.1-ConjugateSymmetricCorrections",
+    "status": "定义",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "reason": null,
+    "direct_placeholder": false,
+    "unchanged_submitted_statement": true,
+    "website_verdict": "见原始报告的分版本意见；不推定完整定理PASS",
+    "website_signature_pass": false
+  },
+  {
+    "name": "MD.Ch07.conjugateCorrection_coefficient",
+    "kind": "theorem",
+    "source_id": "MD-7.9.1-ConjugateSymmetricCorrections",
+    "status": "已证",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "reason": null,
+    "direct_placeholder": false,
+    "unchanged_submitted_statement": true,
+    "website_verdict": "见原始报告的分版本意见；不推定完整定理PASS",
+    "website_signature_pass": false
+  },
+  {
+    "name": "MD.Ch07.conjugateExpansionPrinted",
+    "kind": "def",
+    "source_id": "MD-7.9.1-ConjugateSymmetricCorrections",
+    "status": "定义",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "reason": null,
+    "direct_placeholder": false,
+    "unchanged_submitted_statement": true,
+    "website_verdict": "见原始报告的分版本意见；不推定完整定理PASS",
+    "website_signature_pass": false
+  },
+  {
+    "name": "MD.Ch07.conjugateExpansionPrinted_corrected",
+    "kind": "def",
+    "source_id": "MD-7.9.1-ConjugateSymmetricCorrections",
+    "status": "定义",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "reason": null,
+    "direct_placeholder": false,
+    "unchanged_submitted_statement": true,
+    "website_verdict": "见原始报告的分版本意见；不推定完整定理PASS",
+    "website_signature_pass": false
+  },
+  {
+    "name": "MD.Ch07.phaseH",
+    "kind": "def",
+    "source_id": "MD-7.9.2-ReciprocalFrictionExpansion",
+    "status": "定义",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "reason": null,
+    "direct_placeholder": false,
+    "unchanged_submitted_statement": true,
+    "website_verdict": "PASS（送审签名未变）",
+    "website_signature_pass": true
+  },
+  {
+    "name": "MD.Ch07.reciprocalHierarchy",
+    "kind": "def",
+    "source_id": "MD-7.9.2-ReciprocalFrictionExpansion",
+    "status": "定义",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "reason": null,
+    "direct_placeholder": false,
+    "unchanged_submitted_statement": true,
+    "website_verdict": "PASS（送审签名未变）",
+    "website_signature_pass": true
+  },
+  {
+    "name": "MD.Ch07.ouKernelPrinted",
+    "kind": "def",
+    "source_id": "MD-7.9.2-OUKernelQualification",
+    "status": "定义",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "reason": null,
+    "direct_placeholder": false,
+    "unchanged_submitted_statement": true,
+    "website_verdict": "见原始报告的分版本意见；不推定完整定理PASS",
+    "website_signature_pass": false
+  },
+  {
+    "name": "MD.Ch07.ouKernelPrinted_corrected",
+    "kind": "theorem",
+    "source_id": "MD-7.9.2-OUKernelQualification",
+    "status": "未证",
+    "axioms": [
+      "propext",
+      "sorryAx",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "reason": "缺大型理论",
+    "direct_placeholder": true,
+    "unchanged_submitted_statement": true,
+    "website_verdict": "PASS（送审签名未变）",
+    "website_signature_pass": true
+  },
+  {
+    "name": "MD.Ch07.ouKernelCentered_corrected",
+    "kind": "theorem",
+    "source_id": "MD-7.9.2-OUKernelQualification",
+    "status": "未证",
+    "axioms": [
+      "propext",
+      "sorryAx",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "reason": "缺大型理论",
+    "direct_placeholder": true,
+    "unchanged_submitted_statement": true,
+    "website_verdict": "PASS（送审签名未变）",
+    "website_signature_pass": true
+  },
+  {
+    "name": "MD.Ch07.laplacian",
+    "kind": "def",
+    "source_id": "MD-7.9.2-OUHermiteIdentities",
+    "status": "定义",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "reason": null,
+    "direct_placeholder": false,
+    "unchanged_submitted_statement": true,
+    "website_verdict": "PASS（送审签名未变）",
+    "website_signature_pass": true
+  },
+  {
+    "name": "MD.Ch07.pGradLaplacian",
+    "kind": "def",
+    "source_id": "MD-7.9.2-OUHermiteIdentities",
+    "status": "定义",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "reason": null,
+    "direct_placeholder": false,
+    "unchanged_submitted_statement": true,
+    "website_verdict": "PASS（送审签名未变）",
+    "website_signature_pass": true
+  },
+  {
+    "name": "MD.Ch07.hermitePrimitive",
+    "kind": "def",
+    "source_id": "MD-7.9.2-OUHermiteIdentities",
+    "status": "定义",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "reason": null,
+    "direct_placeholder": false,
+    "unchanged_submitted_statement": true,
+    "website_verdict": "PASS（送审签名未变）",
+    "website_signature_pass": true
+  },
+  {
+    "name": "MD.Ch07.ouHermiteIdentities",
+    "kind": "theorem",
+    "source_id": "MD-7.9.2-OUHermiteIdentities",
+    "status": "未证",
+    "axioms": [
+      "propext",
+      "sorryAx",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "reason": "缺大型理论",
+    "direct_placeholder": true,
+    "unchanged_submitted_statement": true,
+    "website_verdict": "PASS（送审签名未变）",
+    "website_signature_pass": true
+  },
+  {
+    "name": "MD.Ch07.firstReciprocalCorrection",
+    "kind": "def",
+    "source_id": "MD-7.9.2-FirstReciprocalCorrection",
+    "status": "定义",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "reason": null,
+    "direct_placeholder": false,
+    "unchanged_submitted_statement": true,
+    "website_verdict": "PASS（送审签名未变）",
+    "website_signature_pass": true
+  },
+  {
+    "name": "MD.Ch07.momentumAverage",
+    "kind": "def",
+    "source_id": "MD-7.9.2-FirstReciprocalCorrection",
+    "status": "定义",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "reason": null,
+    "direct_placeholder": false,
+    "unchanged_submitted_statement": true,
+    "website_verdict": "PASS（送审签名未变）",
+    "website_signature_pass": true
+  },
+  {
+    "name": "MD.Ch07.momentumAveragePrinted_corrected",
+    "kind": "def",
+    "source_id": "MD-7.9.2-FirstReciprocalCorrection",
+    "status": "定义",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "reason": null,
+    "direct_placeholder": false,
+    "unchanged_submitted_statement": true,
+    "website_verdict": "PASS（送审签名未变）",
+    "website_signature_pass": true
+  },
+  {
+    "name": "MD.Ch07.momentumAveragePrinted",
+    "kind": "def",
+    "source_id": "MD-7.9.2-FirstReciprocalCorrection",
+    "status": "定义",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "reason": null,
+    "direct_placeholder": false,
+    "unchanged_submitted_statement": true,
+    "website_verdict": "PASS（送审签名未变）",
+    "website_signature_pass": true
+  },
+  {
+    "name": "MD.Ch07.firstReciprocalCorrection_pde",
+    "kind": "theorem",
+    "source_id": "MD-7.9.2-FirstReciprocalCorrection",
+    "status": "未证",
+    "axioms": [
+      "propext",
+      "sorryAx",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "reason": "缺大型理论",
+    "direct_placeholder": true,
+    "unchanged_submitted_statement": true,
+    "website_verdict": "PASS（送审签名未变）",
+    "website_signature_pass": true
+  },
+  {
+    "name": "MD.Ch07.conjugatedPhaseH",
+    "kind": "def",
+    "source_id": "MD-7.9.2-FirstReciprocalCorrection",
+    "status": "定义",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "reason": null,
+    "direct_placeholder": false,
+    "unchanged_submitted_statement": true,
+    "website_verdict": "PASS（送审签名未变）",
+    "website_signature_pass": true
+  },
+  {
+    "name": "MD.Ch07.jointGibbsQualification",
+    "kind": "def",
+    "source_id": "MD-7.9.2-FirstReciprocalCorrection",
+    "status": "定义",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "reason": null,
+    "direct_placeholder": false,
+    "unchanged_submitted_statement": true,
+    "website_verdict": "PASS（送审签名未变）",
+    "website_signature_pass": true
+  },
+  {
+    "name": "MD.Ch07.overdampedM",
+    "kind": "def",
+    "source_id": "MD-7.9.2-OverdampedSolvabilityOperators",
+    "status": "定义",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "reason": null,
+    "direct_placeholder": false,
+    "unchanged_submitted_statement": true,
+    "website_verdict": "见原始报告的分版本意见；不推定完整定理PASS",
+    "website_signature_pass": false
+  },
+  {
+    "name": "MD.Ch07.overdampedN",
+    "kind": "def",
+    "source_id": "MD-7.9.2-OverdampedSolvabilityOperators",
+    "status": "定义",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "reason": null,
+    "direct_placeholder": false,
+    "unchanged_submitted_statement": true,
+    "website_verdict": "见原始报告的分版本意见；不推定完整定理PASS",
+    "website_signature_pass": false
+  },
+  {
+    "name": "MD.Ch07.highFrictionOABAO",
+    "kind": "def",
+    "source_id": "MD-7.9.2-OverdampedSolvabilityOperators",
+    "status": "定义",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "reason": null,
+    "direct_placeholder": false,
+    "unchanged_submitted_statement": true,
+    "website_verdict": "见原始报告的分版本意见；不推定完整定理PASS",
+    "website_signature_pass": false
+  },
+  {
+    "name": "MD.Ch07.overdampedSolvability_choice",
+    "kind": "theorem",
+    "source_id": "MD-7.9.2-OverdampedSolvabilityOperators",
+    "status": "已证",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "reason": null,
+    "direct_placeholder": false,
+    "unchanged_submitted_statement": true,
+    "website_verdict": "见原始报告的分版本意见；不推定完整定理PASS",
+    "website_signature_pass": false
+  },
+  {
+    "name": "MD.Ch07.highFrictionCorrection",
+    "kind": "def",
+    "source_id": "MD-7.9.2-HighFrictionCorrectionTable",
+    "status": "定义",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "reason": null,
+    "direct_placeholder": false,
+    "unchanged_submitted_statement": true,
+    "website_verdict": "PASS（送审签名未变）",
+    "website_signature_pass": true
+  },
+  {
+    "name": "MD.Ch07.doublyAsymptoticAverage",
+    "kind": "def",
+    "source_id": "MD-7.9.2-HighFrictionCorrectionTable",
+    "status": "定义",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "reason": null,
+    "direct_placeholder": false,
+    "unchanged_submitted_statement": true,
+    "website_verdict": "PASS（送审签名未变）",
+    "website_signature_pass": true
+  },
+  {
+    "name": "MD.Ch07.highFrictionCorrection_conjugacy",
+    "kind": "theorem",
+    "source_id": "MD-7.9.2-HighFrictionCorrectionTable",
+    "status": "已证",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "reason": null,
+    "direct_placeholder": false,
+    "unchanged_submitted_statement": true,
+    "website_verdict": "PASS（送审签名未变）",
+    "website_signature_pass": true
+  },
+  {
+    "name": "MD.Ch07.highFrictionMeanLaplacian",
+    "kind": "def",
+    "source_id": "MD-7.9.2-HighFrictionCorrectionTable",
+    "status": "定义",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "reason": null,
+    "direct_placeholder": false,
+    "unchanged_submitted_statement": true,
+    "website_verdict": "PASS（送审签名未变）",
+    "website_signature_pass": true
+  },
+  {
+    "name": "MD.Ch07.highFrictionCenteredQualification",
+    "kind": "def",
+    "source_id": "MD-7.9.2-HighFrictionCorrectionTable",
+    "status": "定义",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "reason": null,
+    "direct_placeholder": false,
+    "unchanged_submitted_statement": true,
+    "website_verdict": "PASS（送审签名未变）",
+    "website_signature_pass": true
+  },
+  {
+    "name": "MD.Ch07.baoabMarginalCancellation",
+    "kind": "theorem",
+    "source_id": "MD-7.9.3-BAOABMarginalCancellation",
+    "status": "未证",
+    "axioms": [
+      "propext",
+      "sorryAx",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "reason": "缺大型理论",
+    "direct_placeholder": true,
+    "unchanged_submitted_statement": true,
+    "website_verdict": "PASS（送审签名未变）",
+    "website_signature_pass": true
+  },
+  {
+    "name": "MD.Ch07.baoabConfigurationalCancellation",
+    "kind": "theorem",
+    "source_id": "MD-7.9.3-BAOABMarginalCancellation",
+    "status": "未证",
+    "axioms": [
+      "propext",
+      "sorryAx",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "reason": "缺大型理论",
+    "direct_placeholder": true,
+    "unchanged_submitted_statement": true,
+    "website_verdict": "PASS（送审签名未变）",
+    "website_signature_pass": true
+  },
+  {
+    "name": "MD.Ch07.oabaoPositionCancellation",
+    "kind": "theorem",
+    "source_id": "MD-7.9.3-SuperconvergenceScope",
+    "status": "未证",
+    "axioms": [
+      "propext",
+      "sorryAx",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "reason": "缺大型理论",
+    "direct_placeholder": true,
+    "unchanged_submitted_statement": true,
+    "website_verdict": "PASS（送审签名未变）",
+    "website_signature_pass": true
+  },
+  {
+    "name": "MD.Ch07.superconvergence_fromBound",
+    "kind": "theorem",
+    "source_id": "MD-7.9.3-SuperconvergenceScope",
+    "status": "已证",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "reason": null,
+    "direct_placeholder": false,
+    "unchanged_submitted_statement": true,
+    "website_verdict": "PASS（送审签名未变）",
+    "website_signature_pass": true
+  },
+  {
+    "name": "MD.Ch07.oabaoMomentumCancellation",
+    "kind": "theorem",
+    "source_id": "MD-7.9.3-SuperconvergenceScope",
+    "status": "未证",
+    "axioms": [
+      "propext",
+      "sorryAx",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "reason": "缺大型理论",
+    "direct_placeholder": true,
+    "unchanged_submitted_statement": true,
+    "website_verdict": "PASS（送审签名未变）",
+    "website_signature_pass": true
+  },
+  {
+    "name": "MD.Ch07.redrawMomentum",
+    "kind": "def",
+    "source_id": "MD-7.10-MomentumRedrawLimit",
+    "status": "定义",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "reason": null,
+    "direct_placeholder": false,
+    "unchanged_submitted_statement": true,
+    "website_verdict": "PASS（送审签名未变）",
+    "website_signature_pass": true
+  },
+  {
+    "name": "MD.Ch07.redrawStep",
+    "kind": "def",
+    "source_id": "MD-7.10-MomentumRedrawLimit",
+    "status": "定义",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "reason": null,
+    "direct_placeholder": false,
+    "unchanged_submitted_statement": true,
+    "website_verdict": "PASS（送审签名未变）",
+    "website_signature_pass": true
+  },
+  {
+    "name": "MD.Ch07.momentumRedrawLimit",
+    "kind": "theorem",
+    "source_id": "MD-7.10-MomentumRedrawLimit",
+    "status": "未证",
+    "axioms": [
+      "propext",
+      "sorryAx",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "reason": "缺大型理论",
+    "direct_placeholder": true,
+    "unchanged_submitted_statement": true,
+    "website_verdict": "PASS（送审签名未变）",
+    "website_signature_pass": true
+  },
+  {
+    "name": "MD.Ch07.redrawMomentum_law",
+    "kind": "theorem",
+    "source_id": "MD-7.10-MomentumRedrawLimit",
+    "status": "未证",
+    "axioms": [
+      "propext",
+      "sorryAx",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "reason": "缺大型理论",
+    "direct_placeholder": true,
+    "unchanged_submitted_statement": true,
+    "website_verdict": "PASS（送审签名未变）",
+    "website_signature_pass": true
+  },
+  {
+    "name": "MD.Ch07.obaboInfinite",
+    "kind": "def",
+    "source_id": "MD-7.10-OBABOOverdampedEuler",
+    "status": "定义",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "reason": null,
+    "direct_placeholder": false,
+    "unchanged_submitted_statement": true,
+    "website_verdict": "PASS（送审签名未变）",
+    "website_signature_pass": true
+  },
+  {
+    "name": "MD.Ch07.overdampedEulerH",
+    "kind": "def",
+    "source_id": "MD-7.10-OBABOOverdampedEuler",
+    "status": "定义",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "reason": null,
+    "direct_placeholder": false,
+    "unchanged_submitted_statement": true,
+    "website_verdict": "PASS（送审签名未变）",
+    "website_signature_pass": true
+  },
+  {
+    "name": "MD.Ch07.overdampedEuler",
+    "kind": "def",
+    "source_id": "MD-7.10-OBABOOverdampedEuler",
+    "status": "定义",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "reason": null,
+    "direct_placeholder": false,
+    "unchanged_submitted_statement": true,
+    "website_verdict": "PASS（送审签名未变）",
+    "website_signature_pass": true
+  },
+  {
+    "name": "MD.Ch07.obaboInfinite_position",
+    "kind": "theorem",
+    "source_id": "MD-7.10-OBABOOverdampedEuler",
+    "status": "已证",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "reason": null,
+    "direct_placeholder": false,
+    "unchanged_submitted_statement": true,
+    "website_verdict": "PASS（送审签名未变）",
+    "website_signature_pass": true
+  },
+  {
+    "name": "MD.Ch07.overdampedEuler_rescale",
+    "kind": "theorem",
+    "source_id": "MD-7.10-OBABOOverdampedEuler",
+    "status": "未证",
+    "axioms": [
+      "propext",
+      "sorryAx",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "reason": "缺大型理论",
+    "direct_placeholder": true,
+    "unchanged_submitted_statement": true,
+    "website_verdict": "PASS（送审签名未变）",
+    "website_signature_pass": true
+  },
+  {
+    "name": "MD.Ch07.baoabInfinite",
+    "kind": "def",
+    "source_id": "MD-7.10-BAOABLimitMethod",
+    "status": "定义",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "reason": null,
+    "direct_placeholder": false,
+    "unchanged_submitted_statement": true,
+    "website_verdict": "PASS（送审签名未变）",
+    "website_signature_pass": true
+  },
+  {
+    "name": "MD.Ch07.lmStepH",
+    "kind": "def",
+    "source_id": "MD-7.10-BAOABLimitMethod",
+    "status": "定义",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "reason": null,
+    "direct_placeholder": false,
+    "unchanged_submitted_statement": true,
+    "website_verdict": "PASS（送审签名未变）",
+    "website_signature_pass": true
+  },
+  {
+    "name": "MD.Ch07.lmStep",
+    "kind": "def",
+    "source_id": "MD-7.10-BAOABLimitMethod",
+    "status": "定义",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "reason": null,
+    "direct_placeholder": false,
+    "unchanged_submitted_statement": true,
+    "website_verdict": "PASS（送审签名未变）",
+    "website_signature_pass": true
+  },
+  {
+    "name": "MD.Ch07.baoabInfinite_position",
+    "kind": "theorem",
+    "source_id": "MD-7.10-BAOABLimitMethod",
+    "status": "已证",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "reason": null,
+    "direct_placeholder": false,
+    "unchanged_submitted_statement": true,
+    "website_verdict": "PASS（送审签名未变）",
+    "website_signature_pass": true
+  },
+  {
+    "name": "MD.Ch07.lmStepH_rescale",
+    "kind": "theorem",
+    "source_id": "MD-7.10-BAOABLimitMethod",
+    "status": "未证",
+    "axioms": [
+      "propext",
+      "sorryAx",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "reason": "时间盒止",
+    "direct_placeholder": true,
+    "unchanged_submitted_statement": true,
+    "website_verdict": "PASS（送审签名未变）",
+    "website_signature_pass": true
+  },
+  {
+    "name": "MD.Ch07.coloredNoise",
+    "kind": "def",
+    "source_id": "MD-7.10-ColoredNoiseAndExtension",
+    "status": "定义",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "reason": null,
+    "direct_placeholder": false,
+    "unchanged_submitted_statement": true,
+    "website_verdict": "PASS（送审签名未变）",
+    "website_signature_pass": true
+  },
+  {
+    "name": "MD.Ch07.coloredNoise_covariance",
+    "kind": "theorem",
+    "source_id": "MD-7.10-ColoredNoiseAndExtension",
+    "status": "未证",
+    "axioms": [
+      "propext",
+      "sorryAx",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "reason": "缺大型理论",
+    "direct_placeholder": true,
+    "unchanged_submitted_statement": true,
+    "website_verdict": "PASS（送审签名未变）",
+    "website_signature_pass": true
+  },
+  {
+    "name": "MD.Ch07.lmExtendedStep",
+    "kind": "def",
+    "source_id": "MD-7.10-ColoredNoiseAndExtension",
+    "status": "定义",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "reason": null,
+    "direct_placeholder": false,
+    "unchanged_submitted_statement": true,
+    "website_verdict": "PASS（送审签名未变）",
+    "website_signature_pass": true
+  },
+  {
+    "name": "MD.Ch07.lmExtendedKernel",
+    "kind": "def",
+    "source_id": "MD-7.10-ColoredNoiseAndExtension",
+    "status": "定义",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "reason": null,
+    "direct_placeholder": false,
+    "unchanged_submitted_statement": true,
+    "website_verdict": "PASS（送审签名未变）",
+    "website_signature_pass": true
+  },
+  {
+    "name": "MD.Ch07.lmExtendedChain",
+    "kind": "def",
+    "source_id": "MD-7.10-ColoredNoiseAndExtension",
+    "status": "定义",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "reason": null,
+    "direct_placeholder": false,
+    "unchanged_submitted_statement": true,
+    "website_verdict": "PASS（送审签名未变）",
+    "website_signature_pass": true
+  },
+  {
+    "name": "MD.Ch07.lmExtendedChain_markov",
+    "kind": "theorem",
+    "source_id": "MD-7.10-ColoredNoiseAndExtension",
+    "status": "未证",
+    "axioms": [
+      "propext",
+      "sorryAx",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "reason": "缺大型理论",
+    "direct_placeholder": true,
+    "unchanged_submitted_statement": true,
+    "website_verdict": "PASS（送审签名未变）",
+    "website_signature_pass": true
+  },
+  {
+    "name": "MD.Ch07.lmTransientErrorBound",
+    "kind": "def",
+    "source_id": "MD-7.10-LimitMethodAccuracy",
+    "status": "定义",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "reason": null,
+    "direct_placeholder": false,
+    "unchanged_submitted_statement": true,
+    "website_verdict": "PASS（送审签名未变）",
+    "website_signature_pass": true
+  },
+  {
+    "name": "MD.Ch07.limitAccuracyPrinted",
+    "kind": "def",
+    "source_id": "MD-7.10-LimitMethodAccuracy",
+    "status": "定义",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "reason": null,
+    "direct_placeholder": false,
+    "unchanged_submitted_statement": true,
+    "website_verdict": "见原始报告的分版本意见；不推定完整定理PASS",
+    "website_signature_pass": false
+  },
+  {
+    "name": "MD.Ch07.limitAccuracyPrinted_corrected",
+    "kind": "def",
+    "source_id": "MD-7.10-LimitMethodAccuracy",
+    "status": "定义",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "reason": null,
+    "direct_placeholder": false,
+    "unchanged_submitted_statement": true,
+    "website_verdict": "PASS（送审签名未变）",
+    "website_signature_pass": true
+  },
+  {
+    "name": "MD.Ch07.limitAccuracy_rescale",
+    "kind": "theorem",
+    "source_id": "MD-7.10-LimitMethodAccuracy",
+    "status": "已证",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "reason": null,
+    "direct_placeholder": false,
+    "unchanged_submitted_statement": true,
+    "website_verdict": "PASS（送审签名未变）",
+    "website_signature_pass": true
+  },
+  {
+    "name": "MD.Ch07.limitAccuracyInfiniteTime_corrected",
+    "kind": "def",
+    "source_id": "MD-7.10-LimitMethodAccuracy",
+    "status": "定义",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "reason": null,
+    "direct_placeholder": false,
+    "unchanged_submitted_statement": true,
+    "website_verdict": "PASS（送审签名未变）",
+    "website_signature_pass": true
+  },
+  {
+    "name": "MD.Ch07.zeroFrictionOU",
+    "kind": "theorem",
+    "source_id": "MD-7.9.3-ZeroFrictionVerlet",
+    "status": "已证",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "reason": null,
+    "direct_placeholder": false,
+    "unchanged_submitted_statement": true,
+    "website_verdict": "PASS（送审签名未变）",
+    "website_signature_pass": true
+  },
+  {
+    "name": "MD.Ch07.zeroFrictionBAOAB",
+    "kind": "theorem",
+    "source_id": "MD-7.9.3-ZeroFrictionVerlet",
+    "status": "已证",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "reason": null,
+    "direct_placeholder": false,
+    "unchanged_submitted_statement": true,
+    "website_verdict": "PASS（送审签名未变）",
+    "website_signature_pass": true
+  },
+  {
+    "name": "MD.Ch07.kineticTemperatureObservable",
+    "kind": "def",
+    "source_id": "MD-7.11.1-TemperatureObservables",
+    "status": "定义",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "reason": null,
+    "direct_placeholder": false,
+    "unchanged_submitted_statement": true,
+    "website_verdict": "PASS（送审签名未变）",
+    "website_signature_pass": true
+  },
+  {
+    "name": "MD.Ch07.configurationTemperatureObservable",
+    "kind": "def",
+    "source_id": "MD-7.11.1-TemperatureObservables",
+    "status": "定义",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "reason": null,
+    "direct_placeholder": false,
+    "unchanged_submitted_statement": true,
+    "website_verdict": "PASS（送审签名未变）",
+    "website_signature_pass": true
+  },
+  {
+    "name": "MD.Ch07.kineticTemperature",
+    "kind": "theorem",
+    "source_id": "MD-7.11.1-TemperatureObservables",
+    "status": "未证",
+    "axioms": [
+      "propext",
+      "sorryAx",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "reason": "缺大型理论",
+    "direct_placeholder": true,
+    "unchanged_submitted_statement": true,
+    "website_verdict": "PASS（送审签名未变）",
+    "website_signature_pass": true
+  },
+  {
+    "name": "MD.Ch07.configurationTemperature",
+    "kind": "theorem",
+    "source_id": "MD-7.11.1-TemperatureObservables",
+    "status": "未证",
+    "axioms": [
+      "propext",
+      "sorryAx",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "reason": "缺大型理论",
+    "direct_placeholder": true,
+    "unchanged_submitted_statement": true,
+    "website_verdict": "PASS（送审签名未变）",
+    "website_signature_pass": true
+  },
+  {
+    "name": "MD.Ch07.velocityAutocorrelation",
+    "kind": "def",
+    "source_id": "MD-7.11.1-VelocityAutocorrelationDefinition",
+    "status": "定义",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "reason": null,
+    "direct_placeholder": false,
+    "unchanged_submitted_statement": true,
+    "website_verdict": "PASS（送审签名未变）",
+    "website_signature_pass": true
+  },
+  {
+    "name": "MD.Ch07.greenKuboDiffusion",
+    "kind": "def",
+    "source_id": "MD-7.11.1-VelocityAutocorrelationDefinition",
+    "status": "定义",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "reason": null,
+    "direct_placeholder": false,
+    "unchanged_submitted_statement": true,
+    "website_verdict": "PASS（送审签名未变）",
+    "website_signature_pass": true
+  },
+  {
+    "name": "MD.Ch07.autocorrelation_rescale",
+    "kind": "theorem",
+    "source_id": "MD-7.11.1-VelocityAutocorrelationDefinition",
+    "status": "已证",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "reason": null,
+    "direct_placeholder": false,
+    "unchanged_submitted_statement": true,
+    "website_verdict": "PASS（送审签名未变）",
+    "website_signature_pass": true
+  },
+  {
+    "name": "MD.Ch07.constraintJacobian",
+    "kind": "def",
+    "source_id": "MD-7.12-ConstrainedLangevin",
+    "status": "定义",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "reason": null,
+    "direct_placeholder": false,
+    "unchanged_submitted_statement": true,
+    "website_verdict": "PASS（送审签名未变）",
+    "website_signature_pass": true
+  },
+  {
+    "name": "MD.Ch07.constraintReaction",
+    "kind": "def",
+    "source_id": "MD-7.12-ConstrainedLangevin",
+    "status": "定义",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "reason": null,
+    "direct_placeholder": false,
+    "unchanged_submitted_statement": true,
+    "website_verdict": "PASS（送审签名未变）",
+    "website_signature_pass": true
+  },
+  {
+    "name": "MD.Ch07.hiddenConstraint",
+    "kind": "def",
+    "source_id": "MD-7.12-ConstrainedLangevin",
+    "status": "定义",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "reason": null,
+    "direct_placeholder": false,
+    "unchanged_submitted_statement": true,
+    "website_verdict": "PASS（送审签名未变）",
+    "website_signature_pass": true
+  },
+  {
+    "name": "MD.Ch07.cotangentConstraint",
+    "kind": "def",
+    "source_id": "MD-7.12-ConstrainedLangevin",
+    "status": "定义",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "reason": null,
+    "direct_placeholder": false,
+    "unchanged_submitted_statement": true,
+    "website_verdict": "PASS（送审签名未变）",
+    "website_signature_pass": true
+  },
+  {
+    "name": "MD.Ch07.constrainedLangevin",
+    "kind": "def",
+    "source_id": "MD-7.12-ConstrainedLangevin",
+    "status": "定义",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "reason": null,
+    "direct_placeholder": false,
+    "unchanged_submitted_statement": true,
+    "website_verdict": "见原始报告的分版本意见；不推定完整定理PASS",
+    "website_signature_pass": false
+  },
+  {
+    "name": "MD.Ch07.constrainedLangevin_corrected",
+    "kind": "def",
+    "source_id": "MD-7.12-ConstrainedLangevin",
+    "status": "定义",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "reason": null,
+    "direct_placeholder": false,
+    "unchanged_submitted_statement": true,
+    "website_verdict": "PASS（送审签名未变）",
+    "website_signature_pass": true
+  },
+  {
+    "name": "MD.Ch07.constrainedCanonical",
+    "kind": "def",
+    "source_id": "MD-7.12-ConstrainedCanonicalErgodicity",
+    "status": "定义",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "reason": null,
+    "direct_placeholder": false,
+    "unchanged_submitted_statement": true,
+    "website_verdict": "见原始报告的分版本意见；不推定完整定理PASS",
+    "website_signature_pass": false
+  },
+  {
+    "name": "MD.Ch07.constrainedReference",
+    "kind": "def",
+    "source_id": "MD-7.12-ConstrainedCanonicalErgodicity",
+    "status": "定义",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "reason": null,
+    "direct_placeholder": false,
+    "unchanged_submitted_statement": true,
+    "website_verdict": "见原始报告的分版本意见；不推定完整定理PASS",
+    "website_signature_pass": false
+  },
+  {
+    "name": "MD.Ch07.constrainedErgodicAverages",
+    "kind": "def",
+    "source_id": "MD-7.12-ConstrainedCanonicalErgodicity",
+    "status": "定义",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "reason": null,
+    "direct_placeholder": false,
+    "unchanged_submitted_statement": true,
+    "website_verdict": "见原始报告的分版本意见；不推定完整定理PASS",
+    "website_signature_pass": false
+  },
+  {
+    "name": "MD.Ch07.constrainedCanonicalQualification",
+    "kind": "def",
+    "source_id": "MD-7.12-ConstrainedCanonicalErgodicity",
+    "status": "定义",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "reason": null,
+    "direct_placeholder": false,
+    "unchanged_submitted_statement": true,
+    "website_verdict": "见原始报告的分版本意见；不推定完整定理PASS",
+    "website_signature_pass": false
+  },
+  {
+    "name": "MD.Ch07.constrainedHField",
+    "kind": "def",
+    "source_id": "MD-7.12-ConstrainedHOSplitting",
+    "status": "定义",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "reason": null,
+    "direct_placeholder": false,
+    "unchanged_submitted_statement": true,
+    "website_verdict": "按意见修复，本地核验通过（未再送网站）",
+    "website_signature_pass": false
+  },
+  {
+    "name": "MD.Ch07.constrainedOField",
+    "kind": "def",
+    "source_id": "MD-7.12-ConstrainedHOSplitting",
+    "status": "定义",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "reason": null,
+    "direct_placeholder": false,
+    "unchanged_submitted_statement": true,
+    "website_verdict": "按意见修复，本地核验通过（未再送网站）",
+    "website_signature_pass": false
+  },
+  {
+    "name": "MD.Ch07.constrainedHOComposition",
+    "kind": "def",
+    "source_id": "MD-7.12-ConstrainedHOSplitting",
+    "status": "定义",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "reason": null,
+    "direct_placeholder": false,
+    "unchanged_submitted_statement": true,
+    "website_verdict": "按意见修复，本地核验通过（未再送网站）",
+    "website_signature_pass": false
+  },
+  {
+    "name": "MD.Ch07.constrainedONoise",
+    "kind": "def",
+    "source_id": "MD-7.12-ConstrainedHOSplitting",
+    "status": "定义",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "reason": null,
+    "direct_placeholder": false,
+    "unchanged_submitted_statement": true,
+    "website_verdict": "按意见修复，本地核验通过（未再送网站）",
+    "website_signature_pass": false
+  },
+  {
+    "name": "MD.Ch07.constrainedHIntegralStep",
+    "kind": "def",
+    "source_id": "MD-7.12-ConstrainedHOSplitting",
+    "status": "定义",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "reason": null,
+    "direct_placeholder": false,
+    "unchanged_submitted_statement": true,
+    "website_verdict": "按意见修复，本地核验通过（未再送网站）",
+    "website_signature_pass": false
+  },
+  {
+    "name": "MD.Ch07.constrainedOIntegralStep",
+    "kind": "def",
+    "source_id": "MD-7.12-ConstrainedHOSplitting",
+    "status": "定义",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "reason": null,
+    "direct_placeholder": false,
+    "unchanged_submitted_statement": true,
+    "website_verdict": "按意见修复，本地核验通过（未再送网站）",
+    "website_signature_pass": false
+  },
+  {
+    "name": "MD.Ch07.constrainedHMapQualification",
+    "kind": "def",
+    "source_id": "MD-7.12-ConstrainedHOSplitting",
+    "status": "定义",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "reason": null,
+    "direct_placeholder": false,
+    "unchanged_submitted_statement": false,
+    "website_verdict": "按意见修复，本地核验通过（未再送网站）",
+    "website_signature_pass": false
+  },
+  {
+    "name": "MD.Ch07.constrainedOMapQualification",
+    "kind": "def",
+    "source_id": "MD-7.12-ConstrainedHOSplitting",
+    "status": "定义",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "reason": null,
+    "direct_placeholder": false,
+    "unchanged_submitted_statement": false,
+    "website_verdict": "按意见修复，本地核验通过（未再送网站）",
+    "website_signature_pass": false
+  },
+  {
+    "name": "MD.Ch07.constrainedHOQualifiedComposition",
+    "kind": "def",
+    "source_id": "MD-7.12-ConstrainedHOSplitting",
+    "status": "定义",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "reason": null,
+    "direct_placeholder": false,
+    "unchanged_submitted_statement": false,
+    "website_verdict": "按意见修复，本地核验通过（未再送网站）",
+    "website_signature_pass": false
+  },
+  {
+    "name": "MD.Ch07.constrainedHOQualifiedComposition_measurable",
+    "kind": "theorem",
+    "source_id": "MD-7.12-ConstrainedHOSplitting",
+    "status": "已证",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "reason": null,
+    "direct_placeholder": false,
+    "unchanged_submitted_statement": false,
+    "website_verdict": "按意见修复，本地核验通过（未再送网站）",
+    "website_signature_pass": false
+  },
+  {
+    "name": "MD.Ch07.constrainedHOOutputLaw",
+    "kind": "def",
+    "source_id": "MD-7.12-ConstrainedHOSplitting",
+    "status": "定义",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "reason": null,
+    "direct_placeholder": false,
+    "unchanged_submitted_statement": false,
+    "website_verdict": "按意见修复，本地核验通过（未再送网站）",
+    "website_signature_pass": false
+  },
+  {
+    "name": "MD.Ch07.constrainedHOOutput_hasLaw",
+    "kind": "theorem",
+    "source_id": "MD-7.12-ConstrainedHOSplitting",
+    "status": "已证",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "reason": null,
+    "direct_placeholder": false,
+    "unchanged_submitted_statement": false,
+    "website_verdict": "按意见修复，本地核验通过（未再送网站）",
+    "website_signature_pass": false
+  },
+  {
+    "name": "MD.Ch07.constrainedHOOutputLaw_probability",
+    "kind": "theorem",
+    "source_id": "MD-7.12-ConstrainedHOSplitting",
+    "status": "已证",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "reason": null,
+    "direct_placeholder": false,
+    "unchanged_submitted_statement": false,
+    "website_verdict": "按意见修复，本地核验通过（未再送网站）",
+    "website_signature_pass": false
+  },
+  {
+    "name": "MD.Ch07.midpointConstrainedORelation",
+    "kind": "def",
+    "source_id": "MD-7.12-MEVMEAlgorithm",
+    "status": "定义",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "reason": null,
+    "direct_placeholder": false,
+    "unchanged_submitted_statement": true,
+    "website_verdict": "PASS（送审签名未变）",
+    "website_signature_pass": true
+  },
+  {
+    "name": "MD.Ch07.constrainedVerletRelation",
+    "kind": "def",
+    "source_id": "MD-7.12-MEVMEAlgorithm",
+    "status": "定义",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "reason": null,
+    "direct_placeholder": false,
+    "unchanged_submitted_statement": true,
+    "website_verdict": "PASS（送审签名未变）",
+    "website_signature_pass": true
+  },
+  {
+    "name": "MD.Ch07.mevmeRelation",
+    "kind": "def",
+    "source_id": "MD-7.12-MEVMEAlgorithm",
+    "status": "定义",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "reason": null,
+    "direct_placeholder": false,
+    "unchanged_submitted_statement": true,
+    "website_verdict": "PASS（送审签名未变）",
+    "website_signature_pass": true
+  },
+  {
+    "name": "MD.Ch07.multiplierLinearSystem",
+    "kind": "def",
+    "source_id": "MD-7.12-MidpointStabilityPrinted",
+    "status": "定义",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "reason": null,
+    "direct_placeholder": false,
+    "unchanged_submitted_statement": true,
+    "website_verdict": "PASS（送审签名未变）",
+    "website_signature_pass": true
+  },
+  {
+    "name": "MD.Ch07.midpointAmplification",
+    "kind": "def",
+    "source_id": "MD-7.12-MidpointStabilityPrinted",
+    "status": "定义",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "reason": null,
+    "direct_placeholder": false,
+    "unchanged_submitted_statement": true,
+    "website_verdict": "PASS（送审签名未变）",
+    "website_signature_pass": true
+  },
+  {
+    "name": "MD.Ch07.midpointStabilityPrinted",
+    "kind": "def",
+    "source_id": "MD-7.12-MidpointStabilityPrinted",
+    "status": "定义",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "reason": null,
+    "direct_placeholder": false,
+    "unchanged_submitted_statement": true,
+    "website_verdict": "PASS（送审签名未变）",
+    "website_signature_pass": true
+  },
+  {
+    "name": "MD.Ch07.midpointStabilityPrinted_corrected",
+    "kind": "theorem",
+    "source_id": "MD-7.12-MidpointStabilityPrinted",
+    "status": "已证",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "reason": null,
+    "direct_placeholder": false,
+    "unchanged_submitted_statement": true,
+    "website_verdict": "PASS（送审签名未变）",
+    "website_signature_pass": true
+  },
+  {
+    "name": "MD.Ch07.midpointStability_counterexample",
+    "kind": "theorem",
+    "source_id": "MD-7.12-MidpointStabilityPrinted",
+    "status": "已证",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "reason": null,
+    "direct_placeholder": false,
+    "unchanged_submitted_statement": true,
+    "website_verdict": "PASS（送审签名未变）",
+    "website_signature_pass": true
+  },
+  {
+    "name": "MD.Ch07.constrainedAField",
+    "kind": "def",
+    "source_id": "MD-7.12.1-ConstrainedABOSplitting",
+    "status": "定义",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "reason": null,
+    "direct_placeholder": false,
+    "unchanged_submitted_statement": true,
+    "website_verdict": "PASS（送审签名未变）",
+    "website_signature_pass": true
+  },
+  {
+    "name": "MD.Ch07.constrainedBField",
+    "kind": "def",
+    "source_id": "MD-7.12.1-ConstrainedABOSplitting",
+    "status": "定义",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "reason": null,
+    "direct_placeholder": false,
+    "unchanged_submitted_statement": true,
+    "website_verdict": "PASS（送审签名未变）",
+    "website_signature_pass": true
+  },
+  {
+    "name": "MD.Ch07.geodesicConstraintFlow",
+    "kind": "def",
+    "source_id": "MD-7.12.1-ConstrainedABOSplitting",
+    "status": "定义",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "reason": null,
+    "direct_placeholder": false,
+    "unchanged_submitted_statement": true,
+    "website_verdict": "PASS（送审签名未变）",
+    "website_signature_pass": true
+  },
+  {
+    "name": "MD.Ch07.constrainedKickRelation",
+    "kind": "def",
+    "source_id": "MD-7.12.1-ConstrainedABOSplitting",
+    "status": "定义",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "reason": null,
+    "direct_placeholder": false,
+    "unchanged_submitted_statement": true,
+    "website_verdict": "PASS（送审签名未变）",
+    "website_signature_pass": true
+  },
+  {
+    "name": "MD.Ch07.constrainedExactORelation",
+    "kind": "def",
+    "source_id": "MD-7.12.1-ConstrainedABOSplitting",
+    "status": "定义",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "reason": null,
+    "direct_placeholder": false,
+    "unchanged_submitted_statement": true,
+    "website_verdict": "PASS（送审签名未变）",
+    "website_signature_pass": true
+  },
+  {
+    "name": "MD.Ch07.constrainedBAOABRelation",
+    "kind": "def",
+    "source_id": "MD-7.12.1-ConstrainedBAOABAlgorithm",
+    "status": "定义",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "reason": null,
+    "direct_placeholder": false,
+    "unchanged_submitted_statement": true,
+    "website_verdict": "PASS（送审签名未变）",
+    "website_signature_pass": true
+  },
+  {
+    "name": "MD.Ch07.constrainedBAOAB_constraint",
+    "kind": "theorem",
+    "source_id": "MD-7.12.1-ConstrainedBAOABAlgorithm",
+    "status": "已证",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "reason": null,
+    "direct_placeholder": false,
+    "unchanged_submitted_statement": true,
+    "website_verdict": "PASS（送审签名未变）",
+    "website_signature_pass": true
+  },
+  {
+    "name": "MD.Ch07.localMapErrorBound",
+    "kind": "def",
+    "source_id": "MD-7.12.1-ApproximateGeodesicOrder",
+    "status": "定义",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "reason": null,
+    "direct_placeholder": false,
+    "unchanged_submitted_statement": true,
+    "website_verdict": "PASS（送审签名未变）",
+    "website_signature_pass": true
+  },
+  {
+    "name": "MD.Ch07.geodesicReplacementSecondOrder",
+    "kind": "def",
+    "source_id": "MD-7.12.1-ApproximateGeodesicOrder",
+    "status": "定义",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "reason": null,
+    "direct_placeholder": false,
+    "unchanged_submitted_statement": true,
+    "website_verdict": "PASS（送审签名未变）",
+    "website_signature_pass": true
+  },
+  {
+    "name": "MD.Ch07.Mat2",
+    "kind": "abbrev",
+    "source_id": "MD-7.13-FastSlowHarmonicModel",
+    "status": "定义",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "reason": null,
+    "direct_placeholder": false,
+    "unchanged_submitted_statement": true,
+    "website_verdict": "PASS（送审签名未变）",
+    "website_signature_pass": true
+  },
+  {
+    "name": "MD.Ch07.fastPotential",
+    "kind": "def",
+    "source_id": "MD-7.13-FastSlowHarmonicModel",
+    "status": "定义",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "reason": null,
+    "direct_placeholder": false,
+    "unchanged_submitted_statement": true,
+    "website_verdict": "PASS（送审签名未变）",
+    "website_signature_pass": true
+  },
+  {
+    "name": "MD.Ch07.slowPotential",
+    "kind": "def",
+    "source_id": "MD-7.13-FastSlowHarmonicModel",
+    "status": "定义",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "reason": null,
+    "direct_placeholder": false,
+    "unchanged_submitted_statement": true,
+    "website_verdict": "PASS（送审签名未变）",
+    "website_signature_pass": true
+  },
+  {
+    "name": "MD.Ch07.fastMatrix",
+    "kind": "def",
+    "source_id": "MD-7.13-FastSlowHarmonicModel",
+    "status": "定义",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "reason": null,
+    "direct_placeholder": false,
+    "unchanged_submitted_statement": true,
+    "website_verdict": "PASS（送审签名未变）",
+    "website_signature_pass": true
+  },
+  {
+    "name": "MD.Ch07.slowMatrix",
+    "kind": "def",
+    "source_id": "MD-7.13-FastSlowHarmonicModel",
+    "status": "定义",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "reason": null,
+    "direct_placeholder": false,
+    "unchanged_submitted_statement": true,
+    "website_verdict": "PASS（送审签名未变）",
+    "website_signature_pass": true
+  },
+  {
+    "name": "MD.Ch07.fastLangevin",
+    "kind": "def",
+    "source_id": "MD-7.13-FastSlowHarmonicModel",
+    "status": "定义",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "reason": null,
+    "direct_placeholder": false,
+    "unchanged_submitted_statement": true,
+    "website_verdict": "PASS（送审签名未变）",
+    "website_signature_pass": true
+  },
+  {
+    "name": "MD.Ch07.fastExponential",
+    "kind": "def",
+    "source_id": "MD-7.13-ExactFastGaussianLaw",
+    "status": "定义",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "reason": null,
+    "direct_placeholder": false,
+    "unchanged_submitted_statement": true,
+    "website_verdict": "PASS（送审签名未变）",
+    "website_signature_pass": true
+  },
+  {
+    "name": "MD.Ch07.fastCovariance",
+    "kind": "def",
+    "source_id": "MD-7.13-ExactFastGaussianLaw",
+    "status": "定义",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "reason": null,
+    "direct_placeholder": false,
+    "unchanged_submitted_statement": true,
+    "website_verdict": "PASS（送审签名未变）",
+    "website_signature_pass": true
+  },
+  {
+    "name": "MD.Ch07.exactFastGaussianLaw",
+    "kind": "theorem",
+    "source_id": "MD-7.13-ExactFastGaussianLaw",
+    "status": "未证",
+    "axioms": [
+      "propext",
+      "sorryAx",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "reason": "缺大型理论",
+    "direct_placeholder": true,
+    "unchanged_submitted_statement": true,
+    "website_verdict": "PASS（送审签名未变）",
+    "website_signature_pass": true
+  },
+  {
+    "name": "MD.Ch07.multipleX",
+    "kind": "def",
+    "source_id": "MD-7.13-MultipleTimestepUpdate",
+    "status": "定义",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "reason": null,
+    "direct_placeholder": false,
+    "unchanged_submitted_statement": true,
+    "website_verdict": "PASS（送审签名未变）",
+    "website_signature_pass": true
+  },
+  {
+    "name": "MD.Ch07.multipleY",
+    "kind": "def",
+    "source_id": "MD-7.13-MultipleTimestepUpdate",
+    "status": "定义",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "reason": null,
+    "direct_placeholder": false,
+    "unchanged_submitted_statement": true,
+    "website_verdict": "PASS（送审签名未变）",
+    "website_signature_pass": true
+  },
+  {
+    "name": "MD.Ch07.multipleStep",
+    "kind": "def",
+    "source_id": "MD-7.13-MultipleTimestepUpdate",
+    "status": "定义",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "reason": null,
+    "direct_placeholder": false,
+    "unchanged_submitted_statement": true,
+    "website_verdict": "PASS（送审签名未变）",
+    "website_signature_pass": true
+  },
+  {
+    "name": "MD.Ch07.multipleStep_composition",
+    "kind": "theorem",
+    "source_id": "MD-7.13-MultipleTimestepUpdate",
+    "status": "已证",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "reason": null,
+    "direct_placeholder": false,
+    "unchanged_submitted_statement": true,
+    "website_verdict": "PASS（送审签名未变）",
+    "website_signature_pass": true
+  },
+  {
+    "name": "MD.Ch07.traceFormula",
+    "kind": "def",
+    "source_id": "MD-7.13-DeterminantTrace",
+    "status": "定义",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "reason": null,
+    "direct_placeholder": false,
+    "unchanged_submitted_statement": true,
+    "website_verdict": "PASS（送审签名未变）",
+    "website_signature_pass": true
+  },
+  {
+    "name": "MD.Ch07.determinantTrace",
+    "kind": "theorem",
+    "source_id": "MD-7.13-DeterminantTrace",
+    "status": "未证",
+    "axioms": [
+      "propext",
+      "sorryAx",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "reason": "缺大型理论",
+    "direct_placeholder": true,
+    "unchanged_submitted_statement": true,
+    "website_verdict": "PASS（送审签名未变）",
+    "website_signature_pass": true
+  },
+  {
+    "name": "MD.Ch07.characteristicUnitDisk",
+    "kind": "def",
+    "source_id": "MD-7.13-SpectralRadiusStability",
+    "status": "定义",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "reason": null,
+    "direct_placeholder": false,
+    "unchanged_submitted_statement": true,
+    "website_verdict": "PASS（送审签名未变）",
+    "website_signature_pass": true
+  },
+  {
+    "name": "MD.Ch07.spectralRadiusStability",
+    "kind": "theorem",
+    "source_id": "MD-7.13-SpectralRadiusStability",
+    "status": "未证",
+    "axioms": [
+      "propext",
+      "sorryAx",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "reason": "缺大型理论",
+    "direct_placeholder": true,
+    "unchanged_submitted_statement": true,
+    "website_verdict": "PASS（送审签名未变）",
+    "website_signature_pass": true
+  },
+  {
+    "name": "MD.Ch07.hyperbolicStability",
+    "kind": "def",
+    "source_id": "MD-7.13-SpectralRadiusStability",
+    "status": "定义",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "reason": null,
+    "direct_placeholder": false,
+    "unchanged_submitted_statement": true,
+    "website_verdict": "PASS（送审签名未变）",
+    "website_signature_pass": true
+  },
+  {
+    "name": "MD.Ch07.multipleX_spectral_hyperbolic",
+    "kind": "theorem",
+    "source_id": "MD-7.13-SpectralRadiusStability",
+    "status": "未证",
+    "axioms": [
+      "propext",
+      "sorryAx",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "reason": "缺大型理论",
+    "direct_placeholder": true,
+    "unchanged_submitted_statement": true,
+    "website_verdict": "PASS（送审签名未变）",
+    "website_signature_pass": true
+  },
+  {
+    "name": "MD.Ch07.hyperbolicPhase",
+    "kind": "def",
+    "source_id": "MD-7.13-HyperbolicPhaseTransform",
+    "status": "定义",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "reason": null,
+    "direct_placeholder": false,
+    "unchanged_submitted_statement": true,
+    "website_verdict": "见原始报告的分版本意见；不推定完整定理PASS",
+    "website_signature_pass": false
+  },
+  {
+    "name": "MD.Ch07.hyperbolicPhase_identity",
+    "kind": "theorem",
+    "source_id": "MD-7.13-HyperbolicPhaseTransform",
+    "status": "已证",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "reason": null,
+    "direct_placeholder": false,
+    "unchanged_submitted_statement": true,
+    "website_verdict": "见原始报告的分版本意见；不推定完整定理PASS",
+    "website_signature_pass": false
+  },
+  {
+    "name": "MD.Ch07.underdampedPhasePrinted",
+    "kind": "def",
+    "source_id": "MD-7.13-UnderdampedPhasePrinted",
+    "status": "定义",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "reason": null,
+    "direct_placeholder": false,
+    "unchanged_submitted_statement": true,
+    "website_verdict": "见原始报告的分版本意见；不推定完整定理PASS",
+    "website_signature_pass": false
+  },
+  {
+    "name": "MD.Ch07.underdampedPhasePrinted_corrected",
+    "kind": "def",
+    "source_id": "MD-7.13-UnderdampedPhasePrinted",
+    "status": "定义",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "reason": null,
+    "direct_placeholder": false,
+    "unchanged_submitted_statement": true,
+    "website_verdict": "见原始报告的分版本意见；不推定完整定理PASS",
+    "website_signature_pass": false
+  },
+  {
+    "name": "MD.Ch07.underdampedPhase_identity",
+    "kind": "theorem",
+    "source_id": "MD-7.13-UnderdampedPhasePrinted",
+    "status": "已证",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "reason": null,
+    "direct_placeholder": false,
+    "unchanged_submitted_statement": true,
+    "website_verdict": "见原始报告的分版本意见；不推定完整定理PASS",
+    "website_signature_pass": false
+  },
+  {
+    "name": "MD.Ch07.stabilityEnvelope",
+    "kind": "def",
+    "source_id": "MD-7.13-StabilityEnvelope",
+    "status": "定义",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "reason": null,
+    "direct_placeholder": false,
+    "unchanged_submitted_statement": true,
+    "website_verdict": "PASS（送审签名未变）",
+    "website_signature_pass": true
+  },
+  {
+    "name": "MD.Ch07.stabilityEnvelope_sufficient",
+    "kind": "theorem",
+    "source_id": "MD-7.13-StabilityEnvelope",
+    "status": "已证",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "reason": null,
+    "direct_placeholder": false,
+    "unchanged_submitted_statement": true,
+    "website_verdict": "PASS（送审签名未变）",
+    "website_signature_pass": true
+  },
+  {
+    "name": "MD.Ch07.stabilityEnvelope_iff",
+    "kind": "theorem",
+    "source_id": "MD-7.13-StabilityEnvelope",
+    "status": "未证",
+    "axioms": [
+      "propext",
+      "sorryAx",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "reason": "缺大型理论",
+    "direct_placeholder": true,
+    "unchanged_submitted_statement": true,
+    "website_verdict": "PASS（送审签名未变）",
+    "website_signature_pass": true
+  },
+  {
+    "name": "MD.Ch07.frictionThresholdPrinted",
+    "kind": "def",
+    "source_id": "MD-7.13-FrictionThresholdPrinted",
+    "status": "定义",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "reason": null,
+    "direct_placeholder": false,
+    "unchanged_submitted_statement": true,
+    "website_verdict": "见原始报告的分版本意见；不推定完整定理PASS",
+    "website_signature_pass": false
+  },
+  {
+    "name": "MD.Ch07.frictionThresholdPrinted_corrected",
+    "kind": "def",
+    "source_id": "MD-7.13-FrictionThresholdPrinted",
+    "status": "定义",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "reason": null,
+    "direct_placeholder": false,
+    "unchanged_submitted_statement": true,
+    "website_verdict": "见原始报告的分版本意见；不推定完整定理PASS",
+    "website_signature_pass": false
+  },
+  {
+    "name": "MD.Ch07.frictionBoundPrinted",
+    "kind": "def",
+    "source_id": "MD-7.13-FrictionThresholdPrinted",
+    "status": "定义",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "reason": null,
+    "direct_placeholder": false,
+    "unchanged_submitted_statement": true,
+    "website_verdict": "见原始报告的分版本意见；不推定完整定理PASS",
+    "website_signature_pass": false
+  },
+  {
+    "name": "MD.Ch07.frictionBoundPrinted_corrected",
+    "kind": "def",
+    "source_id": "MD-7.13-FrictionThresholdPrinted",
+    "status": "定义",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "reason": null,
+    "direct_placeholder": false,
+    "unchanged_submitted_statement": true,
+    "website_verdict": "见原始报告的分版本意见；不推定完整定理PASS",
+    "website_signature_pass": false
+  },
+  {
+    "name": "MD.Ch07.frictionThreshold_rationalized",
+    "kind": "theorem",
+    "source_id": "MD-7.13-FrictionThresholdPrinted",
+    "status": "未证",
+    "axioms": [
+      "propext",
+      "sorryAx",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "reason": "缺大型理论",
+    "direct_placeholder": true,
+    "unchanged_submitted_statement": true,
+    "website_verdict": "见原始报告的分版本意见；不推定完整定理PASS",
+    "website_signature_pass": false
+  },
+  {
+    "name": "MD.Ch07.frictionThreshold_allSteps",
+    "kind": "theorem",
+    "source_id": "MD-7.13-FrictionThresholdPrinted",
+    "status": "未证",
+    "axioms": [
+      "propext",
+      "sorryAx",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "reason": "缺大型理论",
+    "direct_placeholder": true,
+    "unchanged_submitted_statement": true,
+    "website_verdict": "见原始报告的分版本意见；不推定完整定理PASS",
+    "website_signature_pass": false
+  },
+  {
+    "name": "MD.Ch07.frictionThreshold_asymptotic",
+    "kind": "theorem",
+    "source_id": "MD-7.13-FrictionThresholdPrinted",
+    "status": "未证",
+    "axioms": [
+      "propext",
+      "sorryAx",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "reason": "缺大型理论",
+    "direct_placeholder": true,
+    "unchanged_submitted_statement": true,
+    "website_verdict": "见原始报告的分版本意见；不推定完整定理PASS",
+    "website_signature_pass": false
+  },
+  {
+    "name": "MD.Ch07.frictionThreshold_squared_counterexample",
+    "kind": "theorem",
+    "source_id": "MD-7.13-FrictionThresholdPrinted",
+    "status": "已证",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "reason": null,
+    "direct_placeholder": false,
+    "unchanged_submitted_statement": true,
+    "website_verdict": "见原始报告的分版本意见；不推定完整定理PASS",
+    "website_signature_pass": false
+  },
+  {
+    "name": "MD.Ch07.configurationalSamplingAverage",
+    "kind": "def",
+    "source_id": "MD-7.1-ConfigurationalSampling",
+    "status": "定义",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "reason": null,
+    "direct_placeholder": false,
+    "unchanged_submitted_statement": true,
+    "website_verdict": "PASS（送审签名未变）",
+    "website_signature_pass": true
+  },
+  {
+    "name": "MD.Ch07.configurationalSamplingQualified",
+    "kind": "def",
+    "source_id": "MD-7.1-ConfigurationalSampling",
+    "status": "定义",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "reason": null,
+    "direct_placeholder": false,
+    "unchanged_submitted_statement": true,
+    "website_verdict": "PASS（送审签名未变）",
+    "website_signature_pass": true
+  },
+  {
+    "name": "MD.Ch07.energyConservingFlow",
+    "kind": "def",
+    "source_id": "MD-7.1-HamiltonianSamplingObstruction",
+    "status": "定义",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "reason": null,
+    "direct_placeholder": false,
+    "unchanged_submitted_statement": true,
+    "website_verdict": "见原始报告的分版本意见；不推定完整定理PASS",
+    "website_signature_pass": false
+  },
+  {
+    "name": "MD.Ch07.energySublevel_invariant",
+    "kind": "theorem",
+    "source_id": "MD-7.1-HamiltonianSamplingObstruction",
+    "status": "已证",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "reason": null,
+    "direct_placeholder": false,
+    "unchanged_submitted_statement": true,
+    "website_verdict": "见原始报告的分版本意见；不推定完整定理PASS",
+    "website_signature_pass": false
+  },
+  {
+    "name": "MD.Ch07.energyObstructionQualified",
+    "kind": "def",
+    "source_id": "MD-7.1-HamiltonianSamplingObstruction",
+    "status": "定义",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "reason": null,
+    "direct_placeholder": false,
+    "unchanged_submitted_statement": false,
+    "website_verdict": "见原始报告的分版本意见；不推定完整定理PASS",
+    "website_signature_pass": false
+  }
+]

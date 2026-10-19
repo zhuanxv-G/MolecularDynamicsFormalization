@@ -1,0 +1,211 @@
+{
+  "batch": "EAUDIT05",
+  "input_sha256": {
+    "Blueprint/Ch07.lean": "f3bc0ee86ace9c825028f0cec8ebb2fb410d6be77213cc7fb41cb8889540a000",
+    "blueprint/ch07/ch07_source.json": "1a201887b51a249fb73f456237cb342963c5d98c612ec1912f21572a57924012"
+  },
+  "items": [
+    {
+      "source_id": "MD-7.8.1-CommutatorPermutationRelations",
+      "json_review": {
+        "status": "APPROVED",
+        "issue_codes": [
+          "DECLARED_COVERAGE_GAP"
+        ],
+        "corrected_json": null,
+        "issues": [
+          "只有已披露的覆盖缺口：(7.23)关于四个修正函数的关系未包含在Lean结论中；需同一Poisson方程、解空间以及归一化后的核唯一性。"
+        ],
+        "evidence": [
+          "A：附件第16页＝PDF313／印刷292。首个O与A+B的交换子作用为零、(7.22)四个排列的相等与负号、末项−1/2[A,B]、(7.23)及(7.24)中−1/2[A−B,O]全部与原页一致。",
+          "C：comm X Y=X*Y−Y*X；firstOrderOperator X Y Z=−1/2·([X,Y]+[X,Z]+[Y,Z])，其负号符合按时间执行字符串XYZ的前向反序乘积。",
+          "C：对任意实模E、线性自同态A,B,O和ρ，hO:Oρ=0、hH:(A+B)ρ=0显式给定；完整结论含七项合取，逐一对应首式、(7.22)的四项关系及(7.24)的两项关系，顺序和符号正确。",
+          "C：由hO/hH有([A,O]+[B,O])ρ=0，因此(7.24)右端的−1/2[A−B,O]正好提供F_AOBρ−F_ABOρ所需项。没有漏掉第二次取负号。commutatorPermutationRelations PASS。",
+          "C审校对象仅为R1_任务.md本条完整Lean、摘录的项目依赖和附录D1–D20；Mathlib标准定义按任务规定采信。未读取旧Ch0x/source文件作替代输入，未修改工程或补证明，未运行Lean。PASS仅评价明示覆盖范围内的声明签名与定义，不表示原文全部内容已形式化，也不表示含sorry的证明已经验证。",
+          "本条摘录未出现字面[EXTRA]或[ERRATUM?]标签；对应内容按extra_assumptions、issues、statement_scope、coverage_gaps及Printed/corrected名称分别核查。"
+        ]
+      },
+      "audit": {
+        "lean_decl": "MD.Ch07.commutatorPermutationRelations",
+        "verdict": "PASS",
+        "explanation": "七项结论为在两项明确湮灭条件下的真实线性算子代数恒等式，所有ρ和算子量词均保留；并未把它写成只对标量常数成立的替身。所用A,B,O是抽象算子，不自动等同实际Gibbs微分算子；源文(7.23)的解函数关系也没有被仅凭右端相等就冒称已证明。上述范围限制均有明示。",
+        "counterexample": null,
+        "suggested_fix": null
+      },
+      "subtask": "EAUDIT05a"
+    },
+    {
+      "source_id": "MD-7.8.1-GibbsDerivativeIdentities",
+      "json_review": {
+        "status": "CORRECTED",
+        "issue_codes": [
+          "SOURCE_TEXT_NOT_VERBATIM",
+          "DECLARED_COVERAGE_GAP"
+        ],
+        "corrected_json": {
+          "source_id": "MD-7.8.1-GibbsDerivativeIdentities",
+          "kind": "unnumbered_claim",
+          "label": null,
+          "section": "7.8.1",
+          "printed_page": "292–293",
+          "pdf_page": "313–314",
+          "statement_latex": "First, note that if we define the function $g(q,p)$ as\n\\[g(q,p)=\\beta p^TM^{-1}\\nabla U(q),\\]\nthen through simple computation we have\n\\[\\mathcal L_A^\\dagger\\rho_\\beta=-\\mathcal L_B^\\dagger\\rho_\\beta=g(q,p)\\rho_\\beta.\\]\nThis is particularly useful as\n\\[[\\mathcal L_A^\\dagger,\\mathcal L_B^\\dagger]\\rho_\\beta=(\\mathcal L_A^\\dagger\\mathcal L_B^\\dagger-\\mathcal L_B^\\dagger\\mathcal L_A^\\dagger)\\rho_\\beta=-(\\mathcal L_A^\\dagger+\\mathcal L_B^\\dagger)(g(q,p)\\rho_\\beta)=(\\mathcal L_O^\\dagger-\\mathcal L_{LD}^\\dagger)(g(q,p)\\rho_\\beta).\\]\nNow notice that for a function $\\psi(q)$ purely of position, we have\n\\[\\mathcal L_{LD}^\\dagger(\\psi(q)\\rho_\\beta)=-(p^TM^{-1}\\nabla\\psi(q))\\rho_\\beta(q,p),\\]\nand hence we can compute\n\\[\\mathcal L_O^\\dagger(g(q,p)\\rho_\\beta)=\\gamma\\rho_\\beta(-p\\cdot\\nabla_pg(q,p)+\\beta^{-1}\\nabla_p\\cdot M\\nabla_pg(q,p))=-\\gamma g(q,p)\\rho_\\beta=\\gamma\\beta\\mathcal L_{LD}^\\dagger(U(q)\\rho_\\beta).\\]",
+          "proof_latex": null,
+          "proof_outline": null,
+          "proof_note": "原页推导与上下文全文见original_page_text；数学符号的排版以随附原页PDF为准。",
+          "original_page_text": [
+            {
+              "pdf_page": 313,
+              "printed_page": 292,
+              "text": "292\n7\nNumerical Methods for Stochastic Molecular Dynamics\n7.8.1\nComputing the Correction Functions f1.q; p/\nAt this point we may plow ahead and compute the PDE for each corresponding\nscheme, but a more efﬁcient route is offered by working with the structure of the\ninhomogeneity in (7.21). We may make use of the identity\n\u0006\nŒL\u0004\nO; L\u0004\nA\t C ŒL\u0004\nO; L\u0004\nB\t\n\u0007\n\u0005ˇ D\n\u0006\nŒL\u0004\nO; L\u0004\nA C L\u0004\nB\t\n\u0007\n\u0005ˇ D 0;\nas of course L\u0004\nH D L\u0004\nA C L\u0004\nB is the Liouvillian of our Hamiltonian system,\nwhich preserves any function of the energy. Thus, by the skew-symmetry of the\ncommutator (ŒP; Q\t D \u0003ŒQ; P\t) we can relate four of the six methods as\nL\u0004\n1;\u0002ABO\u0003\u0005ˇ D L\u0004\n1;\u0002OAB\u0003\u0005ˇ D \u0003L\u0004\n1;\u0002OBA\u0003\u0005ˇ D \u0003L\u0004\n1;\u0002BAO\u0003\u0005ˇ D \u00031\n2ŒL\u0004\nA; L\u0004\nB\t\u0005ˇ;\n(7.22)\nby virtue of (7.20). Hence the leading order correction functions of the schemes are\nrelated through\nf1;\u0002ABO\u0003 D f1;\u0002OAB\u0003 D \u0003f1;\u0002OBA\u0003 D \u0003f1;\u0002BAO\u0003:\n(7.23)\nThe remaining two permutations of the possible \u0002XYZ\u0003 schemes have a similar\nrelationship, with\nL\u0004\n1;\u0002AOB\u0003\u0005ˇ D \u0003L\u0004\n1;\u0002BOA\u0003\u0005ˇ D \u00031\n2ŒL\u0004\nA \u0003 L\u0004\nB; L\u0004\nO\t\u0005ˇ C L\u0004\n1;\u0002ABO\u0003\u0005ˇ:\n(7.24)\nThis reduces our workload as we can ﬁnd the leading order behavior for all six\nmethods by computing the solution to two PDEs. This is not necessarily trivial, but\nit turns out that the structure of the equations is simple enough that we can ﬁnd exact\nsolutions. We work now to compute the right-hand side of the governing PDE given\nin (7.21).\nIn order to solve (7.21) for the \u0002ABO\u0003 scheme, we need to compute the right\nhand side of (7.22). First, note that if we deﬁne the function g.q; p/ as\ng.q; p/ D ˇpTM\u00021rU.q/;\nthen through simple computation we have\nL\u0004\nA\u0005ˇ D \u0003L\u0004\nB\u0005ˇ D g.q; p/\u0005ˇ:\n"
+            },
+            {
+              "pdf_page": 314,
+              "printed_page": 293,
+              "text": "7.8\nFirst Order Schemes\n293\nThis is particularly useful as\nŒL\u0004\nA; L\u0004\nB\t\u0005ˇ D\n\u0006\nL\u0004\nAL\u0004\nB \u0003 L\u0004\nBL\u0004\nA\n\u0007\n\u0005ˇ D \u0003\n\u0006\nL\u0004\nA C L\u0004\nB\n\u0007 \u0004\ng.q; p/\u0005ˇ\n\u0005\nD\n\u0006\nL\u0004\nO \u0003 L\u0004\nLD\n\u0007 \u0004\ng.q; p/\u0005ˇ\n\u0005\n:\nNow notice that for a function .q/ purely of position, we have\nL\u0004\nLD\n\u0004\n .q/\u0005ˇ\n\u0005\nD \u0003\n\u0004\npTM\u00021r .q/\n\u0005\n\u0005ˇ.q; p/;\nand hence we can compute\nL\u0004\nO\n\u0004\ng.q; p/\u0005ˇ\n\u0005\nD \n\u0005ˇ\n\u0004\n\u0003p \u0002 rpg.q; p/ C ˇ\u00021rp \u0002 Mrpg.q; p/\n\u0005\n;\nD \u0003\ng.q; p/\u0005ˇ;\nD \nˇL\u0004\nLD\n\u0004\nU.q/\u0005ˇ\n\u0005\n:\nThis means that\nL\u0004\n1;\u0002ABO\u0003\u0005ˇ D \u00031\n2ŒL\u0004\nA; L\u0004\nB\t\u0005ˇ D \u00031\n2L\u0004\nLD\n\u0004\nŒ\nˇU.q/ \u0003 g.q; p/\t \u0005ˇ\n\u0005\n:\nHence, we can combine this equation with (7.21) to yield\nL\u0004\nLDf1;\u0002ABO\u0003\u0005ˇ D 1\n2L\u0004\nLD\n\u0004\nŒ\nˇU.q/ \u0003 g.q; p/\t \u0005ˇ\n\u0005\n;\nwith the general solution\nf1;\u0002ABO\u0003 D ˇ\n2\n\u0004\n\nU.q/ \u0003 pTM\u00021rU.q/ \u0003 c\n\u0005\n;\nwhere c D \nhU.q/i is a constant, chosen to ensure that the average of the correction\nfunction is zero. This solution gives the leading order correction for the three related\nschemes in (7.23).\nFor the ﬁnal two schemes, we can compute the correction function through the\nuse of (7.24). Our previous work has computed the second term on the right hand\nside already, so we are left with the initial term. However, its expression reduces\nquite easily, as\nŒL\u0004\nA \u0003 L\u0004\nB; L\u0004\nO\t\u0005ˇ D \u0003L\u0004\nO\n\u0006\nL\u0004\nA \u0003 L\u0004\nB\n\u0007\n\u0005ˇ;\nD \u00032L\u0004\nO\n\u0004\ng.q; p/\u0005ˇ\n\u0005\n;\nD \u00032\nˇL\u0004\nLD\n\u0004\nU.q/\u0005ˇ\n\u0005\n:\n"
+            }
+          ],
+          "transcription_note": "PDF文字层原样保留，陈述中的数学排版转写为LaTeX；文字层有特殊字形编码时以目视原页为准。PDF347的Exercises之后不在正文范围内。",
+          "context_notation": [],
+          "extra_assumptions": [
+            "ρ为未归一Gibbs权，所有微分等式对常数归一化同样成立；实际概率还要正有限配分积分。所有质量正、β>0、光滑资格明示。",
+            "覆盖g、A/B作用、纯位置ψ作用及O(gρ)两种等价写法；交换子作用与中间OU共轭式在原文登记但另列覆盖缺口。",
+            "29号覆盖限定：所列五个Gibbs权微分恒等式；未覆盖本段交换子等式及其他OU中间式。"
+          ],
+          "issues": [],
+          "statement_scope": "所列五个Gibbs权微分恒等式；未覆盖本段交换子等式及其他OU中间式。",
+          "lean_decl": "MD.Ch07.mechanicalHamiltonian",
+          "lean_declarations": [
+            "MD.Ch07.mechanicalHamiltonian",
+            "MD.Ch07.gibbsWeight",
+            "MD.Ch07.gFunction",
+            "MD.Ch07.phaseO",
+            "MD.Ch07.phaseLD",
+            "MD.Ch07.gibbsDerivativeIdentities"
+          ],
+          "source_page_verification": "本次R1审校已逐页目视核对 /workspace/R1_PAGES.pdf，页位及具体发现见本条 json_review.evidence；不依赖旧 source_page_checks.json。",
+          "repair_log": [
+            {
+              "instruction": 29,
+              "website_verdict": "FAIL",
+              "suggested_fix": "把缺失等式登记为独立Lean覆盖义务，或将已形式化范围准确写为五个已列结论；不可把现有定理称为全部原文公式的形式化。",
+              "actual_scope": "所列五个Gibbs权微分恒等式；未覆盖本段交换子等式及其他OU中间式。",
+              "signature_changed": false
+            }
+          ],
+          "documented_priors": [],
+          "coverage_gaps": [
+            "29号覆盖限定：所列五个Gibbs权微分恒等式；未覆盖本段交换子等式及其他OU中间式。"
+          ]
+        },
+        "issues": [
+          "A：公式数学内容正确；输入将“First, note that if ... as”与“Now notice that for ...”分别改写为“If ... as g=...”及“For ...”，且无标记略去交换子的显式AB−BA中间项。恢复原页原句和该中间项。",
+          "C范围提示：五个权函数微分等式不包含本段交换子恒等式及OU共轭的中间展开，已明确披露。"
+        ],
+        "evidence": [
+          "A：附件第17–18页＝PDF313–314／印刷292–293。g的β及M⁻¹、A作用正号/B作用负号、纯位置ψ的负号、O(gρ)的−γ与最后γβ系数全部正确。",
+          "C：mechanicalHamiltonian=∑p_i²/(2m_i)+U(q)，gibbsWeight=exp(−βH)；gFunction=β∑p_i/m_i·∂iU。aForward=−∑p_i/m_i∂qi，bForward=∑∂iU∂pi；phaseO使用θ=β⁻¹，phaseLD为三者之和。",
+          "C：gibbsDerivativeIdentities显式要求所有质量正、β>0、U和ψ为C∞，γ任意实数。五个函数等式依次为Aρ=gρ、Bρ=−gρ、L(ψρ)=−(v·∇ψ)ρ、O(gρ)=−γgρ、O(gρ)=γβL(Uρ)；全体结论的参数和系数正确。",
+          "C逐声明：本条七个定义（含Hamiltonian、权、g、O、LD及依赖的A/B）和gibbsDerivativeIdentities的五项结论均匹配明示范围。ρ是未归一权；乘以固定正常数不改变这些线性恒等式，概率归一化没有被假定已成立。",
+          "C审校对象仅为R1_任务.md本条完整Lean、摘录的项目依赖和附录D1–D20；Mathlib标准定义按任务规定采信。未读取旧Ch0x/source文件作替代输入，未修改工程或补证明，未运行Lean。PASS仅评价明示覆盖范围内的声明签名与定义，不表示原文全部内容已形式化，也不表示含sorry的证明已经验证。",
+          "本条摘录未出现字面[EXTRA]或[ERRATUM?]标签；对应内容按extra_assumptions、issues、statement_scope、coverage_gaps及Printed/corrected名称分别核查。"
+        ]
+      },
+      "audit": {
+        "lean_decl": "MD.Ch07.mechanicalHamiltonian",
+        "verdict": "PASS",
+        "explanation": "全部质量和β的非退化条件明确，C∞资格足以处理全部实际导数；γ的正性对这些代数微分恒等式非必要。Lean函数乘法g*ρ为逐点乘法，与源文相符。原段交换子及OU中间式仍为覆盖缺口，不因恢复源文中间项而宣称已由这五个结论形式化；配分积分的正有限性也不在本条结论中。",
+        "counterexample": null,
+        "suggested_fix": "恢复原文措辞与被略去的交换子中间项；保持未归一Gibbs权的说明，以及交换子/OU中间展开和概率归一化的覆盖缺口。"
+      },
+      "subtask": "EAUDIT05b"
+    },
+    {
+      "source_id": "MD-7.8.1-FirstCorrectionTablePrinted",
+      "json_review": {
+        "status": "CORRECTED",
+        "issue_codes": [
+          "INCOMPLETE_COVERAGE_METADATA"
+        ],
+        "corrected_json": {
+          "source_id": "MD-7.8.1-FirstCorrectionTablePrinted",
+          "kind": "unnumbered_claim",
+          "label": "(7.25a)–(7.25d)",
+          "section": "7.8.1",
+          "printed_page": "293–294",
+          "pdf_page": "314–315",
+          "statement_latex": "In summary, we find that\n\\[f_{1,[ABO]}(q,p)=f_{1,[OAB]}(q,p)=\\frac\\beta2(\\gamma U(q)-p^TM^{-1}\\nabla U(q)-c),\\tag{7.25a}\\]\n\\[f_{1,[OBA]}(q,p)=f_{1,[BAO]}(q,p)=-\\frac\\beta2(\\gamma U(q)-p^TM^{-1}\\nabla U(q)-c),\\tag{7.25b}\\]\n\\[f_{1,[AOB]}(q,p)=-\\frac\\beta2(\\gamma U(q)+p^TM^{-1}\\nabla U(q)-c),\\tag{7.25c}\\]\n\\[f_{1,[BOA]}(q,p)=\\frac\\beta2(\\gamma U(q)+p^TM^{-1}\\nabla U(q)-c),\\tag{7.25d}\\]\nwhere the constant $c$ is chosen to ensure each correction function has average 0, giving $c=\\gamma\\langle U(q)\\rangle$.",
+          "proof_latex": null,
+          "proof_outline": null,
+          "proof_note": "原页推导与上下文全文见original_page_text；数学符号的排版以随附原页PDF为准。",
+          "original_page_text": [
+            {
+              "pdf_page": 314,
+              "printed_page": 293,
+              "text": "7.8\nFirst Order Schemes\n293\nThis is particularly useful as\nŒL\u0004\nA; L\u0004\nB\t\u0005ˇ D\n\u0006\nL\u0004\nAL\u0004\nB \u0003 L\u0004\nBL\u0004\nA\n\u0007\n\u0005ˇ D \u0003\n\u0006\nL\u0004\nA C L\u0004\nB\n\u0007 \u0004\ng.q; p/\u0005ˇ\n\u0005\nD\n\u0006\nL\u0004\nO \u0003 L\u0004\nLD\n\u0007 \u0004\ng.q; p/\u0005ˇ\n\u0005\n:\nNow notice that for a function .q/ purely of position, we have\nL\u0004\nLD\n\u0004\n .q/\u0005ˇ\n\u0005\nD \u0003\n\u0004\npTM\u00021r .q/\n\u0005\n\u0005ˇ.q; p/;\nand hence we can compute\nL\u0004\nO\n\u0004\ng.q; p/\u0005ˇ\n\u0005\nD \n\u0005ˇ\n\u0004\n\u0003p \u0002 rpg.q; p/ C ˇ\u00021rp \u0002 Mrpg.q; p/\n\u0005\n;\nD \u0003\ng.q; p/\u0005ˇ;\nD \nˇL\u0004\nLD\n\u0004\nU.q/\u0005ˇ\n\u0005\n:\nThis means that\nL\u0004\n1;\u0002ABO\u0003\u0005ˇ D \u00031\n2ŒL\u0004\nA; L\u0004\nB\t\u0005ˇ D \u00031\n2L\u0004\nLD\n\u0004\nŒ\nˇU.q/ \u0003 g.q; p/\t \u0005ˇ\n\u0005\n:\nHence, we can combine this equation with (7.21) to yield\nL\u0004\nLDf1;\u0002ABO\u0003\u0005ˇ D 1\n2L\u0004\nLD\n\u0004\nŒ\nˇU.q/ \u0003 g.q; p/\t \u0005ˇ\n\u0005\n;\nwith the general solution\nf1;\u0002ABO\u0003 D ˇ\n2\n\u0004\n\nU.q/ \u0003 pTM\u00021rU.q/ \u0003 c\n\u0005\n;\nwhere c D \nhU.q/i is a constant, chosen to ensure that the average of the correction\nfunction is zero. This solution gives the leading order correction for the three related\nschemes in (7.23).\nFor the ﬁnal two schemes, we can compute the correction function through the\nuse of (7.24). Our previous work has computed the second term on the right hand\nside already, so we are left with the initial term. However, its expression reduces\nquite easily, as\nŒL\u0004\nA \u0003 L\u0004\nB; L\u0004\nO\t\u0005ˇ D \u0003L\u0004\nO\n\u0006\nL\u0004\nA \u0003 L\u0004\nB\n\u0007\n\u0005ˇ;\nD \u00032L\u0004\nO\n\u0004\ng.q; p/\u0005ˇ\n\u0005\n;\nD \u00032\nˇL\u0004\nLD\n\u0004\nU.q/\u0005ˇ\n\u0005\n:\n"
+            },
+            {
+              "pdf_page": 315,
+              "printed_page": 294,
+              "text": "294\n7\nNumerical Methods for Stochastic Molecular Dynamics\nAnd hence we have\nL\u0004\nLD\n\u0004\nf1;\u0002AOB\u0003\u0005ˇ\n\u0005\nD L\u0004\nLD\n\u0004\nf1;\u0002ABO\u0003\u0005ˇ\n\u0005\n\u0003 \nˇL\u0004\nLD\n\u0004\nU.q/\u0005ˇ\n\u0005\n;\ngiving the general solution\nf1;\u0002AOB\u0003 D \u0003ˇ\n2\n\u0004\n\nU.q/ C pTM\u00021rU.q/ \u0003 c\n\u0005\n;\nfor the same choice of c.\nHence using the symmetry in the commutators we are able to solve for the leading\norder corrections for each of the schemes of the form \u0002XYZ\u0003. In summary, we ﬁnd\nthat\nf1;\u0002ABO\u0003.q; p/ D f1;\u0002OAB\u0003.q; p/ D ˇ\n2\n\u0004\n\nU.q/ \u0003 pTM\u00021rU.q/ \u0003 c\n\u0005\n;\n(7.25a)\nf1;\u0002OBA\u0003.q; p/ D f1;\u0002BAO\u0003.q; p/ D \u0003ˇ\n2\n\u0004\n\nU.q/ \u0003 pTM\u00021rU.q/ \u0003 c\n\u0005\n;\n(7.25b)\nf1;\u0002AOB\u0003.q; p/ D \u0003ˇ\n2\n\u0004\n\nU.q/ C pTM\u00021rU.q/ \u0003 c\n\u0005\n;\n(7.25c)\nf1;\u0002BOA\u0003.q; p/ D ˇ\n2\n\u0004\n\nU.q/ C pTM\u00021rU.q/ \u0003 c\n\u0005\n;\n(7.25d)\nwhere the constant c is chosen to ensure each correction function has average 0,\ngiving c D \nhU.q/i. If required, we may continue this procedure in order to ﬁnd\ncorrection functions for higher orders, though the added complexity means that we\ncannot always solve to ﬁnd an explicit solution.\nThe results of our analysis suggest that to leading order the error scales linearly\nwith the reciprocal temperature ˇ, but more importantly a non-constant term appears\nwhich is of order \n. As our correction is of the form h#f1i we can see that if # D\n#1.p/ then this O.\n/ term will not trouble us, as\nh#1.p/f1.q; p/i D ˙ˇ\n2\n˝\n.\nU.q/ \u0003 c/#1.p/ ˙ pTM\u00021rU.q/#1.p/\n˛\nD ˙ˇ\n2\n˝\npTM\u00021rU.q/#1.p/\n˛\n;\nwhere the sign depends on the particular scheme used (which governs the form of\nf1). Thus in the case of a function of pure momentum the order \n term does not\n"
+            }
+          ],
+          "transcription_note": "PDF文字层原样保留，陈述中的数学排版转写为LaTeX；文字层有特殊字形编码时以目视原页为准。PDF347的Exercises之后不在正文范围内。",
+          "context_notation": [],
+          "extra_assumptions": [
+            "六个排列分别编码ABO,OAB,OBA,BAO,AOB,BOA；原文版不证明，修正版陈述实际PDE。c任意常数时PDE不变，零均值另行规定c=γ〈U〉。",
+            "29号覆盖限定：恢复原页正号后的六个候选函数与六个PDE；常数仍任意，零均值选择义务独立登记。旧corrected名称只作兼容。",
+            "PDF314–315已目视核对原页：(7.25c)括号内为+v；旧负号是转录错误，撤销原书疑误。"
+          ],
+          "issues": [],
+          "statement_scope": "恢复原页正号后的六个候选函数与六个PDE；常数仍任意，零均值选择义务独立登记。旧corrected名称只作兼容。",
+          "lean_decl": "MD.Ch07.firstCorrectionTablePrinted",
+          "lean_declarations": [
+            "MD.Ch07.firstCorrectionTablePrinted",
+            "MD.Ch07.firstCorrectionTablePrinted_corrected",
+            "MD.Ch07.firstCorrection_sign_counterexample",
+            "MD.Ch07.phaseComm",
+            "MD.Ch07.firstCorrectionRHS",
+            "MD.Ch07.firstCorrectionTable_pde"
+          ],
+          "source_page_verification": "本次R1审校已逐页目视核对 /workspace/R1_PAGES.pdf，页位及具体发现见本条 json_review.evidence；不依赖旧 source_page_checks.json。",
+          "repair_log": [
+            {
+              "instruction": 29,
+              "website_verdict": "FAIL",
+              "suggested_fix": "在JSON中将(7.25c)恢复正号，删除原书印负号的issues；把现有_corrected登记为恢复转写而非数学勘误。以后修订工程时修复Printed分支并另列中心化义务；本次仅报告。",
+              "actual_scope": "恢复原页正号后的六个候选函数与六个PDE；常数仍任意，零均值选择义务独立登记。旧corrected名称只作兼容。",
+              "signature_changed": true
+            }
+          ],
+          "documented_priors": [],
+          "coverage_gaps": [
+            "未定义或证明归一Gibbs概率及U、v的积分资格，未形式化零均值条件与c=γ〈U〉的选择；当前PDE对任意常数c成立。"
+          ]
+        },
+        "issues": [
+          "A：原页(7.25c)确为+ p^TM⁻¹∇U，当前原文JSON和Printed已经正确；不存在本条所涉原书正负号勘误。",
+          "JSON的extra_assumptions和statement_scope承认零均值选择义务独立，但coverage_gaps为空；补登记概率归一化、积分资格及c选择的未覆盖部分。"
+        ],
+        "evidence": [
+          "A：附件第19–20页＝PDF314–315／印刷293–294；表(7.25a–d)实际在附件第20页。四行依次为+β/2(γU−v−c)、−β/2(γU−v−c)、−β/2(γU+v−c)、+β/2(γU+v−c)，c=γ〈U〉；与输入完全相符。",
+          "C：s:Fin 6依次编码ABO,OAB,OBA,BAO,AOB,BOA。firstCorrectionTablePrinted六分支逐一忠实；firstCorrectionTablePrinted_corrected仅重写s=4的同一表达式，与Printed在所有s上相同，兼容名称不表示另有数学改动。",
+          "C：firstCorrection_sign_counterexample仅断言−1/2(1−1−0)≠−1/2(1+1−0)，即0≠−1，是正确的旧转录正负号差异示例；它没有引用当前两个函数，不能当作它们不相等或原书有误的反例。",
+          "C：phaseComm采用AB−BA。firstCorrectionRHS六种排列的+1/2交换子和为−L_1†ρ，正好是修正方程L_LD†(f_1ρ)的右端；不是L_1†本身。firstCorrectionTable_pde对所有s和任意实γ,c，在正质量、β>0、U为C∞下给函数等式，符号正确。",
+          "C逐声明：两个表定义、纯数不等式、phaseComm、firstCorrectionRHS及firstCorrectionTable_pde均PASS。c任意不影响PDE，因为L_LD†ρ=0；“零均值”则另需归一化和可积性，不能从该PDE直接推出。",
+          "C审校对象仅为R1_任务.md本条完整Lean、摘录的项目依赖和附录D1–D20；Mathlib标准定义按任务规定采信。未读取旧Ch0x/source文件作替代输入，未修改工程或补证明，未运行Lean。PASS仅评价明示覆盖范围内的声明签名与定义，不表示原文全部内容已形式化，也不表示含sorry的证明已经验证。",
+          "本条摘录未出现字面[EXTRA]或[ERRATUM?]标签；对应内容按extra_assumptions、issues、statement_scope、coverage_gaps及Printed/corrected名称分别核查。"
+        ]
+      },
+      "audit": {
+        "lean_decl": "MD.Ch07.firstCorrectionTablePrinted",
+        "verdict": "PASS",
+        "explanation": "六个排列的完整分支、PDE及其所有前提与结论均正确。Printed与corrected当前完全相同，原书正号应保留；数值不等式本身成立，但其用途限于说明旧误录。任意常数c的PDE不等于已实现平均为零：后者需存在归一Gibbs概率、U和v可积及动量奇性消去后，才能取c=γ〈U〉。本条仅修补覆盖元数据，不改Lean。",
+        "counterexample": null,
+        "suggested_fix": "保留原页(7.25c)的+v及两个相同定义；将旧纯数反例明确说明为转录差异示例，并登记零均值选择与积分资格的独立义务。"
+      },
+      "subtask": "EAUDIT05c"
+    }
+  ],
+  "merged_from": "ch07_eaudit_merged"
+}

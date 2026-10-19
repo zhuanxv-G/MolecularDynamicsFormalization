@@ -1,0 +1,831 @@
+{
+  "MD-7.2-SDEIncrement": {
+    "reason": "需对第6章L²积分定义补区间可加性及积分几乎处处组合桥接；本轮不建立一般随机积分理论。",
+    "category": "缺大型理论",
+    "routes": [],
+    "decision": "修复阶段允许只补陈述；未建设大型理论，原书错误字面不证明。",
+    "declaration_reasons": {
+      "MD.Ch07.sdeIncrement": "缺大型理论"
+    }
+  },
+  "MD-7.2-StrongWeakComparison": {
+    "reason": "约定的三条路线内已完成；失败路线保留，不再列作未证。",
+    "category": null,
+    "routes": [
+      {
+        "route": 1,
+        "outcome": "FAIL",
+        "reason": "两点概率质量归一与任意函数积分尚未化简",
+        "receipt": "validation/batches/shortproof-v1.json"
+      },
+      {
+        "route": 2,
+        "outcome": "FAIL",
+        "reason": "dirac可积性需要有限范数参数；NNReal标量归一需转ENNReal",
+        "receipt": "validation/batches/shortproof-v2.json"
+      },
+      {
+        "route": 3,
+        "outcome": "PASS",
+        "reason": "显式dirac可积性、测度求和积分及NNReal归一后通过",
+        "receipt": "validation/batches/shortproof-v3.json"
+      }
+    ],
+    "decision": "修复阶段允许只补陈述；未建设大型理论，原书错误字面不证明。",
+    "status": "resolved",
+    "declaration_reasons": {}
+  },
+  "MD-7.2-PartitionPrinted": {
+    "reason": "原文倒数关系导致归一化错误，原文版不证明；修正版正常证明。",
+    "category": "原书疑误不证",
+    "routes": [],
+    "decision": "修复阶段允许只补陈述；未建设大型理论，原书错误字面不证明。",
+    "declaration_reasons": {
+      "MD.Ch07.partitionPrinted": "原书疑误不证"
+    }
+  },
+  "MD-7.3-OUIntegratingFactor": {
+    "reason": "需要第6章Itô积分定义与积分因子法的桥接；不新建一般随机乘积法则。",
+    "category": "缺大型理论",
+    "routes": [],
+    "decision": "修复阶段允许只补陈述；未建设大型理论，原书错误字面不证明。",
+    "declaration_reasons": {
+      "MD.Ch07.ouIntegratingFactor": "缺大型理论"
+    }
+  },
+  "MD-7.3-OUExactUpdate": {
+    "reason": "需要加权Wiener增量的联合Gaussian分布及相对过去的独立性；不建设一般SDE转移核理论。",
+    "category": "缺大型理论",
+    "routes": [],
+    "decision": "修复阶段允许只补陈述；未建设大型理论，原书错误字面不证明。",
+    "declaration_reasons": {
+      "MD.Ch07.ouTransitionLaw": "缺大型理论"
+    }
+  },
+  "MD-7.3-OUForward": {
+    "reason": "需要任意有限维逐坐标两次分部积分；本轮仅陈述，不为此建设大型算子域理论。",
+    "category": "缺大型理论",
+    "routes": [],
+    "decision": "修复阶段允许只补陈述；未建设大型理论，原书错误字面不证明。",
+    "declaration_reasons": {
+      "MD.Ch07.ouForward_adjoint": "缺大型理论"
+    }
+  },
+  "MD-7.3-OUGaussianInvariant": {
+    "reason": "需实际独立Gaussian向量线性变换与指数/方差恒等式的桥接；不建立一般随机核理论。",
+    "category": "缺大型理论",
+    "routes": [],
+    "decision": "修复阶段允许只补陈述；未建设大型理论，原书错误字面不证明。",
+    "declaration_reasons": {
+      "MD.Ch07.ouGaussianInvariant": "缺大型理论"
+    }
+  },
+  "MD-7.3.1-HamiltonianGibbs": {
+    "reason": "需map与withDensity的测度输运短桥；现有Hamiltonian体积保持可作为流资格，不新建流存在理论。",
+    "category": "缺大型理论",
+    "routes": [],
+    "decision": "修复阶段允许只补陈述；未建设大型理论，原书错误字面不证明。",
+    "declaration_reasons": {
+      "MD.Ch07.hamiltonianGibbs": "缺大型理论"
+    }
+  },
+  "MD-7.3.1-ABExactFlows": {
+    "reason": "kickStep导数三条短路线均未通过；停止该条，保留陈述。",
+    "category": "时间盒止",
+    "routes": [
+      {
+        "route": 1,
+        "receipt": "validation/batches/s73b-v1.json",
+        "failure": "simpa函数实例不匹配与乘除结合"
+      },
+      {
+        "route": 2,
+        "receipt": "validation/batches/s73b-v2.json",
+        "failure": "simpa补Pi.sub_apply仍实例不匹配"
+      },
+      {
+        "route": 3,
+        "receipt": "validation/batches/s73b-v3.json",
+        "failure": "convert!剩余导数代数目标"
+      }
+    ],
+    "decision": "修复阶段允许只补陈述；未建设大型理论，原书错误字面不证明。",
+    "declaration_reasons": {
+      "MD.Ch07.kickStep_derivative": "缺大型理论"
+    }
+  },
+  "MD-7.3.2-SPVLargeFriction": {
+    "reason": "指数衰减及除以γ的实极限短桥尚待尝试，不建立采样收敛理论。",
+    "category": "缺大型理论",
+    "routes": [],
+    "decision": "修复阶段允许只补陈述；未建设大型理论，原书错误字面不证明。",
+    "declaration_reasons": {
+      "MD.Ch07.spvEtaLimit": "缺大型理论"
+    }
+  },
+  "MD-7.4-HarmonicMoments": {
+    "reason": "需要正态二阶矩和乘积测度积分的完整短桥；不重建Gaussian理论。",
+    "category": "缺大型理论",
+    "routes": [],
+    "decision": "修复阶段允许只补陈述；未建设大型理论，原书错误字面不证明。",
+    "declaration_reasons": {
+      "MD.Ch07.harmonicMoments": "缺大型理论"
+    }
+  },
+  "MD-7.4.1-StationaryMomentSystem": {
+    "reason": "需乘积测度、可积多项式与推前矩计算的桥接；不建立一般Markov链遍历理论。",
+    "category": "缺大型理论",
+    "routes": [],
+    "decision": "修复阶段允许只补陈述；未建设大型理论，原书错误字面不证明。",
+    "declaration_reasons": {
+      "MD.Ch07.stationaryMomentSystem": "缺大型理论"
+    }
+  },
+  "MD-7.4.1-ABOHarmonic": {
+    "reason": "需推前期望方程与二元线性系统短桥；不建立Markov遍历性。",
+    "category": "缺大型理论",
+    "routes": [],
+    "decision": "修复阶段允许只补陈述；未建设大型理论，原书错误字面不证明。",
+    "declaration_reasons": {
+      "MD.Ch07.aboStationaryMean": "缺大型理论"
+    }
+  },
+  "MD-7.4.1-ABOVariance": {
+    "reason": "需实际平稳矩方程求解及三阶Taylor余项；各路线超出短桥，保留未证。",
+    "category": "缺大型理论",
+    "routes": [],
+    "decision": "修复阶段允许只补陈述；未建设大型理论，原书错误字面不证明。",
+    "declaration_reasons": {
+      "MD.Ch07.aboVarianceRatio_expansion": "缺大型理论",
+      "MD.Ch07.aboStationaryVariance": "缺大型理论"
+    }
+  },
+  "MD-7.4.1-Table71": {
+    "reason": "四种真实分裂映射的Gaussian矩输运与线性方程求解；不建立一般离散遍历理论。",
+    "category": "缺大型理论",
+    "routes": [],
+    "decision": "修复阶段允许只补陈述；未建设大型理论，原书错误字面不证明。",
+    "declaration_reasons": {
+      "MD.Ch07.table71": "缺大型理论"
+    }
+  },
+  "MD-7.4.1-NonsymmetricExactMoments": {
+    "reason": "需要真实平稳矩输运及代数求解；不建立通用弱误差理论。",
+    "category": "缺大型理论",
+    "routes": [],
+    "decision": "修复阶段允许只补陈述；未建设大型理论，原书错误字面不证明。",
+    "declaration_reasons": {
+      "MD.Ch07.nonsymmetricExactMoments": "缺大型理论",
+      "MD.Ch07.nonsymmetricMixedMoment_order": "时间盒止"
+    }
+  },
+  "MD-7.4.2-BBKStarCorrelations": {
+    "reason": "需要实际独立随机变量的乘积积分和Gaussian矩展开；不建设历史扩展Markov链理论。",
+    "category": "缺大型理论",
+    "routes": [],
+    "decision": "修复阶段允许只补陈述；未建设大型理论，原书错误字面不证明。",
+    "declaration_reasons": {
+      "MD.Ch07.bbkStarCorrelations": "缺大型理论"
+    }
+  },
+  "MD-7.4.2-BBKStarStationary": {
+    "reason": "含平方根的非退化线性系统求解超过本轮短证明；保留未证。",
+    "category": "缺大型理论",
+    "routes": [],
+    "decision": "修复阶段允许只补陈述；未建设大型理论，原书错误字面不证明。",
+    "declaration_reasons": {
+      "MD.Ch07.bbkStarStationaryAlgebra": "缺大型理论"
+    }
+  },
+  "MD-7.5-PerturbedErrorExpansion": {
+    "reason": "需要非线性平稳矩层级截断及一致余项控制的大型理论；本轮不建设。",
+    "category": "缺大型理论",
+    "routes": [],
+    "decision": "修复阶段允许只补陈述；未建设大型理论，原书错误字面不证明。",
+    "declaration_reasons": {
+      "MD.Ch07.perturbedErrorExpansion": "缺大型理论"
+    }
+  },
+  "MD-7.5-PerturbedErrorOrders": {
+    "reason": "首项衰减需有理函数极限短桥；四个误差阶需要非线性平稳弱误差与一致余项理论。",
+    "category": "缺大型理论",
+    "routes": [],
+    "decision": "修复阶段允许只补陈述；未建设大型理论，原书错误字面不证明。",
+    "declaration_reasons": {
+      "MD.Ch07.perturbedErrorOrders": "缺大型理论",
+      "MD.Ch07.baoabLeading_largeFriction": "缺大型理论"
+    }
+  },
+  "MD-7.6-DivergenceFreeInvariant": {
+    "reason": "散度乘积法则与坐标导数求和需短桥；全局流测度输运另列。",
+    "category": "缺大型理论",
+    "routes": [],
+    "decision": "修复阶段允许只补陈述；未建设大型理论，原书错误字面不证明。",
+    "declaration_reasons": {
+      "MD.Ch07.divergenceFreeInvariant": "缺大型理论"
+    }
+  },
+  "MD-7.6-JSplitting": {
+    "reason": "反对称二次型为零、混合偏导对称与坐标散度的短桥；全局流体积保持另列。",
+    "category": "缺大型理论",
+    "routes": [],
+    "decision": "修复阶段允许只补陈述；未建设大型理论，原书错误字面不证明。",
+    "declaration_reasons": {
+      "MD.Ch07.jSplitting_energy": "缺大型理论",
+      "MD.Ch07.jField_finiteDecomposition": "时间盒止"
+    }
+  },
+  "MD-7.7.1-TwoOperatorBCH": {
+    "reason": "已有log与exp低阶系数，但非交换乘积展开到三阶的桥接仍未证明；不建立一般BCH理论。",
+    "category": "缺大型理论",
+    "routes": [],
+    "decision": "修复阶段允许只补陈述；未建设大型理论，原书错误字面不证明。",
+    "declaration_reasons": {
+      "MD.Ch07.twoOperatorBCH": "缺大型理论"
+    }
+  },
+  "MD-7.7.1-TaylorRemainder": {
+    "reason": "需要Mathlib实函数Taylor积分余项桥；不建立通用弱误差展开。",
+    "category": "缺大型理论",
+    "routes": [],
+    "decision": "修复阶段允许只补陈述；未建设大型理论，原书错误字面不证明。",
+    "declaration_reasons": {
+      "MD.Ch07.taylorRemainder": "缺大型理论",
+      "MD.Ch07.taylorRemainder_bound": "缺大型理论",
+      "MD.Ch07.propagatedObservable_remainder": "缺大型理论"
+    }
+  },
+  "MD-7.7.2-ThreeOperatorBCH": {
+    "reason": "需三重形式指数乘积的低阶log系数展开；不建设无界算符BCH收敛理论。",
+    "category": "缺大型理论",
+    "routes": [],
+    "decision": "修复阶段允许只补陈述；未建设大型理论，原书错误字面不证明。",
+    "declaration_reasons": {
+      "MD.Ch07.threeOperatorBCH": "缺大型理论"
+    }
+  },
+  "MD-7.7.2-CommutatorAB": {
+    "reason": "需实二变量偏导乘积与混合偏导交换的短桥；不重建一般微分算符理论。",
+    "category": "缺大型理论",
+    "routes": [],
+    "decision": "修复阶段允许只补陈述；未建设大型理论，原书错误字面不证明。",
+    "declaration_reasons": {
+      "MD.Ch07.commutatorAB": "缺大型理论"
+    }
+  },
+  "MD-7.7.2-CommutatorsAOBO": {
+    "reason": "需三阶偏导乘积展开与交换桥接；最多短路线，不建大型算符理论。",
+    "category": "缺大型理论",
+    "routes": [],
+    "decision": "修复阶段允许只补陈述；未建设大型理论，原书错误字面不证明。",
+    "declaration_reasons": {
+      "MD.Ch07.commutatorsAOBO": "缺大型理论"
+    }
+  },
+  "MD-7.8.1-CommutatorPermutationRelations": {
+    "reason": "线性算符非交换代数作用桥接；本轮保留未证，不建设一般弱误差理论。",
+    "category": "缺大型理论",
+    "routes": [],
+    "decision": "修复阶段允许只补陈述；未建设大型理论，原书错误字面不证明。",
+    "declaration_reasons": {
+      "MD.Ch07.commutatorPermutationRelations": "缺大型理论"
+    }
+  },
+  "MD-7.8.1-GibbsDerivativeIdentities": {
+    "reason": "实际多维Gibbs指数微分、二阶OU乘积法则与求和桥，超过短证明；不建SDE解或遍历理论。",
+    "category": "缺大型理论",
+    "routes": [],
+    "decision": "修复阶段允许只补陈述；未建设大型理论，原书错误字面不证明。",
+    "declaration_reasons": {
+      "MD.Ch07.gibbsDerivativeIdentities": "缺大型理论"
+    }
+  },
+  "MD-7.8-FirstOrderOperator": {
+    "reason": "直接系数归约的短路线超过时间盒；保留未证。",
+    "category": "时间盒止",
+    "routes": [
+      {
+        "route": "由三阶段BCH的1阶系数重写后module归约",
+        "result": "编译进程运行超过短证明时间盒且内存增长；终止该进程，保留s78a-v1失败证据。",
+        "receipt": "validation/batches/s78a-v1.json"
+      }
+    ],
+    "decision": "修复阶段允许只补陈述；未建设大型理论，原书错误字面不证明。",
+    "declaration_reasons": {
+      "MD.Ch07.firstOrderOperator_coefficient": "缺大型理论"
+    }
+  },
+  "MD-7.8.1-FirstCorrectionTablePrinted": {
+    "reason": "完整多维指数微分及二阶算符乘积展开需较大桥接；保留PDE未证。",
+    "category": "原书疑误不证",
+    "routes": [],
+    "decision": "修复阶段允许只补陈述；未建设大型理论，原书错误字面不证明。",
+    "declaration_reasons": {
+      "MD.Ch07.firstCorrectionTable_pde": "缺大型理论"
+    }
+  },
+  "MD-7.8.1-PositionMomentumCorrections": {
+    "reason": "需乘积积分和Gaussian奇矩归零的多维短桥；不建设Talay–Tubaro理论。",
+    "category": "缺大型理论",
+    "routes": [],
+    "decision": "修复阶段允许只补陈述；未建设大型理论，原书错误字面不证明。",
+    "declaration_reasons": {
+      "MD.Ch07.positionMomentumCorrections": "缺大型理论"
+    }
+  },
+  "MD-7.8.1-OverdampedFirstOrderCaution": {
+    "reason": "OU指数衰减、sqrt连续及∇U连续的有限维极限短桥；过阻尼时间重标度理论不新建。",
+    "category": "缺大型理论",
+    "routes": [],
+    "decision": "修复阶段允许只补陈述；未建设大型理论，原书错误字面不证明。",
+    "declaration_reasons": {
+      "MD.Ch07.aoabFrictionLimit": "缺大型理论"
+    }
+  },
+  "MD-7.8.2-BiasedDoubleWellExact": {
+    "reason": "需要四次势Gibbs权可积性、积分分部与Gaussian矩的桥；不建设通用弱误差理论。",
+    "category": "缺大型理论",
+    "routes": [],
+    "decision": "修复阶段允许只补陈述；未建设大型理论，原书错误字面不证明。",
+    "declaration_reasons": {
+      "MD.Ch07.doubleWellExact": "缺大型理论",
+      "MD.Ch07.doubleWellCritical_integral": "缺大型理论"
+    }
+  },
+  "MD-7.9.1-OYZYOInhomogeneity": {
+    "reason": "需展开两个含O和H的嵌套交换子在共同核上的相消短桥；保留未证。",
+    "category": "缺大型理论",
+    "routes": [],
+    "decision": "修复阶段允许只补陈述；未建设大型理论，原书错误字面不证明。",
+    "declaration_reasons": {
+      "MD.Ch07.oyzyoInhomogeneity": "缺大型理论"
+    }
+  },
+  "MD-7.9.1-TripleCommutatorPrinted": {
+    "reason": "需要多维三阶Gibbs微分与交换子展开；不建设通用算符理论。",
+    "category": "原书疑误不证",
+    "routes": [],
+    "decision": "修复阶段允许只补陈述；未建设大型理论，原书错误字面不证明。",
+    "declaration_reasons": {
+      "MD.Ch07.tripleCommutator_corrected": "缺大型理论"
+    }
+  },
+  "MD-7.9.1-SymmetricRHS": {
+    "reason": "需Gaussian乘积测度在p↦-p下不变与可积奇函数积分为零的短桥；不建设Fredholm理论。",
+    "category": "缺大型理论",
+    "routes": [],
+    "decision": "修复阶段允许只补陈述；未建设大型理论，原书错误字面不证明。",
+    "declaration_reasons": {
+      "MD.Ch07.symmetricRHS_zeroMean": "缺大型理论"
+    }
+  },
+  "MD-7.9.2-OUKernelQualification": {
+    "reason": "需要OU生成元加权Dirichlet型、域闭包及核刻画理论，本轮不建设。",
+    "category": "原书疑误不证",
+    "routes": [],
+    "decision": "修复阶段允许只补陈述；未建设大型理论，原书错误字面不证明。",
+    "declaration_reasons": {
+      "MD.Ch07.ouKernelPrinted_corrected": "缺大型理论",
+      "MD.Ch07.ouKernelCentered_corrected": "缺大型理论"
+    }
+  },
+  "MD-7.9.2-OUHermiteIdentities": {
+    "reason": "需三阶张量的Gaussian共轭微分与混合导数交换；保留未证，不发展一般Hermite谱理论。",
+    "category": "缺大型理论",
+    "routes": [],
+    "decision": "修复阶段允许只补陈述；未建设大型理论，原书错误字面不证明。",
+    "declaration_reasons": {
+      "MD.Ch07.ouHermiteIdentities": "缺大型理论"
+    }
+  },
+  "MD-7.9.2-FirstReciprocalCorrection": {
+    "reason": "需要OU线性、Hermite恒等式应用和边界通量桥接；不建设Fredholm替代理论。",
+    "category": "原书疑误不证",
+    "routes": [],
+    "decision": "修复阶段允许只补陈述；未建设大型理论，原书错误字面不证明。",
+    "declaration_reasons": {
+      "MD.Ch07.firstReciprocalCorrection_pde": "缺大型理论"
+    }
+  },
+  "MD-7.9.3-BAOABMarginalCancellation": {
+    "reason": "需Gaussian协方差矩阵、Hessian缩并与乘积Fubini桥；不发展Talay–Tubaro余项理论。",
+    "category": "缺大型理论",
+    "routes": [],
+    "decision": "修复阶段允许只补陈述；未建设大型理论，原书错误字面不证明。",
+    "declaration_reasons": {
+      "MD.Ch07.baoabMarginalCancellation": "缺大型理论",
+      "MD.Ch07.baoabConfigurationalCancellation": "缺大型理论"
+    }
+  },
+  "MD-7.9.3-SuperconvergenceScope": {
+    "reason": "需要逐坐标积分分部及Fubini边界桥；不建设一般无限时间弱展开。",
+    "category": "缺大型理论",
+    "routes": [],
+    "decision": "修复阶段允许只补陈述；未建设大型理论，原书错误字面不证明。",
+    "declaration_reasons": {
+      "MD.Ch07.oabaoPositionCancellation": "缺大型理论",
+      "MD.Ch07.oabaoMomentumCancellation": "缺大型理论"
+    }
+  },
+  "MD-7.10-MomentumRedrawLimit": {
+    "reason": "指数衰减、sqrt连续与有限维逐坐标极限短桥；不建立Smoluchowski–Kramers理论。",
+    "category": "缺大型理论",
+    "routes": [],
+    "decision": "修复阶段允许只补陈述；未建设大型理论，原书错误字面不证明。",
+    "declaration_reasons": {
+      "MD.Ch07.momentumRedrawLimit": "缺大型理论",
+      "MD.Ch07.redrawMomentum_law": "缺大型理论"
+    }
+  },
+  "MD-7.10-OBABOOverdampedEuler": {
+    "reason": "时间尺度替换需实平方根、质量正性与根号乘积的短桥。",
+    "category": "缺大型理论",
+    "routes": [],
+    "decision": "修复阶段允许只补陈述；未建设大型理论，原书错误字面不证明。",
+    "declaration_reasons": {
+      "MD.Ch07.overdampedEuler_rescale": "缺大型理论"
+    }
+  },
+  "MD-7.10-ColoredNoiseAndExtension": {
+    "reason": "需独立Gaussian一二阶矩的全部相邻/不相邻组合积分；不建一般时间序列理论。",
+    "category": "缺大型理论",
+    "routes": [],
+    "decision": "修复阶段允许只补陈述；未建设大型理论，原书错误字面不证明。",
+    "declaration_reasons": {
+      "MD.Ch07.coloredNoise_covariance": "缺大型理论",
+      "MD.Ch07.lmExtendedChain_markov": "缺大型理论"
+    }
+  },
+  "MD-7.9.3-ZeroFrictionVerlet": {
+    "reason": "约定的三条路线内已完成；失败路线保留，不再列作未证。",
+    "category": null,
+    "routes": [
+      {
+        "route": 1,
+        "outcome": "FAIL",
+        "reason": "直接逐坐标ring未能识别梯度内两个等价位置函数",
+        "receipt": "validation/batches/shortproof-v1.json"
+      },
+      {
+        "route": 2,
+        "outcome": "PASS",
+        "reason": "先证明两个漂移半步合并，再代入OU恒等映射通过",
+        "receipt": "validation/batches/shortproof-v3.json"
+      }
+    ],
+    "decision": "修复阶段允许只补陈述；未建设大型理论，原书错误字面不证明。",
+    "status": "resolved",
+    "declaration_reasons": {}
+  },
+  "MD-7.11.1-TemperatureObservables": {
+    "reason": "需Gaussian二阶矩和多维Gibbs积分分部桥；不新建遍历性理论。",
+    "category": "缺大型理论",
+    "routes": [],
+    "decision": "修复阶段允许只补陈述；未建设大型理论，原书错误字面不证明。",
+    "declaration_reasons": {
+      "MD.Ch07.kineticTemperature": "缺大型理论",
+      "MD.Ch07.configurationTemperature": "缺大型理论"
+    }
+  },
+  "MD-7.13-ExactFastGaussianLaw": {
+    "reason": "需要线性SDE变分常数、确定积分Gaussian律及矩阵协方差理论；本轮不建设。",
+    "category": "缺大型理论",
+    "routes": [],
+    "decision": "修复阶段允许只补陈述；未建设大型理论，原书错误字面不证明。",
+    "declaration_reasons": {
+      "MD.Ch07.exactFastGaussianLaw": "缺大型理论"
+    }
+  },
+  "MD-7.13-DeterminantTrace": {
+    "reason": "真实矩阵指数的特征分解/二阶Cayley–Hamilton闭式与det/trace桥；不建设一般线性SDE理论。",
+    "category": "缺大型理论",
+    "routes": [],
+    "decision": "修复阶段允许只补陈述；未建设大型理论，原书错误字面不证明。",
+    "declaration_reasons": {
+      "MD.Ch07.determinantTrace": "缺大型理论"
+    }
+  },
+  "MD-7.13-SpectralRadiusStability": {
+    "reason": "需实二次特征多项式的Schur/Jury判据与复根模长分类；不建设通用随机稳定性理论。",
+    "category": "缺大型理论",
+    "routes": [],
+    "decision": "修复阶段允许只补陈述；未建设大型理论，原书错误字面不证明。",
+    "declaration_reasons": {
+      "MD.Ch07.spectralRadiusStability": "缺大型理论",
+      "MD.Ch07.multipleX_spectral_hyperbolic": "缺大型理论"
+    }
+  },
+  "MD-7.13-HyperbolicPhaseTransform": {
+    "reason": "约定的三条路线内已完成；失败路线保留，不再列作未证。",
+    "category": null,
+    "routes": [
+      {
+        "route": 1,
+        "outcome": "FAIL",
+        "reason": "平方约束及根式分母化简失败",
+        "receipt": "validation/batches/shortproof-v1.json"
+      },
+      {
+        "route": 2,
+        "outcome": "FAIL",
+        "reason": "平方比较引理参数未显式给出；field_simp展开根式不匹配",
+        "receipt": "validation/batches/shortproof-v2.json"
+      },
+      {
+        "route": 3,
+        "outcome": "PASS",
+        "reason": "显式artanh公式与同一正平方根分母约消后通过",
+        "receipt": "validation/batches/shortproof-v3.json"
+      }
+    ],
+    "decision": "修复阶段允许只补陈述；未建设大型理论，原书错误字面不证明。",
+    "status": "resolved",
+    "declaration_reasons": {}
+  },
+  "MD-7.13-StabilityEnvelope": {
+    "reason": "包络等价需cosh/sinh正性及实平方根平方的短桥。",
+    "category": "缺大型理论",
+    "routes": [],
+    "decision": "修复阶段允许只补陈述；未建设大型理论，原书错误字面不证明。",
+    "declaration_reasons": {
+      "MD.Ch07.stabilityEnvelope_iff": "缺大型理论"
+    }
+  },
+  "MD-7.13-FrictionThresholdPrinted": {
+    "reason": "阈值有理化与大参数根式极限需短桥；所有h包络需sinh下界和前条平方等价。",
+    "category": "原书疑误不证",
+    "routes": [],
+    "decision": "修复阶段允许只补陈述；未建设大型理论，原书错误字面不证明。",
+    "declaration_reasons": {
+      "MD.Ch07.frictionThreshold_rationalized": "缺大型理论",
+      "MD.Ch07.frictionThreshold_allSteps": "缺大型理论",
+      "MD.Ch07.frictionThreshold_asymptotic": "缺大型理论"
+    }
+  },
+  "MD-7.1-Bias": {
+    "declaration_reasons": {},
+    "decision": "修复阶段允许只补陈述；未建设大型理论，原书错误字面不证明。"
+  },
+  "MD-7.2-ScalarSDE": {
+    "declaration_reasons": {},
+    "decision": "修复阶段允许只补陈述；未建设大型理论，原书错误字面不证明。"
+  },
+  "MD-7.2-EulerMaruyama": {
+    "declaration_reasons": {},
+    "decision": "修复阶段允许只补陈述；未建设大型理论，原书错误字面不证明。"
+  },
+  "MD-7.2-StrongError": {
+    "declaration_reasons": {},
+    "decision": "修复阶段允许只补陈述；未建设大型理论，原书错误字面不证明。"
+  },
+  "MD-7.2-MeanErrorExpectation": {
+    "declaration_reasons": {},
+    "decision": "修复阶段允许只补陈述；未建设大型理论，原书错误字面不证明。"
+  },
+  "MD-7.2-StrongOrder": {
+    "declaration_reasons": {},
+    "decision": "修复阶段允许只补陈述；未建设大型理论，原书错误字面不证明。"
+  },
+  "MD-7.2-WeakError": {
+    "declaration_reasons": {},
+    "decision": "修复阶段允许只补陈述；未建设大型理论，原书错误字面不证明。"
+  },
+  "MD-7.2-CanonicalAverage": {
+    "declaration_reasons": {},
+    "decision": "修复阶段允许只补陈述；未建设大型理论，原书错误字面不证明。"
+  },
+  "MD-7.2-AverageNotationBias": {
+    "declaration_reasons": {},
+    "decision": "修复阶段允许只补陈述；未建设大型理论，原书错误字面不证明。"
+  },
+  "MD-7.3-VectorOU": {
+    "declaration_reasons": {},
+    "decision": "修复阶段允许只补陈述；未建设大型理论，原书错误字面不证明。"
+  },
+  "MD-7.3-OUPhaseIteration": {
+    "declaration_reasons": {},
+    "decision": "修复阶段允许只补陈述；未建设大型理论，原书错误字面不证明。"
+  },
+  "MD-7.3.1-Langevin": {
+    "declaration_reasons": {},
+    "decision": "修复阶段允许只补陈述；未建设大型理论，原书错误字面不证明。"
+  },
+  "MD-7.3.1-ABOPieces": {
+    "declaration_reasons": {},
+    "decision": "修复阶段允许只补陈述；未建设大型理论，原书错误字面不证明。"
+  },
+  "MD-7.3.1-ABForward": {
+    "declaration_reasons": {},
+    "decision": "修复阶段允许只补陈述；未建设大型理论，原书错误字面不证明。"
+  },
+  "MD-7.3.1-ABOBABO": {
+    "declaration_reasons": {},
+    "decision": "修复阶段允许只补陈述；未建设大型理论，原书错误字面不证明。"
+  },
+  "MD-7.3.1-WordConvention": {
+    "declaration_reasons": {},
+    "decision": "修复阶段允许只补陈述；未建设大型理论，原书错误字面不证明。"
+  },
+  "MD-7.3.1-SixSchemes": {
+    "declaration_reasons": {},
+    "decision": "修复阶段允许只补陈述；未建设大型理论，原书错误字面不证明。"
+  },
+  "MD-7.3.1-ConjugateIteration": {
+    "declaration_reasons": {
+      "MD.Ch07.oaba_baoab_noiseShift": "缺大型理论"
+    },
+    "decision": "修复阶段允许只补陈述；未建设大型理论，原书错误字面不证明。"
+  },
+  "MD-7.3.2-SPVPrinted": {
+    "declaration_reasons": {},
+    "decision": "修复阶段允许只补陈述；未建设大型理论，原书错误字面不证明。"
+  },
+  "MD-7.3.2-BBK": {
+    "declaration_reasons": {},
+    "decision": "修复阶段允许只补陈述；未建设大型理论，原书错误字面不证明。"
+  },
+  "MD-7.4-HarmonicHamiltonian": {
+    "declaration_reasons": {},
+    "decision": "修复阶段允许只补陈述；未建设大型理论，原书错误字面不证明。"
+  },
+  "MD-7.4-LinearIteration": {
+    "declaration_reasons": {},
+    "decision": "修复阶段允许只补陈述；未建设大型理论，原书错误字面不证明。"
+  },
+  "MD-7.4-BBKLinearForm": {
+    "declaration_reasons": {},
+    "decision": "修复阶段允许只补陈述；未建设大型理论，原书错误字面不证明。"
+  },
+  "MD-7.4-QuadraticProducts": {
+    "declaration_reasons": {},
+    "decision": "修复阶段允许只补陈述；未建设大型理论，原书错误字面不证明。"
+  },
+  "MD-7.4.2-BBKStar": {
+    "declaration_reasons": {},
+    "decision": "修复阶段允许只补陈述；未建设大型理论，原书错误字面不证明。"
+  },
+  "MD-7.4.2-BBKStarMomentSystemPrinted": {
+    "declaration_reasons": {},
+    "decision": "修复阶段允许只补陈述；未建设大型理论，原书错误字面不证明。"
+  },
+  "MD-7.5-PerturbedHamiltonian": {
+    "declaration_reasons": {},
+    "decision": "修复阶段允许只补陈述；未建设大型理论，原书错误字面不证明。"
+  },
+  "MD-7.6-GibbsComposition": {
+    "declaration_reasons": {},
+    "decision": "修复阶段允许只补陈述；未建设大型理论，原书错误字面不证明。"
+  },
+  "MD-7.6-GeMarsdenRestriction": {
+    "declaration_reasons": {},
+    "decision": "修复阶段允许只补陈述；未建设大型理论，原书错误字面不证明。"
+  },
+  "MD-7.6-CoordinateJSplitting": {
+    "declaration_reasons": {},
+    "decision": "修复阶段允许只补陈述；未建设大型理论，原书错误字面不证明。"
+  },
+  "MD-7.7-ModifiedGenerator": {
+    "declaration_reasons": {},
+    "decision": "修复阶段允许只补陈述；未建设大型理论，原书错误字面不证明。"
+  },
+  "MD-7.7-InvariantDensityExpansion": {
+    "declaration_reasons": {},
+    "decision": "修复阶段允许只补陈述；未建设大型理论，原书错误字面不证明。"
+  },
+  "MD-7.7.1-ExactABOPropagators": {
+    "declaration_reasons": {},
+    "decision": "修复阶段允许只补陈述；未建设大型理论，原书错误字面不证明。"
+  },
+  "MD-7.7.1-OperatorOrderReversal": {
+    "declaration_reasons": {},
+    "decision": "修复阶段允许只补陈述；未建设大型理论，原书错误字面不证明。"
+  },
+  "MD-7.7.1-StationaryModifiedPDE": {
+    "declaration_reasons": {},
+    "decision": "修复阶段允许只补陈述；未建设大型理论，原书错误字面不证明。"
+  },
+  "MD-7.7.2-ScalarForwardOperators": {
+    "declaration_reasons": {},
+    "decision": "修复阶段允许只补陈述；未建设大型理论，原书错误字面不证明。"
+  },
+  "MD-7.7.2-OBAModifiedOperator": {
+    "declaration_reasons": {
+      "MD.Ch07.obaFirstCorrection_commutators": "缺大型理论"
+    },
+    "decision": "修复阶段允许只补陈述；未建设大型理论，原书错误字面不证明。"
+  },
+  "MD-7.7.2-SpectralQualification": {
+    "declaration_reasons": {},
+    "decision": "修复阶段允许只补陈述；未建设大型理论，原书错误字面不证明。"
+  },
+  "MD-7.7.3-PerturbationCoefficientEquation": {
+    "declaration_reasons": {},
+    "decision": "修复阶段允许只补陈述；未建设大型理论，原书错误字面不证明。"
+  },
+  "MD-7.7.3-ObservableCorrectionExpansion": {
+    "declaration_reasons": {},
+    "decision": "修复阶段允许只补陈述；未建设大型理论，原书错误字面不证明。"
+  },
+  "MD-7.7.3-PerturbativeSolvabilityCaution": {
+    "declaration_reasons": {},
+    "decision": "修复阶段允许只补陈述；未建设大型理论，原书错误字面不证明。"
+  },
+  "MD-7.8-HomogeneousNormalization": {
+    "declaration_reasons": {},
+    "decision": "修复阶段允许只补陈述；未建设大型理论，原书错误字面不证明。"
+  },
+  "MD-7.9-Proposition71": {
+    "declaration_reasons": {},
+    "decision": "修复阶段允许只补陈述；未建设大型理论，原书错误字面不证明。"
+  },
+  "MD-7.9-EvenDensityPerturbation": {
+    "declaration_reasons": {},
+    "decision": "修复阶段允许只补陈述；未建设大型理论，原书错误字面不证明。"
+  },
+  "MD-7.9.1-Lemma71": {
+    "declaration_reasons": {},
+    "decision": "修复阶段允许只补陈述；未建设大型理论，原书错误字面不证明。"
+  },
+  "MD-7.9.1-ConjugateSymmetricCorrections": {
+    "declaration_reasons": {},
+    "decision": "修复阶段允许只补陈述；未建设大型理论，原书错误字面不证明。"
+  },
+  "MD-7.9.2-ReciprocalFrictionExpansion": {
+    "declaration_reasons": {},
+    "decision": "修复阶段允许只补陈述；未建设大型理论，原书错误字面不证明。"
+  },
+  "MD-7.9.2-OverdampedSolvabilityOperators": {
+    "declaration_reasons": {},
+    "decision": "修复阶段允许只补陈述；未建设大型理论，原书错误字面不证明。"
+  },
+  "MD-7.9.2-HighFrictionCorrectionTable": {
+    "declaration_reasons": {},
+    "decision": "修复阶段允许只补陈述；未建设大型理论，原书错误字面不证明。"
+  },
+  "MD-7.10-BAOABLimitMethod": {
+    "declaration_reasons": {
+      "MD.Ch07.lmStepH_rescale": "时间盒止"
+    },
+    "decision": "修复阶段允许只补陈述；未建设大型理论，原书错误字面不证明。"
+  },
+  "MD-7.10-LimitMethodAccuracy": {
+    "declaration_reasons": {},
+    "decision": "修复阶段允许只补陈述；未建设大型理论，原书错误字面不证明。"
+  },
+  "MD-7.11.1-VelocityAutocorrelationDefinition": {
+    "declaration_reasons": {},
+    "decision": "修复阶段允许只补陈述；未建设大型理论，原书错误字面不证明。"
+  },
+  "MD-7.12-ConstrainedLangevin": {
+    "declaration_reasons": {},
+    "decision": "修复阶段允许只补陈述；未建设大型理论，原书错误字面不证明。"
+  },
+  "MD-7.12-ConstrainedCanonicalErgodicity": {
+    "declaration_reasons": {},
+    "decision": "修复阶段允许只补陈述；未建设大型理论，原书错误字面不证明。"
+  },
+  "MD-7.12-ConstrainedHOSplitting": {
+    "declaration_reasons": {},
+    "decision": "修复阶段允许只补陈述；未建设大型理论，原书错误字面不证明。"
+  },
+  "MD-7.12-MEVMEAlgorithm": {
+    "declaration_reasons": {},
+    "decision": "修复阶段允许只补陈述；未建设大型理论，原书错误字面不证明。"
+  },
+  "MD-7.12-MidpointStabilityPrinted": {
+    "declaration_reasons": {},
+    "decision": "修复阶段允许只补陈述；未建设大型理论，原书错误字面不证明。"
+  },
+  "MD-7.12.1-ConstrainedABOSplitting": {
+    "declaration_reasons": {},
+    "decision": "修复阶段允许只补陈述；未建设大型理论，原书错误字面不证明。"
+  },
+  "MD-7.12.1-ConstrainedBAOABAlgorithm": {
+    "declaration_reasons": {},
+    "decision": "修复阶段允许只补陈述；未建设大型理论，原书错误字面不证明。"
+  },
+  "MD-7.12.1-ApproximateGeodesicOrder": {
+    "declaration_reasons": {},
+    "decision": "修复阶段允许只补陈述；未建设大型理论，原书错误字面不证明。"
+  },
+  "MD-7.13-FastSlowHarmonicModel": {
+    "declaration_reasons": {},
+    "decision": "修复阶段允许只补陈述；未建设大型理论，原书错误字面不证明。"
+  },
+  "MD-7.13-MultipleTimestepUpdate": {
+    "declaration_reasons": {},
+    "decision": "修复阶段允许只补陈述；未建设大型理论，原书错误字面不证明。"
+  },
+  "MD-7.13-UnderdampedPhasePrinted": {
+    "declaration_reasons": {},
+    "decision": "修复阶段允许只补陈述；未建设大型理论，原书错误字面不证明。"
+  },
+  "MD-7.1-ConfigurationalSampling": {
+    "declaration_reasons": {},
+    "decision": "修复阶段允许只补陈述；未建设大型理论，原书错误字面不证明。"
+  },
+  "MD-7.1-HamiltonianSamplingObstruction": {
+    "declaration_reasons": {},
+    "decision": "修复阶段允许只补陈述；未建设大型理论，原书错误字面不证明。"
+  }
+}

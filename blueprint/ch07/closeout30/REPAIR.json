@@ -1,0 +1,32 @@
+{
+  "source_id": "MD-7.12-ConstrainedHOSplitting",
+  "original_audit": {
+    "lean_decl": [
+      "MD.Ch07.constrainedHField",
+      "MD.Ch07.constrainedOField",
+      "MD.Ch07.constrainedHOComposition",
+      "MD.Ch07.constrainedONoise",
+      "MD.Ch07.constrainedHIntegralStep",
+      "MD.Ch07.constrainedOIntegralStep",
+      "MD.Ch07.constrainedHMapQualification",
+      "MD.Ch07.constrainedOMapQualification",
+      "MD.Ch07.constrainedHOQualifiedComposition"
+    ],
+    "verdict": "FAIL",
+    "explanation": "漂移、扩散、分段积分解及O-H-O时间次序核对正确，且hH/hO确已连接分段规格。FAIL限于本条声明要覆盖的独立随机映射组合：规格只逐确定初值可测，没有H/O联合可测性，也未指定P.prod P上的输出随机变量/条件分布。两个坐标的函数不足以保证随机初值下的有效组合。另有原印λdt解释疑义，因此A部分仍NEEDS_HUMAN。",
+    "counterexample": {
+      "type_level_witness": "令l=1、g(q)恒为1，则cotangentConstraint为空。两个MapQualification的∀x∈cotangentConstraint均真，甚至可令P=0、W=0并任取H/O；QualifiedComposition仍接受hH/hO，但P.prod P=0并非概率、W也非Wiener。故最后类型并不无条件规定其注释所称的乘积概率空间。即使限定非空约束及合规输入，也仍须补联合可测性来处理随机初值。",
+      "random_initial_state_gap": "对每个确定x有P(N_x)=0并不单独给出{(ω,x):ω∈N_x}的乘积可测性。现有O资格允许零测例外依赖x，且没有(sample,x)联合可测性；因此对独立的随机x使用Fubini/条件分布缺少必要前提。这是规格缺口，不声称每个具体O-H-O算法都会失败。",
+      "printed_multiplier": "n=l=1，g(q)=q，m=γ=θ=1，x0=(0,0)。cotangentConstraint迫使q_t=p_t=0；O积分方程要求reactionImpulse_t=√2 W_t，它不是普通有限变差的∫λ_s ds。Lean允许随机冲量合理，原印λdt若按普通有限变差读取则不成立。"
+    },
+    "suggested_fix": "若继续声称随机组合已覆盖，应在资格中明确P为概率、对初值和样本的联合可测性，指定P.prod P，并把h≥0、合规初值下的输出及随机初值条件解规格列明。或按corrected_json将范围明确缩回逐初值解规格与代数合成，不声称已完成独立随机核组合。保留原印λ并标[ERRATUM?]，记录冲量解释。本次不改Lean。"
+  },
+  "suggested_fix": "若继续声称随机组合已覆盖，应在资格中明确P为概率、对初值和样本的联合可测性，指定P.prod P，并把h≥0、合规初值下的输出及随机初值条件解规格列明。或按corrected_json将范围明确缩回逐初值解规格与代数合成，不声称已完成独立随机核组合。保留原印λ并标[ERRATUM?]，记录冲量解释。本次不改Lean。",
+  "diff": "--- website-submitted\n+++ locally-repaired\n@@ -41,19 +41,64 @@\n \n def constrainedHMapQualification {l : ℕ} (m : V n) (U : V n → ℝ) (g : V n → V l)\n     (H : ℝ → Phase n → Phase n) : Prop :=\n+  (∀ T, 0 ≤ T → Measurable (H T)) ∧\n   ∀ x ∈ cotangentConstraint m g, ∀ T, 0 ≤ T → ∃ Λ : ℝ → V l,\n     constrainedHIntegralStep m U g (fun t ↦ H t x) Λ x T\n \n def constrainedOMapQualification {l : ℕ} (P : Measure Ω) (m : V n) (g : V n → V l)\n     (γ θ : ℝ) (W : ℝ → Ω → V n) (O : ℝ → Ω → Phase n → Phase n) : Prop :=\n+  IsProbabilityMeasure P ∧ vectorWiener P W ∧\n+  (∀ T, 0 ≤ T → Measurable (fun z : Ω × Phase n ↦ O T z.1 z.2)) ∧\n   ∀ x ∈ cotangentConstraint m g, ∀ T, 0 ≤ T → ∃ reaction : ℝ → Ω → V n,\n     constrainedOIntegralStep P m g γ θ W (fun t sample ↦ O t sample x) reaction x T\n \n-/-- 两次O使用乘积概率空间上的独立样本；H/O都须满足各自受约束解规格。 -/\n+/-- 非负步长、合规确定初值下的输出；底层概率测度明确为P.prod P。 -/\n def constrainedHOQualifiedComposition {l : ℕ} (P : Measure Ω) (m : V n)\n     (U : V n → ℝ) (g : V n → V l) (γ θ : ℝ) (W : ℝ → Ω → V n)\n     (H : ℝ → Phase n → Phase n) (O : ℝ → Ω → Phase n → Phase n)\n     (hH : constrainedHMapQualification m U g H)\n-    (hO : constrainedOMapQualification P m g γ θ W O) (h : ℝ) :\n-    Ω × Ω → Phase n → Phase n :=\n-  fun sample x ↦ O (h/2) sample.2 (H h (O (h/2) sample.1 x))+    (hO : constrainedOMapQualification P m g γ θ W O) (h : ℝ) (hh : 0 ≤ h)\n+    (x : Phase n) (hx : x ∈ cotangentConstraint m g) : Ω × Ω → Phase n :=\n+  fun sample ↦ O (h/2) sample.2 (H h (O (h/2) sample.1 x))\n+\n+theorem constrainedHOQualifiedComposition_measurable {l : ℕ} (P : Measure Ω) (m : V n)\n+    (U : V n → ℝ) (g : V n → V l) (γ θ : ℝ) (W : ℝ → Ω → V n)\n+    (H : ℝ → Phase n → Phase n) (O : ℝ → Ω → Phase n → Phase n)\n+    (hH : constrainedHMapQualification m U g H)\n+    (hO : constrainedOMapQualification P m g γ θ W O) (h : ℝ) (hh : 0 ≤ h)\n+    (x : Phase n) (hx : x ∈ cotangentConstraint m g) :\n+    Measurable (constrainedHOQualifiedComposition P m U g γ θ W H O hH hO h hh x hx) := by\n+  have hhalf : 0 ≤ h/2 := by positivity\n+  have hmO := hO.2.2.1 (h/2) hhalf\n+  have hfirst : Measurable (fun sample : Ω × Ω ↦ O (h/2) sample.1 x) :=\n+    hmO.comp (measurable_fst.prodMk measurable_const)\n+  exact hmO.comp (measurable_snd.prodMk ((hH.1 h hh).comp hfirst))\n+\n+/-- 输出律由乘积概率上的可测推前给出；不声称已识别条件积分解。 -/\n+def constrainedHOOutputLaw {l : ℕ} (P : Measure Ω) (m : V n)\n+    (U : V n → ℝ) (g : V n → V l) (γ θ : ℝ) (W : ℝ → Ω → V n)\n+    (H : ℝ → Phase n → Phase n) (O : ℝ → Ω → Phase n → Phase n)\n+    (hH : constrainedHMapQualification m U g H)\n+    (hO : constrainedOMapQualification P m g γ θ W O) (h : ℝ) (hh : 0 ≤ h)\n+    (x : Phase n) (hx : x ∈ cotangentConstraint m g) : Measure (Phase n) :=\n+  (P.prod P).map (constrainedHOQualifiedComposition P m U g γ θ W H O hH hO h hh x hx)\n+\n+theorem constrainedHOOutput_hasLaw {l : ℕ} (P : Measure Ω) (m : V n)\n+    (U : V n → ℝ) (g : V n → V l) (γ θ : ℝ) (W : ℝ → Ω → V n)\n+    (H : ℝ → Phase n → Phase n) (O : ℝ → Ω → Phase n → Phase n)\n+    (hH : constrainedHMapQualification m U g H)\n+    (hO : constrainedOMapQualification P m g γ θ W O) (h : ℝ) (hh : 0 ≤ h)\n+    (x : Phase n) (hx : x ∈ cotangentConstraint m g) :\n+    HasLaw (constrainedHOQualifiedComposition P m U g γ θ W H O hH hO h hh x hx)\n+      (constrainedHOOutputLaw P m U g γ θ W H O hH hO h hh x hx) (P.prod P) := by\n+  exact hasLaw_map (constrainedHOQualifiedComposition_measurable P m U g γ θ W H O hH hO h hh x hx).aemeasurable\n+\n+theorem constrainedHOOutputLaw_probability {l : ℕ} (P : Measure Ω) (m : V n)\n+    (U : V n → ℝ) (g : V n → V l) (γ θ : ℝ) (W : ℝ → Ω → V n)\n+    (H : ℝ → Phase n → Phase n) (O : ℝ → Ω → Phase n → Phase n)\n+    (hH : constrainedHMapQualification m U g H)\n+    (hO : constrainedOMapQualification P m g γ θ W O) (h : ℝ) (hh : 0 ≤ h)\n+    (x : Phase n) (hx : x ∈ cotangentConstraint m g) :\n+    IsProbabilityMeasure (constrainedHOOutputLaw P m U g γ θ W H O hH hO h hh x hx) := by\n+  letI : IsProbabilityMeasure P := hO.1\n+  exact (constrainedHOOutput_hasLaw P m U g γ θ W H O hH hO h hh x hx).isProbabilityMeasure_iff.mp inferInstance",
+  "diff_summary": "补概率/Wiener及H/O联合可测资格、非负步长与合规初值；输出改为P.prod P上随机变量；新增可测性、HasLaw和概率律短证明。随机初值条件解与约束保持继续明确列缺口。",
+  "coverage_gaps": [
+    "未建立随机初值代入后的条件积分解、几乎处处约束保持及完整条件转移核识别；未构造分段解存在唯一性、Oc半群律或约束Gaussian不变性。"
+  ],
+  "status": "按网站审校意见修复，本地核验通过（未再送网站）",
+  "compile_receipt": "blueprint/ch07/closeout30/FINAL_COMPILE.json"
+}

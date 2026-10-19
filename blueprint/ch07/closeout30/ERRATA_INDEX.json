@@ -1,0 +1,208 @@
+[
+  {
+    "source_id": "MD-7.2-StrongWeakComparison",
+    "issues": [],
+    "website": "NEEDS_HUMAN",
+    "reaudit": false
+  },
+  {
+    "source_id": "MD-7.2-PartitionPrinted",
+    "issues": [
+      "已目视核对原页PDF287／印刷266：原书确为Z_can^{-1}=积分，和紧接的归一化断言不相容；不是转录错误。"
+    ],
+    "website": "NEEDS_HUMAN",
+    "reaudit": false
+  },
+  {
+    "source_id": "MD-7.3-OUExactUpdate",
+    "issues": [
+      "已目视核对原页PDF289：前导乘数印作exp(−γt)，应为exp(−γ(t+h))；(7.3)与当前更新公式正确，不改。"
+    ],
+    "website": "NEEDS_HUMAN",
+    "reaudit": false
+  },
+  {
+    "source_id": "MD-7.3.2-SPVPrinted",
+    "issues": [
+      "已目视核对原页PDF293／印刷272：SPV展示式动量用∇U(q_n)，而前文说对两部分作对称积分，漂移半步后冻结位置应为q_{n+1/2}；两者分别保留，待导师判断。"
+    ],
+    "website": "NEEDS_HUMAN",
+    "reaudit": true
+  },
+  {
+    "source_id": "MD-7.3.2-SPVLargeFriction",
+    "issues": [],
+    "website": "NEEDS_HUMAN",
+    "reaudit": false
+  },
+  {
+    "source_id": "MD-7.4.2-BBKStarMomentSystemPrinted",
+    "issues": [
+      "已目视核对PDF299／印刷278：前两条方程交叉项重复印出2ψ12κ1与2ψ22κ2；按前面已列相关矩，应分别为2ψ12κ1κ3和2ψ22κ2κ3。原文与修正方程均保留。"
+    ],
+    "website": "NEEDS_HUMAN",
+    "reaudit": false
+  },
+  {
+    "source_id": "MD-7.5-PerturbedErrorExpansion",
+    "issues": [],
+    "website": "NEEDS_HUMAN",
+    "reaudit": false
+  },
+  {
+    "source_id": "MD-7.5-PerturbedErrorOrders",
+    "issues": [],
+    "website": "NEEDS_HUMAN",
+    "reaudit": false
+  },
+  {
+    "source_id": "MD-7.6-GeMarsdenRestriction",
+    "issues": [],
+    "website": "NEEDS_HUMAN",
+    "reaudit": false
+  },
+  {
+    "source_id": "MD-7.7.1-StationaryModifiedPDE",
+    "issues": [],
+    "website": "NEEDS_HUMAN",
+    "reaudit": false
+  },
+  {
+    "source_id": "MD-7.7.2-SpectralQualification",
+    "issues": [
+      "已目视核对PDF310：原文将discrete spectrum释为simple eigenvalues，这并非一般蕴含。紧预解式至多给离散谱及有限重数，不能直接给单重谱；Langevin谱还需前章所列势函数/空间条件。"
+    ],
+    "website": "NEEDS_HUMAN",
+    "reaudit": true
+  },
+  {
+    "source_id": "MD-7.7.3-PerturbativeSolvabilityCaution",
+    "issues": [],
+    "website": "NEEDS_HUMAN",
+    "reaudit": false
+  },
+  {
+    "source_id": "MD-7.9.1-TripleCommutatorPrinted",
+    "issues": [
+      "已目视核对PDF320／印刷299：首条三重交换子的三阶导数项未带β；后面的PDE却把β乘整个括号，且直接微分给出共同β。原文版与补β修正版独立保留。"
+    ],
+    "website": "NEEDS_HUMAN",
+    "reaudit": false
+  },
+  {
+    "source_id": "MD-7.9.1-SymmetricRHS",
+    "issues": [
+      "零均值只验证必要兼容条件；完整Fredholm可解性需要明确函数空间、算子域、核/余核与闭值域资格。"
+    ],
+    "website": "NEEDS_HUMAN",
+    "reaudit": true
+  },
+  {
+    "source_id": "MD-7.9.1-ConjugateSymmetricCorrections",
+    "issues": [
+      "已目视核对PDF321：所印传播子展开末项为(h²/2)L_LD，按exp的二阶展开应为(h²/8)(L_LD)²；该项作用ρβ为零，不改变后续修正关系。"
+    ],
+    "website": "NEEDS_HUMAN",
+    "reaudit": false
+  },
+  {
+    "source_id": "MD-7.9.2-OUKernelQualification",
+    "issues": [
+      "已目视核对PDF323：前向OU生成元的核实际是Gaussian密度倍数；对ρβf共轭后，合适L²域中的f才对p为常数。原文此句缺少共轭与定义域限定。"
+    ],
+    "website": "NEEDS_HUMAN",
+    "reaudit": true
+  },
+  {
+    "source_id": "MD-7.9.2-FirstReciprocalCorrection",
+    "issues": [
+      "已目视核对PDF324–325：π̄定义带联合ρβ权，后续M公式却使用归一条件动量平均并隐含ρβ共轭。本文区分原文加权积分与修正的条件Gaussian平均，避免遗漏位置密度因子。"
+    ],
+    "website": "NEEDS_HUMAN",
+    "reaudit": true
+  },
+  {
+    "source_id": "MD-7.9.2-OverdampedSolvabilityOperators",
+    "issues": [],
+    "website": "NEEDS_HUMAN",
+    "reaudit": false
+  },
+  {
+    "source_id": "MD-7.10-ColoredNoiseAndExtension",
+    "issues": [
+      "有色噪声不能单独推出位置过程无例外地非Markov；特定势与初态下位置序列可以仍为Markov。"
+    ],
+    "website": "NEEDS_HUMAN",
+    "reaudit": true
+  },
+  {
+    "source_id": "MD-7.10-LimitMethodAccuracy",
+    "issues": [
+      "已目视核对PDF329：本段前面以τ为实际过阻尼步长并称长期二阶，末句却写O(h²)。若仍沿用τ=h²/2，应区分长期O(τ²)=O(h⁴)和有限时一阶O(τ)=O(h²)；原文符号存在歧义。"
+    ],
+    "website": "NEEDS_HUMAN",
+    "reaudit": true
+  },
+  {
+    "source_id": "MD-7.12-ConstrainedLangevin",
+    "issues": [],
+    "website": "NEEDS_HUMAN",
+    "reaudit": true
+  },
+  {
+    "source_id": "MD-7.12-ConstrainedCanonicalErgodicity",
+    "issues": [],
+    "website": "NEEDS_HUMAN",
+    "reaudit": true
+  },
+  {
+    "source_id": "MD-7.12-ConstrainedHOSplitting",
+    "issues": [
+      "原印λdt若理解为普通有限变差反作用，无法抵消约束法向Wiener噪声；保留原文，采用可含随机部分的reactionImpulse作为限定解释，待导师确认。"
+    ],
+    "website": "FAIL",
+    "reaudit": true
+  },
+  {
+    "source_id": "MD-7.12-MidpointStabilityPrinted",
+    "issues": [
+      "已目视核对PDF340／印刷319：所印γh<4保留为原书给出的限制。它保证中点OU放大因子为正；OU线性绝对稳定性本身对γh≥0均成立。原文没有写充要关系，不能把本条当作已确认的原书错误。完整耦合Verlet仍有独立步长限制。"
+    ],
+    "website": "PASS",
+    "reaudit": false
+  },
+  {
+    "source_id": "MD-7.13-SpectralRadiusStability",
+    "issues": [],
+    "website": "NEEDS_HUMAN",
+    "reaudit": true
+  },
+  {
+    "source_id": "MD-7.13-HyperbolicPhaseTransform",
+    "issues": [],
+    "website": "NEEDS_HUMAN",
+    "reaudit": false
+  },
+  {
+    "source_id": "MD-7.13-UnderdampedPhasePrinted",
+    "issues": [
+      "已目视核对PDF346／印刷325：从η=iη̂化为实余弦时应使用+arctan(h/η̂)，所印-atanh(h/η̂)的函数与符号均不符。修正版从cos(a)-r sin(a)的标准幅相恒等式得到。"
+    ],
+    "website": "NEEDS_HUMAN",
+    "reaudit": false
+  },
+  {
+    "source_id": "MD-7.13-FrictionThresholdPrinted",
+    "issues": [
+      "已目视核对PDF346：最后链式下界√2/Ω不成立。将精确阈值有理化得√(2/(Ω²+√(Ω⁴-1)))，大Ω时约1/Ω；√2/Ω可作更保守的充分选择而非精确阈值下界。Ω²=5/4时精确阈值平方=1，小于2/Ω²=8/5。"
+    ],
+    "website": "NEEDS_HUMAN",
+    "reaudit": false
+  },
+  {
+    "source_id": "MD-7.1-HamiltonianSamplingObstruction",
+    "issues": [],
+    "website": "NEEDS_HUMAN",
+    "reaudit": false
+  }
+]

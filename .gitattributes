@@ -43,3 +43,8 @@ Blueprint/Ch0[235].lean -text whitespace=cr-at-eol,-trailing-space
 blueprint/ch05/** -text whitespace=cr-at-eol,-trailing-space
 blueprint/closeout24/** -text whitespace=cr-at-eol,-trailing-space
 docs/review/CH0[2345]_*.zh-CN.md -text whitespace=cr-at-eol,-trailing-space
+
+# Preserve Chapter 7 submitted hashes and final compiler evidence exactly.
+blueprint/ch07/** -text whitespace=cr-at-eol,-trailing-space
+Blueprint/Ch07.lean -text whitespace=cr-at-eol,-trailing-space
+docs/review/CH07_*.zh-CN.md -text whitespace=cr-at-eol,-trailing-space

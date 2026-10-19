@@ -1,0 +1,94 @@
+{
+  "batch": "EAUDIT09",
+  "input_sha256": {
+    "Blueprint/Ch07.lean": "f3bc0ee86ace9c825028f0cec8ebb2fb410d6be77213cc7fb41cb8889540a000",
+    "blueprint/ch07/ch07_source.json": "1a201887b51a249fb73f456237cb342963c5d98c612ec1912f21572a57924012"
+  },
+  "items": [
+    {
+      "source_id": "MD-7.9.3-BAOABMarginalCancellation",
+      "json_review": {
+        "status": "APPROVED",
+        "issue_codes": [],
+        "corrected_json": null,
+        "issues": [],
+        "evidence": {
+          "A_source_check": "附件14页（印305）：(7.37)中精确均值在左、数值均值−h²修正在右，h²/γ+h⁴一致；BAOAB的ΔU−βpᵀHp、原印带联合ρβ的动量边际及构型观测消项一致。",
+          "attachment_pages": [
+            14
+          ],
+          "printed_pages": "305",
+          "original_pdf_pages": "326",
+          "source_basis": "仅R2_任务.md及R2_PAGES.pdf；已逐页目视数学排版并核对PDF文字层。文字层的特殊字形编码按任务说明保留，不据此臆改。",
+          "C_signature_check": "条件动量Gaussian协方差β⁻¹I，故〈βpᵀHp〉p=tr H=ΔU；U任意也可，因为固定q的有限导数值只是二次多项式系数。Marginal声明∀U,β,q且β>0，结论正确。Configurational声明额外位置Gibbs概率、φ乘修正可积，结论是实际productGibbs下的零积分，足够使用Fubini。原书联合权边际和条件平均相差位置密度，但其零值一致；并未由此推出(7.37)的真实算法误差界。",
+          "coverage_policy": "按本条明示statement_scope及coverage_gaps审校；定义或资格不冒充存在性、真实算法识别或误差定理。sorry不作为FAIL依据。"
+        }
+      },
+      "audit": {
+        "lean_decl": "MD.Ch07.baoabMarginalCancellation",
+        "verdict": "PASS",
+        "explanation": "条件动量Gaussian协方差β⁻¹I，故〈βpᵀHp〉p=tr H=ΔU；U任意也可，因为固定q的有限导数值只是二次多项式系数。Marginal声明∀U,β,q且β>0，结论正确。Configurational声明额外位置Gibbs概率、φ乘修正可积，结论是实际productGibbs下的零积分，足够使用Fubini。原书联合权边际和条件平均相差位置密度，但其零值一致；并未由此推出(7.37)的真实算法误差界。 在明示覆盖范围内PASS；本结论为只读语义签名审校，不是Lean编译或证明通过报告。",
+        "counterexample": null,
+        "suggested_fix": "无需更改给定声明；继续保留已明示的[EXTRA]假设、覆盖范围与未覆盖结论。"
+      },
+      "subtask": "EAUDIT09a"
+    },
+    {
+      "source_id": "MD-7.9.3-SuperconvergenceScope",
+      "json_review": {
+        "status": "APPROVED",
+        "issue_codes": [],
+        "corrected_json": null,
+        "issues": [],
+        "evidence": {
+          "A_source_check": "附件15页（印306）：BAOAB无限摩擦构型O(h⁴)、OABAO对q积分为零及纯动量结论一致；仅不变分布的超收敛、不提高有限时间弱/强阶均忠实。",
+          "attachment_pages": [
+            15
+          ],
+          "printed_pages": "306",
+          "original_pdf_pages": "327",
+          "source_basis": "仅R2_任务.md及R2_PAGES.pdf；已逐页目视数学排版并核对PDF文字层。文字层的特殊字形编码按任务说明保留，不据此臆改。",
+          "C_signature_check": "oabaoPositionCancellation的β>0、U C∞、权可积、各(∂iiU−β(∂iU)²)e^(−βU)可积及每条坐标线两端通量零，足以逐坐标分部积分给零；n=0情形求和亦为零。superconvergence_fromBound把已有h⁴界中的h²·0消掉，既不建立该界也不识别真实数值误差。MomentumCancellation另假设χ及位置修正可积、位置概率和已知零积分，乘积积分结论正确。无限摩擦、长期和h→0三种范围未混淆，真实四阶桥已列缺口。",
+          "coverage_policy": "按本条明示statement_scope及coverage_gaps审校；定义或资格不冒充存在性、真实算法识别或误差定理。sorry不作为FAIL依据。"
+        }
+      },
+      "audit": {
+        "lean_decl": "MD.Ch07.oabaoPositionCancellation",
+        "verdict": "PASS",
+        "explanation": "oabaoPositionCancellation的β>0、U C∞、权可积、各(∂iiU−β(∂iU)²)e^(−βU)可积及每条坐标线两端通量零，足以逐坐标分部积分给零；n=0情形求和亦为零。superconvergence_fromBound把已有h⁴界中的h²·0消掉，既不建立该界也不识别真实数值误差。MomentumCancellation另假设χ及位置修正可积、位置概率和已知零积分，乘积积分结论正确。无限摩擦、长期和h→0三种范围未混淆，真实四阶桥已列缺口。 在明示覆盖范围内PASS；本结论为只读语义签名审校，不是Lean编译或证明通过报告。",
+        "counterexample": null,
+        "suggested_fix": "无需更改给定声明；继续保留已明示的[EXTRA]假设、覆盖范围与未覆盖结论。"
+      },
+      "subtask": "EAUDIT09b"
+    },
+    {
+      "source_id": "MD-7.10-MomentumRedrawLimit",
+      "json_review": {
+        "status": "APPROVED",
+        "issue_codes": [],
+        "corrected_json": null,
+        "issues": [],
+        "evidence": {
+          "A_source_check": "附件16页与第15页同页（印306）：γ→∞、√(kBT)M^(1/2)R及独立标准正态向量一致；质量趋零的额外讨论未冒充已形式化内容。",
+          "attachment_pages": [
+            16
+          ],
+          "printed_pages": "306",
+          "original_pdf_pages": "327",
+          "source_basis": "仅R2_任务.md及R2_PAGES.pdf；已逐页目视数学排版并核对PDF文字层。文字层的特殊字形编码按任务说明保留，不据此臆改。",
+          "C_signature_check": "ouMomentum完整公式exp(−γh)p+√[θ(1−exp(−2γh))]√m R；固定h>0、正质量、θ>0，γ→∞逐坐标极限正好为√θ√m R。law声明的标准Gaussian乘积分布是独立坐标，输出momentumGibbs m θ⁻¹的方差为m/(θ⁻¹)=mθ，正确。HasLaw使用给定P，不额外把任意确定R声称为随机Gaussian。位置未改变；质量零极限及弱收敛未冒充已证内容。",
+          "coverage_policy": "按本条明示statement_scope及coverage_gaps审校；定义或资格不冒充存在性、真实算法识别或误差定理。sorry不作为FAIL依据。"
+        }
+      },
+      "audit": {
+        "lean_decl": "MD.Ch07.redrawMomentum",
+        "verdict": "PASS",
+        "explanation": "ouMomentum完整公式exp(−γh)p+√[θ(1−exp(−2γh))]√m R；固定h>0、正质量、θ>0，γ→∞逐坐标极限正好为√θ√m R。law声明的标准Gaussian乘积分布是独立坐标，输出momentumGibbs m θ⁻¹的方差为m/(θ⁻¹)=mθ，正确。HasLaw使用给定P，不额外把任意确定R声称为随机Gaussian。位置未改变；质量零极限及弱收敛未冒充已证内容。 在明示覆盖范围内PASS；本结论为只读语义签名审校，不是Lean编译或证明通过报告。",
+        "counterexample": null,
+        "suggested_fix": "无需更改给定声明；继续保留已明示的[EXTRA]假设、覆盖范围与未覆盖结论。"
+      },
+      "subtask": "EAUDIT09c"
+    }
+  ],
+  "merged_from": "ch07_eaudit_merged"
+}

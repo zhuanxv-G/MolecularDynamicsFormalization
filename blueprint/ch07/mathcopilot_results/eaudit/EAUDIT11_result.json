@@ -1,0 +1,473 @@
+{
+  "batch": "EAUDIT11",
+  "input_sha256": {
+    "Blueprint/Ch07.lean": "f3bc0ee86ace9c825028f0cec8ebb2fb410d6be77213cc7fb41cb8889540a000",
+    "blueprint/ch07/ch07_source.json": "1a201887b51a249fb73f456237cb342963c5d98c612ec1912f21572a57924012"
+  },
+  "items": [
+    {
+      "source_id": "MD-7.12-ConstrainedLangevin",
+      "json_review": {
+        "status": "NEEDS_HUMAN",
+        "issue_codes": [
+          "ERRATUM_FINITE_VARIATION_CONSTRAINT"
+        ],
+        "corrected_json": {
+          "source_id": "MD-7.12-ConstrainedLangevin",
+          "kind": "definition",
+          "label": "(7.43)–(7.45)",
+          "section": "7.12",
+          "printed_page": "317",
+          "pdf_page": "338",
+          "statement_latex": "\\[dq=M^{-1}pdt,\\tag{7.43}\\]\n\\[dp=-\\nabla U(q)dt-\\gamma pdt+\\sqrt{2\\gamma k_BTM}dW-g'(q)^T\\lambda dt,\\tag{7.44}\\]\n\\[0=g(q).\\tag{7.45}\\]\nThe vector of $l$ constraints is given by $g:\\mathbb R^{N_c}\\to\\mathbb R^l$ and $\\lambda$ is an $l$-dimensional vector of Lagrange multipliers. $W$ is a vector of standard Wiener processes, with the usual friction parameter $\\gamma>0$. Permissible phase points lie in the co-tangent bundle defined by the constraint and hidden constraint\n\\[g(q)=0,\\qquad g'(q)M^{-1}p=0.\\]",
+          "proof_latex": null,
+          "proof_outline": null,
+          "proof_note": "原页推导与上下文全文见original_page_text；数学符号的排版以随附原页PDF为准。",
+          "original_page_text": [
+            {
+              "pdf_page": 338,
+              "printed_page": 317,
+              "text": "7.12\nConstrained Langevin Dynamics\n317\n7.12\nConstrained Langevin Dynamics\nWe may use a splitting approach to develop discretization algorithms for other forms\nof dynamics. In Chap. 4, we included holonomic constraints to the ODEs deﬁning\nconstant-energy Hamiltonian dynamics, as a way to increase the stability of our\nalgorithms and increase the usable timestep. We can add constraints to the Langevin\ndynamics SDEs similarly as\ndq D M\u00021pdt;\n(7.43)\ndp D \u0003rU.q/dt \u0003 \npdt C\np\n2\nkBTMdW \u0003 g0.q/T\fdt;\n(7.44)\n0 D g.q/;\n(7.45)\nwhere the vector of l constraints is given by g W RNc ! Rl and \f is an l-dimensional\nvector of Lagrange multipliers. W is a vector of standard Wiener processes, with\nthe usual friction parameter \n > 0. As in the constant energy dynamics, permissible\nphase points lie in the co-tangent bundle deﬁned by the constraint and hidden\nconstraint\ng.q/ D 0;\ng0.q/M\u00021p D 0;\nwhile in the inﬁnite time limit, we have that solution trajectories of constrained\nLangevin (7.43)–(7.45) sample Q\u0005ˇ ergodically, such that\nlim\nT!1\n1\nT\nT\nZ\n0\n\b.q.t/; p.t//dt D\nZ\nD\n\b.q; p/ Q\u0005ˇd!;\nwhere Q\u0005ˇ is the normalized constrained canonical distribution\nQ\u0005ˇ D Z\u00021 exp.\u0003ˇH.q; p//ıŒg.q/\tıŒg0.q/M\u00021p\t;\nfor normalizing constant Z and where ıŒz\t :D Q\ni ıŒzi\t for a vector z. The goal is\nnow to ﬁnd solutions to the constrained dynamics, in order to sample the target\ndistribution.\nOne approach for algorithms is simply to evolve unconstrained Langevin dynam-\nics using any algorithm of choice, then follow each step by a step of the SHAKE\nalgorithm (see Chapter 4 or [322]) to pull the system back on to the manifold\nsatisfying the holonomic constraints.\n"
+            }
+          ],
+          "transcription_note": "PDF文字层原样保留，陈述中的数学排版转写为LaTeX；文字层有特殊字形编码时以目视原页为准。PDF347的Exercises之后不在正文范围内。",
+          "context_notation": [],
+          "extra_assumptions": [
+            "实际多维Wiener坐标独立、正质量/温度/摩擦、C²约束、积分可积明示；常系数噪声用真实W增量。",
+            "定义保留存在给定乘子过程的积分解，不证明一般约束SDE存在唯一。状态及乘子适应W自然历史，状态路径连续与初值完整；一般强解存在唯一仍未证明。",
+            "29号覆盖限定：原印λdt的有限变差解类独立保留，不声称存在；修正版只覆盖单位质量线性约束和常正交投影噪声，非线性随机乘子/几何漂移理论未覆盖。",
+            "[EXTRA] m:V n表示正对角质量；corrected进一步限制单位质量、齐次线性约束及常正交投影。"
+          ],
+          "issues": [
+            "[ERRATUM?] 原印用λdt的有限变差反作用，一般不能抵消非退化噪声的法向Brownian分量；现有JSON issues为空，宜登记原书数学疑误，不能把一般约束存在性视为成立。"
+          ],
+          "statement_scope": "原印λdt的有限变差解类独立保留，不声称存在；修正版只覆盖单位质量线性约束和常正交投影噪声，非线性随机乘子/几何漂移理论未覆盖。",
+          "lean_decl": "MD.Ch07.constraintJacobian",
+          "lean_declarations": [
+            "MD.Ch07.constraintJacobian",
+            "MD.Ch07.constraintReaction",
+            "MD.Ch07.hiddenConstraint",
+            "MD.Ch07.cotangentConstraint",
+            "MD.Ch07.constrainedLangevin",
+            "MD.Ch07.constrainedLangevin_corrected"
+          ],
+          "source_page_verification": "见source_page_checks.json；必须已目视核对本条原页。",
+          "repair_log": [
+            {
+              "instruction": 29,
+              "website_verdict": "NEEDS_HUMAN",
+              "suggested_fix": "保留原印并标[ERRATUM?]；人工确认λdt是否代表含dW的乘子冲量。标准修正版应使用投影噪声和匹配漂移，或允许随机约束乘子微分；把适应性及强解限制标[EXTRA]，不补存在性证明。",
+              "actual_scope": "原印λdt的有限变差解类独立保留，不声称存在；修正版只覆盖单位质量线性约束和常正交投影噪声，非线性随机乘子/几何漂移理论未覆盖。",
+              "signature_changed": true
+            }
+          ],
+          "documented_priors": [],
+          "coverage_gaps": [
+            "定义保留存在给定乘子过程的积分解，不证明一般约束SDE存在唯一。状态及乘子适应W自然历史，状态路径连续与初值完整；一般强解存在唯一仍未证明。",
+            "29号覆盖限定：原印λdt的有限变差解类独立保留，不声称存在；修正版只覆盖单位质量线性约束和常正交投影噪声，非线性随机乘子/几何漂移理论未覆盖。"
+          ]
+        },
+        "issues": [
+          {
+            "code": "ERRATUM_FINITE_VARIATION_CONSTRAINT",
+            "message": "原印用λdt的有限变差反作用，一般不能抵消非退化噪声的法向Brownian分量；现有JSON issues为空，宜登记原书数学疑误，不能把一般约束存在性视为成立。"
+          }
+        ],
+        "evidence": {
+          "A_source_check": "附件21页（印317）：(7.43)M⁻¹pdt、(7.44)−∇Udt−γpdt+√(2γkBTM)dW−g′ᵀλdt、(7.45)g(q)=0，以及g′M⁻¹p=0全部一致；原书确印λdt。",
+          "attachment_pages": [
+            21
+          ],
+          "printed_pages": "317",
+          "original_pdf_pages": "338",
+          "source_basis": "仅R2_任务.md及R2_PAGES.pdf；已逐页目视数学排版并核对PDF文字层。文字层的特殊字形编码按任务说明保留，不据此臆改。",
+          "C_signature_check": "V n、V l、Jacobian(j,i)、Reaction=JacobianᵀΛ及hiddenConstraint中的p_i/m_i均对应原式；θ=kBT，质量为正对角质量而非一般非对角矩阵，是[EXTRA]范围限制。vectorWiener的联合Gaussian、零均值、min协方差、连续路径和坐标独立规格确为标准向量Wiener。原版限定正时间，X和Λ适应W的自然历史、X路径连续/确定初值几乎处处，漂移逐路径可积，∀t≥0几乎处处满足完整约束和两个积分方程；λ确以dt积分，仅保留原印解类，不宣称存在。corrected仅单位质量、线性齐次约束Cq=0：proj自伴幂等、Cproj=0且恒等于ker C，故正是到ker C的正交投影；投影力和噪声、摩擦−γp与两条约束一致，修正合理。原印一般非退化噪声与有限变差反作用难以保持隐藏约束，应加[ERRATUM?]。",
+          "coverage_policy": "按本条明示statement_scope及coverage_gaps审校；定义或资格不冒充存在性、真实算法识别或误差定理。sorry不作为FAIL依据。"
+        }
+      },
+      "audit": {
+        "lean_decl": "MD.Ch07.constraintJacobian",
+        "verdict": "NEEDS_HUMAN",
+        "explanation": "V n、V l、Jacobian(j,i)、Reaction=JacobianᵀΛ及hiddenConstraint中的p_i/m_i均对应原式；θ=kBT，质量为正对角质量而非一般非对角矩阵，是[EXTRA]范围限制。vectorWiener的联合Gaussian、零均值、min协方差、连续路径和坐标独立规格确为标准向量Wiener。原版限定正时间，X和Λ适应W的自然历史、X路径连续/确定初值几乎处处，漂移逐路径可积，∀t≥0几乎处处满足完整约束和两个积分方程；λ确以dt积分，仅保留原印解类，不宣称存在。corrected仅单位质量、线性齐次约束Cq=0：proj自伴幂等、Cproj=0且恒等于ker C，故正是到ker C的正交投影；投影力和噪声、摩擦−γp与两条约束一致，修正合理。原印一般非退化噪声与有限变差反作用难以保持隐藏约束，应加[ERRATUM?]。 原印/修正版逐项结论：字面转写PASS；合理修正的签名PASS；本条总体因原书数学资格或记号疑点NEEDS_HUMAN。",
+        "counterexample": "n=l=1、m=1、g(q)=q、U=0且γ,θ>0。约束与隐藏约束迫使q=p=0；原印动量式要求∫₀ᵗΛs ds=√(2γθ)(Wt−W0)，左侧有限变差，右侧Brownian有正二次变差，不可能。修正版取C=1、proj=0时投影噪声为零，没有此冲突。",
+        "suggested_fix": "原版作为字面解类保留并标[ERRATUM?]，不声称一般存在。corrected保留单位质量线性约束的投影模型并标[EXTRA]范围限制；一般非线性情形需随机乘子反作用及相应几何处理。"
+      },
+      "subtask": "EAUDIT11a"
+    },
+    {
+      "source_id": "MD-7.12-ConstrainedCanonicalErgodicity",
+      "json_review": {
+        "status": "NEEDS_HUMAN",
+        "issue_codes": [
+          "A_NONLITERAL_OPENING",
+          "A_KIND_IS_CLAIM",
+          "ERRATUM_ERGODICITY_UNQUALIFIED",
+          "ERRATUM_REFERENCE_MEASURE_UNSPECIFIED",
+          "C_SCOPE_TARGET_ONLY"
+        ],
+        "corrected_json": {
+          "source_id": "MD-7.12-ConstrainedCanonicalErgodicity",
+          "kind": "unnumbered_claim",
+          "label": null,
+          "section": "7.12",
+          "printed_page": "317",
+          "pdf_page": "338",
+          "statement_latex": "while in the infinite time limit, we have that solution trajectories of constrained Langevin (7.43)–(7.45) sample $\\widetilde\\rho_\\beta$ ergodically, such that\n\\[\\lim_{T\\to\\infty}\\frac1T\\int_0^T\\phi(q(t),p(t))dt=\\int_{\\mathcal D}\\phi(q,p)\\widetilde\\rho_\\beta d\\omega,\\]\nwhere $\\widetilde\\rho_\\beta$ is the normalized constrained canonical distribution\n\\[\\widetilde\\rho_\\beta=Z^{-1}\\exp(-\\beta H(q,p))\\delta[g(q)]\\delta[g'(q)M^{-1}p],\\]\nfor normalizing constant $Z$ and where $\\delta[z]:=\\prod_i\\delta[z_i]$ for a vector $z$.",
+          "proof_latex": null,
+          "proof_outline": null,
+          "proof_note": "原页推导与上下文全文见original_page_text；数学符号的排版以随附原页PDF为准。",
+          "original_page_text": [
+            {
+              "pdf_page": 338,
+              "printed_page": 317,
+              "text": "7.12\nConstrained Langevin Dynamics\n317\n7.12\nConstrained Langevin Dynamics\nWe may use a splitting approach to develop discretization algorithms for other forms\nof dynamics. In Chap. 4, we included holonomic constraints to the ODEs deﬁning\nconstant-energy Hamiltonian dynamics, as a way to increase the stability of our\nalgorithms and increase the usable timestep. We can add constraints to the Langevin\ndynamics SDEs similarly as\ndq D M\u00021pdt;\n(7.43)\ndp D \u0003rU.q/dt \u0003 \npdt C\np\n2\nkBTMdW \u0003 g0.q/T\fdt;\n(7.44)\n0 D g.q/;\n(7.45)\nwhere the vector of l constraints is given by g W RNc ! Rl and \f is an l-dimensional\nvector of Lagrange multipliers. W is a vector of standard Wiener processes, with\nthe usual friction parameter \n > 0. As in the constant energy dynamics, permissible\nphase points lie in the co-tangent bundle deﬁned by the constraint and hidden\nconstraint\ng.q/ D 0;\ng0.q/M\u00021p D 0;\nwhile in the inﬁnite time limit, we have that solution trajectories of constrained\nLangevin (7.43)–(7.45) sample Q\u0005ˇ ergodically, such that\nlim\nT!1\n1\nT\nT\nZ\n0\n\b.q.t/; p.t//dt D\nZ\nD\n\b.q; p/ Q\u0005ˇd!;\nwhere Q\u0005ˇ is the normalized constrained canonical distribution\nQ\u0005ˇ D Z\u00021 exp.\u0003ˇH.q; p//ıŒg.q/\tıŒg0.q/M\u00021p\t;\nfor normalizing constant Z and where ıŒz\t :D Q\ni ıŒzi\t for a vector z. The goal is\nnow to ﬁnd solutions to the constrained dynamics, in order to sample the target\ndistribution.\nOne approach for algorithms is simply to evolve unconstrained Langevin dynam-\nics using any algorithm of choice, then follow each step by a step of the SHAKE\nalgorithm (see Chapter 4 or [322]) to pull the system back on to the manifold\nsatisfying the holonomic constraints.\n"
+            }
+          ],
+          "transcription_note": "PDF文字层原样保留，陈述中的数学排版转写为LaTeX；文字层有特殊字形编码时以目视原页为准。PDF347的Exercises之后不在正文范围内。",
+          "context_notation": [],
+          "extra_assumptions": [
+            "[EXTRA] δ不是普通Lebesgue密度；用有支撑测度ν和正则化δ的弱积分极限规定其含义，不能用任意面测度替代而省略Jacobian因子。",
+            "[EXTRA] 实际概率要求配分积分正有限；遍历性还需连通性、正则满秩约束、势增长及不可约等条件。原书省略这些条件，本条仅记录目标，不宣称无条件遍历定理。",
+            "[EXTRA] 29号覆盖限定：delta参考弱极限、总化权重和任意过程遍历目标；补正质量/β/正有限配分与参考资格谓词，未证明参考等于几何体积或SDE遍历性，连通反例另记。",
+            "[ERRATUM?] 原印遍历断言保留；现有资格谓词不保证连通性、约束Jacobian满秩、不可约性或SDE遍历性。",
+            "[ERRATUM?] delta参考测度与原印dω、几何体积及约束Langevin不变测度的关系尚需人工确认，不能由归一化定义推断。"
+          ],
+          "issues": [
+            {
+              "code": "A_NONLITERAL_OPENING",
+              "stage": "A",
+              "severity": "error",
+              "location": "statement_latex",
+              "explanation": "原页是“while in the infinite time limit”，输入改为“In the infinite time limit”。公式的两个delta、归一化Z、积分域及极限均抄对；修正文字，不改原印数学内容。"
+            },
+            {
+              "code": "A_KIND_IS_CLAIM",
+              "stage": "A",
+              "severity": "error",
+              "location": "kind",
+              "explanation": "该段同时定义目标分布并断言轨道遍历采样；整段不能仅归类为definition，改为unnumbered_claim。"
+            },
+            {
+              "code": "ERRATUM_ERGODICITY_UNQUALIFIED",
+              "stage": "A/C",
+              "severity": "error",
+              "location": "statement_latex; extra_assumptions",
+              "explanation": "[ERRATUM?] 原页未给保证遍历性的假设。正质量、正β、正有限配分和C²约束并不足够；不连通约束集已有反例。保留原印并交人工判断原书上下文所隐含的条件。"
+            },
+            {
+              "code": "ERRATUM_REFERENCE_MEASURE_UNSPECIFIED",
+              "stage": "A/C",
+              "severity": "error",
+              "location": "statement_latex; constrainedReference",
+              "explanation": "[ERRATUM?] dω未在本页确定；相对于环境dq dp，delta乘积不是任意几何体积。对约束函数作非恒定缩放会改变该delta参考测度，必须核实与实际约束Langevin不变测度之间的Jacobian/Gram因子。"
+            },
+            {
+              "code": "C_SCOPE_TARGET_ONLY",
+              "stage": "C",
+              "severity": "information",
+              "location": "statement_scope; lean_declarations",
+              "explanation": "四个def正确给出参考资格、归一化权重和任意过程的遍历目标；没有把X约束为(7.43)–(7.45)的解，也没有将Qualification蕴含ErgodicAverages。这是已明示的覆盖限制，不把定义误报为遍历定理。"
+            }
+          ],
+          "statement_scope": "delta参考弱极限、总化权重和任意过程遍历目标；补正质量/β/正有限配分与参考资格谓词，未证明参考等于几何体积或SDE遍历性，连通反例另记。",
+          "lean_decl": "MD.Ch07.constrainedCanonical",
+          "lean_declarations": [
+            "MD.Ch07.constrainedCanonical",
+            "MD.Ch07.constrainedReference",
+            "MD.Ch07.constrainedErgodicAverages",
+            "MD.Ch07.constrainedCanonicalQualification"
+          ],
+          "source_page_verification": "已目视核对R3_PAGES.pdf附件第1页；证据：/workspace/.mathcopilot/reviews/ch07_eaudit/R3_evidence/page-1.png。此处不援引未提供的source_page_checks.json。",
+          "repair_log": [
+            {
+              "instruction": 29,
+              "website_verdict": "NEEDS_HUMAN",
+              "suggested_fix": "保留原印并标[ERRATUM?]；明确delta参考测度与几何体积的换算，加入正有限配分积分、正则满秩/连通等资格。补把SDE、参考测度、canonical概率和遍历极限连接的完整目标签名。",
+              "actual_scope": "delta参考弱极限、总化权重和任意过程遍历目标；补正质量/β/正有限配分与参考资格谓词，未证明参考等于几何体积或SDE遍历性，连通反例另记。",
+              "signature_changed": true
+            }
+          ],
+          "documented_priors": [],
+          "coverage_gaps": [
+            "29号覆盖限定：delta参考弱极限、总化权重和任意过程遍历目标；补正质量/β/正有限配分与参考资格谓词，未证明参考等于几何体积或SDE遍历性，连通反例另记。"
+          ]
+        },
+        "issues": [
+          {
+            "code": "A_NONLITERAL_OPENING",
+            "stage": "A",
+            "severity": "error",
+            "location": "statement_latex",
+            "explanation": "原页是“while in the infinite time limit”，输入改为“In the infinite time limit”。公式的两个delta、归一化Z、积分域及极限均抄对；修正文字，不改原印数学内容。"
+          },
+          {
+            "code": "A_KIND_IS_CLAIM",
+            "stage": "A",
+            "severity": "error",
+            "location": "kind",
+            "explanation": "该段同时定义目标分布并断言轨道遍历采样；整段不能仅归类为definition，改为unnumbered_claim。"
+          },
+          {
+            "code": "ERRATUM_ERGODICITY_UNQUALIFIED",
+            "stage": "A/C",
+            "severity": "error",
+            "location": "statement_latex; extra_assumptions",
+            "explanation": "[ERRATUM?] 原页未给保证遍历性的假设。正质量、正β、正有限配分和C²约束并不足够；不连通约束集已有反例。保留原印并交人工判断原书上下文所隐含的条件。"
+          },
+          {
+            "code": "ERRATUM_REFERENCE_MEASURE_UNSPECIFIED",
+            "stage": "A/C",
+            "severity": "error",
+            "location": "statement_latex; constrainedReference",
+            "explanation": "[ERRATUM?] dω未在本页确定；相对于环境dq dp，delta乘积不是任意几何体积。对约束函数作非恒定缩放会改变该delta参考测度，必须核实与实际约束Langevin不变测度之间的Jacobian/Gram因子。"
+          },
+          {
+            "code": "C_SCOPE_TARGET_ONLY",
+            "stage": "C",
+            "severity": "information",
+            "location": "statement_scope; lean_declarations",
+            "explanation": "四个def正确给出参考资格、归一化权重和任意过程的遍历目标；没有把X约束为(7.43)–(7.45)的解，也没有将Qualification蕴含ErgodicAverages。这是已明示的覆盖限制，不把定义误报为遍历定理。"
+          }
+        ],
+        "evidence": {
+          "authoritative_inputs": [
+            "R3_任务.md",
+            "R3_PAGES.pdf"
+          ],
+          "attachment_page": 1,
+          "printed_page": 317,
+          "original_pdf_page": 338,
+          "visual_check": "已实际渲染并目视核对该附件页；公式以页图为准，未使用旧任务、旧JSON或旧Lean文件。",
+          "page_image": "/workspace/.mathcopilot/reviews/ch07_eaudit/R3_evidence/page-1.png",
+          "text_extraction": "/workspace/.mathcopilot/reviews/ch07_eaudit/R3_evidence/R3_PAGES.txt",
+          "attachment_sha256_actual": "1b3e3776543b75fdf91ab5ee1e43044cf2af87cfc7a11db418423d61f0cc5cc7",
+          "input_sha256_policy": "本条input_sha256按任务逐键逐值回显；其中PAGES.pdf为任务指定的本条输入哈希，不声称等于当前四页合并附件的实测哈希。",
+          "A_transcription": "目视确认(7.43)–(7.45)、g(q)=0、g′(q)M⁻¹p=0、T⁻¹时间积分、D上的目标积分，以及Z⁻¹exp(−βH)δ[g]δ[g′M⁻¹p]和向量delta乘积；除句首改写外核心转写忠实。原页本身没有列出遍历性定理的充分假设。",
+          "C_signature": {
+            "objects_and_domains": "V n=Fin n→ℝ，Phase n=V n×V n；m是对角质量向量；constraintJacobian由逐坐标deriv给出，隐藏约束是各行Σ_i ∂_i g_j(q)p_i/m_i=0，cotangentConstraint另含g(q)=0。Hamiltonian=Σ_i p_i²/(2m_i)+U(q)，权重=exp(−βH)。",
+            "constrainedCanonical": "对任意ν,m,U,β总化定义ν.withDensity(ofReal(w/Z))；没有在def上强加概率或正质量。Z是相对ν的实Bochner积分。只有在给定正性及可积性资格时才可解释为归一化概率；任意参数下不作该保证。",
+            "constrainedReference": "ν在cotangentConstraint外为零；对每个连续紧支撑实测试函数，环境volume下的高斯正则化积分沿ε→0+趋于ν积分。共有2l个delta变量，所以系数(πε)^(−l)及平方和/ε相符；它规定参考测度的弱极限，不证明存在性或几何体积等同。",
+            "constrainedErgodicAverages": "P和μ都为概率；量词为∀φ，Integrable φ μ→P几乎处处的时间平均极限等于μ积分。几乎处处集合可依赖φ；并非一次断言全部φ共用零测集。X的类型为ℝ→Ω→Phase n，无SDE、适应性或约束解资格。",
+            "constrainedCanonicalQualification": "恰含∀i m_i>0、β>0、g为C²、参考弱极限资格、权重可积、配分积分严格正。没有rank、连通性、U光滑性、γ/W或动力学方程。可积性已经排除配分积分为无穷；没有把实积分的总化值当成有限性证明。",
+            "annotation_result": "补显式[EXTRA]和[ERRATUM?]。定义层面未发现错误；原书遍历性和参考测度的数学疑误依任务要求保留并判NEEDS_HUMAN。"
+          },
+          "review_method": "只读语义审校任务内完整声明及项目依赖定义；未编辑工程、未补证明、未运行Lean编译；没有因sorry或未证明辅助结论判FAIL。"
+        }
+      },
+      "audit": {
+        "lean_decl": [
+          "MD.Ch07.constrainedCanonical",
+          "MD.Ch07.constrainedReference",
+          "MD.Ch07.constrainedErgodicAverages",
+          "MD.Ch07.constrainedCanonicalQualification"
+        ],
+        "verdict": "NEEDS_HUMAN",
+        "explanation": "四个声明作为已缩小范围的定义基本忠实且内部合理，但没有完整的受约束SDE遍历结论。原书无条件遍历采样及delta参考的解释存在实质疑问，必须依任务规则保留原印并判NEEDS_HUMAN；本判定不是因没有补证明或因sorry。",
+        "counterexample": {
+          "ergodicity": "n=l=1，m=β=1，g(q)=q²−1，U(q)=q²/2。约束相空间只有(q,p)=(1,0),(−1,0)；g′在约束集非零。环境delta参考在两点各有质量1/4，归一化canonical在两点各有质量1/2，配分积分正有限。连续受约束轨道不能换分支，φ(q,p)=q的时间平均为±1，canonical平均为0。因此这些参考/配分资格仍不足以推出遍历性。此处轨道按通常允许随机约束冲量的意义解释。",
+          "reference_ambiguity": "n=2,m=(1,1)，g(q)=(1+q₁²)q₂，U=(q₁²+q₂²)/2。在约束q₂=p₂=0上，环境delta乘积参考是(1+q₁²)^(−2)dq₁dp₁；换成等价约束g₀(q)=q₂则为dq₁dp₁。前者的Gram因子g′M⁻¹g′ᵀ=(1+q₁²)²可抵消该差别。故若dω指环境Lebesgue体积，原印密度不能自动等于普通水平Langevin的canonical密度；若dω另含换算因子，需明确。",
+          "scope": "不是对四个def的反例；反驳的是把这些定义或资格当成原印完整遍历定理。"
+        },
+        "suggested_fix": "保留原印公式并标[ERRATUM?]；明确dω及delta/几何体积换算，另列动力学解、连通/满秩/不可约等所需资格。继续把现有四个def标成“参考与遍历目标”，不得声称已建立SDE遍历性。本次只登记，不改工程。"
+      },
+      "subtask": "EAUDIT11b"
+    },
+    {
+      "source_id": "MD-7.12-ConstrainedHOSplitting",
+      "json_review": {
+        "status": "NEEDS_HUMAN",
+        "issue_codes": [
+          "A_NONLITERAL_SPLITTING_TEXT",
+          "ERRATUM_MULTIPLIER_INTERPRETATION",
+          "C_MISSING_JOINT_MEASURABILITY",
+          "C_PRODUCT_PROBABILITY_NOT_SPECIFIED",
+          "C_STALE_SCOPE_METADATA"
+        ],
+        "corrected_json": {
+          "source_id": "MD-7.12-ConstrainedHOSplitting",
+          "kind": "definition",
+          "label": null,
+          "section": "7.12",
+          "printed_page": "318",
+          "pdf_page": "339",
+          "statement_latex": "We could instead consider splitting the dynamics up and performing the integration using a splitting method. Such a splitting strategy is considered in [232] where one uses\n\\[\\begin{bmatrix}dq\\\\dp\\\\0\\end{bmatrix}=\\underbrace{\\begin{bmatrix}M^{-1}p\\,dt\\\\-\\nabla U(q)\\,dt-g\\prime(q)^T\\lambda\\,dt\\\\g(q)\\end{bmatrix}}_{H_c}+\\underbrace{\\begin{bmatrix}0\\\\-\\gamma p\\,dt+\\sqrt{2\\gamma k_BTM}\\,dW-g\\prime(q)^T\\lambda\\,dt\\\\g(q)\\end{bmatrix}}_{O_c};\\]\nsplitting the dynamics into two pieces: the constrained Hamiltonian (NVE) equations, and a constrained Ornstein-Uhlenbeck piece.\nWe solve these two pieces symmetrically, where the constrained Hamiltonian part is solved over a step $h$, in between two solves of the Ornstein-Uhlenbeck SDE with stepsize $h/2$.",
+          "proof_latex": null,
+          "proof_outline": null,
+          "proof_note": "原页推导与上下文全文见original_page_text；数学符号的排版以随附原页PDF为准。",
+          "original_page_text": [
+            {
+              "pdf_page": 339,
+              "printed_page": 318,
+              "text": "318\n7\nNumerical Methods for Stochastic Molecular Dynamics\nWe could instead consider splitting the dynamics up and performing the integra-\ntion using a splitting method. Such a splitting strategy is considered in [232] where\none uses\n2\n4\ndq\ndp\n0\n3\n5 D\n2\n4\nM\u00021pdt\n\u0003rU.q/dt \u0003 g0.q/T\fdt\ng.q/\n3\n5\n„\nƒ‚\n…\nHc\nC\n2\n4\n0\n\u0003\npdt C\np\n2\nkBTMdW \u0003 g0.q/T\fdt\ng.q/\n3\n5\n„\nƒ‚\n…\nOc\n;\nsplitting the dynamics into two pieces: the constrained Hamiltonian (NVE) equa-\ntions, and a constrained Ornstein-Uhlenbeck piece.\nWe solve these two pieces symmetrically, where the constrained Hamiltonian\npart is solved over a step h, in between two solves of the Ornstein-Uhlenbeck\nSDE with stepsize h=2. The SHAKE (or RATTLE) algorithm can be used to solve\nthe constrained Hamiltonian part to a high degree of accuracy, while solving the\nOrnstein-Uhlenbeck piece along the manifold amounts to ﬁnding the solution of a\nlinear system. We observe the constraint in both solutions, so that the computed\npoints lie in the co-tangent bundle of the constraint manifold. Instead of solving the\nOrnstein-Uhlenbeck exactly, we discretize using a midpoint Euler scheme, yielding\nthe following scheme:\nMidpoint Euler - Verlet - Midpoint Euler (see [232])\nSolve\n(\npnC1=4 D pn \u0002 h\n4 .pn C pnC1=4/ C ph\nkBTMRn \u0002 g0.qn/T\fnC1=4\nSuch that g0.qn/M\u00021pnC1=4 D 0\nSolve\n8\nˆˆˆ<\nˆˆˆ:\npnC1=2 D pnC1=4 \u0002 h\n2rU.qn/ \u0002 g0.qn/T\fnC1=2\nqnC1 D qn C hM\u00021pnC1=2\npnC3=4 D pnC1=2 \u0002 h\n2rU.qnC1/ \u0002 g0.qnC1/T\fnC3=4\nSuch that g0.qnC1/M\u00021pnC3=4 D 0 and g.qnC1/ D 0:\nSolve\n(\npnC1 D pnC3=4 \u0002 h\n4 .pnC3=4 C pnC1/ C ph\nkBTMRnC1=2 \u0002 g0.qnC1/T\fnC1\nSuch that g0.qnC1/M\u00021pnC1 D 0\nThe vectors Rn and RnC1=2 are vectors of N.0; 1/ i.i.d. random numbers, with \n \b 0\nthe usual Langevin dynamics friction parameter. Setting \n D 0 reduces the scheme\nto the usual RATTLE scheme for solving holonomically constrained Hamiltonian\nequations of motion, whereas if \n is chosen large then this will be expected to\ncause instability in the scheme, as we are not solving the OU process exactly. The\n"
+            }
+          ],
+          "transcription_note": "PDF文字层原样保留，陈述中的数学排版转写为LaTeX；文字层有特殊字形编码时以目视原页为准。PDF347的Exercises之后不在正文范围内。",
+          "context_notation": [],
+          "extra_assumptions": [
+            "[EXTRA] θ解释为k_BT，m为正对角质量；H资格要求U为C¹、g为C²；O资格要求γ>0、θ>0、真实向量Wiener及非负时长。这些是规格资格，非解的存在定理。",
+            "[EXTRA] H和O各用自己的乘子/冲量；constrainedHField和constrainedOField只记录漂移，constrainedONoise记录每个独立Wiener坐标的常扩散。",
+            "[ERRATUM?] 原印的λdt写法在O段应按可含随机部分的约束冲量解释；不把它限制为有限变差。原印块式及复用λ仍原样保留。",
+            "[EXTRA] 当前合成仅是Ω×Ω上的函数。要解释成两次独立随机O步，仍须指定P.prod P、联合可测性及随机初值下的条件解性质；不能仅由两份样本坐标得出。",
+            "[EXTRA] 原页的Midpoint Euler–Verlet–Midpoint Euler离散算法不属于本条statement_latex所选的精确H/O分裂规格；本次不扩大到该离散算法的形式化。"
+          ],
+          "issues": [
+            {
+              "code": "A_NONLITERAL_SPLITTING_TEXT",
+              "stage": "A",
+              "severity": "error",
+              "location": "statement_latex",
+              "explanation": "输入将原页“Such a splitting strategy is considered in [232] where one uses”改为“One uses”，并将原印带加号的三分量块改写成分别列出的两个系统。含义大体相同，但不是逐字转写；恢复原印文字及块式，并保留原印的相同λ记号。"
+            },
+            {
+              "code": "ERRATUM_MULTIPLIER_INTERPRETATION",
+              "stage": "A/C",
+              "severity": "error",
+              "location": "statement_latex; extra_assumptions",
+              "explanation": "[ERRATUM?] 原页两个块复用λ；各子步应有各自的乘子，不能把同一乘子作逐项相加而双计。O子步需随机约束冲量来抵消法向Wiener噪声；有限变差λdt的字面解释通常不成立。Lean用reactionImpulse的修正方向合理，应明标与原印写法的解释差别。"
+            },
+            {
+              "code": "C_MISSING_JOINT_MEASURABILITY",
+              "stage": "C",
+              "severity": "error",
+              "location": "constrainedHMapQualification; constrainedOMapQualification; constrainedHOQualifiedComposition",
+              "explanation": "H和O没有对初值及样本的联合可测性资格。OIntegralStep仅对每个固定初值x要求过程可测/几乎处处性质；最后一段O却接收前两段产生的随机初值。没有联合可测性/可测随机核，不能由这些类型推出复合输出是随机变量、满足相应条件分布或把固定初值的零测例外传递到随机初值。"
+            },
+            {
+              "code": "C_PRODUCT_PROBABILITY_NOT_SPECIFIED",
+              "stage": "C",
+              "severity": "error",
+              "location": "constrainedHOQualifiedComposition",
+              "explanation": "结论只有Ω×Ω→Phase n→Phase n的函数，未指定P.prod P或输出law，也没有h≥0和输入x∈cotangentConstraint的结果资格。Ω×Ω只给两份坐标，独立性是选择P.prod P后才有的测度性质。不能把该函数本身报告为已完整规定的独立随机步。"
+            },
+            {
+              "code": "C_STALE_SCOPE_METADATA",
+              "stage": "C",
+              "severity": "warning",
+              "location": "extra_assumptions; repair_log; coverage_gaps",
+              "explanation": "旧文字称“未构造两次独立噪声组合”，新scope称已用乘积概率空间；实际只增加了带hH/hO的函数合成。应统一说明为“已给代数组合及逐初值解资格；联合可测性、乘积测度上的随机组合与相应条件分布仍未规定”。"
+            }
+          ],
+          "statement_scope": "H/O漂移、O扩散和逐确定初值的受约束积分解资格；带这些资格的O(h/2)∘H(h)∘O(h/2)代数函数。未规定H/O对初值的联合可测性、P.prod P下的可测随机组合、随机初值的条件解性质或存在性。",
+          "lean_decl": "MD.Ch07.constrainedHField",
+          "lean_declarations": [
+            "MD.Ch07.constrainedHField",
+            "MD.Ch07.constrainedOField",
+            "MD.Ch07.constrainedHOComposition",
+            "MD.Ch07.constrainedONoise",
+            "MD.Ch07.constrainedHIntegralStep",
+            "MD.Ch07.constrainedOIntegralStep",
+            "MD.Ch07.constrainedHMapQualification",
+            "MD.Ch07.constrainedOMapQualification",
+            "MD.Ch07.constrainedHOQualifiedComposition"
+          ],
+          "source_page_verification": "已目视核对R3_PAGES.pdf附件第2页；证据：/workspace/.mathcopilot/reviews/ch07_eaudit/R3_evidence/page-2.png。此处不援引未提供的source_page_checks.json。",
+          "repair_log": [
+            {
+              "instruction": 29,
+              "website_verdict": "FAIL",
+              "suggested_fix": "补Hc/Oc的积分解或随机核规格、Oc扩散和各段cotangentConstraint保持，并把H/O参数约束为这些解/核；分步乘子分别指定，保留当前组合为辅助定义。",
+              "actual_scope": "H/O总化漂移、O扩散，以及两段各自受约束积分解规格；组合仍为代数辅助，未构造随机核及两次独立噪声组合。",
+              "signature_changed": true
+            },
+            {
+              "instruction": 29,
+              "supplement": "补过程Markov条件分布或H/O解资格连接",
+              "signature_changed": true
+            }
+          ],
+          "documented_priors": [],
+          "coverage_gaps": [
+            "缺少H/O对初值和样本的联合可测性、P.prod P上的随机变量/转移核及随机初值条件分布规格。",
+            "代数组合总化到任意实h及任意初值；仅当h≥0且初值满足约束时，现有分段资格才适用。",
+            "没有构造受约束解的存在性、O半群律或约束Gaussian不变性。"
+          ]
+        },
+        "issues": [
+          {
+            "code": "A_NONLITERAL_SPLITTING_TEXT",
+            "stage": "A",
+            "severity": "error",
+            "location": "statement_latex",
+            "explanation": "输入将原页“Such a splitting strategy is considered in [232] where one uses”改为“One uses”，并将原印带加号的三分量块改写成分别列出的两个系统。含义大体相同，但不是逐字转写；恢复原印文字及块式，并保留原印的相同λ记号。"
+          },
+          {
+            "code": "ERRATUM_MULTIPLIER_INTERPRETATION",
+            "stage": "A/C",
+            "severity": "error",
+            "location": "statement_latex; extra_assumptions",
+            "explanation": "[ERRATUM?] 原页两个块复用λ；各子步应有各自的乘子，不能把同一乘子作逐项相加而双计。O子步需随机约束冲量来抵消法向Wiener噪声；有限变差λdt的字面解释通常不成立。Lean用reactionImpulse的修正方向合理，应明标与原印写法的解释差别。"
+          },
+          {
+            "code": "C_MISSING_JOINT_MEASURABILITY",
+            "stage": "C",
+            "severity": "error",
+            "location": "constrainedHMapQualification; constrainedOMapQualification; constrainedHOQualifiedComposition",
+            "explanation": "H和O没有对初值及样本的联合可测性资格。OIntegralStep仅对每个固定初值x要求过程可测/几乎处处性质；最后一段O却接收前两段产生的随机初值。没有联合可测性/可测随机核，不能由这些类型推出复合输出是随机变量、满足相应条件分布或把固定初值的零测例外传递到随机初值。"
+          },
+          {
+            "code": "C_PRODUCT_PROBABILITY_NOT_SPECIFIED",
+            "stage": "C",
+            "severity": "error",
+            "location": "constrainedHOQualifiedComposition",
+            "explanation": "结论只有Ω×Ω→Phase n→Phase n的函数，未指定P.prod P或输出law，也没有h≥0和输入x∈cotangentConstraint的结果资格。Ω×Ω只给两份坐标，独立性是选择P.prod P后才有的测度性质。不能把该函数本身报告为已完整规定的独立随机步。"
+          },
+          {
+            "code": "C_STALE_SCOPE_METADATA",
+            "stage": "C",
+            "severity": "warning",
+            "location": "extra_assumptions; repair_log; coverage_gaps",
+            "explanation": "旧文字称“未构造两次独立噪声组合”，新scope称已用乘积概率空间；实际只增加了带hH/hO的函数合成。应统一说明为“已给代数组合及逐初值解资格；联合可测性、乘积测度上的随机组合与相应条件分布仍未规定”。"
+          }
+        ],
+        "evidence": {
+          "authoritative_inputs": [
+            "R3_任务.md",
+            "R3_PAGES.pdf"
+          ],
+          "attachment_page": 2,
+          "printed_page": 318,
+          "original_pdf_page": 339,
+          "visual_check": "已实际渲染并目视核对该附件页；公式以页图为准，未使用旧任务、旧JSON或旧Lean文件。",
+          "page_image": "/workspace/.mathcopilot/reviews/ch07_eaudit/R3_evidence/page-2.png",
+          "text_extraction": "/workspace/.mathcopilot/reviews/ch07_eaudit/R3_evidence/R3_PAGES.txt",
+          "attachment_sha256_actual": "1b3e3776543b75fdf91ab5ee1e43044cf2af87cfc7a11db418423d61f0cc5cc7",
+          "input_sha256_policy": "本条input_sha256按任务逐键逐值回显；其中PAGES.pdf为任务指定的本条输入哈希，不声称等于当前四页合并附件的实测哈希。",
+          "A_transcription": "页图上确为两个带H_c/O_c括号的三分量块的和，两块第三行均g(q)，且复用λ；噪声确为√(2γk_BTM)dW。对称次序是O半步、H整步、O半步。恢复被省略的[232]句和原印块式；不把后续离散算法混入所选陈述。",
+          "C_signature": {
+            "fields_and_noise": "H=(M⁻¹p,−∇U−g′ᵀλ_H)，O漂移=(0,−γp−g′ᵀλ_O)，constraintReaction的求和方向确为Jacobian转置。ONoise(j)的i分量为δ_ij√(2γθm_i)，位置噪声为零；θ=k_BT时系数与原页相符。",
+            "H_integral_step": "正质量、g C²、U C¹、T≥0；X连续、X(0)=x0，所有t∈[0,T]都在cotangentConstraint；每个坐标速度/力可积，q和p分别满足相应的0到t积分方程。Λ是时间函数，未当作常乘子。",
+            "O_integral_step": "vectorWiener含P概率、非负时间上的Gaussian/零均值/min协方差/连续样本路径及坐标过程独立；另有正质量、正γ/θ、g C²、T≥0。对每个t分别P-a.e.保持约束、q固定、p满足OU积分方程；P-a.e.路径连续和初值，reaction(0)=0。所有sample的漂移坐标可积；reaction处于g′(x0.q)ᵀ的像，可含随机部分。",
+            "adaptedness": "MeasurableSpace.comap的映射是sample↦(s↦W_s(sample))，s∈[0,t]；不是仅W_t。因而固定初值的X_t和reaction_t对W历史可测，这部分正确；时间索引的几乎处处量词并未直接写成一个全时刻共同事件。",
+            "map_qualifications": "H、O均对所有合规确定初值和每个非负T要求存在满足积分方程的乘子/冲量。hH/hO确实把合成所用H/O连到这些规格，不能再说完全没有该连接；但这不包含初值变量的可测性。",
+            "composition": "函数值O(h/2,ω₂,H(h,O(h/2,ω₁,x)))及求值次序正确。缺少联合可测性及乘积概率上的随机组合合同是本次FAIL原因；不因未证明解存在、半群或不变性而FAIL。",
+            "annotation_result": "原页乘子记法疑义单独标[ERRATUM?]，随机冲量是合理解释；[EXTRA]不再将类型中没有的独立随机核规格说成已覆盖。"
+          },
+          "review_method": "只读语义审校任务内完整声明及项目依赖定义；未编辑工程、未补证明、未运行Lean编译；没有因sorry或未证明辅助结论判FAIL。"
+        }
+      },
+      "audit": {
+        "lean_decl": [
+          "MD.Ch07.constrainedHField",
+          "MD.Ch07.constrainedOField",
+          "MD.Ch07.constrainedHOComposition",
+          "MD.Ch07.constrainedONoise",
+          "MD.Ch07.constrainedHIntegralStep",
+          "MD.Ch07.constrainedOIntegralStep",
+          "MD.Ch07.constrainedHMapQualification",
+          "MD.Ch07.constrainedOMapQualification",
+          "MD.Ch07.constrainedHOQualifiedComposition"
+        ],
+        "verdict": "FAIL",
+        "explanation": "漂移、扩散、分段积分解及O-H-O时间次序核对正确，且hH/hO确已连接分段规格。FAIL限于本条声明要覆盖的独立随机映射组合：规格只逐确定初值可测，没有H/O联合可测性，也未指定P.prod P上的输出随机变量/条件分布。两个坐标的函数不足以保证随机初值下的有效组合。另有原印λdt解释疑义，因此A部分仍NEEDS_HUMAN。",
+        "counterexample": {
+          "type_level_witness": "令l=1、g(q)恒为1，则cotangentConstraint为空。两个MapQualification的∀x∈cotangentConstraint均真，甚至可令P=0、W=0并任取H/O；QualifiedComposition仍接受hH/hO，但P.prod P=0并非概率、W也非Wiener。故最后类型并不无条件规定其注释所称的乘积概率空间。即使限定非空约束及合规输入，也仍须补联合可测性来处理随机初值。",
+          "random_initial_state_gap": "对每个确定x有P(N_x)=0并不单独给出{(ω,x):ω∈N_x}的乘积可测性。现有O资格允许零测例外依赖x，且没有(sample,x)联合可测性；因此对独立的随机x使用Fubini/条件分布缺少必要前提。这是规格缺口，不声称每个具体O-H-O算法都会失败。",
+          "printed_multiplier": "n=l=1，g(q)=q，m=γ=θ=1，x0=(0,0)。cotangentConstraint迫使q_t=p_t=0；O积分方程要求reactionImpulse_t=√2 W_t，它不是普通有限变差的∫λ_s ds。Lean允许随机冲量合理，原印λdt若按普通有限变差读取则不成立。"
+        },
+        "suggested_fix": "若继续声称随机组合已覆盖，应在资格中明确P为概率、对初值和样本的联合可测性，指定P.prod P，并把h≥0、合规初值下的输出及随机初值条件解规格列明。或按corrected_json将范围明确缩回逐初值解规格与代数合成，不声称已完成独立随机核组合。保留原印λ并标[ERRATUM?]，记录冲量解释。本次不改Lean。"
+      },
+      "subtask": "EAUDIT11c"
+    }
+  ],
+  "merged_from": "ch07_eaudit_merged"
+}

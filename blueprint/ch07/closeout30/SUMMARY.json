@@ -1,0 +1,44 @@
+{
+  "total": 118,
+  "first_round": {
+    "PASS": 66,
+    "FAIL": 28,
+    "NEEDS_HUMAN": 24
+  },
+  "reaudit": {
+    "PASS": 24,
+    "FAIL": 1,
+    "NEEDS_HUMAN": 10
+  },
+  "latest_raw": {
+    "PASS": 90,
+    "NEEDS_HUMAN": 27,
+    "FAIL": 1
+  },
+  "website_pass": 90,
+  "website_pass_counting": "各条最新返回直接PASS；从NEEDS_HUMAN分出的通过版本另计，不与原书问题数相加",
+  "local_repairs": 1,
+  "repairing": 0,
+  "awaiting_reaudit": 0,
+  "reaudit_human_corrected_or_limited_signature_pass_items": 8,
+  "reaudit_human_scope_only_items": [
+    "MD-7.7.2-SpectralQualification",
+    "MD-7.12-ConstrainedCanonicalErgodicity"
+  ],
+  "original_text_human_items": 27,
+  "errata_or_scope_records": 29,
+  "declarations": {
+    "定义": 251,
+    "未证": 69,
+    "已证": 53
+  },
+  "unproved_reasons": {
+    "缺大型理论": 65,
+    "原书疑误不证": 1,
+    "时间盒止": 3
+  },
+  "current_lean_sha256": "f29545ff841fbd83cb6b4e6d35f7935eb7524369693de59871ab365bc4071330",
+  "current_source_sha256": "25a086089783fcb1e8d8d183e4c88727f2af9b3f8020fc959489f1ba7cb6124a",
+  "new_eaudit_packages": 0,
+  "website_resubmitted": false
+}

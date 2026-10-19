@@ -1,0 +1,186 @@
+{
+  "batch": "EAUDIT02",
+  "input_sha256": {
+    "Blueprint/Ch07.lean": "f3bc0ee86ace9c825028f0cec8ebb2fb410d6be77213cc7fb41cb8889540a000",
+    "blueprint/ch07/ch07_source.json": "1a201887b51a249fb73f456237cb342963c5d98c612ec1912f21572a57924012"
+  },
+  "items": [
+    {
+      "source_id": "MD-7.4.1-NonsymmetricExactMoments",
+      "json_review": {
+        "status": "CORRECTED",
+        "issue_codes": [
+          "SOURCE_PUNCTUATION",
+          "STALE_COVERAGE_METADATA"
+        ],
+        "corrected_json": {
+          "source_id": "MD-7.4.1-NonsymmetricExactMoments",
+          "kind": "unnumbered_claim",
+          "label": null,
+          "section": "7.4.1",
+          "printed_page": "277",
+          "pdf_page": "298",
+          "statement_latex": "For example analysis shows that the schemes denoted $[AOAB]$ or $[BAOA]$ both exhibit a first order error in the covariance $\\langle qp\\rangle_h=O(h)$, however they give exact results for both $\\langle q^2\\rangle_h$ and $\\langle p^2\\rangle_h$.",
+          "proof_latex": null,
+          "proof_outline": null,
+          "proof_note": "原页推导与上下文全文见original_page_text；数学符号的排版以随附原页PDF为准。",
+          "original_page_text": [
+            {
+              "pdf_page": 298,
+              "printed_page": 277,
+              "text": "7.4\nError Results for Harmonic Problems\n277\nTable 7.1 The expected long-time computed average using the given second-order Langevin\ndynamics discretization scheme\nScheme\nhq2ih=hq2i\nhp2ih=hp2i\nhqpi\n\u0002ABOBA\u0003\n1\nŒ1 \u0002 h2˝2=.4m/\t\u00021\n0\n\u0002OBABO\u0003\nŒ1 \u0002 h2˝2=.4m/\t\u00021\n1\n0\n\u0002BAOAB\u0003\n1\n1 \u0002 h2˝2=.4m/\n0\n\u0002OABAO\u0003\n1 \u0002 h2˝2=.4m/\n1\n0\nschemes, we are able to compute the exact expected average by solving the linear\nequations. The results are summarized in Table 7.1, where we have not considered\nthe \u0002AOBOA\u0003 and \u0002BOAOB\u0003 schemes due to their inconsistency at large friction\n(this does not preclude the analysis, but limits each those method’s usefulness in\nsimulation). Similar analysis can be conducted for more complicated composition\nschemes involving multiple force evaluations.\nThe mentioned splitting schemes give a second-order error in the computed\naverages, but surprisingly each gives an exact result for computed averages of either\nposition or momentum. The exactness property is not born out of the symmetry of\nthe method, but rather of the speciﬁc order of terms and choice of splitting “building\nblocks”. Even non-symmetric ﬁrst-order schemes can exhibit similar qualities. For\nexample, analysis shows that the schemes denoted \u0002AOAB\u0003 or \u0002BAOA\u0003 both exhibit\na ﬁrst order error in the covariance hqpih D O.h/, however they give exact results\nfor both hq2ih and hp2ih.\n7.4.2\nMore General Schemes\nWe can conduct a similar analysis for any integrator that we can express in the\nform (7.7), simply by plugging in the relevant constants and solving a linear\nequation. The difﬁculty lies when random numbers are reused, leading to correlation\nbetween steps. This requires careful treatment to compute the expectation.\nExample 7.2 Consider the variant of the BBK integrator that recycles the random\nnumber between steps:\nBrünger-Brooks-Karplus with post-step re-use of random number (BBK*)\npnC1=2 D .1 \u0003 h\n=2/pn \u0003 .h=2/rU.qn/ C 1\n2\np2kBTh\nM1=2Rn\nqnC1 D qn C hM\u00021pnC1=2\npnC1 D ŒpnC1=2 \u0003 .h=2/rU.qnC1/ C 1\n2\np2kBTh\nM1=2RnC1\t=.1 C h\n=2/,\nwhere Rn is a vector of normal random numbers with zero mean and unit variance.\nIn some systems, it can be computationally expensive to generate normal random\nnumbers for each degree of freedom, hence algorithms may re-use the random\n"
+            }
+          ],
+          "transcription_note": "PDF文字层原样保留，陈述中的数学排版转写为LaTeX；文字层有特殊字形编码时以目视原页为准。PDF347的Exercises之后不在正文范围内。",
+          "context_notation": [],
+          "extra_assumptions": [
+            "AOAB和BAOA按字母总时间h定义；实际平稳概率、L²、稳定参数显式。",
+            "29号覆盖限定：正质量和稳定范围内AOAB/BAOA不变概率的两个方差、精确混合矩；固定参数下混合矩为O(h)的量化界另列。"
+          ],
+          "issues": [],
+          "statement_scope": "正质量和稳定范围内AOAB/BAOA不变概率的两个方差、精确混合矩；固定参数下混合矩为O(h)的量化界另列。",
+          "lean_decl": "MD.Ch07.nonsymmetricHarmonicStep",
+          "lean_declarations": [
+            "MD.Ch07.nonsymmetricHarmonicStep",
+            "MD.Ch07.nonsymmetricExactMoments",
+            "MD.Ch07.nonsymmetricMixedMoment_order"
+          ],
+          "source_page_verification": "本次R1审校已逐页目视核对 /workspace/R1_PAGES.pdf，页位及具体发现见本条 json_review.evidence；不依赖旧 source_page_checks.json。",
+          "repair_log": [
+            {
+              "instruction": 29,
+              "website_verdict": "FAIL",
+              "suggested_fix": "增加混合矩公式：AOAB 为 -θh/2，BAOA 为 θh/2，并据此给出固定物理参数的 O(h)；或者明确把本条标为仅覆盖两个方差。",
+              "actual_scope": "正质量和稳定范围内AOAB/BAOA不变概率的两个方差、精确混合矩；固定参数下混合矩为O(h)的量化界另列。",
+              "signature_changed": true
+            }
+          ],
+          "documented_priors": [],
+          "coverage_gaps": []
+        },
+        "issues": [
+          "A：原页“For example analysis shows”在example后没有逗号，输入增加了逗号；不影响数学，逐字转录应恢复。",
+          "extra_assumptions仍称O(h)协方差未陈述，与本条已经新增的精确混合矩和nonsymmetricMixedMoment_order不符。"
+        ],
+        "evidence": [
+          "A：附件第4页＝PDF298／印刷277。原页确为AOAB或BAOA，〈qp〉_h=O(h)，且〈q²〉_h和〈p²〉_h精确；没有将表7.1中其他对称方法的方差混入本条。",
+          "C：scalarLift把Phase 1与ℝ×ℝ作坐标识别；flip=true执行AOAB，flip=false执行BAOA；势为Ω²q²/2，θ对应k_BT。",
+          "C：nonsymmetricExactMoments对任意满足不变性及L²资格的概率μ，要求m>0、Ω≠0、γ>0、θ>0、h>0和h²Ω²<4m；独立高斯噪声由μ.prod(gaussianReal 0 1)显式给出。结论是两项二阶矩θ/Ω²、θm及AOAB负／BAOA正的混合矩±θh/2。",
+          "C逐声明：nonsymmetricHarmonicStep、nonsymmetricExactMoments、nonsymmetricMixedMoment_order均PASS。后者对固定θ、flip在h→0的完整邻域给出O(h)，覆盖原页所述阶数；不宣称对θ统一，也不证明不变概率存在。",
+          "C审校对象仅为R1_任务.md本条完整Lean、摘录的项目依赖和附录D1–D20；Mathlib标准定义按任务规定采信。未读取旧Ch0x/source文件作替代输入，未修改工程或补证明，未运行Lean。PASS仅评价明示覆盖范围内的声明签名与定义，不表示原文全部内容已形式化，也不表示含sorry的证明已经验证。",
+          "本条摘录未出现字面[EXTRA]或[ERRATUM?]标签；对应内容按extra_assumptions、issues、statement_scope、coverage_gaps及Printed/corrected名称分别核查。"
+        ]
+      },
+      "audit": {
+        "lean_decl": "MD.Ch07.nonsymmetricHarmonicStep",
+        "verdict": "PASS",
+        "explanation": "所有概率、积分和稳定性前提均显式。MemLp二阶在概率测度下足以保证q²、p²及qp的可积性；μ的不变性使用新独立标量标准高斯。两个精确二阶矩及混合矩符号与定义的两个算法一致，Big-O声明适用于固定参数。原文将混合矩称协方差；在此非退化稳定谐振子模型中平稳一阶矩为零，表述相容。未因sorry判失败。",
+        "counterexample": null,
+        "suggested_fix": "删去“协方差及其O(h)未陈述”的旧说明，保留当前精确混合矩及固定参数Big-O范围。"
+      },
+      "subtask": "EAUDIT02a"
+    },
+    {
+      "source_id": "MD-7.6-GibbsComposition",
+      "json_review": {
+        "status": "CORRECTED",
+        "issue_codes": [
+          "SOURCE_TEXT_NOT_VERBATIM",
+          "DECLARED_COVERAGE_GAP"
+        ],
+        "corrected_json": {
+          "source_id": "MD-7.6-GibbsComposition",
+          "kind": "unnumbered_claim",
+          "label": null,
+          "section": "7.6",
+          "printed_page": "282",
+          "pdf_page": "303",
+          "statement_latex": "The flows of each of these systems individually preserves the Gibbs distribution: denoting the Fokker-Planck operators associated to these flows by $\\mathcal L_H^\\dagger$ and $\\mathcal L_O^\\dagger$ we have\n\\[\\mathcal L_H^\\dagger\\rho_\\beta=0,\\qquad\\mathcal L_O^\\dagger\\rho_\\beta=0,\\]\nand hence\n\\[\\exp(t\\mathcal L_H^\\dagger)\\rho_\\beta=\\exp(t\\mathcal L_O^\\dagger)\\rho_\\beta=\\rho_\\beta.\\]\nWe can consider the propagation of measure resulting from a numerical discretization defined by the composition of these two pieces. For a scheme $[HO]$, we have the distribution first propagated under Hamiltonian dynamics, and then the momenta are evolved as the solution to the Ornstein-Uhlenbeck process, which clearly will preserve the Gibbs measure\n\\[\\exp(h\\mathcal L_O^\\dagger)[\\exp(h\\mathcal L_H^\\dagger)\\rho_\\beta]=\\exp(h\\mathcal L_O^\\dagger)\\rho_\\beta=\\rho_\\beta.\\]",
+          "proof_latex": null,
+          "proof_outline": null,
+          "proof_note": "原页推导与上下文全文见original_page_text；数学符号的排版以随附原页PDF为准。",
+          "original_page_text": [
+            {
+              "pdf_page": 303,
+              "printed_page": 282,
+              "text": "282\n7\nNumerical Methods for Stochastic Molecular Dynamics\ndeterministic Hamiltonian system taken ﬁrst, followed by the Ornstein-Uhlenbeck\nequation for p. The ﬂows of each of these systems individually preserves the Gibbs\ndistribution: denoting the Fokker-Planck operators associated to these ﬂows by L\u0004\nH\nand L\u0004\nO we have\nL\u0004\nH\u0005ˇ D 0;\nL\u0004\nO\u0005ˇ D 0;\nand hence\nexp.tL\u0004\nH/\u0005ˇ D exp.tL\u0004\nO/\u0005ˇ D \u0005ˇ:\nWe can consider the propagation of measure resulting from a numerical discretiza-\ntion deﬁned by the composition of these two pieces. For a scheme \u0002HO\u0003, we have\nthe distribution ﬁrst propagated under Hamiltonian dynamics, and then the momenta\nare evolved as the solution to the Ornstein-Uhlenbeck process, which clearly will\npreserve the Gibbs measure\nexp.hL\u0004\nO/\n\u0006\nexp.hL\u0004\nH/\u0005ˇ\n\u0007\nD exp.hL\u0004\nO/\u0005ˇ D \u0005ˇ:\nThe problem with this “method” is of course that it requires the exact ﬂow map\nof the Hamiltonian system. However, this requirement can be relaxed. Given any\ndivergence free vector ﬁeld f, we have\n\u0003r \u0002 .f\u0005/ D \u0003f \u0002 r\u0005;\nthus\nL\u0004\nf \u0005 D \u0003Lf\u0005:\nIf Lf preserves a ﬁrst integral I, then Lf preserves any distribution which is a\nfunction of I. It follows that any energy-preserving, divergence free vector ﬁeld\nwill always preserve the Gibbs distribution.\nAll symplectic methods preserve the volume, but for a system with no ﬁrst\nintegrals except the energy, it is known from a theorem of Ge and Marsden [400]\nthat a symplectic method cannot preserve the system energy exactly (unless the\nsymplectic method is itself a time-reparameterization of the exact solution). The\noptions for volume preserving non-symplectic discretization methods that conserve\nenergy exactly are limited (standard form schemes that rely on calculation of the\nvector ﬁeld at a few points cannot achieve this [380]).\nA class of methods that do provide the necessary features can be found in the\nwork of Feng Kang [133], referred to as J-splitting by McLachlan and Quispel [261].\nLet J be the skew-symmetric canonical symplectic structure matrix. The idea is to\nconsider a splitting of J into a ﬁnite number K of skew-symmetric matrices Ji,\ni D 1; : : : ; K. This induces a splitting of the Hamiltonian vector ﬁeld into K vector\n"
+            }
+          ],
+          "transcription_note": "PDF文字层原样保留，陈述中的数学排版转写为LaTeX；文字层有特殊字形编码时以目视原页为准。PDF347的Exercises之后不在正文范围内。",
+          "context_notation": [],
+          "extra_assumptions": [
+            "只覆盖末尾不变对象的组合恒等式；P/Q可取实际测度推前或已定义的传播子。H/O各自Gibbs不变性由前面独立陈述承担，生成元零蕴含半群固定点还需半群域理论。",
+            "29号覆盖限定：只覆盖两个已给定共同固定点映射的末尾组合恒等式；未识别实际H/O生成元、Gibbs测度及其半群。"
+          ],
+          "issues": [],
+          "statement_scope": "只覆盖两个已给定共同固定点映射的末尾组合恒等式；未识别实际H/O生成元、Gibbs测度及其半群。",
+          "lean_decl": "MD.Ch07.gibbsComposition",
+          "lean_declarations": [
+            "MD.Ch07.gibbsComposition"
+          ],
+          "source_page_verification": "本次R1审校已逐页目视核对 /workspace/R1_PAGES.pdf，页位及具体发现见本条 json_review.evidence；不依赖旧 source_page_checks.json。",
+          "repair_log": [
+            {
+              "instruction": 29,
+              "website_verdict": "FAIL",
+              "suggested_fix": "补上具体 H/O 传播子对实际 Gibbs 测度的识别以及所需生成元/半群域前提；或将声明对应范围缩至末尾组合恒等式。",
+              "actual_scope": "只覆盖两个已给定共同固定点映射的末尾组合恒等式；未识别实际H/O生成元、Gibbs测度及其半群。",
+              "signature_changed": false
+            }
+          ],
+          "documented_priors": [],
+          "coverage_gaps": [
+            "29号覆盖限定：只覆盖两个已给定共同固定点映射的末尾组合恒等式；未识别实际H/O生成元、Gibbs测度及其半群。"
+          ]
+        },
+        "issues": [
+          "A：输入将原页“For a scheme [HO], we have the distribution first propagated ... preserve the Gibbs measure”改为“For a scheme [HO], we have”后直接接公式，未标示句内删节。恢复完整原句及相邻引入句。",
+          "C范围提示：Lean只证明共同固定点的复合性质；原文H/O生成元各自湮灭Gibbs权、半群各自保Gibbs的结果不在本条声明中，已明确登记。"
+        ],
+        "evidence": [
+          "A：附件第5页＝PDF303／印刷282。两个生成元等于零、两个exp(tL†)固定ρβ，以及HO采用先H后O、算符乘积O在外，三组公式均正确转录。",
+          "C：gibbsComposition的E任意，P,Q:E→E，ρ:E，前提Pρ=ρ且Qρ=ρ，完整结论(Q∘P)ρ=ρ；复合顺序与原页HO一致。",
+          "C审校对象仅为R1_任务.md本条完整Lean、摘录的项目依赖和附录D1–D20；Mathlib标准定义按任务规定采信。未读取旧Ch0x/source文件作替代输入，未修改工程或补证明，未运行Lean。PASS仅评价明示覆盖范围内的声明签名与定义，不表示原文全部内容已形式化，也不表示含sorry的证明已经验证。",
+          "本条摘录未出现字面[EXTRA]或[ERRATUM?]标签；对应内容按extra_assumptions、issues、statement_scope、coverage_gaps及Printed/corrected名称分别核查。"
+        ]
+      },
+      "audit": {
+        "lean_decl": "MD.Ch07.gibbsComposition",
+        "verdict": "PASS",
+        "explanation": "gibbsComposition PASS，正确形式化原页最后一步的抽象固定点论证。其hP、hQ是已给定假设，不是由H/O微分方程推得；类型E无测度或半群结构。statement_scope和coverage_gaps对此作了明确限制，因此只在该范围内通过，不将此定理当作H/O各自Gibbs不变性的证明。",
+        "counterexample": null,
+        "suggested_fix": "恢复JSON原句；保留实际H/O传播子识别及生成元到半群固定点桥接的覆盖缺口。"
+      },
+      "subtask": "EAUDIT02b"
+    },
+    {
+      "source_id": "MD-7.6-DivergenceFreeInvariant",
+      "json_review": {
+        "status": "APPROVED",
+        "issue_codes": [
+          "DECLARED_COVERAGE_GAP"
+        ],
+        "corrected_json": null,
+        "issues": [
+          "仅有已披露的覆盖限制：微分恒等式没有自动给出完整流的全局保测性，也没有把任意实函数g都声明成概率密度。"
+        ],
+        "evidence": [
+          "A：附件第6页＝PDF303／印刷282。−∇·(fρ)=−f·∇ρ的负号、L_f†ρ=−L_fρ及第一积分I的复合函数陈述均与原页一致。",
+          "C：D5/D12/D13及forwardField均用真实导数。divergenceFreeInvariant的f、ρ为C¹，hdiv对所有x为零；结论也是对所有x的forwardField=−lieField。",
+          "C：firstIntegral_density要求I和g可微、对所有x有D I(x)[f(x)]=0，结论对所有x有D(g∘I)(x)[f(x)]=0；这是链式法则，不额外要求f可微。两个声明均PASS。",
+          "C审校对象仅为R1_任务.md本条完整Lean、摘录的项目依赖和附录D1–D20；Mathlib标准定义按任务规定采信。未读取旧Ch0x/source文件作替代输入，未修改工程或补证明，未运行Lean。PASS仅评价明示覆盖范围内的声明签名与定义，不表示原文全部内容已形式化，也不表示含sorry的证明已经验证。",
+          "本条摘录未出现字面[EXTRA]或[ERRATUM?]标签；对应内容按extra_assumptions、issues、statement_scope、coverage_gaps及Printed/corrected名称分别核查。"
+        ]
+      },
+      "audit": {
+        "lean_decl": "MD.Ch07.lieField",
+        "verdict": "PASS",
+        "explanation": "两个定理的对象、正则性、全称量词及负号都正确。firstIntegral_density本身只给Lie导数为零；与前一个散度自由恒等式组合后才能得到生成元湮灭相应密度。非负、归一化和全局流存在条件在extra_assumptions中明确另列，未被省略成无条件概率不变性。",
+        "counterexample": null,
+        "suggested_fix": null
+      },
+      "subtask": "EAUDIT02c"
+    }
+  ],
+  "merged_from": "ch07_eaudit_merged"
+}

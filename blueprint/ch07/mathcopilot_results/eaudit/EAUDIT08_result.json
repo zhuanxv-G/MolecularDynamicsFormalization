@@ -1,0 +1,162 @@
+{
+  "batch": "EAUDIT08",
+  "input_sha256": {
+    "Blueprint/Ch07.lean": "f3bc0ee86ace9c825028f0cec8ebb2fb410d6be77213cc7fb41cb8889540a000",
+    "blueprint/ch07/ch07_source.json": "1a201887b51a249fb73f456237cb342963c5d98c612ec1912f21572a57924012"
+  },
+  "items": [
+    {
+      "source_id": "MD-7.9.2-OUHermiteIdentities",
+      "json_review": {
+        "status": "APPROVED",
+        "issue_codes": [],
+        "corrected_json": null,
+        "issues": [],
+        "evidence": {
+          "A_source_check": "附件9页与第7–8页同页（印302）：三个OU式的−3、6/β、−1、−1；(7.33)的β/24、6、−1/3、−2/β；(7.34)的−p·∇ν及+μ全部一致。",
+          "attachment_pages": [
+            9
+          ],
+          "printed_pages": "302",
+          "original_pdf_pages": "323",
+          "source_basis": "仅R2_任务.md及R2_PAGES.pdf；已逐页目视数学排版并核对PDF文字层。文字层的特殊字形编码按任务说明保留，不据此臆改。",
+          "C_signature_check": "ouHermiteIdentities全称U,ν,μ及β，β>0，U、ν C∞，无须μ光滑因为仅在p方向被微分。完整六个合取依次为三阶Hermite式、p·∇ΔU式、pᵀH∇U式、w的OU原函数、H(ρν)=−p·∇νρ和其OU表示。ρ用单位质量Gibbs，O用单位摩擦，正确。共轭OU作用于三次多项式为−3T+(6/β)p·∇ΔU，故primitive中−1/3及−2/β恰消额外线性项，得到−symmetricRHSρ。未以sorry为失败理由；本项仅是微分恒等式，不宣称唯一解。",
+          "coverage_policy": "按本条明示statement_scope及coverage_gaps审校；定义或资格不冒充存在性、真实算法识别或误差定理。sorry不作为FAIL依据。"
+        }
+      },
+      "audit": {
+        "lean_decl": "MD.Ch07.laplacian",
+        "verdict": "PASS",
+        "explanation": "ouHermiteIdentities全称U,ν,μ及β，β>0，U、ν C∞，无须μ光滑因为仅在p方向被微分。完整六个合取依次为三阶Hermite式、p·∇ΔU式、pᵀH∇U式、w的OU原函数、H(ρν)=−p·∇νρ和其OU表示。ρ用单位质量Gibbs，O用单位摩擦，正确。共轭OU作用于三次多项式为−3T+(6/β)p·∇ΔU，故primitive中−1/3及−2/β恰消额外线性项，得到−symmetricRHSρ。未以sorry为失败理由；本项仅是微分恒等式，不宣称唯一解。 在明示覆盖范围内PASS；本结论为只读语义签名审校，不是Lean编译或证明通过报告。",
+        "counterexample": null,
+        "suggested_fix": "无需更改给定声明；继续保留已明示的[EXTRA]假设、覆盖范围与未覆盖结论。"
+      },
+      "subtask": "EAUDIT08a"
+    },
+    {
+      "source_id": "MD-7.9.2-FirstReciprocalCorrection",
+      "json_review": {
+        "status": "NEEDS_HUMAN",
+        "issue_codes": [
+          "NORMALIZATION_DISTINCTION"
+        ],
+        "corrected_json": {
+          "source_id": "MD-7.9.2-FirstReciprocalCorrection",
+          "kind": "unnumbered_claim",
+          "label": "(7.35)–(7.36)",
+          "section": "7.9.2",
+          "printed_page": "303–304",
+          "pdf_page": "324–325",
+          "statement_latex": "\\[f_{2,1,[OABAO]}=-\\tfrac\\beta{24}(6p^T(\\nabla^2U)\\nabla U-\\tfrac13\\nabla^3U:p\\otimes p\\otimes p-\\tfrac2\\beta p^T\\nabla_q\\Delta_qU)-p^T\\nabla\\nu-\\mu.\\]\n\\[\\overline{\\mathcal L}_O^\\dagger(\\rho_\\beta f_{2,2,[OABAO]})=-\\mathcal L_H^\\dagger(\\rho_\\beta f_{2,1,[OABAO]}).\\tag{7.35}\\]\n\\[\\int_{\\mathcal P}\\overline{\\mathcal L}_O^\\dagger(\\rho_\\beta f_{2,2,[OABAO]})d\\omega_p=0,\\qquad\n\\int_{\\mathcal P}\\mathcal L_H^\\dagger(\\rho_\\beta f_{2,1,[OABAO]})d\\omega_p=\\overline\\pi\\mathcal L_H^\\dagger f_{2,1,[OABAO]}=0,\\tag{7.36}\\]\nwhere $(\\overline\\pi f)(q)=\\int_{\\mathcal P}f(q,p)\\rho_\\beta d\\omega_p$.",
+          "proof_latex": null,
+          "proof_outline": null,
+          "proof_note": "原页推导与上下文全文见original_page_text；数学符号的排版以随附原页PDF为准。",
+          "original_page_text": [
+            {
+              "pdf_page": 324,
+              "printed_page": 303,
+              "text": "7.9\nError Expansion for Symmetric Langevin Methods\n303\nfor some function of position \u0006.q/. Plugging (7.33) and (7.34) into the PDE (7.32)\ngives\nNL\u0004\nO\n\u0004\n\u0005ˇf2;1;\u0002OABAO\u0003\n\u0005\nD \u0003w.q; p/\u0005ˇ \u0003 L\u0004\nH\n\u0004\n\u0005ˇ\u0003\n\u0005\n;\nD \u0003 ˇ\n24\nNL\u0004\nO\n\b\u0002\n6pT \u0004\nr2U\n\u0005\nrU \u0003 1\n3r3U W p ˝ p ˝ p\n\u0003 2\nˇ pTrq\u0016qU\n\u0003\n\u0005ˇ\n\t\n\u0003 NL\u0004\nO\n\u0004\npTr\u0003 C \u0006\n\u000b\n\u0005ˇ\n\u0005\n;\nand hence\nf2;1;\u0002OABAO\u0003 D \u0003 ˇ\n24\n\b\n6pT \u0004\nr2U\n\u0005\nrU \u0003 1\n3r3U W p ˝ p ˝ p \u0003 2\nˇ pTrq\u0016qU\n\t\n\u0003 pTr\u0003 \u0003 \u0006:\nAt this point, we might consider abandoning the prospect of determining the leading\norder correction altogether, as we now have two arbitrary functions of position \u0003.q/\nand \u0006.q/ creeping into our solution. However, the form of \u0003.q/ is determined by\nconsidering the next order PDE at \"2:\nNL\u0004\nO\n\u0004\u0005ˇf2;2;\u0002OABAO\u0003\n\u0005 D \u0003L\u0004\nH\n\u0004\u0005ˇf2;1;\u0002OABAO\u0003\n\u0005 :\n(7.35)\nWe are spared solving this equation by virtue of a solvability condition. Integrating\nthe left hand side of (7.35) with respect to the momenta, we ﬁnd\nZ\nP\nNL\u0004\nO\n\u0004\n\u0005ˇf2;2;\u0002OABAO\u0003\n\u0005\nd!p D 0;\nby simple computation. Hence we also require the average of the right-hand side\nof (7.35) to be zero with respect to the momentum, or\nZ\nP\nL\u0004\nH\n\u0004\n\u0005ˇf2;1;\u0002OABAO\u0003\n\u0005\nd!p D N\u0014L\u0004\nHf2;1;\u0002OABAO\u0003 D 0;\n(7.36)\nwhere N\u0014 is the averaging operator\n. N\u0014f/ .q/ D\nZ\nP\nf.q; p/\u0005ˇd!p:\n"
+            },
+            {
+              "pdf_page": 325,
+              "printed_page": 304,
+              "text": "304\n7\nNumerical Methods for Stochastic Molecular Dynamics\nHence by rewriting the correction function as\nf2;1;\u0002OABAO\u0003 D ˇ\n24\n\b\n3L\u0004\nAjrUj2 \u0003 1\n3\n\u0006\nL\u0004\nA\n\u00073\nU \u0003 2\nˇ L\u0004\nA\u0016qU\n\t\nC L\u0004\nA\u0003 \u0003 \u0006;\nwe have\nN\u0014L\u0004\nHf2;1;\u0002OABAO\u0003 D ˇ\n24\n\b\n3MjrUj2 \u0003 1\n3NU \u0003 2\nˇ M\u0016qU\n\t\nC M\u0003;\nwhere we abbreviate\nM .q/D N\u0014L\u0004\nHL\u0004\nA .q/D N\u0014\n\u0006\n.L\u0004\nA/2 C L\u0004\nBL\u0004\nA\n\u0007\n .q/ D 1\nˇ \u0016q .q/ \u0003 rU \u0002 rq .q/;\nN .q/ D N\u0014L\u0004\nH.L\u0004\nA/3 .q/ D N\u0014\n\u0006\n.L\u0004\nA/4 C L\u0004\nB.L\u0004\nA/3\u0007\n .q/ D 3\nˇ M\n\u0004\n\u0016q .q/\n\u0005\n:\nThus we have\nN\u0014L\u0004\nH\u0005ˇf2;1;\u0002OABAO\u0003 D ˇ\n8 M\n\b\njrUj2 \u0003 1\nˇ \u0016qU\n\t\nC M\u0003;\nand hence by (7.36) we ﬁnally obtain\n\u0003.q/ D 1\n8\n\u0004\n\u0016qU \u0003 ˇjrUj2\u0005\n;\nwhere it is easily veriﬁed that h\u0003i D 0. This gives us our leading order solution\nf2;0;\u0002OABAO\u0003 D 1\n8\n\u0004\n\u0016qU \u0003 ˇjrUj2\u0005\n:\nApplying the same procedure for the \u0002OBABO\u0003 scheme yields\nf2;0;\u0002OBABO\u0003 D 1\n8\n\u0004\nˇjrUj2 \u0003 2\u0010qU C c\n\u0005\n;\nwhere c D h\u0016Ui is a constant chosen to ensure zero average. We can relate these\nschemes to their conjugate schemes with centralized OU update via Lemma 7.1 and\nEq. (7.30), to give\nf2;0;\u0002ABOBA\u0003 D 1\n8\n\u0004\nˇpTr2U.q/p \u0003 2\u0016qU C c\n\u0005\n;\nf2;0;\u0002BAOAB\u0003 D 1\n8\n\u0004\n\u0016U \u0003 ˇpTr2U.q/p\n\u0005\n:\n"
+            }
+          ],
+          "transcription_note": "PDF文字层原样保留，陈述中的数学排版转写为LaTeX；文字层有特殊字形编码时以目视原页为准。PDF347的Exercises之后不在正文范围内。",
+          "context_notation": [],
+          "extra_assumptions": [
+            "给出全部f2,1公式并陈述其一阶PDE；二阶可解相容性需OU积分通量消失及实际域条件，尚未证明。",
+            "29号覆盖限定：一阶候选及PDE、条件Gaussian平均和原印联合归一密度的动量积分；二者不是同一算子；f2,2、(7.35)/(7.36)通量与可解性未覆盖。"
+          ],
+          "issues": [
+            "[ERRATUM?] 原印π̄使用联合ρβ，后续M公式按条件动量平均理解时缺位置边际因子；本条已有区分，但issues中“隐含共轭”不能被解释为Hamiltonian输运不满足Gibbs乘积恒等式。",
+            "[ERRATUM?] 联合权平均与条件动量平均须区分；H†ρ=0使H†(ρf)=ρH†f，不能把该Hamiltonian乘积恒等式本身列作错误。"
+          ],
+          "statement_scope": "一阶候选及PDE、条件Gaussian平均和原印联合归一密度的动量积分；二者不是同一算子；f2,2、(7.35)/(7.36)通量与可解性未覆盖。",
+          "lean_decl": "MD.Ch07.firstReciprocalCorrection",
+          "lean_declarations": [
+            "MD.Ch07.firstReciprocalCorrection",
+            "MD.Ch07.momentumAverage",
+            "MD.Ch07.momentumAveragePrinted_corrected",
+            "MD.Ch07.momentumAveragePrinted",
+            "MD.Ch07.firstReciprocalCorrection_pde",
+            "MD.Ch07.conjugatedPhaseH",
+            "MD.Ch07.jointGibbsQualification"
+          ],
+          "source_page_verification": "见source_page_checks.json；必须已目视核对本条原页。",
+          "repair_log": [
+            {
+              "instruction": 29,
+              "website_verdict": "NEEDS_HUMAN",
+              "suggested_fix": "保留原书π̄并标[ERRATUM?]；把ρβ的全局归一、条件动量平均及ρβ⁻¹H†ρβ共轭算符逐一定义。补列带域/通量条件的二阶方程和可解性目标签名。",
+              "actual_scope": "一阶候选及PDE、条件Gaussian平均和原印联合归一密度的动量积分；二者不是同一算子；f2,2、(7.35)/(7.36)通量与可解性未覆盖。",
+              "signature_changed": true
+            }
+          ],
+          "documented_priors": [],
+          "coverage_gaps": [
+            "给出全部f2,1公式并陈述其一阶PDE；二阶可解相容性需OU积分通量消失及实际域条件，尚未证明。",
+            "29号覆盖限定：一阶候选及PDE、条件Gaussian平均和原印联合归一密度的动量积分；二者不是同一算子；f2,2、(7.35)/(7.36)通量与可解性未覆盖。"
+          ]
+        },
+        "issues": [
+          {
+            "code": "NORMALIZATION_DISTINCTION",
+            "message": "原印π̄使用联合ρβ，后续M公式按条件动量平均理解时缺位置边际因子；本条已有区分，但issues中“隐含共轭”不能被解释为Hamiltonian输运不满足Gibbs乘积恒等式。"
+          }
+        ],
+        "evidence": {
+          "A_source_check": "附件10–11页（印303–304）：f₂,₁总负号及−p·∇ν−μ一致；(7.35)右端−H(ρβf₂,₁)一致；(7.36)原印将积分H(ρβf)写成π̄Hf，并定义π̄f=∫fρβdp，JSON忠实保留此记号疑误。",
+          "attachment_pages": [
+            10,
+            11
+          ],
+          "printed_pages": "303–304",
+          "original_pdf_pages": "324–325",
+          "source_basis": "仅R2_任务.md及R2_PAGES.pdf；已逐页目视数学排版并核对PDF文字层。文字层的特殊字形编码按任务说明保留，不据此臆改。",
+          "C_signature_check": "候选f₂,₁=−β·primitive/24−p·∇ν−μ，与原印一致；PDE的完整结论Ō(ρf₂,₁)+H(ρν)=+symmetricRHSρ=−wρ，符号正确，所加β>0及U、ν C∞合理。Printed是带全相空间配分函数的联合归一密度积分；corrected是独立Gaussian条件平均，不是同一算子。conjugatedPhaseH=H(ρf)/ρ，ρ严格正可除。jointGibbsQualification只定义β>0、可积及配分函数正，不是证明其成立。二阶方程和通量条件已列未覆盖。本项目Hamiltonian输运满足Hρ=0，因此H(ρf)=ρHf；不能将(7.36)该等式本身判错。真正的原书疑点在随后M的归一化与算子解释，需保留该限定。",
+          "coverage_policy": "按本条明示statement_scope及coverage_gaps审校；定义或资格不冒充存在性、真实算法识别或误差定理。sorry不作为FAIL依据。"
+        }
+      },
+      "audit": {
+        "lean_decl": "MD.Ch07.firstReciprocalCorrection",
+        "verdict": "NEEDS_HUMAN",
+        "explanation": "候选f₂,₁=−β·primitive/24−p·∇ν−μ，与原印一致；PDE的完整结论Ō(ρf₂,₁)+H(ρν)=+symmetricRHSρ=−wρ，符号正确，所加β>0及U、ν C∞合理。Printed是带全相空间配分函数的联合归一密度积分；corrected是独立Gaussian条件平均，不是同一算子。conjugatedPhaseH=H(ρf)/ρ，ρ严格正可除。jointGibbsQualification只定义β>0、可积及配分函数正，不是证明其成立。二阶方程和通量条件已列未覆盖。本项目Hamiltonian输运满足Hρ=0，因此H(ρf)=ρHf；不能将(7.36)该等式本身判错。真正的原书疑点在随后M的归一化与算子解释，需保留该限定。 原印/修正版逐项结论：字面转写PASS；合理修正的签名PASS；本条总体因原书数学资格或记号疑点NEEDS_HUMAN。",
+        "counterexample": "取n=1、β=1、U(q)=q²/2、f≡1。momentumAveragePrinted f(q)=exp(−q²/2)/√(2π)，momentumAveragePrinted_corrected f(q)=1，二者不相同。另一方面本项目H†=−p∂q+U′∂p满足H†ρ=0，故H†(ρf)=ρH†f，原印(7.36)这一Hamiltonian乘积等式本身不应被误判为反例；疑点在后续归一化与算子解释。",
+        "suggested_fix": "保留Printed联合权定义，明确它等于位置边际密度乘条件平均；后续纯位置算子M的识别须用条件平均并声明所用算子/共轭。不得简单说H†(ρf)≠ρH†f，因为本项目的Hamiltonian输运恰保持Gibbs权。"
+      },
+      "subtask": "EAUDIT08b"
+    },
+    {
+      "source_id": "MD-7.9.2-HighFrictionCorrectionTable",
+      "json_review": {
+        "status": "APPROVED",
+        "issue_codes": [],
+        "corrected_json": null,
+        "issues": [],
+        "evidence": {
+          "A_source_check": "附件12–13页（印304–305）：四种候选的顺序、1/8、梯度范数/Hessian二次型、两个−2ΔU及+c、c=〈ΔU〉逐项一致；双渐近余项εh²+h⁴一致。",
+          "attachment_pages": [
+            12,
+            13
+          ],
+          "printed_pages": "304–305",
+          "original_pdf_pages": "325–326",
+          "source_basis": "仅R2_任务.md及R2_PAGES.pdf；已逐页目视数学排版并核对PDF文字层。文字层的特殊字形编码按任务说明保留，不据此臆改。",
+          "C_signature_check": "Fin 4的0/1/2/3精确对应OABAO/OBABO/ABOBA/BAOAB，四分支完整；c参数保留。conjugateCorrectionChange=β(|∇U|²−pᵀHp)/8，两条conjugateCorrections方向分别为减、加，四式满足该纯代数关系。positivePairLimit为(ε,h)从双正侧到(0,0)，余项参数z.1*z.2²+z.2⁴正确。MeanLaplacian为实际位置Gibbs积分；CenteredQualification把概率、可积及四项零均值列成资格，并未证明资格。A、exact、correction为抽象量，没有被误称为真实四算法平稳均值定理，缺口已披露。",
+          "coverage_policy": "按本条明示statement_scope及coverage_gaps审校；定义或资格不冒充存在性、真实算法识别或误差定理。sorry不作为FAIL依据。"
+        }
+      },
+      "audit": {
+        "lean_decl": "MD.Ch07.highFrictionCorrection",
+        "verdict": "PASS",
+        "explanation": "Fin 4的0/1/2/3精确对应OABAO/OBABO/ABOBA/BAOAB，四分支完整；c参数保留。conjugateCorrectionChange=β(|∇U|²−pᵀHp)/8，两条conjugateCorrections方向分别为减、加，四式满足该纯代数关系。positivePairLimit为(ε,h)从双正侧到(0,0)，余项参数z.1*z.2²+z.2⁴正确。MeanLaplacian为实际位置Gibbs积分；CenteredQualification把概率、可积及四项零均值列成资格，并未证明资格。A、exact、correction为抽象量，没有被误称为真实四算法平稳均值定理，缺口已披露。 在明示覆盖范围内PASS；本结论为只读语义签名审校，不是Lean编译或证明通过报告。",
+        "counterexample": null,
+        "suggested_fix": "无需更改给定声明；继续保留已明示的[EXTRA]假设、覆盖范围与未覆盖结论。"
+      },
+      "subtask": "EAUDIT08c"
+    }
+  ],
+  "merged_from": "ch07_eaudit_merged"
+}

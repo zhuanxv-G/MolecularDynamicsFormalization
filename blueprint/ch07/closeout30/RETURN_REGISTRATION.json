@@ -1,0 +1,96 @@
+{
+  "counts": {
+    "PASS": 24,
+    "NEEDS_HUMAN": 10,
+    "FAIL": 1
+  },
+  "bindings": [
+    {
+      "batch": "EAUDIT01",
+      "path": "blueprint/ch07/mathcopilot_results/eaudit/EAUDIT01_result.json",
+      "sha256": "529b66f47738001e4791f52701e9dd20c87bb4958836dc935dd4f11d571c2e3c",
+      "merged_from": "ch07_eaudit_merged",
+      "items": 3
+    },
+    {
+      "batch": "EAUDIT02",
+      "path": "blueprint/ch07/mathcopilot_results/eaudit/EAUDIT02_result.json",
+      "sha256": "886999b7ea7fd8407c0de4b2a3def0058dbb7673f64ada8a601252a26d0b9e11",
+      "merged_from": "ch07_eaudit_merged",
+      "items": 3
+    },
+    {
+      "batch": "EAUDIT03",
+      "path": "blueprint/ch07/mathcopilot_results/eaudit/EAUDIT03_result.json",
+      "sha256": "8a868b83f48c15902fd6cf6e77366af445c6cfcb38033f94660a6597688d3a5a",
+      "merged_from": "ch07_eaudit_merged",
+      "items": 3
+    },
+    {
+      "batch": "EAUDIT04",
+      "path": "blueprint/ch07/mathcopilot_results/eaudit/EAUDIT04_result.json",
+      "sha256": "8b5f7c7b4a69520f072b990032fa35aaea357b74c9580f2c557ef094d8e4c995",
+      "merged_from": "ch07_eaudit_merged",
+      "items": 3
+    },
+    {
+      "batch": "EAUDIT05",
+      "path": "blueprint/ch07/mathcopilot_results/eaudit/EAUDIT05_result.json",
+      "sha256": "245d6116b42e44b3101ecd27cc2f97722df51c8ab67f165b8e8cda1bfd99b72e",
+      "merged_from": "ch07_eaudit_merged",
+      "items": 3
+    },
+    {
+      "batch": "EAUDIT06",
+      "path": "blueprint/ch07/mathcopilot_results/eaudit/EAUDIT06_result.json",
+      "sha256": "646747ede74e1d5b3ca65f3440ca3e2281991e505d90f85cf456a1ee8b05c3fd",
+      "merged_from": "ch07_eaudit_merged",
+      "items": 3
+    },
+    {
+      "batch": "EAUDIT07",
+      "path": "blueprint/ch07/mathcopilot_results/eaudit/EAUDIT07_result.json",
+      "sha256": "8d20f1a87c58e93eb747ac505730a9703fc671b80e5f2ab255636c96dfe9428e",
+      "merged_from": "ch07_eaudit_merged",
+      "items": 3
+    },
+    {
+      "batch": "EAUDIT08",
+      "path": "blueprint/ch07/mathcopilot_results/eaudit/EAUDIT08_result.json",
+      "sha256": "209dcb6b599627066fbb5253027ee0b82803c9a33d87a875ee62725d21f0769b",
+      "merged_from": "ch07_eaudit_merged",
+      "items": 3
+    },
+    {
+      "batch": "EAUDIT09",
+      "path": "blueprint/ch07/mathcopilot_results/eaudit/EAUDIT09_result.json",
+      "sha256": "e9a32cd1916248bda575943a13fe07bc2c2afdfbf816b542ab1c74f122fca494",
+      "merged_from": "ch07_eaudit_merged",
+      "items": 3
+    },
+    {
+      "batch": "EAUDIT10",
+      "path": "blueprint/ch07/mathcopilot_results/eaudit/EAUDIT10_result.json",
+      "sha256": "592501afeb41f34c9c6c8cadaecad302feeaeaa8bdaeb102f192900b6eb81d5a",
+      "merged_from": "ch07_eaudit_merged",
+      "items": 3
+    },
+    {
+      "batch": "EAUDIT11",
+      "path": "blueprint/ch07/mathcopilot_results/eaudit/EAUDIT11_result.json",
+      "sha256": "2d422b8bae93ad73b573197f13c6c32b5ed7ec475b02b582e2b4576d5c0141d1",
+      "merged_from": "ch07_eaudit_merged",
+      "items": 3
+    },
+    {
+      "batch": "EAUDIT12",
+      "path": "blueprint/ch07/mathcopilot_results/eaudit/EAUDIT12_result.json",
+      "sha256": "7cca724c0387e0586d6631c8edb33feef26ad4d2ca8465a7f85f44b98005b2ba",
+      "merged_from": "ch07_eaudit_merged",
+      "items": 2
+    }
+  ],
+  "input_binding": "Each item is matched by source_id/subtask to its original manifest. The split returns carry shared Lean/source hashes (no duplicated per-item hashes); these and original manifest/PASTE/PDF bytes are checked exactly. Ch07 equals bf0f8b8a after Git LF/Windows CRLF normalization; git log confirms no later Ch07 change.",
+  "submitted_lean_sha256": "f3bc0ee86ace9c825028f0cec8ebb2fb410d6be77213cc7fb41cb8889540a000",
+  "git_lf_sha256": "bf3a4fda957f24d014a4b41282a77c69c9d6c488a66b2ceeb08284a7e14932d9"
+}

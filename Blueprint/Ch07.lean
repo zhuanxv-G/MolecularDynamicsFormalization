@@ -1572,10 +1572,10 @@ theorem lmStepH_rescale (m : V n) (U : V n → ℝ) (θ h : ℝ) (R S q : V n)
   sorry
 
 /-- source_id: MD-7.10-ColoredNoiseAndExtension · 印刷p.308 / PDFp.329
-[EXTRA] MA(1)噪声以相邻两独立Gaussian平均定义；定义扩展状态(q,R旧)的完整一步映射。非Markov性的普遍表述依赖具体势和初值，未把任意位置过程都判非Markov；扩展Markov核与半群律仍是覆盖缺口。
-[EXTRA] 29号覆盖限定：邻接噪声定义与协方差、扩展状态映射及可测Markov核定义；过程相对过去的新噪声独立性/Markov定理未覆盖，位置非Markov不作全称断言。
+[EXTRA] MA(1)噪声以相邻两独立Gaussian平均定义；协方差为额外推论。扩展状态(q,R旧)的真实转移核及fresh独立性下Markov集合积分式已陈述；一般位置非Markov不作无例外全称断言。
 [EXTRA] 邻接噪声协方差（额外推论）、扩展状态映射和真实Gaussian转移核；给定可测性及每步新噪声对初态/全部过去独立时，扩展过程的Markov集合积分式。位置过程非Markov仅作一般情形说明，不作无例外全称定理。
-[EXTRA] 实际覆盖范围：邻接噪声协方差（额外推论）、扩展状态映射和真实Gaussian转移核；给定可测性及每步新噪声对初态/全部过去独立时，扩展过程的Markov集合积分式。位置过程非Markov仅作一般情形说明，不作无例外全称定理。 -/
+[EXTRA] 实际覆盖范围：邻接噪声协方差（额外推论）、扩展状态映射和真实Gaussian转移核；给定可测性及每步新噪声对初态/全部过去独立时，扩展过程的Markov集合积分式。位置过程非Markov仅作一般情形说明，不作无例外全称定理。
+[ERRATUM?] 有色噪声本身不推出位置过程无例外地非Markov；具体势与初始分布可能使位置序列仍为Markov，原句适用范围待导师确认。 -/
 def coloredNoise (R : ℕ → Ω → ℝ) (k : ℕ) (sample : Ω) : ℝ := (R k sample+R (k+1) sample)/2
 theorem coloredNoise_covariance (P : Measure Ω) [IsProbabilityMeasure P] (R : ℕ → Ω → ℝ)
     (hind : iIndepFun R P) (hlaw : ∀ k, HasLaw (R k) (gaussianReal 0 1) P) (j k : ℕ) :
@@ -1769,9 +1769,11 @@ def constrainedCanonicalQualification {l : ℕ} (ν : Measure (Phase n))
 /-- source_id: MD-7.12-ConstrainedHOSplitting · 印刷p.318 / PDFp.339
 [EXTRA] Hc、Oc分别使用各自乘子，不能将相同multiplier在求和中重复扣除；Oc噪声为前条真实Wiener常扩散项，向量场仅记录漂移。
 [EXTRA] 每段都应满足cotangentConstraint，实际流或核、Oc半群律及约束Gaussian不变性尚未证明。
-[EXTRA] 29号覆盖限定：H/O总化漂移、O扩散，以及两段各自受约束积分解规格；组合仍为代数辅助，未构造随机核及两次独立噪声组合。
-[EXTRA] H/O漂移与O扩散、各段约束保持的积分解规格、满足这些规格的H/O随机映射组合；两次O用乘积概率空间的独立样本。未构造这些解的存在性或一般非线性投影漂移理论。
-[EXTRA] 实际覆盖范围：H/O漂移与O扩散、各段约束保持的积分解规格、满足这些规格的H/O随机映射组合；两次O用乘积概率空间的独立样本。未构造这些解的存在性或一般非线性投影漂移理论。 -/
+[EXTRA] H资格要求非负时刻的初值可测性；O资格独立要求P为概率、W为向量Wiener过程及(sample,初值)联合可测性，避免空约束集使概率资格真空成立。
+[EXTRA] h≥0及合规确定初值下，明确P.prod P上的O-H-O输出随机变量、其可测性和推前概率分布。两次O取不同的乘积坐标。
+[EXTRA] 未构造分段解的存在唯一性；随机初值代入后的条件积分解与几乎处处约束保持、完整条件转移核的识别仍列覆盖缺口，不能由下方推前分布定理冒称已证。
+[EXTRA] 实际覆盖范围：H/O漂移、O扩散、逐确定初值的约束积分解规格，以及具联合可测资格的O-H-O输出随机变量与分布。未建立一般非线性投影漂移或随机初值条件解理论。
+[ERRATUM?] 原印λdt若限为普通有限变差反作用，不能抵消约束法向的Wiener噪声；保留原印，O积分规格采用可含随机部分的reactionImpulse，解释待导师确认。 -/
 def constrainedHField {l : ℕ} (m : V n) (U : V n → ℝ) (g : V n → V l) (multiplier : V l) (x : Phase n) : Phase n :=
   (fun i ↦ x.2 i/m i,fun i ↦ -gradient U x.1 i-constraintReaction g x.1 multiplier i)
 def constrainedOField {l : ℕ} (g : V n → V l) (γ : ℝ) (multiplier : V l) (x : Phase n) : Phase n :=
@@ -1815,22 +1817,67 @@ def constrainedOIntegralStep {l : ℕ} (P : Measure Ω) (m : V n) (g : V n → V
 
 def constrainedHMapQualification {l : ℕ} (m : V n) (U : V n → ℝ) (g : V n → V l)
     (H : ℝ → Phase n → Phase n) : Prop :=
+  (∀ T, 0 ≤ T → Measurable (H T)) ∧
   ∀ x ∈ cotangentConstraint m g, ∀ T, 0 ≤ T → ∃ Λ : ℝ → V l,
     constrainedHIntegralStep m U g (fun t ↦ H t x) Λ x T
 
 def constrainedOMapQualification {l : ℕ} (P : Measure Ω) (m : V n) (g : V n → V l)
     (γ θ : ℝ) (W : ℝ → Ω → V n) (O : ℝ → Ω → Phase n → Phase n) : Prop :=
+  IsProbabilityMeasure P ∧ vectorWiener P W ∧
+  (∀ T, 0 ≤ T → Measurable (fun z : Ω × Phase n ↦ O T z.1 z.2)) ∧
   ∀ x ∈ cotangentConstraint m g, ∀ T, 0 ≤ T → ∃ reaction : ℝ → Ω → V n,
     constrainedOIntegralStep P m g γ θ W (fun t sample ↦ O t sample x) reaction x T
 
-/-- 两次O使用乘积概率空间上的独立样本；H/O都须满足各自受约束解规格。 -/
+/-- 非负步长、合规确定初值下的输出；底层概率测度明确为P.prod P。 -/
 def constrainedHOQualifiedComposition {l : ℕ} (P : Measure Ω) (m : V n)
     (U : V n → ℝ) (g : V n → V l) (γ θ : ℝ) (W : ℝ → Ω → V n)
     (H : ℝ → Phase n → Phase n) (O : ℝ → Ω → Phase n → Phase n)
     (hH : constrainedHMapQualification m U g H)
-    (hO : constrainedOMapQualification P m g γ θ W O) (h : ℝ) :
-    Ω × Ω → Phase n → Phase n :=
-  fun sample x ↦ O (h/2) sample.2 (H h (O (h/2) sample.1 x))
+    (hO : constrainedOMapQualification P m g γ θ W O) (h : ℝ) (hh : 0 ≤ h)
+    (x : Phase n) (hx : x ∈ cotangentConstraint m g) : Ω × Ω → Phase n :=
+  fun sample ↦ O (h/2) sample.2 (H h (O (h/2) sample.1 x))
+
+theorem constrainedHOQualifiedComposition_measurable {l : ℕ} (P : Measure Ω) (m : V n)
+    (U : V n → ℝ) (g : V n → V l) (γ θ : ℝ) (W : ℝ → Ω → V n)
+    (H : ℝ → Phase n → Phase n) (O : ℝ → Ω → Phase n → Phase n)
+    (hH : constrainedHMapQualification m U g H)
+    (hO : constrainedOMapQualification P m g γ θ W O) (h : ℝ) (hh : 0 ≤ h)
+    (x : Phase n) (hx : x ∈ cotangentConstraint m g) :
+    Measurable (constrainedHOQualifiedComposition P m U g γ θ W H O hH hO h hh x hx) := by
+  have hhalf : 0 ≤ h/2 := by positivity
+  have hmO := hO.2.2.1 (h/2) hhalf
+  have hfirst : Measurable (fun sample : Ω × Ω ↦ O (h/2) sample.1 x) :=
+    hmO.comp (measurable_fst.prodMk measurable_const)
+  exact hmO.comp (measurable_snd.prodMk ((hH.1 h hh).comp hfirst))
+
+/-- 输出律由乘积概率上的可测推前给出；不声称已识别条件积分解。 -/
+def constrainedHOOutputLaw {l : ℕ} (P : Measure Ω) (m : V n)
+    (U : V n → ℝ) (g : V n → V l) (γ θ : ℝ) (W : ℝ → Ω → V n)
+    (H : ℝ → Phase n → Phase n) (O : ℝ → Ω → Phase n → Phase n)
+    (hH : constrainedHMapQualification m U g H)
+    (hO : constrainedOMapQualification P m g γ θ W O) (h : ℝ) (hh : 0 ≤ h)
+    (x : Phase n) (hx : x ∈ cotangentConstraint m g) : Measure (Phase n) :=
+  (P.prod P).map (constrainedHOQualifiedComposition P m U g γ θ W H O hH hO h hh x hx)
+
+theorem constrainedHOOutput_hasLaw {l : ℕ} (P : Measure Ω) (m : V n)
+    (U : V n → ℝ) (g : V n → V l) (γ θ : ℝ) (W : ℝ → Ω → V n)
+    (H : ℝ → Phase n → Phase n) (O : ℝ → Ω → Phase n → Phase n)
+    (hH : constrainedHMapQualification m U g H)
+    (hO : constrainedOMapQualification P m g γ θ W O) (h : ℝ) (hh : 0 ≤ h)
+    (x : Phase n) (hx : x ∈ cotangentConstraint m g) :
+    HasLaw (constrainedHOQualifiedComposition P m U g γ θ W H O hH hO h hh x hx)
+      (constrainedHOOutputLaw P m U g γ θ W H O hH hO h hh x hx) (P.prod P) := by
+  exact hasLaw_map (constrainedHOQualifiedComposition_measurable P m U g γ θ W H O hH hO h hh x hx).aemeasurable
+
+theorem constrainedHOOutputLaw_probability {l : ℕ} (P : Measure Ω) (m : V n)
+    (U : V n → ℝ) (g : V n → V l) (γ θ : ℝ) (W : ℝ → Ω → V n)
+    (H : ℝ → Phase n → Phase n) (O : ℝ → Ω → Phase n → Phase n)
+    (hH : constrainedHMapQualification m U g H)
+    (hO : constrainedOMapQualification P m g γ θ W O) (h : ℝ) (hh : 0 ≤ h)
+    (x : Phase n) (hx : x ∈ cotangentConstraint m g) :
+    IsProbabilityMeasure (constrainedHOOutputLaw P m U g γ θ W H O hH hO h hh x hx) := by
+  letI : IsProbabilityMeasure P := hO.1
+  exact (constrainedHOOutput_hasLaw P m U g γ θ W H O hH hO h hh x hx).isProbabilityMeasure_iff.mp inferInstance
 
 /-- source_id: MD-7.12-MEVMEAlgorithm · 印刷p.318–319 / PDFp.339–340
 [EXTRA] 完整记录全部中间动量、乘子和位置/隐约束；隐式关系不声称求解器存在唯一。R,S为独立标准Gaussian向量的资格由使用时另加vectorNormalSequence。

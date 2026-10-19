@@ -1,0 +1,222 @@
+{
+  "batch": "EAUDIT10",
+  "input_sha256": {
+    "Blueprint/Ch07.lean": "f3bc0ee86ace9c825028f0cec8ebb2fb410d6be77213cc7fb41cb8889540a000",
+    "blueprint/ch07/ch07_source.json": "1a201887b51a249fb73f456237cb342963c5d98c612ec1912f21572a57924012"
+  },
+  "items": [
+    {
+      "source_id": "MD-7.10-BAOABLimitMethod",
+      "json_review": {
+        "status": "APPROVED",
+        "issue_codes": [],
+        "corrected_json": null,
+        "issues": [],
+        "evidence": {
+          "A_source_check": "附件17–18页（印307–308）：BAOAB五段更新的两个h/2、两次力kick及重抽位置一致；消元后漂移−h²M⁻¹∇U/2、h√(kBT)M^(−1/2)(Rn+Rn−1)/2和τ=h²/2的(7.40)一致。",
+          "attachment_pages": [
+            17,
+            18
+          ],
+          "printed_pages": "307–308",
+          "original_pdf_pages": "328–329",
+          "source_basis": "仅R2_任务.md及R2_PAGES.pdf；已逐页目视数学排版并核对PDF文字层。文字层的特殊字形编码按任务说明保留，不据此臆改。",
+          "C_signature_check": "函数复合从右至左是kick、drift、redraw、drift、kick，符合五段原文。position定理明确以p=redraw(S)−h∇U(q)/2为初值，因此第一个kick后p=redraw(S)−h∇U(q)，消元得到−h²∇U/(2m)及h(redraw R+redraw S)/(2m)。该代数恒等式对所有实参数在Lean总化下成立；rescale另加m>0、θ≥0、h≥0以正确识别√(h²θ)=h√θ，和τ=h²/2一致。没有无条件对任意初始动量声称闭合，也没有声称长期精度。",
+          "coverage_policy": "按本条明示statement_scope及coverage_gaps审校；定义或资格不冒充存在性、真实算法识别或误差定理。sorry不作为FAIL依据。"
+        }
+      },
+      "audit": {
+        "lean_decl": "MD.Ch07.baoabInfinite",
+        "verdict": "PASS",
+        "explanation": "函数复合从右至左是kick、drift、redraw、drift、kick，符合五段原文。position定理明确以p=redraw(S)−h∇U(q)/2为初值，因此第一个kick后p=redraw(S)−h∇U(q)，消元得到−h²∇U/(2m)及h(redraw R+redraw S)/(2m)。该代数恒等式对所有实参数在Lean总化下成立；rescale另加m>0、θ≥0、h≥0以正确识别√(h²θ)=h√θ，和τ=h²/2一致。没有无条件对任意初始动量声称闭合，也没有声称长期精度。 在明示覆盖范围内PASS；本结论为只读语义签名审校，不是Lean编译或证明通过报告。",
+        "counterexample": null,
+        "suggested_fix": "无需更改给定声明；继续保留已明示的[EXTRA]假设、覆盖范围与未覆盖结论。"
+      },
+      "subtask": "EAUDIT10a"
+    },
+    {
+      "source_id": "MD-7.10-ColoredNoiseAndExtension",
+      "json_review": {
+        "status": "NEEDS_HUMAN",
+        "issue_codes": [
+          "STALE_COVERAGE_METADATA",
+          "ERRATUM_NONMARKOV_SCOPE"
+        ],
+        "corrected_json": {
+          "source_id": "MD-7.10-ColoredNoiseAndExtension",
+          "kind": "unnumbered_claim",
+          "label": null,
+          "section": "7.10",
+          "printed_page": "308",
+          "pdf_page": "329",
+          "statement_latex": "We can think of the noise process in (7.40) as corresponding to a colored noise which has characteristics that directly depend on the stepsize, although the noise decorrelates in just a couple of timesteps. This is therefore no longer a Markov process, however it can be reformulated as such if one considers the appropriate extended space (or keeping the momenta $p_n$).",
+          "proof_latex": null,
+          "proof_outline": null,
+          "proof_note": "原页推导与上下文全文见original_page_text；数学符号的排版以随附原页PDF为准。",
+          "original_page_text": [
+            {
+              "pdf_page": 329,
+              "printed_page": 308,
+              "text": "308\n7\nNumerical Methods for Stochastic Molecular Dynamics\nwhere Rnis an independent normal random vector with mean zero and unit variance.\nExpressing this as an update solely for the conﬁgurations, we obtain\nqnC1 D qn \u0003 h2\n2 M\u00021rU.qn/ C h\n2\np\nkBTM\u00021=2 .Rn C Rn\u00021/ ;\nand substituting \u0002 D h2=2 gives the BAOAB Limit Method (Leimkuhler-Matthews\nmethod) [221]\nqnC1 D qn \u0003 \u0002M\u00021rU.qn/ C\np\n2\u0002kBTM\u00021=2\n\bRn C Rn\u00021\n2\n\t\n:\n(7.40)\nAs we are in the overdamped regime, we would expect that this scheme should\nhave an O.h4/ D O.\u00022/ error in conﬁgurational averages, while inheriting the\nother properties of the \u0002BAOAB\u0003 scheme for the harmonic and perturbed harmonic\nmodels considered in Sects. 7.4 and 7.5. Moreover, since we completely remove the\nsecond order term in the Langevin dynamics conﬁgurational density expansion, we\nexpect to observe this behavior across all values of h and \u0002. This is quite a surprising\nresult, given the qualitative similarity between Eqs. (7.39) and (7.40).\nThe beneﬁt of (7.40) over the Euler-Maruyama scheme is that we can get second\norder accuracy in averages with only a single evaluation of the force at each\ntimestep. However, our analysis presented here is only for the inﬁnite time case.\nFor averages computed in ﬁnite time, work in [224] has shown that (7.40) does\nindeed give a ﬁrst order error, albeit one that vanishes exponentially fast in time as\nthe simulation progresses. Hence for suitably long simulations, the observed error\nwill be O.h2/.\nWe can think of the noise process in (7.40) as corresponding to a colored noise\nwhich has characteristics that directly depend on the stepsize, although the noise\ndecorrelates in just a couple of timesteps. This is therefore no longer a Markov\nprocess, however it can be reformulated as such if one considers the appropriate\nextended space (or keeping the momenta pn).\n7.11\nApplying the Schemes to a Biomolecule\nNumerical analysis of a scheme should always be supported (and informed by)\nthorough numerical testing. Often salient features of a discretization method can be\nmissed because of a shallow scope of experimentation. Our goal will be to evaluate\nthe efﬁcacy of the numerical schemes for Langevin dynamics presented thus far. We\nshall look at the invariant (long-time) averages resulting from computations using\nthe four symmetric Langevin integrators that we derived using our splitting, for\nwhich results for the harmonic oscillator are detailed in (7.15), and for which a more\ngeneral error analysis was considered in Sect. 7.9.2. Additionally we will compare\ntheir results to the performance of the standard SPV and BBK schemes considered\nin Sect. 7.3.2.\n"
+            }
+          ],
+          "transcription_note": "PDF文字层原样保留，陈述中的数学排版转写为LaTeX；文字层有特殊字形编码时以目视原页为准。PDF347的Exercises之后不在正文范围内。",
+          "context_notation": [],
+          "extra_assumptions": [
+            "邻接噪声协方差（额外推论）、扩展状态映射和真实Gaussian转移核；给定可测性及每步新噪声对初态/全部过去独立时，扩展过程的Markov集合积分式。位置过程非Markov仅作一般情形说明，不作无例外全称定理。",
+            "[EXTRA] 邻接噪声协方差；在hR、hX0、hfresh与hstep下，lmExtendedChain_markov已陈述完整Markov集合积分式。"
+          ],
+          "issues": [
+            "[ERRATUM?] 有色驱动本身不逻辑蕴含任意参数、势和初态下的位置过程都非Markov，原书只能按一般情形理解。"
+          ],
+          "statement_scope": "邻接噪声协方差（额外推论）、扩展状态映射和真实Gaussian转移核；给定可测性及每步新噪声对初态/全部过去独立时，扩展过程的Markov集合积分式。位置过程非Markov仅作一般情形说明，不作无例外全称定理。",
+          "lean_decl": "MD.Ch07.coloredNoise",
+          "lean_declarations": [
+            "MD.Ch07.coloredNoise",
+            "MD.Ch07.coloredNoise_covariance",
+            "MD.Ch07.lmExtendedStep",
+            "MD.Ch07.lmExtendedKernel",
+            "MD.Ch07.lmExtendedChain",
+            "MD.Ch07.lmExtendedChain_markov"
+          ],
+          "source_page_verification": "见source_page_checks.json；必须已目视核对本条原页。",
+          "repair_log": [
+            {
+              "instruction": 29,
+              "website_verdict": "FAIL",
+              "suggested_fix": "把协方差标[EXTRA]；加入合适可测性、每步独立新Gaussian输入和扩展过程的Markov声明；对位置非Markov表述限定参数和初始分布。",
+              "actual_scope": "邻接噪声定义与协方差、扩展状态映射及可测Markov核定义；过程相对过去的新噪声独立性/Markov定理未覆盖，位置非Markov不作全称断言。",
+              "signature_changed": true
+            },
+            {
+              "instruction": 29,
+              "supplement": "补过程Markov条件分布或H/O解资格连接",
+              "signature_changed": true
+            }
+          ],
+          "documented_priors": [],
+          "coverage_gaps": [
+            "一般位置过程非Markov需额外非退化参数与初态；此处未作无条件断言。"
+          ]
+        },
+        "issues": [
+          {
+            "code": "STALE_COVERAGE_METADATA",
+            "message": "extra_assumptions和coverage_gaps中29号文字仍称Markov定理未覆盖，但本条已提供lmExtendedChain_markov及fresh独立性前提。"
+          },
+          {
+            "code": "ERRATUM_NONMARKOV_SCOPE",
+            "message": "有色驱动本身不逻辑蕴含任意参数、势和初态下的位置过程都非Markov，原书只能按一般情形理解。"
+          }
+        ],
+        "evidence": {
+          "A_source_check": "附件19页（印308）：colored noise、两步内去相关、位置过程非Markov及可扩展为Markov的原句一致；原书未限定非Markov断言的例外。",
+          "attachment_pages": [
+            19
+          ],
+          "printed_pages": "308",
+          "original_pdf_pages": "329",
+          "source_basis": "仅R2_任务.md及R2_PAGES.pdf；已逐页目视数学排版并核对PDF文字层。文字层的特殊字形编码按任务说明保留，不据此臆改。",
+          "C_signature_check": "coloredNoise=(Rk+Rk+1)/2是对原文相邻噪声的移位记号；独立标准正态使其均值零，二阶矩分别为1/2、1/4、0，故covariance名虽结论写E[ηjηk]仍正确。这是[EXTRA]协方差结论。extendedStep输入状态(q,旧噪声)，输出(lmStep(新,旧,q),新)，Kernel为δ状态×标准Gaussian的可测推前，确为转移核。chain递归k=0起，markov的hfresh要求Rk独立于X0及R0,…,Rk−1，hstep、hX0与vectorNormalSequence足以保证对X0,…,Xk历史中所有可测B的集合积分恒等式；索引Fin(k+1)正确。metadata却仍称Markov定理未覆盖，须订正。原书由有色噪声直接推非Markov也须保留例外资格。",
+          "coverage_policy": "按本条明示statement_scope及coverage_gaps审校；定义或资格不冒充存在性、真实算法识别或误差定理。sorry不作为FAIL依据。"
+        }
+      },
+      "audit": {
+        "lean_decl": "MD.Ch07.coloredNoise",
+        "verdict": "NEEDS_HUMAN",
+        "explanation": "coloredNoise=(Rk+Rk+1)/2是对原文相邻噪声的移位记号；独立标准正态使其均值零，二阶矩分别为1/2、1/4、0，故covariance名虽结论写E[ηjηk]仍正确。这是[EXTRA]协方差结论。extendedStep输入状态(q,旧噪声)，输出(lmStep(新,旧,q),新)，Kernel为δ状态×标准Gaussian的可测推前，确为转移核。chain递归k=0起，markov的hfresh要求Rk独立于X0及R0,…,Rk−1，hstep、hX0与vectorNormalSequence足以保证对X0,…,Xk历史中所有可测B的集合积分恒等式；索引Fin(k+1)正确。metadata却仍称Markov定理未覆盖，须订正。原书由有色噪声直接推非Markov也须保留例外资格。 原印/修正版逐项结论：字面转写PASS；合理修正的签名PASS；本条总体因原书数学资格或记号疑点NEEDS_HUMAN。",
+        "counterexample": "正参数下亦有例外：n=1、m=θ=1、τ>0，U(q)=q²/τ，b=√(τ/2)。令初态q₀=bS、旧噪声为S，S与所有新标准正态Rₖ独立，则LM给qₖ₊₁=−qₖ+b(Rₖ+Rₖ₋₁)。归纳qₖ=bRₖ₋₁（R₋₁=S），故位置序列为独立Gaussian，确为Markov；噪声b(Rₖ+Rₖ₋₁)仍有非零相邻协方差。因此不能由有色噪声推出位置过程无例外地非Markov。",
+        "suggested_fix": "删去已过时的Markov定理缺口，登记实际已覆盖的fresh独立性版本；保留一般位置非Markov的说明，不写无例外全称定理，并把协方差明确标[EXTRA]。"
+      },
+      "subtask": "EAUDIT10b"
+    },
+    {
+      "source_id": "MD-7.10-LimitMethodAccuracy",
+      "json_review": {
+        "status": "NEEDS_HUMAN",
+        "issue_codes": [
+          "ERRATUM_STEPSIZE_ORDER"
+        ],
+        "corrected_json": {
+          "source_id": "MD-7.10-LimitMethodAccuracy",
+          "kind": "definition",
+          "label": null,
+          "section": "7.10",
+          "printed_page": "308",
+          "pdf_page": "329",
+          "statement_latex": "We would expect that this scheme should have an $O(h^4)=O(\\tau^2)$ error in configurational averages. For averages computed in finite time, work in [224] has shown that (7.40) does indeed give a first order error, albeit one that vanishes exponentially fast in time as the simulation progresses. Hence for suitably long simulations, the observed error will be $O(h^2)$.",
+          "proof_latex": null,
+          "proof_outline": null,
+          "proof_note": "原页推导与上下文全文见original_page_text；数学符号的排版以随附原页PDF为准。",
+          "original_page_text": [
+            {
+              "pdf_page": 329,
+              "printed_page": 308,
+              "text": "308\n7\nNumerical Methods for Stochastic Molecular Dynamics\nwhere Rnis an independent normal random vector with mean zero and unit variance.\nExpressing this as an update solely for the conﬁgurations, we obtain\nqnC1 D qn \u0003 h2\n2 M\u00021rU.qn/ C h\n2\np\nkBTM\u00021=2 .Rn C Rn\u00021/ ;\nand substituting \u0002 D h2=2 gives the BAOAB Limit Method (Leimkuhler-Matthews\nmethod) [221]\nqnC1 D qn \u0003 \u0002M\u00021rU.qn/ C\np\n2\u0002kBTM\u00021=2\n\bRn C Rn\u00021\n2\n\t\n:\n(7.40)\nAs we are in the overdamped regime, we would expect that this scheme should\nhave an O.h4/ D O.\u00022/ error in conﬁgurational averages, while inheriting the\nother properties of the \u0002BAOAB\u0003 scheme for the harmonic and perturbed harmonic\nmodels considered in Sects. 7.4 and 7.5. Moreover, since we completely remove the\nsecond order term in the Langevin dynamics conﬁgurational density expansion, we\nexpect to observe this behavior across all values of h and \u0002. This is quite a surprising\nresult, given the qualitative similarity between Eqs. (7.39) and (7.40).\nThe beneﬁt of (7.40) over the Euler-Maruyama scheme is that we can get second\norder accuracy in averages with only a single evaluation of the force at each\ntimestep. However, our analysis presented here is only for the inﬁnite time case.\nFor averages computed in ﬁnite time, work in [224] has shown that (7.40) does\nindeed give a ﬁrst order error, albeit one that vanishes exponentially fast in time as\nthe simulation progresses. Hence for suitably long simulations, the observed error\nwill be O.h2/.\nWe can think of the noise process in (7.40) as corresponding to a colored noise\nwhich has characteristics that directly depend on the stepsize, although the noise\ndecorrelates in just a couple of timesteps. This is therefore no longer a Markov\nprocess, however it can be reformulated as such if one considers the appropriate\nextended space (or keeping the momenta pn).\n7.11\nApplying the Schemes to a Biomolecule\nNumerical analysis of a scheme should always be supported (and informed by)\nthorough numerical testing. Often salient features of a discretization method can be\nmissed because of a shallow scope of experimentation. Our goal will be to evaluate\nthe efﬁcacy of the numerical schemes for Langevin dynamics presented thus far. We\nshall look at the invariant (long-time) averages resulting from computations using\nthe four symmetric Langevin integrators that we derived using our splitting, for\nwhich results for the harmonic oscillator are detailed in (7.15), and for which a more\ngeneral error analysis was considered in Sect. 7.9.2. Additionally we will compare\ntheir results to the performance of the standard SPV and BBK schemes considered\nin Sect. 7.3.2.\n"
+            }
+          ],
+          "transcription_note": "PDF文字层原样保留，陈述中的数学排版转写为LaTeX；文字层有特殊字形编码时以目视原页为准。PDF347的Exercises之后不在正文范围内。",
+          "context_notation": [],
+          "extra_assumptions": [
+            "用显式瞬态上界命题保留指数衰减的一阶项和二阶项，不宣称该命题已对任意势成立；其成立所需的增长/耗散与正则条件及真实分布误差识别尚缺。",
+            "原文称all values of h and τ亦不能由局部渐近展开推出全步长阶数结论。",
+            "29号覆盖限定：瞬态界只是量化目标；h⁴修正版明确指先T→∞所得误差，固定有限T仍可能仅h²；实际LM误差及其满足界的定理未覆盖。"
+          ],
+          "issues": [
+            "已目视核对PDF329：本段前面以τ为实际过阻尼步长并称长期二阶，末句却写O(h²)。若仍沿用τ=h²/2，应区分长期O(τ²)=O(h⁴)和有限时一阶O(τ)=O(h²)；原文符号存在歧义。",
+            "[ERRATUM?] 原书在τ=h²/2语境下同时写长期O(h⁴)=O(τ²)与末句O(h²)，需区分长期极限与固定有限时间，保留原印待人工确认。"
+          ],
+          "statement_scope": "瞬态界只是量化目标；h⁴修正版明确指先T→∞所得误差，固定有限T仍可能仅h²；实际LM误差及其满足界的定理未覆盖。",
+          "lean_decl": "MD.Ch07.lmTransientErrorBound",
+          "lean_declarations": [
+            "MD.Ch07.lmTransientErrorBound",
+            "MD.Ch07.limitAccuracyPrinted",
+            "MD.Ch07.limitAccuracyPrinted_corrected",
+            "MD.Ch07.limitAccuracy_rescale",
+            "MD.Ch07.limitAccuracyInfiniteTime_corrected"
+          ],
+          "source_page_verification": "见source_page_checks.json；必须已目视核对本条原页。",
+          "repair_log": [
+            {
+              "instruction": 29,
+              "website_verdict": "NEEDS_HUMAN",
+              "suggested_fix": "保留原印h²并标疑误；修正版明确先取无限时间。补LM误差对象与界的适用条件，说明有限T和联合T(h)极限；恢复原句或标摘述。",
+              "actual_scope": "瞬态界只是量化目标；h⁴修正版明确指先T→∞所得误差，固定有限T仍可能仅h²；实际LM误差及其满足界的定理未覆盖。",
+              "signature_changed": true
+            }
+          ],
+          "documented_priors": [],
+          "coverage_gaps": [
+            "29号覆盖限定：瞬态界只是量化目标；h⁴修正版明确指先T→∞所得误差，固定有限T仍可能仅h²；实际LM误差及其满足界的定理未覆盖。"
+          ]
+        },
+        "issues": [
+          {
+            "code": "ERRATUM_STEPSIZE_ORDER",
+            "message": "原书在τ=h²/2语境下同时写长期O(h⁴)=O(τ²)与末句O(h²)，需区分长期极限与固定有限时间，保留原印待人工确认。"
+          }
+        ],
+        "evidence": {
+          "A_source_check": "附件20页（印308）：原书前文确为O(h⁴)=O(τ²)，随后有限时间first order、指数衰减，并在末句确印O(h²)；不得静默将末句改为O(h⁴)。",
+          "attachment_pages": [
+            20
+          ],
+          "printed_pages": "308",
+          "original_pdf_pages": "329",
+          "source_basis": "仅R2_任务.md及R2_PAGES.pdf；已逐页目视数学排版并核对PDF文字层。文字层的特殊字形编码按任务说明保留，不据此臆改。",
+          "C_signature_check": "瞬态界的量词是存在统一C>0、衰减率>0、δ>0，∀0<τ<δ及∀T≥0，界C(e^(−λT)τ+τ²)；它只是error的性质定义。Printed保留h→0正侧的O(h²)，corrected改为O(h⁴)，rescale代数式τ²=h⁴/4正确。InfiniteTime_corrected显式把固定h先T→∞的longtime接到O(h⁴)，防止把固定有限T误判四阶。任何声明都未证明真实LM误差满足瞬态界。原书末句符号歧义保留，孤立corrected定义应仅在长期语境中解释。",
+          "coverage_policy": "按本条明示statement_scope及coverage_gaps审校；定义或资格不冒充存在性、真实算法识别或误差定理。sorry不作为FAIL依据。"
+        }
+      },
+      "audit": {
+        "lean_decl": "MD.Ch07.lmTransientErrorBound",
+        "verdict": "NEEDS_HUMAN",
+        "explanation": "瞬态界的量词是存在统一C>0、衰减率>0、δ>0，∀0<τ<δ及∀T≥0，界C(e^(−λT)τ+τ²)；它只是error的性质定义。Printed保留h→0正侧的O(h²)，corrected改为O(h⁴)，rescale代数式τ²=h⁴/4正确。InfiniteTime_corrected显式把固定h先T→∞的longtime接到O(h⁴)，防止把固定有限T误判四阶。任何声明都未证明真实LM误差满足瞬态界。原书末句符号歧义保留，孤立corrected定义应仅在长期语境中解释。 原印/修正版逐项结论：字面转写PASS；合理修正的签名PASS；本条总体因原书数学资格或记号疑点NEEDS_HUMAN。",
+        "counterexample": "抽象误差e(τ,T)=e^(−T)τ+τ²满足所定义的瞬态上界；任意固定有限T，代入τ=h²/2仍有非零h²项；先T→∞则仅剩h⁴/4。故固定“足够长”T不能给h→0时的严格四阶，需先长期极限或T随h增长。",
+        "suggested_fix": "原文末句保留并标[ERRATUM?]；若h仍指Langevin步长，长期误差写O(h⁴)=O(τ²)，固定有限时间写O(h²)=O(τ)。把h⁴修正版始终连接到InfiniteTime_corrected的longtime。"
+      },
+      "subtask": "EAUDIT10c"
+    }
+  ],
+  "merged_from": "ch07_eaudit_merged"
+}

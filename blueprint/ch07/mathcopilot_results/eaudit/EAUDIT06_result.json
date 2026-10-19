@@ -1,0 +1,146 @@
+{
+  "batch": "EAUDIT06",
+  "input_sha256": {
+    "Blueprint/Ch07.lean": "f3bc0ee86ace9c825028f0cec8ebb2fb410d6be77213cc7fb41cb8889540a000",
+    "blueprint/ch07/ch07_source.json": "1a201887b51a249fb73f456237cb342963c5d98c612ec1912f21572a57924012"
+  },
+  "items": [
+    {
+      "source_id": "MD-7.8.1-OverdampedFirstOrderCaution",
+      "json_review": {
+        "status": "CORRECTED",
+        "issue_codes": [
+          "SOURCE_TEXT_NOT_VERBATIM",
+          "STALE_REPAIR_METADATA",
+          "DECLARED_COVERAGE_GAP"
+        ],
+        "corrected_json": {
+          "source_id": "MD-7.8.1-OverdampedFirstOrderCaution",
+          "kind": "unnumbered_claim",
+          "label": null,
+          "section": "7.8.1",
+          "printed_page": "295",
+          "pdf_page": "316",
+          "statement_latex": "Examining the algorithms themselves this is unsurprising, as although we have integrated the Ornstein-Uhlenbeck process exactly, when considering the limit of infinite friction in the $[XYZ]$ schemes we obtain an inconsistent discretization. Hence these first-order schemes will be unsuitable for the integration of overdamped Langevin dynamics.\nThis is not always the case for first order schemes, however. For example the scheme denoted $[AOAB]$ is consistent with the dynamics, and may be used for integrating the overdamped ($\\gamma=\\infty$) Langevin equation.",
+          "proof_latex": null,
+          "proof_outline": null,
+          "proof_note": "原页推导与上下文全文见original_page_text；数学符号的排版以随附原页PDF为准。",
+          "original_page_text": [
+            {
+              "pdf_page": 316,
+              "printed_page": 295,
+              "text": "7.8\nFirst Order Schemes\n295\nappear. However, if we instead set # D #2.q/, then\nh#2.q/f1.q; p/i D ˙ˇ\n2\n˝\n.\nU.q/ \u0003 c/#2.q/ ˙ pTM\u00021rU.q/#2.q/\n˛\nD ˙\nˇ\n2 h.U.q/ \u0003 hU.q/i/#2.q/i ;\nin which case our correction becomes O.\n/. This is potentially disastrous if we\nchoose the friction to be large (consider \n\u0005 h\u00021), as the error introduced\nthrough discretization will dominate the true average to be sampled. Examining\nthe algorithms themselves this is unsurprising, as although we have integrated\nthe Ornstein-Uhlenbeck process exactly, when considering the limit of inﬁnite\nfriction in the \u0002XYZ\u0003 schemes we obtain an inconsistent discretization. Hence these\nﬁrst-order schemes will be unsuitable for the integration of overdamped Langevin\ndynamics.\nThis is not always the case for ﬁrst order schemes, however. For example the\nscheme denoted \u0002AOAB\u0003 is consistent with the dynamics, and may be used for\nintegrating the overdamped (\n D 1) Langevin equation.\n7.8.2\nNumerical Experiment\nLet us consider testing the computed ﬁrst order corrections on a one dimensional\nexample. Let M D ˇ D 1 and deﬁne the biased double-well potential as\nU.q/ D .q2 \u0003 1/2 C q=2:\nWe shall consider computing the average of a speciﬁc observable #.q; p/, and\nestimating the error due to discretization using the correction functions given\nin (7.25), where we choose the observable\n#.q; p/ D p2 \u0003 qU0.q/ C 2qp;\nh#i D 0:\nThe low dimensionality of the problem and the simplicity of the observable and\npotential energy function make resolving the perfect sampling bias to leading order\nan easy task, allowing us to give a good estimate (to order h2) of the discretization\nerror. In Fig. 7.4 we plot the results of h#ih computed via numerical experiment,\nusing each of the six ﬁrst order schemes at either \n D 1 or \n D 2, and compare\nthem to our ﬁrst order prediction\nh#ih \u0007 h#i C hhf1#i:\nThe numerical experiment at each timestep is averaged from 16 independent\nexperiments, each running over a time interval of 108. The results match our\n"
+            }
+          ],
+          "transcription_note": "PDF文字层原样保留，陈述中的数学排版转写为LaTeX；文字层有特殊字形编码时以目视原页为准。PDF347的Exercises之后不在正文范围内。",
+          "context_notation": [],
+          "extra_assumptions": [
+            "覆盖AOAB全部更新与固定噪声/固定h下的摩擦极限；不把摩擦极限本身称作过阻尼一致性证明。六个XYZ不一致及AOAB有效时间重标度的一致性仍是明确覆盖缺口。",
+            "29号覆盖限定：固定h>0及固定噪声的AOAB逐路径大摩擦单步极限，带正质量；六种XYZ不一致性及有效时标一致性未覆盖。"
+          ],
+          "issues": [],
+          "statement_scope": "固定h>0及固定噪声的AOAB逐路径大摩擦单步极限，带正质量；六种XYZ不一致性及有效时标一致性未覆盖。",
+          "lean_decl": "MD.Ch07.aoab",
+          "lean_declarations": [
+            "MD.Ch07.aoab",
+            "MD.Ch07.aoabInfiniteFriction",
+            "MD.Ch07.aoabFrictionLimit"
+          ],
+          "source_page_verification": "本次R1审校已逐页目视核对 /workspace/R1_PAGES.pdf，页位及具体发现见本条 json_review.evidence；不依赖旧 source_page_checks.json。",
+          "repair_log": [
+            {
+              "instruction": 29,
+              "website_verdict": "FAIL",
+              "suggested_fix": "原文精确摘录恢复完整“Examining …”句；另登记六种XYZ不一致性和AOAB带有效时间尺度的一致性义务，不能将aoabFrictionLimit重命名即视为已完成。",
+              "actual_scope": "固定h>0及固定噪声的AOAB逐路径大摩擦单步极限，带正质量；六种XYZ不一致性及有效时标一致性未覆盖。",
+              "signature_changed": true
+            }
+          ],
+          "documented_priors": [],
+          "coverage_gaps": [
+            "29号覆盖限定：固定h>0及固定噪声的AOAB逐路径大摩擦单步极限，带正质量；六种XYZ不一致性及有效时标一致性未覆盖。"
+          ]
+        },
+        "issues": [
+          "A：statement_latex仍以大写“When considering ...”从原页句中截起，遗漏“Examining the algorithms themselves ... although we have integrated the Ornstein-Uhlenbeck process exactly,”；repair_log声称已恢复完整句，但输入没有落实。现按原页恢复。",
+          "C范围提示：固定h的单步摩擦极限没有给出六种XYZ不一致性的证明，也没有给出AOAB在适当有效时间尺度上的过阻尼一致性；此缺口已明确披露。"
+        ],
+        "evidence": [
+          "A：附件第21页＝PDF316／印刷295。原句从Examining开头，when为同一句中的小写从句；后续“these first-order schemes ... unsuitable”及AOAB反例说明与输入一致，γ=∞也确实如此印刷。",
+          "C：aoab=kick(h)∘drift(h/2)∘OU(h,R)∘drift(h/2)（其中kick为B）；执行顺序A O A B，正确。aoabInfiniteFriction仅把OU动量换成√θ√m_i R_i，位置保持不变。",
+          "C：aoabFrictionLimit对固定m,U,θ,h,R,x，要求全部m_i>0、h>0、θ>0及U为C¹，以γ:ℝ趋于+∞，结论为Phase n拓扑下趋于所定义单步极限。阻尼消失，OU方差趋于θm；C¹保证梯度连续，从而最终kick可传递极限。三个声明均PASS。",
+          "C：没有把∞作为实数γ代入；没有将一次固定噪声路径的极限当成逐步独立噪声链的极限或过阻尼一致性定理。extra_assumptions和coverage_gaps的限制正确。",
+          "C审校对象仅为R1_任务.md本条完整Lean、摘录的项目依赖和附录D1–D20；Mathlib标准定义按任务规定采信。未读取旧Ch0x/source文件作替代输入，未修改工程或补证明，未运行Lean。PASS仅评价明示覆盖范围内的声明签名与定义，不表示原文全部内容已形式化，也不表示含sorry的证明已经验证。",
+          "本条摘录未出现字面[EXTRA]或[ERRATUM?]标签；对应内容按extra_assumptions、issues、statement_scope、coverage_gaps及Printed/corrected名称分别核查。"
+        ]
+      },
+      "audit": {
+        "lean_decl": "MD.Ch07.aoab",
+        "verdict": "PASS",
+        "explanation": "AOAB两段A各h/2、O与B各h，完整映射、极限映射和Tendsto方向均正确。所有参数在极限中固定，仅γ变化；正时间保证exp(−γh)趋零，正质量/温度给出原物理噪声幅度，C¹势足以使梯度连续。结论只覆盖已声明的逐路径单步极限，不能据此宣告原文六种XYZ判断和AOAB有效时标一致性已形式化。",
+        "counterexample": null,
+        "suggested_fix": "恢复完整Examining句；继续保留六种XYZ的不一致性与AOAB有效时间重标度后一致性的独立义务，不以重命名单步极限定理替代它们。"
+      },
+      "subtask": "EAUDIT06a"
+    },
+    {
+      "source_id": "MD-7.8.2-BiasedDoubleWellExact",
+      "json_review": {
+        "status": "APPROVED",
+        "issue_codes": [],
+        "corrected_json": null,
+        "issues": [],
+        "evidence": {
+          "A_source_check": "附件1–3页（印295–297）：U=(q²−1)²+q/2、M=β=1、ϑ=p²−qU′+2qp及零均值一致；BOA积分中的+pU′、+γU−c、β/2、中间三项和(2−γ)/(2β)均一致；γ=2与O(h²)一致。陈述是跨页选摘及连接措辞整理，并非连续逐字引文。",
+          "attachment_pages": [
+            1,
+            2,
+            3
+          ],
+          "printed_pages": "295–297",
+          "original_pdf_pages": "316–318",
+          "source_basis": "仅R2_任务.md及R2_PAGES.pdf；已逐页目视数学排版并核对PDF文字层。文字层的特殊字形编码按任务说明保留，不据此臆改。",
+          "C_signature_check": "对象是ℝ×ℝ，q=x.1、p=x.2；Gibbs权为exp[−β(p²/2+U)]，以全相空间积分归一。修正中的中心常数γ∫U与〈ϑ〉=0相容。doubleWellExact全称β,γ∈ℝ并假设β>0，给出两个实际积分的合取；对任意实γ仍成立。分部积分给〈qU′〉=1/β、〈qUU′〉=〈U〉/β+1/β²，独立Gaussian给〈p²〉=1/β，故完整结果(2−γ)/(2β)正确。doubleWellCritical仅实数代数式，β=0亦按总化除法成立；integral推论确实接到Exact的第二分量。任意β>0是[EXTRA]推广，未覆盖真实算法O(h²)和中间积分链已如实声明。",
+          "coverage_policy": "按本条明示statement_scope及coverage_gaps审校；定义或资格不冒充存在性、真实算法识别或误差定理。sorry不作为FAIL依据。"
+        }
+      },
+      "audit": {
+        "lean_decl": "MD.Ch07.biasedDoubleWell",
+        "verdict": "PASS",
+        "explanation": "对象是ℝ×ℝ，q=x.1、p=x.2；Gibbs权为exp[−β(p²/2+U)]，以全相空间积分归一。修正中的中心常数γ∫U与〈ϑ〉=0相容。doubleWellExact全称β,γ∈ℝ并假设β>0，给出两个实际积分的合取；对任意实γ仍成立。分部积分给〈qU′〉=1/β、〈qUU′〉=〈U〉/β+1/β²，独立Gaussian给〈p²〉=1/β，故完整结果(2−γ)/(2β)正确。doubleWellCritical仅实数代数式，β=0亦按总化除法成立；integral推论确实接到Exact的第二分量。任意β>0是[EXTRA]推广，未覆盖真实算法O(h²)和中间积分链已如实声明。 在明示覆盖范围内PASS；本结论为只读语义签名审校，不是Lean编译或证明通过报告。",
+        "counterexample": null,
+        "suggested_fix": "无需更改给定声明；继续保留已明示的[EXTRA]假设、覆盖范围与未覆盖结论。"
+      },
+      "subtask": "EAUDIT06b"
+    },
+    {
+      "source_id": "MD-7.9-EvenDensityPerturbation",
+      "json_review": {
+        "status": "APPROVED",
+        "issue_codes": [],
+        "corrected_json": null,
+        "issues": [],
+        "evidence": {
+          "A_source_check": "附件4页（印298）：逐一核对(7.27)的1,h²f₂,h⁴f₄及各修正零均值、(7.28)的负号和ρβf₂位置，均一致；Fredholm句保留原书措辞。",
+          "attachment_pages": [
+            4
+          ],
+          "printed_pages": "298",
+          "original_pdf_pages": "319",
+          "source_basis": "仅R2_任务.md及R2_PAGES.pdf；已逐页目视数学排版并核对PDF文字层。文字层的特殊字形编码按任务说明保留，不据此臆改。",
+          "C_signature_check": "evenDensityExpansion在k=0取ρ、正偶数取ρ·f k、奇数取零。actionCoefficient的和域是j=0,…,k；k=2恰为L₀ρ₂+L₁ρ₁+L₂ρ₀。在线性ℝ模上hL1、hρ1、h2足以推出L₀ρ₂=−L₂ρ₀，无遗漏负号；hL1与hρ1可冗余但不使结论错误。E是局部任意模，不应误识为附列Chapter05Review.E。零均值、Fredholm资格和可解性明确不在覆盖范围。",
+          "coverage_policy": "按本条明示statement_scope及coverage_gaps审校；定义或资格不冒充存在性、真实算法识别或误差定理。sorry不作为FAIL依据。"
+        }
+      },
+      "audit": {
+        "lean_decl": "MD.Ch07.evenDensityExpansion",
+        "verdict": "PASS",
+        "explanation": "evenDensityExpansion在k=0取ρ、正偶数取ρ·f k、奇数取零。actionCoefficient的和域是j=0,…,k；k=2恰为L₀ρ₂+L₁ρ₁+L₂ρ₀。在线性ℝ模上hL1、hρ1、h2足以推出L₀ρ₂=−L₂ρ₀，无遗漏负号；hL1与hρ1可冗余但不使结论错误。E是局部任意模，不应误识为附列Chapter05Review.E。零均值、Fredholm资格和可解性明确不在覆盖范围。 在明示覆盖范围内PASS；本结论为只读语义签名审校，不是Lean编译或证明通过报告。",
+        "counterexample": null,
+        "suggested_fix": "无需更改给定声明；继续保留已明示的[EXTRA]假设、覆盖范围与未覆盖结论。"
+      },
+      "subtask": "EAUDIT06c"
+    }
+  ],
+  "merged_from": "ch07_eaudit_merged"
+}

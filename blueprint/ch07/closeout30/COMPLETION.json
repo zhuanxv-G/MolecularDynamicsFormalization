@@ -1,0 +1,13 @@
+{
+  "status": "第7章最终收口完成；第8章首轮网站审校中，等待用户新指令",
+  "local_validation": "PASS",
+  "stop_after_commit_push": true,
+  "next_action": "Commit and push the scoped Chapter 7 delivery, confirm remote equality, then stop.",
+  "heartbeat": {
+    "id": "lean-2",
+    "active": true,
+    "interval_minutes": 15,
+    "target_unchanged": true
+  },
+  "validation_sha256": "8073969b1165afecd13bdcda89a4a81cdf6c8792c003bfe02d716d72454ac217"
+}

@@ -1,0 +1,197 @@
+{
+  "batch": "EAUDIT01",
+  "input_sha256": {
+    "Blueprint/Ch07.lean": "f3bc0ee86ace9c825028f0cec8ebb2fb410d6be77213cc7fb41cb8889540a000",
+    "blueprint/ch07/ch07_source.json": "1a201887b51a249fb73f456237cb342963c5d98c612ec1912f21572a57924012"
+  },
+  "items": [
+    {
+      "source_id": "MD-7.3.1-WordConvention",
+      "json_review": {
+        "status": "CORRECTED",
+        "issue_codes": [
+          "SOURCE_PUNCTUATION",
+          "DECLARED_COVERAGE_GAP"
+        ],
+        "corrected_json": {
+          "source_id": "MD-7.3.1-WordConvention",
+          "kind": "definition",
+          "label": null,
+          "section": "7.3.1",
+          "printed_page": "270",
+          "pdf_page": "291",
+          "statement_latex": "As a result we use the convention that if a letter appears $k$ times in a method's string, then each individual update piece uses a timestep $h/k$. For example, the scheme denoted $[OABOAOBAO]$ has an update\n\\[\\mathcal U_h^{[OABOAOBAO]}=\\mathcal U_{h/4}^O\\circ\\mathcal U_{h/3}^A\\circ\\mathcal U_{h/2}^B\\circ\\mathcal U_{h/4}^O\\circ\\mathcal U_{h/3}^A\\circ\\mathcal U_{h/4}^O\\circ\\mathcal U_{h/2}^B\\circ\\mathcal U_{h/3}^A\\circ\\mathcal U_{h/4}^O,\\]\nwhere the random numbers used in each O update are independent. This scheme will require a total of $4N_c$ normal random numbers and two force evaluations per step (the force must be recomputed at the first B step following an A step; the number of force evaluations required is not directly related to the length of the string).",
+          "proof_latex": null,
+          "proof_outline": null,
+          "proof_note": "原页推导与上下文全文见original_page_text；数学符号的排版以随附原页PDF为准。",
+          "original_page_text": [
+            {
+              "pdf_page": 291,
+              "printed_page": 270,
+              "text": "270\n7\nNumerical Methods for Stochastic Molecular Dynamics\nwhich we label A, B and O, where each of the three parts may be solved “exactly”,\nwith individual updates given as\nU A\nh .q; p/ D .q C hM\u00021p; p/;\nU B\nh .q; p/ D .q; p \u0003 hrU.q//;\nU O\nh .q; p/ D .q; e\u0002\nhp C\np\nkBT .1 \u0003 e\u00022\nh/M1=2R/;\nwhere R is a vector of i.i.d. normal random numbers. For the deterministic pieces\nA and B, the updates correspond to their ﬂow maps, while the update for the O\npiece corresponds to the solution derived in (7.3). The relevant forward propagators\nfor each piece of the Hamiltonian part are computed through the adjoint of the Lie\nderivative as\nL\u0004\nA D \u0003M\u00021p \u0002 rq;\nL\u0004\nB D rU.q/ \u0002 rp:\nUsing this splitting strategy, we can deﬁne a family of schemes by the desired\nsequence of updates, codiﬁed as a string using the alphabet “ABO”. For example,\nthe method denoted \u0002ABO\u0003 (acting from left to right) has a resulting update\nU \u0002ABO\u0003\nh\nD U O\nh ı U B\nh ı U A\nh :\nThis corresponds to using the adjoint symplectic Euler scheme to solve the\nNewtonian part of the Langevin dynamics SDE, followed by an exact OU solve. An\nalternative is to use velocity Verlet for the Hamiltonian part, resulting in a scheme\ndenoted \u0002BABO\u0003 with associated map\nU \u0002BABO\u0003\nh\nD U O\nh ı U B\nh=2 ı U A\nh ı U B\nh=2:\nNote that the presence of two B characters in the string results in halving the\ncorresponding piece’s time step length. As we need the method to be consistent,\nwe require that the each of the A, B and O pieces are propagated in time for a\ntotal time of h. As a result we use the convention that if a letter appears k times in a\nmethod’s string, then each individual update piece uses a timestep h=k. For example,\nthe scheme denoted \u0002OABOAOBAO\u0003 has an update\nU \u0002OABOAOBAO\u0003\nh\nD U O\nh=4 ı U A\nh=3 ı U B\nh=2 ı U O\nh=4 ı U A\nh=3 ı U O\nh=4 ı U B\nh=2 ı U A\nh=3 ı U O\nh=4;\nwhere the random numbers used in each O update are independent. This scheme will\nrequire a total of 4Nc normal random numbers and two force evaluations per step\n(the force must be recomputed at the ﬁrst B step following an A step; the number of\nforce evaluations required is not directly related to the length of the string).\nA class of methods like those considered above were discussed in [46] and given\nthe general title of “Geometric” Langevin Algorithm (GLA). The idea of a GLA\n"
+            }
+          ],
+          "transcription_note": "PDF文字层原样保留，陈述中的数学排版转写为LaTeX；文字层有特殊字形编码时以目视原页为准。PDF347的Exercises之后不在正文范围内。",
+          "context_notation": [],
+          "extra_assumptions": [
+            "每个O的向量噪声需联合独立标准正态；字母计数结论独立证明。",
+            "29号覆盖限定：九字母OABOAOBAO的确定性单步映射、四次O更新与计数；独立噪声序列的概率资格由vectorNormalSequence另列。",
+            "PDF291已目视核对：原书九字母OABOAOBAO、四次O(h/4)、4N_c均正确；撤销转录造成的假疑误。"
+          ],
+          "issues": [],
+          "statement_scope": "九字母OABOAOBAO的确定性单步映射、四次O更新与计数；独立噪声序列的概率资格由vectorNormalSequence另列。",
+          "lean_decl": "MD.Ch07.oabaobaoPrinted",
+          "lean_declarations": [
+            "MD.Ch07.oabaobaoPrinted",
+            "MD.Ch07.oabaobaoPrinted_corrected",
+            "MD.Ch07.oabaobaoCount"
+          ],
+          "source_page_verification": "本次R1审校已逐页目视核对 /workspace/R1_PAGES.pdf，页位及具体发现见本条 json_review.evidence；不依赖旧 source_page_checks.json。",
+          "repair_log": [
+            {
+              "instruction": 29,
+              "website_verdict": "FAIL",
+              "suggested_fix": "按原页恢复九字母OABOAOBAO，Fin 4独立噪声，四个O均用h/4；删除把原书判为计数错误的标注，撤销无依据的h/3修正。保持原页4N_c。",
+              "actual_scope": "九字母OABOAOBAO的确定性单步映射、四次O更新与计数；独立噪声序列的概率资格由vectorNormalSequence另列。",
+              "signature_changed": true
+            }
+          ],
+          "documented_priors": [],
+          "coverage_gaps": [
+            "本条未提供vectorNormalSequence，未核实独立标准正态噪声资格；也未形式化随机数生成及力评估的计算成本。"
+          ]
+        },
+        "issues": [
+          "A：statement_latex把原页括号内的分号移到了括号外；数学内容正确，但不是逐字逐标点转录。",
+          "C范围提示：本条未提供vectorNormalSequence的声明，不能核实所谓“另列”的概率资格；四个确定噪声参数并不等于已证明四次独立标准正态抽样。力评估次数也没有相应形式化成本结论。"
+        ],
+        "evidence": [
+          "A：附件第1页＝原书PDF291／印刷270。九字母确为OABOAOBAO，展示式从左到右为O(h/4), A(h/3), B(h/2), O(h/4), A(h/3), O(h/4), B(h/2), A(h/3), O(h/4)；原页明确为4N_c及two force evaluations，未发现计数勘误。",
+          "A标点：原页末句括号持续到string之后，即“an A step; the number ... the length of the string).”，输入则为“an A step); the number ... string.”。corrected_json仅恢复此处标点，并登记覆盖缺口。",
+          "C：D1/D2为Fin n→ℝ及其位置—动量乘积；D3/D4的θ对应k_BT；D7是q+h p/m，D8是p−h∇U。oabaobaoPrinted的四个R索引按执行顺序为0,1,2,3，所有九段的顺序和时长正确。",
+          "C逐声明：oabaobaoPrinted PASS（字面映射）；oabaobaoPrinted_corrected PASS（与Printed定义相同的兼容名称，没有原书修正）；oabaobaoCount PASS（所列九字母中O恰为4）。",
+          "C审校对象仅为R1_任务.md本条完整Lean、摘录的项目依赖和附录D1–D20；Mathlib标准定义按任务规定采信。未读取旧Ch0x/source文件作替代输入，未修改工程或补证明，未运行Lean。PASS仅评价明示覆盖范围内的声明签名与定义，不表示原文全部内容已形式化，也不表示含sorry的证明已经验证。",
+          "本条摘录未出现字面[EXTRA]或[ERRATUM?]标签；对应内容按extra_assumptions、issues、statement_scope、coverage_gaps及Printed/corrected名称分别核查。"
+        ]
+      },
+      "audit": {
+        "lean_decl": "MD.Ch07.oabaobaoPrinted",
+        "verdict": "PASS",
+        "explanation": "任意n及实参数m,U,γ,θ,h和R:Fin 4→V n给出总化的确定性映射。三次A各h/3、两次B各h/2、四次O各h/4，与原页一致；计数定理无前提且结论正确。物理随机方法需正质量、适用时间/温度及联合独立标准正态噪声，当前定义不附带这些概率断言；此限制不使字面映射签名失败。",
+        "counterexample": null,
+        "suggested_fix": "保留九字母、Fin 4、h/4及4N_c；仅修正JSON标点并明确概率资格和成本结论不在本条Lean覆盖内。"
+      },
+      "subtask": "EAUDIT01a"
+    },
+    {
+      "source_id": "MD-7.3.1-ConjugateIteration",
+      "json_review": {
+        "status": "CORRECTED",
+        "issue_codes": [
+          "STALE_COVERAGE_METADATA",
+          "DECLARED_COVERAGE_GAP"
+        ],
+        "corrected_json": {
+          "source_id": "MD-7.3.1-ConjugateIteration",
+          "kind": "unnumbered_claim",
+          "label": null,
+          "section": "7.3.1",
+          "printed_page": "272",
+          "pdf_page": "293",
+          "statement_latex": "When iterated $n+1$ times, we can see the scheme $[OABA]$ produces a mapping of the form\n\\[(\\mathcal U_h^{[OABA]})^{n+1}=\\mathcal U_{h/2}^A\\circ\\mathcal U_{h/2}^B\\circ(\\mathcal U_h^{[BAOAB]})^n\\circ\\mathcal U_{h/2}^B\\circ\\mathcal U_{h/2}^A\\circ\\mathcal U_h^O;\\]\ntherefore through a coordinate transformation the $[OABA]$ method can be morphed into the $[BAOAB]$ scheme.",
+          "proof_latex": null,
+          "proof_outline": null,
+          "proof_note": "原页推导与上下文全文见original_page_text；数学符号的排版以随附原页PDF为准。",
+          "original_page_text": [
+            {
+              "pdf_page": 293,
+              "printed_page": 272,
+              "text": "272\n7\nNumerical Methods for Stochastic Molecular Dynamics\nWhen iterated n C 1 times, we can see the scheme \u0002OABA\u0003 produces a mapping\nof the form\n\u0006\nU \u0002OABA\u0003\nh\n\u0007nC1\nD U A\nh=2 ı U B\nh=2 ı\n\u0006\nU \u0002BAOAB\u0003\nh\n\u0007n\nı U B\nh=2 ı U A\nh=2 ı U O\nh ;\ntherefore through a coordinate transformation the \u0002OABA\u0003 method can be morphed\ninto the \u0002BAOAB\u0003 scheme. To put this another way, if we compute an iteration using\n\u0002OABA\u0003 and simply evaluate it at different points within the step, we can recover\nthe same results as the \u0002BAOAB\u0003 method would provide. Another term to describe\nthis relationship is to say that one method is conjugate to the other.\n7.3.2\nOther Langevin Integrators\nWe may use our alphabet of A, B and O splitting pieces to create a wide variety\nof methods other than those given in the previous section (some requiring multiple\nforce evaluations). However, it is not obvious that there is any gain in increasing the\ncomplexity of the splitting scheme (in terms of the length of its codifying string).\nSome popular methods can be rewritten in terms of this splitting, for example the\nscheme considered in [62] is equivalent to \u0002OBABO\u0003. Examples of methods based\non this type of splitting were also proposed by De Fabritiis et al [96] and Thalmann\nand Farago [363], in the context of dissipative particle dynamics (see Chapter 8).\nOther Langevin dynamics splitting schemes in common use utilize a different\nadditive decomposition of the SDE vector ﬁeld. For example, the Stochastic Position\nVerlet (SPV) method of [265] relies on the splitting strategy\nd\n\u0002q\np\n\u0003\nD\n\u0002 M\u00021p\n0\n\u0003\ndt C\n\u0002\n0\n\u0003rU.q/dt \u0003 \npdt C \u0007M1=2dW\n\u0003\n:\nTo solve the splitting piece including the stochastic dW term, we note that q does not\nchange through its integration, and hence we may treat F D \u0003rU as constant during\nthis part of the step. The exact solution is hence given through the usual Ornstein-\nUhlenbeck formula, where the scheme itself derives from a symmetric integration\nof the two parts:\nStochastic Position Verlet (SPV)\nqnC1=2 D qn C .h=2/M\u00021pn\npnC1 D e\u0002h\npn \u0003 \u000frU.qn/ C \u0018M1=2Rn\nqnC1 D qnC1=2 C .h=2/M\u00021pnC1\nwhere \u000f D .1\u0003e\u0002h\n/=\n, \u0018 D\n\nkBT\n\u0004\n1 \u0003 e\u00022\nh\u0005\u000b1=2. It is important to note that in the\nlimit of inﬁnite friction, we have \u000f ! 0 independent of the timestep h. This suggests\nthat this splitting strategy is unsuitable for large choices of the parameter \n as the\n"
+            }
+          ],
+          "transcription_note": "PDF文字层原样保留，陈述中的数学排版转写为LaTeX；文字层有特殊字形编码时以目视原页为准。PDF347的Exercises之后不在正文范围内。",
+          "context_notation": [],
+          "extra_assumptions": [
+            "compositionIterate是任意确定性映射的真实复合恒等式；实际随机迭代应在扩展噪声序列空间中使用更新映射，不能把固定R重复使用当独立重抽样。",
+            "现已提供带噪声序号的OABA/BAOAB逐路径代数移位包装；独立抽样的概率资格、不变测度转移及遍历性仍未形式化。",
+            "29号覆盖限定：一般复合迭代恒等式、OABA定义及带噪声序号的OABA/BAOAB精确代数移位关系；不包含不变测度转移或遍历性。"
+          ],
+          "issues": [],
+          "statement_scope": "一般复合迭代恒等式、OABA定义及带噪声序号的OABA/BAOAB精确代数移位关系；不包含不变测度转移或遍历性。",
+          "lean_decl": "MD.Ch07.compositionIterate",
+          "lean_declarations": [
+            "MD.Ch07.compositionIterate",
+            "MD.Ch07.oaba",
+            "MD.Ch07.conjugateNoiseS",
+            "MD.Ch07.conjugateNoiseT",
+            "MD.Ch07.oaba_baoab_noiseShift"
+          ],
+          "source_page_verification": "本次R1审校已逐页目视核对 /workspace/R1_PAGES.pdf，页位及具体发现见本条 json_review.evidence；不依赖旧 source_page_checks.json。",
+          "repair_log": [
+            {
+              "instruction": 29,
+              "website_verdict": "FAIL",
+              "suggested_fix": "增加明确的 OABA/BAOAB 特化及扩展噪声空间上的移位关系；保持目前明确承认的覆盖缺口。",
+              "actual_scope": "一般复合迭代恒等式、OABA定义及带噪声序号的OABA/BAOAB精确代数移位关系；不包含不变测度转移或遍历性。",
+              "signature_changed": true
+            }
+          ],
+          "documented_priors": [],
+          "coverage_gaps": [
+            "独立标准正态噪声的概率模型、随机分布的共轭、不变测度转移及遍历性不在本条覆盖内；逐路径噪声序号关系已经陈述。"
+          ]
+        },
+        "issues": [
+          "A：原文陈述及印刷迭代公式与附件一致，无需改动。",
+          "JSON元数据第二条extra_assumptions仍写“随机分布/路径共轭仍需噪声移位包装”，但本条已经给出扩展噪声序号空间上的包装和恒等式；应区分已陈述的逐路径关系与未陈述的概率/不变测度结果。"
+        ],
+        "evidence": [
+          "A：附件第2页＝PDF293／印刷272。迭代指数n+1、中心BAOAB指数n、两端A(h/2)/B(h/2)及最右端O(h)均与PDF一致。",
+          "C：compositionIterate对任意类型D、任意自映射S,T及k:ℕ陈述(S∘T)^[k+1]=S∘(T∘S)^[k]∘T，包含k=0，正确。",
+          "C：oaba=A(h/2)∘B(h)∘A(h/2)∘O(h,R)。conjugateNoiseT=A(h/2)∘B(h/2)且保持序号；conjugateNoiseS=B(h/2)∘A(h/2)∘O(h,R_j)且序号加1。T∘S利用B半步合并得到OABA；S∘T正是BAOAB并使用当前序号噪声。",
+          "C逐声明：compositionIterate、oaba、conjugateNoiseS、conjugateNoiseT、oaba_baoab_noiseShift均PASS。最后一条对每个确定噪声序列R和每个k给出函数等式，两边总共取k+1个连续序号噪声，未错误重复固定R。",
+          "C审校对象仅为R1_任务.md本条完整Lean、摘录的项目依赖和附录D1–D20；Mathlib标准定义按任务规定采信。未读取旧Ch0x/source文件作替代输入，未修改工程或补证明，未运行Lean。PASS仅评价明示覆盖范围内的声明签名与定义，不表示原文全部内容已形式化，也不表示含sorry的证明已经验证。",
+          "本条摘录未出现字面[EXTRA]或[ERRATUM?]标签；对应内容按extra_assumptions、issues、statement_scope、coverage_gaps及Printed/corrected名称分别核查。"
+        ]
+      },
+      "audit": {
+        "lean_decl": "MD.Ch07.compositionIterate",
+        "verdict": "PASS",
+        "explanation": "所有对象和量词匹配：状态空间为Phase n×ℕ，R:ℕ→V n任意，k任意自然数；不需概率假设即可陈述精确代数关系。采用T∘S为OABA、S∘T为BAOAB时，原文外侧A/B半步分别由T及S给出，端点和噪声移位正确。一般compositionIterate中的S/T字母与具体conjugateNoiseS/T的角色对调不影响结论。不变测度、可逆坐标变换和遍历性没有被该恒等式证明，已按范围限制保留。",
+        "counterexample": null,
+        "suggested_fix": "只更新过时的覆盖文字；保留已经新增的噪声序号移位声明，不再将它列为尚缺包装。"
+      },
+      "subtask": "EAUDIT01b"
+    },
+    {
+      "source_id": "MD-7.3.2-SPVPrinted",
+      "json_review": {
+        "status": "NEEDS_HUMAN",
+        "issue_codes": [
+          "SOURCE_MATHEMATICAL_ERRATUM_CANDIDATE"
+        ],
+        "corrected_json": null,
+        "issues": [
+          "原页SPV动量更新确实印为∇U(q_n)，而同页所说的两部分对称积分应在漂移半步后的冻结位置q_{n+1/2}取力。这是原书数学疑误，不能静默改写原文版。",
+          "Printed忠实版和候选修正版分别保留；是否采纳勘误需人工裁定。"
+        ],
+        "evidence": [
+          "A：附件第3页＝PDF293／印刷272，目视确认SPV第二行是q_n而非q_{n+1/2}。三行更新、η=(1−e^(−hγ))/γ、ζ=[k_BT(1−e^(−2γh))]^(1/2)均与statement_latex一致。",
+          "C逐声明：spvPrinted PASS（qhalf只用于两段漂移，力确取x.1=q_n）；spvPrinted_corrected PASS作为候选修正（力取qhalf，其余公式不变）；spvQualification PASS（正质量、γ>0、θ>0、h≥0）。",
+          "C：D3的OU阻尼和噪声与原页一致；η分子中−h*γ与−γ*h等价。γ=0时实数除法总化给η=0，不能当作物理连续延拓η=h；资格声明明确排除了该点。R为确定向量，本条不声称独立正态概率结论。",
+          "C审校对象仅为R1_任务.md本条完整Lean、摘录的项目依赖和附录D1–D20；Mathlib标准定义按任务规定采信。未读取旧Ch0x/source文件作替代输入，未修改工程或补证明，未运行Lean。PASS仅评价明示覆盖范围内的声明签名与定义，不表示原文全部内容已形式化，也不表示含sorry的证明已经验证。",
+          "本条摘录未出现字面[EXTRA]或[ERRATUM?]标签；对应内容按extra_assumptions、issues、statement_scope、coverage_gaps及Printed/corrected名称分别核查。"
+        ]
+      },
+      "audit": {
+        "lean_decl": "MD.Ch07.spvPrinted",
+        "verdict": "NEEDS_HUMAN",
+        "explanation": "Printed及corrected的输入均为m,U,γ,θ,h,R,x，输出为Phase n；前者忠实原印q_n，后者实现先A半步、再冻结位置的受力OU整步、再A半步。候选修正符合本页对称分裂的推导，但原印与文字说明存在真实冲突，因此整条保留NEEDS_HUMAN。spvQualification只是独立Prop，不会自动成为两个def的前提；应在物理解释时显式引用。",
+        "counterexample": "取一维U(q)=q²/2、m=1、q_n=0、p_n≠0及h>0、γ>0。漂移半步后qhalf=h p_n/2≠0；两个版本的动量差为−η qhalf≠0。因此原印取力点与对称分裂取力点通常不同，并非等价写法。",
+        "suggested_fix": "人工确认原书勘误；原文JSON及spvPrinted保持q_n。若采纳修正，以独立ERRATUM候选说明q_n→q_{n+1/2}；γ=0的η=h延拓应另设分支，不能依赖除零总化。"
+      },
+      "subtask": "EAUDIT01c"
+    }
+  ],
+  "merged_from": "ch07_eaudit_merged"
+}
