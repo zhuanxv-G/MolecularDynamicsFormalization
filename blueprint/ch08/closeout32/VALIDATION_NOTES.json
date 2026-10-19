@@ -1,0 +1,8 @@
+{
+  "instruction": 32,
+  "pre_full_validation": "首次综合验收在17010文件冻结逐字核验通过后，到完整check状态门时停止：当时CHECK_REPORT仍为running，不属于数学或冻结验证失败。原始输出保存在validation-before-full.log。",
+  "final_validation_policy": "待同一次完整check完成后，复用本轮已通过的冻结哈希证据，核验其余返回、元数据、文档、编译/公理凭据及新完整check日志；不再次运行完整check。",
+  "original_reports": "网站原始json_review、audit、suggested_fix和closeout31/32返回完整保留；其中旧问题描述不代表当前状态。当前状态以current_metadata、effective_status及SUMMARY为准。",
+  "lean_comments": "Ch08.lean原始字节保持不变，已有注释属于718f75f0版本；当前来源、适用域和原书疑误解释以32号元数据及三份文档为准。",
+  "proof_status": "网站认可的是数学陈述或忠实性，不替代Lean证明；57项未证声明和导师裁定仍待完成。"
+}

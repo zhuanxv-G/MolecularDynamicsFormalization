@@ -65,7 +65,9 @@
       "semantic_review": "已对照目视原页核对对象、量词、技术资格和所列覆盖范围；网站尚未审阅。",
       "compile_receipt": "blueprint/ch08/closeout31/FINAL_COMPILE.json",
       "coverage_gaps": [],
-      "final_status": "self-contained"
+      "final_status": "self-contained",
+      "metadata_instruction": 32,
+      "lean_unchanged": true
     },
     "MD-8.1-HamiltonianStationary": {
       "verdict": "PASS",
@@ -96,7 +98,9 @@
       "semantic_review": "已对照目视原页核对对象、量词、技术资格和所列覆盖范围；网站尚未审阅。",
       "compile_receipt": "blueprint/ch08/closeout31/FINAL_COMPILE.json",
       "coverage_gaps": [],
-      "final_status": "checked+documented priors"
+      "final_status": "checked+documented priors",
+      "metadata_instruction": 32,
+      "lean_unchanged": true
     },
     "MD-8.1-ExtendedDensity": {
       "verdict": "PASS",
@@ -127,7 +131,9 @@
       "semantic_review": "已对照目视原页核对对象、量词、技术资格和所列覆盖范围；网站尚未审阅。",
       "compile_receipt": "blueprint/ch08/closeout31/FINAL_COMPILE.json",
       "coverage_gaps": [],
-      "final_status": "self-contained"
+      "final_status": "self-contained",
+      "metadata_instruction": 32,
+      "lean_unchanged": true
     },
     "MD-8.1.1-NoseHoover": {
       "verdict": "PASS",
@@ -168,7 +174,9 @@
       "semantic_review": "已对照目视原页核对对象、量词、技术资格和所列覆盖范围；网站尚未审阅。",
       "compile_receipt": "blueprint/ch08/closeout31/FINAL_COMPILE.json",
       "coverage_gaps": [],
-      "final_status": "self-contained"
+      "final_status": "self-contained",
+      "metadata_instruction": 32,
+      "lean_unchanged": true
     },
     "MD-8.1.1-NHDensitySplit": {
       "verdict": "PASS",
@@ -210,7 +218,9 @@
       "semantic_review": "已对照目视原页核对对象、量词、技术资格和所列覆盖范围；网站尚未审阅。",
       "compile_receipt": "blueprint/ch08/closeout31/FINAL_COMPILE.json",
       "coverage_gaps": [],
-      "final_status": "incomplete"
+      "final_status": "incomplete",
+      "metadata_instruction": 32,
+      "lean_unchanged": true
     },
     "MD-8.1.1-NHFirstIntegralPrinted": {
       "verdict": "NEEDS_HUMAN",
@@ -249,7 +259,9 @@
       "semantic_review": "已对照目视原页核对对象、量词、技术资格和所列覆盖范围；网站尚未审阅。",
       "compile_receipt": "blueprint/ch08/closeout31/FINAL_COMPILE.json",
       "coverage_gaps": [],
-      "final_status": "incomplete"
+      "final_status": "incomplete",
+      "metadata_instruction": 32,
+      "lean_unchanged": true
     },
     "MD-8.1.2-NHReversal": {
       "verdict": "PASS",
@@ -282,7 +294,9 @@
       "semantic_review": "已对照目视原页核对对象、量词、技术资格和所列覆盖范围；网站尚未审阅。",
       "compile_receipt": "blueprint/ch08/closeout31/FINAL_COMPILE.json",
       "coverage_gaps": [],
-      "final_status": "self-contained"
+      "final_status": "self-contained",
+      "metadata_instruction": 32,
+      "lean_unchanged": true
     },
     "MD-8.1.2-NHTimestep": {
       "verdict": "PASS",
@@ -333,7 +347,9 @@
       "semantic_review": "已对照目视原页核对对象、量词、技术资格和所列覆盖范围；网站尚未审阅。",
       "compile_receipt": "blueprint/ch08/closeout31/FINAL_COMPILE.json",
       "coverage_gaps": [],
-      "final_status": "self-contained"
+      "final_status": "self-contained",
+      "metadata_instruction": 32,
+      "lean_unchanged": true
     },
     "MD-8.1.2-NHTimestepReversible": {
       "verdict": "PASS",
@@ -365,7 +381,9 @@
       "semantic_review": "已对照目视原页核对对象、量词、技术资格和所列覆盖范围；网站尚未审阅。",
       "compile_receipt": "blueprint/ch08/closeout31/FINAL_COMPILE.json",
       "coverage_gaps": [],
-      "final_status": "incomplete"
+      "final_status": "incomplete",
+      "metadata_instruction": 32,
+      "lean_unchanged": true
     },
     "MD-8.1.2.1-NoseHamiltoniansPrinted": {
       "verdict": "NEEDS_HUMAN",
@@ -408,7 +426,9 @@
       "semantic_review": "已对照目视原页核对对象、量词、技术资格和所列覆盖范围；网站尚未审阅。",
       "compile_receipt": "blueprint/ch08/closeout31/FINAL_COMPILE.json",
       "coverage_gaps": [],
-      "final_status": "incomplete"
+      "final_status": "incomplete",
+      "metadata_instruction": 32,
+      "lean_unchanged": true
     },
     "MD-8.1.2.1-NPEquations": {
       "verdict": "PASS",
@@ -434,23 +454,30 @@
       "direct_placeholder": false,
       "missing": null,
       "issues": [
-        "[ERRATUM?] ΔH_N采用(8.9)展开中的N_d版本，与前一定义(N_d+1)版本不同，须明确区分。",
-        "已目视核对原页PDF355：delta取H_N^(n)−E_N，不能与上式(n+1)/β版本混同。"
+        "[ERRATUM?] 原页H_N在(N_d+1)与N_d系数之间不一致，须人工确认；修正版按(8.9)展开选择n版。",
+        "已目视核对原页PDF355：上方H_N用(n+1)/β，(8.9)展开用n/β，末行ΔH_N仍引用同名H_N；指代矛盾未消除。n版仅为依(8.9)展开采用的修正选择。"
       ],
       "website": "待网站审计",
-      "statement_scope": "NP四漂移分量、n/β版本的命名能量差及正质量、β,Q,s>0有效域谓词；npField仍为总函数，未证明Hamilton方程。",
+      "statement_scope": "正对角逆质量、N_d=n下的NP四漂移分量；n/β版命名能量差修正；有效域另列。未绑定初始能量、未证明Hamilton梯度关系。",
       "extra_assumptions": [
-        "ΔH采用(8.9)展开内的N_d版本；β,Q>0及s>0为有效域；尚未桥接实际Hamiltonian梯度。",
-        "已目视核对原页PDF355：delta取H_N^(n)−E_N，不能与上式(n+1)/β版本混同。",
-        "[EXTRA] npValidDomain明确列有效物理域；使用npField作NP方程时必须另具此资格，总函数自身不强制。"
+        "[EXTRA] M⁻¹=diag(invm)，N_d=n，β⁻¹=k_BT，Q=μ，状态z=((q,p̃),(s,p_s))。",
+        "[EXTRA] npValidDomain单列所有invm_i>0及β,Q,s>0；npField自身为总函数，未把该资格作为参数或合取条件。",
+        "[ERRATUM?] npDeltaN_corrected选择(8.9)展开中的n/β版本；与上方原印(n+1)/β版H_N区分。应用时EN应取该n版能量在初值处的值；声明并未绑定初值。",
+        "gradient用fderiv定义，未假设U可微；欲解释为经典力场须另加适当可微性。未证明Hamilton方程。",
+        "[EXTRA] 使用npField作为经典NP方程必须另带npValidDomain invm β Q z、U可微及EN=H_N^(n)(z₀)；这些条件没有被npField总函数自动强制。原页ΔH_N指代冲突未消除。"
       ],
       "source_pages": "355",
       "semantic_review": "已对照目视原页核对对象、量词、技术资格和所列覆盖范围；网站尚未审阅。",
       "compile_receipt": "blueprint/ch08/closeout31/FINAL_COMPILE.json",
       "coverage_gaps": [
-        "NP四漂移分量、n/β版本的命名能量差及正质量、β,Q,s>0有效域谓词；npField仍为总函数，未证明Hamilton方程。"
+        "正对角逆质量、N_d=n下的NP四漂移分量；n/β版命名能量差修正；有效域另列。未绑定初始能量、未证明Hamilton梯度关系。",
+        "[ERRATUM?] npDeltaN_corrected选择(8.9)展开中的n/β版本；与上方原印(n+1)/β版H_N区分。应用时EN应取该n版能量在初值处的值；声明并未绑定初值。",
+        "gradient用fderiv定义，未假设U可微；欲解释为经典力场须另加适当可微性。未证明Hamilton方程。",
+        "[EXTRA] 使用npField作为经典NP方程必须另带npValidDomain invm β Q z、U可微及EN=H_N^(n)(z₀)；这些条件没有被npField总函数自动强制。原页ΔH_N指代冲突未消除。"
       ],
-      "final_status": "self-contained"
+      "final_status": "self-contained",
+      "metadata_instruction": 32,
+      "lean_unchanged": true
     },
     "MD-8.1.2.1-NPtoNH": {
       "verdict": "PASS",
@@ -482,7 +509,9 @@
       "semantic_review": "已对照目视原页核对对象、量词、技术资格和所列覆盖范围；网站尚未审阅。",
       "compile_receipt": "blueprint/ch08/closeout31/FINAL_COMPILE.json",
       "coverage_gaps": [],
-      "final_status": "incomplete"
+      "final_status": "incomplete",
+      "metadata_instruction": 32,
+      "lean_unchanged": true
     },
     "MD-8.1.2.1-NPShadowDensity": {
       "verdict": "PASS",
@@ -526,7 +555,9 @@
         "三条公式的定义及渐近条件；不声称已构造ζ或证明有限样本等于精确平均。",
         "[EXTRA]仅给O(h⁴)余项与有限重加权公式的精确定义；存在修正Hamiltonian/密度和采样误差定理未覆盖，列入缺口。"
       ],
-      "final_status": "self-contained"
+      "final_status": "self-contained",
+      "metadata_instruction": 32,
+      "lean_unchanged": true
     },
     "MD-8.2-GeneralThermostat": {
       "verdict": "PASS",
@@ -559,7 +590,9 @@
       "coverage_gaps": [
         "常矩阵一般热浴场及矩阵反对称资格的定义；不声称已证驻定或采样。"
       ],
-      "final_status": "self-contained"
+      "final_status": "self-contained",
+      "metadata_instruction": 32,
+      "lean_unchanged": true
     },
     "MD-8.2.1-ContinuityProductRule": {
       "verdict": "PASS",
@@ -590,7 +623,9 @@
       "semantic_review": "已对照目视原页核对对象、量词、技术资格和所列覆盖范围；网站尚未审阅。",
       "compile_receipt": "blueprint/ch08/closeout31/FINAL_COMPILE.json",
       "coverage_gaps": [],
-      "final_status": "self-contained"
+      "final_status": "self-contained",
+      "metadata_instruction": 32,
+      "lean_unchanged": true
     },
     "MD-8.2.1-ThermostatCriterion": {
       "verdict": "PASS",
@@ -622,7 +657,9 @@
       "semantic_review": "已对照目视原页核对对象、量词、技术资格和所列覆盖范围；网站尚未审阅。",
       "compile_receipt": "blueprint/ch08/closeout31/FINAL_COMPILE.json",
       "coverage_gaps": [],
-      "final_status": "incomplete"
+      "final_status": "incomplete",
+      "metadata_instruction": 32,
+      "lean_unchanged": true
     },
     "MD-8.2.1-Examples81and82": {
       "verdict": "PASS",
@@ -655,14 +692,17 @@
       "direct_placeholder": true,
       "missing": "Bulgac–Kusnezov一般散度抵消计算。",
       "issues": [
-        "已目视核对原页PDF358–359：例8.2确实印为正号耦合与正反馈，驻定声称有符号疑误，不是转录错误。",
-        "[ERRATUM?] 例8.2正号耦合与所印正反馈不能保持所列高斯Gibbs权；额外generalizedFeedback_stationary签名错误，见本次审校反例。"
+        "[ERRATUM?] 原印例8.2的Φ=+ξG与正反馈一般不保持所列高斯Gibbs密度；Printed忠实保留该声称。负号耦合corrected为合理修正。",
+        "已目视核对原页PDF358：例8.2印为Φ=+ξG及正反馈；Printed仅保留原印疑误，不得被其他条目作为有效数学定理依赖；corrected采用−ξG。"
       ],
       "website": "待网站审计",
       "statement_scope": "原印一般G与构型反馈、正号组合Printed驻定声称，以及负号耦合的局部驻定修正版；不含全局过程不变性。",
       "extra_assumptions": [
-        "Example8.1使用此前完整NH定义；本条单热浴一般G与构型反馈公式，构型全场与驻定证明未单列。",
-        "generalizedFeedback/configurationalFeedback忠实保留原式；corrected将Φ改为−ξG。构型反馈在正号耦合下同样须反号。"
+        "β⁻¹=k_BT，Q=μ；一般G定义中的n是相空间维数，不能将此处n一律解释为物理自由度数。",
+        "generalizedFeedback和configurationalFeedback为原式总函数；经典导数解释需相应可微性。",
+        "[EXTRA] 两个驻定定理假设常矩阵J反对称、H为C³、G为C²、β,Q>0，结论为所有点的div(ρF)=0；不是全局流不变概率测度或遍历性。",
+        "Example8.1的物理系统、构型完整场及其独立驻定定理未在本条四声明中单列。",
+        "[ERRATUM?] Printed仅供原文忠实记录，不作为任何其他条目的有效定理依赖；实际局部驻定采用负号耦合_corrected。"
       ],
       "source_pages": "358–359",
       "semantic_review": "已对照目视原页核对对象、量词、技术资格和所列覆盖范围；网站尚未审阅。",
@@ -670,7 +710,9 @@
       "coverage_gaps": [
         "原印一般G与构型反馈、正号组合Printed驻定声称，以及负号耦合的局部驻定修正版；不含全局过程不变性。"
       ],
-      "final_status": "incomplete"
+      "final_status": "incomplete",
+      "metadata_instruction": 32,
+      "lean_unchanged": true
     },
     "MD-8.2.1-TemperatureIdentity": {
       "verdict": "PASS",
@@ -702,7 +744,9 @@
       "semantic_review": "已对照目视原页核对对象、量词、技术资格和所列覆盖范围；网站尚未审阅。",
       "compile_receipt": "blueprint/ch08/closeout31/FINAL_COMPILE.json",
       "coverage_gaps": [],
-      "final_status": "incomplete"
+      "final_status": "incomplete",
+      "metadata_instruction": 32,
+      "lean_unchanged": true
     },
     "MD-8.2.1-Proposition81": {
       "verdict": "PASS",
@@ -730,7 +774,9 @@
         "两个标量热浴的局部Liouville驻定相加命题；不含多维热浴或全局流保测性。",
         "两个标量辅助变量的实际Liouville驻定版本；非负、归一后称概率密度，流保测性另需完整流存在与Jacobian条件。多维辅助变量未覆盖。"
       ],
-      "final_status": "checked+documented priors"
+      "final_status": "checked+documented priors",
+      "metadata_instruction": 32,
+      "lean_unchanged": true
     },
     "MD-8.2.2-NHChains": {
       "verdict": "PASS",
@@ -765,7 +811,9 @@
         "任意正链长、正对角质量且无约束的NH链场与未归一Gaussian权的局部Liouville驻定；不含一般非对角M、约束流形、唯一不变概率或遍历性。",
         "链长k>0，各热质量Q_j>0、β>0，实辅助变量；未归一Gaussian权重不声称唯一不变概率或遍历性。"
       ],
-      "final_status": "incomplete"
+      "final_status": "incomplete",
+      "metadata_instruction": 32,
+      "lean_unchanged": true
     },
     "MD-8.3-ArrheniusRate": {
       "verdict": "PASS",
@@ -798,7 +846,9 @@
         "Arrhenius指数速率公式定义及A≥0时非负性；不含亚稳跃迁率渐近定理或温度单调性。",
         "A≥0,k_B>0,T>0为速率解释域；只定义原页模型，不声称一般能垒动力学服从此经验律。"
       ],
-      "final_status": "self-contained"
+      "final_status": "self-contained",
+      "metadata_instruction": 32,
+      "lean_unchanged": true
     },
     "MD-8.4-AdditiveThermostatSDE": {
       "verdict": "PASS",
@@ -839,27 +889,31 @@
       "direct_placeholder": false,
       "missing": null,
       "issues": [
-        "已目视核对原页PDF364：(8.23)的−Φ项确实漏dt；漂移解释补dt。矩阵不交换时原平方根噪声与驻定协方差未必相容。",
-        "[ERRATUM?]原书矩阵噪声的对称性不足以保证Gibbs相容。",
-        "现有声明只是未组装的定义组件。"
+        "[ERRATUM?] 原印(8.23)的−Φ缺dt。",
+        "[ERRATUM?] 原印矩阵对称性不足以保证实噪声及Gibbs相容；当前Lean是半正定、交换资格下的限制模型。",
+        "已目视核对原页PDF364：(8.23)的−Φ缺dt；矩阵仅对称不足以保证所印噪声与目标Gibbs协方差相容。当前模型已组装，是对角物理质量、交换涨落耗散特例。"
       ],
       "website": "待网站审计",
-      "statement_scope": "常噪声积分SDE模板与正对角物理质量的统一恒温器解规格；同一n+k维独立Wiener、分块噪声、两组协方差和漂移质量已绑定。未含一般非对角物理质量、存在唯一性或不变律。",
+      "statement_scope": "已组装的对角物理质量、交换涨落耗散特例：同一n+k维独立Wiener、分块噪声、两组同β协方差与漂移质量已绑定。未覆盖一般非对角模型、存在唯一性或不变律。",
       "extra_assumptions": [
-        "加性噪声用独立Wiener路径增量的精确积分方程；漂移可积、路径连续且适应自然历史。完整矩阵噪声给因子B和涨落耗散资格，物理/热浴两组坐标共同独立。",
-        "[EXTRA] 正逆质量、C¹势；物理质量固定为diag(invm⁻¹)，Mhat为热浴协方差质量；两组涨落耗散均绑定同一β及实际阻尼。未构造矩阵平方根，未证明确定性热浴保权或完整过程不变性。",
-        "[EXTRA]漂移采用M⁻¹=diag(invm)的正对角、无约束特例；现有定义尚未把独立的M参数绑定到invm。",
-        "[ERRATUM?]原矩阵平方根噪声须补半正定性及协方差相容条件。fluctuationDissipation规定BBᵀ=(2/β)ΓM，对称M、Γ下还强制ΓM=MΓ，是明确限制后的修正资格。",
-        "完整两组SDE需要一个统一的n+k维独立Wiener向量、分块噪声因子、对应漂移及两组协方差约束；本条尚无这项组装声明。"
+        "[EXTRA] M⁻¹=diag(invm)，所有invm_i>0，N_c=N_d=n；U为C¹。β⁻¹=k_BT。",
+        "[EXTRA] stochasticThermostatSolution已用同一n+k维独立Wiener过程、thermostatBlockNoise和实际漂移组装完整积分解规格。物理质量明确绑定diag(invm⁻¹)，热浴质量为Mhat，两组使用同β。",
+        "[EXTRA] fluctuationDissipation要求β>0、M正定、Γ半正定及BBᵀ=(2/β)ΓM。实对称矩阵下由左右对称性强制ΓM=MΓ，属于明确限制后的充分相容条件。热浴同理。",
+        "[ERRATUM?] 原印−Φ未附dt；漂移按−Φdt解释。原印对称性条件不足以保证矩阵平方根噪声的Gibbs相容性。",
+        "未要求或证明确定性Φ,g部分保权；未构造矩阵平方根，未证明完整解存在、唯一、不变分布或遍历性。",
+        "[EXTRA] additiveSDE要求几乎处处全实时间连续；每个t≥0的X t对W在[0,t]历史可测，漂移在[0,t]几乎处处可积，且逐个t的积分方程几乎处处成立；x0固定而非随机。",
+        "[EXTRA] 对一般矩阵的匹配应为BBᵀ=(ΓM+MΓᵀ)/β并须协方差可实现；当前采用BBᵀ=(2/β)ΓM，在实对称条件下限制为ΓM=MΓ的充分特例，不扩充Lean模型。"
       ],
       "source_pages": "363–364",
       "semantic_review": "已对照目视原页核对对象、量词、技术资格和所列覆盖范围；网站尚未审阅。",
       "compile_receipt": "blueprint/ch08/closeout31/FINAL_COMPILE.json",
       "coverage_gaps": [
-        "[EXTRA] 正逆质量、C¹势；物理质量固定为diag(invm⁻¹)，Mhat为热浴协方差质量；两组涨落耗散均绑定同一β及实际阻尼。未构造矩阵平方根，未证明确定性热浴保权或完整过程不变性。",
-        "完整两组SDE需要一个统一的n+k维独立Wiener向量、分块噪声因子、对应漂移及两组协方差约束；本条尚无这项组装声明。"
+        "已组装的对角物理质量、交换涨落耗散特例：同一n+k维独立Wiener、分块噪声、两组同β协方差与漂移质量已绑定。未覆盖一般非对角模型、存在唯一性或不变律。",
+        "未要求或证明确定性Φ,g部分保权；未构造矩阵平方根，未证明完整解存在、唯一、不变分布或遍历性。"
       ],
-      "final_status": "self-contained"
+      "final_status": "self-contained",
+      "metadata_instruction": 32,
+      "lean_unchanged": true
     },
     "MD-8.4-OUStationarityPrinted": {
       "verdict": "NEEDS_HUMAN",
@@ -904,7 +958,9 @@
       "semantic_review": "已对照目视原页核对对象、量词、技术资格和所列覆盖范围；网站尚未审阅。",
       "compile_receipt": "blueprint/ch08/closeout31/FINAL_COMPILE.json",
       "coverage_gaps": [],
-      "final_status": "incomplete"
+      "final_status": "incomplete",
+      "metadata_instruction": 32,
+      "lean_unchanged": true
     },
     "MD-8.4-LiftedThermostat": {
       "verdict": "PASS",
@@ -929,7 +985,9 @@
       "semantic_review": "已对照目视原页核对对象、量词、技术资格和所列覆盖范围；网站尚未审阅。",
       "compile_receipt": "blueprint/ch08/closeout31/FINAL_COMPILE.json",
       "coverage_gaps": [],
-      "final_status": "self-contained"
+      "final_status": "self-contained",
+      "metadata_instruction": 32,
+      "lean_unchanged": true
     },
     "MD-8.4-Proposition82": {
       "verdict": "NEEDS_HUMAN",
@@ -966,7 +1024,9 @@
         "所印及补σ≠0后的真实Lie括号张成命题；不含解存在、平滑转移核或遍历性。",
         "Printed版保留未要求非零σ的原文强度，不证明；修正版完整使用真实迭代Lie括号张成定义。"
       ],
-      "final_status": "incomplete"
+      "final_status": "incomplete",
+      "metadata_instruction": 32,
+      "lean_unchanged": true
     },
     "MD-8.4.1-NHL": {
       "verdict": "PASS",
@@ -993,23 +1053,32 @@
       "missing": null,
       "issues": [
         "已目视核对原页PDF367：原印q̃=M⁻¹ᐟ²q、p̃=M¹ᐟ²p不产生单位质量方程；正确方向相反并须同步变换势。",
-        "[ERRATUM?]原书所印质量重缩放方向有误，原文保留待人工处理。"
+        "[ERRATUM?]原书所印质量重缩放方向有误，原文保留待人工处理。",
+        "已目视核对原页PDF367：原印q̃=M⁻¹ᐟ²q、p̃=M¹ᐟ²p方向有误。正确为q̃=M¹ᐟ²q、p̃=M⁻¹ᐟ²p，势变为Ũ(q̃)=U(M⁻¹ᐟ²q̃)；若U(q)=qᵀAq/2，则Ã=M⁻¹ᐟ²AM⁻¹ᐟ²。"
       ],
       "website": "待网站审计",
       "statement_scope": "仅正对角质量、无约束Nd=n的NHL漂移与单ξ噪声积分解规格；harmonicPotential仅定义二次函数。一般矩阵质量、单位质量二次专门化声明及原书重缩放均未覆盖。",
       "extra_assumptions": [
-        "Q>0、β>0、γ>0及单独立Wiener；二次系统A对称正定、M=I；高维无约束自由度n。",
-        "[EXTRA/覆盖缺口] invm_i,β,Q,γ均正；不宣称覆盖一般M或已把isNHLSolution特化到正定二次势(8.30)–(8.32)。原印重缩放疑误另列。",
-        "[EXTRA]M⁻¹=diag(invm)，N_d=n；一般非对角M未覆盖。harmonicPotential本身未要求A对称正定，相关物理资格在应用时另加。"
+        "[EXTRA] M⁻¹=diag(invm)，N_d=n；invm_i,β,Q,γ均正；β⁻¹=k_BT，Q=μ。一般非对角物理质量未覆盖。",
+        "isNHLSolution采用一个实Wiener坐标，噪声只作用ξ，幅度sqrt(2γ/(βQ))；解的可测、连续、可积与固定初值规格由additiveSDE给出。",
+        "harmonicPotential对任意实方阵A定义qᵀAq/2；没有在该def中要求A对称正定，也未把isNHLSolution绑定到该二次势或M=I。",
+        "不含原页定理8.1、特征值互异、D的模态排除及Hörmander/遍历性结论；不得由本条声明推断这些性质。",
+        "[ERRATUM?] 原印质量重缩放方向有误，保留原文，正确方向须同步变换势。",
+        "[ERRATUM?] 正确重缩放为q̃=M¹ᐟ²q、p̃=M⁻¹ᐟ²p；Ũ(q̃)=U(M⁻¹ᐟ²q̃)，二次势矩阵变为M⁻¹ᐟ²AM⁻¹ᐟ²。这里只给修正解释，未新增重缩放定理；harmonicPotential没有对称正定资格，也没有绑定单位质量NHL。"
       ],
       "source_pages": "366–367",
       "semantic_review": "已对照目视原页核对对象、量词、技术资格和所列覆盖范围；网站尚未审阅。",
       "compile_receipt": "blueprint/ch08/closeout31/FINAL_COMPILE.json",
       "coverage_gaps": [
         "仅正对角质量、无约束Nd=n的NHL漂移与单ξ噪声积分解规格；harmonicPotential仅定义二次函数。一般矩阵质量、单位质量二次专门化声明及原书重缩放均未覆盖。",
-        "[EXTRA]M⁻¹=diag(invm)，N_d=n；一般非对角M未覆盖。harmonicPotential本身未要求A对称正定，相关物理资格在应用时另加。"
+        "[EXTRA] M⁻¹=diag(invm)，N_d=n；invm_i,β,Q,γ均正；β⁻¹=k_BT，Q=μ。一般非对角物理质量未覆盖。",
+        "harmonicPotential对任意实方阵A定义qᵀAq/2；没有在该def中要求A对称正定，也未把isNHLSolution绑定到该二次势或M=I。",
+        "不含原页定理8.1、特征值互异、D的模态排除及Hörmander/遍历性结论；不得由本条声明推断这些性质。",
+        "[ERRATUM?] 正确重缩放为q̃=M¹ᐟ²q、p̃=M⁻¹ᐟ²p；Ũ(q̃)=U(M⁻¹ᐟ²q̃)，二次势矩阵变为M⁻¹ᐟ²AM⁻¹ᐟ²。这里只给修正解释，未新增重缩放定理；harmonicPotential没有对称正定资格，也没有绑定单位质量NHL。"
       ],
-      "final_status": "self-contained"
+      "final_status": "self-contained",
+      "metadata_instruction": 32,
+      "lean_unchanged": true
     },
     "MD-8.4.1-Lemma81": {
       "verdict": "PASS",
@@ -1034,7 +1103,9 @@
       "semantic_review": "已对照目视原页核对对象、量词、技术资格和所列覆盖范围；网站尚未审阅。",
       "compile_receipt": "blueprint/ch08/closeout31/FINAL_COMPILE.json",
       "coverage_gaps": [],
-      "final_status": "checked+documented priors"
+      "final_status": "checked+documented priors",
+      "metadata_instruction": 32,
+      "lean_unchanged": true
     },
     "MD-8.4.1-Proposition83": {
       "verdict": "PASS",
@@ -1061,7 +1132,9 @@
       "semantic_review": "已对照目视原页核对对象、量词、技术资格和所列覆盖范围；网站尚未审阅。",
       "compile_receipt": "blueprint/ch08/closeout31/FINAL_COMPILE.json",
       "coverage_gaps": [],
-      "final_status": "checked+documented priors"
+      "final_status": "checked+documented priors",
+      "metadata_instruction": 32,
+      "lean_unchanged": true
     },
     "MD-8.4.1-Theorem81": {
       "verdict": "NEEDS_HUMAN",
@@ -1099,7 +1172,9 @@
       "coverage_gaps": [
         "所印及补参数资格后的NHL点态Hörmander条件；不含由其推出全局几何遍历性。"
       ],
-      "final_status": "incomplete"
+      "final_status": "incomplete",
+      "metadata_instruction": 32,
+      "lean_unchanged": true
     },
     "MD-8.4.1-ZeroModeInvariant": {
       "verdict": "PASS",
@@ -1129,7 +1204,9 @@
       "semantic_review": "已对照目视原页核对对象、量词、技术资格和所列覆盖范围；网站尚未审阅。",
       "compile_receipt": "blueprint/ch08/closeout31/FINAL_COMPILE.json",
       "coverage_gaps": [],
-      "final_status": "checked+documented priors"
+      "final_status": "checked+documented priors",
+      "metadata_instruction": 32,
+      "lean_unchanged": true
     },
     "MD-8.4.1-NHLGenerator": {
       "verdict": "PASS",
@@ -1169,7 +1246,9 @@
       "semantic_review": "已对照目视原页核对对象、量词、技术资格和所列覆盖范围；网站尚未审阅。",
       "compile_receipt": "blueprint/ch08/closeout31/FINAL_COMPILE.json",
       "coverage_gaps": [],
-      "final_status": "self-contained"
+      "final_status": "self-contained",
+      "metadata_instruction": 32,
+      "lean_unchanged": true
     },
     "MD-8.4.1-LyapunovCalculation": {
       "verdict": "PASS",
@@ -1205,7 +1284,9 @@
       "semantic_review": "已对照目视原页核对对象、量词、技术资格和所列覆盖范围；网站尚未审阅。",
       "compile_receipt": "blueprint/ch08/closeout31/FINAL_COMPILE.json",
       "coverage_gaps": [],
-      "final_status": "incomplete"
+      "final_status": "incomplete",
+      "metadata_instruction": 32,
+      "lean_unchanged": true
     },
     "MD-8.4.1-LyapunovRatePrinted": {
       "verdict": "NEEDS_HUMAN",
@@ -1255,7 +1336,9 @@
       "semantic_review": "已对照目视原页核对对象、量词、技术资格和所列覆盖范围；网站尚未审阅。",
       "compile_receipt": "blueprint/ch08/closeout31/FINAL_COMPILE.json",
       "coverage_gaps": [],
-      "final_status": "incomplete"
+      "final_status": "incomplete",
+      "metadata_instruction": 32,
+      "lean_unchanged": true
     },
     "MD-8.4.2-NHLTimestep": {
       "verdict": "PASS",
@@ -1300,9 +1383,12 @@
       "semantic_review": "已对照目视原页核对对象、量词、技术资格和所列覆盖范围；网站尚未审阅。",
       "compile_receipt": "blueprint/ch08/closeout31/FINAL_COMPILE.json",
       "coverage_gaps": [
-        "实际九阶段NHL单步映射、OU随机输入及独立标准正态序列资格；不含整体稳定性。"
+        "实际九阶段NHL单步映射、OU随机输入及独立标准正态序列资格；不含整体稳定性。",
+        "R_n独立标准正态；h≥0、β,Q>0、γ≥0用于OU噪声解释；所谓无限摩擦稳定性没有扩大成完整算法无条件稳定定理。"
       ],
-      "final_status": "self-contained"
+      "final_status": "self-contained",
+      "metadata_instruction": 32,
+      "lean_unchanged": true
     },
     "MD-8.4.1-NHLWeakStationary": {
       "verdict": "PASS",
@@ -1335,7 +1421,9 @@
       "coverage_gaps": [
         "归一概率密度的弱驻定积分式目标；Markov半群不变性、唯一性和遍历性未覆盖。"
       ],
-      "final_status": "incomplete"
+      "final_status": "incomplete",
+      "metadata_instruction": 32,
+      "lean_unchanged": true
     },
     "MD-8.4.3-PreEquilibriumMeans": {
       "verdict": "PASS",
@@ -1361,22 +1449,25 @@
       "direct_placeholder": false,
       "missing": null,
       "issues": [
-        "{\"codes\": [\"MISSING_MOMENT_INTEGRABILITY\", \"MISSING_DENSITY_EVOLUTION_SPEC\"], \"detail\": \"两积分的变量、2K=kineticTwice invm p及ξ权重与原页一致，preEquilibriumDensity仅要求每个t≥0非负可积归一。该条件不保证两项加权函数可积，因而Lean总化Bochner积分未必代表原文有限分布平均；还没有限定ρ满足原文明说的NHL Fokker–Planck演化。局部稳定性/闭合方程缺口已披露，但不应将上述资格定义称为完整的预平衡密度资格。\", \"suggested_fix\": \"增加每个t≥0的Integrable (kineticTwice invm z.1.2*ρ t z)与Integrable (z.2*ρ t z)，并明确正质量。若保留pre-equilibrium命名，应添加FP演化规格；否则声明仅定义任意随时间概率密度的形式积分，并明确演化未覆盖。\"}"
+        "[RESOLVED] 旧issues中的MISSING_MOMENT_INTEGRABILITY与当前摘录不符：两项Integrable及正逆质量均已补入；不能沿用旧缺失判定。",
+        "[COVERAGE_GAP] 原页明确要求ρ按扩展NHL系统的Fokker–Planck方程演化；当前定义未表达该演化，已按statement_scope缩限为任意随时间概率密度的有限平均，不将其称作完整预平衡动力学形式化。"
       ],
       "website": "待网站审计",
       "statement_scope": "任意随时间概率密度的两项有限平均与正质量、加权可积资格；preEquilibriumDensity仅是历史名称，未要求或覆盖NHL Fokker–Planck演化、闭合方程及局部稳定性。",
       "extra_assumptions": [
-        "ρ非负、可积且归一；外引局部稳定性分析未给闭合方程，列覆盖缺口。",
-        "[EXTRA] 每个t≥0同时要求两项加权函数Integrable，故均值不是不可积时的总化积分。NHL Fokker–Planck演化未形式化，名称不代表完整预平衡动力学资格。"
+        "[EXTRA] preEquilibriumDensity要求所有逆质量严格为正，且对每个t≥0，ρ t逐点非负、可积、积分为1，两项加权函数均Integrable。正质量与有限矩资格均已在当前Lean定义中出现。",
+        "meanKineticTwice和meanBath本身是任意实数t上的总化积分定义；仅在上述资格及t≥0下解释为有限平均。",
+        "preEquilibriumDensity为历史名称：不要求NHL Fokker–Planck演化；本条范围仅为两平均的定义与资格。闭合动力学和局部稳定性不在所列Lean声明中。"
       ],
       "source_pages": "375–376",
       "semantic_review": "已对照目视原页核对对象、量词、技术资格和所列覆盖范围；网站尚未审阅。",
       "compile_receipt": "blueprint/ch08/closeout31/FINAL_COMPILE.json",
       "coverage_gaps": [
-        "任意随时间概率密度的两项有限平均与正质量、加权可积资格；preEquilibriumDensity仅是历史名称，未要求或覆盖NHL Fokker–Planck演化、闭合方程及局部稳定性。",
-        "[EXTRA] 每个t≥0同时要求两项加权函数Integrable，故均值不是不可积时的总化积分。NHL Fokker–Planck演化未形式化，名称不代表完整预平衡动力学资格。"
+        "任意随时间概率密度的两项有限平均与正质量、加权可积资格；preEquilibriumDensity仅是历史名称，未要求或覆盖NHL Fokker–Planck演化、闭合方程及局部稳定性。"
       ],
-      "final_status": "self-contained"
+      "final_status": "self-contained",
+      "metadata_instruction": 32,
+      "lean_unchanged": true
     },
     "MD-8.4.4-VelocityRescaling": {
       "verdict": "PASS",
@@ -1426,8 +1517,12 @@
       "source_pages": "376",
       "semantic_review": "已对照目视原页核对对象、量词、技术资格和所列覆盖范围；网站尚未审阅。",
       "compile_receipt": "blueprint/ch08/closeout31/FINAL_COMPILE.json",
-      "coverage_gaps": [],
-      "final_status": "incomplete"
+      "coverage_gaps": [
+        "实际漂移扩散、Φ有效性和原始Φ对应Ψ的化简目标；没有完整乘性SDE解规格。"
+      ],
+      "final_status": "incomplete",
+      "metadata_instruction": 32,
+      "lean_unchanged": true
     },
     "MD-8.4.4-RescalingStationary": {
       "verdict": "PASS",
@@ -1444,24 +1539,26 @@
       "direct_placeholder": true,
       "missing": "退化乘性扩散的Gibbs积分分部；不建设一般Fokker–Planck与遍历理论。",
       "issues": [
-        "{\"codes\": [\"SUPPORT_NOT_SEPARATED_FROM_ZERO\", \"SINGULAR_BOUNDARY_CONTROL_MISSING\"], \"detail\": \"Itô二阶项确实冻结rescalingNoise Φ θ z，不含噪声导数，正确；C²势、正θ,Z和归一密度亦正确。但havoid量化Function.support f，即f≠0的集合，而HasCompactSupport约束的是其闭包；这不保证闭包与p=0分离。JSON所称“支撑远离K=0”比实际前提强。Admissible不控制Φ′在0附近的增长，因此不能直接用避开奇点的紧支撑分部积分论证覆盖所有给定测试函数。本项FAIL指所宣称的域/边界规格不足，并非已提供该Lean等式的数值反例。\", \"suggested_fix\": \"将havoid改为∀z∈tsupport f,z.2≠0，或明确存在ε>0使f的支撑上K≥ε。若希望包含接触p=0的测试函数，应另设边界、噪声正则性及生成元可积性条件并论证；不能静默扩大弱驻定范围。\"}"
+        "[RESOLVED] 旧issues及extra_assumptions中“havoid只量化Function.support f/尚未实现tsupport”的描述已过期；当前完整Lean与依赖规格均明确使用tsupport f。",
+        "[COVERAGE_GAP] 零动量边界、全局随机过程及半群不变性尚未形式化；此项是明确披露的覆盖限制，不是当前远离边界的弱驻定声明错误。"
       ],
       "website": "待网站审计",
       "statement_scope": "闭包支撑tsupport避开零动量的光滑紧支撑测试函数弱驻定目标；零动量边界及半群不变性未覆盖。",
       "extra_assumptions": [
-        "测试函数支撑远离K=0，覆盖弱驻定式；完整随机解与半群不变性列缺口。二阶项冻结f的一阶微分求导，表示Itô Hessian而不混入Stratonovich漂移。",
-        "havoid现对tsupport f量化，与HasCompactSupport的闭包支撑一致；未扩大到闭包接触p=0的测试函数。",
-        "应要求tsupport f避开p=0（或K有统一正下界），当前Lean havoid尚未实现这一条件。",
-        "二阶项冻结噪声方向，正确表示Itô Hessian；完整随机解、奇异边界与半群不变性未覆盖。"
+        "[EXTRA] hU要求U为C²；θ,Z>0且hρ完整要求正则概率密度归一与可积。Φ仅在K>0上光滑、正，另有KΦ在0附近有界及Φ无穷远至多多项式增长的原页条件。",
+        "[EXTRA] f为C∞紧支撑测试函数；当前havoid已对闭包支撑tsupport f量化，要求其中每点p≠0。有限维紧性确保非空闭包支撑与p=0分离，K在该支撑上具有严格正下界。",
+        "二阶项中rescalingNoise Φ θ z对内层变量x保持固定，得到Itô Hessian项的一半，不包含噪声方向的导数。",
+        "结论仅为∫Lf·ρβ=0的局部弱驻定目标；未断言随机解存在、零动量边界控制、Markov半群不变性或遍历性。"
       ],
       "source_pages": "376",
       "semantic_review": "已对照目视原页核对对象、量词、技术资格和所列覆盖范围；网站尚未审阅。",
       "compile_receipt": "blueprint/ch08/closeout31/FINAL_COMPILE.json",
       "coverage_gaps": [
-        "闭包支撑tsupport避开零动量的光滑紧支撑测试函数弱驻定目标；零动量边界及半群不变性未覆盖。",
-        "二阶项冻结噪声方向，正确表示Itô Hessian；完整随机解、奇异边界与半群不变性未覆盖。"
+        "闭包支撑tsupport避开零动量的光滑紧支撑测试函数弱驻定目标；零动量边界及半群不变性未覆盖。"
       ],
-      "final_status": "incomplete"
+      "final_status": "incomplete",
+      "metadata_instruction": 32,
+      "lean_unchanged": true
     },
     "MD-8.4.5-ThermostatEfficiency": {
       "verdict": "PASS",
@@ -1547,9 +1644,11 @@
       "semantic_review": "已对照目视原页核对对象、量词、技术资格和所列覆盖范围；网站尚未审阅。",
       "compile_receipt": "blueprint/ch08/closeout31/FINAL_COMPILE.json",
       "coverage_gaps": [
-        "效率比值、表8.1四行解析速率/低阶误差/效率估计及一般VR的O(N)含义；外引估计定理未证，经验曲线排除。"
+        "γ>0、θ,Q>0、N>0用于物理解释；一般VR的O(N)给出确切渐近性质定义，没有声称任意Φ族满足它。"
       ],
-      "final_status": "self-contained"
+      "final_status": "self-contained",
+      "metadata_instruction": 32,
+      "lean_unchanged": true
     },
     "MD-8.5-SLS": {
       "verdict": "PASS",
@@ -1589,7 +1688,9 @@
       "semantic_review": "已对照目视原页核对对象、量词、技术资格和所列覆盖范围；网站尚未审阅。",
       "compile_receipt": "blueprint/ch08/closeout31/FINAL_COMPILE.json",
       "coverage_gaps": [],
-      "final_status": "self-contained"
+      "final_status": "self-contained",
+      "metadata_instruction": 32,
+      "lean_unchanged": true
     },
     "MD-8.5-SLSBracketPrinted": {
       "verdict": "NEEDS_HUMAN",
@@ -1629,7 +1730,9 @@
       "semantic_review": "已对照目视原页核对对象、量词、技术资格和所列覆盖范围；网站尚未审阅。",
       "compile_receipt": "blueprint/ch08/closeout31/FINAL_COMPILE.json",
       "coverage_gaps": [],
-      "final_status": "incomplete"
+      "final_status": "incomplete",
+      "metadata_instruction": 32,
+      "lean_unchanged": true
     },
     "MD-8.5-SLSHormander": {
       "verdict": "PASS",
@@ -1657,7 +1760,9 @@
       "coverage_gaps": [
         "单位参数实际SLS场与噪声方向的点态Lie张成目标；不含几何遍历性。"
       ],
-      "final_status": "incomplete"
+      "final_status": "incomplete",
+      "metadata_instruction": 32,
+      "lean_unchanged": true
     },
     "MD-8.5-SLSConservation": {
       "verdict": "PASS",
@@ -1689,7 +1794,9 @@
       "semantic_review": "已对照目视原页核对对象、量词、技术资格和所列覆盖范围；网站尚未审阅。",
       "compile_receipt": "blueprint/ch08/closeout31/FINAL_COMPILE.json",
       "coverage_gaps": [],
-      "final_status": "incomplete"
+      "final_status": "incomplete",
+      "metadata_instruction": 32,
+      "lean_unchanged": true
     },
     "MD-8.5-SLSLeapfrog": {
       "verdict": "PASS",
@@ -1730,23 +1837,28 @@
       "direct_placeholder": false,
       "missing": null,
       "issues": [
-        "原书PDF379末段确实印作 ξ̇=−∂ηU，未带μ⁻¹；PDF380的两次kick及逐坐标场则都含μ⁻¹。statement_latex忠实保留了这个不一致。",
-        "已目视核对原页PDF379：η约化式的ξ导数漏μ⁻¹，新增Printed与恢复1/Q的_corrected；Q>0、正质量与U可微为物理域。分裂映射原有定义未改。"
+        "[ERRATUM?][SOURCE_MISSING_MU_IN_REDUCTION] 原页η约化式缺μ⁻¹，和(8.36)及两次kick不一致。原文及statement_latex保持不动，勘误须人工确认。",
+        "[DOMAIN_CLARIFICATION] Q>0、正质量及可微性只是物理解释域说明，没有作为Lean def的前提；不把总函数误读为所有参数上的经典动力学定理。",
+        "已目视核对原页PDF379：η约化式确实漏μ⁻¹，一般μ下应为ξ̇=−μ⁻¹∂ηU；原印与Printed保留，_corrected恢复1/Q。"
       ],
       "website": "待网站审计",
       "statement_scope": "原有半kick–drift–半kick与坐标场定义，另列原印η约化场和恢复1/Q的修正版；体积保持、误差阶及η变换推导未证明。",
       "extra_assumptions": [
-        "原文η约化方程漏μ⁻¹，算法保留Q⁻¹；本条覆盖原页算法及逐坐标场，不声称二阶不变分布误差或精确求积实现。",
-        "已目视核对原页PDF379：η约化式的ξ导数漏μ⁻¹，新增Printed与恢复1/Q的_corrected；Q>0、正质量与U可微为物理域。分裂映射原有定义未改。"
+        "[ERRATUM?] 原页379的η约化式确实印为ξ̇=−∂ηU，漏写了同页(8.36)及下一页kick公式中的μ⁻¹；Printed版逐字保留，_corrected版单独恢复1/Q。",
+        "本条仅定义半kick–drift–半kick、逐坐标场及两种约化场；OU耦合、体积保持、二阶不变分布误差、精确求积与坐标变换定理均未形式化。",
+        "[EXTRA] 物理域与总化导数/除法的区别见context_notation；这些限制不是现有def的Lean参数前提。",
+        "[EXTRA] 物理解释另需Q=μ>0、各invm_i>0及U可微；现有def不强制这些资格。"
       ],
       "source_pages": "379–380",
       "semantic_review": "已对照目视原页核对对象、量词、技术资格和所列覆盖范围；网站尚未审阅。",
       "compile_receipt": "blueprint/ch08/closeout31/FINAL_COMPILE.json",
       "coverage_gaps": [
         "原有半kick–drift–半kick与坐标场定义，另列原印η约化场和恢复1/Q的修正版；体积保持、误差阶及η变换推导未证明。",
-        "原文η约化方程漏μ⁻¹，算法保留Q⁻¹；本条覆盖原页算法及逐坐标场，不声称二阶不变分布误差或精确求积实现。"
+        "本条仅定义半kick–drift–半kick、逐坐标场及两种约化场；OU耦合、体积保持、二阶不变分布误差、精确求积与坐标变换定理均未形式化。"
       ],
-      "final_status": "self-contained"
+      "final_status": "self-contained",
+      "metadata_instruction": 32,
+      "lean_unchanged": true
     },
     "MD-8.5-SLSDoubleWell": {
       "verdict": "PASS",
@@ -1776,7 +1888,9 @@
       "semantic_review": "已对照目视原页核对对象、量词、技术资格和所列覆盖范围；网站尚未审阅。",
       "compile_receipt": "blueprint/ch08/closeout31/FINAL_COMPILE.json",
       "coverage_gaps": [],
-      "final_status": "self-contained"
+      "final_status": "self-contained",
+      "metadata_instruction": 32,
+      "lean_unchanged": true
     },
     "MD-8.6-IsokineticField": {
       "verdict": "PASS",
@@ -1811,7 +1925,9 @@
       "semantic_review": "已对照目视原页核对对象、量词、技术资格和所列覆盖范围；网站尚未审阅。",
       "compile_receipt": "blueprint/ch08/closeout31/FINAL_COMPILE.json",
       "coverage_gaps": [],
-      "final_status": "self-contained"
+      "final_status": "self-contained",
+      "metadata_instruction": 32,
+      "lean_unchanged": true
     },
     "MD-8.6-IsokineticProjector": {
       "verdict": "PASS",
@@ -1849,7 +1965,9 @@
       "coverage_gaps": [
         "实际投影定义、固定p及幂等性目标；完整像空间刻画未覆盖。"
       ],
-      "final_status": "incomplete"
+      "final_status": "incomplete",
+      "metadata_instruction": 32,
+      "lean_unchanged": true
     },
     "MD-8.6-IsokineticDivergencePrinted": {
       "verdict": "NEEDS_HUMAN",
@@ -1891,7 +2009,9 @@
       "semantic_review": "已对照目视原页核对对象、量词、技术资格和所列覆盖范围；网站尚未审阅。",
       "compile_receipt": "blueprint/ch08/closeout31/FINAL_COMPILE.json",
       "coverage_gaps": [],
-      "final_status": "incomplete"
+      "final_status": "incomplete",
+      "metadata_instruction": 32,
+      "lean_unchanged": true
     },
     "MD-8.6-IsokineticGibbsShell": {
       "verdict": "PASS",
@@ -1928,7 +2048,9 @@
       "coverage_gaps": [
         "动能壳与Gibbs因子的逐点关系；不声称完整曲面概率测度定理。"
       ],
-      "final_status": "self-contained"
+      "final_status": "self-contained",
+      "metadata_instruction": 32,
+      "lean_unchanged": true
     },
     "MD-8.6.1-StochasticIsokinetic": {
       "verdict": "PASS",
@@ -1973,7 +2095,9 @@
       "semantic_review": "已对照目视原页核对对象、量词、技术资格和所列覆盖范围；网站尚未审阅。",
       "compile_receipt": "blueprint/ch08/closeout31/FINAL_COMPILE.json",
       "coverage_gaps": [],
-      "final_status": "self-contained"
+      "final_status": "self-contained",
+      "metadata_instruction": 32,
+      "lean_unchanged": true
     },
     "MD-8.6.1-SINWeightPrinted": {
       "verdict": "NEEDS_HUMAN",
@@ -2014,7 +2138,9 @@
       "coverage_gaps": [
         "原印及补热浴质量的权重、正约束面局部驻定目标；曲面边缘分布及遍历性未覆盖。"
       ],
-      "final_status": "incomplete"
+      "final_status": "incomplete",
+      "metadata_instruction": 32,
+      "lean_unchanged": true
     },
     "MD-8.6.2-SINHarmonic": {
       "verdict": "PASS",
@@ -2066,7 +2192,9 @@
       "coverage_gaps": [
         "谐振SIN实际SDE、例外直线和半柱定义及半柱不交；不含全局遍历定理。"
       ],
-      "final_status": "self-contained"
+      "final_status": "self-contained",
+      "metadata_instruction": 32,
+      "lean_unchanged": true
     },
     "MD-8.6.2-SINProjectedBracketsPrinted": {
       "verdict": "NEEDS_HUMAN",
@@ -2149,7 +2277,9 @@
       "coverage_gaps": [
         "本条记录原印显式式和真实微分定义；显式式与真实二/三重交换子的等式尚未证明，列覆盖缺口。"
       ],
-      "final_status": "self-contained"
+      "final_status": "self-contained",
+      "metadata_instruction": 32,
+      "lean_unchanged": true
     },
     "MD-8.6.2-SINThirdBracketPrinted": {
       "verdict": "NEEDS_HUMAN",
@@ -2200,7 +2330,9 @@
       "coverage_gaps": [
         "ξ₁≠0用于分式化简；此处只核对原印(8.54)与(8.56)内部的代数关系，不声称(8.54)已被确认为实际三重交换子。"
       ],
-      "final_status": "self-contained"
+      "final_status": "self-contained",
+      "metadata_instruction": 32,
+      "lean_unchanged": true
     },
     "MD-8.6.2-SINBracketRank": {
       "verdict": "PASS",
@@ -2230,7 +2362,9 @@
       "coverage_gaps": [
         "θ,γ正，ξ₁≠0且在正约束面；仅声明有限向量族张成实际切空间，Hörmander理论推出平滑密度或遍历性未覆盖。"
       ],
-      "final_status": "incomplete"
+      "final_status": "incomplete",
+      "metadata_instruction": 32,
+      "lean_unchanged": true
     },
     "MD-8.6.2-SINLyapunov": {
       "verdict": "PASS",
@@ -2268,25 +2402,29 @@
       "direct_placeholder": true,
       "missing": "二次测试函数的实际二阶Fréchet计算；不建设遍历理论。",
       "issues": [
-        "PDF390生成元计算与statement_latex吻合；但原书随后给−γξ₂²+Kξ₂+σ²/2作为全局上界，未对ξ₂正负分情况。原文须保留并注明此上界疑误。仅在ξ₂方向的负漂移也不能单独推出非紧q方向的遍历性。",
-        "原文从局部负漂移到遍历性的论证需要额外全局条件；现有Lean没有此结论。",
-        "已目视核对原页PDF390：有符号Cξ₂尾界不能统一控制两侧；工作修正版为−γξ₂²+θ|ξ₂|+γθ。它依赖尚未证明的局部生成元恒等式，不代表遍历性证明。"
+        "[ERRATUM?][SOURCE_LYAPUNOV_SIGNED_BOUND] 原页390以ξ₁有界推出固定有符号Kξ₂全局上界，未区分ξ₂正负。需保留原文并由人工确认勘误；绝对值修正版正确。",
+        "[SOURCE_ERGODICITY_GAP] 原页还提出周期/有界配置、约束及候选测度在开集上为正等全局条件，并援引其他论证；当前局部Lean声明没有遍历性结论，不能将其当作完整遍历性证明。",
+        "已目视核对原页PDF390：原印有符号Kξ₂界不能统一控制正负两侧。单位质量Q1=Q2=1、σ²=2γθ下修正版为−γξ₂²+θ|ξ₂|+γθ；仅为局部生成元和约束界，不推出遍历性。"
       ],
       "website": "待网站审计",
       "statement_scope": "局部生成元恒等式、约束上的热浴界、原印有符号尾项表达式与绝对值尾界修正版；不含遍历性充分性。",
       "extra_assumptions": [
-        "仅生成元作用和约束界；原文有符号ξ₂的Kξ₂上界须区分尾部方向，严谨负漂移应使用K|ξ₂|并要求γ>0。",
-        "紧性、正密度、小集与Markov半群遍历定理均列覆盖缺口。",
-        "已目视核对原页PDF390：有符号Cξ₂尾界不能统一控制两侧；工作修正版为−γξ₂²+θ|ξ₂|+γθ。它依赖尚未证明的局部生成元恒等式，不代表遍历性证明。"
+        "[EXTRA] sinGenerator_lyapunov要求θ>0、γ>0与Λ≠0；sinLyapunovTail_corrected要求Λ=θ，因θ>0自动排除Λ=0。",
+        "sinConstraint_bathBound允许任意θ，但约束等式本身蕴含θ≥0及ξ₁²≤2θ；无需漏加θ>0。",
+        "[ERRATUM?] 原页的固定有符号Kξ₂项不能统一支配两侧尾部；Printed仅存原印表达式，不断言其为上界；修正版为−γξ₂²+θ|ξ₂|+γθ。",
+        "仅覆盖生成元恒等式与约束界；局部计算尚有sorry，此项不据此判签名FAIL。未形式化遍历性的全局条件或充分性。",
+        "[EXTRA] 当前生成元固定单位质量Q1=Q2=1，并使用σ²=2γθ；常数γθ来自σ²/2。局部生成元和约束界不等于全局遍历性。"
       ],
       "source_pages": "389–390",
       "semantic_review": "已对照目视原页核对对象、量词、技术资格和所列覆盖范围；网站尚未审阅。",
       "compile_receipt": "blueprint/ch08/closeout31/FINAL_COMPILE.json",
       "coverage_gaps": [
         "局部生成元恒等式、约束上的热浴界、原印有符号尾项表达式与绝对值尾界修正版；不含遍历性充分性。",
-        "已目视核对原页PDF390：有符号Cξ₂尾界不能统一控制两侧；工作修正版为−γξ₂²+θ|ξ₂|+γθ。它依赖尚未证明的局部生成元恒等式，不代表遍历性证明。"
+        "仅覆盖生成元恒等式与约束界；局部计算尚有sorry，此项不据此判签名FAIL。未形式化遍历性的全局条件或充分性。"
       ],
-      "final_status": "incomplete"
+      "final_status": "incomplete",
+      "metadata_instruction": 32,
+      "lean_unchanged": true
     },
     "MD-8.6.3-SINForceSplitting": {
       "verdict": "PASS",
@@ -2338,7 +2476,9 @@
       "coverage_gaps": [
         "五个子场及其实际和分解、力子场瞬时约束平衡；不含整体方法阶数。"
       ],
-      "final_status": "self-contained"
+      "final_status": "self-contained",
+      "metadata_instruction": 32,
+      "lean_unchanged": true
     },
     "MD-8.6.3-SINRAlgorithm": {
       "verdict": "PASS",
@@ -2366,7 +2506,9 @@
       "coverage_gaps": [
         "原印算法的阶段顺序与步长；不声称构造了各非线性子流。"
       ],
-      "final_status": "self-contained"
+      "final_status": "self-contained",
+      "metadata_instruction": 32,
+      "lean_unchanged": true
     },
     "MD-8.6.3-SINNoseSubsplitting": {
       "verdict": "PASS",
@@ -2401,7 +2543,9 @@
       "semantic_review": "已对照目视原页核对对象、量词、技术资格和所列覆盖范围；网站尚未审阅。",
       "compile_receipt": "blueprint/ch08/closeout31/FINAL_COMPILE.json",
       "coverage_gaps": [],
-      "final_status": "self-contained"
+      "final_status": "self-contained",
+      "metadata_instruction": 32,
+      "lean_unchanged": true
     },
     "MD-8.6.3-SINForceExactPrinted": {
       "verdict": "NEEDS_HUMAN",
@@ -2451,7 +2595,9 @@
       "semantic_review": "已对照目视原页核对对象、量词、技术资格和所列覆盖范围；网站尚未审阅。",
       "compile_receipt": "blueprint/ch08/closeout31/FINAL_COMPILE.json",
       "coverage_gaps": [],
-      "final_status": "incomplete"
+      "final_status": "incomplete",
+      "metadata_instruction": 32,
+      "lean_unchanged": true
     },
     "MD-8.6.4-SINThreeLevelPotential": {
       "verdict": "PASS",
@@ -2481,7 +2627,9 @@
       "semantic_review": "已对照目视原页核对对象、量词、技术资格和所列覆盖范围；网站尚未审阅。",
       "compile_receipt": "blueprint/ch08/closeout31/FINAL_COMPILE.json",
       "coverage_gaps": [],
-      "final_status": "self-contained"
+      "final_status": "self-contained",
+      "metadata_instruction": 32,
+      "lean_unchanged": true
     },
     "MD-8.7-GeneralizedLangevin": {
       "verdict": "PASS",
@@ -2518,7 +2666,9 @@
       "semantic_review": "已对照目视原页核对对象、量词、技术资格和所列覆盖范围；网站尚未审阅。",
       "compile_receipt": "blueprint/ch08/closeout31/FINAL_COMPILE.json",
       "coverage_gaps": [],
-      "final_status": "self-contained"
+      "final_status": "self-contained",
+      "metadata_instruction": 32,
+      "lean_unchanged": true
     },
     "MD-8.7-GLEFluctuationDissipationPrinted": {
       "verdict": "NEEDS_HUMAN",
@@ -2561,10 +2711,11 @@
       "semantic_review": "已对照目视原页核对对象、量词、技术资格和所列覆盖范围；网站尚未审阅。",
       "compile_receipt": "blueprint/ch08/closeout31/FINAL_COMPILE.json",
       "coverage_gaps": [
-        "Printed与一般矩阵协方差目标及标量核定义；不包含涨落耗散定理的物理推导。",
         "修正版作为单位质量下的一般矩阵协方差目标，不声称任意Γ均可实现为随机过程；正定协方差/核存在性列缺口。"
       ],
-      "final_status": "self-contained"
+      "final_status": "self-contained",
+      "metadata_instruction": 32,
+      "lean_unchanged": true
     },
     "MD-8.7-PronyKernel": {
       "verdict": "PASS",
@@ -2599,10 +2750,11 @@
       "semantic_review": "已对照目视原页核对对象、量词、技术资格和所列覆盖范围；网站尚未审阅。",
       "compile_receipt": "blueprint/ch08/closeout31/FINAL_COMPILE.json",
       "coverage_gaps": [
-        "正指数系数/记忆时间资格、Prony核定义及非负性；不包含过程极限。",
         "正cₖ、τₖ为后文OU实现所用域；此处只定义Prony核并证明非负，不声称任意记忆核的逼近误差。"
       ],
-      "final_status": "self-contained"
+      "final_status": "self-contained",
+      "metadata_instruction": 32,
+      "lean_unchanged": true
     },
     "MD-8.7.1-PronyMemoryODE": {
       "verdict": "PASS",
@@ -2644,7 +2796,9 @@
       "semantic_review": "已对照目视原页核对对象、量词、技术资格和所列覆盖范围；网站尚未审阅。",
       "compile_receipt": "blueprint/ch08/closeout31/FINAL_COMPILE.json",
       "coverage_gaps": [],
-      "final_status": "incomplete"
+      "final_status": "incomplete",
+      "metadata_instruction": 32,
+      "lean_unchanged": true
     },
     "MD-8.7.1-PronyOUStationarity": {
       "verdict": "PASS",
@@ -2677,23 +2831,28 @@
       "direct_placeholder": true,
       "missing": "平稳OU随机初态协方差与当前积分解规格的桥接；不新建Gaussian过程理论。",
       "issues": [
-        "[ERRATUM?] 保留原印相关式并加[ERRATUM?]，明确它在平稳初态下成立；保留已写入Lean的Gaussian初态及独立性。",
-        "[ERRATUM?] 原页(8.66)省略平稳初态；Lean补入的初始Gaussian律及其与W独立是必要资格。",
-        "已目视核对原页PDF397：(8.66)未声明平稳初态；保留原句，_corrected明确引用stationaryPronyOU的Gaussian初态和整条W独立性。总随机力只定义有限和，未证跨模式独立或总协方差。"
+        "[ERRATUM?] 原页(8.66)断言零均值及与t无关的二阶矩，页内未声明初始律；仅由(8.65)不能推出。原印原句必须保留，是否上下文已默认平稳解释需人工确认。",
+        "[EXTRA] stationaryPronyOU补充了正参数、平稳Gaussian初态、与整条W独立、路径连续及各非负时刻L²资格；应显式标记其为修正版前提。pronyOU_covariance和_corrected签名相同，前者也已经是带补充资格的版本，不能当作无条件原印断言。",
+        "已目视核对原页PDF397：(8.66)印出s≥0但未说明平稳初态。修正版另加[EXTRA]初态N(0,θc/τ)且与整条W独立；t,s≥0；有限和用k∈Fin K，不宣称跨模式总协方差。"
       ],
       "website": "待网站审计",
-      "statement_scope": "单个Prony OU的完整资格及平稳均值/协方差目标、总随机力定义。",
+      "statement_scope": "(8.65)–(8.67)的单分量OU方程、原印均值/相关式及有限和；Lean的两个covariance定理均为显式带平稳资格的修正版；保留原印缺省资格疑误。",
       "extra_assumptions": [
-        "为(8.66)补平稳Gaussian初态及其与未来整条W独立；确定初态OU一般没有所印不依赖t的协方差。多分量实际实现使用独立W坐标。",
-        "已目视核对原页PDF397：(8.66)未声明平稳初态；保留原句，_corrected明确引用stationaryPronyOU的Gaussian初态和整条W独立性。总随机力只定义有限和，未证跨模式独立或总协方差。"
+        "[EXTRA] θ代表k_BT，c、τ、θ严格为正；W为一个实Brownian坐标（Vec 1）。",
+        "[EXTRA] R(0)具有N(0,θc/τ)律且与整条W独立；非负时间路径几乎处处连续，各非负时刻R(t)属于L²；积分方程逐个非负时刻几乎处处成立。",
+        "[EXTRA] 这里没有对多个模式的W作联合独立假设；totalPronyRandomForce仅为有限和定义，不声称总协方差公式。",
+        "[EXTRA] t,s≥0；totalPronyRandomForce的求和为k∈Fin K（0,…,K−1，对应书中1,…,kmax）；没有跨模式独立或总协方差定理。"
       ],
       "source_pages": "397",
       "semantic_review": "已对照目视原页核对对象、量词、技术资格和所列覆盖范围；网站尚未审阅。",
       "compile_receipt": "blueprint/ch08/closeout31/FINAL_COMPILE.json",
       "coverage_gaps": [
-        "已目视核对原页PDF397：(8.66)未声明平稳初态；保留原句，_corrected明确引用stationaryPronyOU的Gaussian初态和整条W独立性。总随机力只定义有限和，未证跨模式独立或总协方差。"
+        "[EXTRA] 这里没有对多个模式的W作联合独立假设；totalPronyRandomForce仅为有限和定义，不声称总协方差公式。",
+        "[EXTRA] t,s≥0；totalPronyRandomForce的求和为k∈Fin K（0,…,K−1，对应书中1,…,kmax）；没有跨模式独立或总协方差定理。"
       ],
-      "final_status": "incomplete"
+      "final_status": "incomplete",
+      "metadata_instruction": 32,
+      "lean_unchanged": true
     },
     "MD-8.7.1-CombinedPronyVariable": {
       "verdict": "PASS",
@@ -2739,7 +2898,9 @@
       "semantic_review": "已对照目视原页核对对象、量词、技术资格和所列覆盖范围；网站尚未审阅。",
       "compile_receipt": "blueprint/ch08/closeout31/FINAL_COMPILE.json",
       "coverage_gaps": [],
-      "final_status": "self-contained"
+      "final_status": "self-contained",
+      "metadata_instruction": 32,
+      "lean_unchanged": true
     },
     "MD-8.7.1-PronyLangevinLimit": {
       "verdict": "PASS",
@@ -2775,7 +2936,9 @@
       "semantic_review": "已对照目视原页核对对象、量词、技术资格和所列覆盖范围；网站尚未审阅。",
       "compile_receipt": "blueprint/ch08/closeout31/FINAL_COMPILE.json",
       "coverage_gaps": [],
-      "final_status": "incomplete"
+      "final_status": "incomplete",
+      "metadata_instruction": 32,
+      "lean_unchanged": true
     },
     "MD-8.7.1-GeneralizedLangevinIntegrator": {
       "verdict": "PASS",
@@ -2805,10 +2968,10 @@
       "source_pages": "398",
       "semantic_review": "已对照目视原页核对对象、量词、技术资格和所列覆盖范围；网站尚未审阅。",
       "compile_receipt": "blueprint/ch08/closeout31/FINAL_COMPILE.json",
-      "coverage_gaps": [
-        "此处完整单步定义，不包含离散不变分布、全局弱阶或Langevin极限保持的定理。"
-      ],
-      "final_status": "self-contained"
+      "coverage_gaps": [],
+      "final_status": "self-contained",
+      "metadata_instruction": 32,
+      "lean_unchanged": true
     },
     "MD-8.7.1-GLEConsistentCoefficients": {
       "verdict": "PASS",
@@ -2855,7 +3018,9 @@
       "semantic_review": "已对照目视原页核对对象、量词、技术资格和所列覆盖范围；网站尚未审阅。",
       "compile_receipt": "blueprint/ch08/closeout31/FINAL_COMPILE.json",
       "coverage_gaps": [],
-      "final_status": "incomplete"
+      "final_status": "incomplete",
+      "metadata_instruction": 32,
+      "lean_unchanged": true
     },
     "MD-8.8-NPTThermodynamics": {
       "verdict": "PASS",
@@ -2890,7 +3055,9 @@
       "semantic_review": "已对照目视原页核对对象、量词、技术资格和所列覆盖范围；网站尚未审阅。",
       "compile_receipt": "blueprint/ch08/closeout31/FINAL_COMPILE.json",
       "coverage_gaps": [],
-      "final_status": "self-contained"
+      "final_status": "self-contained",
+      "metadata_instruction": 32,
+      "lean_unchanged": true
     },
     "MD-8.8-NPTBathTaylor": {
       "verdict": "PASS",
@@ -2921,7 +3088,9 @@
       "semantic_review": "已对照目视原页核对对象、量词、技术资格和所列覆盖范围；网站尚未审阅。",
       "compile_receipt": "blueprint/ch08/closeout31/FINAL_COMPILE.json",
       "coverage_gaps": [],
-      "final_status": "incomplete"
+      "final_status": "incomplete",
+      "metadata_instruction": 32,
+      "lean_unchanged": true
     },
     "MD-8.8-NPTDensity": {
       "verdict": "PASS",
@@ -2965,8 +3134,12 @@
       "source_pages": "399–400",
       "semantic_review": "已对照目视原页核对对象、量词、技术资格和所列覆盖范围；网站尚未审阅。",
       "compile_receipt": "blueprint/ch08/closeout31/FINAL_COMPILE.json",
-      "coverage_gaps": [],
-      "final_status": "self-contained"
+      "coverage_gaps": [
+        "三维N粒子时n=3N；盒域明确依赖V，并用受限Lebesgue测度。正有限配分积分与可积性明示；没有由任意势假装得到NPT概率。"
+      ],
+      "final_status": "self-contained",
+      "metadata_instruction": 32,
+      "lean_unchanged": true
     },
     "MD-8.8-AndersenCoordinates": {
       "verdict": "PASS",
@@ -3012,10 +3185,10 @@
       "source_pages": "400–401",
       "semantic_review": "已对照目视原页核对对象、量词、技术资格和所列覆盖范围；网站尚未审阅。",
       "compile_receipt": "blueprint/ch08/closeout31/FINAL_COMPILE.json",
-      "coverage_gaps": [
-        "V>0用于实分数幂的导数与乘法；质量物理解读取正，等式本身是坐标变换，不包含随体积变化的全局正则流或规范测度。"
-      ],
-      "final_status": "incomplete"
+      "coverage_gaps": [],
+      "final_status": "incomplete",
+      "metadata_instruction": 32,
+      "lean_unchanged": true
     },
     "MD-8.8-AndersenKineticEnergy": {
       "verdict": "PASS",
@@ -3051,7 +3224,9 @@
       "semantic_review": "已对照目视原页核对对象、量词、技术资格和所列覆盖范围；网站尚未审阅。",
       "compile_receipt": "blueprint/ch08/closeout31/FINAL_COMPILE.json",
       "coverage_gaps": [],
-      "final_status": "incomplete"
+      "final_status": "incomplete",
+      "metadata_instruction": 32,
+      "lean_unchanged": true
     },
     "MD-8.8-AndersenHamiltonianPrinted": {
       "verdict": "NEEDS_HUMAN",
@@ -3099,7 +3274,9 @@
       "coverage_gaps": [
         "[EXTRA] andersenMarginal_corrected仅是除以参数Z的权重，不声称自动归一。若作概率密度，须在相同坐标和V>0域上可积，且Z为相同权重的正有限配分积分；任意Z>0不足。"
       ],
-      "final_status": "incomplete"
+      "final_status": "incomplete",
+      "metadata_instruction": 32,
+      "lean_unchanged": true
     },
     "MD-8.8.1-NHLPistonEquations": {
       "verdict": "PASS",
@@ -3145,7 +3322,9 @@
       "semantic_review": "已对照目视原页核对对象、量词、技术资格和所列覆盖范围；网站尚未审阅。",
       "compile_receipt": "blueprint/ch08/closeout31/FINAL_COMPILE.json",
       "coverage_gaps": [],
-      "final_status": "self-contained"
+      "final_status": "self-contained",
+      "metadata_instruction": 32,
+      "lean_unchanged": true
     },
     "MD-8.8.1-PistonHamiltonianSubfield": {
       "verdict": "PASS",
@@ -3177,20 +3356,25 @@
       "direct_placeholder": true,
       "missing": "有限维Hamiltonian散度与冻结辅助变量的链式法则桥接。",
       "issues": [
-        "保留原页文字；在issues显式标[ERRATUM?]：原印p应为M⁻¹p（或注明单位质量约定）。给现有Hamiltonian子场标为合理修正，不将其与原印向量场混同。",
-        "已目视核对原页PDF402：文字子场印为(p,−∇U,0,0,0)，一般质量应为(M⁻¹p,−∇U,0,0,0)或另限单位质量。旧pistonHamiltonianPart及其驻定目标属于合理修正，新增Printed与_corrected明确区分。"
+        "[ERRATUM?] 原页先给q̇=M⁻¹p+ηq，随后驻定子场却明确印为(p,−∇U,0,0,0)。对于一般质量及所印能量，二者不一致；不可将原印首分量静默改为M⁻¹p。",
+        "[EXTRA] Lean只陈述全实坐标空间上的局部加权通量散度为零；φ、ψ可取有符号光滑权，未要求非负、归一化或V≥0上的可积性。因此不能解释为已构造概率平稳分布或全局保测流。",
+        "已目视核对原页PDF402：原印场为(p,−∇U,0,0,0)，一般质量的修正场为(M⁻¹p,−∇U,0,0,0)。原印p与本页q̇=M⁻¹p+ηq不一致，修正版仅给局部通量散度目标。"
       ],
       "website": "待网站审计",
       "statement_scope": "原印p子场、M⁻¹p修正子场及修正子场光滑复合权的局部驻定目标；不把修正场说成逐字原印场。",
       "extra_assumptions": [
-        "只陈述实际通量散度为零；φ,ψ是权重而非自动概率密度，归一、可积和全局保测流不在本条。",
-        "已目视核对原页PDF402：文字子场印为(p,−∇U,0,0,0)，一般质量应为(M⁻¹p,−∇U,0,0,0)或另限单位质量。旧pistonHamiltonianPart及其驻定目标属于合理修正，新增Printed与_corrected明确区分。"
+        "[EXTRA] invm:Fin n→ℝ表示固定对角逆质量系数；Lean全称允许任意实系数，不要求正性，散度恒等式仍成立。",
+        "[EXTRA] U:(Vec n×ℝ)→ℝ为C²，φ:ℝ→ℝ和ψ:Vec 3→ℝ为C¹；U允许依赖作为冻结参数的V。",
+        "[EXTRA] 状态为((q,p),(V,ξ,η))，后三坐标在子场下全为零。Lean仅陈述局部通量散度零，不要求权非负、归一或可积，也不证明全局流或边界性质。",
+        "[ERRATUM?] 原印子场首分量p，仅单位质量等特殊情形与所印能量一致；修正版采用M⁻¹p。"
       ],
       "source_pages": "402",
       "semantic_review": "已对照目视原页核对对象、量词、技术资格和所列覆盖范围；网站尚未审阅。",
       "compile_receipt": "blueprint/ch08/closeout31/FINAL_COMPILE.json",
       "coverage_gaps": [],
-      "final_status": "incomplete"
+      "final_status": "incomplete",
+      "metadata_instruction": 32,
+      "lean_unchanged": true
     },
     "MD-8.8.1-PistonThermostatWeightPrinted": {
       "verdict": "NEEDS_HUMAN",
@@ -3234,7 +3418,9 @@
       "semantic_review": "已对照目视原页核对对象、量词、技术资格和所列覆盖范围；网站尚未审阅。",
       "compile_receipt": "blueprint/ch08/closeout31/FINAL_COMPILE.json",
       "coverage_gaps": [],
-      "final_status": "incomplete"
+      "final_status": "incomplete",
+      "metadata_instruction": 32,
+      "lean_unchanged": true
     },
     "MD-8.8.1-PistonReducedPDE": {
       "verdict": "PASS",
@@ -3267,7 +3453,9 @@
       "coverage_gaps": [
         "只核对所印局部微分方程；正V消去压力分母，概率归一、边界通量与遍历性未覆盖。"
       ],
-      "final_status": "incomplete"
+      "final_status": "incomplete",
+      "metadata_instruction": 32,
+      "lean_unchanged": true
     },
     "MD-8.8.1-PistonStationaryWeight": {
       "verdict": "PASS",
@@ -3304,7 +3492,9 @@
       "semantic_review": "已对照目视原页核对对象、量词、技术资格和所列覆盖范围；网站尚未审阅。",
       "compile_receipt": "blueprint/ch08/closeout31/FINAL_COMPILE.json",
       "coverage_gaps": [],
-      "final_status": "incomplete"
+      "final_status": "incomplete",
+      "metadata_instruction": 32,
+      "lean_unchanged": true
     },
     "MD-8.8.2-PistonIntegrator": {
       "verdict": "PASS",
@@ -3365,7 +3555,9 @@
       "semantic_review": "已对照目视原页核对对象、量词、技术资格和所列覆盖范围；网站尚未审阅。",
       "compile_receipt": "blueprint/ch08/closeout31/FINAL_COMPILE.json",
       "coverage_gaps": [],
-      "final_status": "self-contained"
+      "final_status": "self-contained",
+      "metadata_instruction": 32,
+      "lean_unchanged": true
     },
     "MD-8.8.3-ParrinelloRahman": {
       "verdict": "PASS",
@@ -3421,7 +3613,9 @@
       "semantic_review": "已对照目视原页核对对象、量词、技术资格和所列覆盖范围；网站尚未审阅。",
       "compile_receipt": "blueprint/ch08/closeout31/FINAL_COMPILE.json",
       "coverage_gaps": [],
-      "final_status": "self-contained"
+      "final_status": "self-contained",
+      "metadata_instruction": 32,
+      "lean_unchanged": true
     },
     "MD-8.9-TotalMomentum": {
       "verdict": "PASS",
@@ -3466,7 +3660,9 @@
       "semantic_review": "已对照目视原页核对对象、量词、技术资格和所列覆盖范围；网站尚未审阅。",
       "compile_receipt": "blueprint/ch08/closeout31/FINAL_COMPILE.json",
       "coverage_gaps": [],
-      "final_status": "self-contained"
+      "final_status": "self-contained",
+      "metadata_instruction": 32,
+      "lean_unchanged": true
     },
     "MD-8.9.1-DPDSoftPotential": {
       "verdict": "PASS",
@@ -3527,7 +3723,9 @@
       "semantic_review": "已对照目视原页核对对象、量词、技术资格和所列覆盖范围；网站尚未审阅。",
       "compile_receipt": "blueprint/ch08/closeout31/FINAL_COMPILE.json",
       "coverage_gaps": [],
-      "final_status": "incomplete"
+      "final_status": "incomplete",
+      "metadata_instruction": 32,
+      "lean_unchanged": true
     },
     "MD-8.9.1-DPDPairForces": {
       "verdict": "PASS",
@@ -3582,7 +3780,9 @@
       "semantic_review": "已对照目视原页核对对象、量词、技术资格和所列覆盖范围；网站尚未审阅。",
       "compile_receipt": "blueprint/ch08/closeout31/FINAL_COMPILE.json",
       "coverage_gaps": [],
-      "final_status": "self-contained"
+      "final_status": "self-contained",
+      "metadata_instruction": 32,
+      "lean_unchanged": true
     },
     "MD-8.9.1-DPDPairWiener": {
       "verdict": "PASS",
@@ -3620,7 +3820,9 @@
       "semantic_review": "已对照目视原页核对对象、量词、技术资格和所列覆盖范围；网站尚未审阅。",
       "compile_receipt": "blueprint/ch08/closeout31/FINAL_COMPILE.json",
       "coverage_gaps": [],
-      "final_status": "incomplete"
+      "final_status": "incomplete",
+      "metadata_instruction": 32,
+      "lean_unchanged": true
     },
     "MD-8.9.1-DPDIntegralSystem": {
       "verdict": "PASS",
@@ -3663,7 +3865,9 @@
       "coverage_gaps": [
         "选择强L²、非碰撞解类；不声称与所有弱解等价，也不建立SDE存在唯一或Markov半群。"
       ],
-      "final_status": "self-contained"
+      "final_status": "self-contained",
+      "metadata_instruction": 32,
+      "lean_unchanged": true
     },
     "MD-8.9.1-DPDCanonicalLeaf": {
       "verdict": "PASS",
@@ -3709,7 +3913,9 @@
       "semantic_review": "已对照目视原页核对对象、量词、技术资格和所列覆盖范围；网站尚未审阅。",
       "compile_receipt": "blueprint/ch08/closeout31/FINAL_COMPILE.json",
       "coverage_gaps": [],
-      "final_status": "self-contained"
+      "final_status": "self-contained",
+      "metadata_instruction": 32,
+      "lean_unchanged": true
     },
     "MD-8.9.1-DPDMassOrderPrinted": {
       "verdict": "NEEDS_HUMAN",
@@ -3749,7 +3955,9 @@
       "coverage_gaps": [
         "M应正定、θ>0；本条记录两个矩阵关系目标与不交换反例，不声称由形式关系自动得到不变概率。"
       ],
-      "final_status": "self-contained"
+      "final_status": "self-contained",
+      "metadata_instruction": 32,
+      "lean_unchanged": true
     },
     "MD-8.9.2-DPDVelocityVerlet": {
       "verdict": "PASS",
@@ -3787,7 +3995,9 @@
       "coverage_gaps": [
         "尚未证明书中预期的一阶弱收敛；未把随机输入映射称为对称确定性流。"
       ],
-      "final_status": "self-contained"
+      "final_status": "self-contained",
+      "metadata_instruction": 32,
+      "lean_unchanged": true
     },
     "MD-8.9.2-DPDSplitGenerator": {
       "verdict": "PASS",
@@ -3845,7 +4055,9 @@
       "coverage_gaps": [
         "采用独立无序对的Itô二阶导数形式，实现(8.97)有序双和的合并表达；未证明有序/无序表达等价。"
       ],
-      "final_status": "self-contained"
+      "final_status": "self-contained",
+      "metadata_instruction": 32,
+      "lean_unchanged": true
     },
     "MD-8.9.2-DPDPairGeneratorPrinted": {
       "verdict": "NEEDS_HUMAN",
@@ -3884,7 +4096,9 @@
       "coverage_gaps": [
         "本条只分别定义原印和成对修正版；不声称已证明驻定概率或原书单对不变性。"
       ],
-      "final_status": "self-contained"
+      "final_status": "self-contained",
+      "metadata_instruction": 32,
+      "lean_unchanged": true
     },
     "MD-8.9.2-DPDSplittingCompositions": {
       "verdict": "PASS",
@@ -3921,7 +4135,9 @@
       "semantic_review": "已对照目视原页核对对象、量词、技术资格和所列覆盖范围；网站尚未审阅。",
       "compile_receipt": "blueprint/ch08/closeout31/FINAL_COMPILE.json",
       "coverage_gaps": [],
-      "final_status": "self-contained"
+      "final_status": "self-contained",
+      "metadata_instruction": 32,
+      "lean_unchanged": true
     },
     "MD-8.9.2-DPDPairOUUpdate": {
       "verdict": "NEEDS_HUMAN",
@@ -3982,7 +4198,9 @@
       "coverage_gaps": [
         "单对精确分布律及其随机积分推导未证明；已证明质量正性、零率值与逐对总动量代数守恒。"
       ],
-      "final_status": "self-contained"
+      "final_status": "self-contained",
+      "metadata_instruction": 32,
+      "lean_unchanged": true
     },
     "MD-8.9.3-PairwiseNoseHoover": {
       "verdict": "PASS",
@@ -4023,7 +4241,9 @@
       "semantic_review": "已对照目视原页核对对象、量词、技术资格和所列覆盖范围；网站尚未审阅。",
       "compile_receipt": "blueprint/ch08/closeout31/FINAL_COMPILE.json",
       "coverage_gaps": [],
-      "final_status": "self-contained"
+      "final_status": "self-contained",
+      "metadata_instruction": 32,
+      "lean_unchanged": true
     },
     "MD-8.9.3-PairwiseCanonicalWeight": {
       "verdict": "PASS",
@@ -4059,7 +4279,9 @@
       "semantic_review": "已对照目视原页核对对象、量词、技术资格和所列覆盖范围；网站尚未审阅。",
       "compile_receipt": "blueprint/ch08/closeout31/FINAL_COMPILE.json",
       "coverage_gaps": [],
-      "final_status": "self-contained"
+      "final_status": "self-contained",
+      "metadata_instruction": 32,
+      "lean_unchanged": true
     },
     "MD-8.9.4-PairwiseNHLSDE": {
       "verdict": "PASS",
@@ -4097,7 +4319,9 @@
       "coverage_gaps": [
         "未证明该非碰撞解类存在、唯一、保测或遍历；“改善遍历性”是动机不是已证结论。"
       ],
-      "final_status": "self-contained"
+      "final_status": "self-contained",
+      "metadata_instruction": 32,
+      "lean_unchanged": true
     },
     "MD-8.9.4-PairwiseNHLGenerator": {
       "verdict": "PASS",
@@ -4158,8 +4382,12 @@
       "source_pages": "416",
       "semantic_review": "已对照目视原页核对对象、量词、技术资格和所列覆盖范围；网站尚未审阅。",
       "compile_receipt": "blueprint/ch08/closeout31/FINAL_COMPILE.json",
-      "coverage_gaps": [],
-      "final_status": "incomplete"
+      "coverage_gaps": [
+        "没有以漂移分解恒等式替代驻定或遍历性证明；两者分别列状态。"
+      ],
+      "final_status": "incomplete",
+      "metadata_instruction": 32,
+      "lean_unchanged": true
     },
     "MD-8.9.4-PNHLSplittingAlgorithms": {
       "verdict": "PASS",
@@ -4215,7 +4443,9 @@
       "semantic_review": "已对照目视原页核对对象、量词、技术资格和所列覆盖范围；网站尚未审阅。",
       "compile_receipt": "blueprint/ch08/closeout31/FINAL_COMPILE.json",
       "coverage_gaps": [],
-      "final_status": "self-contained"
+      "final_status": "self-contained",
+      "metadata_instruction": 32,
+      "lean_unchanged": true
     },
     "MD-8.10-BerendsenRelaxation": {
       "verdict": "PASS",
@@ -4273,7 +4503,9 @@
       "coverage_gaps": [
         "只证明所印温度ODE的显式解及动量缩放能量恒等式；不声称温度控制必然正则采样。完整Verlet耦合的统计行为未证。"
       ],
-      "final_status": "self-contained"
+      "final_status": "self-contained",
+      "metadata_instruction": 32,
+      "lean_unchanged": true
     },
     "MD-8.10-CanonicalTotalMomentumGaussian": {
       "verdict": "PASS",
@@ -4300,7 +4532,9 @@
       "semantic_review": "已对照目视原页核对对象、量词、技术资格和所列覆盖范围；网站尚未审阅。",
       "compile_receipt": "blueprint/ch08/closeout31/FINAL_COMPILE.json",
       "coverage_gaps": [],
-      "final_status": "incomplete"
+      "final_status": "incomplete",
+      "metadata_instruction": 32,
+      "lean_unchanged": true
     },
     "MD-8.10-NHLTotalMomentumSign": {
       "verdict": "PASS",
@@ -4342,7 +4576,9 @@
       "semantic_review": "已对照目视原页核对对象、量词、技术资格和所列覆盖范围；网站尚未审阅。",
       "compile_receipt": "blueprint/ch08/closeout31/FINAL_COMPILE.json",
       "coverage_gaps": [],
-      "final_status": "incomplete"
+      "final_status": "incomplete",
+      "metadata_instruction": 32,
+      "lean_unchanged": true
     }
   }
 }

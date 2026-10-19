@@ -1,0 +1,39 @@
+{
+  "counts": {
+    "PASS": 2,
+    "FAIL": 0,
+    "NEEDS_HUMAN": 8
+  },
+  "bindings": [
+    {
+      "batch": "EAUDIT01",
+      "path": "blueprint/ch08/mathcopilot_results/eaudit/EAUDIT01_result.json",
+      "sha256": "fe7012b290fefbd6aceea203d7eb809d7d9db42e1bf70dd46e8e136a049e65c2",
+      "merged_from": "ch08_eaudit_merged",
+      "items": 3
+    },
+    {
+      "batch": "EAUDIT02",
+      "path": "blueprint/ch08/mathcopilot_results/eaudit/EAUDIT02_result.json",
+      "sha256": "b78d6296377859ffe3c434ecbb34d0cefdb6699c9e35bd1d49d949e05540ac95",
+      "merged_from": "ch08_eaudit_merged",
+      "items": 3
+    },
+    {
+      "batch": "EAUDIT03",
+      "path": "blueprint/ch08/mathcopilot_results/eaudit/EAUDIT03_result.json",
+      "sha256": "1628180b00a5c297c8b6286cc91379b74ca4bda49a57c3d073e44afa59a1447b",
+      "merged_from": "ch08_eaudit_merged",
+      "items": 3
+    },
+    {
+      "batch": "EAUDIT04",
+      "path": "blueprint/ch08/mathcopilot_results/eaudit/EAUDIT04_result.json",
+      "sha256": "dd21da4d200caafb1eb0e91e0fffc78953ee6b4c27304616f03fc30e841a8c05",
+      "merged_from": "ch08_eaudit_merged",
+      "items": 1
+    }
+  ],
+  "input_binding": "source_id/subtask, shared and optional per-item hashes, original manifest/PASTE/PDF bytes checked exactly",
+  "lean_sha256": "a58849c40e30a4a6b189163f42a49e0cbdf00bd48a39a77048bfd04ff88f8a16"
+}

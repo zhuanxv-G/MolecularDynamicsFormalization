@@ -1,0 +1,149 @@
+{
+  "batch": "EAUDIT04",
+  "input_sha256": {
+    "Blueprint/Ch08.lean": "a58849c40e30a4a6b189163f42a49e0cbdf00bd48a39a77048bfd04ff88f8a16",
+    "blueprint/ch08/ch08_source.json": "c7fea45d785f740f26c7b50c5e37abd14cb1a8b05b51f4e7ad215cd5059ebdd5"
+  },
+  "items": [
+    {
+      "source_id": "MD-8.8.1-PistonHamiltonianSubfield",
+      "json_review": {
+        "status": "NEEDS_HUMAN",
+        "issue_codes": [
+          "PRINTED_HAMILTONIAN_FIELD_MASS_MISMATCH",
+          "EXTRA_ASSUMPTIONS_REQUIRE_EXPLICIT_LABEL",
+          "STALE_SOURCE_PAGE_VERIFICATION",
+          "SUMMARY_DOES_NOT_IDENTIFY_PRINTED_FIELD"
+        ],
+        "corrected_json": {
+          "source_id": "MD-8.8.1-PistonHamiltonianSubfield",
+          "kind": "unnumbered_claim",
+          "label": null,
+          "section": "8.8.1",
+          "printed_page": "381",
+          "pdf_page": "402",
+          "statement_latex": "ρ₁=φ₁(pᵀM⁻¹p/2+U(q))ψ(V,ξ,η) is stated to be stationary for the Liouvillian of the printed vector field (p,−∇U,0,0,0). [ERRATUM?] For general mass the Hamiltonian field should have first component M⁻¹p; the Lean stationarity target uses this corrected field.",
+          "statement_verbatim": "8.8\nConstant Temperature and Pressure Molecular Dynamics\n381\n8.8.1\nEquations of Motion for the NHL Piston\nIn the framework of [199], rewriting the equations of motion for the physical\nvariables q and p, the dynamics takes the form\nPq D M\u00021p C \u000fq;\nPp D \u0003rU.q/ \u0003 \u000fp \u0003 \u0012p;\nPV D \u000fV;\nwith auxiliary variables \u000f and \u0012 governed by additional dynamical equations of\nmotion\nP\u0012 D hT\ndef\nD .pTM\u00021p \u0003 NdkBT/=\u0006T;\nP\u000f D hP\ndef\nD .V˘.q; p; V/ \u0003 PV C kBT/=\u0006P;\nwhere\n˘.q; p; V/\ndef\nD 1\nV\n\b\npTM\u00021p \u0003 q \u0002 rU.q/ \u0003 V @\n@V U.q/\n\t\n;\nis the expression for the pressure.\nNow let us examine the distribution conserved by the dynamics. First, we observe\n\u00051 D '1.pTM\u00021p=2 C U.q// \u0004 .V; \u0012; \u000f/\nis stationary for the Liouvillian operator for the vector ﬁeld .p; \u0003rU; 0; 0; 0/.\nThe function can be chosen as any smooth function that integrates out with\nrespect to V; \u0012; \u000f over Œ0; 1\t \u0004 R \u0004 R. We already know from our discussion of\nNosé-Hoover that Pp D \u0003\u0012p; P\u0012 D .pTM\u00021p \u0003 NdkBT/=\u0006T will have as stationary\nstates functions of the form\n\u00052 D exp.\u0003ˇŒpTM\u00021p C \u0006T\u00122=2\t/ 2.q; \u000f; V/:\nFinally the remaining terms Pq D \u000fq, Pp D \u0003\u000fp, PV D \u000fV, P\u000f D .V˘.q; p; V/ \u0003 PV C\nkBT/=\u0006P give rise to the Liouvillian\nL\u0004\u0005 D \u0003\u000frq \u0002.q\u0005/C\u000frp \u0002.p\u0005/\u0003\u000f @\n@V .V\u0005/\u0003 @\n@\u000fŒ\u0005.V˘.q; p; V/\u0003PV CkBT/=\u0006P\t:\n",
+          "verbatim_scope": "对应原页全文；原有特殊字形编码及换行保留。已逐句逐式核对图像；不把不同PDF提取器造成的换行、空格、fi连字及数学字形映射差异认定为原文内容差错。",
+          "proof_latex": null,
+          "proof_note": "对应原页推导逐字保存在statement_verbatim/original_page_text；排版以原页PDF为准。",
+          "original_page_text": [
+            {
+              "pdf_page": 402,
+              "printed_page": 381,
+              "text": "8.8\nConstant Temperature and Pressure Molecular Dynamics\n381\n8.8.1\nEquations of Motion for the NHL Piston\nIn the framework of [199], rewriting the equations of motion for the physical\nvariables q and p, the dynamics takes the form\nPq D M\u00021p C \u000fq;\nPp D \u0003rU.q/ \u0003 \u000fp \u0003 \u0012p;\nPV D \u000fV;\nwith auxiliary variables \u000f and \u0012 governed by additional dynamical equations of\nmotion\nP\u0012 D hT\ndef\nD .pTM\u00021p \u0003 NdkBT/=\u0006T;\nP\u000f D hP\ndef\nD .V˘.q; p; V/ \u0003 PV C kBT/=\u0006P;\nwhere\n˘.q; p; V/\ndef\nD 1\nV\n\b\npTM\u00021p \u0003 q \u0002 rU.q/ \u0003 V @\n@V U.q/\n\t\n;\nis the expression for the pressure.\nNow let us examine the distribution conserved by the dynamics. First, we observe\n\u00051 D '1.pTM\u00021p=2 C U.q// \u0004 .V; \u0012; \u000f/\nis stationary for the Liouvillian operator for the vector ﬁeld .p; \u0003rU; 0; 0; 0/.\nThe function can be chosen as any smooth function that integrates out with\nrespect to V; \u0012; \u000f over Œ0; 1\t \u0004 R \u0004 R. We already know from our discussion of\nNosé-Hoover that Pp D \u0003\u0012p; P\u0012 D .pTM\u00021p \u0003 NdkBT/=\u0006T will have as stationary\nstates functions of the form\n\u00052 D exp.\u0003ˇŒpTM\u00021p C \u0006T\u00122=2\t/ 2.q; \u000f; V/:\nFinally the remaining terms Pq D \u000fq, Pp D \u0003\u000fp, PV D \u000fV, P\u000f D .V˘.q; p; V/ \u0003 PV C\nkBT/=\u0006P give rise to the Liouvillian\nL\u0004\u0005 D \u0003\u000frq \u0002.q\u0005/C\u000frp \u0002.p\u0005/\u0003\u000f @\n@V .V\u0005/\u0003 @\n@\u000fŒ\u0005.V˘.q; p; V/\u0003PV CkBT/=\u0006P\t:\n"
+            }
+          ],
+          "numbered_equations": [],
+          "transcription_note": "文字层逐字保留；数学排版另行转写，原页中的特殊字形编码不静默替换。",
+          "context_notation": [],
+          "extra_assumptions": [
+            "[EXTRA] invm:Fin n→ℝ表示固定对角逆质量系数；Lean全称允许任意实系数，不要求正性，散度恒等式仍成立。",
+            "[EXTRA] U:(Vec n×ℝ)→ℝ为C²，φ:ℝ→ℝ和ψ:Vec 3→ℝ为C¹；U允许依赖作为冻结参数的V。",
+            "[EXTRA] 状态为((q,p),(V,ξ,η))，后三坐标在子场下全为零。Lean仅陈述局部通量散度零，不要求权非负、归一或可积，也不证明全局流或边界性质。",
+            "[ERRATUM?] 原印子场首分量p，仅单位质量等特殊情形与所印能量一致；修正版采用M⁻¹p。"
+          ],
+          "issues": [
+            "[ERRATUM?] 原页先给q̇=M⁻¹p+ηq，随后驻定子场却明确印为(p,−∇U,0,0,0)。对于一般质量及所印能量，二者不一致；不可将原印首分量静默改为M⁻¹p。",
+            "摘要只说Hamiltonian part，没有指明原印p与修正M⁻¹p两场，需明确区分。Printed定义忠实，修正场合理；原书疑误仍需人工确认。",
+            "[EXTRA] Lean只证明全实坐标空间上的局部加权通量散度为零；φ、ψ可取有符号光滑权，未要求非负、归一化或V≥0上的可积性。因此不能解释为已构造概率平稳分布或全局保测流。",
+            "source_page_verification引用未提供的旧source_page_checks.json，应换成本次附件核对记录。"
+          ],
+          "statement_scope": "原印p子场、M⁻¹p修正子场及修正子场光滑复合权的局部驻定目标；不把修正场说成逐字原印场。",
+          "lean_decl": "MD.Ch08.pistonHamiltonianPart",
+          "lean_declarations": [
+            "MD.Ch08.pistonHamiltonianPart",
+            "MD.Ch08.pistonHamiltonianWeight_stationary",
+            "MD.Ch08.pistonHamiltonianPartPrinted",
+            "MD.Ch08.pistonHamiltonianPart_corrected"
+          ],
+          "source_page_verification": "R3本次审校：已核对R3_PAGES.pdf附件第2页图像及文字层；对应原书PDF页402、印刷页381。",
+          "repair_log": [
+            {
+              "instruction": 31,
+              "stage": "json_review",
+              "status": "NEEDS_HUMAN",
+              "issue_codes": [
+                "ERRATUM_REQUIRES_HUMAN",
+                "STALE_TRANSCRIPTION_NOTE"
+              ],
+              "change": "合并经原页和现有签名核对的元数据更正；原页全文未改。"
+            },
+            {
+              "instruction": 31,
+              "stage": "human_triage",
+              "change": "已目视核对原页PDF402：文字子场印为(p,−∇U,0,0,0)，一般质量应为(M⁻¹p,−∇U,0,0,0)或另限单位质量。旧pistonHamiltonianPart及其驻定目标属于合理修正，新增Printed与_corrected明确区分。",
+              "suggested_fix": "保留原页文字；在issues显式标[ERRATUM?]：原印p应为M⁻¹p（或注明单位质量约定）。给现有Hamiltonian子场标为合理修正，不将其与原印向量场混同。"
+            }
+          ],
+          "documented_priors": [],
+          "coverage_gaps": []
+        },
+        "issues": [
+          "[ERRATUM?] 原页先给q̇=M⁻¹p+ηq，随后驻定子场却明确印为(p,−∇U,0,0,0)。对于一般质量及所印能量，二者不一致；不可将原印首分量静默改为M⁻¹p。",
+          "摘要只说Hamiltonian part，没有指明原印p与修正M⁻¹p两场，需明确区分。Printed定义忠实，修正场合理；原书疑误仍需人工确认。",
+          "[EXTRA] Lean只证明全实坐标空间上的局部加权通量散度为零；φ、ψ可取有符号光滑权，未要求非负、归一化或V≥0上的可积性。因此不能解释为已构造概率平稳分布或全局保测流。",
+          "source_page_verification引用未提供的旧source_page_checks.json，应换成本次附件核对记录。"
+        ],
+        "evidence": [
+          {
+            "stage": "A",
+            "page": "R3_PAGES.pdf第2页 / 原书PDF页402 / 印刷页381",
+            "finding": "statement_verbatim与original_page_text[0].text完全一致；页眉、正文、公式和页尾均已核对。原有控制字符及数学字形失真与图像区分处理，未静默重写全文。"
+          },
+          {
+            "stage": "A",
+            "finding": "原图中ρ₁后有乘号×ψ(V,ξ,η)，随后明确写field (p,−∇U,0,0,0)；前文q̇则为M⁻¹p+ηq。原页还要求ψ在[0,∞)×ℝ×ℝ上可积，Lean范围说明已将此与局部恒等式分开。ρ₂及最后Liouvillian属同页全文但非本条签名范围，按原印保留。"
+          },
+          {
+            "stage": "C",
+            "finding": "已按提供的Phase、gradient、kineticTwice、PistonState、textbookDivergence完整定义核对；未把trace散度等式误作沿Printed场的结论。"
+          }
+        ]
+      },
+      "audit": {
+        "lean_decl": [
+          "MD.Ch08.pistonHamiltonianPart",
+          "MD.Ch08.pistonHamiltonianWeight_stationary",
+          "MD.Ch08.pistonHamiltonianPartPrinted",
+          "MD.Ch08.pistonHamiltonianPart_corrected"
+        ],
+        "verdict": "NEEDS_HUMAN",
+        "explanation": {
+          "overall": "原印场的一般质量疑误判NEEDS_HUMAN；Printed定义忠实、修正场及其散度恒等式签名PASS。未依据sorry否定签名。",
+          "objects_and_domains": "n为任意自然数；Vec n=Fin n→ℝ，Phase n=Vec n×Vec n，PistonState n=Phase n×Vec 3。z任意，无V≥0限制；x.2 0是V，ξ、η为另外两冻结坐标。invm为常实对角系数；质量正性对恒等式不必要。",
+          "declarations": [
+            {
+              "lean_decl": "MD.Ch08.pistonHamiltonianPart",
+              "verdict": "PASS",
+              "explanation": "场为((invm·p,−∇_q U(q,V)),0)，梯度按标准坐标方向fderiv定义，后三分量为零。与一般对角质量的Hamiltonian修正一致，但不能叫原印逐字场。"
+            },
+            {
+              "lean_decl": "MD.Ch08.pistonHamiltonianWeight_stationary",
+              "verdict": "PASS",
+              "explanation": "对任意invm、C²的U、C¹的φ及ψ和任意z，全结论为div([φ(H)ψ]F)(z)=0，其中H=Σ invm_i p_i²/2+U(q,V)，div为完整状态空间上导数线性映射的trace。F自身散度为零，F·∇H=Σ(U_qi invm_i p_i−invm_i p_i U_qi)=0，ψ只依赖冻结坐标故沿场导数零。U依赖V不会引入额外通量项，因为V方向场分量恒为零。结论不要求质量正性或权可积，亦不推出概率归一化。"
+            },
+            {
+              "lean_decl": "MD.Ch08.pistonHamiltonianPartPrinted",
+              "verdict": "PASS",
+              "explanation": "完整场((p,−∇_q U(q,V)),0)与原印(p,−∇U,0,0,0)逐分量一致；没有附带错误的驻定定理，故原印疑误不构成本定义忠实性的FAIL。"
+            },
+            {
+              "lean_decl": "MD.Ch08.pistonHamiltonianPart_corrected",
+              "verdict": "PASS",
+              "explanation": "定义展开即pistonHamiltonianPart invm U z，明确把首分量修正为对角M⁻¹p，其余力及冻结坐标正确。"
+            }
+          ]
+        },
+        "counterexample": {
+          "scope": "反驳一般质量下原印场的驻定声称，不反驳Printed定义的忠实性或Lean修正版。",
+          "example": "取n=1，invm=1/2即m=2，U(q,V)=q²/2，φ(h)=exp(−h)，ψ(V,ξ,η)=exp(−V²−ξ²−η²)。H=p²/4+q²/2，原印F=(p,−q,0,0,0)散度零，但F·∇H=qp/2。因此div(φ(H)ψ F)=−(qp/2)exp(−H)ψ。在q=p=V=1、ξ=η=0时为−exp(−7/4)/2≠0；V位于正体积域内部。",
+          "validation": "解析链式法则反例；ψ在[0,∞)×ℝ²上可积，归一化常数不影响非零结论。"
+        },
+        "suggested_fix": "保留原印p场与Printed定义并显式[ERRATUM?]；人工确认是漏印M⁻¹还是单位质量约定。一般对角质量使用现有_corrected及stationary定理；明确权的局部驻定与概率分布的区别，并修正摘要和来源核对记录。"
+      },
+      "subtask": "EAUDIT04a"
+    }
+  ],
+  "merged_from": "ch08_eaudit_merged"
+}

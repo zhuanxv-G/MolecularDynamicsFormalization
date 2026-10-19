@@ -1,0 +1,81 @@
+{
+  "total": 103,
+  "first_round": {
+    "PASS": 74,
+    "FAIL": 5,
+    "NEEDS_HUMAN": 24
+  },
+  "reaudit": {
+    "PASS": 2,
+    "FAIL": 0,
+    "NEEDS_HUMAN": 8
+  },
+  "latest_round": {
+    "PASS": 76,
+    "FAIL": 0,
+    "NEEDS_HUMAN": 27
+  },
+  "website_pass": 76,
+  "qualified_or_corrected_human_entries": 8,
+  "version_assessments": {
+    "NPEquations": [
+      "原印ΔH_N指代冲突未消除，待导师",
+      "npDeltaN_corrected及npValidDomain网站PASS；npField在n版修正解释下分量正确，但网站逐声明仍保留NEEDS_HUMAN的指代限定"
+    ],
+    "Examples81and82": [
+      "Printed字面忠实性PASS；+ξG驻定声称为原书符号疑误，禁止作为有效定理依赖",
+      "−ξG的_corrected局部驻定签名网站PASS"
+    ],
+    "AdditiveThermostatSDE": [
+      "原印缺dt及矩阵噪声相容疑误待导师",
+      "已组装的对角物理质量、交换涨落耗散特例网站PASS；不代表一般矩阵模型"
+    ],
+    "NHL": [
+      "原印质量重缩放方向疑误待导师",
+      "正对角质量NHL漂移及单噪声积分解规格网站PASS；harmonicPotential仅定义函数，不含(8.30)–(8.32)特化或定理8.1"
+    ],
+    "SLSLeapfrog": [
+      "Printed忠实性PASS；一般μ下约化式漏μ⁻¹待导师",
+      "算法定义及恢复1/Q的_corrected网站PASS"
+    ],
+    "SINLyapunov": [
+      "Printed表达式忠实性PASS；有符号尾界疑误待导师",
+      "单位质量、σ²=2γθ下生成元与绝对值尾界签名网站PASS，非遍历性"
+    ],
+    "PronyOUStationarity": [
+      "原印无初态资格的(8.66)待导师",
+      "pronyOU_covariance及_corrected均为[EXTRA]平稳初态版本，签名网站PASS；非无条件原印定理"
+    ],
+    "PistonHamiltonianSubfield": [
+      "Printed的p场忠实性PASS；一般质量下原驻定声称疑误待导师",
+      "M⁻¹p修正场及局部散度目标签名网站PASS；非概率平稳分布或全局保测流"
+    ]
+  },
+  "local_repairs": 0,
+  "historical_first_round_local_repairs": 5,
+  "metadata_updates": 10,
+  "repairing": 0,
+  "awaiting_reaudit": 0,
+  "original_text_issue_entries": 27,
+  "original_proof_review_entries": 1,
+  "domain_or_scope_entries": 3,
+  "issue_records": 31,
+  "declarations": {
+    "定义": 285,
+    "已证": 54,
+    "未证": 57
+  },
+  "unproved_reasons": {
+    "缺大型理论": 44,
+    "原书疑误不证": 10,
+    "时间盒止": 3
+  },
+  "lean_changed": false,
+  "current_lean_sha256": "a58849c40e30a4a6b189163f42a49e0cbdf00bd48a39a77048bfd04ff88f8a16",
+  "current_source_sha256": "d84d5220b72e6469f6590af7928638990229b1b8a523e909042fb80d36de3a81",
+  "new_eaudit_packages": 0,
+  "website_resubmitted": false,
+  "full_check_report": "blueprint/ch08/closeout32/full/CHECK_REPORT.json",
+  "full_check_passed": true,
+  "full_check_report_sha256": "bb3269ad3e99c2ffe1629576df3925ef8b0b617cb90742641891727396186615"
+}

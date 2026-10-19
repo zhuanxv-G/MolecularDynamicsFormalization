@@ -1,0 +1,10 @@
+{
+  "status": "PASS",
+  "declarations": 396,
+  "lean_sha256": "a58849c40e30a4a6b189163f42a49e0cbdf00bd48a39a77048bfd04ff88f8a16",
+  "receipt": "blueprint/ch08/closeout31/FINAL_COMPILE.json",
+  "receipt_sha256": "dc2dbe8ba3c23626aaf929e52f46e535149442b4f6eb7e14e520c2c568fd6c55",
+  "probe_sha256": "37326f764e4f14f57c6504804b31f7894e8630e50e222cae4ac5b19dbf9ea758",
+  "log_sha256": "3912818c7e721fc7b90ee0d89ccca75b825916da799064db346bacca9d259955",
+  "reason": "本轮Lean原始字节未变，复用已通过单文件编译和396声明逐条公理证据；本轮另执行一次完整check。"
+}

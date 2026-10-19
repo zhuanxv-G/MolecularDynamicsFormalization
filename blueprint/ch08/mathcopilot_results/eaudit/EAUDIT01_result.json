@@ -1,0 +1,465 @@
+{
+  "batch": "EAUDIT01",
+  "input_sha256": {
+    "Blueprint/Ch08.lean": "a58849c40e30a4a6b189163f42a49e0cbdf00bd48a39a77048bfd04ff88f8a16",
+    "blueprint/ch08/ch08_source.json": "c7fea45d785f740f26c7b50c5e37abd14cb1a8b05b51f4e7ad215cd5059ebdd5"
+  },
+  "items": [
+    {
+      "source_id": "MD-8.1.2.1-NPEquations",
+      "json_review": {
+        "status": "NEEDS_HUMAN",
+        "issue_codes": [
+          "STALE_VERIFICATION_REFERENCE",
+          "SOURCE_HAMILTONIAN_NOTATION_CONFLICT",
+          "EXTRA_DIAGONAL_MASS_SCOPE"
+        ],
+        "corrected_json": {
+          "source_id": "MD-8.1.2.1-NPEquations",
+          "kind": "definition",
+          "label": null,
+          "section": "8.1.2.1",
+          "printed_page": "334",
+          "pdf_page": "355",
+          "statement_latex": "q̇=M⁻¹p̃/s, p̃̇=sF, ṡ=sp_s/μ, ṗ_s=p̃ᵀM⁻¹p̃/s²-N_d k_BT-ΔH_N.",
+          "statement_verbatim": "334\n8\nExtended Variable Methods\n8.1.2.1\nNosé-Poincaré Dynamics: A Symplectic Approach\nAs we have seen in earlier chapters, there is a strong foundation for using symplectic\nintegrators, for example the existence of perturbative backward error expansions\nwhich are relatively easily calculated, it is desirable to work within this class. On\nthe other hand, as we have mentioned, Nosé-Hoover dynamics is not a Hamiltonian\nsystem. The Nosé-Poincaré method resolves this issue by providing a Hamiltonian-\nbased extension of the physical system whose projected trajectories are actually\nequivalent to Nosé-Hoover trajectories, in the absence of numerical errors. This\nextended Hamiltonian system can then be discretized using a symplectic method.\nNosé’s original proposal involved using the dynamics of the Hamiltonian\nHN D 1\n2s2 QpTM\u00021Qp C \u00142\n2\u0006 C U.q/ C .Nd C 1/kBT ln s\nto deﬁne an extension which can be used for canonical sampling. The dynamics\nfor constant Nosé extended energy, when reduced to the .q; p D Qp=s/ plane will\npreserve the canonical measure \u0005ˇ. However, the scaling of kinetic energy induces\na time transformation, which is inconvenient for molecular modelling purposes. The\nNosé-Poincaré method introduces an explicit unraveling of the time transformation.\nOne works with the modiﬁed Nosé-Poincaré (NP) Hamiltonian [41, 102]:\nHNP D sŒHN \u0003 EN\t D s\n\u0002 1\n2s2 QpTM\u00021Qp C \u00142\n2\u0006 C U.q/ C NdkBT ln s \u0003 EN\n\u0003\n;\n(8.9)\nwhere EN is a constant equal to the initial Nosé energy of the system. Trajectories of\nthis system unfold on a timescale which is in some sense commensurate with that of\nHamiltonian dynamics. The NP Hamiltonian system can be treated with symplectic\nintegrators, conferring a possible stability advantage. Symplectic integrators for this\nsystem are compared in [41].\nThe equations of motion associated to (8.9) are\nd\ndtq D M\u00021Qp=s;\n(8.10)\nd\ndt Qp D sF;\n(8.11)\nd\ndts D sps=\u0006;\n(8.12)\nd\ndtps D QpTM\u00021Qp\ns2\n\u0003 NdkBT \u0003 \u0016HN;\n(8.13)\nwhere \u0016HN D HN \u0003 H0\nN (H0\nN represents the value of the Nosé Hamiltonian at the\ninitial point).\n",
+          "verbatim_scope": "完整对应原页文字层，逐字保留；本条数学成分由statement_latex及statement_scope定位。",
+          "proof_latex": null,
+          "proof_note": "对应原页推导逐字保存在statement_verbatim/original_page_text；排版以原页PDF为准。",
+          "original_page_text": [
+            {
+              "pdf_page": 355,
+              "printed_page": 334,
+              "text": "334\n8\nExtended Variable Methods\n8.1.2.1\nNosé-Poincaré Dynamics: A Symplectic Approach\nAs we have seen in earlier chapters, there is a strong foundation for using symplectic\nintegrators, for example the existence of perturbative backward error expansions\nwhich are relatively easily calculated, it is desirable to work within this class. On\nthe other hand, as we have mentioned, Nosé-Hoover dynamics is not a Hamiltonian\nsystem. The Nosé-Poincaré method resolves this issue by providing a Hamiltonian-\nbased extension of the physical system whose projected trajectories are actually\nequivalent to Nosé-Hoover trajectories, in the absence of numerical errors. This\nextended Hamiltonian system can then be discretized using a symplectic method.\nNosé’s original proposal involved using the dynamics of the Hamiltonian\nHN D 1\n2s2 QpTM\u00021Qp C \u00142\n2\u0006 C U.q/ C .Nd C 1/kBT ln s\nto deﬁne an extension which can be used for canonical sampling. The dynamics\nfor constant Nosé extended energy, when reduced to the .q; p D Qp=s/ plane will\npreserve the canonical measure \u0005ˇ. However, the scaling of kinetic energy induces\na time transformation, which is inconvenient for molecular modelling purposes. The\nNosé-Poincaré method introduces an explicit unraveling of the time transformation.\nOne works with the modiﬁed Nosé-Poincaré (NP) Hamiltonian [41, 102]:\nHNP D sŒHN \u0003 EN\t D s\n\u0002 1\n2s2 QpTM\u00021Qp C \u00142\n2\u0006 C U.q/ C NdkBT ln s \u0003 EN\n\u0003\n;\n(8.9)\nwhere EN is a constant equal to the initial Nosé energy of the system. Trajectories of\nthis system unfold on a timescale which is in some sense commensurate with that of\nHamiltonian dynamics. The NP Hamiltonian system can be treated with symplectic\nintegrators, conferring a possible stability advantage. Symplectic integrators for this\nsystem are compared in [41].\nThe equations of motion associated to (8.9) are\nd\ndtq D M\u00021Qp=s;\n(8.10)\nd\ndt Qp D sF;\n(8.11)\nd\ndts D sps=\u0006;\n(8.12)\nd\ndtps D QpTM\u00021Qp\ns2\n\u0003 NdkBT \u0003 \u0016HN;\n(8.13)\nwhere \u0016HN D HN \u0003 H0\nN (H0\nN represents the value of the Nosé Hamiltonian at the\ninitial point).\n"
+            }
+          ],
+          "numbered_equations": [
+            "8.10",
+            "8.11",
+            "8.12",
+            "8.13"
+          ],
+          "transcription_note": "文字层逐字保留；数学排版另行转写，原页中的特殊字形编码不静默替换。",
+          "context_notation": [],
+          "extra_assumptions": [
+            "[EXTRA] M⁻¹=diag(invm)，N_d=n，β⁻¹=k_BT，Q=μ，状态z=((q,p̃),(s,p_s))。",
+            "[EXTRA] npValidDomain单列所有invm_i>0及β,Q,s>0；npField自身为总函数，未把该资格作为参数或合取条件。",
+            "[ERRATUM?] npDeltaN_corrected选择(8.9)展开中的n/β版本；与上方原印(n+1)/β版H_N区分。应用时EN应取该n版能量在初值处的值；声明并未绑定初值。",
+            "gradient用fderiv定义，未假设U可微；欲解释为经典力场须另加适当可微性。未证明Hamilton方程。"
+          ],
+          "issues": [
+            "[ERRATUM?] 原页H_N在(N_d+1)与N_d系数之间不一致，须人工确认；修正版按(8.9)展开选择n版。"
+          ],
+          "statement_scope": "正对角逆质量、N_d=n下的NP四漂移分量；n/β版命名能量差修正；有效域另列。未绑定初始能量、未证明Hamilton梯度关系。",
+          "lean_decl": "MD.Ch08.npField",
+          "lean_declarations": [
+            "MD.Ch08.npDeltaN_corrected",
+            "MD.Ch08.npValidDomain",
+            "MD.Ch08.npField"
+          ],
+          "source_page_verification": "本次R1审校：比对R1_PAGES.pdf附件第1页图像和文字层（印刷334，原PDF355）。",
+          "repair_log": [
+            {
+              "instruction": 31,
+              "stage": "json_review",
+              "status": "NEEDS_HUMAN",
+              "issue_codes": [
+                "IRRELEVANT_TRANSCRIPTION_NOTE",
+                "STALE_VERIFICATION_REFERENCE",
+                "SOURCE_MATHEMATICAL_ERRATUM"
+              ],
+              "change": "合并经原页和现有签名核对的元数据更正；原页全文未改。"
+            },
+            {
+              "instruction": 31,
+              "stage": "human_triage",
+              "change": "已目视核对原页PDF355：delta取H_N^(n)−E_N，不能与上式(n+1)/β版本混同。；[EXTRA] npValidDomain明确列有效物理域；使用npField作NP方程时必须另具此资格，总函数自身不强制。",
+              "suggested_fix": "[ERRATUM?] 给delta命名为H_N^(n)−E_N，保留原页定义并与原印H_N^(n+1)区分。明确本def未证明是Hamilton方程。"
+            },
+            {
+              "stage": "R1_current_readonly_review",
+              "status": "NEEDS_HUMAN",
+              "change": "本次核对以R1_任务.md所附完整声明及R1_PAGES.pdf为准；此前repair_log仅为历史，不代表当前缺口。原文全文及原印数学疑误保留；本次不修改Lean工程。"
+            }
+          ],
+          "documented_priors": [],
+          "coverage_gaps": [
+            "正对角逆质量、N_d=n下的NP四漂移分量；n/β版命名能量差修正；有效域另列。未绑定初始能量、未证明Hamilton梯度关系。"
+          ]
+        },
+        "issues": [
+          {
+            "field": "source_page_verification",
+            "problem": "声称附件第12页；本附件对应第1页。",
+            "suggested_fix": "更正为本附件第1页。"
+          },
+          {
+            "field": "extra_assumptions/issues",
+            "problem": "原印同一 H_N 的对数项系数不一致；“目视确认delta取n版本”超出了原页明示内容。",
+            "suggested_fix": "保留原文冲突；将 n 版本明确称为依据(8.9)展开选择的修正版，不声称原页已无歧义地定义它。"
+          },
+          {
+            "field": "statement_scope/extra_assumptions",
+            "problem": "invm为Fin n→ℝ，仅表示对角逆质量；n对应无约束自由度N_d，原JSON未充分显式列出该限制。",
+            "suggested_fix": "明确 M⁻¹=diag(invm)、N_d=n、β⁻¹=k_BT、Q=μ及EN为相应初始能量。"
+          }
+        ],
+        "evidence": [
+          {
+            "source": "R1_PAGES.pdf",
+            "attachment_pages": [
+              1
+            ],
+            "detail": "已逐页目视核对正文、页眉、公式、标点与编号，并与附件文字层交叉核对。statement_verbatim 与 original_page_text 的拼接一致。文字层中的 D/C、控制字符、Q/O 前缀等为数学字体映射，不能按普通拉丁字母解读；本次保留这些原始字符串。不同文字提取器的换行、公式读取顺序与连字展开有差异，不据此误判原文增删。数学排版以原页图像为准。 印刷页334，原PDF355；(8.10)–(8.13)与 statement_latex 四分量相符。原印先给 (N_d+1)k_BT ln s，(8.9)展开却为 N_d k_BT ln s，末行仍写 ΔH_N=H_N−H_N^0。"
+          }
+        ]
+      },
+      "audit": {
+        "lean_decl": [
+          "MD.Ch08.npDeltaN_corrected",
+          "MD.Ch08.npValidDomain",
+          "MD.Ch08.npField"
+        ],
+        "verdict": "NEEDS_HUMAN",
+        "explanation": "逐一展开Vec=Fin n→ℝ、Phase=Vec n×Vec n、gradient与kineticTwice。npDeltaN_corrected依次为p̃ᵀdiag(invm)p̃/(2s²)、p_s²/(2Q)、U(q)、(n/β)log s及−EN，修正选择合理。npValidDomain全部四组正性条件完整。npField返回((q̇,p̃̇),(ṡ,ṗ_s))，四分量与(8.10)–(8.13)在所列字典及n版delta下相符；符号、分母和括号正确。定义总域允许β,Q,s=0，不能自动声称有效物理域。原页delta指代矛盾未消除，故总体NEEDS_HUMAN，并非由sorry或缺少Hamilton证明判FAIL。",
+        "counterexample": "非数值反例而是两种原印解释之差：H_N^(n+1)−H_N^(n)=β⁻¹log s。若初始常量各自匹配，则两版ΔH之差为β⁻¹log(s/s₀)，通常不为零；不能仅凭末行H_N符号断言是n版。",
+        "suggested_fix": "保留原印全部文字；明确n版为修正选择；应用npField时另具npValidDomain、U可微及EN=H_N^(n)(z₀)。不要将原页指代冲突写为已目视排除。",
+        "declaration_reviews": [
+          {
+            "lean_decl": "MD.Ch08.npDeltaN_corrected",
+            "verdict": "PASS",
+            "explanation": "作为明确选择(8.9)展开的修正版正确；不等同原页前一定义。"
+          },
+          {
+            "lean_decl": "MD.Ch08.npValidDomain",
+            "verdict": "PASS",
+            "explanation": "正逆质量及β,Q,s正性均已列明，作为单独资格谓词。"
+          },
+          {
+            "lean_decl": "MD.Ch08.npField",
+            "verdict": "NEEDS_HUMAN",
+            "explanation": "四分量符合n版修正解释；原印H_N指代仍需人工裁定。"
+          }
+        ]
+      },
+      "subtask": "EAUDIT01a"
+    },
+    {
+      "source_id": "MD-8.2.1-Examples81and82",
+      "json_review": {
+        "status": "NEEDS_HUMAN",
+        "issue_codes": [
+          "STALE_VERIFICATION_REFERENCE",
+          "SOURCE_FEEDBACK_SIGN_ERRATUM"
+        ],
+        "corrected_json": {
+          "source_id": "MD-8.2.1-Examples81and82",
+          "kind": "unnumbered_claim",
+          "label": "Examples 8.1, 8.2",
+          "section": "8.2.1",
+          "printed_page": "337–338",
+          "pdf_page": "358–359",
+          "statement_latex": "Example 8.1 Φ=-ξ(0,p), g=μ⁻¹(p·∇pH-N_d k_BT). Example 8.2 Φ=ξG(z), g=μ⁻¹[∇H-k_BT∇]·G. Configurational choice G=(∇qK,0).",
+          "statement_verbatim": "8.2\nMore General Deterministic Thermostats\n337\nWe divide this into four parts: L\u0004\u0005 D W1 C W2 C W3 C W4, where\nW1 D \u0003.rz\u0005/ \u0002 .JrzH C ˚/; W2 D \u0003\u0005rz \u0002 .JrzH C ˚/;\nW3 D \u0003.r\u0002\u0005/ \u0002 g;\nW4 D \u0003\u0005r\u0002 \u0002 g:\nWe seek perturbations of Hamiltonian dynamics with separable equilibria, i.e., such\nthat \u0005 D \u0005ˇ.H.z// O\u0005.\u0002/ is a stationary solution.\nTaking this as an ansatz, the ﬁrst term can be simpliﬁed as follows:\nW1 D \u0003 O\u0005.\u0002/\u00050\nˇ.H/rzH \u0002 .JrzH C ˚/\nD ˇ O\u0005.\u0002/\u0005ˇ.H/rzH \u0002 ˚ D ˇ\u0005rzH \u0002 ˚\nas J is skew-symmetric.\nUsing the volume preservation of Hamiltonian systems, the second term satisﬁes\nW2 D \u0003\u0005rz \u0002 .JrzH C ˚/ D \u0003\u0005rz \u0002 ˚;\nhence\nW1 C W2 D \u0003\u0005Œrz \u0003 ˇrzH\t \u0002 ˚:\nThere are many possibilities for the distribution of \u0002, of course, but we will\nassume this is Gaussian for simplicity: O\u0005.\u0002/\nD\nexp\n\u0004\n\u0003ˇ Pm\niD1 \u0006i\u00122\ni =2\n\u0005\nD\nexp.\u0003ˇ\u0002T\u0007\u00021\u0002=2/ to get\nW3 D \u0003.r\u0002\u0005/ \u0002 g.\u0002; z/ D ˇ\u0005\u0002T\u0007\u00021g:\nFinally, for an equilibrium solution we must have W1 C W2 C W3 C W4 D 0, so\n\u0003Œrz \u0003 ˇrzH\t \u0002 ˚ C ˇ\u0002T\u0007\u00021g \u0003 r\u0002 \u0002 g D 0:\nThis equation is the fundamental one for deterministic thermostats.\nExample 8.1 To recover Nosé-Hoover, assume an even dimensional phase space,\nz D .q; p/, Nd degrees of freedom, and \u0012 2 R,\n˚ D \u0003\u0012\n\u0002 0\np\n\u0003\n;\ng.z/ D \u0006\u00021.p \u0002 rpH \u0003 NdkBT/:\nExample 8.2 Slightly more generally, let\n˚ D \u0012G.z/;\ng.\u0012; z/ D g.z/ D \u0006\u00021ŒrzH \u0003 kBTrz\t \u0002 G.z/:\n\n338\n8\nExtended Variable Methods\nThis is a slightly generalized form of the technique suggested by Bulgac and\nKusnezov [58].\nAssuming \u0005 goes to zero sufﬁciently rapidly at inﬁnity, we have\nZ\nrz \u0002 G.z/\u0005d! D \u0003\nZ\n.rz\u0005/ \u0002 G.z/d! D ˇ\nZ\nrzH \u0002 G.z/\u0005d!;\nusing integration by parts, therefore, since ˇ\u00021 D kBT,\nT D k\u00021\nB\nhrzH \u0002 Gi\nhr \u0002 Gi ;\nwhich gives formulas for temperature in terms of phase space averages (compare\nChap. 6, Proposition 6.1).\nSuppose we let K be a scalar valued function of position, and set\nG.z/ D\n\u0002 rqK.q/\n0\n\u0003\nthen we arrive at\ng.z/ D \u0006\u00021ŒrqU \u0003 kBTrq\t \u0002 rqK.q/:\nThis is an example of a “conﬁgurational thermostat” [193, 211, 319].\nA useful fact about thermostats is the following:\nProposition 8.1 (Thermostats are Additive) Suppose we are given two ther-\nmostats,\nPz D JrH C ˚1.\u0002; z/;\nP\u0002 D g1.\u0002; z/;\nwith stationary density O\u00051.\u0002/\u0005ˇ, and another\nPz D JrH C ˚2.\u0003; z/;\nP\u0003 D g2.\u0003; z/;\nwith stationary density O\u00052.\u0003/\u0005ˇ, then\nPz D JrH C ˚1.\u0002; z/ C ˚2.\u0003; z/;\nP\u0002 D g1.\u0002; z/;\nP\u0003 D g2.\u0003; z/\nis another thermostat and has stationary density Q\u0005 D O\u00051.\u0002/ O\u00052.\u0003/\u0005ˇ.\n",
+          "verbatim_scope": "完整对应原页文字层，逐字保留；本条数学成分由statement_latex及statement_scope定位。",
+          "proof_latex": null,
+          "proof_note": "对应原页推导逐字保存在statement_verbatim/original_page_text；排版以原页PDF为准。",
+          "original_page_text": [
+            {
+              "pdf_page": 358,
+              "printed_page": 337,
+              "text": "8.2\nMore General Deterministic Thermostats\n337\nWe divide this into four parts: L\u0004\u0005 D W1 C W2 C W3 C W4, where\nW1 D \u0003.rz\u0005/ \u0002 .JrzH C ˚/; W2 D \u0003\u0005rz \u0002 .JrzH C ˚/;\nW3 D \u0003.r\u0002\u0005/ \u0002 g;\nW4 D \u0003\u0005r\u0002 \u0002 g:\nWe seek perturbations of Hamiltonian dynamics with separable equilibria, i.e., such\nthat \u0005 D \u0005ˇ.H.z// O\u0005.\u0002/ is a stationary solution.\nTaking this as an ansatz, the ﬁrst term can be simpliﬁed as follows:\nW1 D \u0003 O\u0005.\u0002/\u00050\nˇ.H/rzH \u0002 .JrzH C ˚/\nD ˇ O\u0005.\u0002/\u0005ˇ.H/rzH \u0002 ˚ D ˇ\u0005rzH \u0002 ˚\nas J is skew-symmetric.\nUsing the volume preservation of Hamiltonian systems, the second term satisﬁes\nW2 D \u0003\u0005rz \u0002 .JrzH C ˚/ D \u0003\u0005rz \u0002 ˚;\nhence\nW1 C W2 D \u0003\u0005Œrz \u0003 ˇrzH\t \u0002 ˚:\nThere are many possibilities for the distribution of \u0002, of course, but we will\nassume this is Gaussian for simplicity: O\u0005.\u0002/\nD\nexp\n\u0004\n\u0003ˇ Pm\niD1 \u0006i\u00122\ni =2\n\u0005\nD\nexp.\u0003ˇ\u0002T\u0007\u00021\u0002=2/ to get\nW3 D \u0003.r\u0002\u0005/ \u0002 g.\u0002; z/ D ˇ\u0005\u0002T\u0007\u00021g:\nFinally, for an equilibrium solution we must have W1 C W2 C W3 C W4 D 0, so\n\u0003Œrz \u0003 ˇrzH\t \u0002 ˚ C ˇ\u0002T\u0007\u00021g \u0003 r\u0002 \u0002 g D 0:\nThis equation is the fundamental one for deterministic thermostats.\nExample 8.1 To recover Nosé-Hoover, assume an even dimensional phase space,\nz D .q; p/, Nd degrees of freedom, and \u0012 2 R,\n˚ D \u0003\u0012\n\u0002 0\np\n\u0003\n;\ng.z/ D \u0006\u00021.p \u0002 rpH \u0003 NdkBT/:\nExample 8.2 Slightly more generally, let\n˚ D \u0012G.z/;\ng.\u0012; z/ D g.z/ D \u0006\u00021ŒrzH \u0003 kBTrz\t \u0002 G.z/:\n"
+            },
+            {
+              "pdf_page": 359,
+              "printed_page": 338,
+              "text": "338\n8\nExtended Variable Methods\nThis is a slightly generalized form of the technique suggested by Bulgac and\nKusnezov [58].\nAssuming \u0005 goes to zero sufﬁciently rapidly at inﬁnity, we have\nZ\nrz \u0002 G.z/\u0005d! D \u0003\nZ\n.rz\u0005/ \u0002 G.z/d! D ˇ\nZ\nrzH \u0002 G.z/\u0005d!;\nusing integration by parts, therefore, since ˇ\u00021 D kBT,\nT D k\u00021\nB\nhrzH \u0002 Gi\nhr \u0002 Gi ;\nwhich gives formulas for temperature in terms of phase space averages (compare\nChap. 6, Proposition 6.1).\nSuppose we let K be a scalar valued function of position, and set\nG.z/ D\n\u0002 rqK.q/\n0\n\u0003\nthen we arrive at\ng.z/ D \u0006\u00021ŒrqU \u0003 kBTrq\t \u0002 rqK.q/:\nThis is an example of a “conﬁgurational thermostat” [193, 211, 319].\nA useful fact about thermostats is the following:\nProposition 8.1 (Thermostats are Additive) Suppose we are given two ther-\nmostats,\nPz D JrH C ˚1.\u0002; z/;\nP\u0002 D g1.\u0002; z/;\nwith stationary density O\u00051.\u0002/\u0005ˇ, and another\nPz D JrH C ˚2.\u0003; z/;\nP\u0003 D g2.\u0003; z/;\nwith stationary density O\u00052.\u0003/\u0005ˇ, then\nPz D JrH C ˚1.\u0002; z/ C ˚2.\u0003; z/;\nP\u0002 D g1.\u0002; z/;\nP\u0003 D g2.\u0003; z/\nis another thermostat and has stationary density Q\u0005 D O\u00051.\u0002/ O\u00052.\u0003/\u0005ˇ.\n"
+            }
+          ],
+          "numbered_equations": [],
+          "transcription_note": "文字层逐字保留；数学排版另行转写，原页中的特殊字形编码不静默替换。",
+          "context_notation": [],
+          "extra_assumptions": [
+            "β⁻¹=k_BT，Q=μ；一般G定义中的n是相空间维数，不能将此处n一律解释为物理自由度数。",
+            "generalizedFeedback和configurationalFeedback为原式总函数；经典导数解释需相应可微性。",
+            "[EXTRA] 两个驻定定理假设常矩阵J反对称、H为C³、G为C²、β,Q>0，结论为所有点的div(ρF)=0；不是全局流不变概率测度或遍历性。",
+            "Example8.1的物理系统、构型完整场及其独立驻定定理未在本条四声明中单列。"
+          ],
+          "issues": [
+            "[ERRATUM?] 原印例8.2的Φ=+ξG与正反馈一般不保持所列高斯Gibbs密度；Printed忠实保留该声称。负号耦合corrected为合理修正。"
+          ],
+          "statement_scope": "原印一般G与构型反馈、正号组合Printed驻定声称，以及负号耦合的局部驻定修正版；不含全局过程不变性。",
+          "lean_decl": "MD.Ch08.generalizedFeedback",
+          "lean_declarations": [
+            "MD.Ch08.generalizedFeedback",
+            "MD.Ch08.configurationalFeedback",
+            "MD.Ch08.generalizedFeedback_stationaryPrinted",
+            "MD.Ch08.generalizedFeedback_stationary_corrected"
+          ],
+          "source_page_verification": "本次R1审校：比对R1_PAGES.pdf附件第2–3页图像和文字层（印刷337–338，原PDF358–359）。",
+          "repair_log": [
+            {
+              "instruction": 31,
+              "website_verdict": "FAIL",
+              "suggested_fix": "[ERRATUM?] 忠实原文的两个反馈def可保留并标Printed/literal；正确驻定版应取Φ=−ξG，或保留Φ=+ξG而改g=(div G/β−DH[G])/Q。构型反馈若配正号耦合也须相应反号。例8.1的负号耦合与正反馈不受影响。",
+              "change": "generalizedFeedback/configurationalFeedback忠实保留原式；corrected将Φ改为−ξG。构型反馈在正号耦合下同样须反号。"
+            },
+            {
+              "instruction": 31,
+              "stage": "json_review",
+              "status": "NEEDS_HUMAN",
+              "issue_codes": [
+                "IRRELEVANT_TRANSCRIPTION_NOTE",
+                "STALE_VERIFICATION_REFERENCE",
+                "SOURCE_MATHEMATICAL_ERRATUM",
+                "FALSE_STATIONARITY_SIGNATURE"
+              ],
+              "change": "合并经原页和现有签名核对的元数据更正；原页全文未改。"
+            },
+            {
+              "stage": "R1_current_readonly_review",
+              "status": "NEEDS_HUMAN",
+              "change": "本次核对以R1_任务.md所附完整声明及R1_PAGES.pdf为准；此前repair_log仅为历史，不代表当前缺口。原文全文及原印数学疑误保留；本次不修改Lean工程。"
+            }
+          ],
+          "documented_priors": [],
+          "coverage_gaps": [
+            "例8.1只在摘要及上下文中出现，本条四声明未单列该特化。构型反馈仅为def；不含完整构型场、全局不变性或遍历性。"
+          ]
+        },
+        "issues": [
+          {
+            "field": "source_page_verification",
+            "problem": "附件第19,20页不存在。",
+            "suggested_fix": "改为附件第2、3页。"
+          },
+          {
+            "field": "issues/repair_log",
+            "problem": "例8.2正号耦合和正反馈不相容；但Printed声明按任务须按字面忠实性审校，旧FALSE_STATIONARITY_SIGNATURE不能当成忠实版签名FAIL。",
+            "suggested_fix": "将Printed的忠实性PASS与其数学声称NEEDS_HUMAN分别列出；负号corrected正确。"
+          }
+        ],
+        "evidence": [
+          {
+            "source": "R1_PAGES.pdf",
+            "attachment_pages": [
+              2,
+              3
+            ],
+            "detail": "已逐页目视核对正文、页眉、公式、标点与编号，并与附件文字层交叉核对。statement_verbatim 与 original_page_text 的拼接一致。文字层中的 D/C、控制字符、Q/O 前缀等为数学字体映射，不能按普通拉丁字母解读；本次保留这些原始字符串。不同文字提取器的换行、公式读取顺序与连字展开有差异，不据此误判原文增删。数学排版以原页图像为准。 印刷337–338，原PDF358–359。例8.1为负号Φ=−ξ(0,p)，例8.2确为正号Φ=ξG及正反馈；构型G=(∇K,0)和其反馈公式也与摘要一致。"
+          }
+        ]
+      },
+      "audit": {
+        "lean_decl": [
+          "MD.Ch08.generalizedFeedback",
+          "MD.Ch08.configurationalFeedback",
+          "MD.Ch08.generalizedFeedback_stationaryPrinted",
+          "MD.Ch08.generalizedFeedback_stationary_corrected"
+        ],
+        "verdict": "NEEDS_HUMAN",
+        "explanation": "generalizedFeedback为(DH[G]−div G/β)/Q，与原印括号算子完全相符；configurationalFeedback为(∇U·∇K−ΔK/β)/Q，亦忠实。两个定理所有参数和前提相同：任意n、常反对称J、C³实函数H、C²向量场G、正β,Q，密度ρ=exp(−β(H+Qξ²/2))，完整结论为∀(z,ξ),div(ρF)=0。Printed取+ξG，与原印隐含驻定声称忠实，按任务判字面PASS，但数学内容有原书符号疑误。corrected仅取−ξG，成立：Hamilton项加权散度为零，−ξG项贡献ρξ(βDH[G]−div G)，ξ方向贡献其负值，逐点相消。无须归一化或增长条件即可作此局部结论；也未据此声称全局采样。",
+        "counterexample": "Printed数学声称的精确反例：n=1，J=0，H(x)=x²/2，G(x)=1，β=Q=1，均满足全部光滑性、正性和反对称前提。F(x,ξ)=(ξ,x)，ρ=exp(−(x²+ξ²)/2)，div(ρF)=−2xξρ；在(1,1)为−2exp(−1)≠0。此反例不改变Printed的字面忠实性PASS。",
+        "suggested_fix": "保留Printed及原文，标注原书疑误并避免将其作为有效数学定理依赖；corrected可保留。另一等价修法是在保留+ξG时将反馈整体反号。构型反馈亦须与耦合符号配套。",
+        "declaration_reviews": [
+          {
+            "lean_decl": "MD.Ch08.generalizedFeedback",
+            "verdict": "PASS",
+            "explanation": "原式正反馈忠实。"
+          },
+          {
+            "lean_decl": "MD.Ch08.configurationalFeedback",
+            "verdict": "PASS",
+            "explanation": "原印构型反馈忠实。"
+          },
+          {
+            "lean_decl": "MD.Ch08.generalizedFeedback_stationaryPrinted",
+            "verdict": "PASS",
+            "explanation": "只按原文忠实性PASS；数学正确性NEEDS_HUMAN，见反例。"
+          },
+          {
+            "lean_decl": "MD.Ch08.generalizedFeedback_stationary_corrected",
+            "verdict": "PASS",
+            "explanation": "负号修正的加权散度逐点为零，前提充分。"
+          }
+        ]
+      },
+      "subtask": "EAUDIT01b"
+    },
+    {
+      "source_id": "MD-8.4-AdditiveThermostatSDE",
+      "json_review": {
+        "status": "NEEDS_HUMAN",
+        "issue_codes": [
+          "STALE_MODEL_ASSEMBLY_CLAIMS",
+          "SOURCE_MISSING_DT",
+          "SOURCE_MATRIX_NOISE_COMPATIBILITY",
+          "STALE_VERIFICATION_REFERENCE"
+        ],
+        "corrected_json": {
+          "source_id": "MD-8.4-AdditiveThermostatSDE",
+          "kind": "definition",
+          "label": null,
+          "section": "8.4",
+          "printed_page": "342–343",
+          "pdf_page": "363–364",
+          "statement_latex": "dq=M⁻¹pdt; dp=-∇Udt-Φ(ξ,z)-Γpdt+√(2k_BT)M^{1/2}Γ^{1/2}dW; dξ=gdt-Γ̂ξdt+√(2k_BT)M̂^{1/2}Γ̂^{1/2}dŴ. All Wiener coordinates are independent.",
+          "statement_verbatim": "342\n8\nExtended Variable Methods\notherwise there is little clear advantage and a potentially signiﬁcant price to be\npaid, since HMC methods only work by rejecting steps. For reading on Hybrid\nMonte Carlo methods, the reader should consult [110, 188] and other references\nmentioned in Appendix C.\n•\nKinetic Monte-Carlo (KMC) methods are a broad family of multiscale sampling\nmethods which use a local sampling mechanism to explore basins while invoking\nan Arrenhius law to estimate the rates or timescales for transitions between\nbasins (we can think of basins as neighborhoods of potential energy minima).\nThe Arrenhius law relates the rate constant k associated to a particular state-\nto-state transition to the exponential of the of the “activation energy” which is\ndeﬁned as the difference \u0010E between the energy at a local minimum and that at\nthe energy barrier between the states\nk \u0005 Ae\u0002\u0010E=kBT\nIn a KMC method, it is typically assumed that various possible state-to-state\ntransitions from a given state are well modelled by the Arrenhius law and then\nmolecular dynamics is used to calculate the prefactor A and energy difference \u0010E\nin order to understand the timescales and relative probabilities of different rare\nevents. A Markov state model can be developed to help understand the global\ndynamics and simplify the model as a whole. For references on many interesting\napproaches to this important topic, the reader is referred to [36, 42, 137, 149, 391].\n•\nAndersen Thermostat. Of particular interest is the simple and useful Andersen\nthermostat [11]. This method works by selecting atoms at random and randomly\nperturbing their momenta in a way consistent with prescribed thermodynamic\nconditions. It has been rigorously proven to sample the canonical distribution\n[114].\n8.4\nErgodic Stochastic-Dynamic Thermostats\nIn this section, we consider the combination of stochastic perturbation with a\ndeterministic thermostat. Methods constructed in this way can be ergodic for\nthe canonical distribution while also providing ﬂexibility in way equilibrium is\nachieved. We distinguish in (6.16) between multiplicative noise, where B D B.z/\nvaries with z and additive noise, where B is constant. In our treatment of this topic\nwe will only consider additive noise. The presence of multiplicative noise may\ncomplicate discretization. As we shall see, the reliance on additive noise improves\nthe performance of discretization schemes.\nTo give this some speciﬁcity for molecular dynamics, we write the stochastic\ndynamical model as\ndq D M\u00021pdt;\n(8.22)\n\n8.4\nErgodic Stochastic-Dynamic Thermostats\n343\ndp D \u0003rU.q/dt \u0003 ˚.\u0002; z/ \u0003 \u0010 pdt C\np\n2kBTM1=2\u0010 1=2dW;\n(8.23)\nd\u0002 D g.\u0002; q; p/dt \u0003 O\u0010 \u0002dt C\np\n2kBT OM\n1=2 O\u0010\n1=2d OW:\n(8.24)\nHere \u0010 ; O\u0010\nare symmetric, square matrices of appropriate dimension, W is a\nvector of Nc Wiener processes, and OW is a vector of m Wiener processes, all\nindependent of each other. We assume that the deterministic thermostat represented\nby the ˚ and g terms preserves the extended distribution O\u0005.\u0002/\u0005ˇ, where O\u0005.\u0002/ D\nexp\n\u0006\n\u0003ˇ\u0002T OM\n\u00021\u0002=2\n\u0007\n. The matrix OM is symmetric and positive deﬁnite; one could\ntake it to be diagonal.\nThe additivity property of thermostats mentioned above holds also for stochastic\nthermostats, since the Fokker-Planck equation is constructed from linear operations\non the vector ﬁelds involved, thus it is enough to require that the newly introduced\nterms satisfy appropriate ﬂuctuation-dissipation relationships so that they are\ncompatible with the extended Gibbs distribution of the deterministic part. That is,\nwe require\ndp D \u0003\u0010 pdt C\np\n2kBTM1=2\u0010 1=2dW\nto preserve the distribution with density N\u0005 D exp\n\u0004\n\u0003ˇpTM\u00021p=2\n\u0005\n, and\nd\u0002 D \u0003 O\u0010 \u0002dt C\np\n2kBT OM\n1=2 O\u0010\n1=2d OW\nto preserve O\u0005. These two problems are essentially the same. Considering the former,\nthe stationary Fokker-Planck equation reads\nrp \u0002 .\u0010 p N\u0005/\n„\nƒ‚\n…\ndrift\nC ˇ\u00021Tr\n\u0006\n\u0010 1=2M1=2r2\np N\u0005M1=2\u0010 1=2\u0007\n„\nƒ‚\n…\ndiffusion\nD 0:\nThe drift term here equates to\nTr.\u0010 / N\u0005 C .\u0003ˇ/pT\u0010 M\u00021p N\u0005:\nFor the diffusion term, we calculate\nr N\u0005 D \u0003ˇ N\u0005M\u00021p;\nthus\nr2 N\u0005 D N\u0005Œˇ2M\u00021ppTM\u00021 \u0003 ˇM\u00021\t;\n",
+          "verbatim_scope": "完整对应原页文字层，逐字保留；本条数学成分由statement_latex及statement_scope定位。",
+          "proof_latex": null,
+          "proof_note": "对应原页推导逐字保存在statement_verbatim/original_page_text；排版以原页PDF为准。",
+          "original_page_text": [
+            {
+              "pdf_page": 363,
+              "printed_page": 342,
+              "text": "342\n8\nExtended Variable Methods\notherwise there is little clear advantage and a potentially signiﬁcant price to be\npaid, since HMC methods only work by rejecting steps. For reading on Hybrid\nMonte Carlo methods, the reader should consult [110, 188] and other references\nmentioned in Appendix C.\n•\nKinetic Monte-Carlo (KMC) methods are a broad family of multiscale sampling\nmethods which use a local sampling mechanism to explore basins while invoking\nan Arrenhius law to estimate the rates or timescales for transitions between\nbasins (we can think of basins as neighborhoods of potential energy minima).\nThe Arrenhius law relates the rate constant k associated to a particular state-\nto-state transition to the exponential of the of the “activation energy” which is\ndeﬁned as the difference \u0010E between the energy at a local minimum and that at\nthe energy barrier between the states\nk \u0005 Ae\u0002\u0010E=kBT\nIn a KMC method, it is typically assumed that various possible state-to-state\ntransitions from a given state are well modelled by the Arrenhius law and then\nmolecular dynamics is used to calculate the prefactor A and energy difference \u0010E\nin order to understand the timescales and relative probabilities of different rare\nevents. A Markov state model can be developed to help understand the global\ndynamics and simplify the model as a whole. For references on many interesting\napproaches to this important topic, the reader is referred to [36, 42, 137, 149, 391].\n•\nAndersen Thermostat. Of particular interest is the simple and useful Andersen\nthermostat [11]. This method works by selecting atoms at random and randomly\nperturbing their momenta in a way consistent with prescribed thermodynamic\nconditions. It has been rigorously proven to sample the canonical distribution\n[114].\n8.4\nErgodic Stochastic-Dynamic Thermostats\nIn this section, we consider the combination of stochastic perturbation with a\ndeterministic thermostat. Methods constructed in this way can be ergodic for\nthe canonical distribution while also providing ﬂexibility in way equilibrium is\nachieved. We distinguish in (6.16) between multiplicative noise, where B D B.z/\nvaries with z and additive noise, where B is constant. In our treatment of this topic\nwe will only consider additive noise. The presence of multiplicative noise may\ncomplicate discretization. As we shall see, the reliance on additive noise improves\nthe performance of discretization schemes.\nTo give this some speciﬁcity for molecular dynamics, we write the stochastic\ndynamical model as\ndq D M\u00021pdt;\n(8.22)\n"
+            },
+            {
+              "pdf_page": 364,
+              "printed_page": 343,
+              "text": "8.4\nErgodic Stochastic-Dynamic Thermostats\n343\ndp D \u0003rU.q/dt \u0003 ˚.\u0002; z/ \u0003 \u0010 pdt C\np\n2kBTM1=2\u0010 1=2dW;\n(8.23)\nd\u0002 D g.\u0002; q; p/dt \u0003 O\u0010 \u0002dt C\np\n2kBT OM\n1=2 O\u0010\n1=2d OW:\n(8.24)\nHere \u0010 ; O\u0010\nare symmetric, square matrices of appropriate dimension, W is a\nvector of Nc Wiener processes, and OW is a vector of m Wiener processes, all\nindependent of each other. We assume that the deterministic thermostat represented\nby the ˚ and g terms preserves the extended distribution O\u0005.\u0002/\u0005ˇ, where O\u0005.\u0002/ D\nexp\n\u0006\n\u0003ˇ\u0002T OM\n\u00021\u0002=2\n\u0007\n. The matrix OM is symmetric and positive deﬁnite; one could\ntake it to be diagonal.\nThe additivity property of thermostats mentioned above holds also for stochastic\nthermostats, since the Fokker-Planck equation is constructed from linear operations\non the vector ﬁelds involved, thus it is enough to require that the newly introduced\nterms satisfy appropriate ﬂuctuation-dissipation relationships so that they are\ncompatible with the extended Gibbs distribution of the deterministic part. That is,\nwe require\ndp D \u0003\u0010 pdt C\np\n2kBTM1=2\u0010 1=2dW\nto preserve the distribution with density N\u0005 D exp\n\u0004\n\u0003ˇpTM\u00021p=2\n\u0005\n, and\nd\u0002 D \u0003 O\u0010 \u0002dt C\np\n2kBT OM\n1=2 O\u0010\n1=2d OW\nto preserve O\u0005. These two problems are essentially the same. Considering the former,\nthe stationary Fokker-Planck equation reads\nrp \u0002 .\u0010 p N\u0005/\n„\nƒ‚\n…\ndrift\nC ˇ\u00021Tr\n\u0006\n\u0010 1=2M1=2r2\np N\u0005M1=2\u0010 1=2\u0007\n„\nƒ‚\n…\ndiffusion\nD 0:\nThe drift term here equates to\nTr.\u0010 / N\u0005 C .\u0003ˇ/pT\u0010 M\u00021p N\u0005:\nFor the diffusion term, we calculate\nr N\u0005 D \u0003ˇ N\u0005M\u00021p;\nthus\nr2 N\u0005 D N\u0005Œˇ2M\u00021ppTM\u00021 \u0003 ˇM\u00021\t;\n"
+            }
+          ],
+          "numbered_equations": [
+            "8.22",
+            "8.23",
+            "8.24"
+          ],
+          "transcription_note": "文字层逐字保留；数学排版另行转写，原页中的特殊字形编码不静默替换。",
+          "context_notation": [],
+          "extra_assumptions": [
+            "[EXTRA] M⁻¹=diag(invm)，所有invm_i>0，N_c=N_d=n；U为C¹。β⁻¹=k_BT。",
+            "[EXTRA] stochasticThermostatSolution已用同一n+k维独立Wiener过程、thermostatBlockNoise和实际漂移组装完整积分解规格。物理质量明确绑定diag(invm⁻¹)，热浴质量为Mhat，两组使用同β。",
+            "[EXTRA] fluctuationDissipation要求β>0、M正定、Γ半正定及BBᵀ=(2/β)ΓM。实对称矩阵下由左右对称性强制ΓM=MΓ，属于明确限制后的充分相容条件。热浴同理。",
+            "[ERRATUM?] 原印−Φ未附dt；漂移按−Φdt解释。原印对称性条件不足以保证矩阵平方根噪声的Gibbs相容性。",
+            "未要求或证明确定性Φ,g部分保权；未构造矩阵平方根，未证明完整解存在、唯一、不变分布或遍历性。",
+            "[EXTRA] additiveSDE要求几乎处处全实时间连续；每个t≥0的X t对W在[0,t]历史可测，漂移在[0,t]几乎处处可积，且逐个t的积分方程几乎处处成立；x0固定而非随机。"
+          ],
+          "issues": [
+            "[ERRATUM?] 原印(8.23)的−Φ缺dt。",
+            "[ERRATUM?] 原印矩阵对称性不足以保证实噪声及Gibbs相容；当前Lean是半正定、交换资格下的限制模型。"
+          ],
+          "statement_scope": "常噪声积分SDE模板与正对角物理质量的统一恒温器解规格；同一n+k维独立Wiener、分块噪声、两组协方差和漂移质量已绑定。未含一般非对角物理质量、存在唯一性或不变律。",
+          "lean_decl": "MD.Ch08.independentWiener",
+          "lean_declarations": [
+            "MD.Ch08.independentWiener",
+            "MD.Ch08.additiveSDE",
+            "MD.Ch08.stochasticThermostatDrift",
+            "MD.Ch08.fluctuationDissipation",
+            "MD.Ch08.thermostatBlockNoise",
+            "MD.Ch08.stochasticThermostatSolution"
+          ],
+          "source_page_verification": "本次R1审校：比对R1_PAGES.pdf附件第4–5页图像和文字层（印刷342–343，原PDF363–364）。",
+          "repair_log": [
+            {
+              "instruction": 31,
+              "website_verdict": "FAIL",
+              "suggested_fix": "只修JSON范围可保留现有组件；如要完成原模型，另定义统一解谓词，绑定对角逆质量或直接用一般M⁻¹，构造分块B和共同n+k维独立W，并分别加入两组明确的协方差匹配条件。保留原文并注明(8.23)的dt疑误和矩阵相容疑误。本次不修改工程。",
+              "change": "[EXTRA] 正逆质量、C¹势；物理质量固定为diag(invm⁻¹)，Mhat为热浴协方差质量；两组涨落耗散均绑定同一β及实际阻尼。未构造矩阵平方根，未证明确定性热浴保权或完整过程不变性。"
+            },
+            {
+              "instruction": 31,
+              "stage": "json_review",
+              "status": "NEEDS_HUMAN",
+              "issue_codes": [
+                "SDE_MODEL_NOT_ASSEMBLED",
+                "MASS_PARAMETER_LINK_MISSING",
+                "ERRATUM_MATRIX_NOISE_COMPATIBILITY"
+              ],
+              "change": "合并经原页和现有签名核对的元数据更正；原页全文未改。"
+            },
+            {
+              "stage": "R1_current_readonly_review",
+              "status": "NEEDS_HUMAN",
+              "change": "本次核对以R1_任务.md所附完整声明及R1_PAGES.pdf为准；此前repair_log仅为历史，不代表当前缺口。原文全文及原印数学疑误保留；本次不修改Lean工程。"
+            }
+          ],
+          "documented_priors": [],
+          "coverage_gaps": [
+            "不含一般非对角物理质量；不含确定性热浴保权假设或结论、平方根构造、存在唯一性及完整过程不变性。统一SDE组装和质量绑定已具备，不再列为缺口。"
+          ]
+        },
+        "issues": [
+          {
+            "field": "extra_assumptions/issues/coverage_gaps/repair_log",
+            "problem": "“未绑定M与invm”“尚无统一组装声明”“只是未组装组件”等与当前完整Lean矛盾。",
+            "suggested_fix": "当前stochasticThermostatSolution已绑定diag(invm⁻¹)、统一n+k维W、分块B和两组同β涨落耗散；移除作为当前结论的旧说法，repair_log仅保留为历史。"
+          },
+          {
+            "field": "statement_latex/issues",
+            "problem": "原印(8.23)的−Φ项缺dt，摘要忠实保留；Lean按漂移项解释补dt。",
+            "suggested_fix": "保留原文并明确标注补dt是修正解释。"
+          },
+          {
+            "field": "extra_assumptions/issues",
+            "problem": "仅矩阵对称不足以保证实平方根或该噪声的目标Gibbs协方差。",
+            "suggested_fix": "保留原文；注明现有资格要求半正定和交换性，是充分但较强的限制；一般匹配条件为BBᵀ=(ΓM+MΓᵀ)/β。"
+          },
+          {
+            "field": "source_page_verification/transcription_note",
+            "problem": "引用未提供的source_page_checks.json及无关PDF420。",
+            "suggested_fix": "记录当前附件第4–5页，删去PDF420备注。"
+          }
+        ],
+        "evidence": [
+          {
+            "source": "R1_PAGES.pdf",
+            "attachment_pages": [
+              4,
+              5
+            ],
+            "detail": "已逐页目视核对正文、页眉、公式、标点与编号，并与附件文字层交叉核对。statement_verbatim 与 original_page_text 的拼接一致。文字层中的 D/C、控制字符、Q/O 前缀等为数学字体映射，不能按普通拉丁字母解读；本次保留这些原始字符串。不同文字提取器的换行、公式读取顺序与连字展开有差异，不据此误判原文增删。数学排版以原页图像为准。 印刷342–343，原PDF363–364。(8.23)确实将−Φ(ξ,z)写成不带dt；原印矩阵仅称对称，Mhat正定。原式噪声次序为M^{1/2}Γ^{1/2}，不是Γ^{1/2}M^{1/2}。"
+          }
+        ]
+      },
+      "audit": {
+        "lean_decl": [
+          "MD.Ch08.independentWiener",
+          "MD.Ch08.additiveSDE",
+          "MD.Ch08.stochasticThermostatDrift",
+          "MD.Ch08.fluctuationDissipation",
+          "MD.Ch08.thermostatBlockNoise",
+          "MD.Ch08.stochasticThermostatSolution"
+        ],
+        "verdict": "NEEDS_HUMAN",
+        "explanation": "independentWiener对每个Fin k坐标要求IsBrownianReal，并对整个路径随机变量iIndepFun，P为概率测度，故跨组独立性由统一n+k坐标给出。additiveSDE的对象E、固定x0、常因子B、几乎处处连续、自然噪声历史可测、t≥0逐时可积及积分恒等式全部明确；不是存在性定理。stochasticThermostatDrift在(q,p,ξ)上恰为(diag(invm)p,−∇U−Φ−Γp,g−Γhatξ)，把原书缺失dt解释为漂移。thermostatBlockNoise前n列只作用p，后k列只作用ξ，q噪声为零。stochasticThermostatSolution已将该漂移、分块噪声、同一个独立W、同β两组资格及实际对角物理质量绑定，旧未组装/未绑定指控不成立。fluctuationDissipation为充分但较强的交换情形，不能冒充原印仅对称的一般模型。没有确定性保权前提，因而不能从该解谓词推出Gibbs不变性；声明本身未作此结论，故不是签名错误。原书dt和矩阵条件疑误总体保留NEEDS_HUMAN。",
+        "counterexample": "原书矩阵条件不足的精确例：β=1，M=diag(1,4)，Γ=[[2,1],[1,2]]，二者均对称正定。原印B=√2 M^{1/2}Γ^{1/2}给BBᵀ=2M^{1/2}ΓM^{1/2}=[[4,4],[4,16]]，而目标协方差M要求ΓM+MΓ=[[4,5],[5,16]]，两者不等。这里未用数值近似或计算软件；直接矩阵乘法。现有Lean资格会排除此非交换例，不能把它当成Lean资格的反例。",
+        "suggested_fix": "更新过时JSON备注；保留原印并标缺dt及矩阵相容疑误。将Lean描述为已组装的对角物理质量、交换涨落耗散特例。若以后扩展一般OU资格，可采用BBᵀ=(ΓM+MΓᵀ)/β并要求可实现的半正定协方差；本次不修改Lean。",
+        "declaration_reviews": [
+          {
+            "lean_decl": "MD.Ch08.independentWiener",
+            "verdict": "PASS",
+            "explanation": "概率测度、各坐标Brownian及整条路径相互独立完整。"
+          },
+          {
+            "lean_decl": "MD.Ch08.additiveSDE",
+            "verdict": "PASS",
+            "explanation": "常噪声积分解模板；连续性、可测性、可积性及t≥0量词正确。"
+          },
+          {
+            "lean_decl": "MD.Ch08.stochasticThermostatDrift",
+            "verdict": "PASS",
+            "explanation": "对角物理质量和补dt解释下与原式相符。"
+          },
+          {
+            "lean_decl": "MD.Ch08.fluctuationDissipation",
+            "verdict": "PASS",
+            "explanation": "对称正定质量及半正定阻尼下，交换情形的充分资格；不声称一般必要条件。"
+          },
+          {
+            "lean_decl": "MD.Ch08.thermostatBlockNoise",
+            "verdict": "PASS",
+            "explanation": "n+k列分块和作用对象正确。"
+          },
+          {
+            "lean_decl": "MD.Ch08.stochasticThermostatSolution",
+            "verdict": "PASS",
+            "explanation": "统一模型已组装且质量已绑定；明确限定范围后正确。"
+          }
+        ]
+      },
+      "subtask": "EAUDIT01c"
+    }
+  ],
+  "merged_from": "ch08_eaudit_merged"
+}

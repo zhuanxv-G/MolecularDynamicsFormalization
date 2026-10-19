@@ -1,0 +1,30 @@
+{
+  "status": "PASS",
+  "instruction": 32,
+  "entries": 103,
+  "reaudit": {
+    "PASS": 2,
+    "FAIL": 0,
+    "NEEDS_HUMAN": 8
+  },
+  "latest_website_pass": 76,
+  "latest_needs_human": 27,
+  "repairing": 0,
+  "metadata_updates": 10,
+  "lean_changed": false,
+  "declarations": 396,
+  "proved": 54,
+  "unproved": 57,
+  "formal_files": 298,
+  "formal_sorry": 0,
+  "formal_axiom_declarations": 0,
+  "frozen_files": 17010,
+  "compile_axioms": "PASS (unchanged-byte receipt verified)",
+  "full_check": "PASS (new run)",
+  "canonical_sha256": "a58849c40e30a4a6b189163f42a49e0cbdf00bd48a39a77048bfd04ff88f8a16",
+  "source_sha256": "d84d5220b72e6469f6590af7928638990229b1b8a523e909042fb80d36de3a81",
+  "new_eaudit_packages": 0,
+  "website_resubmitted": false,
+  "mentor_decisions": "pending",
+  "remaining_proofs": 57
+}

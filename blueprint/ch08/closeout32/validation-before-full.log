@@ -1,0 +1,9 @@
+FROZEN 4000 / 17010
+FROZEN 8000 / 17010
+FROZEN 12000 / 17010
+FROZEN 16000 / 17010
+Traceback (most recent call last):
+  File "C:\Users\ustc\Desktop\formal math\MolecularDynamicsFormalization\blueprint\ch08\closeout32\validate32.py", line 40, in <module>
+    if i%4000==0:print('FROZEN',i,'/',len(frozen),flush=True)
+                                                    ^^^^^^^^^
+AssertionError

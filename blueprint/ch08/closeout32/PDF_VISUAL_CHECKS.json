@@ -1,0 +1,65 @@
+{
+  "status": "已目视核对原页",
+  "instruction": 32,
+  "pages": [
+    {
+      "pdf_page": 355,
+      "printed_page": 334,
+      "image": "blueprint/ch08/closeout31/pdf355.png",
+      "sha256": "8187d65ba2e14ace216635c946762722b7773ac49c3f4e5155c72c7697c699d6"
+    },
+    {
+      "pdf_page": 358,
+      "printed_page": 337,
+      "image": "blueprint/ch08/closeout31/pdf358.png",
+      "sha256": "7132be9171847a29fbf0045706b5b9d0525d089b36fd355f0d516ded1c58872b"
+    },
+    {
+      "pdf_page": 364,
+      "printed_page": 343,
+      "image": "blueprint/ch08/closeout31/pdf364.png",
+      "sha256": "03153e26b7b704832227bc56c817899055aa51c60d19bc5dc94ecb9b80f4ae95"
+    },
+    {
+      "pdf_page": 367,
+      "printed_page": 346,
+      "image": "blueprint/ch08/closeout31/pdf367.png",
+      "sha256": "5f2155ea6c8dd0444ae997ba06192ae76d932b76c7e32a912df84f90065e08c4"
+    },
+    {
+      "pdf_page": 379,
+      "printed_page": 358,
+      "image": "blueprint/ch08/closeout31/pdf379.png",
+      "sha256": "797baa862b3043b213677ed5fe1ed8d5e10f8fd500db7d15f9d2a2efd1ca991f"
+    },
+    {
+      "pdf_page": 390,
+      "printed_page": 369,
+      "image": "blueprint/ch08/closeout31/pdf390.png",
+      "sha256": "78a1dcd1ac87e339544385b0f1932d16344cd78e34ffae8dbf184795af2ed970"
+    },
+    {
+      "pdf_page": 397,
+      "printed_page": 376,
+      "image": "blueprint/ch08/closeout31/pdf397.png",
+      "sha256": "2eb25b7ecc623c7ba9b5272159a2dd6a9ef771226eacacf957217afa2d291608"
+    },
+    {
+      "pdf_page": 402,
+      "printed_page": 381,
+      "image": "blueprint/ch08/closeout31/pdf402.png",
+      "sha256": "6e335d51904a7437a7a0b3789f2be706e7567adde6d60c6a5dff5f1cf29879e0"
+    }
+  ],
+  "findings": {
+    "NPEquations": "已目视核对原页PDF355：上方H_N用(n+1)/β，(8.9)展开用n/β，末行ΔH_N仍引用同名H_N；指代矛盾未消除。n版仅为依(8.9)展开采用的修正选择。",
+    "Examples81and82": "已目视核对原页PDF358：例8.2印为Φ=+ξG及正反馈；Printed仅保留原印疑误，不得被其他条目作为有效数学定理依赖；corrected采用−ξG。",
+    "AdditiveThermostatSDE": "已目视核对原页PDF364：(8.23)的−Φ缺dt；矩阵仅对称不足以保证所印噪声与目标Gibbs协方差相容。当前模型已组装，是对角物理质量、交换涨落耗散特例。",
+    "NHL": "已目视核对原页PDF367：原印q̃=M⁻¹ᐟ²q、p̃=M¹ᐟ²p方向有误。正确为q̃=M¹ᐟ²q、p̃=M⁻¹ᐟ²p，势变为Ũ(q̃)=U(M⁻¹ᐟ²q̃)；若U(q)=qᵀAq/2，则Ã=M⁻¹ᐟ²AM⁻¹ᐟ²。",
+    "SLSLeapfrog": "已目视核对原页PDF379：η约化式确实漏μ⁻¹，一般μ下应为ξ̇=−μ⁻¹∂ηU；原印与Printed保留，_corrected恢复1/Q。",
+    "SINLyapunov": "已目视核对原页PDF390：原印有符号Kξ₂界不能统一控制正负两侧。单位质量Q1=Q2=1、σ²=2γθ下修正版为−γξ₂²+θ|ξ₂|+γθ；仅为局部生成元和约束界，不推出遍历性。",
+    "PronyOUStationarity": "已目视核对原页PDF397：(8.66)印出s≥0但未说明平稳初态。修正版另加[EXTRA]初态N(0,θc/τ)且与整条W独立；t,s≥0；有限和用k∈Fin K，不宣称跨模式总协方差。",
+    "PistonHamiltonianSubfield": "已目视核对原页PDF402：原印场为(p,−∇U,0,0,0)，一般质量的修正场为(M⁻¹p,−∇U,0,0,0)。原印p与本页q̇=M⁻¹p+ηq不一致，修正版仅给局部通量散度目标。"
+  },
+  "note": "复用已保存原页渲染图，本轮实读图像；不把目视确认存在矛盾误写成消除矛盾。其他页既有核对仅保留为31号历史证据。"
+}

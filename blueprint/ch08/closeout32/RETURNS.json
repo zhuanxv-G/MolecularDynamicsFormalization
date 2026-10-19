@@ -1,0 +1,1475 @@
+[
+  {
+    "batch": "EAUDIT01",
+    "source_id": "MD-8.1.2.1-NPEquations",
+    "json_review": {
+      "status": "NEEDS_HUMAN",
+      "issue_codes": [
+        "STALE_VERIFICATION_REFERENCE",
+        "SOURCE_HAMILTONIAN_NOTATION_CONFLICT",
+        "EXTRA_DIAGONAL_MASS_SCOPE"
+      ],
+      "corrected_json": {
+        "source_id": "MD-8.1.2.1-NPEquations",
+        "kind": "definition",
+        "label": null,
+        "section": "8.1.2.1",
+        "printed_page": "334",
+        "pdf_page": "355",
+        "statement_latex": "q̇=M⁻¹p̃/s, p̃̇=sF, ṡ=sp_s/μ, ṗ_s=p̃ᵀM⁻¹p̃/s²-N_d k_BT-ΔH_N.",
+        "statement_verbatim": "334\n8\nExtended Variable Methods\n8.1.2.1\nNosé-Poincaré Dynamics: A Symplectic Approach\nAs we have seen in earlier chapters, there is a strong foundation for using symplectic\nintegrators, for example the existence of perturbative backward error expansions\nwhich are relatively easily calculated, it is desirable to work within this class. On\nthe other hand, as we have mentioned, Nosé-Hoover dynamics is not a Hamiltonian\nsystem. The Nosé-Poincaré method resolves this issue by providing a Hamiltonian-\nbased extension of the physical system whose projected trajectories are actually\nequivalent to Nosé-Hoover trajectories, in the absence of numerical errors. This\nextended Hamiltonian system can then be discretized using a symplectic method.\nNosé’s original proposal involved using the dynamics of the Hamiltonian\nHN D 1\n2s2 QpTM\u00021Qp C \u00142\n2\u0006 C U.q/ C .Nd C 1/kBT ln s\nto deﬁne an extension which can be used for canonical sampling. The dynamics\nfor constant Nosé extended energy, when reduced to the .q; p D Qp=s/ plane will\npreserve the canonical measure \u0005ˇ. However, the scaling of kinetic energy induces\na time transformation, which is inconvenient for molecular modelling purposes. The\nNosé-Poincaré method introduces an explicit unraveling of the time transformation.\nOne works with the modiﬁed Nosé-Poincaré (NP) Hamiltonian [41, 102]:\nHNP D sŒHN \u0003 EN\t D s\n\u0002 1\n2s2 QpTM\u00021Qp C \u00142\n2\u0006 C U.q/ C NdkBT ln s \u0003 EN\n\u0003\n;\n(8.9)\nwhere EN is a constant equal to the initial Nosé energy of the system. Trajectories of\nthis system unfold on a timescale which is in some sense commensurate with that of\nHamiltonian dynamics. The NP Hamiltonian system can be treated with symplectic\nintegrators, conferring a possible stability advantage. Symplectic integrators for this\nsystem are compared in [41].\nThe equations of motion associated to (8.9) are\nd\ndtq D M\u00021Qp=s;\n(8.10)\nd\ndt Qp D sF;\n(8.11)\nd\ndts D sps=\u0006;\n(8.12)\nd\ndtps D QpTM\u00021Qp\ns2\n\u0003 NdkBT \u0003 \u0016HN;\n(8.13)\nwhere \u0016HN D HN \u0003 H0\nN (H0\nN represents the value of the Nosé Hamiltonian at the\ninitial point).\n",
+        "verbatim_scope": "完整对应原页文字层，逐字保留；本条数学成分由statement_latex及statement_scope定位。",
+        "proof_latex": null,
+        "proof_note": "对应原页推导逐字保存在statement_verbatim/original_page_text；排版以原页PDF为准。",
+        "original_page_text": [
+          {
+            "pdf_page": 355,
+            "printed_page": 334,
+            "text": "334\n8\nExtended Variable Methods\n8.1.2.1\nNosé-Poincaré Dynamics: A Symplectic Approach\nAs we have seen in earlier chapters, there is a strong foundation for using symplectic\nintegrators, for example the existence of perturbative backward error expansions\nwhich are relatively easily calculated, it is desirable to work within this class. On\nthe other hand, as we have mentioned, Nosé-Hoover dynamics is not a Hamiltonian\nsystem. The Nosé-Poincaré method resolves this issue by providing a Hamiltonian-\nbased extension of the physical system whose projected trajectories are actually\nequivalent to Nosé-Hoover trajectories, in the absence of numerical errors. This\nextended Hamiltonian system can then be discretized using a symplectic method.\nNosé’s original proposal involved using the dynamics of the Hamiltonian\nHN D 1\n2s2 QpTM\u00021Qp C \u00142\n2\u0006 C U.q/ C .Nd C 1/kBT ln s\nto deﬁne an extension which can be used for canonical sampling. The dynamics\nfor constant Nosé extended energy, when reduced to the .q; p D Qp=s/ plane will\npreserve the canonical measure \u0005ˇ. However, the scaling of kinetic energy induces\na time transformation, which is inconvenient for molecular modelling purposes. The\nNosé-Poincaré method introduces an explicit unraveling of the time transformation.\nOne works with the modiﬁed Nosé-Poincaré (NP) Hamiltonian [41, 102]:\nHNP D sŒHN \u0003 EN\t D s\n\u0002 1\n2s2 QpTM\u00021Qp C \u00142\n2\u0006 C U.q/ C NdkBT ln s \u0003 EN\n\u0003\n;\n(8.9)\nwhere EN is a constant equal to the initial Nosé energy of the system. Trajectories of\nthis system unfold on a timescale which is in some sense commensurate with that of\nHamiltonian dynamics. The NP Hamiltonian system can be treated with symplectic\nintegrators, conferring a possible stability advantage. Symplectic integrators for this\nsystem are compared in [41].\nThe equations of motion associated to (8.9) are\nd\ndtq D M\u00021Qp=s;\n(8.10)\nd\ndt Qp D sF;\n(8.11)\nd\ndts D sps=\u0006;\n(8.12)\nd\ndtps D QpTM\u00021Qp\ns2\n\u0003 NdkBT \u0003 \u0016HN;\n(8.13)\nwhere \u0016HN D HN \u0003 H0\nN (H0\nN represents the value of the Nosé Hamiltonian at the\ninitial point).\n"
+          }
+        ],
+        "numbered_equations": [
+          "8.10",
+          "8.11",
+          "8.12",
+          "8.13"
+        ],
+        "transcription_note": "文字层逐字保留；数学排版另行转写，原页中的特殊字形编码不静默替换。",
+        "context_notation": [],
+        "extra_assumptions": [
+          "[EXTRA] M⁻¹=diag(invm)，N_d=n，β⁻¹=k_BT，Q=μ，状态z=((q,p̃),(s,p_s))。",
+          "[EXTRA] npValidDomain单列所有invm_i>0及β,Q,s>0；npField自身为总函数，未把该资格作为参数或合取条件。",
+          "[ERRATUM?] npDeltaN_corrected选择(8.9)展开中的n/β版本；与上方原印(n+1)/β版H_N区分。应用时EN应取该n版能量在初值处的值；声明并未绑定初值。",
+          "gradient用fderiv定义，未假设U可微；欲解释为经典力场须另加适当可微性。未证明Hamilton方程。"
+        ],
+        "issues": [
+          "[ERRATUM?] 原页H_N在(N_d+1)与N_d系数之间不一致，须人工确认；修正版按(8.9)展开选择n版。"
+        ],
+        "statement_scope": "正对角逆质量、N_d=n下的NP四漂移分量；n/β版命名能量差修正；有效域另列。未绑定初始能量、未证明Hamilton梯度关系。",
+        "lean_decl": "MD.Ch08.npField",
+        "lean_declarations": [
+          "MD.Ch08.npDeltaN_corrected",
+          "MD.Ch08.npValidDomain",
+          "MD.Ch08.npField"
+        ],
+        "source_page_verification": "本次R1审校：比对R1_PAGES.pdf附件第1页图像和文字层（印刷334，原PDF355）。",
+        "repair_log": [
+          {
+            "instruction": 31,
+            "stage": "json_review",
+            "status": "NEEDS_HUMAN",
+            "issue_codes": [
+              "IRRELEVANT_TRANSCRIPTION_NOTE",
+              "STALE_VERIFICATION_REFERENCE",
+              "SOURCE_MATHEMATICAL_ERRATUM"
+            ],
+            "change": "合并经原页和现有签名核对的元数据更正；原页全文未改。"
+          },
+          {
+            "instruction": 31,
+            "stage": "human_triage",
+            "change": "已目视核对原页PDF355：delta取H_N^(n)−E_N，不能与上式(n+1)/β版本混同。；[EXTRA] npValidDomain明确列有效物理域；使用npField作NP方程时必须另具此资格，总函数自身不强制。",
+            "suggested_fix": "[ERRATUM?] 给delta命名为H_N^(n)−E_N，保留原页定义并与原印H_N^(n+1)区分。明确本def未证明是Hamilton方程。"
+          },
+          {
+            "stage": "R1_current_readonly_review",
+            "status": "NEEDS_HUMAN",
+            "change": "本次核对以R1_任务.md所附完整声明及R1_PAGES.pdf为准；此前repair_log仅为历史，不代表当前缺口。原文全文及原印数学疑误保留；本次不修改Lean工程。"
+          }
+        ],
+        "documented_priors": [],
+        "coverage_gaps": [
+          "正对角逆质量、N_d=n下的NP四漂移分量；n/β版命名能量差修正；有效域另列。未绑定初始能量、未证明Hamilton梯度关系。"
+        ]
+      },
+      "issues": [
+        {
+          "field": "source_page_verification",
+          "problem": "声称附件第12页；本附件对应第1页。",
+          "suggested_fix": "更正为本附件第1页。"
+        },
+        {
+          "field": "extra_assumptions/issues",
+          "problem": "原印同一 H_N 的对数项系数不一致；“目视确认delta取n版本”超出了原页明示内容。",
+          "suggested_fix": "保留原文冲突；将 n 版本明确称为依据(8.9)展开选择的修正版，不声称原页已无歧义地定义它。"
+        },
+        {
+          "field": "statement_scope/extra_assumptions",
+          "problem": "invm为Fin n→ℝ，仅表示对角逆质量；n对应无约束自由度N_d，原JSON未充分显式列出该限制。",
+          "suggested_fix": "明确 M⁻¹=diag(invm)、N_d=n、β⁻¹=k_BT、Q=μ及EN为相应初始能量。"
+        }
+      ],
+      "evidence": [
+        {
+          "source": "R1_PAGES.pdf",
+          "attachment_pages": [
+            1
+          ],
+          "detail": "已逐页目视核对正文、页眉、公式、标点与编号，并与附件文字层交叉核对。statement_verbatim 与 original_page_text 的拼接一致。文字层中的 D/C、控制字符、Q/O 前缀等为数学字体映射，不能按普通拉丁字母解读；本次保留这些原始字符串。不同文字提取器的换行、公式读取顺序与连字展开有差异，不据此误判原文增删。数学排版以原页图像为准。 印刷页334，原PDF355；(8.10)–(8.13)与 statement_latex 四分量相符。原印先给 (N_d+1)k_BT ln s，(8.9)展开却为 N_d k_BT ln s，末行仍写 ΔH_N=H_N−H_N^0。"
+        }
+      ]
+    },
+    "audit": {
+      "lean_decl": [
+        "MD.Ch08.npDeltaN_corrected",
+        "MD.Ch08.npValidDomain",
+        "MD.Ch08.npField"
+      ],
+      "verdict": "NEEDS_HUMAN",
+      "explanation": "逐一展开Vec=Fin n→ℝ、Phase=Vec n×Vec n、gradient与kineticTwice。npDeltaN_corrected依次为p̃ᵀdiag(invm)p̃/(2s²)、p_s²/(2Q)、U(q)、(n/β)log s及−EN，修正选择合理。npValidDomain全部四组正性条件完整。npField返回((q̇,p̃̇),(ṡ,ṗ_s))，四分量与(8.10)–(8.13)在所列字典及n版delta下相符；符号、分母和括号正确。定义总域允许β,Q,s=0，不能自动声称有效物理域。原页delta指代矛盾未消除，故总体NEEDS_HUMAN，并非由sorry或缺少Hamilton证明判FAIL。",
+      "counterexample": "非数值反例而是两种原印解释之差：H_N^(n+1)−H_N^(n)=β⁻¹log s。若初始常量各自匹配，则两版ΔH之差为β⁻¹log(s/s₀)，通常不为零；不能仅凭末行H_N符号断言是n版。",
+      "suggested_fix": "保留原印全部文字；明确n版为修正选择；应用npField时另具npValidDomain、U可微及EN=H_N^(n)(z₀)。不要将原页指代冲突写为已目视排除。",
+      "declaration_reviews": [
+        {
+          "lean_decl": "MD.Ch08.npDeltaN_corrected",
+          "verdict": "PASS",
+          "explanation": "作为明确选择(8.9)展开的修正版正确；不等同原页前一定义。"
+        },
+        {
+          "lean_decl": "MD.Ch08.npValidDomain",
+          "verdict": "PASS",
+          "explanation": "正逆质量及β,Q,s正性均已列明，作为单独资格谓词。"
+        },
+        {
+          "lean_decl": "MD.Ch08.npField",
+          "verdict": "NEEDS_HUMAN",
+          "explanation": "四分量符合n版修正解释；原印H_N指代仍需人工裁定。"
+        }
+      ]
+    },
+    "subtask": "EAUDIT01a"
+  },
+  {
+    "batch": "EAUDIT01",
+    "source_id": "MD-8.2.1-Examples81and82",
+    "json_review": {
+      "status": "NEEDS_HUMAN",
+      "issue_codes": [
+        "STALE_VERIFICATION_REFERENCE",
+        "SOURCE_FEEDBACK_SIGN_ERRATUM"
+      ],
+      "corrected_json": {
+        "source_id": "MD-8.2.1-Examples81and82",
+        "kind": "unnumbered_claim",
+        "label": "Examples 8.1, 8.2",
+        "section": "8.2.1",
+        "printed_page": "337–338",
+        "pdf_page": "358–359",
+        "statement_latex": "Example 8.1 Φ=-ξ(0,p), g=μ⁻¹(p·∇pH-N_d k_BT). Example 8.2 Φ=ξG(z), g=μ⁻¹[∇H-k_BT∇]·G. Configurational choice G=(∇qK,0).",
+        "statement_verbatim": "8.2\nMore General Deterministic Thermostats\n337\nWe divide this into four parts: L\u0004\u0005 D W1 C W2 C W3 C W4, where\nW1 D \u0003.rz\u0005/ \u0002 .JrzH C ˚/; W2 D \u0003\u0005rz \u0002 .JrzH C ˚/;\nW3 D \u0003.r\u0002\u0005/ \u0002 g;\nW4 D \u0003\u0005r\u0002 \u0002 g:\nWe seek perturbations of Hamiltonian dynamics with separable equilibria, i.e., such\nthat \u0005 D \u0005ˇ.H.z// O\u0005.\u0002/ is a stationary solution.\nTaking this as an ansatz, the ﬁrst term can be simpliﬁed as follows:\nW1 D \u0003 O\u0005.\u0002/\u00050\nˇ.H/rzH \u0002 .JrzH C ˚/\nD ˇ O\u0005.\u0002/\u0005ˇ.H/rzH \u0002 ˚ D ˇ\u0005rzH \u0002 ˚\nas J is skew-symmetric.\nUsing the volume preservation of Hamiltonian systems, the second term satisﬁes\nW2 D \u0003\u0005rz \u0002 .JrzH C ˚/ D \u0003\u0005rz \u0002 ˚;\nhence\nW1 C W2 D \u0003\u0005Œrz \u0003 ˇrzH\t \u0002 ˚:\nThere are many possibilities for the distribution of \u0002, of course, but we will\nassume this is Gaussian for simplicity: O\u0005.\u0002/\nD\nexp\n\u0004\n\u0003ˇ Pm\niD1 \u0006i\u00122\ni =2\n\u0005\nD\nexp.\u0003ˇ\u0002T\u0007\u00021\u0002=2/ to get\nW3 D \u0003.r\u0002\u0005/ \u0002 g.\u0002; z/ D ˇ\u0005\u0002T\u0007\u00021g:\nFinally, for an equilibrium solution we must have W1 C W2 C W3 C W4 D 0, so\n\u0003Œrz \u0003 ˇrzH\t \u0002 ˚ C ˇ\u0002T\u0007\u00021g \u0003 r\u0002 \u0002 g D 0:\nThis equation is the fundamental one for deterministic thermostats.\nExample 8.1 To recover Nosé-Hoover, assume an even dimensional phase space,\nz D .q; p/, Nd degrees of freedom, and \u0012 2 R,\n˚ D \u0003\u0012\n\u0002 0\np\n\u0003\n;\ng.z/ D \u0006\u00021.p \u0002 rpH \u0003 NdkBT/:\nExample 8.2 Slightly more generally, let\n˚ D \u0012G.z/;\ng.\u0012; z/ D g.z/ D \u0006\u00021ŒrzH \u0003 kBTrz\t \u0002 G.z/:\n\n338\n8\nExtended Variable Methods\nThis is a slightly generalized form of the technique suggested by Bulgac and\nKusnezov [58].\nAssuming \u0005 goes to zero sufﬁciently rapidly at inﬁnity, we have\nZ\nrz \u0002 G.z/\u0005d! D \u0003\nZ\n.rz\u0005/ \u0002 G.z/d! D ˇ\nZ\nrzH \u0002 G.z/\u0005d!;\nusing integration by parts, therefore, since ˇ\u00021 D kBT,\nT D k\u00021\nB\nhrzH \u0002 Gi\nhr \u0002 Gi ;\nwhich gives formulas for temperature in terms of phase space averages (compare\nChap. 6, Proposition 6.1).\nSuppose we let K be a scalar valued function of position, and set\nG.z/ D\n\u0002 rqK.q/\n0\n\u0003\nthen we arrive at\ng.z/ D \u0006\u00021ŒrqU \u0003 kBTrq\t \u0002 rqK.q/:\nThis is an example of a “conﬁgurational thermostat” [193, 211, 319].\nA useful fact about thermostats is the following:\nProposition 8.1 (Thermostats are Additive) Suppose we are given two ther-\nmostats,\nPz D JrH C ˚1.\u0002; z/;\nP\u0002 D g1.\u0002; z/;\nwith stationary density O\u00051.\u0002/\u0005ˇ, and another\nPz D JrH C ˚2.\u0003; z/;\nP\u0003 D g2.\u0003; z/;\nwith stationary density O\u00052.\u0003/\u0005ˇ, then\nPz D JrH C ˚1.\u0002; z/ C ˚2.\u0003; z/;\nP\u0002 D g1.\u0002; z/;\nP\u0003 D g2.\u0003; z/\nis another thermostat and has stationary density Q\u0005 D O\u00051.\u0002/ O\u00052.\u0003/\u0005ˇ.\n",
+        "verbatim_scope": "完整对应原页文字层，逐字保留；本条数学成分由statement_latex及statement_scope定位。",
+        "proof_latex": null,
+        "proof_note": "对应原页推导逐字保存在statement_verbatim/original_page_text；排版以原页PDF为准。",
+        "original_page_text": [
+          {
+            "pdf_page": 358,
+            "printed_page": 337,
+            "text": "8.2\nMore General Deterministic Thermostats\n337\nWe divide this into four parts: L\u0004\u0005 D W1 C W2 C W3 C W4, where\nW1 D \u0003.rz\u0005/ \u0002 .JrzH C ˚/; W2 D \u0003\u0005rz \u0002 .JrzH C ˚/;\nW3 D \u0003.r\u0002\u0005/ \u0002 g;\nW4 D \u0003\u0005r\u0002 \u0002 g:\nWe seek perturbations of Hamiltonian dynamics with separable equilibria, i.e., such\nthat \u0005 D \u0005ˇ.H.z// O\u0005.\u0002/ is a stationary solution.\nTaking this as an ansatz, the ﬁrst term can be simpliﬁed as follows:\nW1 D \u0003 O\u0005.\u0002/\u00050\nˇ.H/rzH \u0002 .JrzH C ˚/\nD ˇ O\u0005.\u0002/\u0005ˇ.H/rzH \u0002 ˚ D ˇ\u0005rzH \u0002 ˚\nas J is skew-symmetric.\nUsing the volume preservation of Hamiltonian systems, the second term satisﬁes\nW2 D \u0003\u0005rz \u0002 .JrzH C ˚/ D \u0003\u0005rz \u0002 ˚;\nhence\nW1 C W2 D \u0003\u0005Œrz \u0003 ˇrzH\t \u0002 ˚:\nThere are many possibilities for the distribution of \u0002, of course, but we will\nassume this is Gaussian for simplicity: O\u0005.\u0002/\nD\nexp\n\u0004\n\u0003ˇ Pm\niD1 \u0006i\u00122\ni =2\n\u0005\nD\nexp.\u0003ˇ\u0002T\u0007\u00021\u0002=2/ to get\nW3 D \u0003.r\u0002\u0005/ \u0002 g.\u0002; z/ D ˇ\u0005\u0002T\u0007\u00021g:\nFinally, for an equilibrium solution we must have W1 C W2 C W3 C W4 D 0, so\n\u0003Œrz \u0003 ˇrzH\t \u0002 ˚ C ˇ\u0002T\u0007\u00021g \u0003 r\u0002 \u0002 g D 0:\nThis equation is the fundamental one for deterministic thermostats.\nExample 8.1 To recover Nosé-Hoover, assume an even dimensional phase space,\nz D .q; p/, Nd degrees of freedom, and \u0012 2 R,\n˚ D \u0003\u0012\n\u0002 0\np\n\u0003\n;\ng.z/ D \u0006\u00021.p \u0002 rpH \u0003 NdkBT/:\nExample 8.2 Slightly more generally, let\n˚ D \u0012G.z/;\ng.\u0012; z/ D g.z/ D \u0006\u00021ŒrzH \u0003 kBTrz\t \u0002 G.z/:\n"
+          },
+          {
+            "pdf_page": 359,
+            "printed_page": 338,
+            "text": "338\n8\nExtended Variable Methods\nThis is a slightly generalized form of the technique suggested by Bulgac and\nKusnezov [58].\nAssuming \u0005 goes to zero sufﬁciently rapidly at inﬁnity, we have\nZ\nrz \u0002 G.z/\u0005d! D \u0003\nZ\n.rz\u0005/ \u0002 G.z/d! D ˇ\nZ\nrzH \u0002 G.z/\u0005d!;\nusing integration by parts, therefore, since ˇ\u00021 D kBT,\nT D k\u00021\nB\nhrzH \u0002 Gi\nhr \u0002 Gi ;\nwhich gives formulas for temperature in terms of phase space averages (compare\nChap. 6, Proposition 6.1).\nSuppose we let K be a scalar valued function of position, and set\nG.z/ D\n\u0002 rqK.q/\n0\n\u0003\nthen we arrive at\ng.z/ D \u0006\u00021ŒrqU \u0003 kBTrq\t \u0002 rqK.q/:\nThis is an example of a “conﬁgurational thermostat” [193, 211, 319].\nA useful fact about thermostats is the following:\nProposition 8.1 (Thermostats are Additive) Suppose we are given two ther-\nmostats,\nPz D JrH C ˚1.\u0002; z/;\nP\u0002 D g1.\u0002; z/;\nwith stationary density O\u00051.\u0002/\u0005ˇ, and another\nPz D JrH C ˚2.\u0003; z/;\nP\u0003 D g2.\u0003; z/;\nwith stationary density O\u00052.\u0003/\u0005ˇ, then\nPz D JrH C ˚1.\u0002; z/ C ˚2.\u0003; z/;\nP\u0002 D g1.\u0002; z/;\nP\u0003 D g2.\u0003; z/\nis another thermostat and has stationary density Q\u0005 D O\u00051.\u0002/ O\u00052.\u0003/\u0005ˇ.\n"
+          }
+        ],
+        "numbered_equations": [],
+        "transcription_note": "文字层逐字保留；数学排版另行转写，原页中的特殊字形编码不静默替换。",
+        "context_notation": [],
+        "extra_assumptions": [
+          "β⁻¹=k_BT，Q=μ；一般G定义中的n是相空间维数，不能将此处n一律解释为物理自由度数。",
+          "generalizedFeedback和configurationalFeedback为原式总函数；经典导数解释需相应可微性。",
+          "[EXTRA] 两个驻定定理假设常矩阵J反对称、H为C³、G为C²、β,Q>0，结论为所有点的div(ρF)=0；不是全局流不变概率测度或遍历性。",
+          "Example8.1的物理系统、构型完整场及其独立驻定定理未在本条四声明中单列。"
+        ],
+        "issues": [
+          "[ERRATUM?] 原印例8.2的Φ=+ξG与正反馈一般不保持所列高斯Gibbs密度；Printed忠实保留该声称。负号耦合corrected为合理修正。"
+        ],
+        "statement_scope": "原印一般G与构型反馈、正号组合Printed驻定声称，以及负号耦合的局部驻定修正版；不含全局过程不变性。",
+        "lean_decl": "MD.Ch08.generalizedFeedback",
+        "lean_declarations": [
+          "MD.Ch08.generalizedFeedback",
+          "MD.Ch08.configurationalFeedback",
+          "MD.Ch08.generalizedFeedback_stationaryPrinted",
+          "MD.Ch08.generalizedFeedback_stationary_corrected"
+        ],
+        "source_page_verification": "本次R1审校：比对R1_PAGES.pdf附件第2–3页图像和文字层（印刷337–338，原PDF358–359）。",
+        "repair_log": [
+          {
+            "instruction": 31,
+            "website_verdict": "FAIL",
+            "suggested_fix": "[ERRATUM?] 忠实原文的两个反馈def可保留并标Printed/literal；正确驻定版应取Φ=−ξG，或保留Φ=+ξG而改g=(div G/β−DH[G])/Q。构型反馈若配正号耦合也须相应反号。例8.1的负号耦合与正反馈不受影响。",
+            "change": "generalizedFeedback/configurationalFeedback忠实保留原式；corrected将Φ改为−ξG。构型反馈在正号耦合下同样须反号。"
+          },
+          {
+            "instruction": 31,
+            "stage": "json_review",
+            "status": "NEEDS_HUMAN",
+            "issue_codes": [
+              "IRRELEVANT_TRANSCRIPTION_NOTE",
+              "STALE_VERIFICATION_REFERENCE",
+              "SOURCE_MATHEMATICAL_ERRATUM",
+              "FALSE_STATIONARITY_SIGNATURE"
+            ],
+            "change": "合并经原页和现有签名核对的元数据更正；原页全文未改。"
+          },
+          {
+            "stage": "R1_current_readonly_review",
+            "status": "NEEDS_HUMAN",
+            "change": "本次核对以R1_任务.md所附完整声明及R1_PAGES.pdf为准；此前repair_log仅为历史，不代表当前缺口。原文全文及原印数学疑误保留；本次不修改Lean工程。"
+          }
+        ],
+        "documented_priors": [],
+        "coverage_gaps": [
+          "例8.1只在摘要及上下文中出现，本条四声明未单列该特化。构型反馈仅为def；不含完整构型场、全局不变性或遍历性。"
+        ]
+      },
+      "issues": [
+        {
+          "field": "source_page_verification",
+          "problem": "附件第19,20页不存在。",
+          "suggested_fix": "改为附件第2、3页。"
+        },
+        {
+          "field": "issues/repair_log",
+          "problem": "例8.2正号耦合和正反馈不相容；但Printed声明按任务须按字面忠实性审校，旧FALSE_STATIONARITY_SIGNATURE不能当成忠实版签名FAIL。",
+          "suggested_fix": "将Printed的忠实性PASS与其数学声称NEEDS_HUMAN分别列出；负号corrected正确。"
+        }
+      ],
+      "evidence": [
+        {
+          "source": "R1_PAGES.pdf",
+          "attachment_pages": [
+            2,
+            3
+          ],
+          "detail": "已逐页目视核对正文、页眉、公式、标点与编号，并与附件文字层交叉核对。statement_verbatim 与 original_page_text 的拼接一致。文字层中的 D/C、控制字符、Q/O 前缀等为数学字体映射，不能按普通拉丁字母解读；本次保留这些原始字符串。不同文字提取器的换行、公式读取顺序与连字展开有差异，不据此误判原文增删。数学排版以原页图像为准。 印刷337–338，原PDF358–359。例8.1为负号Φ=−ξ(0,p)，例8.2确为正号Φ=ξG及正反馈；构型G=(∇K,0)和其反馈公式也与摘要一致。"
+        }
+      ]
+    },
+    "audit": {
+      "lean_decl": [
+        "MD.Ch08.generalizedFeedback",
+        "MD.Ch08.configurationalFeedback",
+        "MD.Ch08.generalizedFeedback_stationaryPrinted",
+        "MD.Ch08.generalizedFeedback_stationary_corrected"
+      ],
+      "verdict": "NEEDS_HUMAN",
+      "explanation": "generalizedFeedback为(DH[G]−div G/β)/Q，与原印括号算子完全相符；configurationalFeedback为(∇U·∇K−ΔK/β)/Q，亦忠实。两个定理所有参数和前提相同：任意n、常反对称J、C³实函数H、C²向量场G、正β,Q，密度ρ=exp(−β(H+Qξ²/2))，完整结论为∀(z,ξ),div(ρF)=0。Printed取+ξG，与原印隐含驻定声称忠实，按任务判字面PASS，但数学内容有原书符号疑误。corrected仅取−ξG，成立：Hamilton项加权散度为零，−ξG项贡献ρξ(βDH[G]−div G)，ξ方向贡献其负值，逐点相消。无须归一化或增长条件即可作此局部结论；也未据此声称全局采样。",
+      "counterexample": "Printed数学声称的精确反例：n=1，J=0，H(x)=x²/2，G(x)=1，β=Q=1，均满足全部光滑性、正性和反对称前提。F(x,ξ)=(ξ,x)，ρ=exp(−(x²+ξ²)/2)，div(ρF)=−2xξρ；在(1,1)为−2exp(−1)≠0。此反例不改变Printed的字面忠实性PASS。",
+      "suggested_fix": "保留Printed及原文，标注原书疑误并避免将其作为有效数学定理依赖；corrected可保留。另一等价修法是在保留+ξG时将反馈整体反号。构型反馈亦须与耦合符号配套。",
+      "declaration_reviews": [
+        {
+          "lean_decl": "MD.Ch08.generalizedFeedback",
+          "verdict": "PASS",
+          "explanation": "原式正反馈忠实。"
+        },
+        {
+          "lean_decl": "MD.Ch08.configurationalFeedback",
+          "verdict": "PASS",
+          "explanation": "原印构型反馈忠实。"
+        },
+        {
+          "lean_decl": "MD.Ch08.generalizedFeedback_stationaryPrinted",
+          "verdict": "PASS",
+          "explanation": "只按原文忠实性PASS；数学正确性NEEDS_HUMAN，见反例。"
+        },
+        {
+          "lean_decl": "MD.Ch08.generalizedFeedback_stationary_corrected",
+          "verdict": "PASS",
+          "explanation": "负号修正的加权散度逐点为零，前提充分。"
+        }
+      ]
+    },
+    "subtask": "EAUDIT01b"
+  },
+  {
+    "batch": "EAUDIT01",
+    "source_id": "MD-8.4-AdditiveThermostatSDE",
+    "json_review": {
+      "status": "NEEDS_HUMAN",
+      "issue_codes": [
+        "STALE_MODEL_ASSEMBLY_CLAIMS",
+        "SOURCE_MISSING_DT",
+        "SOURCE_MATRIX_NOISE_COMPATIBILITY",
+        "STALE_VERIFICATION_REFERENCE"
+      ],
+      "corrected_json": {
+        "source_id": "MD-8.4-AdditiveThermostatSDE",
+        "kind": "definition",
+        "label": null,
+        "section": "8.4",
+        "printed_page": "342–343",
+        "pdf_page": "363–364",
+        "statement_latex": "dq=M⁻¹pdt; dp=-∇Udt-Φ(ξ,z)-Γpdt+√(2k_BT)M^{1/2}Γ^{1/2}dW; dξ=gdt-Γ̂ξdt+√(2k_BT)M̂^{1/2}Γ̂^{1/2}dŴ. All Wiener coordinates are independent.",
+        "statement_verbatim": "342\n8\nExtended Variable Methods\notherwise there is little clear advantage and a potentially signiﬁcant price to be\npaid, since HMC methods only work by rejecting steps. For reading on Hybrid\nMonte Carlo methods, the reader should consult [110, 188] and other references\nmentioned in Appendix C.\n•\nKinetic Monte-Carlo (KMC) methods are a broad family of multiscale sampling\nmethods which use a local sampling mechanism to explore basins while invoking\nan Arrenhius law to estimate the rates or timescales for transitions between\nbasins (we can think of basins as neighborhoods of potential energy minima).\nThe Arrenhius law relates the rate constant k associated to a particular state-\nto-state transition to the exponential of the of the “activation energy” which is\ndeﬁned as the difference \u0010E between the energy at a local minimum and that at\nthe energy barrier between the states\nk \u0005 Ae\u0002\u0010E=kBT\nIn a KMC method, it is typically assumed that various possible state-to-state\ntransitions from a given state are well modelled by the Arrenhius law and then\nmolecular dynamics is used to calculate the prefactor A and energy difference \u0010E\nin order to understand the timescales and relative probabilities of different rare\nevents. A Markov state model can be developed to help understand the global\ndynamics and simplify the model as a whole. For references on many interesting\napproaches to this important topic, the reader is referred to [36, 42, 137, 149, 391].\n•\nAndersen Thermostat. Of particular interest is the simple and useful Andersen\nthermostat [11]. This method works by selecting atoms at random and randomly\nperturbing their momenta in a way consistent with prescribed thermodynamic\nconditions. It has been rigorously proven to sample the canonical distribution\n[114].\n8.4\nErgodic Stochastic-Dynamic Thermostats\nIn this section, we consider the combination of stochastic perturbation with a\ndeterministic thermostat. Methods constructed in this way can be ergodic for\nthe canonical distribution while also providing ﬂexibility in way equilibrium is\nachieved. We distinguish in (6.16) between multiplicative noise, where B D B.z/\nvaries with z and additive noise, where B is constant. In our treatment of this topic\nwe will only consider additive noise. The presence of multiplicative noise may\ncomplicate discretization. As we shall see, the reliance on additive noise improves\nthe performance of discretization schemes.\nTo give this some speciﬁcity for molecular dynamics, we write the stochastic\ndynamical model as\ndq D M\u00021pdt;\n(8.22)\n\n8.4\nErgodic Stochastic-Dynamic Thermostats\n343\ndp D \u0003rU.q/dt \u0003 ˚.\u0002; z/ \u0003 \u0010 pdt C\np\n2kBTM1=2\u0010 1=2dW;\n(8.23)\nd\u0002 D g.\u0002; q; p/dt \u0003 O\u0010 \u0002dt C\np\n2kBT OM\n1=2 O\u0010\n1=2d OW:\n(8.24)\nHere \u0010 ; O\u0010\nare symmetric, square matrices of appropriate dimension, W is a\nvector of Nc Wiener processes, and OW is a vector of m Wiener processes, all\nindependent of each other. We assume that the deterministic thermostat represented\nby the ˚ and g terms preserves the extended distribution O\u0005.\u0002/\u0005ˇ, where O\u0005.\u0002/ D\nexp\n\u0006\n\u0003ˇ\u0002T OM\n\u00021\u0002=2\n\u0007\n. The matrix OM is symmetric and positive deﬁnite; one could\ntake it to be diagonal.\nThe additivity property of thermostats mentioned above holds also for stochastic\nthermostats, since the Fokker-Planck equation is constructed from linear operations\non the vector ﬁelds involved, thus it is enough to require that the newly introduced\nterms satisfy appropriate ﬂuctuation-dissipation relationships so that they are\ncompatible with the extended Gibbs distribution of the deterministic part. That is,\nwe require\ndp D \u0003\u0010 pdt C\np\n2kBTM1=2\u0010 1=2dW\nto preserve the distribution with density N\u0005 D exp\n\u0004\n\u0003ˇpTM\u00021p=2\n\u0005\n, and\nd\u0002 D \u0003 O\u0010 \u0002dt C\np\n2kBT OM\n1=2 O\u0010\n1=2d OW\nto preserve O\u0005. These two problems are essentially the same. Considering the former,\nthe stationary Fokker-Planck equation reads\nrp \u0002 .\u0010 p N\u0005/\n„\nƒ‚\n…\ndrift\nC ˇ\u00021Tr\n\u0006\n\u0010 1=2M1=2r2\np N\u0005M1=2\u0010 1=2\u0007\n„\nƒ‚\n…\ndiffusion\nD 0:\nThe drift term here equates to\nTr.\u0010 / N\u0005 C .\u0003ˇ/pT\u0010 M\u00021p N\u0005:\nFor the diffusion term, we calculate\nr N\u0005 D \u0003ˇ N\u0005M\u00021p;\nthus\nr2 N\u0005 D N\u0005Œˇ2M\u00021ppTM\u00021 \u0003 ˇM\u00021\t;\n",
+        "verbatim_scope": "完整对应原页文字层，逐字保留；本条数学成分由statement_latex及statement_scope定位。",
+        "proof_latex": null,
+        "proof_note": "对应原页推导逐字保存在statement_verbatim/original_page_text；排版以原页PDF为准。",
+        "original_page_text": [
+          {
+            "pdf_page": 363,
+            "printed_page": 342,
+            "text": "342\n8\nExtended Variable Methods\notherwise there is little clear advantage and a potentially signiﬁcant price to be\npaid, since HMC methods only work by rejecting steps. For reading on Hybrid\nMonte Carlo methods, the reader should consult [110, 188] and other references\nmentioned in Appendix C.\n•\nKinetic Monte-Carlo (KMC) methods are a broad family of multiscale sampling\nmethods which use a local sampling mechanism to explore basins while invoking\nan Arrenhius law to estimate the rates or timescales for transitions between\nbasins (we can think of basins as neighborhoods of potential energy minima).\nThe Arrenhius law relates the rate constant k associated to a particular state-\nto-state transition to the exponential of the of the “activation energy” which is\ndeﬁned as the difference \u0010E between the energy at a local minimum and that at\nthe energy barrier between the states\nk \u0005 Ae\u0002\u0010E=kBT\nIn a KMC method, it is typically assumed that various possible state-to-state\ntransitions from a given state are well modelled by the Arrenhius law and then\nmolecular dynamics is used to calculate the prefactor A and energy difference \u0010E\nin order to understand the timescales and relative probabilities of different rare\nevents. A Markov state model can be developed to help understand the global\ndynamics and simplify the model as a whole. For references on many interesting\napproaches to this important topic, the reader is referred to [36, 42, 137, 149, 391].\n•\nAndersen Thermostat. Of particular interest is the simple and useful Andersen\nthermostat [11]. This method works by selecting atoms at random and randomly\nperturbing their momenta in a way consistent with prescribed thermodynamic\nconditions. It has been rigorously proven to sample the canonical distribution\n[114].\n8.4\nErgodic Stochastic-Dynamic Thermostats\nIn this section, we consider the combination of stochastic perturbation with a\ndeterministic thermostat. Methods constructed in this way can be ergodic for\nthe canonical distribution while also providing ﬂexibility in way equilibrium is\nachieved. We distinguish in (6.16) between multiplicative noise, where B D B.z/\nvaries with z and additive noise, where B is constant. In our treatment of this topic\nwe will only consider additive noise. The presence of multiplicative noise may\ncomplicate discretization. As we shall see, the reliance on additive noise improves\nthe performance of discretization schemes.\nTo give this some speciﬁcity for molecular dynamics, we write the stochastic\ndynamical model as\ndq D M\u00021pdt;\n(8.22)\n"
+          },
+          {
+            "pdf_page": 364,
+            "printed_page": 343,
+            "text": "8.4\nErgodic Stochastic-Dynamic Thermostats\n343\ndp D \u0003rU.q/dt \u0003 ˚.\u0002; z/ \u0003 \u0010 pdt C\np\n2kBTM1=2\u0010 1=2dW;\n(8.23)\nd\u0002 D g.\u0002; q; p/dt \u0003 O\u0010 \u0002dt C\np\n2kBT OM\n1=2 O\u0010\n1=2d OW:\n(8.24)\nHere \u0010 ; O\u0010\nare symmetric, square matrices of appropriate dimension, W is a\nvector of Nc Wiener processes, and OW is a vector of m Wiener processes, all\nindependent of each other. We assume that the deterministic thermostat represented\nby the ˚ and g terms preserves the extended distribution O\u0005.\u0002/\u0005ˇ, where O\u0005.\u0002/ D\nexp\n\u0006\n\u0003ˇ\u0002T OM\n\u00021\u0002=2\n\u0007\n. The matrix OM is symmetric and positive deﬁnite; one could\ntake it to be diagonal.\nThe additivity property of thermostats mentioned above holds also for stochastic\nthermostats, since the Fokker-Planck equation is constructed from linear operations\non the vector ﬁelds involved, thus it is enough to require that the newly introduced\nterms satisfy appropriate ﬂuctuation-dissipation relationships so that they are\ncompatible with the extended Gibbs distribution of the deterministic part. That is,\nwe require\ndp D \u0003\u0010 pdt C\np\n2kBTM1=2\u0010 1=2dW\nto preserve the distribution with density N\u0005 D exp\n\u0004\n\u0003ˇpTM\u00021p=2\n\u0005\n, and\nd\u0002 D \u0003 O\u0010 \u0002dt C\np\n2kBT OM\n1=2 O\u0010\n1=2d OW\nto preserve O\u0005. These two problems are essentially the same. Considering the former,\nthe stationary Fokker-Planck equation reads\nrp \u0002 .\u0010 p N\u0005/\n„\nƒ‚\n…\ndrift\nC ˇ\u00021Tr\n\u0006\n\u0010 1=2M1=2r2\np N\u0005M1=2\u0010 1=2\u0007\n„\nƒ‚\n…\ndiffusion\nD 0:\nThe drift term here equates to\nTr.\u0010 / N\u0005 C .\u0003ˇ/pT\u0010 M\u00021p N\u0005:\nFor the diffusion term, we calculate\nr N\u0005 D \u0003ˇ N\u0005M\u00021p;\nthus\nr2 N\u0005 D N\u0005Œˇ2M\u00021ppTM\u00021 \u0003 ˇM\u00021\t;\n"
+          }
+        ],
+        "numbered_equations": [
+          "8.22",
+          "8.23",
+          "8.24"
+        ],
+        "transcription_note": "文字层逐字保留；数学排版另行转写，原页中的特殊字形编码不静默替换。",
+        "context_notation": [],
+        "extra_assumptions": [
+          "[EXTRA] M⁻¹=diag(invm)，所有invm_i>0，N_c=N_d=n；U为C¹。β⁻¹=k_BT。",
+          "[EXTRA] stochasticThermostatSolution已用同一n+k维独立Wiener过程、thermostatBlockNoise和实际漂移组装完整积分解规格。物理质量明确绑定diag(invm⁻¹)，热浴质量为Mhat，两组使用同β。",
+          "[EXTRA] fluctuationDissipation要求β>0、M正定、Γ半正定及BBᵀ=(2/β)ΓM。实对称矩阵下由左右对称性强制ΓM=MΓ，属于明确限制后的充分相容条件。热浴同理。",
+          "[ERRATUM?] 原印−Φ未附dt；漂移按−Φdt解释。原印对称性条件不足以保证矩阵平方根噪声的Gibbs相容性。",
+          "未要求或证明确定性Φ,g部分保权；未构造矩阵平方根，未证明完整解存在、唯一、不变分布或遍历性。",
+          "[EXTRA] additiveSDE要求几乎处处全实时间连续；每个t≥0的X t对W在[0,t]历史可测，漂移在[0,t]几乎处处可积，且逐个t的积分方程几乎处处成立；x0固定而非随机。"
+        ],
+        "issues": [
+          "[ERRATUM?] 原印(8.23)的−Φ缺dt。",
+          "[ERRATUM?] 原印矩阵对称性不足以保证实噪声及Gibbs相容；当前Lean是半正定、交换资格下的限制模型。"
+        ],
+        "statement_scope": "常噪声积分SDE模板与正对角物理质量的统一恒温器解规格；同一n+k维独立Wiener、分块噪声、两组协方差和漂移质量已绑定。未含一般非对角物理质量、存在唯一性或不变律。",
+        "lean_decl": "MD.Ch08.independentWiener",
+        "lean_declarations": [
+          "MD.Ch08.independentWiener",
+          "MD.Ch08.additiveSDE",
+          "MD.Ch08.stochasticThermostatDrift",
+          "MD.Ch08.fluctuationDissipation",
+          "MD.Ch08.thermostatBlockNoise",
+          "MD.Ch08.stochasticThermostatSolution"
+        ],
+        "source_page_verification": "本次R1审校：比对R1_PAGES.pdf附件第4–5页图像和文字层（印刷342–343，原PDF363–364）。",
+        "repair_log": [
+          {
+            "instruction": 31,
+            "website_verdict": "FAIL",
+            "suggested_fix": "只修JSON范围可保留现有组件；如要完成原模型，另定义统一解谓词，绑定对角逆质量或直接用一般M⁻¹，构造分块B和共同n+k维独立W，并分别加入两组明确的协方差匹配条件。保留原文并注明(8.23)的dt疑误和矩阵相容疑误。本次不修改工程。",
+            "change": "[EXTRA] 正逆质量、C¹势；物理质量固定为diag(invm⁻¹)，Mhat为热浴协方差质量；两组涨落耗散均绑定同一β及实际阻尼。未构造矩阵平方根，未证明确定性热浴保权或完整过程不变性。"
+          },
+          {
+            "instruction": 31,
+            "stage": "json_review",
+            "status": "NEEDS_HUMAN",
+            "issue_codes": [
+              "SDE_MODEL_NOT_ASSEMBLED",
+              "MASS_PARAMETER_LINK_MISSING",
+              "ERRATUM_MATRIX_NOISE_COMPATIBILITY"
+            ],
+            "change": "合并经原页和现有签名核对的元数据更正；原页全文未改。"
+          },
+          {
+            "stage": "R1_current_readonly_review",
+            "status": "NEEDS_HUMAN",
+            "change": "本次核对以R1_任务.md所附完整声明及R1_PAGES.pdf为准；此前repair_log仅为历史，不代表当前缺口。原文全文及原印数学疑误保留；本次不修改Lean工程。"
+          }
+        ],
+        "documented_priors": [],
+        "coverage_gaps": [
+          "不含一般非对角物理质量；不含确定性热浴保权假设或结论、平方根构造、存在唯一性及完整过程不变性。统一SDE组装和质量绑定已具备，不再列为缺口。"
+        ]
+      },
+      "issues": [
+        {
+          "field": "extra_assumptions/issues/coverage_gaps/repair_log",
+          "problem": "“未绑定M与invm”“尚无统一组装声明”“只是未组装组件”等与当前完整Lean矛盾。",
+          "suggested_fix": "当前stochasticThermostatSolution已绑定diag(invm⁻¹)、统一n+k维W、分块B和两组同β涨落耗散；移除作为当前结论的旧说法，repair_log仅保留为历史。"
+        },
+        {
+          "field": "statement_latex/issues",
+          "problem": "原印(8.23)的−Φ项缺dt，摘要忠实保留；Lean按漂移项解释补dt。",
+          "suggested_fix": "保留原文并明确标注补dt是修正解释。"
+        },
+        {
+          "field": "extra_assumptions/issues",
+          "problem": "仅矩阵对称不足以保证实平方根或该噪声的目标Gibbs协方差。",
+          "suggested_fix": "保留原文；注明现有资格要求半正定和交换性，是充分但较强的限制；一般匹配条件为BBᵀ=(ΓM+MΓᵀ)/β。"
+        },
+        {
+          "field": "source_page_verification/transcription_note",
+          "problem": "引用未提供的source_page_checks.json及无关PDF420。",
+          "suggested_fix": "记录当前附件第4–5页，删去PDF420备注。"
+        }
+      ],
+      "evidence": [
+        {
+          "source": "R1_PAGES.pdf",
+          "attachment_pages": [
+            4,
+            5
+          ],
+          "detail": "已逐页目视核对正文、页眉、公式、标点与编号，并与附件文字层交叉核对。statement_verbatim 与 original_page_text 的拼接一致。文字层中的 D/C、控制字符、Q/O 前缀等为数学字体映射，不能按普通拉丁字母解读；本次保留这些原始字符串。不同文字提取器的换行、公式读取顺序与连字展开有差异，不据此误判原文增删。数学排版以原页图像为准。 印刷342–343，原PDF363–364。(8.23)确实将−Φ(ξ,z)写成不带dt；原印矩阵仅称对称，Mhat正定。原式噪声次序为M^{1/2}Γ^{1/2}，不是Γ^{1/2}M^{1/2}。"
+        }
+      ]
+    },
+    "audit": {
+      "lean_decl": [
+        "MD.Ch08.independentWiener",
+        "MD.Ch08.additiveSDE",
+        "MD.Ch08.stochasticThermostatDrift",
+        "MD.Ch08.fluctuationDissipation",
+        "MD.Ch08.thermostatBlockNoise",
+        "MD.Ch08.stochasticThermostatSolution"
+      ],
+      "verdict": "NEEDS_HUMAN",
+      "explanation": "independentWiener对每个Fin k坐标要求IsBrownianReal，并对整个路径随机变量iIndepFun，P为概率测度，故跨组独立性由统一n+k坐标给出。additiveSDE的对象E、固定x0、常因子B、几乎处处连续、自然噪声历史可测、t≥0逐时可积及积分恒等式全部明确；不是存在性定理。stochasticThermostatDrift在(q,p,ξ)上恰为(diag(invm)p,−∇U−Φ−Γp,g−Γhatξ)，把原书缺失dt解释为漂移。thermostatBlockNoise前n列只作用p，后k列只作用ξ，q噪声为零。stochasticThermostatSolution已将该漂移、分块噪声、同一个独立W、同β两组资格及实际对角物理质量绑定，旧未组装/未绑定指控不成立。fluctuationDissipation为充分但较强的交换情形，不能冒充原印仅对称的一般模型。没有确定性保权前提，因而不能从该解谓词推出Gibbs不变性；声明本身未作此结论，故不是签名错误。原书dt和矩阵条件疑误总体保留NEEDS_HUMAN。",
+      "counterexample": "原书矩阵条件不足的精确例：β=1，M=diag(1,4)，Γ=[[2,1],[1,2]]，二者均对称正定。原印B=√2 M^{1/2}Γ^{1/2}给BBᵀ=2M^{1/2}ΓM^{1/2}=[[4,4],[4,16]]，而目标协方差M要求ΓM+MΓ=[[4,5],[5,16]]，两者不等。这里未用数值近似或计算软件；直接矩阵乘法。现有Lean资格会排除此非交换例，不能把它当成Lean资格的反例。",
+      "suggested_fix": "更新过时JSON备注；保留原印并标缺dt及矩阵相容疑误。将Lean描述为已组装的对角物理质量、交换涨落耗散特例。若以后扩展一般OU资格，可采用BBᵀ=(ΓM+MΓᵀ)/β并要求可实现的半正定协方差；本次不修改Lean。",
+      "declaration_reviews": [
+        {
+          "lean_decl": "MD.Ch08.independentWiener",
+          "verdict": "PASS",
+          "explanation": "概率测度、各坐标Brownian及整条路径相互独立完整。"
+        },
+        {
+          "lean_decl": "MD.Ch08.additiveSDE",
+          "verdict": "PASS",
+          "explanation": "常噪声积分解模板；连续性、可测性、可积性及t≥0量词正确。"
+        },
+        {
+          "lean_decl": "MD.Ch08.stochasticThermostatDrift",
+          "verdict": "PASS",
+          "explanation": "对角物理质量和补dt解释下与原式相符。"
+        },
+        {
+          "lean_decl": "MD.Ch08.fluctuationDissipation",
+          "verdict": "PASS",
+          "explanation": "对称正定质量及半正定阻尼下，交换情形的充分资格；不声称一般必要条件。"
+        },
+        {
+          "lean_decl": "MD.Ch08.thermostatBlockNoise",
+          "verdict": "PASS",
+          "explanation": "n+k列分块和作用对象正确。"
+        },
+        {
+          "lean_decl": "MD.Ch08.stochasticThermostatSolution",
+          "verdict": "PASS",
+          "explanation": "统一模型已组装且质量已绑定；明确限定范围后正确。"
+        }
+      ]
+    },
+    "subtask": "EAUDIT01c"
+  },
+  {
+    "batch": "EAUDIT02",
+    "source_id": "MD-8.4.1-NHL",
+    "json_review": {
+      "status": "NEEDS_HUMAN",
+      "issue_codes": [
+        "SOURCE_MASS_RESCALING_ERRATUM",
+        "STALE_VERIFICATION_REFERENCE"
+      ],
+      "corrected_json": {
+        "source_id": "MD-8.4.1-NHL",
+        "kind": "definition",
+        "label": null,
+        "section": "8.4.1",
+        "printed_page": "345–346",
+        "pdf_page": "366–367",
+        "statement_latex": "dq=M⁻¹pdt, dp=-∇Udt-ξpdt, dξ=μ⁻¹[pᵀM⁻¹p-N_dk_BT]dt-γξdt+√(2k_BTγμ⁻¹)dW. Quadratic specialization: U=qᵀAq/2, M=I.",
+        "statement_verbatim": "8.4\nErgodic Stochastic-Dynamic Thermostats\n345\nThis means that we have built one of our two vectors. The second follows as a linear\ncombination of the others:\nQF D b0 \u0003 \u0012 QG \u0003 .g \u0003 \n\u0012/\u0007\u00021b1:\nut\nThe fact that the Hörmander condition holds is, as we know from Chap. 6, only\npart of the story. However based on known results for Langevin dynamics, we\nconjecture that ergodicity will hold if (i) the Hörmander condition holds, (ii) U\nis sufﬁciently smooth, and (iii) the conﬁgurational phase space is compact, e.g.\nperiodic boundary conditions are employed. However we stress that each possible\nmethod will ultimately need to be carefully and systematically checked to verify the\nergodic properties.\n8.4.1\nNosé-Hoover-Langevin: An Ergodic Weakly Coupled\nThermostat\nThe Nosé-Hoover-Langevin (NHL) method is based on a simple idea: replace the\n“chain” in the Nosé-Hoover Chain, whose sole purpose is to maintain a Gaussian\ndistribution in the auxiliary variable, by a stochastic Langevin-type thermostat. The\nmethod was ﬁrst proposed in [323]. The proof of ergodicity (more precisely the\nconﬁrmation of the Hörmander condition), for a problem with harmonic internal\ninteractions, was given in [226] and we roughly follow the treatment from this paper.\nThe Nosé-Hoover-Langevin equations are\ndq D M\u00021pdt;\n(8.27)\ndp D \u0003rU.q/dt \u0003 \u0012pdt;\n(8.28)\nd\u0012 D \u0006\u00021ŒpTM\u00021p \u0003 NdkBT\tdt \u0003 \n\u0012dt C\np\n2kBT\n\u0006\u00021dW;\n(8.29)\nwhere .q; p/ 2 D with \u0012 2 R. Let us emphasize that the principal features of this\nthermostat: (1) it is essentially Nosé-Hoover plus a perturbation, (2) it incorporates\na single Wiener process, (3) it has two free parameters \n and \u0006.\nLet us ﬁrst demonstrate that the Nosé-Hoover-Langevin method, is, in fact, a\nthermostat. We observe that we have already shown that the Nosé-Hoover method\npreserves the extended canonical distribution \u0005ˇ exp.\u0003ˇ\u0006\u00122=2/. Therefore, by the\nadditivity property, all that is needed is to show that the additional part\nd\u0012 D \u0003\n\u0012dt C\np\n2kBT\n\u0006\u00021dW\n\n346\n8\nExtended Variable Methods\npreserves O\u0005.\u0012/ D exp.\u0003ˇ\u0006\u00122=2/. However, this is obvious from our earlier\ninvestigations of Ornstein-Uhlenbeck equations.\nIn order to show that this thermostat is ergodic, we need to demonstrate that\nthe assumptions presented in Sect. 6.4.4 are valid. Assumption 1(ii) requires us to\nverify that a Hörmander condition (see Deﬁnition 6.1) holds for the Nosé-Hoover-\nLangevin system. Because of the complexity of the high order commutators, we\nwill work here with the assumption of a quadratic potential in the physical model.\nIn some sense this is the most difﬁcult case for a thermostat, but paradoxically, the\nassumption facilitates the mathematical analysis. We will assume throughout the\nfollowing that Nd D Nc, i.e. that there are no constraints in the system. Our potential\nwill therefore be assumed to be\nU.q/ D 1\n2qTAq;\nfor A a symmetric, positive deﬁnite Nc \u0004 Nc matrix, with\nrU.q/ D Aq:\nWe will further assume M D I. If this is not the case, then one may introduce the\nrescaling Qq D M\u00021=2q; Qp D M1=2p in order to rewrite the system in a form that does\nnot involve M. Thus the system under study is\ndq D pdt;\n(8.30)\ndp D \u0003Aqdt \u0003 \u0012pdt;\n(8.31)\nd\u0012 D \u0006\u00021Œkpk2 \u0003 NdkBT\tdt \u0003 \n\u0012dt C \u0007dW:\n(8.32)\nLet u1; u2; : : : ; uNc be the eigenvectors of A with \u00131; : : : ; \u0013Nc the corresponding\neigenvalues. Observe that if q0 \u0002uk D p0 \u0002uk D 0, then, using (8.30)–(8.31), we have\nat this point\nuk \u0002 p D 0;\nuk \u0002 Œ\u0003Aq \u0003 \u0012p\t D \u0003\u0013kuk \u0002 q D 0;\nwhich implies that Vk D f.q; p/juk \u0002 q D 0; uk \u0002 p D 0g is an invariant submanifold.\nTherefore we must require that uk \u0002 q and uk \u0002 p do not simultaneously vanish, that\nis, .q; p/ 2 D D R2Nc n SNc\nkD1 Vk.\nTheorem 8.1 If A is symmetric positive deﬁnite and has distinct eigenvalues, then\n(8.30)–(8.32) satisﬁes the Hörmander condition on D \u0004 R.\n",
+        "verbatim_scope": "完整对应原页文字层，逐字保留；本条数学成分由statement_latex及statement_scope定位。",
+        "proof_latex": null,
+        "proof_note": "对应原页推导逐字保存在statement_verbatim/original_page_text；排版以原页PDF为准。",
+        "original_page_text": [
+          {
+            "pdf_page": 366,
+            "printed_page": 345,
+            "text": "8.4\nErgodic Stochastic-Dynamic Thermostats\n345\nThis means that we have built one of our two vectors. The second follows as a linear\ncombination of the others:\nQF D b0 \u0003 \u0012 QG \u0003 .g \u0003 \n\u0012/\u0007\u00021b1:\nut\nThe fact that the Hörmander condition holds is, as we know from Chap. 6, only\npart of the story. However based on known results for Langevin dynamics, we\nconjecture that ergodicity will hold if (i) the Hörmander condition holds, (ii) U\nis sufﬁciently smooth, and (iii) the conﬁgurational phase space is compact, e.g.\nperiodic boundary conditions are employed. However we stress that each possible\nmethod will ultimately need to be carefully and systematically checked to verify the\nergodic properties.\n8.4.1\nNosé-Hoover-Langevin: An Ergodic Weakly Coupled\nThermostat\nThe Nosé-Hoover-Langevin (NHL) method is based on a simple idea: replace the\n“chain” in the Nosé-Hoover Chain, whose sole purpose is to maintain a Gaussian\ndistribution in the auxiliary variable, by a stochastic Langevin-type thermostat. The\nmethod was ﬁrst proposed in [323]. The proof of ergodicity (more precisely the\nconﬁrmation of the Hörmander condition), for a problem with harmonic internal\ninteractions, was given in [226] and we roughly follow the treatment from this paper.\nThe Nosé-Hoover-Langevin equations are\ndq D M\u00021pdt;\n(8.27)\ndp D \u0003rU.q/dt \u0003 \u0012pdt;\n(8.28)\nd\u0012 D \u0006\u00021ŒpTM\u00021p \u0003 NdkBT\tdt \u0003 \n\u0012dt C\np\n2kBT\n\u0006\u00021dW;\n(8.29)\nwhere .q; p/ 2 D with \u0012 2 R. Let us emphasize that the principal features of this\nthermostat: (1) it is essentially Nosé-Hoover plus a perturbation, (2) it incorporates\na single Wiener process, (3) it has two free parameters \n and \u0006.\nLet us ﬁrst demonstrate that the Nosé-Hoover-Langevin method, is, in fact, a\nthermostat. We observe that we have already shown that the Nosé-Hoover method\npreserves the extended canonical distribution \u0005ˇ exp.\u0003ˇ\u0006\u00122=2/. Therefore, by the\nadditivity property, all that is needed is to show that the additional part\nd\u0012 D \u0003\n\u0012dt C\np\n2kBT\n\u0006\u00021dW\n"
+          },
+          {
+            "pdf_page": 367,
+            "printed_page": 346,
+            "text": "346\n8\nExtended Variable Methods\npreserves O\u0005.\u0012/ D exp.\u0003ˇ\u0006\u00122=2/. However, this is obvious from our earlier\ninvestigations of Ornstein-Uhlenbeck equations.\nIn order to show that this thermostat is ergodic, we need to demonstrate that\nthe assumptions presented in Sect. 6.4.4 are valid. Assumption 1(ii) requires us to\nverify that a Hörmander condition (see Deﬁnition 6.1) holds for the Nosé-Hoover-\nLangevin system. Because of the complexity of the high order commutators, we\nwill work here with the assumption of a quadratic potential in the physical model.\nIn some sense this is the most difﬁcult case for a thermostat, but paradoxically, the\nassumption facilitates the mathematical analysis. We will assume throughout the\nfollowing that Nd D Nc, i.e. that there are no constraints in the system. Our potential\nwill therefore be assumed to be\nU.q/ D 1\n2qTAq;\nfor A a symmetric, positive deﬁnite Nc \u0004 Nc matrix, with\nrU.q/ D Aq:\nWe will further assume M D I. If this is not the case, then one may introduce the\nrescaling Qq D M\u00021=2q; Qp D M1=2p in order to rewrite the system in a form that does\nnot involve M. Thus the system under study is\ndq D pdt;\n(8.30)\ndp D \u0003Aqdt \u0003 \u0012pdt;\n(8.31)\nd\u0012 D \u0006\u00021Œkpk2 \u0003 NdkBT\tdt \u0003 \n\u0012dt C \u0007dW:\n(8.32)\nLet u1; u2; : : : ; uNc be the eigenvectors of A with \u00131; : : : ; \u0013Nc the corresponding\neigenvalues. Observe that if q0 \u0002uk D p0 \u0002uk D 0, then, using (8.30)–(8.31), we have\nat this point\nuk \u0002 p D 0;\nuk \u0002 Œ\u0003Aq \u0003 \u0012p\t D \u0003\u0013kuk \u0002 q D 0;\nwhich implies that Vk D f.q; p/juk \u0002 q D 0; uk \u0002 p D 0g is an invariant submanifold.\nTherefore we must require that uk \u0002 q and uk \u0002 p do not simultaneously vanish, that\nis, .q; p/ 2 D D R2Nc n SNc\nkD1 Vk.\nTheorem 8.1 If A is symmetric positive deﬁnite and has distinct eigenvalues, then\n(8.30)–(8.32) satisﬁes the Hörmander condition on D \u0004 R.\n"
+          }
+        ],
+        "numbered_equations": [
+          "8.27",
+          "8.28",
+          "8.29",
+          "8.30",
+          "8.31",
+          "8.32"
+        ],
+        "transcription_note": "文字层逐字保留；数学排版另行转写，原页中的特殊字形编码不静默替换。",
+        "context_notation": [],
+        "extra_assumptions": [
+          "[EXTRA] M⁻¹=diag(invm)，N_d=n；invm_i,β,Q,γ均正；β⁻¹=k_BT，Q=μ。一般非对角物理质量未覆盖。",
+          "isNHLSolution采用一个实Wiener坐标，噪声只作用ξ，幅度sqrt(2γ/(βQ))；解的可测、连续、可积与固定初值规格由additiveSDE给出。",
+          "harmonicPotential对任意实方阵A定义qᵀAq/2；没有在该def中要求A对称正定，也未把isNHLSolution绑定到该二次势或M=I。",
+          "不含原页定理8.1、特征值互异、D的模态排除及Hörmander/遍历性结论；不得由本条声明推断这些性质。",
+          "[ERRATUM?] 原印质量重缩放方向有误，保留原文，正确方向须同步变换势。"
+        ],
+        "issues": [
+          "已目视核对原页PDF367：原印q̃=M⁻¹ᐟ²q、p̃=M¹ᐟ²p不产生单位质量方程；正确方向相反并须同步变换势。",
+          "[ERRATUM?]原书所印质量重缩放方向有误，原文保留待人工处理。"
+        ],
+        "statement_scope": "仅正对角质量、无约束Nd=n的NHL漂移与单ξ噪声积分解规格；harmonicPotential仅定义二次函数。一般矩阵质量、单位质量二次专门化声明及原书重缩放均未覆盖。",
+        "lean_decl": "MD.Ch08.nhlDrift",
+        "lean_declarations": [
+          "MD.Ch08.nhlDrift",
+          "MD.Ch08.isNHLSolution",
+          "MD.Ch08.harmonicPotential"
+        ],
+        "source_page_verification": "本次R1审校：比对R1_PAGES.pdf附件第6–7页图像和文字层（印刷345–346，原PDF366–367）。",
+        "repair_log": [
+          {
+            "instruction": 31,
+            "website_verdict": "FAIL",
+            "suggested_fix": "将JSON范围限制为现有正对角质量、无约束模型，并明确尚无二次专门化声明；若要宣称全模型，需一般矩阵质量及参数关联。原书重缩放保留[ERRATUM?]，可另陈列正确变换q̃=M^{1/2}q,p̃=M^{-1/2}p及变换后的势；不改原文。本次不修改工程。",
+            "change": "[EXTRA/覆盖缺口] invm_i,β,Q,γ均正；不宣称覆盖一般M或已把isNHLSolution特化到正定二次势(8.30)–(8.32)。原印重缩放疑误另列。"
+          },
+          {
+            "instruction": 31,
+            "stage": "json_review",
+            "status": "NEEDS_HUMAN",
+            "issue_codes": [
+              "EXTRA_DIAGONAL_MASS_SCOPE",
+              "ERRATUM_MASS_RESCALING"
+            ],
+            "change": "合并经原页和现有签名核对的元数据更正；原页全文未改。"
+          },
+          {
+            "stage": "R1_current_readonly_review",
+            "status": "NEEDS_HUMAN",
+            "change": "本次核对以R1_任务.md所附完整声明及R1_PAGES.pdf为准；此前repair_log仅为历史，不代表当前缺口。原文全文及原印数学疑误保留；本次不修改Lean工程。"
+          }
+        ],
+        "documented_priors": [],
+        "coverage_gaps": [
+          "一般非对角质量、二次势与NHL解的显式特化、A对称正定资格、原页D域及定理8.1均未在这三个声明中形式化。"
+        ]
+      },
+      "issues": [
+        {
+          "field": "issues",
+          "problem": "原书重缩放不能把dq=M⁻¹pdt化为dq̃=p̃dt。",
+          "suggested_fix": "保留原文并标疑误；正确为q̃=M¹ᐟ²q、p̃=M⁻¹ᐟ²p，且势须同步变换。"
+        },
+        {
+          "field": "source_page_verification/transcription_note",
+          "problem": "引用未提供的核对文件及无关PDF420。",
+          "suggested_fix": "改为本附件第6–7页并移除无关备注。"
+        }
+      ],
+      "evidence": [
+        {
+          "source": "R1_PAGES.pdf",
+          "attachment_pages": [
+            6,
+            7
+          ],
+          "detail": "已逐页目视核对正文、页眉、公式、标点与编号，并与附件文字层交叉核对。statement_verbatim 与 original_page_text 的拼接一致。文字层中的 D/C、控制字符、Q/O 前缀等为数学字体映射，不能按普通拉丁字母解读；本次保留这些原始字符串。不同文字提取器的换行、公式读取顺序与连字展开有差异，不据此误判原文增删。数学排版以原页图像为准。 印刷345–346，原PDF366–367。噪声根号包含2k_BTγμ⁻¹，与sqrt(2γ/(βQ))一致。原印重缩放确为q̃=M⁻¹ᐟ²q、p̃=M¹ᐟ²p；非转录错误。"
+        }
+      ]
+    },
+    "audit": {
+      "lean_decl": [
+        "MD.Ch08.nhlDrift",
+        "MD.Ch08.isNHLSolution",
+        "MD.Ch08.harmonicPotential"
+      ],
+      "verdict": "NEEDS_HUMAN",
+      "explanation": "展开nhField可得nhlDrift=((invm·p,−∇U−ξp),(∑ invm_i p_i²−n/β)/Q−γξ)，故三个漂移分量对应(8.27)–(8.29)。isNHLSolution在任意带可测空间Ω上量化概率测度P、单坐标W、状态过程X及固定x0，要求全部逆质量、β,Q、γ正；常噪声向量的物理Phase分量为0，热浴分量sqrt(2γ/(βQ))，与原印根号覆盖范围完全一致。additiveSDE的完整积分解前提已核对，不声称存在、不变性或遍历性。harmonicPotential对任意A只定义二次函数；只有A对称时梯度才是Aq，不能凭def推断正定或定理8.1。原页D用于后续Hörmander结论，本条未形式化它，不应将此归为一般NHL漂移错误。当前明确缩小范围的三个声明本身可PASS，原书重缩放疑误使条目总体NEEDS_HUMAN。",
+      "counterexample": "原印重缩放的一维精确反例：M=4，则q̃=q/2、p̃=2p，原方程q̇=p/4给q̃̇=p/8=p̃/16，而非p̃。正确取q̃=2q、p̃=p/2即有q̃̇=p̃。一般正确变换后Ũ(q̃)=U(M⁻¹ᐟ²q̃)，二次势矩阵Ã=M⁻¹ᐟ²AM⁻¹ᐟ²。",
+      "suggested_fix": "保留原文重缩放并判人工处理；报告正确方向及变换后的势。维持当前声明的正对角质量范围，不把harmonicPotential的def说成已经完成(8.30)–(8.32)的正定二次特化或证明定理8.1。",
+      "declaration_reviews": [
+        {
+          "lean_decl": "MD.Ch08.nhlDrift",
+          "verdict": "PASS",
+          "explanation": "对角质量、N_d=n特例的三个漂移符号和尺度正确。"
+        },
+        {
+          "lean_decl": "MD.Ch08.isNHLSolution",
+          "verdict": "PASS",
+          "explanation": "单噪声坐标、热浴噪声幅度及所有正性条件正确。"
+        },
+        {
+          "lean_decl": "MD.Ch08.harmonicPotential",
+          "verdict": "PASS",
+          "explanation": "作为任意A的二次函数定义正确；没有附带对称正定或梯度定理。"
+        }
+      ]
+    },
+    "subtask": "EAUDIT02a"
+  },
+  {
+    "batch": "EAUDIT02",
+    "source_id": "MD-8.4.3-PreEquilibriumMeans",
+    "json_review": {
+      "status": "CORRECTED",
+      "issue_codes": [
+        "STALE_MOMENT_INTEGRABILITY_REVIEW",
+        "DENSITY_EVOLUTION_SCOPE_CLARIFICATION",
+        "SOURCE_VERIFICATION_PROVENANCE"
+      ],
+      "issues": [
+        {
+          "code": "STALE_MOMENT_INTEGRABILITY_REVIEW",
+          "detail": "原issues仍断言缺少两项矩可积性及正质量，而当前preEquilibriumDensity已具备；更新为已解决历史问题。"
+        },
+        {
+          "code": "DENSITY_EVOLUTION_SCOPE_CLARIFICATION",
+          "detail": "保留原页ρ满足NHL Fokker–Planck演化的说明，同时明确Lean只覆盖有限平均资格，未覆盖该演化。"
+        },
+        {
+          "code": "SOURCE_VERIFICATION_PROVENANCE",
+          "detail": "改用本次R2附件核对证据，避免引用未提供的source_page_checks.json或声称图像页具有完全相同文字层。"
+        }
+      ],
+      "evidence": [
+        {
+          "stage": "A",
+          "detail": "附件1页（印刷354）末公式的权重为2K，附件2页（印刷355）首公式的权重为ξ，积分均在D×ℝ；ρ按扩展NHL的Fokker–Planck方程演化。原文和statement_latex数学转写一致。"
+        },
+        {
+          "stage": "C",
+          "detail": "D1–D4给出Fin n→ℝ、位置/动量乘积、逐点非负+Integrable+积分1及∑invmᵢpᵢ²。当前资格对每个t≥0包含两项加权Integrable，旧缺失批评不成立。"
+        },
+        {
+          "stage": "A",
+          "page_checks": [
+            {
+              "attachment_page": 1,
+              "book_pdf_page": 375,
+              "printed_page": 354,
+              "method": "逐页图像目视逐行核对；附件该页为图像页，无可提取文字层",
+              "raw_text_byte_identical": null,
+              "normalized_text_equal": null,
+              "normalization": null,
+              "visual_check": "PASS：相关正文、公式、符号、页码与原页一致；旧字体控制字符按存档约定保留，不当作可见数学字符。"
+            },
+            {
+              "attachment_page": 2,
+              "book_pdf_page": 376,
+              "printed_page": 355,
+              "method": "逐页图像目视逐行核对；附件该页为图像页，无可提取文字层",
+              "raw_text_byte_identical": null,
+              "normalized_text_equal": null,
+              "normalization": null,
+              "visual_check": "PASS：相关正文、公式、符号、页码与原页一致；旧字体控制字符按存档约定保留，不当作可见数学字符。"
+            }
+          ],
+          "statement_verbatim_equals_joined_archived_pages": true
+        },
+        {
+          "stage": "method",
+          "detail": "仅审校R2任务摘录及附录；Mathlib定义按标准数学意义采信。PASS指声明语义与已披露范围，通过本次只读审校，不表示Lean工程已编译或sorry已消除。input_sha256逐项原样回显，未将其误当作合并后的R2_PAGES.pdf的哈希。"
+        }
+      ],
+      "corrected_json": {
+        "source_id": "MD-8.4.3-PreEquilibriumMeans",
+        "kind": "definition",
+        "label": null,
+        "section": "8.4.3",
+        "printed_page": "354–355",
+        "pdf_page": "375–376",
+        "statement_latex": "θ̄(t)=∫2Kρ(q,p,ξ,t)dωdξ, ξ̄(t)=∫ξρ(q,p,ξ,t)dωdξ, with normalized pre-equilibrium density ρ.",
+        "statement_verbatim": "354\n8\nExtended Variable Methods\n0\nTime\n0.2\n0.4\n0.6\n0.8\n1.0\n1.2\n0\nTime\nVelocity auto-correlation\n0\n0.02\n0.04\n0.06\n0.08\n0.10\n0.2\n0.4\n0.6\n0.8\n1.0\n1.2\nNosé-Hoover & Nosé-Hoover-Langevin\nLangevin\nFig. 8.4 The computed velocity auto-correlation functions are plotted for Nosé-Hoover and Nosé-\nHoover-Langevin dynamics (left), where we overlay plots from simulations using all possible\nparameter sets where \n 2 f0; 0:05; 0:5; 5; 50g and \u0006 2 f20; 2; 0:2; 0:02g. We additionally plot the\nsame result for Langevin dynamics (right), overlaying curves for \n 2 f0:05; 0:1; 0:2; : : : ; 51:2g,\nwhere high to low friction is plotted from red to blue respectively. The salient qualitative features\nof the results remain qualitatively unchanged when using different values of the parameters for the\nNosé-Hoover thermostats (see inset) whereas the Langevin thermostat has a much harsher effect\non the dynamics, with signiﬁcant differences as the friction is increased\nIt may seem that the difference between Nosé-Hoover-Langevin and Langevin\ndynamics is a technical one that essentially hinges on choice of parameters. Both\nmethods are ergodic and it may appear that by simply choosing a small value\nof friction in Langevin dynamics, we can match the behavior of Nosé-Hoover-\nLangevin to any desired accuracy. However, this is most deﬁnitely not the case, as a\ncareful analysis of Figs. 8.3 and 8.4 reveals. If an accurate velocity autocorrelation\nfunction is required, then the friction parameter in Langevin dynamics needs to be\nchosen very small (much less than \n D 0:1), see Fig. 8.4. But if the friction is\nchosen in this way, the convergence to canonical equilibrium is drastically impaired\n(Figs. 8.2 and 8.3). By contrast it is relatively easy to ﬁnd parameter choices\nfor Nosé-Hoover-Langevin which provide quite rapid convergence of canonical\naverages while preserving the accuracy of autocorrelation functions.\nThe convergence to equilibrium for Nosé-Hoover-Langevin is difﬁcult to cal-\nculate analytically. The only existing analysis is that of [225] which restricts\nconsideration to the convergence of the kinetic energy. It turns out that one may\nobtain a nonlinear system in terms of the following two variables:\nN\u000e.t/ D\nZ\nD\u0003R\n2K\u0005.q; p; \u0012; t/d!d\u0012;\n\n8.4\nErgodic Stochastic-Dynamic Thermostats\n355\nwhere K is the kinetic energy, and the mean auxiliary variable \u0012\nN\u0012.t/ D\nZ\nD\u0003R\n\u0012\u0005.q; p; \u0012; t/d!d\u0012:\n\u0005 that appears here is the normalized pre-equilibrium density which evolves\naccording to the Fokker-Planck equation of the extended Nosé-Hoover-Langevin\nsystem.\nIt is then possible to perform a local stability analysis to characterize the\nconvergence to equilibrium of N\u000e and N\u0012 to the equilibrium .NdkBT; 0/. Although\nthe analysis makes certain stringent assumptions they are veriﬁed in [225] for a\nLennard-Jones molecular system.\n8.4.4\nVelocity Rescaling\nAn alternative stochastic-dynamical method for thermostatting molecular dynamics\nis the stochastic velocity rescaling method proposed by Bussi and collaborators [60,\n63] and somewhat generalized in [225]. The equations are (for the case M D I,\nconsidered for simplicity):\ndq D pdt\ndp D \u0003rU.q/ dt \u0003 \f.K/p dt C\np\n2kBT˚.K/pdW;\nwhere W.t/ is a single Wiener process, ˚ is an arbitrary smooth positive function\nand \f is deﬁned by\n\f.K/\ndef\nD .2K \u0003 .1 C Nd/kBT/˚.K/ \u0003 2kBTK d˚\ndK :\nWith these deﬁnitions, the method preserves the canonical probability density \u0005ˇ.\nWe do not prove the ergodicity of the method here, but expect that it would follow\nby an analysis similar to that given above for Nosé-Hoover-Langevin.\nThe original proposal of Bussi et al. had\n˚.K/ D \nVR\n2K ;\nso that\n\f.K/ D .1 \u0003 .Nd \u0003 1/kBT=2K/ \nVR;\nwhere \nVR is a positive constant.\nFor the more general case, the required conditions on ˚ are as follows:\nK˚.K/ is bounded as K ! 0;\n˚.K/ grows at most polynomially as K ! 1:\n",
+        "verbatim_scope": "原页完整内容的文字层存档；特殊字体编码保持输入原样。数学含义与排版另经附件可见原页核对，本条数学范围由statement_latex及statement_scope定位。",
+        "proof_latex": null,
+        "proof_note": "原页相关推导保存在statement_verbatim/original_page_text；本次只审校原文和Lean声明，不补证明。",
+        "original_page_text": [
+          {
+            "pdf_page": 375,
+            "printed_page": 354,
+            "text": "354\n8\nExtended Variable Methods\n0\nTime\n0.2\n0.4\n0.6\n0.8\n1.0\n1.2\n0\nTime\nVelocity auto-correlation\n0\n0.02\n0.04\n0.06\n0.08\n0.10\n0.2\n0.4\n0.6\n0.8\n1.0\n1.2\nNosé-Hoover & Nosé-Hoover-Langevin\nLangevin\nFig. 8.4 The computed velocity auto-correlation functions are plotted for Nosé-Hoover and Nosé-\nHoover-Langevin dynamics (left), where we overlay plots from simulations using all possible\nparameter sets where \n 2 f0; 0:05; 0:5; 5; 50g and \u0006 2 f20; 2; 0:2; 0:02g. We additionally plot the\nsame result for Langevin dynamics (right), overlaying curves for \n 2 f0:05; 0:1; 0:2; : : : ; 51:2g,\nwhere high to low friction is plotted from red to blue respectively. The salient qualitative features\nof the results remain qualitatively unchanged when using different values of the parameters for the\nNosé-Hoover thermostats (see inset) whereas the Langevin thermostat has a much harsher effect\non the dynamics, with signiﬁcant differences as the friction is increased\nIt may seem that the difference between Nosé-Hoover-Langevin and Langevin\ndynamics is a technical one that essentially hinges on choice of parameters. Both\nmethods are ergodic and it may appear that by simply choosing a small value\nof friction in Langevin dynamics, we can match the behavior of Nosé-Hoover-\nLangevin to any desired accuracy. However, this is most deﬁnitely not the case, as a\ncareful analysis of Figs. 8.3 and 8.4 reveals. If an accurate velocity autocorrelation\nfunction is required, then the friction parameter in Langevin dynamics needs to be\nchosen very small (much less than \n D 0:1), see Fig. 8.4. But if the friction is\nchosen in this way, the convergence to canonical equilibrium is drastically impaired\n(Figs. 8.2 and 8.3). By contrast it is relatively easy to ﬁnd parameter choices\nfor Nosé-Hoover-Langevin which provide quite rapid convergence of canonical\naverages while preserving the accuracy of autocorrelation functions.\nThe convergence to equilibrium for Nosé-Hoover-Langevin is difﬁcult to cal-\nculate analytically. The only existing analysis is that of [225] which restricts\nconsideration to the convergence of the kinetic energy. It turns out that one may\nobtain a nonlinear system in terms of the following two variables:\nN\u000e.t/ D\nZ\nD\u0003R\n2K\u0005.q; p; \u0012; t/d!d\u0012;\n"
+          },
+          {
+            "pdf_page": 376,
+            "printed_page": 355,
+            "text": "8.4\nErgodic Stochastic-Dynamic Thermostats\n355\nwhere K is the kinetic energy, and the mean auxiliary variable \u0012\nN\u0012.t/ D\nZ\nD\u0003R\n\u0012\u0005.q; p; \u0012; t/d!d\u0012:\n\u0005 that appears here is the normalized pre-equilibrium density which evolves\naccording to the Fokker-Planck equation of the extended Nosé-Hoover-Langevin\nsystem.\nIt is then possible to perform a local stability analysis to characterize the\nconvergence to equilibrium of N\u000e and N\u0012 to the equilibrium .NdkBT; 0/. Although\nthe analysis makes certain stringent assumptions they are veriﬁed in [225] for a\nLennard-Jones molecular system.\n8.4.4\nVelocity Rescaling\nAn alternative stochastic-dynamical method for thermostatting molecular dynamics\nis the stochastic velocity rescaling method proposed by Bussi and collaborators [60,\n63] and somewhat generalized in [225]. The equations are (for the case M D I,\nconsidered for simplicity):\ndq D pdt\ndp D \u0003rU.q/ dt \u0003 \f.K/p dt C\np\n2kBT˚.K/pdW;\nwhere W.t/ is a single Wiener process, ˚ is an arbitrary smooth positive function\nand \f is deﬁned by\n\f.K/\ndef\nD .2K \u0003 .1 C Nd/kBT/˚.K/ \u0003 2kBTK d˚\ndK :\nWith these deﬁnitions, the method preserves the canonical probability density \u0005ˇ.\nWe do not prove the ergodicity of the method here, but expect that it would follow\nby an analysis similar to that given above for Nosé-Hoover-Langevin.\nThe original proposal of Bussi et al. had\n˚.K/ D \nVR\n2K ;\nso that\n\f.K/ D .1 \u0003 .Nd \u0003 1/kBT=2K/ \nVR;\nwhere \nVR is a positive constant.\nFor the more general case, the required conditions on ˚ are as follows:\nK˚.K/ is bounded as K ! 0;\n˚.K/ grows at most polynomially as K ! 1:\n"
+          }
+        ],
+        "numbered_equations": [],
+        "transcription_note": "存档原文与可见原页逐行核对；不静默替换特殊字形控制编码，不将提取器的空白及连字差异误报为原书错字。当前附件为R2_PAGES.pdf。",
+        "context_notation": [
+          "z=((q,p),ξ)∈(ℝⁿ×ℝⁿ)×ℝ；本条将原页相空间D具体化为Phase n=Vec n×Vec n，采用标准体积测度。",
+          "invm i是对角逆质量，2K=∑ᵢ invm i·pᵢ²；原页θ̄表示两倍动能的平均，不是逐自由度归一的温度。"
+        ],
+        "extra_assumptions": [
+          "[EXTRA] preEquilibriumDensity要求所有逆质量严格为正，且对每个t≥0，ρ t逐点非负、可积、积分为1，两项加权函数均Integrable。正质量与有限矩资格均已在当前Lean定义中出现。",
+          "meanKineticTwice和meanBath本身是任意实数t上的总化积分定义；仅在上述资格及t≥0下解释为有限平均。",
+          "preEquilibriumDensity为历史名称：不要求NHL Fokker–Planck演化；本条范围仅为两平均的定义与资格。闭合动力学和局部稳定性不在所列Lean声明中。"
+        ],
+        "issues": [
+          "[RESOLVED] 旧issues中的MISSING_MOMENT_INTEGRABILITY与当前摘录不符：两项Integrable及正逆质量均已补入；不能沿用旧缺失判定。",
+          "[COVERAGE_GAP] 原页明确要求ρ按扩展NHL系统的Fokker–Planck方程演化；当前定义未表达该演化，已按statement_scope缩限为任意随时间概率密度的有限平均，不将其称作完整预平衡动力学形式化。"
+        ],
+        "statement_scope": "任意随时间概率密度的两项有限平均与正质量、加权可积资格；preEquilibriumDensity仅是历史名称，未要求或覆盖NHL Fokker–Planck演化、闭合方程及局部稳定性。",
+        "lean_decl": "MD.Ch08.meanKineticTwice",
+        "lean_declarations": [
+          "MD.Ch08.meanKineticTwice",
+          "MD.Ch08.meanBath",
+          "MD.Ch08.preEquilibriumDensity"
+        ],
+        "source_page_verification": "R2本次独立审校：以R2_任务.md及R2_PAGES.pdf为准，逐页目视核对原页。statement_verbatim与本条original_page_text以单个换行连接后逐字相等；不声称存档字符串与本附件当前提取结果字节相同。附件第1–2页无可提取文字层；第3–7页在Unicode连字与空白规范化后内容相同。未读取旧版Lean、旧版source JSON或旧审校结果作为依据。",
+        "repair_log": [
+          {
+            "instruction": 31,
+            "website_verdict": "FAIL",
+            "suggested_fix": "增加每个t≥0的Integrable (kineticTwice invm z.1.2*ρ t z)与Integrable (z.2*ρ t z)，并明确正质量。若保留pre-equilibrium命名，应添加FP演化规格；否则声明仅定义任意随时间概率密度的形式积分，并明确演化未覆盖。",
+            "change": "[EXTRA] 每个t≥0同时要求两项加权函数Integrable，故均值不是不可积时的总化积分。NHL Fokker–Planck演化未形式化，名称不代表完整预平衡动力学资格。"
+          },
+          {
+            "instruction": 31,
+            "stage": "json_review",
+            "status": "CORRECTED",
+            "issue_codes": [
+              "MISSING_MOMENT_INTEGRABILITY",
+              "MISSING_DENSITY_EVOLUTION_SPEC"
+            ],
+            "change": "合并经原页和现有签名核对的元数据更正；原页全文未改。"
+          }
+        ],
+        "documented_priors": [],
+        "coverage_gaps": [
+          "未形式化NHL Fokker–Planck演化、闭合均值方程及局部稳定性；负时间没有有限矩资格保证。"
+        ]
+      }
+    },
+    "audit": {
+      "lean_decl": "MD.Ch08.meanKineticTwice",
+      "verdict": "PASS",
+      "explanation": "逐一审查meanKineticTwice、meanBath、preEquilibriumDensity：任意n，状态z=((q,p),ξ)，标准体积积分，动能权重∑invmᵢpᵢ²与浴权重ξ均忠实。均值def对任意实数t总化；资格def仅对t≥0要求概率密度、正逆质量和两项矩可积。已在范围内明确未形式化原页NHL Fokker–Planck演化及稳定性，因此不将定义误称完整动力学资格。旧issues是元数据过期，当前声明无该缺陷。未编译或补证明。",
+      "counterexample": null,
+      "suggested_fix": "采用corrected_json清理已解决的矩可积性旧报告，保留Fokker–Planck演化的覆盖缺口；当前摘录Lean无需修改。"
+    },
+    "subtask": "EAUDIT02b"
+  },
+  {
+    "batch": "EAUDIT02",
+    "source_id": "MD-8.4.4-RescalingStationary",
+    "json_review": {
+      "status": "CORRECTED",
+      "issue_codes": [
+        "STALE_SUPPORT_REVIEW",
+        "WEAK_STATIONARITY_SCOPE_CLARIFICATION",
+        "SOURCE_VERIFICATION_PROVENANCE"
+      ],
+      "issues": [
+        {
+          "code": "STALE_SUPPORT_REVIEW",
+          "detail": "删除“havoid尚用Function.support/未实现tsupport”的旧描述；当前摘录已明确用tsupport，闭包支撑避开零动量。"
+        },
+        {
+          "code": "WEAK_STATIONARITY_SCOPE_CLARIFICATION",
+          "detail": "保留书上完整不变密度声称；Lean范围准确限定为紧支撑且远离K=0的Itô生成元弱驻定，不把边界与半群不变性的缺口写成当前签名错误。"
+        },
+        {
+          "code": "SOURCE_VERIFICATION_PROVENANCE",
+          "detail": "补充本次附件3页的实际提取及图像核对方法，替换旧外部审校文件引用。"
+        }
+      ],
+      "evidence": [
+        {
+          "stage": "A",
+          "detail": "附件3页（印刷355）明确M=I、单一Wiener过程，Ψ=(2K−(1+N_d)k_BT)Φ−2k_BTKΦ′，并声明保持ρβ而未证明遍历性；Φ在零点及无穷远的两条件均已核对。"
+        },
+        {
+          "stage": "C",
+          "detail": "n=N_d、θ=k_BT，rescalingDrift和Noise分别对应原页漂移和单噪声方向；fderiv内层的噪声是由外部z决定的常方向，故二阶项是正确的Itô Hessian，而非状态依赖向量场的重复作用。"
+        },
+        {
+          "stage": "C",
+          "detail": "hU:C²，hΦ:正半轴C∞且正并满足两端增长条件，θ,Z>0，hρ:归一概率密度；f:C∞且HasCompactSupport；havoid:∀z∈tsupport f,p≠0。结论完整为加权生成元积分=0，无附加不变性或遍历性结论。"
+        },
+        {
+          "stage": "A",
+          "page_checks": [
+            {
+              "attachment_page": 3,
+              "book_pdf_page": 376,
+              "printed_page": 355,
+              "method": "逐页图像目视逐行核对；同时用pdftotext -raw独立提取作内容对照",
+              "raw_text_byte_identical": false,
+              "normalized_text_equal": true,
+              "normalization": "仅为比较使用Unicode NFKC及去空白，原JSON存档文本不改；非空白差异为fi/fl连字展开",
+              "visual_check": "PASS：相关正文、公式、符号、页码与原页一致；旧字体控制字符按存档约定保留，不当作可见数学字符。"
+            }
+          ],
+          "statement_verbatim_equals_joined_archived_pages": true
+        },
+        {
+          "stage": "method",
+          "detail": "仅审校R2任务摘录及附录；Mathlib定义按标准数学意义采信。PASS指声明语义与已披露范围，通过本次只读审校，不表示Lean工程已编译或sorry已消除。input_sha256逐项原样回显，未将其误当作合并后的R2_PAGES.pdf的哈希。"
+        }
+      ],
+      "corrected_json": {
+        "source_id": "MD-8.4.4-RescalingStationary",
+        "kind": "unnumbered_claim",
+        "label": null,
+        "section": "8.4.4",
+        "printed_page": "355",
+        "pdf_page": "376",
+        "statement_latex": "With these definitions, the method preserves the canonical probability density ρ_β. The book does not prove ergodicity.",
+        "statement_verbatim": "8.4\nErgodic Stochastic-Dynamic Thermostats\n355\nwhere K is the kinetic energy, and the mean auxiliary variable \u0012\nN\u0012.t/ D\nZ\nD\u0003R\n\u0012\u0005.q; p; \u0012; t/d!d\u0012:\n\u0005 that appears here is the normalized pre-equilibrium density which evolves\naccording to the Fokker-Planck equation of the extended Nosé-Hoover-Langevin\nsystem.\nIt is then possible to perform a local stability analysis to characterize the\nconvergence to equilibrium of N\u000e and N\u0012 to the equilibrium .NdkBT; 0/. Although\nthe analysis makes certain stringent assumptions they are veriﬁed in [225] for a\nLennard-Jones molecular system.\n8.4.4\nVelocity Rescaling\nAn alternative stochastic-dynamical method for thermostatting molecular dynamics\nis the stochastic velocity rescaling method proposed by Bussi and collaborators [60,\n63] and somewhat generalized in [225]. The equations are (for the case M D I,\nconsidered for simplicity):\ndq D pdt\ndp D \u0003rU.q/ dt \u0003 \f.K/p dt C\np\n2kBT˚.K/pdW;\nwhere W.t/ is a single Wiener process, ˚ is an arbitrary smooth positive function\nand \f is deﬁned by\n\f.K/\ndef\nD .2K \u0003 .1 C Nd/kBT/˚.K/ \u0003 2kBTK d˚\ndK :\nWith these deﬁnitions, the method preserves the canonical probability density \u0005ˇ.\nWe do not prove the ergodicity of the method here, but expect that it would follow\nby an analysis similar to that given above for Nosé-Hoover-Langevin.\nThe original proposal of Bussi et al. had\n˚.K/ D \nVR\n2K ;\nso that\n\f.K/ D .1 \u0003 .Nd \u0003 1/kBT=2K/ \nVR;\nwhere \nVR is a positive constant.\nFor the more general case, the required conditions on ˚ are as follows:\nK˚.K/ is bounded as K ! 0;\n˚.K/ grows at most polynomially as K ! 1:\n",
+        "verbatim_scope": "原页完整内容的文字层存档；特殊字体编码保持输入原样。数学含义与排版另经附件可见原页核对，本条数学范围由statement_latex及statement_scope定位。",
+        "proof_latex": null,
+        "proof_note": "原页相关推导保存在statement_verbatim/original_page_text；本次只审校原文和Lean声明，不补证明。",
+        "original_page_text": [
+          {
+            "pdf_page": 376,
+            "printed_page": 355,
+            "text": "8.4\nErgodic Stochastic-Dynamic Thermostats\n355\nwhere K is the kinetic energy, and the mean auxiliary variable \u0012\nN\u0012.t/ D\nZ\nD\u0003R\n\u0012\u0005.q; p; \u0012; t/d!d\u0012:\n\u0005 that appears here is the normalized pre-equilibrium density which evolves\naccording to the Fokker-Planck equation of the extended Nosé-Hoover-Langevin\nsystem.\nIt is then possible to perform a local stability analysis to characterize the\nconvergence to equilibrium of N\u000e and N\u0012 to the equilibrium .NdkBT; 0/. Although\nthe analysis makes certain stringent assumptions they are veriﬁed in [225] for a\nLennard-Jones molecular system.\n8.4.4\nVelocity Rescaling\nAn alternative stochastic-dynamical method for thermostatting molecular dynamics\nis the stochastic velocity rescaling method proposed by Bussi and collaborators [60,\n63] and somewhat generalized in [225]. The equations are (for the case M D I,\nconsidered for simplicity):\ndq D pdt\ndp D \u0003rU.q/ dt \u0003 \f.K/p dt C\np\n2kBT˚.K/pdW;\nwhere W.t/ is a single Wiener process, ˚ is an arbitrary smooth positive function\nand \f is deﬁned by\n\f.K/\ndef\nD .2K \u0003 .1 C Nd/kBT/˚.K/ \u0003 2kBTK d˚\ndK :\nWith these deﬁnitions, the method preserves the canonical probability density \u0005ˇ.\nWe do not prove the ergodicity of the method here, but expect that it would follow\nby an analysis similar to that given above for Nosé-Hoover-Langevin.\nThe original proposal of Bussi et al. had\n˚.K/ D \nVR\n2K ;\nso that\n\f.K/ D .1 \u0003 .Nd \u0003 1/kBT=2K/ \nVR;\nwhere \nVR is a positive constant.\nFor the more general case, the required conditions on ˚ are as follows:\nK˚.K/ is bounded as K ! 0;\n˚.K/ grows at most polynomially as K ! 1:\n"
+          }
+        ],
+        "numbered_equations": [],
+        "transcription_note": "存档原文与可见原页逐行核对；不静默替换特殊字形控制编码，不将提取器的空白及连字差异误报为原书错字。当前附件为R2_PAGES.pdf。",
+        "context_notation": [
+          "θ=k_BT，n=N_d，M=I；z=(q,p)∈ℝⁿ×ℝⁿ，K=|p|²/2，ρβ=exp(−(K+U)/θ)/Z。",
+          "rescalingNoise是一个标量Wiener过程在相空间中的单一噪声方向；其动量分量为√(2θΦ(K))p。"
+        ],
+        "extra_assumptions": [
+          "[EXTRA] hU要求U为C²；θ,Z>0且hρ完整要求正则概率密度归一与可积。Φ仅在K>0上光滑、正，另有KΦ在0附近有界及Φ无穷远至多多项式增长的原页条件。",
+          "[EXTRA] f为C∞紧支撑测试函数；当前havoid已对闭包支撑tsupport f量化，要求其中每点p≠0。有限维紧性确保非空闭包支撑与p=0分离，K在该支撑上具有严格正下界。",
+          "二阶项中rescalingNoise Φ θ z对内层变量x保持固定，得到Itô Hessian项的一半，不包含噪声方向的导数。",
+          "结论仅为∫Lf·ρβ=0的局部弱驻定目标；未断言随机解存在、零动量边界控制、Markov半群不变性或遍历性。"
+        ],
+        "issues": [
+          "[RESOLVED] 旧issues及extra_assumptions中“havoid只量化Function.support f/尚未实现tsupport”的描述已过期；当前完整Lean与依赖规格均明确使用tsupport f。",
+          "[COVERAGE_GAP] 零动量边界、全局随机过程及半群不变性尚未形式化；此项是明确披露的覆盖限制，不是当前远离边界的弱驻定声明错误。"
+        ],
+        "statement_scope": "闭包支撑tsupport避开零动量的光滑紧支撑测试函数弱驻定目标；零动量边界及半群不变性未覆盖。",
+        "lean_decl": "MD.Ch08.rescalingStationary",
+        "lean_declarations": [
+          "MD.Ch08.rescalingStationary"
+        ],
+        "source_page_verification": "R2本次独立审校：以R2_任务.md及R2_PAGES.pdf为准，逐页目视核对原页。statement_verbatim与本条original_page_text以单个换行连接后逐字相等；不声称存档字符串与本附件当前提取结果字节相同。附件第1–2页无可提取文字层；第3–7页在Unicode连字与空白规范化后内容相同。未读取旧版Lean、旧版source JSON或旧审校结果作为依据。",
+        "repair_log": [
+          {
+            "instruction": 31,
+            "website_verdict": "FAIL",
+            "suggested_fix": "将havoid改为∀z∈tsupport f,z.2≠0，或明确存在ε>0使f的支撑上K≥ε。若希望包含接触p=0的测试函数，应另设边界、噪声正则性及生成元可积性条件并论证；不能静默扩大弱驻定范围。",
+            "change": "havoid现对tsupport f量化，与HasCompactSupport的闭包支撑一致；未扩大到闭包接触p=0的测试函数。"
+          },
+          {
+            "instruction": 31,
+            "stage": "json_review",
+            "status": "CORRECTED",
+            "issue_codes": [
+              "SUPPORT_NOT_SEPARATED_FROM_ZERO",
+              "SINGULAR_BOUNDARY_CONTROL_MISSING"
+            ],
+            "change": "合并经原页和现有签名核对的元数据更正；原页全文未改。"
+          }
+        ],
+        "documented_priors": [],
+        "coverage_gaps": [
+          "仅覆盖闭包支撑避开零动量的测试函数弱驻定式；不包含接触零动量的测试函数、奇异边界、全局随机解、半群不变性及遍历性。"
+        ]
+      }
+    },
+    "audit": {
+      "lean_decl": "MD.Ch08.rescalingStationary",
+      "verdict": "PASS",
+      "explanation": "审查rescalingPsi、Drift、Noise、Admissible及完整rescalingStationary类型：M=I、n=N_d、θ=k_BT，Ψ及漂移/扩散系数符号与因子正确；单个噪声给出秩一扩散。二阶项冻结噪声为正确Itô项。C²势、Φ在K>0的光滑正性与增长条件、正θ,Z、概率归一、C∞紧支撑及tsupport避零前提齐全。结论仅为∫Lfρβ=0；紧闭包支撑避零已修复旧报告的问题，Φ在K=0任意的总化值不妨碍该限定范围。完整不变性和遍历性缺口已明确。sorry不影响本次签名判定，未编译或补证明。",
+      "counterexample": null,
+      "suggested_fix": "采用corrected_json移除Function.support与tsupport混淆的过期FAIL报告；保持弱驻定范围与全局随机过程覆盖缺口，当前Lean无需修改。"
+    },
+    "subtask": "EAUDIT02c"
+  },
+  {
+    "batch": "EAUDIT03",
+    "source_id": "MD-8.5-SLSLeapfrog",
+    "json_review": {
+      "status": "NEEDS_HUMAN",
+      "issue_codes": [
+        "SOURCE_MISSING_MU_IN_REDUCTION",
+        "STALE_R4_PROVENANCE",
+        "TOTAL_DEFINITION_PHYSICAL_DOMAIN_CLARIFICATION"
+      ],
+      "issues": [
+        {
+          "code": "SOURCE_MISSING_MU_IN_REDUCTION",
+          "detail": "原页379末η约化式漏μ⁻¹，和该页(8.36)及原页380公式矛盾。原文和Printed必须原样保留，独立_corrected恢复1/Q合理；原书勘误仍需人工裁定。"
+        },
+        {
+          "code": "STALE_R4_PROVENANCE",
+          "detail": "当前transcription_note、context_notation和source_page_verification错误指向R4，已更正为本次R2；历史repair_log不篡改。"
+        },
+        {
+          "code": "TOTAL_DEFINITION_PHYSICAL_DOMAIN_CLARIFICATION",
+          "detail": "Lean仅定义全域映射，没有实际编码Q>0/正质量/U可微；已将物理域说明与实际Lean参数区分。"
+        }
+      ],
+      "evidence": [
+        {
+          "stage": "A",
+          "detail": "附件4页（印刷358）式(8.36)的ξ̇含/μ，而页底ξ̇=−∂ηU(q₀+ηM⁻¹p)确无/μ；附件5页（印刷359）两次kick及逐坐标场的ξ̇均含/μ。statement_latex忠实保留这个原书不一致。"
+        },
+        {
+          "stage": "C",
+          "detail": "slsBathKick只改ξ；slsDriftStep只改q并保持p,ξ；函数复合按右至左应用，得到半kick→drift→半kick，第二kick自动在q′计算梯度。坐标场仅在第i位置分量非零，动量导数为0，浴变量为−mᵢ⁻¹pᵢ∂ᵢU/Q。"
+        },
+        {
+          "stage": "C",
+          "detail": "slsReducedPrinted没有Q参数，正是原印无质量因子的场；_corrected添加Q并只将ξ分量除以Q，恢复(8.36)。均无关于流、精度或测度的定理结论。"
+        },
+        {
+          "stage": "A",
+          "page_checks": [
+            {
+              "attachment_page": 4,
+              "book_pdf_page": 379,
+              "printed_page": 358,
+              "method": "逐页图像目视逐行核对；同时用pdftotext -raw独立提取作内容对照",
+              "raw_text_byte_identical": false,
+              "normalized_text_equal": true,
+              "normalization": "仅为比较使用Unicode NFKC及去空白，原JSON存档文本不改；非空白差异为fi/fl连字展开",
+              "visual_check": "PASS：相关正文、公式、符号、页码与原页一致；旧字体控制字符按存档约定保留，不当作可见数学字符。"
+            },
+            {
+              "attachment_page": 5,
+              "book_pdf_page": 380,
+              "printed_page": 359,
+              "method": "逐页图像目视逐行核对；同时用pdftotext -raw独立提取作内容对照",
+              "raw_text_byte_identical": false,
+              "normalized_text_equal": true,
+              "normalization": "仅为比较使用Unicode NFKC及去空白，原JSON存档文本不改；非空白差异为fi/fl连字展开",
+              "visual_check": "PASS：相关正文、公式、符号、页码与原页一致；旧字体控制字符按存档约定保留，不当作可见数学字符。"
+            }
+          ],
+          "statement_verbatim_equals_joined_archived_pages": true
+        },
+        {
+          "stage": "method",
+          "detail": "仅审校R2任务摘录及附录；Mathlib定义按标准数学意义采信。PASS指声明语义与已披露范围，通过本次只读审校，不表示Lean工程已编译或sorry已消除。input_sha256逐项原样回显，未将其误当作合并后的R2_PAGES.pdf的哈希。"
+        }
+      ],
+      "corrected_json": {
+        "source_id": "MD-8.5-SLSLeapfrog",
+        "kind": "definition",
+        "label": null,
+        "section": "8.5",
+        "printed_page": "358–359",
+        "pdf_page": "379–380",
+        "statement_latex": "q=q₀+ηM⁻¹p; η̇=ξ, ξ̇=-∂ηU(q₀+ηM⁻¹p). Leapfrog: ξ_{1/2}=ξ-h(M⁻¹p)·∇U(q)/(2μ), q′=q+hξ_{1/2}M⁻¹p, ξ′=ξ_{1/2}-h(M⁻¹p)·∇U(q′)/(2μ).",
+        "statement_verbatim": "358\n8\nExtended Variable Methods\nR2NcC1, the Wi are independent Wiener processes, and D is the “deterministic part:”\nD D\n2\n4\n\u0012p\n\u0003p\n\u0003p \u0002 rU \u0003 \u0012\n3\n5 :\nThen we calculate directly\nD0 D ŒD; YNcC1\t D\n2\n4\np\n0\n1\n3\n5 ;\nand from this we see that ŒD0; Yi\t D ei for i D 1; 2; : : : ; Nc. Thus all the basis\nvectors of R2NcC1 are found in the Lie algebra of the components of the Hörmander\ndecomposition; as we know, this is the key step in the proof of ergodicity. Thus\nthe method (8.33)–(8.35) is an alternative for molecular sampling dynamics, even\nthough it is not based on a Newtonian model. Leaving the stochastic term off the\nﬁnal equation (i.e. in \u0012) is easily shown to destroy the ergodicity property (the\nHörmander condition is then violated).\nNow consider the splitting into deterministic and OU parts. The deterministic\npart\nPq D \u0012M\u00021p;\nPp D 0;\nP\u0012 D \u0003.M\u00021p/ \u0002 rU.q/=\u0006;\n(8.36)\npreserves volume and the function U.q/ C \u0006\u00122=2 and hence also the distribution\nwith density Q\u0005A.q; \u0012/ D e\u0002ˇ.U.q/C\u0006\u00122=2/. By the same token the OU processes\ncollectively preserve Q\u0005B.p; \u0012/ D e\u0002ˇ.pTM\u00021p=2C\u0006\u00122=2/. In combination the full\ndynamics preserves the extended canonical measure. If we iterate the two parts\n(assuming the deterministic part is solved exactly) the distribution will converge\nto the exact canonical distribution, due to especially to incorporation of Nc C1 noise\nprocesses.\nThe OU process deﬁning the ﬂuctuations in p is completely decoupled from q\nand \u0012, so it is perhaps most natural to think of the iteration as a random walk on\nthe reduced space .q; \u0012/ where the directions are generated by an auxiliary OU\nprocess. Then the algorithm proceeds as follows: (1) choose a random direction\np using the OU process, and (2) sample the reduced (stochastic) dynamics for .q; \u0012/\nin the direction p. We refer to this procedure as stochastic line sampling (SLS), for\nthe following reason. With p ﬁxed in step (2), the motion of q is conﬁned to the\nstraight line: q D q0 C \u000fM\u00021p, where \u000f is a scalar function of time. Inserting\nthis coordinate change in (8.36) we see that the equations reduce to P\u000f D \u0012,\nP\u0012 D \u0003@=@\u000fU.q0 C \u000fM\u00021p/. This is a one-degree of freedom system and hence\nis theoretically exactly solvable in quadratures, although the complexity of the force\nwill render this impractical in calculations, and, as mentioned above, an additional\nstochastic process must be incorporated to drive \u0012.\n\n8.5\nNon-Newtonian Dynamics-Based Iterations for Molecular Sampling\n359\nThe deterministic part may however be approximated in various ways. We may\nsolve it by splitting into two (volume preserving) parts, integrating ﬁrst Pq D \u0012M\u00021p,\nwhere \u0012 and p are ﬁxed (thus a drift along a given direction), followed by solving\nP\u0012 D \u0003.M\u00021p/ \u0002 rU=\u0006, which is a similar drift in the auxiliary variable. Composing\nthese drifts successively in a leapfrog approach, we arrive at the deterministic\nsequence:\n\u0012nC1=2 D \u0012n \u0003 .h=2/.M\u00021p/ \u0002 rU.qn/=\u0006;\nqnC1 D qn C h\u0012nC1=2M\u00021p;\n\u0012nC1 D \u0012nC1=2 \u0003 .h=2/.M\u00021p/ \u0002 rU.qnC1/=\u0006:\nCoupling this to the stochastic evolution computed from solving the OU parts in\nboth \u0012 and p yields an alternative to Langevin dynamics that is 2nd order accurate\nin its steady state distribution and long term averages. Let us refer to this as the\nstochastic line sampling with leapfrog method.\nGoing a step further we may again obtain methods which exactly preserve the\ncanonical measure based on canonical coordinate splitting, resulting in systems of\nthe form\nPqi D \u0012m\u00021\ni pi;\nP\u0012 D \u0003piUqi=.\u0006mi/:\nUp to time-rescaling by pi, these are in fact the same types of systems as we\nencountered previously in our treatment of J-splitting of the Hamiltonian system.\nIf desired, an rth order area-preserving approximation of the qi; pi dynamics could\nbe substituted. This method results in paths that differ slightly from the linear\npath in the direction M\u00021p. In simulations we found that this method, which\nwe term “stochastic line sampling with coordinate splitting,” was more stable\nthan the leapfrog version when implemented using a further leapfrog splitting\nin each coordinate plane. However, we emphasize that both methods are highly\nexperimental and are presented here as illustrations of the ﬂexibility available in\nconstructing methods to sample the canonical distribution—they have not yet been\nshown to be beneﬁcial for molecular sampling applications.\nWe compare the trajectories and invariant distributions of the non-Newtonian\nline sampling thermostat (8.33)–(8.35) with three Newtonian-based thermostats:\nLangevin dynamics (7.4), Nosé-Hoover (8.2)–(8.4) and Nosé-Hoover-Langevin\n(8.27)–(8.29) dynamics. We seek to canonically sample a one-dimensional system\nwith double-well potential energy function given as\nU.q/ D .q2 \u0003 1/2:\nChoosing all arbitrary system parameters to be one (i.e. setting ˇ D M D \n D\n\n0 D \u0006 D 1 for the methods), we select initial conditions q.0/ D p.0/ D 1 and\n\u0012.0/ D 0:5 with a timestep parameter ıt D 0:01 sufﬁciently small to eliminate the\npossibility of numerical errors warping the results.\n",
+        "verbatim_scope": "原页完整内容的文字层存档；特殊字体编码保持输入原样。数学含义与排版另经附件可见原页核对，本条数学范围由statement_latex及statement_scope定位。",
+        "proof_latex": null,
+        "proof_note": "原页相关推导保存在statement_verbatim/original_page_text；本次只审校原文和Lean声明，不补证明。",
+        "original_page_text": [
+          {
+            "pdf_page": 379,
+            "printed_page": 358,
+            "text": "358\n8\nExtended Variable Methods\nR2NcC1, the Wi are independent Wiener processes, and D is the “deterministic part:”\nD D\n2\n4\n\u0012p\n\u0003p\n\u0003p \u0002 rU \u0003 \u0012\n3\n5 :\nThen we calculate directly\nD0 D ŒD; YNcC1\t D\n2\n4\np\n0\n1\n3\n5 ;\nand from this we see that ŒD0; Yi\t D ei for i D 1; 2; : : : ; Nc. Thus all the basis\nvectors of R2NcC1 are found in the Lie algebra of the components of the Hörmander\ndecomposition; as we know, this is the key step in the proof of ergodicity. Thus\nthe method (8.33)–(8.35) is an alternative for molecular sampling dynamics, even\nthough it is not based on a Newtonian model. Leaving the stochastic term off the\nﬁnal equation (i.e. in \u0012) is easily shown to destroy the ergodicity property (the\nHörmander condition is then violated).\nNow consider the splitting into deterministic and OU parts. The deterministic\npart\nPq D \u0012M\u00021p;\nPp D 0;\nP\u0012 D \u0003.M\u00021p/ \u0002 rU.q/=\u0006;\n(8.36)\npreserves volume and the function U.q/ C \u0006\u00122=2 and hence also the distribution\nwith density Q\u0005A.q; \u0012/ D e\u0002ˇ.U.q/C\u0006\u00122=2/. By the same token the OU processes\ncollectively preserve Q\u0005B.p; \u0012/ D e\u0002ˇ.pTM\u00021p=2C\u0006\u00122=2/. In combination the full\ndynamics preserves the extended canonical measure. If we iterate the two parts\n(assuming the deterministic part is solved exactly) the distribution will converge\nto the exact canonical distribution, due to especially to incorporation of Nc C1 noise\nprocesses.\nThe OU process deﬁning the ﬂuctuations in p is completely decoupled from q\nand \u0012, so it is perhaps most natural to think of the iteration as a random walk on\nthe reduced space .q; \u0012/ where the directions are generated by an auxiliary OU\nprocess. Then the algorithm proceeds as follows: (1) choose a random direction\np using the OU process, and (2) sample the reduced (stochastic) dynamics for .q; \u0012/\nin the direction p. We refer to this procedure as stochastic line sampling (SLS), for\nthe following reason. With p ﬁxed in step (2), the motion of q is conﬁned to the\nstraight line: q D q0 C \u000fM\u00021p, where \u000f is a scalar function of time. Inserting\nthis coordinate change in (8.36) we see that the equations reduce to P\u000f D \u0012,\nP\u0012 D \u0003@=@\u000fU.q0 C \u000fM\u00021p/. This is a one-degree of freedom system and hence\nis theoretically exactly solvable in quadratures, although the complexity of the force\nwill render this impractical in calculations, and, as mentioned above, an additional\nstochastic process must be incorporated to drive \u0012.\n"
+          },
+          {
+            "pdf_page": 380,
+            "printed_page": 359,
+            "text": "8.5\nNon-Newtonian Dynamics-Based Iterations for Molecular Sampling\n359\nThe deterministic part may however be approximated in various ways. We may\nsolve it by splitting into two (volume preserving) parts, integrating ﬁrst Pq D \u0012M\u00021p,\nwhere \u0012 and p are ﬁxed (thus a drift along a given direction), followed by solving\nP\u0012 D \u0003.M\u00021p/ \u0002 rU=\u0006, which is a similar drift in the auxiliary variable. Composing\nthese drifts successively in a leapfrog approach, we arrive at the deterministic\nsequence:\n\u0012nC1=2 D \u0012n \u0003 .h=2/.M\u00021p/ \u0002 rU.qn/=\u0006;\nqnC1 D qn C h\u0012nC1=2M\u00021p;\n\u0012nC1 D \u0012nC1=2 \u0003 .h=2/.M\u00021p/ \u0002 rU.qnC1/=\u0006:\nCoupling this to the stochastic evolution computed from solving the OU parts in\nboth \u0012 and p yields an alternative to Langevin dynamics that is 2nd order accurate\nin its steady state distribution and long term averages. Let us refer to this as the\nstochastic line sampling with leapfrog method.\nGoing a step further we may again obtain methods which exactly preserve the\ncanonical measure based on canonical coordinate splitting, resulting in systems of\nthe form\nPqi D \u0012m\u00021\ni pi;\nP\u0012 D \u0003piUqi=.\u0006mi/:\nUp to time-rescaling by pi, these are in fact the same types of systems as we\nencountered previously in our treatment of J-splitting of the Hamiltonian system.\nIf desired, an rth order area-preserving approximation of the qi; pi dynamics could\nbe substituted. This method results in paths that differ slightly from the linear\npath in the direction M\u00021p. In simulations we found that this method, which\nwe term “stochastic line sampling with coordinate splitting,” was more stable\nthan the leapfrog version when implemented using a further leapfrog splitting\nin each coordinate plane. However, we emphasize that both methods are highly\nexperimental and are presented here as illustrations of the ﬂexibility available in\nconstructing methods to sample the canonical distribution—they have not yet been\nshown to be beneﬁcial for molecular sampling applications.\nWe compare the trajectories and invariant distributions of the non-Newtonian\nline sampling thermostat (8.33)–(8.35) with three Newtonian-based thermostats:\nLangevin dynamics (7.4), Nosé-Hoover (8.2)–(8.4) and Nosé-Hoover-Langevin\n(8.27)–(8.29) dynamics. We seek to canonically sample a one-dimensional system\nwith double-well potential energy function given as\nU.q/ D .q2 \u0003 1/2:\nChoosing all arbitrary system parameters to be one (i.e. setting ˇ D M D \n D\n\n0 D \u0006 D 1 for the methods), we select initial conditions q.0/ D p.0/ D 1 and\n\u0012.0/ D 0:5 with a timestep parameter ıt D 0:01 sufﬁciently small to eliminate the\npossibility of numerical errors warping the results.\n"
+          }
+        ],
+        "numbered_equations": [],
+        "transcription_note": "存档原文与可见原页逐行核对；不静默替换特殊字形控制编码，不将提取器的空白及连字差异误报为原书错字。当前附件为R2_PAGES.pdf。",
+        "context_notation": [
+          "本条SLS坐标为z=((q,p),ξ)，Q=μ，invm i=mᵢ⁻¹（对角质量矩阵）；约化坐标为(η,ξ)，q=q₀+ηM⁻¹p，p固定。",
+          "[EXTRA] 所列映射为Lean总函数，实际没有Q>0、正逆质量、U可微的命题前提。物理算法及与方向导数的经典解释限制在Q>0、invm i>0且U在相关点可微的域；不宣称这些限制已经编码成假设。"
+        ],
+        "extra_assumptions": [
+          "[ERRATUM?] 原页379的η约化式确实印为ξ̇=−∂ηU，漏写了同页(8.36)及下一页kick公式中的μ⁻¹；Printed版逐字保留，_corrected版单独恢复1/Q。",
+          "本条仅定义半kick–drift–半kick、逐坐标场及两种约化场；OU耦合、体积保持、二阶不变分布误差、精确求积与坐标变换定理均未形式化。",
+          "[EXTRA] 物理域与总化导数/除法的区别见context_notation；这些限制不是现有def的Lean参数前提。"
+        ],
+        "issues": [
+          "[ERRATUM?][SOURCE_MISSING_MU_IN_REDUCTION] 原页η约化式缺μ⁻¹，和(8.36)及两次kick不一致。原文及statement_latex保持不动，勘误须人工确认。",
+          "[METADATA_CORRECTED] 已将当前审校来源R4_任务.md/R4_PAGES.pdf/R4独立审校更正为R2_任务.md/R2_PAGES.pdf；原有repair_log保留为历史记录。",
+          "[DOMAIN_CLARIFICATION] Q>0、正质量及可微性只是物理解释域说明，没有作为Lean def的前提；不把总函数误读为所有参数上的经典动力学定理。"
+        ],
+        "statement_scope": "原有半kick–drift–半kick与坐标场定义，另列原印η约化场和恢复1/Q的修正版；体积保持、误差阶及η变换推导未证明。",
+        "lean_decl": "MD.Ch08.slsBathKick",
+        "lean_declarations": [
+          "MD.Ch08.slsBathKick",
+          "MD.Ch08.slsDriftStep",
+          "MD.Ch08.slsLeapfrog",
+          "MD.Ch08.slsCoordinateField",
+          "MD.Ch08.slsReducedPrinted",
+          "MD.Ch08.slsReduced_corrected"
+        ],
+        "source_page_verification": "R2本次独立审校：以R2_任务.md及R2_PAGES.pdf为准，逐页目视核对原页。statement_verbatim与本条original_page_text以单个换行连接后逐字相等；不声称存档字符串与本附件当前提取结果字节相同。附件第1–2页无可提取文字层；第3–7页在Unicode连字与空白规范化后内容相同。未读取旧版Lean、旧版source JSON或旧审校结果作为依据。",
+        "repair_log": [
+          {
+            "instruction": 31,
+            "stage": "json_review",
+            "status": "NEEDS_HUMAN",
+            "issue_codes": [
+              "STALE_TRANSCRIPTION_NOTE",
+              "SOURCE_MISSING_MU_IN_REDUCTION"
+            ],
+            "change": "合并经原页和现有签名核对的元数据更正；原页全文未改。"
+          },
+          {
+            "instruction": 31,
+            "stage": "human_triage",
+            "change": "已目视核对原页PDF379：η约化式的ξ导数漏μ⁻¹，新增Printed与恢复1/Q的_corrected；Q>0、正质量与U可微为物理域。分裂映射原有定义未改。",
+            "suggested_fix": "原印约化式保持不动，补[ERRATUM?]说明μ⁻¹疑漏；若另设修正版，应写ξ̇=−μ⁻¹∂ηU。算法定义不需修改。"
+          }
+        ],
+        "documented_priors": [],
+        "coverage_gaps": [
+          "不含OU随机步、体积保持、二阶长期平均误差、精确求积及η坐标变换证明；总函数定义未编码物理域资格。"
+        ]
+      }
+    },
+    "audit": {
+      "lean_decl": "MD.Ch08.slsBathKick",
+      "verdict": "NEEDS_HUMAN",
+      "explanation": "六个def逐一审查均通过：slsBathKick、slsDriftStep、slsLeapfrog、slsCoordinateField对应原页算法，p始终固定；slsReducedPrinted忠实保留原印漏因子式，slsReduced_corrected恢复1/Q，符合(8.36)的方向导数。物理解释以Q>0、正对角逆质量及相关可微性为域，def本身为全域总函数，无物理域或误差结论的量词断言。原印版忠实性PASS、修正版合理性PASS、算法定义PASS；条目总体NEEDS_HUMAN仅因原书μ⁻¹遗漏待人工确认，不是这些Lean定义FAIL。",
+      "counterexample": "针对把原印η约化式当作一般μ下(8.36)的等价式：取n=1，invm=1，p=1，q₀=0，U(q)=q²/2，Q=μ=2，η=1。原印给ξ̇=−1，而(8.36)及_corrected给ξ̇=−1/2。此为原书不一致的解析例子，不是Printed字面忠实性或_corrected版的反例。",
+      "suggested_fix": "原文及Printed保持不动，在元数据明确[ERRATUM?]：一般μ下应为ξ̇=−μ⁻¹∂ηU。保留独立_corrected并交人工确认原书勘误；算法定义无需修改。"
+    },
+    "subtask": "EAUDIT03a"
+  },
+  {
+    "batch": "EAUDIT03",
+    "source_id": "MD-8.6.2-SINLyapunov",
+    "json_review": {
+      "status": "NEEDS_HUMAN",
+      "issue_codes": [
+        "SOURCE_LYAPUNOV_SIGNED_BOUND",
+        "SOURCE_ERGODICITY_GAP",
+        "STALE_R4_PROVENANCE",
+        "UNIT_MASS_NOISE_SPECIALIZATION_CLARIFICATION"
+      ],
+      "issues": [
+        {
+          "code": "SOURCE_LYAPUNOV_SIGNED_BOUND",
+          "detail": "原页固定有符号Kξ₂界不能由ξ₁有界统一推出，需人工勘误确认。保留原文；Printed只定义表达式，正确修正版使用θ|ξ₂|。"
+        },
+        {
+          "code": "SOURCE_ERGODICITY_GAP",
+          "detail": "原书后续遍历性讨论还要求全局条件并援引其他论证。当前Lean仅作局部生成元/约束计算，不构成该遍历性证明；本次不对引用内容作外部扩展审查。"
+        },
+        {
+          "code": "STALE_R4_PROVENANCE",
+          "detail": "当前R4元数据已更正为R2，原有历史repair_log保留。"
+        },
+        {
+          "code": "UNIT_MASS_NOISE_SPECIALIZATION_CLARIFICATION",
+          "detail": "明确当前生成元使用Q1=Q2=1和σ²=2γθ；结论中的γθ只在此特化下对应原页σ²/2。"
+        }
+      ],
+      "evidence": [
+        {
+          "stage": "A",
+          "detail": "附件6页（印刷368）给Λ=p²+ξ₁²/2及L_N,L_O；附件7页（印刷369）给Lφ=(ξ₁²−β⁻¹)ξ₂−γξ₂²+σ²/2，并确印有符号Kξ₂尾项，随后陈述周期/有界配置、约束和候选测度正性条件。原文字段保留无改。"
+        },
+        {
+          "stage": "C",
+          "detail": "展开sinDrift 1 1及sinMultiplier，各q,p,ξ₁漂移与附件6页的力项及L_N合并后一致；ξ₂漂移为ξ₁²−θ−γξ₂，噪声仅在ξ₂方向且平方为2γθ。"
+        },
+        {
+          "stage": "C",
+          "detail": "φ=ξ₂²/2只依赖第四坐标，故生成元恒等式中的三项与原页对应；θ,γ>0及Λ≠0明确。约束Λ=θ蕴含0≤ξ₁²≤2θ，从而|ξ₁²−θ|≤θ，两侧绝对值界正确。Printed不含任何≤断言；_corrected不声称遍历性。"
+        },
+        {
+          "stage": "A",
+          "page_checks": [
+            {
+              "attachment_page": 6,
+              "book_pdf_page": 389,
+              "printed_page": 368,
+              "method": "逐页图像目视逐行核对；同时用pdftotext -raw独立提取作内容对照",
+              "raw_text_byte_identical": false,
+              "normalized_text_equal": true,
+              "normalization": "仅为比较使用Unicode NFKC及去空白，原JSON存档文本不改；非空白差异为fi/fl连字展开",
+              "visual_check": "PASS：相关正文、公式、符号、页码与原页一致；旧字体控制字符按存档约定保留，不当作可见数学字符。"
+            },
+            {
+              "attachment_page": 7,
+              "book_pdf_page": 390,
+              "printed_page": 369,
+              "method": "逐页图像目视逐行核对；同时用pdftotext -raw独立提取作内容对照",
+              "raw_text_byte_identical": false,
+              "normalized_text_equal": true,
+              "normalization": "仅为比较使用Unicode NFKC及去空白，原JSON存档文本不改；非空白差异为fi/fl连字展开",
+              "visual_check": "PASS：相关正文、公式、符号、页码与原页一致；旧字体控制字符按存档约定保留，不当作可见数学字符。"
+            }
+          ],
+          "statement_verbatim_equals_joined_archived_pages": true
+        },
+        {
+          "stage": "method",
+          "detail": "仅审校R2任务摘录及附录；Mathlib定义按标准数学意义采信。PASS指声明语义与已披露范围，通过本次只读审校，不表示Lean工程已编译或sorry已消除。input_sha256逐项原样回显，未将其误当作合并后的R2_PAGES.pdf的哈希。"
+        }
+      ],
+      "corrected_json": {
+        "source_id": "MD-8.6.2-SINLyapunov",
+        "kind": "unnumbered_claim",
+        "label": null,
+        "section": "8.6.2",
+        "printed_page": "368–369",
+        "pdf_page": "389–390",
+        "statement_latex": "For φ=ξ₂²/2, L_isok φ=(ξ₁²-β⁻¹)ξ₂-γξ₂²+σ²/2, and the isokinetic constraint bounds ξ₁. The negative tail drift supports the ergodicity argument with further assumptions.",
+        "statement_verbatim": "368\n8\nExtended Variable Methods\nWe calculate Œf; Œf; Œf; g\t\t\t and project onto the space spanned by the ﬁrst three\ncomponents to ﬁnd\nu3 D \u0007\n\b2\np3 \u0003 4p3\u00122 C 4p2q C \u00122\n1p\u00122 C \n\u00122\n1p \u0003 2\u00122\n1q\nD2\n\t\n@q\n\u0003 \u0007\u00122\n1\n\u0006 \u000f\nD3\n\u0007\n@p C 2\u0007\u00121p\n\u0006 \u000f\nD3\n\u0007\n@\u00121:\n(8.54)\nwith\n\u000f D 4p5\n2 \u0003 8p5\u00122\n1 \u0003 4\u00122\n1p3 C 4p3\n2\u00122\n1 \u0003 4p3\u00124\n1\n\u0003 2\n\u00122\n1p2q C 4p2q\u00122\u00122\n1 \u0003 4\u00122\n1q2p \u0003 2\u00124\n1p C p\n2\u00124\n1 \u0003 q\n\u00124\n1 C \u00124\n1\u00122q:\n(8.55)\nAlong p D 0, u3 becomes\nu3jpD0 D \u00032\u0007q@q \u0003 \u0007\n\b\u0003q\n\u00124\n1 C \u00124\n1\u00122q\n\u00124\n1\n\t\n@p\nD \u00032\u0007q@q \u0003 \u0007q.\u0003\n C \u00122/@p:\n(8.56)\nTogether with u0 we obtain a linearly independent set as long as q ¤ 0.\nIf p D 0 and q D 0 then we are on M0. If p ¤ 0 then u2 and u0 are linearly\nindependent. If q ¤ 0 then u3 and u0 are linearly independent. From these we\nestablish that the Hörmander condition holds everywhere except on a space of co-\ndimension 2 (that is except on the one-dimensional set M0).\nIn this case, it is possible to complete the proof by introducing a Lyapunov\nfunction \b to demonstrate the necessary contractivity in the \u00122 direction. The\ngenerator of this system is\nLisok D p @\n@q C\n\nF \u0003 .p2=\u0017/F\n\u000b @\n@p \u0003 p\u00121F\n\u0017\n@\n@\u00121\nC LN C LO\nwith \u0017 D p2 C \u00122\n1=2,\nLN D 1\n2\n\u00122\n1\u00122p\n\u0017\n@\n@p C 1\n2\n\u00123\n1\u00122\n\u0017\n@\n@\u00121\n\u0003 \u00122\u00121\n@\n@\u00121\nC Œ\u00122\n1 \u0003 ˇ\u00021\t @\n@\u00122\n;\nand\nLO D \u0003\n\u00122\n@\n@\u00122\nC \u00072\n2\n@2\n@\u00122\n2\n:\n\n8.6\nIsokinetic Methods and Integration with Very Large Timestep\n369\nLet us apply the operator Lisok to \b\ndef\nD \u00122\n2=2. As this is only a function of \u00122, many\nterms vanish and we are left with\nLisok\b D LN\b C LO\b;\nLN\b D Œ\u00122\n1 \u0003 ˇ\u00021\t\u00122;\nand\nLO\b D \u0003\n\u00122\n2 C \u00072\n2 :\nBecause \u00121 is uniformly bounded due to the isokinetic constraint, we have\nLisok\b \t \u0003\n\u00122\n2 C K\u00122 C \u00072\n2 :\nFor j\u00122j sufﬁciently large this term is negative. This contractivity, together with\nassumptions of boundedness of conﬁgurations (the use of periodic boundary\nconditions) and the isokinetic constraints on p and \u00121, as well as the existence\nof a candidate measure which is positive on open sets, will ultimately ensure the\nergodicity of the system, relying on arguments similar to those in [256, 257].\n8.6.3\nMultiple Timestepping Using the Stochastic Isokinetic\nFormulation\nThe numerical integration of the equations of the stochastic isokinetic system can be\nperformed using splitting, in a style that should by now be familiar, with the proviso\nthat the isokinetic condition itself should be satisﬁed exactly (i.e. to rounding error).\nMolecular sampling using Langevin dynamics and other methods involves\nintegration over the inﬁnite cylinder TNc\u0004RNc. The power of the isokinetic method is\nthat it allows us to reformulate the conﬁgurational sampling problem as integration\non a compact manifold. The fact that we also slightly extend the domain by\nintroducing auxiliary variables is more than offset by the stabilizing effect of the\nisokinetic constraints. One approach would be to introduce an isokinetic constraint\non the entire system, but in practice it is found that no great crime is committed\nin conﬁgurational sampling by constraining each degree of freedom (together with\nassociated auxiliary variables).\nTo develop a multiple timestepping method, we begin by supposing that the\npotential energy function and therefore the force can be decomposed into fast and\nslow terms, thus U.q/ D US.q/ C UF.q/ and the force acting on the jth degree\nof freedom is Fj D FS\nj C FF\nj . Because the SIN(R) method is based on a non-\nHamiltonian formulation, we do not obtain a symplectic integrator (in the absence\n",
+        "verbatim_scope": "原页完整内容的文字层存档；特殊字体编码保持输入原样。数学含义与排版另经附件可见原页核对，本条数学范围由statement_latex及statement_scope定位。",
+        "proof_latex": null,
+        "proof_note": "原页相关推导保存在statement_verbatim/original_page_text；本次只审校原文和Lean声明，不补证明。",
+        "original_page_text": [
+          {
+            "pdf_page": 389,
+            "printed_page": 368,
+            "text": "368\n8\nExtended Variable Methods\nWe calculate Œf; Œf; Œf; g\t\t\t and project onto the space spanned by the ﬁrst three\ncomponents to ﬁnd\nu3 D \u0007\n\b2\np3 \u0003 4p3\u00122 C 4p2q C \u00122\n1p\u00122 C \n\u00122\n1p \u0003 2\u00122\n1q\nD2\n\t\n@q\n\u0003 \u0007\u00122\n1\n\u0006 \u000f\nD3\n\u0007\n@p C 2\u0007\u00121p\n\u0006 \u000f\nD3\n\u0007\n@\u00121:\n(8.54)\nwith\n\u000f D 4p5\n2 \u0003 8p5\u00122\n1 \u0003 4\u00122\n1p3 C 4p3\n2\u00122\n1 \u0003 4p3\u00124\n1\n\u0003 2\n\u00122\n1p2q C 4p2q\u00122\u00122\n1 \u0003 4\u00122\n1q2p \u0003 2\u00124\n1p C p\n2\u00124\n1 \u0003 q\n\u00124\n1 C \u00124\n1\u00122q:\n(8.55)\nAlong p D 0, u3 becomes\nu3jpD0 D \u00032\u0007q@q \u0003 \u0007\n\b\u0003q\n\u00124\n1 C \u00124\n1\u00122q\n\u00124\n1\n\t\n@p\nD \u00032\u0007q@q \u0003 \u0007q.\u0003\n C \u00122/@p:\n(8.56)\nTogether with u0 we obtain a linearly independent set as long as q ¤ 0.\nIf p D 0 and q D 0 then we are on M0. If p ¤ 0 then u2 and u0 are linearly\nindependent. If q ¤ 0 then u3 and u0 are linearly independent. From these we\nestablish that the Hörmander condition holds everywhere except on a space of co-\ndimension 2 (that is except on the one-dimensional set M0).\nIn this case, it is possible to complete the proof by introducing a Lyapunov\nfunction \b to demonstrate the necessary contractivity in the \u00122 direction. The\ngenerator of this system is\nLisok D p @\n@q C\n\nF \u0003 .p2=\u0017/F\n\u000b @\n@p \u0003 p\u00121F\n\u0017\n@\n@\u00121\nC LN C LO\nwith \u0017 D p2 C \u00122\n1=2,\nLN D 1\n2\n\u00122\n1\u00122p\n\u0017\n@\n@p C 1\n2\n\u00123\n1\u00122\n\u0017\n@\n@\u00121\n\u0003 \u00122\u00121\n@\n@\u00121\nC Œ\u00122\n1 \u0003 ˇ\u00021\t @\n@\u00122\n;\nand\nLO D \u0003\n\u00122\n@\n@\u00122\nC \u00072\n2\n@2\n@\u00122\n2\n:\n"
+          },
+          {
+            "pdf_page": 390,
+            "printed_page": 369,
+            "text": "8.6\nIsokinetic Methods and Integration with Very Large Timestep\n369\nLet us apply the operator Lisok to \b\ndef\nD \u00122\n2=2. As this is only a function of \u00122, many\nterms vanish and we are left with\nLisok\b D LN\b C LO\b;\nLN\b D Œ\u00122\n1 \u0003 ˇ\u00021\t\u00122;\nand\nLO\b D \u0003\n\u00122\n2 C \u00072\n2 :\nBecause \u00121 is uniformly bounded due to the isokinetic constraint, we have\nLisok\b \t \u0003\n\u00122\n2 C K\u00122 C \u00072\n2 :\nFor j\u00122j sufﬁciently large this term is negative. This contractivity, together with\nassumptions of boundedness of conﬁgurations (the use of periodic boundary\nconditions) and the isokinetic constraints on p and \u00121, as well as the existence\nof a candidate measure which is positive on open sets, will ultimately ensure the\nergodicity of the system, relying on arguments similar to those in [256, 257].\n8.6.3\nMultiple Timestepping Using the Stochastic Isokinetic\nFormulation\nThe numerical integration of the equations of the stochastic isokinetic system can be\nperformed using splitting, in a style that should by now be familiar, with the proviso\nthat the isokinetic condition itself should be satisﬁed exactly (i.e. to rounding error).\nMolecular sampling using Langevin dynamics and other methods involves\nintegration over the inﬁnite cylinder TNc\u0004RNc. The power of the isokinetic method is\nthat it allows us to reformulate the conﬁgurational sampling problem as integration\non a compact manifold. The fact that we also slightly extend the domain by\nintroducing auxiliary variables is more than offset by the stabilizing effect of the\nisokinetic constraints. One approach would be to introduce an isokinetic constraint\non the entire system, but in practice it is found that no great crime is committed\nin conﬁgurational sampling by constraining each degree of freedom (together with\nassociated auxiliary variables).\nTo develop a multiple timestepping method, we begin by supposing that the\npotential energy function and therefore the force can be decomposed into fast and\nslow terms, thus U.q/ D US.q/ C UF.q/ and the force acting on the jth degree\nof freedom is Fj D FS\nj C FF\nj . Because the SIN(R) method is based on a non-\nHamiltonian formulation, we do not obtain a symplectic integrator (in the absence\n"
+          }
+        ],
+        "numbered_equations": [],
+        "transcription_note": "存档原文与可见原页逐行核对；不静默替换特殊字形控制编码，不将提取器的空白及连字差异误报为原书错字。当前附件为R2_PAGES.pdf。",
+        "context_notation": [
+          "坐标顺序(q,p,ξ₁,ξ₂)对应z 0,z 1,z 2,z 3；θ=β⁻¹=k_BT。",
+          "[SPECIALIZATION] sinGenerator固定Q1=Q2=1；Λ=p²+ξ₁²/2，sinHarmonicG固定σ=√(2γθ)，故σ²/2=γθ（θ,γ>0时）。这是原页符号σ下满足该涨落耗散关系的特例，不是对独立任意σ的结论。",
+          "状态空间是Vec 4=ℝ⁴；原页遍历性讨论中的周期配置/紧配置空间并未编码。F:ℝ→ℝ任意，局部Lyapunov测试函数只依赖ξ₂，不需F可微。"
+        ],
+        "extra_assumptions": [
+          "[EXTRA] sinGenerator_lyapunov要求θ>0、γ>0与Λ≠0；sinLyapunovTail_corrected要求Λ=θ，因θ>0自动排除Λ=0。",
+          "sinConstraint_bathBound允许任意θ，但约束等式本身蕴含θ≥0及ξ₁²≤2θ；无需漏加θ>0。",
+          "[ERRATUM?] 原页的固定有符号Kξ₂项不能统一支配两侧尾部；Printed仅存原印表达式，不断言其为上界；修正版为−γξ₂²+θ|ξ₂|+γθ。",
+          "仅覆盖生成元恒等式与约束界；局部计算尚有sorry，此项不据此判签名FAIL。未形式化遍历性的全局条件或充分性。"
+        ],
+        "issues": [
+          "[ERRATUM?][SOURCE_LYAPUNOV_SIGNED_BOUND] 原页390以ξ₁有界推出固定有符号Kξ₂全局上界，未区分ξ₂正负。需保留原文并由人工确认勘误；绝对值修正版正确。",
+          "[SOURCE_ERGODICITY_GAP] 原页还提出周期/有界配置、约束及候选测度在开集上为正等全局条件，并援引其他论证；当前局部Lean声明没有遍历性结论，不能将其当作完整遍历性证明。",
+          "[METADATA_CORRECTED] 已移除当前元数据中R4附件的错误归属，并明确单位质量及σ²=2γθ的特化；repair_log中的历史内容保持原样。"
+        ],
+        "statement_scope": "局部生成元恒等式、约束上的热浴界、原印有符号尾项表达式与绝对值尾界修正版；不含遍历性充分性。",
+        "lean_decl": "MD.Ch08.sinGenerator",
+        "lean_declarations": [
+          "MD.Ch08.sinGenerator",
+          "MD.Ch08.sinGenerator_lyapunov",
+          "MD.Ch08.sinConstraint_bathBound",
+          "MD.Ch08.sinLyapunovTailPrinted",
+          "MD.Ch08.sinLyapunovTail_corrected"
+        ],
+        "source_page_verification": "R2本次独立审校：以R2_任务.md及R2_PAGES.pdf为准，逐页目视核对原页。statement_verbatim与本条original_page_text以单个换行连接后逐字相等；不声称存档字符串与本附件当前提取结果字节相同。附件第1–2页无可提取文字层；第3–7页在Unicode连字与空白规范化后内容相同。未读取旧版Lean、旧版source JSON或旧审校结果作为依据。",
+        "repair_log": [
+          {
+            "instruction": 31,
+            "stage": "json_review",
+            "status": "NEEDS_HUMAN",
+            "issue_codes": [
+              "STALE_TRANSCRIPTION_NOTE",
+              "SOURCE_LYAPUNOV_SIGNED_BOUND",
+              "SOURCE_ERGODICITY_GAP"
+            ],
+            "change": "合并经原页和现有签名核对的元数据更正；原页全文未改。"
+          },
+          {
+            "instruction": 31,
+            "stage": "human_triage",
+            "change": "已目视核对原页PDF390：有符号Cξ₂尾界不能统一控制两侧；工作修正版为−γξ₂²+θ|ξ₂|+γθ。它依赖尚未证明的局部生成元恒等式，不代表遍历性证明。",
+            "suggested_fix": "保留原页有符号式并标[ERRATUM?]；独立修正版可用Lφ≤−γξ₂²+θ|ξ₂|+γθ。遍历性需另核实配置紧性、可达性及Markov过程条件；当前Lean局部计算不需修改。"
+          }
+        ],
+        "documented_priors": [],
+        "coverage_gaps": [
+          "仅局部生成元、约束界及绝对值漂移界；不含对任意独立σ的公式、周期配置空间、可达性/小集、候选不变测度、全局Markov过程及遍历性定理。"
+        ]
+      }
+    },
+    "audit": {
+      "lean_decl": "MD.Ch08.sinGenerator",
+      "verdict": "NEEDS_HUMAN",
+      "explanation": "五项声明及全部依赖定义逐一审查：单位Q1,Q2及σ²=2γθ下，sinGenerator和Lyapunov恒等式正确；hθ,hγ,hK与结论对象完整。sinConstraint_bathBound由p²+ξ₁²/2=θ得到ξ₁²≤2θ，允许θ为任意实数没有遗漏。Printed只保存有符号尾项表达式，字面忠实性PASS；_corrected在Λ=θ、θ,γ>0下给双侧有效界，陈述正确PASS，不包含遍历性结论。总体NEEDS_HUMAN源于原书固定有符号尾项上界疑误及全局遍历性论证尚需核实；不因恒等式sorry或依赖该恒等式的修正版而判签名FAIL。未编译或补证明。",
+      "counterexample": "针对原书固定有符号线性上界：令θ=γ=1，Λ=1。若ξ₁²=2、p=0，正ξ₂尾部要求C≥1；若ξ₁=0、p=1，负ξ₂尾部要求C≤−1，所以无同一个C统一控制所有约束状态及两个尾部。例如取C=1，z=(0,1,0,−1)，Lφ=1而−γξ₂²+Cξ₂+γθ=−1，上界不成立。Printed仅存表达式，修正绝对值界无此问题。",
+      "suggested_fix": "保留原页有符号式并标[ERRATUM?]；使用已列_corrected的θ|ξ₂|界。明确单位质量和噪声关系；人工核实原书勘误及其全局遍历性推理，不将当前局部生成元陈述升级为遍历性定理。"
+    },
+    "subtask": "EAUDIT03b"
+  },
+  {
+    "batch": "EAUDIT03",
+    "source_id": "MD-8.7.1-PronyOUStationarity",
+    "json_review": {
+      "status": "NEEDS_HUMAN",
+      "issue_codes": [
+        "STATIONARY_INITIAL_LAW_MISSING_IN_SOURCE",
+        "EXTRA_ASSUMPTIONS_REQUIRE_EXPLICIT_LABEL",
+        "STALE_SOURCE_PAGE_VERIFICATION",
+        "SUMMARY_DOMAIN_AND_SUM_LIMIT_OMITTED"
+      ],
+      "corrected_json": {
+        "source_id": "MD-8.7.1-PronyOUStationarity",
+        "kind": "unnumbered_claim",
+        "label": null,
+        "section": "8.7.1",
+        "printed_page": "376",
+        "pdf_page": "397",
+        "statement_latex": "dRᵢₖ(t)=−Rᵢₖ(t)dt/τₖ+√(2k_BT cₖ)dWᵢₖ(t)/τₖ; E[Rᵢₖ(t)]=0 and E[Rᵢₖ(t+s)Rᵢₖ(t)]=(k_BT cₖ/τₖ)exp(−s/τₖ), s≥0. Rᵢ=Σ_{k=1}^{kmax}Rᵢₖ. (8.65)–(8.67).",
+        "statement_verbatim": "376\n8\nExtended Variable Methods\nTo calculate the random forces associated to the kth term of the expansion, we\nnote that these can be viewed as the solution of a linear SDE, speciﬁcally\ndRi;k D \u0003 1\n\u0002k\nRi;k.t/dt C 1\n\u0002k\np\n2kBTckdWi;k.t/\n(8.65)\nwhere Wi;k is a standard Wiener process. The random force is seen to be deﬁned as\nthe solution of an Ornstein-Uhlenbeck process induced by the Prony representation.\nIt is easily shown that Ri;k.t/ has zero mean and autocorrelation deﬁned by\nhRi;k.t C s/Ri;k.t/i D kBTck\n\u0002k\nexp\n\u0002\n\u0003 1\n\u0002k\ns\n\u0003\n;\ns \b 0\n(8.66)\nThe total random force is then obtained by summation\nRi D\nkmax\nX\nkD1\nRi;k:\n(8.67)\nObserve that both random and drag forces are incorporated via summation of the\ncomponents \u000fi;k and Ri;k deﬁned by linear equations, respectively the ODE (8.64)\nand SDE (8.65). It is therefore possible to replace these components by their sum\n\u0007i;k D \u000fi;k C Ri;k\nwhich may be evolved by a single SDE. The equations therefore become\ndqi D m\u00021\ni pidt;\n(8.68)\ndpi D Fidt C\nkmax\nX\nkD1\n\u0007i;kdt;\n(8.69)\nd\u0007i;k D \u0003 1\n\u0002k\n\u0007i;kdt \u0003 ck\n\u0002k\npidt C 1\n\u0002k\np\n2kBTckdWi;k:\n(8.70)\nThe relation between the Prony series representation and Langevin dynamics can be\nseen in an informal sense by multiplying the equation for \u0007i;k equation by \u0002k, and\nconsidering \u0002k ! 0, giving\n\u0007i;kdt D \u0003ckpidt C\np\n2kBTckdWi;k;\nwhich results in\ndpi D Fidt \u0003\n kmax\nX\nkD1\nck\n!\npidt C\np\n2kBT\n`\nX\nkD1\npckdWi;k:\n",
+        "verbatim_scope": "对应原页全文；原有特殊字形编码及换行保留。已逐句逐式核对图像；不把不同PDF提取器造成的换行、空格、fi连字及数学字形映射差异认定为原文内容差错。",
+        "proof_latex": null,
+        "proof_note": "对应原页推导逐字保存在statement_verbatim/original_page_text；排版以原页PDF为准。",
+        "original_page_text": [
+          {
+            "pdf_page": 397,
+            "printed_page": 376,
+            "text": "376\n8\nExtended Variable Methods\nTo calculate the random forces associated to the kth term of the expansion, we\nnote that these can be viewed as the solution of a linear SDE, speciﬁcally\ndRi;k D \u0003 1\n\u0002k\nRi;k.t/dt C 1\n\u0002k\np\n2kBTckdWi;k.t/\n(8.65)\nwhere Wi;k is a standard Wiener process. The random force is seen to be deﬁned as\nthe solution of an Ornstein-Uhlenbeck process induced by the Prony representation.\nIt is easily shown that Ri;k.t/ has zero mean and autocorrelation deﬁned by\nhRi;k.t C s/Ri;k.t/i D kBTck\n\u0002k\nexp\n\u0002\n\u0003 1\n\u0002k\ns\n\u0003\n;\ns \b 0\n(8.66)\nThe total random force is then obtained by summation\nRi D\nkmax\nX\nkD1\nRi;k:\n(8.67)\nObserve that both random and drag forces are incorporated via summation of the\ncomponents \u000fi;k and Ri;k deﬁned by linear equations, respectively the ODE (8.64)\nand SDE (8.65). It is therefore possible to replace these components by their sum\n\u0007i;k D \u000fi;k C Ri;k\nwhich may be evolved by a single SDE. The equations therefore become\ndqi D m\u00021\ni pidt;\n(8.68)\ndpi D Fidt C\nkmax\nX\nkD1\n\u0007i;kdt;\n(8.69)\nd\u0007i;k D \u0003 1\n\u0002k\n\u0007i;kdt \u0003 ck\n\u0002k\npidt C 1\n\u0002k\np\n2kBTckdWi;k:\n(8.70)\nThe relation between the Prony series representation and Langevin dynamics can be\nseen in an informal sense by multiplying the equation for \u0007i;k equation by \u0002k, and\nconsidering \u0002k ! 0, giving\n\u0007i;kdt D \u0003ckpidt C\np\n2kBTckdWi;k;\nwhich results in\ndpi D Fidt \u0003\n kmax\nX\nkD1\nck\n!\npidt C\np\n2kBT\n`\nX\nkD1\npckdWi;k:\n"
+          }
+        ],
+        "numbered_equations": [
+          "8.65",
+          "8.66",
+          "8.67"
+        ],
+        "transcription_note": "文字层逐字保留；数学排版另行转写，原页中的特殊字形编码不静默替换。",
+        "context_notation": [],
+        "extra_assumptions": [
+          "[EXTRA] θ代表k_BT，c、τ、θ严格为正；W为一个实Brownian坐标（Vec 1）。",
+          "[EXTRA] R(0)具有N(0,θc/τ)律且与整条W独立；非负时间路径几乎处处连续，各非负时刻R(t)属于L²；积分方程逐个非负时刻几乎处处成立。",
+          "[EXTRA] 这里没有对多个模式的W作联合独立假设；totalPronyRandomForce仅为有限和定义，不声称总协方差公式。"
+        ],
+        "issues": [
+          "[ERRATUM?] 原页(8.66)断言零均值及与t无关的二阶矩，页内未声明初始律；仅由(8.65)不能推出。原印原句必须保留，是否上下文已默认平稳解释需人工确认。",
+          "[EXTRA] stationaryPronyOU补充了正参数、平稳Gaussian初态、与整条W独立、路径连续及各非负时刻L²资格；应显式标记其为修正版前提。pronyOU_covariance和_corrected签名相同，前者也已经是带补充资格的版本，不能当作无条件原印断言。",
+          "原statement_latex省略原印s≥0和有限和上下限；应补齐，不更改原书数学疑误。",
+          "source_page_verification引用旧R5附件第8页，不是本次R3核对证据，需替换。"
+        ],
+        "statement_scope": "(8.65)–(8.67)的单分量OU方程、原印均值/相关式及有限和；Lean的两个covariance定理均为显式带平稳资格的修正版；保留原印缺省资格疑误。",
+        "lean_decl": "MD.Ch08.stationaryPronyOU",
+        "lean_declarations": [
+          "MD.Ch08.stationaryPronyOU",
+          "MD.Ch08.pronyOU_covariance",
+          "MD.Ch08.totalPronyRandomForce",
+          "MD.Ch08.pronyOU_covariance_corrected"
+        ],
+        "source_page_verification": "R3本次审校：已核对R3_PAGES.pdf附件第1页图像及文字层；对应原书PDF页397、印刷页376。",
+        "repair_log": [
+          {
+            "instruction": 31,
+            "stage": "json_review",
+            "status": "NEEDS_HUMAN",
+            "issue_codes": [
+              "STALE_TRANSCRIPTION_NOTE",
+              "STATIONARY_INITIAL_LAW_MISSING_IN_SOURCE"
+            ],
+            "change": "合并经原页和现有签名核对的元数据更正；原页全文未改。"
+          },
+          {
+            "instruction": 31,
+            "stage": "human_triage",
+            "change": "已目视核对原页PDF397：(8.66)未声明平稳初态；保留原句，_corrected明确引用stationaryPronyOU的Gaussian初态和整条W独立性。总随机力只定义有限和，未证跨模式独立或总协方差。",
+            "suggested_fix": "保留原印相关式并加[ERRATUM?]，明确它在平稳初态下成立；保留已写入Lean的Gaussian初态及独立性。"
+          }
+        ],
+        "documented_priors": [],
+        "coverage_gaps": [
+          "已目视核对原页PDF397：(8.66)未声明平稳初态；保留原句，_corrected明确引用stationaryPronyOU的Gaussian初态和整条W独立性。总随机力只定义有限和，未证跨模式独立或总协方差。"
+        ]
+      },
+      "issues": [
+        "[ERRATUM?] 原页(8.66)断言零均值及与t无关的二阶矩，页内未声明初始律；仅由(8.65)不能推出。原印原句必须保留，是否上下文已默认平稳解释需人工确认。",
+        "[EXTRA] stationaryPronyOU补充了正参数、平稳Gaussian初态、与整条W独立、路径连续及各非负时刻L²资格；应显式标记其为修正版前提。pronyOU_covariance和_corrected签名相同，前者也已经是带补充资格的版本，不能当作无条件原印断言。",
+        "原statement_latex省略原印s≥0和有限和上下限；应补齐，不更改原书数学疑误。",
+        "source_page_verification引用旧R5附件第8页，不是本次R3核对证据，需替换。"
+      ],
+      "evidence": [
+        {
+          "stage": "A",
+          "page": "R3_PAGES.pdf第1页 / 原书PDF页397 / 印刷页376",
+          "finding": "statement_verbatim与original_page_text[0].text完全一致；页眉、正文、公式和页尾均已核对。原有控制字符及数学字形失真与图像区分处理，未静默重写全文。"
+        },
+        {
+          "stage": "A",
+          "finding": "原页(8.65)噪声系数为√(2k_BT c_k)/τ_k；(8.66)明确s≥0；(8.67)从k=1加至kmax。全文页尾最后噪声和上限印为ℓ，原转写以`表示该字形，未擅改为kmax；属范围外原页内容保留。"
+        },
+        {
+          "stage": "C",
+          "finding": "使用本任务给出的Vec、independentWiener与stationaryPronyOU完整定义核对；不依赖任何旧Ch08工程。OU定理两个版本均包含hR；没有跨模式独立声明。"
+        }
+      ]
+    },
+    "audit": {
+      "lean_decl": [
+        "MD.Ch08.stationaryPronyOU",
+        "MD.Ch08.pronyOU_covariance",
+        "MD.Ch08.totalPronyRandomForce",
+        "MD.Ch08.pronyOU_covariance_corrected"
+      ],
+      "verdict": "NEEDS_HUMAN",
+      "explanation": {
+        "overall": "NEEDS_HUMAN仅针对原书缺省平稳初态及其解释；所列修正版签名在数学上合理，不因sorry判FAIL。",
+        "objects_and_domains": "Ω为任意可测空间，P为Measure Ω；independentWiener在hR内保证P为概率测度。W:ℝ→Ω→(Fin 1→ℝ)，R:ℝ→Ω→ℝ，c、τ、θ为实数且均严格正。只对t≥0、s≥0作结论，不断言负时间驻定。",
+        "declarations": [
+          {
+            "lean_decl": "MD.Ch08.stationaryPronyOU",
+            "verdict": "PASS",
+            "explanation": "一维Brownian、方差θc/τ的中心Gaussian初态、初态与整条W独立、非负时间连续与L²、积分OU方程齐全。漂移−R/τ及噪声√(2θc)/τ与(8.65)吻合；Gaussian第二参数为方差且因正参数toNNReal不截断。此定义是补充资格，不是原印逐字前提。"
+          },
+          {
+            "lean_decl": "MD.Ch08.pronyOU_covariance",
+            "verdict": "PASS",
+            "explanation": "全称量化P,W,R,c,τ,θ及非负t,s；hR已包含全部平稳资格。完整结论同时给出E R(t)=0及E[R(t+s)R(t)]=(θc/τ)e^(−s/τ)，不是只给单边不等式或仅s=0。该陈述数学正确；没有Printed/literal标识，不要求它保留无资格的错误断言。"
+          },
+          {
+            "lean_decl": "MD.Ch08.totalPronyRandomForce",
+            "verdict": "PASS",
+            "explanation": "任意自然数K与R:Fin K→ℝ→Ω→ℝ，在任意t、sample逐点有限求和。Fin K对应原书1至kmax的K个模式的重编号，K=0为自然空和扩展；未偷加独立性或总协方差结论。"
+          },
+          {
+            "lean_decl": "MD.Ch08.pronyOU_covariance_corrected",
+            "verdict": "PASS",
+            "explanation": "与前一定理完全相同的量词、hR、时间域及完整二联结论；通过引用前一定理复用补充资格，并非另行证明更强无条件断言。"
+          }
+        ]
+      },
+      "counterexample": {
+        "scope": "反驳无平稳初态资格的原印一般断言，不反驳Lean修正版。",
+        "example": "取c=τ=θ=1，标准Brownian W，R(0)=0，R(t)=√2∫₀ᵗ exp(−(t−u))dW(u)。这是(8.65)的解，但t=0,s=0时E[R(0)²]=0，原印右端为1。一般二阶矩为exp(−s)(1−exp(−2t))。",
+        "validation": "解析反例；未作数值实验。"
+      },
+      "suggested_fix": "保留(8.66)原句并显式[ERRATUM?]；修正说明补入平稳初态及独立性。给两条covariance签名均标明带[EXTRA]资格版本；补齐摘要中的s≥0及求和上下限；不修改Lean、不补证明。"
+    },
+    "subtask": "EAUDIT03c"
+  },
+  {
+    "batch": "EAUDIT04",
+    "source_id": "MD-8.8.1-PistonHamiltonianSubfield",
+    "json_review": {
+      "status": "NEEDS_HUMAN",
+      "issue_codes": [
+        "PRINTED_HAMILTONIAN_FIELD_MASS_MISMATCH",
+        "EXTRA_ASSUMPTIONS_REQUIRE_EXPLICIT_LABEL",
+        "STALE_SOURCE_PAGE_VERIFICATION",
+        "SUMMARY_DOES_NOT_IDENTIFY_PRINTED_FIELD"
+      ],
+      "corrected_json": {
+        "source_id": "MD-8.8.1-PistonHamiltonianSubfield",
+        "kind": "unnumbered_claim",
+        "label": null,
+        "section": "8.8.1",
+        "printed_page": "381",
+        "pdf_page": "402",
+        "statement_latex": "ρ₁=φ₁(pᵀM⁻¹p/2+U(q))ψ(V,ξ,η) is stated to be stationary for the Liouvillian of the printed vector field (p,−∇U,0,0,0). [ERRATUM?] For general mass the Hamiltonian field should have first component M⁻¹p; the Lean stationarity target uses this corrected field.",
+        "statement_verbatim": "8.8\nConstant Temperature and Pressure Molecular Dynamics\n381\n8.8.1\nEquations of Motion for the NHL Piston\nIn the framework of [199], rewriting the equations of motion for the physical\nvariables q and p, the dynamics takes the form\nPq D M\u00021p C \u000fq;\nPp D \u0003rU.q/ \u0003 \u000fp \u0003 \u0012p;\nPV D \u000fV;\nwith auxiliary variables \u000f and \u0012 governed by additional dynamical equations of\nmotion\nP\u0012 D hT\ndef\nD .pTM\u00021p \u0003 NdkBT/=\u0006T;\nP\u000f D hP\ndef\nD .V˘.q; p; V/ \u0003 PV C kBT/=\u0006P;\nwhere\n˘.q; p; V/\ndef\nD 1\nV\n\b\npTM\u00021p \u0003 q \u0002 rU.q/ \u0003 V @\n@V U.q/\n\t\n;\nis the expression for the pressure.\nNow let us examine the distribution conserved by the dynamics. First, we observe\n\u00051 D '1.pTM\u00021p=2 C U.q// \u0004 .V; \u0012; \u000f/\nis stationary for the Liouvillian operator for the vector ﬁeld .p; \u0003rU; 0; 0; 0/.\nThe function can be chosen as any smooth function that integrates out with\nrespect to V; \u0012; \u000f over Œ0; 1\t \u0004 R \u0004 R. We already know from our discussion of\nNosé-Hoover that Pp D \u0003\u0012p; P\u0012 D .pTM\u00021p \u0003 NdkBT/=\u0006T will have as stationary\nstates functions of the form\n\u00052 D exp.\u0003ˇŒpTM\u00021p C \u0006T\u00122=2\t/ 2.q; \u000f; V/:\nFinally the remaining terms Pq D \u000fq, Pp D \u0003\u000fp, PV D \u000fV, P\u000f D .V˘.q; p; V/ \u0003 PV C\nkBT/=\u0006P give rise to the Liouvillian\nL\u0004\u0005 D \u0003\u000frq \u0002.q\u0005/C\u000frp \u0002.p\u0005/\u0003\u000f @\n@V .V\u0005/\u0003 @\n@\u000fŒ\u0005.V˘.q; p; V/\u0003PV CkBT/=\u0006P\t:\n",
+        "verbatim_scope": "对应原页全文；原有特殊字形编码及换行保留。已逐句逐式核对图像；不把不同PDF提取器造成的换行、空格、fi连字及数学字形映射差异认定为原文内容差错。",
+        "proof_latex": null,
+        "proof_note": "对应原页推导逐字保存在statement_verbatim/original_page_text；排版以原页PDF为准。",
+        "original_page_text": [
+          {
+            "pdf_page": 402,
+            "printed_page": 381,
+            "text": "8.8\nConstant Temperature and Pressure Molecular Dynamics\n381\n8.8.1\nEquations of Motion for the NHL Piston\nIn the framework of [199], rewriting the equations of motion for the physical\nvariables q and p, the dynamics takes the form\nPq D M\u00021p C \u000fq;\nPp D \u0003rU.q/ \u0003 \u000fp \u0003 \u0012p;\nPV D \u000fV;\nwith auxiliary variables \u000f and \u0012 governed by additional dynamical equations of\nmotion\nP\u0012 D hT\ndef\nD .pTM\u00021p \u0003 NdkBT/=\u0006T;\nP\u000f D hP\ndef\nD .V˘.q; p; V/ \u0003 PV C kBT/=\u0006P;\nwhere\n˘.q; p; V/\ndef\nD 1\nV\n\b\npTM\u00021p \u0003 q \u0002 rU.q/ \u0003 V @\n@V U.q/\n\t\n;\nis the expression for the pressure.\nNow let us examine the distribution conserved by the dynamics. First, we observe\n\u00051 D '1.pTM\u00021p=2 C U.q// \u0004 .V; \u0012; \u000f/\nis stationary for the Liouvillian operator for the vector ﬁeld .p; \u0003rU; 0; 0; 0/.\nThe function can be chosen as any smooth function that integrates out with\nrespect to V; \u0012; \u000f over Œ0; 1\t \u0004 R \u0004 R. We already know from our discussion of\nNosé-Hoover that Pp D \u0003\u0012p; P\u0012 D .pTM\u00021p \u0003 NdkBT/=\u0006T will have as stationary\nstates functions of the form\n\u00052 D exp.\u0003ˇŒpTM\u00021p C \u0006T\u00122=2\t/ 2.q; \u000f; V/:\nFinally the remaining terms Pq D \u000fq, Pp D \u0003\u000fp, PV D \u000fV, P\u000f D .V˘.q; p; V/ \u0003 PV C\nkBT/=\u0006P give rise to the Liouvillian\nL\u0004\u0005 D \u0003\u000frq \u0002.q\u0005/C\u000frp \u0002.p\u0005/\u0003\u000f @\n@V .V\u0005/\u0003 @\n@\u000fŒ\u0005.V˘.q; p; V/\u0003PV CkBT/=\u0006P\t:\n"
+          }
+        ],
+        "numbered_equations": [],
+        "transcription_note": "文字层逐字保留；数学排版另行转写，原页中的特殊字形编码不静默替换。",
+        "context_notation": [],
+        "extra_assumptions": [
+          "[EXTRA] invm:Fin n→ℝ表示固定对角逆质量系数；Lean全称允许任意实系数，不要求正性，散度恒等式仍成立。",
+          "[EXTRA] U:(Vec n×ℝ)→ℝ为C²，φ:ℝ→ℝ和ψ:Vec 3→ℝ为C¹；U允许依赖作为冻结参数的V。",
+          "[EXTRA] 状态为((q,p),(V,ξ,η))，后三坐标在子场下全为零。Lean仅陈述局部通量散度零，不要求权非负、归一或可积，也不证明全局流或边界性质。",
+          "[ERRATUM?] 原印子场首分量p，仅单位质量等特殊情形与所印能量一致；修正版采用M⁻¹p。"
+        ],
+        "issues": [
+          "[ERRATUM?] 原页先给q̇=M⁻¹p+ηq，随后驻定子场却明确印为(p,−∇U,0,0,0)。对于一般质量及所印能量，二者不一致；不可将原印首分量静默改为M⁻¹p。",
+          "摘要只说Hamiltonian part，没有指明原印p与修正M⁻¹p两场，需明确区分。Printed定义忠实，修正场合理；原书疑误仍需人工确认。",
+          "[EXTRA] Lean只证明全实坐标空间上的局部加权通量散度为零；φ、ψ可取有符号光滑权，未要求非负、归一化或V≥0上的可积性。因此不能解释为已构造概率平稳分布或全局保测流。",
+          "source_page_verification引用未提供的旧source_page_checks.json，应换成本次附件核对记录。"
+        ],
+        "statement_scope": "原印p子场、M⁻¹p修正子场及修正子场光滑复合权的局部驻定目标；不把修正场说成逐字原印场。",
+        "lean_decl": "MD.Ch08.pistonHamiltonianPart",
+        "lean_declarations": [
+          "MD.Ch08.pistonHamiltonianPart",
+          "MD.Ch08.pistonHamiltonianWeight_stationary",
+          "MD.Ch08.pistonHamiltonianPartPrinted",
+          "MD.Ch08.pistonHamiltonianPart_corrected"
+        ],
+        "source_page_verification": "R3本次审校：已核对R3_PAGES.pdf附件第2页图像及文字层；对应原书PDF页402、印刷页381。",
+        "repair_log": [
+          {
+            "instruction": 31,
+            "stage": "json_review",
+            "status": "NEEDS_HUMAN",
+            "issue_codes": [
+              "ERRATUM_REQUIRES_HUMAN",
+              "STALE_TRANSCRIPTION_NOTE"
+            ],
+            "change": "合并经原页和现有签名核对的元数据更正；原页全文未改。"
+          },
+          {
+            "instruction": 31,
+            "stage": "human_triage",
+            "change": "已目视核对原页PDF402：文字子场印为(p,−∇U,0,0,0)，一般质量应为(M⁻¹p,−∇U,0,0,0)或另限单位质量。旧pistonHamiltonianPart及其驻定目标属于合理修正，新增Printed与_corrected明确区分。",
+            "suggested_fix": "保留原页文字；在issues显式标[ERRATUM?]：原印p应为M⁻¹p（或注明单位质量约定）。给现有Hamiltonian子场标为合理修正，不将其与原印向量场混同。"
+          }
+        ],
+        "documented_priors": [],
+        "coverage_gaps": []
+      },
+      "issues": [
+        "[ERRATUM?] 原页先给q̇=M⁻¹p+ηq，随后驻定子场却明确印为(p,−∇U,0,0,0)。对于一般质量及所印能量，二者不一致；不可将原印首分量静默改为M⁻¹p。",
+        "摘要只说Hamiltonian part，没有指明原印p与修正M⁻¹p两场，需明确区分。Printed定义忠实，修正场合理；原书疑误仍需人工确认。",
+        "[EXTRA] Lean只证明全实坐标空间上的局部加权通量散度为零；φ、ψ可取有符号光滑权，未要求非负、归一化或V≥0上的可积性。因此不能解释为已构造概率平稳分布或全局保测流。",
+        "source_page_verification引用未提供的旧source_page_checks.json，应换成本次附件核对记录。"
+      ],
+      "evidence": [
+        {
+          "stage": "A",
+          "page": "R3_PAGES.pdf第2页 / 原书PDF页402 / 印刷页381",
+          "finding": "statement_verbatim与original_page_text[0].text完全一致；页眉、正文、公式和页尾均已核对。原有控制字符及数学字形失真与图像区分处理，未静默重写全文。"
+        },
+        {
+          "stage": "A",
+          "finding": "原图中ρ₁后有乘号×ψ(V,ξ,η)，随后明确写field (p,−∇U,0,0,0)；前文q̇则为M⁻¹p+ηq。原页还要求ψ在[0,∞)×ℝ×ℝ上可积，Lean范围说明已将此与局部恒等式分开。ρ₂及最后Liouvillian属同页全文但非本条签名范围，按原印保留。"
+        },
+        {
+          "stage": "C",
+          "finding": "已按提供的Phase、gradient、kineticTwice、PistonState、textbookDivergence完整定义核对；未把trace散度等式误作沿Printed场的结论。"
+        }
+      ]
+    },
+    "audit": {
+      "lean_decl": [
+        "MD.Ch08.pistonHamiltonianPart",
+        "MD.Ch08.pistonHamiltonianWeight_stationary",
+        "MD.Ch08.pistonHamiltonianPartPrinted",
+        "MD.Ch08.pistonHamiltonianPart_corrected"
+      ],
+      "verdict": "NEEDS_HUMAN",
+      "explanation": {
+        "overall": "原印场的一般质量疑误判NEEDS_HUMAN；Printed定义忠实、修正场及其散度恒等式签名PASS。未依据sorry否定签名。",
+        "objects_and_domains": "n为任意自然数；Vec n=Fin n→ℝ，Phase n=Vec n×Vec n，PistonState n=Phase n×Vec 3。z任意，无V≥0限制；x.2 0是V，ξ、η为另外两冻结坐标。invm为常实对角系数；质量正性对恒等式不必要。",
+        "declarations": [
+          {
+            "lean_decl": "MD.Ch08.pistonHamiltonianPart",
+            "verdict": "PASS",
+            "explanation": "场为((invm·p,−∇_q U(q,V)),0)，梯度按标准坐标方向fderiv定义，后三分量为零。与一般对角质量的Hamiltonian修正一致，但不能叫原印逐字场。"
+          },
+          {
+            "lean_decl": "MD.Ch08.pistonHamiltonianWeight_stationary",
+            "verdict": "PASS",
+            "explanation": "对任意invm、C²的U、C¹的φ及ψ和任意z，全结论为div([φ(H)ψ]F)(z)=0，其中H=Σ invm_i p_i²/2+U(q,V)，div为完整状态空间上导数线性映射的trace。F自身散度为零，F·∇H=Σ(U_qi invm_i p_i−invm_i p_i U_qi)=0，ψ只依赖冻结坐标故沿场导数零。U依赖V不会引入额外通量项，因为V方向场分量恒为零。结论不要求质量正性或权可积，亦不推出概率归一化。"
+          },
+          {
+            "lean_decl": "MD.Ch08.pistonHamiltonianPartPrinted",
+            "verdict": "PASS",
+            "explanation": "完整场((p,−∇_q U(q,V)),0)与原印(p,−∇U,0,0,0)逐分量一致；没有附带错误的驻定定理，故原印疑误不构成本定义忠实性的FAIL。"
+          },
+          {
+            "lean_decl": "MD.Ch08.pistonHamiltonianPart_corrected",
+            "verdict": "PASS",
+            "explanation": "定义展开即pistonHamiltonianPart invm U z，明确把首分量修正为对角M⁻¹p，其余力及冻结坐标正确。"
+          }
+        ]
+      },
+      "counterexample": {
+        "scope": "反驳一般质量下原印场的驻定声称，不反驳Printed定义的忠实性或Lean修正版。",
+        "example": "取n=1，invm=1/2即m=2，U(q,V)=q²/2，φ(h)=exp(−h)，ψ(V,ξ,η)=exp(−V²−ξ²−η²)。H=p²/4+q²/2，原印F=(p,−q,0,0,0)散度零，但F·∇H=qp/2。因此div(φ(H)ψ F)=−(qp/2)exp(−H)ψ。在q=p=V=1、ξ=η=0时为−exp(−7/4)/2≠0；V位于正体积域内部。",
+        "validation": "解析链式法则反例；ψ在[0,∞)×ℝ²上可积，归一化常数不影响非零结论。"
+      },
+      "suggested_fix": "保留原印p场与Printed定义并显式[ERRATUM?]；人工确认是漏印M⁻¹还是单位质量约定。一般对角质量使用现有_corrected及stationary定理；明确权的局部驻定与概率分布的区别，并修正摘要和来源核对记录。"
+    },
+    "subtask": "EAUDIT04a"
+  }
+]

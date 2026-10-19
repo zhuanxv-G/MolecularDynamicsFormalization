@@ -1,0 +1,580 @@
+[
+  {
+    "source_id": "MD-8.1.1-NHFirstIntegralPrinted",
+    "category": "原书表述疑误待导师",
+    "issues": [
+      "已目视核对原页PDF354：上行ds/dt=ξ，与(8.8)的ln s不相容；改为ds/dt=sξ（亦见PDF356和Exercise2）。"
+    ],
+    "website_verdict": "NEEDS_HUMAN",
+    "printed": {
+      "assessment": "原印忠实性PASS；s′=ξ与log s守恒不相容，数学真值待导师",
+      "issues": [
+        "已目视核对原页PDF354：上行ds/dt=ξ，与(8.8)的ln s不相容；改为ds/dt=sξ（亦见PDF356和Exercise2）。"
+      ]
+    },
+    "corrected": {
+      "assessment": "原送审s′=sξ的_corrected签名PASS",
+      "current_revision": "当前Lean与718f75f0送审字节一致；复审条目按32号意见分版登记，其余保留首轮分项意见。无待复审包。"
+    }
+  },
+  {
+    "source_id": "MD-8.1.2.1-NoseHamiltoniansPrinted",
+    "category": "原书表述疑误待导师",
+    "issues": [
+      "已目视核对原页PDF355：H_N先用(N_d+1)，(8.9)展开却用N_d；同名H_N等号不一致。工作修正显式减去β⁻¹ln s。"
+    ],
+    "website_verdict": "NEEDS_HUMAN",
+    "printed": {
+      "assessment": "两个原印H_N的对数系数不一致；Printed忠实性PASS",
+      "issues": [
+        "已目视核对原页PDF355：H_N先用(N_d+1)，(8.9)展开却用N_d；同名H_N等号不一致。工作修正显式减去β⁻¹ln s。"
+      ]
+    },
+    "corrected": {
+      "assessment": "原送审显式减log s/β的代数修正版PASS",
+      "current_revision": "当前Lean与718f75f0送审字节一致；复审条目按32号意见分版登记，其余保留首轮分项意见。无待复审包。"
+    }
+  },
+  {
+    "source_id": "MD-8.1.2.1-NPEquations",
+    "category": "原书表述疑误待导师",
+    "issues": [
+      "[ERRATUM?] 原页H_N在(N_d+1)与N_d系数之间不一致，须人工确认；修正版按(8.9)展开选择n版。",
+      "已目视核对原页PDF355：上方H_N用(n+1)/β，(8.9)展开用n/β，末行ΔH_N仍引用同名H_N；指代矛盾未消除。n版仅为依(8.9)展开采用的修正选择。"
+    ],
+    "website_verdict": "NEEDS_HUMAN",
+    "printed": {
+      "assessment": "原印ΔH_N指代冲突未消除，待导师"
+    },
+    "corrected": {
+      "assessment": "npDeltaN_corrected及npValidDomain网站PASS；npField在n版修正解释下分量正确，但网站逐声明仍保留NEEDS_HUMAN的指代限定",
+      "current_revision": "当前Lean与718f75f0送审字节一致；复审条目按32号意见分版登记，其余保留首轮分项意见。无待复审包。"
+    }
+  },
+  {
+    "source_id": "MD-8.2.1-Examples81and82",
+    "category": "原书表述疑误待导师",
+    "issues": [
+      "[ERRATUM?] 原印例8.2的Φ=+ξG与正反馈一般不保持所列高斯Gibbs密度；Printed忠实保留该声称。负号耦合corrected为合理修正。",
+      "已目视核对原页PDF358：例8.2印为Φ=+ξG及正反馈；Printed仅保留原印疑误，不得被其他条目作为有效数学定理依赖；corrected采用−ξG。"
+    ],
+    "website_verdict": "NEEDS_HUMAN",
+    "printed": {
+      "assessment": "Printed字面忠实性PASS；+ξG驻定声称为原书符号疑误，禁止作为有效定理依赖"
+    },
+    "corrected": {
+      "assessment": "−ξG的_corrected局部驻定签名网站PASS",
+      "current_revision": "当前Lean与718f75f0送审字节一致；复审条目按32号意见分版登记，其余保留首轮分项意见。无待复审包。"
+    }
+  },
+  {
+    "source_id": "MD-8.4-AdditiveThermostatSDE",
+    "category": "原书表述疑误待导师",
+    "issues": [
+      "[ERRATUM?] 原印(8.23)的−Φ缺dt。",
+      "[ERRATUM?] 原印矩阵对称性不足以保证实噪声及Gibbs相容；当前Lean是半正定、交换资格下的限制模型。",
+      "已目视核对原页PDF364：(8.23)的−Φ缺dt；矩阵仅对称不足以保证所印噪声与目标Gibbs协方差相容。当前模型已组装，是对角物理质量、交换涨落耗散特例。"
+    ],
+    "website_verdict": "NEEDS_HUMAN",
+    "printed": {
+      "assessment": "原印缺dt及矩阵噪声相容疑误待导师"
+    },
+    "corrected": {
+      "assessment": "已组装的对角物理质量、交换涨落耗散特例网站PASS；不代表一般矩阵模型",
+      "current_revision": "当前Lean与718f75f0送审字节一致；复审条目按32号意见分版登记，其余保留首轮分项意见。无待复审包。"
+    }
+  },
+  {
+    "source_id": "MD-8.4-OUStationarityPrinted",
+    "category": "原书表述疑误待导师",
+    "issues": [
+      "已目视核对原页PDF364–365：一般M与Γ仅对称不足保证原噪声协方差匹配，应加ΓM=MΓ或直接给涨落耗散关系；PDF365将Hessian的β提取后仍留β⁻¹，标量β=2,p=0已反例。",
+      "[ERRATUM?]保留原所印等式及β=2反例；修正版的BBᵀ=(2/β)ΓM为明确额外资格，在对称情形蕴含交换性。"
+    ],
+    "website_verdict": "NEEDS_HUMAN",
+    "printed": {
+      "assessment": "diffusionPrinted忠实性PASS；原印β因子和矩阵相容性待导师",
+      "issues": [
+        "已目视核对原页PDF364–365：一般M与Γ仅对称不足保证原噪声协方差匹配，应加ΓM=MΓ或直接给涨落耗散关系；PDF365将Hessian的β提取后仍留β⁻¹，标量β=2,p=0已反例。",
+        "[ERRATUM?]保留原所印等式及β=2反例；修正版的BBᵀ=(2/β)ΓM为明确额外资格，在对称情形蕴含交换性。"
+      ]
+    },
+    "corrected": {
+      "assessment": "原送审ouStationarity_corrected及标量反例PASS；仅局部算子恒零",
+      "current_revision": "当前Lean与718f75f0送审字节一致；复审条目按32号意见分版登记，其余保留首轮分项意见。无待复审包。"
+    }
+  },
+  {
+    "source_id": "MD-8.4-Proposition82",
+    "category": "原书表述疑误待导师",
+    "issues": [
+      "已目视核对原页PDF365–366：证明除以σ，定理需σ≠0；光滑向量场资格明确补足。",
+      "[ERRATUM?]σ=0反例；Printed仅作忠实记录，corrected在σ≠0下通过。"
+    ],
+    "website_verdict": "NEEDS_HUMAN",
+    "printed": {
+      "assessment": "Printed忠实性PASS；σ=0使原结论失效",
+      "issues": [
+        "已目视核对原页PDF365–366：证明除以σ，定理需σ≠0；光滑向量场资格明确补足。",
+        "[ERRATUM?]σ=0反例；Printed仅作忠实记录，corrected在σ≠0下通过。"
+      ]
+    },
+    "corrected": {
+      "assessment": "原送审C∞且σ≠0的_corrected签名PASS",
+      "current_revision": "当前Lean与718f75f0送审字节一致；复审条目按32号意见分版登记，其余保留首轮分项意见。无待复审包。"
+    }
+  },
+  {
+    "source_id": "MD-8.4.1-NHL",
+    "category": "原书表述疑误待导师",
+    "issues": [
+      "已目视核对原页PDF367：原印q̃=M⁻¹ᐟ²q、p̃=M¹ᐟ²p不产生单位质量方程；正确方向相反并须同步变换势。",
+      "[ERRATUM?]原书所印质量重缩放方向有误，原文保留待人工处理。",
+      "已目视核对原页PDF367：原印q̃=M⁻¹ᐟ²q、p̃=M¹ᐟ²p方向有误。正确为q̃=M¹ᐟ²q、p̃=M⁻¹ᐟ²p，势变为Ũ(q̃)=U(M⁻¹ᐟ²q̃)；若U(q)=qᵀAq/2，则Ã=M⁻¹ᐟ²AM⁻¹ᐟ²。"
+    ],
+    "website_verdict": "NEEDS_HUMAN",
+    "printed": {
+      "assessment": "原印质量重缩放方向疑误待导师"
+    },
+    "corrected": {
+      "assessment": "正对角质量NHL漂移及单噪声积分解规格网站PASS；harmonicPotential仅定义函数，不含(8.30)–(8.32)特化或定理8.1",
+      "current_revision": "当前Lean与718f75f0送审字节一致；复审条目按32号意见分版登记，其余保留首轮分项意见。无待复审包。"
+    }
+  },
+  {
+    "source_id": "MD-8.4.1-Proposition83",
+    "category": "原证明核查",
+    "issues": [
+      "[ERRATUM?]原证明下标、模态标量式及第二组系数消去需核对；命题与Lean签名正确。"
+    ],
+    "website_verdict": "PASS",
+    "printed": {
+      "assessment": "见原网站逐项意见；不凭整组状态推定原印真值",
+      "issues": [
+        "[ERRATUM?]原证明下标、模态标量式及第二组系数消去需核对；命题与Lean签名正确。"
+      ]
+    },
+    "corrected": {
+      "assessment": "未单列修正版则不推定分项PASS",
+      "current_revision": "当前Lean与718f75f0送审字节一致；复审条目按32号意见分版登记，其余保留首轮分项意见。无待复审包。"
+    }
+  },
+  {
+    "source_id": "MD-8.4.1-Theorem81",
+    "category": "原书表述疑误待导师",
+    "issues": [
+      "已目视核对原页PDF367–369：继承Proposition8.2证明，必须排除σ=0；只证明Hörmander张成，不自动获得全局几何遍历性。",
+      "[ERRATUM?]字面版含σ=0反例；物理上下文的参数资格与字面版分开。原质量重缩放与所引证明的局部排印/推导疑误亦应保留。"
+    ],
+    "website_verdict": "NEEDS_HUMAN",
+    "printed": {
+      "assessment": "Printed忠实性PASS；缺非零噪声资格",
+      "issues": [
+        "已目视核对原页PDF367–369：继承Proposition8.2证明，必须排除σ=0；只证明Hörmander张成，不自动获得全局几何遍历性。",
+        "[ERRATUM?]字面版含σ=0反例；物理上下文的参数资格与字面版分开。原质量重缩放与所引证明的局部排印/推导疑误亦应保留。"
+      ]
+    },
+    "corrected": {
+      "assessment": "原送审正参数与σ≠0的_corrected点态括号结论PASS，非全局遍历性",
+      "current_revision": "当前Lean与718f75f0送审字节一致；复审条目按32号意见分版登记，其余保留首轮分项意见。无待复审包。"
+    }
+  },
+  {
+    "source_id": "MD-8.4.1-LyapunovRatePrinted",
+    "category": "原书表述疑误待导师",
+    "issues": [
+      "已目视核对原页PDF370：与φ热浴项μ(ξ-a)²/2比较时衰减系数应≤γ，所印min(2a,γμ)对一般μ不足；正参数数值反例已列。",
+      "{\"codes\": [\"ERRATUM_LYAPUNOV_RATE\"], \"detail\": \"lyapunovAlphaPrinted与lyapunovRatePrinted忠实保留原书α=min(2a,γμ)及δ，按字面忠实性PASS，不能作为正确漂移定理使用。_counterexample的正参数满足全部前提；_corrected改为min(2a,γ)合理且正确：ξ能量的系数是Q/2，故须α≤γ；结合平方不等式及U≤Umax得所写δ。修正版没有额外宣称几何遍历。\", \"suggested_fix\": \"原书字面版保留并加[ERRATUM?]，不以sorry假装其数学正确；正式使用_corrected版本，α=min(2a,γ)。\"}"
+    ],
+    "website_verdict": "NEEDS_HUMAN",
+    "printed": {
+      "assessment": "Printed忠实性PASS；min(2a,γμ)一般不正确",
+      "issues": [
+        "已目视核对原页PDF370：与φ热浴项μ(ξ-a)²/2比较时衰减系数应≤γ，所印min(2a,γμ)对一般μ不足；正参数数值反例已列。",
+        "{\"codes\": [\"ERRATUM_LYAPUNOV_RATE\"], \"detail\": \"lyapunovAlphaPrinted与lyapunovRatePrinted忠实保留原书α=min(2a,γμ)及δ，按字面忠实性PASS，不能作为正确漂移定理使用。_counterexample的正参数满足全部前提；_corrected改为min(2a,γ)合理且正确：ξ能量的系数是Q/2，故须α≤γ；结合平方不等式及U≤Umax得所写δ。修正版没有额外宣称几何遍历。\", \"suggested_fix\": \"原书字面版保留并加[ERRATUM?]，不以sorry假装其数学正确；正式使用_corrected版本，α=min(2a,γ)。\"}"
+      ]
+    },
+    "corrected": {
+      "assessment": "原送审min(2a,γ)修正版及反例PASS",
+      "current_revision": "当前Lean与718f75f0送审字节一致；复审条目按32号意见分版登记，其余保留首轮分项意见。无待复审包。"
+    }
+  },
+  {
+    "source_id": "MD-8.4.3-PreEquilibriumMeans",
+    "category": "域或覆盖说明",
+    "issues": [
+      "[RESOLVED] 旧issues中的MISSING_MOMENT_INTEGRABILITY与当前摘录不符：两项Integrable及正逆质量均已补入；不能沿用旧缺失判定。",
+      "[COVERAGE_GAP] 原页明确要求ρ按扩展NHL系统的Fokker–Planck方程演化；当前定义未表达该演化，已按statement_scope缩限为任意随时间概率密度的有限平均，不将其称作完整预平衡动力学形式化。"
+    ],
+    "website_verdict": "PASS",
+    "printed": {
+      "assessment": "原书全文保留；当前有限平均/弱驻定资格已获网站复审PASS"
+    },
+    "corrected": {
+      "assessment": "当前声明网站复审PASS，旧FAIL已解决；范围仍按实际覆盖限定",
+      "current_revision": "当前Lean与718f75f0送审字节一致；复审条目按32号意见分版登记，其余保留首轮分项意见。无待复审包。"
+    }
+  },
+  {
+    "source_id": "MD-8.4.4-RescalingStationary",
+    "category": "域或覆盖说明",
+    "issues": [
+      "[RESOLVED] 旧issues及extra_assumptions中“havoid只量化Function.support f/尚未实现tsupport”的描述已过期；当前完整Lean与依赖规格均明确使用tsupport f。",
+      "[COVERAGE_GAP] 零动量边界、全局随机过程及半群不变性尚未形式化；此项是明确披露的覆盖限制，不是当前远离边界的弱驻定声明错误。"
+    ],
+    "website_verdict": "PASS",
+    "printed": {
+      "assessment": "原书全文保留；当前有限平均/弱驻定资格已获网站复审PASS"
+    },
+    "corrected": {
+      "assessment": "当前声明网站复审PASS，旧FAIL已解决；范围仍按实际覆盖限定",
+      "current_revision": "当前Lean与718f75f0送审字节一致；复审条目按32号意见分版登记，其余保留首轮分项意见。无待复审包。"
+    }
+  },
+  {
+    "source_id": "MD-8.5-SLSBracketPrinted",
+    "category": "原书表述疑误待导师",
+    "issues": [
+      "已目视核对原页PDF379：沿用Proposition8.2所用括号约定[D,Y]=DY·D-DD·Y，q分量应为-p；整体反号也不能同时保留热浴分量+1。",
+      "{\"codes\": [\"ERRATUM_LIE_BRACKET_SIGN\"], \"detail\": \"slsBracketPrinted逐字对应原书(p,0,1)，字面忠实性PASS；数学上在标准Lie括号约定下不正确。按VectorField.lieBracket V W=DW·V−DV·W，常向量Yξ给[D,Yξ]=−∂ξD=(−p,0,1)，故_corrected签名正确。反向括号会整体变为(p,0,−1)，不能仅靠约定得到原书(p,0,1)。二次括号的整体符号不影响张成。\", \"suggested_fix\": \"保留Printed原书字面版并加[ERRATUM?]；实际计算引用_corrected，第一分量应为−p。\"}"
+    ],
+    "website_verdict": "NEEDS_HUMAN",
+    "printed": {
+      "assessment": "Printed忠实性PASS；括号首分量符号不一致",
+      "issues": [
+        "已目视核对原页PDF379：沿用Proposition8.2所用括号约定[D,Y]=DY·D-DD·Y，q分量应为-p；整体反号也不能同时保留热浴分量+1。",
+        "{\"codes\": [\"ERRATUM_LIE_BRACKET_SIGN\"], \"detail\": \"slsBracketPrinted逐字对应原书(p,0,1)，字面忠实性PASS；数学上在标准Lie括号约定下不正确。按VectorField.lieBracket V W=DW·V−DV·W，常向量Yξ给[D,Yξ]=−∂ξD=(−p,0,1)，故_corrected签名正确。反向括号会整体变为(p,0,−1)，不能仅靠约定得到原书(p,0,1)。二次括号的整体符号不影响张成。\", \"suggested_fix\": \"保留Printed原书字面版并加[ERRATUM?]；实际计算引用_corrected，第一分量应为−p。\"}"
+      ]
+    },
+    "corrected": {
+      "assessment": "原送审−p首分量_corrected签名PASS",
+      "current_revision": "当前Lean与718f75f0送审字节一致；复审条目按32号意见分版登记，其余保留首轮分项意见。无待复审包。"
+    }
+  },
+  {
+    "source_id": "MD-8.5-SLSLeapfrog",
+    "category": "原书表述疑误待导师",
+    "issues": [
+      "[ERRATUM?][SOURCE_MISSING_MU_IN_REDUCTION] 原页η约化式缺μ⁻¹，和(8.36)及两次kick不一致。原文及statement_latex保持不动，勘误须人工确认。",
+      "[DOMAIN_CLARIFICATION] Q>0、正质量及可微性只是物理解释域说明，没有作为Lean def的前提；不把总函数误读为所有参数上的经典动力学定理。",
+      "已目视核对原页PDF379：η约化式确实漏μ⁻¹，一般μ下应为ξ̇=−μ⁻¹∂ηU；原印与Printed保留，_corrected恢复1/Q。"
+    ],
+    "website_verdict": "NEEDS_HUMAN",
+    "printed": {
+      "assessment": "Printed忠实性PASS；一般μ下约化式漏μ⁻¹待导师"
+    },
+    "corrected": {
+      "assessment": "算法定义及恢复1/Q的_corrected网站PASS",
+      "current_revision": "当前Lean与718f75f0送审字节一致；复审条目按32号意见分版登记，其余保留首轮分项意见。无待复审包。"
+    }
+  },
+  {
+    "source_id": "MD-8.6-IsokineticDivergencePrinted",
+    "category": "原书表述疑误待导师",
+    "issues": [
+      "已目视核对原页PDF383–384：ṗ=F-λp的散度应为-(N_c-1)λ，所印正号与后续w=(N_c-1)U/K也冲突。",
+      "PDF383确实印正号div f=(Nc−1)λ，PDF384随后仍用正号的∇w·f等式并给w=(Nc−1)U/K；原文逐字内容应保留。",
+      "已目视核对原页PDF383–384：散度与∇w·f等式须同时改负号，w=(n−1)U/K的正号保留。"
+    ],
+    "website_verdict": "NEEDS_HUMAN",
+    "printed": {
+      "assessment": "Printed忠实性PASS；原印散度正号有误",
+      "issues": [
+        "已目视核对原页PDF383–384：ṗ=F-λp的散度应为-(N_c-1)λ，所印正号与后续w=(N_c-1)U/K也冲突。",
+        "PDF383确实印正号div f=(Nc−1)λ，PDF384随后仍用正号的∇w·f等式并给w=(Nc−1)U/K；原文逐字内容应保留。",
+        "已目视核对原页PDF383–384：散度与∇w·f等式须同时改负号，w=(n−1)U/K的正号保留。"
+      ]
+    },
+    "corrected": {
+      "assessment": "原送审负号_corrected签名PASS；w本身保留正号",
+      "current_revision": "当前Lean与718f75f0送审字节一致；复审条目按32号意见分版登记，其余保留首轮分项意见。无待复审包。"
+    }
+  },
+  {
+    "source_id": "MD-8.6.1-SINWeightPrinted",
+    "category": "原书表述疑误待导师",
+    "issues": [
+      "已目视核对原页PDF386：ξ₂方程含μ₂⁻¹，而w的ξ₂二次项缺μ₂；一般μ₂时应为μ₂ξ₂²/2。",
+      "PDF386确实印w=(U+ξ₂²/2)/(p²+μ₁ξ₁²/2)，未含μ₂；statement_latex忠实，不能静默把原印式改成修正式。"
+    ],
+    "website_verdict": "NEEDS_HUMAN",
+    "printed": {
+      "assessment": "Printed忠实性PASS；原印二次项缺μ₂",
+      "issues": [
+        "已目视核对原页PDF386：ξ₂方程含μ₂⁻¹，而w的ξ₂二次项缺μ₂；一般μ₂时应为μ₂ξ₂²/2。",
+        "PDF386确实印w=(U+ξ₂²/2)/(p²+μ₁ξ₁²/2)，未含μ₂；statement_latex忠实，不能静默把原印式改成修正式。"
+      ]
+    },
+    "corrected": {
+      "assessment": "原送审补Q2的权重与壳面局部驻定签名PASS，非曲面测度不变性",
+      "current_revision": "当前Lean与718f75f0送审字节一致；复审条目按32号意见分版登记，其余保留首轮分项意见。无待复审包。"
+    }
+  },
+  {
+    "source_id": "MD-8.6.2-SINProjectedBracketsPrinted",
+    "category": "原书表述疑误待导师",
+    "issues": [
+      "已目视核对原页PDF388：(8.50)的u₁公式实际重写u₀，(8.51)的u₂公式实际为首交换子；(8.49)第三分量似缺共同σ。原印与真实迭代交换子独立保留。",
+      "PDF388逐式核对：(8.48)为u0；(8.49)ξ₁分量前确无共同σ；(8.50)印u1却重复u0展开式；(8.51)印u2却是首交换子的投影。(8.52)的p分量确为−σa而非−σξ₁²a，故Lean忠实保留了原印式，不应替书改系数。",
+      "已目视核对原页PDF388：(8.49)–(8.53)及“any pair”/平行论据需导师核查；修正版仅以完整四维真实括号再投影为准，不把改下标当作长式校正。"
+    ],
+    "website_verdict": "NEEDS_HUMAN",
+    "printed": {
+      "assessment": "Printed各表达式忠实性PASS；(8.49)–(8.53)疑误待导师",
+      "issues": [
+        "已目视核对原页PDF388：(8.50)的u₁公式实际重写u₀，(8.51)的u₂公式实际为首交换子；(8.49)第三分量似缺共同σ。原印与真实迭代交换子独立保留。",
+        "PDF388逐式核对：(8.48)为u0；(8.49)ξ₁分量前确无共同σ；(8.50)印u1却重复u0展开式；(8.51)印u2却是首交换子的投影。(8.52)的p分量确为−σa而非−σξ₁²a，故Lean忠实保留了原印式，不应替书改系数。",
+        "已目视核对原页PDF388：(8.49)–(8.53)及“any pair”/平行论据需导师核查；修正版仅以完整四维真实括号再投影为准，不把改下标当作长式校正。"
+      ]
+    },
+    "corrected": {
+      "assessment": "原送审完整四维真实括号再投影定义PASS，长式未声称等于真实括号",
+      "current_revision": "当前Lean与718f75f0送审字节一致；复审条目按32号意见分版登记，其余保留首轮分项意见。无待复审包。"
+    }
+  },
+  {
+    "source_id": "MD-8.6.2-SINThirdBracketPrinted",
+    "category": "原书表述疑误待导师",
+    "issues": [
+      "已目视核对原页PDF389：(8.54)q分量代p=0得到-2σq/ξ₁²，(8.56)遗漏ξ₁²分母；原印多项式的其他系数仍待独立微分核对。",
+      "PDF389的(8.54)q分量分母为D²，(8.55)的13项多项式逐项与sinEtaPrinted一致；(8.56)原印q分量为−2σq，确无ξ₁²分母。"
+    ],
+    "website_verdict": "NEEDS_HUMAN",
+    "printed": {
+      "assessment": "Printed忠实性PASS；(8.54)/(8.56)内部不一致",
+      "issues": [
+        "已目视核对原页PDF389：(8.54)q分量代p=0得到-2σq/ξ₁²，(8.56)遗漏ξ₁²分母；原印多项式的其他系数仍待独立微分核对。",
+        "PDF389的(8.54)q分量分母为D²，(8.55)的13项多项式逐项与sinEtaPrinted一致；(8.56)原印q分量为−2σq，确无ξ₁²分母。"
+      ]
+    },
+    "corrected": {
+      "assessment": "原送审_corrected及specialize在内部代数特化意义下PASS，非真实三重括号校正",
+      "current_revision": "当前Lean与718f75f0送审字节一致；复审条目按32号意见分版登记，其余保留首轮分项意见。无待复审包。"
+    }
+  },
+  {
+    "source_id": "MD-8.6.2-SINBracketRank",
+    "category": "域或覆盖说明",
+    "issues": [
+      "PDF387–389列出的五个场和M0吻合。原页先说明运动限制在ξ₁>0或ξ₁<0半空间；statement_latex应显式带上这一域，避免把“除M0外”误读为包含ξ₁=0的整个圆柱。"
+    ],
+    "website_verdict": "PASS",
+    "printed": {
+      "assessment": "见原网站逐项意见；不凭整组状态推定原印真值",
+      "issues": [
+        "PDF387–389列出的五个场和M0吻合。原页先说明运动限制在ξ₁>0或ξ₁<0半空间；statement_latex应显式带上这一域，避免把“除M0外”误读为包含ξ₁=0的整个圆柱。"
+      ]
+    },
+    "corrected": {
+      "assessment": "未单列修正版则不推定分项PASS",
+      "current_revision": "当前Lean与718f75f0送审字节一致；复审条目按32号意见分版登记，其余保留首轮分项意见。无待复审包。"
+    }
+  },
+  {
+    "source_id": "MD-8.6.2-SINLyapunov",
+    "category": "原书表述疑误待导师",
+    "issues": [
+      "[ERRATUM?][SOURCE_LYAPUNOV_SIGNED_BOUND] 原页390以ξ₁有界推出固定有符号Kξ₂全局上界，未区分ξ₂正负。需保留原文并由人工确认勘误；绝对值修正版正确。",
+      "[SOURCE_ERGODICITY_GAP] 原页还提出周期/有界配置、约束及候选测度在开集上为正等全局条件，并援引其他论证；当前局部Lean声明没有遍历性结论，不能将其当作完整遍历性证明。",
+      "已目视核对原页PDF390：原印有符号Kξ₂界不能统一控制正负两侧。单位质量Q1=Q2=1、σ²=2γθ下修正版为−γξ₂²+θ|ξ₂|+γθ；仅为局部生成元和约束界，不推出遍历性。"
+    ],
+    "website_verdict": "NEEDS_HUMAN",
+    "printed": {
+      "assessment": "Printed表达式忠实性PASS；有符号尾界疑误待导师"
+    },
+    "corrected": {
+      "assessment": "单位质量、σ²=2γθ下生成元与绝对值尾界签名网站PASS，非遍历性",
+      "current_revision": "当前Lean与718f75f0送审字节一致；复审条目按32号意见分版登记，其余保留首轮分项意见。无待复审包。"
+    }
+  },
+  {
+    "source_id": "MD-8.6.3-SINForceExactPrinted",
+    "category": "原书表述疑误待导师",
+    "issues": [
+      "已目视核对原页PDF393：所印ξ̇₁为正号，与前页力子场及ξ₁(h)=ξ₁(0)/ṡ(h)的负号导数冲突。保留原印和负号工作修正版。",
+      "[ERRATUM?] 保留Printed，给ξ₁负号版添加[ERRATUM?]；保留m=1的[EXTRA]，不要把工作修正版回填为原文。"
+    ],
+    "website_verdict": "NEEDS_HUMAN",
+    "printed": {
+      "assessment": "Printed正号ODE忠实性PASS；与候选导数冲突",
+      "issues": [
+        "已目视核对原页PDF393：所印ξ̇₁为正号，与前页力子场及ξ₁(h)=ξ₁(0)/ṡ(h)的负号导数冲突。保留原印和负号工作修正版。",
+        "[ERRATUM?] 保留Printed，给ξ₁负号版添加[ERRATUM?]；保留m=1的[EXTRA]，不要把工作修正版回填为原文。"
+      ]
+    },
+    "corrected": {
+      "assessment": "原送审负号_corrected及局部解签名PASS；限m=1与非零分母",
+      "current_revision": "当前Lean与718f75f0送审字节一致；复审条目按32号意见分版登记，其余保留首轮分项意见。无待复审包。"
+    }
+  },
+  {
+    "source_id": "MD-8.7-GeneralizedLangevin",
+    "category": "原书表述疑误待导师",
+    "issues": [
+      "[ERRATUM?] 保留原句并加[ERRATUM?]；注明generalizedLangevin仅为给定加性驱动的积分方程，噪声分布及FD在其他规格中另行约束。",
+      "已目视核对原页PDF395：colored-noise后的non-Gaussian不是同义解释。有色Gaussian过程存在（如平稳OU）；原句保留，修正说明为“有色性指跨时相关，Gaussian性另定”。此处属文字修正，不引入无关定理。"
+    ],
+    "website_verdict": "NEEDS_HUMAN",
+    "printed": {
+      "assessment": "原送审给定B的积分方程规格可接受；有色/非Gaussian同义说法待导师",
+      "issues": [
+        "[ERRATUM?] 保留原句并加[ERRATUM?]；注明generalizedLangevin仅为给定加性驱动的积分方程，噪声分布及FD在其他规格中另行约束。",
+        "已目视核对原页PDF395：colored-noise后的non-Gaussian不是同义解释。有色Gaussian过程存在（如平稳OU）；原句保留，修正说明为“有色性指跨时相关，Gaussian性另定”。此处属文字修正，不引入无关定理。"
+      ]
+    },
+    "corrected": {
+      "assessment": "本轮文字修正：有色Gaussian可以存在；不新增分布或FD结论",
+      "current_revision": "当前Lean与718f75f0送审字节一致；复审条目按32号意见分版登记，其余保留首轮分项意见。无待复审包。"
+    }
+  },
+  {
+    "source_id": "MD-8.7-GLEFluctuationDissipationPrinted",
+    "category": "原书表述疑误待导师",
+    "issues": [
+      "已目视核对原页PDF395：一般矩阵核后额外乘δᵢⱼ会消掉交叉相关，只在对角核/独立分量解释下成立；标量核特化没有此问题。颜色与非Gaussian不是同义条件。",
+      "[ERRATUM?] 保留Printed并加[ERRATUM?]；一般矩阵版删除δ或把适用域限制为对角核，注明核可实现性另需正定条件。"
+    ],
+    "website_verdict": "NEEDS_HUMAN",
+    "printed": {
+      "assessment": "Printed的δ忠实于原页；一般矩阵解释有疑",
+      "issues": [
+        "已目视核对原页PDF395：一般矩阵核后额外乘δᵢⱼ会消掉交叉相关，只在对角核/独立分量解释下成立；标量核特化没有此问题。颜色与非Gaussian不是同义条件。",
+        "[ERRATUM?] 保留Printed并加[ERRATUM?]；一般矩阵版删除δ或把适用域限制为对角核，注明核可实现性另需正定条件。"
+      ]
+    },
+    "corrected": {
+      "assessment": "原送审去δ的矩阵协方差目标PASS；可实现性另需正定资格",
+      "current_revision": "当前Lean与718f75f0送审字节一致；复审条目按32号意见分版登记，其余保留首轮分项意见。无待复审包。"
+    }
+  },
+  {
+    "source_id": "MD-8.7.1-PronyOUStationarity",
+    "category": "原书表述疑误待导师",
+    "issues": [
+      "[ERRATUM?] 原页(8.66)断言零均值及与t无关的二阶矩，页内未声明初始律；仅由(8.65)不能推出。原印原句必须保留，是否上下文已默认平稳解释需人工确认。",
+      "[EXTRA] stationaryPronyOU补充了正参数、平稳Gaussian初态、与整条W独立、路径连续及各非负时刻L²资格；应显式标记其为修正版前提。pronyOU_covariance和_corrected签名相同，前者也已经是带补充资格的版本，不能当作无条件原印断言。",
+      "已目视核对原页PDF397：(8.66)印出s≥0但未说明平稳初态。修正版另加[EXTRA]初态N(0,θc/τ)且与整条W独立；t,s≥0；有限和用k∈Fin K，不宣称跨模式总协方差。"
+    ],
+    "website_verdict": "NEEDS_HUMAN",
+    "printed": {
+      "assessment": "原印无初态资格的(8.66)待导师"
+    },
+    "corrected": {
+      "assessment": "pronyOU_covariance及_corrected均为[EXTRA]平稳初态版本，签名网站PASS；非无条件原印定理",
+      "current_revision": "当前Lean与718f75f0送审字节一致；复审条目按32号意见分版登记，其余保留首轮分项意见。无待复审包。"
+    }
+  },
+  {
+    "source_id": "MD-8.8-AndersenHamiltonianPrinted",
+    "category": "原书表述疑误待导师",
+    "issues": [
+      "已目视核对原页PDF401：边缘公式未写此前ρ_NPT定义中的Z_NPT⁻¹；字面右端给未归一Boltzmann权。修正版独立加入正配分常数，需导师确认作者是否在此省略归一因子。",
+      "[ERRATUM?] 保留Printed并标[ERRATUM?]；corrected如作密度须另要求Z是相同坐标/域下的正有限配分积分，不能只要求任意Z>0。"
+    ],
+    "website_verdict": "NEEDS_HUMAN",
+    "printed": {
+      "assessment": "Printed忠实性PASS；相对归一NPT密度缺配分因子",
+      "issues": [
+        "已目视核对原页PDF401：边缘公式未写此前ρ_NPT定义中的Z_NPT⁻¹；字面右端给未归一Boltzmann权。修正版独立加入正配分常数，需导师确认作者是否在此省略归一因子。",
+        "[ERRATUM?] 保留Printed并标[ERRATUM?]；corrected如作密度须另要求Z是相同坐标/域下的正有限配分积分，不能只要求任意Z>0。"
+      ]
+    },
+    "corrected": {
+      "assessment": "原送审Gaussian消元及除Z权重合理；正有限配分积分未保证，不宣称概率归一",
+      "current_revision": "当前Lean与718f75f0送审字节一致；复审条目按32号意见分版登记，其余保留首轮分项意见。无待复审包。"
+    }
+  },
+  {
+    "source_id": "MD-8.8.1-PistonHamiltonianSubfield",
+    "category": "原书表述疑误待导师",
+    "issues": [
+      "[ERRATUM?] 原页先给q̇=M⁻¹p+ηq，随后驻定子场却明确印为(p,−∇U,0,0,0)。对于一般质量及所印能量，二者不一致；不可将原印首分量静默改为M⁻¹p。",
+      "[EXTRA] Lean只陈述全实坐标空间上的局部加权通量散度为零；φ、ψ可取有符号光滑权，未要求非负、归一化或V≥0上的可积性。因此不能解释为已构造概率平稳分布或全局保测流。",
+      "已目视核对原页PDF402：原印场为(p,−∇U,0,0,0)，一般质量的修正场为(M⁻¹p,−∇U,0,0,0)。原印p与本页q̇=M⁻¹p+ηq不一致，修正版仅给局部通量散度目标。"
+    ],
+    "website_verdict": "NEEDS_HUMAN",
+    "printed": {
+      "assessment": "Printed的p场忠实性PASS；一般质量下原驻定声称疑误待导师"
+    },
+    "corrected": {
+      "assessment": "M⁻¹p修正场及局部散度目标签名网站PASS；非概率平稳分布或全局保测流",
+      "current_revision": "当前Lean与718f75f0送审字节一致；复审条目按32号意见分版登记，其余保留首轮分项意见。无待复审包。"
+    }
+  },
+  {
+    "source_id": "MD-8.8.1-PistonThermostatWeightPrinted",
+    "category": "原书表述疑误待导师",
+    "issues": [
+      "已目视核对原页PDF402：ρ₂动能项缺1/2；所印反馈仍为pᵀM⁻¹p−N_dk_BT。原印权重保留，工作修正采用标准动能的一半。",
+      "保留Printed定义和原文；[ERRATUM?]记录动能系数缺1/2，继续将_corrected与原印版分开。"
+    ],
+    "website_verdict": "NEEDS_HUMAN",
+    "printed": {
+      "assessment": "Printed忠实性PASS；原印动能缺1/2",
+      "issues": [
+        "已目视核对原页PDF402：ρ₂动能项缺1/2；所印反馈仍为pᵀM⁻¹p−N_dk_BT。原印权重保留，工作修正采用标准动能的一半。",
+        "保留Printed定义和原文；[ERRATUM?]记录动能系数缺1/2，继续将_corrected与原印版分开。"
+      ]
+    },
+    "corrected": {
+      "assessment": "原送审恢复1/2的_corrected及局部驻定签名PASS，ψ₂=1",
+      "current_revision": "当前Lean与718f75f0送审字节一致；复审条目按32号意见分版登记，其余保留首轮分项意见。无待复审包。"
+    }
+  },
+  {
+    "source_id": "MD-8.9.1-DPDMassOrderPrinted",
+    "category": "原书表述疑误待导师",
+    "issues": [
+      "已目视核对原页PDF410：对动量漂移−Δp、动量协方差k_BT M，应为Δ=ΣΣᵀM⁻¹/(2k_BT)；原印左乘仅在相应矩阵可交换（如等质量）时一致。两粒子不等质量的矩阵反例已证。",
+      "保留Printed等式；[ERRATUM?]记录一般质量情形改为ΣΣᵀM⁻¹/(2kBT)，标注等质量或交换条件下两者相同。"
+    ],
+    "website_verdict": "NEEDS_HUMAN",
+    "printed": {
+      "assessment": "Printed忠实性PASS；一般不等质量的乘法次序错误",
+      "issues": [
+        "已目视核对原页PDF410：对动量漂移−Δp、动量协方差k_BT M，应为Δ=ΣΣᵀM⁻¹/(2k_BT)；原印左乘仅在相应矩阵可交换（如等质量）时一致。两粒子不等质量的矩阵反例已证。",
+        "保留Printed等式；[ERRATUM?]记录一般质量情形改为ΣΣᵀM⁻¹/(2kBT)，标注等质量或交换条件下两者相同。"
+      ]
+    },
+    "corrected": {
+      "assessment": "原送审右乘M⁻¹修正版与不交换反例PASS",
+      "current_revision": "当前Lean与718f75f0送审字节一致；复审条目按32号意见分版登记，其余保留首轮分项意见。无待复审包。"
+    }
+  },
+  {
+    "source_id": "MD-8.9.2-DPDPairGeneratorPrinted",
+    "category": "原书表述疑误待导师",
+    "issues": [
+      "已目视核对原页PDF413：单个无序对算子的最外层只对pᵢ求导，会对总动量产生非零漂移；对两粒子成对守恒更新应将最外层改为e·(∂pᵢ−∂pⱼ)。完整有序双和(8.97)另含反方向项，不能直接同样判错。"
+    ],
+    "website_verdict": "NEEDS_HUMAN",
+    "printed": {
+      "assessment": "Printed忠实性PASS；单对解释下最外层∂pi不保总动量",
+      "issues": [
+        "已目视核对原页PDF413：单个无序对算子的最外层只对pᵢ求导，会对总动量产生非零漂移；对两粒子成对守恒更新应将最外层改为e·(∂pᵢ−∂pⱼ)。完整有序双和(8.97)另含反方向项，不能直接同样判错。"
+      ]
+    },
+    "corrected": {
+      "assessment": "原送审改用Dij的_corrected签名PASS；不据此否定完整有序双和",
+      "current_revision": "当前Lean与718f75f0送审字节一致；复审条目按32号意见分版登记，其余保留首轮分项意见。无待复审包。"
+    }
+  },
+  {
+    "source_id": "MD-8.9.2-DPDPairOUUpdate",
+    "category": "原书表述疑误待导师",
+    "issues": [
+      "已目视核对原页PDF414：原印F/(amred)须a>0；γ=0或截断外ωᴰ=0时需用积分系数连续延拓。修正版显式定义a=0为自由加速，噪声退化为零。"
+    ],
+    "website_verdict": "NEEDS_HUMAN",
+    "printed": {
+      "assessment": "Printed忠实性PASS；零率原式通常未定义",
+      "issues": [
+        "已目视核对原页PDF414：原印F/(amred)须a>0；γ=0或截断外ωᴰ=0时需用积分系数连续延拓。修正版显式定义a=0为自由加速，噪声退化为零。"
+      ]
+    },
+    "corrected": {
+      "assessment": "原送审正率改写与FDT噪声同时退化的零率_corrected签名PASS",
+      "current_revision": "当前Lean与718f75f0送审字节一致；复审条目按32号意见分版登记，其余保留首轮分项意见。无待复审包。"
+    }
+  }
+]

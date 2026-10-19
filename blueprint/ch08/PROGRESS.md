@@ -1,110 +1,112 @@
 # 第8章逐条进度
 
-第8章首轮结果已整合，复审包待用户提交。
-103条；首轮74 PASS / 5 FAIL / 24 NEEDS_HUMAN。5条均已本地处理，FAIL修复中=0；本轮复审未提交。
+第8章最终收口完成；全书第1–8章正文收口，等待用户新指令。一次完整check通过；17010冻结文件字节一致；正式库0 sorry、0 axiom声明。
 
-| source_id | PDF页 | 首轮 | 当前状态 | 证明状态 |
-|---|---|---|---|---|
-| MD-8.1-CanonicalCorrelation | 350–351 | PASS | 网站PASS（首轮声明未变） | 定义/已证 |
-| MD-8.1-HamiltonianStationary | 351 | PASS | 网站PASS（首轮声明未变） | 定义/已证 |
-| MD-8.1-ExtendedDensity | 352 | PASS | 网站PASS（首轮声明未变） | 定义/已证 |
-| MD-8.1.1-NoseHoover | 352 | PASS | 网站PASS（首轮声明未变） | 定义/已证 |
-| MD-8.1.1-NHDensitySplit | 353 | PASS | 网站PASS（首轮声明未变） | 未证 |
-| MD-8.1.1-NHFirstIntegralPrinted | 354 | NEEDS_HUMAN | 原书疑误待导师；原送审正确版本分项见下 | 未证 |
-| MD-8.1.2-NHReversal | 354 | PASS | 网站PASS（首轮声明未变） | 定义/已证 |
-| MD-8.1.2-NHTimestep | 354 | PASS | 网站PASS（首轮声明未变） | 定义/已证 |
-| MD-8.1.2-NHTimestepReversible | 354 | PASS | 网站PASS（首轮声明未变） | 未证 |
-| MD-8.1.2.1-NoseHamiltoniansPrinted | 355 | NEEDS_HUMAN | 原书疑误待导师；原送审正确版本分项见下 | 未证 |
-| MD-8.1.2.1-NPEquations | 355 | NEEDS_HUMAN | 待复审 / EAUDIT01 | 定义/已证 |
-| MD-8.1.2.1-NPtoNH | 356 | PASS | 网站PASS（首轮声明未变） | 未证 |
-| MD-8.1.2.1-NPShadowDensity | 356 | PASS | 网站PASS（首轮声明未变） | 定义/已证 |
-| MD-8.2-GeneralThermostat | 357 | PASS | 网站PASS（首轮声明未变） | 定义/已证 |
-| MD-8.2.1-ContinuityProductRule | 357–358 | PASS | 网站PASS（首轮声明未变） | 定义/已证 |
-| MD-8.2.1-ThermostatCriterion | 358 | PASS | 网站PASS（首轮声明未变） | 未证 |
-| MD-8.2.1-Examples81and82 | 358–359 | FAIL | 待复审 / EAUDIT01 | 未证 |
-| MD-8.2.1-TemperatureIdentity | 359 | PASS | 网站PASS（首轮声明未变） | 未证 |
-| MD-8.2.1-Proposition81 | 359–360 | PASS | 网站PASS（首轮声明未变） | 定义/已证 |
-| MD-8.2.2-NHChains | 360–361 | PASS | 网站PASS（首轮声明未变） | 未证 |
-| MD-8.3-ArrheniusRate | 363 | PASS | 网站PASS（首轮声明未变） | 定义/已证 |
-| MD-8.4-AdditiveThermostatSDE | 363–364 | FAIL | 待复审 / EAUDIT01 | 定义/已证 |
-| MD-8.4-OUStationarityPrinted | 364–365 | NEEDS_HUMAN | 原书疑误待导师；原送审正确版本分项见下 | 未证 |
-| MD-8.4-LiftedThermostat | 365–366 | PASS | 网站PASS（首轮声明未变） | 定义/已证 |
-| MD-8.4-Proposition82 | 365–366 | NEEDS_HUMAN | 原书疑误待导师；原送审正确版本分项见下 | 未证 |
-| MD-8.4.1-NHL | 366–367 | FAIL | 待复审 / EAUDIT02 | 定义/已证 |
-| MD-8.4.1-Lemma81 | 368 | PASS | 网站PASS（首轮声明未变） | 定义/已证 |
-| MD-8.4.1-Proposition83 | 368–369 | PASS | 网站PASS（首轮声明未变） | 定义/已证 |
-| MD-8.4.1-Theorem81 | 367–369 | NEEDS_HUMAN | 原书疑误待导师；原送审正确版本分项见下 | 未证 |
-| MD-8.4.1-ZeroModeInvariant | 367 | PASS | 网站PASS（首轮声明未变） | 定义/已证 |
-| MD-8.4.1-NHLGenerator | 369 | PASS | 网站PASS（首轮声明未变） | 定义/已证 |
-| MD-8.4.1-LyapunovCalculation | 369–370 | PASS | 网站PASS（首轮声明未变） | 未证 |
-| MD-8.4.1-LyapunovRatePrinted | 370 | NEEDS_HUMAN | 原书疑误待导师；原送审正确版本分项见下 | 未证 |
-| MD-8.4.2-NHLTimestep | 371 | PASS | 网站PASS（首轮声明未变） | 定义/已证 |
-| MD-8.4.1-NHLWeakStationary | 366–367 | PASS | 网站PASS（首轮声明未变） | 未证 |
-| MD-8.4.3-PreEquilibriumMeans | 375–376 | FAIL | 待复审 / EAUDIT02 | 定义/已证 |
-| MD-8.4.4-VelocityRescaling | 376 | PASS | 网站PASS（首轮声明未变） | 未证 |
-| MD-8.4.4-RescalingStationary | 376 | FAIL | 待复审 / EAUDIT02 | 未证 |
-| MD-8.4.5-ThermostatEfficiency | 377–378 | PASS | 网站PASS（首轮声明未变） | 定义/已证 |
-| MD-8.5-SLS | 378–379 | PASS | 网站PASS（首轮声明未变） | 定义/已证 |
-| MD-8.5-SLSBracketPrinted | 379 | NEEDS_HUMAN | 原书疑误待导师；原送审正确版本分项见下 | 未证 |
-| MD-8.5-SLSHormander | 378–379 | PASS | 网站PASS（首轮声明未变） | 未证 |
-| MD-8.5-SLSConservation | 379 | PASS | 网站PASS（首轮声明未变） | 未证 |
-| MD-8.5-SLSLeapfrog | 379–380 | NEEDS_HUMAN | 待复审 / EAUDIT03 | 定义/已证 |
-| MD-8.5-SLSDoubleWell | 380 | PASS | 网站PASS（首轮声明未变） | 定义/已证 |
-| MD-8.6-IsokineticField | 382–383 | PASS | 网站PASS（首轮声明未变） | 定义/已证 |
-| MD-8.6-IsokineticProjector | 383 | PASS | 网站PASS（首轮声明未变） | 未证 |
-| MD-8.6-IsokineticDivergencePrinted | 383–384 | NEEDS_HUMAN | 原书疑误待导师；原送审正确版本分项见下 | 未证 |
-| MD-8.6-IsokineticGibbsShell | 384 | PASS | 网站PASS（首轮声明未变） | 定义/已证 |
-| MD-8.6.1-StochasticIsokinetic | 385–386 | PASS | 网站PASS（首轮声明未变） | 定义/已证 |
-| MD-8.6.1-SINWeightPrinted | 386 | NEEDS_HUMAN | 原书疑误待导师；原送审正确版本分项见下 | 未证 |
-| MD-8.6.2-SINHarmonic | 387 | PASS | 网站PASS（首轮声明未变） | 定义/已证 |
-| MD-8.6.2-SINProjectedBracketsPrinted | 388 | NEEDS_HUMAN | 原书疑误待导师；原送审正确版本分项见下 | 定义/已证 |
-| MD-8.6.2-SINThirdBracketPrinted | 389 | NEEDS_HUMAN | 原书疑误待导师；原送审正确版本分项见下 | 定义/已证 |
-| MD-8.6.2-SINBracketRank | 387–389 | PASS | 网站PASS（首轮声明未变） | 未证 |
-| MD-8.6.2-SINLyapunov | 389–390 | NEEDS_HUMAN | 待复审 / EAUDIT03 | 未证 |
-| MD-8.6.3-SINForceSplitting | 391–392 | PASS | 网站PASS（首轮声明未变） | 定义/已证 |
-| MD-8.6.3-SINRAlgorithm | 392 | PASS | 网站PASS（首轮声明未变） | 定义/已证 |
-| MD-8.6.3-SINNoseSubsplitting | 393 | PASS | 网站PASS（首轮声明未变） | 定义/已证 |
-| MD-8.6.3-SINForceExactPrinted | 393 | NEEDS_HUMAN | 原书疑误待导师；原送审正确版本分项见下 | 未证 |
-| MD-8.6.4-SINThreeLevelPotential | 394 | PASS | 网站PASS（首轮声明未变） | 定义/已证 |
-| MD-8.7-GeneralizedLangevin | 395 | NEEDS_HUMAN | 原书疑误待导师；原送审正确版本分项见下 | 定义/已证 |
-| MD-8.7-GLEFluctuationDissipationPrinted | 395 | NEEDS_HUMAN | 原书疑误待导师；原送审正确版本分项见下 | 定义/已证 |
-| MD-8.7-PronyKernel | 396 | PASS | 网站PASS（首轮声明未变） | 定义/已证 |
-| MD-8.7.1-PronyMemoryODE | 396 | PASS | 网站PASS（首轮声明未变） | 未证 |
-| MD-8.7.1-PronyOUStationarity | 397 | NEEDS_HUMAN | 待复审 / EAUDIT03 | 未证 |
-| MD-8.7.1-CombinedPronyVariable | 397 | PASS | 网站PASS（首轮声明未变） | 定义/已证 |
-| MD-8.7.1-PronyLangevinLimit | 397–398 | PASS | 网站PASS（首轮声明未变） | 未证 |
-| MD-8.7.1-GeneralizedLangevinIntegrator | 398 | PASS | 网站PASS（首轮声明未变） | 定义/已证 |
-| MD-8.7.1-GLEConsistentCoefficients | 398 | PASS | 网站PASS（首轮声明未变） | 未证 |
-| MD-8.8-NPTThermodynamics | 399 | PASS | 网站PASS（首轮声明未变） | 定义/已证 |
-| MD-8.8-NPTBathTaylor | 399 | PASS | 网站PASS（首轮声明未变） | 未证 |
-| MD-8.8-NPTDensity | 399–400 | PASS | 网站PASS（首轮声明未变） | 定义/已证 |
-| MD-8.8-AndersenCoordinates | 400–401 | PASS | 网站PASS（首轮声明未变） | 未证 |
-| MD-8.8-AndersenKineticEnergy | 400 | PASS | 网站PASS（首轮声明未变） | 未证 |
-| MD-8.8-AndersenHamiltonianPrinted | 401 | NEEDS_HUMAN | 原书疑误待导师；原送审正确版本分项见下 | 未证 |
-| MD-8.8.1-NHLPistonEquations | 402–403 | PASS | 网站PASS（首轮声明未变） | 定义/已证 |
-| MD-8.8.1-PistonHamiltonianSubfield | 402 | NEEDS_HUMAN | 待复审 / EAUDIT04 | 未证 |
-| MD-8.8.1-PistonThermostatWeightPrinted | 402 | NEEDS_HUMAN | 原书疑误待导师；原送审正确版本分项见下 | 未证 |
-| MD-8.8.1-PistonReducedPDE | 403 | PASS | 网站PASS（首轮声明未变） | 未证 |
-| MD-8.8.1-PistonStationaryWeight | 403 | PASS | 网站PASS（首轮声明未变） | 未证 |
-| MD-8.8.2-PistonIntegrator | 404 | PASS | 网站PASS（首轮声明未变） | 定义/已证 |
-| MD-8.8.3-ParrinelloRahman | 406 | PASS | 网站PASS（首轮声明未变） | 定义/已证 |
-| MD-8.9-TotalMomentum | 407 | PASS | 网站PASS（首轮声明未变） | 定义/已证 |
-| MD-8.9.1-DPDSoftPotential | 408–409 | PASS | 网站PASS（首轮声明未变） | 未证 |
-| MD-8.9.1-DPDPairForces | 409 | PASS | 网站PASS（首轮声明未变） | 定义/已证 |
-| MD-8.9.1-DPDPairWiener | 409–410 | PASS | 网站PASS（首轮声明未变） | 未证 |
-| MD-8.9.1-DPDIntegralSystem | 410 | PASS | 网站PASS（首轮声明未变） | 定义/已证 |
-| MD-8.9.1-DPDCanonicalLeaf | 410 | PASS | 网站PASS（首轮声明未变） | 定义/已证 |
-| MD-8.9.1-DPDMassOrderPrinted | 410 | NEEDS_HUMAN | 原书疑误待导师；原送审正确版本分项见下 | 定义/已证 |
-| MD-8.9.2-DPDVelocityVerlet | 410–412 | PASS | 网站PASS（首轮声明未变） | 定义/已证 |
-| MD-8.9.2-DPDSplitGenerator | 412 | PASS | 网站PASS（首轮声明未变） | 定义/已证 |
-| MD-8.9.2-DPDPairGeneratorPrinted | 413 | NEEDS_HUMAN | 原书疑误待导师；原送审正确版本分项见下 | 定义/已证 |
-| MD-8.9.2-DPDSplittingCompositions | 413–414 | PASS | 网站PASS（首轮声明未变） | 定义/已证 |
-| MD-8.9.2-DPDPairOUUpdate | 414 | NEEDS_HUMAN | 原书疑误待导师；原送审正确版本分项见下 | 定义/已证 |
-| MD-8.9.3-PairwiseNoseHoover | 415 | PASS | 网站PASS（首轮声明未变） | 定义/已证 |
-| MD-8.9.3-PairwiseCanonicalWeight | 415 | PASS | 网站PASS（首轮声明未变） | 定义/已证 |
-| MD-8.9.4-PairwiseNHLSDE | 416 | PASS | 网站PASS（首轮声明未变） | 定义/已证 |
-| MD-8.9.4-PairwiseNHLGenerator | 416 | PASS | 网站PASS（首轮声明未变） | 未证 |
-| MD-8.9.4-PNHLSplittingAlgorithms | 417 | PASS | 网站PASS（首轮声明未变） | 定义/已证 |
-| MD-8.10-BerendsenRelaxation | 417–418 | PASS | 网站PASS（首轮声明未变） | 定义/已证 |
-| MD-8.10-CanonicalTotalMomentumGaussian | 418–419 | PASS | 网站PASS（首轮声明未变） | 未证 |
-| MD-8.10-NHLTotalMomentumSign | 419 | PASS | 网站PASS（首轮声明未变） | 未证 |
+32号最终收口：复审10条已登记，2 PASS / 0 FAIL / 8 NEEDS_HUMAN；全部10条Lean字节未改，元数据及文档已按意见更新。
+全章最新整体PASS 76 / FAIL 0 / NEEDS_HUMAN 27；FAIL修复中=0；待复审=0；不再送网站、不生成新包。
+
+| source_id | PDF页 | 首轮 | 复审 | 当前状态 | 证明状态 |
+|---|---|---|---|---|---|
+| MD-8.1-CanonicalCorrelation | 350–351 | PASS | — | 网站PASS（首轮声明未变） | 定义/已证 |
+| MD-8.1-HamiltonianStationary | 351 | PASS | — | 网站PASS（首轮声明未变） | 定义/已证 |
+| MD-8.1-ExtendedDensity | 352 | PASS | — | 网站PASS（首轮声明未变） | 定义/已证 |
+| MD-8.1.1-NoseHoover | 352 | PASS | — | 网站PASS（首轮声明未变） | 定义/已证 |
+| MD-8.1.1-NHDensitySplit | 353 | PASS | — | 网站PASS（首轮声明未变） | 未证 |
+| MD-8.1.1-NHFirstIntegralPrinted | 354 | NEEDS_HUMAN | — | 原书疑误待导师；原送审正确版本分项保留 | 未证 |
+| MD-8.1.2-NHReversal | 354 | PASS | — | 网站PASS（首轮声明未变） | 定义/已证 |
+| MD-8.1.2-NHTimestep | 354 | PASS | — | 网站PASS（首轮声明未变） | 定义/已证 |
+| MD-8.1.2-NHTimestepReversible | 354 | PASS | — | 网站PASS（首轮声明未变） | 未证 |
+| MD-8.1.2.1-NoseHamiltoniansPrinted | 355 | NEEDS_HUMAN | — | 原书疑误待导师；原送审正确版本分项保留 | 未证 |
+| MD-8.1.2.1-NPEquations | 355 | NEEDS_HUMAN | NEEDS_HUMAN | 修正版/限定声明网站认可；原文疑误待导师（NEEDS_HUMAN） | 定义/已证 |
+| MD-8.1.2.1-NPtoNH | 356 | PASS | — | 网站PASS（首轮声明未变） | 未证 |
+| MD-8.1.2.1-NPShadowDensity | 356 | PASS | — | 网站PASS（首轮声明未变） | 定义/已证 |
+| MD-8.2-GeneralThermostat | 357 | PASS | — | 网站PASS（首轮声明未变） | 定义/已证 |
+| MD-8.2.1-ContinuityProductRule | 357–358 | PASS | — | 网站PASS（首轮声明未变） | 定义/已证 |
+| MD-8.2.1-ThermostatCriterion | 358 | PASS | — | 网站PASS（首轮声明未变） | 未证 |
+| MD-8.2.1-Examples81and82 | 358–359 | FAIL | NEEDS_HUMAN | 修正版/限定声明网站认可；原文疑误待导师（NEEDS_HUMAN） | 未证 |
+| MD-8.2.1-TemperatureIdentity | 359 | PASS | — | 网站PASS（首轮声明未变） | 未证 |
+| MD-8.2.1-Proposition81 | 359–360 | PASS | — | 网站PASS（首轮声明未变） | 定义/已证 |
+| MD-8.2.2-NHChains | 360–361 | PASS | — | 网站PASS（首轮声明未变） | 未证 |
+| MD-8.3-ArrheniusRate | 363 | PASS | — | 网站PASS（首轮声明未变） | 定义/已证 |
+| MD-8.4-AdditiveThermostatSDE | 363–364 | FAIL | NEEDS_HUMAN | 修正版/限定声明网站认可；原文疑误待导师（NEEDS_HUMAN） | 定义/已证 |
+| MD-8.4-OUStationarityPrinted | 364–365 | NEEDS_HUMAN | — | 原书疑误待导师；原送审正确版本分项保留 | 未证 |
+| MD-8.4-LiftedThermostat | 365–366 | PASS | — | 网站PASS（首轮声明未变） | 定义/已证 |
+| MD-8.4-Proposition82 | 365–366 | NEEDS_HUMAN | — | 原书疑误待导师；原送审正确版本分项保留 | 未证 |
+| MD-8.4.1-NHL | 366–367 | FAIL | NEEDS_HUMAN | 修正版/限定声明网站认可；原文疑误待导师（NEEDS_HUMAN） | 定义/已证 |
+| MD-8.4.1-Lemma81 | 368 | PASS | — | 网站PASS（首轮声明未变） | 定义/已证 |
+| MD-8.4.1-Proposition83 | 368–369 | PASS | — | 网站PASS（首轮声明未变） | 定义/已证 |
+| MD-8.4.1-Theorem81 | 367–369 | NEEDS_HUMAN | — | 原书疑误待导师；原送审正确版本分项保留 | 未证 |
+| MD-8.4.1-ZeroModeInvariant | 367 | PASS | — | 网站PASS（首轮声明未变） | 定义/已证 |
+| MD-8.4.1-NHLGenerator | 369 | PASS | — | 网站PASS（首轮声明未变） | 定义/已证 |
+| MD-8.4.1-LyapunovCalculation | 369–370 | PASS | — | 网站PASS（首轮声明未变） | 未证 |
+| MD-8.4.1-LyapunovRatePrinted | 370 | NEEDS_HUMAN | — | 原书疑误待导师；原送审正确版本分项保留 | 未证 |
+| MD-8.4.2-NHLTimestep | 371 | PASS | — | 网站PASS（首轮声明未变） | 定义/已证 |
+| MD-8.4.1-NHLWeakStationary | 366–367 | PASS | — | 网站PASS（首轮声明未变） | 未证 |
+| MD-8.4.3-PreEquilibriumMeans | 375–376 | FAIL | PASS | 网站复审PASS（Lean未改） | 定义/已证 |
+| MD-8.4.4-VelocityRescaling | 376 | PASS | — | 网站PASS（首轮声明未变） | 未证 |
+| MD-8.4.4-RescalingStationary | 376 | FAIL | PASS | 网站复审PASS（Lean未改） | 未证 |
+| MD-8.4.5-ThermostatEfficiency | 377–378 | PASS | — | 网站PASS（首轮声明未变） | 定义/已证 |
+| MD-8.5-SLS | 378–379 | PASS | — | 网站PASS（首轮声明未变） | 定义/已证 |
+| MD-8.5-SLSBracketPrinted | 379 | NEEDS_HUMAN | — | 原书疑误待导师；原送审正确版本分项保留 | 未证 |
+| MD-8.5-SLSHormander | 378–379 | PASS | — | 网站PASS（首轮声明未变） | 未证 |
+| MD-8.5-SLSConservation | 379 | PASS | — | 网站PASS（首轮声明未变） | 未证 |
+| MD-8.5-SLSLeapfrog | 379–380 | NEEDS_HUMAN | NEEDS_HUMAN | 修正版/限定声明网站认可；原文疑误待导师（NEEDS_HUMAN） | 定义/已证 |
+| MD-8.5-SLSDoubleWell | 380 | PASS | — | 网站PASS（首轮声明未变） | 定义/已证 |
+| MD-8.6-IsokineticField | 382–383 | PASS | — | 网站PASS（首轮声明未变） | 定义/已证 |
+| MD-8.6-IsokineticProjector | 383 | PASS | — | 网站PASS（首轮声明未变） | 未证 |
+| MD-8.6-IsokineticDivergencePrinted | 383–384 | NEEDS_HUMAN | — | 原书疑误待导师；原送审正确版本分项保留 | 未证 |
+| MD-8.6-IsokineticGibbsShell | 384 | PASS | — | 网站PASS（首轮声明未变） | 定义/已证 |
+| MD-8.6.1-StochasticIsokinetic | 385–386 | PASS | — | 网站PASS（首轮声明未变） | 定义/已证 |
+| MD-8.6.1-SINWeightPrinted | 386 | NEEDS_HUMAN | — | 原书疑误待导师；原送审正确版本分项保留 | 未证 |
+| MD-8.6.2-SINHarmonic | 387 | PASS | — | 网站PASS（首轮声明未变） | 定义/已证 |
+| MD-8.6.2-SINProjectedBracketsPrinted | 388 | NEEDS_HUMAN | — | 原书疑误待导师；原送审正确版本分项保留 | 定义/已证 |
+| MD-8.6.2-SINThirdBracketPrinted | 389 | NEEDS_HUMAN | — | 原书疑误待导师；原送审正确版本分项保留 | 定义/已证 |
+| MD-8.6.2-SINBracketRank | 387–389 | PASS | — | 网站PASS（首轮声明未变） | 未证 |
+| MD-8.6.2-SINLyapunov | 389–390 | NEEDS_HUMAN | NEEDS_HUMAN | 修正版/限定声明网站认可；原文疑误待导师（NEEDS_HUMAN） | 未证 |
+| MD-8.6.3-SINForceSplitting | 391–392 | PASS | — | 网站PASS（首轮声明未变） | 定义/已证 |
+| MD-8.6.3-SINRAlgorithm | 392 | PASS | — | 网站PASS（首轮声明未变） | 定义/已证 |
+| MD-8.6.3-SINNoseSubsplitting | 393 | PASS | — | 网站PASS（首轮声明未变） | 定义/已证 |
+| MD-8.6.3-SINForceExactPrinted | 393 | NEEDS_HUMAN | — | 原书疑误待导师；原送审正确版本分项保留 | 未证 |
+| MD-8.6.4-SINThreeLevelPotential | 394 | PASS | — | 网站PASS（首轮声明未变） | 定义/已证 |
+| MD-8.7-GeneralizedLangevin | 395 | NEEDS_HUMAN | — | 原书疑误待导师；原送审正确版本分项保留 | 定义/已证 |
+| MD-8.7-GLEFluctuationDissipationPrinted | 395 | NEEDS_HUMAN | — | 原书疑误待导师；原送审正确版本分项保留 | 定义/已证 |
+| MD-8.7-PronyKernel | 396 | PASS | — | 网站PASS（首轮声明未变） | 定义/已证 |
+| MD-8.7.1-PronyMemoryODE | 396 | PASS | — | 网站PASS（首轮声明未变） | 未证 |
+| MD-8.7.1-PronyOUStationarity | 397 | NEEDS_HUMAN | NEEDS_HUMAN | 修正版/限定声明网站认可；原文疑误待导师（NEEDS_HUMAN） | 未证 |
+| MD-8.7.1-CombinedPronyVariable | 397 | PASS | — | 网站PASS（首轮声明未变） | 定义/已证 |
+| MD-8.7.1-PronyLangevinLimit | 397–398 | PASS | — | 网站PASS（首轮声明未变） | 未证 |
+| MD-8.7.1-GeneralizedLangevinIntegrator | 398 | PASS | — | 网站PASS（首轮声明未变） | 定义/已证 |
+| MD-8.7.1-GLEConsistentCoefficients | 398 | PASS | — | 网站PASS（首轮声明未变） | 未证 |
+| MD-8.8-NPTThermodynamics | 399 | PASS | — | 网站PASS（首轮声明未变） | 定义/已证 |
+| MD-8.8-NPTBathTaylor | 399 | PASS | — | 网站PASS（首轮声明未变） | 未证 |
+| MD-8.8-NPTDensity | 399–400 | PASS | — | 网站PASS（首轮声明未变） | 定义/已证 |
+| MD-8.8-AndersenCoordinates | 400–401 | PASS | — | 网站PASS（首轮声明未变） | 未证 |
+| MD-8.8-AndersenKineticEnergy | 400 | PASS | — | 网站PASS（首轮声明未变） | 未证 |
+| MD-8.8-AndersenHamiltonianPrinted | 401 | NEEDS_HUMAN | — | 原书疑误待导师；原送审正确版本分项保留 | 未证 |
+| MD-8.8.1-NHLPistonEquations | 402–403 | PASS | — | 网站PASS（首轮声明未变） | 定义/已证 |
+| MD-8.8.1-PistonHamiltonianSubfield | 402 | NEEDS_HUMAN | NEEDS_HUMAN | 修正版/限定声明网站认可；原文疑误待导师（NEEDS_HUMAN） | 未证 |
+| MD-8.8.1-PistonThermostatWeightPrinted | 402 | NEEDS_HUMAN | — | 原书疑误待导师；原送审正确版本分项保留 | 未证 |
+| MD-8.8.1-PistonReducedPDE | 403 | PASS | — | 网站PASS（首轮声明未变） | 未证 |
+| MD-8.8.1-PistonStationaryWeight | 403 | PASS | — | 网站PASS（首轮声明未变） | 未证 |
+| MD-8.8.2-PistonIntegrator | 404 | PASS | — | 网站PASS（首轮声明未变） | 定义/已证 |
+| MD-8.8.3-ParrinelloRahman | 406 | PASS | — | 网站PASS（首轮声明未变） | 定义/已证 |
+| MD-8.9-TotalMomentum | 407 | PASS | — | 网站PASS（首轮声明未变） | 定义/已证 |
+| MD-8.9.1-DPDSoftPotential | 408–409 | PASS | — | 网站PASS（首轮声明未变） | 未证 |
+| MD-8.9.1-DPDPairForces | 409 | PASS | — | 网站PASS（首轮声明未变） | 定义/已证 |
+| MD-8.9.1-DPDPairWiener | 409–410 | PASS | — | 网站PASS（首轮声明未变） | 未证 |
+| MD-8.9.1-DPDIntegralSystem | 410 | PASS | — | 网站PASS（首轮声明未变） | 定义/已证 |
+| MD-8.9.1-DPDCanonicalLeaf | 410 | PASS | — | 网站PASS（首轮声明未变） | 定义/已证 |
+| MD-8.9.1-DPDMassOrderPrinted | 410 | NEEDS_HUMAN | — | 原书疑误待导师；原送审正确版本分项保留 | 定义/已证 |
+| MD-8.9.2-DPDVelocityVerlet | 410–412 | PASS | — | 网站PASS（首轮声明未变） | 定义/已证 |
+| MD-8.9.2-DPDSplitGenerator | 412 | PASS | — | 网站PASS（首轮声明未变） | 定义/已证 |
+| MD-8.9.2-DPDPairGeneratorPrinted | 413 | NEEDS_HUMAN | — | 原书疑误待导师；原送审正确版本分项保留 | 定义/已证 |
+| MD-8.9.2-DPDSplittingCompositions | 413–414 | PASS | — | 网站PASS（首轮声明未变） | 定义/已证 |
+| MD-8.9.2-DPDPairOUUpdate | 414 | NEEDS_HUMAN | — | 原书疑误待导师；原送审正确版本分项保留 | 定义/已证 |
+| MD-8.9.3-PairwiseNoseHoover | 415 | PASS | — | 网站PASS（首轮声明未变） | 定义/已证 |
+| MD-8.9.3-PairwiseCanonicalWeight | 415 | PASS | — | 网站PASS（首轮声明未变） | 定义/已证 |
+| MD-8.9.4-PairwiseNHLSDE | 416 | PASS | — | 网站PASS（首轮声明未变） | 定义/已证 |
+| MD-8.9.4-PairwiseNHLGenerator | 416 | PASS | — | 网站PASS（首轮声明未变） | 未证 |
+| MD-8.9.4-PNHLSplittingAlgorithms | 417 | PASS | — | 网站PASS（首轮声明未变） | 定义/已证 |
+| MD-8.10-BerendsenRelaxation | 417–418 | PASS | — | 网站PASS（首轮声明未变） | 定义/已证 |
+| MD-8.10-CanonicalTotalMomentumGaussian | 418–419 | PASS | — | 网站PASS（首轮声明未变） | 未证 |
+| MD-8.10-NHLTotalMomentumSign | 419 | PASS | — | 网站PASS（首轮声明未变） | 未证 |

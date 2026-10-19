@@ -1,0 +1,17 @@
+{
+  "status": "PASS",
+  "staged_files_before_receipt": 64,
+  "all_paths_authorized": true,
+  "exact_ch08_files": 57,
+  "documentation_line_endings_normalized": [
+    "AGENTS.md",
+    "docs/handoff/CURRENT_STATE.zh-CN.md",
+    "docs/handoff/RESUME_PROMPT.zh-CN.md",
+    "docs/handoff/WORK_LOG.zh-CN.md",
+    "docs/review/CH08_BLUEPRINT.zh-CN.md",
+    "docs/review/CH08_ERRATA.zh-CN.md",
+    "docs/review/CH08_SUMMARY_FOR_MENTOR.zh-CN.md"
+  ],
+  "note": "第8章所有返回、元数据、日志及收口证据原始字节相等；根规则和文档按Git既有CRLF/LF规则比较内容。",
+  "excluded": "第1–7章既存日志、全部既存无关文件及运行缓存未暂存"
+}

@@ -1,0 +1,72 @@
+[
+  {
+    "source_id": "MD-8.1.2.1-NPEquations",
+    "website_verdict": "NEEDS_HUMAN",
+    "suggested_fix": "保留原印全部文字；明确n版为修正选择；应用npField时另具npValidDomain、U可微及EN=H_N^(n)(z₀)。不要将原页指代冲突写为已目视排除。",
+    "diff_summary": "已目视核对原页PDF355：上方H_N用(n+1)/β，(8.9)展开用n/β，末行ΔH_N仍引用同名H_N；指代矛盾未消除。n版仅为依(8.9)展开采用的修正选择。",
+    "lean_signature_changed": false
+  },
+  {
+    "source_id": "MD-8.2.1-Examples81and82",
+    "website_verdict": "NEEDS_HUMAN",
+    "suggested_fix": "保留Printed及原文，标注原书疑误并避免将其作为有效数学定理依赖；corrected可保留。另一等价修法是在保留+ξG时将反馈整体反号。构型反馈亦须与耦合符号配套。",
+    "diff_summary": "已目视核对原页PDF358：例8.2印为Φ=+ξG及正反馈；Printed仅保留原印疑误，不得被其他条目作为有效数学定理依赖；corrected采用−ξG。",
+    "lean_signature_changed": false
+  },
+  {
+    "source_id": "MD-8.4-AdditiveThermostatSDE",
+    "website_verdict": "NEEDS_HUMAN",
+    "suggested_fix": "更新过时JSON备注；保留原印并标缺dt及矩阵相容疑误。将Lean描述为已组装的对角物理质量、交换涨落耗散特例。若以后扩展一般OU资格，可采用BBᵀ=(ΓM+MΓᵀ)/β并要求可实现的半正定协方差；本次不修改Lean。",
+    "diff_summary": "已目视核对原页PDF364：(8.23)的−Φ缺dt；矩阵仅对称不足以保证所印噪声与目标Gibbs协方差相容。当前模型已组装，是对角物理质量、交换涨落耗散特例。",
+    "lean_signature_changed": false
+  },
+  {
+    "source_id": "MD-8.4.1-NHL",
+    "website_verdict": "NEEDS_HUMAN",
+    "suggested_fix": "保留原文重缩放并判人工处理；报告正确方向及变换后的势。维持当前声明的正对角质量范围，不把harmonicPotential的def说成已经完成(8.30)–(8.32)的正定二次特化或证明定理8.1。",
+    "diff_summary": "已目视核对原页PDF367：原印q̃=M⁻¹ᐟ²q、p̃=M¹ᐟ²p方向有误。正确为q̃=M¹ᐟ²q、p̃=M⁻¹ᐟ²p，势变为Ũ(q̃)=U(M⁻¹ᐟ²q̃)；若U(q)=qᵀAq/2，则Ã=M⁻¹ᐟ²AM⁻¹ᐟ²。",
+    "lean_signature_changed": false
+  },
+  {
+    "source_id": "MD-8.4.3-PreEquilibriumMeans",
+    "website_verdict": "PASS",
+    "suggested_fix": "采用corrected_json清理已解决的矩可积性旧报告，保留Fokker–Planck演化的覆盖缺口；当前摘录Lean无需修改。",
+    "diff_summary": "清理旧矩可积性或支撑FAIL，保留当前实际覆盖限制。",
+    "lean_signature_changed": false
+  },
+  {
+    "source_id": "MD-8.4.4-RescalingStationary",
+    "website_verdict": "PASS",
+    "suggested_fix": "采用corrected_json移除Function.support与tsupport混淆的过期FAIL报告；保持弱驻定范围与全局随机过程覆盖缺口，当前Lean无需修改。",
+    "diff_summary": "清理旧矩可积性或支撑FAIL，保留当前实际覆盖限制。",
+    "lean_signature_changed": false
+  },
+  {
+    "source_id": "MD-8.5-SLSLeapfrog",
+    "website_verdict": "NEEDS_HUMAN",
+    "suggested_fix": "原文及Printed保持不动，在元数据明确[ERRATUM?]：一般μ下应为ξ̇=−μ⁻¹∂ηU。保留独立_corrected并交人工确认原书勘误；算法定义无需修改。",
+    "diff_summary": "已目视核对原页PDF379：η约化式确实漏μ⁻¹，一般μ下应为ξ̇=−μ⁻¹∂ηU；原印与Printed保留，_corrected恢复1/Q。",
+    "lean_signature_changed": false
+  },
+  {
+    "source_id": "MD-8.6.2-SINLyapunov",
+    "website_verdict": "NEEDS_HUMAN",
+    "suggested_fix": "保留原页有符号式并标[ERRATUM?]；使用已列_corrected的θ|ξ₂|界。明确单位质量和噪声关系；人工核实原书勘误及其全局遍历性推理，不将当前局部生成元陈述升级为遍历性定理。",
+    "diff_summary": "已目视核对原页PDF390：原印有符号Kξ₂界不能统一控制正负两侧。单位质量Q1=Q2=1、σ²=2γθ下修正版为−γξ₂²+θ|ξ₂|+γθ；仅为局部生成元和约束界，不推出遍历性。",
+    "lean_signature_changed": false
+  },
+  {
+    "source_id": "MD-8.7.1-PronyOUStationarity",
+    "website_verdict": "NEEDS_HUMAN",
+    "suggested_fix": "保留(8.66)原句并显式[ERRATUM?]；修正说明补入平稳初态及独立性。给两条covariance签名均标明带[EXTRA]资格版本；补齐摘要中的s≥0及求和上下限；不修改Lean、不补证明。",
+    "diff_summary": "已目视核对原页PDF397：(8.66)印出s≥0但未说明平稳初态。修正版另加[EXTRA]初态N(0,θc/τ)且与整条W独立；t,s≥0；有限和用k∈Fin K，不宣称跨模式总协方差。",
+    "lean_signature_changed": false
+  },
+  {
+    "source_id": "MD-8.8.1-PistonHamiltonianSubfield",
+    "website_verdict": "NEEDS_HUMAN",
+    "suggested_fix": "保留原印p场与Printed定义并显式[ERRATUM?]；人工确认是漏印M⁻¹还是单位质量约定。一般对角质量使用现有_corrected及stationary定理；明确权的局部驻定与概率分布的区别，并修正摘要和来源核对记录。",
+    "diff_summary": "已目视核对原页PDF402：原印场为(p,−∇U,0,0,0)，一般质量的修正场为(M⁻¹p,−∇U,0,0,0)。原印p与本页q̇=M⁻¹p+ηq不一致，修正版仅给局部通量散度目标。",
+    "lean_signature_changed": false
+  }
+]

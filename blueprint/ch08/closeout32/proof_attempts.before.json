@@ -1,0 +1,879 @@
+{
+  "MD-8.1-ExtendedDensity": {
+    "reason": "乘积测度Fubini与标量积分拆分的短桥接，时间盒后保留。",
+    "category": "缺大型理论",
+    "routes": [],
+    "decision": "缺大型理论时直接记录缺项；否则最多三条短路线。",
+    "active_unproved_declarations": [],
+    "current_status": "现版本已解决；保留历史记录",
+    "declaration_reasons": {},
+    "instruction31": "最多三条短路线；本轮仅局部修复与短推论，不建立大型理论。"
+  },
+  "MD-8.1.1-NHDensitySplit": {
+    "reason": "完整NH散度/链式法则计算及伴随算子桥接；保留驻定陈述，不推遍历性。",
+    "category": "缺大型理论",
+    "routes": [],
+    "decision": "缺大型理论时直接记录缺项；否则最多三条短路线。",
+    "active_unproved_declarations": [
+      "MD.Ch08.nhWeight_stationary"
+    ],
+    "current_status": "未证部分保留",
+    "declaration_reasons": {
+      "MD.Ch08.nhWeight_stationary": "缺大型理论"
+    },
+    "instruction31": "最多三条短路线；本轮仅局部修复与短推论，不建立大型理论。"
+  },
+  "MD-8.1.1-NHFirstIntegralPrinted": {
+    "reason": "Printed版疑误不证；修正版需沿NH解的能量求导，未建设通用ODE守恒量理论。",
+    "category": "原书疑误不证",
+    "routes": [],
+    "decision": "缺大型理论时直接记录缺项；否则最多三条短路线。",
+    "active_unproved_declarations": [
+      "MD.Ch08.nhIntegralPrinted",
+      "MD.Ch08.nhIntegral_corrected"
+    ],
+    "current_status": "未证部分保留",
+    "declaration_reasons": {
+      "MD.Ch08.nhIntegralPrinted": "原书疑误不证",
+      "MD.Ch08.nhIntegral_corrected": "缺大型理论"
+    },
+    "instruction31": "最多三条短路线；本轮仅局部修复与短推论，不建立大型理论。"
+  },
+  "MD-8.1.2-NHTimestepReversible": {
+    "reason": "含ξ=0延拓的指数函数五段映射代数消去；三条短路线内未完成。",
+    "category": "缺大型理论",
+    "routes": [],
+    "decision": "缺大型理论时直接记录缺项；否则最多三条短路线。",
+    "active_unproved_declarations": [
+      "MD.Ch08.nhStep_reversible",
+      "MD.Ch08.nhStep_inverse"
+    ],
+    "current_status": "未证部分保留",
+    "declaration_reasons": {
+      "MD.Ch08.nhStep_reversible": "缺大型理论",
+      "MD.Ch08.nhStep_inverse": "缺大型理论"
+    },
+    "instruction31": "最多三条短路线；本轮仅局部修复与短推论，不建立大型理论。"
+  },
+  "MD-8.1.2.1-NoseHamiltoniansPrinted": {
+    "reason": "原文相等式的对数系数矛盾，不证；修正代数恒等式已证。",
+    "category": "原书疑误不证",
+    "routes": [],
+    "decision": "缺大型理论时直接记录缺项；否则最多三条短路线。",
+    "active_unproved_declarations": [
+      "MD.Ch08.nosePoincarePrinted"
+    ],
+    "current_status": "未证部分保留",
+    "declaration_reasons": {
+      "MD.Ch08.nosePoincarePrinted": "原书疑误不证"
+    },
+    "instruction31": "最多三条短路线；本轮仅局部修复与短推论，不建立大型理论。"
+  },
+  "MD-8.1.2.1-NPtoNH": {
+    "reason": "商法则、有限维ODE投影及零能量面守恒的通用桥接。",
+    "category": "缺大型理论",
+    "routes": [],
+    "decision": "缺大型理论时直接记录缺项；否则最多三条短路线。",
+    "active_unproved_declarations": [
+      "MD.Ch08.npProjection_equations"
+    ],
+    "current_status": "未证部分保留",
+    "declaration_reasons": {
+      "MD.Ch08.npProjection_equations": "缺大型理论"
+    },
+    "instruction31": "最多三条短路线；本轮仅局部修复与短推论，不建立大型理论。"
+  },
+  "MD-8.2.1-ThermostatCriterion": {
+    "reason": "一般高维Gaussian链式法则、常反对称矩阵的零散度和变量分裂。",
+    "category": "缺大型理论",
+    "routes": [],
+    "decision": "缺大型理论时直接记录缺项；否则最多三条短路线。",
+    "active_unproved_declarations": [
+      "MD.Ch08.thermostatCriterion"
+    ],
+    "current_status": "未证部分保留",
+    "declaration_reasons": {
+      "MD.Ch08.thermostatCriterion": "缺大型理论"
+    },
+    "instruction31": "最多三条短路线；本轮仅局部修复与短推论，不建立大型理论。"
+  },
+  "MD-8.2.1-Examples81and82": {
+    "reason": "Bulgac–Kusnezov一般散度抵消计算。",
+    "category": "缺大型理论",
+    "routes": [],
+    "decision": "缺大型理论时直接记录缺项；否则最多三条短路线。",
+    "active_unproved_declarations": [
+      "MD.Ch08.generalizedFeedback_stationary"
+    ],
+    "current_status": "未证部分保留",
+    "declaration_reasons": {
+      "MD.Ch08.generalizedFeedback_stationaryPrinted": "原书疑误不证",
+      "MD.Ch08.generalizedFeedback_stationary_corrected": "缺大型理论"
+    },
+    "instruction31": "最多三条短路线；本轮仅局部修复与短推论，不建立大型理论。"
+  },
+  "MD-8.2.1-TemperatureIdentity": {
+    "reason": "高维散度定理与Gibbs权重积分分部。",
+    "category": "缺大型理论",
+    "routes": [],
+    "decision": "缺大型理论时直接记录缺项；否则最多三条短路线。",
+    "active_unproved_declarations": [
+      "MD.Ch08.temperatureIdentity"
+    ],
+    "current_status": "未证部分保留",
+    "declaration_reasons": {
+      "MD.Ch08.temperatureIdentity": "缺大型理论"
+    },
+    "instruction31": "最多三条短路线；本轮仅局部修复与短推论，不建立大型理论。"
+  },
+  "MD-8.2.2-NHChains": {
+    "reason": "任意链长的散度抵消与有限和组合；不建确定性遍历理论。",
+    "category": "缺大型理论",
+    "routes": [],
+    "decision": "缺大型理论时直接记录缺项；否则最多三条短路线。",
+    "active_unproved_declarations": [
+      "MD.Ch08.nhChain_stationary"
+    ],
+    "current_status": "未证部分保留",
+    "declaration_reasons": {
+      "MD.Ch08.nhChain_stationary": "缺大型理论"
+    },
+    "instruction31": "最多三条短路线；本轮仅局部修复与短推论，不建立大型理论。"
+  },
+  "MD-8.4-OUStationarityPrinted": {
+    "reason": "Printed代数疑误不证；修正版需Gaussian梯度/Hessian矩阵计算。",
+    "category": "原书疑误不证",
+    "routes": [],
+    "decision": "缺大型理论时直接记录缺项；否则最多三条短路线。",
+    "active_unproved_declarations": [
+      "MD.Ch08.ouStationarity_corrected",
+      "MD.Ch08.diffusionPrinted"
+    ],
+    "current_status": "未证部分保留",
+    "declaration_reasons": {
+      "MD.Ch08.ouStationarity_corrected": "缺大型理论",
+      "MD.Ch08.diffusionPrinted": "原书疑误不证"
+    },
+    "instruction31": "最多三条短路线；本轮仅局部修复与短推论，不建立大型理论。"
+  },
+  "MD-8.4-Proposition82": {
+    "reason": "Printed缺非零噪声不证；修正版完整桥接。",
+    "category": "原书疑误不证",
+    "routes": [],
+    "decision": "缺大型理论时直接记录缺项；否则最多三条短路线。",
+    "active_unproved_declarations": [
+      "MD.Ch08.proposition82Printed"
+    ],
+    "current_status": "未证部分保留",
+    "declaration_reasons": {
+      "MD.Ch08.proposition82Printed": "原书疑误不证"
+    },
+    "instruction31": "最多三条短路线；本轮仅局部修复与短推论，不建立大型理论。"
+  },
+  "MD-8.4.1-Theorem81": {
+    "reason": "原文未明确σ≠0的强版本不证；修正版完整桥接。",
+    "category": "原书疑误不证",
+    "routes": [],
+    "decision": "缺大型理论时直接记录缺项；否则最多三条短路线。",
+    "active_unproved_declarations": [
+      "MD.Ch08.theorem81Printed"
+    ],
+    "current_status": "未证部分保留",
+    "declaration_reasons": {
+      "MD.Ch08.theorem81Printed": "原书疑误不证"
+    },
+    "instruction31": "最多三条短路线；本轮仅局部修复与短推论，不建立大型理论。"
+  },
+  "MD-8.4.1-LyapunovCalculation": {
+    "reason": "实际扩散生成元作用于二次能量的链式法则。",
+    "category": "缺大型理论",
+    "routes": [],
+    "decision": "缺大型理论时直接记录缺项；否则最多三条短路线。",
+    "active_unproved_declarations": [
+      "MD.Ch08.nhlLyapunov_calculation"
+    ],
+    "current_status": "未证部分保留",
+    "declaration_reasons": {
+      "MD.Ch08.nhlLyapunov_calculation": "缺大型理论"
+    },
+    "instruction31": "最多三条短路线；本轮仅局部修复与短推论，不建立大型理论。"
+  },
+  "MD-8.4.1-LyapunovRatePrinted": {
+    "reason": "Printed有反例不证；修正版代数二次型估计待短证。",
+    "category": "原书疑误不证",
+    "routes": [],
+    "decision": "缺大型理论时直接记录缺项；否则最多三条短路线。",
+    "active_unproved_declarations": [
+      "MD.Ch08.lyapunovRatePrinted",
+      "MD.Ch08.lyapunovRate_corrected"
+    ],
+    "current_status": "未证部分保留",
+    "declaration_reasons": {
+      "MD.Ch08.lyapunovRatePrinted": "原书疑误不证",
+      "MD.Ch08.lyapunovRate_corrected": "缺大型理论"
+    },
+    "instruction31": "最多三条短路线；本轮仅局部修复与短推论，不建立大型理论。"
+  },
+  "MD-8.4.1-NHLWeakStationary": {
+    "reason": "Gibbs积分分部及OU对称性，未将局部生成元式冒充保测流或遍历定理。",
+    "category": "缺大型理论",
+    "routes": [],
+    "decision": "缺大型理论时直接记录缺项；否则最多三条短路线。",
+    "active_unproved_declarations": [
+      "MD.Ch08.nhlWeakStationary"
+    ],
+    "current_status": "未证部分保留",
+    "declaration_reasons": {
+      "MD.Ch08.nhlWeakStationary": "缺大型理论"
+    },
+    "instruction31": "最多三条短路线；本轮仅局部修复与短推论，不建立大型理论。"
+  },
+  "MD-8.4.4-VelocityRescaling": {
+    "reason": "导数γ/(2K)的商法则短桥接。",
+    "category": "缺大型理论",
+    "routes": [],
+    "decision": "缺大型理论时直接记录缺项；否则最多三条短路线。",
+    "active_unproved_declarations": [
+      "MD.Ch08.rescalingPsi_original"
+    ],
+    "current_status": "未证部分保留",
+    "declaration_reasons": {
+      "MD.Ch08.rescalingPsi_original": "缺大型理论"
+    },
+    "instruction31": "最多三条短路线；本轮仅局部修复与短推论，不建立大型理论。"
+  },
+  "MD-8.4.4-RescalingStationary": {
+    "reason": "退化乘性扩散的Gibbs积分分部；不建设一般Fokker–Planck与遍历理论。",
+    "category": "缺大型理论",
+    "routes": [],
+    "decision": "缺大型理论时直接记录缺项；否则最多三条短路线。",
+    "active_unproved_declarations": [
+      "MD.Ch08.rescalingStationary"
+    ],
+    "current_status": "未证部分保留",
+    "declaration_reasons": {
+      "MD.Ch08.rescalingStationary": "缺大型理论"
+    },
+    "instruction31": "最多三条短路线；本轮仅局部修复与短推论，不建立大型理论。"
+  },
+  "MD-8.5-SLSBracketPrinted": {
+    "reason": "Printed括号符号疑误不证；修正版需实际方向导数计算。",
+    "category": "原书疑误不证",
+    "routes": [],
+    "decision": "缺大型理论时直接记录缺项；否则最多三条短路线。",
+    "active_unproved_declarations": [
+      "MD.Ch08.slsBracketPrinted",
+      "MD.Ch08.slsBracket_corrected"
+    ],
+    "current_status": "未证部分保留",
+    "declaration_reasons": {
+      "MD.Ch08.slsBracketPrinted": "原书疑误不证",
+      "MD.Ch08.slsBracket_corrected": "缺大型理论"
+    },
+    "instruction31": "最多三条短路线；本轮仅局部修复与短推论，不建立大型理论。"
+  },
+  "MD-8.5-SLSHormander": {
+    "reason": "实际向量场二重括号与点态张成闭包。",
+    "category": "缺大型理论",
+    "routes": [],
+    "decision": "缺大型理论时直接记录缺项；否则最多三条短路线。",
+    "active_unproved_declarations": [
+      "MD.Ch08.slsHormander"
+    ],
+    "current_status": "未证部分保留",
+    "declaration_reasons": {
+      "MD.Ch08.slsHormander": "缺大型理论"
+    },
+    "instruction31": "最多三条短路线；本轮仅局部修复与短推论，不建立大型理论。"
+  },
+  "MD-8.5-SLSConservation": {
+    "reason": "一般U的方向能量守恒与实际散度计算。",
+    "category": "缺大型理论",
+    "routes": [],
+    "decision": "缺大型理论时直接记录缺项；否则最多三条短路线。",
+    "active_unproved_declarations": [
+      "MD.Ch08.slsDeterministic_stationary",
+      "MD.Ch08.slsDeterministic_divergence"
+    ],
+    "current_status": "未证部分保留",
+    "declaration_reasons": {
+      "MD.Ch08.slsDeterministic_stationary": "缺大型理论",
+      "MD.Ch08.slsDeterministic_divergence": "缺大型理论"
+    },
+    "instruction31": "最多三条短路线；本轮仅局部修复与短推论，不建立大型理论。"
+  },
+  "MD-8.6-IsokineticProjector": {
+    "reason": "有限和提取标量后的投影复合代数短证明。",
+    "category": "时间盒止",
+    "routes": [],
+    "decision": "缺大型理论时直接记录缺项；否则最多三条短路线。",
+    "active_unproved_declarations": [
+      "MD.Ch08.isoProjection_idempotent"
+    ],
+    "current_status": "未证部分保留",
+    "declaration_reasons": {
+      "MD.Ch08.isoProjection_idempotent": "时间盒止"
+    },
+    "instruction31": "最多三条短路线；本轮仅局部修复与短推论，不建立大型理论。"
+  },
+  "MD-8.6-IsokineticDivergencePrinted": {
+    "reason": "Printed散度符号疑误不证；修正版需商法则与有限维散度。",
+    "category": "原书疑误不证",
+    "routes": [],
+    "decision": "缺大型理论时直接记录缺项；否则最多三条短路线。",
+    "active_unproved_declarations": [
+      "MD.Ch08.isoDivergencePrinted",
+      "MD.Ch08.isoDivergence_corrected"
+    ],
+    "current_status": "未证部分保留",
+    "declaration_reasons": {
+      "MD.Ch08.isoDivergencePrinted": "原书疑误不证",
+      "MD.Ch08.isoDivergence_corrected": "缺大型理论"
+    },
+    "instruction31": "最多三条短路线；本轮仅局部修复与短推论，不建立大型理论。"
+  },
+  "MD-8.6.1-SINWeightPrinted": {
+    "reason": "原文权重仅逐字保留不证；修正版通量散度的商法则计算。",
+    "category": "原书疑误不证",
+    "routes": [],
+    "decision": "缺大型理论时直接记录缺项；否则最多三条短路线。",
+    "active_unproved_declarations": [
+      "MD.Ch08.sinWeight_stationary_corrected"
+    ],
+    "current_status": "未证部分保留",
+    "declaration_reasons": {
+      "MD.Ch08.sinWeight_stationary_corrected": "缺大型理论"
+    },
+    "instruction31": "最多三条短路线；本轮仅局部修复与短推论，不建立大型理论。"
+  },
+  "MD-8.6.2-SINBracketRank": {
+    "reason": "真实迭代Fréchet导数及有限维秩/切核桥接；原印的错标公式不能直接充当证明。",
+    "category": "缺大型理论",
+    "routes": [],
+    "decision": "缺大型理论时直接记录缺项；否则最多三条短路线。",
+    "active_unproved_declarations": [
+      "MD.Ch08.sinBracket_tangentSpan"
+    ],
+    "current_status": "未证部分保留",
+    "declaration_reasons": {
+      "MD.Ch08.sinBracket_tangentSpan": "缺大型理论"
+    },
+    "instruction31": "最多三条短路线；本轮仅局部修复与短推论，不建立大型理论。"
+  },
+  "MD-8.6.2-SINLyapunov": {
+    "reason": "二次测试函数的实际二阶Fréchet计算；不建设遍历理论。",
+    "category": "缺大型理论",
+    "routes": [],
+    "decision": "缺大型理论时直接记录缺项；否则最多三条短路线。",
+    "active_unproved_declarations": [
+      "MD.Ch08.sinGenerator_lyapunov"
+    ],
+    "current_status": "未证部分保留",
+    "declaration_reasons": {
+      "MD.Ch08.sinGenerator_lyapunov": "缺大型理论",
+      "MD.Ch08.sinLyapunovTail_corrected": "缺大型理论"
+    },
+    "instruction31": "最多三条短路线；本轮仅局部修复与短推论，不建立大型理论。"
+  },
+  "MD-8.6.3-SINForceExactPrinted": {
+    "reason": "双曲函数求导、分式约束及F=0分支；最多三条短路线后保留待证。",
+    "category": "原书疑误不证",
+    "routes": [],
+    "decision": "缺大型理论时直接记录缺项；否则最多三条短路线。",
+    "active_unproved_declarations": [
+      "MD.Ch08.sinForceFlow_solution_corrected"
+    ],
+    "current_status": "未证部分保留",
+    "declaration_reasons": {
+      "MD.Ch08.sinForceFlow_solution_corrected": "缺大型理论"
+    },
+    "instruction31": "最多三条短路线；本轮仅局部修复与短推论，不建立大型理论。"
+  },
+  "MD-8.7.1-PronyMemoryODE": {
+    "reason": "带参指数卷积微分与有限和换积分；不建立一般Volterra随机解理论。",
+    "category": "缺大型理论",
+    "routes": [],
+    "decision": "缺大型理论时直接记录缺项；否则最多三条短路线。",
+    "active_unproved_declarations": [
+      "MD.Ch08.pronyMemory_derivative",
+      "MD.Ch08.pronyMemory_sum"
+    ],
+    "current_status": "未证部分保留",
+    "declaration_reasons": {
+      "MD.Ch08.pronyMemory_derivative": "缺大型理论",
+      "MD.Ch08.pronyMemory_sum": "缺大型理论"
+    },
+    "instruction31": "最多三条短路线；本轮仅局部修复与短推论，不建立大型理论。"
+  },
+  "MD-8.7.1-PronyOUStationarity": {
+    "reason": "平稳OU随机初态协方差与当前积分解规格的桥接；不新建Gaussian过程理论。",
+    "category": "缺大型理论",
+    "routes": [],
+    "decision": "缺大型理论时直接记录缺项；否则最多三条短路线。",
+    "active_unproved_declarations": [
+      "MD.Ch08.pronyOU_covariance"
+    ],
+    "current_status": "未证部分保留",
+    "declaration_reasons": {
+      "MD.Ch08.pronyOU_covariance": "缺大型理论",
+      "MD.Ch08.pronyOU_covariance_corrected": "缺大型理论"
+    },
+    "instruction31": "最多三条短路线；本轮仅局部修复与短推论，不建立大型理论。"
+  },
+  "MD-8.7.1-PronyLangevinLimit": {
+    "reason": "有限乘积Gaussian线性映射的现成定理桥接。",
+    "category": "缺大型理论",
+    "routes": [],
+    "decision": "缺大型理论时直接记录缺项；否则最多三条短路线。",
+    "active_unproved_declarations": [
+      "MD.Ch08.independentGaussian_varianceSum"
+    ],
+    "current_status": "未证部分保留",
+    "declaration_reasons": {
+      "MD.Ch08.independentGaussian_varianceSum": "缺大型理论"
+    },
+    "instruction31": "最多三条短路线；本轮仅局部修复与短推论，不建立大型理论。"
+  },
+  "MD-8.7.1-GLEConsistentCoefficients": {
+    "reason": "指数Taylor余项、平方根正侧渐近及指数衰减的短桥接；不建设广义Langevin极限理论。",
+    "category": "缺大型理论",
+    "routes": [],
+    "decision": "缺大型理论时直接记录缺项；否则最多三条短路线。",
+    "active_unproved_declarations": [
+      "MD.Ch08.gleCoefficients_consistent",
+      "MD.Ch08.gleCoefficient_smallMemory"
+    ],
+    "current_status": "未证部分保留",
+    "declaration_reasons": {
+      "MD.Ch08.gleCoefficients_consistent": "缺大型理论",
+      "MD.Ch08.gleCoefficient_smallMemory": "缺大型理论"
+    },
+    "instruction31": "最多三条短路线；本轮仅局部修复与短推论，不建立大型理论。"
+  },
+  "MD-8.8-NPTBathTaylor": {
+    "reason": "可微定义的线性近似及负号仿射换元；短桥接未完成。",
+    "category": "缺大型理论",
+    "routes": [],
+    "decision": "缺大型理论时直接记录缺项；否则最多三条短路线。",
+    "active_unproved_declarations": [
+      "MD.Ch08.nptEntropy_firstOrder"
+    ],
+    "current_status": "未证部分保留",
+    "declaration_reasons": {
+      "MD.Ch08.nptEntropy_firstOrder": "缺大型理论"
+    },
+    "instruction31": "最多三条短路线；本轮仅局部修复与短推论，不建立大型理论。"
+  },
+  "MD-8.8-AndersenCoordinates": {
+    "reason": "正数实幂求导与指数和法则的短桥接。",
+    "category": "缺大型理论",
+    "routes": [],
+    "decision": "缺大型理论时直接记录缺项；否则最多三条短路线。",
+    "active_unproved_declarations": [
+      "MD.Ch08.andersenPosition_derivative",
+      "MD.Ch08.andersenMomentum_velocity"
+    ],
+    "current_status": "未证部分保留",
+    "declaration_reasons": {
+      "MD.Ch08.andersenPosition_derivative": "缺大型理论",
+      "MD.Ch08.andersenMomentum_velocity": "缺大型理论"
+    },
+    "instruction31": "最多三条短路线；本轮仅局部修复与短推论，不建立大型理论。"
+  },
+  "MD-8.8-AndersenKineticEnergy": {
+    "reason": "正V的rpow乘法与有限和平方展开桥接。",
+    "category": "缺大型理论",
+    "routes": [],
+    "decision": "缺大型理论时直接记录缺项；否则最多三条短路线。",
+    "active_unproved_declarations": [
+      "MD.Ch08.andersenKinetic_expansion"
+    ],
+    "current_status": "未证部分保留",
+    "declaration_reasons": {
+      "MD.Ch08.andersenKinetic_expansion": "缺大型理论"
+    },
+    "instruction31": "最多三条短路线；本轮仅局部修复与短推论，不建立大型理论。"
+  },
+  "MD-8.8-AndersenHamiltonianPrinted": {
+    "reason": "一维Gaussian积分及常数因子桥接。",
+    "category": "原书疑误不证",
+    "routes": [],
+    "decision": "缺大型理论时直接记录缺项；否则最多三条短路线。",
+    "active_unproved_declarations": [
+      "MD.Ch08.andersenGaussian_marginal"
+    ],
+    "current_status": "未证部分保留",
+    "declaration_reasons": {
+      "MD.Ch08.andersenGaussian_marginal": "原书疑误不证"
+    },
+    "instruction31": "最多三条短路线；本轮仅局部修复与短推论，不建立大型理论。"
+  },
+  "MD-8.8.1-PistonHamiltonianSubfield": {
+    "reason": "有限维Hamiltonian散度与冻结辅助变量的链式法则桥接。",
+    "category": "缺大型理论",
+    "routes": [],
+    "decision": "缺大型理论时直接记录缺项；否则最多三条短路线。",
+    "active_unproved_declarations": [
+      "MD.Ch08.pistonHamiltonianWeight_stationary"
+    ],
+    "current_status": "未证部分保留",
+    "declaration_reasons": {
+      "MD.Ch08.pistonHamiltonianWeight_stationary": "缺大型理论"
+    },
+    "instruction31": "最多三条短路线；本轮仅局部修复与短推论，不建立大型理论。"
+  },
+  "MD-8.8.1-PistonThermostatWeightPrinted": {
+    "reason": "权重指数链式法则与实际散度计算。",
+    "category": "原书疑误不证",
+    "routes": [],
+    "decision": "缺大型理论时直接记录缺项；否则最多三条短路线。",
+    "active_unproved_declarations": [
+      "MD.Ch08.pistonRho2_stationary_corrected"
+    ],
+    "current_status": "未证部分保留",
+    "declaration_reasons": {
+      "MD.Ch08.pistonRho2_stationary_corrected": "缺大型理论"
+    },
+    "instruction31": "最多三条短路线；本轮仅局部修复与短推论，不建立大型理论。"
+  },
+  "MD-8.8.1-PistonReducedPDE": {
+    "reason": "实际Fréchet导数代入及压力定义消项。",
+    "category": "缺大型理论",
+    "routes": [],
+    "decision": "缺大型理论时直接记录缺项；否则最多三条短路线。",
+    "active_unproved_declarations": [
+      "MD.Ch08.pistonReduced_boltzmann"
+    ],
+    "current_status": "未证部分保留",
+    "declaration_reasons": {
+      "MD.Ch08.pistonReduced_boltzmann": "缺大型理论"
+    },
+    "instruction31": "最多三条短路线；本轮仅局部修复与短推论，不建立大型理论。"
+  },
+  "MD-8.8.1-PistonStationaryWeight": {
+    "reason": "Hamiltonian/热浴/活塞/OU四部分的局部通量与二阶导数计算；不建立NPT半群理论。",
+    "category": "缺大型理论",
+    "routes": [],
+    "decision": "缺大型理论时直接记录缺项；否则最多三条短路线。",
+    "active_unproved_declarations": [
+      "MD.Ch08.pistonWeight_stationary"
+    ],
+    "current_status": "未证部分保留",
+    "declaration_reasons": {
+      "MD.Ch08.pistonWeight_stationary": "缺大型理论"
+    },
+    "instruction31": "最多三条短路线；本轮仅局部修复与短推论，不建立大型理论。"
+  },
+  "MD-8.9.1-DPDSoftPotential": {
+    "reason": "非碰撞距离求导和有限无序对势梯度。",
+    "category": "缺大型理论",
+    "routes": [],
+    "decision": "缺大型理论时直接记录缺项；否则最多三条短路线。",
+    "active_unproved_declarations": [
+      "MD.Ch08.dpdConservative_gradient"
+    ],
+    "current_status": "未证部分保留",
+    "declaration_reasons": {
+      "MD.Ch08.dpdConservative_gradient": "缺大型理论"
+    },
+    "instruction31": "最多三条短路线；本轮仅局部修复与短推论，不建立大型理论。"
+  },
+  "MD-8.9.1-DPDPairWiener": {
+    "reason": "标准向量Wiener增量的有限和协方差与无序对枚举桥接。",
+    "category": "时间盒止",
+    "routes": [
+      "r1: simp未展开函数等式",
+      "r2: sum_congr前缺函数外延",
+      "r3: 条件重写的Decidable依赖未消去"
+    ],
+    "decision": "缺大型理论时直接记录缺项；否则最多三条短路线。",
+    "active_unproved_declarations": [
+      "MD.Ch08.pairNoiseIncrement_symmetric",
+      "MD.Ch08.pairNoiseIncrement_covariance"
+    ],
+    "current_status": "未证部分保留",
+    "declaration_reasons": {
+      "MD.Ch08.pairNoiseIncrement_symmetric": "时间盒止",
+      "MD.Ch08.pairNoiseIncrement_covariance": "时间盒止"
+    },
+    "instruction31": "最多三条短路线；本轮仅局部修复与短推论，不建立大型理论。"
+  },
+  "MD-8.9.4-PairwiseNHLGenerator": {
+    "reason": "成对相对速度散度、软势梯度和扩展Gibbs权的局部Fokker–Planck计算。",
+    "category": "缺大型理论",
+    "routes": [],
+    "decision": "缺大型理论时直接记录缺项；否则最多三条短路线。",
+    "active_unproved_declarations": [
+      "MD.Ch08.pairwiseWeight_localStationary"
+    ],
+    "current_status": "未证部分保留",
+    "declaration_reasons": {
+      "MD.Ch08.pairwiseWeight_localStationary": "缺大型理论"
+    },
+    "instruction31": "最多三条短路线；本轮仅局部修复与短推论，不建立大型理论。"
+  },
+  "MD-8.10-CanonicalTotalMomentumGaussian": {
+    "reason": "有限独立正态和分布、有限和坐标与总动量的桥接。",
+    "category": "缺大型理论",
+    "routes": [],
+    "decision": "缺大型理论时直接记录缺项；否则最多三条短路线。",
+    "active_unproved_declarations": [
+      "MD.Ch08.totalMomentum_gaussian"
+    ],
+    "current_status": "未证部分保留",
+    "declaration_reasons": {
+      "MD.Ch08.totalMomentum_gaussian": "缺大型理论"
+    },
+    "instruction31": "最多三条短路线；本轮仅局部修复与短推论，不建立大型理论。"
+  },
+  "MD-8.10-NHLTotalMomentumSign": {
+    "reason": "线性非自治ODE唯一性与积分因子公式桥接。",
+    "category": "缺大型理论",
+    "routes": [],
+    "decision": "缺大型理论时直接记录缺项；否则最多三条短路线。",
+    "active_unproved_declarations": [
+      "MD.Ch08.nhlTotalMomentum_odeSolution"
+    ],
+    "current_status": "未证部分保留",
+    "declaration_reasons": {
+      "MD.Ch08.nhlTotalMomentum_odeSolution": "缺大型理论"
+    },
+    "instruction31": "最多三条短路线；本轮仅局部修复与短推论，不建立大型理论。"
+  },
+  "MD-8.1-CanonicalCorrelation": {
+    "declaration_reasons": {},
+    "instruction31": "最多三条短路线；本轮仅局部修复与短推论，不建立大型理论。"
+  },
+  "MD-8.1-HamiltonianStationary": {
+    "declaration_reasons": {},
+    "instruction31": "最多三条短路线；本轮仅局部修复与短推论，不建立大型理论。"
+  },
+  "MD-8.1.1-NoseHoover": {
+    "declaration_reasons": {},
+    "instruction31": "最多三条短路线；本轮仅局部修复与短推论，不建立大型理论。"
+  },
+  "MD-8.1.2-NHReversal": {
+    "declaration_reasons": {},
+    "instruction31": "最多三条短路线；本轮仅局部修复与短推论，不建立大型理论。"
+  },
+  "MD-8.1.2-NHTimestep": {
+    "declaration_reasons": {},
+    "instruction31": "最多三条短路线；本轮仅局部修复与短推论，不建立大型理论。"
+  },
+  "MD-8.1.2.1-NPEquations": {
+    "declaration_reasons": {},
+    "instruction31": "最多三条短路线；本轮仅局部修复与短推论，不建立大型理论。"
+  },
+  "MD-8.1.2.1-NPShadowDensity": {
+    "declaration_reasons": {},
+    "instruction31": "最多三条短路线；本轮仅局部修复与短推论，不建立大型理论。"
+  },
+  "MD-8.2-GeneralThermostat": {
+    "declaration_reasons": {},
+    "instruction31": "最多三条短路线；本轮仅局部修复与短推论，不建立大型理论。"
+  },
+  "MD-8.2.1-ContinuityProductRule": {
+    "declaration_reasons": {},
+    "instruction31": "最多三条短路线；本轮仅局部修复与短推论，不建立大型理论。"
+  },
+  "MD-8.2.1-Proposition81": {
+    "declaration_reasons": {},
+    "instruction31": "最多三条短路线；本轮仅局部修复与短推论，不建立大型理论。"
+  },
+  "MD-8.3-ArrheniusRate": {
+    "declaration_reasons": {},
+    "instruction31": "最多三条短路线；本轮仅局部修复与短推论，不建立大型理论。"
+  },
+  "MD-8.4-AdditiveThermostatSDE": {
+    "declaration_reasons": {},
+    "instruction31": "最多三条短路线；本轮仅局部修复与短推论，不建立大型理论。"
+  },
+  "MD-8.4-LiftedThermostat": {
+    "declaration_reasons": {},
+    "instruction31": "最多三条短路线；本轮仅局部修复与短推论，不建立大型理论。"
+  },
+  "MD-8.4.1-NHL": {
+    "declaration_reasons": {},
+    "instruction31": "最多三条短路线；本轮仅局部修复与短推论，不建立大型理论。"
+  },
+  "MD-8.4.1-Lemma81": {
+    "declaration_reasons": {},
+    "instruction31": "最多三条短路线；本轮仅局部修复与短推论，不建立大型理论。"
+  },
+  "MD-8.4.1-Proposition83": {
+    "declaration_reasons": {},
+    "instruction31": "最多三条短路线；本轮仅局部修复与短推论，不建立大型理论。"
+  },
+  "MD-8.4.1-ZeroModeInvariant": {
+    "declaration_reasons": {},
+    "instruction31": "最多三条短路线；本轮仅局部修复与短推论，不建立大型理论。"
+  },
+  "MD-8.4.1-NHLGenerator": {
+    "declaration_reasons": {},
+    "instruction31": "最多三条短路线；本轮仅局部修复与短推论，不建立大型理论。"
+  },
+  "MD-8.4.2-NHLTimestep": {
+    "declaration_reasons": {},
+    "instruction31": "最多三条短路线；本轮仅局部修复与短推论，不建立大型理论。"
+  },
+  "MD-8.4.3-PreEquilibriumMeans": {
+    "declaration_reasons": {},
+    "instruction31": "最多三条短路线；本轮仅局部修复与短推论，不建立大型理论。"
+  },
+  "MD-8.4.5-ThermostatEfficiency": {
+    "declaration_reasons": {},
+    "instruction31": "最多三条短路线；本轮仅局部修复与短推论，不建立大型理论。"
+  },
+  "MD-8.5-SLS": {
+    "declaration_reasons": {},
+    "instruction31": "最多三条短路线；本轮仅局部修复与短推论，不建立大型理论。"
+  },
+  "MD-8.5-SLSLeapfrog": {
+    "declaration_reasons": {},
+    "instruction31": "最多三条短路线；本轮仅局部修复与短推论，不建立大型理论。"
+  },
+  "MD-8.5-SLSDoubleWell": {
+    "declaration_reasons": {},
+    "instruction31": "最多三条短路线；本轮仅局部修复与短推论，不建立大型理论。"
+  },
+  "MD-8.6-IsokineticField": {
+    "declaration_reasons": {},
+    "instruction31": "最多三条短路线；本轮仅局部修复与短推论，不建立大型理论。"
+  },
+  "MD-8.6-IsokineticGibbsShell": {
+    "declaration_reasons": {},
+    "instruction31": "最多三条短路线；本轮仅局部修复与短推论，不建立大型理论。"
+  },
+  "MD-8.6.1-StochasticIsokinetic": {
+    "declaration_reasons": {},
+    "instruction31": "最多三条短路线；本轮仅局部修复与短推论，不建立大型理论。"
+  },
+  "MD-8.6.2-SINHarmonic": {
+    "declaration_reasons": {},
+    "instruction31": "最多三条短路线；本轮仅局部修复与短推论，不建立大型理论。"
+  },
+  "MD-8.6.2-SINProjectedBracketsPrinted": {
+    "declaration_reasons": {},
+    "instruction31": "最多三条短路线；本轮仅局部修复与短推论，不建立大型理论。"
+  },
+  "MD-8.6.2-SINThirdBracketPrinted": {
+    "declaration_reasons": {},
+    "instruction31": "最多三条短路线；本轮仅局部修复与短推论，不建立大型理论。"
+  },
+  "MD-8.6.3-SINForceSplitting": {
+    "declaration_reasons": {},
+    "instruction31": "最多三条短路线；本轮仅局部修复与短推论，不建立大型理论。"
+  },
+  "MD-8.6.3-SINRAlgorithm": {
+    "declaration_reasons": {},
+    "instruction31": "最多三条短路线；本轮仅局部修复与短推论，不建立大型理论。"
+  },
+  "MD-8.6.3-SINNoseSubsplitting": {
+    "declaration_reasons": {},
+    "instruction31": "最多三条短路线；本轮仅局部修复与短推论，不建立大型理论。"
+  },
+  "MD-8.6.4-SINThreeLevelPotential": {
+    "declaration_reasons": {},
+    "instruction31": "最多三条短路线；本轮仅局部修复与短推论，不建立大型理论。"
+  },
+  "MD-8.7-GeneralizedLangevin": {
+    "declaration_reasons": {},
+    "instruction31": "最多三条短路线；本轮仅局部修复与短推论，不建立大型理论。"
+  },
+  "MD-8.7-GLEFluctuationDissipationPrinted": {
+    "declaration_reasons": {},
+    "instruction31": "最多三条短路线；本轮仅局部修复与短推论，不建立大型理论。"
+  },
+  "MD-8.7-PronyKernel": {
+    "declaration_reasons": {},
+    "instruction31": "最多三条短路线；本轮仅局部修复与短推论，不建立大型理论。"
+  },
+  "MD-8.7.1-CombinedPronyVariable": {
+    "declaration_reasons": {},
+    "instruction31": "最多三条短路线；本轮仅局部修复与短推论，不建立大型理论。"
+  },
+  "MD-8.7.1-GeneralizedLangevinIntegrator": {
+    "declaration_reasons": {},
+    "instruction31": "最多三条短路线；本轮仅局部修复与短推论，不建立大型理论。"
+  },
+  "MD-8.8-NPTThermodynamics": {
+    "declaration_reasons": {},
+    "instruction31": "最多三条短路线；本轮仅局部修复与短推论，不建立大型理论。"
+  },
+  "MD-8.8-NPTDensity": {
+    "declaration_reasons": {},
+    "instruction31": "最多三条短路线；本轮仅局部修复与短推论，不建立大型理论。"
+  },
+  "MD-8.8.1-NHLPistonEquations": {
+    "declaration_reasons": {},
+    "instruction31": "最多三条短路线；本轮仅局部修复与短推论，不建立大型理论。"
+  },
+  "MD-8.8.2-PistonIntegrator": {
+    "declaration_reasons": {},
+    "instruction31": "最多三条短路线；本轮仅局部修复与短推论，不建立大型理论。"
+  },
+  "MD-8.8.3-ParrinelloRahman": {
+    "declaration_reasons": {},
+    "instruction31": "最多三条短路线；本轮仅局部修复与短推论，不建立大型理论。"
+  },
+  "MD-8.9-TotalMomentum": {
+    "declaration_reasons": {},
+    "instruction31": "最多三条短路线；本轮仅局部修复与短推论，不建立大型理论。"
+  },
+  "MD-8.9.1-DPDPairForces": {
+    "declaration_reasons": {},
+    "instruction31": "最多三条短路线；本轮仅局部修复与短推论，不建立大型理论。"
+  },
+  "MD-8.9.1-DPDIntegralSystem": {
+    "declaration_reasons": {},
+    "instruction31": "最多三条短路线；本轮仅局部修复与短推论，不建立大型理论。"
+  },
+  "MD-8.9.1-DPDCanonicalLeaf": {
+    "declaration_reasons": {},
+    "instruction31": "最多三条短路线；本轮仅局部修复与短推论，不建立大型理论。"
+  },
+  "MD-8.9.1-DPDMassOrderPrinted": {
+    "declaration_reasons": {},
+    "instruction31": "最多三条短路线；本轮仅局部修复与短推论，不建立大型理论。"
+  },
+  "MD-8.9.2-DPDVelocityVerlet": {
+    "declaration_reasons": {},
+    "instruction31": "最多三条短路线；本轮仅局部修复与短推论，不建立大型理论。"
+  },
+  "MD-8.9.2-DPDSplitGenerator": {
+    "declaration_reasons": {},
+    "instruction31": "最多三条短路线；本轮仅局部修复与短推论，不建立大型理论。"
+  },
+  "MD-8.9.2-DPDPairGeneratorPrinted": {
+    "declaration_reasons": {},
+    "instruction31": "最多三条短路线；本轮仅局部修复与短推论，不建立大型理论。"
+  },
+  "MD-8.9.2-DPDSplittingCompositions": {
+    "declaration_reasons": {},
+    "instruction31": "最多三条短路线；本轮仅局部修复与短推论，不建立大型理论。"
+  },
+  "MD-8.9.2-DPDPairOUUpdate": {
+    "declaration_reasons": {},
+    "instruction31": "最多三条短路线；本轮仅局部修复与短推论，不建立大型理论。"
+  },
+  "MD-8.9.3-PairwiseNoseHoover": {
+    "declaration_reasons": {},
+    "instruction31": "最多三条短路线；本轮仅局部修复与短推论，不建立大型理论。"
+  },
+  "MD-8.9.3-PairwiseCanonicalWeight": {
+    "declaration_reasons": {},
+    "instruction31": "最多三条短路线；本轮仅局部修复与短推论，不建立大型理论。"
+  },
+  "MD-8.9.4-PairwiseNHLSDE": {
+    "declaration_reasons": {},
+    "instruction31": "最多三条短路线；本轮仅局部修复与短推论，不建立大型理论。"
+  },
+  "MD-8.9.4-PNHLSplittingAlgorithms": {
+    "declaration_reasons": {},
+    "instruction31": "最多三条短路线；本轮仅局部修复与短推论，不建立大型理论。"
+  },
+  "MD-8.10-BerendsenRelaxation": {
+    "declaration_reasons": {},
+    "instruction31": "最多三条短路线；本轮仅局部修复与短推论，不建立大型理论。"
+  }
+}
