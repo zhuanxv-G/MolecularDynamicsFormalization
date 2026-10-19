@@ -1,9 +1,9 @@
-# 第32号已完成，停止
+# 第33号已完成，停止
 
-第8章最终收口完成；全书第1–8章正文收口，等待用户新指令。
-10条复审输入绑定通过（2 PASS/0 FAIL/8 NEEDS_HUMAN）；8条按版本分流，FAIL修复中=0。
-本轮仅更新元数据和文档，Ch08.lean SHA256 a58849c4…未改；396声明编译/公理证据绑定复核通过，一次新完整check通过；正式库298文件0 sorry、0 axiom声明，17010冻结文件字节一致。
-全章最新整体网站PASS 76、NEEDS_HUMAN 27；285定义、54已证、57未证。27条原书表述疑误另加1证明核查/3域说明；导师裁定及57项证明未完成。未再送网站、未生成新EAUDIT包；本终态随提交push交付后停止。
+全书第1–8章已合并到 main，等待用户新指令。
 
-若heartbeat唤醒，先核对32号第5节、blueprint/ch08/closeout32/DELIVERY_VALIDATION.json及Git远端；满足后只确认完成，不发送续接。ACTIVE、15分钟、原target和既存去重机制保留。
-未再送网站，不继续证明，不做习题或附加章节。
+当前分支：main；以后默认在 main 工作。chapter01…08 分支保留为存档。
+origin/main已快进到包含8dd49d72，book-ch01-08-closeout注释标签已推送；正式库及Blueprint/Ch01–08检查通过，源码和审阅文档字节未改。
+本终态随仅文档提交推送。验收详见MERGE_33_VALIDATION.zh-CN.md；残留清单见CURRENT_STATE，保持原样等待用户决定。
+heartbeat唤醒先核对33号第4节及Git远端，满足后停止发送；保留ACTIVE、15分钟、原target和去重机制。
+不继续证明、网站审阅或附加章节，等待用户新指令。
