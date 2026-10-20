@@ -36,3 +36,7 @@ Open the same local workspace and read `AGENTS.md`, then the Chinese
 Update the checkpoint and append the log after each small task; preserve local
 uncommitted files when handing off. The checkpoint distinguishes source inventory,
 formal proofs, build results, and semantic review.
+
+## 全书审阅入口
+
+第1–8章正文成果、原书疑误与未证部分，请从[全书审阅导航](docs/review/book/README.zh-CN.md)开始；导航固定到 book-ch01-08-summary 版本。

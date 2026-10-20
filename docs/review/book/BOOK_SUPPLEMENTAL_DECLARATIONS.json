@@ -1,0 +1,14 @@
+{
+  "MD.Ch08.SINStage": {
+    "name": "MD.Ch08.SINStage",
+    "kind": "inductive",
+    "status": "定义",
+    "axioms": [],
+    "direct_placeholder": false,
+    "reason": null,
+    "source_id": "MD-8.6.3-SINRAlgorithm",
+    "evidence": "lake env lean --stdin：读取未修改Ch08全文并追加#print axioms；无error，明确不依赖任何公理。",
+    "lean_sha256": "a58849c40e30a4a6b189163f42a49e0cbdf00bd48a39a77048bfd04ff88f8a16",
+    "check_log_sha256": "7553202de64b5441f20729b2096619d2a48ebf9e130e61ed0997e9f42cafd2bf"
+  }
+}

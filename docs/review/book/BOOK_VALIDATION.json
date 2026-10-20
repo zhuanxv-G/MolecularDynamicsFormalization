@@ -1,0 +1,70 @@
+{
+  "statistics_self_checks": {
+    "source_progress_website_ids_equal": true,
+    "declaration_coverage_equal": true,
+    "declaration_partition": true,
+    "unproved_reason_partition": true,
+    "website_partition": true,
+    "sorry_equals_ripgrep": true
+  },
+  "frozen": {
+    "baseline": "f4ea1f7b",
+    "tracked_lean_files": 1367,
+    "changed_lean_content": 0,
+    "chapter_review_documents": 24,
+    "changed_chapter_documents": 0,
+    "original_checkout_bytes": {
+      "available": true,
+      "baseline": "33号合并后工作区原字节快照（34号开始HEAD=f4ea1f7b）",
+      "files": 1391,
+      "changed": 0,
+      "note": "Git对象与原工作区的既有CRLF差异不算本次变动；同时要求Git内容差异0及原工作区原字节差异0。"
+    },
+    "preexisting_residual_bytes": {
+      "available": true,
+      "files": 1508,
+      "changed": 0
+    },
+    "formal_library_files": 298,
+    "formal_sorry": 0,
+    "formal_new_axiom_declarations": 0,
+    "full_check_reused": {
+      "prior_full_check": "33号MERGE_33_VALIDATION.zh-CN.md；数学文件未变",
+      "report_sha256": "60d07888988307ab7f06dd4da240ed8c77593f492ce883a3fd925ad7adc3a9ac",
+      "status": "passed"
+    },
+    "full_check_rerun": false
+  },
+  "mentor_forbidden_term_matches": 0,
+  "layout": {
+    "markdown_sha256": "52f69d9e79c8625aee0ec6c77ff01de3fde3ee02c3679d64994aa9eff423b057",
+    "pages": 4,
+    "page_format": "A4, 10pt正文/15pt行距，表格8.2pt/11pt",
+    "font": "SimSun",
+    "pdf_is_layout_proof_only": true,
+    "visual_inspection": "PASS：四页完整目视；最终第3页分组数量更新后再次检查，表格、标题及正文无裁切重叠。",
+    "note": "固定链接以可读标签排版；质量指数在排版样张以ASCII幂记号显示，交付Markdown保留原式。"
+  },
+  "link_check": {
+    "broken_links": 0,
+    "final_tag": "book-ch01-08-summary",
+    "post_tag_command": "python scripts/book_delivery.py --ref book-ch01-08-summary",
+    "reference": "prospective summary tag file set; post-tag check required",
+    "checked_links": 1934,
+    "github_file_links": 1921,
+    "broken": [],
+    "heading_anchors_checked": true,
+    "lean_line_numbers_checked": true
+  },
+  "offline_package": {
+    "name": "book-ch01-08-docs.zip",
+    "policy": "book/全书汇总 + 8章SUMMARY_FOR_MENTOR与ERRATA；不含BLUEPRINT/.lean/过期短稿",
+    "final_checksum": "保存于工程外最终验证收据，避免归档自包含校验值循环"
+  },
+  "not_verified": [
+    "导师疑误裁定",
+    "623项未证声明的数学证明",
+    "自动额度恢复接续端到端行为"
+  ],
+  "note": "最终标签内路径与远端在提交后再次检查，结果保存.git/book34/FINAL_VERIFICATION.json。"
+}
