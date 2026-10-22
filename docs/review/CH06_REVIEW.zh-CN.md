@@ -1,6 +1,6 @@
 # 第6章人工审阅材料
 
-扫描用户PDF233–285并补核标题PDF232；实际第6章正文印刷211–258/PDF232–279，PDF280为Exercises、PDF282起第7章，排除。逐页边界见PAGE_SCAN.json。全部proved/weakened为既有正式库成果映射，本次没有新证明。CanonicalKernelConstant等封存文件不导入、不恢复。Theorem6.1、Theorem6.2、Proposition6.4保持statement_only。
+扫描用户PDF233–285并补核标题PDF232；实际第6章正文印刷211–258/PDF232–279，PDF280为Exercises、PDF282起第7章，排除。逐页边界见PAGE\_SCAN.json。全部proved/weakened为既有正式库成果映射，本次没有新证明。CanonicalKernelConstant等封存文件不导入、不恢复。Theorem6.1、Theorem6.2、Proposition6.4保持statement\_only。
 
 清单是进度来源；defined与proved分开统计。Prop定义编译通过只确认陈述类型正确，不表示结论成立。
 原文为用户提供的教材PDF逐页忠实转述；机器验收见VALIDATION.json和check-full目录。导师语义审阅待完成。
@@ -10,9 +10,9 @@
 | --- | ---: |
 | defined | 45 |
 | proved | 30 |
-| statement_only | 42 |
+| statement\_only | 42 |
 | weakened | 6 |
-| not_formalizable_now | 3 |
+| not\_formalizable\_now | 3 |
 | 合计 | 126 |
 
 proved为清单行数；重复映射同一证明不等于独立定理数量。
@@ -20,7 +20,7 @@ proved为清单行数；重复映射同一证明不等于独立定理数量。
 需人工判断的问题：
 
 1. Prop6.1–6.3的已验收内容与原文一般质量/域/正则性是否一致？单位质量、单位周期实现的范围差异已逐行列明。
-2. Theorem6.1已有真实复谱、半群与过程law/L2密度平均桥接；本章完整陈述补L2初始密度和闭实现，原C2核心、任意初值及time average术语尚未统一验收。是否保留statement_only？
+2. Theorem6.1已有真实复谱、半群与过程law/L2密度平均桥接；本章完整陈述补L2初始密度和闭实现，原C2核心、任意初值及time average术语尚未统一验收。是否保留statement\_only？
 3. Assumption1的字面密度连续含t=0，标准扩散从点初值的密度不能如此延拓；一般Harris理论、实际正时密度存在和唯一性仍缺。是否接受字面与t>0版本分列？
 4. Proposition6.4把weighted均值条件与flat前向伴随混用；字面版唯一性模Gibbs、相对密度修正版模常数分列，仍缺Fredholm/紧预解/rough核识别。是否需勘误？封存不计成果。
 5. Lemma6.1可达性已证单位质量/单位周期模型，但原文更一般域/质量和适应性语义签核仍需人工判断；相关行是否应保留weakened？
@@ -54,7 +54,7 @@ def entropy (kB : ℝ) (Z : ℝ → ℝ) (E : ℝ) : ℝ := kB * Real.log (Z E)
 
 ### CH06-003 · §6.1.1 · 未编号结论 · 印刷p.215 / PDF236
 
-原文（忠实转述）：Independent subsystems have Z_AB=Z_A Z_B and additive entropy.
+原文（忠实转述）：Independent subsystems have Z\_AB=Z\_A Z\_B and additive entropy.
 
 ```lean
 -- MolecularDynamics.Chapter06Review.entropyAdditivity_statement
@@ -72,11 +72,11 @@ def independentPartition_statement : Prop := ∀ {n m : ℕ} (HA : Chapter05Revi
 
 差异、假设及缺口：不将固定总能量的卷积partition误作独立固定能量乘积。
 
-状态：**statement_only**；位置：`MolecularDynamics/Chapter06/Statements.lean:9;MolecularDynamics/Chapter06/Statements.lean:17`。
+状态：**statement\_only**；位置：`MolecularDynamics/Chapter06/Statements.lean:9;MolecularDynamics/Chapter06/Statements.lean:17`。
 
 ### CH06-004 · §6.1.1 · 未编号结论 · 印刷p.215 / PDF236
 
-原文（忠实转述）：At a differentiable interior entropy maximum under E_A+E_B=E, S_A'=S_B'.
+原文（忠实转述）：At a differentiable interior entropy maximum under E\_A+E\_B=E, S\_A'=S\_B'.
 
 ```lean
 -- MolecularDynamics.Chapter06Review.entropyEquilibrium_statement
@@ -87,7 +87,7 @@ def entropyEquilibrium_statement : Prop := ∀ (SA SB : ℝ → ℝ) (E e : ℝ)
 
 差异、假设及缺口：固定总能量、一元内点极值；只陈述。
 
-状态：**statement_only**；位置：`MolecularDynamics/Chapter06/Statements.lean:11`。
+状态：**statement\_only**；位置：`MolecularDynamics/Chapter06/Statements.lean:11`。
 
 ### CH06-005 · §6.1.2 · 定义 · 印刷p.215 / PDF236
 
@@ -120,7 +120,7 @@ def inverseThermal (kB T : ℝ) : ℝ := (kB * T)⁻¹
 
 ### CH06-007 · §6.1.2 · 未编号结论 · 印刷p.216 / PDF237
 
-原文（忠实转述）：The large-bath entropy expansion produces a Boltzmann factor exp(-beta E_A) to first order.
+原文（忠实转述）：The large-bath entropy expansion produces a Boltzmann factor exp(-beta E\_A) to first order.
 
 ```lean
 -- MolecularDynamics.Chapter06Review.bathTaylor_statement
@@ -131,11 +131,11 @@ def bathTaylor_statement : Prop := ∀ (S : ℝ → ℝ) (E : ℝ), ContDiff ℝ
 
 差异、假设及缺口：局部C2 Taylor余项明确量化；一般热力学极限不在本次范围。
 
-状态：**statement_only**；位置：`MolecularDynamics/Chapter06/Statements.lean:14`。
+状态：**statement\_only**；位置：`MolecularDynamics/Chapter06/Statements.lean:14`。
 
 ### CH06-008 · §6.1.2 · 定义 · 印刷p.216 / PDF237
 
-原文（忠实转述）：The canonical energy distribution is proportional to Z_A(E) exp(-beta E).
+原文（忠实转述）：The canonical energy distribution is proportional to Z\_A(E) exp(-beta E).
 
 ```lean
 -- MolecularDynamics.Chapter06Review.canonicalEnergyDensity
@@ -186,7 +186,7 @@ def entropyFirstVariation_statement : Prop := ∀ {n : ℕ} (H ρ : V n → ℝ)
 
 差异、假设及缺口：正rho、可积变分和约束；不假设Euler-Lagrange结论。
 
-状态：**statement_only**；位置：`MolecularDynamics/Chapter06/Statements.lean:29;MolecularDynamics/Chapter06/Statements.lean:23`。
+状态：**statement\_only**；位置：`MolecularDynamics/Chapter06/Statements.lean:29;MolecularDynamics/Chapter06/Statements.lean:23`。
 
 ### CH06-011 · §6.1.3 · 定义 · 印刷p.218 / PDF239
 
@@ -226,7 +226,7 @@ def partitionMass_statement : Prop := ∀ {n : ℕ} (m : V n) (U : V n → ℝ) 
     (∫ q, Real.exp (-β*U q)) * ∏ i, Real.sqrt (2*Real.pi*m i/β)
 ```
 
-差异、假设及缺口：已有完整单位质量/单位torus公式；一般各坐标质量公式仅陈述partitionMass_statement；同模块历史ledger CH06-DEP-151。
+差异、假设及缺口：已有完整单位质量/单位torus公式；一般各坐标质量公式仅陈述partitionMass\_statement；同模块历史ledger CH06-DEP-151。
 
 状态：**weakened**；位置：`MolecularDynamics/Chapter06/LangevinCanonicalPartition.lean:52;MolecularDynamics/Chapter06/Statements.lean:36`。
 
@@ -265,7 +265,7 @@ def confiningPartition_statement : Prop := ∀ {n : ℕ} (U : V n → ℝ) (β c
 
 差异、假设及缺口：c,p,beta正；需尾部可积估计，未新增证明。
 
-状态：**statement_only**；位置：`MolecularDynamics/Chapter06/Statements.lean:40`。
+状态：**statement\_only**；位置：`MolecularDynamics/Chapter06/Statements.lean:40`。
 
 ### CH06-015 · §6.1.4 · 定义 · 印刷p.220 / PDF241
 
@@ -320,7 +320,7 @@ theorem textbookCanonicalAverage_one {Nc : ℕ}
 
 ### CH06-018 · §6.1.5 · 未编号结论 · 印刷p.221 / PDF242
 
-原文（忠实转述）：Equipartition gives Av(p_i squared)=m_i/beta and Av(2K)=Nc/beta.
+原文（忠实转述）：Equipartition gives Av(p\_i squared)=m\_i/beta and Av(2K)=Nc/beta.
 
 ```lean
 -- MolecularDynamics.Chapter06Review.equipartition_statement
@@ -333,7 +333,7 @@ def equipartition_statement : Prop := ∀ {n : ℕ} (m : V n) (U : V n → ℝ) 
 
 差异、假设及缺口：一般质量、真实可积Gibbs；既有Gaussian动量measure尚未打包此式。
 
-状态：**statement_only**；位置：`MolecularDynamics/Chapter06/Statements.lean:43`。
+状态：**statement\_only**；位置：`MolecularDynamics/Chapter06/Statements.lean:43`。
 
 ### CH06-019 · §6.1.5 · 未编号结论 · 印刷p.222 / PDF243
 
@@ -353,7 +353,7 @@ def configTemperature_statement : Prop := ∀ {n : ℕ} (U : V n → ℝ) (β : 
 
 差异、假设及缺口：质量/域及非零分母明确；Prop6.1不是此特定选G的完整包装。
 
-状态：**statement_only**；位置：`MolecularDynamics/Chapter06/Statements.lean:48`。
+状态：**statement\_only**；位置：`MolecularDynamics/Chapter06/Statements.lean:48`。
 
 ### CH06-020 · §6.1.5 · 命题 · 印刷p.222 / PDF243
 
@@ -428,7 +428,7 @@ def temperatureChoices_statement : Prop := ∀ {n : ℕ} (m : V n) (U : V n → 
 
 差异、假设及缺口：完整三个选项一般质量定义；不将G=(q,0)视为periodic。
 
-状态：**statement_only**；位置：`MolecularDynamics/Chapter06/Statements.lean:56`。
+状态：**statement\_only**；位置：`MolecularDynamics/Chapter06/Statements.lean:56`。
 
 ### CH06-023 · §6.1.5 · 未编号结论 · 印刷p.223 / PDF244
 
@@ -462,11 +462,11 @@ def energyObstruction_statement : Prop := ∀ {n : ℕ} (H : V n → ℝ) (E : �
 
 差异、假设及缺口：给定能量守恒及canonical另一能量集合正测度；不假设采样失败为前提。
 
-状态：**statement_only**；位置：`MolecularDynamics/Chapter06/Statements.lean:62`。
+状态：**statement\_only**；位置：`MolecularDynamics/Chapter06/Statements.lean:62`。
 
 ### CH06-025 · §6.2.1 · 定义 · 印刷p.225 / PDF246
 
-原文（忠实转述）：A random walk is X_n=dx sum_(k<n) J_k with X_0=0.
+原文（忠实转述）：A random walk is X\_n=dx sum_(k<n) J\_k with X\_0=0.
 
 ```lean
 -- MolecularDynamics.Chapter06Review.randomWalk
@@ -484,7 +484,7 @@ def walkIncrement {Ω : Type*} (J : ℕ → Ω → ℝ) (dx : ℝ) (n : ℕ) (sa
 
 ### CH06-026 · §6.2.1 · 未编号结论 · 印刷p.225 / PDF246
 
-原文（忠实转述）：The recurrence X_(n+1)=X_n+dx J_n follows from the finite sum.
+原文（忠实转述）：The recurrence X_(n+1)=X\_n+dx J\_n follows from the finite sum.
 
 ```lean
 -- MolecularDynamics.Chapter06Review.walkRecurrence_statement
@@ -494,11 +494,11 @@ def walkRecurrence_statement : Prop := ∀ {Ω : Type*} (J : ℕ → Ω → ℝ)
 
 差异、假设及缺口：仅陈述，未做新证明。
 
-状态：**statement_only**；位置：`MolecularDynamics/Chapter06/Statements.lean:66`。
+状态：**statement\_only**；位置：`MolecularDynamics/Chapter06/Statements.lean:66`。
 
 ### CH06-027 · §6.2.1 · 未编号结论 · 印刷p.226 / PDF247
 
-原文（忠实转述）：Independent centered unit-variance jumps give E X_n=0 and Var X_n=n dx squared.
+原文（忠实转述）：Independent centered unit-variance jumps give E X\_n=0 and Var X\_n=n dx squared.
 
 ```lean
 -- MolecularDynamics.Chapter06Review.walkVariance_statement
@@ -509,11 +509,11 @@ def walkVariance_statement : Prop := ∀ {Ω : Type*} [MeasurableSpace Ω] (P : 
 
 差异、假设及缺口：随机变量L2与独立性，不假设二阶和公式。
 
-状态：**statement_only**；位置：`MolecularDynamics/Chapter06/Statements.lean:68`。
+状态：**statement\_only**；位置：`MolecularDynamics/Chapter06/Statements.lean:68`。
 
 ### CH06-028 · §6.2.1 · 定义 · 印刷p.226 / PDF247
 
-原文（忠实转述）：The diffusive walk has jumps sqrt(dt) J_k and linear interpolation.
+原文（忠实转述）：The diffusive walk has jumps sqrt(dt) J\_k and linear interpolation.
 
 ```lean
 -- MolecularDynamics.Chapter06Review.diffusiveWalk
@@ -533,7 +533,7 @@ def interpolatedWalk {Ω : Type*} (J : ℕ → Ω → ℝ) (dt t : ℝ) (sample 
 
 ### CH06-029 · §6.2.1 · 未编号结论 · 印刷p.226 / PDF247
 
-原文（忠实转述）：On grid points E(Y_l-Y_k)=0 and Var(Y_l-Y_k)=(l-k)dt.
+原文（忠实转述）：On grid points E(Y\_l-Y\_k)=0 and Var(Y\_l-Y\_k)=(l-k)dt.
 
 ```lean
 -- MolecularDynamics.Chapter06Review.walkGridMoments_statement
@@ -545,7 +545,7 @@ def walkGridMoments_statement : Prop := ∀ {Ω : Type*} [MeasurableSpace Ω] (P
 
 差异、假设及缺口：0<=k<=l；插值区间方差不与时间差完全相同。
 
-状态：**statement_only**；位置：`MolecularDynamics/Chapter06/Statements.lean:71`。
+状态：**statement\_only**；位置：`MolecularDynamics/Chapter06/Statements.lean:71`。
 
 ### CH06-030 · §6.2.1 · 未编号结论 · 印刷p.226 / PDF247
 
@@ -569,7 +569,7 @@ def walkDiffusion_statement : Prop := ∀ {Ω : Type*} [MeasurableSpace Ω] (P :
 
 差异、假设及缺口：需Donsker函数空间不变性原理及tightness；不是CLT一维极限已证明。
 
-状态：**not_formalizable_now**；位置：`MolecularDynamics/Chapter06/Statements.lean:75`。
+状态：**not\_formalizable\_now**；位置：`MolecularDynamics/Chapter06/Statements.lean:75`。
 
 ### CH06-031 · §6.2.1 · 定义 · 印刷p.227 / PDF248
 
@@ -656,7 +656,7 @@ def wienerNondifferentiable_statement : Prop := ∀ {Ω : Type*} [MeasurableSpac
 
 差异、假设及缺口：需Brownian路径振荡/几乎处处不可微分析，不新增理论。
 
-状态：**not_formalizable_now**；位置：`MolecularDynamics/Chapter06/Statements.lean:94`。
+状态：**not\_formalizable\_now**；位置：`MolecularDynamics/Chapter06/Statements.lean:94`。
 
 ### CH06-035 · §6.2.1 · 未编号结论 · 印刷p.227 / PDF248
 
@@ -861,7 +861,7 @@ def deterministicIntegralProcess {Ω : Type*} [MeasurableSpace Ω] (P : Measure 
 
 ### CH06-046 · §6.3 · 定义 · 印刷p.232 / PDF253
 
-原文（忠实转述）：The biased walk uses increments a(X_n,t_n)dt+b(X_n,t_n)sqrt(dt)J_n, (6.9)-(6.10).
+原文（忠实转述）：The biased walk uses increments a(X\_n,t\_n)dt+b(X\_n,t\_n)sqrt(dt)J\_n, (6.9)-(6.10).
 
 ```lean
 -- MolecularDynamics.Chapter06Review.biasedWalk
@@ -929,11 +929,11 @@ def itoFormula_statement : Prop := ∀ {Ω : Type*} [MeasurableSpace Ω] (P : Me
 
 差异、假设及缺口：实际scalarSDE+局部C2/可积/适应条件；一般随机Ito链式法则未证。
 
-状态：**statement_only**；位置：`MolecularDynamics/Chapter06/Statements.lean:98`。
+状态：**statement\_only**；位置：`MolecularDynamics/Chapter06/Statements.lean:98`。
 
 ### CH06-050 · §6.3.1 · 未编号结论 · 印刷p.234 / PDF255
 
-原文（忠实转述）：For phi(x,t), the Ito formula also includes phi_t dt, (6.18).
+原文（忠实转述）：For phi(x,t), the Ito formula also includes phi\_t dt, (6.18).
 
 ```lean
 -- MolecularDynamics.Chapter06Review.itoTimeFormula_statement
@@ -948,9 +948,9 @@ def itoTimeFormula_statement : Prop := ∀ {Ω : Type*} [MeasurableSpace Ω] (P 
         fderiv ℝ (fun z ↦ fderiv ℝ φ z (1,0)) (X s sample,s) (1,0)*b (X s sample) s^2/2)
 ```
 
-差异、假设及缺口：原显示phi_t遗漏dt；忠实解释为时间积分项。
+差异、假设及缺口：原显示phi\_t遗漏dt；忠实解释为时间积分项。
 
-状态：**statement_only**；位置：`MolecularDynamics/Chapter06/Statements.lean:107`。
+状态：**statement\_only**；位置：`MolecularDynamics/Chapter06/Statements.lean:107`。
 
 ### CH06-051 · §6.3.2 · 定义 · 印刷p.234 / PDF255
 
@@ -988,7 +988,7 @@ def ouIntegratingFactor_statement : Prop := ∀ {Ω : Type*} [MeasurableSpace Ω
 
 差异、假设及缺口：实际Ito极限、初值确定、gamma正；无新证明。
 
-状态：**statement_only**；位置：`MolecularDynamics/Chapter06/Statements.lean:116`。
+状态：**statement\_only**；位置：`MolecularDynamics/Chapter06/Statements.lean:116`。
 
 ### CH06-053 · §6.3.2 · 未编号结论 · 印刷p.235 / PDF256
 
@@ -1004,7 +1004,7 @@ def ouLaw_statement : Prop := ∀ {Ω : Type*} [MeasurableSpace Ω]
 
 差异、假设及缺口：只单时刻law；不把独立标准Gaussian各时刻视作同一过程。
 
-状态：**statement_only**；位置：`MolecularDynamics/Chapter06/Statements.lean:121`。
+状态：**statement\_only**；位置：`MolecularDynamics/Chapter06/Statements.lean:121`。
 
 ### CH06-054 · §6.3.2 · 未编号结论 · 印刷p.235 / PDF256
 
@@ -1021,11 +1021,11 @@ def ouGibbsLimit_statement : Prop := ∀ (γ θ m x0 : ℝ), 0 < γ → 0 < θ �
 
 差异、假设及缺口：弱收敛有界连续test；正gamma、kB、T、m。
 
-状态：**statement_only**；位置：`MolecularDynamics/Chapter06/Statements.lean:125`。
+状态：**statement\_only**；位置：`MolecularDynamics/Chapter06/Statements.lean:125`。
 
 ### CH06-055 · §6.3.2 · 定义 · 印刷p.235 / PDF256
 
-原文（忠实转述）：Vector momentum OU has drift -gamma p and independent noise sqrt(2gamma kB T m_i), (6.20)-(6.21).
+原文（忠实转述）：Vector momentum OU has drift -gamma p and independent noise sqrt(2gamma kB T m\_i), (6.20)-(6.21).
 
 ```lean
 -- MolecularDynamics.Chapter06Review.momentumOU
@@ -1040,7 +1040,7 @@ def momentumOU {Ω : Type*} [MeasurableSpace Ω] {n : ℕ} (P : Measure Ω)
 
 ### CH06-056 · §6.3.3 · 定义 · 印刷p.236 / PDF257
 
-原文（忠实转述）：The finite oscillator bath Hamiltonian includes p_i squared/(2mu_i) and (q_i-Q)^2/(2k).
+原文（忠实转述）：The finite oscillator bath Hamiltonian includes p\_i squared/(2mu\_i) and (q\_i-Q)^2/(2k).
 
 ```lean
 -- MolecularDynamics.Chapter06Review.bathHamiltonian
@@ -1068,7 +1068,7 @@ def bathHamiltonEquations_statement : Prop := ∀ {k : ℕ} (μ : V k) (U : ℝ 
 
 差异、假设及缺口：真实有限坐标导数；k正、mu正。
 
-状态：**statement_only**；位置：`MolecularDynamics/Chapter06/Statements.lean:130`。
+状态：**statement\_only**；位置：`MolecularDynamics/Chapter06/Statements.lean:130`。
 
 ### CH06-058 · §6.3.3 · 未编号结论 · 印刷p.236 / PDF257
 
@@ -1085,7 +1085,7 @@ def bathOscillator_statement : Prop := ∀ (Q q : ℝ → ℝ) (Ω t : ℝ),
 
 差异、假设及缺口：Omega=(k mu)^-1/2，真实C2强解与有限区间。
 
-状态：**statement_only**；位置：`MolecularDynamics/Chapter06/Statements.lean:136`。
+状态：**statement\_only**；位置：`MolecularDynamics/Chapter06/Statements.lean:136`。
 
 ### CH06-059 · §6.3.3 · 未编号结论 · 印刷p.237 / PDF258
 
@@ -1101,7 +1101,7 @@ def bathConvolutionIBP_statement : Prop := ∀ (Q P : ℝ → ℝ) (Ω t : ℝ),
 
 差异、假设及缺口：Q'=P、Omega非零；实际区间积分。
 
-状态：**statement_only**；位置：`MolecularDynamics/Chapter06/Statements.lean:141`。
+状态：**statement\_only**；位置：`MolecularDynamics/Chapter06/Statements.lean:141`。
 
 ### CH06-060 · §6.3.3 · 定义 · 印刷p.237 / PDF258
 
@@ -1153,7 +1153,7 @@ def bathReductionPrinted_statement : Prop := ∀ {k : ℕ} (μ : V k) (U Q P : �
 
 差异、假设及缺口：保留原字面负f与代入一致版；未把经验噪声极限当严格结论。
 
-状态：**statement_only**；位置：`MolecularDynamics/Chapter06/Statements.lean:145;MolecularDynamics/Chapter06/Statements.lean:153`。
+状态：**statement\_only**；位置：`MolecularDynamics/Chapter06/Statements.lean:145;MolecularDynamics/Chapter06/Statements.lean:153`。
 
 ### CH06-062 · §6.3.3 · 定义 · 印刷p.238 / PDF259
 
@@ -1281,7 +1281,7 @@ def overdampedLimit_statement : Prop := ∀ {n : ℕ} {Ω : Type*} [MeasurableSp
 
 差异、假设及缺口：需明确时间重标度、初值/质量与随机奇异摄动紧性；书只作形式消元。
 
-状态：**not_formalizable_now**；位置：`MolecularDynamics/Chapter06/Statements.lean:161`。
+状态：**not\_formalizable\_now**；位置：`MolecularDynamics/Chapter06/Statements.lean:161`。
 
 ### CH06-067 · §6.3.5 · 定义 · 印刷p.240 / PDF261
 
@@ -1298,7 +1298,7 @@ def scalarGenerator (a b f : ℝ → ℝ) (x : ℝ) : ℝ := a x*deriv f x + b x
 
 ### CH06-068 · §6.3.5 · 未编号结论 · 印刷p.240 / PDF261
 
-原文（忠实转述）：The derivative of E phi(X_t) equals E L phi(X_t), (6.37).
+原文（忠实转述）：The derivative of E phi(X\_t) equals E L phi(X\_t), (6.37).
 
 ```lean
 -- MolecularDynamics.Chapter06Review.generatorExpectation_statement
@@ -1314,7 +1314,7 @@ def generatorExpectation_statement : Prop := ∀ {Ω : Type*} [MeasurableSpace �
 
 差异、假设及缺口：实际SDE+适应可积支配条件；已有特定Brownian/Langevin模型依赖另见证据登记。
 
-状态：**statement_only**；位置：`MolecularDynamics/Chapter06/Statements.lean:171`。
+状态：**statement\_only**；位置：`MolecularDynamics/Chapter06/Statements.lean:171`。
 
 ### CH06-069 · §6.3.6 · 定义 · 印刷p.241 / PDF262
 
@@ -1343,7 +1343,7 @@ def fpDriftAdjoint_statement : Prop := ∀ (a ρ φ : ℝ → ℝ),
 
 差异、假设及缺口：显式实际乘积可积及边界极限；原C1rho不足二阶PDE。
 
-状态：**statement_only**；位置：`MolecularDynamics/Chapter06/Statements.lean:179`。
+状态：**statement\_only**；位置：`MolecularDynamics/Chapter06/Statements.lean:179`。
 
 ### CH06-071 · §6.3.6 · 未编号结论 · 印刷p.242 / PDF263
 
@@ -1368,7 +1368,7 @@ def fpAdjoint_statement : Prop := ∀ (a b ρ φ : ℝ → ℝ),
 
 差异、假设及缺口：明确C2rho和所有必要尾部；既有过程特例不能当一般FP理论。
 
-状态：**statement_only**；位置：`MolecularDynamics/Chapter06/Statements.lean:185;MolecularDynamics/Chapter06/Statements.lean:182`。
+状态：**statement\_only**；位置：`MolecularDynamics/Chapter06/Statements.lean:185;MolecularDynamics/Chapter06/Statements.lean:182`。
 
 ### CH06-072 · §6.3.6 · 定义 · 印刷p.242 / PDF263
 
@@ -1397,7 +1397,7 @@ def zeroNoise_statement : Prop := ∀ (a f ρ : ℝ → ℝ) (x : ℝ),
 
 差异、假设及缺口：逐点代数表达；不构造一般PDE解。
 
-状态：**statement_only**；位置：`MolecularDynamics/Chapter06/Statements.lean:193`。
+状态：**statement\_only**；位置：`MolecularDynamics/Chapter06/Statements.lean:193`。
 
 ### CH06-074 · §6.3.7 · 定义 · 印刷p.243 / PDF264
 
@@ -1444,13 +1444,13 @@ def vectorFP_statement : Prop := ∀ {n r : ℕ} (a : V n → V n)
   ∀ t x, 0 < t → deriv (fun s ↦ ρ s x) t=vectorForward a B (ρ t) x
 ```
 
-差异、假设及缺口：实际additiveSDE/L2随机积分；原dW_i dW_j=dt delta仅启发notation。
+差异、假设及缺口：实际additiveSDE/L2随机积分；原dW\_i dW\_j=dt delta仅启发notation。
 
-状态：**statement_only**；位置：`MolecularDynamics/Chapter06/Statements.lean:196;MolecularDynamics/Chapter06/Statements.lean:206`。
+状态：**statement\_only**；位置：`MolecularDynamics/Chapter06/Statements.lean:196;MolecularDynamics/Chapter06/Statements.lean:206`。
 
 ### CH06-076 · §6.3.7 · 未编号结论 · 印刷p.243 / PDF264
 
-原文（忠实转述）：trace(B transpose Hess(phi)B)=sum_ij (B Btranspose)_ij partial_ij phi.
+原文（忠实转述）：trace(B transpose Hess(phi)B)=sum\_ij (B Btranspose)_ij partial\_ij phi.
 
 ```lean
 -- MolecularDynamics.Chapter06Review.diffusionTrace_statement
@@ -1461,11 +1461,11 @@ def diffusionTrace_statement : Prop := ∀ {n r : ℕ} (B : Matrix (Fin n) (Fin 
 
 差异、假设及缺口：有限矩阵表达；不做新代数证明。
 
-状态：**statement_only**；位置：`MolecularDynamics/Chapter06/Statements.lean:212`。
+状态：**statement\_only**；位置：`MolecularDynamics/Chapter06/Statements.lean:212`。
 
 ### CH06-077 · §6.3.8 · 定义 · 印刷p.244 / PDF265
 
-原文（忠实转述）：The Langevin Kolmogorov operator is -div_q(M^-1 p rho)+div_p((grad U+gamma p)rho)+gamma/beta sum m_i partial_pi²rho, (6.42).
+原文（忠实转述）：The Langevin Kolmogorov operator is -div\_q(M^-1 p rho)+div\_p((grad U+gamma p)rho)+gamma/beta sum m\_i partial\_pi²rho, (6.42).
 
 ```lean
 -- MolecularDynamics.Chapter06Review.langevinMassForward
@@ -1508,7 +1508,7 @@ def finiteDistribution {k : ℕ} (ψ : V k) : Prop := (∀ i, 0 ≤ ψ i) ∧ �
 
 ### CH06-079 · §6.4.1 · 定义 · 印刷p.245 / PDF266
 
-原文（忠实转述）：A distribution evolves by row-vector multiplication psi_(n+1)=psi_n Pi.
+原文（忠实转述）：A distribution evolves by row-vector multiplication psi_(n+1)=psi\_n Pi.
 
 ```lean
 -- MolecularDynamics.Chapter06Review.finiteEvolution
@@ -1572,7 +1572,7 @@ def finiteErgodicity_statement : Prop := ∀ {k : ℕ} (PiMark : Matrix (Fin k) 
 
 差异、假设及缺口：非空有限状态、真实Pi^n；不新增Perron-Frobenius理论。
 
-状态：**statement_only**；位置：`MolecularDynamics/Chapter06/Statements.lean:215`。
+状态：**statement\_only**；位置：`MolecularDynamics/Chapter06/Statements.lean:215`。
 
 ### CH06-083 · §6.4.2 · 定义 · 印刷p.247 / PDF268
 
@@ -1614,7 +1614,7 @@ def stationaryInvariant_statement : Prop := ∀ {D : Type*} [MeasurableSpace D]
 
 差异、假设及缺口：弱stationarity不自动推出过程不变，需semigroup与generator域桥接。
 
-状态：**statement_only**；位置：`MolecularDynamics/Chapter06/Statements.lean:219`。
+状态：**statement\_only**；位置：`MolecularDynamics/Chapter06/Statements.lean:219`。
 
 ### CH06-085 · §6.4.2 · 未编号结论 · 印刷p.248 / PDF269
 
@@ -1635,7 +1635,7 @@ def canonicalMixing_statement : Prop := ∀ {n : ℕ} (U : V n → ℝ) (β γ :
 
 差异、假设及缺口：真实Markovkernel、任意初值/合适test；非仅形式exp。
 
-状态：**statement_only**；位置：`MolecularDynamics/Chapter06/Statements.lean:228`。
+状态：**statement\_only**；位置：`MolecularDynamics/Chapter06/Statements.lean:228`。
 
 ### CH06-086 · §6.4.2 · 未编号结论 · 印刷p.248 / PDF269
 
@@ -1659,7 +1659,7 @@ def ouDensity (γ σ x0 t x : ℝ) : ℝ :=
 
 差异、假设及缺口：原6.44遗漏Gaussian归一因子；字面与标准密度分列。
 
-状态：**statement_only**；位置：`MolecularDynamics/Chapter06/Statements.lean:121;MolecularDynamics/Chapter06/ReviewDefinitions.lean:87;MolecularDynamics/Chapter06/ReviewDefinitions.lean:89`。
+状态：**statement\_only**；位置：`MolecularDynamics/Chapter06/Statements.lean:121;MolecularDynamics/Chapter06/ReviewDefinitions.lean:87;MolecularDynamics/Chapter06/ReviewDefinitions.lean:89`。
 
 ### CH06-087 · §6.4.3 · 定义 · 印刷p.249 / PDF270
 
@@ -1822,7 +1822,7 @@ def theorem61_statement : Prop := ∀ {n : ℕ} (m : V n) (hm : ∀ i, 0 < m i)
 
 差异、假设及缺口：保留完整三部分待证陈述；已有复谱、半群和真实law-L2平均桥接较旧ledger更完整，但教材C2域/所有初始分布及平均术语未统一验收；Brownian由6.36采用逆质量Laplacian，区别于6.42动量正质量Laplacian；原negative definite及time average术语需签核。
 
-状态：**statement_only**；位置：`MolecularDynamics/Chapter06/Statements.lean:237`。
+状态：**statement\_only**；位置：`MolecularDynamics/Chapter06/Statements.lean:237`。
 
 ### CH06-094 · §6.4.3 · 未编号结论 · 印刷p.251 / PDF272
 
@@ -1928,7 +1928,7 @@ def minorization_statement : Prop := ∀ {D : Type*} [MetricSpace D] [Measurable
 
 差异、假设及缺口：有限正时间真实kernel，小集阈值/aperiodicity尚需条件；已有单位周期conditional依赖登记。
 
-状态：**statement_only**；位置：`MolecularDynamics/Chapter06/Statements.lean:260`。
+状态：**statement\_only**；位置：`MolecularDynamics/Chapter06/Statements.lean:260`。
 
 ### CH06-099 · §6.4.4 · 定理 · 印刷p.252 / PDF273
 
@@ -1955,7 +1955,7 @@ def theorem62_statement : Prop := ∀ {D : Type*} [MetricSpace D] [MeasurableSpa
 
 差异、假设及缺口：完整唯一性和alltime bound；一般Harris定理/实际density存在未完成，条件Harris证明不替代假设验证；kernel版以右导数描述generator，真实扩散generator域及Feller条件的识别仍需语义签核。
 
-状态：**statement_only**；位置：`MolecularDynamics/Chapter06/Statements.lean:265`。
+状态：**statement\_only**；位置：`MolecularDynamics/Chapter06/Statements.lean:265`。
 
 ### CH06-100 · §6.4.4 · 未编号结论 · 印刷p.253 / PDF274
 
@@ -1998,7 +1998,7 @@ noncomputable def textbookLangevinPeriodicHamiltonianPower {Nc : ℕ}
 
 ### CH06-102 · §6.4.4 · 未编号结论 · 印刷p.253 / PDF274
 
-原文（忠实转述）：The Hamiltonian part annihilates H^l and p dot grad_p H^l=2lH^l-2lH^(l-1)U.
+原文（忠实转述）：The Hamiltonian part annihilates H^l and p dot grad\_p H^l=2lH^l-2lH^(l-1)U.
 
 ```lean
 -- MolecularDynamics.textbookLangevinHamiltonianPower_drift_hasDerivAt
@@ -2112,7 +2112,7 @@ def bracketProperties_statement : Prop := ∀ {n : ℕ} (u v w : V n → V n) (a
 
 差异、假设及缺口：Mathlib真实Lie括号已有基础支持；本次仅陈述，不作新证明。
 
-状态：**statement_only**；位置：`MolecularDynamics/Chapter06/Statements.lean:280`。
+状态：**statement\_only**；位置：`MolecularDynamics/Chapter06/Statements.lean:280`。
 
 ### CH06-108 · §6.4.4 · 定义 · 印刷p.254 / PDF275
 
@@ -2130,7 +2130,7 @@ def textbookHormanderAt (seed : Set (E → E)) (x : E) : Prop :=
 
 ### CH06-109 · §6.4.4 · 定义 · 印刷p.255 / PDF276
 
-原文（忠实转述）：The unit-mass Langevin drift and independent noise vectors are (p,-grad U-gamma p) and sigma(0,e_i).
+原文（忠实转述）：The unit-mass Langevin drift and independent noise vectors are (p,-grad U-gamma p) and sigma(0,e\_i).
 
 ```lean
 -- MolecularDynamics.textbookLangevinDrift
@@ -2154,7 +2154,7 @@ def textbookLangevinSeed {Nc : ℕ} (U : (Fin Nc → ℝ) → ℝ) (γ σ : ℝ)
 
 ### CH06-110 · §6.4.4 · 未编号结论 · 印刷p.255 / PDF276
 
-原文（忠实转述）：The first noise commutators are -sigma(e_i,-gamma e_i), and the resulting 2Nc vectors are independent.
+原文（忠实转述）：The first noise commutators are -sigma(e\_i,-gamma e\_i), and the resulting 2Nc vectors are independent.
 
 ```lean
 -- MolecularDynamics.textbookLangevinDrift_noise_bracket
@@ -2211,7 +2211,7 @@ def hormanderDensity_statement : Prop := ∀ {n : ℕ} (U : V n → ℝ)
 
 差异、假设及缺口：需真正hypoellipticity/Malliavin密度定理、parabolic bracket族；不能仅从含b0原span推出。
 
-状态：**statement_only**；位置：`MolecularDynamics/Chapter06/Statements.lean:284`。
+状态：**statement\_only**；位置：`MolecularDynamics/Chapter06/Statements.lean:284`。
 
 ### CH06-113 · §6.4.4 · 引理 · 印刷p.255 / PDF276
 
@@ -2353,7 +2353,7 @@ def langevinTimeAverage_statement : Prop := ∀ {n : ℕ} {Ω : Type*} [Measurab
 
 差异、假设及缺口：仍缺density实际存在、唯一性/Harris条件验收及canonical实际invariance；不借假设声称完整。
 
-状态：**statement_only**；位置：`MolecularDynamics/Chapter06/Statements.lean:303;MolecularDynamics/Chapter06/Statements.lean:316`。
+状态：**statement\_only**；位置：`MolecularDynamics/Chapter06/Statements.lean:303;MolecularDynamics/Chapter06/Statements.lean:316`。
 
 ### CH06-119 · §6.4.4 · 定义 · 印刷p.256 / PDF277
 
@@ -2446,7 +2446,7 @@ def proposition64Relative_statement : Prop := ∀ {n : ℕ} (U : V n → ℝ)
 
 差异、假设及缺口：忠实flat前向字面版与Gibbs加权相对密度修正版分列；printed兼容条件/adjoint测度不一致；Fredholm/compactresolvent/kernel仍缺，封存不恢复。
 
-状态：**statement_only**；位置：`MolecularDynamics/Chapter06/Statements.lean:326;MolecularDynamics/Chapter06/Statements.lean:340`。
+状态：**statement\_only**；位置：`MolecularDynamics/Chapter06/Statements.lean:326;MolecularDynamics/Chapter06/Statements.lean:340`。
 
 ### CH06-122 · §6.4.4 · 未编号结论 · 印刷p.257 / PDF278
 
@@ -2464,7 +2464,7 @@ def fredholm_statement : Prop := ∀ {E : Type*} [NormedAddCommGroup E] [InnerPr
 
 差异、假设及缺口：用actualclosed Hilbertpartialoperator graph与formalAdjoint；compactresolvent待证。
 
-状态：**statement_only**；位置：`MolecularDynamics/Chapter06/Statements.lean:355`。
+状态：**statement\_only**；位置：`MolecularDynamics/Chapter06/Statements.lean:355`。
 
 ### CH06-123 · §6.4.4 · 未编号结论 · 印刷p.257 / PDF278
 
@@ -2482,7 +2482,7 @@ def kernelConstant_statement : Prop := ∀ {n : ℕ} (U : V n → ℝ)
 
 差异、假设及缺口：C0固定观测量特例已证但roughweightedHilbertkernel未完成；CanonicalKernelConstant封存不计成果。
 
-状态：**statement_only**；位置：`MolecularDynamics/Chapter06/Statements.lean:361`。
+状态：**statement\_only**；位置：`MolecularDynamics/Chapter06/Statements.lean:361`。
 
 ### CH06-124 · §6.4.5 · 定义 · 印刷p.257 / PDF278
 
@@ -2517,11 +2517,11 @@ def kernelDuality_statement : Prop := ∀ {D : Type*} [MeasurableSpace D]
 
 差异、假设及缺口：实际kernel积分双重平均，可测可积；不泛化既有Brownian谱对偶到所有Langevin密度。
 
-状态：**statement_only**；位置：`MolecularDynamics/Chapter06/Statements.lean:367`。
+状态：**statement\_only**；位置：`MolecularDynamics/Chapter06/Statements.lean:367`。
 
 ### CH06-126 · §6.4.5 · 未编号结论 · 印刷p.258 / PDF279
 
-原文（忠实转述）：An eigenmode density perturbation evolves as rho_eq+alpha exp(lambda t)rho_1 and its average correction decays exponentially.
+原文（忠实转述）：An eigenmode density perturbation evolves as rho\_eq+alpha exp(lambda t)rho\_1 and its average correction decays exponentially.
 
 ```lean
 -- MolecularDynamics.Chapter06Review.eigenmodeDecay_statement
@@ -2539,4 +2539,4 @@ def eigenmodeDecay_statement : Prop := ∀ {E : Type*} [NormedAddCommGroup E] [N
 
 差异、假设及缺口：generator本征向量+实际semigroup/初值正性；Re(lambda)<0，所有smooth函数不自动L2；最终展示先取实负lambda，complex Re(lambda)的一般型未证。
 
-状态：**statement_only**；位置：`MolecularDynamics/Chapter06/Statements.lean:372`。
+状态：**statement\_only**；位置：`MolecularDynamics/Chapter06/Statements.lean:372`。

@@ -1,8 +1,8 @@
-> 已过时，以 [CH05_SUMMARY_FOR_MENTOR.zh-CN.md](CH05_SUMMARY_FOR_MENTOR.zh-CN.md) 为准。
+> 已过时，以 [CH05\_SUMMARY\_FOR\_MENTOR.zh-CN.md](CH05_SUMMARY_FOR_MENTOR.zh-CN.md) 为准。
 
 # 第5章导师快速审阅（15条）
 
-扫描用户指定PDF199–231；实际页码及章节标题边界以本章PAGE_SCAN.json为准。数值实验、介绍性模型和Exercises不纳入。微正则、Liouville、遍历和KAM一般理论只登记明确缺口，不搭建。
+扫描用户指定PDF199–231；实际页码及章节标题边界以本章PAGE\_SCAN.json为准。数值实验、介绍性模型和Exercises不纳入。微正则、Liouville、遍历和KAM一般理论只登记明确缺口，不搭建。
 
 清单是进度来源；defined与proved分开统计。Prop定义编译通过只确认陈述类型正确，不表示结论成立。
 原文为用户提供的教材PDF逐页忠实转述；机器验收见VALIDATION.json和check-full目录。导师语义审阅待完成。
@@ -12,9 +12,9 @@
 | --- | ---: |
 | defined | 37 |
 | proved | 11 |
-| statement_only | 28 |
+| statement\_only | 28 |
 | weakened | 0 |
-| not_formalizable_now | 10 |
+| not\_formalizable\_now | 10 |
 | 合计 | 86 |
 
 proved为清单行数；重复映射同一证明不等于独立定理数量。
@@ -48,7 +48,7 @@ def theorem51_statement : Prop :=
 
 差异、假设及缺口：紧正则能量面、smooth H/eta/g/w、w dot grad H非零；完整几何平均差量化，未把校正公式假设成前提；实现额外明示统一紧能量带、原分母在能量带非零及raw mass有限正，完整几何定理仍未证。
 
-状态：**statement_only**；位置：`MolecularDynamics/Chapter05/Statements.lean:175`。
+状态：**statement\_only**；位置：`MolecularDynamics/Chapter05/Statements.lean:175`。
 
 ### CH05-083 · §5.6 · 未编号结论 · 印刷p.209 / PDF230
 
@@ -89,7 +89,7 @@ theorem zeroPerturbation_proved {n : ℕ} (H g : E n → ℝ) (w : E n → E n) 
 
 ### CH05-025 · §5.2.2 · 未编号结论 · 印刷p.185 / PDF206
 
-原文（忠实转述）：The transported smooth density satisfies partial_t rho=-div(rho f).
+原文（忠实转述）：The transported smooth density satisfies partial\_t rho=-div(rho f).
 
 ```lean
 -- MolecularDynamics.Chapter05Review.liouvilleEquation_statement
@@ -102,11 +102,11 @@ def liouvilleEquation_statement : Prop := ∀ n (f : E n → E n) Φ (ρ : ℝ �
 
 差异、假设及缺口：实际体积变换密度与连续性方程；缺一般PDE/几何输运桥接。
 
-状态：**not_formalizable_now**；位置：`MolecularDynamics/Chapter05/Statements.lean:50`。
+状态：**not\_formalizable\_now**；位置：`MolecularDynamics/Chapter05/Statements.lean:50`。
 
 ### CH05-027 · §5.2.2 · 未编号结论 · 印刷p.185 / PDF206
 
-原文（忠实转述）：Integration by parts gives integral u L_f v=integral M_f u v after the boundary term vanishes, (5.4)-(5.5).
+原文（忠实转述）：Integration by parts gives integral u L\_f v=integral M\_f u v after the boundary term vanishes, (5.4)-(5.5).
 
 ```lean
 -- MolecularDynamics.Chapter05Review.liouvillianAdjoint_statement
@@ -117,7 +117,7 @@ def liouvillianAdjoint_statement : Prop := ∀ n (f : E n → E n) (u v : E n �
 
 差异、假设及缺口：用C1 compact support给明确消边界条件；形式伴随不是闭算子Hilbert伴随已识别。
 
-状态：**not_formalizable_now**；位置：`MolecularDynamics/Chapter05/Statements.lean:58`。
+状态：**not\_formalizable\_now**；位置：`MolecularDynamics/Chapter05/Statements.lean:58`。
 
 ### CH05-045 · §5.3.2 · 定义 · 印刷p.191 / PDF212
 
@@ -162,7 +162,7 @@ def shellWeakPrinted_statement : Prop := ∀ n (H : E n → ℝ) c,
 
 差异、假设及缺口：需coarea及正则紧能量面/尾部控制；原文rho已归一又乘Z^-1疑重复，保留字面版。
 
-状态：**not_formalizable_now**；位置：`MolecularDynamics/Chapter05/Statements.lean:79;MolecularDynamics/Chapter05/Statements.lean:85`。
+状态：**not\_formalizable\_now**；位置：`MolecularDynamics/Chapter05/Statements.lean:79;MolecularDynamics/Chapter05/Statements.lean:85`。
 
 ### CH05-046 · §5.3.2 · 未编号结论 · 印刷p.191 / PDF212
 
@@ -181,7 +181,7 @@ def surfaceAreaFormula_statement : Prop := ∀ d (g : E d → E (d+1)) (U : Set 
 
 差异、假设及缺口：需曲面面积/coarea/嵌入流形Riemannian volume form；可陈述未证明。
 
-状态：**not_formalizable_now**；位置：`MolecularDynamics/Chapter05/Statements.lean:89`。
+状态：**not\_formalizable\_now**；位置：`MolecularDynamics/Chapter05/Statements.lean:89`。
 
 ### CH05-050 · §5.3.2 · 未编号结论 · 印刷p.193 / PDF214
 
@@ -197,7 +197,7 @@ def microInvariant_statement : Prop := ∀ n (H : E n → ℝ) c (f : E n → E 
 
 差异、假设及缺口：体积与能量守恒并不足以已证曲面测度桥接；需coarea与流正则性。
 
-状态：**not_formalizable_now**；位置：`MolecularDynamics/Chapter05/Statements.lean:104`。
+状态：**not\_formalizable\_now**；位置：`MolecularDynamics/Chapter05/Statements.lean:104`。
 
 ### CH05-058 · §5.4.1 · 定义 · 印刷p.197 / PDF218
 
@@ -230,7 +230,7 @@ def ergodicTimeAverage_statement : Prop := ∀ n (μ : Measure (E n)) Φ,
 
 差异、假设及缺口：Mathlib有离散ergodic支持；缺本章连续流Birkhoff/积分时间平均桥接，不搭理论。
 
-状态：**not_formalizable_now**；位置：`MolecularDynamics/Chapter05/Statements.lean:115`。
+状态：**not\_formalizable\_now**；位置：`MolecularDynamics/Chapter05/Statements.lean:115`。
 
 ### CH05-063 · §5.4.1 · 未编号结论 · 印刷p.200 / PDF221
 
@@ -253,7 +253,7 @@ def kam_statement : Prop := ∀ n (H0 : E n → ℝ) (P : Phase n → ℝ) (I0 :
 
 差异、假设及缺口：原文只在double-pendulum例中定性引用；陈述为非退化Diophantine torus的持久化，不宣称例5.5参数已满足，需KAM/Nash-Moser与测度版。
 
-状态：**not_formalizable_now**；位置：`MolecularDynamics/Chapter05/Statements.lean:127`。
+状态：**not\_formalizable\_now**；位置：`MolecularDynamics/Chapter05/Statements.lean:127`。
 
 ### CH05-071 · §5.5 · 未编号结论 · 印刷p.205 / PDF226
 
@@ -278,7 +278,7 @@ def mixingCorrelationPrinted_statement : Prop := ∀ n (μ : Measure (E n)) Φ
 
 差异、假设及缺口：保留原k归一化；印刷极限遗漏k，附修正版。
 
-状态：**statement_only**；位置：`MolecularDynamics/Chapter05/Statements.lean:148;MolecularDynamics/Chapter05/Statements.lean:155`。
+状态：**statement\_only**；位置：`MolecularDynamics/Chapter05/Statements.lean:148;MolecularDynamics/Chapter05/Statements.lean:155`。
 
 ### CH05-078 · §5.6 · 未编号结论 · 印刷p.207 / PDF228
 
@@ -308,4 +308,4 @@ def backwardEulerLimit_statement : Prop := ∀ h : ℝ,h ≠ 0 →
 
 差异、假设及缺口：h非零；weak有界连续test与真实概率，非点wise密度收敛。
 
-状态：**statement_only**；位置：`MolecularDynamics/Chapter05/Statements.lean:164`。
+状态：**statement\_only**；位置：`MolecularDynamics/Chapter05/Statements.lean:164`。

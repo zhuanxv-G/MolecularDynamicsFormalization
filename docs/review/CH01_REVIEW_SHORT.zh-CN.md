@@ -1,13 +1,13 @@
 # 第1章导师快速审阅（15条）
 
-详表与全部差异见 CH01_REVIEW.zh-CN.md；这里挑出基础守恒、Theorem 1.1及最重要的覆盖边界。
+详表与全部差异见 CH01\_REVIEW.zh-CN.md；这里挑出基础守恒、Theorem 1.1及最重要的覆盖边界。
 
 | 状态 | 条数 |
 | --- | ---: |
 | proved | 158 |
-| statement_only | 35 |
+| statement\_only | 35 |
 | weakened | 13 |
-| not_formalizable_now | 1 |
+| not\_formalizable\_now | 1 |
 | 合计 | 207 |
 
 proved中有106条notation/定义、52条数学结论；完整章节交付包含未证明的忠实陈述。
@@ -218,7 +218,7 @@ def liouvilleArnold_statement : Prop :=
 
 差异及额外假设：已给局部辛action-angle及全环面运动的忠实Prop；补充紧、连通、满秩正则层等标准条件。固定Mathlib缺完整Liouville-Arnold、辛流形与action-angle坐标证明基础，本阶段不搭建。
 
-状态：**not_formalizable_now**。位置：`MolecularDynamics/Chapter01/Statements.lean:158`。
+状态：**not\_formalizable\_now**。位置：`MolecularDynamics/Chapter01/Statements.lean:158`。
 
 ### CH01-140 · 未编号结论 · 印刷p.32 / PDF55
 
@@ -240,7 +240,7 @@ def hartmanGrobmanLiteral_statement : Prop :=
 
 差异及额外假设：忠实保留smooth，通常定理仅homeomorphism；疑似原文过强，不能证明假命题；Prop陈述未证明。
 
-状态：**statement_only**。位置：`MolecularDynamics/Chapter01/Statements.lean:179`。
+状态：**statement\_only**。位置：`MolecularDynamics/Chapter01/Statements.lean:179`。
 
 ### CH01-145 · 定理 · 印刷p.32 / PDF55
 
@@ -276,7 +276,7 @@ def minimumHessianLiteral_statement : Prop :=
 
 差异及额外假设：字面正定通常应为半正定；x^4反例，不能静默增加非退化假设；Prop陈述未证明。
 
-状态：**statement_only**。位置：`MolecularDynamics/Chapter01/Statements.lean:219`。
+状态：**statement\_only**。位置：`MolecularDynamics/Chapter01/Statements.lean:219`。
 
 ### CH01-192 · 未编号结论 · 印刷p.44 / PDF67
 
@@ -307,7 +307,7 @@ def variationalEquation_statement : Prop :=
 
 ### CH01-196 · 定义 · 印刷p.45 / PDF68
 
-原文（忠实转述）：lambda_i=limsup_{t->infinity} (1/t) log sigma_i(W(t)).
+原文（忠实转述）：lambda\_i=limsup_{t->infinity} (1/t) log sigma\_i(W(t)).
 
 ```lean
 variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E] [CompleteSpace E]

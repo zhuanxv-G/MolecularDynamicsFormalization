@@ -3,7 +3,7 @@
   "id": "lean-2",
   "kind": "heartbeat",
   "name": "lean",
-  "prompt": "按34号继续全书汇总。\n先核对AGENTS、CURRENT_STATE顶部和WORK_LOG最新，从最近已验证检查点接续；先 git status，复用已通过证据。\n唯一任务为34号全书成果汇总，按第6节完成标准停止；不改Lean和各章文档正文，不送网站、不补证明、不去重。\n\n第34号全文见docs/handoff/USER_INSTRUCTION_34.zh-CN.md。生成统一统计、导师汇报、疑误/缺口/冗余清单、固定标签导航和工程外离线包；提交push到main并推送book-ch01-08-summary。已完成事项不重复。\n\n每次唤醒先读上述入口及WORK_LOG最新，再用wait_threads(timeoutMs:0)核对原执行目标。只做状态核对与授权额度恢复接续，不写工程共享文件、不运行Lean/构建/Git、不操作或轮询网站。执行目标沿用原resume_state.json记录，不改变target或模型设置。运行或已有排队消息时保持安静，不发送不打断。只有最新未完成轮明确usage limit/quota/rate limit或可信检查点明确记此次额度中断时，才用get_usage_limits检查；额度可用、任务未完成且原执行目标仍停止时，再核对状态，然后发送前3行完整接续消息。非额度故障首次通知，不擅自重启；notLoaded不能认定额度中断。禁止购买、重置、切换账号或模型。\n\n沿用C:\\Users\\ustc\\.codex\\automations\\lean\\resume_state.json既存去重路径和记录，不新建清空：每个失败轮最多成功发送一次，两次自动发送至少相隔30分钟；同章同检查点连续3次无进展中断则停发并通知。发送含糊时先核对消息/新一轮，不盲目重发；发送后一次compact snapshot确认运行，未端到端实测不声称恢复成功。保持ACTIVE、原15分钟和原target。只在meaningful change、确认恢复、完成、新失败或必须用户行动时通知；其余保持安静。\n\n停止条件为34号第6节：BOOK_STATS自检全部通过，导师正文工程术语检查0；导航页、book-ch01-08-summary标签、离线zip已生成且坏链接0；正式库0 sorry/0 axiom，所有已跟踪Lean字节与f4ea1f7b一致；汇总文件提交push到main且标签已推送，CURRENT_STATE顶部为“全书汇总已生成，等待用户审阅后交师兄”。达到后停止发送，ACTIVE配置保留，然后停止。",
+  "prompt": "按35号修复文档公式渲染。\n先核对AGENTS、CURRENT_STATE顶部和WORK_LOG最新，从最近已验证检查点接续；先 git status，复用已通过证据。\n唯一任务为35号文档公式渲染修复，按第6节完成标准停止；不改任何Lean文件，不改数学内容或标题，不送网站、不补证明。\n\n第35号全文见docs/handoff/USER_INSTRUCTION_35.zh-CN.md。完成自检8项、第8章符号表和待确认报告、导航和离线包、提交push main并推送book-ch01-08-render；保留两个旧标签。已完成事项不重复。\n\n每次唤醒先读上述入口及WORK_LOG最新，再用wait_threads(timeoutMs:0)核对原执行目标。只做状态核对与授权额度恢复接续，不写工程共享文件、不运行Lean/构建/Git、不操作或轮询网站。执行目标沿用原resume_state.json记录，不改变target或模型设置。运行或已有排队消息时保持安静，不发送不打断。只有最新未完成轮明确usage limit/quota/rate limit或可信检查点明确记此次额度中断时，才用get_usage_limits检查；额度可用、任务未完成且原执行目标仍停止时，再核对状态，然后发送前3行完整接续消息。非额度故障首次通知，不擅自重启；notLoaded不能认定额度中断。禁止购买、重置、切换账号或模型。\n\n沿用C:\\Users\\ustc\\.codex\\automations\\lean\\resume_state.json既存去重路径和记录，不新建清空：每个失败轮最多成功发送一次，两次自动发送至少相隔30分钟；同章同检查点连续3次无进展中断则停发并通知。发送含糊时先核对消息/新一轮，不盲目重发；发送后一次compact snapshot确认运行，未端到端实测不声称恢复成功。保持ACTIVE、原15分钟和原target。只在meaningful change、确认恢复、完成、新失败或必须用户行动时通知；其余保持安静。\n\n停止条件为35号第6节：自检8项全部通过，第8章[RENDER?]与符号表写入BOOK_RENDER_FIX；正式库0 sorry/0 axiom，所有已跟踪Lean字节与de3b2539一致；提交push main及新标签已推送，CURRENT_STATE顶部为“审阅文档公式渲染已修复，等待用户抽查后交师兄”。达到后停止发送，ACTIVE配置保留，然后停止。",
   "status": "ACTIVE",
   "rrule": "FREQ=MINUTELY;INTERVAL=15",
   "target_thread_id": "01a10bc0-bc8d-7043-8df9-21a6b0bde09a",
@@ -11,5 +11,5 @@
   "updated_at": 1792487761794,
   "dedup_rules_preserved": true,
   "automatic_resume_end_to_end": "NOT_TESTED",
-  "execution_note": "原lean及lean-2在应用不存在，更新明确返回不存在后，按保存原name/target/频率恢复；原resume_state.json不修改。34号第6节为停止条件。"
+  "execution_note": "35号接管时应用返回旧lean-2不存在；已用同名、原target、ACTIVE/15分钟和原去重机制恢复，应用返回lean-2创建成功。原去重记录未清空；自动接续端到端未实测。35号第6节为停止条件。"
 }

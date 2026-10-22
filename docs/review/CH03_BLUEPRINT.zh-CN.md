@@ -1,7 +1,7 @@
 # 第3章 Lean Blueprint 本地审阅材料
 
 149条；网站PASS 106，本地按意见修复10条（未再送网站），合并勘误30项。
-统计与证明状态见[导师摘要](CH03_SUMMARY_FOR_MENTOR.zh-CN.md)，原书问题见[勘误清单](CH03_ERRATA.zh-CN.md)。网站原返回与本地修复结论分开保留；完整检查证据：blueprint/closeout24/ch03/full/CHECK_REPORT.json。
+统计与证明状态见[导师摘要](CH03_SUMMARY_FOR_MENTOR.zh-CN.md)，原书问题见[勘误清单](CH03_ERRATA.zh-CN.md)。网站原返回与本地修复结论分开保留；完整检查证据：blueprint/closeout24/ch03/full/CHECK\_REPORT.json。
 
 ## 1. MD-3-ModifiedConstruction · unnumbered_claim · 印刷p.97 / PDFp.119
 
@@ -47,14 +47,14 @@ theorem modifiedConstruction :
 
 | 原文成分 | Lean对应 | 说明 |
 |---|---|---|
-| 当前覆盖范围 | 本条所引原句及展示公式；单个记号归入context_notation。 | 仅承诺明确列出的数学内容 |
+| 当前覆盖范围 | 本条所引原句及展示公式；单个记号归入context\_notation。 | 仅承诺明确列出的数学内容 |
 | 对象、量词、假设和定义/结论 | `MD.Ch03.smoothSymplecticData`；`MD.Ch03.modifiedConstruction_statement24`；`MD.Ch03.modifiedConstruction` | 完整代码见第4段；两个版本独立列出 |
-| 技术资格或版本解释 | 近恒等、光滑、阶r≥1用smoothSymplecticData实际定义表达：开放凸D、紧凸B⊆D、H及(h,z)↦G_h(z)无限可微、G₀=id、逐h辛、实际原始ODE流和局部阶。 | [EXTRA] |
+| 技术资格或版本解释 | 近恒等、光滑、阶r≥1用smoothSymplecticData实际定义表达：开放凸D、紧凸B⊆D、H及(h,z)↦G\_h(z)无限可微、G₀=id、逐h辛、实际原始ODE流和局部阶。 | [EXTRA] |
 | 技术资格或版本解释 | 按任意有限截断匹配解释“in an approximate sense”；不将形式无限级数当实际收敛解，不将finiteMatching结论作前提。 | [EXTRA] |
 | 技术资格或版本解释 | [EXTRA] EAUDIT01补原首句Hamiltonian流辛性为独立完整结论，与原近恒等辛映射修正Hamiltonian有限匹配合取；两个真实项目命题全部量词展开供审校，未把流辛性作构造前提。 | [EXTRA] |
 | 技术资格或版本解释 | [EXTRA] 正式库冻结；在本Blueprint同名局部定义中把H、联合G的正则性改为scoped ∞，构造结论Hj也使用∞。主定理改接该本地完整命题，保留Hamilton流辛性合取及∃Hj后∀k量词。未改冻结库，未把解析充分条件当作C∞证明。 | [EXTRA] |
 
-[EXTRA] 近恒等、光滑、阶r≥1用smoothSymplecticData实际定义表达：开放凸D、紧凸B⊆D、H及(h,z)↦G_h(z)无限可微、G₀=id、逐h辛、实际原始ODE流和局部阶。；按任意有限截断匹配解释“in an approximate sense”；不将形式无限级数当实际收敛解，不将finiteMatching结论作前提。；[EXTRA] EAUDIT01补原首句Hamiltonian流辛性为独立完整结论，与原近恒等辛映射修正Hamiltonian有限匹配合取；两个真实项目命题全部量词展开供审校，未把流辛性作构造前提。；[EXTRA] 正式库冻结；在本Blueprint同名局部定义中把H、联合G的正则性改为scoped ∞，构造结论Hj也使用∞。主定理改接该本地完整命题，保留Hamilton流辛性合取及∃Hj后∀k量词。未改冻结库，未把解析充分条件当作C∞证明。
+[EXTRA] 近恒等、光滑、阶r≥1用smoothSymplecticData实际定义表达：开放凸D、紧凸B⊆D、H及(h,z)↦G\_h(z)无限可微、G₀=id、逐h辛、实际原始ODE流和局部阶。；按任意有限截断匹配解释“in an approximate sense”；不将形式无限级数当实际收敛解，不将finiteMatching结论作前提。；[EXTRA] EAUDIT01补原首句Hamiltonian流辛性为独立完整结论，与原近恒等辛映射修正Hamiltonian有限匹配合取；两个真实项目命题全部量词展开供审校，未把流辛性作构造前提。；[EXTRA] 正式库冻结；在本Blueprint同名局部定义中把H、联合G的正则性改为scoped ∞，构造结论Hj也使用∞。主定理改接该本地完整命题，保留Hamilton流辛性合取及∃Hj后∀k量词。未改冻结库，未把解析充分条件当作C∞证明。
 
 ### 6. 审计结论
 
@@ -73,7 +73,12 @@ incomplete；`MD.Ch03.smoothSymplecticData`：定义；`MD.Ch03.modifiedConstruc
 ### 2. 原文陈述
 
 > Let us begin with an illustrative example. Consider the harmonic oscillator with frequency $\Omega$ which has Hamiltonian $H(q,p)=p^2/2+\Omega^2q^2/2$, and consider the adjoint symplectic Euler method
-> \[Q=q+hp,\qquad P=p-h\Omega^2Q,\]
+
+$$
+Q=q+hp,\qquad P=p-h\Omega^2Q,
+$$
+
+
 
 ### 3. 原文证明
 
@@ -94,7 +99,7 @@ def oscillatorAdjointEuler (Ω h : ℝ) (z : ℝ × ℝ) : ℝ × ℝ :=
 
 | 原文成分 | Lean对应 | 说明 |
 |---|---|---|
-| 当前覆盖范围 | 本条所引原句及展示公式；单个记号归入context_notation。 | 仅承诺明确列出的数学内容 |
+| 当前覆盖范围 | 本条所引原句及展示公式；单个记号归入context\_notation。 | 仅承诺明确列出的数学内容 |
 | 对象、量词、假设和定义/结论 | `MD.Ch03.oscillatorAdjointEuler` | 完整代码见第4段；两个版本独立列出 |
 
 [EXTRA] 无新增技术资格。
@@ -104,7 +109,7 @@ def oscillatorAdjointEuler (Ω h : ℝ) (z : ℝ × ℝ) : ℝ × ℝ :=
 本地限定解释与原文问题见上列范围及对照；逐声明编译、公理结果见第7段。
 
 网站：网站PASS（绑定版本 433a13ca6407）。
-网站原返回（对应其审校版本）：PASS；已展开 Ch03.lean:30–32 的实际定义：z=(q,p)，局部变量 q 保存更新后 Q=q+hp，返回 (Q,p−hΩ²Q)，第二分量使用新位置而非旧位置，忠实于 adjoint symplectic Euler。Ch03_deps.txt 的 MolecularDynamics/Chapter03/ReviewDefinitions.lean:3530–3532 的正式库同名定义亦为相同映射，没有隐藏条件或符号差异。对象、参数与两条更新均一致。本条无 [EXTRA]、[ERRATUM?]；完整 def 无 sorry。
+网站原返回（对应其审校版本）：PASS；已展开 Ch03.lean:30–32 的实际定义：z=(q,p)，局部变量 q 保存更新后 Q=q+hp，返回 (Q,p−hΩ²Q)，第二分量使用新位置而非旧位置，忠实于 adjoint symplectic Euler。Ch03\_deps.txt 的 MolecularDynamics/Chapter03/ReviewDefinitions.lean:3530–3532 的正式库同名定义亦为相同映射，没有隐藏条件或符号差异。对象、参数与两条更新均一致。本条无 [EXTRA]、[ERRATUM?]；完整 def 无 sorry。
 
 ### 7. 状态与证明位置
 
@@ -116,7 +121,12 @@ self-contained；`MD.Ch03.oscillatorAdjointEuler`：定义。
 ### 2. 原文陈述
 
 > However, if we modify the Hamiltonian from $H(q,p)=p^2/2+\Omega^2q^2/2$ to
-> \[\widetilde H(q,p)=\frac{p^2+h\Omega^2pq+\Omega^2q^2}{2},\tag{3.1}\]
+
+$$
+\widetilde H(q,p)=\frac{p^2+h\Omega^2pq+\Omega^2q^2}{2},\tag{3.1}
+$$
+
+
 
 ### 3. 原文证明
 
@@ -135,7 +145,7 @@ def oscillatorShadow (Ω h : ℝ) (z : ℝ × ℝ) : ℝ := (z.2^2+h*Ω^2*z.2*z.
 
 | 原文成分 | Lean对应 | 说明 |
 |---|---|---|
-| 当前覆盖范围 | 本条所引原句及展示公式；单个记号归入context_notation。 | 仅承诺明确列出的数学内容 |
+| 当前覆盖范围 | 本条所引原句及展示公式；单个记号归入context\_notation。 | 仅承诺明确列出的数学内容 |
 | 对象、量词、假设和定义/结论 | `MD.Ch03.oscillatorShadow` | 完整代码见第4段；两个版本独立列出 |
 
 [EXTRA] 无新增技术资格。
@@ -145,7 +155,7 @@ def oscillatorShadow (Ω h : ℝ) (z : ℝ × ℝ) : ℝ := (z.2^2+h*Ω^2*z.2*z.
 本地限定解释与原文问题见上列范围及对照；逐声明编译、公理结果见第7段。
 
 网站：网站PASS（绑定版本 433a13ca6407）。
-网站原返回（对应其审校版本）：PASS；Ch03.lean:35 将 z.1=q、z.2=p 代入后，实际定义是 (p²+hΩ²pq+Ω²q²)/2，交叉项为正号，分母覆盖整个分子，与原页式(3.1)一致。已展开 Ch03_deps.txt 的 MolecularDynamics/Chapter03/ReviewDefinitions.lean:3534，正式库同名定义相同；没有把影子能量替换成原始 oscillatorEnergy。这里定义的是依赖 h 的实值二次型，不宣称所有步长下均正定。本条无 [EXTRA]、[ERRATUM?]；完整 def 无 sorry。
+网站原返回（对应其审校版本）：PASS；Ch03.lean:35 将 z.1=q、z.2=p 代入后，实际定义是 (p²+hΩ²pq+Ω²q²)/2，交叉项为正号，分母覆盖整个分子，与原页式(3.1)一致。已展开 Ch03\_deps.txt 的 MolecularDynamics/Chapter03/ReviewDefinitions.lean:3534，正式库同名定义相同；没有把影子能量替换成原始 oscillatorEnergy。这里定义的是依赖 h 的实值二次型，不宣称所有步长下均正定。本条无 [EXTRA]、[ERRATUM?]；完整 def 无 sorry。
 
 ### 7. 状态与证明位置
 
@@ -205,7 +215,7 @@ theorem oscillatorEnergyFailure : ∀ Ω h : ℝ, 0 < Ω → h ≠ 0 →
 
 | 原文成分 | Lean对应 | 说明 |
 |---|---|---|
-| 当前覆盖范围 | 本条所引原句及展示公式；单个记号归入context_notation。 | 仅承诺明确列出的数学内容 |
+| 当前覆盖范围 | 本条所引原句及展示公式；单个记号归入context\_notation。 | 仅承诺明确列出的数学内容 |
 | 对象、量词、假设和定义/结论 | `MD.Ch03.oscillatorEnergyFailure` | 完整代码见第4段；两个版本独立列出 |
 | 技术资格或版本解释 | [EXTRA] EAUDIT01对每个Ω>0和h≠0保存完整ΔH恒等、能量不变的两条例外直线和一般不守恒见证；精确代数为原typical的形式化展开，不回填成教材原句。 | [EXTRA] |
 
@@ -231,8 +241,12 @@ self-contained；`MD.Ch03.oscillatorEnergyFailure`：已证。
 
 ### 3. 原文证明
 
-> \[\begin{aligned}\widetilde H(Q,P)&=\frac{P^2}{2}+\frac{h\Omega^2PQ}{2}+\frac{\Omega^2Q^2}{2}\\
-> &=\frac12p^2-\frac{h\Omega^2}{2}pQ+\frac{\Omega^2Q^2}{2}\\&=\widetilde H(q,p)\end{aligned}\]
+
+$$
+\begin{aligned}\widetilde H(Q,P)&=\frac{P^2}{2}+\frac{h\Omega^2PQ}{2}+\frac{\Omega^2Q^2}{2}\\ &=\frac12p^2-\frac{h\Omega^2}{2}pQ+\frac{\Omega^2Q^2}{2}\\&=\widetilde H(q,p)\end{aligned}
+$$
+
+
 原书计算按原页转录。
 
 ### 4. 完整当前Lean（原文与修正版独立列出）
@@ -249,7 +263,7 @@ theorem oscillatorShadowInvariant :
 
 | 原文成分 | Lean对应 | 说明 |
 |---|---|---|
-| 当前覆盖范围 | 本条所引原句及展示公式；单个记号归入context_notation。 | 仅承诺明确列出的数学内容 |
+| 当前覆盖范围 | 本条所引原句及展示公式；单个记号归入context\_notation。 | 仅承诺明确列出的数学内容 |
 | 对象、量词、假设和定义/结论 | `MD.Ch03.oscillatorShadowInvariant` | 完整代码见第4段；两个版本独立列出 |
 
 [EXTRA] 无新增技术资格。
@@ -259,7 +273,7 @@ theorem oscillatorShadowInvariant :
 本地限定解释与原文问题见上列范围及对照；逐声明编译、公理结果见第7段。
 
 网站：网站PASS（EAUDIT复审）。
-网站原返回（对应其审校版本）：PASS；∀实数 Ω,h 及 z∈ℝ²，项目 shadow 恰为原式 (p²+hΩ²pq+Ω²q²)/2，项目映射恰为 adjoint symplectic Euler。代入后交叉项消去，得到原值；无需 h 小、Ω>0 或正定性。声明只谈守恒，没有把任意步长下的等值线都说成椭圆。proof_latex 的三行与原页对应。
+网站原返回（对应其审校版本）：PASS；∀实数 Ω,h 及 z∈ℝ²，项目 shadow 恰为原式 (p²+hΩ²pq+Ω²q²)/2，项目映射恰为 adjoint symplectic Euler。代入后交叉项消去，得到原值；无需 h 小、Ω>0 或正定性。声明只谈守恒，没有把任意步长下的等值线都说成椭圆。proof\_latex 的三行与原页对应。
 
 ### 7. 状态与证明位置
 
@@ -271,9 +285,19 @@ checked+documented priors；`MD.Ch03.oscillatorShadowInvariant`：已证。
 ### 2. 原文陈述
 
 > Recall that the graph of
-> \[\frac{x^2}{a^2}+\frac{y^2}{b^2}=1\]
+
+$$
+\frac{x^2}{a^2}+\frac{y^2}{b^2}=1
+$$
+
+
 > is an ellipse with major and minor axes aligned to the coordinate axes. If $\epsilon$ is a small value, then
-> \[\frac{x^2}{a^2}+\frac{y^2}{b^2}+\epsilon xy=1\]
+
+$$
+\frac{x^2}{a^2}+\frac{y^2}{b^2}+\epsilon xy=1
+$$
+
+
 > will be a slightly rotated ellipse (with slightly different major and minor axes). Thus we can think of the energy surface of the numerical method as being a small perturbation of the ellipse which represents the ‘energy surface’ (energy curve, in this case) of the harmonic oscillator itself.
 
 ### 3. 原文证明
@@ -343,7 +367,7 @@ theorem shadowEllipses_corrected :
 本地限定解释与原文问题见上列范围及对照；逐声明编译、公理结果见第7段。
 
 网站：原书疑误/资格待导师；原文与修正版并列。
-网站原返回（对应其审校版本）：NEEDS_HUMAN；所有相关自定义对象均已在依赖中找到并展开，没有缺失定义。Ch03.lean:52–64 的第一项是 ∀a,b≠0 后 ∃δ>0、∃θ,A,B（均为 ε 的函数），A→|a|、B→|b|，对每个 |ε|<δ 有正半轴和对全部 x,y 成立的实际正交旋转恒等式，确实覆盖一般椭圆及半轴长度的小扰动，不是仅振子特例。第二项展开 oscillatorShadow 得矩阵 [[Ω²,hΩ²/2],[hΩ²/2,1]]；[EXTRA] Ω>0 是正频率约定（数学上 Ω≠0 已足够），|hΩ|<2 正是正定性的必要充分步长条件，合理且未假设结论。L 是真实实线性等价，表达正定二次型标准化。对 E>0，令 x=q、y=p、a=√(2E)/Ω、b=√(2E)、ε=hΩ²/(2E)，一般合取项即给出影子能量水平集和 h→0 的形状扰动，此联系能从现有定义推得，不能据“未统一”报材料不足。真正需要人工裁定的是原书“slightly rotated”含义：签名只断言旋转存在，未要求 θ(ε)→0；当 a²=b² 时原曲线是圆，原始主轴无唯一方向，而微小交叉项选择的轴相对于固定坐标轴可以是45°。需确认作者仅指曲线形状接近，还是在非圆条件下还要求小角度变化。原书未明确，这个原文问题是本条 NEEDS_HUMAN 的唯一原因。本条没有 [ERRATUM?] 标注，疑点已另行记录；有 sorry，只表示证明未完成，与上述签名审计分开判断。
+网站原返回（对应其审校版本）：NEEDS\_HUMAN；所有相关自定义对象均已在依赖中找到并展开，没有缺失定义。Ch03.lean:52–64 的第一项是 ∀a,b≠0 后 ∃δ>0、∃θ,A,B（均为 ε 的函数），A→|a|、B→|b|，对每个 |ε|<δ 有正半轴和对全部 x,y 成立的实际正交旋转恒等式，确实覆盖一般椭圆及半轴长度的小扰动，不是仅振子特例。第二项展开 oscillatorShadow 得矩阵 [[Ω²,hΩ²/2],[hΩ²/2,1]]；[EXTRA] Ω>0 是正频率约定（数学上 Ω≠0 已足够），|hΩ|<2 正是正定性的必要充分步长条件，合理且未假设结论。L 是真实实线性等价，表达正定二次型标准化。对 E>0，令 x=q、y=p、a=√(2E)/Ω、b=√(2E)、ε=hΩ²/(2E)，一般合取项即给出影子能量水平集和 h→0 的形状扰动，此联系能从现有定义推得，不能据“未统一”报材料不足。真正需要人工裁定的是原书“slightly rotated”含义：签名只断言旋转存在，未要求 θ(ε)→0；当 a²=b² 时原曲线是圆，原始主轴无唯一方向，而微小交叉项选择的轴相对于固定坐标轴可以是45°。需确认作者仅指曲线形状接近，还是在非圆条件下还要求小角度变化。原书未明确，这个原文问题是本条 NEEDS\_HUMAN 的唯一原因。本条没有 [ERRATUM?] 标注，疑点已另行记录；有 sorry，只表示证明未完成，与上述签名审计分开判断。
 
 ### 7. 状态与证明位置
 
@@ -394,7 +418,7 @@ theorem eulerOscillatorGrowth :
 
 | 原文成分 | Lean对应 | 说明 |
 |---|---|---|
-| 当前覆盖范围 | 本条所引原句及展示公式；单个记号归入context_notation。 | 仅承诺明确列出的数学内容 |
+| 当前覆盖范围 | 本条所引原句及展示公式；单个记号归入context\_notation。 | 仅承诺明确列出的数学内容 |
 | 对象、量词、假设和定义/结论 | `MD.Ch03.eulerOscillatorGrowth` | 完整代码见第4段；两个版本独立列出 |
 | 技术资格或版本解释 | Ω≠0、固定h≠0且初始能量>0，排除平衡点和零步长。 | [EXTRA] |
 
@@ -405,7 +429,7 @@ theorem eulerOscillatorGrowth :
 本地限定解释与原文问题见上列范围及对照；逐声明编译、公理结果见第7段。
 
 网站：网站PASS（绑定版本 433a13ca6407）。
-网站原返回（对应其审校版本）：PASS；已展开 Ch03_deps.txt 的 ReviewDefinitions.lean:3533、3535：EΩ=(p²+Ω²q²)/2，显式 Euler 的第二分量使用旧位置 q。定义给出 EΩ(new)=(1+h²Ω²)EΩ(old)，ν 次迭代即 (1+h²Ω²)^ν EΩ(z)。Ch03.lean:68–88 的全称参数、Function.iterate 和 Tendsto … atTop atTop 精确表达固定步长下能量随步数趋于正无穷，覆盖“grows without bound”。[EXTRA] Ω≠0、h≠0、初始能量>0 必要且合理：Ω=0 时 p 不变而原能量恒定，h=0 时映射恒等，初能为0时平衡点能量始终为0。允许负频率参数或负步长也成立，因为放大因子只依赖平方；通常源语境取正频率和正步长。没有 [ERRATUM?]；现证明无 sorry。本次只读检查，没有编译或补证明。
+网站原返回（对应其审校版本）：PASS；已展开 Ch03\_deps.txt 的 ReviewDefinitions.lean:3533、3535：EΩ=(p²+Ω²q²)/2，显式 Euler 的第二分量使用旧位置 q。定义给出 EΩ(new)=(1+h²Ω²)EΩ(old)，ν 次迭代即 (1+h²Ω²)^ν EΩ(z)。Ch03.lean:68–88 的全称参数、Function.iterate 和 Tendsto … atTop atTop 精确表达固定步长下能量随步数趋于正无穷，覆盖“grows without bound”。[EXTRA] Ω≠0、h≠0、初始能量>0 必要且合理：Ω=0 时 p 不变而原能量恒定，h=0 时映射恒等，初能为0时平衡点能量始终为0。允许负频率参数或负步长也成立，因为放大因子只依赖平方；通常源语境取正频率和正步长。没有 [ERRATUM?]；现证明无 sorry。本次只读检查，没有编译或补证明。
 
 ### 7. 状态与证明位置
 
@@ -417,7 +441,12 @@ self-contained；`MD.Ch03.eulerOscillatorGrowth`：已证。
 ### 2. 原文陈述
 
 > Now consider the more general Hamiltonian setting. Let $\mathcal G_h$ be a $r$th order symplectic integrator, $r\ge1$. Suppose that it is the flow map of a certain Hamiltonian system, with Hamiltonian $\widetilde H_h$. If the method order is $r$, we may expect this Hamiltonian to be a $\mathcal O(h^r)$ approximation of $H$, thus we posit an expansion of the form
-> \[\widetilde H_h=H+h^rH^{(r)}+h^{r+1}H^{(r+1)}+\cdots\]
+
+$$
+\widetilde H_h=H+h^rH^{(r)}+h^{r+1}H^{(r+1)}+\cdots
+$$
+
+
 
 ### 3. 原文证明
 
@@ -439,7 +468,7 @@ def formalHamiltonian {n : ℕ} (H : SymplecticCoordinates n → ℝ)
 
 | 原文成分 | Lean对应 | 说明 |
 |---|---|---|
-| 当前覆盖范围 | 本条所引原句及展示公式；单个记号归入context_notation。 | 仅承诺明确列出的数学内容 |
+| 当前覆盖范围 | 本条所引原句及展示公式；单个记号归入context\_notation。 | 仅承诺明确列出的数学内容 |
 | 对象、量词、假设和定义/结论 | `MD.Ch03.formalHamiltonian` | 完整代码见第4段；两个版本独立列出 |
 | 技术资格或版本解释 | [EXTRA] EAUDIT01显式1≤r，排除r=0遗漏Hr0的错义；仍是真实逐系数形式级数，不声称无限收敛或实际流嵌入。 | [EXTRA] |
 
@@ -462,7 +491,12 @@ self-contained；`MD.Ch03.formalHamiltonian`：定义。
 ### 2. 原文陈述
 
 > To determine the terms $H^{(r)},H^{(r+1)},\ldots$, we write the differential equations on $\widetilde H_h$:
-> \[\dot{\boldsymbol z}=J\nabla H+h^rJ\nabla H^{(r)}+h^{r+1}J\nabla H^{(r+1)}+\cdots\]
+
+$$
+\dot{\boldsymbol z}=J\nabla H+h^rJ\nabla H^{(r)}+h^{r+1}J\nabla H^{(r+1)}+\cdots
+$$
+
+
 
 ### 3. 原文证明
 
@@ -487,7 +521,7 @@ def formalHamiltonianField {n : ℕ} (H : SymplecticCoordinates n → ℝ)
 
 | 原文成分 | Lean对应 | 说明 |
 |---|---|---|
-| 当前覆盖范围 | 本条所引原句及展示公式；单个记号归入context_notation。 | 仅承诺明确列出的数学内容 |
+| 当前覆盖范围 | 本条所引原句及展示公式；单个记号归入context\_notation。 | 仅承诺明确列出的数学内容 |
 | 对象、量词、假设和定义/结论 | `MD.Ch03.formalHamiltonianField` | 完整代码见第4段；两个版本独立列出 |
 | 技术资格或版本解释 | [EXTRA] EAUDIT01显式1≤r及H和全部Hj全域C∞，保证真实Fréchet梯度；原平滑逐阶形式展开资格，不预置匹配结论。 | [EXTRA] |
 
@@ -510,7 +544,12 @@ self-contained；`MD.Ch03.formalHamiltonianField`：定义。
 ### 2. 原文陈述
 
 > The right hand side suggests a shorthand notation. If we define the Lie derivative $\mathcal L_f$ by
-> \[\mathcal L_f\phi=f\cdot\nabla\phi,\]
+
+$$
+\mathcal L_f\phi=f\cdot\nabla\phi,
+$$
+
+
 
 ### 3. 原文证明
 
@@ -530,7 +569,7 @@ noncomputable def textbookLieDerivative (f : E → E) (φ : E → ℝ) (z : E) :
 
 | 原文成分 | Lean对应 | 说明 |
 |---|---|---|
-| 当前覆盖范围 | 本条所引原句及展示公式；单个记号归入context_notation。 | 仅承诺明确列出的数学内容 |
+| 当前覆盖范围 | 本条所引原句及展示公式；单个记号归入context\_notation。 | 仅承诺明确列出的数学内容 |
 | 对象、量词、假设和定义/结论 | `MD.Ch03.textbookLieDerivative` | 完整代码见第4段；两个版本独立列出 |
 
 [EXTRA] 无新增技术资格。
@@ -540,7 +579,7 @@ noncomputable def textbookLieDerivative (f : E → E) (φ : E → ℝ) (z : E) :
 本地限定解释与原文问题见上列范围及对照；逐声明编译、公理结果见第7段。
 
 网站：网站PASS（绑定版本 433a13ca6407）。
-网站原返回（对应其审校版本）：PASS；PASS。已展开 Ch03.lean 中 MD.Ch03.textbookLieDerivative，以及 Ch03_deps.txt 的 -- FILE: MolecularDynamics/Chapter03/LiePoisson.lean 中 MolecularDynamics.textbookLieDerivative；二者均为 (fderiv ℝ φ z) (f z)，即 Dφ(z)[f(z)]。E 的实际约束为实赋范向量空间，φ:E→ℝ、f:E→E，z 为评价点；取 E=R^m 且 φ 光滑时恰为 ∇φ(z)·f(z)，方向、标量值和作用次序均正确。推广至一般 E 和将 fderiv 全函数化不改变原文光滑情形；不据此宣称不可微点存在经典导数。没有额外假设或 [ERRATUM?]。证明状态独立记录：这是直接给出函数体的 def，不是含 sorry 的待证定理；未运行 Lean 编译。
+网站原返回（对应其审校版本）：PASS；PASS。已展开 Ch03.lean 中 MD.Ch03.textbookLieDerivative，以及 Ch03\_deps.txt 的 -- FILE: MolecularDynamics/Chapter03/LiePoisson.lean 中 MolecularDynamics.textbookLieDerivative；二者均为 (fderiv ℝ φ z) (f z)，即 Dφ(z)[f(z)]。E 的实际约束为实赋范向量空间，φ:E→ℝ、f:E→E，z 为评价点；取 E=R^m 且 φ 光滑时恰为 ∇φ(z)·f(z)，方向、标量值和作用次序均正确。推广至一般 E 和将 fderiv 全函数化不改变原文光滑情形；不据此宣称不可微点存在经典导数。没有额外假设或 [ERRATUM?]。证明状态独立记录：这是直接给出函数体的 def，不是含 sorry 的待证定理；未运行 Lean 编译。
 
 ### 7. 状态与证明位置
 
@@ -552,9 +591,19 @@ self-contained；`MD.Ch03.textbookLieDerivative`：定义。
 ### 2. 原文陈述
 
 > At any point $\boldsymbol z=\boldsymbol\zeta$ in phase space assume that there is a unique solution $\boldsymbol z(t,\boldsymbol\zeta)$ such that $\dot{\boldsymbol z}(t)=f(\boldsymbol z(t))$, $\boldsymbol z(0)=\boldsymbol\zeta$ that is globally defined for all $t$. Now differentiate $\hat\phi(t)=\phi(\boldsymbol z(t))$ with respect to time, using the chain rule, to see how $\phi(\boldsymbol z(t))$ is changing as $t$ is varied:
-> \[\left.\frac{\mathrm d}{\mathrm dt}\hat\phi\right|_{t=0}=\left[\sum_{i=1}^m\frac{\partial\phi}{\partial z_i}\dot z_i\right]_{\boldsymbol z=\boldsymbol\zeta}=\nabla\phi(\boldsymbol\zeta)\cdot f(\boldsymbol\zeta).\]
+
+$$
+\left.\frac{\mathrm d}{\mathrm dt}\hat\phi\right|_{t=0}=\left[\sum_{i=1}^m\frac{\partial\phi}{\partial z_i}\dot z_i\right]_{\boldsymbol z=\boldsymbol\zeta}=\nabla\phi(\boldsymbol\zeta)\cdot f(\boldsymbol\zeta).
+$$
+
+
 > and note that the origin of time is irrelevant, then the equation for the evolution of $\phi$ could be written
-> \[\frac{\mathrm d}{\mathrm dt}\hat\phi=(\mathcal L_f\phi)(\boldsymbol z).\tag{3.2}\]
+
+$$
+\frac{\mathrm d}{\mathrm dt}\hat\phi=(\mathcal L_f\phi)(\boldsymbol z).\tag{3.2}
+$$
+
+
 
 ### 3. 原文证明
 
@@ -577,7 +626,7 @@ theorem observableDerivative (f : E → E) (φ : E → ℝ)
 
 | 原文成分 | Lean对应 | 说明 |
 |---|---|---|
-| 当前覆盖范围 | 本条所引原句及展示公式；单个记号归入context_notation。 | 仅承诺明确列出的数学内容 |
+| 当前覆盖范围 | 本条所引原句及展示公式；单个记号归入context\_notation。 | 仅承诺明确列出的数学内容 |
 | 对象、量词、假设和定义/结论 | `MD.Ch03.observableDerivative` | 完整代码见第4段；两个版本独立列出 |
 
 [EXTRA] 无新增技术资格。
@@ -599,7 +648,12 @@ checked+documented priors；`MD.Ch03.observableDerivative`：已证。
 ### 2. 原文陈述
 
 > Similarly,
-> \[\frac{\mathrm d^2}{\mathrm dt^2}\phi(\boldsymbol z(t))=(\mathcal L_f^2\phi)(\boldsymbol z(t)).\]
+
+$$
+\frac{\mathrm d^2}{\mathrm dt^2}\phi(\boldsymbol z(t))=(\mathcal L_f^2\phi)(\boldsymbol z(t)).
+$$
+
+
 
 ### 3. 原文证明
 
@@ -623,7 +677,7 @@ theorem observableSecondDerivative (f : E → E) (φ : E → ℝ)
 
 | 原文成分 | Lean对应 | 说明 |
 |---|---|---|
-| 当前覆盖范围 | 本条所引原句及展示公式；单个记号归入context_notation。 | 仅承诺明确列出的数学内容 |
+| 当前覆盖范围 | 本条所引原句及展示公式；单个记号归入context\_notation。 | 仅承诺明确列出的数学内容 |
 | 对象、量词、假设和定义/结论 | `MD.Ch03.observableSecondDerivative` | 完整代码见第4段；两个版本独立列出 |
 | 技术资格或版本解释 | f全域C¹、φ全域C²，显式化原文smooth及第二次求导资格。 | [EXTRA] |
 
@@ -634,7 +688,7 @@ theorem observableSecondDerivative (f : E → E) (φ : E → ℝ)
 本地限定解释与原文问题见上列范围及对照；逐声明编译、公理结果见第7段。
 
 网站：网站PASS（绑定版本 433a13ca6407）。
-网站原返回（对应其审校版本）：PASS；PASS。已展开 MD.Ch03.textbookLieDerivative 和 Ch03_deps.txt 的 -- FILE: MolecularDynamics/Chapter03/LiePoisson.lean 中 contDiff_textbookLieDerivative、hasDerivAt_textbookLieDerivative_second。右端实为 D(Dφ[ f ])(γ(t))[f(γ(t))]，即 L_f(L_f φ)，不是函数值的平方；左端是 u↦deriv(v↦φ(γ(v)))(u) 的真实一阶导数，正好为二阶时间导数。hf:ContDiff ℝ 1 f、hφ:ContDiff ℝ 2 φ 保证第一次 Lie 导数为 C¹；∀t 的真实ODE条件使内层 deriv 在邻近时间与 L_f φ∘γ 相等。量词允许任意满足条件的 γ 和任意 t，不预设所求二阶等式。[EXTRA]是合理的经典求二阶导数资格：C¹/C² 足够，全域要求和全时间解条件比仅沿曲线的局部条件强，因此不是最小假设，但不引入无关限制；它们不能被理解为原书证明了任意不光滑 f 的同一公式。没有本条 [ERRATUM?]。证明状态独立记录：当前声明调用该二阶导数依赖定理；已读到的依赖函数体用链式法则和可微性推导，无 sorry；未编译。
+网站原返回（对应其审校版本）：PASS；PASS。已展开 MD.Ch03.textbookLieDerivative 和 Ch03\_deps.txt 的 -- FILE: MolecularDynamics/Chapter03/LiePoisson.lean 中 contDiff\_textbookLieDerivative、hasDerivAt\_textbookLieDerivative\_second。右端实为 D(Dφ[ f ])(γ(t))[f(γ(t))]，即 L\_f(L\_f φ)，不是函数值的平方；左端是 u↦deriv(v↦φ(γ(v)))(u) 的真实一阶导数，正好为二阶时间导数。hf:ContDiff ℝ 1 f、hφ:ContDiff ℝ 2 φ 保证第一次 Lie 导数为 C¹；∀t 的真实ODE条件使内层 deriv 在邻近时间与 L\_f φ∘γ 相等。量词允许任意满足条件的 γ 和任意 t，不预设所求二阶等式。[EXTRA]是合理的经典求二阶导数资格：C¹/C² 足够，全域要求和全时间解条件比仅沿曲线的局部条件强，因此不是最小假设，但不引入无关限制；它们不能被理解为原书证明了任意不光滑 f 的同一公式。没有本条 [ERRATUM?]。证明状态独立记录：当前声明调用该二阶导数依赖定理；已读到的依赖函数体用链式法则和可微性推导，无 sorry；未编译。
 
 ### 7. 状态与证明位置
 
@@ -646,7 +700,12 @@ checked+documented priors；`MD.Ch03.observableSecondDerivative`：已证。
 ### 2. 原文陈述
 
 > By analogy with the derivation of the matrix exponential, it is tempting to express the exponential as a series expansion in powers of $t$:
-> \[e^{t\mathcal L_f}=\mathrm{Id}+t\mathcal L_f+\frac{t^2}{2}\mathcal L_f^2+\cdots.\]
+
+$$
+e^{t\mathcal L_f}=\mathrm{Id}+t\mathcal L_f+\frac{t^2}{2}\mathcal L_f^2+\cdots.
+$$
+
+
 
 ### 3. 原文证明
 
@@ -666,7 +725,7 @@ noncomputable def formalOperatorExponential (A : R) : PowerSeries R :=
 
 | 原文成分 | Lean对应 | 说明 |
 |---|---|---|
-| 当前覆盖范围 | 本条所引原句及展示公式；单个记号归入context_notation。 | 仅承诺明确列出的数学内容 |
+| 当前覆盖范围 | 本条所引原句及展示公式；单个记号归入context\_notation。 | 仅承诺明确列出的数学内容 |
 | 对象、量词、假设和定义/结论 | `MD.Ch03.formalOperatorExponential` | 完整代码见第4段；两个版本独立列出 |
 
 [EXTRA] 无新增技术资格。
@@ -676,7 +735,7 @@ noncomputable def formalOperatorExponential (A : R) : PowerSeries R :=
 本地限定解释与原文问题见上列范围及对照；逐声明编译、公理结果见第7段。
 
 网站：网站PASS（绑定版本 433a13ca6407）。
-网站原返回（对应其审校版本）：PASS；PASS。Ch03.lean 实际给出 R 的约束 [Ring R] [Algebra ℝ R]，并将 formalOperatorExponential A 定义为 PowerSeries.mk(n↦(1/(n!:ℝ))•A^n)。Ch03_deps.txt 的 -- FILE: MolecularDynamics/Chapter03/FormalOperatorSeries.lean 中 textbookFormalOperatorExponential 为同一完整定义，coeff 定理明确第 n 项为该系数。常数、一次、二次系数依次为1、A、(1/2)•A²；形式不定元对应原文时间 t，1 对应算子 Id。结合的实代数可以非交换，未额外假设算子可交换；实数上的除法仅在系数1/n!中进行。给定任意 A 是抽象形式指数的推广，代入 A=L_f 时恢复原文表达；这里并未构造或断言作用于实际函数空间的有界指数算子。没有求和收敛、解析性或把形式变量取实数值的额外前提，符合原文保留意见，无 [ERRATUM?]。证明状态独立记录：本条为显式 def，不含 sorry；未编译。
+网站原返回（对应其审校版本）：PASS；PASS。Ch03.lean 实际给出 R 的约束 [Ring R] [Algebra ℝ R]，并将 formalOperatorExponential A 定义为 PowerSeries.mk(n↦(1/(n!:ℝ))•A^n)。Ch03\_deps.txt 的 -- FILE: MolecularDynamics/Chapter03/FormalOperatorSeries.lean 中 textbookFormalOperatorExponential 为同一完整定义，coeff 定理明确第 n 项为该系数。常数、一次、二次系数依次为1、A、(1/2)•A²；形式不定元对应原文时间 t，1 对应算子 Id。结合的实代数可以非交换，未额外假设算子可交换；实数上的除法仅在系数1/n!中进行。给定任意 A 是抽象形式指数的推广，代入 A=L\_f 时恢复原文表达；这里并未构造或断言作用于实际函数空间的有界指数算子。没有求和收敛、解析性或把形式变量取实数值的额外前提，符合原文保留意见，无 [ERRATUM?]。证明状态独立记录：本条为显式 def，不含 sorry；未编译。
 
 ### 7. 状态与证明位置
 
@@ -688,15 +747,23 @@ self-contained；`MD.Ch03.formalOperatorExponential`：定义。
 ### 2. 原文陈述
 
 > The Taylor series expansion of $\phi(\boldsymbol z(t))$ along a solution of the differential equation can therefore be written as
-> \[\begin{aligned}\phi(\boldsymbol z(t))&=\phi(\boldsymbol z(0))+t\left.\frac{\mathrm d}{\mathrm dt}\phi(\boldsymbol z(t))\right|_{t=0}+\frac{t^2}{2}\left.\frac{\mathrm d^2}{\mathrm dt^2}\phi(\boldsymbol z(t))\right|_{t=0}+\cdots\\
-> &=\phi(\boldsymbol z(0))+t(\mathcal L_f\phi)(\boldsymbol z(0))+\frac{t^2}{2}(\mathcal L_f^2\phi)(\boldsymbol z(0))+\cdots\\
-> &=(e^{t\mathcal L_f}\phi)(\boldsymbol z(0)).\end{aligned}\]
+
+$$
+\begin{aligned}\phi(\boldsymbol z(t))&=\phi(\boldsymbol z(0))+t\left.\frac{\mathrm d}{\mathrm dt}\phi(\boldsymbol z(t))\right|_{t=0}+\frac{t^2}{2}\left.\frac{\mathrm d^2}{\mathrm dt^2}\phi(\boldsymbol z(t))\right|_{t=0}+\cdots\\ &=\phi(\boldsymbol z(0))+t(\mathcal L_f\phi)(\boldsymbol z(0))+\frac{t^2}{2}(\mathcal L_f^2\phi)(\boldsymbol z(0))+\cdots\\ &=(e^{t\mathcal L_f}\phi)(\boldsymbol z(0)).\end{aligned}
+$$
+
+
 
 ### 3. 原文证明
 
 原书无独立完整证明。
 > However, as $\mathcal L_f$ is a first order operator, this series involves high order mixed partial derivatives, and the convergence of the expansion has to be considered in connection with its application to given initial data, that is, we should consider the expansion
-> \[e^{t\mathcal L_f}\phi=\phi+t\mathcal L_f\phi+\frac{t^2}{2}\mathcal L_f^2\phi+\cdots\]
+
+$$
+e^{t\mathcal L_f}\phi=\phi+t\mathcal L_f\phi+\frac{t^2}{2}\mathcal L_f^2\phi+\cdots
+$$
+
+
 > then the primary issue is the boundedness of the terms with respect to functions $\phi$ of a certain space of functions; we ignore the convergence issue here and treat the operator exponential as a formal series expansion.
 原书未给独立完整证明。
 
@@ -713,7 +780,7 @@ def formalObservable {n : ℕ} (f : Q n → Q n) (φ : Q n → ℝ) (z : Q n) : 
 
 | 原文成分 | Lean对应 | 说明 |
 |---|---|---|
-| 当前覆盖范围 | 本条所引原句及展示公式；单个记号归入context_notation。 | 仅承诺明确列出的数学内容 |
+| 当前覆盖范围 | 本条所引原句及展示公式；单个记号归入context\_notation。 | 仅承诺明确列出的数学内容 |
 | 对象、量词、假设和定义/结论 | `MD.Ch03.formalObservable` | 完整代码见第4段；两个版本独立列出 |
 
 [EXTRA] 无新增技术资格。
@@ -723,7 +790,7 @@ def formalObservable {n : ℕ} (f : Q n → Q n) (φ : Q n → ℝ) (z : Q n) : 
 本地限定解释与原文问题见上列范围及对照；逐声明编译、公理结果见第7段。
 
 网站：网站PASS（绑定版本 433a13ca6407）。
-网站原返回（对应其审校版本）：PASS；PASS，适用范围为本条明示的形式系数定义。已展开 Ch03_deps.txt 的 -- FILE: MolecularDynamics/Chapter02/ReviewDefinitions.lean 中 Q n=Fin n→ℝ、-- FILE: MolecularDynamics/Chapter03/LiePoisson.lean 中 textbookLieDerivative，以及 -- FILE: MolecularDynamics/Chapter03/ReviewDefinitions.lean 中 formalObservable；Ch03.lean 的本地定义与后者相同。第 j 个系数为 ((L_f)^[j] φ)(z)/j!，^[j] 是对函数φ反复施加算子：j=0为φ(z)，j=1为L_fφ(z)，j=2为L_f(L_fφ)(z)/2，符合原文。z 在公式应用时取γ(0)，并非在γ(t)处评价各Taylor系数。对象为任意有限维实相空间和实值观测量，定义扩展到非光滑输入只是fderiv的全函数化，不声称这些输入具有经典Taylor展开。无 γ 参数、无ODE前提是因为本条定义的是展示式右侧形式级数；它本身不是沿实际解的全阶时间导数定理，也不证明左侧实际函数等于收敛级数。原文三行中沿解的解释应在光滑ODE语境下作形式Taylor解释，本条context已限定这一范围；其有限实际余项属于另一审计条目。无 [EXTRA] 或 [ERRATUM?]。证明状态独立记录：本条为显式 def，无 sorry；未编译。
+网站原返回（对应其审校版本）：PASS；PASS，适用范围为本条明示的形式系数定义。已展开 Ch03\_deps.txt 的 -- FILE: MolecularDynamics/Chapter02/ReviewDefinitions.lean 中 Q n=Fin n→ℝ、-- FILE: MolecularDynamics/Chapter03/LiePoisson.lean 中 textbookLieDerivative，以及 -- FILE: MolecularDynamics/Chapter03/ReviewDefinitions.lean 中 formalObservable；Ch03.lean 的本地定义与后者相同。第 j 个系数为 ((L\_f)^[j] φ)(z)/j!，^[j] 是对函数φ反复施加算子：j=0为φ(z)，j=1为L\_fφ(z)，j=2为L\_f(L\_fφ)(z)/2，符合原文。z 在公式应用时取γ(0)，并非在γ(t)处评价各Taylor系数。对象为任意有限维实相空间和实值观测量，定义扩展到非光滑输入只是fderiv的全函数化，不声称这些输入具有经典Taylor展开。无 γ 参数、无ODE前提是因为本条定义的是展示式右侧形式级数；它本身不是沿实际解的全阶时间导数定理，也不证明左侧实际函数等于收敛级数。原文三行中沿解的解释应在光滑ODE语境下作形式Taylor解释，本条context已限定这一范围；其有限实际余项属于另一审计条目。无 [EXTRA] 或 [ERRATUM?]。证明状态独立记录：本条为显式 def，无 sorry；未编译。
 
 ### 7. 状态与证明位置
 
@@ -735,7 +802,12 @@ self-contained；`MD.Ch03.formalObservable`：定义。
 ### 2. 原文陈述
 
 > The Taylor series expansion of $\phi(\boldsymbol z(t))$ along a solution of the differential equation can therefore be written as
-> \[\phi(\boldsymbol z(t))=\phi(\boldsymbol z(0))+t(\mathcal L_f\phi)(\boldsymbol z(0))+\frac{t^2}{2}(\mathcal L_f^2\phi)(\boldsymbol z(0))+\cdots.\]
+
+$$
+\phi(\boldsymbol z(t))=\phi(\boldsymbol z(0))+t(\mathcal L_f\phi)(\boldsymbol z(0))+\frac{t^2}{2}(\mathcal L_f^2\phi)(\boldsymbol z(0))+\cdots.
+$$
+
+
 
 ### 3. 原文证明
 
@@ -795,7 +867,7 @@ theorem lieTaylor_corrected :
 本地限定解释与原文问题见上列范围及对照；逐声明编译、公理结果见第7段。
 
 网站：原书疑误/资格待导师；原文与修正版并列。
-网站原返回（对应其审校版本）：NEEDS_HUMAN；相关自定义定义均已找到，不存在缺失定义。已展开 Ch03_deps.txt 的 -- FILE: MolecularDynamics/Chapter02/ReviewDefinitions.lean 中 Q n=Fin n→ℝ，以及 -- FILE: MolecularDynamics/Chapter03/LiePoisson.lean 中 L_fφ(z)=Dφ(z)[f(z)]；-- FILE: MolecularDynamics/Chapter03/Statements.lean 的 lieTaylor_statement 与 Ch03.lean 此签名相同。量词是先任取 n、k、f、φ、γ，给出全域C∞和∀t真实ODE条件，再存在依赖这些数据及k的C>0、δ>0，对所有|t|<δ给出从j=0到k、在γ(0)评价的余项界；不是一个C、δ对所有k统一成立，也没有把余项界当前提。此实际有限Taylor结论数学上合理，不需要analytic或无限级数收敛；全域光滑、全时间解比局部所需资格强。原文需要数学判断的问题明确为：PDF p.123 的实际函数等号随后被声明按formal series解释，是否允许以新增的每一有限阶实际O(|t|^(k+1))估计，作为该形式等号的完整替代陈述。原页没有这种定量不等式，而 [EXTRA] 中的余项界其实是新增结论、不是额外假设；仅“此估计为真”不足以自动认可 source-to-signature 的替代范围。本批已有的严格化待裁定问题因此保留为 NEEDS_HUMAN。若接受全阶Taylor jet／渐近展开解释，可接受该签名作为严格版本；若要求只对应原句的形式系数，应单列形式系数与沿解时间导数的等式，将此余项定理列作辅助结果。不能据光滑性把原式静默改成实际收敛的无限和；本条没有 [ERRATUM?] 标记，本审查也不修改原书。证明状态独立记录：Ch03.lean 的 lieTaylor 函数体为 sorry；这是未完成证明，既不是此语义待裁定的理由，也不提供数学验证。
+网站原返回（对应其审校版本）：NEEDS\_HUMAN；相关自定义定义均已找到，不存在缺失定义。已展开 Ch03\_deps.txt 的 -- FILE: MolecularDynamics/Chapter02/ReviewDefinitions.lean 中 Q n=Fin n→ℝ，以及 -- FILE: MolecularDynamics/Chapter03/LiePoisson.lean 中 L\_fφ(z)=Dφ(z)[f(z)]；-- FILE: MolecularDynamics/Chapter03/Statements.lean 的 lieTaylor\_statement 与 Ch03.lean 此签名相同。量词是先任取 n、k、f、φ、γ，给出全域C∞和∀t真实ODE条件，再存在依赖这些数据及k的C>0、δ>0，对所有|t|<δ给出从j=0到k、在γ(0)评价的余项界；不是一个C、δ对所有k统一成立，也没有把余项界当前提。此实际有限Taylor结论数学上合理，不需要analytic或无限级数收敛；全域光滑、全时间解比局部所需资格强。原文需要数学判断的问题明确为：PDF p.123 的实际函数等号随后被声明按formal series解释，是否允许以新增的每一有限阶实际O(|t|^(k+1))估计，作为该形式等号的完整替代陈述。原页没有这种定量不等式，而 [EXTRA] 中的余项界其实是新增结论、不是额外假设；仅“此估计为真”不足以自动认可 source-to-signature 的替代范围。本批已有的严格化待裁定问题因此保留为 NEEDS\_HUMAN。若接受全阶Taylor jet／渐近展开解释，可接受该签名作为严格版本；若要求只对应原句的形式系数，应单列形式系数与沿解时间导数的等式，将此余项定理列作辅助结果。不能据光滑性把原式静默改成实际收敛的无限和；本条没有 [ERRATUM?] 标记，本审查也不修改原书。证明状态独立记录：Ch03.lean 的 lieTaylor 函数体为 sorry；这是未完成证明，既不是此语义待裁定的理由，也不提供数学验证。
 
 ### 7. 状态与证明位置
 
@@ -807,7 +879,12 @@ incomplete；`MD.Ch03.lieTaylor`：未证（原书疑误不证）；`MD.Ch03.lie
 ### 2. 原文陈述
 
 > This gives a concise formula for the evolution of any function of the phase variables, including, in particular, any solution component $z_i$. Thus the flow map of the system can be represented by $\exp(t\mathcal L_f)$. When one writes $\mathcal F_t=\exp(t\mathcal L_f)$, what is actually meant is that the individual components satisfy
-> \[z_i(t,\boldsymbol\zeta)=[\mathcal F_t(\boldsymbol\zeta)]_i=\left.(\exp(t\mathcal L_f)z_i)\right|_{\boldsymbol z=\boldsymbol\zeta}.\]
+
+$$
+z_i(t,\boldsymbol\zeta)=[\mathcal F_t(\boldsymbol\zeta)]_i=\left.(\exp(t\mathcal L_f)z_i)\right|_{\boldsymbol z=\boldsymbol\zeta}.
+$$
+
+
 
 ### 3. 原文证明
 
@@ -870,7 +947,7 @@ theorem flowCoordinates_corrected :
 本地限定解释与原文问题见上列范围及对照；逐声明编译、公理结果见第7段。
 
 网站：原书疑误/资格待导师；原文与修正版并列。
-网站原返回（对应其审校版本）：NEEDS_HUMAN；相关自定义定义均已找到。已展开 Ch03_deps.txt 的 -- FILE: MolecularDynamics/Chapter02/ReviewDefinitions.lean 中 Q n=Fin n→ℝ、-- FILE: MolecularDynamics/Chapter03/ReviewDefinitions.lean 中 formalObservable 的系数 ((L_f)^[j]φ)(ζ)/j!，以及 -- FILE: MolecularDynamics/Chapter03/Statements.lean 中 actualFlow：0<η，且对每个ζ∈D有Φ(0,ζ)=ζ，对每个|t|<η有Φ(t,ζ)∈D并具有真实导数 f(Φ(t,ζ))。所以初值和真实ODE资格没有遗漏，也没有用形式流或目标余项代替实际流。坐标观测量φ(z)=z_i的选取正确，常数项是ζ_i；系数乘t^j、截至j=k，其评价点和阶数与形式exp作用于坐标一致。量词为任取n、k、f、D、Φ、η，在光滑f和actualFlow之后任取ζ∈D和i，再存在可依赖ζ、i、k的C>0、δ>0且δ≤η，界对所有|t|<δ成立；没有对所有初值、坐标、阶数的共同余项常数。该局部实际估计数学上合理，但全域C∞、共同η和D内不离域是显式选用的局部流框架，不是原文给出的全部全局流数据。[EXTRA]中的有限余项是新增结论；没有本条 [ERRATUM?]。需要数学判断的具体原文问题是：页上 z_i(t,ζ)=[F_t(ζ)]_i=(exp(tL_f)z_i)|_(z=ζ) 的实际流与形式算子的连接，在原书不讨论收敛的条件下应怎样精确解释；是否接受每个初值处、任意有限阶的局部渐近估计作为此源等式的完整对应。此签名未直接声明实际流等于某个已定义的算子作用，也没有另声明时间Taylor系数与Lie系数相等；采用Taylor jet解释可认可现有估计，要求原式逐子句对应则应另列形式jet身份，并将余项界作为辅助结果。不能以额外估计本身为真就代替对原文含义的裁定，故 NEEDS_HUMAN，而不是因缺少定义或sorry。证明状态独立记录：Ch03.lean 的 flowCoordinates 为 sorry，尚未证明；本次只读审计未编译。
+网站原返回（对应其审校版本）：NEEDS\_HUMAN；相关自定义定义均已找到。已展开 Ch03\_deps.txt 的 -- FILE: MolecularDynamics/Chapter02/ReviewDefinitions.lean 中 Q n=Fin n→ℝ、-- FILE: MolecularDynamics/Chapter03/ReviewDefinitions.lean 中 formalObservable 的系数 ((L\_f)^[j]φ)(ζ)/j!，以及 -- FILE: MolecularDynamics/Chapter03/Statements.lean 中 actualFlow：0<η，且对每个ζ∈D有Φ(0,ζ)=ζ，对每个|t|<η有Φ(t,ζ)∈D并具有真实导数 f(Φ(t,ζ))。所以初值和真实ODE资格没有遗漏，也没有用形式流或目标余项代替实际流。坐标观测量φ(z)=z\_i的选取正确，常数项是ζ\_i；系数乘t^j、截至j=k，其评价点和阶数与形式exp作用于坐标一致。量词为任取n、k、f、D、Φ、η，在光滑f和actualFlow之后任取ζ∈D和i，再存在可依赖ζ、i、k的C>0、δ>0且δ≤η，界对所有|t|<δ成立；没有对所有初值、坐标、阶数的共同余项常数。该局部实际估计数学上合理，但全域C∞、共同η和D内不离域是显式选用的局部流框架，不是原文给出的全部全局流数据。[EXTRA]中的有限余项是新增结论；没有本条 [ERRATUM?]。需要数学判断的具体原文问题是：页上 z\_i(t,ζ)=[F\_t(ζ)]_i=(exp(tL\_f)z\_i)|_(z=ζ) 的实际流与形式算子的连接，在原书不讨论收敛的条件下应怎样精确解释；是否接受每个初值处、任意有限阶的局部渐近估计作为此源等式的完整对应。此签名未直接声明实际流等于某个已定义的算子作用，也没有另声明时间Taylor系数与Lie系数相等；采用Taylor jet解释可认可现有估计，要求原式逐子句对应则应另列形式jet身份，并将余项界作为辅助结果。不能以额外估计本身为真就代替对原文含义的裁定，故 NEEDS\_HUMAN，而不是因缺少定义或sorry。证明状态独立记录：Ch03.lean 的 flowCoordinates 为 sorry，尚未证明；本次只读审计未编译。
 
 ### 7. 状态与证明位置
 
@@ -882,7 +959,12 @@ incomplete；`MD.Ch03.flowCoordinates`：未证（原书疑误不证）；`MD.Ch
 ### 2. 原文陈述
 
 > Another common notation for performing computations involving Hamiltonian systems is the Poisson bracket which is defined for two smooth scalar-valued functions $g_1$ and $g_2$ of the phase variables $(\boldsymbol q,\boldsymbol p)$ of a Hamiltonian system in $\mathbb R^m$ by
-> \[\{g_1,g_2\}=\sum_{i=1}^{N_c}\left(\frac{\partial g_1}{\partial q_i}\frac{\partial g_2}{\partial p_i}-\frac{\partial g_2}{\partial q_i}\frac{\partial g_1}{\partial p_i}\right)=\nabla g_1^T J\nabla g_2,\]
+
+$$
+\{g_1,g_2\}=\sum_{i=1}^{N_c}\left(\frac{\partial g_1}{\partial q_i}\frac{\partial g_2}{\partial p_i}-\frac{\partial g_2}{\partial q_i}\frac{\partial g_1}{\partial p_i}\right)=\nabla g_1^T J\nabla g_2,
+$$
+
+
 
 ### 3. 原文证明
 
@@ -903,7 +985,7 @@ noncomputable def textbookPoissonBracket (F G : SymplecticCoordinates Nc → ℝ
 
 | 原文成分 | Lean对应 | 说明 |
 |---|---|---|
-| 当前覆盖范围 | 本条所引原句及展示公式；单个记号归入context_notation。 | 仅承诺明确列出的数学内容 |
+| 当前覆盖范围 | 本条所引原句及展示公式；单个记号归入context\_notation。 | 仅承诺明确列出的数学内容 |
 | 对象、量词、假设和定义/结论 | `MD.Ch03.textbookPoissonBracket` | 完整代码见第4段；两个版本独立列出 |
 
 [EXTRA] 无新增技术资格。
@@ -913,7 +995,7 @@ noncomputable def textbookPoissonBracket (F G : SymplecticCoordinates Nc → ℝ
 本地限定解释与原文问题见上列范围及对照；逐声明编译、公理结果见第7段。
 
 网站：网站PASS（EAUDIT复审）。
-网站原返回（对应其审校版本）：PASS；定义取 F 的真实 Fréchet 导数作用于 X_G；X_G=J∇G，故在原文光滑函数域上就是 ∇FᵀJ∇G。空间为 (Fin Nc⊕Fin Nc)→ℝ，维数 2Nc，未误把 Nc 当总维数。定义在非光滑函数上也有 Lean 的总化值，这只是域扩张；不声称非光滑函数有经典偏导。
+网站原返回（对应其审校版本）：PASS；定义取 F 的真实 Fréchet 导数作用于 X\_G；X\_G=J∇G，故在原文光滑函数域上就是 ∇FᵀJ∇G。空间为 (Fin Nc⊕Fin Nc)→ℝ，维数 2Nc，未误把 Nc 当总维数。定义在非光滑函数上也有 Lean 的总化值，这只是域扩张；不声称非光滑函数有经典偏导。
 
 ### 7. 状态与证明位置
 
@@ -924,7 +1006,12 @@ self-contained；`MD.Ch03.textbookPoissonBracket`：定义。
 
 ### 2. 原文陈述
 
-> \[\{g_1,g_2\}=\sum_{i=1}^{N_c}\left(\frac{\partial g_1}{\partial q_i}\frac{\partial g_2}{\partial p_i}-\frac{\partial g_2}{\partial q_i}\frac{\partial g_1}{\partial p_i}\right)=\nabla g_1^T J\nabla g_2.\]
+
+$$
+\{g_1,g_2\}=\sum_{i=1}^{N_c}\left(\frac{\partial g_1}{\partial q_i}\frac{\partial g_2}{\partial p_i}-\frac{\partial g_2}{\partial q_i}\frac{\partial g_1}{\partial p_i}\right)=\nabla g_1^T J\nabla g_2.
+$$
+
+
 
 ### 3. 原文证明
 
@@ -950,7 +1037,7 @@ theorem poissonCoordinates (F G : SymplecticCoordinates Nc → ℝ)
 
 | 原文成分 | Lean对应 | 说明 |
 |---|---|---|
-| 当前覆盖范围 | 本条所引原句及展示公式；单个记号归入context_notation。 | 仅承诺明确列出的数学内容 |
+| 当前覆盖范围 | 本条所引原句及展示公式；单个记号归入context\_notation。 | 仅承诺明确列出的数学内容 |
 | 对象、量词、假设和定义/结论 | `MD.Ch03.poissonCoordinates` | 完整代码见第4段；两个版本独立列出 |
 
 [EXTRA] 无新增技术资格。
@@ -960,7 +1047,7 @@ theorem poissonCoordinates (F G : SymplecticCoordinates Nc → ℝ)
 本地限定解释与原文问题见上列范围及对照；逐声明编译、公理结果见第7段。
 
 网站：网站PASS（EAUDIT复审）。
-网站原返回（对应其审校版本）：PASS；∀F,G,z 的坐标恒等式：inl 是 q，inr 是 p，求和 i:Fin Nc；第一项 F_q G_p，第二项 G_q F_p，符号及两个因子均与原式一致。fderiv 本身总是连续线性映射，所以即使未假设可微，有限维坐标展开仍成立；在原文光滑域上得到标准偏导公式。
+网站原返回（对应其审校版本）：PASS；∀F,G,z 的坐标恒等式：inl 是 q，inr 是 p，求和 i:Fin Nc；第一项 F\_q G\_p，第二项 G\_q F\_p，符号及两个因子均与原式一致。fderiv 本身总是连续线性映射，所以即使未假设可微，有限维坐标展开仍成立；在原文光滑域上得到标准偏导公式。
 
 ### 7. 状态与证明位置
 
@@ -1001,7 +1088,7 @@ theorem poissonBilinearity (F G H : SymplecticCoordinates Nc → ℝ)
 
 | 原文成分 | Lean对应 | 说明 |
 |---|---|---|
-| 当前覆盖范围 | 本条所引原句及展示公式；单个记号归入context_notation。 | 仅承诺明确列出的数学内容 |
+| 当前覆盖范围 | 本条所引原句及展示公式；单个记号归入context\_notation。 | 仅承诺明确列出的数学内容 |
 | 对象、量词、假设和定义/结论 | `MD.Ch03.poissonBilinearity` | 完整代码见第4段；两个版本独立列出 |
 | 技术资格或版本解释 | 原文smooth函数按点可微资格显式化；保留旧清单双变量线性的完整两条结论。 | [EXTRA] |
 
@@ -1046,7 +1133,7 @@ theorem poissonSkew (F G : SymplecticCoordinates Nc → ℝ)
 
 | 原文成分 | Lean对应 | 说明 |
 |---|---|---|
-| 当前覆盖范围 | 本条所引原句及展示公式；单个记号归入context_notation。 | 仅承诺明确列出的数学内容 |
+| 当前覆盖范围 | 本条所引原句及展示公式；单个记号归入context\_notation。 | 仅承诺明确列出的数学内容 |
 | 对象、量词、假设和定义/结论 | `MD.Ch03.poissonSkew` | 完整代码见第4段；两个版本独立列出 |
 
 [EXTRA] 无新增技术资格。
@@ -1089,7 +1176,7 @@ theorem poissonSelf (F : SymplecticCoordinates Nc → ℝ)
 
 | 原文成分 | Lean对应 | 说明 |
 |---|---|---|
-| 当前覆盖范围 | 本条所引原句及展示公式；单个记号归入context_notation。 | 仅承诺明确列出的数学内容 |
+| 当前覆盖范围 | 本条所引原句及展示公式；单个记号归入context\_notation。 | 仅承诺明确列出的数学内容 |
 | 对象、量词、假设和定义/结论 | `MD.Ch03.poissonSelf` | 完整代码见第4段；两个版本独立列出 |
 
 [EXTRA] 无新增技术资格。
@@ -1136,7 +1223,7 @@ theorem poissonJacobi (F G H : SymplecticCoordinates Nc → ℝ)
 
 | 原文成分 | Lean对应 | 说明 |
 |---|---|---|
-| 当前覆盖范围 | 本条所引原句及展示公式；单个记号归入context_notation。 | 仅承诺明确列出的数学内容 |
+| 当前覆盖范围 | 本条所引原句及展示公式；单个记号归入context\_notation。 | 仅承诺明确列出的数学内容 |
 | 对象、量词、假设和定义/结论 | `MD.Ch03.poissonJacobi` | 完整代码见第4段；两个版本独立列出 |
 | 技术资格或版本解释 | 显式各函数在z为C²；真实二阶导数对称性支持Jacobi。 | [EXTRA] |
 
@@ -1159,7 +1246,12 @@ checked+documented priors；`MD.Ch03.poissonJacobi`：已证。
 ### 2. 原文陈述
 
 > More generally, if $F(\boldsymbol q,\boldsymbol p)$ is any smooth, scalar-valued function of the phase variables, we may write
-> \[\dot F=\frac{\mathrm d}{\mathrm dt}F(\boldsymbol q(t),\boldsymbol p(t))=\{F,H\}.\]
+
+$$
+\dot F=\frac{\mathrm d}{\mathrm dt}F(\boldsymbol q(t),\boldsymbol p(t))=\{F,H\}.
+$$
+
+
 
 ### 3. 原文证明
 
@@ -1184,7 +1276,7 @@ theorem hamiltonianObservableDerivative
 
 | 原文成分 | Lean对应 | 说明 |
 |---|---|---|
-| 当前覆盖范围 | 本条所引原句及展示公式；单个记号归入context_notation。 | 仅承诺明确列出的数学内容 |
+| 当前覆盖范围 | 本条所引原句及展示公式；单个记号归入context\_notation。 | 仅承诺明确列出的数学内容 |
 | 对象、量词、假设和定义/结论 | `MD.Ch03.hamiltonianObservableDerivative` | 完整代码见第4段；两个版本独立列出 |
 | 技术资格或版本解释 | smooth只需在γ(t)可微；ODE真实导数明示。 | [EXTRA] |
 
@@ -1195,7 +1287,7 @@ theorem hamiltonianObservableDerivative
 本地限定解释与原文问题见上列范围及对照；逐声明编译、公理结果见第7段。
 
 网站：网站PASS（绑定版本 433a13ca6407）。
-网站原返回（对应其审校版本）：PASS；已展开 Ch03_deps.txt 中 MolecularDynamics/Chapter02/SymplecticForm.lean 的 SymplecticCoordinates Nc=(Fin Nc ⊕ Fin Nc)→ℝ（inl 为 q、inr 为 p），textbookJ=fromBlocks 0 1 (-1) 0；Chapter02/SplittingError.lean 的 textbookHamiltonianVectorField H z=J·((DH(z))(e_i))；Chapter03/LiePoisson.lean 的 textbookPoissonBracket F G z=DF(z)[J∇G(z)]、textbookLieDerivative f F z=DF(z)[f(z)]。Ch03.lean 同名局部定义与库定义一致。hγ是γ在t的真实导数等于J∇H(γ(t))，忠实表达Hamiltonian轨道的点态ODE；hF是smooth所需的局部可微资格。HasDerivAt结论同时给出复合函数可微及其导数为{F,H}(γ(t))。不需要额外假设H全局光滑来证明此点态链式法则；对原文光滑H当然适用。 本条无[ERRATUM?]。证明状态单独记录：Ch03.lean本条无直接sorry；所调用的相关库证明在依赖摘录中也给出了证明体。此PASS仅是签名语义判定，本任务未运行Lean编译，不据此宣称整个工程无sorry。
+网站原返回（对应其审校版本）：PASS；已展开 Ch03\_deps.txt 中 MolecularDynamics/Chapter02/SymplecticForm.lean 的 SymplecticCoordinates Nc=(Fin Nc ⊕ Fin Nc)→ℝ（inl 为 q、inr 为 p），textbookJ=fromBlocks 0 1 (-1) 0；Chapter02/SplittingError.lean 的 textbookHamiltonianVectorField H z=J·((DH(z))(e\_i))；Chapter03/LiePoisson.lean 的 textbookPoissonBracket F G z=DF(z)[J∇G(z)]、textbookLieDerivative f F z=DF(z)[f(z)]。Ch03.lean 同名局部定义与库定义一致。hγ是γ在t的真实导数等于J∇H(γ(t))，忠实表达Hamiltonian轨道的点态ODE；hF是smooth所需的局部可微资格。HasDerivAt结论同时给出复合函数可微及其导数为{F,H}(γ(t))。不需要额外假设H全局光滑来证明此点态链式法则；对原文光滑H当然适用。 本条无[ERRATUM?]。证明状态单独记录：Ch03.lean本条无直接sorry；所调用的相关库证明在依赖摘录中也给出了证明体。此PASS仅是签名语义判定，本任务未运行Lean编译，不据此宣称整个工程无sorry。
 
 ### 7. 状态与证明位置
 
@@ -1207,7 +1299,12 @@ checked+documented priors；`MD.Ch03.hamiltonianObservableDerivative`：已证�
 ### 2. 原文陈述
 
 > As a consequence, we have the following relation between the Lie derivative and the Poisson bracket:
-> \[\mathcal L_{J\nabla H}F\equiv \{F,H\}.\]
+
+$$
+\mathcal L_{J\nabla H}F\equiv \{F,H\}.
+$$
+
+
 > For a Hamiltonian flow, we typically simplify notation by writing $\mathcal L_H$ in place of $\mathcal L_{J\nabla H}$.
 
 ### 3. 原文证明
@@ -1231,7 +1328,7 @@ theorem hamiltonianLie_eq_poisson
 
 | 原文成分 | Lean对应 | 说明 |
 |---|---|---|
-| 当前覆盖范围 | 本条所引原句及展示公式；单个记号归入context_notation。 | 仅承诺明确列出的数学内容 |
+| 当前覆盖范围 | 本条所引原句及展示公式；单个记号归入context\_notation。 | 仅承诺明确列出的数学内容 |
 | 对象、量词、假设和定义/结论 | `MD.Ch03.hamiltonianLie_eq_poisson` | 完整代码见第4段；两个版本独立列出 |
 
 [EXTRA] 无新增技术资格。
@@ -1241,7 +1338,7 @@ theorem hamiltonianLie_eq_poisson
 本地限定解释与原文问题见上列范围及对照；逐声明编译、公理结果见第7段。
 
 网站：网站PASS（EAUDIT复审）。
-网站原返回（对应其审校版本）：PASS；∀F,H，结论是两个相空间函数相等，故包括所有 z；左边 L_(J∇H) F，右边 {F,H}，与两个项目定义逐字展开后相同。L_H 的简写由左边的 Hamiltonian 向量场参数实现，没有误取 {H,F}。
+网站原返回（对应其审校版本）：PASS；∀F,H，结论是两个相空间函数相等，故包括所有 z；左边 L_(J∇H) F，右边 {F,H}，与两个项目定义逐字展开后相同。L\_H 的简写由左边的 Hamiltonian 向量场参数实现，没有误取 {H,F}。
 
 ### 7. 状态与证明位置
 
@@ -1253,7 +1350,12 @@ checked+documented priors；`MD.Ch03.hamiltonianLie_eq_poisson`：已证。
 ### 2. 原文陈述
 
 > In terms of the Poisson bracket, it is possible to write the differential equation corresponding to a coordinate $q_i$, say, as
-> \[\dot q_i=\{q_i,H\}.\]
+
+$$
+\dot q_i=\{q_i,H\}.
+$$
+
+
 
 ### 3. 原文证明
 
@@ -1279,7 +1381,7 @@ theorem hamiltonianCoordinateDerivative
 
 | 原文成分 | Lean对应 | 说明 |
 |---|---|---|
-| 当前覆盖范围 | 本条所引原句及展示公式；单个记号归入context_notation。 | 仅承诺明确列出的数学内容 |
+| 当前覆盖范围 | 本条所引原句及展示公式；单个记号归入context\_notation。 | 仅承诺明确列出的数学内容 |
 | 对象、量词、假设和定义/结论 | `MD.Ch03.hamiltonianCoordinateDerivative` | 完整代码见第4段；两个版本独立列出 |
 
 [EXTRA] 无新增技术资格。
@@ -1289,7 +1391,7 @@ theorem hamiltonianCoordinateDerivative
 本地限定解释与原文问题见上列范围及对照；逐声明编译、公理结果见第7段。
 
 网站：网站PASS（绑定版本 433a13ca6407）。
-网站原返回（对应其审校版本）：PASS；已展开 Ch03_deps.txt 中 MolecularDynamics/Chapter02/SymplecticForm.lean 的 SymplecticCoordinates Nc=(Fin Nc ⊕ Fin Nc)→ℝ（inl 为 q、inr 为 p），textbookJ=fromBlocks 0 1 (-1) 0；Chapter02/SplittingError.lean 的 textbookHamiltonianVectorField H z=J·((DH(z))(e_i))；Chapter03/LiePoisson.lean 的 textbookPoissonBracket F G z=DF(z)[J∇G(z)]、textbookLieDerivative f F z=DF(z)[f(z)]。Ch03.lean 同名局部定义与库定义一致。观测量固定为z↦z(Sum.inl i)，而非任意F；HasDerivAt轨道坐标函数给出q̇_i={q_i,H}。hγ明示原文隐含Hamiltonian方程；坐标函数自动可微，无遗漏假设或结论。 本条无[ERRATUM?]。证明状态单独记录：Ch03.lean本条无直接sorry；所调用的相关库证明在依赖摘录中也给出了证明体。此PASS仅是签名语义判定，本任务未运行Lean编译，不据此宣称整个工程无sorry。
+网站原返回（对应其审校版本）：PASS；已展开 Ch03\_deps.txt 中 MolecularDynamics/Chapter02/SymplecticForm.lean 的 SymplecticCoordinates Nc=(Fin Nc ⊕ Fin Nc)→ℝ（inl 为 q、inr 为 p），textbookJ=fromBlocks 0 1 (-1) 0；Chapter02/SplittingError.lean 的 textbookHamiltonianVectorField H z=J·((DH(z))(e\_i))；Chapter03/LiePoisson.lean 的 textbookPoissonBracket F G z=DF(z)[J∇G(z)]、textbookLieDerivative f F z=DF(z)[f(z)]。Ch03.lean 同名局部定义与库定义一致。观测量固定为z↦z(Sum.inl i)，而非任意F；HasDerivAt轨道坐标函数给出q̇_i={q\_i,H}。hγ明示原文隐含Hamiltonian方程；坐标函数自动可微，无遗漏假设或结论。 本条无[ERRATUM?]。证明状态单独记录：Ch03.lean本条无直接sorry；所调用的相关库证明在依赖摘录中也给出了证明体。此PASS仅是签名语义判定，本任务未运行Lean编译，不据此宣称整个工程无sorry。
 
 ### 7. 状态与证明位置
 
@@ -1301,9 +1403,19 @@ checked+documented priors；`MD.Ch03.hamiltonianCoordinateDerivative`：已证�
 ### 2. 原文陈述
 
 > As the relation
-> \[\mathcal L_H\phi=\{\phi,H\}\]
+
+$$
+\mathcal L_H\phi=\{\phi,H\}
+$$
+
+
 > is linear in $H$, we may write, for Hamiltonians $H_1,H_2$,
-> \[\mathcal L_{H_1+H_2}=\mathcal L_{H_1}+\mathcal L_{H_2}.\]
+
+$$
+\mathcal L_{H_1+H_2}=\mathcal L_{H_1}+\mathcal L_{H_2}.
+$$
+
+
 
 ### 3. 原文证明
 
@@ -1328,7 +1440,7 @@ theorem hamiltonianLieAdditivity (F H₁ H₂ : SymplecticCoordinates Nc → ℝ
 
 | 原文成分 | Lean对应 | 说明 |
 |---|---|---|
-| 当前覆盖范围 | 本条所引原句及展示公式；单个记号归入context_notation。 | 仅承诺明确列出的数学内容 |
+| 当前覆盖范围 | 本条所引原句及展示公式；单个记号归入context\_notation。 | 仅承诺明确列出的数学内容 |
 | 对象、量词、假设和定义/结论 | `MD.Ch03.hamiltonianLieAdditivity` | 完整代码见第4段；两个版本独立列出 |
 | 技术资格或版本解释 | H₁,H₂在z可微；原文smooth资格显式化。 | [EXTRA] |
 
@@ -1339,7 +1451,7 @@ theorem hamiltonianLieAdditivity (F H₁ H₂ : SymplecticCoordinates Nc → ℝ
 本地限定解释与原文问题见上列范围及对照；逐声明编译、公理结果见第7段。
 
 网站：网站PASS（EAUDIT复审）。
-网站原返回（对应其审校版本）：PASS；∀F,H₁,H₂,z，仅需 H₁,H₂ 在 z 可微；结论逐点为 L_(X_(H₁+H₂))F=L_(X_H₁)F+L_(X_H₂)F。fderiv H 的加法给出向量场加法，再由 fderiv F 的线性推出，F 即使没有可微前提也可使用总化导数，原文光滑对象当然涵盖。全称 F,z 对应算子等式。
+网站原返回（对应其审校版本）：PASS；∀F,H₁,H₂,z，仅需 H₁,H₂ 在 z 可微；结论逐点为 L_(X_(H₁+H₂))F=L_(X\_H₁)F+L_(X\_H₂)F。fderiv H 的加法给出向量场加法，再由 fderiv F 的线性推出，F 即使没有可微前提也可使用总化导数，原文光滑对象当然涵盖。全称 F,z 对应算子等式。
 
 ### 7. 状态与证明位置
 
@@ -1351,9 +1463,19 @@ checked+documented priors；`MD.Ch03.hamiltonianLieAdditivity`：已证。
 ### 2. 原文陈述
 
 > The flow map of the system with Hamiltonian $H=H_1+H_2$ is
-> \[\mathcal F_t=e^{t(\mathcal L_{H_1}+\mathcal L_{H_2})}.\]
+
+$$
+\mathcal F_t=e^{t(\mathcal L_{H_1}+\mathcal L_{H_2})}.
+$$
+
+
 > On the other hand, the splitting method based on a composition of flows on $H_1$ and $H_2$ is
-> \[\mathcal G_h=e^{h\mathcal L_{H_1}}e^{h\mathcal L_{H_2}}.\]
+
+$$
+\mathcal G_h=e^{h\mathcal L_{H_1}}e^{h\mathcal L_{H_2}}.
+$$
+
+
 
 ### 3. 原文证明
 
@@ -1389,18 +1511,18 @@ def hamiltonianExactObservable {n : ℕ}
 
 | 原文成分 | Lean对应 | 说明 |
 |---|---|---|
-| 当前覆盖范围 | 本条所引原句及展示公式；单个记号归入context_notation。 | 仅承诺明确列出的数学内容 |
+| 当前覆盖范围 | 本条所引原句及展示公式；单个记号归入context\_notation。 | 仅承诺明确列出的数学内容 |
 | 对象、量词、假设和定义/结论 | `MD.Ch03.formalSplitting`；`MD.Ch03.formalExactSplit`；`MD.Ch03.hamiltonianSplittingObservable`；`MD.Ch03.hamiltonianExactObservable` | 完整代码见第4段；两个版本独立列出 |
-| 技术资格或版本解释 | [EXTRA] 同时保留精确形式exp(A+B)及分裂形式expA expB，并用真实Hamiltonian Lie导数的卷积系数实例连接A=L_H1、B=L_H2；仅形式系数，不宣称解析收敛。 | [EXTRA] |
+| 技术资格或版本解释 | [EXTRA] 同时保留精确形式exp(A+B)及分裂形式expA expB，并用真实Hamiltonian Lie导数的卷积系数实例连接A=L\_H1、B=L\_H2；仅形式系数，不宣称解析收敛。 | [EXTRA] |
 
-[EXTRA] [EXTRA] 同时保留精确形式exp(A+B)及分裂形式expA expB，并用真实Hamiltonian Lie导数的卷积系数实例连接A=L_H1、B=L_H2；仅形式系数，不宣称解析收敛。
+[EXTRA] [EXTRA] 同时保留精确形式exp(A+B)及分裂形式expA expB，并用真实Hamiltonian Lie导数的卷积系数实例连接A=L\_H1、B=L\_H2；仅形式系数，不宣称解析收敛。
 
 ### 6. 审计结论
 
 本地限定解释与原文问题见上列范围及对照；逐声明编译、公理结果见第7段。
 
 网站：网站PASS（EAUDIT复审）。
-网站原返回（对应其审校版本）：PASS；formalExactSplit 在任意实结合环代数中取 exp(A+B)，formalSplitting 取 exp(A)exp(B)，未增加 AB=BA。指数第 j 系数为 A^j/j!。Hamiltonian 实例的 split 系数为 Σ_(i=0)^k (L_A^i L_B^(k−i)φ)(z)/(i!(k−i)!)，顺序与原显示一致；exact 实例为 L_(A+B)^jφ/j!。这些是定义，不是关于所有非光滑函数的算子加法定理；在原文光滑域用第14条连接。状态流与 pullback 的组合顺序不同，当前定义采用原文形式算子顺序，并未错误声称相反状态组合。
+网站原返回（对应其审校版本）：PASS；formalExactSplit 在任意实结合环代数中取 exp(A+B)，formalSplitting 取 exp(A)exp(B)，未增加 AB=BA。指数第 j 系数为 A^j/j!。Hamiltonian 实例的 split 系数为 Σ_(i=0)^k (L\_A^i L\_B^(k−i)φ)(z)/(i!(k−i)!)，顺序与原显示一致；exact 实例为 L_(A+B)^jφ/j!。这些是定义，不是关于所有非光滑函数的算子加法定理；在原文光滑域用第14条连接。状态流与 pullback 的组合顺序不同，当前定义采用原文形式算子顺序，并未错误声称相反状态组合。
 
 ### 7. 状态与证明位置
 
@@ -1412,9 +1534,12 @@ self-contained；`MD.Ch03.formalSplitting`：定义；`MD.Ch03.formalExactSplit`
 ### 2. 原文陈述
 
 > Expanding these out using the exponential series we have
-> \[\begin{aligned}e^{h(A+B)}&=\mathrm{Id}+h(A+B)+\frac{h^2}{2}(A+B)^2+\frac{h^3}{6}(A+B)^3+O(h^4)\\
-> &=\mathrm{Id}+h(A+B)+\frac{h^2}{2}(AB+BA+A^2+B^2)\\
-> &\quad+\frac{h^3}{6}(A^3+A^2B+AB^2+ABA+B^2A+BA^2+BAB+B^3)+O(h^4),\end{aligned}\]
+
+$$
+\begin{aligned}e^{h(A+B)}&=\mathrm{Id}+h(A+B)+\frac{h^2}{2}(A+B)^2+\frac{h^3}{6}(A+B)^3+O(h^4)\\ &=\mathrm{Id}+h(A+B)+\frac{h^2}{2}(AB+BA+A^2+B^2)\\ &\quad+\frac{h^3}{6}(A^3+A^2B+AB^2+ABA+B^2A+BA^2+BAB+B^3)+O(h^4),\end{aligned}
+$$
+
+
 
 ### 3. 原文证明
 
@@ -1440,7 +1565,7 @@ theorem exactExponentialCubic (A B : R) :
 
 | 原文成分 | Lean对应 | 说明 |
 |---|---|---|
-| 当前覆盖范围 | 本条所引原句及展示公式；单个记号归入context_notation。 | 仅承诺明确列出的数学内容 |
+| 当前覆盖范围 | 本条所引原句及展示公式；单个记号归入context\_notation。 | 仅承诺明确列出的数学内容 |
 | 对象、量词、假设和定义/结论 | `MD.Ch03.exactExponentialCubic` | 完整代码见第4段；两个版本独立列出 |
 
 [EXTRA] 无新增技术资格。
@@ -1462,8 +1587,12 @@ checked+documented priors；`MD.Ch03.exactExponentialCubic`：已证。
 ### 2. 原文陈述
 
 > whereas,
-> \[\begin{aligned}e^{hA}e^{hB}&=(\mathrm{Id}+hA+\frac{h^2A^2}{2}+\frac{h^3A^3}{6}+O(h^4))\times(\mathrm{Id}+hB+\frac{h^2B^2}{2}+\frac{h^3B^3}{6}+O(h^4))\\
-> &=\mathrm{Id}+h(A+B)+\frac{h^2}{2}(2AB+A^2+B^2)+\frac{h^3}{6}(A^3+B^3+3AB^2+3A^2B)+O(h^4).\end{aligned}\]
+
+$$
+\begin{aligned}e^{hA}e^{hB}&=(\mathrm{Id}+hA+\frac{h^2A^2}{2}+\frac{h^3A^3}{6}+O(h^4))\times(\mathrm{Id}+hB+\frac{h^2B^2}{2}+\frac{h^3B^3}{6}+O(h^4))\\ &=\mathrm{Id}+h(A+B)+\frac{h^2}{2}(2AB+A^2+B^2)+\frac{h^3}{6}(A^3+B^3+3AB^2+3A^2B)+O(h^4).\end{aligned}
+$$
+
+
 
 ### 3. 原文证明
 
@@ -1492,7 +1621,7 @@ theorem productExponentialCubic (A B : R) :
 
 | 原文成分 | Lean对应 | 说明 |
 |---|---|---|
-| 当前覆盖范围 | 本条所引原句及展示公式；单个记号归入context_notation。 | 仅承诺明确列出的数学内容 |
+| 当前覆盖范围 | 本条所引原句及展示公式；单个记号归入context\_notation。 | 仅承诺明确列出的数学内容 |
 | 对象、量词、假设和定义/结论 | `MD.Ch03.productExponentialCubic` | 完整代码见第4段；两个版本独立列出 |
 
 [EXTRA] 无新增技术资格。
@@ -1502,7 +1631,7 @@ theorem productExponentialCubic (A B : R) :
 本地限定解释与原文问题见上列范围及对照；逐声明编译、公理结果见第7段。
 
 网站：网站PASS（绑定版本 433a13ca6407）。
-网站原返回（对应其审校版本）：PASS；审阅Ch03.lean:259–269。MD.Ch03.formalSplitting A B展开为textbookFormalOperatorExponential A * textbookFormalOperatorExponential B；FormalOperatorSeries.lean把后者指数定义为PowerSeries.mk(n↦(1/(n! : ℝ))•A^n)，两个因子的低次展开由定义确定，乘法是真实的形式Cauchy乘积。R为任意实结合环代数，不预设交换；1_R对应Id，形式变量对应h。四个合取覆盖系数0、1、2、3：1，A+B，A²/2+AB+B²/2，A³/6+A²B/2+AB²/2+B³/6。它们分别等于原页(2AB+A²+B²)/2及(A³+B³+3AB²+3A²B)/6，只有加法项的排列变化，没有把AB改成BA或改变因子顺序。所有低于4次的项都已包括，形式O(h⁴)解释充分，不涉及收敛。无[EXTRA]、[ERRATUM?]。证明状态另记：调用FormalOperatorSeries.lean四个Product_coeff引理，本条与相应引理未见sorry；此次未编译，不以证明状态代替签名审计。
+网站原返回（对应其审校版本）：PASS；审阅Ch03.lean:259–269。MD.Ch03.formalSplitting A B展开为textbookFormalOperatorExponential A * textbookFormalOperatorExponential B；FormalOperatorSeries.lean把后者指数定义为PowerSeries.mk(n↦(1/(n! : ℝ))•A^n)，两个因子的低次展开由定义确定，乘法是真实的形式Cauchy乘积。R为任意实结合环代数，不预设交换；1\_R对应Id，形式变量对应h。四个合取覆盖系数0、1、2、3：1，A+B，A²/2+AB+B²/2，A³/6+A²B/2+AB²/2+B³/6。它们分别等于原页(2AB+A²+B²)/2及(A³+B³+3AB²+3A²B)/6，只有加法项的排列变化，没有把AB改成BA或改变因子顺序。所有低于4次的项都已包括，形式O(h⁴)解释充分，不涉及收敛。无[EXTRA]、[ERRATUM?]。证明状态另记：调用FormalOperatorSeries.lean四个Product\_coeff引理，本条与相应引理未见sorry；此次未编译，不以证明状态代替签名审计。
 
 ### 7. 状态与证明位置
 
@@ -1514,10 +1643,20 @@ checked+documented priors；`MD.Ch03.productExponentialCubic`：已证。
 ### 2. 原文陈述
 
 > So the difference is
-> \[\begin{aligned}e^{hA}e^{hB}-e^{h(A+B)}&=\frac{h^2}{2}(AB-BA)\\&\quad+\frac{h^3}{6}(2AB^2+2A^2B-BA^2-BAB-B^2A-ABA)+O(h^4)\\&=\frac{h^2}{2}[A,B]+O(h^3),\end{aligned}\]
+
+$$
+\begin{aligned}e^{hA}e^{hB}-e^{h(A+B)}&=\frac{h^2}{2}(AB-BA)\\&\quad+\frac{h^3}{6}(2AB^2+2A^2B-BA^2-BAB-B^2A-ABA)+O(h^4)\\&=\frac{h^2}{2}[A,B]+O(h^3),\end{aligned}
+$$
+
+
 > where $[A,B]=AB-BA$ is the commutator of $A$ and $B$.
 > For a splitting method, we have, replacing $A$ by $\mathcal L_{H_1}$ and $B$ by $\mathcal L_{H_2}$,
-> \[e^{h\mathcal L_{H_1}}e^{h\mathcal L_{H_2}}-e^{h\mathcal L_H}=\frac{h^2}{2}[\mathcal L_{H_1},\mathcal L_{H_2}]+O(h^3).\]
+
+$$
+e^{h\mathcal L_{H_1}}e^{h\mathcal L_{H_2}}-e^{h\mathcal L_H}=\frac{h^2}{2}[\mathcal L_{H_1},\mathcal L_{H_2}]+O(h^3).
+$$
+
+
 
 ### 3. 原文证明
 
@@ -1584,7 +1723,7 @@ theorem differenceCommutator_hamiltonian_coeff3 (n : ℕ)
 
 | 原文成分 | Lean对应 | 说明 |
 |---|---|---|
-| 当前覆盖范围 | 本条所引原句及展示公式；单个记号归入context_notation。 | 仅承诺明确列出的数学内容 |
+| 当前覆盖范围 | 本条所引原句及展示公式；单个记号归入context\_notation。 | 仅承诺明确列出的数学内容 |
 | 对象、量词、假设和定义/结论 | `MD.Ch03.differenceCommutator`；`MD.Ch03.differenceCommutator_coeff2`；`MD.Ch03.differenceCommutator_hamiltonian`；`MD.Ch03.differenceCommutator_coeff3`；`MD.Ch03.differenceCommutator_hamiltonian_coeff3` | 完整代码见第4段；两个版本独立列出 |
 | 技术资格或版本解释 | [EXTRA] 显式合取零次/一次/二次及本条三次系数，完整保留所引形式余项阶；原已证单系数定理保留为辅助并重查。新增完整陈述暂sorry。 | [EXTRA] |
 | 技术资格或版本解释 | [EXTRA] C∞编码补充修复：指定版本裸⊤表示实解析Cω，现将原smooth的前提及输出恢复为scoped ∞；正式库冻结，已有证明随本批重查，失败依≤3次小修规则记录。 | [EXTRA] |
@@ -1597,7 +1736,7 @@ theorem differenceCommutator_hamiltonian_coeff3 (n : ℕ)
 本轮修复：保留零至二次结论；补一般非交换代数三次系数及Hamilton算子实例。原JSON恢复印刷p.104/PDF126的三次项和O(h⁴)展示式，已视觉复核原页。一般三次系数尝试有限代数展开证明；Hamilton算子实例尚未证明，最终逐声明状态以本地核验日志为准。
 
 网站：按网站审校意见修复，本地核验通过（未再送网站）。
-网站原返回（对应其审校版本）：FAIL；已逐一核对 differenceCommutator、differenceCommutator_coeff2 与 differenceCommutator_hamiltonian。一般代数版包含差的零、一次系数为零及二次系数 (AB−BA)/2；辅助版仅二次系数；Hamiltonian 版在 n 自由度、A,B,φ 全域 C∞ 下对所有 z 给出同样三项，右边是 (L_A L_Bφ−L_B L_Aφ)(z)/2。它们正确覆盖 JSON 当前摘录的 O(h³) 结论。但 [EXTRA] 明确声称还包含三次系数，三份声明均没有该项；原页同一个差的展示式还给出三次项及 O(h⁴)，JSON 将该行省略。不能把二次系数辅助定理当作三次结论。
+网站原返回（对应其审校版本）：FAIL；已逐一核对 differenceCommutator、differenceCommutator\_coeff2 与 differenceCommutator\_hamiltonian。一般代数版包含差的零、一次系数为零及二次系数 (AB−BA)/2；辅助版仅二次系数；Hamiltonian 版在 n 自由度、A,B,φ 全域 C∞ 下对所有 z 给出同样三项，右边是 (L\_A L\_Bφ−L\_B L\_Aφ)(z)/2。它们正确覆盖 JSON 当前摘录的 O(h³) 结论。但 [EXTRA] 明确声称还包含三次系数，三份声明均没有该项；原页同一个差的展示式还给出三次项及 O(h⁴)，JSON 将该行省略。不能把二次系数辅助定理当作三次结论。
 
 ### 7. 状态与证明位置
 
@@ -1608,7 +1747,12 @@ incomplete；`MD.Ch03.differenceCommutator`：未证（缺大型理论）；`MD.
 
 ### 2. 原文陈述
 
-> \[e^{hA}e^{hB}-e^{h(A+B)}=\frac{h^2}{2}(AB-BA)+\frac{h^3}{6}(2AB^2+2A^2B-BA^2-BAB-B^2A-ABA)+O(h^4).\]
+
+$$
+e^{hA}e^{hB}-e^{h(A+B)}=\frac{h^2}{2}(AB-BA)+\frac{h^3}{6}(2AB^2+2A^2B-BA^2-BAB-B^2A-ABA)+O(h^4).
+$$
+
+
 
 ### 3. 原文证明
 
@@ -1640,7 +1784,7 @@ theorem differenceCubic_coeff3 (A B : R) :
 
 | 原文成分 | Lean对应 | 说明 |
 |---|---|---|
-| 当前覆盖范围 | 本条所引原句及展示公式；单个记号归入context_notation。 | 仅承诺明确列出的数学内容 |
+| 当前覆盖范围 | 本条所引原句及展示公式；单个记号归入context\_notation。 | 仅承诺明确列出的数学内容 |
 | 对象、量词、假设和定义/结论 | `MD.Ch03.differenceCubic`；`MD.Ch03.differenceCubic_coeff3` | 完整代码见第4段；两个版本独立列出 |
 | 技术资格或版本解释 | [EXTRA] 显式合取零次/一次/二次及本条三次系数，完整保留所引形式余项阶；原已证单系数定理保留为辅助并重查。新增完整陈述暂sorry。 | [EXTRA] |
 
@@ -1651,7 +1795,7 @@ theorem differenceCubic_coeff3 (A B : R) :
 本地限定解释与原文问题见上列范围及对照；逐声明编译、公理结果见第7段。
 
 网站：网站PASS（EAUDIT复审）。
-网站原返回（对应其审校版本）：PASS；C：differenceCubic对任意环境实代数中的A、B，合取差式0、1次系数为0、2次系数为(AB−BA)/2及完整3次六项系数；differenceCubic_coeff3是同一3次等式的辅助声明。项目指数定义的第n项为A^n/n!，乘法次序为先A后B；没有交换性前提。形式O(h^4)恰为0至3次这些系数约束，不涉及解析收敛。[EXTRA]增加低次合取恢复了完整差式，合理。 本审校只读核对任务中给出的声明及项目定义，不编译、不补证明；sorry不作为FAIL理由。
+网站原返回（对应其审校版本）：PASS；C：differenceCubic对任意环境实代数中的A、B，合取差式0、1次系数为0、2次系数为(AB−BA)/2及完整3次六项系数；differenceCubic\_coeff3是同一3次等式的辅助声明。项目指数定义的第n项为A^n/n!，乘法次序为先A后B；没有交换性前提。形式O(h^4)恰为0至3次这些系数约束，不涉及解析收敛。[EXTRA]增加低次合取恢复了完整差式，合理。 本审校只读核对任务中给出的声明及项目定义，不编译、不补证明；sorry不作为FAIL理由。
 
 ### 7. 状态与证明位置
 
@@ -1663,12 +1807,27 @@ incomplete；`MD.Ch03.differenceCubic`：未证（缺大型理论）；`MD.Ch03.
 ### 2. 原文陈述
 
 > Observe that, for any real-valued functions $f$ and $H$ of phase space,
-> \[\mathcal L_Hf=\nabla f^TJ\nabla H=\{f,H\}.\]
+
+$$
+\mathcal L_Hf=\nabla f^TJ\nabla H=\{f,H\}.
+$$
+
+
 > Hence $\mathcal L_{H_1}\mathcal L_{H_2}f=\{\{f,H_2\},H_1\}$, and, using this and skew-symmetry of the Poisson bracket,
-> \[[\mathcal L_{H_1},\mathcal L_{H_2}]f=\{\{f,H_2\},H_1\}-\{\{f,H_1\},H_2\}=\{\{f,H_2\},H_1\}+\{\{H_1,f\},H_2\}.\]
+
+$$
+[\mathcal L_{H_1},\mathcal L_{H_2}]f=\{\{f,H_2\},H_1\}-\{\{f,H_1\},H_2\}=\{\{f,H_2\},H_1\}+\{\{H_1,f\},H_2\}.
+$$
+
+
 > By the Jacobi identity, $\{\{f,H_2\},H_1\}+\{\{H_2,H_1\},f\}+\{\{H_1,f\},H_2\}=0$.
 > Therefore
-> \[[\mathcal L_{H_1},\mathcal L_{H_2}]f=-\{\{H_2,H_1\},f\}=\{f,\{H_2,H_1\}\}.\]
+
+$$
+[\mathcal L_{H_1},\mathcal L_{H_2}]f=-\{\{H_2,H_1\},f\}=\{f,\{H_2,H_1\}\}.
+$$
+
+
 
 ### 3. 原文证明
 
@@ -1697,7 +1856,7 @@ theorem hamiltonianCommutator
 
 | 原文成分 | Lean对应 | 说明 |
 |---|---|---|
-| 当前覆盖范围 | 本条所引原句及展示公式；单个记号归入context_notation。 | 仅承诺明确列出的数学内容 |
+| 当前覆盖范围 | 本条所引原句及展示公式；单个记号归入context\_notation。 | 仅承诺明确列出的数学内容 |
 | 对象、量词、假设和定义/结论 | `MD.Ch03.hamiltonianCommutator` | 完整代码见第4段；两个版本独立列出 |
 | 技术资格或版本解释 | F,H₁,H₂在z为C²；原文smooth资格显式化。 | [EXTRA] |
 
@@ -1708,7 +1867,7 @@ theorem hamiltonianCommutator
 本地限定解释与原文问题见上列范围及对照；逐声明编译、公理结果见第7段。
 
 网站：网站PASS（绑定版本 433a13ca6407）。
-网站原返回（对应其审校版本）：PASS；审阅Ch03.lean:288–298。依赖SymplecticForm.lean中相空间是q、p标记的有限维实坐标，textbookJ=[0,I;-I,0]；SplittingError.lean的Hamiltonian场是J乘实际Fréchet导数的坐标梯度。LiePoisson.lean及本文件的textbookLieDerivative f F z均为DF(z)[f(z)]，textbookPoissonBracket G H z=DG(z)[J∇H(z)]，即{G,H}，不是顺序倒置的定义。故本声明左边确为L_H₁L_H₂F−L_H₂L_H₁F，右边确为{F,{H₂,H₁}}。它对任意Nc、F、H₁、H₂、z及局部C²假设量化，完整对应原文跨页推导的最终结论；第一识别、反对称及Jacobi等中间行是该结论的推导步骤，不是被改成假设。所用实际定义给出L_HF={F,H}，依赖中skew与Jacobi也按此J约定展开，未省略独立的结论。[EXTRA] 三个ContDiffAt ℝ 2是自然且充分的局部正则资格，使嵌套导数及Hessian对称可用；原文smooth情形满足这些资格，不引入解析性、全局流或结论本身。C²是充分条件，不主张它对每组特例都是最弱条件。本条无[ERRATUM?]，它对应PDF127第一式的正确顺序；紧接的印刷反序公式另属本批下一条。证明状态另记：本条调用textbookHamiltonianLieDerivative_commutator，其依赖证明使用实际二阶导数和Hessian对称，本条及相应引理未见sorry；此次未编译。
+网站原返回（对应其审校版本）：PASS；审阅Ch03.lean:288–298。依赖SymplecticForm.lean中相空间是q、p标记的有限维实坐标，textbookJ=[0,I;-I,0]；SplittingError.lean的Hamiltonian场是J乘实际Fréchet导数的坐标梯度。LiePoisson.lean及本文件的textbookLieDerivative f F z均为DF(z)[f(z)]，textbookPoissonBracket G H z=DG(z)[J∇H(z)]，即{G,H}，不是顺序倒置的定义。故本声明左边确为L\_H₁L\_H₂F−L\_H₂L\_H₁F，右边确为{F,{H₂,H₁}}。它对任意Nc、F、H₁、H₂、z及局部C²假设量化，完整对应原文跨页推导的最终结论；第一识别、反对称及Jacobi等中间行是该结论的推导步骤，不是被改成假设。所用实际定义给出L\_HF={F,H}，依赖中skew与Jacobi也按此J约定展开，未省略独立的结论。[EXTRA] 三个ContDiffAt ℝ 2是自然且充分的局部正则资格，使嵌套导数及Hessian对称可用；原文smooth情形满足这些资格，不引入解析性、全局流或结论本身。C²是充分条件，不主张它对每组特例都是最弱条件。本条无[ERRATUM?]，它对应PDF127第一式的正确顺序；紧接的印刷反序公式另属本批下一条。证明状态另记：本条调用textbookHamiltonianLieDerivative\_commutator，其依赖证明使用实际二阶导数和Hessian对称，本条及相应引理未见sorry；此次未编译。
 
 ### 7. 状态与证明位置
 
@@ -1720,7 +1879,12 @@ checked+documented priors；`MD.Ch03.hamiltonianCommutator`：已证。
 ### 2. 原文陈述
 
 > This means that it is possible to relate the commutator of Lie derivatives of Hamiltonian vector fields to the Lie derivative of the Poisson bracket of the corresponding Hamiltonians, i.e.,
-> \[[\mathcal L_{H_1},\mathcal L_{H_2}]f=\mathcal L_{\{H_1,H_2\}}f.\]
+
+$$
+[\mathcal L_{H_1},\mathcal L_{H_2}]f=\mathcal L_{\{H_1,H_2\}}f.
+$$
+
+
 
 ### 3. 原文证明
 
@@ -1744,7 +1908,7 @@ theorem leadingShadowPrinted :
 
 | 原文成分 | Lean对应 | 说明 |
 |---|---|---|
-| 当前覆盖范围 | 本条所引原句及展示公式；单个记号归入context_notation。 | 仅承诺明确列出的数学内容 |
+| 当前覆盖范围 | 本条所引原句及展示公式；单个记号归入context\_notation。 | 仅承诺明确列出的数学内容 |
 | 对象、量词、假设和定义/结论 | `MD.Ch03.leadingShadowPrinted` | 完整代码见第4段；两个版本独立列出 |
 | 技术资格或版本解释 | F,H₁,H₂取C²，原文smooth资格明示。 | [EXTRA] |
 
@@ -1755,7 +1919,7 @@ theorem leadingShadowPrinted :
 本地限定解释与原文问题见上列范围及对照；逐声明编译、公理结果见第7段。
 
 网站：网站PASS（绑定版本 433a13ca6407）。
-网站原返回（对应其审校版本）：PASS；签名忠实性PASS，原命题的数学真伪另外判为错误，二者不混同。审阅Ch03.lean:303–308，并展开Ch03_deps.txt中ReviewDefinitions.lean的hamiltonianLie H φ=textbookLieDerivative (textbookHamiltonianVectorField H) φ；LiePoisson.lean中textbookLieDerivative f φ z=Dφ(z)[f(z)]、textbookPoissonBracket A B z=DA(z)[J∇B(z)]；SplittingError.lean实际场为J梯度，SymplecticForm.lean实际J=[0,I;-I,0]，相空间为(Fin n ⊕ Fin n)→ℝ。因而∀n,A,B,F，C² A→C² B→C² F→∀z的结论实际就是[L_A,L_B]F(z)=L_{ {A,B} }F(z)，与本条印刷式逐项一致，未暗改为正确的{B,A}。[EXTRA] 全局ContDiff ℝ 2是对原文smooth资格的合理充分表达，保证任意z的二阶计算；它比逐点资格强，但符合全空间∀z的陈述，且不能挽救下述光滑多项式反例。[ERRATUM?]确实成立：按这些实际定义正确公式是[L_A,L_B]F=L_{ {B,A} }F=−L_{ {A,B} }F。因此PASS仅表示签名忠实于所冻结的印刷来源，绝不表示该错误印刷断言可以证明。证明状态另记：本条证明体显式为sorry；没有把sorry当作签名不忠实的理由，也没有把它当作原书错误的验证。实际反例独立确立原式为假。此次未编译或补证明。
+网站原返回（对应其审校版本）：PASS；签名忠实性PASS，原命题的数学真伪另外判为错误，二者不混同。审阅Ch03.lean:303–308，并展开Ch03\_deps.txt中ReviewDefinitions.lean的hamiltonianLie H φ=textbookLieDerivative (textbookHamiltonianVectorField H) φ；LiePoisson.lean中textbookLieDerivative f φ z=Dφ(z)[f(z)]、textbookPoissonBracket A B z=DA(z)[J∇B(z)]；SplittingError.lean实际场为J梯度，SymplecticForm.lean实际J=[0,I;-I,0]，相空间为(Fin n ⊕ Fin n)→ℝ。因而∀n,A,B,F，C² A→C² B→C² F→∀z的结论实际就是[L\_A,L\_B]F(z)=L_{ {A,B} }F(z)，与本条印刷式逐项一致，未暗改为正确的{B,A}。[EXTRA] 全局ContDiff ℝ 2是对原文smooth资格的合理充分表达，保证任意z的二阶计算；它比逐点资格强，但符合全空间∀z的陈述，且不能挽救下述光滑多项式反例。[ERRATUM?]确实成立：按这些实际定义正确公式是[L\_A,L\_B]F=L_{ {B,A} }F=−L_{ {A,B} }F。因此PASS仅表示签名忠实于所冻结的印刷来源，绝不表示该错误印刷断言可以证明。证明状态另记：本条证明体显式为sorry；没有把sorry当作签名不忠实的理由，也没有把它当作原书错误的验证。实际反例独立确立原式为假。此次未编译或补证明。
 
 ### 7. 状态与证明位置
 
@@ -1767,14 +1931,33 @@ incomplete；`MD.Ch03.leadingShadowPrinted`：未证（缺大型理论）。
 ### 2. 原文陈述
 
 > Because of this, we may interpret the first term in the expansion of the error as itself being derived from a Hamiltonian. This is a crucial observation which suggests an alternative perspective on the error expansion in splitting. The idea is to view the product of exponentials as an exponential:
-> \[e^{hA}e^{hB}=e^{h(A+B+hR)},\]
+
+$$
+e^{hA}e^{hB}=e^{h(A+B+hR)},
+$$
+
+
 > for some operator $R$. Expanding out the right hand side gives
-> \[\begin{aligned}e^{h(A+B+hR)}&=\mathrm{Id}+h(A+B+hR)+\frac{h^2}{2}(A+B+hR)^2+\cdots\\
-> &=\mathrm{Id}+hA+hB+h^2R+\frac{h^2}{2}\bigl(A^2+AB+BA+B^2+h^2R^2+h(A+B)R+hR(A+B)\bigr)+\cdots.\end{aligned}\]
+
+$$
+\begin{aligned}e^{h(A+B+hR)}&=\mathrm{Id}+h(A+B+hR)+\frac{h^2}{2}(A+B+hR)^2+\cdots\\ &=\mathrm{Id}+hA+hB+h^2R+\frac{h^2}{2}\bigl(A^2+AB+BA+B^2+h^2R^2+h(A+B)R+hR(A+B)\bigr)+\cdots.\end{aligned}
+$$
+
+
 > Comparing this to our expansion for $e^{hA}e^{hB}$, for agreement to $O(h^2)$ we must have
-> \[\frac12(2AB+A^2+B^2)=R+\frac12(A^2+AB+BA+B^2)=O(h),\]
+
+$$
+\frac12(2AB+A^2+B^2)=R+\frac12(A^2+AB+BA+B^2)=O(h),
+$$
+
+
 > or
-> \[R=AB-\frac12(AB+BA)=\frac12[A,B]+O(h),\]
+
+$$
+R=AB-\frac12(AB+BA)=\frac12[A,B]+O(h),
+$$
+
+
 
 ### 3. 原文证明
 
@@ -1828,7 +2011,7 @@ theorem leadingModifiedExponential_corrected (A B : R) (n : ℕ) (hn : n < 3) :
 本地限定解释与原文问题见上列范围及对照；逐声明编译、公理结果见第7段。
 
 网站：原书疑误/资格待导师；原文与修正版并列。
-网站原返回（对应其审校版本）：NEEDS_HUMAN；C：A、B属于同一实代数；n为自然数且n<3，即全部低于3次的系数相等。modifiedGenerator为(A+B)X+CX²；textbookFormalZeroConstantExponential确为零常项形式级数的指数，故C=(AB−BA)/2时结论正确。没有假设完整R(h)存在，更未形式化原书错误的系数比较链。context已披露该限制，但extra_assumptions空列表未列出这一范围缩减；整段原文的数学问题需人工保留处理。 本审校只读核对任务中给出的声明及项目定义，不编译、不补证明；sorry不作为FAIL理由。
+网站原返回（对应其审校版本）：NEEDS\_HUMAN；C：A、B属于同一实代数；n为自然数且n<3，即全部低于3次的系数相等。modifiedGenerator为(A+B)X+CX²；textbookFormalZeroConstantExponential确为零常项形式级数的指数，故C=(AB−BA)/2时结论正确。没有假设完整R(h)存在，更未形式化原书错误的系数比较链。context已披露该限制，但extra\_assumptions空列表未列出这一范围缩减；整段原文的数学问题需人工保留处理。 本审校只读核对任务中给出的声明及项目定义，不编译、不补证明；sorry不作为FAIL理由。
 
 ### 7. 状态与证明位置
 
@@ -1840,9 +2023,19 @@ incomplete；`MD.Ch03.leadingModifiedExponential`：未证（原书疑误不证�
 ### 2. 原文陈述
 
 > and from this it follows that
-> \[e^{h\mathcal L_{H_1}}e^{h\mathcal L_{H_2}}=e^{h\mathcal L_G},\]
+
+$$
+e^{h\mathcal L_{H_1}}e^{h\mathcal L_{H_2}}=e^{h\mathcal L_G},
+$$
+
+
 > where
-> \[G=H_1+H_2+\frac h2\{H_1,H_2\}+O(h^2).\]
+
+$$
+G=H_1+H_2+\frac h2\{H_1,H_2\}+O(h^2).
+$$
+
+
 
 ### 3. 原文证明
 
@@ -1896,16 +2089,16 @@ theorem leadingShadowHamiltonian_corrected :
 | 当前覆盖范围 | 保留完整原文引文；Lean仅覆盖第4段明示的定义与限定结论，原书疑误或超出该陈述的内容不冒称已形式化。各版本差异见本条与ERRATA。 | 仅承诺明确列出的数学内容 |
 | 对象、量词、假设和定义/结论 | `MD.Ch03.leadingShadowHamiltonian`；`MD.Ch03.leadingShadowHamiltonian_corrected` | 完整代码见第4段；两个版本独立列出 |
 | 技术资格或版本解释 | D开放、K紧且K⊆D、A/B在D无限可微并给定真实局部流；实际修正ODE解及O(h³)端点余项为结论。 | [EXTRA] |
-| 技术资格或版本解释 | [ERRATUM?] 默认保留状态复合Φ_h∘Ψ_h及其正号修正Hamiltonian；对应拉回算子应为exp(hL_B)exp(hL_A)。原印反向算子顺序作为勘误保留。只声明现有有限实际流匹配。 | [EXTRA] |
+| 技术资格或版本解释 | [ERRATUM?] 默认保留状态复合Φ\_h∘Ψ\_h及其正号修正Hamiltonian；对应拉回算子应为exp(hL\_B)exp(hL\_A)。原印反向算子顺序作为勘误保留。只声明现有有限实际流匹配。 | [EXTRA] |
 
-[EXTRA] D开放、K紧且K⊆D、A/B在D无限可微并给定真实局部流；实际修正ODE解及O(h³)端点余项为结论。；[ERRATUM?] 默认保留状态复合Φ_h∘Ψ_h及其正号修正Hamiltonian；对应拉回算子应为exp(hL_B)exp(hL_A)。原印反向算子顺序作为勘误保留。只声明现有有限实际流匹配。
+[EXTRA] D开放、K紧且K⊆D、A/B在D无限可微并给定真实局部流；实际修正ODE解及O(h³)端点余项为结论。；[ERRATUM?] 默认保留状态复合Φ\_h∘Ψ\_h及其正号修正Hamiltonian；对应拉回算子应为exp(hL\_B)exp(hL\_A)。原印反向算子顺序作为勘误保留。只声明现有有限实际流匹配。
 
 ### 6. 审计结论
 
 本地限定解释与原文问题见上列范围及对照；逐声明编译、公理结果见第7段。
 
 网站：原书疑误/资格待导师；原文与修正版并列。
-网站原返回（对应其审校版本）：FAIL；已读取 Ch03.lean 实际声明和 Ch03_deps.txt 对应 -- FILE 段，审计针对签名语义；该 theorem 的证明体为 sorry，不据此判断签名 PASS/FAIL，亦不声称已获 Lean 验证。依赖展开：SymplecticCoordinates n=(Fin n ⊕ Fin n)→ℝ，inl 为 q、inr 为 p；textbookJ=[[0,I],[-I,0]]；X_H=textbookHamiltonianVectorField H=J∇H；textbookPoissonBracket F G=DF(X_G)=Σ(F_q G_p−G_q F_p)。actualFlow f D Φ η 展开为 η>0，且每个 z∈D 有 Φ(0,z)=z，对全部 |t|<η 有 Φ(t,z)∈D 和时间方向 HasDerivAt Φ(·,z) f(Φ(t,z)) t；未把复合相等或匹配放进假设。solution f γ 0 h 展开为在整个闭区间 [0,h] 的 HasDerivWithinAt γ (f(γ(t)))。按原页及 PDF124/印刷102 的 L_H F={F,H}，exp(hL_A) 是 Φ_A 的 pullback；exp(hL_A)exp(hL_B)F=F∘Ψ_B∘Φ_A，而 Lean 端点是 Φ_A∘Ψ_B。实际 [L_A,L_B]=L_{ {B,A} }=−L_{ {A,B} }，PDF127 顶部第一式也给出 {B,A}，紧接的第二式却改成 {A,B}，故该原书符号疑误可确定。Lean 的正号 Hamiltonian 对 Φ_A∘Ψ_B 是合理的，但这不是所引原文算子等式的逐义形式化。 [EXTRA] 开放域和无限光滑保证局部 ODE 唯一及 Taylor 控制，紧 K⊆D 用于统一 C、δ，均合理；无限光滑高于此低阶估计所需但符合原书 smooth 语境。actualFlow 要求全 D 统一时间且保持 D，是强于普通局部流的实质限制，应披露；不能仅解释为给定一点的局部流。结论 C、δ、Γ 先于 h,z，确为统一端点 O(h³)，但只是首阶截断的有限近似，并非原文全部形式等式。
+网站原返回（对应其审校版本）：FAIL；已读取 Ch03.lean 实际声明和 Ch03\_deps.txt 对应 -- FILE 段，审计针对签名语义；该 theorem 的证明体为 sorry，不据此判断签名 PASS/FAIL，亦不声称已获 Lean 验证。依赖展开：SymplecticCoordinates n=(Fin n ⊕ Fin n)→ℝ，inl 为 q、inr 为 p；textbookJ=[[0,I],[-I,0]]；X\_H=textbookHamiltonianVectorField H=J∇H；textbookPoissonBracket F G=DF(X\_G)=Σ(F\_q G\_p−G\_q F\_p)。actualFlow f D Φ η 展开为 η>0，且每个 z∈D 有 Φ(0,z)=z，对全部 |t|<η 有 Φ(t,z)∈D 和时间方向 HasDerivAt Φ(·,z) f(Φ(t,z)) t；未把复合相等或匹配放进假设。solution f γ 0 h 展开为在整个闭区间 [0,h] 的 HasDerivWithinAt γ (f(γ(t)))。按原页及 PDF124/印刷102 的 L\_H F={F,H}，exp(hL\_A) 是 Φ\_A 的 pullback；exp(hL\_A)exp(hL\_B)F=F∘Ψ\_B∘Φ\_A，而 Lean 端点是 Φ\_A∘Ψ\_B。实际 [L\_A,L\_B]=L_{ {B,A} }=−L_{ {A,B} }，PDF127 顶部第一式也给出 {B,A}，紧接的第二式却改成 {A,B}，故该原书符号疑误可确定。Lean 的正号 Hamiltonian 对 Φ\_A∘Ψ\_B 是合理的，但这不是所引原文算子等式的逐义形式化。 [EXTRA] 开放域和无限光滑保证局部 ODE 唯一及 Taylor 控制，紧 K⊆D 用于统一 C、δ，均合理；无限光滑高于此低阶估计所需但符合原书 smooth 语境。actualFlow 要求全 D 统一时间且保持 D，是强于普通局部流的实质限制，应披露；不能仅解释为给定一点的局部流。结论 C、δ、Γ 先于 h,z，确为统一端点 O(h³)，但只是首阶截断的有限近似，并非原文全部形式等式。
 
 ### 7. 状态与证明位置
 
@@ -1917,7 +2110,12 @@ incomplete；`MD.Ch03.leadingShadowHamiltonian`：未证（原书疑误不证）
 ### 2. 原文陈述
 
 > Higher order terms can also be worked out, for example,
-> \[e^Ae^B=\exp\left(A+B+\frac12[A,B]+\frac1{12}([A,[A,B]]-[B,[A,B]])-\frac1{24}[B,[A,[A,B]]]+\cdots\right).\]
+
+$$
+e^Ae^B=\exp\left(A+B+\frac12[A,B]+\frac1{12}([A,[A,B]]-[B,[A,B]])-\frac1{24}[B,[A,[A,B]]]+\cdots\right).
+$$
+
+
 
 ### 3. 原文证明
 
@@ -1939,7 +2137,7 @@ theorem bch4 :
 
 | 原文成分 | Lean对应 | 说明 |
 |---|---|---|
-| 当前覆盖范围 | 本条所引原句及展示公式；单个记号归入context_notation。 | 仅承诺明确列出的数学内容 |
+| 当前覆盖范围 | 本条所引原句及展示公式；单个记号归入context\_notation。 | 仅承诺明确列出的数学内容 |
 | 对象、量词、假设和定义/结论 | `MD.Ch03.bch4` | 完整代码见第4段；两个版本独立列出 |
 
 [EXTRA] 无新增技术资格。
@@ -1949,7 +2147,7 @@ theorem bch4 :
 本地限定解释与原文问题见上列范围及对照；逐声明编译、公理结果见第7段。
 
 网站：网站PASS（绑定版本 433a13ca6407）。
-网站原返回（对应其审校版本）：PASS；已读取 Ch03.lean 实际声明和 Ch03_deps.txt 对应 -- FILE 段，审计针对签名语义；该 theorem 的证明体为 sorry，不据此判断签名 PASS/FAIL，亦不声称已获 Lean 验证。 依赖 formalSplitting=exp(XA)exp(XB)，指数系数 A^n/n!；formalLog 的第 n 系数为 Σ_{j=1}^n (−1)^{j+1}coeff_n((P−1)^j)/j，formalSplitting 常数项1使该有限和是真实形式 log。commutator A B=AB−BA；bchLog4 的次数1、2、3、4分别是 A+B、[A,B]/2、([A,[A,B]]−[B,[A,B]])/12、−[B,[A,[A,B]]]/24，其余次数0。∀j<5 包括零次零系数并逐一覆盖全部展示阶；任意非交换实代数允许这些实标量，无多余交换性假设，不主张级数收敛。
+网站原返回（对应其审校版本）：PASS；已读取 Ch03.lean 实际声明和 Ch03\_deps.txt 对应 -- FILE 段，审计针对签名语义；该 theorem 的证明体为 sorry，不据此判断签名 PASS/FAIL，亦不声称已获 Lean 验证。 依赖 formalSplitting=exp(XA)exp(XB)，指数系数 A^n/n!；formalLog 的第 n 系数为 Σ_{j=1}^n (−1)^{j+1}coeff\_n((P−1)^j)/j，formalSplitting 常数项1使该有限和是真实形式 log。commutator A B=AB−BA；bchLog4 的次数1、2、3、4分别是 A+B、[A,B]/2、([A,[A,B]]−[B,[A,B]])/12、−[B,[A,[A,B]]]/24，其余次数0。∀j<5 包括零次零系数并逐一覆盖全部展示阶；任意非交换实代数允许这些实标量，无多余交换性假设，不主张级数收敛。
 
 ### 7. 状态与证明位置
 
@@ -1961,9 +2159,19 @@ incomplete；`MD.Ch03.bch4`：未证（缺大型理论）。
 ### 2. 原文陈述
 
 > and, using the correspondence between Lie and Poisson brackets,
-> \[e^{h\mathcal L_{H_1}}e^{h\mathcal L_{H_2}}=e^{h\mathcal L_{\widetilde H_h}},\]
+
+$$
+e^{h\mathcal L_{H_1}}e^{h\mathcal L_{H_2}}=e^{h\mathcal L_{\widetilde H_h}},
+$$
+
+
 > where
-> \[\widetilde H_h=H_1+H_2+\frac h2\{H_1,H_2\}+\frac{h^2}{12}\bigl(\{H_1,\{H_1,H_2\}\}-\{H_2,\{H_1,H_2\}\}\bigr)-\frac{h^3}{24}\{H_2,\{H_1,\{H_1,H_2\}\}\}+\cdots.\]
+
+$$
+\widetilde H_h=H_1+H_2+\frac h2\{H_1,H_2\}+\frac{h^2}{12}\bigl(\{H_1,\{H_1,H_2\}\}-\{H_2,\{H_1,H_2\}\}\bigr)-\frac{h^3}{24}\{H_2,\{H_1,\{H_1,H_2\}\}\}+\cdots.
+$$
+
+
 
 ### 3. 原文证明
 
@@ -1986,7 +2194,7 @@ def bchHamiltonian3 {n : ℕ} (A B : SymplecticCoordinates n → ℝ) (h : ℝ) 
 
 | 原文成分 | Lean对应 | 说明 |
 |---|---|---|
-| 当前覆盖范围 | 本条所引原句及展示公式；单个记号归入context_notation。 | 仅承诺明确列出的数学内容 |
+| 当前覆盖范围 | 本条所引原句及展示公式；单个记号归入context\_notation。 | 仅承诺明确列出的数学内容 |
 | 对象、量词、假设和定义/结论 | `MD.Ch03.bchHamiltonian3` | 完整代码见第4段；两个版本独立列出 |
 
 [EXTRA] 无新增技术资格。
@@ -1996,7 +2204,7 @@ def bchHamiltonian3 {n : ℕ} (A B : SymplecticCoordinates n → ℝ) (h : ℝ) 
 本地限定解释与原文问题见上列范围及对照；逐声明编译、公理结果见第7段。
 
 网站：网站PASS（绑定版本 433a13ca6407）。
-网站原返回（对应其审校版本）：PASS；已核对 Ch03.lean 的本地 def 及依赖同名定义；本条没有 theorem 证明体，也无 sorry。依赖展开：SymplecticCoordinates n=(Fin n ⊕ Fin n)→ℝ，inl 为 q、inr 为 p；textbookJ=[[0,I],[-I,0]]；X_H=textbookHamiltonianVectorField H=J∇H；textbookPoissonBracket F G=DF(X_G)=Σ(F_q G_p−G_q F_p)。 展开后 bchHamiltonian3 逐点等于原页到 h³ 的有限函数：常数 A+B，h 项 {A,B}/2，h² 项两重括号之差 /12，h³ 项三重括号负 /24。n 隐式任意，A、B、h、z 全部参数对应原文。按本条 context_notation 明示范围，省略号及指数匹配不作为定义的结论；本 PASS 是有限印刷函数的忠实定义，不为原文指数关系背书。无 [EXTRA]。虽允许非光滑函数，fderiv 在不可微点的全定义扩展只是 Lean 函数定义的扩大定义域；在原文光滑对象上公式一致。原页算子关系存在前述符号疑误，有限函数本身仍如实保存印刷正负号。
+网站原返回（对应其审校版本）：PASS；已核对 Ch03.lean 的本地 def 及依赖同名定义；本条没有 theorem 证明体，也无 sorry。依赖展开：SymplecticCoordinates n=(Fin n ⊕ Fin n)→ℝ，inl 为 q、inr 为 p；textbookJ=[[0,I],[-I,0]]；X\_H=textbookHamiltonianVectorField H=J∇H；textbookPoissonBracket F G=DF(X\_G)=Σ(F\_q G\_p−G\_q F\_p)。 展开后 bchHamiltonian3 逐点等于原页到 h³ 的有限函数：常数 A+B，h 项 {A,B}/2，h² 项两重括号之差 /12，h³ 项三重括号负 /24。n 隐式任意，A、B、h、z 全部参数对应原文。按本条 context\_notation 明示范围，省略号及指数匹配不作为定义的结论；本 PASS 是有限印刷函数的忠实定义，不为原文指数关系背书。无 [EXTRA]。虽允许非光滑函数，fderiv 在不可微点的全定义扩展只是 Lean 函数定义的扩大定义域；在原文光滑对象上公式一致。原页算子关系存在前述符号疑误，有限函数本身仍如实保存印刷正负号。
 
 ### 7. 状态与证明位置
 
@@ -2055,16 +2263,16 @@ theorem bchHamiltonianMatching_corrected :
 | 当前覆盖范围 | 保留完整原文引文；Lean仅覆盖第4段明示的定义与限定结论，原书疑误或超出该陈述的内容不冒称已形式化。各版本差异见本条与ERRATA。 | 仅承诺明确列出的数学内容 |
 | 对象、量词、假设和定义/结论 | `MD.Ch03.bchHamiltonianMatching`；`MD.Ch03.bchHamiltonianMatching_corrected` | 完整代码见第4段；两个版本独立列出 |
 | 技术资格或版本解释 | 实际匹配按截断至h³、端点误差O(h⁵)表达；D开放、K紧、光滑Hamiltonian与真实局部流明示。 | [EXTRA] |
-| 技术资格或版本解释 | [ERRATUM?] 默认保留状态复合Φ_h∘Ψ_h及其正号修正Hamiltonian；对应拉回算子应为exp(hL_B)exp(hL_A)。原印反向算子顺序作为勘误保留。只声明现有有限实际流匹配。 | [EXTRA] |
+| 技术资格或版本解释 | [ERRATUM?] 默认保留状态复合Φ\_h∘Ψ\_h及其正号修正Hamiltonian；对应拉回算子应为exp(hL\_B)exp(hL\_A)。原印反向算子顺序作为勘误保留。只声明现有有限实际流匹配。 | [EXTRA] |
 
-[EXTRA] 实际匹配按截断至h³、端点误差O(h⁵)表达；D开放、K紧、光滑Hamiltonian与真实局部流明示。；[ERRATUM?] 默认保留状态复合Φ_h∘Ψ_h及其正号修正Hamiltonian；对应拉回算子应为exp(hL_B)exp(hL_A)。原印反向算子顺序作为勘误保留。只声明现有有限实际流匹配。
+[EXTRA] 实际匹配按截断至h³、端点误差O(h⁵)表达；D开放、K紧、光滑Hamiltonian与真实局部流明示。；[ERRATUM?] 默认保留状态复合Φ\_h∘Ψ\_h及其正号修正Hamiltonian；对应拉回算子应为exp(hL\_B)exp(hL\_A)。原印反向算子顺序作为勘误保留。只声明现有有限实际流匹配。
 
 ### 6. 审计结论
 
 本地限定解释与原文问题见上列范围及对照；逐声明编译、公理结果见第7段。
 
 网站：原书疑误/资格待导师；原文与修正版并列。
-网站原返回（对应其审校版本）：FAIL；已读取 Ch03.lean 实际声明和 Ch03_deps.txt 对应 -- FILE 段，审计针对签名语义；该 theorem 的证明体为 sorry，不据此判断签名 PASS/FAIL，亦不声称已获 Lean 验证。依赖展开：SymplecticCoordinates n=(Fin n ⊕ Fin n)→ℝ，inl 为 q、inr 为 p；textbookJ=[[0,I],[-I,0]]；X_H=textbookHamiltonianVectorField H=J∇H；textbookPoissonBracket F G=DF(X_G)=Σ(F_q G_p−G_q F_p)。actualFlow f D Φ η 展开为 η>0，且每个 z∈D 有 Φ(0,z)=z，对全部 |t|<η 有 Φ(t,z)∈D 和时间方向 HasDerivAt Φ(·,z) f(Φ(t,z)) t；未把复合相等或匹配放进假设。solution f γ 0 h 展开为在整个闭区间 [0,h] 的 HasDerivWithinAt γ (f(γ(t)))。 matchesHamiltonian K G B p 展开为 ∃C>0、δ>0、Γ，对全部 0<h<δ、z∈B 有 Γ(h,z,0)=z、solution X_{K(h)} Γ 0 h 及 ‖G(h,z)−Γ(h,z,h)‖≤C h^{p+1}；本条 p=4 即 O(h⁵)，不是预设匹配假设。bchHamiltonian3 展开为原页到 h³ 的印刷函数；该有限阶 O(h⁵) 解释是光滑情况下合理的形式级数有限后果，不证明收敛或无限级数的实际精确等价。按原页及 PDF124/印刷102 的 L_H F={F,H}，exp(hL_A) 是 Φ_A 的 pullback；exp(hL_A)exp(hL_B)F=F∘Ψ_B∘Φ_A，而 Lean 端点是 Φ_A∘Ψ_B。实际 [L_A,L_B]=L_{ {B,A} }=−L_{ {A,B} }，PDF127 顶部第一式也给出 {B,A}，紧接的第二式却改成 {A,B}，故该原书符号疑误可确定。Lean 的正号 Hamiltonian 对 Φ_A∘Ψ_B 是合理的，但这不是所引原文算子等式的逐义形式化。 [EXTRA] 开放 D、紧 K⊆D、光滑性用于统一有限阶余项，合理；全 D 统一 η 且所有轨线留在 D 比一般局部流强，应披露。无需因所谓未知定义、组合次序或余项阶而 NEEDS_HUMAN：相关定义全部在附件中，次序与 O(h⁵) 已可明确判定。
+网站原返回（对应其审校版本）：FAIL；已读取 Ch03.lean 实际声明和 Ch03\_deps.txt 对应 -- FILE 段，审计针对签名语义；该 theorem 的证明体为 sorry，不据此判断签名 PASS/FAIL，亦不声称已获 Lean 验证。依赖展开：SymplecticCoordinates n=(Fin n ⊕ Fin n)→ℝ，inl 为 q、inr 为 p；textbookJ=[[0,I],[-I,0]]；X\_H=textbookHamiltonianVectorField H=J∇H；textbookPoissonBracket F G=DF(X\_G)=Σ(F\_q G\_p−G\_q F\_p)。actualFlow f D Φ η 展开为 η>0，且每个 z∈D 有 Φ(0,z)=z，对全部 |t|<η 有 Φ(t,z)∈D 和时间方向 HasDerivAt Φ(·,z) f(Φ(t,z)) t；未把复合相等或匹配放进假设。solution f γ 0 h 展开为在整个闭区间 [0,h] 的 HasDerivWithinAt γ (f(γ(t)))。 matchesHamiltonian K G B p 展开为 ∃C>0、δ>0、Γ，对全部 0<h<δ、z∈B 有 Γ(h,z,0)=z、solution X_{K(h)} Γ 0 h 及 ‖G(h,z)−Γ(h,z,h)‖≤C h^{p+1}；本条 p=4 即 O(h⁵)，不是预设匹配假设。bchHamiltonian3 展开为原页到 h³ 的印刷函数；该有限阶 O(h⁵) 解释是光滑情况下合理的形式级数有限后果，不证明收敛或无限级数的实际精确等价。按原页及 PDF124/印刷102 的 L\_H F={F,H}，exp(hL\_A) 是 Φ\_A 的 pullback；exp(hL\_A)exp(hL\_B)F=F∘Ψ\_B∘Φ\_A，而 Lean 端点是 Φ\_A∘Ψ\_B。实际 [L\_A,L\_B]=L_{ {B,A} }=−L_{ {A,B} }，PDF127 顶部第一式也给出 {B,A}，紧接的第二式却改成 {A,B}，故该原书符号疑误可确定。Lean 的正号 Hamiltonian 对 Φ\_A∘Ψ\_B 是合理的，但这不是所引原文算子等式的逐义形式化。 [EXTRA] 开放 D、紧 K⊆D、光滑性用于统一有限阶余项，合理；全 D 统一 η 且所有轨线留在 D 比一般局部流强，应披露。无需因所谓未知定义、组合次序或余项阶而 NEEDS\_HUMAN：相关定义全部在附件中，次序与 O(h⁵) 已可明确判定。
 
 ### 7. 状态与证明位置
 
@@ -2076,7 +2284,12 @@ incomplete；`MD.Ch03.bchHamiltonianMatching`：未证（原书疑误不证）�
 ### 2. 原文陈述
 
 > If $H_1$ and $H_2$ Poisson-commute, i.e.
-> \[\{H_1,H_2\}=0,\]
+
+$$
+\{H_1,H_2\}=0,
+$$
+
+
 > then there is no error in splitting.
 
 ### 3. 原文证明
@@ -2104,7 +2317,7 @@ theorem commutingFlows :
 
 | 原文成分 | Lean对应 | 说明 |
 |---|---|---|
-| 当前覆盖范围 | 本条所引原句及展示公式；单个记号归入context_notation。 | 仅承诺明确列出的数学内容 |
+| 当前覆盖范围 | 本条所引原句及展示公式；单个记号归入context\_notation。 | 仅承诺明确列出的数学内容 |
 | 对象、量词、假设和定义/结论 | `MD.Ch03.commutingFlows` | 完整代码见第4段；两个版本独立列出 |
 | 技术资格或版本解释 | 光滑Hamiltonian、开放域及三个真实局部流；\|h\|<η/2保证复合时间在所给流的定义区间。 | [EXTRA] |
 | 技术资格或版本解释 | [EXTRA] C∞编码补充修复：指定版本裸⊤表示实解析Cω，现将原smooth的前提及输出恢复为scoped ∞；正式库冻结，已有证明随本批重查，失败依≤3次小修规则记录。 | [EXTRA] |
@@ -2116,7 +2329,7 @@ theorem commutingFlows :
 本地限定解释与原文问题见上列范围及对照；逐声明编译、公理结果见第7段。
 
 网站：网站PASS（EAUDIT复审）。
-网站原返回（对应其审校版本）：PASS；C：量化任意有限维n、Hamiltonian A/B、开放域D、三个时间参数流Φ/Ψ/Χ及η；A/B在D上C∞，Poisson括号在D上恒零。actualFlow含η>0、初值恒等、整段(−η,η)的ODE及D内不变性，不预设复合等于总流。结论对D内全部z及|h|<η/2给出Φ_h∘Ψ_h=Χ_h。J=[0 I;−I 0]及括号dA(X_B)符合标准坐标。光滑性保证局部唯一性；域内不变性保证中间点合法。[EXTRA]这些局部流及光滑域资格合理，∞恢复C∞也合理。 本审校只读核对任务中给出的声明及项目定义，不编译、不补证明；sorry不作为FAIL理由。
+网站原返回（对应其审校版本）：PASS；C：量化任意有限维n、Hamiltonian A/B、开放域D、三个时间参数流Φ/Ψ/Χ及η；A/B在D上C∞，Poisson括号在D上恒零。actualFlow含η>0、初值恒等、整段(−η,η)的ODE及D内不变性，不预设复合等于总流。结论对D内全部z及|h|<η/2给出Φ\_h∘Ψ\_h=Χ\_h。J=[0 I;−I 0]及括号dA(X\_B)符合标准坐标。光滑性保证局部唯一性；域内不变性保证中间点合法。[EXTRA]这些局部流及光滑域资格合理，∞恢复C∞也合理。 本审校只读核对任务中给出的声明及项目定义，不编译、不补证明；sorry不作为FAIL理由。
 
 ### 7. 状态与证明位置
 
@@ -2128,7 +2341,12 @@ incomplete；`MD.Ch03.commutingFlows`：未证（缺大型理论）。
 ### 2. 原文陈述
 
 > Splitting our Hamiltonian using $H_1=T(\boldsymbol p)=\boldsymbol p^TM^{-1}\boldsymbol p/2$ and $H_2=U(\boldsymbol q)$ gives the symplectic Euler method. The BCH expansion gives the perturbed Hamiltonian
-> \[\widetilde H_h=H-\frac h2\boldsymbol p^TM^{-1}\nabla U(\boldsymbol q)+\frac{h^2}{12}\bigl(\boldsymbol p^TM^{-1}U''(\boldsymbol q)M^{-1}\boldsymbol p+\nabla U(\boldsymbol q)^TM^{-1}\nabla U(\boldsymbol q)\bigr)-\frac{h^3}{12}\nabla U(\boldsymbol q)^TM^{-1}U''(\boldsymbol q)M^{-1}\boldsymbol p+O(h^4).\]
+
+$$
+\widetilde H_h=H-\frac h2\boldsymbol p^TM^{-1}\nabla U(\boldsymbol q)+\frac{h^2}{12}\bigl(\boldsymbol p^TM^{-1}U''(\boldsymbol q)M^{-1}\boldsymbol p+\nabla U(\boldsymbol q)^TM^{-1}\nabla U(\boldsymbol q)\bigr)-\frac{h^3}{12}\nabla U(\boldsymbol q)^TM^{-1}U''(\boldsymbol q)M^{-1}\boldsymbol p+O(h^4).
+$$
+
+
 
 ### 3. 原文证明
 
@@ -2149,7 +2367,7 @@ def symplecticEulerShadow3 {n : ℕ} (m : Fin n → ℝ) (U : Q n → ℝ) (h : 
 
 | 原文成分 | Lean对应 | 说明 |
 |---|---|---|
-| 当前覆盖范围 | 本条所引原句及展示公式；单个记号归入context_notation。 | 仅承诺明确列出的数学内容 |
+| 当前覆盖范围 | 本条所引原句及展示公式；单个记号归入context\_notation。 | 仅承诺明确列出的数学内容 |
 | 对象、量词、假设和定义/结论 | `MD.Ch03.symplecticEulerShadow3` | 完整代码见第4段；两个版本独立列出 |
 | 技术资格或版本解释 | M取固定对角质量矩阵，与第1章机械模型一致；不包括任意非对角M。 | [EXTRA] |
 
@@ -2160,7 +2378,7 @@ def symplecticEulerShadow3 {n : ℕ} (m : Fin n → ℝ) (U : Q n → ℝ) (h : 
 本地限定解释与原文问题见上列范围及对照；逐声明编译、公理结果见第7段。
 
 网站：网站PASS（绑定版本 433a13ca6407）。
-网站原返回（对应其审校版本）：PASS；PASS（有限截断定义的语义，不是无限级数收敛或匹配定理的证明）。依赖Ch03_deps.txt中逐项展开：Q n=Fin n→ℝ，Z n=Q n×Q n，z.1=q、z.2=p；invMass m v i=(m i)⁻¹v_i；quadraticKinetic=(Σ p_i²/m_i)/2，mechanicalEnergy=T+U；grad U q i=fderiv U q(e_i)，hessianAction U q v=fderiv (grad U) q(v)。shadowTerms三个分量分别是vᵀU″v、gᵀM⁻¹g、(M⁻¹g)ᵀU″v，其中v=M⁻¹p、g=∇U。故symplecticEulerShadow3准确保存PDF第128页的h⁰至h³全部系数；O(h⁴)未作为函数项，已由context_notation说明是有限截断，并交由另一条匹配陈述处理。[EXTRA]固定对角质量与机械模型一致，是明确限制；不宣称推广到任意非对角M。定义本身未要求positiveMass或可微性，Lean的逆元及fderiv为全域算子：零质量/不可微势处为形式扩展，不赋予这些输入教材力学含义；在正质量且势足够光滑的原文语境内完全一致。无[ERRATUM?]标记，无需修正原书公式。此条是定义，不含sorry；不据此声称后续匹配已有证明。依赖定位：Ch03_deps.txt:2816–2817、2840、2932、3569–3579。
+网站原返回（对应其审校版本）：PASS；PASS（有限截断定义的语义，不是无限级数收敛或匹配定理的证明）。依赖Ch03\_deps.txt中逐项展开：Q n=Fin n→ℝ，Z n=Q n×Q n，z.1=q、z.2=p；invMass m v i=(m i)⁻¹v\_i；quadraticKinetic=(Σ p\_i²/m\_i)/2，mechanicalEnergy=T+U；grad U q i=fderiv U q(e\_i)，hessianAction U q v=fderiv (grad U) q(v)。shadowTerms三个分量分别是vᵀU″v、gᵀM⁻¹g、(M⁻¹g)ᵀU″v，其中v=M⁻¹p、g=∇U。故symplecticEulerShadow3准确保存PDF第128页的h⁰至h³全部系数；O(h⁴)未作为函数项，已由context\_notation说明是有限截断，并交由另一条匹配陈述处理。[EXTRA]固定对角质量与机械模型一致，是明确限制；不宣称推广到任意非对角M。定义本身未要求positiveMass或可微性，Lean的逆元及fderiv为全域算子：零质量/不可微势处为形式扩展，不赋予这些输入教材力学含义；在正质量且势足够光滑的原文语境内完全一致。无[ERRATUM?]标记，无需修正原书公式。此条是定义，不含sorry；不据此声称后续匹配已有证明。依赖定位：Ch03\_deps.txt:2816–2817、2840、2932、3569–3579。
 
 ### 7. 状态与证明位置
 
@@ -2195,7 +2413,7 @@ theorem symplecticEulerShadowMatching :
 
 | 原文成分 | Lean对应 | 说明 |
 |---|---|---|
-| 当前覆盖范围 | 本条所引原句及展示公式；单个记号归入context_notation。 | 仅承诺明确列出的数学内容 |
+| 当前覆盖范围 | 本条所引原句及展示公式；单个记号归入context\_notation。 | 仅承诺明确列出的数学内容 |
 | 对象、量词、假设和定义/结论 | `MD.Ch03.symplecticEulerShadowMatching` | 完整代码见第4段；两个版本独立列出 |
 | 技术资格或版本解释 | 正对角质量、U全域C∞、紧初值集B；截断h³的实际局部流端点O(h⁵)为额外严格化。 | [EXTRA] |
 | 技术资格或版本解释 | [EXTRA] C∞编码补充修复：指定版本裸⊤表示实解析Cω，现将原smooth的前提及输出恢复为scoped ∞；正式库冻结，已有证明随本批重查，失败依≤3次小修规则记录。 | [EXTRA] |
@@ -2207,7 +2425,7 @@ theorem symplecticEulerShadowMatching :
 本地限定解释与原文问题见上列范围及对照；逐声明编译、公理结果见第7段。
 
 网站：网站PASS（EAUDIT复审）。
-网站原返回（对应其审校版本）：PASS；C：量化n、正对角质量m、全域C∞势U及任意紧初值集B；unpack将inl/inr坐标分别解释为q/p。算法为drift_h∘kick_h，先p减h∇U(q)，再q加hM⁻¹p_new。symplecticEulerShadow3中h、h²、h³的符号及两项h²收缩、h³收缩均与附件第4页相同；J的约定使这些符号匹配此数值次序。matchesHamiltonian的p=4精确要求存在C>0、δ>0、对每个0<h<δ和z∈B有真实初值解且端点差≤Ch^5，而不是Hamiltonian余项O(h^5)。从Hamiltonian截断误差O(h^4)经一步时间h得到该端点阶，[EXTRA]紧集一致局部解及光滑性是合理严格化。原issues中的次序/阶疑问由所给定义可消除。 本审校只读核对任务中给出的声明及项目定义，不编译、不补证明；sorry不作为FAIL理由。
+网站原返回（对应其审校版本）：PASS；C：量化n、正对角质量m、全域C∞势U及任意紧初值集B；unpack将inl/inr坐标分别解释为q/p。算法为drift\_h∘kick\_h，先p减h∇U(q)，再q加hM⁻¹p\_new。symplecticEulerShadow3中h、h²、h³的符号及两项h²收缩、h³收缩均与附件第4页相同；J的约定使这些符号匹配此数值次序。matchesHamiltonian的p=4精确要求存在C>0、δ>0、对每个0<h<δ和z∈B有真实初值解且端点差≤Ch^5，而不是Hamiltonian余项O(h^5)。从Hamiltonian截断误差O(h^4)经一步时间h得到该端点阶，[EXTRA]紧集一致局部解及光滑性是合理严格化。原issues中的次序/阶疑问由所给定义可消除。 本审校只读核对任务中给出的声明及项目定义，不编译、不补证明；sorry不作为FAIL理由。
 
 ### 7. 状态与证明位置
 
@@ -2219,10 +2437,12 @@ incomplete；`MD.Ch03.symplecticEulerShadowMatching`：未证（缺大型理论�
 ### 2. 原文陈述
 
 > Recall the position and velocity Verlet methods:
-> \[\begin{array}{ll}\text{Position Verlet:}&\text{Velocity Verlet:}\\
-> \widehat Q:=q+(h/2)M^{-1}p,&\widehat P:=p-(h/2)\nabla U(q),\\
-> P:=p-h\nabla U(\widehat Q),&Q:=q+hM^{-1}\widehat P,\\
-> Q:=\widehat Q+(h/2)M^{-1}P.&P:=\widehat P-(h/2)\nabla U(Q).\end{array}\tag{3.3}\]
+
+$$
+\begin{array}{ll}\text{Position Verlet:}&\text{Velocity Verlet:}\\ \widehat Q:=q+(h/2)M^{-1}p,&\widehat P:=p-(h/2)\nabla U(q),\\ P:=p-h\nabla U(\widehat Q),&Q:=q+hM^{-1}\widehat P,\\ Q:=\widehat Q+(h/2)M^{-1}P.&P:=\widehat P-(h/2)\nabla U(Q).\end{array}\tag{3.3}
+$$
+
+
 
 ### 3. 原文证明
 
@@ -2245,7 +2465,7 @@ def verletMaps {n : ℕ} (m : Fin n → ℝ) (U : Q n → ℝ) (h : ℝ) :
 
 | 原文成分 | Lean对应 | 说明 |
 |---|---|---|
-| 当前覆盖范围 | 本条所引原句及展示公式；单个记号归入context_notation。 | 仅承诺明确列出的数学内容 |
+| 当前覆盖范围 | 本条所引原句及展示公式；单个记号归入context\_notation。 | 仅承诺明确列出的数学内容 |
 | 对象、量词、假设和定义/结论 | `MD.Ch03.verletMaps` | 完整代码见第4段；两个版本独立列出 |
 | 技术资格或版本解释 | 固定对角质量M，保持第1章对象；无非对角质量一般化。 | [EXTRA] |
 
@@ -2256,7 +2476,7 @@ def verletMaps {n : ℕ} (m : Fin n → ℝ) (U : Q n → ℝ) (h : ℝ) :
 本地限定解释与原文问题见上列范围及对照；逐声明编译、公理结果见第7段。
 
 网站：网站PASS（绑定版本 433a13ca6407）。
-网站原返回（对应其审校版本）：PASS；依赖展开：Q n=Fin n→ℝ，SymplecticCoordinates n=(Fin n⊕Fin n)→ℝ；pack=Sum.elim q p，unpack=(z∘inl,z∘inr)。textbookPotentialForce U q i=−fderiv ℝ U q (Pi.single i 1)；kick保持q并令p_i↦p_i+hF(q)_i；drift保持p并令q_i↦q_i+h(m_i)⁻¹p_i。coordinateVerlet=kick(h/2)∘drift(h)∘kick(h/2)，positionVerlet=drift(h/2)∘kick(h)∘drift(h/2)，函数组合从右至左作用。 展开所得六个赋值及返回位置/速度Verlet的顺序均与(3.3)一致。[EXTRA] 对角固定质量与教材机械模型相符；Lean还允许零质量（实数逆零定义为零）及非光滑U，这是总函数延拓，并非对退化对象声称物理逆矩阵存在。定义没有sorry；数学适用域应理解为教材非退化质量、可微势能。
+网站原返回（对应其审校版本）：PASS；依赖展开：Q n=Fin n→ℝ，SymplecticCoordinates n=(Fin n⊕Fin n)→ℝ；pack=Sum.elim q p，unpack=(z∘inl,z∘inr)。textbookPotentialForce U q i=−fderiv ℝ U q (Pi.single i 1)；kick保持q并令p\_i↦p\_i+hF(q)_i；drift保持p并令q\_i↦q\_i+h(m\_i)⁻¹p\_i。coordinateVerlet=kick(h/2)∘drift(h)∘kick(h/2)，positionVerlet=drift(h/2)∘kick(h)∘drift(h/2)，函数组合从右至左作用。 展开所得六个赋值及返回位置/速度Verlet的顺序均与(3.3)一致。[EXTRA] 对角固定质量与教材机械模型相符；Lean还允许零质量（实数逆零定义为零）及非光滑U，这是总函数延拓，并非对退化对象声称物理逆矩阵存在。定义没有sorry；数学适用域应理解为教材非退化质量、可微势能。
 
 ### 7. 状态与证明位置
 
@@ -2268,7 +2488,12 @@ self-contained；`MD.Ch03.verletMaps`：定义。
 ### 2. 原文陈述
 
 > We can think of the velocity Verlet method as being defined by a splitting into three parts:
-> \[H(q,p)=H_1+H_2+H_3,\qquad H_1=\frac12U(q),\qquad H_2=\frac12p^TM^{-1}p,\qquad H_3=\frac12U(q).\]
+
+$$
+H(q,p)=H_1+H_2+H_3,\qquad H_1=\frac12U(q),\qquad H_2=\frac12p^TM^{-1}p,\qquad H_3=\frac12U(q).
+$$
+
+
 
 ### 3. 原文证明
 
@@ -2296,7 +2521,7 @@ theorem verletHamiltonianParts_sum {n : ℕ} (m : Fin n → ℝ)
 
 | 原文成分 | Lean对应 | 说明 |
 |---|---|---|
-| 当前覆盖范围 | 本条所引原句及展示公式；单个记号归入context_notation。 | 仅承诺明确列出的数学内容 |
+| 当前覆盖范围 | 本条所引原句及展示公式；单个记号归入context\_notation。 | 仅承诺明确列出的数学内容 |
 | 对象、量词、假设和定义/结论 | `MD.Ch03.verletHamiltonianParts`；`MD.Ch03.verletHamiltonianParts_sum` | 完整代码见第4段；两个版本独立列出 |
 | 技术资格或版本解释 | [EXTRA] 绑定真实正对角质量、T(p)=pᵀM⁻¹p/2及U(q)，补H1+H2+H3=H；移除任意相空间函数替代机械分解。 | [EXTRA] |
 
@@ -2307,7 +2532,7 @@ theorem verletHamiltonianParts_sum {n : ℕ} (m : Fin n → ℝ)
 本地限定解释与原文问题见上列范围及对照；逐声明编译、公理结果见第7段。
 
 网站：网站PASS（EAUDIT复审）。
-网站原返回（对应其审校版本）：PASS；C：任意n、m及正质量证明hm、任意U，定义Fin 3索引的三个真实相空间函数，依次为U(q)/2、(∑p_i²/m_i)/2、U(q)/2；不把T或U替换成任意相空间函数。sum声明对每个z断言三项之和为T(p)+U(q)，覆盖原文H=H1+H2+H3。正对角质量由[EXTRA]明确，既无额外轨迹假设也无漏掉的求和结论。 本审校只读核对任务中给出的声明及项目定义，不编译、不补证明；sorry不作为FAIL理由。
+网站原返回（对应其审校版本）：PASS；C：任意n、m及正质量证明hm、任意U，定义Fin 3索引的三个真实相空间函数，依次为U(q)/2、(∑p\_i²/m\_i)/2、U(q)/2；不把T或U替换成任意相空间函数。sum声明对每个z断言三项之和为T(p)+U(q)，覆盖原文H=H1+H2+H3。正对角质量由[EXTRA]明确，既无额外轨迹假设也无漏掉的求和结论。 本审校只读核对任务中给出的声明及项目定义，不编译、不补证明；sorry不作为FAIL理由。
 
 ### 7. 状态与证明位置
 
@@ -2345,7 +2570,7 @@ theorem verletStructure :
 
 | 原文成分 | Lean对应 | 说明 |
 |---|---|---|
-| 当前覆盖范围 | 本条所引原句及展示公式；单个记号归入context_notation。 | 仅承诺明确列出的数学内容 |
+| 当前覆盖范围 | 本条所引原句及展示公式；单个记号归入context\_notation。 | 仅承诺明确列出的数学内容 |
 | 对象、量词、假设和定义/结论 | `MD.Ch03.verletStructure` | 完整代码见第4段；两个版本独立列出 |
 | 技术资格或版本解释 | U全域C²以保障真实梯度kick为辛映射；原文光滑Hamiltonian假设显式化。 | [EXTRA] |
 
@@ -2356,7 +2581,7 @@ theorem verletStructure :
 本地限定解释与原文问题见上列范围及对照；逐声明编译、公理结果见第7段。
 
 网站：网站PASS（绑定版本 433a13ca6407）。
-网站原返回（对应其审校版本）：PASS；依赖展开：Q n=Fin n→ℝ，SymplecticCoordinates n=(Fin n⊕Fin n)→ℝ；pack=Sum.elim q p，unpack=(z∘inl,z∘inr)。textbookPotentialForce U q i=−fderiv ℝ U q (Pi.single i 1)；kick保持q并令p_i↦p_i+hF(q)_i；drift保持p并令q_i↦q_i+h(m_i)⁻¹p_i。coordinateVerlet=kick(h/2)∘drift(h)∘kick(h/2)，positionVerlet=drift(h/2)∘kick(h)∘drift(h/2)，函数组合从右至左作用。 IsTextbookSymplecticMap Φ=ContDiff ℝ 1 Φ ∧ ∀z,(DΦ(z))ᵀJ DΦ(z)=J，其中textbookJacobian=实际fderiv的坐标矩阵。量词为∀n,m,U，在U全域C²后，同时给所有h的两种辛性及所有h,z的反步恒等式；kick/drift结构已由实际定义体现。[EXTRA] C²足以使梯度kick为C¹且Hessian对称，是合理的光滑性显式化；m正性不为剪切映射辛性和反步所必需。当前证明调用verletVariants_proved，其源码由真实kick/drift辛性与两条反步消去证明组成；本条不是sorry。
+网站原返回（对应其审校版本）：PASS；依赖展开：Q n=Fin n→ℝ，SymplecticCoordinates n=(Fin n⊕Fin n)→ℝ；pack=Sum.elim q p，unpack=(z∘inl,z∘inr)。textbookPotentialForce U q i=−fderiv ℝ U q (Pi.single i 1)；kick保持q并令p\_i↦p\_i+hF(q)_i；drift保持p并令q\_i↦q\_i+h(m\_i)⁻¹p\_i。coordinateVerlet=kick(h/2)∘drift(h)∘kick(h/2)，positionVerlet=drift(h/2)∘kick(h)∘drift(h/2)，函数组合从右至左作用。 IsTextbookSymplecticMap Φ=ContDiff ℝ 1 Φ ∧ ∀z,(DΦ(z))ᵀJ DΦ(z)=J，其中textbookJacobian=实际fderiv的坐标矩阵。量词为∀n,m,U，在U全域C²后，同时给所有h的两种辛性及所有h,z的反步恒等式；kick/drift结构已由实际定义体现。[EXTRA] C²足以使梯度kick为C¹且Hessian对称，是合理的光滑性显式化；m正性不为剪切映射辛性和反步所必需。当前证明调用verletVariants\_proved，其源码由真实kick/drift辛性与两条反步消去证明组成；本条不是sorry。
 
 ### 7. 状态与证明位置
 
@@ -2368,8 +2593,12 @@ checked+documented priors；`MD.Ch03.verletStructure`：已证。
 ### 2. 原文陈述
 
 > In general for the Verlet method applied to Hamiltonians of the form $H(q,p)=T(p)+U(q)$, the BCH lemma gives
-> \[\begin{aligned}\widetilde H_h={}&T+U+\frac{h^2}{12}\left(\{T,\{T,U\}\}-\frac12\{U,\{U,T\}\}\right)\\
-> &+\frac{h^4}{120}\left(-\frac16\{T,\{T,\{T,\{T,U\}\}\}\}+\frac13\{U,\{T,\{T,\{T,U\}\}\}\}-\frac14\{U,\{U,\{T,\{T,U\}\}\}\}+\{T,\{T,\{U,\{U,T\}\}\}\}\right)+O(h^6).\end{aligned}\]
+
+$$
+\begin{aligned}\widetilde H_h={}&T+U+\frac{h^2}{12}\left(\{T,\{T,U\}\}-\frac12\{U,\{U,T\}\}\right)\\ &+\frac{h^4}{120}\left(-\frac16\{T,\{T,\{T,\{T,U\}\}\}\}+\frac13\{U,\{T,\{T,\{T,U\}\}\}\}-\frac14\{U,\{U,\{T,\{T,U\}\}\}\}+\{T,\{T,\{U,\{U,T\}\}\}\}\right)+O(h^6).\end{aligned}
+$$
+
+
 
 ### 3. 原文证明
 
@@ -2413,16 +2642,16 @@ def verletModifiedH_corrected {n : ℕ} (T U : SymplecticCoordinates n → ℝ) 
 | 当前覆盖范围 | 展示式中到h⁴的有限多项式辅助定义；BCH系数匹配及Hamiltonian O(h⁶)余项范围由MD-3.3.2-VerletModifiedMatching承担。 | 仅承诺明确列出的数学内容 |
 | 对象、量词、假设和定义/结论 | `MD.Ch03.verletModifiedH`；`MD.Ch03.verletModifiedH_corrected` | 完整代码见第4段；两个版本独立列出 |
 | 技术资格或版本解释 | [EXTRA] 本条仅保留展示式到h⁴的有限多项式；一般可分离T(p),U(q)的完整形式系数及O(h⁶)匹配由MD-3.3.2-VerletModifiedMatching补全，原展示式及余项原文不删。 | [EXTRA] |
-| 技术资格或版本解释 | [ERRATUM?] 这份独立表达式只按机械二次动能解释，不能用于一般非二次T；机械匹配见verletModifiedMatching_corrected。一般T的h⁴公式尚待导师，不声称本通用函数对任意T正确。 | [EXTRA] |
+| 技术资格或版本解释 | [ERRATUM?] 这份独立表达式只按机械二次动能解释，不能用于一般非二次T；机械匹配见verletModifiedMatching\_corrected。一般T的h⁴公式尚待导师，不声称本通用函数对任意T正确。 | [EXTRA] |
 
-[EXTRA] [EXTRA] 本条仅保留展示式到h⁴的有限多项式；一般可分离T(p),U(q)的完整形式系数及O(h⁶)匹配由MD-3.3.2-VerletModifiedMatching补全，原展示式及余项原文不删。；[ERRATUM?] 这份独立表达式只按机械二次动能解释，不能用于一般非二次T；机械匹配见verletModifiedMatching_corrected。一般T的h⁴公式尚待导师，不声称本通用函数对任意T正确。
+[EXTRA] [EXTRA] 本条仅保留展示式到h⁴的有限多项式；一般可分离T(p),U(q)的完整形式系数及O(h⁶)匹配由MD-3.3.2-VerletModifiedMatching补全，原展示式及余项原文不删。；[ERRATUM?] 这份独立表达式只按机械二次动能解释，不能用于一般非二次T；机械匹配见verletModifiedMatching\_corrected。一般T的h⁴公式尚待导师，不声称本通用函数对任意T正确。
 
 ### 6. 审计结论
 
 本地限定解释与原文问题见上列范围及对照；逐声明编译、公理结果见第7段。
 
 网站：原书疑误/资格待导师；原文与修正版并列。
-网站原返回（对应其审校版本）：NEEDS_HUMAN；C：verletModifiedH对任意n及任意两个相空间实函数T/U、任意h/z定义总化有限多项式；所有Poisson括号均用dF(J∇G)，与所引符号一致，h²两项和h⁴四项逐项完全一致。作为有限式定义它不主张可微性、可分离性、真实流或O(h^6)匹配，extra明确将这些义务分给第7条。定义的字面翻译通过；但整条原文一般T的数学主张有反例，因此合并裁定需人工，不能把有限式的忠实性当成一般BCH正确性。 本审校只读核对任务中给出的声明及项目定义，不编译、不补证明；sorry不作为FAIL理由。
+网站原返回（对应其审校版本）：NEEDS\_HUMAN；C：verletModifiedH对任意n及任意两个相空间实函数T/U、任意h/z定义总化有限多项式；所有Poisson括号均用dF(J∇G)，与所引符号一致，h²两项和h⁴四项逐项完全一致。作为有限式定义它不主张可微性、可分离性、真实流或O(h^6)匹配，extra明确将这些义务分给第7条。定义的字面翻译通过；但整条原文一般T的数学主张有反例，因此合并裁定需人工，不能把有限式的忠实性当成一般BCH正确性。 本审校只读核对任务中给出的声明及项目定义，不编译、不补证明；sorry不作为FAIL理由。
 
 ### 7. 状态与证明位置
 
@@ -2515,7 +2744,7 @@ theorem verletModifiedMatching_corrected :
 本地限定解释与原文问题见上列范围及对照；逐声明编译、公理结果见第7段。
 
 网站：原书疑误/资格待导师；原文与修正版并列。
-网站原返回（对应其审校版本）：NEEDS_HUMAN；C：verletModifiedMatching量化正质量m、全域C∞的U及紧B；K以二次T和位置U代入，G是先半kick、全drift、半kick，matchesHamiltonian(...,5)为O(h⁶)，与更强的正确截断阶相容。general则量化任意全域C∞ T/U、开放D、紧B⊆D、η及两条D内真实子流；结论含K4截断匹配O(h⁷)、存在全套D上C∞ Hj、H0/H2/H4精确值、所有奇次全域为零、每个k≥6的截断匹配O(h^(k+1))。这些量词和余项阶已完整保留，负号和次序也正确；但[EXTRA]把二次动能式提升到任意T，所固定H4有具体反例，故不能批准general。机械版本单独在签名语义上通过；本条总裁定依原书疑误规则NEEDS_HUMAN。 本审校只读核对任务中给出的声明及项目定义，不编译、不补证明；sorry不作为FAIL理由。
+网站原返回（对应其审校版本）：NEEDS\_HUMAN；C：verletModifiedMatching量化正质量m、全域C∞的U及紧B；K以二次T和位置U代入，G是先半kick、全drift、半kick，matchesHamiltonian(...,5)为O(h⁶)，与更强的正确截断阶相容。general则量化任意全域C∞ T/U、开放D、紧B⊆D、η及两条D内真实子流；结论含K4截断匹配O(h⁷)、存在全套D上C∞ Hj、H0/H2/H4精确值、所有奇次全域为零、每个k≥6的截断匹配O(h^(k+1))。这些量词和余项阶已完整保留，负号和次序也正确；但[EXTRA]把二次动能式提升到任意T，所固定H4有具体反例，故不能批准general。机械版本单独在签名语义上通过；本条总裁定依原书疑误规则NEEDS\_HUMAN。 本审校只读核对任务中给出的声明及项目定义，不编译、不补证明；sorry不作为FAIL理由。
 
 ### 7. 状态与证明位置
 
@@ -2528,7 +2757,12 @@ incomplete；`MD.Ch03.verletModifiedMatching`：未证（原书疑误不证）�
 
 > The extra power of $h$ in the leading perturbation reflects the fact that this method is 2nd order accurate, rather than first order, as Symplectic Euler. Note that only even order terms $(h^2,h^4,\ldots)$ appear in the perturbative expansion; this is a consequence of the symmetry of the method.
 > Setting $s=-t$, the left hand side of (3.4) collapses to the identity. Hence the surviving even-powered terms in the expansion on the right hand side of (3.5) must be zero. If the even order terms vanish, then the effect of composing linear operators symmetrically is to keep only odd order terms in the exponent, giving the symmetric BCH formula
-> \[\exp(\tfrac t2X)\exp(tY)\exp(\tfrac t2X)=\exp(t(X+Y)+t^3\widetilde Z_{[3]}+\cdots).\tag{3.6}\]
+
+$$
+\exp(\tfrac t2X)\exp(tY)\exp(\tfrac t2X)=\exp(t(X+Y)+t^3\widetilde Z_{[3]}+\cdots).\tag{3.6}
+$$
+
+
 
 ### 3. 原文证明
 
@@ -2581,7 +2815,7 @@ theorem modifiedEven_corrected :
 本地限定解释与原文问题见上列范围及对照；逐声明编译、公理结果见第7段。
 
 网站：原书疑误/资格待导师；原文与修正版并列。
-网站原返回（对应其审校版本）：PASS；C：任意实代数R（Ring而非CommRing）及A/B，formalStrang是e^(XA/2)e^(XB)e^(XA/2)，formalLog为对P−1展开的形式log。结论一次系数A+B，且对所有j∈ℕ包括j=0，2j次系数均为0；因此指数含h(A+B)及至少h³的奇项，除以h后修正生成元只有偶项，涵盖至少二阶。formalStrang常项1确保formalLog使用合法，不需要收敛或不同步长log交换。[EXTRA]新增一次项并未把错误的原书证明当前提。Lean签名PASS；JSON因保留原书推理缺口NEEDS_HUMAN。 本审校只读核对任务中给出的声明及项目定义，不编译、不补证明；sorry不作为FAIL理由。
+网站原返回（对应其审校版本）：PASS；C：任意实代数R（Ring而非CommRing）及A/B，formalStrang是e^(XA/2)e^(XB)e^(XA/2)，formalLog为对P−1展开的形式log。结论一次系数A+B，且对所有j∈ℕ包括j=0，2j次系数均为0；因此指数含h(A+B)及至少h³的奇项，除以h后修正生成元只有偶项，涵盖至少二阶。formalStrang常项1确保formalLog使用合法，不需要收敛或不同步长log交换。[EXTRA]新增一次项并未把错误的原书证明当前提。Lean签名PASS；JSON因保留原书推理缺口NEEDS\_HUMAN。 本审校只读核对任务中给出的声明及项目定义，不编译、不补证明；sorry不作为FAIL理由。
 
 ### 7. 状态与证明位置
 
@@ -2593,7 +2827,12 @@ incomplete；`MD.Ch03.modifiedEven`：未证（原书疑误不证）；`MD.Ch03.
 ### 2. 原文陈述
 
 > For Hamiltonians $X$ and $Y$, consider symmetrizing a composition of exponentials (a Strang splitting), such that
-> \[\exp(\tfrac t2X)\exp(tY)\exp(\tfrac t2X)=\exp(tZ_t)=\exp(t\widetilde Z_{[1]}+t^2\widetilde Z_{[2]}+t^3\widetilde Z_{[3]}+t^4\widetilde Z_{[4]}+\cdots).\]
+
+$$
+\exp(\tfrac t2X)\exp(tY)\exp(\tfrac t2X)=\exp(tZ_t)=\exp(t\widetilde Z_{[1]}+t^2\widetilde Z_{[2]}+t^3\widetilde Z_{[3]}+t^4\widetilde Z_{[4]}+\cdots).
+$$
+
+
 
 ### 3. 原文证明
 
@@ -2632,18 +2871,18 @@ theorem formalStrang_log_reconstruction {R : Type*} [Ring R] [Algebra ℝ R] (A 
 
 | 原文成分 | Lean对应 | 说明 |
 |---|---|---|
-| 当前覆盖范围 | 本条所引原句及展示公式；单个记号归入context_notation。 | 仅承诺明确列出的数学内容 |
+| 当前覆盖范围 | 本条所引原句及展示公式；单个记号归入context\_notation。 | 仅承诺明确列出的数学内容 |
 | 对象、量词、假设和定义/结论 | `MD.Ch03.formalStrang`；`MD.Ch03.formalStrang_Zt`；`MD.Ch03.formalStrang_constant`；`MD.Ch03.formalStrang_log_constant`；`MD.Ch03.formalStrang_log_reconstruction` | 完整代码见第4段；两个版本独立列出 |
-| 技术资格或版本解释 | [EXTRA] formalStrang保留构造；补常项为1、log常项为0及零常项形式指数重建的全阶等式。Z_t明确为log级数去掉一因子X后的移位级数；重建声明尚未证明，不声称真实ODE收敛。 | [EXTRA] |
+| 技术资格或版本解释 | [EXTRA] formalStrang保留构造；补常项为1、log常项为0及零常项形式指数重建的全阶等式。Z\_t明确为log级数去掉一因子X后的移位级数；重建声明尚未证明，不声称真实ODE收敛。 | [EXTRA] |
 
-[EXTRA] [EXTRA] formalStrang保留构造；补常项为1、log常项为0及零常项形式指数重建的全阶等式。Z_t明确为log级数去掉一因子X后的移位级数；重建声明尚未证明，不声称真实ODE收敛。
+[EXTRA] [EXTRA] formalStrang保留构造；补常项为1、log常项为0及零常项形式指数重建的全阶等式。Z\_t明确为log级数去掉一因子X后的移位级数；重建声明尚未证明，不声称真实ODE收敛。
 
 ### 6. 审计结论
 
-本轮修复：formalStrang保留构造；补常项为1、log常项为0及零常项形式指数重建的全阶等式。Z_t明确为log级数去掉一因子X后的移位级数；重建声明尚未证明，不声称真实ODE收敛。
+本轮修复：formalStrang保留构造；补常项为1、log常项为0及零常项形式指数重建的全阶等式。Z\_t明确为log级数去掉一因子X后的移位级数；重建声明尚未证明，不声称真实ODE收敛。
 
 网站：按网站审校意见修复，本地核验通过（未再送网站）。
-网站原返回（对应其审校版本）：FAIL；C：formalStrang对任意实代数及A/B定义三次形式指数乘积，1/2只缩放外侧生成元，乘法次序与原文相同，形式变量由PowerSeries携带。但原文陈述同时断言该乘积等于exp(tZ_t)=exp(∑t^j Z_[j])；定义体没有Z_t、任何Z_[j]存在性、formalLog或重建指数的等式。context仅解释左端，不能替代全部结论；本条[EXTRA]也未披露完整性缺口。按完整结论审校为FAIL，不是因为原文数学错误或sorry。 本审校只读核对任务中给出的声明及项目定义，不编译、不补证明；sorry不作为FAIL理由。
+网站原返回（对应其审校版本）：FAIL；C：formalStrang对任意实代数及A/B定义三次形式指数乘积，1/2只缩放外侧生成元，乘法次序与原文相同，形式变量由PowerSeries携带。但原文陈述同时断言该乘积等于exp(tZ\_t)=exp(∑t^j Z_[j])；定义体没有Z\_t、任何Z_[j]存在性、formalLog或重建指数的等式。context仅解释左端，不能替代全部结论；本条[EXTRA]也未披露完整性缺口。按完整结论审校为FAIL，不是因为原文数学错误或sorry。 本审校只读核对任务中给出的声明及项目定义，不编译、不补证明；sorry不作为FAIL理由。
 
 ### 7. 状态与证明位置
 
@@ -2655,10 +2894,19 @@ incomplete；`MD.Ch03.formalStrang`：定义；`MD.Ch03.formalStrang_Zt`：定�
 ### 2. 原文陈述
 
 > Multiplying by the same expansion using a different time step $s$, we have
-> \[\exp(\tfrac s2X)\exp(sY)\exp(\tfrac s2X)\exp(\tfrac t2X)\exp(tY)\exp(\tfrac t2X)=\exp(sZ_s)\exp(tZ_t).\tag{3.4}\]
+
+$$
+\exp(\tfrac s2X)\exp(sY)\exp(\tfrac s2X)\exp(\tfrac t2X)\exp(tY)\exp(\tfrac t2X)=\exp(sZ_s)\exp(tZ_t).\tag{3.4}
+$$
+
+
 > But we know that $Z_t$ commutes with $Z_s$, giving
-> \[\begin{aligned}\exp(sZ_s)\exp(tZ_t)&=\exp(sZ_s+tZ_t)\\
-> &=\exp((s+t)\widetilde Z_{[1]}+(s^2+t^2)\widetilde Z_{[2]}+(s^3+t^3)\widetilde Z_{[3]}+(s^4+t^4)\widetilde Z_{[4]}+\cdots).\end{aligned}\tag{3.5}\]
+
+$$
+\begin{aligned}\exp(sZ_s)\exp(tZ_t)&=\exp(sZ_s+tZ_t)\\ &=\exp((s+t)\widetilde Z_{[1]}+(s^2+t^2)\widetilde Z_{[2]}+(s^3+t^3)\widetilde Z_{[3]}+(s^4+t^4)\widetilde Z_{[4]}+\cdots).\end{aligned}\tag{3.5}
+$$
+
+
 
 ### 3. 原文证明
 
@@ -2708,7 +2956,7 @@ theorem differentLogsCommute_corrected :
 本地限定解释与原文问题见上列范围及对照；逐声明编译、公理结果见第7段。
 
 网站：原书疑误/资格待导师；原文与修正版并列。
-网站原返回（对应其审校版本）：FAIL；textbookFormalOperatorExponential A 的第k系数为A^k/k!；formalStrang A B=exp(xA/2)exp(xB)exp(xA/2)；formalLog P 的第n系数为Σ_{j=1}^n (−1)^(j+1)/j·coeff_n((P−1)^j)，在P(0)=1时就是真实形式log；commutator A B=AB−BA。 Lean量词∀R,A,B,s,t，结论是两条共享形式变量x的log的交换子为零；非零s,t时log S(sx)=sx Z_(sx)，交换性与生成元版本对应，零缩放时log=0。确实保留了原文的普遍交换断言，但该断言一般是假，[ERRATUM?]成立；不能靠sorry使其成为正确结论。所给反例使(3.5)对一般s,t也失效；s=−t的反步消去及最终奇性仍可独立成立。当前证明为sorry。
+网站原返回（对应其审校版本）：FAIL；textbookFormalOperatorExponential A 的第k系数为A^k/k!；formalStrang A B=exp(xA/2)exp(xB)exp(xA/2)；formalLog P 的第n系数为Σ_{j=1}^n (−1)^(j+1)/j·coeff\_n((P−1)^j)，在P(0)=1时就是真实形式log；commutator A B=AB−BA。 Lean量词∀R,A,B,s,t，结论是两条共享形式变量x的log的交换子为零；非零s,t时log S(sx)=sx Z_(sx)，交换性与生成元版本对应，零缩放时log=0。确实保留了原文的普遍交换断言，但该断言一般是假，[ERRATUM?]成立；不能靠sorry使其成为正确结论。所给反例使(3.5)对一般s,t也失效；s=−t的反步消去及最终奇性仍可独立成立。当前证明为sorry。
 
 ### 7. 状态与证明位置
 
@@ -2740,7 +2988,7 @@ theorem strangInverse :
 
 | 原文成分 | Lean对应 | 说明 |
 |---|---|---|
-| 当前覆盖范围 | 本条所引原句及展示公式；单个记号归入context_notation。 | 仅承诺明确列出的数学内容 |
+| 当前覆盖范围 | 本条所引原句及展示公式；单个记号归入context\_notation。 | 仅承诺明确列出的数学内容 |
 | 对象、量词、假设和定义/结论 | `MD.Ch03.strangInverse` | 完整代码见第4段；两个版本独立列出 |
 
 [EXTRA] 无新增技术资格。
@@ -2750,7 +2998,7 @@ theorem strangInverse :
 本地限定解释与原文问题见上列范围及对照；逐声明编译、公理结果见第7段。
 
 网站：网站PASS（绑定版本 433a13ca6407）。
-网站原返回（对应其审校版本）：PASS；已展开 Ch03_deps.txt 的 MolecularDynamics/Chapter03/FormalOperatorSeries.lean 中 textbookFormalOperatorExponential：第n项为 (1/n!) • A^n；Chapter03/ReviewDefinitions.lean 中 formalStrang 为 E(A/2)E(B)E(A/2)。Ch03.lean:436 的同名局部定义与依赖定义完全相同，strangInverse实际使用此局部定义。PowerSeries R 表示中心形式变量的幂级数，Ring R允许非交换系数，Algebra ℝ R提供中心实数系数。于是 S(A,B)S(−A,−B)=E(A/2)E(B)E(A/2)E(−A/2)E(−B)E(−A/2)=1，逐对消去即可；虽然原页代入所得顺序是 S(−t)S(t)，对全称量化的A,B取负即可得到该顺序。全称R,A,B是原形式算子恒等式的合理代数推广，形式变量代替t，不缺步长量词，也不需要额外交换假设。本条无[EXTRA]或[ERRATUM?]标记；相邻条目的交换疑误不参与本条推理。签名语义PASS；Ch03.lean:450的证明为sorry，属于证明未完成，不改变签名审计结论。本次未编译或补证明。
+网站原返回（对应其审校版本）：PASS；已展开 Ch03\_deps.txt 的 MolecularDynamics/Chapter03/FormalOperatorSeries.lean 中 textbookFormalOperatorExponential：第n项为 (1/n!) • A^n；Chapter03/ReviewDefinitions.lean 中 formalStrang 为 E(A/2)E(B)E(A/2)。Ch03.lean:436 的同名局部定义与依赖定义完全相同，strangInverse实际使用此局部定义。PowerSeries R 表示中心形式变量的幂级数，Ring R允许非交换系数，Algebra ℝ R提供中心实数系数。于是 S(A,B)S(−A,−B)=E(A/2)E(B)E(A/2)E(−A/2)E(−B)E(−A/2)=1，逐对消去即可；虽然原页代入所得顺序是 S(−t)S(t)，对全称量化的A,B取负即可得到该顺序。全称R,A,B是原形式算子恒等式的合理代数推广，形式变量代替t，不缺步长量词，也不需要额外交换假设。本条无[EXTRA]或[ERRATUM?]标记；相邻条目的交换疑误不参与本条推理。签名语义PASS；Ch03.lean:450的证明为sorry，属于证明未完成，不改变签名审计结论。本次未编译或补证明。
 
 ### 7. 状态与证明位置
 
@@ -2761,9 +3009,19 @@ incomplete；`MD.Ch03.strangInverse`：未证（缺大型理论）。
 
 ### 2. 原文陈述
 
-> \[\exp(\tfrac t2X)\exp(tY)\exp(\tfrac t2X)=\exp(t(X+Y)+t^3\widetilde Z_{[3]}+\cdots),\tag{3.6}\]
+
+$$
+\exp(\tfrac t2X)\exp(tY)\exp(\tfrac t2X)=\exp(t(X+Y)+t^3\widetilde Z_{[3]}+\cdots),\tag{3.6}
+$$
+
+
 > where
-> \[\widetilde Z_{[3]}=\frac1{12}[Y,[Y,X]]-\frac1{24}[X,[X,Y]].\tag{3.7}\]
+
+$$
+\widetilde Z_{[3]}=\frac1{12}[Y,[Y,X]]-\frac1{24}[X,[X,Y]].\tag{3.7}
+$$
+
+
 
 ### 3. 原文证明
 
@@ -2801,7 +3059,7 @@ theorem strangCubic_coeff3 :
 
 | 原文成分 | Lean对应 | 说明 |
 |---|---|---|
-| 当前覆盖范围 | 本条所引原句及展示公式；单个记号归入context_notation。 | 仅承诺明确列出的数学内容 |
+| 当前覆盖范围 | 本条所引原句及展示公式；单个记号归入context\_notation。 | 仅承诺明确列出的数学内容 |
 | 对象、量词、假设和定义/结论 | `MD.Ch03.strangCubic`；`MD.Ch03.strangCubic_coeff3` | 完整代码见第4段；两个版本独立列出 |
 | 技术资格或版本解释 | [EXTRA] 补一次系数和全部偶次零，连同原三次公式覆盖完整奇次展开；原已证三次系数保留辅助并重查，新合取暂sorry。 | [EXTRA] |
 
@@ -2812,7 +3070,7 @@ theorem strangCubic_coeff3 :
 本地限定解释与原文问题见上列范围及对照；逐声明编译、公理结果见第7段。
 
 网站：网站PASS（EAUDIT复审）。
-网站原返回（对应其审校版本）：PASS；C：strangCubic量化所有实代数R及A/B，结论完整包含一次系数A+B、所有偶次系数零（包括常项），以及三次系数[B,[B,A]]/12−[A,[A,B]]/24；commutator的定义AB−BA与原书一致。strangCubic_coeff3单独保留同一三次等式，未以辅助单系数替代主结论。两个声明均无交换性假设。[EXTRA]补低次及奇性正好表达(3.6)省略的高阶奇次形式展开，(3.7)的两个符号和系数相符。 本审校只读核对任务中给出的声明及项目定义，不编译、不补证明；sorry不作为FAIL理由。
+网站原返回（对应其审校版本）：PASS；C：strangCubic量化所有实代数R及A/B，结论完整包含一次系数A+B、所有偶次系数零（包括常项），以及三次系数[B,[B,A]]/12−[A,[A,B]]/24；commutator的定义AB−BA与原书一致。strangCubic\_coeff3单独保留同一三次等式，未以辅助单系数替代主结论。两个声明均无交换性假设。[EXTRA]补低次及奇性正好表达(3.6)省略的高阶奇次形式展开，(3.7)的两个符号和系数相符。 本审校只读核对任务中给出的声明及项目定义，不编译、不补证明；sorry不作为FAIL理由。
 
 ### 7. 状态与证明位置
 
@@ -2824,7 +3082,12 @@ incomplete；`MD.Ch03.strangCubic`：未证（缺大型理论）；`MD.Ch03.stra
 ### 2. 原文陈述
 
 > We now consider iterating this scheme three times, first using a step of $\tau_0h$, followed by a step of $\tau_1h$, and finally another step with stepsize $\tau_0h$ (where $\tau_0h+\tau_1h+\tau_0h=h$). The overall effect on the system is given by a product of exponentials, as
-> \[\exp(\tau_0h\widehat{\mathcal L}_{\tau_0h})\exp(\tau_1h\widehat{\mathcal L}_{\tau_1h})\exp(\tau_0h\widehat{\mathcal L}_{\tau_0h})=\exp(hZ_h).\]
+
+$$
+\exp(\tau_0h\widehat{\mathcal L}_{\tau_0h})\exp(\tau_1h\widehat{\mathcal L}_{\tau_1h})\exp(\tau_0h\widehat{\mathcal L}_{\tau_0h})=\exp(hZ_h).
+$$
+
+
 
 ### 3. 原文证明
 
@@ -2843,7 +3106,7 @@ def yoshidaCompose {E : Type*} (G : ℝ → E → E) (a b h : ℝ) : E → E := 
 
 | 原文成分 | Lean对应 | 说明 |
 |---|---|---|
-| 当前覆盖范围 | 本条所引原句及展示公式；单个记号归入context_notation。 | 仅承诺明确列出的数学内容 |
+| 当前覆盖范围 | 本条所引原句及展示公式；单个记号归入context\_notation。 | 仅承诺明确列出的数学内容 |
 | 对象、量词、假设和定义/结论 | `MD.Ch03.yoshidaCompose` | 完整代码见第4段；两个版本独立列出 |
 
 [EXTRA] 无新增技术资格。
@@ -2853,7 +3116,7 @@ def yoshidaCompose {E : Type*} (G : ℝ → E → E) (a b h : ℝ) : E → E := 
 本地限定解释与原文问题见上列范围及对照；逐声明编译、公理结果见第7段。
 
 网站：网站PASS（绑定版本 433a13ca6407）。
-网站原返回（对应其审校版本）：PASS；Ch03.lean:467的定义展开为G(a h)(G(b h)(G(a h)z))，实际执行次序a,b,a，与PDF131的三步回文复合一致。E、G、a、b、h全部为任意参数，负步长未被排除。2a+b=1不是该通用组合子的定义域限制，而由本批Cancellation/Unique规定；任意参数的组合子本身不宣称它们满足系数条件，也不宣称任意G都有指数生成元Z_h。原文exp(hZ_h)是本节形式算子表示，当前定义只实现该表示中的三次复合，按definition及context_notation审计通过。无[EXTRA]或[ERRATUM?]；此处为定义，非sorry命题。
+网站原返回（对应其审校版本）：PASS；Ch03.lean:467的定义展开为G(a h)(G(b h)(G(a h)z))，实际执行次序a,b,a，与PDF131的三步回文复合一致。E、G、a、b、h全部为任意参数，负步长未被排除。2a+b=1不是该通用组合子的定义域限制，而由本批Cancellation/Unique规定；任意参数的组合子本身不宣称它们满足系数条件，也不宣称任意G都有指数生成元Z\_h。原文exp(hZ\_h)是本节形式算子表示，当前定义只实现该表示中的三次复合，按definition及context\_notation审计通过。无[EXTRA]或[ERRATUM?]；此处为定义，非sorry命题。
 
 ### 7. 状态与证明位置
 
@@ -2865,7 +3128,12 @@ self-contained；`MD.Ch03.yoshidaCompose`：定义。
 ### 2. 原文陈述
 
 > We have free reign over constants $\tau_0$ and $\tau_1$ as long as $2\tau_0+\tau_1=1$. Hence we have an opportunity to annihilate the perturbation operator at order $h^{2s}$ by choosing $2\tau_0^{2s+1}+\tau_1^{2s+1}=0$ as well. Solving simultaneously, there exists a unique real solution
-> \[\tau_0=\frac1{2-\kappa},\qquad\tau_1=-\frac\kappa{2-\kappa},\qquad\kappa^{2s+1}=2,\]
+
+$$
+\tau_0=\frac1{2-\kappa},\qquad\tau_1=-\frac\kappa{2-\kappa},\qquad\kappa^{2s+1}=2,
+$$
+
+
 
 ### 3. 原文证明
 
@@ -2884,7 +3152,7 @@ def yoshidaCoefficients (s : ℕ) : ℝ × ℝ := (1/(2-yoshidaRoot s),-yoshidaR
 
 | 原文成分 | Lean对应 | 说明 |
 |---|---|---|
-| 当前覆盖范围 | 本条所引原句及展示公式；单个记号归入context_notation。 | 仅承诺明确列出的数学内容 |
+| 当前覆盖范围 | 本条所引原句及展示公式；单个记号归入context\_notation。 | 仅承诺明确列出的数学内容 |
 | 对象、量词、假设和定义/结论 | `MD.Ch03.yoshidaCoefficients` | 完整代码见第4段；两个版本独立列出 |
 
 [EXTRA] 无新增技术资格。
@@ -2894,7 +3162,7 @@ def yoshidaCoefficients (s : ℕ) : ℝ × ℝ := (1/(2-yoshidaRoot s),-yoshidaR
 本地限定解释与原文问题见上列范围及对照；逐声明编译、公理结果见第7段。
 
 网站：网站PASS（绑定版本 433a13ca6407）。
-网站原返回（对应其审校版本）：PASS；Ch03_deps.txt:3593实际定义yoshidaRoot s=Real.rpow 2 (1/((2*s+1:ℕ):ℝ))，并非未解释常数；3594及Ch03.lean:470展开为(1/(2−κ),−κ/(2−κ))。s≥1时1<κ<2、κ^(2s+1)=2，故分母非零且与PDF131公式一致。定义本身接受s=0，此时κ=2且Lean的除法给(0,0)，不属于教材s≥1的使用范围；本批Cancellation和Unique均显式限制s≥1，故该全域延拓未冒充s=0系数结论。原句包含存在唯一性，但按context_notation的明确分条安排，它由Unique完整表达；单独定义不证明唯一性。无[ERRATUM?]，无sorry证明义务。
+网站原返回（对应其审校版本）：PASS；Ch03\_deps.txt:3593实际定义yoshidaRoot s=Real.rpow 2 (1/((2*s+1:ℕ):ℝ))，并非未解释常数；3594及Ch03.lean:470展开为(1/(2−κ),−κ/(2−κ))。s≥1时1<κ<2、κ^(2s+1)=2，故分母非零且与PDF131公式一致。定义本身接受s=0，此时κ=2且Lean的除法给(0,0)，不属于教材s≥1的使用范围；本批Cancellation和Unique均显式限制s≥1，故该全域延拓未冒充s=0系数结论。原句包含存在唯一性，但按context\_notation的明确分条安排，它由Unique完整表达；单独定义不证明唯一性。无[ERRATUM?]，无sorry证明义务。
 
 ### 7. 状态与证明位置
 
@@ -2949,7 +3217,7 @@ theorem yoshidaCancellation :
 
 | 原文成分 | Lean对应 | 说明 |
 |---|---|---|
-| 当前覆盖范围 | 本条所引原句及展示公式；单个记号归入context_notation。 | 仅承诺明确列出的数学内容 |
+| 当前覆盖范围 | 本条所引原句及展示公式；单个记号归入context\_notation。 | 仅承诺明确列出的数学内容 |
 | 对象、量词、假设和定义/结论 | `MD.Ch03.yoshidaCancellation` | 完整代码见第4段；两个版本独立列出 |
 | 技术资格或版本解释 | 显式s≥1，并保留中间系数τ₁<0作为根公式的数学推论。 | [EXTRA] |
 
@@ -2972,7 +3240,12 @@ self-contained；`MD.Ch03.yoshidaCancellation`：已证。
 ### 2. 原文陈述
 
 > Solving simultaneously, there exists a unique real solution
-> \[\tau_0=\frac1{2-\kappa},\qquad\tau_1=-\frac\kappa{2-\kappa},\qquad\kappa^{2s+1}=2.\]
+
+$$
+\tau_0=\frac1{2-\kappa},\qquad\tau_1=-\frac\kappa{2-\kappa},\qquad\kappa^{2s+1}=2.
+$$
+
+
 
 ### 3. 原文证明
 
@@ -3026,7 +3299,7 @@ theorem yoshidaUnique :
 
 | 原文成分 | Lean对应 | 说明 |
 |---|---|---|
-| 当前覆盖范围 | 本条所引原句及展示公式；单个记号归入context_notation。 | 仅承诺明确列出的数学内容 |
+| 当前覆盖范围 | 本条所引原句及展示公式；单个记号归入context\_notation。 | 仅承诺明确列出的数学内容 |
 | 对象、量词、假设和定义/结论 | `MD.Ch03.yoshidaUnique` | 完整代码见第4段；两个版本独立列出 |
 
 [EXTRA] 无新增技术资格。
@@ -3078,7 +3351,7 @@ theorem yoshidaRaiseOrder :
 
 | 原文成分 | Lean对应 | 说明 |
 |---|---|---|
-| 当前覆盖范围 | 本条所引原句及展示公式；单个记号归入context_notation。 | 仅承诺明确列出的数学内容 |
+| 当前覆盖范围 | 本条所引原句及展示公式；单个记号归入context\_notation。 | 仅承诺明确列出的数学内容 |
 | 对象、量词、假设和定义/结论 | `MD.Ch03.yoshidaRaiseOrder` | 完整代码见第4段；两个版本独立列出 |
 | 技术资格或版本解释 | 给定光滑场、G在(h,z)全域C∞、开放D与紧B、实际双向局部流、反步对称和局部阶；实际改阶是结论。 | [EXTRA] |
 | 技术资格或版本解释 | [EXTRA] 将孤立B上的逐紧集阶改为D内每个紧集的一致阶资格，覆盖移动中间点；结论补新方法在每紧集升阶、光滑及对称，保留递归资格。 | [EXTRA] |
@@ -3091,7 +3364,7 @@ theorem yoshidaRaiseOrder :
 本地限定解释与原文问题见上列范围及对照；逐声明编译、公理结果见第7段。
 
 网站：网站PASS（EAUDIT复审）。
-网站原返回（对应其审校版本）：PASS；C：所有n/s、f、G/Φ、D/B及η均量化，s≥1，f和联合(h,z)↦G_h(z)全域C∞；D开放、B紧且包含于D；actualFlow提供真实双向时间流；G对所有h/z满足反步互逆。localOrder假设不是只在B上，而在每个D内紧集上一致为2s，且含正负小步，覆盖移动中间点及负Yoshida步长。根κ=2^(1/(2s+1))，a=1/(2−κ)、b=−κ/(2−κ)，三步回文G_ah∘G_bh∘G_ah。结论既在B上也在每个D内紧集上提高到2s+2，同时保留联合C∞及全h/z的反步对称，足够重复迭代；localOrder的幂为r+1，未把局部端点阶误作r。所有[EXTRA]为合理的严格化与递归资格，无把升阶当前提。 本审校只读核对任务中给出的声明及项目定义，不编译、不补证明；sorry不作为FAIL理由。
+网站原返回（对应其审校版本）：PASS；C：所有n/s、f、G/Φ、D/B及η均量化，s≥1，f和联合(h,z)↦G\_h(z)全域C∞；D开放、B紧且包含于D；actualFlow提供真实双向时间流；G对所有h/z满足反步互逆。localOrder假设不是只在B上，而在每个D内紧集上一致为2s，且含正负小步，覆盖移动中间点及负Yoshida步长。根κ=2^(1/(2s+1))，a=1/(2−κ)、b=−κ/(2−κ)，三步回文G\_ah∘G\_bh∘G\_ah。结论既在B上也在每个D内紧集上提高到2s+2，同时保留联合C∞及全h/z的反步对称，足够重复迭代；localOrder的幂为r+1，未把局部端点阶误作r。所有[EXTRA]为合理的严格化与递归资格，无把升阶当前提。 本审校只读核对任务中给出的声明及项目定义，不编译、不补证明；sorry不作为FAIL理由。
 
 ### 7. 状态与证明位置
 
@@ -3103,14 +3376,20 @@ incomplete；`MD.Ch03.yoshidaRaiseOrder`：未证（缺大型理论）。
 ### 2. 原文陈述
 
 > Example 3.1 Consider using velocity Verlet as the base second-order method to build a Yoshida fourth-order method from. As the scheme is second-order, we have $s=1$, and hence
-> \[\tau_0=\frac1{2-\sqrt[3]2},\qquad\tau_1=-\frac{\sqrt[3]2}{2-\sqrt[3]2}.\]
+
+$$
+\tau_0=\frac1{2-\sqrt[3]2},\qquad\tau_1=-\frac{\sqrt[3]2}{2-\sqrt[3]2}.
+$$
+
+
 > The overall scheme is then three iterations of velocity Verlet, using stepsizes $\tau_0h$, $\tau_1h$ and $\tau_0h$ respectively. We write this with subindices $\alpha,\beta$ to indicate the intermediate stages.
 > Yoshida fourth-order scheme (velocity Verlet):
-> \[\begin{aligned}P_\alpha&:=p-(\tau_0h/2)\nabla U(q),&Q_\alpha&:=q+(\tau_0h)M^{-1}P_\alpha,\\
-> P_\alpha&:=P_\alpha-(\tau_0h/2)\nabla U(Q_\alpha),&P_\beta&:=P_\alpha-(\tau_1h/2)\nabla U(Q_\alpha),\\
-> Q_\beta&:=Q_\alpha+(\tau_1h)M^{-1}P_\beta,&P_\beta&:=P_\beta-(\tau_1h/2)\nabla U(Q_\beta),\\
-> P&:=P_\beta-(\tau_0h/2)\nabla U(Q_\beta),&Q&:=Q_\beta+(\tau_0h)M^{-1}P,\\
-> P&:=P-(\tau_0h/2)\nabla U(Q).\end{aligned}\tag{3.8}\]
+
+$$
+\begin{aligned}P_\alpha&:=p-(\tau_0h/2)\nabla U(q),&Q_\alpha&:=q+(\tau_0h)M^{-1}P_\alpha,\\ P_\alpha&:=P_\alpha-(\tau_0h/2)\nabla U(Q_\alpha),&P_\beta&:=P_\alpha-(\tau_1h/2)\nabla U(Q_\alpha),\\ Q_\beta&:=Q_\alpha+(\tau_1h)M^{-1}P_\beta,&P_\beta&:=P_\beta-(\tau_1h/2)\nabla U(Q_\beta),\\ P&:=P_\beta-(\tau_0h/2)\nabla U(Q_\beta),&Q&:=Q_\beta+(\tau_0h)M^{-1}P,\\ P&:=P-(\tau_0h/2)\nabla U(Q).\end{aligned}\tag{3.8}
+$$
+
+
 
 ### 3. 原文证明
 
@@ -3130,7 +3409,7 @@ def yoshida4 {n : ℕ} (m : Fin n → ℝ) (_hm : positiveMass m) (U : Q n → �
 
 | 原文成分 | Lean对应 | 说明 |
 |---|---|---|
-| 当前覆盖范围 | 本条所引原句及展示公式；单个记号归入context_notation。 | 仅承诺明确列出的数学内容 |
+| 当前覆盖范围 | 本条所引原句及展示公式；单个记号归入context\_notation。 | 仅承诺明确列出的数学内容 |
 | 对象、量词、假设和定义/结论 | `MD.Ch03.yoshida4` | 完整代码见第4段；两个版本独立列出 |
 | 技术资格或版本解释 | M为固定对角质量；不假设正反步骤的实际无限时域流存在。 | [EXTRA] |
 | 技术资格或版本解释 | [EXTRA] 教材算法接口明确正质量与经典可微势；后续结构定理调用使用正式总化辅助组合，证明不新增。 | [EXTRA] |
@@ -3175,7 +3454,7 @@ theorem yoshida4Structure :
 
 | 原文成分 | Lean对应 | 说明 |
 |---|---|---|
-| 当前覆盖范围 | 本条所引原句及展示公式；单个记号归入context_notation。 | 仅承诺明确列出的数学内容 |
+| 当前覆盖范围 | 本条所引原句及展示公式；单个记号归入context\_notation。 | 仅承诺明确列出的数学内容 |
 | 对象、量词、假设和定义/结论 | `MD.Ch03.yoshida4Structure` | 完整代码见第4段；两个版本独立列出 |
 | 技术资格或版本解释 | U全域C²；真实kick/drift及三次回文复合。 | [EXTRA] |
 | 技术资格或版本解释 | [EXTRA] 依赖小修：原无质量限制的结构定理继续对应正式总化辅助算法；教材受限接口另有正质量/可微资格，原已证结论保留。 | [EXTRA] |
@@ -3199,7 +3478,12 @@ checked+documented priors；`MD.Ch03.yoshida4Structure`：已证。
 ### 2. 原文陈述
 
 > We can view the Suzuki-Yoshida methods as one type of general composition scheme [260, 277, 326]:
-> \[\mathcal F_h=\exp(\alpha_1h\mathcal L_T)\circ\exp(\beta_1h\mathcal L_U)\circ\exp(\alpha_2h\mathcal L_T)\circ\exp(\beta_2h\mathcal L_U)\circ\cdots\circ\exp(\alpha_kh\mathcal L_T)\circ\exp(\beta_kh\mathcal L_U).\]
+
+$$
+\mathcal F_h=\exp(\alpha_1h\mathcal L_T)\circ\exp(\beta_1h\mathcal L_U)\circ\exp(\alpha_2h\mathcal L_T)\circ\exp(\beta_2h\mathcal L_U)\circ\cdots\circ\exp(\alpha_kh\mathcal L_T)\circ\exp(\beta_kh\mathcal L_U).
+$$
+
+
 
 ### 3. 原文证明
 
@@ -3219,7 +3503,7 @@ def generalSplitting {E : Type*} (T U : ℝ → E → E) (coeff : List (ℝ × �
 
 | 原文成分 | Lean对应 | 说明 |
 |---|---|---|
-| 当前覆盖范围 | 本条所引原句及展示公式；单个记号归入context_notation。 | 仅承诺明确列出的数学内容 |
+| 当前覆盖范围 | 本条所引原句及展示公式；单个记号归入context\_notation。 | 仅承诺明确列出的数学内容 |
 | 对象、量词、假设和定义/结论 | `MD.Ch03.generalSplitting` | 完整代码见第4段；两个版本独立列出 |
 
 [EXTRA] 无新增技术资格。
@@ -3229,7 +3513,7 @@ def generalSplitting {E : Type*} (T U : ℝ → E → E) (coeff : List (ℝ × �
 本地限定解释与原文问题见上列范围及对照；逐声明编译、公理结果见第7段。
 
 网站：网站PASS（绑定版本 433a13ca6407）。
-网站原返回（对应其审校版本）：PASS；Ch03_deps.txt:3597–3598和Ch03.lean对应定义的foldr展开为T(α₁h)∘U(β₁h)∘…∘T(α_kh)∘U(β_kh)∘id，空列表给id。Function.comp在状态上的作用从最右端开始，正好保留PDF133展示的复合次序；没有错误地用foldl颠倒因子。E任意、T和U为给定映射族，有限有序实系数列表可含负值；原文形式指数记号在此以给定部分流实例化，定义没有断言任意T/U是实际流，也未擅自加入阶、对称、辛性或系数和条件。参考文献编号不属于数学假设。无[EXTRA]、[ERRATUM?]或sorry命题。
+网站原返回（对应其审校版本）：PASS；Ch03\_deps.txt:3597–3598和Ch03.lean对应定义的foldr展开为T(α₁h)∘U(β₁h)∘…∘T(α\_kh)∘U(β\_kh)∘id，空列表给id。Function.comp在状态上的作用从最右端开始，正好保留PDF133展示的复合次序；没有错误地用foldl颠倒因子。E任意、T和U为给定映射族，有限有序实系数列表可含负值；原文形式指数记号在此以给定部分流实例化，定义没有断言任意T/U是实际流，也未擅自加入阶、对称、辛性或系数和条件。参考文献编号不属于数学假设。无[EXTRA]、[ERRATUM?]或sorry命题。
 
 ### 7. 状态与证明位置
 
@@ -3241,9 +3525,19 @@ self-contained；`MD.Ch03.generalSplitting`：定义。
 ### 2. 原文陈述
 
 > Recall the Takahashi-Imada method introduced in the last chapter,
-> \[\widehat P:=p-(h/2)\nabla\widetilde U(q),\qquad Q:=q+hM^{-1}\widehat P,\qquad P:=\widehat P-(h/2)\nabla\widetilde U(Q),\]
+
+$$
+\widehat P:=p-(h/2)\nabla\widetilde U(q),\qquad Q:=q+hM^{-1}\widehat P,\qquad P:=\widehat P-(h/2)\nabla\widetilde U(Q),
+$$
+
+
 > with modified potential energy function
-> \[\widetilde U(q)=U(q)-\frac{h^2}{24}\nabla U(q)^TM^{-1}\nabla U(q).\]
+
+$$
+\widetilde U(q)=U(q)-\frac{h^2}{24}\nabla U(q)^TM^{-1}\nabla U(q).
+$$
+
+
 
 ### 3. 原文证明
 
@@ -3264,7 +3558,7 @@ def takahashiImada {n : ℕ} (m : Fin n → ℝ) (U : Q n → ℝ) (h : ℝ) :
 
 | 原文成分 | Lean对应 | 说明 |
 |---|---|---|
-| 当前覆盖范围 | 本条所引原句及展示公式；单个记号归入context_notation。 | 仅承诺明确列出的数学内容 |
+| 当前覆盖范围 | 本条所引原句及展示公式；单个记号归入context\_notation。 | 仅承诺明确列出的数学内容 |
 | 对象、量词、假设和定义/结论 | `MD.Ch03.takahashiImada` | 完整代码见第4段；两个版本独立列出 |
 | 技术资格或版本解释 | M为固定对角质量矩阵，原第1章机械模型。 | [EXTRA] |
 
@@ -3275,7 +3569,7 @@ def takahashiImada {n : ℕ} (m : Fin n → ℝ) (U : Q n → ℝ) (h : ℝ) :
 本地限定解释与原文问题见上列范围及对照；逐声明编译、公理结果见第7段。
 
 网站：网站PASS（EAUDIT复审）。
-网站原返回（对应其审校版本）：PASS；C：任意n、固定对角m、U及步长h，takahashiImada以同一个h构造修正势并调用coordinateVerlet。takahashiPotential精确为U(q)−h²/24∑(grad U(q)_i)²/m_i；textbookPotentialForce对整个修正势取负梯度，非仅把原U梯度代入。半kick、全drift、半kick的次序及两个求梯度的位置q/Q完整匹配原文。正质量可微机械背景由上下文理解；当前是用总化逆元和fderiv给出的函数定义，未宣称零质量或不可微势也是物理方法或满足阶/结构定理。固定对角质量[EXTRA]合理，定义无额外错误命题。 本审校只读核对任务中给出的声明及项目定义，不编译、不补证明；sorry不作为FAIL理由。
+网站原返回（对应其审校版本）：PASS；C：任意n、固定对角m、U及步长h，takahashiImada以同一个h构造修正势并调用coordinateVerlet。takahashiPotential精确为U(q)−h²/24∑(grad U(q)_i)²/m\_i；textbookPotentialForce对整个修正势取负梯度，非仅把原U梯度代入。半kick、全drift、半kick的次序及两个求梯度的位置q/Q完整匹配原文。正质量可微机械背景由上下文理解；当前是用总化逆元和fderiv给出的函数定义，未宣称零质量或不可微势也是物理方法或满足阶/结构定理。固定对角质量[EXTRA]合理，定义无额外错误命题。 本审校只读核对任务中给出的声明及项目定义，不编译、不补证明；sorry不作为FAIL理由。
 
 ### 7. 状态与证明位置
 
@@ -3287,7 +3581,12 @@ self-contained；`MD.Ch03.takahashiImada`：定义。
 ### 2. 原文陈述
 
 > One might recognize the modification as being proportional to one part of the commutator expansion in the Verlet method, in fact
-> \[\nabla U(q)^TM^{-1}\nabla U(q)=\{U,\{U,T\}\}.\]
+
+$$
+\nabla U(q)^TM^{-1}\nabla U(q)=\{U,\{U,T\}\}.
+$$
+
+
 
 ### 3. 原文证明
 
@@ -3311,7 +3610,7 @@ theorem potentialDoubleBracket :
 
 | 原文成分 | Lean对应 | 说明 |
 |---|---|---|
-| 当前覆盖范围 | 本条所引原句及展示公式；单个记号归入context_notation。 | 仅承诺明确列出的数学内容 |
+| 当前覆盖范围 | 本条所引原句及展示公式；单个记号归入context\_notation。 | 仅承诺明确列出的数学内容 |
 | 对象、量词、假设和定义/结论 | `MD.Ch03.potentialDoubleBracket` | 完整代码见第4段；两个版本独立列出 |
 | 技术资格或版本解释 | 正对角质量、U全域C²，显式化真实二次Poisson括号的微分资格。 | [EXTRA] |
 
@@ -3322,7 +3621,7 @@ theorem potentialDoubleBracket :
 本地限定解释与原文问题见上列范围及对照；逐声明编译、公理结果见第7段。
 
 网站：网站PASS（绑定版本 433a13ca6407）。
-网站原返回（对应其审校版本）：PASS；已展开 grad、invMass m v i=(mᵢ)⁻¹vᵢ、quadraticKinetic m p=∑ᵢpᵢ²/mᵢ/2、pack=Sum.elim q p、unpack=(z∘inl,z∘inr)。textbookPoissonBracket F G=DF·textbookHamiltonianVectorField G，后者为J乘坐标偏导，textbookJ=[0 I;−I 0]；故括号为∑ᵢ(F_qᵢG_pᵢ−G_qᵢF_pᵢ)。内层{U,T}=∑ᵢU_qᵢpᵢ/mᵢ，外层{U,{U,T}}=∑ᵢU_qᵢ²/mᵢ，正好等于左式。∀n,m,U，正质量与C²后∀z的量词和对象正确；C²充分保证真实嵌套微分，正质量可放宽至非零但与模型一致，合理。[ERRATUM?]无。声明体含sorry，因此PASS仅指签名语义，不指证明完成。
+网站原返回（对应其审校版本）：PASS；已展开 grad、invMass m v i=(mᵢ)⁻¹vᵢ、quadraticKinetic m p=∑ᵢpᵢ²/mᵢ/2、pack=Sum.elim q p、unpack=(z∘inl,z∘inr)。textbookPoissonBracket F G=DF·textbookHamiltonianVectorField G，后者为J乘坐标偏导，textbookJ=[0 I;−I 0]；故括号为∑ᵢ(F\_qᵢG\_pᵢ−G\_qᵢF\_pᵢ)。内层{U,T}=∑ᵢU\_qᵢpᵢ/mᵢ，外层{U,{U,T}}=∑ᵢU\_qᵢ²/mᵢ，正好等于左式。∀n,m,U，正质量与C²后∀z的量词和对象正确；C²充分保证真实嵌套微分，正质量可放宽至非零但与模型一致，合理。[ERRATUM?]无。声明体含sorry，因此PASS仅指签名语义，不指证明完成。
 
 ### 7. 状态与证明位置
 
@@ -3334,15 +3633,17 @@ incomplete；`MD.Ch03.potentialDoubleBracket`：未证（缺大型理论）。
 ### 2. 原文陈述
 
 > This is certainly not a coincidence. If we replace the potential $U$ by $\widetilde U$ in the Verlet expansion, we have
-> \[\begin{aligned}\widetilde H_h&=T+\widetilde U+\frac{h^2}{12}\left(\{T,\{T,\widetilde U\}\}-\frac12\{\widetilde U,\{\widetilde U,T\}\}\right)+O(h^4)\\
-> &=T+U-\frac{h^2}{24}\{U,\{U,T\}\}+\frac{h^2}{12}\left(\{T,\{T,\widetilde U\}\}-\frac12\{\widetilde U,\{\widetilde U,T\}\}\right)+O(h^4)\\
-> &=H+\frac{h^2}{12}\left(\{T,\{T,\widetilde U\}\}-\{\widetilde U,\{\widetilde U,T\}\}\right)+O(h^4)\\
-> &=H+\frac{h^2}{12}\left(p^TM^{-1}U''M^{-1}p-\nabla U^TM^{-1}\nabla U\right)+O(h^4).\end{aligned}\]
+
+$$
+\begin{aligned}\widetilde H_h&=T+\widetilde U+\frac{h^2}{12}\left(\{T,\{T,\widetilde U\}\}-\frac12\{\widetilde U,\{\widetilde U,T\}\}\right)+O(h^4)\\ &=T+U-\frac{h^2}{24}\{U,\{U,T\}\}+\frac{h^2}{12}\left(\{T,\{T,\widetilde U\}\}-\frac12\{\widetilde U,\{\widetilde U,T\}\}\right)+O(h^4)\\ &=H+\frac{h^2}{12}\left(\{T,\{T,\widetilde U\}\}-\{\widetilde U,\{\widetilde U,T\}\}\right)+O(h^4)\\ &=H+\frac{h^2}{12}\left(p^TM^{-1}U''M^{-1}p-\nabla U^TM^{-1}\nabla U\right)+O(h^4).\end{aligned}
+$$
+
+
 
 ### 3. 原文证明
 
 原书无独立完整证明。
-原书同段推导完整存于statement_latex；有限函数定义不证明该推导或实际余项。
+原书同段推导完整存于statement\_latex；有限函数定义不证明该推导或实际余项。
 
 ### 4. 完整当前Lean（原文与修正版独立列出）
 
@@ -3368,7 +3669,7 @@ theorem takahashiShadow2_matching (n : ℕ) (m : Fin n → ℝ) (U : Q n → ℝ
 
 | 原文成分 | Lean对应 | 说明 |
 |---|---|---|
-| 当前覆盖范围 | 本条所引原句及展示公式；单个记号归入context_notation。 | 仅承诺明确列出的数学内容 |
+| 当前覆盖范围 | 本条所引原句及展示公式；单个记号归入context\_notation。 | 仅承诺明确列出的数学内容 |
 | 对象、量词、假设和定义/结论 | `MD.Ch03.takahashiShadow2`；`MD.Ch03.takahashiShadow2_matching` | 完整代码见第4段；两个版本独立列出 |
 | 技术资格或版本解释 | [EXTRA] 保留有限函数并补修正势代入原Verlet影子多项式后的O(h⁴)差界、真实TI步的Hamiltonian匹配（端点O(h⁵)）；正质量、C∞、紧集为显式充分资格，Poisson到梯度联系保留相邻PotentialDoubleBracket。 | [EXTRA] |
 | 技术资格或版本解释 | [EXTRA] C∞编码补充修复：指定版本裸⊤表示实解析Cω，现将原smooth的前提及输出恢复为scoped ∞；正式库冻结，已有证明随本批重查，失败依≤3次小修规则记录。 | [EXTRA] |
@@ -3392,7 +3693,12 @@ incomplete；`MD.Ch03.takahashiShadow2`：定义；`MD.Ch03.takahashiShadow2_mat
 ### 2. 原文陈述
 
 > Introducing coordinate transformations
-> \[\widetilde q=q-\frac{h^2}{12}M^{-1}\nabla U(q),\qquad\widetilde p=p+\frac{h^2}{12}U''(q)M^{-1}p,\tag{3.9}\]
+
+$$
+\widetilde q=q-\frac{h^2}{12}M^{-1}\nabla U(q),\qquad\widetilde p=p+\frac{h^2}{12}U''(q)M^{-1}p,\tag{3.9}
+$$
+
+
 
 ### 3. 原文证明
 
@@ -3412,7 +3718,7 @@ def takahashiProcessor {n : ℕ} (m : Fin n → ℝ) (U : Q n → ℝ) (h : ℝ)
 
 | 原文成分 | Lean对应 | 说明 |
 |---|---|---|
-| 当前覆盖范围 | 本条所引原句及展示公式；单个记号归入context_notation。 | 仅承诺明确列出的数学内容 |
+| 当前覆盖范围 | 本条所引原句及展示公式；单个记号归入context\_notation。 | 仅承诺明确列出的数学内容 |
 | 对象、量词、假设和定义/结论 | `MD.Ch03.takahashiProcessor` | 完整代码见第4段；两个版本独立列出 |
 
 [EXTRA] 无新增技术资格。
@@ -3434,8 +3740,12 @@ self-contained；`MD.Ch03.takahashiProcessor`：定义。
 ### 2. 原文陈述
 
 > and inserting these into $H$ yields, after expanding in a Taylor series:
-> \[\begin{aligned}H(\widetilde q,\widetilde p)&=T+\frac{h^2}{12}\left(p^TM^{-1}U''M^{-1}p-\nabla U^TM^{-1}\nabla U\right)+O(h^4)\\
-> &=\widetilde H_h(q,p)+O(h^4).\end{aligned}\]
+
+$$
+\begin{aligned}H(\widetilde q,\widetilde p)&=T+\frac{h^2}{12}\left(p^TM^{-1}U''M^{-1}p-\nabla U^TM^{-1}\nabla U\right)+O(h^4)\\ &=\widetilde H_h(q,p)+O(h^4).\end{aligned}
+$$
+
+
 
 ### 3. 原文证明
 
@@ -3570,7 +3880,7 @@ theorem takahashiEffectiveOrder_corrected :
 本地限定解释与原文问题见上列范围及对照；逐声明编译、公理结果见第7段。
 
 网站：原书疑误/资格待导师；原文与修正版并列。
-网站原返回（对应其审校版本）：FAIL；所有相关定义均已找到并展开：solution 要求γ在[0,τ]每点满足实际HasDerivWithinAt；mechanicalField(m,F)(q,p)=(M⁻¹p,F(q))；verlet 的q新值为q+hM⁻¹p+h²/2 M⁻¹F(q)，p新值为p+h/2(F(q)+F(q新))，此处F=−grad(takahashiPotential m U h)。textbookProcessedMethod χ B h=(χ h)⁻¹∘B_h∘χ h，oneStepIterate=(G_h)^[k]，oneStepMaxError=max_{0≤k≤ν}‖G_h^[k](γ(0))−γ(kh)‖。所以它确实控制有限时间的全部网格轨迹误差，不只是能量或一步误差。量词∃χ在∀γ,τ之前要求同一族全空间homeomorphism服务所有轨迹，并且χ完全没有近恒等、h光滑性、式(3.9)的二阶系数或局部作用域要求。PDF134–135所说的是给定坐标变换带来的有效阶；该签名无法识别那个处理器，并额外要求全空间双向连续的精确逆。全局homeomorphism是存在结论的强化，并非一个已给出的额外前提，不能仅标[EXTRA]就证明合理。正质量、全域C∞、连续有限时间解是合理的充分正则化；全域正则性比局部需要强。给定这些确切缺失，判FAIL，无须以定义缺失或导师判断为由判NEEDS_HUMAN。χ⁻¹∘G∘χ本身不是方向错误：若P是原文从原坐标到带波浪号坐标的后处理，则应取χ=P⁻¹，得到P∘G∘P⁻¹。原文关于能量的解释显式以影子能量沿数值解恒定为假定，该签名也未单列这项条件式能量结论。声明含sorry；未声称已否证存在任意全局χ的四阶定理。
+网站原返回（对应其审校版本）：FAIL；所有相关定义均已找到并展开：solution 要求γ在[0,τ]每点满足实际HasDerivWithinAt；mechanicalField(m,F)(q,p)=(M⁻¹p,F(q))；verlet 的q新值为q+hM⁻¹p+h²/2 M⁻¹F(q)，p新值为p+h/2(F(q)+F(q新))，此处F=−grad(takahashiPotential m U h)。textbookProcessedMethod χ B h=(χ h)⁻¹∘B\_h∘χ h，oneStepIterate=(G\_h)^[k]，oneStepMaxError=max_{0≤k≤ν}‖G\_h^[k](γ(0))−γ(kh)‖。所以它确实控制有限时间的全部网格轨迹误差，不只是能量或一步误差。量词∃χ在∀γ,τ之前要求同一族全空间homeomorphism服务所有轨迹，并且χ完全没有近恒等、h光滑性、式(3.9)的二阶系数或局部作用域要求。PDF134–135所说的是给定坐标变换带来的有效阶；该签名无法识别那个处理器，并额外要求全空间双向连续的精确逆。全局homeomorphism是存在结论的强化，并非一个已给出的额外前提，不能仅标[EXTRA]就证明合理。正质量、全域C∞、连续有限时间解是合理的充分正则化；全域正则性比局部需要强。给定这些确切缺失，判FAIL，无须以定义缺失或导师判断为由判NEEDS\_HUMAN。χ⁻¹∘G∘χ本身不是方向错误：若P是原文从原坐标到带波浪号坐标的后处理，则应取χ=P⁻¹，得到P∘G∘P⁻¹。原文关于能量的解释显式以影子能量沿数值解恒定为假定，该签名也未单列这项条件式能量结论。声明含sorry；未声称已否证存在任意全局χ的四阶定理。
 
 ### 7. 状态与证明位置
 
@@ -3582,9 +3892,19 @@ incomplete；`MD.Ch03.takahashiEffectiveOrder`：未证（原书疑误不证）�
 ### 2. 原文陈述
 
 > Assume a smooth differential equation system
-> \[\frac{\mathrm d\boldsymbol z}{\mathrm dt}=f(\boldsymbol z)\]
+
+$$
+\frac{\mathrm d\boldsymbol z}{\mathrm dt}=f(\boldsymbol z)
+$$
+
+
 > with flow map $\mathcal F_t$, and a one-step method $\mathcal G_h$. We obtain, typically by matching of terms from Taylor expansion, a “modified differential equation” as a series expansion
-> \[\frac{\mathrm d\boldsymbol z}{\mathrm dt}=\widetilde f_h(\boldsymbol z)=f(\boldsymbol z)+h^rf_r(\boldsymbol z)+h^{r+1}f_{r+1}(\boldsymbol z)+\cdots,\]
+
+$$
+\frac{\mathrm d\boldsymbol z}{\mathrm dt}=\widetilde f_h(\boldsymbol z)=f(\boldsymbol z)+h^rf_r(\boldsymbol z)+h^{r+1}f_{r+1}(\boldsymbol z)+\cdots,
+$$
+
+
 > where $r$ is the classical order of accuracy of the method.
 
 ### 3. 原文证明
@@ -3606,7 +3926,7 @@ def formalField {n : ℕ} (f : Q n → Q n) (fj : ℕ → Q n → Q n) (r : ℕ)
 
 | 原文成分 | Lean对应 | 说明 |
 |---|---|---|
-| 当前覆盖范围 | 本条所引原句及展示公式；单个记号归入context_notation。 | 仅承诺明确列出的数学内容 |
+| 当前覆盖范围 | 本条所引原句及展示公式；单个记号归入context\_notation。 | 仅承诺明确列出的数学内容 |
 | 对象、量词、假设和定义/结论 | `MD.Ch03.formalField` | 完整代码见第4段；两个版本独立列出 |
 
 [EXTRA] 无新增技术资格。
@@ -3628,9 +3948,19 @@ self-contained；`MD.Ch03.formalField`：定义。
 ### 2. 原文陈述
 
 > In fact, it is straightforward to show that if numerical method satisfies
-> \[\mathcal G_h(\boldsymbol z)-\mathcal F_h(\boldsymbol z)=h^{r+1}\Gamma_{r+1}(\boldsymbol z)+O(h^{r+2}),\]
+
+$$
+\mathcal G_h(\boldsymbol z)-\mathcal F_h(\boldsymbol z)=h^{r+1}\Gamma_{r+1}(\boldsymbol z)+O(h^{r+2}),
+$$
+
+
 > i.e. $h^{r+1}\Gamma_{r+1}$ is the leading term in the local error expansion, then we have
-> \[f_r(\boldsymbol z)=\Gamma_{r+1}(\boldsymbol z).\]
+
+$$
+f_r(\boldsymbol z)=\Gamma_{r+1}(\boldsymbol z).
+$$
+
+
 
 ### 3. 原文证明
 
@@ -3658,12 +3988,12 @@ theorem leadingModifiedField :
 
 | 原文成分 | Lean对应 | 说明 |
 |---|---|---|
-| 当前覆盖范围 | 本条所引原句及展示公式；单个记号归入context_notation。 | 仅承诺明确列出的数学内容 |
+| 当前覆盖范围 | 本条所引原句及展示公式；单个记号归入context\_notation。 | 仅承诺明确列出的数学内容 |
 | 对象、量词、假设和定义/结论 | `MD.Ch03.leadingModifiedField` | 完整代码见第4段；两个版本独立列出 |
-| 技术资格或版本解释 | r>0、全域C∞的f及(h,z)↦G_h、开放D与紧B及真实双向局部流；局部r阶条件。 | [EXTRA] |
+| 技术资格或版本解释 | r>0、全域C∞的f及(h,z)↦G\_h、开放D与紧B及真实双向局部流；局部r阶条件。 | [EXTRA] |
 | 技术资格或版本解释 | [EXTRA] C∞编码补充修复：指定版本裸⊤表示实解析Cω，现将原smooth的前提及输出恢复为scoped ∞；正式库冻结，已有证明随本批重查，失败依≤3次小修规则记录。 | [EXTRA] |
 
-[EXTRA] r>0、全域C∞的f及(h,z)↦G_h、开放D与紧B及真实双向局部流；局部r阶条件。；[EXTRA] C∞编码补充修复：指定版本裸⊤表示实解析Cω，现将原smooth的前提及输出恢复为scoped ∞；正式库冻结，已有证明随本批重查，失败依≤3次小修规则记录。
+[EXTRA] r>0、全域C∞的f及(h,z)↦G\_h、开放D与紧B及真实双向局部流；局部r阶条件。；[EXTRA] C∞编码补充修复：指定版本裸⊤表示实解析Cω，现将原smooth的前提及输出恢复为scoped ∞；正式库冻结，已有证明随本批重查，失败依≤3次小修规则记录。
 
 ### 6. 审计结论
 
@@ -3682,7 +4012,12 @@ incomplete；`MD.Ch03.leadingModifiedField`：未证（缺大型理论）。
 ### 2. 原文陈述
 
 > Define
-> \[\bar H_k\stackrel{\mathrm{def}}=H+h^rH_r+h^{r+1}H_{r+1}+\cdots+h^kH_k.\tag{3.11}\]
+
+$$
+\bar H_k\stackrel{\mathrm{def}}=H+h^rH_r+h^{r+1}H_{r+1}+\cdots+h^kH_k.\tag{3.11}
+$$
+
+
 
 ### 3. 原文证明
 
@@ -3703,7 +4038,7 @@ noncomputable def truncatedHamiltonian (H : E → ℝ) (Hj : ℕ → E → ℝ)
 
 | 原文成分 | Lean对应 | 说明 |
 |---|---|---|
-| 当前覆盖范围 | 本条所引原句及展示公式；单个记号归入context_notation。 | 仅承诺明确列出的数学内容 |
+| 当前覆盖范围 | 本条所引原句及展示公式；单个记号归入context\_notation。 | 仅承诺明确列出的数学内容 |
 | 对象、量词、假设和定义/结论 | `MD.Ch03.truncatedHamiltonian` | 完整代码见第4段；两个版本独立列出 |
 
 [EXTRA] 无新增技术资格。
@@ -3753,7 +4088,7 @@ theorem truncationSmooth_C1 (H : E → ℝ) (Hj : ℕ → E → ℝ)
 
 | 原文成分 | Lean对应 | 说明 |
 |---|---|---|
-| 当前覆盖范围 | 本条所引原句及展示公式；单个记号归入context_notation。 | 仅承诺明确列出的数学内容 |
+| 当前覆盖范围 | 本条所引原句及展示公式；单个记号归入context\_notation。 | 仅承诺明确列出的数学内容 |
 | 对象、量词、假设和定义/结论 | `MD.Ch03.truncationSmooth`；`MD.Ch03.truncationSmooth_C1` | 完整代码见第4段；两个版本独立列出 |
 | 技术资格或版本解释 | 系数在D上C∞，主结论C∞暂sorry；原C¹结论的既有证明作为独立辅助重查。 | [EXTRA] |
 | 技术资格或版本解释 | [EXTRA] C∞主结论暂sorry，原C¹辅助已证；纠正旧元数据对证明能力的过度描述。 | [EXTRA] |
@@ -3778,36 +4113,88 @@ incomplete；`MD.Ch03.truncationSmooth`：未证（缺大型理论）；`MD.Ch03
 ### 2. 原文陈述
 
 > Theorem 3.1. Suppose the Hamiltonian $H$ and modified Hamiltonian $\bar H_k$ are smooth functions globally defined on a convex, compact subset $\mathcal B$ of $\mathbb R^{2N_c}$ and suppose that the exact solution and numerical approximations (for $h$ sufficiently small) are confined to $\mathcal B$. Then, we have asymptotically for $h\to0$ that
-> \[H(\boldsymbol z_n)=H(\boldsymbol z_0)+O(h^r),\]
+
+$$
+H(\boldsymbol z_n)=H(\boldsymbol z_0)+O(h^r),
+$$
+
+
 > for $n=0,1,\ldots,\nu$ where $\tau=\nu h=O(h^{-k+r})$.
 
 ### 3. 原文证明
 
 > Proof First observe that due to smoothness and the assumptions on $\mathcal B$, we have a global Lipschitz constant
-> \[|H(\boldsymbol u)-H(\boldsymbol v)|< L\|\boldsymbol u-\boldsymbol v\|\]
+
+$$
+|H(\boldsymbol u)-H(\boldsymbol v)|< L\|\boldsymbol u-\boldsymbol v\|
+$$
+
+
 > for all $\boldsymbol u,\boldsymbol v\in\mathcal B$.
 > Denote by $\mathcal F_h^{(k)}$ the flow map of the truncated Hamiltonian expansion $\bar H_k$,
-> \[\mathcal F_h^{(k)}\stackrel{\mathrm{def}}=\exp(h\mathcal L_{\bar H_k}).\]
+
+$$
+\mathcal F_h^{(k)}\stackrel{\mathrm{def}}=\exp(h\mathcal L_{\bar H_k}).
+$$
+
+
 > By construction, we have
-> \[\boldsymbol z_{n+1}=\mathcal F_h^{(k)}(\boldsymbol z_n)+\boldsymbol\eta_n\]
+
+$$
+\boldsymbol z_{n+1}=\mathcal F_h^{(k)}(\boldsymbol z_n)+\boldsymbol\eta_n
+$$
+
+
 > where $\|\boldsymbol\eta_n\|\le Ch^{k+1}$.
 > Since $\mathcal F_h^{(k)}$ preserves its Hamiltonian (3.11), we have
-> \[\bar H_k(\mathcal F_h^{(k)}(\boldsymbol z_n))=\widetilde H_k(\boldsymbol z_n).\]
+
+$$
+\bar H_k(\mathcal F_h^{(k)}(\boldsymbol z_n))=\widetilde H_k(\boldsymbol z_n).
+$$
+
+
 > Now
-> \[\begin{aligned}\bar H_k(\boldsymbol z_\nu)-\bar H_k(\boldsymbol z_0)
-> &=\sum_{n=0}^{\nu-1}\bar H_k(\boldsymbol z_{n+1})-\bar H_k(\boldsymbol z_n)\\
-> &=\sum_{n=0}^{\nu-1}\bar H_k(\boldsymbol z_{n+1})-\widetilde H_k(\mathcal F_h^{(k)}(\boldsymbol z_n))\\
-> &=\sum_{n=0}^{\nu-1}\bar H_k(\mathcal F_h^{(k)}(\boldsymbol z_n)+\boldsymbol\eta_n)-\bar H_k(\mathcal F_h^{(k)}(\boldsymbol z_n)).\end{aligned}\]
+
+$$
+\begin{aligned}\bar H_k(\boldsymbol z_\nu)-\bar H_k(\boldsymbol z_0) &=\sum_{n=0}^{\nu-1}\bar H_k(\boldsymbol z_{n+1})-\bar H_k(\boldsymbol z_n)\\ &=\sum_{n=0}^{\nu-1}\bar H_k(\boldsymbol z_{n+1})-\widetilde H_k(\mathcal F_h^{(k)}(\boldsymbol z_n))\\ &=\sum_{n=0}^{\nu-1}\bar H_k(\mathcal F_h^{(k)}(\boldsymbol z_n)+\boldsymbol\eta_n)-\bar H_k(\mathcal F_h^{(k)}(\boldsymbol z_n)).\end{aligned}
+$$
+
+
 > Hence
-> \[|\bar H_k(\boldsymbol z_\nu)-\bar H_k(\boldsymbol z_0)|\le L\sum_{n=0}^{\nu-1}\|\boldsymbol\eta_n\|\le L\nu h^{k+1}.\]
+
+$$
+|\bar H_k(\boldsymbol z_\nu)-\bar H_k(\boldsymbol z_0)|\le L\sum_{n=0}^{\nu-1}\|\boldsymbol\eta_n\|\le L\nu h^{k+1}.
+$$
+
+
 > We have $\nu=\tau/h$, thus
-> \[|\bar H_k(\boldsymbol z_\nu)-\bar H_k(\boldsymbol z_0)|\le L\tau h^k.\]
+
+$$
+|\bar H_k(\boldsymbol z_\nu)-\bar H_k(\boldsymbol z_0)|\le L\tau h^k.
+$$
+
+
 > Next observe that
-> \[H=\bar H_k-h^rH_{(r)}-h^{r+1}H_{(r+1)}-\cdots-h^kH_{(k)}=\bar H_k+O(h^r).\]
+
+$$
+H=\bar H_k-h^rH_{(r)}-h^{r+1}H_{(r+1)}-\cdots-h^kH_{(k)}=\bar H_k+O(h^r).
+$$
+
+
 > Therefore
-> \[|H(\boldsymbol z_\nu)-H(\boldsymbol z_0)|\le L\nu h^{k+1}+O(h^r),\]
+
+$$
+|H(\boldsymbol z_\nu)-H(\boldsymbol z_0)|\le L\nu h^{k+1}+O(h^r),
+$$
+
+
 > so that, as long as $\nu\le C_2h^{-k+r-1}$, we have
-> \[|H(\boldsymbol z_\nu)-H(\boldsymbol z_0)|\le O(h^r).\quad\square\]
+
+$$
+|H(\boldsymbol z_\nu)-H(\boldsymbol z_0)|\le O(h^r).\quad\square
+$$
+
+
 完整原书证明按PDF136–138跨页拼接；保留bar/tilde混用、L沿用及缺陷常数C省略，不静默修订原书。
 
 ### 4. 完整当前Lean（原文与修正版独立列出）
@@ -3872,7 +4259,7 @@ theorem theorem31_corrected (n r k : ℕ)
 本地限定解释与原文问题见上列范围及对照；逐声明编译、公理结果见第7段。
 
 网站：原书疑误/资格待导师；原文与修正版并列。
-网站原返回（对应其审校版本）：NEEDS_HUMAN；Lean中n,r,k、实Hamiltonian及系数、开放凸D、紧凸B⊆D、r>0、r≤k和C∞条件均显式。finiteMatching给真实截断ODE、留D及统一A h^(k+1)端点缺陷；它不是能量结论。量词∀T>0后取M,δ，与ν及z₀无关；νh·h^(k−r)≤T正是时间O(h^(−k+r))。数值轨道直到ν留B足够，截断短轨可在B的紧邻域控制，无须全部留B。给定匹配后的能量签名数学上合理，但原书证明有记号及严格不等号疑误，须人工确认其解释；构造存在性不由本声明证明。
+网站原返回（对应其审校版本）：NEEDS\_HUMAN；Lean中n,r,k、实Hamiltonian及系数、开放凸D、紧凸B⊆D、r>0、r≤k和C∞条件均显式。finiteMatching给真实截断ODE、留D及统一A h^(k+1)端点缺陷；它不是能量结论。量词∀T>0后取M,δ，与ν及z₀无关；νh·h^(k−r)≤T正是时间O(h^(−k+r))。数值轨道直到ν留B足够，截断短轨可在B的紧邻域控制，无须全部留B。给定匹配后的能量签名数学上合理，但原书证明有记号及严格不等号疑误，须人工确认其解释；构造存在性不由本声明证明。
 
 ### 7. 状态与证明位置
 
@@ -3884,7 +4271,12 @@ incomplete；`MD.Ch03.theorem31`：未证（原书疑误不证）；`MD.Ch03.the
 ### 2. 原文陈述
 
 > Proof First observe that due to smoothness and the assumptions on $\mathcal B$, we have a global Lipschitz constant
-> \[|H(\boldsymbol u)-H(\boldsymbol v)|\le L\|\boldsymbol u-\boldsymbol v\|\]
+
+$$
+|H(\boldsymbol u)-H(\boldsymbol v)|\le L\|\boldsymbol u-\boldsymbol v\|
+$$
+
+
 > for all $\boldsymbol u,\boldsymbol v\in\mathcal B$.
 
 ### 3. 原文证明
@@ -3908,7 +4300,7 @@ theorem compactLipschitz (D B : Set E) (hD : IsOpen D)
 
 | 原文成分 | Lean对应 | 说明 |
 |---|---|---|
-| 当前覆盖范围 | 本条所引原句及展示公式；单个记号归入context_notation。 | 仅承诺明确列出的数学内容 |
+| 当前覆盖范围 | 本条所引原句及展示公式；单个记号归入context\_notation。 | 仅承诺明确列出的数学内容 |
 | 对象、量词、假设和定义/结论 | `MD.Ch03.compactLipschitz` | 完整代码见第4段；两个版本独立列出 |
 | 技术资格或版本解释 | 显式开放环境D及B⊆D、H在D为C¹；L由真实导数紧集界推出，未作假设。 | [EXTRA] |
 
@@ -3931,7 +4323,12 @@ checked+documented priors；`MD.Ch03.compactLipschitz`：已证。
 ### 2. 原文陈述
 
 > Denote by $\mathcal F_h^{(k)}$ the flow map of the truncated Hamiltonian expansion $\bar H_k$,
-> \[\mathcal F_h^{(k)}\stackrel{\mathrm{def}}=\exp(h\mathcal L_{\bar H_k}).\]
+
+$$
+\mathcal F_h^{(k)}\stackrel{\mathrm{def}}=\exp(h\mathcal L_{\bar H_k}).
+$$
+
+
 
 ### 3. 原文证明
 
@@ -3952,7 +4349,7 @@ def truncatedFlow {n : ℕ} (H : SymplecticCoordinates n → ℝ) (Hj : ℕ → 
 
 | 原文成分 | Lean对应 | 说明 |
 |---|---|---|
-| 当前覆盖范围 | 本条所引原句及展示公式；单个记号归入context_notation。 | 仅承诺明确列出的数学内容 |
+| 当前覆盖范围 | 本条所引原句及展示公式；单个记号归入context\_notation。 | 仅承诺明确列出的数学内容 |
 | 对象、量词、假设和定义/结论 | `MD.Ch03.truncatedFlow` | 完整代码见第4段；两个版本独立列出 |
 
 [EXTRA] 无新增技术资格。
@@ -3974,7 +4371,12 @@ self-contained；`MD.Ch03.truncatedFlow`：定义。
 ### 2. 原文陈述
 
 > By construction, we have
-> \[\boldsymbol z_{n+1}=\mathcal F_h^{(k)}(\boldsymbol z_n)+\boldsymbol\eta_n\]
+
+$$
+\boldsymbol z_{n+1}=\mathcal F_h^{(k)}(\boldsymbol z_n)+\boldsymbol\eta_n
+$$
+
+
 > where $\|\boldsymbol\eta_n\|\le Ch^{k+1}$.
 
 ### 3. 原文证明
@@ -4000,7 +4402,7 @@ theorem finiteMatchingConstruction :
 
 | 原文成分 | Lean对应 | 说明 |
 |---|---|---|
-| 当前覆盖范围 | 本条所引原句及展示公式；单个记号归入context_notation。 | 仅承诺明确列出的数学内容 |
+| 当前覆盖范围 | 本条所引原句及展示公式；单个记号归入context\_notation。 | 仅承诺明确列出的数学内容 |
 | 对象、量词、假设和定义/结论 | `MD.Ch03.finiteMatchingConstruction` | 完整代码见第4段；两个版本独立列出 |
 | 技术资格或版本解释 | smoothSymplecticData与原书构造上下文相同；保留任意k的真实finiteMatching为结论，不当作前提。 | [EXTRA] |
 | 技术资格或版本解释 | [EXTRA] C∞编码补充修复：指定版本裸⊤表示实解析Cω，现将原smooth的前提及输出恢复为scoped ∞；正式库冻结，已有证明随本批重查，失败依≤3次小修规则记录。 | [EXTRA] |
@@ -4025,7 +4427,12 @@ incomplete；`MD.Ch03.finiteMatchingConstruction`：未证（缺大型理论）�
 ### 2. 原文陈述
 
 > Since $\mathcal F_h^{(k)}$ preserves its Hamiltonian (3.11), we have
-> \[\bar H_k(\mathcal F_h^{(k)}(\boldsymbol z_n))=\widetilde H_k(\boldsymbol z_n).\]
+
+$$
+\bar H_k(\mathcal F_h^{(k)}(\boldsymbol z_n))=\widetilde H_k(\boldsymbol z_n).
+$$
+
+
 
 ### 3. 原文证明
 
@@ -4090,9 +4497,12 @@ checked+documented priors；`MD.Ch03.truncatedConservation`：已证；`MD.Ch03.
 ### 2. 原文陈述
 
 > Now
-> \[\begin{aligned}\bar H_k(\boldsymbol z_\nu)-\bar H_k(\boldsymbol z_0)&=\sum_{n=0}^{\nu-1}\bar H_k(\boldsymbol z_{n+1})-\bar H_k(\boldsymbol z_n)\\
-> &=\sum_{n=0}^{\nu-1}\bar H_k(\boldsymbol z_{n+1})-\widetilde H_k(\mathcal F_h^{(k)}(\boldsymbol z_n))\\
-> &=\sum_{n=0}^{\nu-1}\bar H_k(\mathcal F_h^{(k)}(\boldsymbol z_n)+\boldsymbol\eta_n)-\bar H_k(\mathcal F_h^{(k)}(\boldsymbol z_n)).\end{aligned}\]
+
+$$
+\begin{aligned}\bar H_k(\boldsymbol z_\nu)-\bar H_k(\boldsymbol z_0)&=\sum_{n=0}^{\nu-1}\bar H_k(\boldsymbol z_{n+1})-\bar H_k(\boldsymbol z_n)\\ &=\sum_{n=0}^{\nu-1}\bar H_k(\boldsymbol z_{n+1})-\widetilde H_k(\mathcal F_h^{(k)}(\boldsymbol z_n))\\ &=\sum_{n=0}^{\nu-1}\bar H_k(\mathcal F_h^{(k)}(\boldsymbol z_n)+\boldsymbol\eta_n)-\bar H_k(\mathcal F_h^{(k)}(\boldsymbol z_n)).\end{aligned}
+$$
+
+
 
 ### 3. 原文证明
 
@@ -4169,7 +4579,12 @@ incomplete；`MD.Ch03.energyTelescoping`：已证；`MD.Ch03.energyTelescoping_c
 ### 2. 原文陈述
 
 > Hence
-> \[|\bar H_k(\boldsymbol z_\nu)-\bar H_k(\boldsymbol z_0)|\le L\sum_{n=0}^{\nu-1}\|\boldsymbol\eta_n\|\le L\nu h^{k+1}.\]
+
+$$
+|\bar H_k(\boldsymbol z_\nu)-\bar H_k(\boldsymbol z_0)|\le L\sum_{n=0}^{\nu-1}\|\boldsymbol\eta_n\|\le L\nu h^{k+1}.
+$$
+
+
 
 ### 3. 原文证明
 
@@ -4234,11 +4649,11 @@ theorem uniformTruncatedLipschitz_corrected
 |---|---|---|
 | 当前覆盖范围 | 保留完整原文引文；Lean仅覆盖第4段明示的定义与限定结论，原书疑误或超出该陈述的内容不冒称已形式化。各版本差异见本条与ERRATA。 | 仅承诺明确列出的数学内容 |
 | 对象、量词、假设和定义/结论 | `MD.Ch03.uniformTruncatedLipschitz`；`MD.Ch03.uniformTruncatedLipschitz_chain`；`MD.Ch03.uniformTruncatedLipschitz_corrected` | 完整代码见第4段；两个版本独立列出 |
-| 技术资格或版本解释 | 开放D、紧凸B⊆D及H和有限H_j在D C¹；0≤h≤1；L由有限系数导数界推出。 | [EXTRA] |
+| 技术资格或版本解释 | 开放D、紧凸B⊆D及H和有限H\_j在D C¹；0≤h≤1；L由有限系数导数界推出。 | [EXTRA] |
 | 技术资格或版本解释 | [EXTRA] 保留统一截断Lipschitz定理，补原完整能量差≤LΣ‖η‖≤LAνh^(k+1)链；A为原文缺陷常数重命名，F为所给守恒截断一步。 | [EXTRA] |
 | 技术资格或版本解释 | [ERRATUM?] 将已有带明示资格的数学解释独立命名为修正版；原书逐字记录及已有声明保留。完整原句超出本声明部分在覆盖缺口/审阅问题中列明，不把有限资格解释当作原句无条件成立。 | [EXTRA] |
 
-[EXTRA] 开放D、紧凸B⊆D及H和有限H_j在D C¹；0≤h≤1；L由有限系数导数界推出。；[EXTRA] 保留统一截断Lipschitz定理，补原完整能量差≤LΣ‖η‖≤LAνh^(k+1)链；A为原文缺陷常数重命名，F为所给守恒截断一步。；[ERRATUM?] 将已有带明示资格的数学解释独立命名为修正版；原书逐字记录及已有声明保留。完整原句超出本声明部分在覆盖缺口/审阅问题中列明，不把有限资格解释当作原句无条件成立。
+[EXTRA] 开放D、紧凸B⊆D及H和有限H\_j在D C¹；0≤h≤1；L由有限系数导数界推出。；[EXTRA] 保留统一截断Lipschitz定理，补原完整能量差≤LΣ‖η‖≤LAνh^(k+1)链；A为原文缺陷常数重命名，F为所给守恒截断一步。；[ERRATUM?] 将已有带明示资格的数学解释独立命名为修正版；原书逐字记录及已有声明保留。完整原句超出本声明部分在覆盖缺口/审阅问题中列明，不把有限资格解释当作原句无条件成立。
 
 ### 6. 审计结论
 
@@ -4257,7 +4672,12 @@ incomplete；`MD.Ch03.uniformTruncatedLipschitz`：已证；`MD.Ch03.uniformTrun
 ### 2. 原文陈述
 
 > Next observe that
-> \[H=\bar H_k-h^rH_{(r)}-h^{r+1}H_{(r+1)}-\cdots-h^kH_{(k)}=\bar H_k+O(h^r).\]
+
+$$
+H=\bar H_k-h^rH_{(r)}-h^{r+1}H_{(r+1)}-\cdots-h^kH_{(k)}=\bar H_k+O(h^r).
+$$
+
+
 
 ### 3. 原文证明
 
@@ -4281,7 +4701,7 @@ theorem truncationRemainder
 
 | 原文成分 | Lean对应 | 说明 |
 |---|---|---|
-| 当前覆盖范围 | 本条所引原句及展示公式；单个记号归入context_notation。 | 仅承诺明确列出的数学内容 |
+| 当前覆盖范围 | 本条所引原句及展示公式；单个记号归入context\_notation。 | 仅承诺明确列出的数学内容 |
 | 对象、量词、假设和定义/结论 | `MD.Ch03.truncationRemainder` | 完整代码见第4段；两个版本独立列出 |
 | 技术资格或版本解释 | 各有限系数在紧B连续；0≤h≤1；统一正C由紧性推出，未供应所需余项界。 | [EXTRA] |
 
@@ -4304,7 +4724,12 @@ checked+documented priors；`MD.Ch03.truncationRemainder`：已证。
 ### 2. 原文陈述
 
 > Therefore
-> \[|H(\boldsymbol z_\nu)-H(\boldsymbol z_0)|\le L\nu h^{k+1}+O(h^r),\]
+
+$$
+|H(\boldsymbol z_\nu)-H(\boldsymbol z_0)|\le L\nu h^{k+1}+O(h^r),
+$$
+
+
 
 ### 3. 原文证明
 
@@ -4422,7 +4847,12 @@ incomplete；`MD.Ch03.physicalEnergyDrift`：已证；`MD.Ch03.physicalEnergyDri
 ### 2. 原文陈述
 
 > so that, as long as $\nu\le C_2h^{-k+r-1}$, we have
-> \[|H(\boldsymbol z_\nu)-H(\boldsymbol z_0)|\le O(h^r).\]
+
+$$
+|H(\boldsymbol z_\nu)-H(\boldsymbol z_0)|\le O(h^r).
+$$
+
+
 
 ### 3. 原文证明
 
@@ -4461,7 +4891,7 @@ theorem polynomialEnergyRate
 
 | 原文成分 | Lean对应 | 说明 |
 |---|---|---|
-| 当前覆盖范围 | 本条所引原句及展示公式；单个记号归入context_notation。 | 仅承诺明确列出的数学内容 |
+| 当前覆盖范围 | 本条所引原句及展示公式；单个记号归入context\_notation。 | 仅承诺明确列出的数学内容 |
 | 对象、量词、假设和定义/结论 | `MD.Ch03.polynomialEnergyRate` | 完整代码见第4段；两个版本独立列出 |
 | 技术资格或版本解释 | [EXTRA]hdefect是假设明确给出的实际一步O(h^(k+1))端点界，源自原书“By construction”尚未形式化的先验；不是本条能量结论。 | [EXTRA] |
 | 技术资格或版本解释 | D/B及C¹、实际截断ODE留B、r≤k、A,T≥0、0<h≤1、数值轨道留B；长时间条件νhh^(k−r)≤T。 | [EXTRA] |
@@ -4485,7 +4915,12 @@ checked+documented priors；`MD.Ch03.polynomialEnergyRate`：已证。
 ### 2. 原文陈述
 
 > so that, as long as $\nu\le C_2h^{-k+r-1}$, we have
-> \[|H(\boldsymbol z_\nu)-H(\boldsymbol z_0)|\le O(h^r).\]
+
+$$
+|H(\boldsymbol z_\nu)-H(\boldsymbol z_0)|\le O(h^r).
+$$
+
+
 
 ### 3. 原文证明
 
@@ -4554,7 +4989,7 @@ theorem arbitraryFiniteTruncation :
 
 | 原文成分 | Lean对应 | 说明 |
 |---|---|---|
-| 当前覆盖范围 | 本条所引原句及展示公式；单个记号归入context_notation。 | 仅承诺明确列出的数学内容 |
+| 当前覆盖范围 | 本条所引原句及展示公式；单个记号归入context\_notation。 | 仅承诺明确列出的数学内容 |
 | 对象、量词、假设和定义/结论 | `MD.Ch03.arbitraryFiniteTruncation` | 完整代码见第4段；两个版本独立列出 |
 | 技术资格或版本解释 | smoothSymplecticData保持全部Hamiltonian/近恒等辛/compact条件；完整∀k匹配作为结论，没有把它当作前提。 | [EXTRA] |
 | 技术资格或版本解释 | [EXTRA] C∞编码补充修复：指定版本裸⊤表示实解析Cω，现将原smooth的前提及输出恢复为scoped ∞；正式库冻结，已有证明随本批重查，失败依≤3次小修规则记录。 | [EXTRA] |
@@ -4579,7 +5014,12 @@ incomplete；`MD.Ch03.arbitraryFiniteTruncation`：未证（缺大型理论）�
 ### 2. 原文陈述
 
 > It is possible to prove (see discussions in [164, 227] for more detail), that for many standard classes of numerical methods, there are real, positive constants $C,D$ such that
-> \[\|\mathcal G_h(\zeta)-\mathcal F_h^{(k)}(\zeta)\|\le Ch[D(k+1)h]^{k+1},\]
+
+$$
+\|\mathcal G_h(\zeta)-\mathcal F_h^{(k)}(\zeta)\|\le Ch[D(k+1)h]^{k+1},
+$$
+
+
 > giving a precise bound on the magnitude of the difference between the time $h$ evolution under the truncated perturbed Hamiltonian and the numerical method.
 
 ### 3. 原文证明
@@ -4657,7 +5097,7 @@ theorem analyticBEA_corrected :
 本地限定解释与原文问题见上列范围及对照；逐声明编译、公理结果见第7段。
 
 网站：原书疑误/资格待导师；原文与修正版并列。
-网站原返回（对应其审校版本）：NEEDS_HUMAN；已展开Ch03_deps.txt：SymplecticCoordinates n=(Fin n⊕Fin n)→ℝ；smoothSymplecticData要求r>0、开放凸D、紧凸B⊆D、H光滑、G(0)=id、联合光滑、Jacobian满足AᵀJA=J、B上真实H流以及局部O(|h|^(r+1))阶。Jacobian是实际fderiv矩阵。truncatedFlow要求Γ(0)=z及[0,h]上的实际ODE；Hamiltonian为H+Σ_{j=r}^k h^j Hj。解析假设、统一C/A/δ先于k、真实流估计均明确，且加入A(k+1)h≤1并另给指数截断。未找到缺失定义；原文many standard classes未界定适用类，需数学判断这些解析及域条件是否足以支持此全域解析系数结论；不能仅据名字或sorry判PASS。analyticBEA含sorry，与此语义判定分开。
+网站原返回（对应其审校版本）：NEEDS\_HUMAN；已展开Ch03\_deps.txt：SymplecticCoordinates n=(Fin n⊕Fin n)→ℝ；smoothSymplecticData要求r>0、开放凸D、紧凸B⊆D、H光滑、G(0)=id、联合光滑、Jacobian满足AᵀJA=J、B上真实H流以及局部O(|h|^(r+1))阶。Jacobian是实际fderiv矩阵。truncatedFlow要求Γ(0)=z及[0,h]上的实际ODE；Hamiltonian为H+Σ_{j=r}^k h^j Hj。解析假设、统一C/A/δ先于k、真实流估计均明确，且加入A(k+1)h≤1并另给指数截断。未找到缺失定义；原文many standard classes未界定适用类，需数学判断这些解析及域条件是否足以支持此全域解析系数结论；不能仅据名字或sorry判PASS。analyticBEA含sorry，与此语义判定分开。
 
 ### 7. 状态与证明位置
 
@@ -4669,11 +5109,26 @@ incomplete；`MD.Ch03.analyticBEA`：未证（原书疑误不证）；`MD.Ch03.a
 ### 2. 原文陈述
 
 > If $h$ is small, then for $k$ sufficiently small the quantity in brackets is less than one and the difference from the truncated approximation decreases in magnitude with increasing $k$. As soon as $k$ satisfies
-> \[k+1>\frac1{Dh}\]
+
+$$
+k+1>\frac1{Dh}
+$$
+
+
 > the power grows monotonically without bound. We can minimize the difference between $\mathcal G_h$ and $\mathcal F_h^{(k)}$ by choosing
-> \[k=\frac1{Dh\mathrm e}-1,\]
+
+$$
+k=\frac1{Dh\mathrm e}-1,
+$$
+
+
 > in which case,
-> \[\|\mathcal G_h(\zeta)-\mathcal F_h^{(k)}(\zeta)\|<\widetilde C h\mathrm e^{-1/(\gamma h)},\qquad\gamma=\frac1{D\mathrm e}.\]
+
+$$
+\|\mathcal G_h(\zeta)-\mathcal F_h^{(k)}(\zeta)\|<\widetilde C h\mathrm e^{-1/(\gamma h)},\qquad\gamma=\frac1{D\mathrm e}.
+$$
+
+
 
 ### 3. 原文证明
 
@@ -4726,7 +5181,7 @@ theorem optimalTruncation_corrected :
 本地限定解释与原文问题见上列范围及对照；逐声明编译、公理结果见第7段。
 
 网站：原书疑误/资格待导师；原文与修正版并列。
-网站原返回（对应其审校版本）：FAIL；Lean只断言m=floor(1/(Ae h))>0及(A m h)^m≤C exp(−1/(Ae h))，m对应原文k+1；没有任何数值映射/实际截断流对象，未表达原文增长、最小化实际差或展示的原书指数。D>0及正小h合理，独立C可吸收取整误差；但context_notation承认缩窄不能代替完整statement_scope。此定理含sorry，语义缺项独立于证明完成度。[ERRATUM?]成立：连续变量x的log((Dh x)^x)=x log(Dh x)，最小点x=1/(Deh)，最小值exp(−1/(Deh))。
+网站原返回（对应其审校版本）：FAIL；Lean只断言m=floor(1/(Ae h))>0及(A m h)^m≤C exp(−1/(Ae h))，m对应原文k+1；没有任何数值映射/实际截断流对象，未表达原文增长、最小化实际差或展示的原书指数。D>0及正小h合理，独立C可吸收取整误差；但context\_notation承认缩窄不能代替完整statement\_scope。此定理含sorry，语义缺项独立于证明完成度。[ERRATUM?]成立：连续变量x的log((Dh x)^x)=x log(Dh x)，最小点x=1/(Deh)，最小值exp(−1/(Deh))。
 
 ### 7. 状态与证明位置
 
@@ -4769,7 +5224,7 @@ theorem exponentialFlat :
 
 | 原文成分 | Lean对应 | 说明 |
 |---|---|---|
-| 当前覆盖范围 | 本条所引原句及展示公式；单个记号归入context_notation。 | 仅承诺明确列出的数学内容 |
+| 当前覆盖范围 | 本条所引原句及展示公式；单个记号归入context\_notation。 | 仅承诺明确列出的数学内容 |
 | 对象、量词、假设和定义/结论 | `MD.Ch03.exponentialFlat` | 完整代码见第4段；两个版本独立列出 |
 | 技术资格或版本解释 | γ>0、h→0⁺；不声称只有C∞就有指数缺陷。 | [EXTRA] |
 
@@ -4780,7 +5235,7 @@ theorem exponentialFlat :
 本地限定解释与原文问题见上列范围及对照；逐声明编译、公理结果见第7段。
 
 网站：网站PASS（绑定版本 433a13ca6407）。
-网站原返回（对应其审校版本）：PASS；γ>0和h→0⁺符合正步长上下文。∀γ>0 ∀k∈ℕ exp(−γ/h)/h^k→0保证C h exp(−γ/h)对任意固定幂平坦；对任意实幂也可由较大自然数幂推出。原书即使用倒数γ，仍属于某个正指数常数。context_notation是数学解释，不是逐字原文。Ch03.lean此条有证明；本次未编译，PASS仅评签名。
+网站原返回（对应其审校版本）：PASS；γ>0和h→0⁺符合正步长上下文。∀γ>0 ∀k∈ℕ exp(−γ/h)/h^k→0保证C h exp(−γ/h)对任意固定幂平坦；对任意实幂也可由较大自然数幂推出。原书即使用倒数γ，仍属于某个正指数常数。context\_notation是数学解释，不是逐字原文。Ch03.lean此条有证明；本次未编译，PASS仅评签名。
 
 ### 7. 状态与证明位置
 
@@ -4792,8 +5247,12 @@ self-contained；`MD.Ch03.exponentialFlat`：已证。
 ### 2. 原文陈述
 
 > The modified energy for the Verlet method for a single degree of freedom system with energy $H=p^2/2+U(q)$ is
-> \[\widetilde H_h=H+\frac{h^2}{24}(2p^{T}U''p-(U')^2)
-> +h^4\left(\frac1{720}p^4U''''-\frac1{120}p^2U'U'''-\frac1{240}(U')^2U''-\frac1{60}p^2((U'')^2+U'U''')\right)+O(h^6).\]
+
+$$
+\widetilde H_h=H+\frac{h^2}{24}(2p^{T}U''p-(U')^2) +h^4\left(\frac1{720}p^4U''''-\frac1{120}p^2U'U'''-\frac1{240}(U')^2U''-\frac1{60}p^2((U'')^2+U'U''')\right)+O(h^6).
+$$
+
+
 
 ### 3. 原文证明
 
@@ -4857,16 +5316,16 @@ theorem scalarVerletShadow4_matching_corrected (U : ℝ → ℝ) (_hU : ContDiff
 | 技术资格或版本解释 | [EXTRA] 有限h⁴多项式保留；补足光滑势/紧集上与真实velocity Verlet及该Hamiltonian实际局部流的O(h⁷)端点匹配，对应Hamiltonian O(h⁶)遗漏；新陈述未证明。 | [EXTRA] |
 | 技术资格或版本解释 | [EXTRA] C∞编码补充修复：指定版本裸⊤表示实解析Cω，现将原smooth的前提及输出恢复为scoped ∞；正式库冻结，已有证明随本批重查，失败依≤3次小修规则记录。 | [EXTRA] |
 | 技术资格或版本解释 | [EXTRA] 【原书疑误】保留印刷有限式及原匹配断言（另名Printed，不证明）；独立精确有理数jet核对kick-drift-kick后，修正版h⁴四项系数为−1/720,+1/120,+1/60,−1/240，分别乘p⁴U⁗、p²U′U‴、p²(U″)²、(U′)²U″。SymPy验到h⁶；统一实际流O(h⁷)估计仍未证明，交导师核查。 | [EXTRA] |
-| 技术资格或版本解释 | [ERRATUM?] 保留原印系数及原印匹配声明，独立列修正系数和匹配声明；精确代数核对见SHADOW4_ALGEBRA.json，实际流误差定理未证明。 | [EXTRA] |
+| 技术资格或版本解释 | [ERRATUM?] 保留原印系数及原印匹配声明，独立列修正系数和匹配声明；精确代数核对见SHADOW4\_ALGEBRA.json，实际流误差定理未证明。 | [EXTRA] |
 
-[EXTRA] [EXTRA] 有限h⁴多项式保留；补足光滑势/紧集上与真实velocity Verlet及该Hamiltonian实际局部流的O(h⁷)端点匹配，对应Hamiltonian O(h⁶)遗漏；新陈述未证明。；[EXTRA] C∞编码补充修复：指定版本裸⊤表示实解析Cω，现将原smooth的前提及输出恢复为scoped ∞；正式库冻结，已有证明随本批重查，失败依≤3次小修规则记录。；[EXTRA] 【原书疑误】保留印刷有限式及原匹配断言（另名Printed，不证明）；独立精确有理数jet核对kick-drift-kick后，修正版h⁴四项系数为−1/720,+1/120,+1/60,−1/240，分别乘p⁴U⁗、p²U′U‴、p²(U″)²、(U′)²U″。SymPy验到h⁶；统一实际流O(h⁷)估计仍未证明，交导师核查。；[ERRATUM?] 保留原印系数及原印匹配声明，独立列修正系数和匹配声明；精确代数核对见SHADOW4_ALGEBRA.json，实际流误差定理未证明。
+[EXTRA] [EXTRA] 有限h⁴多项式保留；补足光滑势/紧集上与真实velocity Verlet及该Hamiltonian实际局部流的O(h⁷)端点匹配，对应Hamiltonian O(h⁶)遗漏；新陈述未证明。；[EXTRA] C∞编码补充修复：指定版本裸⊤表示实解析Cω，现将原smooth的前提及输出恢复为scoped ∞；正式库冻结，已有证明随本批重查，失败依≤3次小修规则记录。；[EXTRA] 【原书疑误】保留印刷有限式及原匹配断言（另名Printed，不证明）；独立精确有理数jet核对kick-drift-kick后，修正版h⁴四项系数为−1/720,+1/120,+1/60,−1/240，分别乘p⁴U⁗、p²U′U‴、p²(U″)²、(U′)²U″。SymPy验到h⁶；统一实际流O(h⁷)估计仍未证明，交导师核查。；[ERRATUM?] 保留原印系数及原印匹配声明，独立列修正系数和匹配声明；精确代数核对见SHADOW4\_ALGEBRA.json，实际流误差定理未证明。
 
 ### 6. 审计结论
 
 本轮修复：【原书疑误】保留印刷有限式及原匹配断言（另名Printed，不证明）；独立精确有理数jet核对kick-drift-kick后，修正版h⁴四项系数为−1/720,+1/120,+1/60,−1/240，分别乘p⁴U⁗、p²U′U‴、p²(U″)²、(U′)²U″。SymPy验到h⁶；统一实际流O(h⁷)估计仍未证明，交导师核查。
 
 网站：按网站审校意见修复，本地核验通过（未再送网站）。
-网站原返回（对应其审校版本）：FAIL；两个声明均已审校。scalarVerletShadow4取z=(q,p)，所定义有限h⁴多项式在标量化后忠实于原印，不能因定义中没有O项而当作余项已证。新增scalarVerletShadow4_matching确实量化任意C∞势、紧B和统一正C、δ，给出从z出发的真实Hamiltonian局部流及velocity Verlet的O(h⁷)端点匹配。C∞的∞编码在本条实际正确；但这个新增结论本身为假：U(q)=q²/2时，印刷多项式产生的q端点与Verlet已有非零h⁵差项，故不能有O(h⁷)界。FAIL针对新增matching的数学结论；忠实的印刷有限式本身应保留，并把原书系数问题转人工，不能通过补sorry解决。
+网站原返回（对应其审校版本）：FAIL；两个声明均已审校。scalarVerletShadow4取z=(q,p)，所定义有限h⁴多项式在标量化后忠实于原印，不能因定义中没有O项而当作余项已证。新增scalarVerletShadow4\_matching确实量化任意C∞势、紧B和统一正C、δ，给出从z出发的真实Hamiltonian局部流及velocity Verlet的O(h⁷)端点匹配。C∞的∞编码在本条实际正确；但这个新增结论本身为假：U(q)=q²/2时，印刷多项式产生的q端点与Verlet已有非零h⁵差项，故不能有O(h⁷)界。FAIL针对新增matching的数学结论；忠实的印刷有限式本身应保留，并把原书系数问题转人工，不能通过补sorry解决。
 
 ### 7. 状态与证明位置
 
@@ -4878,7 +5337,12 @@ incomplete；`MD.Ch03.scalarVerletShadow4`：定义；`MD.Ch03.scalarVerletShado
 ### 2. 原文陈述
 
 > Suppose that, somehow, $H$ were exactly conserved along the numerical solution, so
-> \[\dot H=0\Rightarrow\{H,\widetilde H_h\}=0.\]
+
+$$
+\dot H=0\Rightarrow\{H,\widetilde H_h\}=0.
+$$
+
+
 
 ### 3. 原文证明
 
@@ -4933,7 +5397,7 @@ theorem commutingEnergy_corrected :
 本地限定解释与原文问题见上列范围及对照；逐声明编译、公理结果见第7段。
 
 网站：原书疑误/资格待导师；原文与修正版并列。
-网站原返回（对应其审校版本）：FAIL；actualFlow要求η>0、每个D中初值Φ(0,z)=z、每个|t|<η轨道留D且导数等于K的真实Hamiltonian场。textbookPoissonBracket H K=DH(X_K)，X_K=J∇K；H在开放D为C¹足以从连续轨道守恒得到结论。但Lean前提是全部连续时刻守恒，替换了原文数值解离散守恒，属于关键强化而非技术性[EXTRA]。context_notation已指出此差异，却未修复原陈述覆盖。定理含sorry不影响这一签名判断。
+网站原返回（对应其审校版本）：FAIL；actualFlow要求η>0、每个D中初值Φ(0,z)=z、每个|t|<η轨道留D且导数等于K的真实Hamiltonian场。textbookPoissonBracket H K=DH(X\_K)，X\_K=J∇K；H在开放D为C¹足以从连续轨道守恒得到结论。但Lean前提是全部连续时刻守恒，替换了原文数值解离散守恒，属于关键强化而非技术性[EXTRA]。context\_notation已指出此差异，却未修复原陈述覆盖。定理含sorry不影响这一签名判断。
 
 ### 7. 状态与证明位置
 
@@ -4945,7 +5409,12 @@ incomplete；`MD.Ch03.commutingEnergy`：未证（原书疑误不证）；`MD.Ch
 ### 2. 原文陈述
 
 > Since $\{g_1,g_2\}=-\{g_2,g_1\}$, we have
-> \[\{\widetilde H_h,H\}=0.\]
+
+$$
+\{\widetilde H_h,H\}=0.
+$$
+
+
 > This would imply that $\widetilde H_h$ is actually, itself, a first integral of the molecular system.
 
 ### 3. 原文证明
@@ -4990,7 +5459,7 @@ theorem commutingEnergySymmetry :
 
 | 原文成分 | Lean对应 | 说明 |
 |---|---|---|
-| 当前覆盖范围 | 本条所引原句及展示公式；单个记号归入context_notation。 | 仅承诺明确列出的数学内容 |
+| 当前覆盖范围 | 本条所引原句及展示公式；单个记号归入context\_notation。 | 仅承诺明确列出的数学内容 |
 | 对象、量词、假设和定义/结论 | `MD.Ch03.commutingEnergySymmetry` | 完整代码见第4段；两个版本独立列出 |
 | 技术资格或版本解释 | 开放D、K为C¹、实际H流存在正η。 | [EXTRA] |
 
@@ -5001,7 +5470,7 @@ theorem commutingEnergySymmetry :
 本地限定解释与原文问题见上列范围及对照；逐声明编译、公理结果见第7段。
 
 网站：网站PASS（绑定版本 433a13ca6407）。
-网站原返回（对应其审校版本）：PASS；K=H̃_h，前提在D逐点{H,K}=0；实际括号为DH(J∇K)，反对称得到{K,H}=0。actualFlow给η>0、初值及区间内X_H轨道；K在开放D为C¹使沿轨道导数DK(X_H)为0，从而所有z∈D、|t|<η有K(Φ(t,z))=K(z)。两项结论完整覆盖原文。开放域/C¹/真实流是合理技术资格，无需假设修正级数收敛。此条有证明，本次未编译；PASS只评签名。
+网站原返回（对应其审校版本）：PASS；K=H̃_h，前提在D逐点{H,K}=0；实际括号为DH(J∇K)，反对称得到{K,H}=0。actualFlow给η>0、初值及区间内X\_H轨道；K在开放D为C¹使沿轨道导数DK(X\_H)为0，从而所有z∈D、|t|<η有K(Φ(t,z))=K(z)。两项结论完整覆盖原文。开放域/C¹/真实流是合理技术资格，无需假设修正级数收敛。此条有证明，本次未编译；PASS只评签名。
 
 ### 7. 状态与证明位置
 
@@ -5067,7 +5536,7 @@ theorem energySymplecticNoGo_corrected (n : ℕ)
 本地限定解释与原文问题见上列范围及对照；逐声明编译、公理结果见第7段。
 
 网站：原书疑误/资格待导师；原文与修正版并列。
-网站原返回（对应其审校版本）：FAIL；noExtraIntegrals实际展开为：所有D上光滑且{K,H}=0的全局函数K都等于某个g(H)，不要求g光滑。[EXTRA]是明显强资格，原书未给，不能独自推出当前全局统一δ结论；还缺轨道时间范围与非紧D上的统一控制。actualFlow仅在|t|<η约束Φ，结论τ h (H z)却不受此范围约束，也没有G(h,D)⊆D条件。全局辛定义为C¹及每点AᵀJA=J，不含全局双射。原书practical措辞不足以证明此精确版本；已有明确反例，故不以NEEDS_HUMAN替代FAIL。定理含sorry。
+网站原返回（对应其审校版本）：FAIL；noExtraIntegrals实际展开为：所有D上光滑且{K,H}=0的全局函数K都等于某个g(H)，不要求g光滑。[EXTRA]是明显强资格，原书未给，不能独自推出当前全局统一δ结论；还缺轨道时间范围与非紧D上的统一控制。actualFlow仅在|t|<η约束Φ，结论τ h (H z)却不受此范围约束，也没有G(h,D)⊆D条件。全局辛定义为C¹及每点AᵀJA=J，不含全局双射。原书practical措辞不足以证明此精确版本；已有明确反例，故不以NEEDS\_HUMAN替代FAIL。定理含sorry。
 
 ### 7. 状态与证明位置
 
@@ -5079,11 +5548,26 @@ incomplete；`MD.Ch03.energySymplecticNoGo`：未证（原书疑误不证）；`
 ### 2. 原文陈述
 
 > Consider the following 2D example of a differential equation system
-> \[\dot u=f(u,v),\qquad\dot v=f(u,v).\]
+
+$$
+\dot u=f(u,v),\qquad\dot v=f(u,v).
+$$
+
+
 > Notice that this system has a first integral
-> \[I(u,v)=u-v,\]
+
+$$
+I(u,v)=u-v,
+$$
+
+
 > and consider the application of Euler's method:
-> \[u_{n+1}=u_n+hf(u_n,v_n),\qquad v_{n+1}=v_n+hf(u_n,v_n).\]
+
+$$
+u_{n+1}=u_n+hf(u_n,v_n),\qquad v_{n+1}=v_n+hf(u_n,v_n).
+$$
+
+
 
 ### 3. 原文证明
 
@@ -5114,7 +5598,7 @@ theorem equalComponentFirstIntegral :
 
 | 原文成分 | Lean对应 | 说明 |
 |---|---|---|
-| 当前覆盖范围 | 本条所引原句及展示公式；单个记号归入context_notation。 | 仅承诺明确列出的数学内容 |
+| 当前覆盖范围 | 本条所引原句及展示公式；单个记号归入context\_notation。 | 仅承诺明确列出的数学内容 |
 | 对象、量词、假设和定义/结论 | `MD.Ch03.equalComponentFirstIntegral` | 完整代码见第4段；两个版本独立列出 |
 | 技术资格或版本解释 | 真实轨道导数资格显式，采用全实时间轨道版本，不宣称任意f都全时间有解。 | [EXTRA] |
 
@@ -5137,7 +5621,12 @@ self-contained；`MD.Ch03.equalComponentFirstIntegral`：已证。
 ### 2. 原文陈述
 
 > We see that
-> \[I(u_{n+1},v_{n+1})=u_{n+1}-v_{n+1}=u_n-v_n=I(u_n,v_n),\]
+
+$$
+I(u_{n+1},v_{n+1})=u_{n+1}-v_{n+1}=u_n-v_n=I(u_n,v_n),
+$$
+
+
 > which means that Euler's method conserves this first integral.
 
 ### 3. 原文证明
@@ -5159,7 +5648,7 @@ theorem equalEulerIntegral :
 
 | 原文成分 | Lean对应 | 说明 |
 |---|---|---|
-| 当前覆盖范围 | 本条所引原句及展示公式；单个记号归入context_notation。 | 仅承诺明确列出的数学内容 |
+| 当前覆盖范围 | 本条所引原句及展示公式；单个记号归入context\_notation。 | 仅承诺明确列出的数学内容 |
 | 对象、量词、假设和定义/结论 | `MD.Ch03.equalEulerIntegral` | 完整代码见第4段；两个版本独立列出 |
 
 [EXTRA] 无新增技术资格。
@@ -5169,7 +5658,7 @@ theorem equalEulerIntegral :
 本地限定解释与原文问题见上列范围及对照；逐声明编译、公理结果见第7段。
 
 网站：网站PASS（绑定版本 433a13ca6407）。
-网站原返回（对应其审校版本）：PASS；已展开 Ch03_deps.txt 中 MolecularDynamics/Chapter03/ReviewDefinitions.lean 的 equalComponentIntegral(z)=z.1−z.2。签名对任意实数 h、任意点 z、任意标量场 f 断言共同加上 hf(z) 后差不变，正是 PDF145 的一步等式；无需正步长或正则性。实数精确算术符合原文对舍入误差的说明。Ch03.lean 使用 equalEulerIntegral_proved，依赖中该证明为展开差并 ring，无 sorry；未编译。
+网站原返回（对应其审校版本）：PASS；已展开 Ch03\_deps.txt 中 MolecularDynamics/Chapter03/ReviewDefinitions.lean 的 equalComponentIntegral(z)=z.1−z.2。签名对任意实数 h、任意点 z、任意标量场 f 断言共同加上 hf(z) 后差不变，正是 PDF145 的一步等式；无需正步长或正则性。实数精确算术符合原文对舍入误差的说明。Ch03.lean 使用 equalEulerIntegral\_proved，依赖中该证明为展开差并 ring，无 sorry；未编译。
 
 ### 7. 状态与证明位置
 
@@ -5181,9 +5670,19 @@ checked+documented priors；`MD.Ch03.equalEulerIntegral`：已证。
 ### 2. 原文陈述
 
 > Generalizing this slightly, we could imagine a system of ODEs of the form
-> \[\dot{\boldsymbol z}=\boldsymbol f(\boldsymbol z),\]
+
+$$
+\dot{\boldsymbol z}=\boldsymbol f(\boldsymbol z),
+$$
+
+
 > such that, for some vector $\boldsymbol b$,
-> \[\boldsymbol b\cdot \boldsymbol f(\boldsymbol z)\equiv0,\]
+
+$$
+\boldsymbol b\cdot \boldsymbol f(\boldsymbol z)\equiv0,
+$$
+
+
 > then $I(\boldsymbol z)=\boldsymbol b\cdot\boldsymbol z$ is a first integral. It is straightforward to see that Euler's method conserves such a linear first integral exactly, as is true of many other popular numerical methods.
 
 ### 3. 原文证明
@@ -5213,7 +5712,7 @@ theorem linearEulerIntegral_continuous (n : ℕ) (b : Q n →L[ℝ] ℝ)
 
 | 原文成分 | Lean对应 | 说明 |
 |---|---|---|
-| 当前覆盖范围 | 本条所引原句及展示公式；单个记号归入context_notation。 | 仅承诺明确列出的数学内容 |
+| 当前覆盖范围 | 本条所引原句及展示公式；单个记号归入context\_notation。 | 仅承诺明确列出的数学内容 |
 | 对象、量词、假设和定义/结论 | `MD.Ch03.linearEulerIntegral`；`MD.Ch03.linearEulerIntegral_continuous` | 完整代码见第4段；两个版本独立列出 |
 | 技术资格或版本解释 | [EXTRA] 保留已证Euler精确保存；补连续ODE解上真实线性第一积分恒定，覆盖本条原句连续与离散两结论。 | [EXTRA] |
 
@@ -5224,7 +5723,7 @@ theorem linearEulerIntegral_continuous (n : ℕ) (b : Q n →L[ℝ] ℝ)
 本地限定解释与原文问题见上列范围及对照；逐声明编译、公理结果见第7段。
 
 网站：网站PASS（EAUDIT复审）。
-网站原返回（对应其审校版本）：PASS；linearEulerIntegral与linearEulerIntegral_continuous均已核对。Q n为有限维实坐标，连续线性泛函b等价于原文向量点积；∀z,b(f z)=0正是恒等条件。第一声明对任意实步长h与初值z给出b(z+h•f z)=b z。第二声明在a≤d的闭区间上要求γ满足真实ODE的区间内导数，再对所有t∈[a,d]断言b(γ t)=b(γ a)。区间端点的HasDerivWithinAt还给出所需相对连续性；a=d也正确。[EXTRA]补连续第一积分结论已实际出现，没有把恒定性当作前提。原句对其它popular methods未给明确方法类，未据此虚构一个全称方法定理。
+网站原返回（对应其审校版本）：PASS；linearEulerIntegral与linearEulerIntegral\_continuous均已核对。Q n为有限维实坐标，连续线性泛函b等价于原文向量点积；∀z,b(f z)=0正是恒等条件。第一声明对任意实步长h与初值z给出b(z+h•f z)=b z。第二声明在a≤d的闭区间上要求γ满足真实ODE的区间内导数，再对所有t∈[a,d]断言b(γ t)=b(γ a)。区间端点的HasDerivWithinAt还给出所需相对连续性；a=d也正确。[EXTRA]补连续第一积分结论已实际出现，没有把恒定性当作前提。原句对其它popular methods未给明确方法类，未据此虚构一个全称方法定理。
 
 ### 7. 状态与证明位置
 
@@ -5258,7 +5757,7 @@ theorem linearRKIntegral :
 
 | 原文成分 | Lean对应 | 说明 |
 |---|---|---|
-| 当前覆盖范围 | 本条所引原句及展示公式；单个记号归入context_notation。 | 仅承诺明确列出的数学内容 |
+| 当前覆盖范围 | 本条所引原句及展示公式；单个记号归入context\_notation。 | 仅承诺明确列出的数学内容 |
 | 对象、量词、假设和定义/结论 | `MD.Ch03.linearRKIntegral` | 完整代码见第4段；两个版本独立列出 |
 | 技术资格或版本解释 | 明确选择任意有限阶段Runge–Kutta关系；所有阶段满足原场线性第一积分资格。 | [EXTRA] |
 
@@ -5269,7 +5768,7 @@ theorem linearRKIntegral :
 本地限定解释与原文问题见上列范围及对照；逐声明编译、公理结果见第7段。
 
 网站：网站PASS（绑定版本 433a13ca6407）。
-网站原返回（对应其审校版本）：PASS；展开 Q n=Fin n→ℝ，并实际展开 rungeKuttaRelation：对每个 i，F_i=f(z+h∑_j A_ij F_j)，且 w=z+h∑_i b_i F_i。因此每个 ℓ(F_i)=0，线性性给 ℓ(w)=ℓ(z)。A、权重、h、阶段数及满足关系的阶段全称量化，包含显式与隐式有限阶段 RK，不偷加阶段解的存在或唯一性。[EXTRA] 选取 RK 作为原文“many other”的实例合理，阶段条件是方法定义，不是把待证结论当假设；无需阶条件或 ∑b_i=1。依赖 linearRKIntegral_proved 展开阶段关系后使用线性性，无 sorry；未编译。
+网站原返回（对应其审校版本）：PASS；展开 Q n=Fin n→ℝ，并实际展开 rungeKuttaRelation：对每个 i，F\_i=f(z+h∑_j A\_ij F\_j)，且 w=z+h∑_i b\_i F\_i。因此每个 ℓ(F\_i)=0，线性性给 ℓ(w)=ℓ(z)。A、权重、h、阶段数及满足关系的阶段全称量化，包含显式与隐式有限阶段 RK，不偷加阶段解的存在或唯一性。[EXTRA] 选取 RK 作为原文“many other”的实例合理，阶段条件是方法定义，不是把待证结论当假设；无需阶条件或 ∑b\_i=1。依赖 linearRKIntegral\_proved 展开阶段关系后使用线性性，无 sorry；未编译。
 
 ### 7. 状态与证明位置
 
@@ -5449,7 +5948,7 @@ theorem verletOscillatorEnergy_corrected :
 本地限定解释与原文问题见上列范围及对照；逐声明编译、公理结果见第7段。
 
 网站：原书疑误/资格待导师；原文与修正版并列。
-网站原返回（对应其审校版本）：NEEDS_HUMAN；当前verletOscillatorEnergy是正确的受限版本：一自由度、单位质量、Ω>0，先固定0<ρ<2和z，再选C≥0，随后对所有|hΩ|≤ρ及所有ν∈ℕ统一控制真实机械能差≤Ch²。常数不依赖h或ν，符合稳定范围内全时间O(h²)能量误差；h=0和零初值也不成问题。展开verlet、mechanicalEnergy和oneStepIterate后对象一致。但原句无条件的全时间断言在稳定阈值及不稳定步长下失败；[EXTRA]确实限制了适用范围，不能当作无条件原句已核验。另原句Euler无界分句在当前给出的全部声明中没有对应结论。context_notation虽说另属EulerGrowth，本任务未提供它，且statement_scope仍称覆盖所引原句；该分流及原书省略资格需人工确认。NEEDS_HUMAN不否定当前受限Verlet上界的数学正确性。
+网站原返回（对应其审校版本）：NEEDS\_HUMAN；当前verletOscillatorEnergy是正确的受限版本：一自由度、单位质量、Ω>0，先固定0<ρ<2和z，再选C≥0，随后对所有|hΩ|≤ρ及所有ν∈ℕ统一控制真实机械能差≤Ch²。常数不依赖h或ν，符合稳定范围内全时间O(h²)能量误差；h=0和零初值也不成问题。展开verlet、mechanicalEnergy和oneStepIterate后对象一致。但原句无条件的全时间断言在稳定阈值及不稳定步长下失败；[EXTRA]确实限制了适用范围，不能当作无条件原句已核验。另原句Euler无界分句在当前给出的全部声明中没有对应结论。context\_notation虽说另属EulerGrowth，本任务未提供它，且statement\_scope仍称覆盖所引原句；该分流及原书省略资格需人工确认。NEEDS\_HUMAN不否定当前受限Verlet上界的数学正确性。
 
 ### 7. 状态与证明位置
 
@@ -5461,7 +5960,12 @@ self-contained；`MD.Ch03.verletOscillatorEnergy`：已证；`MD.Ch03.verletOsci
 ### 2. 原文陈述
 
 > We start by taking a timestep with any arbitrary (nonconserving) numerical method, say to an intermediate phase point $\overline{\boldsymbol Q},\overline{\boldsymbol P}$, then we “fix it up” by scaling the momentum by an adjustment factor, defining
-> \[\boldsymbol Q=\overline{\boldsymbol Q},\qquad\boldsymbol P=\gamma\overline{\boldsymbol P},\]
+
+$$
+\boldsymbol Q=\overline{\boldsymbol Q},\qquad\boldsymbol P=\gamma\overline{\boldsymbol P},
+$$
+
+
 > selecting $\gamma$ so that the energy in the result is a prescribed value $E$.
 
 ### 3. 原文证明
@@ -5481,7 +5985,7 @@ def momentumProjection {n : ℕ} (γ : ℝ) (z : Z n) : Z n := (z.1,γ • z.2)
 
 | 原文成分 | Lean对应 | 说明 |
 |---|---|---|
-| 当前覆盖范围 | 本条所引原句及展示公式；单个记号归入context_notation。 | 仅承诺明确列出的数学内容 |
+| 当前覆盖范围 | 本条所引原句及展示公式；单个记号归入context\_notation。 | 仅承诺明确列出的数学内容 |
 | 对象、量词、假设和定义/结论 | `MD.Ch03.momentumProjection` | 完整代码见第4段；两个版本独立列出 |
 
 [EXTRA] 无新增技术资格。
@@ -5503,7 +6007,12 @@ self-contained；`MD.Ch03.momentumProjection`：定义。
 ### 2. 原文陈述
 
 > This method is easy to implement: the equation that must be solved is
-> \[\frac{\gamma^2\overline{\boldsymbol P}^{T}\boldsymbol M^{-1}\overline{\boldsymbol P}}{2}+U(\overline{\boldsymbol Q})=E.\tag{3.12}\]
+
+$$
+\frac{\gamma^2\overline{\boldsymbol P}^{T}\boldsymbol M^{-1}\overline{\boldsymbol P}}{2}+U(\overline{\boldsymbol Q})=E.\tag{3.12}
+$$
+
+
 
 ### 3. 原文证明
 
@@ -5522,7 +6031,7 @@ def projectionConstraint (E K U γ : ℝ) : Prop := γ^2*K+U=E
 
 | 原文成分 | Lean对应 | 说明 |
 |---|---|---|
-| 当前覆盖范围 | 本条所引原句及展示公式；单个记号归入context_notation。 | 仅承诺明确列出的数学内容 |
+| 当前覆盖范围 | 本条所引原句及展示公式；单个记号归入context\_notation。 | 仅承诺明确列出的数学内容 |
 | 对象、量词、假设和定义/结论 | `MD.Ch03.projectionConstraint` | 完整代码见第4段；两个版本独立列出 |
 
 [EXTRA] 无新增技术资格。
@@ -5544,7 +6053,12 @@ self-contained；`MD.Ch03.projectionConstraint`：定义。
 ### 2. 原文陈述
 
 > and, since $\overline{\boldsymbol Q}$ is known, this gives
-> \[\gamma=\left(\frac{E-\overline U}{\overline K}\right)^{1/2},\tag{3.13}\]
+
+$$
+\gamma=\left(\frac{E-\overline U}{\overline K}\right)^{1/2},\tag{3.13}
+$$
+
+
 > where $\overline U=U(\overline{\boldsymbol Q})$ and $\overline K=\overline{\boldsymbol P}^{T}\boldsymbol M^{-1}\overline{\boldsymbol P}/2$ are the potential and kinetic energies after a step of the original non-conserving scheme.
 
 ### 3. 原文证明
@@ -5564,7 +6078,7 @@ def projectionFactor (E K U : ℝ) : ℝ := Real.sqrt ((E-U)/K)
 
 | 原文成分 | Lean对应 | 说明 |
 |---|---|---|
-| 当前覆盖范围 | 本条所引原句及展示公式；单个记号归入context_notation。 | 仅承诺明确列出的数学内容 |
+| 当前覆盖范围 | 本条所引原句及展示公式；单个记号归入context\_notation。 | 仅承诺明确列出的数学内容 |
 | 对象、量词、假设和定义/结论 | `MD.Ch03.projectionFactor` | 完整代码见第4段；两个版本独立列出 |
 
 [EXTRA] 无新增技术资格。
@@ -5606,7 +6120,7 @@ theorem projectionEnergy :
 
 | 原文成分 | Lean对应 | 说明 |
 |---|---|---|
-| 当前覆盖范围 | 本条所引原句及展示公式；单个记号归入context_notation。 | 仅承诺明确列出的数学内容 |
+| 当前覆盖范围 | 本条所引原句及展示公式；单个记号归入context\_notation。 | 仅承诺明确列出的数学内容 |
 | 对象、量词、假设和定义/结论 | `MD.Ch03.projectionEnergy` | 完整代码见第4段；两个版本独立列出 |
 | 技术资格或版本解释 | K>0且U≤E显式给出，禁止由自由度数目推算。 | [EXTRA] |
 
@@ -5617,7 +6131,7 @@ theorem projectionEnergy :
 本地限定解释与原文问题见上列范围及对照；逐声明编译、公理结果见第7段。
 
 网站：网站PASS（绑定版本 433a13ca6407）。
-网站原返回（对应其审校版本）：PASS；展开 Ch03.lean:1005–1008 及 Ch03_deps.txt:3613–3614：projectionConstraint E K U γ 为 γ²K+U=E，projectionFactor 为 sqrt((E−U)/K)。全称 E,K,U 后依次要求 K>0、U≤E，再断言该正平方根满足能量约束，量词和公式正确。K、U对应一步未校正的带横线动能、势能，不是时间平均。K>0排除原文紧邻的零动能障碍，U≤E正是本段条件；都是合理且必要的投影适用资格，未从自由度数量推导。原文的 likely、may suppose 和约等式仅是经验动机，不能作为严格蕴涵；原文保留，不将其静默改写为定理。签名 PASS 限于 context_notation 明示的投影能量数学核心，并不证明大系统必然满足资格。该声明调用 ReviewProofs 的 projectionEnergy_proved；依赖4701–4709所示证明用非负性、sqrt平方和代数，无本条 sorry。未编译工程。无 [ERRATUM?] 标注。
+网站原返回（对应其审校版本）：PASS；展开 Ch03.lean:1005–1008 及 Ch03\_deps.txt:3613–3614：projectionConstraint E K U γ 为 γ²K+U=E，projectionFactor 为 sqrt((E−U)/K)。全称 E,K,U 后依次要求 K>0、U≤E，再断言该正平方根满足能量约束，量词和公式正确。K、U对应一步未校正的带横线动能、势能，不是时间平均。K>0排除原文紧邻的零动能障碍，U≤E正是本段条件；都是合理且必要的投影适用资格，未从自由度数量推导。原文的 likely、may suppose 和约等式仅是经验动机，不能作为严格蕴涵；原文保留，不将其静默改写为定理。签名 PASS 限于 context\_notation 明示的投影能量数学核心，并不证明大系统必然满足资格。该声明调用 ReviewProofs 的 projectionEnergy\_proved；依赖4701–4709所示证明用非负性、sqrt平方和代数，无本条 sorry。未编译工程。无 [ERRATUM?] 标注。
 
 ### 7. 状态与证明位置
 
@@ -5649,7 +6163,7 @@ theorem kineticZero :
 
 | 原文成分 | Lean对应 | 说明 |
 |---|---|---|
-| 当前覆盖范围 | 本条所引原句及展示公式；单个记号归入context_notation。 | 仅承诺明确列出的数学内容 |
+| 当前覆盖范围 | 本条所引原句及展示公式；单个记号归入context\_notation。 | 仅承诺明确列出的数学内容 |
 | 对象、量词、假设和定义/结论 | `MD.Ch03.kineticZero` | 完整代码见第4段；两个版本独立列出 |
 | 技术资格或版本解释 | 正质量。 | [EXTRA] |
 
@@ -5660,7 +6174,7 @@ theorem kineticZero :
 本地限定解释与原文问题见上列范围及对照；逐声明编译、公理结果见第7段。
 
 网站：网站PASS（绑定版本 433a13ca6407）。
-网站原返回（对应其审校版本）：PASS；展开依赖 Notation.lean:844：Position n=EuclideanSpace ℝ (Fin n)，零向量即每个动量分量为零；ReviewDefinitions 中 positiveMass m=∀i,0<m i（2948），kinetic m p=(∑i,p i²/m i)/2（3633）。全称有限维数、质量、动量，在所有质量严格正的前提下给出 K=0 当且仅当全部分量为零，忠实且比原文 only zero if 的方向补充了立即成立的逆向。正质量是物理模型的合理资格；若质量为零，Lean 全除法会使非零动量项也为零，故不能删去该条件。维数不需很大，n=0 的空和与唯一零向量也一致。context_notation 已明确本条只形式化此零动能判据：extremely unlikely 没有概率空间、分布或概率界，不作定量断言；γ在物理公式中分母为零不可用也没有被 Lean 全除法冒充为合法。若要求覆盖所引段落每句，须另设部分定义域资格，但在附件明示数学范围内签名 PASS。调用 kineticZero_proved；依赖4785–4800为非负有限和逐项归零证明，无本条 sorry，未编译。无 [ERRATUM?]。
+网站原返回（对应其审校版本）：PASS；展开依赖 Notation.lean:844：Position n=EuclideanSpace ℝ (Fin n)，零向量即每个动量分量为零；ReviewDefinitions 中 positiveMass m=∀i,0<m i（2948），kinetic m p=(∑i,p i²/m i)/2（3633）。全称有限维数、质量、动量，在所有质量严格正的前提下给出 K=0 当且仅当全部分量为零，忠实且比原文 only zero if 的方向补充了立即成立的逆向。正质量是物理模型的合理资格；若质量为零，Lean 全除法会使非零动量项也为零，故不能删去该条件。维数不需很大，n=0 的空和与唯一零向量也一致。context\_notation 已明确本条只形式化此零动能判据：extremely unlikely 没有概率空间、分布或概率界，不作定量断言；γ在物理公式中分母为零不可用也没有被 Lean 全除法冒充为合法。若要求覆盖所引段落每句，须另设部分定义域资格，但在附件明示数学范围内签名 PASS。调用 kineticZero\_proved；依赖4785–4800为非负有限和逐项归零证明，无本条 sorry，未编译。无 [ERRATUM?]。
 
 ### 7. 状态与证明位置
 
@@ -5672,7 +6186,12 @@ checked+documented priors；`MD.Ch03.kineticZero`：已证。
 ### 2. 原文陈述
 
 > There are many alternative projection methods which we could use for this purpose, which might alter both the positions and momenta. Modifying the positions means that we will somehow need to solve the equation
-> \[H(Q,P)=E,\]
+
+$$
+H(Q,P)=E,
+$$
+
+
 > where $Q$ depends on a parameter or parameters (typically a Lagrange multiplier that is used to maintain the constraint).
 
 ### 3. 原文证明
@@ -5692,7 +6211,7 @@ def energyProjectionRelation {n : ℕ} (H : Z n → ℝ) (E : ℝ) (z : Z n) : P
 
 | 原文成分 | Lean对应 | 说明 |
 |---|---|---|
-| 当前覆盖范围 | 本条所引原句及展示公式；单个记号归入context_notation。 | 仅承诺明确列出的数学内容 |
+| 当前覆盖范围 | 本条所引原句及展示公式；单个记号归入context\_notation。 | 仅承诺明确列出的数学内容 |
 | 对象、量词、假设和定义/结论 | `MD.Ch03.energyProjectionRelation` | 完整代码见第4段；两个版本独立列出 |
 
 [EXTRA] 无新增技术资格。
@@ -5702,7 +6221,7 @@ def energyProjectionRelation {n : ℕ} (H : Z n → ℝ) (E : ℝ) (z : Z n) : P
 本地限定解释与原文问题见上列范围及对照；逐声明编译、公理结果见第7段。
 
 网站：网站PASS（绑定版本 433a13ca6407）。
-网站原返回（对应其审校版本）：PASS；展开 Chapter02Review 的 Q n=Fin n→ℝ、Z n=Q n×Q n（依赖2816–2817），两个分量分别作为位置Q、动量P。Ch03.lean:1023 的 energyProjectionRelation H E z 直接为 H z=E，故对任意 H、E 和候选相点表达原页 H(Q,P)=E，未改变对象、引入额外假设或宣称可解/唯一。原文参数或拉格朗日乘子是生成候选Q的方法说明，不是本能量水平关系必须量化的额外数学条件；本定义可对 z=(Q(λ),P(λ)) 逐个代入，但本身没有形式化求解算法。context_notation 的存在性、唯一性、几何性质不由定义保证说明准确。定义无 sorry；无需证明。无 [EXTRA] 或 [ERRATUM?]。
+网站原返回（对应其审校版本）：PASS；展开 Chapter02Review 的 Q n=Fin n→ℝ、Z n=Q n×Q n（依赖2816–2817），两个分量分别作为位置Q、动量P。Ch03.lean:1023 的 energyProjectionRelation H E z 直接为 H z=E，故对任意 H、E 和候选相点表达原页 H(Q,P)=E，未改变对象、引入额外假设或宣称可解/唯一。原文参数或拉格朗日乘子是生成候选Q的方法说明，不是本能量水平关系必须量化的额外数学条件；本定义可对 z=(Q(λ),P(λ)) 逐个代入，但本身没有形式化求解算法。context\_notation 的存在性、唯一性、几何性质不由定义保证说明准确。定义无 sorry；无需证明。无 [EXTRA] 或 [ERRATUM?]。
 
 ### 7. 状态与证明位置
 
@@ -5739,7 +6258,7 @@ theorem noHamiltonianAttractor :
 
 | 原文成分 | Lean对应 | 说明 |
 |---|---|---|
-| 当前覆盖范围 | 本条所引原句及展示公式；单个记号归入context_notation。 | 仅承诺明确列出的数学内容 |
+| 当前覆盖范围 | 本条所引原句及展示公式；单个记号归入context\_notation。 | 仅承诺明确列出的数学内容 |
 | 对象、量词、假设和定义/结论 | `MD.Ch03.noHamiltonianAttractor` | 完整代码见第4段；两个版本独立列出 |
 | 技术资格或版本解释 | 明确C²Hamiltonian的全时间真实流、紧零体积周期轨道、开放正有限体积吸引盆；不只给任意一条轨道。 | [EXTRA] |
 
@@ -5762,9 +6281,19 @@ incomplete；`MD.Ch03.noHamiltonianAttractor`：未证（缺大型理论）。
 ### 2. 原文陈述
 
 > Generalizing this slightly, we could imagine a system of ODEs of the form
-> \[\dot{\boldsymbol z}=f(\boldsymbol z),\]
+
+$$
+\dot{\boldsymbol z}=f(\boldsymbol z),
+$$
+
+
 > such that, for some vector $\boldsymbol b$,
-> \[\boldsymbol b\cdot f(\boldsymbol z)\equiv0,\]
+
+$$
+\boldsymbol b\cdot f(\boldsymbol z)\equiv0,
+$$
+
+
 > then $I(\boldsymbol z)=\boldsymbol b\cdot\boldsymbol z$ is a first integral.
 
 ### 3. 原文证明
@@ -5795,7 +6324,7 @@ theorem linearContinuousIntegral :
 
 | 原文成分 | Lean对应 | 说明 |
 |---|---|---|
-| 当前覆盖范围 | 本条所引原句及展示公式；单个记号归入context_notation。 | 仅承诺明确列出的数学内容 |
+| 当前覆盖范围 | 本条所引原句及展示公式；单个记号归入context\_notation。 | 仅承诺明确列出的数学内容 |
 | 对象、量词、假设和定义/结论 | `MD.Ch03.linearContinuousIntegral` | 完整代码见第4段；两个版本独立列出 |
 | 技术资格或版本解释 | 真实全时间轨道导数资格显式；不宣称任意f有全时间解。 | [EXTRA] |
 
@@ -5851,7 +6380,7 @@ theorem hamiltonianFlowStructures :
 
 | 原文成分 | Lean对应 | 说明 |
 |---|---|---|
-| 当前覆盖范围 | 本条所引原句及展示公式；单个记号归入context_notation。 | 仅承诺明确列出的数学内容 |
+| 当前覆盖范围 | 本条所引原句及展示公式；单个记号归入context\_notation。 | 仅承诺明确列出的数学内容 |
 | 对象、量词、假设和定义/结论 | `MD.Ch03.hamiltonianFlowStructures` | 完整代码见第4段；两个版本独立列出 |
 | 技术资格或版本解释 | Hamiltonian在开放域C²；真实localFlowC1的初值、ODE与局部定义域资格，未假设显式反步。 | [EXTRA] |
 | 技术资格或版本解释 | [EXTRA] 补原文Hamiltonian能量沿流守恒，保留变分/辛/体积全部结论；localFlowC1实际资格无显式反步，撤销旧EXTRA对此的过度描述，时间反演由3.6.1处理。 | [EXTRA] |
@@ -5914,7 +6443,7 @@ theorem volumeNotSymplectic_symplectic_volume (n : ℕ)
 本地限定解释与原文问题见上列范围及对照；逐声明编译、公理结果见第7段。
 
 网站：网站PASS（EAUDIT复审）。
-网站原返回（对应其审校版本）：PASS；两个声明全部核对。volumeNotSymplectic在SymplecticCoordinates 2即四维实空间选C¹单射G，明确要求所有可测集合的真实像体积相同、各点det=1且G不辛；它不只是一个行列式条件。第二个volumeNotSymplectic_symplectic_volume对任意n的全局C¹辛单射G给出全部可测集合的像体积守恒，确已覆盖“辛性蕴含体积守恒”。单射性排除重数造成的全局像体积问题，是已明示scope内的合理资格。四维足以提供严格较弱见证；例如按(q₁,q₂,p₁,p₂)取diag(2,1,1,1/2)，其det为1且全局保体积，但两个辛配对缩放分别为2与1/2，故不辛。旧context称仅有det=1且未覆盖其它结论，与当前两个完整签名不符，须更正元数据；不构成现行Lean签名失败。
+网站原返回（对应其审校版本）：PASS；两个声明全部核对。volumeNotSymplectic在SymplecticCoordinates 2即四维实空间选C¹单射G，明确要求所有可测集合的真实像体积相同、各点det=1且G不辛；它不只是一个行列式条件。第二个volumeNotSymplectic\_symplectic\_volume对任意n的全局C¹辛单射G给出全部可测集合的像体积守恒，确已覆盖“辛性蕴含体积守恒”。单射性排除重数造成的全局像体积问题，是已明示scope内的合理资格。四维足以提供严格较弱见证；例如按(q₁,q₂,p₁,p₂)取diag(2,1,1,1/2)，其det为1且全局保体积，但两个辛配对缩放分别为2与1/2，故不辛。旧context称仅有det=1且未覆盖其它结论，与当前两个完整签名不符，须更正元数据；不构成现行Lean签名失败。
 
 ### 7. 状态与证明位置
 
@@ -5944,7 +6473,7 @@ def linearInvolution {n : ℕ} (R : Q n →L[ℝ] Q n) : Prop := R.comp R = Cont
 
 | 原文成分 | Lean对应 | 说明 |
 |---|---|---|
-| 当前覆盖范围 | 本条所引原句及展示公式；单个记号归入context_notation。 | 仅承诺明确列出的数学内容 |
+| 当前覆盖范围 | 本条所引原句及展示公式；单个记号归入context\_notation。 | 仅承诺明确列出的数学内容 |
 | 对象、量词、假设和定义/结论 | `MD.Ch03.linearInvolution` | 完整代码见第4段；两个版本独立列出 |
 
 [EXTRA] 无新增技术资格。
@@ -5954,7 +6483,7 @@ def linearInvolution {n : ℕ} (R : Q n →L[ℝ] Q n) : Prop := R.comp R = Cont
 本地限定解释与原文问题见上列范围及对照；逐声明编译、公理结果见第7段。
 
 网站：网站PASS（绑定版本 433a13ca6407）。
-网站原返回（对应其审校版本）：PASS；已展开 Ch03_deps.txt：Chapter02/ReviewDefinitions.lean 中 Q n=Fin n→ℝ、Z n=Q n×Q n；这些是实有限维坐标。 Ch03.lean:1073 的 R 是实连续线性自映射，R.comp R=id 即 ∀z,R(Rz)=z。有限维线性自动连续，未添加实质限制。无需 Rᵀ=R；例如 [[1,1],[0,-1]] 是非对称involution。定义无sorry。
+网站原返回（对应其审校版本）：PASS；已展开 Ch03\_deps.txt：Chapter02/ReviewDefinitions.lean 中 Q n=Fin n→ℝ、Z n=Q n×Q n；这些是实有限维坐标。 Ch03.lean:1073 的 R 是实连续线性自映射，R.comp R=id 即 ∀z,R(Rz)=z。有限维线性自动连续，未添加实质限制。无需 Rᵀ=R；例如 [[1,1],[0,-1]] 是非对称involution。定义无sorry。
 
 ### 7. 状态与证明位置
 
@@ -5966,7 +6495,12 @@ self-contained；`MD.Ch03.linearInvolution`：定义。
 ### 2. 原文陈述
 
 > Given the involution $R$ we define the time reversal of the vector field $f$ with respect to $R$ by
-> \[\widetilde f(\boldsymbol z)=-R^Tf(R\boldsymbol z).\]
+
+$$
+\widetilde f(\boldsymbol z)=-R^Tf(R\boldsymbol z).
+$$
+
+
 > When a vector field is its own reversal we say that it is a time-reversible vector field.
 
 ### 3. 原文证明
@@ -5987,7 +6521,7 @@ def reversedField {n : ℕ} (R : Matrix (Fin n) (Fin n) ℝ) (f : Q n → Q n) (
 
 | 原文成分 | Lean对应 | 说明 |
 |---|---|---|
-| 当前覆盖范围 | 本条所引原句及展示公式；单个记号归入context_notation。 | 仅承诺明确列出的数学内容 |
+| 当前覆盖范围 | 本条所引原句及展示公式；单个记号归入context\_notation。 | 仅承诺明确列出的数学内容 |
 | 对象、量词、假设和定义/结论 | `MD.Ch03.reversedField` | 完整代码见第4段；两个版本独立列出 |
 
 [EXTRA] 无新增技术资格。
@@ -5997,7 +6531,7 @@ def reversedField {n : ℕ} (R : Matrix (Fin n) (Fin n) ℝ) (f : Q n → Q n) (
 本地限定解释与原文问题见上列范围及对照；逐声明编译、公理结果见第7段。
 
 网站：网站PASS（绑定版本 433a13ca6407）。
-网站原返回（对应其审校版本）：PASS；已展开 Ch03_deps.txt：Chapter02/ReviewDefinitions.lean 中 Q n=Fin n→ℝ、Z n=Q n×Q n；这些是实有限维坐标。 依赖 Chapter03/ReviewDefinitions.lean:3617 与本地1077均展开为 −(R.transpose.mulVec(f(R.mulVec z)))，即原书字面−Rᵀf(Rz)。定义容许一般矩阵是定义域扩展，应用到R²=I时完全相符；“自身反转”解释为∀z,f z=reversedField R f z，不是该函数定义本身的额外结论。[ERRATUM?]成立：轨道链式法则给−Rf(Rz)，一般involution不等于其转置；不应静默替换字面定义。定义无sorry。
+网站原返回（对应其审校版本）：PASS；已展开 Ch03\_deps.txt：Chapter02/ReviewDefinitions.lean 中 Q n=Fin n→ℝ、Z n=Q n×Q n；这些是实有限维坐标。 依赖 Chapter03/ReviewDefinitions.lean:3617 与本地1077均展开为 −(R.transpose.mulVec(f(R.mulVec z)))，即原书字面−Rᵀf(Rz)。定义容许一般矩阵是定义域扩展，应用到R²=I时完全相符；“自身反转”解释为∀z,f z=reversedField R f z，不是该函数定义本身的额外结论。[ERRATUM?]成立：轨道链式法则给−Rf(Rz)，一般involution不等于其转置；不应静默替换字面定义。定义无sorry。
 
 ### 7. 状态与证明位置
 
@@ -6009,7 +6543,12 @@ self-contained；`MD.Ch03.reversedField`：定义。
 ### 2. 原文陈述
 
 > Let $H(q,p)=p^TM^{-1}p/2+U(q)$ be the Hamiltonian for a system of $N_c$ configuration variables. Define the $2N_c\times2N_c$ matrix $R$ by
-> \[R=\begin{bmatrix}I&0\\0&-I\end{bmatrix}.\]
+
+$$
+R=\begin{bmatrix}I&0\\0&-I\end{bmatrix}.
+$$
+
+
 
 ### 3. 原文证明
 
@@ -6028,7 +6567,7 @@ def momentumReversal {n : ℕ} (z : Z n) : Z n := (z.1,-z.2)
 
 | 原文成分 | Lean对应 | 说明 |
 |---|---|---|
-| 当前覆盖范围 | 本条所引原句及展示公式；单个记号归入context_notation。 | 仅承诺明确列出的数学内容 |
+| 当前覆盖范围 | 本条所引原句及展示公式；单个记号归入context\_notation。 | 仅承诺明确列出的数学内容 |
 | 对象、量词、假设和定义/结论 | `MD.Ch03.momentumReversal` | 完整代码见第4段；两个版本独立列出 |
 
 [EXTRA] 无新增技术资格。
@@ -6038,7 +6577,7 @@ def momentumReversal {n : ℕ} (z : Z n) : Z n := (z.1,-z.2)
 本地限定解释与原文问题见上列范围及对照；逐声明编译、公理结果见第7段。
 
 网站：网站PASS（绑定版本 433a13ca6407）。
-网站原返回（对应其审校版本）：PASS；已展开 Ch03_deps.txt：Chapter02/ReviewDefinitions.lean 中 Q n=Fin n→ℝ、Z n=Q n×Q n；这些是实有限维坐标。 momentumReversal z=(z.1,−z.2)，正是块矩阵diag(I,−I)的作用。依赖中的 SymplecticCoordinates n=(Fin n⊕Fin n)→ℝ，pack z=Sum.elim z.1 z.2，canonicalReversal保持inl坐标并取反inr坐标，所以context等价坐标说法成立。H仅说明使用环境，定义R无需m、U参数或假设。定义无sorry。
+网站原返回（对应其审校版本）：PASS；已展开 Ch03\_deps.txt：Chapter02/ReviewDefinitions.lean 中 Q n=Fin n→ℝ、Z n=Q n×Q n；这些是实有限维坐标。 momentumReversal z=(z.1,−z.2)，正是块矩阵diag(I,−I)的作用。依赖中的 SymplecticCoordinates n=(Fin n⊕Fin n)→ℝ，pack z=Sum.elim z.1 z.2，canonicalReversal保持inl坐标并取反inr坐标，所以context等价坐标说法成立。H仅说明使用环境，定义R无需m、U参数或假设。定义无sorry。
 
 ### 7. 状态与证明位置
 
@@ -6050,7 +6589,12 @@ self-contained；`MD.Ch03.momentumReversal`：定义。
 ### 2. 原文陈述
 
 > The vector fields involved are
-> \[f=\begin{bmatrix}M^{-1}p\\-\nabla U(q)\end{bmatrix},\qquad\widetilde f=-Rf(Rz)=-\begin{bmatrix}-M^{-1}p\\\nabla U(q)\end{bmatrix},\]
+
+$$
+f=\begin{bmatrix}M^{-1}p\\-\nabla U(q)\end{bmatrix},\qquad\widetilde f=-Rf(Rz)=-\begin{bmatrix}-M^{-1}p\\\nabla U(q)\end{bmatrix},
+$$
+
+
 > which are clearly equal. Therefore the molecular dynamics Hamiltonian system is time-reversible.
 
 ### 3. 原文证明
@@ -6077,7 +6621,7 @@ theorem mechanicalReversalPrinted :
 
 | 原文成分 | Lean对应 | 说明 |
 |---|---|---|
-| 当前覆盖范围 | 本条所引原句及展示公式；单个记号归入context_notation。 | 仅承诺明确列出的数学内容 |
+| 当前覆盖范围 | 本条所引原句及展示公式；单个记号归入context\_notation。 | 仅承诺明确列出的数学内容 |
 | 对象、量词、假设和定义/结论 | `MD.Ch03.mechanicalReversalPrinted` | 完整代码见第4段；两个版本独立列出 |
 | 技术资格或版本解释 | [EXTRA] 按原页外部负号修复先前转录误读，两行均为−(−M⁻¹p,∇U)，原书此式无误；先前本条ERRATUM判断撤销，第三反演合取保留。 | [EXTRA] |
 
@@ -6100,9 +6644,19 @@ incomplete；`MD.Ch03.mechanicalReversalPrinted`：未证（缺大型理论）�
 ### 2. 原文陈述
 
 > For the system $\mathrm dz/\mathrm dt=f(\boldsymbol z)$, a coordinate transformation $\boldsymbol z\mapsto\widetilde{\boldsymbol z}=R\boldsymbol z$ results in
-> \[\frac{\mathrm d\widetilde{\boldsymbol z}}{\mathrm dt}=R\frac{\mathrm d\boldsymbol z}{\mathrm dt}=Rf(R^{-1}\widetilde{\boldsymbol z})=Rf(R\widetilde{\boldsymbol z}),\]
+
+$$
+\frac{\mathrm d\widetilde{\boldsymbol z}}{\mathrm dt}=R\frac{\mathrm d\boldsymbol z}{\mathrm dt}=Rf(R^{-1}\widetilde{\boldsymbol z})=Rf(R\widetilde{\boldsymbol z}),
+$$
+
+
 > since $R^{-1}=R$. A change of time $t\mapsto\tau=-t$ results in
-> \[\frac{\mathrm d\boldsymbol z}{\mathrm d\tau}=\frac{\mathrm dt}{\mathrm d\tau}\frac{\mathrm d\boldsymbol z}{\mathrm dt}=-f(\boldsymbol z).\]
+
+$$
+\frac{\mathrm d\boldsymbol z}{\mathrm d\tau}=\frac{\mathrm dt}{\mathrm d\tau}\frac{\mathrm d\boldsymbol z}{\mathrm dt}=-f(\boldsymbol z).
+$$
+
+
 
 ### 3. 原文证明
 
@@ -6169,7 +6723,7 @@ theorem reversedTrajectoryPrinted_corrected :
 本地限定解释与原文问题见上列范围及对照；逐声明编译、公理结果见第7段。
 
 网站：原书疑误/资格待导师；原文与修正版并列。
-网站原返回（对应其审校版本）：PASS；同source_id三条声明全部正确且忠实于当前所录原页129：主声明给Rγ(−t)的导数−Rf(γ(−t))；coordinateChange给Rγ(t)的导数Rf(R(Rγ(t)))，R²=I使其等于Rf(γ(t))，正是Rf(Rz̃)；timeChange给γ(−t)的导数−f(γ(−t))。R是任意实方阵且R²=I，γ在所有实时间满足真实ODE；主结论并未声称变换轨道仍解原f，也未使用Rᵀ或要求R对称。因此Printed版本没有被换成错误的转置反转版本，[EXTRA]补出的分离链式规则已存在。PASS仅就本条原文链式规则及三个当前签名；p128定义争议另留NEEDS_HUMAN。
+网站原返回（对应其审校版本）：PASS；同source\_id三条声明全部正确且忠实于当前所录原页129：主声明给Rγ(−t)的导数−Rf(γ(−t))；coordinateChange给Rγ(t)的导数Rf(R(Rγ(t)))，R²=I使其等于Rf(γ(t))，正是Rf(Rz̃)；timeChange给γ(−t)的导数−f(γ(−t))。R是任意实方阵且R²=I，γ在所有实时间满足真实ODE；主结论并未声称变换轨道仍解原f，也未使用Rᵀ或要求R对称。因此Printed版本没有被换成错误的转置反转版本，[EXTRA]补出的分离链式规则已存在。PASS仅就本条原文链式规则及三个当前签名；p128定义争议另留NEEDS\_HUMAN。
 
 ### 7. 状态与证明位置
 
@@ -6236,7 +6790,7 @@ theorem reversedTrajectory_corrected :
 本地限定解释与原文问题见上列范围及对照；逐声明编译、公理结果见第7段。
 
 网站：原书疑误/资格待导师；原文与修正版并列。
-网站原返回（对应其审校版本）：PASS；reversedTrajectory量化任意n、连续线性R、f和全实时间解γ；要求R²=id，另明确加入全部基矩阵元素R_ij=R_ji的对称资格，以及f(Rz)=−Rf(z)。结论Rγ(−t)仍满足原f的ODE；由链式法则导数=−Rf(γ(−t))=f(Rγ(−t))，数学正确。坐标对称资格不是隐藏的，它恰使Rᵀ=R=R⁻¹，从而可与原印反转定义兼容；这是一条合理但严格受限的修复，并未证明原书对任意非对称involution的宽泛句子。PASS针对已显式标注[EXTRA]的受限当前签名，原书一般性问题保留NEEDS_HUMAN。
+网站原返回（对应其审校版本）：PASS；reversedTrajectory量化任意n、连续线性R、f和全实时间解γ；要求R²=id，另明确加入全部基矩阵元素R\_ij=R\_ji的对称资格，以及f(Rz)=−Rf(z)。结论Rγ(−t)仍满足原f的ODE；由链式法则导数=−Rf(γ(−t))=f(Rγ(−t))，数学正确。坐标对称资格不是隐藏的，它恰使Rᵀ=R=R⁻¹，从而可与原印反转定义兼容；这是一条合理但严格受限的修复，并未证明原书对任意非对称involution的宽泛句子。PASS针对已显式标注[EXTRA]的受限当前签名，原书一般性问题保留NEEDS\_HUMAN。
 
 ### 7. 状态与证明位置
 
@@ -6248,7 +6802,12 @@ incomplete；`MD.Ch03.reversedTrajectory`：未证（原书疑误不证）；`MD
 ### 2. 原文陈述
 
 > From this we see that if we start from a point $z_0$ and integrate forward in time (i.e apply $\mathcal F_t$) then apply the involution $R$, we get the exact same result as if we start from $\widetilde z(0)=Rz_0$ and integrate backward in time (i.e apply $\mathcal F_{-t}$). In sum, since $z_0$ is an arbitrary point,
-> \[\mathcal F_{-t}(Rz)=R\mathcal F_t(z).\]
+
+$$
+\mathcal F_{-t}(Rz)=R\mathcal F_t(z).
+$$
+
+
 
 ### 3. 原文证明
 
@@ -6303,7 +6862,7 @@ theorem flowReversal_corrected :
 本地限定解释与原文问题见上列范围及对照；逐声明编译、公理结果见第7段。
 
 网站：原书疑误/资格待导师；原文与修正版并列。
-网站原返回（对应其审校版本）：NEEDS_HUMAN；flowReversal作为经典修正版数学正确：任意n与连续线性involution R、全局C¹ f，显式要求f(Rz)=−Rf(z)，Φ对每个初值在全部实时间有正确初值和ODE导数，结论对所有t,z为Φ(−t,Rz)=RΦ(t,z)。C¹场保证唯一性；没有把所需反转等式塞进Φ的资格，也不需预先假设群律。对应原文的唯一未决点是“reversible”的含义：当前关系采用正确R版，而p128字面定义用Rᵀ；仅involution不使二者等价，且本条未像reversedTrajectory那样补对称R资格。因此不给数学正确的经典定理判FAIL，但原书与当前签名之间的定义对应仍需人工确认；NEEDS_HUMAN不是sorry导致的。
+网站原返回（对应其审校版本）：NEEDS\_HUMAN；flowReversal作为经典修正版数学正确：任意n与连续线性involution R、全局C¹ f，显式要求f(Rz)=−Rf(z)，Φ对每个初值在全部实时间有正确初值和ODE导数，结论对所有t,z为Φ(−t,Rz)=RΦ(t,z)。C¹场保证唯一性；没有把所需反转等式塞进Φ的资格，也不需预先假设群律。对应原文的唯一未决点是“reversible”的含义：当前关系采用正确R版，而p128字面定义用Rᵀ；仅involution不使二者等价，且本条未像reversedTrajectory那样补对称R资格。因此不给数学正确的经典定理判FAIL，但原书与当前签名之间的定义对应仍需人工确认；NEEDS\_HUMAN不是sorry导致的。
 
 ### 7. 状态与证明位置
 
@@ -6315,7 +6874,12 @@ incomplete；`MD.Ch03.flowReversal`：未证（原书疑误不证）；`MD.Ch03.
 ### 2. 原文陈述
 
 > For the flow map, $\mathcal F_{-t}=\mathcal F_t^{-1}$ so we can recast the identity as
-> \[R\circ\mathcal F_t\circ R\circ\mathcal F_t=\mathrm{Id},\tag{3.14}\]
+
+$$
+R\circ\mathcal F_t\circ R\circ\mathcal F_t=\mathrm{Id},\tag{3.14}
+$$
+
+
 
 ### 3. 原文证明
 
@@ -6370,7 +6934,7 @@ theorem flowReversalIdentity_corrected :
 本地限定解释与原文问题见上列范围及对照；逐声明编译、公理结果见第7段。
 
 网站：原书疑误/资格待导师；原文与修正版并列。
-网站原返回（对应其审校版本）：NEEDS_HUMAN；flowReversalIdentity逐项包含线性involution、C¹向量场、经典反转条件、Φ初值、全实时间ODE和群律，完整结论对任意t,z给R(Φ t(R(Φ t z)))=z。群律加初值确实给Φ(−t)为双侧逆；结合经典反转得到(3.14)，无循环假设。和上一条一样，这个经典版本正确，但原印p128的Rᵀ定义与当前f(Rz)=−Rf(z)在一般R下不等价；本条没有对称性限定。NEEDS_HUMAN用于确认原文到当前声明的勘误解释，不否定所给条件下的代数/ODE结论。
+网站原返回（对应其审校版本）：NEEDS\_HUMAN；flowReversalIdentity逐项包含线性involution、C¹向量场、经典反转条件、Φ初值、全实时间ODE和群律，完整结论对任意t,z给R(Φ t(R(Φ t z)))=z。群律加初值确实给Φ(−t)为双侧逆；结合经典反转得到(3.14)，无循环假设。和上一条一样，这个经典版本正确，但原印p128的Rᵀ定义与当前f(Rz)=−Rf(z)在一般R下不等价；本条没有对称性限定。NEEDS\_HUMAN用于确认原文到当前声明的勘误解释，不否定所给条件下的代数/ODE结论。
 
 ### 7. 状态与证明位置
 
@@ -6382,7 +6946,12 @@ incomplete；`MD.Ch03.flowReversalIdentity`：未证（原书疑误不证）；`
 ### 2. 原文陈述
 
 > It does not automatically follow that a symmetric numerical method is time-reversible, i.e. satisfies a relation inspired by (3.14), namely
-> \[R\circ\mathcal G_h\circ R\circ\mathcal G_h=\mathrm{Id}.\tag{3.15}\]
+
+$$
+R\circ\mathcal G_h\circ R\circ\mathcal G_h=\mathrm{Id}.\tag{3.15}
+$$
+
+
 
 ### 3. 原文证明
 
@@ -6401,7 +6970,7 @@ def reversibleMethod {E : Type*} (R : E → E) (G : ℝ → E → E) : Prop := �
 
 | 原文成分 | Lean对应 | 说明 |
 |---|---|---|
-| 当前覆盖范围 | 本条所引原句及展示公式；单个记号归入context_notation。 | 仅承诺明确列出的数学内容 |
+| 当前覆盖范围 | 本条所引原句及展示公式；单个记号归入context\_notation。 | 仅承诺明确列出的数学内容 |
 | 对象、量词、假设和定义/结论 | `MD.Ch03.reversibleMethod` | 完整代码见第4段；两个版本独立列出 |
 
 [EXTRA] 无新增技术资格。
@@ -6423,7 +6992,12 @@ self-contained；`MD.Ch03.reversibleMethod`：定义。
 ### 2. 原文陈述
 
 > Recall from the previous chapter that a numerical method $\mathcal G_h$ was said to be symmetric if it satisfied
-> \[\mathcal G_{-h}=\mathcal G_h^{-1}.\]
+
+$$
+\mathcal G_{-h}=\mathcal G_h^{-1}.
+$$
+
+
 
 ### 3. 原文证明
 
@@ -6442,7 +7016,7 @@ def symmetricMethod {E : Type*} (G : ℝ → Equiv.Perm E) : Prop := ∀ h, G (-
 
 | 原文成分 | Lean对应 | 说明 |
 |---|---|---|
-| 当前覆盖范围 | 本条所引原句及展示公式；单个记号归入context_notation。 | 仅承诺明确列出的数学内容 |
+| 当前覆盖范围 | 本条所引原句及展示公式；单个记号归入context\_notation。 | 仅承诺明确列出的数学内容 |
 | 对象、量词、假设和定义/结论 | `MD.Ch03.symmetricMethod` | 完整代码见第4段；两个版本独立列出 |
 
 [EXTRA] 无新增技术资格。
@@ -6464,9 +7038,19 @@ self-contained；`MD.Ch03.symmetricMethod`：定义。
 ### 2. 原文陈述
 
 > Definition 3.1 (Affine Invariance) Let
-> \[\frac{\mathrm d\boldsymbol z}{\mathrm dt}=f(\boldsymbol z)\tag{3.16}\]
+
+$$
+\frac{\mathrm d\boldsymbol z}{\mathrm dt}=f(\boldsymbol z)\tag{3.16}
+$$
+
+
 > be a given ordinary differential equation. The transformation $\widetilde{\boldsymbol z}=A\boldsymbol z$, where $A$ is a non-singular square matrix, results in the modified differential equation
-> \[\frac{\mathrm d\boldsymbol z}{\mathrm dt}=Af(A^{-1}\widetilde{\boldsymbol z}).\tag{3.17}\]
+
+$$
+\frac{\mathrm d\boldsymbol z}{\mathrm dt}=Af(A^{-1}\widetilde{\boldsymbol z}).\tag{3.17}
+$$
+
+
 > Let $z_0,z_1,\ldots$ be a sequence of points obtained by application of the numerical method $\mathcal G_h$ to (3.16). If the same method, when applied to (3.17) produces the set of points $Az_0,Az_1,\ldots$, then we say that the numerical method is invariant with respect to the transformation $\widetilde{\boldsymbol z}=Az$. An affine invariant method is one which is invariant under any such transformation.
 
 ### 3. 原文证明
@@ -6509,7 +7093,7 @@ def affineInvariant_corrected {n : ℕ} (G : (Q n → Q n) → ℝ → Q n → Q
 本地限定解释与原文问题见上列范围及对照；逐声明编译、公理结果见第7段。
 
 网站：原书疑误/资格待导师；原文与修正版并列。
-网站原返回（对应其审校版本）：PASS；affineInvariant量化固定有限维实空间上的全部连续线性同构A、向量场f、实步长h和初值z；transportedField A f(z)=A(f(A⁻¹z))。完整关系G_{A f A⁻¹}(h,Az)=A(G_f(h,z))正是变换初值后每一步等变，归纳即得所述序列。≃L准确表示有限维非奇异方阵；未偷加平移，也未把A限制成正交矩阵。PASS针对上下文已明示的变换坐标语义及当前方法定义；原印(3.17)左端记号疑误在json_review保留NEEDS_HUMAN。
+网站原返回（对应其审校版本）：PASS；affineInvariant量化固定有限维实空间上的全部连续线性同构A、向量场f、实步长h和初值z；transportedField A f(z)=A(f(A⁻¹z))。完整关系G_{A f A⁻¹}(h,Az)=A(G\_f(h,z))正是变换初值后每一步等变，归纳即得所述序列。≃L准确表示有限维非奇异方阵；未偷加平移，也未把A限制成正交矩阵。PASS针对上下文已明示的变换坐标语义及当前方法定义；原印(3.17)左端记号疑误在json\_review保留NEEDS\_HUMAN。
 
 ### 7. 状态与证明位置
 
@@ -6567,18 +7151,18 @@ theorem symmetricAffineReversible_corrected :
 |---|---|---|
 | 当前覆盖范围 | 保留完整原文引文；Lean仅覆盖第4段明示的定义与限定结论，原书疑误或超出该陈述的内容不冒称已形式化。各版本差异见本条与ERRATA。 | 仅承诺明确列出的数学内容 |
 | 对象、量词、假设和定义/结论 | `MD.Ch03.symmetricAffineReversible`；`MD.Ch03.symmetricAffineReversible_corrected` | 完整代码见第4段；两个版本独立列出 |
-| 技术资格或版本解释 | [EXTRA]G_{−f}(h)=G_f(−h)显式给步长符号相容性；原文没列这项，任意抽象方法仅线性等变与对称未必足够。 | [EXTRA] |
+| 技术资格或版本解释 | [EXTRA]G_{−f}(h)=G\_f(−h)显式给步长符号相容性；原文没列这项，任意抽象方法仅线性等变与对称未必足够。 | [EXTRA] |
 | 技术资格或版本解释 | [EXTRA] 明确本条是原印省略方法类资格后的受限修复；符号/时间尺度相容仅要求固定f，不对所有无关g全称。保留原书疑误说明。 | [EXTRA] |
 | 技术资格或版本解释 | [ERRATUM?] 将已有带明示资格的数学解释独立命名为修正版；原书逐字记录及已有声明保留。完整原句超出本声明部分在覆盖缺口/审阅问题中列明，不把有限资格解释当作原句无条件成立。 | [EXTRA] |
 
-[EXTRA] [EXTRA]G_{−f}(h)=G_f(−h)显式给步长符号相容性；原文没列这项，任意抽象方法仅线性等变与对称未必足够。；[EXTRA] 明确本条是原印省略方法类资格后的受限修复；符号/时间尺度相容仅要求固定f，不对所有无关g全称。保留原书疑误说明。；[ERRATUM?] 将已有带明示资格的数学解释独立命名为修正版；原书逐字记录及已有声明保留。完整原句超出本声明部分在覆盖缺口/审阅问题中列明，不把有限资格解释当作原句无条件成立。
+[EXTRA] [EXTRA]G_{−f}(h)=G\_f(−h)显式给步长符号相容性；原文没列这项，任意抽象方法仅线性等变与对称未必足够。；[EXTRA] 明确本条是原印省略方法类资格后的受限修复；符号/时间尺度相容仅要求固定f，不对所有无关g全称。保留原书疑误说明。；[ERRATUM?] 将已有带明示资格的数学解释独立命名为修正版；原书逐字记录及已有声明保留。完整原句超出本声明部分在覆盖缺口/审阅问题中列明，不把有限资格解释当作原句无条件成立。
 
 ### 6. 审计结论
 
 本地限定解释与原文问题见上列范围及对照；逐声明编译、公理结果见第7段。
 
 网站：原书疑误/资格待导师；原文与修正版并列。
-网站原返回（对应其审校版本）：PASS；symmetricAffineReversible的全部条件已核对：R为连续线性同构且平方为id；f有经典R反转；方法对全部线性同构等变；另只对本固定f显式要求G_{−f}(h)=G_f(−h)；并要求所有h的反步复合G_f(−h)∘G_f(h)=id。因为量化所有h，最后一个条件同时给另一方向的逆关系，不必再把G编码为Perm。对R使用affineInvariant，利用transportedField R f=−f及变号相容性，得到R∘G_f(h)∘R=G_f(−h)，再复合G_f(h)即为reversibleMethod。完整结论∀h,z,R(G_f(h,R(G_f(h,z))))=z与(3.15)一致；不存在把所需结论作为假设的问题。[EXTRA]变号相容性是实质新增且已明示的合理修复，不能把当前受限正确版本当作原句对所有抽象方法已成立。
+网站原返回（对应其审校版本）：PASS；symmetricAffineReversible的全部条件已核对：R为连续线性同构且平方为id；f有经典R反转；方法对全部线性同构等变；另只对本固定f显式要求G_{−f}(h)=G\_f(−h)；并要求所有h的反步复合G\_f(−h)∘G\_f(h)=id。因为量化所有h，最后一个条件同时给另一方向的逆关系，不必再把G编码为Perm。对R使用affineInvariant，利用transportedField R f=−f及变号相容性，得到R∘G\_f(h)∘R=G\_f(−h)，再复合G\_f(h)即为reversibleMethod。完整结论∀h,z,R(G\_f(h,R(G\_f(h,z))))=z与(3.15)一致；不存在把所需结论作为假设的问题。[EXTRA]变号相容性是实质新增且已明示的合理修复，不能把当前受限正确版本当作原句对所有抽象方法已成立。
 
 ### 7. 状态与证明位置
 
@@ -6640,7 +7224,7 @@ theorem rkAffine_corrected :
 本地限定解释与原文问题见上列范围及对照；逐声明编译、公理结果见第7段。
 
 网站：原书疑误/资格待导师；原文与修正版并列。
-网站原返回（对应其审校版本）：NEEDS_HUMAN；普通RK子句签名正确：n、s允许零维/零阶段，L为实连续线性自同构；任意f、实系数A,b及实h，给定完整阶段解F与终点w，结论正是运输场L∘f∘L⁻¹下运输阶段、初末状态满足同一关系。没有偷加求解唯一性，也没有断言存在数值单值映射。原页定义所谓affine invariance实际只写非奇异线性变换，故本条不因缺平移判FAIL。[EXTRA]/scope明确只覆盖普通RK，未覆盖PRK和时间反演推论。原句对任意混合q,p变换的PRK全称过强，且时间反演仍须原微分方程对R可逆；这些原书资格疑点须保留。
+网站原返回（对应其审校版本）：NEEDS\_HUMAN；普通RK子句签名正确：n、s允许零维/零阶段，L为实连续线性自同构；任意f、实系数A,b及实h，给定完整阶段解F与终点w，结论正是运输场L∘f∘L⁻¹下运输阶段、初末状态满足同一关系。没有偷加求解唯一性，也没有断言存在数值单值映射。原页定义所谓affine invariance实际只写非奇异线性变换，故本条不因缺平移判FAIL。[EXTRA]/scope明确只覆盖普通RK，未覆盖PRK和时间反演推论。原句对任意混合q,p变换的PRK全称过强，且时间反演仍须原微分方程对R可逆；这些原书资格疑点须保留。
 
 ### 7. 状态与证明位置
 
@@ -6705,7 +7289,7 @@ theorem partitionedAffinePrinted_corrected :
 本地限定解释与原文问题见上列范围及对照；逐声明编译、公理结果见第7段。
 
 网站：原书疑误/资格待导师；原文与修正版并列。
-网站原返回（对应其审校版本）：FAIL；依赖展开：Ch03_deps.txt 的 MolecularDynamics/Chapter02/ReviewDefinitions.lean 定义 Q n = Fin n → ℝ、Z n = Q n × Q n；Chapter03/ReviewDefinitions.lean 定义 linearInvolution R 为 R.comp R = ContinuousLinearMap.id ℝ (Q n)，即 ∀z, R(Rz)=z。 partitionedRKRelation 展开为 (∀i, F_i=f(z_q+h∑_j Aq_ij(F_j)_q, z_p+h∑_j Ap_ij(F_j)_p)) ∧ w=(z_q+h∑_i bq_i(F_i)_q,z_p+h∑_i bp_i(F_i)_p)。签名全称允许独立 Aq,Ap,bq,bp 和任意混合 q,p 的连续线性等价 L，并用真运输场 x↦L(f(L⁻¹x))。因为分区不同表格的求和不与任意混合 L 交换，原文的全线性 PRK 主张和这个签名都被反例否定，[ERRATUM?] 成立，不需人工判断或缺失定义。签名也未覆盖原句对称时保持时间反转的后半句。声明体为 sorry，此处 FAIL 来自实际反例及遗漏，非来自 sorry。
+网站原返回（对应其审校版本）：FAIL；依赖展开：Ch03\_deps.txt 的 MolecularDynamics/Chapter02/ReviewDefinitions.lean 定义 Q n = Fin n → ℝ、Z n = Q n × Q n；Chapter03/ReviewDefinitions.lean 定义 linearInvolution R 为 R.comp R = ContinuousLinearMap.id ℝ (Q n)，即 ∀z, R(Rz)=z。 partitionedRKRelation 展开为 (∀i, F\_i=f(z\_q+h∑_j Aq\_ij(F\_j)_q, z\_p+h∑_j Ap\_ij(F\_j)_p)) ∧ w=(z\_q+h∑_i bq\_i(F\_i)_q,z\_p+h∑_i bp\_i(F\_i)_p)。签名全称允许独立 Aq,Ap,bq,bp 和任意混合 q,p 的连续线性等价 L，并用真运输场 x↦L(f(L⁻¹x))。因为分区不同表格的求和不与任意混合 L 交换，原文的全线性 PRK 主张和这个签名都被反例否定，[ERRATUM?] 成立，不需人工判断或缺失定义。签名也未覆盖原句对称时保持时间反转的后半句。声明体为 sorry，此处 FAIL 来自实际反例及遗漏，非来自 sorry。
 
 ### 7. 状态与证明位置
 
@@ -6818,7 +7402,7 @@ theorem partitionedAffine_corrected :
 本地限定解释与原文问题见上列范围及对照；逐声明编译、公理结果见第7段。
 
 网站：原书疑误/资格待导师；原文与修正版并列。
-网站原返回（对应其审校版本）：NEEDS_HUMAN；partitionedAffine作为受限修正版通过：对所有n,s及任意Lq,Lp、fq,fp、两套阶段和更新系数，三个前提精确给出PRK两阶段方程与更新；三个结论是分块运输后两阶段方程及终点更新。Lp/Lq逆像的位置和各自系数相配，h无额外限制。该修复不允许混合q,p，也不包含平移或时间反演；这些限制已明确写进scope/[EXTRA]，不是证明原文任意变换全称。[EXTRA]合理，但原印全称仍待人工勘误。
+网站原返回（对应其审校版本）：NEEDS\_HUMAN；partitionedAffine作为受限修正版通过：对所有n,s及任意Lq,Lp、fq,fp、两套阶段和更新系数，三个前提精确给出PRK两阶段方程与更新；三个结论是分块运输后两阶段方程及终点更新。Lp/Lq逆像的位置和各自系数相配，h无额外限制。该修复不允许混合q,p，也不包含平移或时间反演；这些限制已明确写进scope/[EXTRA]，不是证明原文任意变换全称。[EXTRA]合理，但原印全称仍待人工勘误。
 
 ### 7. 状态与证明位置
 
@@ -6852,7 +7436,7 @@ theorem symplecticNotReversible :
 
 | 原文成分 | Lean对应 | 说明 |
 |---|---|---|
-| 当前覆盖范围 | 本条所引原句及展示公式；单个记号归入context_notation。 | 仅承诺明确列出的数学内容 |
+| 当前覆盖范围 | 本条所引原句及展示公式；单个记号归入context\_notation。 | 仅承诺明确列出的数学内容 |
 | 对象、量词、假设和定义/结论 | `MD.Ch03.symplecticNotReversible` | 完整代码见第4段；两个版本独立列出 |
 
 [EXTRA] 无新增技术资格。
@@ -6862,7 +7446,7 @@ theorem symplecticNotReversible :
 本地限定解释与原文问题见上列范围及对照；逐声明编译、公理结果见第7段。
 
 网站：网站PASS（绑定版本 433a13ca6407）。
-网站原返回（对应其审校版本）：PASS；展开 Ch03_deps.txt：Q n=Fin n→ℝ，Z n=Q n×Q n，pack=Sum.elim q p；canonicalReversal(q,p)=(q,−p)。textbookPotentialForce 为负偏导，textbookSymplecticEuler 为先 momentumKick 后 positionDrift。因此本例 S_h(q,p)=((1−h²)q+hp,p−hq)，签名恰为存在 h,z 使 R S_h R S_h z≠z。取 h=1,z=(1,0)，结果为(1,1)，不同于z。辛性未在本签名重述，但 context 已明确这是拆分后的非可逆反例；正式依赖 textbookSymplecticEuler_isSymplectic 对 C² 势能给出辛性，本例满足资格，故组合内容覆盖原句的该分支。无额外假设。Ch03.lean 本定理含 sorry，签名 PASS 不表示证明已完成。
+网站原返回（对应其审校版本）：PASS；展开 Ch03\_deps.txt：Q n=Fin n→ℝ，Z n=Q n×Q n，pack=Sum.elim q p；canonicalReversal(q,p)=(q,−p)。textbookPotentialForce 为负偏导，textbookSymplecticEuler 为先 momentumKick 后 positionDrift。因此本例 S\_h(q,p)=((1−h²)q+hp,p−hq)，签名恰为存在 h,z 使 R S\_h R S\_h z≠z。取 h=1,z=(1,0)，结果为(1,1)，不同于z。辛性未在本签名重述，但 context 已明确这是拆分后的非可逆反例；正式依赖 textbookSymplecticEuler\_isSymplectic 对 C² 势能给出辛性，本例满足资格，故组合内容覆盖原句的该分支。无额外假设。Ch03.lean 本定理含 sorry，签名 PASS 不表示证明已完成。
 
 ### 7. 状态与证明位置
 
@@ -6892,7 +7476,7 @@ def trapezoidalRelation {n : ℕ} (f : Q n → Q n) (h : ℝ) (z w : Q n) : Prop
 
 | 原文成分 | Lean对应 | 说明 |
 |---|---|---|
-| 当前覆盖范围 | 本条所引原句及展示公式；单个记号归入context_notation。 | 仅承诺明确列出的数学内容 |
+| 当前覆盖范围 | 本条所引原句及展示公式；单个记号归入context\_notation。 | 仅承诺明确列出的数学内容 |
 | 对象、量词、假设和定义/结论 | `MD.Ch03.trapezoidalRelation` | 完整代码见第4段；两个版本独立列出 |
 | 技术资格或版本解释 | 补梯形法标准隐式关系作为审阅上下文。 | [EXTRA] |
 
@@ -6942,7 +7526,7 @@ theorem trapezoidalProperties :
 
 | 原文成分 | Lean对应 | 说明 |
 |---|---|---|
-| 当前覆盖范围 | 本条所引原句及展示公式；单个记号归入context_notation。 | 仅承诺明确列出的数学内容 |
+| 当前覆盖范围 | 本条所引原句及展示公式；单个记号归入context\_notation。 | 仅承诺明确列出的数学内容 |
 | 对象、量词、假设和定义/结论 | `MD.Ch03.trapezoidalProperties` | 完整代码见第4段；两个版本独立列出 |
 | 技术资格或版本解释 | 完整实际隐式G与C¹Jacobian资格，不用求解存在作为结论前提。 | [EXTRA] |
 | 技术资格或版本解释 | [EXTRA] C∞编码补充修复：指定版本裸⊤表示实解析Cω，现将原smooth的前提及输出恢复为scoped ∞；正式库冻结，已有证明随本批重查，失败依≤3次小修规则记录。 | [EXTRA] |
@@ -6966,9 +7550,19 @@ incomplete；`MD.Ch03.trapezoidalProperties`：未证（缺大型理论）。
 ### 2. 原文陈述
 
 > For example, consider a linear Hamiltonian system $\mathrm dz/\mathrm dt=JAz$, with $A$ a symmetric matrix. If $\lambda$ is an eigenvalue of $JA$ then $JAu=\lambda u$ for some eigenvector $u\ne0$. Because the matrix $JA$ is real, we know that $\overline\lambda$ will also be an eigenvalue. At the same time, we know that since $\lambda$ is an eigenvalue of $JA$ it is also an eigenvalue of its transpose $(JA)^T=A^TJ^T=-AJ$, thus
-> \[-AJu=\lambda u\]
+
+$$
+-AJu=\lambda u
+$$
+
+
 > multiplying by $J$ and setting $v=Ju$ we have
-> \[-JAv=\lambda v\]
+
+$$
+-JAv=\lambda v
+$$
+
+
 > implying that $-\lambda$ (and hence also $-\overline\lambda$) is an eigenvalue of $JA$. Real eigenvalues of $JA$ are paired with their negatives. If the imaginary part is nonzero, the eigenvalues occur in quadruplets $\{\pm\lambda,\pm\overline\lambda\}$.
 
 ### 3. 原文证明
@@ -6992,7 +7586,7 @@ theorem hamiltonianSpectrum :
 
 | 原文成分 | Lean对应 | 说明 |
 |---|---|---|
-| 当前覆盖范围 | 本条所引原句及展示公式；单个记号归入context_notation。 | 仅承诺明确列出的数学内容 |
+| 当前覆盖范围 | 本条所引原句及展示公式；单个记号归入context\_notation。 | 仅承诺明确列出的数学内容 |
 | 对象、量词、假设和定义/结论 | `MD.Ch03.hamiltonianSpectrum` | 完整代码见第4段；两个版本独立列出 |
 
 [EXTRA] 无新增技术资格。
@@ -7002,7 +7596,7 @@ theorem hamiltonianSpectrum :
 本地限定解释与原文问题见上列范围及对照；逐声明编译、公理结果见第7段。
 
 网站：网站PASS（绑定版本 433a13ca6407）。
-网站原返回（对应其审校版本）：PASS；展开 complexEigenvalue 为存在非零复向量 v，实矩阵复化后的 mulVec v=ζ•v；不是抽象谱标签。A 是任意实对称 2n×2n 矩阵，J=[0 I;−I 0]，所以对象为真实 JA。负号和共轭闭包准确；将同一全称结论用于 star ζ 可得 −star ζ，故没有漏掉第四种值；不要求四值互异，纯虚特征值允许重复。[ERRATUM?]成立：原书从 JA 的特征向量 u 直接转为转置的同一 u 无效。例如 A=diag(1,2)，JA=[[0,2],[−1,0]]，ζ=i√2，u=(−i√2,1)；JA u=ζu，但 −AJu=(−1,−2i√2)≠ζu=(2,i√2)。应重新选转置特征向量。签名保留正确谱结论，不复制错误中间式；原书错误式仍原样保存在 statement_latex。Ch03.lean 含 sorry。
+网站原返回（对应其审校版本）：PASS；展开 complexEigenvalue 为存在非零复向量 v，实矩阵复化后的 mulVec v=ζ•v；不是抽象谱标签。A 是任意实对称 2n×2n 矩阵，J=[0 I;−I 0]，所以对象为真实 JA。负号和共轭闭包准确；将同一全称结论用于 star ζ 可得 −star ζ，故没有漏掉第四种值；不要求四值互异，纯虚特征值允许重复。[ERRATUM?]成立：原书从 JA 的特征向量 u 直接转为转置的同一 u 无效。例如 A=diag(1,2)，JA=[[0,2],[−1,0]]，ζ=i√2，u=(−i√2,1)；JA u=ζu，但 −AJu=(−1,−2i√2)≠ζu=(2,i√2)。应重新选转置特征向量。签名保留正确谱结论，不复制错误中间式；原书错误式仍原样保存在 statement\_latex。Ch03.lean 含 sorry。
 
 ### 7. 状态与证明位置
 
@@ -7014,7 +7608,12 @@ incomplete；`MD.Ch03.hamiltonianSpectrum`：未证（缺大型理论）。
 ### 2. 原文陈述
 
 > The flow map is
-> \[\mathcal F_t(z)=\mathrm e^{tJA}z\]
+
+$$
+\mathcal F_t(z)=\mathrm e^{tJA}z
+$$
+
+
 > and the exponential matrix will inherit a related structure within the spectrum: $\lambda$ an eigenvalue of $\exp(tJA)$ implies that $\overline\lambda$, $1/\lambda$ and $1/\overline\lambda$ are all eigenvalues of $\exp(tJA)$. This eigenvalue structure is generic for linear symplectic maps in general.
 
 ### 3. 原文证明
@@ -7051,7 +7650,7 @@ theorem symplecticSpectrum_linearHamiltonian (n : ℕ)
 
 | 原文成分 | Lean对应 | 说明 |
 |---|---|---|
-| 当前覆盖范围 | 本条所引原句及展示公式；单个记号归入context_notation。 | 仅承诺明确列出的数学内容 |
+| 当前覆盖范围 | 本条所引原句及展示公式；单个记号归入context\_notation。 | 仅承诺明确列出的数学内容 |
 | 对象、量词、假设和定义/结论 | `MD.Ch03.symplecticSpectrum`；`MD.Ch03.symplecticSpectrum_linearHamiltonian` | 完整代码见第4段；两个版本独立列出 |
 | 技术资格或版本解释 | [EXTRA] 保留一般辛矩阵谱结论；补对称K的实际线性Hamiltonian流exp(tJK)、ODE、辛矩阵及对应倒数/共轭谱实例。 | [EXTRA] |
 
@@ -7074,9 +7673,19 @@ incomplete；`MD.Ch03.symplecticSpectrum`：未证（缺大型理论）；`MD.Ch
 ### 2. 原文陈述
 
 > Suppose now we have a linear time-reversible map $\phi(z)=Tz$, then
-> \[T^{-1}=RTR.\]
+
+$$
+T^{-1}=RTR.
+$$
+
+
 > Given an eigenvalue, eigenvector pair $(\lambda,u)$ of $T$, let $u=Rv$, so that $Ru=R^2v=v$, then
-> \[T^{-1}v=RTRv=RTu=\lambda Ru=\lambda v.\]
+
+$$
+T^{-1}v=RTRv=RTu=\lambda Ru=\lambda v.
+$$
+
+
 > Thus $\lambda$ is an eigenvalue of $T^{-1}$ which, in turn, implies that $1/\lambda$ is an eigenvalue of $T$. The matrix being real implies that the conjugates of $\lambda$ and $1/\lambda$ are also eigenvalues, thus we have the same eigenvalue quadruplets as for a linear symplectic map.
 
 ### 3. 原文证明
@@ -7100,7 +7709,7 @@ theorem reversibleSpectrum :
 
 | 原文成分 | Lean对应 | 说明 |
 |---|---|---|
-| 当前覆盖范围 | 本条所引原句及展示公式；单个记号归入context_notation。 | 仅承诺明确列出的数学内容 |
+| 当前覆盖范围 | 本条所引原句及展示公式；单个记号归入context\_notation。 | 仅承诺明确列出的数学内容 |
 | 对象、量词、假设和定义/结论 | `MD.Ch03.reversibleSpectrum` | 完整代码见第4段；两个版本独立列出 |
 | 技术资格或版本解释 | T可逆、R²=I明确；真实complexEigenvalue，非零性作为结论。 | [EXTRA] |
 
@@ -7123,7 +7732,12 @@ incomplete；`MD.Ch03.reversibleSpectrum`：未证（缺大型理论）。
 ### 2. 原文陈述
 
 > Recall that a pair of maps $\Phi$ and $\Psi$ are said to be conjugate if there is a homomorphism $\chi$ such that
-> \[\Phi=\chi^{-1}\Psi\chi.\]
+
+$$
+\Phi=\chi^{-1}\Psi\chi.
+$$
+
+
 > In such a case the iterates of the two maps will also be conjugate
 
 ### 3. 原文证明
@@ -7181,7 +7795,7 @@ theorem conjugateIterates_corrected {α : Type*} (χ : α ≃ α) (A B : α → 
 本地限定解释与原文问题见上列范围及对照；逐声明编译、公理结果见第7段。
 
 网站：原书疑误/资格待导师；原文与修正版并列。
-网站原返回（对应其审校版本）：NEEDS_HUMAN；主声明已为任意类型α、任意可逆Equiv χ及A,B，假设A=χ⁻¹∘B∘χ，对所有自然数n给出完整共轭迭代恒等式，包含n=0；没有拓扑或范数前提。homeomorph辅助版同样正确，额外连续性仅属于辅助版本。原页确实写homomorphism并随后使用χ⁻¹；一般同态不保证可逆，原书用词须人工处理，Equiv是合理显式修复。context仍把主签名说成实赋范空间和Homeomorph，已经过时。
+网站原返回（对应其审校版本）：NEEDS\_HUMAN；主声明已为任意类型α、任意可逆Equiv χ及A,B，假设A=χ⁻¹∘B∘χ，对所有自然数n给出完整共轭迭代恒等式，包含n=0；没有拓扑或范数前提。homeomorph辅助版同样正确，额外连续性仅属于辅助版本。原页确实写homomorphism并随后使用χ⁻¹；一般同态不保证可逆，原书用词须人工处理，Equiv是合理显式修复。context仍把主签名说成实赋范空间和Homeomorph，已经过时。
 
 ### 7. 状态与证明位置
 
@@ -7214,7 +7828,7 @@ theorem mechanicalReversalCorrect :
 
 | 原文成分 | Lean对应 | 说明 |
 |---|---|---|
-| 当前覆盖范围 | 本条所引原句及展示公式；单个记号归入context_notation。 | 仅承诺明确列出的数学内容 |
+| 当前覆盖范围 | 本条所引原句及展示公式；单个记号归入context\_notation。 | 仅承诺明确列出的数学内容 |
 | 对象、量词、假设和定义/结论 | `MD.Ch03.mechanicalReversalCorrect` | 完整代码见第4段；两个版本独立列出 |
 | 技术资格或版本解释 | 独立正确机械R反转结论；原印展示式亦正确，原先错误标记撤销。 | [EXTRA] |
 | 技术资格或版本解释 | [EXTRA] 原已证独立机械反转结论保留；更正旧注释：原书展示式正确，先前原书错误判断已撤销。 | [EXTRA] |
@@ -7293,7 +7907,7 @@ theorem conjugateOrderPrinted_corrected :
 本地限定解释与原文问题见上列范围及对照；逐声明编译、公理结果见第7段。
 
 网站：原书疑误/资格待导师；原文与修正版并列。
-网站原返回（对应其审校版本）：FAIL；展开 Chapter03Review.localOrder：存在 C>0,δ>0，使全部 |h|<δ 和 z∈B 满足 ‖G h z−Φ h z‖≤C|h|^(r+1)。这不是 effective order 的定义，而是相对任意参考映射的局部误差上界；Φ 没有任何实际流资格。Homeomorph 与 IsCompact B、r>0 都不足以保持同一误差幂阶。已有标记指出数学风险，但 Lean 签名仍断言错误的全称命题，不能因 sorry 或 NEEDS_HUMAN 标记而通过。原文问题是 “similar stability properties and performance (e.g. the same effective order)” 中 effective order 的精确定义、允许的处理器以及正则性未给出；这部分须数学判断，A记 NEEDS_HUMAN，C的明确假命题记FAIL。还未形式化原句的稳定性/性能条款。
+网站原返回（对应其审校版本）：FAIL；展开 Chapter03Review.localOrder：存在 C>0,δ>0，使全部 |h|<δ 和 z∈B 满足 ‖G h z−Φ h z‖≤C|h|^(r+1)。这不是 effective order 的定义，而是相对任意参考映射的局部误差上界；Φ 没有任何实际流资格。Homeomorph 与 IsCompact B、r>0 都不足以保持同一误差幂阶。已有标记指出数学风险，但 Lean 签名仍断言错误的全称命题，不能因 sorry 或 NEEDS\_HUMAN 标记而通过。原文问题是 “similar stability properties and performance (e.g. the same effective order)” 中 effective order 的精确定义、允许的处理器以及正则性未给出；这部分须数学判断，A记 NEEDS\_HUMAN，C的明确假命题记FAIL。还未形式化原句的稳定性/性能条款。
 
 ### 7. 状态与证明位置
 
@@ -7356,7 +7970,7 @@ theorem reversibleVolumeFailure_corrected :
 本地限定解释与原文问题见上列范围及对照；逐声明编译、公理结果见第7段。
 
 网站：原书疑误/资格待导师；原文与修正版并列。
-网站原返回（对应其审校版本）：FAIL；已展开Ch03_deps.txt中的实际定义：MolecularDynamics.Chapter02Review.Q n := Fin n → ℝ（第2816行）；linearInvolution R := R.comp R = ContinuousLinearMap.id ℝ (Q n)（第3616行）；MolecularDynamics.textbookCoordinateJacobian G z := LinearMap.toMatrix' (fderiv ℝ G z).toLinearMap（第2365–2366行），其第(i,j)项为((fderiv ℝ G z) (Pi.single j 1)) i（第2368–2369行）。因此这里是实n维空间的真实导数矩阵，而非替代变量。G : Q n ≃ Q n给出双射及逆，双方ContDiff ℝ 1给出C¹微分同胚；R是连续线性对合，∀z, R(G(R(G z)))=z等价于R∘G∘R=G⁻¹，忠实表达相对于R的可逆性。存在z使绝对雅可比行列式不为1，结合C¹微分同胚的换元性质，确实表达不保持Lebesgue体积。量词∃n∃R∃G再∃z正确表达need not，而非错误地要求所有可逆映射都非保体积。C¹、双射和线性对合是为给出真实光滑反例采用的合理对象限制；本条无[EXTRA]或[ERRATUM?]标注，也无原书错误需静默修正。然而statement_scope明确包含所引整句，Lean签名只覆盖其中“a time-reversible map need not do so”这一子句，缺少其余三项结论。context_notation称其他结论已在别处保留，不能代替本条对具体声明或引用的覆盖。故完整范围的语义审计FAIL；若范围显式限定为可逆非保体积存在性，则此签名本身可通过该子句的语义审计。Ch03.lean第1276–1280行的证明为sorry；这是未完成证明，独立于上述签名覆盖不足的判断。
+网站原返回（对应其审校版本）：FAIL；已展开Ch03\_deps.txt中的实际定义：MolecularDynamics.Chapter02Review.Q n := Fin n → ℝ（第2816行）；linearInvolution R := R.comp R = ContinuousLinearMap.id ℝ (Q n)（第3616行）；MolecularDynamics.textbookCoordinateJacobian G z := LinearMap.toMatrix' (fderiv ℝ G z).toLinearMap（第2365–2366行），其第(i,j)项为((fderiv ℝ G z) (Pi.single j 1)) i（第2368–2369行）。因此这里是实n维空间的真实导数矩阵，而非替代变量。G : Q n ≃ Q n给出双射及逆，双方ContDiff ℝ 1给出C¹微分同胚；R是连续线性对合，∀z, R(G(R(G z)))=z等价于R∘G∘R=G⁻¹，忠实表达相对于R的可逆性。存在z使绝对雅可比行列式不为1，结合C¹微分同胚的换元性质，确实表达不保持Lebesgue体积。量词∃n∃R∃G再∃z正确表达need not，而非错误地要求所有可逆映射都非保体积。C¹、双射和线性对合是为给出真实光滑反例采用的合理对象限制；本条无[EXTRA]或[ERRATUM?]标注，也无原书错误需静默修正。然而statement\_scope明确包含所引整句，Lean签名只覆盖其中“a time-reversible map need not do so”这一子句，缺少其余三项结论。context\_notation称其他结论已在别处保留，不能代替本条对具体声明或引用的覆盖。故完整范围的语义审计FAIL；若范围显式限定为可逆非保体积存在性，则此签名本身可通过该子句的语义审计。Ch03.lean第1276–1280行的证明为sorry；这是未完成证明，独立于上述签名覆盖不足的判断。
 
 ### 7. 状态与证明位置
 
@@ -7397,7 +8011,7 @@ def hardCoreMechanicalHamiltonian {N d : ℕ} (m : Fin N → ℝ) (_hm : ∀ i, 
 
 | 原文成分 | Lean对应 | 说明 |
 |---|---|---|
-| 当前覆盖范围 | 本条所引原句及展示公式；单个记号归入context_notation。 | 仅承诺明确列出的数学内容 |
+| 当前覆盖范围 | 本条所引原句及展示公式；单个记号归入context\_notation。 | 仅承诺明确列出的数学内容 |
 | 对象、量词、假设和定义/结论 | `MD.Ch03.hardCoreDomain`；`MD.Ch03.hardCoreDomainPhysical`；`MD.Ch03.hardCoreContactSurface`；`MD.Ch03.hardCoreMechanicalHamiltonian` | 完整代码见第4段；两个版本独立列出 |
 | 技术资格或版本解释 | [EXTRA] hardCoreDomain保留任意实半径的代数集合辅助；新增非负半径物理包装、接触面（至少一对取等号）及H=K+U的明确对象。域不自动保证动力学存在。 | [EXTRA] |
 
@@ -7408,7 +8022,7 @@ def hardCoreMechanicalHamiltonian {N d : ℕ} (m : Fin N → ℝ) (_hm : ∀ i, 
 本轮修复：hardCoreDomain保留任意实半径的代数集合辅助；新增非负半径物理包装、接触面（至少一对取等号）及H=K+U的明确对象。域不自动保证动力学存在。
 
 网站：按网站审校意见修复，本地核验通过（未再送网站）。
-网站原返回（对应其审校版本）：FAIL；hardCoreDomain本身正确表达N个d维欧氏位置的闭非重叠区域：对所有不同粒子i,j，距离≥半径和，接触等号允许。i≠j来自物理语境而非原文显式，context已如实披露。任意实σ的集合定义有意义；物理半径非负未编码，应明确限定其物理解释。按本条现有完整statement_scope，所引Hamiltonian H=K+U以及“某一粒子对取等号”的接触面均未在唯一Lean声明中表达；不能把域定义称为所引全部内容的完整对应。
+网站原返回（对应其审校版本）：FAIL；hardCoreDomain本身正确表达N个d维欧氏位置的闭非重叠区域：对所有不同粒子i,j，距离≥半径和，接触等号允许。i≠j来自物理语境而非原文显式，context已如实披露。任意实σ的集合定义有意义；物理半径非负未编码，应明确限定其物理解释。按本条现有完整statement\_scope，所引Hamiltonian H=K+U以及“某一粒子对取等号”的接触面均未在唯一Lean声明中表达；不能把域定义称为所引全部内容的完整对应。
 
 ### 7. 状态与证明位置
 
@@ -7420,7 +8034,12 @@ self-contained；`MD.Ch03.hardCoreDomain`：定义；`MD.Ch03.hardCoreDomainPhys
 ### 2. 原文陈述
 
 > When the particles are not touching, they move along Newtonian paths defined by the standard equations of motion. At impact, they exchange momentum and energy according to the rules of elastic collision. Specifically, at the point of contact, the momentum vectors of the two spheres are adjusted according to the rule:
-> \[p:=p+\alpha u_\perp\]
+
+$$
+p:=p+\alpha u_\perp
+$$
+
+
 > where $u_\perp$ is normal to the constraint surface and $\alpha$ is a parameter chosen to maintain the conservation of energy.
 
 ### 3. 原文证明
@@ -7440,7 +8059,7 @@ def elasticReflection {n : ℕ} (m : Fin n → ℝ) (u p : Position n) : Positio
 
 | 原文成分 | Lean对应 | 说明 |
 |---|---|---|
-| 当前覆盖范围 | 本条所引原句及展示公式；单个记号归入context_notation。 | 仅承诺明确列出的数学内容 |
+| 当前覆盖范围 | 本条所引原句及展示公式；单个记号归入context\_notation。 | 仅承诺明确列出的数学内容 |
 | 对象、量词、假设和定义/结论 | `MD.Ch03.elasticReflection` | 完整代码见第4段；两个版本独立列出 |
 | 技术资格或版本解释 | [EXTRA]选取质量度量反射α=−2Σuᵢpᵢ/mᵢ ÷ Σuᵢ²/mᵢ，具体α原书在障碍特例p134给出；正质量/非零法向是后条守恒资格。 | [EXTRA] |
 
@@ -7451,7 +8070,7 @@ def elasticReflection {n : ℕ} (m : Fin n → ℝ) (u p : Position n) : Positio
 本地限定解释与原文问题见上列范围及对照；逐声明编译、公理结果见第7段。
 
 网站：网站PASS（绑定版本 433a13ca6407）。
-网站原返回（对应其审校版本）：PASS；展开 Position n 为欧氏空间；elasticCoefficient=-2(Σ_i u_i p_i/m_i)/(Σ_i u_i²/m_i)，elasticReflection=p+elasticCoefficient •u。这是固定位置时沿法向的质量度量弹性反射；坐标可表示完整配置动量。能量方程展开为 α(2T+αS)=0，定义选取反射分支 −2T/S，而非恒等分支。[EXTRA] 是合理的弹性碰撞分支选择；正质量和非零法向在后条守恒定理中给出。定义本身可对任意 u、m 总定义，不应据此宣称非法参数也代表物理碰撞；其类型未证明 u 是某接触面的法向，该对应是调用语境。原文运动与碰撞叙述是此局部更新定义的背景，未将该定义误作完整动力学定理。无 [ERRATUM?]；定义无 sorry。
+网站原返回（对应其审校版本）：PASS；展开 Position n 为欧氏空间；elasticCoefficient=-2(Σ\_i u\_i p\_i/m\_i)/(Σ\_i u\_i²/m\_i)，elasticReflection=p+elasticCoefficient •u。这是固定位置时沿法向的质量度量弹性反射；坐标可表示完整配置动量。能量方程展开为 α(2T+αS)=0，定义选取反射分支 −2T/S，而非恒等分支。[EXTRA] 是合理的弹性碰撞分支选择；正质量和非零法向在后条守恒定理中给出。定义本身可对任意 u、m 总定义，不应据此宣称非法参数也代表物理碰撞；其类型未证明 u 是某接触面的法向，该对应是调用语境。原文运动与碰撞叙述是此局部更新定义的背景，未将该定义误作完整动力学定理。无 [ERRATUM?]；定义无 sorry。
 
 ### 7. 状态与证明位置
 
@@ -7517,7 +8136,7 @@ theorem elasticEnergy :
 
 | 原文成分 | Lean对应 | 说明 |
 |---|---|---|
-| 当前覆盖范围 | 本条所引原句及展示公式；单个记号归入context_notation。 | 仅承诺明确列出的数学内容 |
+| 当前覆盖范围 | 本条所引原句及展示公式；单个记号归入context\_notation。 | 仅承诺明确列出的数学内容 |
 | 对象、量词、假设和定义/结论 | `MD.Ch03.elasticEnergy` | 完整代码见第4段；两个版本独立列出 |
 | 技术资格或版本解释 | 正质量、u≠0，α取前条实际质量度量反射值；碰撞时位置不变，K守恒即总能量守恒。 | [EXTRA] |
 
@@ -7528,7 +8147,7 @@ theorem elasticEnergy :
 本地限定解释与原文问题见上列范围及对照；逐声明编译、公理结果见第7段。
 
 网站：网站PASS（绑定版本 433a13ca6407）。
-网站原返回（对应其审校版本）：PASS；展开 positiveMass=∀ i,0<m_i，kinetic=(Σ_i p_i²/m_i)/2，elasticReflection 与 elasticCoefficient 如前条，Position n 为欧氏坐标。量词 n,m,u,p 后跟正质量与 u≠0；它们使 S=Σ u_i²/m_i>0，是一般质量反射公式的合理非退化资格。结论第一项是 K 守恒；碰撞位置固定使 U 不变，因而对应原文总能量守恒。第二项 T_after=−T_before 是同一反射公式的有效加强，不是额外假设；可直接由 T+(-2T/S)S=−T 得出。此加强不缩减对象或原结论。无 [ERRATUM?]。Ch03.lean 此项含具体证明而非 sorry；本次仅审签名语义，未编译验证证明。
+网站原返回（对应其审校版本）：PASS；展开 positiveMass=∀ i,0<m\_i，kinetic=(Σ\_i p\_i²/m\_i)/2，elasticReflection 与 elasticCoefficient 如前条，Position n 为欧氏坐标。量词 n,m,u,p 后跟正质量与 u≠0；它们使 S=Σ u\_i²/m\_i>0，是一般质量反射公式的合理非退化资格。结论第一项是 K 守恒；碰撞位置固定使 U 不变，因而对应原文总能量守恒。第二项 T\_after=−T\_before 是同一反射公式的有效加强，不是额外假设；可直接由 T+(-2T/S)S=−T 得出。此加强不缩减对象或原结论。无 [ERRATUM?]。Ch03.lean 此项含具体证明而非 sorry；本次仅审签名语义，未编译验证证明。
 
 ### 7. 状态与证明位置
 
@@ -7540,7 +8159,12 @@ self-contained；`MD.Ch03.elasticEnergy`：已证。
 ### 2. 原文陈述
 
 > Let $\mathcal R_c$ denote the action of the collision operator on the vector of positions and momenta. Then we can write the evolution formally as
-> \[\mathcal F_\tau^{\mathrm{h.s.}}(q,p)=\mathcal G_{\Delta\tau_r}\circ\mathcal R_c\circ\mathcal G_{\Delta\tau_{r-1}}\cdots\circ\mathcal R_c\circ\mathcal G_{\Delta\tau_0}\]
+
+$$
+\mathcal F_\tau^{\mathrm{h.s.}}(q,p)=\mathcal G_{\Delta\tau_r}\circ\mathcal R_c\circ\mathcal G_{\Delta\tau_{r-1}}\cdots\circ\mathcal R_c\circ\mathcal G_{\Delta\tau_0}
+$$
+
+
 > where $\Delta\tau_1,\Delta\tau_2,\ldots,\Delta\tau_{r-1}$ are the times between collisions, $\Delta\tau_0$ is the time until the first collision, and $\Delta\tau_r$ is the time between the last collision and $\tau$. Here $\mathcal G_t$ is the flow map of the smooth system (Hamiltonian $H$).
 
 ### 3. 原文证明
@@ -7628,7 +8252,7 @@ theorem collisionRegularity :
 
 | 原文成分 | Lean对应 | 说明 |
 |---|---|---|
-| 当前覆盖范围 | 本条所引原句及展示公式；单个记号归入context_notation。 | 仅承诺明确列出的数学内容 |
+| 当前覆盖范围 | 本条所引原句及展示公式；单个记号归入context\_notation。 | 仅承诺明确列出的数学内容 |
 | 对象、量词、假设和定义/结论 | `MD.Ch03.collisionRegularity` | 完整代码见第4段；两个版本独立列出 |
 | 技术资格或版本解释 | 有限严格递增隔离时刻、相邻实际光滑ODE段、碰撞接触处位置匹配和真实法向动量跳跃；不把拼接后连续或光滑结论作假设。 | [EXTRA] |
 | 技术资格或版本解释 | [EXTRA] 补光滑接触函数、非零法向、严格入射及各段合法非重叠资格；结论补完整(q,p)内段光滑及每次真实碰撞的非零动量跳跃，保留双侧有限极限。 | [EXTRA] |
@@ -7654,7 +8278,12 @@ incomplete；`MD.Ch03.collisionRegularity`：未证（缺大型理论）。
 ### 2. 原文陈述
 
 > Splitting methods are suggested by considering a formal hard-sphere Hamiltonian
-> \[H_{\mathrm{h.s.}}=p^TM^{-1}p/2+U(q)+U_{\mathrm{h.s.}},\]
+
+$$
+H_{\mathrm{h.s.}}=p^TM^{-1}p/2+U(q)+U_{\mathrm{h.s.}},
+$$
+
+
 > where $U_{\mathrm{h.s.}}$ is assumed to be infinite for overlapping configurations (some $\|q_i-q_j\|\le\sigma_i+\sigma_j$) and zero otherwise.
 
 ### 3. 原文证明
@@ -7698,17 +8327,17 @@ def hardCorePotential_corrected {N d : ℕ} (σ : Fin N → ℝ)
 |---|---|---|
 | 当前覆盖范围 | 保留完整原文引文；Lean仅覆盖第4段明示的定义与限定结论，原书疑误或超出该陈述的内容不冒称已形式化。各版本差异见本条与ERRATA。 | 仅承诺明确列出的数学内容 |
 | 对象、量词、假设和定义/结论 | `MD.Ch03.hardCorePotential`；`MD.Ch03.hardSphereHamiltonianPrinted`；`MD.Ch03.hardCorePotential_contactAllowed`；`MD.Ch03.hardCorePotential_corrected` | 完整代码见第4段；两个版本独立列出 |
-| 技术资格或版本解释 | [EXTRA] 原印≤接触也取∞独立忠实定义，并补K+U+U_hs完整Hamiltonian；原接触允许的物理版本改名保留辅助。两种边界约定明确区分，不擅自勘误原书。 | [EXTRA] |
+| 技术资格或版本解释 | [EXTRA] 原印≤接触也取∞独立忠实定义，并补K+U+U\_hs完整Hamiltonian；原接触允许的物理版本改名保留辅助。两种边界约定明确区分，不擅自勘误原书。 | [EXTRA] |
 | 技术资格或版本解释 | [ERRATUM?] 允许接触等号，只有严格重叠才取∞；原印≤判∞独立保留。 | [EXTRA] |
 
-[EXTRA] [EXTRA] 原印≤接触也取∞独立忠实定义，并补K+U+U_hs完整Hamiltonian；原接触允许的物理版本改名保留辅助。两种边界约定明确区分，不擅自勘误原书。；[ERRATUM?] 允许接触等号，只有严格重叠才取∞；原印≤判∞独立保留。
+[EXTRA] [EXTRA] 原印≤接触也取∞独立忠实定义，并补K+U+U\_hs完整Hamiltonian；原接触允许的物理版本改名保留辅助。两种边界约定明确区分，不擅自勘误原书。；[ERRATUM?] 允许接触等号，只有严格重叠才取∞；原印≤判∞独立保留。
 
 ### 6. 审计结论
 
 本地限定解释与原文问题见上列范围及对照；逐声明编译、公理结果见第7段。
 
 网站：原书疑误/资格待导师；原文与修正版并列。
-网站原返回（对应其审校版本）：NEEDS_HUMAN；原印≤已目视确认。hardCorePotential以ENNReal表达不同粒子距离≤半径和则∞、否则0，字面忠实；hardSphereHamiltonianPrinted在同一判据下返回∞，否则正质量动能和任意实U，WithTop ℝ容许负有限势，完整H表达正确。contactAllowed辅助为闭允许域内0、外∞，对应严格重叠才惩罚的物理边界，明确分名，不能代替Printed。定义本身无签名错误；原书p132允许等号和p133将等号判∞的冲突必须保留人工裁定。
+网站原返回（对应其审校版本）：NEEDS\_HUMAN；原印≤已目视确认。hardCorePotential以ENNReal表达不同粒子距离≤半径和则∞、否则0，字面忠实；hardSphereHamiltonianPrinted在同一判据下返回∞，否则正质量动能和任意实U，WithTop ℝ容许负有限势，完整H表达正确。contactAllowed辅助为闭允许域内0、外∞，对应严格重叠才惩罚的物理边界，明确分名，不能代替Printed。定义本身无签名错误；原书p132允许等号和p133将等号判∞的冲突必须保留人工裁定。
 
 ### 7. 状态与证明位置
 
@@ -7720,7 +8349,12 @@ self-contained；`MD.Ch03.hardCorePotential`：定义；`MD.Ch03.hardSphereHamil
 ### 2. 原文陈述
 
 > One approach is to consider the splitting $H=H_{\mathrm{free}}+U$, evolving $H_{\mathrm{free}}$ for fixed intervals punctuated by impulses derived from the smooth potential $U$. In [40, 184] this algorithm is termed the “Primitive Splitting Algorithm” and can be described by the three steps:
-> \[P:=p-\frac h2\nabla U(q),\qquad(Q,P):=\mathcal G_h^{\mathrm{free}}(q,P),\qquad P:=P-\frac h2\nabla U(Q).\]
+
+$$
+P:=p-\frac h2\nabla U(q),\qquad(Q,P):=\mathcal G_h^{\mathrm{free}}(q,P),\qquad P:=P-\frac h2\nabla U(Q).
+$$
+
+
 
 ### 3. 原文证明
 
@@ -7741,7 +8375,7 @@ def primitiveSplitting {n : ℕ} (U : Q n → ℝ)
 
 | 原文成分 | Lean对应 | 说明 |
 |---|---|---|
-| 当前覆盖范围 | 本条所引原句及展示公式；单个记号归入context_notation。 | 仅承诺明确列出的数学内容 |
+| 当前覆盖范围 | 本条所引原句及展示公式；单个记号归入context\_notation。 | 仅承诺明确列出的数学内容 |
 | 对象、量词、假设和定义/结论 | `MD.Ch03.primitiveSplitting` | 完整代码见第4段；两个版本独立列出 |
 
 [EXTRA] 无新增技术资格。
@@ -7751,7 +8385,7 @@ def primitiveSplitting {n : ℕ} (U : Q n → ℝ)
 本地限定解释与原文问题见上列范围及对照；逐声明编译、公理结果见第7段。
 
 网站：网站PASS（绑定版本 433a13ca6407）。
-网站原返回（对应其审校版本）：PASS；已展开Ch03_deps.txt:33的SymplecticCoordinates=(Fin n⊕Fin n)→ℝ、568–571的位置投影、583–585的textbookPotentialForce(U)(q)_i=−fderiv(U,q)(e_i)、619–624的textbookMomentumKick：位置保持、动量加hF(q)。函数复合从右向左，恰为初始半kick、给定Gfree h、末尾半kick。U的光滑性和Gfree是真实自由硬球流属于原文语境，本条定义只描述给定流的数学组合，并不声称任意Gfree具有物理意义或证明流存在；现有context明确此范围。无额外定理结论或sorry。
+网站原返回（对应其审校版本）：PASS；已展开Ch03\_deps.txt:33的SymplecticCoordinates=(Fin n⊕Fin n)→ℝ、568–571的位置投影、583–585的textbookPotentialForce(U)(q)_i=−fderiv(U,q)(e\_i)、619–624的textbookMomentumKick：位置保持、动量加hF(q)。函数复合从右向左，恰为初始半kick、给定Gfree h、末尾半kick。U的光滑性和Gfree是真实自由硬球流属于原文语境，本条定义只描述给定流的数学组合，并不声称任意Gfree具有物理意义或证明流存在；现有context明确此范围。无额外定理结论或sorry。
 
 ### 7. 状态与证明位置
 
@@ -7845,7 +8479,12 @@ incomplete；`MD.Ch03.primitiveOrder`：未证（原书疑误不证）；`MD.Ch0
 ### 2. 原文陈述
 
 > The coefficient $\alpha$ is chosen so that the kinetic energy is conserved through collision, thus
-> \[\alpha=-2\frac{u_\perp\cdot\overline P}{u_\perp\cdot u_\perp}.\]
+
+$$
+\alpha=-2\frac{u_\perp\cdot\overline P}{u_\perp\cdot u_\perp}.
+$$
+
+
 
 ### 3. 原文证明
 
@@ -7864,7 +8503,7 @@ def obstacleReflection {d : ℕ} (u p : Position d) : Position d := p- (2*inner 
 
 | 原文成分 | Lean对应 | 说明 |
 |---|---|---|
-| 当前覆盖范围 | 本条所引原句及展示公式；单个记号归入context_notation。 | 仅承诺明确列出的数学内容 |
+| 当前覆盖范围 | 本条所引原句及展示公式；单个记号归入context\_notation。 | 仅承诺明确列出的数学内容 |
 | 对象、量词、假设和定义/结论 | `MD.Ch03.obstacleReflection` | 完整代码见第4段；两个版本独立列出 |
 
 [EXTRA] 无新增技术资格。
@@ -7886,7 +8525,12 @@ self-contained；`MD.Ch03.obstacleReflection`：定义。
 ### 2. 原文陈述
 
 > We next calculate the change in energy in a single step by inserting $Q$ and $P$ into the Hamiltonian and expanding around the point of collision $q_c$, obtaining
-> \[\Delta H\stackrel{\mathrm{def}}=H(Q,P)-H(q,p)=-(h-2\tau_c)\frac{q_c^T\overline P}{q_c^Tq_c}q_c^T\nabla U(q_c)+O(h^2).\]
+
+$$
+\Delta H\stackrel{\mathrm{def}}=H(Q,P)-H(q,p)=-(h-2\tau_c)\frac{q_c^T\overline P}{q_c^Tq_c}q_c^T\nabla U(q_c)+O(h^2).
+$$
+
+
 
 ### 3. 原文证明
 
@@ -7919,7 +8563,7 @@ theorem primitiveDefect :
 
 | 原文成分 | Lean对应 | 说明 |
 |---|---|---|
-| 当前覆盖范围 | 本条所引原句及展示公式；单个记号归入context_notation。 | 仅承诺明确列出的数学内容 |
+| 当前覆盖范围 | 本条所引原句及展示公式；单个记号归入context\_notation。 | 仅承诺明确列出的数学内容 |
 | 对象、量词、假设和定义/结论 | `MD.Ch03.primitiveDefect` | 完整代码见第4段；两个版本独立列出 |
 | 技术资格或版本解释 | C³势、固定非零qc、真实初末碰撞步族和0<tc(h)<h；O(h²)以小正h的一致界表示。 | [EXTRA] |
 | 技术资格或版本解释 | [EXTRA] 仅小正h、单位接触点及初态趋近接触点的首次单碰撞物理分支；系数使用原书碰前P̄（含半kick），不再用初始p冒充；保留O(h²)余项。 | [EXTRA] |
@@ -7965,7 +8609,7 @@ theorem collisionDefectZero :
 
 | 原文成分 | Lean对应 | 说明 |
 |---|---|---|
-| 当前覆盖范围 | 本条所引原句及展示公式；单个记号归入context_notation。 | 仅承诺明确列出的数学内容 |
+| 当前覆盖范围 | 本条所引原句及展示公式；单个记号归入context\_notation。 | 仅承诺明确列出的数学内容 |
 | 对象、量词、假设和定义/结论 | `MD.Ch03.collisionDefectZero` | 完整代码见第4段；两个版本独立列出 |
 
 [EXTRA] 无新增技术资格。
@@ -7975,7 +8619,7 @@ theorem collisionDefectZero :
 本地限定解释与原文问题见上列范围及对照；逐声明编译、公理结果见第7段。
 
 网站：网站PASS（绑定版本 433a13ca6407）。
-网站原返回（对应其审校版本）：PASS；Ch03_deps.txt:4496–4497及Ch03.lean:1399–1402的结论为(h−2tc)(a/b)c=0。取a=⟨qc,P̄⟩，b=⟨qc,qc⟩，c=⟨qc,∇U(qc)⟩：h=2tc对应中点，c=0对应方向导数零，a=0对应动量正交。析取顺序不影响语义；全称实数代数式是三种消项的通用引理，b=0下Lean的除法也有定义，但原书物理实例b=1。原context明确只审线性系数、保留O(h²)，因此没有从消项擅自推出三阶。Ch03.lean引用collisionDefectZero_proved；这与本次签名语义PASS分开。
+网站原返回（对应其审校版本）：PASS；Ch03\_deps.txt:4496–4497及Ch03.lean:1399–1402的结论为(h−2tc)(a/b)c=0。取a=⟨qc,P̄⟩，b=⟨qc,qc⟩，c=⟨qc,∇U(qc)⟩：h=2tc对应中点，c=0对应方向导数零，a=0对应动量正交。析取顺序不影响语义；全称实数代数式是三种消项的通用引理，b=0下Lean的除法也有定义，但原书物理实例b=1。原context明确只审线性系数、保留O(h²)，因此没有从消项擅自推出三阶。Ch03.lean引用collisionDefectZero\_proved；这与本次签名语义PASS分开。
 
 ### 7. 状态与证明位置
 
@@ -8068,7 +8712,12 @@ incomplete；`MD.Ch03.endImpactThirdOrderPrinted`：未证（原书疑误不证�
 ### 2. 原文陈述
 
 > The idea is to make use of the quadratic
-> \[Q(t)=q+tM^{-1}p-\frac{t^2}{2}M^{-1}\nabla U(q)\tag{3.18}\]
+
+$$
+Q(t)=q+tM^{-1}p-\frac{t^2}{2}M^{-1}\nabla U(q)\tag{3.18}
+$$
+
+
 > which represents the position vector obtained from a Verlet step of size $t$. Note that this defines quadratic paths for all particles in the system.
 
 ### 3. 原文证明
@@ -8089,7 +8738,7 @@ def collisionQuadraticPath {n : ℕ} (m : Fin n → ℝ) (F : Q n → Q n) (z : 
 
 | 原文成分 | Lean对应 | 说明 |
 |---|---|---|
-| 当前覆盖范围 | 本条所引原句及展示公式；单个记号归入context_notation。 | 仅承诺明确列出的数学内容 |
+| 当前覆盖范围 | 本条所引原句及展示公式；单个记号归入context\_notation。 | 仅承诺明确列出的数学内容 |
 | 对象、量词、假设和定义/结论 | `MD.Ch03.collisionQuadraticPath` | 完整代码见第4段；两个版本独立列出 |
 
 [EXTRA] 无新增技术资格。
@@ -8099,7 +8748,7 @@ def collisionQuadraticPath {n : ℕ} (m : Fin n → ℝ) (F : Q n → Q n) (z : 
 本地限定解释与原文问题见上列范围及对照；逐声明编译、公理结果见第7段。
 
 网站：网站PASS（绑定版本 433a13ca6407）。
-网站原返回（对应其审校版本）：PASS；已展开 Ch03_deps.txt 的 MolecularDynamics/Chapter02/ReviewDefinitions.lean：Q n=Fin n→ℝ，Z n=Q n×Q n，invMass m v i=(m i)^{-1}v i；verlet 的位置分量为 z.1+h•invMass m z.2+(h²/2)•invMass m(F z.1)，动量分量为 z.2+(h/2)•(F z.1+F qnew)。grad U q i=(fderiv ℝ U q)(Pi.single i 1)。本地 Ch03.lean:1419–1420 的 collisionQuadraticPath 与依赖 MolecularDynamics/Chapter03/ReviewDefinitions.lean:3649–3650 相同。令 z=(q,p)、F=−grad U、M 为坐标质量对角矩阵，即逐坐标得到式(3.18)，且确实是 Verlet 的位置分量；各粒子的坐标块由整个位形向量取出。一般 F 和全体实数 t 是公式的参数化延拓，不另声称任意 F 都来自势或任意零质量具有物理意义。原定义本身没有量词结论或[EXTRA]/[ERRATUM?]。这是定义，无 sorry 证明义务；本判定为签名／定义语义审计。
+网站原返回（对应其审校版本）：PASS；已展开 Ch03\_deps.txt 的 MolecularDynamics/Chapter02/ReviewDefinitions.lean：Q n=Fin n→ℝ，Z n=Q n×Q n，invMass m v i=(m i)^{-1}v i；verlet 的位置分量为 z.1+h•invMass m z.2+(h²/2)•invMass m(F z.1)，动量分量为 z.2+(h/2)•(F z.1+F qnew)。grad U q i=(fderiv ℝ U q)(Pi.single i 1)。本地 Ch03.lean:1419–1420 的 collisionQuadraticPath 与依赖 MolecularDynamics/Chapter03/ReviewDefinitions.lean:3649–3650 相同。令 z=(q,p)、F=−grad U、M 为坐标质量对角矩阵，即逐坐标得到式(3.18)，且确实是 Verlet 的位置分量；各粒子的坐标块由整个位形向量取出。一般 F 和全体实数 t 是公式的参数化延拓，不另声称任意 F 都来自势或任意零质量具有物理意义。原定义本身没有量词结论或[EXTRA]/[ERRATUM?]。这是定义，无 sorry 证明义务；本判定为签名／定义语义审计。
 
 ### 7. 状态与证明位置
 
@@ -8111,7 +8760,12 @@ self-contained；`MD.Ch03.collisionQuadraticPath`：定义。
 ### 2. 原文陈述
 
 > It is then possible to calculate the collision times by solving equations
-> \[\|Q_i(t)-Q_j(t)\|=\sigma_i+\sigma_j,\qquad i\ne j.\tag{3.19}\]
+
+$$
+\|Q_i(t)-Q_j(t)\|=\sigma_i+\sigma_j,\qquad i\ne j.\tag{3.19}
+$$
+
+
 
 ### 3. 原文证明
 
@@ -8130,7 +8784,7 @@ def collisionTimeRelation {d : ℕ} (a b : ℝ → Position d) (radius t : ℝ) 
 
 | 原文成分 | Lean对应 | 说明 |
 |---|---|---|
-| 当前覆盖范围 | 本条所引原句及展示公式；单个记号归入context_notation。 | 仅承诺明确列出的数学内容 |
+| 当前覆盖范围 | 本条所引原句及展示公式；单个记号归入context\_notation。 | 仅承诺明确列出的数学内容 |
 | 对象、量词、假设和定义/结论 | `MD.Ch03.collisionTimeRelation` | 完整代码见第4段；两个版本独立列出 |
 
 [EXTRA] 无新增技术资格。
@@ -8175,7 +8829,7 @@ theorem collisionQuartic :
 
 | 原文成分 | Lean对应 | 说明 |
 |---|---|---|
-| 当前覆盖范围 | 本条所引原句及展示公式；单个记号归入context_notation。 | 仅承诺明确列出的数学内容 |
+| 当前覆盖范围 | 本条所引原句及展示公式；单个记号归入context\_notation。 | 仅承诺明确列出的数学内容 |
 | 对象、量词、假设和定义/结论 | `MD.Ch03.collisionQuartic` | 完整代码见第4段；两个版本独立列出 |
 | 技术资格或版本解释 | radius≥0保证平方不引入负半径伪根；四次最高系数可退化，degree≤4。 | [EXTRA] |
 
@@ -8186,7 +8840,7 @@ theorem collisionQuartic :
 本地限定解释与原文问题见上列范围及对照；逐声明编译、公理结果见第7段。
 
 网站：网站PASS（绑定版本 433a13ca6407）。
-网站原返回（对应其审校版本）：PASS；已展开 Position d=EuclideanSpace ℝ (Fin d)（MolecularDynamics/Notation.lean:844），inner ℝ 是其标准欧氏内积；collisionQuadraticPath 的二次项系数是 invMass m(F q)/2，invMass 的各坐标值为 F(q)_k/m_k。两粒子路径差因此写成 a+t•b+t²•c。Ch03.lean:1427–1432 和依赖 MolecularDynamics/Chapter03/Statements.lean:4496–4501 的命题完全一致，量词顺序为任意 d,a,b,c,R,t 后加 0≤R；结论是接触范数等式与完整四次系数表达式等于零的双向等价。依赖 MolecularDynamics/Chapter03/ReviewProofs.lean:4768 起实际展开 ‖a+tb+t²c‖²，系数依次为 ⟨c,c⟩、2⟨b,c⟩、⟨b,b⟩+2⟨a,c⟩、2⟨a,b⟩、⟨a,a⟩−R²，完全吻合。该命题不声称有根，也不替代各粒子对的枚举。[EXTRA] R≥0 必要且合理：物理半径和非负；若 R<0，平方方程可能有根而原范数等式不成立。[EXTRA]最高项可退化的说明合理：c=0 时是至多二次，不应给原文的泛称 quartic 强行增加 ⟨c,c⟩≠0。无[ERRATUM?]。本地包装引用 collisionQuartic_proved，已读该证明正文，相关证明体没有 sorry；没有运行编译，也不以证明存在代替语义核对。
+网站原返回（对应其审校版本）：PASS；已展开 Position d=EuclideanSpace ℝ (Fin d)（MolecularDynamics/Notation.lean:844），inner ℝ 是其标准欧氏内积；collisionQuadraticPath 的二次项系数是 invMass m(F q)/2，invMass 的各坐标值为 F(q)_k/m\_k。两粒子路径差因此写成 a+t•b+t²•c。Ch03.lean:1427–1432 和依赖 MolecularDynamics/Chapter03/Statements.lean:4496–4501 的命题完全一致，量词顺序为任意 d,a,b,c,R,t 后加 0≤R；结论是接触范数等式与完整四次系数表达式等于零的双向等价。依赖 MolecularDynamics/Chapter03/ReviewProofs.lean:4768 起实际展开 ‖a+tb+t²c‖²，系数依次为 ⟨c,c⟩、2⟨b,c⟩、⟨b,b⟩+2⟨a,c⟩、2⟨a,b⟩、⟨a,a⟩−R²，完全吻合。该命题不声称有根，也不替代各粒子对的枚举。[EXTRA] R≥0 必要且合理：物理半径和非负；若 R<0，平方方程可能有根而原范数等式不成立。[EXTRA]最高项可退化的说明合理：c=0 时是至多二次，不应给原文的泛称 quartic 强行增加 ⟨c,c⟩≠0。无[ERRATUM?]。本地包装引用 collisionQuartic\_proved，已读该证明正文，相关证明体没有 sorry；没有运行编译，也不以证明存在代替语义核对。
 
 ### 7. 状态与证明位置
 
@@ -8201,9 +8855,19 @@ checked+documented priors；`MD.Ch03.collisionQuartic`：已证。
 > [computes $h$ (the timestep) and $(Q,P)$ given a starting point $(q,p)$]
 > Calculate $\tau_c$ the time of next collision from the Verlet paths (quadratics) of (3.18) using collision conditions (3.19).
 > If $\tau_c<h_{\max}$, then
-> \[h:=\tau_c,\qquad(Q,P):=R_c\mathcal G_h^{\mathrm{Verlet}}(q,p)\]
+
+$$
+h:=\tau_c,\qquad(Q,P):=R_c\mathcal G_h^{\mathrm{Verlet}}(q,p)
+$$
+
+
 > else
-> \[h:=h_{\max},\qquad(Q,P):=\mathcal G_h^{\mathrm{Verlet}}(q,p).\]
+
+$$
+h:=h_{\max},\qquad(Q,P):=\mathcal G_h^{\mathrm{Verlet}}(q,p).
+$$
+
+
 
 ### 3. 原文证明
 
@@ -8293,7 +8957,7 @@ def collisionalVerletRelation_corrected {n : ℕ} (m : Fin n → ℝ) (F : Q n �
 本地限定解释与原文问题见上列范围及对照；逐声明编译、公理结果见第7段。
 
 网站：原书疑误/资格待导师；原文与修正版并列。
-网站原返回（对应其审校版本）：NEEDS_HUMAN；辅助collisionalVerletRelation精确保留0<tc、0<hmax、h=min(tc,hmax)和严格tc<hmax才反射的分支；m,F,Rc任意，故仅是参数化更新。physicalCVARelation已补正质量/半径、可微U及F的负微分对偶、初态非重叠、粒子二次路径、全体粒子对先前严格分离、唯一碰撞对（交换同一对除外）和质量加权弹性反射。particleVerlet与二次路径位置一致，particleReflection的法向两粒子分量相反，分母由正质量及接触距离正而非零。none分支要求所有正时间无接触，表示无未来根而非仅步长内无根；some允许tc超过hmax，不会误反射。tc=hmax严格走else忠实于原书；但下一步从接触初态选严格正根可能遗漏即时反射，算法边界疑点保留。额外排除多重碰撞、要求初态合法和保守力均明确披露，未声称阶数或求根实现。
+网站原返回（对应其审校版本）：NEEDS\_HUMAN；辅助collisionalVerletRelation精确保留0<tc、0<hmax、h=min(tc,hmax)和严格tc<hmax才反射的分支；m,F,Rc任意，故仅是参数化更新。physicalCVARelation已补正质量/半径、可微U及F的负微分对偶、初态非重叠、粒子二次路径、全体粒子对先前严格分离、唯一碰撞对（交换同一对除外）和质量加权弹性反射。particleVerlet与二次路径位置一致，particleReflection的法向两粒子分量相反，分母由正质量及接触距离正而非零。none分支要求所有正时间无接触，表示无未来根而非仅步长内无根；some允许tc超过hmax，不会误反射。tc=hmax严格走else忠实于原书；但下一步从接触初态选严格正根可能遗漏即时反射，算法边界疑点保留。额外排除多重碰撞、要求初态合法和保守力均明确披露，未声称阶数或求根实现。
 
 ### 7. 状态与证明位置
 
@@ -8388,7 +9052,7 @@ theorem collisionalVerletOrder_corrected :
 本地限定解释与原文问题见上列范围及对照；逐声明编译、公理结果见第7段。
 
 网站：原书疑误/资格待导师；原文与修正版并列。
-网站原返回（对应其审校版本）：FAIL；已读本地 Ch03.lean:1445–1468 及依赖 MolecularDynamics/Chapter03/Statements.lean:4508–4530，并展开所有专用定义。Q n=Fin n→ℝ，Z n=Q n×Q n；positiveMass m 为 ∀i,0<m i；grad U q i=(fderiv ℝ U q)(Pi.single i 1)；invMass m v i=v i/m i；collisionQuadraticPath 与 verlet 如式(3.18)及完整速度 Verlet 更新。oneStepIterate G h z j=(G h)^[j]z（MolecularDynamics/Chapter02/OneStepConvergence.lean:1443–1444），所以这里迭代的 h 参数是固定外层 hmax，实际累计时间另由 times 的 min(tc,hmax) 递推。admissibleCollisionState（Statements.lean:4464–4465）为 g(q)>0 或 g(q)=0 且 ∑ grad g(q)_i p_i/m_i>0。finiteCollisionTrajectory（4431–4440）只要求 q 在闭区间连续、g(q)≥0、在开区间非事件处满足 Newton ODE，并在有限 events 的每个内部事件有接触、左右动量极限、负入射法向速度及弹性左右极限关系；它不规定 p 在端点的值／连续性，不规定事件处 p(t) 取哪侧，也没有“所有接触恰为 events”的双向资格。签名再要求每个 admissible 状态都有有限最小正二次路径根 tc，明确给出 Rc 的质量加权反射公式，并要求所有 h>0、所有状态满足分支关系。结论是存在统一 C,δ，在合格自适应网格上允许 θ:ℝ≃oℝ 的 O(hmax²) 时间对齐后，全相空间节点误差 O(hmax²)，且 θ 固定0和τ。定义全部已找到，不需要 NEEDS_HUMAN。
+网站原返回（对应其审校版本）：FAIL；已读本地 Ch03.lean:1445–1468 及依赖 MolecularDynamics/Chapter03/Statements.lean:4508–4530，并展开所有专用定义。Q n=Fin n→ℝ，Z n=Q n×Q n；positiveMass m 为 ∀i,0<m i；grad U q i=(fderiv ℝ U q)(Pi.single i 1)；invMass m v i=v i/m i；collisionQuadraticPath 与 verlet 如式(3.18)及完整速度 Verlet 更新。oneStepIterate G h z j=(G h)^[j]z（MolecularDynamics/Chapter02/OneStepConvergence.lean:1443–1444），所以这里迭代的 h 参数是固定外层 hmax，实际累计时间另由 times 的 min(tc,hmax) 递推。admissibleCollisionState（Statements.lean:4464–4465）为 g(q)>0 或 g(q)=0 且 ∑ grad g(q)_i p\_i/m\_i>0。finiteCollisionTrajectory（4431–4440）只要求 q 在闭区间连续、g(q)≥0、在开区间非事件处满足 Newton ODE，并在有限 events 的每个内部事件有接触、左右动量极限、负入射法向速度及弹性左右极限关系；它不规定 p 在端点的值／连续性，不规定事件处 p(t) 取哪侧，也没有“所有接触恰为 events”的双向资格。签名再要求每个 admissible 状态都有有限最小正二次路径根 tc，明确给出 Rc 的质量加权反射公式，并要求所有 h>0、所有状态满足分支关系。结论是存在统一 C,δ，在合格自适应网格上允许 θ:ℝ≃oℝ 的 O(hmax²) 时间对齐后，全相空间节点误差 O(hmax²)，且 θ 固定0和τ。定义全部已找到，不需要 NEEDS\_HUMAN。
 [EXTRA]正质量、光滑势／接触函数和有限非切向实际事件，是可用于限定二阶论断的合理资格，但数值根没有横截条件；所谓“有限横截隔离事件”只保证列出的实际 events，而不排除漏列接触。排除 tc=hmax 如实避开原书未反射边界，得到的是额外限定版本；时间对齐在结论中而非前提中，不能冒充原书明示的同时间二阶误差定义。要求对所有 admissible 状态必有有限未来根不必要且过强，排除了自由静止或永不相撞的合法状态，宜按有限窗口／可选接触表示。
 更直接地，现有签名为假：finiteCollisionTrajectory 没有约束终点动量，却在结论中强制比较该终点动量，下面反例满足全部现有前提。原书的概括性论断不能由这一失真的轨迹对象承载。[ERRATUM?]本条无该标签；保留原书严格分支，不因本次签名反例给原书添加未经依据的勘误。该 theorem 的证明体为 sorry，这是独立的证明完成度问题，FAIL 来自定义／结论反例而非 sorry。
 
@@ -8443,7 +9107,7 @@ def pairForceDecoupling_corrected (φ α β : ℝ → ℝ) (contact : ℝ) : Pro
 本地限定解释与原文问题见上列范围及对照；逐声明编译、公理结果见第7段。
 
 网站：原书疑误/资格待导师；原文与修正版并列。
-网站原返回（对应其审校版本）：NEEDS_HUMAN；Ch03.lean:1467–1468展开为对每个实数r有φ(r)=α(r)+β(r)，且deriv α contact=0；无其他封装定义。contact作为σ_i+σ_j的参数化是合理抽象，但定义只保留展示公式的α′条件，没有解决原文“second term”应指β而后句又让β负责kick的矛盾。[ERRATUM?]冲突经PDF确认成立；需数学判断究竟修改文字“second”为“first”，还是修改公式α′为β′，两者会产生不同算法。另需注意Lean的deriv是全函数，未可微处取0；原书谈导数的语义需适当可微条件。无[EXTRA]。这是定义而非含sorry的定理，签名问题独立于证明状态。所需定义均已找到，NEEDS_HUMAN的原因仅为上述原书问题。
+网站原返回（对应其审校版本）：NEEDS\_HUMAN；Ch03.lean:1467–1468展开为对每个实数r有φ(r)=α(r)+β(r)，且deriv α contact=0；无其他封装定义。contact作为σ\_i+σ\_j的参数化是合理抽象，但定义只保留展示公式的α′条件，没有解决原文“second term”应指β而后句又让β负责kick的矛盾。[ERRATUM?]冲突经PDF确认成立；需数学判断究竟修改文字“second”为“first”，还是修改公式α′为β′，两者会产生不同算法。另需注意Lean的deriv是全函数，未可微处取0；原书谈导数的语义需适当可微条件。无[EXTRA]。这是定义而非含sorry的定理，签名问题独立于证明状态。所需定义均已找到，NEEDS\_HUMAN的原因仅为上述原书问题。
 
 ### 7. 状态与证明位置
 
@@ -8525,7 +9189,7 @@ theorem decoupledOrder_corrected :
 本地限定解释与原文问题见上列范围及对照；逐声明编译、公理结果见第7段。
 
 网站：原书疑误/资格待导师；原文与修正版并列。
-网站原返回（对应其审校版本）：FAIL；依赖Ch03_deps.txt已展开：ReviewDefinitions中的Q n=Fin n→ℝ，Z n=Q n×Q n，grad U q i=(fderiv ℝ U q)(Pi.single i 1)，invMass m v i=v_i/m_i，positiveMass为逐分量正质量；Statements中的finiteCollisionTrajectory要求q在闭区间连续、g(q)≥0、非事件开区间内q′=M⁻¹p及p′=F(q)，有限事件具有入射负法向速度、左右极限和弹性反射；但不约束p在0、τ或事件时刻的实际取值，也不要求端点动量连续。collisionalGlobalOrder展开为∃C>0、ν₀>0，对每个ν≥ν₀存在保序双射θ，固定0和τ且|θ(t)−t|≤C(τ/ν)^2，所有j≤ν的数值状态与(q,p)(θ(jτ/ν))误差≤C(τ/ν)^2；oneStepIterate是真正从(q0,p0)迭代(G h)^j。以下无碰撞反例已否定签名。[EXTRA]正质量、有限横截事件、光滑性和允许O(h²)时间对齐可作为明确的局部适用条件，但Gfree被假设为任意时长的精确V碰撞流，结论使用步首步尾U半kick，未给出原书α的二次Verlet碰撞检测及在碰撞点施加β kick的混合法。边界法向条件是质量加权grad g·M⁻¹grad U=0，需说明它与原书u_⊥的坐标/质量约定，不能直接认作原书未加权点积。并且对所有g≥0状态要求全时长Gfree远强于有限横截局部问题；缺少右连续及端点实际动量约定。[ERRATUM?]原书α/β矛盾确实存在，需另行裁定，但此FAIL不依赖其裁定。Ch03.lean:1485后为sorry；未证明状态与上述语义失败分别记录。
+网站原返回（对应其审校版本）：FAIL；依赖Ch03\_deps.txt已展开：ReviewDefinitions中的Q n=Fin n→ℝ，Z n=Q n×Q n，grad U q i=(fderiv ℝ U q)(Pi.single i 1)，invMass m v i=v\_i/m\_i，positiveMass为逐分量正质量；Statements中的finiteCollisionTrajectory要求q在闭区间连续、g(q)≥0、非事件开区间内q′=M⁻¹p及p′=F(q)，有限事件具有入射负法向速度、左右极限和弹性反射；但不约束p在0、τ或事件时刻的实际取值，也不要求端点动量连续。collisionalGlobalOrder展开为∃C>0、ν₀>0，对每个ν≥ν₀存在保序双射θ，固定0和τ且|θ(t)−t|≤C(τ/ν)^2，所有j≤ν的数值状态与(q,p)(θ(jτ/ν))误差≤C(τ/ν)^2；oneStepIterate是真正从(q0,p0)迭代(G h)^j。以下无碰撞反例已否定签名。[EXTRA]正质量、有限横截事件、光滑性和允许O(h²)时间对齐可作为明确的局部适用条件，但Gfree被假设为任意时长的精确V碰撞流，结论使用步首步尾U半kick，未给出原书α的二次Verlet碰撞检测及在碰撞点施加β kick的混合法。边界法向条件是质量加权grad g·M⁻¹grad U=0，需说明它与原书u_⊥的坐标/质量约定，不能直接认作原书未加权点积。并且对所有g≥0状态要求全时长Gfree远强于有限横截局部问题；缺少右连续及端点实际动量约定。[ERRATUM?]原书α/β矛盾确实存在，需另行裁定，但此FAIL不依赖其裁定。Ch03.lean:1485后为sorry；未证明状态与上述语义失败分别记录。
 
 ### 7. 状态与证明位置
 
@@ -8537,7 +9201,12 @@ incomplete；`MD.Ch03.decoupledOrder`：未证（原书疑误不证）；`MD.Ch0
 ### 2. 原文陈述
 
 > In particular, one may use the backward error analysis to obtain a modified Hamiltonian $\widetilde H_h$ corresponding to the Verlet method with stepsize $h$, then to project during collisions not onto the energy surface, but onto the modified energy surface, so that
-> \[\widetilde H_h\equiv\mathrm{const}.\]
+
+$$
+\widetilde H_h\equiv\mathrm{const}.
+$$
+
+
 > (In practice, a low order approximation of $\widetilde H_h$ is used, such as the truncation to terms of order four or six in the stepsize.)
 
 ### 3. 原文证明
@@ -8562,20 +9231,20 @@ def modifiedCollisionProjection {n : ℕ} (H : SymplecticCoordinates n → ℝ)
 |---|---|---|
 | 当前覆盖范围 | [EXTRA] 通用有限截断Hamiltonian等值辅助关系；不覆盖原段Verlet专属修正系数、投影存在唯一、变步长共同修正能量或统计精度。 | 仅承诺明确列出的数学内容 |
 | 对象、量词、假设和定义/结论 | `MD.Ch03.modifiedCollisionProjection` | 完整代码见第4段；两个版本独立列出 |
-| 技术资格或版本解释 | [EXTRA] [EXTRA] 通用有限截断Hamiltonian等值辅助关系；不覆盖原段Verlet专属修正系数、投影存在唯一、变步长共同修正能量或统计精度。 未覆盖内容已列coverage_gaps；原引文保留。 | [EXTRA] |
+| 技术资格或版本解释 | [EXTRA] [EXTRA] 通用有限截断Hamiltonian等值辅助关系；不覆盖原段Verlet专属修正系数、投影存在唯一、变步长共同修正能量或统计精度。 未覆盖内容已列coverage\_gaps；原引文保留。 | [EXTRA] |
 | 尚未覆盖的结论 | Hj为Verlet修正系数的资格绑定 | 覆盖缺口，未声称已证明 |
 | 尚未覆盖的结论 | 四阶/六阶截断专属选择 | 覆盖缺口，未声称已证明 |
 | 尚未覆盖的结论 | 投影存在唯一性 | 覆盖缺口，未声称已证明 |
 | 尚未覆盖的结论 | 整个变步长轨道共同修正能量及BEA/统计精度 | 覆盖缺口，未声称已证明 |
 
-[EXTRA] [EXTRA] [EXTRA] 通用有限截断Hamiltonian等值辅助关系；不覆盖原段Verlet专属修正系数、投影存在唯一、变步长共同修正能量或统计精度。 未覆盖内容已列coverage_gaps；原引文保留。
+[EXTRA] [EXTRA] [EXTRA] 通用有限截断Hamiltonian等值辅助关系；不覆盖原段Verlet专属修正系数、投影存在唯一、变步长共同修正能量或统计精度。 未覆盖内容已列coverage\_gaps；原引文保留。
 
 ### 6. 审计结论
 
-本轮修复：[EXTRA] 通用有限截断Hamiltonian等值辅助关系；不覆盖原段Verlet专属修正系数、投影存在唯一、变步长共同修正能量或统计精度。 未覆盖内容已列coverage_gaps；原引文保留。
+本轮修复：[EXTRA] 通用有限截断Hamiltonian等值辅助关系；不覆盖原段Verlet专属修正系数、投影存在唯一、变步长共同修正能量或统计精度。 未覆盖内容已列coverage\_gaps；原引文保留。
 
 网站：按网站审校意见修复，本地核验通过（未再送网站）。
-网站原返回（对应其审校版本）：FAIL；modifiedCollisionProjection对任意相空间维数、任意H/Hj、任意自然r,k、实h和两状态，仅定义H(w)+∑j∈[r,k]h^jHj(w)=同一表达式在z的值。等值关系本身正确，并不保证投影存在唯一，context对此已披露；但Hj与Verlet没有任何资格绑定，r,k也不指定四阶/六阶或Verlet偶次修正，因而不能表达所引“Verlet对应的修正Hamiltonian”的完整结论。当前statement_scope仍泛指整段，[EXTRA]为空，遗漏的是核心对象资格，不是要求补证明。即便关系成立也不能推出整个变步长轨道有一个共同修正能量，更不能推出BEA/统计精度。
+网站原返回（对应其审校版本）：FAIL；modifiedCollisionProjection对任意相空间维数、任意H/Hj、任意自然r,k、实h和两状态，仅定义H(w)+∑j∈[r,k]h^jHj(w)=同一表达式在z的值。等值关系本身正确，并不保证投影存在唯一，context对此已披露；但Hj与Verlet没有任何资格绑定，r,k也不指定四阶/六阶或Verlet偶次修正，因而不能表达所引“Verlet对应的修正Hamiltonian”的完整结论。当前statement\_scope仍泛指整段，[EXTRA]为空，遗漏的是核心对象资格，不是要求补证明。即便关系成立也不能推出整个变步长轨道有一个共同修正能量，更不能推出BEA/统计精度。
 
 ### 7. 状态与证明位置
 
@@ -8587,7 +9256,12 @@ self-contained；`MD.Ch03.modifiedCollisionProjection`：定义。
 ### 2. 原文陈述
 
 > The hard sphere system described by
-> \[H_{\mathrm{free}}=p^TM^{-1}p/2+U_{\mathrm{h.s.}}\]
+
+$$
+H_{\mathrm{free}}=p^TM^{-1}p/2+U_{\mathrm{h.s.}}
+$$
+
+
 > consists of purely ballistic (straight line) motion punctuated by momentum jumps.
 
 ### 3. 原文证明
@@ -8648,7 +9322,7 @@ def freeHardSphereHamiltonian_corrected {N d : ℕ} (m σ : Fin N → ℝ)
 本地限定解释与原文问题见上列范围及对照；逐声明编译、公理结果见第7段。
 
 网站：原书疑误/资格待导师；原文与修正版并列。
-网站原返回（对应其审校版本）：NEEDS_HUMAN；主定义对正质量、N个d维位置和动量给出原印≤障碍的自由Hamiltonian，有限区动能∑‖pi‖²/(2mi)及WithTop ℝ编码正确。ballistic辅助对所有t给出q_i(t)=q_i+t p_i/mi的全局导数及常动量导数0，公式正确；它是自由段ODE公式，不声称直线路径穿过障碍仍是实际硬球轨道。contactAllowed辅助保留闭可行域版本；其自身未带正质量前提，作为实全除法定义有意义，物理使用须另加正质量。scope已明确接触反射由其他条目承担。旧[EXTRA]第一项说主版本沿用p132接触允许，与当前主定义矛盾，应更正；原印边界冲突仍须人工处理。
+网站原返回（对应其审校版本）：NEEDS\_HUMAN；主定义对正质量、N个d维位置和动量给出原印≤障碍的自由Hamiltonian，有限区动能∑‖pi‖²/(2mi)及WithTop ℝ编码正确。ballistic辅助对所有t给出q\_i(t)=q\_i+t p\_i/mi的全局导数及常动量导数0，公式正确；它是自由段ODE公式，不声称直线路径穿过障碍仍是实际硬球轨道。contactAllowed辅助保留闭可行域版本；其自身未带正质量前提，作为实全除法定义有意义，物理使用须另加正质量。scope已明确接触反射由其他条目承担。旧[EXTRA]第一项说主版本沿用p132接触允许，与当前主定义矛盾，应更正；原印边界冲突仍须人工处理。
 
 ### 7. 状态与证明位置
 

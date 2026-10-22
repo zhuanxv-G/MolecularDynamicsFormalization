@@ -1,4 +1,4 @@
-| source_id | 标签 | 审计判定 | 最终状态 |
+| source\_id | 标签 | 审计判定 | 最终状态 |
 |---|---|---|---|
 | MD-1.5.3-Thm1.1 | Theorem 1.1 | PENDING | incomplete |
 | MD-1.2-EnergyConservation | 未编号结论 | PENDING | incomplete |
@@ -39,7 +39,7 @@ theorem MD.Ch01.theorem_1_1 {n : ℕ} (m : CoordinateMasses n) (U : PotentialEne
 
 | 原文成分 | Lean 对应 | 备注（[EXTRA]/[ERRATUM?]/一致） |
 |---|---|---|
-| 位置、动量相空间；固定质量动能+势能系统 | Position n、Momentum n、PhaseSpace n；mechanicalVectorField m (-gradient U) | 一致；n=N_c，三维原子系统n=3N |
+| 位置、动量相空间；固定质量动能+势能系统 | Position n、Momentum n、PhaseSpace n；mechanicalVectorField m (-gradient U) | 一致；n=N\_c，三维原子系统n=3N |
 | q*为强局部极小；存在正半径；穿孔邻域U(q)>U(q*) | hstrict : IsStrictPotentialMinOn U Q q₀ | 一致；定义展开含∀q∈Q、q≠q₀、dist<R；[EXTRA] q₀∈Q |
 | smooth potential U | hU : ∀ q∈Q, ContDiffAt ℝ ∞ U q | 一致；原文smooth明确写出 |
 | 正定质量的背景 | hm : ∀ i, 0<m i | [EXTRA] 定理句未重复，p.25背景明确；固定对角模型 |
@@ -47,21 +47,21 @@ theorem MD.Ch01.theorem_1_1 {n : ℕ} (m : CoordinateMasses n) (U : PotentialEne
 | z*=(q*,0)是平衡状态 | IsMechanicalEquilibrium ... (q₀,0) | 一致；原文stable以前提平衡点定义，补出隐含资格 |
 | ∀正ε，∃正δ，∀初值z₀；欧氏距离<δ | IsFutureMechanicalStableEuclidean的ε/δ/z₀量词 | 一致；正容差解释及欧氏phaseEuclideanDistance，非乘积最大距离 |
 | 所有t≥0的流存在 | 该稳定定义中的∃a<0、∃γ、IsMechanicalSolutionOn (Ioi a)、γ0=z₀ | 一致；显式未来存在，避免无解时稳定断言空真 |
-| sup(t≥0)\|\|F_t(z₀)-z*\|\|<ε | ∀同初值未来解，BddAbove(range ...) ∧ sSup(range ...)<ε | 一致；有界性保护实数sSup，严格<保留；尚待独立语义审计 |
+| sup(t≥0)\|\|F\_t(z₀)-z*\|\|<ε | ∀同初值未来解，BddAbove(range ...) ∧ sSup(range ...)<ε | 一致；有界性保护实数sSup，严格<保留；尚待独立语义审计 |
 
 ### 5. 审计结论
 
 原文 JSON：DRAFT；MathCopilot只读审计：PENDING；frozen=false。
 
-等待PILOT_ALL单一返回数组，按A原文审校再C语义审计整合；模板B已取消，尚无网站PASS。
+等待PILOT\_ALL单一返回数组，按A原文审校再C语义审计整合；模板B已取消，尚无网站PASS。
 
-- json_review：PENDING；任务 `PILOT_ALL`；返回件 尚未收到。
+- json\_review：PENDING；任务 `PILOT_ALL`；返回件 尚未收到。
 
-- blueprint_translation：CANCELLED_NOT_REQUIRED；任务 `T_blueprint_MD-1.5.3-Thm1.1`；返回件 尚未收到。
+- blueprint\_translation：CANCELLED\_NOT\_REQUIRED；任务 `T_blueprint_MD-1.5.3-Thm1.1`；返回件 尚未收到。
 
-- semantic_review：PENDING；任务 `PILOT_ALL`；返回件 尚未收到。
+- semantic\_review：PENDING；任务 `PILOT_ALL`；返回件 尚未收到。
 
-- PAGE_SPAN_CORRECTION：用户范围31–32/54–55是背景跨度；定理与证明思路均仅32/55。（local_verified）。
+- PAGE\_SPAN\_CORRECTION：用户范围31–32/54–55是背景跨度；定理与证明思路均仅32/55。（local\_verified）。
 
 ### 6. 最终状态与证明位置
 
@@ -89,7 +89,12 @@ Blueprint声明/证明位置：`Blueprint/Ch01.lean:54`。
 
 ### 2. 原文证明
 
-> \[\frac{\mathrm{d}}{\mathrm{d}t}E=\sum_{j=1}^{N}m_j\dot{\boldsymbol{q}}_j\cdot\ddot{\boldsymbol{q}}_j+\sum_{j=1}^{N}\frac{\partial U}{\partial\boldsymbol{q}_j}\cdot\dot{\boldsymbol{q}}_j=\sum_{j=1}^{N}\left(m_j\ddot{\boldsymbol{q}}_j+\frac{\partial U}{\partial\boldsymbol{q}_j}\right)\cdot\dot{\boldsymbol{q}}_j=0.\]
+
+$$
+\frac{\mathrm{d}}{\mathrm{d}t}E=\sum_{j=1}^{N}m_j\dot{\boldsymbol{q}}_j\cdot\ddot{\boldsymbol{q}}_j+\sum_{j=1}^{N}\frac{\partial U}{\partial\boldsymbol{q}_j}\cdot\dot{\boldsymbol{q}}_j=\sum_{j=1}^{N}\left(m_j\ddot{\boldsymbol{q}}_j+\frac{\partial U}{\partial\boldsymbol{q}_j}\right)\cdot\dot{\boldsymbol{q}}_j=0.
+$$
+
+
 
 原文紧接陈述给出完整导数计算；PDF字体记录确认能量函数为数学斜体E。
 
@@ -116,7 +121,7 @@ theorem MD.Ch01.energy_conservation {n : ℕ} (m : CoordinateMasses n) (U : Pote
 | 质量正性 | hm : ∀i,0<m i | [EXTRA] 逆质量辅助重写；可考虑直接牛顿证明是否能减少此额外前提 |
 | 势能偏导/链式法则 | hU : ∀x∈Q,DifferentiableAt ℝ U x | [EXTRA] 原文导数计算的隐含前提 |
 | 解的存在时间和任意比较时间 | Ioo a b；∀s∈Ioo a b，∀t∈Ioo a b | [EXTRA] 显式开连通区间；仅在同一解区间内比较 |
-| 式(1.4)位置-速度总能量 | nBodyTotalEnergy m U (q t) (deriv q t) | 一致；使用massHamiltonian_massOperator证明两种表示相同 |
+| 式(1.4)位置-速度总能量 | nBodyTotalEnergy m U (q t) (deriv q t) | 一致；使用massHamiltonian\_massOperator证明两种表示相同 |
 | its derivative vanishes；dE/dt=0 | ∀t∈Ioo a b,HasDerivAt (fun s=>nBodyTotalEnergy ...) 0 t | 一致；实际导数为零 |
 | the energy is conserved | ∀s,t在区间内，nBodyTotalEnergy(s)=nBodyTotalEnergy(t) | 一致；完整守恒子句 |
 
@@ -124,13 +129,13 @@ theorem MD.Ch01.energy_conservation {n : ℕ} (m : CoordinateMasses n) (U : Pote
 
 原文 JSON：DRAFT；MathCopilot只读审计：PENDING；frozen=false。
 
-等待PILOT_ALL单一返回数组，按A原文审校再C语义审计整合；模板B已取消，尚无网站PASS。
+等待PILOT\_ALL单一返回数组，按A原文审校再C语义审计整合；模板B已取消，尚无网站PASS。
 
-- json_review：PENDING；任务 `PILOT_ALL`；返回件 尚未收到。
+- json\_review：PENDING；任务 `PILOT_ALL`；返回件 尚未收到。
 
-- blueprint_translation：CANCELLED_NOT_REQUIRED；任务 `T_blueprint_MD-1.2-EnergyConservation`；返回件 尚未收到。
+- blueprint\_translation：CANCELLED\_NOT\_REQUIRED；任务 `T_blueprint_MD-1.2-EnergyConservation`；返回件 尚未收到。
 
-- semantic_review：PENDING；任务 `PILOT_ALL`；返回件 尚未收到。
+- semantic\_review：PENDING；任务 `PILOT_ALL`；返回件 尚未收到。
 
 ### 6. 最终状态与证明位置
 
@@ -161,7 +166,12 @@ Blueprint声明/证明位置：`Blueprint/Ch01.lean:72`。
 ### 1. 原文陈述
 
 > The equations of motion may be expressed in terms of the Lagrangian as:
-> \[\frac{\mathrm{d}}{\mathrm{d}t}\frac{\partial L}{\partial\dot{\boldsymbol{q}}}=\frac{\partial L}{\partial\boldsymbol{q}}.\]
+
+$$
+\frac{\mathrm{d}}{\mathrm{d}t}\frac{\partial L}{\partial\dot{\boldsymbol{q}}}=\frac{\partial L}{\partial\boldsymbol{q}}.
+$$
+
+
 > (Note that this must be interpreted in general as a set of $N_c=3N$ equations, one for each atomic coordinate.)
 
 ### 2. 原文证明
@@ -185,26 +195,26 @@ theorem MD.Ch01.newton_iff_euler_lagrange {n : ℕ} (m : CoordinateMasses n)
 | 原文成分 | Lean 对应 | 备注（[EXTRA]/[ERRATUM?]/一致） |
 |---|---|---|
 | 系统(1.3)，L定义于p.22 | m、U；massLagrangian=动能-U | 一致；当前条处于固定质量，未替换为之后一般坐标M(q) |
-| q(t)及全部Nc个坐标 | q : ℝ→Position n；向量等式；n=N_c | 一致；三维原子场景n=3N，坐标质量展开待审 |
+| q(t)及全部Nc个坐标 | q : ℝ→Position n；向量等式；n=N\_c | 一致；三维原子场景n=3N，坐标质量展开待审 |
 | 正质量 | hm | [EXTRA] 使用相空间互逆质量算子 |
 | 势能位置偏导 | hU | [EXTRA] U在Q每点可微 |
 | 时间导数 | hI : IsOpen I | [EXTRA] two-sided导数，避免within在边界退化 |
 | Newton二阶轨迹定义 | IsNewtonTrajectoryOn；HasDerivAt q，HasDerivAt (deriv q)，M q̈=-∇U | 一致；不是仅total deriv方程 |
-| Newton → d/dt(∂L/∂q̇)=∂L/∂q | ↔左到右；IsEulerLagrangeTrajectoryOn展开含真实导数 | 一致；复用mechanicalSolution_eulerLagrange |
-| 运动方程可表达为Euler–Lagrange；反向等价 | ↔右到左；eulerLagrange_to_mechanicalSolution再回Newton | 一致；反向未遗漏 |
+| Newton → d/dt(∂L/∂q̇)=∂L/∂q | ↔左到右；IsEulerLagrangeTrajectoryOn展开含真实导数 | 一致；复用mechanicalSolution\_eulerLagrange |
+| 运动方程可表达为Euler–Lagrange；反向等价 | ↔右到左；eulerLagrange\_to\_mechanicalSolution再回Newton | 一致；反向未遗漏 |
 | 每条方程/位置域 | 两个轨迹谓词都要求∀t∈I,q t∈Q，随后∀t∈I | 一致；量词与域一致 |
 
 ### 5. 审计结论
 
 原文 JSON：DRAFT；MathCopilot只读审计：PENDING；frozen=false。
 
-等待PILOT_ALL单一返回数组，按A原文审校再C语义审计整合；模板B已取消，尚无网站PASS。
+等待PILOT\_ALL单一返回数组，按A原文审校再C语义审计整合；模板B已取消，尚无网站PASS。
 
-- json_review：PENDING；任务 `PILOT_ALL`；返回件 尚未收到。
+- json\_review：PENDING；任务 `PILOT_ALL`；返回件 尚未收到。
 
-- blueprint_translation：CANCELLED_NOT_REQUIRED；任务 `T_blueprint_MD-1.3-NewtonEulerLagrange`；返回件 尚未收到。
+- blueprint\_translation：CANCELLED\_NOT\_REQUIRED；任务 `T_blueprint_MD-1.3-NewtonEulerLagrange`；返回件 尚未收到。
 
-- semantic_review：PENDING；任务 `PILOT_ALL`；返回件 尚未收到。
+- semantic\_review：PENDING；任务 `PILOT_ALL`；返回件 尚未收到。
 
 ### 6. 最终状态与证明位置
 
@@ -237,17 +247,37 @@ Blueprint声明/证明位置：`Blueprint/Ch01.lean:108`。
 ### 1. 原文陈述
 
 > If $\boldsymbol{M}(\boldsymbol{q})$ is invertible, the supremum is achieved precisely when
-> \[\boldsymbol{v}=\boldsymbol{M}^{-1}(\boldsymbol{q})\boldsymbol{p},\]
+
+$$
+\boldsymbol{v}=\boldsymbol{M}^{-1}(\boldsymbol{q})\boldsymbol{p},
+$$
+
+
 > which gives the standard definition of the momentum vector $\boldsymbol{p}$ in terms of velocities,
-> \[\boldsymbol{p}=\frac{\partial L}{\partial\dot{\boldsymbol{q}}}=\boldsymbol{M}(\boldsymbol{q})\dot{\boldsymbol{q}},\]
+
+$$
+\boldsymbol{p}=\frac{\partial L}{\partial\dot{\boldsymbol{q}}}=\boldsymbol{M}(\boldsymbol{q})\dot{\boldsymbol{q}},
+$$
+
+
 > and, with $\boldsymbol{v}=\boldsymbol{M}^{-1}(\boldsymbol{q})\boldsymbol{p}$, the Legendre transformation results in a new function
-> \[H(\boldsymbol{q},\boldsymbol{p})\stackrel{\mathrm{def}}{=}\boldsymbol{p}^TM(\boldsymbol{q})^{-1}\boldsymbol{p}/2+U(\boldsymbol{q}).\]
+
+$$
+H(\boldsymbol{q},\boldsymbol{p})\stackrel{\mathrm{def}}{=}\boldsymbol{p}^TM(\boldsymbol{q})^{-1}\boldsymbol{p}/2+U(\boldsymbol{q}).
+$$
+
+
 > This is precisely the energy function, written in terms of positions and momenta.
 
 ### 2. 原文证明
 
 > In the case of the Lagrangian $L(\boldsymbol{q},\boldsymbol{v})=\boldsymbol{v}^TM(\boldsymbol{q})\boldsymbol{v}/2-U(\boldsymbol{q})$ (which we have seen is the formulation of a mechanical system in generalized coordinates) we find
-> \[\sup_{\boldsymbol{v}}(\boldsymbol{p}^T\boldsymbol{v}-(\boldsymbol{v}^TM(\boldsymbol{q})\boldsymbol{v}/2-U(\boldsymbol{q})))=\sup_{\boldsymbol{v}}(\boldsymbol{p}^T\boldsymbol{v}-\boldsymbol{v}^TM(\boldsymbol{q})\boldsymbol{v}/2)+U(\boldsymbol{q}).\]
+
+$$
+\sup_{\boldsymbol{v}}(\boldsymbol{p}^T\boldsymbol{v}-(\boldsymbol{v}^TM(\boldsymbol{q})\boldsymbol{v}/2-U(\boldsymbol{q})))=\sup_{\boldsymbol{v}}(\boldsymbol{p}^T\boldsymbol{v}-\boldsymbol{v}^TM(\boldsymbol{q})\boldsymbol{v}/2)+U(\boldsymbol{q}).
+$$
+
+
 
 仅有上述代数推导；原文没有证明“可逆即达到上确界”或唯一性。
 
@@ -279,28 +309,28 @@ theorem MD.Ch01.hamiltonian_legendre_transform {n : ℕ}
 | q,p；对v取上确界 | q,p后给hM；range(fun v:Velocity n=>inner p v-L) | 一致；q固定后优化v |
 | If M(q) is invertible | hM : IsUnit (M q) | [ERRATUM?] 字面前提；没有静默加入正定/对称/凸性；需审计上下文是否继承它们 |
 | L(q,v)=vᵀM(q)v/2-U(q) | variableMassLagrangian、matrixAction | 一致；直接矩阵二次型 |
-| sup_v(pᵀv-L)且sup achieved | BddAbove(range ...) ∧ sSup(range ...)=H | 一致；有界保护避免实数sSup对无界集退化 |
+| sup\_v(pᵀv-L)且sup achieved | BddAbove(range ...) ∧ sSup(range ...)=H | 一致；有界保护避免实数sSup对无界集退化 |
 | precisely when v=M(q)⁻¹p | ∀v,目标=H ↔ v=matrixAction (M q)⁻¹ p | 一致；完整唯一达到条件；但只可逆不足，未证 |
 | p=∂L/∂q̇=M(q)q̇ | ∀v,HasGradientAt L (matrixAction (M q) v) v；p=M(q)(M(q)⁻¹p) | 一致；动量是真实梯度；若M非对称需审计 |
 | H(q,p)=pᵀM(q)⁻¹p/2+U(q) | variableMassHamiltonian | 一致；逆矩阵作用于全矩阵 |
 | This is precisely the energy function | H=逆速度ᵀM(q)逆速度/2+U(q) | 一致；替换回速度能量的子句保留 |
-| 抽象Legendre的convex g及机械质量上下文 | 当前签名未并入凸性/正定，留在context_notation与issues | [ERRATUM?] 无界反例M=-1，必须先裁定/修复签名再复审冻结 |
+| 抽象Legendre的convex g及机械质量上下文 | 当前签名未并入凸性/正定，留在context\_notation与issues | [ERRATUM?] 无界反例M=-1，必须先裁定/修复签名再复审冻结 |
 
 ### 5. 审计结论
 
-原文 JSON：NEEDS_HUMAN；MathCopilot只读审计：PENDING；frozen=false。
+原文 JSON：NEEDS\_HUMAN；MathCopilot只读审计：PENDING；frozen=false。
 
-等待PILOT_ALL单一返回数组，按A原文审校再C语义审计整合；模板B已取消，尚无网站PASS。
+等待PILOT\_ALL单一返回数组，按A原文审校再C语义审计整合；模板B已取消，尚无网站PASS。
 
-- json_review：PENDING；任务 `PILOT_ALL`；返回件 尚未收到。
+- json\_review：PENDING；任务 `PILOT_ALL`；返回件 尚未收到。
 
-- blueprint_translation：CANCELLED_NOT_REQUIRED；任务 `T_blueprint_MD-1.4-LegendreHamiltonian`；返回件 尚未收到。
+- blueprint\_translation：CANCELLED\_NOT\_REQUIRED；任务 `T_blueprint_MD-1.4-LegendreHamiltonian`；返回件 尚未收到。
 
-- semantic_review：PENDING；任务 `PILOT_ALL`；返回件 尚未收到。
+- semantic\_review：PENDING；任务 `PILOT_ALL`；返回件 尚未收到。
 
-- POSSIBLE_ERRATUM：若只假设可逆，M=-1、p=0、U=0时目标=v²/2无上界；须确认同页凸性及p.23机械质量背景是否应并入假设。当前保留字面可逆陈述并标ERRATUM?，未静默加正定。（NEEDS_HUMAN）。
+- POSSIBLE\_ERRATUM：若只假设可逆，M=-1、p=0、U=0时目标=v²/2无上界；须确认同页凸性及p.23机械质量背景是否应并入假设。当前保留字面可逆陈述并标ERRATUM?，未静默加正定。（NEEDS\_HUMAN）。
 
-- REUSE_SCOPE_GAP：现有定理仅固定正对角m；本条保留任意配置相关M(q)、上界、sup、精确达到条件、动量偏导和能量对应，不能直接调用旧定理覆盖。（open）。
+- REUSE\_SCOPE\_GAP：现有定理仅固定正对角m；本条保留任意配置相关M(q)、上界、sup、精确达到条件、动量偏导和能量对应，不能直接调用旧定理覆盖。（open）。
 
 ### 6. 最终状态与证明位置
 
@@ -354,28 +384,28 @@ theorem MD.Ch01.flow_inverse {n : ℕ} (m : CoordinateMasses n) (U : PotentialEn
 
 | 原文成分 | Lean 对应 | 备注（[EXTRA]/[ERRATUM?]/一致） |
 |---|---|---|
-| classical systems；自治flow map F_t(ξ)解决(1.5) | IsGlobalMechanicalFlowOn m (-gradient U) Q S ψ；ψ:ℝ→PhaseSpace→PhaseSpace | 一致；保持分子Hamiltonian的保守力对象；全m维自治ODE的一般化不纳入 |
+| classical systems；自治flow map F\_t(ξ)解决(1.5) | IsGlobalMechanicalFlowOn m (-gradient U) Q S ψ；ψ:ℝ→PhaseSpace→PhaseSpace | 一致；保持分子Hamiltonian的保守力对象；全m维自治ODE的一般化不纳入 |
 | 固定正质量的Hamiltonian背景 | _hm : ∀i,0<m i | [EXTRA] 原文质量正定背景明确，反演段未重复；群律证明本身不使用正性 |
 | forward or backward in time | hψ每z∈S都有全实时间ODE解；S不变 | [EXTRA] 显式前提；不承诺任意力的全局流存在 |
 | 继承existence and uniqueness | hreg : ∀q∈Q,ContDiffAt ℝ 1 F q | [EXTRA] 唯一性的C1充分前提；正则性来源待审 |
 | 初值ξ；恒等元Id | ∀z∈S,ψ 0 z=z | 一致；来自flow定义，不把群律放入假设 |
-| F_{-t}F_t=Id | ∀t,∀z∈S,ψ(-t)(ψ t z)=z | 一致；量词含所有实时间 |
+| F_{-t}F\_t=Id | ∀t,∀z∈S,ψ(-t)(ψ t z)=z | 一致；量词含所有实时间 |
 | flow map is invertible | ψ t(ψ(-t)z)=z ∧ BijOn(ψ t)S S | 一致；双向反演与双射，限制在不变状态域 |
-| Abelian group composition F_t F_s=F_s F_t | ∀s,t,∀z∈S,ψ t(ψ s z)=ψ s(ψ t z) | 一致；闭包由hψ的MapsTo给出 |
-| F_t F_s=F_{t+s} | ψ t(ψ s z)=ψ(t+s)z | 一致；identity/inverse/composition，函数复合结合律由函数操作固有 |
+| Abelian group composition F\_t F\_s=F\_s F\_t | ∀s,t,∀z∈S,ψ t(ψ s z)=ψ s(ψ t z) | 一致；闭包由hψ的MapsTo给出 |
+| F\_t F\_s=F_{t+s} | ψ t(ψ s z)=ψ(t+s)z | 一致；identity/inverse/composition，函数复合结合律由函数操作固有 |
 | 前小节的全局流存在前提 | 以实际解族hψ参数化该结论；不另断言∃ψ | 一致；需要导师确认这种条件化与正文继承前提等价 |
 
 ### 5. 审计结论
 
 原文 JSON：DRAFT；MathCopilot只读审计：PENDING；frozen=false。
 
-等待PILOT_ALL单一返回数组，按A原文审校再C语义审计整合；模板B已取消，尚无网站PASS。
+等待PILOT\_ALL单一返回数组，按A原文审校再C语义审计整合；模板B已取消，尚无网站PASS。
 
-- json_review：PENDING；任务 `PILOT_ALL`；返回件 尚未收到。
+- json\_review：PENDING；任务 `PILOT_ALL`；返回件 尚未收到。
 
-- blueprint_translation：CANCELLED_NOT_REQUIRED；任务 `T_blueprint_MD-1.5.1-FlowInverse`；返回件 尚未收到。
+- blueprint\_translation：CANCELLED\_NOT\_REQUIRED；任务 `T_blueprint_MD-1.5.1-FlowInverse`；返回件 尚未收到。
 
-- semantic_review：PENDING；任务 `PILOT_ALL`；返回件 尚未收到。
+- semantic\_review：PENDING；任务 `PILOT_ALL`；返回件 尚未收到。
 
 ### 6. 最终状态与证明位置
 

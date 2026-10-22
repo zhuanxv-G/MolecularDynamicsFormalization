@@ -9,9 +9,9 @@
 | --- | ---: |
 | defined | 51 |
 | proved | 39 |
-| statement_only | 47 |
+| statement\_only | 47 |
 | weakened | 2 |
-| not_formalizable_now | 4 |
+| not\_formalizable\_now | 4 |
 | 合计 | 143 |
 
 已证明结论数：39（按清单行统计，重复映射同一证明不是独立定理）。
@@ -78,7 +78,7 @@ def truncatedFlow {n : ℕ} (H : SymplecticCoordinates n → ℝ) (Hj : ℕ → 
 
 差异及额外假设：局部凸开域；完整构造与匹配仅陈述；缺形式jet的Hamiltonian构造、逐阶匹配及局部ODE统一余项；finiteMatching是所需结论，未被用作完整构造的假设。
 
-状态：**statement_only**。位置：`MolecularDynamics/Chapter03/Statements.lean:49;MolecularDynamics/Chapter03/Statements.lean:31;MolecularDynamics/Chapter03/Statements.lean:25;MolecularDynamics/Chapter03/Statements.lean:20;MolecularDynamics/Chapter03/Statements.lean:42;MolecularDynamics/Chapter03/ReviewDefinitions.lean:87`。
+状态：**statement\_only**。位置：`MolecularDynamics/Chapter03/Statements.lean:49;MolecularDynamics/Chapter03/Statements.lean:31;MolecularDynamics/Chapter03/Statements.lean:25;MolecularDynamics/Chapter03/Statements.lean:20;MolecularDynamics/Chapter03/Statements.lean:42;MolecularDynamics/Chapter03/ReviewDefinitions.lean:87`。
 
 ### CH03-002 · §3.1 · 定义 · 印刷p.98 / PDF120
 
@@ -156,7 +156,7 @@ def shadowPositive_statement : Prop :=
 
 差异及额外假设：正频率和正能量；边界与不稳定步长排除。
 
-状态：**statement_only**。位置：`MolecularDynamics/Chapter03/Statements.lean:97`。
+状态：**statement\_only**。位置：`MolecularDynamics/Chapter03/Statements.lean:97`。
 
 ### CH03-007 · §3.1 · 未编号结论 · 印刷p.100 / PDF122
 
@@ -171,11 +171,11 @@ def eulerOscillatorGrowth_statement : Prop :=
 
 差异及额外假设：Omega非零、初值非零，避免平衡点例外。
 
-状态：**statement_only**。位置：`MolecularDynamics/Chapter03/Statements.lean:101`。
+状态：**statement\_only**。位置：`MolecularDynamics/Chapter03/Statements.lean:101`。
 
 ### CH03-008 · §3.1 · 定义 · 印刷p.100 / PDF122
 
-原文（忠实转述）：The modified Hamiltonian has formal expansion H+h^r H_r+h^(r+1) H_(r+1)+... .
+原文（忠实转述）：The modified Hamiltonian has formal expansion H+h^r H\_r+h^(r+1) H_(r+1)+... .
 
 ```lean
 -- MolecularDynamics.Chapter03Review.formalHamiltonian
@@ -207,7 +207,7 @@ def formalHamiltonianField {n : ℕ} (H : SymplecticCoordinates n → ℝ)
 
 ### CH03-010 · §3.2 · 定义 · 印刷p.100 / PDF122
 
-原文（忠实转述）：The Lie derivative L_f phi is f dot grad phi.
+原文（忠实转述）：The Lie derivative L\_f phi is f dot grad phi.
 
 ```lean
 -- MolecularDynamics.textbookLieDerivative
@@ -221,7 +221,7 @@ noncomputable def textbookLieDerivative (f : E → E) (φ : E → ℝ) (z : E) :
 
 ### CH03-011 · §3.2 · 未编号结论 · 印刷p.100 / PDF122
 
-原文（忠实转述）：The derivative of an observable along an actual solution equals L_f phi.
+原文（忠实转述）：The derivative of an observable along an actual solution equals L\_f phi.
 
 ```lean
 -- MolecularDynamics.hasDerivAt_textbookLieDerivative
@@ -237,7 +237,7 @@ theorem hasDerivAt_textbookLieDerivative (f : E → E) (φ : E → ℝ)
 
 ### CH03-012 · §3.2 · 未编号结论 · 印刷p.101 / PDF123
 
-原文（忠实转述）：The second derivative along a solution equals L_f^2 phi.
+原文（忠实转述）：The second derivative along a solution equals L\_f^2 phi.
 
 ```lean
 -- MolecularDynamics.hasDerivAt_textbookLieDerivative_second
@@ -268,7 +268,7 @@ noncomputable def textbookFormalOperatorExponential (A : R) : PowerSeries R :=
 
 ### CH03-014 · §3.2 · 定义 · 印刷p.101 / PDF123
 
-原文（忠实转述）：The formal evolution of an observable is sum t^j L_f^j phi/j!.
+原文（忠实转述）：The formal evolution of an observable is sum t^j L\_f^j phi/j!.
 
 ```lean
 -- MolecularDynamics.Chapter03Review.formalObservable
@@ -297,7 +297,7 @@ def lieTaylor_statement : Prop :=
 
 差异及额外假设：补足光滑阶数；原文明确不处理无限级数收敛。
 
-状态：**statement_only**。位置：`MolecularDynamics/Chapter03/Statements.lean:105`。
+状态：**statement\_only**。位置：`MolecularDynamics/Chapter03/Statements.lean:105`。
 
 ### CH03-016 · §3.2 · 未编号结论 · 印刷p.101 / PDF123
 
@@ -313,7 +313,7 @@ def flowObservable_statement : Prop :=
 
 差异及额外假设：解释为实际pullback；不把形式exp当收敛级数。
 
-状态：**statement_only**。位置：`MolecularDynamics/Chapter03/Statements.lean:112`。
+状态：**statement\_only**。位置：`MolecularDynamics/Chapter03/Statements.lean:112`。
 
 ### CH03-017 · §3.2 · 定义 · 印刷p.102 / PDF124
 
@@ -332,7 +332,7 @@ noncomputable def textbookPoissonBracket (F G : SymplecticCoordinates Nc → ℝ
 
 ### CH03-018 · §3.2 · 未编号结论 · 印刷p.102 / PDF124
 
-原文（忠实转述）：The Poisson bracket equals the sum of F_q G_p-G_q F_p.
+原文（忠实转述）：The Poisson bracket equals the sum of F\_q G\_p-G\_q F\_p.
 
 ```lean
 -- MolecularDynamics.textbookPoissonBracket_coordinates
@@ -455,7 +455,7 @@ theorem textbookLieDerivative_hamiltonian_eq_poisson
 
 ### CH03-025 · §3.2 · notation · 印刷p.102 / PDF124
 
-原文（忠实转述）：L_H is shorthand for the Lie derivative along J grad H.
+原文（忠实转述）：L\_H is shorthand for the Lie derivative along J grad H.
 
 ```lean
 -- MolecularDynamics.Chapter03Review.hamiltonianLie
@@ -469,7 +469,7 @@ def hamiltonianLie {n : ℕ} (H φ : SymplecticCoordinates n → ℝ) : Symplect
 
 ### CH03-026 · §3.3 · 未编号结论 · 印刷p.103 / PDF125
 
-原文（忠实转述）：L_(H1+H2)=L_H1+L_H2.
+原文（忠实转述）：L_(H1+H2)=L\_H1+L\_H2.
 
 ```lean
 -- MolecularDynamics.textbookHamiltonianLieDerivative_add
@@ -487,7 +487,7 @@ theorem textbookHamiltonianLieDerivative_add (F H₁ H₂ : SymplecticCoordinate
 
 ### CH03-027 · §3.3 · 定义 · 印刷p.103 / PDF125
 
-原文（忠实转述）：A splitting evolution operator is exp(h L_H1) exp(h L_H2).
+原文（忠实转述）：A splitting evolution operator is exp(h L\_H1) exp(h L\_H2).
 
 ```lean
 -- MolecularDynamics.Chapter03Review.formalSplitting
@@ -595,7 +595,7 @@ def commutator {R : Type*} [Ring R] (A B : R) : R := A*B-B*A
 
 ### CH03-033 · §3.3 · 未编号结论 · 印刷p.104 / PDF126
 
-原文（忠实转述）：The splitting leading defect is h^2 [L_H1,L_H2]/2 at the formal level.
+原文（忠实转述）：The splitting leading defect is h^2 [L\_H1,L\_H2]/2 at the formal level.
 
 ```lean
 -- MolecularDynamics.textbookFormalOperatorDifference_coeff_two
@@ -611,7 +611,7 @@ theorem textbookFormalOperatorDifference_coeff_two (A B : R) :
 
 ### CH03-034 · §3.3 · 未编号结论 · 印刷p.105 / PDF127
 
-原文（忠实转述）：[L_H1,L_H2]F=L_{H2,H1}F; the next display reverses the bracket.
+原文（忠实转述）：[L\_H1,L\_H2]F=L_{H2,H1}F; the next display reverses the bracket.
 
 ```lean
 -- MolecularDynamics.textbookHamiltonianLieDerivative_commutator
@@ -674,7 +674,7 @@ def leadingShadowHamiltonian_statement : Prop :=
 
 差异及额外假设：原文Lie commutator符号与此系数需一起审阅；状态/观测量顺序须区分。
 
-状态：**statement_only**。位置：`MolecularDynamics/Chapter03/Statements.lean:122`。
+状态：**statement\_only**。位置：`MolecularDynamics/Chapter03/Statements.lean:122`。
 
 ### CH03-037 · §3.3 · 未编号结论 · 印刷p.106 / PDF128
 
@@ -689,7 +689,7 @@ def bch4_statement : Prop :=
 
 差异及额外假设：真实形式幂级数有限阶等式；高阶未证。
 
-状态：**statement_only**。位置：`MolecularDynamics/Chapter03/Statements.lean:131`。
+状态：**statement\_only**。位置：`MolecularDynamics/Chapter03/Statements.lean:131`。
 
 ### CH03-038 · §3.3 · 定义 · 印刷p.106 / PDF128
 
@@ -724,7 +724,7 @@ def bchHamiltonianMatching_statement : Prop :=
 
 差异及额外假设：需符号/映射顺序核对和更高系数推导。
 
-状态：**statement_only**。位置：`MolecularDynamics/Chapter03/Statements.lean:139`。
+状态：**statement\_only**。位置：`MolecularDynamics/Chapter03/Statements.lean:139`。
 
 ### CH03-040 · §3.3 · 未编号结论 · 印刷p.106 / PDF128
 
@@ -744,7 +744,7 @@ def commutingFlows_statement : Prop :=
 
 差异及额外假设：光滑、流存在、适当共域和完整时间范围。
 
-状态：**statement_only**。位置：`MolecularDynamics/Chapter03/Statements.lean:145`。
+状态：**statement\_only**。位置：`MolecularDynamics/Chapter03/Statements.lean:145`。
 
 ### CH03-041 · §3.3.1 · 定义 · 印刷p.106 / PDF128
 
@@ -776,7 +776,7 @@ def symplecticEulerShadowMatching_statement : Prop :=
 
 差异及额外假设：真实局部流误差O(h5)；未证。
 
-状态：**statement_only**。位置：`MolecularDynamics/Chapter03/Statements.lean:153`。
+状态：**statement\_only**。位置：`MolecularDynamics/Chapter03/Statements.lean:153`。
 
 ### CH03-043 · §3.3.2 · 定义 · 印刷p.107 / PDF129
 
@@ -875,7 +875,7 @@ def verletModifiedHPrinted_statement : Prop :=
 
 差异及额外假设：同时给明确速度Verlet与印刷版，不能混同两种Verlet。
 
-状态：**statement_only**。位置：`MolecularDynamics/Chapter03/Statements.lean:174;MolecularDynamics/Chapter03/Statements.lean:166`。
+状态：**statement\_only**。位置：`MolecularDynamics/Chapter03/Statements.lean:174;MolecularDynamics/Chapter03/Statements.lean:166`。
 
 ### CH03-048 · §3.3.2 · 未编号结论 · 印刷p.107 / PDF129
 
@@ -890,7 +890,7 @@ def modifiedEven_statement : Prop :=
 
 差异及额外假设：形式log奇性而非不同步长log互相可交换。
 
-状态：**statement_only**。位置：`MolecularDynamics/Chapter03/Statements.lean:178`。
+状态：**statement\_only**。位置：`MolecularDynamics/Chapter03/Statements.lean:178`。
 
 ### CH03-049 · §3.3.2 · 定义 · 印刷p.108 / PDF130
 
@@ -909,7 +909,7 @@ def formalStrang {R : Type*} [Ring R] [Algebra ℝ R] (A B : R) : PowerSeries R 
 
 ### CH03-050 · §3.3.2 · 未编号结论 · 印刷p.108 / PDF130
 
-原文（忠实转述）：Z_s and Z_t are claimed to commute for different step sizes.
+原文（忠实转述）：Z\_s and Z\_t are claimed to commute for different step sizes.
 
 ```lean
 -- MolecularDynamics.Chapter03Review.differentLogsCommute_statement
@@ -920,7 +920,7 @@ def differentLogsCommute_statement : Prop :=
 
 差异及额外假设：字面一般不成立；保留待审，正确奇性不依赖此断言。
 
-状态：**statement_only**。位置：`MolecularDynamics/Chapter03/Statements.lean:181`。
+状态：**statement\_only**。位置：`MolecularDynamics/Chapter03/Statements.lean:181`。
 
 ### CH03-051 · §3.3.2 · 未编号结论 · 印刷p.108 / PDF130
 
@@ -934,7 +934,7 @@ def strangInverse_statement : Prop :=
 
 差异及额外假设：纯形式级数反步关系。
 
-状态：**statement_only**。位置：`MolecularDynamics/Chapter03/Statements.lean:184`。
+状态：**statement\_only**。位置：`MolecularDynamics/Chapter03/Statements.lean:184`。
 
 ### CH03-052 · §3.3.2 · 未编号结论 · 印刷p.108 / PDF130
 
@@ -950,7 +950,7 @@ def strangCubic_statement : Prop :=
 
 差异及额外假设：有限正式系数；待证。
 
-状态：**statement_only**。位置：`MolecularDynamics/Chapter03/Statements.lean:186`。
+状态：**statement\_only**。位置：`MolecularDynamics/Chapter03/Statements.lean:186`。
 
 ### CH03-053 · §3.3.3 · 定义 · 印刷p.109 / PDF131
 
@@ -978,7 +978,7 @@ def yoshidaCancellation_statement : Prop :=
 
 差异及额外假设：有限代数参数条件。
 
-状态：**statement_only**。位置：`MolecularDynamics/Chapter03/Statements.lean:190`。
+状态：**statement\_only**。位置：`MolecularDynamics/Chapter03/Statements.lean:190`。
 
 ### CH03-055 · §3.3.3 · 定义 · 印刷p.109 / PDF131
 
@@ -1006,7 +1006,7 @@ def yoshidaUnique_statement : Prop :=
 
 差异及额外假设：奇次幂根唯一与非零分母；待证。
 
-状态：**statement_only**。位置：`MolecularDynamics/Chapter03/Statements.lean:193`。
+状态：**statement\_only**。位置：`MolecularDynamics/Chapter03/Statements.lean:193`。
 
 ### CH03-057 · §3.3.3 · 未编号结论 · 印刷p.109 / PDF131
 
@@ -1024,7 +1024,7 @@ def yoshidaRaiseOrder_statement : Prop :=
 
 差异及额外假设：需实际局部误差展开、负步长流存在；不搭大型BCH理论。
 
-状态：**statement_only**。位置：`MolecularDynamics/Chapter03/Statements.lean:196`。
+状态：**statement\_only**。位置：`MolecularDynamics/Chapter03/Statements.lean:196`。
 
 ### CH03-058 · §3.3.3 · 定义 · 印刷p.110 / PDF132
 
@@ -1060,7 +1060,7 @@ def yoshida4Structure_statement : Prop :=
 
 ### CH03-060 · §3.3.3 · 定义 · 印刷p.111 / PDF133
 
-原文（忠实转述）：General composition alternates drift and kick maps with coefficients alpha_i,beta_i.
+原文（忠实转述）：General composition alternates drift and kick maps with coefficients alpha\_i,beta\_i.
 
 ```lean
 -- MolecularDynamics.Chapter03Review.generalSplitting
@@ -1101,7 +1101,7 @@ def potentialDoubleBracket_statement : Prop :=
 
 差异及额外假设：实际Poisson偏导和固定正质量。
 
-状态：**statement_only**。位置：`MolecularDynamics/Chapter03/Statements.lean:205`。
+状态：**statement\_only**。位置：`MolecularDynamics/Chapter03/Statements.lean:205`。
 
 ### CH03-063 · §3.3.4 · 定义 · 印刷p.112 / PDF134
 
@@ -1146,7 +1146,7 @@ def processorEnergy_statement : Prop :=
 
 差异及额外假设：补前式遗漏U；实际Taylor余项待证。
 
-状态：**statement_only**。位置：`MolecularDynamics/Chapter03/Statements.lean:210`。
+状态：**statement\_only**。位置：`MolecularDynamics/Chapter03/Statements.lean:210`。
 
 ### CH03-066 · §3.3.4 · 未编号结论 · 印刷p.113 / PDF135
 
@@ -1166,11 +1166,11 @@ def takahashiOrder_statement : Prop :=
 
 差异及额外假设：复用第2章忠实处理陈述，未证。
 
-状态：**statement_only**。位置：`MolecularDynamics/Chapter02/Statements.lean:349`。
+状态：**statement\_only**。位置：`MolecularDynamics/Chapter02/Statements.lean:349`。
 
 ### CH03-067 · §3.4 · 定义 · 印刷p.113 / PDF135
 
-原文（忠实转述）：A modified vector field is the formal series f+h^r f_r+... .
+原文（忠实转述）：A modified vector field is the formal series f+h^r f\_r+... .
 
 ```lean
 -- MolecularDynamics.Chapter03Review.formalField
@@ -1202,11 +1202,11 @@ def leadingModifiedField_statement : Prop :=
 
 差异及额外假设：完整匹配关系；需步长光滑展开。
 
-状态：**statement_only**。位置：`MolecularDynamics/Chapter03/Statements.lean:215`。
+状态：**statement\_only**。位置：`MolecularDynamics/Chapter03/Statements.lean:215`。
 
 ### CH03-069 · §3.4 · 定义 · 印刷p.114 / PDF136
 
-原文（忠实转述）：A finite Hamiltonian truncation is H+sum_(j=r)^k h^j H_j, (3.11).
+原文（忠实转述）：A finite Hamiltonian truncation is H+sum_(j=r)^k h^j H\_j, (3.11).
 
 ```lean
 -- MolecularDynamics.textbookTruncatedHamiltonian
@@ -1313,7 +1313,7 @@ def truncatedFlow {n : ℕ} (H : SymplecticCoordinates n → ℝ) (Hj : ℕ → 
 
 差异及额外假设：完整构造/匹配/多项式长时间能量Prop，另附解析指数Prop；正阶数、凸开D、紧凸B⊂D、局部joint C∞近恒等辛映射、实际原始流与一致阶；数值及截断轨道留在B；常数依赖固定k与T，非全部k统一；缺逐阶Hamiltonian构造与ODE余项理论，未搭建大型一般理论；缺形式jet的Hamiltonian构造、逐阶匹配及局部ODE统一余项；finiteMatching是所需结论，未被用作完整构造的假设。
 
-状态：**statement_only**。位置：`MolecularDynamics/Chapter03/Statements.lean:56;MolecularDynamics/Chapter03/Statements.lean:69;MolecularDynamics/Chapter03/Statements.lean:31;MolecularDynamics/Chapter03/Statements.lean:25;MolecularDynamics/Chapter03/Statements.lean:20;MolecularDynamics/Chapter03/Statements.lean:42;MolecularDynamics/Chapter03/ReviewDefinitions.lean:87`。
+状态：**statement\_only**。位置：`MolecularDynamics/Chapter03/Statements.lean:56;MolecularDynamics/Chapter03/Statements.lean:69;MolecularDynamics/Chapter03/Statements.lean:31;MolecularDynamics/Chapter03/Statements.lean:25;MolecularDynamics/Chapter03/Statements.lean:20;MolecularDynamics/Chapter03/Statements.lean:42;MolecularDynamics/Chapter03/ReviewDefinitions.lean:87`。
 
 ### CH03-072 · §3.4 · 未编号结论 · 印刷p.114 / PDF136
 
@@ -1333,7 +1333,7 @@ theorem exists_compact_C1_lipschitz_constant (D B : Set E) (hD : IsOpen D)
 
 ### CH03-073 · §3.4 · notation · 印刷p.115 / PDF137
 
-原文（忠实转述）：F_h^(k) is the actual time-h flow of the finite modified Hamiltonian.
+原文（忠实转述）：F\_h^(k) is the actual time-h flow of the finite modified Hamiltonian.
 
 ```lean
 -- MolecularDynamics.Chapter03Review.truncatedFlow
@@ -1400,7 +1400,7 @@ def truncatedFlow {n : ℕ} (H : SymplecticCoordinates n → ℝ) (Hj : ℕ → 
 
 差异及额外假设：完整构造与匹配不可当已证假设；全阶陈述待证；缺形式jet的Hamiltonian构造、逐阶匹配及局部ODE统一余项；finiteMatching是所需结论，未被用作完整构造的假设。
 
-状态：**statement_only**。位置：`MolecularDynamics/Chapter03/Statements.lean:49;MolecularDynamics/Chapter03/Statements.lean:31;MolecularDynamics/Chapter03/Statements.lean:25;MolecularDynamics/Chapter03/Statements.lean:20;MolecularDynamics/Chapter03/Statements.lean:42;MolecularDynamics/Chapter03/ReviewDefinitions.lean:87`。
+状态：**statement\_only**。位置：`MolecularDynamics/Chapter03/Statements.lean:49;MolecularDynamics/Chapter03/Statements.lean:31;MolecularDynamics/Chapter03/Statements.lean:25;MolecularDynamics/Chapter03/Statements.lean:20;MolecularDynamics/Chapter03/Statements.lean:42;MolecularDynamics/Chapter03/ReviewDefinitions.lean:87`。
 
 ### CH03-075 · §3.4 · 未编号结论 · 印刷p.115 / PDF137
 
@@ -1612,7 +1612,7 @@ def truncatedFlow {n : ℕ} (H : SymplecticCoordinates n → ℝ) (Hj : ℕ → 
 
 差异及额外假设：全阶构造未证；不把C-infinity当指数估计充分条件；缺形式jet的Hamiltonian构造、逐阶匹配及局部ODE统一余项；finiteMatching是所需结论，未被用作完整构造的假设。
 
-状态：**statement_only**。位置：`MolecularDynamics/Chapter03/Statements.lean:49;MolecularDynamics/Chapter03/Statements.lean:31;MolecularDynamics/Chapter03/Statements.lean:25;MolecularDynamics/Chapter03/Statements.lean:20;MolecularDynamics/Chapter03/Statements.lean:42;MolecularDynamics/Chapter03/ReviewDefinitions.lean:87`。
+状态：**statement\_only**。位置：`MolecularDynamics/Chapter03/Statements.lean:49;MolecularDynamics/Chapter03/Statements.lean:31;MolecularDynamics/Chapter03/Statements.lean:25;MolecularDynamics/Chapter03/Statements.lean:20;MolecularDynamics/Chapter03/Statements.lean:42;MolecularDynamics/Chapter03/ReviewDefinitions.lean:87`。
 
 ### CH03-083 · §3.4 · 未编号结论 · 印刷p.116 / PDF138
 
@@ -1678,7 +1678,7 @@ def truncatedFlow {n : ℕ} (H : SymplecticCoordinates n → ℝ) (Hj : ℕ → 
 
 差异及额外假设：原文many standard classes缺明示正则性；补解析/Gevrey量化，未证；缺解析邻域/Cauchy阶乘界、整数最优截断及统一常数；指数误差没有从仅C∞推出。
 
-状态：**statement_only**。位置：`MolecularDynamics/Chapter03/Statements.lean:69;MolecularDynamics/Chapter03/Statements.lean:31;MolecularDynamics/Chapter03/Statements.lean:25;MolecularDynamics/Chapter03/Statements.lean:20;MolecularDynamics/Chapter03/Statements.lean:42;MolecularDynamics/Chapter03/ReviewDefinitions.lean:87`。
+状态：**statement\_only**。位置：`MolecularDynamics/Chapter03/Statements.lean:69;MolecularDynamics/Chapter03/Statements.lean:31;MolecularDynamics/Chapter03/Statements.lean:25;MolecularDynamics/Chapter03/Statements.lean:20;MolecularDynamics/Chapter03/Statements.lean:42;MolecularDynamics/Chapter03/ReviewDefinitions.lean:87`。
 
 ### CH03-084 · §3.4 · 未编号结论 · 印刷p.116 / PDF138
 
@@ -1694,7 +1694,7 @@ def optimalTruncation_statement : Prop :=
 
 差异及额外假设：整数取整与小h域需补；未证；缺解析邻域/Cauchy阶乘界、整数最优截断及统一常数；指数误差没有从仅C∞推出。
 
-状态：**statement_only**。位置：`MolecularDynamics/Chapter03/Statements.lean:86`。
+状态：**statement\_only**。位置：`MolecularDynamics/Chapter03/Statements.lean:86`。
 
 ### CH03-085 · §3.4 · 未编号结论 · 印刷p.116 / PDF138
 
@@ -1708,7 +1708,7 @@ def exponentialFlat_statement : Prop :=
 
 差异及额外假设：正gamma；可复用Mathlib极限。
 
-状态：**statement_only**。位置：`MolecularDynamics/Chapter03/Statements.lean:90`。
+状态：**statement\_only**。位置：`MolecularDynamics/Chapter03/Statements.lean:90`。
 
 ### CH03-086 · §3.4 · 定义 · 印刷p.117 / PDF139
 
@@ -1742,7 +1742,7 @@ def commutingEnergy_statement : Prop :=
 
 差异及额外假设：从所有初值的实际流守恒导出，非单条轨道。
 
-状态：**statement_only**。位置：`MolecularDynamics/Chapter03/Statements.lean:225`。
+状态：**statement\_only**。位置：`MolecularDynamics/Chapter03/Statements.lean:225`。
 
 ### CH03-088 · §3.4 · 未编号结论 · 印刷p.118 / PDF140
 
@@ -1760,7 +1760,7 @@ def commutingEnergySymmetry_statement : Prop :=
 
 差异及额外假设：实际全域陈述与原始流存在。
 
-状态：**statement_only**。位置：`MolecularDynamics/Chapter03/Statements.lean:230`。
+状态：**statement\_only**。位置：`MolecularDynamics/Chapter03/Statements.lean:230`。
 
 ### CH03-089 · §3.4 · 未编号结论 · 印刷p.118 / PDF140
 
@@ -1781,7 +1781,7 @@ def energySymplecticNoGo_statement : Prop :=
 
 差异及额外假设：缺非可积性/无额外第一积分等Ge-Marsden精确假设；保留条件化忠实Prop，不断言无条件不可能。
 
-状态：**not_formalizable_now**。位置：`MolecularDynamics/Chapter03/Statements.lean:239`。
+状态：**not\_formalizable\_now**。位置：`MolecularDynamics/Chapter03/Statements.lean:239`。
 
 ### CH03-090 · §3.5 · 定义 · 印刷p.122 / PDF144
 
@@ -1865,7 +1865,7 @@ def verletOscillatorEnergy_statement : Prop :=
 
 差异及额外假设：需abs(h Omega)<2，排除不稳定步长；非一般非线性全时间定理。
 
-状态：**statement_only**。位置：`MolecularDynamics/Chapter03/Statements.lean:258`。
+状态：**statement\_only**。位置：`MolecularDynamics/Chapter03/Statements.lean:258`。
 
 ### CH03-095 · §3.5 · 定义 · 印刷p.123 / PDF145
 
@@ -1970,7 +1970,7 @@ def noHamiltonianAttractor_statement : Prop :=
 
 差异及额外假设：补有限体积局部吸引和真实体积保持；缺一般动力系统基础。
 
-状态：**statement_only**。位置：`MolecularDynamics/Chapter03/Statements.lean:268`。
+状态：**statement\_only**。位置：`MolecularDynamics/Chapter03/Statements.lean:268`。
 
 ### CH03-102 · §3.6 · 未编号结论 · 印刷p.128 / PDF150
 
@@ -2037,7 +2037,7 @@ def volumeNotSymplectic_statement : Prop :=
 
 差异及额外假设：具体四维线性反例。
 
-状态：**statement_only**。位置：`MolecularDynamics/Chapter03/Statements.lean:275`。
+状态：**statement\_only**。位置：`MolecularDynamics/Chapter03/Statements.lean:275`。
 
 ### CH03-104 · §3.6.1 · 定义 · 印刷p.128 / PDF150
 
@@ -2122,11 +2122,11 @@ def reversedFieldPrinted_statement : Prop :=
 
 差异及额外假设：实际时间导数、线性R和反步域。
 
-状态：**statement_only**。位置：`MolecularDynamics/Chapter03/Statements.lean:281;MolecularDynamics/Chapter03/Statements.lean:286`。
+状态：**statement\_only**。位置：`MolecularDynamics/Chapter03/Statements.lean:281;MolecularDynamics/Chapter03/Statements.lean:286`。
 
 ### CH03-109 · §3.6.2 · 未编号结论 · 印刷p.129 / PDF151
 
-原文（忠实转述）：The unique reversible flow satisfies F_(-t)(Rz)=R F_t(z).
+原文（忠实转述）：The unique reversible flow satisfies F_(-t)(Rz)=R F\_t(z).
 
 ```lean
 -- MolecularDynamics.Chapter03Review.flowReversal_statement
@@ -2139,11 +2139,11 @@ def flowReversal_statement : Prop :=
 
 差异及额外假设：真实唯一流；不把此等式藏进假设。
 
-状态：**statement_only**。位置：`MolecularDynamics/Chapter03/Statements.lean:291`。
+状态：**statement\_only**。位置：`MolecularDynamics/Chapter03/Statements.lean:291`。
 
 ### CH03-110 · §3.6.2 · 未编号结论 · 印刷p.129 / PDF151
 
-原文（忠实转述）：The flow satisfies R composed with F_t composed with R composed with F_t=Id, (3.14).
+原文（忠实转述）：The flow satisfies R composed with F\_t composed with R composed with F\_t=Id, (3.14).
 
 ```lean
 -- MolecularDynamics.Chapter03Review.flowReversalIdentity_statement
@@ -2156,11 +2156,11 @@ def flowReversalIdentity_statement : Prop :=
 
 差异及额外假设：从反步关系与flow群性质推导。
 
-状态：**statement_only**。位置：`MolecularDynamics/Chapter03/Statements.lean:296`。
+状态：**statement\_only**。位置：`MolecularDynamics/Chapter03/Statements.lean:296`。
 
 ### CH03-111 · §3.6.2 · 定义 · 印刷p.130 / PDF152
 
-原文（忠实转述）：A time-reversible numerical method satisfies R G_h R G_h=Id, (3.15).
+原文（忠实转述）：A time-reversible numerical method satisfies R G\_h R G\_h=Id, (3.15).
 
 ```lean
 -- MolecularDynamics.Chapter03Review.reversibleMethod
@@ -2173,7 +2173,7 @@ def reversibleMethod {E : Type*} (R : E → E) (G : ℝ → E → E) : Prop := �
 
 ### CH03-112 · §3.6.2 · 定义 · 印刷p.130 / PDF152
 
-原文（忠实转述）：A symmetric numerical method satisfies G_(-h)=G_h^-1.
+原文（忠实转述）：A symmetric numerical method satisfies G_(-h)=G\_h^-1.
 
 ```lean
 -- MolecularDynamics.Chapter03Review.symmetricMethod
@@ -2214,7 +2214,7 @@ def symmetricAffineReversible_statement : Prop :=
 
 差异及额外假设：步长符号相容性是独立必要条件，须明示。
 
-状态：**statement_only**。位置：`MolecularDynamics/Chapter03/Statements.lean:301`。
+状态：**statement\_only**。位置：`MolecularDynamics/Chapter03/Statements.lean:301`。
 
 ### CH03-115 · §3.6.2 · 未编号结论 · 印刷p.130 / PDF152
 
@@ -2264,7 +2264,7 @@ def partitionedAffinePrinted_statement : Prop :=
 
 差异及额外假设：仅保留分块线性变换；原文任意混合q,p的全称过强，字面Prop待审。
 
-状态：**statement_only**。位置：`MolecularDynamics/Chapter03/Statements.lean:312;MolecularDynamics/Chapter03/Statements.lean:328`。
+状态：**statement\_only**。位置：`MolecularDynamics/Chapter03/Statements.lean:312;MolecularDynamics/Chapter03/Statements.lean:328`。
 
 ### CH03-117 · §3.6.3 · 未编号结论 · 印刷p.131 / PDF153
 
@@ -2285,7 +2285,7 @@ theorem textbookSymplecticEuler_isSymplectic {Nc : ℕ}
 
 差异及额外假设：具体单位振子反例。
 
-状态：**statement_only**。位置：`MolecularDynamics/Chapter03/Statements.lean:333;MolecularDynamics/Chapter02/SymplecticEuler.lean:202`。
+状态：**statement\_only**。位置：`MolecularDynamics/Chapter03/Statements.lean:333;MolecularDynamics/Chapter02/SymplecticEuler.lean:202`。
 
 ### CH03-118 · §3.6.3 · 定义 · 印刷p.131 / PDF153
 
@@ -2319,7 +2319,7 @@ def trapezoidalProperties_statement : Prop :=
 
 差异及额外假设：给非线性实际局部解反例；待证。
 
-状态：**statement_only**。位置：`MolecularDynamics/Chapter03/Statements.lean:337`。
+状态：**statement\_only**。位置：`MolecularDynamics/Chapter03/Statements.lean:337`。
 
 ### CH03-120 · §3.6.3 · 未编号结论 · 印刷p.131 / PDF153
 
@@ -2335,7 +2335,7 @@ def hamiltonianSpectrum_statement : Prop :=
 
 差异及额外假设：实际复特征值；不沿用原文同一u作为转置特征向量错误。
 
-状态：**statement_only**。位置：`MolecularDynamics/Chapter03/Statements.lean:346`。
+状态：**statement\_only**。位置：`MolecularDynamics/Chapter03/Statements.lean:346`。
 
 ### CH03-121 · §3.6.3 · 未编号结论 · 印刷p.131 / PDF153
 
@@ -2351,7 +2351,7 @@ def symplecticSpectrum_statement : Prop :=
 
 差异及额外假设：复特征值及非零性；一般线性代数基础需复用。
 
-状态：**statement_only**。位置：`MolecularDynamics/Chapter03/Statements.lean:350`。
+状态：**statement\_only**。位置：`MolecularDynamics/Chapter03/Statements.lean:350`。
 
 ### CH03-122 · §3.6.3 · 未编号结论 · 印刷p.131 / PDF153
 
@@ -2367,7 +2367,7 @@ def reversibleSpectrum_statement : Prop :=
 
 差异及额外假设：R可逆、T可逆，谱命题未证。
 
-状态：**statement_only**。位置：`MolecularDynamics/Chapter03/Statements.lean:354`。
+状态：**statement\_only**。位置：`MolecularDynamics/Chapter03/Statements.lean:354`。
 
 ### CH03-123 · §3.6.3 · 未编号结论 · 印刷p.132 / PDF154
 
@@ -2404,11 +2404,11 @@ def reversibleVolumeFailure_statement : Prop :=
 
 差异及额外假设：非线性可逆反例，非线性det逐点可能≠1。
 
-状态：**statement_only**。位置：`MolecularDynamics/Chapter03/Statements.lean:358`。
+状态：**statement\_only**。位置：`MolecularDynamics/Chapter03/Statements.lean:358`。
 
 ### CH03-125 · §3.7 · 定义 · 印刷p.132 / PDF154
 
-原文（忠实转述）：Hard cores impose norm(q_i-q_j)≥radius_i+radius_j.
+原文（忠实转述）：Hard cores impose norm(q\_i-q\_j)≥radius\_i+radius\_j.
 
 ```lean
 -- MolecularDynamics.Chapter03Review.hardCoreDomain
@@ -2447,7 +2447,7 @@ def elasticEnergy_statement : Prop :=
 
 差异及额外假设：可有限内积代数证明；二元无擦碰。
 
-状态：**statement_only**。位置：`MolecularDynamics/Chapter03/Statements.lean:363`。
+状态：**statement\_only**。位置：`MolecularDynamics/Chapter03/Statements.lean:363`。
 
 ### CH03-128 · §3.7 · 定义 · 印刷p.133 / PDF155
 
@@ -2488,7 +2488,7 @@ def collisionRegularity_statement : Prop :=
 
 差异及额外假设：有限二元非擦碰、事件隔离；待证。
 
-状态：**statement_only**。位置：`MolecularDynamics/Chapter03/Statements.lean:385`。
+状态：**statement\_only**。位置：`MolecularDynamics/Chapter03/Statements.lean:385`。
 
 ### CH03-130 · §3.7.1 · 定义 · 印刷p.133 / PDF155
 
@@ -2537,7 +2537,7 @@ def primitiveOrder_statement : Prop :=
 
 差异及额外假设：横截二元事件、有限间距、正规力；待证；缺隔离多约束硬球事件稳定性与非光滑误差理论；用当前隔离接触函数g表示二元碰撞；动量跳跃使同一时刻全相空间一致误差无定义保证，Prop采用误差同阶的单调时间对齐，原书误差度量需导师裁定。
 
-状态：**not_formalizable_now**。位置：`MolecularDynamics/Chapter03/Statements.lean:409`。
+状态：**not\_formalizable\_now**。位置：`MolecularDynamics/Chapter03/Statements.lean:409`。
 
 ### CH03-133 · §3.7.1 · 定义 · 印刷p.134 / PDF156
 
@@ -2554,7 +2554,7 @@ def obstacleReflection {d : ℕ} (u p : Position d) : Position d := p- (2*inner 
 
 ### CH03-134 · §3.7.1 · 未编号结论 · 印刷p.134 / PDF156
 
-原文（忠实转述）：A primitive collisional step has leading energy defect -(h-2 t_c)(q_c dot pbar)/(q_c dot q_c)(q_c dot grad U(q_c))+O(h^2).
+原文（忠实转述）：A primitive collisional step has leading energy defect -(h-2 t\_c)(q\_c dot pbar)/(q\_c dot q\_c)(q\_c dot grad U(q\_c))+O(h^2).
 
 ```lean
 -- MolecularDynamics.Chapter03Review.primitiveDefect_statement
@@ -2575,7 +2575,7 @@ def primitiveDefect_statement : Prop :=
 
 差异及额外假设：实际碰撞族和小h展开；原式endcollision的解释与线性项矛盾待审。
 
-状态：**statement_only**。位置：`MolecularDynamics/Chapter03/Statements.lean:417`。
+状态：**statement\_only**。位置：`MolecularDynamics/Chapter03/Statements.lean:417`。
 
 ### CH03-135 · §3.7.1 · 未编号结论 · 印刷p.134 / PDF156
 
@@ -2610,7 +2610,7 @@ def collisionQuadraticPath {n : ℕ} (m : Fin n → ℝ) (F : Q n → Q n) (z : 
 
 ### CH03-137 · §3.7.2 · 定义 · 印刷p.135 / PDF157
 
-原文（忠实转述）：Collision times solve norm(Q_i(t)-Q_j(t))=radius_i+radius_j, (3.19).
+原文（忠实转述）：Collision times solve norm(Q\_i(t)-Q\_j(t))=radius\_i+radius\_j, (3.19).
 
 ```lean
 -- MolecularDynamics.Chapter03Review.collisionTimeRelation
@@ -2685,7 +2685,7 @@ def collisionalVerletOrder_statement : Prop :=
 
 差异及额外假设：有限非擦碰、稳定事件定位、正外步长；大型非光滑误差理论缺口；仅碰撞隔离且所有内部接触严格早于hmax的步长序列；伪代码tc=hmax时未反射须导师判断；采用累计自适应时间，不能误作固定hmax步数；缺隔离多约束硬球事件稳定性与非光滑误差理论；用当前隔离接触函数g表示二元碰撞；动量跳跃使同一时刻全相空间一致误差无定义保证，Prop采用误差同阶的单调时间对齐，原书误差度量需导师裁定。
 
-状态：**not_formalizable_now**。位置：`MolecularDynamics/Chapter03/Statements.lean:444`。
+状态：**not\_formalizable\_now**。位置：`MolecularDynamics/Chapter03/Statements.lean:444`。
 
 ### CH03-141 · §3.7.3 · 定义 · 印刷p.136 / PDF158
 
@@ -2723,7 +2723,7 @@ def decoupledOrder_statement : Prop :=
 
 差异及额外假设：需要明确哪个势产生kick及事件误差；未证；缺隔离多约束硬球事件稳定性与非光滑误差理论；用当前隔离接触函数g表示二元碰撞；动量跳跃使同一时刻全相空间一致误差无定义保证，Prop采用误差同阶的单调时间对齐，原书误差度量需导师裁定。
 
-状态：**not_formalizable_now**。位置：`MolecularDynamics/Chapter03/Statements.lean:462`。
+状态：**not\_formalizable\_now**。位置：`MolecularDynamics/Chapter03/Statements.lean:462`。
 
 ### CH03-143 · §3.7.3 · 定义 · 印刷p.136 / PDF158
 

@@ -1,6 +1,6 @@
 # 第6章逐条形式化审阅材料
 
-正文249条；最新网站直接PASS 203条。本轮60条：25 PASS / 8 FAIL / 27 NEEDS_HUMAN；8条按意见处理且本地核验通过，未再送网站。32项合并疑误/范围问题及1项解释记录。
+正文249条；最新网站直接PASS 203条。本轮60条：25 PASS / 8 FAIL / 27 NEEDS\_HUMAN；8条按意见处理且本地核验通过，未再送网站。32项合并疑误/范围问题及1项解释记录。
 统计见[导师摘要](CH06_SUMMARY_FOR_MENTOR.zh-CN.md)；原书问题见[勘误清单](CH06_ERRATA.zh-CN.md)。网站评价与证明完成情况分别统计。
 
 ## MD-6.1.1-Microcanonical
@@ -10,7 +10,12 @@
 ### 1. 原文陈述
 
 > The density function may then be represented by a Dirac delta function as follows:
-> \[\rho_{\rm mc}=Z^{-1}\delta[H-E],\qquad Z=\int_D\delta[H-E]d\omega.\]
+
+$$
+\rho_{\rm mc}=Z^{-1}\delta[H-E],\qquad Z=\int_D\delta[H-E]d\omega.
+$$
+
+
 
 ### 2. 原文证明
 
@@ -27,7 +32,7 @@ def microcanonical {n : ℕ} (H : MolecularDynamics.Chapter05Review.E n → ℝ)
 
 | 原文对象或结论 | 当前Lean与范围 |
 |---|---|
-| 所引原句 | 本条所引原句及展示公式；单个记号归入context_notation。 |
+| 所引原句 | 本条所引原句及展示公式；单个记号归入context\_notation。 |
 | 对象、域、量词及前提 | 以上完整声明；额外资格与未覆盖部分见下一段 |
 | 最新网站原始评价 | PASS；首轮保留 |
 
@@ -37,7 +42,7 @@ def microcanonical {n : ℕ} (H : MolecularDynamics.Chapter05Review.E n → ℝ)
 
 ### 6. 审计结论（含网站结论）
 
-网站原返回：PASS。对象为任意自然数维数n、实值Hamiltonian H:E n→ℝ及实能量energy。microcanonical直接返回microMeasure；展开为能量面上的1/‖gradient H‖加权面积测度再除以其总质量，符合Dirac记号的测度解释。它是总定义，不宣称任意H、energy均给概率测度；正则性及总质量正且有限的物理适用范围已在context_notation明确，不能把此定义计为coarea识别或归一化定理。原D由所选环境/相空间承载，此签名没有独立的任意区域D参数。
+网站原返回：PASS。对象为任意自然数维数n、实值Hamiltonian H:E n→ℝ及实能量energy。microcanonical直接返回microMeasure；展开为能量面上的1/‖gradient H‖加权面积测度再除以其总质量，符合Dirac记号的测度解释。它是总定义，不宣称任意H、energy均给概率测度；正则性及总质量正且有限的物理适用范围已在context\_notation明确，不能把此定义计为coarea识别或归一化定理。原D由所选环境/相空间承载，此签名没有独立的任意区域D参数。
 当前处理：网站PASS（首轮未改版本）。
 保留所交版本的明确结论。
 本地编译和逐声明依赖核对通过。原文疑误、各限定/修正版、反例的评价分别列出；有未完成证明依赖的声明仍为未证。
@@ -57,7 +62,12 @@ def microcanonical {n : ℕ} (H : MolecularDynamics.Chapter05Review.E n → ℝ)
 ### 1. 原文陈述
 
 > In terms of a microcanonical system, the entropy is enshrined in the famous formula that appears on Boltzmann's tombstone:
-> \[S:=k_B\ln Z.\tag{6.1}\]
+
+$$
+S:=k_B\ln Z.\tag{6.1}
+$$
+
+
 
 ### 2. 原文证明
 
@@ -73,7 +83,7 @@ def entropy (kB : ℝ) (Z : ℝ → ℝ) (E : ℝ) : ℝ := kB * Real.log (Z E)
 
 | 原文对象或结论 | 当前Lean与范围 |
 |---|---|
-| 所引原句 | 本条所引原句及展示公式；单个记号归入context_notation。 |
+| 所引原句 | 本条所引原句及展示公式；单个记号归入context\_notation。 |
 | 对象、域、量词及前提 | 以上完整声明；额外资格与未覆盖部分见下一段 |
 | 最新网站原始评价 | PASS；首轮保留 |
 
@@ -103,7 +113,12 @@ def entropy (kB : ℝ) (Z : ℝ → ℝ) (E : ℝ) : ℝ := kB * Real.log (Z E)
 ### 1. 原文陈述
 
 > We denote by $Z(E_A,E_B)$ the total number of states the system can occupy with systems A and B having energies $E_A$ and $E_B$, respectively. We make use of our assumption that the two systems do not exchange particles so that the total number of states the combined system can be found in depends solely on the energies of the two independent systems, i.e.,
-> \[Z(E_A,E_B)=Z_A(E_A)\times Z_B(E_B).\]
+
+$$
+Z(E_A,E_B)=Z_A(E_A)\times Z_B(E_B).
+$$
+
+
 
 ### 2. 原文证明
 
@@ -132,7 +147,7 @@ theorem independentPartition :
 
 | 原文对象或结论 | 当前Lean与范围 |
 |---|---|
-| 所引原句 | 本条所引原句及展示公式；单个记号归入context_notation。 |
+| 所引原句 | 本条所引原句及展示公式；单个记号归入context\_notation。 |
 | 对象、域、量词及前提 | 以上完整声明；额外资格与未覆盖部分见下一段 |
 | 最新网站原始评价 | PASS；复审 |
 
@@ -163,7 +178,12 @@ theorem independentPartition :
 ### 1. 原文陈述
 
 > Taking logarithms and replacing the value for $E_B$ by $E-E_A$, we have
-> \[\ln Z(E_A,E-E_A)=\ln Z_A(E_A)+\ln Z_B(E-E_A).\]
+
+$$
+\ln Z(E_A,E-E_A)=\ln Z_A(E_A)+\ln Z_B(E-E_A).
+$$
+
+
 
 ### 2. 原文证明
 
@@ -184,7 +204,7 @@ theorem entropyAdditivity :
 
 | 原文对象或结论 | 当前Lean与范围 |
 |---|---|
-| 所引原句 | 本条所引原句及展示公式；单个记号归入context_notation。 |
+| 所引原句 | 本条所引原句及展示公式；单个记号归入context\_notation。 |
 | 对象、域、量词及前提 | 以上完整声明；额外资格与未覆盖部分见下一段 |
 | 最新网站原始评价 | PASS；首轮保留 |
 
@@ -214,9 +234,19 @@ theorem entropyAdditivity :
 ### 1. 原文陈述
 
 > This value of $E_A$ occurs where
-> \[\frac{d}{dE_A}\ln Z(E_A,E-E_A)=0,\]
+
+$$
+\frac{d}{dE_A}\ln Z(E_A,E-E_A)=0,
+$$
+
+
 > or equivalently where
-> \[\frac{d}{dE_A}S_A=\frac{d}{dE_B}S_B,\]
+
+$$
+\frac{d}{dE_A}S_A=\frac{d}{dE_B}S_B,
+$$
+
+
 > where we have used Boltzmann's relation to express this in terms of the entropy.
 
 ### 2. 原文证明
@@ -240,7 +270,7 @@ theorem entropyEquilibrium :
 
 | 原文对象或结论 | 当前Lean与范围 |
 |---|---|
-| 所引原句 | 本条所引原句及展示公式；单个记号归入context_notation。 |
+| 所引原句 | 本条所引原句及展示公式；单个记号归入context\_notation。 |
 | 对象、域、量词及前提 | 以上完整声明；额外资格与未覆盖部分见下一段 |
 | 最新网站原始评价 | PASS；首轮保留 |
 
@@ -270,7 +300,12 @@ theorem entropyEquilibrium :
 ### 1. 原文陈述
 
 > The temperature of a system $T$, is defined as
-> \[\frac1T:=\frac{\partial S}{\partial E}.\]
+
+$$
+\frac1T:=\frac{\partial S}{\partial E}.
+$$
+
+
 
 ### 2. 原文证明
 
@@ -286,7 +321,7 @@ def temperature (S : ℝ → ℝ) (E : ℝ) : ℝ := (MolecularDynamics.Chapter0
 
 | 原文对象或结论 | 当前Lean与范围 |
 |---|---|
-| 所引原句 | 本条所引原句及展示公式；单个记号归入context_notation。 |
+| 所引原句 | 本条所引原句及展示公式；单个记号归入context\_notation。 |
 | 对象、域、量词及前提 | 以上完整声明；额外资格与未覆盖部分见下一段 |
 | 最新网站原始评价 | PASS；首轮保留 |
 
@@ -296,7 +331,7 @@ def temperature (S : ℝ → ℝ) (E : ℝ) : ℝ := (MolecularDynamics.Chapter0
 
 ### 6. 审计结论（含网站结论）
 
-网站原返回：PASS。S:ℝ→ℝ及实能量E的temperature定义为inverseTemperature S E的倒数；展开项目定义即(deriv S E)⁻¹，方向正确。固定其他物理参数后单变量导数承载原偏导。Lean逆元与deriv均为总定义，此条不宣称S必可微或T必正；context_notation已限定实际导数及非零情形下的温度解释。
+网站原返回：PASS。S:ℝ→ℝ及实能量E的temperature定义为inverseTemperature S E的倒数；展开项目定义即(deriv S E)⁻¹，方向正确。固定其他物理参数后单变量导数承载原偏导。Lean逆元与deriv均为总定义，此条不宣称S必可微或T必正；context\_notation已限定实际导数及非零情形下的温度解释。
 当前处理：网站PASS（首轮未改版本）。
 保留所交版本的明确结论。
 本地编译和逐声明依赖核对通过。原文疑误、各限定/修正版、反例的评价分别列出；有未完成证明依赖的声明仍为未证。
@@ -316,7 +351,12 @@ def temperature (S : ℝ → ℝ) (E : ℝ) : ℝ := (MolecularDynamics.Chapter0
 ### 1. 原文陈述
 
 > giving, when the system is in thermal equilibrium,
-> \[\frac{d}{dE_A}\ln Z_A(E_A)=\frac{d}{dE_B}\ln Z_B(E_B)=\frac1{k_BT}=: \beta.\tag{6.2}\]
+
+$$
+\frac{d}{dE_A}\ln Z_A(E_A)=\frac{d}{dE_B}\ln Z_B(E_B)=\frac1{k_BT}=: \beta.\tag{6.2}
+$$
+
+
 > We shall refer to the quantity $\beta$ as the system's inverse or reciprocal temperature.
 
 ### 2. 原文证明
@@ -333,7 +373,7 @@ def inverseThermal (kB T : ℝ) : ℝ := (kB * T)⁻¹
 
 | 原文对象或结论 | 当前Lean与范围 |
 |---|---|
-| 所引原句 | 本条所引原句及展示公式；单个记号归入context_notation。 |
+| 所引原句 | 本条所引原句及展示公式；单个记号归入context\_notation。 |
 | 对象、域、量词及前提 | 以上完整声明；额外资格与未覆盖部分见下一段 |
 | 最新网站原始评价 | PASS；首轮保留 |
 
@@ -343,7 +383,7 @@ def inverseThermal (kB T : ℝ) : ℝ := (kB * T)⁻¹
 
 ### 6. 审计结论（含网站结论）
 
-网站原返回：PASS。inverseThermal量化kB,T∈ℝ，值为(kB*T)⁻¹，恰好形式化β的定义。该定义自身没有A、B两个系统，不能被计作式(6.2)整条平衡导数关系的证明；输入context_notation已明确将导数关系分给EntropyEquilibrium及LogTemperature，并注明物理解释要求kB,T>0，因此定义范围匹配。
+网站原返回：PASS。inverseThermal量化kB,T∈ℝ，值为(kB*T)⁻¹，恰好形式化β的定义。该定义自身没有A、B两个系统，不能被计作式(6.2)整条平衡导数关系的证明；输入context\_notation已明确将导数关系分给EntropyEquilibrium及LogTemperature，并注明物理解释要求kB,T>0，因此定义范围匹配。
 当前处理：网站PASS（首轮未改版本）。
 保留所交版本的明确结论。
 本地编译和逐声明依赖核对通过。原文疑误、各限定/修正版、反例的评价分别列出；有未完成证明依赖的声明仍为未证。
@@ -363,9 +403,19 @@ def inverseThermal (kB T : ℝ) : ℝ := (kB * T)⁻¹
 ### 1. 原文陈述
 
 > Since $Z_B(E-s)=\exp(S_B(E-s)/k_B)$, and $s\ll E$, we (naively) apply the mean value theorem to $S_B$ to obtain
-> \[S_B(E-s)=S_B(E)-S'_B(\xi)s,\]
+
+$$
+S_B(E-s)=S_B(E)-S'_B(\xi)s,
+$$
+
+
 > and from $S'_B(\xi)=1/T$, we obtain
-> \[Z_B(E-s)\propto\exp(-\beta s).\]
+
+$$
+Z_B(E-s)\propto\exp(-\beta s).
+$$
+
+
 
 ### 2. 原文证明
 
@@ -417,19 +467,19 @@ theorem bathBoltzmannPrinted_corrected : ∀ (S : ℝ → ℝ) (energy kB β : �
 
 | 原文对象或结论 | 当前Lean与范围 |
 |---|---|
-| 所引原句 | 本条所引原句及展示公式；单个记号归入context_notation。 |
+| 所引原句 | 本条所引原句及展示公式；单个记号归入context\_notation。 |
 | 对象、域、量词及前提 | 以上完整声明；额外资格与未覆盖部分见下一段 |
-| 最新网站原始评价 | NEEDS_HUMAN；复审 |
+| 最新网站原始评价 | NEEDS\_HUMAN；复审 |
 
 ### 5. [EXTRA] 与覆盖缺口
 
 - [EXTRA]熵C²、正热浴能量及kB；β以原页固定温度关系表示，不假设所需中间点导数恒定。
-- [EXTRA] 原文版忠实性与数学疑误分开；补齐所交条目所属的现有_corrected完整签名，不从repair_log名称推断网站已通过修正版。
+- [EXTRA] 原文版忠实性与数学疑误分开；补齐所交条目所属的现有\_corrected完整签名，不从repair\_log名称推断网站已通过修正版。
 - [EXTRA] 复审范围：修正版只是全局恒定熵导数（仿射熵）特例，未给一般热浴近似误差界。
 
 ### 6. 审计结论（含网站结论）
 
-网站原返回：NEEDS_HUMAN。bathBoltzmannPrinted：中值部分在C²前提下正确；第二合取把只在energy处给定的导数扩张成全区间精确指数比，不是中值定理的推论。作为Printed，保留原书启发式而标NEEDS_HUMAN，不因其错误直接判签名FAIL。bathBoltzmannPrinted_counterexample：exp(-1)≠exp(-2)正确，代入S(e)=e²、energy=kB=s=1、β=2即见原断言失败。bathBoltzmannPrinted_corrected：所有e处deriv S e=kB*β且S可微、kB>0，足以推出任意实数s的精确比值；是正确的全局仿射熵限定版，但并非一般热浴近似的误差估计。
+网站原返回：NEEDS\_HUMAN。bathBoltzmannPrinted：中值部分在C²前提下正确；第二合取把只在energy处给定的导数扩张成全区间精确指数比，不是中值定理的推论。作为Printed，保留原书启发式而标NEEDS\_HUMAN，不因其错误直接判签名FAIL。bathBoltzmannPrinted\_counterexample：exp(-1)≠exp(-2)正确，代入S(e)=e²、energy=kB=s=1、β=2即见原断言失败。bathBoltzmannPrinted\_corrected：所有e处deriv S e=kB*β且S可微、kB>0，足以推出任意实数s的精确比值；是正确的全局仿射熵限定版，但并非一般热浴近似的误差估计。
 当前处理：修正版/限定声明=网站PASS；原文疑误或范围解释待导师。
 修正版只是全局恒定熵导数（仿射熵）特例，未给一般热浴近似误差界。
 本地编译和逐声明依赖核对通过。原文疑误、各限定/修正版、反例的评价分别列出；有未完成证明依赖的声明仍为未证。
@@ -450,7 +500,12 @@ theorem bathBoltzmannPrinted_corrected : ∀ (S : ℝ → ℝ) (energy kB β : �
 ### 1. 原文陈述
 
 > The temperature of a system $T$, is defined as $1/T:=\partial S/\partial E$, giving, when the system is in thermal equilibrium,
-> \[\frac{d}{dE_A}\ln Z_A(E_A)=\frac{d}{dE_B}\ln Z_B(E_B)=\frac1{k_BT}=: \beta.\tag{6.2}\]
+
+$$
+\frac{d}{dE_A}\ln Z_A(E_A)=\frac{d}{dE_B}\ln Z_B(E_B)=\frac1{k_BT}=: \beta.\tag{6.2}
+$$
+
+
 
 ### 2. 原文证明
 
@@ -478,7 +533,7 @@ theorem logTemperature : ∀ (kB : ℝ) (Z : ℝ → ℝ) (energy : ℝ),
 
 | 原文对象或结论 | 当前Lean与范围 |
 |---|---|
-| 所引原句 | 本条所引原句及展示公式；单个记号归入context_notation。 |
+| 所引原句 | 本条所引原句及展示公式；单个记号归入context\_notation。 |
 | 对象、域、量词及前提 | 以上完整声明；额外资格与未覆盖部分见下一段 |
 | 最新网站原始评价 | PASS；首轮保留 |
 
@@ -508,7 +563,12 @@ theorem logTemperature : ∀ (kB : ℝ) (Z : ℝ → ℝ) (energy : ℝ),
 ### 1. 原文陈述
 
 > we (naively) apply the mean value theorem to $S_B$ to obtain
-> \[S_B(E-s)=S_B(E)-S'_B(\xi)s.\]
+
+$$
+S_B(E-s)=S_B(E)-S'_B(\xi)s.
+$$
+
+
 
 ### 2. 原文证明
 
@@ -534,7 +594,7 @@ theorem bathMeanValue : ∀ (S : ℝ → ℝ) (energy s : ℝ),
 
 | 原文对象或结论 | 当前Lean与范围 |
 |---|---|
-| 所引原句 | 本条所引原句及展示公式；单个记号归入context_notation。 |
+| 所引原句 | 本条所引原句及展示公式；单个记号归入context\_notation。 |
 | 对象、域、量词及前提 | 以上完整声明；额外资格与未覆盖部分见下一段 |
 | 最新网站原始评价 | PASS；首轮保留 |
 
@@ -564,7 +624,12 @@ theorem bathMeanValue : ∀ (S : ℝ → ℝ) (energy s : ℝ),
 ### 1. 原文陈述
 
 > Since $Z_B(E-s)=\exp(S_B(E-s)/k_B)$, and $s\ll E$, we (naively) apply the mean value theorem to $S_B$ to obtain
-> \[S_B(E-s)=S_B(E)-S'_B(\xi)s,\]
+
+$$
+S_B(E-s)=S_B(E)-S'_B(\xi)s,
+$$
+
+
 
 ### 2. 原文证明
 
@@ -584,13 +649,13 @@ theorem bathTaylorEstimate :
 
 | 原文对象或结论 | 当前Lean与范围 |
 |---|---|
-| 所引原句 | 本条所引原句及展示公式；单个记号归入context_notation。 |
+| 所引原句 | 本条所引原句及展示公式；单个记号归入context\_notation。 |
 | 对象、域、量词及前提 | 以上完整声明；额外资格与未覆盖部分见下一段 |
 | 最新网站原始评价 | PASS；首轮保留 |
 
 ### 5. [EXTRA] 与覆盖缺口
 
-- [EXTRA]对原页热浴近似给出可核验的局部C²一阶展开及C·s²余项；这是额外严格表述，完整字面Boltzmann关系仍为NEEDS_HUMAN。
+- [EXTRA]对原页热浴近似给出可核验的局部C²一阶展开及C·s²余项；这是额外严格表述，完整字面Boltzmann关系仍为NEEDS\_HUMAN。
 
 ### 6. 审计结论（含网站结论）
 
@@ -614,7 +679,12 @@ theorem bathTaylorEstimate :
 ### 1. 原文陈述
 
 > and from $S'_B(\xi)=1/T$, we obtain
-> \[Z_B(E-s)\propto\exp(-\beta s),\]
+
+$$
+Z_B(E-s)\propto\exp(-\beta s),
+$$
+
+
 > where $\beta=(k_BT)^{-1}$.
 
 ### 2. 原文证明
@@ -674,7 +744,7 @@ theorem bathBoltzmannPrinted_corrected : ∀ (S : ℝ → ℝ) (energy kB β : �
 
 | 原文对象或结论 | 当前Lean与范围 |
 |---|---|
-| 所引原句 | 本条所引原句及展示公式；单个记号归入context_notation。 |
+| 所引原句 | 本条所引原句及展示公式；单个记号归入context\_notation。 |
 | 对象、域、量词及前提 | 以上完整声明；额外资格与未覆盖部分见下一段 |
 | 最新网站原始评价 | PASS；首轮保留 |
 
@@ -705,7 +775,12 @@ theorem bathBoltzmannPrinted_corrected : ∀ (S : ℝ → ℝ) (energy kB β : �
 ### 1. 原文陈述
 
 > On the other hand the probability for the active system to have energy $\leq\alpha$ is the same as the probability of the bath having energy $\geq E-\alpha$, this must be
-> \[P(\alpha)=\Pr\{E_B\geq E-\alpha\}\propto\int_0^\alpha Z_B(E-s)ds.\]
+
+$$
+P(\alpha)=\Pr\{E_B\geq E-\alpha\}\propto\int_0^\alpha Z_B(E-s)ds.
+$$
+
+
 > [The intervening bath-entropy argument is quoted separately in MD-6.1.2-BathTaylor.]
 > Thus we have $P(\alpha)\propto\int_0^\alpha\exp(-\beta s)ds$.
 
@@ -732,17 +807,17 @@ def canonicalCDFPrinted_corrected (ZA ZB : ℝ → ℝ) (energy α : ℝ) : ℝ 
 
 | 原文对象或结论 | 当前Lean与范围 |
 |---|---|
-| 所引原句 | 本条所引原句及展示公式；单个记号归入context_notation。 |
+| 所引原句 | 本条所引原句及展示公式；单个记号归入context\_notation。 |
 | 对象、域、量词及前提 | 以上完整声明；额外资格与未覆盖部分见下一段 |
-| 最新网站原始评价 | NEEDS_HUMAN；复审 |
+| 最新网站原始评价 | NEEDS\_HUMAN；复审 |
 
 ### 5. [EXTRA] 与覆盖缺口
 
-- [EXTRA] 原文版忠实性与数学疑误分开；补齐所交条目所属的现有_corrected完整签名，不从repair_log名称推断网站已通过修正版。
+- [EXTRA] 原文版忠实性与数学疑误分开；补齐所交条目所属的现有\_corrected完整签名，不从repair\_log名称推断网站已通过修正版。
 
 ### 6. 审计结论（含网站结论）
 
-网站原返回：NEEDS_HUMAN。canonicalCDFPrinted：任意连续、全实轴严格正ZA,ZB，0<α<energy，等同含ZA与不含ZA的两个归一化积分。它精确呈现原书忽略简并度的主张，其数学疑误保留为NEEDS_HUMAN。canonicalCDFPrinted_corrected：保留分子分母ZA的定义是正确候选CDF表达式；本定义对任意函数和实α总化，不保证非负、归一、单调或分母非零。作为公式定义PASS；只有在正可积权重及0≤α≤energy时才有概率解释；定义没有证明热浴熵近似后的指数形式。
+网站原返回：NEEDS\_HUMAN。canonicalCDFPrinted：任意连续、全实轴严格正ZA,ZB，0<α<energy，等同含ZA与不含ZA的两个归一化积分。它精确呈现原书忽略简并度的主张，其数学疑误保留为NEEDS\_HUMAN。canonicalCDFPrinted\_corrected：保留分子分母ZA的定义是正确候选CDF表达式；本定义对任意函数和实α总化，不保证非负、归一、单调或分母非零。作为公式定义PASS；只有在正可积权重及0≤α≤energy时才有概率解释；定义没有证明热浴熵近似后的指数形式。
 当前处理：修正版/限定声明=网站PASS；原文疑误或范围解释待导师。
 保留所交版本的明确结论。
 本地编译和逐声明依赖核对通过。原文疑误、各限定/修正版、反例的评价分别列出；有未完成证明依赖的声明仍为未证。
@@ -751,7 +826,7 @@ def canonicalCDFPrinted_corrected (ZA ZB : ℝ → ℝ) (energy α : ℝ) : ℝ 
 
 | 声明 | 证明状态 | 未证原因 | 网站分版结论 |
 |---|---|---|---|
-| `MD.Ch06.canonicalCDFPrinted` | 未证 | 原书疑误不证 | 原文忠实性PASS；原书数学/范围NEEDS_HUMAN |
+| `MD.Ch06.canonicalCDFPrinted` | 未证 | 原书疑误不证 | 原文忠实性PASS；原书数学/范围NEEDS\_HUMAN |
 | `MD.Ch06.canonicalCDFPrinted_corrected` | 定义 | — | PASS |
 
 位置：`Blueprint/Ch06.lean:220`；本地核验记录：`blueprint/ch06/closeout26/FINAL_COMPILE.log`。
@@ -779,7 +854,7 @@ def canonicalEnergyDensity (Z : ℝ → ℝ) (β E : ℝ) : ℝ :=
 
 | 原文对象或结论 | 当前Lean与范围 |
 |---|---|
-| 所引原句 | 本条所引原句及展示公式；单个记号归入context_notation。 |
+| 所引原句 | 本条所引原句及展示公式；单个记号归入context\_notation。 |
 | 对象、域、量词及前提 | 以上完整声明；额外资格与未覆盖部分见下一段 |
 | 最新网站原始评价 | PASS；首轮保留 |
 
@@ -809,7 +884,12 @@ def canonicalEnergyDensity (Z : ℝ → ℝ) (β E : ℝ) : ℝ :=
 ### 1. 原文陈述
 
 > density is as a stationary point of the Gibbs-Boltzmann entropy
-> \[S=-k_B\int\rho\ln\rho\,d\omega,\]
+
+$$
+S=-k_B\int\rho\ln\rho\,d\omega,
+$$
+
+
 > subject to the constraints $\int\rho(z)d\omega=1$, $\int H(z)\rho(z)d\omega=\bar E$.
 
 ### 2. 原文证明
@@ -827,7 +907,7 @@ def entropyFunctional {D : Type*} [MeasurableSpace D] (ν : Measure D)
 
 | 原文对象或结论 | 当前Lean与范围 |
 |---|---|
-| 所引原句 | 本条所引原句及展示公式；单个记号归入context_notation。 |
+| 所引原句 | 本条所引原句及展示公式；单个记号归入context\_notation。 |
 | 对象、域、量词及前提 | 以上完整声明；额外资格与未覆盖部分见下一段 |
 | 最新网站原始评价 | PASS；首轮保留 |
 
@@ -837,7 +917,7 @@ def entropyFunctional {D : Type*} [MeasurableSpace D] (ν : Measure D)
 
 ### 6. 审计结论（含网站结论）
 
-网站原返回：PASS。对象为任意可测空间D、测度ν、实kB及实函数ρ；返回−kB乘ρ logρ的Bochner积分，符号与权重正确。此条仅形式化熵泛函定义；归一化及平均能量约束由第16条另存，驻点分析由第17、18条另存，context_notation已明确拆分。ρ≥0、可积性及0 log0的总定义不在此签名中被证明，不应把它计成任意ρ的合法概率熵定理。
+网站原返回：PASS。对象为任意可测空间D、测度ν、实kB及实函数ρ；返回−kB乘ρ logρ的Bochner积分，符号与权重正确。此条仅形式化熵泛函定义；归一化及平均能量约束由第16条另存，驻点分析由第17、18条另存，context\_notation已明确拆分。ρ≥0、可积性及0 log0的总定义不在此签名中被证明，不应把它计成任意ρ的合法概率熵定理。
 当前处理：网站PASS（首轮未改版本）。
 保留所交版本的明确结论。
 本地编译和逐声明依赖核对通过。原文疑误、各限定/修正版、反例的评价分别列出；有未完成证明依赖的声明仍为未证。
@@ -857,9 +937,19 @@ def entropyFunctional {D : Type*} [MeasurableSpace D] (ν : Measure D)
 ### 1. 原文陈述
 
 > Using the method of Lagrange multipliers, we seek stationary solutions of
-> \[V=S/k_B-\lambda\left[\int\rho(z)d\omega-1\right]-\beta\left[\int H(z)\rho(z)d\omega-\bar E\right]\]
+
+$$
+V=S/k_B-\lambda\left[\int\rho(z)d\omega-1\right]-\beta\left[\int H(z)\rho(z)d\omega-\bar E\right]
+$$
+
+
 > with respect to the choice of density $\rho$ and coefficients $\lambda$ and $\beta$. The resulting equations for the maximizing density are obtained by variational differentiation (see Sect. 2.2.1):
-> \[\frac{\delta V}{\delta\rho}=0,\quad\int\rho(z)d\omega=1,\quad\int H(z)\rho(z)d\omega=\bar E.\]
+
+$$
+\frac{\delta V}{\delta\rho}=0,\quad\int\rho(z)d\omega=1,\quad\int H(z)\rho(z)d\omega=\bar E.
+$$
+
+
 
 ### 2. 原文证明
 
@@ -879,7 +969,7 @@ def constrainedEntropyModel {D : Type*} [MeasurableSpace D] (ν : Measure D)
 
 | 原文对象或结论 | 当前Lean与范围 |
 |---|---|
-| 所引原句 | 本条所引原句及展示公式；单个记号归入context_notation。 |
+| 所引原句 | 本条所引原句及展示公式；单个记号归入context\_notation。 |
 | 对象、域、量词及前提 | 以上完整声明；额外资格与未覆盖部分见下一段 |
 | 最新网站原始评价 | PASS；首轮保留 |
 
@@ -889,7 +979,7 @@ def constrainedEntropyModel {D : Type*} [MeasurableSpace D] (ν : Measure D)
 
 ### 6. 审计结论（含网站结论）
 
-网站原返回：PASS。量化任意可测D、测度ν、实值H,ρ及四个实参数。返回的第一分量是S/kB−λ(∫ρ−1)−β(∫Hρ−meanEnergy)，常数项没有丢失；第二分量是两个约束的合取命题，不能把构造这个Prop误当成证明约束已成立。签名没有驻点或最大化断言，输入context_notation已把实际一阶变分和驻点结论分给第17、18条。kB≠0下S/kB与物理表达式一致；kB=0只保留Lean总定义，不冒充约消证明。
+网站原返回：PASS。量化任意可测D、测度ν、实值H,ρ及四个实参数。返回的第一分量是S/kB−λ(∫ρ−1)−β(∫Hρ−meanEnergy)，常数项没有丢失；第二分量是两个约束的合取命题，不能把构造这个Prop误当成证明约束已成立。签名没有驻点或最大化断言，输入context\_notation已把实际一阶变分和驻点结论分给第17、18条。kB≠0下S/kB与物理表达式一致；kB=0只保留Lean总定义，不冒充约消证明。
 当前处理：网站PASS（首轮未改版本）。
 保留所交版本的明确结论。
 本地编译和逐声明依赖核对通过。原文疑误、各限定/修正版、反例的评价分别列出；有未完成证明依赖的声明仍为未证。
@@ -909,7 +999,12 @@ def constrainedEntropyModel {D : Type*} [MeasurableSpace D] (ν : Measure D)
 ### 1. 原文陈述
 
 > The first equation reduces to
-> \[-(1+\ln\rho)-\lambda-\beta H=0\]
+
+$$
+-(1+\ln\rho)-\lambda-\beta H=0
+$$
+
+
 > yielding $\rho=e^{-1-\lambda}e^{-\beta H}$.
 
 ### 2. 原文证明
@@ -933,7 +1028,7 @@ theorem entropyFirstVariation :
 
 | 原文对象或结论 | 当前Lean与范围 |
 |---|---|
-| 所引原句 | 本条所引原句及展示公式；单个记号归入context_notation。 |
+| 所引原句 | 本条所引原句及展示公式；单个记号归入context\_notation。 |
 | 对象、域、量词及前提 | 以上完整声明；额外资格与未覆盖部分见下一段 |
 | 最新网站原始评价 | PASS；首轮保留 |
 
@@ -964,11 +1059,26 @@ theorem entropyFirstVariation :
 ### 1. 原文陈述
 
 > The first equation reduces to
-> \[-(1+\ln\rho)-\lambda-\beta H=0\]
+
+$$
+-(1+\ln\rho)-\lambda-\beta H=0
+$$
+
+
 > yielding
-> \[\rho=e^{-1-\lambda}e^{-\beta H}.\]
+
+$$
+\rho=e^{-1-\lambda}e^{-\beta H}.
+$$
+
+
 > The normalization condition determines the parameter $\lambda$, whereas $\beta$ and hence the temperature arises from the choice of average energy, i.e. from solving the equation
-> \[\frac{\int H(z)e^{-\beta H(z)}d\omega}{\int e^{-\beta H(z)}d\omega}=\bar E.\]
+
+$$
+\frac{\int H(z)e^{-\beta H(z)}d\omega}{\int e^{-\beta H(z)}d\omega}=\bar E.
+$$
+
+
 
 ### 2. 原文证明
 
@@ -992,7 +1102,7 @@ theorem entropyVariation :
 
 | 原文对象或结论 | 当前Lean与范围 |
 |---|---|
-| 所引原句 | 本条所引原句及展示公式；单个记号归入context_notation。 |
+| 所引原句 | 本条所引原句及展示公式；单个记号归入context\_notation。 |
 | 对象、域、量词及前提 | 以上完整声明；额外资格与未覆盖部分见下一段 |
 | 最新网站原始评价 | PASS；首轮保留 |
 
@@ -1022,10 +1132,20 @@ theorem entropyVariation :
 ### 1. 原文陈述
 
 > This defines the phase space density of the canonical ensemble which we refer to as the Gibbs-Boltzmann density:
-> \[\rho_\beta=Z_{\rm can}^{-1}e^{-\beta H(q,p)}.\tag{6.3}\]
+
+$$
+\rho_\beta=Z_{\rm can}^{-1}e^{-\beta H(q,p)}.\tag{6.3}
+$$
+
+
 > where the parameter $\beta=1/(k_BT)$. The quantity $Z_{\rm can}$ is a normalizing constant so that this is a probability density.
 > [\ldots]
-> \[Z_{\rm can}=\int e^{-\beta H(q,p)}d\omega.\]
+
+$$
+Z_{\rm can}=\int e^{-\beta H(q,p)}d\omega.
+$$
+
+
 
 ### 2. 原文证明
 
@@ -1042,7 +1162,7 @@ def canonicalDensity {D : Type*} [MeasurableSpace D] (ν : Measure D)
 
 | 原文对象或结论 | 当前Lean与范围 |
 |---|---|
-| 所引原句 | 本条所引原句及展示公式；单个记号归入context_notation。 |
+| 所引原句 | 本条所引原句及展示公式；单个记号归入context\_notation。 |
 | 对象、域、量词及前提 | 以上完整声明；额外资格与未覆盖部分见下一段 |
 | 最新网站原始评价 | PASS；首轮保留 |
 
@@ -1052,7 +1172,7 @@ def canonicalDensity {D : Type*} [MeasurableSpace D] (ν : Measure D)
 
 ### 6. 审计结论（含网站结论）
 
-网站原返回：PASS。可测空间D、测度ν、实H及β与点x全部显式；canonicalDensity恰为exp(−βH x)除以同一权重的实际积分，分母不是独立任意常数。测度ν承载所选相空间域。定义对应原归一化表达式；没有宣称任意ν,H,β均有正有限partition或积分为1，context_notation已限定适用条件。输入中的β=1/(kB T)是参数解释，不是此函数隐含证明的平衡定理。
+网站原返回：PASS。可测空间D、测度ν、实H及β与点x全部显式；canonicalDensity恰为exp(−βH x)除以同一权重的实际积分，分母不是独立任意常数。测度ν承载所选相空间域。定义对应原归一化表达式；没有宣称任意ν,H,β均有正有限partition或积分为1，context\_notation已限定适用条件。输入中的β=1/(kB T)是参数解释，不是此函数隐含证明的平衡定理。
 当前处理：网站PASS（首轮未改版本）。
 保留所交版本的明确结论。
 本地编译和逐声明依赖核对通过。原文疑误、各限定/修正版、反例的评价分别列出；有未完成证明依赖的声明仍为未证。
@@ -1088,7 +1208,7 @@ def massHamiltonian {n : ℕ} (m : MolecularDynamics.Chapter06Review.V n) (U : M
 
 | 原文对象或结论 | 当前Lean与范围 |
 |---|---|
-| 所引原句 | 本条所引原句及展示公式；单个记号归入context_notation。 |
+| 所引原句 | 本条所引原句及展示公式；单个记号归入context\_notation。 |
 | 对象、域、量词及前提 | 以上完整声明；额外资格与未覆盖部分见下一段 |
 | 最新网站原始评价 | PASS；首轮保留 |
 
@@ -1098,7 +1218,7 @@ def massHamiltonian {n : ℕ} (m : MolecularDynamics.Chapter06Review.V n) (U : M
 
 ### 6. 审计结论（含网站结论）
 
-网站原返回：PASS。n个实坐标的m∈V n、势能U:V n→ℝ及相点x∈Phase n全部显式；Phase n=V n×V n，x.1为q、x.2为p。动能是Σ_i p_i²/(2m_i)，等于对角质量矩阵的pᵀM⁻¹p/2，保留每个m_i，未偷换为单位质量。定义没有限制m_i，但context_notation明确物理模型为正对角质量，后续积分定理也逐坐标要求m_i>0；此处是总定义而非任意质量正定的断言。
+网站原返回：PASS。n个实坐标的m∈V n、势能U:V n→ℝ及相点x∈Phase n全部显式；Phase n=V n×V n，x.1为q、x.2为p。动能是Σ\_i p\_i²/(2m\_i)，等于对角质量矩阵的pᵀM⁻¹p/2，保留每个m\_i，未偷换为单位质量。定义没有限制m\_i，但context\_notation明确物理模型为正对角质量，后续积分定理也逐坐标要求m\_i>0；此处是总定义而非任意质量正定的断言。
 当前处理：网站PASS（首轮未改版本）。
 保留所交版本的明确结论。
 本地编译和逐声明依赖核对通过。原文疑误、各限定/修正版、反例的评价分别列出；有未完成证明依赖的声明仍为未证。
@@ -1118,8 +1238,12 @@ def massHamiltonian {n : ℕ} (m : MolecularDynamics.Chapter06Review.V n) (U : M
 ### 1. 原文陈述
 
 > then the integral separates
-> \[Z_{\rm can}=\int_D e^{-\beta H(q,p)}d\omega
-> =\int_{\mathbb R^{N_c}}e^{-\beta p^TM^{-1}p/2}d\omega_p\times\int_Q e^{-\beta U(q)}d\omega_q.\]
+
+$$
+Z_{\rm can}=\int_D e^{-\beta H(q,p)}d\omega =\int_{\mathbb R^{N_c}}e^{-\beta p^TM^{-1}p/2}d\omega_p\times\int_Q e^{-\beta U(q)}d\omega_q.
+$$
+
+
 
 ### 2. 原文证明
 
@@ -1140,7 +1264,7 @@ theorem partitionMass :
 
 | 原文对象或结论 | 当前Lean与范围 |
 |---|---|
-| 所引原句 | 本条所引原句及展示公式；单个记号归入context_notation。 |
+| 所引原句 | 本条所引原句及展示公式；单个记号归入context\_notation。 |
 | 对象、域、量词及前提 | 以上完整声明；额外资格与未覆盖部分见下一段 |
 | 最新网站原始评价 | PASS；首轮保留 |
 
@@ -1150,7 +1274,7 @@ theorem partitionMass :
 
 ### 6. 审计结论（含网站结论）
 
-网站原返回：PASS。对任意n、正对角质量m、β>0及配置权重可积的U，结论给整个Phase n上的指数积分=配置积分×Π_i sqrt(2πm_i/β)。[EXTRA]已明确Q取全部配置实空间，n为任意自然数，不能把它当作一般区域Q结论。D19的质量Hamiltonian与第20条相同；高斯因子与每个质量、β的依赖正确，乘积次序交换无影响。可积性保证实际实值积分与Fubini分离合法，n=0时空乘积为1亦相容。
+网站原返回：PASS。对任意n、正对角质量m、β>0及配置权重可积的U，结论给整个Phase n上的指数积分=配置积分×Π\_i sqrt(2πm\_i/β)。[EXTRA]已明确Q取全部配置实空间，n为任意自然数，不能把它当作一般区域Q结论。D19的质量Hamiltonian与第20条相同；高斯因子与每个质量、β的依赖正确，乘积次序交换无影响。可积性保证实际实值积分与Fubini分离合法，n=0时空乘积为1亦相容。
 当前处理：网站PASS（首轮未改版本）。
 保留所交版本的明确结论。
 本地编译和逐声明依赖核对通过。原文疑误、各限定/修正版、反例的评价分别列出；有未完成证明依赖的声明仍为未证。
@@ -1194,7 +1318,7 @@ theorem partitionDomain : ∀ {n : ℕ}
 
 | 原文对象或结论 | 当前Lean与范围 |
 |---|---|
-| 所引原句 | 本条所引原句及展示公式；单个记号归入context_notation。 |
+| 所引原句 | 本条所引原句及展示公式；单个记号归入context\_notation。 |
 | 对象、域、量词及前提 | 以上完整声明；额外资格与未覆盖部分见下一段 |
 | 最新网站原始评价 | PASS；首轮保留 |
 
@@ -1249,18 +1373,18 @@ theorem finiteDomainPrinted_corrected {n : ℕ} (Q : Set (Fin n → ℝ))
 
 | 原文对象或结论 | 当前Lean与范围 |
 |---|---|
-| 所引原句 | 本条所引原句及展示公式；单个记号归入context_notation。 |
+| 所引原句 | 本条所引原句及展示公式；单个记号归入context\_notation。 |
 | 对象、域、量词及前提 | 以上完整声明；额外资格与未覆盖部分见下一段 |
-| 最新网站原始评价 | NEEDS_HUMAN；复审 |
+| 最新网站原始评价 | NEEDS\_HUMAN；复审 |
 
 ### 5. [EXTRA] 与覆盖缺口
 
-- [EXTRA] 原文版忠实性与数学疑误分开；补齐所交条目所属的现有_corrected完整签名，不从repair_log名称推断网站已通过修正版。
+- [EXTRA] 原文版忠实性与数学疑误分开；补齐所交条目所属的现有\_corrected完整签名，不从repair\_log名称推断网站已通过修正版。
 - [EXTRA] 复审范围：修正版只给紧域构型权重可积；正体积、正配分函数、动量积分与归一化没有随之成立。
 
 ### 6. 审计结论（含网站结论）
 
-网站原返回：NEEDS_HUMAN。finiteDomainPrinted：将finite解释成可测有限体积，并只要求域内C∞、β>0，不足以保证exp(-βU)可积，原书含糊处需人工确认。finiteDomainPrinted_corrected：任意维n、紧Q、域上连续U、任意实β，指数权重在Q可积，正确且加强条件已明确。两版都只陈述构型积分的可积性，未陈述动量积分、正配分函数或密度归一化；紧集还可能体积为零。
+网站原返回：NEEDS\_HUMAN。finiteDomainPrinted：将finite解释成可测有限体积，并只要求域内C∞、β>0，不足以保证exp(-βU)可积，原书含糊处需人工确认。finiteDomainPrinted\_corrected：任意维n、紧Q、域上连续U、任意实β，指数权重在Q可积，正确且加强条件已明确。两版都只陈述构型积分的可积性，未陈述动量积分、正配分函数或密度归一化；紧集还可能体积为零。
 当前处理：修正版/限定声明=网站PASS；原文疑误或范围解释待导师。
 修正版只给紧域构型权重可积；正体积、正配分函数、动量积分与归一化没有随之成立。
 本地编译和逐声明依赖核对通过。原文疑误、各限定/修正版、反例的评价分别列出；有未完成证明依赖的声明仍为未证。
@@ -1281,7 +1405,12 @@ theorem finiteDomainPrinted_corrected {n : ℕ} (Q : Set (Fin n → ℝ))
 ### 1. 原文陈述
 
 > then the integral separates
-> \[Z_{\rm can}=\int_{\mathbb R^{N_c}}e^{-\beta p^TM^{-1}p/2}d\omega_p\times\int_Q e^{-\beta U(q)}d\omega_q.\]
+
+$$
+Z_{\rm can}=\int_{\mathbb R^{N_c}}e^{-\beta p^TM^{-1}p/2}d\omega_p\times\int_Q e^{-\beta U(q)}d\omega_q.
+$$
+
+
 
 ### 2. 原文证明
 
@@ -1302,7 +1431,7 @@ theorem periodicPartitionBridge {N : ℕ}
 
 | 原文对象或结论 | 当前Lean与范围 |
 |---|---|
-| 所引原句 | 本条所引原句及展示公式；单个记号归入context_notation。 |
+| 所引原句 | 本条所引原句及展示公式；单个记号归入context\_notation。 |
 | 对象、域、量词及前提 | 以上完整声明；额外资格与未覆盖部分见下一段 |
 | 最新网站原始评价 | PASS；首轮保留 |
 
@@ -1312,7 +1441,7 @@ theorem periodicPartitionBridge {N : ℕ}
 
 ### 6. 审计结论（含网站结论）
 
-网站原返回：PASS。U在Fin N→ℝ上C∞且对任意整数向量平移周期，β>0；左边由D20在单位配置torus Haar测度×全动量Lebesgue测度上积分D23 Gibbs权重。D21–D26把Hamiltonian固定为Σp_i²/2+U；D7的配置partition在Icc 0 1上积分exp(−βU)。周期性保证任意代表元选取不影响权重，torus积分与单位基本域积分一致，边界测度为0。右边sqrt(2πβ⁻¹)^N是单位质量高斯因子，等式正确。该[EXTRA]独立特例不覆盖第21、22条的一般质量/配置域。
+网站原返回：PASS。U在Fin N→ℝ上C∞且对任意整数向量平移周期，β>0；左边由D20在单位配置torus Haar测度×全动量Lebesgue测度上积分D23 Gibbs权重。D21–D26把Hamiltonian固定为Σp\_i²/2+U；D7的配置partition在Icc 0 1上积分exp(−βU)。周期性保证任意代表元选取不影响权重，torus积分与单位基本域积分一致，边界测度为0。右边sqrt(2πβ⁻¹)^N是单位质量高斯因子，等式正确。该[EXTRA]独立特例不覆盖第21、22条的一般质量/配置域。
 当前处理：网站PASS（首轮未改版本）。
 保留所交版本的明确结论。
 本地编译和逐声明依赖核对通过。原文疑误、各限定/修正版、反例的评价分别列出；有未完成证明依赖的声明仍为未证。
@@ -1334,7 +1463,12 @@ theorem periodicPartitionBridge {N : ℕ}
 > Typically one assumes that (i) $U$ is smooth except on a low-dimensional set of singular points, (ii) $U$ is bounded below (which is normally the case if a potential such as Lennard-Jones, steeply repulsive at short range, is incorporated between all pairs of atoms), and (iii) $U$ grows sufficiently rapidly as $q\to\infty$, in the case of an infinite domain.
 > [\ldots]
 > Typical assumptions for potentials on the unbounded domain are that (i) $U$ is bounded below, and (ii) $U$ grows sufficiently rapidly as $q\to\infty$. This ensures that
-> \[\int_\Omega\exp(-\beta U(q))d\omega_q<\infty.\]
+
+$$
+\int_\Omega\exp(-\beta U(q))d\omega_q<\infty.
+$$
+
+
 
 ### 2. 原文证明
 
@@ -1354,7 +1488,7 @@ theorem confiningPartition :
 
 | 原文对象或结论 | 当前Lean与范围 |
 |---|---|
-| 所引原句 | 本条所引原句及展示公式；单个记号归入context_notation。 |
+| 所引原句 | 本条所引原句及展示公式；单个记号归入context\_notation。 |
 | 对象、域、量词及前提 | 以上完整声明；额外资格与未覆盖部分见下一段 |
 | 最新网站原始评价 | PASS；首轮保留 |
 
@@ -1401,7 +1535,7 @@ theorem lennardJonesNonintegrable : ∀ β : ℝ, 0 < β →
 
 | 原文对象或结论 | 当前Lean与范围 |
 |---|---|
-| 所引原句 | 本条所引原句及展示公式；单个记号归入context_notation。 |
+| 所引原句 | 本条所引原句及展示公式；单个记号归入context\_notation。 |
 | 对象、域、量词及前提 | 以上完整声明；额外资格与未覆盖部分见下一段 |
 | 最新网站原始评价 | PASS；首轮保留 |
 
@@ -1454,7 +1588,7 @@ theorem lennardJonesConfinement : ∀ ε : ℝ, 0 < ε → ∃ C : ℝ,
 
 | 原文对象或结论 | 当前Lean与范围 |
 |---|---|
-| 所引原句 | 本条所引原句及展示公式；单个记号归入context_notation。 |
+| 所引原句 | 本条所引原句及展示公式；单个记号归入context\_notation。 |
 | 对象、域、量词及前提 | 以上完整声明；额外资格与未覆盖部分见下一段 |
 | 最新网站原始评价 | PASS；首轮保留 |
 
@@ -1504,7 +1638,7 @@ theorem periodicWeightIntegrable {n : ℕ} (U : (Fin n → ℝ) → ℝ)
 
 | 原文对象或结论 | 当前Lean与范围 |
 |---|---|
-| 所引原句 | 本条所引原句及展示公式；单个记号归入context_notation。 |
+| 所引原句 | 本条所引原句及展示公式；单个记号归入context\_notation。 |
 | 对象、域、量词及前提 | 以上完整声明；额外资格与未覆盖部分见下一段 |
 | 最新网站原始评价 | PASS；首轮保留 |
 
@@ -1514,7 +1648,7 @@ theorem periodicWeightIntegrable {n : ℕ} (U : (Fin n → ℝ) → ℝ)
 
 ### 6. 审计结论（含网站结论）
 
-网站原返回：PASS。实际声明是已标[EXTRA]的正确特例：U全轴C∞且单位周期，β>0，D23的真实周期Gibbs权重关于flatPhaseMeasure n可积。flatPhaseMeasure明确就是单位配置torus上的Haar体积×实动量Lebesgue体积，与权重的定义域一致；周期U在紧torus上有界，配置权重有界，β>0的动量高斯可积，故结论正确。原书一般有限域句子的疑误不使此严格特例的签名FAIL；json_review保留NEEDS_HUMAN以区分原文层面的歧义与本条数学结论PASS。
+网站原返回：PASS。实际声明是已标[EXTRA]的正确特例：U全轴C∞且单位周期，β>0，D23的真实周期Gibbs权重关于flatPhaseMeasure n可积。flatPhaseMeasure明确就是单位配置torus上的Haar体积×实动量Lebesgue体积，与权重的定义域一致；周期U在紧torus上有界，配置权重有界，β>0的动量高斯可积，故结论正确。原书一般有限域句子的疑误不使此严格特例的签名FAIL；json\_review保留NEEDS\_HUMAN以区分原文层面的歧义与本条数学结论PASS。
 当前处理：网站PASS（首轮未改版本）。
 保留所交版本的明确结论。
 本地编译和逐声明依赖核对通过。原文疑误、各限定/修正版、反例的评价分别列出；有未完成证明依赖的声明仍为未证。
@@ -1552,7 +1686,7 @@ theorem periodicPartitionPositive {N : ℕ}
 
 | 原文对象或结论 | 当前Lean与范围 |
 |---|---|
-| 所引原句 | 本条所引原句及展示公式；单个记号归入context_notation。 |
+| 所引原句 | 本条所引原句及展示公式；单个记号归入context\_notation。 |
 | 对象、域、量词及前提 | 以上完整声明；额外资格与未覆盖部分见下一段 |
 | 最新网站原始评价 | PASS；首轮保留 |
 
@@ -1562,7 +1696,7 @@ theorem periodicPartitionPositive {N : ℕ}
 
 ### 6. 审计结论（含网站结论）
 
-网站原返回：PASS。U在Fin N→ℝ上光滑、单位周期且β>0，结论是实际实值周期canonical partition严格为正。D20中的积分域/测度与第28条一致，D23权重处处严格正；结合该情形的可积性与非零乘积体积，正性正确，N=0时也不例外。这里是[EXTRA]的真实周期单位质量特例，既未把正性当前提，也不宣称原书的“一般可归一化必需有限”本身等价于本签名；实值积分的有限性须由可积性支撑，不能只因结果类型是ℝ就略过第28条。reusable_proofs仅为复用线索，本轮未检查其未提供证明。
+网站原返回：PASS。U在Fin N→ℝ上光滑、单位周期且β>0，结论是实际实值周期canonical partition严格为正。D20中的积分域/测度与第28条一致，D23权重处处严格正；结合该情形的可积性与非零乘积体积，正性正确，N=0时也不例外。这里是[EXTRA]的真实周期单位质量特例，既未把正性当前提，也不宣称原书的“一般可归一化必需有限”本身等价于本签名；实值积分的有限性须由可积性支撑，不能只因结果类型是ℝ就略过第28条。reusable\_proofs仅为复用线索，本轮未检查其未提供证明。
 当前处理：网站PASS（首轮未改版本）。
 保留所交版本的明确结论。
 本地编译和逐声明依赖核对通过。原文疑误、各限定/修正版、反例的评价分别列出；有未完成证明依赖的声明仍为未证。
@@ -1582,7 +1716,12 @@ theorem periodicPartitionPositive {N : ℕ}
 ### 1. 原文陈述
 
 > In the case of periodic boundary conditions we will assume that, for any observable of interest,
-> \[|\phi(q,p)|=O(\|p\|^\alpha),\qquad p\to\infty,\]
+
+$$
+|\phi(q,p)|=O(\|p\|^\alpha),\qquad p\to\infty,
+$$
+
+
 > for some positive constant $\alpha$.
 
 ### 2. 原文证明
@@ -1600,7 +1739,7 @@ def polynomialObservable {n : ℕ} (f : textbookLangevinPeriodicPhase n → ℝ)
 
 | 原文对象或结论 | 当前Lean与范围 |
 |---|---|
-| 所引原句 | 本条所引原句及展示公式；单个记号归入context_notation。 |
+| 所引原句 | 本条所引原句及展示公式；单个记号归入context\_notation。 |
 | 对象、域、量词及前提 | 以上完整声明；额外资格与未覆盖部分见下一段 |
 | 最新网站原始评价 | PASS；首轮保留 |
 
@@ -1630,7 +1769,12 @@ def polynomialObservable {n : ℕ} (f : textbookLangevinPeriodicPhase n → ℝ)
 ### 1. 原文陈述
 
 > Under assumptions on the potential energy as discussed above, and with $\phi$ continuous and allowed to grow at most polynomially fast at infinity, we may proceed to define averages with respect to the canonical density $\rho_\beta$, namely
-> \[\operatorname{Av}_\beta(\phi)=Z_{\rm can}^{-1}\int_D\phi(q,p)\rho_\beta(q,p)d\omega.\tag{6.4}\]
+
+$$
+\operatorname{Av}_\beta(\phi)=Z_{\rm can}^{-1}\int_D\phi(q,p)\rho_\beta(q,p)d\omega.\tag{6.4}
+$$
+
+
 
 ### 2. 原文证明
 
@@ -1656,17 +1800,17 @@ noncomputable def canonicalAveragePrinted_corrected {Nc : ℕ}
 
 | 原文对象或结论 | 当前Lean与范围 |
 |---|---|
-| 所引原句 | 本条所引原句及展示公式；单个记号归入context_notation。 |
+| 所引原句 | 本条所引原句及展示公式；单个记号归入context\_notation。 |
 | 对象、域、量词及前提 | 以上完整声明；额外资格与未覆盖部分见下一段 |
-| 最新网站原始评价 | NEEDS_HUMAN；首轮保留 |
+| 最新网站原始评价 | NEEDS\_HUMAN；首轮保留 |
 
 ### 5. [EXTRA] 与覆盖缺口
 
-- [EXTRA] 原文版忠实性与数学疑误分开；补齐所交条目所属的现有_corrected完整签名，不从repair_log名称推断网站已通过修正版。
+- [EXTRA] 原文版忠实性与数学疑误分开；补齐所交条目所属的现有\_corrected完整签名，不从repair\_log名称推断网站已通过修正版。
 
 ### 6. 审计结论（含网站结论）
 
-网站原返回：NEEDS_HUMAN。Printed定义确实在D1已归一密度之外又乘D2的Z倒数；全实相空间、H、β、f的类型一致。作为原书字面定义忠实，不能因其非标准平均而判签名FAIL；原书与(6.3)及p.221用法冲突，须人工处理。修正版已在条目5给出，需分别看待。
+网站原返回：NEEDS\_HUMAN。Printed定义确实在D1已归一密度之外又乘D2的Z倒数；全实相空间、H、β、f的类型一致。作为原书字面定义忠实，不能因其非标准平均而判签名FAIL；原书与(6.3)及p.221用法冲突，须人工处理。修正版已在条目5给出，需分别看待。
 当前处理：原文疑误或语义范围待导师；不冒称未提供版本已通过。
 保留所交版本的明确结论。
 本地编译和逐声明依赖核对通过。原文疑误、各限定/修正版、反例的评价分别列出；有未完成证明依赖的声明仍为未证。
@@ -1675,7 +1819,7 @@ noncomputable def canonicalAveragePrinted_corrected {Nc : ℕ}
 
 | 声明 | 证明状态 | 未证原因 | 网站分版结论 |
 |---|---|---|---|
-| `MD.Ch06.canonicalAveragePrinted` | 定义 | — | 原文忠实性PASS；原书数学/范围NEEDS_HUMAN |
+| `MD.Ch06.canonicalAveragePrinted` | 定义 | — | 原文忠实性PASS；原书数学/范围NEEDS\_HUMAN |
 
 位置：`Blueprint/Ch06.lean:374`；本地核验记录：`blueprint/ch06/closeout26/FINAL_COMPILE.log`。
 
@@ -1686,7 +1830,12 @@ noncomputable def canonicalAveragePrinted_corrected {Nc : ℕ}
 ### 1. 原文陈述
 
 > We will denote the average with respect to the canonical probability density by $\operatorname{Av}_\beta$. Using (6.4), we can compute the average of the function $p^2$ as
-> \[\operatorname{Av}_\beta(p^2)=\int_{-\infty}^{\infty}\int_{-\infty}^{\infty}p^2\rho_\beta dqdp.\]
+
+$$
+\operatorname{Av}_\beta(p^2)=\int_{-\infty}^{\infty}\int_{-\infty}^{\infty}p^2\rho_\beta dqdp.
+$$
+
+
 
 ### 2. 原文证明
 
@@ -1709,17 +1858,17 @@ noncomputable def canonicalAveragePrinted_corrected {Nc : ℕ}
 
 | 原文对象或结论 | 当前Lean与范围 |
 |---|---|
-| 所引原句 | 本条所引原句及展示公式；单个记号归入context_notation。 |
+| 所引原句 | 本条所引原句及展示公式；单个记号归入context\_notation。 |
 | 对象、域、量词及前提 | 以上完整声明；额外资格与未覆盖部分见下一段 |
 | 最新网站原始评价 | PASS；首轮保留 |
 
 ### 5. [EXTRA] 与覆盖缺口
 
-- [EXTRA][ERRATUM?]按p.221的实际用法与概率平均标准定义去掉式(6.4)对已归一ρ的第二次Z⁻¹；原字面版仍保留NEEDS_HUMAN。
+- [EXTRA][ERRATUM?]按p.221的实际用法与概率平均标准定义去掉式(6.4)对已归一ρ的第二次Z⁻¹；原字面版仍保留NEEDS\_HUMAN。
 
 ### 6. 审计结论（含网站结论）
 
-网站原返回：PASS。canonicalAverage与canonicalAveragePrinted_corrected均为D2真实partition倒数乘未归一权重积分，只含一个归一化因子。两者对同一全实相空间及任意H、β、f定义；无可积性前提是总定义的延拓，不表示任意输入都已是概率平均。修正与p.221一致，合理且定义正确。
+网站原返回：PASS。canonicalAverage与canonicalAveragePrinted\_corrected均为D2真实partition倒数乘未归一权重积分，只含一个归一化因子。两者对同一全实相空间及任意H、β、f定义；无可积性前提是总定义的延拓，不表示任意输入都已是概率平均。修正与p.221一致，合理且定义正确。
 当前处理：网站PASS（首轮未改版本）。
 保留所交版本的明确结论。
 本地编译和逐声明依赖核对通过。原文疑误、各限定/修正版、反例的评价分别列出；有未完成证明依赖的声明仍为未证。
@@ -1759,7 +1908,7 @@ theorem canonicalAverageOne {Nc : ℕ}
 
 | 原文对象或结论 | 当前Lean与范围 |
 |---|---|
-| 所引原句 | 本条所引原句及展示公式；单个记号归入context_notation。 |
+| 所引原句 | 本条所引原句及展示公式；单个记号归入context\_notation。 |
 | 对象、域、量词及前提 | 以上完整声明；额外资格与未覆盖部分见下一段 |
 | 最新网站原始评价 | PASS；首轮保留 |
 
@@ -1789,13 +1938,27 @@ theorem canonicalAverageOne {Nc : ℕ}
 ### 1. 原文陈述
 
 > We then integrate by parts to obtain
-> \[\operatorname{Av}_\beta(p^2)=m\beta^{-1},\]
+
+$$
+\operatorname{Av}_\beta(p^2)=m\beta^{-1},
+$$
+
+
 > which means that $T=\operatorname{Av}_\beta\left(\frac{p^2}{mk_B}\right)$.
 > If we consider a $N_d=N_c$ degree of freedom system with kinetic energy $K=\sum_{i=1}^{N_c} p_i^2/(2m_i)$ and potential energy $U(q_1,q_2,\ldots,q_{N_c})$, then we may decompose the unnormalized canonical distribution as
-> \[\exp(-\beta[K(p)+U(q)])=\exp(-\beta K(p))\exp(-\beta U(q))
-> =\exp(-\beta U(q))\prod_{i=1}^{N_c}\exp\left(-\beta\frac{p_i^2}{2m_i}\right).\]
+
+$$
+\exp(-\beta[K(p)+U(q)])=\exp(-\beta K(p))\exp(-\beta U(q)) =\exp(-\beta U(q))\prod_{i=1}^{N_c}\exp\left(-\beta\frac{p_i^2}{2m_i}\right).
+$$
+
+
 > Then we again find, by the integration argument given above, that $\operatorname{Av}_\beta(m_i^{-1}k_B^{-1}p_i^2)=T$.
-> \[\operatorname{Av}_\beta(2K)=N_ck_BT.\]
+
+$$
+\operatorname{Av}_\beta(2K)=N_ck_BT.
+$$
+
+
 
 ### 2. 原文证明
 
@@ -1817,7 +1980,7 @@ theorem equipartition :
 
 | 原文对象或结论 | 当前Lean与范围 |
 |---|---|
-| 所引原句 | 本条所引原句及展示公式；单个记号归入context_notation。 |
+| 所引原句 | 本条所引原句及展示公式；单个记号归入context\_notation。 |
 | 对象、域、量词及前提 | 以上完整声明；额外资格与未覆盖部分见下一段 |
 | 最新网站原始评价 | PASS；首轮保留 |
 
@@ -1827,7 +1990,7 @@ theorem equipartition :
 
 ### 6. 审计结论（含网站结论）
 
-网站原返回：PASS。V n=Fin n→ℝ，Phase n=V n×V n；D5含每坐标质量。全部质量正、β正、配置权重可积且积分正；高斯动量因子给出每个i的p_i²平均=m_i/β及总和平均=n/β，二者均保留。n=0结论仍成立；β⁻¹=kBT作为物理记号替换已标明。
+网站原返回：PASS。V n=Fin n→ℝ，Phase n=V n×V n；D5含每坐标质量。全部质量正、β正、配置权重可积且积分正；高斯动量因子给出每个i的p\_i²平均=m\_i/β及总和平均=n/β，二者均保留。n=0结论仍成立；β⁻¹=kBT作为物理记号替换已标明。
 当前处理：网站PASS（首轮未改版本）。
 保留所交版本的明确结论。
 本地编译和逐声明依赖核对通过。原文疑误、各限定/修正版、反例的评价分别列出；有未完成证明依赖的声明仍为未证。
@@ -1847,7 +2010,12 @@ theorem equipartition :
 ### 1. 原文陈述
 
 > For example, Rugh [319] suggested the formula
-> \[\frac{\operatorname{Av}_\beta(\|\nabla U\|^2)}{\operatorname{Av}_\beta(\Delta U)}=k_BT.\tag{6.5}\]
+
+$$
+\frac{\operatorname{Av}_\beta(\|\nabla U\|^2)}{\operatorname{Av}_\beta(\Delta U)}=k_BT.\tag{6.5}
+$$
+
+
 
 ### 2. 原文证明
 
@@ -1872,7 +2040,7 @@ theorem configTemperature :
 
 | 原文对象或结论 | 当前Lean与范围 |
 |---|---|
-| 所引原句 | 本条所引原句及展示公式；单个记号归入context_notation。 |
+| 所引原句 | 本条所引原句及展示公式；单个记号归入context\_notation。 |
 | 对象、域、量词及前提 | 以上完整声明；额外资格与未覆盖部分见下一段 |
 | 最新网站原始评价 | PASS；首轮保留 |
 
@@ -1902,19 +2070,43 @@ theorem configTemperature :
 ### 1. 原文陈述
 
 > Proposition 6.1 Let $H$ be a Hamiltonian defined on the phase space $\mathbb R^{2N_c}$ and suppose $G:\mathbb R^{2N_c}\to\mathbb R^{2N_c}$ is a smooth ($C^1$) vector field with the following properties:
-> \[0<|\operatorname{Av}_\beta(G\cdot\nabla H)|<\infty,\quad
-> 0<\operatorname{Av}_\beta(\nabla\cdot G)<\infty,\quad |Ge^{-\beta H}|<\infty.\]
+
+$$
+0<|\operatorname{Av}_\beta(G\cdot\nabla H)|<\infty,\quad 0<\operatorname{Av}_\beta(\nabla\cdot G)<\infty,\quad |Ge^{-\beta H}|<\infty.
+$$
+
+
 > Then
-> \[k_BT=\frac{\operatorname{Av}_\beta(G\cdot\nabla H)}{\operatorname{Av}_\beta(\nabla\cdot G)}.\]
+
+$$
+k_BT=\frac{\operatorname{Av}_\beta(G\cdot\nabla H)}{\operatorname{Av}_\beta(\nabla\cdot G)}.
+$$
+
+
 
 ### 2. 原文证明
 
 > The proof relies on a $2N_c$-dimensional version of integration by parts. Let $B_R$ be the $2N_c$-dimensional ball centered at the origin, of radius $R$, and let $\Gamma_R$ be its boundary, the $2N_c-1$-dimensional sphere. Then, for any smooth scalar field $g$ defined on $B_R$, we have
-> \[\int_{B_R}G\cdot\nabla g\,d\omega=\int_{\Gamma_R}(Gg)\cdot\hat n\,d\Gamma-\int_{B_R}(\nabla\cdot G)g\,d\omega.\tag{6.6}\]
+
+$$
+\int_{B_R}G\cdot\nabla g\,d\omega=\int_{\Gamma_R}(Gg)\cdot\hat n\,d\Gamma-\int_{B_R}(\nabla\cdot G)g\,d\omega.\tag{6.6}
+$$
+
+
 > where $d\omega=dq_1\ldots dp_{N_c}$ is the standard measure of Lebesgue integration in $\mathbb R^{2N_c}$, and $d\Gamma$ is the surface area element of the hypersphere, and $\hat n$ represents the unit outward normal of the sphere. Replace $g$ by $\rho_\beta=\exp(-\beta H)$, then it follows that
-> \[\left|\int_{\Gamma_R}(G\rho_\beta)\cdot\hat n\,d\Gamma\right|\leq\max_{\Gamma_R}|G\rho_\beta|\sigma_R\]
+
+$$
+\left|\int_{\Gamma_R}(G\rho_\beta)\cdot\hat n\,d\Gamma\right|\leq\max_{\Gamma_R}|G\rho_\beta|\sigma_R
+$$
+
+
 > where $\sigma_R$ is the surface area of the hypersphere. Divide (6.6) by the volume $v_R$ of $B_R$. Then, for large $R$, since the ratio of surface area to volume is proportional to $R^{-1}$, we have
-> \[\frac{\int_{B_R}G\cdot\nabla\rho_\beta d\omega}{v_R}\approx\frac{-\int_{B_R}(\nabla\cdot G)\rho_\beta d\omega}{v_R}.\]
+
+$$
+\frac{\int_{B_R}G\cdot\nabla\rho_\beta d\omega}{v_R}\approx\frac{-\int_{B_R}(\nabla\cdot G)\rho_\beta d\omega}{v_R}.
+$$
+
+
 > Since $\nabla\rho_\beta=-\beta\nabla H\rho_\beta$, we obtain, in the limit $R\to\infty$, the desired result.
 
 ### 3. 完整当前Lean（原文版与修正版独立列出）
@@ -1954,9 +2146,9 @@ theorem proposition61_corrected {Nc : ℕ}
 
 | 原文对象或结论 | 当前Lean与范围 |
 |---|---|
-| 所引原句 | 本条所引原句及展示公式；单个记号归入context_notation。 |
+| 所引原句 | 本条所引原句及展示公式；单个记号归入context\_notation。 |
 | 对象、域、量词及前提 | 以上完整声明；额外资格与未覆盖部分见下一段 |
-| 最新网站原始评价 | NEEDS_HUMAN；复审 |
+| 最新网站原始评价 | NEEDS\_HUMAN；复审 |
 
 ### 5. [EXTRA] 与覆盖缺口
 
@@ -1965,7 +2157,7 @@ theorem proposition61_corrected {Nc : ℕ}
 
 ### 6. 审计结论（含网站结论）
 
-网站原返回：NEEDS_HUMAN。proposition61及proposition61_corrected签名相同：在2Nc维实相空间，kB,T>0、H,G为C¹、Gibbs权重及散度/能量方向导数乘权重可积、权重乘G统一有界、归一散度平均严格正，推出kB*T为两归一平均之比。GibbsWeight=exp(-βH)、partition=积分、average=Z⁻¹乘加权积分、LieDerivative=fderiv H(G)、divergence=trace(DG)，均吻合。上述加强条件足以用截断IBP证明；两签名PASS。原书仅由边界/体积→0，不能推出未缩放积分相等，故本条整体NEEDS_HUMAN；不能把调用现有定理当作原书证明通过。
+网站原返回：NEEDS\_HUMAN。proposition61及proposition61\_corrected签名相同：在2Nc维实相空间，kB,T>0、H,G为C¹、Gibbs权重及散度/能量方向导数乘权重可积、权重乘G统一有界、归一散度平均严格正，推出kB*T为两归一平均之比。GibbsWeight=exp(-βH)、partition=积分、average=Z⁻¹乘加权积分、LieDerivative=fderiv H(G)、divergence=trace(DG)，均吻合。上述加强条件足以用截断IBP证明；两签名PASS。原书仅由边界/体积→0，不能推出未缩放积分相等，故本条整体NEEDS\_HUMAN；不能把调用现有定理当作原书证明通过。
 当前处理：修正版/限定声明=网站PASS；原文疑误或范围解释待导师。
 保留所交版本的明确结论。
 本地编译和逐声明依赖核对通过。原文疑误、各限定/修正版、反例的评价分别列出；有未完成证明依赖的声明仍为未证。
@@ -2011,7 +2203,7 @@ theorem weightedFluxZero {Nc : ℕ}
 
 | 原文对象或结论 | 当前Lean与范围 |
 |---|---|
-| 所引原句 | 本条所引原句及展示公式；单个记号归入context_notation。 |
+| 所引原句 | 本条所引原句及展示公式；单个记号归入context\_notation。 |
 | 对象、域、量词及前提 | 以上完整声明；额外资格与未覆盖部分见下一段 |
 | 最新网站原始评价 | PASS；首轮保留 |
 
@@ -2066,7 +2258,7 @@ theorem canonicalDivergenceIdentity {Nc : ℕ}
 
 | 原文对象或结论 | 当前Lean与范围 |
 |---|---|
-| 所引原句 | 本条所引原句及展示公式；单个记号归入context_notation。 |
+| 所引原句 | 本条所引原句及展示公式；单个记号归入context\_notation。 |
 | 对象、域、量词及前提 | 以上完整声明；额外资格与未覆盖部分见下一段 |
 | 最新网站原始评价 | PASS；首轮保留 |
 
@@ -2097,7 +2289,12 @@ theorem canonicalDivergenceIdentity {Nc : ℕ}
 
 > Observe that, defining $G=(0,p)^T$ yields the kinetic temperature observable $k_BT=\operatorname{Av}_\beta(p^TM^{-1}p)/N_c$, whereas $G=(\nabla U(q),0)^T$ gives the configurational temperature observable (6.5).
 > An even simpler configuration-dependent choice is derived from $G=(q,0)^T$, corresponding to
-> \[k_BT=\frac{\operatorname{Av}_\beta(q\cdot\nabla U)}{N_c}.\]
+
+$$
+k_BT=\frac{\operatorname{Av}_\beta(q\cdot\nabla U)}{N_c}.
+$$
+
+
 
 ### 2. 原文证明
 
@@ -2120,7 +2317,7 @@ theorem temperatureChoiceDerivatives :
 
 | 原文对象或结论 | 当前Lean与范围 |
 |---|---|
-| 所引原句 | 本条所引原句及展示公式；单个记号归入context_notation。 |
+| 所引原句 | 本条所引原句及展示公式；单个记号归入context\_notation。 |
 | 对象、域、量词及前提 | 以上完整声明；额外资格与未覆盖部分见下一段 |
 | 最新网站原始评价 | PASS；首轮保留 |
 
@@ -2171,7 +2368,7 @@ theorem periodicBoundaryCancellation {Nc : ℕ}
 
 | 原文对象或结论 | 当前Lean与范围 |
 |---|---|
-| 所引原句 | 本条所引原句及展示公式；单个记号归入context_notation。 |
+| 所引原句 | 本条所引原句及展示公式；单个记号归入context\_notation。 |
 | 对象、域、量词及前提 | 以上完整声明；额外资格与未覆盖部分见下一段 |
 | 最新网站原始评价 | PASS；首轮保留 |
 
@@ -2201,7 +2398,12 @@ theorem periodicBoundaryCancellation {Nc : ℕ}
 ### 1. 原文陈述
 
 > whereas $\beta$ and hence the temperature arises from the choice of average energy, i.e. from solving the equation
-> \[\frac{\int H(z)e^{-\beta H(z)}d\omega}{\int e^{-\beta H(z)}d\omega}=\bar E.\]
+
+$$
+\frac{\int H(z)e^{-\beta H(z)}d\omega}{\int e^{-\beta H(z)}d\omega}=\bar E.
+$$
+
+
 > Alternatively, we may take the position that the temperature is specified and the mean energy is a direct consequence of this choice.
 
 ### 2. 原文证明
@@ -2220,7 +2422,7 @@ def meanEnergyConstraint {D : Type*} [MeasurableSpace D] (ν : Measure D)
 
 | 原文对象或结论 | 当前Lean与范围 |
 |---|---|
-| 所引原句 | 本条所引原句及展示公式；单个记号归入context_notation。 |
+| 所引原句 | 本条所引原句及展示公式；单个记号归入context\_notation。 |
 | 对象、域、量词及前提 | 以上完整声明；额外资格与未覆盖部分见下一段 |
 | 最新网站原始评价 | PASS；首轮保留 |
 
@@ -2272,7 +2474,7 @@ theorem densityNormalization : ∀ {D : Type*} [MeasurableSpace D] (ν : Measure
 
 | 原文对象或结论 | 当前Lean与范围 |
 |---|---|
-| 所引原句 | 本条所引原句及展示公式；单个记号归入context_notation。 |
+| 所引原句 | 本条所引原句及展示公式；单个记号归入context\_notation。 |
 | 对象、域、量词及前提 | 以上完整声明；额外资格与未覆盖部分见下一段 |
 | 最新网站原始评价 | PASS；首轮保留 |
 
@@ -2302,9 +2504,19 @@ theorem densityNormalization : ∀ {D : Type*} [MeasurableSpace D] (ν : Measure
 ### 1. 原文陈述
 
 > The associated canonical density is
-> \[\rho_\beta=Z_{\rm can}^{-1}\exp\left(-\beta\left[\frac{p^2}{2m}+U(q)\right]\right),\]
+
+$$
+\rho_\beta=Z_{\rm can}^{-1}\exp\left(-\beta\left[\frac{p^2}{2m}+U(q)\right]\right),
+$$
+
+
 > where
-> \[Z_{\rm can}^{-1}=\int_{-\infty}^{\infty}\int_{-\infty}^{\infty}\exp\left(-\beta\left[\frac{p^2}{2m}+U(q)\right]\right)dpdq.\]
+
+$$
+Z_{\rm can}^{-1}=\int_{-\infty}^{\infty}\int_{-\infty}^{\infty}\exp\left(-\beta\left[\frac{p^2}{2m}+U(q)\right]\right)dpdq.
+$$
+
+
 
 ### 2. 原文证明
 
@@ -2336,17 +2548,17 @@ def partitionInversePrinted_corrected {n : ℕ} (m : Fin n → ℝ)
 
 | 原文对象或结论 | 当前Lean与范围 |
 |---|---|
-| 所引原句 | 本条所引原句及展示公式；单个记号归入context_notation。 |
+| 所引原句 | 本条所引原句及展示公式；单个记号归入context\_notation。 |
 | 对象、域、量词及前提 | 以上完整声明；额外资格与未覆盖部分见下一段 |
-| 最新网站原始评价 | NEEDS_HUMAN；复审 |
+| 最新网站原始评价 | NEEDS\_HUMAN；复审 |
 
 ### 5. [EXTRA] 与覆盖缺口
 
-- [EXTRA] 原文版忠实性与数学疑误分开；补齐所交条目所属的现有_corrected完整签名，不从repair_log名称推断网站已通过修正版。
+- [EXTRA] 原文版忠实性与数学疑误分开；补齐所交条目所属的现有\_corrected完整签名，不从repair\_log名称推断网站已通过修正版。
 
 ### 6. 审计结论（含网站结论）
 
-网站原返回：NEEDS_HUMAN。partitionInversePrinted把正质量、β>0且Gibbs权重可积时的积分Z写成Z⁻¹=Z，忠实记录归一因子印刷疑误，数学上一般不成立。维数n由一自由度原文推广到任意n；massHamiltonian的动能分母2m_i、Phase=位置×动量、全空间体积积分已核对。partitionInversePrinted_corrected只把积分定义为配分函数，PASS作为定义；未断言该任意参数总化积分正有限，也未证明密度归一化。
+网站原返回：NEEDS\_HUMAN。partitionInversePrinted把正质量、β>0且Gibbs权重可积时的积分Z写成Z⁻¹=Z，忠实记录归一因子印刷疑误，数学上一般不成立。维数n由一自由度原文推广到任意n；massHamiltonian的动能分母2m\_i、Phase=位置×动量、全空间体积积分已核对。partitionInversePrinted\_corrected只把积分定义为配分函数，PASS作为定义；未断言该任意参数总化积分正有限，也未证明密度归一化。
 当前处理：修正版/限定声明=网站PASS；原文疑误或范围解释待导师。
 保留所交版本的明确结论。
 本地编译和逐声明依赖核对通过。原文疑误、各限定/修正版、反例的评价分别列出；有未完成证明依赖的声明仍为未证。
@@ -2355,7 +2567,7 @@ def partitionInversePrinted_corrected {n : ℕ} (m : Fin n → ℝ)
 
 | 声明 | 证明状态 | 未证原因 | 网站分版结论 |
 |---|---|---|---|
-| `MD.Ch06.partitionInversePrinted` | 未证 | 原书疑误不证 | 原文忠实性PASS；原书数学/范围NEEDS_HUMAN |
+| `MD.Ch06.partitionInversePrinted` | 未证 | 原书疑误不证 | 原文忠实性PASS；原书数学/范围NEEDS\_HUMAN |
 | `MD.Ch06.partitionInversePrinted_corrected` | 定义 | — | PASS |
 
 位置：`Blueprint/Ch06.lean:520`；本地核验记录：`blueprint/ch06/closeout26/FINAL_COMPILE.log`。
@@ -2389,7 +2601,7 @@ theorem weightedFluxIdentity {Nc : ℕ}
 
 | 原文对象或结论 | 当前Lean与范围 |
 |---|---|
-| 所引原句 | 本条所引原句及展示公式；单个记号归入context_notation。 |
+| 所引原句 | 本条所引原句及展示公式；单个记号归入context\_notation。 |
 | 对象、域、量词及前提 | 以上完整声明；额外资格与未覆盖部分见下一段 |
 | 最新网站原始评价 | PASS；首轮保留 |
 
@@ -2419,7 +2631,12 @@ theorem weightedFluxIdentity {Nc : ℕ}
 ### 1. 原文陈述
 
 > An even simpler configuration-dependent choice is derived from $G=(q,0)^T$, corresponding to
-> \[k_BT=\frac{\operatorname{Av}_\beta(q\cdot\nabla U)}{N_c}.\]
+
+$$
+k_BT=\frac{\operatorname{Av}_\beta(q\cdot\nabla U)}{N_c}.
+$$
+
+
 
 ### 2. 原文证明
 
@@ -2446,7 +2663,7 @@ theorem virialTemperature : ∀ {n : ℕ} (hn : 0 < n)
 
 | 原文对象或结论 | 当前Lean与范围 |
 |---|---|
-| 所引原句 | 本条所引原句及展示公式；单个记号归入context_notation。 |
+| 所引原句 | 本条所引原句及展示公式；单个记号归入context\_notation。 |
 | 对象、域、量词及前提 | 以上完整声明；额外资格与未覆盖部分见下一段 |
 | 最新网站原始评价 | PASS；首轮保留 |
 
@@ -2495,7 +2712,7 @@ theorem virialFieldNotPeriodic : ∀ {n : ℕ} (i : Fin n) (q : Fin n → ℝ),
 
 | 原文对象或结论 | 当前Lean与范围 |
 |---|---|
-| 所引原句 | 本条所引原句及展示公式；单个记号归入context_notation。 |
+| 所引原句 | 本条所引原句及展示公式；单个记号归入context\_notation。 |
 | 对象、域、量词及前提 | 以上完整声明；额外资格与未覆盖部分见下一段 |
 | 最新网站原始评价 | PASS；首轮保留 |
 
@@ -2505,7 +2722,7 @@ theorem virialFieldNotPeriodic : ∀ {n : ℕ} (i : Fin n) (q : Fin n → ℝ),
 
 ### 6. 审计结论（含网站结论）
 
-网站原返回：PASS。∀n,i:Fin n,q；结论为q+e_i≠q。评价第i坐标即q_i+1≠q_i，准确表达virial配置部分不周期；i的存在已排除零维。没有错误地把环面上相等的商类与实空间代表相等混淆。
+网站原返回：PASS。∀n,i:Fin n,q；结论为q+e\_i≠q。评价第i坐标即q\_i+1≠q\_i，准确表达virial配置部分不周期；i的存在已排除零维。没有错误地把环面上相等的商类与实空间代表相等混淆。
 当前处理：网站PASS（首轮未改版本）。
 保留所交版本的明确结论。
 本地编译和逐声明依赖核对通过。原文疑误、各限定/修正版、反例的评价分别列出；有未完成证明依赖的声明仍为未证。
@@ -2545,7 +2762,7 @@ theorem densityPositive : ∀ {D : Type*} [MeasurableSpace D] (ν : Measure D)
 
 | 原文对象或结论 | 当前Lean与范围 |
 |---|---|
-| 所引原句 | 本条所引原句及展示公式；单个记号归入context_notation。 |
+| 所引原句 | 本条所引原句及展示公式；单个记号归入context\_notation。 |
 | 对象、域、量词及前提 | 以上完整声明；额外资格与未覆盖部分见下一段 |
 | 最新网站原始评价 | PASS；首轮保留 |
 
@@ -2575,8 +2792,12 @@ theorem densityPositive : ∀ {D : Type*} [MeasurableSpace D] (ν : Measure D)
 ### 1. 原文陈述
 
 > then we may decompose the unnormalized canonical distribution as
-> \[\exp(-\beta[K(p)+U(q)])=\exp(-\beta K(p))\exp(-\beta U(q))
-> =\exp(-\beta U(q))\prod_{i=1}^{N_c}\exp\left(-\beta\frac{p_i^2}{2m_i}\right).\]
+
+$$
+\exp(-\beta[K(p)+U(q)])=\exp(-\beta K(p))\exp(-\beta U(q)) =\exp(-\beta U(q))\prod_{i=1}^{N_c}\exp\left(-\beta\frac{p_i^2}{2m_i}\right).
+$$
+
+
 
 ### 2. 原文证明
 
@@ -2604,7 +2825,7 @@ theorem kineticWeightFactorization : ∀ {n : ℕ}
 
 | 原文对象或结论 | 当前Lean与范围 |
 |---|---|
-| 所引原句 | 本条所引原句及展示公式；单个记号归入context_notation。 |
+| 所引原句 | 本条所引原句及展示公式；单个记号归入context\_notation。 |
 | 对象、域、量词及前提 | 以上完整声明；额外资格与未覆盖部分见下一段 |
 | 最新网站原始评价 | PASS；首轮保留 |
 
@@ -2658,7 +2879,7 @@ theorem energySupportObstruction :
 
 | 原文对象或结论 | 当前Lean与范围 |
 |---|---|
-| 所引原句 | 本条所引原句及展示公式；单个记号归入context_notation。 |
+| 所引原句 | 本条所引原句及展示公式；单个记号归入context\_notation。 |
 | 对象、域、量词及前提 | 以上完整声明；额外资格与未覆盖部分见下一段 |
 | 最新网站原始评价 | PASS；首轮保留 |
 
@@ -2727,7 +2948,7 @@ theorem canonicalSamplingObstruction : ∀ {n : ℕ}
 
 | 原文对象或结论 | 当前Lean与范围 |
 |---|---|
-| 所引原句 | 本条所引原句及展示公式；单个记号归入context_notation。 |
+| 所引原句 | 本条所引原句及展示公式；单个记号归入context\_notation。 |
 | 对象、域、量词及前提 | 以上完整声明；额外资格与未覆盖部分见下一段 |
 | 最新网站原始评价 | PASS；首轮保留 |
 
@@ -2777,7 +2998,7 @@ def rademacherJumps {Ω : Type*} [MeasurableSpace Ω] (P : Measure Ω)
 
 | 原文对象或结论 | 当前Lean与范围 |
 |---|---|
-| 所引原句 | 本条所引原句及展示公式；单个记号归入context_notation。 |
+| 所引原句 | 本条所引原句及展示公式；单个记号归入context\_notation。 |
 | 对象、域、量词及前提 | 以上完整声明；额外资格与未覆盖部分见下一段 |
 | 最新网站原始评价 | PASS；首轮保留 |
 
@@ -2807,10 +3028,20 @@ def rademacherJumps {Ω : Type*} [MeasurableSpace Ω] (P : Measure Ω)
 ### 1. 原文陈述
 
 > That is, we have
-> \[X_{n+1}=X_n+\delta x J_n.\]
+
+$$
+X_{n+1}=X_n+\delta x J_n.
+$$
+
+
 > We initiate the random walk with $X_0=0$.
 > The solution $X_n$ of the random walk may be written
-> \[X_n=\delta x\sum_{k=0}^{n-1}J_k.\]
+
+$$
+X_n=\delta x\sum_{k=0}^{n-1}J_k.
+$$
+
+
 
 ### 2. 原文证明
 
@@ -2827,7 +3058,7 @@ def randomWalk {Ω : Type*} (J : ℕ → Ω → ℝ) (dx : ℝ) (n : ℕ) (sampl
 
 | 原文对象或结论 | 当前Lean与范围 |
 |---|---|
-| 所引原句 | 本条所引原句及展示公式；单个记号归入context_notation。 |
+| 所引原句 | 本条所引原句及展示公式；单个记号归入context\_notation。 |
 | 对象、域、量词及前提 | 以上完整声明；额外资格与未覆盖部分见下一段 |
 | 最新网站原始评价 | PASS；首轮保留 |
 
@@ -2857,7 +3088,12 @@ def randomWalk {Ω : Type*} (J : ℕ → Ω → ℝ) (dx : ℝ) (n : ℕ) (sampl
 ### 1. 原文陈述
 
 > A random walk is a discrete stochastic process in which the state $X_n$ at a given instant (defined by the index $n$) is related to the state $X_{n-1}$, at step $n-1$ by an offset that may be viewed as a random variable. That is, we have
-> \[X_{n+1}=X_n+\delta x J_n.\]
+
+$$
+X_{n+1}=X_n+\delta x J_n.
+$$
+
+
 
 ### 2. 原文证明
 
@@ -2878,7 +3114,7 @@ theorem walkRecurrence :
 
 | 原文对象或结论 | 当前Lean与范围 |
 |---|---|
-| 所引原句 | 本条所引原句及展示公式；单个记号归入context_notation。 |
+| 所引原句 | 本条所引原句及展示公式；单个记号归入context\_notation。 |
 | 对象、域、量词及前提 | 以上完整声明；额外资格与未覆盖部分见下一段 |
 | 最新网站原始评价 | PASS；首轮保留 |
 
@@ -2888,7 +3124,7 @@ theorem walkRecurrence :
 
 ### 6. 审计结论（含网站结论）
 
-网站原返回：PASS。所有J、dx,n,sample，无概率或正步长假设；range(n+1)拆最后一项便得X_(n+1)=X_n+dxJ_n，量词、下标及结论完整。
+网站原返回：PASS。所有J、dx,n,sample，无概率或正步长假设；range(n+1)拆最后一项便得X_(n+1)=X\_n+dxJ\_n，量词、下标及结论完整。
 当前处理：网站PASS（首轮未改版本）。
 保留所交版本的明确结论。
 本地编译和逐声明依赖核对通过。原文疑误、各限定/修正版、反例的评价分别列出；有未完成证明依赖的声明仍为未证。
@@ -2926,7 +3162,7 @@ theorem walkInitial : ∀ {Ω : Type*} (J : ℕ → Ω → ℝ) (dx : ℝ) (samp
 
 | 原文对象或结论 | 当前Lean与范围 |
 |---|---|
-| 所引原句 | 本条所引原句及展示公式；单个记号归入context_notation。 |
+| 所引原句 | 本条所引原句及展示公式；单个记号归入context\_notation。 |
 | 对象、域、量词及前提 | 以上完整声明；额外资格与未覆盖部分见下一段 |
 | 最新网站原始评价 | PASS；首轮保留 |
 
@@ -2956,9 +3192,19 @@ theorem walkInitial : ∀ {Ω : Type*} (J : ℕ → Ω → ℝ) (dx : ℝ) (samp
 ### 1. 原文陈述
 
 > hence the variance is
-> \[\mathbb E X_n^2=\delta x^2\mathbb E\left(\sum_{k=0}^{n-1}J_k\right)^2.\]
+
+$$
+\mathbb E X_n^2=\delta x^2\mathbb E\left(\sum_{k=0}^{n-1}J_k\right)^2.
+$$
+
+
 > Expanding the squared sum we see that there are (i) $n$ squares $J_k^2$ plus (ii) products of the form $J_kJ_l$, $k\neq l$. Clearly the former are always one and the latter have zero expectation, thus
-> \[\mathbb E X_n^2=n\delta x^2.\]
+
+$$
+\mathbb E X_n^2=n\delta x^2.
+$$
+
+
 
 ### 2. 原文证明
 
@@ -2978,7 +3224,7 @@ theorem walkVariance :
 
 | 原文对象或结论 | 当前Lean与范围 |
 |---|---|
-| 所引原句 | 本条所引原句及展示公式；单个记号归入context_notation。 |
+| 所引原句 | 本条所引原句及展示公式；单个记号归入context\_notation。 |
 | 对象、域、量词及前提 | 以上完整声明；额外资格与未覆盖部分见下一段 |
 | 最新网站原始评价 | PASS；首轮保留 |
 
@@ -2988,7 +3234,7 @@ theorem walkVariance :
 
 ### 6. 审计结论（含网站结论）
 
-网站原返回：PASS。任意概率空间P、J、dx,n，在D14条件下零均值及完整二阶矩n dx²同时保留。独立性消去异指标乘积，AE的J_k²=1给对角项；L²使有限和及平方可积。因此二阶矩等于原方差，未将待证矩作为假设。
+网站原返回：PASS。任意概率空间P、J、dx,n，在D14条件下零均值及完整二阶矩n dx²同时保留。独立性消去异指标乘积，AE的J\_k²=1给对角项；L²使有限和及平方可积。因此二阶矩等于原方差，未将待证矩作为假设。
 当前处理：网站PASS（首轮未改版本）。
 保留所交版本的明确结论。
 本地编译和逐声明依赖核对通过。原文疑误、各限定/修正版、反例的评价分别列出；有未完成证明依赖的声明仍为未证。
@@ -3008,7 +3254,12 @@ theorem walkVariance :
 ### 1. 原文陈述
 
 > Let $t_n=n\delta t$, $n=0,1,\ldots,\nu$ and define
-> \[Y(t_{k+1})=Y(t_k)+\sqrt{\delta t}J_k,\qquad k=0,1,\ldots,\nu-1,\]
+
+$$
+Y(t_{k+1})=Y(t_k)+\sqrt{\delta t}J_k,\qquad k=0,1,\ldots,\nu-1,
+$$
+
+
 > where $Y(0)=0$. Effectively we are making the size of the jump $\delta x$ taken at each step of the random walk equal to $\sqrt{\delta t}$.
 
 ### 2. 原文证明
@@ -3026,7 +3277,7 @@ def diffusiveWalk {Ω : Type*} (J : ℕ → Ω → ℝ) (dt : ℝ) : ℕ → Ω 
 
 | 原文对象或结论 | 当前Lean与范围 |
 |---|---|
-| 所引原句 | 本条所引原句及展示公式；单个记号归入context_notation。 |
+| 所引原句 | 本条所引原句及展示公式；单个记号归入context\_notation。 |
 | 对象、域、量词及前提 | 以上完整声明；额外资格与未覆盖部分见下一段 |
 | 最新网站原始评价 | PASS；首轮保留 |
 
@@ -3056,7 +3307,12 @@ def diffusiveWalk {Ω : Type*} (J : ℕ → Ω → ℝ) (dt : ℝ) : ℕ → Ω 
 ### 1. 原文陈述
 
 > For points between $t_k$ and $t_{k+1}$ we define the value of $Y(t)$ by linear interpolation:
-> \[Y(t)=Y_k+\frac{t-t_k}{\delta t}\Delta Y_k.\]
+
+$$
+Y(t)=Y_k+\frac{t-t_k}{\delta t}\Delta Y_k.
+$$
+
+
 
 ### 2. 原文证明
 
@@ -3075,7 +3331,7 @@ def interpolatedWalk {Ω : Type*} (J : ℕ → Ω → ℝ) (dt t : ℝ) (sample 
 
 | 原文对象或结论 | 当前Lean与范围 |
 |---|---|
-| 所引原句 | 本条所引原句及展示公式；单个记号归入context_notation。 |
+| 所引原句 | 本条所引原句及展示公式；单个记号归入context\_notation。 |
 | 对象、域、量词及前提 | 以上完整声明；额外资格与未覆盖部分见下一段 |
 | 最新网站原始评价 | PASS；首轮保留 |
 
@@ -3085,7 +3341,7 @@ def interpolatedWalk {Ω : Type*} (J : ℕ → Ω → ℝ) (dt t : ℝ) (sample 
 
 ### 6. 审计结论（含网站结论）
 
-网站原返回：PASS。在dt>0、t≥0的原语境，n=Nat.floor(t/dt)正是网格区间编号；增量为Y_(n+1)-Y_n，系数(t-n dt)/dt正确，端点也与网格值一致。定义对其他实数的延拓未声称为原书正步长过程。A层公式因子位置须恢复原页顺序。
+网站原返回：PASS。在dt>0、t≥0的原语境，n=Nat.floor(t/dt)正是网格区间编号；增量为Y_(n+1)-Y\_n，系数(t-n dt)/dt正确，端点也与网格值一致。定义对其他实数的延拓未声称为原书正步长过程。A层公式因子位置须恢复原页顺序。
 当前处理：网站PASS（首轮未改版本）。
 保留所交版本的明确结论。
 本地编译和逐声明依赖核对通过。原文疑误、各限定/修正版、反例的评价分别列出；有未完成证明依赖的声明仍为未证。
@@ -3133,7 +3389,7 @@ def walkIncrement {Ω : Type*} (J : ℕ → Ω → ℝ) (dx : ℝ) (n : ℕ) (sa
 
 ### 6. 审计结论（含网站结论）
 
-网站原返回：PASS。walkIncrement对任意样本类型、任意实跳过程J及实dx，定义randomWalk(n+1)-randomWalk(n)。randomWalk=dx*Σ_{k<n}J_k，故是原文ΔX_(n+1)的重新编号。没有概率测度或J独立前提，因此没有宣称独立性。statement_scope和coverage_gaps已诚实注明只覆盖一步差分，未覆盖dx*J等式、扩散缩放或独立增量；按披露的局部范围PASS。
+网站原返回：PASS。walkIncrement对任意样本类型、任意实跳过程J及实dx，定义randomWalk(n+1)-randomWalk(n)。randomWalk=dx*Σ_{k<n}J\_k，故是原文ΔX_(n+1)的重新编号。没有概率测度或J独立前提，因此没有宣称独立性。statement\_scope和coverage\_gaps已诚实注明只覆盖一步差分，未覆盖dx*J等式、扩散缩放或独立增量；按披露的局部范围PASS。
 当前处理：网站PASS（复审）。
 保留所交版本的明确结论。
 本地编译和逐声明依赖核对通过。原文疑误、各限定/修正版、反例的评价分别列出；有未完成证明依赖的声明仍为未证。
@@ -3153,7 +3409,12 @@ def walkIncrement {Ω : Type*} (J : ℕ → Ω → ℝ) (dx : ℝ) (n : ℕ) (sa
 ### 1. 原文陈述
 
 > Let us observe the following facts, for $0\leq k\leq l\leq\nu$
-> \[(i)\quad\mathbb E(Y_l-Y_k)=0,\qquad(ii)\quad\operatorname{Var}(Y_l-Y_k)=t_l-t_k.\]
+
+$$
+(i)\quad\mathbb E(Y_l-Y_k)=0,\qquad(ii)\quad\operatorname{Var}(Y_l-Y_k)=t_l-t_k.
+$$
+
+
 
 ### 2. 原文证明
 
@@ -3174,7 +3435,7 @@ theorem walkGridMoments :
 
 | 原文对象或结论 | 当前Lean与范围 |
 |---|---|
-| 所引原句 | 本条所引原句及展示公式；单个记号归入context_notation。 |
+| 所引原句 | 本条所引原句及展示公式；单个记号归入context\_notation。 |
 | 对象、域、量词及前提 | 以上完整声明；额外资格与未覆盖部分见下一段 |
 | 最新网站原始评价 | PASS；首轮保留 |
 
@@ -3204,7 +3465,12 @@ theorem walkGridMoments :
 ### 1. 原文陈述
 
 > Then, for $0\leq t\leq s\leq\tau$, we have
-> \[\mathbb E(Y(s)-Y(t))=0.\]
+
+$$
+\mathbb E(Y(s)-Y(t))=0.
+$$
+
+
 > This is easy to demonstrate. However, the intuitive corresponding statement $\operatorname{Var}(Y(s)-Y(t))=(s-t)$ does not quite hold due to the reliance on interpolation.
 
 ### 2. 原文证明
@@ -3226,7 +3492,7 @@ theorem interpolatedWalkMean : ∀ {Ω : Type*} [MeasurableSpace Ω]
 
 | 原文对象或结论 | 当前Lean与范围 |
 |---|---|
-| 所引原句 | 本条所引原句及展示公式；单个记号归入context_notation。 |
+| 所引原句 | 本条所引原句及展示公式；单个记号归入context\_notation。 |
 | 对象、域、量词及前提 | 以上完整声明；额外资格与未覆盖部分见下一段 |
 | 最新网站原始评价 | PASS；首轮保留 |
 
@@ -3256,7 +3522,12 @@ theorem interpolatedWalkMean : ∀ {Ω : Type*} [MeasurableSpace Ω]
 ### 1. 原文陈述
 
 > In the diffusion limit the motion of the random walk can be viewed as an everywhere continuous (but almost nowhere smooth) path which is called a Wiener process (after Norbert Wiener).
-> \[W(t)=\widehat{\lim}_{\delta t\to0}\sqrt{\delta t}\sum_{k=0}^{\lfloor t/\delta t\rfloor}J_k.\]
+
+$$
+W(t)=\widehat{\lim}_{\delta t\to0}\sqrt{\delta t}\sum_{k=0}^{\lfloor t/\delta t\rfloor}J_k.
+$$
+
+
 > The convergence here, signified by the symbol $\widehat{\lim}$ is in the sense of distributions (see Appendix B).
 
 ### 2. 原文证明
@@ -3286,7 +3557,7 @@ theorem walkDiffusion :
 
 | 原文对象或结论 | 当前Lean与范围 |
 |---|---|
-| 所引原句 | 本条所引原句及展示公式；单个记号归入context_notation。 |
+| 所引原句 | 本条所引原句及展示公式；单个记号归入context\_notation。 |
 | 对象、域、量词及前提 | 以上完整声明；额外资格与未覆盖部分见下一段 |
 | 最新网站原始评价 | PASS；首轮保留 |
 
@@ -3317,7 +3588,12 @@ theorem walkDiffusion :
 ### 1. 原文陈述
 
 > As we take $n$ to infinity, $\delta t$ to zero, in such a way that $n\delta t=t$, we obtain the random variable $W(t)$ such that
-> \[W(t)\sim N(0,t).\]
+
+$$
+W(t)\sim N(0,t).
+$$
+
+
 > For the Wiener process, we know that $W(t)-W(s)$ is normally distributed with mean zero and variance $|t-s|$;
 
 ### 2. 原文证明
@@ -3336,7 +3612,7 @@ def wienerVector {n : ℕ} {Ω : Type*} [MeasurableSpace Ω]
 
 | 原文对象或结论 | 当前Lean与范围 |
 |---|---|
-| 所引原句 | 本条所引原句及展示公式；单个记号归入context_notation。 |
+| 所引原句 | 本条所引原句及展示公式；单个记号归入context\_notation。 |
 | 对象、域、量词及前提 | 以上完整声明；额外资格与未覆盖部分见下一段 |
 | 最新网站原始评价 | PASS；首轮保留 |
 
@@ -3346,7 +3622,7 @@ def wienerVector {n : ℕ} {Ω : Type*} [MeasurableSpace Ω]
 
 ### 6. 审计结论（含网站结论）
 
-网站原返回：PASS。定义接受任意维数n、非负时间过程B及P；D12要求联合Gaussian、零均值、同坐标min(s,t)协方差、异坐标0及AE连续。属于已在context_notation注明的多维Wiener结构别名；没有声称由单时CLT构造连续过程。标量边际/增量结论另见第3条。
+网站原返回：PASS。定义接受任意维数n、非负时间过程B及P；D12要求联合Gaussian、零均值、同坐标min(s,t)协方差、异坐标0及AE连续。属于已在context\_notation注明的多维Wiener结构别名；没有声称由单时CLT构造连续过程。标量边际/增量结论另见第3条。
 当前处理：网站PASS（首轮未改版本）。
 保留所交版本的明确结论。
 本地编译和逐声明依赖核对通过。原文疑误、各限定/修正版、反例的评价分别列出；有未完成证明依赖的声明仍为未证。
@@ -3366,7 +3642,12 @@ def wienerVector {n : ℕ} {Ω : Type*} [MeasurableSpace Ω]
 ### 1. 原文陈述
 
 > Moreover, we may easily demonstrate that
-> \[\mathbb E(W(t)-W(s))^2=|t-s|.\tag{6.7}\]
+
+$$
+\mathbb E(W(t)-W(s))^2=|t-s|.\tag{6.7}
+$$
+
+
 > For the Wiener process, we know that $W(t)-W(s)$ is normally distributed with mean zero and variance $|t-s|$;
 
 ### 2. 原文证明
@@ -3397,7 +3678,7 @@ theorem wienerIncrement :
 
 | 原文对象或结论 | 当前Lean与范围 |
 |---|---|
-| 所引原句 | 本条所引原句及展示公式；单个记号归入context_notation。 |
+| 所引原句 | 本条所引原句及展示公式；单个记号归入context\_notation。 |
 | 对象、域、量词及前提 | 以上完整声明；额外资格与未覆盖部分见下一段 |
 | 最新网站原始评价 | PASS；首轮保留 |
 
@@ -3446,7 +3727,7 @@ theorem wienerContinuousVersion :
 
 | 原文对象或结论 | 当前Lean与范围 |
 |---|---|
-| 所引原句 | 本条所引原句及展示公式；单个记号归入context_notation。 |
+| 所引原句 | 本条所引原句及展示公式；单个记号归入context\_notation。 |
 | 对象、域、量词及前提 | 以上完整声明；额外资格与未覆盖部分见下一段 |
 | 最新网站原始评价 | PASS；首轮保留 |
 
@@ -3496,7 +3777,7 @@ theorem wienerNondifferentiable :
 
 | 原文对象或结论 | 当前Lean与范围 |
 |---|---|
-| 所引原句 | 本条所引原句及展示公式；单个记号归入context_notation。 |
+| 所引原句 | 本条所引原句及展示公式；单个记号归入context\_notation。 |
 | 对象、域、量词及前提 | 以上完整声明；额外资格与未覆盖部分见下一段 |
 | 最新网站原始评价 | PASS；首轮保留 |
 
@@ -3547,7 +3828,7 @@ theorem wienerFutureCompletedHistory
 
 | 原文对象或结论 | 当前Lean与范围 |
 |---|---|
-| 所引原句 | 本条所引原句及展示公式；单个记号归入context_notation。 |
+| 所引原句 | 本条所引原句及展示公式；单个记号归入context\_notation。 |
 | 对象、域、量词及前提 | 以上完整声明；额外资格与未覆盖部分见下一段 |
 | 最新网站原始评价 | PASS；首轮保留 |
 
@@ -3595,7 +3876,7 @@ theorem gridWienerIncrementLaw {Ω : Type*} [MeasurableSpace Ω] {P : Measure Ω
 
 | 原文对象或结论 | 当前Lean与范围 |
 |---|---|
-| 所引原句 | 本条所引原句及展示公式；单个记号归入context_notation。 |
+| 所引原句 | 本条所引原句及展示公式；单个记号归入context\_notation。 |
 | 对象、域、量词及前提 | 以上完整声明；额外资格与未覆盖部分见下一段 |
 | 最新网站原始评价 | PASS；首轮保留 |
 
@@ -3643,7 +3924,7 @@ theorem gridIncrementIndependent {Ω : Type*} [MeasurableSpace Ω] {P : Measure 
 
 | 原文对象或结论 | 当前Lean与范围 |
 |---|---|
-| 所引原句 | 本条所引原句及展示公式；单个记号归入context_notation。 |
+| 所引原句 | 本条所引原句及展示公式；单个记号归入context\_notation。 |
 | 对象、域、量词及前提 | 以上完整声明；额外资格与未覆盖部分见下一段 |
 | 最新网站原始评价 | PASS；首轮保留 |
 
@@ -3692,7 +3973,7 @@ theorem wienerContinuousPathEval {Nc : ℕ} {Ω : Type*}
 
 | 原文对象或结论 | 当前Lean与范围 |
 |---|---|
-| 所引原句 | 本条所引原句及展示公式；单个记号归入context_notation。 |
+| 所引原句 | 本条所引原句及展示公式；单个记号归入context\_notation。 |
 | 对象、域、量词及前提 | 以上完整声明；额外资格与未覆盖部分见下一段 |
 | 最新网站原始评价 | PASS；首轮保留 |
 
@@ -3740,7 +4021,7 @@ theorem wienerContinuousPathMeasurable {Nc : ℕ} {Ω : Type*} [MeasurableSpace 
 
 | 原文对象或结论 | 当前Lean与范围 |
 |---|---|
-| 所引原句 | 本条所引原句及展示公式；单个记号归入context_notation。 |
+| 所引原句 | 本条所引原句及展示公式；单个记号归入context\_notation。 |
 | 对象、域、量词及前提 | 以上完整声明；额外资格与未覆盖部分见下一段 |
 | 最新网站原始评价 | PASS；首轮保留 |
 
@@ -3770,7 +4051,12 @@ theorem wienerContinuousPathMeasurable {Nc : ℕ} {Ω : Type*} [MeasurableSpace 
 ### 1. 原文陈述
 
 > Let $A(x)$, $B(x)$ and $C(x)$ be three events dependent on state variable $x$, and let $t_+>t_0>t_-$ be three times, then, for a Markov process $X(t)$ we have (using the notation for conditional probability):
-> \[\Pr[A(X(t_+))\mid B(X(t_0)),C(X(t_-))]=\Pr[A(X(t_+))\mid B(X(t_0))].\]
+
+$$
+\Pr[A(X(t_+))\mid B(X(t_0)),C(X(t_-))]=\Pr[A(X(t_+))\mid B(X(t_0))].
+$$
+
+
 
 ### 2. 原文证明
 
@@ -3806,17 +4092,17 @@ def coarseMarkovPrinted_corrected {Ω : Type*} [MeasurableSpace Ω]
 
 | 原文对象或结论 | 当前Lean与范围 |
 |---|---|
-| 所引原句 | 本条所引原句及展示公式；单个记号归入context_notation。 |
+| 所引原句 | 本条所引原句及展示公式；单个记号归入context\_notation。 |
 | 对象、域、量词及前提 | 以上完整声明；额外资格与未覆盖部分见下一段 |
-| 最新网站原始评价 | NEEDS_HUMAN；首轮保留 |
+| 最新网站原始评价 | NEEDS\_HUMAN；首轮保留 |
 
 ### 5. [EXTRA] 与覆盖缺口
 
-- [EXTRA] 原文版忠实性与数学疑误分开；补齐所交条目所属的现有_corrected完整签名，不从repair_log名称推断网站已通过修正版。
+- [EXTRA] 原文版忠实性与数学疑误分开；补齐所交条目所属的现有\_corrected完整签名，不从repair\_log名称推断网站已通过修正版。
 
 ### 6. 审计结论（含网站结论）
 
-网站原返回：NEEDS_HUMAN。字面版在真实PreBrownian下量化任意可测事件a,b,c、past<present<future及正条件事件概率，ENNReal比值忠实表达印刷条件概率式。但原书把完整当前状态换成任意粗事件，一般错误，须保留疑误而不因字面忠实判数学正确。
+网站原返回：NEEDS\_HUMAN。字面版在真实PreBrownian下量化任意可测事件a,b,c、past<present<future及正条件事件概率，ENNReal比值忠实表达印刷条件概率式。但原书把完整当前状态换成任意粗事件，一般错误，须保留疑误而不因字面忠实判数学正确。
 当前处理：原文疑误或语义范围待导师；不冒称未提供版本已通过。
 保留所交版本的明确结论。
 本地编译和逐声明依赖核对通过。原文疑误、各限定/修正版、反例的评价分别列出；有未完成证明依赖的声明仍为未证。
@@ -3825,7 +4111,7 @@ def coarseMarkovPrinted_corrected {Ω : Type*} [MeasurableSpace Ω]
 
 | 声明 | 证明状态 | 未证原因 | 网站分版结论 |
 |---|---|---|---|
-| `MD.Ch06.coarseMarkovPrinted` | 未证 | 原书疑误不证 | 原文忠实性PASS；原书数学/范围NEEDS_HUMAN |
+| `MD.Ch06.coarseMarkovPrinted` | 未证 | 原书疑误不证 | 原文忠实性PASS；原书数学/范围NEEDS\_HUMAN |
 
 位置：`Blueprint/Ch06.lean:807`；本地核验记录：`blueprint/ch06/closeout26/FINAL_COMPILE.log`。
 
@@ -3868,17 +4154,17 @@ def coarseMarkovPrinted_corrected {Ω : Type*} [MeasurableSpace Ω]
 
 | 原文对象或结论 | 当前Lean与范围 |
 |---|---|
-| 所引原句 | 本条Lean覆盖范围：原版及coarseMarkovPrinted_corrected同时要求概率空间、X各时可测和history严格等于全部过去生成的自然过滤；排除任意history伪Markov。 |
+| 所引原句 | 本条Lean覆盖范围：原版及coarseMarkovPrinted\_corrected同时要求概率空间、X各时可测和history严格等于全部过去生成的自然过滤；排除任意history伪Markov。 |
 | 对象、域、量词及前提 | 以上完整声明；额外资格与未覆盖部分见下一段 |
 | 最新网站原始评价 | PASS；复审 |
 
 ### 5. [EXTRA] 与覆盖缺口
 
-- [EXTRA] 原版及coarseMarkovPrinted_corrected同时要求概率空间、X各时可测和history严格等于全部过去生成的自然过滤；排除任意history伪Markov。
+- [EXTRA] 原版及coarseMarkovPrinted\_corrected同时要求概率空间、X各时可测和history严格等于全部过去生成的自然过滤；排除任意history伪Markov。
 
 ### 6. 审计结论（含网站结论）
 
-网站原返回：PASS。stateMarkovMeaning与coarseMarkovPrinted_corrected完全相同：概率空间、每时X可测、history严格等于0≤r≤s的全部自然历史；对s≤t及所有可测实事件a，未来事件指标关于历史与当前状态的条件期望AE相等。指标可积且两个σ代数从X的可测性均小于环境σ代数，排除了任意history和默认零条件期望的伪性质。是实值过程标准自然历史Markov定义，两版PASS。
+网站原返回：PASS。stateMarkovMeaning与coarseMarkovPrinted\_corrected完全相同：概率空间、每时X可测、history严格等于0≤r≤s的全部自然历史；对s≤t及所有可测实事件a，未来事件指标关于历史与当前状态的条件期望AE相等。指标可积且两个σ代数从X的可测性均小于环境σ代数，排除了任意history和默认零条件期望的伪性质。是实值过程标准自然历史Markov定义，两版PASS。
 当前处理：网站PASS（复审）。
 保留所交版本的明确结论。
 本地编译和逐声明依赖核对通过。原文疑误、各限定/修正版、反例的评价分别列出；有未完成证明依赖的声明仍为未证。
@@ -3899,7 +4185,12 @@ def coarseMarkovPrinted_corrected {Ω : Type*} [MeasurableSpace Ω]
 ### 1. 原文陈述
 
 > Recall that the Riemann integral of a continuous function $g$ on $[0,\tau]$ is the limit of Riemann sums constructed as follows: partition the interval $[0,\tau]$ into $K$ subintervals each of width $\delta t=\tau/\nu$, choose an arbitrary $t_k$ from the $k$th subinterval, $1\leq k\leq \nu$, and evaluate the integral as a limit of the sum of products:
-> \[\int_0^\tau g(t)dt=\lim_{\nu\to\infty}\sum_{k=0}^{\nu-1}g(t_k)\delta t.\]
+
+$$
+\int_0^\tau g(t)dt=\lim_{\nu\to\infty}\sum_{k=0}^{\nu-1}g(t_k)\delta t.
+$$
+
+
 > We know that this limit does not depend on where the $t_k$ are chosen within the subintervals. For example we can take the left or right endpoint of each subinterval or the midpoint.
 
 ### 2. 原文证明
@@ -3929,9 +4220,9 @@ theorem riemannTags_corrected : ∀ (g : ℝ → ℝ) (T : ℝ) (tags : ℕ → 
 
 | 原文对象或结论 | 当前Lean与范围 |
 |---|---|
-| 所引原句 | 本条所引原句及展示公式；单个记号归入context_notation。 |
+| 所引原句 | 本条所引原句及展示公式；单个记号归入context\_notation。 |
 | 对象、域、量词及前提 | 以上完整声明；额外资格与未覆盖部分见下一段 |
-| 最新网站原始评价 | NEEDS_HUMAN；复审 |
+| 最新网站原始评价 | NEEDS\_HUMAN；复审 |
 
 ### 5. [EXTRA] 与覆盖缺口
 
@@ -3940,7 +4231,7 @@ theorem riemannTags_corrected : ∀ (g : ℝ → ℝ) (T : ℝ) (tags : ℕ → 
 
 ### 6. 审计结论（含网站结论）
 
-网站原返回：NEEDS_HUMAN。riemannTags与riemannTags_corrected都对任意连续于[0,T]的g、T≥0及所有合法tag族陈述均匀网格Riemann和趋于区间积分。K>0和k<K只用于标签条件，K=0单项不影响atTop极限；T=0也正确。任意端点或内部tag均包含，未降成左端点特例。两个数学签名PASS，但这是统一索引后的版本，原文索引疑误应保留NEEDS_HUMAN。
+网站原返回：NEEDS\_HUMAN。riemannTags与riemannTags\_corrected都对任意连续于[0,T]的g、T≥0及所有合法tag族陈述均匀网格Riemann和趋于区间积分。K>0和k<K只用于标签条件，K=0单项不影响atTop极限；T=0也正确。任意端点或内部tag均包含，未降成左端点特例。两个数学签名PASS，但这是统一索引后的版本，原文索引疑误应保留NEEDS\_HUMAN。
 当前处理：修正版/限定声明=网站PASS；原文疑误或范围解释待导师。
 保留所交版本的明确结论。
 本地编译和逐声明依赖核对通过。原文疑误、各限定/修正版、反例的评价分别列出；有未完成证明依赖的声明仍为未证。
@@ -3961,7 +4252,12 @@ theorem riemannTags_corrected : ∀ (g : ℝ → ℝ) (T : ℝ) (tags : ℕ → 
 ### 1. 原文陈述
 
 > By analogy, we would like to write the stochastic integral of a function $g$, where $g$ may, itself, be defined in terms of a stochastic process, as the limit of a sum:
-> \[\sum_{k=0}^{\nu-1}g(t_k)[W((k+1)\delta t)-W(k\delta t)],\quad \nu\to\infty.\]
+
+$$
+\sum_{k=0}^{\nu-1}g(t_k)[W((k+1)\delta t)-W(k\delta t)],\quad \nu\to\infty.
+$$
+
+
 > The first choice is commonly referred to as Itô integration, and the second as Stratonovich integration.
 
 ### 2. 原文证明
@@ -3980,7 +4276,7 @@ def itoLeftSum {Ω : Type*} (W g : ℝ → Ω → ℝ) (T : ℝ) (K : ℕ) (samp
 
 | 原文对象或结论 | 当前Lean与范围 |
 |---|---|
-| 所引原句 | 本条所引原句及展示公式；单个记号归入context_notation。 |
+| 所引原句 | 本条所引原句及展示公式；单个记号归入context\_notation。 |
 | 对象、域、量词及前提 | 以上完整声明；额外资格与未覆盖部分见下一段 |
 | 最新网站原始评价 | PASS；首轮保留 |
 
@@ -4010,10 +4306,20 @@ def itoLeftSum {Ω : Type*} (W g : ℝ → Ω → ℝ) (T : ℝ) (K : ℕ) (samp
 ### 1. 原文陈述
 
 > By analogy, we would like to write the stochastic integral of a function $g$, where $g$ may, itself, be defined in terms of a stochastic process, as the limit of a sum:
-> \[\sum_{k=0}^{\nu-1}g(t_k)[W((k+1)\delta t)-W(k\delta t)],\quad \nu\to\infty.\]
+
+$$
+\sum_{k=0}^{\nu-1}g(t_k)[W((k+1)\delta t)-W(k\delta t)],\quad \nu\to\infty.
+$$
+
+
 > The first choice is commonly referred to as Itô integration, and the second as Stratonovich integration.
 > where, for a sequence of random variables, $A_\nu$ and a random variable $B$, we have
-> \[\operatorname{l.i.m.}_{\nu\to\infty}A_\nu=B\iff\lim_{\nu\to\infty}\mathbb E(A_\nu-B)^2=0.\]
+
+$$
+\operatorname{l.i.m.}_{\nu\to\infty}A_\nu=B\iff\lim_{\nu\to\infty}\mathbb E(A_\nu-B)^2=0.
+$$
+
+
 
 ### 2. 原文证明
 
@@ -4040,7 +4346,7 @@ def weakItoAlias_corrected {Ω : Type*} [MeasurableSpace Ω] (P : Measure Ω)
 
 | 原文对象或结论 | 当前Lean与范围 |
 |---|---|
-| 所引原句 | 本条所引原句及展示公式；单个记号归入context_notation。 |
+| 所引原句 | 本条所引原句及展示公式；单个记号归入context\_notation。 |
 | 对象、域、量词及前提 | 以上完整声明；额外资格与未覆盖部分见下一段 |
 | 最新网站原始评价 | PASS；首轮保留 |
 
@@ -4050,7 +4356,7 @@ def weakItoAlias_corrected {Ω : Type*} [MeasurableSpace Ω] (P : Measure Ω)
 
 ### 6. 审计结论（含网站结论）
 
-网站原返回：PASS。任意P、W,g,T,Y；每个有限和及Y均MemLp 2，再要求误差平方积分趋零。D16取样相符。所附weakItoAlias_corrected逐项相同，合理修复第16条非可积默认值漏洞；作为L²均方积分定义不声称所有g可积。
+网站原返回：PASS。任意P、W,g,T,Y；每个有限和及Y均MemLp 2，再要求误差平方积分趋零。D16取样相符。所附weakItoAlias\_corrected逐项相同，合理修复第16条非可积默认值漏洞；作为L²均方积分定义不声称所有g可积。
 当前处理：网站PASS（首轮未改版本）。
 保留所交版本的明确结论。
 本地编译和逐声明依赖核对通过。原文疑误、各限定/修正版、反例的评价分别列出；有未完成证明依赖的声明仍为未证。
@@ -4071,7 +4377,12 @@ def weakItoAlias_corrected {Ω : Type*} [MeasurableSpace Ω] (P : Measure Ω)
 ### 1. 原文陈述
 
 > By analogy, we would like to write the stochastic integral of a function $g$, where $g$ may, itself, be defined in terms of a stochastic process, as the limit of a sum:
-> \[\sum_{k=0}^{\nu-1}g(t_k)[W((k+1)\delta t)-W(k\delta t)],\quad \nu\to\infty.\]
+
+$$
+\sum_{k=0}^{\nu-1}g(t_k)[W((k+1)\delta t)-W(k\delta t)],\quad \nu\to\infty.
+$$
+
+
 > where the increments $W((k+1)\delta t)-W(k\delta t)$ identified here are the increments of a Wiener process whose properties are given above. (In particular they are normally distributed with mean zero and variance $\delta t$.) First, we should be careful regarding the sense in which we expect convergence, since sequences of random variables may converge in various ways.
 > Next, unlike in the case of the Riemann sums, it turns out that the result depends on where we place the points $t_k$. Using the properties of the Wiener process we may easily show that the choice $t_k=k\delta t$ (left endpoint) and the choice $t_k=(k+1/2)\delta t$ yield different formulas for the integral. The first choice is commonly referred to as Itô integration, and the second as Stratonovich integration.
 
@@ -4122,7 +4433,12 @@ def weakItoAlias {Ω : Type*} [MeasurableSpace Ω] (P : Measure Ω)
 ### 1. 原文陈述
 
 > By analogy, we would like to write the stochastic integral of a function $g$, where $g$ may, itself, be defined in terms of a stochastic process, as the limit of a sum:
-> \[\sum_{k=0}^{\nu-1}g(t_k)[W((k+1)\delta t)-W(k\delta t)],\quad \nu\to\infty.\]
+
+$$
+\sum_{k=0}^{\nu-1}g(t_k)[W((k+1)\delta t)-W(k\delta t)],\quad \nu\to\infty.
+$$
+
+
 > The first choice is commonly referred to as Itô integration, and the second as Stratonovich integration.
 
 ### 2. 原文证明
@@ -4141,7 +4457,7 @@ def stratonovichSum {Ω : Type*} (W g : ℝ → Ω → ℝ) (T : ℝ) (K : ℕ) 
 
 | 原文对象或结论 | 当前Lean与范围 |
 |---|---|
-| 所引原句 | 本条所引原句及展示公式；单个记号归入context_notation。 |
+| 所引原句 | 本条所引原句及展示公式；单个记号归入context\_notation。 |
 | 对象、域、量词及前提 | 以上完整声明；额外资格与未覆盖部分见下一段 |
 | 最新网站原始评价 | PASS；首轮保留 |
 
@@ -4171,8 +4487,18 @@ def stratonovichSum {Ω : Type*} (W g : ℝ → Ω → ℝ) (T : ℝ) (K : ℕ) 
 ### 1. 原文陈述
 
 > As an example, consider the case where $g(t)=W(t)$. We suppose this to be approximated by a sum
-> \[\int_0^\tau W(t)dW(t)\approx\sum_{k=0}^{\nu-1}W(k\delta t)[W((k+1)\delta t)-W(k\delta t)],\]
-> \[=\frac12\sum_{k=0}^{\nu-1}[W((k+1)\delta t)^2-W(k\delta t)^2-(W((k+1)\delta t)-W(k\delta t))^2].\]
+
+$$
+\int_0^\tau W(t)dW(t)\approx\sum_{k=0}^{\nu-1}W(k\delta t)[W((k+1)\delta t)-W(k\delta t)],
+$$
+
+
+
+$$
+=\frac12\sum_{k=0}^{\nu-1}[W((k+1)\delta t)^2-W(k\delta t)^2-(W((k+1)\delta t)-W(k\delta t))^2].
+$$
+
+
 > Breaking this into two parts, we see that the first sum telescopes to give $W(\tau)^2$ (as $W(0)=0$).
 
 ### 2. 原文证明
@@ -4193,7 +4519,7 @@ theorem selfItoFiniteIdentity {Ω : Type*} [MeasurableSpace Ω] {P : Measure Ω}
 
 | 原文对象或结论 | 当前Lean与范围 |
 |---|---|
-| 所引原句 | 本条所引原句及展示公式；单个记号归入context_notation。 |
+| 所引原句 | 本条所引原句及展示公式；单个记号归入context\_notation。 |
 | 对象、域、量词及前提 | 以上完整声明；额外资格与未覆盖部分见下一段 |
 | 最新网站原始评价 | PASS；首轮保留 |
 
@@ -4223,27 +4549,60 @@ theorem selfItoFiniteIdentity {Ω : Type*} [MeasurableSpace Ω] {P : Measure Ω}
 ### 1. 原文陈述
 
 > Proposition 6.2 Let $\nu\delta t=\tau$ then
-> \[\operatorname{l.i.m.}_{\nu\to\infty}\sum_{k=0}^{\nu-1}[(W((k+1)\delta t)-W(k\delta t))^2]=\tau,\]
+
+$$
+\operatorname{l.i.m.}_{\nu\to\infty}\sum_{k=0}^{\nu-1}[(W((k+1)\delta t)-W(k\delta t))^2]=\tau,
+$$
+
+
 > where, for a sequence of random variables, $A_\nu$ and a random variable $B$, we have
-> \[\operatorname{l.i.m.}_{\nu\to\infty}A_\nu=B\iff\lim_{\nu\to\infty}\mathbb E(A_\nu-B)^2=0.\]
+
+$$
+\operatorname{l.i.m.}_{\nu\to\infty}A_\nu=B\iff\lim_{\nu\to\infty}\mathbb E(A_\nu-B)^2=0.
+$$
+
+
 > (This is referred to as convergence in the mean square sense.)
 
 ### 2. 原文证明
 
 > With $\tau,\nu$ fixed, we have $\delta t=\tau/\nu$.
 > Let $\Delta W_{\nu,k}=W((k+1)\delta t)-W(k\delta t)=W((k+1)\tau/\nu)-W(k\tau/\nu)$ and observe that
-> \[\sum_{k=0}^{\nu-1}\Delta W_{\nu,k}^2-\tau=\sum_{k=0}^{\nu-1}[\Delta W_{\nu,k}^2-\delta t].\]
+
+$$
+\sum_{k=0}^{\nu-1}\Delta W_{\nu,k}^2-\tau=\sum_{k=0}^{\nu-1}[\Delta W_{\nu,k}^2-\delta t].
+$$
+
+
 > Then
-> \[I_\nu\stackrel{\rm def}=\mathbb E(\sum_{k=0}^{\nu-1}\Delta W_{\nu,k}^2-\tau)^2=\mathbb E(\sum_{k=0}^{\nu-1}[\Delta W_{\nu,k}^2-\delta t])^2.\]
+
+$$
+I_\nu\stackrel{\rm def}=\mathbb E(\sum_{k=0}^{\nu-1}\Delta W_{\nu,k}^2-\tau)^2=\mathbb E(\sum_{k=0}^{\nu-1}[\Delta W_{\nu,k}^2-\delta t])^2.
+$$
+
+
 > Terms of the form $Z_{\nu,k}\stackrel{\rm def}=\Delta W_{\nu,k}^2-\delta t$ are independent and have mean zero. Therefore
-> \[\mathbb E(\sum_{k=0}^{\nu-1}Z_{\nu,k})^2=\mathbb E\sum_{k=0}^{\nu-1}Z_{\nu,k}^2-2\mathbb E\sum_{k\ne l}Z_{\nu,k}Z_{\nu,l}=\mathbb E\sum_{k=0}^{\nu-1}Z_{\nu,k}^2,\]
+
+$$
+\mathbb E(\sum_{k=0}^{\nu-1}Z_{\nu,k})^2=\mathbb E\sum_{k=0}^{\nu-1}Z_{\nu,k}^2-2\mathbb E\sum_{k\ne l}Z_{\nu,k}Z_{\nu,l}=\mathbb E\sum_{k=0}^{\nu-1}Z_{\nu,k}^2,
+$$
+
+
 > where the last equation follows from independence of the increments ($\mathbb E Z_kZ_l=0$ if $k\ne l$).
 > Also observe that $\Delta W_k$ is a normally distributed random variable with the following properties
-> \[\mathbb E\Delta W_k=0;\quad\mathbb E\Delta W_k^2=\delta t=\tau/\nu;\quad\mathbb E\Delta W_k^4=3\delta t^2=3(\tau/\nu)^2.\]
+
+$$
+\mathbb E\Delta W_k=0;\quad\mathbb E\Delta W_k^2=\delta t=\tau/\nu;\quad\mathbb E\Delta W_k^4=3\delta t^2=3(\tau/\nu)^2.
+$$
+
+
 > Thus we have
-> \[I_\nu=\sum_{k=0}^{\nu-1}\mathbb E(\Delta W_{\nu,k}^2-\delta t)^2
-> =\sum_{k=0}^{\nu-1}\mathbb E[\Delta W_{\nu,k}^4-2\delta t\Delta W_{\nu,k}^2+\delta t^2]
-> =\sum_{k=0}^{\nu-1}[3\delta t^2-2\delta t^2+\delta t^2]=2\nu\delta t^2=2\tau^2/\nu.\]
+
+$$
+I_\nu=\sum_{k=0}^{\nu-1}\mathbb E(\Delta W_{\nu,k}^2-\delta t)^2 =\sum_{k=0}^{\nu-1}\mathbb E[\Delta W_{\nu,k}^4-2\delta t\Delta W_{\nu,k}^2+\delta t^2] =\sum_{k=0}^{\nu-1}[3\delta t^2-2\delta t^2+\delta t^2]=2\nu\delta t^2=2\tau^2/\nu.
+$$
+
+
 > Thus $I_\nu\to0$ as $\nu\to0$, which is the desired result.
 
 ### 3. 完整当前Lean（原文版与修正版独立列出）
@@ -4277,18 +4636,18 @@ theorem proposition62Printed_counterexample : ¬ ((1+1 : ℝ)^2=1^2+1^2-4*1*1) :
 
 | 原文对象或结论 | 当前Lean与范围 |
 |---|---|
-| 所引原句 | 本条所引原句及展示公式；单个记号归入context_notation。 |
+| 所引原句 | 本条所引原句及展示公式；单个记号归入context\_notation。 |
 | 对象、域、量词及前提 | 以上完整声明；额外资格与未覆盖部分见下一段 |
-| 最新网站原始评价 | NEEDS_HUMAN；复审 |
+| 最新网站原始评价 | NEEDS\_HUMAN；复审 |
 
 ### 5. [EXTRA] 与覆盖缺口
 
 - [EXTRA]实际PreBrownian law、τ≥0、全部均方极限；印刷最后K→0是笔误，更正K→∞。
-- [EXTRA] 原文版忠实性与数学疑误分开；补齐所交条目所属的现有_corrected完整签名，不从repair_log名称推断网站已通过修正版。
+- [EXTRA] 原文版忠实性与数学疑误分开；补齐所交条目所属的现有\_corrected完整签名，不从repair\_log名称推断网站已通过修正版。
 
 ### 6. 审计结论（含网站结论）
 
-网站原返回：NEEDS_HUMAN。proposition62及proposition62_corrected：实际IsPreBrownianReal、T≥0，均匀网格平方增量和的均方误差atTop趋0，签名正确。WienerTime=k*T/K、WienerIncrement为相邻差、QuadraticSum为Fin K平方和，均核对。proposition62Printed定义x²+y²-4xy，忠实记录按有序k≠l理解印刷展开的两变量表达；未将错误式当定理。proposition62Expansion_corrected的普通平方展开正确；proposition62Printed_counterexample在x=y=1正确。原书一般代数展开错误虽因独立零均值而不改变期望最终结果，仍需标疑误；末极限应为ν→∞。
+网站原返回：NEEDS\_HUMAN。proposition62及proposition62\_corrected：实际IsPreBrownianReal、T≥0，均匀网格平方增量和的均方误差atTop趋0，签名正确。WienerTime=k*T/K、WienerIncrement为相邻差、QuadraticSum为Fin K平方和，均核对。proposition62Printed定义x²+y²-4xy，忠实记录按有序k≠l理解印刷展开的两变量表达；未将错误式当定理。proposition62Expansion\_corrected的普通平方展开正确；proposition62Printed\_counterexample在x=y=1正确。原书一般代数展开错误虽因独立零均值而不改变期望最终结果，仍需标疑误；末极限应为ν→∞。
 当前处理：修正版/限定声明=网站PASS；原文疑误或范围解释待导师。
 保留所交版本的明确结论。
 本地编译和逐声明依赖核对通过。原文疑误、各限定/修正版、反例的评价分别列出；有未完成证明依赖的声明仍为未证。
@@ -4299,9 +4658,9 @@ theorem proposition62Printed_counterexample : ¬ ((1+1 : ℝ)^2=1^2+1^2-4*1*1) :
 |---|---|---|---|
 | `MD.Ch06.proposition62` | 已证 | — | PASS |
 | `MD.Ch06.proposition62_corrected` | 已证 | — | PASS |
-| `MD.Ch06.proposition62Printed` | 定义 | — | 原文忠实性PASS；原书数学/范围NEEDS_HUMAN |
+| `MD.Ch06.proposition62Printed` | 定义 | — | 原文忠实性PASS；原书数学/范围NEEDS\_HUMAN |
 | `MD.Ch06.proposition62Expansion_corrected` | 已证 | — | PASS |
-| `MD.Ch06.proposition62Printed_counterexample` | 已证 | — | 原文忠实性PASS；原书数学/范围NEEDS_HUMAN |
+| `MD.Ch06.proposition62Printed_counterexample` | 已证 | — | 原文忠实性PASS；原书数学/范围NEEDS\_HUMAN |
 
 位置：`Blueprint/Ch06.lean:900`；本地核验记录：`blueprint/ch06/closeout26/FINAL_COMPILE.log`。
 
@@ -4312,7 +4671,12 @@ theorem proposition62Printed_counterexample : ¬ ((1+1 : ℝ)^2=1^2+1^2-4*1*1) :
 ### 1. 原文陈述
 
 > where, for a sequence of random variables, $A_\nu$ and a random variable $B$, we have
-> \[\operatorname{l.i.m.}_{\nu\to\infty}A_\nu=B\iff\lim_{\nu\to\infty}\mathbb E(A_\nu-B)^2=0.\]
+
+$$
+\operatorname{l.i.m.}_{\nu\to\infty}A_\nu=B\iff\lim_{\nu\to\infty}\mathbb E(A_\nu-B)^2=0.
+$$
+
+
 
 ### 2. 原文证明
 
@@ -4331,7 +4695,7 @@ def meanSquareConvergence {Ω : Type*} [MeasurableSpace Ω] (P : Measure Ω)
 
 | 原文对象或结论 | 当前Lean与范围 |
 |---|---|
-| 所引原句 | 本条所引原句及展示公式；单个记号归入context_notation。 |
+| 所引原句 | 本条所引原句及展示公式；单个记号归入context\_notation。 |
 | 对象、域、量词及前提 | 以上完整声明；额外资格与未覆盖部分见下一段 |
 | 最新网站原始评价 | PASS；首轮保留 |
 
@@ -4378,7 +4742,7 @@ noncomputable def wienerMidpointSum {Ω : Type*} [MeasurableSpace Ω] {P : Measu
 
 | 原文对象或结论 | 当前Lean与范围 |
 |---|---|
-| 所引原句 | 本条所引原句及展示公式；单个记号归入context_notation。 |
+| 所引原句 | 本条所引原句及展示公式；单个记号归入context\_notation。 |
 | 对象、域、量词及前提 | 以上完整声明；额外资格与未覆盖部分见下一段 |
 | 最新网站原始评价 | PASS；首轮保留 |
 
@@ -4408,7 +4772,12 @@ noncomputable def wienerMidpointSum {Ω : Type*} [MeasurableSpace Ω] {P : Measu
 ### 1. 原文陈述
 
 > Also observe that $\Delta W_k$ is a normally distributed random variable with the following properties
-> \[\mathbb E\Delta W_k=0;\quad\mathbb E\Delta W_k^2=\delta t=\tau/\nu;\quad\mathbb E\Delta W_k^4=3\delta t^2=3(\tau/\nu)^2.\]
+
+$$
+\mathbb E\Delta W_k=0;\quad\mathbb E\Delta W_k^2=\delta t=\tau/\nu;\quad\mathbb E\Delta W_k^4=3\delta t^2=3(\tau/\nu)^2.
+$$
+
+
 
 ### 2. 原文证明
 
@@ -4427,7 +4796,7 @@ theorem gaussianIncrementMean {Ω : Type*} [MeasurableSpace Ω] {P : Measure Ω}
 
 | 原文对象或结论 | 当前Lean与范围 |
 |---|---|
-| 所引原句 | 本条所引原句及展示公式；单个记号归入context_notation。 |
+| 所引原句 | 本条所引原句及展示公式；单个记号归入context\_notation。 |
 | 对象、域、量词及前提 | 以上完整声明；额外资格与未覆盖部分见下一段 |
 | 最新网站原始评价 | PASS；首轮保留 |
 
@@ -4457,7 +4826,12 @@ theorem gaussianIncrementMean {Ω : Type*} [MeasurableSpace Ω] {P : Measure Ω}
 ### 1. 原文陈述
 
 > Also observe that $\Delta W_k$ is a normally distributed random variable with the following properties
-> \[\mathbb E\Delta W_k=0;\quad\mathbb E\Delta W_k^2=\delta t=\tau/\nu;\quad\mathbb E\Delta W_k^4=3\delta t^2=3(\tau/\nu)^2.\]
+
+$$
+\mathbb E\Delta W_k=0;\quad\mathbb E\Delta W_k^2=\delta t=\tau/\nu;\quad\mathbb E\Delta W_k^4=3\delta t^2=3(\tau/\nu)^2.
+$$
+
+
 
 ### 2. 原文证明
 
@@ -4476,7 +4850,7 @@ theorem gaussianIncrementSecond {Ω : Type*} [MeasurableSpace Ω] {P : Measure �
 
 | 原文对象或结论 | 当前Lean与范围 |
 |---|---|
-| 所引原句 | 本条所引原句及展示公式；单个记号归入context_notation。 |
+| 所引原句 | 本条所引原句及展示公式；单个记号归入context\_notation。 |
 | 对象、域、量词及前提 | 以上完整声明；额外资格与未覆盖部分见下一段 |
 | 最新网站原始评价 | PASS；首轮保留 |
 
@@ -4506,7 +4880,12 @@ theorem gaussianIncrementSecond {Ω : Type*} [MeasurableSpace Ω] {P : Measure �
 ### 1. 原文陈述
 
 > Also observe that $\Delta W_k$ is a normally distributed random variable with the following properties
-> \[\mathbb E\Delta W_k=0;\quad\mathbb E\Delta W_k^2=\delta t=\tau/\nu;\quad\mathbb E\Delta W_k^4=3\delta t^2=3(\tau/\nu)^2.\]
+
+$$
+\mathbb E\Delta W_k=0;\quad\mathbb E\Delta W_k^2=\delta t=\tau/\nu;\quad\mathbb E\Delta W_k^4=3\delta t^2=3(\tau/\nu)^2.
+$$
+
+
 
 ### 2. 原文证明
 
@@ -4525,7 +4904,7 @@ theorem gaussianIncrementFourth {Ω : Type*} [MeasurableSpace Ω] {P : Measure �
 
 | 原文对象或结论 | 当前Lean与范围 |
 |---|---|
-| 所引原句 | 本条所引原句及展示公式；单个记号归入context_notation。 |
+| 所引原句 | 本条所引原句及展示公式；单个记号归入context\_notation。 |
 | 对象、域、量词及前提 | 以上完整声明；额外资格与未覆盖部分见下一段 |
 | 最新网站原始评价 | PASS；首轮保留 |
 
@@ -4555,9 +4934,12 @@ theorem gaussianIncrementFourth {Ω : Type*} [MeasurableSpace Ω] {P : Measure �
 ### 1. 原文陈述
 
 > Thus we have
-> \[I_\nu=\mathbb E\sum_{k=0}^{\nu-1}(\Delta W_{\nu,k}^2-\tau/\nu)^2
-> =\sum_{k=0}^{\nu-1}\mathbb E\left(\Delta W_{\nu,k}^4-2\frac{\tau}{\nu}\Delta W_{\nu,k}^2+\frac{\tau^2}{\nu^2}\right)
-> =\sum_{k=0}^{\nu-1}\left(3(\tau/\nu)^2-2(\tau/\nu)^2+\tau^2/\nu^2\right)=2\frac{\tau^2}{\nu^2}\nu=2\frac{\tau^2}{\nu}.\]
+
+$$
+I_\nu=\mathbb E\sum_{k=0}^{\nu-1}(\Delta W_{\nu,k}^2-\tau/\nu)^2 =\sum_{k=0}^{\nu-1}\mathbb E\left(\Delta W_{\nu,k}^4-2\frac{\tau}{\nu}\Delta W_{\nu,k}^2+\frac{\tau^2}{\nu^2}\right) =\sum_{k=0}^{\nu-1}\left(3(\tau/\nu)^2-2(\tau/\nu)^2+\tau^2/\nu^2\right)=2\frac{\tau^2}{\nu^2}\nu=2\frac{\tau^2}{\nu}.
+$$
+
+
 
 ### 2. 原文证明
 
@@ -4577,7 +4959,7 @@ theorem quadraticMeanSquareError {Ω : Type*} [MeasurableSpace Ω] {P : Measure 
 
 | 原文对象或结论 | 当前Lean与范围 |
 |---|---|
-| 所引原句 | 本条所引原句及展示公式；单个记号归入context_notation。 |
+| 所引原句 | 本条所引原句及展示公式；单个记号归入context\_notation。 |
 | 对象、域、量词及前提 | 以上完整声明；额外资格与未覆盖部分见下一段 |
 | 最新网站原始评价 | PASS；首轮保留 |
 
@@ -4607,7 +4989,12 @@ theorem quadraticMeanSquareError {Ω : Type*} [MeasurableSpace Ω] {P : Measure 
 ### 1. 原文陈述
 
 > The calculation implies that
-> \[\int_0^\tau W(t)dW(t)=\frac12(W(\tau)^2-\tau).\]
+
+$$
+\int_0^\tau W(t)dW(t)=\frac12(W(\tau)^2-\tau).
+$$
+
+
 
 ### 2. 原文证明
 
@@ -4628,7 +5015,7 @@ theorem selfItoIntegral {Ω : Type*} [MeasurableSpace Ω] {P : Measure Ω} {W : 
 
 | 原文对象或结论 | 当前Lean与范围 |
 |---|---|
-| 所引原句 | 本条所引原句及展示公式；单个记号归入context_notation。 |
+| 所引原句 | 本条所引原句及展示公式；单个记号归入context\_notation。 |
 | 对象、域、量词及前提 | 以上完整声明；额外资格与未覆盖部分见下一段 |
 | 最新网站原始评价 | PASS；首轮保留 |
 
@@ -4658,11 +5045,26 @@ theorem selfItoIntegral {Ω : Type*} [MeasurableSpace Ω] {P : Measure Ω} {W : 
 ### 1. 原文陈述
 
 > In contrast, the Stratonovich (midpoint) integral (denoted by $\int_0^\tau\circ dW(t)$) can be calculated as
-> \[\int_0^\tau W(t)\circ dW(t)=\operatorname{l.i.m.}_{\nu\to\infty}\sum_{k=0}^{\nu-1}W(k\delta t+\delta t/2)[W((k+1)\delta t)-W(k\delta t)].\]
+
+$$
+\int_0^\tau W(t)\circ dW(t)=\operatorname{l.i.m.}_{\nu\to\infty}\sum_{k=0}^{\nu-1}W(k\delta t+\delta t/2)[W((k+1)\delta t)-W(k\delta t)].
+$$
+
+
 > Writing
-> \[W(k\delta t+\delta t/2)=W(\frac{(k+1)\delta t+k\delta t}{2})=\frac12(W((k+1)\delta t)+W(k\delta t))+O(\sqrt{\delta t}),\]
+
+$$
+W(k\delta t+\delta t/2)=W(\frac{(k+1)\delta t+k\delta t}{2})=\frac12(W((k+1)\delta t)+W(k\delta t))+O(\sqrt{\delta t}),
+$$
+
+
 > allows us to evaluate the integral as
-> \[\int_0^\tau W(t)\circ dW(t)=\frac12\operatorname{l.i.m.}_{\nu\to\infty}\sum_{k=0}^{\nu-1}[W((k+1)\delta t)^2-W(k\delta t)^2]=\frac12W(\tau)^2.\]
+
+$$
+\int_0^\tau W(t)\circ dW(t)=\frac12\operatorname{l.i.m.}_{\nu\to\infty}\sum_{k=0}^{\nu-1}[W((k+1)\delta t)^2-W(k\delta t)^2]=\frac12W(\tau)^2.
+$$
+
+
 
 ### 2. 原文证明
 
@@ -4691,9 +5093,9 @@ theorem selfStratonovichIntegral_corrected {Ω : Type*} [MeasurableSpace Ω] {P 
 
 | 原文对象或结论 | 当前Lean与范围 |
 |---|---|
-| 所引原句 | 本条所引原句及展示公式；单个记号归入context_notation。 |
+| 所引原句 | 本条所引原句及展示公式；单个记号归入context\_notation。 |
 | 对象、域、量词及前提 | 以上完整声明；额外资格与未覆盖部分见下一段 |
-| 最新网站原始评价 | NEEDS_HUMAN；复审 |
+| 最新网站原始评价 | NEEDS\_HUMAN；复审 |
 
 ### 5. [EXTRA] 与覆盖缺口
 
@@ -4702,7 +5104,7 @@ theorem selfStratonovichIntegral_corrected {Ω : Type*} [MeasurableSpace Ω] {P 
 
 ### 6. 审计结论（含网站结论）
 
-网站原返回：NEEDS_HUMAN。selfStratonovichIntegral及_corrected在IsPreBrownianReal、T≥0下给出L²见证Y、真实时间中点和的均方收敛及Y=W(T)²/2的AE求值，数学签名PASS。MidpointSum确取2K细网格的2k+1时刻，并非端点值平均。布朗增量Gaussian四阶矩保证各和及极限的资格。原书将单步中点桥差O(sqrt(dt))直接舍掉未控制总和，不能单凭该行作完整证明；两相同定理签名没有解决原书论证缺口。
+网站原返回：NEEDS\_HUMAN。selfStratonovichIntegral及\_corrected在IsPreBrownianReal、T≥0下给出L²见证Y、真实时间中点和的均方收敛及Y=W(T)²/2的AE求值，数学签名PASS。MidpointSum确取2K细网格的2k+1时刻，并非端点值平均。布朗增量Gaussian四阶矩保证各和及极限的资格。原书将单步中点桥差O(sqrt(dt))直接舍掉未控制总和，不能单凭该行作完整证明；两相同定理签名没有解决原书论证缺口。
 当前处理：修正版/限定声明=网站PASS；原文疑误或范围解释待导师。
 保留所交版本的明确结论。
 本地编译和逐声明依赖核对通过。原文疑误、各限定/修正版、反例的评价分别列出；有未完成证明依赖的声明仍为未证。
@@ -4723,7 +5125,12 @@ theorem selfStratonovichIntegral_corrected {Ω : Type*} [MeasurableSpace Ω] {P 
 ### 1. 原文陈述
 
 > Proposition 6.3 Let $g$ be a smooth deterministic function and $W(t)$ a Wiener process. The stochastic integral $Y(t)=\int_0^t g(s)dW(s)$ is, for all times $t\geq0$, a normally distributed random variable such that
-> \[\mathbb E(Y(t))=0;\quad\mathbb E(Y^2(t))=\sigma^2(t)=\int_0^t g(s)^2ds.\]
+
+$$
+\mathbb E(Y(t))=0;\quad\mathbb E(Y^2(t))=\sigma^2(t)=\int_0^t g(s)^2ds.
+$$
+
+
 
 ### 2. 原文证明
 
@@ -4746,7 +5153,7 @@ theorem proposition63 {Ω : Type*} [MeasurableSpace Ω] {P : Measure Ω} {W : �
 
 | 原文对象或结论 | 当前Lean与范围 |
 |---|---|
-| 所引原句 | 本条所引原句及展示公式；单个记号归入context_notation。 |
+| 所引原句 | 本条所引原句及展示公式；单个记号归入context\_notation。 |
 | 对象、域、量词及前提 | 以上完整声明；额外资格与未覆盖部分见下一段 |
 | 最新网站原始评价 | PASS；首轮保留 |
 
@@ -4776,7 +5183,12 @@ theorem proposition63 {Ω : Type*} [MeasurableSpace Ω] {P : Measure Ω} {W : �
 ### 1. 原文陈述
 
 > On the other hand, from (6.7), we have
-> \[\lim_{\nu\to\infty}\mathbb E\sum_{k=0}^{\nu-1}[(W((k+1)\delta t)-W(k\delta t))^2]=\tau.\]
+
+$$
+\lim_{\nu\to\infty}\mathbb E\sum_{k=0}^{\nu-1}[(W((k+1)\delta t)-W(k\delta t))^2]=\tau.
+$$
+
+
 
 ### 2. 原文证明
 
@@ -4795,7 +5207,7 @@ theorem quadraticSumExpectation {Ω : Type*} [MeasurableSpace Ω] {P : Measure �
 
 | 原文对象或结论 | 当前Lean与范围 |
 |---|---|
-| 所引原句 | 本条所引原句及展示公式；单个记号归入context_notation。 |
+| 所引原句 | 本条所引原句及展示公式；单个记号归入context\_notation。 |
 | 对象、域、量词及前提 | 以上完整声明；额外资格与未覆盖部分见下一段 |
 | 最新网站原始评价 | PASS；首轮保留 |
 
@@ -4843,7 +5255,7 @@ theorem selfItoLimitL2 {Ω : Type*} [MeasurableSpace Ω] {P : Measure Ω} {W : �
 
 | 原文对象或结论 | 当前Lean与范围 |
 |---|---|
-| 所引原句 | 本条所引原句及展示公式；单个记号归入context_notation。 |
+| 所引原句 | 本条所引原句及展示公式；单个记号归入context\_notation。 |
 | 对象、域、量词及前提 | 以上完整声明；额外资格与未覆盖部分见下一段 |
 | 最新网站原始评价 | PASS；首轮保留 |
 
@@ -4853,7 +5265,7 @@ theorem selfItoLimitL2 {Ω : Type*} [MeasurableSpace Ω] {P : Measure Ω} {W : �
 
 ### 6. 审计结论（含网站结论）
 
-网站原返回：PASS。签名只证明候选极限(W(T)²−T)/2的MemLp 2 P，数学正确。extra_assumptions声称“有限和/候选极限”两者L²，但此签名没有有限和L²结论，须缩减标注。引文实际在印刷228页，并不在所配附件第39页（印刷230）。
+网站原返回：PASS。签名只证明候选极限(W(T)²−T)/2的MemLp 2 P，数学正确。extra\_assumptions声称“有限和/候选极限”两者L²，但此签名没有有限和L²结论，须缩减标注。引文实际在印刷228页，并不在所配附件第39页（印刷230）。
 当前处理：网站PASS（首轮未改版本）。
 保留所交版本的明确结论。
 本地编译和逐声明依赖核对通过。原文疑误、各限定/修正版、反例的评价分别列出；有未完成证明依赖的声明仍为未证。
@@ -4873,7 +5285,12 @@ theorem selfItoLimitL2 {Ω : Type*} [MeasurableSpace Ω] {P : Measure Ω} {W : �
 ### 1. 原文陈述
 
 > The calculation implies that
-> \[\int_0^\tau W(t)dW(t)=\frac12(W(\tau)^2-\tau).\]
+
+$$
+\int_0^\tau W(t)dW(t)=\frac12(W(\tau)^2-\tau).
+$$
+
+
 
 ### 2. 原文证明
 
@@ -4892,7 +5309,7 @@ theorem selfItoSumsL2 {Ω : Type*} [MeasurableSpace Ω] {P : Measure Ω} {W : �
 
 | 原文对象或结论 | 当前Lean与范围 |
 |---|---|
-| 所引原句 | 本条所引原句及展示公式；单个记号归入context_notation。 |
+| 所引原句 | 本条所引原句及展示公式；单个记号归入context\_notation。 |
 | 对象、域、量词及前提 | 以上完整声明；额外资格与未覆盖部分见下一段 |
 | 最新网站原始评价 | PASS；首轮保留 |
 
@@ -4922,9 +5339,12 @@ theorem selfItoSumsL2 {Ω : Type*} [MeasurableSpace Ω] {P : Measure Ω} {W : �
 ### 1. 原文陈述
 
 > In contrast, the Stratonovich (midpoint) integral (denoted by $\int_0^\tau\circ dW(t)$) can be calculated as
-> \[\int_0^\tau W(t)\circ dW(t)=\mathrm{l.i.m.}_{
-> u\to\infty}\sum_{k=0}^{
-> u-1}W(k\delta t+\delta t/2)[W((k+1)\delta t)-W(k\delta t)].\]
+
+$$
+\int_0^\tau W(t)\circ dW(t)=\mathrm{l.i.m.}_{ u\to\infty}\sum_{k=0}^{ u-1}W(k\delta t+\delta t/2)[W((k+1)\delta t)-W(k\delta t)].
+$$
+
+
 
 ### 2. 原文证明
 
@@ -4943,7 +5363,7 @@ theorem midpointSumsL2 {Ω : Type*} [MeasurableSpace Ω] {P : Measure Ω} {W : �
 
 | 原文对象或结论 | 当前Lean与范围 |
 |---|---|
-| 所引原句 | 本条所引原句及展示公式；单个记号归入context_notation。 |
+| 所引原句 | 本条所引原句及展示公式；单个记号归入context\_notation。 |
 | 对象、域、量词及前提 | 以上完整声明；额外资格与未覆盖部分见下一段 |
 | 最新网站原始评价 | PASS；首轮保留 |
 
@@ -4973,7 +5393,12 @@ theorem midpointSumsL2 {Ω : Type*} [MeasurableSpace Ω] {P : Measure Ω} {W : �
 ### 1. 原文陈述
 
 > Also it is natural to view the stochastic integral as the solution of the stochastic differential equation (SDE) with zero initial condition:
-> \[dY(t)=g(t)dW(t);\quad Y(0)=0.\tag{6.8}\]
+
+$$
+dY(t)=g(t)dW(t);\quad Y(0)=0.\tag{6.8}
+$$
+
+
 
 ### 2. 原文证明
 
@@ -4991,7 +5416,7 @@ def deterministicIntegralProcess {Ω : Type*} [MeasurableSpace Ω] (P : Measure 
 
 | 原文对象或结论 | 当前Lean与范围 |
 |---|---|
-| 所引原句 | 本条所引原句及展示公式；单个记号归入context_notation。 |
+| 所引原句 | 本条所引原句及展示公式；单个记号归入context\_notation。 |
 | 对象、域、量词及前提 | 以上完整声明；额外资格与未覆盖部分见下一段 |
 | 最新网站原始评价 | PASS；首轮保留 |
 
@@ -5042,22 +5467,22 @@ theorem deterministicStrobePrinted : ∀ {Ω : Type*} [MeasurableSpace Ω] (P : 
 
 | 原文对象或结论 | 当前Lean与范围 |
 |---|---|
-| 所引原句 | Printed保留增量/累计边际方差混淆。独立deterministicStrobePrinted_corrected位于DeterministicStrobeCorrected来源，已本地存在但本次附件未提供，不能冒称复审PASS。 |
+| 所引原句 | Printed保留增量/累计边际方差混淆。独立deterministicStrobePrinted\_corrected位于DeterministicStrobeCorrected来源，已本地存在但本次附件未提供，不能冒称复审PASS。 |
 | 对象、域、量词及前提 | 以上完整声明；额外资格与未覆盖部分见下一段 |
-| 最新网站原始评价 | NEEDS_HUMAN；复审 |
+| 最新网站原始评价 | NEEDS\_HUMAN；复审 |
 
 ### 5. [EXTRA] 与覆盖缺口
 
-- [EXTRA] Printed保留原书累计尺度N(0,σ(t_n))；将第二参数解释为标准差并平方传入gaussianReal是额外约定，需确认。本条未摘录所称相邻区间方差与整族独立性的修正版，不能认证该修正版。
-- [EXTRA] 复审范围：Printed保留增量/累计边际方差混淆。独立deterministicStrobePrinted_corrected位于DeterministicStrobeCorrected来源，已本地存在但本次附件未提供，不能冒称复审PASS。
+- [EXTRA] Printed保留原书累计尺度N(0,σ(t\_n))；将第二参数解释为标准差并平方传入gaussianReal是额外约定，需确认。本条未摘录所称相邻区间方差与整族独立性的修正版，不能认证该修正版。
+- [EXTRA] 复审范围：Printed保留增量/累计边际方差混淆。独立deterministicStrobePrinted\_corrected位于DeterministicStrobeCorrected来源，已本地存在但本次附件未提供，不能冒称复审PASS。
 - 覆盖缺口：本条未提供[EXTRA]声称的独立修正版完整声明，无法审校其相邻区间方差及整族独立性。
-- 覆盖缺口：Printed保留增量/累计边际方差混淆。独立deterministicStrobePrinted_corrected位于DeterministicStrobeCorrected来源，已本地存在但本次附件未提供，不能冒称复审PASS。
+- 覆盖缺口：Printed保留增量/累计边际方差混淆。独立deterministicStrobePrinted\_corrected位于DeterministicStrobeCorrected来源，已本地存在但本次附件未提供，不能冒称复审PASS。
 
 ### 6. 审计结论（含网站结论）
 
-网站原返回：NEEDS_HUMAN。deterministicIntegralProcess为每个T≥0的严格均方积分资格，已核对。deterministicStrobePrinted把第k到k+1观测的增量分布方差写成0到times k的累计∫g²（对sqrt再平方），保留了原书增量/边际混淆。N(0,σ)按标准差理解是额外约定；此前书中W(t)∼N(0,t)使用方差式习惯，更需人工确认。[EXTRA]与statement_scope声称独立修正版包含相邻区间方差和整族独立性，但本条全部摘录没有任何相应_corrected声明；不能认证未提供的修正版，coverage_gaps=[]不实。
+网站原返回：NEEDS\_HUMAN。deterministicIntegralProcess为每个T≥0的严格均方积分资格，已核对。deterministicStrobePrinted把第k到k+1观测的增量分布方差写成0到times k的累计∫g²（对sqrt再平方），保留了原书增量/边际混淆。N(0,σ)按标准差理解是额外约定；此前书中W(t)∼N(0,t)使用方差式习惯，更需人工确认。[EXTRA]与statement\_scope声称独立修正版包含相邻区间方差和整族独立性，但本条全部摘录没有任何相应\_corrected声明；不能认证未提供的修正版，coverage\_gaps=[]不实。
 当前处理：原文疑误或语义范围待导师；不冒称未提供版本已通过。
-Printed保留增量/累计边际方差混淆。独立deterministicStrobePrinted_corrected位于DeterministicStrobeCorrected来源，已本地存在但本次附件未提供，不能冒称复审PASS。
+Printed保留增量/累计边际方差混淆。独立deterministicStrobePrinted\_corrected位于DeterministicStrobeCorrected来源，已本地存在但本次附件未提供，不能冒称复审PASS。
 本地编译和逐声明依赖核对通过。原文疑误、各限定/修正版、反例的评价分别列出；有未完成证明依赖的声明仍为未证。
 
 ### 7. 状态与证明位置
@@ -5107,7 +5532,7 @@ theorem deterministicStrobePrinted_corrected : ∀ {Ω : Type*} [MeasurableSpace
 
 | 原文对象或结论 | 当前Lean与范围 |
 |---|---|
-| 所引原句 | 本条所引原句及展示公式；单个记号归入context_notation。 |
+| 所引原句 | 本条所引原句及展示公式；单个记号归入context\_notation。 |
 | 对象、域、量词及前提 | 以上完整声明；额外资格与未覆盖部分见下一段 |
 | 最新网站原始评价 | PASS；首轮保留 |
 
@@ -5138,7 +5563,12 @@ theorem deterministicStrobePrinted_corrected : ∀ {Ω : Type*} [MeasurableSpace
 ### 1. 原文陈述
 
 > Importantly, with appropriate regularity we have the familiar relation from calculus:
-> \[\int_0^t dY(s)=Y(t)-Y(0).\]
+
+$$
+\int_0^t dY(s)=Y(t)-Y(0).
+$$
+
+
 
 ### 2. 原文证明
 
@@ -5156,7 +5586,7 @@ def stochasticDifferentialIntegral {Ω : Type*} [MeasurableSpace Ω] (P : Measur
 
 | 原文对象或结论 | 当前Lean与范围 |
 |---|---|
-| 所引原句 | 本条所引原句及展示公式；单个记号归入context_notation。 |
+| 所引原句 | 本条所引原句及展示公式；单个记号归入context\_notation。 |
 | 对象、域、量词及前提 | 以上完整声明；额外资格与未覆盖部分见下一段 |
 | 最新网站原始评价 | PASS；首轮保留 |
 
@@ -5166,7 +5596,7 @@ def stochasticDifferentialIntegral {Ω : Type*} [MeasurableSpace Ω] (P : Measur
 
 ### 6. 审计结论（含网站结论）
 
-网站原返回：PASS。P,Y及integralOfDifferential均任意，对全部T≥0断言两随机变量几乎处处相等。按context_notation，这是积分符号的语义定义；没有循环地声称已构造一般积分或证明链式法则。无需样本普通导数。
+网站原返回：PASS。P,Y及integralOfDifferential均任意，对全部T≥0断言两随机变量几乎处处相等。按context\_notation，这是积分符号的语义定义；没有循环地声称已构造一般积分或证明链式法则。无需样本普通导数。
 当前处理：网站PASS（首轮未改版本）。
 保留所交版本的明确结论。
 本地编译和逐声明依赖核对通过。原文疑误、各限定/修正版、反例的评价分别列出；有未完成证明依赖的声明仍为未证。
@@ -5186,7 +5616,12 @@ def stochasticDifferentialIntegral {Ω : Type*} [MeasurableSpace Ω] (P : Measur
 ### 1. 原文陈述
 
 > We introduce a pair of smooth functions $a(x,t)$ and $b(x,t)$, where $a$ represents a drift tendency and $b$ the average magnitude of the random jump. In the interval $[n\delta t,(n+1)\delta t]$, a step $\delta X_n=X_{n+1}-X_n$ of the random walk will be given by
-> \[\delta X_n=a(X_n,t_n)h+b(X_n,t_n)J_n\delta x.\tag{6.9}\]
+
+$$
+\delta X_n=a(X_n,t_n)h+b(X_n,t_n)J_n\delta x.\tag{6.9}
+$$
+
+
 > where the random increment $J_n$ was introduced in Sect. 6.2.1.
 
 ### 2. 原文证明
@@ -5207,7 +5642,7 @@ def biasedWalk {Ω : Type*} (a b : ℝ → ℝ → ℝ) (J : ℕ → Ω → ℝ)
 
 | 原文对象或结论 | 当前Lean与范围 |
 |---|---|
-| 所引原句 | 本条所引原句及展示公式；单个记号归入context_notation。 |
+| 所引原句 | 本条所引原句及展示公式；单个记号归入context\_notation。 |
 | 对象、域、量词及前提 | 以上完整声明；额外资格与未覆盖部分见下一段 |
 | 最新网站原始评价 | PASS；首轮保留 |
 
@@ -5217,7 +5652,7 @@ def biasedWalk {Ω : Type*} (a b : ℝ → ℝ → ℝ) (J : ℕ → Ω → ℝ)
 
 ### 6. 审计结论（含网站结论）
 
-网站原返回：PASS。递归以x0起始；第n步在n*dt取a,b，漂移a*dt，噪声b*sqrt(dt)*J_n，次序和乘法正确。MD包装调用Chapter06Review的旧步值，按D10/D11展开逐步一致。作为确定性递归定义允许任意dt,a,b,J；随机游走解释另需dt>0和Rademacher资格。[EXTRA]将h解释为δt需标为解释而非书中显式等式。
+网站原返回：PASS。递归以x0起始；第n步在n*dt取a,b，漂移a*dt，噪声b*sqrt(dt)*J\_n，次序和乘法正确。MD包装调用Chapter06Review的旧步值，按D10/D11展开逐步一致。作为确定性递归定义允许任意dt,a,b,J；随机游走解释另需dt>0和Rademacher资格。[EXTRA]将h解释为δt需标为解释而非书中显式等式。
 当前处理：网站PASS（首轮未改版本）。
 保留所交版本的明确结论。
 本地编译和逐声明依赖核对通过。原文疑误、各限定/修正版、反例的评价分别列出；有未完成证明依赖的声明仍为未证。
@@ -5237,7 +5672,12 @@ def biasedWalk {Ω : Type*} (a b : ℝ → ℝ → ℝ) (J : ℕ → Ω → ℝ)
 ### 1. 原文陈述
 
 > Choose a positive $t$ and sum (6.9) from $n=0$ to $\nu-1$, where $\nu=\lfloor t/\delta t\rfloor$, obtaining
-> \[X_\nu-X_0=\sum_{n=0}^{\nu-1}\delta X_n=\sum_{n=0}^{\nu-1}a(X_n,t_n)\delta t+\sum_{n=0}^{\nu-1}b(X_n,t_n)J_n\delta x.\tag{6.10}\]
+
+$$
+X_\nu-X_0=\sum_{n=0}^{\nu-1}\delta X_n=\sum_{n=0}^{\nu-1}a(X_n,t_n)\delta t+\sum_{n=0}^{\nu-1}b(X_n,t_n)J_n\delta x.\tag{6.10}
+$$
+
+
 
 ### 2. 原文证明
 
@@ -5263,7 +5703,7 @@ theorem biasedWalkSum : ∀ {Ω : Type*} (a b : ℝ → ℝ → ℝ) (J : ℕ �
 
 | 原文对象或结论 | 当前Lean与范围 |
 |---|---|
-| 所引原句 | 本条所引原句及展示公式；单个记号归入context_notation。 |
+| 所引原句 | 本条所引原句及展示公式；单个记号归入context\_notation。 |
 | 对象、域、量词及前提 | 以上完整声明；额外资格与未覆盖部分见下一段 |
 | 最新网站原始评价 | PASS；首轮保留 |
 
@@ -5293,8 +5733,18 @@ theorem biasedWalkSum : ∀ {Ω : Type*} (a b : ℝ → ℝ → ℝ) (J : ℕ �
 ### 1. 原文陈述
 
 > Take the diffusion limit $\delta t\to0$, $\delta x^2/\delta t\to1$ with $\nu\delta t=t$ fixed, then we obtain, under the Itô convention,
-> \[X(t)-X(0)=\int_0^t a(X(s),s)ds+\int_0^t b(X(s),s)dW(s).\tag{6.11}\]
-> \[dX=a(X,t)dt+b(X,t)dW.\tag{6.14}\]
+
+$$
+X(t)-X(0)=\int_0^t a(X(s),s)ds+\int_0^t b(X(s),s)dW(s).\tag{6.11}
+$$
+
+
+
+$$
+dX=a(X,t)dt+b(X,t)dW.\tag{6.14}
+$$
+
+
 
 ### 2. 原文证明
 
@@ -5315,7 +5765,7 @@ def strictScalarSDE {Ω : Type*} [MeasurableSpace Ω] (P : Measure Ω)
 
 | 原文对象或结论 | 当前Lean与范围 |
 |---|---|
-| 所引原句 | 本条所引原句及展示公式；单个记号归入context_notation。 |
+| 所引原句 | 本条所引原句及展示公式；单个记号归入context\_notation。 |
 | 对象、域、量词及前提 | 以上完整声明；额外资格与未覆盖部分见下一段 |
 | 最新网站原始评价 | PASS；首轮保留 |
 
@@ -5345,9 +5795,19 @@ def strictScalarSDE {Ω : Type*} [MeasurableSpace Ω] (P : Measure Ω)
 ### 1. 原文陈述
 
 > We mention in passing the extension to systems of SDEs. Let $a(z,t)$ and $b^{(i)}(z,t)$, $i=1,2,\ldots,r$ be a set of $r+1$ vector fields in $\mathbb R^m$, and let $W_1,W_2,\ldots,W_r$ be a collection of $r$ independent Wiener processes, then we may write a system of SDEs in $\mathbb R^m$ in the form
-> \[dZ=a(Z,t)dt+\sum_{i=1}^r b^{(i)}(Z,t)dW_i.\tag{6.15}\]
+
+$$
+dZ=a(Z,t)dt+\sum_{i=1}^r b^{(i)}(Z,t)dW_i.\tag{6.15}
+$$
+
+
 > alternatively, if $B$ is the matrix with columns $b^{(1)},b^{(2)},\ldots,b^{(r)}$, and $W$ represents the $r$-component vector of Wiener processes, then
-> \[dZ=a(Z,t)dt+B(Z,t)dW.\tag{6.16}\]
+
+$$
+dZ=a(Z,t)dt+B(Z,t)dW.\tag{6.16}
+$$
+
+
 
 ### 2. 原文证明
 
@@ -5376,7 +5836,7 @@ def strictVectorSDE {Ω : Type*} [MeasurableSpace Ω] {n r : ℕ} (P : Measure �
 |---|---|
 | 所引原句 | strictVectorSDE只定义严格网格积分方程关系，未单独要求X联合可测/共同历史适应，不能等同完整通常Itô解定义。 |
 | 对象、域、量词及前提 | 以上完整声明；额外资格与未覆盖部分见下一段 |
-| 最新网站原始评价 | NEEDS_HUMAN；复审 |
+| 最新网站原始评价 | NEEDS\_HUMAN；复审 |
 
 ### 5. [EXTRA] 与覆盖缺口
 
@@ -5386,7 +5846,7 @@ def strictVectorSDE {Ω : Type*} [MeasurableSpace Ω] {n r : ℕ} (P : Measure �
 
 ### 6. 审计结论（含网站结论）
 
-网站原返回：NEEDS_HUMAN。strictVectorSDE对任意n,r、样本空间、实时间W和X、时变向量a与n×r矩阵B、确定初态x0，要求真实联合Gaussian向量Wiener、AE连续初态、逐坐标逐T漂移可积与各列严格左和积分，增量等于列积分和。D9的Gaussian、零均值、全部跨时协方差和AE连续确可给坐标过程独立，D10、D11已核对，未仅以同一时刻独立代替。但定义不要求X联合可测或相对共同W历史适应，不能未经限定当作标准适应Itô解的完整定义；第28条另外加这些资格印证区别。作为积分方程关系签名正确，作为完整SDE资格仍需人工确认范围。
+网站原返回：NEEDS\_HUMAN。strictVectorSDE对任意n,r、样本空间、实时间W和X、时变向量a与n×r矩阵B、确定初态x0，要求真实联合Gaussian向量Wiener、AE连续初态、逐坐标逐T漂移可积与各列严格左和积分，增量等于列积分和。D9的Gaussian、零均值、全部跨时协方差和AE连续确可给坐标过程独立，D10、D11已核对，未仅以同一时刻独立代替。但定义不要求X联合可测或相对共同W历史适应，不能未经限定当作标准适应Itô解的完整定义；第28条另外加这些资格印证区别。作为积分方程关系签名正确，作为完整SDE资格仍需人工确认范围。
 当前处理：原文疑误或语义范围待导师；不冒称未提供版本已通过。
 strictVectorSDE只定义严格网格积分方程关系，未单独要求X联合可测/共同历史适应，不能等同完整通常Itô解定义。
 本地编译和逐声明依赖核对通过。原文疑误、各限定/修正版、反例的评价分别列出；有未完成证明依赖的声明仍为未证。
@@ -5406,16 +5866,29 @@ strictVectorSDE只定义严格网格积分方程关系，未单独要求X联合�
 ### 1. 原文陈述
 
 > Let $\phi(\cdot)$ be any continuously twice differentiable function and let $X_n\in\mathbb R$ represent the state of a biased random walk as considered in Sect. 6.3, i.e., with state $X_{n+1}=X_n+a(X_n,n\delta t)\delta t+b(X_n,n\delta t)J_n\delta x$.
-> \[d\phi(X)=\phi'(X)(a(X,t)dt+b(X,t)dW)+\tfrac12\phi''(X)b(X,t)^2dt.\tag{6.17}\]
+
+$$
+d\phi(X)=\phi'(X)(a(X,t)dt+b(X,t)dW)+\tfrac12\phi''(X)b(X,t)^2dt.\tag{6.17}
+$$
+
+
 
 ### 2. 原文证明
 
 > Let $\phi_n=\phi(X_n)$, then Taylor's theorem gives
-> \[\delta\phi\stackrel{\rm def}=\phi_{n+1}-\phi_n=\phi'(X_n)\delta X_n+\tfrac12\phi''(X_n)\delta X_n^2+o(\delta X_n^2)
-> =\phi'(X_n)(a(X_n,n\delta t)\delta t+b(X_n,n\delta t)J_n\delta x)
-> +\tfrac12\phi''(X_n)(a(X_n,n\delta t)\delta t+b(X_n,n\delta t)J_n\delta x)^2+o(\delta X_n^2).\]
+
+$$
+\delta\phi\stackrel{\rm def}=\phi_{n+1}-\phi_n=\phi'(X_n)\delta X_n+\tfrac12\phi''(X_n)\delta X_n^2+o(\delta X_n^2) =\phi'(X_n)(a(X_n,n\delta t)\delta t+b(X_n,n\delta t)J_n\delta x) +\tfrac12\phi''(X_n)(a(X_n,n\delta t)\delta t+b(X_n,n\delta t)J_n\delta x)^2+o(\delta X_n^2).
+$$
+
+
 > Now we expand the 2nd order term and, working in the diffusion limit, recognize that $\delta x^2\sim\delta t$, thus we have
-> \[\delta\phi=\phi'(X_n)(a(X_n,n\delta t)\delta t+b(X_n,n\delta t)J_n\delta x)+\tfrac12\phi''(X_n)b(X_n,n\delta t)^2\delta t+O(\delta t^{3/2}).\]
+
+$$
+\delta\phi=\phi'(X_n)(a(X_n,n\delta t)\delta t+b(X_n,n\delta t)J_n\delta x)+\tfrac12\phi''(X_n)b(X_n,n\delta t)^2\delta t+O(\delta t^{3/2}).
+$$
+
+
 > Passing to the limit, this leads to the SDE.
 
 ### 3. 完整当前Lean（原文版与修正版独立列出）
@@ -5441,17 +5914,17 @@ theorem scalarItoFormula :
 
 | 原文对象或结论 | 当前Lean与范围 |
 |---|---|
-| 所引原句 | 本条Lean覆盖范围：补X联合可测及自然过滤适应、被积过程全部网格和L²与局部均方时间Hölder资格。仅时间积分平方可积的旧签名前提不足且有网站反例；新签名不假设所求积分公式/极限，仍缺一般Itô理论，不证明。Time版与_corrected同步，漏dt原文形式单列保留。 |
+| 所引原句 | 本条Lean覆盖范围：补X联合可测及自然过滤适应、被积过程全部网格和L²与局部均方时间Hölder资格。仅时间积分平方可积的旧签名前提不足且有网站反例；新签名不假设所求积分公式/极限，仍缺一般Itô理论，不证明。Time版与\_corrected同步，漏dt原文形式单列保留。 |
 | 对象、域、量词及前提 | 以上完整声明；额外资格与未覆盖部分见下一段 |
-| 最新网站原始评价 | NEEDS_HUMAN；复审 |
+| 最新网站原始评价 | NEEDS\_HUMAN；复审 |
 
 ### 5. [EXTRA] 与覆盖缺口
 
-- [EXTRA] 补X联合可测及自然过滤适应、被积过程全部网格和L²与局部均方时间Hölder资格。仅时间积分平方可积的旧签名前提不足且有网站反例；新签名不假设所求积分公式/极限，仍缺一般Itô理论，不证明。Time版与_corrected同步，漏dt原文形式单列保留。
+- [EXTRA] 补X联合可测及自然过滤适应、被积过程全部网格和L²与局部均方时间Hölder资格。仅时间积分平方可积的旧签名前提不足且有网站反例；新签名不假设所求积分公式/极限，仍缺一般Itô理论，不证明。Time版与\_corrected同步，漏dt原文形式单列保留。
 
 ### 6. 审计结论（含网站结论）
 
-网站原返回：NEEDS_HUMAN。scalarItoFormula：P上的preBrownian、strictScalarSDE（AE连续、确定初态、逐终点漂移可积和严格均方左和关系）、φ为C²、a,b在状态时间上C¹，再加φ′(X)b适应平方可积、X联合可测及自然历史适应、gridItoQualification25。后者含P概率、联合可测和适应、每时L²、每个左和L²以及局部均方Hölder控制，并未假设所求结论。结论为每T≥0下φ(X_T)-φ(x0)-∫(φ′a+φ″b²/2)等于φ′b的严格均方积分，系数、初项、时变量和量词正确。限定签名PASS，不因sorry判FAIL；原文C²余项推成O(dt^(3/2))及直接过极限缺口保留NEEDS_HUMAN。
+网站原返回：NEEDS\_HUMAN。scalarItoFormula：P上的preBrownian、strictScalarSDE（AE连续、确定初态、逐终点漂移可积和严格均方左和关系）、φ为C²、a,b在状态时间上C¹，再加φ′(X)b适应平方可积、X联合可测及自然历史适应、gridItoQualification25。后者含P概率、联合可测和适应、每时L²、每个左和L²以及局部均方Hölder控制，并未假设所求结论。结论为每T≥0下φ(X\_T)-φ(x0)-∫(φ′a+φ″b²/2)等于φ′b的严格均方积分，系数、初项、时变量和量词正确。限定签名PASS，不因sorry判FAIL；原文C²余项推成O(dt^(3/2))及直接过极限缺口保留NEEDS\_HUMAN。
 当前处理：修正版/限定声明=网站PASS；原文疑误或范围解释待导师。
 保留所交版本的明确结论。
 本地编译和逐声明依赖核对通过。原文疑误、各限定/修正版、反例的评价分别列出；有未完成证明依赖的声明仍为未证。
@@ -5471,7 +5944,12 @@ theorem scalarItoFormula :
 ### 1. 原文陈述
 
 > Now we expand the 2nd order term and, working in the diffusion limit, recognize that $\delta x^2\sim\delta t$, thus we have
-> \[\delta\phi=\phi'(X_n)(a(X_n,n\delta t)\delta t+b(X_n,n\delta t)J_n\delta x)+\tfrac12\phi''(X_n)b(X_n,n\delta t)^2\delta t+O(\delta t^{3/2}).\]
+
+$$
+\delta\phi=\phi'(X_n)(a(X_n,n\delta t)\delta t+b(X_n,n\delta t)J_n\delta x)+\tfrac12\phi''(X_n)b(X_n,n\delta t)^2\delta t+O(\delta t^{3/2}).
+$$
+
+
 
 ### 2. 原文证明
 
@@ -5498,17 +5976,17 @@ theorem diffusiveTaylorPrinted_corrected : ∀ (φ : ℝ → ℝ) (x a b : ℝ),
 
 | 原文对象或结论 | 当前Lean与范围 |
 |---|---|
-| 所引原句 | 本条所引原句及展示公式；单个记号归入context_notation。 |
+| 所引原句 | 本条所引原句及展示公式；单个记号归入context\_notation。 |
 | 对象、域、量词及前提 | 以上完整声明；额外资格与未覆盖部分见下一段 |
-| 最新网站原始评价 | NEEDS_HUMAN；复审 |
+| 最新网站原始评价 | NEEDS\_HUMAN；复审 |
 
 ### 5. [EXTRA] 与覆盖缺口
 
-- [EXTRA] 原文版忠实性与数学疑误分开；补齐所交条目所属的现有_corrected完整签名，不从repair_log名称推断网站已通过修正版。
+- [EXTRA] 原文版忠实性与数学疑误分开；补齐所交条目所属的现有\_corrected完整签名，不从repair\_log名称推断网站已通过修正版。
 
 ### 6. 审计结论（含网站结论）
 
-网站原返回：NEEDS_HUMAN。diffusiveTaylorPrinted：任意C² φ、任意实x,a,b，沿dt→0+对增量a*dt+b*sqrt(dt)宣称三阶扩散余项BigO，忠实记录原书J=+1特例但断言过强。diffusiveTaylorPrinted_corrected：C³提供局部三阶Taylor界，混合二阶项也为O(dt^(3/2))，对固定实x,a,b正确。右滤子和实rpow的指数3/2均正确；b可负；此式只包含J=+1分支，J=-1可用替换b覆盖，但不是显式随机极限定理。
+网站原返回：NEEDS\_HUMAN。diffusiveTaylorPrinted：任意C² φ、任意实x,a,b，沿dt→0+对增量a*dt+b*sqrt(dt)宣称三阶扩散余项BigO，忠实记录原书J=+1特例但断言过强。diffusiveTaylorPrinted\_corrected：C³提供局部三阶Taylor界，混合二阶项也为O(dt^(3/2))，对固定实x,a,b正确。右滤子和实rpow的指数3/2均正确；b可负；此式只包含J=+1分支，J=-1可用替换b覆盖，但不是显式随机极限定理。
 当前处理：修正版/限定声明=网站PASS；原文疑误或范围解释待导师。
 保留所交版本的明确结论。
 本地编译和逐声明依赖核对通过。原文疑误、各限定/修正版、反例的评价分别列出；有未完成证明依赖的声明仍为未证。
@@ -5517,7 +5995,7 @@ theorem diffusiveTaylorPrinted_corrected : ∀ (φ : ℝ → ℝ) (x a b : ℝ),
 
 | 声明 | 证明状态 | 未证原因 | 网站分版结论 |
 |---|---|---|---|
-| `MD.Ch06.diffusiveTaylorPrinted` | 未证 | 原书疑误不证 | 原文忠实性PASS；原书数学/范围NEEDS_HUMAN |
+| `MD.Ch06.diffusiveTaylorPrinted` | 未证 | 原书疑误不证 | 原文忠实性PASS；原书数学/范围NEEDS\_HUMAN |
 | `MD.Ch06.diffusiveTaylorPrinted_corrected` | 未证 | 时间盒止 | PASS |
 
 位置：`Blueprint/Ch06.lean:1138`；本地核验记录：`blueprint/ch06/closeout26/FINAL_COMPILE.log`。
@@ -5529,7 +6007,12 @@ theorem diffusiveTaylorPrinted_corrected : ∀ (φ : ℝ → ℝ) (x a b : ℝ),
 ### 1. 原文陈述
 
 > We also mention that the Itô-Doeblin formula can be easily generalized to functions of the form $\phi(x,t)$:
-> \[d\phi(X,t)=\phi_t(X,t)+\phi_x(X,t)(a(X,t)dt+b(X,t)dW)+\tfrac12\phi_{xx}(X,t)b(X,t)^2dt.\tag{6.18}\]
+
+$$
+d\phi(X,t)=\phi_t(X,t)+\phi_x(X,t)(a(X,t)dt+b(X,t)dW)+\tfrac12\phi_{xx}(X,t)b(X,t)^2dt.\tag{6.18}
+$$
+
+
 
 ### 2. 原文证明
 
@@ -5583,17 +6066,17 @@ def timeItoFormulaPrinted (φ : ℝ×ℝ → ℝ) (x t dX dXX : ℝ) : ℝ :=
 
 | 原文对象或结论 | 当前Lean与范围 |
 |---|---|
-| 所引原句 | 本条Lean覆盖范围：补X联合可测及自然过滤适应、被积过程全部网格和L²与局部均方时间Hölder资格。仅时间积分平方可积的旧签名前提不足且有网站反例；新签名不假设所求积分公式/极限，仍缺一般Itô理论，不证明。Time版与_corrected同步，漏dt原文形式单列保留。 |
+| 所引原句 | 本条Lean覆盖范围：补X联合可测及自然过滤适应、被积过程全部网格和L²与局部均方时间Hölder资格。仅时间积分平方可积的旧签名前提不足且有网站反例；新签名不假设所求积分公式/极限，仍缺一般Itô理论，不证明。Time版与\_corrected同步，漏dt原文形式单列保留。 |
 | 对象、域、量词及前提 | 以上完整声明；额外资格与未覆盖部分见下一段 |
-| 最新网站原始评价 | NEEDS_HUMAN；复审 |
+| 最新网站原始评价 | NEEDS\_HUMAN；复审 |
 
 ### 5. [EXTRA] 与覆盖缺口
 
-- [EXTRA] 补X联合可测及自然过滤适应、被积过程全部网格和L²与局部均方时间Hölder资格。仅时间积分平方可积的旧签名前提不足且有网站反例；新签名不假设所求积分公式/极限，仍缺一般Itô理论，不证明。Time版与_corrected同步，漏dt原文形式单列保留。
+- [EXTRA] 补X联合可测及自然过滤适应、被积过程全部网格和L²与局部均方时间Hölder资格。仅时间积分平方可积的旧签名前提不足且有网站反例；新签名不假设所求积分公式/极限，仍缺一般Itô理论，不证明。Time版与\_corrected同步，漏dt原文形式单列保留。
 
 ### 6. 审计结论（含网站结论）
 
-网站原返回：NEEDS_HUMAN。timeItoFormula及timeItoFormula_corrected签名相同：在与标量版一致的preBrownian、严格SDE、C¹ a,b、C²联合φ、联合可测及自然适应X、被积过程适应平方可积和网格L²/Hölder资格下，给出任意T≥0完整积分公式。方向(1,0)为x偏导，(0,1)为t偏导，二次方向导数给φ_xx；漂移积分已正确包含φ_t，初值φ(x0,0)，扩散φ_x*b，系数b²/2均正确，两数学签名PASS。timeItoFormulaPrinted以dX,dXX形式占位保留漏dt的右端，是表达式定义，不是正确积分定理，其文档误标(6.17)，应为(6.18)。原书疑误与已修正主签名不能混认。
+网站原返回：NEEDS\_HUMAN。timeItoFormula及timeItoFormula\_corrected签名相同：在与标量版一致的preBrownian、严格SDE、C¹ a,b、C²联合φ、联合可测及自然适应X、被积过程适应平方可积和网格L²/Hölder资格下，给出任意T≥0完整积分公式。方向(1,0)为x偏导，(0,1)为t偏导，二次方向导数给φ\_xx；漂移积分已正确包含φ\_t，初值φ(x0,0)，扩散φ\_x*b，系数b²/2均正确，两数学签名PASS。timeItoFormulaPrinted以dX,dXX形式占位保留漏dt的右端，是表达式定义，不是正确积分定理，其文档误标(6.17)，应为(6.18)。原书疑误与已修正主签名不能混认。
 当前处理：修正版/限定声明=网站PASS；原文疑误或范围解释待导师。
 保留所交版本的明确结论。
 本地编译和逐声明依赖核对通过。原文疑误、各限定/修正版、反例的评价分别列出；有未完成证明依赖的声明仍为未证。
@@ -5615,7 +6098,12 @@ def timeItoFormulaPrinted (φ : ℝ×ℝ → ℝ) (x t dX dXX : ℝ) : ℝ :=
 ### 1. 原文陈述
 
 > Take the diffusion limit $\delta t\to0$, $\delta x^2/\delta t\to1$ with $\nu\delta t=t$ fixed, then we obtain, under the Itô convention,
-> \[X(t)-X(0)=\int_0^t a(X(s),s)ds+\int_0^t b(X(s),s)dW(s).\]
+
+$$
+X(t)-X(0)=\int_0^t a(X(s),s)ds+\int_0^t b(X(s),s)dW(s).
+$$
+
+
 
 ### 2. 原文证明
 
@@ -5648,7 +6136,7 @@ theorem biasedWalkDiffusion : ∀ {Ω : Type*} [MeasurableSpace Ω] (P : Measure
 
 | 原文对象或结论 | 当前Lean与范围 |
 |---|---|
-| 所引原句 | 本条所引原句及展示公式；单个记号归入context_notation。 |
+| 所引原句 | 本条所引原句及展示公式；单个记号归入context\_notation。 |
 | 对象、域、量词及前提 | 以上完整声明；额外资格与未覆盖部分见下一段 |
 | 最新网站原始评价 | PASS；首轮保留 |
 
@@ -5678,7 +6166,12 @@ theorem biasedWalkDiffusion : ∀ {Ω : Type*} [MeasurableSpace Ω] (P : Measure
 ### 1. 原文陈述
 
 > For now we will examine the special case of a scalar equation
-> \[dX=-\gamma Xdt+\sigma dW;\tag{6.19}\]
+
+$$
+dX=-\gamma Xdt+\sigma dW;\tag{6.19}
+$$
+
+
 > where $\gamma>0$ and $\sigma$ are constants. We term Eq. (6.19) the Ornstein-Uhlenbeck SDE.
 
 ### 2. 原文证明
@@ -5697,7 +6190,7 @@ def strictOUProcess {Ω : Type*} [MeasurableSpace Ω] (P : Measure Ω)
 
 | 原文对象或结论 | 当前Lean与范围 |
 |---|---|
-| 所引原句 | 本条所引原句及展示公式；单个记号归入context_notation。 |
+| 所引原句 | 本条所引原句及展示公式；单个记号归入context\_notation。 |
 | 对象、域、量词及前提 | 以上完整声明；额外资格与未覆盖部分见下一段 |
 | 最新网站原始评价 | PASS；首轮保留 |
 
@@ -5727,13 +6220,33 @@ def strictOUProcess {Ω : Type*} [MeasurableSpace Ω] (P : Measure Ω)
 ### 1. 原文陈述
 
 > Multiply both sides of (6.19) by the integrating factor $\exp(\gamma t)$, and observe that
-> \[d(\exp(\gamma t)X)=\exp(\gamma t)(dX+\gamma Xdt);\]
+
+$$
+d(\exp(\gamma t)X)=\exp(\gamma t)(dX+\gamma Xdt);
+$$
+
+
 > thus (6.19) becomes
-> \[d(\exp(\gamma t)X)=\sigma\exp(\gamma t)dW(t).\]
+
+$$
+d(\exp(\gamma t)X)=\sigma\exp(\gamma t)dW(t).
+$$
+
+
 > We then integrate both sides to obtain
-> \[\exp(\gamma t)X(t)=X(0)+\int_0^t\sigma\exp(\gamma s)dW(s).\]
+
+$$
+\exp(\gamma t)X(t)=X(0)+\int_0^t\sigma\exp(\gamma s)dW(s).
+$$
+
+
 > Multiplying by $e^{-\gamma t}$ gives
-> \[X(t)=e^{-\gamma t}X(0)+\sigma e^{-\gamma t}\int_0^t\exp(\gamma s)dW(s).\]
+
+$$
+X(t)=e^{-\gamma t}X(0)+\sigma e^{-\gamma t}\int_0^t\exp(\gamma s)dW(s).
+$$
+
+
 
 ### 2. 原文证明
 
@@ -5755,7 +6268,7 @@ theorem ouIntegratingFactor :
 
 | 原文对象或结论 | 当前Lean与范围 |
 |---|---|
-| 所引原句 | 本条所引原句及展示公式；单个记号归入context_notation。 |
+| 所引原句 | 本条所引原句及展示公式；单个记号归入context\_notation。 |
 | 对象、域、量词及前提 | 以上完整声明；额外资格与未覆盖部分见下一段 |
 | 最新网站原始评价 | PASS；首轮保留 |
 
@@ -5785,7 +6298,12 @@ theorem ouIntegratingFactor :
 ### 1. 原文陈述
 
 > Using Proposition 6.3, we know that for a Wiener process $W(t)$, $Y(t)\stackrel{\rm def}=\int_0^t\exp(\gamma s)dW(s)$ is a Gaussian random variable with mean zero and variance
-> \[\operatorname{Var}\{Y(t)\}=\int_0^t e^{2\gamma s}ds=\frac{e^{2\gamma t}-1}{2\gamma}.\]
+
+$$
+\operatorname{Var}\{Y(t)\}=\int_0^t e^{2\gamma s}ds=\frac{e^{2\gamma t}-1}{2\gamma}.
+$$
+
+
 
 ### 2. 原文证明
 
@@ -5826,7 +6344,7 @@ theorem ouVarianceIntegral : ∀ (γ T : ℝ), 0 < γ → 0 ≤ T →
 
 ### 6. 审计结论（含网站结论）
 
-网站原返回：PASS。ouVarianceIntegral对任意γ>0、T≥0断言确定性区间积分∫exp(2γs)=(exp(2γT)-1)/(2γ)，签名正确。明确排除γ=0以免总化除零给错误值。scope和coverage_gaps已声明不覆盖随机积分Gaussian法则、均值或方差的识别；按此范围PASS。条目中额外列出的SymplecticCoordinates、textbookJ及复合辛映射声明与本积分结论无关，不把它们当证据。
+网站原返回：PASS。ouVarianceIntegral对任意γ>0、T≥0断言确定性区间积分∫exp(2γs)=(exp(2γT)-1)/(2γ)，签名正确。明确排除γ=0以免总化除零给错误值。scope和coverage\_gaps已声明不覆盖随机积分Gaussian法则、均值或方差的识别；按此范围PASS。条目中额外列出的SymplecticCoordinates、textbookJ及复合辛映射声明与本积分结论无关，不把它们当证据。
 当前处理：网站PASS（复审）。
 保留所交版本的明确结论。
 本地编译和逐声明依赖核对通过。原文疑误、各限定/修正版、反例的评价分别列出；有未完成证明依赖的声明仍为未证。
@@ -5846,7 +6364,12 @@ theorem ouVarianceIntegral : ∀ (γ T : ℝ), 0 < γ → 0 ≤ T →
 ### 1. 原文陈述
 
 > The solution with equivalent distribution is therefore
-> \[X(t)=e^{-\gamma t}X(0)+\sigma\sqrt{(2\gamma)^{-1}(1-e^{-2\gamma t})}\widehat Y(t).\]
+
+$$
+X(t)=e^{-\gamma t}X(0)+\sigma\sqrt{(2\gamma)^{-1}(1-e^{-2\gamma t})}\widehat Y(t).
+$$
+
+
 > where $\widehat Y(t)$ should be interpreted as random process which at every time $t$ evaluates to a normal random variable ($\widehat Y(t)\sim N(0,1)$). This is what we mean by the exact distributional solution of the Ornstein-Uhlenbeck SDE with prescribed initial value $X(0)$.
 
 ### 2. 原文证明
@@ -5879,7 +6402,7 @@ theorem ouLawPrinted : ∀ {Ω : Type*} [MeasurableSpace Ω] (P : Measure Ω)
 
 ### 6. 审计结论（含网站结论）
 
-网站原返回：PASS。ouLawPrinted：对实际preBrownian驱动与strictOUProcess（γ>0及线性漂移-γx、常扩散σ、确定初态x0的严格积分方程），任意T≥0，X_T有Gaussian法则，均值exp(-γT)x0、方差σ²(1-exp(-2γT))/(2γ)。方差非负，toNNReal不截掉任何合法量；σ为任意实数、T=0退化为初态Dirac也正确。原文只规定每时刻正态边际，签名没有错误声称各时刻独立或整路径法则，因此PASS；sorry不影响签名审校。
+网站原返回：PASS。ouLawPrinted：对实际preBrownian驱动与strictOUProcess（γ>0及线性漂移-γx、常扩散σ、确定初态x0的严格积分方程），任意T≥0，X\_T有Gaussian法则，均值exp(-γT)x0、方差σ²(1-exp(-2γT))/(2γ)。方差非负，toNNReal不截掉任何合法量；σ为任意实数、T=0退化为初态Dirac也正确。原文只规定每时刻正态边际，签名没有错误声称各时刻独立或整路径法则，因此PASS；sorry不影响签名审校。
 当前处理：网站PASS（复审）。
 保留所交版本的明确结论。
 本地编译和逐声明依赖核对通过。原文疑误、各限定/修正版、反例的评价分别列出；有未完成证明依赖的声明仍为未证。
@@ -5899,7 +6422,12 @@ theorem ouLawPrinted : ∀ {Ω : Type*} [MeasurableSpace Ω] (P : Measure Ω)
 ### 1. 原文陈述
 
 > The solution with equivalent distribution is therefore
-> \[X(t)=e^{-\gamma t}X(0)+\sigma\sqrt{(2\gamma)^{-1}(1-e^{-2\gamma t})}\widehat Y(t).\]
+
+$$
+X(t)=e^{-\gamma t}X(0)+\sigma\sqrt{(2\gamma)^{-1}(1-e^{-2\gamma t})}\widehat Y(t).
+$$
+
+
 
 ### 2. 原文证明
 
@@ -5928,7 +6456,7 @@ theorem ouLawPrinted_corrected :
 
 | 原文对象或结论 | 当前Lean与范围 |
 |---|---|
-| 所引原句 | 本条所引原句及展示公式；单个记号归入context_notation。 |
+| 所引原句 | 本条所引原句及展示公式；单个记号归入context\_notation。 |
 | 对象、域、量词及前提 | 以上完整声明；额外资格与未覆盖部分见下一段 |
 | 最新网站原始评价 | PASS；首轮保留 |
 
@@ -5959,9 +6487,19 @@ theorem ouLawPrinted_corrected :
 ### 1. 原文陈述
 
 > Let $\sigma=\sqrt{2\gamma k_BT m}$; then for large $t$ the exponentials of the form $e^{-\gamma t}$ tend to zero, and we have
-> \[X(t)\approx\sqrt{k_BT m}\widehat Y(t);\]
+
+$$
+X(t)\approx\sqrt{k_BT m}\widehat Y(t);
+$$
+
+
 >  in which case $X(t)$ is drawn from the probability density
-> \[\rho_\infty(u)=\frac1{\sqrt{2\pi m k_BT}}\exp\left(-\frac1{k_BT}\frac{u^2}{2m}\right).\]
+
+$$
+\rho_\infty(u)=\frac1{\sqrt{2\pi m k_BT}}\exp\left(-\frac1{k_BT}\frac{u^2}{2m}\right).
+$$
+
+
 
 ### 2. 原文证明
 
@@ -5983,7 +6521,7 @@ theorem ouGibbsLimit :
 
 | 原文对象或结论 | 当前Lean与范围 |
 |---|---|
-| 所引原句 | 本条所引原句及展示公式；单个记号归入context_notation。 |
+| 所引原句 | 本条所引原句及展示公式；单个记号归入context\_notation。 |
 | 对象、域、量词及前提 | 以上完整声明；额外资格与未覆盖部分见下一段 |
 | 最新网站原始评价 | PASS；首轮保留 |
 
@@ -6013,9 +6551,19 @@ theorem ouGibbsLimit :
 ### 1. 原文陈述
 
 > For a system with $N_c$ configurational variables we may write
-> \[dp_i=-\gamma p_i dt+\sqrt{2\gamma k_BT m_i}\,dW_i;\tag{6.20}\]
+
+$$
+dp_i=-\gamma p_i dt+\sqrt{2\gamma k_BT m_i}\,dW_i;\tag{6.20}
+$$
+
+
 > where $W_1(t),W_2(t),\ldots,W_{N_c}(t)$ represent $N_c$ independent Wiener processes, or, in vectorial notation, denoting $W=[W_1,W_2,\ldots,W_{N_c}]^T$, we have
-> \[dp=-\gamma pdt+\sqrt{2\gamma k_BT}M^{1/2}dW.\tag{6.21}\]
+
+$$
+dp=-\gamma pdt+\sqrt{2\gamma k_BT}M^{1/2}dW.\tag{6.21}
+$$
+
+
 
 ### 2. 原文证明
 
@@ -6045,7 +6593,7 @@ def momentumOU {Ω : Type*} [MeasurableSpace Ω] {n : ℕ} (P : Measure Ω)
 
 ### 6. 审计结论（含网站结论）
 
-网站原返回：PASS。momentumOU在任意n上要求整族向量Wiener（联合Gaussian、全跨时协方差、连续路径）、逐质量正、γ>0、θ>0，其中θ表示kBT；每坐标为γ相同、σ_i=sqrt(2γθm_i)、初态p0_i的strictOUProcess。各噪声来自同一真实独立坐标Wiener，并非任意彼此相关标量过程。常系数线性方程对应对角M^(1/2)，签名PASS；不把该定义当作长期采样或不变性定理。
+网站原返回：PASS。momentumOU在任意n上要求整族向量Wiener（联合Gaussian、全跨时协方差、连续路径）、逐质量正、γ>0、θ>0，其中θ表示kBT；每坐标为γ相同、σ\_i=sqrt(2γθm\_i)、初态p0\_i的strictOUProcess。各噪声来自同一真实独立坐标Wiener，并非任意彼此相关标量过程。常系数线性方程对应对角M^(1/2)，签名PASS；不把该定义当作长期采样或不变性定理。
 当前处理：网站PASS（复审）。
 保留所交版本的明确结论。
 本地编译和逐声明依赖核对通过。原文疑误、各限定/修正版、反例的评价分别列出；有未完成证明依赖的声明仍为未证。
@@ -6065,7 +6613,12 @@ def momentumOU {Ω : Type*} [MeasurableSpace Ω] {n : ℕ} (P : Measure Ω)
 ### 1. 原文陈述
 
 > in which case $X(t)$ is drawn from the probability density
-> \[\rho_\infty(u)=\frac1{\sqrt{2\pi m k_BT}}\exp\left(-\frac1{k_BT}\frac{u^2}{2m}\right).\]
+
+$$
+\rho_\infty(u)=\frac1{\sqrt{2\pi m k_BT}}\exp\left(-\frac1{k_BT}\frac{u^2}{2m}\right).
+$$
+
+
 
 ### 2. 原文证明
 
@@ -6082,7 +6635,7 @@ def gibbsGaussianDensity (θ m u : ℝ) : ℝ :=
 
 | 原文对象或结论 | 当前Lean与范围 |
 |---|---|
-| 所引原句 | 本条所引原句及展示公式；单个记号归入context_notation。 |
+| 所引原句 | 本条所引原句及展示公式；单个记号归入context\_notation。 |
 | 对象、域、量词及前提 | 以上完整声明；额外资格与未覆盖部分见下一段 |
 | 最新网站原始评价 | PASS；首轮保留 |
 
@@ -6112,7 +6665,12 @@ def gibbsGaussianDensity (θ m u : ℝ) : ℝ :=
 ### 1. 原文陈述
 
 > We assume as in [138] that we are given a system of $k$ coupled oscillators (a “heat bath”) in contact with a distinguished particle. The Hamiltonian is
-> \[H=\frac{P^2}{2}+\sum_{i=1}^k\frac{p_i^2}{2\mu_i}+U(Q)+\frac1{2k}\sum_{i=1}^k(q_i-Q)^2\]
+
+$$
+H=\frac{P^2}{2}+\sum_{i=1}^k\frac{p_i^2}{2\mu_i}+U(Q)+\frac1{2k}\sum_{i=1}^k(q_i-Q)^2
+$$
+
+
 > where $Q$ and $P$ represent the position and momentum of the distinguished particle and $\{q_i,p_i\}$ are the positions and momenta of the particles of the bath, $\mu_i$ giving the mass of the $i$th light particle.
 
 ### 2. 原文证明
@@ -6130,7 +6688,7 @@ def bathHamiltonian {k : ℕ} (_hk : 0 < k) (μ : MolecularDynamics.Chapter06Rev
 
 | 原文对象或结论 | 当前Lean与范围 |
 |---|---|
-| 所引原句 | 本条所引原句及展示公式；单个记号归入context_notation。 |
+| 所引原句 | 本条所引原句及展示公式；单个记号归入context\_notation。 |
 | 对象、域、量词及前提 | 以上完整声明；额外资格与未覆盖部分见下一段 |
 | 最新网站原始评价 | PASS；首轮保留 |
 
@@ -6140,7 +6698,7 @@ def bathHamiltonian {k : ℕ} (_hk : 0 < k) (μ : MolecularDynamics.Chapter06Rev
 
 ### 6. 审计结论（含网站结论）
 
-网站原返回：PASS。k>0、所有μ_i>0显式参数，Q,P实数，q,p为Fin k→ℝ，U任意实势函数。动能p_i²/(2μ_i)、势能U Q及耦合1/(2k)均正确。定义能量无需U可微。
+网站原返回：PASS。k>0、所有μ\_i>0显式参数，Q,P实数，q,p为Fin k→ℝ，U任意实势函数。动能p\_i²/(2μ\_i)、势能U Q及耦合1/(2k)均正确。定义能量无需U可微。
 当前处理：网站PASS（首轮未改版本）。
 保留所交版本的明确结论。
 本地编译和逐声明依赖核对通过。原文疑误、各限定/修正版、反例的评价分别列出；有未完成证明依赖的声明仍为未证。
@@ -6160,9 +6718,19 @@ def bathHamiltonian {k : ℕ} (_hk : 0 < k) (μ : MolecularDynamics.Chapter06Rev
 ### 1. 原文陈述
 
 > The equations of motion for the combined system are
-> \[\dot Q=P;\tag{6.22}\quad\dot P=-U'(Q)-k^{-1}\sum_{i=1}^k(Q-q_i);\tag{6.23}\]
+
+$$
+\dot Q=P;\quad\text{(6.22)}\quad\dot P=-U'(Q)-k^{-1}\sum_{i=1}^k(Q-q_i);\quad\text{(6.23)}
+$$
+
+
 > where, for $i=1,2,\ldots,k$,
-> \[\dot q_i=p_i/\mu_i;\tag{6.24}\quad\dot p_i=(Q-q_i)/k.\tag{6.25}\]
+
+$$
+\dot q_i=p_i/\mu_i;\quad\text{(6.24)}\quad\dot p_i=(Q-q_i)/k.\quad\text{(6.25)}
+$$
+
+
 
 ### 2. 原文证明
 
@@ -6185,7 +6753,7 @@ theorem bathHamiltonEquations :
 
 | 原文对象或结论 | 当前Lean与范围 |
 |---|---|
-| 所引原句 | 本条所引原句及展示公式；单个记号归入context_notation。 |
+| 所引原句 | 本条所引原句及展示公式；单个记号归入context\_notation。 |
 | 对象、域、量词及前提 | 以上完整声明；额外资格与未覆盖部分见下一段 |
 | 最新网站原始评价 | PASS；首轮保留 |
 
@@ -6195,7 +6763,7 @@ theorem bathHamiltonEquations :
 
 ### 6. 审计结论（含网站结论）
 
-网站原返回：PASS。在k>0、μ_i>0及U在Q可微下，实际Hamiltonian对P,Q以及各p_i,q_i的方向导数完整给出四个Hamilton向量场分量。Pi.single i 1为第i坐标方向，负号分配正确。此为全部动力场分量的求导核验，不额外宣称轨道存在性。
+网站原返回：PASS。在k>0、μ\_i>0及U在Q可微下，实际Hamiltonian对P,Q以及各p\_i,q\_i的方向导数完整给出四个Hamilton向量场分量。Pi.single i 1为第i坐标方向，负号分配正确。此为全部动力场分量的求导核验，不额外宣称轨道存在性。
 当前处理：网站PASS（首轮未改版本）。
 保留所交版本的明确结论。
 本地编译和逐声明依赖核对通过。原文疑误、各限定/修正版、反例的评价分别列出；有未完成证明依赖的声明仍为未证。
@@ -6230,7 +6798,7 @@ def bathFrequency {k : ℕ} (_hk : 0 < k) (μ : MolecularDynamics.Chapter06Revie
 
 | 原文对象或结论 | 当前Lean与范围 |
 |---|---|
-| 所引原句 | 本条所引原句及展示公式；单个记号归入context_notation。 |
+| 所引原句 | 本条所引原句及展示公式；单个记号归入context\_notation。 |
 | 对象、域、量词及前提 | 以上完整声明；额外资格与未覆盖部分见下一段 |
 | 最新网站原始评价 | PASS；首轮保留 |
 
@@ -6240,7 +6808,7 @@ def bathFrequency {k : ℕ} (_hk : 0 < k) (μ : MolecularDynamics.Chapter06Revie
 
 ### 6. 审计结论（含网站结论）
 
-网站原返回：PASS。k>0和正μ_i确保sqrt(kμ_i)>0，其倒数与k^(−1/2)μ_i^(−1/2)等价。i:Fin k，未出现频率零或总化负质量问题。
+网站原返回：PASS。k>0和正μ\_i确保sqrt(kμ\_i)>0，其倒数与k^(−1/2)μ\_i^(−1/2)等价。i:Fin k，未出现频率零或总化负质量问题。
 当前处理：网站PASS（首轮未改版本）。
 保留所交版本的明确结论。
 本地编译和逐声明依赖核对通过。原文疑误、各限定/修正版、反例的评价分别列出；有未完成证明依赖的声明仍为未证。
@@ -6260,7 +6828,12 @@ def bathFrequency {k : ℕ} (_hk : 0 < k) (μ : MolecularDynamics.Chapter06Revie
 ### 1. 原文陈述
 
 > Because the system (6.24)–(6.25) is linear, we may solve it analytically for $\{q_i,p_i\}$; this yields:
-> \[q_i(t)=\cos(\Omega_i t)q_i(0)+\Omega_i^{-1}\sin(\Omega_i t)p_i(0)/\mu_i+k^{-1}\mu_i^{-1}\int_0^t\Omega_i^{-1}\sin(\Omega_i(t-s))Q(s)ds.\tag{6.26}\]
+
+$$
+q_i(t)=\cos(\Omega_i t)q_i(0)+\Omega_i^{-1}\sin(\Omega_i t)p_i(0)/\mu_i+k^{-1}\mu_i^{-1}\int_0^t\Omega_i^{-1}\sin(\Omega_i(t-s))Q(s)ds.\tag{6.26}
+$$
+
+
 
 ### 2. 原文证明
 
@@ -6283,7 +6856,7 @@ theorem bathOscillatorSolution : ∀ (Q q : ℝ → ℝ) (k : ℕ) (μ p0 t : �
 
 | 原文对象或结论 | 当前Lean与范围 |
 |---|---|
-| 所引原句 | 本条所引原句及展示公式；单个记号归入context_notation。 |
+| 所引原句 | 本条所引原句及展示公式；单个记号归入context\_notation。 |
 | 对象、域、量词及前提 | 以上完整声明；额外资格与未覆盖部分见下一段 |
 | 最新网站原始评价 | PASS；首轮保留 |
 
@@ -6313,8 +6886,12 @@ theorem bathOscillatorSolution : ∀ (Q q : ℝ → ℝ) (k : ℕ) (μ p0 t : �
 ### 1. 原文陈述
 
 > Integrating by parts, we have
-> \[\int_0^t\Omega_i\sin(\Omega_i(t-s))Q(s)ds=[\cos(\Omega_i(t-s))Q(s)]_0^t-\int_0^t\cos(\Omega_i(t-s))P(s)ds
-> =Q(t)-\cos(\Omega_i t)Q(0)-\int_0^t\cos(\Omega_i(t-s))P(s)ds.\]
+
+$$
+\int_0^t\Omega_i\sin(\Omega_i(t-s))Q(s)ds=[\cos(\Omega_i(t-s))Q(s)]_0^t-\int_0^t\cos(\Omega_i(t-s))P(s)ds =Q(t)-\cos(\Omega_i t)Q(0)-\int_0^t\cos(\Omega_i(t-s))P(s)ds.
+$$
+
+
 
 ### 2. 原文证明
 
@@ -6335,7 +6912,7 @@ theorem bathConvolutionIBP :
 
 | 原文对象或结论 | 当前Lean与范围 |
 |---|---|
-| 所引原句 | 本条所引原句及展示公式；单个记号归入context_notation。 |
+| 所引原句 | 本条所引原句及展示公式；单个记号归入context\_notation。 |
 | 对象、域、量词及前提 | 以上完整声明；额外资格与未覆盖部分见下一段 |
 | 最新网站原始评价 | PASS；首轮保留 |
 
@@ -6365,7 +6942,12 @@ theorem bathConvolutionIBP :
 ### 1. 原文陈述
 
 > where we define
-> \[f(t)=-k^{-1}\sum_{i=1}^k[\cos(\Omega_i t)q_i(0)+\Omega_i^{-1}\sin(\Omega_i t)p_i(0)/\mu_i-\cos(\Omega_i t)Q(0)].\]
+
+$$
+f(t)=-k^{-1}\sum_{i=1}^k[\cos(\Omega_i t)q_i(0)+\Omega_i^{-1}\sin(\Omega_i t)p_i(0)/\mu_i-\cos(\Omega_i t)Q(0)].
+$$
+
+
 
 ### 2. 原文证明
 
@@ -6388,7 +6970,7 @@ def bathForcePrinted_corrected {k : ℕ} (_hk : 0 < k) (μ : MolecularDynamics.C
 
 | 原文对象或结论 | 当前Lean与范围 |
 |---|---|
-| 所引原句 | 本条所引原句及展示公式；单个记号归入context_notation。 |
+| 所引原句 | 本条所引原句及展示公式；单个记号归入context\_notation。 |
 | 对象、域、量词及前提 | 以上完整声明；额外资格与未覆盖部分见下一段 |
 | 最新网站原始评价 | PASS；首轮保留 |
 
@@ -6399,7 +6981,7 @@ def bathForcePrinted_corrected {k : ℕ} (_hk : 0 < k) (μ : MolecularDynamics.C
 
 ### 6. 审计结论（含网站结论）
 
-网站原返回：PASS。两份所示定义bathForce和bathForcePrinted_corrected都是正k⁻¹的同一表达式。按[EXTRA]作为明示修正版审校合理：从(6.23)−k⁻¹Σ(Q−q)=+k⁻¹Σ(q−Q)得到正初值力，再减记忆卷积。k>0、正μ齐全；不是原书负号的字面版。原书符号冲突保留待人工裁定。
+网站原返回：PASS。两份所示定义bathForce和bathForcePrinted\_corrected都是正k⁻¹的同一表达式。按[EXTRA]作为明示修正版审校合理：从(6.23)−k⁻¹Σ(Q−q)=+k⁻¹Σ(q−Q)得到正初值力，再减记忆卷积。k>0、正μ齐全；不是原书负号的字面版。原书符号冲突保留待人工裁定。
 当前处理：网站PASS（首轮未改版本）。
 保留所交版本的明确结论。
 本地编译和逐声明依赖核对通过。原文疑误、各限定/修正版、反例的评价分别列出；有未完成证明依赖的声明仍为未证。
@@ -6420,7 +7002,12 @@ def bathForcePrinted_corrected {k : ℕ} (_hk : 0 < k) (μ : MolecularDynamics.C
 ### 1. 原文陈述
 
 > where we define
-> \[f(t)=-k^{-1}\sum_{i=1}^k[\cos(\Omega_i t)q_i(0)+\Omega_i^{-1}\sin(\Omega_i t)p_i(0)/\mu_i-\cos(\Omega_i t)Q(0)].\]
+
+$$
+f(t)=-k^{-1}\sum_{i=1}^k[\cos(\Omega_i t)q_i(0)+\Omega_i^{-1}\sin(\Omega_i t)p_i(0)/\mu_i-\cos(\Omega_i t)Q(0)].
+$$
+
+
 
 ### 2. 原文证明
 
@@ -6436,7 +7023,7 @@ def bathForcePrinted {k : ℕ} (_hk : 0 < k) (μ : MolecularDynamics.Chapter06Re
 
 | 原文对象或结论 | 当前Lean与范围 |
 |---|---|
-| 所引原句 | 本条所引原句及展示公式；单个记号归入context_notation。 |
+| 所引原句 | 本条所引原句及展示公式；单个记号归入context\_notation。 |
 | 对象、域、量词及前提 | 以上完整声明；额外资格与未覆盖部分见下一段 |
 | 最新网站原始评价 | PASS；首轮保留 |
 
@@ -6465,7 +7052,12 @@ def bathForcePrinted {k : ℕ} (_hk : 0 < k) (μ : MolecularDynamics.Chapter06Re
 
 ### 1. 原文陈述
 
-> \[\psi(t)=k^{-1}\sum_{i=1}^k\cos(\Omega_i(t)).\]
+
+$$
+\psi(t)=k^{-1}\sum_{i=1}^k\cos(\Omega_i(t)).
+$$
+
+
 
 ### 2. 原文证明
 
@@ -6482,7 +7074,7 @@ def memoryKernel {k : ℕ} (_hk : 0 < k) (μ : MolecularDynamics.Chapter06Review
 
 | 原文对象或结论 | 当前Lean与范围 |
 |---|---|
-| 所引原句 | 本条所引原句及展示公式；单个记号归入context_notation。 |
+| 所引原句 | 本条所引原句及展示公式；单个记号归入context\_notation。 |
 | 对象、域、量词及前提 | 以上完整声明；额外资格与未覆盖部分见下一段 |
 | 最新网站原始评价 | PASS；首轮保留 |
 
@@ -6512,8 +7104,18 @@ def memoryKernel {k : ℕ} (_hk : 0 < k) (μ : MolecularDynamics.Chapter06Review
 ### 1. 原文陈述
 
 > Introducing this formula in (6.23), we obtain a reduced system
-> \[\dot Q=P;\tag{6.27}\quad\dot P=-U'(Q)-k^{-1}\sum_{i=1}^k(Q-q_i);\tag{6.28}\]
-> \[=-U'(Q)+f(t)-\int_0^t\psi(t-s)P(s)ds.\tag{6.29}\]
+
+$$
+\dot Q=P;\quad\text{(6.27)}\quad\dot P=-U'(Q)-k^{-1}\sum_{i=1}^k(Q-q_i);\quad\text{(6.28)}
+$$
+
+
+
+$$
+=-U'(Q)+f(t)-\int_0^t\psi(t-s)P(s)ds.\tag{6.29}
+$$
+
+
 
 ### 2. 原文证明
 
@@ -6550,7 +7152,7 @@ theorem bathReductionPrinted_corrected :
 
 | 原文对象或结论 | 当前Lean与范围 |
 |---|---|
-| 所引原句 | 本条所引原句及展示公式；单个记号归入context_notation。 |
+| 所引原句 | 本条所引原句及展示公式；单个记号归入context\_notation。 |
 | 对象、域、量词及前提 | 以上完整声明；额外资格与未覆盖部分见下一段 |
 | 最新网站原始评价 | PASS；首轮保留 |
 
@@ -6580,8 +7182,18 @@ theorem bathReductionPrinted_corrected :
 
 ### 1. 原文陈述
 
-> \[\dot P=-U'(Q)+f(t)-\int_0^t\psi(t-s)P(s)ds.\tag{6.29}\]
-> \[f(t)=-k^{-1}\sum_{i=1}^k[\cos(\Omega_i t)q_i(0)+\Omega_i^{-1}\sin(\Omega_i t)p_i(0)/\mu_i-\cos(\Omega_i t)Q(0)].\]
+
+$$
+\dot P=-U'(Q)+f(t)-\int_0^t\psi(t-s)P(s)ds.\tag{6.29}
+$$
+
+
+
+$$
+f(t)=-k^{-1}\sum_{i=1}^k[\cos(\Omega_i t)q_i(0)+\Omega_i^{-1}\sin(\Omega_i t)p_i(0)/\mu_i-\cos(\Omega_i t)Q(0)].
+$$
+
+
 
 ### 2. 原文证明
 
@@ -6620,17 +7232,17 @@ theorem bathReductionPrinted_corrected :
 
 | 原文对象或结论 | 当前Lean与范围 |
 |---|---|
-| 所引原句 | 本条所引原句及展示公式；单个记号归入context_notation。 |
+| 所引原句 | 本条所引原句及展示公式；单个记号归入context\_notation。 |
 | 对象、域、量词及前提 | 以上完整声明；额外资格与未覆盖部分见下一段 |
-| 最新网站原始评价 | NEEDS_HUMAN；复审 |
+| 最新网站原始评价 | NEEDS\_HUMAN；复审 |
 
 ### 5. [EXTRA] 与覆盖缺口
 
-- [EXTRA] 原文版忠实性与数学疑误分开；补齐所交条目所属的现有_corrected完整签名，不从repair_log名称推断网站已通过修正版。
+- [EXTRA] 原文版忠实性与数学疑误分开；补齐所交条目所属的现有\_corrected完整签名，不从repair\_log名称推断网站已通过修正版。
 
 ### 6. 审计结论（含网站结论）
 
-网站原返回：NEEDS_HUMAN。bathReductionPrinted：k>0、μ_i>0、t≥0、Q,q为C²，dot Q=P、重粒子与热浴坐标的完整动力学均已列出。bathFrequency=1/sqrt(kμ_i)、memoryKernel=(1/k)Σcos、bathForcePrinted=-bathForce均核对。Printed的力与由dot P=-U′+(1/k)Σ(q_i-Q)导出的力差一个负号，原版忠实但需NEEDS_HUMAN。bathReductionPrinted_corrected保持相同域量词前提，用正bathForce替换，记忆项仍为负卷积，数学上正确；p0/μ_i与Ω_i^(-1)因子吻合。
+网站原返回：NEEDS\_HUMAN。bathReductionPrinted：k>0、μ\_i>0、t≥0、Q,q为C²，dot Q=P、重粒子与热浴坐标的完整动力学均已列出。bathFrequency=1/sqrt(kμ\_i)、memoryKernel=(1/k)Σcos、bathForcePrinted=-bathForce均核对。Printed的力与由dot P=-U′+(1/k)Σ(q\_i-Q)导出的力差一个负号，原版忠实但需NEEDS\_HUMAN。bathReductionPrinted\_corrected保持相同域量词前提，用正bathForce替换，记忆项仍为负卷积，数学上正确；p0/μ\_i与Ω\_i^(-1)因子吻合。
 当前处理：修正版/限定声明=网站PASS；原文疑误或范围解释待导师。
 保留所交版本的明确结论。
 本地编译和逐声明依赖核对通过。原文疑误、各限定/修正版、反例的评价分别列出；有未完成证明依赖的声明仍为未证。
@@ -6639,7 +7251,7 @@ theorem bathReductionPrinted_corrected :
 
 | 声明 | 证明状态 | 未证原因 | 网站分版结论 |
 |---|---|---|---|
-| `MD.Ch06.bathReductionPrinted` | 未证 | 原书疑误不证 | 原文忠实性PASS；原书数学/范围NEEDS_HUMAN |
+| `MD.Ch06.bathReductionPrinted` | 未证 | 原书疑误不证 | 原文忠实性PASS；原书数学/范围NEEDS\_HUMAN |
 
 位置：`Blueprint/Ch06.lean:1388`；本地核验记录：`blueprint/ch06/closeout26/FINAL_COMPILE.log`。
 
@@ -6650,7 +7262,12 @@ theorem bathReductionPrinted_corrected :
 ### 1. 原文陈述
 
 > If sufficient high frequency components are present, then the mass of the memory kernel is typically found to be localized around 0; in such a situation of rapid decay it is found that one may replace the function $\psi$ by a Dirac delta function scaled by a positive coefficient $\gamma$; we say that the system is Markovian or memory-less in this situation and we replace the delay-differential equation (6.29) by the SDEs
-> \[dQ=Pdt;\tag{6.30}\quad dP=-U'(Q)dt+\sigma dW-\gamma Pdt.\tag{6.31}\]
+
+$$
+dQ=Pdt;\quad\text{(6.30)}\quad dP=-U'(Q)dt+\sigma dW-\gamma Pdt.\quad\text{(6.31)}
+$$
+
+
 
 ### 2. 原文证明
 
@@ -6675,22 +7292,22 @@ def memoryKernelDeltaMeaning_corrected (masses : (k : ℕ) → (Fin k → ℝ)) 
 
 | 原文对象或结论 | 当前Lean与范围 |
 |---|---|
-| 所引原句 | 两个δ收敛资格在现有1/k归一及γ>0时均不可实现；不能将_corrected名字解释为已获有效物理极限。需重标度、单边质量和边界约定。 |
+| 所引原句 | 两个δ收敛资格在现有1/k归一及γ>0时均不可实现；不能将\_corrected名字解释为已获有效物理极限。需重标度、单边质量和边界约定。 |
 | 对象、域、量词及前提 | 以上完整声明；额外资格与未覆盖部分见下一段 |
-| 最新网站原始评价 | NEEDS_HUMAN；复审 |
+| 最新网站原始评价 | NEEDS\_HUMAN；复审 |
 
 ### 5. [EXTRA] 与覆盖缺口
 
 - [EXTRA]明确ηk→γδ0的实际分布意义，仅定义该近似资格；不计极限或Langevin推导已证。
-- [EXTRA] 旧_corrected只加正质量并非有效修复：固定1/k平均使|ψk|≤1，不可能收敛到正质量Dirac。此谓词在当前归一化下不可实现；原启发式与两版资格定义均留存，待确认时间/振幅重标度及单边边界因子；不把资格定义计成极限定理。
-- [EXTRA] 复审范围：两个δ收敛资格在现有1/k归一及γ>0时均不可实现；不能将_corrected名字解释为已获有效物理极限。需重标度、单边质量和边界约定。
-- 覆盖缺口：两个δ收敛资格在现有1/k归一及γ>0时均不可实现；不能将_corrected名字解释为已获有效物理极限。需重标度、单边质量和边界约定。
+- [EXTRA] 旧\_corrected只加正质量并非有效修复：固定1/k平均使|ψk|≤1，不可能收敛到正质量Dirac。此谓词在当前归一化下不可实现；原启发式与两版资格定义均留存，待确认时间/振幅重标度及单边边界因子；不把资格定义计成极限定理。
+- [EXTRA] 复审范围：两个δ收敛资格在现有1/k归一及γ>0时均不可实现；不能将\_corrected名字解释为已获有效物理极限。需重标度、单边质量和边界约定。
+- 覆盖缺口：两个δ收敛资格在现有1/k归一及γ>0时均不可实现；不能将\_corrected名字解释为已获有效物理极限。需重标度、单边质量和边界约定。
 
 ### 6. 审计结论（含网站结论）
 
-网站原返回：NEEDS_HUMAN。memoryKernelDeltaMeaning定义对全部C∞紧支测试f的全实轴分布收敛到γf(0)，γ>0；_corrected再要求所有质量正。两者作为收敛资格的形式表达准确，均非存在或Langevin推导定理。但memoryKernel的1/k归一使所有k,t的绝对值≤1，因此两谓词在γ>0时都不可实现；正质量未修复。[EXTRA]已披露这一点，故保留NEEDS_HUMAN，不把不可实现资格当有效修正版。全线γδ0与0到t卷积的边界因子尚需约定，(6.30)–(6.31)本身未被定义覆盖。
+网站原返回：NEEDS\_HUMAN。memoryKernelDeltaMeaning定义对全部C∞紧支测试f的全实轴分布收敛到γf(0)，γ>0；_corrected再要求所有质量正。两者作为收敛资格的形式表达准确，均非存在或Langevin推导定理。但memoryKernel的1/k归一使所有k,t的绝对值≤1，因此两谓词在γ>0时都不可实现；正质量未修复。[EXTRA]已披露这一点，故保留NEEDS\_HUMAN，不把不可实现资格当有效修正版。全线γδ0与0到t卷积的边界因子尚需约定，(6.30)–(6.31)本身未被定义覆盖。
 当前处理：原文疑误或语义范围待导师；不冒称未提供版本已通过。
-两个δ收敛资格在现有1/k归一及γ>0时均不可实现；不能将_corrected名字解释为已获有效物理极限。需重标度、单边质量和边界约定。
+两个δ收敛资格在现有1/k归一及γ>0时均不可实现；不能将\_corrected名字解释为已获有效物理极限。需重标度、单边质量和边界约定。
 本地编译和逐声明依赖核对通过。原文疑误、各限定/修正版、反例的评价分别列出；有未完成证明依赖的声明仍为未证。
 
 ### 7. 状态与证明位置
@@ -6708,7 +7325,12 @@ def memoryKernelDeltaMeaning_corrected (masses : (k : ℕ) → (Fin k → ℝ)) 
 
 ### 1. 原文陈述
 
-> \[dQ=Pdt;\tag{6.30}\quad dP=-U'(Q)dt+\sigma dW-\gamma Pdt.\tag{6.31}\]
+
+$$
+dQ=Pdt;\quad\text{(6.30)}\quad dP=-U'(Q)dt+\sigma dW-\gamma Pdt.\quad\text{(6.31)}
+$$
+
+
 
 ### 2. 原文证明
 
@@ -6734,7 +7356,7 @@ def scalarLangevin {Ω : Type*} [MeasurableSpace Ω] (law : Measure Ω)
 
 | 原文对象或结论 | 当前Lean与范围 |
 |---|---|
-| 所引原句 | 本条所引原句及展示公式；单个记号归入context_notation。 |
+| 所引原句 | 本条所引原句及展示公式；单个记号归入context\_notation。 |
 | 对象、域、量词及前提 | 以上完整声明；额外资格与未覆盖部分见下一段 |
 | 最新网站原始评价 | PASS；首轮保留 |
 
@@ -6765,7 +7387,12 @@ def scalarLangevin {Ω : Type*} [MeasurableSpace Ω] (law : Measure Ω)
 ### 1. 原文陈述
 
 > The equations of motion are, in vectorial form:
-> \[dq=M^{-1}pdt;\tag{6.32}\quad dp=-\nabla U(q)dt-\gamma pdt+\sqrt{2\gamma k_BT}M^{1/2}dW.\tag{6.33}\]
+
+$$
+dq=M^{-1}pdt;\quad\text{(6.32)}\quad dp=-\nabla U(q)dt-\gamma pdt+\sqrt{2\gamma k_BT}M^{1/2}dW.\quad\text{(6.33)}
+$$
+
+
 
 ### 2. 原文证明
 
@@ -6793,7 +7420,7 @@ def langevinMassSDE {Ω : Type*} [MeasurableSpace Ω] {n : ℕ} (P : Measure Ω)
 
 | 原文对象或结论 | 当前Lean与范围 |
 |---|---|
-| 所引原句 | 本条所引原句及展示公式；单个记号归入context_notation。 |
+| 所引原句 | 本条所引原句及展示公式；单个记号归入context\_notation。 |
 | 对象、域、量词及前提 | 以上完整声明；额外资格与未覆盖部分见下一段 |
 | 最新网站原始评价 | PASS；首轮保留 |
 
@@ -6803,7 +7430,7 @@ def langevinMassSDE {Ω : Type*} [MeasurableSpace Ω] {n : ℕ} (P : Measure Ω)
 
 ### 6. 审计结论（含网站结论）
 
-网站原返回：PASS。C：n维状态为V n×V n，m每个分量正，γ、θ=kBT正，U为C∞；n维Wiener、确定初值x0、非负时间连续路径与两漂移可积性均显式保留。坐标噪声√(2γθ m_i)(W_i(t)−W_i(0))与质量矩阵噪声相符；位置积分m_i⁻¹p_i和势偏导D13正确。[EXTRA]准确描述技术限制；不证明解存在或不变分布。
+网站原返回：PASS。C：n维状态为V n×V n，m每个分量正，γ、θ=kBT正，U为C∞；n维Wiener、确定初值x0、非负时间连续路径与两漂移可积性均显式保留。坐标噪声√(2γθ m\_i)(W\_i(t)−W\_i(0))与质量矩阵噪声相符；位置积分m\_i⁻¹p\_i和势偏导D13正确。[EXTRA]准确描述技术限制；不证明解存在或不变分布。
 当前处理：网站PASS（首轮未改版本）。
 保留所交版本的明确结论。
 本地编译和逐声明依赖核对通过。原文疑误、各限定/修正版、反例的评价分别列出；有未完成证明依赖的声明仍为未证。
@@ -6823,7 +7450,12 @@ def langevinMassSDE {Ω : Type*} [MeasurableSpace Ω] {n : ℕ} (P : Measure Ω)
 ### 1. 原文陈述
 
 > In particular, a different friction coefficient can be used for each particle and these coefficients can even depend on spatial location, thus we might work with the following system:
-> \[dq=M^{-1}pdt;\tag{6.34}\quad dp=-\nabla U(q)dt-\Gamma(q)\Gamma(q)^T pdt+\sqrt{2k_BT}M^{1/2}\Gamma(q)d\widehat W;\tag{6.35}\]
+
+$$
+dq=M^{-1}pdt;\quad\text{(6.34)}\quad dp=-\nabla U(q)dt-\Gamma(q)\Gamma(q)^T pdt+\sqrt{2k_BT}M^{1/2}\Gamma(q)d\widehat W;\quad\text{(6.35)}
+$$
+
+
 > where we use the matrix $\Gamma(q)\in\mathbb R^{N_c\times S}$ and a vector of $S$ independent Wiener processes $\widehat W$.
 
 ### 2. 原文证明
@@ -6857,7 +7489,7 @@ def variableFriction {Ω : Type*} [MeasurableSpace Ω] {n r : ℕ} (P : Measure 
 
 | 原文对象或结论 | 当前Lean与范围 |
 |---|---|
-| 所引原句 | 本条所引原句及展示公式；单个记号归入context_notation。 |
+| 所引原句 | 本条所引原句及展示公式；单个记号归入context\_notation。 |
 | 对象、域、量词及前提 | 以上完整声明；额外资格与未覆盖部分见下一段 |
 | 最新网站原始评价 | PASS；首轮保留 |
 
@@ -6868,7 +7500,7 @@ def variableFriction {Ω : Type*} [MeasurableSpace Ω] {n r : ℕ} (P : Measure 
 
 ### 6. 审计结论（含网站结论）
 
-网站原返回：PASS。C：n/r独立量化，Γ为n×r的空间依赖矩阵；m_i>0、θ>0、U/Γ光滑，r维联合Wiener，连续初值路径与位置方程齐全。每个动量坐标i、每个T≥0存在全部r个严格积分，系数√(2θm_i)Γ_ij，漂移−∂iU−(ΓΓᵀp)_i，均正确，全部漂移可积性明示。没有单位质量或对角化偷换；严格L²积分模型比一般局部Itô解范围窄，[EXTRA]已说明严格积分范围。
+网站原返回：PASS。C：n/r独立量化，Γ为n×r的空间依赖矩阵；m\_i>0、θ>0、U/Γ光滑，r维联合Wiener，连续初值路径与位置方程齐全。每个动量坐标i、每个T≥0存在全部r个严格积分，系数√(2θm\_i)Γ\_ij，漂移−∂iU−(ΓΓᵀp)_i，均正确，全部漂移可积性明示。没有单位质量或对角化偷换；严格L²积分模型比一般局部Itô解范围窄，[EXTRA]已说明严格积分范围。
 当前处理：网站PASS（首轮未改版本）。
 保留所交版本的明确结论。
 本地编译和逐声明依赖核对通过。原文疑误、各限定/修正版、反例的评价分别列出；有未完成证明依赖的声明仍为未证。
@@ -6888,7 +7520,12 @@ def variableFriction {Ω : Type*} [MeasurableSpace Ω] {n r : ℕ} (P : Measure 
 ### 1. 原文陈述
 
 > In the case of Langevin dynamics with different, variable friction coefficients for each particle, we have $S=N_c$ and
-> \[\Gamma=\operatorname{diag}(\gamma_1(q),\gamma_1(q),\gamma_1(q),\gamma_2(q),\gamma_2(q),\gamma_2(q),\ldots,\gamma_N(q),\gamma_N(q),\gamma_N(q)).\]
+
+$$
+\Gamma=\operatorname{diag}(\gamma_1(q),\gamma_1(q),\gamma_1(q),\gamma_2(q),\gamma_2(q),\gamma_2(q),\ldots,\gamma_N(q),\gamma_N(q),\gamma_N(q)).
+$$
+
+
 
 ### 2. 原文证明
 
@@ -6906,7 +7543,7 @@ def particleDiagonalFriction {N : ℕ} (γ : Fin N → (Fin (N*3) → ℝ) → �
 
 | 原文对象或结论 | 当前Lean与范围 |
 |---|---|
-| 所引原句 | 本条所引原句及展示公式；单个记号归入context_notation。 |
+| 所引原句 | 本条所引原句及展示公式；单个记号归入context\_notation。 |
 | 对象、域、量词及前提 | 以上完整声明；额外资格与未覆盖部分见下一段 |
 | 最新网站原始评价 | PASS；首轮保留 |
 
@@ -6936,9 +7573,19 @@ def particleDiagonalFriction {N : ℕ} (γ : Fin N → (Fin (N*3) → ℝ) → �
 ### 1. 原文陈述
 
 > Let $v=M^{-1}p$ and assume that the acceleration is negligible, so that Langevin dynamics reduces to
-> \[dq=vdt;\quad0=-\nabla U(q)dt-\gamma Mvdt+\sqrt{2\gamma k_BT}M^{1/2}dW.\]
+
+$$
+dq=vdt;\quad0=-\nabla U(q)dt-\gamma Mvdt+\sqrt{2\gamma k_BT}M^{1/2}dW.
+$$
+
+
 > The second equation can be solved for $v$ and we obtain the following SDE for $q$:
-> \[dq=-\gamma^{-1}M^{-1}\nabla U(q)dt+\sqrt{2k_B\gamma^{-1}T}M^{-1/2}dW.\tag{6.36}\]
+
+$$
+dq=-\gamma^{-1}M^{-1}\nabla U(q)dt+\sqrt{2k_B\gamma^{-1}T}M^{-1/2}dW.\tag{6.36}
+$$
+
+
 
 ### 2. 原文证明
 
@@ -6962,7 +7609,7 @@ def brownianMassSDE {Ω : Type*} [MeasurableSpace Ω] {n : ℕ} (P : Measure Ω)
 
 | 原文对象或结论 | 当前Lean与范围 |
 |---|---|
-| 所引原句 | 本条所引原句及展示公式；单个记号归入context_notation。 |
+| 所引原句 | 本条所引原句及展示公式；单个记号归入context\_notation。 |
 | 对象、域、量词及前提 | 以上完整声明；额外资格与未覆盖部分见下一段 |
 | 最新网站原始评价 | PASS；首轮保留 |
 
@@ -6972,7 +7619,7 @@ def brownianMassSDE {Ω : Type*} [MeasurableSpace Ω] {n : ℕ} (P : Measure Ω)
 
 ### 6. 审计结论（含网站结论）
 
-网站原返回：PASS。C：任意维正m、γ>0、θ>0、光滑U、n维Wiener以及q0；真实连续路径积分方程的漂移−(γm_i)⁻¹∂iU、噪声√(2θ/(γm_i))均正确，全部漂移区间可积性已明示。此定义编码形式Brownian模型；不将令加速度为0当作已经证明小质量/大摩擦收敛，实际极限另见条目16。
+网站原返回：PASS。C：任意维正m、γ>0、θ>0、光滑U、n维Wiener以及q0；真实连续路径积分方程的漂移−(γm\_i)⁻¹∂iU、噪声√(2θ/(γm\_i))均正确，全部漂移区间可积性已明示。此定义编码形式Brownian模型；不将令加速度为0当作已经证明小质量/大摩擦收敛，实际极限另见条目16。
 当前处理：网站PASS（首轮未改版本）。
 保留所交版本的明确结论。
 本地编译和逐声明依赖核对通过。原文疑误、各限定/修正版、反例的评价分别列出；有未完成证明依赖的声明仍为未证。
@@ -6991,7 +7638,12 @@ def brownianMassSDE {Ω : Type*} [MeasurableSpace Ω] {n : ℕ} (P : Measure Ω)
 
 ### 1. 原文陈述
 
-> \[\psi(t)=k^{-1}\sum_{i=1}^k\cos(\Omega_i(t)).\]
+
+$$
+\psi(t)=k^{-1}\sum_{i=1}^k\cos(\Omega_i(t)).
+$$
+
+
 
 ### 2. 原文证明
 
@@ -7008,7 +7660,7 @@ def frequencyMemoryKernel {k : ℕ} (Ω : Fin k → ℝ) (t : ℝ) : ℝ :=
 
 | 原文对象或结论 | 当前Lean与范围 |
 |---|---|
-| 所引原句 | 本条所引原句及展示公式；单个记号归入context_notation。 |
+| 所引原句 | 本条所引原句及展示公式；单个记号归入context\_notation。 |
 | 对象、域、量词及前提 | 以上完整声明；额外资格与未覆盖部分见下一段 |
 | 最新网站原始评价 | PASS；首轮保留 |
 
@@ -7018,7 +7670,7 @@ def frequencyMemoryKernel {k : ℕ} (Ω : Fin k → ℝ) (t : ℝ) : ℝ :=
 
 ### 6. 审计结论（含网站结论）
 
-网站原返回：PASS。C：任意有限频率族Ω和实t，函数为k⁻¹∑cos(Ω_i*t)，与D3相同的频率解释。k=0在Lean中定义为0；[EXTRA]所说k>0仅为物理解释，实际签名没有该前提，不应当作已验证的正k模型定理。此为核定义，无δ极限结论。
+网站原返回：PASS。C：任意有限频率族Ω和实t，函数为k⁻¹∑cos(Ω\_i*t)，与D3相同的频率解释。k=0在Lean中定义为0；[EXTRA]所说k>0仅为物理解释，实际签名没有该前提，不应当作已验证的正k模型定理。此为核定义，无δ极限结论。
 当前处理：网站PASS（首轮未改版本）。
 保留所交版本的明确结论。
 本地编译和逐声明依赖核对通过。原文疑误、各限定/修正版、反例的评价分别列出；有未完成证明依赖的声明仍为未证。
@@ -7057,7 +7709,7 @@ def figure64Frequencies {A : Type*} [MeasurableSpace A] (P : Measure A)
 
 | 原文对象或结论 | 当前Lean与范围 |
 |---|---|
-| 所引原句 | 本条所引原句及展示公式；单个记号归入context_notation。 |
+| 所引原句 | 本条所引原句及展示公式；单个记号归入context\_notation。 |
 | 对象、域、量词及前提 | 以上完整声明；额外资格与未覆盖部分见下一段 |
 | 最新网站原始评价 | PASS；首轮保留 |
 
@@ -7111,7 +7763,7 @@ def figure65Frequencies {A : Type*} [MeasurableSpace A] (P : Measure A)
 
 | 原文对象或结论 | 当前Lean与范围 |
 |---|---|
-| 所引原句 | 本条所引原句及展示公式；单个记号归入context_notation。 |
+| 所引原句 | 本条所引原句及展示公式；单个记号归入context\_notation。 |
 | 对象、域、量词及前提 | 以上完整声明；额外资格与未覆盖部分见下一段 |
 | 最新网站原始评价 | PASS；首轮保留 |
 
@@ -7191,7 +7843,7 @@ def bathForceWeakLimitMeaning_corrected {A : Type*} [MeasurableSpace A] (P : Mea
 |---|---|
 | 所引原句 | 两个定义分别表达力路径及积分力路径的收敛资格；没有断言实现条件存在，也没有初态、频谱标度、σ及紧性定理，网站未认证实际热浴极限。 |
 | 对象、域、量词及前提 | 以上完整声明；额外资格与未覆盖部分见下一段 |
-| 最新网站原始评价 | NEEDS_HUMAN；复审 |
+| 最新网站原始评价 | NEEDS\_HUMAN；复审 |
 
 ### 5. [EXTRA] 与覆盖缺口
 
@@ -7202,7 +7854,7 @@ def bathForceWeakLimitMeaning_corrected {A : Type*} [MeasurableSpace A] (P : Mea
 
 ### 6. 审计结论（含网站结论）
 
-网站原返回：NEEDS_HUMAN。bathForceWeakLimitMeaning：在概率空间、正质量下，将实际Printed力逐点嵌入C([0,T])，要求路径随机变量可测，W为preBrownian并有连续路径代表；对每T>0全部有界连续泛函的期望收敛，确为路径法则弱收敛而非仅边际。_corrected改成正bathForce的0至s时间积分，其余量词不变；这是与dP中的白噪声驱动更相符的候选。没有任何版本断言存在初态/质量族满足；也没有σ幅度或物理标度条件，所以不能认证实际热浴收敛或称“修复完成”。两版定义签名各自表达所说资格，但数学解释保留NEEDS_HUMAN。
+网站原返回：NEEDS\_HUMAN。bathForceWeakLimitMeaning：在概率空间、正质量下，将实际Printed力逐点嵌入C([0,T])，要求路径随机变量可测，W为preBrownian并有连续路径代表；对每T>0全部有界连续泛函的期望收敛，确为路径法则弱收敛而非仅边际。_corrected改成正bathForce的0至s时间积分，其余量词不变；这是与dP中的白噪声驱动更相符的候选。没有任何版本断言存在初态/质量族满足；也没有σ幅度或物理标度条件，所以不能认证实际热浴收敛或称“修复完成”。两版定义签名各自表达所说资格，但数学解释保留NEEDS\_HUMAN。
 当前处理：原文疑误或语义范围待导师；不冒称未提供版本已通过。
 两个定义分别表达力路径及积分力路径的收敛资格；没有断言实现条件存在，也没有初态、频谱标度、σ及紧性定理，网站未认证实际热浴极限。
 本地编译和逐声明依赖核对通过。原文疑误、各限定/修正版、反例的评价分别列出；有未完成证明依赖的声明仍为未证。
@@ -7250,7 +7902,7 @@ theorem overdampedLimit : ∀ {n : ℕ} {Ω : Type*} [MeasurableSpace Ω]
 
 | 原文对象或结论 | 当前Lean与范围 |
 |---|---|
-| 所引原句 | 本条所引原句及展示公式；单个记号归入context_notation。 |
+| 所引原句 | 本条所引原句及展示公式；单个记号归入context\_notation。 |
 | 对象、域、量词及前提 | 以上完整声明；额外资格与未覆盖部分见下一段 |
 | 最新网站原始评价 | PASS；首轮保留 |
 
@@ -7280,7 +7932,12 @@ theorem overdampedLimit : ∀ {n : ℕ} {Ω : Type*} [MeasurableSpace Ω]
 ### 1. 原文陈述
 
 > where $\mathcal L$ is a linear operator, called the generator of the stochastic process, defined by
-> \[\mathcal L\phi(x)=\left(a(x)\frac d{dx}+\tfrac12 b^2(x)\frac{d^2}{dx^2}\right)\phi(x).\tag{6.38}\]
+
+$$
+\mathcal L\phi(x)=\left(a(x)\frac d{dx}+\tfrac12 b^2(x)\frac{d^2}{dx^2}\right)\phi(x).\tag{6.38}
+$$
+
+
 
 ### 2. 原文证明
 
@@ -7296,7 +7953,7 @@ def scalarGenerator (a b f : ℝ → ℝ) (x : ℝ) : ℝ := a x*deriv f x + b x
 
 | 原文对象或结论 | 当前Lean与范围 |
 |---|---|
-| 所引原句 | 本条所引原句及展示公式；单个记号归入context_notation。 |
+| 所引原句 | 本条所引原句及展示公式；单个记号归入context\_notation。 |
 | 对象、域、量词及前提 | 以上完整声明；额外资格与未覆盖部分见下一段 |
 | 最新网站原始评价 | PASS；首轮保留 |
 
@@ -7326,8 +7983,12 @@ def scalarGenerator (a b f : ℝ → ℝ) (x : ℝ) : ℝ := a x*deriv f x + b x
 ### 1. 原文陈述
 
 > Then, taking the expectation of the Itô-Doeblin formula (6.17) we find
-> \[\mathbb E\{d\phi(X)\}=\mathbb E\{\phi'(X)a(X)\}dt+\tfrac12\mathbb E\{\phi''(X)b(X)^2\}dt
-> =\mathbb E\{(\mathcal L\phi)(X)\}dt.\tag{6.37}\]
+
+$$
+\mathbb E\{d\phi(X)\}=\mathbb E\{\phi'(X)a(X)\}dt+\tfrac12\mathbb E\{\phi''(X)b(X)^2\}dt =\mathbb E\{(\mathcal L\phi)(X)\}dt.\tag{6.37}
+$$
+
+
 
 ### 2. 原文证明
 
@@ -7358,7 +8019,7 @@ theorem generatorExpectation :
 
 | 原文对象或结论 | 当前Lean与范围 |
 |---|---|
-| 所引原句 | 本条所引原句及展示公式；单个记号归入context_notation。 |
+| 所引原句 | 本条所引原句及展示公式；单个记号归入context\_notation。 |
 | 对象、域、量词及前提 | 以上完整声明；额外资格与未覆盖部分见下一段 |
 | 最新网站原始评价 | PASS；首轮保留 |
 
@@ -7389,7 +8050,12 @@ theorem generatorExpectation :
 ### 1. 原文陈述
 
 > This condition of polynomial growth of the coefficients is a common assumption in the analysis of SDEs. For future reference we define the space of functions which are $C^\infty$ smooth and satisfy the polynomial growth restriction by $C_P^\infty$:
-> \[C_P^\infty\stackrel{\mathrm{def}}=\{\phi\in C^\infty\mid\exists\eta\in\mathbb N:\phi(x)=O(|x|^\eta),\ x\to\pm\infty\}.\]
+
+$$
+C_P^\infty\stackrel{\mathrm{def}}=\{\phi\in C^\infty\mid\exists\eta\in\mathbb N:\phi(x)=O(|x|^\eta),\ x\to\pm\infty\}.
+$$
+
+
 
 ### 2. 原文证明
 
@@ -7406,7 +8072,7 @@ def polynomialSmooth (f : ℝ → ℝ) : Prop :=
 
 | 原文对象或结论 | 当前Lean与范围 |
 |---|---|
-| 所引原句 | 本条所引原句及展示公式；单个记号归入context_notation。 |
+| 所引原句 | 本条所引原句及展示公式；单个记号归入context\_notation。 |
 | 对象、域、量词及前提 | 以上完整声明；额外资格与未覆盖部分见下一段 |
 | 最新网站原始评价 | PASS；首轮保留 |
 
@@ -7416,7 +8082,7 @@ def polynomialSmooth (f : ℝ → ℝ) : Prop :=
 
 ### 6. 审计结论（含网站结论）
 
-网站原返回：PASS。C：ContDiff ℝ ∞ f且存在统一C≥0、自然r、∀x的|f(x)|≤C(1+|x|)^r。光滑函数在紧区间有界，因此该全局界与原双侧无穷处Big-O等价。没有擅自把C_P∞强化为所有阶导数都多项式增长。
+网站原返回：PASS。C：ContDiff ℝ ∞ f且存在统一C≥0、自然r、∀x的|f(x)|≤C(1+|x|)^r。光滑函数在紧区间有界，因此该全局界与原双侧无穷处Big-O等价。没有擅自把C\_P∞强化为所有阶导数都多项式增长。
 当前处理：网站PASS（首轮未改版本）。
 保留所交版本的明确结论。
 本地编译和逐声明依赖核对通过。原文疑误、各限定/修正版、反例的评价分别列出；有未完成证明依赖的声明仍为未证。
@@ -7436,7 +8102,12 @@ def polynomialSmooth (f : ℝ → ℝ) : Prop :=
 ### 1. 原文陈述
 
 > For any $\phi\in C_P^\infty$, the expectation with respect to $\rho(x,t)$ is well defined and we have
-> \[\mathbb E\phi(X(t))=\langle\phi,\rho\rangle=\int_{-\infty}^{+\infty}\phi(x)\rho(x,t)dx.\]
+
+$$
+\mathbb E\phi(X(t))=\langle\phi,\rho\rangle=\int_{-\infty}^{+\infty}\phi(x)\rho(x,t)dx.
+$$
+
+
 
 ### 2. 原文证明
 
@@ -7459,7 +8130,7 @@ theorem densityExpectation : ∀ {Ω : Type*} [MeasurableSpace Ω] (P : Measure 
 
 | 原文对象或结论 | 当前Lean与范围 |
 |---|---|
-| 所引原句 | 本条所引原句及展示公式；单个记号归入context_notation。 |
+| 所引原句 | 本条所引原句及展示公式；单个记号归入context\_notation。 |
 | 对象、域、量词及前提 | 以上完整声明；额外资格与未覆盖部分见下一段 |
 | 最新网站原始评价 | PASS；首轮保留 |
 
@@ -7489,7 +8160,12 @@ theorem densityExpectation : ∀ {Ω : Type*} [MeasurableSpace Ω] (P : Measure 
 ### 1. 原文陈述
 
 > In the case at hand the adjoint is
-> \[\mathcal L^\dagger\rho=-(a(x)\rho)_x+\tfrac12(b^2(x)\rho)_{xx},\]
+
+$$
+\mathcal L^\dagger\rho=-(a(x)\rho)_x+\tfrac12(b^2(x)\rho)_{xx},
+$$
+
+
 > which we shall refer to as the Kolmogorov operator.
 
 ### 2. 原文证明
@@ -7507,7 +8183,7 @@ def scalarForward (a b ρ : ℝ → ℝ) (x : ℝ) : ℝ :=
 
 | 原文对象或结论 | 当前Lean与范围 |
 |---|---|
-| 所引原句 | 本条所引原句及展示公式；单个记号归入context_notation。 |
+| 所引原句 | 本条所引原句及展示公式；单个记号归入context\_notation。 |
 | 对象、域、量词及前提 | 以上完整声明；额外资格与未覆盖部分见下一段 |
 | 最新网站原始评价 | PASS；首轮保留 |
 
@@ -7537,8 +8213,12 @@ def scalarForward (a b ρ : ℝ → ℝ) (x : ℝ) : ℝ :=
 ### 1. 原文陈述
 
 > First, we find
-> \[\int_{-\infty}^{+\infty}a(x)\phi'(x)\rho(x,t)dx=[\phi(x)a(x)\rho(x,t)]_{-\infty}^{+\infty}-\int_{-\infty}^{+\infty}\phi(x)(a(x)\rho(x,t))_x dx
-> =-\int_{-\infty}^{+\infty}\phi(x)(a(x)\rho(x,t))_x dx.\]
+
+$$
+\int_{-\infty}^{+\infty}a(x)\phi'(x)\rho(x,t)dx=[\phi(x)a(x)\rho(x,t)]_{-\infty}^{+\infty}-\int_{-\infty}^{+\infty}\phi(x)(a(x)\rho(x,t))_x dx =-\int_{-\infty}^{+\infty}\phi(x)(a(x)\rho(x,t))_x dx.
+$$
+
+
 
 ### 2. 原文证明
 
@@ -7570,7 +8250,7 @@ theorem fpDriftAdjoint :
 
 | 原文对象或结论 | 当前Lean与范围 |
 |---|---|
-| 所引原句 | 本条所引原句及展示公式；单个记号归入context_notation。 |
+| 所引原句 | 本条所引原句及展示公式；单个记号归入context\_notation。 |
 | 对象、域、量词及前提 | 以上完整声明；额外资格与未覆盖部分见下一段 |
 | 最新网站原始评价 | PASS；首轮保留 |
 
@@ -7600,7 +8280,12 @@ theorem fpDriftAdjoint :
 ### 1. 原文陈述
 
 > With two rounds of integration by parts on the term involving $b(x)$, we find, using the fact that the boundary terms vanish,
-> \[\int_{-\infty}^{+\infty}b^2(x)\phi''(x)\rho(x,t)dx=\int_{-\infty}^{+\infty}\phi(x)(b^2(x)\rho)_{xx}(x,t)dx.\]
+
+$$
+\int_{-\infty}^{+\infty}b^2(x)\phi''(x)\rho(x,t)dx=\int_{-\infty}^{+\infty}\phi(x)(b^2(x)\rho)_{xx}(x,t)dx.
+$$
+
+
 
 ### 2. 原文证明
 
@@ -7669,17 +8354,17 @@ theorem fpDiffusionPrinted_corrected : ∀ (b ρ φ : ℝ → ℝ),
 
 | 原文对象或结论 | 当前Lean与范围 |
 |---|---|
-| 所引原句 | 本条Lean覆盖范围：PDF263/印刷242已目视核对：两次分部积分右端是正号并含(x,t)。删除错误外负号，Printed使用已有独立分部积分证明；撤销虚假原书疑误，旧_corrected名字仅兼容保留。 |
+| 所引原句 | 本条Lean覆盖范围：PDF263/印刷242已目视核对：两次分部积分右端是正号并含(x,t)。删除错误外负号，Printed使用已有独立分部积分证明；撤销虚假原书疑误，旧\_corrected名字仅兼容保留。 |
 | 对象、域、量词及前提 | 以上完整声明；额外资格与未覆盖部分见下一段 |
 | 最新网站原始评价 | PASS；复审 |
 
 ### 5. [EXTRA] 与覆盖缺口
 
-- [EXTRA] PDF263/印刷242已目视核对：两次分部积分右端是正号并含(x,t)。删除错误外负号，Printed使用已有独立分部积分证明；撤销虚假原书疑误，旧_corrected名字仅兼容保留。
+- [EXTRA] PDF263/印刷242已目视核对：两次分部积分右端是正号并含(x,t)。删除错误外负号，Printed使用已有独立分部积分证明；撤销虚假原书疑误，旧\_corrected名字仅兼容保留。
 
 ### 6. 审计结论（含网站结论）
 
-网站原返回：PASS。fpDiffusionPrinted与_corrected同签名：b,ρ,φ为C²，φ紧支撑，则∫b²φ″ρ=∫φ(b²ρ)″。将时间固定后ρ为实函数符合原式；紧支撑φ及其导数消除边界项，C²使各紧支 integrand可积。没有外负号，亦没有在该纯扩散分部积分恒等式中额外放1/2。两版PASS；_corrected只是兼容同义名，不是原书勘误。fpDriftAdjoint的C¹紧支辅助式负号也正确。
+网站原返回：PASS。fpDiffusionPrinted与\_corrected同签名：b,ρ,φ为C²，φ紧支撑，则∫b²φ″ρ=∫φ(b²ρ)″。将时间固定后ρ为实函数符合原式；紧支撑φ及其导数消除边界项，C²使各紧支 integrand可积。没有外负号，亦没有在该纯扩散分部积分恒等式中额外放1/2。两版PASS；_corrected只是兼容同义名，不是原书勘误。fpDriftAdjoint的C¹紧支辅助式负号也正确。
 当前处理：网站PASS（复审）。
 保留所交版本的明确结论。
 本地编译和逐声明依赖核对通过。原文疑误、各限定/修正版、反例的评价分别列出；有未完成证明依赖的声明仍为未证。
@@ -7700,9 +8385,19 @@ theorem fpDiffusionPrinted_corrected : ∀ (b ρ φ : ℝ → ℝ),
 ### 1. 原文陈述
 
 > where the operator appearing on the right hand side is the adjoint $\mathcal L^\dagger$ of the generator of the stochastic process, satisfying the relation
-> \[\langle\mathcal L\phi,\rho\rangle=\langle\phi,\mathcal L^\dagger\rho\rangle.\]
+
+$$
+\langle\mathcal L\phi,\rho\rangle=\langle\phi,\mathcal L^\dagger\rho\rangle.
+$$
+
+
 > In the case at hand the adjoint is
-> \[\mathcal L^\dagger\rho=-(a(x)\rho)_x+\tfrac12(b^2(x)\rho)_{xx},\]
+
+$$
+\mathcal L^\dagger\rho=-(a(x)\rho)_x+\tfrac12(b^2(x)\rho)_{xx},
+$$
+
+
 
 ### 2. 原文证明
 
@@ -7765,7 +8460,7 @@ theorem fpAdjointCompact :
 
 | 原文对象或结论 | 当前Lean与范围 |
 |---|---|
-| 所引原句 | 本条所引原句及展示公式；单个记号归入context_notation。 |
+| 所引原句 | 本条所引原句及展示公式；单个记号归入context\_notation。 |
 | 对象、域、量词及前提 | 以上完整声明；额外资格与未覆盖部分见下一段 |
 | 最新网站原始评价 | PASS；首轮保留 |
 
@@ -7775,7 +8470,7 @@ theorem fpAdjointCompact :
 
 ### 6. 审计结论（含网站结论）
 
-网站原返回：PASS。C：对任意C² a/b/ρ/φ和紧支φ，真实全实轴∫(Lφ)ρ=∫φ(L†ρ)。D47/D50展开后正确，紧支使全部相关积分存在；紧支C²范围已在[EXTRA]明示，不把它计作所有C_P∞测试的完整伴随域结论。
+网站原返回：PASS。C：对任意C² a/b/ρ/φ和紧支φ，真实全实轴∫(Lφ)ρ=∫φ(L†ρ)。D47/D50展开后正确，紧支使全部相关积分存在；紧支C²范围已在[EXTRA]明示，不把它计作所有C\_P∞测试的完整伴随域结论。
 当前处理：网站PASS（首轮未改版本）。
 保留所交版本的明确结论。
 本地编译和逐声明依赖核对通过。原文疑误、各限定/修正版、反例的评价分别列出；有未完成证明依赖的声明仍为未证。
@@ -7795,26 +8490,76 @@ theorem fpAdjointCompact :
 ### 1. 原文陈述
 
 > We assume that $\rho$ is $C^\infty$ for all $t$ and that the density tends to zero exponentially fast as $x\to\pm\infty$, whereas $a$ and $b$ are $C^\infty$ functions which grow at most polynomially fast in these limits, that is, there are constants $\eta_a$, $\eta_b$ such that
-> \[a(x)=\mathcal O(|x|^{\eta_a}),\quad b(x)=\mathcal O(|x|^{\eta_b}),\quad x\to\pm\infty.\]
+
+$$
+a(x)=\mathcal O(|x|^{\eta_a}),\quad b(x)=\mathcal O(|x|^{\eta_b}),\quad x\to\pm\infty.
+$$
+
+
 > This condition of polynomial growth of the coefficients is a common assumption in the analysis of SDEs. For future reference we define the space of functions which are $C^\infty$ smooth and satisfy the polynomial growth restriction by $CP^\infty$:
-> \[CP^\infty=\{\phi\in C^\infty\mid\exists\eta\in\mathbb N:\phi(x)=O(|x|^\eta),\ x\to\pm\infty\}.\]
+
+$$
+CP^\infty=\{\phi\in C^\infty\mid\exists\eta\in\mathbb N:\phi(x)=O(|x|^\eta),\ x\to\pm\infty\}.
+$$
+
+
 > For any $\phi\in CP^\infty$, the expectation with respect to $\rho(x,t)$ is well defined and we have
-> \[\mathbb E\phi(X(t))=\langle\phi,\rho\rangle=\int_{-\infty}^{+\infty}\phi(x)\rho(x,t)dx.\]
+
+$$
+\mathbb E\phi(X(t))=\langle\phi,\rho\rangle=\int_{-\infty}^{+\infty}\phi(x)\rho(x,t)dx.
+$$
+
+
 > Taking the differential, we obtain an equation for $\mathbb E d\phi$ which must be equal to (6.37):
-> \[\int_{-\infty}^{+\infty}\phi(x)\frac{\partial\rho}{\partial t}dx=\int_{-\infty}^{+\infty}(\mathcal L\phi)(x)\rho(x,t)dx=\int_{-\infty}^{+\infty}(a(x)\phi'+\tfrac12 b^2(x)\phi''(x))\rho(x,t)dx.\]
+
+$$
+\int_{-\infty}^{+\infty}\phi(x)\frac{\partial\rho}{\partial t}dx=\int_{-\infty}^{+\infty}(\mathcal L\phi)(x)\rho(x,t)dx=\int_{-\infty}^{+\infty}(a(x)\phi'+\tfrac12 b^2(x)\phi''(x))\rho(x,t)dx.
+$$
+
+
 > Using the assumptions given above regarding the exponential rate of decay of the density, it is possible to recast the right hand side as an integral of a product with $\phi$. First, we find
-> \[\int_{-\infty}^{+\infty}a(x)\phi'(x)\rho(x,t)dx=[\phi(x)a(x)\rho(x,t)]_{-\infty}^{\infty}-\int_{-\infty}^{+\infty}\phi(x)(a(x)\rho(x,t))_x dx=-\int_{-\infty}^{+\infty}\phi(x)(a(x)\rho(x,t))_x dx.\]
+
+$$
+\int_{-\infty}^{+\infty}a(x)\phi'(x)\rho(x,t)dx=[\phi(x)a(x)\rho(x,t)]_{-\infty}^{\infty}-\int_{-\infty}^{+\infty}\phi(x)(a(x)\rho(x,t))_x dx=-\int_{-\infty}^{+\infty}\phi(x)(a(x)\rho(x,t))_x dx.
+$$
+
+
 > With two rounds of integration by parts on the term involving $b(x)$, we find, using the fact that the boundary terms vanish,
-> \[\int_{-\infty}^{+\infty}b^2(x)\phi''(x)\rho(x,t)dx=\int_{-\infty}^{+\infty}\phi(x)(b^2(x)\rho)_{xx}(x,t)dx.\]
+
+$$
+\int_{-\infty}^{+\infty}b^2(x)\phi''(x)\rho(x,t)dx=\int_{-\infty}^{+\infty}\phi(x)(b^2(x)\rho)_{xx}(x,t)dx.
+$$
+
+
 > Finally, putting these results together, we have
-> \[\int_{-\infty}^{+\infty}\phi(x)\left[\frac{\partial\rho}{\partial t}+\frac{\partial}{\partial x}(a(x)\rho(x,t))-\frac12\frac{\partial^2}{\partial x^2}(b^2(x)\rho)\right]dx=0.\]
+
+$$
+\int_{-\infty}^{+\infty}\phi(x)\left[\frac{\partial\rho}{\partial t}+\frac{\partial}{\partial x}(a(x)\rho(x,t))-\frac12\frac{\partial^2}{\partial x^2}(b^2(x)\rho)\right]dx=0.
+$$
+
+
 > If this is to hold for all test functions $\phi$, we must have
-> \[\frac{\partial\rho}{\partial t}=-\frac{\partial}{\partial x}(a(x)\rho)+\frac12\frac{\partial^2}{\partial x^2}(b^2(x)\rho).\]
+
+$$
+\frac{\partial\rho}{\partial t}=-\frac{\partial}{\partial x}(a(x)\rho)+\frac12\frac{\partial^2}{\partial x^2}(b^2(x)\rho).
+$$
+
+
 > This partial differential equation is often called the Fokker-Planck equation. The great benefit of the Fokker-Planck equation is that it enables the macroscopic perspective on the solutions of an SDE.
 > The Fokker-Planck equation may be written in the compact form
-> \[\frac{\partial\rho}{\partial t}=\mathcal L^\dagger\rho,\]
+
+$$
+\frac{\partial\rho}{\partial t}=\mathcal L^\dagger\rho,
+$$
+
+
 > where the operator appearing on the right hand side is the adjoint $\mathcal L^\dagger$ of the generator of the stochastic process, satisfying the relation
-> \[\langle\mathcal L\phi,\rho\rangle=\langle\phi,\mathcal L^\dagger\rho\rangle.\]
+
+$$
+\langle\mathcal L\phi,\rho\rangle=\langle\phi,\mathcal L^\dagger\rho\rangle.
+$$
+
+
 
 ### 2. 原文证明
 
@@ -7860,18 +8605,18 @@ theorem fpPolynomialAdjointPrinted : ∀ (a b ρ φ : ℝ → ℝ),
 
 | 原文对象或结论 | 当前Lean与范围 |
 |---|---|
-| 所引原句 | 本条所引原句及展示公式；单个记号归入context_notation。 |
+| 所引原句 | 本条所引原句及展示公式；单个记号归入context\_notation。 |
 | 对象、域、量词及前提 | 以上完整声明；额外资格与未覆盖部分见下一段 |
-| 最新网站原始评价 | NEEDS_HUMAN；复审 |
+| 最新网站原始评价 | NEEDS\_HUMAN；复审 |
 
 ### 5. [EXTRA] 与覆盖缺口
 
 - [EXTRA]原C∞P值增长不足以控制所有IBP边界；明确一、二阶a,b,φ多项式增长及ρ导数指数尾，保存整个非紧支撑真实积分恒等。
-- [EXTRA] 原文版忠实性与数学疑误分开；补齐所交条目所属的现有_corrected完整签名，不从repair_log名称推断网站已通过修正版。
+- [EXTRA] 原文版忠实性与数学疑误分开；补齐所交条目所属的现有\_corrected完整签名，不从repair\_log名称推断网站已通过修正版。
 
 ### 6. 审计结论（含网站结论）
 
-网站原返回：NEEDS_HUMAN。fpPolynomialAdjoint及_corrected：a,b,ρ,φ为C∞；a,b,φ的0至2阶导数逐阶有全局多项式界，ρ的0至2阶导数逐阶有正指数尾；这些明确加强条件保证真正非紧支撑积分可积与所需边界消失，scalarGenerator=aφ′+b²φ″/2、scalarForward=-(aρ)′+(b²ρ)″/2，签名正确。fpPolynomialAdjointPrinted只约束k=0的函数值，忠实于原书CP∞和密度衰减，不能据此控制导数、边界或积分；Printed保留NEEDS_HUMAN。原文并未证明任意此类测试函数的Lφ可积，不能让Bochner总化积分掩盖问题。
+网站原返回：NEEDS\_HUMAN。fpPolynomialAdjoint及\_corrected：a,b,ρ,φ为C∞；a,b,φ的0至2阶导数逐阶有全局多项式界，ρ的0至2阶导数逐阶有正指数尾；这些明确加强条件保证真正非紧支撑积分可积与所需边界消失，scalarGenerator=aφ′+b²φ″/2、scalarForward=-(aρ)′+(b²ρ)″/2，签名正确。fpPolynomialAdjointPrinted只约束k=0的函数值，忠实于原书CP∞和密度衰减，不能据此控制导数、边界或积分；Printed保留NEEDS\_HUMAN。原文并未证明任意此类测试函数的Lφ可积，不能让Bochner总化积分掩盖问题。
 当前处理：修正版/限定声明=网站PASS；原文疑误或范围解释待导师。
 保留所交版本的明确结论。
 本地编译和逐声明依赖核对通过。原文疑误、各限定/修正版、反例的评价分别列出；有未完成证明依赖的声明仍为未证。
@@ -7882,7 +8627,7 @@ theorem fpPolynomialAdjointPrinted : ∀ (a b ρ φ : ℝ → ℝ),
 |---|---|---|---|
 | `MD.Ch06.fpPolynomialAdjoint` | 未证 | 缺大型理论 | PASS |
 | `MD.Ch06.fpPolynomialAdjoint_corrected` | 未证 | 缺大型理论 | PASS |
-| `MD.Ch06.fpPolynomialAdjointPrinted` | 未证 | 原书疑误不证 | 原文忠实性PASS；原书数学/范围NEEDS_HUMAN |
+| `MD.Ch06.fpPolynomialAdjointPrinted` | 未证 | 原书疑误不证 | 原文忠实性PASS；原书数学/范围NEEDS\_HUMAN |
 
 位置：`Blueprint/Ch06.lean:1739`；本地核验记录：`blueprint/ch06/closeout26/FINAL_COMPILE.log`。
 
@@ -7893,9 +8638,19 @@ theorem fpPolynomialAdjointPrinted : ∀ (a b ρ φ : ℝ → ℝ),
 ### 1. 原文陈述
 
 > If this is to hold for all test functions $\phi$, we must have
-> \[\frac{\partial\rho}{\partial t}=-\frac\partial{\partial x}(a(x)\rho)+\frac12\frac{\partial^2}{\partial x^2}(b^2(x)\rho).\]
+
+$$
+\frac{\partial\rho}{\partial t}=-\frac\partial{\partial x}(a(x)\rho)+\frac12\frac{\partial^2}{\partial x^2}(b^2(x)\rho).
+$$
+
+
 > The Fokker-Planck equation may be written in the compact form
-> \[\frac{\partial\rho}{\partial t}=\mathcal L^\dagger\rho.\]
+
+$$
+\frac{\partial\rho}{\partial t}=\mathcal L^\dagger\rho.
+$$
+
+
 
 ### 2. 原文证明
 
@@ -7936,7 +8691,7 @@ theorem fpEquation : ∀ {Ω : Type*} [MeasurableSpace Ω] (P : Measure Ω)
 
 ### 6. 审计结论（含网站结论）
 
-网站原返回：FAIL。fpEquation的P、W,X、a,b、确定初态x0及ρ(t,x)量词、自然历史适应与联合可测X、扩散平方可积、真实正密度HasLaw、多项式值界及正时间紧窗一致指数尾均已核对；结论是每t>0、每x的经典PDE，scalarForward系数正确，未把目标PDE设为前提。但ContDiff ℝ ∞ (Function.uncurry ρ)要求ρ在包括t=0的整个ℝ²光滑，同时strictScalarSDE要求X0=x0且AE路径在0连续，HasLaw对所有t>0成立。这使整组前提不可能：连续初态的边际趋δ_x0，而跨t=0连续的Lebesgue密度在小紧矩形有一致界，不能产生该原子极限。因此该签名是空泛的加强，并非原书“给定初始密度”的FP陈述，判FAIL；与sorry无关。仅补适应性不能修复时间域和初始法则。
+网站原返回：FAIL。fpEquation的P、W,X、a,b、确定初态x0及ρ(t,x)量词、自然历史适应与联合可测X、扩散平方可积、真实正密度HasLaw、多项式值界及正时间紧窗一致指数尾均已核对；结论是每t>0、每x的经典PDE，scalarForward系数正确，未把目标PDE设为前提。但ContDiff ℝ ∞ (Function.uncurry ρ)要求ρ在包括t=0的整个ℝ²光滑，同时strictScalarSDE要求X0=x0且AE路径在0连续，HasLaw对所有t>0成立。这使整组前提不可能：连续初态的边际趋δ\_x0，而跨t=0连续的Lebesgue密度在小紧矩形有一致界，不能产生该原子极限。因此该签名是空泛的加强，并非原书“给定初始密度”的FP陈述，判FAIL；与sorry无关。仅补适应性不能修复时间域和初始法则。
 当前处理：按网站审校意见修复，本地核验通过（未再送网站）。
 密度联合光滑性只要求在(0,∞)×ℝ，保留确定初态及正时刻密度；不再要求密度跨t=0光滑。严格网格积分解到通常适应Itô解的桥接仍未证明，PDE结论不当作前提。
 本地编译和逐声明依赖核对通过。原文疑误、各限定/修正版、反例的评价分别列出；有未完成证明依赖的声明仍为未证。
@@ -8009,12 +8764,27 @@ theorem zeroNoise :
 ### 1. 原文陈述
 
 > If $\phi$ is a scalar valued function of $\mathbb R^m$, and $Z(t)$ is the solution of the SDE system
-> \[dZ=a(Z)dt+B dW;\tag{6.39}\]
+
+$$
+dZ=a(Z)dt+B dW;\tag{6.39}
+$$
+
+
 > where $a$ is a function in $\mathbb R^m$ and $B$ is a constant matrix, then we have
-> \[d\phi(Z(t))=\nabla\phi\cdot[adt+B dW]+\tfrac12dW^TB^T\phi''B dW;\tag{6.40}\]
+
+$$
+d\phi(Z(t))=\nabla\phi\cdot[adt+B dW]+\tfrac12dW^TB^T\phi''B dW;\tag{6.40}
+$$
+
+
 > where $\phi''$ is the Hessian matrix of $\phi$, i.e. the matrix of second partial derivatives of $\phi$ with respect to pairs of the variables. In some applications $B=B(Z)$, in which case the SDE (6.39) is said to involve multiplicative noise (as oppose to the additive case we consider when $B$ is constant). For a discussion of the differences and applications of these types of noise, see [289, 324].
 > All components on the right hand side of (6.40) are evaluated at $Z(t)$. Then using the shorthand rules $dW_i dW_j=dt\delta_{ij}$ (where $\delta_{ij}$ is one if $i=j$, zero otherwise), we have
-> \[d\phi(Z(t))=\nabla\phi\cdot[adt+B dW]+\tfrac12\operatorname{Tr}(B^T\phi''B)dt.\tag{6.41}\]
+
+$$
+d\phi(Z(t))=\nabla\phi\cdot[adt+B dW]+\tfrac12\operatorname{Tr}(B^T\phi''B)dt.\tag{6.41}
+$$
+
+
 
 ### 2. 原文证明
 
@@ -8045,17 +8815,17 @@ theorem vectorIto : ∀ {Ω : Type*} [MeasurableSpace Ω] {n r : ℕ} (P : Measu
 
 | 原文对象或结论 | 当前Lean与范围 |
 |---|---|
-| 所引原句 | 本条Lean覆盖范围：改为共同向量自然过滤上的适应性，补X联合可测、各被积过程全部左和L²及局部均方时间资格；strictVectorSDE已含整族Wiener资格。原文相隔公式按网站corrected_json恢复连接文本。仍缺一般多维Itô理论。 |
+| 所引原句 | 本条Lean覆盖范围：改为共同向量自然过滤上的适应性，补X联合可测、各被积过程全部左和L²及局部均方时间资格；strictVectorSDE已含整族Wiener资格。原文相隔公式按网站corrected\_json恢复连接文本。仍缺一般多维Itô理论。 |
 | 对象、域、量词及前提 | 以上完整声明；额外资格与未覆盖部分见下一段 |
 | 最新网站原始评价 | PASS；复审 |
 
 ### 5. [EXTRA] 与覆盖缺口
 
-- [EXTRA] 改为共同向量自然过滤上的适应性，补X联合可测、各被积过程全部左和L²及局部均方时间资格；strictVectorSDE已含整族Wiener资格。原文相隔公式按网站corrected_json恢复连接文本。仍缺一般多维Itô理论。
+- [EXTRA] 改为共同向量自然过滤上的适应性，补X联合可测、各被积过程全部左和L²及局部均方时间资格；strictVectorSDE已含整族Wiener资格。原文相隔公式按网站corrected\_json恢复连接文本。仍缺一般多维Itô理论。
 
 ### 6. 审计结论（含网站结论）
 
-网站原返回：PASS。vectorIto：任意n,r、共同向量Wiener及strictVectorSDE、常n×r矩阵B、C² φ、联合可测且共同向量自然历史适应X；vectorGridItoQualification25对每列方向导数被积过程给共同历史适应、每时及每网格L²、局部均方Hölder资格。结论逐T≥0存在r个严格标量积分，且φ增量减∫vectorGenerator等于积分和AE。共同过滤不误限为各自单坐标过滤；vectorDiffusion=Σ_ij(BBᵀ)_ij∂i∂jφ，等价Tr(Bᵀ Hess φ B)，漂移fderiv φ(a)与1/2正确。资格未预设结论，签名PASS；只审签名，不认证sorry证明。
+网站原返回：PASS。vectorIto：任意n,r、共同向量Wiener及strictVectorSDE、常n×r矩阵B、C² φ、联合可测且共同向量自然历史适应X；vectorGridItoQualification25对每列方向导数被积过程给共同历史适应、每时及每网格L²、局部均方Hölder资格。结论逐T≥0存在r个严格标量积分，且φ增量减∫vectorGenerator等于积分和AE。共同过滤不误限为各自单坐标过滤；vectorDiffusion=Σ\_ij(BBᵀ)_ij∂i∂jφ，等价Tr(Bᵀ Hess φ B)，漂移fderiv φ(a)与1/2正确。资格未预设结论，签名PASS；只审签名，不认证sorry证明。
 当前处理：网站PASS（复审）。
 保留所交版本的明确结论。
 本地编译和逐声明依赖核对通过。原文疑误、各限定/修正版、反例的评价分别列出；有未完成证明依赖的声明仍为未证。
@@ -8075,7 +8845,12 @@ theorem vectorIto : ∀ {Ω : Type*} [MeasurableSpace Ω] {n r : ℕ} (P : Measu
 ### 1. 原文陈述
 
 > In the multivariate case, the density is a function of the vector describing a state of the system $z$ and $t$, and is governed by the partial differential equation
-> \[\frac{\partial\rho}{\partial t}=-\nabla\cdot(a(z)\rho(z))+\tfrac12\operatorname{Tr}(B^T\rho''B).\]
+
+$$
+\frac{\partial\rho}{\partial t}=-\nabla\cdot(a(z)\rho(z))+\tfrac12\operatorname{Tr}(B^T\rho''B).
+$$
+
+
 
 ### 2. 原文证明
 
@@ -8098,7 +8873,7 @@ def cylinderForwardPrinted_corrected {n r : ℕ} (a : (Fin n → ℝ) → (Fin n
 
 | 原文对象或结论 | 当前Lean与范围 |
 |---|---|
-| 所引原句 | 本条所引原句及展示公式；单个记号归入context_notation。 |
+| 所引原句 | 本条所引原句及展示公式；单个记号归入context\_notation。 |
 | 对象、域、量词及前提 | 以上完整声明；额外资格与未覆盖部分见下一段 |
 | 最新网站原始评价 | PASS；首轮保留 |
 
@@ -8108,7 +8883,7 @@ def cylinderForwardPrinted_corrected {n r : ℕ} (a : (Fin n → ℝ) → (Fin n
 
 ### 6. 审计结论（含网站结论）
 
-网站原返回：PASS。C：任意n/r、向量漂移a、常n×r矩阵B、标量ρ及状态x；MD包装的精确项目定义为−∑i∂i(a_iρ)+½ vectorDiffusion B ρ，D51给BBᵀ与ρ的混合二阶导数，次序和系数正确。context_notation已明示这里只定义前向算子，不算从law证明PDE。代码块附带的cylinderForwardPrinted_corrected是另一source_id的别名，目标相同且无额外数学断言，不把它混算为本条证明或独立条目。
+网站原返回：PASS。C：任意n/r、向量漂移a、常n×r矩阵B、标量ρ及状态x；MD包装的精确项目定义为−∑i∂i(a\_iρ)+½ vectorDiffusion B ρ，D51给BBᵀ与ρ的混合二阶导数，次序和系数正确。context\_notation已明示这里只定义前向算子，不算从law证明PDE。代码块附带的cylinderForwardPrinted\_corrected是另一source\_id的别名，目标相同且无额外数学断言，不把它混算为本条证明或独立条目。
 当前处理：网站PASS（首轮未改版本）。
 保留所交版本的明确结论。
 本地编译和逐声明依赖核对通过。原文疑误、各限定/修正版、反例的评价分别列出；有未完成证明依赖的声明仍为未证。
@@ -8129,7 +8904,12 @@ def cylinderForwardPrinted_corrected {n r : ℕ} (a : (Fin n → ℝ) → (Fin n
 ### 1. 原文陈述
 
 > The second order “diffusion” term in this expression may be expanded as
-> \[\operatorname{Tr}(B^T\rho''B)=\sum_{i=1}^m\sum_{j=1}^m(BB^T)_{ij}\frac{\partial^2\rho}{\partial z_i\partial z_j}.\]
+
+$$
+\operatorname{Tr}(B^T\rho''B)=\sum_{i=1}^m\sum_{j=1}^m(BB^T)_{ij}\frac{\partial^2\rho}{\partial z_i\partial z_j}.
+$$
+
+
 
 ### 2. 原文证明
 
@@ -8160,7 +8940,7 @@ theorem diffusionTrace :
 
 | 原文对象或结论 | 当前Lean与范围 |
 |---|---|
-| 所引原句 | 本条所引原句及展示公式；单个记号归入context_notation。 |
+| 所引原句 | 本条所引原句及展示公式；单个记号归入context\_notation。 |
 | 对象、域、量词及前提 | 以上完整声明；额外资格与未覆盖部分见下一段 |
 | 最新网站原始评价 | PASS；首轮保留 |
 
@@ -8170,7 +8950,7 @@ theorem diffusionTrace :
 
 ### 6. 审计结论（含网站结论）
 
-网站原返回：PASS。C：签名将Hessian抽象为任意n×n实矩阵H，B为n×r；没有额外正定或对称前提。trace(BᵀHB)=∑ij(BBᵀ)ij H_ij对任意H成立：按矩阵乘法展开并用实数乘法交换律及BBᵀ对称性重排。包括n/r=0的空和情况。取H=ρ的Hessian即原式，强化为任意矩阵没有丢结论，也不需要用Hessian对称性作隐藏前提。
+网站原返回：PASS。C：签名将Hessian抽象为任意n×n实矩阵H，B为n×r；没有额外正定或对称前提。trace(BᵀHB)=∑ij(BBᵀ)ij H\_ij对任意H成立：按矩阵乘法展开并用实数乘法交换律及BBᵀ对称性重排。包括n/r=0的空和情况。取H=ρ的Hessian即原式，强化为任意矩阵没有丢结论，也不需要用Hessian对称性作隐藏前提。
 当前处理：网站PASS（首轮未改版本）。
 保留所交版本的明确结论。
 本地编译和逐声明依赖核对通过。原文疑误、各限定/修正版、反例的评价分别列出；有未完成证明依赖的声明仍为未证。
@@ -8190,7 +8970,12 @@ theorem diffusionTrace :
 ### 1. 原文陈述
 
 > In the multivariate case, the density is a function of the vector describing a state of the system $z$ and $t$, and is governed by the partial differential equation
-> \[\frac{\partial\rho}{\partial t}=-\nabla\cdot(a(z)\rho(z))+\tfrac12\operatorname{Tr}(B^T\rho''B).\]
+
+$$
+\frac{\partial\rho}{\partial t}=-\nabla\cdot(a(z)\rho(z))+\tfrac12\operatorname{Tr}(B^T\rho''B).
+$$
+
+
 
 ### 2. 原文证明
 
@@ -8218,7 +9003,7 @@ theorem vectorFPEquation : ∀ {Ω : Type*} [MeasurableSpace Ω] {n r : ℕ} (P 
 
 | 原文对象或结论 | 当前Lean与范围 |
 |---|---|
-| 所引原句 | 本条所引原句及展示公式；单个记号归入context_notation。 |
+| 所引原句 | 本条所引原句及展示公式；单个记号归入context\_notation。 |
 | 对象、域、量词及前提 | 以上完整声明；额外资格与未覆盖部分见下一段 |
 | 最新网站原始评价 | PASS；首轮保留 |
 
@@ -8248,9 +9033,19 @@ theorem vectorFPEquation : ∀ {Ω : Type*} [MeasurableSpace Ω] {n r : ℕ} (P 
 ### 1. 原文陈述
 
 > In the special case of Langevin dynamics (6.32)–(6.33) for a system with $N_c$ configuration variables, the density is a function of the vectors of positions $q$, momenta $p$, and time, and the formula for the Kolmogorov operator becomes
-> \[\mathcal L_{\rm LD}^*\rho=-\nabla_q\cdot(M^{-1}p\rho)+\nabla_p\cdot([\nabla U(q)+\gamma p]\rho)+\gamma k_BT\Delta_M\rho;\tag{6.42}\]
+
+$$
+\mathcal L_{\rm LD}^*\rho=-\nabla_q\cdot(M^{-1}p\rho)+\nabla_p\cdot([\nabla U(q)+\gamma p]\rho)+\gamma k_BT\Delta_M\rho;\tag{6.42}
+$$
+
+
 > where the mass-weighted Laplacian $\Delta_M$ is defined as
-> \[\Delta_M\stackrel{\rm def}=\nabla\cdot(M\nabla)=\sum_{i=1}^{N_c}m_i\frac{\partial^2}{\partial p_i^2}.\]
+
+$$
+\Delta_M\stackrel{\rm def}=\nabla\cdot(M\nabla)=\sum_{i=1}^{N_c}m_i\frac{\partial^2}{\partial p_i^2}.
+$$
+
+
 
 ### 2. 原文证明
 
@@ -8270,7 +9065,7 @@ def langevinMassForward {n : ℕ} (m : MolecularDynamics.Chapter06Review.V n) (U
 
 | 原文对象或结论 | 当前Lean与范围 |
 |---|---|
-| 所引原句 | 本条所引原句及展示公式；单个记号归入context_notation。 |
+| 所引原句 | 本条所引原句及展示公式；单个记号归入context\_notation。 |
 | 对象、域、量词及前提 | 以上完整声明；额外资格与未覆盖部分见下一段 |
 | 最新网站原始评价 | PASS；首轮保留 |
 
@@ -8299,7 +9094,12 @@ def langevinMassForward {n : ℕ} (m : MolecularDynamics.Chapter06Review.V n) (U
 
 ### 1. 原文陈述
 
-> \[\Delta_M\stackrel{\rm def}=\nabla\cdot(M\nabla)=\sum_{i=1}^{N_c}m_i\frac{\partial^2}{\partial p_i^2}.\]
+
+$$
+\Delta_M\stackrel{\rm def}=\nabla\cdot(M\nabla)=\sum_{i=1}^{N_c}m_i\frac{\partial^2}{\partial p_i^2}.
+$$
+
+
 
 ### 2. 原文证明
 
@@ -8317,7 +9117,7 @@ def momentumMassLaplacian {n : ℕ} (m : Fin n → ℝ)
 
 | 原文对象或结论 | 当前Lean与范围 |
 |---|---|
-| 所引原句 | 本条所引原句及展示公式；单个记号归入context_notation。 |
+| 所引原句 | 本条所引原句及展示公式；单个记号归入context\_notation。 |
 | 对象、域、量词及前提 | 以上完整声明；额外资格与未覆盖部分见下一段 |
 | 最新网站原始评价 | PASS；首轮保留 |
 
@@ -8347,7 +9147,12 @@ def momentumMassLaplacian {n : ℕ} (m : Fin n → ℝ)
 ### 1. 原文陈述
 
 > the formula for the Kolmogorov operator becomes
-> \[\mathcal L_{\rm LD}^*\rho=-\nabla_q\cdot(M^{-1}p\rho)+\nabla_p\cdot([\nabla U(q)+\gamma p]\rho)+\gamma k_BT\Delta_M\rho.\]
+
+$$
+\mathcal L_{\rm LD}^*\rho=-\nabla_q\cdot(M^{-1}p\rho)+\nabla_p\cdot([\nabla U(q)+\gamma p]\rho)+\gamma k_BT\Delta_M\rho.
+$$
+
+
 
 ### 2. 原文证明
 
@@ -8374,7 +9179,7 @@ theorem langevinFPEquation : ∀ {Ω : Type*} [MeasurableSpace Ω] {n : ℕ} (P 
 
 | 原文对象或结论 | 当前Lean与范围 |
 |---|---|
-| 所引原句 | 本条所引原句及展示公式；单个记号归入context_notation。 |
+| 所引原句 | 本条所引原句及展示公式；单个记号归入context\_notation。 |
 | 对象、域、量词及前提 | 以上完整声明；额外资格与未覆盖部分见下一段 |
 | 最新网站原始评价 | PASS；首轮保留 |
 
@@ -8404,7 +9209,12 @@ theorem langevinFPEquation : ∀ {Ω : Type*} [MeasurableSpace Ω] {n : ℕ} (P 
 ### 1. 原文陈述
 
 > We have seen that invariant distributions correspond in general to solutions of
-> \[\mathcal L^\dagger\rho_{\rm eq}\equiv0.\]
+
+$$
+\mathcal L^\dagger\rho_{\rm eq}\equiv0.
+$$
+
+
 
 ### 2. 原文证明
 
@@ -8424,7 +9234,7 @@ theorem massGibbsStationary : ∀ {n : ℕ} (m : Fin n → ℝ) (U : (Fin n → 
 
 | 原文对象或结论 | 当前Lean与范围 |
 |---|---|
-| 所引原句 | 本条所引原句及展示公式；单个记号归入context_notation。 |
+| 所引原句 | 本条所引原句及展示公式；单个记号归入context\_notation。 |
 | 对象、域、量词及前提 | 以上完整声明；额外资格与未覆盖部分见下一段 |
 | 最新网站原始评价 | PASS；首轮保留 |
 
@@ -8454,7 +9264,12 @@ theorem massGibbsStationary : ∀ {n : ℕ} (m : Fin n → ℝ) (U : (Fin n → 
 ### 1. 原文陈述
 
 > We have seen that invariant distributions correspond in general to solutions of
-> \[\mathcal L^\dagger\rho_{\rm eq}\equiv0.\]
+
+$$
+\mathcal L^\dagger\rho_{\rm eq}\equiv0.
+$$
+
+
 
 ### 2. 原文证明
 
@@ -8474,7 +9289,7 @@ theorem unitMassGibbsStationaryBridge {N : ℕ}
 
 | 原文对象或结论 | 当前Lean与范围 |
 |---|---|
-| 所引原句 | 本条所引原句及展示公式；单个记号归入context_notation。 |
+| 所引原句 | 本条所引原句及展示公式；单个记号归入context\_notation。 |
 | 对象、域、量词及前提 | 以上完整声明；额外资格与未覆盖部分见下一段 |
 | 最新网站原始评价 | PASS；首轮保留 |
 
@@ -8503,7 +9318,12 @@ theorem unitMassGibbsStationaryBridge {N : ℕ}
 
 ### 1. 原文陈述
 
-> \[dp=-\nabla U(q)dt-\Gamma(q)\Gamma(q)^T pdt+\sqrt{2k_BT}M^{1/2}\Gamma(q)d\widehat W.\]
+
+$$
+dp=-\nabla U(q)dt-\Gamma(q)\Gamma(q)^T pdt+\sqrt{2k_BT}M^{1/2}\Gamma(q)d\widehat W.
+$$
+
+
 
 ### 2. 原文证明
 
@@ -8526,7 +9346,7 @@ def variableFrictionForward {n r : ℕ} (m : Fin n → ℝ) (U : (Fin n → ℝ)
 
 | 原文对象或结论 | 当前Lean与范围 |
 |---|---|
-| 所引原句 | 本条所引原句及展示公式；单个记号归入context_notation。 |
+| 所引原句 | 本条所引原句及展示公式；单个记号归入context\_notation。 |
 | 对象、域、量词及前提 | 以上完整声明；额外资格与未覆盖部分见下一段 |
 | 最新网站原始评价 | PASS；首轮保留 |
 
@@ -8536,7 +9356,7 @@ def variableFrictionForward {n r : ℕ} (m : Fin n → ℝ) (U : (Fin n → ℝ)
 
 ### 6. 审计结论（含网站结论）
 
-网站原返回：PASS。C：定义对任意n、r、m、U、空间依赖Γ、θ、密度ρ和相点x；位置项−m_i⁻¹p_i∂qiρ，动量项∂pi[(∂iU+(ΓΓᵀp)i)ρ]，扩散θ√m_i√m_k(ΓΓᵀ)ik∂pi∂pkρ，恰为该SDE协方差的一半。Γ只依赖q，不需动量导数落在Γ上。签名为形式算子，可在非正m上有Lean总定义；物理对应限于正质量、光滑密度，不把此定义当PDE或stationarity证明。[EXTRA]的任意质量应理解为任意正质量。
+网站原返回：PASS。C：定义对任意n、r、m、U、空间依赖Γ、θ、密度ρ和相点x；位置项−m\_i⁻¹p\_i∂qiρ，动量项∂pi[(∂iU+(ΓΓᵀp)i)ρ]，扩散θ√m\_i√m\_k(ΓΓᵀ)ik∂pi∂pkρ，恰为该SDE协方差的一半。Γ只依赖q，不需动量导数落在Γ上。签名为形式算子，可在非正m上有Lean总定义；物理对应限于正质量、光滑密度，不把此定义当PDE或stationarity证明。[EXTRA]的任意质量应理解为任意正质量。
 当前处理：网站PASS（首轮未改版本）。
 保留所交版本的明确结论。
 本地编译和逐声明依赖核对通过。原文疑误、各限定/修正版、反例的评价分别列出；有未完成证明依赖的声明仍为未证。
@@ -8587,18 +9407,18 @@ theorem variableFrictionCanonicalPrinted_corrected : ∀ {n r : ℕ} (m : Fin n 
 
 | 原文对象或结论 | 当前Lean与范围 |
 |---|---|
-| 所引原句 | 本条所引原句及展示公式；单个记号归入context_notation。 |
+| 所引原句 | 本条所引原句及展示公式；单个记号归入context\_notation。 |
 | 对象、域、量词及前提 | 以上完整声明；额外资格与未覆盖部分见下一段 |
-| 最新网站原始评价 | NEEDS_HUMAN；首轮保留 |
+| 最新网站原始评价 | NEEDS\_HUMAN；首轮保留 |
 
 ### 5. [EXTRA] 与覆盖缺口
 
 - [EXTRA]该条为原恢复canonical目标的必要形式stationarity检验；完整任意质量/Γ对象保留，不以必要检验计完整采样收敛已证。
-- [EXTRA] 原文版忠实性与数学疑误分开；补齐所交条目所属的现有_corrected完整签名，不从repair_log名称推断网站已通过修正版。
+- [EXTRA] 原文版忠实性与数学疑误分开；补齐所交条目所属的现有\_corrected完整签名，不从repair\_log名称推断网站已通过修正版。
 
 ### 6. 审计结论（含网站结论）
 
-网站原返回：NEEDS_HUMAN。C：量化任意n/r、正m、光滑U/Γ、θ>0以及所有相点，断言D42作用于未归一化exp(−H/θ)为0；对象、Hamiltonian质量分母和全部结论无遗漏。但该Printed全称命题不成立。作为原书canonical目标的必要检验可保留，不能认定数学PASS；也没有证明归一化存在或采样遍历性。[EXTRA]正确提醒必要性，不修复非交换问题。
+网站原返回：NEEDS\_HUMAN。C：量化任意n/r、正m、光滑U/Γ、θ>0以及所有相点，断言D42作用于未归一化exp(−H/θ)为0；对象、Hamiltonian质量分母和全部结论无遗漏。但该Printed全称命题不成立。作为原书canonical目标的必要检验可保留，不能认定数学PASS；也没有证明归一化存在或采样遍历性。[EXTRA]正确提醒必要性，不修复非交换问题。
 当前处理：原文疑误或语义范围待导师；不冒称未提供版本已通过。
 保留所交版本的明确结论。
 本地编译和逐声明依赖核对通过。原文疑误、各限定/修正版、反例的评价分别列出；有未完成证明依赖的声明仍为未证。
@@ -8648,7 +9468,7 @@ theorem variableFrictionCanonicalPrinted_corrected : ∀ {n r : ℕ} (m : Fin n 
 
 | 原文对象或结论 | 当前Lean与范围 |
 |---|---|
-| 所引原句 | 本条所引原句及展示公式；单个记号归入context_notation。 |
+| 所引原句 | 本条所引原句及展示公式；单个记号归入context\_notation。 |
 | 对象、域、量词及前提 | 以上完整声明；额外资格与未覆盖部分见下一段 |
 | 最新网站原始评价 | PASS；首轮保留 |
 
@@ -8679,7 +9499,12 @@ theorem variableFrictionCanonicalPrinted_corrected : ∀ {n r : ℕ} (m : Fin n 
 ### 1. 原文陈述
 
 > A discrete Markov Chain is a stochastic process in which, at each step, a transition is made from the current state $i$ to another $j$ selected from a given probability distribution. In the case of a finite collection of states $\Sigma=\{1,2,\ldots,k\}$, we assume that the transition probabilities $\pi_{ij}\in[0,1]$ are given and denote the state at time $n$ by $S_n$. Thus we have
-> \[\Pr(S_{n+1}=j\mid S_n=i)=\pi_{ij}.\]
+
+$$
+\Pr(S_{n+1}=j\mid S_n=i)=\pi_{ij}.
+$$
+
+
 > The sum of the elements in row $i$ gives the probability of being in some state at time $n+1$ given that we were in state $i$ at time $n$, thus it is one.
 
 ### 2. 原文证明
@@ -8697,7 +9522,7 @@ def stochasticMatrix {k : ℕ} (PiMark : Matrix (Fin k) (Fin k) ℝ) : Prop :=
 
 | 原文对象或结论 | 当前Lean与范围 |
 |---|---|
-| 所引原句 | 本条所引原句及展示公式；单个记号归入context_notation。 |
+| 所引原句 | 本条所引原句及展示公式；单个记号归入context\_notation。 |
 | 对象、域、量词及前提 | 以上完整声明；额外资格与未覆盖部分见下一段 |
 | 最新网站原始评价 | PASS；首轮保留 |
 
@@ -8727,7 +9552,12 @@ def stochasticMatrix {k : ℕ} (PiMark : Matrix (Fin k) (Fin k) ℝ) : Prop :=
 ### 1. 原文陈述
 
 > A distribution on the state space is typically associated to a row vector $\psi=(\psi_1,\psi_2,\ldots,\psi_k)$ with nonzero elements and which is normalized such that
-> \[\sum_{i=1}^k\psi_i=1.\]
+
+$$
+\sum_{i=1}^k\psi_i=1.
+$$
+
+
 
 ### 2. 原文证明
 
@@ -8764,7 +9594,7 @@ theorem finiteDistributionPrinted_counterexample :
 
 | 原文对象或结论 | 当前Lean与范围 |
 |---|---|
-| 所引原句 | 本条所引原句及展示公式；单个记号归入context_notation。 |
+| 所引原句 | 本条所引原句及展示公式；单个记号归入context\_notation。 |
 | 对象、域、量词及前提 | 以上完整声明；额外资格与未覆盖部分见下一段 |
 | 最新网站原始评价 | PASS；首轮保留 |
 
@@ -8774,7 +9604,7 @@ theorem finiteDistributionPrinted_counterexample :
 
 ### 6. 审计结论（含网站结论）
 
-网站原返回：PASS。逐个审校：finiteDistribution及_corrected均为非负且总和1的一般概率向量；finiteDistributionPrinted按概率权重上下文将nonzero保留为严格正且总和1；反例(1,0)确实满足前者且不满足后者。三种对象及counterexample相互吻合。原句含typically，不能无条件把原文认定为错误定义；应保留人审。
+网站原返回：PASS。逐个审校：finiteDistribution及\_corrected均为非负且总和1的一般概率向量；finiteDistributionPrinted按概率权重上下文将nonzero保留为严格正且总和1；反例(1,0)确实满足前者且不满足后者。三种对象及counterexample相互吻合。原句含typically，不能无条件把原文认定为错误定义；应保留人审。
 当前处理：网站PASS（首轮未改版本）。
 保留所交版本的明确结论。
 本地编译和逐声明依赖核对通过。原文疑误、各限定/修正版、反例的评价分别列出；有未完成证明依赖的声明仍为未证。
@@ -8797,7 +9627,12 @@ theorem finiteDistributionPrinted_counterexample :
 ### 1. 原文陈述
 
 > The probability of being in state $i$ at the $n+1$st iteration, is the sum over $j$ of the probabilities of being in state $j$ multiplied by the probability of transitioning from state $j$ to state $i$, thus
-> \[\psi_{n+1}=\psi_n\Pi.\]
+
+$$
+\psi_{n+1}=\psi_n\Pi.
+$$
+
+
 
 ### 2. 原文证明
 
@@ -8814,7 +9649,7 @@ def finiteEvolution {k : ℕ} (PiMark : Matrix (Fin k) (Fin k) ℝ) (ψ : Molecu
 
 | 原文对象或结论 | 当前Lean与范围 |
 |---|---|
-| 所引原句 | 本条所引原句及展示公式；单个记号归入context_notation。 |
+| 所引原句 | 本条所引原句及展示公式；单个记号归入context\_notation。 |
 | 对象、域、量词及前提 | 以上完整声明；额外资格与未覆盖部分见下一段 |
 | 最新网站原始评价 | PASS；首轮保留 |
 
@@ -8824,7 +9659,7 @@ def finiteEvolution {k : ℕ} (PiMark : Matrix (Fin k) (Fin k) ℝ) (ψ : Molecu
 
 ### 6. 审计结论（含网站结论）
 
-网站原返回：PASS。定义ψ_n=ψ₀Πⁿ，Matrix.vecMul方向是行向量右乘；n=0得到初值，全部分量保留。原递推式与此闭式等价（19另列完整递推定理）。作为线性演化定义允许任意实矩阵/向量，不声称它们都是概率；无需额外随机性前提。
+网站原返回：PASS。定义ψ\_n=ψ₀Πⁿ，Matrix.vecMul方向是行向量右乘；n=0得到初值，全部分量保留。原递推式与此闭式等价（19另列完整递推定理）。作为线性演化定义允许任意实矩阵/向量，不声称它们都是概率；无需额外随机性前提。
 当前处理：网站PASS（首轮未改版本）。
 保留所交版本的明确结论。
 本地编译和逐声明依赖核对通过。原文疑误、各限定/修正版、反例的评价分别列出；有未完成证明依赖的声明仍为未证。
@@ -8843,7 +9678,12 @@ def finiteEvolution {k : ℕ} (PiMark : Matrix (Fin k) (Fin k) ℝ) (ψ : Molecu
 
 ### 1. 原文陈述
 
-> \[\psi_{n+1}=\psi_n\Pi.\]
+
+$$
+\psi_{n+1}=\psi_n\Pi.
+$$
+
+
 
 ### 2. 原文证明
 
@@ -8865,7 +9705,7 @@ theorem finiteEvolutionRecurrence : ∀ {k : ℕ} (matrix : Matrix (Fin k) (Fin 
 
 | 原文对象或结论 | 当前Lean与范围 |
 |---|---|
-| 所引原句 | 本条所引原句及展示公式；单个记号归入context_notation。 |
+| 所引原句 | 本条所引原句及展示公式；单个记号归入context\_notation。 |
 | 对象、域、量词及前提 | 以上完整声明；额外资格与未覆盖部分见下一段 |
 | 最新网站原始评价 | PASS；首轮保留 |
 
@@ -8911,7 +9751,7 @@ def returnTimes {k : ℕ} (PiMark : Matrix (Fin k) (Fin k) ℝ) (i : Fin k) : Se
 
 | 原文对象或结论 | 当前Lean与范围 |
 |---|---|
-| 所引原句 | 本条所引原句及展示公式；单个记号归入context_notation。 |
+| 所引原句 | 本条所引原句及展示公式；单个记号归入context\_notation。 |
 | 对象、域、量词及前提 | 以上完整声明；额外资格与未覆盖部分见下一段 |
 | 最新网站原始评价 | PASS；首轮保留 |
 
@@ -8957,7 +9797,7 @@ def period {k : ℕ} (PiMark : Matrix (Fin k) (Fin k) ℝ) (i : Fin k) : ℕ :=
 
 | 原文对象或结论 | 当前Lean与范围 |
 |---|---|
-| 所引原句 | 本条所引原句及展示公式；单个记号归入context_notation。 |
+| 所引原句 | 本条所引原句及展示公式；单个记号归入context\_notation。 |
 | 对象、域、量词及前提 | 以上完整声明；额外资格与未覆盖部分见下一段 |
 | 最新网站原始评价 | PASS；首轮保留 |
 
@@ -9002,7 +9842,7 @@ def aperiodic {k : ℕ} (PiMark : Matrix (Fin k) (Fin k) ℝ) : Prop := ∀ i, M
 
 | 原文对象或结论 | 当前Lean与范围 |
 |---|---|
-| 所引原句 | 本条所引原句及展示公式；单个记号归入context_notation。 |
+| 所引原句 | 本条所引原句及展示公式；单个记号归入context\_notation。 |
 | 对象、域、量词及前提 | 以上完整声明；额外资格与未覆盖部分见下一段 |
 | 最新网站原始评价 | PASS；首轮保留 |
 
@@ -9048,7 +9888,7 @@ def irreducible {k : ℕ} (PiMark : Matrix (Fin k) (Fin k) ℝ) : Prop := ∀ i 
 
 | 原文对象或结论 | 当前Lean与范围 |
 |---|---|
-| 所引原句 | 本条所引原句及展示公式；单个记号归入context_notation。 |
+| 所引原句 | 本条所引原句及展示公式；单个记号归入context\_notation。 |
 | 对象、域、量词及前提 | 以上完整声明；额外资格与未覆盖部分见下一段 |
 | 最新网站原始评价 | PASS；首轮保留 |
 
@@ -9078,7 +9918,12 @@ def irreducible {k : ℕ} (PiMark : Matrix (Fin k) (Fin k) ℝ) : Prop := ∀ i 
 ### 1. 原文陈述
 
 > An invariant distribution is a left eigenvector of $\Pi$, having only non-negative elements, and corresponding to the eigenvalue 1. That is, an invariant distribution $\psi_*$ satisfies
-> \[\psi_*=\psi_*\Pi.\]
+
+$$
+\psi_*=\psi_*\Pi.
+$$
+
+
 
 ### 2. 原文证明
 
@@ -9095,7 +9940,7 @@ def finiteInvariant {k : ℕ} (PiMark : Matrix (Fin k) (Fin k) ℝ) (ψ : Molecu
 
 | 原文对象或结论 | 当前Lean与范围 |
 |---|---|
-| 所引原句 | 本条所引原句及展示公式；单个记号归入context_notation。 |
+| 所引原句 | 本条所引原句及展示公式；单个记号归入context\_notation。 |
 | 对象、域、量词及前提 | 以上完整声明；额外资格与未覆盖部分见下一段 |
 | 最新网站原始评价 | PASS；首轮保留 |
 
@@ -9125,7 +9970,12 @@ def finiteInvariant {k : ℕ} (PiMark : Matrix (Fin k) (Fin k) ℝ) (ψ : Molecu
 ### 1. 原文陈述
 
 > The fundamental result for Markov chains is the following: If a given Markov chain is both irreducible and aperiodic, then it can be shown that there is a unique invariant distribution $\psi_*$ such that
-> \[\lim_{n\to\infty}\psi_n=\psi_*,\]
+
+$$
+\lim_{n\to\infty}\psi_n=\psi_*,
+$$
+
+
 > for arbitrary initial distribution $\psi_0$. The convergence of an irreducible finite Markov chain to its stationary distribution can be understood through the properties of its eigenvalues by applying of the Perron-Frobenius theorem (see [269]).
 
 ### 2. 原文证明
@@ -9147,7 +9997,7 @@ theorem finiteErgodicity :
 
 | 原文对象或结论 | 当前Lean与范围 |
 |---|---|
-| 所引原句 | 本条所引原句及展示公式；单个记号归入context_notation。 |
+| 所引原句 | 本条所引原句及展示公式；单个记号归入context\_notation。 |
 | 对象、域、量词及前提 | 以上完整声明；额外资格与未覆盖部分见下一段 |
 | 最新网站原始评价 | PASS；首轮保留 |
 
@@ -9196,7 +10046,7 @@ theorem stochasticEntryBound : ∀ {k : ℕ} (matrix : Matrix (Fin k) (Fin k) �
 
 | 原文对象或结论 | 当前Lean与范围 |
 |---|---|
-| 所引原句 | 本条所引原句及展示公式；单个记号归入context_notation。 |
+| 所引原句 | 本条所引原句及展示公式；单个记号归入context\_notation。 |
 | 对象、域、量词及前提 | 以上完整声明；额外资格与未覆盖部分见下一段 |
 | 最新网站原始评价 | PASS；首轮保留 |
 
@@ -9226,7 +10076,12 @@ theorem stochasticEntryBound : ∀ {k : ℕ} (matrix : Matrix (Fin k) (Fin k) �
 ### 1. 原文陈述
 
 > Fig. 6.6 A Markov matrix (left) and its graph representation (right). In this example, the Markov Chain is not irreducible.
-> \[\Pi=\begin{bmatrix}0.2&0.1&0.7&0&0\\0&0&0&1&0\\0.3&0&0&0.3&0.4\\0&0.5&0&0.3&0.2\\0&0&0&1&0\end{bmatrix}.\]
+
+$$
+\Pi=\begin{bmatrix}0.2&0.1&0.7&0&0\\0&0&0&1&0\\0.3&0&0&0.3&0.4\\0&0.5&0&0.3&0.2\\0&0&0&1&0\end{bmatrix}.
+$$
+
+
 
 ### 2. 原文证明
 
@@ -9247,7 +10102,7 @@ def finiteChainExample : Matrix (Fin 5) (Fin 5) ℝ :=
 
 | 原文对象或结论 | 当前Lean与范围 |
 |---|---|
-| 所引原句 | 本条所引原句及展示公式；单个记号归入context_notation。 |
+| 所引原句 | 本条所引原句及展示公式；单个记号归入context\_notation。 |
 | 对象、域、量词及前提 | 以上完整声明；额外资格与未覆盖部分见下一段 |
 | 最新网站原始评价 | PASS；首轮保留 |
 
@@ -9297,7 +10152,7 @@ theorem exampleStochastic : MolecularDynamics.Chapter06Review.stochasticMatrix f
 
 | 原文对象或结论 | 当前Lean与范围 |
 |---|---|
-| 所引原句 | 本条所引原句及展示公式；单个记号归入context_notation。 |
+| 所引原句 | 本条所引原句及展示公式；单个记号归入context\_notation。 |
 | 对象、域、量词及前提 | 以上完整声明；额外资格与未覆盖部分见下一段 |
 | 最新网站原始评价 | PASS；首轮保留 |
 
@@ -9358,7 +10213,7 @@ theorem exampleNotIrreducible : ¬ MolecularDynamics.Chapter06Review.irreducible
 
 | 原文对象或结论 | 当前Lean与范围 |
 |---|---|
-| 所引原句 | 本条所引原句及展示公式；单个记号归入context_notation。 |
+| 所引原句 | 本条所引原句及展示公式；单个记号归入context\_notation。 |
 | 对象、域、量词及前提 | 以上完整声明；额外资格与未覆盖部分见下一段 |
 | 最新网站原始评价 | PASS；首轮保留 |
 
@@ -9404,7 +10259,7 @@ def communicates {k : ℕ} (matrix : Matrix (Fin k) (Fin k) ℝ) (i j : Fin k) :
 
 | 原文对象或结论 | 当前Lean与范围 |
 |---|---|
-| 所引原句 | 本条所引原句及展示公式；单个记号归入context_notation。 |
+| 所引原句 | 本条所引原句及展示公式；单个记号归入context\_notation。 |
 | 对象、域、量词及前提 | 以上完整声明；额外资格与未覆盖部分见下一段 |
 | 最新网站原始评价 | PASS；首轮保留 |
 
@@ -9454,7 +10309,7 @@ theorem directedGraphIrreducible : ∀ {k : ℕ} (matrix : Matrix (Fin k) (Fin k
 
 | 原文对象或结论 | 当前Lean与范围 |
 |---|---|
-| 所引原句 | 本条所引原句及展示公式；单个记号归入context_notation。 |
+| 所引原句 | 本条所引原句及展示公式；单个记号归入context\_notation。 |
 | 对象、域、量词及前提 | 以上完整声明；额外资格与未覆盖部分见下一段 |
 | 最新网站原始评价 | PASS；首轮保留 |
 
@@ -9501,7 +10356,7 @@ def cylinderCoordinates {k₁ k₂ : ℕ} (z : Fin (k₁+k₂) → ℝ) :
 
 | 原文对象或结论 | 当前Lean与范围 |
 |---|---|
-| 所引原句 | 本条所引原句及展示公式；单个记号归入context_notation。 |
+| 所引原句 | 本条所引原句及展示公式；单个记号归入context\_notation。 |
 | 对象、域、量词及前提 | 以上完整声明；额外资格与未覆盖部分见下一段 |
 | 最新网站原始评价 | PASS；首轮保留 |
 
@@ -9531,7 +10386,12 @@ def cylinderCoordinates {k₁ k₂ : ℕ} (z : Fin (k₁+k₂) → ℝ) :
 ### 1. 原文陈述
 
 > Now consider an SDE system defined on the space $D=\mathbb T^{k_1}\times\mathbb R^{k_2}$ for non-negative integers $k_1$ and $k_2$:
-> \[dX=b_0(X)dt+\sum_{i=1}^r b_i dW_i;\tag{6.43}\]
+
+$$
+dX=b_0(X)dt+\sum_{i=1}^r b_i dW_i;\tag{6.43}
+$$
+
+
 > where $b_0$ is $C^\infty$ and the $W_i$ are independent standard Wiener processes. In this book, we will only consider the analysis for the case of additive noise (i.e. the $b_i$ vectors multiplying a Wiener process are constant).
 
 ### 2. 原文证明
@@ -9557,7 +10417,7 @@ def cylinderSDE {Ω : Type*} [MeasurableSpace Ω] {k₁ k₂ r : ℕ} (P : Measu
 
 | 原文对象或结论 | 当前Lean与范围 |
 |---|---|
-| 所引原句 | 本条所引原句及展示公式；单个记号归入context_notation。 |
+| 所引原句 | 本条所引原句及展示公式；单个记号归入context\_notation。 |
 | 对象、域、量词及前提 | 以上完整声明；额外资格与未覆盖部分见下一段 |
 | 最新网站原始评价 | PASS；首轮保留 |
 
@@ -9587,7 +10447,12 @@ def cylinderSDE {Ω : Type*} [MeasurableSpace Ω] {k₁ k₂ r : ℕ} (P : Measu
 ### 1. 原文陈述
 
 > Working in flat $L^2$ space, we have that the infinitesmal generator for (6.43) acting on a smooth test function $\phi(X)$ is
-> \[\mathcal L\phi=b_0\cdot\nabla\phi+\tfrac12\operatorname{Tr}(B^T\phi''B);\]
+
+$$
+\mathcal L\phi=b_0\cdot\nabla\phi+\tfrac12\operatorname{Tr}(B^T\phi''B);
+$$
+
+
 
 ### 2. 原文证明
 
@@ -9608,7 +10473,7 @@ def cylinderGenerator {k₁ k₂ r : ℕ}
 
 | 原文对象或结论 | 当前Lean与范围 |
 |---|---|
-| 所引原句 | 本条所引原句及展示公式；单个记号归入context_notation。 |
+| 所引原句 | 本条所引原句及展示公式；单个记号归入context\_notation。 |
 | 对象、域、量词及前提 | 以上完整声明；额外资格与未覆盖部分见下一段 |
 | 最新网站原始评价 | PASS；首轮保留 |
 
@@ -9638,7 +10503,12 @@ def cylinderGenerator {k₁ k₂ r : ℕ}
 ### 1. 原文陈述
 
 > Taking the adjoint, the forward Kolmogorov or Fokker-Planck operator is $\mathcal L^\dagger$, acting on a density $\rho(X)$ as
-> \[\mathcal L^\dagger\rho=-\nabla\cdot(b_0\rho)+\tfrac12\operatorname{Tr}(B^T\phi''B).\]
+
+$$
+\mathcal L^\dagger\rho=-\nabla\cdot(b_0\rho)+\tfrac12\operatorname{Tr}(B^T\phi''B).
+$$
+
+
 
 ### 2. 原文证明
 
@@ -9679,7 +10549,7 @@ def cylinderForwardPrinted_corrected {n r : ℕ} (a : (Fin n → ℝ) → (Fin n
 |---|---|
 | 所引原句 | 本条Lean覆盖范围：Printed补原页1/2，保留印刷φ而不静默改ρ；独立corrected采用实际周期lift的前向密度表达式，与VectorForward相同。 |
 | 对象、域、量词及前提 | 以上完整声明；额外资格与未覆盖部分见下一段 |
-| 最新网站原始评价 | NEEDS_HUMAN；复审 |
+| 最新网站原始评价 | NEEDS\_HUMAN；复审 |
 
 ### 5. [EXTRA] 与覆盖缺口
 
@@ -9687,7 +10557,7 @@ def cylinderForwardPrinted_corrected {n r : ℕ} (a : (Fin n → ℝ) → (Fin n
 
 ### 6. 审计结论（含网站结论）
 
-网站原返回：NEEDS_HUMAN。cylinderForwardPrinted：任意欧氏n维b0、n×r常B、密度ρ和独立测试φ，负散度作用于b0ρ，扩散作用φ并除2，忠实保留原书符号错误，但这是欧氏局部坐标表达式，不是完整一般T^k1×R^k2域。cylinderForwardPrinted_corrected调用vectorForward，将扩散改为ρ，欧氏辅助定义正确。cylinderForwardPeriodic_corrected在真实T^n×R^n上按Fin n⊕Fin n坐标方向求周期lift的一、二阶方向导数，用Σ_j B_ij B_kj和1/2给前向密度算子；维数与噪声列维一致，作为光滑周期密度的形式表达式正确。它只覆盖k1=k2=n的Langevin相空间，非原页全部k1,k2；且未在类型内强制光滑/密度资格，不能当算子域或不变性定理。
+网站原返回：NEEDS\_HUMAN。cylinderForwardPrinted：任意欧氏n维b0、n×r常B、密度ρ和独立测试φ，负散度作用于b0ρ，扩散作用φ并除2，忠实保留原书符号错误，但这是欧氏局部坐标表达式，不是完整一般T^k1×R^k2域。cylinderForwardPrinted\_corrected调用vectorForward，将扩散改为ρ，欧氏辅助定义正确。cylinderForwardPeriodic\_corrected在真实T^n×R^n上按Fin n⊕Fin n坐标方向求周期lift的一、二阶方向导数，用Σ\_j B\_ij B\_kj和1/2给前向密度算子；维数与噪声列维一致，作为光滑周期密度的形式表达式正确。它只覆盖k1=k2=n的Langevin相空间，非原页全部k1,k2；且未在类型内强制光滑/密度资格，不能当算子域或不变性定理。
 当前处理：修正版/限定声明=网站PASS；原文疑误或范围解释待导师。
 保留所交版本的明确结论。
 本地编译和逐声明依赖核对通过。原文疑误、各限定/修正版、反例的评价分别列出；有未完成证明依赖的声明仍为未证。
@@ -9696,7 +10566,7 @@ def cylinderForwardPrinted_corrected {n r : ℕ} (a : (Fin n → ℝ) → (Fin n
 
 | 声明 | 证明状态 | 未证原因 | 网站分版结论 |
 |---|---|---|---|
-| `MD.Ch06.cylinderForwardPrinted` | 定义 | — | 原文忠实性PASS；原书数学/范围NEEDS_HUMAN |
+| `MD.Ch06.cylinderForwardPrinted` | 定义 | — | 原文忠实性PASS；原书数学/范围NEEDS\_HUMAN |
 | `MD.Ch06.cylinderForwardPeriodic_corrected` | 定义 | — | PASS |
 
 位置：`Blueprint/Ch06.lean:2105`；本地核验记录：`blueprint/ch06/closeout26/FINAL_COMPILE.log`。
@@ -9708,7 +10578,12 @@ def cylinderForwardPrinted_corrected {n r : ℕ} (a : (Fin n → ℝ) → (Fin n
 ### 1. 原文陈述
 
 > We have seen that invariant distributions correspond in general to solutions of
-> \[\mathcal L^\dagger\rho_{\rm eq}\equiv0.\]
+
+$$
+\mathcal L^\dagger\rho_{\rm eq}\equiv0.
+$$
+
+
 
 ### 2. 原文证明
 
@@ -9741,7 +10616,7 @@ def stationaryDensity {n r : ℕ} (a : (Fin n → ℝ) → (Fin n → ℝ))
 
 ### 6. 审计结论（含网站结论）
 
-网站原返回：PASS。stationaryWeightRaw25只定义任意实函数的vectorForward逐点为0，是总化辅助。stationaryDensity另外要求ρ可测、处处非负、Lebesgue可积及积分1，再要求同一逐点形式方程，概率密度资格已补足，签名作为形式平稳密度定义PASS。D29为负散度加常B扩散半项；n,r任意，当前域为ℝ^n而非一般圆柱。类型未要求C²或适当generator域，Lean的不可微处导数总化为零；所以不能凭该谓词推出真实Markov核不变性，当前context_notation已明示形式stationarity且另给generator域/演化。该限制须持续保留，不把“correspond in general”误报为已证等价定理。
+网站原返回：PASS。stationaryWeightRaw25只定义任意实函数的vectorForward逐点为0，是总化辅助。stationaryDensity另外要求ρ可测、处处非负、Lebesgue可积及积分1，再要求同一逐点形式方程，概率密度资格已补足，签名作为形式平稳密度定义PASS。D29为负散度加常B扩散半项；n,r任意，当前域为ℝ^n而非一般圆柱。类型未要求C²或适当generator域，Lean的不可微处导数总化为零；所以不能凭该谓词推出真实Markov核不变性，当前context\_notation已明示形式stationarity且另给generator域/演化。该限制须持续保留，不把“correspond in general”误报为已证等价定理。
 当前处理：网站PASS（复审）。
 保留所交版本的明确结论。
 本地编译和逐声明依赖核对通过。原文疑误、各限定/修正版、反例的评价分别列出；有未完成证明依赖的声明仍为未证。
@@ -9762,7 +10637,12 @@ def stationaryDensity {n r : ℕ} (a : (Fin n → ℝ) → (Fin n → ℝ))
 ### 1. 原文陈述
 
 > We have seen that invariant distributions correspond in general to solutions of
-> \[\mathcal L^\dagger\rho_{\rm eq}\equiv0.\]
+
+$$
+\mathcal L^\dagger\rho_{\rm eq}\equiv0.
+$$
+
+
 > Solutions to this equation are of central importance to the probabilistic behavior of solutions to (6.43). Such solutions give distributions of points in phase space which will remain constant as solutions evolve in time.
 
 ### 2. 原文证明
@@ -9792,7 +10672,7 @@ theorem stationaryInvariant :
 
 | 原文对象或结论 | 当前Lean与范围 |
 |---|---|
-| 所引原句 | 本条所引原句及展示公式；单个记号归入context_notation。 |
+| 所引原句 | 本条所引原句及展示公式；单个记号归入context\_notation。 |
 | 对象、域、量词及前提 | 以上完整声明；额外资格与未覆盖部分见下一段 |
 | 最新网站原始评价 | PASS；复审 |
 
@@ -9841,7 +10721,7 @@ def canonicalMixingMeaning {D : Type*} [TopologicalSpace D] [MeasurableSpace D]
 
 | 原文对象或结论 | 当前Lean与范围 |
 |---|---|
-| 所引原句 | 本条所引原句及展示公式；单个记号归入context_notation。 |
+| 所引原句 | 本条所引原句及展示公式；单个记号归入context\_notation。 |
 | 对象、域、量词及前提 | 以上完整声明；额外资格与未覆盖部分见下一段 |
 | 最新网站原始评价 | PASS；首轮保留 |
 
@@ -9902,7 +10782,7 @@ theorem langevinCanonicalMixing :
 
 | 原文对象或结论 | 当前Lean与范围 |
 |---|---|
-| 所引原句 | 本条所引原句及展示公式；单个记号归入context_notation。 |
+| 所引原句 | 本条所引原句及展示公式；单个记号归入context\_notation。 |
 | 对象、域、量词及前提 | 以上完整声明；额外资格与未覆盖部分见下一段 |
 | 最新网站原始评价 | PASS；复审 |
 
@@ -9933,9 +10813,19 @@ theorem langevinCanonicalMixing :
 ### 1. 原文陈述
 
 > For example, let us return to Brownian dynamics (or overdamped Langevin dynamics) and set $M=I$ and $\gamma=1$ in (6.36), giving an equation of motion
-> \[dq=-\nabla U(q)dt+\sqrt{2k_BT}dW.\tag{6.46}\]
+
+$$
+dq=-\nabla U(q)dt+\sqrt{2k_BT}dW.\tag{6.46}
+$$
+
+
 > Writing $\beta^{-1}=k_BT$ as usual, the generator of the stochastic process may be written as
-> \[\mathcal L f=-\nabla U^T\cdot\nabla f+\beta^{-1}\Delta f.\]
+
+$$
+\mathcal L f=-\nabla U^T\cdot\nabla f+\beta^{-1}\Delta f.
+$$
+
+
 
 ### 2. 原文证明
 
@@ -9956,7 +10846,7 @@ noncomputable def brownianGenerator {Nc : ℕ} (m : Fin Nc → ℝ)
 
 | 原文对象或结论 | 当前Lean与范围 |
 |---|---|
-| 所引原句 | 本条所引原句及展示公式；单个记号归入context_notation。 |
+| 所引原句 | 本条所引原句及展示公式；单个记号归入context\_notation。 |
 | 对象、域、量词及前提 | 以上完整声明；额外资格与未覆盖部分见下一段 |
 | 最新网站原始评价 | PASS；首轮保留 |
 
@@ -9986,7 +10876,12 @@ noncomputable def brownianGenerator {Nc : ℕ} (m : Fin Nc → ℝ)
 ### 1. 原文陈述
 
 > Let $\bar\rho_\beta=\exp(-\beta U)$, and define the space of functions $C_0^2(\bar\mu_\beta)$ consisting of functions in $C_0^2$ on the configuration space $\mathcal Q\subset\mathbb R^{N_c}$ together with the inner product
-> \[\langle f,g\rangle_\beta\stackrel{\rm def}=\int_{\mathcal Q}f(q)g(q)\bar\mu_\beta(d\omega_q)=\int_{\mathcal Q}f(q)g(q)\bar\rho_\beta(q)d\omega_q;\]
+
+$$
+\langle f,g\rangle_\beta\stackrel{\rm def}=\int_{\mathcal Q}f(q)g(q)\bar\mu_\beta(d\omega_q)=\int_{\mathcal Q}f(q)g(q)\bar\rho_\beta(q)d\omega_q;
+$$
+
+
 > where $d\omega_q=dq_1dq_2\cdots dq_{N_c}$.
 
 ### 2. 原文证明
@@ -10005,7 +10900,7 @@ def brownianWeightedInner {n : ℕ} (U : (Fin n → ℝ) → ℝ) (β : ℝ)
 
 | 原文对象或结论 | 当前Lean与范围 |
 |---|---|
-| 所引原句 | 本条所引原句及展示公式；单个记号归入context_notation。 |
+| 所引原句 | 本条所引原句及展示公式；单个记号归入context\_notation。 |
 | 对象、域、量词及前提 | 以上完整声明；额外资格与未覆盖部分见下一段 |
 | 最新网站原始评价 | PASS；首轮保留 |
 
@@ -10035,16 +10930,35 @@ def brownianWeightedInner {n : ℕ} (U : (Fin n → ℝ) → ℝ) (β : ℝ)
 ### 1. 原文陈述
 
 > Combining this with the first part of the inner product, we see that
-> \[\langle f,\mathcal Lg\rangle_\beta=-\beta^{-1}\int_{\mathcal Q}\nabla g^T\nabla f\bar\rho_\beta d\omega_q.\]
+
+$$
+\langle f,\mathcal Lg\rangle_\beta=-\beta^{-1}\int_{\mathcal Q}\nabla g^T\nabla f\bar\rho_\beta d\omega_q.
+$$
+
+
 
 ### 2. 原文证明
 
-> \[\langle f,\mathcal Lg\rangle_\beta=\int_{\mathcal Q}f[-\nabla U^T\nabla g+\beta^{-1}\Delta g]\bar\rho_\beta d\omega_q.\]
+
+$$
+\langle f,\mathcal Lg\rangle_\beta=\int_{\mathcal Q}f[-\nabla U^T\nabla g+\beta^{-1}\Delta g]\bar\rho_\beta d\omega_q.
+$$
+
+
 > Integrating by parts in the second term we have
-> \[\beta^{-1}\int_{\mathcal Q}f\Delta g\bar\rho_\beta d\omega_q=-\beta^{-1}\int_{\mathcal Q}\nabla g^T\nabla(f\bar\rho_\beta)d\omega_q
-> =-\beta^{-1}\int_{\mathcal Q}\nabla g^T\nabla f\bar\rho_\beta d\omega_q+\int_{\mathcal Q}f(\nabla g^T\nabla U)\bar\rho_\beta d\omega_q.\]
+
+$$
+\beta^{-1}\int_{\mathcal Q}f\Delta g\bar\rho_\beta d\omega_q=-\beta^{-1}\int_{\mathcal Q}\nabla g^T\nabla(f\bar\rho_\beta)d\omega_q =-\beta^{-1}\int_{\mathcal Q}\nabla g^T\nabla f\bar\rho_\beta d\omega_q+\int_{\mathcal Q}f(\nabla g^T\nabla U)\bar\rho_\beta d\omega_q.
+$$
+
+
 > Combining this with the first part of the inner product, we see that
-> \[\langle f,\mathcal Lg\rangle_\beta=-\beta^{-1}\int_{\mathcal Q}\nabla g^T\nabla f\bar\rho_\beta d\omega_q.\]
+
+$$
+\langle f,\mathcal Lg\rangle_\beta=-\beta^{-1}\int_{\mathcal Q}\nabla g^T\nabla f\bar\rho_\beta d\omega_q.
+$$
+
+
 
 ### 3. 完整当前Lean（原文版与修正版独立列出）
 
@@ -10066,7 +10980,7 @@ theorem brownianDirichlet {Nc : ℕ} (m : Fin Nc → ℝ)
 
 | 原文对象或结论 | 当前Lean与范围 |
 |---|---|
-| 所引原句 | 本条所引原句及展示公式；单个记号归入context_notation。 |
+| 所引原句 | 本条所引原句及展示公式；单个记号归入context\_notation。 |
 | 对象、域、量词及前提 | 以上完整声明；额外资格与未覆盖部分见下一段 |
 | 最新网站原始评价 | PASS；首轮保留 |
 
@@ -10096,7 +11010,12 @@ theorem brownianDirichlet {Nc : ℕ} (m : Fin Nc → ℝ)
 ### 1. 原文陈述
 
 > In this form we see that $f$ and $g$ appear symmetrically, so we may write
-> \[\langle f,\mathcal Lg\rangle_\beta=\langle\mathcal Lf,g\rangle_\beta;\]
+
+$$
+\langle f,\mathcal Lg\rangle_\beta=\langle\mathcal Lf,g\rangle_\beta;
+$$
+
+
 > hence, with respect to the weighted inner product, $\mathcal L^\dagger=\mathcal L$. (Note that the adjoint indicated here is quite different than the $L^2$ adjoint mentioned previously in connection with the Fokker-Planck operator.)
 
 ### 2. 原文证明
@@ -10142,7 +11061,7 @@ theorem brownianSymmetry_corrected {Nc : ℕ} (m : Fin Nc → ℝ)
 |---|---|
 | 所引原句 | 原文引文保持不变；两份Lean声明仅覆盖C∞单位周期核心上的加权配对对称。 |
 | 对象、域、量词及前提 | 以上完整声明；额外资格与未覆盖部分见下一段 |
-| 最新网站原始评价 | NEEDS_HUMAN；复审 |
+| 最新网站原始评价 | NEEDS\_HUMAN；复审 |
 
 ### 5. [EXTRA] 与覆盖缺口
 
@@ -10154,7 +11073,7 @@ theorem brownianSymmetry_corrected {Nc : ℕ} (m : Fin Nc → ℝ)
 
 ### 6. 审计结论（含网站结论）
 
-网站原返回：NEEDS_HUMAN。A：配对等式及随后L†=L的引文准确，原文的自伴措辞应保留。C：两份Lean签名完全相同，均为PASS的限定配对恒等式：积分在一个基本立方体上，权为exp(−βU)，U、f、g均C∞且单位周期，β≠0；m仅作实系数参数，形式对称本身不需要质量正性。D32–D34及归一配对定义表明取消正的配分函数因子不会改变等式。它们没有表达伴随算子的定义域等于原定义域。原页从对称积分直接说L†=L，但此前给出的C₀²域是否指闭实现并不清楚，不能把正确的核心对称等式当作原域已自伴。corrected版数学陈述通过；整条因原文域解释仍为NEEDS_HUMAN，而非因证明占位或定义缺失。
+网站原返回：NEEDS\_HUMAN。A：配对等式及随后L†=L的引文准确，原文的自伴措辞应保留。C：两份Lean签名完全相同，均为PASS的限定配对恒等式：积分在一个基本立方体上，权为exp(−βU)，U、f、g均C∞且单位周期，β≠0；m仅作实系数参数，形式对称本身不需要质量正性。D32–D34及归一配对定义表明取消正的配分函数因子不会改变等式。它们没有表达伴随算子的定义域等于原定义域。原页从对称积分直接说L†=L，但此前给出的C₀²域是否指闭实现并不清楚，不能把正确的核心对称等式当作原域已自伴。corrected版数学陈述通过；整条因原文域解释仍为NEEDS\_HUMAN，而非因证明占位或定义缺失。
 当前处理：修正版/限定声明=网站PASS；原文疑误或范围解释待导师。
 两份相同签名只覆盖周期核心的形式配对对称；不覆盖原域与伴随域相等。
 本地编译和逐声明依赖核对通过。原文疑误、各限定/修正版、反例的评价分别列出；有未完成证明依赖的声明仍为未证。
@@ -10175,7 +11094,12 @@ theorem brownianSymmetry_corrected {Nc : ℕ} (m : Fin Nc → ℝ)
 ### 1. 原文陈述
 
 > Moreover, from the calculation above,
-> \[\langle f,\mathcal Lf\rangle=-\beta^{-1}\int_{\mathcal Q}\|\nabla f\|^2\bar\rho_\beta d\omega_q;\]
+
+$$
+\langle f,\mathcal Lf\rangle=-\beta^{-1}\int_{\mathcal Q}\|\nabla f\|^2\bar\rho_\beta d\omega_q;
+$$
+
+
 > so that $\langle f,\mathcal Lf\rangle\le0$ so the operator is negative definite and can only have non-positive eigenvalues.
 
 ### 2. 原文证明
@@ -10222,18 +11146,18 @@ theorem brownianNegativeDefinitePrinted_corrected {Nc : ℕ} (m : Fin Nc → ℝ
 
 | 原文对象或结论 | 当前Lean与范围 |
 |---|---|
-| 所引原句 | 本条所引原句及展示公式；单个记号归入context_notation。 |
+| 所引原句 | 本条所引原句及展示公式；单个记号归入context\_notation。 |
 | 对象、域、量词及前提 | 以上完整声明；额外资格与未覆盖部分见下一段 |
-| 最新网站原始评价 | NEEDS_HUMAN；首轮保留 |
+| 最新网站原始评价 | NEEDS\_HUMAN；首轮保留 |
 
 ### 5. [EXTRA] 与覆盖缺口
 
 - [EXTRA]正质量与β>0，未归一配对；本条结论精确保留≤0，原negative definite术语错误另记录。
-- [EXTRA] 原文版忠实性与数学疑误分开；补齐所交条目所属的现有_corrected完整签名，不从repair_log名称推断网站已通过修正版。
+- [EXTRA] 原文版忠实性与数学疑误分开；补齐所交条目所属的现有\_corrected完整签名，不从repair\_log名称推断网站已通过修正版。
 
 ### 6. 审计结论（含网站结论）
 
-网站原返回：NEEDS_HUMAN。正质量、β>0及周期光滑域下未归一二次型≤0正确。原文negative definite错误，已有[ERRATUM?]保留；本签名仅保留正确的半负定子结论。
+网站原返回：NEEDS\_HUMAN。正质量、β>0及周期光滑域下未归一二次型≤0正确。原文negative definite错误，已有[ERRATUM?]保留；本签名仅保留正确的半负定子结论。
 当前处理：原文疑误或语义范围待导师；不冒称未提供版本已通过。
 保留所交版本的明确结论。
 本地编译和逐声明依赖核对通过。原文疑误、各限定/修正版、反例的评价分别列出；有未完成证明依赖的声明仍为未证。
@@ -10287,9 +11211,9 @@ theorem brownianRealEigenvalue_corrected {Nc : ℕ} (m : Fin Nc → ℝ)
 
 | 原文对象或结论 | 当前Lean与范围 |
 |---|---|
-| 所引原句 | 本条所引原句及展示公式；单个记号归入context_notation。 |
+| 所引原句 | 本条所引原句及展示公式；单个记号归入context\_notation。 |
 | 对象、域、量词及前提 | 以上完整声明；额外资格与未覆盖部分见下一段 |
-| 最新网站原始评价 | NEEDS_HUMAN；复审 |
+| 最新网站原始评价 | NEEDS\_HUMAN；复审 |
 
 ### 5. [EXTRA] 与覆盖缺口
 
@@ -10299,7 +11223,7 @@ theorem brownianRealEigenvalue_corrected {Nc : ℕ} (m : Fin Nc → ℝ)
 
 ### 6. 审计结论（含网站结论）
 
-网站原返回：NEEDS_HUMAN。A：原文确实同时写⟨f,Lf⟩≤0和“negative definite”，转录未错，不能在原引文中静默改成半负定。C：两份签名均PASS：正质量、β>0、C∞周期U及非零L²意义的C∞周期f，逐点满足Lf=ℓf，且参数ℓ预先属于ℝ，结论ℓ≤0。非零性相对于基本立方体Lebesgue几乎处处定义，正Gibbs权使其等价于Gibbs-L²非零；没有把特征值符号作为假设。声明不证明任意复特征值实性，也不证明严格负定；这些限制已由[EXTRA]说明。整条因原书严格负定用语的数学疑误需人工签核。
+网站原返回：NEEDS\_HUMAN。A：原文确实同时写⟨f,Lf⟩≤0和“negative definite”，转录未错，不能在原引文中静默改成半负定。C：两份签名均PASS：正质量、β>0、C∞周期U及非零L²意义的C∞周期f，逐点满足Lf=ℓf，且参数ℓ预先属于ℝ，结论ℓ≤0。非零性相对于基本立方体Lebesgue几乎处处定义，正Gibbs权使其等价于Gibbs-L²非零；没有把特征值符号作为假设。声明不证明任意复特征值实性，也不证明严格负定；这些限制已由[EXTRA]说明。整条因原书严格负定用语的数学疑误需人工签核。
 当前处理：修正版/限定声明=网站PASS；原文疑误或范围解释待导师。
 保留所交版本的明确结论。
 本地编译和逐声明依赖核对通过。原文疑误、各限定/修正版、反例的评价分别列出；有未完成证明依赖的声明仍为未证。
@@ -10348,7 +11272,7 @@ theorem brownianClosedSelfAdjoint_corrected {Nc : ℕ} (m : Fin Nc → ℝ) (hm 
 |---|---|
 | 所引原句 | 原文自伴句保持不变；Lean主版与corrected版均指周期Gibbs复L²上的闭/最大图实现。 |
 | 对象、域、量词及前提 | 以上完整声明；额外资格与未覆盖部分见下一段 |
-| 最新网站原始评价 | NEEDS_HUMAN；复审 |
+| 最新网站原始评价 | NEEDS\_HUMAN；复审 |
 
 ### 5. [EXTRA] 与覆盖缺口
 
@@ -10361,7 +11285,7 @@ theorem brownianClosedSelfAdjoint_corrected {Nc : ℕ} (m : Fin Nc → ℝ) (hm 
 
 ### 6. 审计结论（含网站结论）
 
-网站原返回：NEEDS_HUMAN。A：印刷249页末的“Then L is self-adjoint with respect to this inner product.”摘录准确。C：两份签名相同且作为修正版均PASS：正对角质量、β>0、C∞单位周期势；对象为归一Gibbs复L²上的实际部分线性算子，结论为完整IsSelfAdjoint。已展开光滑周期空间→L²嵌入→光滑域算子→实图闭包→由实际闭算子特征空间构成的复Hilbert基→最大复图。复图约束的是所有谱系数，并非只在原光滑域验证对称；归一权重的常数缩放不改变自伴关系。原书该句的前置对象是C₀²(μ̄β)，并先取M=I、γ=1；本条采用周期闭实现及正对角质量推广，是明确披露的域修正而非原C₀²域的逐字实现。[EXTRA]已要求人工确认，整条据此为NEEDS_HUMAN。
+网站原返回：NEEDS\_HUMAN。A：印刷249页末的“Then L is self-adjoint with respect to this inner product.”摘录准确。C：两份签名相同且作为修正版均PASS：正对角质量、β>0、C∞单位周期势；对象为归一Gibbs复L²上的实际部分线性算子，结论为完整IsSelfAdjoint。已展开光滑周期空间→L²嵌入→光滑域算子→实图闭包→由实际闭算子特征空间构成的复Hilbert基→最大复图。复图约束的是所有谱系数，并非只在原光滑域验证对称；归一权重的常数缩放不改变自伴关系。原书该句的前置对象是C₀²(μ̄β)，并先取M=I、γ=1；本条采用周期闭实现及正对角质量推广，是明确披露的域修正而非原C₀²域的逐字实现。[EXTRA]已要求人工确认，整条据此为NEEDS\_HUMAN。
 当前处理：修正版/限定声明=网站PASS；原文疑误或范围解释待导师。
 限定版正质量、β>0、C∞单位周期势、闭Gibbs复L²实现已获PASS；原C₀²措辞与闭实现的解释仍待导师。
 本地编译和逐声明依赖核对通过。原文疑误、各限定/修正版、反例的评价分别列出；有未完成证明依赖的声明仍为未证。
@@ -10410,7 +11334,7 @@ theorem brownianCompactResolvent_corrected {Nc : ℕ} (m : Fin Nc → ℝ) (hm :
 |---|---|
 | 所引原句 | Lean仅覆盖紧环面Gibbs-L²闭实现的(1−L)⁻¹紧性；原文离散谱子句由条目7承接。 |
 | 对象、域、量词及前提 | 以上完整声明；额外资格与未覆盖部分见下一段 |
-| 最新网站原始评价 | NEEDS_HUMAN；复审 |
+| 最新网站原始评价 | NEEDS\_HUMAN；复审 |
 
 ### 5. [EXTRA] 与覆盖缺口
 
@@ -10423,7 +11347,7 @@ theorem brownianCompactResolvent_corrected {Nc : ℕ} (m : Fin Nc → ℝ) (hm :
 
 ### 6. 审计结论（含网站结论）
 
-网站原返回：NEEDS_HUMAN。A：compact resolvent、引用[360]及随后可数离散特征值的原句准确。C：两份紧性签名作为周期闭实现的限定版均PASS。已展开D86–D91：实闭图上的shift为(x,y)↦x−y，逆映射后取第一坐标，所得确为(1−L)⁻¹；复预解式由实部、虚部分别作用该真实预解式并复线性化得到，不是一个仅名为resolvent的任意紧算子。正质量、β>0和紧配置环面是明确前提；没有将紧性本身假设进去。此条签名仅给预解式紧性，离散谱的对应条目为7。原页仍把性质归在C₀²函数空间上；与闭实现、紧配置假设之间的解释差别已在[EXTRA]要求签核，不能由本条自动认证原一般域表述。
+网站原返回：NEEDS\_HUMAN。A：compact resolvent、引用[360]及随后可数离散特征值的原句准确。C：两份紧性签名作为周期闭实现的限定版均PASS。已展开D86–D91：实闭图上的shift为(x,y)↦x−y，逆映射后取第一坐标，所得确为(1−L)⁻¹；复预解式由实部、虚部分别作用该真实预解式并复线性化得到，不是一个仅名为resolvent的任意紧算子。正质量、β>0和紧配置环面是明确前提；没有将紧性本身假设进去。此条签名仅给预解式紧性，离散谱的对应条目为7。原页仍把性质归在C₀²函数空间上；与闭实现、紧配置假设之间的解释差别已在[EXTRA]要求签核，不能由本条自动认证原一般域表述。
 当前处理：修正版/限定声明=网站PASS；原文疑误或范围解释待导师。
 只给实际(1−L)⁻¹紧性，离散谱由相邻独立条目承接；不把原域解释自动视为已认证。
 本地编译和逐声明依赖核对通过。原文疑误、各限定/修正版、反例的评价分别列出；有未完成证明依赖的声明仍为未证。
@@ -10480,7 +11404,7 @@ theorem brownianDiscreteSpectrum_eigenvalue {Nc : ℕ} (m : Fin Nc → ℝ) (hm 
 |---|---|
 | 所引原句 | 本条Lean覆盖范围：保留已证可数/实谱/孤立子句，新增“每谱点为特征值”的完整短陈述，尚未证明；有限重数与无有限聚点未冒称覆盖。 |
 | 对象、域、量词及前提 | 以上完整声明；额外资格与未覆盖部分见下一段 |
-| 最新网站原始评价 | NEEDS_HUMAN；复审 |
+| 最新网站原始评价 | NEEDS\_HUMAN；复审 |
 
 ### 5. [EXTRA] 与覆盖缺口
 
@@ -10492,7 +11416,7 @@ theorem brownianDiscreteSpectrum_eigenvalue {Nc : ℕ} (m : Fin Nc → ℝ) (hm 
 
 ### 6. 审计结论（含网站结论）
 
-网站原返回：NEEDS_HUMAN。A：与条目6同一句原文，转录准确。C：两份签名分别PASS。主声明给出所定义复谱的可数性、虚部为零及每个谱点的开邻域孤立性；补充声明对每个谱点给出非零复L²向量及(v,z•v)在完整闭图中，准确表达它是特征值而非仅“谱点可数”。D92–D93的预解集要求有界复线性算子同时满足左右逆图关系，谱取其补集，未偷换成预先枚举的特征值集合。审校按两份声明合并覆盖原文的“countable collection of eigenvalues”，不因补充声明的sorry判FAIL。有限重数没有作为该两份签名的结论；不得把依赖中某定理的存在误计为这里显式列出的结论。整条仍承接条目6的原C₀²域/闭实现解释疑问。
+网站原返回：NEEDS\_HUMAN。A：与条目6同一句原文，转录准确。C：两份签名分别PASS。主声明给出所定义复谱的可数性、虚部为零及每个谱点的开邻域孤立性；补充声明对每个谱点给出非零复L²向量及(v,z•v)在完整闭图中，准确表达它是特征值而非仅“谱点可数”。D92–D93的预解集要求有界复线性算子同时满足左右逆图关系，谱取其补集，未偷换成预先枚举的特征值集合。审校按两份声明合并覆盖原文的“countable collection of eigenvalues”，不因补充声明的sorry判FAIL。有限重数没有作为该两份签名的结论；不得把依赖中某定理的存在误计为这里显式列出的结论。整条仍承接条目6的原C₀²域/闭实现解释疑问。
 当前处理：修正版/限定声明=网站PASS；原文疑误或范围解释待导师。
 合并主声明与eigenvalue补充声明覆盖可数实孤立谱及每谱点为特征值；正质量、β>0、C∞单位周期势和闭Gibbs复L²域均为限定；有限重数等强化未单列。
 本地编译和逐声明依赖核对通过。原文疑误、各限定/修正版、反例的评价分别列出；有未完成证明依赖的声明仍为未证。
@@ -10537,7 +11461,7 @@ theorem brownianSpectralGap {Nc : ℕ} (m : Fin Nc → ℝ) (hm : ∀ i, 0 < m i
 
 | 原文对象或结论 | 当前Lean与范围 |
 |---|---|
-| 所引原句 | 本条所引原句及展示公式；单个记号归入context_notation。 |
+| 所引原句 | 本条所引原句及展示公式；单个记号归入context\_notation。 |
 | 对象、域、量词及前提 | 以上完整声明；额外资格与未覆盖部分见下一段 |
 | 最新网站原始评价 | PASS；首轮保留 |
 
@@ -10567,12 +11491,22 @@ theorem brownianSpectralGap {Nc : ℕ} (m : Fin Nc → ℝ) (hm : ∀ i, 0 < m i
 ### 1. 原文陈述
 
 > Theorem 6.1 Define the generator of Brownian dynamics by
-> \[\mathcal Lf\stackrel{\rm def}=-M^{-1}\nabla U^T\nabla f+\beta^{-1}\Delta_Mf.\]
+
+$$
+\mathcal Lf\stackrel{\rm def}=-M^{-1}\nabla U^T\nabla f+\beta^{-1}\Delta_Mf.
+$$
+
+
 > Suppose that $U$ is smooth with periodic boundary conditions $\mathcal Q=\mathbb T^{N_c}$ ($\mathbb T^{N_c}$ an $N_c$-dimensional torus). Then, with respect to the space $C_0^2(\mu_\beta)$ with inner product $\langle f,g\rangle_\beta$ as defined above, we have:
 > 1. $\mathcal L$ is self-adjoint, negative definite, with spectrum consisting of discrete eigenvalues on the half line $(-\infty,0]$.
 > 2. $\mathcal L$ has a spectral gap, meaning that, with exception of the zero eigenvalue, the remainder of the spectrum satisfies $\sigma(\mathcal L)\subset(-\infty,-\alpha]$ for some $\alpha>0$.
 > 3. averages with respect to the evolving, time-dependent distribution converge exponentially rapidly to averages with respect to the invariant distribution, and, for any smooth, compactly supported test function $\varphi$, we have
-> \[|\bar\varphi(t)-\operatorname{Av}_\beta(\varphi)|\le K\|\varphi\|_\beta e^{-\alpha t};\]
+
+$$
+|\bar\varphi(t)-\operatorname{Av}_\beta(\varphi)|\le K\|\varphi\|_\beta e^{-\alpha t};
+$$
+
+
 > for some positive $K$ and $\alpha$, where recall $\bar\varphi(t)$ denotes the time average of $\varphi$ defined in (5.6).
 
 ### 2. 原文证明
@@ -10686,23 +11620,23 @@ noncomputable def brownianMassGeneratorPrinted_corrected {Nc : ℕ} (m : Fin Nc 
 
 | 原文对象或结论 | 当前Lean与范围 |
 |---|---|
-| 所引原句 | 本条当前覆盖范围：主版与_corrected保持网站已通过的闭实现/分布平均签名。旧theorem61Printed改名theorem61ClosedRealizationExcerpt，明确只是闭实现限定摘录，不能冒称C₀²原域及原ΔM生成元的整条字面实现。分布平均与轨道时间平均冲突、negative definite措辞保留为原书疑误。 |
+| 所引原句 | 本条当前覆盖范围：主版与\_corrected保持网站已通过的闭实现/分布平均签名。旧theorem61Printed改名theorem61ClosedRealizationExcerpt，明确只是闭实现限定摘录，不能冒称C₀²原域及原ΔM生成元的整条字面实现。分布平均与轨道时间平均冲突、negative definite措辞保留为原书疑误。 |
 | 对象、域、量词及前提 | 以上完整声明；额外资格与未覆盖部分见下一段 |
 | 最新网站原始评价 | FAIL；复审 |
 
 ### 5. [EXTRA] 与覆盖缺口
 
-- [EXTRA] 主版与_corrected保持网站已通过的闭实现/分布平均签名。旧theorem61Printed改名theorem61ClosedRealizationExcerpt，明确只是闭实现限定摘录，不能冒称C₀²原域及原ΔM生成元的整条字面实现。分布平均与轨道时间平均冲突、negative definite措辞保留为原书疑误。
-- [ERRATUM?] 原书数学疑误与本次形式化修复分别记录，见CH06_ERRATA。
+- [EXTRA] 主版与\_corrected保持网站已通过的闭实现/分布平均签名。旧theorem61Printed改名theorem61ClosedRealizationExcerpt，明确只是闭实现限定摘录，不能冒称C₀²原域及原ΔM生成元的整条字面实现。分布平均与轨道时间平均冲突、negative definite措辞保留为原书疑误。
+- [ERRATUM?] 原书数学疑误与本次形式化修复分别记录，见CH06\_ERRATA。
 - 覆盖缺口：原C₀²域及原ΔM生成元对应的整条字面形式化未提供；独立质量表达式不补足此联系。
 - 覆盖缺口：严格负定与几乎处处轨道时间平均的固定指数界不作为成立结论。
 - 覆盖缺口：本轮已目视核定印刷244/PDF265：ΔM=Σmi∂²/∂pi²。质量表达式注释中的“原页记号尚待核定”是复审时旧状态；核页不等于已建立原域/整条生成元联系。Theorem6.1的构型逆质量解释仍待导师。
 
 ### 6. 审计结论（含网站结论）
 
-网站原返回：FAIL。A：Theorem 6.1的生成元、三款结论及最后明确指向(5.6)的time average均准确转录；书中分布平均与轨道时间平均的冲突以及negative definite措辞须保留为原书疑误。C分版本：theorem61和theorem61_corrected作为限定修正版均PASS，包含完整闭自伴、全部复谱实且非正、可数、每点有非零图特征向量、孤立、非零谱隙及对所有非负归一L²相对初始密度的演化分布平均指数界。K、α在ρ之后、在所有f和t之前选择，量词正确；DensityLaw为真实Brownian核作用初始ρμβ，DensityAverage的分母在这些概率条件下为1。修正生成元的扩散和漂移均用逆质量，匹配给出的实际Brownian路径系数。theorem61Printed的严格负定及几乎处处轨道平均指数界保留了原文疑误，但它仍使用与corrected相同的闭复L²算子，而原文明确以C₀²(μβ)为域；其全部谱/自伴断言也未与另列的brownianMassGeneratorPrinted建立对象联系。因此该名字为Printed的整条声明不是原域及原生成元的字面实现，忠实性FAIL；这与原书数学错误本身的NEEDS_HUMAN及sorry无关。brownianMassGeneratorPrinted的代数表达与其注释一致，但附件没有印刷244页，无法据本附件独立确认ΔM在该页的既定含义，应保留记号歧义而不能假称已逐页核实。
+网站原返回：FAIL。A：Theorem 6.1的生成元、三款结论及最后明确指向(5.6)的time average均准确转录；书中分布平均与轨道时间平均的冲突以及negative definite措辞须保留为原书疑误。C分版本：theorem61和theorem61\_corrected作为限定修正版均PASS，包含完整闭自伴、全部复谱实且非正、可数、每点有非零图特征向量、孤立、非零谱隙及对所有非负归一L²相对初始密度的演化分布平均指数界。K、α在ρ之后、在所有f和t之前选择，量词正确；DensityLaw为真实Brownian核作用初始ρμβ，DensityAverage的分母在这些概率条件下为1。修正生成元的扩散和漂移均用逆质量，匹配给出的实际Brownian路径系数。theorem61Printed的严格负定及几乎处处轨道平均指数界保留了原文疑误，但它仍使用与corrected相同的闭复L²算子，而原文明确以C₀²(μβ)为域；其全部谱/自伴断言也未与另列的brownianMassGeneratorPrinted建立对象联系。因此该名字为Printed的整条声明不是原域及原生成元的字面实现，忠实性FAIL；这与原书数学错误本身的NEEDS\_HUMAN及sorry无关。brownianMassGeneratorPrinted的代数表达与其注释一致，但附件没有印刷244页，无法据本附件独立确认ΔM在该页的既定含义，应保留记号歧义而不能假称已逐页核实。
 当前处理：按网站审校意见修复，本地核验通过（未再送网站）。
-主版与_corrected保持网站已通过的闭实现/分布平均签名。旧theorem61Printed改名theorem61ClosedRealizationExcerpt，明确只是闭实现限定摘录，不能冒称C₀²原域及原ΔM生成元的整条字面实现。分布平均与轨道时间平均冲突、negative definite措辞保留为原书疑误。
+主版与\_corrected保持网站已通过的闭实现/分布平均签名。旧theorem61Printed改名theorem61ClosedRealizationExcerpt，明确只是闭实现限定摘录，不能冒称C₀²原域及原ΔM生成元的整条字面实现。分布平均与轨道时间平均冲突、negative definite措辞保留为原书疑误。
 本地编译和逐声明依赖核对通过。原文疑误、各限定/修正版、反例的评价分别列出；有未完成证明依赖的声明仍为未证。
 
 ### 7. 状态与证明位置
@@ -10724,12 +11658,22 @@ noncomputable def brownianMassGeneratorPrinted_corrected {Nc : ℕ} (m : Fin Nc 
 ### 1. 原文陈述
 
 > Theorem 6.1 Define the generator of Brownian dynamics by
-> \[\mathcal Lf\stackrel{\rm def}=-M^{-1}\nabla U^T\nabla f+\beta^{-1}\Delta_Mf.\]
+
+$$
+\mathcal Lf\stackrel{\rm def}=-M^{-1}\nabla U^T\nabla f+\beta^{-1}\Delta_Mf.
+$$
+
+
 > Suppose that $U$ is smooth with periodic boundary conditions $\mathcal Q=\mathbb T^{N_c}$ ($\mathbb T^{N_c}$ an $N_c$-dimensional torus). Then, with respect to the space $C_0^2(\mu_\beta)$ with inner product $\langle f,g\rangle_\beta$ as defined above, we have:
 > 1. $\mathcal L$ is self-adjoint, negative definite, with spectrum consisting of discrete eigenvalues on the half line $(-\infty,0]$.
 > 2. $\mathcal L$ has a spectral gap, meaning that, with exception of the zero eigenvalue, the remainder of the spectrum satisfies $\sigma(\mathcal L)\subset(-\infty,-\alpha]$ for some $\alpha>0$.
 > 3. averages with respect to the evolving, time-dependent distribution converge exponentially rapidly to averages with respect to the invariant distribution, and, for any smooth, compactly supported test function $\varphi$, we have
-> \[|\bar\varphi(t)-\operatorname{Av}_\beta(\varphi)|\le K\|\varphi\|_\beta e^{-\alpha t};\]
+
+$$
+|\bar\varphi(t)-\operatorname{Av}_\beta(\varphi)|\le K\|\varphi\|_\beta e^{-\alpha t};
+$$
+
+
 > for some positive $K$ and $\alpha$, where recall $\bar\varphi(t)$ denotes the time average of $\varphi$ defined in (5.6).
 
 ### 2. 原文证明
@@ -10777,18 +11721,18 @@ theorem theorem61TimeAveragePrinted_corrected {Nc : ℕ} (m : Fin Nc → ℝ) (h
 
 | 原文对象或结论 | 当前Lean与范围 |
 |---|---|
-| 所引原句 | 本条所引原句及展示公式；单个记号归入context_notation。 |
+| 所引原句 | 本条所引原句及展示公式；单个记号归入context\_notation。 |
 | 对象、域、量词及前提 | 以上完整声明；额外资格与未覆盖部分见下一段 |
-| 最新网站原始评价 | NEEDS_HUMAN；首轮保留 |
+| 最新网站原始评价 | NEEDS\_HUMAN；首轮保留 |
 
 ### 5. [EXTRA] 与覆盖缺口
 
 - [EXTRA]实际Brownian全时torus过程、任意点初值、AE路径资格和t>0明确；原C∞紧支检验在紧torus周期表示。
-- [EXTRA] 原文版忠实性与数学疑误分开；补齐所交条目所属的现有_corrected完整签名，不从repair_log名称推断网站已通过修正版。
+- [EXTRA] 原文版忠实性与数学疑误分开；补齐所交条目所属的现有\_corrected完整签名，不从repair\_log名称推断网站已通过修正版。
 
 ### 6. 审计结论（含网站结论）
 
-网站原返回：NEEDS_HUMAN。按Printed规则核查：任意点初值、K,α先于f与AE样本、全部t>0的轨道时间积分，确为原末句时间平均读法的明确化。AE资格是额外选择；原文本身与前句分布平均冲突且该指数路径界一般错误。
+网站原返回：NEEDS\_HUMAN。按Printed规则核查：任意点初值、K,α先于f与AE样本、全部t>0的轨道时间积分，确为原末句时间平均读法的明确化。AE资格是额外选择；原文本身与前句分布平均冲突且该指数路径界一般错误。
 当前处理：原文疑误或语义范围待导师；不冒称未提供版本已通过。
 保留所交版本的明确结论。
 本地编译和逐声明依赖核对通过。原文疑误、各限定/修正版、反例的评价分别列出；有未完成证明依赖的声明仍为未证。
@@ -10808,7 +11752,12 @@ theorem theorem61TimeAveragePrinted_corrected {Nc : ℕ} (m : Fin Nc → ℝ) (h
 ### 1. 原文陈述
 
 > averages with respect to the evolving, time-dependent distribution converge exponentially rapidly to averages with respect to the invariant distribution, and, for any smooth, compactly supported test function $\varphi$, we have
-> \[|\bar\varphi(t)-\operatorname{Av}_\beta(\varphi)|\le K\|\varphi\|_\beta e^{-\alpha t}.\]
+
+$$
+|\bar\varphi(t)-\operatorname{Av}_\beta(\varphi)|\le K\|\varphi\|_\beta e^{-\alpha t}.
+$$
+
+
 
 ### 2. 原文证明
 
@@ -10857,7 +11806,7 @@ theorem theorem61TimeAveragePrinted_corrected {Nc : ℕ} (m : Fin Nc → ℝ) (h
 
 | 原文对象或结论 | 当前Lean与范围 |
 |---|---|
-| 所引原句 | 本条所引原句及展示公式；单个记号归入context_notation。 |
+| 所引原句 | 本条所引原句及展示公式；单个记号归入context\_notation。 |
 | 对象、域、量词及前提 | 以上完整声明；额外资格与未覆盖部分见下一段 |
 | 最新网站原始评价 | PASS；首轮保留 |
 
@@ -10922,18 +11871,18 @@ theorem brownianNegativeDefinitePrinted_corrected {Nc : ℕ} (m : Fin Nc → ℝ
 
 | 原文对象或结论 | 当前Lean与范围 |
 |---|---|
-| 所引原句 | 本条所引原句及展示公式；单个记号归入context_notation。 |
+| 所引原句 | 本条所引原句及展示公式；单个记号归入context\_notation。 |
 | 对象、域、量词及前提 | 以上完整声明；额外资格与未覆盖部分见下一段 |
-| 最新网站原始评价 | NEEDS_HUMAN；首轮保留 |
+| 最新网站原始评价 | NEEDS\_HUMAN；首轮保留 |
 
 ### 5. [EXTRA] 与覆盖缺口
 
 - [EXTRA]明确严格负定含全部非零周期光滑L²函数的读法。
-- [EXTRA] 原文版忠实性与数学疑误分开；补齐所交条目所属的现有_corrected完整签名，不从repair_log名称推断网站已通过修正版。
+- [EXTRA] 原文版忠实性与数学疑误分开；补齐所交条目所属的现有\_corrected完整签名，不从repair\_log名称推断网站已通过修正版。
 
 ### 6. 审计结论（含网站结论）
 
-网站原返回：NEEDS_HUMAN。Printed严格负定版准确编码任意非零周期光滑f的二次型<0；虽为假，按原文字面版规则不以不忠实判FAIL。已有[ERRATUM?]正确。
+网站原返回：NEEDS\_HUMAN。Printed严格负定版准确编码任意非零周期光滑f的二次型<0；虽为假，按原文字面版规则不以不忠实判FAIL。已有[ERRATUM?]正确。
 当前处理：原文疑误或语义范围待导师；不冒称未提供版本已通过。
 保留所交版本的明确结论。
 本地编译和逐声明依赖核对通过。原文疑误、各限定/修正版、反例的评价分别列出；有未完成证明依赖的声明仍为未证。
@@ -10942,7 +11891,7 @@ theorem brownianNegativeDefinitePrinted_corrected {Nc : ℕ} (m : Fin Nc → ℝ
 
 | 声明 | 证明状态 | 未证原因 | 网站分版结论 |
 |---|---|---|---|
-| `MD.Ch06.brownianNegativeDefinitePrinted` | 未证 | 原书疑误不证 | 原文忠实性PASS；原书数学/范围NEEDS_HUMAN |
+| `MD.Ch06.brownianNegativeDefinitePrinted` | 未证 | 原书疑误不证 | 原文忠实性PASS；原书数学/范围NEEDS\_HUMAN |
 
 位置：`Blueprint/Ch06.lean:2531`；本地核验记录：`blueprint/ch06/closeout26/FINAL_COMPILE.log`。
 
@@ -10953,9 +11902,19 @@ theorem brownianNegativeDefinitePrinted_corrected {Nc : ℕ} (m : Fin Nc → ℝ
 ### 1. 原文陈述
 
 > The solution $p(t)$ to the Ornstein-Uhlenbeck equation, for any finite time $t$, is always normally distributed
-> \[\rho(p,t)=\exp\left[-\frac{(p-\mu(t))^2}{2\sigma(t)^2}\right];\tag{6.44}\]
+
+$$
+\rho(p,t)=\exp\left[-\frac{(p-\mu(t))^2}{2\sigma(t)^2}\right];\tag{6.44}
+$$
+
+
 > where
-> \[\mu(t)=p_0e^{-\gamma t};\qquad\sigma^2(t)=k_BT m[1-e^{-2\gamma t}].\tag{6.45}\]
+
+$$
+\mu(t)=p_0e^{-\gamma t};\qquad\sigma^2(t)=k_BT m[1-e^{-2\gamma t}].\tag{6.45}
+$$
+
+
 
 ### 2. 原文证明
 
@@ -10972,7 +11931,7 @@ def ouDensityPrinted (γ σ x0 t x : ℝ) : ℝ :=
 
 | 原文对象或结论 | 当前Lean与范围 |
 |---|---|
-| 所引原句 | 本条所引原句及展示公式；单个记号归入context_notation。 |
+| 所引原句 | 本条所引原句及展示公式；单个记号归入context\_notation。 |
 | 对象、域、量词及前提 | 以上完整声明；额外资格与未覆盖部分见下一段 |
 | 最新网站原始评价 | PASS；首轮保留 |
 
@@ -10982,7 +11941,7 @@ def ouDensityPrinted (γ σ x0 t x : ℝ) : ℝ :=
 
 ### 6. 审计结论（含网站结论）
 
-网站原返回：PASS。Printed定义保留了原书未归一化指数。ouMean=exp(−γt)x0，ouVariance=σ_noise²(1−exp(−2γt))/(2γ)；取σ_noise²=2γkBTm就得到6.45。[EXTRA]已经说明参数转换。作为字面公式定义PASS，不把原书缺归一化或t=0问题算成该字面定义的签名错误。
+网站原返回：PASS。Printed定义保留了原书未归一化指数。ouMean=exp(−γt)x0，ouVariance=σ\_noise²(1−exp(−2γt))/(2γ)；取σ\_noise²=2γkBTm就得到6.45。[EXTRA]已经说明参数转换。作为字面公式定义PASS，不把原书缺归一化或t=0问题算成该字面定义的签名错误。
 当前处理：网站PASS（首轮未改版本）。
 保留所交版本的明确结论。
 本地编译和逐声明依赖核对通过。原文疑误、各限定/修正版、反例的评价分别列出；有未完成证明依赖的声明仍为未证。
@@ -11002,9 +11961,19 @@ def ouDensityPrinted (γ σ x0 t x : ℝ) : ℝ :=
 ### 1. 原文陈述
 
 > The solution $p(t)$ to the Ornstein-Uhlenbeck equation, for any finite time $t$, is always normally distributed
-> \[\rho(p,t)=\exp\left[-\frac{(p-\mu(t))^2}{2\sigma(t)^2}\right];\tag{6.44}\]
+
+$$
+\rho(p,t)=\exp\left[-\frac{(p-\mu(t))^2}{2\sigma(t)^2}\right];\tag{6.44}
+$$
+
+
 > where
-> \[\mu(t)=p_0e^{-\gamma t};\qquad\sigma^2(t)=k_BT m[1-e^{-2\gamma t}].\tag{6.45}\]
+
+$$
+\mu(t)=p_0e^{-\gamma t};\qquad\sigma^2(t)=k_BT m[1-e^{-2\gamma t}].\tag{6.45}
+$$
+
+
 
 ### 2. 原文证明
 
@@ -11025,7 +11994,7 @@ def ouDensityPrinted_corrected (γ σ x0 t x : ℝ) : ℝ :=
 
 | 原文对象或结论 | 当前Lean与范围 |
 |---|---|
-| 所引原句 | 本条所引原句及展示公式；单个记号归入context_notation。 |
+| 所引原句 | 本条所引原句及展示公式；单个记号归入context\_notation。 |
 | 对象、域、量词及前提 | 以上完整声明；额外资格与未覆盖部分见下一段 |
 | 最新网站原始评价 | PASS；首轮保留 |
 
@@ -11035,7 +12004,7 @@ def ouDensityPrinted_corrected (γ σ x0 t x : ℝ) : ℝ :=
 
 ### 6. 审计结论（含网站结论）
 
-网站原返回：PASS。ouDensity与ouDensityPrinted_corrected均用完整指数除以sqrt(2πv)，修正合理。γ>0、σ_noise≠0、t>0时v>0，得到通常正态密度；注释明确密度解释只在这一域成立。定义对全部实数全定义不意味着声称退化参数下也是密度；没有积分归一化或过程HasLaw定理可被误计为已证。
+网站原返回：PASS。ouDensity与ouDensityPrinted\_corrected均用完整指数除以sqrt(2πv)，修正合理。γ>0、σ\_noise≠0、t>0时v>0，得到通常正态密度；注释明确密度解释只在这一域成立。定义对全部实数全定义不意味着声称退化参数下也是密度；没有积分归一化或过程HasLaw定理可被误计为已证。
 当前处理：网站PASS（首轮未改版本）。
 保留所交版本的明确结论。
 本地编译和逐声明依赖核对通过。原文疑误、各限定/修正版、反例的评价分别列出；有未完成证明依赖的声明仍为未证。
@@ -11057,9 +12026,19 @@ def ouDensityPrinted_corrected (γ σ x0 t x : ℝ) : ℝ :=
 
 > Assumption 1 The Markov process generated by the SDE (6.43) satisfies, for some fixed compact set $C\in\mathcal B(D)$, the conditions:
 > (i) For some $y\in\operatorname{int}(C)$, we have that for any $\delta>0$ there is a $t_0>0$ such that
-> \[\operatorname{Pr}(X(t_0)\in B_\delta(y)\mid X(0)=X_0)>0,\quad\forall X_0\in C.\]
+
+$$
+\operatorname{Pr}(X(t_0)\in B_\delta(y)\mid X(0)=X_0)>0,\quad\forall X_0\in C.
+$$
+
+
 > (ii) For $t>0$, the transition kernel possesses a density $\widehat\rho(X,z,t)$ such that
-> \[\operatorname{Pr}(X(t)\in A\mid X(0)=X_0)=\int_A\widehat\rho(X_0,z,t)dz,\quad\forall X_0\in C,\ A\in\mathcal B(D)\cap\mathcal B(C);\]
+
+$$
+\operatorname{Pr}(X(t)\in A\mid X(0)=X_0)=\int_A\widehat\rho(X_0,z,t)dz,\quad\forall X_0\in C,\ A\in\mathcal B(D)\cap\mathcal B(C);
+$$
+
+
 > and $\widehat\rho(X,z,t)$ is jointly continuous in $C\times C\times[0,\infty)$.
 
 ### 2. 原文证明
@@ -11095,18 +12074,18 @@ def assumption1Printed_corrected {D : Type*} [MetricSpace D] [MeasurableSpace D]
 
 | 原文对象或结论 | 当前Lean与范围 |
 |---|---|
-| 所引原句 | 本条所引原句及展示公式；单个记号归入context_notation。 |
+| 所引原句 | 本条所引原句及展示公式；单个记号归入context\_notation。 |
 | 对象、域、量词及前提 | 以上完整声明；额外资格与未覆盖部分见下一段 |
-| 最新网站原始评价 | NEEDS_HUMAN；首轮保留 |
+| 最新网站原始评价 | NEEDS\_HUMAN；首轮保留 |
 
 ### 5. [EXTRA] 与覆盖缺口
 
 - [EXTRA]真实Borel Markov kernel与局部参考测度；完整同一内点可达、全部初值与可测子集及联合连续资格。
-- [EXTRA] 原文版忠实性与数学疑误分开；补齐所交条目所属的现有_corrected完整签名，不从repair_log名称推断网站已通过修正版。
+- [EXTRA] 原文版忠实性与数学疑误分开；补齐所交条目所属的现有\_corrected完整签名，不从repair\_log名称推断网站已通过修正版。
 
 ### 6. 审计结论（含网站结论）
 
-网站原返回：NEEDS_HUMAN。Printed保留紧C、同一内点y、δ后选统一t、全部x和可测A⊆C及联合连续时间Ici 0；与原[0,∞)一致。ν是披露的参考测度推广，但Kernel本身不含Markov/半群资格；此定义只编码局部条件。原零时连续性疑误保留。
+网站原返回：NEEDS\_HUMAN。Printed保留紧C、同一内点y、δ后选统一t、全部x和可测A⊆C及联合连续时间Ici 0；与原[0,∞)一致。ν是披露的参考测度推广，但Kernel本身不含Markov/半群资格；此定义只编码局部条件。原零时连续性疑误保留。
 当前处理：原文疑误或语义范围待导师；不冒称未提供版本已通过。
 保留所交版本的明确结论。
 本地编译和逐声明依赖核对通过。原文疑误、各限定/修正版、反例的评价分别列出；有未完成证明依赖的声明仍为未证。
@@ -11127,9 +12106,19 @@ def assumption1Printed_corrected {D : Type*} [MetricSpace D] [MeasurableSpace D]
 
 > Assumption 1 The Markov process generated by the SDE (6.43) satisfies, for some fixed compact set $C\in\mathcal B(D)$, the conditions:
 > (i) For some $y\in\operatorname{int}(C)$, we have that for any $\delta>0$ there is a $t_0>0$ such that
-> \[\operatorname{Pr}(X(t_0)\in B_\delta(y)\mid X(0)=X_0)>0,\quad\forall X_0\in C.\]
+
+$$
+\operatorname{Pr}(X(t_0)\in B_\delta(y)\mid X(0)=X_0)>0,\quad\forall X_0\in C.
+$$
+
+
 > (ii) For $t>0$, the transition kernel possesses a density $\widehat\rho(X,z,t)$ such that
-> \[\operatorname{Pr}(X(t)\in A\mid X(0)=X_0)=\int_A\widehat\rho(X_0,z,t)dz,\quad\forall X_0\in C,\ A\in\mathcal B(D)\cap\mathcal B(C);\]
+
+$$
+\operatorname{Pr}(X(t)\in A\mid X(0)=X_0)=\int_A\widehat\rho(X_0,z,t)dz,\quad\forall X_0\in C,\ A\in\mathcal B(D)\cap\mathcal B(C);
+$$
+
+
 > and $\widehat\rho(X,z,t)$ is jointly continuous in $C\times C\times[0,\infty)$.
 
 ### 2. 原文证明
@@ -11163,7 +12152,7 @@ def assumption1Printed_corrected {D : Type*} [MetricSpace D] [MeasurableSpace D]
 
 | 原文对象或结论 | 当前Lean与范围 |
 |---|---|
-| 所引原句 | 本条所引原句及展示公式；单个记号归入context_notation。 |
+| 所引原句 | 本条所引原句及展示公式；单个记号归入context\_notation。 |
 | 对象、域、量词及前提 | 以上完整声明；额外资格与未覆盖部分见下一段 |
 | 最新网站原始评价 | PASS；首轮保留 |
 
@@ -11173,7 +12162,7 @@ def assumption1Printed_corrected {D : Type*} [MetricSpace D] [MeasurableSpace D]
 
 ### 6. 审计结论（含网站结论）
 
-网站原返回：PASS。assumption1与assumption1Printed_corrected两定义一致，唯一实质修正为Ici 0→Ioi 0；密度公式仍仅正时、x∈C及可测A⊆C，内点可达量词未变。作为修正条件定义合理，不是具体SDE满足它的断言。
+网站原返回：PASS。assumption1与assumption1Printed\_corrected两定义一致，唯一实质修正为Ici 0→Ioi 0；密度公式仍仅正时、x∈C及可测A⊆C，内点可达量词未变。作为修正条件定义合理，不是具体SDE满足它的断言。
 当前处理：网站PASS（首轮未改版本）。
 保留所交版本的明确结论。
 本地编译和逐声明依赖核对通过。原文疑误、各限定/修正版、反例的评价分别列出；有未完成证明依赖的声明仍为未证。
@@ -11194,7 +12183,12 @@ def assumption1Printed_corrected {D : Type*} [MetricSpace D] [MeasurableSpace D]
 ### 1. 原文陈述
 
 > Assumption 2 There is a function $\varphi:D\to(0,\infty)$, with $\varphi(X)\to\infty$ as $|X|\to\infty$ such that
-> \[\mathcal L\varphi\le-\alpha\varphi+\delta\]
+
+$$
+\mathcal L\varphi\le-\alpha\varphi+\delta
+$$
+
+
 > for positive constants $\alpha$ and $\delta$, where $\mathcal L$ is the generator of the stochastic process (6.43). The function $\varphi$ is known as a Lyapunov function.
 
 ### 2. 原文证明
@@ -11215,7 +12209,7 @@ local instance : MeasureSpace UnitAddCircle := ⟨AddCircle.haarAddCircle⟩
 
 | 原文对象或结论 | 当前Lean与范围 |
 |---|---|
-| 所引原句 | 本条所引原句及展示公式；单个记号归入context_notation。 |
+| 所引原句 | 本条所引原句及展示公式；单个记号归入context\_notation。 |
 | 对象、域、量词及前提 | 以上完整声明；额外资格与未覆盖部分见下一段 |
 | 最新网站原始评价 | PASS；首轮保留 |
 
@@ -11279,17 +12273,17 @@ theorem minorizationPrinted_corrected :
 
 | 原文对象或结论 | 当前Lean与范围 |
 |---|---|
-| 所引原句 | 本条所引原句及展示公式；单个记号归入context_notation。 |
+| 所引原句 | 本条所引原句及展示公式；单个记号归入context\_notation。 |
 | 对象、域、量词及前提 | 以上完整声明；额外资格与未覆盖部分见下一段 |
-| 最新网站原始评价 | NEEDS_HUMAN；首轮保留 |
+| 最新网站原始评价 | NEEDS\_HUMAN；首轮保留 |
 
 ### 5. [EXTRA] 与覆盖缺口
 
-- [EXTRA] 原文版忠实性与数学疑误分开；补齐所交条目所属的现有_corrected完整签名，不从repair_log名称推断网站已通过修正版。
+- [EXTRA] 原文版忠实性与数学疑误分开；补齐所交条目所属的现有\_corrected完整签名，不从repair\_log名称推断网站已通过修正版。
 
 ### 6. 审计结论（含网站结论）
 
-网站原返回：NEEDS_HUMAN。Printed将tantamount忠实读为↔，右侧给一个正时刻、正ENNReal下界系数和同一概率μ，对全部x∈C作完整测度序下界。左侧仍为原零时连续版；抽象签名没有SDE或Markov半群假设，等价一般错误。
+网站原返回：NEEDS\_HUMAN。Printed将tantamount忠实读为↔，右侧给一个正时刻、正ENNReal下界系数和同一概率μ，对全部x∈C作完整测度序下界。左侧仍为原零时连续版；抽象签名没有SDE或Markov半群假设，等价一般错误。
 当前处理：原文疑误或语义范围待导师；不冒称未提供版本已通过。
 保留所交版本的明确结论。
 本地编译和逐声明依赖核对通过。原文疑误、各限定/修正版、反例的评价分别列出；有未完成证明依赖的声明仍为未证。
@@ -11298,7 +12292,7 @@ theorem minorizationPrinted_corrected :
 
 | 声明 | 证明状态 | 未证原因 | 网站分版结论 |
 |---|---|---|---|
-| `MD.Ch06.minorizationPrinted` | 未证 | 原书疑误不证 | 原文忠实性PASS；原书数学/范围NEEDS_HUMAN |
+| `MD.Ch06.minorizationPrinted` | 未证 | 原书疑误不证 | 原文忠实性PASS；原书数学/范围NEEDS\_HUMAN |
 
 位置：`Blueprint/Ch06.lean:2599`；本地核验记录：`blueprint/ch06/closeout26/FINAL_COMPILE.log`。
 
@@ -11351,7 +12345,7 @@ theorem minorizationPrinted_corrected :
 
 ### 5. [EXTRA] 与覆盖缺口
 
-- [EXTRA] 主版与minorizationPrinted_corrected同时补Chapman–Kolmogorov/Markov半群及参考测度全支撑。两步核局部共同下界仍需大型小集理论，未证明、未宣称数学结论已核定；审阅结论按各版本分别记录。
+- [EXTRA] 主版与minorizationPrinted\_corrected同时补Chapman–Kolmogorov/Markov半群及参考测度全支撑。两步核局部共同下界仍需大型小集理论，未证明、未宣称数学结论已核定；审阅结论按各版本分别记录。
 - [EXTRA] 还独立假设：对所有t>0、所有x及所有非空开集A，K t x A>0；这比原Assumption 1(i)强，不能省略于假设说明。
 - [EXTRA] assumption1中的密度联合连续性只在t>0要求；原书写到t=0的端点问题另见条目10、14。
 - [EXTRA] 复审范围：仅覆盖加强条件下充分方向；还独立要求所有点、所有正时刻对每个非空开集有正概率，以及Markov合成、参考测度全支撑，不覆盖原tantamount的必要方向。
@@ -11380,11 +12374,21 @@ theorem minorizationPrinted_corrected :
 ### 1. 原文陈述
 
 > Theorem 6.2 (Geometric Ergodicity) Let the solution to (6.43) be denoted $X(t)$. If Assumption 1 and Assumption 2 are satisfied for
-> \[C=\{X\in D\mid\varphi(X)\le K_{\alpha,\delta}\},\]
+
+$$
+C=\{X\in D\mid\varphi(X)\le K_{\alpha,\delta}\},
+$$
+
+
 > where $K_{\alpha,\delta}$ is a particular positive value depending on $\alpha$ and $\delta$, then
 > (i) there exists a unique invariant measure $\rho_*$, with $\mathcal L^*\rho_*=0$, and
 > (ii) there exist positive constants $\kappa$ and $\lambda$ such that for all suitable functions $f$ with $|f|\le\varphi$,
-> \[|e^{t\mathcal L}f(X_0)-\operatorname{Av}(f)|\le \kappa e^{-\lambda t}\varphi(X_0);\tag{6.48}\]
+
+$$
+|e^{t\mathcal L}f(X_0)-\operatorname{Av}(f)|\le \kappa e^{-\lambda t}\varphi(X_0);\tag{6.48}
+$$
+
+
 > where $\operatorname{Av}(f)=\int_D f(z)\rho_*(z)dz$ is the spatial average.
 
 ### 2. 原文证明
@@ -11501,12 +12505,12 @@ theorem theorem62Printed :
 ### 5. [EXTRA] 与覆盖缺口
 
 - [EXTRA] 原文两处k按网站逐页核对改回κ（转录纠正）。Printed的弱平稳测试补主版同样的真实右导数及局部可积差商支配，排除derivWithin默认值；保留原[0,∞)连续密度端点疑误，阈值统一性和全部结论量词不变。
-- [ERRATUM?] 原书数学疑误与本次形式化修复分别记录，见CH06_ERRATA。
+- [ERRATUM?] 原书数学疑误与本次形式化修复分别记录，见CH06\_ERRATA。
 - 覆盖缺口：原Assumption 1(ii)在t=0要求连续密度的疑误保留；Printed含明确的实际生成元测试资格，并非无技术前提的整条字面翻译。
 
 ### 6. 审计结论（含网站结论）
 
-网站原返回：FAIL。A：节号、页码、阈值集合、唯一不变测度、弱平稳意图、加权指数界及空间平均均核对；原页的正系数为κ，JSON两处写为k，应作转录纠正，其余原文数学措辞保留。C：theorem62及corrected作为加强的半群版本，签名PASS：阈值函数先于状态空间、过程及φ量化；完整Markov/Feller、局部紧Polish状态、σ有限ν、每个正时刻全部初值的绝对连续性；φ正连续且子水平紧，α、δ正；另有实际积分可积性和半群漂移估计；结论保留全部不变概率的唯一性、相对于ν的密度、受真实右导数及局部可积差商支配限制的弱平稳检验，以及统一于所有可测|f|≤φ、t≥0、x的指数界。没有把不变性或收敛结论作假设，也没有把有限个检验或单一初态替代全部量词。Printed保留[0,∞)连续密度的原书疑误，这一点本身应NEEDS_HUMAN；但其弱平稳分句量化所有有界连续f，仅假设kernelGenerator f可积，没有要求该f存在真实右导数/属于生成元测试域。D中kernelGenerator是总定义的derivWithin，不能把其无导数时的默认值当成原书实际SDE生成元。该超出原生成元域的Printed弱平稳断言不属于原书字面陈述，忠实性FAIL。主版新增的测试域保护没有在Printed中保留，这一偏差不是sorry问题，也不能全标成原书疑误。
+网站原返回：FAIL。A：节号、页码、阈值集合、唯一不变测度、弱平稳意图、加权指数界及空间平均均核对；原页的正系数为κ，JSON两处写为k，应作转录纠正，其余原文数学措辞保留。C：theorem62及corrected作为加强的半群版本，签名PASS：阈值函数先于状态空间、过程及φ量化；完整Markov/Feller、局部紧Polish状态、σ有限ν、每个正时刻全部初值的绝对连续性；φ正连续且子水平紧，α、δ正；另有实际积分可积性和半群漂移估计；结论保留全部不变概率的唯一性、相对于ν的密度、受真实右导数及局部可积差商支配限制的弱平稳检验，以及统一于所有可测|f|≤φ、t≥0、x的指数界。没有把不变性或收敛结论作假设，也没有把有限个检验或单一初态替代全部量词。Printed保留[0,∞)连续密度的原书疑误，这一点本身应NEEDS\_HUMAN；但其弱平稳分句量化所有有界连续f，仅假设kernelGenerator f可积，没有要求该f存在真实右导数/属于生成元测试域。D中kernelGenerator是总定义的derivWithin，不能把其无导数时的默认值当成原书实际SDE生成元。该超出原生成元域的Printed弱平稳断言不属于原书字面陈述，忠实性FAIL。主版新增的测试域保护没有在Printed中保留，这一偏差不是sorry问题，也不能全标成原书疑误。
 当前处理：按网站审校意见修复，本地核验通过（未再送网站）。
 原文两处k按网站逐页核对改回κ（转录纠正）。Printed的弱平稳测试补主版同样的真实右导数及局部可积差商支配，排除derivWithin默认值；保留原[0,∞)连续密度端点疑误，阈值统一性和全部结论量词不变。
 本地编译和逐声明依赖核对通过。原文疑误、各限定/修正版、反例的评价分别列出；有未完成证明依赖的声明仍为未证。
@@ -11528,7 +12532,12 @@ theorem theorem62Printed :
 ### 1. 原文陈述
 
 > We also consider the potential energy to be smooth ($C^\infty$) with $U(q)\to\infty$ as $|q|\to\infty$. As we have a smooth potential on a bounded (position) domain, we have
-> \[1<U_{\min}\le U(q)\le U_{\max}<\infty,\quad\forall q\in\mathcal Q,\]
+
+$$
+1<U_{\min}\le U(q)\le U_{\max}<\infty,\quad\forall q\in\mathcal Q,
+$$
+
+
 > for some constants $U_{\min}$ and $U_{\max}$.
 
 ### 2. 原文证明
@@ -11569,18 +12578,18 @@ theorem periodicPotentialBoundPrinted_counterexample :
 
 | 原文对象或结论 | 当前Lean与范围 |
 |---|---|
-| 所引原句 | 本条所引原句及展示公式；单个记号归入context_notation。 |
+| 所引原句 | 本条所引原句及展示公式；单个记号归入context\_notation。 |
 | 对象、域、量词及前提 | 以上完整声明；额外资格与未覆盖部分见下一段 |
-| 最新网站原始评价 | NEEDS_HUMAN；首轮保留 |
+| 最新网站原始评价 | NEEDS\_HUMAN；首轮保留 |
 
 ### 5. [EXTRA] 与覆盖缺口
 
 - [EXTRA]完整全域有限范数界，给上下界±M；正下界>1需实际势能平移，另条给出。原周期与q→∞围束资格冲突另留字面记录，不由本条消去。
-- [EXTRA] 原文版忠实性与数学疑误分开；补齐所交条目所属的现有_corrected完整签名，不从repair_log名称推断网站已通过修正版。
+- [EXTRA] 原文版忠实性与数学疑误分开；补齐所交条目所属的现有\_corrected完整签名，不从repair\_log名称推断网站已通过修正版。
 
 ### 6. 审计结论（含网站结论）
 
-网站原返回：NEEDS_HUMAN。连续周期势全域有界的签名正确，M≥0的范数界给−M≤U≤M。它未包含原1<Umin；该要求由下一条平移解释而非本条证明。原文同时要求周期与配置无穷远围束，本条[ERRATUM?]正确保留。
+网站原返回：NEEDS\_HUMAN。连续周期势全域有界的签名正确，M≥0的范数界给−M≤U≤M。它未包含原1<Umin；该要求由下一条平移解释而非本条证明。原文同时要求周期与配置无穷远围束，本条[ERRATUM?]正确保留。
 当前处理：原文疑误或语义范围待导师；不冒称未提供版本已通过。
 保留所交版本的明确结论。
 本地编译和逐声明依赖核对通过。原文疑误、各限定/修正版、反例的评价分别列出；有未完成证明依赖的声明仍为未证。
@@ -11603,7 +12612,12 @@ theorem periodicPotentialBoundPrinted_counterexample :
 ### 1. 原文陈述
 
 > We also consider the potential energy to be smooth ($C^\infty$) with $U(q)\to\infty$ as $|q|\to\infty$. As we have a smooth potential on a bounded (position) domain, we have
-> \[1<U_{\min}\le U(q)\le U_{\max}<\infty,\quad\forall q\in\mathcal Q,\]
+
+$$
+1<U_{\min}\le U(q)\le U_{\max}<\infty,\quad\forall q\in\mathcal Q,
+$$
+
+
 > for some constants $U_{\min}$ and $U_{\max}$.
 
 ### 2. 原文证明
@@ -11627,7 +12641,7 @@ theorem potentialNormalization {n : ℕ} (U : (Fin n → ℝ) → ℝ)
 
 | 原文对象或结论 | 当前Lean与范围 |
 |---|---|
-| 所引原句 | 本条所引原句及展示公式；单个记号归入context_notation。 |
+| 所引原句 | 本条所引原句及展示公式；单个记号归入context\_notation。 |
 | 对象、域、量词及前提 | 以上完整声明；额外资格与未覆盖部分见下一段 |
 | 最新网站原始评价 | PASS；首轮保留 |
 
@@ -11657,7 +12671,12 @@ theorem potentialNormalization {n : ℕ} (U : (Fin n → ℝ) → ℝ)
 ### 1. 原文陈述
 
 > In Langevin dynamics, taking $M=I$ for simplicity,
-> \[dq=pdt;\qquad dp=-\nabla U(q)dt-\gamma pdt+\sqrt{2\gamma k_BT}dW;\tag{6.47}\]
+
+$$
+dq=pdt;\qquad dp=-\nabla U(q)dt-\gamma pdt+\sqrt{2\gamma k_BT}dW;\tag{6.47}
+$$
+
+
 
 ### 2. 原文证明
 
@@ -11676,7 +12695,7 @@ def unitLangevinModel {n : ℕ} {A : Type*} [MeasurableSpace A] (P : Measure A)
 
 | 原文对象或结论 | 当前Lean与范围 |
 |---|---|
-| 所引原句 | 本条所引原句及展示公式；单个记号归入context_notation。 |
+| 所引原句 | 本条所引原句及展示公式；单个记号归入context\_notation。 |
 | 对象、域、量词及前提 | 以上完整声明；额外资格与未覆盖部分见下一段 |
 | 最新网站原始评价 | PASS；首轮保留 |
 
@@ -11740,18 +12759,18 @@ theorem periodicConfiningPrinted_corrected {Nc : ℕ}
 
 | 原文对象或结论 | 当前Lean与范围 |
 |---|---|
-| 所引原句 | 本条所引原句及展示公式；单个记号归入context_notation。 |
+| 所引原句 | 本条所引原句及展示公式；单个记号归入context\_notation。 |
 | 对象、域、量词及前提 | 以上完整声明；额外资格与未覆盖部分见下一段 |
-| 最新网站原始评价 | NEEDS_HUMAN；首轮保留 |
+| 最新网站原始评价 | NEEDS\_HUMAN；首轮保留 |
 
 ### 5. [EXTRA] 与覆盖缺口
 
 - [EXTRA]实际正维单位周期lift，cocompact表达配置无穷远；不是动量Hamiltonian的围束。
-- [EXTRA] 原文版忠实性与数学疑误分开；补齐所交条目所属的现有_corrected完整签名，不从repair_log名称推断网站已通过修正版。
+- [EXTRA] 原文版忠实性与数学疑误分开；补齐所交条目所属的现有\_corrected完整签名，不从repair\_log名称推断网站已通过修正版。
 
 ### 6. 审计结论（含网站结论）
 
-网站原返回：NEEDS_HUMAN。Printed对正维欧氏lift同时要求C∞、整数平移周期、cocompact处趋∞，确实忠实表达原矛盾资格；hn排除零维真空情况。不应要求构造满足它的势。
+网站原返回：NEEDS\_HUMAN。Printed对正维欧氏lift同时要求C∞、整数平移周期、cocompact处趋∞，确实忠实表达原矛盾资格；hn排除零维真空情况。不应要求构造满足它的势。
 当前处理：原文疑误或语义范围待导师；不冒称未提供版本已通过。
 保留所交版本的明确结论。
 本地编译和逐声明依赖核对通过。原文疑误、各限定/修正版、反例的评价分别列出；有未完成证明依赖的声明仍为未证。
@@ -11760,7 +12779,7 @@ theorem periodicConfiningPrinted_corrected {Nc : ℕ}
 
 | 声明 | 证明状态 | 未证原因 | 网站分版结论 |
 |---|---|---|---|
-| `MD.Ch06.periodicConfiningPrinted` | 定义 | — | 原文忠实性PASS；原书数学/范围NEEDS_HUMAN |
+| `MD.Ch06.periodicConfiningPrinted` | 定义 | — | 原文忠实性PASS；原书数学/范围NEEDS\_HUMAN |
 
 位置：`Blueprint/Ch06.lean:2783`；本地核验记录：`blueprint/ch06/closeout26/FINAL_COMPILE.log`。
 
@@ -11771,7 +12790,12 @@ theorem periodicConfiningPrinted_corrected {Nc : ℕ}
 ### 1. 原文陈述
 
 > For the Lyapunov condition (Assumption 2), we choose the Lyapunov function
-> \[\varphi(q,p)=H^l(q,p)=\left[\tfrac12\|p\|^2+U(q)\right]^l;\]
+
+$$
+\varphi(q,p)=H^l(q,p)=\left[\tfrac12\|p\|^2+U(q)\right]^l;
+$$
+
+
 > for a fixed positive integer $l$.
 
 ### 2. 原文证明
@@ -11789,7 +12813,7 @@ noncomputable def hamiltonianPower {Nc : ℕ} (U : (Fin Nc → ℝ) → ℝ) (l 
 
 | 原文对象或结论 | 当前Lean与范围 |
 |---|---|
-| 所引原句 | 本条所引原句及展示公式；单个记号归入context_notation。 |
+| 所引原句 | 本条所引原句及展示公式；单个记号归入context\_notation。 |
 | 对象、域、量词及前提 | 以上完整声明；额外资格与未覆盖部分见下一段 |
 | 最新网站原始评价 | PASS；首轮保留 |
 
@@ -11819,7 +12843,12 @@ noncomputable def hamiltonianPower {Nc : ℕ} (U : (Fin Nc → ℝ) → ℝ) (l 
 ### 1. 原文陈述
 
 > we can see that
-> \[p\cdot\nabla_q\varphi-\nabla U(q)\cdot\nabla_p\varphi=\mathcal L_H\varphi=0;\]
+
+$$
+p\cdot\nabla_q\varphi-\nabla U(q)\cdot\nabla_p\varphi=\mathcal L_H\varphi=0;
+$$
+
+
 > where $\mathcal L_H$ is the Lie derivative of our original Hamiltonian system (which preserves all functions of the Hamiltonian).
 
 ### 2. 原文证明
@@ -11840,7 +12869,7 @@ theorem hamiltonianPowerCancellation {n : ℕ} (U : (Fin n → ℝ) → ℝ)
 
 | 原文对象或结论 | 当前Lean与范围 |
 |---|---|
-| 所引原句 | 本条所引原句及展示公式；单个记号归入context_notation。 |
+| 所引原句 | 本条所引原句及展示公式；单个记号归入context\_notation。 |
 | 对象、域、量词及前提 | 以上完整声明；额外资格与未覆盖部分见下一段 |
 | 最新网站原始评价 | PASS；首轮保留 |
 
@@ -11870,7 +12899,12 @@ theorem hamiltonianPowerCancellation {n : ℕ} (U : (Fin n → ℝ) → ℝ)
 ### 1. 原文陈述
 
 > Using $\|p\|^2<2H$, we compute derivatives to find
-> \[p\cdot\nabla_p\varphi=lH^{l-1}\|p\|^2=2l\varphi-2lH^{l-1}U(q).\]
+
+$$
+p\cdot\nabla_p\varphi=lH^{l-1}\|p\|^2=2l\varphi-2lH^{l-1}U(q).
+$$
+
+
 
 ### 2. 原文证明
 
@@ -11914,7 +12948,7 @@ theorem hamiltonianPowerMomentumDerivative : ∀ {n : ℕ} (U : (Fin n → ℝ) 
 
 | 原文对象或结论 | 当前Lean与范围 |
 |---|---|
-| 所引原句 | 本条所引原句及展示公式；单个记号归入context_notation。 |
+| 所引原句 | 本条所引原句及展示公式；单个记号归入context\_notation。 |
 | 对象、域、量词及前提 | 以上完整声明；额外资格与未覆盖部分见下一段 |
 | 最新网站原始评价 | PASS；首轮保留 |
 
@@ -11943,7 +12977,12 @@ theorem hamiltonianPowerMomentumDerivative : ∀ {n : ℕ} (U : (Fin n → ℝ) 
 
 ### 1. 原文陈述
 
-> \[\Delta_p\varphi=l(l-1)H^{l-2}\|p\|^2+N_clH^{l-1}\le l(l+N_c-1)H^{l-1}.\]
+
+$$
+\Delta_p\varphi=l(l-1)H^{l-2}\|p\|^2+N_clH^{l-1}\le l(l+N_c-1)H^{l-1}.
+$$
+
+
 
 ### 2. 原文证明
 
@@ -11980,7 +13019,7 @@ theorem laplacianBoundCorrect {Nc : ℕ}
 |---|---|
 | 所引原句 | 原印刷等式及错误上界均保留。目标主声明只给精确等式；随包关联声明laplacianBoundPrinted和laplacianBoundCorrect分别作字面忠实性与修正正确性审校。 |
 | 对象、域、量词及前提 | 以上完整声明；额外资格与未覆盖部分见下一段 |
-| 最新网站原始评价 | NEEDS_HUMAN；复审 |
+| 最新网站原始评价 | NEEDS\_HUMAN；复审 |
 
 ### 5. [EXTRA] 与覆盖缺口
 
@@ -11991,7 +13030,7 @@ theorem laplacianBoundCorrect {Nc : ℕ}
 
 ### 6. 审计结论（含网站结论）
 
-网站原返回：NEEDS_HUMAN。A：原页的动量Laplacian精确等式和上界系数l(l+Nc−1)均准确转录，应保留原错误系数作疑误。C分版本：hamiltonianPowerMomentumLaplacian为PASS；相空间两分量确为(q,p)，H=Σpᵢ²/2+U(q)，沿(0,eᵢ)作两次一元导数再求和，结论是完整精确等式。l为正自然数；l=1时(l−2)的自然数截断无害，因为前系数l(l−1)=0；对任意U也合理，因为只对动量微分。附带给出的laplacianBoundPrinted忠实保留原上界，但该不等式错误，应NEEDS_HUMAN而非因数学错误将字面忠实版判FAIL。laplacianBoundCorrect的系数2l(l−1)+Ncl，在U≥1前提下是正确上界，签名PASS。JSON现称上界“不属于本条”，但本包又列出了两份上界声明；应明确它们是随包核对的关联声明，不能只审等式后声称原不等式已成立。
+网站原返回：NEEDS\_HUMAN。A：原页的动量Laplacian精确等式和上界系数l(l+Nc−1)均准确转录，应保留原错误系数作疑误。C分版本：hamiltonianPowerMomentumLaplacian为PASS；相空间两分量确为(q,p)，H=Σpᵢ²/2+U(q)，沿(0,eᵢ)作两次一元导数再求和，结论是完整精确等式。l为正自然数；l=1时(l−2)的自然数截断无害，因为前系数l(l−1)=0；对任意U也合理，因为只对动量微分。附带给出的laplacianBoundPrinted忠实保留原上界，但该不等式错误，应NEEDS\_HUMAN而非因数学错误将字面忠实版判FAIL。laplacianBoundCorrect的系数2l(l−1)+Ncl，在U≥1前提下是正确上界，签名PASS。JSON现称上界“不属于本条”，但本包又列出了两份上界声明；应明确它们是随包核对的关联声明，不能只审等式后声称原不等式已成立。
 当前处理：修正版/限定声明=网站PASS；原文疑误或范围解释待导师。
 精确等式与修正版上界2l(l−1)+Ncl获PASS；随包原上界l(l+Nc−1)保留疑误，三者分别登记。
 本地编译和逐声明依赖核对通过。原文疑误、各限定/修正版、反例的评价分别列出；有未完成证明依赖的声明仍为未证。
@@ -12010,7 +13049,12 @@ theorem laplacianBoundCorrect {Nc : ℕ}
 
 ### 1. 原文陈述
 
-> \[\Delta_p\varphi=l(l-1)H^{l-2}\|p\|^2+N_clH^{l-1}\le l(l+N_c-1)H^{l-1}.\]
+
+$$
+\Delta_p\varphi=l(l-1)H^{l-2}\|p\|^2+N_clH^{l-1}\le l(l+N_c-1)H^{l-1}.
+$$
+
+
 
 ### 2. 原文证明
 
@@ -12042,17 +13086,17 @@ theorem laplacianBoundPrinted_corrected {Nc : ℕ}
 
 | 原文对象或结论 | 当前Lean与范围 |
 |---|---|
-| 所引原句 | 本条所引原句及展示公式；单个记号归入context_notation。 |
+| 所引原句 | 本条所引原句及展示公式；单个记号归入context\_notation。 |
 | 对象、域、量词及前提 | 以上完整声明；额外资格与未覆盖部分见下一段 |
-| 最新网站原始评价 | NEEDS_HUMAN；首轮保留 |
+| 最新网站原始评价 | NEEDS\_HUMAN；首轮保留 |
 
 ### 5. [EXTRA] 与覆盖缺口
 
-- [EXTRA] 原文版忠实性与数学疑误分开；补齐所交条目所属的现有_corrected完整签名，不从repair_log名称推断网站已通过修正版。
+- [EXTRA] 原文版忠实性与数学疑误分开；补齐所交条目所属的现有\_corrected完整签名，不从repair\_log名称推断网站已通过修正版。
 
 ### 6. 审计结论（含网站结论）
 
-网站原返回：NEEDS_HUMAN。原字面上界的量词n、U≥1、l≥1、全部相点及系数l(l+n−1)忠实；原数学断言错误，按要求保留而不把原书错误算作转录失败。
+网站原返回：NEEDS\_HUMAN。原字面上界的量词n、U≥1、l≥1、全部相点及系数l(l+n−1)忠实；原数学断言错误，按要求保留而不把原书错误算作转录失败。
 当前处理：原文疑误或语义范围待导师；不冒称未提供版本已通过。
 保留所交版本的明确结论。
 本地编译和逐声明依赖核对通过。原文疑误、各限定/修正版、反例的评价分别列出；有未完成证明依赖的声明仍为未证。
@@ -12061,7 +13105,7 @@ theorem laplacianBoundPrinted_corrected {Nc : ℕ}
 
 | 声明 | 证明状态 | 未证原因 | 网站分版结论 |
 |---|---|---|---|
-| `MD.Ch06.laplacianBoundPrinted` | 未证 | 原书疑误不证 | 原文忠实性PASS；原书数学/范围NEEDS_HUMAN |
+| `MD.Ch06.laplacianBoundPrinted` | 未证 | 原书疑误不证 | 原文忠实性PASS；原书数学/范围NEEDS\_HUMAN |
 
 位置：`Blueprint/Ch06.lean:2845`；本地核验记录：`blueprint/ch06/closeout26/FINAL_COMPILE.log`。
 
@@ -12071,7 +13115,12 @@ theorem laplacianBoundPrinted_corrected {Nc : ℕ}
 
 ### 1. 原文陈述
 
-> \[\Delta_p\varphi=l(l-1)H^{l-2}\|p\|^2+N_clH^{l-1}\le l(l+N_c-1)H^{l-1}.\]
+
+$$
+\Delta_p\varphi=l(l-1)H^{l-2}\|p\|^2+N_clH^{l-1}\le l(l+N_c-1)H^{l-1}.
+$$
+
+
 
 ### 2. 原文证明
 
@@ -12091,7 +13140,7 @@ theorem laplacianBoundCounterexample :
 
 | 原文对象或结论 | 当前Lean与范围 |
 |---|---|
-| 所引原句 | 本条所引原句及展示公式；单个记号归入context_notation。 |
+| 所引原句 | 本条所引原句及展示公式；单个记号归入context\_notation。 |
 | 对象、域、量词及前提 | 以上完整声明；额外资格与未覆盖部分见下一段 |
 | 最新网站原始评价 | PASS；首轮保留 |
 
@@ -12121,9 +13170,19 @@ theorem laplacianBoundCounterexample :
 ### 1. 原文陈述
 
 > Computing the generator of Langevin dynamics as
-> \[\mathcal L_{LD}f=p\cdot\nabla_qf-\nabla U(q)\cdot\nabla_pf-\gamma p\cdot\nabla_pf+\gamma k_BT\Delta_p\varphi,\]
+
+$$
+\mathcal L_{LD}f=p\cdot\nabla_qf-\nabla U(q)\cdot\nabla_pf-\gamma p\cdot\nabla_pf+\gamma k_BT\Delta_p\varphi,
+$$
+
+
 > we can see that $\mathcal L_H\varphi=0$. Hence
-> \[\mathcal L_{LD}\varphi=-\gamma p\cdot\nabla_p\varphi+\gamma k_BT\Delta_p\varphi.\]
+
+$$
+\mathcal L_{LD}\varphi=-\gamma p\cdot\nabla_p\varphi+\gamma k_BT\Delta_p\varphi.
+$$
+
+
 
 ### 2. 原文证明
 
@@ -12146,7 +13205,7 @@ theorem hamiltonianPowerGenerator {Nc : ℕ}
 
 | 原文对象或结论 | 当前Lean与范围 |
 |---|---|
-| 所引原句 | 本条所引原句及展示公式；单个记号归入context_notation。 |
+| 所引原句 | 本条所引原句及展示公式；单个记号归入context\_notation。 |
 | 对象、域、量词及前提 | 以上完整声明；额外资格与未覆盖部分见下一段 |
 | 最新网站原始评价 | PASS；首轮保留 |
 
@@ -12175,7 +13234,12 @@ theorem hamiltonianPowerGenerator {Nc : ℕ}
 
 ### 1. 原文陈述
 
-> \[\Delta_p\varphi=l(l-1)H^{l-2}\|p\|^2+N_clH^{l-1}\le l(l+N_c-1)H^{l-1}.\]
+
+$$
+\Delta_p\varphi=l(l-1)H^{l-2}\|p\|^2+N_clH^{l-1}\le l(l+N_c-1)H^{l-1}.
+$$
+
+
 
 ### 2. 原文证明
 
@@ -12206,7 +13270,7 @@ theorem laplacianBoundPrinted_corrected {Nc : ℕ}
 
 | 原文对象或结论 | 当前Lean与范围 |
 |---|---|
-| 所引原句 | 本条所引原句及展示公式；单个记号归入context_notation。 |
+| 所引原句 | 本条所引原句及展示公式；单个记号归入context\_notation。 |
 | 对象、域、量词及前提 | 以上完整声明；额外资格与未覆盖部分见下一段 |
 | 最新网站原始评价 | PASS；首轮保留 |
 
@@ -12216,7 +13280,7 @@ theorem laplacianBoundPrinted_corrected {Nc : ℕ}
 
 ### 6. 审计结论（含网站结论）
 
-网站原返回：PASS。逐坐标动量二阶导数总和，n与l全量词，U≥1确保H≥1。由∑p_i²≤2H得正确系数2l(l−1)+nl；l=1也成立。[EXTRA]已明确这是勘误版。
+网站原返回：PASS。逐坐标动量二阶导数总和，n与l全量词，U≥1确保H≥1。由∑p\_i²≤2H得正确系数2l(l−1)+nl；l=1也成立。[EXTRA]已明确这是勘误版。
 当前处理：网站PASS（首轮未改版本）。
 保留所交版本的明确结论。
 本地编译和逐声明依赖核对通过。原文疑误、各限定/修正版、反例的评价分别列出；有未完成证明依赖的声明仍为未证。
@@ -12237,7 +13301,12 @@ theorem laplacianBoundPrinted_corrected {Nc : ℕ}
 ### 1. 原文陈述
 
 > As $H^l$ grows faster than $H^{l-1}$, for any fixed $l$ we are able to find positive constants $c$ and $d$ such that
-> \[l(l+N_c-1)H^{l-1}\le\tfrac l2H^l+c;\qquad 2lH^{l-1}U(q)<2lH^{l-1}U_{\max}\le\tfrac l2H^l+d.\]
+
+$$
+l(l+N_c-1)H^{l-1}\le\tfrac l2H^l+c;\qquad 2lH^{l-1}U(q)<2lH^{l-1}U_{\max}\le\tfrac l2H^l+d.
+$$
+
+
 
 ### 2. 原文证明
 
@@ -12324,7 +13393,7 @@ theorem lyapunovYoungBoundsPrinted_counterexample :
 
 | 原文对象或结论 | 当前Lean与范围 |
 |---|---|
-| 所引原句 | 本条所引原句及展示公式；单个记号归入context_notation。 |
+| 所引原句 | 本条所引原句及展示公式；单个记号归入context\_notation。 |
 | 对象、域、量词及前提 | 以上完整声明；额外资格与未覆盖部分见下一段 |
 | 最新网站原始评价 | PASS；首轮保留 |
 
@@ -12357,9 +13426,12 @@ theorem lyapunovYoungBoundsPrinted_counterexample :
 ### 1. 原文陈述
 
 > giving
-> \[\mathcal L_{LD}\varphi\le-2\gamma l\varphi+2\gamma lH^{l-1}U(q)+\gamma l(l+N_c-1)H^{l-1}
-> \le-\gamma l\varphi+\gamma c+\gamma d
-> \le-\alpha\varphi+\delta,\]
+
+$$
+\mathcal L_{LD}\varphi\le-2\gamma l\varphi+2\gamma lH^{l-1}U(q)+\gamma l(l+N_c-1)H^{l-1} \le-\gamma l\varphi+\gamma c+\gamma d \le-\alpha\varphi+\delta,
+$$
+
+
 > satisfying Assumption 2. The purpose of using the $l$ exponent in the Lyapunov function is to ensure that we can apply the theorem to a wide enough class of observables, as (6.48) is only valid for functions $f$ with magnitude less than or equal to the Lyapunov function.
 
 ### 2. 原文证明
@@ -12403,7 +13475,7 @@ theorem periodicConfiningPrinted_corrected {Nc : ℕ}
 
 | 原文对象或结论 | 当前Lean与范围 |
 |---|---|
-| 所引原句 | 本条所引原句及展示公式；单个记号归入context_notation。 |
+| 所引原句 | 本条所引原句及展示公式；单个记号归入context\_notation。 |
 | 对象、域、量词及前提 | 以上完整声明；额外资格与未覆盖部分见下一段 |
 | 最新网站原始评价 | PASS；首轮保留 |
 
@@ -12434,9 +13506,19 @@ theorem periodicConfiningPrinted_corrected {Nc : ℕ}
 ### 1. 原文陈述
 
 > The Lie bracket of a pair of vector fields $u(z),v(z)$ is another vector field
-> \[[u,v]=v'u-u'v;\]
+
+$$
+[u,v]=v'u-u'v;
+$$
+
+
 > where $u'$ is the Jacobian matrix of the vector field $u$. In coordinates, if we let $w=[u,v]$, then the coordinates of $w$ are
-> \[w_i=\sum_{j=1}^m\left(\frac{\partial v_i}{\partial z_j}u_j-\frac{\partial u_i}{\partial z_j}v_j\right).\]
+
+$$
+w_i=\sum_{j=1}^m\left(\frac{\partial v_i}{\partial z_j}u_j-\frac{\partial u_i}{\partial z_j}v_j\right).
+$$
+
+
 
 ### 2. 原文证明
 
@@ -12455,7 +13537,7 @@ def lieBracket {n : ℕ} (D : Set (Fin n → ℝ)) (_hD : IsOpen D)
 
 | 原文对象或结论 | 当前Lean与范围 |
 |---|---|
-| 所引原句 | 本条所引原句及展示公式；单个记号归入context_notation。 |
+| 所引原句 | 本条所引原句及展示公式；单个记号归入context\_notation。 |
 | 对象、域、量词及前提 | 以上完整声明；额外资格与未覆盖部分见下一段 |
 | 最新网站原始评价 | PASS；首轮保留 |
 
@@ -12529,7 +13611,7 @@ theorem lieBracketProperties : ∀ {n : ℕ} (u v w : (Fin n → ℝ) → (Fin n
 
 | 原文对象或结论 | 当前Lean与范围 |
 |---|---|
-| 所引原句 | 本条所引原句及展示公式；单个记号归入context_notation。 |
+| 所引原句 | 本条所引原句及展示公式；单个记号归入context\_notation。 |
 | 对象、域、量词及前提 | 以上完整声明；额外资格与未覆盖部分见下一段 |
 | 最新网站原始评价 | PASS；首轮保留 |
 
@@ -12559,7 +13641,12 @@ theorem lieBracketProperties : ∀ {n : ℕ} (u v w : (Fin n → ℝ) → (Fin n
 ### 1. 原文陈述
 
 > Definition 6.1 (Hörmander's Condition) Let $U\subset\mathbb R^m$ be open. The SDE (6.43) with $C^\infty$ vector fields $b_0,b_1,\ldots,b_r:U\to\mathbb R^m$ are said to satisfy Hörmander's condition at $z\in U$ if the vector space spanned by the collection of iterated Lie brackets
-> \[b_0,b_1,\ldots,b_r,[b_0,b_1],[b_0,b_2],\ldots,[b_{r-1},b_r],[b_0,[b_0,b_1]],\ldots\]
+
+$$
+b_0,b_1,\ldots,b_r,[b_0,b_1],[b_0,b_2],\ldots,[b_{r-1},b_r],[b_0,[b_0,b_1]],\ldots
+$$
+
+
 > (evaluated at $z$) is $\mathbb R^m$.
 
 ### 2. 原文证明
@@ -12596,7 +13683,7 @@ def definition61Printed {m S : ℕ} (D : Set (Fin m → ℝ)) (_hD : IsOpen D)
 
 | 原文对象或结论 | 当前Lean与范围 |
 |---|---|
-| 所引原句 | 本条所引原句及展示公式；单个记号归入context_notation。 |
+| 所引原句 | 本条所引原句及展示公式；单个记号归入context\_notation。 |
 | 对象、域、量词及前提 | 以上完整声明；额外资格与未覆盖部分见下一段 |
 | 最新网站原始评价 | PASS；复审 |
 
@@ -12631,7 +13718,12 @@ def definition61Printed {m S : ℕ} (D : Set (Fin m → ℝ)) (_hD : IsOpen D)
 ### 1. 原文陈述
 
 > In the case of Langevin dynamics, we identify the vectors $b_i$ in (6.43) with the terms in (6.47). One puts Langevin dynamics into the correct form by using
-> \[b_0=\begin{bmatrix}p\\-\nabla U(q)-\gamma p\end{bmatrix},\qquad b_i=\sigma\begin{bmatrix}0\\e_i\end{bmatrix},\quad i=1,2,\ldots,N_c,\]
+
+$$
+b_0=\begin{bmatrix}p\\-\nabla U(q)-\gamma p\end{bmatrix},\qquad b_i=\sigma\begin{bmatrix}0\\e_i\end{bmatrix},\quad i=1,2,\ldots,N_c,
+$$
+
+
 > where $e_i$ is the $i$th Euclidean basis vector in $\mathbb R^{N_c}$ and $\sigma=\sqrt{2\gamma k_BT}$ is constant.
 
 ### 2. 原文证明
@@ -12653,7 +13745,7 @@ def langevinNoise (Nc : ℕ) (σ : ℝ) (i : Fin Nc) :
 
 | 原文对象或结论 | 当前Lean与范围 |
 |---|---|
-| 所引原句 | 本条所引原句及展示公式；单个记号归入context_notation。 |
+| 所引原句 | 本条所引原句及展示公式；单个记号归入context\_notation。 |
 | 对象、域、量词及前提 | 以上完整声明；额外资格与未覆盖部分见下一段 |
 | 最新网站原始评价 | PASS；首轮保留 |
 
@@ -12663,7 +13755,7 @@ def langevinNoise (Nc : ℕ) (σ : ℝ) (i : Fin Nc) :
 
 ### 6. 审计结论（含网站结论）
 
-网站原返回：PASS。实际Drift为(p,−∇U−γp)，Noise为(0,σe_i)，Fin Nc覆盖全部坐标。C∞资格和通用σ/物理代入均已说明；噪声定义自身不是Wiener定律。
+网站原返回：PASS。实际Drift为(p,−∇U−γp)，Noise为(0,σe\_i)，Fin Nc覆盖全部坐标。C∞资格和通用σ/物理代入均已说明；噪声定义自身不是Wiener定律。
 当前处理：网站PASS（首轮未改版本）。
 保留所交版本的明确结论。
 本地编译和逐声明依赖核对通过。原文疑误、各限定/修正版、反例的评价分别列出；有未完成证明依赖的声明仍为未证。
@@ -12684,8 +13776,12 @@ def langevinNoise (Nc : ℕ) (σ : ℝ) (i : Fin Nc) :
 ### 1. 原文陈述
 
 > For $i=1,2,\ldots,N_c$, we have, using the fact that $b_i$ is a constant vector field and so its Jacobian matrix vanishes,
-> \[[b_0,b_i]=-\begin{bmatrix}0&I\\-U''(q)&-\gamma I\end{bmatrix}b_i
-> =-\sigma\begin{bmatrix}e_i\\-\gamma e_i\end{bmatrix}.\]
+
+$$
+[b_0,b_i]=-\begin{bmatrix}0&I\\-U''(q)&-\gamma I\end{bmatrix}b_i =-\sigma\begin{bmatrix}e_i\\-\gamma e_i\end{bmatrix}.
+$$
+
+
 
 ### 2. 原文证明
 
@@ -12706,7 +13802,7 @@ theorem langevinNoiseBracket {Nc : ℕ}
 
 | 原文对象或结论 | 当前Lean与范围 |
 |---|---|
-| 所引原句 | 本条所引原句及展示公式；单个记号归入context_notation。 |
+| 所引原句 | 本条所引原句及展示公式；单个记号归入context\_notation。 |
 | 对象、域、量词及前提 | 以上完整声明；额外资格与未覆盖部分见下一段 |
 | 最新网站原始评价 | PASS；首轮保留 |
 
@@ -12716,7 +13812,7 @@ theorem langevinNoiseBracket {Nc : ℕ}
 
 ### 6. 审计结论（含网站结论）
 
-网站原返回：PASS。C²势足以使力可微；常字段导数为零，−Db0·bi=(−σe_i,σγe_i)，与原符号和全部i,z吻合；σ=0也允许本恒等式。
+网站原返回：PASS。C²势足以使力可微；常字段导数为零，−Db0·bi=(−σe\_i,σγe\_i)，与原符号和全部i,z吻合；σ=0也允许本恒等式。
 当前处理：网站PASS（首轮未改版本）。
 保留所交版本的明确结论。
 本地编译和逐声明依赖核对通过。原文疑误、各限定/修正版、反例的评价分别列出；有未完成证明依赖的声明仍为未证。
@@ -12753,7 +13849,7 @@ theorem langevinBracketIndependent (Nc : ℕ) (γ σ : ℝ) (hσ : σ ≠ 0) :
 
 | 原文对象或结论 | 当前Lean与范围 |
 |---|---|
-| 所引原句 | 本条所引原句及展示公式；单个记号归入context_notation。 |
+| 所引原句 | 本条所引原句及展示公式；单个记号归入context\_notation。 |
 | 对象、域、量词及前提 | 以上完整声明；额外资格与未覆盖部分见下一段 |
 | 最新网站原始评价 | PASS；首轮保留 |
 
@@ -12804,7 +13900,7 @@ theorem langevinHormander {Nc : ℕ}
 |---|---|
 | 所引原句 | Lean仅覆盖实际Langevin向量场的原书括号秩条件；转移密度由条目14的正时刻修正版承接。 |
 | 对象、域、量词及前提 | 以上完整声明；额外资格与未覆盖部分见下一段 |
-| 最新网站原始评价 | NEEDS_HUMAN；复审 |
+| 最新网站原始评价 | NEEDS\_HUMAN；复审 |
 
 ### 5. [EXTRA] 与覆盖缺口
 
@@ -12817,7 +13913,7 @@ theorem langevinHormander {Nc : ℕ}
 
 ### 6. 审计结论（含网站结论）
 
-网站原返回：NEEDS_HUMAN。A：所引两句与原页相符；原页在此前已明确计算漂移、噪声及第一层括号并说明2Nc个向量线性无关，proof_note不应让人误以为没有这段论证。C：rank声明自身PASS：状态为实配置×实动量，漂移(p,−∇U−γp)，噪声(0,σeᵢ)，σ=√(2γθ)且γ、θ正；给出每个z处的全部迭代括号span=整个相空间。Nc=0时是零维的无害情形。D95–D97以及实际seed均已展开，不是把rank结论当作假设。签名只给含漂移种子族的原书秩条件，没有直接给出转移密度或Assumption 1(ii)的联合连续性；这种拆分在EXTRA已有说明，需同步修正statement_scope和coverage_gaps。引文后半句的原Assumption 1(ii)实际写到t=0，正时刻密度即使正确，也不能自动覆盖这个端点，故原书层面的合并断言仍NEEDS_HUMAN。
+网站原返回：NEEDS\_HUMAN。A：所引两句与原页相符；原页在此前已明确计算漂移、噪声及第一层括号并说明2Nc个向量线性无关，proof\_note不应让人误以为没有这段论证。C：rank声明自身PASS：状态为实配置×实动量，漂移(p,−∇U−γp)，噪声(0,σeᵢ)，σ=√(2γθ)且γ、θ正；给出每个z处的全部迭代括号span=整个相空间。Nc=0时是零维的无害情形。D95–D97以及实际seed均已展开，不是把rank结论当作假设。签名只给含漂移种子族的原书秩条件，没有直接给出转移密度或Assumption 1(ii)的联合连续性；这种拆分在EXTRA已有说明，需同步修正statement\_scope和coverage\_gaps。引文后半句的原Assumption 1(ii)实际写到t=0，正时刻密度即使正确，也不能自动覆盖这个端点，故原书层面的合并断言仍NEEDS\_HUMAN。
 当前处理：修正版/限定声明=网站PASS；原文疑误或范围解释待导师。
 原页已给噪声、漂移及第一层括号的线性独立论证。本条只给秩条件；正时刻密度另列，原Assumption1(ii)含零时刻端点仍有疑。
 本地编译和逐声明依赖核对通过。原文疑误、各限定/修正版、反例的评价分别列出；有未完成证明依赖的声明仍为未证。
@@ -12867,19 +13963,19 @@ theorem langevinTransitionDensity :
 |---|---|
 | 所引原句 | 原引文保留；Lean覆盖实际周期单位质量Langevin核在t>0的联合连续转移密度及全部可测集合表示。 |
 | 对象、域、量词及前提 | 以上完整声明；额外资格与未覆盖部分见下一段 |
-| 最新网站原始评价 | NEEDS_HUMAN；复审 |
+| 最新网站原始评价 | NEEDS\_HUMAN；复审 |
 
 ### 5. [EXTRA] 与覆盖缺口
 
 - [EXTRA]具体实际单位周期Langevin、C∞势、正γ/β，全部点初值的正时间连续转移密度及真实平坦相空间测度表示；没有从含drift的任意原Definition6.1断言一般parabolic密度定理。
-- [EXTRA] 补actual_path_solution_exists完整存在类型及所选解满足初值/积分方程的规格；不把缺摘录误记原书问题。
+- [EXTRA] 补actual\_path\_solution\_exists完整存在类型及所选解满足初值/积分方程的规格；不把缺摘录误记原书问题。
 - [ERRATUM?] 原Assumption 1(ii)的[0,∞)应就转移密度连续性改为(0,∞)；点初值在零时刻是Dirac测度。
 - [EXTRA] 复审范围：网站PASS的是正时刻联合连续密度限定版；原[0,∞)连续密度端点需勘误。
 - 覆盖缺口：原Assumption 1(ii)在t=0的联合连续端点不成立/未按原文形式化，须勘误签核。
 
 ### 6. 审计结论（含网站结论）
 
-网站原返回：NEEDS_HUMAN。A：所引“Thus Assumption 1(ii) holds in the case of Langevin dynamics.”原句准确；须连同其所引用的Assumption 1(ii)核对，不能只看该短句。C：当前正时刻限定签名PASS：真实周期单位质量Langevin端点核、C∞周期势和Lipschitz力、β和γ正、物理幅度√(2γ/β)、真实Wiener过程。D17、D19–D23及D28–D31说明是实际积分解的推前核；flatPhaseMeasure为真实平坦相空间测度。ρ先于所有t>0、x、可测A选择，在(x,z,t)联合变量上ContinuousOn(univ×(0,∞))，并给出全部可测集合上的限制积分表示；这是全密度结论，不是仅有限检验函数相等，也未把密度存在当作假设。原书Assumption 1(ii)却要求C×C×[0,∞)联合连续，当前声明有意改成t>0。该修改合理且必要，但应明标[ERRATUM?]并由人工认可；它不是原Assumption 1(ii)端点的完整忠实实现。
+网站原返回：NEEDS\_HUMAN。A：所引“Thus Assumption 1(ii) holds in the case of Langevin dynamics.”原句准确；须连同其所引用的Assumption 1(ii)核对，不能只看该短句。C：当前正时刻限定签名PASS：真实周期单位质量Langevin端点核、C∞周期势和Lipschitz力、β和γ正、物理幅度√(2γ/β)、真实Wiener过程。D17、D19–D23及D28–D31说明是实际积分解的推前核；flatPhaseMeasure为真实平坦相空间测度。ρ先于所有t>0、x、可测A选择，在(x,z,t)联合变量上ContinuousOn(univ×(0,∞))，并给出全部可测集合上的限制积分表示；这是全密度结论，不是仅有限检验函数相等，也未把密度存在当作假设。原书Assumption 1(ii)却要求C×C×[0,∞)联合连续，当前声明有意改成t>0。该修改合理且必要，但应明标[ERRATUM?]并由人工认可；它不是原Assumption 1(ii)端点的完整忠实实现。
 当前处理：修正版/限定声明=网站PASS；原文疑误或范围解释待导师。
 网站PASS的是正时刻联合连续密度限定版；原[0,∞)连续密度端点需勘误。
 本地编译和逐声明依赖核对通过。原文疑误、各限定/修正版、反例的评价分别列出；有未完成证明依赖的声明仍为未证。
@@ -12899,7 +13995,12 @@ theorem langevinTransitionDensity :
 ### 1. 原文陈述
 
 > Lemma 6.1 For all $t>0$ and all open $C\subset D$, we have that
-> \[\Pr(X(t)\in C\mid X(0)=X_0)>0,\quad\forall X_0\in D,\]
+
+$$
+\Pr(X(t)\in C\mid X(0)=X_0)>0,\quad\forall X_0\in D,
+$$
+
+
 > where $X(t)=(q(t),p(t))^T$ is a solution to Langevin dynamics (6.47).
 
 ### 2. 原文证明
@@ -12930,12 +14031,12 @@ theorem lemma61Printed {N : ℕ} {Ω : Type*} [MeasurableSpace Ω]
 ### 5. [EXTRA] 与覆盖缺口
 
 - [EXTRA] kind恢复编号lemma；Printed收回原(6.47)正摩擦γ>0及物理噪声σ=√(2γθ)、θ=kBT>0的参数域，保留所有开集（包括空集）的原断言。任意实γ/非零σ的推广只留在非空修正版；漏C.Nonempty是原书疑误，不证明Printed。
-- [ERRATUM?] 原书数学疑误与本次形式化修复分别记录，见CH06_ERRATA。
+- [ERRATUM?] 原书数学疑误与本次形式化修复分别记录，见CH06\_ERRATA。
 - 覆盖缺口：原书漏非空目标；Printed忠实保留空集漏洞。
 
 ### 6. 审计结论（含网站结论）
 
-网站原返回：FAIL。A：Lemma 6.1的标题、所有t>0、所有开集、全部点初值及原式准确；kind应为编号lemma而不是unnumbered_claim。C：缺少C.Nonempty忠实保留了原文的空集漏洞，这个数学错误应NEEDS_HUMAN，不能仅因此判Printed签名FAIL。实际端点核的定义、时间正性、全部点初值及周期单位质量相空间均已核对。不过原页把过程指定为(6.47)，其γ为正且噪声为√(2γkBT)；当前Printed却量化任意实γ和任意非零实σ，额外覆盖γ≤0及不满足物理噪声关系的过程。它们可用于有限时刻开放集可达性的正确推广，但该推广没有在本条EXTRA中完整披露，也不是(6.47)的字面参数域。按Printed必须审忠实性的要求，本条因参数域扩张FAIL；原书空集错误仍独立标NEEDS_HUMAN。此结论不依据sorry。
+网站原返回：FAIL。A：Lemma 6.1的标题、所有t>0、所有开集、全部点初值及原式准确；kind应为编号lemma而不是unnumbered\_claim。C：缺少C.Nonempty忠实保留了原文的空集漏洞，这个数学错误应NEEDS\_HUMAN，不能仅因此判Printed签名FAIL。实际端点核的定义、时间正性、全部点初值及周期单位质量相空间均已核对。不过原页把过程指定为(6.47)，其γ为正且噪声为√(2γkBT)；当前Printed却量化任意实γ和任意非零实σ，额外覆盖γ≤0及不满足物理噪声关系的过程。它们可用于有限时刻开放集可达性的正确推广，但该推广没有在本条EXTRA中完整披露，也不是(6.47)的字面参数域。按Printed必须审忠实性的要求，本条因参数域扩张FAIL；原书空集错误仍独立标NEEDS\_HUMAN。此结论不依据sorry。
 当前处理：按网站审校意见修复，本地核验通过（未再送网站）。
 kind恢复编号lemma；Printed收回原(6.47)正摩擦γ>0及物理噪声σ=√(2γθ)、θ=kBT>0的参数域，保留所有开集（包括空集）的原断言。任意实γ/非零σ的推广只留在非空修正版；漏C.Nonempty是原书疑误，不证明Printed。
 本地编译和逐声明依赖核对通过。原文疑误、各限定/修正版、反例的评价分别列出；有未完成证明依赖的声明仍为未证。
@@ -12954,7 +14055,12 @@ kind恢复编号lemma；Printed收回原(6.47)正摩擦γ>0及物理噪声σ=√
 
 ### 1. 原文陈述
 
-> \[\Pr(X(t)\in C\mid X(0)=X_0)>0,\quad\forall X_0\in D,\]
+
+$$
+\Pr(X(t)\in C\mid X(0)=X_0)>0,\quad\forall X_0\in D,
+$$
+
+
 
 ### 2. 原文证明
 
@@ -12999,7 +14105,7 @@ theorem lemma61Printed_corrected {N : ℕ} {Ω : Type*} [MeasurableSpace Ω]
 
 ### 6. 审计结论（含网站结论）
 
-网站原返回：PASS。A：该展示式来自同一Lemma 6.1；原页展示式以逗号承接where句，JSON改成句号，已还原。公式单独摘录时需补上原来的t>0、开集C、Langevin解及任意初值的上下文。原页下面有Proof段，当前proof_note应说明仅摘录命题，而不是遗漏这段原书论述。C：两份签名相同且作为修正/推广版均PASS：真实Wiener过程、C∞单位周期势及Lipschitz力、实际单位质量周期端点核；T>0、σ≠0、任意初值x以及非空开集C给出严格正概率。已展开路径存在规格和初值/积分方程、推前核定义，并核对所引open_pos定理的完整文件参数。增加C.Nonempty恰好消除条目15的空集漏洞；γ任意实数、σ任意非零实数是有限时刻可达性的合理推广，不需要为此引入规范不变测度或正摩擦。修正版并未声称一般质量矩阵版本已经覆盖。[EXTRA]应补全该参数推广，不把nonempty写进原文引文冒充原书已印出。
+网站原返回：PASS。A：该展示式来自同一Lemma 6.1；原页展示式以逗号承接where句，JSON改成句号，已还原。公式单独摘录时需补上原来的t>0、开集C、Langevin解及任意初值的上下文。原页下面有Proof段，当前proof\_note应说明仅摘录命题，而不是遗漏这段原书论述。C：两份签名相同且作为修正/推广版均PASS：真实Wiener过程、C∞单位周期势及Lipschitz力、实际单位质量周期端点核；T>0、σ≠0、任意初值x以及非空开集C给出严格正概率。已展开路径存在规格和初值/积分方程、推前核定义，并核对所引open\_pos定理的完整文件参数。增加C.Nonempty恰好消除条目15的空集漏洞；γ任意实数、σ任意非零实数是有限时刻可达性的合理推广，不需要为此引入规范不变测度或正摩擦。修正版并未声称一般质量矩阵版本已经覆盖。[EXTRA]应补全该参数推广，不把nonempty写进原文引文冒充原书已印出。
 当前处理：网站PASS（复审）。
 保留所交版本的明确结论。
 本地编译和逐声明依赖核对通过。原文疑误、各限定/修正版、反例的评价分别列出；有未完成证明依赖的声明仍为未证。
@@ -13020,9 +14126,19 @@ theorem lemma61Printed_corrected {N : ℕ} {Ω : Type*} [MeasurableSpace Ω]
 ### 1. 原文陈述
 
 > Consider the ODE
-> \[\frac{d^2q}{dt^2}+\nabla U(q)+\gamma\frac{dq}{dt}=\sigma\frac{dR}{dt}.\tag{6.49}\]
+
+$$
+\frac{d^2q}{dt^2}+\nabla U(q)+\gamma\frac{dq}{dt}=\sigma\frac{dR}{dt}.\tag{6.49}
+$$
+
+
 > for some positive constants $\gamma$ and $\sigma$. This is precisely Langevin dynamics (6.47), substituting a process $R(t)$ in place of the Wiener process. Choose $q$ to be a $C^\infty$ path such that for a given $t>0$
-> \[(q(0),\dot q(0))^T=X_0;\quad(q(t),\dot q(t))^T=y.\]
+
+$$
+(q(0),\dot q(0))^T=X_0;\quad(q(t),\dot q(t))^T=y.
+$$
+
+
 > Taking $R(0)=0$, we can obtain a $C^\infty$ function $dR/dt$ by substitution.
 
 ### 2. 原文证明
@@ -13047,7 +14163,7 @@ theorem controlPath {Nc : ℕ}
 
 | 原文对象或结论 | 当前Lean与范围 |
 |---|---|
-| 所引原句 | 本条所引原句及展示公式；单个记号归入context_notation。 |
+| 所引原句 | 本条所引原句及展示公式；单个记号归入context\_notation。 |
 | 对象、域、量词及前提 | 以上完整声明；额外资格与未覆盖部分见下一段 |
 | 最新网站原始评价 | PASS；首轮保留 |
 
@@ -13077,7 +14193,12 @@ theorem controlPath {Nc : ℕ}
 ### 1. 原文陈述
 
 > Using the results of [257, Lemma 3.4], we can deduce that for any $\delta>0$, there exists a sufficiently small $\varepsilon>0$ such that if a realization of the Wiener process $W$ remains close to our solution $R$
-> \[\sup_{0\le s\le t}\|W(s)-R(s)\|\le\varepsilon,\tag{6.50}\]
+
+$$
+\sup_{0\le s\le t}\|W(s)-R(s)\|\le\varepsilon,\tag{6.50}
+$$
+
+
 > then $X(t)\in\mathcal B_\delta(y)$. 
 
 ### 2. 原文证明
@@ -13101,7 +14222,7 @@ theorem controlEndpointStable {Nc : ℕ}
 
 | 原文对象或结论 | 当前Lean与范围 |
 |---|---|
-| 所引原句 | 本条所引原句及展示公式；单个记号归入context_notation。 |
+| 所引原句 | 本条所引原句及展示公式；单个记号归入context\_notation。 |
 | 对象、域、量词及前提 | 以上完整声明；额外资格与未覆盖部分见下一段 |
 | 最新网站原始评价 | PASS；首轮保留 |
 
@@ -13151,7 +14272,7 @@ theorem wienerControlTube {Nc : ℕ} {Ω : Type*} [MeasurableSpace Ω]
 
 | 原文对象或结论 | 当前Lean与范围 |
 |---|---|
-| 所引原句 | 本条所引原句及展示公式；单个记号归入context_notation。 |
+| 所引原句 | 本条所引原句及展示公式；单个记号归入context\_notation。 |
 | 对象、域、量词及前提 | 以上完整声明；额外资格与未覆盖部分见下一段 |
 | 最新网站原始评价 | PASS；首轮保留 |
 
@@ -13181,9 +14302,19 @@ theorem wienerControlTube {Nc : ℕ} {Ω : Type*} [MeasurableSpace Ω]
 ### 1. 原文陈述
 
 > Langevin dynamics is geometrically ergodic with respect to the canonical distribution
-> \[\rho_\beta(q,p)=\exp(-\beta H(q,p)),\]
+
+$$
+\rho_\beta(q,p)=\exp(-\beta H(q,p)),
+$$
+
+
 > where it is easily checked that
-> \[\mathcal L_{LD}^\dagger\rho_\beta=0.\]
+
+$$
+\mathcal L_{LD}^\dagger\rho_\beta=0.
+$$
+
+
 
 ### 2. 原文证明
 
@@ -13204,7 +14335,7 @@ theorem langevinCanonicalStationary {N : ℕ}
 
 | 原文对象或结论 | 当前Lean与范围 |
 |---|---|
-| 所引原句 | 本条所引原句及展示公式；单个记号归入context_notation。 |
+| 所引原句 | 本条所引原句及展示公式；单个记号归入context\_notation。 |
 | 对象、域、量词及前提 | 以上完整声明；额外资格与未覆盖部分见下一段 |
 | 最新网站原始评价 | PASS；首轮保留 |
 
@@ -13214,7 +14345,7 @@ theorem langevinCanonicalStationary {N : ℕ}
 
 ### 6. 审计结论（含网站结论）
 
-网站原返回：PASS。实际forward算子全文为−DF·b−div(b)F+σ²Δ_pF/2；散度由全部位置/动量对角方向导数定义，确为平坦前向算子。D56–D57给归一canonical密度，正β、γ及σ=√(2γ/β)完整，逐点平稳式正确。原几何遍历性另列21，本条scope已限stationary differential expression。
+网站原返回：PASS。实际forward算子全文为−DF·b−div(b)F+σ²Δ\_pF/2；散度由全部位置/动量对角方向导数定义，确为平坦前向算子。D56–D57给归一canonical密度，正β、γ及σ=√(2γ/β)完整，逐点平稳式正确。原几何遍历性另列21，本条scope已限stationary differential expression。
 当前处理：网站PASS（首轮未改版本）。
 保留所交版本的明确结论。
 本地编译和逐声明依赖核对通过。原文疑误、各限定/修正版、反例的评价分别列出；有未完成证明依赖的声明仍为未证。
@@ -13234,9 +14365,19 @@ theorem langevinCanonicalStationary {N : ℕ}
 ### 1. 原文陈述
 
 > Hence Langevin dynamics is geometrically ergodic with respect to the canonical distribution
-> \[\rho_\beta(q,p)=\exp(-\beta H(q,p)),\]
+
+$$
+\rho_\beta(q,p)=\exp(-\beta H(q,p)),
+$$
+
+
 > where it is easily checked that
-> \[\mathcal L_{LD}^{\dagger}\rho_\beta=0.\]
+
+$$
+\mathcal L_{LD}^{\dagger}\rho_\beta=0.
+$$
+
+
 
 ### 2. 原文证明
 
@@ -13271,7 +14412,7 @@ theorem langevinGeometricErgodicity :
 
 | 原文对象或结论 | 当前Lean与范围 |
 |---|---|
-| 所引原句 | 本条所引原句及展示公式；单个记号归入context_notation。 |
+| 所引原句 | 本条所引原句及展示公式；单个记号归入context\_notation。 |
 | 对象、域、量词及前提 | 以上完整声明；额外资格与未覆盖部分见下一段 |
 | 最新网站原始评价 | PASS；复审 |
 
@@ -13285,7 +14426,7 @@ theorem langevinGeometricErgodicity :
 
 ### 6. 审计结论（含网站结论）
 
-网站原返回：PASS。PASS指所交Lean签名的语义审校。相空间确为T^n×R^n；U光滑且单位周期，力全局Lipschitz，β、γ严格为正，噪声幅度√(2γ/β)。核来自有限窗真实Langevin积分解及Wiener路径分布；结论依次是归一Gibbs不变、全部不变概率的唯一性、每个整数l≥1上的统一加权指数估计。观测量为所有可测且逐点满足|f(y)|≤(1+‖p‖²)^l的实函数，既不是仅紧支函数，也不是任意加权L¹函数。C、λ可依赖n、U、β、γ、l等此前参数，但不依赖x、f、t；t=0包括在内。Fin n→R的标准范数与欧氏范数在固定有限维可比，不改变这一增长类。归一Gibbs与原页未写Z的exp(-βH)有明确区别，因此A阶段保留归一约定疑问为NEEDS_HUMAN；该疑问及过时EXTRA措辞不构成此正确签名的FAIL。未检查证明完成度。
+网站原返回：PASS。PASS指所交Lean签名的语义审校。相空间确为T^n×R^n；U光滑且单位周期，力全局Lipschitz，β、γ严格为正，噪声幅度√(2γ/β)。核来自有限窗真实Langevin积分解及Wiener路径分布；结论依次是归一Gibbs不变、全部不变概率的唯一性、每个整数l≥1上的统一加权指数估计。观测量为所有可测且逐点满足|f(y)|≤(1+‖p‖²)^l的实函数，既不是仅紧支函数，也不是任意加权L¹函数。C、λ可依赖n、U、β、γ、l等此前参数，但不依赖x、f、t；t=0包括在内。Fin n→R的标准范数与欧氏范数在固定有限维可比，不改变这一增长类。归一Gibbs与原页未写Z的exp(-βH)有明确区别，因此A阶段保留归一约定疑问为NEEDS\_HUMAN；该疑问及过时EXTRA措辞不构成此正确签名的FAIL。未检查证明完成度。
 当前处理：网站PASS（复审）。
 权界是对所有(q,p)逐点成立；Hamiltonian权比较采用充分正平移后的Hamiltonian，原展示式及归一约定见原文。
 本地编译和逐声明依赖核对通过。原文疑误、各限定/修正版、反例的评价分别列出；有未完成证明依赖的声明仍为未证。
@@ -13332,7 +14473,7 @@ theorem langevinTimeAverage :
 
 | 原文对象或结论 | 当前Lean与范围 |
 |---|---|
-| 所引原句 | 本条所引原句及展示公式；单个记号归入context_notation。 |
+| 所引原句 | 本条所引原句及展示公式；单个记号归入context\_notation。 |
 | 对象、域、量词及前提 | 以上完整声明；额外资格与未覆盖部分见下一段 |
 | 最新网站原始评价 | PASS；复审 |
 
@@ -13343,7 +14484,7 @@ theorem langevinTimeAverage :
 
 ### 6. 审计结论（含网站结论）
 
-网站原返回：PASS。相空间、归一Gibbs测度、β和γ及Wiener向量与上一条一致。结论确为沿同一随机轨迹的Cesàro时间均值：∀确定x、∀可测实f，若存在l∈N及C≥0使|f|≤C(1+‖p‖²)^l，则对P几乎所有样本，实数T→+∞时T⁻¹∫₀ᵀf(X_s)ds趋于Gibbs空间平均。l=0允许全部有界可测函数；零测例外集可以依赖x、f，并未声称所有x、f共享例外集。GlobalRandomPhase虽按ceil(t)+1选有限窗，但本任务同时提供真实积分解、全局唯一性、窗口一致性及∀T的AE规格，故不是把不相容choose选择误认成一条轨迹。周期过程由该全时解投影得到；hU、hp即便以下划线命名仍是显式前提。没有用初始密度ensemble收敛替代时间平均。sorry不参与本签名判定。
+网站原返回：PASS。相空间、归一Gibbs测度、β和γ及Wiener向量与上一条一致。结论确为沿同一随机轨迹的Cesàro时间均值：∀确定x、∀可测实f，若存在l∈N及C≥0使|f|≤C(1+‖p‖²)^l，则对P几乎所有样本，实数T→+∞时T⁻¹∫₀ᵀf(X\_s)ds趋于Gibbs空间平均。l=0允许全部有界可测函数；零测例外集可以依赖x、f，并未声称所有x、f共享例外集。GlobalRandomPhase虽按ceil(t)+1选有限窗，但本任务同时提供真实积分解、全局唯一性、窗口一致性及∀T的AE规格，故不是把不相容choose选择误认成一条轨迹。周期过程由该全时解投影得到；hU、hp即便以下划线命名仍是显式前提。没有用初始密度ensemble收敛替代时间平均。sorry不参与本签名判定。
 当前处理：网站PASS（复审）。
 保留所交版本的明确结论。
 本地编译和逐声明依赖核对通过。原文疑误、各限定/修正版、反例的评价分别列出；有未完成证明依赖的声明仍为未证。
@@ -13363,7 +14504,12 @@ theorem langevinTimeAverage :
 ### 1. 原文陈述
 
 > We denote by $H^1(\mu)$ the space of functions $f(q,p)$ defined on $D=\mathbb T^{N_c}\times\mathbb R^{N_c}$ with bounded norm
-> \[\|f\|_{H^1(\mu)}^2\stackrel{\mathrm{def}}=\|f\|_{L^2(\mu)}^2+\|\nabla_qf\|_{L^2(\mu)}^2+\|\nabla_pf\|_{L^2(\mu)}^2.\]
+
+$$
+\|f\|_{H^1(\mu)}^2\stackrel{\mathrm{def}}=\|f\|_{L^2(\mu)}^2+\|\nabla_qf\|_{L^2(\mu)}^2+\|\nabla_pf\|_{L^2(\mu)}^2.
+$$
+
+
 
 ### 2. 原文证明
 
@@ -13381,14 +14527,14 @@ def weightedH1 {N : ℕ} (U : (Fin N → ℝ) → ℝ)
 
 | 原文对象或结论 | 当前Lean与范围 |
 |---|---|
-| 所引原句 | 本条所引原句及展示公式；单个记号归入context_notation。 |
+| 所引原句 | 本条所引原句及展示公式；单个记号归入context\_notation。 |
 | 对象、域、量词及前提 | 以上完整声明；额外资格与未覆盖部分见下一段 |
 | 最新网站原始评价 | PASS；复审 |
 
 ### 5. [EXTRA] 与覆盖缺口
 
 - [EXTRA]实际Gibbs加权弱导数闭图及AE商的完整Hilbert H1；不是smooth jet子集，函数/导数投影和范数下一条明确。
-- [EXTRA] 补坐标伴随测试表达式及memLp_two完整规格；明确位置β∂U、动量βp项及分部积分符号，补摘录不算原书勘误。
+- [EXTRA] 补坐标伴随测试表达式及memLp\_two完整规格；明确位置β∂U、动量βp项及分部积分符号，补摘录不算原书勘误。
 
 ### 6. 审计结论（含网站结论）
 
@@ -13412,9 +14558,19 @@ def weightedH1 {N : ℕ} (U : (Fin N → ℝ) → ℝ)
 ### 1. 原文陈述
 
 > where
-> \[\|f\|_{L^2(\mu)}^2=\int_D f^2\mu(d\omega),\]
+
+$$
+\|f\|_{L^2(\mu)}^2=\int_D f^2\mu(d\omega),
+$$
+
+
 > and, for a vector function $w:D\to\mathbb R^{N_c}$, we have
-> \[\|w\|_{L^2(\mu)}^2=\sum_{i=1}^{N_c}\|w_i\|_{L^2(\mu)}^2.\]
+
+$$
+\|w\|_{L^2(\mu)}^2=\sum_{i=1}^{N_c}\|w_i\|_{L^2(\mu)}^2.
+$$
+
+
 
 ### 2. 原文证明
 
@@ -13481,9 +14637,19 @@ theorem weightedL2NormVector26 {D : Type*} [MeasurableSpace D] {Nc : ℕ}
 ### 1. 原文陈述
 
 > Proposition 6.4 Let $U$ be $C^\infty$ on the position domain $Q=\mathbb T^{N_c}$ and suppose $g\in H^1(\mu)$ satisfies
-> \[\int_D g\,d\mu_\beta=0,\]
+
+$$
+\int_D g\,d\mu_\beta=0,
+$$
+
+
 > where $\mu_\beta$ is the canonical measure, then the Poisson equation
-> \[\mathcal L_{LD}^\dagger\varphi=g\]
+
+$$
+\mathcal L_{LD}^\dagger\varphi=g
+$$
+
+
 > has a solution $\varphi\in H^1(\mu)$ which is unique up to addition of a constant multiple of the Gibbs density.
 
 ### 2. 原文证明
@@ -13515,19 +14681,19 @@ theorem proposition64Printed :
 
 | 原文对象或结论 | 当前Lean与范围 |
 |---|---|
-| 所引原句 | 本条所引原句及展示公式；单个记号归入context_notation。 |
+| 所引原句 | 本条所引原句及展示公式；单个记号归入context\_notation。 |
 | 对象、域、量词及前提 | 以上完整声明；额外资格与未覆盖部分见下一段 |
-| 最新网站原始评价 | NEEDS_HUMAN；复审 |
+| 最新网站原始评价 | NEEDS\_HUMAN；复审 |
 
 ### 5. [EXTRA] 与覆盖缺口
 
 - [EXTRA] 保留原flat/Gibbs坐标混用疑误和非Gibbs恒通量反例；补H¹伴随测试表达式，修正版本由Proposition64Relative独立保存。
 - [ERRATUM?] 原印刷同时混用Gibbs零均值与flat前向核的Gibbs倍数结论；所给弱域存在非Gibbs恒通量零模，须人工核定伴随坐标与算子域，原句不改。
-- [EXTRA] 本任务没有提供_counterexample声明；不能把“保留反例”当作已完成的Lean审查证据。
+- [EXTRA] 本任务没有提供\_counterexample声明；不能把“保留反例”当作已完成的Lean审查证据。
 
 ### 6. 审计结论（含网站结论）
 
-网站原返回：NEEDS_HUMAN。Printed忠实性：PASS。给定光滑周期U、β>0、γ>0，对每个Gibbs加权H¹且μβ零均值的g，确实逐项保留flat-forward弱Poisson方程、完整H¹解存在、以及全部H¹解唯一模Gibbs密度倍数。CanonicalDensity为D52–D59的归一exp(-βH)，与未归一Gibbs密度相差正常数，不改变唯一模其倍数的表述。但这一原文字面版本在所定义弱域上存在明确恒通量反例；不能将平直前向伴随与Gibbs Hilbert伴随混用。因此总判NEEDS_HUMAN，保留Printed；不是因sorry失败。修正版在条目6的独立声明另审，未用它替换此原文版。
+网站原返回：NEEDS\_HUMAN。Printed忠实性：PASS。给定光滑周期U、β>0、γ>0，对每个Gibbs加权H¹且μβ零均值的g，确实逐项保留flat-forward弱Poisson方程、完整H¹解存在、以及全部H¹解唯一模Gibbs密度倍数。CanonicalDensity为D52–D59的归一exp(-βH)，与未归一Gibbs密度相差正常数，不改变唯一模其倍数的表述。但这一原文字面版本在所定义弱域上存在明确恒通量反例；不能将平直前向伴随与Gibbs Hilbert伴随混用。因此总判NEEDS\_HUMAN，保留Printed；不是因sorry失败。修正版在条目6的独立声明另审，未用它替换此原文版。
 当前处理：原文疑误或语义范围待导师；不冒称未提供版本已通过。
 保留所交版本的明确结论。
 本地编译和逐声明依赖核对通过。原文疑误、各限定/修正版、反例的评价分别列出；有未完成证明依赖的声明仍为未证。
@@ -13536,7 +14702,7 @@ theorem proposition64Printed :
 
 | 声明 | 证明状态 | 未证原因 | 网站分版结论 |
 |---|---|---|---|
-| `MD.Ch06.proposition64Printed` | 未证 | 原书疑误不证 | 原文忠实性PASS；原书数学/范围NEEDS_HUMAN |
+| `MD.Ch06.proposition64Printed` | 未证 | 原书疑误不证 | 原文忠实性PASS；原书数学/范围NEEDS\_HUMAN |
 
 位置：`Blueprint/Ch06.lean:3265`；本地核验记录：`blueprint/ch06/closeout26/FINAL_COMPILE.log`。
 
@@ -13546,7 +14712,12 @@ theorem proposition64Printed :
 
 ### 1. 原文陈述
 
-> \[\mathcal L_{LD}^{\dagger}\varphi=g\]
+
+$$
+\mathcal L_{LD}^{\dagger}\varphi=g
+$$
+
+
 > has a solution $\varphi\in H^1(\mu)$ which is unique up to addition of a constant multiple of the Gibbs density.
 
 ### 2. 原文证明
@@ -13598,7 +14769,7 @@ theorem proposition64Printed_corrected :
 
 | 原文对象或结论 | 当前Lean与范围 |
 |---|---|
-| 所引原句 | 本条所引原句及展示公式；单个记号归入context_notation。 |
+| 所引原句 | 本条所引原句及展示公式；单个记号归入context\_notation。 |
 | 对象、域、量词及前提 | 以上完整声明；额外资格与未覆盖部分见下一段 |
 | 最新网站原始评价 | PASS；复审 |
 
@@ -13610,7 +14781,7 @@ theorem proposition64Printed_corrected :
 
 ### 6. 审计结论（含网站结论）
 
-网站原返回：PASS。proposition64Relative：PASS；proposition64Printed_corrected：PASS。二者都在归一Gibbs L²中使用实际Langevin后向算子的闭图伴随，对全部完整弱H¹且μβ零均值的g，断言存在H¹解，(value φ,value g)属于A.graph；对任意另一H¹解，差值μβ-AE为实常数。β、γ正、U光滑周期、噪声√(2γ/β)均保留，未把解空间缩成光滑或紧支函数。加权伴随作用于相对Gibbs密度r，flat密度为ρβr，所以核从Gibbs倍数变成常数是合理而明确的修正；Weighted H¹的导数测试及闭Hilbert图的算子表达式均已核对。这里认可修正版陈述与坐标选择，不认定其大型存在/正则性证明已完成。A阶段原印刷问题仍为NEEDS_HUMAN，不静默改写原书。
+网站原返回：PASS。proposition64Relative：PASS；proposition64Printed\_corrected：PASS。二者都在归一Gibbs L²中使用实际Langevin后向算子的闭图伴随，对全部完整弱H¹且μβ零均值的g，断言存在H¹解，(value φ,value g)属于A.graph；对任意另一H¹解，差值μβ-AE为实常数。β、γ正、U光滑周期、噪声√(2γ/β)均保留，未把解空间缩成光滑或紧支函数。加权伴随作用于相对Gibbs密度r，flat密度为ρβr，所以核从Gibbs倍数变成常数是合理而明确的修正；Weighted H¹的导数测试及闭Hilbert图的算子表达式均已核对。这里认可修正版陈述与坐标选择，不认定其大型存在/正则性证明已完成。A阶段原印刷问题仍为NEEDS\_HUMAN，不静默改写原书。
 当前处理：网站PASS（复审）。
 保留所交版本的明确结论。
 本地编译和逐声明依赖核对通过。原文疑误、各限定/修正版、反例的评价分别列出；有未完成证明依赖的声明仍为未证。
@@ -13655,7 +14826,7 @@ theorem fredholmAlternative :
 
 | 原文对象或结论 | 当前Lean与范围 |
 |---|---|
-| 所引原句 | 本条所引原句及展示公式；单个记号归入context_notation。 |
+| 所引原句 | 本条所引原句及展示公式；单个记号归入context\_notation。 |
 | 对象、域、量词及前提 | 以上完整声明；额外资格与未覆盖部分见下一段 |
 | 最新网站原始评价 | PASS；首轮保留 |
 
@@ -13707,7 +14878,7 @@ theorem backwardKernelConstants :
 
 | 原文对象或结论 | 当前Lean与范围 |
 |---|---|
-| 所引原句 | 本条所引原句及展示公式；单个记号归入context_notation。 |
+| 所引原句 | 本条所引原句及展示公式；单个记号归入context\_notation。 |
 | 对象、域、量词及前提 | 以上完整声明；额外资格与未覆盖部分见下一段 |
 | 最新网站原始评价 | PASS；首轮保留 |
 
@@ -13768,12 +14939,12 @@ theorem forwardKernelGibbs : ∀ {n : ℕ} (U : (Fin n → ℝ) → ℝ)
 
 - [EXTRA] 改用相对Gibbs密度的Hilbert adjoint闭域，核结论为常数；旧flat紧支弱测试允许非Gibbs恒通量零模，网站反例保留。改后核定理尚缺大型理论，不证明；原印刷flat措辞由Proposition64Printed留存。
 - [ERRATUM?] 原flat-forward核结论需自然算子域/可积性约束；当前Lean明确改为相对Gibbs闭Hilbert伴随，核为常数。原书文字保留。
-- [EXTRA] 未提供_counterexample声明，不能以“网站保留”作为形式验证证据。
+- [EXTRA] 未提供\_counterexample声明，不能以“网站保留”作为形式验证证据。
 - 覆盖缺口：本条只交付相对Gibbs修正版核结论，没有独立交付原flat坐标的两解差与Gibbs倍数核声明；原印刷Poisson命题在条目5保留，但不能据此称本条原核结论已证。
 
 ### 6. 审计结论（含网站结论）
 
-网站原返回：PASS。PASS限于EXTRA明确交付的相对Gibbs修正版。它保留所有光滑周期U、β>0、γ>0，对每个完整弱H¹零模w，在真实Langevin后向闭算子的Gibbs Hilbert伴随域内断言value(w)为常数。图成员资格不可省略，且这里没有使用旧flat紧支测试定义。这与r↦ρβr的密度转换一致，核陈述合理。原句的“两解差”可由伴随图线性化为此零模结论，但本条没有另外给出flat坐标的两解差等式；不能将常数直接说成原坐标的Gibbs密度倍数。EXTRA已经声明改动，故不当作静默纠错或签名FAIL；原书域/坐标问题在A阶段维持NEEDS_HUMAN。本结论尚待证明与签名是否正确是两回事。
+网站原返回：PASS。PASS限于EXTRA明确交付的相对Gibbs修正版。它保留所有光滑周期U、β>0、γ>0，对每个完整弱H¹零模w，在真实Langevin后向闭算子的Gibbs Hilbert伴随域内断言value(w)为常数。图成员资格不可省略，且这里没有使用旧flat紧支测试定义。这与r↦ρβr的密度转换一致，核陈述合理。原句的“两解差”可由伴随图线性化为此零模结论，但本条没有另外给出flat坐标的两解差等式；不能将常数直接说成原坐标的Gibbs密度倍数。EXTRA已经声明改动，故不当作静默纠错或签名FAIL；原书域/坐标问题在A阶段维持NEEDS\_HUMAN。本结论尚待证明与签名是否正确是两回事。
 当前处理：网站PASS（复审）。
 保留所交版本的明确结论。
 本地编译和逐声明依赖核对通过。原文疑误、各限定/修正版、反例的评价分别列出；有未完成证明依赖的声明仍为未证。
@@ -13792,7 +14963,12 @@ theorem forwardKernelGibbs : ∀ {n : ℕ} (U : (Fin n → ℝ) → ℝ)
 
 ### 1. 原文陈述
 
-> \[\|f\|_{L^2(\mu)}^2=\int_D f^2\mu(d\omega).\]
+
+$$
+\|f\|_{L^2(\mu)}^2=\int_D f^2\mu(d\omega).
+$$
+
+
 
 ### 2. 原文证明
 
@@ -13809,7 +14985,7 @@ def weightedFunctionNorm {n : ℕ} (U : (Fin n → ℝ) → ℝ) (β : ℝ) (hβ
 
 | 原文对象或结论 | 当前Lean与范围 |
 |---|---|
-| 所引原句 | 本条所引原句及展示公式；单个记号归入context_notation。 |
+| 所引原句 | 本条所引原句及展示公式；单个记号归入context\_notation。 |
 | 对象、域、量词及前提 | 以上完整声明；额外资格与未覆盖部分见下一段 |
 | 最新网站原始评价 | PASS；首轮保留 |
 
@@ -13839,7 +15015,12 @@ def weightedFunctionNorm {n : ℕ} (U : (Fin n → ℝ) → ℝ) (β : ℝ) (hβ
 ### 1. 原文陈述
 
 > and, for a vector function $w:D\to\mathbb R^{N_c}$, we have
-> \[\|w\|_{L^2(\mu)}^2=\sum_{i=1}^{N_c}\|w_i\|_{L^2(\mu)}^2.\]
+
+$$
+\|w\|_{L^2(\mu)}^2=\sum_{i=1}^{N_c}\|w_i\|_{L^2(\mu)}^2.
+$$
+
+
 
 ### 2. 原文证明
 
@@ -13856,7 +15037,7 @@ def weightedVectorNorm {n r : ℕ} (U : (Fin n → ℝ) → ℝ) (β : ℝ) (hβ
 
 | 原文对象或结论 | 当前Lean与范围 |
 |---|---|
-| 所引原句 | 本条所引原句及展示公式；单个记号归入context_notation。 |
+| 所引原句 | 本条所引原句及展示公式；单个记号归入context\_notation。 |
 | 对象、域、量词及前提 | 以上完整声明；额外资格与未覆盖部分见下一段 |
 | 最新网站原始评价 | PASS；首轮保留 |
 
@@ -13886,7 +15067,12 @@ def weightedVectorNorm {n r : ℕ} (U : (Fin n → ℝ) → ℝ) (β : ℝ) (hβ
 ### 1. 原文陈述
 
 > Given a collection of phase space points distributed according to the density $\rho_0(q,p)$, we know that its evolution (under Langevin dynamics) after a time $t$ will be described by
-> \[\rho(q,p,t)=e^{t\mathcal L_{LD}^{\dagger}}\rho_0(q,p).\]
+
+$$
+\rho(q,p,t)=e^{t\mathcal L_{LD}^{\dagger}}\rho_0(q,p).
+$$
+
+
 
 ### 2. 原文证明
 
@@ -13906,20 +15092,20 @@ def kernelEvolution {D : Type*} [MeasurableSpace D] (K : ℝ≥0 → Kernel D D)
 
 | 原文对象或结论 | 当前Lean与范围 |
 |---|---|
-| 所引原句 | 本条当前覆盖范围：本source_id仅登记两个核作用于测度的辅助定义；hK要求真实Markov半群，但不因此提供特定Langevin前向密度或指数算子识别。明确原式尚未由本条形式化，缺口继续保留。 |
+| 所引原句 | 本条当前覆盖范围：本source\_id仅登记两个核作用于测度的辅助定义；hK要求真实Markov半群，但不因此提供特定Langevin前向密度或指数算子识别。明确原式尚未由本条形式化，缺口继续保留。 |
 | 对象、域、量词及前提 | 以上完整声明；额外资格与未覆盖部分见下一段 |
 | 最新网站原始评价 | FAIL；复审 |
 
 ### 5. [EXTRA] 与覆盖缺口
 
-- [EXTRA] 本source_id仅登记两个核作用于测度的辅助定义；hK要求真实Markov半群，但不因此提供特定Langevin前向密度或指数算子识别。明确原式尚未由本条形式化，缺口继续保留。
+- [EXTRA] 本source\_id仅登记两个核作用于测度的辅助定义；hK要求真实Markov半群，但不因此提供特定Langevin前向密度或指数算子识别。明确原式尚未由本条形式化，缺口继续保留。
 - 覆盖缺口：特定Langevin核与前向密度半群的识别、ρt dω=Kt∘ₘ(ρ0 dω)及e^{tL†}解释未由本条给出。
 
 ### 6. 审计结论（含网站结论）
 
 网站原返回：FAIL。A阶段APPROVED表示原文JSON与其“仅核推进”的限制说明真实。两个Lean辅助定义本身均正确：Raw25允许任意核族，主入口另要求真正Markov半群，D是任意可测类型，μ是任意测度，t≥0。即使μ未限定概率，该定义仍成立；仅在μ为概率时才得到概率推进。但原文完整结论是特定Langevin密度随前向指数算子演化。两个辅助体没有U、β、γ、ρ0、ρt、平直参考测度、生成元或密度等式。FAIL仅指该原文完整结论未由本条交付；EXTRA如实承认限制，不据此把缺失部分判成已经覆盖。条目10、13的资格定义另行审校，不能合并替代本条。
 当前处理：按网站审校意见修复，本地核验通过（未再送网站）。
-本source_id仅登记两个核作用于测度的辅助定义；hK要求真实Markov半群，但不因此提供特定Langevin前向密度或指数算子识别。明确原式尚未由本条形式化，缺口继续保留。
+本source\_id仅登记两个核作用于测度的辅助定义；hK要求真实Markov半群，但不因此提供特定Langevin前向密度或指数算子识别。明确原式尚未由本条形式化，缺口继续保留。
 本地编译和逐声明依赖核对通过。原文疑误、各限定/修正版、反例的评价分别列出；有未完成证明依赖的声明仍为未证。
 
 ### 7. 状态与证明位置
@@ -13978,7 +15164,7 @@ theorem kernelAverage_distributionIdentity26 {D : Type*} [MeasurableSpace D]
 
 ### 6. 审计结论（含网站结论）
 
-网站原返回：FAIL。该辅助定义正确且与EXTRA所称“总化记号”相符：D为任意可测空间、K为任意核族、f为任意实函数；Lean积分对不合格函数仍有总化值。因此本定义不能解释为任意f都有概率平均，更不能推出原句的∫f dμt=∫Kt f dμ0。原句要求分布演化、可积资格及核积分交换的等式，而这些对象和结论均未在当前声明中出现。FAIL为完整原句覆盖不足，非定义或证明错误。原文JSON没有伪称它已覆盖，故A状态APPROVED并保留既有coverage_gaps。
+网站原返回：FAIL。该辅助定义正确且与EXTRA所称“总化记号”相符：D为任意可测空间、K为任意核族、f为任意实函数；Lean积分对不合格函数仍有总化值。因此本定义不能解释为任意f都有概率平均，更不能推出原句的∫f dμt=∫Kt f dμ0。原句要求分布演化、可积资格及核积分交换的等式，而这些对象和结论均未在当前声明中出现。FAIL为完整原句覆盖不足，非定义或证明错误。原文JSON没有伪称它已覆盖，故A状态APPROVED并保留既有coverage\_gaps。
 当前处理：按网站审校意见修复，本地核验通过（未再送网站）。
 保留kernelAverage总化辅助记号；新增实际分布平均恒等式，显式量化μ0、μt、μt=Kt∘ₘμ0、概率/Markov资格以及f可测可积，不再仅引用未随本条送审的KernelDuality名称。
 本地编译和逐声明依赖核对通过。原文疑误、各限定/修正版、反例的评价分别列出；有未完成证明依赖的声明仍为未证。
@@ -13999,7 +15185,12 @@ theorem kernelAverage_distributionIdentity26 {D : Type*} [MeasurableSpace D]
 ### 1. 原文陈述
 
 > More precisely this relation should be interpreted in the variational sense, so that we have, for any suitable test function $\varphi$, e.g. $\varphi\in C^\infty$,
-> \[\int_D\varphi\rho(q,p,t)d\omega=\int_D\varphi e^{t\mathcal L_{LD}^{\dagger}}\rho_0(q,p)d\omega.\]
+
+$$
+\int_D\varphi\rho(q,p,t)d\omega=\int_D\varphi e^{t\mathcal L_{LD}^{\dagger}}\rho_0(q,p)d\omega.
+$$
+
+
 
 ### 2. 原文证明
 
@@ -14062,7 +15253,12 @@ def densityEvolutionMeaning {n : ℕ} (U : (Fin n → ℝ) → ℝ) (β γ : ℝ
 ### 1. 原文陈述
 
 > This is of course an inner product, and due to the properties of the inner product, we may interpret the right hand side as
-> \[\int_D\left[e^{t\mathcal L_{LD}}\varphi(q,p)\right]\rho_0(q,p)d\omega,\]
+
+$$
+\int_D\left[e^{t\mathcal L_{LD}}\varphi(q,p)\right]\rho_0(q,p)d\omega,
+$$
+
+
 
 ### 2. 原文证明
 
@@ -14090,7 +15286,7 @@ theorem kernelDuality :
 
 | 原文对象或结论 | 当前Lean与范围 |
 |---|---|
-| 所引原句 | 本条所引原句及展示公式；单个记号归入context_notation。 |
+| 所引原句 | 本条所引原句及展示公式；单个记号归入context\_notation。 |
 | 对象、域、量词及前提 | 以上完整声明；额外资格与未覆盖部分见下一段 |
 | 最新网站原始评价 | PASS；首轮保留 |
 
@@ -14120,7 +15316,12 @@ theorem kernelDuality :
 ### 1. 原文陈述
 
 > Since all the eigenvalues lie to the left of a vertical line in the left half plane, for any $\varphi$ in $C^\infty$ we have
-> \[\int_D\varphi\rho(q,p,t)d\omega=\operatorname{Av}_\beta(\varphi)+\alpha e^{t\lambda_1}\int_D\varphi\rho^{(1)}d\omega.\]
+
+$$
+\int_D\varphi\rho(q,p,t)d\omega=\operatorname{Av}_\beta(\varphi)+\alpha e^{t\lambda_1}\int_D\varphi\rho^{(1)}d\omega.
+$$
+
+
 > The latter integral is bounded since both $\varphi$ and $\rho^{(1)}$ are in $L^2$, and since $\operatorname{Re}(\lambda_1)<0$, we see that this converges exponentially to the desired average.
 
 ### 2. 原文证明
@@ -14152,12 +15353,12 @@ def smoothTestL2Printed_corrected {n : ℕ} (f : textbookLangevinPeriodicPhase n
 ### 5. [EXTRA] 与覆盖缺口
 
 - [EXTRA] 恢复原文完整末句。Printed仅保留光滑蕴含平直L²的原书疑误子主张；_corrected仅是网站已PASS的C∞∩L²合格域定义。限定当前覆盖，不把该定义计作平均公式或积分有界定理。
-- [ERRATUM?] 原书数学疑误与本次形式化修复分别记录，见CH06_ERRATA。
+- [ERRATUM?] 原书数学疑误与本次形式化修复分别记录，见CH06\_ERRATA。
 - 覆盖缺口：平均恒等式、ρ^(1)的L²资格及与测试函数配对的有界性没有在本条两声明中表达；未将这些内容标为已经形式化。
 
 ### 6. 审计结论（含网站结论）
 
-网站原返回：FAIL。分版审校：smoothTestL2Printed忠实地保留原页隐含的“每个光滑测试函数均在平直L²”子主张；该子主张的原书数学疑误判NEEDS_HUMAN，而不因它为假就判Printed不忠实。smoothTestL2Printed_corrected是正确的限定域定义C∞∩L²，修正合理，局部签名PASS；但它是def，不是有界积分定理。本条scope仍称覆盖所引原句及展示公式，coverage_gaps却为null。实际两个声明都没有ρt、ρeq、ρ1、λ1、α、传播关系、平均恒等式或积分界，因此总audit为FAIL，理由是独立的完整结论覆盖缺口，而不是原书数学疑误或sorry。原文错误另在json_review中保留NEEDS_HUMAN。
+网站原返回：FAIL。分版审校：smoothTestL2Printed忠实地保留原页隐含的“每个光滑测试函数均在平直L²”子主张；该子主张的原书数学疑误判NEEDS\_HUMAN，而不因它为假就判Printed不忠实。smoothTestL2Printed\_corrected是正确的限定域定义C∞∩L²，修正合理，局部签名PASS；但它是def，不是有界积分定理。本条scope仍称覆盖所引原句及展示公式，coverage\_gaps却为null。实际两个声明都没有ρt、ρeq、ρ1、λ1、α、传播关系、平均恒等式或积分界，因此总audit为FAIL，理由是独立的完整结论覆盖缺口，而不是原书数学疑误或sorry。原文错误另在json\_review中保留NEEDS\_HUMAN。
 当前处理：按网站审校意见修复，本地核验通过（未再送网站）。
 恢复原文完整末句。Printed仅保留光滑蕴含平直L²的原书疑误子主张；_corrected仅是网站已PASS的C∞∩L²合格域定义。限定当前覆盖，不把该定义计作平均公式或积分有界定理。
 本地编译和逐声明依赖核对通过。原文疑误、各限定/修正版、反例的评价分别列出；有未完成证明依赖的声明仍为未证。
@@ -14166,7 +15367,7 @@ def smoothTestL2Printed_corrected {n : ℕ} (f : textbookLangevinPeriodicPhase n
 
 | 声明 | 证明状态 | 未证原因 | 网站分版结论 |
 |---|---|---|---|
-| `MD.Ch06.smoothTestL2Printed` | 未证 | 原书疑误不证 | 原文子主张忠实性PASS；原书数学NEEDS_HUMAN |
+| `MD.Ch06.smoothTestL2Printed` | 未证 | 原书疑误不证 | 原文子主张忠实性PASS；原书数学NEEDS\_HUMAN |
 | `MD.Ch06.smoothTestL2Printed_corrected` | 定义 | — | PASS |
 
 位置：`Blueprint/Ch06.lean:3437`；本地核验记录：`blueprint/ch06/closeout26/FINAL_COMPILE.log`。
@@ -14178,7 +15379,12 @@ def smoothTestL2Printed_corrected {n : ℕ} (f : textbookLangevinPeriodicPhase n
 ### 1. 原文陈述
 
 > For example, if we assume that $\lambda_1,\rho^{(1)}$ is some eigenvalue, eigenfunction pair with $\operatorname{Re}(\lambda_1)<0$ and take the initial distribution to be
-> \[\rho_0=\rho_{eq}+\alpha\rho^{(1)},\]
+
+$$
+\rho_0=\rho_{eq}+\alpha\rho^{(1)},
+$$
+
+
 > for $\alpha\in\mathbb R$, then we have
 
 ### 2. 原文证明
@@ -14227,7 +15433,7 @@ def complexInitialDensity_corrected {n : ℕ}
 
 ### 6. 审计结论（含网站结论）
 
-网站原返回：PASS。complexInitialDensity：作为EXTRA明确声明的概率资格辅助定义，PASS；complexInitialDensity_corrected：同样PASS，且二者实为同体，不是一个已证另一个待证。它们要求ρeq及给定组合ρeq+αρ1各自AE实且非负，实部可积且积分1；这些是复L²候选代表概率密度所需的正确条件。不要求ρ1本身非负，亦不要求α≠0，均正确；α=0时没有从单位质量倒推ρ1零积分。定义里没有λ或A，也没有声称所有α合格、ρeq确为Gibbs或ρ1确为本征函数；这些必须由使用处如条目14另列。因此这是合理的显式限定，不是对原页任意α的无条件实现；A阶段仍须人工核定原文中“initial distribution”的隐含范围。
+网站原返回：PASS。complexInitialDensity：作为EXTRA明确声明的概率资格辅助定义，PASS；complexInitialDensity\_corrected：同样PASS，且二者实为同体，不是一个已证另一个待证。它们要求ρeq及给定组合ρeq+αρ1各自AE实且非负，实部可积且积分1；这些是复L²候选代表概率密度所需的正确条件。不要求ρ1本身非负，亦不要求α≠0，均正确；α=0时没有从单位质量倒推ρ1零积分。定义里没有λ或A，也没有声称所有α合格、ρeq确为Gibbs或ρ1确为本征函数；这些必须由使用处如条目14另列。因此这是合理的显式限定，不是对原页任意α的无条件实现；A阶段仍须人工核定原文中“initial distribution”的隐含范围。
 当前处理：网站PASS（复审）。
 保留所交版本的明确结论。
 本地编译和逐声明依赖核对通过。原文疑误、各限定/修正版、反例的评价分别列出；有未完成证明依赖的声明仍为未证。
@@ -14247,7 +15453,12 @@ def complexInitialDensity_corrected {n : ℕ}
 
 ### 1. 原文陈述
 
-> \[\rho(q,p,t)=e^{t\mathcal L_{LD}^{\dagger}}\rho_0(q,p).\]
+
+$$
+\rho(q,p,t)=e^{t\mathcal L_{LD}^{\dagger}}\rho_0(q,p).
+$$
+
+
 
 ### 2. 原文证明
 
@@ -14308,7 +15519,12 @@ def langevinForwardSemigroupMeaning {n : ℕ} (U : (Fin n → ℝ) → ℝ) (β 
 
 ### 1. 原文陈述
 
-> \[\rho(q,p,t)=e^{t\mathcal L_{LD}^{\dagger}}\rho_0=e^{t\mathcal L_{LD}^{\dagger}}\rho_{eq}+\alpha e^{t\mathcal L_{LD}^{\dagger}}\rho^{(1)}=\rho_{eq}+\alpha e^{t\lambda_1}\rho^{(1)}.\]
+
+$$
+\rho(q,p,t)=e^{t\mathcal L_{LD}^{\dagger}}\rho_0=e^{t\mathcal L_{LD}^{\dagger}}\rho_{eq}+\alpha e^{t\mathcal L_{LD}^{\dagger}}\rho^{(1)}=\rho_{eq}+\alpha e^{t\lambda_1}\rho^{(1)}.
+$$
+
+
 
 ### 2. 原文证明
 
@@ -14349,7 +15565,7 @@ theorem complexEigenmodeDecay : ∀ {n : ℕ} {Ω : Type*} [MeasurableSpace Ω]
 
 | 原文对象或结论 | 当前Lean与范围 |
 |---|---|
-| 所引原句 | statement_latex只存演化展示式；proof_discussion_latex存不相邻的原页完整末句。二者之间的平均段落见SmoothTestL2Printed，不冒充连续引文。本条Lean结论含模式演化、全部L²测试的平均恒等式、指数界与极限。 |
+| 所引原句 | statement\_latex只存演化展示式；proof\_discussion\_latex存不相邻的原页完整末句。二者之间的平均段落见SmoothTestL2Printed，不冒充连续引文。本条Lean结论含模式演化、全部L²测试的平均恒等式、指数界与极限。 |
 | 对象、域、量词及前提 | 以上完整声明；额外资格与未覆盖部分见下一段 |
 | 最新网站原始评价 | PASS；复审 |
 
@@ -14362,7 +15578,7 @@ theorem complexEigenmodeDecay : ∀ {n : ℕ} {Ω : Type*} [MeasurableSpace Ω]
 
 ### 6. 审计结论（含网站结论）
 
-网站原返回：PASS。PASS。对象为真实T^n×R^n周期Langevin核、平直复L²空间E、复C₀半群S及复部分线性算子A。U光滑单位周期、力全局Lipschitz、Wiener驱动、β、γ正及噪声√(2γ/β)均显式；ρeq与真实归一Gibbs密度AE相等，并有complexInitialDensity的概率资格，不是把任意复扰动当概率。S和真实核的关联是明确前提。生成元仅需A.graph中的(v,w)推出S轨道0处右导数为w；为两个指定图成员推出指数轨道已足够，不必额外假定A等于整个最大生成元。其驻定、本征条件保留完整复ev及ev.re<0，结论中的Complex.exp((t:ℂ)*ev)及|α|‖f‖‖ρ1‖exp(ev.re*t)符号、系数均正确。复内积对第二变量线性，故αexp(t ev)在右侧不取共轭；对应普通实测试平均时取实f即可。身份、组合、强连续在语义资格之外重复列出虽冗余但无误。若ev非实且仅用单一模式，要使初始密度实而α≠0通常不相容；该定理仍正确，因为概率资格显式且允许α=0，未声称任意非实模式存在非平凡概率扰动。原页任意C∞的可积性疑误已在条目11保留NEEDS_HUMAN；本声明明确限定所有L²测试，未继承那个错误。本次只审校签名，未因sorry失败，也未把前向半群的存在与资格实现视为已证明。
+网站原返回：PASS。PASS。对象为真实T^n×R^n周期Langevin核、平直复L²空间E、复C₀半群S及复部分线性算子A。U光滑单位周期、力全局Lipschitz、Wiener驱动、β、γ正及噪声√(2γ/β)均显式；ρeq与真实归一Gibbs密度AE相等，并有complexInitialDensity的概率资格，不是把任意复扰动当概率。S和真实核的关联是明确前提。生成元仅需A.graph中的(v,w)推出S轨道0处右导数为w；为两个指定图成员推出指数轨道已足够，不必额外假定A等于整个最大生成元。其驻定、本征条件保留完整复ev及ev.re<0，结论中的Complex.exp((t:ℂ)*ev)及|α|‖f‖‖ρ1‖exp(ev.re*t)符号、系数均正确。复内积对第二变量线性，故αexp(t ev)在右侧不取共轭；对应普通实测试平均时取实f即可。身份、组合、强连续在语义资格之外重复列出虽冗余但无误。若ev非实且仅用单一模式，要使初始密度实而α≠0通常不相容；该定理仍正确，因为概率资格显式且允许α=0，未声称任意非实模式存在非平凡概率扰动。原页任意C∞的可积性疑误已在条目11保留NEEDS\_HUMAN；本声明明确限定所有L²测试，未继承那个错误。本次只审校签名，未因sorry失败，也未把前向半群的存在与资格实现视为已证明。
 当前处理：网站PASS（复审）。
 保留所交版本的明确结论。
 本地编译和逐声明依赖核对通过。原文疑误、各限定/修正版、反例的评价分别列出；有未完成证明依赖的声明仍为未证。

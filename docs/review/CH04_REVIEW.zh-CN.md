@@ -10,9 +10,9 @@
 | --- | ---: |
 | defined | 48 |
 | proved | 13 |
-| statement_only | 38 |
+| statement\_only | 38 |
 | weakened | 0 |
-| not_formalizable_now | 1 |
+| not\_formalizable\_now | 1 |
 | 合计 | 100 |
 
 proved为清单行数；重复映射同一证明不等于独立定理数量。
@@ -62,7 +62,7 @@ def scalarEulerStable_statement : Prop := ∀ h rho, scalarStable (eulerFactor h
 
 差异、假设及缺口：限标量；Jordan边界另需条件。
 
-状态：**statement_only**；位置：`MolecularDynamics/Chapter04/Statements.lean:11`。
+状态：**statement\_only**；位置：`MolecularDynamics/Chapter04/Statements.lean:11`。
 
 ### CH04-004 · §4 · 定义 · 印刷p.139 / PDF161
 
@@ -103,7 +103,7 @@ def eulerImaginaryGrowth_statement : Prop :=
 
 差异、假设及缺口：排除零频率、零步长和零初值。
 
-状态：**statement_only**；位置：`MolecularDynamics/Chapter04/Statements.lean:12`。
+状态：**statement\_only**；位置：`MolecularDynamics/Chapter04/Statements.lean:12`。
 
 ### CH04-007 · §4 · 定义 · 印刷p.140 / PDF162
 
@@ -132,7 +132,7 @@ def symplecticEulerCharacteristic_statement : Prop :=
 
 差异、假设及缺口：复特征值，有限行列式恒等式。
 
-状态：**statement_only**；位置：`MolecularDynamics/Chapter04/Statements.lean:15`。
+状态：**statement\_only**；位置：`MolecularDynamics/Chapter04/Statements.lean:15`。
 
 ### CH04-009 · §4 · 未编号结论 · 印刷p.140 / PDF162
 
@@ -148,7 +148,7 @@ def symplecticEulerStability_statement : Prop :=
 
 差异、假设及缺口：边界abs(h Omega)=2通常有Jordan增长；补绝对值与非零条件。
 
-状态：**statement_only**；位置：`MolecularDynamics/Chapter04/Statements.lean:18`。
+状态：**statement\_only**；位置：`MolecularDynamics/Chapter04/Statements.lean:18`。
 
 ### CH04-010 · §4 · 未编号结论 · 印刷p.140 / PDF162
 
@@ -168,7 +168,7 @@ def prkThreshold_statement : Prop :=
 
 差异、假设及缺口：原文援引[74]；需限制阶段数/成本与方法类，保留书中文字面普适断言，未证明。
 
-状态：**not_formalizable_now**；位置：`MolecularDynamics/Chapter04/Statements.lean:22`。
+状态：**not\_formalizable\_now**；位置：`MolecularDynamics/Chapter04/Statements.lean:22`。
 
 ### CH04-011 · §4 · 未编号结论 · 印刷p.141 / PDF163
 
@@ -182,7 +182,7 @@ def verletStability_statement : Prop :=
 
 差异、假设及缺口：非零正频率；无声称非线性系统全局稳定。
 
-状态：**statement_only**；位置：`MolecularDynamics/Chapter04/Statements.lean:30`。
+状态：**statement\_only**；位置：`MolecularDynamics/Chapter04/Statements.lean:30`。
 
 ### CH04-012 · §4.1 · 定义 · 印刷p.142 / PDF164
 
@@ -223,7 +223,7 @@ def implicitModulus_statement : Prop := ∀ Ω h : ℝ, ‖implicitFactor Ω h�
 
 差异、假设及缺口：仅线性振荡系统；不保证一般不稳定线性场稳定。
 
-状态：**statement_only**；位置：`MolecularDynamics/Chapter04/Statements.lean:32`。
+状态：**statement\_only**；位置：`MolecularDynamics/Chapter04/Statements.lean:32`。
 
 ### CH04-015 · §4.1 · 定义 · 印刷p.143 / PDF165
 
@@ -250,7 +250,7 @@ def modifiedFrequencyLimit_statement : Prop :=
 
 差异、假设及缺口：极限是可核实数学内容；耦合共振的实践推测不计定理。
 
-状态：**statement_only**；位置：`MolecularDynamics/Chapter04/Statements.lean:33`。
+状态：**statement\_only**；位置：`MolecularDynamics/Chapter04/Statements.lean:33`。
 
 ### CH04-017 · §4.1 · 定义 · 印刷p.144 / PDF166
 
@@ -282,7 +282,7 @@ def midpointElimination_statement : Prop :=
 
 差异、假设及缺口：只陈述有限代数等价，不建立求解理论。
 
-状态：**statement_only**；位置：`MolecularDynamics/Chapter04/Statements.lean:35`。
+状态：**statement\_only**；位置：`MolecularDynamics/Chapter04/Statements.lean:35`。
 
 ### CH04-019 · §4.2.1 · 定义 · 印刷p.145 / PDF167
 
@@ -340,11 +340,11 @@ def respaStructure_statement : Prop :=
 
 差异、假设及缺口：新增仅陈述；辛性需实际导数，未重复证明。
 
-状态：**statement_only**；位置：`MolecularDynamics/Chapter04/Statements.lean:39`。
+状态：**statement\_only**；位置：`MolecularDynamics/Chapter04/Statements.lean:39`。
 
 ### CH04-023 · §4.2.1 · 定义 · 印刷p.146 / PDF168
 
-原文（忠实转述）：The resonance model uses slow kick S_h and exact fast rotation F_h.
+原文（忠实转述）：The resonance model uses slow kick S\_h and exact fast rotation F\_h.
 
 ```lean
 -- MolecularDynamics.Chapter04Review.slowMatrix
@@ -364,7 +364,7 @@ def impulseMatrix (Ω h : ℝ) := slowMatrix (h/2) * fastMatrix Ω h * slowMatri
 
 ### CH04-024 · §4.2.1 · 未编号结论 · 印刷p.146 / PDF168
 
-原文（忠实转述）：S_h and F_h have determinant one, hence W_h does too.
+原文（忠实转述）：S\_h and F\_h have determinant one, hence W\_h does too.
 
 ```lean
 -- MolecularDynamics.Chapter04Review.impulseDet_statement
@@ -374,11 +374,11 @@ def impulseDet_statement : Prop := ∀ Ω h : ℝ, Ω ≠ 0 →
 
 差异、假设及缺口：有限实矩阵。
 
-状态：**statement_only**；位置：`MolecularDynamics/Chapter04/Statements.lean:43`。
+状态：**statement\_only**；位置：`MolecularDynamics/Chapter04/Statements.lean:43`。
 
 ### CH04-025 · §4.2.1 · 未编号结论 · 印刷p.146 / PDF168
 
-原文（忠实转述）：The trace of W_h is 2 cos(h Omega)-(h/Omega) sin(h Omega).
+原文（忠实转述）：The trace of W\_h is 2 cos(h Omega)-(h/Omega) sin(h Omega).
 
 ```lean
 -- MolecularDynamics.Chapter04Review.impulseTrace_statement
@@ -388,11 +388,11 @@ def impulseTrace_statement : Prop := ∀ Ω h : ℝ, Ω ≠ 0 →
 
 差异、假设及缺口：补非零Omega。
 
-状态：**statement_only**；位置：`MolecularDynamics/Chapter04/Statements.lean:45`。
+状态：**statement\_only**；位置：`MolecularDynamics/Chapter04/Statements.lean:45`。
 
 ### CH04-026 · §4.2.1 · 未编号结论 · 印刷p.146 / PDF168
 
-原文（忠实转述）：At h=pi/Omega, W_h^n=(-1)^n [[1,0],[-n h,1]].
+原文（忠实转述）：At h=pi/Omega, W\_h^n=(-1)^n [[1,0],[-n h,1]].
 
 ```lean
 -- MolecularDynamics.Chapter04Review.resonancePower_statement
@@ -402,7 +402,7 @@ def resonancePower_statement : Prop := ∀ Ω : ℝ, 0 < Ω → ∀ k : ℕ,
 
 差异、假设及缺口：所有自然数n，Omega>0。
 
-状态：**statement_only**；位置：`MolecularDynamics/Chapter04/Statements.lean:47`。
+状态：**statement\_only**；位置：`MolecularDynamics/Chapter04/Statements.lean:47`。
 
 ### CH04-027 · §4.2.1 · 未编号结论 · 印刷p.147 / PDF169
 
@@ -416,7 +416,7 @@ def resonanceGrowth_statement : Prop := ∀ Ω : ℝ, 0 < Ω → ∀ z : Fin 2 �
 
 差异、假设及缺口：不是所有初值都增长。
 
-状态：**statement_only**；位置：`MolecularDynamics/Chapter04/Statements.lean:49`。
+状态：**statement\_only**；位置：`MolecularDynamics/Chapter04/Statements.lean:49`。
 
 ### CH04-028 · §4.2.1 · 未编号结论 · 印刷p.147 / PDF169
 
@@ -431,7 +431,7 @@ def resonanceTaylor_statement : Prop := ∀ Ω : ℝ, 0 < Ω → ∃ C > 0, ∃ 
 
 差异、假设及缺口：原图核对；保留Taylor余项量化。
 
-状态：**statement_only**；位置：`MolecularDynamics/Chapter04/Statements.lean:51`。
+状态：**statement\_only**；位置：`MolecularDynamics/Chapter04/Statements.lean:51`。
 
 ### CH04-029 · §4.2.1 · 未编号结论 · 印刷p.147 / PDF169
 
@@ -451,7 +451,7 @@ def resonanceEigenPrinted_statement : Prop := ∀ Ω : ℝ, 0 < Ω → ∃ C > 0
 
 差异、假设及缺口：原特征值sqrt(abs(epsilon)/2)系数疑误，附字面Prop；只登记局部区间。
 
-状态：**statement_only**；位置：`MolecularDynamics/Chapter04/Statements.lean:54;MolecularDynamics/Chapter04/Statements.lean:56`。
+状态：**statement\_only**；位置：`MolecularDynamics/Chapter04/Statements.lean:54;MolecularDynamics/Chapter04/Statements.lean:56`。
 
 ### CH04-030 · §4.2.2 · 定义 · 印刷p.149 / PDF171
 
@@ -486,7 +486,7 @@ def mollifiedStructure_statement : Prop :=
 
 差异、假设及缺口：真实链式导数；不证明实践的步长增益。
 
-状态：**statement_only**；位置：`MolecularDynamics/Chapter04/Statements.lean:60`。
+状态：**statement\_only**；位置：`MolecularDynamics/Chapter04/Statements.lean:60`。
 
 ### CH04-032 · §4.3 · 定义 · 印刷p.150 / PDF172
 
@@ -504,7 +504,7 @@ def holonomicRelation {n l : ℕ} (g : Q n → ℝ → Q l) (q : ℝ → Q n) : 
 
 ### CH04-033 · §4.3 · 未编号结论 · 印刷p.150 / PDF172
 
-原文（忠实转述）：Differentiating g(q(t),t)=0 gives Dq g q'+partial_t g=0.
+原文（忠实转述）：Differentiating g(q(t),t)=0 gives Dq g q'+partial\_t g=0.
 
 ```lean
 -- MolecularDynamics.Chapter04Review.timeConstraintDerivative_statement
@@ -516,7 +516,7 @@ def timeConstraintDerivative_statement : Prop :=
 
 差异、假设及缺口：补可微实际曲线，局部恒为零。
 
-状态：**statement_only**；位置：`MolecularDynamics/Chapter04/Statements.lean:65`。
+状态：**statement\_only**；位置：`MolecularDynamics/Chapter04/Statements.lean:65`。
 
 ### CH04-034 · §4.3 · 定义 · 印刷p.152 / PDF174
 
@@ -586,7 +586,7 @@ theorem textbookConstraintJacobian_eq_actualDerivative {Nc Mc : ℕ}
 
 ### CH04-038 · §4.3 · 定义 · 印刷p.153 / PDF175
 
-原文（忠实转述）：The curvature is D²g_k(q)[M^-1p,M^-1p].
+原文（忠实转述）：The curvature is D²g\_k(q)[M^-1p,M^-1p].
 
 ```lean
 -- MolecularDynamics.textbookConstraintCurvature
@@ -736,7 +736,7 @@ def variational_statement : Prop :=
 
 差异、假设及缺口：实际fderiv；现有场正则性仅依赖，完整变分方程另陈述。
 
-状态：**statement_only**；位置：`MolecularDynamics/Chapter04/Statements.lean:69`。
+状态：**statement\_only**；位置：`MolecularDynamics/Chapter04/Statements.lean:69`。
 
 ### CH04-046 · §4.3.1 · 未编号结论 · 印刷p.155 / PDF177
 
@@ -825,7 +825,7 @@ def hiddenEulerError_statement : Prop :=
 
 差异、假设及缺口：光滑局部分支/小乘子条件；不会误记完全保持隐藏约束。
 
-状态：**statement_only**；位置：`MolecularDynamics/Chapter04/Statements.lean:78`。
+状态：**statement\_only**；位置：`MolecularDynamics/Chapter04/Statements.lean:78`。
 
 ### CH04-050 · §4.3.2 · 定义 · 印刷p.156 / PDF178
 
@@ -883,7 +883,7 @@ def newtonQuadratic_statement : Prop :=
 
 差异、假设及缺口：局部C2、Jacobian非奇异，未搭Newton一般收敛理论。
 
-状态：**statement_only**；位置：`MolecularDynamics/Chapter04/Statements.lean:85`。
+状态：**statement\_only**；位置：`MolecularDynamics/Chapter04/Statements.lean:85`。
 
 ### CH04-053 · §4.3.2 · 未编号结论 · 印刷p.157 / PDF179
 
@@ -902,7 +902,7 @@ def frozenNewtonLinear_statement : Prop :=
 
 差异、假设及缺口：书中小步条件量化为真实导数范数<1；不无条件断言。
 
-状态：**statement_only**；位置：`MolecularDynamics/Chapter04/Statements.lean:90`。
+状态：**statement\_only**；位置：`MolecularDynamics/Chapter04/Statements.lean:90`。
 
 ### CH04-054 · §4.3.2 · 未编号结论 · 印刷p.158 / PDF180
 
@@ -922,7 +922,7 @@ def projectionScale_statement : Prop :=
 
 差异、假设及缺口：局部光滑选根且eta(0)=0；不构造隐式分支存在。
 
-状态：**statement_only**；位置：`MolecularDynamics/Chapter04/Statements.lean:97`。
+状态：**statement\_only**；位置：`MolecularDynamics/Chapter04/Statements.lean:97`。
 
 ### CH04-055 · §4.3.3 · 定义 · 印刷p.158 / PDF180
 
@@ -941,7 +941,7 @@ def componentSweep {n l : ℕ} (m : Fin n → ℝ) (g : Fin l → Q n → ℝ)
   (List.finRange l).foldl (fun Qcur j => componentConstraintStep m g q Qcur j) Qnow
 ```
 
-差异、假设及缺口：印刷G1_j索引误写，采用Gj_n；分母非零才是可用步骤。
+差异、假设及缺口：印刷G1\_j索引误写，采用Gj\_n；分母非零才是可用步骤。
 
 状态：**defined**；位置：`MolecularDynamics/Chapter04/ReviewDefinitions.lean:100;MolecularDynamics/Chapter04/ReviewDefinitions.lean:104`。
 
@@ -1254,7 +1254,7 @@ def shakePositionOrder_statement : Prop :=
 
 差异、假设及缺口：统一实际ODE局部误差；阶结论非作为输入；不建立分支存在。
 
-状态：**statement_only**；位置：`MolecularDynamics/Chapter04/Statements.lean:115;MolecularDynamics/Chapter04/Statements.lean:158`。
+状态：**statement\_only**；位置：`MolecularDynamics/Chapter04/Statements.lean:115;MolecularDynamics/Chapter04/Statements.lean:158`。
 
 ### CH04-068 · §4.3.5 · 未编号结论 · 印刷p.162 / PDF184
 
@@ -1273,7 +1273,7 @@ def rattleSymplectic_statement : Prop :=
 
 差异、假设及缺口：已有Lemma4.1/Gram依赖映射；完整算法陈述未证。
 
-状态：**statement_only**；位置：`MolecularDynamics/Chapter04/Statements.lean:108`。
+状态：**statement\_only**；位置：`MolecularDynamics/Chapter04/Statements.lean:108`。
 
 ### CH04-069 · §4.3.5 · 定义 · 印刷p.162 / PDF184
 
@@ -1314,7 +1314,7 @@ def shakeRattlePositions_statement : Prop :=
 
 差异、假设及缺口：原mu与lambda在缩放上需审阅；给各自完整关系与相容半步动量，不把位置相等放进假设。
 
-状态：**statement_only**；位置：`MolecularDynamics/Chapter04/Statements.lean:140`。
+状态：**statement\_only**；位置：`MolecularDynamics/Chapter04/Statements.lean:140`。
 
 ### CH04-071 · §4.3.5.1 · 定义 · 印刷p.163 / PDF185
 
@@ -1370,7 +1370,7 @@ def constrainedCompositionOrder_statement : Prop :=
 
 差异、假设及缺口：完整阶/辛陈述依赖实际光滑分支；未证明。
 
-状态：**statement_only**；位置：`MolecularDynamics/Chapter04/Statements.lean:171;MolecularDynamics/Chapter04/Statements.lean:182`。
+状态：**statement\_only**；位置：`MolecularDynamics/Chapter04/Statements.lean:171;MolecularDynamics/Chapter04/Statements.lean:182`。
 
 ### CH04-073 · §4.3.5.1 · 定义 · 印刷p.163 / PDF185
 
@@ -1403,7 +1403,7 @@ def constrainedPotentialFlow_statement : Prop :=
 
 差异、假设及缺口：仅给定正则固定q；真实约束ODE，不用流结论作假设。
 
-状态：**statement_only**；位置：`MolecularDynamics/Chapter04/Statements.lean:195`。
+状态：**statement\_only**；位置：`MolecularDynamics/Chapter04/Statements.lean:195`。
 
 ### CH04-075 · §4.3.5.1 · 定义 · 印刷p.164 / PDF186
 
@@ -1463,7 +1463,7 @@ def lincsConvergence_statement : Prop := ∀ l (C : Matrix (Fin l) (Fin l) ℝ),
 
 差异、假设及缺口：范数<1；缺一般算法误差/并行成本理论。
 
-状态：**statement_only**；位置：`MolecularDynamics/Chapter04/Statements.lean:201`。
+状态：**statement\_only**；位置：`MolecularDynamics/Chapter04/Statements.lean:201`。
 
 ### CH04-079 · §4.4 · 定义 · 印刷p.167 / PDF189
 
@@ -1499,11 +1499,11 @@ def kineticSplit_statement : Prop := ∀ N (m : Fin N → ℝ) (v : V) (w : Fin 
 
 差异、假设及缺口：质量正、真实有限和；只陈述。
 
-状态：**statement_only**；位置：`MolecularDynamics/Chapter04/Statements.lean:203`。
+状态：**statement\_only**；位置：`MolecularDynamics/Chapter04/Statements.lean:203`。
 
 ### CH04-081 · §4.4 · 定义 · 印刷p.168 / PDF190
 
-原文（忠实转述）：The fixed second moment matrix R is sum mi delta_i delta_i^T and Krot=trace(dotTheta R dotTheta^T)/2.
+原文（忠实转述）：The fixed second moment matrix R is sum mi delta\_i delta\_i^T and Krot=trace(dotTheta R dotTheta^T)/2.
 
 ```lean
 -- MolecularDynamics.Chapter04Review.secondMoment
@@ -1529,7 +1529,7 @@ def rotationSkew_statement : Prop := ∀ (Θ : ℝ → Mat3) t d,
 
 差异、假设及缺口：真实HasDerivAt与局部正交。
 
-状态：**statement_only**；位置：`MolecularDynamics/Chapter04/Statements.lean:206`。
+状态：**statement\_only**；位置：`MolecularDynamics/Chapter04/Statements.lean:206`。
 
 ### CH04-083 · §4.4 · 定义 · 印刷p.169 / PDF191
 
@@ -1558,11 +1558,11 @@ def crossMatrix_statement : Prop := ∀ u v : V, skewMatrix u *ᵥ v=cross3 u v
 
 差异、假设及缺口：有限坐标恒等式与实际运动学分开。
 
-状态：**statement_only**；位置：`MolecularDynamics/Chapter04/Statements.lean:208`。
+状态：**statement\_only**；位置：`MolecularDynamics/Chapter04/Statements.lean:208`。
 
 ### CH04-085 · §4.4 · 定义 · 印刷p.169 / PDF191
 
-原文（忠实转述）：The inertia tensor is sum mi (abs(delta_i)² I-delta_i delta_i^T).
+原文（忠实转述）：The inertia tensor is sum mi (abs(delta\_i)² I-delta\_i delta\_i^T).
 
 ```lean
 -- MolecularDynamics.Chapter04Review.inertiaTensor
@@ -1593,11 +1593,11 @@ def inertiaTraceCorrected_statement : Prop := ∀ N (m : Fin N → ℝ) (δ : Fi
 
 差异、假设及缺口：已图像核对；保留字面及修正版，字面一般不成立。
 
-状态：**statement_only**；位置：`MolecularDynamics/Chapter04/Statements.lean:209;MolecularDynamics/Chapter04/Statements.lean:211`。
+状态：**statement\_only**；位置：`MolecularDynamics/Chapter04/Statements.lean:209;MolecularDynamics/Chapter04/Statements.lean:211`。
 
 ### CH04-087 · §4.4 · 定义 · 印刷p.170 / PDF192
 
-原文（忠实转述）：The rigid body matrix Hamiltonian is p_cm²/(2M)+trace(Pi R^-1 Pi^T)/2+U(q_cm,Theta).
+原文（忠实转述）：The rigid body matrix Hamiltonian is p\_cm²/(2M)+trace(Pi R^-1 Pi^T)/2+U(q\_cm,Theta).
 
 ```lean
 -- MolecularDynamics.Chapter04Review.rigidHamiltonian
@@ -1611,7 +1611,7 @@ def rigidHamiltonian (M : ℝ) (R : Mat3) (U : V → Mat3 → ℝ) (q p : V) (Θ
 
 ### CH04-088 · §4.4 · 定义 · 印刷p.171 / PDF193
 
-原文（忠实转述）：The rigid matrix ODE has q'=p/M,Theta'=Pi R^-1,p'=-grad_q U,Pi'=-grad_Theta U-Theta Lambda,Theta^TTheta=I.
+原文（忠实转述）：The rigid matrix ODE has q'=p/M,Theta'=Pi R^-1,p'=-grad\_q U,Pi'=-grad\_Theta U-Theta Lambda,Theta^TTheta=I.
 
 ```lean
 -- MolecularDynamics.Chapter04Review.rigidMatrixRelation
@@ -1628,7 +1628,7 @@ def rigidMatrixRelation (M : ℝ) (R : Mat3) (U : V → Mat3 → ℝ)
 
 ### CH04-089 · §4.4.1 · 定义 · 印刷p.171 / PDF193
 
-原文（忠实转述）：Spatial angular momentum is sum mi delta_i cross delta_i', and body momentum is Theta^T l.
+原文（忠实转述）：Spatial angular momentum is sum mi delta\_i cross delta\_i', and body momentum is Theta^T l.
 
 ```lean
 -- MolecularDynamics.Chapter04Review.angularMomentum
@@ -1657,7 +1657,7 @@ def angularInertia_statement : Prop := ∀ N (m : Fin N → ℝ) (δ : Fin N →
 
 差异、假设及缺口：在SO(3)旋转下；正文三重积符号需导师复核。
 
-状态：**statement_only**；位置：`MolecularDynamics/Chapter04/Statements.lean:213`。
+状态：**statement\_only**；位置：`MolecularDynamics/Chapter04/Statements.lean:213`。
 
 ### CH04-091 · §4.4.1 · 定义 · 印刷p.172 / PDF194
 
@@ -1690,7 +1690,7 @@ def rigidInvariants_statement : Prop := ∀ (T : Mat3) (π : ℝ → V) a b,
 
 差异、假设及缺口：实际ODE、对称正定T，固定时间区间。
 
-状态：**statement_only**；位置：`MolecularDynamics/Chapter04/Statements.lean:217`。
+状态：**statement\_only**；位置：`MolecularDynamics/Chapter04/Statements.lean:217`。
 
 ### CH04-093 · §4.4.1 · 定义 · 印刷p.172 / PDF194
 
@@ -1727,7 +1727,7 @@ def spinStep (I : V) (h : ℝ) : V × Mat3 → V × Mat3 :=
     spinAxis I 1 (h/2) ∘ spinAxis I 0 (h/2)
 ```
 
-差异、假设及缺口：显示第二分量误写pi，采用pi_2；正I1/I2/I3。
+差异、假设及缺口：显示第二分量误写pi，采用pi\_2；正I1/I2/I3。
 
 状态：**defined**；位置：`MolecularDynamics/Chapter04/ReviewDefinitions.lean:181;MolecularDynamics/Chapter04/ReviewDefinitions.lean:185;MolecularDynamics/Chapter04/ReviewDefinitions.lean:188`。
 
@@ -1748,11 +1748,11 @@ def spinPoisson_statement : Prop := ∀ I : V, (∀ i, 0 < I i) → ∀ h : ℝ,
 
 差异、假设及缺口：真实解公式与非canonical Poisson映射分开；不搭完整刚体辛理论；原DLM旋转正角与Euler pi cross omega的符号不一致，字面算法结论未证明。
 
-状态：**statement_only**；位置：`MolecularDynamics/Chapter04/Statements.lean:221;MolecularDynamics/Chapter04/Statements.lean:227`。
+状态：**statement\_only**；位置：`MolecularDynamics/Chapter04/Statements.lean:221;MolecularDynamics/Chapter04/Statements.lean:227`。
 
 ### CH04-096 · §4.4.2 · 定义 · 印刷p.173 / PDF195
 
-原文（忠实转述）：The force is -partial_q U and torque is -rot(Theta^T partial_Theta U).
+原文（忠实转述）：The force is -partial\_q U and torque is -rot(Theta^T partial\_Theta U).
 
 ```lean
 -- MolecularDynamics.Chapter04Review.rigidForce
@@ -1798,7 +1798,7 @@ def driftSpinCommute_statement : Prop := ∀ M h (I : V) (z : RBState),
 
 差异、假设及缺口：真实分量更新，正质量与惯量。
 
-状态：**statement_only**；位置：`MolecularDynamics/Chapter04/Statements.lean:229`。
+状态：**statement\_only**；位置：`MolecularDynamics/Chapter04/Statements.lean:229`。
 
 ### CH04-099 · §4.4.2 · 未编号结论 · 印刷p.174 / PDF196
 
@@ -1816,7 +1816,7 @@ def dlmStructure_statement : Prop := ∀ M (I : V) (U : V → Mat3 → ℝ),
 
 差异、假设及缺口：完整非canonical Poisson/约束辛性缺口；不搭建新理论。
 
-状态：**statement_only**；位置：`MolecularDynamics/Chapter04/Statements.lean:231`。
+状态：**statement\_only**；位置：`MolecularDynamics/Chapter04/Statements.lean:231`。
 
 ### CH04-100 · §4.3 · 未编号结论 · 印刷p.151 / PDF173
 
@@ -1832,4 +1832,4 @@ def constraintDegrees_statement : Prop :=
 
 差异、假设及缺口：页脚数学结论；真实导数满射与kernel维数，秩/零化度等式仅陈述；不把自由度值假设为结论。
 
-状态：**statement_only**；位置：`MolecularDynamics/Chapter04/Statements.lean:7`。
+状态：**statement\_only**；位置：`MolecularDynamics/Chapter04/Statements.lean:7`。

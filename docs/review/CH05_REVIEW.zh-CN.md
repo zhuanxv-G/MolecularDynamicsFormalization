@@ -1,6 +1,6 @@
 # 第5章人工审阅材料
 
-扫描用户指定PDF199–231；实际页码及章节标题边界以本章PAGE_SCAN.json为准。数值实验、介绍性模型和Exercises不纳入。微正则、Liouville、遍历和KAM一般理论只登记明确缺口，不搭建。
+扫描用户指定PDF199–231；实际页码及章节标题边界以本章PAGE\_SCAN.json为准。数值实验、介绍性模型和Exercises不纳入。微正则、Liouville、遍历和KAM一般理论只登记明确缺口，不搭建。
 
 清单是进度来源；defined与proved分开统计。Prop定义编译通过只确认陈述类型正确，不表示结论成立。
 原文为用户提供的教材PDF逐页忠实转述；机器验收见VALIDATION.json和check-full目录。导师语义审阅待完成。
@@ -10,9 +10,9 @@
 | --- | ---: |
 | defined | 37 |
 | proved | 11 |
-| statement_only | 28 |
+| statement\_only | 28 |
 | weakened | 0 |
-| not_formalizable_now | 10 |
+| not\_formalizable\_now | 10 |
 | 合计 | 86 |
 
 proved为清单行数；重复映射同一证明不等于独立定理数量。
@@ -27,7 +27,7 @@ proved为清单行数；重复映射同一证明不等于独立定理数量。
 
 ### CH05-001 · §5.1 · 定义 · 印刷p.180 / PDF201
 
-原文（忠实转述）：The Lie derivative is L_f g=Dg[f].
+原文（忠实转述）：The Lie derivative is L\_f g=Dg[f].
 
 ```lean
 -- MolecularDynamics.Chapter05Review.lie
@@ -40,7 +40,7 @@ def lie {n : ℕ} (f : E n → E n) (g : E n → ℝ) (z : E n) := (fderiv ℝ g
 
 ### CH05-002 · §5.1 · 未编号结论 · 印刷p.180 / PDF201
 
-原文（忠实转述）：Along an actual trajectory the time derivative of g is L_f g, (5.1).
+原文（忠实转述）：Along an actual trajectory the time derivative of g is L\_f g, (5.1).
 
 ```lean
 -- MolecularDynamics.hasDerivAt_textbookLieDerivative
@@ -56,7 +56,7 @@ theorem hasDerivAt_textbookLieDerivative (f : E → E) (φ : E → ℝ)
 
 ### CH05-003 · §5.1 · 定义 · 印刷p.180 / PDF201
 
-原文（忠实转述）：The observable solution operator is pullback g(F_t(z)).
+原文（忠实转述）：The observable solution operator is pullback g(F\_t(z)).
 
 ```lean
 -- MolecularDynamics.Chapter05Review.pullback
@@ -69,7 +69,7 @@ def pullback {X : Type*} (Φ : ℝ → X → X) (g : X → ℝ) (t : ℝ) (z : X
 
 ### CH05-004 · §5.1 · 未编号结论 · 印刷p.181 / PDF202
 
-原文（忠实转述）：A differentiable autonomous flow satisfies DF_t(z) f(z)=f(F_t(z)).
+原文（忠实转述）：A differentiable autonomous flow satisfies DF\_t(z) f(z)=f(F\_t(z)).
 
 ```lean
 -- MolecularDynamics.Chapter05Review.flowFieldTransport_statement
@@ -80,11 +80,11 @@ def flowFieldTransport_statement : Prop := ∀ n (f : E n → E n) Φ,
 
 差异、假设及缺口：真实流群/C2条件；不搭一般flow变分理论。
 
-状态：**statement_only**；位置：`MolecularDynamics/Chapter05/Statements.lean:8`。
+状态：**statement\_only**；位置：`MolecularDynamics/Chapter05/Statements.lean:8`。
 
 ### CH05-005 · §5.1 · 未编号结论 · 印刷p.181 / PDF202
 
-原文（忠实转述）：The pullback solves partial_t gtilde=L_f gtilde, (5.2).
+原文（忠实转述）：The pullback solves partial\_t gtilde=L\_f gtilde, (5.2).
 
 ```lean
 -- MolecularDynamics.Chapter05Review.pullbackPDE_statement
@@ -95,7 +95,7 @@ def pullbackPDE_statement : Prop := ∀ n (f : E n → E n) Φ (g : E n → ℝ)
 
 差异、假设及缺口：给定joint光滑实际流；一般输运PDE未证。
 
-状态：**statement_only**；位置：`MolecularDynamics/Chapter05/Statements.lean:11`。
+状态：**statement\_only**；位置：`MolecularDynamics/Chapter05/Statements.lean:11`。
 
 ### CH05-006 · §5.1 · 未编号结论 · 印刷p.181 / PDF202
 
@@ -109,11 +109,11 @@ def steadyFirstIntegral_statement : Prop := ∀ n (f : E n → E n) Φ (g : E n 
 
 差异、假设及缺口：实际流与所有初值，量词清晰。
 
-状态：**statement_only**；位置：`MolecularDynamics/Chapter05/Statements.lean:14`。
+状态：**statement\_only**；位置：`MolecularDynamics/Chapter05/Statements.lean:14`。
 
 ### CH05-007 · §5.1 · notation · 印刷p.181 / PDF202
 
-原文（忠实转述）：G_t=exp(t L_f) denotes the solution operator.
+原文（忠实转述）：G\_t=exp(t L\_f) denotes the solution operator.
 
 ```lean
 -- MolecularDynamics.Chapter05Review.solutionOperator
@@ -167,7 +167,7 @@ def densityNormalization_statement : Prop := ∀ n (ρ : E n → ℝ), density �
 
 差异、假设及缺口：基础积分理论有支持；本次有限时间盒未推广。
 
-状态：**statement_only**；位置：`MolecularDynamics/Chapter05/Statements.lean:16`。
+状态：**statement\_only**；位置：`MolecularDynamics/Chapter05/Statements.lean:16`。
 
 ### CH05-011 · §5.2.1 · 定义 · 印刷p.182 / PDF203
 
@@ -195,7 +195,7 @@ def borelClosure_statement : Prop := ∀ n (s : Set (E n)) (A : ℕ → Set (E n
 
 差异、假设及缺口：正文页脚理论逐条量化；Mathlib支持，未新增证明。
 
-状态：**statement_only**；位置：`MolecularDynamics/Chapter05/Statements.lean:18`。
+状态：**statement\_only**；位置：`MolecularDynamics/Chapter05/Statements.lean:18`。
 
 ### CH05-013 · §5.2.1 · 未编号结论 · 印刷p.183 / PDF204
 
@@ -252,7 +252,7 @@ def l2NormSquare_statement : Prop := ∀ n (μ : Measure (E n)) (g : L2Space μ)
 
 差异、假设及缺口：真实Lp quotient，基础Mathlib支持；单列陈述。
 
-状态：**statement_only**；位置：`MolecularDynamics/Chapter05/Statements.lean:21`。
+状态：**statement\_only**；位置：`MolecularDynamics/Chapter05/Statements.lean:21`。
 
 ### CH05-017 · §5.2.1 · 未编号结论 · 印刷p.183 / PDF204
 
@@ -266,7 +266,7 @@ def l2Complete_statement : Prop := ∀ n (μ : Measure (E n)) (u : ℕ → L2Spa
 
 差异、假设及缺口：实际CauchySeq趋于极限；不搭新Hilbert理论。
 
-状态：**statement_only**；位置：`MolecularDynamics/Chapter05/Statements.lean:23`。
+状态：**statement\_only**；位置：`MolecularDynamics/Chapter05/Statements.lean:23`。
 
 ### CH05-018 · §5.2.1 · 未编号结论 · 印刷p.183 / PDF204
 
@@ -285,7 +285,7 @@ def l2Linearity_statement : Prop := ∀ n (μ : Measure (E n)) (f g h : E n → 
 
 差异、假设及缺口：补可积乘积/平方可积假设；原公式的严格版本。
 
-状态：**statement_only**；位置：`MolecularDynamics/Chapter05/Statements.lean:25;MolecularDynamics/Chapter05/Statements.lean:27`。
+状态：**statement\_only**；位置：`MolecularDynamics/Chapter05/Statements.lean:25;MolecularDynamics/Chapter05/Statements.lean:27`。
 
 ### CH05-019 · §5.2.1 · 未编号结论 · 印刷p.183 / PDF204
 
@@ -298,7 +298,7 @@ def compactL2_statement : Prop := ∀ n (g : E n → ℝ), Continuous g → HasC
 
 差异、假设及缺口：实际Lebesgue局部有限测度；基础库支持未深挖。
 
-状态：**statement_only**；位置：`MolecularDynamics/Chapter05/Statements.lean:30`。
+状态：**statement\_only**；位置：`MolecularDynamics/Chapter05/Statements.lean:30`。
 
 ### CH05-020 · §5.2.1 · 定义 · 印刷p.184 / PDF205
 
@@ -318,7 +318,7 @@ def average {n : ℕ} (μ : Measure (E n)) (g : E n → ℝ) := ∫ z, g z ∂μ
 
 ### CH05-021 · §5.2.2 · 定义 · 印刷p.184 / PDF205
 
-原文（忠实转述）：The mass fraction of points in A at time t is integral_A rho(t).
+原文（忠实转述）：The mass fraction of points in A at time t is integral\_A rho(t).
 
 ```lean
 -- MolecularDynamics.Chapter05Review.massFraction
@@ -331,7 +331,7 @@ def massFraction {n : ℕ} (ρ : ℝ → E n → ℝ) (A : Set (E n)) (t : ℝ) 
 
 ### CH05-022 · §5.2.2 · 未编号结论 · 印刷p.184 / PDF205
 
-原文（忠实转述）：Its derivative is integral_A partial_t rho under differentiation-under-integral hypotheses.
+原文（忠实转述）：Its derivative is integral\_A partial\_t rho under differentiation-under-integral hypotheses.
 
 ```lean
 -- MolecularDynamics.Chapter05Review.massDerivative_statement
@@ -345,11 +345,11 @@ def massDerivative_statement : Prop := ∀ n (ρ : ℝ → E n → ℝ) (A : Set
 
 差异、假设及缺口：一致可积支配界；不搭一般输运解存在理论。
 
-状态：**statement_only**；位置：`MolecularDynamics/Chapter05/Statements.lean:31`。
+状态：**statement\_only**；位置：`MolecularDynamics/Chapter05/Statements.lean:31`。
 
 ### CH05-023 · §5.2.2 · 未编号结论 · 印刷p.184 / PDF205
 
-原文（忠实转述）：The derivative of the mass is negative outward flux, and equals negative integral_A div(rho f).
+原文（忠实转述）：The derivative of the mass is negative outward flux, and equals negative integral\_A div(rho f).
 
 ```lean
 -- MolecularDynamics.Chapter05Review.fluxBalance_statement
@@ -366,11 +366,11 @@ def fluxBalance_statement : Prop := ∀ n (f : E n → E n) Φ (ρ : ℝ → E n
 
 差异、假设及缺口：需边界法向量/曲面测度及散度定理，对长方体给忠实有限面公式。
 
-状态：**not_formalizable_now**；位置：`MolecularDynamics/Chapter05/Statements.lean:41`。
+状态：**not\_formalizable\_now**；位置：`MolecularDynamics/Chapter05/Statements.lean:41`。
 
 ### CH05-024 · §5.2.2 · 定义 · 印刷p.185 / PDF206
 
-原文（忠实转述）：The Liouvillian is M_f w=-div(w f).
+原文（忠实转述）：The Liouvillian is M\_f w=-div(w f).
 
 ```lean
 -- MolecularDynamics.Chapter05Review.divergence
@@ -388,7 +388,7 @@ def liouvillian {n : ℕ} (f : E n → E n) (u : E n → ℝ) (z : E n) :=
 
 ### CH05-025 · §5.2.2 · 未编号结论 · 印刷p.185 / PDF206
 
-原文（忠实转述）：The transported smooth density satisfies partial_t rho=-div(rho f).
+原文（忠实转述）：The transported smooth density satisfies partial\_t rho=-div(rho f).
 
 ```lean
 -- MolecularDynamics.Chapter05Review.liouvilleEquation_statement
@@ -401,11 +401,11 @@ def liouvilleEquation_statement : Prop := ∀ n (f : E n → E n) Φ (ρ : ℝ �
 
 差异、假设及缺口：实际体积变换密度与连续性方程；缺一般PDE/几何输运桥接。
 
-状态：**not_formalizable_now**；位置：`MolecularDynamics/Chapter05/Statements.lean:50`。
+状态：**not\_formalizable\_now**；位置：`MolecularDynamics/Chapter05/Statements.lean:50`。
 
 ### CH05-026 · §5.2.2 · 未编号结论 · 印刷p.185 / PDF206
 
-原文（忠实转述）：The continuity equation expands as -sum_i(rho partial_i f_i+f_i partial_i rho).
+原文（忠实转述）：The continuity equation expands as -sum\_i(rho partial\_i f\_i+f\_i partial\_i rho).
 
 ```lean
 -- MolecularDynamics.Chapter05Review.liouvilleProduct_statement
@@ -416,11 +416,11 @@ def liouvilleProduct_statement : Prop := ∀ n (f : E n → E n) (ρ : E n → �
 
 差异、假设及缺口：局部乘积规则；完整实际导数。
 
-状态：**statement_only**；位置：`MolecularDynamics/Chapter05/Statements.lean:55`。
+状态：**statement\_only**；位置：`MolecularDynamics/Chapter05/Statements.lean:55`。
 
 ### CH05-027 · §5.2.2 · 未编号结论 · 印刷p.185 / PDF206
 
-原文（忠实转述）：Integration by parts gives integral u L_f v=integral M_f u v after the boundary term vanishes, (5.4)-(5.5).
+原文（忠实转述）：Integration by parts gives integral u L\_f v=integral M\_f u v after the boundary term vanishes, (5.4)-(5.5).
 
 ```lean
 -- MolecularDynamics.Chapter05Review.liouvillianAdjoint_statement
@@ -431,11 +431,11 @@ def liouvillianAdjoint_statement : Prop := ∀ n (f : E n → E n) (u v : E n �
 
 差异、假设及缺口：用C1 compact support给明确消边界条件；形式伴随不是闭算子Hilbert伴随已识别。
 
-状态：**not_formalizable_now**；位置：`MolecularDynamics/Chapter05/Statements.lean:58`。
+状态：**not\_formalizable\_now**；位置：`MolecularDynamics/Chapter05/Statements.lean:58`。
 
 ### CH05-028 · §5.2.2 · notation · 印刷p.186 / PDF207
 
-原文（忠实转述）：The measure propagator is formally exp(t L_f^*) rho0.
+原文（忠实转述）：The measure propagator is formally exp(t L\_f^*) rho0.
 
 ```lean
 -- MolecularDynamics.Chapter05Review.measurePropagator
@@ -465,7 +465,7 @@ theorem textbookHamiltonianVectorField_divergence_zero {Nc : ℕ}
 
 ### CH05-030 · §5.2.3 · 未编号结论 · 印刷p.186 / PDF207
 
-原文（忠实转述）：For a divergence-free field the differential expressions satisfy M_f=-L_f.
+原文（忠实转述）：For a divergence-free field the differential expressions satisfy M\_f=-L\_f.
 
 ```lean
 -- MolecularDynamics.Chapter05Review.hamiltonianSkewExpression_statement
@@ -476,7 +476,7 @@ def hamiltonianSkewExpression_statement : Prop := ∀ n (f : E n → E n) (u : E
 
 差异、假设及缺口：实际differential expression；闭Hilbert skew-adjoint另需domain。
 
-状态：**statement_only**；位置：`MolecularDynamics/Chapter05/Statements.lean:61`。
+状态：**statement\_only**；位置：`MolecularDynamics/Chapter05/Statements.lean:61`。
 
 ### CH05-031 · §5.2.3 · 未编号结论 · 印刷p.187 / PDF208
 
@@ -493,11 +493,11 @@ def hamiltonianDensityPropagation_statement : Prop := ∀ n (f : E n → E n) Φ
 
 差异、假设及缺口：给定全时域C2流及体积保留；非一般PDE存在。
 
-状态：**statement_only**；位置：`MolecularDynamics/Chapter05/Statements.lean:64`。
+状态：**statement\_only**；位置：`MolecularDynamics/Chapter05/Statements.lean:64`。
 
 ### CH05-032 · §5.2.3 · 定义 · 印刷p.187 / PDF208
 
-原文（忠实转述）：The mechanical forward Liouvillian is -sum_i (p_i/m_i partial_qi+F_i partial_pi).
+原文（忠实转述）：The mechanical forward Liouvillian is -sum\_i (p\_i/m\_i partial\_qi+F\_i partial\_pi).
 
 ```lean
 -- MolecularDynamics.Chapter05Review.mechanicalLiouvillian
@@ -583,7 +583,7 @@ def diracApproximation_statement : Prop := ∀ n (r : ℝ → E n → ℝ),
 
 差异、假设及缺口：非负总质量1、support缩小；不将点wise收敛误作weak。
 
-状态：**statement_only**；位置：`MolecularDynamics/Chapter05/Statements.lean:69`。
+状态：**statement\_only**；位置：`MolecularDynamics/Chapter05/Statements.lean:69`。
 
 ### CH05-038 · §5.3.1 · 定义 · 印刷p.189 / PDF210
 
@@ -600,7 +600,7 @@ def gaussianDelta (ε z : ℝ) := Real.exp (-z^2/(2*ε))/Real.sqrt (2*Real.pi*ε
 
 ### CH05-039 · §5.3.2 · 定义 · 印刷p.189 / PDF210
 
-原文（忠实转述）：A weak stationary distribution annihilates L_f acting on test functions.
+原文（忠实转述）：A weak stationary distribution annihilates L\_f acting on test functions.
 
 ```lean
 -- MolecularDynamics.Chapter05Review.weakStationary
@@ -627,7 +627,7 @@ def ensembleAverage {n : ℕ} (ρ : ℝ → E n → ℝ) (φ : E n → ℝ) (t :
 
 ### CH05-041 · §5.3.2 · 未编号结论 · 印刷p.190 / PDF211
 
-原文（忠实转述）：Hamiltonian energy is a first integral: L_H H=0.
+原文（忠实转述）：Hamiltonian energy is a first integral: L\_H H=0.
 
 ```lean
 -- MolecularDynamics.textbookPoissonBracket_self
@@ -660,7 +660,7 @@ def energyDensityInvariant_statement : Prop := ∀ n (H : E n → ℝ) (f : E n 
 
 差异、假设及缺口：补归一化与真实全流；原文t导数趋零只为启发，非平均收敛充分条件。
 
-状态：**statement_only**；位置：`MolecularDynamics/Chapter05/Statements.lean:74`。
+状态：**statement\_only**；位置：`MolecularDynamics/Chapter05/Statements.lean:74`。
 
 ### CH05-043 · §5.3.2 · 定义 · 印刷p.190 / PDF211
 
@@ -700,7 +700,7 @@ def shellWeakPrinted_statement : Prop := ∀ n (H : E n → ℝ) c,
 
 差异、假设及缺口：需coarea及正则紧能量面/尾部控制；原文rho已归一又乘Z^-1疑重复，保留字面版。
 
-状态：**not_formalizable_now**；位置：`MolecularDynamics/Chapter05/Statements.lean:79;MolecularDynamics/Chapter05/Statements.lean:85`。
+状态：**not\_formalizable\_now**；位置：`MolecularDynamics/Chapter05/Statements.lean:79;MolecularDynamics/Chapter05/Statements.lean:85`。
 
 ### CH05-045 · §5.3.2 · 定义 · 印刷p.191 / PDF212
 
@@ -740,7 +740,7 @@ def surfaceAreaFormula_statement : Prop := ∀ d (g : E d → E (d+1)) (U : Set 
 
 差异、假设及缺口：需曲面面积/coarea/嵌入流形Riemannian volume form；可陈述未证明。
 
-状态：**not_formalizable_now**；位置：`MolecularDynamics/Chapter05/Statements.lean:89`。
+状态：**not\_formalizable\_now**；位置：`MolecularDynamics/Chapter05/Statements.lean:89`。
 
 ### CH05-047 · §5.3.2 · 定义 · 印刷p.192 / PDF213
 
@@ -768,11 +768,11 @@ def normalEnergyTaylor_statement : Prop := ∀ n (H : E n → ℝ) z,
 
 差异、假设及缺口：局部C2、非零grad；真实余项量化。
 
-状态：**statement_only**；位置：`MolecularDynamics/Chapter05/Statements.lean:96`。
+状态：**statement\_only**；位置：`MolecularDynamics/Chapter05/Statements.lean:96`。
 
 ### CH05-049 · §5.3.2 · 未编号结论 · 印刷p.192 / PDF213
 
-原文（忠实转述）：Thickened-shell volume divided by dE tends to integral_surface 1/abs(grad H).
+原文（忠实转述）：Thickened-shell volume divided by dE tends to integral\_surface 1/abs(grad H).
 
 ```lean
 -- MolecularDynamics.Chapter05Review.shellVolumeLimit_statement
@@ -785,7 +785,7 @@ def shellVolumeLimit_statement : Prop := ∀ n (H : E n → ℝ) c,
 
 差异、假设及缺口：缺tubular coordinates/coarea/几何Jacobian；明确正则紧性。
 
-状态：**not_formalizable_now**；位置：`MolecularDynamics/Chapter05/Statements.lean:99`。
+状态：**not\_formalizable\_now**；位置：`MolecularDynamics/Chapter05/Statements.lean:99`。
 
 ### CH05-050 · §5.3.2 · 未编号结论 · 印刷p.193 / PDF214
 
@@ -801,7 +801,7 @@ def microInvariant_statement : Prop := ∀ n (H : E n → ℝ) c (f : E n → E 
 
 差异、假设及缺口：体积与能量守恒并不足以已证曲面测度桥接；需coarea与流正则性。
 
-状态：**not_formalizable_now**；位置：`MolecularDynamics/Chapter05/Statements.lean:104`。
+状态：**not\_formalizable\_now**；位置：`MolecularDynamics/Chapter05/Statements.lean:104`。
 
 ### CH05-051 · §5.3.2 · 定义 · 印刷p.193 / PDF214
 
@@ -843,7 +843,7 @@ def microProbability_statement : Prop := ∀ n (H : E n → ℝ) c,
 
 差异、假设及缺口：明确0<raw mass<infinity；基础归一化部分不需要一般几何理论。
 
-状态：**statement_only**；位置：`MolecularDynamics/Chapter05/Statements.lean:108`。
+状态：**statement\_only**；位置：`MolecularDynamics/Chapter05/Statements.lean:108`。
 
 ### CH05-054 · §5.3.3 · 未编号结论 · 印刷p.195 / PDF216
 
@@ -859,7 +859,7 @@ def lowerDimensionNull_statement : Prop := ∀ n d (H : E n → ℝ) c (g : E d 
 
 差异、假设及缺口：需Hausdorff维数/Lipschitz图像与几何measure桥接；非任意低维拓扑集。
 
-状态：**not_formalizable_now**；位置：`MolecularDynamics/Chapter05/Statements.lean:111`。
+状态：**not\_formalizable\_now**；位置：`MolecularDynamics/Chapter05/Statements.lean:111`。
 
 ### CH05-055 · §5.3.3 · 定义 · 印刷p.195 / PDF216
 
@@ -876,7 +876,7 @@ def microAverage {n : ℕ} (H : E n → ℝ) (c : ℝ) (g : E n → ℝ) := aver
 
 ### CH05-056 · §5.4 · 定义 · 印刷p.195 / PDF216
 
-原文（忠实转述）：The finite trajectory average is (1/T) integral_0^T g(z(t)); its infinite limit is (5.9).
+原文（忠实转述）：The finite trajectory average is (1/T) integral\_0^T g(z(t)); its infinite limit is (5.9).
 
 ```lean
 -- MolecularDynamics.Chapter05Review.timeAverage
@@ -968,7 +968,7 @@ def ergodicTimeAverage_statement : Prop := ∀ n (μ : Measure (E n)) Φ,
 
 差异、假设及缺口：Mathlib有离散ergodic支持；缺本章连续流Birkhoff/积分时间平均桥接，不搭理论。
 
-状态：**not_formalizable_now**；位置：`MolecularDynamics/Chapter05/Statements.lean:115`。
+状态：**not\_formalizable\_now**；位置：`MolecularDynamics/Chapter05/Statements.lean:115`。
 
 ### CH05-062 · §5.4.1 · 未编号结论 · 印刷p.198 / PDF219
 
@@ -986,7 +986,7 @@ def nonergodicSet_statement : Prop := ∀ n (μ : Measure (E n)) Φ,
 
 差异、假设及缺口：显式概率/不变性前提；逻辑等价仅陈述。
 
-状态：**statement_only**；位置：`MolecularDynamics/Chapter05/Statements.lean:121`。
+状态：**statement\_only**；位置：`MolecularDynamics/Chapter05/Statements.lean:121`。
 
 ### CH05-063 · §5.4.1 · 未编号结论 · 印刷p.200 / PDF221
 
@@ -1009,7 +1009,7 @@ def kam_statement : Prop := ∀ n (H0 : E n → ℝ) (P : Phase n → ℝ) (I0 :
 
 差异、假设及缺口：原文只在double-pendulum例中定性引用；陈述为非退化Diophantine torus的持久化，不宣称例5.5参数已满足，需KAM/Nash-Moser与测度版。
 
-状态：**not_formalizable_now**；位置：`MolecularDynamics/Chapter05/Statements.lean:127`。
+状态：**not\_formalizable\_now**；位置：`MolecularDynamics/Chapter05/Statements.lean:127`。
 
 ### CH05-064 · §5.4.1 · 定义 · 印刷p.199 / PDF220
 
@@ -1029,7 +1029,7 @@ def mixing {n : ℕ} (μ : Measure (E n)) (Φ : ℝ → E n → E n) : Prop :=
 
 ### CH05-065 · §5.5 · 定义 · 印刷p.203 / PDF224
 
-原文（忠实转述）：The temporal correlation is k times average of a(F_t(z)) dot b(z).
+原文（忠实转述）：The temporal correlation is k times average of a(F\_t(z)) dot b(z).
 
 ```lean
 -- MolecularDynamics.Chapter05Review.correlation
@@ -1072,7 +1072,7 @@ def correlationTime_statement : Prop := ∀ n d (μ : Measure (E n)) Φ
 
 差异、假设及缺口：AE初值，给定lag逐次量词；semigroup与可积性。
 
-状态：**statement_only**；位置：`MolecularDynamics/Chapter05/Statements.lean:138`。
+状态：**statement\_only**；位置：`MolecularDynamics/Chapter05/Statements.lean:138`。
 
 ### CH05-068 · §5.5 · 定义 · 印刷p.204 / PDF225
 
@@ -1090,7 +1090,7 @@ def velocityCorrelation {n d : ℕ} (μ : Measure (E n)) (Φ : ℝ → E n → E
 
 ### CH05-069 · §5.5 · 定义 · 印刷p.204 / PDF225
 
-原文（忠实转述）：The transition probability from A to B at lag t is average(1_A 1_B∘F_t)/average(1_A).
+原文（忠实转述）：The transition probability from A to B at lag t is average(1\_A 1\_B∘F\_t)/average(1\_A).
 
 ```lean
 -- MolecularDynamics.Chapter05Review.transitionProbability
@@ -1105,7 +1105,7 @@ def transitionProbability {n : ℕ} (μ : Measure (E n)) (Φ : ℝ → E n → E
 
 ### CH05-070 · §5.5 · 未编号结论 · 印刷p.205 / PDF226
 
-原文（忠实转述）：Pushforward/pullback duality gives integral phi against evolved density equals integral phi∘F_t against the initial measure, (5.10).
+原文（忠实转述）：Pushforward/pullback duality gives integral phi against evolved density equals integral phi∘F\_t against the initial measure, (5.10).
 
 ```lean
 -- MolecularDynamics.Chapter05Review.measureDuality_statement
@@ -1116,7 +1116,7 @@ def measureDuality_statement : Prop := ∀ n (μ : Measure (E n)) Φ (φ : E n �
 
 差异、假设及缺口：真实Measure.map和可测/可积条件；基础库可用，时间盒保留。
 
-状态：**statement_only**；位置：`MolecularDynamics/Chapter05/Statements.lean:145`。
+状态：**statement\_only**；位置：`MolecularDynamics/Chapter05/Statements.lean:145`。
 
 ### CH05-071 · §5.5 · 未编号结论 · 印刷p.205 / PDF226
 
@@ -1141,11 +1141,11 @@ def mixingCorrelationPrinted_statement : Prop := ∀ n (μ : Measure (E n)) Φ
 
 差异、假设及缺口：保留原k归一化；印刷极限遗漏k，附修正版。
 
-状态：**statement_only**；位置：`MolecularDynamics/Chapter05/Statements.lean:148;MolecularDynamics/Chapter05/Statements.lean:155`。
+状态：**statement\_only**；位置：`MolecularDynamics/Chapter05/Statements.lean:148;MolecularDynamics/Chapter05/Statements.lean:155`。
 
 ### CH05-072 · §5.6 · 定义 · 印刷p.206 / PDF227
 
-原文（忠实转述）：The discrete finite average is n^-1 sum_(k=0)^n g(z_k) in the printed formula.
+原文（忠实转述）：The discrete finite average is n^-1 sum_(k=0)^n g(z\_k) in the printed formula.
 
 ```lean
 -- MolecularDynamics.Chapter05Review.discreteAveragePrinted
@@ -1176,7 +1176,7 @@ def discretePropagator {X : Type*} [MeasurableSpace X] (G : X → X) (μ : Measu
 
 ### CH05-074 · §5.6 · 定义 · 印刷p.206 / PDF227
 
-原文（忠实转述）：The finite modified field is f+h^r f_r and its forward differential expression splits linearly.
+原文（忠实转述）：The finite modified field is f+h^r f\_r and its forward differential expression splits linearly.
 
 ```lean
 -- MolecularDynamics.Chapter05Review.modifiedField
@@ -1189,7 +1189,7 @@ def modifiedField {n : ℕ} (f fr : E n → E n) (h : ℝ) (r : ℕ) := fun z =>
 
 ### CH05-075 · §5.6 · 未编号结论 · 印刷p.206 / PDF227
 
-原文（忠实转述）：The Liouvillian of f+h^r f_r is the sum of the corresponding expressions.
+原文（忠实转述）：The Liouvillian of f+h^r f\_r is the sum of the corresponding expressions.
 
 ```lean
 -- MolecularDynamics.Chapter05Review.modifiedLiouvillian_statement
@@ -1200,7 +1200,7 @@ def modifiedLiouvillian_statement : Prop := ∀ n (f fr : E n → E n) (u : E n 
 
 差异、假设及缺口：真实微分运算，补可微条件。
 
-状态：**statement_only**；位置：`MolecularDynamics/Chapter05/Statements.lean:159`。
+状态：**statement\_only**；位置：`MolecularDynamics/Chapter05/Statements.lean:159`。
 
 ### CH05-076 · §5.6 · 未编号结论 · 印刷p.207 / PDF228
 
@@ -1214,7 +1214,7 @@ def eulerInvariant_statement : Prop := ∀ h : ℝ, h ≠ 0 → ∀ μ : Measure
 
 差异、假设及缺口：原文两分量都趋∞并非严格成立；改述范数，delta不吸引。
 
-状态：**statement_only**；位置：`MolecularDynamics/Chapter05/Statements.lean:162`。
+状态：**statement\_only**；位置：`MolecularDynamics/Chapter05/Statements.lean:162`。
 
 ### CH05-077 · §5.6 · 未编号结论 · 印刷p.207 / PDF228
 
@@ -1231,7 +1231,7 @@ def backwardEulerLimit_statement : Prop := ∀ h : ℝ,h ≠ 0 →
 
 差异、假设及缺口：h非零；weak有界连续test与真实概率，非点wise密度收敛。
 
-状态：**statement_only**；位置：`MolecularDynamics/Chapter05/Statements.lean:164`。
+状态：**statement\_only**；位置：`MolecularDynamics/Chapter05/Statements.lean:164`。
 
 ### CH05-078 · §5.6 · 未编号结论 · 印刷p.207 / PDF228
 
@@ -1260,7 +1260,7 @@ def symplecticEulerDensity_statement : Prop := ∀ h : ℝ, |h| < 2 → ∀ r : 
 
 差异、假设及缺口：补线性体积保留与可积；不推一般数值ergodicity。
 
-状态：**statement_only**；位置：`MolecularDynamics/Chapter05/Statements.lean:169`。
+状态：**statement\_only**；位置：`MolecularDynamics/Chapter05/Statements.lean:169`。
 
 ### CH05-080 · §5.6 · 定义 · 印刷p.208 / PDF229
 
@@ -1303,7 +1303,7 @@ def theorem51_statement : Prop :=
 
 差异、假设及缺口：紧正则能量面、smooth H/eta/g/w、w dot grad H非零；完整几何平均差量化，未把校正公式假设成前提；实现额外明示统一紧能量带、原分母在能量带非零及raw mass有限正，完整几何定理仍未证。
 
-状态：**statement_only**；位置：`MolecularDynamics/Chapter05/Statements.lean:175`。
+状态：**statement\_only**；位置：`MolecularDynamics/Chapter05/Statements.lean:175`。
 
 ### CH05-082 · §5.6 · 定义 · 印刷p.209 / PDF230
 
@@ -1376,7 +1376,7 @@ def gradientTransverse_statement : Prop := ∀ n (H : E n → ℝ) c,
 
 差异、假设及缺口：有限Euclidean平方范数正；本次不推广几何理论。
 
-状态：**statement_only**；位置：`MolecularDynamics/Chapter05/Statements.lean:186`。
+状态：**statement\_only**；位置：`MolecularDynamics/Chapter05/Statements.lean:186`。
 
 ### CH05-086 · §5.6 · 未编号结论 · 印刷p.209 / PDF230
 
@@ -1400,4 +1400,4 @@ def dynamicalCorrection_statement : Prop :=
 
 差异、假设及缺口：固定lag的真实光滑pullback observable；流参数扰动不可自动忽略。
 
-状态：**statement_only**；位置：`MolecularDynamics/Chapter05/Statements.lean:189`。
+状态：**statement\_only**；位置：`MolecularDynamics/Chapter05/Statements.lean:189`。

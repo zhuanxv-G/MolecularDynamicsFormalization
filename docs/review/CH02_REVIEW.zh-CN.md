@@ -9,16 +9,16 @@
 | --- | ---: |
 | defined | 70 |
 | proved | 39 |
-| statement_only | 42 |
+| statement\_only | 42 |
 | weakened | 8 |
-| not_formalizable_now | 1 |
+| not\_formalizable\_now | 1 |
 | 合计 | 160 |
 
 已证明结论数：39（按清单行统计，重复映射同一证明不是独立定理）。
 
 需要人工判断的问题：
 
-1. 印刷63的L中+U与实际展开-U不一致，端点q_nu又被列为可变节点；是否统一采用固定两端、仅内部驻值的版本？
+1. 印刷63的L中+U与实际展开-U不一致，端点q\_nu又被列为可变节点；是否统一采用固定两端、仅内部驻值的版本？
 2. 印刷68位置局部误差符号、印刷71常数1/2、印刷93修正力符号是否是笔误？字面Prop和修正版均保留，字面版没有证明。
 3. 印刷79能否将“辛映射形成群”明确限于辛微分同胚？非零Jacobian只提供局部逆；流Jacobian应在初值处取导。
 4. 印刷92 Newmark位置公式缺逆质量，是否采用质量一致版本？一般隐式方法均应明确局部解和非奇异条件。
@@ -98,7 +98,7 @@ noncomputable def oneStepIterate (G : ℝ → E → E) (h : ℝ) (z₀ : E) (n :
 
 ### CH02-006 · §2 · notation · 印刷p.54 / PDF76
 
-原文（忠实转述）：F_t denotes the exact flow and G_h its one-step approximation.
+原文（忠实转述）：F\_t denotes the exact flow and G\_h its one-step approximation.
 
 ```lean
 -- MolecularDynamics.Chapter02Review.exactAndNumericalMaps
@@ -140,7 +140,7 @@ def globalOrder {n : ℕ} (G : ℝ → Q n → Q n) (γ : ℝ → Q n) (τ : ℝ
 
 ### CH02-009 · §2.1 · notation · 印刷p.56 / PDF78
 
-原文（忠实转述）：The mesh has h nu=tau and t_n=n h.
+原文（忠实转述）：The mesh has h nu=tau and t\_n=n h.
 
 ```lean
 -- MolecularDynamics.Chapter02Review.meshTime
@@ -236,7 +236,7 @@ def odeSecondDerivative_statement : Prop :=
 
 差异及额外假设：实际导数；f C1和解C2。
 
-状态：**statement_only**。位置：`MolecularDynamics/Chapter02/Statements.lean:10`。
+状态：**statement\_only**。位置：`MolecularDynamics/Chapter02/Statements.lean:10`。
 
 ### CH02-015 · §2.1.2 · 定义 · 印刷p.59 / PDF81
 
@@ -265,11 +265,11 @@ def taylor2Order_statement : Prop :=
 
 差异及额外假设：f足够光滑，轨道和数值留域、稳定性需落实；待证。
 
-状态：**statement_only**。位置：`MolecularDynamics/Chapter02/Statements.lean:14`。
+状态：**statement\_only**。位置：`MolecularDynamics/Chapter02/Statements.lean:14`。
 
 ### CH02-017 · §2.1.2 · notation · 印刷p.59 / PDF81
 
-原文（忠实转述）：f'(z) is the Jacobian, with ij entry partial_j f_i.
+原文（忠实转述）：f'(z) is the Jacobian, with ij entry partial\_j f\_i.
 
 ```lean
 -- MolecularDynamics.textbookCoordinateJacobian
@@ -297,7 +297,7 @@ def verletOrder_statement : Prop :=
 
 差异及额外假设：非数值示例；正质量、光滑力、留域；待证。
 
-状态：**statement_only**。位置：`MolecularDynamics/Chapter02/Statements.lean:17`。
+状态：**statement\_only**。位置：`MolecularDynamics/Chapter02/Statements.lean:17`。
 
 ### CH02-019 · §2.2.1 · 定义 · 印刷p.60 / PDF82
 
@@ -344,7 +344,7 @@ def action {n : ℕ} (L : Q n → Q n → ℝ) (a b : ℝ) (q : ℝ → Q n) : �
 
 ### CH02-022 · §2.2.1 · 定义 · 印刷p.61 / PDF83
 
-原文（忠实转述）：Variations are q_epsilon=q+epsilon eta with eta vanishing at endpoints.
+原文（忠实转述）：Variations are q\_epsilon=q+epsilon eta with eta vanishing at endpoints.
 
 ```lean
 -- MolecularDynamics.Chapter02Review.variation
@@ -357,7 +357,7 @@ def variation {n : ℕ} (q η : ℝ → Q n) (ε : ℝ) (t : ℝ) : Q n := q t +
 
 ### CH02-023 · §2.2.1 · 未编号结论 · 印刷p.61 / PDF83
 
-原文（忠实转述）：The first variation of action is the integral of L_q eta+L_v eta'.
+原文（忠实转述）：The first variation of action is the integral of L\_q eta+L\_v eta'.
 
 ```lean
 -- MolecularDynamics.Chapter02Review.firstVariation_statement
@@ -371,7 +371,7 @@ def firstVariation_statement : Prop :=
 
 差异及额外假设：C2及固定紧时间窗；积分与求导交换未证。
 
-状态：**statement_only**。位置：`MolecularDynamics/Chapter02/Statements.lean:23`。
+状态：**statement\_only**。位置：`MolecularDynamics/Chapter02/Statements.lean:23`。
 
 ### CH02-024 · §2.2.1 · 未编号结论 · 印刷p.61 / PDF83
 
@@ -388,7 +388,7 @@ def taylorRemainder_statement : Prop :=
 
 差异及额外假设：补原脚注遗漏的1/j!；一般向量空间Taylor界待证。
 
-状态：**statement_only**。位置：`MolecularDynamics/Chapter02/Statements.lean:29`。
+状态：**statement\_only**。位置：`MolecularDynamics/Chapter02/Statements.lean:29`。
 
 ### CH02-025 · §2.2.1 · 定义 · 印刷p.61 / PDF83
 
@@ -421,7 +421,7 @@ def firstVariationParts_statement : Prop :=
 
 差异及额外假设：真实积分恒等式；待证。
 
-状态：**statement_only**。位置：`MolecularDynamics/Chapter02/Statements.lean:34`。
+状态：**statement\_only**。位置：`MolecularDynamics/Chapter02/Statements.lean:34`。
 
 ### CH02-027 · §2.2.1 · 未编号结论 · 印刷p.62 / PDF84
 
@@ -439,7 +439,7 @@ def hamiltonPrinciple_statement : Prop :=
 
 差异及额外假设：需基本变分引理、正则性及真实一阶变分推导。
 
-状态：**statement_only**。位置：`MolecularDynamics/Chapter02/Statements.lean:40`。
+状态：**statement\_only**。位置：`MolecularDynamics/Chapter02/Statements.lean:40`。
 
 ### CH02-028 · §2.2.1 · 定义 · 印刷p.62 / PDF84
 
@@ -470,11 +470,11 @@ def stationaryNotMinimum_statement : Prop :=
 
 差异及额外假设：存在反例命题；原文脚注。
 
-状态：**statement_only**。位置：`MolecularDynamics/Chapter02/Statements.lean:46`。
+状态：**statement\_only**。位置：`MolecularDynamics/Chapter02/Statements.lean:46`。
 
 ### CH02-030 · §2.2.2 · 定义 · 印刷p.63 / PDF85
 
-原文（忠实转述）：The discrete path consists of the points q_0,...,q_nu.
+原文（忠实转述）：The discrete path consists of the points q\_0,...,q\_nu.
 
 ```lean
 -- MolecularDynamics.Chapter02Review.discretePath
@@ -487,7 +487,7 @@ abbrev discretePath (n ν : ℕ) := Fin (ν + 1) → Q n
 
 ### CH02-031 · §2.2.2 · 定义 · 印刷p.63 / PDF85
 
-原文（忠实转述）：The discrete velocity is (q_(n+1)-q_n)/h.
+原文（忠实转述）：The discrete velocity is (q_(n+1)-q\_n)/h.
 
 ```lean
 -- MolecularDynamics.Chapter02Review.discreteVelocity
@@ -501,7 +501,7 @@ def discreteVelocity {n : ℕ} (q : ℕ → Q n) (h : ℝ) (k : ℕ) : Q n :=
 
 ### CH02-032 · §2.2.2 · 定义 · 印刷p.63 / PDF85
 
-原文（忠实转述）：The discrete action is h times the sum L(q_n,(q_(n+1)-q_n)/h).
+原文（忠实转述）：The discrete action is h times the sum L(q\_n,(q_(n+1)-q\_n)/h).
 
 ```lean
 -- MolecularDynamics.Chapter02Review.discreteAction
@@ -530,7 +530,7 @@ def discreteStationary {n : ℕ} (L : Q n → Q n → ℝ) (q : ℕ → Q n) (h 
 
 ### CH02-034 · §2.2.2 · 未编号结论 · 印刷p.64 / PDF86
 
-原文（忠实转述）：The discrete action derivative is M(2q_n-q_(n-1)-q_(n+1))/h-h grad U(q_n).
+原文（忠实转述）：The discrete action derivative is M(2q\_n-q_(n-1)-q_(n+1))/h-h grad U(q\_n).
 
 ```lean
 -- MolecularDynamics.Chapter02Review.discreteActionDerivative_statement
@@ -544,11 +544,11 @@ def discreteActionDerivative_statement : Prop :=
 
 差异及额外假设：实际Fréchet导数；仅内部节点。
 
-状态：**statement_only**。位置：`MolecularDynamics/Chapter02/Statements.lean:51`。
+状态：**statement\_only**。位置：`MolecularDynamics/Chapter02/Statements.lean:51`。
 
 ### CH02-035 · §2.2.2 · 未编号结论 · 印刷p.64 / PDF86
 
-原文（忠实转述）：Discrete stationarity yields M(q_(n+1)-2q_n+q_(n-1))=-h^2 grad U(q_n), (2.4).
+原文（忠实转述）：Discrete stationarity yields M(q_(n+1)-2q\_n+q_(n-1))=-h^2 grad U(q\_n), (2.4).
 
 ```lean
 -- MolecularDynamics.Chapter02Review.discreteStationaryVerlet_statement
@@ -561,7 +561,7 @@ def discreteStationaryVerlet_statement : Prop :=
 
 差异及额外假设：真实作用量驻值推导未证明。
 
-状态：**statement_only**。位置：`MolecularDynamics/Chapter02/Statements.lean:57`。
+状态：**statement\_only**。位置：`MolecularDynamics/Chapter02/Statements.lean:57`。
 
 ### CH02-036 · §2.2.2 · 定义 · 印刷p.64 / PDF86
 
@@ -644,7 +644,7 @@ def leapfrog {n : ℕ} (m : Fin n → ℝ) (F : Q n → Q n) (h : ℝ) (z : Z n)
 
 ### CH02-041 · §2.2.2 · 定义 · 印刷p.65 / PDF87
 
-原文（忠实转述）：The staggered initial velocity is v_0-h M^-1 F(q_0)/2.
+原文（忠实转述）：The staggered initial velocity is v\_0-h M^-1 F(q\_0)/2.
 
 ```lean
 -- MolecularDynamics.Chapter02Review.leapfrogInitialize
@@ -672,7 +672,7 @@ def leapfrogReconstruct {n : ℕ} (m : Fin n → ℝ) (F : Q n → Q n) (h : ℝ
 
 ### CH02-043 · §2.2.3 · 未编号结论 · 印刷p.66 / PDF88
 
-原文（忠实转述）：The error difference is G_h(z_n)-F_h(z(t_n)), (2.9).
+原文（忠实转述）：The error difference is G\_h(z\_n)-F\_h(z(t\_n)), (2.9).
 
 ```lean
 -- MolecularDynamics.Chapter02Review.errorDifference_proved
@@ -722,7 +722,7 @@ def stableMethod {n : ℕ} (G : ℝ → Q n → Q n) (D : Set (Q n)) : Prop :=
 
 ### CH02-046 · §2.2.3 · 未编号结论 · 印刷p.67 / PDF89
 
-原文（忠实转述）：Local defect and stability imply e_(n+1)≤(1+Lh)e_n+K h^(p+1).
+原文（忠实转述）：Local defect and stability imply e_(n+1)≤(1+Lh)e\_n+K h^(p+1).
 
 ```lean
 -- MolecularDynamics.oneStep_error_recursion
@@ -819,7 +819,7 @@ def verletExpansion_statement : Prop :=
 
 差异及额外假设：C3力；实际O(h4)余项，待证。
 
-状态：**statement_only**。位置：`MolecularDynamics/Chapter02/Statements.lean:74`。
+状态：**statement\_only**。位置：`MolecularDynamics/Chapter02/Statements.lean:74`。
 
 ### CH02-051 · §2.2.3 · 未编号结论 · 印刷p.68 / PDF90
 
@@ -839,7 +839,7 @@ def exactExpansion_statement : Prop :=
 
 差异及额外假设：真实解、C3力、原文展开；待证。
 
-状态：**statement_only**。位置：`MolecularDynamics/Chapter02/Statements.lean:80`。
+状态：**statement\_only**。位置：`MolecularDynamics/Chapter02/Statements.lean:80`。
 
 ### CH02-052 · §2.2.3 · 未编号结论 · 印刷p.68 / PDF90
 
@@ -865,7 +865,7 @@ def verletDefectPrinted_statement : Prop :=
 
 差异及额外假设：原文位置差误写正号；保留修正与字面两个陈述。
 
-状态：**statement_only**。位置：`MolecularDynamics/Chapter02/Statements.lean:88;MolecularDynamics/Chapter02/Statements.lean:95`。
+状态：**statement\_only**。位置：`MolecularDynamics/Chapter02/Statements.lean:88;MolecularDynamics/Chapter02/Statements.lean:95`。
 
 ### CH02-053 · §2.2.3 · 未编号结论 · 印刷p.68 / PDF90
 
@@ -883,7 +883,7 @@ def verletConsistency_statement : Prop :=
 
 差异及额外假设：不是忽略h4项当严格界；补紧性和正则性。
 
-状态：**statement_only**。位置：`MolecularDynamics/Chapter02/Statements.lean:100`。
+状态：**statement\_only**。位置：`MolecularDynamics/Chapter02/Statements.lean:100`。
 
 ### CH02-054 · §2.2.3 · 未编号结论 · 印刷p.69 / PDF91
 
@@ -901,7 +901,7 @@ def verletStability_statement : Prop :=
 
 差异及额外假设：整空间Lipschitz或留域邻域；仅正文结论，习题证明排除。
 
-状态：**statement_only**。位置：`MolecularDynamics/Chapter02/Statements.lean:106`。
+状态：**statement\_only**。位置：`MolecularDynamics/Chapter02/Statements.lean:106`。
 
 ### CH02-055 · §2.2.4 · 定义 · 印刷p.70 / PDF92
 
@@ -978,7 +978,7 @@ def centralAngularMomentum_statement : Prop :=
 
 差异及额外假设：复用第1章结论核对后映射，当前一般陈述待证。
 
-状态：**statement_only**。位置：`MolecularDynamics/Chapter02/Statements.lean:116`。
+状态：**statement\_only**。位置：`MolecularDynamics/Chapter02/Statements.lean:116`。
 
 ### CH02-059 · §2.2.4 · 未编号结论 · 印刷p.71 / PDF93
 
@@ -994,7 +994,7 @@ def integralMeanValue_statement : Prop :=
 
 差异及额外假设：补包含整条线段的开域；非任意非凸D。
 
-状态：**statement_only**。位置：`MolecularDynamics/Chapter02/Statements.lean:124`。
+状态：**statement\_only**。位置：`MolecularDynamics/Chapter02/Statements.lean:124`。
 
 ### CH02-060 · §2.2.4 · 未编号结论 · 印刷p.71 / PDF93
 
@@ -1010,7 +1010,7 @@ def integralLipschitz_statement : Prop :=
 
 差异及额外假设：凸邻域或线段包含条件；待证。
 
-状态：**statement_only**。位置：`MolecularDynamics/Chapter02/Statements.lean:128`。
+状态：**statement\_only**。位置：`MolecularDynamics/Chapter02/Statements.lean:128`。
 
 ### CH02-061 · §2.2.4 · 未编号结论 · 印刷p.71 / PDF93
 
@@ -1036,7 +1036,7 @@ def integralErrorPrinted_statement : Prop :=
 
 差异及额外假设：原常数1/2无出处；忠实字面版与安全界并存。
 
-状态：**statement_only**。位置：`MolecularDynamics/Chapter02/Statements.lean:132;MolecularDynamics/Chapter02/Statements.lean:138`。
+状态：**statement\_only**。位置：`MolecularDynamics/Chapter02/Statements.lean:132;MolecularDynamics/Chapter02/Statements.lean:138`。
 
 ### CH02-062 · §2.3.1 · 定义 · 印刷p.72 / PDF94
 
@@ -1158,7 +1158,7 @@ def volumeChange_statement : Prop :=
 
 差异及额外假设：C1单射微分同胚、可测集；待证。
 
-状态：**statement_only**。位置：`MolecularDynamics/Chapter02/Statements.lean:156`。
+状态：**statement\_only**。位置：`MolecularDynamics/Chapter02/Statements.lean:156`。
 
 ### CH02-067 · §2.3.1 · 未编号结论 · 印刷p.73 / PDF95
 
@@ -1214,7 +1214,7 @@ theorem textbookMatrixDet_hasDerivAt_of_linearODE (W : ℝ → Matrix ι ι ℝ)
 
 ### CH02-069 · §2.3.1 · 未编号结论 · 印刷p.73 / PDF95
 
-原文（忠实转述）：D(t)=D(0) exp(integral_0^t div f(z(s)) ds).
+原文（忠实转述）：D(t)=D(0) exp(integral\_0^t div f(z(s)) ds).
 
 ```lean
 -- MolecularDynamics.Chapter02Review.determinantExponential_statement
@@ -1226,7 +1226,7 @@ def determinantExponential_statement : Prop :=
 
 差异及额外假设：连续系数、真实W；待补积分解公式。
 
-状态：**statement_only**。位置：`MolecularDynamics/Chapter02/Statements.lean:164`。
+状态：**statement\_only**。位置：`MolecularDynamics/Chapter02/Statements.lean:164`。
 
 ### CH02-070 · §2.3.1 · 未编号结论 · 印刷p.73 / PDF95
 
@@ -1276,7 +1276,7 @@ def linearDivergence_statement : Prop :=
 
 差异及额外假设：有限实矩阵；待证。
 
-状态：**statement_only**。位置：`MolecularDynamics/Chapter02/Statements.lean:172`。
+状态：**statement\_only**。位置：`MolecularDynamics/Chapter02/Statements.lean:172`。
 
 ### CH02-072 · §2.3.2 · 定义 · 印刷p.75 / PDF97
 
@@ -1306,7 +1306,7 @@ def linearEulerVolume_statement : Prop :=
 
 差异及额外假设：原体积只需绝对det=1；正小h方向条件需注明。
 
-状态：**statement_only**。位置：`MolecularDynamics/Chapter02/Statements.lean:174`。
+状态：**statement\_only**。位置：`MolecularDynamics/Chapter02/Statements.lean:174`。
 
 ### CH02-074 · §2.3.2 · 未编号结论 · 印刷p.75 / PDF97
 
@@ -1341,7 +1341,7 @@ def asymmetricEulerRelation (f g : ℝ → ℝ → ℝ) (h u v U V : ℝ) : Prop
 
 ### CH02-076 · §2.3.2 · 未编号结论 · 印刷p.75 / PDF97
 
-原文（忠实转述）：Its Jacobian determinant is (1+h g_v)/(1-h f_u).
+原文（忠实转述）：Its Jacobian determinant is (1+h g\_v)/(1-h f\_u).
 
 ```lean
 -- MolecularDynamics.Chapter02Review.asymmetricDet_statement
@@ -1356,11 +1356,11 @@ def asymmetricDet_statement : Prop :=
 
 差异及额外假设：隐式函数可微、分母非零。
 
-状态：**statement_only**。位置：`MolecularDynamics/Chapter02/Statements.lean:180`。
+状态：**statement\_only**。位置：`MolecularDynamics/Chapter02/Statements.lean:180`。
 
 ### CH02-077 · §2.3.2 · 未编号结论 · 印刷p.76 / PDF98
 
-原文（忠实转述）：Asymmetric Euler preserves area when f_u+g_v=0.
+原文（忠实转述）：Asymmetric Euler preserves area when f\_u+g\_v=0.
 
 ```lean
 -- MolecularDynamics.Chapter02Review.asymmetricArea_statement
@@ -1375,7 +1375,7 @@ def asymmetricArea_statement : Prop :=
 
 差异及额外假设：存在光滑局部解和分母非零。
 
-状态：**statement_only**。位置：`MolecularDynamics/Chapter02/Statements.lean:187`。
+状态：**statement\_only**。位置：`MolecularDynamics/Chapter02/Statements.lean:187`。
 
 ### CH02-078 · §2.3.3 · 定义 · 印刷p.76 / PDF98
 
@@ -1420,7 +1420,7 @@ def differential {n : ℕ} (g : Q n → ℝ) : oneForm n := fderiv ℝ g
 
 ### CH02-081 · §2.3.3 · 定义 · 印刷p.76 / PDF98
 
-原文（忠实转述）：dq_i and dp_i select tangent vector coordinates.
+原文（忠实转述）：dq\_i and dp\_i select tangent vector coordinates.
 
 ```lean
 -- MolecularDynamics.textbookDq
@@ -1471,7 +1471,7 @@ noncomputable def textbookSymplecticForm (Nc : ℕ) :
 
 ### CH02-084 · §2.3.3 · 未编号结论 · 印刷p.77 / PDF99
 
-原文（忠实转述）：The symplectic form is the sum of dq_i wedge dp_i.
+原文（忠实转述）：The symplectic form is the sum of dq\_i wedge dp\_i.
 
 ```lean
 -- MolecularDynamics.textbookSymplecticForm_eq_sum_wedges
@@ -1541,7 +1541,7 @@ def pullbackMatrix_statement : Prop :=
 
 差异及额外假设：原文一般守恒省略A取值点；用完整版本。
 
-状态：**statement_only**。位置：`MolecularDynamics/Chapter02/Statements.lean:194`。
+状态：**statement\_only**。位置：`MolecularDynamics/Chapter02/Statements.lean:194`。
 
 ### CH02-089 · §2.3.3 · 定义 · 印刷p.78 / PDF100
 
@@ -1838,7 +1838,7 @@ def globalSymplecticGroup_statement : Prop :=
 
 差异及额外假设：字面断言欠全球双射；另有正确辛微分同胚群定义，待人工判断。
 
-状态：**statement_only**。位置：`MolecularDynamics/Chapter02/Statements.lean:215`。
+状态：**statement\_only**。位置：`MolecularDynamics/Chapter02/Statements.lean:215`。
 
 ### CH02-103 · §2.3.5 · 定义 · 印刷p.79 / PDF101
 
@@ -1942,7 +1942,7 @@ theorem textbookSymplecticEuler_isSymplectic {Nc : ℕ}
 
 ### CH02-109 · §2.3.7 · 定义 · 印刷p.81 / PDF103
 
-原文（忠实转述）：The adjoint is G_h^*=G_(-h)^-1.
+原文（忠实转述）：The adjoint is G\_h^*=G_(-h)^-1.
 
 ```lean
 -- MolecularDynamics.textbookAdjointMethod
@@ -2217,7 +2217,7 @@ def symmetricEvenOrder_statement : Prop :=
 
 差异及额外假设：需存在非零首误差项和光滑步长展开，排除精确流的无穷阶。
 
-状态：**statement_only**。位置：`MolecularDynamics/Chapter02/Statements.lean:231`。
+状态：**statement\_only**。位置：`MolecularDynamics/Chapter02/Statements.lean:231`。
 
 ### CH02-125 · §2.4.2 · 未编号结论 · 印刷p.85 / PDF107
 
@@ -2252,7 +2252,7 @@ def compositionOrder_statement : Prop :=
 
 差异及额外假设：补same flow与稳定性；不同Hamiltonian半步字面需区分。
 
-状态：**statement_only**。位置：`MolecularDynamics/Chapter02/Statements.lean:239`。
+状态：**statement\_only**。位置：`MolecularDynamics/Chapter02/Statements.lean:239`。
 
 ### CH02-127 · §2.4.3 · 定义 · 印刷p.85 / PDF107
 
@@ -2284,7 +2284,7 @@ def implicitLocal_statement : Prop :=
 
 差异及额外假设：局部逆函数条件；不声称全球逆。
 
-状态：**statement_only**。位置：`MolecularDynamics/Chapter02/Statements.lean:245`。
+状态：**statement\_only**。位置：`MolecularDynamics/Chapter02/Statements.lean:245`。
 
 ### CH02-129 · §2.4.4 · 定义 · 印刷p.86 / PDF108
 
@@ -2315,7 +2315,7 @@ def newtonQuadratic_statement : Prop :=
 
 差异及额外假设：C2、非奇异导数、充分近初值，待证。
 
-状态：**statement_only**。位置：`MolecularDynamics/Chapter02/Statements.lean:250`。
+状态：**statement\_only**。位置：`MolecularDynamics/Chapter02/Statements.lean:250`。
 
 ### CH02-131 · §2.4.4 · 未编号结论 · 印刷p.87 / PDF109
 
@@ -2332,7 +2332,7 @@ def frozenNewton_statement : Prop :=
 
 差异及额外假设：补范数收缩条件；原文泛称many cases并非无条件。
 
-状态：**statement_only**。位置：`MolecularDynamics/Chapter02/Statements.lean:255`。
+状态：**statement\_only**。位置：`MolecularDynamics/Chapter02/Statements.lean:255`。
 
 ### CH02-132 · §2.4.5 · 定义 · 印刷p.88 / PDF110
 
@@ -2392,7 +2392,7 @@ def symplecticEulerConjugacy_statement : Prop :=
 
 差异及额外假设：正文声明保留，习题12的要求排除。
 
-状态：**statement_only**。位置：`MolecularDynamics/Chapter02/Statements.lean:260`。
+状态：**statement\_only**。位置：`MolecularDynamics/Chapter02/Statements.lean:260`。
 
 ### CH02-136 · §2.4.5 · 定义 · 印刷p.88 / PDF110
 
@@ -2447,7 +2447,7 @@ theorem textbookProcessedMaxError_eq_of_conjugacy (χ : ℝ → E ≃ₜ E)
 
 ### CH02-139 · §2.5.1 · 定义 · 印刷p.89 / PDF111
 
-原文（忠实转述）：Runge-Kutta stages satisfy F_i=f(z+h sum a_ij F_j), and Z=z+h sum b_i F_i.
+原文（忠实转述）：Runge-Kutta stages satisfy F\_i=f(z+h sum a\_ij F\_j), and Z=z+h sum b\_i F\_i.
 
 ```lean
 -- MolecularDynamics.Chapter02Review.rungeKuttaRelation
@@ -2490,7 +2490,7 @@ def rk4Order_statement : Prop :=
 
 差异及额外假设：光滑f、紧轨道、留域和稳定性；待证。
 
-状态：**statement_only**。位置：`MolecularDynamics/Chapter02/Statements.lean:264`。
+状态：**statement\_only**。位置：`MolecularDynamics/Chapter02/Statements.lean:264`。
 
 ### CH02-142 · §2.5.1 · 未编号结论 · 印刷p.89 / PDF111
 
@@ -2523,7 +2523,7 @@ def explicitRKUniversal_statement : Prop :=
 
 ### CH02-143 · §2.5.1 · 未编号结论 · 印刷p.90 / PDF112
 
-原文（忠实转述）：The RK symplectic coefficient condition is b_i a_ij+b_j a_ji=b_i b_j.
+原文（忠实转述）：The RK symplectic coefficient condition is b\_i a\_ij+b\_j a\_ji=b\_i b\_j.
 
 ```lean
 -- MolecularDynamics.Chapter02Review.rkSymplectic_statement
@@ -2539,7 +2539,7 @@ def rkSymplectic_statement : Prop :=
 
 差异及额外假设：条件的充分性；必要性需不可约等附加条件。
 
-状态：**statement_only**。位置：`MolecularDynamics/Chapter02/Statements.lean:278`。
+状态：**statement\_only**。位置：`MolecularDynamics/Chapter02/Statements.lean:278`。
 
 ### CH02-144 · §2.5.1 · 定义 · 印刷p.90 / PDF112
 
@@ -2576,7 +2576,7 @@ def gaussRK_statement : Prop :=
 
 差异及额外假设：s阶段实际Gauss配点构造；大型配点理论缺口；缺一般Gauss配点阶条件与对称性理论；给实际Legendre节点/积分系数及唯一阶段条件的完整Prop，未证。
 
-状态：**not_formalizable_now**。位置：`MolecularDynamics/Chapter02/Statements.lean:292`。
+状态：**not\_formalizable\_now**。位置：`MolecularDynamics/Chapter02/Statements.lean:292`。
 
 ### CH02-146 · §2.5.1 · 未编号结论 · 印刷p.90 / PDF112
 
@@ -2594,11 +2594,11 @@ def midpointProperties_statement : Prop :=
 
 差异及额外假设：光滑向量场，Hamiltonian C2，局部唯一可微解。
 
-状态：**statement_only**。位置：`MolecularDynamics/Chapter02/Statements.lean:303`。
+状态：**statement\_only**。位置：`MolecularDynamics/Chapter02/Statements.lean:303`。
 
 ### CH02-147 · §2.5.1 · 定义 · 印刷p.90 / PDF112
 
-原文（忠实转述）：The two-stage Gauss method has b_i=1/2 and A entries 1/4 with off-diagonal shifts +/-sqrt(3)/6.
+原文（忠实转述）：The two-stage Gauss method has b\_i=1/2 and A entries 1/4 with off-diagonal shifts +/-sqrt(3)/6.
 
 ```lean
 -- MolecularDynamics.Chapter02Review.gaussTwoCoefficients
@@ -2641,11 +2641,11 @@ def partitionedReduction_statement : Prop :=
 
 差异及额外假设：固定正质量、U可微；实际关系等价。
 
-状态：**statement_only**。位置：`MolecularDynamics/Chapter02/Statements.lean:309`。
+状态：**statement\_only**。位置：`MolecularDynamics/Chapter02/Statements.lean:309`。
 
 ### CH02-150 · §2.5.2 · 定义 · 印刷p.91 / PDF113
 
-原文（忠实转述）：General symplectic Euler is P=p-h H_q(q,P), Q=q+h H_p(q,P).
+原文（忠实转述）：General symplectic Euler is P=p-h H\_q(q,P), Q=q+h H\_p(q,P).
 
 ```lean
 -- MolecularDynamics.Chapter02Review.generalSymplecticEulerRelation
@@ -2677,7 +2677,7 @@ def generalizedVerletSymplectic_statement : Prop :=
 
 差异及额外假设：C2 H、局部唯一可微解；混合Hessian与楔和抵消待证。
 
-状态：**statement_only**。位置：`MolecularDynamics/Chapter02/Statements.lean:314;MolecularDynamics/Chapter02/Statements.lean:318`。
+状态：**statement\_only**。位置：`MolecularDynamics/Chapter02/Statements.lean:314;MolecularDynamics/Chapter02/Statements.lean:318`。
 
 ### CH02-152 · §2.5.3 · 定义 · 印刷p.92 / PDF114
 
@@ -2733,7 +2733,7 @@ def newmarkNoDamping_statement : Prop :=
 
 差异及额外假设：线性振子放大矩阵det=1，需非奇异解域。
 
-状态：**statement_only**。位置：`MolecularDynamics/Chapter02/Statements.lean:328`。
+状态：**statement\_only**。位置：`MolecularDynamics/Chapter02/Statements.lean:328`。
 
 ### CH02-155 · §2.5.3 · 未编号结论 · 印刷p.92 / PDF114
 
@@ -2750,7 +2750,7 @@ def newmarkNotSymplectic_statement : Prop :=
 
 差异及额外假设：具体非线性反例存在；避免错误全称排除线性特殊情况。
 
-状态：**statement_only**。位置：`MolecularDynamics/Chapter02/Statements.lean:334`。
+状态：**statement\_only**。位置：`MolecularDynamics/Chapter02/Statements.lean:334`。
 
 ### CH02-156 · §2.5.4 · 定义 · 印刷p.92 / PDF114
 
@@ -2802,7 +2802,7 @@ def takahashiForceCorrected_statement : Prop :=
 
 差异及额外假设：与前式-U修正求负梯度的符号不一致；字面和修正版并存。
 
-状态：**statement_only**。位置：`MolecularDynamics/Chapter02/Statements.lean:339;MolecularDynamics/Chapter02/Statements.lean:344`。
+状态：**statement\_only**。位置：`MolecularDynamics/Chapter02/Statements.lean:339;MolecularDynamics/Chapter02/Statements.lean:344`。
 
 ### CH02-159 · §2.5.4 · 未编号结论 · 印刷p.93 / PDF115
 
@@ -2822,11 +2822,11 @@ def takahashiOrder_statement : Prop :=
 
 差异及额外假设：处理器存在、C足够阶、实际四阶全局误差；待证。
 
-状态：**statement_only**。位置：`MolecularDynamics/Chapter02/Statements.lean:349`。
+状态：**statement\_only**。位置：`MolecularDynamics/Chapter02/Statements.lean:349`。
 
 ### CH02-160 · §2.5.5 · 定义 · 印刷p.93 / PDF115
 
-原文（忠实转述）：Position-only Verlet is a multistep recurrence q_(n+1)-2q_n+q_(n-1)=h^2 M^-1 F(q_n).
+原文（忠实转述）：Position-only Verlet is a multistep recurrence q_(n+1)-2q\_n+q_(n-1)=h^2 M^-1 F(q\_n).
 
 ```lean
 -- MolecularDynamics.Chapter02Review.stormerRelation

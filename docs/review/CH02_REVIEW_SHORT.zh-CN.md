@@ -1,4 +1,4 @@
-> 已过时，以 [CH02_SUMMARY_FOR_MENTOR.zh-CN.md](CH02_SUMMARY_FOR_MENTOR.zh-CN.md) 为准。
+> 已过时，以 [CH02\_SUMMARY\_FOR\_MENTOR.zh-CN.md](CH02_SUMMARY_FOR_MENTOR.zh-CN.md) 为准。
 
 # 第2章导师快速审阅（15条）
 
@@ -11,16 +11,16 @@
 | --- | ---: |
 | defined | 70 |
 | proved | 39 |
-| statement_only | 42 |
+| statement\_only | 42 |
 | weakened | 8 |
-| not_formalizable_now | 1 |
+| not\_formalizable\_now | 1 |
 | 合计 | 160 |
 
 已证明结论数：39（按清单行统计，重复映射同一证明不是独立定理）。
 
 需要人工判断的问题：
 
-1. 印刷63的L中+U与实际展开-U不一致，端点q_nu又被列为可变节点；是否统一采用固定两端、仅内部驻值的版本？
+1. 印刷63的L中+U与实际展开-U不一致，端点q\_nu又被列为可变节点；是否统一采用固定两端、仅内部驻值的版本？
 2. 印刷68位置局部误差符号、印刷71常数1/2、印刷93修正力符号是否是笔误？字面Prop和修正版均保留，字面版没有证明。
 3. 印刷79能否将“辛映射形成群”明确限于辛微分同胚？非零Jacobian只提供局部逆；流Jacobian应在初值处取导。
 4. 印刷92 Newmark位置公式缺逆质量，是否采用质量一致版本？一般隐式方法均应明确局部解和非奇异条件。
@@ -63,7 +63,7 @@ def hamiltonPrinciple_statement : Prop :=
 
 差异及额外假设：需基本变分引理、正则性及真实一阶变分推导。
 
-状态：**statement_only**。位置：`MolecularDynamics/Chapter02/Statements.lean:40`。
+状态：**statement\_only**。位置：`MolecularDynamics/Chapter02/Statements.lean:40`。
 
 ### CH02-033 · §2.2.2 · 定义 · 印刷p.63 / PDF85
 
@@ -82,7 +82,7 @@ def discreteStationary {n : ℕ} (L : Q n → Q n → ℝ) (q : ℕ → Q n) (h 
 
 ### CH02-041 · §2.2.2 · 定义 · 印刷p.65 / PDF87
 
-原文（忠实转述）：The staggered initial velocity is v_0-h M^-1 F(q_0)/2.
+原文（忠实转述）：The staggered initial velocity is v\_0-h M^-1 F(q\_0)/2.
 
 ```lean
 -- MolecularDynamics.Chapter02Review.leapfrogInitialize
@@ -110,7 +110,7 @@ def verletExpansion_statement : Prop :=
 
 差异及额外假设：C3力；实际O(h4)余项，待证。
 
-状态：**statement_only**。位置：`MolecularDynamics/Chapter02/Statements.lean:74`。
+状态：**statement\_only**。位置：`MolecularDynamics/Chapter02/Statements.lean:74`。
 
 ### CH02-063 · §2.3.1 · 未编号结论 · 印刷p.72 / PDF94
 
@@ -283,7 +283,7 @@ noncomputable def textbookProcessedIterate (χ : ℝ → E ≃ₜ E) (B : ℝ �
 
 ### CH02-143 · §2.5.1 · 未编号结论 · 印刷p.90 / PDF112
 
-原文（忠实转述）：The RK symplectic coefficient condition is b_i a_ij+b_j a_ji=b_i b_j.
+原文（忠实转述）：The RK symplectic coefficient condition is b\_i a\_ij+b\_j a\_ji=b\_i b\_j.
 
 ```lean
 -- MolecularDynamics.Chapter02Review.rkSymplectic_statement
@@ -299,7 +299,7 @@ def rkSymplectic_statement : Prop :=
 
 差异及额外假设：条件的充分性；必要性需不可约等附加条件。
 
-状态：**statement_only**。位置：`MolecularDynamics/Chapter02/Statements.lean:278`。
+状态：**statement\_only**。位置：`MolecularDynamics/Chapter02/Statements.lean:278`。
 
 ### CH02-148 · §2.5.2 · 定义 · 印刷p.90 / PDF112
 
@@ -339,4 +339,4 @@ def takahashiForceCorrected_statement : Prop :=
 
 差异及额外假设：与前式-U修正求负梯度的符号不一致；字面和修正版并存。
 
-状态：**statement_only**。位置：`MolecularDynamics/Chapter02/Statements.lean:339;MolecularDynamics/Chapter02/Statements.lean:344`。
+状态：**statement\_only**。位置：`MolecularDynamics/Chapter02/Statements.lean:339;MolecularDynamics/Chapter02/Statements.lean:344`。

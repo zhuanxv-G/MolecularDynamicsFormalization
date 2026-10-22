@@ -1,8 +1,8 @@
-> 已过时，以 [SUMMARY_FOR_MENTOR](CH06_SUMMARY_FOR_MENTOR.zh-CN.md) 为准。
+> 已过时，以 [SUMMARY\_FOR\_MENTOR](CH06_SUMMARY_FOR_MENTOR.zh-CN.md) 为准。
 
 # 第6章导师快速审阅（15条）
 
-扫描用户PDF233–285并补核标题PDF232；实际第6章正文印刷211–258/PDF232–279，PDF280为Exercises、PDF282起第7章，排除。逐页边界见PAGE_SCAN.json。全部proved/weakened为既有正式库成果映射，本次没有新证明。CanonicalKernelConstant等封存文件不导入、不恢复。Theorem6.1、Theorem6.2、Proposition6.4保持statement_only。
+扫描用户PDF233–285并补核标题PDF232；实际第6章正文印刷211–258/PDF232–279，PDF280为Exercises、PDF282起第7章，排除。逐页边界见PAGE\_SCAN.json。全部proved/weakened为既有正式库成果映射，本次没有新证明。CanonicalKernelConstant等封存文件不导入、不恢复。Theorem6.1、Theorem6.2、Proposition6.4保持statement\_only。
 
 清单是进度来源；defined与proved分开统计。Prop定义编译通过只确认陈述类型正确，不表示结论成立。
 原文为用户提供的教材PDF逐页忠实转述；机器验收见VALIDATION.json和check-full目录。导师语义审阅待完成。
@@ -12,9 +12,9 @@
 | --- | ---: |
 | defined | 45 |
 | proved | 30 |
-| statement_only | 42 |
+| statement\_only | 42 |
 | weakened | 6 |
-| not_formalizable_now | 3 |
+| not\_formalizable\_now | 3 |
 | 合计 | 126 |
 
 proved为清单行数；重复映射同一证明不等于独立定理数量。
@@ -22,7 +22,7 @@ proved为清单行数；重复映射同一证明不等于独立定理数量。
 需人工判断的问题：
 
 1. Prop6.1–6.3的已验收内容与原文一般质量/域/正则性是否一致？单位质量、单位周期实现的范围差异已逐行列明。
-2. Theorem6.1已有真实复谱、半群与过程law/L2密度平均桥接；本章完整陈述补L2初始密度和闭实现，原C2核心、任意初值及time average术语尚未统一验收。是否保留statement_only？
+2. Theorem6.1已有真实复谱、半群与过程law/L2密度平均桥接；本章完整陈述补L2初始密度和闭实现，原C2核心、任意初值及time average术语尚未统一验收。是否保留statement\_only？
 3. Assumption1的字面密度连续含t=0，标准扩散从点初值的密度不能如此延拓；一般Harris理论、实际正时密度存在和唯一性仍缺。是否接受字面与t>0版本分列？
 4. Proposition6.4把weighted均值条件与flat前向伴随混用；字面版唯一性模Gibbs、相对密度修正版模常数分列，仍缺Fredholm/紧预解/rough核识别。是否需勘误？封存不计成果。
 5. Lemma6.1可达性已证单位质量/单位周期模型，但原文更一般域/质量和适应性语义签核仍需人工判断；相关行是否应保留weakened？
@@ -58,7 +58,7 @@ def theorem61_statement : Prop := ∀ {n : ℕ} (m : V n) (hm : ∀ i, 0 < m i)
 
 差异、假设及缺口：保留完整三部分待证陈述；已有复谱、半群和真实law-L2平均桥接较旧ledger更完整，但教材C2域/所有初始分布及平均术语未统一验收；Brownian由6.36采用逆质量Laplacian，区别于6.42动量正质量Laplacian；原negative definite及time average术语需签核。
 
-状态：**statement_only**；位置：`MolecularDynamics/Chapter06/Statements.lean:237`。
+状态：**statement\_only**；位置：`MolecularDynamics/Chapter06/Statements.lean:237`。
 
 ### CH06-099 · §6.4.4 · 定理 · 印刷p.252 / PDF273
 
@@ -85,7 +85,7 @@ def theorem62_statement : Prop := ∀ {D : Type*} [MetricSpace D] [MeasurableSpa
 
 差异、假设及缺口：完整唯一性和alltime bound；一般Harris定理/实际density存在未完成，条件Harris证明不替代假设验证；kernel版以右导数描述generator，真实扩散generator域及Feller条件的识别仍需语义签核。
 
-状态：**statement_only**；位置：`MolecularDynamics/Chapter06/Statements.lean:265`。
+状态：**statement\_only**；位置：`MolecularDynamics/Chapter06/Statements.lean:265`。
 
 ### CH06-121 · §6.4.4 · 命题 · 印刷p.257 / PDF278
 
@@ -128,7 +128,7 @@ def proposition64Relative_statement : Prop := ∀ {n : ℕ} (U : V n → ℝ)
 
 差异、假设及缺口：忠实flat前向字面版与Gibbs加权相对密度修正版分列；printed兼容条件/adjoint测度不一致；Fredholm/compactresolvent/kernel仍缺，封存不恢复。
 
-状态：**statement_only**；位置：`MolecularDynamics/Chapter06/Statements.lean:326;MolecularDynamics/Chapter06/Statements.lean:340`。
+状态：**statement\_only**；位置：`MolecularDynamics/Chapter06/Statements.lean:326;MolecularDynamics/Chapter06/Statements.lean:340`。
 
 ### CH06-113 · §6.4.4 · 引理 · 印刷p.255 / PDF276
 

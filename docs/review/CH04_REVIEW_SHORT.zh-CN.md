@@ -1,4 +1,4 @@
-> 已过时，以 [CH04_SUMMARY_FOR_MENTOR.zh-CN.md](CH04_SUMMARY_FOR_MENTOR.zh-CN.md) 为准。
+> 已过时，以 [CH04\_SUMMARY\_FOR\_MENTOR.zh-CN.md](CH04_SUMMARY_FOR_MENTOR.zh-CN.md) 为准。
 
 # 第4章导师快速审阅（15条）
 
@@ -12,9 +12,9 @@
 | --- | ---: |
 | defined | 48 |
 | proved | 13 |
-| statement_only | 38 |
+| statement\_only | 38 |
 | weakened | 0 |
-| not_formalizable_now | 1 |
+| not\_formalizable\_now | 1 |
 | 合计 | 100 |
 
 proved为清单行数；重复映射同一证明不等于独立定理数量。
@@ -41,7 +41,7 @@ def symplecticEulerStability_statement : Prop :=
 
 差异、假设及缺口：边界abs(h Omega)=2通常有Jordan增长；补绝对值与非零条件。
 
-状态：**statement_only**；位置：`MolecularDynamics/Chapter04/Statements.lean:18`。
+状态：**statement\_only**；位置：`MolecularDynamics/Chapter04/Statements.lean:18`。
 
 ### CH04-012 · §4.1 · 定义 · 印刷p.142 / PDF164
 
@@ -89,7 +89,7 @@ def resonanceEigenPrinted_statement : Prop := ∀ Ω : ℝ, 0 < Ω → ∃ C > 0
 
 差异、假设及缺口：原特征值sqrt(abs(epsilon)/2)系数疑误，附字面Prop；只登记局部区间。
 
-状态：**statement_only**；位置：`MolecularDynamics/Chapter04/Statements.lean:54;MolecularDynamics/Chapter04/Statements.lean:56`。
+状态：**statement\_only**；位置：`MolecularDynamics/Chapter04/Statements.lean:54;MolecularDynamics/Chapter04/Statements.lean:56`。
 
 ### CH04-042 · §4.3 · 未编号结论 · 印刷p.153 / PDF175
 
@@ -260,7 +260,7 @@ def shakeRattlePositions_statement : Prop :=
 
 差异、假设及缺口：原mu与lambda在缩放上需审阅；给各自完整关系与相容半步动量，不把位置相等放进假设。
 
-状态：**statement_only**；位置：`MolecularDynamics/Chapter04/Statements.lean:140`。
+状态：**statement\_only**；位置：`MolecularDynamics/Chapter04/Statements.lean:140`。
 
 ### CH04-052 · §4.3.2 · 未编号结论 · 印刷p.157 / PDF179
 
@@ -277,7 +277,7 @@ def newtonQuadratic_statement : Prop :=
 
 差异、假设及缺口：局部C2、Jacobian非奇异，未搭Newton一般收敛理论。
 
-状态：**statement_only**；位置：`MolecularDynamics/Chapter04/Statements.lean:85`。
+状态：**statement\_only**；位置：`MolecularDynamics/Chapter04/Statements.lean:85`。
 
 ### CH04-086 · §4.4 · 未编号结论 · 印刷p.169 / PDF191
 
@@ -295,7 +295,7 @@ def inertiaTraceCorrected_statement : Prop := ∀ N (m : Fin N → ℝ) (δ : Fi
 
 差异、假设及缺口：已图像核对；保留字面及修正版，字面一般不成立。
 
-状态：**statement_only**；位置：`MolecularDynamics/Chapter04/Statements.lean:209;MolecularDynamics/Chapter04/Statements.lean:211`。
+状态：**statement\_only**；位置：`MolecularDynamics/Chapter04/Statements.lean:209;MolecularDynamics/Chapter04/Statements.lean:211`。
 
 ### CH04-092 · §4.4.1 · 未编号结论 · 印刷p.172 / PDF194
 
@@ -311,7 +311,7 @@ def rigidInvariants_statement : Prop := ∀ (T : Mat3) (π : ℝ → V) a b,
 
 差异、假设及缺口：实际ODE、对称正定T，固定时间区间。
 
-状态：**statement_only**；位置：`MolecularDynamics/Chapter04/Statements.lean:217`。
+状态：**statement\_only**；位置：`MolecularDynamics/Chapter04/Statements.lean:217`。
 
 ### CH04-097 · §4.4.2 · 定义 · 印刷p.174 / PDF196
 
@@ -346,4 +346,4 @@ def dlmStructure_statement : Prop := ∀ M (I : V) (U : V → Mat3 → ℝ),
 
 差异、假设及缺口：完整非canonical Poisson/约束辛性缺口；不搭建新理论。
 
-状态：**statement_only**；位置：`MolecularDynamics/Chapter04/Statements.lean:231`。
+状态：**statement\_only**；位置：`MolecularDynamics/Chapter04/Statements.lean:231`。

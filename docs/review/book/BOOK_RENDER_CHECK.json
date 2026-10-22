@@ -1,0 +1,305 @@
+{
+  "baseline": "de3b2539",
+  "checks": {
+    "1": {
+      "pass_": true,
+      "failures": []
+    },
+    "2": {
+      "pass_": true,
+      "failures": []
+    },
+    "3": {
+      "pass_": true,
+      "failures": []
+    },
+    "4": {
+      "pass_": true,
+      "failures": []
+    },
+    "5": {
+      "pass_": true,
+      "failures": []
+    },
+    "6": {
+      "pass_": true,
+      "failures": []
+    },
+    "7": {
+      "pass_": true,
+      "failures": []
+    },
+    "8": {
+      "pass_": true,
+      "failures": []
+    }
+  },
+  "changed_markdown": [
+    "docs/review/book/BOOK_ERRATA_INDEX.zh-CN.md",
+    "docs/review/book/BOOK_GAPS.zh-CN.md",
+    "docs/review/book/BOOK_REDUNDANCY.zh-CN.md",
+    "docs/review/book/BOOK_STATS_DIFF.md",
+    "docs/review/book/BOOK_SUMMARY_FOR_MENTOR.zh-CN.md",
+    "docs/review/book/README.zh-CN.md",
+    "docs/review/CH01_BLUEPRINT.zh-CN.md",
+    "docs/review/CH01_ERRATA.zh-CN.md",
+    "docs/review/CH01_PILOT.zh-CN.md",
+    "docs/review/CH01_REVIEW.zh-CN.md",
+    "docs/review/CH01_REVIEW_SHORT.zh-CN.md",
+    "docs/review/CH01_SCOPE.zh-CN.md",
+    "docs/review/CH02_BLUEPRINT.zh-CN.md",
+    "docs/review/CH02_ERRATA.zh-CN.md",
+    "docs/review/CH02_REVIEW.zh-CN.md",
+    "docs/review/CH02_REVIEW_SHORT.zh-CN.md",
+    "docs/review/CH03_BLUEPRINT.zh-CN.md",
+    "docs/review/CH03_ERRATA.zh-CN.md",
+    "docs/review/CH03_REVIEW.zh-CN.md",
+    "docs/review/CH03_REVIEW_SHORT.zh-CN.md",
+    "docs/review/CH04_BLUEPRINT.zh-CN.md",
+    "docs/review/CH04_ERRATA.zh-CN.md",
+    "docs/review/CH04_REVIEW.zh-CN.md",
+    "docs/review/CH04_REVIEW_SHORT.zh-CN.md",
+    "docs/review/CH05_BLUEPRINT.zh-CN.md",
+    "docs/review/CH05_ERRATA.zh-CN.md",
+    "docs/review/CH05_REVIEW.zh-CN.md",
+    "docs/review/CH05_REVIEW_SHORT.zh-CN.md",
+    "docs/review/CH06_BLUEPRINT.zh-CN.md",
+    "docs/review/CH06_ERRATA.zh-CN.md",
+    "docs/review/CH06_REVIEW.zh-CN.md",
+    "docs/review/CH06_REVIEW_SHORT.zh-CN.md",
+    "docs/review/CH07_BLUEPRINT.zh-CN.md",
+    "docs/review/CH07_ERRATA.zh-CN.md",
+    "docs/review/CH08_BLUEPRINT.zh-CN.md",
+    "docs/review/CH08_ERRATA.zh-CN.md"
+  ],
+  "counts": {
+    "docs/review/book/BOOK_ERRATA_INDEX.zh-CN.md": {
+      "before_display": 0,
+      "before_inline": 0,
+      "after_display": 0,
+      "after_inline": 0
+    },
+    "docs/review/book/BOOK_GAPS.zh-CN.md": {
+      "before_display": 0,
+      "before_inline": 0,
+      "after_display": 0,
+      "after_inline": 0
+    },
+    "docs/review/book/BOOK_REDUNDANCY.zh-CN.md": {
+      "before_display": 0,
+      "before_inline": 0,
+      "after_display": 0,
+      "after_inline": 0
+    },
+    "docs/review/book/BOOK_STATS_DIFF.md": {
+      "before_display": 0,
+      "before_inline": 0,
+      "after_display": 0,
+      "after_inline": 0
+    },
+    "docs/review/book/BOOK_SUMMARY_FOR_MENTOR.zh-CN.md": {
+      "before_display": 0,
+      "before_inline": 0,
+      "after_display": 0,
+      "after_inline": 0
+    },
+    "docs/review/book/README.zh-CN.md": {
+      "before_display": 0,
+      "before_inline": 0,
+      "after_display": 0,
+      "after_inline": 0
+    },
+    "docs/review/CH01_BLUEPRINT.zh-CN.md": {
+      "before_display": 199,
+      "before_inline": 0,
+      "after_display": 104,
+      "after_inline": 362
+    },
+    "docs/review/CH01_ERRATA.zh-CN.md": {
+      "before_display": 15,
+      "before_inline": 0,
+      "after_display": 15,
+      "after_inline": 42
+    },
+    "docs/review/CH01_PILOT.zh-CN.md": {
+      "before_display": 6,
+      "before_inline": 0,
+      "after_display": 6,
+      "after_inline": 13
+    },
+    "docs/review/CH01_REVIEW.zh-CN.md": {
+      "before_display": 0,
+      "before_inline": 0,
+      "after_display": 0,
+      "after_inline": 0
+    },
+    "docs/review/CH01_REVIEW_SHORT.zh-CN.md": {
+      "before_display": 0,
+      "before_inline": 0,
+      "after_display": 0,
+      "after_inline": 0
+    },
+    "docs/review/CH01_SCOPE.zh-CN.md": {
+      "before_display": 0,
+      "before_inline": 0,
+      "after_display": 0,
+      "after_inline": 0
+    },
+    "docs/review/CH02_BLUEPRINT.zh-CN.md": {
+      "before_display": 168,
+      "before_inline": 1,
+      "after_display": 168,
+      "after_inline": 323
+    },
+    "docs/review/CH02_ERRATA.zh-CN.md": {
+      "before_display": 25,
+      "before_inline": 0,
+      "after_display": 25,
+      "after_inline": 66
+    },
+    "docs/review/CH02_REVIEW.zh-CN.md": {
+      "before_display": 0,
+      "before_inline": 0,
+      "after_display": 0,
+      "after_inline": 0
+    },
+    "docs/review/CH02_REVIEW_SHORT.zh-CN.md": {
+      "before_display": 0,
+      "before_inline": 0,
+      "after_display": 0,
+      "after_inline": 0
+    },
+    "docs/review/CH03_BLUEPRINT.zh-CN.md": {
+      "before_display": 140,
+      "before_inline": 0,
+      "after_display": 140,
+      "after_inline": 304
+    },
+    "docs/review/CH03_ERRATA.zh-CN.md": {
+      "before_display": 37,
+      "before_inline": 0,
+      "after_display": 37,
+      "after_inline": 81
+    },
+    "docs/review/CH03_REVIEW.zh-CN.md": {
+      "before_display": 0,
+      "before_inline": 0,
+      "after_display": 0,
+      "after_inline": 0
+    },
+    "docs/review/CH03_REVIEW_SHORT.zh-CN.md": {
+      "before_display": 0,
+      "before_inline": 0,
+      "after_display": 0,
+      "after_inline": 0
+    },
+    "docs/review/CH04_BLUEPRINT.zh-CN.md": {
+      "before_display": 141,
+      "before_inline": 0,
+      "after_display": 141,
+      "after_inline": 276
+    },
+    "docs/review/CH04_ERRATA.zh-CN.md": {
+      "before_display": 35,
+      "before_inline": 0,
+      "after_display": 35,
+      "after_inline": 63
+    },
+    "docs/review/CH04_REVIEW.zh-CN.md": {
+      "before_display": 0,
+      "before_inline": 0,
+      "after_display": 0,
+      "after_inline": 0
+    },
+    "docs/review/CH04_REVIEW_SHORT.zh-CN.md": {
+      "before_display": 0,
+      "before_inline": 0,
+      "after_display": 0,
+      "after_inline": 0
+    },
+    "docs/review/CH05_BLUEPRINT.zh-CN.md": {
+      "before_display": 63,
+      "before_inline": 0,
+      "after_display": 64,
+      "after_inline": 481
+    },
+    "docs/review/CH05_ERRATA.zh-CN.md": {
+      "before_display": 14,
+      "before_inline": 0,
+      "after_display": 14,
+      "after_inline": 115
+    },
+    "docs/review/CH05_REVIEW.zh-CN.md": {
+      "before_display": 0,
+      "before_inline": 0,
+      "after_display": 0,
+      "after_inline": 0
+    },
+    "docs/review/CH05_REVIEW_SHORT.zh-CN.md": {
+      "before_display": 0,
+      "before_inline": 0,
+      "after_display": 0,
+      "after_inline": 0
+    },
+    "docs/review/CH06_BLUEPRINT.zh-CN.md": {
+      "before_display": 247,
+      "before_inline": 0,
+      "after_display": 247,
+      "after_inline": 654
+    },
+    "docs/review/CH06_ERRATA.zh-CN.md": {
+      "before_display": 55,
+      "before_inline": 0,
+      "after_display": 55,
+      "after_inline": 172
+    },
+    "docs/review/CH06_REVIEW.zh-CN.md": {
+      "before_display": 0,
+      "before_inline": 0,
+      "after_display": 0,
+      "after_inline": 0
+    },
+    "docs/review/CH06_REVIEW_SHORT.zh-CN.md": {
+      "before_display": 0,
+      "before_inline": 0,
+      "after_display": 0,
+      "after_inline": 0
+    },
+    "docs/review/CH07_BLUEPRINT.zh-CN.md": {
+      "before_display": 199,
+      "before_inline": 0,
+      "after_display": 199,
+      "after_inline": 258
+    },
+    "docs/review/CH07_ERRATA.zh-CN.md": {
+      "before_display": 46,
+      "before_inline": 0,
+      "after_display": 46,
+      "after_inline": 57
+    },
+    "docs/review/CH08_BLUEPRINT.zh-CN.md": {
+      "before_display": 0,
+      "before_inline": 0,
+      "after_display": 0,
+      "after_inline": 800
+    },
+    "docs/review/CH08_ERRATA.zh-CN.md": {
+      "before_display": 0,
+      "before_inline": 0,
+      "after_display": 0,
+      "after_inline": 762
+    }
+  },
+  "lean": {
+    "files": 1367,
+    "git_content_changed": [],
+    "raw_bytes_changed": [],
+    "raw_snapshot_available": true,
+    "formal_files": 298,
+    "sorry": 0,
+    "axiom": 0
+  },
+  "manual_edits": 339,
+  "remaining_differences": 0,
+  "status": "PASS"
+}

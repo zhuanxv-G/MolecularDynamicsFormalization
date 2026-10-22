@@ -9,7 +9,7 @@
 
 ### 1. 原文陈述
 
-> Av_β(φ)=∫φρ_β/∫ρ_β, ρ_β=exp(-βH); C_β(τ)=∫ A(z)·B(F^H_τ(z))ρ_β dω / ∫ A(z)·B(z)ρ_β dω. Thus C(0)=1.
+> $Av_\beta(\varphi)=\int\varphi\rho_\beta/\int\rho_\beta$, $\rho_\beta=\exp(-\beta H)$; $C_\beta(\tau)=\int A(z)\cdot B(F^H_\tau(z))\rho_\beta\,d\omega / \int A(z)\cdot B(z)\rho_\beta\,d\omega$. Thus $C(0)=1$.
 
 对应原页全文逐字保留在原文JSON；摘要中的[EXTRA]与修正解释不替换原文。
 
@@ -80,7 +80,7 @@ theorem correlation_zero {E : Type*} [MeasurableSpace E] (μ : Measure E)
 
 ### 1. 原文陈述
 
-> The Liouvillian satisfies Lφ(H)=0; L is skew-adjoint. Hence any density which is a function of H will be preserved, including exp(-βH).
+> The Liouvillian satisfies $L\varphi(H)=0$; $L$ is skew-adjoint. Hence any density which is a function of $H$ will be preserved, including $\exp(-\beta H)$.
 
 对应原页全文逐字保留在原文JSON；摘要中的[EXTRA]与修正解释不替换原文。
 
@@ -109,8 +109,8 @@ theorem hamiltonianGibbsStationary (H : SymplecticCoordinates n → ℝ)
 
 ### 5. [EXTRA] 与覆盖缺口
 
-- 只桥接光滑Hamiltonian的Gibbs权重驻定方程；一般φ(H)、算子偏斜伴随及流的保测性未由本条覆盖。
-- [EXTRA/范围说明] 保留有限范围说明；若以后声称完整覆盖原文，应另列一般φ(H)、形式伴随及流不变性。
+- 只桥接光滑Hamiltonian的Gibbs权重驻定方程；一般$\varphi(H)$、算子偏斜伴随及流的保测性未由本条覆盖。
+- [EXTRA/范围说明] 保留有限范围说明；若以后声称完整覆盖原文，应另列一般$\varphi(H)$、形式伴随及流不变性。
 
 ### 6. 审计结论（含网站复审结论）
 
@@ -135,7 +135,7 @@ theorem hamiltonianGibbsStationary (H : SymplecticCoordinates n → ℝ)
 
 ### 1. 原文陈述
 
-> ρ̃(q,p,ξ)=ρ_β(q,p)ρ̂(ξ). Then ∫g(q,p)ρ̃ ∝ ∫g(q,p)ρ_β.
+> $\tilde\rho(q,p,\xi)=\rho_\beta(q,p)\hat\rho(\xi)$. Then $\int g(q,p)\tilde\rho \propto \int g(q,p)\rho_\beta$.
 
 对应原页全文逐字保留在原文JSON；摘要中的[EXTRA]与修正解释不替换原文。
 
@@ -194,7 +194,7 @@ theorem extendedAverage {E B : Type*} [MeasurableSpace E] [MeasurableSpace B]
 
 ### 1. 原文陈述
 
-> q̇=M⁻¹p, ṗ=-∇U(q)-ξp, μξ̇=pᵀM⁻¹p-N_dβ⁻¹.
+> $\dot q=M^{-1}p$, $\dot p=-\nabla U(q)-\xi p$, $\mu\dot\xi=p^{\mathsf T}M^{-1}p-N_d\beta^{-1}$.
 
 对应原页全文逐字保留在原文JSON；摘要中的[EXTRA]与修正解释不替换原文。
 
@@ -226,8 +226,8 @@ def isNHSolution (invm : Vec n) (U : Vec n → ℝ) (β Q : ℝ)
 
 ### 5. [EXTRA] 与覆盖缺口
 
-- μ记为Q且Q>0，β>0，正质量，热浴变量ξ∈ℝ；总函数nhField配合资格谓词使用。
-- [EXTRA/范围说明] 补充[EXTRA]采用对角质量、C¹经典解及全实时间解规格；局部解应用需另作区间版本。
+- μ记为Q且$Q>0$，$\beta>0$，正质量，热浴变量$\xi\in\mathbb R$；总函数nhField配合资格谓词使用。
+- [EXTRA/范围说明] 补充[EXTRA]采用对角质量、$C^1$经典解及全实时间解规格；局部解应用需另作区间版本。
 
 ### 6. 审计结论（含网站复审结论）
 
@@ -254,7 +254,7 @@ def isNHSolution (invm : Vec n) (U : Vec n → ℝ) (β Q : ℝ)
 
 ### 1. 原文陈述
 
-> ρ̃=ρ_β exp(-βμξ²/2); f=f₁+f₂, L_f†=L_f₁†+L_f₂†; f₂ preserves ρ̃.
+> $\tilde\rho=\rho_\beta\exp(-\beta\mu\xi^2/2)$; $f=f_1+f_2$, $L_f^\dagger=L_{f_1}^\dagger+L_{f_2}^\dagger$; $f_2$ preserves $\tilde\rho$.
 
 对应原页全文逐字保留在原文JSON；摘要中的[EXTRA]与修正解释不替换原文。
 
@@ -315,7 +315,7 @@ theorem nhWeight_stationary (invm : Vec n) (U : Vec n → ℝ) (β Q : ℝ)
 
 ### 1. 原文陈述
 
-> ds/dt=ξ. I_NH=H+μξ²/2+N_dβ⁻¹ ln s is conserved.
+> $ds/dt=\xi$. $I_{NH}=H+\mu\xi^2/2+N_d\beta^{-1}\ln s$ is conserved.
 
 对应原页全文逐字保留在原文JSON；摘要中的[EXTRA]与修正解释不替换原文。
 
@@ -351,16 +351,16 @@ theorem nhIntegral_corrected (invm : Vec n) (U : Vec n → ℝ) (β Q : ℝ)
 
 ### 5. [EXTRA] 与覆盖缺口
 
-- s>0；原文版不证明，修正版另列；两版均保留原文H形式。
+- $s>0$；原文版不证明，修正版另列；两版均保留原文H形式。
 
 ### 6. 审计结论（含网站复审结论）
 
 网站首轮：NEEDS_HUMAN。
 网站复审结论：本条未进入本轮复审；保留首轮NEEDS_HUMAN意见。
-原文版：原印忠实性PASS；s′=ξ与log s守恒不相容，数学真值待导师。
-修正版：原送审s′=sξ的_corrected签名PASS。
+原文版：原印忠实性PASS；$s'=\xi$与log s守恒不相容，数学真值待导师。
+修正版：原送审$s'=s\xi$的_corrected签名PASS。
 当前：原书疑误待导师；原送审正确版本分项保留。
-原书疑点：已目视核对原页PDF354：上行ds/dt=ξ，与(8.8)的ln s不相容；改为ds/dt=sξ（亦见PDF356和Exercise2）。
+原书疑点：已目视核对原页PDF354：上行$ds/dt=\xi$，与(8.8)的$\ln s$不相容；改为$ds/dt=s\xi$（亦见PDF356和Exercise2）。
 原页核对历史证据见blueprint/ch08/closeout31/PDF_VISUAL_CHECKS.json及blueprint/ch08/source_page_checks.json；原书PDF页354。本轮不虚称重新目视。
 
 ### 7. 状态与证明位置
@@ -377,7 +377,7 @@ theorem nhIntegral_corrected (invm : Vec n) (U : Vec n → ℝ) (β Q : ℝ)
 
 ### 1. 原文陈述
 
-> Nosé-Hoover is time-reversible: changing the sign of p and ξ is equivalent to reversing time.
+> Nosé-Hoover is time-reversible: changing the sign of $p$ and $\xi$ is equivalent to reversing time.
 
 对应原页全文逐字保留在原文JSON；摘要中的[EXTRA]与修正解释不替换原文。
 
@@ -431,7 +431,7 @@ theorem nhReversal_field (invm : Vec n) (U : Vec n → ℝ) (β Q : ℝ) (z : Ph
 
 ### 1. 原文陈述
 
-> Nosé-Hoover Timestep Map: drift(h/2), damped force(h/2), ξ-update(h), damped force(h/2), drift(h/2). c(t,ξ)=(1-e^{-tξ})/ξ=t-t²ξ/2+⋯.
+> Nosé-Hoover Timestep Map: drift($h/2$), damped force($h/2$), ξ-update($h$), damped force($h/2$), drift($h/2$). $c(t,\xi)=(1-e^{-t\xi})/\xi=t-t^2\xi/2+\cdots$.
 
 对应原页全文逐字保留在原文JSON；摘要中的[EXTRA]与修正解释不替换原文。
 
@@ -463,7 +463,7 @@ theorem dampedCoefficient_zero (t : ℝ) : dampedCoefficient t 0 = t := by simp 
 
 ### 5. [EXTRA] 与覆盖缺口
 
-- c在ξ=0处取连续延拓t；系数Taylor级数与二阶全局误差未由单步定义证明。
+- c在$\xi=0$处取连续延拓t；系数Taylor级数与二阶全局误差未由单步定义证明。
 - [EXTRA/范围说明] 保留零点连续延拓[EXTRA]及Taylor/收敛阶覆盖缺口；有效物理域仍是正质量、β,Q。
 
 ### 6. 审计结论（含网站复审结论）
@@ -493,7 +493,7 @@ theorem dampedCoefficient_zero (t : ℝ) : dampedCoefficient t 0 = t := by simp 
 
 ### 1. 原文陈述
 
-> R∘G_h∘R=G_h^{-1}, R(q,p,ξ)=(q,-p,-ξ).
+> $R\circ G_h\circ R=G_h^{-1}$, $R(q,p,\xi)=(q,-p,-\xi)$.
 
 对应原页全文逐字保留在原文JSON；摘要中的[EXTRA]与修正解释不替换原文。
 
@@ -546,7 +546,7 @@ theorem nhStep_inverse (invm : Vec n) (U : Vec n → ℝ) (β Q h : ℝ) :
 
 ### 1. 原文陈述
 
-> H_N= p̃ᵀM⁻¹p̃/(2s²)+π²/(2μ)+U(q)+(N_d+1)k_BT ln s; H_NP=s[H_N-E_N]=s[p̃ᵀM⁻¹p̃/(2s²)+π²/(2μ)+U(q)+N_d k_BT ln s-E_N].
+> $H_N=\tilde p^{\mathsf T}M^{-1}\tilde p/(2s^2)+\pi^2/(2\mu)+U(q)+(N_d+1)k_B T\ln s$; $H_{NP}=s[H_N-E_N]=s[\tilde p^{\mathsf T}M^{-1}\tilde p/(2s^2)+\pi^2/(2\mu)+U(q)+N_d k_B T\ln s-E_N]$.
 
 对应原页全文逐字保留在原文JSON；摘要中的[EXTRA]与修正解释不替换原文。
 
@@ -583,16 +583,16 @@ theorem nosePoincare_corrected (invm : Vec n) (U : Vec n → ℝ) (β Q EN : ℝ
 
 ### 5. [EXTRA] 与覆盖缺口
 
-- 物理定义域s>0、β,Q及质量正；总函数在此域外不作物理解释。
+- 物理定义域$s>0$、β,Q及质量正；总函数在此域外不作物理解释。
 
 ### 6. 审计结论（含网站复审结论）
 
 网站首轮：NEEDS_HUMAN。
 网站复审结论：本条未进入本轮复审；保留首轮NEEDS_HUMAN意见。
-原文版：两个原印H_N的对数系数不一致；Printed忠实性PASS。
+原文版：两个原印$H_N$的对数系数不一致；Printed忠实性PASS。
 修正版：原送审显式减log s/β的代数修正版PASS。
 当前：原书疑误待导师；原送审正确版本分项保留。
-原书疑点：已目视核对原页PDF355：H_N先用(N_d+1)，(8.9)展开却用N_d；同名H_N等号不一致。工作修正显式减去β⁻¹ln s。
+原书疑点：已目视核对原页PDF355：$H_N$先用$(N_d+1)$，(8.9)展开却用$N_d$；同名$H_N$等号不一致。工作修正显式减去$\beta^{-1}\ln s$。
 原页核对历史证据见blueprint/ch08/closeout31/PDF_VISUAL_CHECKS.json及blueprint/ch08/source_page_checks.json；原书PDF页355。本轮不虚称重新目视。
 
 ### 7. 状态与证明位置
@@ -610,7 +610,7 @@ theorem nosePoincare_corrected (invm : Vec n) (U : Vec n → ℝ) (β Q EN : ℝ
 
 ### 1. 原文陈述
 
-> q̇=M⁻¹p̃/s, p̃̇=sF, ṡ=sp_s/μ, ṗ_s=p̃ᵀM⁻¹p̃/s²-N_d k_BT-ΔH_N.
+> $\dot q=M^{-1}\tilde p/s$, $\dot{\tilde p}=sF$, $\dot s=sp_s/\mu$, $\dot p_s=\tilde p^{\mathsf T}M^{-1}\tilde p/s^2-N_d k_B T-\Delta H_N$.
 
 对应原页全文逐字保留在原文JSON；摘要中的[EXTRA]与修正解释不替换原文。
 
@@ -643,29 +643,29 @@ def npField (invm : Vec n) (U : Vec n → ℝ) (β Q EN : ℝ)
 
 | 原文对象或结论 | 实际覆盖 |
 |---|---|
-| 本条数学成分 | 正对角逆质量、N_d=n下的NP四漂移分量；n/β版命名能量差修正；有效域另列。未绑定初始能量、未证明Hamilton梯度关系。 |
+| 本条数学成分 | 正对角逆质量、$N_d=n$下的NP四漂移分量；$n/\beta$版命名能量差修正；有效域另列。未绑定初始能量、未证明Hamilton梯度关系。 |
 | 对象、量词、前提及结论 | 见完整声明；补充资格在[EXTRA]列明 |
 
 ### 5. [EXTRA] 与覆盖缺口
 
-- [EXTRA] M⁻¹=diag(invm)，N_d=n，β⁻¹=k_BT，Q=μ，状态z=((q,p̃),(s,p_s))。
-- [EXTRA] npValidDomain单列所有invm_i>0及β,Q,s>0；npField自身为总函数，未把该资格作为参数或合取条件。
-- [ERRATUM?] npDeltaN_corrected选择(8.9)展开中的n/β版本；与上方原印(n+1)/β版H_N区分。应用时EN应取该n版能量在初值处的值；声明并未绑定初值。
+- [EXTRA] $M^{-1}=\operatorname{diag}(invm)$，$N_d=n$，$\beta^{-1}=k_B T$，$Q=\mu$，状态$z=((q,\tilde p),(s,p_s))$。
+- [EXTRA] npValidDomain单列所有$invm_i>0$及$\beta,Q,s>0$；npField自身为总函数，未把该资格作为参数或合取条件。
+- [ERRATUM?] `npDeltaN_corrected`选择(8.9)展开中的$n/\beta$版本；与上方原印$(n+1)/\beta$版$H_N$区分。应用时EN应取该n版能量在初值处的值；声明并未绑定初值。
 - gradient用fderiv定义，未假设U可微；欲解释为经典力场须另加适当可微性。未证明Hamilton方程。
-- [EXTRA] 使用npField作为经典NP方程必须另带npValidDomain invm β Q z、U可微及EN=H_N^(n)(z₀)；这些条件没有被npField总函数自动强制。原页ΔH_N指代冲突未消除。
-- 覆盖缺口：正对角逆质量、N_d=n下的NP四漂移分量；n/β版命名能量差修正；有效域另列。未绑定初始能量、未证明Hamilton梯度关系。
-- 覆盖缺口：[ERRATUM?] npDeltaN_corrected选择(8.9)展开中的n/β版本；与上方原印(n+1)/β版H_N区分。应用时EN应取该n版能量在初值处的值；声明并未绑定初值。
+- [EXTRA] 使用npField作为经典NP方程必须另带`npValidDomain invm β Q z`、U可微及$EN=H_N^{(n)}(z_0)$；这些条件没有被npField总函数自动强制。原页$\Delta H_N$指代冲突未消除。
+- 覆盖缺口：正对角逆质量、$N_d=n$下的NP四漂移分量；$n/\beta$版命名能量差修正；有效域另列。未绑定初始能量、未证明Hamilton梯度关系。
+- 覆盖缺口：[ERRATUM?] `npDeltaN_corrected`选择(8.9)展开中的$n/\beta$版本；与上方原印$(n+1)/\beta$版$H_N$区分。应用时EN应取该n版能量在初值处的值；声明并未绑定初值。
 - 覆盖缺口：gradient用fderiv定义，未假设U可微；欲解释为经典力场须另加适当可微性。未证明Hamilton方程。
-- 覆盖缺口：[EXTRA] 使用npField作为经典NP方程必须另带npValidDomain invm β Q z、U可微及EN=H_N^(n)(z₀)；这些条件没有被npField总函数自动强制。原页ΔH_N指代冲突未消除。
+- 覆盖缺口：[EXTRA] 使用npField作为经典NP方程必须另带`npValidDomain invm β Q z`、U可微及$EN=H_N^{(n)}(z_0)$；这些条件没有被npField总函数自动强制。原页$\Delta H_N$指代冲突未消除。
 
 ### 6. 审计结论（含网站复审结论）
 
 网站首轮：NEEDS_HUMAN。
-网站复审结论：NEEDS_HUMAN；逐一展开Vec=Fin n→ℝ、Phase=Vec n×Vec n、gradient与kineticTwice。npDeltaN_corrected依次为p̃ᵀdiag(invm)p̃/(2s²)、p_s²/(2Q)、U(q)、(n/β)log s及−EN，修正选择合理。npValidDomain全部四组正性条件完整。npField返回((q̇,p̃̇),(ṡ,ṗ_s))，四分量与(8.10)–(8.13)在所列字典及n版delta下相符；符号、分母和括号正确。定义总域允许β,Q,s=0，不能自动声称有效物理域。原页delta指代矛盾未消除，故总体NEEDS_HUMAN，并非由sorry或缺少Hamilton证明判FAIL。
-原文版：原印ΔH_N指代冲突未消除，待导师。
+网站复审结论：NEEDS_HUMAN；逐一展开`Vec=Fin n→ℝ`、`Phase=Vec n×Vec n`、gradient与kineticTwice。npDeltaN_corrected依次为$\tilde p^{\mathsf T}\operatorname{diag}(invm)\tilde p/(2s^2)$、$p_s^2/(2Q)$、$U(q)$、$(n/\beta)\log s$及$-EN$，修正选择合理。npValidDomain全部四组正性条件完整。npField返回$((\dot q,\dot{\tilde p}),(\dot s,\dot p_s))$，四分量与(8.10)–(8.13)在所列字典及n版delta下相符；符号、分母和括号正确。定义总域允许$\beta,Q,s=0$，不能自动声称有效物理域。原页delta指代矛盾未消除，故总体NEEDS_HUMAN，并非由sorry或缺少Hamilton证明判FAIL。
+原文版：原印$\Delta H_N$指代冲突未消除，待导师。
 修正版：npDeltaN_corrected及npValidDomain网站PASS；npField在n版修正解释下分量正确，但网站逐声明仍保留NEEDS_HUMAN的指代限定。
 当前：修正版/限定声明网站认可；原文疑误待导师（NEEDS_HUMAN）。
-原书疑点：[ERRATUM?] 原页H_N在(N_d+1)与N_d系数之间不一致，须人工确认；修正版按(8.9)展开选择n版。；已目视核对原页PDF355：上方H_N用(n+1)/β，(8.9)展开用n/β，末行ΔH_N仍引用同名H_N；指代矛盾未消除。n版仅为依(8.9)展开采用的修正选择。
+原书疑点：[ERRATUM?] 原页$H_N$在$(N_d+1)$与$N_d$系数之间不一致，须人工确认；修正版按(8.9)展开选择n版。；已目视核对原页PDF355：上方$H_N$用$(n+1)/\beta$，(8.9)展开用$n/\beta$，末行$\Delta H_N$仍引用同名$H_N$；指代矛盾未消除。n版仅为依(8.9)展开采用的修正选择。
 32号本轮已目视核对原页；记录见blueprint/ch08/closeout32/PDF_VISUAL_CHECKS.json；原书PDF页355。
 
 ### 7. 状态与证明位置
@@ -682,7 +682,7 @@ def npField (invm : Vec n) (U : Vec n → ℝ) (β Q EN : ℝ)
 
 ### 1. 原文陈述
 
-> p=p̃/s, ξ=p_s/μ; ṡ=sξ, ξ̇=μ⁻¹(pᵀM⁻¹p-N_d k_BT-ΔH_N). The perturbation vanishes along the exact solution.
+> $p=\tilde p/s$, $\xi=p_s/\mu$; $\dot s=s\xi$, $\dot\xi=\mu^{-1}(p^{\mathsf T}M^{-1}p-N_d k_B T-\Delta H_N)$. The perturbation vanishes along the exact solution.
 
 对应原页全文逐字保留在原文JSON；摘要中的[EXTRA]与修正解释不替换原文。
 
@@ -713,8 +713,8 @@ theorem npProjection_equations (invm : Vec n) (U : Vec n → ℝ) (β Q EN : ℝ
 
 ### 5. [EXTRA] 与覆盖缺口
 
-- 明确零能量面及s>0；零能量守恒本身未假作普遍结论。
-- [EXTRA/范围说明] 保留[EXTRA]全时零能量与s>0；标明这是采用第11条展开式定义的NP版本。原文“沿精确解消失”须理解为正确初始化的零能量解。
+- 明确零能量面及$s>0$；零能量守恒本身未假作普遍结论。
+- [EXTRA/范围说明] 保留[EXTRA]全时零能量与$s>0$；标明这是采用第11条展开式定义的NP版本。原文“沿精确解消失”须理解为正确初始化的零能量解。
 
 ### 6. 审计结论（含网站复审结论）
 
@@ -739,7 +739,7 @@ theorem npProjection_equations (invm : Vec n) (U : Vec n → ℝ) (β Q EN : ℝ
 
 ### 1. 原文陈述
 
-> H̃_h=H_NP+h²H_[2]+O(h⁴); ρ̃=ρ_βζ(q,p,h)+O(h⁴). Canonical averages are approximated by (ν+1)⁻¹Σg_nζ_n⁻¹+O(h⁴).
+> $\tilde H_h=H_{NP}+h^2H_{[2]}+O(h^4)$; $\tilde\rho=\rho_\beta\zeta(q,p,h)+O(h^4)$. Canonical averages are approximated by $(\nu+1)^{-1}\sum g_n\zeta_n^{-1}+O(h^4)$.
 
 对应原页全文逐字保留在原文JSON；摘要中的[EXTRA]与修正解释不替换原文。
 
@@ -799,7 +799,7 @@ def npDensityAnsatz (ρ : Phase n → ℝ) (ζ ρtilde : ℝ → Phase n → ℝ
 
 ### 1. 原文陈述
 
-> ż=J∇H, J constant skew-symmetric; ż=J∇H+Φ(ξ,z), ξ̇=g(ξ,z).
+> $\dot z=J\nabla H$, $J$ constant skew-symmetric; $\dot z=J\nabla H+\Phi(\xi,z)$, $\dot\xi=g(\xi,z)$.
 
 对应原页全文逐字保留在原文JSON；摘要中的[EXTRA]与修正解释不替换原文。
 
@@ -825,7 +825,7 @@ def skewMatrix (J : Matrix (Fin n) (Fin n) ℝ) : Prop := J.transpose = -J
 
 ### 5. [EXTRA] 与覆盖缺口
 
-- J为常矩阵，Jᵀ=-J；z、ξ为实向量，光滑资格在结论中给出。
+- J为常矩阵，$J^{\mathsf T}=-J$；z、ξ为实向量，光滑资格在结论中给出。
 - [EXTRA/范围说明] 补充[EXTRA]辅助维数k可独立于n；不要把任意J的总函数定义视为已满足Hamiltonian资格或已驻定。
 - 覆盖缺口：常矩阵一般热浴场及矩阵反对称资格的定义；不声称已证驻定或采样。
 
@@ -852,7 +852,7 @@ def skewMatrix (J : Matrix (Fin n) (Fin n) ℝ) : Prop := J.transpose = -J
 
 ### 1. 原文陈述
 
-> ∂tρ=-div_z[ρ(J∇H+Φ)]-div_ξ(ρg)=L†ρ; the product rule gives four terms W₁+W₂+W₃+W₄.
+> $\partial_t\rho=-\operatorname{div}_z[\rho(J\nabla H+\Phi)]-\operatorname{div}_\xi(\rho g)=L^\dagger\rho$; the product rule gives four terms $W_1+W_2+W_3+W_4$.
 
 对应原页全文逐字保留在原文JSON；摘要中的[EXTRA]与修正解释不替换原文。
 
@@ -908,7 +908,7 @@ theorem continuity_productRule {k : ℕ} (F : Vec n × Vec k → Vec n × Vec k)
 
 ### 1. 原文陈述
 
-> - [∇z-β∇zH]·Φ + βξᵀμ⁻¹g - ∇ξ·g=0 is the fundamental equation for deterministic thermostats.
+> $-[\nabla_z-\beta\nabla_z H]\cdot\Phi+\beta\xi^{\mathsf T}\mu^{-1}g-\nabla_\xi\cdot g=0$ is the fundamental equation for deterministic thermostats.
 
 对应原页全文逐字保留在原文JSON；摘要中的[EXTRA]与修正解释不替换原文。
 
@@ -941,8 +941,8 @@ theorem thermostatCriterion {k : ℕ} (J : Matrix (Fin n) (Fin n) ℝ)
 
 ### 5. [EXTRA] 与覆盖缺口
 
-- 原文μ_i在指数中是热质量，统一写Q_i；矩阵μ⁻¹的记号按对角热质量解释。归一化概率密度需另加有限正配分积分。
-- [EXTRA/范围说明] 补充明确记号字典Q_i=原文标量μ_i，原文矩阵μ⁻¹=diag(Q_i)，矩阵μ=diag(1/Q_i)。若原书 intended μ=diag(μ_i)，则该矩阵记号需[ERRATUM?]人工确认。
+- 原文$\mu_i$在指数中是热质量，统一写$Q_i$；矩阵$\mu^{-1}$的记号按对角热质量解释。归一化概率密度需另加有限正配分积分。
+- [EXTRA/范围说明] 补充明确记号字典$Q_i=$原文标量$\mu_i$，原文矩阵$\mu^{-1}=\operatorname{diag}(Q_i)$，矩阵$\mu=\operatorname{diag}(1/Q_i)$。若原书 intended $\mu=\operatorname{diag}(\mu_i)$，则该矩阵记号需[ERRATUM?]人工确认。
 
 ### 6. 审计结论（含网站复审结论）
 
@@ -967,7 +967,7 @@ theorem thermostatCriterion {k : ℕ} (J : Matrix (Fin n) (Fin n) ℝ)
 
 ### 1. 原文陈述
 
-> Example 8.1 Φ=-ξ(0,p), g=μ⁻¹(p·∇pH-N_d k_BT). Example 8.2 Φ=ξG(z), g=μ⁻¹[∇H-k_BT∇]·G. Configurational choice G=(∇qK,0).
+> Example 8.1 $\Phi=-\xi(0,p)$, $g=\mu^{-1}(p\cdot\nabla_p H-N_d k_B T)$. Example 8.2 $\Phi=\xi G(z)$, $g=\mu^{-1}[\nabla H-k_B T\nabla]\cdot G$. Configurational choice $G=(\nabla_q K,0)$.
 
 对应原页全文逐字保留在原文JSON；摘要中的[EXTRA]与修正解释不替换原文。
 
@@ -1012,9 +1012,9 @@ theorem generalizedFeedback_stationary_corrected (J : Matrix (Fin n) (Fin n) ℝ
 
 ### 5. [EXTRA] 与覆盖缺口
 
-- β⁻¹=k_BT，Q=μ；一般G定义中的n是相空间维数，不能将此处n一律解释为物理自由度数。
+- $\beta^{-1}=k_B T$，$Q=\mu$；一般G定义中的n是相空间维数，不能将此处n一律解释为物理自由度数。
 - generalizedFeedback和configurationalFeedback为原式总函数；经典导数解释需相应可微性。
-- [EXTRA] 两个驻定定理假设常矩阵J反对称、H为C³、G为C²、β,Q>0，结论为所有点的div(ρF)=0；不是全局流不变概率测度或遍历性。
+- [EXTRA] 两个驻定定理假设常矩阵J反对称、H为$C^3$、G为$C^2$、$\beta,Q>0$，结论为所有点的$\operatorname{div}(\rho F)=0$；不是全局流不变概率测度或遍历性。
 - Example8.1的物理系统、构型完整场及其独立驻定定理未在本条四声明中单列。
 - [ERRATUM?] Printed仅供原文忠实记录，不作为任何其他条目的有效定理依赖；实际局部驻定采用负号耦合_corrected。
 - 覆盖缺口：原印一般G与构型反馈、正号组合Printed驻定声称，以及负号耦合的局部驻定修正版；不含全局过程不变性。
@@ -1022,11 +1022,11 @@ theorem generalizedFeedback_stationary_corrected (J : Matrix (Fin n) (Fin n) ℝ
 ### 6. 审计结论（含网站复审结论）
 
 网站首轮：FAIL。
-网站复审结论：NEEDS_HUMAN；generalizedFeedback为(DH[G]−div G/β)/Q，与原印括号算子完全相符；configurationalFeedback为(∇U·∇K−ΔK/β)/Q，亦忠实。两个定理所有参数和前提相同：任意n、常反对称J、C³实函数H、C²向量场G、正β,Q，密度ρ=exp(−β(H+Qξ²/2))，完整结论为∀(z,ξ),div(ρF)=0。Printed取+ξG，与原印隐含驻定声称忠实，按任务判字面PASS，但数学内容有原书符号疑误。corrected仅取−ξG，成立：Hamilton项加权散度为零，−ξG项贡献ρξ(βDH[G]−div G)，ξ方向贡献其负值，逐点相消。无须归一化或增长条件即可作此局部结论；也未据此声称全局采样。
-原文版：Printed字面忠实性PASS；+ξG驻定声称为原书符号疑误，禁止作为有效定理依赖。
-修正版：−ξG的_corrected局部驻定签名网站PASS。
+网站复审结论：NEEDS_HUMAN；generalizedFeedback为$(DH[G]-\operatorname{div}G/\beta)/Q$，与原印括号算子完全相符；configurationalFeedback为$(\nabla U\cdot\nabla K-\Delta K/\beta)/Q$，亦忠实。两个定理所有参数和前提相同：任意n、常反对称J、$C^3$实函数H、$C^2$向量场G、正β,Q，密度$\rho=\exp(-\beta(H+Q\xi^2/2))$，完整结论为$\forall(z,\xi),\operatorname{div}(\rho F)=0$。Printed取$+\xi G$，与原印隐含驻定声称忠实，按任务判字面PASS，但数学内容有原书符号疑误。corrected仅取$-\xi G$，成立：Hamilton项加权散度为零，$-\xi G$项贡献$\rho\xi(\beta DH[G]-\operatorname{div}G)$，ξ方向贡献其负值，逐点相消。无须归一化或增长条件即可作此局部结论；也未据此声称全局采样。
+原文版：Printed字面忠实性PASS；$+\xi G$驻定声称为原书符号疑误，禁止作为有效定理依赖。
+修正版：$-\xi G$的_corrected局部驻定签名网站PASS。
 当前：修正版/限定声明网站认可；原文疑误待导师（NEEDS_HUMAN）。
-原书疑点：[ERRATUM?] 原印例8.2的Φ=+ξG与正反馈一般不保持所列高斯Gibbs密度；Printed忠实保留该声称。负号耦合corrected为合理修正。；已目视核对原页PDF358：例8.2印为Φ=+ξG及正反馈；Printed仅保留原印疑误，不得被其他条目作为有效数学定理依赖；corrected采用−ξG。
+原书疑点：[ERRATUM?] 原印例8.2的Φ=$+\xi G$与正反馈一般不保持所列高斯Gibbs密度；Printed忠实保留该声称。负号耦合corrected为合理修正。；已目视核对原页PDF358：例8.2印为Φ=$+\xi G$及正反馈；Printed仅保留原印疑误，不得被其他条目作为有效数学定理依赖；corrected采用$-\xi G$。
 32号本轮已目视核对原页；记录见blueprint/ch08/closeout32/PDF_VISUAL_CHECKS.json；原书PDF页358–359。
 
 ### 7. 状态与证明位置
@@ -1044,7 +1044,7 @@ theorem generalizedFeedback_stationary_corrected (J : Matrix (Fin n) (Fin n) ℝ
 
 ### 1. 原文陈述
 
-> ∫ divG ρ dω = -∫∇ρ·G dω = β∫∇H·G ρ dω. T=k_B⁻¹〈∇H·G〉/〈divG〉.
+> $\int\operatorname{div}G\,\rho\,d\omega=-\int\nabla\rho\cdot G\,d\omega=\beta\int\nabla H\cdot G\,\rho\,d\omega$. $T=k_B^{-1}\langle\nabla H\cdot G\rangle/\langle\operatorname{div}G\rangle$.
 
 对应原页全文逐字保留在原文JSON；摘要中的[EXTRA]与修正解释不替换原文。
 
@@ -1073,8 +1073,8 @@ def phaseTemperature (kB numerator denominator : ℝ) : ℝ := numerator/(kB*den
 
 ### 5. [EXTRA] 与覆盖缺口
 
-- 以G紧支撑替代原文未量化的足够快边界衰减；温度比值解释另要求k_B>0、分母非零。
-- [EXTRA/范围说明] 保留紧支撑替代衰减的[EXTRA]；若解释归一平均或推导T，须另外有有限正配分函数、kB>0、分母非零及β⁻¹=kB T。
+- 以G紧支撑替代原文未量化的足够快边界衰减；温度比值解释另要求$k_B>0$、分母非零。
+- [EXTRA/范围说明] 保留紧支撑替代衰减的[EXTRA]；若解释归一平均或推导T，须另外有有限正配分函数、$k_B>0$、分母非零及$\beta^{-1}=k_B T$。
 
 ### 6. 审计结论（含网站复审结论）
 
@@ -1099,7 +1099,7 @@ def phaseTemperature (kB numerator denominator : ℝ) : ℝ := numerator/(kB*den
 
 ### 1. 原文陈述
 
-> Two thermostats preserving a(ξ)ρ_β and b(η)ρ_β can be added and preserve a(ξ)b(η)ρ_β.
+> Two thermostats preserving $a(\xi)\rho_\beta$ and $b(\eta)\rho_\beta$ can be added and preserve $a(\xi)b(\eta)\rho_\beta$.
 
 对应原页全文逐字保留在原文JSON；摘要中的[EXTRA]与修正解释不替换原文。
 
@@ -1164,7 +1164,7 @@ theorem proposition81 {H : SymplecticCoordinates n → ℝ} (hH : ContDiff ℝ 2
 
 ### 1. 原文陈述
 
-> The Nosé–Hoover chain (8.16)–(8.21) preserves ρ_β exp(-βΣμ_iξ_i²/2).
+> The Nosé–Hoover chain (8.16)–(8.21) preserves $\rho_\beta\exp(-\beta\sum\mu_i\xi_i^2/2)$.
 
 对应原页全文逐字保留在原文JSON；摘要中的[EXTRA]与修正解释不替换原文。
 
@@ -1199,10 +1199,10 @@ theorem nhChain_stationary (k : ℕ) (hk : 0 < k) (invm : Vec n) (U : Vec n → 
 
 ### 5. [EXTRA] 与覆盖缺口
 
-- 链长k>0，各热质量Q_j>0、β>0，实辅助变量；未归一Gaussian权重不声称唯一不变概率或遍历性。
-- [EXTRA] M⁻¹=diag(invm)，∀i,invm_i>0，N_d=n；U∈C²。仅形式化正对角质量、无约束情形。
+- 链长$k>0$，各热质量$Q_j>0$、$\beta>0$，实辅助变量；未归一Gaussian权重不声称唯一不变概率或遍历性。
+- [EXTRA] $M^{-1}=\operatorname{diag}(invm)$，$\forall i,invm_i>0$，$N_d=n$；$U\in C^2$。仅形式化正对角质量、无约束情形。
 - 覆盖缺口：任意正链长、正对角质量且无约束的NH链场与未归一Gaussian权的局部Liouville驻定；不含一般非对角M、约束流形、唯一不变概率或遍历性。
-- 覆盖缺口：链长k>0，各热质量Q_j>0、β>0，实辅助变量；未归一Gaussian权重不声称唯一不变概率或遍历性。
+- 覆盖缺口：链长$k>0$，各热质量$Q_j>0$、$\beta>0$，实辅助变量；未归一Gaussian权重不声称唯一不变概率或遍历性。
 
 ### 6. 审计结论（含网站复审结论）
 
@@ -1227,7 +1227,7 @@ theorem nhChain_stationary (k : ℕ) (hk : 0 < k) (invm : Vec n) (U : Vec n → 
 
 ### 1. 原文陈述
 
-> k ∼ A e^{-ΔE/(k_BT)}.
+> $k\sim A e^{-\Delta E/(k_B T)}$.
 
 对应原页全文逐字保留在原文JSON；摘要中的[EXTRA]与修正解释不替换原文。
 
@@ -1247,14 +1247,14 @@ theorem arrheniusRate_nonneg (A ΔE kB T : ℝ) (hA : 0 ≤ A) :
 
 | 原文对象或结论 | 实际覆盖 |
 |---|---|
-| 本条数学成分 | Arrhenius指数速率公式定义及A≥0时非负性；不含亚稳跃迁率渐近定理或温度单调性。 |
+| 本条数学成分 | Arrhenius指数速率公式定义及$A\ge0$时非负性；不含亚稳跃迁率渐近定理或温度单调性。 |
 | 对象、量词、前提及结论 | 见完整声明；补充资格在[EXTRA]列明 |
 
 ### 5. [EXTRA] 与覆盖缺口
 
-- A≥0,k_B>0,T>0为速率解释域；只定义原页模型，不声称一般能垒动力学服从此经验律。
-- 覆盖缺口：Arrhenius指数速率公式定义及A≥0时非负性；不含亚稳跃迁率渐近定理或温度单调性。
-- 覆盖缺口：A≥0,k_B>0,T>0为速率解释域；只定义原页模型，不声称一般能垒动力学服从此经验律。
+- $A\ge0,k_B>0,T>0$为速率解释域；只定义原页模型，不声称一般能垒动力学服从此经验律。
+- 覆盖缺口：Arrhenius指数速率公式定义及$A\ge0$时非负性；不含亚稳跃迁率渐近定理或温度单调性。
+- 覆盖缺口：$A\ge0,k_B>0,T>0$为速率解释域；只定义原页模型，不声称一般能垒动力学服从此经验律。
 
 ### 6. 审计结论（含网站复审结论）
 
@@ -1279,7 +1279,7 @@ theorem arrheniusRate_nonneg (A ΔE kB T : ℝ) (hA : 0 ≤ A) :
 
 ### 1. 原文陈述
 
-> dq=M⁻¹pdt; dp=-∇Udt-Φ(ξ,z)-Γpdt+√(2k_BT)M^{1/2}Γ^{1/2}dW; dξ=gdt-Γ̂ξdt+√(2k_BT)M̂^{1/2}Γ̂^{1/2}dŴ. All Wiener coordinates are independent.
+> $dq=M^{-1}p\,dt$; $dp=-\nabla U\,dt-\Phi(\xi,z)-\Gamma p\,dt+\sqrt{2k_B T}M^{1/2}\Gamma^{1/2}dW$; $d\xi=g\,dt-\hat\Gamma\xi\,dt+\sqrt{2k_B T}\hat M^{1/2}\hat\Gamma^{1/2}d\hat W$. All Wiener coordinates are independent.
 
 对应原页全文逐字保留在原文JSON；摘要中的[EXTRA]与修正解释不替换原文。
 
@@ -1339,25 +1339,25 @@ def stochasticThermostatSolution {k : ℕ} (P : Measure Ω)
 
 | 原文对象或结论 | 实际覆盖 |
 |---|---|
-| 本条数学成分 | 已组装的对角物理质量、交换涨落耗散特例：同一n+k维独立Wiener、分块噪声、两组同β协方差与漂移质量已绑定。未覆盖一般非对角模型、存在唯一性或不变律。 |
+| 本条数学成分 | 已组装的对角物理质量、交换涨落耗散特例：同一$n+k$维独立Wiener、分块噪声、两组同β协方差与漂移质量已绑定。未覆盖一般非对角模型、存在唯一性或不变律。 |
 | 对象、量词、前提及结论 | 见完整声明；补充资格在[EXTRA]列明 |
 
 ### 5. [EXTRA] 与覆盖缺口
 
-- [EXTRA] M⁻¹=diag(invm)，所有invm_i>0，N_c=N_d=n；U为C¹。β⁻¹=k_BT。
-- [EXTRA] stochasticThermostatSolution已用同一n+k维独立Wiener过程、thermostatBlockNoise和实际漂移组装完整积分解规格。物理质量明确绑定diag(invm⁻¹)，热浴质量为Mhat，两组使用同β。
-- [EXTRA] fluctuationDissipation要求β>0、M正定、Γ半正定及BBᵀ=(2/β)ΓM。实对称矩阵下由左右对称性强制ΓM=MΓ，属于明确限制后的充分相容条件。热浴同理。
-- [ERRATUM?] 原印−Φ未附dt；漂移按−Φdt解释。原印对称性条件不足以保证矩阵平方根噪声的Gibbs相容性。
+- [EXTRA] $M^{-1}=\operatorname{diag}(invm)$，所有$invm_i>0$，$N_c=N_d=n$；U为$C^1$。$\beta^{-1}=k_B T$。
+- [EXTRA] stochasticThermostatSolution已用同一$n+k$维独立Wiener过程、thermostatBlockNoise和实际漂移组装完整积分解规格。物理质量明确绑定$\operatorname{diag}(invm^{-1})$，热浴质量为Mhat，两组使用同β。
+- [EXTRA] fluctuationDissipation要求$\beta>0$、M正定、Γ半正定及$BB^{\mathsf T}=(2/\beta)\Gamma M$。实对称矩阵下由左右对称性强制$\Gamma M=M\Gamma$，属于明确限制后的充分相容条件。热浴同理。
+- [ERRATUM?] 原印$-\Phi$未附$dt$；漂移按$-\Phi\,dt$解释。原印对称性条件不足以保证矩阵平方根噪声的Gibbs相容性。
 - 未要求或证明确定性Φ,g部分保权；未构造矩阵平方根，未证明完整解存在、唯一、不变分布或遍历性。
-- [EXTRA] additiveSDE要求几乎处处全实时间连续；每个t≥0的X t对W在[0,t]历史可测，漂移在[0,t]几乎处处可积，且逐个t的积分方程几乎处处成立；x0固定而非随机。
-- [EXTRA] 对一般矩阵的匹配应为BBᵀ=(ΓM+MΓᵀ)/β并须协方差可实现；当前采用BBᵀ=(2/β)ΓM，在实对称条件下限制为ΓM=MΓ的充分特例，不扩充Lean模型。
-- 覆盖缺口：已组装的对角物理质量、交换涨落耗散特例：同一n+k维独立Wiener、分块噪声、两组同β协方差与漂移质量已绑定。未覆盖一般非对角模型、存在唯一性或不变律。
+- [EXTRA] additiveSDE要求几乎处处全实时间连续；每个$t\ge0$的X t对W在[0,t]历史可测，漂移在[0,t]几乎处处可积，且逐个t的积分方程几乎处处成立；x0固定而非随机。
+- [EXTRA] 对一般矩阵的匹配应为$BB^{\mathsf T}=(\Gamma M+M\Gamma^{\mathsf T})/\beta$并须协方差可实现；当前采用$BB^{\mathsf T}=(2/\beta)\Gamma M$，在实对称条件下限制为$\Gamma M=M\Gamma$的充分特例，不扩充Lean模型。
+- 覆盖缺口：已组装的对角物理质量、交换涨落耗散特例：同一$n+k$维独立Wiener、分块噪声、两组同β协方差与漂移质量已绑定。未覆盖一般非对角模型、存在唯一性或不变律。
 - 覆盖缺口：未要求或证明确定性Φ,g部分保权；未构造矩阵平方根，未证明完整解存在、唯一、不变分布或遍历性。
 
 ### 6. 审计结论（含网站复审结论）
 
 网站首轮：FAIL。
-网站复审结论：NEEDS_HUMAN；independentWiener对每个Fin k坐标要求IsBrownianReal，并对整个路径随机变量iIndepFun，P为概率测度，故跨组独立性由统一n+k坐标给出。additiveSDE的对象E、固定x0、常因子B、几乎处处连续、自然噪声历史可测、t≥0逐时可积及积分恒等式全部明确；不是存在性定理。stochasticThermostatDrift在(q,p,ξ)上恰为(diag(invm)p,−∇U−Φ−Γp,g−Γhatξ)，把原书缺失dt解释为漂移。thermostatBlockNoise前n列只作用p，后k列只作用ξ，q噪声为零。stochasticThermostatSolution已将该漂移、分块噪声、同一个独立W、同β两组资格及实际对角物理质量绑定，旧未组装/未绑定指控不成立。fluctuationDissipation为充分但较强的交换情形，不能冒充原印仅对称的一般模型。没有确定性保权前提，因而不能从该解谓词推出Gibbs不变性；声明本身未作此结论，故不是签名错误。原书dt和矩阵条件疑误总体保留NEEDS_HUMAN。
+网站复审结论：NEEDS_HUMAN；independentWiener对每个Fin k坐标要求IsBrownianReal，并对整个路径随机变量iIndepFun，P为概率测度，故跨组独立性由统一$n+k$坐标给出。additiveSDE的对象E、固定x0、常因子B、几乎处处连续、自然噪声历史可测、$t\ge0$逐时可积及积分恒等式全部明确；不是存在性定理。stochasticThermostatDrift在$(q,p,\xi)$上恰为$(\operatorname{diag}(invm)p,-\nabla U-\Phi-\Gamma p,g-\hat\Gamma\xi)$，把原书缺失dt解释为漂移。thermostatBlockNoise前n列只作用p，后k列只作用ξ，q噪声为零。stochasticThermostatSolution已将该漂移、分块噪声、同一个独立W、同β两组资格及实际对角物理质量绑定，旧未组装/未绑定指控不成立。fluctuationDissipation为充分但较强的交换情形，不能冒充原印仅对称的一般模型。没有确定性保权前提，因而不能从该解谓词推出Gibbs不变性；声明本身未作此结论，故不是签名错误。原书dt和矩阵条件疑误总体保留NEEDS_HUMAN。
 原文版：原印缺dt及矩阵噪声相容疑误待导师。
 修正版：已组装的对角物理质量、交换涨落耗散特例网站PASS；不代表一般矩阵模型。
 当前：修正版/限定声明网站认可；原文疑误待导师（NEEDS_HUMAN）。
@@ -1381,7 +1381,7 @@ def stochasticThermostatSolution {k : ℕ} (P : Measure Ω)
 
 ### 1. 原文陈述
 
-> The OU momentum process with drift -Γp and noise √(2k_BT) M^{1/2}Γ^{1/2} preserves exp(-βpᵀM⁻¹p/2). The displayed diffusion term is β⁻¹Tr(Γ^{1/2}M^{1/2}[βM⁻¹ppᵀM⁻¹-M⁻¹]M^{1/2}Γ^{1/2})ρ̄=-drift.
+> The OU momentum process with drift $-\Gamma p$ and noise $\sqrt{2k_B T}M^{1/2}\Gamma^{1/2}$ preserves $\exp(-\beta p^{\mathsf T}M^{-1}p/2)$. The displayed diffusion term is $\beta^{-1}\operatorname{Tr}(\Gamma^{1/2}M^{1/2}[\beta M^{-1}pp^{\mathsf T}M^{-1}-M^{-1}]M^{1/2}\Gamma^{1/2})\bar\rho=-\text{drift}$.
 
 对应原页全文逐字保留在原文JSON；摘要中的[EXTRA]与修正解释不替换原文。
 
@@ -1414,7 +1414,7 @@ theorem diffusionPrinted_counterexample : ¬ ((1/(2:ℝ))*(-1) = -(1:ℝ)) := by
 
 ### 5. [EXTRA] 与覆盖缺口
 
-- Printed保留显示抵消式的M=Γ=1,p=0标量特例；修正版为完整匹配协方差后的OU驻定式；不将转移分布存在性作为已证。
+- Printed保留显示抵消式的$M=\Gamma=1,p=0$标量特例；修正版为完整匹配协方差后的OU驻定式；不将转移分布存在性作为已证。
 
 ### 6. 审计结论（含网站复审结论）
 
@@ -1423,7 +1423,7 @@ theorem diffusionPrinted_counterexample : ¬ ((1/(2:ℝ))*(-1) = -(1:ℝ)) := by
 原文版：diffusionPrinted忠实性PASS；原印β因子和矩阵相容性待导师。
 修正版：原送审ouStationarity_corrected及标量反例PASS；仅局部算子恒零。
 当前：原书疑误待导师；原送审正确版本分项保留。
-原书疑点：已目视核对原页PDF364–365：一般M与Γ仅对称不足保证原噪声协方差匹配，应加ΓM=MΓ或直接给涨落耗散关系；PDF365将Hessian的β提取后仍留β⁻¹，标量β=2,p=0已反例。；[ERRATUM?]保留原所印等式及β=2反例；修正版的BBᵀ=(2/β)ΓM为明确额外资格，在对称情形蕴含交换性。
+原书疑点：已目视核对原页PDF364–365：一般M与Γ仅对称不足保证原噪声协方差匹配，应加$\Gamma M=M\Gamma$或直接给涨落耗散关系；PDF365将Hessian的β提取后仍留$\beta^{-1}$，标量$\beta=2$,$p=0$已反例。；[ERRATUM?]保留原所印等式及$\beta=2$反例；修正版的$BB^{\mathsf T}=(2/\beta)\Gamma M$为明确额外资格，在对称情形蕴含交换性。
 原页核对历史证据见blueprint/ch08/closeout31/PDF_VISUAL_CHECKS.json及blueprint/ch08/source_page_checks.json；原书PDF页364–365。本轮不虚称重新目视。
 
 ### 7. 状态与证明位置
@@ -1441,7 +1441,7 @@ theorem diffusionPrinted_counterexample : ¬ ((1/(2:ℝ))*(-1) = -(1:ℝ)) := by
 
 ### 1. 原文陈述
 
-> dz=F(z)dt+ξG(z)dt, dξ=g(z)dt-γξdt+σdW. The lifted fields are b₀=(F+ξG,g-γξ), b₁=(0,σ).
+> $dz=F(z)\,dt+\xi G(z)\,dt$, $d\xi=g(z)\,dt-\gamma\xi\,dt+\sigma\,dW$. The lifted fields are $b_0=(F+\xi G,g-\gamma\xi)$, $b_1=(0,\sigma)$.
 
 对应原页全文逐字保留在原文JSON；摘要中的[EXTRA]与修正解释不替换原文。
 
@@ -1468,7 +1468,7 @@ def liftedThermostat (F G : Vec n → Vec n) (g : Vec n → ℝ) (γ σ : ℝ)
 
 ### 5. [EXTRA] 与覆盖缺口
 
-- 真实Wiener、适应性和可积性由additiveSDE给出；σ≠0在Hörmander结论中单列。
+- 真实Wiener、适应性和可积性由additiveSDE给出；$\sigma\ne0$在Hörmander结论中单列。
 
 ### 6. 审计结论（含网站复审结论）
 
@@ -1492,7 +1492,7 @@ def liftedThermostat (F G : Vec n → Vec n) (g : Vec n → ℝ) (γ σ : ℝ)
 
 ### 1. 原文陈述
 
-> If the Lie algebra generated by F and G in (8.25) spans R^m, then the Hörmander condition holds for (8.25)–(8.26).
+> If the Lie algebra generated by $F$ and $G$ in (8.25) spans $\mathbb R^m$, then the Hörmander condition holds for (8.25)–(8.26).
 
 对应原页全文逐字保留在原文JSON；摘要中的[EXTRA]与修正解释不替换原文。
 
@@ -1519,23 +1519,23 @@ theorem proposition82_corrected (F G : Vec n → Vec n) (g : Vec n → ℝ) (γ 
 
 | 原文对象或结论 | 实际覆盖 |
 |---|---|
-| 本条数学成分 | 所印及补σ≠0后的真实Lie括号张成命题；不含解存在、平滑转移核或遍历性。 |
+| 本条数学成分 | 所印及补$\sigma\ne0$后的真实Lie括号张成命题；不含解存在、平滑转移核或遍历性。 |
 | 对象、量词、前提及结论 | 见完整声明；补充资格在[EXTRA]列明 |
 
 ### 5. [EXTRA] 与覆盖缺口
 
 - Printed版保留未要求非零σ的原文强度，不证明；修正版完整使用真实迭代Lie括号张成定义。
-- 覆盖缺口：所印及补σ≠0后的真实Lie括号张成命题；不含解存在、平滑转移核或遍历性。
+- 覆盖缺口：所印及补$\sigma\ne0$后的真实Lie括号张成命题；不含解存在、平滑转移核或遍历性。
 - 覆盖缺口：Printed版保留未要求非零σ的原文强度，不证明；修正版完整使用真实迭代Lie括号张成定义。
 
 ### 6. 审计结论（含网站复审结论）
 
 网站首轮：NEEDS_HUMAN。
 网站复审结论：本条未进入本轮复审；保留首轮NEEDS_HUMAN意见。
-原文版：Printed忠实性PASS；σ=0使原结论失效。
-修正版：原送审C∞且σ≠0的_corrected签名PASS。
+原文版：Printed忠实性PASS；$\sigma=0$使原结论失效。
+修正版：原送审$C^\infty$且$\sigma\ne0$的_corrected签名PASS。
 当前：原书疑误待导师；原送审正确版本分项保留。
-原书疑点：已目视核对原页PDF365–366：证明除以σ，定理需σ≠0；光滑向量场资格明确补足。；[ERRATUM?]σ=0反例；Printed仅作忠实记录，corrected在σ≠0下通过。
+原书疑点：已目视核对原页PDF365–366：证明除以σ，定理需$\sigma\ne0$；光滑向量场资格明确补足。；[ERRATUM?]$\sigma=0$反例；Printed仅作忠实记录，corrected在$\sigma\ne0$下通过。
 原页核对历史证据见blueprint/ch08/closeout31/PDF_VISUAL_CHECKS.json及blueprint/ch08/source_page_checks.json；原书PDF页365–366。本轮不虚称重新目视。
 
 ### 7. 状态与证明位置
@@ -1551,7 +1551,7 @@ theorem proposition82_corrected (F G : Vec n → Vec n) (g : Vec n → ℝ) (γ 
 
 ### 1. 原文陈述
 
-> dq=M⁻¹pdt, dp=-∇Udt-ξpdt, dξ=μ⁻¹[pᵀM⁻¹p-N_dk_BT]dt-γξdt+√(2k_BTγμ⁻¹)dW. Quadratic specialization: U=qᵀAq/2, M=I.
+> $dq=M^{-1}p\,dt$, $dp=-\nabla U\,dt-\xi p\,dt$, $d\xi=\mu^{-1}[p^{\mathsf T}M^{-1}p-N_d k_B T]dt-\gamma\xi\,dt+\sqrt{2k_B T\gamma\mu^{-1}}dW$. Quadratic specialization: $U=q^{\mathsf T}Aq/2$, $M=I$.
 
 对应原页全文逐字保留在原文JSON；摘要中的[EXTRA]与修正解释不替换原文。
 
@@ -1577,31 +1577,31 @@ def harmonicPotential (A : Matrix (Fin n) (Fin n) ℝ) (q : Vec n) : ℝ := dot 
 
 | 原文对象或结论 | 实际覆盖 |
 |---|---|
-| 本条数学成分 | 仅正对角质量、无约束Nd=n的NHL漂移与单ξ噪声积分解规格；harmonicPotential仅定义二次函数。一般矩阵质量、单位质量二次专门化声明及原书重缩放均未覆盖。 |
+| 本条数学成分 | 仅正对角质量、无约束$N_d=n$的NHL漂移与单ξ噪声积分解规格；harmonicPotential仅定义二次函数。一般矩阵质量、单位质量二次专门化声明及原书重缩放均未覆盖。 |
 | 对象、量词、前提及结论 | 见完整声明；补充资格在[EXTRA]列明 |
 
 ### 5. [EXTRA] 与覆盖缺口
 
-- [EXTRA] M⁻¹=diag(invm)，N_d=n；invm_i,β,Q,γ均正；β⁻¹=k_BT，Q=μ。一般非对角物理质量未覆盖。
-- isNHLSolution采用一个实Wiener坐标，噪声只作用ξ，幅度sqrt(2γ/(βQ))；解的可测、连续、可积与固定初值规格由additiveSDE给出。
-- harmonicPotential对任意实方阵A定义qᵀAq/2；没有在该def中要求A对称正定，也未把isNHLSolution绑定到该二次势或M=I。
+- [EXTRA] $M^{-1}=\operatorname{diag}(invm)$，$N_d=n$；$invm_i,\beta,Q,\gamma$均正；$\beta^{-1}=k_B T$，$Q=\mu$。一般非对角物理质量未覆盖。
+- isNHLSolution采用一个实Wiener坐标，噪声只作用ξ，幅度$\sqrt{2\gamma/(\beta Q)}$；解的可测、连续、可积与固定初值规格由additiveSDE给出。
+- harmonicPotential对任意实方阵A定义$q^{\mathsf T}Aq/2$；没有在该def中要求A对称正定，也未把isNHLSolution绑定到该二次势或$M=I$。
 - 不含原页定理8.1、特征值互异、D的模态排除及Hörmander/遍历性结论；不得由本条声明推断这些性质。
 - [ERRATUM?] 原印质量重缩放方向有误，保留原文，正确方向须同步变换势。
-- [ERRATUM?] 正确重缩放为q̃=M¹ᐟ²q、p̃=M⁻¹ᐟ²p；Ũ(q̃)=U(M⁻¹ᐟ²q̃)，二次势矩阵变为M⁻¹ᐟ²AM⁻¹ᐟ²。这里只给修正解释，未新增重缩放定理；harmonicPotential没有对称正定资格，也没有绑定单位质量NHL。
-- 覆盖缺口：仅正对角质量、无约束Nd=n的NHL漂移与单ξ噪声积分解规格；harmonicPotential仅定义二次函数。一般矩阵质量、单位质量二次专门化声明及原书重缩放均未覆盖。
-- 覆盖缺口：[EXTRA] M⁻¹=diag(invm)，N_d=n；invm_i,β,Q,γ均正；β⁻¹=k_BT，Q=μ。一般非对角物理质量未覆盖。
-- 覆盖缺口：harmonicPotential对任意实方阵A定义qᵀAq/2；没有在该def中要求A对称正定，也未把isNHLSolution绑定到该二次势或M=I。
+- [ERRATUM?] 正确重缩放为$\tilde q=M^{1/2}q$、$\tilde p=M^{-1/2}p$；$\tilde U(\tilde q)=U(M^{-1/2}\tilde q)$，二次势矩阵变为$M^{-1/2}AM^{-1/2}$。这里只给修正解释，未新增重缩放定理；harmonicPotential没有对称正定资格，也没有绑定单位质量NHL。
+- 覆盖缺口：仅正对角质量、无约束$N_d=n$的NHL漂移与单ξ噪声积分解规格；harmonicPotential仅定义二次函数。一般矩阵质量、单位质量二次专门化声明及原书重缩放均未覆盖。
+- 覆盖缺口：[EXTRA] $M^{-1}=\operatorname{diag}(invm)$，$N_d=n$；$invm_i,\beta,Q,\gamma$均正；$\beta^{-1}=k_B T$，$Q=\mu$。一般非对角物理质量未覆盖。
+- 覆盖缺口：harmonicPotential对任意实方阵A定义$q^{\mathsf T}Aq/2$；没有在该def中要求A对称正定，也未把isNHLSolution绑定到该二次势或$M=I$。
 - 覆盖缺口：不含原页定理8.1、特征值互异、D的模态排除及Hörmander/遍历性结论；不得由本条声明推断这些性质。
-- 覆盖缺口：[ERRATUM?] 正确重缩放为q̃=M¹ᐟ²q、p̃=M⁻¹ᐟ²p；Ũ(q̃)=U(M⁻¹ᐟ²q̃)，二次势矩阵变为M⁻¹ᐟ²AM⁻¹ᐟ²。这里只给修正解释，未新增重缩放定理；harmonicPotential没有对称正定资格，也没有绑定单位质量NHL。
+- 覆盖缺口：[ERRATUM?] 正确重缩放为$\tilde q=M^{1/2}q$、$\tilde p=M^{-1/2}p$；$\tilde U(\tilde q)=U(M^{-1/2}\tilde q)$，二次势矩阵变为$M^{-1/2}AM^{-1/2}$。这里只给修正解释，未新增重缩放定理；harmonicPotential没有对称正定资格，也没有绑定单位质量NHL。
 
 ### 6. 审计结论（含网站复审结论）
 
 网站首轮：FAIL。
-网站复审结论：NEEDS_HUMAN；展开nhField可得nhlDrift=((invm·p,−∇U−ξp),(∑ invm_i p_i²−n/β)/Q−γξ)，故三个漂移分量对应(8.27)–(8.29)。isNHLSolution在任意带可测空间Ω上量化概率测度P、单坐标W、状态过程X及固定x0，要求全部逆质量、β,Q、γ正；常噪声向量的物理Phase分量为0，热浴分量sqrt(2γ/(βQ))，与原印根号覆盖范围完全一致。additiveSDE的完整积分解前提已核对，不声称存在、不变性或遍历性。harmonicPotential对任意A只定义二次函数；只有A对称时梯度才是Aq，不能凭def推断正定或定理8.1。原页D用于后续Hörmander结论，本条未形式化它，不应将此归为一般NHL漂移错误。当前明确缩小范围的三个声明本身可PASS，原书重缩放疑误使条目总体NEEDS_HUMAN。
+网站复审结论：NEEDS_HUMAN；展开nhField可得$nhlDrift=((invm\cdot p,-\nabla U-\xi p),(\sum invm_i p_i^2-n/\beta)/Q-\gamma\xi)$，故三个漂移分量对应(8.27)–(8.29)。isNHLSolution在任意带可测空间Ω上量化概率测度P、单坐标W、状态过程X及固定x0，要求全部逆质量、β,Q、γ正；常噪声向量的物理Phase分量为0，热浴分量$\sqrt{2\gamma/(\beta Q)}$，与原印根号覆盖范围完全一致。additiveSDE的完整积分解前提已核对，不声称存在、不变性或遍历性。harmonicPotential对任意A只定义二次函数；只有A对称时梯度才是Aq，不能凭def推断正定或定理8.1。原页D用于后续Hörmander结论，本条未形式化它，不应将此归为一般NHL漂移错误。当前明确缩小范围的三个声明本身可PASS，原书重缩放疑误使条目总体NEEDS_HUMAN。
 原文版：原印质量重缩放方向疑误待导师。
 修正版：正对角质量NHL漂移及单噪声积分解规格网站PASS；harmonicPotential仅定义函数，不含(8.30)–(8.32)特化或定理8.1。
 当前：修正版/限定声明网站认可；原文疑误待导师（NEEDS_HUMAN）。
-原书疑点：已目视核对原页PDF367：原印q̃=M⁻¹ᐟ²q、p̃=M¹ᐟ²p不产生单位质量方程；正确方向相反并须同步变换势。；[ERRATUM?]原书所印质量重缩放方向有误，原文保留待人工处理。；已目视核对原页PDF367：原印q̃=M⁻¹ᐟ²q、p̃=M¹ᐟ²p方向有误。正确为q̃=M¹ᐟ²q、p̃=M⁻¹ᐟ²p，势变为Ũ(q̃)=U(M⁻¹ᐟ²q̃)；若U(q)=qᵀAq/2，则Ã=M⁻¹ᐟ²AM⁻¹ᐟ²。
+原书疑点：已目视核对原页PDF367：原印$\tilde q=M^{-1/2}q$、$\tilde p=M^{1/2}p$不产生单位质量方程；正确方向相反并须同步变换势。；[ERRATUM?]原书所印质量重缩放方向有误，原文保留待人工处理。；已目视核对原页PDF367：原印$\tilde q=M^{-1/2}q$、$\tilde p=M^{1/2}p$方向有误。正确为$\tilde q=M^{1/2}q$、$\tilde p=M^{-1/2}p$，势变为$\tilde U(\tilde q)=U(M^{-1/2}\tilde q)$；若$U(q)$=$q^{\mathsf T}Aq/2$，则$\tilde A=M^{-1/2}AM^{-1/2}$。
 32号本轮已目视核对原页；记录见blueprint/ch08/closeout32/PDF_VISUAL_CHECKS.json；原书PDF页366–367。
 
 ### 7. 状态与证明位置
@@ -1618,7 +1618,7 @@ def harmonicPotential (A : Matrix (Fin n) (Fin n) ℝ) (q : Vec n) : ℝ := dot 
 
 ### 1. 原文陈述
 
-> C_k=(A^{k-1}p,A^kq), D_k=(A^kq,-A^kp) belong to the Lie algebra generated by F=(p,-Aq), G=(0,p), k=1,2,...
+> $C_k=(A^{k-1}p,A^kq)$, $D_k=(A^kq,-A^kp)$ belong to the Lie algebra generated by $F=(p,-Aq)$, $G=(0,p)$, $k=1,2,\ldots$
 
 对应原页全文逐字保留在原文JSON；摘要中的[EXTRA]与修正解释不替换原文。
 
@@ -1644,7 +1644,7 @@ theorem lemma81 (A : Matrix (Fin n) (Fin n) ℝ) (k : ℕ) :
 
 ### 5. [EXTRA] 与覆盖缺口
 
-- Lean索引k=0对应原文k=1；完整实际线性场、导数括号与End括号约定均摘录；生成子代数在相反括号下相同。
+- Lean索引$k=0$对应原文$k=1$；完整实际线性场、导数括号与End括号约定均摘录；生成子代数在相反括号下相同。
 
 ### 6. 审计结论（含网站复审结论）
 
@@ -1668,7 +1668,7 @@ theorem lemma81 (A : Matrix (Fin n) (Fin n) ℝ) (k : ℕ) :
 
 ### 1. 原文陈述
 
-> If A is symmetric positive definite with distinct eigenvalues, the 2N_c vectors C₁,D₁,...,C_Nc,D_Nc are linearly independent on D=R^{2Nc}\⋃V_k.
+> If $A$ is symmetric positive definite with distinct eigenvalues, the $2N_c$ vectors $C_1,D_1,\ldots,C_{N_c},D_{N_c}$ are linearly independent on $D=\mathbb R^{2N_c}\setminus\bigcup V_k$.
 
 对应原页全文逐字保留在原文JSON；摘要中的[EXTRA]与修正解释不替换原文。
 
@@ -1719,7 +1719,7 @@ theorem proposition83 (A : Matrix (Fin n) (Fin n) ℝ) (hA : A.PosDef)
 
 ### 1. 原文陈述
 
-> If A is symmetric positive definite with distinct eigenvalues, (8.30)–(8.32) satisfies the Hörmander condition on D×R.
+> If $A$ is symmetric positive definite with distinct eigenvalues, (8.30)–(8.32) satisfies the Hörmander condition on $D\times\mathbb R$.
 
 对应原页全文逐字保留在原文JSON；摘要中的[EXTRA]与修正解释不替换原文。
 
@@ -1753,8 +1753,8 @@ theorem theorem81_corrected (A : Matrix (Fin n) (Fin n) ℝ) (hA : A.PosDef)
 ### 5. [EXTRA] 与覆盖缺口
 
 - D严格采用每个特征模态q、p不同时为零；正温度、质量、摩擦及非零噪声明确写出。
-- [EXTRA]θ=k_BT，Q=μ；corrected的Q,θ,γ>0是物理资格，括号结论本身只额外需要σ≠0。σ在此是独立实参数，未声明满足NHL涨落耗散幅度。
-- [EXTRA] 当前_corrected为σ独立非零的括号结论；如解释为物理NHL，还须σ²=2γθ/Q。未推到全局遍历性。
+- [EXTRA]$\theta=k_B T$，$Q=\mu$；corrected的$Q,\theta,\gamma>0$是物理资格，括号结论本身只额外需要$\sigma\ne0$。σ在此是独立实参数，未声明满足NHL涨落耗散幅度。
+- [EXTRA] 当前`_corrected`为σ独立非零的括号结论；如解释为物理NHL，还须$\sigma^2=2\gamma\theta/Q$。未推到全局遍历性。
 - 覆盖缺口：所印及补参数资格后的NHL点态Hörmander条件；不含由其推出全局几何遍历性。
 
 ### 6. 审计结论（含网站复审结论）
@@ -1762,9 +1762,9 @@ theorem theorem81_corrected (A : Matrix (Fin n) (Fin n) ℝ) (hA : A.PosDef)
 网站首轮：NEEDS_HUMAN。
 网站复审结论：本条未进入本轮复审；保留首轮NEEDS_HUMAN意见。
 原文版：Printed忠实性PASS；缺非零噪声资格。
-修正版：原送审正参数与σ≠0的_corrected点态括号结论PASS，非全局遍历性。
+修正版：原送审正参数与$\sigma\ne0$的_corrected点态括号结论PASS，非全局遍历性。
 当前：原书疑误待导师；原送审正确版本分项保留。
-原书疑点：已目视核对原页PDF367–369：继承Proposition8.2证明，必须排除σ=0；只证明Hörmander张成，不自动获得全局几何遍历性。；[ERRATUM?]字面版含σ=0反例；物理上下文的参数资格与字面版分开。原质量重缩放与所引证明的局部排印/推导疑误亦应保留。
+原书疑点：已目视核对原页PDF367–369：继承Proposition8.2证明，必须排除$\sigma=0$；只证明Hörmander张成，不自动获得全局几何遍历性。；[ERRATUM?]字面版含$\sigma=0$反例；物理上下文的参数资格与字面版分开。原质量重缩放与所引证明的局部排印/推导疑误亦应保留。
 原页核对历史证据见blueprint/ch08/closeout31/PDF_VISUAL_CHECKS.json及blueprint/ch08/source_page_checks.json；原书PDF页367–369。本轮不虚称重新目视。
 
 ### 7. 状态与证明位置
@@ -1780,7 +1780,7 @@ theorem theorem81_corrected (A : Matrix (Fin n) (Fin n) ℝ) (hA : A.PosDef)
 
 ### 1. 原文陈述
 
-> V_k={ (q,p) | u_k·q=0, u_k·p=0 } is an invariant submanifold. D=R^{2Nc}\⋃V_k.
+> $V_k=\{(q,p)\mid u_k\cdot q=0,\ u_k\cdot p=0\}$ is an invariant submanifold. $D=\mathbb R^{2N_c}\setminus\bigcup V_k$.
 
 对应原页全文逐字保留在原文JSON；摘要中的[EXTRA]与修正解释不替换原文。
 
@@ -1839,7 +1839,7 @@ theorem zeroMode_invariant {A : Matrix (Fin n) (Fin n) ℝ} (hA : A.IsHermitian)
 
 ### 1. 原文陈述
 
-> L_NHL f=M⁻¹p·∇qf-∇U·∇pf-ξp·∇pf+[μ⁻¹(pᵀM⁻¹p-N_dk_BT)-γξ]∂ξf+k_BTγμ⁻¹∂ξ²f.
+> $L_{NHL}f=M^{-1}p\cdot\nabla_q f-\nabla U\cdot\nabla_p f-\xi p\cdot\nabla_p f+[\mu^{-1}(p^{\mathsf T}M^{-1}p-N_d k_B T)-\gamma\xi]\partial_\xi f+k_B T\gamma\mu^{-1}\partial_\xi^2f$.
 
 对应原页全文逐字保留在原文JSON；摘要中的[EXTRA]与修正解释不替换原文。
 
@@ -1871,7 +1871,7 @@ def geometricDriftBound {E : Type*} (L : (E → ℝ) → E → ℝ) (V : E → �
 
 ### 5. [EXTRA] 与覆盖缺口
 
-- 采用实际一阶、二阶Fréchet导数；原文省略f的-ξp·∇p理解为作用于f；Q,β,γ须正。
+- 采用实际一阶、二阶Fréchet导数；原文省略f的$-\xi p\cdot\nabla_p$理解为作用于f；Q,β,γ须正。
 
 ### 6. 审计结论（含网站复审结论）
 
@@ -1898,7 +1898,7 @@ def geometricDriftBound {E : Type*} (L : (E → ℝ) → E → ℝ) (V : E → �
 
 ### 1. 原文陈述
 
-> For M=I, φ=‖p‖²/2+U+μ(ξ-a)²/2, Lφ=-a‖p‖²-γμξ(ξ-a)-N_dk_BT(ξ-a)+k_BTγ.
+> For $M=I$, $\varphi=\lVert p\rVert^2/2+U+\mu(\xi-a)^2/2$, $L\varphi=-a\lVert p\rVert^2-\gamma\mu\xi(\xi-a)-N_d k_B T(\xi-a)+k_B T\gamma$.
 
 对应原页全文逐字保留在原文JSON；摘要中的[EXTRA]与修正解释不替换原文。
 
@@ -1930,7 +1930,7 @@ theorem shiftedSquare_bound (ξ a : ℝ) : -ξ^2-a^2 ≤ -(ξ-a)^2/2 := by
 
 ### 5. [EXTRA] 与覆盖缺口
 
-- U下界>1且上界有限用于后续Lyapunov正性/漂移估计；本条计算本身只需C²。
+- U下界$>1$且上界有限用于后续Lyapunov正性/漂移估计；本条计算本身只需$C^2$。
 
 ### 6. 审计结论（含网站复审结论）
 
@@ -1956,7 +1956,7 @@ theorem shiftedSquare_bound (ξ a : ℝ) : -ξ^2-a^2 ≤ -(ξ-a)^2/2 := by
 
 ### 1. 原文陈述
 
-> Choose aγμ-N_dk_BT=0, α=min(2a,γμ), δ=αU_max+γμa²+aN_dk_BT+k_BTγ; then Lφ≤-αφ+δ.
+> Choose $a\gamma\mu-N_d k_B T=0$, $\alpha=\min(2a,\gamma\mu)$, $\delta=\alpha U_{max}+\gamma\mu a^2+aN_d k_B T+k_B T\gamma$; then $L\varphi\le-\alpha\varphi+\delta$.
 
 对应原页全文逐字保留在原文JSON；摘要中的[EXTRA]与修正解释不替换原文。
 
@@ -1999,16 +1999,16 @@ theorem lyapunovRate_corrected (P2 U Umax ξ Q θ γ a N : ℝ)
 
 ### 5. [EXTRA] 与覆盖缺口
 
-- 修正为min(2a,γ)，仅修正漂移代数估计；几何遍历还需完整概率半群、小集条件和解理论，未声称已证。
+- 修正为$\min(2a,\gamma)$，仅修正漂移代数估计；几何遍历还需完整概率半群、小集条件和解理论，未声称已证。
 
 ### 6. 审计结论（含网站复审结论）
 
 网站首轮：NEEDS_HUMAN。
 网站复审结论：本条未进入本轮复审；保留首轮NEEDS_HUMAN意见。
-原文版：Printed忠实性PASS；min(2a,γμ)一般不正确。
-修正版：原送审min(2a,γ)修正版及反例PASS。
+原文版：Printed忠实性PASS；$\min(2a,\gamma\mu)$一般不正确。
+修正版：原送审$\min(2a,\gamma)$修正版及反例PASS。
 当前：原书疑误待导师；原送审正确版本分项保留。
-原书疑点：已目视核对原页PDF370：与φ热浴项μ(ξ-a)²/2比较时衰减系数应≤γ，所印min(2a,γμ)对一般μ不足；正参数数值反例已列。；{"codes": ["ERRATUM_LYAPUNOV_RATE"], "detail": "lyapunovAlphaPrinted与lyapunovRatePrinted忠实保留原书α=min(2a,γμ)及δ，按字面忠实性PASS，不能作为正确漂移定理使用。_counterexample的正参数满足全部前提；_corrected改为min(2a,γ)合理且正确：ξ能量的系数是Q/2，故须α≤γ；结合平方不等式及U≤Umax得所写δ。修正版没有额外宣称几何遍历。", "suggested_fix": "原书字面版保留并加[ERRATUM?]，不以sorry假装其数学正确；正式使用_corrected版本，α=min(2a,γ)。"}
+原书疑点：已目视核对原页PDF370：与φ热浴项$\mu(\xi-a)^2/2$比较时衰减系数应$\le\gamma$，所印$\min(2a,\gamma\mu)$对一般μ不足；正参数数值反例已列。；{"codes": ["ERRATUM_LYAPUNOV_RATE"], "detail": "lyapunovAlphaPrinted与lyapunovRatePrinted忠实保留原书$\alpha=\min(2a,\gamma\mu)$及δ，按字面忠实性PASS，不能作为正确漂移定理使用。_counterexample的正参数满足全部前提；_corrected改为$\min(2a,\gamma)$合理且正确：ξ能量的系数是Q/2，故须$\alpha\le\gamma$；结合平方不等式及$U\le U_{max}$得所写δ。修正版没有额外宣称几何遍历。", "suggested_fix": "原书字面版保留并加[ERRATUM?]，不以sorry假装其数学正确；正式使用_corrected版本，$\alpha=\min(2a,\gamma)$。"}
 原页核对历史证据见blueprint/ch08/closeout31/PDF_VISUAL_CHECKS.json及blueprint/ch08/source_page_checks.json；原书PDF页370。本轮不虚称重新目视。
 
 ### 7. 状态与证明位置
@@ -2027,7 +2027,7 @@ theorem lyapunovRate_corrected (P2 U Umax ξ Q θ γ a N : ℝ)
 
 ### 1. 原文陈述
 
-> The symmetric NHL splitting uses kick, drift, feedback, damping, exact OU, damping, feedback, drift, kick. ζ=√(k_BTμ⁻¹(1-e^{-2γh})).
+> The symmetric NHL splitting uses kick, drift, feedback, damping, exact OU, damping, feedback, drift, kick. $\zeta=\sqrt{k_B T\mu^{-1}(1-e^{-2\gamma h})}$.
 
 对应原页全文逐字保留在原文JSON；摘要中的[EXTRA]与修正解释不替换原文。
 
@@ -2060,9 +2060,9 @@ def standardNormalSequence (P : Measure Ω) (R : ℕ → Ω → ℝ) : Prop :=
 
 ### 5. [EXTRA] 与覆盖缺口
 
-- R_n独立标准正态；h≥0、β,Q>0、γ≥0用于OU噪声解释；所谓无限摩擦稳定性没有扩大成完整算法无条件稳定定理。
+- $R_n$独立标准正态；$h\ge0$、$\beta,Q>0$、$\gamma\ge0$用于OU噪声解释；所谓无限摩擦稳定性没有扩大成完整算法无条件稳定定理。
 - 覆盖缺口：实际九阶段NHL单步映射、OU随机输入及独立标准正态序列资格；不含整体稳定性。
-- 覆盖缺口：R_n独立标准正态；h≥0、β,Q>0、γ≥0用于OU噪声解释；所谓无限摩擦稳定性没有扩大成完整算法无条件稳定定理。
+- 覆盖缺口：$R_n$独立标准正态；$h\ge0$、$\beta,Q>0$、$\gamma\ge0$用于OU噪声解释；所谓无限摩擦稳定性没有扩大成完整算法无条件稳定定理。
 
 ### 6. 审计结论（含网站复审结论）
 
@@ -2090,7 +2090,7 @@ def standardNormalSequence (P : Measure Ω) (R : ℕ → Ω → ℝ) : Prop :=
 
 ### 1. 原文陈述
 
-> The NHL method preserves the extended canonical distribution ρ_β exp(-βμξ²/2), by adding an OU thermostat in ξ.
+> The NHL method preserves the extended canonical distribution $\rho_\beta\exp(-\beta\mu\xi^2/2)$, by adding an OU thermostat in $\xi$.
 
 对应原页全文逐字保留在原文JSON；摘要中的[EXTRA]与修正解释不替换原文。
 
@@ -2149,7 +2149,7 @@ theorem nhlWeakStationary (invm : Vec n) (U : Vec n → ℝ) (β Q γ Z : ℝ)
 
 ### 1. 原文陈述
 
-> θ̄(t)=∫2Kρ(q,p,ξ,t)dωdξ, ξ̄(t)=∫ξρ(q,p,ξ,t)dωdξ, with normalized pre-equilibrium density ρ.
+> $\bar\theta(t)=\int 2K\rho(q,p,\xi,t)\,d\omega\,d\xi$, $\bar\xi(t)=\int\xi\rho(q,p,\xi,t)\,d\omega\,d\xi$, with normalized pre-equilibrium density $\rho$.
 
 对应原页全文逐字保留在原文JSON；摘要中的[EXTRA]与修正解释不替换原文。
 
@@ -2179,15 +2179,15 @@ def preEquilibriumDensity (invm : Vec n) (ρ : ℝ → Phase n × ℝ → ℝ) :
 
 ### 5. [EXTRA] 与覆盖缺口
 
-- [EXTRA] preEquilibriumDensity要求所有逆质量严格为正，且对每个t≥0，ρ t逐点非负、可积、积分为1，两项加权函数均Integrable。正质量与有限矩资格均已在当前Lean定义中出现。
-- meanKineticTwice和meanBath本身是任意实数t上的总化积分定义；仅在上述资格及t≥0下解释为有限平均。
+- [EXTRA] preEquilibriumDensity要求所有逆质量严格为正，且对每个$t\ge0$，$\rho\,t$逐点非负、可积、积分为1，两项加权函数均Integrable。正质量与有限矩资格均已在当前Lean定义中出现。
+- meanKineticTwice和meanBath本身是任意实数t上的总化积分定义；仅在上述资格及$t\ge0$下解释为有限平均。
 - preEquilibriumDensity为历史名称：不要求NHL Fokker–Planck演化；本条范围仅为两平均的定义与资格。闭合动力学和局部稳定性不在所列Lean声明中。
 - 覆盖缺口：任意随时间概率密度的两项有限平均与正质量、加权可积资格；preEquilibriumDensity仅是历史名称，未要求或覆盖NHL Fokker–Planck演化、闭合方程及局部稳定性。
 
 ### 6. 审计结论（含网站复审结论）
 
 网站首轮：FAIL。
-网站复审结论：PASS；逐一审查meanKineticTwice、meanBath、preEquilibriumDensity：任意n，状态z=((q,p),ξ)，标准体积积分，动能权重∑invmᵢpᵢ²与浴权重ξ均忠实。均值def对任意实数t总化；资格def仅对t≥0要求概率密度、正逆质量和两项矩可积。已在范围内明确未形式化原页NHL Fokker–Planck演化及稳定性，因此不将定义误称完整动力学资格。旧issues是元数据过期，当前声明无该缺陷。未编译或补证明。
+网站复审结论：PASS；逐一审查meanKineticTwice、meanBath、preEquilibriumDensity：任意n，状态$z=((q,p),\xi)$，标准体积积分，动能权重$\sum invm_i p_i^2$与浴权重ξ均忠实。均值def对任意实数t总化；资格def仅对$t\ge0$要求概率密度、正逆质量和两项矩可积。已在范围内明确未形式化原页NHL Fokker–Planck演化及稳定性，因此不将定义误称完整动力学资格。旧issues是元数据过期，当前声明无该缺陷。未编译或补证明。
 原文版：原书全文保留；当前有限平均/弱驻定资格已获网站复审PASS。
 修正版：当前声明网站复审PASS，旧FAIL已解决；范围仍按实际覆盖限定。
 当前：网站复审PASS（Lean未改）。
@@ -2208,7 +2208,7 @@ def preEquilibriumDensity (invm : Vec n) (ρ : ℝ → Phase n × ℝ → ℝ) :
 
 ### 1. 原文陈述
 
-> dq=pdt, dp=-∇Udt-Ψ(K)pdt+√(2k_BTΦ(K))p dW; Ψ=(2K-(1+N_d)k_BT)Φ-2k_BTKΦ′. Φ(K)=γ_VR/(2K).
+> $dq=p\,dt$, $dp=-\nabla U\,dt-\Psi(K)p\,dt+\sqrt{2k_B T\Phi(K)}p\,dW$; $\Psi=(2K-(1+N_d)k_B T)\Phi-2k_B TK\Phi'$. $\Phi(K)=\gamma_{VR}/(2K)$.
 
 对应原页全文逐字保留在原文JSON；摘要中的[EXTRA]与修正解释不替换原文。
 
@@ -2245,7 +2245,7 @@ theorem rescalingPsi_original (γ θ K : ℝ) (hK : K ≠ 0) :
 
 ### 5. [EXTRA] 与覆盖缺口
 
-- Φ在K>0光滑正，KΦ在0附近有界且多项式增长；原始Φ在K=0奇异，未声称全空间光滑扩散或遍历性。
+- Φ在$K>0$光滑正，$K\Phi$在0附近有界且多项式增长；原始Φ在$K=0$奇异，未声称全空间光滑扩散或遍历性。
 - 覆盖缺口：实际漂移扩散、Φ有效性和原始Φ对应Ψ的化简目标；没有完整乘性SDE解规格。
 
 ### 6. 审计结论（含网站复审结论）
@@ -2275,7 +2275,7 @@ theorem rescalingPsi_original (γ θ K : ℝ) (hK : K ≠ 0) :
 
 ### 1. 原文陈述
 
-> With these definitions, the method preserves the canonical probability density ρ_β. The book does not prove ergodicity.
+> With these definitions, the method preserves the canonical probability density $\rho_\beta$. The book does not prove ergodicity.
 
 对应原页全文逐字保留在原文JSON；摘要中的[EXTRA]与修正解释不替换原文。
 
@@ -2307,16 +2307,16 @@ theorem rescalingStationary (U : Vec n → ℝ) (Φ : ℝ → ℝ) (θ Z : ℝ)
 
 ### 5. [EXTRA] 与覆盖缺口
 
-- [EXTRA] hU要求U为C²；θ,Z>0且hρ完整要求正则概率密度归一与可积。Φ仅在K>0上光滑、正，另有KΦ在0附近有界及Φ无穷远至多多项式增长的原页条件。
-- [EXTRA] f为C∞紧支撑测试函数；当前havoid已对闭包支撑tsupport f量化，要求其中每点p≠0。有限维紧性确保非空闭包支撑与p=0分离，K在该支撑上具有严格正下界。
+- [EXTRA] hU要求U为$C^2$；$\theta,Z>0$且hρ完整要求正则概率密度归一与可积。Φ仅在$K>0$上光滑、正，另有$K\Phi$在0附近有界及Φ无穷远至多多项式增长的原页条件。
+- [EXTRA] f为$C^\infty$紧支撑测试函数；当前havoid已对闭包支撑`tsupport f`量化，要求其中每点$p\ne0$。有限维紧性确保非空闭包支撑与$p=0$分离，K在该支撑上具有严格正下界。
 - 二阶项中rescalingNoise Φ θ z对内层变量x保持固定，得到Itô Hessian项的一半，不包含噪声方向的导数。
-- 结论仅为∫Lf·ρβ=0的局部弱驻定目标；未断言随机解存在、零动量边界控制、Markov半群不变性或遍历性。
+- 结论仅为$\int Lf\cdot\rho_\beta=0$的局部弱驻定目标；未断言随机解存在、零动量边界控制、Markov半群不变性或遍历性。
 - 覆盖缺口：闭包支撑tsupport避开零动量的光滑紧支撑测试函数弱驻定目标；零动量边界及半群不变性未覆盖。
 
 ### 6. 审计结论（含网站复审结论）
 
 网站首轮：FAIL。
-网站复审结论：PASS；审查rescalingPsi、Drift、Noise、Admissible及完整rescalingStationary类型：M=I、n=N_d、θ=k_BT，Ψ及漂移/扩散系数符号与因子正确；单个噪声给出秩一扩散。二阶项冻结噪声为正确Itô项。C²势、Φ在K>0的光滑正性与增长条件、正θ,Z、概率归一、C∞紧支撑及tsupport避零前提齐全。结论仅为∫Lfρβ=0；紧闭包支撑避零已修复旧报告的问题，Φ在K=0任意的总化值不妨碍该限定范围。完整不变性和遍历性缺口已明确。sorry不影响本次签名判定，未编译或补证明。
+网站复审结论：PASS；审查rescalingPsi、Drift、Noise、Admissible及完整rescalingStationary类型：$M=I$、$n=N_d$、$\theta=k_B T$，Ψ及漂移/扩散系数符号与因子正确；单个噪声给出秩一扩散。二阶项冻结噪声为正确Itô项。$C^2$势、Φ在$K>0$的光滑正性与增长条件、正θ,Z、概率归一、$C^\infty$紧支撑及tsupport避零前提齐全。结论仅为$\int Lf\rho_\beta=0$；紧闭包支撑避零已修复旧报告的问题，Φ在$K=0$任意的总化值不妨碍该限定范围。完整不变性和遍历性缺口已明确。sorry不影响本次签名判定，未编译或补证明。
 原文版：原书全文保留；当前有限平均/弱驻定资格已获网站复审PASS。
 修正版：当前声明网站复审PASS，旧FAIL已解决；范围仍按实际覆盖限定。
 当前：网站复审PASS（Lean未改）。
@@ -2367,14 +2367,14 @@ def rescalingEfficiencyOrder (efficiency : ℕ → ℝ) : Prop :=
 
 | 原文对象或结论 | 实际覆盖 |
 |---|---|
-| 本条数学成分 | 效率比值、表8.1四行解析速率/低阶误差/效率估计及一般VR的O(N)含义；外引估计定理未证，经验曲线排除。 |
+| 本条数学成分 | 效率比值、表8.1四行解析速率/低阶误差/效率估计及一般VR的$O(N)$含义；外引估计定理未证，经验曲线排除。 |
 | 对象、量词、前提及结论 | 见完整声明；补充资格在[EXTRA]列明 |
 
 ### 5. [EXTRA] 与覆盖缺口
 
 - 表8.1解析估计作为公式定义保留；其外引渐近推导、谱隙与误差阶不是已证定理，列覆盖缺口。
-- γ>0、θ,Q>0、N>0用于物理解释；一般VR的O(N)给出确切渐近性质定义，没有声称任意Φ族满足它。
-- 覆盖缺口：γ>0、θ,Q>0、N>0用于物理解释；一般VR的O(N)给出确切渐近性质定义，没有声称任意Φ族满足它。
+- $\gamma>0$、$\theta,Q>0$、$N>0$用于物理解释；一般VR的$O(N)$给出确切渐近性质定义，没有声称任意Φ族满足它。
+- 覆盖缺口：$\gamma>0$、$\theta,Q>0$、$N>0$用于物理解释；一般VR的$O(N)$给出确切渐近性质定义，没有声称任意Φ族满足它。
 
 ### 6. 审计结论（含网站复审结论）
 
@@ -2410,7 +2410,7 @@ def rescalingEfficiencyOrder (efficiency : ℕ → ℝ) : Prop :=
 
 ### 1. 原文陈述
 
-> dq=ξM⁻¹pdt, dp=-γpdt+σM^{1/2}dW, dξ=-[(M⁻¹p)·∇U/μ+γ′ξ]dt+σ′dZ; σ=√(2k_BTγ), σ′=√(2k_BTγ′/μ).
+> $dq=\xi M^{-1}p\,dt$, $dp=-\gamma p\,dt+\sigma M^{1/2}dW$, $d\xi=-[(M^{-1}p)\cdot\nabla U/\mu+\gamma'\xi]dt+\sigma'dZ$; $\sigma=\sqrt{2k_B T\gamma}$, $\sigma'=\sqrt{2k_B T\gamma'/\mu}$.
 
 对应原页全文逐字保留在原文JSON；摘要中的[EXTRA]与修正解释不替换原文。
 
@@ -2473,7 +2473,7 @@ def slsDeterministic (invm : Vec n) (U : Vec n → ℝ) (Q : ℝ) (z : Phase n �
 
 ### 1. 原文陈述
 
-> D=(ξp,-p,-p·∇U-ξ), D′=[D,Y_{Nc+1}]=(p,0,1), [D′,Y_i]=e_i.
+> $D=(\xi p,-p,-p\cdot\nabla U-\xi)$, $D'=[D,Y_{N_c+1}]=(p,0,1)$, $[D',Y_i]=e_i$.
 
 对应原页全文逐字保留在原文JSON；摘要中的[EXTRA]与修正解释不替换原文。
 
@@ -2509,9 +2509,9 @@ theorem slsBracket_corrected (U : Vec n → ℝ) (hU : ContDiff ℝ ∞ U) (z : 
 网站首轮：NEEDS_HUMAN。
 网站复审结论：本条未进入本轮复审；保留首轮NEEDS_HUMAN意见。
 原文版：Printed忠实性PASS；括号首分量符号不一致。
-修正版：原送审−p首分量_corrected签名PASS。
+修正版：原送审$-p$首分量_corrected签名PASS。
 当前：原书疑误待导师；原送审正确版本分项保留。
-原书疑点：已目视核对原页PDF379：沿用Proposition8.2所用括号约定[D,Y]=DY·D-DD·Y，q分量应为-p；整体反号也不能同时保留热浴分量+1。；{"codes": ["ERRATUM_LIE_BRACKET_SIGN"], "detail": "slsBracketPrinted逐字对应原书(p,0,1)，字面忠实性PASS；数学上在标准Lie括号约定下不正确。按VectorField.lieBracket V W=DW·V−DV·W，常向量Yξ给[D,Yξ]=−∂ξD=(−p,0,1)，故_corrected签名正确。反向括号会整体变为(p,0,−1)，不能仅靠约定得到原书(p,0,1)。二次括号的整体符号不影响张成。", "suggested_fix": "保留Printed原书字面版并加[ERRATUM?]；实际计算引用_corrected，第一分量应为−p。"}
+原书疑点：已目视核对原页PDF379：沿用Proposition8.2所用括号约定$[D,Y]=DY\cdot D-DD\cdot Y$，q分量应为$-p$；整体反号也不能同时保留热浴分量+1。；{"codes": ["ERRATUM_LIE_BRACKET_SIGN"], "detail": "slsBracketPrinted逐字对应原书$(p,0,1)$，字面忠实性PASS；数学上在标准Lie括号约定下不正确。按$\mathrm{VectorField.lieBracket}\,V\,W=DW\cdot V-DV\cdot W$，常向量Yξ给$[D,Y_\xi]=-\partial_\xi D=(-p,0,1)$，故_corrected签名正确。反向括号会整体变为$(p,0,-1)$，不能仅靠约定得到原书$(p,0,1)$。二次括号的整体符号不影响张成。", "suggested_fix": "保留Printed原书字面版并加[ERRATUM?]；实际计算引用_corrected，第一分量应为$-p$。"}
 原页核对历史证据见blueprint/ch08/closeout31/PDF_VISUAL_CHECKS.json及blueprint/ch08/source_page_checks.json；原书PDF页379。本轮不虚称重新目视。
 
 ### 7. 状态与证明位置
@@ -2580,7 +2580,7 @@ theorem slsHormander (U : Vec n → ℝ) (hU : ContDiff ℝ ∞ U) (z : Phase n 
 
 ### 1. 原文陈述
 
-> The deterministic part preserves volume and U(q)+μξ²/2, and the full dynamics preserves the extended canonical measure.
+> The deterministic part preserves volume and $U(q)+\mu\xi^2/2$, and the full dynamics preserves the extended canonical measure.
 
 对应原页全文逐字保留在原文JSON；摘要中的[EXTRA]与修正解释不替换原文。
 
@@ -2635,7 +2635,7 @@ theorem slsDeterministic_divergence (invm : Vec n) (U : Vec n → ℝ) (Q : ℝ)
 
 ### 1. 原文陈述
 
-> q=q₀+ηM⁻¹p; η̇=ξ, ξ̇=-∂ηU(q₀+ηM⁻¹p). Leapfrog: ξ_{1/2}=ξ-h(M⁻¹p)·∇U(q)/(2μ), q′=q+hξ_{1/2}M⁻¹p, ξ′=ξ_{1/2}-h(M⁻¹p)·∇U(q′)/(2μ).
+> $q=q_0+\eta M^{-1}p$; $\dot\eta=\xi$, $\dot\xi=-\partial_\eta U(q_0+\eta M^{-1}p)$. Leapfrog: $\xi_{1/2}=\xi-h(M^{-1}p)\cdot\nabla U(q)/(2\mu)$, $q'=q+h\xi_{1/2}M^{-1}p$, $\xi'=\xi_{1/2}-h(M^{-1}p)\cdot\nabla U(q')/(2\mu)$.
 
 对应原页全文逐字保留在原文JSON；摘要中的[EXTRA]与修正解释不替换原文。
 
@@ -2676,21 +2676,21 @@ def slsReduced_corrected (invm : Vec n) (U : Vec n → ℝ) (q0 p : Vec n)
 
 ### 5. [EXTRA] 与覆盖缺口
 
-- [ERRATUM?] 原页379的η约化式确实印为ξ̇=−∂ηU，漏写了同页(8.36)及下一页kick公式中的μ⁻¹；Printed版逐字保留，_corrected版单独恢复1/Q。
+- [ERRATUM?] 原页379的η约化式确实印为$\dot\xi=-\partial_\eta U$，漏写了同页(8.36)及下一页kick公式中的$\mu^{-1}$；Printed版逐字保留，`_corrected`版单独恢复$1/Q$。
 - 本条仅定义半kick–drift–半kick、逐坐标场及两种约化场；OU耦合、体积保持、二阶不变分布误差、精确求积与坐标变换定理均未形式化。
 - [EXTRA] 物理域与总化导数/除法的区别见context_notation；这些限制不是现有def的Lean参数前提。
-- [EXTRA] 物理解释另需Q=μ>0、各invm_i>0及U可微；现有def不强制这些资格。
+- [EXTRA] 物理解释另需$Q=\mu>0$、各$invm_i>0$及U可微；现有def不强制这些资格。
 - 覆盖缺口：原有半kick–drift–半kick与坐标场定义，另列原印η约化场和恢复1/Q的修正版；体积保持、误差阶及η变换推导未证明。
 - 覆盖缺口：本条仅定义半kick–drift–半kick、逐坐标场及两种约化场；OU耦合、体积保持、二阶不变分布误差、精确求积与坐标变换定理均未形式化。
 
 ### 6. 审计结论（含网站复审结论）
 
 网站首轮：NEEDS_HUMAN。
-网站复审结论：NEEDS_HUMAN；六个def逐一审查均通过：slsBathKick、slsDriftStep、slsLeapfrog、slsCoordinateField对应原页算法，p始终固定；slsReducedPrinted忠实保留原印漏因子式，slsReduced_corrected恢复1/Q，符合(8.36)的方向导数。物理解释以Q>0、正对角逆质量及相关可微性为域，def本身为全域总函数，无物理域或误差结论的量词断言。原印版忠实性PASS、修正版合理性PASS、算法定义PASS；条目总体NEEDS_HUMAN仅因原书μ⁻¹遗漏待人工确认，不是这些Lean定义FAIL。
-原文版：Printed忠实性PASS；一般μ下约化式漏μ⁻¹待导师。
+网站复审结论：NEEDS_HUMAN；六个def逐一审查均通过：slsBathKick、slsDriftStep、slsLeapfrog、slsCoordinateField对应原页算法，p始终固定；slsReducedPrinted忠实保留原印漏因子式，slsReduced_corrected恢复1/Q，符合(8.36)的方向导数。物理解释以$Q>0$、正对角逆质量及相关可微性为域，def本身为全域总函数，无物理域或误差结论的量词断言。原印版忠实性PASS、修正版合理性PASS、算法定义PASS；条目总体NEEDS_HUMAN仅因原书$\mu^{-1}$遗漏待人工确认，不是这些Lean定义FAIL。
+原文版：Printed忠实性PASS；一般μ下约化式漏$\mu^{-1}$待导师。
 修正版：算法定义及恢复1/Q的_corrected网站PASS。
 当前：修正版/限定声明网站认可；原文疑误待导师（NEEDS_HUMAN）。
-原书疑点：[ERRATUM?][SOURCE_MISSING_MU_IN_REDUCTION] 原页η约化式缺μ⁻¹，和(8.36)及两次kick不一致。原文及statement_latex保持不动，勘误须人工确认。；[DOMAIN_CLARIFICATION] Q>0、正质量及可微性只是物理解释域说明，没有作为Lean def的前提；不把总函数误读为所有参数上的经典动力学定理。；已目视核对原页PDF379：η约化式确实漏μ⁻¹，一般μ下应为ξ̇=−μ⁻¹∂ηU；原印与Printed保留，_corrected恢复1/Q。
+原书疑点：[ERRATUM?][SOURCE_MISSING_MU_IN_REDUCTION] 原页η约化式缺$\mu^{-1}$，和(8.36)及两次kick不一致。原文及statement_latex保持不动，勘误须人工确认。；[DOMAIN_CLARIFICATION] $Q>0$、正质量及可微性只是物理解释域说明，没有作为Lean def的前提；不把总函数误读为所有参数上的经典动力学定理。；已目视核对原页PDF379：η约化式确实漏$\mu^{-1}$，一般μ下应为$\dot\xi=-\mu^{-1}\partial_\eta U$；原印与Printed保留，_corrected恢复1/Q。
 32号本轮已目视核对原页；记录见blueprint/ch08/closeout32/PDF_VISUAL_CHECKS.json；原书PDF页379–380。
 
 ### 7. 状态与证明位置
@@ -2710,7 +2710,7 @@ def slsReduced_corrected (invm : Vec n) (U : Vec n → ℝ) (q0 p : Vec n)
 
 ### 1. 原文陈述
 
-> The one-dimensional example has U(q)=(q²−1)².
+> The one-dimensional example has $U(q)=(q^2-1)^2$.
 
 对应原页全文逐字保留在原文JSON；摘要中的[EXTRA]与修正解释不替换原文。
 
@@ -2759,7 +2759,7 @@ theorem slsDoubleWell_nonneg (q : ℝ) : 0 ≤ slsDoubleWell q := sq_nonneg _
 
 ### 1. 原文陈述
 
-> q̇=M⁻¹p, ṗ=F(q)-[pᵀM⁻¹F(q)/(pᵀM⁻¹p)]p; K(p)=pᵀM⁻¹p is constant.
+> $\dot q=M^{-1}p$, $\dot p=F(q)-[p^{\mathsf T}M^{-1}F(q)/(p^{\mathsf T}M^{-1}p)]p$; $K(p)=p^{\mathsf T}M^{-1}p$ is constant.
 
 对应原页全文逐字保留在原文JSON；摘要中的[EXTRA]与修正解释不替换原文。
 
@@ -2793,7 +2793,7 @@ theorem isoKinetic_balance (invm p F : Vec n) (hK : kineticTwice invm p ≠ 0) :
 
 ### 5. [EXTRA] 与覆盖缺口
 
-- 正质量、K>0作为物理有效域；本条实际证明瞬时动能平衡，不将之扩大为全局解存在性。
+- 正质量、$K>0$作为物理有效域；本条实际证明瞬时动能平衡，不将之扩大为全局解存在性。
 
 ### 6. 审计结论（含网站复审结论）
 
@@ -2819,7 +2819,7 @@ theorem isoKinetic_balance (invm p F : Vec n) (hK : kineticTwice invm p ≠ 0) :
 
 ### 1. 原文陈述
 
-> H=p(pᵀM⁻¹p)⁻¹pᵀM⁻¹; H²=H, Hp=p.
+> $H=p(p^{\mathsf T}M^{-1}p)^{-1}p^{\mathsf T}M^{-1}$; $H^2=H$, $Hp=p$.
 
 对应原页全文逐字保留在原文JSON；摘要中的[EXTRA]与修正解释不替换原文。
 
@@ -2878,7 +2878,7 @@ theorem isoProjection_idempotent (invm p : Vec n) (hK : kineticTwice invm p ≠ 
 
 ### 1. 原文陈述
 
-> ρ=e^{-w(q,p)}Φ(K(p)); div f_iso=(N_c-1)pᵀM⁻¹F/(pᵀM⁻¹p), w=(N_c-1)U/K.
+> $\rho=e^{-w(q,p)}\Phi(K(p))$; $\operatorname{div}f_{iso}=(N_c-1)p^{\mathsf T}M^{-1}F/(p^{\mathsf T}M^{-1}p)$, $w=(N_c-1)U/K$.
 
 对应原页全文逐字保留在原文JSON；摘要中的[EXTRA]与修正解释不替换原文。
 
@@ -2910,8 +2910,8 @@ theorem isoDivergence_corrected (invm : Vec n) (F : Vec n → Vec n)
 
 ### 5. [EXTRA] 与覆盖缺口
 
-- Φ为正光滑非零函数时称权重；使用K≠0域上的实际散度。
-- 已目视核对原页PDF383–384：散度与∇w·f等式须同时改负号，w=(n−1)U/K的正号保留。
+- Φ为正光滑非零函数时称权重；使用$K\ne0$域上的实际散度。
+- 已目视核对原页PDF383–384：散度与$\nabla w\cdot f$等式须同时改负号，$w=(n-1)U/K$的正号保留。
 
 ### 6. 审计结论（含网站复审结论）
 
@@ -2920,7 +2920,7 @@ theorem isoDivergence_corrected (invm : Vec n) (F : Vec n → Vec n)
 原文版：Printed忠实性PASS；原印散度正号有误。
 修正版：原送审负号_corrected签名PASS；w本身保留正号。
 当前：原书疑误待导师；原送审正确版本分项保留。
-原书疑点：已目视核对原页PDF383–384：ṗ=F-λp的散度应为-(N_c-1)λ，所印正号与后续w=(N_c-1)U/K也冲突。；PDF383确实印正号div f=(Nc−1)λ，PDF384随后仍用正号的∇w·f等式并给w=(Nc−1)U/K；原文逐字内容应保留。；已目视核对原页PDF383–384：散度与∇w·f等式须同时改负号，w=(n−1)U/K的正号保留。
+原书疑点：已目视核对原页PDF383–384：$\dot p=F-\lambda p$的散度应为$-(N_c-1)\lambda$，所印正号与后续$w=(N_c-1)U/K$也冲突。；PDF383确实印正号$\operatorname{div}f=(N_c-1)\lambda$，PDF384随后仍用正号的$\nabla w\cdot f$等式并给$w=(N_c-1)U/K$；原文逐字内容应保留。；已目视核对原页PDF383–384：散度与$\nabla w\cdot f$等式须同时改负号，$w=(n-1)U/K$的正号保留。
 原页核对历史证据见blueprint/ch08/closeout31/PDF_VISUAL_CHECKS.json及blueprint/ch08/source_page_checks.json；原书PDF页383–384。本轮不虚称重新目视。
 
 ### 7. 状态与证明位置
@@ -2937,7 +2937,7 @@ theorem isoDivergence_corrected (invm : Vec n) (F : Vec n → Vec n)
 
 ### 1. 原文陈述
 
-> ρ=Z⁻¹exp(-(N_c-1)U/K)δ[K-K₀]; K₀=β⁻¹(N_c-1) gives the configurational Gibbs distribution.
+> $\rho=Z^{-1}\exp(-(N_c-1)U/K)\delta[K-K_0]$; $K_0=\beta^{-1}(N_c-1)$ gives the configurational Gibbs distribution.
 
 对应原页全文逐字保留在原文JSON；摘要中的[EXTRA]与修正解释不替换原文。
 
@@ -3001,7 +3001,7 @@ theorem isoShell_gibbsFactor (U : Vec n → ℝ) (invm : Vec n) (β : ℝ)
 
 ### 1. 原文陈述
 
-> dq=pdt, dp=(F-λp)dt, dξ₁=(-λξ₁-ξ₂ξ₁)dt, dξ₂=μ₂⁻¹(μ₁ξ₁²-k_BT)dt-γξ₂dt+σdW; p²+μ₁ξ₁²/2=k_BT.
+> $dq=p\,dt$, $dp=(F-\lambda p)dt$, $d\xi_1=(-\lambda\xi_1-\xi_2\xi_1)dt$, $d\xi_2=\mu_2^{-1}(\mu_1\xi_1^2-k_B T)dt-\gamma\xi_2\,dt+\sigma\,dW$; $p^2+\mu_1\xi_1^2/2=k_B T$.
 
 对应原页全文逐字保留在原文JSON；摘要中的[EXTRA]与修正解释不替换原文。
 
@@ -3045,7 +3045,7 @@ theorem sinConstraint_balance (Q1 Q2 θ γ : ℝ) (F : ℝ → ℝ) (z : Vec 4)
 
 ### 5. [EXTRA] 与覆盖缺口
 
-- 热浴变量ξ₁,ξ₂∈ℝ，各质量、温度、摩擦正；随机噪声只在ξ₂；约束正值排除奇点。
+- 热浴变量$\xi_1,\xi_2\in\mathbb R$，各质量、温度、摩擦正；随机噪声只在$\xi_2$；约束正值排除奇点。
 
 ### 6. 审计结论（含网站复审结论）
 
@@ -3073,7 +3073,7 @@ theorem sinConstraint_balance (Q1 Q2 θ γ : ℝ) (F : ℝ → ℝ) (z : Vec 4)
 
 ### 1. 原文陈述
 
-> w=(U+ξ₂²/2)/(p²+μ₁ξ₁²/2); integration over the isokinetic surface gives the Gibbs configurational density.
+> $w=(U+\xi_2^2/2)/(p^2+\mu_1\xi_1^2/2)$; integration over the isokinetic surface gives the Gibbs configurational density.
 
 对应原页全文逐字保留在原文JSON；摘要中的[EXTRA]与修正解释不替换原文。
 
@@ -3112,10 +3112,10 @@ theorem sinWeight_stationary_corrected (U : ℝ → ℝ) (Q1 Q2 θ : ℝ)
 
 网站首轮：NEEDS_HUMAN。
 网站复审结论：本条未进入本轮复审；保留首轮NEEDS_HUMAN意见。
-原文版：Printed忠实性PASS；原印二次项缺μ₂。
+原文版：Printed忠实性PASS；原印二次项缺$\mu_2$。
 修正版：原送审补Q2的权重与壳面局部驻定签名PASS，非曲面测度不变性。
 当前：原书疑误待导师；原送审正确版本分项保留。
-原书疑点：已目视核对原页PDF386：ξ₂方程含μ₂⁻¹，而w的ξ₂二次项缺μ₂；一般μ₂时应为μ₂ξ₂²/2。；PDF386确实印w=(U+ξ₂²/2)/(p²+μ₁ξ₁²/2)，未含μ₂；statement_latex忠实，不能静默把原印式改成修正式。
+原书疑点：已目视核对原页PDF386：$\xi_2$方程含$\mu_2^{-1}$，而w的$\xi_2$二次项缺$\mu_2$；一般$\mu_2$时应为$\mu_2\xi_2^2/2$。；PDF386确实印$w=(U+\xi_2^2/2)/(p^2+\mu_1\xi_1^2/2)$，未含$\mu_2$；statement_latex忠实，不能静默把原印式改成修正式。
 原页核对历史证据见blueprint/ch08/closeout31/PDF_VISUAL_CHECKS.json及blueprint/ch08/source_page_checks.json；原书PDF页386。本轮不虚称重新目视。
 
 ### 7. 状态与证明位置
@@ -3132,7 +3132,7 @@ theorem sinWeight_stationary_corrected (U : ℝ → ℝ) (Q1 Q2 θ : ℝ)
 
 ### 1. 原文陈述
 
-> For μ₁=μ₂=1, dq=pdt, dp=(-q-λp)dt, dξ₁=(-λξ₁-ξ₂ξ₁)dt, dξ₂=(ξ₁²-k_BT-γξ₂)dt+σdW, λ=(-qp-ξ₂ξ₁²/2)/(p²+ξ₁²/2), σ=√(2γk_BT). (8.45)–(8.47).
+> For $\mu_1=\mu_2=1$, $dq=p\,dt$, $dp=(-q-\lambda p)dt$, $d\xi_1=(-\lambda\xi_1-\xi_2\xi_1)dt$, $d\xi_2=(\xi_1^2-k_B T-\gamma\xi_2)dt+\sigma\,dW$, $\lambda=(-qp-\xi_2\xi_1^2/2)/(p^2+\xi_1^2/2)$, $\sigma=\sqrt{2\gamma k_B T}$. (8.45)–(8.47).
 
 对应原页全文逐字保留在原文JSON；摘要中的[EXTRA]与修正解释不替换原文。
 
@@ -3168,7 +3168,7 @@ theorem sinHalfCylinder_disjoint (θ : ℝ) :
 
 ### 5. [EXTRA] 与覆盖缺口
 
-- θ=k_BT>0、γ>0、标量Wiener由isSINSolution给全；零ξ₁面不变和两个半柱的轨道符号保持需要ODE唯一性，列覆盖缺口。
+- $\theta=k_B T>0$、$\gamma>0$、标量Wiener由isSINSolution给全；零$\xi_1$面不变和两个半柱的轨道符号保持需要ODE唯一性，列覆盖缺口。
 - 覆盖缺口：谐振SIN实际SDE、例外直线和半柱定义及半柱不交；不含全局遍历定理。
 
 ### 6. 审计结论（含网站复审结论）
@@ -3198,7 +3198,7 @@ theorem sinHalfCylinder_disjoint (θ : ℝ) :
 
 ### 1. 原文陈述
 
-> u₀=Πf, u₁=Π[f,g], u₂=Π[f,[f,g]], u₃=Π[f,[f,[f,g]]]. The displayed equations (8.48)–(8.53) give their components, with D=2p²+ξ₁².
+> $u_0=\Pi f$, $u_1=\Pi[f,g]$, $u_2=\Pi[f,[f,g]]$, $u_3=\Pi[f,[f,[f,g]]]$. The displayed equations (8.48)–(8.53) give their components, with $D=2p^2+\xi_1^2$.
 
 对应原页全文逐字保留在原文JSON；摘要中的[EXTRA]与修正解释不替换原文。
 
@@ -3244,7 +3244,7 @@ theorem sinU2Long_at_p0 (σ γ : ℝ) (z : Vec 4) (hp : z 1=0) :
 
 ### 5. [EXTRA] 与覆盖缺口
 
-- 总化分式只在θ>0的约束面D=2θ>0使用；实际交换子先在四维完整计算再投影。
+- 总化分式只在$\theta>0$的约束面$D=2\theta>0$使用；实际交换子先在四维完整计算再投影。
 - 本条记录原印显式式和真实微分定义；显式式与真实二/三重交换子的等式尚未证明，列覆盖缺口。
 - 已目视核对原页PDF388：(8.49)–(8.53)及“any pair”/平行论据需导师核查；修正版仅以完整四维真实括号再投影为准，不把改下标当作长式校正。
 - 覆盖缺口：本条记录原印显式式和真实微分定义；显式式与真实二/三重交换子的等式尚未证明，列覆盖缺口。
@@ -3256,7 +3256,7 @@ theorem sinU2Long_at_p0 (σ γ : ℝ) (z : Vec 4) (hp : z 1=0) :
 原文版：Printed各表达式忠实性PASS；(8.49)–(8.53)疑误待导师。
 修正版：原送审完整四维真实括号再投影定义PASS，长式未声称等于真实括号。
 当前：原书疑误待导师；原送审正确版本分项保留。
-原书疑点：已目视核对原页PDF388：(8.50)的u₁公式实际重写u₀，(8.51)的u₂公式实际为首交换子；(8.49)第三分量似缺共同σ。原印与真实迭代交换子独立保留。；PDF388逐式核对：(8.48)为u0；(8.49)ξ₁分量前确无共同σ；(8.50)印u1却重复u0展开式；(8.51)印u2却是首交换子的投影。(8.52)的p分量确为−σa而非−σξ₁²a，故Lean忠实保留了原印式，不应替书改系数。；已目视核对原页PDF388：(8.49)–(8.53)及“any pair”/平行论据需导师核查；修正版仅以完整四维真实括号再投影为准，不把改下标当作长式校正。
+原书疑点：已目视核对原页PDF388：(8.50)的$u_1$公式实际重写$u_0$，(8.51)的$u_2$公式实际为首交换子；(8.49)第三分量似缺共同σ。原印与真实迭代交换子独立保留。；PDF388逐式核对：(8.48)为u0；(8.49)$\xi_1$分量前确无共同σ；(8.50)印u1却重复u0展开式；(8.51)印u2却是首交换子的投影。(8.52)的p分量确为$-\sigma a$而非$-\sigma\xi_1^2a$，故Lean忠实保留了原印式，不应替书改系数。；已目视核对原页PDF388：(8.49)–(8.53)及“any pair”/平行论据需导师核查；修正版仅以完整四维真实括号再投影为准，不把改下标当作长式校正。
 原页核对历史证据见blueprint/ch08/closeout31/PDF_VISUAL_CHECKS.json及blueprint/ch08/source_page_checks.json；原书PDF页388。本轮不虚称重新目视。
 
 ### 7. 状态与证明位置
@@ -3281,7 +3281,7 @@ theorem sinU2Long_at_p0 (σ γ : ℝ) (z : Vec 4) (hp : z 1=0) :
 
 ### 1. 原文陈述
 
-> The third projected commutator is displayed in (8.54), with polynomial η in (8.55); its p=0 specialization is printed as u₃=-2σq∂q-σq(-γ+ξ₂)∂p in (8.56).
+> The third projected commutator is displayed in (8.54), with polynomial $\eta$ in (8.55); its $p=0$ specialization is printed as $u_3=-2\sigma q\partial_q-\sigma q(-\gamma+\xi_2)\partial_p$ in (8.56).
 
 对应原页全文逐字保留在原文JSON；摘要中的[EXTRA]与修正解释不替换原文。
 
@@ -3313,14 +3313,14 @@ theorem sinU3Zero_specialize (σ γ : ℝ) (z : Vec 4) (hp : z 1=0) (hξ : z 2 �
 
 | 原文对象或结论 | 实际覆盖 |
 |---|---|
-| 本条数学成分 | 原印三重交换子候选及p=0内部代数核对；真实三重交换子等式列覆盖缺口。 |
+| 本条数学成分 | 原印三重交换子候选及$p=0$内部代数核对；真实三重交换子等式列覆盖缺口。 |
 | 对象、量词、前提及结论 | 见完整声明；补充资格在[EXTRA]列明 |
 
 ### 5. [EXTRA] 与覆盖缺口
 
-- ξ₁≠0用于分式化简；此处只核对原印(8.54)与(8.56)内部的代数关系，不声称(8.54)已被确认为实际三重交换子。
-- _corrected只修正(8.54)在p=0的内部代数特化，不能据此声称Printed长式等于真实三重括号。
-- 覆盖缺口：ξ₁≠0用于分式化简；此处只核对原印(8.54)与(8.56)内部的代数关系，不声称(8.54)已被确认为实际三重交换子。
+- $\xi_1\ne0$用于分式化简；此处只核对原印(8.54)与(8.56)内部的代数关系，不声称(8.54)已被确认为实际三重交换子。
+- `_corrected`只修正(8.54)在$p=0$的内部代数特化，不能据此声称Printed长式等于真实三重括号。
+- 覆盖缺口：$\xi_1\ne0$用于分式化简；此处只核对原印(8.54)与(8.56)内部的代数关系，不声称(8.54)已被确认为实际三重交换子。
 
 ### 6. 审计结论（含网站复审结论）
 
@@ -3329,7 +3329,7 @@ theorem sinU3Zero_specialize (σ γ : ℝ) (z : Vec 4) (hp : z 1=0) (hξ : z 2 �
 原文版：Printed忠实性PASS；(8.54)/(8.56)内部不一致。
 修正版：原送审_corrected及specialize在内部代数特化意义下PASS，非真实三重括号校正。
 当前：原书疑误待导师；原送审正确版本分项保留。
-原书疑点：已目视核对原页PDF389：(8.54)q分量代p=0得到-2σq/ξ₁²，(8.56)遗漏ξ₁²分母；原印多项式的其他系数仍待独立微分核对。；PDF389的(8.54)q分量分母为D²，(8.55)的13项多项式逐项与sinEtaPrinted一致；(8.56)原印q分量为−2σq，确无ξ₁²分母。
+原书疑点：已目视核对原页PDF389：(8.54)q分量代$p=0$得到$-2\sigma q/\xi_1^2$，(8.56)遗漏$\xi_1^2$分母；原印多项式的其他系数仍待独立微分核对。；PDF389的(8.54)q分量分母为$D^2$，(8.55)的13项多项式逐项与sinEtaPrinted一致；(8.56)原印q分量为$-2\sigma q$，确无$\xi_1^2$分母。
 原页核对历史证据见blueprint/ch08/closeout31/PDF_VISUAL_CHECKS.json及blueprint/ch08/source_page_checks.json；原书PDF页389。本轮不虚称重新目视。
 
 ### 7. 状态与证明位置
@@ -3348,7 +3348,7 @@ theorem sinU3Zero_specialize (σ γ : ℝ) (z : Vec 4) (hp : z 1=0) (hξ : z 2 �
 
 ### 1. 原文陈述
 
-> For θ>0, γ>0, on p²+ξ₁²/2=θ with ξ₁≠0 and outside M₀, the fields f,g,[f,g],[f,[f,g]],[f,[f,[f,g]]] span the three-dimensional tangent space of the isokinetic cylinder.
+> For $\theta>0$, $\gamma>0$, on $p^2+\xi_1^2/2=\theta$ with $\xi_1\ne0$ and outside $M_0$, the fields $f,g,[f,g],[f,[f,g]],[f,[f,[f,g]]]$ span the three-dimensional tangent space of the isokinetic cylinder.
 
 对应原页全文逐字保留在原文JSON；摘要中的[EXTRA]与修正解释不替换原文。
 
@@ -3377,8 +3377,8 @@ theorem sinBracket_tangentSpan (θ γ : ℝ) (hθ : 0 < θ) (hγ : 0 < γ)
 
 ### 5. [EXTRA] 与覆盖缺口
 
-- θ,γ正，ξ₁≠0且在正约束面；仅声明有限向量族张成实际切空间，Hörmander理论推出平滑密度或遍历性未覆盖。
-- 覆盖缺口：θ,γ正，ξ₁≠0且在正约束面；仅声明有限向量族张成实际切空间，Hörmander理论推出平滑密度或遍历性未覆盖。
+- θ,γ正，$\xi_1\ne0$且在正约束面；仅声明有限向量族张成实际切空间，Hörmander理论推出平滑密度或遍历性未覆盖。
+- 覆盖缺口：θ,γ正，$\xi_1\ne0$且在正约束面；仅声明有限向量族张成实际切空间，Hörmander理论推出平滑密度或遍历性未覆盖。
 
 ### 6. 审计结论（含网站复审结论）
 
@@ -3387,7 +3387,7 @@ theorem sinBracket_tangentSpan (θ γ : ℝ) (hθ : 0 < θ) (hγ : 0 < γ)
 原文版：见原网站逐项意见；不凭整组状态推定原印真值。
 修正版：未单列修正版则不推定分项PASS。
 当前：网站PASS（首轮声明未变）。
-原书疑点：PDF387–389列出的五个场和M0吻合。原页先说明运动限制在ξ₁>0或ξ₁<0半空间；statement_latex应显式带上这一域，避免把“除M0外”误读为包含ξ₁=0的整个圆柱。
+原书疑点：PDF387–389列出的五个场和M0吻合。原页先说明运动限制在$\xi_1>0$或$\xi_1<0$半空间；statement_latex应显式带上这一域，避免把“除M0外”误读为包含$\xi_1=0$的整个圆柱。
 原页核对历史证据见blueprint/ch08/closeout31/PDF_VISUAL_CHECKS.json及blueprint/ch08/source_page_checks.json；原书PDF页387–389。本轮不虚称重新目视。
 
 ### 7. 状态与证明位置
@@ -3402,7 +3402,7 @@ theorem sinBracket_tangentSpan (θ γ : ℝ) (hθ : 0 < θ) (hγ : 0 < γ)
 
 ### 1. 原文陈述
 
-> For φ=ξ₂²/2, L_isok φ=(ξ₁²-β⁻¹)ξ₂-γξ₂²+σ²/2, and the isokinetic constraint bounds ξ₁. The negative tail drift supports the ergodicity argument with further assumptions.
+> For $\varphi=\xi_2^2/2$, $L_{isok}\varphi=(\xi_1^2-\beta^{-1})\xi_2-\gamma\xi_2^2+\sigma^2/2$, and the isokinetic constraint bounds $\xi_1$. The negative tail drift supports the ergodicity argument with further assumptions.
 
 对应原页全文逐字保留在原文JSON；摘要中的[EXTRA]与修正解释不替换原文。
 
@@ -3453,22 +3453,22 @@ theorem sinLyapunovTail_corrected (θ γ : ℝ) (hθ : 0 < θ) (hγ : 0 < γ)
 
 ### 5. [EXTRA] 与覆盖缺口
 
-- [EXTRA] sinGenerator_lyapunov要求θ>0、γ>0与Λ≠0；sinLyapunovTail_corrected要求Λ=θ，因θ>0自动排除Λ=0。
-- sinConstraint_bathBound允许任意θ，但约束等式本身蕴含θ≥0及ξ₁²≤2θ；无需漏加θ>0。
-- [ERRATUM?] 原页的固定有符号Kξ₂项不能统一支配两侧尾部；Printed仅存原印表达式，不断言其为上界；修正版为−γξ₂²+θ|ξ₂|+γθ。
+- [EXTRA] `sinGenerator_lyapunov`要求$\theta>0$、$\gamma>0$与$\Lambda\ne0$；`sinLyapunovTail_corrected`要求$\Lambda=\theta$，因$\theta>0$自动排除$\Lambda=0$。
+- `sinConstraint_bathBound`允许任意θ，但约束等式本身蕴含$\theta\ge0$及$\xi_1^2\le2\theta$；无需漏加$\theta>0$。
+- [ERRATUM?] 原页的固定有符号$K\xi_2$项不能统一支配两侧尾部；Printed仅存原印表达式，不断言其为上界；修正版为$-\gamma\xi_2^2+\theta\lvert\xi_2\rvert+\gamma\theta$。
 - 仅覆盖生成元恒等式与约束界；局部计算尚有sorry，此项不据此判签名FAIL。未形式化遍历性的全局条件或充分性。
-- [EXTRA] 当前生成元固定单位质量Q1=Q2=1，并使用σ²=2γθ；常数γθ来自σ²/2。局部生成元和约束界不等于全局遍历性。
+- [EXTRA] 当前生成元固定单位质量$Q1=Q2=1$，并使用$\sigma^2=2\gamma\theta$；常数$\gamma\theta$来自$\sigma^2/2$。局部生成元和约束界不等于全局遍历性。
 - 覆盖缺口：局部生成元恒等式、约束上的热浴界、原印有符号尾项表达式与绝对值尾界修正版；不含遍历性充分性。
 - 覆盖缺口：仅覆盖生成元恒等式与约束界；局部计算尚有sorry，此项不据此判签名FAIL。未形式化遍历性的全局条件或充分性。
 
 ### 6. 审计结论（含网站复审结论）
 
 网站首轮：NEEDS_HUMAN。
-网站复审结论：NEEDS_HUMAN；五项声明及全部依赖定义逐一审查：单位Q1,Q2及σ²=2γθ下，sinGenerator和Lyapunov恒等式正确；hθ,hγ,hK与结论对象完整。sinConstraint_bathBound由p²+ξ₁²/2=θ得到ξ₁²≤2θ，允许θ为任意实数没有遗漏。Printed只保存有符号尾项表达式，字面忠实性PASS；_corrected在Λ=θ、θ,γ>0下给双侧有效界，陈述正确PASS，不包含遍历性结论。总体NEEDS_HUMAN源于原书固定有符号尾项上界疑误及全局遍历性论证尚需核实；不因恒等式sorry或依赖该恒等式的修正版而判签名FAIL。未编译或补证明。
+网站复审结论：NEEDS_HUMAN；五项声明及全部依赖定义逐一审查：单位Q1,Q2及$\sigma^2=2\gamma\theta$下，sinGenerator和Lyapunov恒等式正确；hθ,hγ,hK与结论对象完整。sinConstraint_bathBound由$p^2+\xi_1^2/2=\theta$得到$\xi_1^2\le2\theta$，允许θ为任意实数没有遗漏。Printed只保存有符号尾项表达式，字面忠实性PASS；_corrected在$\Lambda=\theta$、$\theta,\gamma>0$下给双侧有效界，陈述正确PASS，不包含遍历性结论。总体NEEDS_HUMAN源于原书固定有符号尾项上界疑误及全局遍历性论证尚需核实；不因恒等式sorry或依赖该恒等式的修正版而判签名FAIL。未编译或补证明。
 原文版：Printed表达式忠实性PASS；有符号尾界疑误待导师。
-修正版：单位质量、σ²=2γθ下生成元与绝对值尾界签名网站PASS，非遍历性。
+修正版：单位质量、$\sigma^2=2\gamma\theta$下生成元与绝对值尾界签名网站PASS，非遍历性。
 当前：修正版/限定声明网站认可；原文疑误待导师（NEEDS_HUMAN）。
-原书疑点：[ERRATUM?][SOURCE_LYAPUNOV_SIGNED_BOUND] 原页390以ξ₁有界推出固定有符号Kξ₂全局上界，未区分ξ₂正负。需保留原文并由人工确认勘误；绝对值修正版正确。；[SOURCE_ERGODICITY_GAP] 原页还提出周期/有界配置、约束及候选测度在开集上为正等全局条件，并援引其他论证；当前局部Lean声明没有遍历性结论，不能将其当作完整遍历性证明。；已目视核对原页PDF390：原印有符号Kξ₂界不能统一控制正负两侧。单位质量Q1=Q2=1、σ²=2γθ下修正版为−γξ₂²+θ|ξ₂|+γθ；仅为局部生成元和约束界，不推出遍历性。
+原书疑点：[ERRATUM?][SOURCE_LYAPUNOV_SIGNED_BOUND] 原页390以$\xi_1$有界推出固定有符号$K\xi_2$全局上界，未区分$\xi_2$正负。需保留原文并由人工确认勘误；绝对值修正版正确。；[SOURCE_ERGODICITY_GAP] 原页还提出周期/有界配置、约束及候选测度在开集上为正等全局条件，并援引其他论证；当前局部Lean声明没有遍历性结论，不能将其当作完整遍历性证明。；已目视核对原页PDF390：原印有符号$K\xi_2$界不能统一控制正负两侧。单位质量$Q1=Q2=1$、$\sigma^2=2\gamma\theta$下修正版为$-\gamma\xi_2^2+\theta\lvert\xi_2\rvert+\gamma\theta$；仅为局部生成元和约束界，不推出遍历性。
 32号本轮已目视核对原页；记录见blueprint/ch08/closeout32/PDF_VISUAL_CHECKS.json；原书PDF页389–390。
 
 ### 7. 状态与证明位置
@@ -3487,7 +3487,7 @@ theorem sinLyapunovTail_corrected (θ γ : ℝ) (hθ : 0 < θ) (hγ : 0 < γ)
 
 ### 1. 原文陈述
 
-> U=U_S+U_F and F=F_S+F_F. The generators split into kinetic, isokinetic fast force, isokinetic slow force, Nosé and OU terms; each preserves Λ=p²+μ₁ξ₁²/2.
+> $U=U_S+U_F$ and $F=F_S+F_F$. The generators split into kinetic, isokinetic fast force, isokinetic slow force, Nosé and OU terms; each preserves $\Lambda=p^2+\mu_1\xi_1^2/2$.
 
 对应原页全文逐字保留在原文JSON；摘要中的[EXTRA]与修正解释不替换原文。
 
@@ -3533,7 +3533,7 @@ theorem sinForce_constraintBalance (Q1 F : ℝ) (z : Vec 4)
 
 ### 5. [EXTRA] 与覆盖缺口
 
-- Q₁,Q₂,θ>0且Λ=θ为物理域，总化场保留作辅助；本条含完整漂移和分解及力子场瞬时约束平衡，其他子场的流存在/保约束列缺口。
+- $Q_1,Q_2,\theta>0$且$\Lambda=\theta$为物理域，总化场保留作辅助；本条含完整漂移和分解及力子场瞬时约束平衡，其他子场的流存在/保约束列缺口。
 - 覆盖缺口：五个子场及其实际和分解、力子场瞬时约束平衡；不含整体方法阶数。
 
 ### 6. 审计结论（含网站复审结论）
@@ -3563,7 +3563,7 @@ theorem sinForce_constraintBalance (Q1 F : ℝ) (z : Vec 4)
 
 ### 1. 原文陈述
 
-> The SIN(R) algorithm uses h̃=h/r, r−2 repeated inner blocks, outer Nosé half-steps, combined fast/slow force half-steps and independent OU substeps.
+> The SIN(R) algorithm uses $\tilde h=h/r$, $r-2$ repeated inner blocks, outer Nosé half-steps, combined fast/slow force half-steps and independent OU substeps.
 
 对应原页全文逐字保留在原文JSON；摘要中的[EXTRA]与修正解释不替换原文。
 
@@ -3594,7 +3594,7 @@ def sinRStages (h : ℝ) (r : ℕ) : List (List (SINStage × ℝ)) :=
 
 ### 5. [EXTRA] 与覆盖缺口
 
-- 算法有效域h>0、r≥2；一组中多个场表示同一次合并传播，并非擅自换为两个非交换流。每次OU用独立标准正态新噪声。
+- 算法有效域$h>0$、$r\ge2$；一组中多个场表示同一次合并传播，并非擅自换为两个非交换流。每次OU用独立标准正态新噪声。
 - 这里只记录精确阶段表，具体随机核实现、保约束及全局误差/阶数列覆盖缺口。
 - 覆盖缺口：原印算法的阶段顺序与步长；不声称构造了各非线性子流。
 
@@ -3620,7 +3620,7 @@ def sinRStages (h : ℝ) (r : ℕ) : List (List (SINStage × ℝ)) :=
 
 ### 1. 原文陈述
 
-> L_N=L_N^(1)+L_N^(2). The first term acts on p,ξ₁, the second has μ₂⁻¹(μ₁ξ₁²-β⁻¹)∂ξ₂.
+> $L_N=L_N^{(1)}+L_N^{(2)}$. The first term acts on $p,\xi_1$, the second has $\mu_2^{-1}(\mu_1\xi_1^2-\beta^{-1})\partial_{\xi_2}$.
 
 对应原页全文逐字保留在原文JSON；摘要中的[EXTRA]与修正解释不替换原文。
 
@@ -3649,7 +3649,7 @@ theorem sinN_split (Q1 Q2 θ : ℝ) (z : Vec 4) :
 
 ### 5. [EXTRA] 与覆盖缺口
 
-- 正质量、温度及Λ>0作为物理资格；高阶Yoshida/Suzuki组合的系数和误差阶未在原页给出，列覆盖缺口。
+- 正质量、温度及$\Lambda>0$作为物理资格；高阶Yoshida/Suzuki组合的系数和误差阶未在原页给出，列覆盖缺口。
 
 ### 6. 审计结论（含网站复审结论）
 
@@ -3675,7 +3675,7 @@ theorem sinN_split (Q1 Q2 θ : ℝ) (z : Vec 4) :
 
 ### 1. 原文陈述
 
-> ṗ=F−p²F/Λ, ξ̇₁=pξ₁F/Λ. The printed solution is p(h)=(p(0)+(F/m)s(h))/ṡ(h), ξ₁(h)=ξ₁(0)/ṡ(h), with s(t)=b⁻¹/²sinh(t√b)+(a/b)(cosh(t√b)−1), a=Fp(0)/Λ, b=F²/Λ.
+> $\dot p=F-p^2F/\Lambda$, $\dot\xi_1=p\xi_1F/\Lambda$. The printed solution is $p(h)=(p(0)+(F/m)s(h))/\dot s(h)$, $\xi_1(h)=\xi_1(0)/\dot s(h)$, with $s(t)=b^{-1/2}\sinh(t\sqrt b)+(a/b)(\cosh(t\sqrt b)-1)$, $a=Fp(0)/\Lambda$, $b=F^2/\Lambda$.
 
 对应原页全文逐字保留在原文JSON；摘要中的[EXTRA]与修正解释不替换原文。
 
@@ -3712,7 +3712,7 @@ theorem sinForceFlow_solution_corrected (Q1 F : ℝ) (z : Vec 4)
 
 ### 5. [EXTRA] 与覆盖缺口
 
-- 质量按本节假设取1；Q₁、Λ正，排除ṡ=0；F=0用b=0的解析延拓，避免总化除法假装极限。
+- 质量按本节假设取1；$Q_1$、Λ正，排除$\dot s=0$；$F=0$用$b=0$的解析延拓，避免总化除法假装极限。
 - 只声明候选流在有效域满足校正ODE，不证明全局流、组合方法精度或遍历性。
 
 ### 6. 审计结论（含网站复审结论）
@@ -3720,9 +3720,9 @@ theorem sinForceFlow_solution_corrected (Q1 F : ℝ) (z : Vec 4)
 网站首轮：NEEDS_HUMAN。
 网站复审结论：本条未进入本轮复审；保留首轮NEEDS_HUMAN意见。
 原文版：Printed正号ODE忠实性PASS；与候选导数冲突。
-修正版：原送审负号_corrected及局部解签名PASS；限m=1与非零分母。
+修正版：原送审负号_corrected及局部解签名PASS；限$m=1$与非零分母。
 当前：原书疑误待导师；原送审正确版本分项保留。
-原书疑点：已目视核对原页PDF393：所印ξ̇₁为正号，与前页力子场及ξ₁(h)=ξ₁(0)/ṡ(h)的负号导数冲突。保留原印和负号工作修正版。；[ERRATUM?] 保留Printed，给ξ₁负号版添加[ERRATUM?]；保留m=1的[EXTRA]，不要把工作修正版回填为原文。
+原书疑点：已目视核对原页PDF393：所印$\dot\xi_1$为正号，与前页力子场及$\xi_1(h)=\xi_1(0)/\dot s(h)$的负号导数冲突。保留原印和负号工作修正版。；[ERRATUM?] 保留Printed，给$\xi_1$负号版添加[ERRATUM?]；保留$m=1$的[EXTRA]，不要把工作修正版回填为原文。
 原页核对历史证据见blueprint/ch08/closeout31/PDF_VISUAL_CHECKS.json及blueprint/ch08/source_page_checks.json；原书PDF页393。本轮不虚称重新目视。
 
 ### 7. 状态与证明位置
@@ -3741,7 +3741,7 @@ theorem sinForceFlow_solution_corrected (Q1 F : ℝ) (z : Vec 4)
 
 ### 1. 原文陈述
 
-> U_Total=U_bonds+U_s.r.+U_l.r.; h_outer and h_mid are integer multiples of the next smaller stepsizes.
+> $U_{Total}=U_{bonds}+U_{s.r.}+U_{l.r.}$; $h_{outer}$ and $h_{mid}$ are integer multiples of the next smaller stepsizes.
 
 对应原页全文逐字保留在原文JSON；摘要中的[EXTRA]与修正解释不替换原文。
 
@@ -3791,7 +3791,7 @@ def nestedTimeSteps (inner middle outer : ℝ) : Prop :=
 
 ### 1. 原文陈述
 
-> dq=M⁻¹pdt, dp=−∇U(q)dt−∫₀ᵗΓ(t−s)p(s)ds dt+dB, q(0)=q₀,p(0)=p₀. Γ is the memory kernel and B is colored noise. (8.57)–(8.58).
+> $dq=M^{-1}p\,dt$, $dp=-\nabla U(q)dt-\int_0^t\Gamma(t-s)p(s)ds\,dt+dB$, $q(0)=q_0,p(0)=p_0$. $\Gamma$ is the memory kernel and $B$ is colored noise. (8.57)–(8.58).
 
 对应原页全文逐字保留在原文JSON；摘要中的[EXTRA]与修正解释不替换原文。
 
@@ -3859,7 +3859,7 @@ def generalizedLangevin (P : Measure Ω) (invm : Vec n) (U : Vec n → ℝ)
 
 ### 1. 原文陈述
 
-> ⟨Rᵢ(t+s)Rⱼ(t)⟩=k_BT γᵢⱼ(s)δᵢⱼ, s≥0. Γ(t)=γ(t)I in the scalar-kernel specialization. (8.59).
+> $\langle R_i(t+s)R_j(t)\rangle=k_B T\gamma_{ij}(s)\delta_{ij}$, $s\ge0$. $\Gamma(t)=\gamma(t)I$ in the scalar-kernel specialization. (8.59).
 
 对应原页全文逐字保留在原文JSON；摘要中的[EXTRA]与修正解释不替换原文。
 
@@ -3904,7 +3904,7 @@ def scalarMemoryMatrix (γ : ℝ → ℝ) (t : ℝ) : Matrix (Fin n) (Fin n) ℝ
 原文版：Printed的δ忠实于原页；一般矩阵解释有疑。
 修正版：原送审去δ的矩阵协方差目标PASS；可实现性另需正定资格。
 当前：原书疑误待导师；原送审正确版本分项保留。
-原书疑点：已目视核对原页PDF395：一般矩阵核后额外乘δᵢⱼ会消掉交叉相关，只在对角核/独立分量解释下成立；标量核特化没有此问题。颜色与非Gaussian不是同义条件。；[ERRATUM?] 保留Printed并加[ERRATUM?]；一般矩阵版删除δ或把适用域限制为对角核，注明核可实现性另需正定条件。
+原书疑点：已目视核对原页PDF395：一般矩阵核后额外乘$\delta_{ij}$会消掉交叉相关，只在对角核/独立分量解释下成立；标量核特化没有此问题。颜色与非Gaussian不是同义条件。；[ERRATUM?] 保留Printed并加[ERRATUM?]；一般矩阵版删除δ或把适用域限制为对角核，注明核可实现性另需正定条件。
 原页核对历史证据见blueprint/ch08/closeout31/PDF_VISUAL_CHECKS.json及blueprint/ch08/source_page_checks.json；原书PDF页395。本轮不虚称重新目视。
 
 ### 7. 状态与证明位置
@@ -3922,7 +3922,7 @@ def scalarMemoryMatrix (γ : ℝ → ℝ) (t : ℝ) : Matrix (Fin n) (Fin n) ℝ
 
 ### 1. 原文陈述
 
-> γ(t)=Σₖ(cₖ/τₖ)exp(−t/τₖ), t≥0. (8.60).
+> $\gamma(t)=\sum_k(c_k/\tau_k)\exp(-t/\tau_k)$, $t\ge0$. (8.60).
 
 对应原页全文逐字保留在原文JSON；摘要中的[EXTRA]与修正解释不替换原文。
 
@@ -3953,8 +3953,8 @@ theorem pronyKernel_nonneg {K : ℕ} (c τ : Fin K → ℝ)
 
 ### 5. [EXTRA] 与覆盖缺口
 
-- 正cₖ、τₖ为后文OU实现所用域；此处只定义Prony核并证明非负，不声称任意记忆核的逼近误差。
-- 覆盖缺口：正cₖ、τₖ为后文OU实现所用域；此处只定义Prony核并证明非负，不声称任意记忆核的逼近误差。
+- 正$c_k$、$\tau_k$为后文OU实现所用域；此处只定义Prony核并证明非负，不声称任意记忆核的逼近误差。
+- 覆盖缺口：正$c_k$、$\tau_k$为后文OU实现所用域；此处只定义Prony核并证明非负，不声称任意记忆核的逼近误差。
 
 ### 6. 审计结论（含网站复审结论）
 
@@ -3980,7 +3980,7 @@ theorem pronyKernel_nonneg {K : ℕ} (c τ : Fin K → ℝ)
 
 ### 1. 原文陈述
 
-> ηᵢₖ(t)=−∫₀ᵗ(cₖ/τₖ)exp(−(t−s)/τₖ)pᵢ(s)ds, dηᵢₖ=−ηᵢₖdt/τₖ−cₖpᵢdt/τₖ. Equations (8.61)–(8.64) remove the convolution history.
+> $\eta_{ik}(t)=-\int_0^t(c_k/\tau_k)\exp(-(t-s)/\tau_k)p_i(s)ds$, $d\eta_{ik}=-\eta_{ik}dt/\tau_k-c_kp_i\,dt/\tau_k$. Equations (8.61)–(8.64) remove the convolution history.
 
 对应原页全文逐字保留在原文JSON；摘要中的[EXTRA]与修正解释不替换原文。
 
@@ -4042,7 +4042,7 @@ theorem pronyMemory_sum {K : ℕ} (c τ : Fin K → ℝ) (p : ℝ → Vec n)
 
 ### 1. 原文陈述
 
-> dRᵢₖ=−Rᵢₖdt/τₖ+√(2θcₖ)dWᵢₖ/τₖ；原印E[Rᵢₖ(t)]=0、E[Rᵢₖ(t+s)Rᵢₖ(t)]=(θcₖ/τₖ)exp(−s/τₖ)，t,s≥0；Rᵢ=Σ_{k∈Fin K}Rᵢₖ（书中k=1,…,kmax，K=kmax）。[EXTRA] 两个Lean相关式均补平稳初态及独立性，不是无条件原印结论。
+> $dR_{ik}=-R_{ik}dt/\tau_k+\sqrt{2\theta c_k}dW_{ik}/\tau_k$；原印$E[R_{ik}(t)]=0$、$E[R_{ik}(t+s)R_{ik}(t)]=(\theta c_k/\tau_k)\exp(-s/\tau_k)$，$t,s\ge0$；$R_i=\sum_{k\in\mathrm{Fin}\,K}R_{ik}$（书中$k=1,\ldots,k_{max}$，$K=k_{max}$）。[EXTRA] 两个Lean相关式均补平稳初态及独立性，不是无条件原印结论。
 
 对应原页全文逐字保留在原文JSON；摘要中的[EXTRA]与修正解释不替换原文。
 
@@ -4089,21 +4089,21 @@ theorem pronyOU_covariance_corrected (P : Measure Ω) (W : ℝ → Ω → Vec 1)
 
 ### 5. [EXTRA] 与覆盖缺口
 
-- [EXTRA] θ代表k_BT，c、τ、θ严格为正；W为一个实Brownian坐标（Vec 1）。
-- [EXTRA] R(0)具有N(0,θc/τ)律且与整条W独立；非负时间路径几乎处处连续，各非负时刻R(t)属于L²；积分方程逐个非负时刻几乎处处成立。
+- [EXTRA] θ代表$k_B T$，c、τ、θ严格为正；W为一个实Brownian坐标（Vec 1）。
+- [EXTRA] $R(0)$具有$N(0,\theta c/\tau)$律且与整条W独立；非负时间路径几乎处处连续，各非负时刻$R(t)$属于$L^2$；积分方程逐个非负时刻几乎处处成立。
 - [EXTRA] 这里没有对多个模式的W作联合独立假设；totalPronyRandomForce仅为有限和定义，不声称总协方差公式。
-- [EXTRA] t,s≥0；totalPronyRandomForce的求和为k∈Fin K（0,…,K−1，对应书中1,…,kmax）；没有跨模式独立或总协方差定理。
+- [EXTRA] $t,s\ge0$；totalPronyRandomForce的求和为$k\in\mathrm{Fin}\,K$（0,…,K−1，对应书中1,…,kmax）；没有跨模式独立或总协方差定理。
 - 覆盖缺口：[EXTRA] 这里没有对多个模式的W作联合独立假设；totalPronyRandomForce仅为有限和定义，不声称总协方差公式。
-- 覆盖缺口：[EXTRA] t,s≥0；totalPronyRandomForce的求和为k∈Fin K（0,…,K−1，对应书中1,…,kmax）；没有跨模式独立或总协方差定理。
+- 覆盖缺口：[EXTRA] $t,s\ge0$；totalPronyRandomForce的求和为$k\in\mathrm{Fin}\,K$（0,…,K−1，对应书中1,…,kmax）；没有跨模式独立或总协方差定理。
 
 ### 6. 审计结论（含网站复审结论）
 
 网站首轮：NEEDS_HUMAN。
-网站复审结论：NEEDS_HUMAN；{"overall": "NEEDS_HUMAN仅针对原书缺省平稳初态及其解释；所列修正版签名在数学上合理，不因sorry判FAIL。", "objects_and_domains": "Ω为任意可测空间，P为Measure Ω；independentWiener在hR内保证P为概率测度。W:ℝ→Ω→(Fin 1→ℝ)，R:ℝ→Ω→ℝ，c、τ、θ为实数且均严格正。只对t≥0、s≥0作结论，不断言负时间驻定。", "declarations": [{"lean_decl": "MD.Ch08.stationaryPronyOU", "verdict": "PASS", "explanation": "一维Brownian、方差θc/τ的中心Gaussian初态、初态与整条W独立、非负时间连续与L²、积分OU方程齐全。漂移−R/τ及噪声√(2θc)/τ与(8.65)吻合；Gaussian第二参数为方差且因正参数toNNReal不截断。此定义是补充资格，不是原印逐字前提。"}, {"lean_decl": "MD.Ch08.pronyOU_covariance", "verdict": "PASS", "explanation": "全称量化P,W,R,c,τ,θ及非负t,s；hR已包含全部平稳资格。完整结论同时给出E R(t)=0及E[R(t+s)R(t)]=(θc/τ)e^(−s/τ)，不是只给单边不等式或仅s=0。该陈述数学正确；没有Printed/literal标识，不要求它保留无资格的错误断言。"}, {"lean_decl": "MD.Ch08.totalPronyRandomForce", "verdict": "PASS", "explanation": "任意自然数K与R:Fin K→ℝ→Ω→ℝ，在任意t、sample逐点有限求和。Fin K对应原书1至kmax的K个模式的重编号，K=0为自然空和扩展；未偷加独立性或总协方差结论。"}, {"lean_decl": "MD.Ch08.pronyOU_covariance_corrected", "verdict": "PASS", "explanation": "与前一定理完全相同的量词、hR、时间域及完整二联结论；通过引用前一定理复用补充资格，并非另行证明更强无条件断言。"}]}
+网站复审结论：NEEDS_HUMAN；{"overall": "NEEDS_HUMAN仅针对原书缺省平稳初态及其解释；所列修正版签名在数学上合理，不因sorry判FAIL。", "objects_and_domains": "Ω为任意可测空间，P为Measure Ω；independentWiener在hR内保证P为概率测度。$W:\mathbb R\to\Omega\to(\mathrm{Fin}\,1\to\mathbb R)$，$R:\mathbb R\to\Omega\to\mathbb R$，c、τ、θ为实数且均严格正。只对$t\ge0$、$s\ge0$作结论，不断言负时间驻定。", "declarations": [{"lean_decl": "MD.Ch08.stationaryPronyOU", "verdict": "PASS", "explanation": "一维Brownian、方差$\theta c/\tau$的中心Gaussian初态、初态与整条W独立、非负时间连续与$L^2$、积分OU方程齐全。漂移$-R/\tau$及噪声$\sqrt{2\theta c}/\tau$与(8.65)吻合；Gaussian第二参数为方差且因正参数toNNReal不截断。此定义是补充资格，不是原印逐字前提。"}, {"lean_decl": "MD.Ch08.pronyOU_covariance", "verdict": "PASS", "explanation": "全称量化P,W,R,c,τ,θ及非负t,s；hR已包含全部平稳资格。完整结论同时给出$E R(t)=0$及$E[R(t+s)R(t)]=(\theta c/\tau)e^{-s/\tau}$，不是只给单边不等式或仅$s=0$。该陈述数学正确；没有Printed/literal标识，不要求它保留无资格的错误断言。"}, {"lean_decl": "MD.Ch08.totalPronyRandomForce", "verdict": "PASS", "explanation": "任意自然数K与$R:\mathrm{Fin}\,K\to\mathbb R\to\Omega\to\mathbb R$，在任意t、sample逐点有限求和。Fin K对应原书1至kmax的K个模式的重编号，$K=0$为自然空和扩展；未偷加独立性或总协方差结论。"}, {"lean_decl": "MD.Ch08.pronyOU_covariance_corrected", "verdict": "PASS", "explanation": "与前一定理完全相同的量词、hR、时间域及完整二联结论；通过引用前一定理复用补充资格，并非另行证明更强无条件断言。"}]}
 原文版：原印无初态资格的(8.66)待导师。
 修正版：pronyOU_covariance及_corrected均为[EXTRA]平稳初态版本，签名网站PASS；非无条件原印定理。
 当前：修正版/限定声明网站认可；原文疑误待导师（NEEDS_HUMAN）。
-原书疑点：[ERRATUM?] 原页(8.66)断言零均值及与t无关的二阶矩，页内未声明初始律；仅由(8.65)不能推出。原印原句必须保留，是否上下文已默认平稳解释需人工确认。；[EXTRA] stationaryPronyOU补充了正参数、平稳Gaussian初态、与整条W独立、路径连续及各非负时刻L²资格；应显式标记其为修正版前提。pronyOU_covariance和_corrected签名相同，前者也已经是带补充资格的版本，不能当作无条件原印断言。；已目视核对原页PDF397：(8.66)印出s≥0但未说明平稳初态。修正版另加[EXTRA]初态N(0,θc/τ)且与整条W独立；t,s≥0；有限和用k∈Fin K，不宣称跨模式总协方差。
+原书疑点：[ERRATUM?] 原页(8.66)断言零均值及与t无关的二阶矩，页内未声明初始律；仅由(8.65)不能推出。原印原句必须保留，是否上下文已默认平稳解释需人工确认。；[EXTRA] stationaryPronyOU补充了正参数、平稳Gaussian初态、与整条W独立、路径连续及各非负时刻$L^2$资格；应显式标记其为修正版前提。pronyOU_covariance和_corrected签名相同，前者也已经是带补充资格的版本，不能当作无条件原印断言。；已目视核对原页PDF397：(8.66)印出$s\ge0$但未说明平稳初态。修正版另加[EXTRA]初态$N(0,\theta c/\tau)$且与整条W独立；$t,s\ge0$；有限和用$k\in\mathrm{Fin}\,K$，不宣称跨模式总协方差。
 32号本轮已目视核对原页；记录见blueprint/ch08/closeout32/PDF_VISUAL_CHECKS.json；原书PDF页397。
 
 ### 7. 状态与证明位置
@@ -4121,7 +4121,7 @@ theorem pronyOU_covariance_corrected (P : Measure Ω) (W : ℝ → Ω → Vec 1)
 
 ### 1. 原文陈述
 
-> σᵢₖ=ηᵢₖ+Rᵢₖ yields dσᵢₖ=−σᵢₖdt/τₖ−cₖpᵢdt/τₖ+√(2k_BT cₖ)dWᵢₖ/τₖ. (8.68)–(8.70).
+> $\sigma_{ik}=\eta_{ik}+R_{ik}$ yields $d\sigma_{ik}=-\sigma_{ik}dt/\tau_k-c_kp_i\,dt/\tau_k+\sqrt{2k_B T c_k}dW_{ik}/\tau_k$. (8.68)–(8.70).
 
 对应原页全文逐字保留在原文JSON；摘要中的[EXTRA]与修正解释不替换原文。
 
@@ -4154,7 +4154,7 @@ theorem combinedProny_drift (η R c τ p : ℝ) :
 
 | 原文对象或结论 | 实际覆盖 |
 |---|---|
-| 本条数学成分 | 有限维扩展SDE完整积分规格及σ=η+R的漂移恒等式。 |
+| 本条数学成分 | 有限维扩展SDE完整积分规格及$\sigma=\eta+R$的漂移恒等式。 |
 | 对象、量词、前提及结论 | 见完整声明；补充资格在[EXTRA]列明 |
 
 ### 5. [EXTRA] 与覆盖缺口
@@ -4188,7 +4188,7 @@ theorem combinedProny_drift (η R c τ p : ℝ) :
 
 ### 1. 原文陈述
 
-> Formally τₖ→0 gives σᵢₖdt=−cₖpᵢdt+√(2k_BT cₖ)dWᵢₖ and Langevin friction γ̂=Σₖcₖ. Independent Gaussian variances add.
+> Formally $\tau_k\to0$ gives $\sigma_{ik}dt=-c_kp_i\,dt+\sqrt{2k_B T c_k}dW_{ik}$ and Langevin friction $\hat\gamma=\sum_kc_k$. Independent Gaussian variances add.
 
 对应原页全文逐字保留在原文JSON；摘要中的[EXTRA]与修正解释不替换原文。
 
@@ -4220,7 +4220,7 @@ theorem independentGaussian_varianceSum {K : ℕ} (P : Measure Ω)
 
 ### 5. [EXTRA] 与覆盖缺口
 
-- 仅形式极限系数与真实有限个独立Gaussian线性组合；τ→0过程弱收敛、初始层、统一时间界不在本条声明，列覆盖缺口。
+- 仅形式极限系数与真实有限个独立Gaussian线性组合；$\tau\to0$过程弱收敛、初始层、统一时间界不在本条声明，列覆盖缺口。
 
 ### 6. 审计结论（含网站复审结论）
 
@@ -4246,7 +4246,7 @@ theorem independentGaussian_varianceSum {K : ℕ} (P : Measure Ω)
 
 ### 1. 原文陈述
 
-> The four-step method updates p_half, q_new, σ_new,k=θₖσₖ−(1−θₖ)cₖp_half+αₖ√(2k_BT cₖ)Zₖ, then p_new with the new force and new σ.
+> The four-step method updates $p_{half}$, $q_{new}$, $\sigma_{new,k}=\theta_k\sigma_k-(1-\theta_k)c_kp_{half}+\alpha_k\sqrt{2k_B T c_k}Z_k$, then $p_{new}$ with the new force and new $\sigma$.
 
 对应原页全文逐字保留在原文JSON；摘要中的[EXTRA]与修正解释不替换原文。
 
@@ -4278,7 +4278,7 @@ def gleNormalSequence {K : ℕ} (P : Measure Ω) (Z : ℕ → Ω → Fin K → V
 
 ### 5. [EXTRA] 与覆盖缺口
 
-- h>0，正质量/c/τ/温度下作物理解读；跨步、模式与空间分量的完整独立正态资格另列gleNormalSequence。
+- $h>0$，正质量/c/τ/温度下作物理解读；跨步、模式与空间分量的完整独立正态资格另列gleNormalSequence。
 - 此处完整单步定义，不包含离散不变分布、全局弱阶或Langevin极限保持的定理。
 
 ### 6. 审计结论（含网站复审结论）
@@ -4304,7 +4304,7 @@ def gleNormalSequence {K : ℕ} (P : Measure Ω) (Z : ℕ → Ω → Fin K → V
 
 ### 1. 原文陈述
 
-> For consistency θₖ=1−h/τₖ+O(h²), αₖ=√h/τₖ+O(h). Choose θₖ=exp(−h/τₖ), αₖ=√((1−θₖ)²/h).
+> For consistency $\theta_k=1-h/\tau_k+O(h^2)$, $\alpha_k=\sqrt h/\tau_k+O(h)$. Choose $\theta_k=\exp(-h/\tau_k)$, $\alpha_k=\sqrt{(1-\theta_k)^2/h}$.
 
 对应原页全文逐字保留在原文JSON；摘要中的[EXTRA]与修正解释不替换原文。
 
@@ -4335,12 +4335,12 @@ theorem gleCoefficient_smallMemory (h : ℝ) (hh : 0 < h) :
 
 | 原文对象或结论 | 实际覆盖 |
 |---|---|
-| 本条数学成分 | 两项一致性渐近和所选单步系数的τ→0极限。 |
+| 本条数学成分 | 两项一致性渐近和所选单步系数的$\tau\to0$极限。 |
 | 对象、量词、前提及结论 | 见完整声明；补充资格在[EXTRA]列明 |
 
 ### 5. [EXTRA] 与覆盖缺口
 
-- h从正侧趋0、τ固定正；小记忆极限另固定h>0，只陈述单步系数极限，未把它当成随机过程极限或长期采样结论。
+- h从正侧趋0、τ固定正；小记忆极限另固定$h>0$，只陈述单步系数极限，未把它当成随机过程极限或长期采样结论。
 
 ### 6. 审计结论（含网站复审结论）
 
@@ -4368,7 +4368,7 @@ theorem gleCoefficient_smallMemory (h : ℝ) (hh : 0 < h) :
 
 ### 1. 原文陈述
 
-> P=−(∂E/∂V)_{S,N}; the Maxwell cyclic relation gives (∂S/∂V)_{E,N}=P/T and (∂S/∂E)_{V,N}=1/T.
+> $P=-(\partial E/\partial V)_{S,N}$; the Maxwell cyclic relation gives $(\partial S/\partial V)_{E,N}=P/T$ and $(\partial S/\partial E)_{V,N}=1/T$.
 
 对应原页全文逐字保留在原文JSON；摘要中的[EXTRA]与修正解释不替换原文。
 
@@ -4430,7 +4430,7 @@ theorem maxwellPressureRelation (T P dVdS : ℝ) (hT : T ≠ 0)
 
 ### 1. 原文陈述
 
-> S(N₂,V₂,E₂)=S(Ñ−N,Ṽ−V,Ẽ−E)≈S(N₂,Ṽ,Ẽ)−(E+PV)/T.
+> $S(N_2,V_2,E_2)=S(\tilde N-N,\tilde V-V,\tilde E-E)\approx S(N_2,\tilde V,\tilde E)-(E+PV)/T$.
 
 对应原页全文逐字保留在原文JSON；摘要中的[EXTRA]与修正解释不替换原文。
 
@@ -4485,7 +4485,7 @@ theorem nptEntropy_firstOrder (S : ℝ × ℝ → ℝ) (E0 V0 T P : ℝ) (hT : 0
 
 ### 1. 原文陈述
 
-> ρ_NPT=Z_NPT⁻¹ exp[−β(H+PV)], β⁻¹=k_BT; physical volume V is positive.
+> $\rho_{NPT}=Z_{NPT}^{-1}\exp[-\beta(H+PV)]$, $\beta^{-1}=k_B T$; physical volume $V$ is positive.
 
 对应原页全文逐字保留在原文JSON；摘要中的[EXTRA]与修正解释不替换原文。
 
@@ -4522,8 +4522,8 @@ theorem nptDensity_normalizes (H : Phase n × ℝ → ℝ) (β P : ℝ) (hβ : 0
 
 ### 5. [EXTRA] 与覆盖缺口
 
-- 三维N粒子时n=3N；盒域明确依赖V，并用受限Lebesgue测度。正有限配分积分与可积性明示；没有由任意势假装得到NPT概率。
-- 覆盖缺口：三维N粒子时n=3N；盒域明确依赖V，并用受限Lebesgue测度。正有限配分积分与可积性明示；没有由任意势假装得到NPT概率。
+- 三维N粒子时$n=3N$；盒域明确依赖V，并用受限Lebesgue测度。正有限配分积分与可积性明示；没有由任意势假装得到NPT概率。
+- 覆盖缺口：三维N粒子时$n=3N$；盒域明确依赖V，并用受限Lebesgue测度。正有限配分积分与可积性明示；没有由任意势假装得到NPT概率。
 
 ### 6. 审计结论（含网站复审结论）
 
@@ -4551,7 +4551,7 @@ theorem nptDensity_normalizes (H : Phase n × ℝ → ℝ) (β P : ℝ) (hβ : 0
 
 ### 1. 原文陈述
 
-> qᵢ=V^{1/3}q̄ᵢ; q̇ᵢ=(1/3)V^{−2/3}V̇q̄ᵢ+V^{1/3}q̄̇ᵢ; p̄ᵢ=mᵢV^{1/3}q̇ᵢ. (8.71),(8.72).
+> $q_i=V^{1/3}\bar q_i$; $\dot q_i=(1/3)V^{-2/3}\dot V\bar q_i+V^{1/3}\dot{\bar q}_i$; $\bar p_i=m_iV^{1/3}\dot q_i$. (8.71),(8.72).
 
 对应原页全文逐字保留在原文JSON；摘要中的[EXTRA]与修正解释不替换原文。
 
@@ -4590,7 +4590,7 @@ theorem andersenMomentum_velocity (m : Vec n) (V Vdot : ℝ) (qbar vbar : Vec n)
 
 ### 5. [EXTRA] 与覆盖缺口
 
-- V>0用于实分数幂的导数与乘法；质量物理解读取正，等式本身是坐标变换，不包含随体积变化的全局正则流或规范测度。
+- $V>0$用于实分数幂的导数与乘法；质量物理解读取正，等式本身是坐标变换，不包含随体积变化的全局正则流或规范测度。
 
 ### 6. 审计结论（含网站复审结论）
 
@@ -4618,7 +4618,7 @@ theorem andersenMomentum_velocity (m : Vec n) (V Vdot : ℝ) (qbar vbar : Vec n)
 
 ### 1. 原文陈述
 
-> After q=V^{1/3}q̄, K̄=Σᵢ(mᵢ/2)[(1/9)V^{−4/3}V̇²|q̄ᵢ|²+(2/3)V^{−1/3}V̇q̄ᵢ·q̄̇ᵢ+V^{2/3}|q̄̇ᵢ|²].
+> After $q=V^{1/3}\bar q$, $\bar K=\sum_i(m_i/2)[(1/9)V^{-4/3}\dot V^2\lvert\bar q_i\rvert^2+(2/3)V^{-1/3}\dot V\bar q_i\cdot\dot{\bar q}_i+V^{2/3}\lvert\dot{\bar q}_i\rvert^2]$.
 
 对应原页全文逐字保留在原文JSON；摘要中的[EXTRA]与修正解释不替换原文。
 
@@ -4676,7 +4676,7 @@ theorem andersenKinetic_expansion (m : Vec n) (V Vdot : ℝ) (qbar vbar : Vec n)
 
 ### 1. 原文陈述
 
-> Ĥ=Σᵢ|p̄ᵢ|²/(2mᵢV^{2/3})+Ū(q̄;V)+p_V²/(2μ_V)+PV, and ρ_NPT=√(β/(2πμ_V))∫exp(−βĤ)dp_V. (8.73).
+> $\hat H=\sum_i\lvert\bar p_i\rvert^2/(2m_iV^{2/3})+\bar U(\bar q;V)+p_V^2/(2\mu_V)+PV$, and $\rho_{NPT}=\sqrt{\beta/(2\pi\mu_V)}\int\exp(-\beta\hat H)dp_V$. (8.73).
 
 对应原页全文逐字保留在原文JSON；摘要中的[EXTRA]与修正解释不替换原文。
 
@@ -4715,8 +4715,8 @@ theorem andersenGaussian_marginal (m : Vec n) (U : Vec n → ℝ) (QV P β : ℝ
 
 - m,QV,V,β正为物理域；QV是活塞质量，pV取实数。仅高斯消元的点态权重式，不把它当成任意U下的归一概率或完整坐标Jacobian定理。
 - [EXTRA] andersenMarginal_corrected本身仅为除以Z的函数定义；要解释为概率密度须另证明Z等于正确域上正有限配分积分。
-- [EXTRA] andersenMarginal_corrected仅是除以参数Z的权重，不声称自动归一。若作概率密度，须在相同坐标和V>0域上可积，且Z为相同权重的正有限配分积分；任意Z>0不足。
-- 覆盖缺口：[EXTRA] andersenMarginal_corrected仅是除以参数Z的权重，不声称自动归一。若作概率密度，须在相同坐标和V>0域上可积，且Z为相同权重的正有限配分积分；任意Z>0不足。
+- [EXTRA] `andersenMarginal_corrected`仅是除以参数Z的权重，不声称自动归一。若作概率密度，须在相同坐标和$V>0$域上可积，且Z为相同权重的正有限配分积分；任意$Z>0$不足。
+- 覆盖缺口：[EXTRA] `andersenMarginal_corrected`仅是除以参数Z的权重，不声称自动归一。若作概率密度，须在相同坐标和$V>0$域上可积，且Z为相同权重的正有限配分积分；任意$Z>0$不足。
 
 ### 6. 审计结论（含网站复审结论）
 
@@ -4725,7 +4725,7 @@ theorem andersenGaussian_marginal (m : Vec n) (U : Vec n → ℝ) (QV P β : ℝ
 原文版：Printed忠实性PASS；相对归一NPT密度缺配分因子。
 修正版：原送审Gaussian消元及除Z权重合理；正有限配分积分未保证，不宣称概率归一。
 当前：原书疑误待导师；原送审正确版本分项保留。
-原书疑点：已目视核对原页PDF401：边缘公式未写此前ρ_NPT定义中的Z_NPT⁻¹；字面右端给未归一Boltzmann权。修正版独立加入正配分常数，需导师确认作者是否在此省略归一因子。；[ERRATUM?] 保留Printed并标[ERRATUM?]；corrected如作密度须另要求Z是相同坐标/域下的正有限配分积分，不能只要求任意Z>0。
+原书疑点：已目视核对原页PDF401：边缘公式未写此前$\rho_{NPT}$定义中的$Z_{NPT}^{-1}$；字面右端给未归一Boltzmann权。修正版独立加入正配分常数，需导师确认作者是否在此省略归一因子。；[ERRATUM?] 保留Printed并标[ERRATUM?]；corrected如作密度须另要求Z是相同坐标/域下的正有限配分积分，不能只要求任意$Z>0$。
 原页核对历史证据见blueprint/ch08/closeout31/PDF_VISUAL_CHECKS.json及blueprint/ch08/source_page_checks.json；原书PDF页401。本轮不虚称重新目视。
 
 ### 7. 状态与证明位置
@@ -4743,7 +4743,7 @@ theorem andersenGaussian_marginal (m : Vec n) (U : Vec n → ℝ) (QV P β : ℝ
 
 ### 1. 原文陈述
 
-> q̇=M⁻¹p+ηq, ṗ=F−ηp−ξp, V̇=ηV; dξ=(h_T−γ_Tξ)dt+√(2k_BTγ_T/μ_T)dW_T, dη=(h_P−γ_Pη)dt+√(2k_BTγ_P/μ_P)dW_P, with h_T=(pᵀM⁻¹p−N_dk_BT)/μ_T and h_P=(VΠ−PV+k_BT)/μ_P. (8.75)–(8.79).
+> $\dot q=M^{-1}p+\eta q$, $\dot p=F-\eta p-\xi p$, $\dot V=\eta V$; $d\xi=(h_T-\gamma_T\xi)dt+\sqrt{2k_B T\gamma_T/\mu_T}dW_T$, $d\eta=(h_P-\gamma_P\eta)dt+\sqrt{2k_B T\gamma_P/\mu_P}dW_P$, with $h_T=(p^{\mathsf T}M^{-1}p-N_d k_B T)/\mu_T$ and $h_P=(V\Pi-PV+k_B T)/\mu_P$. (8.75)–(8.79).
 
 对应原页全文逐字保留在原文JSON；摘要中的[EXTRA]与修正解释不替换原文。
 
@@ -4783,8 +4783,8 @@ def isNHLPistonSolution (invm : Vec n) (U : Vec n × ℝ → ℝ) (θ P QT QP γ
 
 ### 5. [EXTRA] 与覆盖缺口
 
-- z.2=(V,ξ,η)，V>0、热浴/活塞质量正、独立二维Wiener明确；所有辅助变量除V均为实数。
-- 选择正体积域内的积分解类，不声明该类存在唯一或必然遍历；n=3N为物理情形。
+- $z.2=(V,\xi,\eta)$，$V>0$、热浴/活塞质量正、独立二维Wiener明确；所有辅助变量除V均为实数。
+- 选择正体积域内的积分解类，不声明该类存在唯一或必然遍历；$n=3N$为物理情形。
 
 ### 6. 审计结论（含网站复审结论）
 
@@ -4812,7 +4812,7 @@ def isNHLPistonSolution (invm : Vec n) (U : Vec n × ℝ → ℝ) (θ P QT QP γ
 
 ### 1. 原文陈述
 
-> ρ₁=φ₁(pᵀM⁻¹p/2+U(q))ψ(V,ξ,η) is stated to be stationary for the Liouvillian of the printed vector field (p,−∇U,0,0,0). [ERRATUM?] For general mass the Hamiltonian field should have first component M⁻¹p; the Lean stationarity target uses this corrected field.
+> $\rho_1=\varphi_1(p^{\mathsf T}M^{-1}p/2+U(q))\psi(V,\xi,\eta)$ is stated to be stationary for the Liouvillian of the printed vector field $(p,-\nabla U,0,0,0)$. [ERRATUM?] For general mass the Hamiltonian field should have first component $M^{-1}p$; the Lean stationarity target uses this corrected field.
 
 对应原页全文逐字保留在原文JSON；摘要中的[EXTRA]与修正解释不替换原文。
 
@@ -4848,24 +4848,24 @@ def pistonHamiltonianPart_corrected (invm : Vec n) (U : Vec n × ℝ → ℝ)
 
 | 原文对象或结论 | 实际覆盖 |
 |---|---|
-| 本条数学成分 | 原印p子场、M⁻¹p修正子场及修正子场光滑复合权的局部驻定目标；不把修正场说成逐字原印场。 |
+| 本条数学成分 | 原印p子场、$M^{-1}p$修正子场及修正子场光滑复合权的局部驻定目标；不把修正场说成逐字原印场。 |
 | 对象、量词、前提及结论 | 见完整声明；补充资格在[EXTRA]列明 |
 
 ### 5. [EXTRA] 与覆盖缺口
 
 - [EXTRA] invm:Fin n→ℝ表示固定对角逆质量系数；Lean全称允许任意实系数，不要求正性，散度恒等式仍成立。
-- [EXTRA] U:(Vec n×ℝ)→ℝ为C²，φ:ℝ→ℝ和ψ:Vec 3→ℝ为C¹；U允许依赖作为冻结参数的V。
-- [EXTRA] 状态为((q,p),(V,ξ,η))，后三坐标在子场下全为零。Lean仅陈述局部通量散度零，不要求权非负、归一或可积，也不证明全局流或边界性质。
-- [ERRATUM?] 原印子场首分量p，仅单位质量等特殊情形与所印能量一致；修正版采用M⁻¹p。
+- [EXTRA] $U:(\mathrm{Vec}\,n\times\mathbb R)\to\mathbb R$为$C^2$，$\varphi:\mathbb R\to\mathbb R$和$\psi:\mathrm{Vec}\,3\to\mathbb R$为$C^1$；U允许依赖作为冻结参数的V。
+- [EXTRA] 状态为$((q,p),(V,\xi,\eta))$，后三坐标在子场下全为零。Lean仅陈述局部通量散度零，不要求权非负、归一或可积，也不证明全局流或边界性质。
+- [ERRATUM?] 原印子场首分量p，仅单位质量等特殊情形与所印能量一致；修正版采用$M^{-1}p$。
 
 ### 6. 审计结论（含网站复审结论）
 
 网站首轮：NEEDS_HUMAN。
-网站复审结论：NEEDS_HUMAN；{"overall": "原印场的一般质量疑误判NEEDS_HUMAN；Printed定义忠实、修正场及其散度恒等式签名PASS。未依据sorry否定签名。", "objects_and_domains": "n为任意自然数；Vec n=Fin n→ℝ，Phase n=Vec n×Vec n，PistonState n=Phase n×Vec 3。z任意，无V≥0限制；x.2 0是V，ξ、η为另外两冻结坐标。invm为常实对角系数；质量正性对恒等式不必要。", "declarations": [{"lean_decl": "MD.Ch08.pistonHamiltonianPart", "verdict": "PASS", "explanation": "场为((invm·p,−∇_q U(q,V)),0)，梯度按标准坐标方向fderiv定义，后三分量为零。与一般对角质量的Hamiltonian修正一致，但不能叫原印逐字场。"}, {"lean_decl": "MD.Ch08.pistonHamiltonianWeight_stationary", "verdict": "PASS", "explanation": "对任意invm、C²的U、C¹的φ及ψ和任意z，全结论为div([φ(H)ψ]F)(z)=0，其中H=Σ invm_i p_i²/2+U(q,V)，div为完整状态空间上导数线性映射的trace。F自身散度为零，F·∇H=Σ(U_qi invm_i p_i−invm_i p_i U_qi)=0，ψ只依赖冻结坐标故沿场导数零。U依赖V不会引入额外通量项，因为V方向场分量恒为零。结论不要求质量正性或权可积，亦不推出概率归一化。"}, {"lean_decl": "MD.Ch08.pistonHamiltonianPartPrinted", "verdict": "PASS", "explanation": "完整场((p,−∇_q U(q,V)),0)与原印(p,−∇U,0,0,0)逐分量一致；没有附带错误的驻定定理，故原印疑误不构成本定义忠实性的FAIL。"}, {"lean_decl": "MD.Ch08.pistonHamiltonianPart_corrected", "verdict": "PASS", "explanation": "定义展开即pistonHamiltonianPart invm U z，明确把首分量修正为对角M⁻¹p，其余力及冻结坐标正确。"}]}
+网站复审结论：NEEDS_HUMAN；{"overall": "原印场的一般质量疑误判NEEDS_HUMAN；Printed定义忠实、修正场及其散度恒等式签名PASS。未依据sorry否定签名。", "objects_and_domains": "n为任意自然数；`Vec n=Fin n→ℝ`，`Phase n=Vec n×Vec n`，`PistonState n=Phase n×Vec 3`。z任意，无$V\ge0$限制；x.2 0是V，ξ、η为另外两冻结坐标。invm为常实对角系数；质量正性对恒等式不必要。", "declarations": [{"lean_decl": "MD.Ch08.pistonHamiltonianPart", "verdict": "PASS", "explanation": "场为$((invm\cdot p,-\nabla_q U(q,V)),0)$，梯度按标准坐标方向fderiv定义，后三分量为零。与一般对角质量的Hamiltonian修正一致，但不能叫原印逐字场。"}, {"lean_decl": "MD.Ch08.pistonHamiltonianWeight_stationary", "verdict": "PASS", "explanation": "对任意invm、$C^2$的U、$C^1$的φ及ψ和任意z，全结论为$\operatorname{div}([\varphi(H)\psi]F)(z)=0$，其中$H=\sum invm_i p_i^2/2+U(q,V)$，div为完整状态空间上导数线性映射的trace。F自身散度为零，$F\cdot\nabla H=\sum(U_{qi}invm_i p_i-invm_i p_i U_{qi})=0$，ψ只依赖冻结坐标故沿场导数零。U依赖V不会引入额外通量项，因为V方向场分量恒为零。结论不要求质量正性或权可积，亦不推出概率归一化。"}, {"lean_decl": "MD.Ch08.pistonHamiltonianPartPrinted", "verdict": "PASS", "explanation": "完整场$((p,-\nabla_q U(q,V)),0)$与原印$(p,-\nabla U,0,0,0)$逐分量一致；没有附带错误的驻定定理，故原印疑误不构成本定义忠实性的FAIL。"}, {"lean_decl": "MD.Ch08.pistonHamiltonianPart_corrected", "verdict": "PASS", "explanation": "定义展开即pistonHamiltonianPart invm U z，明确把首分量修正为对角$M^{-1}p$，其余力及冻结坐标正确。"}]}
 原文版：Printed的p场忠实性PASS；一般质量下原驻定声称疑误待导师。
-修正版：M⁻¹p修正场及局部散度目标签名网站PASS；非概率平稳分布或全局保测流。
+修正版：$M^{-1}p$修正场及局部散度目标签名网站PASS；非概率平稳分布或全局保测流。
 当前：修正版/限定声明网站认可；原文疑误待导师（NEEDS_HUMAN）。
-原书疑点：[ERRATUM?] 原页先给q̇=M⁻¹p+ηq，随后驻定子场却明确印为(p,−∇U,0,0,0)。对于一般质量及所印能量，二者不一致；不可将原印首分量静默改为M⁻¹p。；[EXTRA] Lean只陈述全实坐标空间上的局部加权通量散度为零；φ、ψ可取有符号光滑权，未要求非负、归一化或V≥0上的可积性。因此不能解释为已构造概率平稳分布或全局保测流。；已目视核对原页PDF402：原印场为(p,−∇U,0,0,0)，一般质量的修正场为(M⁻¹p,−∇U,0,0,0)。原印p与本页q̇=M⁻¹p+ηq不一致，修正版仅给局部通量散度目标。
+原书疑点：[ERRATUM?] 原页先给$\dot q=M^{-1}p+\eta q$，随后驻定子场却明确印为$(p,-\nabla U,0,0,0)$。对于一般质量及所印能量，二者不一致；不可将原印首分量静默改为$M^{-1}p$。；[EXTRA] Lean只陈述全实坐标空间上的局部加权通量散度为零；φ、ψ可取有符号光滑权，未要求非负、归一化或$V\ge0$上的可积性。因此不能解释为已构造概率平稳分布或全局保测流。；已目视核对原页PDF402：原印场为$(p,-\nabla U,0,0,0)$，一般质量的修正场为$(M^{-1}p,-\nabla U,0,0,0)$。原印p与本页$\dot q=M^{-1}p+\eta q$不一致，修正版仅给局部通量散度目标。
 32号本轮已目视核对原页；记录见blueprint/ch08/closeout32/PDF_VISUAL_CHECKS.json；原书PDF页402。
 
 ### 7. 状态与证明位置
@@ -4883,7 +4883,7 @@ def pistonHamiltonianPart_corrected (invm : Vec n) (U : Vec n × ℝ → ℝ)
 
 ### 1. 原文陈述
 
-> The book prints ρ₂=exp(−β[pᵀM⁻¹p+μ_Tξ²/2])ψ₂(q,η,V) for ṗ=−ξp, ξ̇=(pᵀM⁻¹p−N_dk_BT)/μ_T.
+> The book prints $\rho_2=\exp(-\beta[p^{\mathsf T}M^{-1}p+\mu_T\xi^2/2])\psi_2(q,\eta,V)$ for $\dot p=-\xi p$, $\dot\xi=(p^{\mathsf T}M^{-1}p-N_d k_B T)/\mu_T$.
 
 对应原页全文逐字保留在原文JSON；摘要中的[EXTRA]与修正解释不替换原文。
 
@@ -4911,21 +4911,21 @@ theorem pistonRho2_stationary_corrected (invm : Vec n) (β QT : ℝ)
 
 | 原文对象或结论 | 实际覆盖 |
 |---|---|
-| 本条数学成分 | 原印/修正权重及ψ₂=1时的实际子场驻定目标。 |
+| 本条数学成分 | 原印/修正权重及$\psi_2=1$时的实际子场驻定目标。 |
 | 对象、量词、前提及结论 | 见完整声明；补充资格在[EXTRA]列明 |
 
 ### 5. [EXTRA] 与覆盖缺口
 
-- 仅取ψ₂=1的局部权重等式；任意冻结变量乘子和可归一概率还需额外资格，列覆盖缺口。
+- 仅取$\psi_2=1$的局部权重等式；任意冻结变量乘子和可归一概率还需额外资格，列覆盖缺口。
 
 ### 6. 审计结论（含网站复审结论）
 
 网站首轮：NEEDS_HUMAN。
 网站复审结论：本条未进入本轮复审；保留首轮NEEDS_HUMAN意见。
 原文版：Printed忠实性PASS；原印动能缺1/2。
-修正版：原送审恢复1/2的_corrected及局部驻定签名PASS，ψ₂=1。
+修正版：原送审恢复1/2的_corrected及局部驻定签名PASS，$\psi_2=1$。
 当前：原书疑误待导师；原送审正确版本分项保留。
-原书疑点：已目视核对原页PDF402：ρ₂动能项缺1/2；所印反馈仍为pᵀM⁻¹p−N_dk_BT。原印权重保留，工作修正采用标准动能的一半。；保留Printed定义和原文；[ERRATUM?]记录动能系数缺1/2，继续将_corrected与原印版分开。
+原书疑点：已目视核对原页PDF402：$\rho_2$动能项缺1/2；所印反馈仍为$p^{\mathsf T}M^{-1}p-N_d k_B T$。原印权重保留，工作修正采用标准动能的一半。；保留Printed定义和原文；[ERRATUM?]记录动能系数缺1/2，继续将_corrected与原印版分开。
 原页核对历史证据见blueprint/ch08/closeout31/PDF_VISUAL_CHECKS.json及blueprint/ch08/source_page_checks.json；原书PDF页402。本轮不虚称重新目视。
 
 ### 7. 状态与证明位置
@@ -4943,7 +4943,7 @@ theorem pistonRho2_stationary_corrected (invm : Vec n) (β QT : ℝ)
 
 ### 1. 原文陈述
 
-> −q·∇qψ+p·∇pψ−ψ−V∂Vψ+(βVΠ−βPV+1)ψ=0, solved by ψ∝exp(−β(H+PV)). (8.74).
+> $-q\cdot\nabla_q\psi+p\cdot\nabla_p\psi-\psi-V\partial_V\psi+(\beta V\Pi-\beta PV+1)\psi=0$, solved by $\psi\propto\exp(-\beta(H+PV))$. (8.74).
 
 对应原页全文逐字保留在原文JSON；摘要中的[EXTRA]与修正解释不替换原文。
 
@@ -5001,7 +5001,7 @@ theorem pistonReduced_boltzmann (invm : Vec n) (U : Vec n × ℝ → ℝ) (β P 
 
 ### 1. 原文陈述
 
-> Adding the two independent OU thermostats to ξ,η preserves the candidate weight exp[−β(H+PV+μ_Tξ²/2+μ_Pη²/2)].
+> Adding the two independent OU thermostats to $\xi,\eta$ preserves the candidate weight $\exp[-\beta(H+PV+\mu_T\xi^2/2+\mu_P\eta^2/2)]$.
 
 对应原页全文逐字保留在原文JSON；摘要中的[EXTRA]与修正解释不替换原文。
 
@@ -5065,7 +5065,7 @@ theorem pistonWeight_stationary (invm : Vec n) (U : Vec n × ℝ → ℝ)
 
 ### 1. 原文陈述
 
-> The printed algorithm interleaves feedback half-updates, exponentially damped momentum kicks, exponential position/volume drifts, feedback recomputation and final independent OU steps. ψ(α,t)=(e^{αt}−1)/α, extended by t at α=0.
+> The printed algorithm interleaves feedback half-updates, exponentially damped momentum kicks, exponential position/volume drifts, feedback recomputation and final independent OU steps. $\psi(\alpha,t)=(e^{\alpha t}-1)/\alpha$, extended by $t$ at $\alpha=0$.
 
 对应原页全文逐字保留在原文JSON；摘要中的[EXTRA]与修正解释不替换原文。
 
@@ -5114,7 +5114,7 @@ theorem pistonVolume_positive (V η h : ℝ) (hV : 0 < V) : 0 < Real.exp (η*h)*
 
 ### 5. [EXTRA] 与覆盖缺口
 
-- 正β、QT、QP、质量、体积及h≥0是物理有效域；R取独立标准二维正态且跨步独立，参照independentWiener/standardNormalSequence所列资格。
+- 正β、QT、QP、质量、体积及$h\ge0$是物理有效域；R取独立标准二维正态且跨步独立，参照independentWiener/standardNormalSequence所列资格。
 - 零指数分支按原页连续延拓；周期位置在每次q/V更新后按当前盒长映射。只定义完整算法，不证明二阶、可逆或不变分布精度。
 
 ### 6. 审计结论（含网站复审结论）
@@ -5146,7 +5146,7 @@ theorem pistonVolume_positive (V η h : ℝ) (hV : 0 < V) : 0 < Real.exp (η*h)*
 
 ### 1. 原文陈述
 
-> For cell matrix h=[a b c], V=det(h)=a·(b×c), qᵢ=hq̄ᵢ, G=hᵀh, L=(1/2)Σmᵢq̄̇ᵢᵀGq̄̇ᵢ−Ū(q̄)+(μ/2)Tr(ḣᵀḣ)−PV.
+> For cell matrix $h=[a\ b\ c]$, $V=\det(h)=a\cdot(b\times c)$, $q_i=h\bar q_i$, $G=h^{\mathsf T}h$, $L=(1/2)\sum m_i\dot{\bar q}_i^{\mathsf T}G\dot{\bar q}_i-\bar U(\bar q)+(\mu/2)\operatorname{Tr}(\dot h^{\mathsf T}\dot h)-PV$.
 
 对应原页全文逐字保留在原文JSON；摘要中的[EXTRA]与修正解释不替换原文。
 
@@ -5214,7 +5214,7 @@ def cellQualification {N : ℕ} (m : Fin N → ℝ) (Q : ℝ)
 
 ### 1. 原文陈述
 
-> With central conservative forces ΣᵢFᵢ=0, Nosé dynamics gives d p_tot/dt=−ξ p_tot. Zero total momentum is formally invariant.
+> With central conservative forces $\sum_iF_i=0$, Nosé dynamics gives $d p_{tot}/dt=-\xi p_{tot}$. Zero total momentum is formally invariant.
 
 对应原页全文逐字保留在原文JSON；摘要中的[EXTRA]与修正解释不替换原文。
 
@@ -5275,7 +5275,7 @@ theorem noseTotalForce_zero {N d : ℕ} (F p : ParticleConfig N d) (ξ : ℝ)
 
 ### 1. 原文陈述
 
-> rᵢⱼ=|qᵢ−qⱼ|, eᵢⱼ=(qᵢ−qⱼ)/rᵢⱼ. Fᶜᵢⱼ=α(1−rᵢⱼ/r_c)eᵢⱼ for rᵢⱼ<r_c, zero otherwise; φ_DPD=(αr_c/2)(1−r/r_c)² below cutoff, U=Σᵢ<ⱼφ(rᵢⱼ). (8.80)–(8.84).
+> $r_{ij}=\lvert q_i-q_j\rvert$, $e_{ij}=(q_i-q_j)/r_{ij}$. $F^c_{ij}=\alpha(1-r_{ij}/r_c)e_{ij}$ for $r_{ij}<r_c$, zero otherwise; $\varphi_{DPD}=(\alpha r_c/2)(1-r/r_c)^2$ below cutoff, $U=\sum_{i<j}\varphi(r_{ij})$. (8.80)–(8.84).
 
 对应原页全文逐字保留在原文JSON；摘要中的[EXTRA]与修正解释不替换原文。
 
@@ -5315,7 +5315,7 @@ theorem dpdConservative_gradient {N d : ℕ} (α rc : ℝ) (hα : 0 ≤ α) (hrc
 
 ### 5. [EXTRA] 与覆盖缺口
 
-- d维Euclidean距离由坐标平方和开方，避免Pi最大范数；只在非碰撞且离开截断接缝的有效域声明梯度关系。N、d为物理正整数，mᵢ>0在动力学资格另列。
+- d维Euclidean距离由坐标平方和开方，避免Pi最大范数；只在非碰撞且离开截断接缝的有效域声明梯度关系。N、d为物理正整数，$m_i>0$在动力学资格另列。
 
 ### 6. 审计结论（含网站复审结论）
 
@@ -5346,7 +5346,7 @@ theorem dpdConservative_gradient {N d : ℕ} (α rc : ℝ) (hα : 0 ≤ α) (hrc
 
 ### 1. 原文陈述
 
-> Fᴰᵢⱼ=−γ ωᴰ(rᵢⱼ)(eᵢⱼ·vᵢⱼ)eᵢⱼ, Fᴿᵢⱼ=σ ωᴿ(rᵢⱼ)θᵢⱼeᵢⱼ, ωᴿ(r)=1−r/r_c below cutoff. vᵢⱼ=pᵢ/mᵢ−pⱼ/mⱼ. (8.85)–(8.87).
+> $F^D_{ij}=-\gamma\omega^D(r_{ij})(e_{ij}\cdot v_{ij})e_{ij}$, $F^R_{ij}=\sigma\omega^R(r_{ij})\theta_{ij}e_{ij}$, $\omega^R(r)=1-r/r_c$ below cutoff. $v_{ij}=p_i/m_i-p_j/m_j$. (8.85)–(8.87).
 
 对应原页全文逐字保留在原文JSON；摘要中的[EXTRA]与修正解释不替换原文。
 
@@ -5385,7 +5385,7 @@ def dpdNoise {N d K : ℕ} (pairs : Fin K → Fin N × Fin N) (σ : ℝ) (wR : �
 
 ### 5. [EXTRA] 与覆盖缺口
 
-- 白噪声θᵢⱼ不作为逐点函数使用；随机力的实际意义是下一条无序对独立Wiener驱动、双方相反的扩散向量。总化r=0只作辅助，在动力学中要求非碰撞。
+- 白噪声$\theta_{ij}$不作为逐点函数使用；随机力的实际意义是下一条无序对独立Wiener驱动、双方相反的扩散向量。总化$r=0$只作辅助，在动力学中要求非碰撞。
 
 ### 6. 审计结论（含网站复审结论）
 
@@ -5415,7 +5415,7 @@ def dpdNoise {N d K : ℕ} (pairs : Fin K → Fin N × Fin N) (σ : ℝ) (wR : �
 
 ### 1. 原文陈述
 
-> θᵢⱼ=θⱼᵢ; E θᵢⱼ=0 and E[θᵢⱼ(t)θₖₗ(t′)]=(δᵢₖδⱼₗ+δᵢₗδⱼₖ)δ(t−t′). Distinct unordered pairs are independent. (8.88).
+> $\theta_{ij}=\theta_{ji}$; $E\theta_{ij}=0$ and $E[\theta_{ij}(t)\theta_{kl}(t')]=(\delta_{ik}\delta_{jl}+\delta_{il}\delta_{jk})\delta(t-t')$. Distinct unordered pairs are independent. (8.88).
 
 对应原页全文逐字保留在原文JSON；摘要中的[EXTRA]与修正解释不替换原文。
 
@@ -5454,7 +5454,7 @@ theorem pairNoiseIncrement_covariance {N K : ℕ} (P : Measure Ω)
 
 ### 5. [EXTRA] 与覆盖缺口
 
-- 只对无序对使用独立标准Wiener；Wᵢⱼ=Wⱼᵢ由同一坐标实现，不能把有序对全部设独立。Dirac白噪声公式通过有限时间增量协方差表达。
+- 只对无序对使用独立标准Wiener；$W_{ij}=W_{ji}$由同一坐标实现，不能把有序对全部设独立。Dirac白噪声公式通过有限时间增量协方差表达。
 
 ### 6. 审计结论（含网站复审结论）
 
@@ -5481,7 +5481,7 @@ theorem pairNoiseIncrement_covariance {N K : ℕ} (P : Measure Ω)
 
 ### 1. 原文陈述
 
-> dq=M⁻¹pdt, dp=−∇Udt−Δ(q)pdt+Σ(q)dW. (8.90).
+> $dq=M^{-1}p\,dt$, $dp=-\nabla U\,dt-\Delta(q)p\,dt+\Sigma(q)dW$. (8.90).
 
 对应原页全文逐字保留在原文JSON；摘要中的[EXTRA]与修正解释不替换原文。
 
@@ -5530,9 +5530,9 @@ def isDPDSolution {N d K : ℕ} (m : Fin N → ℝ) (α rc γ σ θ : ℝ) (wD w
 
 ### 5. [EXTRA] 与覆盖缺口
 
-- 实际多维独立Wiener、共同自然历史适应、联合可测、路径连续、漂移可积、所有网格左和及积分代表L²均明示。
-- 选择强L²、非碰撞解类；不声称与所有弱解等价，也不建立SDE存在唯一或Markov半群。
-- 覆盖缺口：选择强L²、非碰撞解类；不声称与所有弱解等价，也不建立SDE存在唯一或Markov半群。
+- 实际多维独立Wiener、共同自然历史适应、联合可测、路径连续、漂移可积、所有网格左和及积分代表$L^2$均明示。
+- 选择强$L^2$、非碰撞解类；不声称与所有弱解等价，也不建立SDE存在唯一或Markov半群。
+- 覆盖缺口：选择强$L^2$、非碰撞解类；不声称与所有弱解等价，也不建立SDE存在唯一或Markov半群。
 
 ### 6. 审计结论（含网站复审结论）
 
@@ -5559,7 +5559,7 @@ def isDPDSolution {N d K : ℕ} (m : Fin N → ℝ) (α rc γ σ θ : ℝ) (wD w
 
 ### 1. 原文陈述
 
-> ωᴰ=(ωᴿ)², σ²=2γk_BT. The canonical density is restricted to fixed total momentum π by δ(Σp−π). (8.89).
+> $\omega^D=(\omega^R)^2$, $\sigma^2=2\gamma k_B T$. The canonical density is restricted to fixed total momentum $\pi$ by $\delta(\sum p-\pi)$. (8.89).
 
 对应原页全文逐字保留在原文JSON；摘要中的[EXTRA]与修正解释不替换原文。
 
@@ -5626,7 +5626,7 @@ def momentumCanonicalQualification {N d : ℕ} (ν : Measure (ParticlePhase N d)
 
 ### 1. 原文陈述
 
-> For dp=−∇Udt−Δ(q)pdt+Σ(q)dW, the book gives Δ=M⁻¹ΣΣᵀ/(2k_BT).
+> For $dp=-\nabla U\,dt-\Delta(q)p\,dt+\Sigma(q)dW$, the book gives $\Delta=M^{-1}\Sigma\Sigma^{\mathsf T}/(2k_B T)$.
 
 对应原页全文逐字保留在原文JSON；摘要中的[EXTRA]与修正解释不替换原文。
 
@@ -5658,17 +5658,17 @@ theorem dpdMassOrder_counterexample :
 
 ### 5. [EXTRA] 与覆盖缺口
 
-- M应正定、θ>0；本条记录两个矩阵关系目标与不交换反例，不声称由形式关系自动得到不变概率。
-- 覆盖缺口：M应正定、θ>0；本条记录两个矩阵关系目标与不交换反例，不声称由形式关系自动得到不变概率。
+- M应正定、$\theta>0$；本条记录两个矩阵关系目标与不交换反例，不声称由形式关系自动得到不变概率。
+- 覆盖缺口：M应正定、$\theta>0$；本条记录两个矩阵关系目标与不交换反例，不声称由形式关系自动得到不变概率。
 
 ### 6. 审计结论（含网站复审结论）
 
 网站首轮：NEEDS_HUMAN。
 网站复审结论：本条未进入本轮复审；保留首轮NEEDS_HUMAN意见。
 原文版：Printed忠实性PASS；一般不等质量的乘法次序错误。
-修正版：原送审右乘M⁻¹修正版与不交换反例PASS。
+修正版：原送审右乘$M^{-1}$修正版与不交换反例PASS。
 当前：原书疑误待导师；原送审正确版本分项保留。
-原书疑点：已目视核对原页PDF410：对动量漂移−Δp、动量协方差k_BT M，应为Δ=ΣΣᵀM⁻¹/(2k_BT)；原印左乘仅在相应矩阵可交换（如等质量）时一致。两粒子不等质量的矩阵反例已证。；保留Printed等式；[ERRATUM?]记录一般质量情形改为ΣΣᵀM⁻¹/(2kBT)，标注等质量或交换条件下两者相同。
+原书疑点：已目视核对原页PDF410：对动量漂移$-\Delta p$、动量协方差$k_B TM$，应为$\Delta=\Sigma\Sigma^{\mathsf T}M^{-1}/(2k_B T)$；原印左乘仅在相应矩阵可交换（如等质量）时一致。两粒子不等质量的矩阵反例已证。；保留Printed等式；[ERRATUM?]记录一般质量情形改为$\Sigma\Sigma^{\mathsf T}M^{-1}/(2k_B T)$，标注等质量或交换条件下两者相同。
 原页核对历史证据见blueprint/ch08/closeout31/PDF_VISUAL_CHECKS.json及blueprint/ch08/source_page_checks.json；原书PDF页410。本轮不虚称重新目视。
 
 ### 7. 状态与证明位置
@@ -5685,7 +5685,7 @@ theorem dpdMassOrder_counterexample :
 
 ### 1. 原文陈述
 
-> p½=p+hFᶜ(q)/2+hFᴰ(q,p)/2+√h Fᴿ(q,Rold)/2; q'=q+hM⁻¹p½; p'=p½+hFᶜ(q')/2+hFᴰ(q',p½)/2+√h Fᴿ(q',Rnew)/2. Reuse Rnew next step. (8.91)–(8.93).
+> $p_{1/2}=p+hF^c(q)/2+hF^D(q,p)/2+\sqrt h F^R(q,R_{old})/2$; $q'=q+hM^{-1}p_{1/2}$; $p'=p_{1/2}+hF^c(q')/2+hF^D(q',p_{1/2})/2+\sqrt h F^R(q',R_{new})/2$. Reuse $R_{new}$ next step. (8.91)–(8.93).
 
 对应原页全文逐字保留在原文JSON；摘要中的[EXTRA]与修正解释不替换原文。
 
@@ -5726,7 +5726,7 @@ theorem dpdVerlet_reuse {N d K : ℕ} (pairs : Fin K → Fin N × Fin N) (m : Fi
 
 ### 5. [EXTRA] 与覆盖缺口
 
-- 物理用法要求mᵢ>0、h≥0、无序对枚举、每步Rnew独立标准正态并与历史独立；本条确定性给定输入的扩展状态映射。
+- 物理用法要求$m_i>0$、$h\ge0$、无序对枚举、每步$R_{new}$独立标准正态并与历史独立；本条确定性给定输入的扩展状态映射。
 - 尚未证明书中预期的一阶弱收敛；未把随机输入映射称为对称确定性流。
 - 覆盖缺口：尚未证明书中预期的一阶弱收敛；未把随机输入映射称为对称确定性流。
 
@@ -5754,7 +5754,7 @@ theorem dpdVerlet_reuse {N d K : ℕ} (pairs : Fin K → Fin N × Fin N) (m : Fi
 
 ### 1. 原文陈述
 
-> The DPD system splits into A: free transport, B: conservative force, O: dissipative plus pair noise. L_DPD=L_A+L_B+L_O. (8.94)–(8.98).
+> The DPD system splits into $A$: free transport, $B$: conservative force, $O$: dissipative plus pair noise. $L_{DPD}=L_A+L_B+L_O$. (8.94)–(8.98).
 
 对应原页全文逐字保留在原文JSON；摘要中的[EXTRA]与修正解释不替换原文。
 
@@ -5827,7 +5827,7 @@ theorem dpdDrift_split {N d : ℕ} (m : Fin N → ℝ) (α rc γ : ℝ) (wD : �
 
 ### 1. 原文陈述
 
-> (8.100) prints L_Oij=[−γωᴰu+(σ²/2)(ωᴿ)² e·(∂pi−∂pj)] e·∂pi for each unordered pair i<j.
+> (8.100) prints $L_{Oij}=[-\gamma\omega^D u+(\sigma^2/2)(\omega^R)^2e\cdot(\partial_{p_i}-\partial_{p_j})]e\cdot\partial_{p_i}$ for each unordered pair $i<j$.
 
 对应原页全文逐字保留在原文JSON；摘要中的[EXTRA]与修正解释不替换原文。
 
@@ -5867,10 +5867,10 @@ def dpdPairGenerator_corrected {N d : ℕ} (i j : Fin N) (e : Vec d) (m : Fin N 
 
 网站首轮：NEEDS_HUMAN。
 网站复审结论：本条未进入本轮复审；保留首轮NEEDS_HUMAN意见。
-原文版：Printed忠实性PASS；单对解释下最外层∂pi不保总动量。
+原文版：Printed忠实性PASS；单对解释下最外层$\partial_{p_i}$不保总动量。
 修正版：原送审改用Dij的_corrected签名PASS；不据此否定完整有序双和。
 当前：原书疑误待导师；原送审正确版本分项保留。
-原书疑点：已目视核对原页PDF413：单个无序对算子的最外层只对pᵢ求导，会对总动量产生非零漂移；对两粒子成对守恒更新应将最外层改为e·(∂pᵢ−∂pⱼ)。完整有序双和(8.97)另含反方向项，不能直接同样判错。
+原书疑点：已目视核对原页PDF413：单个无序对算子的最外层只对$p_i$求导，会对总动量产生非零漂移；对两粒子成对守恒更新应将最外层改为$e\cdot(\partial_{p_i}-\partial_{p_j})$。完整有序双和(8.97)另含反方向项，不能直接同样判错。
 原页核对历史证据见blueprint/ch08/closeout31/PDF_VISUAL_CHECKS.json及blueprint/ch08/source_page_checks.json；原书PDF页413。本轮不虚称重新目视。
 
 ### 7. 状态与证明位置
@@ -5887,7 +5887,7 @@ def dpdPairGenerator_corrected {N d : ℕ} (i j : Fin N) (e : Vec d) (m : Fin N 
 
 ### 1. 原文陈述
 
-> Shardlow: O(h) B(h/2) A(h) B(h/2); S=B+O and Trotter: S(h/2) A(h) S(h/2). Pair products use the printed fixed unordered-pair order. (8.99),(8.101),(8.102).
+> Shardlow: $O(h)B(h/2)A(h)B(h/2)$; $S=B+O$ and Trotter: $S(h/2)A(h)S(h/2)$. Pair products use the printed fixed unordered-pair order. (8.99),(8.101),(8.102).
 
 对应原页全文逐字保留在原文JSON；摘要中的[EXTRA]与修正解释不替换原文。
 
@@ -5946,7 +5946,7 @@ def dpdSGenerator {N d K : ℕ} (pairs : Fin K → Fin N × Fin N) (m : Fin N �
 
 ### 1. 原文陈述
 
-> mred=mi mj/(mi+mj); mred du=Fdt−γωᴰu dt+σωᴿdW. a=γωᴰ/mred. u(t)=F/(a mred)+exp(−at)(u0−F/(a mred))+√[θ(1−exp(−2at))/mred]R. Δu=u(t)−u0; pi+=mred Δu e, pj−=mred Δu e. (8.103)–(8.107).
+> $m_{red}=m_i m_j/(m_i+m_j)$; $m_{red}\,du=F\,dt-\gamma\omega^D u\,dt+\sigma\omega^R dW$. $a=\gamma\omega^D/m_{red}$. $u(t)=F/(a m_{red})+\exp(-at)(u_0-F/(a m_{red}))+\sqrt{\theta(1-\exp(-2at))/m_{red}}R$. $\Delta u=u(t)-u_0$; $p_i\mathrel{+}=m_{red}\Delta u\,e$, $p_j\mathrel{-}=m_{red}\Delta u\,e$. (8.103)–(8.107).
 
 对应原页全文逐字保留在原文JSON；摘要中的[EXTRA]与修正解释不替换原文。
 
@@ -5983,9 +5983,9 @@ theorem dpdPairMomentumStep_conserves {N d : ℕ} (i j : Fin N) (e : Vec d) (mr 
 
 ### 5. [EXTRA] 与覆盖缺口
 
-- 原印转移律要求mr>0、a>0、θ>0、t≥0及R独立标准正态；F为冻结配置的成对保守力标量，FDT用于方差。
+- 原印转移律要求$mr>0$、$a>0$、$\theta>0$、$t\ge0$及R独立标准正态；F为冻结配置的成对保守力标量，FDT用于方差。
 - 单对精确分布律及其随机积分推导未证明；已证明质量正性、零率值与逐对总动量代数守恒。
-- [EXTRA] 零率分支仅用于涨落耗散使噪声同时退化的情形；不用于任意独立非零扩散的零漂移OU。物理转移需正约化质量、正温度、a,t≥0及独立标准正态R。
+- [EXTRA] 零率分支仅用于涨落耗散使噪声同时退化的情形；不用于任意独立非零扩散的零漂移OU。物理转移需正约化质量、正温度、$a,t\ge0$及独立标准正态R。
 - 覆盖缺口：单对精确分布律及其随机积分推导未证明；已证明质量正性、零率值与逐对总动量代数守恒。
 
 ### 6. 审计结论（含网站复审结论）
@@ -5995,7 +5995,7 @@ theorem dpdPairMomentumStep_conserves {N d : ℕ} (i j : Fin N) (e : Vec d) (mr 
 原文版：Printed忠实性PASS；零率原式通常未定义。
 修正版：原送审正率改写与FDT噪声同时退化的零率_corrected签名PASS。
 当前：原书疑误待导师；原送审正确版本分项保留。
-原书疑点：已目视核对原页PDF414：原印F/(amred)须a>0；γ=0或截断外ωᴰ=0时需用积分系数连续延拓。修正版显式定义a=0为自由加速，噪声退化为零。
+原书疑点：已目视核对原页PDF414：原印$F/(am_{red})$须$a>0$；$\gamma=0$或截断外$\omega^D=0$时需用积分系数连续延拓。修正版显式定义$a=0$为自由加速，噪声退化为零。
 原页核对历史证据见blueprint/ch08/closeout31/PDF_VISUAL_CHECKS.json及blueprint/ch08/source_page_checks.json；原书PDF页414。本轮不虚称重新目视。
 
 ### 7. 状态与证明位置
@@ -6016,7 +6016,7 @@ theorem dpdPairMomentumStep_conserves {N d : ℕ} (i j : Fin N) (e : Vec d) (mr 
 
 ### 1. 原文陈述
 
-> dqᵢ=pᵢdt/mᵢ, dpᵢ=Fᶜᵢdt+ξ F̃ᴰᵢdt, dξ=Gdt; G=Q⁻¹Σᵢ<ⱼωᴰ(rᵢⱼ)[(vᵢⱼ·eᵢⱼ)²−θ/mred]. (8.108),(8.109).
+> $dq_i=p_i\,dt/m_i$, $dp_i=F^c_i\,dt+\xi\tilde F^D_i\,dt$, $d\xi=G\,dt$; $G=Q^{-1}\sum_{i<j}\omega^D(r_{ij})[(v_{ij}\cdot e_{ij})^2-\theta/m_{red}]$. (8.108),(8.109).
 
 对应原页全文逐字保留在原文JSON；摘要中的[EXTRA]与修正解释不替换原文。
 
@@ -6052,7 +6052,7 @@ def isPNHSolution {N d : ℕ} (m : Fin N → ℝ) (α rc θ Q : ℝ) (wD : ℝ �
 
 ### 5. [EXTRA] 与覆盖缺口
 
-- Q为原文μ，F̃ᴰ是γ=1的相对速度耗散；排除i=j，物理轨道另需非碰撞且ωᴰ≥0。
+- Q为原文μ，$\tilde F^D$是$\gamma=1$的相对速度耗散；排除$i=j$，物理轨道另需非碰撞且$\omega^D\ge0$。
 - 只落盘实际ODE规格；Galilean不变性、总动量沿轨道守恒、存在唯一性及遍历性列缺口。
 
 ### 6. 审计结论（含网站复审结论）
@@ -6080,7 +6080,7 @@ def isPNHSolution {N d : ℕ} (m : Fin N → ℝ) (α rc θ Q : ℝ) (wD : ℝ �
 
 ### 1. 原文陈述
 
-> ρ̂β=Ẑ⁻¹exp(−βH(q,p))exp(−βQξ²/2), on accessible fixed-momentum space. (8.110).
+> $\hat\rho_\beta=\hat Z^{-1}\exp(-\beta H(q,p))\exp(-\beta Q\xi^2/2)$, on accessible fixed-momentum space. (8.110).
 
 对应原页全文逐字保留在原文JSON；摘要中的[EXTRA]与修正解释不替换原文。
 
@@ -6140,7 +6140,7 @@ def pairwiseCanonicalQualification {N d : ℕ} (ν : Measure (PNHLState N d))
 
 ### 1. 原文陈述
 
-> PNHL adds dξ=(G−γ̂ξ)dt+σ̂dW, σ̂²=2γ̂θ/Q, to PNH. W is standard Wiener. (8.111),(8.112).
+> PNHL adds $d\xi=(G-\hat\gamma\xi)dt+\hat\sigma\,dW$, $\hat\sigma^2=2\hat\gamma\theta/Q$, to PNH. $W$ is standard Wiener. (8.111),(8.112).
 
 对应原页全文逐字保留在原文JSON；摘要中的[EXTRA]与修正解释不替换原文。
 
@@ -6201,7 +6201,7 @@ def isPNHLSolution {N d : ℕ} (m : Fin N → ℝ) (α rc θ Q γ σ : ℝ) (wD 
 
 ### 1. 原文陈述
 
-> PNHL splits A,B,C,D,O, with C:ξF̃ᴰ, D:G∂ξ, O:−γ̂ξ∂ξ+σ̂²∂ξ²/2. LPNHL=LA+LB+LC+LD+LO. (8.113),(8.114).
+> PNHL splits $A,B,C,D,O$, with $C:\xi\tilde F^D$, $D:G\partial_\xi$, $O:-\hat\gamma\xi\partial_\xi+\hat\sigma^2\partial_\xi^2/2$. $L_{PNHL}=L_A+L_B+L_C+L_D+L_O$. (8.113),(8.114).
 
 对应原页全文逐字保留在原文JSON；摘要中的[EXTRA]与修正解释不替换原文。
 
@@ -6280,7 +6280,7 @@ theorem pairwiseWeight_localStationary {N d : ℕ} (m : Fin N → ℝ) (α rc θ
 
 ### 1. 原文陈述
 
-> PNHL-S: A½B½C½D½OD½C½B½A½; PNHL-N: A½B½C½D½OD½C½A½B½.
+> PNHL-S: $A^{1/2}B^{1/2}C^{1/2}D^{1/2}OD^{1/2}C^{1/2}B^{1/2}A^{1/2}$; PNHL-N: $A^{1/2}B^{1/2}C^{1/2}D^{1/2}OD^{1/2}C^{1/2}A^{1/2}B^{1/2}$.
 
 对应原页全文逐字保留在原文JSON；摘要中的[EXTRA]与修正解释不替换原文。
 
@@ -6322,7 +6322,7 @@ def pnhlNComposition {E : Type*} (A B C D O : ℝ → E → E) (h : ℝ) : E →
 
 ### 5. [EXTRA] 与覆盖缺口
 
-- O需θ,Q>0、γ,h≥0及R独立标准正态；A/B/D给实际子步。C仅给逐对精确更新，全C需有序逐对近似，未冒称精确全流。
+- O需$\theta,Q>0$、$\gamma,h\ge0$及R独立标准正态；A/B/D给实际子步。C仅给逐对精确更新，全C需有序逐对近似，未冒称精确全流。
 - 两组合保留原印因子顺序；不证明全方法弱阶、不变分布误差或非对称方法更优的经验结论。
 
 ### 6. 审计结论（含网站复审结论）
@@ -6353,7 +6353,7 @@ def pnhlNComposition {E : Type*} (A B C D O : ℝ → E → E) (h : ℝ) : E →
 
 ### 1. 原文陈述
 
-> Ṫ(t)=γ_T(Ttarget−T(t)), γ_T>0. After Verlet, p←√[1+γ_Th(N_d k_BT/‖p‖²−1)]p.
+> $\dot T(t)=\gamma_T(T_{target}-T(t))$, $\gamma_T>0$. After Verlet, $p\leftarrow\sqrt{1+\gamma_T h(N_d k_B T/\lVert p\rVert^2-1)}p$.
 
 对应原页全文逐字保留在原文JSON；摘要中的[EXTRA]与修正解释不替换原文。
 
@@ -6489,7 +6489,7 @@ theorem totalMomentum_gaussian {N d : ℕ} (P : Measure Ω) [IsProbabilityMeasur
 
 ### 1. 原文陈述
 
-> With central forces and an NHL thermostat, total momentum obeys Ṗ=−ξP, so each component keeps the sign of its initial value.
+> With central forces and an NHL thermostat, total momentum obeys $\dot P=-\xi P$, so each component keeps the sign of its initial value.
 
 对应原页全文逐字保留在原文JSON；摘要中的[EXTRA]与修正解释不替换原文。
 

@@ -9,9 +9,9 @@
 | 状态 | 条数 |
 | --- | ---: |
 | proved | 158 |
-| statement_only | 35 |
+| statement\_only | 35 |
 | weakened | 13 |
-| not_formalizable_now | 1 |
+| not\_formalizable\_now | 1 |
 | 合计 | 207 |
 
 proved中有106条notation/定义、52条数学结论；完整章节交付包含未证明的忠实陈述。
@@ -26,55 +26,55 @@ proved中有106条notation/定义、52条数学结论；完整章节交付包含
 
 全部待证或有差异的条目：
 
-- CH01-016（§1.1.1，p.8，statement_only）：The Morse potential has its minimum at r_e and well depth D.
-- CH01-022（§1.1.1，p.11，statement_only）：The Lennard-Jones potential tends to positive infinity as r tends to zero.
-- CH01-025（§1.1.2，p.12，statement_only）：Coulomb forces attract opposite charges and repel charges of the same sign.
+- CH01-016（§1.1.1，p.8，statement\_only）：The Morse potential has its minimum at r\_e and well depth D.
+- CH01-022（§1.1.1，p.11，statement\_only）：The Lennard-Jones potential tends to positive infinity as r tends to zero.
+- CH01-025（§1.1.2，p.12，statement\_only）：Coulomb forces attract opposite charges and repel charges of the same sign.
 - CH01-031（§1.1.2，p.14，weakened）：Stillinger-Weber models contain two-body and three-body terms favoring tetrahedral structures.
 - CH01-032（§1.1.2，p.14，weakened）：Embedded Atom potentials include local electron-cloud density contributed by neighbors.
 - CH01-033（§1.1.2，p.14，weakened）：Bond Order potentials depend on the local bonding structure.
 - CH01-034（§1.1.2，p.15，weakened）：United-atom models group atoms into pseudoatoms and sum their effective interactions.
-- CH01-052（§1.2，p.18，statement_only）：Without constraints N_d=N_c=3N; r independent constraints give N_d=N_c-r.
-- CH01-058（§1.2，p.19，statement_only）：Pair forces obey F_ij=-F_ji and the sum of internal forces vanishes.
-- CH01-067（§1.2，p.20，statement_only）：Global scalar solutions require concatenating local descriptions; degenerate turning points need separate treatment.
-- CH01-069（§1.2，p.21，statement_only）：The force for a radial pair potential follows by the chain rule.
-- CH01-071（§1.3，p.22，statement_only）：The principle of least action is a variational characterization of the equations.
+- CH01-052（§1.2，p.18，statement\_only）：Without constraints N\_d=N\_c=3N; r independent constraints give N\_d=N\_c-r.
+- CH01-058（§1.2，p.19，statement\_only）：Pair forces obey F\_ij=-F\_ji and the sum of internal forces vanishes.
+- CH01-067（§1.2，p.20，statement\_only）：Global scalar solutions require concatenating local descriptions; degenerate turning points need separate treatment.
+- CH01-069（§1.2，p.21，statement\_only）：The force for a radial pair potential follows by the chain rule.
+- CH01-071（§1.3，p.22，statement\_only）：The principle of least action is a variational characterization of the equations.
 - CH01-080（§1.4，p.24，weakened）：For a mechanical quadratic L the maximizing velocity is M(q)^(-1)p.
 - CH01-081（§1.4，p.24，weakened）：p=partial L/partial qdot=M(q) qdot.
 - CH01-083（§1.4，p.24，weakened）：The mechanical Hamiltonian is the Legendre supremum of L in velocity.
-- CH01-086（§1.4，p.25，statement_only）：The Hamiltonian and Lagrangian formulations are interchangeable for regular mechanical models.
-- CH01-088（§1.4，p.25，statement_only）：An N-particle phase point in three dimensions has 6N real coordinates.
+- CH01-086（§1.4，p.25，statement\_only）：The Hamiltonian and Lagrangian formulations are interchangeable for regular mechanical models.
+- CH01-088（§1.4，p.25，statement\_only）：An N-particle phase point in three dimensions has 6N real coordinates.
 - CH01-094（§1.5，p.26，weakened）：Uniformly bounded potential levels together with energy conservation confine solutions to a compact set.
-- CH01-097（§1.5，p.26，statement_only）：U(x,y)=x^2 does not bound y at constant energy.
+- CH01-097（§1.5，p.26，statement\_only）：U(x,y)=x^2 does not bound y at constant energy.
 - CH01-124（§1.5.2，p.30，weakened）：The Kepler radius can be expressed via scalar quadratures and their inverses.
 - CH01-126（§1.5.2，p.30，weakened）：The complete Kepler motion is reconstructed from radial quadrature and angular integration.
 - CH01-133（§1.5.2，p.30，weakened）：Incommensurate frequencies yield nonperiodic quasiperiodic motion filling a torus.
-- CH01-134（§1.5.2，p.30，not_formalizable_now）：Independent first integrals in involution permit a local action-angle reduction.
-- CH01-140（§1.5.3，p.32，statement_only）：Hartman-Grobman: nonlinear and linear systems near a hyperbolic equilibrium are conjugate by a smooth invertible local map.
-- CH01-142（§1.5.3，p.32，statement_only）：Stability of a hyperbolic nonlinear equilibrium is determined by stability of its linearization.
-- CH01-147（§1.5.3，p.33，statement_only）：A positive definite Hessian makes the quadratic Hamiltonian a strong local minimum.
-- CH01-148（§1.5.3，p.33，statement_only）：Positive distinct Hessian eigenvalues imply a strong local minimum of U.
-- CH01-150（§1.6，p.33，statement_only）：The unordered pair count is N(N-1)/2.
+- CH01-134（§1.5.2，p.30，not\_formalizable\_now）：Independent first integrals in involution permit a local action-angle reduction.
+- CH01-140（§1.5.3，p.32，statement\_only）：Hartman-Grobman: nonlinear and linear systems near a hyperbolic equilibrium are conjugate by a smooth invertible local map.
+- CH01-142（§1.5.3，p.32，statement\_only）：Stability of a hyperbolic nonlinear equilibrium is determined by stability of its linearization.
+- CH01-147（§1.5.3，p.33，statement\_only）：A positive definite Hessian makes the quadratic Hamiltonian a strong local minimum.
+- CH01-148（§1.5.3，p.33，statement\_only）：Positive distinct Hessian eigenvalues imply a strong local minimum of U.
+- CH01-150（§1.6，p.33，statement\_only）：The unordered pair count is N(N-1)/2.
 - CH01-155（§1.6，p.34，weakened）：Periodic boundary conditions preserve translations and thus momentum for internal pair forces.
-- CH01-157（§1.6，p.34，statement_only）：For a uniform pair potential with periodic boundaries energy minimizers are regular lattices.
-- CH01-169（§1.6.1，p.37，statement_only）：At a minimum U'' is a positive definite symmetric matrix.
-- CH01-171（§1.6.1，p.37，statement_only）：For positive definite M and Hessian, the eigenvalues of A are purely imaginary pairs plus/minus i Omega.
-- CH01-172（§1.6.1，p.37，statement_only）：An imaginary eigenpair gives conjugate exponential normal-mode solutions.
-- CH01-175（§1.7，p.38，statement_only）：For central forces partial_i U_ij=-partial_j U_ij.
-- CH01-177（§1.7，p.39，statement_only）：Central pair torques cancel and total angular momentum is conserved.
-- CH01-178（§1.7，p.39，statement_only）：The center of mass moves linearly under zero net force.
-- CH01-179（§1.7，p.39，statement_only）：Conservation of angular momentum is said to imply rotation at a constant rate in time.
-- CH01-186（§1.7.1，p.42，statement_only）：Topological transitivity is essentially equivalent to ergodicity.
+- CH01-157（§1.6，p.34，statement\_only）：For a uniform pair potential with periodic boundaries energy minimizers are regular lattices.
+- CH01-169（§1.6.1，p.37，statement\_only）：At a minimum U'' is a positive definite symmetric matrix.
+- CH01-171（§1.6.1，p.37，statement\_only）：For positive definite M and Hessian, the eigenvalues of A are purely imaginary pairs plus/minus i Omega.
+- CH01-172（§1.6.1，p.37，statement\_only）：An imaginary eigenpair gives conjugate exponential normal-mode solutions.
+- CH01-175（§1.7，p.38，statement\_only）：For central forces partial\_i U\_ij=-partial\_j U\_ij.
+- CH01-177（§1.7，p.39，statement\_only）：Central pair torques cancel and total angular momentum is conserved.
+- CH01-178（§1.7，p.39，statement\_only）：The center of mass moves linearly under zero net force.
+- CH01-179（§1.7，p.39，statement\_only）：Conservation of angular momentum is said to imply rotation at a constant rate in time.
+- CH01-186（§1.7.1，p.42，statement\_only）：Topological transitivity is essentially equivalent to ergodicity.
 - CH01-192（§1.7.2，p.44，weakened）：Differentiating the flow Jacobian gives Wdot=f'(z(t,xi)) W, (1.10).
-- CH01-193（§1.7.2，p.45，statement_only）：Nearby trajectories differ to first order by W(t)(xi_hat-xi).
-- CH01-195（§1.7.2，p.45，statement_only）：An invertible linear map sends a unit sphere to an ellipsoid whose semi-axes are its singular values.
-- CH01-197（§1.7.2，p.45，statement_only）：A positive Lyapunov exponent implies exponential amplification of infinitesimal perturbations.
-- CH01-198（§1.1.1，p.11，statement_only）：Finite conserved energy and a repulsive Lennard-Jones singularity prevent particle collisions.
-- CH01-199（§1.2，p.21，statement_only）：The normalized coordinates Q_i=q_i/sigma have qdot_i=sigma Qdot_i and qddot_i=sigma Qddot_i.
-- CH01-200（§1.2，p.22，statement_only）：With tau=alpha t and alpha^2=epsilon/(m sigma^2), normalized LJ dynamics have unit mass and parameter-independent potential.
-- CH01-201（§1.5.2，p.29，statement_only）：In the fixed-center Kepler problem linear momentum is generally not conserved.
-- CH01-203（§1.7，p.38，statement_only）：For the unit LJ trimer an equilateral triangle minimizes U=3 phi_LJ(r), at r=2^(1/6).
-- CH01-206（§1.7，p.40，statement_only）：The minimum in the collinear configuration is a saddle: U increases along x and decreases along y.
-- CH01-207（§1.7，p.40，statement_only）：When E>0 the trimer bodies eventually escape to infinity.
+- CH01-193（§1.7.2，p.45，statement\_only）：Nearby trajectories differ to first order by W(t)(xi\_hat-xi).
+- CH01-195（§1.7.2，p.45，statement\_only）：An invertible linear map sends a unit sphere to an ellipsoid whose semi-axes are its singular values.
+- CH01-197（§1.7.2，p.45，statement\_only）：A positive Lyapunov exponent implies exponential amplification of infinitesimal perturbations.
+- CH01-198（§1.1.1，p.11，statement\_only）：Finite conserved energy and a repulsive Lennard-Jones singularity prevent particle collisions.
+- CH01-199（§1.2，p.21，statement\_only）：The normalized coordinates Q\_i=q\_i/sigma have qdot\_i=sigma Qdot\_i and qddot\_i=sigma Qddot\_i.
+- CH01-200（§1.2，p.22，statement\_only）：With tau=alpha t and alpha^2=epsilon/(m sigma^2), normalized LJ dynamics have unit mass and parameter-independent potential.
+- CH01-201（§1.5.2，p.29，statement\_only）：In the fixed-center Kepler problem linear momentum is generally not conserved.
+- CH01-203（§1.7，p.38，statement\_only）：For the unit LJ trimer an equilateral triangle minimizes U=3 phi\_LJ(r), at r=2^(1/6).
+- CH01-206（§1.7，p.40，statement\_only）：The minimum in the collinear configuration is a saddle: U increases along x and decreases along y.
+- CH01-207（§1.7，p.40，statement\_only）：When E>0 the trimer bodies eventually escape to infinity.
 
 ## §1.1
 
@@ -116,7 +116,7 @@ abbrev planckConstant := {h : ℝ // 0 < h}
 
 ### CH01-004 · notation · 印刷p.5 / PDF28
 
-原文（忠实转述）：mu_j is the mass of particle j.
+原文（忠实转述）：mu\_j is the mass of particle j.
 
 ```lean
 abbrev quantumMass := Fin 13 → {m : ℝ // 0 < m}
@@ -128,7 +128,7 @@ abbrev quantumMass := Fin 13 → {m : ℝ // 0 < m}
 
 ### CH01-005 · 定义 · 印刷p.5 / PDF28
 
-原文（忠实转述）：U_P is the primitive particle potential energy.
+原文（忠实转述）：U\_P is the primitive particle potential energy.
 
 ```lean
 abbrev primitivePotential := Q13 → ℝ
@@ -140,7 +140,7 @@ abbrev primitivePotential := Q13 → ℝ
 
 ### CH01-006 · 定义 · 印刷p.5 / PDF28
 
-原文（忠实转述）：The Schrodinger equation (1.1) is i hbar d_t Phi = -hbar^2 sum_j Laplacian_j(Phi)/(2 mu_j) + U_P Phi.
+原文（忠实转述）：The Schrodinger equation (1.1) is i hbar d\_t Phi = -hbar^2 sum\_j Laplacian\_j(Phi)/(2 mu\_j) + U\_P Phi.
 
 ```lean
 def schrodingerEquation (h : planckConstant) (μ : quantumMass)
@@ -169,7 +169,7 @@ abbrev PotentialEnergy (n : ℕ) := Position n → ℝ
 
 ### CH01-008 · 未编号结论 · 印刷p.6 / PDF29
 
-原文（忠实转述）：For each nuclear coordinate, m_i d^2 q_i/dt^2 = -partial U/partial q_i, equation (1.2).
+原文（忠实转述）：For each nuclear coordinate, m\_i d^2 q\_i/dt^2 = -partial U/partial q\_i, equation (1.2).
 
 ```lean
 theorem solution_nBodyEquationAt_of_differentiable {n : ℕ} (μ : CoordinateMasses n)
@@ -217,7 +217,7 @@ def hardSphereCollision (R₁ R₂ m₁ m₂ : ℝ) (q₁ q₂ v₁ v₂ w₁ w�
 
 ### CH01-011 · notation · 印刷p.8 / PDF31
 
-原文（忠实转述）：q_i is the position vector of atom i in R^3.
+原文（忠实转述）：q\_i is the position vector of atom i in R^3.
 
 ```lean
 variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E] [CompleteSpace E]
@@ -230,7 +230,7 @@ abbrev ParticleVectors (N d : ℕ) := Fin N → EuclideanSpace ℝ (Fin d)
 
 ### CH01-012 · 定义 · 印刷p.8 / PDF31
 
-原文（忠实转述）：The potential is a sum of two-body contributions U_ij(q_i,q_j).
+原文（忠实转述）：The potential is a sum of two-body contributions U\_ij(q\_i,q\_j).
 
 ```lean
 abbrev twoBodyTerms := V3 → V3 → ℝ
@@ -242,7 +242,7 @@ abbrev twoBodyTerms := V3 → V3 → ℝ
 
 ### CH01-013 · 定义 · 印刷p.8 / PDF31
 
-原文（忠实转述）：Three-body contributions are U_ijk(q_i,q_j,q_k).
+原文（忠实转述）：Three-body contributions are U\_ijk(q\_i,q\_j,q\_k).
 
 ```lean
 abbrev threeBodyTerms := V3 → V3 → V3 → ℝ
@@ -254,7 +254,7 @@ abbrev threeBodyTerms := V3 → V3 → V3 → ℝ
 
 ### CH01-014 · 定义 · 印刷p.8 / PDF31
 
-原文（忠实转述）：Four-body contributions are U_ijkl(q_i,q_j,q_k,q_l).
+原文（忠实转述）：Four-body contributions are U\_ijkl(q\_i,q\_j,q\_k,q\_l).
 
 ```lean
 abbrev fourBodyTerms := V3 → V3 → V3 → V3 → ℝ
@@ -266,19 +266,19 @@ abbrev fourBodyTerms := V3 → V3 → V3 → V3 → ℝ
 
 ### CH01-015 · 定义 · 印刷p.8 / PDF31
 
-原文（忠实转述）：The Morse potential is D(1-exp(-a(r-r_e)))^2.
+原文（忠实转述）：The Morse potential is D(1-exp(-a(r-r\_e)))^2.
 
 ```lean
 def morsePotential (D a rₑ r : ℝ) := D * (1 - Real.exp (-a * (r-rₑ)))^2
 ```
 
-差异及额外假设：D,a,r_e正；r>0物理域；定义/notation已实现，此状态不表示解存在或经验模型已验证。
+差异及额外假设：D,a,r\_e正；r>0物理域；定义/notation已实现，此状态不表示解存在或经验模型已验证。
 
 状态：**proved**。位置：`MolecularDynamics/Chapter01/ReviewDefinitions.lean:40`。
 
 ### CH01-016 · 未编号结论 · 印刷p.8 / PDF31
 
-原文（忠实转述）：The Morse potential has its minimum at r_e and well depth D.
+原文（忠实转述）：The Morse potential has its minimum at r\_e and well depth D.
 
 ```lean
 def morseMinimum_statement : Prop :=
@@ -289,11 +289,11 @@ def morseMinimum_statement : Prop :=
 
 差异及额外假设：D,a正；深度是无穷远极限减最小值；Prop陈述未证明。
 
-状态：**statement_only**。位置：`MolecularDynamics/Chapter01/Statements.lean:18`。
+状态：**statement\_only**。位置：`MolecularDynamics/Chapter01/Statements.lean:18`。
 
 ### CH01-017 · 定义 · 印刷p.9 / PDF32
 
-原文（忠实转述）：The harmonic length-bond potential is k_ij/2 (r_ij-r_ij^0)^2.
+原文（忠实转述）：The harmonic length-bond potential is k\_ij/2 (r\_ij-r\_ij^0)^2.
 
 ```lean
 def lengthBond (k r₀ r : ℝ) := k / 2 * (r-r₀)^2
@@ -305,7 +305,7 @@ def lengthBond (k r₀ r : ℝ) := k / 2 * (r-r₀)^2
 
 ### CH01-018 · notation · 印刷p.9 / PDF32
 
-原文（忠实转述）：r_ij = norm(q_i-q_j).
+原文（忠实转述）：r\_ij = norm(q\_i-q\_j).
 
 ```lean
 def pairDistance (qᵢ qⱼ : V3) := ‖qᵢ-qⱼ‖
@@ -363,11 +363,11 @@ def lennardJonesSingularity_statement : Prop :=
 
 差异及额外假设：右极限，正epsilon及sigma；Prop陈述未证明。
 
-状态：**statement_only**。位置：`MolecularDynamics/Chapter01/Statements.lean:22`。
+状态：**statement\_only**。位置：`MolecularDynamics/Chapter01/Statements.lean:22`。
 
 ### CH01-023 · 定义 · 印刷p.11 / PDF34
 
-原文（忠实转述）：For different atom types epsilon_ij and sigma_ij determine the pair LJ contribution.
+原文（忠实转述）：For different atom types epsilon\_ij and sigma\_ij determine the pair LJ contribution.
 
 ```lean
 def heterogeneousLJ {N : ℕ} (ε σ : Fin N → Fin N → ℝ)
@@ -393,13 +393,13 @@ def ljCollisionAvoidance_statement : Prop :=
 
 差异及额外假设：有限粒子，每对势有统一下界；只陈述能量子水平集上正距离界；Prop陈述未证明。
 
-状态：**statement_only**。位置：`MolecularDynamics/Chapter01/Statements.lean:305`。
+状态：**statement\_only**。位置：`MolecularDynamics/Chapter01/Statements.lean:305`。
 
 ## §1.1.2
 
 ### CH01-024 · 定义 · 印刷p.12 / PDF35
 
-原文（忠实转述）：The Coulomb potential is C Q_i Q_j/(dielectric r_ij).
+原文（忠实转述）：The Coulomb potential is C Q\_i Q\_j/(dielectric r\_ij).
 
 ```lean
 def coulombPotential (C Qᵢ Qⱼ dielectric r : ℝ) := C*Qᵢ*Qⱼ/(dielectric*r)
@@ -423,11 +423,11 @@ def coulombForceSign_statement : Prop :=
 
 差异及额外假设：径向负导数的符号；Prop陈述未证明。
 
-状态：**statement_only**。位置：`MolecularDynamics/Chapter01/Statements.lean:25`。
+状态：**statement\_only**。位置：`MolecularDynamics/Chapter01/Statements.lean:25`。
 
 ### CH01-026 · 定义 · 印刷p.12 / PDF35
 
-原文（忠实转述）：A cutoff potential vanishes for r>r_cut and should remain at least continuously differentiable.
+原文（忠实转述）：A cutoff potential vanishes for r>r\_cut and should remain at least continuously differentiable.
 
 ```lean
 def smoothCutoff (φ : ℝ → ℝ) (r_cut : ℝ) : Prop :=
@@ -440,7 +440,7 @@ def smoothCutoff (φ : ℝ → ℝ) (r_cut : ℝ) : Prop :=
 
 ### CH01-027 · 定义 · 印刷p.12 / PDF35
 
-原文（忠实转述）：The screened Yukawa potential is C Q_i Q_j exp(-r_ij/lambda)/(dielectric r_ij).
+原文（忠实转述）：The screened Yukawa potential is C Q\_i Q\_j exp(-r\_ij/lambda)/(dielectric r\_ij).
 
 ```lean
 def yukawaPotential (C Qᵢ Qⱼ dielectric debye r : ℝ) :=
@@ -453,7 +453,7 @@ def yukawaPotential (C Qᵢ Qⱼ dielectric debye r : ℝ) :=
 
 ### CH01-028 · 定义 · 印刷p.13 / PDF36
 
-原文（忠实转述）：An angle bond has energy k_ijk/2 (theta_ijk-theta_ijk^0)^2.
+原文（忠实转述）：An angle bond has energy k\_ijk/2 (theta\_ijk-theta\_ijk^0)^2.
 
 ```lean
 def angleBond (k θ₀ θ : ℝ) := k/2*(θ-θ₀)^2
@@ -465,7 +465,7 @@ def angleBond (k θ₀ θ : ℝ) := k/2*(θ-θ₀)^2
 
 ### CH01-029 · 定义 · 印刷p.13 / PDF36
 
-原文（忠实转述）：theta_ijk = arccos((q_i-q_j) dot (q_j-q_k)/(r_ij r_jk)).
+原文（忠实转述）：theta\_ijk = arccos((q\_i-q\_j) dot (q\_j-q\_k)/(r\_ij r\_jk)).
 
 ```lean
 def bondAngle (qᵢ qⱼ qₖ : V3) :=
@@ -548,7 +548,7 @@ def unitedAtomModel {N G : ℕ} (group : Fin N → Fin G) : Prop := Function.Sur
 
 ### CH01-035 · notation · 印刷p.16 / PDF39
 
-原文（忠实转述）：Gay-Berne uses separation q_12=q_2-q_1 and unit orientation vectors u_1,u_2.
+原文（忠实转述）：Gay-Berne uses separation q\_12=q\_2-q\_1 and unit orientation vectors u\_1,u\_2.
 
 ```lean
 def gayBerneGeometry (q₁ q₂ u₁ u₂ : V3) : Prop :=
@@ -561,7 +561,7 @@ def gayBerneGeometry (q₁ q₂ u₁ u₂ : V3) : Prop :=
 
 ### CH01-036 · 定义 · 印刷p.16 / PDF39
 
-原文（忠实转述）：The Gay-Berne potential is 4 epsilon_GB[(sigma_0/rho)^12-(sigma_0/rho)^6].
+原文（忠实转述）：The Gay-Berne potential is 4 epsilon\_GB[(sigma\_0/rho)^12-(sigma\_0/rho)^6].
 
 ```lean
 def gayBernePotential (ε₀ σ₀ χ χ' : ℝ) (q₁ q₂ u₁ u₂ : V3) :=
@@ -576,7 +576,7 @@ def gayBernePotential (ε₀ σ₀ χ χ' : ℝ) (q₁ q₂ u₁ u₂ : V3) :=
 
 ### CH01-037 · 定义 · 印刷p.16 / PDF39
 
-原文（忠实转述）：epsilon_GB = epsilon_1(u_1,u_2) epsilon_2(r_hat,u_1,u_2)^2.
+原文（忠实转述）：epsilon\_GB = epsilon\_1(u\_1,u\_2) epsilon\_2(r\_hat,u\_1,u\_2)^2.
 
 ```lean
 def gayBerneWell (ε₀ χ χ' : ℝ) (r u₁ u₂ : V3) :=
@@ -589,7 +589,7 @@ def gayBerneWell (ε₀ χ χ' : ℝ) (r u₁ u₂ : V3) :=
 
 ### CH01-038 · 定义 · 印刷p.16 / PDF39
 
-原文（忠实转述）：rho = norm(r)-sigma_0/sqrt(W(r_hat,u_1,u_2,chi)).
+原文（忠实转述）：rho = norm(r)-sigma\_0/sqrt(W(r\_hat,u\_1,u\_2,chi)).
 
 ```lean
 def gayBerneRho (σ₀ χ : ℝ) (r u₁ u₂ : V3) :=
@@ -602,7 +602,7 @@ def gayBerneRho (σ₀ χ : ℝ) (r u₁ u₂ : V3) :=
 
 ### CH01-039 · 定义 · 印刷p.17 / PDF40
 
-原文（忠实转述）：epsilon_1 = epsilon_0 [1-chi^2 (u_1 dot u_2)^2]^(-1/2).
+原文（忠实转述）：epsilon\_1 = epsilon\_0 [1-chi^2 (u\_1 dot u\_2)^2]^(-1/2).
 
 ```lean
 def gayBerneEpsilonOne (ε₀ χ : ℝ) (u₁ u₂ : V3) :=
@@ -615,7 +615,7 @@ def gayBerneEpsilonOne (ε₀ χ : ℝ) (u₁ u₂ : V3) :=
 
 ### CH01-040 · 定义 · 印刷p.17 / PDF40
 
-原文（忠实转述）：epsilon_2 = W(r_hat,u_1,u_2,chi_prime).
+原文（忠实转述）：epsilon\_2 = W(r\_hat,u\_1,u\_2,chi\_prime).
 
 ```lean
 def gayBerneEpsilonTwo (r u₁ u₂ : V3) (χ' : ℝ) := gayBerneW r u₁ u₂ χ'
@@ -627,7 +627,7 @@ def gayBerneEpsilonTwo (r u₁ u₂ : V3) (χ' : ℝ) := gayBerneW r u₁ u₂ �
 
 ### CH01-041 · 定义 · 印刷p.17 / PDF40
 
-原文（忠实转述）：W = 1-chi/2[(r_hat dot (u_1+u_2))^2/(1+chi u_1 dot u_2)+(r_hat dot (u_1-u_2))^2/(1-chi u_1 dot u_2)].
+原文（忠实转述）：W = 1-chi/2[(r\_hat dot (u\_1+u\_2))^2/(1+chi u\_1 dot u\_2)+(r\_hat dot (u\_1-u\_2))^2/(1-chi u\_1 dot u\_2)].
 
 ```lean
 def gayBerneW (r u₁ u₂ : V3) (χ : ℝ) :=
@@ -641,7 +641,7 @@ def gayBerneW (r u₁ u₂ : V3) (χ : ℝ) :=
 
 ### CH01-042 · 定义 · 印刷p.17 / PDF40
 
-原文（忠实转述）：chi=[(sigma_e/sigma_s)^2-1]/[(sigma_e/sigma_s)^2+1].
+原文（忠实转述）：chi=[(sigma\_e/sigma\_s)^2-1]/[(sigma\_e/sigma\_s)^2+1].
 
 ```lean
 def gayBerneChi (σₑ σₛ : ℝ) := ((σₑ/σₛ)^2-1)/((σₑ/σₛ)^2+1)
@@ -653,7 +653,7 @@ def gayBerneChi (σₑ σₛ : ℝ) := ((σₑ/σₛ)^2-1)/((σₑ/σₛ)^2+1)
 
 ### CH01-043 · 定义 · 印刷p.17 / PDF40
 
-原文（忠实转述）：chi_prime=[1-(epsilon_e/epsilon_s)^(1/mu)]/[1+(epsilon_e/epsilon_s)^(1/mu)].
+原文（忠实转述）：chi\_prime=[1-(epsilon\_e/epsilon\_s)^(1/mu)]/[1+(epsilon\_e/epsilon\_s)^(1/mu)].
 
 ```lean
 def gayBerneChiPrime (εₑ εₛ μ : ℝ) :=
@@ -735,7 +735,7 @@ def NBodyEquationAt {n : ℕ} (masses : CoordinateMasses n) (force : Force n)
 
 ### CH01-049 · notation · 印刷p.18 / PDF41
 
-原文（忠实转述）：N_c=3N is the number of position coordinates in three dimensions.
+原文（忠实转述）：N\_c=3N is the number of position coordinates in three dimensions.
 
 ```lean
 def particleCoordinateEquiv (N d : ℕ) : Fin N × Fin d ≃ Fin (N * d) :=
@@ -748,7 +748,7 @@ def particleCoordinateEquiv (N d : ℕ) : Fin N × Fin d ≃ Fin (N * d) :=
 
 ### CH01-050 · notation · 印刷p.18 / PDF41
 
-原文（忠实转述）：M=diag(m_1,m_1,m_1,...,m_N,m_N,m_N).
+原文（忠实转述）：M=diag(m\_1,m\_1,m\_1,...,m\_N,m\_N,m\_N).
 
 ```lean
 def coordinateMassesOfParticles {N d : ℕ} (m : ParticleMasses N) :
@@ -775,7 +775,7 @@ def degreesOfFreedom {n r : ℕ} (C : Position n → Position r) (q : Position n
 
 ### CH01-052 · 未编号结论 · 印刷p.18 / PDF41
 
-原文（忠实转述）：Without constraints N_d=N_c=3N; r independent constraints give N_d=N_c-r.
+原文（忠实转述）：Without constraints N\_d=N\_c=3N; r independent constraints give N\_d=N\_c-r.
 
 ```lean
 def constraintDimension_statement : Prop :=
@@ -784,13 +784,13 @@ def constraintDimension_statement : Prop :=
     degreesOfFreedom C q + r = n
 ```
 
-差异及额外假设：满秩导数，r≤N_c；Prop陈述未证明。
+差异及额外假设：满秩导数，r≤N\_c；Prop陈述未证明。
 
-状态：**statement_only**。位置：`MolecularDynamics/Chapter01/Statements.lean:30`。
+状态：**statement\_only**。位置：`MolecularDynamics/Chapter01/Statements.lean:30`。
 
 ### CH01-053 · 定义 · 印刷p.18 / PDF41
 
-原文（忠实转述）：Kinetic energy is sum_j m_j norm(qdot_j)^2/2.
+原文（忠实转述）：Kinetic energy is sum\_j m\_j norm(qdot\_j)^2/2.
 
 ```lean
 noncomputable def particleKineticEnergy {N d : ℕ}
@@ -870,7 +870,7 @@ abbrev fixedEnergy := ℝ
 
 ### CH01-058 · 未编号结论 · 印刷p.19 / PDF42
 
-原文（忠实转述）：Pair forces obey F_ij=-F_ji and the sum of internal forces vanishes.
+原文（忠实转述）：Pair forces obey F\_ij=-F\_ji and the sum of internal forces vanishes.
 
 ```lean
 def pairForceCancellation_statement : Prop :=
@@ -880,11 +880,11 @@ def pairForceCancellation_statement : Prop :=
 
 差异及额外假设：只陈述反对称内部力；外力不计；Prop陈述未证明。
 
-状态：**statement_only**。位置：`MolecularDynamics/Chapter01/Statements.lean:34`。
+状态：**statement\_only**。位置：`MolecularDynamics/Chapter01/Statements.lean:34`。
 
 ### CH01-059 · 定义 · 印刷p.19 / PDF42
 
-原文（忠实转述）：Momentum satisfies dp_i/dt = F_i and p_i=m_i qdot_i.
+原文（忠实转述）：Momentum satisfies dp\_i/dt = F\_i and p\_i=m\_i qdot\_i.
 
 ```lean
 theorem momentum_eq_mass_deriv_position {n : ℕ} (μ : CoordinateMasses n)
@@ -900,7 +900,7 @@ theorem momentum_eq_mass_deriv_position {n : ℕ} (μ : CoordinateMasses n)
 
 ### CH01-060 · 定义 · 印刷p.19 / PDF42
 
-原文（忠实转述）：The total momentum vector is sum_i p_i.
+原文（忠实转述）：The total momentum vector is sum\_i p\_i.
 
 ```lean
 def totalMomentumCoordinate {N d : ℕ} (p : Momentum (N * d)) (a : Fin d) : ℝ :=
@@ -1024,11 +1024,11 @@ def scalarGlobalPatching_statement : Prop :=
 
 差异及额外假设：不把已有局部证明当全局拼接；Prop陈述未证明。
 
-状态：**statement_only**。位置：`MolecularDynamics/Chapter01/Statements.lean:39`。
+状态：**statement\_only**。位置：`MolecularDynamics/Chapter01/Statements.lean:39`。
 
 ### CH01-068 · 定义 · 印刷p.21 / PDF44
 
-原文（忠实转述）：A uniform pairwise LJ model sums phi_LJ(r_ij) over unordered pairs.
+原文（忠实转述）：A uniform pairwise LJ model sums phi\_LJ(r\_ij) over unordered pairs.
 
 ```lean
 def uniformLJEnergy {N : ℕ} (ε σ : ℝ) (q : Fin N → V3) :=
@@ -1051,11 +1051,11 @@ def radialPairForce_statement : Prop :=
 
 差异及额外假设：印刷首个等式符号待审，数学陈述用负梯度；Prop陈述未证明。
 
-状态：**statement_only**。位置：`MolecularDynamics/Chapter01/Statements.lean:50`。
+状态：**statement\_only**。位置：`MolecularDynamics/Chapter01/Statements.lean:50`。
 
 ### CH01-199 · 未编号结论 · 印刷p.21 / PDF44
 
-原文（忠实转述）：The normalized coordinates Q_i=q_i/sigma have qdot_i=sigma Qdot_i and qddot_i=sigma Qddot_i.
+原文（忠实转述）：The normalized coordinates Q\_i=q\_i/sigma have qdot\_i=sigma Qdot\_i and qddot\_i=sigma Qddot\_i.
 
 ```lean
 def ljCoordinateScaling_statement : Prop :=
@@ -1067,7 +1067,7 @@ def ljCoordinateScaling_statement : Prop :=
 
 差异及额外假设：只保留正文链式法则推导，排除argon数值参数；Prop陈述未证明。
 
-状态：**statement_only**。位置：`MolecularDynamics/Chapter01/Statements.lean:309`。
+状态：**statement\_only**。位置：`MolecularDynamics/Chapter01/Statements.lean:309`。
 
 ### CH01-200 · 未编号结论 · 印刷p.22 / PDF45
 
@@ -1086,7 +1086,7 @@ def ljTimeScaling_statement : Prop :=
 
 差异及额外假设：正epsilon,m,sigma；不登记数值时间单位；Prop陈述未证明。
 
-状态：**statement_only**。位置：`MolecularDynamics/Chapter01/Statements.lean:318`。
+状态：**statement\_only**。位置：`MolecularDynamics/Chapter01/Statements.lean:318`。
 
 ## §1.3
 
@@ -1121,7 +1121,7 @@ def leastAction_statement : Prop :=
 
 差异及额外假设：本章原文明确将推导推迟至第2章；仅忠实驻值陈述；Prop陈述未证明。
 
-状态：**statement_only**。位置：`MolecularDynamics/Chapter01/Statements.lean:56`。
+状态：**statement\_only**。位置：`MolecularDynamics/Chapter01/Statements.lean:56`。
 
 ### CH01-072 · 定义 · 印刷p.23 / PDF46
 
@@ -1235,7 +1235,7 @@ theorem generalizedMassMatrix_isUnit {n k : ℕ} (m : CoordinateMasses n)
 
 ### CH01-079 · 定义 · 印刷p.24 / PDF47
 
-原文（忠实转述）：The convex Legendre transform is gtilde(eta)=sup_theta(eta^T theta-g(theta)).
+原文（忠实转述）：The convex Legendre transform is gtilde(eta)=sup\_theta(eta^T theta-g(theta)).
 
 ```lean
 variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E] [CompleteSpace E]
@@ -1370,7 +1370,7 @@ def generalLegendreEquivalence_statement : Prop :=
 
 差异及额外假设：一般位置相关质量与正则域，不扩展证明；Prop陈述未证明。
 
-状态：**statement_only**。位置：`MolecularDynamics/Chapter01/Statements.lean:89`。
+状态：**statement\_only**。位置：`MolecularDynamics/Chapter01/Statements.lean:89`。
 
 ### CH01-087 · 定义 · 印刷p.25 / PDF48
 
@@ -1396,7 +1396,7 @@ def phaseDimension_statement : Prop := ∀ N : ℕ, Module.finrank ℝ (PhaseSpa
 
 差异及额外假设：位置与动量各3N；Prop陈述未证明。
 
-状态：**statement_only**。位置：`MolecularDynamics/Chapter01/Statements.lean:101`。
+状态：**statement\_only**。位置：`MolecularDynamics/Chapter01/Statements.lean:101`。
 
 ## §1.5
 
@@ -1420,7 +1420,7 @@ theorem exists_localMechanicalIVP_open {n : ℕ}
 
 ### CH01-090 · 定义 · 印刷p.25 / PDF48
 
-原文（忠实转述）：Sigma_E0={(q,p):H(q,p)=E0}.
+原文（忠实转述）：Sigma\_E0={(q,p):H(q,p)=E0}.
 
 ```lean
 variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E] [CompleteSpace E]
@@ -1556,13 +1556,13 @@ def nonconfiningExample_statement : Prop :=
 
 差异及额外假设：正文用于解释假设的数学反例；非数值例子；Prop陈述未证明。
 
-状态：**statement_only**。位置：`MolecularDynamics/Chapter01/Statements.lean:117`。
+状态：**statement\_only**。位置：`MolecularDynamics/Chapter01/Statements.lean:117`。
 
 ## §1.5.1
 
 ### CH01-098 · 定义 · 印刷p.26 / PDF49
 
-原文（忠实转述）：The flow F_t(xi)=z(t) solves zdot=f(z), z(0)=xi, (1.5).
+原文（忠实转述）：The flow F\_t(xi)=z(t) solves zdot=f(z), z(0)=xi, (1.5).
 
 ```lean
 def IsGlobalMechanicalFlowOn {n : ℕ} (m : CoordinateMasses n) (F : Force n)
@@ -1578,7 +1578,7 @@ def IsGlobalMechanicalFlowOn {n : ℕ} (m : CoordinateMasses n) (F : Force n)
 
 ### CH01-099 · 未编号结论 · 印刷p.26 / PDF49
 
-原文（忠实转述）：F_(-t) F_t = identity.
+原文（忠实转述）：F_(-t) F\_t = identity.
 
 ```lean
 theorem globalMechanicalFlow_inverse {n : ℕ} {m : CoordinateMasses n} {F : Force n}
@@ -1595,7 +1595,7 @@ theorem globalMechanicalFlow_inverse {n : ℕ} {m : CoordinateMasses n} {F : For
 
 ### CH01-100 · 未编号结论 · 印刷p.26 / PDF49
 
-原文（忠实转述）：F_t F_s=F_s F_t=F_(t+s); the flow forms an Abelian group.
+原文（忠实转述）：F\_t F\_s=F\_s F\_t=F_(t+s); the flow forms an Abelian group.
 
 ```lean
 theorem globalMechanicalFlow_commute {n : ℕ} {m : CoordinateMasses n} {F : Force n}
@@ -1613,7 +1613,7 @@ theorem globalMechanicalFlow_commute {n : ℕ} {m : CoordinateMasses n} {F : For
 
 ### CH01-101 · 未编号结论 · 印刷p.26 / PDF49
 
-原文（忠实转述）：Hamiltonian flows conserve H: H(F_t(xi))=H(xi).
+原文（忠实转述）：Hamiltonian flows conserve H: H(F\_t(xi))=H(xi).
 
 ```lean
 theorem globalMechanicalFlow_energy {n : ℕ} {m : CoordinateMasses n} {F : Force n}
@@ -1646,7 +1646,7 @@ noncomputable def harmonicFlow {n : ℕ} (Ω t : ℝ) (z : PhaseSpace n) : Phase
 
 ### CH01-103 · 未编号结论 · 印刷p.27 / PDF50
 
-原文（忠实转述）：If A has an eigenbasis, z(t)=sum_i c_i exp(lambda_i(t-t0)) eta_i.
+原文（忠实转述）：If A has an eigenbasis, z(t)=sum\_i c\_i exp(lambda\_i(t-t0)) eta\_i.
 
 ```lean
 variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E] [CompleteSpace E]
@@ -1867,7 +1867,7 @@ theorem kepler_energy_const_on_Ioo {n : ℕ} (a b : ℝ) (γ : ℝ → PhaseSpac
 
 ### CH01-117 · 未编号结论 · 印刷p.29 / PDF52
 
-原文（忠实转述）：Kepler angular momentum l_z=x ydot-y xdot is conserved.
+原文（忠实转述）：Kepler angular momentum l\_z=x ydot-y xdot is conserved.
 
 ```lean
 theorem kepler_planarAngularMomentum_const_on_Ioo (a b : ℝ) (γ : ℝ → PhaseSpace 2)
@@ -1911,7 +1911,7 @@ theorem keplerPolarLagrangian_identity (r θ v ω : ℝ) :
 
 ### CH01-120 · 未编号结论 · 印刷p.29 / PDF52
 
-原文（忠实转述）：Polar Euler-Lagrange equations give rddot=-1/r^2+r thetadot^2 and d_t(r^2 thetadot)=0.
+原文（忠实转述）：Polar Euler-Lagrange equations give rddot=-1/r^2+r thetadot^2 and d\_t(r^2 thetadot)=0.
 
 ```lean
 theorem keplerPolar_eulerLagrange_iff (I : Set ℝ) (r θ v ω : ℝ → ℝ) :
@@ -1927,7 +1927,7 @@ theorem keplerPolar_eulerLagrange_iff (I : Set ℝ) (r θ v ω : ℝ → ℝ) :
 
 ### CH01-121 · 未编号结论 · 印刷p.29 / PDF52
 
-原文（忠实转述）：l_z=r^2 thetadot.
+原文（忠实转述）：l\_z=r^2 thetadot.
 
 ```lean
 theorem polarAngularMomentum_identity (r θ v ω : ℝ) :
@@ -1941,7 +1941,7 @@ theorem polarAngularMomentum_identity (r θ v ω : ℝ) :
 
 ### CH01-122 · 未编号结论 · 印刷p.29 / PDF52
 
-原文（忠实转述）：Fixing l_z reduces the radial equation to rddot=-1/r^2+l_z^2/r^3.
+原文（忠实转述）：Fixing l\_z reduces the radial equation to rddot=-1/r^2+l\_z^2/r^3.
 
 ```lean
 theorem keplerPolar_radial_reduction (I : Set ℝ) (r θ v ω : ℝ → ℝ)
@@ -1956,7 +1956,7 @@ theorem keplerPolar_radial_reduction (I : Set ℝ) (r θ v ω : ℝ → ℝ)
 
 ### CH01-123 · 定义 · 印刷p.30 / PDF53
 
-原文（忠实转述）：The radial energy is rdot^2/2-1/r+l_z^2/(2r^2).
+原文（忠实转述）：The radial energy is rdot^2/2-1/r+l\_z^2/(2r^2).
 
 ```lean
 noncomputable def keplerRadialEnergy (l r v : ℝ) : ℝ :=
@@ -2007,7 +2007,7 @@ def keplerQuadratureGlobal_statement : Prop :=
 
 ### CH01-125 · 未编号结论 · 印刷p.30 / PDF53
 
-原文（忠实转述）：theta(t)=theta(0)+integral_0^t l_z/r(s)^2 ds.
+原文（忠实转述）：theta(t)=theta(0)+integral\_0^t l\_z/r(s)^2 ds.
 
 ```lean
 theorem keplerPolar_angle_integral (a b : ℝ) (r θ v ω : ℝ → ℝ)
@@ -2190,7 +2190,7 @@ def liouvilleArnold_statement : Prop :=
 
 差异及额外假设：已给局部辛action-angle及全环面运动的忠实Prop；补充紧、连通、满秩正则层等标准条件。固定Mathlib缺完整Liouville-Arnold、辛流形与action-angle坐标证明基础，本阶段不搭建。
 
-状态：**not_formalizable_now**。位置：`MolecularDynamics/Chapter01/Statements.lean:158`。
+状态：**not\_formalizable\_now**。位置：`MolecularDynamics/Chapter01/Statements.lean:158`。
 
 ### CH01-201 · 未编号结论 · 印刷p.29 / PDF52
 
@@ -2203,7 +2203,7 @@ def keplerMomentumNotConserved_statement : Prop :=
 
 差异及额外假设：非零引力给真实动量导数非零，不声称所有轨迹所有坐标导数非零；Prop陈述未证明。
 
-状态：**statement_only**。位置：`MolecularDynamics/Chapter01/Statements.lean:326`。
+状态：**statement\_only**。位置：`MolecularDynamics/Chapter01/Statements.lean:326`。
 
 ### CH01-202 · 定义 · 印刷p.30 / PDF53
 
@@ -2262,7 +2262,7 @@ theorem equilibriumLinearizationRemainder_of_C1 (f : E → E) (z₀ : E)
 
 ### CH01-138 · 定义 · 印刷p.31 / PDF54
 
-原文（忠实转述）：The linearization is delta_z_dot=f'(z*) delta_z.
+原文（忠实转述）：The linearization is delta\_z\_dot=f'(z*) delta\_z.
 
 ```lean
 variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E] [CompleteSpace E]
@@ -2311,7 +2311,7 @@ def hartmanGrobmanLiteral_statement : Prop :=
 
 差异及额外假设：忠实保留smooth，通常定理仅homeomorphism；疑似原文过强，不能证明假命题；Prop陈述未证明。
 
-状态：**statement_only**。位置：`MolecularDynamics/Chapter01/Statements.lean:179`。
+状态：**statement\_only**。位置：`MolecularDynamics/Chapter01/Statements.lean:179`。
 
 ### CH01-141 · 定义 · 印刷p.32 / PDF55
 
@@ -2347,7 +2347,7 @@ def hyperbolicStabilityTransfer_statement : Prop :=
 
 差异及额外假设：局部共轭与完整未来轨迹；原文smooth疑点另条；Prop陈述未证明。
 
-状态：**statement_only**。位置：`MolecularDynamics/Chapter01/Statements.lean:190`。
+状态：**statement\_only**。位置：`MolecularDynamics/Chapter01/Statements.lean:190`。
 
 ### CH01-143 · 未编号结论 · 印刷p.32 / PDF55
 
@@ -2400,7 +2400,7 @@ theorem strictPotentialMin_futureStableEuclidean_of_smooth {n : ℕ}
 
 ### CH01-146 · 定义 · 印刷p.32 / PDF55
 
-原文（忠实转述）：The linearized Hamiltonian is delta_p^T M^-1 delta_p/2+delta_q^T U''(q*) delta_q/2.
+原文（忠实转述）：The linearized Hamiltonian is delta\_p^T M^-1 delta\_p/2+delta\_q^T U''(q*) delta\_q/2.
 
 ```lean
 theorem linearizedHamiltonianQuadratic_eq_textbook_form {n : ℕ}
@@ -2428,7 +2428,7 @@ def positiveHessianQuadraticMinimum_statement : Prop :=
 
 差异及额外假设：非负性已有；严格极小另行忠实陈述；Prop陈述未证明。
 
-状态：**statement_only**。位置：`MolecularDynamics/Chapter01/Statements.lean:195`。
+状态：**statement\_only**。位置：`MolecularDynamics/Chapter01/Statements.lean:195`。
 
 ### CH01-148 · 未编号结论 · 印刷p.33 / PDF56
 
@@ -2444,13 +2444,13 @@ def positiveHessianMinimum_statement : Prop :=
 
 差异及额外假设：distinct非必要但忠实保留；C2；Prop陈述未证明。
 
-状态：**statement_only**。位置：`MolecularDynamics/Chapter01/Statements.lean:199`。
+状态：**statement\_only**。位置：`MolecularDynamics/Chapter01/Statements.lean:199`。
 
 ## §1.6
 
 ### CH01-149 · 定义 · 印刷p.33 / PDF56
 
-原文（忠实转述）：Uniform pair potential energy is sum_{i<j} phi(abs(x_i-x_j)).
+原文（忠实转述）：Uniform pair potential energy is sum_{i<j} phi(abs(x\_i-x\_j)).
 
 ```lean
 noncomputable def uniformPairPotentialEnergy {N : ℕ}
@@ -2473,11 +2473,11 @@ def unorderedPairCount_statement : Prop :=
 
 差异及额外假设：自然数除法；Prop陈述未证明。
 
-状态：**statement_only**。位置：`MolecularDynamics/Chapter01/Statements.lean:204`。
+状态：**statement\_only**。位置：`MolecularDynamics/Chapter01/Statements.lean:204`。
 
 ### CH01-151 · 定义 · 印刷p.33 / PDF56
 
-原文（忠实转述）：Nearest-neighbor energy is sum_{i=1}^{N-1} phi(abs(x_{i+1}-x_i)).
+原文（忠实转述）：Nearest-neighbor energy is sum_{i=1}^{N-1} phi(abs(x_{i+1}-x\_i)).
 
 ```lean
 noncomputable def nearestNeighborPotentialEnergy {N : ℕ}
@@ -2491,7 +2491,7 @@ noncomputable def nearestNeighborPotentialEnergy {N : ℕ}
 
 ### CH01-152 · 定义 · 印刷p.33 / PDF56
 
-原文（忠实转述）：Walled chain energy is phi_c(abs(x_1))+phi_c(abs(L-x_N))+nearest-neighbor sum, (1.7).
+原文（忠实转述）：Walled chain energy is phi\_c(abs(x\_1))+phi\_c(abs(L-x\_N))+nearest-neighbor sum, (1.7).
 
 ```lean
 noncomputable def walledNearestNeighborPotentialEnergy {N : ℕ}
@@ -2505,7 +2505,7 @@ noncomputable def walledNearestNeighborPotentialEnergy {N : ℕ}
 
 ### CH01-153 · 定义 · 印刷p.33 / PDF56
 
-原文（忠实转述）：Periodic chain energy adds phi(abs(L+x_1-x_N)), (1.8).
+原文（忠实转述）：Periodic chain energy adds phi(abs(L+x\_1-x\_N)), (1.8).
 
 ```lean
 noncomputable def boxPeriodicNearestNeighborPotentialEnergy {N : ℕ}
@@ -2551,7 +2551,7 @@ def periodicMomentum_statement : Prop :=
 
 ### CH01-156 · 定义 · 印刷p.34 / PDF57
 
-原文（忠实转述）：A one-dimensional regular lattice consists of points separated by fixed delta_x.
+原文（忠实转述）：A one-dimensional regular lattice consists of points separated by fixed delta\_x.
 
 ```lean
 def regularLattice {N : ℕ} (a δ : ℝ) (x : Fin N → ℝ) : Prop :=
@@ -2577,11 +2577,11 @@ def regularLatticeMinimizer_statement : Prop :=
 
 差异及额外假设：原文对任意均匀势过强，需额外凸性/密度条件；保留字面陈述待审；Prop陈述未证明。
 
-状态：**statement_only**。位置：`MolecularDynamics/Chapter01/Statements.lean:210`。
+状态：**statement\_only**。位置：`MolecularDynamics/Chapter01/Statements.lean:210`。
 
 ### CH01-158 · 定义 · 印刷p.35 / PDF58
 
-原文（忠实转述）：In 3D PBC, U sums phi_ij(q_i,q_j+L(k,l,m)) over neighboring image cells and i<j.
+原文（忠实转述）：In 3D PBC, U sums phi\_ij(q\_i,q\_j+L(k,l,m)) over neighboring image cells and i<j.
 
 ```lean
 def periodicImageEnergy {N : ℕ} (L : ℝ) (φ : Fin N → Fin N → twoBodyTerms)
@@ -2610,7 +2610,7 @@ def minimumImage (L : ℝ) (q r image : V3) : Prop :=
 
 ### CH01-160 · 定义 · 印刷p.35 / PDF58
 
-原文（忠实转述）：A planar rhombic lattice has sides n_x,n_y and included angle theta.
+原文（忠实转述）：A planar rhombic lattice has sides n\_x,n\_y and included angle theta.
 
 ```lean
 def rhombicLattice (a b θ : ℝ) : Set (Position 2) :=
@@ -2730,7 +2730,7 @@ theorem gradientLinearizationRemainder_isLittleO {n : ℕ}
 
 ### CH01-168 · 定义 · 印刷p.37 / PDF60
 
-原文（忠实转述）：Linearized motion is delta_q_dot=M^-1 delta_p, delta_p_dot=-U''(q*) delta_q.
+原文（忠实转述）：Linearized motion is delta\_q\_dot=M^-1 delta\_p, delta\_p\_dot=-U''(q*) delta\_q.
 
 ```lean
 theorem conservative_mechanical_linearization {n : ℕ} (m : CoordinateMasses n)
@@ -2757,7 +2757,7 @@ def minimumHessianLiteral_statement : Prop :=
 
 差异及额外假设：字面正定通常应为半正定；x^4反例，不能静默增加非退化假设；Prop陈述未证明。
 
-状态：**statement_only**。位置：`MolecularDynamics/Chapter01/Statements.lean:219`。
+状态：**statement\_only**。位置：`MolecularDynamics/Chapter01/Statements.lean:219`。
 
 ### CH01-170 · 定义 · 印刷p.37 / PDF60
 
@@ -2788,7 +2788,7 @@ def imaginarySpectrum_statement : Prop :=
 
 差异及额外假设：不把条件性normal mode当完整谱定理；Prop陈述未证明。
 
-状态：**statement_only**。位置：`MolecularDynamics/Chapter01/Statements.lean:224`。
+状态：**statement\_only**。位置：`MolecularDynamics/Chapter01/Statements.lean:224`。
 
 ### CH01-172 · 未编号结论 · 印刷p.37 / PDF60
 
@@ -2809,7 +2809,7 @@ def normalModeComplex_statement : Prop :=
 
 差异及额外假设：共轭对、实矩阵；Prop陈述未证明。
 
-状态：**statement_only**。位置：`MolecularDynamics/Chapter01/Statements.lean:229`。
+状态：**statement\_only**。位置：`MolecularDynamics/Chapter01/Statements.lean:229`。
 
 ### CH01-173 · 未编号结论 · 印刷p.37 / PDF60
 
@@ -2832,7 +2832,7 @@ theorem hasDerivAt_realNormalMode {E : Type*} [NormedAddCommGroup E] [NormedSpac
 
 ### CH01-174 · 定义 · 印刷p.38 / PDF61
 
-原文（忠实转述）：Central pair potentials have U_ij=phi_ij(norm(q_i-q_j)), U=1/2 sum_{i!=j} U_ij.
+原文（忠实转述）：Central pair potentials have U\_ij=phi\_ij(norm(q\_i-q\_j)), U=1/2 sum_{i!=j} U\_ij.
 
 ```lean
 def centralPairEnergy {N : ℕ} (φ : Fin N → Fin N → ℝ → ℝ) (q : Fin N → V3) :=
@@ -2845,7 +2845,7 @@ def centralPairEnergy {N : ℕ} (φ : Fin N → Fin N → ℝ → ℝ) (q : Fin 
 
 ### CH01-175 · 未编号结论 · 印刷p.38 / PDF61
 
-原文（忠实转述）：For central forces partial_i U_ij=-partial_j U_ij.
+原文（忠实转述）：For central forces partial\_i U\_ij=-partial\_j U\_ij.
 
 ```lean
 def centralPairGradient_statement : Prop :=
@@ -2855,7 +2855,7 @@ def centralPairGradient_statement : Prop :=
 
 差异及额外假设：势可微、非碰撞；Prop陈述未证明。
 
-状态：**statement_only**。位置：`MolecularDynamics/Chapter01/Statements.lean:239`。
+状态：**statement\_only**。位置：`MolecularDynamics/Chapter01/Statements.lean:239`。
 
 ### CH01-176 · 未编号结论 · 印刷p.39 / PDF62
 
@@ -2895,7 +2895,7 @@ def totalAngularMomentum_statement : Prop :=
 
 差异及额外假设：已有单粒子平面版本，不冒充一般N体3D版本；Prop陈述未证明。
 
-状态：**statement_only**。位置：`MolecularDynamics/Chapter01/Statements.lean:244`。
+状态：**statement\_only**。位置：`MolecularDynamics/Chapter01/Statements.lean:244`。
 
 ### CH01-178 · 未编号结论 · 印刷p.39 / PDF62
 
@@ -2916,7 +2916,7 @@ def centerOfMassMotion_statement : Prop :=
 
 差异及额外假设：正质量、真实二阶Newton轨迹；Prop陈述未证明。
 
-状态：**statement_only**。位置：`MolecularDynamics/Chapter01/Statements.lean:252`。
+状态：**statement\_only**。位置：`MolecularDynamics/Chapter01/Statements.lean:252`。
 
 ### CH01-179 · 未编号结论 · 印刷p.39 / PDF62
 
@@ -2929,9 +2929,9 @@ def rotationLiteral_statement : Prop :=
     ∃ freq : ℝ, ∀ t, deriv θ t = freq
 ```
 
-差异及额外假设：字面推论一般不成立：r变化时theta_dot=l/r^2。Prop保留该断言供审阅，未证明。
+差异及额外假设：字面推论一般不成立：r变化时theta\_dot=l/r^2。Prop保留该断言供审阅，未证明。
 
-状态：**statement_only**。位置：`MolecularDynamics/Chapter01/Statements.lean:262`。
+状态：**statement\_only**。位置：`MolecularDynamics/Chapter01/Statements.lean:262`。
 
 ### CH01-180 · 定义 · 印刷p.39 / PDF62
 
@@ -2948,7 +2948,7 @@ def isoscelesCoordinates (x y : ℝ) : Fin 3 → V3 :=
 
 ### CH01-181 · 未编号结论 · 印刷p.39 / PDF62
 
-原文（忠实转述）：The isosceles trimer energy is xdot^2+ydot^2/3+2phi_LJ(sqrt(x^2+y^2))+phi_LJ(2x).
+原文（忠实转述）：The isosceles trimer energy is xdot^2+ydot^2/3+2phi\_LJ(sqrt(x^2+y^2))+phi\_LJ(2x).
 
 ```lean
 def isoscelesEnergy (x y v w : ℝ) := v^2 + w^2/3 + isoscelesPotential x y
@@ -2976,7 +2976,7 @@ theorem isoscelesEnergyBound_proved : isoscelesEnergyBound_statement
 
 ### CH01-203 · 未编号结论 · 印刷p.38 / PDF61
 
-原文（忠实转述）：For the unit LJ trimer an equilateral triangle minimizes U=3 phi_LJ(r), at r=2^(1/6).
+原文（忠实转述）：For the unit LJ trimer an equilateral triangle minimizes U=3 phi\_LJ(r), at r=2^(1/6).
 
 ```lean
 def trimerMinimum_statement : Prop :=
@@ -2988,7 +2988,7 @@ def trimerMinimum_statement : Prop :=
 
 差异及额外假设：正文分析结论，排除图/模拟；全局势下界-3及等边实现；Prop陈述未证明。
 
-状态：**statement_only**。位置：`MolecularDynamics/Chapter01/Statements.lean:329`。
+状态：**statement\_only**。位置：`MolecularDynamics/Chapter01/Statements.lean:329`。
 
 ### CH01-204 · 未编号结论 · 印刷p.40 / PDF63
 
@@ -3008,7 +3008,7 @@ theorem trimerLowerBound_proved : trimerLowerBound_statement
 
 ### CH01-205 · 定义 · 印刷p.40 / PDF63
 
-原文（忠实转述）：The collinear trimer potential is Uhat(x)=2 phi_LJ(x)+phi_LJ(2x).
+原文（忠实转述）：The collinear trimer potential is Uhat(x)=2 phi\_LJ(x)+phi\_LJ(2x).
 
 ```lean
 def collinearTrimer (x : ℝ) :=
@@ -3033,7 +3033,7 @@ def trimerSaddle_statement : Prop :=
 
 差异及额外假设：明确局部严格不等式；原文无完整证明，不开展符号高阶计算；Prop陈述未证明。
 
-状态：**statement_only**。位置：`MolecularDynamics/Chapter01/Statements.lean:339`。
+状态：**statement\_only**。位置：`MolecularDynamics/Chapter01/Statements.lean:339`。
 
 ### CH01-207 · 未编号结论 · 印刷p.40 / PDF63
 
@@ -3055,7 +3055,7 @@ def trimerEscapeLiteral_statement : Prop :=
 
 差异及额外假设：针对前文质心固定、等腰、零角动量的正能量模型；字面一般逃逸断言未证明，待人工判断。
 
-状态：**statement_only**。位置：`MolecularDynamics/Chapter01/Statements.lean:344`。
+状态：**statement\_only**。位置：`MolecularDynamics/Chapter01/Statements.lean:344`。
 
 ## §1.7.1
 
@@ -3115,7 +3115,7 @@ def transitivityErgodicityLiteral_statement : Prop :=
 
 差异及额外假设：缺少不变测度，通常不等价；保留文字涉及的数学对象与待审问题；Prop陈述未证明。
 
-状态：**statement_only**。位置：`MolecularDynamics/Chapter01/Statements.lean:273`。
+状态：**statement\_only**。位置：`MolecularDynamics/Chapter01/Statements.lean:273`。
 
 ### CH01-187 · 定义 · 印刷p.42 / PDF65
 
@@ -3162,7 +3162,7 @@ def anisotropicParameters (κ₀ l₀ ε c₃ : ℝ) : ℝ × ℝ :=
 
 ### CH01-190 · notation · 印刷p.44 / PDF67
 
-原文（忠实转述）：The flow F_t is assumed continuously differentiable in its initial condition.
+原文（忠实转述）：The flow F\_t is assumed continuously differentiable in its initial condition.
 
 ```lean
 def differentiableFlow {n : ℕ} (F : ℝ → Position n → Position n) : Prop :=
@@ -3175,7 +3175,7 @@ def differentiableFlow {n : ℕ} (F : ℝ → Position n → Position n) : Prop 
 
 ### CH01-191 · 定义 · 印刷p.44 / PDF67
 
-原文（忠实转述）：The printed variational matrix is W(t)=F_t'(z(t,xi)).
+原文（忠实转述）：The printed variational matrix is W(t)=F\_t'(z(t,xi)).
 
 ```lean
 def variationalMatrixLiteral {n : ℕ} (F : ℝ → Position n → Position n)
@@ -3215,7 +3215,7 @@ def variationalEquation_statement : Prop :=
 
 ### CH01-193 · 未编号结论 · 印刷p.45 / PDF68
 
-原文（忠实转述）：Nearby trajectories differ to first order by W(t)(xi_hat-xi).
+原文（忠实转述）：Nearby trajectories differ to first order by W(t)(xi\_hat-xi).
 
 ```lean
 def flowFirstOrder_statement : Prop :=
@@ -3225,7 +3225,7 @@ def flowFirstOrder_statement : Prop :=
 
 差异及额外假设：严格小o形式，固定t；W在初值xi取导数；Prop陈述未证明。
 
-状态：**statement_only**。位置：`MolecularDynamics/Chapter01/Statements.lean:290`。
+状态：**statement\_only**。位置：`MolecularDynamics/Chapter01/Statements.lean:290`。
 
 ### CH01-194 · 定义 · 印刷p.45 / PDF68
 
@@ -3257,11 +3257,11 @@ def singularEllipsoid_statement : Prop :=
 
 差异及额外假设：奇异值分解与像椭球，暂不建设谱几何理论；Prop陈述未证明。
 
-状态：**statement_only**。位置：`MolecularDynamics/Chapter01/Statements.lean:293`。
+状态：**statement\_only**。位置：`MolecularDynamics/Chapter01/Statements.lean:293`。
 
 ### CH01-196 · 定义 · 印刷p.45 / PDF68
 
-原文（忠实转述）：lambda_i=limsup_{t->infinity} (1/t) log sigma_i(W(t)).
+原文（忠实转述）：lambda\_i=limsup_{t->infinity} (1/t) log sigma\_i(W(t)).
 
 ```lean
 variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E] [CompleteSpace E]
@@ -3285,4 +3285,4 @@ def positiveLyapunovGrowth_statement : Prop :=
 
 差异及额外假设：limsup给无穷时间子列增长，不保证所有充分大t的统一增长；Prop陈述未证明。
 
-状态：**statement_only**。位置：`MolecularDynamics/Chapter01/Statements.lean:299`。
+状态：**statement\_only**。位置：`MolecularDynamics/Chapter01/Statements.lean:299`。

@@ -1,6 +1,6 @@
 # 第1章 Lean Blueprint 本地审阅材料
 
-141条；网站PASS110、本地按意见修复10（未再送网站）、原书疑误待导师21。全部复审返回已登记；本轮不再送网站。完整检查见CLOSEOUT21/full/CHECK_REPORT.json。
+141条；网站PASS110、本地按意见修复10（未再送网站）、原书疑误待导师21。全部复审返回已登记；本轮不再送网站。完整检查见CLOSEOUT21/full/CHECK\_REPORT.json。
 
 ## 1. MD-1.5.3-Thm1.1 · Theorem 1.1 · 印刷p.32 / PDFp.55
 
@@ -31,7 +31,7 @@ theorem theorem_1_1 {n : ℕ} (m : CoordinateMasses n) (U : PotentialEnergy n)
 
 | 原文成分 | Lean对应 | 说明 |
 |---|---|---|
-| 原文对象、量词、前提与完整定义/结论（见第2段逐字引用） | MD.Ch01.theorem_1_1；完整当前陈述及同组辅助定义见本条第4段 | 一致 |
+| 原文对象、量词、前提与完整定义/结论（见第2段逐字引用） | MD.Ch01.theorem\_1\_1；完整当前陈述及同组辅助定义见本条第4段 | 一致 |
 | 原文未显式量化的技术资格 | hm: 每个固定对角质量正；来自§1.5正定背景，定理句未重复。 | [EXTRA] |
 | 原文未显式量化的技术资格 | hQ: 势能位置域Q开放；局部ODE和极小值邻域须位于定义域。 | [EXTRA] |
 | 原文未显式量化的技术资格 | hstrict包含q₀∈Q；补出原文默认的定义域资格。 | [EXTRA] |
@@ -47,7 +47,7 @@ theorem theorem_1_1 {n : ℕ} (m : CoordinateMasses n) (U : PotentialEnergy n)
 ### 7. 状态与证明位置
 
 checked+documented priors；已逐声明核验公理；含占位的声明仍未证明。
-位置：Blueprint/Ch01.lean:111；MD.Ch01.theorem_1_1。
+位置：Blueprint/Ch01.lean:111；MD.Ch01.theorem\_1\_1。
 
 ## 1. MD-1.2-EnergyConservation · unnumbered_claim · 印刷p.19 / PDFp.42
 
@@ -57,7 +57,12 @@ checked+documented priors；已逐声明核验公理；含占位的声明仍未�
 
 ### 3. 原文证明
 
-> \[\frac{\mathrm{d}}{\mathrm{d}t}E=\sum_{j=1}^{N}m_j\dot{\boldsymbol{q}}_j\cdot\ddot{\boldsymbol{q}}_j+\sum_{j=1}^{N}\frac{\partial U}{\partial\boldsymbol{q}_j}\cdot\dot{\boldsymbol{q}}_j=\sum_{j=1}^{N}\left(m_j\ddot{\boldsymbol{q}}_j+\frac{\partial U}{\partial\boldsymbol{q}_j}\right)\cdot\dot{\boldsymbol{q}}_j=0.\]
+
+$$
+\frac{\mathrm{d}}{\mathrm{d}t}E=\sum_{j=1}^{N}m_j\dot{\boldsymbol{q}}_j\cdot\ddot{\boldsymbol{q}}_j+\sum_{j=1}^{N}\frac{\partial U}{\partial\boldsymbol{q}_j}\cdot\dot{\boldsymbol{q}}_j=\sum_{j=1}^{N}\left(m_j\ddot{\boldsymbol{q}}_j+\frac{\partial U}{\partial\boldsymbol{q}_j}\right)\cdot\dot{\boldsymbol{q}}_j=0.
+$$
+
+
 原文紧接陈述给出完整导数计算；PDF字体记录确认能量函数为数学斜体E。
 
 ### 4. 完整当前Lean（原文与修正版独立列出）
@@ -97,7 +102,7 @@ theorem energy_conservation {n : ℕ} (m : CoordinateMasses n) (U : PotentialEne
 
 | 原文成分 | Lean对应 | 说明 |
 |---|---|---|
-| 原文对象、量词、前提与完整定义/结论（见第2段逐字引用） | MD.Ch01.energy_conservation；完整当前陈述及同组辅助定义见本条第4段 | 一致 |
+| 原文对象、量词、前提与完整定义/结论（见第2段逐字引用） | MD.Ch01.energy\_conservation；完整当前陈述及同组辅助定义见本条第4段 | 一致 |
 | 原文未显式量化的技术资格 | hm: 固定对角质量正；牛顿相空间重写使用逆质量。 | [EXTRA] |
 | 原文未显式量化的技术资格 | hU: U在Q每点可微；保证原文链式法则有意义。 | [EXTRA] |
 | 原文未显式量化的技术资格 | 时间取开连通区间Ioo a b；能量比较仅对s,t属于该区间，不作越过解存在区间的结论。 | [EXTRA] |
@@ -113,14 +118,19 @@ theorem energy_conservation {n : ℕ} (m : CoordinateMasses n) (U : PotentialEne
 ### 7. 状态与证明位置
 
 checked+documented priors；已逐声明核验公理；含占位的声明仍未证明。
-位置：Blueprint/Ch01.lean:129；MD.Ch01.energy_conservation。
+位置：Blueprint/Ch01.lean:129；MD.Ch01.energy\_conservation。
 
 ## 1. MD-1.3-NewtonEulerLagrange · unnumbered_claim · 印刷p.23 / PDFp.46
 
 ### 2. 原文陈述
 
 > The equations of motion may be expressed in terms of the Lagrangian as:
-> \[\frac{\mathrm{d}}{\mathrm{d}t}\frac{\partial L}{\partial\dot{\boldsymbol{q}}}=\frac{\partial L}{\partial\boldsymbol{q}}.\]
+
+$$
+\frac{\mathrm{d}}{\mathrm{d}t}\frac{\partial L}{\partial\dot{\boldsymbol{q}}}=\frac{\partial L}{\partial\boldsymbol{q}}.
+$$
+
+
 > (Note that this must be interpreted in general as a set of $N_c=3N$ equations, one for each atomic coordinate.)
 
 ### 3. 原文证明
@@ -165,8 +175,8 @@ theorem newton_iff_euler_lagrange {n : ℕ} (m : CoordinateMasses n)
 
 | 原文成分 | Lean对应 | 说明 |
 |---|---|---|
-| 原文对象、量词、前提与完整定义/结论（见第2段逐字引用） | MD.Ch01.newton_iff_euler_lagrange；完整当前陈述及同组辅助定义见本条第4段 | 一致 |
-| \[\frac{\mathrm{d}}{\mathrm{d}t}\frac{\partial L}{\partial\dot{\boldsymbol{q}}}=\frac{\partial L}{\partial\boldsymbol{q}}.\] | MD.Ch01.newton_iff_euler_lagrange，完整展开陈述见上一行及第4段 | 一致 |
+| 原文对象、量词、前提与完整定义/结论（见第2段逐字引用） | MD.Ch01.newton\_iff\_euler\_lagrange；完整当前陈述及同组辅助定义见本条第4段 | 一致 |
+| $\frac{\mathrm{d}}{\mathrm{d}t}\frac{\partial L}{\partial\dot{\boldsymbol{q}}}=\frac{\partial L}{\partial\boldsymbol{q}}.$ | MD.Ch01.newton\_iff\_euler\_lagrange，完整展开陈述见上一行及第4段 | 一致 |
 | 原文未显式量化的技术资格 | hm: 每个固定对角质量正；用于从相空间方程回到牛顿方程。 | [EXTRA] |
 | 原文未显式量化的技术资格 | hI: 时间域开放；把within导数还原为原文双侧时间导数。 | [EXTRA] |
 | 原文未显式量化的技术资格 | hU: U在Q可微；保证位置偏导是实际导数。 | [EXTRA] |
@@ -182,24 +192,39 @@ theorem newton_iff_euler_lagrange {n : ℕ} (m : CoordinateMasses n)
 ### 7. 状态与证明位置
 
 checked+documented priors；已逐声明核验公理；含占位的声明仍未证明。
-位置：Blueprint/Ch01.lean:165；MD.Ch01.newton_iff_euler_lagrange。
+位置：Blueprint/Ch01.lean:165；MD.Ch01.newton\_iff\_euler\_lagrange。
 
 ## 1. MD-1.4-LegendreHamiltonian · unnumbered_claim · 印刷p.24 / PDFp.47
 
 ### 2. 原文陈述
 
 > If $\boldsymbol{M}(\boldsymbol{q})$ is invertible, the supremum is achieved precisely when
-> \[\boldsymbol{v}=\boldsymbol{M}^{-1}(\boldsymbol{q})\boldsymbol{p},\]
+
+$$
+\boldsymbol{v}=\boldsymbol{M}^{-1}(\boldsymbol{q})\boldsymbol{p},
+$$
+
+
 > which gives the standard definition of the momentum vector $\boldsymbol{p}$ in terms of velocities,
-> \[\boldsymbol{p}=\frac{\partial L}{\partial\dot{\boldsymbol{q}}}=\boldsymbol{M}(\boldsymbol{q})\dot{\boldsymbol{q}},\]
+
+$$
+\boldsymbol{p}=\frac{\partial L}{\partial\dot{\boldsymbol{q}}}=\boldsymbol{M}(\boldsymbol{q})\dot{\boldsymbol{q}},
+$$
+
+
 > and, with $\boldsymbol{v}=\boldsymbol{M}^{-1}(\boldsymbol{q})\boldsymbol{p}$, the Legendre transformation results in a new function
-> \[H(\boldsymbol{q},\boldsymbol{p})\stackrel{\mathrm{def}}{=}\boldsymbol{p}^TM(\boldsymbol{q})^{-1}\boldsymbol{p}/2+U(\boldsymbol{q}).\]
+
+$$
+H(\boldsymbol{q},\boldsymbol{p})\stackrel{\mathrm{def}}{=}\boldsymbol{p}^TM(\boldsymbol{q})^{-1}\boldsymbol{p}/2+U(\boldsymbol{q}).
+$$
+
+
 > This is precisely the energy function, written in terms of positions and momenta.
 
 ### 3. 原文证明
 
 原书无独立完整证明。
-原文仅展示将U(q)从上确界中移出的代数恒等式，未独立证明上界、达到条件及唯一性；该段原文完整保存于proof_discussion_latex。
+原文仅展示将U(q)从上确界中移出的代数恒等式，未独立证明上界、达到条件及唯一性；该段原文完整保存于proof\_discussion\_latex。
 
 ### 4. 完整当前Lean（原文与修正版独立列出）
 
@@ -264,8 +289,8 @@ theorem hamiltonian_legendre_transform_corrected {n : ℕ}
 
 | 原文成分 | Lean对应 | 说明 |
 |---|---|---|
-| 原文对象、量词、前提与完整定义/结论（见第2段逐字引用） | MD.Ch01.hamiltonian_legendre_transform；完整当前陈述及同组辅助定义见本条第4段 | NEEDS_HUMAN |
-| \[\boldsymbol{v}=\boldsymbol{M}^{-1}(\boldsymbol{q})\boldsymbol{p},\]；\[\boldsymbol{p}=\frac{\partial L}{\partial\dot{\boldsymbol{q}}}=\boldsymbol{M}(\boldsymbol{q})\dot{\boldsymbol{q}},\]；\[H(\boldsymbol{q},\boldsymbol{p})\stackrel{\mathrm{def}}{=}\boldsymbol{p}^TM(\boldsymbol{q})^{-1}\boldsymbol{p}/2+U(\boldsymbol{q}).\] | MD.Ch01.hamiltonian_legendre_transform，完整展开陈述见上一行及第4段 | NEEDS_HUMAN |
+| 原文对象、量词、前提与完整定义/结论（见第2段逐字引用） | MD.Ch01.hamiltonian\_legendre\_transform；完整当前陈述及同组辅助定义见本条第4段 | NEEDS\_HUMAN |
+| $\boldsymbol{v}=\boldsymbol{M}^{-1}(\boldsymbol{q})\boldsymbol{p},$；$\boldsymbol{p}=\frac{\partial L}{\partial\dot{\boldsymbol{q}}}=\boldsymbol{M}(\boldsymbol{q})\dot{\boldsymbol{q}},$；$H(\boldsymbol{q},\boldsymbol{p})\stackrel{\mathrm{def}}{=}\boldsymbol{p}^TM(\boldsymbol{q})^{-1}\boldsymbol{p}/2+U(\boldsymbol{q}).$ | MD.Ch01.hamiltonian\_legendre\_transform，完整展开陈述见上一行及第4段 | NEEDS\_HUMAN |
 
 [EXTRA] [EXTRA] hPositive : (M q).PosDef；展开p23正物理质量及满秩Jacobian继承的对称正定背景，任意可逆矩阵反例不属于此子类。字面可逆原句保留，配置相关M及全部六项结论不变。
 
@@ -273,13 +298,13 @@ theorem hamiltonian_legendre_transform_corrected {n : ℕ}
 
 任意可逆矩阵不足以保证凹二次目标有最大值；需继承机械质量的对称正定背景。 原文与修正版独立保留；默认选项是工作版本，尚未获导师裁定。
 
-网站：原书疑误=NEEDS_HUMAN；原文忠实性单列；修正版=网站PASS；原文已形式化子句=网站PASS（限定范围）；原文已形式化子句=网站PASS（限定范围）；原文已形式化子句=网站PASS（限定范围）。
+网站：原书疑误=NEEDS\_HUMAN；原文忠实性单列；修正版=网站PASS；原文已形式化子句=网站PASS（限定范围）；原文已形式化子句=网站PASS（限定范围）；原文已形式化子句=网站PASS（限定范围）。
 逐项核对任意 n、配置相关 M、实值 U、q/p、IsUnit 和 PosDef。主声明及 _corrected：PASS，六项依次给有上界、sup=H、唯一达到点、全部速度处真实梯度 Mv、逆变换动量、能量对应；PosDef 含实对称性，是合理且已披露的机械背景补充。_literal：字面忠实性 PASS，仅可逆原句及其全部意涵被保留；数学有效性有原书疑误，不能作为任意可逆矩阵定理采信。没有把 sorry 当作失败依据。
 
 ### 7. 状态与证明位置
 
 incomplete；已逐声明核验公理；含占位的声明仍未证明。
-位置：Blueprint/Ch01.lean:206；MD.Ch01.hamiltonian_legendre_transform。
+位置：Blueprint/Ch01.lean:206；MD.Ch01.hamiltonian\_legendre\_transform。
 
 ## 1. MD-1.5.1-FlowInverse · unnumbered_claim · 印刷p.26 / PDFp.49
 
@@ -321,7 +346,7 @@ theorem flow_inverse {n : ℕ} (m : CoordinateMasses n) (U : PotentialEnergy n)
 
 | 原文成分 | Lean对应 | 说明 |
 |---|---|---|
-| 原文对象、量词、前提与完整定义/结论（见第2段逐字引用） | MD.Ch01.flow_inverse；完整当前陈述及同组辅助定义见本条第4段 | 一致 |
+| 原文对象、量词、前提与完整定义/结论（见第2段逐字引用） | MD.Ch01.flow\_inverse；完整当前陈述及同组辅助定义见本条第4段 | 一致 |
 | 原文未显式量化的技术资格 | hψ: 显式全实时间解及S不变，落实正文双向可解和flow map前提；本条不证明全局流存在。 | [EXTRA] |
 | 原文未显式量化的技术资格 | hreg: F在Q为C¹，用于ODE唯一性，落实正文继承的存在唯一性前提。 | [EXTRA] |
 | 原文未显式量化的技术资格 | _hm: 正固定质量，使对象限于原文分子Hamiltonian系统。 | [EXTRA] |
@@ -337,14 +362,19 @@ theorem flow_inverse {n : ℕ} (m : CoordinateMasses n) (U : PotentialEnergy n)
 ### 7. 状态与证明位置
 
 checked+documented priors；已逐声明核验公理；含占位的声明仍未证明。
-位置：Blueprint/Ch01.lean:271；MD.Ch01.flow_inverse。
+位置：Blueprint/Ch01.lean:271；MD.Ch01.flow\_inverse。
 
 ## 1. MD-1.1-Schrodinger · definition · 印刷p.5 / PDFp.28
 
 ### 2. 原文陈述
 
 > The Schrödinger equation itself is a partial differential equation of the following form:
-> \[i\hbar\frac{\partial\Phi}{\partial t}=-\hbar^2\sum_{j=1}^{13}\frac{1}{2\mu_j}\left(\frac{\partial^2\Phi}{\partial q_{j,x}^2}+\frac{\partial^2\Phi}{\partial q_{j,y}^2}+\frac{\partial^2\Phi}{\partial q_{j,z}^2}\right)+U_P(q_{1,x},q_{1,y},\ldots,q_{13,z})\Phi.\tag{1.1}\]
+
+$$
+i\hbar\frac{\partial\Phi}{\partial t}=-\hbar^2\sum_{j=1}^{13}\frac{1}{2\mu_j}\left(\frac{\partial^2\Phi}{\partial q_{j,x}^2}+\frac{\partial^2\Phi}{\partial q_{j,y}^2}+\frac{\partial^2\Phi}{\partial q_{j,z}^2}\right)+U_P(q_{1,x},q_{1,y},\ldots,q_{13,z})\Phi.\tag{1.1}
+$$
+
+
 
 ### 3. 原文证明
 
@@ -371,7 +401,7 @@ def schrodingerEquation (h : planckConstant) (μ : quantumMass)
 | 原文成分 | Lean对应 | 说明 |
 |---|---|---|
 | 原文对象、量词、前提与完整定义/结论（见第2段逐字引用） | MD.Ch01.schrodingerEquation；完整当前陈述及同组辅助定义见本条第4段 | 一致 |
-| \[i\hbar\frac{\partial\Phi}{\partial t}=-\hbar^2\sum_{j=1}^{13}\frac{1}{2\mu_j}\left(\frac{\partial^2\Phi}{\partial q_{j,x}^2}+\frac{\partial^2\Phi}{\partial q_{j,y}^2}+\frac{\partial^2\Phi}{\partial q_{j,z}^2}\right)+U_P(q_{1,x},q_{1,y},\ldots,q_{13,z})\Phi.\tag{1.1}\] | MD.Ch01.schrodingerEquation，完整展开陈述见上一行及第4段 | 一致 |
+| $i\hbar\frac{\partial\Phi}{\partial t}=-\hbar^2\sum_{j=1}^{13}\frac{1}{2\mu_j}\left(\frac{\partial^2\Phi}{\partial q_{j,x}^2}+\frac{\partial^2\Phi}{\partial q_{j,y}^2}+\frac{\partial^2\Phi}{\partial q_{j,z}^2}\right)+U_P(q_{1,x},q_{1,y},\ldots,q_{13,z})\Phi.\quad\text{(1.1)}$ | MD.Ch01.schrodingerEquation，完整展开陈述见上一行及第4段 | 一致 |
 | 13粒子的3分量二阶偏导与质量权重 | Fin 39; μ ⟨i.val / 3, …⟩; secondPartial (Φ t) q i / (2 * μᵢ) | 一致 |
 | 时间导数与势项 | Complex.I * h * deriv (fun s => Φ s q) t; (U q : ℂ) * Φ t q | 一致 |
 | 原文未显式量化的技术资格 | 正质量及正Planck参数；按经典解解释，Φ在时间/位置联合C2，保证总导数算子表示实际偏导数；不声明解存在。 | [EXTRA] |
@@ -397,7 +427,12 @@ self-contained；已逐声明核验公理；含占位的声明仍未证明。
 ### 2. 原文陈述
 
 > where the forces are determined from the potential energy function $U$. Denoting the coordinates of the $i$th nucleus of an N-atom system by $q_{i,x},q_{i,y},q_{i,z}$, and the atomic mass by $m_i$, the equations of motion for the $i$th nucleus can be written out as
-> \[m_i\frac{\mathrm d^2q_{i,x}}{\mathrm dt^2}=-\frac{\partial U}{\partial q_{i,x}},\qquad m_i\frac{\mathrm d^2q_{i,y}}{\mathrm dt^2}=-\frac{\partial U}{\partial q_{i,y}},\qquad m_i\frac{\mathrm d^2q_{i,z}}{\mathrm dt^2}=-\frac{\partial U}{\partial q_{i,z}}.\tag{1.2}\]
+
+$$
+m_i\frac{\mathrm d^2q_{i,x}}{\mathrm dt^2}=-\frac{\partial U}{\partial q_{i,x}},\qquad m_i\frac{\mathrm d^2q_{i,y}}{\mathrm dt^2}=-\frac{\partial U}{\partial q_{i,y}},\qquad m_i\frac{\mathrm d^2q_{i,z}}{\mathrm dt^2}=-\frac{\partial U}{\partial q_{i,z}}.\tag{1.2}
+$$
+
+
 > It is important to recognize that (1.2) does not, itself, give a complete description of the motion; it must be supplemented by initial conditions (positions and velocities given at some specified instant) for all atoms.
 
 ### 3. 原文证明
@@ -421,7 +456,7 @@ def newtonInitialValueModel {N : ℕ} (m : ParticleMasses N)
 | 原文成分 | Lean对应 | 说明 |
 |---|---|---|
 | 原文对象、量词、前提与完整定义/结论（见第2段逐字引用） | MD.Ch01.newtonInitialValueModel；完整当前陈述及同组辅助定义见本条第4段 | 一致 |
-| \[m_i\frac{\mathrm d^2q_{i,x}}{\mathrm dt^2}=-\frac{\partial U}{\partial q_{i,x}},\qquad m_i\frac{\mathrm d^2q_{i,y}}{\mathrm dt^2}=-\frac{\partial U}{\partial q_{i,y}},\qquad m_i\frac{\mathrm d^2q_{i,z}}{\mathrm dt^2}=-\frac{\partial U}{\partial q_{i,z}}.\tag{1.2}\] | MD.Ch01.newtonInitialValueModel，完整展开陈述见上一行及第4段 | 一致 |
+| $m_i\frac{\mathrm d^2q_{i,x}}{\mathrm dt^2}=-\frac{\partial U}{\partial q_{i,x}},\qquad m_i\frac{\mathrm d^2q_{i,y}}{\mathrm dt^2}=-\frac{\partial U}{\partial q_{i,y}},\qquad m_i\frac{\mathrm d^2q_{i,z}}{\mathrm dt^2}=-\frac{\partial U}{\partial q_{i,z}}.\quad\text{(1.2)}$ | MD.Ch01.newtonInitialValueModel，完整展开陈述见上一行及第4段 | 一致 |
 | 原文未显式量化的技术资格 | n为展平坐标数；三维实例n=3N，质量限制通过coordinateMassesOfParticles给出。 | [EXTRA] |
 | 网站FAIL指出的缺失资格与动力学 | MD.Ch01.newtonInitialValueModel及EAUDIT02辅助定义 | 修复；所有新技术范围明确[EXTRA]，原文未弱化，网站复审未验证 |
 
@@ -476,7 +511,7 @@ def hardSphereModel {N : ℕ} (R m : Fin N → ℝ) (I C : Set ℝ)
 
 | 原文成分 | Lean对应 | 说明 |
 |---|---|---|
-| 原文对象、量词、前提与完整定义/结论（见第2段逐字引用） | MD.Ch01.hardSphereModel；完整当前陈述及同组辅助定义见本条第4段 | NEEDS_HUMAN |
+| 原文对象、量词、前提与完整定义/结论（见第2段逐字引用） | MD.Ch01.hardSphereModel；完整当前陈述及同组辅助定义见本条第4段 | NEEDS\_HUMAN |
 | 原文未显式量化的技术资格 | 只编码不可穿透与完全弹性守恒关系；原文未指定碰撞散射规则，此定义不唯一决定碰撞后速度。 | [EXTRA] |
 | 网站FAIL指出的缺失资格与动力学 | MD.Ch01.hardSphereModel及EAUDIT02辅助定义 | 修复；所有新技术范围明确[EXTRA]，原文未弱化，网站复审未验证 |
 
@@ -499,7 +534,12 @@ self-contained；已逐声明核验公理；含占位的声明仍未证明。
 ### 2. 原文陈述
 
 > In the most common situations, the potential energy function consists of a sum of 2-body, 3-body and/or 4-body terms,
-> \[U_{ij}(\boldsymbol q_i,\boldsymbol q_j),\qquad U_{ijk}(\boldsymbol q_i,\boldsymbol q_j,\boldsymbol q_k),\qquad U_{ijkl}(\boldsymbol q_i,\boldsymbol q_j,\boldsymbol q_k,\boldsymbol q_l),\]
+
+$$
+U_{ij}(\boldsymbol q_i,\boldsymbol q_j),\qquad U_{ijk}(\boldsymbol q_i,\boldsymbol q_j,\boldsymbol q_k),\qquad U_{ijkl}(\boldsymbol q_i,\boldsymbol q_j,\boldsymbol q_k,\boldsymbol q_l),
+$$
+
+
 > where $\boldsymbol q_i$ is the position vector of atom $i$ such that $(q_{i,x},q_{i,y},q_{i,z})=\boldsymbol q_i\in\mathbb R^3$.
 
 ### 3. 原文证明
@@ -525,7 +565,7 @@ def multibodyPotential {N : ℕ} (U₂ : Fin N → Fin N → V3 → V3 → ℝ)
 | 原文成分 | Lean对应 | 说明 |
 |---|---|---|
 | 原文对象、量词、前提与完整定义/结论（见第2段逐字引用） | MD.Ch01.multibodyPotential；完整当前陈述及同组辅助定义见本条第4段 | 一致 |
-| \[U_{ij}(\boldsymbol q_i,\boldsymbol q_j),\qquad U_{ijk}(\boldsymbol q_i,\boldsymbol q_j,\boldsymbol q_k),\qquad U_{ijkl}(\boldsymbol q_i,\boldsymbol q_j,\boldsymbol q_k,\boldsymbol q_l),\] | MD.Ch01.multibodyPotential，完整展开陈述见上一行及第4段 | 一致 |
+| $U_{ij}(\boldsymbol q_i,\boldsymbol q_j),\qquad U_{ijk}(\boldsymbol q_i,\boldsymbol q_j,\boldsymbol q_k),\qquad U_{ijkl}(\boldsymbol q_i,\boldsymbol q_j,\boldsymbol q_k,\boldsymbol q_l),$ | MD.Ch01.multibodyPotential，完整展开陈述见上一行及第4段 | 一致 |
 | 原文未显式量化的技术资格 | 按无序不同粒子组计数i<j<k<l；原文仅列成分未指定求和计数约定。 | [EXTRA] |
 
 [EXTRA] 按无序不同粒子组计数i<j<k<l；原文仅列成分未指定求和计数约定。；[EXTRA] EAUDIT03补真实V3=Position 3=EuclideanSpace ℝ(Fin 3)及求和依赖，仅补材料，不改多体定义。
@@ -546,7 +586,12 @@ self-contained；已逐声明核验公理；含占位的声明仍未证明。
 ### 2. 原文陈述
 
 > A simple potential energy function whose graph can be used to approximate the potential energy of bond dissociation is the Morse potential
-> \[\varphi_{\mathrm{Morse}}(r)=D\left(1-e^{-a(r-r_e)}\right)^2.\]
+
+$$
+\varphi_{\mathrm{Morse}}(r)=D\left(1-e^{-a(r-r_e)}\right)^2.
+$$
+
+
 
 ### 3. 原文证明
 
@@ -564,7 +609,7 @@ def morsePotential (D a rₑ r : ℝ) := D * (1 - Real.exp (-a * (r-rₑ)))^2
 | 原文成分 | Lean对应 | 说明 |
 |---|---|---|
 | 原文对象、量词、前提与完整定义/结论（见第2段逐字引用） | MD.Ch01.morsePotential；完整当前陈述及同组辅助定义见本条第4段 | 一致 |
-| \[\varphi_{\mathrm{Morse}}(r)=D\left(1-e^{-a(r-r_e)}\right)^2.\] | MD.Ch01.morsePotential，完整展开陈述见上一行及第4段 | 一致 |
+| $\varphi_{\mathrm{Morse}}(r)=D\left(1-e^{-a(r-r_e)}\right)^2.$ | MD.Ch01.morsePotential，完整展开陈述见上一行及第4段 | 一致 |
 
 [EXTRA] 
 
@@ -607,11 +652,11 @@ theorem morse_minimum :
 
 | 原文成分 | Lean对应 | 说明 |
 |---|---|---|
-| 原文对象、量词、前提与完整定义/结论（见第2段逐字引用） | MD.Ch01.morse_minimum；完整当前陈述及同组辅助定义见本条第4段 | 一致 |
+| 原文对象、量词、前提与完整定义/结论（见第2段逐字引用） | MD.Ch01.morse\_minimum；完整当前陈述及同组辅助定义见本条第4段 | 一致 |
 | rₑ处极小、井深D | ∀ r>0, 0≤morsePotential…; morsePotential…rₑ=0; Tendsto … atTop (𝓝 D) | 一致 |
-| a controls curvature | 定性形状参数合并context_notation；原书未给二阶导数公式 | 一致（定性背景） |
+| a controls curvature | 定性形状参数合并context\_notation；原书未给二阶导数公式 | 一致（定性背景） |
 | 原文未显式量化的技术资格 | D,a,rₑ正；well depth解释为无穷远极限减最小值。 | [EXTRA] |
-| 网站FAIL指出全部曲率/实际粒子距离缺项 | MD.Ch01.morse_minimum | 完整签名补齐；新增计算明确EXTRA，不回填成原书句子；网站复审尚未验证 |
+| 网站FAIL指出全部曲率/实际粒子距离缺项 | MD.Ch01.morse\_minimum | 完整签名补齐；新增计算明确EXTRA，不回填成原书句子；网站复审尚未验证 |
 
 [EXTRA] D,a,rₑ正；well depth解释为无穷远极限减最小值。；[EXTRA] EAUDIT03补原曲率子句的实际展开φ″(rₑ)=2Da²，并表达固定D>0时正a增大曲率严格增大；公式为形式化展开，不回填成教材原句。
 
@@ -625,14 +670,19 @@ PASS。对所有D,a,rₑ>0，势D(1−exp(−a(r−rₑ)))²在r>0非负、在r�
 ### 7. 状态与证明位置
 
 incomplete；已逐声明核验公理；含占位的声明仍未证明。
-位置：Blueprint/Ch01.lean:372；MD.Ch01.morse_minimum。
+位置：Blueprint/Ch01.lean:372；MD.Ch01.morse\_minimum。
 
 ## 1. MD-1.1.1-LengthBond · definition · 印刷p.9 / PDFp.32
 
 ### 2. 原文陈述
 
 > Because they often do not need to be allowed to break during simulation and are very strong compared to other potential terms, chemical bonds such as the covalent $\mathrm H_2^+$ bond described above are sometimes treated as springs with given rest-length:
-> \[\varphi_{ij}^{\mathrm{len}}(r_{ij})=\frac{k_{ij}^{\mathrm{len}}}{2}(r_{ij}-r_{ij}^0)^2,\qquad r_{ij}=\|\boldsymbol q_i-\boldsymbol q_j\|.\]
+
+$$
+\varphi_{ij}^{\mathrm{len}}(r_{ij})=\frac{k_{ij}^{\mathrm{len}}}{2}(r_{ij}-r_{ij}^0)^2,\qquad r_{ij}=\|\boldsymbol q_i-\boldsymbol q_j\|.
+$$
+
+
 
 ### 3. 原文证明
 
@@ -650,7 +700,7 @@ def lengthBond (k r₀ : ℝ) (qᵢ qⱼ : V3) := k / 2 * (‖qᵢ-qⱼ‖-r₀)
 | 原文成分 | Lean对应 | 说明 |
 |---|---|---|
 | 原文对象、量词、前提与完整定义/结论（见第2段逐字引用） | MD.Ch01.lengthBond；完整当前陈述及同组辅助定义见本条第4段 | 一致 |
-| \[\varphi_{ij}^{\mathrm{len}}(r_{ij})=\frac{k_{ij}^{\mathrm{len}}}{2}(r_{ij}-r_{ij}^0)^2,\qquad r_{ij}=\\|\boldsymbol q_i-\boldsymbol q_j\\|.\] | MD.Ch01.lengthBond，完整展开陈述见上一行及第4段 | 一致 |
+| $\varphi_{ij}^{\mathrm{len}}(r_{ij})=\frac{k_{ij}^{\mathrm{len}}}{2}(r_{ij}-r_{ij}^0)^2,\qquad r_{ij}=\Vert \boldsymbol q_i-\boldsymbol q_j\Vert .$ | MD.Ch01.lengthBond，完整展开陈述见上一行及第4段 | 一致 |
 | 网站FAIL指出全部曲率/实际粒子距离缺项 | MD.Ch01.lengthBond | 完整签名补齐；新增计算明确EXTRA，不回填成原书句子；网站复审尚未验证 |
 
 [EXTRA] [EXTRA] EAUDIT03保留原径向剖面为lengthBondRadial；主定义以真实三维粒子位置为参数，rᵢⱼ=‖qᵢ−qⱼ‖代入原弹簧能。
@@ -672,7 +722,12 @@ self-contained；已逐声明核验公理；含占位的声明仍未证明。
 ### 2. 原文陈述
 
 > This leads to an instantaneous polarization and an attractive interaction termed London dispersion; it is most often modelled using an inverse sixth power potential:
-> \[\varphi_{\mathrm{disp}}(r)\sim-\frac K{r^6},\qquad K>0.\]
+
+$$
+\varphi_{\mathrm{disp}}(r)\sim-\frac K{r^6},\qquad K>0.
+$$
+
+
 
 ### 3. 原文证明
 
@@ -690,7 +745,7 @@ def dispersionPotential (K r : ℝ) := -K / r^6
 | 原文成分 | Lean对应 | 说明 |
 |---|---|---|
 | 原文对象、量词、前提与完整定义/结论（见第2段逐字引用） | MD.Ch01.dispersionPotential；完整当前陈述及同组辅助定义见本条第4段 | 一致 |
-| \[\varphi_{\mathrm{disp}}(r)\sim-\frac K{r^6},\qquad K>0.\] | MD.Ch01.dispersionPotential，完整展开陈述见上一行及第4段 | 一致 |
+| $\varphi_{\mathrm{disp}}(r)\sim-\frac K{r^6},\qquad K>0.$ | MD.Ch01.dispersionPotential，完整展开陈述见上一行及第4段 | 一致 |
 
 [EXTRA] 
 
@@ -710,7 +765,12 @@ self-contained；已逐声明核验公理；含占位的声明仍未证明。
 ### 2. 原文陈述
 
 > Buckingham [56] suggested a combined potential of the form
-> \[\varphi_B(r)=Ae^{-Br}-\frac C{r^6},\qquad A>0,\ B>0,\ C>0.\]
+
+$$
+\varphi_B(r)=Ae^{-Br}-\frac C{r^6},\qquad A>0,\ B>0,\ C>0.
+$$
+
+
 
 ### 3. 原文证明
 
@@ -728,7 +788,7 @@ def buckinghamPotential (A B C r : ℝ) := A * Real.exp (-B*r) - C/r^6
 | 原文成分 | Lean对应 | 说明 |
 |---|---|---|
 | 原文对象、量词、前提与完整定义/结论（见第2段逐字引用） | MD.Ch01.buckinghamPotential；完整当前陈述及同组辅助定义见本条第4段 | 一致 |
-| \[\varphi_B(r)=Ae^{-Br}-\frac C{r^6},\qquad A>0,\ B>0,\ C>0.\] | MD.Ch01.buckinghamPotential，完整展开陈述见上一行及第4段 | 一致 |
+| $\varphi_B(r)=Ae^{-Br}-\frac C{r^6},\qquad A>0,\ B>0,\ C>0.$ | MD.Ch01.buckinghamPotential，完整展开陈述见上一行及第4段 | 一致 |
 
 [EXTRA] 
 
@@ -748,7 +808,12 @@ self-contained；已逐声明核验公理；含占位的声明仍未证明。
 ### 2. 原文陈述
 
 > A more common choice in simulation is the Lennard-Jones (6–12) potential
-> \[\varphi_{\mathrm{LJ}}(r)=4\epsilon\left[\left(\frac\sigma r\right)^{12}-\left(\frac\sigma r\right)^6\right].\]
+
+$$
+\varphi_{\mathrm{LJ}}(r)=4\epsilon\left[\left(\frac\sigma r\right)^{12}-\left(\frac\sigma r\right)^6\right].
+$$
+
+
 
 ### 3. 原文证明
 
@@ -766,7 +831,7 @@ def lennardJonesPotential (ε σ r : ℝ) := 4*ε*((σ/r)^12-(σ/r)^6)
 | 原文成分 | Lean对应 | 说明 |
 |---|---|---|
 | 原文对象、量词、前提与完整定义/结论（见第2段逐字引用） | MD.Ch01.lennardJonesPotential；完整当前陈述及同组辅助定义见本条第4段 | 一致 |
-| \[\varphi_{\mathrm{LJ}}(r)=4\epsilon\left[\left(\frac\sigma r\right)^{12}-\left(\frac\sigma r\right)^6\right].\] | MD.Ch01.lennardJonesPotential，完整展开陈述见上一行及第4段 | 一致 |
+| $\varphi_{\mathrm{LJ}}(r)=4\epsilon\left[\left(\frac\sigma r\right)^{12}-\left(\frac\sigma r\right)^6\right].$ | MD.Ch01.lennardJonesPotential，完整展开陈述见上一行及第4段 | 一致 |
 
 [EXTRA] 
 
@@ -827,9 +892,9 @@ theorem lj_repulsion_corrected (ε σ : ℝ) (hε : 0 < ε) (hσ : 0 < σ) (E : 
 
 | 原文成分 | Lean对应 | 说明 |
 |---|---|---|
-| 原文对象、量词、前提与完整定义/结论（见第2段逐字引用） | MD.Ch01.lj_repulsion；完整当前陈述及同组辅助定义见本条第4段 | 一致 |
+| 原文对象、量词、前提与完整定义/结论（见第2段逐字引用） | MD.Ch01.lj\_repulsion；完整当前陈述及同组辅助定义见本条第4段 | 一致 |
 | r→0时趋正无穷 | Tendsto (lennardJonesPotential ε σ) (𝓝[>] 0) atTop | 一致 |
-| 长模拟中通常保持分离 | context_notation；严格有限能量无碰撞旧CH01-198排除 | 一致（定性经验） |
+| 长模拟中通常保持分离 | context\_notation；严格有限能量无碰撞旧CH01-198排除 | 一致（定性经验） |
 
 [EXTRA] 
 
@@ -837,20 +902,25 @@ theorem lj_repulsion_corrected (ε σ : ℝ) (hε : 0 < ε) (hσ : 0 < σ) (E : 
 
 有限能量的精确轨道和长时间数值模拟的经验频率是不同命题；缺算法、步长、时间窗和概率模型。 原文与修正版独立保留；默认选项是工作版本，尚未获导师裁定。
 
-网站：原书疑误=NEEDS_HUMAN；原文忠实性单列；修正版=网站PASS；原文已形式化子句=网站PASS（限定范围）；原文已形式化子句=网站PASS（限定范围）；原文已形式化子句=网站PASS（限定范围）。
-lj_repulsion：PASS，对全部ε,σ>0，使用从正距离趋零的𝓝[>]0而非把总函数在0的值当极限，结论正确。lj_repulsion_corrected：PASS，对任意有限实能级E，存在δ>0使所有0<r<δ的势值>E，正是该极限的严格屏障表述。两条均不提供轨迹、数值算法、能量上界、长时间区间或概率模型，因而不能覆盖整段原文的long simulations/well separated/rarely经验断言。修正版没有冒称已推出无条件无碰撞；原文经验量词如何纳入正式结论须人工确定，故条目汇总NEEDS_HUMAN。
+网站：原书疑误=NEEDS\_HUMAN；原文忠实性单列；修正版=网站PASS；原文已形式化子句=网站PASS（限定范围）；原文已形式化子句=网站PASS（限定范围）；原文已形式化子句=网站PASS（限定范围）。
+lj\_repulsion：PASS，对全部ε,σ>0，使用从正距离趋零的𝓝[>]0而非把总函数在0的值当极限，结论正确。lj\_repulsion\_corrected：PASS，对任意有限实能级E，存在δ>0使所有0<r<δ的势值>E，正是该极限的严格屏障表述。两条均不提供轨迹、数值算法、能量上界、长时间区间或概率模型，因而不能覆盖整段原文的long simulations/well separated/rarely经验断言。修正版没有冒称已推出无条件无碰撞；原文经验量词如何纳入正式结论须人工确定，故条目汇总NEEDS\_HUMAN。
 
 ### 7. 状态与证明位置
 
 self-contained；已逐声明核验公理；含占位的声明仍未证明。
-位置：Blueprint/Ch01.lean:409；MD.Ch01.lj_repulsion。
+位置：Blueprint/Ch01.lean:409；MD.Ch01.lj\_repulsion。
 
 ## 1. MD-1.1.1-HeterogeneousLJ · definition · 印刷p.11 / PDFp.34
 
 ### 2. 原文陈述
 
 > When there are many atoms of different types, the parameters of the potential will depend on this, so we obtain contributions to the total potential energy of the form
-> \[\varphi_{ij}^{\mathrm{LJ}}(r_{ij})=4\epsilon_{ij}\left[\left(\frac{\sigma_{ij}}{r_{ij}}\right)^{12}-\left(\frac{\sigma_{ij}}{r_{ij}}\right)^6\right],\]
+
+$$
+\varphi_{ij}^{\mathrm{LJ}}(r_{ij})=4\epsilon_{ij}\left[\left(\frac{\sigma_{ij}}{r_{ij}}\right)^{12}-\left(\frac{\sigma_{ij}}{r_{ij}}\right)^6\right],
+$$
+
+
 > where $r_{ij}=\|\boldsymbol q_i-\boldsymbol q_j\|$.
 
 ### 3. 原文证明
@@ -871,7 +941,7 @@ def heterogeneousLJ {N : ℕ} (ε σ : Fin N → Fin N → ℝ)
 | 原文成分 | Lean对应 | 说明 |
 |---|---|---|
 | 原文对象、量词、前提与完整定义/结论（见第2段逐字引用） | MD.Ch01.heterogeneousLJ；完整当前陈述及同组辅助定义见本条第4段 | 一致 |
-| \[\varphi_{ij}^{\mathrm{LJ}}(r_{ij})=4\epsilon_{ij}\left[\left(\frac{\sigma_{ij}}{r_{ij}}\right)^{12}-\left(\frac{\sigma_{ij}}{r_{ij}}\right)^6\right],\] | MD.Ch01.heterogeneousLJ，完整展开陈述见上一行及第4段 | 一致 |
+| $\varphi_{ij}^{\mathrm{LJ}}(r_{ij})=4\epsilon_{ij}\left[\left(\frac{\sigma_{ij}}{r_{ij}}\right)^{12}-\left(\frac{\sigma_{ij}}{r_{ij}}\right)^6\right],$ | MD.Ch01.heterogeneousLJ，完整展开陈述见上一行及第4段 | 一致 |
 
 [EXTRA] [EXTRA] EAUDIT03补真实V3和pairDistance=‖qᵢ−qⱼ‖；总函数公式对应域为pairDistance>0，零距离的总化取值不解释为物理势。
 
@@ -880,7 +950,7 @@ def heterogeneousLJ {N : ℕ} (ε σ : Fin N → Fin N → ℝ)
 逐项核对公式、对象域、量词和结论；定义只登记模型，不声称解存在或物理近似有效。
 
 网站：网站PASS（EAUDIT复审）。
-PASS。N任意，ε、σ均为Fin N×Fin N上的实参数表，q给出每个粒子的真实V3位置；i,j的势为4ε_ij[(σ_ij/‖q_i−q_j‖)^12−(σ_ij/‖q_i−q_j‖)^6]。pairDistance定义正是该欧氏距离。原文未在此声明混合规则、参数表对称性或总势求和，Lean也未额外声称这些。距离零处Lean总除法给出有限扩展值；本条[EXTRA]已明确只在pairDistance>0解释为原势，故不把该扩展当作物理碰撞势。
+PASS。N任意，ε、σ均为Fin N×Fin N上的实参数表，q给出每个粒子的真实V3位置；i,j的势为4ε\_ij[(σ\_ij/‖q\_i−q\_j‖)^12−(σ\_ij/‖q\_i−q\_j‖)^6]。pairDistance定义正是该欧氏距离。原文未在此声明混合规则、参数表对称性或总势求和，Lean也未额外声称这些。距离零处Lean总除法给出有限扩展值；本条[EXTRA]已明确只在pairDistance>0解释为原势，故不把该扩展当作物理碰撞势。
 
 ### 7. 状态与证明位置
 
@@ -892,7 +962,12 @@ self-contained；已逐声明核验公理；含占位的声明仍未证明。
 ### 2. 原文陈述
 
 > When, as in the case of the alanine dipeptide, net charges are present on the atoms, one may model this by means of Coulomb potentials:
-> \[\varphi_{ij}^{\mathrm{Coulomb}}(r_{ij})=\frac{CQ_iQ_j}{\epsilon r_{ij}},\]
+
+$$
+\varphi_{ij}^{\mathrm{Coulomb}}(r_{ij})=\frac{CQ_iQ_j}{\epsilon r_{ij}},
+$$
+
+
 > where $\epsilon>0$ is the dielectric constant, and $Q_i,Q_j$ are the charges on atoms $i$ and $j$, respectively. $C$ is a positive coefficient allowing the adjustment of units. Obviously the effect of the Coulombic potential depends strongly on whether the atoms have the same or oppositely signed charges.
 
 ### 3. 原文证明
@@ -912,7 +987,7 @@ def coulombPotential (C : {x : ℝ // 0 < x}) (Qᵢ Qⱼ : ℝ)
 | 原文成分 | Lean对应 | 说明 |
 |---|---|---|
 | 原文对象、量词、前提与完整定义/结论（见第2段逐字引用） | MD.Ch01.coulombPotential；完整当前陈述及同组辅助定义见本条第4段 | 一致 |
-| \[\varphi_{ij}^{\mathrm{Coulomb}}(r_{ij})=\frac{CQ_iQ_j}{\epsilon r_{ij}},\] | MD.Ch01.coulombPotential，完整展开陈述见上一行及第4段 | 一致 |
+| $\varphi_{ij}^{\mathrm{Coulomb}}(r_{ij})=\frac{CQ_iQ_j}{\epsilon r_{ij}},$ | MD.Ch01.coulombPotential，完整展开陈述见上一行及第4段 | 一致 |
 | 网站指出缺项及原文完整子句 | MD.Ch01.coulombPotential | 正C、介电常数与距离落实到子类型；电荷仍可正负，未另造吸引排斥结论。 |
 | 网站指出缺项及原文完整子句 | MD.Ch01.coulombPotential | 正C、介电常数与距离落实到子类型；电荷仍可正负，未另造吸引排斥结论。 |
 
@@ -953,17 +1028,17 @@ def smoothCutoff (φ : ℝ → ℝ) (r_cut : ℝ) : Prop :=
 | 原文成分 | Lean对应 | 说明 |
 |---|---|---|
 | 原文对象、量词、前提与完整定义/结论（见第2段逐字引用） | MD.Ch01.smoothCutoff；完整当前陈述及同组辅助定义见本条第4段 | 一致 |
-| 网站指出缺项及原文完整子句 | MD.Ch01.smoothCutoff | C¹只要求正距离域，保留严格r_cut<r截零及正截断半径。 |
-| 网站指出缺项及原文完整子句 | MD.Ch01.smoothCutoff | C¹只要求正距离域，保留严格r_cut<r截零及正截断半径。 |
+| 网站指出缺项及原文完整子句 | MD.Ch01.smoothCutoff | C¹只要求正距离域，保留严格r\_cut<r截零及正截断半径。 |
+| 网站指出缺项及原文完整子句 | MD.Ch01.smoothCutoff | C¹只要求正距离域，保留严格r\_cut<r截零及正截断半径。 |
 
-[EXTRA] [EXTRA] 19号：C¹只要求正距离域，保留严格r_cut<r截零及正截断半径。
+[EXTRA] [EXTRA] 19号：C¹只要求正距离域，保留严格r\_cut<r截零及正截断半径。
 
 ### 6. 审计结论
 
-19号本地签名预审：C¹只要求正距离域，保留严格r_cut<r截零及正截断半径。
+19号本地签名预审：C¹只要求正距离域，保留严格r\_cut<r截零及正截断半径。
 
 网站：网站PASS（EAUDIT复审）。
-PASS。smoothCutoff是修饰后势φ的性质：r_cut>0、φ在正距离域C¹、对所有r>r_cut取零；没有在r=0要求C¹，故不排除Coulomb原点奇性。由于r_cut位于正距离域内部，C¹与右侧恒零还蕴含截断点的函数和一阶导数接零，无须另把边界点写入截零量词。原文没有给出具体开关函数或要求在整个截断半径以下精确等于未修饰Coulomb势；未引入这些额外结论。
+PASS。smoothCutoff是修饰后势φ的性质：r\_cut>0、φ在正距离域C¹、对所有r>r\_cut取零；没有在r=0要求C¹，故不排除Coulomb原点奇性。由于r\_cut位于正距离域内部，C¹与右侧恒零还蕴含截断点的函数和一阶导数接零，无须另把边界点写入截零量词。原文没有给出具体开关函数或要求在整个截断半径以下精确等于未修饰Coulomb势；未引入这些额外结论。
 
 ### 7. 状态与证明位置
 
@@ -975,7 +1050,12 @@ self-contained；已逐声明核验公理；含占位的声明仍未证明。
 ### 2. 原文陈述
 
 > More accurate treatments of the long range behavior include the use of an exponential term involving the Debye length $\kappa$ which models screening due to the presence of a polar solvent, in which case the potential is modified to have the form of a Yukawa potential:
-> \[\varphi_{ij}^{\mathrm{screened}}(r_{ij})=\frac{CQ_iQ_j}{\epsilon r_{ij}}e^{-\kappa r_{ij}}.\]
+
+$$
+\varphi_{ij}^{\mathrm{screened}}(r_{ij})=\frac{CQ_iQ_j}{\epsilon r_{ij}}e^{-\kappa r_{ij}}.
+$$
+
+
 
 ### 3. 原文证明
 
@@ -1005,10 +1085,10 @@ def yukawaScreened_corrected_b (C : {x : ℝ // 0 < x}) (Qᵢ Qⱼ : ℝ)
 | 原文成分 | Lean对应 | 说明 |
 |---|---|---|
 | 原文对象、量词、前提与完整定义/结论（见第2段逐字引用） | MD.Ch01.yukawaScreened；完整当前陈述及同组辅助定义见本条第4段 | 一致 |
-| \[\varphi_{ij}^{\mathrm{screened}}(r_{ij})=\frac{CQ_iQ_j}{\epsilon r_{ij}}e^{-\kappa r_{ij}}.\] | MD.Ch01.yukawaScreened，完整展开陈述见上一行及第4段 | 一致 |
+| $\varphi_{ij}^{\mathrm{screened}}(r_{ij})=\frac{CQ_iQ_j}{\epsilon r_{ij}}e^{-\kappa r_{ij}}.$ | MD.Ch01.yukawaScreened，完整展开陈述见上一行及第4段 | 一致 |
 | exp(-κr) | Real.exp (-κ * r) | 一致；κ称屏蔽长度的量纲疑点见原文issues |
-| 网站指出缺项及原文完整子句 | MD.Ch01.yukawaScreened; MD.Ch01.yukawaScreened_corrected_a; MD.Ch01.yukawaScreened_corrected_b | 正C、介电常数、距离落实到子类型；不改原书指数−κr，κ称谓量纲仅登记疑点。 |
-| 网站指出缺项及原文完整子句 | MD.Ch01.yukawaScreened; MD.Ch01.yukawaScreened_corrected_a; MD.Ch01.yukawaScreened_corrected_b | 正C、介电常数、距离落实到子类型；不改原书指数−κr，κ称谓量纲仅登记疑点。 |
+| 网站指出缺项及原文完整子句 | MD.Ch01.yukawaScreened; MD.Ch01.yukawaScreened\_corrected\_a; MD.Ch01.yukawaScreened\_corrected\_b | 正C、介电常数、距离落实到子类型；不改原书指数−κr，κ称谓量纲仅登记疑点。 |
+| 网站指出缺项及原文完整子句 | MD.Ch01.yukawaScreened; MD.Ch01.yukawaScreened\_corrected\_a; MD.Ch01.yukawaScreened\_corrected\_b | 正C、介电常数、距离落实到子类型；不改原书指数−κr，κ称谓量纲仅登记疑点。 |
 
 [EXTRA] [EXTRA] 19号：正C、介电常数、距离落实到子类型；不改原书指数−κr，κ称谓量纲仅登记疑点。
 
@@ -1016,8 +1096,8 @@ def yukawaScreened_corrected_b (C : {x : ℝ // 0 < x}) (Qᵢ Qⱼ : ℝ)
 
 原文称κ为长度，但无量纲指数−κr通常要求κ为逆长度。Lean实数类型不携带量纲，此疑点必须文字核查。 原文与修正版独立保留；默认选项是工作版本，尚未获导师裁定。
 
-网站：原书疑误=NEEDS_HUMAN；原文忠实性单列；修正版=网站PASS；原文已形式化子句=网站PASS（限定范围）；原文已形式化子句=网站PASS（限定范围）；原文已形式化子句=网站PASS（限定范围）。
-yukawaScreened：字面公式及C、dielectric、r的正子类型PASS；κ按实参数保留，未暗改原书指数。原文称κ为长度，而指数−κr若无量纲则κ应有逆长度量纲，此矛盾需人工确认。yukawaScreened_corrected_a：PASS，κ>0解释为逆屏蔽长度，保留−κr；yukawaScreened_corrected_b：PASS，ℓ>0解释为长度，使用−r/ℓ。两修正版在κ=1/ℓ时一致，电荷仍任意实数，其他正域条件相符。汇总NEEDS_HUMAN来自原书参数称谓与公式的冲突，不来自修正版的代数。
+网站：原书疑误=NEEDS\_HUMAN；原文忠实性单列；修正版=网站PASS；原文已形式化子句=网站PASS（限定范围）；原文已形式化子句=网站PASS（限定范围）；原文已形式化子句=网站PASS（限定范围）。
+yukawaScreened：字面公式及C、dielectric、r的正子类型PASS；κ按实参数保留，未暗改原书指数。原文称κ为长度，而指数−κr若无量纲则κ应有逆长度量纲，此矛盾需人工确认。yukawaScreened\_corrected\_a：PASS，κ>0解释为逆屏蔽长度，保留−κr；yukawaScreened\_corrected\_b：PASS，ℓ>0解释为长度，使用−r/ℓ。两修正版在κ=1/ℓ时一致，电荷仍任意实数，其他正域条件相符。汇总NEEDS\_HUMAN来自原书参数称谓与公式的冲突，不来自修正版的代数。
 
 ### 7. 状态与证明位置
 
@@ -1029,9 +1109,19 @@ self-contained；已逐声明核验公理；含占位的声明仍未证明。
 ### 2. 原文陈述
 
 > When a trio of atoms with labels $i$, $j$, and $k$ admits a pair of length bonds, say $(i,j)$ and $(j,k)$, then an additional three-body term will need to be incorporated:
-> \[\varphi_{ijk}^{\mathrm{ang}}=\frac{k_{ijk}^{\mathrm{ang}}}{2}(\theta_{ijk}-\theta_{ijk}^0)^2,\]
+
+$$
+\varphi_{ijk}^{\mathrm{ang}}=\frac{k_{ijk}^{\mathrm{ang}}}{2}(\theta_{ijk}-\theta_{ijk}^0)^2,
+$$
+
+
 > where the angle $\theta_{ijk}$ is given in terms of the positions as
-> \[\theta_{ijk}=\arccos\frac{(\boldsymbol q_i-\boldsymbol q_j)\cdot(\boldsymbol q_j-\boldsymbol q_k)}{r_{ij}r_{jk}}.\]
+
+$$
+\theta_{ijk}=\arccos\frac{(\boldsymbol q_i-\boldsymbol q_j)\cdot(\boldsymbol q_j-\boldsymbol q_k)}{r_{ij}r_{jk}}.
+$$
+
+
 
 ### 3. 原文证明
 
@@ -1058,17 +1148,17 @@ def angleBondOnDomain (k θ₀ : ℝ) (qᵢ qⱼ qₖ : V3)
 | 原文成分 | Lean对应 | 说明 |
 |---|---|---|
 | 原文对象、量词、前提与完整定义/结论（见第2段逐字引用） | MD.Ch01.angleBondOnDomain；完整当前陈述及同组辅助定义见本条第4段 | 一致 |
-| \[\varphi_{ijk}^{\mathrm{ang}}=\frac{k_{ijk}^{\mathrm{ang}}}{2}(\theta_{ijk}-\theta_{ijk}^0)^2,\]；\[\theta_{ijk}=\arccos\frac{(\boldsymbol q_i-\boldsymbol q_j)\cdot(\boldsymbol q_j-\boldsymbol q_k)}{r_{ij}r_{jk}}.\] | MD.Ch01.angleBondModel，完整展开陈述见上一行及第4段 | 一致 |
+| $\varphi_{ijk}^{\mathrm{ang}}=\frac{k_{ijk}^{\mathrm{ang}}}{2}(\theta_{ijk}-\theta_{ijk}^0)^2,$；$\theta_{ijk}=\arccos\frac{(\boldsymbol q_i-\boldsymbol q_j)\cdot(\boldsymbol q_j-\boldsymbol q_k)}{r_{ij}r_{jk}}.$ | MD.Ch01.angleBondModel，完整展开陈述见上一行及第4段 | 一致 |
 | 21号网站建议修复 | MD.Ch01.angleBondOnDomain | 总化辅助angleBondModel保留；angleBondOnDomain强制两键长严格正，有向差不改。 |
 
 [EXTRA] [EXTRA] 总化辅助angleBondModel保留；angleBondOnDomain强制两键长严格正，有向差不改。
 
 ### 6. 审计结论
 
-21号按网站suggested_fix修复并本地核验：总化辅助angleBondModel保留；angleBondOnDomain强制两键长严格正，有向差不改。
+21号按网站suggested\_fix修复并本地核验：总化辅助angleBondModel保留；angleBondOnDomain强制两键长严格正，有向差不改。
 
 网站：按网站审校意见修复，本地核验通过（未再送网站）。
-公式在非零两键长上PASS，V3、内积、两范数乘积、arccos及弹簧系数均与原页一致。但当前angleBondModel接受所有三位置，没有非零键长的子类型或前提，context_notation所说“两键长非零”没有落实，也未声明零分母仅是辅助总化扩展。Lean的除零为0会在原书角度未定义的重合构形给出实势，故按完整对象/域要求FAIL。k正也只是物理上下文，并非签名前提；本次不把原书的有向差约定自行换成通常补角约定。
+公式在非零两键长上PASS，V3、内积、两范数乘积、arccos及弹簧系数均与原页一致。但当前angleBondModel接受所有三位置，没有非零键长的子类型或前提，context\_notation所说“两键长非零”没有落实，也未声明零分母仅是辅助总化扩展。Lean的除零为0会在原书角度未定义的重合构形给出实势，故按完整对象/域要求FAIL。k正也只是物理上下文，并非签名前提；本次不把原书的有向差约定自行换成通常补角约定。
 
 ### 7. 状态与证明位置
 
@@ -1080,7 +1170,12 @@ self-contained；已逐声明核验公理；含占位的声明仍未证明。
 ### 2. 原文陈述
 
 > Dihedral potentials typically are modelled using a trigonometric potential function, as
-> \[\varphi_{ijkl}^{\mathrm{dih}}=k_{ijkl}^{\mathrm{dih}}[1+\cos(n_{ijkl}^{\mathrm{dih}}\eta_{ijkl}-d_{ijkl}^{\mathrm{dih}})].\]
+
+$$
+\varphi_{ijkl}^{\mathrm{dih}}=k_{ijkl}^{\mathrm{dih}}[1+\cos(n_{ijkl}^{\mathrm{dih}}\eta_{ijkl}-d_{ijkl}^{\mathrm{dih}})].
+$$
+
+
 
 ### 3. 原文证明
 
@@ -1098,7 +1193,7 @@ def dihedralPotential (k n θ d : ℝ) := k*(1+Real.cos (n*θ-d))
 | 原文成分 | Lean对应 | 说明 |
 |---|---|---|
 | 原文对象、量词、前提与完整定义/结论（见第2段逐字引用） | MD.Ch01.dihedralPotential；完整当前陈述及同组辅助定义见本条第4段 | 一致 |
-| \[\varphi_{ijkl}^{\mathrm{dih}}=k_{ijkl}^{\mathrm{dih}}[1+\cos(n_{ijkl}^{\mathrm{dih}}\eta_{ijkl}-d_{ijkl}^{\mathrm{dih}})].\] | MD.Ch01.dihedralPotential，完整展开陈述见上一行及第4段 | 一致 |
+| $\varphi_{ijkl}^{\mathrm{dih}}=k_{ijkl}^{\mathrm{dih}}[1+\cos(n_{ijkl}^{\mathrm{dih}}\eta_{ijkl}-d_{ijkl}^{\mathrm{dih}})].$ | MD.Ch01.dihedralPotential，完整展开陈述见上一行及第4段 | 一致 |
 
 [EXTRA] 
 
@@ -1118,15 +1213,45 @@ self-contained；已逐声明核验公理；含占位的声明仍未证明。
 ### 2. 原文陈述
 
 > The potential energy may be written as
-> \[\varphi_{\mathrm{GB}}(\boldsymbol q_1,\boldsymbol q_2,\hat{\boldsymbol u}_1,\hat{\boldsymbol u}_2)=4\epsilon_{\mathrm{GB}}\left[\left(\frac{\sigma_0}{\Delta}\right)^{12}-\left(\frac{\sigma_0}{\Delta}\right)^6\right],\]
-> \[\epsilon_{\mathrm{GB}}(\hat{\boldsymbol r},\hat{\boldsymbol u}_1,\hat{\boldsymbol u}_2)=\epsilon_1(\hat{\boldsymbol u}_1,\hat{\boldsymbol u}_2)\epsilon_2(\hat{\boldsymbol r},\hat{\boldsymbol u}_1,\hat{\boldsymbol u}_2),\]
+
+$$
+\varphi_{\mathrm{GB}}(\boldsymbol q_1,\boldsymbol q_2,\hat{\boldsymbol u}_1,\hat{\boldsymbol u}_2)=4\epsilon_{\mathrm{GB}}\left[\left(\frac{\sigma_0}{\Delta}\right)^{12}-\left(\frac{\sigma_0}{\Delta}\right)^6\right],
+$$
+
+
+
+$$
+\epsilon_{\mathrm{GB}}(\hat{\boldsymbol r},\hat{\boldsymbol u}_1,\hat{\boldsymbol u}_2)=\epsilon_1(\hat{\boldsymbol u}_1,\hat{\boldsymbol u}_2)\epsilon_2(\hat{\boldsymbol r},\hat{\boldsymbol u}_1,\hat{\boldsymbol u}_2),
+$$
+
+
 > with
-> \[\Delta(\boldsymbol r,\hat{\boldsymbol u}_1,\hat{\boldsymbol u}_2)=\|\boldsymbol r\|-\sigma_0/\sqrt{W(\hat{\boldsymbol r},\hat{\boldsymbol u}_1,\hat{\boldsymbol u}_2,\chi)},\]
-> \[\epsilon_1(\hat{\boldsymbol u}_1,\hat{\boldsymbol u}_2)=\epsilon_0[1-\chi^2(\hat{\boldsymbol u}_1\cdot\hat{\boldsymbol u}_2)^2]^{-1/2},\qquad\epsilon_2(\hat{\boldsymbol r},\hat{\boldsymbol u}_1,\hat{\boldsymbol u}_2)=W(\hat{\boldsymbol r},\hat{\boldsymbol u}_1,\hat{\boldsymbol u}_2,\chi'),\]
+
+$$
+\Delta(\boldsymbol r,\hat{\boldsymbol u}_1,\hat{\boldsymbol u}_2)=\|\boldsymbol r\|-\sigma_0/\sqrt{W(\hat{\boldsymbol r},\hat{\boldsymbol u}_1,\hat{\boldsymbol u}_2,\chi)},
+$$
+
+
+
+$$
+\epsilon_1(\hat{\boldsymbol u}_1,\hat{\boldsymbol u}_2)=\epsilon_0[1-\chi^2(\hat{\boldsymbol u}_1\cdot\hat{\boldsymbol u}_2)^2]^{-1/2},\qquad\epsilon_2(\hat{\boldsymbol r},\hat{\boldsymbol u}_1,\hat{\boldsymbol u}_2)=W(\hat{\boldsymbol r},\hat{\boldsymbol u}_1,\hat{\boldsymbol u}_2,\chi'),
+$$
+
+
 > and
-> \[W(\hat{\boldsymbol r},\hat{\boldsymbol u}_1,\hat{\boldsymbol u}_2,\chi)\stackrel{\mathrm{def}}=1-\frac\chi2\left[\frac{(\hat{\boldsymbol r}\cdot(\hat{\boldsymbol u}_1+\hat{\boldsymbol u}_2))^2}{1+\chi\hat{\boldsymbol u}_1\cdot\hat{\boldsymbol u}_2}+\frac{(\hat{\boldsymbol r}\cdot(\hat{\boldsymbol u}_1-\hat{\boldsymbol u}_2))^2}{1-\chi\hat{\boldsymbol u}_1\cdot\hat{\boldsymbol u}_2}\right].\]
+
+$$
+W(\hat{\boldsymbol r},\hat{\boldsymbol u}_1,\hat{\boldsymbol u}_2,\chi)\stackrel{\mathrm{def}}=1-\frac\chi2\left[\frac{(\hat{\boldsymbol r}\cdot(\hat{\boldsymbol u}_1+\hat{\boldsymbol u}_2))^2}{1+\chi\hat{\boldsymbol u}_1\cdot\hat{\boldsymbol u}_2}+\frac{(\hat{\boldsymbol r}\cdot(\hat{\boldsymbol u}_1-\hat{\boldsymbol u}_2))^2}{1-\chi\hat{\boldsymbol u}_1\cdot\hat{\boldsymbol u}_2}\right].
+$$
+
+
 > Finally
-> \[\chi=\frac{[\sigma_e/\sigma_s]^2-1}{[\sigma_e/\sigma_s]^2+1},\qquad\chi'=\frac{1-[\epsilon_e/\epsilon_s]^{1/\mu}}{1+[\epsilon_e/\epsilon_s]^{1/\mu}}.\]
+
+$$
+\chi=\frac{[\sigma_e/\sigma_s]^2-1}{[\sigma_e/\sigma_s]^2+1},\qquad\chi'=\frac{1-[\epsilon_e/\epsilon_s]^{1/\mu}}{1+[\epsilon_e/\epsilon_s]^{1/\mu}}.
+$$
+
+
 
 ### 3. 原文证明
 
@@ -1168,7 +1293,7 @@ def gayBerneOnDomain (ε₀ σ₀ σₑ σₛ εₑ εₛ μ : ℝ) (q₁ q₂ u
 | 原文成分 | Lean对应 | 说明 |
 |---|---|---|
 | 原文对象、量词、前提与完整定义/结论（见第2段逐字引用） | MD.Ch01.gayBerneOnDomain；完整当前陈述及同组辅助定义见本条第4段 | 一致 |
-| \[\varphi_{\mathrm{GB}}(\boldsymbol q_1,\boldsymbol q_2,\hat{\boldsymbol u}_1,\hat{\boldsymbol u}_2)=4\epsilon_{\mathrm{GB}}\left[\left(\frac{\sigma_0}{\Delta}\right)^{12}-\left(\frac{\sigma_0}{\Delta}\right)^6\right],\]；\[\epsilon_{\mathrm{GB}}(\hat{\boldsymbol r},\hat{\boldsymbol u}_1,\hat{\boldsymbol u}_2)=\epsilon_1(\hat{\boldsymbol u}_1,\hat{\boldsymbol u}_2)\epsilon_2(\hat{\boldsymbol r},\hat{\boldsymbol u}_1,\hat{\boldsymbol u}_2),\]；\[\Delta(\boldsymbol r,\hat{\boldsymbol u}_1,\hat{\boldsymbol u}_2)=\\|\boldsymbol r\\|-\sigma_0/\sqrt{W(\hat{\boldsymbol r},\hat{\boldsymbol u}_1,\hat{\boldsymbol u}_2,\chi)},\]；\[\epsilon_1(\hat{\boldsymbol u}_1,\hat{\boldsymbol u}_2)=\epsilon_0[1-\chi^2(\hat{\boldsymbol u}_1\cdot\hat{\boldsymbol u}_2)^2]^{-1/2},\qquad\epsilon_2(\hat{\boldsymbol r},\hat{\boldsymbol u}_1,\hat{\boldsymbol u}_2)=W(\hat{\boldsymbol r},\hat{\boldsymbol u}_1,\hat{\boldsymbol u}_2,\chi'),\]；\[W(\hat{\boldsymbol r},\hat{\boldsymbol u}_1,\hat{\boldsymbol u}_2,\chi)\stackrel{\mathrm{def}}=1-\frac\chi2\left[\frac{(\hat{\boldsymbol r}\cdot(\hat{\boldsymbol u}_1+\hat{\boldsymbol u}_2))^2}{1+\chi\hat{\boldsymbol u}_1\cdot\hat{\boldsymbol u}_2}+\frac{(\hat{\boldsymbol r}\cdot(\hat{\boldsymbol u}_1-\hat{\boldsymbol u}_2))^2}{1-\chi\hat{\boldsymbol u}_1\cdot\hat{\boldsymbol u}_2}\right].\]；\[\chi=\frac{[\sigma_e/\sigma_s]^2-1}{[\sigma_e/\sigma_s]^2+1},\qquad\chi'=\frac{1-[\epsilon_e/\epsilon_s]^{1/\mu}}{1+[\epsilon_e/\epsilon_s]^{1/\mu}}.\] | MD.Ch01.gayBerneModel，完整展开陈述见上一行及第4段 | 一致 |
+| $\varphi_{\mathrm{GB}}(\boldsymbol q_1,\boldsymbol q_2,\hat{\boldsymbol u}_1,\hat{\boldsymbol u}_2)=4\epsilon_{\mathrm{GB}}\left[\left(\frac{\sigma_0}{\Delta}\right)^{12}-\left(\frac{\sigma_0}{\Delta}\right)^6\right],$；$\epsilon_{\mathrm{GB}}(\hat{\boldsymbol r},\hat{\boldsymbol u}_1,\hat{\boldsymbol u}_2)=\epsilon_1(\hat{\boldsymbol u}_1,\hat{\boldsymbol u}_2)\epsilon_2(\hat{\boldsymbol r},\hat{\boldsymbol u}_1,\hat{\boldsymbol u}_2),$；$\Delta(\boldsymbol r,\hat{\boldsymbol u}_1,\hat{\boldsymbol u}_2)=\Vert \boldsymbol r\Vert -\sigma_0/\sqrt{W(\hat{\boldsymbol r},\hat{\boldsymbol u}_1,\hat{\boldsymbol u}_2,\chi)},$；$\epsilon_1(\hat{\boldsymbol u}_1,\hat{\boldsymbol u}_2)=\epsilon_0[1-\chi^2(\hat{\boldsymbol u}_1\cdot\hat{\boldsymbol u}_2)^2]^{-1/2},\qquad\epsilon_2(\hat{\boldsymbol r},\hat{\boldsymbol u}_1,\hat{\boldsymbol u}_2)=W(\hat{\boldsymbol r},\hat{\boldsymbol u}_1,\hat{\boldsymbol u}_2,\chi'),$；$W(\hat{\boldsymbol r},\hat{\boldsymbol u}_1,\hat{\boldsymbol u}_2,\chi)\stackrel{\mathrm{def}}=1-\frac\chi2\left[\frac{(\hat{\boldsymbol r}\cdot(\hat{\boldsymbol u}_1+\hat{\boldsymbol u}_2))^2}{1+\chi\hat{\boldsymbol u}_1\cdot\hat{\boldsymbol u}_2}+\frac{(\hat{\boldsymbol r}\cdot(\hat{\boldsymbol u}_1-\hat{\boldsymbol u}_2))^2}{1-\chi\hat{\boldsymbol u}_1\cdot\hat{\boldsymbol u}_2}\right].$；$\chi=\frac{[\sigma_e/\sigma_s]^2-1}{[\sigma_e/\sigma_s]^2+1},\qquad\chi'=\frac{1-[\epsilon_e/\epsilon_s]^{1/\mu}}{1+[\epsilon_e/\epsilon_s]^{1/\mu}}.$ | MD.Ch01.gayBerneModel，完整展开陈述见上一行及第4段 | 一致 |
 | εGB=ε₁ε₂ | gayBerneEpsilonOne … * gayBerneEpsilonTwo …，没有平方ε₂ | 一致；旧正式定义平方与原页不同，未桥接 |
 | ρ、χ、χ′及各向异性参数 | gayBerneModel的r/χ/χ′/Δ定义及原始定义文件 | 一致 |
 | 21号网站建议修复 | MD.Ch01.gayBerneOnDomain | 原公式为总化辅助；有效域落实单位取向、非碰撞、根号严格正、参数及全部分母非零、Δ≠0；ε₂次数和Δ原样保留。 |
@@ -1177,10 +1302,10 @@ def gayBerneOnDomain (ε₀ σ₀ σₑ σₛ εₑ εₛ μ : ℝ) (q₁ q₂ u
 
 ### 6. 审计结论
 
-21号按网站suggested_fix修复并本地核验：原公式为总化辅助；有效域落实单位取向、非碰撞、根号严格正、参数及全部分母非零、Δ≠0；ε₂次数和Δ原样保留。
+21号按网站suggested\_fix修复并本地核验：原公式为总化辅助；有效域落实单位取向、非碰撞、根号严格正、参数及全部分母非零、Δ≠0；ε₂次数和Δ原样保留。
 
 网站：按网站审校意见修复，本地核验通过（未再送网站）。
-全部代数展开在原书正常域上PASS：r=q₂−q₁、r̂=‖r‖⁻¹r，ε₁=ε₀/√(1−χ²(u₁·u₂)²)，ε₂=W(...,χ′)，W的两分母和正负号、χ与χ′的定义均一致。但Lean参数u₁,u₂仅为任意V3，不是原书的单位取向；q₁≠q₂、根号内严格正、σₛ/εₛ/μ及各有理式分母非零、Δ≠0均未编码。context_notation已经明确这些域限定，却无相应[EXTRA]总化说明或有效域模型。总除法、Real.sqrt及Real.rpow会对非法参数继续返回值，因此完整域审校FAIL；不以旧库不同公式作为依据。
+全部代数展开在原书正常域上PASS：r=q₂−q₁、r̂=‖r‖⁻¹r，ε₁=ε₀/√(1−χ²(u₁·u₂)²)，ε₂=W(...,χ′)，W的两分母和正负号、χ与χ′的定义均一致。但Lean参数u₁,u₂仅为任意V3，不是原书的单位取向；q₁≠q₂、根号内严格正、σₛ/εₛ/μ及各有理式分母非零、Δ≠0均未编码。context\_notation已经明确这些域限定，却无相应[EXTRA]总化说明或有效域模型。总除法、Real.sqrt及Real.rpow会对非法参数继续返回值，因此完整域审校FAIL；不以旧库不同公式作为依据。
 
 ### 7. 状态与证明位置
 
@@ -1192,7 +1317,12 @@ checked+documented priors；已逐声明核验公理；含占位的声明仍未�
 ### 2. 原文陈述
 
 > In this book, we shall frequently use a compact, vectorial notation, where $\boldsymbol q$ and $\dot{\boldsymbol q}$ represent vectors of the positions and velocities, and $\boldsymbol M$ is a diagonal mass matrix, so the equations of motion (1.2) become
-> \[\boldsymbol M\frac{\mathrm d^2}{\mathrm dt^2}\boldsymbol q=\boldsymbol F(\boldsymbol q)=-\nabla U(\boldsymbol q).\tag{1.3}\]
+
+$$
+\boldsymbol M\frac{\mathrm d^2}{\mathrm dt^2}\boldsymbol q=\boldsymbol F(\boldsymbol q)=-\nabla U(\boldsymbol q).\tag{1.3}
+$$
+
+
 
 ### 3. 原文证明
 
@@ -1214,7 +1344,7 @@ def compactNewton {n : ℕ} (m : CoordinateMasses n) (U : PotentialEnergy n)
 | 原文成分 | Lean对应 | 说明 |
 |---|---|---|
 | 原文对象、量词、前提与完整定义/结论（见第2段逐字引用） | MD.Ch01.compactNewton；完整当前陈述及同组辅助定义见本条第4段 | 一致 |
-| \[\boldsymbol M\frac{\mathrm d^2}{\mathrm dt^2}\boldsymbol q=\boldsymbol F(\boldsymbol q)=-\nabla U(\boldsymbol q).\tag{1.3}\] | MD.Ch01.compactNewton，完整展开陈述见上一行及第4段 | 一致 |
+| $\boldsymbol M\frac{\mathrm d^2}{\mathrm dt^2}\boldsymbol q=\boldsymbol F(\boldsymbol q)=-\nabla U(\boldsymbol q).\quad\text{(1.3)}$ | MD.Ch01.compactNewton，完整展开陈述见上一行及第4段 | 一致 |
 | 原文未显式量化的技术资格 | 真实二阶可微资格写成HasDerivAt，避免总导数对不可微曲线给伪解。 | [EXTRA] |
 | 21号网站建议修复 | MD.Ch01.compactNewton | 在原有两项真实时间导数资格后增加势能在q(t)处可微。 |
 
@@ -1222,7 +1352,7 @@ def compactNewton {n : ℕ} (m : CoordinateMasses n) (U : PotentialEnergy n)
 
 ### 6. 审计结论
 
-21号按网站suggested_fix修复并本地核验：在原有两项真实时间导数资格后增加势能在q(t)处可微。
+21号按网站suggested\_fix修复并本地核验：在原有两项真实时间导数资格后增加势能在q(t)处可微。
 
 网站：按网站审校意见修复，本地核验通过（未再送网站）。
 时间一、二阶HasDerivAt确实阻止不可微q被总导数当伪解；massOperator通过Matrix.diagonal逐坐标作用，等式确为M q″=−gradient U。泛化维数n和任意对角实参数可作原式的代数模板，三维粒子物理使用须取n=3N及正质量三次重复。关键缺项是U:Position n→ℝ没有在q t可微的前提，gradient的总化定义仍可在不可微势点返回0，故未完整表达经典Newton力；[EXTRA]只修复了轨迹导数，没有修复势能梯度资格。域审校FAIL。
@@ -1317,8 +1447,8 @@ theorem constraintdimension_unconstrained (N : ℕ) :
 |---|---|---|
 | 原文对象、量词、前提与完整定义/结论（见第2段逐字引用） | MD.Ch01.constraintdimension；完整当前陈述及同组辅助定义见本条第4段 | 一致 |
 | 原文未显式量化的技术资格 | 约束映射可微，独立约束=导数满射；n=Nc，r≤n由满射推出。 | [EXTRA] |
-| 网站指出缺项及原文完整子句 | MD.Ch01.constraintdimension; MD.Ch01.constraintdimension_unconstrained | 保留n−r及无约束3N分句，增加C¹正则层到d维自由坐标的真实双向局部图；一般隐函数图构造缺证明，sorry，旧秩零度不冒充几何结论。 |
-| 网站指出缺项及原文完整子句 | MD.Ch01.constraintdimension; MD.Ch01.constraintdimension_unconstrained | 保留n−r及无约束3N分句，增加C¹正则层到d维自由坐标的真实双向局部图；一般隐函数图构造缺证明，sorry，旧秩零度不冒充几何结论。 |
+| 网站指出缺项及原文完整子句 | MD.Ch01.constraintdimension; MD.Ch01.constraintdimension\_unconstrained | 保留n−r及无约束3N分句，增加C¹正则层到d维自由坐标的真实双向局部图；一般隐函数图构造缺证明，sorry，旧秩零度不冒充几何结论。 |
+| 网站指出缺项及原文完整子句 | MD.Ch01.constraintdimension; MD.Ch01.constraintdimension\_unconstrained | 保留n−r及无约束3N分句，增加C¹正则层到d维自由坐标的真实双向局部图；一般隐函数图构造缺证明，sorry，旧秩零度不冒充几何结论。 |
 
 [EXTRA] 约束映射可微，独立约束=导数满射；n=Nc，r≤n由满射推出。；[EXTRA] 19号：保留n−r及无约束3N分句，增加C¹正则层到d维自由坐标的真实双向局部图；一般隐函数图构造缺证明，sorry，旧秩零度不冒充几何结论。
 
@@ -1327,7 +1457,7 @@ theorem constraintdimension_unconstrained (N : ℕ) :
 19号本地签名预审：保留n−r及无约束3N分句，增加C¹正则层到d维自由坐标的真实双向局部图；一般隐函数图构造缺证明，sorry，旧秩零度不冒充几何结论。
 
 网站：网站PASS（EAUDIT复审）。
-PASS。主定理的q子类型明确C¹正则可行点和fderiv满射，保证r≤n；结论degreesOfFreedom+r=n避免自然数减法截断。全部局部图分句已核对：U,V开放、q∈U、φ/ψ为C¹、双向MapsTo及两侧LeftInvOn，使U与V局部微分同胚；C x=c当且仅当φ(x)第二分量为0，给出d维自由坐标的真实层结构。constraintdimension_unconstrained另以Position (3N)上的零个约束给核维数3N，覆盖无约束分句。局部图构造的sorry仅是证明未完成，不使正确签名FAIL。
+PASS。主定理的q子类型明确C¹正则可行点和fderiv满射，保证r≤n；结论degreesOfFreedom+r=n避免自然数减法截断。全部局部图分句已核对：U,V开放、q∈U、φ/ψ为C¹、双向MapsTo及两侧LeftInvOn，使U与V局部微分同胚；C x=c当且仅当φ(x)第二分量为0，给出d维自由坐标的真实层结构。constraintdimension\_unconstrained另以Position (3N)上的零个约束给核维数3N，覆盖无约束分句。局部图构造的sorry仅是证明未完成，不使正确签名FAIL。
 
 ### 7. 状态与证明位置
 
@@ -1339,7 +1469,12 @@ incomplete；已逐声明核验公理；含占位的声明仍未证明。
 ### 2. 原文陈述
 
 > The total energy of the N-body system is a function of positions and velocities,
-> \[E(\boldsymbol q_1,\ldots,\boldsymbol q_N,\dot{\boldsymbol q}_1,\ldots,\dot{\boldsymbol q}_N)=\sum_{j=1}^{N}\frac{m_j\|\dot{\boldsymbol q}_j\|^2}{2}+U(\boldsymbol q_1,\ldots,\boldsymbol q_N).\tag{1.4}\]
+
+$$
+E(\boldsymbol q_1,\ldots,\boldsymbol q_N,\dot{\boldsymbol q}_1,\ldots,\dot{\boldsymbol q}_N)=\sum_{j=1}^{N}\frac{m_j\|\dot{\boldsymbol q}_j\|^2}{2}+U(\boldsymbol q_1,\ldots,\boldsymbol q_N).\tag{1.4}
+$$
+
+
 
 ### 3. 原文证明
 
@@ -1358,7 +1493,7 @@ def particleTotalEnergy {N : ℕ} (m : Fin N → ℝ) (U : (Fin N → V3) → �
 | 原文成分 | Lean对应 | 说明 |
 |---|---|---|
 | 原文对象、量词、前提与完整定义/结论（见第2段逐字引用） | MD.Ch01.particleTotalEnergy；完整当前陈述及同组辅助定义见本条第4段 | 一致 |
-| \[E(\boldsymbol q_1,\ldots,\boldsymbol q_N,\dot{\boldsymbol q}_1,\ldots,\dot{\boldsymbol q}_N)=\sum_{j=1}^{N}\frac{m_j\\|\dot{\boldsymbol q}_j\\|^2}{2}+U(\boldsymbol q_1,\ldots,\boldsymbol q_N).\tag{1.4}\] | MD.Ch01.particleTotalEnergy，完整展开陈述见上一行及第4段 | 一致 |
+| $E(\boldsymbol q_1,\ldots,\boldsymbol q_N,\dot{\boldsymbol q}_1,\ldots,\dot{\boldsymbol q}_N)=\sum_{j=1}^{N}\frac{m_j\Vert \dot{\boldsymbol q}_j\Vert ^2}{2}+U(\boldsymbol q_1,\ldots,\boldsymbol q_N).\quad\text{(1.4)}$ | MD.Ch01.particleTotalEnergy，完整展开陈述见上一行及第4段 | 一致 |
 
 [EXTRA] 
 
@@ -1367,7 +1502,7 @@ def particleTotalEnergy {N : ℕ} (m : Fin N → ℝ) (U : (Fin N → V3) → �
 逐项核对公式、对象域、量词和结论；定义只登记模型，不声称解存在或物理近似有效。
 
 网站：网站PASS（EAUDIT复审）。
-PASS。N个三维位置q、速度v和粒子质量m，U以完整构形Fin N→V3为自变量；定义恰是Σ_j m_j‖v_j‖²/2+U(q)。此为相空间能量函数定义，v是独立速度变量，不需在本定义中绑定某条轨迹导数。m允许任意实数是该代数式的扩展，物理正质量子域自然包含其中，未声称未加前提的能量正性或守恒。没有漏掉求和粒子或把势能逐粒子重复相加。
+PASS。N个三维位置q、速度v和粒子质量m，U以完整构形Fin N→V3为自变量；定义恰是Σ\_j m\_j‖v\_j‖²/2+U(q)。此为相空间能量函数定义，v是独立速度变量，不需在本定义中绑定某条轨迹导数。m允许任意实数是该代数式的扩展，物理正质量子域自然包含其中，未声称未加前提的能量正性或守恒。没有漏掉求和粒子或把势能逐粒子重复相加。
 
 ### 7. 状态与证明位置
 
@@ -1440,9 +1575,19 @@ self-contained；已逐声明核验公理；含占位的声明仍未证明。
 ### 3. 原文证明
 
 > Since
-> \[\frac{\mathrm d\boldsymbol p_i}{\mathrm dt}=\boldsymbol F_i,\]
+
+$$
+\frac{\mathrm d\boldsymbol p_i}{\mathrm dt}=\boldsymbol F_i,
+$$
+
+
 > we have
-> \[\sum_{i=1}^{N}\frac{\mathrm d\boldsymbol p_i}{\mathrm dt}=\sum_{i=1}^{N}\boldsymbol F_i=0\]
+
+$$
+\sum_{i=1}^{N}\frac{\mathrm d\boldsymbol p_i}{\mathrm dt}=\sum_{i=1}^{N}\boldsymbol F_i=0
+$$
+
+
 按渲染原页逐字转录原文论证。
 
 ### 4. 完整当前Lean（原文与修正版独立列出）
@@ -1480,7 +1625,7 @@ theorem momentum_conservation :
 
 | 原文成分 | Lean对应 | 说明 |
 |---|---|---|
-| 原文对象、量词、前提与完整定义/结论（见第2段逐字引用） | MD.Ch01.momentum_conservation；完整当前陈述及同组辅助定义见本条第4段 | 一致 |
+| 原文对象、量词、前提与完整定义/结论（见第2段逐字引用） | MD.Ch01.momentum\_conservation；完整当前陈述及同组辅助定义见本条第4段 | 一致 |
 | 两体力反向，净力相消 | F t i j = -F t j i → (∑ i, ∑ j, F t i j)=0 | 一致；净力为零是结论 |
 | 全向量/每坐标动量守恒 | 真实HasDerivAt (∑ i,m i • v s i) 0及任意a,b∈I的值相等 | 一致 |
 | 原文未显式量化的技术资格 | 真实Newton动量导数、逐对作用反对称、开放连通时间域；pᵢ=mᵢvᵢ。净力零为结论，未用作前提。 | [EXTRA] |
@@ -1492,21 +1637,31 @@ theorem momentum_conservation :
 审查后去掉旧桥接中净力零前提，由真实逐对作用反对称推出净力零和全向量/每坐标动量守恒，保留全部结论。
 
 网站：网站PASS（EAUDIT复审）。
-PASS。N任意，m为与时间无关的实质量，v给三维速度，pᵢ(t)=mᵢ•vᵢ(t)。I开放连通；F为全时间有序粒子对力，逐对反对称以及每个pᵢ的真实导数等于Σ_jF_ij为前提。三个完整结论依次是净内力零、总动量HasDerivAt零、任意a,b∈I的总动量相等；第三个向量等式同时给出三个分量守恒。质量正性不是这条代数守恒推论所必需；未把净力零或守恒偷放到假设中。[EXTRA]全部相符。
+PASS。N任意，m为与时间无关的实质量，v给三维速度，pᵢ(t)=mᵢ•vᵢ(t)。I开放连通；F为全时间有序粒子对力，逐对反对称以及每个pᵢ的真实导数等于Σ\_jF\_ij为前提。三个完整结论依次是净内力零、总动量HasDerivAt零、任意a,b∈I的总动量相等；第三个向量等式同时给出三个分量守恒。质量正性不是这条代数守恒推论所必需；未把净力零或守恒偷放到假设中。[EXTRA]全部相符。
 
 ### 7. 状态与证明位置
 
 checked+documented priors；已逐声明核验公理；含占位的声明仍未证明。
-位置：Blueprint/Ch01.lean:616；MD.Ch01.momentum_conservation。
+位置：Blueprint/Ch01.lean:616；MD.Ch01.momentum\_conservation。
 
 ## 1. MD-1.2-HarmonicSolution · Example 1.3 · 印刷p.19–20 / PDFp.42–43
 
 ### 2. 原文陈述
 
 > Example 1.3 (Harmonic Oscillator) Consider the system
-> \[\dot x=v,\qquad\dot v=-\Omega^2x.\]
+
+$$
+\dot x=v,\qquad\dot v=-\Omega^2x.
+$$
+
+
 > This system describes the behavior of a particle with unit mass in one dimension, with energy function $E(x,\dot x)=\dot x^2/2+\Omega^2x^2/2$, where its motion is governed by a linear 2nd order equation $\ddot x+\Omega^2x=0$. The solution, for given $x(0)=\xi$, $\dot x(0)=v(0)=\eta$, is
-> \[x(t)=\xi\cos(\Omega t)+\frac\eta\Omega\sin(\Omega t).\]
+
+$$
+x(t)=\xi\cos(\Omega t)+\frac\eta\Omega\sin(\Omega t).
+$$
+
+
 
 ### 3. 原文证明
 
@@ -1553,31 +1708,36 @@ theorem harmonic_solution {n : ℕ} (Ω : ℝ) (hΩ : Ω ≠ 0) (z : PhaseSpace 
 
 | 原文成分 | Lean对应 | 说明 |
 |---|---|---|
-| 原文对象、量词、前提与完整定义/结论（见第2段逐字引用） | MD.Ch01.harmonic_solution；完整当前陈述及同组辅助定义见本条第4段 | 一致 |
-| \[\dot x=v,\qquad\dot v=-\Omega^2x.\]；\[x(t)=\xi\cos(\Omega t)+\frac\eta\Omega\sin(\Omega t).\] | MD.Ch01.harmonic_solution，完整展开陈述见上一行及第4段 | 一致 |
+| 原文对象、量词、前提与完整定义/结论（见第2段逐字引用） | MD.Ch01.harmonic\_solution；完整当前陈述及同组辅助定义见本条第4段 | 一致 |
+| $\dot x=v,\qquad\dot v=-\Omega^2x.$；$x(t)=\xi\cos(\Omega t)+\frac\eta\Omega\sin(\Omega t).$ | MD.Ch01.harmonic\_solution，完整展开陈述见上一行及第4段 | 一致 |
 | 原文未显式量化的技术资格 | Ω≠0是原式除法的域条件；n维解按坐标推广，原文为n=1。 | [EXTRA] |
-| 21号网站建议修复 | MD.Ch01.harmonic_solution | 补范数平方能量、与质量Hamiltonian的识别和守恒；复用已有ODE唯一性，短证任意同初值全时间机械解等于显式流（首条路线通过）。 |
+| 21号网站建议修复 | MD.Ch01.harmonic\_solution | 补范数平方能量、与质量Hamiltonian的识别和守恒；复用已有ODE唯一性，短证任意同初值全时间机械解等于显式流（首条路线通过）。 |
 
 [EXTRA] Ω≠0是原式除法的域条件；n维解按坐标推广，原文为n=1。；[EXTRA] 补范数平方能量、与质量Hamiltonian的识别和守恒；复用已有ODE唯一性，短证任意同初值全时间机械解等于显式流（首条路线通过）。
 
 ### 6. 审计结论
 
-21号按网站suggested_fix修复并本地核验：补范数平方能量、与质量Hamiltonian的识别和守恒；复用已有ODE唯一性，短证任意同初值全时间机械解等于显式流（首条路线通过）。
+21号按网站suggested\_fix修复并本地核验：补范数平方能量、与质量Hamiltonian的识别和守恒；复用已有ODE唯一性，短证任意同初值全时间机械解等于显式流（首条路线通过）。
 
 网站：按网站审校意见修复，本地核验通过（未再送网站）。
-已写的harmonic_solution本身正确：PASS其动力学、全实时间域、单位质量、初值和位置公式。PhaseSpace第二分量是动量，单位质量下等于速度；mechanicalVectorField的第一分量确为该速度，harmonicFlow第二分量也是位置的真实导数，n=1还原原式。按本任务“全部对象/完整结论”审校，仍有覆盖缺项：所给同source全部声明/依赖没有定义或连接原句的能量E=|v|²/2+Ω²|x|²/2；且只验证所构造的流，不含“任意满足该初值的解都由此公式给出”的唯一性结论。此FAIL是完整覆盖失败，不是现有显式式为假，不涉及sorry。
+已写的harmonic\_solution本身正确：PASS其动力学、全实时间域、单位质量、初值和位置公式。PhaseSpace第二分量是动量，单位质量下等于速度；mechanicalVectorField的第一分量确为该速度，harmonicFlow第二分量也是位置的真实导数，n=1还原原式。按本任务“全部对象/完整结论”审校，仍有覆盖缺项：所给同source全部声明/依赖没有定义或连接原句的能量E=|v|²/2+Ω²|x|²/2；且只验证所构造的流，不含“任意满足该初值的解都由此公式给出”的唯一性结论。此FAIL是完整覆盖失败，不是现有显式式为假，不涉及sorry。
 
 ### 7. 状态与证明位置
 
 checked+documented priors；已逐声明核验公理；含占位的声明仍未证明。
-位置：Blueprint/Ch01.lean:659；MD.Ch01.harmonic_solution。
+位置：Blueprint/Ch01.lean:659；MD.Ch01.harmonic\_solution。
 
 ## 1. MD-1.2-ScalarMechanical · Example 1.4 · 印刷p.20 / PDFp.43
 
 ### 2. 原文陈述
 
 > Example 1.4 (Single Degree of Freedom) Consider a simple system with a single degree of freedom (with unit mass $m=1$ for simplicity) and energy function $E(x,\dot x)=\dot x^2/2+U(x)$ (which includes the harmonic oscillator as a special case). The equations of motion are
-> \[\dot x=v,\qquad\dot v=-\frac{\partial U}{\partial x}.\]
+
+$$
+\dot x=v,\qquad\dot v=-\frac{\partial U}{\partial x}.
+$$
+
+
 
 ### 3. 原文证明
 
@@ -1601,19 +1761,19 @@ def scalarMechanicalModel (U : ℝ → ℝ) (E : ℝ × ℝ → ℝ) (z : ℝ �
 | 原文成分 | Lean对应 | 说明 |
 |---|---|---|
 | 原文对象、量词、前提与完整定义/结论（见第2段逐字引用） | MD.Ch01.scalarMechanicalModel；完整当前陈述及同组辅助定义见本条第4段 | 一致 |
-| \[\dot x=v,\qquad\dot v=-\frac{\partial U}{\partial x}.\] | MD.Ch01.scalarMechanicalModel，完整展开陈述见上一行及第4段 | 一致 |
+| $\dot x=v,\qquad\dot v=-\frac{\partial U}{\partial x}.$ | MD.Ch01.scalarMechanicalModel，完整展开陈述见上一行及第4段 | 一致 |
 | 网站指出缺项及原文完整子句 | MD.Ch01.scalarMechanicalModel | 沿轨迹势能可微，禁止不可微处deriv默认零被解释为经典力。 |
 | 网站指出缺项及原文完整子句 | MD.Ch01.scalarMechanicalModel | 沿轨迹势能可微，禁止不可微处deriv默认零被解释为经典力。 |
-| 21号网站建议修复 | MD.Ch01.scalarMechanicalModel | 补E_U(x,v)=v²/2+U(x)，模型以显式能量参数E等于该定义连接；原有导数条件保留。 |
+| 21号网站建议修复 | MD.Ch01.scalarMechanicalModel | 补E\_U(x,v)=v²/2+U(x)，模型以显式能量参数E等于该定义连接；原有导数条件保留。 |
 
-[EXTRA] [EXTRA] 19号：沿轨迹势能可微，禁止不可微处deriv默认零被解释为经典力。；[EXTRA] 补E_U(x,v)=v²/2+U(x)，模型以显式能量参数E等于该定义连接；原有导数条件保留。
+[EXTRA] [EXTRA] 19号：沿轨迹势能可微，禁止不可微处deriv默认零被解释为经典力。；[EXTRA] 补E\_U(x,v)=v²/2+U(x)，模型以显式能量参数E等于该定义连接；原有导数条件保留。
 
 ### 6. 审计结论
 
-21号按网站suggested_fix修复并本地核验：补E_U(x,v)=v²/2+U(x)，模型以显式能量参数E等于该定义连接；原有导数条件保留。
+21号按网站suggested\_fix修复并本地核验：补E\_U(x,v)=v²/2+U(x)，模型以显式能量参数E等于该定义连接；原有导数条件保留。
 
 网站：按网站审校意见修复，本地核验通过（未再送网站）。
-scalarMechanicalModel的动力学部分PASS：任意实势U、实时间相轨迹z，逐时刻要求U在位置可微，HasDerivAt z (v,−U′(x))同时给出真实x′=v及v′=−U′，与单位质量方程相符，最新[EXTRA]也落实。完整条目仍FAIL：原句还定义E(x,ẋ)=ẋ²/2+U(x)，而所给全部当前声明只有ODE谓词；context_notation提到的scalarPotentialEnergy并未给出定义或能量识别，不能把一个名字当成已经形式化。未要求本条之外的局部积分论证或能量守恒定理。
+scalarMechanicalModel的动力学部分PASS：任意实势U、实时间相轨迹z，逐时刻要求U在位置可微，HasDerivAt z (v,−U′(x))同时给出真实x′=v及v′=−U′，与单位质量方程相符，最新[EXTRA]也落实。完整条目仍FAIL：原句还定义E(x,ẋ)=ẋ²/2+U(x)，而所给全部当前声明只有ODE谓词；context\_notation提到的scalarPotentialEnergy并未给出定义或能量识别，不能把一个名字当成已经形式化。未要求本条之外的局部积分论证或能量守恒定理。
 
 ### 7. 状态与证明位置
 
@@ -1625,7 +1785,12 @@ self-contained；已逐声明核验公理；含占位的声明仍未证明。
 ### 2. 原文陈述
 
 > Near this point, provided $\eta\ne0$, let us solve the equation $E(x,v)=E(\xi,\eta)$ for $v$ as a unique smooth function of $x,\xi,\eta$ using the implicit function theorem: $v=V(x,\xi,\eta)$. Inserting this into the differential equations we then find
-> \[\frac{\mathrm dx}{\mathrm dt}=v=V(x,\xi,\eta).\]
+
+$$
+\frac{\mathrm dx}{\mathrm dt}=v=V(x,\xi,\eta).
+$$
+
+
 > This is a separable differential equation; it is therefore easily integrated from any provided initial value, $x(0)=\xi$, as a function of $t$, resulting in a relation $x=X(t,\xi,\eta)$. Then $v=V(X(t,\xi,\eta),\xi,\eta)$ and we see that it is possible to derive the formula for the solution $(x,v)$ as a function of $t$ and the initial conditions.
 
 ### 3. 原文证明
@@ -1659,8 +1824,8 @@ theorem scalar_quadrature (U : ℝ → ℝ) (hU : ContDiff ℝ ∞ U)
 
 | 原文成分 | Lean对应 | 说明 |
 |---|---|---|
-| 原文对象、量词、前提与完整定义/结论（见第2段逐字引用） | MD.Ch01.scalar_quadrature；完整当前陈述及同组辅助定义见本条第4段 | 一致 |
-| \[\frac{\mathrm dx}{\mathrm dt}=v=V(x,\xi,\eta).\] | MD.Ch01.scalar_quadrature，完整展开陈述见上一行及第4段 | 一致 |
+| 原文对象、量词、前提与完整定义/结论（见第2段逐字引用） | MD.Ch01.scalar\_quadrature；完整当前陈述及同组辅助定义见本条第4段 | 一致 |
+| $\frac{\mathrm dx}{\mathrm dt}=v=V(x,\xi,\eta).$ | MD.Ch01.scalar\_quadrature，完整展开陈述见上一行及第4段 | 一致 |
 | V(x,ξ,η)光滑且能量式局部唯一确定速度 | 联合ContDiffOn ℝ ∞ V及隐式能量唯一性 | 一致 |
 | 积分逆重建及初值参数光滑依赖 | 联合ContDiffOn ℝ ∞ X、实际ODE、X 0=ξ、积分=时间 | 一致；现有固定初值桥接不足 |
 | 原文未显式量化的技术资格 | U光滑使原文smooth solutions和联合隐函数成立；η≠0保留原文非转向前提。 | [EXTRA] |
@@ -1676,14 +1841,19 @@ theorem scalar_quadrature (U : ℝ → ℝ) (hU : ContDiff ℝ ∞ U)
 ### 7. 状态与证明位置
 
 incomplete；已逐声明核验公理；含占位的声明仍未证明。
-位置：Blueprint/Ch01.lean:697；MD.Ch01.scalar_quadrature。
+位置：Blueprint/Ch01.lean:697；MD.Ch01.scalar\_quadrature。
 
 ## 1. MD-1.2-UniformLJSystem · Example 1.5 · 印刷p.21 / PDFp.44
 
 ### 2. 原文陈述
 
 > The energy of the system is
-> \[E=\frac12\sum_{i=1}^{N}m\dot{\boldsymbol q}_i^2+\sum_{i=1}^{N-1}\sum_{j=i+1}^{N}\varphi_{\mathrm{LJ}}(r_{ij}),\]
+
+$$
+E=\frac12\sum_{i=1}^{N}m\dot{\boldsymbol q}_i^2+\sum_{i=1}^{N-1}\sum_{j=i+1}^{N}\varphi_{\mathrm{LJ}}(r_{ij}),
+$$
+
+
 > where $r_{ij}=\|\boldsymbol q_i-\boldsymbol q_j\|$ and the mass $m$ of an argon atom is $6.69\times10^{-26}$ kg.
 
 ### 3. 原文证明
@@ -1703,7 +1873,7 @@ def uniformLJSystem {N : ℕ} (m ε σ : ℝ) (q v : Fin N → V3) : ℝ :=
 | 原文成分 | Lean对应 | 说明 |
 |---|---|---|
 | 原文对象、量词、前提与完整定义/结论（见第2段逐字引用） | MD.Ch01.uniformLJSystem；完整当前陈述及同组辅助定义见本条第4段 | 一致 |
-| \[E=\frac12\sum_{i=1}^{N}m\dot{\boldsymbol q}_i^2+\sum_{i=1}^{N-1}\sum_{j=i+1}^{N}\varphi_{\mathrm{LJ}}(r_{ij}),\] | MD.Ch01.uniformLJSystem，完整展开陈述见上一行及第4段 | 一致 |
+| $E=\frac12\sum_{i=1}^{N}m\dot{\boldsymbol q}_i^2+\sum_{i=1}^{N-1}\sum_{j=i+1}^{N}\varphi_{\mathrm{LJ}}(r_{ij}),$ | MD.Ch01.uniformLJSystem，完整展开陈述见上一行及第4段 | 一致 |
 
 [EXTRA] 
 
@@ -1723,8 +1893,12 @@ self-contained；已逐声明核验公理；含占位的声明仍未证明。
 ### 2. 原文陈述
 
 > The equations of motion are, for $i=1,2,\ldots,N$, using the chain rule,
-> \[m\ddot{\boldsymbol q}_i=\sum_{j=1,\ j\ne i}^{N}\frac{\varphi'_{\mathrm{LJ}}(r_{ij})}{r_{ij}}(\boldsymbol q_i-\boldsymbol q_j)
-> =-24\frac\epsilon\sigma\sum_{j=1,\ j\ne i}^{N}r_{ij}^{-1}\left[2\left(\frac\sigma{r_{ij}}\right)^{13}-\left(\frac\sigma{r_{ij}}\right)^7\right](\boldsymbol q_i-\boldsymbol q_j).\]
+
+$$
+m\ddot{\boldsymbol q}_i=\sum_{j=1,\ j\ne i}^{N}\frac{\varphi'_{\mathrm{LJ}}(r_{ij})}{r_{ij}}(\boldsymbol q_i-\boldsymbol q_j) =-24\frac\epsilon\sigma\sum_{j=1,\ j\ne i}^{N}r_{ij}^{-1}\left[2\left(\frac\sigma{r_{ij}}\right)^{13}-\left(\frac\sigma{r_{ij}}\right)^7\right](\boldsymbol q_i-\boldsymbol q_j).
+$$
+
+
 
 ### 3. 原文证明
 
@@ -1784,8 +1958,8 @@ theorem radial_lj_force_literal_corrected {N : ℕ} (m ε σ : ℝ)
 
 | 原文成分 | Lean对应 | 说明 |
 |---|---|---|
-| 原文对象、量词、前提与完整定义/结论（见第2段逐字引用） | MD.Ch01.radial_lj_force_literal；完整当前陈述及同组辅助定义见本条第4段 | NEEDS_HUMAN |
-| \[m\ddot{\boldsymbol q}_i=\sum_{j=1,\ j\ne i}^{N}\frac{\varphi'_{\mathrm{LJ}}(r_{ij})}{r_{ij}}(\boldsymbol q_i-\boldsymbol q_j)<br>=-24\frac\epsilon\sigma\sum_{j=1,\ j\ne i}^{N}r_{ij}^{-1}\left[2\left(\frac\sigma{r_{ij}}\right)^{13}-\left(\frac\sigma{r_{ij}}\right)^7\right](\boldsymbol q_i-\boldsymbol q_j).\] | MD.Ch01.radial_lj_force_literal，完整展开陈述见上一行及第4段 | NEEDS_HUMAN |
+| 原文对象、量词、前提与完整定义/结论（见第2段逐字引用） | MD.Ch01.radial\_lj\_force\_literal；完整当前陈述及同组辅助定义见本条第4段 | NEEDS\_HUMAN |
+| $m\ddot{\boldsymbol q}_i=\sum_{j=1,\ j\ne i}^{N}\frac{\varphi'_{\mathrm{LJ}}(r_{ij})}{r_{ij}}(\boldsymbol q_i-\boldsymbol q_j)<br>=-24\frac\epsilon\sigma\sum_{j=1,\ j\ne i}^{N}r_{ij}^{-1}\left[2\left(\frac\sigma{r_{ij}}\right)^{13}-\left(\frac\sigma{r_{ij}}\right)^7\right](\boldsymbol q_i-\boldsymbol q_j).$ | MD.Ch01.radial\_lj\_force\_literal，完整展开陈述见上一行及第4段 | NEEDS\_HUMAN |
 | 原文未显式量化的技术资格 | 正ε,σ及非碰撞；hnewton采用式(1.3)负梯度定义，未把字面错误结果放入假设。 | [EXTRA] |
 
 [EXTRA] 正ε,σ及非碰撞；hnewton采用式(1.3)负梯度定义，未把字面错误结果放入假设。
@@ -1794,20 +1968,25 @@ theorem radial_lj_force_literal_corrected {N : ℕ} (m ε σ : ℝ)
 
 Newton力为−∇U；印刷式把径向势梯度当成力，两个等号均反号。 原文与修正版独立保留；默认选项是工作版本，尚未获导师裁定。
 
-网站：原书疑误=NEEDS_HUMAN；原文忠实性单列；修正版=网站PASS；原文已形式化子句=网站PASS（限定范围）；原文已形式化子句=网站PASS（限定范围）；原文已形式化子句=网站PASS（限定范围）。
-radial_lj_force_literal：字面忠实性PASS；对象、有限和排除自粒子、正ε/σ、固定i的非碰撞和负梯度Newton前提都相符，但原书力符号与式1.3冲突，故数学陈述需NEEDS_HUMAN，不能仅因其为假而把字面版判转录FAIL。radial_lj_force_literal_corrected：PASS；在相同全部对象、量词与前提下，第一式改为−φ′/r，第二式系数+24ε/σ，符合ljForce实际定义。对r≠0有φ′=24ε/r[(σ/r)^6−2(σ/r)^12]，两修正分句均正确；不需要额外假设a来自某条已存在轨迹。
+网站：原书疑误=NEEDS\_HUMAN；原文忠实性单列；修正版=网站PASS；原文已形式化子句=网站PASS（限定范围）；原文已形式化子句=网站PASS（限定范围）；原文已形式化子句=网站PASS（限定范围）。
+radial\_lj\_force\_literal：字面忠实性PASS；对象、有限和排除自粒子、正ε/σ、固定i的非碰撞和负梯度Newton前提都相符，但原书力符号与式1.3冲突，故数学陈述需NEEDS\_HUMAN，不能仅因其为假而把字面版判转录FAIL。radial\_lj\_force\_literal\_corrected：PASS；在相同全部对象、量词与前提下，第一式改为−φ′/r，第二式系数+24ε/σ，符合ljForce实际定义。对r≠0有φ′=24ε/r[(σ/r)^6−2(σ/r)^12]，两修正分句均正确；不需要额外假设a来自某条已存在轨迹。
 
 ### 7. 状态与证明位置
 
 incomplete；已逐声明核验公理；含占位的声明仍未证明。
-位置：Blueprint/Ch01.lean:726；MD.Ch01.radial_lj_force_literal。
+位置：Blueprint/Ch01.lean:726；MD.Ch01.radial\_lj\_force\_literal。
 
 ## 1. MD-1.2-LJCoordinateScaling · unnumbered_claim · 印刷p.21 / PDFp.44
 
 ### 2. 原文陈述
 
 > Now introduce the change of variables
-> \[\boldsymbol Q_i=\sigma^{-1}\boldsymbol q_i,\qquad i=1,2,\ldots,N,\]
+
+$$
+\boldsymbol Q_i=\sigma^{-1}\boldsymbol q_i,\qquad i=1,2,\ldots,N,
+$$
+
+
 > then $\dot{\boldsymbol q}_i=\sigma\dot{\boldsymbol Q}_i$, $\ddot{\boldsymbol q}_i=\sigma\ddot{\boldsymbol Q}_i$, and $\|\boldsymbol q_i-\boldsymbol q_j\|=\sigma\|\boldsymbol Q_i-\boldsymbol Q_j\|$.
 
 ### 3. 原文证明
@@ -1832,8 +2011,8 @@ theorem lj_coordinate_scaling (Q : ℝ → V3) (σ t : ℝ) (v a : V3)
 
 | 原文成分 | Lean对应 | 说明 |
 |---|---|---|
-| 原文对象、量词、前提与完整定义/结论（见第2段逐字引用） | MD.Ch01.lj_coordinate_scaling；完整当前陈述及同组辅助定义见本条第4段 | 一致 |
-| \[\boldsymbol Q_i=\sigma^{-1}\boldsymbol q_i,\qquad i=1,2,\ldots,N,\] | MD.Ch01.lj_coordinate_scaling，完整展开陈述见上一行及第4段 | 一致 |
+| 原文对象、量词、前提与完整定义/结论（见第2段逐字引用） | MD.Ch01.lj\_coordinate\_scaling；完整当前陈述及同组辅助定义见本条第4段 | 一致 |
+| $\boldsymbol Q_i=\sigma^{-1}\boldsymbol q_i,\qquad i=1,2,\ldots,N,$ | MD.Ch01.lj\_coordinate\_scaling，完整展开陈述见上一行及第4段 | 一致 |
 | 一阶、二阶及所有距离缩放 | 两个HasDerivAt结论及∀r s, ‖σ•r-σ•s‖=σ*‖r-s‖ | 一致 |
 | 原文未显式量化的技术资格 | σ>0使范数缩放无绝对值；实际一阶/二阶导数资格。 | [EXTRA] |
 
@@ -1848,18 +2027,33 @@ theorem lj_coordinate_scaling (Q : ℝ → V3) (σ t : ℝ) (v a : V3)
 ### 7. 状态与证明位置
 
 self-contained；已逐声明核验公理；含占位的声明仍未证明。
-位置：Blueprint/Ch01.lean:775；MD.Ch01.lj_coordinate_scaling。
+位置：Blueprint/Ch01.lean:775；MD.Ch01.lj\_coordinate\_scaling。
 
 ## 1. MD-1.2-LJTimeScaling · unnumbered_claim · 印刷p.21–22 / PDFp.44–45
 
 ### 2. 原文陈述
 
 > Thus we see that if we make the additional time transformation
-> \[\tau=\alpha t,\qquad\alpha^2=\frac\epsilon{m\sigma^2},\]
+
+$$
+\tau=\alpha t,\qquad\alpha^2=\frac\epsilon{m\sigma^2},
+$$
+
+
 > then the equations become
-> \[\frac{\mathrm d^2\boldsymbol Q_i}{\mathrm d\tau^2}=-\sum_{j=1,\ j\ne i}^{N}\frac{\hat\varphi'_{\mathrm{LJ}}(R_{ij})}{R_{ij}}(\boldsymbol Q_i-\boldsymbol Q_j).\]
+
+$$
+\frac{\mathrm d^2\boldsymbol Q_i}{\mathrm d\tau^2}=-\sum_{j=1,\ j\ne i}^{N}\frac{\hat\varphi'_{\mathrm{LJ}}(R_{ij})}{R_{ij}}(\boldsymbol Q_i-\boldsymbol Q_j).
+$$
+
+
 > This means that a natural choice for the unit of time is
-> \[\alpha^{-1}=\sigma\sqrt{\frac m\epsilon}\approx2.17\times10^{-12}\mathrm s.\]
+
+$$
+\alpha^{-1}=\sigma\sqrt{\frac m\epsilon}\approx2.17\times10^{-12}\mathrm s.
+$$
+
+
 > By using the units given here, we may work with a simplified form of the Lennard-Jones system involving unit masses and a parameter-independent potential energy function.
 
 ### 3. 原文证明
@@ -1955,22 +2149,22 @@ theorem ljtimescaling_argon :
 | 原文成分 | Lean对应 | 说明 |
 |---|---|---|
 | 原文对象、量词、前提与完整定义/结论（见第2段逐字引用） | MD.Ch01.ljtimescaling；完整当前陈述及同组辅助定义见本条第4段 | 一致 |
-| \[\tau=\alpha t,\qquad\alpha^2=\frac\epsilon{m\sigma^2},\]；\[\frac{\mathrm d^2\boldsymbol Q_i}{\mathrm d\tau^2}=-\sum_{j=1,\ j\ne i}^{N}\frac{\hat\varphi'_{\mathrm{LJ}}(R_{ij})}{R_{ij}}(\boldsymbol Q_i-\boldsymbol Q_j).\]；\[\alpha^{-1}=\sigma\sqrt{\frac m\epsilon}\approx2.17\times10^{-12}\mathrm s.\] | MD.Ch01.ljtimescaling，完整展开陈述见上一行及第4段 | 一致 |
+| $\tau=\alpha t,\qquad\alpha^2=\frac\epsilon{m\sigma^2},$；$\frac{\mathrm d^2\boldsymbol Q_i}{\mathrm d\tau^2}=-\sum_{j=1,\ j\ne i}^{N}\frac{\hat\varphi'_{\mathrm{LJ}}(R_{ij})}{R_{ij}}(\boldsymbol Q_i-\boldsymbol Q_j).$；$\alpha^{-1}=\sigma\sqrt{\frac m\epsilon}\approx2.17\times10^{-12}\mathrm s.$ | MD.Ch01.ljtimescaling，完整展开陈述见上一行及第4段 | 一致 |
 | 时间缩放得到无参数单位质量系统 | 真实C2非碰撞Q的原Newton系统 ↔ ∀τ i,Q″=ljForce 1 1 | 一致 |
 | 单位时间 | α⁻¹=σ*Real.sqrt (m/ε) | 一致 |
 | 原文未显式量化的技术资格 | m,ε,σ,α正；真实C2非碰撞轨迹。 | [EXTRA] |
-| 网站指出缺项及原文完整子句 | MD.Ch01.ljtimescaling; MD.Ch01.ljtimescaling_argon | 补原书氩m=6.69×10⁻²⁶kg、ε=1.65×10⁻²¹J、σ=3.4×10⁻¹⁰m的2.17ps近似，显式容差0.005ps；保留原双向缩放和时间单位证明。 |
-| 网站指出缺项及原文完整子句 | MD.Ch01.ljtimescaling; MD.Ch01.ljtimescaling_argon | 补原书氩m=6.69×10⁻²⁶kg、ε=1.65×10⁻²¹J、σ=3.4×10⁻¹⁰m的2.17ps近似，显式容差0.005ps；保留原双向缩放和时间单位证明。 |
+| 网站指出缺项及原文完整子句 | MD.Ch01.ljtimescaling; MD.Ch01.ljtimescaling\_argon | 补原书氩m=6.69×10⁻²⁶kg、ε=1.65×10⁻²¹J、σ=3.4×10⁻¹⁰m的2.17ps近似，显式容差0.005ps；保留原双向缩放和时间单位证明。 |
+| 网站指出缺项及原文完整子句 | MD.Ch01.ljtimescaling; MD.Ch01.ljtimescaling\_argon | 补原书氩m=6.69×10⁻²⁶kg、ε=1.65×10⁻²¹J、σ=3.4×10⁻¹⁰m的2.17ps近似，显式容差0.005ps；保留原双向缩放和时间单位证明。 |
 | 21号网站建议修复 | MD.Ch01.ljtimescaling | 仅[EXTRA]容差0.005ps改为0.01ps；两个定理逐字未改。 |
 
-[EXTRA] m,ε,σ,α正；真实C²非碰撞轨迹。；[EXTRA] 氩参数m=6.69×10⁻²⁶kg、ε=1.65×10⁻²¹J、σ=3.4×10⁻¹⁰m；实际ljtimescaling_argon结论采用显式容差0.01ps，非旧说明的0.005ps。给定参数下0.005ps界不成立；原书只写约2.17ps。保留双向缩放和时间单位结论。；[EXTRA] 本条采用显式容差0.01ps；两个定理保持不变。
+[EXTRA] m,ε,σ,α正；真实C²非碰撞轨迹。；[EXTRA] 氩参数m=6.69×10⁻²⁶kg、ε=1.65×10⁻²¹J、σ=3.4×10⁻¹⁰m；实际ljtimescaling\_argon结论采用显式容差0.01ps，非旧说明的0.005ps。给定参数下0.005ps界不成立；原书只写约2.17ps。保留双向缩放和时间单位结论。；[EXTRA] 本条采用显式容差0.01ps；两个定理保持不变。
 
 ### 6. 审计结论
 
-21号按网站suggested_fix修复并本地核验：仅[EXTRA]容差0.005ps改为0.01ps；两个定理逐字未改。
+21号按网站suggested\_fix修复并本地核验：仅[EXTRA]容差0.005ps改为0.01ps；两个定理逐字未改。
 
 网站：按网站审校意见修复，本地核验通过（未再送网站）。
-ljtimescaling：PASS。全部正参数、C²非碰撞Q、q(t)=σQ(αt)及α²关系明确；结论是有量纲Newton方程与全τ的单位参数方程双向等价，并给正确时间单位，反向时间覆盖由α>0保证。ljtimescaling_argon：按其实际签名PASS，给|τ−2.17ps|<0.01ps，常数和单位换算正确。但本条最新[EXTRA]明说显式容差0.005ps，实际结论却为0.01ps；且给定精确十进制参数下0.005ps界是假的。故接收材料的[EXTRA]一致性FAIL，不能把0.01当已证明0.005。corrected_json只将说明改成实际成立的0.01ps，不改原书近似或工程。
+ljtimescaling：PASS。全部正参数、C²非碰撞Q、q(t)=σQ(αt)及α²关系明确；结论是有量纲Newton方程与全τ的单位参数方程双向等价，并给正确时间单位，反向时间覆盖由α>0保证。ljtimescaling\_argon：按其实际签名PASS，给|τ−2.17ps|<0.01ps，常数和单位换算正确。但本条最新[EXTRA]明说显式容差0.005ps，实际结论却为0.01ps；且给定精确十进制参数下0.005ps界是假的。故接收材料的[EXTRA]一致性FAIL，不能把0.01当已证明0.005。corrected\_json只将说明改成实际成立的0.01ps，不改原书近似或工程。
 
 ### 7. 状态与证明位置
 
@@ -1982,7 +2176,12 @@ self-contained；已逐声明核验公理；含占位的声明仍未证明。
 ### 2. 原文陈述
 
 > For the system (1.3) with N atoms and $N_c=3N$ configuration coordinates, the Lagrangian is
-> \[L\stackrel{\mathrm{def}}=\frac{\dot{\boldsymbol q}^{T}\boldsymbol M\dot{\boldsymbol q}}2-U(\boldsymbol q).\]
+
+$$
+L\stackrel{\mathrm{def}}=\frac{\dot{\boldsymbol q}^{T}\boldsymbol M\dot{\boldsymbol q}}2-U(\boldsymbol q).
+$$
+
+
 
 ### 3. 原文证明
 
@@ -2001,7 +2200,7 @@ def fixedMassLagrangian {n : ℕ} (m : CoordinateMasses n) (U : PotentialEnergy 
 | 原文成分 | Lean对应 | 说明 |
 |---|---|---|
 | 原文对象、量词、前提与完整定义/结论（见第2段逐字引用） | MD.Ch01.fixedMassLagrangian；完整当前陈述及同组辅助定义见本条第4段 | 一致 |
-| \[L\stackrel{\mathrm{def}}=\frac{\dot{\boldsymbol q}^{T}\boldsymbol M\dot{\boldsymbol q}}2-U(\boldsymbol q).\] | MD.Ch01.fixedMassLagrangian，完整展开陈述见上一行及第4段 | 一致 |
+| $L\stackrel{\mathrm{def}}=\frac{\dot{\boldsymbol q}^{T}\boldsymbol M\dot{\boldsymbol q}}2-U(\boldsymbol q).$ | MD.Ch01.fixedMassLagrangian，完整展开陈述见上一行及第4段 | 一致 |
 
 [EXTRA] 
 
@@ -2021,9 +2220,19 @@ self-contained；已逐声明核验公理；含占位的声明仍未证明。
 ### 2. 原文陈述
 
 > When we introduce a smooth change of variables $\boldsymbol q=\boldsymbol\Phi(\boldsymbol Q)$, where $\boldsymbol\Phi:\mathbb R^{N_c}\to\mathbb R^{N_c}$, this induces a corresponding transformation of the velocity vector by
-> \[\dot{\boldsymbol q}=\boldsymbol\Phi'(\boldsymbol Q)\dot{\boldsymbol Q},\]
+
+$$
+\dot{\boldsymbol q}=\boldsymbol\Phi'(\boldsymbol Q)\dot{\boldsymbol Q},
+$$
+
+
 > where $\boldsymbol\Phi'$ is the $N_c\times N_c$ Jacobian matrix of $\boldsymbol\Phi$. Then the Lagrangian of the system is transformed to
-> \[\widetilde L=\frac{\dot{\boldsymbol Q}^{T}\boldsymbol\Phi'(\boldsymbol Q)^{T}\boldsymbol M\boldsymbol\Phi'(\boldsymbol Q)\dot{\boldsymbol Q}}2-U(\boldsymbol\Phi(\boldsymbol Q)),\]
+
+$$
+\widetilde L=\frac{\dot{\boldsymbol Q}^{T}\boldsymbol\Phi'(\boldsymbol Q)^{T}\boldsymbol M\boldsymbol\Phi'(\boldsymbol Q)\dot{\boldsymbol Q}}2-U(\boldsymbol\Phi(\boldsymbol Q)),
+$$
+
+
 
 ### 3. 原文证明
 
@@ -2049,8 +2258,8 @@ theorem generalized_coordinates {n k : ℕ} (m : CoordinateMasses n)
 
 | 原文成分 | Lean对应 | 说明 |
 |---|---|---|
-| 原文对象、量词、前提与完整定义/结论（见第2段逐字引用） | MD.Ch01.generalized_coordinates；完整当前陈述及同组辅助定义见本条第4段 | 一致 |
-| \[\dot{\boldsymbol q}=\boldsymbol\Phi'(\boldsymbol Q)\dot{\boldsymbol Q},\]；\[\widetilde L=\frac{\dot{\boldsymbol Q}^{T}\boldsymbol\Phi'(\boldsymbol Q)^{T}\boldsymbol M\boldsymbol\Phi'(\boldsymbol Q)\dot{\boldsymbol Q}}2-U(\boldsymbol\Phi(\boldsymbol Q)),\] | MD.Ch01.generalized_coordinates，完整展开陈述见上一行及第4段 | 一致 |
+| 原文对象、量词、前提与完整定义/结论（见第2段逐字引用） | MD.Ch01.generalized\_coordinates；完整当前陈述及同组辅助定义见本条第4段 | 一致 |
+| $\dot{\boldsymbol q}=\boldsymbol\Phi'(\boldsymbol Q)\dot{\boldsymbol Q},$；$\widetilde L=\frac{\dot{\boldsymbol Q}^{T}\boldsymbol\Phi'(\boldsymbol Q)^{T}\boldsymbol M\boldsymbol\Phi'(\boldsymbol Q)\dot{\boldsymbol Q}}2-U(\boldsymbol\Phi(\boldsymbol Q)),$ | MD.Ch01.generalized\_coordinates，完整展开陈述见上一行及第4段 | 一致 |
 | 原文未显式量化的技术资格 | 原文smooth可在本结论弱化至点态真实可微；k可小于n，含原文约束推广。 | [EXTRA] |
 
 [EXTRA] 原文smooth可在本结论弱化至点态真实可微；k可小于n，含原文约束推广。
@@ -2060,12 +2269,12 @@ theorem generalized_coordinates {n k : ℕ} (m : CoordinateMasses n)
 逐项核对公式、对象域、量词和结论；定义只登记模型，不声称解存在或物理近似有效。
 
 网站：网站PASS（EAUDIT复审）。
-PASS。Φ:Position k→Position n，J为n×k矩阵；hΦ明确J是q(t)处的真实Fréchet导数，hq明确q的实际速度V。第一结论通过链式法则给d(Φ∘q)/dt=JV；第二结论把massLagrangian的Σ_i m_i v_i²/2−U替换成⟨V,(Jᵀdiag(m)J)V⟩/2−U(Φ(q(t)))，矩阵排列、转置及系数均无误。标准实欧氏内积即原式行列乘积。原文smooth在点态结论中弱化至真实可微、k不必等于n，都是[EXTRA]已说明且成立的推广；本条代数恒等式不需正质量或满秩，正则可逆性由下一条另行处理。
+PASS。Φ:Position k→Position n，J为n×k矩阵；hΦ明确J是q(t)处的真实Fréchet导数，hq明确q的实际速度V。第一结论通过链式法则给d(Φ∘q)/dt=JV；第二结论把massLagrangian的Σ\_i m\_i v\_i²/2−U替换成⟨V,(Jᵀdiag(m)J)V⟩/2−U(Φ(q(t)))，矩阵排列、转置及系数均无误。标准实欧氏内积即原式行列乘积。原文smooth在点态结论中弱化至真实可微、k不必等于n，都是[EXTRA]已说明且成立的推广；本条代数恒等式不需正质量或满秩，正则可逆性由下一条另行处理。
 
 ### 7. 状态与证明位置
 
 checked+documented priors；已逐声明核验公理；含占位的声明仍未证明。
-位置：Blueprint/Ch01.lean:883；MD.Ch01.generalized_coordinates。
+位置：Blueprint/Ch01.lean:883；MD.Ch01.generalized\_coordinates。
 
 ## 1. MD-1.3-GeneralizedMassRegular · unnumbered_claim · 印刷p.23 / PDFp.46
 
@@ -2103,7 +2312,7 @@ theorem generalizedmassregular :
 展开复用定理签名逐项核对原文；全部结论保留，额外技术条件逐条登记。
 
 网站：网站PASS（EAUDIT复审）。
-PASS。m给n个坐标质量且逐个严格正，J为n×k矩阵，Injective J.mulVec是满列秩，自动保证k≤n，符合原书约束参数化情形。generalizedMassMatrix实为Jᵀdiag(m)J；对非零v，由Jv≠0有vᵀJᵀMJv=Σ_i m_i(Jv)_i²>0，因此该k×k矩阵可逆。IsUnit正是矩阵环中的可逆性，未预先假设结论；k=0情形亦正常。J作为任意满足满列秩的矩阵推广覆盖真实Jacobian的情形；[EXTRA]正质量及列单射均落实。
+PASS。m给n个坐标质量且逐个严格正，J为n×k矩阵，Injective J.mulVec是满列秩，自动保证k≤n，符合原书约束参数化情形。generalizedMassMatrix实为Jᵀdiag(m)J；对非零v，由Jv≠0有vᵀJᵀMJv=Σ\_i m\_i(Jv)_i²>0，因此该k×k矩阵可逆。IsUnit正是矩阵环中的可逆性，未预先假设结论；k=0情形亦正常。J作为任意满足满列秩的矩阵推广覆盖真实Jacobian的情形；[EXTRA]正质量及列单射均落实。
 
 ### 7. 状态与证明位置
 
@@ -2115,7 +2324,12 @@ checked+documented priors；已逐声明核验公理；含占位的声明仍未�
 ### 2. 原文陈述
 
 > Abstractly, a Legendre transformation of a given convex function $g=g(\boldsymbol\xi):\mathbb R^m\to\mathbb R$ is a new function $\widetilde g=\widetilde g(\boldsymbol\eta):\mathbb R^m\to\mathbb R$ defined by
-> \[\widetilde g(\boldsymbol\eta)=\sup_{\boldsymbol\xi}(\boldsymbol\eta^T\boldsymbol\xi-g(\boldsymbol\xi)),\]
+
+$$
+\widetilde g(\boldsymbol\eta)=\sup_{\boldsymbol\xi}(\boldsymbol\eta^T\boldsymbol\xi-g(\boldsymbol\xi)),
+$$
+
+
 
 ### 3. 原文证明
 
@@ -2150,8 +2364,8 @@ theorem legendreTransform_corrected_b {n : ℕ} (g : Position n → ℝ) (η : P
 
 | 原文成分 | Lean对应 | 说明 |
 |---|---|---|
-| 原文对象、量词、前提与完整定义/结论（见第2段逐字引用） | MD.Ch01.legendreTransform；完整当前陈述及同组辅助定义见本条第4段 | NEEDS_HUMAN |
-| \[\widetilde g(\boldsymbol\eta)=\sup_{\boldsymbol\xi}(\boldsymbol\eta^T\boldsymbol\xi-g(\boldsymbol\xi)),\] | MD.Ch01.legendreTransform，完整展开陈述见上一行及第4段 | NEEDS_HUMAN |
+| 原文对象、量词、前提与完整定义/结论（见第2段逐字引用） | MD.Ch01.legendreTransform；完整当前陈述及同组辅助定义见本条第4段 | NEEDS\_HUMAN |
+| $\widetilde g(\boldsymbol\eta)=\sup_{\boldsymbol\xi}(\boldsymbol\eta^T\boldsymbol\xi-g(\boldsymbol\xi)),$ | MD.Ch01.legendreTransform，完整展开陈述见上一行及第4段 | NEEDS\_HUMAN |
 | 原文未显式量化的技术资格 | 值域采用EReal，因一般凸函数的共轭可为+∞；原文写R需要额外有限性条件。 | [EXTRA] |
 
 [EXTRA] 值域采用EReal，因一般凸函数的共轭可为+∞；原文写R需要额外有限性条件。
@@ -2160,8 +2374,8 @@ theorem legendreTransform_corrected_b {n : ℕ} (g : Position n → ℝ) (η : P
 
 凸性不能保证共轭函数每一点有限；实数sSup在无上界时的总化值不能充当真实上确界。 原文与修正版独立保留；默认选项是工作版本，尚未获导师裁定。
 
-网站：原书疑误=NEEDS_HUMAN；原文忠实性单列；修正版=网站PASS；原文已形式化子句=网站PASS（限定范围）；原文已形式化子句=网站PASS（限定范围）；原文已形式化子句=网站PASS（限定范围）。
-legendreTransform 及 _corrected：PASS，任意 n、g:Position n→ℝ、η，EReal 的 iSup 正确实现扩展实共轭；未要求凸性是对所有实函数定义的合理推广，并未声称其处处实值。_literal：忠实性 PASS，ConvexOn univ 的任意 g 对每个 η 有实 IsLUB，正是原书实值断言，但数学上错误。_corrected_b：PASS，固定 η 的 BddAbove 加非空 range 足以推出实 sSup 的 IsLUB；凸性不是此上确界事实所必需。
+网站：原书疑误=NEEDS\_HUMAN；原文忠实性单列；修正版=网站PASS；原文已形式化子句=网站PASS（限定范围）；原文已形式化子句=网站PASS（限定范围）；原文已形式化子句=网站PASS（限定范围）。
+legendreTransform 及 _corrected：PASS，任意 n、g:Position n→ℝ、η，EReal 的 iSup 正确实现扩展实共轭；未要求凸性是对所有实函数定义的合理推广，并未声称其处处实值。_literal：忠实性 PASS，ConvexOn univ 的任意 g 对每个 η 有实 IsLUB，正是原书实值断言，但数学上错误。_corrected\_b：PASS，固定 η 的 BddAbove 加非空 range 足以推出实 sSup 的 IsLUB；凸性不是此上确界事实所必需。
 
 ### 7. 状态与证明位置
 
@@ -2173,7 +2387,12 @@ incomplete；已逐声明核验公理；含占位的声明仍未证明。
 ### 2. 原文陈述
 
 > The equations of motion can be written
-> \[\dot{\boldsymbol q}=\frac{\partial H}{\partial\boldsymbol p},\qquad\dot{\boldsymbol p}=-\frac{\partial H}{\partial\boldsymbol q}.\]
+
+$$
+\dot{\boldsymbol q}=\frac{\partial H}{\partial\boldsymbol p},\qquad\dot{\boldsymbol p}=-\frac{\partial H}{\partial\boldsymbol q}.
+$$
+
+
 
 ### 3. 原文证明
 
@@ -2199,7 +2418,7 @@ def hamiltonEquations {n : ℕ} (H : PhaseSpace n → ℝ) (q p : ℝ → Positi
 | 原文成分 | Lean对应 | 说明 |
 |---|---|---|
 | 原文对象、量词、前提与完整定义/结论（见第2段逐字引用） | MD.Ch01.hamiltonEquations；完整当前陈述及同组辅助定义见本条第4段 | 一致 |
-| \[\dot{\boldsymbol q}=\frac{\partial H}{\partial\boldsymbol p},\qquad\dot{\boldsymbol p}=-\frac{\partial H}{\partial\boldsymbol q}.\] | MD.Ch01.hamiltonEquations，完整展开陈述见上一行及第4段 | 一致 |
+| $\dot{\boldsymbol q}=\frac{\partial H}{\partial\boldsymbol p},\qquad\dot{\boldsymbol p}=-\frac{\partial H}{\partial\boldsymbol q}.$ | MD.Ch01.hamiltonEquations，完整展开陈述见上一行及第4段 | 一致 |
 | 网站指出缺项及原文完整子句 | MD.Ch01.hamiltonEquationsOn; MD.Ch01.hamiltonEquations | 沿轨迹两偏函数真实可微，补时间域版；全时间名称保留作univ特例。 |
 | 网站指出缺项及原文完整子句 | MD.Ch01.hamiltonEquationsOn; MD.Ch01.hamiltonEquations | 沿轨迹两偏函数真实可微，补时间域版；全时间名称保留作univ特例。 |
 
@@ -2222,7 +2441,12 @@ self-contained；已逐声明核验公理；含占位的声明仍未证明。
 ### 2. 原文陈述
 
 > For constant $\boldsymbol M$ we obtain the dynamical equations,
-> \[\dot{\boldsymbol q}=\boldsymbol M^{-1}\boldsymbol p,\qquad\dot{\boldsymbol p}=\boldsymbol F=-\partial U/\partial\boldsymbol q.\]
+
+$$
+\dot{\boldsymbol q}=\boldsymbol M^{-1}\boldsymbol p,\qquad\dot{\boldsymbol p}=\boldsymbol F=-\partial U/\partial\boldsymbol q.
+$$
+
+
 
 ### 3. 原文证明
 
@@ -2262,8 +2486,8 @@ theorem hamilton_fixed_mass {n : ℕ} (M : Matrix (Fin n) (Fin n) ℝ)
 
 | 原文成分 | Lean对应 | 说明 |
 |---|---|---|
-| 原文对象、量词、前提与完整定义/结论（见第2段逐字引用） | MD.Ch01.hamilton_fixed_mass；完整当前陈述及同组辅助定义见本条第4段 | 一致 |
-| \[\dot{\boldsymbol q}=\boldsymbol M^{-1}\boldsymbol p,\qquad\dot{\boldsymbol p}=\boldsymbol F=-\partial U/\partial\boldsymbol q.\] | MD.Ch01.hamilton_fixed_mass，完整展开陈述见上一行及第4段 | 一致 |
+| 原文对象、量词、前提与完整定义/结论（见第2段逐字引用） | MD.Ch01.hamilton\_fixed\_mass；完整当前陈述及同组辅助定义见本条第4段 | 一致 |
+| $\dot{\boldsymbol q}=\boldsymbol M^{-1}\boldsymbol p,\qquad\dot{\boldsymbol p}=\boldsymbol F=-\partial U/\partial\boldsymbol q.$ | MD.Ch01.hamilton\_fixed\_mass，完整展开陈述见上一行及第4段 | 一致 |
 | 一般固定矩阵M的两Hamilton偏梯度 | M.PosDef；动量梯度matrixAction M⁻¹ p，位置梯度gradient U q | 一致；保留一般SPD矩阵 |
 | 原文未显式量化的技术资格 | 常质量矩阵M对称正定，来自机械模型满秩坐标变换；U真实可微。 | [EXTRA] |
 
@@ -2278,7 +2502,7 @@ theorem hamilton_fixed_mass {n : ℕ} (M : Matrix (Fin n) (Fin n) ℝ)
 ### 7. 状态与证明位置
 
 checked+documented priors；已逐声明核验公理；含占位的声明仍未证明。
-位置：Blueprint/Ch01.lean:951；MD.Ch01.hamilton_fixed_mass。
+位置：Blueprint/Ch01.lean:951；MD.Ch01.hamilton\_fixed\_mass。
 
 ## 1. MD-1.4-HamiltonLagrangeEquivalence · unnumbered_claim · 印刷p.25 / PDFp.48
 
@@ -2372,8 +2596,8 @@ theorem finiteEnergyPhaseDomain_corrected_dimension (N : ℕ) :
 
 后句重复位置，疑为positions/momenta文字笔误；前句定义及R^{6N}支持位置×动量解释。 原文与修正版独立保留；默认选项是工作版本，尚未获导师裁定。
 
-网站：原书疑误=NEEDS_HUMAN；原文忠实性单列；修正版=网站PASS；原文已形式化子句=网站PASS（限定范围）；原文已形式化子句=网站PASS（限定范围）；原文已形式化子句=网站PASS（限定范围）；限定解释=网站PASS。
-finiteEnergyPhaseDomain 与 _corrected：PASS，PhaseSpace n=Position n×Momentum n，H:EReal，排除顶和底恰表示有限实能量。_corrected_dimension：PASS，任意 N，包括0，证明的是环境向量空间 PhaseSpace(3*N) 的实维数 6*N，不是断言任意有限能量子集自身为6N维流形。修正版按前句把笔误理解成位置与动量合理；原文笔误仍需人工确认。
+网站：原书疑误=NEEDS\_HUMAN；原文忠实性单列；修正版=网站PASS；原文已形式化子句=网站PASS（限定范围）；原文已形式化子句=网站PASS（限定范围）；原文已形式化子句=网站PASS（限定范围）；限定解释=网站PASS。
+finiteEnergyPhaseDomain 与 _corrected：PASS，PhaseSpace n=Position n×Momentum n，H:EReal，排除顶和底恰表示有限实能量。_corrected\_dimension：PASS，任意 N，包括0，证明的是环境向量空间 PhaseSpace(3*N) 的实维数 6*N，不是断言任意有限能量子集自身为6N维流形。修正版按前句把笔误理解成位置与动量合理；原文笔误仍需人工确认。
 
 ### 7. 状态与证明位置
 
@@ -2413,7 +2637,7 @@ theorem local_exist_unique {n : ℕ} (m : CoordinateMasses n) (U : PotentialEner
 
 | 原文成分 | Lean对应 | 说明 |
 |---|---|---|
-| 原文对象、量词、前提与完整定义/结论（见第2段逐字引用） | MD.Ch01.local_exist_unique；完整当前陈述及同组辅助定义见本条第4段 | 一致 |
+| 原文对象、量词、前提与完整定义/结论（见第2段逐字引用） | MD.Ch01.local\_exist\_unique；完整当前陈述及同组辅助定义见本条第4段 | 一致 |
 | 原文未显式量化的技术资格 | generic初值解释为开放非奇异域中的合法初值；力C1是原文存在唯一性背景。固定对角质量模型。 | [EXTRA] |
 
 [EXTRA] generic初值解释为开放非奇异域中的合法初值；力C1是原文存在唯一性背景。固定对角质量模型。
@@ -2428,7 +2652,7 @@ theorem local_exist_unique {n : ℕ} (m : CoordinateMasses n) (U : PotentialEner
 ### 7. 状态与证明位置
 
 checked+documented priors；已逐声明核验公理；含占位的声明仍未证明。
-位置：Blueprint/Ch01.lean:1016；MD.Ch01.local_exist_unique。
+位置：Blueprint/Ch01.lean:1016；MD.Ch01.local\_exist\_unique。
 
 ## 1. MD-1.5-EnergySurface · definition · 印刷p.25 / PDFp.48
 
@@ -2471,16 +2695,36 @@ self-contained；已逐声明核验公理；含占位的声明仍未证明。
 ### 2. 原文陈述
 
 > Assume that $U$ is a potential energy function which is bounded below, $U\geq U_{\min}$. For given $E_0\geq U_{\min}$ define $\Sigma_{E_0}=\{(\boldsymbol q,\boldsymbol p)\mid H(\boldsymbol q,\boldsymbol p)=E_0\}$. Then, for $(\boldsymbol q,\boldsymbol p)\in\Sigma_{E_0}$ we have
-> \[\frac{\boldsymbol p^T\boldsymbol M^{-1}\boldsymbol p}2+U(\boldsymbol q)=E_0\Rightarrow\frac{\boldsymbol p^T\boldsymbol M^{-1}\boldsymbol p}2=E_0-U(\boldsymbol q)\leq E_0-U_{\min}.\]
+
+$$
+\frac{\boldsymbol p^T\boldsymbol M^{-1}\boldsymbol p}2+U(\boldsymbol q)=E_0\Rightarrow\frac{\boldsymbol p^T\boldsymbol M^{-1}\boldsymbol p}2=E_0-U(\boldsymbol q)\leq E_0-U_{\min}.
+$$
+
+
 > $\boldsymbol M^{-1}$ is a positive definite matrix (assumed here to be constant), so we can infer that the momenta are bounded at fixed total energy. We would like to say something similar for positions. We have, at energy $E_0$,
-> \[U_{\min}\leq U(\boldsymbol q)\leq E_0.\]
+
+$$
+U_{\min}\leq U(\boldsymbol q)\leq E_0.
+$$
+
+
 
 ### 3. 原文证明
 
 > Then, for $(\boldsymbol q,\boldsymbol p)\in\Sigma_{E_0}$ we have
-> \[\frac{\boldsymbol p^T\boldsymbol M^{-1}\boldsymbol p}2+U(\boldsymbol q)=E_0\Rightarrow\frac{\boldsymbol p^T\boldsymbol M^{-1}\boldsymbol p}2=E_0-U(\boldsymbol q)\leq E_0-U_{\min}.\]
+
+$$
+\frac{\boldsymbol p^T\boldsymbol M^{-1}\boldsymbol p}2+U(\boldsymbol q)=E_0\Rightarrow\frac{\boldsymbol p^T\boldsymbol M^{-1}\boldsymbol p}2=E_0-U(\boldsymbol q)\leq E_0-U_{\min}.
+$$
+
+
 > $\boldsymbol M^{-1}$ is a positive definite matrix (assumed here to be constant), so we can infer that the momenta are bounded at fixed total energy. We would like to say something similar for positions. We have, at energy $E_0$,
-> \[U_{\min}\leq U(\boldsymbol q)\leq E_0.\]
+
+$$
+U_{\min}\leq U(\boldsymbol q)\leq E_0.
+$$
+
+
 原页能量不等式及正定推界论证逐字引用；与陈述合引部分保留，未添加原书没有的证明。
 
 ### 4. 完整当前Lean（原文与修正版独立列出）
@@ -2500,8 +2744,8 @@ theorem energy_bounds {n : ℕ} (M : Matrix (Fin n) (Fin n) ℝ)
 
 | 原文成分 | Lean对应 | 说明 |
 |---|---|---|
-| 原文对象、量词、前提与完整定义/结论（见第2段逐字引用） | MD.Ch01.energy_bounds；完整当前陈述及同组辅助定义见本条第4段 | 一致 |
-| \[\frac{\boldsymbol p^T\boldsymbol M^{-1}\boldsymbol p}2+U(\boldsymbol q)=E_0\Rightarrow\frac{\boldsymbol p^T\boldsymbol M^{-1}\boldsymbol p}2=E_0-U(\boldsymbol q)\leq E_0-U_{\min}.\]；\[U_{\min}\leq U(\boldsymbol q)\leq E_0.\] | MD.Ch01.energy_bounds，完整展开陈述见上一行及第4段 | 一致 |
+| 原文对象、量词、前提与完整定义/结论（见第2段逐字引用） | MD.Ch01.energy\_bounds；完整当前陈述及同组辅助定义见本条第4段 | 一致 |
+| $\frac{\boldsymbol p^T\boldsymbol M^{-1}\boldsymbol p}2+U(\boldsymbol q)=E_0\Rightarrow\frac{\boldsymbol p^T\boldsymbol M^{-1}\boldsymbol p}2=E_0-U(\boldsymbol q)\leq E_0-U_{\min}.$；$U_{\min}\leq U(\boldsymbol q)\leq E_0.$ | MD.Ch01.energy\_bounds，完整展开陈述见上一行及第4段 | 一致 |
 | 原文未显式量化的技术资格 | U定义在整个欧氏位置域；保持一般常M⁻¹正定，未换成固定对角特例。 | [EXTRA] |
 
 [EXTRA] U定义在整个欧氏位置域；保持一般常M⁻¹正定，未换成固定对角特例。
@@ -2515,7 +2759,7 @@ theorem energy_bounds {n : ℕ} (M : Matrix (Fin n) (Fin n) ℝ)
 ### 7. 状态与证明位置
 
 incomplete；已逐声明核验公理；含占位的声明仍未证明。
-位置：Blueprint/Ch01.lean:1040；MD.Ch01.energy_bounds。
+位置：Blueprint/Ch01.lean:1040；MD.Ch01.energy\_bounds。
 
 ## 1. MD-1.5-UniformLevelsCompact · unnumbered_claim · 印刷p.26 / PDFp.49
 
@@ -2543,7 +2787,7 @@ theorem uniform_levels_compact {n : ℕ} (M : Matrix (Fin n) (Fin n) ℝ)
 
 | 原文成分 | Lean对应 | 说明 |
 |---|---|---|
-| 原文对象、量词、前提与完整定义/结论（见第2段逐字引用） | MD.Ch01.uniform_levels_compact；完整当前陈述及同组辅助定义见本条第4段 | 一致 |
+| 原文对象、量词、前提与完整定义/结论（见第2段逐字引用） | MD.Ch01.uniform\_levels\_compact；完整当前陈述及同组辅助定义见本条第4段 | 一致 |
 | 原文未显式量化的技术资格 | U连续保证能量层闭；一般常逆质量正定继承p.25；无奇异域的全欧氏模型，若有奇异域需紧集留域。 | [EXTRA] |
 
 [EXTRA] U连续保证能量层闭；一般常逆质量正定继承p.25；无奇异域的全欧氏模型，若有奇异域需紧集留域。
@@ -2557,7 +2801,7 @@ theorem uniform_levels_compact {n : ℕ} (M : Matrix (Fin n) (Fin n) ℝ)
 ### 7. 状态与证明位置
 
 incomplete；已逐声明核验公理；含占位的声明仍未证明。
-位置：Blueprint/Ch01.lean:1053；MD.Ch01.uniform_levels_compact。
+位置：Blueprint/Ch01.lean:1053；MD.Ch01.uniform\_levels\_compact。
 
 ## 1. MD-1.5-CompactContinuation · unnumbered_claim · 印刷p.25–26 / PDFp.48–49
 
@@ -2603,10 +2847,10 @@ theorem compact_continuation {n : ℕ} (m : CoordinateMasses n) (U : PotentialEn
 
 | 原文成分 | Lean对应 | 说明 |
 |---|---|---|
-| 原文对象、量词、前提与完整定义/结论（见第2段逐字引用） | MD.Ch01.compact_continuation；完整当前陈述及同组辅助定义见本条第4段 | 一致 |
+| 原文对象、量词、前提与完整定义/结论（见第2段逐字引用） | MD.Ch01.compact\_continuation；完整当前陈述及同组辅助定义见本条第4段 | 一致 |
 | 原文未显式量化的技术资格 | 共同紧集包含于开放非奇异域；hconfine仅关于既有局部解，不假设全局解；力C1和固定对角机械模型。 | [EXTRA] |
-| 网站指出缺项及原文完整子句 | MD.Ch01.compact_continuation_aux; MD.Ch01.compact_continuation | 主条补真实U、正质量、势能下界/有界次水平集、全时间存在、同初值局部及全局唯一、有界和能量守恒；一般紧集延拓另名辅助，不把能量限域结论当假设。 |
-| 网站指出缺项及原文完整子句 | MD.Ch01.compact_continuation_aux; MD.Ch01.compact_continuation | 主条补真实U、正质量、势能下界/有界次水平集、全时间存在、同初值局部及全局唯一、有界和能量守恒；一般紧集延拓另名辅助，不把能量限域结论当假设。 |
+| 网站指出缺项及原文完整子句 | MD.Ch01.compact\_continuation\_aux; MD.Ch01.compact\_continuation | 主条补真实U、正质量、势能下界/有界次水平集、全时间存在、同初值局部及全局唯一、有界和能量守恒；一般紧集延拓另名辅助，不把能量限域结论当假设。 |
+| 网站指出缺项及原文完整子句 | MD.Ch01.compact\_continuation\_aux; MD.Ch01.compact\_continuation | 主条补真实U、正质量、势能下界/有界次水平集、全时间存在、同初值局部及全局唯一、有界和能量守恒；一般紧集延拓另名辅助，不把能量限域结论当假设。 |
 
 [EXTRA] 共同紧集包含于开放非奇异域；hconfine仅关于既有局部解，不假设全局解；力C1和固定对角机械模型。；[EXTRA] 19号：主条补真实U、正质量、势能下界/有界次水平集、全时间存在、同初值局部及全局唯一、有界和能量守恒；一般紧集延拓另名辅助，不把能量限域结论当假设。
 
@@ -2620,7 +2864,7 @@ aux：正质量、开放Q、C¹力、紧K⊂Q×P、初值在K，hconfine只量�
 ### 7. 状态与证明位置
 
 incomplete；已逐声明核验公理；含占位的声明仍未证明。
-位置：Blueprint/Ch01.lean:1074；MD.Ch01.compact_continuation。
+位置：Blueprint/Ch01.lean:1074；MD.Ch01.compact\_continuation。
 
 ## 1. MD-1.5-Nonconfining · unnumbered_claim · 印刷p.26 / PDFp.49
 
@@ -2672,7 +2916,12 @@ self-contained；已逐声明核验公理；含占位的声明仍未证明。
 ### 2. 原文陈述
 
 > Consider now the initial value problem
-> \[\dot{\boldsymbol z}=f(\boldsymbol z),\qquad\boldsymbol z(0)=\boldsymbol\xi,\tag{1.5}\]
+
+$$
+\dot{\boldsymbol z}=f(\boldsymbol z),\qquad\boldsymbol z(0)=\boldsymbol\xi,\tag{1.5}
+$$
+
+
 > in a $m$-dimensional space. If we assume that $f$ corresponds to a molecular Hamiltonian system satisfying the assumptions of the existence and uniqueness result of the previous subsection, then we may define a mapping from a point in phase space to the point $t$ units later along the time-evolution starting from the initial point. We refer to this map as the flow map and denote it by $\mathcal F_t$. $\mathcal F_t(\boldsymbol\xi)=\boldsymbol z(t)$ solves the initial value problem (1.5).
 
 ### 3. 原文证明
@@ -2692,7 +2941,7 @@ def flowMap {n : ℕ} (f : Position n → Position n) (F : ℝ → Position n �
 | 原文成分 | Lean对应 | 说明 |
 |---|---|---|
 | 原文对象、量词、前提与完整定义/结论（见第2段逐字引用） | MD.Ch01.flowMap；完整当前陈述及同组辅助定义见本条第4段 | 一致 |
-| \[\dot{\boldsymbol z}=f(\boldsymbol z),\qquad\boldsymbol z(0)=\boldsymbol\xi,\tag{1.5}\] | MD.Ch01.flowMap，完整展开陈述见上一行及第4段 | 一致 |
+| $\dot{\boldsymbol z}=f(\boldsymbol z),\qquad\boldsymbol z(0)=\boldsymbol\xi,\quad\text{(1.5)}$ | MD.Ch01.flowMap，完整展开陈述见上一行及第4段 | 一致 |
 
 [EXTRA] 
 
@@ -2712,7 +2961,12 @@ self-contained；已逐声明核验公理；含占位的声明仍未证明。
 ### 2. 原文陈述
 
 > The flow map of a Hamiltonian system conserves its Hamiltonian, thus
-> \[H(\mathcal F_t(\boldsymbol\xi))\equiv H(\boldsymbol\xi).\]
+
+$$
+H(\mathcal F_t(\boldsymbol\xi))\equiv H(\boldsymbol\xi).
+$$
+
+
 
 ### 3. 原文证明
 
@@ -2760,8 +3014,8 @@ theorem flow_energy {n : ℕ} (H : PhaseSpace n → ℝ)
 
 | 原文成分 | Lean对应 | 说明 |
 |---|---|---|
-| 原文对象、量词、前提与完整定义/结论（见第2段逐字引用） | MD.Ch01.flow_energy；完整当前陈述及同组辅助定义见本条第4段 | 一致 |
-| \[H(\mathcal F_t(\boldsymbol\xi))=H(\boldsymbol\xi).\] | MD.Ch01.flow_energy，完整展开陈述见上一行及第4段 | 一致 |
+| 原文对象、量词、前提与完整定义/结论（见第2段逐字引用） | MD.Ch01.flow\_energy；完整当前陈述及同组辅助定义见本条第4段 | 一致 |
+| $H(\mathcal F_t(\boldsymbol\xi))=H(\boldsymbol\xi).$ | MD.Ch01.flow\_energy，完整展开陈述见上一行及第4段 | 一致 |
 | 一般Hamilton流保能量，所有初值与时间 | ∀ξ t,H(F t ξ)=H ξ；hF为实际symplecticGradient H的ODE | 一致；守恒未作前提 |
 | 原文未显式量化的技术资格 | H可微及F为真实全局Hamilton流（初值和ODE，不含守恒结论）。 | [EXTRA] |
 
@@ -2777,14 +3031,19 @@ theorem flow_energy {n : ℕ} (H : PhaseSpace n → ℝ)
 ### 7. 状态与证明位置
 
 checked+documented priors；已逐声明核验公理；含占位的声明仍未证明。
-位置：Blueprint/Ch01.lean:1115；MD.Ch01.flow_energy。
+位置：Blueprint/Ch01.lean:1115；MD.Ch01.flow\_energy。
 
 ## 1. MD-1.5.1-HarmonicPhaseFlow · definition · 印刷p.27 / PDFp.50
 
 ### 2. 原文陈述
 
 > for which the solution subject to initial values $q(0)=q_0,p(0)=p_0$ is
-> \[\begin{pmatrix}q(t)\\p(t)\end{pmatrix}=\mathcal F_t\begin{pmatrix}q_0\\p_0\end{pmatrix}\equiv\begin{pmatrix}q_0\cos(\Omega t)+p_0\sin(\Omega t)/\Omega\\-q_0\Omega\sin(\Omega t)+p_0\cos(\Omega t)\end{pmatrix}.\]
+
+$$
+\begin{pmatrix}q(t)\\p(t)\end{pmatrix}=\mathcal F_t\begin{pmatrix}q_0\\p_0\end{pmatrix}\equiv\begin{pmatrix}q_0\cos(\Omega t)+p_0\sin(\Omega t)/\Omega\\-q_0\Omega\sin(\Omega t)+p_0\cos(\Omega t)\end{pmatrix}.
+$$
+
+
 
 ### 3. 原文证明
 
@@ -2812,9 +3071,9 @@ theorem harmonicPhaseFlow_solution {n : ℕ} (Ω : ℝ) (hΩ : Ω ≠ 0) (z : Ph
 | 原文成分 | Lean对应 | 说明 |
 |---|---|---|
 | 原文对象、量词、前提与完整定义/结论（见第2段逐字引用） | MD.Ch01.harmonicPhaseFlow；完整当前陈述及同组辅助定义见本条第4段 | 一致 |
-| \[\begin{pmatrix}q(t)\\p(t)\end{pmatrix}=\mathcal F_t\begin{pmatrix}q_0\\p_0\end{pmatrix}=\begin{pmatrix}q_0\cos(\Omega t)+p_0\sin(\Omega t)/\Omega\\-q_0\Omega\sin(\Omega t)+p_0\cos(\Omega t)\end{pmatrix}.\] | MD.Ch01.harmonicPhaseFlow，完整展开陈述见上一行及第4段 | 一致 |
-| 网站指出缺项及原文完整子句 | MD.Ch01.harmonicPhaseFlow; MD.Ch01.harmonicPhaseFlow_solution | 保留教材表达式为辅助总函数；解身份明确Ω≠0并补初值和真实ODE，不把Ω=0总化公式当自由粒子解。 |
-| 网站指出缺项及原文完整子句 | MD.Ch01.harmonicPhaseFlow; MD.Ch01.harmonicPhaseFlow_solution | 保留教材表达式为辅助总函数；解身份明确Ω≠0并补初值和真实ODE，不把Ω=0总化公式当自由粒子解。 |
+| $\begin{pmatrix}q(t)\\p(t)\end{pmatrix}=\mathcal F_t\begin{pmatrix}q_0\\p_0\end{pmatrix}=\begin{pmatrix}q_0\cos(\Omega t)+p_0\sin(\Omega t)/\Omega\\-q_0\Omega\sin(\Omega t)+p_0\cos(\Omega t)\end{pmatrix}.$ | MD.Ch01.harmonicPhaseFlow，完整展开陈述见上一行及第4段 | 一致 |
+| 网站指出缺项及原文完整子句 | MD.Ch01.harmonicPhaseFlow; MD.Ch01.harmonicPhaseFlow\_solution | 保留教材表达式为辅助总函数；解身份明确Ω≠0并补初值和真实ODE，不把Ω=0总化公式当自由粒子解。 |
+| 网站指出缺项及原文完整子句 | MD.Ch01.harmonicPhaseFlow; MD.Ch01.harmonicPhaseFlow\_solution | 保留教材表达式为辅助总函数；解身份明确Ω≠0并补初值和真实ODE，不把Ω=0总化公式当自由粒子解。 |
 
 [EXTRA] [EXTRA] 19号：保留教材表达式为辅助总函数；解身份明确Ω≠0并补初值和真实ODE，不把Ω=0总化公式当自由粒子解。
 
@@ -2823,7 +3082,7 @@ theorem harmonicPhaseFlow_solution {n : ℕ} (Ω : ℝ) (hΩ : Ω ≠ 0) (z : Ph
 19号本地签名预审：保留教材表达式为辅助总函数；解身份明确Ω≠0并补初值和真实ODE，不把Ω=0总化公式当自由粒子解。
 
 网站：网站PASS（EAUDIT复审）。
-harmonicPhaseFlow 的两个分量与原式一致，n维共同频率推广合法。总函数本身允许Ω=0，但 harmonicPhaseFlow_solution 明确 hΩ:Ω≠0，结论含初值及单位质量、力 -(Ω²)q 的全时间真实积分曲线；没有声称零频总化式仍满足自由粒子方程。全部 [EXTRA] 已兑现。
+harmonicPhaseFlow 的两个分量与原式一致，n维共同频率推广合法。总函数本身允许Ω=0，但 harmonicPhaseFlow\_solution 明确 hΩ:Ω≠0，结论含初值及单位质量、力 -(Ω²)q 的全时间真实积分曲线；没有声称零频总化式仍满足自由粒子方程。全部 [EXTRA] 已兑现。
 
 ### 7. 状态与证明位置
 
@@ -2835,9 +3094,19 @@ self-contained；已逐声明核验公理；含占位的声明仍未证明。
 ### 2. 原文陈述
 
 > If $\boldsymbol A$ has a basis of eigenvectors $\boldsymbol\eta_i$, $i=1,\ldots,m$, with corresponding eigenvalues $\lambda_1,\lambda_2,\ldots,\lambda_m$, then we may write the solution at time $t$ as
-> \[\boldsymbol z(t)=\sum_{i=1}^{m}c_i e^{\lambda_i(t-t_0)}\boldsymbol\eta_i\]
+
+$$
+\boldsymbol z(t)=\sum_{i=1}^{m}c_i e^{\lambda_i(t-t_0)}\boldsymbol\eta_i
+$$
+
+
 > where the coefficients $c_i$ are obtained by solving the equation
-> \[\boldsymbol z(t_0)\equiv \boldsymbol\xi=\sum_{i=1}^{m}c_i\boldsymbol\eta_i.\]
+
+$$
+\boldsymbol z(t_0)\equiv \boldsymbol\xi=\sum_{i=1}^{m}c_i\boldsymbol\eta_i.
+$$
+
+
 
 ### 3. 原文证明
 
@@ -2861,7 +3130,7 @@ theorem spectralsolution :
 | 原文成分 | Lean对应 | 说明 |
 |---|---|---|
 | 原文对象、量词、前提与完整定义/结论（见第2段逐字引用） | MD.Ch01.spectralsolution；完整当前陈述及同组辅助定义见本条第4段 | 一致 |
-| \[\boldsymbol z(t)=\sum_{i=1}^{m}c_i e^{\lambda_i(t-t_0)}\boldsymbol\eta_i\]；\[\boldsymbol z(t_0)=\boldsymbol\xi=\sum_{i=1}^{m}c_i\boldsymbol\eta_i.\] | MD.Ch01.spectralsolution，完整展开陈述见上一行及第4段 | 一致 |
+| $\boldsymbol z(t)=\sum_{i=1}^{m}c_i e^{\lambda_i(t-t_0)}\boldsymbol\eta_i$；$\boldsymbol z(t_0)=\boldsymbol\xi=\sum_{i=1}^{m}c_i\boldsymbol\eta_i.$ | MD.Ch01.spectralsolution，完整展开陈述见上一行及第4段 | 一致 |
 | 原文未显式量化的技术资格 | 有限维复数特征基；在公式中以t-t0调用零初时流；coeff=b.repr ξ。 | [EXTRA] |
 
 [EXTRA] 有限维复数特征基；在公式中以t-t0调用零初时流；coeff=b.repr ξ。
@@ -2883,7 +3152,12 @@ checked+documented priors；已逐声明核验公理；含占位的声明仍未�
 ### 2. 原文陈述
 
 > (ii) with our assumption that the $\{\boldsymbol\eta_i\}$ form a basis, the calculation of the coefficients is always possible, since the matrix $\boldsymbol X$ whose columns are the eigenvectors will be invertible, that is, the coefficients $c_i$ can be enumerated as the components of a vector $\boldsymbol c$ which satisfies the square linear system
-> \[\boldsymbol\xi=\boldsymbol X\boldsymbol c.\]
+
+$$
+\boldsymbol\xi=\boldsymbol X\boldsymbol c.
+$$
+
+
 
 ### 3. 原文证明
 
@@ -2906,8 +3180,8 @@ theorem basis_coefficients {m : ℕ} {𝕜 : Type*} [RCLike 𝕜]
 
 | 原文成分 | Lean对应 | 说明 |
 |---|---|---|
-| 原文对象、量词、前提与完整定义/结论（见第2段逐字引用） | MD.Ch01.basis_coefficients；完整当前陈述及同组辅助定义见本条第4段 | 一致 |
-| \[\boldsymbol\xi=\boldsymbol X\boldsymbol c.\] | MD.Ch01.basis_coefficients，完整展开陈述见上一行及第4段 | 一致 |
+| 原文对象、量词、前提与完整定义/结论（见第2段逐字引用） | MD.Ch01.basis\_coefficients；完整当前陈述及同组辅助定义见本条第4段 | 一致 |
+| $\boldsymbol\xi=\boldsymbol X\boldsymbol c.$ | MD.Ch01.basis\_coefficients，完整展开陈述见上一行及第4段 | 一致 |
 | 原文未显式量化的技术资格 | RCLike域包含实/复两种；真实有限基。 | [EXTRA] |
 
 [EXTRA] RCLike域包含实/复两种；真实有限基。
@@ -2922,14 +3196,19 @@ theorem basis_coefficients {m : ℕ} {𝕜 : Type*} [RCLike 𝕜]
 ### 7. 状态与证明位置
 
 checked+documented priors；已逐声明核验公理；含占位的声明仍未证明。
-位置：Blueprint/Ch01.lean:1180；MD.Ch01.basis_coefficients。
+位置：Blueprint/Ch01.lean:1180；MD.Ch01.basis\_coefficients。
 
 ## 1. MD-1.5.1-MatrixExponentialSolution · unnumbered_claim · 印刷p.27 / PDFp.50
 
 ### 2. 原文陈述
 
 > An alternative expression for the solution is in terms of the exponential of the matrix $\boldsymbol A$ scaled by time,
-> \[\boldsymbol z(t)=e^{\boldsymbol A(t-t_0)}\boldsymbol\xi.\]
+
+$$
+\boldsymbol z(t)=e^{\boldsymbol A(t-t_0)}\boldsymbol\xi.
+$$
+
+
 
 ### 3. 原文证明
 
@@ -2953,7 +3232,7 @@ theorem matrixexponentialsolution :
 | 原文成分 | Lean对应 | 说明 |
 |---|---|---|
 | 原文对象、量词、前提与完整定义/结论（见第2段逐字引用） | MD.Ch01.matrixexponentialsolution；完整当前陈述及同组辅助定义见本条第4段 | 一致 |
-| \[\boldsymbol z(t)=e^{\boldsymbol A(t-t_0)}\boldsymbol\xi.\] | MD.Ch01.matrixexponentialsolution，完整展开陈述见上一行及第4段 | 一致 |
+| $\boldsymbol z(t)=e^{\boldsymbol A(t-t_0)}\boldsymbol\xi.$ | MD.Ch01.matrixexponentialsolution，完整展开陈述见上一行及第4段 | 一致 |
 
 [EXTRA] 
 
@@ -2974,7 +3253,12 @@ checked+documented priors；已逐声明核验公理；含占位的声明仍未�
 ### 2. 原文陈述
 
 > Alternatively, we may think of $\exp(\boldsymbol A)$ as the sum of the exponential series
-> \[e^{\boldsymbol A}=\boldsymbol I+\boldsymbol A+\frac1{2!}\boldsymbol A^2+\frac1{3!}\boldsymbol A^3+\cdots\]
+
+$$
+e^{\boldsymbol A}=\boldsymbol I+\boldsymbol A+\frac1{2!}\boldsymbol A^2+\frac1{3!}\boldsymbol A^3+\cdots
+$$
+
+
 > although this is seldom the most efficient method to compute it (this series converges for all matrices $\boldsymbol A$, and so in fact the exponential expression for the solution of the linear system is well defined even in the absence of a full set of eigenvectors).
 
 ### 3. 原文证明
@@ -2994,8 +3278,8 @@ theorem matrix_exp_series {n : ℕ} (A : Matrix (Fin n) (Fin n) ℝ) :
 
 | 原文成分 | Lean对应 | 说明 |
 |---|---|---|
-| 原文对象、量词、前提与完整定义/结论（见第2段逐字引用） | MD.Ch01.matrix_exp_series；完整当前陈述及同组辅助定义见本条第4段 | 一致 |
-| \[e^{\boldsymbol A}=\boldsymbol I+\boldsymbol A+\frac1{2!}\boldsymbol A^2+\frac1{3!}\boldsymbol A^3+\cdots\] | MD.Ch01.matrix_exp_series，完整展开陈述见上一行及第4段 | 一致 |
+| 原文对象、量词、前提与完整定义/结论（见第2段逐字引用） | MD.Ch01.matrix\_exp\_series；完整当前陈述及同组辅助定义见本条第4段 | 一致 |
+| $e^{\boldsymbol A}=\boldsymbol I+\boldsymbol A+\frac1{2!}\boldsymbol A^2+\frac1{3!}\boldsymbol A^3+\cdots$ | MD.Ch01.matrix\_exp\_series，完整展开陈述见上一行及第4段 | 一致 |
 
 [EXTRA] 
 
@@ -3008,7 +3292,7 @@ theorem matrix_exp_series {n : ℕ} (A : Matrix (Fin n) (Fin n) ℝ) :
 ### 7. 状态与证明位置
 
 checked+documented priors；已逐声明核验公理；含占位的声明仍未证明。
-位置：Blueprint/Ch01.lean:1204；MD.Ch01.matrix_exp_series。
+位置：Blueprint/Ch01.lean:1204；MD.Ch01.matrix\_exp\_series。
 
 ## 1. MD-1.5.2-FirstIntegral · definition · 印刷p.28 / PDFp.51
 
@@ -3057,7 +3341,12 @@ self-contained；已逐声明核验公理；含占位的声明仍未证明。
 ### 3. 原文证明
 
 > Let $\boldsymbol z(t):t\in\mathbb R$ be a solution, then
-> \[I(\boldsymbol z(t))\equiv I(\boldsymbol z(0))\Rightarrow0\equiv\frac{\mathrm d}{\mathrm dt}I(\boldsymbol z(t))=\nabla I(\boldsymbol z(t))\cdot\dot{\boldsymbol z}(t)=\nabla I(\boldsymbol z(t))\cdot f(\boldsymbol z(t)).\]
+
+$$
+I(\boldsymbol z(t))\equiv I(\boldsymbol z(0))\Rightarrow0\equiv\frac{\mathrm d}{\mathrm dt}I(\boldsymbol z(t))=\nabla I(\boldsymbol z(t))\cdot\dot{\boldsymbol z}(t)=\nabla I(\boldsymbol z(t))\cdot f(\boldsymbol z(t)).
+$$
+
+
 按渲染原页逐字转录原文论证。
 
 ### 4. 完整当前Lean（原文与修正版独立列出）
@@ -3076,9 +3365,9 @@ theorem firstintegralcriterion :
 | 原文成分 | Lean对应 | 说明 |
 |---|---|---|
 | 原文对象、量词、前提与完整定义/结论（见第2段逐字引用） | MD.Ch01.firstintegralcriterion；完整当前陈述及同组辅助定义见本条第4段 | 一致 |
-| 原文未显式量化的技术资格 | 开放域、f局部C1确保每个初值局部解存在；I可微；微分作用=梯度内积另由firstIntegral_gradient_criterion。 | [EXTRA] |
+| 原文未显式量化的技术资格 | 开放域、f局部C1确保每个初值局部解存在；I可微；微分作用=梯度内积另由firstIntegral\_gradient\_criterion。 | [EXTRA] |
 
-[EXTRA] 开放域、f局部C1确保每个初值局部解存在；I可微；微分作用=梯度内积另由firstIntegral_gradient_criterion。
+[EXTRA] 开放域、f局部C1确保每个初值局部解存在；I可微；微分作用=梯度内积另由firstIntegral\_gradient\_criterion。
 
 ### 6. 审计结论
 
@@ -3097,7 +3386,12 @@ checked+documented priors；已逐声明核验公理；含占位的声明仍未�
 ### 2. 原文陈述
 
 > In principle such an equation can be solved (locally at least) for $y$ as a function of $x$ due to the implicit function theorem. Hence one may write $y=\psi(x)$. Reinsert this into the first differential equation to get a reduced equation in just one dependent variable:
-> \[\frac{\mathrm dx}{\mathrm dt}=g(x,\psi(x)).\]
+
+$$
+\frac{\mathrm dx}{\mathrm dt}=g(x,\psi(x)).
+$$
+
+
 
 ### 3. 原文证明
 
@@ -3127,7 +3421,7 @@ theorem planargraphreduction :
 | 原文成分 | Lean对应 | 说明 |
 |---|---|---|
 | 原文对象、量词、前提与完整定义/结论（见第2段逐字引用） | MD.Ch01.planargraphreduction；完整当前陈述及同组辅助定义见本条第4段 | 一致 |
-| \[\frac{\mathrm dx}{\mathrm dt}=g(x,\psi(x)).\] | MD.Ch01.planargraphreduction，完整展开陈述见上一行及第4段 | 一致 |
+| $\frac{\mathrm dx}{\mathrm dt}=g(x,\psi(x)).$ | MD.Ch01.planargraphreduction，完整展开陈述见上一行及第4段 | 一致 |
 | 原文未显式量化的技术资格 | 对y偏导非零，真实strict导数，局部时间窗；原文省略隐函数非退化条件。 | [EXTRA] |
 
 [EXTRA] 对y偏导非零，真实strict导数，局部时间窗；原文省略隐函数非退化条件。
@@ -3137,7 +3431,7 @@ theorem planargraphreduction :
 展开复用定理签名逐项核对原文；全部结论保留，额外技术条件逐条登记。
 
 网站：网站PASS（EAUDIT复审）。
-量词覆盖任意平面向量场、区域、第一积分、真实解及区间内基点。hJ 是该点严格微分，hpartial 精确为 y 方向微分非零。结论给出可微图、附近整个水平集与图的双向等价、原轨道在局部时间窗的图表示及第一坐标的约化 ODE，非仅假设了所需结论。条件化签名正确；原句无条件措辞另标 NEEDS_HUMAN。
+量词覆盖任意平面向量场、区域、第一积分、真实解及区间内基点。hJ 是该点严格微分，hpartial 精确为 y 方向微分非零。结论给出可微图、附近整个水平集与图的双向等价、原轨道在局部时间窗的图表示及第一坐标的约化 ODE，非仅假设了所需结论。条件化签名正确；原句无条件措辞另标 NEEDS\_HUMAN。
 
 ### 7. 状态与证明位置
 
@@ -3234,17 +3528,17 @@ theorem scalar_first_integral_and_quadrature :
 
 | 原文成分 | Lean对应 | 说明 |
 |---|---|---|
-| 原文对象、量词、前提与完整定义/结论（见第2段逐字引用） | MD.Ch01.scalar_first_integral_and_quadrature；完整当前陈述及同组辅助定义见本条第4段 | 一致 |
-| energy as a first integral | scalarPotentialEnergy_isFirstIntegral的完整签名 | 一致 |
-| therefore integrable | scalarPotential_nonturning_quadrature的实际局部积分逆重建 | 一致；非转向资格显式 |
+| 原文对象、量词、前提与完整定义/结论（见第2段逐字引用） | MD.Ch01.scalar\_first\_integral\_and\_quadrature；完整当前陈述及同组辅助定义见本条第4段 | 一致 |
+| energy as a first integral | scalarPotentialEnergy\_isFirstIntegral的完整签名 | 一致 |
+| therefore integrable | scalarPotential\_nonturning\_quadrature的实际局部积分逆重建 | 一致；非转向资格显式 |
 | 原文未显式量化的技术资格 | U C2；开放时间段真实解、积分逆图使用速度非零点；转向点全局拼接不声称已有证明。 | [EXTRA] |
-| 21号网站建议修复 | MD.Ch01.scalar_first_integral_and_quadrature | 本条正式覆盖为“能量守恒 + 非转向点局部求积”的部分形式化；转向点换坐标求积、平衡点常解分类和全局拼接列为覆盖缺口，不补理论。 |
+| 21号网站建议修复 | MD.Ch01.scalar\_first\_integral\_and\_quadrature | 本条正式覆盖为“能量守恒 + 非转向点局部求积”的部分形式化；转向点换坐标求积、平衡点常解分类和全局拼接列为覆盖缺口，不补理论。 |
 
 [EXTRA] U C2；开放时间段真实解、积分逆图使用速度非零点；转向点全局拼接不声称已有证明。；[EXTRA] 本条正式覆盖为“能量守恒 + 非转向点局部求积”的部分形式化；转向点换坐标求积、平衡点常解分类和全局拼接列为覆盖缺口，不补理论。
 
 ### 6. 审计结论
 
-21号按网站suggested_fix修复并本地核验：本条正式覆盖为“能量守恒 + 非转向点局部求积”的部分形式化；转向点换坐标求积、平衡点常解分类和全局拼接列为覆盖缺口，不补理论。
+21号按网站suggested\_fix修复并本地核验：本条正式覆盖为“能量守恒 + 非转向点局部求积”的部分形式化；转向点换坐标求积、平衡点常解分类和全局拼接列为覆盖缺口，不补理论。
 
 网站：按网站审校意见修复，本地核验通过（未再送网站）。
 第5页 Example 1.6 转录相符。第一合取对任意 C² 势能证明能量 v²/2+U(x) 为 (v,−U′(x)) 的第一积分；第二合取的积分逆、局部参数化及速度符号均正确，但只量化速度非零点。相较原文“system is therefore integrable”的完整覆盖，缺少真实解在转向点的改用速度坐标求积、平衡点常解及相应重建说明。不是命题本身为假，也不是因 sorry 判 FAIL，而是覆盖不全。
@@ -3252,7 +3546,7 @@ theorem scalar_first_integral_and_quadrature :
 ### 7. 状态与证明位置
 
 checked+documented priors；已逐声明核验公理；含占位的声明仍未证明。
-位置：Blueprint/Ch01.lean:1271；MD.Ch01.scalar_first_integral_and_quadrature。
+位置：Blueprint/Ch01.lean:1271；MD.Ch01.scalar\_first\_integral\_and\_quadrature。
 
 ## 1. MD-1.5.1-RealSpectralSolution · unnumbered_claim · 印刷p.27 / PDFp.50
 
@@ -3383,8 +3677,8 @@ theorem kepler_energy_angular_integrability :
 
 | 原文成分 | Lean对应 | 说明 |
 |---|---|---|
-| 原文对象、量词、前提与完整定义/结论（见第2段逐字引用） | MD.Ch01.kepler_energy_angular_integrability；完整当前陈述及同组辅助定义见本条第4段 | 一致 |
-| energy and angular momentum | 平面真实解的kepler_energy_const_on_Ioo与kepler_planarAngularMomentum_const_on_Ioo完整签名 | 一致；两结论已桥接 |
+| 原文对象、量词、前提与完整定义/结论（见第2段逐字引用） | MD.Ch01.kepler\_energy\_angular\_integrability；完整当前陈述及同组辅助定义见本条第4段 | 一致 |
+| energy and angular momentum | 平面真实解的kepler\_energy\_const\_on\_Ioo与kepler\_planarAngularMomentum\_const\_on\_Ioo完整签名 | 一致；两结论已桥接 |
 | mean that … is an integrable system | 整个非碰撞存在区间的径向quadrature、角积分与初值重建合取 | 一致；未以只证明能量守恒代替全部结论 |
 | 原文未显式量化的技术资格 | 真实平面非碰撞机械解；积分重建的整个存在区间含0，角为连续实提升；不声称穿越碰撞的全局轨道。 | [EXTRA] |
 
@@ -3400,7 +3694,7 @@ theorem kepler_energy_angular_integrability :
 ### 7. 状态与证明位置
 
 incomplete；已逐声明核验公理；含占位的声明仍未证明。
-位置：Blueprint/Ch01.lean:1313；MD.Ch01.kepler_energy_angular_integrability。
+位置：Blueprint/Ch01.lean:1313；MD.Ch01.kepler\_energy\_angular\_integrability。
 
 ## 1. MD-1.5.2-KeplerAngularMomentum · unnumbered_claim · 印刷p.29 / PDFp.52
 
@@ -3477,8 +3771,8 @@ theorem keplermomentum_not_first_integrals :
 |---|---|---|
 | 原文对象、量词、前提与完整定义/结论（见第2段逐字引用） | MD.Ch01.keplermomentum；完整当前陈述及同组辅助定义见本条第4段 | 一致 |
 | 原文未显式量化的技术资格 | q≠0；单位质量。 | [EXTRA] |
-| 网站指出缺项及原文完整子句 | MD.Ch01.keplermomentum; MD.Ch01.keplermomentum_not_first_integrals | 保留非零力引理；另明确两个坐标动量各自不是对所有初值守恒的第一积分，不误称每条轨道两分量都变化。 |
-| 网站指出缺项及原文完整子句 | MD.Ch01.keplermomentum; MD.Ch01.keplermomentum_not_first_integrals | 保留非零力引理；另明确两个坐标动量各自不是对所有初值守恒的第一积分，不误称每条轨道两分量都变化。 |
+| 网站指出缺项及原文完整子句 | MD.Ch01.keplermomentum; MD.Ch01.keplermomentum\_not\_first\_integrals | 保留非零力引理；另明确两个坐标动量各自不是对所有初值守恒的第一积分，不误称每条轨道两分量都变化。 |
+| 网站指出缺项及原文完整子句 | MD.Ch01.keplermomentum; MD.Ch01.keplermomentum\_not\_first\_integrals | 保留非零力引理；另明确两个坐标动量各自不是对所有初值守恒的第一积分，不误称每条轨道两分量都变化。 |
 
 [EXTRA] q≠0；单位质量。；[EXTRA] 19号：保留非零力引理；另明确两个坐标动量各自不是对所有初值守恒的第一积分，不误称每条轨道两分量都变化。
 
@@ -3487,7 +3781,7 @@ theorem keplermomentum_not_first_integrals :
 19号本地签名预审：保留非零力引理；另明确两个坐标动量各自不是对所有初值守恒的第一积分，不误称每条轨道两分量都变化。
 
 网站：网站PASS（EAUDIT复审）。
-第8页转录相符。主声明对每个 q≠0 给非零向心力，正确但单独不足以证明两个坐标分别不是第一积分。[EXTRA] keplermomentum_not_first_integrals 对每个 i∈Fin 2 分别否定坐标动量在整个非碰撞相空间上、对所有真解的常性，补齐原文语义。取初始 q=eᵢ 时该坐标动量导数为−1，因此否定成立；不误称每条轨道的每个分量都变化。
+第8页转录相符。主声明对每个 q≠0 给非零向心力，正确但单独不足以证明两个坐标分别不是第一积分。[EXTRA] keplermomentum\_not\_first\_integrals 对每个 i∈Fin 2 分别否定坐标动量在整个非碰撞相空间上、对所有真解的常性，补齐原文语义。取初始 q=eᵢ 时该坐标动量导数为−1，因此否定成立；不误称每条轨道的每个分量都变化。
 
 ### 7. 状态与证明位置
 
@@ -3534,11 +3828,21 @@ self-contained；已逐声明核验公理；含占位的声明仍未证明。
 
 ### 2. 原文陈述
 
-> \[L=K-U=\frac12(\dot r\cos\theta-r\dot\theta\sin\theta)^2+\frac12(\dot r\sin\theta+r\dot\theta\cos\theta)^2+\frac1r=\frac{\dot r^2}2+\frac{r^2\dot\theta^2}2+\frac1r.\]
+
+$$
+L=K-U=\frac12(\dot r\cos\theta-r\dot\theta\sin\theta)^2+\frac12(\dot r\sin\theta+r\dot\theta\cos\theta)^2+\frac1r=\frac{\dot r^2}2+\frac{r^2\dot\theta^2}2+\frac1r.
+$$
+
+
 
 ### 3. 原文证明
 
-> \[L=K-U=\frac12(\dot r\cos\theta-r\dot\theta\sin\theta)^2+\frac12(\dot r\sin\theta+r\dot\theta\cos\theta)^2+\frac1r=\frac{\dot r^2}2+\frac{r^2\dot\theta^2}2+\frac1r.\]
+
+$$
+L=K-U=\frac12(\dot r\cos\theta-r\dot\theta\sin\theta)^2+\frac12(\dot r\sin\theta+r\dot\theta\cos\theta)^2+\frac1r=\frac{\dot r^2}2+\frac{r^2\dot\theta^2}2+\frac1r.
+$$
+
+
 原页三角/代数恒等式计算即原文论证，逐字引用；原文陈述中的同一计算保留。
 
 ### 4. 完整当前Lean（原文与修正版独立列出）
@@ -3557,7 +3861,7 @@ theorem keplerpolarlagrangian :
 | 原文成分 | Lean对应 | 说明 |
 |---|---|---|
 | 原文对象、量词、前提与完整定义/结论（见第2段逐字引用） | MD.Ch01.keplerpolarlagrangian；完整当前陈述及同组辅助定义见本条第4段 | 一致 |
-| \[L=K-U=\frac12(\dot r\cos\theta-r\dot\theta\sin\theta)^2+\frac12(\dot r\sin\theta+r\dot\theta\cos\theta)^2+\frac1r=\frac{\dot r^2}2+\frac{r^2\dot\theta^2}2+\frac1r.\] | MD.Ch01.keplerpolarlagrangian，完整展开陈述见上一行及第4段 | 一致 |
+| $L=K-U=\frac12(\dot r\cos\theta-r\dot\theta\sin\theta)^2+\frac12(\dot r\sin\theta+r\dot\theta\cos\theta)^2+\frac1r=\frac{\dot r^2}2+\frac{r^2\dot\theta^2}2+\frac1r.$ | MD.Ch01.keplerpolarlagrangian，完整展开陈述见上一行及第4段 | 一致 |
 
 [EXTRA] 
 
@@ -3577,7 +3881,12 @@ checked+documented priors；已逐声明核验公理；含占位的声明仍未�
 ### 2. 原文陈述
 
 > Working these out directly, one gets
-> \[\ddot r=-\frac1{r^2}+r\dot\theta^2,\qquad0=\frac{\mathrm d}{\mathrm dt}(r^2\dot\theta).\]
+
+$$
+\ddot r=-\frac1{r^2}+r\dot\theta^2,\qquad0=\frac{\mathrm d}{\mathrm dt}(r^2\dot\theta).
+$$
+
+
 
 ### 3. 原文证明
 
@@ -3601,7 +3910,7 @@ theorem keplerpolarode :
 | 原文成分 | Lean对应 | 说明 |
 |---|---|---|
 | 原文对象、量词、前提与完整定义/结论（见第2段逐字引用） | MD.Ch01.keplerpolarode；完整当前陈述及同组辅助定义见本条第4段 | 一致 |
-| \[\ddot r=-\frac1{r^2}+r\dot\theta^2,\qquad0=\frac{\mathrm d}{\mathrm dt}(r^2\dot\theta).\] | MD.Ch01.keplerpolarode，完整展开陈述见上一行及第4段 | 一致 |
+| $\ddot r=-\frac1{r^2}+r\dot\theta^2,\qquad0=\frac{\mathrm d}{\mathrm dt}(r^2\dot\theta).$ | MD.Ch01.keplerpolarode，完整展开陈述见上一行及第4段 | 一致 |
 
 [EXTRA] 
 
@@ -3610,7 +3919,7 @@ theorem keplerpolarode :
 展开复用定理签名逐项核对原文；全部结论保留，额外技术条件逐条登记。
 
 网站：网站PASS（EAUDIT复审）。
-第9页两式转录相符。对任意时间集合 I 和 r,θ,v,omega，左侧完整展开为正半径、r′=v、θ′=omega 及 L=v²/2+r²omega²/2+1/r 的两条 Euler–Lagrange 方程。对速度和半径的偏导分别为 v、r omega²−r⁻²；角动量偏导为 r²omega，角偏导为0。右侧恰给这两式及真实一阶导数，故不是用同义命名掩盖缺失运动方程。context_notation 的“r≠0”可加强精确写为“r>0”，签名本身无误。
+第9页两式转录相符。对任意时间集合 I 和 r,θ,v,omega，左侧完整展开为正半径、r′=v、θ′=omega 及 L=v²/2+r²omega²/2+1/r 的两条 Euler–Lagrange 方程。对速度和半径的偏导分别为 v、r omega²−r⁻²；角动量偏导为 r²omega，角偏导为0。右侧恰给这两式及真实一阶导数，故不是用同义命名掩盖缺失运动方程。context\_notation 的“r≠0”可加强精确写为“r>0”，签名本身无误。
 
 ### 7. 状态与证明位置
 
@@ -3622,14 +3931,22 @@ checked+documented priors；已逐声明核验公理；含占位的声明仍未�
 ### 2. 原文陈述
 
 > Expressed in polar coordinates this is
-> \[l_z=(r\cos\theta)(\dot r\sin\theta+r\dot\theta\cos\theta)-(r\sin\theta)(\dot r\cos\theta-r\dot\theta\sin\theta)
-> =r^2\dot\theta(\cos^2\theta+\sin^2\theta)=r^2\dot\theta,\]
+
+$$
+l_z=(r\cos\theta)(\dot r\sin\theta+r\dot\theta\cos\theta)-(r\sin\theta)(\dot r\cos\theta-r\dot\theta\sin\theta) =r^2\dot\theta(\cos^2\theta+\sin^2\theta)=r^2\dot\theta,
+$$
+
+
 
 ### 3. 原文证明
 
 > Expressed in polar coordinates this is
-> \[l_z=(r\cos\theta)(\dot r\sin\theta+r\dot\theta\cos\theta)-(r\sin\theta)(\dot r\cos\theta-r\dot\theta\sin\theta)
-> =r^2\dot\theta(\cos^2\theta+\sin^2\theta)=r^2\dot\theta,\]
+
+$$
+l_z=(r\cos\theta)(\dot r\sin\theta+r\dot\theta\cos\theta)-(r\sin\theta)(\dot r\cos\theta-r\dot\theta\sin\theta) =r^2\dot\theta(\cos^2\theta+\sin^2\theta)=r^2\dot\theta,
+$$
+
+
 原页三角/代数恒等式计算即原文论证，逐字引用；原文陈述中的同一计算保留。
 
 ### 4. 完整当前Lean（原文与修正版独立列出）
@@ -3647,7 +3964,7 @@ theorem polarangularidentity :
 | 原文成分 | Lean对应 | 说明 |
 |---|---|---|
 | 原文对象、量词、前提与完整定义/结论（见第2段逐字引用） | MD.Ch01.polarangularidentity；完整当前陈述及同组辅助定义见本条第4段 | 一致 |
-| \[l_z=(r\cos\theta)(\dot r\sin\theta+r\dot\theta\cos\theta)-(r\sin\theta)(\dot r\cos\theta-r\dot\theta\sin\theta)<br>=r^2\dot\theta(\cos^2\theta+\sin^2\theta)=r^2\dot\theta,\] | MD.Ch01.polarangularidentity，完整展开陈述见上一行及第4段 | 一致 |
+| $l_z=(r\cos\theta)(\dot r\sin\theta+r\dot\theta\cos\theta)-(r\sin\theta)(\dot r\cos\theta-r\dot\theta\sin\theta)<br>=r^2\dot\theta(\cos^2\theta+\sin^2\theta)=r^2\dot\theta,$ | MD.Ch01.polarangularidentity，完整展开陈述见上一行及第4段 | 一致 |
 
 [EXTRA] 
 
@@ -3710,7 +4027,12 @@ checked+documented priors；已逐声明核验公理；含占位的声明仍未�
 ### 2. 原文陈述
 
 > The equation for $r$ is that of a one-degree-of-freedom system with energy
-> \[\widehat E(r,\dot r)=\frac{\dot r^2}2-\frac1r+\frac{l_z^2}{2r^2}.\]
+
+$$
+\widehat E(r,\dot r)=\frac{\dot r^2}2-\frac1r+\frac{l_z^2}{2r^2}.
+$$
+
+
 
 ### 3. 原文证明
 
@@ -3728,7 +4050,7 @@ def radialKeplerEnergy (ℓ r v : ℝ) : ℝ := v^2/2-1/r+ℓ^2/(2*r^2)
 | 原文成分 | Lean对应 | 说明 |
 |---|---|---|
 | 原文对象、量词、前提与完整定义/结论（见第2段逐字引用） | MD.Ch01.radialKeplerEnergy；完整当前陈述及同组辅助定义见本条第4段 | 一致 |
-| \[\widehat E(r,\dot r)=\frac{\dot r^2}2-\frac1r+\frac{l_z^2}{2r^2}.\] | MD.Ch01.radialKeplerEnergy，完整展开陈述见上一行及第4段 | 一致 |
+| $\widehat E(r,\dot r)=\frac{\dot r^2}2-\frac1r+\frac{l_z^2}{2r^2}.$ | MD.Ch01.radialKeplerEnergy，完整展开陈述见上一行及第4段 | 一致 |
 
 [EXTRA] 
 
@@ -3748,7 +4070,12 @@ self-contained；已逐声明核验公理；含占位的声明仍未证明。
 ### 2. 原文陈述
 
 > From our previous work, we know that this system (a single degree of freedom system) can be solved for $r$ as a function of $t$ and the initial conditions. Once $r=r(t)$ is known, we may obtain $\theta$ by integration:
-> \[\theta=\theta(0)+\int_0^t\frac{l_z}{r^2(s)}\,\mathrm ds.\]
+
+$$
+\theta=\theta(0)+\int_0^t\frac{l_z}{r^2(s)}\,\mathrm ds.
+$$
+
+
 > The example shows that the full solution of the Kepler problem can be worked out given the initial conditions, as long as we are happy to express the solution in terms of antiderivatives of simple functions (and their inverses).
 
 ### 3. 原文证明
@@ -3780,8 +4107,8 @@ theorem kepler_full_solution (a b : ℝ) (z : ℝ → PhaseSpace 2)
 
 | 原文成分 | Lean对应 | 说明 |
 |---|---|---|
-| 原文对象、量词、前提与完整定义/结论（见第2段逐字引用） | MD.Ch01.kepler_full_solution；完整当前陈述及同组辅助定义见本条第4段 | 一致 |
-| \[\theta=\theta(0)+\int_0^t\frac{l_z}{r^2(s)}\,\mathrm ds.\] | MD.Ch01.kepler_full_solution，完整展开陈述见上一行及第4段 | 一致 |
+| 原文对象、量词、前提与完整定义/结论（见第2段逐字引用） | MD.Ch01.kepler\_full\_solution；完整当前陈述及同组辅助定义见本条第4段 | 一致 |
+| $\theta=\theta(0)+\int_0^t\frac{l_z}{r^2(s)}\,\mathrm ds.$ | MD.Ch01.kepler\_full\_solution，完整展开陈述见上一行及第4段 | 一致 |
 | 原文未显式量化的技术资格 | 完整非碰撞存在区间含0；原文不保证径向碰撞时仍有全局解；角θ为区间上的连续实提升。 | [EXTRA] |
 
 [EXTRA] 完整非碰撞存在区间含0；原文不保证径向碰撞时仍有全局解；角θ为区间上的连续实提升。
@@ -3796,14 +4123,19 @@ theorem kepler_full_solution (a b : ℝ) (z : ℝ → PhaseSpace 2)
 ### 7. 状态与证明位置
 
 incomplete；已逐声明核验公理；含占位的声明仍未证明。
-位置：Blueprint/Ch01.lean:1429；MD.Ch01.kepler_full_solution。
+位置：Blueprint/Ch01.lean:1429；MD.Ch01.kepler\_full\_solution。
 
 ## 1. MD-1.5.2-ActionAngleCoordinates · definition · 印刷p.30 / PDFp.53
 
 ### 2. 原文陈述
 
 > Define new variables
-> \[x=\sqrt{2I/\Omega}\cos\theta,\qquad v=\sqrt{2I\Omega}\sin\theta.\]
+
+$$
+x=\sqrt{2I/\Omega}\cos\theta,\qquad v=\sqrt{2I\Omega}\sin\theta.
+$$
+
+
 
 ### 3. 原文证明
 
@@ -3822,7 +4154,7 @@ def oscillatorActionAngle (Ω I θ : ℝ) : ℝ × ℝ :=
 | 原文成分 | Lean对应 | 说明 |
 |---|---|---|
 | 原文对象、量词、前提与完整定义/结论（见第2段逐字引用） | MD.Ch01.oscillatorActionAngle；完整当前陈述及同组辅助定义见本条第4段 | 一致 |
-| \[x=\sqrt{2I/\Omega}\cos\theta,\qquad v=\sqrt{2I\Omega}\sin\theta.\] | MD.Ch01.oscillatorActionAngle，完整展开陈述见上一行及第4段 | 一致 |
+| $x=\sqrt{2I/\Omega}\cos\theta,\qquad v=\sqrt{2I\Omega}\sin\theta.$ | MD.Ch01.oscillatorActionAngle，完整展开陈述见上一行及第4段 | 一致 |
 
 [EXTRA] 
 
@@ -3863,9 +4195,9 @@ theorem actionenergy :
 | 原文成分 | Lean对应 | 说明 |
 |---|---|---|
 | 原文对象、量词、前提与完整定义/结论（见第2段逐字引用） | MD.Ch01.actionenergy；完整当前陈述及同组辅助定义见本条第4段 | 一致 |
-| 原文未显式量化的技术资格 | Ω>0，I≥0；harmonicActionVelocity_formula保证v的sqrt(2IΩ)形式一致。 | [EXTRA] |
+| 原文未显式量化的技术资格 | Ω>0，I≥0；harmonicActionVelocity\_formula保证v的sqrt(2IΩ)形式一致。 | [EXTRA] |
 
-[EXTRA] Ω>0，I≥0；harmonicActionVelocity_formula保证v的sqrt(2IΩ)形式一致。
+[EXTRA] Ω>0，I≥0；harmonicActionVelocity\_formula保证v的sqrt(2IΩ)形式一致。
 
 ### 6. 审计结论
 
@@ -4004,7 +4336,7 @@ def oscillatorTorusMotion {d : ℕ} (I Ω : Fin d → ℝ) (θ₀ : HarmonicToru
 逐项核对公式、对象域、量词和结论；定义只登记模型，不声称解存在或物理近似有效。
 
 网站：网站PASS（EAUDIT复审）。
-oscillatorTorusMotion 为任意 d、固定实 action 向量 I、频率 Ω、初始模2π角向量定义 (I, θ₀−Ωt)。展开 HarmonicTorus 和 rotation 可核对全部分量，确实保持每个 action 并以负频率旋转；这是原文作用角运动的定义层表示，而非已证明原相空间与该环面的微分同胚。原书“radii |I_j|”在此由固定 action 参数记录，未给额外几何嵌入；当 action 为0时不应由本定义推出原相空间等能层仍有 d 维。作为 definition 审校通过，不能将其引用为无退化条件的坐标变换定理。
+oscillatorTorusMotion 为任意 d、固定实 action 向量 I、频率 Ω、初始模2π角向量定义 (I, θ₀−Ωt)。展开 HarmonicTorus 和 rotation 可核对全部分量，确实保持每个 action 并以负频率旋转；这是原文作用角运动的定义层表示，而非已证明原相空间与该环面的微分同胚。原书“radii |I\_j|”在此由固定 action 参数记录，未给额外几何嵌入；当 action 为0时不应由本定义推出原相空间等能层仍有 d 维。作为 definition 审校通过，不能将其引用为无退化条件的坐标变换定理。
 
 ### 7. 状态与证明位置
 
@@ -4052,8 +4384,8 @@ theorem torusperiod_classification {n : ℕ} (Ω : Fin n → ℝ) (θ : Harmonic
 |---|---|---|
 | 原文对象、量词、前提与完整定义/结论（见第2段逐字引用） | MD.Ch01.torusperiod；完整当前陈述及同组辅助定义见本条第4段 | 一致 |
 | 原文未显式量化的技术资格 | 给定周期T；每频率×T为整数圈是精确共振条件；原句没有单独定义commensurate。 | [EXTRA] |
-| 网站指出缺项及原文完整子句 | MD.Ch01.torusperiod; MD.Ch01.torusQuasiperiodic; MD.Ch01.torusperiod_classification | 保留指定T的整数圈判据，补正周期存在或无正周期的有限频率环面准周期表示二分；准周期可有共振，不声称稠密整个环面。 |
-| 网站指出缺项及原文完整子句 | MD.Ch01.torusperiod; MD.Ch01.torusQuasiperiodic; MD.Ch01.torusperiod_classification | 保留指定T的整数圈判据，补正周期存在或无正周期的有限频率环面准周期表示二分；准周期可有共振，不声称稠密整个环面。 |
+| 网站指出缺项及原文完整子句 | MD.Ch01.torusperiod; MD.Ch01.torusQuasiperiodic; MD.Ch01.torusperiod\_classification | 保留指定T的整数圈判据，补正周期存在或无正周期的有限频率环面准周期表示二分；准周期可有共振，不声称稠密整个环面。 |
+| 网站指出缺项及原文完整子句 | MD.Ch01.torusperiod; MD.Ch01.torusQuasiperiodic; MD.Ch01.torusperiod\_classification | 保留指定T的整数圈判据，补正周期存在或无正周期的有限频率环面准周期表示二分；准周期可有共振，不声称稠密整个环面。 |
 
 [EXTRA] 给定周期T；每频率×T为整数圈是精确共振条件；原句没有单独定义commensurate。；[EXTRA] 19号：保留指定T的整数圈判据，补正周期存在或无正周期的有限频率环面准周期表示二分；准周期可有共振，不声称稠密整个环面。
 
@@ -4108,7 +4440,7 @@ theorem torusdense_corrected :
 
 | 原文成分 | Lean对应 | 说明 |
 |---|---|---|
-| 原文对象、量词、前提与完整定义/结论（见第2段逐字引用） | MD.Ch01.torusdense；完整当前陈述及同组辅助定义见本条第4段 | NEEDS_HUMAN |
+| 原文对象、量词、前提与完整定义/结论（见第2段逐字引用） | MD.Ch01.torusdense；完整当前陈述及同组辅助定义见本条第4段 | NEEDS\_HUMAN |
 | 原文未显式量化的技术资格 | 高维全整数关系无共振；仅成对频率比无理不足，此为原文quasi-periodic intended meaning的数学资格。 | [EXTRA] |
 
 [EXTRA] 高维全整数关系无共振；仅成对频率比无理不足，此为原文quasi-periodic intended meaning的数学资格。
@@ -4117,8 +4449,8 @@ theorem torusdense_corrected :
 
 高维准周期运动可能只在真子环面稠密；无正周期不等于全维无共振。 原文与修正版独立保留；默认选项是工作版本，尚未获导师裁定。
 
-网站：原书疑误=NEEDS_HUMAN；原文忠实性单列；修正版=网站PASS；原文已形式化子句=网站PASS（限定范围）；原文已形式化子句=网站PASS（限定范围）；原文已形式化子句=网站PASS（限定范围）。
-torusdense 与 torusdense_corrected 完全量化所有整数向量 k，要求 k·Ω=0 仅有零解；在连续实时间的模2π环面平移下这是全环面稠密的正确条件，不需要离散时间版本的额外常数项。torusdense_literal 只假设无正周期，忠实表达上下文 quasi-periodic 的字面推论，但 n≥3 时为假。分别结论：torusdense PASS；torusdense_literal 原文忠实性 PASS、原书数学 NEEDS_HUMAN；torusdense_corrected PASS。不能因 literal 带 sorry 判签名失败，也不能把修正版正确等同于原书无误。
+网站：原书疑误=NEEDS\_HUMAN；原文忠实性单列；修正版=网站PASS；原文已形式化子句=网站PASS（限定范围）；原文已形式化子句=网站PASS（限定范围）；原文已形式化子句=网站PASS（限定范围）。
+torusdense 与 torusdense\_corrected 完全量化所有整数向量 k，要求 k·Ω=0 仅有零解；在连续实时间的模2π环面平移下这是全环面稠密的正确条件，不需要离散时间版本的额外常数项。torusdense\_literal 只假设无正周期，忠实表达上下文 quasi-periodic 的字面推论，但 n≥3 时为假。分别结论：torusdense PASS；torusdense\_literal 原文忠实性 PASS、原书数学 NEEDS\_HUMAN；torusdense\_corrected PASS。不能因 literal 带 sorry 判签名失败，也不能把修正版正确等同于原书无误。
 
 ### 7. 状态与证明位置
 
@@ -4187,7 +4519,7 @@ theorem local_action_angle_reduction_corrected :
 
 | 原文成分 | Lean对应 | 说明 |
 |---|---|---|
-| 原文对象、量词、前提与完整定义/结论（见第2段逐字引用） | MD.Ch01.local_action_angle_reduction；完整当前陈述及同组辅助定义见本条第4段 | NEEDS_HUMAN |
+| 原文对象、量词、前提与完整定义/结论（见第2段逐字引用） | MD.Ch01.local\_action\_angle\_reduction；完整当前陈述及同组辅助定义见本条第4段 | NEEDS\_HUMAN |
 | 原文未显式量化的技术资格 | 全部积分C∞且Poisson括号两两零；正则共同能量层紧、连通；满秩=独立。 | [EXTRA] |
 
 [EXTRA] 全部积分C∞且Poisson括号两两零；正则共同能量层紧、连通；满秩=独立。
@@ -4196,13 +4528,13 @@ theorem local_action_angle_reduction_corrected :
 
 独立对合第一积分只给局部正则结构；非紧共同水平集未必为环面。IsConnected含非空。 原文与修正版独立保留；默认选项是工作版本，尚未获导师裁定。
 
-网站：原书疑误=NEEDS_HUMAN；原文忠实性单列；修正版=网站PASS；原文已形式化子句=网站PASS（限定范围）；原文已形式化子句=网站PASS（限定范围）；原文已形式化子句=网站PASS（限定范围）。
-三个声明均核对：对象为2d维标准实相空间、d个C∞积分、全空间两两 Poisson 括号为零、共同水平集 S 及 S 上每点微分映射满射。symplecticGradient=(∂pH,−∂qH)，canonicalBilinear=dq∧dp，符号自洽。localActionAngle 要求开邻域上的双向光滑逆、保辛微分及全部 Hamilton 向量场被送到(0,Ωᵢ(q))，给局部正则坐标中的角向运动；它未明确规定新 action 就是原 I，属于合适的局部规约表达。主声明与 corrected 的 S 紧且 IsConnected（含非空）加正则性正好提供 Liouville–Arnold 环面资格；同一 e:S≃ₜTᵈ 同时线性化各个积分的流，Ω 的负号可吸收进选择的频率，不要求预指定正频率。literal 去掉紧连通资格而仍要 S≃ₜTᵈ，在非紧或空水平集上为假，但忠实反映原句过强措辞。分别：主声明 PASS；literal 忠实性 PASS、数学 NEEDS_HUMAN；corrected PASS。
+网站：原书疑误=NEEDS\_HUMAN；原文忠实性单列；修正版=网站PASS；原文已形式化子句=网站PASS（限定范围）；原文已形式化子句=网站PASS（限定范围）；原文已形式化子句=网站PASS（限定范围）。
+三个声明均核对：对象为2d维标准实相空间、d个C∞积分、全空间两两 Poisson 括号为零、共同水平集 S 及 S 上每点微分映射满射。symplecticGradient=(∂pH,−∂qH)，canonicalBilinear=dq∧dp，符号自洽。localActionAngle 要求开邻域上的双向光滑逆、保辛微分及全部 Hamilton 向量场被送到(0,Ωᵢ(q))，给局部正则坐标中的角向运动；它未明确规定新 action 就是原 I，属于合适的局部规约表达。主声明与 corrected 的 S 紧且 IsConnected（含非空）加正则性正好提供 Liouville–Arnold 环面资格；同一 e:S≃ₜTᵈ 同时线性化各个积分的流，Ω 的负号可吸收进选择的频率，不要求预指定正频率。literal 去掉紧连通资格而仍要 S≃ₜTᵈ，在非紧或空水平集上为假，但忠实反映原句过强措辞。分别：主声明 PASS；literal 忠实性 PASS、数学 NEEDS\_HUMAN；corrected PASS。
 
 ### 7. 状态与证明位置
 
 incomplete；已逐声明核验公理；含占位的声明仍未证明。
-位置：Blueprint/Ch01.lean:1551；MD.Ch01.local_action_angle_reduction。
+位置：Blueprint/Ch01.lean:1551；MD.Ch01.local\_action\_angle\_reduction。
 
 ## 1. MD-1.5.3-Equilibrium · definition · 印刷p.31 / PDFp.54
 
@@ -4284,9 +4616,19 @@ checked+documented priors；已逐声明核验公理；含占位的声明仍未�
 ### 2. 原文陈述
 
 > We assume that $f$ is continuously differentiable in the vicinity of the equilibrium point $\boldsymbol z^*$ and make use of the fact that $f(\boldsymbol z)\approx f(\boldsymbol z^*)+f'(\boldsymbol z^*)(\boldsymbol z-\boldsymbol z^*)$ for $\|\boldsymbol z-\boldsymbol z^*\|$ sufficiently small. Since $f(\boldsymbol z^*)=0$ we have, defining $\delta\boldsymbol z:=\boldsymbol z-\boldsymbol z^*$,
-> \[\frac{\mathrm d\delta\boldsymbol z}{\mathrm dt}\approx\boldsymbol A\delta\boldsymbol z,\qquad\boldsymbol A=f'(\boldsymbol z^*).\]
+
+$$
+\frac{\mathrm d\delta\boldsymbol z}{\mathrm dt}\approx\boldsymbol A\delta\boldsymbol z,\qquad\boldsymbol A=f'(\boldsymbol z^*).
+$$
+
+
 > The symbol $\approx$ is not very precise. In general, the approximation of solutions is only local in time meaning that solutions of the nonlinear system and the linear approximation may diverge. We refer to the system
-> \[\frac{\mathrm d\delta\boldsymbol z}{\mathrm dt}=f'(\boldsymbol z^*)\delta\boldsymbol z\]
+
+$$
+\frac{\mathrm d\delta\boldsymbol z}{\mathrm dt}=f'(\boldsymbol z^*)\delta\boldsymbol z
+$$
+
+
 > as the linearization of the system (1.6) around $\boldsymbol z^*$.
 
 ### 3. 原文证明
@@ -4311,7 +4653,7 @@ theorem equilibriumlinearization :
 | 原文成分 | Lean对应 | 说明 |
 |---|---|---|
 | 原文对象、量词、前提与完整定义/结论（见第2段逐字引用） | MD.Ch01.equilibriumlinearization；完整当前陈述及同组辅助定义见本条第4段 | 一致 |
-| \[\frac{\mathrm d\delta\boldsymbol z}{\mathrm dt}=\boldsymbol A\delta\boldsymbol z,\qquad\boldsymbol A=f'(\boldsymbol z^*).\] | MD.Ch01.equilibriumlinearization，完整展开陈述见上一行及第4段 | 一致 |
+| $\frac{\mathrm d\delta\boldsymbol z}{\mathrm dt}=\boldsymbol A\delta\boldsymbol z,\qquad\boldsymbol A=f'(\boldsymbol z^*).$ | MD.Ch01.equilibriumlinearization，完整展开陈述见上一行及第4段 | 一致 |
 
 [EXTRA] 
 
@@ -4370,7 +4712,12 @@ self-contained；已逐声明核验公理；含占位的声明仍未证明。
 ### 2. 原文陈述
 
 > then one can infer that the solutions of the nonlinear and linear systems are in fact topologically conjugate: if $\boldsymbol z$ is the solution of the nonlinear system and $\delta\boldsymbol z$ is the solution of the linear system, then there is a smooth, invertible map $\boldsymbol\Phi$ of $\mathbb R^m$ defined in a neighborhood of the origin such that
-> \[\boldsymbol z(t)=\boldsymbol z^*+\boldsymbol\Phi(\delta\boldsymbol z(t)).\]
+
+$$
+\boldsymbol z(t)=\boldsymbol z^*+\boldsymbol\Phi(\delta\boldsymbol z(t)).
+$$
+
+
 > This is referred to as the Hartman-Grobman theorem (for more discussion, see [177], where this result is referred to as the “Linearization Theorem”; a proof may be found in [362]).
 
 ### 3. 原文证明
@@ -4413,8 +4760,8 @@ theorem hartmangrobmanliteral_corrected :
 
 | 原文成分 | Lean对应 | 说明 |
 |---|---|---|
-| 原文对象、量词、前提与完整定义/结论（见第2段逐字引用） | MD.Ch01.hartmangrobmanliteral；完整当前陈述及同组辅助定义见本条第4段 | NEEDS_HUMAN |
-| \[\boldsymbol z(t)=\boldsymbol z^*+\boldsymbol\Phi(\delta\boldsymbol z(t)).\] | MD.Ch01.hartmangrobmanliteral，完整展开陈述见上一行及第4段 | NEEDS_HUMAN |
+| 原文对象、量词、前提与完整定义/结论（见第2段逐字引用） | MD.Ch01.hartmangrobmanliteral；完整当前陈述及同组辅助定义见本条第4段 | NEEDS\_HUMAN |
+| $\boldsymbol z(t)=\boldsymbol z^*+\boldsymbol\Phi(\delta\boldsymbol z(t)).$ | MD.Ch01.hartmangrobmanliteral，完整展开陈述见上一行及第4段 | NEEDS\_HUMAN |
 | 原文未显式量化的技术资格 | C1全域模型及真实全局流为局部应用的技术资格；共轭在轨迹保持局部域时断言。 | [EXTRA] |
 
 [EXTRA] C1全域模型及真实全局流为局部应用的技术资格；共轭在轨迹保持局部域时断言。
@@ -4423,7 +4770,7 @@ theorem hartmangrobmanliteral_corrected :
 
 C¹双曲系统的一般Hartman–Grobman结论为拓扑共轭，不保证C∞线性化。 原文与修正版独立保留；默认选项是工作版本，尚未获导师裁定。
 
-网站：原书疑误=NEEDS_HUMAN；原文忠实性单列；修正版=网站PASS；原文已形式化子句=网站PASS（限定范围）；原文已形式化子句=网站PASS（限定范围）；原文已形式化子句=网站PASS（限定范围）。
+网站：原书疑误=NEEDS\_HUMAN；原文忠实性单列；修正版=网站PASS；原文已形式化子句=网站PASS（限定范围）；原文已形式化子句=网站PASS（限定范围）；原文已形式化子句=网站PASS（限定范围）。
 hyperbolic定义用实x/y表示复特征向量，(x≠0∨y≠0)及a≠0正确排除纯虚谱。isFlowOf只含初值和真实ODE，C¹提供唯一性；全局流是已披露的较强技术资格。主 literal：忠实性 PASS，开邻域U/V均含0、φ(0)=0、双向映射和逆关系，φ/ψ均C∞；在整个连接0至t的线性轨道留U期间给F(t,z+φx)=z+φ(e^{tA}x)。其数学真值有原书疑误。_corrected：PASS，完全相同量词、留域条件和公式，仅把坐标正则性改为连续互逆，正确为局部拓扑共轭。没有以“某一对解”代替共同坐标映射。
 
 ### 7. 状态与证明位置
@@ -4436,7 +4783,12 @@ incomplete；已逐声明核验公理；含占位的声明仍未证明。
 ### 2. 原文陈述
 
 > Let $\boldsymbol z^*$ be an equilibrium point. We say that $\boldsymbol z^*$ is stable (“in the sense of Lyapunov”) if, for all $\epsilon$, there exists $\delta$ such that, for all $\boldsymbol z_0$ such that $\|\boldsymbol z_0-\boldsymbol z^*\|<\delta$,
-> \[\sup_{t\geq0}\|\mathcal F_t(\boldsymbol z_0)-\boldsymbol z^*\|<\epsilon.\]
+
+$$
+\sup_{t\geq0}\|\mathcal F_t(\boldsymbol z_0)-\boldsymbol z^*\|<\epsilon.
+$$
+
+
 
 ### 3. 原文证明
 
@@ -4457,7 +4809,7 @@ def lyapunovStable {n : ℕ} (F : ℝ → Position n → Position n) (z : Positi
 | 原文成分 | Lean对应 | 说明 |
 |---|---|---|
 | 原文对象、量词、前提与完整定义/结论（见第2段逐字引用） | MD.Ch01.lyapunovStable；完整当前陈述及同组辅助定义见本条第4段 | 一致 |
-| \[\sup_{t\geq0}\\|\mathcal F_t(\boldsymbol z_0)-\boldsymbol z^*\\|<\epsilon.\] | MD.Ch01.lyapunovStable，完整展开陈述见上一行及第4段 | 一致 |
+| $\sup_{t\geq0}\Vert \mathcal F_t(\boldsymbol z_0)-\boldsymbol z^*\Vert <\epsilon.$ | MD.Ch01.lyapunovStable，完整展开陈述见上一行及第4段 | 一致 |
 | 原文未显式量化的技术资格 | ε,δ正按Lyapunov容差惯例；有界性避免Lean实数总sup的未界伪结论。 | [EXTRA] |
 
 [EXTRA] ε,δ正按Lyapunov容差惯例；有界性避免Lean实数总sup的未界伪结论。
@@ -4517,7 +4869,7 @@ theorem hyperbolicstabilitytransfer_corrected :
 结论本身是标准推论，但原证明链不能依赖原书过强的光滑共轭。 原文与修正版独立保留；默认选项是工作版本，尚未获导师裁定。
 
 网站：网站PASS（EAUDIT复审）。
-两条声明主名和_corrected签名相同，均PASS。量化所有n、C¹ f、平衡z、双曲Df(z)、真实全局流F；结论为非线性平衡与线性指数流原点稳定性的双向等价。stable展开为每ε>0选δ>0，对每个近初值存在该轨道统一B<ε，全部t≥0距离≤B；这准确实现书面严格sup<ε，亦与通常Lyapunov稳定等价（缩小ε可得统一余量）。局部同胚及首次离域论证足以转移稳定性，无需错误的C∞共轭。
+两条声明主名和\_corrected签名相同，均PASS。量化所有n、C¹ f、平衡z、双曲Df(z)、真实全局流F；结论为非线性平衡与线性指数流原点稳定性的双向等价。stable展开为每ε>0选δ>0，对每个近初值存在该轨道统一B<ε，全部t≥0距离≤B；这准确实现书面严格sup<ε，亦与通常Lyapunov稳定等价（缩小ε可得统一余量）。局部同胚及首次离域论证足以转移稳定性，无需错误的C∞共轭。
 
 ### 7. 状态与证明位置
 
@@ -4529,7 +4881,12 @@ incomplete；已逐声明核验公理；含占位的声明仍未证明。
 ### 2. 原文陈述
 
 > Observe that an equilibrium point $\boldsymbol z^*=(\boldsymbol q^*,\boldsymbol p^*)$ of a Hamiltonian system in “kinetic plus potential” form
-> \[H(\boldsymbol q,\boldsymbol p)=\boldsymbol p^T\boldsymbol M^{-1}\boldsymbol p/2+U(\boldsymbol q)\]
+
+$$
+H(\boldsymbol q,\boldsymbol p)=\boldsymbol p^T\boldsymbol M^{-1}\boldsymbol p/2+U(\boldsymbol q)
+$$
+
+
 > will always have $\boldsymbol p^*=0$ and $\nabla U(\boldsymbol q^*)=0$.
 
 ### 3. 原文证明
@@ -4562,8 +4919,8 @@ theorem hamilton_equilibrium {n : ℕ} (M : Matrix (Fin n) (Fin n) ℝ)
 
 | 原文成分 | Lean对应 | 说明 |
 |---|---|---|
-| 原文对象、量词、前提与完整定义/结论（见第2段逐字引用） | MD.Ch01.hamilton_equilibrium；完整当前陈述及同组辅助定义见本条第4段 | 一致 |
-| \[H(\boldsymbol q,\boldsymbol p)=\boldsymbol p^T\boldsymbol M^{-1}\boldsymbol p/2+U(\boldsymbol q)\] | MD.Ch01.hamilton_equilibrium，完整展开陈述见上一行及第4段 | 一致 |
+| 原文对象、量词、前提与完整定义/结论（见第2段逐字引用） | MD.Ch01.hamilton\_equilibrium；完整当前陈述及同组辅助定义见本条第4段 | 一致 |
+| $H(\boldsymbol q,\boldsymbol p)=\boldsymbol p^T\boldsymbol M^{-1}\boldsymbol p/2+U(\boldsymbol q)$ | MD.Ch01.hamilton\_equilibrium，完整展开陈述见上一行及第4段 | 一致 |
 | 原文未显式量化的技术资格 | 一般常M正定、U可微；heq为原文Hamilton平衡的两梯度定义。 | [EXTRA] |
 
 [EXTRA] 一般常M正定、U可微；heq为原文Hamilton平衡的两梯度定义。
@@ -4577,14 +4934,19 @@ theorem hamilton_equilibrium {n : ℕ} (M : Matrix (Fin n) (Fin n) ℝ)
 ### 7. 状态与证明位置
 
 self-contained；已逐声明核验公理；含占位的声明仍未证明。
-位置：Blueprint/Ch01.lean:1692；MD.Ch01.hamilton_equilibrium。
+位置：Blueprint/Ch01.lean:1692；MD.Ch01.hamilton\_equilibrium。
 
 ## 1. MD-1.5.3-StrongLocalMinimum · definition · 印刷p.32 / PDFp.55
 
 ### 2. 原文陈述
 
 > We say that $\boldsymbol q^*$ is a strong local minimum of the potential if there exists $\epsilon>0$ such that
-> \[0<\|\boldsymbol q-\boldsymbol q^*\|<\epsilon\Rightarrow U(\boldsymbol q)>U(\boldsymbol q^*).\]
+
+$$
+0<\|\boldsymbol q-\boldsymbol q^*\|<\epsilon\Rightarrow U(\boldsymbol q)>U(\boldsymbol q^*).
+$$
+
+
 
 ### 3. 原文证明
 
@@ -4603,7 +4965,7 @@ def strongLocalMinimum {n : ℕ} (U : PotentialEnergy n) (qstar : Position n) : 
 | 原文成分 | Lean对应 | 说明 |
 |---|---|---|
 | 原文对象、量词、前提与完整定义/结论（见第2段逐字引用） | MD.Ch01.strongLocalMinimum；完整当前陈述及同组辅助定义见本条第4段 | 一致 |
-| \[0<\\|\boldsymbol q-\boldsymbol q^*\\|<\epsilon\Rightarrow U(\boldsymbol q)>U(\boldsymbol q^*).\] | MD.Ch01.strongLocalMinimum，完整展开陈述见上一行及第4段 | 一致 |
+| $0<\Vert \boldsymbol q-\boldsymbol q^*\Vert <\epsilon\Rightarrow U(\boldsymbol q)>U(\boldsymbol q^*).$ | MD.Ch01.strongLocalMinimum，完整展开陈述见上一行及第4段 | 一致 |
 
 [EXTRA] 
 
@@ -4623,7 +4985,12 @@ self-contained；已逐声明核验公理；含占位的声明仍未证明。
 ### 2. 原文陈述
 
 > If the potential is $C^2$, the linearized version of this system has “kinetic plus potential” form with Hamiltonian
-> \[\widetilde H=\frac{\delta\boldsymbol p^T\boldsymbol M^{-1}\delta\boldsymbol p}2+\frac{\delta\boldsymbol q^T U''(\boldsymbol q^*)\delta\boldsymbol q}2.\]
+
+$$
+\widetilde H=\frac{\delta\boldsymbol p^T\boldsymbol M^{-1}\delta\boldsymbol p}2+\frac{\delta\boldsymbol q^T U''(\boldsymbol q^*)\delta\boldsymbol q}2.
+$$
+
+
 
 ### 3. 原文证明
 
@@ -4652,9 +5019,9 @@ theorem linearizedHamiltonian_field {n : ℕ} (M : Matrix (Fin n) (Fin n) ℝ)
 | 原文成分 | Lean对应 | 说明 |
 |---|---|---|
 | 原文对象、量词、前提与完整定义/结论（见第2段逐字引用） | MD.Ch01.linearizedHamiltonian；完整当前陈述及同组辅助定义见本条第4段 | 一致 |
-| \[\widetilde H=\frac{\delta\boldsymbol p^T\boldsymbol M^{-1}\delta\boldsymbol p}2+\frac{\delta\boldsymbol q^T U''(\boldsymbol q^*)\delta\boldsymbol q}2.\] | MD.Ch01.linearizedHamiltonian，完整展开陈述见上一行及第4段 | 一致 |
-| 网站指出缺项及原文完整子句 | MD.Ch01.linearizedHamiltonian; MD.Ch01.linearizedHamiltonian_field | 保留二次型定义，补正定质量、C²势、平衡点资格及原Hamilton向量场导数等于二次Hamilton向量场的完整对应。 |
-| 网站指出缺项及原文完整子句 | MD.Ch01.linearizedHamiltonian; MD.Ch01.linearizedHamiltonian_field | 保留二次型定义，补正定质量、C²势、平衡点资格及原Hamilton向量场导数等于二次Hamilton向量场的完整对应。 |
+| $\widetilde H=\frac{\delta\boldsymbol p^T\boldsymbol M^{-1}\delta\boldsymbol p}2+\frac{\delta\boldsymbol q^T U''(\boldsymbol q^*)\delta\boldsymbol q}2.$ | MD.Ch01.linearizedHamiltonian，完整展开陈述见上一行及第4段 | 一致 |
+| 网站指出缺项及原文完整子句 | MD.Ch01.linearizedHamiltonian; MD.Ch01.linearizedHamiltonian\_field | 保留二次型定义，补正定质量、C²势、平衡点资格及原Hamilton向量场导数等于二次Hamilton向量场的完整对应。 |
+| 网站指出缺项及原文完整子句 | MD.Ch01.linearizedHamiltonian; MD.Ch01.linearizedHamiltonian\_field | 保留二次型定义，补正定质量、C²势、平衡点资格及原Hamilton向量场导数等于二次Hamilton向量场的完整对应。 |
 
 [EXTRA] [EXTRA] 19号：保留二次型定义，补正定质量、C²势、平衡点资格及原Hamilton向量场导数等于二次Hamilton向量场的完整对应。
 
@@ -4766,7 +5133,7 @@ theorem positive_hessian_minimum {n : ℕ} (U : PotentialEnergy n) (q : Position
 
 | 原文成分 | Lean对应 | 说明 |
 |---|---|---|
-| 原文对象、量词、前提与完整定义/结论（见第2段逐字引用） | MD.Ch01.positive_hessian_minimum；完整当前陈述及同组辅助定义见本条第4段 | 一致 |
+| 原文对象、量词、前提与完整定义/结论（见第2段逐字引用） | MD.Ch01.positive\_hessian\_minimum；完整当前陈述及同组辅助定义见本条第4段 | 一致 |
 | distinct positive eigenvalues | Function.Injective freq；∀i,0<freq i；实特征基完整heig | 一致 |
 | 势的严格局部极小 | IsStrictPotentialMin U q | 一致；未替换为纯二次型 |
 | 原文未显式量化的技术资格 | C2与平衡∇U=0来自同节；显式特征基表达全部distinct positive eigenvalues。 | [EXTRA] |
@@ -4783,14 +5150,19 @@ theorem positive_hessian_minimum {n : ℕ} (U : PotentialEnergy n) (q : Position
 ### 7. 状态与证明位置
 
 incomplete；已逐声明核验公理；含占位的声明仍未证明。
-位置：Blueprint/Ch01.lean:1774；MD.Ch01.positive_hessian_minimum。
+位置：Blueprint/Ch01.lean:1774；MD.Ch01.positive\_hessian\_minimum。
 
 ## 1. MD-1.6-UniformPairLattice · definition · 印刷p.33 / PDFp.56
 
 ### 2. 原文陈述
 
 > Let us suppose we have a uniform pair potential $\varphi$ and define the total potential energy of a system of N atoms by
-> \[U(x_1,x_2,\ldots,x_N)=\sum_{i=1}^{N-1}\sum_{j=i+1}^{N}\varphi(|x_i-x_j|).\]
+
+$$
+U(x_1,x_2,\ldots,x_N)=\sum_{i=1}^{N-1}\sum_{j=i+1}^{N}\varphi(|x_i-x_j|).
+$$
+
+
 
 ### 3. 原文证明
 
@@ -4809,7 +5181,7 @@ def latticePairPotential {N : ℕ} (φ : ℝ → ℝ) (x : Fin N → ℝ) : ℝ 
 | 原文成分 | Lean对应 | 说明 |
 |---|---|---|
 | 原文对象、量词、前提与完整定义/结论（见第2段逐字引用） | MD.Ch01.latticePairPotential；完整当前陈述及同组辅助定义见本条第4段 | 一致 |
-| \[U(x_1,x_2,\ldots,x_N)=\sum_{i=1}^{N-1}\sum_{j=i+1}^{N}\varphi(\|x_i-x_j\|).\] | MD.Ch01.latticePairPotential，完整展开陈述见上一行及第4段 | 一致 |
+| $U(x_1,x_2,\ldots,x_N)=\sum_{i=1}^{N-1}\sum_{j=i+1}^{N}\varphi(\Vert x_i-x_j\Vert ).$ | MD.Ch01.latticePairPotential，完整展开陈述见上一行及第4段 | 一致 |
 
 [EXTRA] 
 
@@ -4868,7 +5240,12 @@ self-contained；已逐声明核验公理；含占位的声明仍未证明。
 ### 2. 原文陈述
 
 > We can reduce this by assuming only nearest neighbor forces, which means the energy becomes
-> \[U(x_1,x_2,\ldots,x_N)=\sum_{i=1}^{N-1}\varphi(|x_{i+1}-x_i|).\]
+
+$$
+U(x_1,x_2,\ldots,x_N)=\sum_{i=1}^{N-1}\varphi(|x_{i+1}-x_i|).
+$$
+
+
 
 ### 3. 原文证明
 
@@ -4887,7 +5264,7 @@ def nearestNeighborModel {N : ℕ} (φ : ℝ → ℝ) (x : Fin (N+1) → ℝ) : 
 | 原文成分 | Lean对应 | 说明 |
 |---|---|---|
 | 原文对象、量词、前提与完整定义/结论（见第2段逐字引用） | MD.Ch01.nearestNeighborModel；完整当前陈述及同组辅助定义见本条第4段 | 一致 |
-| \[U(x_1,x_2,\ldots,x_N)=\sum_{i=1}^{N-1}\varphi(\|x_{i+1}-x_i\|).\] | MD.Ch01.nearestNeighborModel，完整展开陈述见上一行及第4段 | 一致 |
+| $U(x_1,x_2,\ldots,x_N)=\sum_{i=1}^{N-1}\varphi(\Vert x_{i+1}-x_i\Vert ).$ | MD.Ch01.nearestNeighborModel，完整展开陈述见上一行及第4段 | 一致 |
 
 [EXTRA] 
 
@@ -4907,7 +5284,12 @@ self-contained；已逐声明核验公理；含占位的声明仍未证明。
 ### 2. 原文陈述
 
 > In order to keep such a system bounded we might then introduce walls at the ends of the chain, e.g. by adding confining potentials to $U$:
-> \[U(x_1,x_2,\ldots,x_N)=\varphi_c(|x_1|)+\varphi_c(|L-x_N|)+\sum_{i=1}^{N-1}\varphi(|x_{i+1}-x_i|).\tag{1.7}\]
+
+$$
+U(x_1,x_2,\ldots,x_N)=\varphi_c(|x_1|)+\varphi_c(|L-x_N|)+\sum_{i=1}^{N-1}\varphi(|x_{i+1}-x_i|).\tag{1.7}
+$$
+
+
 
 ### 3. 原文证明
 
@@ -4926,7 +5308,7 @@ def walledChainModel {N : ℕ} (φ φc : ℝ → ℝ) (L : ℝ) (x : Fin (N+1) �
 | 原文成分 | Lean对应 | 说明 |
 |---|---|---|
 | 原文对象、量词、前提与完整定义/结论（见第2段逐字引用） | MD.Ch01.walledChainModel；完整当前陈述及同组辅助定义见本条第4段 | 一致 |
-| \[U(x_1,x_2,\ldots,x_N)=\varphi_c(\|x_1\|)+\varphi_c(\|L-x_N\|)+\sum_{i=1}^{N-1}\varphi(\|x_{i+1}-x_i\|).\tag{1.7}\] | MD.Ch01.walledChainModel，完整展开陈述见上一行及第4段 | 一致 |
+| $U(x_1,x_2,\ldots,x_N)=\varphi_c(\Vert x_1\Vert )+\varphi_c(\Vert L-x_N\Vert )+\sum_{i=1}^{N-1}\varphi(\Vert x_{i+1}-x_i\Vert ).\quad\text{(1.7)}$ | MD.Ch01.walledChainModel，完整展开陈述见上一行及第4段 | 一致 |
 
 [EXTRA] 
 
@@ -4946,7 +5328,12 @@ self-contained；已逐声明核验公理；含占位的声明仍未证明。
 ### 2. 原文陈述
 
 > Alternatively one could restrict to a bounded domain by use of periodic boundary conditions, introducing the potential energy:
-> \[U(x_1,x_2,\ldots,x_N)=\sum_{i=1}^{N-1}\varphi(|x_{i+1}-x_i|)+\varphi(|L+x_1-x_N|).\tag{1.8}\]
+
+$$
+U(x_1,x_2,\ldots,x_N)=\sum_{i=1}^{N-1}\varphi(|x_{i+1}-x_i|)+\varphi(|L+x_1-x_N|).\tag{1.8}
+$$
+
+
 
 ### 3. 原文证明
 
@@ -4965,7 +5352,7 @@ def periodicChainModel {N : ℕ} (φ : ℝ → ℝ) (L : ℝ) (x : Fin (N+1) →
 | 原文成分 | Lean对应 | 说明 |
 |---|---|---|
 | 原文对象、量词、前提与完整定义/结论（见第2段逐字引用） | MD.Ch01.periodicChainModel；完整当前陈述及同组辅助定义见本条第4段 | 一致 |
-| \[U(x_1,x_2,\ldots,x_N)=\sum_{i=1}^{N-1}\varphi(\|x_{i+1}-x_i\|)+\varphi(\|L+x_1-x_N\|).\tag{1.8}\] | MD.Ch01.periodicChainModel，完整展开陈述见上一行及第4段 | 一致 |
+| $U(x_1,x_2,\ldots,x_N)=\sum_{i=1}^{N-1}\varphi(\Vert x_{i+1}-x_i\Vert )+\varphi(\Vert L+x_1-x_N\Vert ).\quad\text{(1.8)}$ | MD.Ch01.periodicChainModel，完整展开陈述见上一行及第4段 | 一致 |
 
 [EXTRA] 
 
@@ -5075,27 +5462,27 @@ theorem periodic_translation_third_law (φ : ℝ → ℝ) (L x y : ℝ) (closing
 
 | 原文成分 | Lean对应 | 说明 |
 |---|---|---|
-| 原文对象、量词、前提与完整定义/结论（见第2段逐字引用） | MD.Ch01.periodic_translation_momentum；完整当前陈述及同组辅助定义见本条第4段 | 一致 |
+| 原文对象、量词、前提与完整定义/结论（见第2段逐字引用） | MD.Ch01.periodic\_translation\_momentum；完整当前陈述及同组辅助定义见本条第4段 | 一致 |
 | 平移不变及方向导数为零 | ∀q c,U(q+c)=U q；fderiv U q (fun _=>1)=0 | 一致 |
 | 真实Newton系统总动量守恒 | 有限和HasDerivAt 0及∀a b∈I动量相等 | 一致 |
 | 原文未显式量化的技术资格 | 一维周期链真实Newton导数、正质量、势沿轨迹可微及开连通时间域。 | [EXTRA] |
-| 网站指出缺项及原文完整子句 | MD.Ch01.periodic_translation_momentum; MD.Ch01.periodicBondEnergy; MD.Ch01.periodic_translation_third_law | 完整保留平移/方向导数/动量结论，补真实每条周期键两端负偏导相反的Newton第三定律（含闭合键），依赖包展开真实周期能量。 |
-| 网站指出缺项及原文完整子句 | MD.Ch01.periodic_translation_momentum; MD.Ch01.periodicBondEnergy; MD.Ch01.periodic_translation_third_law | 完整保留平移/方向导数/动量结论，补真实每条周期键两端负偏导相反的Newton第三定律（含闭合键），依赖包展开真实周期能量。 |
-| 21号网站建议修复 | MD.Ch01.periodic_translation_momentum | 键能量补范数，第三定律改对ψ=φ∘\|·\|在有向差处可微；平移/动量主定理逐字未改。 |
+| 网站指出缺项及原文完整子句 | MD.Ch01.periodic\_translation\_momentum; MD.Ch01.periodicBondEnergy; MD.Ch01.periodic\_translation\_third\_law | 完整保留平移/方向导数/动量结论，补真实每条周期键两端负偏导相反的Newton第三定律（含闭合键），依赖包展开真实周期能量。 |
+| 网站指出缺项及原文完整子句 | MD.Ch01.periodic\_translation\_momentum; MD.Ch01.periodicBondEnergy; MD.Ch01.periodic\_translation\_third\_law | 完整保留平移/方向导数/动量结论，补真实每条周期键两端负偏导相反的Newton第三定律（含闭合键），依赖包展开真实周期能量。 |
+| 21号网站建议修复 | MD.Ch01.periodic\_translation\_momentum | 键能量补范数，第三定律改对ψ=φ∘\|·\|在有向差处可微；平移/动量主定理逐字未改。 |
 
 [EXTRA] 一维周期链真实Newton导数、正质量、势沿轨迹可微及开连通时间域。；[EXTRA] 19号：完整保留平移/方向导数/动量结论，补真实每条周期键两端负偏导相反的Newton第三定律（含闭合键），依赖包展开真实周期能量。；[EXTRA] 键能量补范数，第三定律改对ψ=φ∘|·|在有向差处可微；平移/动量主定理逐字未改。
 
 ### 6. 审计结论
 
-21号按网站suggested_fix修复并本地核验：键能量补范数，第三定律改对ψ=φ∘|·|在有向差处可微；平移/动量主定理逐字未改。
+21号按网站suggested\_fix修复并本地核验：键能量补范数，第三定律改对ψ=φ∘|·|在有向差处可微；平移/动量主定理逐字未改。
 
 网站：按网站审校意见修复，本地核验通过（未再送网站）。
-MD.Ch01.periodic_translation_momentum：PASS（签名语义）。N∈ℕ，系统有 N+1 个实坐标；φ:ℝ→ℝ 与 L∈ℝ 任意。真实 U 的 N 个相邻键及闭合键只依赖坐标差，故同时平移不变；可微时沿全1向量的导数为0。对正质量 m、轨迹 q,v、开且预连通的 I，给出的势可微性和逐粒子速度/动量 Newton 导数足以推出总动量导数0及任意 a,b∈I 的总动量相等；全部结论均保留。MD.Ch01.periodicBondEnergy：FAIL（与实际依赖的对应关系），其定义是有向差的 φ 值，没有真实 U 中的范数。MD.Ch01.periodic_translation_third_law：作为这个有向辅助能量的两端力相反定理，签名本身 PASS；hφ 也恰好是有向参数处的可微性。然而，它未针对实际 U 的 φ∘|·| 键作陈述。没有 φ 偶性、键方向/位置资格或替换势的桥接，不能将其认作实际周期链中每条键的第三定律。[EXTRA] 中“真实每条周期键”“含闭合键”的覆盖说法因此不成立。总 verdict=FAIL 源于模型对应错误，不源于 sorry。
+MD.Ch01.periodic\_translation\_momentum：PASS（签名语义）。N∈ℕ，系统有 N+1 个实坐标；φ:ℝ→ℝ 与 L∈ℝ 任意。真实 U 的 N 个相邻键及闭合键只依赖坐标差，故同时平移不变；可微时沿全1向量的导数为0。对正质量 m、轨迹 q,v、开且预连通的 I，给出的势可微性和逐粒子速度/动量 Newton 导数足以推出总动量导数0及任意 a,b∈I 的总动量相等；全部结论均保留。MD.Ch01.periodicBondEnergy：FAIL（与实际依赖的对应关系），其定义是有向差的 φ 值，没有真实 U 中的范数。MD.Ch01.periodic\_translation\_third\_law：作为这个有向辅助能量的两端力相反定理，签名本身 PASS；hφ 也恰好是有向参数处的可微性。然而，它未针对实际 U 的 φ∘|·| 键作陈述。没有 φ 偶性、键方向/位置资格或替换势的桥接，不能将其认作实际周期链中每条键的第三定律。[EXTRA] 中“真实每条周期键”“含闭合键”的覆盖说法因此不成立。总 verdict=FAIL 源于模型对应错误，不源于 sorry。
 
 ### 7. 状态与证明位置
 
 incomplete；已逐声明核验公理；含占位的声明仍未证明。
-位置：Blueprint/Ch01.lean:1837；MD.Ch01.periodic_translation_momentum。
+位置：Blueprint/Ch01.lean:1837；MD.Ch01.periodic\_translation\_momentum。
 
 ## 1. MD-1.6-RegularLattice · definition · 印刷p.34 / PDFp.57
 
@@ -5214,7 +5601,7 @@ theorem regularlatticeminimizerliteral_counterexample :
 
 | 原文成分 | Lean对应 | 说明 |
 |---|---|---|
-| 原文对象、量词、前提与完整定义/结论（见第2段逐字引用） | MD.Ch01.regularlatticeminimizerliteral；完整当前陈述及同组辅助定义见本条第4段 | NEEDS_HUMAN |
+| 原文对象、量词、前提与完整定义/结论（见第2段逐字引用） | MD.Ch01.regularlatticeminimizerliteral；完整当前陈述及同组辅助定义见本条第4段 | NEEDS\_HUMAN |
 
 [EXTRA] 
 
@@ -5222,8 +5609,8 @@ theorem regularlatticeminimizerliteral_counterexample :
 
 任意uniform pair potential不保证晶格最小；还缺排序、盒域和势的凸性等资格。 原文与修正版独立保留；默认选项是工作版本，尚未获导师裁定。
 
-网站：原书疑误=NEEDS_HUMAN；原文忠实性单列；修正版=网站PASS；原文已形式化子句=网站PASS（限定范围）；原文已形式化子句=网站PASS（限定范围）；原文已形式化子句=网站PASS（限定范围）。
-MD.Ch01.regularlatticeminimizerliteral：字面意旨保留，但数学疑误 NEEDS_HUMAN。它对任意 N、任意 φ、L>0 及所有实配置 x，在全空间全局最小的前提下断言 ∃a, xᵢ=a+iL/(N+1)，其中 regularLattice 还要求正间距。该签名确实保留了原书无势资格的极强断言，不应因已知反例或 sorry 将“忠实版”判作实现 FAIL。须注意 Lean 进一步选择了周期最近邻、固定标号递增和固定环长间距的解释，不能据此宣称已经处理任意标号重排或任意多维 pair potential。MD.Ch01.regularlatticeminimizerliteral_corrected：PASS。φ 在 (0,∞) 严格凸、L>0、每个 gapsᵢ>0 且 ∑gapsᵢ=L，使 d=L/(N+1)>0。结论是 (N+1)φ(d)≤∑φ(gapsᵢ)，且等号当且仅当全部 gapsᵢ=d；这是有限等权严格 Jensen 的准确陈述，包括 N=0 的单项情形。它是明确改变问题域的合理勘误，不是任意原始配置的无条件结论。MD.Ch01.regularlatticeminimizerliteral_counterexample：PASS。零势下所有 Fin 2 配置能量均为0；常零配置不可能满足间距1/2的有标号 regularLattice。[EXTRA] 为空不能被理解为原命题因此获得凸性或顺序条件。总判 NEEDS_HUMAN，需人工确认原书的隐藏势与配置资格。
+网站：原书疑误=NEEDS\_HUMAN；原文忠实性单列；修正版=网站PASS；原文已形式化子句=网站PASS（限定范围）；原文已形式化子句=网站PASS（限定范围）；原文已形式化子句=网站PASS（限定范围）。
+MD.Ch01.regularlatticeminimizerliteral：字面意旨保留，但数学疑误 NEEDS\_HUMAN。它对任意 N、任意 φ、L>0 及所有实配置 x，在全空间全局最小的前提下断言 ∃a, xᵢ=a+iL/(N+1)，其中 regularLattice 还要求正间距。该签名确实保留了原书无势资格的极强断言，不应因已知反例或 sorry 将“忠实版”判作实现 FAIL。须注意 Lean 进一步选择了周期最近邻、固定标号递增和固定环长间距的解释，不能据此宣称已经处理任意标号重排或任意多维 pair potential。MD.Ch01.regularlatticeminimizerliteral\_corrected：PASS。φ 在 (0,∞) 严格凸、L>0、每个 gapsᵢ>0 且 ∑gapsᵢ=L，使 d=L/(N+1)>0。结论是 (N+1)φ(d)≤∑φ(gapsᵢ)，且等号当且仅当全部 gapsᵢ=d；这是有限等权严格 Jensen 的准确陈述，包括 N=0 的单项情形。它是明确改变问题域的合理勘误，不是任意原始配置的无条件结论。MD.Ch01.regularlatticeminimizerliteral\_counterexample：PASS。零势下所有 Fin 2 配置能量均为0；常零配置不可能满足间距1/2的有标号 regularLattice。[EXTRA] 为空不能被理解为原命题因此获得凸性或顺序条件。总判 NEEDS\_HUMAN，需人工确认原书的隐藏势与配置资格。
 
 ### 7. 状态与证明位置
 
@@ -5235,7 +5622,12 @@ incomplete；已逐声明核验公理；含占位的声明仍未证明。
 ### 2. 原文陈述
 
 > periodic boundary conditions involve an extended potential energy of the form
-> \[U^{\mathrm{pbc}}(\boldsymbol q)=\sum_{klm}\sum_{i=1}^{N-1}\sum_{j=i+1}^{N}\varphi_{ij}(\boldsymbol q_i,\boldsymbol q_j+k\boldsymbol v_1+l\boldsymbol v_2+m\boldsymbol v_3),\]
+
+$$
+U^{\mathrm{pbc}}(\boldsymbol q)=\sum_{klm}\sum_{i=1}^{N-1}\sum_{j=i+1}^{N}\varphi_{ij}(\boldsymbol q_i,\boldsymbol q_j+k\boldsymbol v_1+l\boldsymbol v_2+m\boldsymbol v_3),
+$$
+
+
 > where $k,l,m$ run over $-1,0,1$ (in case interactions are restricted to the simulation cell and its immediate neighboring copies), and $\boldsymbol v_i^T=(L\boldsymbol e_i^T,L\boldsymbol e_i^T,\ldots,L\boldsymbol e_i^T)$, $i=1,2,3$, where $\boldsymbol e_i$ is the $i$th Euclidean basis vector in $\mathbb R^3$.
 
 ### 3. 原文证明
@@ -5257,7 +5649,7 @@ def periodicImageEnergy {N : ℕ} (L : ℝ) (φ : Fin N → Fin N → twoBodyTer
 | 原文成分 | Lean对应 | 说明 |
 |---|---|---|
 | 原文对象、量词、前提与完整定义/结论（见第2段逐字引用） | MD.Ch01.periodicImageEnergy；完整当前陈述及同组辅助定义见本条第4段 | 一致 |
-| \[U^{\mathrm{pbc}}(\boldsymbol q)=\sum_{klm}\sum_{i=1}^{N-1}\sum_{j=i+1}^{N}\varphi_{ij}(\boldsymbol q_i,\boldsymbol q_j+k\boldsymbol v_1+l\boldsymbol v_2+m\boldsymbol v_3),\] | MD.Ch01.periodicImageEnergy，完整展开陈述见上一行及第4段 | 一致 |
+| $U^{\mathrm{pbc}}(\boldsymbol q)=\sum_{klm}\sum_{i=1}^{N-1}\sum_{j=i+1}^{N}\varphi_{ij}(\boldsymbol q_i,\boldsymbol q_j+k\boldsymbol v_1+l\boldsymbol v_2+m\boldsymbol v_3),$ | MD.Ch01.periodicImageEnergy，完整展开陈述见上一行及第4段 | 一致 |
 
 [EXTRA] 
 
@@ -5265,8 +5657,8 @@ def periodicImageEnergy {N : ℕ} (L : ℝ) (φ : Fin N → Fin N → twoBodyTer
 
 逐项核对公式、对象域、量词和结论；定义只登记模型，不声称解存在或物理近似有效。
 
-网站：原书疑误=NEEDS_HUMAN；原文忠实性单列；修正版=网站PASS；原文已形式化子句=网站PASS（限定范围）；原文已形式化子句=网站PASS（限定范围）；原文已形式化子句=网站PASS（限定范围）；限定解释=网站PASS。
-MD.Ch01.periodicImageEnergy：对“将原页 v_i 解释为其对应粒子三维块 L e_i”的解释，签名 PASS。对任意自然数 N、实 L、所有二体项 φᵢⱼ 与三维配置 q，定义恰枚举27个位移和全部无序不同标签对 i<j，逐项计算 φᵢⱼ(qᵢ,qⱼ+L(k,l,m))。N=0 或1时空配对求和为0，忠实于印刷的 i<j；没有擅加 i=j 的自镜像，也没有擅加1/2。构造公式本身可推广到任意 L,q，物理盒长正且坐标位于盒内是书中背景，而非这一定义声称的额外定理。未解决之处是原页把 v_i 定义为全配置重复块，和此处二体参数三维之间存在类型冲突；JSON 的“等价”说明只能给出一种修复解释，不能消除原书符号问题。因此总判 NEEDS_HUMAN，而非声称已逐类型忠实形式化了原公式。
+网站：原书疑误=NEEDS\_HUMAN；原文忠实性单列；修正版=网站PASS；原文已形式化子句=网站PASS（限定范围）；原文已形式化子句=网站PASS（限定范围）；原文已形式化子句=网站PASS（限定范围）；限定解释=网站PASS。
+MD.Ch01.periodicImageEnergy：对“将原页 v\_i 解释为其对应粒子三维块 L e\_i”的解释，签名 PASS。对任意自然数 N、实 L、所有二体项 φᵢⱼ 与三维配置 q，定义恰枚举27个位移和全部无序不同标签对 i<j，逐项计算 φᵢⱼ(qᵢ,qⱼ+L(k,l,m))。N=0 或1时空配对求和为0，忠实于印刷的 i<j；没有擅加 i=j 的自镜像，也没有擅加1/2。构造公式本身可推广到任意 L,q，物理盒长正且坐标位于盒内是书中背景，而非这一定义声称的额外定理。未解决之处是原页把 v\_i 定义为全配置重复块，和此处二体参数三维之间存在类型冲突；JSON 的“等价”说明只能给出一种修复解释，不能消除原书符号问题。因此总判 NEEDS\_HUMAN，而非声称已逐类型忠实形式化了原公式。
 
 ### 7. 状态与证明位置
 
@@ -5355,7 +5747,7 @@ def rhombicLatticeOnDomain (a b θ : ℝ) (_h : RhombicLatticeValidDomain a b θ
 
 ### 6. 审计结论
 
-21号按网站suggested_fix修复并本地核验：一般整数生成集rhombicLattice保留为辅助；二维格入口增加a>0、b>0、sinθ≠0，不加a=b；下游六角格恒等式无须调整。
+21号按网站suggested\_fix修复并本地核验：一般整数生成集rhombicLattice保留为辅助；二维格入口增加a>0、b>0、sinθ≠0，不加a=b；下游六角格恒等式无须调整。
 
 网站：按网站审校意见修复，本地核验通过（未再送网站）。
 MD.Ch01.rhombicLattice：FAIL（参数域/几何资格）。集合公式 x=k(a,0)+l(b cosθ,b sinθ)，k,l∈ℤ，方向、索引及二维实欧氏对象均正确；旋转/平移选定坐标本身不是问题。缺陷是 a,b,θ 无任何资格，不能保证两条边的长度为正或两个生成方向独立：行列式为 ab sinθ，可能为0。原文及图1.17描述的是二维格，而当前构造连秩0、秩1的退化集合也全部接收。[EXTRA] 为空，不能从“基向量”这个中文名称推入 Lean 中没有的线性无关性。作为一般整数生成集合的辅助定义它是合法的，但作为未加资格的二维 rhombic lattice 完整对应不足。没有把“低温典型”误审为必须额外证明的普遍低温定理。
@@ -5405,7 +5797,7 @@ theorem hexagonal_lattice_two_bases (a : ℝ) :
 
 | 原文成分 | Lean对应 | 说明 |
 |---|---|---|
-| 原文对象、量词、前提与完整定义/结论（见第2段逐字引用） | MD.Ch01.hexagonal_lattice_two_bases；完整当前陈述及同组辅助定义见本条第4段 | 一致 |
+| 原文对象、量词、前提与完整定义/结论（见第2段逐字引用） | MD.Ch01.hexagonal\_lattice\_two\_bases；完整当前陈述及同组辅助定义见本条第4段 | 一致 |
 
 [EXTRA] 
 
@@ -5418,7 +5810,7 @@ theorem hexagonal_lattice_two_bases (a : ℝ) :
 ### 7. 状态与证明位置
 
 self-contained；已逐声明核验公理；含占位的声明仍未证明。
-位置：Blueprint/Ch01.lean:1985；MD.Ch01.hexagonal_lattice_two_bases。
+位置：Blueprint/Ch01.lean:1985；MD.Ch01.hexagonal\_lattice\_two\_bases。
 
 ## 1. MD-1.6-UnitCell · definition · 印刷p.35 / PDFp.58
 
@@ -5460,10 +5852,10 @@ def unitCellOnDomain (B : Matrix (Fin 3) (Fin 3) ℝ) (motif : Set V3)
 
 ### 6. 审计结论
 
-21号按网站suggested_fix修复并本地核验：一般平移并集unitCellLattice保留；晶胞入口要求det B≠0及motif有限非空且位于B([0,1)³)。
+21号按网站suggested\_fix修复并本地核验：一般平移并集unitCellLattice保留；晶胞入口要求det B≠0及motif有限非空且位于B([0,1)³)。
 
 网站：按网站审校意见修复，本地核验通过（未再送网站）。
-MD.Ch01.unitCellLattice：FAIL（对象域/晶胞资格）。平移公式和存在量词准确编码了以三个生成向量重复 motif 的操作，但 B:Matrix (Fin 3) (Fin 3) ℝ 不是三维基的类型；B 可以奇异或为0。motif:Set V3 也未声明为盒内有限原子排列，甚至允许 motif=整个ℝ³。故定义输出不一定是三维离散原子晶格，不能仅靠 context_notation 的自然语言声称已经落实原书的“within a box”和“each direction”。此构造可保留为平移并集函数；缺失的是作为原书 unit cell 的有效输入资格，而非要求每个晶胞只能有一个原子。[EXTRA] 为空，未提供这些资格。
+MD.Ch01.unitCellLattice：FAIL（对象域/晶胞资格）。平移公式和存在量词准确编码了以三个生成向量重复 motif 的操作，但 B:Matrix (Fin 3) (Fin 3) ℝ 不是三维基的类型；B 可以奇异或为0。motif:Set V3 也未声明为盒内有限原子排列，甚至允许 motif=整个ℝ³。故定义输出不一定是三维离散原子晶格，不能仅靠 context\_notation 的自然语言声称已经落实原书的“within a box”和“each direction”。此构造可保留为平移并集函数；缺失的是作为原书 unit cell 的有效输入资格，而非要求每个晶胞只能有一个原子。[EXTRA] 为空，未提供这些资格。
 
 ### 7. 状态与证明位置
 
@@ -5494,7 +5886,7 @@ def fccStacking : Set V3 :=
 
 | 原文成分 | Lean对应 | 说明 |
 |---|---|---|
-| 原文对象、量词、前提与完整定义/结论（见第2段逐字引用） | MD.Ch01.fccStacking；完整当前陈述及同组辅助定义见本条第4段 | NEEDS_HUMAN |
+| 原文对象、量词、前提与完整定义/结论（见第2段逐字引用） | MD.Ch01.fccStacking；完整当前陈述及同组辅助定义见本条第4段 | NEEDS\_HUMAN |
 | 原文未显式量化的技术资格 | 将图示ABC编码为单位边长等边三角层，层高sqrt(2/3)及偏移由close-packed图示编码，正文未列数值公式。 | [EXTRA] |
 
 [EXTRA] 将图示ABC编码为单位边长等边三角层，层高sqrt(2/3)及偏移由close-packed图示编码，正文未列数值公式。
@@ -5535,7 +5927,7 @@ def hcpStacking : Set V3 :=
 
 | 原文成分 | Lean对应 | 说明 |
 |---|---|---|
-| 原文对象、量词、前提与完整定义/结论（见第2段逐字引用） | MD.Ch01.hcpStacking；完整当前陈述及同组辅助定义见本条第4段 | NEEDS_HUMAN |
+| 原文对象、量词、前提与完整定义/结论（见第2段逐字引用） | MD.Ch01.hcpStacking；完整当前陈述及同组辅助定义见本条第4段 | NEEDS\_HUMAN |
 | 原文未显式量化的技术资格 | 图示AB两个三角层，单位化层高及偏移是具体close-packed图示编码。 | [EXTRA] |
 
 [EXTRA] 图示AB两个三角层，单位化层高及偏移是具体close-packed图示编码。
@@ -5557,7 +5949,12 @@ self-contained；已逐声明核验公理；含占位的声明仍未证明。
 ### 2. 原文陈述
 
 > Regardless of the choice of boundary and/or the inclusion of non-pairwise potentials, the minimum of the potential energy occurs where
-> \[\nabla U=0,\]
+
+$$
+\nabla U=0,
+$$
+
+
 > which gives in general a nonlinear system of $N_c$ equations in $N_c$ unknowns to be solved for the position vector $\boldsymbol q^*$ associated to mechanical equilibrium.
 
 ### 3. 原文证明
@@ -5585,7 +5982,7 @@ theorem minimumgradientzero_corrected :
 | 原文成分 | Lean对应 | 说明 |
 |---|---|---|
 | 原文对象、量词、前提与完整定义/结论（见第2段逐字引用） | MD.Ch01.minimumgradientzero；完整当前陈述及同组辅助定义见本条第4段 | 一致 |
-| \[\nabla U=0,\] | MD.Ch01.minimumgradientzero，完整展开陈述见上一行及第4段 | 一致 |
+| $\nabla U=0,$ | MD.Ch01.minimumgradientzero，完整展开陈述见上一行及第4段 | 一致 |
 | 原文未显式量化的技术资格 | 可微、内点局部极小；约束/边界极小需沿切空间而不必全梯度零。 | [EXTRA] |
 
 [EXTRA] 可微、内点局部极小；约束/边界极小需沿切空间而不必全梯度零。
@@ -5594,8 +5991,8 @@ theorem minimumgradientzero_corrected :
 
 约束边界极小一般不能推出全梯度为零；原上下文若含边界须区分可行方向。 原文与修正版独立保留；默认选项是工作版本，尚未获导师裁定。
 
-网站：原书疑误=NEEDS_HUMAN；原文忠实性单列；修正版=网站PASS；原文已形式化子句=网站PASS（限定范围）；原文已形式化子句=网站PASS（限定范围）；原文已形式化子句=网站PASS（限定范围）；限定解释=网站PASS。
-MD.Ch01.minimumgradientzero：在[EXTRA]明示的无约束内点解释下，数学签名 PASS。n∈ℕ，U:EuclideanSpace ℝ (Fin n)→ℝ，q 属于同一空间；DifferentiableAt ℝ U q 与全空间 IsLocalMin U q 足以推出 gradient U q=0。它给必要条件，没有将驻点偷换为充分极小条件；n 维梯度等于0等价于 n 个分量方程，不需另断言这些方程对每个 U 都非线性。MD.Ch01.minimumgradientzero_corrected：PASS，为同一个正确的无约束内点必要条件；其“修正”是解释范围的更正而非新签名。原书“Regardless of boundary”若包括受约束边界极小则过强，现有 Lean 也未覆盖这种解释。[EXTRA]已诚实披露可微、内点及边界限制，但不能据此认定原书无条件原句成立。故源文及总 verdict 保持 NEEDS_HUMAN。
+网站：原书疑误=NEEDS\_HUMAN；原文忠实性单列；修正版=网站PASS；原文已形式化子句=网站PASS（限定范围）；原文已形式化子句=网站PASS（限定范围）；原文已形式化子句=网站PASS（限定范围）；限定解释=网站PASS。
+MD.Ch01.minimumgradientzero：在[EXTRA]明示的无约束内点解释下，数学签名 PASS。n∈ℕ，U:EuclideanSpace ℝ (Fin n)→ℝ，q 属于同一空间；DifferentiableAt ℝ U q 与全空间 IsLocalMin U q 足以推出 gradient U q=0。它给必要条件，没有将驻点偷换为充分极小条件；n 维梯度等于0等价于 n 个分量方程，不需另断言这些方程对每个 U 都非线性。MD.Ch01.minimumgradientzero\_corrected：PASS，为同一个正确的无约束内点必要条件；其“修正”是解释范围的更正而非新签名。原书“Regardless of boundary”若包括受约束边界极小则过强，现有 Lean 也未覆盖这种解释。[EXTRA]已诚实披露可微、内点及边界限制，但不能据此认定原书无条件原句成立。故源文及总 verdict 保持 NEEDS\_HUMAN。
 
 ### 7. 状态与证明位置
 
@@ -5607,9 +6004,19 @@ checked+documented priors；已逐声明核验公理；含占位的声明仍未�
 ### 2. 原文陈述
 
 > At the equilibrium point, we can linearize the system of differential equations by computing the Hessian matrix, then we find
-> \[\nabla U(\boldsymbol q)\approx U''(\boldsymbol q^*)(\boldsymbol q-\boldsymbol q^*).\]
+
+$$
+\nabla U(\boldsymbol q)\approx U''(\boldsymbol q^*)(\boldsymbol q-\boldsymbol q^*).
+$$
+
+
 > Then, letting $\delta\boldsymbol q=\boldsymbol q-\boldsymbol q^*$, $\delta\boldsymbol p$ represent small deviations from the equilibrium point at $(\boldsymbol q,\boldsymbol p)=(\boldsymbol q^*,0)$, we have
-> \[\frac{\mathrm d\delta\boldsymbol q}{\mathrm dt}=\boldsymbol M^{-1}\delta\boldsymbol p,\qquad\frac{\mathrm d\delta\boldsymbol p}{\mathrm dt}=-U''(\boldsymbol q^*)\delta\boldsymbol q.\]
+
+$$
+\frac{\mathrm d\delta\boldsymbol q}{\mathrm dt}=\boldsymbol M^{-1}\delta\boldsymbol p,\qquad\frac{\mathrm d\delta\boldsymbol p}{\mathrm dt}=-U''(\boldsymbol q^*)\delta\boldsymbol q.
+$$
+
+
 
 ### 3. 原文证明
 
@@ -5647,8 +6054,8 @@ theorem force_linearization {n : ℕ} (M : Matrix (Fin n) (Fin n) ℝ)
 
 | 原文成分 | Lean对应 | 说明 |
 |---|---|---|
-| 原文对象、量词、前提与完整定义/结论（见第2段逐字引用） | MD.Ch01.force_linearization；完整当前陈述及同组辅助定义见本条第4段 | 一致 |
-| \[\nabla U(\boldsymbol q)\approx U''(\boldsymbol q^*)(\boldsymbol q-\boldsymbol q^*).\]；\[\frac{\mathrm d\delta\boldsymbol q}{\mathrm dt}=\boldsymbol M^{-1}\delta\boldsymbol p,\qquad\frac{\mathrm d\delta\boldsymbol p}{\mathrm dt}=-U''(\boldsymbol q^*)\delta\boldsymbol q.\] | MD.Ch01.force_linearization，完整展开陈述见上一行及第4段 | 一致 |
+| 原文对象、量词、前提与完整定义/结论（见第2段逐字引用） | MD.Ch01.force\_linearization；完整当前陈述及同组辅助定义见本条第4段 | 一致 |
+| $\nabla U(\boldsymbol q)\approx U''(\boldsymbol q^*)(\boldsymbol q-\boldsymbol q^*).$；$\frac{\mathrm d\delta\boldsymbol q}{\mathrm dt}=\boldsymbol M^{-1}\delta\boldsymbol p,\qquad\frac{\mathrm d\delta\boldsymbol p}{\mathrm dt}=-U''(\boldsymbol q^*)\delta\boldsymbol q.$ | MD.Ch01.force\_linearization，完整展开陈述见上一行及第4段 | 一致 |
 | 一般质量Hamilton向量场的块导数 | (M⁻¹∘snd).prod ((-D∇U)∘fst)的HasFDerivAt | 一致 |
 | 梯度线性化误差 | ∇U(q)-D∇U(q*)(q-q*) =o[𝓝 q*] (q-q*) | 一致 |
 | 原文未显式量化的技术资格 | 真实C2势及平衡梯度零；一般常M，原文M正定由机械背景保证但导数等式不需此资格。 | [EXTRA] |
@@ -5660,12 +6067,12 @@ theorem force_linearization {n : ℕ} (M : Matrix (Fin n) (Fin n) ℝ)
 一般质量矩阵、真实块Frechet导数及完整小o梯度线性化全部保留，未假设结论。
 
 网站：网站PASS（EAUDIT复审）。
-MD.Ch01.force_linearization：PASS。对任意有限维 n、常实方阵 M、实势 U、qstar，ContDiffAt ℝ 2 U qstar 保证梯度可微，heq 要求平衡梯度为0。相空间为位置×动量的两个相同维欧氏空间，matrixAction 是矩阵的真实线性作用。所列导数将任意(δq,δp)送到(M⁻¹δp,−D(gradient U)(qstar)δq)，完整保留两条线性化运动方程，后者的 D gradient 即 Hessian。第二结论为 gradient U(q)−D(gradient U)(qstar)(q−qstar)=o(‖q−qstar‖)，因此保留原文的平衡点梯度近似且没有把非线性系统和线性系统宣称为全局精确相同。M 不要求正定或可逆，是对取定线性系数 Matrix.inv M 的数学推广；原机械质量矩阵取正定可逆时正好回到正文。该推广与[EXTRA]已披露的一般常 M 一致，不会使这个导数/小o结论失真；不能据此反称奇异 M 是合法机械质量矩阵。
+MD.Ch01.force\_linearization：PASS。对任意有限维 n、常实方阵 M、实势 U、qstar，ContDiffAt ℝ 2 U qstar 保证梯度可微，heq 要求平衡梯度为0。相空间为位置×动量的两个相同维欧氏空间，matrixAction 是矩阵的真实线性作用。所列导数将任意(δq,δp)送到(M⁻¹δp,−D(gradient U)(qstar)δq)，完整保留两条线性化运动方程，后者的 D gradient 即 Hessian。第二结论为 gradient U(q)−D(gradient U)(qstar)(q−qstar)=o(‖q−qstar‖)，因此保留原文的平衡点梯度近似且没有把非线性系统和线性系统宣称为全局精确相同。M 不要求正定或可逆，是对取定线性系数 Matrix.inv M 的数学推广；原机械质量矩阵取正定可逆时正好回到正文。该推广与[EXTRA]已披露的一般常 M 一致，不会使这个导数/小o结论失真；不能据此反称奇异 M 是合法机械质量矩阵。
 
 ### 7. 状态与证明位置
 
 checked+documented priors；已逐声明核验公理；含占位的声明仍未证明。
-位置：Blueprint/Ch01.lean:2063；MD.Ch01.force_linearization。
+位置：Blueprint/Ch01.lean:2063；MD.Ch01.force\_linearization。
 
 ## 1. MD-1.6.1-MinimumHessianLiteral · unnumbered_claim · 印刷p.37 / PDFp.60
 
@@ -5712,7 +6119,7 @@ theorem minimumhessianliteral_counterexample :
 
 | 原文成分 | Lean对应 | 说明 |
 |---|---|---|
-| 原文对象、量词、前提与完整定义/结论（见第2段逐字引用） | MD.Ch01.minimumhessianliteral；完整当前陈述及同组辅助定义见本条第4段 | NEEDS_HUMAN |
+| 原文对象、量词、前提与完整定义/结论（见第2段逐字引用） | MD.Ch01.minimumhessianliteral；完整当前陈述及同组辅助定义见本条第4段 | NEEDS\_HUMAN |
 
 [EXTRA] 
 
@@ -5720,8 +6127,8 @@ theorem minimumhessianliteral_counterexample :
 
 局部极小只能推出Hessian半正定，严格极小也不能保证非退化。 原文与修正版独立保留；默认选项是工作版本，尚未获导师裁定。
 
-网站：原书疑误=NEEDS_HUMAN；原文忠实性单列；修正版=网站PASS；原文已形式化子句=网站PASS（限定范围）；原文已形式化子句=网站PASS（限定范围）；原文已形式化子句=网站PASS（限定范围）。
-MD.Ch01.minimumhessianliteral：字面忠实性 PASS，但原书数学疑误 NEEDS_HUMAN。对任意 n、U:Position n→ℝ、q，以全局 ContDiff ℝ 2 U 和 IsLocalMin U q 为前提；合取结论确实完整包括 Hessian 的所有 u,v 对称性，以及对所有非零 v 的正定性，没有把正定偷换成半正定。该正定结论在原书资格下不成立，依任务不把忠实版或 sorry 本身判成实现 FAIL。MD.Ch01.minimumhessianliteral_corrected：PASS。相同 C²、全空间局部极小前提下 Hessian 对称且二次型非负，是正确必要条件；仍逐一覆盖所有非零方向，零方向亦自动为0。MD.Ch01.minimumhessianliteral_counterexample：PASS。U(x)=x⁴ 在0有局部极小且二阶导数为0，足以反驳正定；该函数实际甚至是严格全局极小，因而增加“严格极小”也救不了字面版。标量例经一维欧氏空间的标准识别对应 n=1。总判 NEEDS_HUMAN；未因修正版含 sorry 否定其签名。
+网站：原书疑误=NEEDS\_HUMAN；原文忠实性单列；修正版=网站PASS；原文已形式化子句=网站PASS（限定范围）；原文已形式化子句=网站PASS（限定范围）；原文已形式化子句=网站PASS（限定范围）。
+MD.Ch01.minimumhessianliteral：字面忠实性 PASS，但原书数学疑误 NEEDS\_HUMAN。对任意 n、U:Position n→ℝ、q，以全局 ContDiff ℝ 2 U 和 IsLocalMin U q 为前提；合取结论确实完整包括 Hessian 的所有 u,v 对称性，以及对所有非零 v 的正定性，没有把正定偷换成半正定。该正定结论在原书资格下不成立，依任务不把忠实版或 sorry 本身判成实现 FAIL。MD.Ch01.minimumhessianliteral\_corrected：PASS。相同 C²、全空间局部极小前提下 Hessian 对称且二次型非负，是正确必要条件；仍逐一覆盖所有非零方向，零方向亦自动为0。MD.Ch01.minimumhessianliteral\_counterexample：PASS。U(x)=x⁴ 在0有局部极小且二阶导数为0，足以反驳正定；该函数实际甚至是严格全局极小，因而增加“严格极小”也救不了字面版。标量例经一维欧氏空间的标准识别对应 n=1。总判 NEEDS\_HUMAN；未因修正版含 sorry 否定其签名。
 
 ### 7. 状态与证明位置
 
@@ -5733,7 +6140,12 @@ incomplete；已逐声明核验公理；含占位的声明仍未证明。
 ### 2. 原文陈述
 
 > The eigenvalues of the matrix
-> \[\boldsymbol A:=\begin{bmatrix}0&\boldsymbol M^{-1}\\-U''(\boldsymbol q^*)&0\end{bmatrix}\]
+
+$$
+\boldsymbol A:=\begin{bmatrix}0&\boldsymbol M^{-1}\\-U''(\boldsymbol q^*)&0\end{bmatrix}
+$$
+
+
 > are therefore all purely imaginary ($\pm i\Omega$, $\Omega^2\in\mathbb R^+$).
 
 ### 3. 原文证明
@@ -5757,8 +6169,8 @@ theorem imaginary_spectrum :
 
 | 原文成分 | Lean对应 | 说明 |
 |---|---|---|
-| 原文对象、量词、前提与完整定义/结论（见第2段逐字引用） | MD.Ch01.imaginary_spectrum；完整当前陈述及同组辅助定义见本条第4段 | 一致 |
-| \[\boldsymbol A:=\begin{bmatrix}0&\boldsymbol M^{-1}\\-U''(\boldsymbol q^*)&0\end{bmatrix}\] | MD.Ch01.imaginary_spectrum，完整展开陈述见上一行及第4段 | 一致 |
+| 原文对象、量词、前提与完整定义/结论（见第2段逐字引用） | MD.Ch01.imaginary\_spectrum；完整当前陈述及同组辅助定义见本条第4段 | 一致 |
+| $\boldsymbol A:=\begin{bmatrix}0&\boldsymbol M^{-1}\\-U''(\boldsymbol q^*)&0\end{bmatrix}$ | MD.Ch01.imaginary\_spectrum，完整展开陈述见上一行及第4段 | 一致 |
 | 全部特征值±iΩ与Ω²>0 | 任意非零实虚特征对推出a=0、0<b²及A x=-b•y、A(-y)=-b•x | 一致；全部三个结论保留 |
 | 原文未显式量化的技术资格 | M和Hessian K正定；复谱实虚向量编码。 | [EXTRA] |
 
@@ -5773,14 +6185,19 @@ theorem imaginary_spectrum :
 ### 7. 状态与证明位置
 
 incomplete；已逐声明核验公理；含占位的声明仍未证明。
-位置：Blueprint/Ch01.lean:2120；MD.Ch01.imaginary_spectrum。
+位置：Blueprint/Ch01.lean:2120；MD.Ch01.imaginary\_spectrum。
 
 ## 1. MD-1.6.1-ComplexNormalMode · unnumbered_claim · 印刷p.37 / PDFp.60
 
 ### 2. 原文陈述
 
 > Associated to each eigenvalue pair we have a pair of complex conjugate eigenvectors $\boldsymbol\xi,\overline{\boldsymbol\xi}$ and also a pair of solutions which can be written in the complex form
-> \[\boldsymbol z(t)=ae^{i\Omega t}\boldsymbol\xi+be^{-i\Omega t}\overline{\boldsymbol\xi},\]
+
+$$
+\boldsymbol z(t)=ae^{i\Omega t}\boldsymbol\xi+be^{-i\Omega t}\overline{\boldsymbol\xi},
+$$
+
+
 > ($a,b$ complex coefficients),
 
 ### 3. 原文证明
@@ -5812,7 +6229,7 @@ theorem complexnormalmode :
 | 原文成分 | Lean对应 | 说明 |
 |---|---|---|
 | 原文对象、量词、前提与完整定义/结论（见第2段逐字引用） | MD.Ch01.complexnormalmode；完整当前陈述及同组辅助定义见本条第4段 | 一致 |
-| \[\boldsymbol z(t)=ae^{i\Omega t}\boldsymbol\xi+be^{-i\Omega t}\overline{\boldsymbol\xi},\] | MD.Ch01.complexnormalmode，完整展开陈述见上一行及第4段 | 一致 |
+| $\boldsymbol z(t)=ae^{i\Omega t}\boldsymbol\xi+be^{-i\Omega t}\overline{\boldsymbol\xi},$ | MD.Ch01.complexnormalmode，完整展开陈述见上一行及第4段 | 一致 |
 | 网站指出缺项及原文完整子句 | MD.Ch01.complexnormalmode | 增加η非零及共轭η非零、−iΩ特征方程，保留所有系数的原复解公式；不以零向量冒充特征向量。 |
 | 网站指出缺项及原文完整子句 | MD.Ch01.complexnormalmode | 增加η非零及共轭η非零、−iΩ特征方程，保留所有系数的原复解公式；不以零向量冒充特征向量。 |
 
@@ -5823,7 +6240,7 @@ theorem complexnormalmode :
 19号本地签名预审：增加η非零及共轭η非零、−iΩ特征方程，保留所有系数的原复解公式；不以零向量冒充特征向量。
 
 网站：网站PASS（EAUDIT复审）。
-MD.Ch01.complexnormalmode：PASS。n∈ℕ，A 是实 n×n 矩阵，η∈ℂⁿ 非零，Ω∈ℝ；前提 A_Cη=(iΩ)η，A_C 是 A 的逐项实到复嵌入。结论先确认 conjugate η 非零，再确认 A_C conjugate η=(−iΩ)conjugate η，实性正是此推论所需；最后对任意 a,b∈ℂ 和任意 t∈ℝ，给出 z(t)=a exp(iΩt)η+b exp(−iΩt)conjugate η 的真实导数为 A_C z(t)。该表述完整覆盖共轭特征对及其复线性组合解，未以零向量充当特征向量，也未把 a,b 限制为实。Ω=0 时共轭解可退化/重合，签名没有多声称其线性独立，故仍正确。A 泛化为任何实矩阵而非限定机械块矩阵，是由同一特征方程导出解公式的有效推广。[EXTRA] 中非零及共轭特征方程均真实出现在声明里。
+MD.Ch01.complexnormalmode：PASS。n∈ℕ，A 是实 n×n 矩阵，η∈ℂⁿ 非零，Ω∈ℝ；前提 A\_Cη=(iΩ)η，A\_C 是 A 的逐项实到复嵌入。结论先确认 conjugate η 非零，再确认 A\_C conjugate η=(−iΩ)conjugate η，实性正是此推论所需；最后对任意 a,b∈ℂ 和任意 t∈ℝ，给出 z(t)=a exp(iΩt)η+b exp(−iΩt)conjugate η 的真实导数为 A\_C z(t)。该表述完整覆盖共轭特征对及其复线性组合解，未以零向量充当特征向量，也未把 a,b 限制为实。Ω=0 时共轭解可退化/重合，签名没有多声称其线性独立，故仍正确。A 泛化为任何实矩阵而非限定机械块矩阵，是由同一特征方程导出解公式的有效推广。[EXTRA] 中非零及共轭特征方程均真实出现在声明里。
 
 ### 7. 状态与证明位置
 
@@ -5835,7 +6252,12 @@ incomplete；已逐声明核验公理；含占位的声明仍未证明。
 ### 2. 原文陈述
 
 > or recast in real form as ($\alpha,\beta$ real coefficients):
-> \[\boldsymbol z(t)=\alpha[\sin(\Omega t)\operatorname{Re}(\boldsymbol\xi)+\cos(\Omega t)\operatorname{Im}(\boldsymbol\xi)]+\beta[\cos(\Omega t)\operatorname{Re}(\boldsymbol\xi)-\sin(\Omega t)\operatorname{Im}(\boldsymbol\xi)].\]
+
+$$
+\boldsymbol z(t)=\alpha[\sin(\Omega t)\operatorname{Re}(\boldsymbol\xi)+\cos(\Omega t)\operatorname{Im}(\boldsymbol\xi)]+\beta[\cos(\Omega t)\operatorname{Re}(\boldsymbol\xi)-\sin(\Omega t)\operatorname{Im}(\boldsymbol\xi)].
+$$
+
+
 
 ### 3. 原文证明
 
@@ -5859,7 +6281,7 @@ theorem realnormalmode :
 | 原文成分 | Lean对应 | 说明 |
 |---|---|---|
 | 原文对象、量词、前提与完整定义/结论（见第2段逐字引用） | MD.Ch01.realnormalmode；完整当前陈述及同组辅助定义见本条第4段 | 一致 |
-| \[\boldsymbol z(t)=\alpha[\sin(\Omega t)\operatorname{Re}(\boldsymbol\xi)+\cos(\Omega t)\operatorname{Im}(\boldsymbol\xi)]+\beta[\cos(\Omega t)\operatorname{Re}(\boldsymbol\xi)-\sin(\Omega t)\operatorname{Im}(\boldsymbol\xi)].\] | MD.Ch01.realnormalmode，完整展开陈述见上一行及第4段 | 一致 |
+| $\boldsymbol z(t)=\alpha[\sin(\Omega t)\operatorname{Re}(\boldsymbol\xi)+\cos(\Omega t)\operatorname{Im}(\boldsymbol\xi)]+\beta[\cos(\Omega t)\operatorname{Re}(\boldsymbol\xi)-\sin(\Omega t)\operatorname{Im}(\boldsymbol\xi)].$ | MD.Ch01.realnormalmode，完整展开陈述见上一行及第4段 | 一致 |
 
 [EXTRA] 
 
@@ -5867,8 +6289,8 @@ theorem realnormalmode :
 
 展开复用定理签名逐项核对原文；全部结论保留，额外技术条件逐条登记。
 
-网站：原书疑误=NEEDS_HUMAN；原文忠实性单列；修正版=网站PASS；原文已形式化子句=网站PASS（限定范围）；原文已形式化子句=网站PASS（限定范围）；原文已形式化子句=网站PASS（限定范围）；限定解释=网站PASS。
-MD.Ch01.realnormalmode：就所陈述的实解公式而言 PASS。对任意实赋范向量空间 E、A:E→L[ℝ]E、Ω,α,β∈ℝ、u,v∈E，只需 Au=−Ωv 和 Av=Ωu，即对所有实 t 得 z′(t)=Az(t)。展开 MolecularDynamics.realNormalMode，z 恰为 α(sin(Ωt)u+cos(Ωt)v)+β(cos(Ωt)u−sin(Ωt)v)，与原式相同；取 u=Re ξ、v=Im ξ 时 hu,hv 正是实矩阵 +iΩ 特征方程的实虚部。不需要额外的非零/独立条件来使这一解公式成立，泛化到赋范空间也合理。需要区分的是：前一条 a,b 为任意复数的 z 不一定为实，不能全部直接“改写”为此 α,β 为实的式子。当前声明没有给出系数约束或取实部的桥接，因此不能把它的 PASS 扩展为已证明原书无条件的复实全族等价。原文若意指真实物理解则正确，但省略了适用范围；依“原书疑误/歧义保留”要求，总判 NEEDS_HUMAN，非把正确的 ODE 声明判成 FAIL。
+网站：原书疑误=NEEDS\_HUMAN；原文忠实性单列；修正版=网站PASS；原文已形式化子句=网站PASS（限定范围）；原文已形式化子句=网站PASS（限定范围）；原文已形式化子句=网站PASS（限定范围）；限定解释=网站PASS。
+MD.Ch01.realnormalmode：就所陈述的实解公式而言 PASS。对任意实赋范向量空间 E、A:E→L[ℝ]E、Ω,α,β∈ℝ、u,v∈E，只需 Au=−Ωv 和 Av=Ωu，即对所有实 t 得 z′(t)=Az(t)。展开 MolecularDynamics.realNormalMode，z 恰为 α(sin(Ωt)u+cos(Ωt)v)+β(cos(Ωt)u−sin(Ωt)v)，与原式相同；取 u=Re ξ、v=Im ξ 时 hu,hv 正是实矩阵 +iΩ 特征方程的实虚部。不需要额外的非零/独立条件来使这一解公式成立，泛化到赋范空间也合理。需要区分的是：前一条 a,b 为任意复数的 z 不一定为实，不能全部直接“改写”为此 α,β 为实的式子。当前声明没有给出系数约束或取实部的桥接，因此不能把它的 PASS 扩展为已证明原书无条件的复实全族等价。原文若意指真实物理解则正确，但省略了适用范围；依“原书疑误/歧义保留”要求，总判 NEEDS\_HUMAN，非把正确的 ODE 声明判成 FAIL。
 
 ### 7. 状态与证明位置
 
@@ -5880,7 +6302,12 @@ checked+documented priors；已逐声明核验公理；含占位的声明仍未�
 ### 2. 原文陈述
 
 > One of the simplest illustrations of the chaotic nature of molecular systems is given by the Lennard-Jones model consisting of just three atoms with motion restricted to the plane. The energy is
-> \[E=K+U=\frac{\|\dot{\boldsymbol q}_1\|^2}{2}+\frac{\|\dot{\boldsymbol q}_2\|^2}{2}+\frac{\|\dot{\boldsymbol q}_3\|^2}{2}+\hat\varphi_{\mathrm{LJ}}(\|\boldsymbol q_1-\boldsymbol q_2\|)+\hat\varphi_{\mathrm{LJ}}(\|\boldsymbol q_2-\boldsymbol q_3\|)+\hat\varphi_{\mathrm{LJ}}(\|\boldsymbol q_1-\boldsymbol q_3\|),\]
+
+$$
+E=K+U=\frac{\|\dot{\boldsymbol q}_1\|^2}{2}+\frac{\|\dot{\boldsymbol q}_2\|^2}{2}+\frac{\|\dot{\boldsymbol q}_3\|^2}{2}+\hat\varphi_{\mathrm{LJ}}(\|\boldsymbol q_1-\boldsymbol q_2\|)+\hat\varphi_{\mathrm{LJ}}(\|\boldsymbol q_2-\boldsymbol q_3\|)+\hat\varphi_{\mathrm{LJ}}(\|\boldsymbol q_1-\boldsymbol q_3\|),
+$$
+
+
 > with the interatomic interaction given by $\hat\varphi_{\mathrm{LJ}}(r)=4[r^{-12}-r^{-6}]$.
 
 ### 3. 原文证明
@@ -5901,7 +6328,7 @@ def planarTrimerEnergy (q v : Fin 3 → Position 2) : ℝ :=
 | 原文成分 | Lean对应 | 说明 |
 |---|---|---|
 | 原文对象、量词、前提与完整定义/结论（见第2段逐字引用） | MD.Ch01.planarTrimerEnergy；完整当前陈述及同组辅助定义见本条第4段 | 一致 |
-| \[E=K+U=\frac{\\|\dot{\boldsymbol q}_1\\|^2}{2}+\frac{\\|\dot{\boldsymbol q}_2\\|^2}{2}+\frac{\\|\dot{\boldsymbol q}_3\\|^2}{2}+\hat\varphi_{\mathrm{LJ}}(\\|\boldsymbol q_1-\boldsymbol q_2\\|)+\hat\varphi_{\mathrm{LJ}}(\\|\boldsymbol q_2-\boldsymbol q_3\\|)+\hat\varphi_{\mathrm{LJ}}(\\|\boldsymbol q_1-\boldsymbol q_3\\|),\] | MD.Ch01.planarTrimerEnergy，完整展开陈述见上一行及第4段 | 一致 |
+| $E=K+U=\frac{\Vert \dot{\boldsymbol q}_1\Vert ^2}{2}+\frac{\Vert \dot{\boldsymbol q}_2\Vert ^2}{2}+\frac{\Vert \dot{\boldsymbol q}_3\Vert ^2}{2}+\hat\varphi_{\mathrm{LJ}}(\Vert \boldsymbol q_1-\boldsymbol q_2\Vert )+\hat\varphi_{\mathrm{LJ}}(\Vert \boldsymbol q_2-\boldsymbol q_3\Vert )+\hat\varphi_{\mathrm{LJ}}(\Vert \boldsymbol q_1-\boldsymbol q_3\Vert ),$ | MD.Ch01.planarTrimerEnergy，完整展开陈述见上一行及第4段 | 一致 |
 
 [EXTRA] 
 
@@ -5922,7 +6349,12 @@ self-contained；已逐声明核验公理；含占位的声明仍未证明。
 ### 2. 原文陈述
 
 > In general, when the total potential is a sum of distance potentials
-> \[U=\frac12\sum_{i\ne j}U_{ij},\]
+
+$$
+U=\frac12\sum_{i\ne j}U_{ij},
+$$
+
+
 > where $U_{ij}(\boldsymbol q_i,\boldsymbol q_j)=\varphi_{ij}(\|\boldsymbol q_i-\boldsymbol q_j\|)$, we say that the system has central forces.
 
 ### 3. 原文证明
@@ -5942,7 +6374,7 @@ def centralPairEnergy {N : ℕ} (φ : Fin N → Fin N → ℝ → ℝ) (q : Fin 
 | 原文成分 | Lean对应 | 说明 |
 |---|---|---|
 | 原文对象、量词、前提与完整定义/结论（见第2段逐字引用） | MD.Ch01.centralPairEnergy；完整当前陈述及同组辅助定义见本条第4段 | 一致 |
-| \[U=\frac12\sum_{i\ne j}U_{ij},\] | MD.Ch01.centralPairEnergy，完整展开陈述见上一行及第4段 | 一致 |
+| $U=\frac12\sum_{i\ne j}U_{ij},$ | MD.Ch01.centralPairEnergy，完整展开陈述见上一行及第4段 | 一致 |
 
 [EXTRA] 
 
@@ -5951,7 +6383,7 @@ def centralPairEnergy {N : ℕ} (φ : Fin N → Fin N → ℝ → ℝ) (q : Fin 
 逐项核对公式、对象域、量词和结论；定义只登记模型，不声称解存在或物理近似有效。
 
 网站：网站PASS（EAUDIT复审）。
-Fin N、三维位置和任意径向φ；erase i恰排除自相互作用，有序双和除以2与原式一致。该定义本身无需可微性或φ对称性；若要把φ解释为同一无序对的势，需采用context_notation的对称约定。
+Fin N、三维位置和任意径向φ；erase i恰排除自相互作用，有序双和除以2与原式一致。该定义本身无需可微性或φ对称性；若要把φ解释为同一无序对的势，需采用context\_notation的对称约定。
 
 ### 7. 状态与证明位置
 
@@ -5963,7 +6395,12 @@ self-contained；已逐声明核验公理；含占位的声明仍未证明。
 ### 2. 原文陈述
 
 > In this case,
-> \[\frac\partial{\partial\boldsymbol q_i}U_{ij}(\boldsymbol q_i,\boldsymbol q_j)=-\frac\partial{\partial\boldsymbol q_j}U_{ij}(\boldsymbol q_i,\boldsymbol q_j),\]
+
+$$
+\frac\partial{\partial\boldsymbol q_i}U_{ij}(\boldsymbol q_i,\boldsymbol q_j)=-\frac\partial{\partial\boldsymbol q_j}U_{ij}(\boldsymbol q_i,\boldsymbol q_j),
+$$
+
+
 
 ### 3. 原文证明
 
@@ -5996,7 +6433,7 @@ theorem centralpairgradient :
 | 原文成分 | Lean对应 | 说明 |
 |---|---|---|
 | 原文对象、量词、前提与完整定义/结论（见第2段逐字引用） | MD.Ch01.centralpairgradient；完整当前陈述及同组辅助定义见本条第4段 | 一致 |
-| \[\frac\partial{\partial\boldsymbol q_i}U_{ij}(\boldsymbol q_i,\boldsymbol q_j)=-\frac\partial{\partial\boldsymbol q_j}U_{ij}(\boldsymbol q_i,\boldsymbol q_j),\] | MD.Ch01.centralpairgradient，完整展开陈述见上一行及第4段 | 一致 |
+| $\frac\partial{\partial\boldsymbol q_i}U_{ij}(\boldsymbol q_i,\boldsymbol q_j)=-\frac\partial{\partial\boldsymbol q_j}U_{ij}(\boldsymbol q_i,\boldsymbol q_j),$ | MD.Ch01.centralpairgradient，完整展开陈述见上一行及第4段 | 一致 |
 | 原文未显式量化的技术资格 | 势在非碰撞距离可微；partial为欧氏梯度。 | [EXTRA] |
 
 [EXTRA] 势在非碰撞距离可微；partial为欧氏梯度。
@@ -6018,7 +6455,12 @@ self-contained；已逐声明核验公理；含占位的声明仍未证明。
 ### 2. 原文陈述
 
 > and so, for central forces,
-> \[\sum_{i=1}^N m_i\ddot{\boldsymbol q}_i=0,\]
+
+$$
+\sum_{i=1}^N m_i\ddot{\boldsymbol q}_i=0,
+$$
+
+
 > which expresses the constancy of the momentum.
 
 ### 3. 原文证明
@@ -6044,8 +6486,8 @@ theorem central_momentum :
 
 | 原文成分 | Lean对应 | 说明 |
 |---|---|---|
-| 原文对象、量词、前提与完整定义/结论（见第2段逐字引用） | MD.Ch01.central_momentum；完整当前陈述及同组辅助定义见本条第4段 | 一致 |
-| \[\sum_{i=1}^N m_i\ddot{\boldsymbol q}_i=0,\] | MD.Ch01.central_momentum，完整展开陈述见上一行及第4段 | 一致 |
+| 原文对象、量词、前提与完整定义/结论（见第2段逐字引用） | MD.Ch01.central\_momentum；完整当前陈述及同组辅助定义见本条第4段 | 一致 |
+| $\sum_{i=1}^N m_i\ddot{\boldsymbol q}_i=0,$ | MD.Ch01.central\_momentum，完整展开陈述见上一行及第4段 | 一致 |
 | 原文未显式量化的技术资格 | 真实Newton动量导数、逐对作用反对称、开放连通时间域；pᵢ=mᵢvᵢ。净力零为结论，未用作前提。 | [EXTRA] |
 
 [EXTRA] 真实Newton动量导数、逐对作用反对称、开放连通时间域；pᵢ=mᵢvᵢ。净力零为结论，未用作前提。
@@ -6060,16 +6502,26 @@ theorem central_momentum :
 ### 7. 状态与证明位置
 
 checked+documented priors；已逐声明核验公理；含占位的声明仍未证明。
-位置：Blueprint/Ch01.lean:2203；MD.Ch01.central_momentum。
+位置：Blueprint/Ch01.lean:2203；MD.Ch01.central\_momentum。
 
 ## 1. MD-1.7-CentralAngularMomentum · unnumbered_claim · 印刷p.39 / PDFp.62
 
 ### 2. 原文陈述
 
 > Moreover, viewing the $\boldsymbol q_i$ as vectors in $\mathbb R^3$ (with 0 as their third component),
-> \[\boldsymbol q_i\times\frac\partial{\partial\boldsymbol q_i}U_{ij}(\boldsymbol q_i,\boldsymbol q_j)=-\boldsymbol q_j\times\frac\partial{\partial\boldsymbol q_j}U_{ij}(\boldsymbol q_i,\boldsymbol q_j),\]
+
+$$
+\boldsymbol q_i\times\frac\partial{\partial\boldsymbol q_i}U_{ij}(\boldsymbol q_i,\boldsymbol q_j)=-\boldsymbol q_j\times\frac\partial{\partial\boldsymbol q_j}U_{ij}(\boldsymbol q_i,\boldsymbol q_j),
+$$
+
+
 > which implies
-> \[\frac{\mathrm d}{\mathrm dt}\sum_{i=1}^N\boldsymbol q_i\times(m_i\dot{\boldsymbol q}_i)=0,\]
+
+$$
+\frac{\mathrm d}{\mathrm dt}\sum_{i=1}^N\boldsymbol q_i\times(m_i\dot{\boldsymbol q}_i)=0,
+$$
+
+
 > and tells us that the total angular momentum is also conserved.
 
 ### 3. 原文证明
@@ -6165,12 +6617,12 @@ theorem centralangularmomentum :
 | 原文成分 | Lean对应 | 说明 |
 |---|---|---|
 | 原文对象、量词、前提与完整定义/结论（见第2段逐字引用） | MD.Ch01.centralangularmomentum；完整当前陈述及同组辅助定义见本条第4段 | 一致 |
-| \[\boldsymbol q_i\times\frac\partial{\partial\boldsymbol q_i}U_{ij}(\boldsymbol q_i,\boldsymbol q_j)=-\boldsymbol q_j\times\frac\partial{\partial\boldsymbol q_j}U_{ij}(\boldsymbol q_i,\boldsymbol q_j),\]；\[\frac{\mathrm d}{\mathrm dt}\sum_{i=1}^N\boldsymbol q_i\times(m_i\dot{\boldsymbol q}_i)=0,\] | MD.Ch01.centralangularmomentum，完整展开陈述见上一行及第4段 | 一致 |
+| $\boldsymbol q_i\times\frac\partial{\partial\boldsymbol q_i}U_{ij}(\boldsymbol q_i,\boldsymbol q_j)=-\boldsymbol q_j\times\frac\partial{\partial\boldsymbol q_j}U_{ij}(\boldsymbol q_i,\boldsymbol q_j),$；$\frac{\mathrm d}{\mathrm dt}\sum_{i=1}^N\boldsymbol q_i\times(m_i\dot{\boldsymbol q}_i)=0,$ | MD.Ch01.centralangularmomentum，完整展开陈述见上一行及第4段 | 一致 |
 | 逐对力矩相消 | ∀t i j,cross3(qᵢ,Fᵢⱼ)=-cross3(qⱼ,Fⱼᵢ) | 一致 |
 | 角动量守恒 | HasDerivAt (∑i,cross3(qᵢ,mᵢ•vᵢ)) 0 | 一致 |
 | 原文未显式量化的技术资格 | 真实位置和动量导数；反对称内力和沿位移方向中心力。 | [EXTRA] |
-| 网站指出缺项及原文完整子句 | MD.Ch01.centralangularmomentum_derivative; MD.Ch01.centralangularmomentum | 保留逐对力矩及总角动量真实零导数，补时间域预连通与任意两时刻守恒。旧长证明另名复用，新增常值推导只做小修。 |
-| 网站指出缺项及原文完整子句 | MD.Ch01.centralangularmomentum_derivative; MD.Ch01.centralangularmomentum | 保留逐对力矩及总角动量真实零导数，补时间域预连通与任意两时刻守恒。旧长证明另名复用，新增常值推导只做小修。 |
+| 网站指出缺项及原文完整子句 | MD.Ch01.centralangularmomentum\_derivative; MD.Ch01.centralangularmomentum | 保留逐对力矩及总角动量真实零导数，补时间域预连通与任意两时刻守恒。旧长证明另名复用，新增常值推导只做小修。 |
+| 网站指出缺项及原文完整子句 | MD.Ch01.centralangularmomentum\_derivative; MD.Ch01.centralangularmomentum | 保留逐对力矩及总角动量真实零导数，补时间域预连通与任意两时刻守恒。旧长证明另名复用，新增常值推导只做小修。 |
 
 [EXTRA] 真实位置和动量导数；反对称内力和沿位移方向中心力。；[EXTRA] 19号：保留逐对力矩及总角动量真实零导数，补时间域预连通与任意两时刻守恒。旧长证明另名复用，新增常值推导只做小修。
 
@@ -6247,7 +6699,7 @@ theorem centerofmassmotion :
 逐项核对展开后的陈述、真实定义、量词及[EXTRA]；语义本地通过，完整Lean检查另行登记。
 
 网站：网站PASS（EAUDIT复审）。
-范围按context_notation只审translation。质量正且总质量正、a∈开放预连通I、q′=v、总动量真实零导数，推出每个t∈I质心为初始质心加(t−a)乘初始质心速度，分母和各求和均正确。旋转断言另交第7条；这里不能将整句的旋转部分视为已证明。
+范围按context\_notation只审translation。质量正且总质量正、a∈开放预连通I、q′=v、总动量真实零导数，推出每个t∈I质心为初始质心加(t−a)乘初始质心速度，分母和各求和均正确。旋转断言另交第7条；这里不能将整句的旋转部分视为已证明。
 
 ### 7. 状态与证明位置
 
@@ -6295,7 +6747,7 @@ theorem constantrotationliteral_corrected_b (r θ : ℝ → ℝ) (ℓ : ℝ)
 
 | 原文成分 | Lean对应 | 说明 |
 |---|---|---|
-| 原文对象、量词、前提与完整定义/结论（见第2段逐字引用） | MD.Ch01.constantrotationliteral；完整当前陈述及同组辅助定义见本条第4段 | NEEDS_HUMAN |
+| 原文对象、量词、前提与完整定义/结论（见第2段逐字引用） | MD.Ch01.constantrotationliteral；完整当前陈述及同组辅助定义见本条第4段 | NEEDS\_HUMAN |
 
 [EXTRA] 
 
@@ -6303,8 +6755,8 @@ theorem constantrotationliteral_corrected_b (r θ : ℝ → ℝ) (ℓ : ℝ)
 
 守恒的是角动量，转动惯量或半径可变时角速度可变。 原文与修正版独立保留；默认选项是工作版本，尚未获导师裁定。
 
-网站：原书疑误=NEEDS_HUMAN；原文忠实性单列；修正版=网站PASS；原文已形式化子句=网站PASS（限定范围）；原文已形式化子句=网站PASS（限定范围）；原文已形式化子句=网站PASS（限定范围）。
-literal完整编码“r²θ′=ℓ且r>0推出恒角速”，忠实于原书旋转断言，但数学上不成立。corrected_a增加固定正半径后结论正确；corrected_b只作除以正r²的代数推导，正确且更贴近应保留的守恒律。两修正版均未假设所求恒角速。
+网站：原书疑误=NEEDS\_HUMAN；原文忠实性单列；修正版=网站PASS；原文已形式化子句=网站PASS（限定范围）；原文已形式化子句=网站PASS（限定范围）；原文已形式化子句=网站PASS（限定范围）。
+literal完整编码“r²θ′=ℓ且r>0推出恒角速”，忠实于原书旋转断言，但数学上不成立。corrected\_a增加固定正半径后结论正确；corrected\_b只作除以正r²的代数推导，正确且更贴近应保留的守恒律。两修正版均未假设所求恒角速。
 
 ### 7. 状态与证明位置
 
@@ -6316,7 +6768,12 @@ incomplete；已逐声明核验公理；含占位的声明仍未证明。
 ### 2. 原文陈述
 
 > Let us introduce new coordinates in the Lennard-Jones trimer as illustrated in Fig. 1.21, so that the center of mass is fixed at the origin: that is,
-> \[\boldsymbol q_1=\begin{bmatrix}x\\-y/3\\0\end{bmatrix},\qquad\boldsymbol q_2=\begin{bmatrix}-x\\-y/3\\0\end{bmatrix},\qquad\boldsymbol q_3=\begin{bmatrix}0\\2y/3\\0\end{bmatrix},\]
+
+$$
+\boldsymbol q_1=\begin{bmatrix}x\\-y/3\\0\end{bmatrix},\qquad\boldsymbol q_2=\begin{bmatrix}-x\\-y/3\\0\end{bmatrix},\qquad\boldsymbol q_3=\begin{bmatrix}0\\2y/3\\0\end{bmatrix},
+$$
+
+
 
 ### 3. 原文证明
 
@@ -6344,7 +6801,7 @@ theorem isoscelesCoordinates_corrected_center (x y : ℝ) :
 | 原文成分 | Lean对应 | 说明 |
 |---|---|---|
 | 原文对象、量词、前提与完整定义/结论（见第2段逐字引用） | MD.Ch01.isoscelesCoordinates；完整当前陈述及同组辅助定义见本条第4段 | 一致 |
-| \[\boldsymbol q_1=\begin{bmatrix}x\\-y/3\\0\end{bmatrix},\qquad\boldsymbol q_2=\begin{bmatrix}-x\\-y/3\\0\end{bmatrix},\qquad\boldsymbol q_3=\begin{bmatrix}0\\2y/3\\0\end{bmatrix},\] | MD.Ch01.isoscelesCoordinates，完整展开陈述见上一行及第4段 | 一致 |
+| $\boldsymbol q_1=\begin{bmatrix}x\\-y/3\\0\end{bmatrix},\qquad\boldsymbol q_2=\begin{bmatrix}-x\\-y/3\\0\end{bmatrix},\qquad\boldsymbol q_3=\begin{bmatrix}0\\2y/3\\0\end{bmatrix},$ | MD.Ch01.isoscelesCoordinates，完整展开陈述见上一行及第4段 | 一致 |
 
 [EXTRA] 
 
@@ -6352,8 +6809,8 @@ theorem isoscelesCoordinates_corrected_center (x y : ℝ) :
 
 零平动、零角动量不强迫任意三角形等腰；必须额外选择对称初态及证明对称性保持。 原文与修正版独立保留；默认选项是工作版本，尚未获导师裁定。
 
-网站：原书疑误=NEEDS_HUMAN；原文忠实性单列；修正版=网站PASS；原文已形式化子句=网站PASS（限定范围）；原文已形式化子句=网站PASS（限定范围）；原文已形式化子句=网站PASS（限定范围）。
-三个向量分量、Fin 3次序及三维平面嵌入完全吻合。corrected定义数值上与原定义相同；corrected_center的三坐标和为零，单位质量下即质心零。修正的是适用范围而非坐标公式。原段由动量约束导出等腰的暗示不成立，必须由人工保留勘误说明。
+网站：原书疑误=NEEDS\_HUMAN；原文忠实性单列；修正版=网站PASS；原文已形式化子句=网站PASS（限定范围）；原文已形式化子句=网站PASS（限定范围）；原文已形式化子句=网站PASS（限定范围）。
+三个向量分量、Fin 3次序及三维平面嵌入完全吻合。corrected定义数值上与原定义相同；corrected\_center的三坐标和为零，单位质量下即质心零。修正的是适用范围而非坐标公式。原段由动量约束导出等腰的暗示不成立，必须由人工保留勘误说明。
 
 ### 7. 状态与证明位置
 
@@ -6365,7 +6822,12 @@ self-contained；已逐声明核验公理；含占位的声明仍未证明。
 ### 2. 原文陈述
 
 > reducing the energy to
-> \[E=\dot x^2+\frac{\dot y^2}{3}+2\hat\varphi_{\mathrm{LJ}}\left(\sqrt{x^2+y^2}\right)+\hat\varphi_{\mathrm{LJ}}(2x),\]
+
+$$
+E=\dot x^2+\frac{\dot y^2}{3}+2\hat\varphi_{\mathrm{LJ}}\left(\sqrt{x^2+y^2}\right)+\hat\varphi_{\mathrm{LJ}}(2x),
+$$
+
+
 > which describes the vibrational motion.
 
 ### 3. 原文证明
@@ -6414,8 +6876,8 @@ theorem isosceles_energy_reduction (x y v w : ℝ) (hx : 0 < x) :
 
 | 原文成分 | Lean对应 | 说明 |
 |---|---|---|
-| 原文对象、量词、前提与完整定义/结论（见第2段逐字引用） | MD.Ch01.isosceles_energy_reduction；完整当前陈述及同组辅助定义见本条第4段 | 一致 |
-| \[E=\dot x^2+\frac{\dot y^2}{3}+2\hat\varphi_{\mathrm{LJ}}\left(\sqrt{x^2+y^2}\right)+\hat\varphi_{\mathrm{LJ}}(2x),\] | MD.Ch01.isosceles_energy_reduction，完整展开陈述见上一行及第4段 | 一致 |
+| 原文对象、量词、前提与完整定义/结论（见第2段逐字引用） | MD.Ch01.isosceles\_energy\_reduction；完整当前陈述及同组辅助定义见本条第4段 | 一致 |
+| $E=\dot x^2+\frac{\dot y^2}{3}+2\hat\varphi_{\mathrm{LJ}}\left(\sqrt{x^2+y^2}\right)+\hat\varphi_{\mathrm{LJ}}(2x),$ | MD.Ch01.isosceles\_energy\_reduction，完整展开陈述见上一行及第4段 | 一致 |
 | 原文未显式量化的技术资格 | 单位质量及x>0保证q1-q2距离为2x，未以所求能量等式为假设。 | [EXTRA] |
 
 [EXTRA] 单位质量及x>0保证q1-q2距离为2x，未以所求能量等式为假设。
@@ -6430,14 +6892,19 @@ x>0使01距离为2x，另两距离为√(x²+y²)；速度坐标取(v,w)后动�
 ### 7. 状态与证明位置
 
 self-contained；已逐声明核验公理；含占位的声明仍未证明。
-位置：Blueprint/Ch01.lean:2378；MD.Ch01.isosceles_energy_reduction。
+位置：Blueprint/Ch01.lean:2378；MD.Ch01.isosceles\_energy\_reduction。
 
 ## 1. MD-1.7-IsoscelesAccessibleRegion · unnumbered_claim · 印刷p.40 / PDFp.63
 
 ### 2. 原文陈述
 
 > kinetic energy is non-negative, we must have
-> \[2\hat\varphi_{\mathrm{LJ}}\left(\sqrt{x^2+y^2}\right)+\hat\varphi_{\mathrm{LJ}}(2x)\le E.\]
+
+$$
+2\hat\varphi_{\mathrm{LJ}}\left(\sqrt{x^2+y^2}\right)+\hat\varphi_{\mathrm{LJ}}(2x)\le E.
+$$
+
+
 
 ### 3. 原文证明
 
@@ -6457,7 +6924,7 @@ theorem isoscelesaccessibleregion :
 | 原文成分 | Lean对应 | 说明 |
 |---|---|---|
 | 原文对象、量词、前提与完整定义/结论（见第2段逐字引用） | MD.Ch01.isoscelesaccessibleregion；完整当前陈述及同组辅助定义见本条第4段 | 一致 |
-| \[2\hat\varphi_{\mathrm{LJ}}\left(\sqrt{x^2+y^2}\right)+\hat\varphi_{\mathrm{LJ}}(2x)\le E.\] | MD.Ch01.isoscelesaccessibleregion，完整展开陈述见上一行及第4段 | 一致 |
+| $2\hat\varphi_{\mathrm{LJ}}\left(\sqrt{x^2+y^2}\right)+\hat\varphi_{\mathrm{LJ}}(2x)\le E.$ | MD.Ch01.isoscelesaccessibleregion，完整展开陈述见上一行及第4段 | 一致 |
 
 [EXTRA] 
 
@@ -6478,7 +6945,12 @@ checked+documented priors；已逐声明核验公理；含占位的声明仍未�
 ### 2. 原文陈述
 
 > The global minimum of this simple system must be radially symmetric. Placing the atoms at the vertices of an equilateral triangle, we have
-> \[U=3\hat\varphi_{\mathrm{LJ}}(r),\]
+
+$$
+U=3\hat\varphi_{\mathrm{LJ}}(r),
+$$
+
+
 > where $r$ is the length of a side. This is minimized when $r=2^{1/6}\approx1.1225$.
 
 ### 3. 原文证明
@@ -6502,7 +6974,7 @@ theorem equilateraltrimerminimum :
 | 原文成分 | Lean对应 | 说明 |
 |---|---|---|
 | 原文对象、量词、前提与完整定义/结论（见第2段逐字引用） | MD.Ch01.equilateraltrimerminimum；完整当前陈述及同组辅助定义见本条第4段 | 一致 |
-| \[U=3\hat\varphi_{\mathrm{LJ}}(r),\] | MD.Ch01.equilateraltrimerminimum，完整展开陈述见上一行及第4段 | 一致 |
+| $U=3\hat\varphi_{\mathrm{LJ}}(r),$ | MD.Ch01.equilateraltrimerminimum，完整展开陈述见上一行及第4段 | 一致 |
 | 全局极小值-3 | -3≤uniformLJEnergy 1 1 q | 一致 |
 | 达到极小当且仅当三边等于2^(1/6) | 能量=-3 ↔ ∀i≠j,pairDistance…=Real.rpow 2 (1/6) | 一致 |
 | 原文未显式量化的技术资格 | 单位LJ；非碰撞配置。 | [EXTRA] |
@@ -6685,7 +7157,7 @@ theorem trimerescapeliteral_corrected :
 
 | 原文成分 | Lean对应 | 说明 |
 |---|---|---|
-| 原文对象、量词、前提与完整定义/结论（见第2段逐字引用） | MD.Ch01.trimerescapeliteral；完整当前陈述及同组辅助定义见本条第4段 | NEEDS_HUMAN |
+| 原文对象、量词、前提与完整定义/结论（见第2段逐字引用） | MD.Ch01.trimerescapeliteral；完整当前陈述及同组辅助定义见本条第4段 | NEEDS\_HUMAN |
 
 [EXTRA] 
 
@@ -6693,7 +7165,7 @@ theorem trimerescapeliteral_corrected :
 
 总能量正并不直接推出每个粒子相对固定原点趋于无穷；系统分离与逐粒子逃逸不同。 原文与修正版独立保留；默认选项是工作版本，尚未获导师裁定。
 
-网站：原书疑误=NEEDS_HUMAN；原文忠实性单列；修正版=NEEDS_HUMAN（待独立散射论证）。
+网站：原书疑误=NEEDS\_HUMAN；原文忠实性单列；修正版=NEEDS\_HUMAN（待独立散射论证）。
 literal保留逐粒子范数趋∞的字面解释；签名具真实Newton导数、单位LJ力、全时非碰撞、正能量、零质心/动量/角动量及等腰约束，无循环前提，但逐粒子结论过强。corrected保留全部资格并改为存在固定一对距离趋∞，改动方向合理；此候选的强极限结论尚需独立散射论证，不能由能量非负或现有反例直接认证。
 
 ### 7. 状态与证明位置
@@ -6726,7 +7198,7 @@ def chaosConditions {n : ℕ} (F : ℝ → Position n → Position n) (D : Set (
 
 | 原文成分 | Lean对应 | 说明 |
 |---|---|---|
-| 原文对象、量词、前提与完整定义/结论（见第2段逐字引用） | MD.Ch01.chaosConditions；完整当前陈述及同组辅助定义见本条第4段 | NEEDS_HUMAN |
+| 原文对象、量词、前提与完整定义/结论（见第2段逐字引用） | MD.Ch01.chaosConditions；完整当前陈述及同组辅助定义见本条第4段 | NEEDS\_HUMAN |
 | 原文未显式量化的技术资格 | 敏感依赖以固定可见分离量ε、任意δ近邻的标准量词解释；原文说明without being entirely formal，未指定这个严格ε/δ版本。 | [EXTRA] |
 | 原文未显式量化的技术资格 | topologicalTransitivity使用相对开集和非负时间，D须流不变才能解释为相域。 | [EXTRA] |
 
@@ -6780,7 +7252,7 @@ theorem transitivityergodicityliteral_corrected {n : ℕ}
 
 | 原文成分 | Lean对应 | 说明 |
 |---|---|---|
-| 原文对象、量词、前提与完整定义/结论（见第2段逐字引用） | MD.Ch01.transitivityergodicityliteral；完整当前陈述及同组辅助定义见本条第4段 | NEEDS_HUMAN |
+| 原文对象、量词、前提与完整定义/结论（见第2段逐字引用） | MD.Ch01.transitivityergodicityliteral；完整当前陈述及同组辅助定义见本条第4段 | NEEDS\_HUMAN |
 | 原文未显式量化的技术资格 | 为表达ergodicity必须引入原文此处未给的不变测度μ；F为连续真实流。 | [EXTRA] |
 
 [EXTRA] 为表达ergodicity必须引入原文此处未给的不变测度μ；F为连续真实流。
@@ -6789,7 +7261,7 @@ theorem transitivityergodicityliteral_corrected {n : ℕ}
 
 拓扑传递依赖拓扑，遍历性依赖选定不变测度；一般不能直接等价。 原文与修正版独立保留；默认选项是工作版本，尚未获导师裁定。
 
-网站：原书疑误=NEEDS_HUMAN；原文忠实性单列；修正版=网站PASS；原文已形式化子句=网站PASS（限定范围）；原文已形式化子句=网站PASS（限定范围）；原文已形式化子句=网站PASS（限定范围）。
+网站：原书疑误=NEEDS\_HUMAN；原文忠实性单列；修正版=网站PASS；原文已形式化子句=网站PASS（限定范围）；原文已形式化子句=网站PASS（限定范围）；原文已形式化子句=网站PASS（限定范围）。
 literal在连续真实流和不变测度下断言拓扑传递↔测度遍历，忠实表达原句但普遍错误。corrected限制有限满支撑测度，仅断言遍历⇒拓扑传递，方向与条件正确；flowErgodic已含全部时间的测度保持。hf:C¹确保ODE唯一性，由isFlowOf得到群性质，故不缺流合成资格；连续性使开集时间饱和为开可测，有限测度复现可保证正向时间的传递。
 
 ### 7. 状态与证明位置
@@ -6802,13 +7274,33 @@ incomplete；已逐声明核验公理；含占位的声明仍未证明。
 ### 2. 原文陈述
 
 > Consider the system with energy
-> \[E(x,y,\dot x,\dot y)=\frac12(\dot x^2+\dot y^2)+\frac{\kappa(c_3)}2(r-l(c_3))^2,\qquad r=\sqrt{x^2+y^2},\tag{1.9}\]
+
+$$
+E(x,y,\dot x,\dot y)=\frac12(\dot x^2+\dot y^2)+\frac{\kappa(c_3)}2(r-l(c_3))^2,\qquad r=\sqrt{x^2+y^2},\tag{1.9}
+$$
+
+
 > where
-> \[c_3=\cos(3\theta)\]
+
+$$
+c_3=\cos(3\theta)
+$$
+
+
 > is defined in terms of the angular coordinate of the position $(x,y)$ with respect to the $(1,0)$-direction,
-> \[\cos\theta=c=\frac xr,\qquad c_3=4c^3-3c,\]
+
+$$
+\cos\theta=c=\frac xr,\qquad c_3=4c^3-3c,
+$$
+
+
 > and we have defined
-> \[\kappa(c_3)=\kappa_0(1-\tfrac12\epsilon c_3),\qquad l(c_3)=l_0(1+\tfrac12\epsilon c_3).\]
+
+$$
+\kappa(c_3)=\kappa_0(1-\tfrac12\epsilon c_3),\qquad l(c_3)=l_0(1+\tfrac12\epsilon c_3).
+$$
+
+
 
 ### 3. 原文证明
 
@@ -6828,7 +7320,7 @@ def anisotropicEnergy (κ₀ l₀ ε x y v w : ℝ) :=
 | 原文成分 | Lean对应 | 说明 |
 |---|---|---|
 | 原文对象、量词、前提与完整定义/结论（见第2段逐字引用） | MD.Ch01.anisotropicEnergy；完整当前陈述及同组辅助定义见本条第4段 | 一致 |
-| \[E(x,y,\dot x,\dot y)=\frac12(\dot x^2+\dot y^2)+\frac{\kappa(c_3)}2(r-l(c_3))^2,\qquad r=\sqrt{x^2+y^2},\tag{1.9}\]；\[c_3=\cos(3\theta)\]；\[\cos\theta=c=\frac xr,\qquad c_3=4c^3-3c,\]；\[\kappa(c_3)=\kappa_0(1-\tfrac12\epsilon c_3),\qquad l(c_3)=l_0(1+\tfrac12\epsilon c_3).\] | MD.Ch01.anisotropicEnergy，完整展开陈述见上一行及第4段 | 一致 |
+| $E(x,y,\dot x,\dot y)=\frac12(\dot x^2+\dot y^2)+\frac{\kappa(c_3)}2(r-l(c_3))^2,\qquad r=\sqrt{x^2+y^2},\quad\text{(1.9)}$；$c_3=\cos(3\theta)$；$\cos\theta=c=\frac xr,\qquad c_3=4c^3-3c,$；$\kappa(c_3)=\kappa_0(1-\tfrac12\epsilon c_3),\qquad l(c_3)=l_0(1+\tfrac12\epsilon c_3).$ | MD.Ch01.anisotropicEnergy，完整展开陈述见上一行及第4段 | 一致 |
 | 原文未显式量化的技术资格 | 定义在r=0用Lean总函数延拓，物理域r>0。 | [EXTRA] |
 
 [EXTRA] 定义在r=0用Lean总函数延拓，物理域r>0。
@@ -6850,9 +7342,19 @@ self-contained；已逐声明核验公理；含占位的声明仍未证明。
 ### 2. 原文陈述
 
 > Let a dynamical system $\dot{\boldsymbol z}=\boldsymbol f(\boldsymbol z)$ be given in $\mathbb R^m$ with flow map $F_t:\mathbb R^m\to\mathbb R^m$ which we assume to be continuously differentiable. Let $\boldsymbol z(t,\boldsymbol\xi)$ represent the solution of initial value problem
-> \[\dot{\boldsymbol z}=\boldsymbol f(\boldsymbol z),\qquad\boldsymbol z(0)=\boldsymbol\xi.\]
+
+$$
+\dot{\boldsymbol z}=\boldsymbol f(\boldsymbol z),\qquad\boldsymbol z(0)=\boldsymbol\xi.
+$$
+
+
 > We then compute the $m\times m$ Jacobian matrix of $F_t(\boldsymbol z(t,\boldsymbol\xi))$:
-> \[\boldsymbol W(t)=F_t'(\boldsymbol z(t,\boldsymbol\xi))=\frac{\partial F_t}{\partial\boldsymbol z}(\boldsymbol z(t,\boldsymbol\xi)).\]
+
+$$
+\boldsymbol W(t)=F_t'(\boldsymbol z(t,\boldsymbol\xi))=\frac{\partial F_t}{\partial\boldsymbol z}(\boldsymbol z(t,\boldsymbol\xi)).
+$$
+
+
 
 ### 3. 原文证明
 
@@ -6875,7 +7377,7 @@ def variationalMatrixLiteral_corrected {n : ℕ} (F : ℝ → Position n → Pos
 | 原文成分 | Lean对应 | 说明 |
 |---|---|---|
 | 原文对象、量词、前提与完整定义/结论（见第2段逐字引用） | MD.Ch01.variationalMatrixLiteral；完整当前陈述及同组辅助定义见本条第4段 | 一致 |
-| \[\dot{\boldsymbol z}=\boldsymbol f(\boldsymbol z),\qquad\boldsymbol z(0)=\boldsymbol\xi.\]；\[\boldsymbol W(t)=F_t'(\boldsymbol z(t,\boldsymbol\xi))=\frac{\partial F_t}{\partial\boldsymbol z}(\boldsymbol z(t,\boldsymbol\xi)).\] | MD.Ch01.variationalMatrixLiteral，完整展开陈述见上一行及第4段 | 一致 |
+| $\dot{\boldsymbol z}=\boldsymbol f(\boldsymbol z),\qquad\boldsymbol z(0)=\boldsymbol\xi.$；$\boldsymbol W(t)=F_t'(\boldsymbol z(t,\boldsymbol\xi))=\frac{\partial F_t}{\partial\boldsymbol z}(\boldsymbol z(t,\boldsymbol\xi)).$ | MD.Ch01.variationalMatrixLiteral，完整展开陈述见上一行及第4段 | 一致 |
 | W的取值点为z(t,ξ)=Ftξ | fderiv ℝ (F t) (F t ξ) | [ERRATUM?] 字面保留，未换为ξ |
 
 [EXTRA] 
@@ -6884,7 +7386,7 @@ def variationalMatrixLiteral_corrected {n : ℕ} (F : ℝ → Position n → Pos
 
 对初值求导的Jacobian应在初值取值；把演化后位置再次代入是复合了不同取值点。 原文与修正版独立保留；默认选项是工作版本，尚未获导师裁定。
 
-网站：原书疑误=NEEDS_HUMAN；原文忠实性单列；修正版=网站PASS；原文已形式化子句=网站PASS（限定范围）；原文已形式化子句=网站PASS（限定范围）；原文已形式化子句=网站PASS（限定范围）。
+网站：原书疑误=NEEDS\_HUMAN；原文忠实性单列；修正版=网站PASS；原文已形式化子句=网站PASS（限定范围）；原文已形式化子句=网站PASS（限定范围）；原文已形式化子句=网站PASS（限定范围）。
 literal确为fderiv(F t)在F t ξ处的取值，忠实保留PDF的z(t,ξ)取值点；导数作为连续线性算子与欧氏Jacobian矩阵等价。corrected改为在ξ处取值是标准初值变分矩阵。两者为定义，可对任意F作总函数定义；真实流和C¹资格用于后续理论。作为原文变分理论基础有取值点疑误，保留人工裁定。
 
 ### 7. 状态与证明位置
@@ -6897,7 +7399,12 @@ self-contained；已逐声明核验公理；含占位的声明仍未证明。
 ### 2. 原文陈述
 
 > Differentiating $\boldsymbol W(t)$ with respect to $t$ and using the differential equation and the chain rule, we have
-> \[\frac{\mathrm d}{\mathrm dt}\boldsymbol W(t)=\boldsymbol f'(\boldsymbol z(t,\boldsymbol\xi))\boldsymbol W(t).\tag{1.10}\]
+
+$$
+\frac{\mathrm d}{\mathrm dt}\boldsymbol W(t)=\boldsymbol f'(\boldsymbol z(t,\boldsymbol\xi))\boldsymbol W(t).\tag{1.10}
+$$
+
+
 > The system of Eq. (1.10) is referred to as the system of variational equations corresponding to the dynamical system $\mathrm d\boldsymbol z/\mathrm dt=\boldsymbol f(\boldsymbol z)$.
 
 ### 3. 原文证明
@@ -6928,17 +7435,17 @@ theorem variationalequationliteral_corrected :
 
 | 原文成分 | Lean对应 | 说明 |
 |---|---|---|
-| 原文对象、量词、前提与完整定义/结论（见第2段逐字引用） | MD.Ch01.variationalequationliteral；完整当前陈述及同组辅助定义见本条第4段 | NEEDS_HUMAN |
-| \[\frac{\mathrm d}{\mathrm dt}\boldsymbol W(t)=\boldsymbol f'(\boldsymbol z(t,\boldsymbol\xi))\boldsymbol W(t).\tag{1.10}\] | MD.Ch01.variationalequationliteral，完整展开陈述见上一行及第4段 | NEEDS_HUMAN |
+| 原文对象、量词、前提与完整定义/结论（见第2段逐字引用） | MD.Ch01.variationalequationliteral；完整当前陈述及同组辅助定义见本条第4段 | NEEDS\_HUMAN |
+| $\frac{\mathrm d}{\mathrm dt}\boldsymbol W(t)=\boldsymbol f'(\boldsymbol z(t,\boldsymbol\xi))\boldsymbol W(t).\quad\text{(1.10)}$ | MD.Ch01.variationalequationliteral，完整展开陈述见上一行及第4段 | NEEDS\_HUMAN |
 
 [EXTRA] 
 
 ### 6. 审计结论
 
-原W的取值点多复合一次F_t，时间微分产生额外链式项，不满足标准变分方程。 原文与修正版独立保留；默认选项是工作版本，尚未获导师裁定。
+原W的取值点多复合一次F\_t，时间微分产生额外链式项，不满足标准变分方程。 原文与修正版独立保留；默认选项是工作版本，尚未获导师裁定。
 
-网站：原书疑误=NEEDS_HUMAN；原文忠实性单列；修正版=网站PASS；原文已形式化子句=网站PASS（限定范围）；原文已形式化子句=网站PASS（限定范围）；原文已形式化子句=网站PASS（限定范围）。
-literal完整保留C¹向量场、每个F_t为C¹、真实流初值和时间ODE，以及全部ξ,t上的算子导数；右端复合顺序Df(F_tξ)∘W正确，但原文字面W使方程失效。corrected使用DF_t(ξ)后为正确标准变分方程。C¹向量场和全局真实解以唯一性及局部参数依赖给出所需时间可微性，无需额外假设F联合C²；sorry不构成签名失败。
+网站：原书疑误=NEEDS\_HUMAN；原文忠实性单列；修正版=网站PASS；原文已形式化子句=网站PASS（限定范围）；原文已形式化子句=网站PASS（限定范围）；原文已形式化子句=网站PASS（限定范围）。
+literal完整保留C¹向量场、每个F\_t为C¹、真实流初值和时间ODE，以及全部ξ,t上的算子导数；右端复合顺序Df(F\_tξ)∘W正确，但原文字面W使方程失效。corrected使用DF\_t(ξ)后为正确标准变分方程。C¹向量场和全局真实解以唯一性及局部参数依赖给出所需时间可微性，无需额外假设F联合C²；sorry不构成签名失败。
 
 ### 7. 状态与证明位置
 
@@ -6950,7 +7457,12 @@ incomplete；已逐声明核验公理；含占位的声明仍未证明。
 ### 2. 原文陈述
 
 > If we have two solutions started from nearby initial conditions $\boldsymbol\xi,\hat{\boldsymbol\xi}$, then their difference is approximated by the solution of the variational equations
-> \[\boldsymbol z(t,\hat{\boldsymbol\xi})-\boldsymbol z(t,\boldsymbol\xi)\approx\boldsymbol W(t)(\hat{\boldsymbol\xi}-\boldsymbol\xi).\]
+
+$$
+\boldsymbol z(t,\hat{\boldsymbol\xi})-\boldsymbol z(t,\boldsymbol\xi)\approx\boldsymbol W(t)(\hat{\boldsymbol\xi}-\boldsymbol\xi).
+$$
+
+
 
 ### 3. 原文证明
 
@@ -6979,23 +7491,23 @@ theorem nearby_trajectory_literal_corrected :
 
 | 原文成分 | Lean对应 | 说明 |
 |---|---|---|
-| 原文对象、量词、前提与完整定义/结论（见第2段逐字引用） | MD.Ch01.nearby_trajectory_literal；完整当前陈述及同组辅助定义见本条第4段 | NEEDS_HUMAN |
-| \[\boldsymbol z(t,\hat{\boldsymbol\xi})-\boldsymbol z(t,\boldsymbol\xi)\approx\boldsymbol W(t)(\hat{\boldsymbol\xi}-\boldsymbol\xi).\] | MD.Ch01.nearby_trajectory_literal，完整展开陈述见上一行及第4段 | NEEDS_HUMAN |
+| 原文对象、量词、前提与完整定义/结论（见第2段逐字引用） | MD.Ch01.nearby\_trajectory\_literal；完整当前陈述及同组辅助定义见本条第4段 | NEEDS\_HUMAN |
+| $\boldsymbol z(t,\hat{\boldsymbol\xi})-\boldsymbol z(t,\boldsymbol\xi)\approx\boldsymbol W(t)(\hat{\boldsymbol\xi}-\boldsymbol\xi).$ | MD.Ch01.nearby\_trajectory\_literal，完整展开陈述见上一行及第4段 | NEEDS\_HUMAN |
 | 原文未显式量化的技术资格 | ≈严格化为固定t、扰动趋0的Frechet小o；沿用原文字面W。 | [EXTRA] |
 
 [EXTRA] ≈严格化为固定t、扰动趋0的Frechet小o；沿用原文字面W。
 
 ### 6. 审计结论
 
-错误取值点的导数通常与真实DF_t(ξ)不同，差额线性项不是小o。 原文与修正版独立保留；默认选项是工作版本，尚未获导师裁定。
+错误取值点的导数通常与真实DF\_t(ξ)不同，差额线性项不是小o。 原文与修正版独立保留；默认选项是工作版本，尚未获导师裁定。
 
-网站：原书疑误=NEEDS_HUMAN；原文忠实性单列；修正版=网站PASS；原文已形式化子句=网站PASS（限定范围）；原文已形式化子句=网站PASS（限定范围）；原文已形式化子句=网站PASS（限定范围）。
-固定t、ξ时以x→ξ的Fréchet小o严格化≈，扰动、基点、线性算子作用顺序均忠实。literal沿用错误取值点，不能成立。corrected改用DF_t(ξ)后正是HasFDerivAt的小o结论；只需每个F_t可微，故未要求真实流是合法推广，不是缺失的必要前提。未声称此结论关于t一致或对长时间有效。
+网站：原书疑误=NEEDS\_HUMAN；原文忠实性单列；修正版=网站PASS；原文已形式化子句=网站PASS（限定范围）；原文已形式化子句=网站PASS（限定范围）；原文已形式化子句=网站PASS（限定范围）。
+固定t、ξ时以x→ξ的Fréchet小o严格化≈，扰动、基点、线性算子作用顺序均忠实。literal沿用错误取值点，不能成立。corrected改用DF\_t(ξ)后正是HasFDerivAt的小o结论；只需每个F\_t可微，故未要求真实流是合法推广，不是缺失的必要前提。未声称此结论关于t一致或对长时间有效。
 
 ### 7. 状态与证明位置
 
 incomplete；已逐声明核验公理；含占位的声明仍未证明。
-位置：Blueprint/Ch01.lean:2557；MD.Ch01.nearby_trajectory_literal。
+位置：Blueprint/Ch01.lean:2557；MD.Ch01.nearby\_trajectory\_literal。
 
 ## 1. MD-1.7.2-SingularValues · definition · 印刷p.45 / PDFp.68
 
@@ -7085,7 +7597,12 @@ incomplete；已逐声明核验公理；含占位的声明仍未证明。
 ### 2. 原文陈述
 
 > The Lyapunov exponents $\lambda_1,\lambda_2,\ldots,\lambda_m$ are defined by
-> \[\lambda_i=\limsup_{t\to\infty}\frac1t\log\sigma_i(\boldsymbol W),\]
+
+$$
+\lambda_i=\limsup_{t\to\infty}\frac1t\log\sigma_i(\boldsymbol W),
+$$
+
+
 > where $\sigma_i$ represents the ith singular value of the given matrix (to maintain continuity, these should be ordered in some way, say largest to smallest).
 
 ### 3. 原文证明
@@ -7105,7 +7622,7 @@ def lyapunovExponent (σ : ℝ → ℝ) : EReal :=
 | 原文成分 | Lean对应 | 说明 |
 |---|---|---|
 | 原文对象、量词、前提与完整定义/结论（见第2段逐字引用） | MD.Ch01.lyapunovExponent；完整当前陈述及同组辅助定义见本条第4段 | 一致 |
-| \[\lambda_i=\limsup_{t\to\infty}\frac1t\log\sigma_i(\boldsymbol W),\] | MD.Ch01.lyapunovExponent，完整展开陈述见上一行及第4段 | 一致 |
+| $\lambda_i=\limsup_{t\to\infty}\frac1t\log\sigma_i(\boldsymbol W),$ | MD.Ch01.lyapunovExponent，完整展开陈述见上一行及第4段 | 一致 |
 | limsup与有序奇异值 | Filter.limsup ((Real.log (σ t)/t : ℝ) : EReal) atTop；σ为singularValues关系的第i分量 | 一致 |
 | 原文未显式量化的技术资格 | 扩展实数EReal允许±∞，原文未保证极限有限；σ(t)>0在可逆流Jacobian背景，避免log0。 | [EXTRA] |
 
