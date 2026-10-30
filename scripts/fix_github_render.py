@@ -1,5 +1,5 @@
 """Reversible GFM math conversion and section-preserving blueprint partitioning."""
-import argparse, hashlib, json, re, subprocess, tempfile
+import argparse, hashlib, json, re, subprocess, tempfile, posixpath
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -81,14 +81,29 @@ def stage(n):
                 current+=section
             if current:groups.append(current)
             names=[f'docs/review/blueprint/{p.name[:4]}/part{i+1:02}.zh-CN.md' for i in range(len(groups))]
-            navs=[];index='# '+p.name[:4]+' BLUEPRINT 分部目录\n\n'
+            newline='\r\n' if '\r\n' in old else '\n'
+            navs=[];index='# '+p.name[:4]+' BLUEPRINT 分部目录'+newline*2
             for i,(name,body) in enumerate(zip(names,groups)):
                 nav=('['+'上一部分](part%02d.zh-CN.md)'%i if i else '上一部分：无')+' / [目录](../../'+p.name+') / '+('[下一部分](part%02d.zh-CN.md)'%(i+2) if i+1<len(groups) else '下一部分：无')+'\n\n'
                 write(ROOT/name,nav+body);navs.append(nav);files.append(name)
                 titles=re.findall(r'^## (.+)',body,re.M)
-                index+='- [第%d部分](blueprint/%s/part%02d.zh-CN.md)：%s\n'%(i+1,p.name[:4],i+1,'；'.join(titles))
+                index+='- [第%d部分](blueprint/%s/part%02d.zh-CN.md)：%s'%(i+1,p.name[:4],i+1,'；'.join(titles))+newline
             write(p,index);files.append(rel);partitions[rel]=dict(parts=names,navs=navs,original=old,index=index)
     ledger['stages'].append(dict(stage=n,changes=entries,files=sorted(set(files)),partitions=partitions))
+    if n==2:
+        link_changes=[];link_files=[]
+        for rel,v in partitions.items():
+            for part,nav in zip(v['parts'],v['navs']):
+                old=read(ROOT/part)
+                def move(m):
+                    href=m[1]
+                    if href.startswith(('http:','https:','#','/','mailto:')):return m[0]
+                    path,sep,anchor=href.partition('#')
+                    target=posixpath.normpath(posixpath.join(posixpath.dirname(rel),path))
+                    return ']('+posixpath.relpath(target,posixpath.dirname(part))+(sep+anchor if sep else '')+')'
+                new=nav+re.sub(r'\]\(([^)]+)\)',move,old[len(nav):])
+                if old!=new:record_change(link_changes,part,old,new);write(ROOT/part,new);link_files.append(part)
+        ledger['stages'].append(dict(stage=n,changes=link_changes,files=link_files,partitions={}))
     write(ledger_path,json.dumps(ledger,ensure_ascii=False,indent=2)+'\n')
     verify(ledger)
     print(json.dumps(dict(stage=n,files=len(set(files)),replacements=len(entries)),ensure_ascii=False))
