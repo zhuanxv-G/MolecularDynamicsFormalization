@@ -21,7 +21,7 @@ $$
 $$
 
 
-> is an ellipse with major and minor axes aligned to the coordinate axes. If $\epsilon$ is a small value, then
+> is an ellipse with major and minor axes aligned to the coordinate axes. If $`\epsilon`$ is a small value, then
 
 $$
 \frac{x^2}{a^2}+\frac{y^2}{b^2}+\epsilon xy=1
@@ -47,7 +47,7 @@ $$
 - 印刷页 / PDF页：101 / 123。
 - 原文引文（逐字）：
 
-> The Taylor series expansion of $\phi(\boldsymbol z(t))$ along a solution of the differential equation can therefore be written as
+> The Taylor series expansion of $`\phi(\boldsymbol z(t))`$ along a solution of the differential equation can therefore be written as
 
 $$
 \phi(\boldsymbol z(t))=\phi(\boldsymbol z(0))+t(\mathcal L_f\phi)(\boldsymbol z(0))+\frac{t^2}{2}(\mathcal L_f^2\phi)(\boldsymbol z(0))+\cdots.
@@ -72,7 +72,7 @@ $$
 - 印刷页 / PDF页：101 / 123。
 - 原文引文（逐字）：
 
-> This gives a concise formula for the evolution of any function of the phase variables, including, in particular, any solution component $z_i$. Thus the flow map of the system can be represented by $\exp(t\mathcal L_f)$. When one writes $\mathcal F_t=\exp(t\mathcal L_f)$, what is actually meant is that the individual components satisfy
+> This gives a concise formula for the evolution of any function of the phase variables, including, in particular, any solution component $`z_i`$. Thus the flow map of the system can be represented by $`\exp(t\mathcal L_f)`$. When one writes $`\mathcal F_t=\exp(t\mathcal L_f)`$, what is actually meant is that the individual components satisfy
 
 $$
 z_i(t,\boldsymbol\zeta)=[\mathcal F_t(\boldsymbol\zeta)]_i=\left.(\exp(t\mathcal L_f)z_i)\right|_{\boldsymbol z=\boldsymbol\zeta}.
@@ -104,14 +104,14 @@ e^{hA}e^{hB}=e^{h(A+B+hR)},
 $$
 
 
-> for some operator $R$. Expanding out the right hand side gives
+> for some operator $`R`$. Expanding out the right hand side gives
 
 $$
 \begin{aligned}e^{h(A+B+hR)}&=\mathrm{Id}+h(A+B+hR)+\frac{h^2}{2}(A+B+hR)^2+\cdots\\ &=\mathrm{Id}+hA+hB+h^2R+\frac{h^2}{2}\bigl(A^2+AB+BA+B^2+h^2R^2+h(A+B)R+hR(A+B)\bigr)+\cdots.\end{aligned}
 $$
 
 
-> Comparing this to our expansion for $e^{hA}e^{hB}$, for agreement to $O(h^2)$ we must have
+> Comparing this to our expansion for $`e^{hA}e^{hB}`$, for agreement to $`O(h^2)`$ we must have
 
 $$
 \frac12(2AB+A^2+B^2)=R+\frac12(A^2+AB+BA+B^2)=O(h),
@@ -191,7 +191,7 @@ $$
 - 印刷页 / PDF页：107 / 129。
 - 原文引文（逐字）：
 
-> In general for the Verlet method applied to Hamiltonians of the form $H(q,p)=T(p)+U(q)$, the BCH lemma gives
+> In general for the Verlet method applied to Hamiltonians of the form $`H(q,p)=T(p)+U(q)`$, the BCH lemma gives
 
 $$
 \begin{aligned}\widetilde H_h={}&T+U+\frac{h^2}{12}\left(\{T,\{T,U\}\}-\frac12\{U,\{U,T\}\}\right)\\ &+\frac{h^4}{120}\left(-\frac16\{T,\{T,\{T,\{T,U\}\}\}\}+\frac13\{U,\{T,\{T,\{T,U\}\}\}\}-\frac14\{U,\{U,\{T,\{T,U\}\}\}\}+\{T,\{T,\{U,\{U,T\}\}\}\}\right)+O(h^6).\end{aligned}
@@ -213,7 +213,7 @@ $$
 - 印刷页 / PDF页：107 / 129。
 - 原文引文（逐字）：
 
-> In general for the Verlet method applied to Hamiltonians of the form $H(q,p)=T(p)+U(q)$, the BCH lemma gives
+> In general for the Verlet method applied to Hamiltonians of the form $`H(q,p)=T(p)+U(q)`$, the BCH lemma gives
 
 - 问题所在：C：verletModifiedMatching量化正质量m、全域C∞的U及紧B；K以二次T和位置U代入，G是先半kick、全drift、半kick，matchesHamiltonian(...,5)为O(h⁶)，与更强的正确截断阶相容。general则量化任意全域C∞ T/U、开放D、紧B⊆D、η及两条D内真实子流；结论含K4截断匹配O(h⁷)、存在全套D上C∞ Hj、H0/H2/H4精确值、所有奇次全域为零、每个k≥6的截断匹配O(h^(k+1))。这些量词和余项阶已完整保留，负号和次序也正确；但[EXTRA]把二次动能式提升到任意T，所固定H4有具体反例，故不能批准general。机械版本单独在签名语义上通过；本条总裁定依原书疑误规则NEEDS\_HUMAN。 本审校只读核对任务中给出的声明及项目定义，不编译、不补证明；sorry不作为FAIL理由。 网站原文审校另记：A：所引引导句忠实；完整展示式按context由第6条提供，未在此改动。C：机械特例和一般可分离版本须分别判断。前者p=5是较弱但合理的端点O(h⁶)要求；后者p=6及Hj4约束对任意光滑T不成立，问题源自印刷式的一般性。
 - 反例或理由：取n=1，T(p)=p^4/4，U(q)=q^2/2，D=ℝ²，B={(q,p)=(1,0)}。两个子流全局光滑：Φ\_t(q,p)=(q+t p³,p)，Ψ\_t(q,p)=(q,p−tq)，满足任意η>0的actualFlow。印刷有限K为p⁴/4+q²/2+h²(p⁶/12−q²p²/8)+h⁴(p⁸/20−q²p⁴/16)。kick-drift-kick的端点为q=1−h⁴/8，p=−h+h⁵/16。K\_h的真实时间h流在同一初值的p分量为−h+11h⁵/120+O(h⁶)：沿0≤t≤h有q(t)=1−t⁴/4+h²t²/8+O(h⁶)，故ṗ=−1+t⁴/4+h²t²/8+O(h⁶)，积分得到上述系数。数值端点减真实端点的p分量=−7h⁵/240+O(h⁶)，不是O(h⁷)。这是对所写一般光滑可分离T/U的具体反例；不是对正质量二次动能机械特例的反例。
@@ -232,14 +232,14 @@ $$
 - 印刷页 / PDF页：108 / 130。
 - 原文引文（逐字）：
 
-> Multiplying by the same expansion using a different time step $s$, we have
+> Multiplying by the same expansion using a different time step $`s`$, we have
 
 $$
 \exp(\tfrac s2X)\exp(sY)\exp(\tfrac s2X)\exp(\tfrac t2X)\exp(tY)\exp(\tfrac t2X)=\exp(sZ_s)\exp(tZ_t).\tag{3.4}
 $$
 
 
-> But we know that $Z_t$ commutes with $Z_s$, giving
+> But we know that $`Z_t`$ commutes with $`Z_s`$, giving
 
 $$
 \begin{aligned}\exp(sZ_s)\exp(tZ_t)&=\exp(sZ_s+tZ_t)\\ &=\exp((s+t)\widetilde Z_{[1]}+(s^2+t^2)\widetilde Z_{[2]}+(s^3+t^3)\widetilde Z_{[3]}+(s^4+t^4)\widetilde Z_{[4]}+\cdots).\end{aligned}\tag{3.5}
@@ -261,8 +261,8 @@ $$
 - 印刷页 / PDF页：107–108 / 129–130。
 - 原文引文（逐字）：
 
-> The extra power of $h$ in the leading perturbation reflects the fact that this method is 2nd order accurate, rather than first order, as Symplectic Euler. Note that only even order terms $(h^2,h^4,\ldots)$ appear in the perturbative expansion; this is a consequence of the symmetry of the method.
-> Setting $s=-t$, the left hand side of (3.4) collapses to the identity. Hence the surviving even-powered terms in the expansion on the right hand side of (3.5) must be zero. If the even order terms vanish, then the effect of composing linear operators symmetrically is to keep only odd order terms in the exponent, giving the symmetric BCH formula
+> The extra power of $`h`$ in the leading perturbation reflects the fact that this method is 2nd order accurate, rather than first order, as Symplectic Euler. Note that only even order terms $`(h^2,h^4,\ldots)`$ appear in the perturbative expansion; this is a consequence of the symmetry of the method.
+> Setting $`s=-t`$, the left hand side of (3.4) collapses to the identity. Hence the surviving even-powered terms in the expansion on the right hand side of (3.5) must be zero. If the even order terms vanish, then the effect of composing linear operators symmetrically is to keep only odd order terms in the exponent, giving the symmetric BCH formula
 
 $$
 \exp(\tfrac t2X)\exp(tY)\exp(\tfrac t2X)=\exp(t(X+Y)+t^3\widetilde Z_{[3]}+\cdots).\tag{3.6}
@@ -287,7 +287,7 @@ $$
 - 印刷页 / PDF页：113 / 135。
 - 原文引文（逐字）：
 
-> and inserting these into $H$ yields, after expanding in a Taylor series:
+> and inserting these into $`H`$ yields, after expanding in a Taylor series:
 
 $$
 \begin{aligned}H(\widetilde q,\widetilde p)&=T+\frac{h^2}{12}\left(p^TM^{-1}U''M^{-1}p-\nabla U^TM^{-1}\nabla U\right)+O(h^4)\\ &=\widetilde H_h(q,p)+O(h^4).\end{aligned}
@@ -312,7 +312,7 @@ $$
 - 印刷页 / PDF页：113 / 135。
 - 原文引文（逐字）：
 
-> Since $\widetilde H_h$ is assumed to be constant along the numerical solution, the coordinate transformations have the result of giving an effective order of four for the energy. It turns out that the Takahashi-Imada method is, more generally, an effective 4th order scheme, i.e. for arbitrary quantities, not just the energy [166].
+> Since $`\widetilde H_h`$ is assumed to be constant along the numerical solution, the coordinate transformations have the result of giving an effective order of four for the energy. It turns out that the Takahashi-Imada method is, more generally, an effective 4th order scheme, i.e. for arbitrary quantities, not just the energy [166].
 
 - 问题所在：所有相关定义均已找到并展开：solution 要求γ在[0,τ]每点满足实际HasDerivWithinAt；mechanicalField(m,F)(q,p)=(M⁻¹p,F(q))；verlet 的q新值为q+hM⁻¹p+h²/2 M⁻¹F(q)，p新值为p+h/2(F(q)+F(q新))，此处F=−grad(takahashiPotential m U h)。textbookProcessedMethod χ B h=(χ h)⁻¹∘B\_h∘χ h，oneStepIterate=(G\_h)^[k]，oneStepMaxError=max_{0≤k≤ν}‖G\_h^[k](γ(0))−γ(kh)‖。所以它确实控制有限时间的全部网格轨迹误差，不只是能量或一步误差。量词∃χ在∀γ,τ之前要求同一族全空间homeomorphism服务所有轨迹，并且χ完全没有近恒等、h光滑性、式(3.9)的二阶系数或局部作用域要求。PDF134–135所说的是给定坐标变换带来的有效阶；该签名无法识别那个处理器，并额外要求全空间双向连续的精确逆。全局homeomorphism是存在结论的强化，并非一个已给出的额外前提，不能仅标[EXTRA]就证明合理。正质量、全域C∞、连续有限时间解是合理的充分正则化；全域正则性比局部需要强。给定这些确切缺失，判FAIL，无须以定义缺失或导师判断为由判NEEDS\_HUMAN。χ⁻¹∘G∘χ本身不是方向错误：若P是原文从原坐标到带波浪号坐标的后处理，则应取χ=P⁻¹，得到P∘G∘P⁻¹。原文关于能量的解释显式以影子能量沿数值解恒定为假定，该签名也未单列这项条件式能量结论。声明含sorry；未声称已否证存在任意全局χ的四阶定理。 网站原文审校另记：
 - 反例或理由：缺失条款：存在任意χ的声明不要求原文指定处理器或其二阶展开，且把局部坐标展开提升为全空间homeomorphism。具体说明此提升不能直接由式(3.9)给出：n=1,m=1,U(q)=q⁴，则P\_h第一分量q−h²q³/3；任意h≠0，(q,p)=(0,0)、(√3/|h|,0)、(−√3/|h|,0)均映到(0,0)，所以式(3.9)自身不是全局homeomorphism。该例只否定将显式P\_h直接认作全局可逆映射，不是否定存在另一族全局χ的命题。
@@ -331,14 +331,14 @@ $$
 - 印刷页 / PDF页：114–116 / 136–138。
 - 原文引文（逐字）：
 
-> Theorem 3.1. Suppose the Hamiltonian $H$ and modified Hamiltonian $\bar H_k$ are smooth functions globally defined on a convex, compact subset $\mathcal B$ of $\mathbb R^{2N_c}$ and suppose that the exact solution and numerical approximations (for $h$ sufficiently small) are confined to $\mathcal B$. Then, we have asymptotically for $h\to0$ that
+> Theorem 3.1. Suppose the Hamiltonian $`H`$ and modified Hamiltonian $`\bar H_k`$ are smooth functions globally defined on a convex, compact subset $`\mathcal B`$ of $`\mathbb R^{2N_c}`$ and suppose that the exact solution and numerical approximations (for $`h`$ sufficiently small) are confined to $`\mathcal B`$. Then, we have asymptotically for $`h\to0`$ that
 
 $$
 H(\boldsymbol z_n)=H(\boldsymbol z_0)+O(h^r),
 $$
 
 
-> for $n=0,1,\ldots,\nu$ where $\tau=\nu h=O(h^{-k+r})$.
+> for $`n=0,1,\ldots,\nu`$ where $`\tau=\nu h=O(h^{-k+r})`$.
 
 - 问题所在：Lean中n,r,k、实Hamiltonian及系数、开放凸D、紧凸B⊆D、r>0、r≤k和C∞条件均显式。finiteMatching给真实截断ODE、留D及统一A h^(k+1)端点缺陷；它不是能量结论。量词∀T>0后取M,δ，与ν及z₀无关；νh·h^(k−r)≤T正是时间O(h^(−k+r))。数值轨道直到ν留B足够，截断短轨可在B的紧邻域控制，无须全部留B。给定匹配后的能量签名数学上合理，但原书证明有记号及严格不等号疑误，须人工确认其解释；构造存在性不由本声明证明。 网站原文审校另记：原书115页在同一有限截断的守恒/望远镜推导中混用bar H\_k与tilde H\_k；忠实保留原印，但只有明确二者指同一截断时方能按Lean统一K解释。；原证明先为H取L，随后对bar H\_k沿用L，且由||η||≤C h^(k+1)写成Lνh^(k+1)省略C。可重选统一截断Lipschitz常数并吸收C，但原文未说明；Lean显式LA版本合理，原印不静默勘误。；proof\_latex首个Lipschitz式写≤，附件第5页/原页114实际印<；u=v时严格不等式不成立，必须忠实还原并标记原书疑误。；proof\_latex望远镜第三行最后一项写tilde H\_k，附件第6页/原页115该处实际是bar H\_k；第二行该处为tilde，不能一并改写。
 - 反例或理由：取原印Lipschitz式中u=v∈B，则0<0为假；此反例针对原书严格不等号，不针对Lean的能量估计。
@@ -354,7 +354,7 @@ $$
 - 印刷页 / PDF页：115 / 137。
 - 原文引文（逐字）：
 
-> Since $\mathcal F_h^{(k)}$ preserves its Hamiltonian (3.11), we have
+> Since $`\mathcal F_h^{(k)}`$ preserves its Hamiltonian (3.11), we have
 
 $$
 \bar H_k(\mathcal F_h^{(k)}(\boldsymbol z_n))=\widetilde H_k(\boldsymbol z_n).
@@ -445,14 +445,14 @@ $$
 - 印刷页 / PDF页：116 / 138。
 - 原文引文（逐字）：
 
-> It is possible to prove (see discussions in [164, 227] for more detail), that for many standard classes of numerical methods, there are real, positive constants $C,D$ such that
+> It is possible to prove (see discussions in [164, 227] for more detail), that for many standard classes of numerical methods, there are real, positive constants $`C,D`$ such that
 
 $$
 \|\mathcal G_h(\zeta)-\mathcal F_h^{(k)}(\zeta)\|\le Ch[D(k+1)h]^{k+1},
 $$
 
 
-> giving a precise bound on the magnitude of the difference between the time $h$ evolution under the truncated perturbed Hamiltonian and the numerical method.
+> giving a precise bound on the magnitude of the difference between the time $`h`$ evolution under the truncated perturbed Hamiltonian and the numerical method.
 
 - 问题所在：已展开Ch03\_deps.txt：SymplecticCoordinates n=(Fin n⊕Fin n)→ℝ；smoothSymplecticData要求r>0、开放凸D、紧凸B⊆D、H光滑、G(0)=id、联合光滑、Jacobian满足AᵀJA=J、B上真实H流以及局部O(|h|^(r+1))阶。Jacobian是实际fderiv矩阵。truncatedFlow要求Γ(0)=z及[0,h]上的实际ODE；Hamiltonian为H+Σ_{j=r}^k h^j Hj。解析假设、统一C/A/δ先于k、真实流估计均明确，且加入A(k+1)h≤1并另给指数截断。未找到缺失定义；原文many standard classes未界定适用类，需数学判断这些解析及域条件是否足以支持此全域解析系数结论；不能仅据名字或sorry判PASS。analyticBEA含sorry，与此语义判定分开。 网站原文审校另记：
 - 反例或理由：未单列反例；问题在原文省略资格、术语、证明步骤或覆盖范围。请结合原句及下列修正核查。
@@ -471,14 +471,14 @@ $$
 - 印刷页 / PDF页：116 / 138。
 - 原文引文（逐字）：
 
-> If $h$ is small, then for $k$ sufficiently small the quantity in brackets is less than one and the difference from the truncated approximation decreases in magnitude with increasing $k$. As soon as $k$ satisfies
+> If $`h`$ is small, then for $`k`$ sufficiently small the quantity in brackets is less than one and the difference from the truncated approximation decreases in magnitude with increasing $`k`$. As soon as $`k`$ satisfies
 
 $$
 k+1>\frac1{Dh}
 $$
 
 
-> the power grows monotonically without bound. We can minimize the difference between $\mathcal G_h$ and $\mathcal F_h^{(k)}$ by choosing
+> the power grows monotonically without bound. We can minimize the difference between $`\mathcal G_h`$ and $`\mathcal F_h^{(k)}`$ by choosing
 
 $$
 k=\frac1{Dh\mathrm e}-1,
@@ -510,7 +510,7 @@ $$
 - 印刷页 / PDF页：117 / 139。
 - 原文引文（逐字）：
 
-> The modified energy for the Verlet method for a single degree of freedom system with energy $H=p^2/2+U(q)$ is
+> The modified energy for the Verlet method for a single degree of freedom system with energy $`H=p^2/2+U(q)`$ is
 
 $$
 \widetilde H_h=H+\frac{h^2}{24}(2p^{T}U''p-(U')^2) +h^4\left(\frac1{720}p^4U''''-\frac1{120}p^2U'U'''-\frac1{240}(U')^2U''-\frac1{60}p^2((U'')^2+U'U''')\right)+O(h^6).
@@ -535,7 +535,7 @@ $$
 - 印刷页 / PDF页：117 / 139。
 - 原文引文（逐字）：
 
-> Suppose that, somehow, $H$ were exactly conserved along the numerical solution, so
+> Suppose that, somehow, $`H`$ were exactly conserved along the numerical solution, so
 
 $$
 \dot H=0\Rightarrow\{H,\widetilde H_h\}=0.
@@ -579,7 +579,7 @@ $$
 - 印刷页 / PDF页：123 / 145。
 - 原文引文（逐字）：
 
-> In the case of Euler's method applied to the harmonic oscillator, the error in energy grows with time and without bound. In the case of Störmer-Verlet, the energy fluctuates but remains bounded for all time and at its worst is of size proportional to $h^2$, a numerical observation that is supported by the existence of the modified Hamiltonian.
+> In the case of Euler's method applied to the harmonic oscillator, the error in energy grows with time and without bound. In the case of Störmer-Verlet, the energy fluctuates but remains bounded for all time and at its worst is of size proportional to $`h^2`$, a numerical observation that is supported by the existence of the modified Hamiltonian.
 
 - 问题所在：当前verletOscillatorEnergy是正确的受限版本：一自由度、单位质量、Ω>0，先固定0<ρ<2和z，再选C≥0，随后对所有|hΩ|≤ρ及所有ν∈ℕ统一控制真实机械能差≤Ch²。常数不依赖h或ν，符合稳定范围内全时间O(h²)能量误差；h=0和零初值也不成问题。展开verlet、mechanicalEnergy和oneStepIterate后对象一致。但原句无条件的全时间断言在稳定阈值及不稳定步长下失败；[EXTRA]确实限制了适用范围，不能当作无条件原句已核验。另原句Euler无界分句在当前给出的全部声明中没有对应结论。context\_notation虽说另属EulerGrowth，本任务未提供它，且statement\_scope仍称覆盖所引原句；该分流及原书省略资格需人工确认。NEEDS\_HUMAN不否定当前受限Verlet上界的数学正确性。 网站原文审校另记：code：SOURCE\_STABILITY\_QUALIFICATION\_MISSING；field：statement\_latex / issues；detail：原书省略稳定步长范围；当前显式[EXTRA]是合理受限修复，但原句应保留疑误标记。；code：SOURCE\_EULER\_DEGENERATE\_CASES；field：statement\_latex / issues；detail：Euler能量无界还需要非零步长及非零初始能量；零解不能作无界增长解释。；code：C\_SCOPE\_MAPPING\_UNVERIFIED；field：statement\_scope / context\_notation；detail：本条完整摘录仅给Verlet上界，未给EulerGrowth声明；不能据旧注释认定Euler分句已核验。
 - 反例或理由：反例针对原书未加限定的断言，不满足当前Lean的ρ<2前提：取Ω=1、h=2、z₀=(q₀,p₀)=(0,1)。velocity Verlet矩阵为[[-1,2],[0,−1]]，故qν=2ν(−1)^(ν−1)、pν=(−1)^ν，Hν=(4ν²+1)/2无界。Euler的“无界”分句另有退化例z₀=0或h=0，此时能量恒定。
@@ -598,7 +598,7 @@ $$
 - 印刷页 / PDF页：129 / 151。
 - 原文引文（逐字）：
 
-> From this we see that if we start from a point $z_0$ and integrate forward in time (i.e apply $\mathcal F_t$) then apply the involution $R$, we get the exact same result as if we start from $\widetilde z(0)=Rz_0$ and integrate backward in time (i.e apply $\mathcal F_{-t}$). In sum, since $z_0$ is an arbitrary point,
+> From this we see that if we start from a point $`z_0`$ and integrate forward in time (i.e apply $`\mathcal F_t`$) then apply the involution $`R`$, we get the exact same result as if we start from $`\widetilde z(0)=Rz_0`$ and integrate backward in time (i.e apply $`\mathcal F_{-t}`$). In sum, since $`z_0`$ is an arbitrary point,
 
 $$
 \mathcal F_{-t}(Rz)=R\mathcal F_t(z).
@@ -620,7 +620,7 @@ $$
 - 印刷页 / PDF页：129 / 151。
 - 原文引文（逐字）：
 
-> For the flow map, $\mathcal F_{-t}=\mathcal F_t^{-1}$ so we can recast the identity as
+> For the flow map, $`\mathcal F_{-t}=\mathcal F_t^{-1}`$ so we can recast the identity as
 
 $$
 R\circ\mathcal F_t\circ R\circ\mathcal F_t=\mathrm{Id},\tag{3.14}
@@ -642,14 +642,14 @@ $$
 - 印刷页 / PDF页：129 / 151。
 - 原文引文（逐字）：
 
-> For the system $\mathrm dz/\mathrm dt=f(\boldsymbol z)$, a coordinate transformation $\boldsymbol z\mapsto\widetilde{\boldsymbol z}=R\boldsymbol z$ results in
+> For the system $`\mathrm dz/\mathrm dt=f(\boldsymbol z)`$, a coordinate transformation $`\boldsymbol z\mapsto\widetilde{\boldsymbol z}=R\boldsymbol z`$ results in
 
 $$
 \frac{\mathrm d\widetilde{\boldsymbol z}}{\mathrm dt}=R\frac{\mathrm d\boldsymbol z}{\mathrm dt}=Rf(R^{-1}\widetilde{\boldsymbol z})=Rf(R\widetilde{\boldsymbol z}),
 $$
 
 
-> since $R^{-1}=R$. A change of time $t\mapsto\tau=-t$ results in
+> since $`R^{-1}=R`$. A change of time $`t\mapsto\tau=-t`$ results in
 
 $$
 \frac{\mathrm d\boldsymbol z}{\mathrm d\tau}=\frac{\mathrm dt}{\mathrm d\tau}\frac{\mathrm d\boldsymbol z}{\mathrm dt}=-f(\boldsymbol z).
@@ -671,7 +671,7 @@ $$
 - 印刷页 / PDF页：129 / 151。
 - 原文引文（逐字）：
 
-> In other words, for a reversible vector field, the coordinate transformation $\boldsymbol z\mapsto R\boldsymbol z$ is equivalent to the change of time $t\mapsto-t$.
+> In other words, for a reversible vector field, the coordinate transformation $`\boldsymbol z\mapsto R\boldsymbol z`$ is equivalent to the change of time $`t\mapsto-t`$.
 
 - 问题所在：reversedTrajectory量化任意n、连续线性R、f和全实时间解γ；要求R²=id，另明确加入全部基矩阵元素R\_ij=R\_ji的对称资格，以及f(Rz)=−Rf(z)。结论Rγ(−t)仍满足原f的ODE；由链式法则导数=−Rf(γ(−t))=f(Rγ(−t))，数学正确。坐标对称资格不是隐藏的，它恰使Rᵀ=R=R⁻¹，从而可与原印反转定义兼容；这是一条合理但严格受限的修复，并未证明原书对任意非对称involution的宽泛句子。PASS针对已显式标注[EXTRA]的受限当前签名，原书一般性问题保留NEEDS\_HUMAN。 网站原文审校另记：code：SOURCE\_REVERSAL\_DEFINITION\_CONFLICT；field：statement\_latex / issues；detail：附件中印刷页128把一般线性involution的反转写成 f̃(z)=−Rᵀf(Rz)，而印刷页129的坐标链式法则及流反演使用R。仅R²=I不能推出Rᵀ=R。应保留这个原书定义与后续推导之间的疑误，交人工确认；不得在原文中静默删去转置。
 - 反例或理由：这是原书一般定义与后续推导的反例，不是当前采用经典反转前提的Lean定理的反例：令n=2，R=[[1,1],[0,−1]]，f(z)=(0,1)，γ(t)=(0,t)，Φ(t,z)=z+(0,t)。R²=I，且−Rᵀf(Rz)=(0,1)=f(z)，符合p128字面定义；但−Rf(z)=(−1,1)≠f(Rz)。因此d/dt[Rγ(−t)]=(−1,1)≠f(Rγ(−t))。在t=1,z=0，Φ(−1,Rz)=(0,−1)，RΦ(1,z)=(1,−1)；并有RΦ(t,RΦ(t,z))=z+(t,0)，不等于z。
@@ -697,14 +697,14 @@ $$
 $$
 
 
-> be a given ordinary differential equation. The transformation $\widetilde{\boldsymbol z}=A\boldsymbol z$, where $A$ is a non-singular square matrix, results in the modified differential equation
+> be a given ordinary differential equation. The transformation $`\widetilde{\boldsymbol z}=A\boldsymbol z`$, where $`A`$ is a non-singular square matrix, results in the modified differential equation
 
 $$
 \frac{\mathrm d\boldsymbol z}{\mathrm dt}=Af(A^{-1}\widetilde{\boldsymbol z}).\tag{3.17}
 $$
 
 
-> Let $z_0,z_1,\ldots$ be a sequence of points obtained by application of the numerical method $\mathcal G_h$ to (3.16). If the same method, when applied to (3.17) produces the set of points $Az_0,Az_1,\ldots$, then we say that the numerical method is invariant with respect to the transformation $\widetilde{\boldsymbol z}=Az$. An affine invariant method is one which is invariant under any such transformation.
+> Let $`z_0,z_1,\ldots`$ be a sequence of points obtained by application of the numerical method $`\mathcal G_h`$ to (3.16). If the same method, when applied to (3.17) produces the set of points $`Az_0,Az_1,\ldots`$, then we say that the numerical method is invariant with respect to the transformation $`\widetilde{\boldsymbol z}=Az`$. An affine invariant method is one which is invariant under any such transformation.
 
 - 问题所在：affineInvariant量化固定有限维实空间上的全部连续线性同构A、向量场f、实步长h和初值z；transportedField A f(z)=A(f(A⁻¹z))。完整关系G_{A f A⁻¹}(h,Az)=A(G\_f(h,z))正是变换初值后每一步等变，归纳即得所述序列。≃L准确表示有限维非奇异方阵；未偷加平移，也未把A限制成正交矩阵。PASS针对上下文已明示的变换坐标语义及当前方法定义；原印(3.17)左端记号疑误在json\_review保留NEEDS\_HUMAN。 网站原文审校另记：code：SOURCE\_TRANSFORMED\_COORDINATE\_TYPO；field：statement\_latex / issues；detail：(3.17)左端原印缺少z的波浪号；按变换坐标解释Lean定义合理，但原文不得静默修订。
 - 反例或理由：code：SOURCE\_TRANSFORMED\_COORDINATE\_TYPO；field：statement\_latex / issues；detail：(3.17)左端原印缺少z的波浪号；按变换坐标解释Lean定义合理，但原文不得静默修订。
@@ -723,7 +723,7 @@ $$
 - 印刷页 / PDF页：130 / 152。
 - 原文引文（逐字）：
 
-> If a differential equation is time-reversible with respect to the involution $R$, and we apply a method which is affine invariant and symmetric, then the method will be time-reversible (3.15).
+> If a differential equation is time-reversible with respect to the involution $`R`$, and we apply a method which is affine invariant and symmetric, then the method will be time-reversible (3.15).
 
 - 问题所在：symmetricAffineReversible的全部条件已核对：R为连续线性同构且平方为id；f有经典R反转；方法对全部线性同构等变；另只对本固定f显式要求G_{−f}(h)=G\_f(−h)；并要求所有h的反步复合G\_f(−h)∘G\_f(h)=id。因为量化所有h，最后一个条件同时给另一方向的逆关系，不必再把G编码为Perm。对R使用affineInvariant，利用transportedField R f=−f及变号相容性，得到R∘G\_f(h)∘R=G\_f(−h)，再复合G\_f(h)即为reversibleMethod。完整结论∀h,z,R(G\_f(h,R(G\_f(h,z))))=z与(3.15)一致；不存在把所需结论作为假设的问题。[EXTRA]变号相容性是实质新增且已明示的合理修复，不能把当前受限正确版本当作原句对所有抽象方法已成立。 网站原文审校另记：code：SOURCE\_METHOD\_CLASS\_QUALIFICATION\_MISSING；field：statement\_latex / issues；detail：仅线性等变和对称不足以对任意抽象G推出R可逆；原书省略的方法类或变号相容性资格需要人工确认，当前已作为[EXTRA]加入。
 - 反例或理由：反例针对省略相容性的原文抽象蕴含，不满足当前Lean新增相容性：在ℝ上令R=id、f=0，定义所有g的G\_g(h,z)=exp(h³)z。此族对全部非奇异线性变换等变，各G(−h)是G(h)的逆，且G(0)=id（对f=0亦有正确一阶一致性）。但是R∘G\_f(h)∘R∘G\_f(h)(z)=exp(2h³)z，一般不等于z；G_{−f}(h)=G\_f(h)也不等于G\_f(−h)。所以原句按已给抽象定义需要附加资格；此例不声称满足一个未在本任务中规定的更强数值方法类。
@@ -793,7 +793,7 @@ $$
 - 印刷页 / PDF页：131–132 / 153–154。
 - 原文引文（逐字）：
 
-> Recall that a pair of maps $\Phi$ and $\Psi$ are said to be conjugate if there is a homomorphism $\chi$ such that
+> Recall that a pair of maps $`\Phi`$ and $`\Psi`$ are said to be conjugate if there is a homomorphism $`\chi`$ such that
 
 $$
 \Phi=\chi^{-1}\Psi\chi.
@@ -887,7 +887,7 @@ H_{\mathrm{h.s.}}=p^TM^{-1}p/2+U(q)+U_{\mathrm{h.s.}},
 $$
 
 
-> where $U_{\mathrm{h.s.}}$ is assumed to be infinite for overlapping configurations (some $\|q_i-q_j\|\le\sigma_i+\sigma_j$) and zero otherwise.
+> where $`U_{\mathrm{h.s.}}`$ is assumed to be infinite for overlapping configurations (some $`\|q_i-q_j\|\le\sigma_i+\sigma_j`$) and zero otherwise.
 
 - 问题所在：原印≤已目视确认。hardCorePotential以ENNReal表达不同粒子距离≤半径和则∞、否则0，字面忠实；hardSphereHamiltonianPrinted在同一判据下返回∞，否则正质量动能和任意实U，WithTop ℝ容许负有限势，完整H表达正确。contactAllowed辅助为闭允许域内0、外∞，对应严格重叠才惩罚的物理边界，明确分名，不能代替Printed。定义本身无签名错误；原书p132允许等号和p133将等号判∞的冲突必须保留人工裁定。 网站原文审校另记：code：SOURCE\_CONTACT\_BOUNDARY\_CONFLICT；detail：p132允许接触等号，p133原印≤又使接触势∞；两个版本均已忠实分开，原书边界疑点未解决。
 - 反例或理由：两球σ1=σ2=1/2，中心距离1：hardCoreDomain允许该构型，hardCorePotential及hardSphereHamiltonianPrinted却取∞；contactAllowed取0势。
@@ -906,8 +906,8 @@ $$
 - 印刷页 / PDF页：133–134 / 155–156。
 - 原文引文（逐字）：
 
-> Even with this symmetric form (“kick”, “drift”, “kick”) where “drift” now involves the solution of the system $H_{\mathrm{free}}$, it was shown in [184] that energy accumulates rapidly. Assuming a finite number of collisions on a fixed interval, the error behaves as $O(h)$. In long simulations the energy error grows without bound.
-> In general, because an error of size $O(h)$ occurs in each collision and there are a finite number of collisions in a fixed time interval, the total error is also $O(h)$, i.e. first order.
+> Even with this symmetric form (“kick”, “drift”, “kick”) where “drift” now involves the solution of the system $`H_{\mathrm{free}}`$, it was shown in [184] that energy accumulates rapidly. Assuming a finite number of collisions on a fixed interval, the error behaves as $`O(h)`$. In long simulations the energy error grows without bound.
+> In general, because an error of size $`O(h)`$ occurs in each collision and there are a finite number of collisions in a fixed time interval, the total error is also $`O(h)`$, i.e. first order.
 
 - 问题所在：已展开Q、Z(2816–2817)、grad(2932)、positiveMass(2948)、invMass(2840)、finiteCollisionTrajectory(4431–4441)、collisionalGlobalOrder(4460–4464)、admissibleCollisionState及freeCollisionFlow(4465–4472)。目标是经θ:ℝ≃oℝ进行O(h)时间移动后的全相空间网格误差，而原文以能量缺陷为论据，且明确包含长期能量误差无界；该结论子句完全未表示。更严重，finiteCollisionTrajectory只要求q在闭区间连续，p的ODE仅在内部非事件点成立，事件时只约束左右极限，不约束p(t)的取值；端点动量也无连续性要求。故它不能保证真实初始状态和右侧轨道一致，签名甚至在无碰撞时为假。有限横截性确有内积<0，单个光滑g则是比多硬球约束窄的模型；C∞可作为充分正则性，但非书中明确必需条件。freeCollisionFlow对每个τ只允许内部事件且要求全局有限碰撞，强于所称固定区间假设。sorry独立存在，不改变这些语义缺陷。 网站原文审校另记：
 - 反例或理由：n=1,m=1,U=0,g=1,τ=1,events=∅。令q(t)=0，p(0)=1，其余t的p(t)=0。finiteCollisionTrajectory全部成立。取真实自由流Gfree(t,(x,v))=(x+t v,v)，满足freeCollisionFlow。kick恒等，从(q(0),p(0))=(0,1)迭代ν步得到(1,1)，而θ(1)=1强迫比较(q(1),p(1))=(0,0)，误差≥1，不能≤C/ν。另U=0的真实硬球轨道能量严格守恒，说明原书长期无界不能理解为所有系统的全称命题。
@@ -948,9 +948,9 @@ $$
 - 原文引文（逐字）：
 
 > Collisional Verlet Algorithm (CVA) [Single Step]
-> [computes $h$ (the timestep) and $(Q,P)$ given a starting point $(q,p)$]
-> Calculate $\tau_c$ the time of next collision from the Verlet paths (quadratics) of (3.18) using collision conditions (3.19).
-> If $\tau_c<h_{\max}$, then
+> [computes $`h`$ (the timestep) and $`(Q,P)`$ given a starting point $`(q,p)`$]
+> Calculate $`\tau_c`$ the time of next collision from the Verlet paths (quadratics) of (3.18) using collision conditions (3.19).
+> If $`\tau_c\lt h_{\max}`$, then
 
 $$
 h:=\tau_c,\qquad(Q,P):=R_c\mathcal G_h^{\mathrm{Verlet}}(q,p)
@@ -982,7 +982,7 @@ $$
 - 印刷页 / PDF页：135 / 157。
 - 原文引文（逐字）：
 
-> A step can then be taken to the first point of subsequent collision, with positions updated using the quadratic and momenta adjusted according to the Verlet map combined with $R_c$. In this way, all steps taken are Verlet steps so the order of accuracy is two. Effectively, this is a Verlet method with variable timestep chosen to match collision times.
+> A step can then be taken to the first point of subsequent collision, with positions updated using the quadratic and momenta adjusted according to the Verlet map combined with $`R_c`$. In this way, all steps taken are Verlet steps so the order of accuracy is two. Effectively, this is a Verlet method with variable timestep chosen to match collision times.
 
 - 问题所在：已读本地 Ch03.lean:1445–1468 及依赖 MolecularDynamics/Chapter03/Statements.lean:4508–4530，并展开所有专用定义。Q n=Fin n→ℝ，Z n=Q n×Q n；positiveMass m 为 ∀i,0<m i；grad U q i=(fderiv ℝ U q)(Pi.single i 1)；invMass m v i=v i/m i；collisionQuadraticPath 与 verlet 如式(3.18)及完整速度 Verlet 更新。oneStepIterate G h z j=(G h)^[j]z（MolecularDynamics/Chapter02/OneStepConvergence.lean:1443–1444），所以这里迭代的 h 参数是固定外层 hmax，实际累计时间另由 times 的 min(tc,hmax) 递推。admissibleCollisionState（Statements.lean:4464–4465）为 g(q)>0 或 g(q)=0 且 ∑ grad g(q)_i p\_i/m\_i>0。finiteCollisionTrajectory（4431–4440）只要求 q 在闭区间连续、g(q)≥0、在开区间非事件处满足 Newton ODE，并在有限 events 的每个内部事件有接触、左右动量极限、负入射法向速度及弹性左右极限关系；它不规定 p 在端点的值／连续性，不规定事件处 p(t) 取哪侧，也没有“所有接触恰为 events”的双向资格。签名再要求每个 admissible 状态都有有限最小正二次路径根 tc，明确给出 Rc 的质量加权反射公式，并要求所有 h>0、所有状态满足分支关系。结论是存在统一 C,δ，在合格自适应网格上允许 θ:ℝ≃oℝ 的 O(hmax²) 时间对齐后，全相空间节点误差 O(hmax²)，且 θ 固定0和τ。定义全部已找到，不需要 NEEDS\_HUMAN。
 [EXTRA]正质量、光滑势／接触函数和有限非切向实际事件，是可用于限定二阶论断的合理资格，但数值根没有横截条件；所谓“有限横截隔离事件”只保证列出的实际 events，而不排除漏列接触。排除 tc=hmax 如实避开原书未反射边界，得到的是额外限定版本；时间对齐在结论中而非前提中，不能冒充原书明示的同时间二阶误差定义。要求对所有 admissible 状态必有有限未来根不必要且过强，排除了自由静止或永不相撞的合法状态，宜按有限窗口／可选接触表示。
@@ -1003,7 +1003,7 @@ $$
 - 印刷页 / PDF页：136 / 158。
 - 原文引文（逐字）：
 
-> This can be achieved in systems of spheres with pair potentials $\varphi_{ij}$ only by writing $\varphi_{ij}=\alpha_{ij}+\beta_{ij}$ where the derivative of the second term is chosen to vanish at the point of contact between the spheres, i.e. $\alpha'_{ij}(\sigma_i+\sigma_j)=0$.
+> This can be achieved in systems of spheres with pair potentials $`\varphi_{ij}`$ only by writing $`\varphi_{ij}=\alpha_{ij}+\beta_{ij}`$ where the derivative of the second term is chosen to vanish at the point of contact between the spheres, i.e. $`\alpha'_{ij}(\sigma_i+\sigma_j)=0`$.
 
 - 问题所在：Ch03.lean:1467–1468展开为对每个实数r有φ(r)=α(r)+β(r)，且deriv α contact=0；无其他封装定义。contact作为σ\_i+σ\_j的参数化是合理抽象，但定义只保留展示公式的α′条件，没有解决原文“second term”应指β而后句又让β负责kick的矛盾。[ERRATUM?]冲突经PDF确认成立；需数学判断究竟修改文字“second”为“first”，还是修改公式α′为β′，两者会产生不同算法。另需注意Lean的deriv是全函数，未可微处取0；原书谈导数的语义需适当可微条件。无[EXTRA]。这是定义而非含sorry的定理，签名问题独立于证明状态。所需定义均已找到，NEEDS\_HUMAN的原因仅为上述原书问题。 网站原文审校另记：
 - 反例或理由：未单列反例；问题在原文省略资格、术语、证明步骤或覆盖范围。请结合原句及下列修正核查。
@@ -1022,8 +1022,8 @@ $$
 - 印刷页 / PDF页：136 / 158。
 - 原文引文（逐字）：
 
-> The idea is to exploit the observation that impulsive forces (“kicks”) can be supplied without reducing the order of accuracy as long as these have a vanishing component in the direction of the collision vector $u_\perp$, that is if $F_\perp=-\nabla U(q_c)\cdot u_\perp=0$.
-> If this decomposition is used, then it is possible to build a 2nd order accurate hybrid method that uses only the first part $\alpha$ to define the quadratic Verlet paths for the collision detection scheme, whereas $\beta$ is introduced as a standard “kick” at collision points.
+> The idea is to exploit the observation that impulsive forces (“kicks”) can be supplied without reducing the order of accuracy as long as these have a vanishing component in the direction of the collision vector $`u_\perp`$, that is if $`F_\perp=-\nabla U(q_c)\cdot u_\perp=0`$.
+> If this decomposition is used, then it is possible to build a 2nd order accurate hybrid method that uses only the first part $`\alpha`$ to define the quadratic Verlet paths for the collision detection scheme, whereas $`\beta`$ is introduced as a standard “kick” at collision points.
 
 - 问题所在：依赖Ch03\_deps.txt已展开：ReviewDefinitions中的Q n=Fin n→ℝ，Z n=Q n×Q n，grad U q i=(fderiv ℝ U q)(Pi.single i 1)，invMass m v i=v\_i/m\_i，positiveMass为逐分量正质量；Statements中的finiteCollisionTrajectory要求q在闭区间连续、g(q)≥0、非事件开区间内q′=M⁻¹p及p′=F(q)，有限事件具有入射负法向速度、左右极限和弹性反射；但不约束p在0、τ或事件时刻的实际取值，也不要求端点动量连续。collisionalGlobalOrder展开为∃C>0、ν₀>0，对每个ν≥ν₀存在保序双射θ，固定0和τ且|θ(t)−t|≤C(τ/ν)^2，所有j≤ν的数值状态与(q,p)(θ(jτ/ν))误差≤C(τ/ν)^2；oneStepIterate是真正从(q0,p0)迭代(G h)^j。以下无碰撞反例已否定签名。[EXTRA]正质量、有限横截事件、光滑性和允许O(h²)时间对齐可作为明确的局部适用条件，但Gfree被假设为任意时长的精确V碰撞流，结论使用步首步尾U半kick，未给出原书α的二次Verlet碰撞检测及在碰撞点施加β kick的混合法。边界法向条件是质量加权grad g·M⁻¹grad U=0，需说明它与原书u_⊥的坐标/质量约定，不能直接认作原书未加权点积。并且对所有g≥0状态要求全时长Gfree远强于有限横截局部问题；缺少右连续及端点实际动量约定。[ERRATUM?]原书α/β矛盾确实存在，需另行裁定，但此FAIL不依赖其裁定。Ch03.lean:1485后为sorry；未证明状态与上述语义失败分别记录。 网站原文审校另记：
 - 反例或理由：取n=1、m₀=1、U=V=0、g≡1、τ=1、events=∅。令q(t)=0，p(t)=0（t≠1），p(1)=1；所有开区间ODE条件成立，q连续、g≥0，故finiteCollisionTrajectory成立。取Gfree(t,(a,b))=(a+t b,b)；对所有状态、所有T>0，它的轨道满足V=0、g=1、ev=∅的finiteCollisionTrajectory，且Gfree(0,z)=z，零法向条件亦成立。从(q(0),p(0))=(0,0)出发，两个U kick都是恒等，所有迭代都为(0,0)。结论在j=ν且θ(1)=1处要求1≤C/ν²，对任意固定C及所有充分大的ν不可能。因此签名为假，且反例没有碰撞或任何原书勘误歧义。

@@ -10,7 +10,7 @@ Lean 4.34.0 / Mathlib固定修订5ed2965256430c3649e86755f9576b54eca72435。sorr
 - source\_id：MD-1.1.1-LJRepulsion；印刷页 10–11 / PDF页 33–34。
 - 原文引文（逐字）：
 
-> Because of the strongly repulsive character of short-ranged soft walls in molecular dynamics, i.e., the fact that $\varphi_{\mathrm{LJ}}$ tends rapidly to positive infinity as $r\to0$, the atoms remain well separated in long simulations. The singularity at $r=0$ is therefore rarely encountered in dynamics trajectories, however the presence of the singularity may nonetheless create problems for mathematical analysis, as many theoretical techniques rely on assumed smoothness.
+> Because of the strongly repulsive character of short-ranged soft walls in molecular dynamics, i.e., the fact that $`\varphi_{\mathrm{LJ}}`$ tends rapidly to positive infinity as $`r\to0`$, the atoms remain well separated in long simulations. The singularity at $`r=0`$ is therefore rarely encountered in dynamics trajectories, however the presence of the singularity may nonetheless create problems for mathematical analysis, as many theoretical techniques rely on assumed smoothness.
 
 - 问题所在：有限能量的精确轨道和长时间数值模拟的经验频率是不同命题；缺算法、步长、时间窗和概率模型。
 - 反例或理由：数值积分器若跨越势垒，势在0附近发散不能单独保证离散轨迹无碰撞；rarely无概率空间无法判定。
@@ -26,7 +26,7 @@ Lean 4.34.0 / Mathlib固定修订5ed2965256430c3649e86755f9576b54eca72435。sorr
 - source\_id：MD-1.2-RadialLJForceLiteral；印刷页 21 / PDF页 44。
 - 原文引文（逐字）：
 
-> The equations of motion are, for $i=1,2,\ldots,N$, using the chain rule,
+> The equations of motion are, for $`i=1,2,\ldots,N`$, using the chain rule,
 
 $$
 m\ddot{\boldsymbol q}_i=\sum_{j=1,\ j\ne i}^{N}\frac{\varphi'_{\mathrm{LJ}}(r_{ij})}{r_{ij}}(\boldsymbol q_i-\boldsymbol q_j) =-24\frac\epsilon\sigma\sum_{j=1,\ j\ne i}^{N}r_{ij}^{-1}\left[2\left(\frac\sigma{r_{ij}}\right)^{13}-\left(\frac\sigma{r_{ij}}\right)^7\right](\boldsymbol q_i-\boldsymbol q_j).
@@ -47,7 +47,7 @@ $$
 - source\_id：MD-1.4-ConvexLegendre；印刷页 24 / PDF页 47。
 - 原文引文（逐字）：
 
-> Abstractly, a Legendre transformation of a given convex function $g=g(\boldsymbol\xi):\mathbb R^m\to\mathbb R$ is a new function $\widetilde g=\widetilde g(\boldsymbol\eta):\mathbb R^m\to\mathbb R$ defined by
+> Abstractly, a Legendre transformation of a given convex function $`g=g(\boldsymbol\xi):\mathbb R^m\to\mathbb R`$ is a new function $`\widetilde g=\widetilde g(\boldsymbol\eta):\mathbb R^m\to\mathbb R`$ defined by
 
 $$
 \widetilde g(\boldsymbol\eta)=\sup_{\boldsymbol\xi}(\boldsymbol\eta^T\boldsymbol\xi-g(\boldsymbol\xi)),
@@ -98,7 +98,7 @@ $$
 - source\_id：MD-1.5.3-HartmanGrobmanLiteral；印刷页 31–32 / PDF页 54–55。
 - 原文引文（逐字）：
 
-> then one can infer that the solutions of the nonlinear and linear systems are in fact topologically conjugate: if $\boldsymbol z$ is the solution of the nonlinear system and $\delta\boldsymbol z$ is the solution of the linear system, then there is a smooth, invertible map $\boldsymbol\Phi$ of $\mathbb R^m$ defined in a neighborhood of the origin such that
+> then one can infer that the solutions of the nonlinear and linear systems are in fact topologically conjugate: if $`\boldsymbol z`$ is the solution of the nonlinear system and $`\delta\boldsymbol z`$ is the solution of the linear system, then there is a smooth, invertible map $`\boldsymbol\Phi`$ of $`\mathbb R^m`$ defined in a neighborhood of the origin such that
 
 $$
 \boldsymbol z(t)=\boldsymbol z^*+\boldsymbol\Phi(\delta\boldsymbol z(t)).
@@ -120,7 +120,7 @@ $$
 - source\_id：MD-1.5.3-HyperbolicStabilityTransfer；印刷页 32 / PDF页 55。
 - 原文引文（逐字）：
 
-> The Hartman-Grobman theorem clearly implies that the stability of a given hyperbolic equilibrium point $\boldsymbol z^*$ of a nonlinear system can be inferred from the stability of the origin for the linearization of the system around $\boldsymbol z^*$.
+> The Hartman-Grobman theorem clearly implies that the stability of a given hyperbolic equilibrium point $`\boldsymbol z^*`$ of a nonlinear system can be inferred from the stability of the origin for the linearization of the system around $`\boldsymbol z^*`$.
 
 - 问题所在：结论本身是标准推论，但原证明链不能依赖原书过强的光滑共轭。
 - 反例或理由：拓扑同胚在平衡点邻域的连续性及逆连续性已足以传递ε/δ稳定性；不需要C∞共轭。
@@ -158,7 +158,7 @@ $$
 $$
 
 
-> which gives in general a nonlinear system of $N_c$ equations in $N_c$ unknowns to be solved for the position vector $\boldsymbol q^*$ associated to mechanical equilibrium.
+> which gives in general a nonlinear system of $`N_c`$ equations in $`N_c`$ unknowns to be solved for the position vector $`\boldsymbol q^*`$ associated to mechanical equilibrium.
 
 - 问题所在：约束边界极小一般不能推出全梯度为零；原上下文若含边界须区分可行方向。
 - 反例或理由：U(x)=x在闭半轴[0,∞)的0为约束最小，但U′(0)=1。现有Lean用IsLocalMin，已限制为内点意义。
@@ -173,7 +173,7 @@ $$
 - source\_id：MD-1.6.1-MinimumHessianLiteral；印刷页 37 / PDF页 60。
 - 原文引文（逐字）：
 
-> At the minimum of the potential energy, $U''$ is a positive definite symmetric matrix.
+> At the minimum of the potential energy, $`U''`$ is a positive definite symmetric matrix.
 
 - 问题所在：局部极小只能推出Hessian半正定，严格极小也不能保证非退化。
 - 反例或理由：U(x)=x⁴在0严格极小，但U″(0)=0；Lean反例核验局部极小与零二阶导。
@@ -204,7 +204,7 @@ $$
 - source\_id：MD-1.7-TrimerEscapeLiteral；印刷页 40 / PDF页 63。
 - 原文引文（逐字）：
 
-> (When $E>0$, the bodies eventually escape to infinity; $E<-3$ is not attainable.)
+> (When $`E\gt 0`$, the bodies eventually escape to infinity; $`E\lt -3`$ is not attainable.)
 
 - 问题所在：总能量正并不直接推出每个粒子相对固定原点趋于无穷；系统分离与逐粒子逃逸不同。
 - 反例或理由：对称共线运动q₁=−q₂、q₃=0中，第三粒子因对称力抵消可始终静止；向外大初速产生正能量。候选系统分离命题仍需独立散射论核查。
@@ -234,14 +234,14 @@ $$
 - source\_id：MD-1.7.2-FlowJacobianLiteral；印刷页 44 / PDF页 67。
 - 原文引文（逐字）：
 
-> Let a dynamical system $\dot{\boldsymbol z}=\boldsymbol f(\boldsymbol z)$ be given in $\mathbb R^m$ with flow map $F_t:\mathbb R^m\to\mathbb R^m$ which we assume to be continuously differentiable. Let $\boldsymbol z(t,\boldsymbol\xi)$ represent the solution of initial value problem
+> Let a dynamical system $`\dot{\boldsymbol z}=\boldsymbol f(\boldsymbol z)`$ be given in $`\mathbb R^m`$ with flow map $`F_t:\mathbb R^m\to\mathbb R^m`$ which we assume to be continuously differentiable. Let $`\boldsymbol z(t,\boldsymbol\xi)`$ represent the solution of initial value problem
 
 $$
 \dot{\boldsymbol z}=\boldsymbol f(\boldsymbol z),\qquad\boldsymbol z(0)=\boldsymbol\xi.
 $$
 
 
-> We then compute the $m\times m$ Jacobian matrix of $F_t(\boldsymbol z(t,\boldsymbol\xi))$:
+> We then compute the $`m\times m`$ Jacobian matrix of $`F_t(\boldsymbol z(t,\boldsymbol\xi))`$:
 
 $$
 \boldsymbol W(t)=F_t'(\boldsymbol z(t,\boldsymbol\xi))=\frac{\partial F_t}{\partial\boldsymbol z}(\boldsymbol z(t,\boldsymbol\xi)).
@@ -263,14 +263,14 @@ $$
 - source\_id：MD-1.7.2-VariationalEquationLiteral；印刷页 44–45 / PDF页 67–68。
 - 原文引文（逐字）：
 
-> Differentiating $\boldsymbol W(t)$ with respect to $t$ and using the differential equation and the chain rule, we have
+> Differentiating $`\boldsymbol W(t)`$ with respect to $`t`$ and using the differential equation and the chain rule, we have
 
 $$
 \frac{\mathrm d}{\mathrm dt}\boldsymbol W(t)=\boldsymbol f'(\boldsymbol z(t,\boldsymbol\xi))\boldsymbol W(t).\tag{1.10}
 $$
 
 
-> The system of Eq. (1.10) is referred to as the system of variational equations corresponding to the dynamical system $\mathrm d\boldsymbol z/\mathrm dt=\boldsymbol f(\boldsymbol z)$.
+> The system of Eq. (1.10) is referred to as the system of variational equations corresponding to the dynamical system $`\mathrm d\boldsymbol z/\mathrm dt=\boldsymbol f(\boldsymbol z)`$.
 
 - 问题所在：原W的取值点多复合一次F\_t，时间微分产生额外链式项，不满足标准变分方程。
 - 反例或理由：同一全局sin流、ξ=π/2、t=log2：原W=10/17，W′=−198/289，但f′(F\_tξ)W=−102/289。
@@ -285,7 +285,7 @@ $$
 - source\_id：MD-1.7.2-NearbyTrajectoryLiteral；印刷页 45 / PDF页 68。
 - 原文引文（逐字）：
 
-> If we have two solutions started from nearby initial conditions $\boldsymbol\xi,\hat{\boldsymbol\xi}$, then their difference is approximated by the solution of the variational equations
+> If we have two solutions started from nearby initial conditions $`\boldsymbol\xi,\hat{\boldsymbol\xi}`$, then their difference is approximated by the solution of the variational equations
 
 $$
 \boldsymbol z(t,\hat{\boldsymbol\xi})-\boldsymbol z(t,\boldsymbol\xi)\approx\boldsymbol W(t)(\hat{\boldsymbol\xi}-\boldsymbol\xi).
@@ -306,7 +306,7 @@ $$
 - source\_id：MD-1.1.2-Yukawa；印刷页 12 / PDF页 35。
 - 原文引文（逐字）：
 
-> More accurate treatments of the long range behavior include the use of an exponential term involving the Debye length $\kappa$ which models screening due to the presence of a polar solvent, in which case the potential is modified to have the form of a Yukawa potential:
+> More accurate treatments of the long range behavior include the use of an exponential term involving the Debye length $`\kappa`$ which models screening due to the presence of a polar solvent, in which case the potential is modified to have the form of a Yukawa potential:
 
 $$
 \varphi_{ij}^{\mathrm{screened}}(r_{ij})=\frac{CQ_iQ_j}{\epsilon r_{ij}}e^{-\kappa r_{ij}}.
@@ -327,21 +327,21 @@ $$
 - source\_id：MD-1.4-LegendreHamiltonian；印刷页 24 / PDF页 47。
 - 原文引文（逐字）：
 
-> If $\boldsymbol{M}(\boldsymbol{q})$ is invertible, the supremum is achieved precisely when
+> If $`\boldsymbol{M}(\boldsymbol{q})`$ is invertible, the supremum is achieved precisely when
 
 $$
 \boldsymbol{v}=\boldsymbol{M}^{-1}(\boldsymbol{q})\boldsymbol{p},
 $$
 
 
-> which gives the standard definition of the momentum vector $\boldsymbol{p}$ in terms of velocities,
+> which gives the standard definition of the momentum vector $`\boldsymbol{p}`$ in terms of velocities,
 
 $$
 \boldsymbol{p}=\frac{\partial L}{\partial\dot{\boldsymbol{q}}}=\boldsymbol{M}(\boldsymbol{q})\dot{\boldsymbol{q}},
 $$
 
 
-> and, with $\boldsymbol{v}=\boldsymbol{M}^{-1}(\boldsymbol{q})\boldsymbol{p}$, the Legendre transformation results in a new function
+> and, with $`\boldsymbol{v}=\boldsymbol{M}^{-1}(\boldsymbol{q})\boldsymbol{p}`$, the Legendre transformation results in a new function
 
 $$
 H(\boldsymbol{q},\boldsymbol{p})\stackrel{\mathrm{def}}{=}\boldsymbol{p}^TM(\boldsymbol{q})^{-1}\boldsymbol{p}/2+U(\boldsymbol{q}).
@@ -363,7 +363,7 @@ $$
 - source\_id：MD-1.4-PhaseSpace；印刷页 25 / PDF页 48。
 - 原文引文（逐字）：
 
-> The set of all positions and momenta for which the energy is finite is termed the phase space. The instantaneous state of a molecular system involving many, say N, particles moving in $\mathbb R^3$ is described by coordinates and positions, i.e., by a point in $\mathbb R^{6N}$.
+> The set of all positions and momenta for which the energy is finite is termed the phase space. The instantaneous state of a molecular system involving many, say N, particles moving in $`\mathbb R^3`$ is described by coordinates and positions, i.e., by a point in $`\mathbb R^{6N}`$.
 
 - 问题所在：后句重复位置，疑为positions/momenta文字笔误；前句定义及R^{6N}支持位置×动量解释。
 - 反例或理由：N粒子各有3N位置与3N动量坐标，合计6N；两个位置词不能说明第二半坐标的物理含义。
@@ -411,7 +411,7 @@ U^{\mathrm{pbc}}(\boldsymbol q)=\sum_{klm}\sum_{i=1}^{N-1}\sum_{j=i+1}^{N}\varph
 $$
 
 
-> where $k,l,m$ run over $-1,0,1$ (in case interactions are restricted to the simulation cell and its immediate neighboring copies), and $\boldsymbol v_i^T=(L\boldsymbol e_i^T,L\boldsymbol e_i^T,\ldots,L\boldsymbol e_i^T)$, $i=1,2,3$, where $\boldsymbol e_i$ is the $i$th Euclidean basis vector in $\mathbb R^3$.
+> where $`k,l,m`$ run over $`-1,0,1`$ (in case interactions are restricted to the simulation cell and its immediate neighboring copies), and $`\boldsymbol v_i^T=(L\boldsymbol e_i^T,L\boldsymbol e_i^T,\ldots,L\boldsymbol e_i^T)`$, $`i=1,2,3`$, where $`\boldsymbol e_i`$ is the $`i`$th Euclidean basis vector in $`\mathbb R^3`$.
 
 - 问题所在：原页vᵢ按全构型重复块定义，属于ℝ^{3N}，却直接与单粒子的三维qⱼ相加，类型前后矛盾。
 - 反例或理由：N=2时v₁为六维而qⱼ为三维，二者之和未定义。Lean采用每个粒子的三维块L eᵢ解释。
@@ -426,7 +426,7 @@ $$
 - source\_id：MD-1.6.1-RealNormalMode；印刷页 37 / PDF页 60。
 - 原文引文（逐字）：
 
-> or recast in real form as ($\alpha,\beta$ real coefficients):
+> or recast in real form as ($`\alpha,\beta`$ real coefficients):
 
 $$
 \boldsymbol z(t)=\alpha[\sin(\Omega t)\operatorname{Re}(\boldsymbol\xi)+\cos(\Omega t)\operatorname{Im}(\boldsymbol\xi)]+\beta[\cos(\Omega t)\operatorname{Re}(\boldsymbol\xi)-\sin(\Omega t)\operatorname{Im}(\boldsymbol\xi)].

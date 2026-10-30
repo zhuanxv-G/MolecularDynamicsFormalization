@@ -226,5 +226,5 @@ Git基线为 `de3b2539`；1,367个已跟踪Lean文件内容与该版本相同，
 
 ## 交付
 
-固定标签：[本修复版本](https://github.com/zhuanxv-G/MolecularDynamicsFormalization/tree/book-ch01-08-render)。旧 `book-ch01-08-summary` 和 `book-ch01-08-closeout` 标签保持原对象不变。
+固定标签：[本修复版本](https://github.com/zhuanxv-G/MolecularDynamicsFormalization/tree/book-ch01-08-render-v2)。旧 `book-ch01-08-summary` 和 `book-ch01-08-closeout` 标签保持原对象不变。
 导航页、导师汇总、疑误索引等book辅助页与根README的审阅链接改指修复标签，避免从新导航跳回旧公式；离线包同名覆盖 `deliverables/book-ch01-08-docs.zip`，只含book汇总材料及8章SUMMARY/ERRATA，不含BLUEPRINT、Lean、Python脚本或缓存。

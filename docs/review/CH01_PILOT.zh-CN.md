@@ -10,7 +10,7 @@
 
 ### 1. 原文陈述
 
-> If $\boldsymbol{q}^*$ is a strong local minimum of smooth potential $U$ then $\boldsymbol{z}^*=(\boldsymbol{q}^*,0)$ is stable.
+> If $`\boldsymbol{q}^*`$ is a strong local minimum of smooth potential $`U`$ then $`\boldsymbol{z}^*=(\boldsymbol{q}^*,0)`$ is stable.
 
 ### 2. 原文证明
 
@@ -20,7 +20,7 @@
 
 原文证明思路（不计为完整证明）：
 
-> The proof of this theorem relies on showing that if trajectories are started from a point sufficiently close to $\boldsymbol{z}^*$ they cannot wander away to infinity. Although the result holds in greater generality, it is easy to show under assumptions of local smoothness of $U$ (which we are normally happy to make in molecular dynamics). For more discussion see the text [216].
+> The proof of this theorem relies on showing that if trajectories are started from a point sufficiently close to $`\boldsymbol{z}^*`$ they cannot wander away to infinity. Although the result holds in greater generality, it is easy to show under assumptions of local smoothness of $`U`$ (which we are normally happy to make in molecular dynamics). For more discussion see the text [216].
 
 ### 3. Lean 陈述
 
@@ -172,7 +172,7 @@ $$
 $$
 
 
-> (Note that this must be interpreted in general as a set of $N_c=3N$ equations, one for each atomic coordinate.)
+> (Note that this must be interpreted in general as a set of $`N_c=3N`$ equations, one for each atomic coordinate.)
 
 ### 2. 原文证明
 
@@ -246,21 +246,21 @@ Blueprint声明/证明位置：`Blueprint/Ch01.lean:108`。
 
 ### 1. 原文陈述
 
-> If $\boldsymbol{M}(\boldsymbol{q})$ is invertible, the supremum is achieved precisely when
+> If $`\boldsymbol{M}(\boldsymbol{q})`$ is invertible, the supremum is achieved precisely when
 
 $$
 \boldsymbol{v}=\boldsymbol{M}^{-1}(\boldsymbol{q})\boldsymbol{p},
 $$
 
 
-> which gives the standard definition of the momentum vector $\boldsymbol{p}$ in terms of velocities,
+> which gives the standard definition of the momentum vector $`\boldsymbol{p}`$ in terms of velocities,
 
 $$
 \boldsymbol{p}=\frac{\partial L}{\partial\dot{\boldsymbol{q}}}=\boldsymbol{M}(\boldsymbol{q})\dot{\boldsymbol{q}},
 $$
 
 
-> and, with $\boldsymbol{v}=\boldsymbol{M}^{-1}(\boldsymbol{q})\boldsymbol{p}$, the Legendre transformation results in a new function
+> and, with $`\boldsymbol{v}=\boldsymbol{M}^{-1}(\boldsymbol{q})\boldsymbol{p}`$, the Legendre transformation results in a new function
 
 $$
 H(\boldsymbol{q},\boldsymbol{p})\stackrel{\mathrm{def}}{=}\boldsymbol{p}^TM(\boldsymbol{q})^{-1}\boldsymbol{p}/2+U(\boldsymbol{q}).
@@ -271,7 +271,7 @@ $$
 
 ### 2. 原文证明
 
-> In the case of the Lagrangian $L(\boldsymbol{q},\boldsymbol{v})=\boldsymbol{v}^TM(\boldsymbol{q})\boldsymbol{v}/2-U(\boldsymbol{q})$ (which we have seen is the formulation of a mechanical system in generalized coordinates) we find
+> In the case of the Lagrangian $`L(\boldsymbol{q},\boldsymbol{v})=\boldsymbol{v}^TM(\boldsymbol{q})\boldsymbol{v}/2-U(\boldsymbol{q})`$ (which we have seen is the formulation of a mechanical system in generalized coordinates) we find
 
 $$
 \sup_{\boldsymbol{v}}(\boldsymbol{p}^T\boldsymbol{v}-(\boldsymbol{v}^TM(\boldsymbol{q})\boldsymbol{v}/2-U(\boldsymbol{q})))=\sup_{\boldsymbol{v}}(\boldsymbol{p}^T\boldsymbol{v}-\boldsymbol{v}^TM(\boldsymbol{q})\boldsymbol{v}/2)+U(\boldsymbol{q}).
@@ -356,7 +356,7 @@ Blueprint声明/证明位置：`Blueprint/Ch01.lean:147`。
 
 ### 1. 原文陈述
 
-> The classical systems treated here can be solved forward or backward in time. Observe that $\mathcal{F}_{-t}\mathcal{F}_t=\operatorname{Id}$ (the identity map), thus the flow map is invertible and, indeed, the family of flow maps defined for different values of $t$ form an Abelian group under the operation of composition ($\mathcal{F}_t\mathcal{F}_s=\mathcal{F}_s\mathcal{F}_t=\mathcal{F}_{t+s}$).
+> The classical systems treated here can be solved forward or backward in time. Observe that $`\mathcal{F}_{-t}\mathcal{F}_t=\operatorname{Id}`$ (the identity map), thus the flow map is invertible and, indeed, the family of flow maps defined for different values of $`t`$ form an Abelian group under the operation of composition ($`\mathcal{F}_t\mathcal{F}_s=\mathcal{F}_s\mathcal{F}_t=\mathcal{F}_{t+s}`$).
 
 ### 2. 原文证明
 

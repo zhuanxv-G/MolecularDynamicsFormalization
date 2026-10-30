@@ -28,14 +28,14 @@
 - source\_id：MD-7.2-PartitionPrinted；印刷页 266 / PDF页 287。
 - 原文引文（逐字）：
 
-> and $Z_{\rm can}$ is the canonical partition function
+> and $`Z_{\rm can}`$ is the canonical partition function
 
 $$
 Z_{\rm can}^{-1}=\int_D\exp(-\beta H(q,p))d\omega,
 $$
 
 
-> ensuring the integral of $\rho_\beta$ is unity.
+> ensuring the integral of $`\rho_\beta`$ is unity.
 
 - 原页核对：已目视核对原页（沿用29号原页图像及核对记录；本轮不改原文公式）。
 - 问题所在：已目视核对原页PDF287／印刷266：原书确为Z\_can^{-1}=积分，和紧接的归一化断言不相容；不是转录错误。
@@ -53,14 +53,14 @@ $$
 - source\_id：MD-7.3-OUExactUpdate；印刷页 268 / PDF页 289。
 - 原文引文（逐字）：
 
-> Integrating from $t$ to $t+h$ and multiplying by $\exp(-\gamma t)$, we arrive at the solution
+> Integrating from $`t`$ to $`t+h`$ and multiplying by $`\exp(-\gamma t)`$, we arrive at the solution
 
 $$
 p(t+h)=e^{-\gamma h}p(t)+\sqrt{k_BT(1-e^{-2\gamma h})}M^{1/2}Z,\tag{7.3}
 $$
 
 
-> where $Z$ is a vector of independent, standard normal random variables.
+> where $`Z`$ is a vector of independent, standard normal random variables.
 
 - 原页核对：已目视核对原页（沿用29号原页图像及核对记录；本轮不改原文公式）。
 - 问题所在：已目视核对原页PDF289：前导乘数印作exp(−γt)，应为exp(−γ(t+h))；(7.3)与当前更新公式正确，不改。
@@ -85,7 +85,7 @@ q_{n+1/2}=q_n+(h/2)M^{-1}p_n,\qquad p_{n+1}=e^{-h\gamma}p_n-\eta\nabla U(q_n)+\z
 $$
 
 
-> where $\eta=(1-e^{-h\gamma})/\gamma$, $\zeta=[k_BT(1-e^{-2\gamma h})]^{1/2}$.
+> where $`\eta=(1-e^{-h\gamma})/\gamma`$, $`\zeta=[k_BT(1-e^{-2\gamma h})]^{1/2}`$.
 
 - 原页核对：已目视核对原页（沿用29号原页图像及核对记录；本轮不改原文公式）。
 - 问题所在：已目视核对原页PDF293／印刷272：SPV展示式动量用∇U(q\_n)，而前文说对两部分作对称积分，漂移半步后冻结位置应为q_{n+1/2}；两者分别保留，待导师判断。
@@ -103,7 +103,7 @@ $$
 - source\_id：MD-7.3.2-SPVLargeFriction；印刷页 272–273 / PDF页 293–294。
 - 原文引文（逐字）：
 
-> It is important to note that in the limit of infinite friction, we have $\eta\to0$ independent of the timestep $h$. This suggests that this splitting strategy is unsuitable for large choices of the parameter $\gamma$ as the sampling will become inconsistent: the force will be dominated by the stochastic term, leaving the dynamics to evolve as a random walk.
+> It is important to note that in the limit of infinite friction, we have $`\eta\to0`$ independent of the timestep $`h`$. This suggests that this splitting strategy is unsuitable for large choices of the parameter $`\gamma`$ as the sampling will become inconsistent: the force will be dominated by the stochastic term, leaving the dynamics to evolve as a random walk.
 
 - 原页核对：已目视核对原页（沿用29号原页图像及核对记录；本轮不改原文公式）。
 - 问题所在：原文论证范围或技术资格需选定；不直接断言公式错误。
@@ -157,7 +157,7 @@ $$
 - source\_id：MD-7.5-PerturbedErrorExpansion；印刷页 280 / PDF页 301。
 - 原文引文（逐字）：
 
-> We find that truncating the update equations to $O(\epsilon^3)$ is sufficient to explicitly resolve the leading order behavior of the error for these discretization schemes, and we give the differences between observed numerical averages and exact averages below:
+> We find that truncating the update equations to $`O(\epsilon^3)`$ is sufficient to explicitly resolve the leading order behavior of the error for these discretization schemes, and we give the differences between observed numerical averages and exact averages below:
 
 $$
 \langle q^2\rangle_h^{[ABOBA]}-\langle q^2\rangle=\frac{3h^2\epsilon[48\epsilon-4+3\gamma^2(9\epsilon-1)]}{12\gamma^2+16}+O(\epsilon h^4+\epsilon^3h^2),
@@ -212,7 +212,7 @@ $$
 $$
 
 
-> The twofold surprising result though, is that (a) the leading error of the $[BAOAB]$ scheme has behavior proportional to $\epsilon^2$, while (b) the leading order term of the $[BAOAB]$ scheme is annihilated for large $\gamma$.
+> The twofold surprising result though, is that (a) the leading error of the $`[BAOAB]`$ scheme has behavior proportional to $`\epsilon^2`$, while (b) the leading order term of the $`[BAOAB]`$ scheme is annihilated for large $`\gamma`$.
 
 - 原页核对：已目视核对原页（沿用29号原页图像及核对记录；本轮不改原文公式）。
 - 问题所在：原文论证范围或技术资格需选定；不直接断言公式错误。
@@ -248,7 +248,7 @@ $$
 - source\_id：MD-7.7.1-StationaryModifiedPDE；印刷页 285–286 / PDF页 306–307。
 - 原文引文（逐字）：
 
-> Under the propagation of the numerical scheme (or the discretized dynamics), the Fokker-Planck equation gives us that the evolution of a density of points $\rho$ is given by
+> Under the propagation of the numerical scheme (or the discretized dynamics), the Fokker-Planck equation gives us that the evolution of a density of points $`\rho`$ is given by
 
 $$
 \frac\partial{\partial t}\rho(z,t)=\widehat{\mathcal L}^\dagger\rho,
@@ -279,7 +279,7 @@ $$
 - source\_id：MD-7.7.2-SpectralQualification；印刷页 289 / PDF页 310。
 - 原文引文（逐字）：
 
-> The assumption of validity becomes more credible as we find that the operator $\mathcal L_{LD}^\dagger$ has a compact resolvent and therefore a discrete spectrum, i.e. simple eigenvalues, as discussed in the previous chapter. It will have one zero eigenvalue corresponding to the invariant density $\rho_\beta$ and all the remaining eigenvalues lie in the negative half plane.
+> The assumption of validity becomes more credible as we find that the operator $`\mathcal L_{LD}^\dagger`$ has a compact resolvent and therefore a discrete spectrum, i.e. simple eigenvalues, as discussed in the previous chapter. It will have one zero eigenvalue corresponding to the invariant density $`\rho_\beta`$ and all the remaining eigenvalues lie in the negative half plane.
 
 - 原页核对：已目视核对原页（沿用29号原页图像及核对记录；本轮不改原文公式）。
 - 问题所在：已目视核对PDF310：原文将discrete spectrum释为simple eigenvalues，这并非一般蕴含。紧预解式至多给离散谱及有限重数，不能直接给单重谱；Langevin谱还需前章所列势函数/空间条件。
@@ -297,7 +297,7 @@ $$
 - source\_id：MD-7.7.3-PerturbativeSolvabilityCaution；印刷页 290 / PDF页 311。
 - 原文引文（逐字）：
 
-> It will be difficult to solve the perturbation equation (7.19) in general, although its linearity and the fact that $\mathcal L_{LD}^\dagger$ (with our assumptions) has a compact resolvent (and therefore a discrete spectrum) together imply that if the perturbation can be bounded, then it should be possible to solve for the correction function. We expect that this solution should be stable with respect to perturbation (and exponentially attracting). This also implies global existence (for all positive time) of the semigroup defining the solution of the time-dependent problem. We do not provide such a rigorous result here but simply plunge ahead, in the best tradition of applied mathematics, to obtain a perturbative expansion; verification of our results must therefore be obtained by numerical experiment, a posteriori.
+> It will be difficult to solve the perturbation equation (7.19) in general, although its linearity and the fact that $`\mathcal L_{LD}^\dagger`$ (with our assumptions) has a compact resolvent (and therefore a discrete spectrum) together imply that if the perturbation can be bounded, then it should be possible to solve for the correction function. We expect that this solution should be stable with respect to perturbation (and exponentially attracting). This also implies global existence (for all positive time) of the semigroup defining the solution of the time-dependent problem. We do not provide such a rigorous result here but simply plunge ahead, in the best tradition of applied mathematics, to obtain a perturbative expansion; verification of our results must therefore be obtained by numerical experiment, a posteriori.
 
 - 原页核对：已目视核对原页（沿用29号原页图像及核对记录；本轮不改原文公式）。
 - 问题所在：原文论证范围或技术资格需选定；不直接断言公式错误。
@@ -356,7 +356,7 @@ $$
 $$
 
 
-> We can see immediately that the Fredholm alternative holds in both cases, as both equations have right-hand sides that are of odd order in $p$, and hence will average to 0.
+> We can see immediately that the Fredholm alternative holds in both cases, as both equations have right-hand sides that are of odd order in $`p`$, and hence will average to 0.
 
 - 原页核对：已目视核对原页（沿用29号原页图像及核对记录；本轮不改原文公式）。
 - 问题所在：零均值只验证必要兼容条件；完整Fredholm可解性需要明确函数空间、算子域、核/余核与闭值域资格。
@@ -427,7 +427,7 @@ $$
 - source\_id：MD-7.9.2-OUKernelQualification；印刷页 302 / PDF页 323。
 - 原文引文（逐字）：
 
-> The first equation at order one tells us that $f_{2,0,[OABAO]}(q,p)$ must be a function of position only, as the kernel of $\overline{\mathcal L}_O^\dagger$ is the set of functions that are constant with respect to $p$. Hence we shall denote $f_{2,0,[OABAO]}(q,p)=\nu(q)$, where $\langle\nu\rangle=0$.
+> The first equation at order one tells us that $`f_{2,0,[OABAO]}(q,p)`$ must be a function of position only, as the kernel of $`\overline{\mathcal L}_O^\dagger`$ is the set of functions that are constant with respect to $`p`$. Hence we shall denote $`f_{2,0,[OABAO]}(q,p)=\nu(q)`$, where $`\langle\nu\rangle=0`$.
 
 - 原页核对：已目视核对原页（沿用29号原页图像及核对记录；本轮不改原文公式）。
 - 问题所在：已目视核对PDF323：前向OU生成元的核实际是Gaussian密度倍数；对ρβf共轭后，合适L²域中的f才对p为常数。原文此句缺少共轭与定义域限定。
@@ -463,7 +463,7 @@ $$
 $$
 
 
-> where $(\overline\pi f)(q)=\int_{\mathcal P}f(q,p)\rho_\beta d\omega_p$.
+> where $`(\overline\pi f)(q)=\int_{\mathcal P}f(q,p)\rho_\beta d\omega_p`$.
 
 - 原页核对：已目视核对原页（沿用29号原页图像及核对记录；本轮不改原文公式）。
 - 问题所在：已目视核对PDF324–325：π̄定义带联合ρβ权，后续M公式却使用归一条件动量平均并隐含ρβ共轭。本文区分原文加权积分与修正的条件Gaussian平均，避免遗漏位置密度因子。
@@ -501,7 +501,7 @@ $$
 $$
 
 
-> and hence by (7.36) we finally obtain $\nu(q)=\tfrac18(\Delta_qU-\beta|\nabla U|^2)$, where $\langle\nu\rangle=0$.
+> and hence by (7.36) we finally obtain $`\nu(q)=\tfrac18(\Delta_qU-\beta|\nabla U|^2)`$, where $`\langle\nu\rangle=0`$.
 
 - 原页核对：已目视核对原页（沿用29号原页图像及核对记录；本轮不改原文公式）。
 - 问题所在：原文论证范围或技术资格需选定；不直接断言公式错误。
@@ -519,7 +519,7 @@ $$
 - source\_id：MD-7.10-ColoredNoiseAndExtension；印刷页 308 / PDF页 329。
 - 原文引文（逐字）：
 
-> We can think of the noise process in (7.40) as corresponding to a colored noise which has characteristics that directly depend on the stepsize, although the noise decorrelates in just a couple of timesteps. This is therefore no longer a Markov process, however it can be reformulated as such if one considers the appropriate extended space (or keeping the momenta $p_n$).
+> We can think of the noise process in (7.40) as corresponding to a colored noise which has characteristics that directly depend on the stepsize, although the noise decorrelates in just a couple of timesteps. This is therefore no longer a Markov process, however it can be reformulated as such if one considers the appropriate extended space (or keeping the momenta $`p_n`$).
 
 - 原页核对：已目视核对原页（沿用29号原页图像及核对记录；本轮不改原文公式）。
 - 问题所在：有色噪声不能单独推出位置过程无例外地非Markov；特定势与初态下位置序列可以仍为Markov。
@@ -537,7 +537,7 @@ $$
 - source\_id：MD-7.10-LimitMethodAccuracy；印刷页 308 / PDF页 329。
 - 原文引文（逐字）：
 
-> We would expect that this scheme should have an $O(h^4)=O(\tau^2)$ error in configurational averages. For averages computed in finite time, work in [224] has shown that (7.40) does indeed give a first order error, albeit one that vanishes exponentially fast in time as the simulation progresses. Hence for suitably long simulations, the observed error will be $O(h^2)$.
+> We would expect that this scheme should have an $`O(h^4)=O(\tau^2)`$ error in configurational averages. For averages computed in finite time, work in [224] has shown that (7.40) does indeed give a first order error, albeit one that vanishes exponentially fast in time as the simulation progresses. Hence for suitably long simulations, the observed error will be $`O(h^2)`$.
 
 - 原页核对：已目视核对原页（沿用29号原页图像及核对记录；本轮不改原文公式）。
 - 问题所在：已目视核对PDF329：本段前面以τ为实际过阻尼步长并称长期二阶，末句却写O(h²)。若仍沿用τ=h²/2，应区分长期O(τ²)=O(h⁴)和有限时一阶O(τ)=O(h²)；原文符号存在歧义。
@@ -573,7 +573,7 @@ $$
 $$
 
 
-> The vector of $l$ constraints is given by $g:\mathbb R^{N_c}\to\mathbb R^l$ and $\lambda$ is an $l$-dimensional vector of Lagrange multipliers. $W$ is a vector of standard Wiener processes, with the usual friction parameter $\gamma>0$. Permissible phase points lie in the co-tangent bundle defined by the constraint and hidden constraint
+> The vector of $`l`$ constraints is given by $`g:\mathbb R^{N_c}\to\mathbb R^l`$ and $`\lambda`$ is an $`l`$-dimensional vector of Lagrange multipliers. $`W`$ is a vector of standard Wiener processes, with the usual friction parameter $`\gamma\gt 0`$. Permissible phase points lie in the co-tangent bundle defined by the constraint and hidden constraint
 
 $$
 g(q)=0,\qquad g'(q)M^{-1}p=0.
@@ -597,21 +597,21 @@ $$
 - source\_id：MD-7.12-ConstrainedCanonicalErgodicity；印刷页 317 / PDF页 338。
 - 原文引文（逐字）：
 
-> In the infinite time limit, we have that solution trajectories of constrained Langevin (7.43)–(7.45) sample $\widetilde\rho_\beta$ ergodically, such that
+> In the infinite time limit, we have that solution trajectories of constrained Langevin (7.43)–(7.45) sample $`\widetilde\rho_\beta`$ ergodically, such that
 
 $$
 \lim_{T\to\infty}\frac1T\int_0^T\phi(q(t),p(t))dt=\int_{\mathcal D}\phi(q,p)\widetilde\rho_\beta d\omega,
 $$
 
 
-> where $\widetilde\rho_\beta$ is the normalized constrained canonical distribution
+> where $`\widetilde\rho_\beta`$ is the normalized constrained canonical distribution
 
 $$
 \widetilde\rho_\beta=Z^{-1}\exp(-\beta H(q,p))\delta[g(q)]\delta[g'(q)M^{-1}p],
 $$
 
 
-> for normalizing constant $Z$ and where $\delta[z]:=\prod_i\delta[z_i]$ for a vector $z$.
+> for normalizing constant $`Z`$ and where $`\delta[z]:=\prod_i\delta[z_i]`$ for a vector $`z`$.
 
 - 原页核对：已目视核对原页（沿用29号原页图像及核对记录；本轮不改原文公式）。
 - 问题所在：原文论证范围或技术资格需选定；不直接断言公式错误。
@@ -642,7 +642,7 @@ O_c:\quad dq=0,\quad dp=-\gamma pdt+\sqrt{2\gamma k_BTM}dW-g'(q)^T\lambda dt,\qu
 $$
 
 
-> We solve these two pieces symmetrically, where the constrained Hamiltonian part is solved over a step $h$, in between two solves of the Ornstein-Uhlenbeck SDE with stepsize $h/2$.
+> We solve these two pieces symmetrically, where the constrained Hamiltonian part is solved over a step $`h`$, in between two solves of the Ornstein-Uhlenbeck SDE with stepsize $`h/2`$.
 
 - 原页核对：已目视核对原页PDF339（本轮）；原印Hc/Oc都写λdt，O步含Wiener噪声。
 - 问题所在：原印λdt若理解为普通有限变差反作用，无法抵消约束法向Wiener噪声；保留原文，采用可含随机部分的reactionImpulse作为限定解释，待导师确认。
@@ -660,14 +660,14 @@ $$
 - source\_id：MD-7.12-MidpointStabilityPrinted；印刷页 319 / PDF页 340。
 - 原文引文（逐字）：
 
-> The Lagrange multiplier $\lambda_{n+1/4}$ (and likewise $\lambda_{n+1}$) can be obtained by solving the linear system
+> The Lagrange multiplier $`\lambda_{n+1/4}`$ (and likewise $`\lambda_{n+1}`$) can be obtained by solving the linear system
 
 $$
 g'(q_n)M^{-1}[(1-h\gamma/4)p_n+\sqrt{h\gamma k_BTM}R_n-g'(q_n)^T\lambda_{n+1/4}]=0,
 $$
 
 
-> which is easily computed once the $R_n$ vector is evaluated in the step, and gives us a stability criterion
+> which is easily computed once the $`R_n`$ vector is evaluated in the step, and gives us a stability criterion
 
 $$
 \gamma h<4.\tag{7.46}
@@ -691,14 +691,14 @@ $$
 - source\_id：MD-7.13-SpectralRadiusStability；印刷页 324 / PDF页 345。
 - 原文引文（逐字）：
 
-> The stability of the method therefore depends solely on the spectral radius of the matrix $X$. This gives a stability condition
+> The stability of the method therefore depends solely on the spectral radius of the matrix $`X`$. This gives a stability condition
 
 $$
 \left|\frac{\eta-h}{\eta}e^{(\eta-\gamma)h/2}+\frac{\eta+h}{\eta}e^{(-\eta-\gamma)h/2}\right|\le1+e^{-\gamma h}.
 $$
 
 
-> Multiplying by $e^{\gamma h/2}$ gives
+> Multiplying by $`e^{\gamma h/2}`$ gives
 
 $$
 |\cosh(\eta h/2)+(h/\eta)\sinh(-\eta h/2)|\le\cosh(\gamma h/2).
@@ -722,7 +722,7 @@ $$
 - source\_id：MD-7.13-HyperbolicPhaseTransform；印刷页 324 / PDF页 345。
 - 原文引文（逐字）：
 
-> For $\gamma>0$, we can simplify to
+> For $`\gamma\gt 0`$, we can simplify to
 
 $$
 \left|\cosh\left(\frac{\eta h}{2}-\operatorname{atanh}\left(\frac h\eta\right)\right)\sqrt{1-\frac{h^2}{\eta^2}}\right|\le\cosh(\gamma h/2).
@@ -746,7 +746,7 @@ $$
 - source\_id：MD-7.13-UnderdampedPhasePrinted；印刷页 325 / PDF页 346。
 - 原文引文（逐字）：
 
-> We consider the case with $\gamma\ll\Omega$, allowing us to write $\eta=i\widehat\eta$ for $\widehat\eta\in\mathbb R$, and
+> We consider the case with $`\gamma\ll\Omega`$, allowing us to write $`\eta=i\widehat\eta`$ for $`\widehat\eta\in\mathbb R`$, and
 
 $$
 \left|\cos\left(\frac{\widehat\eta h}{2}-\operatorname{atanh}\left(\frac h{\widehat\eta}\right)\right)\sqrt{1+\frac{h^2}{\widehat\eta^2}}\right|\le\cosh(\gamma h/2).
@@ -777,14 +777,14 @@ $$
 $$
 
 
-> which gives a stability condition for all step sizes $h$ as long as
+> which gives a stability condition for all step sizes $`h`$ as long as
 
 $$
 \gamma\ge\Omega\sqrt{2-2\sqrt{1-\Omega^{-4}}}\ge\sqrt2/\Omega.
 $$
 
 
-> Therefore we expect that the minimum friction value required for stability for all timesteps $h>0$, scales with the value of inverse $\Omega$.
+> Therefore we expect that the minimum friction value required for stability for all timesteps $`h\gt 0`$, scales with the value of inverse $`\Omega`$.
 
 - 原页核对：已目视核对原页（沿用29号原页图像及核对记录；本轮不改原文公式）。
 - 问题所在：已目视核对PDF346：最后链式下界√2/Ω不成立。将精确阈值有理化得√(2/(Ω²+√(Ω⁴-1)))，大Ω时约1/Ω；√2/Ω可作更保守的充分选择而非精确阈值下界。Ω²=5/4时精确阈值平方=1，小于2/Ω²=8/5。

@@ -39,4 +39,4 @@ formal proofs, build results, and semantic review.
 
 ## 全书审阅入口
 
-第1–8章正文成果、原书疑误与未证部分，请从[全书审阅导航](docs/review/book/README.zh-CN.md)开始；导航固定到 book-ch01-08-render 版本。
+第1–8章正文成果、原书疑误与未证部分，请从[全书审阅导航](docs/review/book/README.zh-CN.md)开始；导航固定到 book-ch01-08-render-v2 版本。

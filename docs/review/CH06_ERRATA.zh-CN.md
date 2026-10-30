@@ -14,14 +14,14 @@ OU方差根号、分部积分正号和Theorem 6.2的κ是转录纠正，不计�
 - 印刷页 / PDF页：216 / 237。
 - 原文引文（逐字）：
 
-> Since $Z_B(E-s)=\exp(S_B(E-s)/k_B)$, and $s\ll E$, we (naively) apply the mean value theorem to $S_B$ to obtain
+> Since $`Z_B(E-s)=\exp(S_B(E-s)/k_B)`$, and $`s\ll E`$, we (naively) apply the mean value theorem to $`S_B`$ to obtain
 
 $$
 S_B(E-s)=S_B(E)-S'_B(\xi)s,
 $$
 
 
-> and from $S'_B(\xi)=1/T$, we obtain
+> and from $`S'_B(\xi)=1/T`$, we obtain
 
 $$
 Z_B(E-s)\propto\exp(-\beta s).
@@ -47,7 +47,7 @@ $$
 - 印刷页 / PDF页：216 / 237。
 - 原文引文（逐字）：
 
-> On the other hand the probability for the active system to have energy $\leq\alpha$ is the same as the probability of the bath having energy $\geq E-\alpha$, this must be
+> On the other hand the probability for the active system to have energy $`\leq\alpha`$ is the same as the probability of the bath having energy $`\geq E-\alpha`$, this must be
 
 $$
 P(\alpha)=\Pr\{E_B\geq E-\alpha\}\propto\int_0^\alpha Z_B(E-s)ds.
@@ -55,7 +55,7 @@ $$
 
 
 > [The intervening bath-entropy argument is quoted separately in MD-6.1.2-BathTaylor.]
-> Thus we have $P(\alpha)\propto\int_0^\alpha\exp(-\beta s)ds$.
+> Thus we have $`P(\alpha)\propto\int_0^\alpha\exp(-\beta s)ds`$.
 
 - 问题所在：取ZA(s)=1+s、ZB(s)=1、E=1、α=1/2，两边分别为5/12和1/2。
 - 反例或理由：取ZA(s)=1+s²、ZB=1、energy=1、α=1/2，左比值13/32，右比值1/2；两函数在全实轴连续严格正。
@@ -75,7 +75,7 @@ $$
 - 印刷页 / PDF页：218 / 239。
 - 原文引文（逐字）：
 
-> If $U$ is smooth and the domain $Q$ is finite, then clearly both integrals are well defined, so the normalization is sensible.
+> If $`U`$ is smooth and the domain $`Q`$ is finite, then clearly both integrals are well defined, so the normalization is sensible.
 
 - 问题所在：Q=(0,1)、U(q)=log q、β=1，权重1/q不可积；U在Q内光滑且Q体积有限。 修正版只给紧域构型权重可积；正体积、正配分函数、动量积分与归一化没有随之成立。
 - 反例或理由：n=1，Q=(0,1)，U(x)=log x（域外任意延拓），β=1；U在Q光滑而exp(-U)=1/x不可积。
@@ -95,7 +95,7 @@ $$
 - 印刷页 / PDF页：220 / 241。
 - 原文引文（逐字）：
 
-> Under assumptions on the potential energy as discussed above, and with $\phi$ continuous and allowed to grow at most polynomially fast at infinity, we may proceed to define averages with respect to the canonical density $\rho_\beta$, namely
+> Under assumptions on the potential energy as discussed above, and with $`\phi`$ continuous and allowed to grow at most polynomially fast at infinity, we may proceed to define averages with respect to the canonical density $`\rho_\beta`$, namely
 
 $$
 \operatorname{Av}_\beta(\phi)=Z_{\rm can}^{-1}\int_D\phi(q,p)\rho_\beta(q,p)d\omega.\tag{6.4}
@@ -121,7 +121,7 @@ $$
 - 印刷页 / PDF页：222 / 243。
 - 原文引文（逐字）：
 
-> Proposition 6.1 Let $H$ be a Hamiltonian defined on the phase space $\mathbb R^{2N_c}$ and suppose $G:\mathbb R^{2N_c}\to\mathbb R^{2N_c}$ is a smooth ($C^1$) vector field with the following properties:
+> Proposition 6.1 Let $`H`$ be a Hamiltonian defined on the phase space $`\mathbb R^{2N_c}`$ and suppose $`G:\mathbb R^{2N_c}\to\mathbb R^{2N_c}`$ is a smooth ($`C^1`$) vector field with the following properties:
 
 $$
 0<|\operatorname{Av}_\beta(G\cdot\nabla H)|<\infty,\quad 0<\operatorname{Av}_\beta(\nabla\cdot G)<\infty,\quad |Ge^{-\beta H}|<\infty.
@@ -187,7 +187,7 @@ $$
 - 印刷页 / PDF页：227 / 248。
 - 原文引文（逐字）：
 
-> Let $A(x)$, $B(x)$ and $C(x)$ be three events dependent on state variable $x$, and let $t_+>t_0>t_-$ be three times, then, for a Markov process $X(t)$ we have (using the notation for conditional probability):
+> Let $`A(x)`$, $`B(x)`$ and $`C(x)`$ be three events dependent on state variable $`x`$, and let $`t_+\gt t_0\gt t_-`$ be three times, then, for a Markov process $`X(t)`$ we have (using the notation for conditional probability):
 
 $$
 \Pr[A(X(t_+))\mid B(X(t_0)),C(X(t_-))]=\Pr[A(X(t_+))\mid B(X(t_0))].
@@ -213,14 +213,14 @@ $$
 - 印刷页 / PDF页：228 / 249。
 - 原文引文（逐字）：
 
-> Recall that the Riemann integral of a continuous function $g$ on $[0,\tau]$ is the limit of Riemann sums constructed as follows: partition the interval $[0,\tau]$ into $K$ subintervals each of width $\delta t=\tau/\nu$, choose an arbitrary $t_k$ from the $k$th subinterval, $1\leq k\leq \nu$, and evaluate the integral as a limit of the sum of products:
+> Recall that the Riemann integral of a continuous function $`g`$ on $`[0,\tau]`$ is the limit of Riemann sums constructed as follows: partition the interval $`[0,\tau]`$ into $`K`$ subintervals each of width $`\delta t=\tau/\nu`$, choose an arbitrary $`t_k`$ from the $`k`$th subinterval, $`1\leq k\leq \nu`$, and evaluate the integral as a limit of the sum of products:
 
 $$
 \int_0^\tau g(t)dt=\lim_{\nu\to\infty}\sum_{k=0}^{\nu-1}g(t_k)\delta t.
 $$
 
 
-> We know that this limit does not depend on where the $t_k$ are chosen within the subintervals. For example we can take the left or right endpoint of each subinterval or the midpoint.
+> We know that this limit does not depend on where the $`t_k`$ are chosen within the subintervals. For example we can take the left or right endpoint of each subinterval or the midpoint.
 
 - 问题所在：riemannTags与riemannTags\_corrected都对任意连续于[0,T]的g、T≥0及所有合法tag族陈述均匀网格Riemann和趋于区间积分。K>0和k<K只用于标签条件，K=0单项不影响atTop极限；T=0也正确。任意端点或内部tag均包含，未降成左端点特例。两个数学签名PASS，但这是统一索引后的版本，原文索引疑误应保留NEEDS\_HUMAN。
 - 反例或理由：riemannTags与riemannTags\_corrected都对任意连续于[0,T]的g、T≥0及所有合法tag族陈述均匀网格Riemann和趋于区间积分。K>0和k<K只用于标签条件，K=0单项不影响atTop极限；T=0也正确。任意端点或内部tag均包含，未降成左端点特例。两个数学签名PASS，但这是统一索引后的版本，原文索引疑误应保留NEEDS\_HUMAN。
@@ -240,14 +240,14 @@ $$
 - 印刷页 / PDF页：229–230 / 250–251。
 - 原文引文（逐字）：
 
-> Proposition 6.2 Let $\nu\delta t=\tau$ then
+> Proposition 6.2 Let $`\nu\delta t=\tau`$ then
 
 $$
 \operatorname{l.i.m.}_{\nu\to\infty}\sum_{k=0}^{\nu-1}[(W((k+1)\delta t)-W(k\delta t))^2]=\tau,
 $$
 
 
-> where, for a sequence of random variables, $A_\nu$ and a random variable $B$, we have
+> where, for a sequence of random variables, $`A_\nu`$ and a random variable $`B`$, we have
 
 $$
 \operatorname{l.i.m.}_{\nu\to\infty}A_\nu=B\iff\lim_{\nu\to\infty}\mathbb E(A_\nu-B)^2=0.
@@ -274,7 +274,7 @@ $$
 - 印刷页 / PDF页：230 / 251。
 - 原文引文（逐字）：
 
-> In contrast, the Stratonovich (midpoint) integral (denoted by $\int_0^\tau\circ dW(t)$) can be calculated as
+> In contrast, the Stratonovich (midpoint) integral (denoted by $`\int_0^\tau\circ dW(t)`$) can be calculated as
 
 $$
 \int_0^\tau W(t)\circ dW(t)=\operatorname{l.i.m.}_{\nu\to\infty}\sum_{k=0}^{\nu-1}W(k\delta t+\delta t/2)[W((k+1)\delta t)-W(k\delta t)].
@@ -314,7 +314,7 @@ $$
 - 印刷页 / PDF页：231 / 252。
 - 原文引文（逐字）：
 
-> Finally, we observe that by calculating $\sigma^2(t_n)$ and generating random increments $R_n\sim N(0,\sigma(t_n))$ we have a discrete representation of the continuous time stochastic process $Y(t)$, effectively an exact stroboscopic representation.
+> Finally, we observe that by calculating $`\sigma^2(t_n)`$ and generating random increments $`R_n\sim N(0,\sigma(t_n))`$ we have a discrete representation of the continuous time stochastic process $`Y(t)`$, effectively an exact stroboscopic representation.
 
 - 问题所在：若g≡1，区间[tₙ,tₙ₊₁]增量方差应为tₙ₊₁−tₙ，不能使用累计到tₙ₊₁的方差或把标准差当方差参数。 Printed保留增量/累计边际方差混淆。独立deterministicStrobePrinted\_corrected位于DeterministicStrobeCorrected来源，已本地存在但本次附件未提供，不能冒称复审PASS。
 - 反例或理由：g=1、times k=k、Y=W；k=0时实际W(1)-W(0)方差为1，Printed给0。
@@ -334,7 +334,7 @@ $$
 - 印刷页 / PDF页：233 / 254。
 - 原文引文（逐字）：
 
-> Now we expand the 2nd order term and, working in the diffusion limit, recognize that $\delta x^2\sim\delta t$, thus we have
+> Now we expand the 2nd order term and, working in the diffusion limit, recognize that $`\delta x^2\sim\delta t`$, thus we have
 
 $$
 \delta\phi=\phi'(X_n)(a(X_n,n\delta t)\delta t+b(X_n,n\delta t)J_n\delta x)+\tfrac12\phi''(X_n)b(X_n,n\delta t)^2\delta t+O(\delta t^{3/2}).
@@ -360,7 +360,7 @@ $$
 - 印刷页 / PDF页：234 / 255。
 - 原文引文（逐字）：
 
-> We also mention that the Itô-Doeblin formula can be easily generalized to functions of the form $\phi(x,t)$:
+> We also mention that the Itô-Doeblin formula can be easily generalized to functions of the form $`\phi(x,t)`$:
 
 $$
 d\phi(X,t)=\phi_t(X,t)+\phi_x(X,t)(a(X,t)dt+b(X,t)dW)+\tfrac12\phi_{xx}(X,t)b(X,t)^2dt.\tag{6.18}
@@ -440,7 +440,7 @@ $$
 - 印刷页 / PDF页：238 / 259。
 - 原文引文（逐字）：
 
-> If sufficient high frequency components are present, then the mass of the memory kernel is typically found to be localized around 0; in such a situation of rapid decay it is found that one may replace the function $\psi$ by a Dirac delta function scaled by a positive coefficient $\gamma$; we say that the system is Markovian or memory-less in this situation and we replace the delay-differential equation (6.29) by the SDEs
+> If sufficient high frequency components are present, then the mass of the memory kernel is typically found to be localized around 0; in such a situation of rapid decay it is found that one may replace the function $`\psi`$ by a Dirac delta function scaled by a positive coefficient $`\gamma`$; we say that the system is Markovian or memory-less in this situation and we replace the delay-differential equation (6.29) by the SDEs
 
 $$
 dQ=Pdt;\quad\text{(6.30)}\quad dP=-U'(Q)dt+\sigma dW-\gamma Pdt.\quad\text{(6.31)}
@@ -466,7 +466,7 @@ $$
 - 印刷页 / PDF页：237–238 / 258–259。
 - 原文引文（逐字）：
 
-> For large $k$ and for many choices of the frequencies $\Omega_i$ and the initial conditions $\{q_i(0);p_i(0)\}$, function $f(t)$ will take on the character of a Wiener process; in fact the convergence can be shown in the weak sense. We may even take the initial conditions to be randomly distributed [13,205].
+> For large $`k`$ and for many choices of the frequencies $`\Omega_i`$ and the initial conditions $`\{q_i(0);p_i(0)\}`$, function $`f(t)`$ will take on the character of a Wiener process; in fact the convergence can be shown in the weak sense. We may even take the initial conditions to be randomly distributed [13,205].
 
 - 问题所在：光滑有限热浴力的极限应区分白噪声与其时间积分Wiener过程；无初始化法则和谱条件不能指定普适法则。 两个定义分别表达力路径及积分力路径的收敛资格；没有断言实现条件存在，也没有初态、频谱标度、σ及紧性定理，网站未认证实际热浴极限。
 - 反例或理由：bathForceWeakLimitMeaning：在概率空间、正质量下，将实际Printed力逐点嵌入C([0,T])，要求路径随机变量可测，W为preBrownian并有连续路径代表；对每T>0全部有界连续泛函的期望收敛，确为路径法则弱收敛而非仅边际。_corrected改成正bathForce的0至s时间积分，其余量词不变；这是与dP中的白噪声驱动更相符的候选。没有任何版本断言存在初态/质量族满足；也没有σ幅度或物理标度条件，所以不能认证实际热浴收敛或称“修复完成”。两版定义签名各自表达所说资格，但数学解释保留NEEDS\_HUMAN。
@@ -486,42 +486,42 @@ $$
 - 印刷页 / PDF页：241–242 / 262–263。
 - 原文引文（逐字）：
 
-> We assume that $\rho$ is $C^\infty$ for all $t$ and that the density tends to zero exponentially fast as $x\to\pm\infty$, whereas $a$ and $b$ are $C^\infty$ functions which grow at most polynomially fast in these limits, that is, there are constants $\eta_a$, $\eta_b$ such that
+> We assume that $`\rho`$ is $`C^\infty`$ for all $`t`$ and that the density tends to zero exponentially fast as $`x\to\pm\infty`$, whereas $`a`$ and $`b`$ are $`C^\infty`$ functions which grow at most polynomially fast in these limits, that is, there are constants $`\eta_a`$, $`\eta_b`$ such that
 
 $$
 a(x)=\mathcal O(|x|^{\eta_a}),\quad b(x)=\mathcal O(|x|^{\eta_b}),\quad x\to\pm\infty.
 $$
 
 
-> This condition of polynomial growth of the coefficients is a common assumption in the analysis of SDEs. For future reference we define the space of functions which are $C^\infty$ smooth and satisfy the polynomial growth restriction by $CP^\infty$:
+> This condition of polynomial growth of the coefficients is a common assumption in the analysis of SDEs. For future reference we define the space of functions which are $`C^\infty`$ smooth and satisfy the polynomial growth restriction by $`CP^\infty`$:
 
 $$
 CP^\infty=\{\phi\in C^\infty\mid\exists\eta\in\mathbb N:\phi(x)=O(|x|^\eta),\ x\to\pm\infty\}.
 $$
 
 
-> For any $\phi\in CP^\infty$, the expectation with respect to $\rho(x,t)$ is well defined and we have
+> For any $`\phi\in CP^\infty`$, the expectation with respect to $`\rho(x,t)`$ is well defined and we have
 
 $$
 \mathbb E\phi(X(t))=\langle\phi,\rho\rangle=\int_{-\infty}^{+\infty}\phi(x)\rho(x,t)dx.
 $$
 
 
-> Taking the differential, we obtain an equation for $\mathbb E d\phi$ which must be equal to (6.37):
+> Taking the differential, we obtain an equation for $`\mathbb E d\phi`$ which must be equal to (6.37):
 
 $$
 \int_{-\infty}^{+\infty}\phi(x)\frac{\partial\rho}{\partial t}dx=\int_{-\infty}^{+\infty}(\mathcal L\phi)(x)\rho(x,t)dx=\int_{-\infty}^{+\infty}(a(x)\phi'+\tfrac12 b^2(x)\phi''(x))\rho(x,t)dx.
 $$
 
 
-> Using the assumptions given above regarding the exponential rate of decay of the density, it is possible to recast the right hand side as an integral of a product with $\phi$. First, we find
+> Using the assumptions given above regarding the exponential rate of decay of the density, it is possible to recast the right hand side as an integral of a product with $`\phi`$. First, we find
 
 $$
 \int_{-\infty}^{+\infty}a(x)\phi'(x)\rho(x,t)dx=[\phi(x)a(x)\rho(x,t)]_{-\infty}^{\infty}-\int_{-\infty}^{+\infty}\phi(x)(a(x)\rho(x,t))_x dx=-\int_{-\infty}^{+\infty}\phi(x)(a(x)\rho(x,t))_x dx.
 $$
 
 
-> With two rounds of integration by parts on the term involving $b(x)$, we find, using the fact that the boundary terms vanish,
+> With two rounds of integration by parts on the term involving $`b(x)`$, we find, using the fact that the boundary terms vanish,
 
 $$
 \int_{-\infty}^{+\infty}b^2(x)\phi''(x)\rho(x,t)dx=\int_{-\infty}^{+\infty}\phi(x)(b^2(x)\rho)_{xx}(x,t)dx.
@@ -535,7 +535,7 @@ $$
 $$
 
 
-> If this is to hold for all test functions $\phi$, we must have
+> If this is to hold for all test functions $`\phi`$, we must have
 
 $$
 \frac{\partial\rho}{\partial t}=-\frac{\partial}{\partial x}(a(x)\rho)+\frac12\frac{\partial^2}{\partial x^2}(b^2(x)\rho).
@@ -550,7 +550,7 @@ $$
 $$
 
 
-> where the operator appearing on the right hand side is the adjoint $\mathcal L^\dagger$ of the generator of the stochastic process, satisfying the relation
+> where the operator appearing on the right hand side is the adjoint $`\mathcal L^\dagger`$ of the generator of the stochastic process, satisfying the relation
 
 $$
 \langle\mathcal L\phi,\rho\rangle=\langle\phi,\mathcal L^\dagger\rho\rangle.
@@ -576,7 +576,7 @@ $$
 - 印刷页 / PDF页：239 / 260。
 - 原文引文（逐字）：
 
-> However, it should be noted that in many types of modelling, the physical nature of the interaction with the solvent bath is neglected and $\gamma$ or $\Gamma(q)$ are simply viewed as artificial parameters which allow recovery of averages with respect to the canonical distribution.
+> However, it should be noted that in many types of modelling, the physical nature of the interaction with the solvent bath is neglected and $`\gamma`$ or $`\Gamma(q)`$ are simply viewed as artificial parameters which allow recovery of averages with respect to the canonical distribution.
 
 - 问题所在：M与A=ΓΓᵀ不交换时，A M⁻¹和M⁻¹/² A M⁻¹/²不同；例如M=diag(1,4)、Γ=(1,1)ᵀ。
 - 反例或理由：n=2,r=1,m=(1,4),θ=1,U=0,Γ=(1,1)ᵀ常矩阵，p=(1,1)。ΓΓᵀ为全1矩阵。D42/ρ=−pᵀM⁻¹(ΓΓᵀ)p+pᵀM⁻½(ΓΓᵀ)M⁻½p=−1/4，故前向值=−exp(−5/8)/4≠0。
@@ -596,7 +596,7 @@ $$
 - 印刷页 / PDF页：245 / 266。
 - 原文引文（逐字）：
 
-> A distribution on the state space is typically associated to a row vector $\psi=(\psi_1,\psi_2,\ldots,\psi_k)$ with nonzero elements and which is normalized such that
+> A distribution on the state space is typically associated to a row vector $`\psi=(\psi_1,\psi_2,\ldots,\psi_k)`$ with nonzero elements and which is normalized such that
 
 $$
 \sum_{i=1}^k\psi_i=1.
@@ -622,7 +622,7 @@ $$
 - 印刷页 / PDF页：247 / 268。
 - 原文引文（逐字）：
 
-> Taking the adjoint, the forward Kolmogorov or Fokker-Planck operator is $\mathcal L^\dagger$, acting on a density $\rho(X)$ as
+> Taking the adjoint, the forward Kolmogorov or Fokker-Planck operator is $`\mathcal L^\dagger`$, acting on a density $`\rho(X)`$ as
 
 $$
 \mathcal L^\dagger\rho=-\nabla\cdot(b_0\rho)+\tfrac12\operatorname{Tr}(B^T\phi''B).
@@ -648,14 +648,14 @@ $$
 - 印刷页 / PDF页：250 / 271。
 - 原文引文（逐字）：
 
-> In this form we see that $f$ and $g$ appear symmetrically, so we may write
+> In this form we see that $`f`$ and $`g`$ appear symmetrically, so we may write
 
 $$
 \langle f,\mathcal Lg\rangle_\beta=\langle\mathcal Lf,g\rangle_\beta;
 $$
 
 
-> hence, with respect to the weighted inner product, $\mathcal L^\dagger=\mathcal L$. (Note that the adjoint indicated here is quite different than the $L^2$ adjoint mentioned previously in connection with the Fokker-Planck operator.)
+> hence, with respect to the weighted inner product, $`\mathcal L^\dagger=\mathcal L`$. (Note that the adjoint indicated here is quite different than the $`L^2`$ adjoint mentioned previously in connection with the Fokker-Planck operator.)
 
 - 问题所在：A：配对等式及随后L†=L的引文准确，原文的自伴措辞应保留。C：两份Lean签名完全相同，均为PASS的限定配对恒等式：积分在一个基本立方体上，权为exp(−βU)，U、f、g均C∞且单位周期，β≠0；m仅作实系数参数，形式对称本身不需要质量正性。D32–D34及归一配对定义表明取消正的配分函数因子不会改变等式。它们没有表达伴随算子的定义域等于原定义域。原页从对称积分直接说L†=L，但此前给出的C₀²域是否指闭实现并不清楚，不能把正确的核心对称等式当作原域已自伴。corrected版数学陈述通过；整条因原文域解释仍为NEEDS\_HUMAN，而非因证明占位或定义缺失。 两份相同签名只覆盖周期核心的形式配对对称；不覆盖原域与伴随域相等。
 - 反例或理由：用于说明域问题而非反驳配对等式：在一维周期环面、U=0时，将d²/dq²仅定义在C∞周期核心上，它对称但尚未闭；其自伴闭实现的定义域为周期H²。
@@ -672,7 +672,7 @@ $$
 - 印刷页 / PDF页：249–250 / 270–271。
 - 原文引文（逐字）：
 
-> Then $\mathcal L$ is self-adjoint with respect to this inner product.
+> Then $`\mathcal L`$ is self-adjoint with respect to this inner product.
 
 - 问题所在：A：印刷249页末的“Then L is self-adjoint with respect to this inner product.”摘录准确。C：两份签名相同且作为修正版均PASS：正对角质量、β>0、C∞单位周期势；对象为归一Gibbs复L²上的实际部分线性算子，结论为完整IsSelfAdjoint。已展开光滑周期空间→L²嵌入→光滑域算子→实图闭包→由实际闭算子特征空间构成的复Hilbert基→最大复图。复图约束的是所有谱系数，并非只在原光滑域验证对称；归一权重的常数缩放不改变自伴关系。原书该句的前置对象是C₀²(μ̄β)，并先取M=I、γ=1；本条采用周期闭实现及正对角质量推广，是明确披露的域修正而非原C₀²域的逐字实现。[EXTRA]已要求人工确认，整条据此为NEEDS\_HUMAN。 限定版正质量、β>0、C∞单位周期势、闭Gibbs复L²实现已获PASS；原C₀²措辞与闭实现的解释仍待导师。
 - 反例或理由：一维周期Laplacian限制于C∞周期核心时是对称的；其自伴实现使用更大的周期H²域。核心对称不能消除这个域差别。
@@ -716,7 +716,7 @@ $$
 $$
 
 
-> so that $\langle f,\mathcal Lf\rangle\le0$ so the operator is negative definite and can only have non-positive eigenvalues.
+> so that $`\langle f,\mathcal Lf\rangle\le0`$ so the operator is negative definite and can only have non-positive eigenvalues.
 
 - 问题所在：非零常数函数的梯度为0，二次型等于0；故仅为半负定。
 - 反例或理由：f≡1光滑周期非零，但Lf=0，二次型=0。
@@ -733,7 +733,7 @@ $$
 - 印刷页 / PDF页：250 / 271。
 - 原文引文（逐字）：
 
-> so that $\langle f,\mathcal Lf\rangle\le0$ so the operator is negative definite and can only have non-positive eigenvalues.
+> so that $`\langle f,\mathcal Lf\rangle\le0`$ so the operator is negative definite and can only have non-positive eigenvalues.
 
 - 问题所在：A：原文确实同时写⟨f,Lf⟩≤0和“negative definite”，转录未错，不能在原引文中静默改成半负定。C：两份签名均PASS：正质量、β>0、C∞周期U及非零L²意义的C∞周期f，逐点满足Lf=ℓf，且参数ℓ预先属于ℝ，结论ℓ≤0。非零性相对于基本立方体Lebesgue几乎处处定义，正Gibbs权使其等价于Gibbs-L²非零；没有把特征值符号作为假设。声明不证明任意复特征值实性，也不证明严格负定；这些限制已由[EXTRA]说明。整条因原书严格负定用语的数学疑误需人工签核。
 - 反例或理由：取Nc=1、m=1、U=0、β=1、f≡1。f在基本立方体上非零且C∞周期，Lf=0，故⟨f,Lf⟩β=0，而不是<0。ℓ=0完全符合本条两份正确签名。
@@ -750,7 +750,7 @@ $$
 - 印刷页 / PDF页：250 / 271。
 - 原文引文（逐字）：
 
-> so that $\langle f,\mathcal Lf\rangle\le0$ so the operator is negative definite and can only have non-positive eigenvalues.
+> so that $`\langle f,\mathcal Lf\rangle\le0`$ so the operator is negative definite and can only have non-positive eigenvalues.
 
 - 问题所在：取f≡1，非零而〈f,Lf〉=0。
 - 反例或理由：任意维数取U=0、m≡1、β=1、f≡1；基本域测度1，f非零而Lf=0，结论0<0为假。
@@ -777,17 +777,17 @@ $$
 $$
 
 
-> Suppose that $U$ is smooth with periodic boundary conditions $\mathcal Q=\mathbb T^{N_c}$ ($\mathbb T^{N_c}$ an $N_c$-dimensional torus). Then, with respect to the space $C_0^2(\mu_\beta)$ with inner product $\langle f,g\rangle_\beta$ as defined above, we have:
-> 1. $\mathcal L$ is self-adjoint, negative definite, with spectrum consisting of discrete eigenvalues on the half line $(-\infty,0]$.
-> 2. $\mathcal L$ has a spectral gap, meaning that, with exception of the zero eigenvalue, the remainder of the spectrum satisfies $\sigma(\mathcal L)\subset(-\infty,-\alpha]$ for some $\alpha>0$.
-> 3. averages with respect to the evolving, time-dependent distribution converge exponentially rapidly to averages with respect to the invariant distribution, and, for any smooth, compactly supported test function $\varphi$, we have
+> Suppose that $`U`$ is smooth with periodic boundary conditions $`\mathcal Q=\mathbb T^{N_c}`$ ($`\mathbb T^{N_c}`$ an $`N_c`$-dimensional torus). Then, with respect to the space $`C_0^2(\mu_\beta)`$ with inner product $`\langle f,g\rangle_\beta`$ as defined above, we have:
+> 1. $`\mathcal L`$ is self-adjoint, negative definite, with spectrum consisting of discrete eigenvalues on the half line $`(-\infty,0]`$.
+> 2. $`\mathcal L`$ has a spectral gap, meaning that, with exception of the zero eigenvalue, the remainder of the spectrum satisfies $`\sigma(\mathcal L)\subset(-\infty,-\alpha]`$ for some $`\alpha\gt 0`$.
+> 3. averages with respect to the evolving, time-dependent distribution converge exponentially rapidly to averages with respect to the invariant distribution, and, for any smooth, compactly supported test function $`\varphi`$, we have
 
 $$
 |\bar\varphi(t)-\operatorname{Av}_\beta(\varphi)|\le K\|\varphi\|_\beta e^{-\alpha t};
 $$
 
 
-> for some positive $K$ and $\alpha$, where recall $\bar\varphi(t)$ denotes the time average of $\varphi$ defined in (5.6).
+> for some positive $`K`$ and $`\alpha`$, where recall $`\bar\varphi(t)`$ denotes the time average of $`\varphi`$ defined in (5.6).
 
 - 问题所在：常数核反驳严格负定；随机轨道时间平均通常不具有原式的逐路径指数误差界；核心域上的对称性不自动等于闭实现的自伴性。此外p.244将ΔM定义为正质量权重，Brownian生成元扩散应为逆质量权重；m=2、U=0、f(x)=x²可区分二者。 旧Printed使用闭实现是形式化偏差，已改名限定摘录；原文负定措辞及分布/轨道平均冲突仍保留。印刷244/PDF265已目视核定ΔM=Σmi∂²/∂pi²，与构型逆质量生成元须区分。
 - 反例或理由：严格负定：取一维、m=β=1、U=0、f≡1，有Lf=0且⟨f,Lf⟩=0。轨道指数界也不能用分布指数混合替代：在同一圆周Brownian模型、初值0、f(q)=cos(2πq)时，对每个固定t>0有正概率整段路径停在足够小的邻域，时间平均仍接近1而空间平均为0；当t足够大，任意固定Kexp(−αt)都会小于该偏差，故Printed所要求的几乎处处、所有t成立的固定常数界不能成立。此处反例说明原书疑误，不作为Printed忠实性FAIL的理由。
@@ -811,17 +811,17 @@ $$
 $$
 
 
-> Suppose that $U$ is smooth with periodic boundary conditions $\mathcal Q=\mathbb T^{N_c}$ ($\mathbb T^{N_c}$ an $N_c$-dimensional torus). Then, with respect to the space $C_0^2(\mu_\beta)$ with inner product $\langle f,g\rangle_\beta$ as defined above, we have:
-> 1. $\mathcal L$ is self-adjoint, negative definite, with spectrum consisting of discrete eigenvalues on the half line $(-\infty,0]$.
-> 2. $\mathcal L$ has a spectral gap, meaning that, with exception of the zero eigenvalue, the remainder of the spectrum satisfies $\sigma(\mathcal L)\subset(-\infty,-\alpha]$ for some $\alpha>0$.
-> 3. averages with respect to the evolving, time-dependent distribution converge exponentially rapidly to averages with respect to the invariant distribution, and, for any smooth, compactly supported test function $\varphi$, we have
+> Suppose that $`U`$ is smooth with periodic boundary conditions $`\mathcal Q=\mathbb T^{N_c}`$ ($`\mathbb T^{N_c}`$ an $`N_c`$-dimensional torus). Then, with respect to the space $`C_0^2(\mu_\beta)`$ with inner product $`\langle f,g\rangle_\beta`$ as defined above, we have:
+> 1. $`\mathcal L`$ is self-adjoint, negative definite, with spectrum consisting of discrete eigenvalues on the half line $`(-\infty,0]`$.
+> 2. $`\mathcal L`$ has a spectral gap, meaning that, with exception of the zero eigenvalue, the remainder of the spectrum satisfies $`\sigma(\mathcal L)\subset(-\infty,-\alpha]`$ for some $`\alpha\gt 0`$.
+> 3. averages with respect to the evolving, time-dependent distribution converge exponentially rapidly to averages with respect to the invariant distribution, and, for any smooth, compactly supported test function $`\varphi`$, we have
 
 $$
 |\bar\varphi(t)-\operatorname{Av}_\beta(\varphi)|\le K\|\varphi\|_\beta e^{-\alpha t};
 $$
 
 
-> for some positive $K$ and $\alpha$, where recall $\bar\varphi(t)$ denotes the time average of $\varphi$ defined in (5.6).
+> for some positive $`K`$ and $`\alpha`$, where recall $`\bar\varphi(t)`$ denotes the time average of $`\varphi`$ defined in (5.6).
 
 - 问题所在：对非平凡平稳扩散，时间平均的随机波动通常为代数尺度；原句前半讨论演化分布平均，末句却引用(5.6)时间平均。
 - 反例或理由：取一维圆周U=0、标准Brownian及非恒定余弦检验。若所有t的时间积分误差≤Ct exp(−αt)，则积分趋0；任意固定长度的后期区间积分也须趋0，但混合平稳极限中该区间积分具有非退化分布，矛盾。
@@ -841,7 +841,7 @@ $$
 - 印刷页 / PDF页：248 / 269。
 - 原文引文（逐字）：
 
-> The solution $p(t)$ to the Ornstein-Uhlenbeck equation, for any finite time $t$, is always normally distributed
+> The solution $`p(t)`$ to the Ornstein-Uhlenbeck equation, for any finite time $`t`$, is always normally distributed
 
 $$
 \rho(p,t)=\exp\left[-\frac{(p-\mu(t))^2}{2\sigma(t)^2}\right];\tag{6.44}
@@ -874,22 +874,22 @@ $$
 - 印刷页 / PDF页：252 / 273。
 - 原文引文（逐字）：
 
-> Assumption 1 The Markov process generated by the SDE (6.43) satisfies, for some fixed compact set $C\in\mathcal B(D)$, the conditions:
-> (i) For some $y\in\operatorname{int}(C)$, we have that for any $\delta>0$ there is a $t_0>0$ such that
+> Assumption 1 The Markov process generated by the SDE (6.43) satisfies, for some fixed compact set $`C\in\mathcal B(D)`$, the conditions:
+> (i) For some $`y\in\operatorname{int}(C)`$, we have that for any $`\delta\gt 0`$ there is a $`t_0\gt 0`$ such that
 
 $$
 \operatorname{Pr}(X(t_0)\in B_\delta(y)\mid X(0)=X_0)>0,\quad\forall X_0\in C.
 $$
 
 
-> (ii) For $t>0$, the transition kernel possesses a density $\widehat\rho(X,z,t)$ such that
+> (ii) For $`t\gt 0`$, the transition kernel possesses a density $`\widehat\rho(X,z,t)`$ such that
 
 $$
 \operatorname{Pr}(X(t)\in A\mid X(0)=X_0)=\int_A\widehat\rho(X_0,z,t)dz,\quad\forall X_0\in C,\ A\in\mathcal B(D)\cap\mathcal B(C);
 $$
 
 
-> and $\widehat\rho(X,z,t)$ is jointly continuous in $C\times C\times[0,\infty)$.
+> and $`\widehat\rho(X,z,t)`$ is jointly continuous in $`C\times C\times[0,\infty)`$.
 
 - 问题所在：Brownian热核对角线上随t↓0发散，t=0转移核是Dirac测度。
 - 反例或理由：正维热核在对角随t↓0发散，不能在C×C×[0,∞)上取有限连续延拓。
@@ -906,23 +906,23 @@ $$
 - 印刷页 / PDF页：252 / 273。
 - 原文引文（逐字）：
 
-> Theorem 6.2 (Geometric Ergodicity) Let the solution to (6.43) be denoted $X(t)$. If Assumption 1 and Assumption 2 are satisfied for
+> Theorem 6.2 (Geometric Ergodicity) Let the solution to (6.43) be denoted $`X(t)`$. If Assumption 1 and Assumption 2 are satisfied for
 
 $$
 C=\{X\in D\mid\varphi(X)\le K_{\alpha,\delta}\},
 $$
 
 
-> where $K_{\alpha,\delta}$ is a particular positive value depending on $\alpha$ and $\delta$, then
-> (i) there exists a unique invariant measure $\rho_*$, with $\mathcal L^*\rho_*=0$, and
-> (ii) there exist positive constants $\kappa$ and $\lambda$ such that for all suitable functions $f$ with $|f|\le\varphi$,
+> where $`K_{\alpha,\delta}`$ is a particular positive value depending on $`\alpha`$ and $`\delta`$, then
+> (i) there exists a unique invariant measure $`\rho_*`$, with $`\mathcal L^*\rho_*=0`$, and
+> (ii) there exist positive constants $`\kappa`$ and $`\lambda`$ such that for all suitable functions $`f`$ with $`|f|\le\varphi`$,
 
 $$
 |e^{t\mathcal L}f(X_0)-\operatorname{Av}(f)|\le \kappa e^{-\lambda t}\varphi(X_0);\tag{6.48}
 $$
 
 
-> where $\operatorname{Av}(f)=\int_D f(z)\rho_*(z)dz$ is the spatial average.
+> where $`\operatorname{Av}(f)=\int_D f(z)\rho_*(z)dz`$ is the spatial average.
 
 - 问题所在：本项与Assumption 1(ii)同一零时刻连续密度疑误，合并计数；Printed未限制真实生成元测试域是形式化偏差，本轮已另行修复。
 - 反例或理由：端点问题：以一维Brownian运动、初值0、Lebesgue参考测度为例，t>0的热核在原点为(4πDt)⁻¹/²，t↓0时无界；t=0的分布是δ0，而不是在C×C×[0,∞)连续的有限实值密度。这是原书端点疑误；Printed测试域FAIL的理由是其总导数对象与原实际生成元不相同，而不是该热核例或sorry。
@@ -979,14 +979,14 @@ $$
 - 印刷页 / PDF页：253 / 274。
 - 原文引文（逐字）：
 
-> We also consider the potential energy to be smooth ($C^\infty$) with $U(q)\to\infty$ as $|q|\to\infty$. As we have a smooth potential on a bounded (position) domain, we have
+> We also consider the potential energy to be smooth ($`C^\infty`$) with $`U(q)\to\infty`$ as $`|q|\to\infty`$. As we have a smooth potential on a bounded (position) domain, we have
 
 $$
 1<U_{\min}\le U(q)\le U_{\max}<\infty,\quad\forall q\in\mathcal Q,
 $$
 
 
-> for some constants $U_{\min}$ and $U_{\max}$.
+> for some constants $`U_{\min}`$ and $`U_{\max}`$.
 
 - 问题所在：周期势有界，不可能同时在其欧氏lift上随|q|→∞趋于∞；U=0也不满足Umin>1。
 - 反例或理由：U≡0满足连续周期却没有1<Umin≤U；正维周期势沿整数平移保持常值，不能趋∞。
@@ -1003,7 +1003,7 @@ $$
 - 印刷页 / PDF页：253 / 274。
 - 原文引文（逐字）：
 
-> The whole phase space is $D=\mathbb T^{N_c}\times\mathbb R^{N_c}$. We also consider the potential energy to be smooth ($C^\infty$) with $U(q)\to\infty$ as $|q|\to\infty$.
+> The whole phase space is $`D=\mathbb T^{N_c}\times\mathbb R^{N_c}`$. We also consider the potential energy to be smooth ($`C^\infty`$) with $`U(q)\to\infty`$ as $`|q|\to\infty`$.
 
 - 问题所在：正维周期lift沿整数平移取相同势值，无法趋于∞。
 - 反例或理由：取任意q及非零整数方向e₁；q+ke₁逃离每个紧集，周期性却给U(q+ke₁)=U(q)。
@@ -1067,7 +1067,7 @@ $$
 - 印刷页 / PDF页：253 / 274。
 - 原文引文（逐字）：
 
-> As $H^l$ grows faster than $H^{l-1}$, for any fixed $l$ we are able to find positive constants $c$ and $d$ such that
+> As $`H^l`$ grows faster than $`H^{l-1}`$, for any fixed $`l`$ we are able to find positive constants $`c`$ and $`d`$ such that
 
 $$
 l(l+N_c-1)H^{l-1}\le\tfrac l2H^l+c;\qquad 2lH^{l-1}U(q)<2lH^{l-1}U_{\max}\le\tfrac l2H^l+d.
@@ -1093,14 +1093,14 @@ $$
 - 印刷页 / PDF页：254 / 275。
 - 原文引文（逐字）：
 
-> Definition 6.1 (Hörmander's Condition) Let $U\subset\mathbb R^m$ be open. The SDE (6.43) with $C^\infty$ vector fields $b_0,b_1,\ldots,b_r:U\to\mathbb R^m$ are said to satisfy Hörmander's condition at $z\in U$ if the vector space spanned by the collection of iterated Lie brackets
+> Definition 6.1 (Hörmander's Condition) Let $`U\subset\mathbb R^m`$ be open. The SDE (6.43) with $`C^\infty`$ vector fields $`b_0,b_1,\ldots,b_r:U\to\mathbb R^m`$ are said to satisfy Hörmander's condition at $`z\in U`$ if the vector space spanned by the collection of iterated Lie brackets
 
 $$
 b_0,b_1,\ldots,b_r,[b_0,b_1],[b_0,b_2],\ldots,[b_{r-1},b_r],[b_0,[b_0,b_1]],\ldots
 $$
 
 
-> (evaluated at $z$) is $\mathbb R^m$.
+> (evaluated at $`z`$) is $`\mathbb R^m`$.
 
 - 问题所在：一维确定性dX=dt的漂移b₀=1已张成R，但点初始转移法则始终为Dirac，没有Lebesgue密度。单独把漂移放入生成族不能保证随机平滑。
 - 反例或理由：A：Definition 6.1的开域、光滑向量场、域内点、包括b0的迭代括号及实线性张成等于ℝm均准确转录，省略号保持同一完整有限生成族。C：definition61与Printed逐项保留开域D、x∈D、所有Fin(S+1)字段在D上C∞以及包括漂移b0的全部迭代Lie括号；D95不是有限深度截断，D96–D97在x处取实span=⊤。全空间总化函数只用于表示局部字段，D开且光滑性只要求ContDiffOn D，因此不要求原书没有的全局光滑延拓。Bracket符号与原文v′u−u′v一致。corrected的第0层只用b1,…,bS，后续允许与任一bᵢ取括号再取并，最后量化所有自然数层并取实span，正确区分用于正时刻密度的抛物型条件。原定义包含漂移作为一个数学定义本身并不矛盾；不能据此对一般SDE断言转移密度，而本条也没有这样的定理结论。四个定义的角色及[EXTRA]一致。
@@ -1120,14 +1120,14 @@ $$
 - 印刷页 / PDF页：255 / 276。
 - 原文引文（逐字）：
 
-> Lemma 6.1 For all $t>0$ and all open $C\subset D$, we have that
+> Lemma 6.1 For all $`t\gt 0`$ and all open $`C\subset D`$, we have that
 
 $$
 \Pr(X(t)\in C\mid X(0)=X_0)>0,\quad\forall X_0\in D,
 $$
 
 
-> where $X(t)=(q(t),p(t))^T$ is a solution to Langevin dynamics (6.47).
+> where $`X(t)=(q(t),p(t))^T`$ is a solution to Langevin dynamics (6.47).
 
 - 问题所在：C=∅是开集，但概率为0。
 - 反例或理由：仅针对原书数学错误：取任意允许的正时间、初值及物理参数，令C=∅。∅是开集，任何转移测度都有K t x ∅=0，故原严格不等式变成0<0。此反例不作为Printed忠实性FAIL的理由。
@@ -1147,21 +1147,21 @@ $$
 - 印刷页 / PDF页：257 / 278。
 - 原文引文（逐字）：
 
-> Proposition 6.4 Let $U$ be $C^\infty$ on the position domain $Q=\mathbb T^{N_c}$ and suppose $g\in H^1(\mu)$ satisfies
+> Proposition 6.4 Let $`U`$ be $`C^\infty`$ on the position domain $`Q=\mathbb T^{N_c}`$ and suppose $`g\in H^1(\mu)`$ satisfies
 
 $$
 \int_D g\,d\mu_\beta=0,
 $$
 
 
-> where $\mu_\beta$ is the canonical measure, then the Poisson equation
+> where $`\mu_\beta`$ is the canonical measure, then the Poisson equation
 
 $$
 \mathcal L_{LD}^\dagger\varphi=g
 $$
 
 
-> has a solution $\varphi\in H^1(\mu)$ which is unique up to addition of a constant multiple of the Gibbs density.
+> has a solution $`\varphi\in H^1(\mu)`$ which is unique up to addition of a constant multiple of the Gibbs density.
 
 - 问题所在：flat前向算子的像应满足相对于体积的零质量条件；原却用Gibbs加权零均值，同时把核写成Gibbs密度，混合两种坐标。
 - 反例或理由：针对原印刷flat-forward弱域，而非相对Gibbs修正版：取n=1、U=0、β=γ=1，μ为单位环面Haar概率与标准高斯的乘积。令w(q,p)=exp(-p²/2)·∫₀ᵖexp(s²/2)ds。w为非零奇函数，满足∂ₚw+p w=1，故∂ₚ²w+∂ₚ(pw)=0，且与q无关。w及其一阶导数在高斯加权L²中，因而给出所定义的完整加权H¹元素；对每个紧支光滑测试函数均满足flatForwardWeak U 1 1 w 0。w不可能是偶函数Gibbs密度的常数倍。g=0时0与w已经破坏唯一模Gibbs倍数的结论。这是一项解析审校反例，不是经Lean验证的\_counterexample声明；本任务未摘录任何此名声明。
@@ -1178,7 +1178,7 @@ $$
 - 印刷页 / PDF页：257 / 278。
 - 原文引文（逐字）：
 
-> If we have two solutions $\varphi_1,\varphi_2$ of $\mathcal L_{LD}^\dagger\varphi=g$, then their difference $w$ must be a solution of $\mathcal L_{LD}^{\dagger}w=0$ and the only such solution is a constant multiple of the Gibbs density $\rho_\beta$.
+> If we have two solutions $`\varphi_1,\varphi_2`$ of $`\mathcal L_{LD}^\dagger\varphi=g`$, then their difference $`w`$ must be a solution of $`\mathcal L_{LD}^{\dagger}w=0`$ and the only such solution is a constant multiple of the Gibbs density $`\rho_\beta`$.
 
 - 问题所在：PASS限于EXTRA明确交付的相对Gibbs修正版。它保留所有光滑周期U、β>0、γ>0，对每个完整弱H¹零模w，在真实Langevin后向闭算子的Gibbs Hilbert伴随域内断言value(w)为常数。图成员资格不可省略，且这里没有使用旧flat紧支测试定义。这与r↦ρβr的密度转换一致，核陈述合理。原句的“两解差”可由伴随图线性化为此零模结论，但本条没有另外给出flat坐标的两解差等式；不能将常数直接说成原坐标的Gibbs密度倍数。EXTRA已经声明改动，故不当作静默纠错或签名FAIL；原书域/坐标问题在A阶段维持NEEDS\_HUMAN。本结论尚待证明与签名是否正确是两回事。
 - 反例或理由：针对原印刷flat-forward弱域，而非相对Gibbs修正版：取n=1、U=0、β=γ=1，μ为单位环面Haar概率与标准高斯的乘积。令w(q,p)=exp(-p²/2)·∫₀ᵖexp(s²/2)ds。w为非零奇函数，满足∂ₚw+p w=1，故∂ₚ²w+∂ₚ(pw)=0，且与q无关。w及其一阶导数在高斯加权L²中，因而给出所定义的完整加权H¹元素；对每个紧支光滑测试函数均满足flatForwardWeak U 1 1 w 0。w不可能是偶函数Gibbs密度的常数倍。g=0时0与w已经破坏唯一模Gibbs倍数的结论。这是一项解析审校反例，不是经Lean验证的\_counterexample声明；本任务未摘录任何此名声明。
@@ -1198,14 +1198,14 @@ $$
 - 印刷页 / PDF页：258 / 279。
 - 原文引文（逐字）：
 
-> Since all the eigenvalues lie to the left of a vertical line in the left half plane, for any $\varphi$ in $C^\infty$ we have
+> Since all the eigenvalues lie to the left of a vertical line in the left half plane, for any $`\varphi`$ in $`C^\infty`$ we have
 
 $$
 \int_D\varphi\rho(q,p,t)d\omega=\operatorname{Av}_\beta(\varphi)+\alpha e^{t\lambda_1}\int_D\varphi\rho^{(1)}d\omega.
 $$
 
 
-> The latter integral is bounded since both $\varphi$ and $\rho^{(1)}$ are in $L^2$, and since $\operatorname{Re}(\lambda_1)<0$, we see that this converges exponentially to the desired average.
+> The latter integral is bounded since both $`\varphi`$ and $`\rho^{(1)}`$ are in $`L^2`$, and since $`\operatorname{Re}(\lambda_1)\lt 0`$, we see that this converges exponentially to the desired average.
 
 - 问题所在：在正维无界动量空间上，f≡1光滑却不属于flat L²；一般光滑也不保证Gibbs L²。
 - 反例或理由：针对Printed数学主张：n=1取f(q,p)=1，周期提升处处C∞，但平直∫T×R|f|²dω=∞，故不在L²。也可取任意非零高次多项式。该反例不反驳corrected的C∞∩L²定义。
@@ -1225,14 +1225,14 @@ $$
 - 印刷页 / PDF页：258 / 279。
 - 原文引文（逐字）：
 
-> For example, if we assume that $\lambda_1,\rho^{(1)}$ is some eigenvalue, eigenfunction pair with $\operatorname{Re}(\lambda_1)<0$ and take the initial distribution to be
+> For example, if we assume that $`\lambda_1,\rho^{(1)}`$ is some eigenvalue, eigenfunction pair with $`\operatorname{Re}(\lambda_1)\lt 0`$ and take the initial distribution to be
 
 $$
 \rho_0=\rho_{eq}+\alpha\rho^{(1)},
 $$
 
 
-> for $\alpha\in\mathbb R$, then we have
+> for $`\alpha\in\mathbb R`$, then we have
 
 - 问题所在：complexInitialDensity：作为EXTRA明确声明的概率资格辅助定义，PASS；complexInitialDensity\_corrected：同样PASS，且二者实为同体，不是一个已证另一个待证。它们要求ρeq及给定组合ρeq+αρ1各自AE实且非负，实部可积且积分1；这些是复L²候选代表概率密度所需的正确条件。不要求ρ1本身非负，亦不要求α≠0，均正确；α=0时没有从单位质量倒推ρ1零积分。定义里没有λ或A，也没有声称所有α合格、ρeq确为Gibbs或ρ1确为本征函数；这些必须由使用处如条目14另列。因此这是合理的显式限定，不是对原页任意α的无条件实现；A阶段仍须人工核定原文中“initial distribution”的隐含范围。
 - 反例或理由：取n=1、U=0、β=γ=1，ρeq=(2π)^(-1/2)e^(-p²/2)，ρ1=pρeq（q无关），这是平直前向OU生成元的非零特征函数，特征值-1。两者均在平直L²，且∫ρ1=0；但α=1时ρ0=(1+p)ρeq在p<-1为负，故不是概率密度。即使实本征模式和负实特征值也不能免去非负检查。

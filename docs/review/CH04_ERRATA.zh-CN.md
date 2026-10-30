@@ -33,7 +33,7 @@
 - 印刷页 / PDF页：140 / 162。
 - 原文引文（逐字）：
 
-> if $h\Omega\le2$ the integrator is stable.
+> if $`h\Omega\le2`$ the integrator is stable.
 
 - 问题所在：已展开 Ch04\_deps.txt 中 MolecularDynamics/Chapter04/ReviewDefinitions.lean 的正式定义：matrixStable(A)=∃C∈ℝ,∀k∈ℕ,∀v∈ℝ², ‖A^k v‖≤C‖v‖，是统一幂有界而不是仅谱模≤1；symplecticEulerMatrix(Ω,h)=[[1-h²Ω²,h],[-hΩ²,1]]；verletMatrix(Ω,h)=[[1-h²Ω²/2,h],[-hΩ²(1-h²Ω²/4),1-h²Ω²/2]]。 Ω>0和h>0是频率/步长背景的合理显式假设；≤2忠实保留印刷端点，但将稳定解释成matrixStable使印刷断言为假。[ERRATUM?]端点反例成立。忠实保留错误原句与数学真伪分别记录；声明含sorry，不能视作已证明。 网站原文审校另记：
 - 反例或理由：Ω=1,h=2：S=[[-3,2],[-2,1]]=-I+N，N=[[-2,2],[-2,2]]，N²=0。对v=(1,0)，S^k v=(-1)^k(1+2k,2k)，范数无界。
@@ -49,7 +49,7 @@
 - 印刷页 / PDF页：141 / 163。
 - 原文引文（逐字）：
 
-> the numerical solution stays bounded for all time) provided $h\Omega\le2$
+> the numerical solution stays bounded for all time) provided $`h\Omega\le2`$
 
 - 问题所在：已展开 Ch04\_deps.txt 中 MolecularDynamics/Chapter04/ReviewDefinitions.lean 的正式定义：matrixStable(A)=∃C∈ℝ,∀k∈ℕ,∀v∈ℝ², ‖A^k v‖≤C‖v‖，是统一幂有界而不是仅谱模≤1；symplecticEulerMatrix(Ω,h)=[[1-h²Ω²,h],[-hΩ²,1]]；verletMatrix(Ω,h)=[[1-h²Ω²/2,h],[-hΩ²(1-h²Ω²/4),1-h²Ω²/2]]。 Ω>0和h>0是频率/步长背景的合理显式假设；≤2忠实保留印刷端点，但将稳定解释成matrixStable使印刷断言为假。[ERRATUM?]端点反例成立。忠实保留错误原句与数学真伪分别记录；声明含sorry，不能视作已证明。 网站原文审校另记：
 - 反例或理由：Ω=1,h=2：V=[[-1,2],[0,-1]]=-I+N，N²=0。对v=(0,1)，V^k v=(-1)^k(-2k,1)，范数无界。
@@ -65,7 +65,7 @@
 - 印刷页 / PDF页：141 / 163。
 - 原文引文（逐字）：
 
-> For example, applying the Verlet method to the harmonic oscillator with frequency $\Omega$ we find that the origin is stable (and the numerical solution stays bounded for all time) provided $h\Omega\le2$ (the same condition as for stability of Symplectic Euler).
+> For example, applying the Verlet method to the harmonic oscillator with frequency $`\Omega`$ we find that the origin is stable (and the numerical solution stays bounded for all time) provided $`h\Omega\le2`$ (the same condition as for stability of Symplectic Euler).
 
 - 问题所在：两个签名分别为 0<|hΩ|<2 时的矩阵幂有界和任意 Ω 下 h=0 的幂有界；matrixStable 是同一 C 同时控制所有自然步数和所有实初值，非仅谱模≤1。verletMatrix 为实际速度Verlet矩阵。严格区间的正定二次型 p²+Ω²(1-h²Ω²/4)q²保持，h=0 为恒等矩阵，修订合理且陈述正确；PASS仅针对明示修订版，不认可原印≤端点。引用的 BoundaryPrinted 不在19条内，未据此宣称它已审。 网站原文审校另记：code：BOOK\_ENDPOINT\_ERRATUM；detail：原句确实印作 hΩ≤2 且声称所有时间有界；忠实转录，但端点陈述有数学疑误，保留原句。；code：CORRECTED\_SCOPE\_EXPLICIT；detail：修订版资格和原印断言不同，已明示且数学上合理；不以修订版PASS为原书背书。
 - 反例或理由：Ω=1,h=2 时 Verlet 矩阵 A=[[-1,2],[0,-1]]。对 v=(0,1)，A^k v=((-1)^(k+1)2k,(-1)^k)，范数无界；原句 hΩ≤2 成立。此反例不反驳已明确的严格区间修订版。
@@ -81,14 +81,14 @@
 - 印刷页 / PDF页：140 / 162。
 - 原文引文（逐字）：
 
-> Then we observe that for $h^2\Omega^2\le4$, they are complex and their squared magnitude is
+> Then we observe that for $`h^2\Omega^2\le4`$, they are complex and their squared magnitude is
 
 $$
 |\lambda_{1,2}|^2=\left(1-\frac{h^2\Omega^2}{2}\right)^2+\frac14(4h^2\Omega^2-h^4\Omega^4)=1,
 $$
 
 
-> thus both eigenvalues lie on the unit circle in the complex plane as long as $h\Omega\le2$.
+> thus both eigenvalues lie on the unit circle in the complex plane as long as $`h\Omega\le2`$.
 
 - 问题所在：∀Ω,h∈ℝ、∀ζ∈ℂ，在 h²Ω²≤4 及实际特征二次式为零的条件下 ‖ζ‖=1 正确，包括重根±1。借条目3明确连接到实际矩阵谱；未断言根非实、未把单位圆谱当幂有界。原模平方恒等式与该范数结论一致。 网站原文审校另记：code：BOOK\_NONREAL\_ENDPOINT\_AMBIGUITY；detail：不等式、模平方展开和末句均忠实。原文 they are complex 若指非实根，则在 h²Ω²=0、4 不成立；末句 hΩ≤2 依赖正步长正频率背景，任意实参数下须用绝对值。保留原句，交人工确认术语和隐含域。；code：IMPLICIT\_POSITIVE\_PARAMETER\_DOMAIN；detail：不等式、模平方展开和末句均忠实。原文 they are complex 若指非实根，则在 h²Ω²=0、4 不成立；末句 hΩ≤2 依赖正步长正频率背景，任意实参数下须用绝对值。保留原句，交人工确认术语和隐含域。
 - 反例或理由：h=0 时根为1；hΩ=2 时根为-1，都不是非实数。若允许任意实hΩ，则hΩ=-3满足末句hΩ≤2却有一根模长>1；平方条件h²Ω²≤4不满足，故不反驳本条Lean。
@@ -104,7 +104,7 @@ $$
 - 印刷页 / PDF页：140 / 162。
 - 原文引文（逐字）：
 
-> This is the so-called linear stability condition of the Symplectic Euler method: if $h\Omega\le2$ the integrator is stable. When $h\Omega>2$, the eigenvalues of the discretization method are both real, with one strictly inside and one strictly outside the unit circle. This implies that the method will exhibit exponentially growing solutions. We say that the stability threshold of the Symplectic Euler method is $2/\Omega$.
+> This is the so-called linear stability condition of the Symplectic Euler method: if $`h\Omega\le2`$ the integrator is stable. When $`h\Omega\gt 2`$, the eigenvalues of the discretization method are both real, with one strictly inside and one strictly outside the unit circle. This implies that the method will exhibit exponentially growing solutions. We say that the stability threshold of the Symplectic Euler method is $`2/\Omega`$.
 
 - 问题所在：首条在严格非零内区间给真实矩阵幂有界，在 2<|hΩ| 给实际复特征值在单位圆外。补充条要求 Ω>0，正步长稳定集合的实上确界为2/Ω；对任意超阈值 h，存在两个实根 a,b，0<|a|<1<|b|，完整谱等价式排除遗漏，并存在非零实初值满足所有 k 的 A^k v=b^k v。该精确轨道足以推出指数增长，不是仅有谱断言。修订范围和正频率条件已明示，陈述正确；PASS不认可原印端点。BoundaryPrinted 未随本任务给出，不纳入已审结论。 网站原文审校另记：code：BOOK\_ENDPOINT\_ERRATUM；detail：整段逐句一致；hΩ≤2 的端点稳定性有疑误，原文保留。；code：CORRECTED\_SCOPE\_EXPLICIT；detail：修订版资格和原印断言不同，已明示且数学上合理；不以修订版PASS为原书背书。
 - 反例或理由：Ω=1,h=2 时 A=[[-3,2],[-2,1]]=-I+N，N=[[-2,2],[-2,2]]≠0且N²=0。对v=(1,0)，A^k v=(-1)^k(1+2k,2k)，无界。
@@ -123,7 +123,7 @@ $$
 - 印刷页 / PDF页：142 / 164。
 - 原文引文（逐字）：
 
-> The Implicit Midpoint method which, for the ODE $\dot z=f(z)$ takes the form
+> The Implicit Midpoint method which, for the ODE $`\dot z=f(z)`$ takes the form
 
 $$
 z_{n+1}=z_n+h\frac{f(z_n)+f(z_{n+1})}{2},
@@ -145,7 +145,7 @@ $$
 - 印刷页 / PDF页：142 / 164。
 - 原文引文（逐字）：
 
-> The Implicit Midpoint method which, for the ODE $\dot z=f(z)$ takes the form
+> The Implicit Midpoint method which, for the ODE $`\dot z=f(z)`$ takes the form
 
 $$
 z_{n+1}=z_n+h\frac{f(z_n)+f(z_{n+1})}{2},
@@ -192,7 +192,7 @@ $$
 - 印刷页 / PDF页：142 / 164。
 - 原文引文（逐字）：
 
-> For all real $\Omega$, we find
+> For all real $`\Omega`$, we find
 
 $$
 \left|\frac{1+ih\Omega/2}{1-ih\Omega/2}\right|=1.
@@ -218,7 +218,7 @@ $$
 - 印刷页 / PDF页：145 / 167。
 - 原文引文（逐字）：
 
-> Because $U_F$ requires small timesteps, we think of separating the calculation of a timestep, typically in a symmetric form.
+> Because $`U_F`$ requires small timesteps, we think of separating the calculation of a timestep, typically in a symmetric form.
 
 - 问题所在：Ch04.lean 第412–416行量化 n、m、US、UF、r、h，要求所有 m\_i>0、US/UF 为 C²、r>0，然后结论为辛性与对所有 z 的 G_{−h}(G\_h(z))=z。所有依赖均已展开：Q n=Fin n→ℝ、Z n=Q n×Q n；dot u v=∑i u\_i v\_i；phaseForm(u,v)=dot(u.q,v.p)−dot(v.q,u.p)；symplecticMap G=∀z u v,phaseForm((fderiv ℝ G z)u,(fderiv ℝ G z)v)=phaseForm(u,v)。respa、kick、fastVerlet、Chapter02Review.verlet、invMass、grad→textbookConstraintGradient 分别是两次软势半 kick 包住 r 次快势 Verlet、p↦p−t∇U、实际坐标梯度及质量 drift，不是把保辛或可逆结论预先塞入定义。n 到 h 的量词顺序没有隐藏依赖，h 可为任意实数；C²保证实际梯度的 C¹ 及 Hessian 对称。[EXTRA] 正质量与 r>0 是合理的物理/算法资格，C² 是保辛的合理充分正则性；反步恒等式本身并不需要 C²，且作为代数映射的辛性也不严格需要质量为正，只需所用对角 drift 的适当解释。它们没有制造错误结论。FAIL 的原因是当前 statement\_scope 明定仅覆盖所引原句及展示公式，而第167页这句话只是对称分裂的动机，没有断言任意 C² 势、任意步长下的全局 Jacobian 辛性与恒等式。注释把第171页的辛性及算法名称合并，扩大了来源与结论范围；[EXTRA] 可以标明补充假设，但不能自动使两项额外结论成为当前冻结原句的忠实陈述。此外 G_{−h}∘G\_h=id 表示步长反号的自伴性；若 Reversible 专指 R(q,p)=(q,−p) 的动量反射可逆，还应显式交代 R∘G\_h∘R=G_{−h}。该具体算法在这些正则性条件下的保结构命题数学上合理，此 FAIL 是来源/范围不匹配，没有声称已找到数学反例。本条无 [ERRATUM?]。第416行存在 sorry，证明仍未完成；范围 FAIL 不以 sorry 为理由，亦不把 sorry 当作命题为假的证据。 网站原文审校另记：
 - 反例或理由：未单列反例；问题在原文省略资格、术语、证明步骤或覆盖范围。请结合原句及下列修正核查。
@@ -237,7 +237,7 @@ $$
 - 印刷页 / PDF页：147 / 169。
 - 原文引文（逐字）：
 
-> For $\varepsilon<0$, however, we have
+> For $`\varepsilon\lt 0`$, however, we have
 
 $$
 \lambda=-1\pm(|\varepsilon|/2)^{1/2}+O(\varepsilon).
@@ -259,7 +259,7 @@ $$
 - 印刷页 / PDF页：147 / 169。
 - 原文引文（逐字）：
 
-> We can see this by expanding $\mu(h)=2\cos(h\Omega)-\frac h\Omega\sin(h\Omega)$ in a Taylor expansion around $h=\pi/\Omega$:
+> We can see this by expanding $`\mu(h)=2\cos(h\Omega)-\frac h\Omega\sin(h\Omega)`$ in a Taylor expansion around $`h=\pi/\Omega`$:
 
 $$
 \mu(h)=-2+\varepsilon,\qquad\varepsilon=\frac\pi\Omega(h-\pi/\Omega).
@@ -284,7 +284,7 @@ $$
 - 印刷页 / PDF页：147 / 169。
 - 原文引文（逐字）：
 
-> and the norm of the solution will oscillate and grow linearly with $n$ as $n\to\infty$. This is the simplest type of linear resonance present in multiple timestepping.
+> and the norm of the solution will oscillate and grow linearly with $`n`$ as $`n\to\infty`$. This is the simplest type of linear resonance present in multiple timestepping.
 
 - 问题所在：当前声明对Ω>0、q₀≠0确实正确地断言Pi最大范数趋于无穷；然而它仅是发散推论，签名本身不表达线性率或振荡。EXTRA明确把线性率分配给本批未提供的ResonanceLinearRate，不能将那一外部声明视作本条已审通过。原句把解的交替符号说成范数振荡，且缺少q₀≠0，应保留并人工裁决。 网站原文审校另记：code：PRINTED\_NORM\_OSCILLATION；detail：原文norm ... oscillate与矩阵幂所给整体交替符号不同，且增长需q₀≠0。；code：INCOMPLETE\_LINEAR\_RATE；detail：本条签名只给发散，线性率被分配给本批未提供条目，不能在本次核验。
 - 反例或理由：取z=(0,1)，则W^k z=(−1)^k z，任何范数均恒为1；取z=(1,0)，Pi范数为max(1,kπ/Ω)，最终单调线性增长，范数并不交替振荡。
@@ -300,7 +300,7 @@ $$
 - 印刷页 / PDF页：147 / 169。
 - 原文引文（逐字）：
 
-> and the norm of the solution will oscillate and grow linearly with $n$ as $n\to\infty$. This is the simplest type of linear resonance present in multiple timestepping.
+> and the norm of the solution will oscillate and grow linearly with $`n`$ as $`n\to\infty`$. This is the simplest type of linear resonance present in multiple timestepping.
 
 - 问题所在：已展开Ch04\_deps.txt中-- FILE: MolecularDynamics/Chapter04/ReviewDefinitions.lean的slowMatrix、fastMatrix、impulseMatrix（原文件行4418–4421）；分别为[[1,0],[-h,1]]、[[cos(Ωh),sin(Ωh)/Ω],[-Ωsin(Ωh),cos(Ωh)]]和S(h/2)F(Ω,h)S(h/2)，对象与原文(q,p)列向量一致。 Ω>0与q₀=z 0≠0合理且q₀≠0对正增长必要。Fin 2→ℝ的范数是max(|q|,|p|)，故极限为|h₀q₀|>0，定量地保留了线性增长；量词先Ω、再所有合格初值，没有假设增长本身。可是所引句还声称范数oscillate，签名没有该子句，且原句对范数的字面表述不成立。该签名适合作为明确纠正措辞后的线性率定理，不能判为所引全部原句忠实编码。实际文件有证明体、无sorry，本次未编译。 网站原文审校另记：
 - 反例或理由：Ω=π（h₀=1），z=(1,0)，则W^k z=(−1)^k(1,−k)，Pi范数为max(1,k)，单调且最终恰等k，并不振荡；二范数sqrt(1+k²)也单调。z=(0,1)则范数恒为1，说明附加q₀≠0必要。
@@ -319,7 +319,7 @@ $$
 - 印刷页 / PDF页：152 / 174。
 - 原文引文（逐字）：
 
-> Constraints such as those described above define a manifold in the configuration space $\mathcal M=\{q\mid g(q)=0\}$.
+> Constraints such as those described above define a manifold in the configuration space $`\mathcal M=\{q\mid g(q)=0\}`$.
 
 - 问题所在：零点集合定义忠实。regularLevel在l≤n、各g\_j光滑、q为零点及真实向量导数满射的EXTRA条件下给出开邻域、双向光滑互逆坐标、q映至0及前l个坐标为零的完整等价，确实是余维l局部嵌入流形正规形。∞用于C∞符合目标。修正版签名正确，但原句未注明正则性即泛称流形，不能用增加前提消除原书疑误。 网站原文审校另记：code：PRINTED\_REGULARITY\_OMITTED；detail：原文不带正则性泛称流形；所给EXTRA正规形正确但不是无条件原句。
 - 反例或理由：在ℝ²取单一光滑约束g(x,y)=xy，零点集为两坐标轴的交叉；原点附近删去原点有四个分支，不是1维嵌入流形。
@@ -454,7 +454,7 @@ $$
 - 印刷页 / PDF页：157 / 179。
 - 原文引文（逐字）：
 
-> Moreover, in case we have chosen $\Lambda^{(0)}=0$, we have
+> Moreover, in case we have chosen $`\Lambda^{(0)}=0`$, we have
 
 $$
 R^{(0)}=G_nM^{-1}G_n^T,
@@ -481,7 +481,7 @@ $$
 - 印刷页 / PDF页：157 / 179。
 - 原文引文（逐字）：
 
-> we may be able to fix $R$ at the beginning of the timestep, factor it once only, and then solve at each iteration with the same factors. Moreover, in case we have chosen $\Lambda^{(0)}=0$, we have
+> we may be able to fix $`R`$ at the beginning of the timestep, factor it once only, and then solve at each iteration with the same factors. Moreover, in case we have chosen $`\Lambda^{(0)}=0`$, we have
 
 $$
 R^{(0)}=G_nM^{-1}G_n^T,
@@ -507,7 +507,7 @@ $$
 - 印刷页 / PDF页：158 / 180。
 - 原文引文（逐字）：
 
-> It is worth noting that $\Lambda(h)=\mathcal{O}(h^2)$, i.e. for small steps $\Lambda$ will also be small. This justifies the initial guess $\Lambda^{(0)}=0$,
+> It is worth noting that $`\Lambda(h)=\mathcal{O}(h^2)`$, i.e. for small steps $`\Lambda`$ will also be small. This justifies the initial guess $`\Lambda^{(0)}=0`$,
 
 - 问题所在：签名量化任意 n,l,m、位置力 F:Q n→Q n、约束 g、初始相点 z 及分支 η:ℝ→Q l；假设 z∈cotangentSet、g\_j∈C²、η∈C²、η(0)=0、Gram(z.q).det≠0，以及某个双侧开邻域内的实际零残差根方程。完整结论为存在 C>0、δ>0，对全部 h∈(−δ,δ) 有 ‖η(h)‖≤Ch²，包含 h=0。作为当前所写“加号预测器”的条件数学定理，该结论正确：由根方程在 0 的一阶微分、初始隐藏约束和 Gram 可逆得到 η′(0)=0，再由 C² 分支得到二阶界；F 只在固定 z.q 处取值，故无需 F 对位置可微。没有循环假设 O(h²)，也没有宣称已找到根分支。然而原文/notation 的预测器是 z.q+hM^{-1}z.p−h²M^{-1}F\_n，当前签名却写成加号，且未注明反号变量关系或修正版，故源文对应审校为 FAIL，而非数学定理本身被反例否定。原书 O(h²) 适用范围的疑问另在 json\_review 标记 NEEDS\_HUMAN，保持原文并交由人工判断。 网站原文审校另记：原页首行使用书写体大 O；corrected\_json 将 O(h²) 的排版恢复为 \mathcal{O}(h²)。摘录在初值从句后的逗号处停止，与原页后续 and it also suggests 的衔接已由 context\_notation 说明。；原书在前页明确允许隐藏约束被违反；若把本句视为仅要求初始位置约束成立的普遍陈述，则 Λ(h)=O(h²) 缺少隐藏约束相容性（或随步长为 O(h) 的隐藏残差）等资格。保留原书原句，提交 NEEDS\_HUMAN 判断其意指的初始状态和渐近范围；不将反例归咎于已经增加相容前提的 Lean 条件定理。；当前 Lean 根分支前提的预测位置含 +h²M^{-1}F(z.q)，而本条 context\_notation 和原印 Q\_n 均含 −h²M^{-1}F\_n；没有声明 F 是 −F\_n，也没有将该处标记为 corrected 版本。此为可独立确定的签名/原文对应失配。；分支 C²、η(0)=0、Gram 非奇异和初始 cotangentSet 相容性是明确的附加资格，extra\_assumptions 应统一标 [EXTRA]，并说明只给条件估计，不构造根分支。
 - 反例或理由：scope：两例分别说明原书无隐藏相容性时的范围问题，以及加/减号预测器根分支不同；均不否定当前 Lean 条件估计本身。以下是直接代入的解析例，不是数值模拟或 Lean 验证。；source\_scope\_example：取 n=l=1，m=1，g(x)=x，q=0，p=1，F\_n=0。位置约束 g(q)=0、Gram=1，但隐藏约束不成立。原印残差为 h−Λ，唯一光滑根为 Λ(h)=h；|h|≤Ch² 不可能在任意固定 C 的零邻域成立。该例不满足 Lean 的 z∈cotangentSet。；predictor\_sign\_example：取 n=l=1，m=1，g(x)=x，q=p=0，F\_n=F(0)=1。此时初始余切相容且 Gram=1。原印负号预测器残差为 −h²−η，根为 η(h)=−h²；当前 Lean 加号预测器残差为 h²−η，根为 η(h)=h²。两分支均为 O(h²)，但不是同一原文根方程。
@@ -533,7 +533,7 @@ $$
 $$
 
 
-> as $j$ cycles repeatedly from $1$ to $m$.
+> as $`j`$ cycles repeatedly from $`1`$ to $`m`$.
 
 - 问题所在：位置域为Fin n→ℝ，约束族Fin l，j任意；质量逐坐标为正，旧点q与当前点Qnow可微，当前标量分母非零。dot、grad、invMass展开后，返回值正是Qnow−[g\_j(Qnow)/(∇g\_j(Qnow)ᵀM⁻¹Gsup1\_j)]M⁻¹∇g\_j(q)。未把Gsup1认作梯度；这忠实保留原印分母G\_j^1，与更新方向G\_n^j分开。[EXTRA]均已明示，单步范围明确；但原印G\_j^1未定义，数学含义仍需人工确认。 网站原文审校另记：code：PRINTED\_INDEX\_UNDEFINED；detail：A：附件第1页一般式分母确为G\_j^1，更新方向为G\_n^j；原文JSON忠实。原页只定义G\_n^k，不能静默裁定G\_j^1的数学含义。C：字面版使用独立参数忠实；原书疑误保留。
 - 反例或理由：code：PRINTED\_INDEX\_UNDEFINED；detail：A：附件第1页一般式分母确为G\_j^1，更新方向为G\_n^j；原文JSON忠实。原页只定义G\_n^k，不能静默裁定G\_j^1的数学含义。C：字面版使用独立参数忠实；原书疑误保留。
@@ -549,14 +549,14 @@ $$
 - 印刷页 / PDF页：158 / 180。
 - 原文引文（逐字）：
 
-> and continue to update $\Lambda_2$ in the same manner (using the second constraint). In general, we perform a sequence of updates
+> and continue to update $`\Lambda_2`$ in the same manner (using the second constraint). In general, we perform a sequence of updates
 
 $$
 \Delta\Lambda_j=[\nabla g_j(Q)^TM^{-1}G_j^1]^{-1}g_j(Q),\qquad Q:=Q-M^{-1}G_n^j\Delta\Lambda_j,
 $$
 
 
-> as $j$ cycles repeatedly from $1$ to $m$.
+> as $`j`$ cycles repeatedly from $`1`$ to $`m`$.
 
 - 问题所在：componentSweep按finRange l升序foldl，每次用刚更新的Qcur，使用梯度修订方向；它调用的是Chapter04Review.componentConstraintStep，无有效域假设，是实数逆零总化下的辅助函数。componentPrintedDelta忠实保留Gsup1；Trajectory以k mod l循环、旧q不变，l=0时恒等；Iteration在正质量、l>0和每个已执行步骤可微/分母非零条件下返回rounds*l步位置。Stop检查round*l+j处、更新前计算的一整轮各分量增量，顺序正确，却使用<tol，原页是≤tol；故本条全部声明不能整体PASS。原印索引疑误另需人工裁定。 网站原文审校另记：code：PRINTED\_INDEX\_UNDEFINED；detail：A：原句忠实保留G\_j^1；其索引疑误仍待人工确认。；code：STOP\_BOUNDARY\_MISMATCH；detail：C：原页建议全部分量增量范数≤tol，componentPrintedStop却为绝对值<tol，排除了等号边界。；code：TOTALIZED\_AUXILIARY\_DOMAIN；detail：C：componentSweep、Delta、Trajectory、Stop本身没有有效域资格；Iteration只保证所执行前rounds*l步，不能自动保证另一round的Stop测试有效。须区分总化辅助与有效算法使用。
 - 反例或理由：边界见证：n=l=1，m=1，g₀(t)=t，q=0，Q₀=1，Gsup1₀=1，round=0，tol=1。分母为1、增量为1；原书1≤1成立，而当前Stop要求1<1为假。此为精确代入，非数值搜索。
@@ -575,14 +575,14 @@ $$
 - 印刷页 / PDF页：159–160 / 181–182。
 - 原文引文（逐字）：
 
-> Lemma 4.1 Let $\gamma:\mathbb R^{N_c}\to\mathbb R$ be $C^2$. Let $q,p\in\mathbb R^{N_c}$ be constrained to the manifold defined by
+> Lemma 4.1 Let $`\gamma:\mathbb R^{N_c}\to\mathbb R`$ be $`C^2`$. Let $`q,p\in\mathbb R^{N_c}`$ be constrained to the manifold defined by
 
 $$
 \gamma(q)=0,\quad p\cdot\nabla\gamma(q)=0,
 $$
 
 
-> and suppose $P,\mu$ satisfy $P=p-\mu\nabla\gamma(q)$. Then
+> and suppose $`P,\mu`$ satisfy $`P=p-\mu\nabla\gamma(q)`$. Then
 
 $$
 \sum_{j=1}^{N_c}dq_j\wedge dP_j=\sum_{j=1}^{N_c}dq_j\wedge dp_j.
@@ -645,7 +645,7 @@ $$
 $$
 
 
-> where, for SHAKE, $\widetilde\lambda_n=\lambda_n$, while, in case of RATTLE, we must define $\widetilde\lambda_n=(\lambda_n+\mu_n)/2$.
+> where, for SHAKE, $`\widetilde\lambda_n=\lambda_n`$, while, in case of RATTLE, we must define $`\widetilde\lambda_n=(\lambda_n+\mu_n)/2`$.
 
 - 问题所在：已展开 Ch04\_deps.txt 的 ReviewDefinitions：Q n=Fin n→ℝ，Z n=Q n×Q n；invMass m v 的第i分量为(m i)⁻¹v i；constraintSet g={q | ∀j,g j q=0}。ConstrainedSymplectic 相关定义中 textbookConstraintGradient γ q i=(fderiv ℝ γ q)(Pi.single i 1)，textbookConstraintJacobian 的第j行为该真实梯度，因此 Gᵀρ 为约束梯度线性组合，并非抽象占位符。参数rho是独立的交错乘子，关系完整记录(4.35)–(4.37)，无sorry。但原文还有SHAKE的tildeλ=λ和RATTLE的tildeλ=(λ+μ)/2及两种迭代可归约为此关系，签名没有原方法乘子、无换算公式、无归约断言，遗漏实质子句。[ERRATUM?]成立：合并上一RATTLE末步和当前首步得newHalf=oldHalf+hF−Gᵀ(μₙ+(h/2)λₙ)，故h≠0时tildeλ=λₙ/2+μₙ/h，非印刷平均。 网站原文审校另记：
 - 反例或理由：取h=1、Gᵀ=1、F=0、oldHalf=0、λₙ=0、μₙ=1，两次动量子步合成newHalf=-1。印刷平均tildeλ=1/2代入(4.36)给newHalf=-1/2。即乘子换算矛盾。定义还没有陈述任何换算等式。
@@ -664,14 +664,14 @@ $$
 - 印刷页 / PDF页：162 / 184。
 - 原文引文（逐字）：
 
-> Given an initial condition $(q_0^S,p_0^S)$ for the SHAKE discretization, we easily determine $\lambda_0^S$ by taking a step. Then it follows that
+> Given an initial condition $`(q_0^S,p_0^S)`$ for the SHAKE discretization, we easily determine $`\lambda_0^S`$ by taking a step. Then it follows that
 
 $$
 p_{-1/2}=p_0-(h/2)F(q_0^S)-(h/2)g'(q_0^S)^T\lambda_0^S,
 $$
 
 
-> by solving (4.29). Next we obtain $p_0^R$ by solving (4.33)–(4.34) with $n=-1$. Then the sequences generated using $(q_0^S,p_0^S)$ as the initial point for SHAKE and that generated using $(q_0^S,p_0^R)$ in RATTLE will have identical positions (the momenta can be made compatible by simply projecting the SHAKE momenta onto the constraints).
+> by solving (4.29). Next we obtain $`p_0^R`$ by solving (4.33)–(4.34) with $`n=-1`$. Then the sequences generated using $`(q_0^S,p_0^S)`$ as the initial point for SHAKE and that generated using $`(q_0^S,p_0^R)`$ in RATTLE will have identical positions (the momenta can be made compatible by simply projecting the SHAKE momenta onto the constraints).
 
 - 问题所在：已展开 Ch04\_deps.txt 的 ReviewDefinitions：Q n=Fin n→ℝ，Z n=Q n×Q n；invMass m v 的第i分量为(m i)⁻¹v i；constraintSet g={q | ∀j,g j q=0}。ConstrainedSymplectic 相关定义中 textbookConstraintGradient γ q i=(fderiv ℝ γ q)(Pi.single i 1)，textbookConstraintJacobian 的第j行为该真实梯度，因此 Gᵀρ 为约束梯度线性组合，并非抽象占位符。cotangentSet m g 展开为 g(q)=0 且 G(q)M⁻¹p=0；grad U 是实际 Fréchet 坐标梯度，textbookPotentialForce U=-grad U。已展开projectionResidual\_j=g\_j(base−M⁻¹G(q)ᵀeta)、Gram=GM⁻¹Gᵀ、cotangentMultiplier=Gram⁻¹GM⁻¹p、cotangentProjection=p−GᵀGram⁻¹GM⁻¹p。两套真实步骤、qS0=qR0、halfS0=halfR0推出位置相同及k+1动量投影关系，是合理的条件版本，未直接假设位置相同。正质量及约束上梯度独立为实际投影所需，合理。但原文从给定SHAKE初态构造RATTLE初态，签名把半步兼容直接作假设，没有构造pR0，也无k=0的动量投影结论。宣称“同一局部唯一投影分支”的[EXTRA]实际却量化所有q、所有base、所有eta/nu，要求全局根的法向修正唯一；未限制邻域或分支，远强于局部资格并排除常见非线性约束。[ERRATUM?]初始反力符号疑误成立：由(4.29)应得oldHalf=p0−(h/2)F+(h/2)Gᵀλ0，而印刷为负号。定理体为sorry；本FAIL针对原文初始化缺项与不合理全局资格，不声称这个强假设下的条件定理必然为假。 网站原文审校另记：
 - 反例或理由：缺失条款：从SHAKE初态构造pR0、证明halfS0=halfR0，以及pR0=投影(pS0)。全局资格反例：n=2,l=1,m=(1,1),g(q)=‖q‖₂²−1，q=base=(1,0)，Gᵀ=(2,0)。eta=0和nu=1均使projectionResidual=0（投影点分别为(1,0)、(-1,0)），但Gᵀeta≠Gᵀnu；该约束处处正则且近eta=0分支局部唯一，却被签名排除。
@@ -728,7 +728,7 @@ $$
 - 印刷页 / PDF页：169 / 191。
 - 原文引文（逐字）：
 
-> This matrix is closely related to the matrix $R$:
+> This matrix is closely related to the matrix $`R`$:
 
 $$
 R=\sum_{i=1}^Nm_i\delta_i\delta_i^T=\sum_{i=1}^Nm_i\|\delta_i\|^2I-T=(T_{11}+T_{22}+T_{33})I-T.\tag{4.40}
@@ -753,7 +753,7 @@ $$
 - 印刷页 / PDF页：170 / 192。
 - 原文引文（逐字）：
 
-> Then $K_{\rm rot}=\sum_{i=1}^N\operatorname{Tr}[\dot\Theta_iR\dot\Theta_i^T]$, with $R$ defined in terms of $T=\operatorname{diag}(I_1,I_2,I_3)$ by (4.40).
+> Then $`K_{\rm rot}=\sum_{i=1}^N\operatorname{Tr}[\dot\Theta_iR\dot\Theta_i^T]`$, with $`R`$ defined in terms of $`T=\operatorname{diag}(I_1,I_2,I_3)`$ by (4.40).
 
 - 问题所在：已展开 Ch04\_deps.txt 的 MolecularDynamics/Chapter04/ReviewDefinitions.lean：V=Fin 3→ℝ，Mat3=Matrix (Fin 3) (Fin 3) ℝ，dot u v=∑j u\_j v\_j，outer v 的 (j,k) 元素为 v\_j v\_k；矩阵乘法、mulVec、trace 按实矩阵运算解释。实际审阅的 Blueprint 文件位于 /workspace/Ch04.lean，哈希绑定该文件原始字节。只读审查签名与证明体，未运行 Lean 编译。 函数准确保留印刷求和式且未擅自补1/2；但本条还明确要求 R 由 T=diag(I₁,I₂,I₃) 经(4.40)定义，签名 R 为自由矩阵，未含 T、I 或关系，dΘ 也不绑定旋转矩阵的导数。故全部原句的语义未覆盖；印刷动能缺1/2的 ERRATUM? 成立，并且所引(4.40)另有系数错误。此为 def，无 sorry；并非因没有证明而 FAIL。 网站原文审校另记：
 - 反例或理由：缺失条款：R 与 T=diag(I₁,I₂,I₃) 的关系。物理系数核验：R=I₃、T=2I₃、Θ=I₃、Θ̇=skew(e₃)，则印刷函数值2，而 K\_rot=1/2 e₃ᵀT e₃=1。
@@ -779,7 +779,7 @@ $$
 $$
 
 
-> where we have used the fact that $\Theta$ is orthogonal.
+> where we have used the fact that $`\Theta`$ is orthogonal.
 
 - 问题所在：签名忠实再现印刷末项：设δ=δ\_i(0)、d=dotΘ(t)，右端确为(dΘ(t)^T)(dδ)。ERRATUM?成立，印刷末项应使用当前配置Θ(t)δ而非速度dδ。它不是正交性和可微性推得的真命题，即使Θ整条轨道属于SO(3)仍失败。HasDerivAt为实际矩阵时间导数；ΘΘ^T=I是正确的正交条件。该decl明确含sorry；此处FAIL来自反例，不是因为sorry，原文忠实性单独为通过。 网站原文审校另记：
 - 反例或理由：取Θ(s)=[[cos s,−sin s,0],[sin s,cos s,0],[0,0,1]]，t=0，δ=e1，d=[[0,−1,0],[1,0,0],[0,0,0]]。Θ是全局SO(3)轨道，Θ(0)=I且导数为d；左端de1=e2，右端d²e1=−e1，二者不同。
@@ -798,7 +798,7 @@ $$
 - 印刷页 / PDF页：172 / 194。
 - 原文引文（逐字）：
 
-> If $T$ is a diagonal matrix, $T=\operatorname{diag}(I_1,I_2,I_3)$, then we split the Euler equations and approximate the solution by successive rotations around the three axes of inertia,
+> If $`T`$ is a diagonal matrix, $`T=\operatorname{diag}(I_1,I_2,I_3)`$, then we split the Euler equations and approximate the solution by successive rotations around the three axes of inertia,
 
 - 问题所在：数学上，定义cross3 π (Pi.single i (π i/I i))是对角惯性下合理且正确的单轴分裂场；在I各分量为正的物理域，三个子场之和对应Euler右端，轴编号0,1,2也正确。不得把这个分裂等式推广到任意奇异对角矩阵，因为矩阵总逆与逐分量总除法在奇异处可能不同。本条仅定义场，不声称已证明正角印刷旋转就是其时间h子流。但原书后续第二、第三项确实缺分量下标，当前非明确\_corrected名称的定义采用了补义版本。按原书数学疑误保留并分流要求，整条标NEEDS\_HUMAN，而非将正确的补义场判成数学反例型FAIL。 网站原文审校另记：code：PRINTED\_COMPONENT\_SUBSCRIPTS\_MISSING；stage：A/C；detail：印刷173页的第二、第三个单轴列向量分别印为T₂⁻¹π、T₃⁻¹π，π后没有分量下标；第一项明确印为T₁⁻¹π₁。Lean统一写π\_i/I\_i是已说明的补义，不可当成逐字原式。原书疑误保留待人工。；code：SOURCE\_CORRECTION\_REQUIRES\_HUMAN；stage：C；detail：principalAxisField既非Printed/literal名，也未标\_corrected；虽[EXTRA]披露了补分量下标，当前条目仍混合原文版本与修正解释。补义后的场合理，但本次不替原书裁定两处缺字。
 - 反例或理由：code：PRINTED\_COMPONENT\_SUBSCRIPTS\_MISSING；stage：A/C；detail：印刷173页的第二、第三个单轴列向量分别印为T₂⁻¹π、T₃⁻¹π，π后没有分量下标；第一项明确印为T₁⁻¹π₁。Lean统一写π\_i/I\_i是已说明的补义，不可当成逐字原式。原书疑误保留待人工。；code：SOURCE\_CORRECTION\_REQUIRES\_HUMAN；stage：C；detail：principalAxisField既非Printed/literal名，也未标\_corrected；虽[EXTRA]披露了补分量下标，当前条目仍混合原文版本与修正解释。补义后的场合理，但本次不替原书裁定两处缺字。
@@ -814,7 +814,7 @@ $$
 - 印刷页 / PDF页：173 / 195。
 - 原文引文（逐字）：
 
-> $\dot\pi=\pi\times[0,T_2^{-1}\pi,0]^T$.
+> $`\dot\pi=\pi\times[0,T_2^{-1}\pi,0]^T`$.
 
 - 问题所在：依赖展开：Chapter04/ReviewDefinitions.lean中V=Fin 3→ℝ，Mat3=3×3实矩阵，cross3(u,v)=(u₁v₂−u₂v₁,u₂v₀−u₀v₂,u₀v₁−u₁v₀)；Fin索引0/1/2对应原书1/2/3。 展开Ch04.lean定义得到π×e\_2·(a/I\_2)。依赖没有缺失定义。a是新增独立实参数；若原书无下标π意为独立标量，此参数化可用；若意为动量分量π\_2则a应绑定该分量。原书此标量未定义，不能以参数占位宣称已忠实翻译。惯量由T\_j映射为I\_j符合前文T=diag(I₁,I₂,I₃)的意图，但原式T\_j记法本身也应保留解释记录。[ERRATUM?]缺下标外观确认，数学裁定仍需明确原文标量π含义。无sorry。 网站原文审校另记：
 - 反例或理由：未单列反例；问题在原文省略资格、术语、证明步骤或覆盖范围。请结合原句及下列修正核查。
@@ -830,7 +830,7 @@ $$
 - 印刷页 / PDF页：173 / 195。
 - 原文引文（逐字）：
 
-> $\dot\pi=\pi\times[0,0,T_3^{-1}\pi]^T$.
+> $`\dot\pi=\pi\times[0,0,T_3^{-1}\pi]^T`$.
 
 - 问题所在：依赖展开：Chapter04/ReviewDefinitions.lean中V=Fin 3→ℝ，Mat3=3×3实矩阵，cross3(u,v)=(u₁v₂−u₂v₁,u₂v₀−u₀v₂,u₀v₁−u₁v₀)；Fin索引0/1/2对应原书1/2/3。 展开Ch04.lean定义得到π×e\_3·(a/I\_3)。依赖没有缺失定义。a是新增独立实参数；若原书无下标π意为独立标量，此参数化可用；若意为动量分量π\_3则a应绑定该分量。原书此标量未定义，不能以参数占位宣称已忠实翻译。惯量由T\_j映射为I\_j符合前文T=diag(I₁,I₂,I₃)的意图，但原式T\_j记法本身也应保留解释记录。[ERRATUM?]缺下标外观确认，数学裁定仍需明确原文标量π含义。无sorry。 网站原文审校另记：
 - 反例或理由：未单列反例；问题在原文省略资格、术语、证明步骤或覆盖范围。请结合原句及下列修正核查。
@@ -884,7 +884,7 @@ $$
 - 印刷页 / PDF页：174 / 196。
 - 原文引文（逐字）：
 
-> “Drift”: step forward a whole step in positions $q^k:=q^k+hp^k$.
+> “Drift”: step forward a whole step in positions $`q^k:=q^k+hp^k`$.
 
 - 问题所在：已展开 Ch04\_deps.txt 中 Chapter04Review 的 V=Fin 3→ℝ、Mat3=3×3 实矩阵。以下判定针对陈述/定义语义，不以 sorry 的有无判定。展开 rigidDrift M h 得 q+(h/M)p，并且 dlmMassOnly 是含两次 Kick 和五轴 Spin 的完整单体映射。所绑定原文却只有 Step 2 的 q+hp，既引入质量分母，又扩大对象到完整算法。[EXTRA] 描述的是修订算法而非额外数学假设，不能使陈述忠实于所引原句。质量修订有 PDF193 的 dq/dt=p/M 依据，但必须与原式分开；无论证明是否完成均属签名不一致。 网站原文审校另记：
 - 反例或理由：取 M=2、h=1、U=0、q=0、p=(1,0,0)、π=0、Θ=1、I=(1,1,1)。Lean 输出 q=(1/2,0,0)，原印刷 Drift 输出 q=(1,0,0)；两者在合法正质量下已不同。
@@ -946,7 +946,7 @@ $$
 $$
 
 
-> 4. “Kick”: update the momenta and angular momentum vectors (as in Step 1) with a half step using new forces $F^k$ and torques $\tau^k$ evaluated at the current $q,\Theta$.
+> 4. “Kick”: update the momenta and angular momentum vectors (as in Step 1) with a half step using new forces $`F^k`$ and torques $`\tau^k`$ evaluated at the current $`q,\Theta`$.
 
 - 问题所在：字面忠实性核对通过，未发现应判FAIL的Lean语义偏差：Drift确为q+h p，未私补质量；Spin保留正角及配对的Rπ、ΘRᵀ，矩阵乘法方向正确。每个子步从其输入重新计算角度，不冻结初始π；所有刚体均执行。两次kick分别从各自输入完整状态计算耦合力/力矩，末kick使用Drift/Spin后的全部q、Θ，不复用旧力。定义域包括N : ℕ、逐体三维惯性I、任意实数h及任意所给U；定义无I>0或光滑性前提，这些物理资格不能假称已在定义中。总体NEEDS\_HUMAN仅依任务对原书数学疑点的分流规则：质量归一化及旋转动力学约定待确认。Printed版忠实，故不判FAIL；质量/旋转方向疑点也不是不辛反例。 网站原文审校另记：code：SOURCE\_PUNCTUATION；field：statement\_latex；severity：correction；detail：步骤1原式以逗号连接两种动量更新；步骤3的五行旋转更新末尾没有输入所加的四个逗号和一个句号。已恢复这些字面标点，五个角度及所有更新公式保持原样。；code：SOURCE\_MASS\_CONVENTION\_UNRESOLVED；field：context\_notation / issues；severity：source\_needs\_human；detail：第195页称p^k为linear momentum vector，第196页原Drift却为q^k := q^k + h p^k。若质量未取单位值，通常需要质量约定；附件这两页没有给出归一化解释。按要求保留原式并交人审，不静默插入1/M\_k。；code：SOURCE\_SPIN\_CONVENTION\_UNRESOLVED；field：context\_notation / issues；severity：source\_needs\_human；detail：原表使用正角Θ^x/Θ^y/Θ^z、π^k := Θπ^k、Θ^k := Θ^kΘ^T，且页上明确Θ^x的正角矩阵；第195页另列方向演化方程。其与原物理动力学的一致性保留为原书约定/勘误疑点，不自动判为映射不辛。
 - 反例或理由：code：SOURCE\_PUNCTUATION；field：statement\_latex；severity：correction；detail：步骤1原式以逗号连接两种动量更新；步骤3的五行旋转更新末尾没有输入所加的四个逗号和一个句号。已恢复这些字面标点，五个角度及所有更新公式保持原样。；code：SOURCE\_MASS\_CONVENTION\_UNRESOLVED；field：context\_notation / issues；severity：source\_needs\_human；detail：第195页称p^k为linear momentum vector，第196页原Drift却为q^k := q^k + h p^k。若质量未取单位值，通常需要质量约定；附件这两页没有给出归一化解释。按要求保留原式并交人审，不静默插入1/M\_k。；code：SOURCE\_SPIN\_CONVENTION\_UNRESOLVED；field：context\_notation / issues；severity：source\_needs\_human；detail：原表使用正角Θ^x/Θ^y/Θ^z、π^k := Θπ^k、Θ^k := Θ^kΘ^T，且页上明确Θ^x的正角矩阵；第195页另列方向演化方程。其与原物理动力学的一致性保留为原书约定/勘误疑点，不自动判为映射不辛。
@@ -1040,7 +1040,7 @@ $$
 $$
 
 
-> 4. “Kick”: update the momenta and angular momentum vectors (as in Step 1) with a half step using new forces $F^k$ and torques $\tau^k$ evaluated at the current $q,\Theta$.
+> 4. “Kick”: update the momenta and angular momentum vectors (as in Step 1) with a half step using new forces $`F^k`$ and torques $`\tau^k`$ evaluated at the current $`q,\Theta`$.
 
 - 问题所在：按Printed的字面忠实性标准PASS，限明确声明的N=1实例。右侧先作用的复合依次是Kick(h/2)、Drift(1,h)、Spin(h)、Kick(h/2)，与原表顺序一致。printedSpinStep虽为函数复合，回文轴序使实际顺序仍为x半、y半、z全、y半、x半；每一步角度从当前s.1分量重新取值。动量用Rπ，方向用ΘRᵀ；最后Kick在更新后的q、Θ处重新求力和力矩。没有擅自加入质量因子或改正角。原书质量和符号疑点在json\_review标NEEDS\_HUMAN，不作为字面定义的FAIL。 网站原文审校另记：code：PRINTED\_DRIFT\_MASS\_FACTOR\_QUERY；stage：A；detail：印刷drift确为qᵏ:=qᵏ+h pᵏ，无1/M。该字面算法可作单位质量约定；是否原书漏写一般质量因子，保留待人工，不擅自加因子。；code：PRINTED\_SPIN\_SIGN\_QUERY；stage：A；detail：印刷确为正角R、π:=Rπ、Θ:=ΘRᵀ。其一阶旋转方向与同页组Euler方程π×T⁻¹π及dotΘ=Θskew(T⁻¹π)存在符号疑点；这是原书问题，字面忠实性审校不能自动改成负角。；code：SOURCE\_DISPLAY\_PUNCTUATION；stage：A；detail：原表第1步p与π的更新由逗号分隔，JSON原用分号；现按原页恢复，算法含义不变。
 - 反例或理由：kind：source\_consistency\_diagnostic\_not\_a\_counterexample\_to\_literal\_fidelity；detail：手工一阶符号核对：x轴单步取I₁=1、π=(1,1,0)。π×(π₁e₁/I₁)=(0,0,−1)，而原印R\_x(hπ₁/I₁)π在h=0的一阶变化为(0,0,1)。这说明不能从Printed定义另推其为同号Euler子流；不否定它逐字编码了原表，也不否定其辛性。非数值实验、非Lean验证。

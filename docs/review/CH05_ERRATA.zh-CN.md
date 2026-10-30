@@ -14,7 +14,7 @@
 - 印刷页 / PDF页：183 / 204。
 - 原文引文（逐字）：
 
-> The set of functions from $\mathcal D\subset\mathbb R^m$ to $\mathbb R$ which satisfy (5.3) is referred to as the space $L^2(\mathcal D)$.
+> The set of functions from $`\mathcal D\subset\mathbb R^m`$ to $`\mathbb R`$ which satisfy (5.3) is referred to as the space $`L^2(\mathcal D)`$.
 
 - 问题所在：domainL2对任意n和D采用Lp ℝ 2 (volume.restrict D)，是可测平方可积函数的几乎处处等价类，数学上是合理的标准L²实现。[EXTRA]已披露AE商，然而原句字面是原生函数集合；这是原书的语义省略，不能把商空间静默当作逐字原文。修正方案合理，但忠实字面版与标准解释仍需人工确认。 网站原文审校另记：code：R1\_ATTACHMENT\_MISSING；detail：指定附件/workspace/R1\_PAGES.pdf未发现；已改以工作区现有原书PDF相应物理页进行视觉对照，但不能认证附件18页的同一性。A项不可冒称已按指定附件完成。；code：BOOK\_L2\_AE\_QUALIFICATION；detail：原书未显式说明可测性及AE等价类；标准L²解释合理，但原生函数集合上的积分平方根仅为半范数，原书数学资格省略保留供人工确认。
 - 反例或理由：n=1，D=ℝ；φ=1_{ {0} }与零函数逐点不同，均平方可积且积分平方为0；在Lp中二者是同一元素。
@@ -30,7 +30,7 @@
 - 印刷页 / PDF页：183 / 204。
 - 原文引文（逐字）：
 
-> This is a real Hilbert space or complete inner product space in which, for any $\phi,\psi\in L^2(\mathcal D)$, the inner product is defined by $\langle\phi,\psi\rangle_{L^2(\mathcal D)}\stackrel{\rm def}{=}\int_{\mathcal D}\phi(z)\psi(z)\,d\omega$.
+> This is a real Hilbert space or complete inner product space in which, for any $`\phi,\psi\in L^2(\mathcal D)`$, the inner product is defined by $`\langle\phi,\psi\rangle_{L^2(\mathcal D)}\stackrel{\rm def}{=}\int_{\mathcal D}\phi(z)\psi(z)\,d\omega`$.
 
 - 问题所在：在domainL2采用标准AE商Lp解释下，∀n,D及所有Cauchy序列u存在同空间极限v的声明正确，等价于该度量空间完备性；Lp的实内积结构与积分自洽。但原书将前述原生函数集合直接称为Hilbert空间，正定性存在AE资格省略。[EXTRA]披露了修正；不能把修正版的正确性等同于原书字面正确性。所引内积积分定义不在本条主声明中，项目在条目7摘录了domainL2Inner，可作配套定义。 网站原文审校另记：code：R1\_ATTACHMENT\_MISSING；detail：指定附件/workspace/R1\_PAGES.pdf未发现；已改以工作区现有原书PDF相应物理页进行视觉对照，但不能认证附件18页的同一性。A项不可冒称已按指定附件完成。；code：BOOK\_L2\_AE\_QUALIFICATION；detail：原书未显式说明可测性及AE等价类；标准L²解释合理，但原生函数集合上的积分平方根仅为半范数，原书数学资格省略保留供人工确认。
 - 反例或理由：D=ℝ、φ=1_{ {0} }非零而⟨φ,φ⟩=0，故逐点函数集合配该双线性型并非内积空间。
@@ -46,7 +46,7 @@
 - 印刷页 / PDF页：183 / 204。
 - 原文引文（逐字）：
 
-> we define the $L^2(\mathcal D)$ norm by $\|\phi\|_{L^2(\mathcal D)}\stackrel{\rm def}{=}[\int_{\mathcal D}\phi^2(z)\,d\omega]^{1/2}$.
+> we define the $`L^2(\mathcal D)`$ norm by $`\|\phi\|_{L^2(\mathcal D)}\stackrel{\rm def}{=}[\int_{\mathcal D}\phi^2(z)\,d\omega]^{1/2}`$.
 
 - 问题所在：domainL2Norm的g属于先前标准Lp实现的domainL2 n D，定义为其真实范数。按用户允许直接采信Mathlib标准含义，该实L²范数正是积分平方的平方根；不需要额外假设g的可积性或另造范数。所给定义没有独立积分公式定理，不能据此宣称该独立接口已经提供；这不改变定义的数学签名正确性。 网站原文审校另记：code：R1\_ATTACHMENT\_MISSING；detail：指定附件/workspace/R1\_PAGES.pdf未发现；已改以工作区现有原书PDF相应物理页进行视觉对照，但不能认证附件18页的同一性。A项不可冒称已按指定附件完成。；code：BOOK\_L2\_AE\_QUALIFICATION；detail：原书未显式说明可测性及AE等价类；标准L²解释合理，但原生函数集合上的积分平方根仅为半范数，原书数学资格省略保留供人工确认。
 - 反例或理由：code：R1\_ATTACHMENT\_MISSING；detail：指定附件/workspace/R1\_PAGES.pdf未发现；已改以工作区现有原书PDF相应物理页进行视觉对照，但不能认证附件18页的同一性。A项不可冒称已按指定附件完成。；code：BOOK\_L2\_AE\_QUALIFICATION；detail：原书未显式说明可测性及AE等价类；标准L²解释合理，但原生函数集合上的积分平方根仅为半范数，原书数学资格省略保留供人工确认。
@@ -65,7 +65,7 @@
 - 印刷页 / PDF页：184 / 205。
 - 原文引文（逐字）：
 
-> where $n(z)$ is the unit outward normal to the surface $\partial \mathcal A$ at the point $z$ and $d\sigma$ is the surface element.
+> where $`n(z)`$ is the unit outward normal to the surface $`\partial \mathcal A`$ at the point $`z`$ and $`d\sigma`$ is the surface element.
 
 - 问题所在：outwardNormalFor在每个z∈frontier A要求开邻域O、C²局部定义函数r、A在O内恰为r<0、非零真实梯度及ν z=∇r/‖∇r‖。边界点连续性迫使r(z)=0，正梯度方向指向A外，范数为1；资格确实限定光滑开放域。矩形角点不满足此全点条件，但[EXTRA]明确分面版本另列，未将角点假称光滑。dσ的具体测度在条目12定义。 网站原文审校另记：code：R1\_ATTACHMENT\_MISSING；detail：指定附件/workspace/R1\_PAGES.pdf未发现；已改以工作区现有原书PDF相应物理页进行视觉对照，但不能认证附件18页的同一性。A项不可冒称已按指定附件完成。；code：BOOK\_NORMAL\_AE\_QUALIFICATION；detail：上下文允许矩形，而本句把外法线说成每个边界点均有定义；矩形角点需按分面或表面积几乎处处理解。原句保留；Lean的光滑边界限制已披露。
 - 反例或理由：code：R1\_ATTACHMENT\_MISSING；detail：指定附件/workspace/R1\_PAGES.pdf未发现；已改以工作区现有原书PDF相应物理页进行视觉对照，但不能认证附件18页的同一性。A项不可冒称已按指定附件完成。；code：BOOK\_NORMAL\_AE\_QUALIFICATION；detail：上下文允许矩形，而本句把外法线说成每个边界点均有定义；矩形角点需按分面或表面积几乎处处理解。原句保留；Lean的光滑边界限制已披露。
@@ -84,7 +84,7 @@
 - 印刷页 / PDF页：184 / 205。
 - 原文引文（逐字）：
 
-> this same rate of change may be written as the negative of the particle flux over the boundary of $\mathcal A$:
+> this same rate of change may be written as the negative of the particle flux over the boundary of $`\mathcal A`$:
 
 $$
 \frac{d\nu}{dt}=-\int_{\partial \mathcal A}f\cdot n\,\rho(z,t)\,d\sigma,
@@ -116,14 +116,14 @@ $$
 - 印刷页 / PDF页：185–186 / 206–207。
 - 原文引文（逐字）：
 
-> Let $u,v$ be two scalar valued functions in $\mathbb R^m$ which tend to zero sufficiently rapidly at infinity. By our assumptions that $u$ and $v$ are rapidly decaying we know that $B\to0$, as $\ell\to\infty$. Taking the limit, we are thus left with the equation
+> Let $`u,v`$ be two scalar valued functions in $`\mathbb R^m`$ which tend to zero sufficiently rapidly at infinity. By our assumptions that $`u`$ and $`v`$ are rapidly decaying we know that $`B\to0`$, as $`\ell\to\infty`$. Taking the limit, we are thus left with the equation
 
 $$
 \langle u,\mathcal L_fv\rangle=-\sum_i\int_{\mathbb R^m}v\frac{\partial}{\partial z_i}(uf_i)\,d\omega=\langle M_fu,v\rangle.
 $$
 
 
-> We refer to $M_f$ as the adjoint operator of $\mathcal L_f$ and we write $M_f=\mathcal L_f^\dagger$.
+> We refer to $`M_f`$ as the adjoint operator of $`\mathcal L_f`$ and we write $`M_f=\mathcal L_f^\dagger`$.
 
 - 问题所在：声明本身是正确的条件化版本：n>0，f为C¹，u,v为SchwartzMap，两个实际混合乘积分别可积，且真实盒边界项B趋0，才推出全空间积分配对相等。由紧盒分部积分和两个可积函数的盒截断极限可得该结论；没有将最终配对相等作为假设。但原页声称仅由u,v迅速衰减便知B→0，未明确f的增长控制；[EXTRA]把B→0改为前提是实质补充，不能据此宣布原书推论已成立。按任务规定保留原句并将原书条件疑点交人工；形式伴随记号也不等于闭Hilbert算子伴随的定义域识别。 网站原文审校另记：原书由u,v迅速衰减推出B→0，缺少对f增长或混合乘积的明确资格；当前Lean已把边界极限和可积性补成前提，但不能反向认证原书无条件推断。
 - 反例或理由：针对原书未限制f的B→0推断：m=1，u(x)=v(x)=exp(-x²)均为Schwartz函数，取C∞场f(x)=x exp(2x²)。则uvf=x，盒[-ell,ell]的B=ell-(-ell)=2ell，不趋0。这里混合乘积并不可积，故此例不反驳当前带可积性及B→0前提的Lean声明，只说明原书需明确额外资格。
@@ -142,7 +142,7 @@ $$
 - 印刷页 / PDF页：190 / 211。
 - 原文引文（逐字）：
 
-> As the flow is Hamiltonian, $\int_{\mathcal D}\rho(\mathbf q,\mathbf p,t)\,d\omega\equiv\int_{\mathcal D}\rho(\mathbf q,\mathbf p,0)\,d\omega$. Thus the condition for $\bar\phi$ to converge is just that
+> As the flow is Hamiltonian, $`\int_{\mathcal D}\rho(\mathbf q,\mathbf p,t)\,d\omega\equiv\int_{\mathcal D}\rho(\mathbf q,\mathbf p,0)\,d\omega`$. Thus the condition for $`\bar\phi`$ to converge is just that
 
 $$
 \int_{\mathcal D}\phi(\mathbf q,\mathbf p)\frac{\partial\rho}{\partial t}(\mathbf q,\mathbf p,t)\,d\omega\to0.
@@ -167,7 +167,7 @@ $$
 - 印刷页 / PDF页：191 / 212。
 - 原文引文（逐字）：
 
-> As we decrease $\varepsilon$, the density remains invariant under Liouville's equation. The prefactor means that we can think of a sequence of smooth densities taken with successively smaller values of $\varepsilon$ as approaching the limiting distribution defined in terms of the delta function by
+> As we decrease $`\varepsilon`$, the density remains invariant under Liouville's equation. The prefactor means that we can think of a sequence of smooth densities taken with successively smaller values of $`\varepsilon`$ as approaching the limiting distribution defined in terms of the delta function by
 
 $$
 \rho_0(q,p)=Z_{H=E}^{-1}\delta[H(q,p)-E].\tag{5.7}
@@ -181,7 +181,7 @@ $$
 $$
 
 
-> taken in relation to a test function $\phi\in\mathcal T$.
+> taken in relation to a test function $`\phi\in\mathcal T`$.
 
 - 问题所在：按补充规则，Mathlib v4.34.0的EuclideanSpace、volume、gradient、restrict、withDensity、ENNReal.ofReal、Bochner积分、ContDiff、Tendsto等直接采用标准数学含义，不在项目依赖中要求其定义体。已展开附件Ch05\_deps.txt中-- FILE: MolecularDynamics/Chapter05/ReviewDefinitions.lean的本项目定义。E n = EuclideanSpace ℝ (Fin n)，即欧氏ℝⁿ，volume为Lebesgue测度；grad H z = gradient H z。hausdorffArea d = ENNReal.ofReal(v\_d/2^d) • Measure.hausdorffMeasure d，其中v\_d为欧氏ℝᵈ单位球Lebesgue体积；这将基于直径的Hausdorff测度规范化为欧氏d维面积。surfaceMeasure H c = (hausdorffArea (n−1)).restrict {z | H z=c}。shellWeight H c ε z = exp(−(H z−c)²/(2ε))；shellPartition H c ε = ∫shellWeight；shellDensity = shellWeight/shellPartition。testSpace n = {φ : ℝⁿ→ℝ | φ为C∞且有紧支撑}。microRaw = surfaceMeasure.withDensity(ofReal(‖grad H‖⁻¹))；microMeasure = ((microRaw H c) univ)⁻¹ • microRaw H c；microAverage = average microMeasure，average μ g = ∫g dμ。regularEnergy H c展开为能量面非空、紧、每点grad≠0，以及raw总质量严格正且有限。 量词为∀n,H,c，在C²与regularEnergy前提后对每个C∞紧支φ，主张ε↓0时Z\_ε⁻¹∫φρ\_ε趋向microAverage。PDF211已将ρ\_ε定义为归一化密度，PDF212式(5.8)再次出现外层Z\_ε⁻¹；项目定义展开确认该签名确实重复归一化。全相空间D=ℝⁿ的EXTRA是合理范围选择，但不能消除反例；原书的尾部可积性也未由regularEnergy单独保证。原文所引Liouville不变性不在本签名结论中。相关原书疑误成立；FAIL来自错误极限和缺失结论，不是Mathlib材料不足。实际声明含sorry，此事实与语义判定分开。 网站原文审校另记：
 - 反例或理由：取n=2，H(z)=‖z‖²，c=1。单位圆能量面非空紧，grad=2z，raw总质量π>0且有限，故全部签名前提满足。取C∞紧支φ，在能量面某邻域恒1。由极坐标Z\_ε=π∫₀^∞exp(−(u−1)²/(2ε))du ~ π√(2πε)→0，而∫φρ\_ε→1。因此额外乘Z\_ε⁻¹后的左侧发散，microAverage=1。此反例中权确实可积，Bochner总化不参与反例。
@@ -221,7 +221,7 @@ $$
 - 印刷页 / PDF页：191 / 212。
 - 原文引文（逐字）：
 
-> If we can represent the $m-1$-dimensional set $\mathcal M$ as the image of an open set $\mathcal U\in\mathbb R^{m-1}$ under a smooth mapping $\mathbf g:\mathbb R^{m-1}\to\Sigma_E$, then we have
+> If we can represent the $`m-1`$-dimensional set $`\mathcal M`$ as the image of an open set $`\mathcal U\in\mathbb R^{m-1}`$ under a smooth mapping $`\mathbf g:\mathbb R^{m-1}\to\Sigma_E`$, then we have
 
 $$
 \operatorname{Vol}(\mathcal M)=\int_{\mathcal U}\sqrt{\det[(\mathbf g^{\prime}(\boldsymbol\zeta))^T\mathbf g^{\prime}(\boldsymbol\zeta)]}\,d\zeta_1d\zeta_2\cdots d\zeta_{m-1}.
@@ -246,7 +246,7 @@ $$
 - 印刷页 / PDF页：192–193 / 213–214。
 - 原文引文（逐字）：
 
-> The volume of this thickened shell is clearly $\Delta V=\int_M\xi d\sigma$, but since $\Delta E=H(z+n\xi)-H(z)=\nabla H\cdot n\xi+O(\Delta E^2)$, and $n=\nabla H/\|\nabla H\|$, we have $\xi=\Delta E/\|\nabla H\|+O(\Delta E^2)$, and $\Delta V=\int_M\frac{\Delta E}{\|\nabla H\|}d\sigma+O(\Delta E^2)$. Taking the ratio of $\Delta V$ to $\Delta E$ we find $\Delta V/\Delta E=\int_M\|\nabla H\|^{-1}d\sigma+O(\Delta E)$. The limit of this as $\Delta E\to0$ defines a quantity $\mu(M)=\int_M\|\nabla H\|^{-1}d\sigma$.
+> The volume of this thickened shell is clearly $`\Delta V=\int_M\xi d\sigma`$, but since $`\Delta E=H(z+n\xi)-H(z)=\nabla H\cdot n\xi+O(\Delta E^2)`$, and $`n=\nabla H/\|\nabla H\|`$, we have $`\xi=\Delta E/\|\nabla H\|+O(\Delta E^2)`$, and $`\Delta V=\int_M\frac{\Delta E}{\|\nabla H\|}d\sigma+O(\Delta E^2)`$. Taking the ratio of $`\Delta V`$ to $`\Delta E`$ we find $`\Delta V/\Delta E=\int_M\|\nabla H\|^{-1}d\sigma+O(\Delta E)`$. The limit of this as $`\Delta E\to0`$ defines a quantity $`\mu(M)=\int_M\|\nabla H\|^{-1}d\sigma`$.
 
 - 问题所在：本轮按补充规则采信 Lean 4.34.0 / Mathlib v4.34.0 的标准数学语义：EuclideanSpace 是欧氏空间，volume 是其标准Lebesgue测度，积分为Bochner积分，MeasurePreserving 是可测映射的推前测度保持；restrict、withDensity、Tendsto、ContDiff、gradient、ENNReal.ofReal/toReal 等均按标准含义，不要求其定义体收录在依赖摘录。仅展开本项目自定义，使用与上一轮三项SHA256完全相同的附件；未采用其他旧工程文件。核对 Ch05.lean 的 MD.Ch05.patchShellVolume（810–817行）及PDF213–214/印刷192–193。在 Ch05\_deps.txt 的 -- FILE: MolecularDynamics/Chapter05/ReviewDefinitions.lean 中逐项展开：E n=EuclideanSpace ℝ (Fin n)；energySurface H c={z | H z=c}；grad H z=gradient H z；normalField H z=‖grad H z‖⁻¹ • grad H z；hausdorffArea d=ENNReal.ofReal(vol(Ball(0:E d,1)).toReal/2^d) • hausdorffMeasure d；surfaceMeasure 是 hausdorffArea(n−1) 在 energySurface 上的限制；microRaw 是 surfaceMeasure.withDensity(ofReal(‖grad H‖⁻¹))，即原文未归一化的曲面加权测度。欧氏空间中这个Hausdorff归一化对应通常诱导面积，不因工程尚有余面积证明义务而把定义判为未知。regularEnergy 并非仅正则值条件，而是能量面非空、紧、处处grad≠0、raw总质量严格正且有限的合取。实际签名对每个紧可测M⊂Σ\_c，先选C,δ>0，再对所有0<e<δ，给由x=z+s n(z)、0≤s<δ、H(x)−H(z)≤e定义的真实法线薄壳满足|vol(S\_e)/e−μ(M)|≤Ce。C²、紧正则面与可测片足以保证小管几何，额外全能量面非空及质量正并非局部估计的最小要求，但作为明确的物理背景合理。最终O(e)结论以及由它推出的极限正确；乘以e也得到体积的O(e²)式。然而本条statement\_scope覆盖所引整段，其“clearly ΔV=∫_M ξdσ”精确等式既未编码也一般不成立；[EXTRA]关于Jacobian的勘误判断成立，不能将该错误原印刷式视为已经保留。此FAIL针对完整引用范围的覆盖，不是否定修正后最终渐近估计。附件对应theorem的证明体仍为sorry；这里只判断签名语义，PASS不表示Lean证明已完成。 网站原文审校另记：
 - 反例或理由：取ℝ²中H(z)=‖z‖²/2、c=1/2，M为单位圆，ξ>0为统一向外法向厚度。薄壳真实面积π((1+ξ)²−1)=2πξ+πξ²，但∫_M ξdσ=2πξ。
@@ -265,7 +265,7 @@ $$
 - 印刷页 / PDF页：192 / 213。
 - 原文引文（逐字）：
 
-> $\Delta V/\Delta E=\int_M\|\nabla H\|^{-1}d\sigma+O(\Delta E)$.
+> $`\Delta V/\Delta E=\int_M\|\nabla H\|^{-1}d\sigma+O(\Delta E)`$.
 
 - 问题所在：本轮按补充规则采信 Lean 4.34.0 / Mathlib v4.34.0 的标准数学语义：EuclideanSpace 是欧氏空间，volume 是其标准Lebesgue测度，积分为Bochner积分，MeasurePreserving 是可测映射的推前测度保持；restrict、withDensity、Tendsto、ContDiff、gradient、ENNReal.ofReal/toReal 等均按标准含义，不要求其定义体收录在依赖摘录。仅展开本项目自定义，使用与上一轮三项SHA256完全相同的附件；未采用其他旧工程文件。核对 Ch05.lean 的 MD.Ch05.shellVolumeLimit（821–827行）及所引PDF213/印刷192比值式。在 Ch05\_deps.txt 的 -- FILE: MolecularDynamics/Chapter05/ReviewDefinitions.lean 中逐项展开：E n=EuclideanSpace ℝ (Fin n)；energySurface H c={z | H z=c}；grad H z=gradient H z；normalField H z=‖grad H z‖⁻¹ • grad H z；hausdorffArea d=ENNReal.ofReal(vol(Ball(0:E d,1)).toReal/2^d) • hausdorffMeasure d；surfaceMeasure 是 hausdorffArea(n−1) 在 energySurface 上的限制；microRaw 是 surfaceMeasure.withDensity(ofReal(‖grad H‖⁻¹))，即原文未归一化的曲面加权测度。欧氏空间中这个Hausdorff归一化对应通常诱导面积，不因工程尚有余面积证明义务而把定义判为未知。regularEnergy 并非仅正则值条件，而是能量面非空、紧、处处grad≠0、raw总质量严格正且有限的合取。microPartition H c=((microRaw H c) univ).toReal；regularEnergy确保有限性，在此处toReal无损。签名表达整能量面全壳{c≤H≤c+ε}的体积比值在ε→0+时收敛到该总质量。额外紧正则能量带避免远处分支贡献，是合理的全壳控制；其邻域∀z梯度非零明确且非循环。但所引式对任意片M并含O(ΔE)，而本签名无M且仅Tendsto，没有O(ε)误差界。[EXTRA]诚实标明这是特例，不能使较弱特例等同于所引全部结论；别条保留片定理也不改变本声明。附件对应theorem的证明体仍为sorry；这里只判断签名语义，PASS不表示Lean证明已完成。 网站原文审校另记：
 - 反例或理由：缺失条款为任意紧可测M⊂Σ\_c的片壳结论及∃C,δ>0、∀0<ε<δ的误差≤Cε。一般仅极限不蕴含O(ε)：ε↦L+√ε趋于L却无该误差界；此例只说明结论强弱，不是本几何模型的反例。
@@ -310,7 +310,7 @@ $$
 - 印刷页 / PDF页：193 / 214。
 - 原文引文（逐字）：
 
-> $\mu(\Sigma_E)=4\int_0^{\sqrt{2E}/\Omega}\frac1{\sqrt{2E-\Omega^2q^2}}dq=2\pi/\Omega$.
+> $`\mu(\Sigma_E)=4\int_0^{\sqrt{2E}/\Omega}\frac1{\sqrt{2E-\Omega^2q^2}}dq=2\pi/\Omega`$.
 
 - 问题所在：NEEDS\_HUMAN 是原页推导疑误的分流，不是因 sorry 或因当前两个签名错误。两条 Lean 签名在 Ω,c>0 下均通过；quadrature 实现原印后两行的正确积分。原印第一行另有不一致上限，不能用这两条签名声称整段印刷推导已经逐字正确。 网站原文审校另记：code：PRINTED\_FIRST\_QUADRATURE\_BOUND；field：proof\_discussion\_latex；category：source\_math；description：原页第一行参数积分的上限印为 √(2E)，随后两行上限为 √(2E)/Ω。前者一般不能参数化整个第一象限椭圆弧；原印疑误须保留并转人工，不把它改成后者再称逐字正确。；code：PRINTED\_DERIVATION\_NOT\_RECORDED；field：proof\_note / proof\_discussion\_latex；category：annotation；description：原页确有 Example 5.1 的参数积分计算。补存原印推导（含可疑首上限），区分“未另设完整证明”和“没有计算论证”。
 - 反例或理由：仅针对原印首上限：令 Ω=2、E=1，第一象限椭圆弧的 q 范围止于 √2/2；原印首积分却到 √2。其 p=√(2−4q²) 的实椭圆参数解释超出合法范围。当前 Lean 两条声明都使用正确上限或正确终值，未受此反例否定。
@@ -326,7 +326,7 @@ $$
 - 印刷页 / PDF页：193 / 214。
 - 原文引文（逐字）：
 
-> Parameterizing the surface by $q$, we have $p=\sqrt{2E-\Omega^2q^2}$, then
+> Parameterizing the surface by $`q`$, we have $`p=\sqrt{2E-\Omega^2q^2}`$, then
 
 $$
 \mu(\Sigma_E)=4\int_0^{\sqrt{2E}}\frac{\sqrt{1+p_q^2}}{\sqrt{H_p^2+H_q^2}}dq =4\int_0^{\sqrt{2E}/\Omega}\frac{\sqrt{1+\frac{\Omega^4q^2}{2E-\Omega^2q^2}}}{\sqrt{p^2+\Omega^4q^2}}dq =4\int_0^{\sqrt{2E}/\Omega}\frac1{\sqrt{2E-\Omega^2q^2}}dq=2\pi/\Omega.
@@ -351,7 +351,7 @@ $$
 - 印刷页 / PDF页：194 / 215。
 - 原文引文（逐字）：
 
-> Let $d\mu_E=Z_E^{-1}\|\nabla H\|^{-1}d\sigma$. We refer to this as the microcanonical probability density and write, for an “appropriate” set $\mathcal A$, $\operatorname{Pr}(\mathcal A)=\mu_E(\mathcal A)=\int_{\mathcal A} d\mu_E$. The only requirement for this to make sense is that the set $\mathcal A$ be a measurable subset of the $H=E$ energy surface, i.e. that it be possible to compute its surface area.
+> Let $`d\mu_E=Z_E^{-1}\|\nabla H\|^{-1}d\sigma`$. We refer to this as the microcanonical probability density and write, for an “appropriate” set $`\mathcal A`$, $`\operatorname{Pr}(\mathcal A)=\mu_E(\mathcal A)=\int_{\mathcal A} d\mu_E`$. The only requirement for this to make sense is that the set $`\mathcal A`$ be a measurable subset of the $`H=E`$ energy surface, i.e. that it be possible to compute its surface area.
 
 - 问题所在：NEEDS\_HUMAN 针对原书“唯一要求”及可测性解释的资格问题。Lean 定义作为一个总化测度通过签名审校，[EXTRA] 也正确声明了概率解释必须有正有限 raw 总质量；不能因此把原书未写出的条件说成已在原句中出现。当前定义的每个值都是测度，而它成为概率测度的范围由第10条严格规定。 网站原文审校另记：code：PROBABILITY\_NORMALIZATION\_PREREQUISITES；field：statement\_latex / issues；category：source\_math；description：原书声称“唯一要求”是 A 为可测能级子集；若未在背景另保证 0<Z\_E<∞，可测性本身不足以产生概率测度。保留原句并转人工核实隐含的全局资格，不静默添加到原文。；code：MEASURABLE\_NOT\_COMPUTABLE；field：statement\_latex / issues；category：source\_math；description：“可测”与“能够计算其表面积”不是严格等价的数学定义；原书 i.e. 语句保留为解释性原话，不能用作可测性的定义。
 - 反例或理由：取 H(q,p)=p²/2、c=1，位置 q 取整个ℝ。任意有界能级弧段 A 都可测，但全能级的 raw 总质量为∞，ENNReal 的逆为0，定义所得 microMeasure 是零测度而非概率测度。此例不满足 [EXTRA] 的正有限资格，所否定的是“仅可测性就足够”的无条件读法。
@@ -370,7 +370,7 @@ $$
 - 印刷页 / PDF页：195 / 216。
 - 原文引文（逐字）：
 
-> We also note that lower order objects such as a point or a curve in $\mathbb R^2$, or a surface in $\mathbb R^3$, have zero measure with respect to Lebesgue measure for the ambient space. Similarly, for a Hamiltonian system with $N_d$ degrees of freedom, the energy surface is of dimension $2N_d-1$ and the probability measure of sets of lower dimension than this will vanish.
+> We also note that lower order objects such as a point or a curve in $`\mathbb R^2`$, or a surface in $`\mathbb R^3`$, have zero measure with respect to Lebesgue measure for the ambient space. Similarly, for a Hamiltonian system with $`N_d`$ degrees of freedom, the energy surface is of dimension $`2N_d-1`$ and the probability measure of sets of lower dimension than this will vanish.
 
 - 问题所在：FAIL（整条原文的完整覆盖），同时原书的未限定维数语言需人工确认。三个现有 Lean 声明本身均数学正确，且第二条确有环境 volume=0；但这只覆盖位于能级且 d<n−1 的集合，不能冒称原文第一句的一般环境低维零测已覆盖。n=2,d=1 的曲线及 n=3,d=2 的曲面都不满足其严格维数前提，而它们恰是原文列举对象。第二句的正则能级、光滑低维零测已有合理受限实现；该部分通过不能补上第一句的缺口。 网站原文审校另记：code：AMBIENT\_NULL\_CLAUSE\_NOT\_COVERED；field：lean\_decl / extra\_assumptions；category：lean\_scope；description：本条原文第一句要求一般环境 Lebesgue 低维对象零测。现有唯一 volume 结论同时要求 d+1<n 且像集位于一个指定能级，未覆盖原文 R² 曲线(d=1,n=2) 或 R³ 曲面(d=2,n=3)。此为完整结论覆盖缺口，不是 sorry 问题。；code：DIMENSION\_REQUIRES\_REGULAR\_VALUE；field：statement\_latex / issues；category：source\_math；description：原文将能量面维数直接写作2N\_d−1；该断言需正则水平集资格，临界能级未必具有此维数。现有 Lean 已加正则性，但原文疑误仍需保留并转人工。；code：LOWER\_DIMENSION\_MEANING\_UNSPECIFIED；field：statement\_latex / context\_notation；category：source\_math；description：原文未界定 curve、surface 和 lower dimension 的正则性或维数概念；不能自动理解为任意拓扑低维集合。Lean 的 C¹ 可数紧参数块是一种明确且正确的受限版本。
 - 反例或理由：覆盖缺口见光滑直线 g(t)=(t,0)⊂ℝ²，或光滑平面 g(s,t)=(s,t,0)⊂ℝ³：它们环境 Lebesgue 零测，但分别对应 d+1=n，无法实例化当前 countable 声明。这是缺少覆盖的见证，不是否定现有三个定理。针对原文无条件能级维数，取一自由度 H(q,p)=q²+p²、E=0，能级只有一点，维数0而非2·1−1=1；它不满足 Lean 的正则性前提。
@@ -389,7 +389,7 @@ $$
 - 印刷页 / PDF页：197 / 218。
 - 原文引文（逐字）：
 
-> Definition 5.1 A Hamiltonian system is said to be ergodic on an energy surface $\Sigma_E$ (microcanonically ergodic) if, for almost all trajectories $\Gamma$ emanating from initial conditions on $\Sigma_E$, and for any observable $g$, the following holds $\bar g_\Gamma=\operatorname{Av}_{H=E}(g)$, where $\bar g_\Gamma$ is defined in (5.9). By “almost all” we mean that there could be a low-dimensional subset for which the trajectory averages fail to equal the space averages.
+> Definition 5.1 A Hamiltonian system is said to be ergodic on an energy surface $`\Sigma_E`$ (microcanonically ergodic) if, for almost all trajectories $`\Gamma`$ emanating from initial conditions on $`\Sigma_E`$, and for any observable $`g`$, the following holds $`\bar g_\Gamma=\operatorname{Av}_{H=E}(g)`$, where $`\bar g_\Gamma`$ is defined in (5.9). By “almost all” we mean that there could be a low-dimensional subset for which the trajectory averages fail to equal the space averages.
 
 - 问题所在：主谓词的量词顺序准确为对 microMeasure 几乎处处 z，再对每个全局 C∞ 且该测度可积的实值 g；结论是实际无限时间平均等于实际空间平均。flow 明确零时恒等、实时间群律与逐时 ODE 导数；另有 H∈C²、全空间能量保持、非空紧正则面及正有限质量，并用常可逆反对称矩阵 J 指定 f=J∇H。这些 [EXTRA] 均在接口中，紧能量面上光滑 g 可积并不实质删去原文光滑观测量。问题在原书把 almost all 用 low-dimensional subset 解释：测度零与低维条件不能一般等同，Lean 未出现维数谓词。按通常微正则零测解释签名正确；若原文要求异常集严格低维则尚不忠实，需人工确定，不能静默裁定原书。 网站原文审校另记：stage：SOURCE\_MATH；code：ORIGINAL\_ALMOST\_ALL\_DIMENSION\_AMBIGUITY；description：原书 By “almost all”...low-dimensional subset 逐字相符，应保留。但低维与微正则零测并非同义：零测集合可以有满 Hausdorff 维数。当前 Lean 仅表述零测异常集，未表述低维异常集。需人工确认该句只是解释性直观还是额外维数要求。
 - 反例或理由：测度论差异的例子：实直线上存在 Lebesgue 零测且 Hausdorff 维数为1的集合；故“零测”本身不推出“严格低维”。这是原书术语解释的反例，不声称已给出满足本条 Hamiltonian 假设的动力学反例。
@@ -408,7 +408,7 @@ $$
 - 印刷页 / PDF页：198 / 219。
 - 原文引文（逐字）：
 
-> If we assume the system is ergodic, we must have $\operatorname{Pr}(\Sigma_E\setminus\mathcal A)=0$, thus $\operatorname{Pr}(\mathcal A)=1$. Since, according to the definition, equality of time and space averages is allowed to fail only on a set of probability measure zero, we have that either $\operatorname{Pr}(\mathcal A)=0$ or $\operatorname{Pr}(\mathcal A)=1$.
+> If we assume the system is ergodic, we must have $`\operatorname{Pr}(\Sigma_E\setminus\mathcal A)=0`$, thus $`\operatorname{Pr}(\mathcal A)=1`$. Since, according to the definition, equality of time and space averages is allowed to fail only on a set of probability measure zero, we have that either $`\operatorname{Pr}(\mathcal A)=0`$ or $`\operatorname{Pr}(\mathcal A)=1`$.
 
 - 问题所在：已分别核对ergodicTimeAverage、ergodicTimeAverage\_common\_smooth、ergodicTimeAverage\_positive\_invariant。E n为任意有限维实欧氏空间；第一条在概率测度、每个实时间保测、零时恒等、全实时间群律及联合可测前提下，给出严格不变可测集的0/1性质与“每个L¹实观测量各自几乎处处具有空间均值时间平均”的双向等价；积分为真实0到T区间积分，极限为T→+∞。第二条另要求联合连续及紧支撑，结论确实把AE置于所有C∞实观测量之前，这些增加的条件已经[EXTRA]公开，不能把第二条当成第一条无条件交换量词。第三条显式要求可测不变集A有正概率，结论同时包含μ(A)=1、所有实时间轨道留在A、补集指标函数的实际时间平均为0；未把这些结论作假设。三条修订/扩展签名合理。本条PASS只涉及这些明确声明，不认可原书省略正概率分支的中间推理。 网站原文审校另记：code：SOURCE\_POSITIVE\_MASS\_BRANCH\_OMITTED；phase：A；field：statement\_latex；message：转录忠实，但原文直接从遍历性推出Pr(Σ\_E\A)=0，尚未排除Pr(A)=0；其后才陈述0/1分支。保留原句并转人工，不用正概率修订反写原文。
 - 反例或理由：针对原书中间句：取任何概率遍历流及A=∅。A可测且不变，但Pr(Σ\_E\A)=1。此例不反驳Lean中要求0<μ A的positive\_invariant，也不反驳0/1结论。
@@ -427,7 +427,7 @@ $$
 - 印刷页 / PDF页：199 / 220。
 - 原文引文（逐字）：
 
-> For any $E_1,E_2>0$, the set of points satisfying $H_1=E_1,H_2=E_2$ is a two-dimensional torus. If the frequencies $\Omega_1$ and $\Omega_2$ are not rationally related (i.e. $\Omega_1/\Omega_2$ is an irrational number), then for any $E_1,E_2$ the torus will eventually be filled in by any trajectory. On the other hand, the energy surface $H=E$ is the union of all such 2-tori with $E_1+E_2=E$. There is no mechanism for the system to move from one torus to the other, so the system is not ergodic.
+> For any $`E_1,E_2\gt 0`$, the set of points satisfying $`H_1=E_1,H_2=E_2`$ is a two-dimensional torus. If the frequencies $`\Omega_1`$ and $`\Omega_2`$ are not rationally related (i.e. $`\Omega_1/\Omega_2`$ is an irrational number), then for any $`E_1,E_2`$ the torus will eventually be filled in by any trajectory. On the other hand, the energy surface $`H=E`$ is the union of all such 2-tori with $`E_1+E_2=E`$. There is no mechanism for the system to move from one torus to the other, so the system is not ergodic.
 
 - 问题所在：本轮按补充规则直接采信Lean 4.34.0 / Mathlib v4.34.0的标准含义：EuclideanSpace为带欧氏内积的实坐标空间，volume为标准Lebesgue测度，积分为Bochner积分（不可积时取0），限制测度、withDensity、ENNReal.ofReal、连续性、闭包、同胚、梯度和Fréchet导数均采用标准数学含义；不要求这些库定义出现在项目依赖摘录。项目依赖Chapter05/ReviewDefinitions.lean实际展开：E n=EuclideanSpace ℝ (Fin n)；energySurface H c={z|H z=c}；grad H=gradient H；hausdorffArea d=[vol(B₁⊂Rᵈ)/2ᵈ]·HausdorffMeasure d；surfaceMeasure=(hausdorffArea(n−1)).restrict(energySurface H c)；microRaw=surfaceMeasure.withDensity(ofReal(‖grad H‖⁻¹))；microMeasure=(microRaw univ)⁻¹·microRaw；average μ g=∫g dμ；microAverage H c g=average(microMeasure H c)g。本地Hᵢ和Φ分别展开为上述分能量及无耦合旋转。签名∀Ω,c，∀i Ωᵢ≠0且cᵢ>0，然后令T={z|∀i,Hᵢ(z)=cᵢ}；其合取项分别是T与两个欧氏单位圆的积同胚、∀z∈T∀t∀i的分能量保持、Ω₁/Ω₂无理时每条全实时间轨道闭包等于T、以及∀E>0的总能量微正则非遍历性。项目flowInvariant Φ A=∀t,Φt ''A=A；setErgodic μ Φ=∀可测A,flowInvariant Φ A→μA=0∨μA=1。这些对象和量词均准确；正分能量及非零频率是非退化2-torus所需，“filled in”解释为稠密而非有限时间覆盖合理。但原文“总能量面是全部这类层的并”的分解结论不在本定理的四个合取项中；[EXTRA]指出退化圆，却没有在本lean\_decl写出包括它们的分解。原书按正分能量2-tori穷尽整面存在确定边界漏项，须明示勘误而非静默改变原文。FAIL是结论缺项；证明体sorry单独记录，标准Hausdorff测度/积分未提供定义体不是判定理由。 网站原文审校另记：
 - 反例或理由：Ω=(1,1),E=1,z=(0,0,√2,0)位于总能量面，但H₂=0，不在任何两项都正的2-torus中。它反驳原书按严格正层解释的穷尽表述；当前签名则完全缺少分解子句。
@@ -443,7 +443,7 @@ $$
 - 印刷页 / PDF页：199 / 220。
 - 原文引文（逐字）：
 
-> On the other hand, the energy surface $H=E$ is the union of all such 2-tori with $E_1+E_2=E$. There is no mechanism for the system to move from one torus to the other, so the system is not ergodic.
+> On the other hand, the energy surface $`H=E`$ is the union of all such 2-tori with $`E_1+E_2=E`$. There is no mechanism for the system to move from one torus to the other, so the system is not ergodic.
 
 - 问题所在：twoOscillatorEnergyDecomposition逐点量化任意实频率Ω、任意实E和z:E 4。左侧是两个真实分能量之和等于E；右侧存在c:Fin 2→ℝ，各c\_i非负、总和等于E且逐项H\_i(z)=c\_i。各H\_i是平方项之和，故取c\_i=H\_i(z)得到这一双向分解；E<0时两侧均不能成立，E=0时也没有被排除。这是正确的、含边界退化层的静态修订。[EXTRA]与statement\_scope已明确不在本条断言各层都是二维环面、轨道稠密性或非遍历性；这些额外结论不能由当前静态等价式获得。本条签名PASS不改变原书关于“all such 2-tori”的疑误，外部TwoOscillatorTori未在本批复核。 网站原文审校另记：code：SOURCE\_DEGENERATE\_ENERGY\_FIBERS；phase：A；field：statement\_latex；message：原文such 2-tori回指前文E₁,E₂>0的共同层，不能覆盖H=E的零分能量边界层；保留字面并转人工。；code：SOURCE\_NONERGODIC\_ENERGY\_QUALIFICATION；phase：A；field：statement\_latex；message：“so the system is not ergodic”在此能量面语境需区分E>0与E=0；零能量面在非零频率时为单点，不能不加限定地说非遍历。
 - 反例或理由：针对原书字面并集：Ω₁=Ω₂=1、E=1、z=(√2,0,0,0)时H₁=1、H₂=0，位于总能量面，却不在任何E₁,E₂>0的二维环面上。另E=0时能量面仅为原点，相应Dirac概率流遍历。这两点均不反驳当前含退化层的Lean静态等价式。
@@ -481,7 +481,7 @@ $$
 - 印刷页 / PDF页：201 / 222。
 - 原文引文（逐字）：
 
-> Fix, arbitrarily, a small set of initial conditions for the anisotropic pendulum at energy $E_0$, with positions in a small interval on the positive $x$ axis, $1.05\le x\le1.15$ and $y=0$. For each point $(x,0)$ taken from this set select the initial velocities as $\dot x=0$, $\dot y=[2(E_0-U(x,0))]^{1/2}$. The set $y=0$, $\dot y=0$ is invariant under the differential equations of the perturbed central force problem, since the force acts in the radial direction; our choice of initial conditions ensures that trajectories explore the larger $H=E_0$ energy surface.
+> Fix, arbitrarily, a small set of initial conditions for the anisotropic pendulum at energy $`E_0`$, with positions in a small interval on the positive $`x`$ axis, $`1.05\le x\le1.15`$ and $`y=0`$. For each point $`(x,0)`$ taken from this set select the initial velocities as $`\dot x=0`$, $`\dot y=[2(E_0-U(x,0))]^{1/2}`$. The set $`y=0`$, $`\dot y=0`$ is invariant under the differential equations of the perturbed central force problem, since the force acts in the radial direction; our choice of initial conditions ensures that trajectories explore the larger $`H=E_0`$ energy surface.
 
 - 问题所在：依补充规则重审：Lean 4.34.0 / Mathlib v4.34.0 的 EuclideanSpace、WithLp.toLp、HasDerivAt、gradient、ContDiff、deriv、Set.image、Icc 和 segment 等按标准数学含义采信，不要求其定义体出现在项目依赖摘录。仅展开项目自定义对象。Ch05\_deps.txt 的 MolecularDynamics/Chapter05/ReviewDefinitions.lean:5315–5316 中 E n=EuclideanSpace ℝ (Fin n)、Phase n=E n×E n，分别是欧氏 ℝⁿ 与位置/动量积空间。目标附件 Blueprint/Ch05.lean:1161–1162 中 anisotropicPotential κ₀ l₀ ε q=Chapter01Review.anisotropicEnergy κ₀ l₀ ε (q 0) (q 1) 0 0；依赖摘录 MolecularDynamics/Chapter01/ReviewDefinitions.lean:12008–12019 展开后，r=√(x²+y²)、c₃=4(x/r)³−3x/r、κ\_eff=κ₀(1−εc₃/2)、l\_eff=l₀(1+εc₃/2)，U=κ\_eff(r−l\_eff)²/2。声明对任意 κ₀,l₀>0、任意实 ε 以及任意全实时间 C¹ 相空间轨道 z，假定 z′=(p,−∇U(q))、y(0)=p\_y(0)=0，推出所有实 t 的 y(t)=p\_y(t)=0。该签名刻画轴不变性，没有把该结论作前提；但原文 statement\_scope 包含能量 E₀、给定短区间初值与“ensures ... explore the larger H=E₀ energy surface”，本声明不含这些初值约束和探索条款，不能把整段原句判为覆盖完整。初值构造已另有条目，不等于此声明包含了缺失结论。[EXTRA]正基准参数是合理物理资格，全时间轨道限制须区分于经典局部解；并且正基准参数不保证任意 ε 下有效参数为正。展开的势含角向依赖，故原书径向力理由一般不成立；远离原点的轴上则有反射对称性，可用于局部轴不变结论。全局签名未区分原点处总定义的 Lean gradient 与经典可微势，宜另加有效定义域资格。FAIL 的确定依据是全条覆盖缺失和原书理由的显式问题，无须因标准库定义缺失转为 NEEDS\_HUMAN。声明体为 sorry；这与签名语义分开记录。 网站原文审校另记：
 - 反例或理由：缺失条款：E₀、x∈[1.05,1.15]、p\_x=0、p\_y=√(2(E₀−U(x,0))) 及探索描述。对原书“力沿径向”的反例：κ₀=l₀=1、ε=1/2，在 r=2、θ=π/6 处 ∂θU=9/8≠0，故力有切向分量；这只反驳径向力理由，不是对轴不变性的反例。
@@ -500,7 +500,7 @@ $$
 - 印刷页 / PDF页：200 / 221。
 - 原文引文（逐字）：
 
-> For given positive values of the coefficients, the region swept out in the plane by trajectories can be seen to be a union of intersections of pairs of disks centered at the origin and $(0,-2)$, with radii $r_1,r_2$ respectively, which themselves represent a point on an ellipse in the first quadrant. Determining the boundary of this region analytically is difficult but it is easy to find it numerically. For the special case $k_1=k_2=2$, $l_1=l_2=1$, and $E=4$ that the projected region covered by positions at this energy is the interior of the level set $U=E$ shown as a dark oval curve in the three panels of Fig. 5.4.
+> For given positive values of the coefficients, the region swept out in the plane by trajectories can be seen to be a union of intersections of pairs of disks centered at the origin and $`(0,-2)`$, with radii $`r_1,r_2`$ respectively, which themselves represent a point on an ellipse in the first quadrant. Determining the boundary of this region analytically is difficult but it is easy to find it numerically. For the special case $`k_1=k_2=2`$, $`l_1=l_2=1`$, and $`E=4`$ that the projected region covered by positions at this energy is the interior of the level set $`U=E`$ shown as a dark oval curve in the three panels of Fig. 5.4.
 
 - 问题所在：依补充规则重审：Lean 4.34.0 / Mathlib v4.34.0 的 EuclideanSpace、WithLp.toLp、HasDerivAt、gradient、ContDiff、deriv、Set.image、Icc 和 segment 等按标准数学含义采信，不要求其定义体出现在项目依赖摘录。仅展开项目自定义对象。Ch05\_deps.txt 的 MolecularDynamics/Chapter05/ReviewDefinitions.lean:5315–5316 中 E n=EuclideanSpace ℝ (Fin n)、Phase n=E n×E n，分别是欧氏 ℝⁿ 与位置/动量积空间。目标附件:1189–1191 的 pendulumPotential 逐项为双弹簧势 U(q)=k₁(d₁−l₁)²/2+k₂(d₂−l₂)²/2，其中 d₁=√(x²+y²)、d₂=√(x²+(y+2)²)。声明量化所有严格正 k₁,k₂,l₁,l₂,c。左集是存在动量使 |p|²/2+U(q)=c 的位置投影，按标准实欧氏语义恰为 {U≤c}；右集是存在正 r₁,r₂ 处于半径能量椭圆，且 d₁≤r₁、d₂≤r₂ 的圆盘交之并。平方项(r−l)²在 r<l 时并不单调递增，故半径上界不足以控制实际势。[EXTRA]单位质量及将可达区域解释为所有能量初值的位置投影合理，全部正参数也未把结论作前提，但它们不能消除下列反例。原书特例及 interior 的边界问题亦应区分；闭能量投影包含零动量边界。FAIL 是展开后等式为假的确定判定，无需查看 Mathlib 定义体。声明体为 sorry。 网站原文审校另记：
 - 反例或理由：k₁=k₂=2、l₁=l₂=3、c=1、q=(0,0)。d₁=0、d₂=2、U=9+1=10，所以 q 不属于左集。取 r₁=r₂=3+1/√2>0，则(r₁−3)²+(r₂−3)²=1，且 d₁≤r₁、d₂≤r₂，故 q 属于右集。所有声明前提满足。
@@ -538,14 +538,14 @@ $$
 - 印刷页 / PDF页：203–204 / 224–225。
 - 原文引文（逐字）：
 
-> Let $a$ and $b$ be mappings from the phase space to the same Euclidean space, and define the temporal correlation of $a$ and $b$ (on the surface of energy $E$) by
+> Let $`a`$ and $`b`$ be mappings from the phase space to the same Euclidean space, and define the temporal correlation of $`a`$ and $`b`$ (on the surface of energy $`E`$) by
 
 $$
 C_{ab}(\tau)\stackrel{\rm def}{=}k\operatorname{Av}_{H=E}(a(\mathcal F_t(z))\cdot b(z)) =kZ_E^{-1}\int_{\Sigma_E}a(\mathcal F_t(z))\cdot b(z)\delta[H-E]d\omega;
 $$
 
 
-> where $k$ is a normalization constant that is often incorporated to ensure that $C_{ab}(0)=1$.
+> where $`k`$ is a normalization constant that is often incorporated to ensure that $`C_{ab}(0)=1`$.
 
 - 问题所在：correlation对任意状态维n、共同输出维d，接受μ、Φ及a,b:E n→E d和实k,t，返回k乘以真实实欧氏内积的μ积分；只在a上施加Φ\_t，b取初始状态，次序与源文相符。这里定义的是通用测度下的相关核，取μ为已归一化微正则概率测度时才对应原Av_(H=E)；不能据此声称对任意μ都等于原δ积分，也未在此定义或证明微正则测度构造。积分定义可以总延拓至任意观测量；作通常统计相关解释时仍须有相关乘积的可积性。k任意是正确的，“often”并未要求无条件C(0)=1；零lag积分非零时才能取其倒数归一化。Lean统一用一个lag参数t，是对源文τ/t混用的已公开合理修订。 网站原文审校另记：code：SOURCE\_LAG\_VARIABLE\_MISMATCH；phase：A；field：statement\_latex；message：原页左侧C\_ab(τ)，右侧两次使用F\_t，原JSON忠实保留。将t视为τ的勘误需人工确认，不在原文内悄改。；code：SOURCE\_LITERAL\_PUNCTUATION；phase：A；field：statement\_latex；message：原展示式以分号结束，随后跨页接where k；原JSON写逗号，作纯转录修正。；code：MICROCANONICAL\_SPECIALIZATION\_MUST\_BE\_EXPLICIT；phase：C；field：context\_notation/extra\_assumptions；message：当前Lean只定义任意μ下的积分核；微正则δ积分是μ选取后的解释，不是这条定义已证明的额外等式。
 - 反例或理由：code：SOURCE\_LAG\_VARIABLE\_MISMATCH；phase：A；field：statement\_latex；message：原页左侧C\_ab(τ)，右侧两次使用F\_t，原JSON忠实保留。将t视为τ的勘误需人工确认，不在原文内悄改。；code：SOURCE\_LITERAL\_PUNCTUATION；phase：A；field：statement\_latex；message：原展示式以分号结束，随后跨页接where k；原JSON写逗号，作纯转录修正。；code：MICROCANONICAL\_SPECIALIZATION\_MUST\_BE\_EXPLICIT；phase：C；field：context\_notation/extra\_assumptions；message：当前Lean只定义任意μ下的积分核；微正则δ积分是μ选取后的解释，不是这条定义已证明的额外等式。
@@ -564,7 +564,7 @@ $$
 - 印刷页 / PDF页：204 / 225。
 - 原文引文（逐字）：
 
-> If the system is ergodic, we could write this as a temporal average with respect to any trajectory initiated on the $H=E$ energy surface:
+> If the system is ergodic, we could write this as a temporal average with respect to any trajectory initiated on the $`H=E`$ energy surface:
 
 $$
 C_{a,b}(t)=k\lim_{\tau\to\infty}\frac1\tau\int_0^{\tau} a(z(s+t))\cdot b(z(s))ds.
@@ -586,7 +586,7 @@ $$
 - 印刷页 / PDF页：204 / 225。
 - 原文引文（逐字）：
 
-> If the system is ergodic, we could write this as a temporal average with respect to any trajectory initiated on the $H=E$ energy surface:
+> If the system is ergodic, we could write this as a temporal average with respect to any trajectory initiated on the $`H=E`$ energy surface:
 
 $$
 C_{a,b}(t)=k\lim_{\tau\to\infty}\frac1\tau\int_0^{\tau} a(z(s+t))\cdot b(z(s))ds.
@@ -611,7 +611,7 @@ $$
 - 印刷页 / PDF页：205 / 226。
 - 原文引文（逐字）：
 
-> $\lim_{t\to\infty}C_{ab}(t)=\operatorname{Av}_{H=E}(a)\cdot\operatorname{Av}_{H=E}(b)$.
+> $`\lim_{t\to\infty}C_{ab}(t)=\operatorname{Av}_{H=E}(a)\cdot\operatorname{Av}_{H=E}(b)`$.
 
 - 问题所在：C：主声明量化n,d、任意实k、概率μ、各时保持测度的Φ和有界连续向量a,b；密度测试混合前提作用于所有标量r,φ。有限维逐分量推出带k的内积均值极限，数学正确；scalar声明是相应d=1公式，k*Av(a)*Av(b)括号无误。未要求Φ群律不妨碍此蕴含。全部[EXTRA]与修正版相符，sorry不影响签名审核。但名为mixingCorrelation的结论是带k的修正版，不能同时认证为原书无k字面版本；需人工确认原文/勘误分流。 本条全部本地声明：MD.Ch05.mixingCorrelation, MD.Ch05.mixingCorrelation\_scalar。这是只读签名及数学语义审核，未编译、不补证明、不因sorry降级。 网站原文审校另记：A：附件第2页原式右侧为Av(a) · Av(b)，JSON漏掉中间点乘号；向量语境下不能仅写并置乘积。原页确实没有k，须保留该原书疑误。附件不含所称PDF224–225，不能独立核实那两页对k的定义；此处仅按任务摘录的context核对其一致性。；C：主声明量化n,d、任意实k、概率μ、各时保持测度的Φ和有界连续向量a,b；密度测试混合前提作用于所有标量r,φ。有限维逐分量推出带k的内积均值极限，数学正确；scalar声明是相应d=1公式，k*Av(a)*Av(b)括号无误。未要求Φ群律不妨碍此蕴含。全部[EXTRA]与修正版相符，sorry不影响签名审核。但名为mixingCorrelation的结论是带k的修正版，不能同时认证为原书无k字面版本；需人工确认原文/勘误分流。
 - 反例或理由：按所给C\_ab=k Av(a∘Φ\_t·b)定义，取μ=δ₀、Φ\_t=id、a=b=1、k=2；所有混合/概率/连续有界前提成立，左极限2而原印右侧1。向量版取d=1即可。
@@ -627,7 +627,7 @@ $$
 - 印刷页 / PDF页：205 / 226。
 - 原文引文（逐字）：
 
-> More generally, in a mixing system, if $a$ and $b$ are two arbitrary functions of the phase variables, then
+> More generally, in a mixing system, if $`a`$ and $`b`$ are two arbitrary functions of the phase variables, then
 
 $$
 \lim_{t\to\infty}C_{ab}(t)=\operatorname{Av}_{H=E}(a)\operatorname{Av}_{H=E}(b).
@@ -652,7 +652,7 @@ $$
 - 印刷页 / PDF页：207 / 228。
 - 原文引文（逐字）：
 
-> we see that the eigenvalues of the propagation matrix are outside the unit disk. Thus both solution components tend to infinity unless $(q_0,p_0)=(0,0)$.
+> we see that the eigenvalues of the propagation matrix are outside the unit disk. Thus both solution components tend to infinity unless $`(q_0,p_0)=(0,0)`$.
 
 - 问题所在：本轮以BATCH24附件签名及哈希绑定的Blueprint/Ch05.lean为准；Mathlib标准定义按补充规则直接采信，无须在Ch05\_deps.txt中展开。ReviewDefinitions.lean:5315、5401展开后，对象为实际欧氏平面的A\_h=[[1,h],[−h,1]]迭代。量词为所有非零实h、所有非零初值z；两个Tendsto atTop atTop按标准意义分别要求每个坐标绝对值最终超过任意实阈值。[EXTRA]h≠0、z≠0对增长是合理必要资格，绝对值解释也明确，但两坐标各自趋于+∞仍有反例，故原书疑误能够确定，不需NEEDS\_HUMAN。PDF228／印刷207的谱外扩子句亦未单独表达；特征值模大于1可导致范数发散，不保证每个坐标绝对值发散。不存在字面[ERRATUM?]标签，但应明确保留原句并报告此疑误。附件中本声明证明体直接含sorry；反例与遗漏子句是FAIL依据，sorry另记，不能混淆。 网站原文审校另记：
 - 反例或理由：h=1，z=(1,0)。A²=[[0,2],[−2,0]]，A⁴=−4I。对所有m≥0，A^(4m)z=((-4)^m,0)，A^(4m+2)z=(0,−2(-4)^m)。故p的绝对值在4m子列为0，q的绝对值在4m+2子列为0，两个Tendsto结论均失败。
@@ -668,7 +668,7 @@ $$
 - 印刷页 / PDF页：207 / 228。
 - 原文引文（逐字）：
 
-> and we see that the eigenvalues of the propagation matrix are outside the unit disk. Thus both solution components tend to infinity unless $(q_0,p_0)=(0,0)$.
+> and we see that the eigenvalues of the propagation matrix are outside the unit disk. Thus both solution components tend to infinity unless $`(q_0,p_0)=(0,0)`$.
 
 - 问题所在：C复审规则：Lean 4.34.0 / Mathlib v4.34.0 的 EuclideanSpace、内积、梯度、导数、Hausdorff测度、volume、Bochner integral、withDensity、restrict、ContDiff、HasCompactSupport、Tendsto 等均直接按其标准数学含义采信；未在依赖摘录中寻找Mathlib定义体，也不以缺少这些定义体为理由判NEEDS\_HUMAN。实际读取的三个文件已重新计算SHA256，并与上一轮附件哈希逐一相等；不使用其他旧版Ch0x.lean或source.json。项目自定义项已按依赖的ReviewDefinitions文件和当前附件MD.Ch05本地定义展开核对。 依赖展开依据：Ch05\_deps.txt 的 -- FILE: MolecularDynamics/Chapter05/ReviewDefinitions.lean，E n=EuclideanSpace ℝ (Fin n)，采用欧氏范数；不是坐标上确界范数。 Lean只给非零步长、非零初值下欧氏范数趋于+∞，既没有特征值位于单位圆外的结论，也没有原文“两分量趋于无穷”的结论。[EXTRA]h≠0必要，非原点对应原文例外；修正为范数发散在数学上正确，但不能作为原句全部结论的忠实形式化。没有显式ERRATUM标签，必须明确登记原书疑误。此定理正文未见sorry，但证明存在不消除语义偏差。 复审仍判FAIL的原因是与原书结论的绑定差异，而非Mathlib范数或Tendsto含义不明。[EXTRA]已明确承认是独立修正，修正合理不等于原句语义相同。 网站原文审校另记：
 - 反例或理由：h=1，z₀=(1,0)。z\_k=(√2)^k(cos(kπ/4),−sin(kπ/4))；p_{4m}=0，q_{4m+2}=0，因此连两个分量的绝对值分别趋于∞都不成立，范数却确实趋于∞。
@@ -687,7 +687,7 @@ $$
 - 印刷页 / PDF页：207 / 228。
 - 原文引文（逐字）：
 
-> all solutions of the recurrence relation tend to the origin with increasing $n$ (the origin is an attractive equilibrium point). In this case, all densities evolve toward the Dirac distribution centered at the origin: $\delta[q]\delta[p]$. The only (distributional) solution of $\mathcal L_{\widetilde f}\rho=0$ is again $\delta[q]\delta[p]$, which in this case is attractive.
+> all solutions of the recurrence relation tend to the origin with increasing $`n`$ (the origin is an attractive equilibrium point). In this case, all densities evolve toward the Dirac distribution centered at the origin: $`\delta[q]\delta[p]`$. The only (distributional) solution of $`\mathcal L_{\widetilde f}\rho=0`$ is again $`\delta[q]\delta[p]`$, which in this case is attractive.
 
 - 问题所在：C：声明对每个h≠0同时给所有二维初值的离散轨道趋0，以及对任意初始概率μ、任意有界连续φ的积分随自然k趋φ(0)，即概率推前弱趋δ₀；无矩条件需求，量词和结论完整，[EXTRA]准确。没有给连续密度生成元稳态唯一性/连续吸引性，scope将其交外部两个source\_id，本任务无其签名不可审。所给离散签名正确，但原页L无dagger和未限定分布类别是必须人工裁定的原书疑误。 本条全部本地声明：MD.Ch05.backwardEulerLimit。这是只读签名及数学语义审核，未编译、不补证明、不因sorry降级。 网站原文审校另记：A：附件第13页此处确实印L\_f̃ ρ=0，没有dagger；JSON忠实，不应在原文字段擅补。其余all solutions、all densities、Dirac及attractive原句相符。；C：声明对每个h≠0同时给所有二维初值的离散轨道趋0，以及对任意初始概率μ、任意有界连续φ的积分随自然k趋φ(0)，即概率推前弱趋δ₀；无矩条件需求，量词和结论完整，[EXTRA]准确。没有给连续密度生成元稳态唯一性/连续吸引性，scope将其交外部两个source\_id，本任务无其签名不可审。所给离散签名正确，但原页L无dagger和未限定分布类别是必须人工裁定的原书疑误。
 - 反例或理由：将L理解为作用于观测量的Lie算子时不能无说明把其核称为密度稳态；即便修为密度伴随算子，所有分布中零分布及δ₀的常数倍也破坏唯一性。
@@ -703,7 +703,7 @@ $$
 - 印刷页 / PDF页：207 / 228。
 - 原文引文（逐字）：
 
-> This means that with the single exception $\rho(q,p;0)=\delta[q]\delta[p]$ there is no limiting (invariant) distribution for Forward Euler. To put it another way, the only solution, in the weak sense, of $\mathcal L_{\widetilde f}^{\dagger}\rho=0$ is the point distribution $\delta[q]\delta[p]$, and this solution is not “asymptotically stable.”
+> This means that with the single exception $`\rho(q,p;0)=\delta[q]\delta[p]`$ there is no limiting (invariant) distribution for Forward Euler. To put it another way, the only solution, in the weak sense, of $`\mathcal L_{\widetilde f}^{\dagger}\rho=0`$ is the point distribution $`\delta[q]\delta[p]`$, and this solution is not “asymptotically stable.”
 
 - 问题所在：C：eulerInvariant量化非零h及所有概率μ，以真实forwardEuler保持μ为前提，结论μ=δ₀正确；no\_probability\_limit对每个非Dirac概率μ排除任何概率ν的全部有界连续测试函数弱极限，强度和量词正确，部分质量留在0也仍不紧。已给[EXTRA]诚实限定为离散概率测度，并将连续模型/弱稳态分配外部source\_id；这些外部声明未在本任务摘录，不能认证其覆盖。原书声称唯一弱解若指所有分布而非概率测度，必须人工限定类别；亦不能把离散不变性直接当连续生成元核。故两条已给Lean声明本身通过，但整条原书弱稳态/稳定性尚不能PASS。 本条全部本地声明：MD.Ch05.eulerInvariant, MD.Ch05.eulerInvariant\_no\_probability\_limit。这是只读签名及数学语义审核，未编译、不补证明、不因sorry降级。 网站原文审校另记：A：附件第10页原句、dagger、Dirac及not asymptotically stable相符，保留原句。；C：eulerInvariant量化非零h及所有概率μ，以真实forwardEuler保持μ为前提，结论μ=δ₀正确；no\_probability\_limit对每个非Dirac概率μ排除任何概率ν的全部有界连续测试函数弱极限，强度和量词正确，部分质量留在0也仍不紧。已给[EXTRA]诚实限定为离散概率测度，并将连续模型/弱稳态分配外部source\_id；这些外部声明未在本任务摘录，不能认证其覆盖。原书声称唯一弱解若指所有分布而非概率测度，必须人工限定类别；亦不能把离散不变性直接当连续生成元核。故两条已给Lean声明本身通过，但整条原书弱稳态/稳定性尚不能PASS。
 - 反例或理由：若“distribution”按任意Schwartz分布理解，零分布已经解齐次稳态方程且不是δ₀；任意常数倍δ₀亦为解。唯一性至少须限制质量1非负概率类。
@@ -722,7 +722,7 @@ $$
 - 印刷页 / PDF页：207 / 228。
 - 原文引文（逐字）：
 
-> the solution through any given initial point remains confined to an ellipse for all $n$ defined by $\widetilde H_h(q,p)=\widetilde H_h(q_0,p_0)$.
+> the solution through any given initial point remains confined to an ellipse for all $`n`$ defined by $`\widetilde H_h(q,p)=\widetilde H_h(q_0,p_0)`$.
 
 - 问题所在：C：修正版主定理对所有|h|<2给非零点Q\_h>0、每个实c的次水平集紧性、每个z及全部自然k的能量保持；包含负c时空集和k=0。geometry另断言零能级={0}，每个c>0的能级与单位圆同胚，数学正确。二次型矩阵[[1,−h/2],[-h/2,1]]特征值1±h/2均正，结合显式二次型可认定几何椭圆；单独同胚本身只表达拓扑圆，不能作为一般集合是几何椭圆的充分定义。条目14还提供与主对数Hamiltonian的正比例联系，故修正版范围内能级与modified模型一致。[EXTRA]明确，sorry不构成签名FAIL。原文无稳定区及零初值例外须人工裁定。 本条全部本地声明：MD.Ch05.symplecticEulerEllipse, MD.Ch05.symplecticEulerEllipse\_geometry。这是只读签名及数学语义审核，未编译、不补证明、不因sorry降级。 网站原文审校另记：A：附件第15页原句及H̃_h(q,p)=H̃_h(q₀,p₀)相符；原书无限定any given initial point，不应悄改原文。；C：修正版主定理对所有|h|<2给非零点Q\_h>0、每个实c的次水平集紧性、每个z及全部自然k的能量保持；包含负c时空集和k=0。geometry另断言零能级={0}，每个c>0的能级与单位圆同胚，数学正确。二次型矩阵[[1,−h/2],[-h/2,1]]特征值1±h/2均正，结合显式二次型可认定几何椭圆；单独同胚本身只表达拓扑圆，不能作为一般集合是几何椭圆的充分定义。条目14还提供与主对数Hamiltonian的正比例联系，故修正版范围内能级与modified模型一致。[EXTRA]明确，sorry不构成签名FAIL。原文无稳定区及零初值例外须人工裁定。
 - 反例或理由：h=2时Q=(q−p)²/2，正能级是两条平行直线而非椭圆，零能级是一整条直线；|h|<2但z₀=0则能级仅{0}。
@@ -738,7 +738,7 @@ $$
 - 印刷页 / PDF页：207 / 228。
 - 原文引文（逐字）：
 
-> the solution through any given initial point remains confined to an ellipse for all $n$ defined by $\widetilde H_h(q,p)=\widetilde H_h(q_0,p_0)$, where $\widetilde H_h$ is the perturbed Hamiltonian defined by the backward error analysis.
+> the solution through any given initial point remains confined to an ellipse for all $`n`$ defined by $`\widetilde H_h(q,p)=\widetilde H_h(q_0,p_0)`$, where $`\widetilde H_h`$ is the perturbed Hamiltonian defined by the backward error analysis.
 
 - 问题所在：C：symplecticEulerShadow\_statement是所有实h、所有z的一步Q\_h保持，Q\_h=(q²+p²−hqp)/2；对摘录辛Euler步[[1−h²,h],[-h,1]]此恒等式正确。新增c(h)在h=0特判1，|h|<2内为正；A=c(h)[[-h/2,1],[-1,h/2]]正是cQ\_h的Hamilton向量场。设s=sqrt(1−h²/4)，该未缩放矩阵平方=−s²I，角θ=2arcsin(h/2)满足sinθ=hs、cosθ=1−h²/2，故exp(hA)精确给数值步。flow定义含初值、群律和每时刻ODE，主模型全部合取正确，h=0亦成立。c(h)=1+h²/6+O(h⁴)，有界球上差界C h²合理，量词C,δ可依赖R。[EXTRA]准确；但原书无条件椭圆说法不成立，需保留疑误人工处理，新增正确模型不消除此原文问题。 本条全部本地声明：MD.Ch05.symplecticEulerShadow, MD.Ch05.symplecticEulerLogScale, MD.Ch05.symplecticEulerModifiedHamiltonian, MD.Ch05.symplecticEulerModifiedFlow, MD.Ch05.symplecticEulerShadow\_modified\_model, MD.Ch05.symplecticEulerShadow\_modified\_scale\_order。这是只读签名及数学语义审核，未编译、不补证明、不因sorry降级。 网站原文审校另记：A：附件第14页the solution...ellipse...backward error analysis整句及H̃_h等能式相符，原页未在此处写|h|<2或排除原点。；C：symplecticEulerShadow\_statement是所有实h、所有z的一步Q\_h保持，Q\_h=(q²+p²−hqp)/2；对摘录辛Euler步[[1−h²,h],[-h,1]]此恒等式正确。新增c(h)在h=0特判1，|h|<2内为正；A=c(h)[[-h/2,1],[-1,h/2]]正是cQ\_h的Hamilton向量场。设s=sqrt(1−h²/4)，该未缩放矩阵平方=−s²I，角θ=2arcsin(h/2)满足sinθ=hs、cosθ=1−h²/2，故exp(hA)精确给数值步。flow定义含初值、群律和每时刻ODE，主模型全部合取正确，h=0亦成立。c(h)=1+h²/6+O(h⁴)，有界球上差界C h²合理，量词C,δ可依赖R。[EXTRA]准确；但原书无条件椭圆说法不成立，需保留疑误人工处理，新增正确模型不消除此原文问题。
 - 反例或理由：h=3时辛Euler矩阵[[-8,3],[-3,1]]迹−7、行列式1，有模大于1的实特征值，部分轨道无界，不能全困于椭圆；z₀=0时任意稳定步长下能级为单点。

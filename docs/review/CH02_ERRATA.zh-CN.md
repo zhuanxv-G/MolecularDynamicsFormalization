@@ -14,7 +14,7 @@
 - 印刷页 / PDF页：60 / 82。
 - 原文引文（逐字）：
 
-> We consider the collection of all twice continuously differentiable curves in the configuration space which start from a certain point $\boldsymbol Q$ and end at another given point $\boldsymbol Q'$. We may think of any such curve as being represented by a parameterization $\boldsymbol q(t)$, $t\in[\alpha,\beta]$ with $\boldsymbol q(\alpha)=\boldsymbol Q$ and $\boldsymbol q(\beta)=\boldsymbol Q'$, where the components of $\boldsymbol q(t)$ are $C^\infty$ functions. Denote by $G=G(\boldsymbol Q,\boldsymbol Q',\alpha,\beta)$ the class of smooth parameterized curves such that $\boldsymbol q(\alpha)=\boldsymbol Q$, $\boldsymbol q(\beta)=\boldsymbol Q'$.
+> We consider the collection of all twice continuously differentiable curves in the configuration space which start from a certain point $`\boldsymbol Q`$ and end at another given point $`\boldsymbol Q'`$. We may think of any such curve as being represented by a parameterization $`\boldsymbol q(t)`$, $`t\in[\alpha,\beta]`$ with $`\boldsymbol q(\alpha)=\boldsymbol Q`$ and $`\boldsymbol q(\beta)=\boldsymbol Q'`$, where the components of $`\boldsymbol q(t)`$ are $`C^\infty`$ functions. Denote by $`G=G(\boldsymbol Q,\boldsymbol Q',\alpha,\beta)`$ the class of smooth parameterized curves such that $`\boldsymbol q(\alpha)=\boldsymbol Q`$, $`\boldsymbol q(\beta)=\boldsymbol Q'`$.
 
 - 问题所在：已展开 Ch02.lean:106：admissibleSmooth a b x y q 为 ContDiff ℝ ∞ q ∧ q a=x ∧ q b=y，两端点完整。正式 Q 已找到，缺失定义不再是障碍。仍需裁定原文 PDF82 同段的“all twice continuously differentiable”与后续“C∞ functions / smooth”的冲突：本定义选择后一资格，不能同时代表首句全部 C² 曲线。[EXTRA] 对全实线代表函数要求 C∞，并非区间计算所必要；若以区间限制识别曲线、选择光滑延拓为表示约定，可以合理使用，但对任意给定全局 q 与局部光滑资格并不等价，现签名也未编码曲线商或存在延拓。a<b 是时间窗语境，谓词自身未保证它。NEEDS\_HUMAN 的唯一原因是原文曲线类的正则性及域含义需数学/编辑裁定，非依赖缺失。此项是定义，无 sorry。 依赖展开证据：Ch02\_deps.txt 的 -- FILE: MolecularDynamics/Chapter02/ReviewDefinitions.lean（段标 SHA256 3778ef36df51f5218bf14a00fa3a37b0f8ac7dcfa01a4a9f7450d82db5c490b7），第2816行 Q n := Fin n → ℝ；第2831–2832行 action L a b q := ∫ t in a..b, L (q t) (deriv q t)；第2833行 variation q η ε t := q t + ε • η t。Q 是有限维实坐标空间，向量加法和实标量乘法逐坐标作用；n 为坐标数而非强制粒子数。action/variation 与本地 bp\_action/bp\_variation 的函数体逐字同式，展开后对应相同对象。这里的 stationarySmoothAction 是 Ch02.lean 的本地 C∞ 变分谓词，不能混用依赖第2834行只要求 C² 变分的 stationaryAction。实际读取的蓝图附件路径为 /workspace/Ch02.lean，输出 input\_sha256 按请求使用逻辑名称 Blueprint/Ch02.lean，并未声称磁盘存在该子目录。 网站原文审校另记：
 - 反例或理由：n=1，q(t)0=|t−1/2|³ 在 [0,1] 为 C²，端点均为1/8，却不是 C³，因而能区分原页前后两种资格；另 q(t)0=|t−2| 在 [0,1] 等于2−t，局部光滑且端点2、1，却在全线不光滑，因而不能满足当前 ContDiff ℝ ∞ q。这不排除该区间限制另有光滑延拓。
@@ -33,14 +33,14 @@
 - 印刷页 / PDF页：62 / 84。
 - 原文引文（逐字）：
 
-> Define the variational derivative of a functional $\mathcal F$, $\delta\mathcal F/\delta\boldsymbol q$ so that
+> Define the variational derivative of a functional $`\mathcal F`$, $`\delta\mathcal F/\delta\boldsymbol q`$ so that
 
 $$
 \mathcal F(\boldsymbol q+\epsilon\boldsymbol\eta)=\epsilon\frac{\delta\mathcal F}{\delta\boldsymbol q}\boldsymbol\eta+O(\epsilon^2),
 $$
 
 
-> for all suitable (say, $C^\infty$) functions $\boldsymbol\eta$.
+> for all suitable (say, $`C^\infty`$) functions $`\boldsymbol\eta`$.
 
 - 问题所在：printedVariationalDerivative逐η要求F(q+εη)-εAη=O(ε²)，确实没有减F(q)，忠实保留印刷公式；A为连续实线性泛函。抽象E表示允许的方向空间，结论不是通常HasFDerivAt定义。字面接口本身忠实，但原书所谓一般变分导数定义存在数学疑误，按任务规则整体转人工。 网站原文审校另记：code：PRINTED\_MISSING\_BASE\_VALUE；detail：印刷公式缺少F(q)常数项；忠实保留，通常定义应对增量F(q+εη)−F(q)展开。；stage：SOURCE\_MATHEMATICS
 - 反例或理由：取恒定泛函F≡1和η=0，字面要求1=O(ε²)，不成立。
@@ -59,7 +59,7 @@ $$
 - 印刷页 / PDF页：62 / 84。
 - 原文引文（逐字）：
 
-> Any curve which satisfies this equation will represent a “stationary point” (actually, “stationary curve” would be more accurate) of the classical action. Such curves could include smooth local action minimizers, local action maximizers, or “saddle points” of the actional functional in a generalized sense. Deciding whether a given stationary curve is an actual minimizer of the action would require analysis of the second variation (the coefficient of $\epsilon^2$ in the expansion above), which introduces additional complexity.
+> Any curve which satisfies this equation will represent a “stationary point” (actually, “stationary curve” would be more accurate) of the classical action. Such curves could include smooth local action minimizers, local action maximizers, or “saddle points” of the actional functional in a generalized sense. Deciding whether a given stationary curve is an actual minimizer of the action would require analysis of the second variation (the coefficient of $`\epsilon^2`$ in the expansion above), which introduces additional complexity.
 
 - 问题所在：版本绑定：本次实际读取 BATCH06.md、根目录 Ch02.lean（所称 Blueprint/Ch02.lean 的提供副本；工作区无该 Blueprint 路径）和 Ch02\_deps.txt，哈希见 input\_sha256；不声称不存在的路径已读取或验证了完整工程。依赖合集声明 HEAD=acc4fc5f11c882dd78acc6151bbde1607afdc528；本审计依据实际附件字节，不以分段声明哈希替代整体哈希。 已展开 Ch02\_deps.txt:2816、2831–2836：Q 1=Fin 1→ℝ，action 是真实 L(q,q̇) 的时间区间积分，variation 是 q+εη，stationaryAction 对所有 C²、零端点 η 要求 ε↦action L 0 1 (q+εη) 的导数在0为0。它与本地量化 C∞ 的 stationarySmoothAction 不是定义相同，但 C² 驻值蕴含 C∞ 驻值，且在本 C² 的 L,q 资格下通过 Euler–Lagrange 残差可获得一致的经典驻值解释，不能仅凭名字断定相等。Ch02.lean:182–187 的量词为存在固定 L,q 后，对每个 δ>0 存在可依赖 δ 的 C² 零端点 η，且闭区间位置范数处处 <δ 并使真实 action 严格下降。Q 1 的函数范数在此对应唯一坐标绝对值，故明确表达位置一致范数意义的非局部极小。[EXTRA] 以一维、固定时间窗存在例说明驻值不保证极小合理，不是所有驻值均非极小；但这是所引完整三句中的一个子命题，不能取代完整 scope。缺失条款：任意满足所指方程的曲线为驻值的普遍结论；光滑局部极小、局部极大、广义鞍点的可能类型；第二变分在判断极小中的作用。签名完全未引入第二变分。通用 L 的存在例还未限定原机械 L 的正质量形式；C² 曲线/扰动强度不同于原页后文 C∞；原文未指定局部极值拓扑，不能把位置一致范数解释扩张为所有光滑拓扑的非极小。材料缺失已解除，FAIL 来自明确的 scope 遗漏而非 sorry 或缺库。所涉原印刷泛函导数的 ERRATUM? 仍成立，但本条正确采用真实一阶驻值，不能把漏项字面定义与该驻值定义无条件混同。:187 的 sorry 另表示证明未完成；未做编译检查。 网站原文审校另记：
 - 反例或理由：缺失条款本身足以判 FAIL。可作修复子命题的正质量光滑例：将 Q 1 识别为 ℝ，L(x,v)=(v²−ω²x²)/2，ω>π，q(t)=0。所有零端点 C² 方向的一阶作用量导数在0为0；η(t)=c sin(πt)，0<|c|<δ，使 action 差=c²(π²−ω²)/4<0。该例验证存在子命题可以为真，但不能补足所引三句的其他结论，也不是对该存在命题的反例。
@@ -85,7 +85,7 @@ $$
 $$
 
 
-> In the case of a mechanical system with Lagrangian $L(\boldsymbol q,\boldsymbol v)=\dot{\boldsymbol v}^TM\boldsymbol v/2+U(\boldsymbol q)$, we then have
+> In the case of a mechanical system with Lagrangian $`L(\boldsymbol q,\boldsymbol v)=\dot{\boldsymbol v}^TM\boldsymbol v/2+U(\boldsymbol q)`$, we then have
 
 $$
 \hat{\mathcal A}=\sum_{n=0}^{\nu-1}\left[\frac{(\boldsymbol q_{n+1}-\boldsymbol q_n)^TM(\boldsymbol q_{n+1}-\boldsymbol q_n)}{2h^2}-U(\boldsymbol q_n)\right]h.
@@ -124,7 +124,7 @@ $$
 $$
 
 
-> since we think of the starting point $\boldsymbol q_0$ as fixed.
+> since we think of the starting point $`\boldsymbol q_0`$ as fixed.
 
 - 问题所在：printedDiscreteStationary对所有0<k≤ν要求替换第k个节点后的真实HasFDerivAt为零；replaceNode为Function.update，discreteAction为k=0至ν-1的hL(q\_k,(q_{k+1}-q\_k)/h)和。q₀未被变动，q\_ν仍被变动，完全保留印刷范围。经典导数资格避免不可微处fderiv=0的伪驻值。[EXTRA]正确，但书中右端点是否固定的矛盾须人工裁定。 网站原文审校另记：code：PRINTED\_ENDPOINT\_RANGE；detail：印刷n=1,…,ν包含右端点，下一页只对1,…,ν−1求导并称端点固定；保留字面范围。；stage：SOURCE\_MATHEMATICS
 - 反例或理由：取一维自由L(q,v)=v²/2、ν=1、h=1、q₀=0、q₁=1。固定两端点时没有内部驻值方程；字面末节点条件却要求d(x²/2)/dx|₁=0，即1=0。
@@ -143,14 +143,14 @@ $$
 - 印刷页 / PDF页：66–67 / 88–89。
 - 原文引文（逐字）：
 
-> The first assumption is that $\mathscr G_h$ is an $O(h^{p+1})$ approximation of $\mathscr F_h$ in the sense that there is a constant $K\ge0$ and a constant $\Delta>0$ such that, for $t\in[0,\tau]$, we have
+> The first assumption is that $`\mathscr G_h`$ is an $`O(h^{p+1})`$ approximation of $`\mathscr F_h`$ in the sense that there is a constant $`K\ge0`$ and a constant $`\Delta\gt 0`$ such that, for $`t\in[0,\tau]`$, we have
 
 $$
 \|\mathscr F_h(\boldsymbol z(t))-\mathscr G_h(\boldsymbol z(t))\|\le\bar K h^{p+1},\qquad h<\Delta.\tag{2.10}
 $$
 
 
-> The assumption (2.10) that the local error is of order $p+1$, $p>0$, is termed the consistency of the numerical method. We say the method is consistent of order $p$.
+> The assumption (2.10) that the local error is of order $`p+1`$, $`p\gt 0`$, is termed the consistency of the numerical method. We say the method is consistent of order $`p`$.
 
 - 问题所在：consistency固定G、F、γ、τ和自然数阶p；要求p>0，并先存在与t、h无关的K≥0、δ>0，再对全部t∈[0,τ]、0<h<δ给局部误差界Kh^(p+1)。严格步长范围与原式一致，整数阶限制已明确为[EXTRA]。未要求F必须是流是此纯误差关系的抽象接口。正文K和式中Kbar不一致已保留，不能在来源层面擅自等同，转人工。 网站原文审校另记：code：SOURCE\_CALLIGRAPHY；detail：原页流与单步映射使用花体mathscr F、mathscr G，摘录写mathcal，统一为原页字形。；stage：A；code：PRINTED\_CONSTANT\_MISMATCH；detail：正文存在K≥0，式(2.10)使用Kbar，未在本段绑定二者；不能静默改书。；stage：SOURCE\_MATHEMATICS
 - 反例或理由：code：SOURCE\_CALLIGRAPHY；detail：原页流与单步映射使用花体mathscr F、mathscr G，摘录写mathcal，统一为原页字形。；stage：A；code：PRINTED\_CONSTANT\_MISMATCH；detail：正文存在K≥0，式(2.10)使用Kbar，未在本段绑定二者；不能静默改书。；stage：SOURCE\_MATHEMATICS
@@ -176,7 +176,7 @@ $$
 $$
 
 
-> follows by a straightforward calculation, for $h\le\Delta$.
+> follows by a straightforward calculation, for $`h\le\Delta`$.
 
 - 问题所在：errorBound对给定正h、正L、非负K和ν，要求0至ν实际迭代与精确网格值均在D，G在D上稳定，且全部n<ν上的实际局部缺陷≤Kh^(p+1)。初始误差由迭代起点γ(0)保证为零。结论对所有n≤ν为(K/L)exp(Lnh)h^p；p为实数，h>0使实幂有意义。此加强前提的界正确，不需要额外p>0才能成立。但没有δ及h≤Δ的量词，不能据此消除书中从严格步长范围跳到闭端点的问题，整体转人工。 网站原文审校另记：code：PRINTED\_STEPSIZE\_ENDPOINT；detail：(2.10)为h<Δ，(2.12)结句为h≤Δ；前者未控制h=Δ。；stage：SOURCE\_MATHEMATICS；code：PRINTED\_ZERO\_STABILITY\_CONSTANT；detail：原界除以L，需取L>0或单独处理L=0，不能将实数除零延拓视为原数学公式。；stage：SOURCE\_MATHEMATICS
 - 反例或理由：端点不足的抽象反例：h=Δ=1，γ≡0，G\_h(x)=x（0<h<1），G\_1(x)=x+1。h<1时局部误差常数K=0且G始终满足L=1的稳定上界，但h=1一步误差为1，印刷闭端点结论给0。此反例针对来源严格局部误差前提，不满足Lean在h=1明确要求的hconsistent。
@@ -234,14 +234,14 @@ $$
 $$
 
 
-> where $\kappa(\boldsymbol z)=\kappa(q,p)$ is a function of the position and momentum. We may then define
+> where $`\kappa(\boldsymbol z)=\kappa(q,p)`$ is a function of the position and momentum. We may then define
 
 $$
 \bar K=\max_{t\in[0,\tau]}\kappa(\boldsymbol z(t))
 $$
 
 
-> bounding the local error by (with neglect of the fourth order terms) $\bar K h^3$. Thus the Verlet method is consistent of order two.
+> bounding the local error by (with neglect of the fourth order terms) $`\bar K h^3`$. Thus the Verlet method is consistent of order two.
 
 - 问题所在：检查全部量词与四部分结论：F C³、τ和δ正、γ在闭窗连续；Φ从每个z出发在统一局部时间窗满足实际ODE且Φ₀z=z；γ与Φ在所需正步长内一致。κ在range γ上连续非负并逐z给正侧h→0的h³主项及O(h⁴)；闭窗上存在真正达到的最大值K；另有统一C、δ₀使闭窗全部t的局部误差≤Ch³。正侧避免|h|³与h³混淆，C吸收余项而不强称C=max κ。该严格修正版合理，但来源忽略余项的界仍需人工确认。 网站原文审校另记：code：SOURCE\_CALLIGRAPHY；detail：原页使用mathscr G\_h与mathscr F\_h，摘录写mathcal。；stage：A；code：NEGLECTED\_REMAINDER；detail：max κ只控制三阶主项；O(h⁴)不能未经吸收就从严格局部误差界中删除。；stage：SOURCE\_MATHEMATICS
 - 反例或理由：code：SOURCE\_CALLIGRAPHY；detail：原页使用mathscr G\_h与mathscr F\_h，摘录写mathcal。；stage：A；code：NEGLECTED\_REMAINDER；detail：max κ只控制三阶主项；O(h⁴)不能未经吸收就从严格局部误差界中删除。；stage：SOURCE\_MATHEMATICS
@@ -260,7 +260,7 @@ $$
 - 印刷页 / PDF页：71 / 93。
 - 原文引文（逐字）：
 
-> This means if we know that $\|\nabla I(\boldsymbol z)\|$ remains bounded, say less than $B$, in an open domain containing the solution, we could conclude that the error in $I$-values computed along a numerical trajectory is of order $h^p$,
+> This means if we know that $`\|\nabla I(\boldsymbol z)\|`$ remains bounded, say less than $`B`$, in an open domain containing the solution, we could conclude that the error in $`I`$-values computed along a numerical trajectory is of order $`h^p`$,
 
 $$
 |I(\boldsymbol z(t_n))-I(\boldsymbol z_n)|\le\frac{\bar K B}{2L}e^{nLh}h^p,\qquad h<\bar h,\tag{2.16}
@@ -286,7 +286,7 @@ $$
 - 印刷页 / PDF页：73 / 95。
 - 原文引文（逐字）：
 
-> To understand where Liouville’s theorem comes from, recall that the variational equations of the last chapter are a system of ordinary differential equations for $W(t)=\mathcal F_t'(\boldsymbol z(t))$:
+> To understand where Liouville’s theorem comes from, recall that the variational equations of the last chapter are a system of ordinary differential equations for $`W(t)=\mathcal F_t'(\boldsymbol z(t))`$:
 
 $$
 \frac{\mathrm dW}{\mathrm dt}=f'(\boldsymbol z(t))W.
@@ -338,14 +338,14 @@ $$
 - 印刷页 / PDF页：79 / 101。
 - 原文引文（逐字）：
 
-> For the Hamiltonian system $\dot{\boldsymbol z}=J\nabla H(\boldsymbol z)$, these take the form:
+> For the Hamiltonian system $`\dot{\boldsymbol z}=J\nabla H(\boldsymbol z)`$, these take the form:
 
 $$
 \dot W=JS(t)W,
 $$
 
 
-> where $S(t)=H_{zz}(\boldsymbol z(t,\boldsymbol\zeta))$ is a symmetric matrix.
+> where $`S(t)=H_{zz}(\boldsymbol z(t,\boldsymbol\zeta))`$ is a symmetric matrix.
 
 - 问题所在：已展开 Ch02\_deps.txt 中 SymplecticForm.lean: SymplecticCoordinates=(Fin Nc ⊕ Fin Nc)→ℝ（先q后p），SymplecticCoordinateMatrix为该索引的实方阵，textbookJ=fromBlocks 0 1 (-1) 0；因此Jᵀ=-J、J²=-I。SymplecticMaps.lean 的 textbookJacobian Φ z=LinearMap.toMatrix' (fderiv ℝ Φ z).toLinearMap，第(i,j)项为DΦ(z)[e\_j]_i；SplittingError.lean 的 textbookHamiltonianVectorField H z=J乘以各基方向的DH，故确为(q̇,ṗ)=(H\_p,-H\_q)。HamiltonianVariational.lean 的 Hessian为实际二阶导数。Ch02.lean:793–803 对所有n,H,Φ,τ,ζ，在H C²、Φ联合C¹、Φ₀=id、闭区间所有初值满足真实ODE下，宣称移动点W(s)=DΦ\_s(Φ\_s(ζ))满足Ẇ=J Hzz(Φ\_t(ζ))W。它忠实保留印刷疑误，却不是正确变分方程；[ERRATUM?]由下列全局光滑反例确定成立。即使加强Φ为C∞也不能补救。通常固定初值W=DΦ\_t(ζ)才满足该式；移动点同时产生空间链式项，且固定底点的变分系数在Φ\_t(Φ\_t(ζ))取值。C¹本身也不足以直接保证所需二阶混合导数。τ≤0时开区间为空，不影响τ>0的反例。签名FAIL与证明体显式sorry分别记录；该sorry不作为判FAIL的理由。 网站原文审校另记：
 - 反例或理由：取Nc=1，f(q)=2+sin q，H(q,p)=p f(q)。令Q\_t(q)为q̇=f(q)的全局流（f光滑有界且1≤f≤3），定义Φ\_t(q,p)=(Q\_t(q), p f(q)/f(Q\_t(q)))。它是全局C∞真实Hamilton流、Φ₀=id，满足全部前提。ζ=(0,0)，W(t)=DΦ\_t(Φ\_t(ζ))的(q,q)项a(t)=f(Q_{2t}(0))/f(Q\_t(0))，且W的(p,q)项为0。直接求导a′/a=2cos(Q_{2t}(0))−cos(Q\_t(0))；宣称右侧JHzz(Φ\_t(ζ))W的(q,q)项除以a却为cos(Q\_t(0))。取τ=1/4、t=1/8，则0<Q\_t(0)<Q_{2t}(0)≤3/4<π，余弦严格递减，二者不等。这一反例直接适用于附件已核实的J符号、坐标及导数定义。
@@ -364,7 +364,7 @@ $$
 - 印刷页 / PDF页：75 / 97。
 - 原文引文（逐字）：
 
-> and the condition for Euler’s method to conserve volume is that $\det(I+hS)=1$.
+> and the condition for Euler’s method to conserve volume is that $`\det(I+hS)=1`$.
 
 - 问题所在：实际读取 Ch02.lean:634–638；展开依赖Q n=Fin n→ℝ及linearEuler S h=1+h • S（合集2816、2878–2879行）。volume是标准无向Lebesgue体积，合集LiouvilleVolume换元使用|det|；依赖Statements.lean:3129–3132的linearEulerVolume\_statement本身也明确写|det|=1，但当前Blueprint定理并未引用这个修正版，而是↔det=1。任意n、S、h且全部可测T的量词忠实照录原文，却产生数学错误：det=1是充分条件而非必要条件。[ERRATUM?]在当前明确的无向体积解释下成立，无须再NEEDS\_HUMAN。没有方向或小步长假设；仅h>0不能修复。证明体含sorry，不能使错误签名有效。 网站原文审校另记：
 - 反例或理由：n=1，S=[-2]，h=1，则linearEuler S h=[-1]。映射x↦-x保存每个可测集合的Lebesgue体积，故左边为真；行列式=-1，右边为假。即使另加trace S=0：S=diag(-2,2)、h=1/√2时det(I+hS)=1-4h²=-1，同样反例。
@@ -383,7 +383,7 @@ $$
 - 印刷页 / PDF页：79 / 101。
 - 原文引文（逐字）：
 
-> Let $\Phi_1$ and $\Phi_2$ be any pair of symplectic maps. Then
+> Let $`\Phi_1`$ and $`\Phi_2`$ be any pair of symplectic maps. Then
 
 $$
 (\Phi_1\circ\Phi_2)'=\Phi_1'\Phi_2',
@@ -409,7 +409,7 @@ $$
 - 印刷页 / PDF页：79 / 101。
 - 原文引文（逐字）：
 
-> The determinant of a symplectic map is $\pm1$, hence these maps are always invertible, and the inverse of a symplectic map is symplectic since $\Phi'^TJ\Phi'=J$ implies $J=\Phi'^{-T}J\Phi'^{-1}$. Thus the symplectic maps form a group under composition.
+> The determinant of a symplectic map is $`\pm1`$, hence these maps are always invertible, and the inverse of a symplectic map is symplectic since $`\Phi'^TJ\Phi'=J`$ implies $`J=\Phi'^{-T}J\Phi'^{-1}`$. Thus the symplectic maps form a group under composition.
 
 - 问题所在：已展开 Ch02\_deps.txt：SymplecticForm.lean 第33–41行将 SymplecticCoordinates n 定义为 (Fin n ⊕ Fin n) → ℝ（q 后 p），矩阵为该指标上的实方阵，textbookJ=[[0,I],[-I,0]]；第138–139行 IsTextbookSymplectic A 是 AᵀJA=J。SymplecticMaps.lean 第238–241行 textbookJacobian 是实际 Fréchet 导数 fderiv 的坐标矩阵，第272–274行 IsTextbookSymplecticMap Φ 是 ContDiff ℝ 1 Φ ∧ ∀ z, DΦ(z)ᵀJDΦ(z)=J，不含全球双射。 Ch02.lean 第859–862行量词为所有 n、所有 C¹ 辛自映射，推出全球双射及选择逆 Function.invFun Φ 为 C¹ 辛映射。在双射假设成立时 invFun 是真实唯一逆，但辛假设本身不保证双射。[ERRATUM?] 成立，正式谓词确实允许下面 n=1 的光滑反例。这一假命题保留了原书全球可逆性疑误，命题为假本身不等于错误转录；独立的签名忠实性问题是本条 statement\_scope 包含原句全部展示主张，而签名没有明示“Jacobian 行列式 ±1”子句，也未给实际群对象/群结构。行列式由 deps 第312–316行可推出更强的逐点 det=1，闭合、单位与逆可另由本批前项及库群构造组合，但这些未成为本声明的完整结论。故按全部结论子句审计 FAIL。deps 第366–382行已经提供由真正全球辛微分同胚构成的 Subgroup 及其复合运算，可用于另列修正版。正文直接 sorry：这单独表示证明未完成，不作为 FAIL 的理由，也不尝试补证。 网站原文审校另记：
 - 反例或理由：取 n=1，将 z(Sum.inl 0)=q、z(Sum.inr 0)=p。设 a(q)=q+sqrt(1+q²)，b(q)=a′(q)=1+q/sqrt(1+q²)>0，定义 Φ(q,p)=(a(q),p/b(q))。这是 R² 上 C∞ 自映射，其实际导数矩阵为 [[b,0],[-p b′/b²,1/b]]，其中 b′=(1+q²)^(-3/2)，故 det DΦ=1，且对正式 J=[[0,1],[-1,0]] 有 DΦᵀ J DΦ=J，满足展开后的 IsTextbookSymplecticMap。a 是 R 到 (0,∞) 的双射，因此 Φ 的像为 (0,∞)×R，漏掉 (0,0)，不是满射，Function.Bijective Φ 为假。该反例直接匹配正式坐标空间与 C¹ 条件，不依赖缺失定义。
@@ -425,7 +425,7 @@ $$
 - 印刷页 / PDF页：79 / 101。
 - 原文引文（逐字）：
 
-> and the inverse of a symplectic map is symplectic since $\Phi'^TJ\Phi'=J$ implies $J=\Phi'^{-T}J\Phi'^{-1}$.
+> and the inverse of a symplectic map is symplectic since $`\Phi'^TJ\Phi'=J`$ implies $`J=\Phi'^{-T}J\Phi'^{-1}`$.
 
 - 问题所在：Lean对任意Nc、实际双射e，假设e全局C¹且保J，并另有e.symm全局C¹，结论给出逆映射保J以及其逆C¹；这个受限定理正确，[EXTRA]已披露。可是本页上下文把Jacobian非奇异当作全局可逆的理由；此Lean没有证明原文所暗含的任意保辛自映射均有全球逆。矩阵恒等式与映射可逆性必须分开，保留原书疑误供人工处理。 网站原文审校另记：code：BOOK\_GLOBAL\_INVERSE\_GAP；field：context\_notation；explanation：PDF同段从det非零推出映射全局可逆，结论不成立；本条逆矩阵恒等式忠实保留。现有[EXTRA]足以使Lean定理正确，但全球群性不得无条件推广。
 - 反例或理由：二维例Φ(q,p)=(sqrt(2*exp(q))*cos(p*exp(-q)),sqrt(2*exp(q))*sin(p*exp(-q)))光滑。令r=sqrt(2exp(q)),θ=p exp(-q)，则dX∧dY=r dr∧dθ=dq∧dp，因此DΦᵀJDΦ=J；但Φ(q,p+2πexp(q))=Φ(q,p)，非单射。
@@ -441,7 +441,7 @@ $$
 - 印刷页 / PDF页：81 / 103。
 - 原文引文（逐字）：
 
-> Given any numerical integrator $\mathcal G_h$, consider the map
+> Given any numerical integrator $`\mathcal G_h`$, consider the map
 
 $$
 \mathcal G_h^\dagger=\mathcal G_{-h}^{-1}.
@@ -511,7 +511,7 @@ g(\boldsymbol z_{n+1})=\boldsymbol\tau_n,\tag{2.25}
 $$
 
 
-> which will need to be solved at each timestep. The right hand side $\boldsymbol\tau_n$ is a vector that depends on the previous time-step $\boldsymbol z_n$, perhaps in a complicated way. We may assume the number of equations represented by (2.25) is equal to the dimension of the space where $\boldsymbol z$ is defined, so we have a square nonlinear system. Typically $g$ will depend on the stepsize and coefficients of the method and will have the property that for $h$ sufficiently small, the solution is uniquely defined and is continuously defined in terms of $\boldsymbol\tau_n$, that is the mapping $g$ has a bounded and smooth inverse.
+> which will need to be solved at each timestep. The right hand side $`\boldsymbol\tau_n`$ is a vector that depends on the previous time-step $`\boldsymbol z_n`$, perhaps in a complicated way. We may assume the number of equations represented by (2.25) is equal to the dimension of the space where $`\boldsymbol z`$ is defined, so we have a square nonlinear system. Typically $`g`$ will depend on the stepsize and coefficients of the method and will have the property that for $`h`$ sufficiently small, the solution is uniquely defined and is continuously defined in terms of $`\boldsymbol\tau_n`$, that is the mapping $`g`$ has a bounded and smooth inverse.
 
 - 问题所在：对每个n、联合C∞的g(h,x)、基点x及零步可逆导数A，存在统一小步长δ；每个小步长有开U,V包含x,g\_h(x)，MapsTo及双向逆等式。inv在V内C∞且函数值有界；可通过缩小局部邻域取得该界，不等于宣称全域逆有界。前提和局部性均明确，未假设所需逆已经存在。 当前限定版/Printed签名本身忠实且合理；本条综合判NEEDS\_HUMAN来自必须保留的原书数学资格或疑误，并非据此判Lean签名错误。 本次只读检查任务所给完整签名及项目依赖定义，未修改工程、未补证明、未以sorry判失败，也未声称已编译验证。 网站原文审校另记：原句bounded and smooth inverse未明说局部或正则性；全域有界解释不能成立。保留原文，将本条作为局部逆函数定理的有资格解释交人工确认。
 - 反例或理由：g\_h(x)=x在实直线上全域可逆且光滑，但全域逆不有界；当前Lean只在缩小V内要求有界，避开该问题。
@@ -530,14 +530,14 @@ $$
 - 印刷页 / PDF页：86–87 / 108–109。
 - 原文引文（逐字）：
 
-> Solving the system may then proceed, from an initial guess $\boldsymbol z_{n+1}^{(0)}$ by use of Newton’s method:
+> Solving the system may then proceed, from an initial guess $`\boldsymbol z_{n+1}^{(0)}`$ by use of Newton’s method:
 
 $$
 \boldsymbol z_{n+1}^{(k+1)}=\boldsymbol z_{n+1}^{(k)}-[J^{(k)}]^{-1}(g(\boldsymbol z_n^{(k)})-\boldsymbol\tau_n),
 $$
 
 
-> where $J^{(k)}$ is the Jacobian matrix of the mapping $g$ evaluated at $\boldsymbol z_n^{(k)}$, or else an approximation of this Jacobian (assumed to be nonsingular due to the invertibility of the mapping). The iteration may be recast in the form
+> where $`J^{(k)}`$ is the Jacobian matrix of the mapping $`g`$ evaluated at $`\boldsymbol z_n^{(k)}`$, or else an approximation of this Jacobian (assumed to be nonsingular due to the invertibility of the mapping). The iteration may be recast in the form
 
 $$
 \boldsymbol b_k=-(g(\boldsymbol z_n^{(k)})-\boldsymbol\tau_n),\quad J^{(k)}\Delta\boldsymbol z_k=\boldsymbol b_k,\quad\boldsymbol z_{n+1}^{(k+1)}=\boldsymbol z_{n+1}^{(k)}+\Delta\boldsymbol z_k.
@@ -562,7 +562,7 @@ $$
 - 印刷页 / PDF页：88 / 110。
 - 原文引文（逐字）：
 
-> If $A$ and $B$ are maps of phase space, then the conjugacy implies that they have equivalent stability properties under iteration, since if $B^n(\boldsymbol z_0)\to\boldsymbol z^*$, as $n\to\infty$, for all initial points $\boldsymbol z_0$, then also $A^n(\boldsymbol z_0)\to\chi^{-1}(\boldsymbol z^*)$.
+> If $`A`$ and $`B`$ are maps of phase space, then the conjugacy implies that they have equivalent stability properties under iteration, since if $`B^n(\boldsymbol z_0)\to\boldsymbol z^*`$, as $`n\to\infty`$, for all initial points $`\boldsymbol z_0`$, then also $`A^n(\boldsymbol z_0)\to\chi^{-1}(\boldsymbol z^*)`$.
 
 - 问题所在：展开 textbookConjugateMap 后，签名的具体收敛命题忠实：先固定共同极限zStar，再假设∀z，B^[k] z→zStar，最后∀z，A^[k] z→χ⁻¹zStar。B轨道应从χ z出发；全称hB使这一换初值合法。ProcessedMethods.lean 的 textbook\_conjugate\_iterates\_tendsto\_iff（合集:1672附近）确实给对应初值和对应极限的双向收敛，并利用χ及χ⁻¹的连续性。所有实际用到的项目定义已找到，缺的不是库定义。需要数学判断的原文问题是 statement\_scope 中“equivalent stability properties under iteration”是否只指随后给出的全局共同极限例子，还是还要求一般Lyapunov稳定性、吸引性等性质的双向等价；签名仅明确形式化随后例子的单向结论，没有这些一般稳定性谓词。若来源范围只限该例子可判PASS；若包含一般稳定性断言则缺条款。无[ERRATUM?]；本地与所引收敛定理均无sorry。 网站原文审校另记：
 - 反例或理由：未单列反例；问题在原文省略资格、术语、证明步骤或覆盖范围。请结合原句及下列修正核查。
@@ -625,7 +625,7 @@ $$
 - 印刷页 / PDF页：92 / 114。
 - 原文引文（逐字）：
 
-> For $\eta=0$ we then arrive at the Verlet method.
+> For $`\eta=0`$ we then arrive at the Verlet method.
 
 - 问题所在：Ch02.lean:1337–1339全称量化n、m、F、h、z、w，固定σ=1/2、η=0，断言关系与w=verlet的双向等价。已展开Ch02\_deps.txt:2923–2925：newmarkRelation确为缺力项质量因子的字面关系，未调用2926–2929的质量修正版。2859–2861的verlet则令Q=q+h invMass(m,p)+(h²/2)invMass(m,F(q))，P=p+(h/2)(F(q)+F(Q))。两种位置公式一般不相同，故原句的一般质量解释及当前Lean全称签名均为假，[ERRATUM?]成立。无[EXTRA]，质量正性也不能修复它。“仅M=I”只适用于对所有力和初值的普遍方法等价，不能排除特殊力或轨道的巧合。该定理体含sorry，签名失败由展开定义后的反例确定，不以sorry为判据。 网站原文审校另记：
 - 反例或理由：n=1；m(0)=2；F(q)(0)=1（来自光滑势能U(q)=-q(0)）；h=1；z=(0,0)；w=(1/2,1)，各数视作单坐标向量。newmarkRelation m F (1/2) 0 h z w为真；invMass m F=1/2，verlet m F h z=(1/4,1)，因此右侧为假。质量严格为正。
@@ -670,7 +670,7 @@ $$
 $$
 
 
-> where $U''$ is the Hessian matrix of the potential.
+> where $`U''`$ is the Hessian matrix of the potential.
 
 - 问题所在：展开依据：Ch02\_deps.txt:2816、2840、2932–2934、2948，Ch02.lean:1371–1376。量词覆盖所有 n,m,U,h,q；positiveMass 是逐坐标 m\_i>0，ContDiff ℝ 2 U 保证真实二阶导数及 Hessian 对称性；fderiv ℝ (grad U) q 对 invMass m (grad U q) 的作用是 Hess(U)M⁻¹∇U。实际改势含负号，其负梯度必须为 −∇U+(h²/12)Hess(U)M⁻¹∇U，签名却取减号。它逐字保留了原书力式，却与其所调用的实际改势矛盾并成为假定理，因此不能作为可证明的忠实数学陈述通过。ERRATUM? 成立。EXTRA 中 C² 是充分且合理的统一光滑性条件（强于某一点有二阶导数）；正质量保证教材机械质量可逆，但纯代数恒等式只需各质量非零，故是物理上合理而非最弱必要条件。签名体有 sorry，证明状态独立于已经确定的语义失败。 网站原文审校另记：
 - 反例或理由：用已经展开的真实定义取 n=1，m(0)=1，U(q)=(q 0)²/2，h=1，q 0=1。grad U(q)=q，fderiv(grad U) 是恒等映射，invMass 为恒等，tildeU(q)=11(q 0)²/24。因此等式左侧的第0分量=−11/12，右侧=−1−1/12=−13/12；正质量与 C² 全部满足。此为依赖定义下的数学反例，未编写或检查 Lean 反例证明。
@@ -686,7 +686,7 @@ $$
 - 印刷页 / PDF页：93 / 115。
 - 原文引文（逐字）：
 
-> This method can be shown to have effective order four, meaning that there is a change of variables $\chi_h$ which can be used to transform the Takahashi-Imada method into one of order four using the processing technique of Sect. 2.4.5. The potential energy modification has been specifically chosen to annihilate terms in the local error expansion (after coordinate transformation).
+> This method can be shown to have effective order four, meaning that there is a change of variables $`\chi_h`$ which can be used to transform the Takahashi-Imada method into one of order four using the processing technique of Sect. 2.4.5. The potential energy modification has been specifically chosen to annihilate terms in the local error expansion (after coordinate transformation).
 
 - 问题所在：全部使用定义已找到：Q/Z、grad、invMass、verlet、takahashiPotential、solution、mechanicalField、positiveMass 见 Ch02\_deps.txt:2816–2817、2840、2859–2861、2932–2934、2941–2948；oneStepIterate/oneStepMaxError 见1444–1463；textbookConjugateMap/textbookProcessedMethod 见 ProcessedMethods 段（用原始行编号1649、1690定位，段中有额外 CR）。solution 是闭区间每点 HasDerivWithinAt γ (f(γ t))，mechanicalField=(M⁻¹p,−∇U(q))，所以是原机械轨迹。HasDerivWithinAt 已蕴含区间内连续，显式 ContinuousOn γ 冗余但合理。处理映射确为 χ\_h⁻¹∘B\_h∘χ\_h，迭代从 γ(0) 开始，等价于先 χ\_h 预处理、迭代真实 B\_h、再逆变换；误差是网格 0,…,ν 上完整位置/动量乘积范数最大值，不是单步误差。量词 χ 在 γ,τ 之前，C,ν₀ 在其之后，保证统一处理器而允许误差常数依赖轨迹与时间窗，ν₀>0 排除零分母，均合理。正固定对角质量与 U C∞ 是足够光滑的背景条件，C∞ 并非四阶所需最弱条件。失败依据是结论范围与处理器条件：原文还明确说坐标变换后局部误差展开项被消去，签名只有全局四阶界，没有局部五阶缺陷或消项断言；它对任意光滑势能要求整个 Z n 上的 Homeomorph，强于通常在轨迹邻域的变量变换，却完全不要求 χ\_h 光滑、随 h 正则或趋于恒等，无法承载所引用的局部误差展开。这个无正则性的全局共轭存在性不能直接等同于原文有效阶陈述。DEPENDENT\_ERRATUM 所指来源符号冲突确实存在，但不能只据冲突断言负号版本无有效四阶；下方谐振子计算说明这一限制。这里不声称签名允许的任意不规则 Homeomorph 都不存在；本条 FAIL 已由上述具体缺失条款和不合理强化成立，无须借缺依赖写 NEEDS\_HUMAN。定理体为 sorry，未验证其证明。 网站原文审校另记：
 - 反例或理由：局部有效阶的符号障碍：n=1，m=1，U(q)=q²/2。实际负号改势使弹簧系数 a=1−h²/12。Verlet 矩阵为 [[1−h²a/2,h], [−ha(1−h²a/4),1−h²a/2]]，行列式1，特征角满足 cos θ=1−h²/2+h⁴/24。因此 θ=h+h⁵/720+O(h⁷)，负号在此谐振子上反而消去 h³ 相位缺陷：谐振子不能用作负号版本二阶的反例。真正已确定的缺失条款是：签名没有处理器光滑性/近恒等条件及变换后局部误差项消去结论，且全局 Homeomorph 强化未获原段支持。不把原书力式与改势的冲突自动当作本定理必假的反例。
