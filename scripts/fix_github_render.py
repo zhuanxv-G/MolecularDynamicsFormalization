@@ -57,6 +57,10 @@ def record_change(records,path,old,new):
     # Every replacement records exact old/new bytes, with source line numbers.
     import difflib
     a=old.splitlines(keepends=True);b=new.splitlines(keepends=True)
+    if len(a)==len(b):
+        for i,(before,after) in enumerate(zip(a,b)):
+            if before!=after:records.append(dict(file=path,line=i+1,new_line=i+1,old=before,new=after))
+        return
     for tag,i,j,k,l in difflib.SequenceMatcher(None,a,b,autojunk=False).get_opcodes():
         if tag!='equal': records.append(dict(file=path,line=i+1,new_line=k+1,old=''.join(a[i:j]),new=''.join(b[k:l])))
 
@@ -77,7 +81,7 @@ def stage(n):
             groups=[];current=''
             for section in sections:
                 if len(section.encode())>148000:raise RuntimeError('Oversized section: '+rel)
-                if current and len((current+section).encode())>145000:groups.append(current);current=''
+                if current and len((current+section).encode())>60000:groups.append(current);current=''
                 current+=section
             if current:groups.append(current)
             names=[f'docs/review/blueprint/{p.name[:4]}/part{i+1:02}.zh-CN.md' for i in range(len(groups))]
@@ -86,7 +90,7 @@ def stage(n):
             for i,(name,body) in enumerate(zip(names,groups)):
                 nav=('['+'上一部分](part%02d.zh-CN.md)'%i if i else '上一部分：无')+' / [目录](../../'+p.name+') / '+('[下一部分](part%02d.zh-CN.md)'%(i+2) if i+1<len(groups) else '下一部分：无')+'\n\n'
                 write(ROOT/name,nav+body);navs.append(nav);files.append(name)
-                titles=re.findall(r'^## (.+)',body,re.M)
+                titles=[t.rstrip('\r') for t in re.findall(r'^## (.+)',body,re.M)]
                 index+='- [第%d部分](blueprint/%s/part%02d.zh-CN.md)：%s'%(i+1,p.name[:4],i+1,'；'.join(titles))+newline
             write(p,index);files.append(rel);partitions[rel]=dict(parts=names,navs=navs,original=old,index=index)
     ledger['stages'].append(dict(stage=n,changes=entries,files=sorted(set(files)),partitions=partitions))

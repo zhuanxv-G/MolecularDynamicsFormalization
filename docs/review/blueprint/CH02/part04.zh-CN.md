@@ -1,23 +1,17 @@
-[上一部分](part03.zh-CN.md) / [目录](../../CH02_BLUEPRINT.zh-CN.md) / 下一部分：无
+[上一部分](part03.zh-CN.md) / [目录](../../CH02_BLUEPRINT.zh-CN.md) / [下一部分](part05.zh-CN.md)
 
-## 1. MD-2.5.1-RK · definition · 印刷p.89 / PDFp.111
+## 1. MD-2.2.4-IntegralMeanValue · unnumbered_claim · 印刷p.71 / PDFp.93
 
 ### 2. 原文陈述
 
-> The family of Runge-Kutta methods for solving $`\dot{\boldsymbol z}=f(\boldsymbol z)`$ is defined by
+> Now if $`I:\mathbb R^m\to\mathbb R`$ has continuous partial derivatives, we may conclude directly that
 
 $$
-\boldsymbol Z=\boldsymbol z+h\sum_{i=1}^s b_i\boldsymbol F_i,
-$$
-
-
-> where the vectors $`\boldsymbol F_i`$, $`i=1,\ldots,s`$, are computed by solving the system
-
-$$
-\boldsymbol F_i=f\left(\boldsymbol z+h\sum_{j=1}^s a_{ij}\boldsymbol F_j\right),\qquad i=1,\ldots,s.
+I(\boldsymbol a)=I(\boldsymbol b)+\nabla I(\boldsymbol z_*)\cdot(\boldsymbol a-\boldsymbol b),
 $$
 
 
+> where $`\boldsymbol z_*`$ is a point on the line in $`\mathbb R^m`$ connecting $`\boldsymbol a`$ to $`\boldsymbol b`$.
 
 ### 3. 原文证明
 
@@ -29,9 +23,19 @@ $$
 原文版、既有数学解释及同组辅助声明：
 
 ```lean
-def bp_rungeKuttaRelation {n s : ℕ} (f : Q n → Q n) (A : Matrix (Fin s) (Fin s) ℝ)
-    (b : Fin s → ℝ) (h : ℝ) (z w : Q n) (F : Fin s → Q n) : Prop :=
-  (∀ i, F i = f (z + h • ∑ j, A i j • F j)) ∧ w = z + h • ∑ i, b i • F i
+theorem integralMeanValue :
+  ∀ n (I : EuclideanSpace ℝ (Fin n) → ℝ) (D : Set (EuclideanSpace ℝ (Fin n))) a b,
+    IsOpen D → segment ℝ a b ⊆ D → ContDiffOn ℝ 1 I D →
+    ∃ c ∈ segment ℝ a b, I a-I b = (fderiv ℝ I c) (a-b) := by
+  intro n I D a b hD hs hI
+  have hd : ∀ x ∈ segment ℝ a b, HasFDerivWithinAt I (fderiv ℝ I x) (segment ℝ a b) x := by
+    intro x hx
+    exact ((hI.differentiableOn (by norm_num) x (hs hx)).differentiableAt (hD.mem_nhds (hs hx))).hasFDerivAt.hasFDerivWithinAt
+  obtain ⟨c,hc,heq⟩ := domain_mvt hd (convex_segment a b)
+    (right_mem_segment ℝ a b) (left_mem_segment ℝ a b)
+  refine ⟨c, ?_, heq⟩
+  rw [segment_symm] at hc
+  exact hc
 ```
 
 ### 5. 对照表
@@ -39,27 +43,34 @@ def bp_rungeKuttaRelation {n s : ℕ} (f : Q n → Q n) (A : Matrix (Fin s) (Fin
 | 原文成分 | Lean对应 | 说明 |
 |---|---|---|
 | 当前覆盖范围 | 本条所引原句及展示公式；单个记号归入context\_notation。 | 仅承诺明确列出的数学内容 |
-| 对象、量词、假设和定义/结论 | `MD.Ch02.bp_rungeKuttaRelation` | 完整代码见第4段；两个版本独立列出 |
+| 对象、量词、假设和定义/结论 | `MD.Ch02.integralMeanValue` | 完整代码见第4段；两个版本独立列出 |
+| 技术资格或版本解释 | 实际EuclideanSpace ℝ (Fin n)，开放域含线段及C¹；实Fréchet算子范数等于Euclidean梯度范数。 | [EXTRA] |
 
-[EXTRA] 无新增技术资格。
+[EXTRA] 实际EuclideanSpace ℝ (Fin n)，开放域含线段及C¹；实Fréchet算子范数等于Euclidean梯度范数。
 
 ### 6. 审计结论
 
 本地限定解释与原文问题见上列范围及对照；逐声明编译、公理结果见第7段。
 
 网站：网站PASS（绑定版本 f24b625cda35c51074f87df43493f35787dd9137d25683675cb793b757d111bb）。
-网站原返回（对应其审校版本）：PASS；Q n在deps:2816明确为Fin n→ℝ，有限维实向量空间。Ch02:1206–1209的∀i阶段方程及输出方程与deps:2900–2902和原文两式逐项相同；Fin s只是索引重编号。关系以给定F为参数，不断言隐式系统存在或唯一；无额外假设或勘误。此条为定义，无sorry。
+网站原返回（对应其审校版本）：PASS；实际对象为 EuclideanSpace ℝ (Fin n)，即带欧氏内积的有限坐标空间，未使用 Q 的 Pi 最大范数。对所有 n,I,D,a,b，先假设开放D、整段 segment ℝ a b⊆D、ContDiffOn ℝ 1 I D（C¹），再存在 c∈segment，满足 I a−I b=(fderiv ℝ I c)(a−b)。在可微点该连续线性泛函作用就是 Σ∂ᵢI(c)(aᵢ−bᵢ)，故对象、量词顺序、同一见证及精确差值等式均忠实。闭线段是端点凸组合 {(1−s)a+s b:0≤s≤1}；a=b 亦有见证。[EXTRA] 局部开放域含整段是均值定理合理资格，D=univ 恢复原文全空间C¹假设；没有人为加强结论或偷添误差前提。正文无直接 sorry，不认证证明编译。
 
 ### 7. 状态与证明位置
 
-self-contained；`MD.Ch02.bp_rungeKuttaRelation`：定义。
-位置：[Blueprint/Ch02.lean](../../../../Blueprint/Ch02.lean#L1728)；逐声明核验：blueprint/closeout24/ch02/errata-05.log。
+self-contained；`MD.Ch02.integralMeanValue`：已证。
+位置：[Blueprint/Ch02.lean](../../../../Blueprint/Ch02.lean#L637)；逐声明核验：blueprint/closeout24/ch02/errata-05.log。
 
-## 1. MD-2.5.1-RK4 · definition · 印刷p.89 / PDFp.111
+## 1. MD-2.2.4-IntegralLipschitz · unnumbered_claim · 印刷p.71 / PDFp.93
 
 ### 2. 原文陈述
 
-> An example of a popular 4th order explicit method is the choice of matrix $`A`$ with coefficients $`a_{ij}\equiv 0`$ except $`a_{21}=1/2`$, $`a_{32}=1/2`$ and $`a_{43}=1`$, and $`b_1=1/6`$, $`b_2=1/3`$, $`b_3=1/3`$, $`b_4=1/6`$.
+> Hence
+
+$$
+|I(\boldsymbol a)-I(\boldsymbol b)|\le\|\nabla I(\boldsymbol z_*)\|\|\boldsymbol a-\boldsymbol b\|.
+$$
+
+
 
 ### 3. 原文证明
 
@@ -71,58 +82,15 @@ self-contained；`MD.Ch02.bp_rungeKuttaRelation`：定义。
 原文版、既有数学解释及同组辅助声明：
 
 ```lean
-def bp_rk4 {n : ℕ} (f : Q n → Q n) (h : ℝ) (z : Q n) : Q n :=
-  let k₁ := f z
-  let k₂ := f (z + (h/2) • k₁)
-  let k₃ := f (z + (h/2) • k₂)
-  let k₄ := f (z + h • k₃)
-  z + (h/6) • (k₁ + (2 : ℝ) • k₂ + (2 : ℝ) • k₃ + k₄)
-
-theorem bp_rk4_eq_rk4 {n : ℕ} (f : Q n → Q n) (h : ℝ) (z : Q n) :
-    bp_rk4 f h z = MolecularDynamics.Chapter02Review.rk4 f h z := rfl
-```
-
-### 5. 对照表
-
-| 原文成分 | Lean对应 | 说明 |
-|---|---|---|
-| 当前覆盖范围 | 四阶段公式定义；四阶结论由MD-2.5.1-RK4Order跨条共同覆盖，bp\_rk4\_eq\_rk4给出同一算法映射。 | 仅承诺明确列出的数学内容 |
-| 对象、量词、假设和定义/结论 | `MD.Ch02.bp_rk4`；`MD.Ch02.bp_rk4_eq_rk4` | 完整代码见第4段；两个版本独立列出 |
-| 技术资格或版本解释 | [EXTRA] 算法定义与MD-2.5.1-RK4Order / MD.Ch02.rk4Order共同覆盖原句；新增定义相等桥接bp\_rk4\_eq\_rk4，使四阶声明所用rk4与本条公式明确对应。四阶定理原证明状态独立保留。 | [EXTRA] |
-
-[EXTRA] [EXTRA] 算法定义与MD-2.5.1-RK4Order / MD.Ch02.rk4Order共同覆盖原句；新增定义相等桥接bp\_rk4\_eq\_rk4，使四阶声明所用rk4与本条公式明确对应。四阶定理原证明状态独立保留。
-
-### 6. 审计结论
-
-本轮修复：算法定义与MD-2.5.1-RK4Order / MD.Ch02.rk4Order共同覆盖原句；新增定义相等桥接bp\_rk4\_eq\_rk4，使四阶声明所用rk4与本条公式明确对应。四阶定理原证明状态独立保留。
-
-网站：按网站审校意见修复，本地核验通过（未再送网站）。
-网站原返回（对应其审校版本）：FAIL；四阶段定义正确展开a21=a32=1/2,a43=1及权重1/6,1/3,1/3,1/6，对任意有限维实向量场f、h,z有效。但本条完整当前Lean只有算法定义，未包含原句的四阶结论；context\_notation称“四阶陈述单列”，本任务给出的同一source\_id全部声明中没有该条或可核对的映射。因完整结论覆盖缺失判FAIL，而非算法公式错误。 本次只读检查任务所给完整签名及项目依赖定义，未修改工程、未补证明、未以sorry判失败，也未声称已编译验证。
-
-### 7. 状态与证明位置
-
-self-contained；`MD.Ch02.bp_rk4`：定义；`MD.Ch02.bp_rk4_eq_rk4`：已证。
-位置：[Blueprint/Ch02.lean](../../../../Blueprint/Ch02.lean#L1734)；逐声明核验：blueprint/closeout24/ch02/errata-05.log。
-
-## 1. MD-2.5.1-RK4Order · unnumbered_claim · 印刷p.89 / PDFp.111
-
-### 2. 原文陈述
-
-> An example of a popular 4th order explicit method
-
-### 3. 原文证明
-
-原书无独立完整证明。
-原书未给独立完整证明。
-
-### 4. 完整当前Lean（原文与修正版独立列出）
-
-原文版、既有数学解释及同组辅助声明：
-
-```lean
-theorem rk4Order :
-  ∀ n (f : Q n → Q n) (γ : ℝ → Q n) τ, compactTrajectory f γ τ → globalOrder (rk4 f) γ τ 4 := by
-  sorry
+theorem integralPointwiseBound : ∀ n (I : EuclideanSpace ℝ (Fin n) → ℝ) (D : Set (EuclideanSpace ℝ (Fin n))) a b,
+    IsOpen D → segment ℝ a b ⊆ D → ContDiffOn ℝ 1 I D →
+    ∃ c ∈ segment ℝ a b, I a-I b=(fderiv ℝ I c) (a-b) ∧
+      |I a-I b| ≤ ‖fderiv ℝ I c‖*‖a-b‖ := by
+  intro n I D a b hD hs hI
+  obtain ⟨c,hc,heq⟩ := integralMeanValue n I D a b hD hs hI
+  refine ⟨c,hc,heq,?_⟩
+  rw [heq, ← Real.norm_eq_abs]
+  exact (fderiv ℝ I c).le_opNorm (a-b)
 ```
 
 ### 5. 对照表
@@ -130,84 +98,35 @@ theorem rk4Order :
 | 原文成分 | Lean对应 | 说明 |
 |---|---|---|
 | 当前覆盖范围 | 本条所引原句及展示公式；单个记号归入context\_notation。 | 仅承诺明确列出的数学内容 |
-| 对象、量词、假设和定义/结论 | `MD.Ch02.rk4Order` | 完整代码见第4段；两个版本独立列出 |
-| 技术资格或版本解释 | [EXTRA]compactTrajectory实际C⁶向量场与紧窗实际轨迹；高阶资格强于原文简写。 | [EXTRA] |
+| 对象、量词、假设和定义/结论 | `MD.Ch02.integralPointwiseBound` | 完整代码见第4段；两个版本独立列出 |
+| 技术资格或版本解释 | 实际EuclideanSpace ℝ (Fin n)，开放域含线段及C¹；实Fréchet算子范数等于Euclidean梯度范数。 | [EXTRA] |
 
-[EXTRA] [EXTRA]compactTrajectory实际C⁶向量场与紧窗实际轨迹；高阶资格强于原文简写。
-
-### 6. 审计结论
-
-本地限定解释与原文问题见上列范围及对照；逐声明编译、公理结果见第7段。
-
-网站：网站PASS（绑定版本 f24b625cda35c51074f87df43493f35787dd9137d25683675cb793b757d111bb）。
-网站原返回（对应其审校版本）：PASS；展开deps:2816,2824–2826,2941–2945：compactTrajectory包含τ>0、f全局C⁶、γ在[0,τ]内满足HasDerivWithinAt γ (f(γ t))、γ在该窗连续；紧区间连续像为紧，未把误差作为前提。rk4为与bp\_rk4相同的实际四阶段映射。globalOrder为∃C>0 ∃ν₀>0 ∀ν≥ν₀，整个网格0,…,ν的最大误差≤C(τ/ν)^4；oneStepIterate=(G h)^[k](../../γ 0)，oneStepMaxError是实际节点范数误差的有限最大值（deps:1443–1463）。量词表达固定轨迹、固定正时间窗的全局四阶上界。[EXTRA] C⁶强于必要正则性，作为充分资格合理；不要求原文未提供的任意隐式求解。无勘误。 本声明在Ch02.lean中以sorry结束；这里只审计签名语义，未作Lean编译或证明通过判断。
-
-### 7. 状态与证明位置
-
-incomplete；`MD.Ch02.rk4Order`：未证（缺大型理论）。
-位置：[Blueprint/Ch02.lean](../../../../Blueprint/Ch02.lean#L1747)；逐声明核验：blueprint/closeout24/ch02/errata-05.log。
-
-## 1. MD-2.5.1-ExplicitRK · unnumbered_claim · 印刷p.89 / PDFp.111
-
-### 2. 原文陈述
-
-> This method is not symplectic, and it is in fact impossible to find symplectic explicit methods within the Runge-Kutta family.
-
-### 3. 原文证明
-
-原书无独立完整证明。
-原书未给独立完整证明。
-
-### 4. 完整当前Lean（原文与修正版独立列出）
-
-原文版、既有数学解释及同组辅助声明：
-
-```lean
-theorem explicitRK :
-  ∀ s (A : Matrix (Fin s) (Fin s) ℝ) (b : Fin s → ℝ),
-    (∀ i j, i ≤ j → A i j = 0) → (∑ i, b i) = 1 →
-    ∃ (H : SymplecticCoordinates 1 → ℝ) (G : SymplecticCoordinates 1 → SymplecticCoordinates 1)
-      (stages : SymplecticCoordinates 1 → Fin s → SymplecticCoordinates 1) (h : ℝ),
-      ContDiff ℝ ∞ H ∧ 0 < h ∧
-      (∀ z, (∀ i, stages z i = textbookHamiltonianVectorField H (z+h • ∑ j, A i j • stages z j)) ∧
-        G z = z+h • ∑ i, b i • stages z i) ∧ ¬ IsTextbookSymplecticMap G := by
-  sorry
-```
-
-### 5. 对照表
-
-| 原文成分 | Lean对应 | 说明 |
-|---|---|---|
-| 当前覆盖范围 | 本条所引原句及展示公式；单个记号归入context\_notation。 | 仅承诺明确列出的数学内容 |
-| 对象、量词、假设和定义/结论 | `MD.Ch02.explicitRK` | 完整代码见第4段；两个版本独立列出 |
-| 技术资格或版本解释 | [EXTRA]一致性∑bᵢ=1排除全零权重恒等映射；“不辛”解释为存在光滑Hamilton模型与实际阶段/步映射不辛，不宣称每个具体H均不辛。 | [EXTRA] |
-| 技术资格或版本解释 | [EXTRA] C∞编码补充修复：指定版本裸⊤表示实解析Cω，现将原smooth的前提及输出恢复为scoped ∞；正式库冻结，已有证明随本批重查，失败依≤3次小修规则记录。 | [EXTRA] |
-
-[EXTRA] [EXTRA]一致性∑bᵢ=1排除全零权重恒等映射；“不辛”解释为存在光滑Hamilton模型与实际阶段/步映射不辛，不宣称每个具体H均不辛。；[EXTRA] C∞编码补充修复：指定版本裸⊤表示实解析Cω，现将原smooth的前提及输出恢复为scoped ∞；正式库冻结，已有证明随本批重查，失败依≤3次小修规则记录。
+[EXTRA] 实际EuclideanSpace ℝ (Fin n)，开放域含线段及C¹；实Fréchet算子范数等于Euclidean梯度范数。
 
 ### 6. 审计结论
 
 本地限定解释与原文问题见上列范围及对照；逐声明编译、公理结果见第7段。
 
 网站：网站PASS（EAUDIT复审）。
-网站原返回（对应其审校版本）：PASS；对任意有限阶段数s、严格下三角A及一致性∑b=1，存在一自由度的光滑Hamilton量、正h及满足真实RK阶段方程的全域G使G非辛。量词正确表达不能对所有Hamilton系统保辛，允许某些特殊系统恰好保辛。∑b=1是必要的非平凡一致性资格，原extra\_assumptions为空，需补记。原书“不能找到”的措辞也应按一致RK方法理解。 本次只读检查任务所给完整签名及项目依赖定义，未修改工程、未补证明、未以sorry判失败，也未声称已编译验证。
+网站原返回（对应其审校版本）：PASS；印刷71页Hence及不等式的绝对值、梯度范数和a−b次序一致。采用实际EuclideanSpace而非Pi最大范数；D开放、包含闭线段且I在D为C¹。存在同一个c在线段上，既满足均值等式I(a)−I(b)=DI(c)(a−b)，又满足所需点态上界。在实Euclidean空间标量泛函的算子范数就是梯度的Euclidean范数；没有换成其他点或擅加统一梯度界。 本次仅审校所附声明签名与定义，不执行工程编译，不补证明；sorry不作为签名不通过理由。
 
 ### 7. 状态与证明位置
 
-incomplete；`MD.Ch02.explicitRK`：未证（缺大型理论）。
-位置：[Blueprint/Ch02.lean](../../../../Blueprint/Ch02.lean#L1754)；逐声明核验：blueprint/closeout24/ch02/errata-05.log。
+self-contained；`MD.Ch02.integralPointwiseBound`：已证。
+位置：[Blueprint/Ch02.lean](../../../../Blueprint/Ch02.lean#L653)；逐声明核验：blueprint/closeout24/ch02/errata-05.log。
 
-## 1. MD-2.5.1-RKSymplectic · unnumbered_claim · 印刷p.89–90 / PDFp.111–112
+## 1. MD-2.2.4-IntegralErrorPrinted · unnumbered_claim · 印刷p.71 / PDFp.93
 
 ### 2. 原文陈述
 
-> Let us emphasize that, while a typical RK method is not symplectic, some implicit Runge-Kutta methods are symplectic. The precise condition that must be satisfied [325] is
+> This means if we know that $`\|\nabla I(\boldsymbol z)\|`$ remains bounded, say less than $`B`$, in an open domain containing the solution, we could conclude that the error in $`I`$-values computed along a numerical trajectory is of order $`h^p`$,
 
 $$
-b_i a_{ij}+b_j a_{ji}=b_i b_j,\qquad i=1,\ldots,s,\quad j=1,\ldots,s.
+|I(\boldsymbol z(t_n))-I(\boldsymbol z_n)|\le\frac{\bar K B}{2L}e^{nLh}h^p,\qquad h\lt \bar h,\tag{2.16}
 $$
 
 
+> with the same assumptions as are needed to characterize the convergence of the method.
 
 ### 3. 原文证明
 
@@ -219,36 +138,28 @@ $$
 原文版、既有数学解释及同组辅助声明：
 
 ```lean
-theorem rkSymplectic : ∀ s (A : Matrix (Fin s) (Fin s) ℝ) (b : Fin s → ℝ),
-    (∀ i j, b i*A i j+b j*A j i=b i*b j) ↔
-    (∀ n (H : SymplecticCoordinates n → ℝ) (h : ℝ)
-      (G : SymplecticCoordinates n → SymplecticCoordinates n)
-      (stages : SymplecticCoordinates n → Fin s → SymplecticCoordinates n),
-      ContDiff ℝ 2 H → ContDiff ℝ 1 G →
-      (∀ i, ContDiff ℝ 1 (fun z => stages z i)) →
-      (∀ z, (∀ i, stages z i=textbookHamiltonianVectorField H
-        (z+h • ∑ j, A i j • stages z j)) ∧ G z=z+h • ∑ i, b i • stages z i) →
-      IsTextbookSymplecticMap G) := by
+theorem integralErrorPrinted :
+  ∀ n (I : Q n → ℝ) (D : Set (Q n)) B K L h (p k : ℕ) (a b : Q n),
+    0 ≤ B → 0 ≤ K → 0 < L → 0 ≤ h → IsOpen D → segment ℝ a b ⊆ D →
+    ContDiffOn ℝ 1 I D → (∀ z ∈ D, ‖fderiv ℝ I z‖ ≤ B) →
+    ‖a-b‖ ≤ (K/L)*Real.exp (L*k*h)*h^p →
+    |I a-I b| ≤ (K*B/(2*L))*Real.exp (L*k*h)*h^p := by
   sorry
 
 
 
-/-- 修正版，对应原文 MD-2.5.1-RKSymplectic。改动：保留系数条件的充分方向，删除对可约Butcher表不成立的必要性；未建设不可约表理论。 -/
+/-- 修正版，对应原文 MD-2.2.4-IntegralErrorPrinted。改动：由给定点误差只推出KB/L，去掉不成立的因子1/2，不加倍K也不预设待证积分误差。 -/
 ```
 
 独立修正版：
 
 ```lean
-theorem rkSymplectic_corrected : ∀ s (A : Matrix (Fin s) (Fin s) ℝ) (b : Fin s → ℝ),
-    (∀ i j, b i*A i j+b j*A j i=b i*b j) →
-    (∀ n (H : SymplecticCoordinates n → ℝ) (h : ℝ)
-      (G : SymplecticCoordinates n → SymplecticCoordinates n)
-      (stages : SymplecticCoordinates n → Fin s → SymplecticCoordinates n),
-      ContDiff ℝ 2 H → ContDiff ℝ 1 G →
-      (∀ i, ContDiff ℝ 1 (fun z => stages z i)) →
-      (∀ z, (∀ i, stages z i=textbookHamiltonianVectorField H
-        (z+h • ∑ j, A i j • stages z j)) ∧ G z=z+h • ∑ i, b i • stages z i) →
-      IsTextbookSymplecticMap G) := by
+theorem integralErrorPrinted_corrected :
+  ∀ n (I : Q n → ℝ) (D : Set (Q n)) B K L h (p k : ℕ) (a b : Q n),
+    0 ≤ B → 0 ≤ K → 0 < L → 0 ≤ h → IsOpen D → segment ℝ a b ⊆ D →
+    ContDiffOn ℝ 1 I D → (∀ z ∈ D, ‖fderiv ℝ I z‖ ≤ B) →
+    ‖a-b‖ ≤ (K/L)*Real.exp (L*k*h)*h^p →
+    |I a-I b| ≤ (K*B/L)*Real.exp (L*k*h)*h^p := by
   first
   | rfl
   | assumption
@@ -261,110 +172,32 @@ theorem rkSymplectic_corrected : ∀ s (A : Matrix (Fin s) (Fin s) ℝ) (b : Fin
 | 原文成分 | Lean对应 | 说明 |
 |---|---|---|
 | 当前覆盖范围 | 保留完整原文引文；Lean仅覆盖第4段明示的定义与限定结论，原书疑误或超出该陈述的内容不冒称已形式化。各版本差异见本条与ERRATA。 | 仅承诺明确列出的数学内容 |
-| 对象、量词、假设和定义/结论 | `MD.Ch02.rkSymplectic`；`MD.Ch02.rkSymplectic_corrected` | 完整代码见第4段；两个版本独立列出 |
-| 技术资格或版本解释 | H C²；真实阶段函数与完整步G C¹且确实满足RK关系。 | [EXTRA] |
-| 技术资格或版本解释 | [ERRATUM?] 保留系数条件的充分方向，删除对可约Butcher表不成立的必要性；未建设不可约表理论。 | [EXTRA] |
+| 对象、量词、假设和定义/结论 | `MD.Ch02.integralErrorPrinted`；`MD.Ch02.integralErrorPrinted_corrected` | 完整代码见第4段；两个版本独立列出 |
+| 技术资格或版本解释 | 域含连接线段，B,K≥0及L>0；用原文先前轨迹误差界，不把待证积分误差作前提。 | [EXTRA] |
+| 技术资格或版本解释 | [ERRATUM?] 由给定点误差只推出KB/L，去掉不成立的因子1/2，不加倍K也不预设待证积分误差。 | [EXTRA] |
 
-[EXTRA] H C²；真实阶段函数与完整步G C¹且确实满足RK关系。；[ERRATUM?] 保留系数条件的充分方向，删除对可约Butcher表不成立的必要性；未建设不可约表理论。
-
-### 6. 审计结论
-
-本地限定解释与原文问题见上列范围及对照；逐声明编译、公理结果见第7段。
-
-网站：原书疑误/资格待导师；原文与修正版并列。
-网站原返回（对应其审校版本）：FAIL；已展开依赖：SymplecticCoordinates n=(Fin n ⊕ Fin n)→ℝ，textbookJ=[[0,I],[-I,0]]；Hamilton向量场为J乘以实际fderiv的坐标梯度；textbookJacobian为实际fderiv矩阵，IsTextbookSymplecticMap为C¹且每点D Gᵀ J D G=J（deps:33–42,138–139,238–241,272–275,1921–1926）。 Ch02:1239–1248确实断言系数条件与所有维度、Hamilton量、实h及C¹实际求解映射/阶段的辛性等价；正则性[EXTRA]适于充分性，却不能修复对可约方法的必要性。正式deps:3230–3240只给充分性，不能替代Blueprint中的更强iff。无条件逆向为假，原条NECESSITY\_QUALIFICATION疑误已由展开语义下的明确反例确认。 本声明在Ch02.lean中以sorry结束；这里只审计签名语义，未作Lean编译或证明通过判断。
-
-### 7. 状态与证明位置
-
-incomplete；`MD.Ch02.rkSymplectic`：未证（原书疑误不证）；`MD.Ch02.rkSymplectic_corrected`：未证（时间盒止）。
-位置：[Blueprint/Ch02.lean](../../../../Blueprint/Ch02.lean#L1768)；逐声明核验：blueprint/closeout24/ch02/errata-05.log。
-
-## 1. MD-2.5.1-GaussFamily · Example 2.7 (family) · 印刷p.90 / PDFp.112
-
-### 2. 原文陈述
-
-> The Gauss-Legendre family of Runge-Kutta (GLRK) methods correspond to approximating the vector field at the Gauss points, i.e. the zeros of the orthogonal polynomials that arise in Gaussian quadrature. As these points are symmetrically distributed the GLRK schemes are symmetric, hence have even order.
-
-### 3. 原文证明
-
-原书无独立完整证明。
-原书未给独立完整证明。
-
-### 4. 完整当前Lean（原文与修正版独立列出）
-
-原文版、既有数学解释及同组辅助声明：
-
-```lean
-theorem gaussFamily :
-  ∀ n s (c : Fin s → ℝ) (f : Q n → Q n) (F G : ℝ → Q n → Q n), 0 < s →
-    Function.Injective c → (∀ i, c i ∈ Ioo (0 : ℝ) 1 ∧ legendreValue s (2*c i-1) = 0) →
-    ContDiff ℝ ⊤ f → ContDiff ℝ ⊤ (Function.uncurry G) →
-    (∀ h z, ∃! data : Q n × (Fin s → Q n),
-      rungeKuttaRelation f (fun i j => ∫ t in (0 : ℝ)..c i, lagrangeBasis c j t)
-        (fun j => ∫ t in (0 : ℝ)..1, lagrangeBasis c j t) h z data.1 data.2) →
-    (∀ h z, ∃ stages, rungeKuttaRelation f (fun i j => ∫ t in (0 : ℝ)..c i, lagrangeBasis c j t)
-      (fun j => ∫ t in (0 : ℝ)..1, lagrangeBasis c j t) h z (G h z) stages) →
-    (∀ z, F 0 z = z ∧ ∀ t, HasDerivAt (fun u => F u z) (f (F t z)) t) →
-    (∀ h z, G (-h) (G h z) = z) ∧ (∃ r : ℕ, 0 < r ∧ Even r ∧ methodLocalOrder G F r) := by
-  sorry
-
-
-
-/-- 修正版，对应原文 MD-2.5.1-GaussFamily。改动：将已有带明示资格的数学解释独立命名为修正版；原书逐字记录及已有声明保留。完整原句超出本声明部分在覆盖缺口/审阅问题中列明，不把有限资格解释当作原句无条件成立。 -/
-```
-
-独立修正版：
-
-```lean
-theorem gaussFamily_corrected :
-  ∀ n s (c : Fin s → ℝ) (f : Q n → Q n) (F G : ℝ → Q n → Q n), 0 < s →
-    Function.Injective c → (∀ i, c i ∈ Ioo (0 : ℝ) 1 ∧ legendreValue s (2*c i-1) = 0) →
-    ContDiff ℝ ⊤ f → ContDiff ℝ ⊤ (Function.uncurry G) →
-    (∀ h z, ∃! data : Q n × (Fin s → Q n),
-      rungeKuttaRelation f (fun i j => ∫ t in (0 : ℝ)..c i, lagrangeBasis c j t)
-        (fun j => ∫ t in (0 : ℝ)..1, lagrangeBasis c j t) h z data.1 data.2) →
-    (∀ h z, ∃ stages, rungeKuttaRelation f (fun i j => ∫ t in (0 : ℝ)..c i, lagrangeBasis c j t)
-      (fun j => ∫ t in (0 : ℝ)..1, lagrangeBasis c j t) h z (G h z) stages) →
-    (∀ z, F 0 z = z ∧ ∀ t, HasDerivAt (fun u => F u z) (f (F t z)) t) →
-    (∀ h z, G (-h) (G h z) = z) ∧ (∃ r : ℕ, 0 < r ∧ Even r ∧ methodLocalOrder G F r) := by
-  first
-  | rfl
-  | assumption
-  | solve | simp only
-  | sorry
-```
-
-### 5. 对照表
-
-| 原文成分 | Lean对应 | 说明 |
-|---|---|---|
-| 当前覆盖范围 | 保留完整原文引文；Lean仅覆盖第4段明示的定义与限定结论，原书疑误或超出该陈述的内容不冒称已形式化。各版本差异见本条与ERRATA。 | 仅承诺明确列出的数学内容 |
-| 对象、量词、假设和定义/结论 | `MD.Ch02.gaussFamily`；`MD.Ch02.gaussFamily_corrected` | 完整代码见第4段；两个版本独立列出 |
-| 技术资格或版本解释 | [EXTRA]实际Legendre根节点、Lagrange积分系数；s>0，节点单射，C∞向量场和实际光滑G；真实唯一阶段及真实流资格。 | [EXTRA] |
-| 技术资格或版本解释 | [ERRATUM?] 将已有带明示资格的数学解释独立命名为修正版；原书逐字记录及已有声明保留。完整原句超出本声明部分在覆盖缺口/审阅问题中列明，不把有限资格解释当作原句无条件成立。 | [EXTRA] |
-
-[EXTRA] [EXTRA]实际Legendre根节点、Lagrange积分系数；s>0，节点单射，C∞向量场和实际光滑G；真实唯一阶段及真实流资格。；[ERRATUM?] 将已有带明示资格的数学解释独立命名为修正版；原书逐字记录及已有声明保留。完整原句超出本声明部分在覆盖缺口/审阅问题中列明，不把有限资格解释当作原句无条件成立。
+[EXTRA] 域含连接线段，B,K≥0及L>0；用原文先前轨迹误差界，不把待证积分误差作前提。；[ERRATUM?] 由给定点误差只推出KB/L，去掉不成立的因子1/2，不加倍K也不预设待证积分误差。
 
 ### 6. 审计结论
 
 本地限定解释与原文问题见上列范围及对照；逐声明编译、公理结果见第7段。
 
 网站：原书疑误/资格待导师；原文与修正版并列。
-网站原返回（对应其审校版本）：FAIL；已展开Q=Fin n→ℝ、rungeKuttaRelation的实际阶段/输出方程（deps:2816,2900–2902），legendreValue按P₀=1、P₁=x及标准三项递推给出P\_s（3241–3244）；lagrangeBasis为∏_{k≠j}(t−c\_k)/(c\_j−c\_k)（3245–3246）。s>0、节点单射和P\_s(2c\_i−1)=0准确给出移位Gauss节点，积分系数准确对应配点法。methodLocalOrder（deps:3183–3186）展开为∀z ∃C>0 ∃δ>0 ∀|h|<δ，‖G h z−F h z‖≤C|h|^(r+1)，常数可依赖z；它是至少r阶的局部误差上界，不是确切阶。 Ch02:1253–1264保留反向步对称性，但∃正偶r且上述上界不表达实际阶的偶性；任意至少三阶方法也满足r=2。另[EXTRA]所有实h、所有z的唯一阶段/输出及全时间真实流远强于通常局部适用条件，实质遗漏大量光滑标准GLRK应用，不能仅称必要资格。无显式ERRATUM标记；这两项是形式化范围和结论问题。 本声明在Ch02.lean中以sorry结束；这里只审计签名语义，未作Lean编译或证明通过判断。
+网站原返回（对应其审校版本）：FAIL；展开 Q n=Fin n→ℝ（Ch02\_deps.txt:2816），因此 n=1 的范数为绝对值、坐标评价的 Fréchet 导数算子范数为1。任意 n,I,D,B,K,L,h,p,k,a,b，在正性、开放域含整段、C¹、域内导数算子范数≤B 和先前点误差≤(K/L)exp(Lkh)h^p 后，结论要求 (KB/(2L))exp(Lkh)h^p。这一1/2无法由这些假设推出，以下反例完全落实到实际 Q。B,K≥0、L>0、h≥0、整段留域及C¹均合理，但不能产生额外1/2；以任意点替代实际轨迹也是更强的断言，且签名未显式保留 h<hbar 的窗口。[ERRATUM?] 对固定同一 K 的推导缺口成立；本审计不把它扩大为对教材所有可能常数约定的裁定。Q 的 Pi 范数在 n>1 时不是欧氏范数，导数算子范数界应明确为相应对偶范数或改用 EuclideanSpace。正文有 sorry，FAIL 与此独立。
 
 ### 7. 状态与证明位置
 
-incomplete；`MD.Ch02.gaussFamily`：未证（原书疑误不证）；`MD.Ch02.gaussFamily_corrected`：未证（时间盒止）。
-位置：[Blueprint/Ch02.lean](../../../../Blueprint/Ch02.lean#L1802)；逐声明核验：blueprint/closeout24/ch02/errata-05.log。
+incomplete；`MD.Ch02.integralErrorPrinted`：未证（原书疑误不证）；`MD.Ch02.integralErrorPrinted_corrected`：未证（时间盒止）。
+位置：[Blueprint/Ch02.lean](../../../../Blueprint/Ch02.lean#L667)；逐声明核验：blueprint/closeout24/ch02/errata-05.log。
 
-## 1. MD-2.5.1-Midpoint · definition · 印刷p.90 / PDFp.112
+## 1. MD-2.3.1-Divergence · definition · 印刷p.72 / PDFp.94
 
 ### 2. 原文陈述
 
-> The simplest such method is the implicit midpoint rule:
+> the divergence of $`f`$ vanishes, i.e.
 
 $$
-\boldsymbol Z=\boldsymbol z+h\boldsymbol F_1,\qquad\boldsymbol F_1=f\left(\boldsymbol z+\frac h2\boldsymbol F_1\right),
+\nabla\cdot f=\sum_{i=1}^m\frac{\partial f_i}{\partial z_i}=0.
 $$
 
 
@@ -379,8 +212,10 @@ $$
 原文版、既有数学解释及同组辅助声明：
 
 ```lean
-def bp_midpointRelation {n : ℕ} (f : Q n → Q n) (h : ℝ) (z w : Q n) : Prop :=
-  w = z + h • f ((1/2 : ℝ) • (z+w))
+def bp_divergence {n : ℕ} (f : Q n → Q n) (z : Q n) : ℝ := (textbookCoordinateJacobian f z).trace
+
+def divergenceFree {n : ℕ} (f : Q n → Q n) : Prop :=
+  Differentiable ℝ f ∧ ∀ z, bp_divergence f z = 0
 ```
 
 ### 5. 对照表
@@ -388,102 +223,28 @@ def bp_midpointRelation {n : ℕ} (f : Q n → Q n) (h : ℝ) (z w : Q n) : Prop
 | 原文成分 | Lean对应 | 说明 |
 |---|---|---|
 | 当前覆盖范围 | 本条所引原句及展示公式；单个记号归入context\_notation。 | 仅承诺明确列出的数学内容 |
-| 对象、量词、假设和定义/结论 | `MD.Ch02.bp_midpointRelation` | 完整代码见第4段；两个版本独立列出 |
+| 对象、量词、假设和定义/结论 | `MD.Ch02.bp_divergence`；`MD.Ch02.divergenceFree` | 完整代码见第4段；两个版本独立列出 |
+| 技术资格或版本解释 | [EXTRA] 保留散度辅助定义，并补经典可微向量场的散度恒零谓词；覆盖原句零条件。 | [EXTRA] |
 
-[EXTRA] 无新增技术资格。
-
-### 6. 审计结论
-
-本地限定解释与原文问题见上列范围及对照；逐声明编译、公理结果见第7段。
-
-网站：网站PASS（绑定版本 f24b625cda35c51074f87df43493f35787dd9137d25683675cb793b757d111bb）。
-网站原返回（对应其审校版本）：PASS；Q=Fin n→ℝ（deps:2816），Ch02:1267–1268与正式midpointRelation（2910–2911）相同。原关系消去阶段后为w=z+h f((z+w)/2)；反向取F₁=f((z+w)/2)，利用w=z+hF₁得到z+(h/2)F₁=(z+w)/2。包括h=0，未除以h或断言任意系统可解。对象、量词和结论均忠实，无EXTRA或勘误；定义无sorry。
-
-### 7. 状态与证明位置
-
-self-contained；`MD.Ch02.bp_midpointRelation`：定义。
-位置：[Blueprint/Ch02.lean](../../../../Blueprint/Ch02.lean#L1836)；逐声明核验：blueprint/closeout24/ch02/errata-05.log。
-
-## 1. MD-2.5.1-MidpointProperties · unnumbered_claim · 印刷p.90 / PDFp.112
-
-### 2. 原文陈述
-
-> which has order 2.
-
-### 3. 原文证明
-
-原书无独立完整证明。
-原书未给独立完整证明。
-
-### 4. 完整当前Lean（原文与修正版独立列出）
-
-原文版、既有数学解释及同组辅助声明：
-
-```lean
-theorem midpointProperties
-    (n : ℕ) (H : SymplecticCoordinates n → ℝ)
-    (G F : ℝ → SymplecticCoordinates n → SymplecticCoordinates n)
-    (U : Set (SymplecticCoordinates n)) (δ : ℝ) (_hδ : 0 < δ)
-    (_hU : IsOpen U) (_hH : ContDiff ℝ 4 H)
-    (_hG : ContDiffOn ℝ 3 (Function.uncurry G) (Ioo (-δ) δ ×ˢ U))
-    (_hzero : ∀ z ∈ U, G 0 z = z)
-    (_hstep : ∀ h ∈ Ioo (-δ) δ, ∀ z ∈ U,
-      G h z = z+h • textbookHamiltonianVectorField H ((1/2 : ℝ) • (z+G h z)))
-    (_hflow : ∀ z ∈ U, F 0 z = z ∧ ∀ t ∈ Ioo (-δ) δ,
-      HasDerivAt (fun u ↦ F u z) (textbookHamiltonianVectorField H (F t z)) t) :
-    (∀ h ∈ Ioo (-δ) δ, ∀ z ∈ U,
-      IsTextbookSymplectic (textbookJacobian (G h) z)) ∧
-    (∀ z ∈ U, ∃ C > 0, ∃ d > 0, d ≤ δ ∧ ∀ h : ℝ, |h| < d →
-      ‖G h z-F h z‖ ≤ C*|h|^3) := by
-  sorry
-
-theorem midpointProperties_generalODE (n : ℕ) (f : Q n → Q n)
-    (G F : ℝ → Q n → Q n) (U : Set (Q n)) (δ : ℝ)
-    (_hδ : 0 < δ) (_hU : IsOpen U) (_hf : ContDiff ℝ 3 f)
-    (_hG : ContDiffOn ℝ 3 (Function.uncurry G) (Ioo (-δ) δ ×ˢ U))
-    (_hzero : ∀ z ∈ U, G 0 z = z)
-    (_hstep : ∀ h ∈ Ioo (-δ) δ, ∀ z ∈ U, G h z = z+h • f ((1/2 : ℝ) • (z+G h z)))
-    (_hflow : ∀ z ∈ U, F 0 z = z ∧ ∀ t ∈ Ioo (-δ) δ,
-      HasDerivAt (fun u ↦ F u z) (f (F t z)) t) :
-    ∀ z ∈ U, ∃ C > 0, ∃ d > 0, d ≤ δ ∧ ∀ h : ℝ, |h| < d →
-      ‖G h z-F h z‖ ≤ C*|h|^3 := by
-  sorry
-```
-
-### 5. 对照表
-
-| 原文成分 | Lean对应 | 说明 |
-|---|---|---|
-| 当前覆盖范围 | 本条所引原句及展示公式；单个记号归入context\_notation。 | 仅承诺明确列出的数学内容 |
-| 对象、量词、假设和定义/结论 | `MD.Ch02.midpointProperties`；`MD.Ch02.midpointProperties_generalODE` | 完整代码见第4段；两个版本独立列出 |
-| 技术资格或版本解释 | [EXTRA]H C⁴，实际C¹求解映射及Hamilton解族；原文省略的资格明示。 | [EXTRA] |
-| 技术资格或版本解释 | [EXTRA] 补一般ODE局部二阶与Hamilton情形局部保辛；显式G0=id及实际方程、开状态域/小步长分支和真实流，移除全步长全初值解要求。C³分支及全域光滑场为充分[EXTRA]；二阶指至少二阶，非每个方程恰二阶。 | [EXTRA] |
-
-[EXTRA] [EXTRA]H C⁴，实际C¹求解映射及Hamilton解族；原文省略的资格明示。；[EXTRA] 补一般ODE局部二阶与Hamilton情形局部保辛；显式G0=id及实际方程、开状态域/小步长分支和真实流，移除全步长全初值解要求。C³分支及全域光滑场为充分[EXTRA]；二阶指至少二阶，非每个方程恰二阶。
+[EXTRA] [EXTRA] 保留散度辅助定义，并补经典可微向量场的散度恒零谓词；覆盖原句零条件。
 
 ### 6. 审计结论
 
 本地限定解释与原文问题见上列范围及对照；逐声明编译、公理结果见第7段。
 
 网站：网站PASS（EAUDIT复审）。
-网站原返回（对应其审校版本）：PASS；两条定理均已核对：Hamilton版H C⁴、实际联合C³分支G、开U、小步长区间、G0=id、真实隐式中点方程和真实解族F；结论是该域每点Jacobian保辛及每个初值局部O(h³)。一般ODE版使用C³场与分支，给同样二阶局部界。不要求F在所有初值联合光滑，逐点ODE及场光滑已足够。保辛为局部域上的性质，并未错误要求G在U外C¹。 本次只读检查任务所给完整签名及项目依赖定义，未修改工程、未补证明、未以sorry判失败，也未声称已编译验证。
+网站原返回（对应其审校版本）：PASS；原文散度消失句及从i=1到m的对角偏导和为零一致。bp\_divergence是实际Fréchet导数坐标矩阵的trace；divergenceFree补充全局可微并对所有z要求trace=0，覆盖原句完整零条件。bp\_divergence作为辅助函数未单独声明可微，但组合谓词提供资格。context\_notation所称f C¹强于实际Differentiable，已在修正JSON中改为可微。 本次仅审校所附声明签名与定义，不执行工程编译，不补证明；sorry不作为签名不通过理由。
 
 ### 7. 状态与证明位置
 
-incomplete；`MD.Ch02.midpointProperties`：未证（缺大型理论）；`MD.Ch02.midpointProperties_generalODE`：未证（缺大型理论）。
-位置：[Blueprint/Ch02.lean](../../../../Blueprint/Ch02.lean#L1842)；逐声明核验：blueprint/closeout24/ch02/errata-05.log。
+self-contained；`MD.Ch02.bp_divergence`：定义；`MD.Ch02.divergenceFree`：定义。
+位置：[Blueprint/Ch02.lean](../../../../Blueprint/Ch02.lean#L692)；逐声明核验：blueprint/closeout24/ch02/errata-05.log。
 
-## 1. MD-2.5.1-GaussTwo · definition · 印刷p.90 / PDFp.112
+## 1. MD-2.3.1-Liouville · Liouville’s theorem · 印刷p.72 / PDFp.94
 
 ### 2. 原文陈述
 
-> The 4th order method ($`s=2`$) has coefficients
-
-$$
-b_1=b_2=\frac12,\qquad A=(a_{ij})=\begin{bmatrix}\frac14&\frac14-\frac{\sqrt3}6\\\frac14+\frac{\sqrt3}6&\frac14\end{bmatrix}.
-$$
-
-
+> Consider a set of points $`S(t)`$ in phase space with evolution associated to a differential equation $`\dot{\boldsymbol z}=f(\boldsymbol z)`$ described by the flow map $`\mathcal F_t(S(0))=S(t)`$. Liouville’s theorem [16] states that the volume of such a set is invariant with respect to $`t`$ if the divergence of $`f`$ vanishes, i.e.
 
 ### 3. 原文证明
 
@@ -495,8 +256,15 @@ $$
 原文版、既有数学解释及同组辅助声明：
 
 ```lean
-def gaussTwoData : Matrix (Fin 2) (Fin 2) ℝ × (Fin 2 → ℝ) :=
-  (gaussTwoCoefficients, fun _ => 1/2)
+theorem liouville
+    (f : ((Fin n) → ℝ) → (Fin n) → ℝ) (hf : ContDiff ℝ 1 f)
+    (hdiv : ∀ z, (textbookCoordinateJacobian f z).trace = 0)
+    (Φ : ℝ × ((Fin n) → ℝ) → (Fin n) → ℝ) (hΦ : ContDiff ℝ 2 Φ) (τ : ℝ)
+    (hODE : ∀ t ∈ Icc 0 τ, ∀ z, HasDerivAt (fun s => Φ (s, z)) (f (Φ (t, z))) t)
+    (hinit : (fun z => Φ (0, z)) = id) (t : ℝ) (ht : t ∈ Icc 0 τ)
+    (s : Set ((Fin n) → ℝ)) (hs : MeasurableSet s) :
+    volume ((fun z => Φ (t, z)) '' s) = volume s := by
+  apply MolecularDynamics.textbookDivergenceFreeFlow_volume_image_of_jointC2 <;> assumption
 ```
 
 ### 5. 对照表
@@ -504,108 +272,35 @@ def gaussTwoData : Matrix (Fin 2) (Fin 2) ℝ × (Fin 2 → ℝ) :=
 | 原文成分 | Lean对应 | 说明 |
 |---|---|---|
 | 当前覆盖范围 | 本条所引原句及展示公式；单个记号归入context\_notation。 | 仅承诺明确列出的数学内容 |
-| 对象、量词、假设和定义/结论 | `MD.Ch02.gaussTwoData` | 完整代码见第4段；两个版本独立列出 |
+| 对象、量词、假设和定义/结论 | `MD.Ch02.liouville` | 完整代码见第4段；两个版本独立列出 |
+| 技术资格或版本解释 | [EXTRA]实际解族Φ联合C²（原文未重复此较强正则性）；f C¹、Φ0=id、τ>0及实际时间ODE；只对可测S表达Lebesgue体积。 | [EXTRA] |
 
-[EXTRA] 无新增技术资格。
-
-### 6. 审计结论
-
-本地限定解释与原文问题见上列范围及对照；逐声明编译、公理结果见第7段。
-
-网站：网站PASS（绑定版本 f24b625cda35c51074f87df43493f35787dd9137d25683675cb793b757d111bb）。
-网站原返回（对应其审校版本）：PASS；实际读取的 Blueprint/Ch02.lean 附件位于 /workspace/Ch02.lean，声明在1281–1282行。展开 Ch02\_deps.txt:2911–2912 的 gaussTwoCoefficients：Fin 2 按0、1索引，A₀₀=A₁₁=1/4，A₀₁=1/4−Real.sqrt 3/6，A₁₀=1/4+Real.sqrt 3/6；第二分量为两个实数权重均等于1/2。矩阵行是阶段索引i，列是求和阶段索引j，与 rungeKuttaRelation:2900–2903一致。完整A和b忠实于印刷p.90/PDFp.112展示公式；四阶结论由本批独立GaussTwoOrder条目承担。无额外假设、无ERRATUM标记或系数勘误。此def自身没有sorry；数据正确与四阶证明是否完成分开判断。
-
-### 7. 状态与证明位置
-
-self-contained；`MD.Ch02.gaussTwoData`：定义。
-位置：[Blueprint/Ch02.lean](../../../../Blueprint/Ch02.lean#L1872)；逐声明核验：blueprint/closeout24/ch02/errata-05.log。
-
-## 1. MD-2.5.1-GaussTwoOrder · unnumbered_claim · 印刷p.90 / PDFp.112
-
-### 2. 原文陈述
-
-> The 4th order method ($`s=2`$) has coefficients
-
-$$
-b_1=b_2=\frac12,\qquad A=(a_{ij})=\begin{bmatrix}\frac14&\frac14-\frac{\sqrt3}{6}\\\frac14+\frac{\sqrt3}{6}&\frac14\end{bmatrix}.
-$$
-
-
-
-### 3. 原文证明
-
-原书无独立完整证明。
-原书未给独立完整证明。
-
-### 4. 完整当前Lean（原文与修正版独立列出）
-
-原文版、既有数学解释及同组辅助声明：
-
-```lean
-theorem gaussTwoOrder (n : ℕ) (f : Q n → Q n) (G : ℝ → Q n → Q n)
-    (γ : ℝ → Q n) (τ : ℝ) (_htrajectory : compactTrajectory f γ τ)
-    (U : Set (Q n)) (δ : ℝ) (_hδ : 0 < δ) (_hU : IsOpen U)
-    (_hcover : γ '' Icc 0 τ ⊆ U)
-    (_hG : ContDiffOn ℝ 6 (Function.uncurry G) (Ioo (-δ) δ ×ˢ U))
-    (_hzero : ∀ z ∈ U, G 0 z = z)
-    (stages : ℝ → Q n → Fin 2 → Q n)
-    (_hregular : ∀ i, ContDiffOn ℝ 6 (fun x : ℝ × Q n ↦ stages x.1 x.2 i)
-      (Ioo (-δ) δ ×ˢ U))
-    (_hstagezero : ∀ z ∈ U, ∀ i, stages 0 z i = f z)
-    (_hstage : ∀ h ∈ Ioo (-δ) δ, ∀ z ∈ U,
-      rungeKuttaRelation f gaussTwoCoefficients (fun _ => 1/2) h z (G h z) (stages h z)) :
-    globalOrder G γ τ 4 ∧
-    (∃ ν₀ : ℕ, 0 < ν₀ ∧ ∀ ν ≥ ν₀, ∀ k ≤ ν,
-      oneStepIterate G (τ/ν) (γ 0) k ∈ U) := by
-  sorry
-```
-
-### 5. 对照表
-
-| 原文成分 | Lean对应 | 说明 |
-|---|---|---|
-| 当前覆盖范围 | 本条所引原句及展示公式；单个记号归入context\_notation。 | 仅承诺明确列出的数学内容 |
-| 对象、量词、假设和定义/结论 | `MD.Ch02.gaussTwoOrder` | 完整代码见第4段；两个版本独立列出 |
-| 技术资格或版本解释 | [EXTRA]C⁶实际向量场/解轨迹，实际C⁶步族且满足阶段关系；实际求解资格，不把4阶误差作为前提。 | [EXTRA] |
-| 技术资格或版本解释 | [EXTRA] 改为紧轨迹开邻域U、δ小步长内的真实光滑阶段分支，显式G0=id；补充分细迭代留U，保留全网格四阶。C⁶分支为充分[EXTRA]，未无条件声称任意步长可解。 | [EXTRA] |
-
-[EXTRA] [EXTRA]C⁶实际向量场/解轨迹，实际C⁶步族且满足阶段关系；实际求解资格，不把4阶误差作为前提。；[EXTRA] 改为紧轨迹开邻域U、δ小步长内的真实光滑阶段分支，显式G0=id；补充分细迭代留U，保留全网格四阶。C⁶分支为充分[EXTRA]，未无条件声称任意步长可解。
+[EXTRA] [EXTRA]实际解族Φ联合C²（原文未重复此较强正则性）；f C¹、Φ0=id、τ>0及实际时间ODE；只对可测S表达Lebesgue体积。
 
 ### 6. 审计结论
 
 本地限定解释与原文问题见上列范围及对照；逐声明编译、公理结果见第7段。
 
 网站：网站PASS（EAUDIT复审）。
-网站原返回（对应其审校版本）：PASS；两阶段A的四项与b=(1/2,1/2)正确；真实阶段及零步阶段值均明确。compactTrajectory提供τ>0、C⁶场、真实解及闭时间段连续性；开U覆盖紧轨迹，G与stages在小步长×U内C⁶、G0=id。结论为全网格O((τ/ν)^4)及充分细网格迭代留U，能由一致性、局部误差及紧轨迹邻域稳定性获得；没有把四阶界放进前提。globalOrder仅表示至少四阶，不是每个特定ODE恰四阶。 本次只读检查任务所给完整签名及项目依赖定义，未修改工程、未补证明、未以sorry判失败，也未声称已编译验证。
+网站原返回（对应其审校版本）：PASS；原文描述S(t)=F\_t(S(0))、Liouville定理[16]及体积不变措辞一致；末尾原页为vanishes, i.e.，当前摘录截去i.e.而未标明省略，修正JSON补回，散度展示式仍归相邻条目。Lean对任意维数、C¹向量场f、处处trace=0、联合C²实际解族Φ、Φ(0,·)=id、t∈[0,τ]和任意可测s断言真实Lebesgue像集体积相等。C¹给局部唯一性，实际流在该时间窗单射，未用体积结论作为前提。签名没有0<τ；τ<0时无t可取，τ=0时由恒等初值成立。 本次仅审校所附声明签名与定义，不执行工程编译，不补证明；sorry不作为签名不通过理由。
 
 ### 7. 状态与证明位置
 
-incomplete；`MD.Ch02.gaussTwoOrder`：未证（缺大型理论）。
-位置：[Blueprint/Ch02.lean](../../../../Blueprint/Ch02.lean#L1878)；逐声明核验：blueprint/closeout24/ch02/errata-05.log。
+checked+documented priors；`MD.Ch02.liouville`：已证。
+位置：[Blueprint/Ch02.lean](../../../../Blueprint/Ch02.lean#L699)；逐声明核验：blueprint/closeout24/ch02/errata-05.log。
 
-## 1. MD-2.5.2-PartitionedVerlet · definition · 印刷p.90 / PDFp.112
+## 1. MD-2.3.1-HamiltonDivergence · unnumbered_claim · 印刷p.72 / PDFp.94
 
 ### 2. 原文陈述
 
-> As an illustration, consider the method:
+> It is a simple exercise to show that for a Hamiltonian system the divergence vanishes, since
 
 $$
-\hat{\boldsymbol P}=\boldsymbol p-\frac h2\nabla_qH(\boldsymbol q,\hat{\boldsymbol P}),\tag{2.26}
-$$
-
-
-
-$$
-\boldsymbol Q=\boldsymbol q+\frac h2(\nabla_pH(\boldsymbol q,\hat{\boldsymbol P})+\nabla_pH(\boldsymbol Q,\hat{\boldsymbol P})),\tag{2.27}
+\nabla\cdot f=\sum_{i=1}^{N_c}\frac{\partial^2 H}{\partial q_i\partial p_i}-\sum_{i=1}^{N_c}\frac{\partial^2 H}{\partial p_i\partial q_i}=0,
 $$
 
 
-
-$$
-\boldsymbol P=\hat{\boldsymbol P}-\frac h2\nabla_qH(\boldsymbol Q,\hat{\boldsymbol P}).\tag{2.28}
-$$
-
-
+> by equality of mixed partials.
 
 ### 3. 原文证明
 
@@ -617,10 +312,11 @@ $$
 原文版、既有数学解释及同组辅助声明：
 
 ```lean
-def bp_partitionedVerletRelation {n : ℕ} (H : Z n → ℝ) (h : ℝ) (z w : Z n) (p : Q n) : Prop :=
-  p = z.2 - (h/2) • partialQ H z.1 p ∧
-  w.1 = z.1 + (h/2) • (partialP H z.1 p + partialP H w.1 p) ∧
-  w.2 = p - (h/2) • partialQ H w.1 p
+theorem hamiltonDivergence {Nc : ℕ}
+    (H : SymplecticCoordinates Nc → ℝ) (z : SymplecticCoordinates Nc)
+    (hH : ContDiffAt ℝ 2 H z) :
+    (textbookJacobian (textbookHamiltonianVectorField H) z).trace = 0 := by
+  apply MolecularDynamics.textbookHamiltonianVectorField_divergence_zero <;> assumption
 ```
 
 ### 5. 对照表
@@ -628,27 +324,28 @@ def bp_partitionedVerletRelation {n : ℕ} (H : Z n → ℝ) (h : ℝ) (z w : Z 
 | 原文成分 | Lean对应 | 说明 |
 |---|---|---|
 | 当前覆盖范围 | 本条所引原句及展示公式；单个记号归入context\_notation。 | 仅承诺明确列出的数学内容 |
-| 对象、量词、假设和定义/结论 | `MD.Ch02.bp_partitionedVerletRelation` | 完整代码见第4段；两个版本独立列出 |
+| 对象、量词、假设和定义/结论 | `MD.Ch02.hamiltonDivergence` | 完整代码见第4段；两个版本独立列出 |
+| 技术资格或版本解释 | H C²，保证混合偏导对称。 | [EXTRA] |
 
-[EXTRA] 无新增技术资格。
+[EXTRA] H C²，保证混合偏导对称。
 
 ### 6. 审计结论
 
 本地限定解释与原文问题见上列范围及对照；逐声明编译、公理结果见第7段。
 
 网站：网站PASS（绑定版本 f24b625cda35c51074f87df43493f35787dd9137d25683675cb793b757d111bb）。
-网站原返回（对应其审校版本）：PASS；正式依赖展开：ReviewDefinitions.lean 第2816–2817行 Q n=Fin n→ℝ，Z n=Q n×Q n，第一分量为位置、第二分量为动量；第2913–2916行 partialQ/partialP 分别是固定另一变量后实际 Fréchet 导数在 Pi.single i 1 上的值，即坐标偏导。本批无 [ERRATUM?]，没有需要修正的原文错误；本次沿用 A 字段而不重做原文审校。 Ch02.lean 第1295–1298行三项合取逐项给出(2.26)–(2.28)：中间动量 p̂=p₀−(h/2)∂qH(q₀,p̂)，Q=q₀+(h/2)(∂pH(q₀,p̂)+∂pH(Q,p̂))，P=p̂−(h/2)∂qH(Q,p̂)。所有符号、系数、评价点一致；H、h、输入、输出、中间动量为参数，无存在性、唯一性或全球可解断言，无 EXTRA。fderiv 在不可微点有总化值，此定义应按原文偏导有意义的情形解释，不把总化解释为原文宣称非光滑求解。此条是定义，无 sorry。
+网站原返回（对应其审校版本）：PASS；SymplecticForm.lean 展开 SymplecticCoordinates Nc=(Fin Nc⊕Fin Nc)→ℝ，前一组为 q，后一组为 p；textbookJ=fromBlocks 0 1 (-1) 0。SplittingError.lean 的 textbookHamiltonianVectorField H z=J·(i↦DH(z)e\_i)，因此分量恰为 (∂pH,−∂qH)。SymplecticMaps.lean 的 textbookJacobian 是实际 fderiv 的标准坐标矩阵。逐项取迹即 ∑ᵢ∂qᵢ∂pᵢH−∑ᵢ∂pᵢ∂qᵢH；点态 ContDiffAt ℝ 2 H z 保证混合偏导交换，故零迹覆盖原句最终断言，展示的计算链是该展开与混合偏导对称的推导。H、z 任意；C² 是合理充分资格而非最弱必要条件。HamiltonianVariational.lean 的 textbookHamiltonianHessian 使用真实二阶 fderiv，HamiltonianVolume.lean 的零散度定理据此证明该结论。本声明调用库定理、无直接 sorry；未运行编译。
 
 ### 7. 状态与证明位置
 
-self-contained；`MD.Ch02.bp_partitionedVerletRelation`：定义。
-位置：[Blueprint/Ch02.lean](../../../../Blueprint/Ch02.lean#L1896)；逐声明核验：blueprint/closeout24/ch02/errata-05.log。
+checked+documented priors；`MD.Ch02.hamiltonDivergence`：已证。
+位置：[Blueprint/Ch02.lean](../../../../Blueprint/Ch02.lean#L711)；逐声明核验：blueprint/closeout24/ch02/errata-05.log。
 
-## 1. MD-2.5.2-PartitionedReduction · unnumbered_claim · 印刷p.91 / PDFp.113
+## 1. MD-2.3.1-HamiltonVolume · unnumbered_claim · 印刷p.72 / PDFp.94
 
 ### 2. 原文陈述
 
-> When $`H=\boldsymbol p^TM^{-1}\boldsymbol p/2+U(\boldsymbol q)`$ this is just the leapfrog/Verlet method, but it can be used also for more general systems.
+> Thus Hamiltonian systems always have volume preserving flows.
 
 ### 3. 原文证明
 
@@ -660,12 +357,16 @@ self-contained；`MD.Ch02.bp_partitionedVerletRelation`：定义。
 原文版、既有数学解释及同组辅助声明：
 
 ```lean
-theorem partitionedReduction :
-  ∀ n (m : Fin n → ℝ) (U : Q n → ℝ) h z w,
-    positiveMass m → Differentiable ℝ U →
-    ((∃ p, partitionedVerletRelation (fun z : Z n => (∑ i, z.2 i^2/m i)/2+U z.1) h z w p) ↔
-      w = verlet m (fun q => -grad U q) h z) := by
-  sorry
+theorem hamiltonVolume {Nc : ℕ}
+    (H : SymplecticCoordinates Nc → ℝ) (hH : ContDiff ℝ 2 H)
+    (Φ : ℝ × SymplecticCoordinates Nc → SymplecticCoordinates Nc)
+    (hΦ : ContDiff ℝ 2 Φ) (τ : ℝ)
+    (hODE : ∀ t ∈ Icc 0 τ, ∀ z, HasDerivAt (fun s => Φ (s, z))
+      (textbookHamiltonianVectorField H (Φ (t, z))) t)
+    (hinit : (fun z => Φ (0, z)) = id) (t : ℝ) (ht : t ∈ Icc 0 τ)
+    (s : Set (SymplecticCoordinates Nc)) (hs : MeasurableSet s) :
+    volume ((fun z => Φ (t, z)) '' s) = volume s := by
+  apply MolecularDynamics.textbookHamiltonianFlow_volume_image_of_jointC2 <;> assumption
 ```
 
 ### 5. 对照表
@@ -673,184 +374,100 @@ theorem partitionedReduction :
 | 原文成分 | Lean对应 | 说明 |
 |---|---|---|
 | 当前覆盖范围 | 本条所引原句及展示公式；单个记号归入context\_notation。 | 仅承诺明确列出的数学内容 |
-| 对象、量词、假设和定义/结论 | `MD.Ch02.partitionedReduction` | 完整代码见第4段；两个版本独立列出 |
-| 技术资格或版本解释 | 固定正对角质量、U实际可微；中间动量存在关系与Verlet映射等价。 | [EXTRA] |
+| 对象、量词、假设和定义/结论 | `MD.Ch02.hamiltonVolume` | 完整代码见第4段；两个版本独立列出 |
+| 技术资格或版本解释 | [EXTRA]Φ联合C²；H C²、Φ0=id，τ>0；可测集S。 | [EXTRA] |
 
-[EXTRA] 固定正对角质量、U实际可微；中间动量存在关系与Verlet映射等价。
-
-### 6. 审计结论
-
-本地限定解释与原文问题见上列范围及对照；逐声明编译、公理结果见第7段。
-
-网站：网站PASS（绑定版本 f24b625cda35c51074f87df43493f35787dd9137d25683675cb793b757d111bb）。
-网站原返回（对应其审校版本）：PASS；正式依赖展开：ReviewDefinitions.lean 第2816–2817行 Q n=Fin n→ℝ，Z n=Q n×Q n，第一分量为位置、第二分量为动量；第2913–2916行 partialQ/partialP 分别是固定另一变量后实际 Fréchet 导数在 Pi.single i 1 上的值，即坐标偏导。本批无 [ERRATUM?]，没有需要修正的原文错误；本次沿用 A 字段而不重做原文审校。 ReviewDefinitions.lean 第2840行 invMass m v 的第i分量是 m\_i⁻¹v\_i，第2948行 positiveMass=∀i,0<m\_i；第2932行 grad U 是 U 的实际坐标偏导。第2859–2861行 verlet 展开为 Q=q+hM⁻¹p+(h²/2)M⁻¹F(q)，P=p+(h/2)(F(q)+F(Q))。第2919–2922行正式 partitionedVerletRelation 与蓝图三式完全一致。机械 Hamiltonian 的偏导实际为 ∂qH=grad U，∂pH=M⁻¹p̂；于是 p̂=p−(h/2)grad U(q)，Q=q+hM⁻¹p̂，P=p̂−(h/2)grad U(Q)，恰为 F=−grad U 的上述 Verlet。量词 ∀n,m,U,h,z,w 在前，随后正质量与 U 可微，最后 ∃p̂ 的关系↔输出等式，双向包含全部机械情形结论；没有误加 h>0 或唯一解前提。EXTRA 固定正对角质量符合本章机械模型，是明确范围特化；非零质量已足以代数推导，正性物理合理但不是最弱条件。U 全空间可微保障偏导有意义，逐点资格即可，属合理加强。更一般 H 的适用性由前条无机械限制的关系表达，未声称一般 H 均存在解。定理正文有 sorry；此 PASS 仅判签名忠实，不表示证明已验证。
-
-### 7. 状态与证明位置
-
-incomplete；`MD.Ch02.partitionedReduction`：未证（缺大型理论）。
-位置：[Blueprint/Ch02.lean](../../../../Blueprint/Ch02.lean#L1903)；逐声明核验：blueprint/closeout24/ch02/errata-05.log。
-
-## 1. MD-2.5.2-GeneralEuler · definition · 印刷p.91 / PDFp.113
-
-### 2. 原文陈述
-
-> where $`\mathcal G_h`$ is defined by
-
-$$
-\boldsymbol P=\boldsymbol p-h\nabla_qH(\boldsymbol q,\boldsymbol P),\tag{2.29}
-$$
-
-
-
-$$
-\boldsymbol Q=\boldsymbol q+h\nabla_pH(\boldsymbol q,\boldsymbol P),\tag{2.30}
-$$
-
-
-
-### 3. 原文证明
-
-原书无独立完整证明。
-原书未给独立完整证明。
-
-### 4. 完整当前Lean（原文与修正版独立列出）
-
-原文版、既有数学解释及同组辅助声明：
-
-```lean
-def bp_generalSymplecticEulerRelation {n : ℕ} (H : Z n → ℝ) (h : ℝ) (z w : Z n) : Prop :=
-  w.2 = z.2 - h • partialQ H z.1 w.2 ∧ w.1 = z.1 + h • partialP H z.1 w.2
-```
-
-### 5. 对照表
-
-| 原文成分 | Lean对应 | 说明 |
-|---|---|---|
-| 当前覆盖范围 | 本条所引原句及展示公式；单个记号归入context\_notation。 | 仅承诺明确列出的数学内容 |
-| 对象、量词、假设和定义/结论 | `MD.Ch02.bp_generalSymplecticEulerRelation` | 完整代码见第4段；两个版本独立列出 |
-
-[EXTRA] 无新增技术资格。
-
-### 6. 审计结论
-
-本地限定解释与原文问题见上列范围及对照；逐声明编译、公理结果见第7段。
-
-网站：网站PASS（绑定版本 f24b625cda35c51074f87df43493f35787dd9137d25683675cb793b757d111bb）。
-网站原返回（对应其审校版本）：PASS；正式依赖展开：ReviewDefinitions.lean 第2816–2817行 Q n=Fin n→ℝ，Z n=Q n×Q n，第一分量为位置、第二分量为动量；第2913–2916行 partialQ/partialP 分别是固定另一变量后实际 Fréchet 导数在 Pi.single i 1 上的值，即坐标偏导。本批无 [ERRATUM?]，没有需要修正的原文错误；本次沿用 A 字段而不重做原文审校。 Ch02.lean 第1310–1311行展开为 P=p−h∂qH(q,P)，Q=q+h∂pH(q,P)，与(2.29)–(2.30)一致；正式库 ReviewDefinitions.lean 第2917–2918行同式。输出动量同时出现在两个偏导的第二参数，输入位置为第一参数；对象、量词参数及两项合取全部正确。此为隐式关系而非选择求解函数，没有存在、唯一或全球求解结论，无 EXTRA。偏导按原文可微场景解释，fderiv 的非可微总化值不构成额外数学保证。定义无 sorry。
-
-### 7. 状态与证明位置
-
-self-contained；`MD.Ch02.bp_generalSymplecticEulerRelation`：定义。
-位置：[Blueprint/Ch02.lean](../../../../Blueprint/Ch02.lean#L1911)；逐声明核验：blueprint/closeout24/ch02/errata-05.log。
-
-## 1. MD-2.5.2-GeneralSymplectic · unnumbered_claim · 印刷p.91 / PDFp.113
-
-### 2. 原文陈述
-
-> To see that it is symplectic, we first note that this is a symmetric composition of the form
-
-$$
-\mathcal K_h=\mathcal G_{h/2}^{\dagger}\circ\mathcal G_{h/2},
-$$
-
-
-> where $`\mathcal G_h`$ is defined by
-
-$$
-P=p-h\nabla_qH(q,P),\tag{2.29}
-$$
-
-
-
-$$
-Q=q+h\nabla_pH(q,P),\tag{2.30}
-$$
-
-
-> so it is enough to show that this basic method is symplectic.
-
-### 3. 原文证明
-
-> Taking differentials of (2.30) defining $`\mathcal G_h`$ and then wedge products and summing, we have
-
-$$
-\sum_i dQ_i\wedge dP_i=\sum_i dq_i\wedge dP_i+h\sum_i\sum_j H_{p_iq_j}dq_j\wedge dP_i+h\sum_i\sum_j H_{p_ip_j}dP_j\wedge dP_i.
-$$
-
-
-> The last term on the right vanishes by equality of mixed partials and the antisymmetry of the wedge product. On the other hand, using (2.29), we obtain, by similar means,
-
-$$
-\sum_i dq_i\wedge dP_i=\sum_i dq_i\wedge dp_i-h\sum_i\sum_j H_{q_ip_j}dq_i\wedge dP_j.
-$$
-
-
-> Relabelling the indices in this sum and using our previous work results in
-
-$$
-\sum_i dQ_i\wedge dP_i=\sum_i dq_i\wedge dp_i,
-$$
-
-
-> implying that the method is symplectic.
-原书计算按原页转录。
-
-### 4. 完整当前Lean（原文与修正版独立列出）
-
-原文版、既有数学解释及同组辅助声明：
-
-```lean
-theorem generalSymplectic :
-  ∀ n (H : Z n → ℝ) (G : SymplecticCoordinates n → SymplecticCoordinates n) h,
-    ContDiff ℝ 2 H → ContDiff ℝ 1 G →
-    (∀ z, generalSymplecticEulerRelation H h (unpack z) (unpack (G z))) → IsTextbookSymplecticMap G := by
-  sorry
-```
-
-### 5. 对照表
-
-| 原文成分 | Lean对应 | 说明 |
-|---|---|---|
-| 当前覆盖范围 | 基本隐式辛Euler的辛性子结论；所引原句的半步伴随复合、三步对应及对称辛性归MD-2.5.2-GeneralVerletSymplectic。 | 仅承诺明确列出的数学内容 |
-| 对象、量词、假设和定义/结论 | `MD.Ch02.generalSymplectic` | 完整代码见第4段；两个版本独立列出 |
-| 技术资格或版本解释 | H C²，真实C¹完整求解映射，逐点满足实际隐式关系。 | [EXTRA] |
-| 技术资格或版本解释 | [EXTRA] 本条承担基本隐式辛Euler的辛性；同一原句的伴随半步复合、三步关系与对称性由MD-2.5.2-GeneralVerletSymplectic补全，原文不删。 | [EXTRA] |
-
-[EXTRA] H C²，真实C¹完整求解映射，逐点满足实际隐式关系。；[EXTRA] 本条承担基本隐式辛Euler的辛性；同一原句的伴随半步复合、三步关系与对称性由MD-2.5.2-GeneralVerletSymplectic补全，原文不删。
+[EXTRA] [EXTRA]Φ联合C²；H C²、Φ0=id，τ>0；可测集S。
 
 ### 6. 审计结论
 
 本地限定解释与原文问题见上列范围及对照；逐声明编译、公理结果见第7段。
 
 网站：网站PASS（EAUDIT复审）。
-网站原返回（对应其审校版本）：PASS；Z n为(q,p)对，unpack把标准坐标先q后p分解；关系为P=p−h H\_q(q,P)、Q=q+h H\_p(q,P)。H C²、G C¹且每点真实求解该关系，结论为全域C¹及标准J意义保辛。h可任意但仅对满足求解关系的实际G断言，未断言任意h必可求解。按明确statement\_scope只审基本隐式辛Euler；完整对称复合已明确交由另一个source\_id，本次未验证未提供的那一条。 本次只读检查任务所给完整签名及项目依赖定义，未修改工程、未补证明、未以sorry判失败，也未声称已编译验证。
+网站原返回（对应其审校版本）：PASS；原文Thus Hamiltonian systems always have volume preserving flows.逐字一致。任意Nc和H:C^{2}，坐标为q/p两个Fin Nc块，J=[[0,I],[-I,0]]；向量场J∇H的符号与教材相同。Φ联合C²、在[0,τ]满足实际ODE且Φ0=id，对每个窗内t和每个可测s给出Lebesgue像集体积相等。没有额外假设散度零或体积守恒；前者由Hamilton结构产生。签名没有τ>0，需修正说明。 本次仅审校所附声明签名与定义，不执行工程编译，不补证明；sorry不作为签名不通过理由。
 
 ### 7. 状态与证明位置
 
-incomplete；`MD.Ch02.generalSymplectic`：未证（缺大型理论）。
-位置：[Blueprint/Ch02.lean](../../../../Blueprint/Ch02.lean#L1917)；逐声明核验：blueprint/closeout24/ch02/errata-05.log。
+checked+documented priors；`MD.Ch02.hamiltonVolume`：已证。
+位置：[Blueprint/Ch02.lean](../../../../Blueprint/Ch02.lean#L719)；逐声明核验：blueprint/closeout24/ch02/errata-05.log。
 
-## 1. MD-2.5.2-GeneralVerletSymplectic · unnumbered_claim · 印刷p.91 / PDFp.113
+## 1. MD-2.3.1-VolumeChange · unnumbered_claim · 印刷p.73 / PDFp.95
 
 ### 2. 原文陈述
 
-> To see that it is symplectic, we first note that this is a symmetric composition of the form
+> If we view the map $`\mathcal F_t`$ as a change of variables, we have
 
 $$
-\mathcal K_h=\mathcal G_{h/2}^{\dagger}\circ\mathcal G_{h/2},
-$$
-
-
-> where $`\mathcal G_h`$ is defined by
-
-$$
-\boldsymbol P=\boldsymbol p-h\nabla_q H(\boldsymbol q,\boldsymbol P),\tag{2.29}
+\operatorname{Vol}(S(t))=\int_S |D|\,d\omega,
 $$
 
 
+> where $`D=\det\left(\frac{\partial\mathcal F_t}{\partial\boldsymbol z}\right)`$.
+
+### 3. 原文证明
+
+原书无独立完整证明。
+原书未给独立完整证明。
+
+### 4. 完整当前Lean（原文与修正版独立列出）
+
+原文版、既有数学解释及同组辅助声明：
+
+```lean
+theorem volumeChange :
+  ∀ n (Φ : Q n → Q n) (S : Set (Q n)), ContDiff ℝ 1 Φ → Function.Injective Φ → MeasurableSet S →
+    volume (Φ '' S) = ∫⁻ z in S, ENNReal.ofReal |(textbookCoordinateJacobian Φ z).det| ∂volume := by
+  intro n Φ S hΦ hinj hS
+  have hd : ∀ z ∈ S, HasFDerivWithinAt Φ (fderiv ℝ Φ z) S z := by
+    intro z hz
+    exact (hΦ.differentiable_one z).hasFDerivAt.hasFDerivWithinAt
+  have hcv := lintegral_abs_det_fderiv_eq_addHaar_image
+    (volume : Measure (Q n)) hS hd hinj.injOn
+  have heq : ∀ z, (fderiv ℝ Φ z).det=(textbookCoordinateJacobian Φ z).det := by
+    intro z
+    change LinearMap.det (fderiv ℝ Φ z).toLinearMap=_
+    rw [← LinearMap.det_toMatrix']
+    rfl
+  simpa only [heq] using hcv.symm
+```
+
+### 5. 对照表
+
+| 原文成分 | Lean对应 | 说明 |
+|---|---|---|
+| 当前覆盖范围 | 本条所引原句及展示公式；单个记号归入context\_notation。 | 仅承诺明确列出的数学内容 |
+| 对象、量词、假设和定义/结论 | `MD.Ch02.volumeChange` | 完整代码见第4段；两个版本独立列出 |
+| 技术资格或版本解释 | Φ C¹单射，可测S；正则流的固定时刻映射具备这些资格；真实Lebesgue体积和lintegral。 | [EXTRA] |
+
+[EXTRA] Φ C¹单射，可测S；正则流的固定时刻映射具备这些资格；真实Lebesgue体积和lintegral。
+
+### 6. 审计结论
+
+本地限定解释与原文问题见上列范围及对照；逐声明编译、公理结果见第7段。
+
+网站：网站PASS（绑定版本 f24b625cda35c51074f87df43493f35787dd9137d25683675cb793b757d111bb）。
+网站原返回（对应其审校版本）：PASS；展开 Q n=Fin n→ℝ，textbookCoordinateJacobian Φ z=toMatrix' (fderiv ℝ Φ z).toLinearMap，所以 det 是实际空间导数的行列式。量词为任意 n、映射 Φ、集合 S，在 Φ C¹、全局单射、S 可测的资格下，像集 Lebesgue 体积等于 S 上 |det DΦ| 的非负 lintegral；ENNReal.ofReal 将非负实绝对值转为扩展非负实数，故覆盖无限体积。固定时刻流映射可代入；全局单射强于仅在 S 上单射，但合理地避免多重覆盖，C¹ 和可测性是明确充分资格。证明体通过 det\_toMatrix' 对接实际换元公式，无直接 sorry；本次未编译。
+
+### 7. 状态与证明位置
+
+self-contained；`MD.Ch02.volumeChange`：已证。
+位置：[Blueprint/Ch02.lean](../../../../Blueprint/Ch02.lean#L732)；逐声明核验：blueprint/closeout24/ch02/errata-05.log。
+
+## 1. MD-2.3.1-VariationalPrinted · unnumbered_claim · 印刷p.73 / PDFp.95
+
+### 2. 原文陈述
+
+> To understand where Liouville’s theorem comes from, recall that the variational equations of the last chapter are a system of ordinary differential equations for $`W(t)=\mathcal F_t'(\boldsymbol z(t))`$:
 
 $$
-\boldsymbol Q=\boldsymbol q+h\nabla_p H(\boldsymbol q,\boldsymbol P).\tag{2.30}
+\frac{\mathrm dW}{\mathrm dt}=f'(\boldsymbol z(t))W.
+$$
+
+
+> Thus
+
+$$
+\dot W W^{-1}=f'(\boldsymbol z(t)).
 $$
 
 
@@ -865,22 +482,101 @@ $$
 原文版、既有数学解释及同组辅助声明：
 
 ```lean
-theorem generalVerletSymplectic
-    (n : ℕ) (H : Z n → ℝ) (G : ℝ → Equiv.Perm (SymplecticCoordinates n))
-    (δ : ℝ) (_hδ : 0 < δ) (_hH : ContDiff ℝ 2 H)
-    (_hG : ∀ h ∈ Ioo (-δ) δ, ContDiff ℝ 1 (G h))
-    (_hInv : ∀ h ∈ Ioo (-δ) δ, ContDiff ℝ 1 (G h).symm)
-    (_hstep : ∀ h ∈ Ioo (-δ) δ, ∀ z,
-      generalSymplecticEulerRelation H h (unpack z) (unpack (G h z))) :
-    let V : ℝ → Equiv.Perm (SymplecticCoordinates n) :=
-      fun h ↦ (G (h/2)).trans (textbookAdjointMethod G (h/2))
-    (∀ h, (V h : SymplecticCoordinates n → SymplecticCoordinates n) =
-      textbookAdjointMethod G (h/2) ∘ G (h/2)) ∧
-    textbookAdjointMethod V = V ∧
-    (∀ h ∈ Ioo (-δ) δ, IsTextbookSymplecticMap (V h) ∧
-      ∀ z, partitionedVerletRelation H h (unpack z) (unpack (V h z))
-        (unpack (G (h/2) z)).2) := by
+theorem variationalPrinted : ∀ n (f : Q n → Q n) (Φ : ℝ × Q n → Q n) τ ζ,
+    flowC1 f Φ τ → ∀ t ∈ Ioo 0 τ,
+    HasDerivAt (fun s => textbookCoordinateJacobian (fun y => Φ (s,y)) (Φ (s,ζ)))
+      (textbookCoordinateJacobian f (Φ (t,ζ)) *
+        textbookCoordinateJacobian (fun y => Φ (t,y)) (Φ (t,ζ))) t ∧
+    (deriv (fun s => textbookCoordinateJacobian (fun y => Φ (s,y)) (Φ (s,ζ))) t) *
+      (textbookCoordinateJacobian (fun y => Φ (t,y)) (Φ (t,ζ)))⁻¹ =
+      textbookCoordinateJacobian f (Φ (t,ζ)) := by
   sorry
+
+
+
+/-- 修正版，对应原文 MD-2.3.1-VariationalPrinted。改动：Jacobian在固定初值ζ求值；联合C²及变分矩阵非奇异作为显式充分资格，Df仍在真实轨道点求值。 -/
+```
+
+独立修正版：
+
+```lean
+theorem variationalPrinted_corrected : ∀ n (f : Q n → Q n) (Φ : ℝ × Q n → Q n) τ ζ,
+    flowC1 f Φ τ → ContDiff ℝ 2 Φ →
+    (∀ t ∈ Ioo 0 τ, (textbookCoordinateJacobian (fun y => Φ (t,y)) ζ).det ≠ 0) → ∀ t ∈ Ioo 0 τ,
+    HasDerivAt (fun s => textbookCoordinateJacobian (fun y => Φ (s,y)) ζ)
+      (textbookCoordinateJacobian f (Φ (t,ζ)) *
+        textbookCoordinateJacobian (fun y => Φ (t,y)) ζ) t ∧
+    (deriv (fun s => textbookCoordinateJacobian (fun y => Φ (s,y)) ζ) t) *
+      (textbookCoordinateJacobian (fun y => Φ (t,y)) ζ)⁻¹ =
+      textbookCoordinateJacobian f (Φ (t,ζ)) := by
+  first
+  | rfl
+  | assumption
+  | solve | simp only
+  | sorry
+```
+
+### 5. 对照表
+
+| 原文成分 | Lean对应 | 说明 |
+|---|---|---|
+| 当前覆盖范围 | 保留完整原文引文；Lean仅覆盖第4段明示的定义与限定结论，原书疑误或超出该陈述的内容不冒称已形式化。各版本差异见本条与ERRATA。 | 仅承诺明确列出的数学内容 |
+| 对象、量词、假设和定义/结论 | `MD.Ch02.variationalPrinted`；`MD.Ch02.variationalPrinted_corrected` | 完整代码见第4段；两个版本独立列出 |
+| 技术资格或版本解释 | [ERRATUM?] Jacobian在固定初值ζ求值；联合C²及变分矩阵非奇异作为显式充分资格，Df仍在真实轨道点求值。 | [EXTRA] |
+
+[EXTRA] [ERRATUM?] Jacobian在固定初值ζ求值；联合C²及变分矩阵非奇异作为显式充分资格，Df仍在真实轨道点求值。
+
+### 6. 审计结论
+
+本地限定解释与原文问题见上列范围及对照；逐声明编译、公理结果见第7段。
+
+网站：原书疑误/资格待导师；原文与修正版并列。
+网站原返回（对应其审校版本）：FAIL；已实际展开 Statements.lean 的 flowC1：f C¹、Φ 联合 C¹、∀z Φ(0,z)=z、∀t∈[0,τ]∀z 时间导数为 f(Φ(t,z))；没有把待证变分公式作为前提。Q 与 Jacobian 为真实有限实坐标空间与真实空间导数。签名忠实保留原书移动取值点 W(t)=D\_yΦ(t,Φ(t,ζ))，同时要求 W′=Df(Φ(t,ζ))W 及 W′W⁻¹=Df(Φ(t,ζ))。这两条一般均错误；移动点的链式项和 Df 的取值点均不能省略。以下全实线 C∞ 完整流满足所有前提且 W 可逆，排除了正则性不足或域问题，确证 ERRATUM? 成立。正确变分矩阵应取固定初值 D\_yΦ(t,ζ)。原签名只有联合 C¹，也未显式登记空间导数关于时间可微的更强充分资格；修正时可用联合 C²。当前证明体是 sorry，但 FAIL 来源于反例而非 sorry。
+
+### 7. 状态与证明位置
+
+incomplete；`MD.Ch02.variationalPrinted`：未证（原书疑误不证）；`MD.Ch02.variationalPrinted_corrected`：未证（时间盒止）。
+位置：[Blueprint/Ch02.lean](../../../../Blueprint/Ch02.lean#L751)；逐声明核验：blueprint/closeout24/ch02/errata-05.log。
+
+## 1. MD-2.3.1-DeterminantODE · unnumbered_claim · 印刷p.73 / PDFp.95
+
+### 2. 原文陈述
+
+> Now let $`D=\det(W)`$. One can show (see Exercise 5) that
+
+$$
+\frac{\dot D}{D}=\operatorname{tr}(\dot W W^{-1}).
+$$
+
+
+> This implies that
+
+$$
+\dot D=\operatorname{div}(f(\boldsymbol z(t)))D,
+$$
+
+
+
+### 3. 原文证明
+
+原书无独立完整证明。
+原书未给独立完整证明。
+
+### 4. 完整当前Lean（原文与修正版独立列出）
+
+原文版、既有数学解释及同组辅助声明：
+
+```lean
+theorem determinantODE : ∀ n (A W : ℝ → Matrix (Fin n) (Fin n) ℝ) t,
+    HasDerivAt W (A t * W t) t → (W t).det ≠ 0 →
+    HasDerivAt (fun s => (W s).det) ((A t).trace*(W t).det) t ∧
+      deriv (fun s => (W s).det) t/(W t).det =
+        Matrix.trace ((A t*W t)*(W t)⁻¹) := by
+  intro n A W t hW hdet
+  have hd := MolecularDynamics.textbookMatrixDet_hasDerivAt_of_linearODE W (A t) t hW
+  refine ⟨hd,?_⟩
+  rw [hd.deriv, mul_div_cancel_right₀ _ hdet, Matrix.mul_assoc,
+    Matrix.mul_nonsing_inv _ (isUnit_iff_ne_zero.mpr hdet), Matrix.mul_one]
 ```
 
 ### 5. 对照表
@@ -888,38 +584,31 @@ theorem generalVerletSymplectic
 | 原文成分 | Lean对应 | 说明 |
 |---|---|---|
 | 当前覆盖范围 | 本条所引原句及展示公式；单个记号归入context\_notation。 | 仅承诺明确列出的数学内容 |
-| 对象、量词、假设和定义/结论 | `MD.Ch02.generalVerletSymplectic` | 完整代码见第4段；两个版本独立列出 |
-| 技术资格或版本解释 | H C²，实际C¹中间动量和完整求解映射，满足三步隐式关系。 | [EXTRA] |
-| 技术资格或版本解释 | [EXTRA] 以真实可逆且C¹的基本求解族构造伴随半步复合V，补三步关系、V自伴随及辛性；仅δ小步长要求真实Euler关系，全球可逆族明确为条件性[EXTRA]，不宣称一般隐式方程必有全球解。 | [EXTRA] |
+| 对象、量词、假设和定义/结论 | `MD.Ch02.determinantODE` | 完整代码见第4段；两个版本独立列出 |
+| 技术资格或版本解释 | 实际W′=AW且detW≠0，符合原文W⁻¹及D除法的资格；A=f′(z(t))。 | [EXTRA] |
 
-[EXTRA] H C²，实际C¹中间动量和完整求解映射，满足三步隐式关系。；[EXTRA] 以真实可逆且C¹的基本求解族构造伴随半步复合V，补三步关系、V自伴随及辛性；仅δ小步长要求真实Euler关系，全球可逆族明确为条件性[EXTRA]，不宣称一般隐式方程必有全球解。
+[EXTRA] 实际W′=AW且detW≠0，符合原文W⁻¹及D除法的资格；A=f′(z(t))。
 
 ### 6. 审计结论
 
 本地限定解释与原文问题见上列范围及对照；逐声明编译、公理结果见第7段。
 
 网站：网站PASS（EAUDIT复审）。
-网站原返回（对应其审校版本）：PASS；逐项核对：n为任意自然数，q、p均为Fin n→ℝ，H定义于Q n×Q n；unpack按inl/inr取位置/动量，partialQ/partialP的求导变量和坐标方向正确。H为C²；δ>0；G是每个实步长上的双射族，仅在(-δ,δ)要求G及逆C¹并满足两条真实Euler关系。结论中Equiv.trans先作用G(h/2)再作用(G(-h/2))⁻¹，与原页复合方向相同。伴随的定义准确；V的全步长自伴随由逆映射及复合顺序直接成立，不依赖区间外Euler关系。区间内h/2和-h/2仍在区间，故两半步可合法使用假设；从第二半步的负步长Euler关系消去中间位置，所得三式正是partitionedVerletRelation，指定中间动量为unpack(G(h/2)z)的第二分量。辛性定义为C¹及DΦᵀ J DΦ=J，J的块号、坐标顺序和Jacobian均吻合。全局可逆族与双向C¹、真实求解关系是明确标注的条件性[EXTRA]，未把一般隐式方程的全球可解性当作结论。没有把辛性本身作为前提，也没有缺失所列完整结论。sorry不影响本次只读签名判定。
+网站原返回（对应其审校版本）：PASS；印刷73页Now let D=det(W)、Ḋ/D=tr(ẆW⁻¹)、This implies that及最终Ḋ=div(f(z(t)))D均一致。A,W是任意n维实矩阵曲线，在指定t要求真实导数W′=A(t)W(t)且det W(t)≠0；结论同时给det曲线的HasDerivAt以及导数除det等于trace((AW)W⁻¹)。取A=f′(z(t))即为教材实例；非零行列式正好许可原文两处除法。A不被签名限定为某个f的Jacobian，是已披露的线性变分方程推广。 本次仅审校所附声明签名与定义，不执行工程编译，不补证明；sorry不作为签名不通过理由。
 
 ### 7. 状态与证明位置
 
-incomplete；`MD.Ch02.generalVerletSymplectic`：未证（缺大型理论）。
-位置：[Blueprint/Ch02.lean](../../../../Blueprint/Ch02.lean#L1926)；逐声明核验：blueprint/closeout24/ch02/errata-05.log。
+checked+documented priors；`MD.Ch02.determinantODE`：已证。
+位置：[Blueprint/Ch02.lean](../../../../Blueprint/Ch02.lean#L781)；逐声明核验：blueprint/closeout24/ch02/errata-05.log。
 
-## 1. MD-2.5.3-Newmark · definition · 印刷p.92 / PDFp.114
+## 1. MD-2.3.1-DeterminantExponential · unnumbered_claim · 印刷p.73 / PDFp.95
 
 ### 2. 原文陈述
 
-> As a special case of a partitioned Runge-Kutta method, consider the Newmark family of methods [280] defined for two parameters $`\sigma`$ and $`\eta`$ by the formulas
+> and thus
 
 $$
-\boldsymbol P=\boldsymbol p-h(1-\sigma)\nabla U(\boldsymbol q)-h\sigma\nabla U(\boldsymbol Q),
-$$
-
-
-
-$$
-\boldsymbol Q=\boldsymbol q+hM^{-1}\boldsymbol p-h^2\left(\frac12-\eta\right)\nabla U(\boldsymbol q)-h^2\eta\nabla U(\boldsymbol Q).
+D(t)=D(0)e^{\int_0^t\operatorname{div}(f(\boldsymbol z(s)))\,ds}.
 $$
 
 
@@ -934,9 +623,11 @@ $$
 原文版、既有数学解释及同组辅助声明：
 
 ```lean
-def bp_newmarkRelation {n : ℕ} (m : Fin n → ℝ) (F : Q n → Q n) (γ β h : ℝ) (z w : Z n) : Prop :=
-  w.2 = z.2 + (h*(1-γ)) • F z.1 + (h*γ) • F w.1 ∧
-  w.1 = z.1 + h • invMass m z.2 + (h^2*(1/2-β)) • F z.1 + (h^2*β) • F w.1
+theorem determinantExponential :
+  ∀ n (A : ℝ → Matrix (Fin n) (Fin n) ℝ) (W : ℝ → Matrix (Fin n) (Fin n) ℝ) t,
+    Continuous A → (∀ s, HasDerivAt W (A s * W s) s) →
+    (W t).det = (W 0).det * Real.exp (∫ s in (0 : ℝ)..t, (A s).trace) := by
+  sorry
 ```
 
 ### 5. 对照表
@@ -944,27 +635,34 @@ def bp_newmarkRelation {n : ℕ} (m : Fin n → ℝ) (F : Q n → Q n) (γ β h 
 | 原文成分 | Lean对应 | 说明 |
 |---|---|---|
 | 当前覆盖范围 | 本条所引原句及展示公式；单个记号归入context\_notation。 | 仅承诺明确列出的数学内容 |
-| 对象、量词、假设和定义/结论 | `MD.Ch02.bp_newmarkRelation` | 完整代码见第4段；两个版本独立列出 |
+| 对象、量词、假设和定义/结论 | `MD.Ch02.determinantExponential` | 完整代码见第4段；两个版本独立列出 |
+| 技术资格或版本解释 | 实际W′=AW，A连续；tr A=div f(z(s))，全实线ODE资格用于任意t积分。 | [EXTRA] |
 
-[EXTRA] 无新增技术资格。
+[EXTRA] 实际W′=AW，A连续；tr A=div f(z(s))，全实线ODE资格用于任意t积分。
 
 ### 6. 审计结论
 
 本地限定解释与原文问题见上列范围及对照；逐声明编译、公理结果见第7段。
 
 网站：网站PASS（绑定版本 f24b625cda35c51074f87df43493f35787dd9137d25683675cb793b757d111bb）。
-网站原返回（对应其审校版本）：PASS；Ch02.lean:1331–1333；已展开 Ch02\_deps.txt:2816–2817 的 Q n=Fin n→ℝ、Z n=Q n×Q n，及2840的 invMass m v i=(m i)⁻¹*v i；它表示对角坐标质量矩阵的逆作用。z=(q,p)、w=(Q,P)。两个等式的对象、参数γ=σ、β=η、F=-∇U约定、系数及全部力项均与原页字面公式一致。位置式只对动量使用invMass；2923–2925的正式newmarkRelation与本地bp\_newmarkRelation逐项相同。无[EXTRA]；关系定义不要求求解映射存在，也不含sorry。原书位置力项缺M⁻¹的[ERRATUM?]确为质量一致性问题，见下一条正质量反例；本定义忠实保留该疑误。invMass在零质量时采用实数逆的全定义扩展，不据此解释物理零质量模型。
+网站原返回（对应其审校版本）：PASS；A、W 是实际实方阵路径，D(t)=det W(t)；Continuous A 与逐点全实线 HasDerivAt W (A(s)W(s)) s 给出 D′=tr(A)D。结论保留任意 t、D(0) 因子及方向积分 ∫₀ᵗtr A，没有暗设 D(0)=1、t≥0 或 detW≠0，奇异初值亦适用。以已展开的真实 textbookCoordinateJacobian f (z(s)) 代入 A，即 tr A=div f(z(s))，得到原式；此实例须自身满足资格，不由前条错误移动点公式自动获得。A 连续是合理充分条件，全实线 ODE 比单个积分区间资格强，是明确登记的全局版本；局部流须另限其存在区间。当前证明体为 sorry，与签名语义 PASS 分开，未声称证明完成或编译通过。
 
 ### 7. 状态与证明位置
 
-self-contained；`MD.Ch02.bp_newmarkRelation`：定义。
-位置：[Blueprint/Ch02.lean](../../../../Blueprint/Ch02.lean#L1945)；逐声明核验：blueprint/closeout24/ch02/errata-05.log。
+incomplete；`MD.Ch02.determinantExponential`：未证（缺大型理论）。
+位置：[Blueprint/Ch02.lean](../../../../Blueprint/Ch02.lean#L794)；逐声明核验：blueprint/closeout24/ch02/errata-05.log。
 
-## 1. MD-2.5.3-NewmarkReduction · unnumbered_claim · 印刷p.92 / PDFp.114
+## 1. MD-2.3.1-FlowDet · unnumbered_claim · 印刷p.73 / PDFp.95
 
 ### 2. 原文陈述
 
-> For $`\eta=0`$ we then arrive at the Verlet method.
+> In particular, if $`\operatorname{div}f\equiv0`$, we see that $`D\equiv D(0)=1`$ and it follows that the volume is constant. Liouville’s theorem may be summarized compactly as:
+
+$$
+\nabla\cdot f=0\Rightarrow\det\mathcal F_t'=1.
+$$
+
+
 
 ### 3. 原文证明
 
@@ -976,72 +674,18 @@ self-contained；`MD.Ch02.bp_newmarkRelation`：定义。
 原文版、既有数学解释及同组辅助声明：
 
 ```lean
-theorem newmarkReduction : ∀ n (m : Fin n → ℝ) (F : Q n → Q n) h z w,
-    newmarkRelation m F (1/2) 0 h z w ↔ w=verlet m F h z := by
-  sorry
-
-
-
-/-- 修正版，对应原文 MD-2.5.3-NewmarkReduction。改动：采用显式质量一致Newmark关系，再与Verlet对应；原漏质量公式及反例保留。 -/
-```
-
-独立修正版：
-
-```lean
-theorem newmarkReduction_corrected : ∀ n (m : Fin n → ℝ) (F : Q n → Q n) h z w,
-    newmarkMassCorrected m F (1/2) 0 h z w ↔ w=verlet m F h z := by
-  first
-  | rfl
-  | assumption
-  | solve | simp only
-  | sorry
-```
-
-### 5. 对照表
-
-| 原文成分 | Lean对应 | 说明 |
-|---|---|---|
-| 当前覆盖范围 | 保留完整原文引文；Lean仅覆盖第4段明示的定义与限定结论，原书疑误或超出该陈述的内容不冒称已形式化。各版本差异见本条与ERRATA。 | 仅承诺明确列出的数学内容 |
-| 对象、量词、假设和定义/结论 | `MD.Ch02.newmarkReduction`；`MD.Ch02.newmarkReduction_corrected` | 完整代码见第4段；两个版本独立列出 |
-| 技术资格或版本解释 | [ERRATUM?] 采用显式质量一致Newmark关系，再与Verlet对应；原漏质量公式及反例保留。 | [EXTRA] |
-
-[EXTRA] [ERRATUM?] 采用显式质量一致Newmark关系，再与Verlet对应；原漏质量公式及反例保留。
-
-### 6. 审计结论
-
-本地限定解释与原文问题见上列范围及对照；逐声明编译、公理结果见第7段。
-
-网站：原书疑误/资格待导师；原文与修正版并列。
-网站原返回（对应其审校版本）：FAIL；Ch02.lean:1337–1339全称量化n、m、F、h、z、w，固定σ=1/2、η=0，断言关系与w=verlet的双向等价。已展开Ch02\_deps.txt:2923–2925：newmarkRelation确为缺力项质量因子的字面关系，未调用2926–2929的质量修正版。2859–2861的verlet则令Q=q+h invMass(m,p)+(h²/2)invMass(m,F(q))，P=p+(h/2)(F(q)+F(Q))。两种位置公式一般不相同，故原句的一般质量解释及当前Lean全称签名均为假，[ERRATUM?]成立。无[EXTRA]，质量正性也不能修复它。“仅M=I”只适用于对所有力和初值的普遍方法等价，不能排除特殊力或轨道的巧合。该定理体含sorry，签名失败由展开定义后的反例确定，不以sorry为判据。
-
-### 7. 状态与证明位置
-
-incomplete；`MD.Ch02.newmarkReduction`：未证（原书疑误不证）；`MD.Ch02.newmarkReduction_corrected`：未证（时间盒止）。
-位置：[Blueprint/Ch02.lean](../../../../Blueprint/Ch02.lean#L1952)；逐声明核验：blueprint/closeout24/ch02/errata-05.log。
-
-## 1. MD-2.5.3-NewmarkDamping · unnumbered_claim · 印刷p.92 / PDFp.114
-
-### 2. 原文陈述
-
-> In practice the choice $`\sigma=1/2`$ is used to avoid spurious damping (it can be demonstrated for a simple model problem); this certainly would appear to be desirable in the setting of molecular dynamics.
-
-### 3. 原文证明
-
-原书无独立完整证明。
-原书未给独立完整证明。
-
-### 4. 完整当前Lean（原文与修正版独立列出）
-
-原文版、既有数学解释及同组辅助声明：
-
-```lean
-theorem newmarkDamping :
-  ∀ (G : Q 2 → Q 2) Ω β h,
-    ContDiff ℝ 1 G → (∀ z,
-      G z 1 = z 1-h/2*Ω^2*(z 0+G z 0) ∧
-      G z 0 = z 0+h*z 1-h^2*((1/2-β)*Ω^2*z 0+β*Ω^2*G z 0)) →
-    1+h^2*β*Ω^2 ≠ 0 → ∀ z, (textbookCoordinateJacobian G z).det = 1 := by
-  sorry
+theorem flowDet
+    (f : ((Fin n) → ℝ) → (Fin n) → ℝ) (hf : ContDiff ℝ 1 f)
+    (hdiv : ∀ z, (textbookCoordinateJacobian f z).trace = 0)
+    (Φ : ℝ × ((Fin n) → ℝ) → (Fin n) → ℝ) (hΦ : ContDiff ℝ 2 Φ) (τ : ℝ)
+    (hODE : ∀ t ∈ Icc 0 τ, ∀ z, HasDerivAt (fun s => Φ (s, z)) (f (Φ (t, z))) t)
+    (hinit : (fun z => Φ (0, z)) = id) (_hτ : 0 < τ) :
+    (∀ t ∈ Icc 0 τ, ∀ z, (textbookCoordinateJacobian (fun y => Φ (t, y)) z).det = 1 ) ∧
+    (∀ t ∈ Icc 0 τ, ∀ S : Set (Q n), MeasurableSet S →
+      volume ((fun z ↦ Φ (t,z)) '' S) = volume S) := by
+  constructor
+  · apply MolecularDynamics.textbookDivergenceFreeFlowJacobian_det_eq_one_of_jointC2 <;> assumption
+  · exact MolecularDynamics.textbookDivergenceFreeFlow_volume_image_of_jointC2 f hf hdiv Φ hΦ τ hODE hinit
 ```
 
 ### 5. 对照表
@@ -1049,152 +693,32 @@ theorem newmarkDamping :
 | 原文成分 | Lean对应 | 说明 |
 |---|---|---|
 | 当前覆盖范围 | 本条所引原句及展示公式；单个记号归入context\_notation。 | 仅承诺明确列出的数学内容 |
-| 对象、量词、假设和定义/结论 | `MD.Ch02.newmarkDamping` | 完整代码见第4段；两个版本独立列出 |
-| 技术资格或版本解释 | [EXTRA]限定原文simple model为单位质量线性振子；h步隐式线性系统非奇异；用实际放大矩阵det=1表达无面积收缩，不声称任意势能能量恒定。 | [EXTRA] |
+| 对象、量词、假设和定义/结论 | `MD.Ch02.flowDet` | 完整代码见第4段；两个版本独立列出 |
+| 技术资格或版本解释 | [EXTRA]Φ联合C²、f C¹、Φ0=id，τ>0及实际ODE；D0=1由Jacobian初值而非结论假设。 | [EXTRA] |
+| 技术资格或版本解释 | [EXTRA] 补全可测集合真实Lebesgue体积结论，保留det=1；显式τ>0对应原[EXTRA]。已有证明仅用两条已证正式结论作合取小修补，无新证明路线。 | [EXTRA] |
 
-[EXTRA] [EXTRA]限定原文simple model为单位质量线性振子；h步隐式线性系统非奇异；用实际放大矩阵det=1表达无面积收缩，不声称任意势能能量恒定。
-
-### 6. 审计结论
-
-本地限定解释与原文问题见上列范围及对照；逐声明编译、公理结果见第7段。
-
-网站：网站PASS（绑定版本 f24b625cda35c51074f87df43493f35787dd9137d25683675cb793b757d111bb）。
-网站原返回（对应其审校版本）：PASS；Ch02.lean:1343–1349；Q 2=Fin 2→ℝ，坐标0为q、1为p。量词依次为∀G,Ω,β,h，C¹条件、所有初值的两条实际隐式更新式、D=1+h²βΩ²≠0，最后∀z。Ch02\_deps.txt:2365–2370将textbookCoordinateJacobian定义为实际fderiv的标准基矩阵，条目(i,j)为(fderiv ℝ G z (Pi.single j 1))(i)，因此结论确为放大矩阵的行列式。展开更新得到a=h²Ω²、A=1-(1/2-β)a，Q=(Aq+hp)/D，P=p-hΩ²(q+Q)/2；矩阵为[[A/D,h/D],[-hΩ²(1+A/D)/2,1-a/(2D)]]，det=(A+a/2)/D=1。[EXTRA]单位质量线性振子合理落实原文simple model，非奇异条件使该全局求解可定义；C¹用于真实导数，在线性模型中也可由公式推出，属合理冗余。按照已披露的“无面积收缩”解释，结论忠实表达模型层面的阻尼检验；并未要求任意势能能量守恒或任意步长谱稳定。此条无[ERRATUM?]。定理体含sorry，PASS仅为签名语义判断，不表示已完成Lean证明。
-
-### 7. 状态与证明位置
-
-incomplete；`MD.Ch02.newmarkDamping`：未证（缺大型理论）。
-位置：[Blueprint/Ch02.lean](../../../../Blueprint/Ch02.lean#L1969)；逐声明核验：blueprint/closeout24/ch02/errata-05.log。
-
-## 1. MD-2.5.3-NewmarkNotSymplectic · unnumbered_claim · 印刷p.92 / PDFp.114
-
-### 2. 原文陈述
-
-> The implicit Newmark methods are not symplectic, but a related family of symplectic methods can be constructed by replacing interpolated forces by forces evaluated at interpolated positions [395].
-
-### 3. 原文证明
-
-原书无独立完整证明。
-原书未给独立完整证明。
-
-### 4. 完整当前Lean（原文与修正版独立列出）
-
-原文版、既有数学解释及同组辅助声明：
-
-```lean
-theorem newmarkNotSymplectic :
-  ∃ (U : Q 1 → ℝ) (β h : ℝ) (G : SymplecticCoordinates 1 → SymplecticCoordinates 1),
-    ContDiff ℝ 3 U ∧ β ≠ 0 ∧ h ≠ 0 ∧ ContDiff ℝ 1 G ∧
-    (∀ z, newmarkMassCorrected (fun _ => 1) (textbookPotentialForce U) (1/2) β h
-      (unpack z) (unpack (G z))) ∧ ¬ IsTextbookSymplecticMap G := by
-  sorry
-
-
-
-/-- 修正版，对应原文 MD-2.5.3-NewmarkNotSymplectic。改动：将已有带明示资格的数学解释独立命名为修正版；原书逐字记录及已有声明保留。完整原句超出本声明部分在覆盖缺口/审阅问题中列明，不把有限资格解释当作原句无条件成立。 -/
-```
-
-独立修正版：
-
-```lean
-theorem newmarkNotSymplectic_corrected :
-  ∃ (U : Q 1 → ℝ) (β h : ℝ) (G : SymplecticCoordinates 1 → SymplecticCoordinates 1),
-    ContDiff ℝ 3 U ∧ β ≠ 0 ∧ h ≠ 0 ∧ ContDiff ℝ 1 G ∧
-    (∀ z, newmarkMassCorrected (fun _ => 1) (textbookPotentialForce U) (1/2) β h
-      (unpack z) (unpack (G z))) ∧ ¬ IsTextbookSymplecticMap G := by
-  first
-  | rfl
-  | assumption
-  | solve | simp only
-  | sorry
-```
-
-### 5. 对照表
-
-| 原文成分 | Lean对应 | 说明 |
-|---|---|---|
-| 当前覆盖范围 | 保留完整原文引文；Lean仅覆盖第4段明示的定义与限定结论，原书疑误或超出该陈述的内容不冒称已形式化。各版本差异见本条与ERRATA。 | 仅承诺明确列出的数学内容 |
-| 对象、量词、假设和定义/结论 | `MD.Ch02.newmarkNotSymplectic`；`MD.Ch02.newmarkNotSymplectic_corrected` | 完整代码见第4段；两个版本独立列出 |
-| 技术资格或版本解释 | [EXTRA]存在一个非线性势能、β≠0与非零步长的实际可微求解反例；不是排除每个线性特殊情形。单位质量与字面式一致。 | [EXTRA] |
-| 技术资格或版本解释 | [ERRATUM?] 将已有带明示资格的数学解释独立命名为修正版；原书逐字记录及已有声明保留。完整原句超出本声明部分在覆盖缺口/审阅问题中列明，不把有限资格解释当作原句无条件成立。 | [EXTRA] |
-
-[EXTRA] [EXTRA]存在一个非线性势能、β≠0与非零步长的实际可微求解反例；不是排除每个线性特殊情形。单位质量与字面式一致。；[ERRATUM?] 将已有带明示资格的数学解释独立命名为修正版；原书逐字记录及已有声明保留。完整原句超出本声明部分在覆盖缺口/审阅问题中列明，不把有限资格解释当作原句无条件成立。
-
-### 6. 审计结论
-
-本地限定解释与原文问题见上列范围及对照；逐声明编译、公理结果见第7段。
-
-网站：原书疑误/资格待导师；原文与修正版并列。
-网站原返回（对应其审校版本）：FAIL；Ch02.lean:1353–1358；以原样沿用json\_review中的校正文句为审计对象。已展开Ch02\_deps.txt:33的SymplecticCoordinates 1=(Fin 1⊕Fin 1)→ℝ、2936的unpack z=(z∘Sum.inl,z∘Sum.inr)、583–585的textbookPotentialForce U q i=-(fderiv ℝ U q)(Pi.single i 1)，以及2926–2929的newmarkMassCorrected。m≡1时invMass为恒等，故关系确与字面Newmark一致。238–242的textbookJacobian使用真实fderiv，272–275的IsTextbookSymplecticMap要求C¹且所有点的Jacobian满足138–139的AᵀJA=J，J由39–40定义为[[0,I],[-I,0]]。签名存在量化U、β、h、G，再同时要求C³势能、β≠0、h≠0、C¹全局求解、所有初值满足更新及非辛性；已有C¹，故非辛性真正意味着某点Jacobian不保持J。[EXTRA]单位质量、非零参数及一个实际反例可合理见证该方法并非普遍辛；全局求解是额外构造负担，不能代表所有隐式参数。注释声称非线性势能，但签名没有显式非线性谓词（该描述不应当作已明示假设）。决定性缺失是原句第二子句：通过以插值位置处的力替换插值力构造相关辛方法族。现有签名完全没有该族的构造或辛性结论，故整体FAIL。无[ERRATUM?]；定理体含sorry与此语义缺失分开。
-
-### 7. 状态与证明位置
-
-incomplete；`MD.Ch02.newmarkNotSymplectic`：未证（原书疑误不证）；`MD.Ch02.newmarkNotSymplectic_corrected`：未证（时间盒止）。
-位置：[Blueprint/Ch02.lean](../../../../Blueprint/Ch02.lean#L1980)；逐声明核验：blueprint/closeout24/ch02/errata-05.log。
-
-## 1. MD-2.5.4-MultiTaylor · definition · 印刷p.92 / PDFp.114
-
-### 2. 原文陈述
-
-> we may approximate a single step by
-
-$$
-\boldsymbol z_{n+1}=\boldsymbol z_n+h\dot{\boldsymbol z}_n+\frac{h^2}{2}\ddot{\boldsymbol z}_n+\cdots+\frac{h^k}{k!}\boldsymbol z_n^{(k)},
-$$
-
-
-> where it is possible to make use of higher order derivatives of the solution in formulating the method. Then using the differential equation, the time derivatives may be replaced by elementary differentials of the vector field.
-
-### 3. 原文证明
-
-原书无独立完整证明。
-原书未给独立完整证明。
-
-### 4. 完整当前Lean（原文与修正版独立列出）
-
-原文版、既有数学解释及同组辅助声明：
-
-```lean
-def bp_multiTaylor {n : ℕ} (d : ℕ → Q n) (h : ℝ) (k : ℕ) : Q n :=
-  ∑ j ∈ Finset.range (k+1), (h^j / (Nat.factorial j : ℝ)) • d j
-```
-
-### 5. 对照表
-
-| 原文成分 | Lean对应 | 说明 |
-|---|---|---|
-| 当前覆盖范围 | 本条所引原句及展示公式；单个记号归入context\_notation。 | 仅承诺明确列出的数学内容 |
-| 对象、量词、假设和定义/结论 | `MD.Ch02.bp_multiTaylor` | 完整代码见第4段；两个版本独立列出 |
-
-[EXTRA] 无新增技术资格。
+[EXTRA] [EXTRA]Φ联合C²、f C¹、Φ0=id，τ>0及实际ODE；D0=1由Jacobian初值而非结论假设。；[EXTRA] 补全可测集合真实Lebesgue体积结论，保留det=1；显式τ>0对应原[EXTRA]。已有证明仅用两条已证正式结论作合取小修补，无新证明路线。
 
 ### 6. 审计结论
 
 本地限定解释与原文问题见上列范围及对照；逐声明编译、公理结果见第7段。
 
 网站：网站PASS（EAUDIT复审）。
-网站原返回（对应其审校版本）：PASS；这是截断Taylor步的定义而非关于任意导数数据的收敛定理。隐式n∈ℕ，d:ℕ→(Fin n→ℝ)，h∈ℝ、k∈ℕ；range(k+1)恰取j=0,…,k，实数阶乘强制转换和标量乘法正确。j=0项为d(0)，其余为h^j/j!乘d(j)，与原式逐项对应；k=0得到d(0)。d与真实解时间导数的对应已在context\_notation交代，定义无需再加入ODE解存在或可微性假设。没有声称已实现由向量场计算elementary differentials，也没有额外误差阶结论。[EXTRA]为空，与声明一致。
+网站原返回（对应其审校版本）：PASS；印刷73页In particular至紧凑展示式逐字一致，保留D≡D(0)=1及体积恒定。签名任意维数，f为C¹且全局散度零，Φ联合C²、真实ODE、恒等初值，另明确0<τ。结论在整个[0,τ]上对每个初值给实际流Jacobian det=1，并对每个可测S给实际体积保存。D(0)=1来自初值；没有把Jacobian、det或体积结论放进假设。 本次仅审校所附声明签名与定义，不执行工程编译，不补证明；sorry不作为签名不通过理由。
 
 ### 7. 状态与证明位置
 
-self-contained；`MD.Ch02.bp_multiTaylor`：定义。
-位置：[Blueprint/Ch02.lean](../../../../Blueprint/Ch02.lean#L2002)；逐声明核验：blueprint/closeout24/ch02/errata-05.log。
+checked+documented priors；`MD.Ch02.flowDet`：已证。
+位置：[Blueprint/Ch02.lean](../../../../Blueprint/Ch02.lean#L803)；逐声明核验：blueprint/closeout24/ch02/errata-05.log。
 
-## 1. MD-2.5.4-TIPotential · definition · 印刷p.92–93 / PDFp.114–115
+## 1. MD-2.3.1-LJOscillator · Example 2.3 (model) · 印刷p.73 / PDFp.95
 
 ### 2. 原文陈述
 
-> the Takahashi-Imada method [355] (also known as Rowlands’ method [316]) has the same form as the Verlet method
+> A 1-d oscillator with Lennard-Jones potential is described by the equations
 
 $$
-\hat{\boldsymbol P}=\boldsymbol p-(h/2)\nabla\tilde U(\boldsymbol q),\quad\boldsymbol Q=\boldsymbol q+hM^{-1}\hat{\boldsymbol P},\quad\boldsymbol P=\hat{\boldsymbol P}-(h/2)\nabla\tilde U(\boldsymbol Q),
-$$
-
-
-> where the corresponding potential energy function is
-
-$$
-\tilde U(\boldsymbol q)=U(\boldsymbol q)-\frac{h^2}{24}\nabla U(\boldsymbol q)^TM^{-1}\nabla U(\boldsymbol q).
+\dot q=p,\qquad\dot p=-\varphi_{LJ}'(q).
 $$
 
 
@@ -1209,224 +733,14 @@ $$
 原文版、既有数学解释及同组辅助声明：
 
 ```lean
-def tiMethod {n : ℕ} (m : Fin n → ℝ) (U : Q n → ℝ) (h : ℝ) : Z n → Z n :=
-  verlet m (fun q => -grad (takahashiPotential m U h) q) h
-
-
-
-/-- 修正版，对应原文 MD-2.5.4-TIPotential。改动：选择原负号改势路线，物理包装明示正质量和C²势；力式修正的加号在TIForce_corrected中另列。 -/
-```
-
-独立修正版：
-
-```lean
-def tiMethod_corrected {n : ℕ} (m : Fin n → ℝ) (U : Q n → ℝ)
-    (_hm : positiveMass m) (_hU : ContDiff ℝ 2 U) (h : ℝ) : Z n → Z n :=
-  verlet m (fun q => -grad (takahashiPotential m U h) q) h
-```
-
-### 5. 对照表
-
-| 原文成分 | Lean对应 | 说明 |
-|---|---|---|
-| 当前覆盖范围 | 保留完整原文引文；Lean仅覆盖第4段明示的定义与限定结论，原书疑误或超出该陈述的内容不冒称已形式化。各版本差异见本条与ERRATA。 | 仅承诺明确列出的数学内容 |
-| 对象、量词、假设和定义/结论 | `MD.Ch02.tiMethod`；`MD.Ch02.tiMethod_corrected` | 完整代码见第4段；两个版本独立列出 |
-| 技术资格或版本解释 | [ERRATUM?] 选择原负号改势路线，物理包装明示正质量和C²势；力式修正的加号在TIForce\_corrected中另列。 | [EXTRA] |
-
-[EXTRA] [ERRATUM?] 选择原负号改势路线，物理包装明示正质量和C²势；力式修正的加号在TIForce\_corrected中另列。
-
-### 6. 审计结论
-
-本地限定解释与原文问题见上列范围及对照；逐声明编译、公理结果见第7段。
-
-网站：原书疑误/资格待导师；原文与修正版并列。
-网站原返回（对应其审校版本）：NEEDS\_HUMAN；逐项展开定义：n∈ℕ，m:Fin n→ℝ，U:Q n→ℝ，h∈ℝ，输入输出均为位置/动量对Z n。takahashiPotential中的减号、1/24、h²及Σ\_i(∂_iU)²/m\_i，与原页在M=diag(m\_i)时的改势完全一致；tiMethod使用该改势的负梯度。令F=−grad Ũ，verlet的位置为q+h M⁻¹p+(h²/2)M⁻¹F(q)，等于原页用p̂=p+(h/2)F(q)所得q+hM⁻¹p̂；输出动量为p+(h/2)(F(q)+F(Q))，等于p̂+(h/2)F(Q)。故没有半步系数或力号的转录错误。但本定义忠实于原页负号改势，并不同时满足紧随的正号括号力式；按要求将原书数学疑误交人工，不静默修复。另需人工确认M的对角质量约定：此签名没有一般矩阵参数；m也没有正性/非零约束，U没有可微性约束，故只能把物理方法理解为限制到非零（通常正）质量和足够光滑势的使用域。Lean在零质量或不可微势处的总函数扩展不构成原书物理含义。无\_corrected/_counterexample声明可供另审；没有[EXTRA]说明来补充上述使用域。
-
-### 7. 状态与证明位置
-
-self-contained；`MD.Ch02.tiMethod`：定义；`MD.Ch02.tiMethod_corrected`：定义。
-位置：[Blueprint/Ch02.lean](../../../../Blueprint/Ch02.lean#L2007)；逐声明核验：blueprint/closeout24/ch02/errata-05.log。
-
-## 1. MD-2.5.4-TIForce · unnumbered_claim · 印刷p.93 / PDFp.115
-
-### 2. 原文陈述
-
-> The forces arising from such a modified potential can be worked out:
-
-$$
-\tilde F=-\nabla\tilde U=-\left[I+\frac{h^2}{12}U''M^{-1}\right]\nabla U,
-$$
-
-
-> where $`U''`$ is the Hessian matrix of the potential.
-
-### 3. 原文证明
-
-原书无独立完整证明。
-原书未给独立完整证明。
-
-### 4. 完整当前Lean（原文与修正版独立列出）
-
-原文版、既有数学解释及同组辅助声明：
-
-```lean
-theorem tiForce :
-  ∀ n (m : Fin n → ℝ) (U : Q n → ℝ) h q,
-    positiveMass m → ContDiff ℝ 2 U →
-    -grad (takahashiPotential m U h) q =
-      -grad U q - (h^2/12) • (fderiv ℝ (grad U) q) (invMass m (grad U q)) := by
-  sorry
-
-
-
-/-- 修正版，对应原文 MD-2.5.4-TIForce。改动：保留负号改势，负梯度力修正项应为加号；未改原书展示式。 -/
-```
-
-独立修正版：
-
-```lean
-theorem tiForce_corrected :
-  ∀ n (m : Fin n → ℝ) (U : Q n → ℝ) h q,
-    positiveMass m → ContDiff ℝ 2 U →
-    -grad (takahashiPotential m U h) q =
-      -grad U q + (h^2/12) • (fderiv ℝ (grad U) q) (invMass m (grad U q)) := by
-  first
-  | rfl
-  | assumption
-  | solve | simp only
-  | sorry
-```
-
-### 5. 对照表
-
-| 原文成分 | Lean对应 | 说明 |
-|---|---|---|
-| 当前覆盖范围 | 保留完整原文引文；Lean仅覆盖第4段明示的定义与限定结论，原书疑误或超出该陈述的内容不冒称已形式化。各版本差异见本条与ERRATA。 | 仅承诺明确列出的数学内容 |
-| 对象、量词、假设和定义/结论 | `MD.Ch02.tiForce`；`MD.Ch02.tiForce_corrected` | 完整代码见第4段；两个版本独立列出 |
-| 技术资格或版本解释 | 正质量，U C²，真实改势梯度及Hessian作用。 | [EXTRA] |
-| 技术资格或版本解释 | [ERRATUM?] 保留负号改势，负梯度力修正项应为加号；未改原书展示式。 | [EXTRA] |
-
-[EXTRA] 正质量，U C²，真实改势梯度及Hessian作用。；[ERRATUM?] 保留负号改势，负梯度力修正项应为加号；未改原书展示式。
-
-### 6. 审计结论
-
-本地限定解释与原文问题见上列范围及对照；逐声明编译、公理结果见第7段。
-
-网站：原书疑误/资格待导师；原文与修正版并列。
-网站原返回（对应其审校版本）：FAIL；展开依据：Ch02\_deps.txt:2816、2840、2932–2934、2948，Ch02.lean:1371–1376。量词覆盖所有 n,m,U,h,q；positiveMass 是逐坐标 m\_i>0，ContDiff ℝ 2 U 保证真实二阶导数及 Hessian 对称性；fderiv ℝ (grad U) q 对 invMass m (grad U q) 的作用是 Hess(U)M⁻¹∇U。实际改势含负号，其负梯度必须为 −∇U+(h²/12)Hess(U)M⁻¹∇U，签名却取减号。它逐字保留了原书力式，却与其所调用的实际改势矛盾并成为假定理，因此不能作为可证明的忠实数学陈述通过。ERRATUM? 成立。EXTRA 中 C² 是充分且合理的统一光滑性条件（强于某一点有二阶导数）；正质量保证教材机械质量可逆，但纯代数恒等式只需各质量非零，故是物理上合理而非最弱必要条件。签名体有 sorry，证明状态独立于已经确定的语义失败。
-
-### 7. 状态与证明位置
-
-incomplete；`MD.Ch02.tiForce`：未证（原书疑误不证）；`MD.Ch02.tiForce_corrected`：未证（时间盒止）。
-位置：[Blueprint/Ch02.lean](../../../../Blueprint/Ch02.lean#L2021)；逐声明核验：blueprint/closeout24/ch02/errata-05.log。
-
-## 1. MD-2.5.4-TIOrder · unnumbered_claim · 印刷p.93 / PDFp.115
-
-### 2. 原文陈述
-
-> This method can be shown to have effective order four, meaning that there is a change of variables $`\chi_h`$ which can be used to transform the Takahashi-Imada method into one of order four using the processing technique of Sect. 2.4.5. The potential energy modification has been specifically chosen to annihilate terms in the local error expansion (after coordinate transformation).
-
-### 3. 原文证明
-
-原书无独立完整证明。
-原书未给独立完整证明。
-
-### 4. 完整当前Lean（原文与修正版独立列出）
-
-原文版、既有数学解释及同组辅助声明：
-
-```lean
-theorem tiOrder :
-  ∀ n (m : Fin n → ℝ) (U : Q n → ℝ), positiveMass m → ContDiff ℝ ⊤ U →
-    ∃ χ : ℝ → Z n ≃ₜ Z n, ∀ (γ : ℝ → Z n) τ, 0 < τ →
-      solution (mechanicalField m (fun q => -grad U q)) γ 0 τ → ContinuousOn γ (Icc 0 τ) →
-      ∃ C > 0, ∃ ν₀ : ℕ, 0 < ν₀ ∧ ∀ ν ≥ ν₀,
-        oneStepMaxError (fun h => textbookProcessedMethod χ
-          (fun k => verlet m (fun q => -grad (takahashiPotential m U k) q) k) h)
-          (τ/ν) γ ν ≤ C*(τ/ν)^4 := by
-  sorry
-
-
-
-/-- 修正版，对应原文 MD-2.5.4-TIOrder。改动：将已有带明示资格的数学解释独立命名为修正版；原书逐字记录及已有声明保留。完整原句超出本声明部分在覆盖缺口/审阅问题中列明，不把有限资格解释当作原句无条件成立。 -/
-```
-
-独立修正版：
-
-```lean
-theorem tiOrder_corrected :
-  ∀ n (m : Fin n → ℝ) (U : Q n → ℝ), positiveMass m → ContDiff ℝ ⊤ U →
-    ∃ χ : ℝ → Z n ≃ₜ Z n, ∀ (γ : ℝ → Z n) τ, 0 < τ →
-      solution (mechanicalField m (fun q => -grad U q)) γ 0 τ → ContinuousOn γ (Icc 0 τ) →
-      ∃ C > 0, ∃ ν₀ : ℕ, 0 < ν₀ ∧ ∀ ν ≥ ν₀,
-        oneStepMaxError (fun h => textbookProcessedMethod χ
-          (fun k => verlet m (fun q => -grad (takahashiPotential m U k) q) k) h)
-          (τ/ν) γ ν ≤ C*(τ/ν)^4 := by
-  first
-  | rfl
-  | assumption
-  | solve | simp only
-  | sorry
-```
-
-### 5. 对照表
-
-| 原文成分 | Lean对应 | 说明 |
-|---|---|---|
-| 当前覆盖范围 | 保留完整原文引文；Lean仅覆盖第4段明示的定义与限定结论，原书疑误或超出该陈述的内容不冒称已形式化。各版本差异见本条与ERRATA。 | 仅承诺明确列出的数学内容 |
-| 对象、量词、假设和定义/结论 | `MD.Ch02.tiOrder`；`MD.Ch02.tiOrder_corrected` | 完整代码见第4段；两个版本独立列出 |
-| 技术资格或版本解释 | 正质量，U C∞；实际步依照上项负号改势；处理器为实际Homeomorph，原轨迹及有限时间窗误差结论。 | [EXTRA] |
-| 技术资格或版本解释 | [ERRATUM?] 将已有带明示资格的数学解释独立命名为修正版；原书逐字记录及已有声明保留。完整原句超出本声明部分在覆盖缺口/审阅问题中列明，不把有限资格解释当作原句无条件成立。 | [EXTRA] |
-
-[EXTRA] 正质量，U C∞；实际步依照上项负号改势；处理器为实际Homeomorph，原轨迹及有限时间窗误差结论。；[ERRATUM?] 将已有带明示资格的数学解释独立命名为修正版；原书逐字记录及已有声明保留。完整原句超出本声明部分在覆盖缺口/审阅问题中列明，不把有限资格解释当作原句无条件成立。
-
-### 6. 审计结论
-
-本地限定解释与原文问题见上列范围及对照；逐声明编译、公理结果见第7段。
-
-网站：原书疑误/资格待导师；原文与修正版并列。
-网站原返回（对应其审校版本）：FAIL；全部使用定义已找到：Q/Z、grad、invMass、verlet、takahashiPotential、solution、mechanicalField、positiveMass 见 Ch02\_deps.txt:2816–2817、2840、2859–2861、2932–2934、2941–2948；oneStepIterate/oneStepMaxError 见1444–1463；textbookConjugateMap/textbookProcessedMethod 见 ProcessedMethods 段（用原始行编号1649、1690定位，段中有额外 CR）。solution 是闭区间每点 HasDerivWithinAt γ (f(γ t))，mechanicalField=(M⁻¹p,−∇U(q))，所以是原机械轨迹。HasDerivWithinAt 已蕴含区间内连续，显式 ContinuousOn γ 冗余但合理。处理映射确为 χ\_h⁻¹∘B\_h∘χ\_h，迭代从 γ(0) 开始，等价于先 χ\_h 预处理、迭代真实 B\_h、再逆变换；误差是网格 0,…,ν 上完整位置/动量乘积范数最大值，不是单步误差。量词 χ 在 γ,τ 之前，C,ν₀ 在其之后，保证统一处理器而允许误差常数依赖轨迹与时间窗，ν₀>0 排除零分母，均合理。正固定对角质量与 U C∞ 是足够光滑的背景条件，C∞ 并非四阶所需最弱条件。失败依据是结论范围与处理器条件：原文还明确说坐标变换后局部误差展开项被消去，签名只有全局四阶界，没有局部五阶缺陷或消项断言；它对任意光滑势能要求整个 Z n 上的 Homeomorph，强于通常在轨迹邻域的变量变换，却完全不要求 χ\_h 光滑、随 h 正则或趋于恒等，无法承载所引用的局部误差展开。这个无正则性的全局共轭存在性不能直接等同于原文有效阶陈述。DEPENDENT\_ERRATUM 所指来源符号冲突确实存在，但不能只据冲突断言负号版本无有效四阶；下方谐振子计算说明这一限制。这里不声称签名允许的任意不规则 Homeomorph 都不存在；本条 FAIL 已由上述具体缺失条款和不合理强化成立，无须借缺依赖写 NEEDS\_HUMAN。定理体为 sorry，未验证其证明。
-
-### 7. 状态与证明位置
-
-incomplete；`MD.Ch02.tiOrder`：未证（原书疑误不证）；`MD.Ch02.tiOrder_corrected`：未证（时间盒止）。
-位置：[Blueprint/Ch02.lean](../../../../Blueprint/Ch02.lean#L2046)；逐声明核验：blueprint/closeout24/ch02/errata-05.log。
-
-## 1. MD-2.5.5-Beeman · Example 2.8 (Beeman’s Algorithm) · 印刷p.94 / PDFp.116
-
-### 2. 原文陈述
-
-> The method treats the positions and momenta differently, updating these from the formulas
-
-$$
-\boldsymbol q_{n+1}=\boldsymbol q_n+h\dot{\boldsymbol q}_n+\frac{h^2}{6}[4\ddot{\boldsymbol q}_n-\ddot{\boldsymbol q}_{n-1}].\tag{2.31}
-$$
-
-
-
-$$
-\boldsymbol p_{n+1}=\boldsymbol p_n+\frac h6 M[2\ddot{\boldsymbol q}_{n+1}+5\ddot{\boldsymbol q}_n-\ddot{\boldsymbol q}_{n-1}].\tag{2.32}
-$$
-
-
-> The shorthand $`\dot{\boldsymbol q}_n\equiv M^{-1}\boldsymbol p_n`$, $`\ddot{\boldsymbol q}_n\equiv M^{-1}F(\boldsymbol q_n)`$ has been used.
-
-### 3. 原文证明
-
-原书无独立完整证明。
-原书未给独立完整证明。
-
-### 4. 完整当前Lean（原文与修正版独立列出）
-
-原文版、既有数学解释及同组辅助声明：
-
-```lean
-def beeman {n : ℕ} (m : Fin n → ℝ) (F : Q n → Q n) (h : ℝ) (qPrev : Q n) (z : Z n) : Z n :=
-  let a := invMass m (F z.1)
-  let aPrev := invMass m (F qPrev)
-  let q := z.1+h • invMass m z.2+(h^2/6) • ((4 : ℝ) • a-aPrev)
-  let p := z.2+(h/6) • mass m ((2 : ℝ) • invMass m (F q)+(5 : ℝ) • a-aPrev)
-  (q,p)
+def ljOscillatorEquation (σ ε : ℝ) (_hσ : 0 < σ) (_hε : 0 < ε)
+    (γ : ℝ → ℝ × ℝ) (I : Set ℝ) : Prop :=
+  (∀ t ∈ I, 0 < (γ t).1) ∧
+  ∀ t ∈ I, HasDerivAt γ
+    ((γ t).2,-deriv (fun q : ℝ ↦ 4*ε*((σ/q)^12-(σ/q)^6)) (γ t).1) t
+
+def oscillatorEquation (φ : ℝ → ℝ) (γ : ℝ → ℝ × ℝ) (I : Set ℝ) : Prop :=
+  ∀ t ∈ I, HasDerivAt γ ((γ t).2,-deriv φ (γ t).1) t
 ```
 
 ### 5. 对照表
@@ -1434,7 +748,156 @@ def beeman {n : ℕ} (m : Fin n → ℝ) (F : Q n → Q n) (h : ℝ) (qPrev : Q 
 | 原文成分 | Lean对应 | 说明 |
 |---|---|---|
 | 当前覆盖范围 | 本条所引原句及展示公式；单个记号归入context\_notation。 | 仅承诺明确列出的数学内容 |
-| 对象、量词、假设和定义/结论 | `MD.Ch02.beeman` | 完整代码见第4段；两个版本独立列出 |
+| 对象、量词、假设和定义/结论 | `MD.Ch02.ljOscillatorEquation`；`MD.Ch02.oscillatorEquation` | 完整代码见第4段；两个版本独立列出 |
+| 技术资格或版本解释 | [EXTRA] 本条绑定明确LJ势4ε[(σ/q)^12−(σ/q)^6]、正参数及正位置；原一般势关系另保留为辅助oscillatorEquation。 | [EXTRA] |
+
+[EXTRA] [EXTRA] 本条绑定明确LJ势4ε[(σ/q)^12−(σ/q)^6]、正参数及正位置；原一般势关系另保留为辅助oscillatorEquation。
+
+### 6. 审计结论
+
+本地限定解释与原文问题见上列范围及对照；逐声明编译、公理结果见第7段。
+
+网站：网站PASS（EAUDIT复审）。
+网站原返回（对应其审校版本）：PASS；印刷73页Example 2.3的模型句和q̇=p、ṗ=−φ′_LJ(q)一致；74页只提供后续例子背景。主定义绑定明确LJ势4ε[(σ/q)^12−(σ/q)^6]、σ>0、ε>0，要求每个t∈I的位置正且γ在该时刻有真实二分量导数(p,−φ′)。这是单位质量振子，两个方程及负号完整。一般oscillatorEquation是额外辅助定义，不代替主定义的LJ资格。正q使显式势光滑，排除了q=0除法总化。 本次仅审校所附声明签名与定义，不执行工程编译，不补证明；sorry不作为签名不通过理由。
+
+### 7. 状态与证明位置
+
+self-contained；`MD.Ch02.ljOscillatorEquation`：定义；`MD.Ch02.oscillatorEquation`：定义。
+位置：[Blueprint/Ch02.lean](../../../../Blueprint/Ch02.lean#L818)；逐声明核验：blueprint/closeout24/ch02/errata-05.log。
+
+## 1. MD-2.3.1-LJBoundedPeriodic · unnumbered_claim · 印刷p.74 / PDFp.96
+
+### 2. 原文陈述
+
+> As a consequence of energy conservation, any bounded individual trajectory of this system will be a periodic orbit.
+
+### 3. 原文证明
+
+原书无独立完整证明。
+原书未给独立完整证明。
+
+### 4. 完整当前Lean（原文与修正版独立列出）
+
+原文版、既有数学解释及同组辅助声明：
+
+```lean
+theorem ljBoundedPeriodic : ∀ (σ ε : ℝ) (γ : ℝ → ℝ × ℝ),
+    0 < σ → 0 < ε →
+    oscillatorEquation (fun q => 4*ε*((σ/q)^12-(σ/q)^6)) γ Set.univ →
+    (∀ t, 0 < (γ t).1) → Bornology.IsBounded (Set.range γ) →
+    ∃ T > 0, ∀ t, γ (t+T) = γ t := by
+  sorry
+```
+
+### 5. 对照表
+
+| 原文成分 | Lean对应 | 说明 |
+|---|---|---|
+| 当前覆盖范围 | 本条所引原句及展示公式；单个记号归入context\_notation。 | 仅承诺明确列出的数学内容 |
+| 对象、量词、假设和定义/结论 | `MD.Ch02.ljBoundedPeriodic` | 完整代码见第4段；两个版本独立列出 |
+| 技术资格或版本解释 | LJ参数正，实际全时轨迹且位置q>0；平衡解也允许任意正周期。 | [EXTRA] |
+| 技术资格或版本解释 | [EXTRA] 依赖小修：一般ODE关系改引辅助oscillatorEquation；原显式LJ势、正参数、正位置及全部周期结论逐字保留。 | [EXTRA] |
+
+[EXTRA] LJ参数正，实际全时轨迹且位置q>0；平衡解也允许任意正周期。；[EXTRA] 依赖小修：一般ODE关系改引辅助oscillatorEquation；原显式LJ势、正参数、正位置及全部周期结论逐字保留。
+
+### 6. 审计结论
+
+本地限定解释与原文问题见上列范围及对照；逐声明编译、公理结果见第7段。
+
+网站：网站PASS（EAUDIT复审）。
+网站原返回（对应其审校版本）：PASS；印刷74页原句逐字一致。Lean对正参数σ,ε、定义于全部实时间的实际LJ解γ、始终q>0、整条相轨迹范围有界，推出存在T>0且对所有实t有γ(t+T)=γ(t)。全时量化避免仅在有限时间窗内有界的逃逸解成为反例。LJ势在正半轴只有一个有限临界点（极小值）；非平衡有界全轨道处于两个有限转向点之间的闭能量曲线，平衡轨迹也满足存在正周期。没有将一般一维势的有界必周期误用为无条件命题，签名明确绑定LJ。 本次仅审校所附声明签名与定义，不执行工程编译，不补证明；sorry不作为签名不通过理由。
+
+### 7. 状态与证明位置
+
+incomplete；`MD.Ch02.ljBoundedPeriodic`：未证（缺大型理论）。
+位置：[Blueprint/Ch02.lean](../../../../Blueprint/Ch02.lean#L830)；逐声明核验：blueprint/closeout24/ch02/errata-05.log。
+
+## 1. MD-2.3.2-LinearDivergence · unnumbered_claim · 印刷p.74–75 / PDFp.96–97
+
+### 2. 原文陈述
+
+> Consider a linear differential equation system in $`\mathbb R^m`$,
+
+$$
+\dot{\boldsymbol z}=S\boldsymbol z,
+$$
+
+
+> for some matrix $`S\in\mathbb R^{m\times m}`$. The condition for the flow of this system to conserve volume is just that the trace of $`S`$ (which is the divergence of the vector field $`f(\boldsymbol z)=S\boldsymbol z`$) be zero.
+
+### 3. 原文证明
+
+原书无独立完整证明。
+原书未给独立完整证明。
+
+### 4. 完整当前Lean（原文与修正版独立列出）
+
+原文版、既有数学解释及同组辅助声明：
+
+```lean
+theorem linearDivergence : ∀ n (S : Matrix (Fin n) (Fin n) ℝ)
+    (Φ : ℝ × Q n → Q n), ContDiff ℝ 2 Φ → (∀ z, Φ (0,z)=z) →
+    (∀ t z, HasDerivAt (fun s => Φ (s,z)) (S.mulVec (Φ (t,z))) t) →
+    (∀ z, divergence S.mulVec z=S.trace) ∧
+    ((∀ t, ∀ T : Set (Q n), MeasurableSet T →
+      volume ((fun z => Φ (t,z)) '' T)=volume T) ↔ S.trace=0) := by
+  sorry
+```
+
+### 5. 对照表
+
+| 原文成分 | Lean对应 | 说明 |
+|---|---|---|
+| 当前覆盖范围 | 本条所引原句及展示公式；单个记号归入context\_notation。 | 仅承诺明确列出的数学内容 |
+| 对象、量词、假设和定义/结论 | `MD.Ch02.linearDivergence` | 完整代码见第4段；两个版本独立列出 |
+| 技术资格或版本解释 | [EXTRA]实际全时C²解族Φ，Φ0=id并满足真实线性ODE；只量化可测T。 | [EXTRA] |
+
+[EXTRA] [EXTRA]实际全时C²解族Φ，Φ0=id并满足真实线性ODE；只量化可测T。
+
+### 6. 审计结论
+
+本地限定解释与原文问题见上列范围及对照；逐声明编译、公理结果见第7段。
+
+网站：网站PASS（绑定版本 f24b625cda35c51074f87df43493f35787dd9137d25683675cb793b757d111bb）。
+网站原返回（对应其审校版本）：PASS；实际读取 Ch02.lean:618–626；依赖 ReviewDefinitions.lean（合集2816、2877行）展开 Q n=Fin n→ℝ，divergence f z=(textbookCoordinateJacobian f z).trace；LiouvilleVolume.lean（2365–2370行）展开 Jacobian=LinearMap.toMatrix' (fderiv ℝ f z).toLinearMap，条目(i,j)是 Df(z)(e\_j) 的第i输出分量。因此线性向量场的 Jacobian 正是S，散度等于迹。volume 在有限实函数空间采用标准乘积 Lebesgue 体积；不是有向体积，合集2488–2492行换元明确使用绝对行列式。量词先任意n、S和实际解族Φ，再C²、初值恒等和逐时逐点ODE；结论同时保留散度公式及全时全部可测集合体积保存↔trace=0。线性解族由ODE唯一性为exp(tS)z，其行列式exp(t trace S)，所以两个方向均正确。n=0也无例外。[EXTRA]全时C²对线性系统自动可满足；初值和ODE必要地标识所说的流，可测集合限制合理。Ch02.lean证明体含sorry；此PASS仅指签名语义，不指证明完成。
+
+### 7. 状态与证明位置
+
+incomplete；`MD.Ch02.linearDivergence`：未证（缺大型理论）。
+位置：[Blueprint/Ch02.lean](../../../../Blueprint/Ch02.lean#L839)；逐声明核验：blueprint/closeout24/ch02/errata-05.log。
+
+## 1. MD-2.3.2-LinearEuler · definition · 印刷p.75 / PDFp.97
+
+### 2. 原文陈述
+
+> Applying Euler’s method to the same system results in
+
+$$
+\boldsymbol z_{n+1}=\boldsymbol z_n+hS\boldsymbol z_n=(I+hS)\boldsymbol z_n,
+$$
+
+
+
+### 3. 原文证明
+
+原书无独立完整证明。
+原书未给独立完整证明。
+
+### 4. 完整当前Lean（原文与修正版独立列出）
+
+原文版、既有数学解释及同组辅助声明：
+
+```lean
+def bp_linearEuler {n : ℕ} (S : Matrix (Fin n) (Fin n) ℝ) (h : ℝ) : Matrix (Fin n) (Fin n) ℝ :=
+  1 + h • S
+```
+
+### 5. 对照表
+
+| 原文成分 | Lean对应 | 说明 |
+|---|---|---|
+| 当前覆盖范围 | 本条所引原句及展示公式；单个记号归入context\_notation。 | 仅承诺明确列出的数学内容 |
+| 对象、量词、假设和定义/结论 | `MD.Ch02.bp_linearEuler` | 完整代码见第4段；两个版本独立列出 |
 
 [EXTRA] 无新增技术资格。
 
@@ -1443,18 +906,18 @@ def beeman {n : ℕ} (m : Fin n → ℝ) (F : Q n → Q n) (h : ℝ) (qPrev : Q 
 本地限定解释与原文问题见上列范围及对照；逐声明编译、公理结果见第7段。
 
 网站：网站PASS（绑定版本 f24b625cda35c51074f87df43493f35787dd9137d25683675cb793b757d111bb）。
-网站原返回（对应其审校版本）：PASS；已展开 Ch02\_deps.txt 中 MolecularDynamics/Chapter02/ReviewDefinitions.lean 的正式定义（合集行2816–2817、2840–2841）：Q n = Fin n → ℝ，Z n = Q n × Q n；invMass m v i = (m i)⁻¹*v i，mass m v i = m i*v i。故 z.1 是位置，z.2 在本函数中是动量，a\_i = F(q\_n)_i/m\_i，aPrev\_i = F(q_{n−1})_i/m\_i。Ch02.lean 行1392–1398 给出 qnext\_i = q\_i+h*p\_i/m\_i+(h²/6)*(4*a\_i−aPrev\_i)，pnext\_i = p\_i+(h/6)*m\_i*(2*F(qnext)_i/m\_i+5*a\_i−aPrev\_i)，逐项忠实于原页116（印刷94）公式(2.31)、(2.32)，包含在更新位置处重新求力。固定对角质量是本章机械模型的表达范围，无额外定理假设或 ERRATUM?。定义对任意实数 m 总化：零质量时实数逆元为0，而原书 M⁻¹ 仅在可逆质量域有意义；这里是有效质量域上公式的总函数延拓，不是声称零质量模型满足原物理语义，因此不判为缺失定理前提。使用时需正质量（至少每个 m\_i 非零）。缓存旧力后每步一个新力评估是上下文性质，纯函数未编码缓存或求值计数，本条 statement\_scope 不要求该复杂度结论。此项为 def，无 sorry 证明义务；其他定理的 sorry 不改变这个函数体的公式语义。
+网站原返回（对应其审校版本）：PASS；实际读取 Ch02.lean:629–630 的 bp\_linearEuler=1+h • S；并展开依赖 ReviewDefinitions.lean:2878–2879 的正式 linearEuler，二者完全相同。矩阵1为单位矩阵，标量作用逐项相乘，故其乘向量的第i分量是z\_i+h∑_j S\_ij z\_j，恰为原文z_{n+1}=z\_n+hSz\_n=(I+hS)z\_n。隐式n及任意实矩阵S、实步长h无附加限制。这里定义更新矩阵而非另添迭代存在性断言，忠实于展示式；无EXTRA、ERRATUM或sorry。
 
 ### 7. 状态与证明位置
 
-self-contained；`MD.Ch02.beeman`：定义。
-位置：[Blueprint/Ch02.lean](../../../../Blueprint/Ch02.lean#L2074)；逐声明核验：blueprint/closeout24/ch02/errata-05.log。
+self-contained；`MD.Ch02.bp_linearEuler`：定义。
+位置：[Blueprint/Ch02.lean](../../../../Blueprint/Ch02.lean#L848)；逐声明核验：blueprint/closeout24/ch02/errata-05.log。
 
-## 1. MD-2.5.5-BeemanOrder · unnumbered_claim · 印刷p.94 / PDFp.116
+## 1. MD-2.3.2-EulerVolumePrinted · unnumbered_claim · 印刷p.75 / PDFp.97
 
 ### 2. 原文陈述
 
-> The order of accuracy of the scheme above can be shown to be three.
+> and the condition for Euler’s method to conserve volume is that $`\det(I+hS)=1`$.
 
 ### 3. 原文证明
 
@@ -1466,32 +929,22 @@ self-contained；`MD.Ch02.beeman`：定义。
 原文版、既有数学解释及同组辅助声明：
 
 ```lean
-theorem beemanOrder : ∀ n (m : Fin n → ℝ) (F : Q n → Q n)
-    (γ : ℝ → Z n) τ,
-    positiveMass m → ContDiff ℝ 4 F → 0 < τ →
-    solution (mechanicalField m F) γ 0 τ → ContinuousOn γ (Icc 0 τ) →
-    ∃ C > 0, ∃ ν₀ : ℕ, 1 < ν₀ ∧ ∀ ν ≥ ν₀,
-      ∀ z : ℕ → Z n, z 0=γ 0 → z 1=γ (τ/ν) →
-        (∀ k, 1 ≤ k → z (k+1)=beeman m F (τ/ν) (z (k-1)).1 (z k)) →
-        ∀ k ≤ ν, ‖z k-γ (k*(τ/ν))‖ ≤ C*(τ/ν)^3 := by
+theorem eulerVolumePrinted : ∀ n (S : Matrix (Fin n) (Fin n) ℝ) h,
+    (∀ T : Set (Q n), MeasurableSet T →
+      volume ((linearEuler S h).mulVec '' T)=volume T) ↔ (linearEuler S h).det=1 := by
   sorry
 
 
 
-/-- 修正版，对应原文 MD-2.5.5-BeemanOrder。改动：全相空间有限时间收敛修正为二阶；原three的其它阶概念待导师，二阶正向估计尚需证明。 -/
+/-- 修正版，对应原文 MD-2.3.2-EulerVolumePrinted。改动：标准无向体积的判据为绝对行列式1；原det=1不作必要条件。 -/
 ```
 
 独立修正版：
 
 ```lean
-theorem beemanOrder_corrected : ∀ n (m : Fin n → ℝ) (F : Q n → Q n)
-    (γ : ℝ → Z n) τ,
-    positiveMass m → ContDiff ℝ 4 F → 0 < τ →
-    solution (mechanicalField m F) γ 0 τ → ContinuousOn γ (Icc 0 τ) →
-    ∃ C > 0, ∃ ν₀ : ℕ, 1 < ν₀ ∧ ∀ ν ≥ ν₀,
-      ∀ z : ℕ → Z n, z 0=γ 0 → z 1=γ (τ/ν) →
-        (∀ k, 1 ≤ k → z (k+1)=beeman m F (τ/ν) (z (k-1)).1 (z k)) →
-        ∀ k ≤ ν, ‖z k-γ (k*(τ/ν))‖ ≤ C*(τ/ν)^2 := by
+theorem eulerVolumePrinted_corrected : ∀ n (S : Matrix (Fin n) (Fin n) ℝ) h,
+    (∀ T : Set (Q n), MeasurableSet T →
+      volume ((linearEuler S h).mulVec '' T)=volume T) ↔ |(linearEuler S h).det|=1 := by
   first
   | rfl
   | assumption
@@ -1504,21 +957,181 @@ theorem beemanOrder_corrected : ∀ n (m : Fin n → ℝ) (F : Q n → Q n)
 | 原文成分 | Lean对应 | 说明 |
 |---|---|---|
 | 当前覆盖范围 | 保留完整原文引文；Lean仅覆盖第4段明示的定义与限定结论，原书疑误或超出该陈述的内容不冒称已形式化。各版本差异见本条与ERRATA。 | 仅承诺明确列出的数学内容 |
-| 对象、量词、假设和定义/结论 | `MD.Ch02.beemanOrder`；`MD.Ch02.beemanOrder_corrected` | 完整代码见第4段；两个版本独立列出 |
-| 技术资格或版本解释 | [EXTRA]正固定对角质量，F C⁴；实际紧轨迹，前两步取精确起始值（强于三阶启动）；真实多步递推，保留两坐标误差。 | [EXTRA] |
-| 技术资格或版本解释 | [ERRATUM?] 全相空间有限时间收敛修正为二阶；原three的其它阶概念待导师，二阶正向估计尚需证明。 | [EXTRA] |
+| 对象、量词、假设和定义/结论 | `MD.Ch02.eulerVolumePrinted`；`MD.Ch02.eulerVolumePrinted_corrected` | 完整代码见第4段；两个版本独立列出 |
+| 技术资格或版本解释 | [ERRATUM?] 标准无向体积的判据为绝对行列式1；原det=1不作必要条件。 | [EXTRA] |
 
-[EXTRA] [EXTRA]正固定对角质量，F C⁴；实际紧轨迹，前两步取精确起始值（强于三阶启动）；真实多步递推，保留两坐标误差。；[ERRATUM?] 全相空间有限时间收敛修正为二阶；原three的其它阶概念待导师，二阶正向估计尚需证明。
+[EXTRA] [ERRATUM?] 标准无向体积的判据为绝对行列式1；原det=1不作必要条件。
 
 ### 6. 审计结论
 
 本地限定解释与原文问题见上列范围及对照；逐声明编译、公理结果见第7段。
 
 网站：原书疑误/资格待导师；原文与修正版并列。
-网站原返回（对应其审校版本）：FAIL；已展开正式依赖：Q、Z、mass、invMass 如上一项；positiveMass m = ∀ i, 0<m i；mechanicalField m F (q,p) = (invMass m p,F q)；solution f γ 0 τ = ∀ t∈Icc 0 τ, HasDerivWithinAt γ (f(γ t)) (Icc 0 τ) t（合集行2941–2948）。因此 γ 确实是位置/动量的机械ODE解。Ch02.lean 行1402–1410 的量词依次为 n,m,F,γ,τ、全部假设、统一 C>0 和 ν₀>1、所有 ν≥ν₀、所有满足 z0=γ0、z1=γh 和 k≥1 多步递推的 z、所有 k≤ν；Z 的积范数控制两坐标，而不是只控制位置或终点。没有遗漏展示的误差子句，也没有把数值序列替换成独立单步映射。[EXTRA] 正固定对角质量合理；F 全空间 C⁴ 是足够但较强的平滑性限制，不是阶性质必需的最弱假设；τ>0 与 ν₀>1 保证有效网格和两点启动；闭区间连续由 solution 的逐点相对可导性已蕴含，冗余但合理，并给出紧轨迹；精确两点启动强于通常 O(h³) 启动，合理作为理想启动测试，但只是原句的受限版本。即使在这些强假设下全状态 O(h³) 结论仍为假，见解析反例。因此该签名虽保留原文 three 的全局阶解释，不能作为正确、无疑误的原文正式对应判 PASS。[ERRATUM?] 在这里明确的固定时间窗全局阶解释下成立；原书可能使用其他阶概念的问题不妨碍否定这个具体签名。原批所述单步动量 −h³/12 首项仅是局部缺陷，单凭它不能推出全局失败；下面直接证明非零全局 O(h²) 位置误差。该声明末尾 by sorry，未完成证明；FAIL 根据签名的数学反例作出，与 sorry 分开。
+网站原返回（对应其审校版本）：FAIL；实际读取 Ch02.lean:634–638；展开依赖Q n=Fin n→ℝ及linearEuler S h=1+h • S（合集2816、2878–2879行）。volume是标准无向Lebesgue体积，合集LiouvilleVolume换元使用|det|；依赖Statements.lean:3129–3132的linearEulerVolume\_statement本身也明确写|det|=1，但当前Blueprint定理并未引用这个修正版，而是↔det=1。任意n、S、h且全部可测T的量词忠实照录原文，却产生数学错误：det=1是充分条件而非必要条件。[ERRATUM?]在当前明确的无向体积解释下成立，无须再NEEDS\_HUMAN。没有方向或小步长假设；仅h>0不能修复。证明体含sorry，不能使错误签名有效。
 
 ### 7. 状态与证明位置
 
-incomplete；`MD.Ch02.beemanOrder`：未证（原书疑误不证）；`MD.Ch02.beemanOrder_corrected`：未证（时间盒止）。
-位置：[Blueprint/Ch02.lean](../../../../Blueprint/Ch02.lean#L2085)；逐声明核验：blueprint/closeout24/ch02/errata-05.log。
+incomplete；`MD.Ch02.eulerVolumePrinted`：未证（原书疑误不证）；`MD.Ch02.eulerVolumePrinted_corrected`：未证（时间盒止）。
+位置：[Blueprint/Ch02.lean](../../../../Blueprint/Ch02.lean#L854)；逐声明核验：blueprint/closeout24/ch02/errata-05.log。
+
+## 1. MD-2.3.2-EulerVolumeCounterexample · unnumbered_claim · 印刷p.75 / PDFp.97
+
+### 2. 原文陈述
+
+> The conditions for volume preservation by the flow map and its Euler approximation are essentially unrelated. Thus Euler’s method does not in general conserve phase space volume (it conserves volume only in very special cases—see Exercise 6).
+
+### 3. 原文证明
+
+原书无独立完整证明。
+原书未给独立完整证明。
+
+### 4. 完整当前Lean（原文与修正版独立列出）
+
+原文版、既有数学解释及同组辅助声明：
+
+```lean
+theorem eulerVolumeCounterexample :
+  ∃ S : Matrix (Fin 2) (Fin 2) ℝ, S.trace = 0 ∧ ∀ h : ℝ, h ≠ 0 → |(linearEuler S h).det| ≠ 1 := by
+  sorry
+
+theorem eulerVolumeCounterexample_det_only :
+  ∃ S : Matrix (Fin 2) (Fin 2) ℝ, S.trace = 0 ∧ ∀ h : ℝ, h ≠ 0 → (linearEuler S h).det ≠ 1 := by
+  exact MolecularDynamics.Chapter02Review.eulerVolumeCounterexample_proved
+```
+
+### 5. 对照表
+
+| 原文成分 | Lean对应 | 说明 |
+|---|---|---|
+| 当前覆盖范围 | 本条所引原句及展示公式；单个记号归入context\_notation。 | 仅承诺明确列出的数学内容 |
+| 对象、量词、假设和定义/结论 | `MD.Ch02.eulerVolumeCounterexample`；`MD.Ch02.eulerVolumeCounterexample_det_only` | 完整代码见第4段；两个版本独立列出 |
+| 技术资格或版本解释 | [EXTRA] 强化见证为每个h≠0时\|det(I+hS)\|≠1，覆盖实际体积不守恒；原桥接只给det≠1，原已证结果完整保留为det\_only辅助定理并重查，强化结论暂sorry，不写新证明。 | [EXTRA] |
+
+[EXTRA] [EXTRA] 强化见证为每个h≠0时|det(I+hS)|≠1，覆盖实际体积不守恒；原桥接只给det≠1，原已证结果完整保留为det\_only辅助定理并重查，强化结论暂sorry，不写新证明。
+
+### 6. 审计结论
+
+本地限定解释与原文问题见上列范围及对照；逐声明编译、公理结果见第7段。
+
+网站：网站PASS（EAUDIT复审）。
+网站原返回（对应其审校版本）：PASS；印刷75页关于Euler一般不保体积的两句逐字一致。linearEuler=I+hS。主定理要求一个固定二维实矩阵S满足trace S=0，同时对每个非零实h有|det(I+hS)|≠1，确实区别真实体积与带符号行列式。辅定理只断言det≠1，并未冒称单凭它即可推出体积不保。取S=[[0,1],[-1,0]]，trace=0且det(I+hS)=1+h²>1，为两个声明的共同见证；这说明新增绝对值版本陈述正确。 本次仅审校所附声明签名与定义，不执行工程编译，不补证明；sorry不作为签名不通过理由。
+
+### 7. 状态与证明位置
+
+incomplete；`MD.Ch02.eulerVolumeCounterexample`：未证（缺大型理论）；`MD.Ch02.eulerVolumeCounterexample_det_only`：已证。
+位置：[Blueprint/Ch02.lean](../../../../Blueprint/Ch02.lean#L873)；逐声明核验：blueprint/closeout24/ch02/errata-05.log。
+
+## 1. MD-2.3.2-AsymmetricEuler · definition · 印刷p.75 / PDFp.97
+
+### 2. 原文陈述
+
+> the asymmetrical variant of Euler’s method defined by
+
+$$
+u_{n+1}=u_n+hf(u_{n+1},v_n),\qquad v_{n+1}=v_n+hg(u_{n+1},v_n).
+$$
+
+
+
+### 3. 原文证明
+
+原书无独立完整证明。
+原书未给独立完整证明。
+
+### 4. 完整当前Lean（原文与修正版独立列出）
+
+原文版、既有数学解释及同组辅助声明：
+
+```lean
+def bp_asymmetricEulerRelation (f g : ℝ → ℝ → ℝ) (h u v U V : ℝ) : Prop :=
+  U = u + h*f U v ∧ V = v + h*g U v
+```
+
+### 5. 对照表
+
+| 原文成分 | Lean对应 | 说明 |
+|---|---|---|
+| 当前覆盖范围 | 本条所引原句及展示公式；单个记号归入context\_notation。 | 仅承诺明确列出的数学内容 |
+| 对象、量词、假设和定义/结论 | `MD.Ch02.bp_asymmetricEulerRelation` | 完整代码见第4段；两个版本独立列出 |
+
+[EXTRA] 无新增技术资格。
+
+### 6. 审计结论
+
+本地限定解释与原文问题见上列范围及对照；逐声明编译、公理结果见第7段。
+
+网站：网站PASS（绑定版本 f24b625cda35c51074f87df43493f35787dd9137d25683675cb793b757d111bb）。
+网站原返回（对应其审校版本）：PASS；实际读取 Ch02.lean:645–646，bp\_asymmetricEulerRelation f g h u v U V展开为U=u+h*f U v ∧ V=v+h*g U v；依赖ReviewDefinitions.lean:2880–2881正式asymmetricEulerRelation为同一表达式。f,g均为ℝ→ℝ→ℝ，所有变量为实数，新第一坐标U、旧第二坐标v的取值位置与原文两条更新式完全一致，且两条等式完整保留。只定义隐式关系，未宣称全局存在唯一求解器；无额外假设，不含sorry。
+
+### 7. 状态与证明位置
+
+self-contained；`MD.Ch02.bp_asymmetricEulerRelation`：定义。
+位置：[Blueprint/Ch02.lean](../../../../Blueprint/Ch02.lean#L882)；逐声明核验：blueprint/closeout24/ch02/errata-05.log。
+
+## 1. MD-2.3.2-AsymmetricJacobian · unnumbered_claim · 印刷p.75 / PDFp.97
+
+### 2. 原文陈述
+
+> Solving for the various entries we have
+
+$$
+\mathcal G_h'=\begin{bmatrix}1/(1-hf_u)&hf_v/(1-hf_u)\\hg_u/(1-hf_u)&1+hg_v+h^2g_uf_v/(1-hf_u)\end{bmatrix},
+$$
+
+
+> and calculating the determinant of the Jacobian results in
+
+$$
+\det\mathcal G_h'=\frac{1+hg_v}{1-hf_u}.
+$$
+
+
+
+### 3. 原文证明
+
+原书无独立完整证明。
+原书未给独立完整证明。
+
+### 4. 完整当前Lean（原文与修正版独立列出）
+
+原文版、既有数学解释及同组辅助声明：
+
+```lean
+theorem asymmetricDet :
+  ∀ (f g : ℝ → ℝ → ℝ) (Ψ : Q 2 → Q 2) h,
+    ContDiff ℝ 1 (Function.uncurry f) → ContDiff ℝ 1 (Function.uncurry g) → ContDiff ℝ 1 Ψ →
+    (∀ z, asymmetricEulerRelation f g h (z 0) (z 1) (Ψ z 0) (Ψ z 1)) →
+    ∀ z, 1-h*deriv (fun u => f u (z 1)) (Ψ z 0) ≠ 0 →
+      (textbookCoordinateJacobian Ψ z) =
+        !![(1/(1-h*deriv (fun u => f u (z 1)) (Ψ z 0)) : ℝ),
+          h*deriv (f (Ψ z 0)) (z 1)/(1-h*deriv (fun u => f u (z 1)) (Ψ z 0));
+          h*deriv (fun u => g u (z 1)) (Ψ z 0)/(1-h*deriv (fun u => f u (z 1)) (Ψ z 0)),
+          1+h*deriv (g (Ψ z 0)) (z 1)+h^2*deriv (fun u => g u (z 1)) (Ψ z 0)*
+            deriv (f (Ψ z 0)) (z 1)/(1-h*deriv (fun u => f u (z 1)) (Ψ z 0))] ∧
+      (textbookCoordinateJacobian Ψ z).det =
+        (1+h*deriv (g (Ψ z 0)) (z 1))/(1-h*deriv (fun u => f u (z 1)) (Ψ z 0)) := by
+  sorry
+```
+
+### 5. 对照表
+
+| 原文成分 | Lean对应 | 说明 |
+|---|---|---|
+| 当前覆盖范围 | 本条所引原句及展示公式；单个记号归入context\_notation。 | 仅承诺明确列出的数学内容 |
+| 对象、量词、假设和定义/结论 | `MD.Ch02.asymmetricDet` | 完整代码见第4段；两个版本独立列出 |
+| 技术资格或版本解释 | f,g及实际隐式解映射Ψ C¹；分母1-hfu≠0；偏导在(U,v)取值。 | [EXTRA] |
+
+[EXTRA] f,g及实际隐式解映射Ψ C¹；分母1-hfu≠0；偏导在(U,v)取值。
+
+### 6. 审计结论
+
+本地限定解释与原文问题见上列范围及对照；逐声明编译、公理结果见第7段。
+
+网站：网站PASS（绑定版本 f24b625cda35c51074f87df43493f35787dd9137d25683675cb793b757d111bb）。
+网站原返回（对应其审校版本）：PASS；实际读取 Ch02.lean:650–669；展开Q 2=Fin 2→ℝ、asymmetricEulerRelation两条实际等式（合集2816、2880–2881行），以及textbookCoordinateJacobian=LinearMap.toMatrix' (fderiv ℝ Ψ z).toLinearMap（2365–2370行），确认行i是输出坐标、列j是输入坐标，未转置。令U=Ψ z 0、v=z 1、a=∂u f(U,v)、b=∂v f(U,v)、c=∂u g(U,v)、d=∂v g(U,v)、D=1-ha。签名四项依次为1/D、hb/D、hc/D、1+hd+h²cb/D，并同时给出det=(1+hd)/D，逐项与原文相符。deriv(fun u=>f u v) U与deriv(f U) v分别准确表示上述偏导；g同理。先任意f,g,Ψ,h，再C¹及处处真实解关系，再任意z及该点D≠0，量词正确，无需散度零假设。[EXTRA]正则性和D≠0保障隐式微分，合理；全局C¹与关系较局部推导强，可局部化但无对象或公式改变。证明体含sorry；语义PASS不代表已证明。
+
+### 7. 状态与证明位置
+
+incomplete；`MD.Ch02.asymmetricDet`：未证（缺大型理论）。
+位置：[Blueprint/Ch02.lean](../../../../Blueprint/Ch02.lean#L887)；逐声明核验：blueprint/closeout24/ch02/errata-05.log。
 

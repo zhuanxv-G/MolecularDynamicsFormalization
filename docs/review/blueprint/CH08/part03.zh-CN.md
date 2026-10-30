@@ -1,12 +1,12 @@
-[上一部分](part02.zh-CN.md) / [目录](../../CH08_BLUEPRINT.zh-CN.md) / 下一部分：无
+[上一部分](part02.zh-CN.md) / [目录](../../CH08_BLUEPRINT.zh-CN.md) / [下一部分](part04.zh-CN.md)
 
-## MD-8.9.1-DPDMassOrderPrinted
+## MD-8.4.4-VelocityRescaling
 
-印刷页 389 / PDF页 410。
+印刷页 355 / PDF页 376。
 
 ### 1. 原文陈述
 
-> For $`dp=-\nabla U\,dt-\Delta(q)p\,dt+\Sigma(q)dW`$, the book gives $`\Delta=M^{-1}\Sigma\Sigma^{\mathsf T}/(2k_B T)`$.
+> $`dq=p\,dt`$, $`dp=-\nabla U\,dt-\Psi(K)p\,dt+\sqrt{2k_B T\Phi(K)}p\,dW`$; $`\Psi=(2K-(1+N_d)k_B T)\Phi-2k_B TK\Phi'`$. $`\Phi(K)=\gamma_{VR}/(2K)`$.
 
 对应原页全文逐字保留在原文JSON；摘要中的[EXTRA]与修正解释不替换原文。
 
@@ -17,604 +17,20 @@
 ### 3. 完整当前Lean（原文与修正版独立列出）
 
 ```lean
-def dpdMatrixFDPrinted {s r : ℕ} (M Γ : Matrix (Fin s) (Fin s) ℝ)
-    (B : Matrix (Fin s) (Fin r) ℝ) (θ : ℝ) : Prop := Γ=(1/(2*θ)) • (M⁻¹*(B*B.transpose))
-def dpdMatrixFD_corrected {s r : ℕ} (M Γ : Matrix (Fin s) (Fin s) ℝ)
-    (B : Matrix (Fin s) (Fin r) ℝ) (θ : ℝ) : Prop := Γ=(1/(2*θ)) • ((B*B.transpose)*M⁻¹)
-theorem dpdMassOrder_counterexample :
-    (!![1,0;0,(1/2 : ℝ)]) * (!![1,-1;-1,1]) ≠
-      (!![1,-1;-1,1]) * (!![1,0;0,(1/2 : ℝ)]) := by
-  intro h
-  have hh := congrArg (fun A : Matrix (Fin 2) (Fin 2) ℝ ↦ A 0 1) h
-  norm_num [Matrix.mul_apply,Fin.sum_univ_two] at hh
-```
-
-### 4. 对照表
-
-| 原文对象或结论 | 实际覆盖 |
-|---|---|
-| 本条数学成分 | 原印/校正的质量矩阵次序及具体代数反例。 |
-| 对象、量词、前提及结论 | 见完整声明；补充资格在[EXTRA]列明 |
-
-### 5. [EXTRA] 与覆盖缺口
-
-- M应正定、$`\theta\gt 0`$；本条记录两个矩阵关系目标与不交换反例，不声称由形式关系自动得到不变概率。
-- 覆盖缺口：M应正定、$`\theta\gt 0`$；本条记录两个矩阵关系目标与不交换反例，不声称由形式关系自动得到不变概率。
-
-### 6. 审计结论（含网站复审结论）
-
-网站首轮：NEEDS_HUMAN。
-网站复审结论：本条未进入本轮复审；保留首轮NEEDS_HUMAN意见。
-原文版：Printed忠实性PASS；一般不等质量的乘法次序错误。
-修正版：原送审右乘$`M^{-1}`$修正版与不交换反例PASS。
-当前：原书疑误待导师；原送审正确版本分项保留。
-原书疑点：已目视核对原页PDF410：对动量漂移$`-\Delta p`$、动量协方差$`k_B TM`$，应为$`\Delta=\Sigma\Sigma^{\mathsf T}M^{-1}/(2k_B T)`$；原印左乘仅在相应矩阵可交换（如等质量）时一致。两粒子不等质量的矩阵反例已证。；保留Printed等式；[ERRATUM?]记录一般质量情形改为$`\Sigma\Sigma^{\mathsf T}M^{-1}/(2k_B T)`$，标注等质量或交换条件下两者相同。
-原页核对历史证据见blueprint/ch08/closeout31/PDF_VISUAL_CHECKS.json及blueprint/ch08/source_page_checks.json；原书PDF页410。本轮不虚称重新目视。
-
-### 7. 状态与证明位置
-
-- `MD.Ch08.dpdMatrixFDPrinted`：定义
-- `MD.Ch08.dpdMatrixFD_corrected`：定义
-- `MD.Ch08.dpdMassOrder_counterexample`：已证
-
-位置：Blueprint/Ch08.lean。Lean字节未改，复用已绑定的396声明编译和逐条公理证据；完整检查另见32号报告。
-
-## MD-8.9.2-DPDVelocityVerlet
-
-印刷页 389–391 / PDF页 410–412。
-
-### 1. 原文陈述
-
-> $`p_{1/2}=p+hF^c(q)/2+hF^D(q,p)/2+\sqrt h F^R(q,R_{old})/2`$; $`q'=q+hM^{-1}p_{1/2}`$; $`p'=p_{1/2}+hF^c(q')/2+hF^D(q',p_{1/2})/2+\sqrt h F^R(q',R_{new})/2`$. Reuse $`R_{new}`$ next step. (8.91)–(8.93).
-
-对应原页全文逐字保留在原文JSON；摘要中的[EXTRA]与修正解释不替换原文。
-
-### 2. 原文证明
-
-> 对应原页推导逐字保存在statement_verbatim/original_page_text；排版以原页PDF为准。
-
-### 3. 完整当前Lean（原文与修正版独立列出）
-
-```lean
-def dpdRandomForce {N d K : ℕ} (pairs : Fin K → Fin N × Fin N) (σ : ℝ)
-    (wR : ℝ → ℝ) (q : ParticleConfig N d) (R : Vec K) : ParticleConfig N d :=
-  ∑ k, R k • (dpdNoise pairs σ wR q k).2
-
-def dpdVerlet {N d K : ℕ} (pairs : Fin K → Fin N × Fin N) (m : Fin N → ℝ)
-    (α rc γ σ h : ℝ) (wD wR : ℝ → ℝ)
-    (state : ParticlePhase N d × Vec K) (Rnew : Vec K) : ParticlePhase N d × Vec K :=
-  let q := state.1.1
-  let p := state.1.2
-  let ph := p+(h/2) • dpdConservative α rc q+(h/2) • dpdDissipative m γ wD q p+
-    (Real.sqrt h/2) • dpdRandomForce pairs σ wR q state.2
-  let qn := fun i ↦ q i+(h/m i) • ph i
-  let pn := ph+(h/2) • dpdConservative α rc qn+(h/2) • dpdDissipative m γ wD qn ph+
-    (Real.sqrt h/2) • dpdRandomForce pairs σ wR qn Rnew
-  ((qn,pn),Rnew)
-
-theorem dpdVerlet_reuse {N d K : ℕ} (pairs : Fin K → Fin N × Fin N) (m : Fin N → ℝ)
-    (α rc γ σ h : ℝ) (wD wR : ℝ → ℝ) (z : ParticlePhase N d × Vec K) (R : Vec K) :
-    (dpdVerlet pairs m α rc γ σ h wD wR z R).2=R := rfl
-```
-
-### 4. 对照表
-
-| 原文对象或结论 | 实际覆盖 |
-|---|---|
-| 本条数学成分 | 三条更新式和新噪声在下一步复用的状态机制。 |
-| 对象、量词、前提及结论 | 见完整声明；补充资格在[EXTRA]列明 |
-
-### 5. [EXTRA] 与覆盖缺口
-
-- 物理用法要求$`m_i\gt 0`$、$`h\ge0`$、无序对枚举、每步$`R_{new}`$独立标准正态并与历史独立；本条确定性给定输入的扩展状态映射。
-- 尚未证明书中预期的一阶弱收敛；未把随机输入映射称为对称确定性流。
-- 覆盖缺口：尚未证明书中预期的一阶弱收敛；未把随机输入映射称为对称确定性流。
-
-### 6. 审计结论（含网站复审结论）
-
-网站首轮：PASS。
-网站复审结论：本条未进入本轮复审；保留首轮PASS意见。
-原文版：见原网站逐项意见；不凭整组状态推定原印真值。
-修正版：未单列修正版则不推定分项PASS。
-当前：网站PASS（首轮声明未变）。
-原书疑点：本条未单列公式疑误。
-原页核对历史证据见blueprint/ch08/closeout31/PDF_VISUAL_CHECKS.json及blueprint/ch08/source_page_checks.json；原书PDF页410–412。本轮不虚称重新目视。
-
-### 7. 状态与证明位置
-
-- `MD.Ch08.dpdRandomForce`：定义
-- `MD.Ch08.dpdVerlet`：定义
-- `MD.Ch08.dpdVerlet_reuse`：已证
-
-位置：Blueprint/Ch08.lean。Lean字节未改，复用已绑定的396声明编译和逐条公理证据；完整检查另见32号报告。
-
-## MD-8.9.2-DPDSplitGenerator
-
-印刷页 391 / PDF页 412。
-
-### 1. 原文陈述
-
-> The DPD system splits into $`A`$: free transport, $`B`$: conservative force, $`O`$: dissipative plus pair noise. $`L_{DPD}=L_A+L_B+L_O`$. (8.94)–(8.98).
-
-对应原页全文逐字保留在原文JSON；摘要中的[EXTRA]与修正解释不替换原文。
-
-### 2. 原文证明
-
-> 对应原页推导逐字保存在statement_verbatim/original_page_text；排版以原页PDF为准。
-
-### 3. 完整当前Lean（原文与修正版独立列出）
-
-```lean
-def dpdA {N d : ℕ} (m : Fin N → ℝ) (z : ParticlePhase N d) : ParticlePhase N d :=
-  ((fun i ↦ (m i)⁻¹ • z.2 i),0)
-def dpdB {N d : ℕ} (α rc : ℝ) (z : ParticlePhase N d) : ParticlePhase N d :=
-  (0,dpdConservative α rc z.1)
-def dpdO {N d : ℕ} (m : Fin N → ℝ) (γ : ℝ) (wD : ℝ → ℝ)
-    (z : ParticlePhase N d) : ParticlePhase N d := (0,dpdDissipative m γ wD z.1 z.2)
-def firstOrder8 {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
-    (F : E → E) (f : E → ℝ) (z : E) : ℝ := fderiv ℝ f z (F z)
-def dpdLO {N d K : ℕ} (pairs : Fin K → Fin N × Fin N) (m : Fin N → ℝ)
-    (γ σ : ℝ) (wD wR : ℝ → ℝ) (f : ParticlePhase N d → ℝ) (z : ParticlePhase N d) : ℝ :=
-  firstOrder8 (dpdO m γ wD) f z+
-    (∑ k, fderiv ℝ (fun x ↦ fderiv ℝ f x) z (dpdNoise pairs σ wR z.1 k)
-      (dpdNoise pairs σ wR z.1 k))/2
-def dpdGenerator {N d K : ℕ} (pairs : Fin K → Fin N × Fin N) (m : Fin N → ℝ)
-    (α rc γ σ : ℝ) (wD wR : ℝ → ℝ) (f : ParticlePhase N d → ℝ) (z : ParticlePhase N d) : ℝ :=
-  firstOrder8 (dpdA m) f z+firstOrder8 (dpdB α rc) f z+dpdLO pairs m γ σ wD wR f z
-theorem dpdDrift_split {N d : ℕ} (m : Fin N → ℝ) (α rc γ : ℝ) (wD : ℝ → ℝ)
-    (z : ParticlePhase N d) : dpdDrift m α rc γ wD z=dpdA m z+dpdB α rc z+dpdO m γ wD z := by
-  ext <;> simp [dpdDrift,dpdA,dpdB,dpdO]
-```
-
-### 4. 对照表
-
-| 原文对象或结论 | 实际覆盖 |
-|---|---|
-| 本条数学成分 | 实际三个漂移、无序对扩散生成元和漂移分解恒等式。 |
-| 对象、量词、前提及结论 | 见完整声明；补充资格在[EXTRA]列明 |
-
-### 5. [EXTRA] 与覆盖缺口
-
-- 采用独立无序对的Itô二阶导数形式，实现(8.97)有序双和的合并表达；未证明有序/无序表达等价。
-- 光滑测试函数上的形式生成元定义不等同于已建立Markov半群，Fₜ=eᵗᴸ及其定义域列缺口。
-- 覆盖缺口：采用独立无序对的Itô二阶导数形式，实现(8.97)有序双和的合并表达；未证明有序/无序表达等价。
-
-### 6. 审计结论（含网站复审结论）
-
-网站首轮：PASS。
-网站复审结论：本条未进入本轮复审；保留首轮PASS意见。
-原文版：见原网站逐项意见；不凭整组状态推定原印真值。
-修正版：未单列修正版则不推定分项PASS。
-当前：网站PASS（首轮声明未变）。
-原书疑点：本条未单列公式疑误。
-原页核对历史证据见blueprint/ch08/closeout31/PDF_VISUAL_CHECKS.json及blueprint/ch08/source_page_checks.json；原书PDF页412。本轮不虚称重新目视。
-
-### 7. 状态与证明位置
-
-- `MD.Ch08.dpdA`：定义
-- `MD.Ch08.dpdB`：定义
-- `MD.Ch08.dpdO`：定义
-- `MD.Ch08.firstOrder8`：定义
-- `MD.Ch08.dpdLO`：定义
-- `MD.Ch08.dpdGenerator`：定义
-- `MD.Ch08.dpdDrift_split`：已证
-
-位置：Blueprint/Ch08.lean。Lean字节未改，复用已绑定的396声明编译和逐条公理证据；完整检查另见32号报告。
-
-## MD-8.9.2-DPDPairGeneratorPrinted
-
-印刷页 392 / PDF页 413。
-
-### 1. 原文陈述
-
-> (8.100) prints $`L_{Oij}=[-\gamma\omega^D u+(\sigma^2/2)(\omega^R)^2e\cdot(\partial_{p_i}-\partial_{p_j})]e\cdot\partial_{p_i}`$ for each unordered pair $`i\lt j`$.
-
-对应原页全文逐字保留在原文JSON；摘要中的[EXTRA]与修正解释不替换原文。
-
-### 2. 原文证明
-
-> 对应原页推导逐字保存在statement_verbatim/original_page_text；排版以原页PDF为准。
-
-### 3. 完整当前Lean（原文与修正版独立列出）
-
-```lean
-def pairDerivative {N d : ℕ} (i j : Fin N) (e : Vec d)
-    (f : ParticleConfig N d → ℝ) (p : ParticleConfig N d) : ℝ :=
-  fderiv ℝ f p (pairImpulseVector i j e)
-def dpdPairGeneratorPrinted {N d : ℕ} (i j : Fin N) (e : Vec d) (m : Fin N → ℝ)
-    (γ σ wd wr : ℝ) (f : ParticleConfig N d → ℝ) (p : ParticleConfig N d) : ℝ :=
-  -γ*wd*dot e (relativeVelocity m p i j)*fderiv ℝ f p (Pi.single i e)+
-    σ^2*wr^2/2*pairDerivative i j e (fun x ↦ fderiv ℝ f x (Pi.single i e)) p
-def dpdPairGenerator_corrected {N d : ℕ} (i j : Fin N) (e : Vec d) (m : Fin N → ℝ)
-    (γ σ wd wr : ℝ) (f : ParticleConfig N d → ℝ) (p : ParticleConfig N d) : ℝ :=
-  -γ*wd*dot e (relativeVelocity m p i j)*pairDerivative i j e f p+
-    σ^2*wr^2/2*pairDerivative i j e (pairDerivative i j e f) p
-```
-
-### 4. 对照表
-
-| 原文对象或结论 | 实际覆盖 |
-|---|---|
-| 本条数学成分 | 冻结配置下单对动量生成元的原式和守恒方向修正版。 |
-| 对象、量词、前提及结论 | 见完整声明；补充资格在[EXTRA]列明 |
-
-### 5. [EXTRA] 与覆盖缺口
-
-- 本条只分别定义原印和成对修正版；不声称已证明驻定概率或原书单对不变性。
-- 覆盖缺口：本条只分别定义原印和成对修正版；不声称已证明驻定概率或原书单对不变性。
-
-### 6. 审计结论（含网站复审结论）
-
-网站首轮：NEEDS_HUMAN。
-网站复审结论：本条未进入本轮复审；保留首轮NEEDS_HUMAN意见。
-原文版：Printed忠实性PASS；单对解释下最外层$`\partial_{p_i}`$不保总动量。
-修正版：原送审改用Dij的_corrected签名PASS；不据此否定完整有序双和。
-当前：原书疑误待导师；原送审正确版本分项保留。
-原书疑点：已目视核对原页PDF413：单个无序对算子的最外层只对$`p_i`$求导，会对总动量产生非零漂移；对两粒子成对守恒更新应将最外层改为$`e\cdot(\partial_{p_i}-\partial_{p_j})`$。完整有序双和(8.97)另含反方向项，不能直接同样判错。
-原页核对历史证据见blueprint/ch08/closeout31/PDF_VISUAL_CHECKS.json及blueprint/ch08/source_page_checks.json；原书PDF页413。本轮不虚称重新目视。
-
-### 7. 状态与证明位置
-
-- `MD.Ch08.pairDerivative`：定义
-- `MD.Ch08.dpdPairGeneratorPrinted`：定义
-- `MD.Ch08.dpdPairGenerator_corrected`：定义
-
-位置：Blueprint/Ch08.lean。Lean字节未改，复用已绑定的396声明编译和逐条公理证据；完整检查另见32号报告。
-
-## MD-8.9.2-DPDSplittingCompositions
-
-印刷页 392–393 / PDF页 413–414。
-
-### 1. 原文陈述
-
-> Shardlow: $`O(h)B(h/2)A(h)B(h/2)`$; $`S=B+O`$ and Trotter: $`S(h/2)A(h)S(h/2)`$. Pair products use the printed fixed unordered-pair order. (8.99),(8.101),(8.102).
-
-对应原页全文逐字保留在原文JSON；摘要中的[EXTRA]与修正解释不替换原文。
-
-### 2. 原文证明
-
-> 对应原页推导逐字保存在statement_verbatim/original_page_text；排版以原页PDF为准。
-
-### 3. 完整当前Lean（原文与修正版独立列出）
-
-```lean
-def dpdShardlowComposition {E : Type*} (A B O : ℝ → E → E) (h : ℝ) : E → E :=
-  O h ∘ B (h/2) ∘ A h ∘ B (h/2)
-def dpdTrotterComposition {E : Type*} (A S : ℝ → E → E) (h : ℝ) : E → E :=
-  S (h/2) ∘ A h ∘ S (h/2)
-def sequentialPairComposition {E : Type*} (steps : List (E → E)) : E → E :=
-  fun x ↦ steps.foldl (fun y F ↦ F y) x
-def dpdSGenerator {N d K : ℕ} (pairs : Fin K → Fin N × Fin N) (m : Fin N → ℝ)
-    (α rc γ σ : ℝ) (wD wR : ℝ → ℝ) (f : ParticlePhase N d → ℝ) (z : ParticlePhase N d) : ℝ :=
-  firstOrder8 (dpdB α rc) f z+dpdLO pairs m γ σ wD wR f z
-```
-
-### 4. 对照表
-
-| 原文对象或结论 | 实际覆盖 |
-|---|---|
-| 本条数学成分 | 两种外层组合、固定顺序逐对执行及S形式生成元；实际OU单对步骤见后条。 |
-| 对象、量词、前提及结论 | 见完整声明；补充资格在[EXTRA]列明 |
-
-### 5. [EXTRA] 与覆盖缺口
-
-- A/B/O/S为调用者指定的映射；只保留所印组合顺序。尚未实现BBK成对近似或其误差、全O/S流及生成元指数关系。
-- 两次S同顺序的非交换成对乘积不能仅凭外层回文判为对称；不作该声称。
-
-### 6. 审计结论（含网站复审结论）
-
-网站首轮：PASS。
-网站复审结论：本条未进入本轮复审；保留首轮PASS意见。
-原文版：见原网站逐项意见；不凭整组状态推定原印真值。
-修正版：未单列修正版则不推定分项PASS。
-当前：网站PASS（首轮声明未变）。
-原书疑点：本条未单列公式疑误。
-原页核对历史证据见blueprint/ch08/closeout31/PDF_VISUAL_CHECKS.json及blueprint/ch08/source_page_checks.json；原书PDF页413–414。本轮不虚称重新目视。
-
-### 7. 状态与证明位置
-
-- `MD.Ch08.dpdShardlowComposition`：定义
-- `MD.Ch08.dpdTrotterComposition`：定义
-- `MD.Ch08.sequentialPairComposition`：定义
-- `MD.Ch08.dpdSGenerator`：定义
-
-位置：Blueprint/Ch08.lean。Lean字节未改，复用已绑定的396声明编译和逐条公理证据；完整检查另见32号报告。
-
-## MD-8.9.2-DPDPairOUUpdate
-
-印刷页 393 / PDF页 414。
-
-### 1. 原文陈述
-
-> $`m_{red}=m_i m_j/(m_i+m_j)`$; $`m_{red}\,du=F\,dt-\gamma\omega^D u\,dt+\sigma\omega^R dW`$. $`a=\gamma\omega^D/m_{red}`$. $`u(t)=F/(a m_{red})+\exp(-at)(u_0-F/(a m_{red}))+\sqrt{\theta(1-\exp(-2at))/m_{red}}R`$. $`\Delta u=u(t)-u_0`$; $`p_i\mathrel{+}=m_{red}\Delta u\,e`$, $`p_j\mathrel{-}=m_{red}\Delta u\,e`$. (8.103)–(8.107).
-
-对应原页全文逐字保留在原文JSON；摘要中的[EXTRA]与修正解释不替换原文。
-
-### 2. 原文证明
-
-> 对应原页推导逐字保存在statement_verbatim/original_page_text；排版以原页PDF为准。
-
-### 3. 完整当前Lean（原文与修正版独立列出）
-
-```lean
-def reducedMass8 (mi mj : ℝ) : ℝ := mi*mj/(mi+mj)
-theorem reducedMass8_pos (mi mj : ℝ) (hi : 0 < mi) (hj : 0 < mj) : 0 < reducedMass8 mi mj :=
-  div_pos (mul_pos hi hj) (add_pos hi hj)
-def dpdPairOUPrinted (mr a F θ t u R : ℝ) : ℝ :=
-  F/(a*mr)+Real.exp (-a*t)*(u-F/(a*mr))+Real.sqrt (θ*(1-Real.exp (-2*a*t))/mr)*R
-def dpdPairOU_corrected (mr a F θ t u R : ℝ) : ℝ :=
-  Real.exp (-a*t)*u+(F/mr)*(if a=0 then t else (1-Real.exp (-a*t))/a)+
-    Real.sqrt (θ*(1-Real.exp (-2*a*t))/mr)*R
-theorem dpdPairOU_zeroRate (mr F θ t u R : ℝ) :
-    dpdPairOU_corrected mr 0 F θ t u R=u+(F/mr)*t := by simp [dpdPairOU_corrected]
-def dpdPairMomentumStep {N d : ℕ} (i j : Fin N) (e : Vec d) (mr du : ℝ)
-    (p : ParticleConfig N d) : ParticleConfig N d := p+pairImpulseVector i j ((mr*du) • e)
-theorem dpdPairMomentumStep_conserves {N d : ℕ} (i j : Fin N) (e : Vec d) (mr du : ℝ)
-    (p : ParticleConfig N d) : totalMomentum (dpdPairMomentumStep i j e mr du p)=totalMomentum p := by
-  simp [dpdPairMomentumStep,pairImpulseVector,totalMomentum,Finset.sum_add_distrib,Finset.sum_sub_distrib]
-```
-
-### 4. 对照表
-
-| 原文对象或结论 | 实际覆盖 |
-|---|---|
-| 本条数学成分 | 原印/零率延拓的OU转移公式、速度增量所用动量更新及总动量守恒。 |
-| 对象、量词、前提及结论 | 见完整声明；补充资格在[EXTRA]列明 |
-
-### 5. [EXTRA] 与覆盖缺口
-
-- 原印转移律要求$`mr\gt 0`$、$`a\gt 0`$、$`\theta\gt 0`$、$`t\ge0`$及R独立标准正态；F为冻结配置的成对保守力标量，FDT用于方差。
-- 单对精确分布律及其随机积分推导未证明；已证明质量正性、零率值与逐对总动量代数守恒。
-- [EXTRA] 零率分支仅用于涨落耗散使噪声同时退化的情形；不用于任意独立非零扩散的零漂移OU。物理转移需正约化质量、正温度、$`a,t\ge0`$及独立标准正态R。
-- 覆盖缺口：单对精确分布律及其随机积分推导未证明；已证明质量正性、零率值与逐对总动量代数守恒。
-
-### 6. 审计结论（含网站复审结论）
-
-网站首轮：NEEDS_HUMAN。
-网站复审结论：本条未进入本轮复审；保留首轮NEEDS_HUMAN意见。
-原文版：Printed忠实性PASS；零率原式通常未定义。
-修正版：原送审正率改写与FDT噪声同时退化的零率_corrected签名PASS。
-当前：原书疑误待导师；原送审正确版本分项保留。
-原书疑点：已目视核对原页PDF414：原印$`F/(am_{red})`$须$`a\gt 0`$；$`\gamma=0`$或截断外$`\omega^D=0`$时需用积分系数连续延拓。修正版显式定义$`a=0`$为自由加速，噪声退化为零。
-原页核对历史证据见blueprint/ch08/closeout31/PDF_VISUAL_CHECKS.json及blueprint/ch08/source_page_checks.json；原书PDF页414。本轮不虚称重新目视。
-
-### 7. 状态与证明位置
-
-- `MD.Ch08.reducedMass8`：定义
-- `MD.Ch08.reducedMass8_pos`：已证
-- `MD.Ch08.dpdPairOUPrinted`：定义
-- `MD.Ch08.dpdPairOU_corrected`：定义
-- `MD.Ch08.dpdPairOU_zeroRate`：已证
-- `MD.Ch08.dpdPairMomentumStep`：定义
-- `MD.Ch08.dpdPairMomentumStep_conserves`：已证
-
-位置：Blueprint/Ch08.lean。Lean字节未改，复用已绑定的396声明编译和逐条公理证据；完整检查另见32号报告。
-
-## MD-8.9.3-PairwiseNoseHoover
-
-印刷页 394 / PDF页 415。
-
-### 1. 原文陈述
-
-> $`dq_i=p_i\,dt/m_i`$, $`dp_i=F^c_i\,dt+\xi\tilde F^D_i\,dt`$, $`d\xi=G\,dt`$; $`G=Q^{-1}\sum_{i\lt j}\omega^D(r_{ij})[(v_{ij}\cdot e_{ij})^2-\theta/m_{red}]`$. (8.108),(8.109).
-
-对应原页全文逐字保留在原文JSON；摘要中的[EXTRA]与修正解释不替换原文。
-
-### 2. 原文证明
-
-> 对应原页推导逐字保存在statement_verbatim/original_page_text；排版以原页PDF为准。
-
-### 3. 完整当前Lean（原文与修正版独立列出）
-
-```lean
-abbrev PNHLState (N d : ℕ) := ParticlePhase N d × ℝ
-def pairwiseFeedback {N d : ℕ} (m : Fin N → ℝ) (θ Q : ℝ) (wD : ℝ → ℝ)
-    (q p : ParticleConfig N d) : ℝ :=
-  (∑ i, ∑ j ∈ Finset.univ.filter (fun j ↦ i < j), wD (pairDistance q i j)*
-    ((dot (relativeVelocity m p i j) (pairDirection q i j))^2-θ/reducedMass8 (m i) (m j)))/Q
-def pnhDrift {N d : ℕ} (m : Fin N → ℝ) (α rc θ Q : ℝ) (wD : ℝ → ℝ)
-    (z : PNHLState N d) : PNHLState N d :=
-  (((fun i ↦ (m i)⁻¹ • z.1.2 i),
-    dpdConservative α rc z.1.1+z.2 • dpdDissipative m 1 wD z.1.1 z.1.2),
-   pairwiseFeedback m θ Q wD z.1.1 z.1.2)
-def isPNHSolution {N d : ℕ} (m : Fin N → ℝ) (α rc θ Q : ℝ) (wD : ℝ → ℝ)
-    (X : ℝ → PNHLState N d) : Prop :=
-  0 < N ∧ 0 < d ∧ (∀ i, 0 < m i) ∧ 0 < rc ∧ 0 < θ ∧ 0 < Q ∧
-  ∀ t, 0 ≤ t → HasDerivWithinAt X (pnhDrift m α rc θ Q wD (X t)) (Ici 0) t
-```
-
-### 4. 对照表
-
-| 原文对象或结论 | 实际覆盖 |
-|---|---|
-| 本条数学成分 | PNH场、反馈和正质量/正热浴质量的ODE规格。 |
-| 对象、量词、前提及结论 | 见完整声明；补充资格在[EXTRA]列明 |
-
-### 5. [EXTRA] 与覆盖缺口
-
-- Q为原文μ，$`\tilde F^D`$是$`\gamma=1`$的相对速度耗散；排除$`i=j`$，物理轨道另需非碰撞且$`\omega^D\ge0`$。
-- 只落盘实际ODE规格；Galilean不变性、总动量沿轨道守恒、存在唯一性及遍历性列缺口。
-
-### 6. 审计结论（含网站复审结论）
-
-网站首轮：PASS。
-网站复审结论：本条未进入本轮复审；保留首轮PASS意见。
-原文版：见原网站逐项意见；不凭整组状态推定原印真值。
-修正版：未单列修正版则不推定分项PASS。
-当前：网站PASS（首轮声明未变）。
-原书疑点：本条未单列公式疑误。
-原页核对历史证据见blueprint/ch08/closeout31/PDF_VISUAL_CHECKS.json及blueprint/ch08/source_page_checks.json；原书PDF页415。本轮不虚称重新目视。
-
-### 7. 状态与证明位置
-
-- `MD.Ch08.PNHLState`：定义
-- `MD.Ch08.pairwiseFeedback`：定义
-- `MD.Ch08.pnhDrift`：定义
-- `MD.Ch08.isPNHSolution`：定义
-
-位置：Blueprint/Ch08.lean。Lean字节未改，复用已绑定的396声明编译和逐条公理证据；完整检查另见32号报告。
-
-## MD-8.9.3-PairwiseCanonicalWeight
-
-印刷页 394 / PDF页 415。
-
-### 1. 原文陈述
-
-> $`\hat\rho_\beta=\hat Z^{-1}\exp(-\beta H(q,p))\exp(-\beta Q\xi^2/2)`$, on accessible fixed-momentum space. (8.110).
-
-对应原页全文逐字保留在原文JSON；摘要中的[EXTRA]与修正解释不替换原文。
-
-### 2. 原文证明
-
-> 对应原页推导逐字保存在statement_verbatim/original_page_text；排版以原页PDF为准。
-
-### 3. 完整当前Lean（原文与修正版独立列出）
-
-```lean
-def pairwiseWeight {N d : ℕ} (m : Fin N → ℝ) (U : ParticleConfig N d → ℝ)
-    (β Q : ℝ) (z : PNHLState N d) : ℝ :=
-  Real.exp (-β*particleHamiltonian m U z.1)*Real.exp (-β*Q*z.2^2/2)
-def pairwiseCanonicalDensity {N d : ℕ} (ν : Measure (PNHLState N d))
-    (m : Fin N → ℝ) (U : ParticleConfig N d → ℝ) (β Q : ℝ) (z : PNHLState N d) : ℝ :=
-  pairwiseWeight m U β Q z/(∫ x, pairwiseWeight m U β Q x ∂ν)
-def pairwiseCanonicalQualification {N d : ℕ} (ν : Measure (PNHLState N d))
-    (m : Fin N → ℝ) (U : ParticleConfig N d → ℝ) (β Q : ℝ) (π : Vec d) : Prop :=
-  (∀ i, 0 < m i) ∧ 0 < β ∧ 0 < Q ∧ ν {z | totalMomentum z.1.2 ≠ π}=0 ∧
-  Integrable (pairwiseWeight m U β Q) ν ∧ (0 < ∫ z, pairwiseWeight m U β Q z ∂ν) ∧
-  probabilityDensity ν (pairwiseCanonicalDensity ν m U β Q)
-```
-
-### 4. 对照表
-
-| 原文对象或结论 | 实际覆盖 |
-|---|---|
-| 本条数学成分 | 动量约束下扩展Gibbs权、配分积分和概率密度资格。 |
-| 对象、量词、前提及结论 | 见完整声明；补充资格在[EXTRA]列明 |
-
-### 5. [EXTRA] 与覆盖缺口
-
-- ν是需指定的动量叶参考测度；正有限配分积分和概率资格显式列出。
-- 这里只定义权重及归一目标，不把任意支持在动量叶上的测度称为PNH不变测度。完整不变性和归一存在理论列缺口。
-
-### 6. 审计结论（含网站复审结论）
-
-网站首轮：PASS。
-网站复审结论：本条未进入本轮复审；保留首轮PASS意见。
-原文版：见原网站逐项意见；不凭整组状态推定原印真值。
-修正版：未单列修正版则不推定分项PASS。
-当前：网站PASS（首轮声明未变）。
-原书疑点：本条未单列公式疑误。
-原页核对历史证据见blueprint/ch08/closeout31/PDF_VISUAL_CHECKS.json及blueprint/ch08/source_page_checks.json；原书PDF页415。本轮不虚称重新目视。
-
-### 7. 状态与证明位置
-
-- `MD.Ch08.pairwiseWeight`：定义
-- `MD.Ch08.pairwiseCanonicalDensity`：定义
-- `MD.Ch08.pairwiseCanonicalQualification`：定义
-
-位置：Blueprint/Ch08.lean。Lean字节未改，复用已绑定的396声明编译和逐条公理证据；完整检查另见32号报告。
-
-## MD-8.9.4-PairwiseNHLSDE
-
-印刷页 395 / PDF页 416。
-
-### 1. 原文陈述
-
-> PNHL adds $`d\xi=(G-\hat\gamma\xi)dt+\hat\sigma\,dW`$, $`\hat\sigma^2=2\hat\gamma\theta/Q`$, to PNH. $`W`$ is standard Wiener. (8.111),(8.112).
-
-对应原页全文逐字保留在原文JSON；摘要中的[EXTRA]与修正解释不替换原文。
-
-### 2. 原文证明
-
-> 对应原页推导逐字保存在statement_verbatim/original_page_text；排版以原页PDF为准。
-
-### 3. 完整当前Lean（原文与修正版独立列出）
-
-```lean
-def pnhlDrift {N d : ℕ} (m : Fin N → ℝ) (α rc θ Q γ : ℝ) (wD : ℝ → ℝ)
-    (z : PNHLState N d) : PNHLState N d :=
-  ((pnhDrift m α rc θ Q wD z).1,pairwiseFeedback m θ Q wD z.1.1 z.1.2-γ*z.2)
-def pnhlNoise {N d : ℕ} (σ : ℝ) (_ : Fin 1) : PNHLState N d := ((0,0),σ)
-def isPNHLSolution {N d : ℕ} (m : Fin N → ℝ) (α rc θ Q γ σ : ℝ) (wD : ℝ → ℝ)
-    (P : Measure Ω) (W : ℝ → Ω → Vec 1) (X : ℝ → Ω → PNHLState N d)
-    (x0 : PNHLState N d) : Prop :=
-  0 < N ∧ 0 < d ∧ (∀ i, 0 < m i) ∧ 0 < rc ∧ 0 < θ ∧ 0 < Q ∧ 0 ≤ γ ∧
-  σ^2=2*γ*θ/Q ∧ (∀ r, 0 ≤ wD r) ∧
-  (∀ t, 0 ≤ t → ∀ᵐ sample ∂P, ∀ i j, i ≠ j → 0 < pairDistance (X t sample).1.1 i j) ∧
-  additiveSDE P 1 W X x0 (pnhlDrift m α rc θ Q γ wD) (pnhlNoise σ)
-```
-
-### 4. 对照表
-
-| 原文对象或结论 | 实际覆盖 |
-|---|---|
-| 本条数学成分 | 带正质量资格、涨落耗散关系及真实独立标准Wiener的PNHL积分解规格。 |
-| 对象、量词、前提及结论 | 见完整声明；补充资格在[EXTRA]列明 |
-
-### 5. [EXTRA] 与覆盖缺口
-
-- 实际一维标准Wiener由通用积分解规格明示；扩散仅作用ξ。
-- 未证明该非碰撞解类存在、唯一、保测或遍历；“改善遍历性”是动机不是已证结论。
-- 覆盖缺口：未证明该非碰撞解类存在、唯一、保测或遍历；“改善遍历性”是动机不是已证结论。
-
-### 6. 审计结论（含网站复审结论）
-
-网站首轮：PASS。
-网站复审结论：本条未进入本轮复审；保留首轮PASS意见。
-原文版：见原网站逐项意见；不凭整组状态推定原印真值。
-修正版：未单列修正版则不推定分项PASS。
-当前：网站PASS（首轮声明未变）。
-原书疑点：本条未单列公式疑误。
-原页核对历史证据见blueprint/ch08/closeout31/PDF_VISUAL_CHECKS.json及blueprint/ch08/source_page_checks.json；原书PDF页416。本轮不虚称重新目视。
-
-### 7. 状态与证明位置
-
-- `MD.Ch08.pnhlDrift`：定义
-- `MD.Ch08.pnhlNoise`：定义
-- `MD.Ch08.isPNHLSolution`：定义
-
-位置：Blueprint/Ch08.lean。Lean字节未改，复用已绑定的396声明编译和逐条公理证据；完整检查另见32号报告。
-
-## MD-8.9.4-PairwiseNHLGenerator
-
-印刷页 395 / PDF页 416。
-
-### 1. 原文陈述
-
-> PNHL splits $`A,B,C,D,O`$, with $`C:\xi\tilde F^D`$, $`D:G\partial_\xi`$, $`O:-\hat\gamma\xi\partial_\xi+\hat\sigma^2\partial_\xi^2/2`$. $`L_{PNHL}=L_A+L_B+L_C+L_D+L_O`$. (8.113),(8.114).
-
-对应原页全文逐字保留在原文JSON；摘要中的[EXTRA]与修正解释不替换原文。
-
-### 2. 原文证明
-
-> 对应原页推导逐字保存在statement_verbatim/original_page_text；排版以原页PDF为准。
-
-### 3. 完整当前Lean（原文与修正版独立列出）
-
-```lean
-def pnhlA {N d : ℕ} (m : Fin N → ℝ) (z : PNHLState N d) : PNHLState N d := (dpdA m z.1,0)
-def pnhlB {N d : ℕ} (α rc : ℝ) (z : PNHLState N d) : PNHLState N d := (dpdB α rc z.1,0)
-def pnhlC {N d : ℕ} (m : Fin N → ℝ) (wD : ℝ → ℝ) (z : PNHLState N d) : PNHLState N d :=
-  ((0,z.2 • dpdDissipative m 1 wD z.1.1 z.1.2),0)
-def pnhlD {N d : ℕ} (m : Fin N → ℝ) (θ Q : ℝ) (wD : ℝ → ℝ)
-    (z : PNHLState N d) : PNHLState N d := ((0,0),pairwiseFeedback m θ Q wD z.1.1 z.1.2)
-def pnhlO {N d : ℕ} (γ : ℝ) (z : PNHLState N d) : PNHLState N d := ((0,0),-γ*z.2)
-def pnhlGenerator {N d : ℕ} (m : Fin N → ℝ) (α rc θ Q γ σ : ℝ) (wD : ℝ → ℝ)
-    (f : PNHLState N d → ℝ) (z : PNHLState N d) : ℝ :=
-  firstOrder8 (pnhlA m) f z+firstOrder8 (pnhlB α rc) f z+firstOrder8 (pnhlC m wD) f z+
-    firstOrder8 (pnhlD m θ Q wD) f z+additiveGenerator (pnhlO γ) (pnhlNoise σ 0) f z
-theorem pnhlDrift_split {N d : ℕ} (m : Fin N → ℝ) (α rc θ Q γ : ℝ) (wD : ℝ → ℝ)
-    (z : PNHLState N d) : pnhlDrift m α rc θ Q γ wD z=
-      pnhlA m z+pnhlB α rc z+pnhlC m wD z+pnhlD m θ Q wD z+pnhlO γ z := by
-  ext <;> simp [pnhlDrift,pnhDrift,pnhlA,pnhlB,pnhlC,pnhlD,pnhlO,dpdA,dpdB,sub_eq_add_neg]
-theorem pairwiseWeight_localStationary {N d : ℕ} (m : Fin N → ℝ) (α rc θ Q γ σ : ℝ)
-    (hm : ∀ i, 0 < m i) (hrc : 0 < rc) (hθ : 0 < θ) (hQ : 0 < Q)
-    (hγ : 0 ≤ γ) (hσ : σ^2=2*γ*θ/Q) (z : PNHLState N d)
-    (hq : ∀ i j, i ≠ j → 0 < pairDistance z.1.1 i j)
-    (hcut : ∀ i j, i ≠ j → pairDistance z.1.1 i j ≠ rc) :
-    -textbookDivergence (fun x ↦ pairwiseWeight m (dpdPotential α rc) θ⁻¹ Q x •
-      pnhlDrift m α rc θ Q γ (fun r ↦ (dpdWeightR rc r)^2) x) z+
-      σ^2/2*deriv (deriv (fun s ↦ pairwiseWeight m (dpdPotential α rc) θ⁻¹ Q (z.1,s))) z.2=0 := by
+def rescalingPsi (Φ : ℝ → ℝ) (θ K : ℝ) : ℝ :=
+  (2*K-((n:ℝ)+1)*θ)*Φ K-2*θ*K*deriv Φ K
+def rescalingDrift (U : Vec n → ℝ) (Φ : ℝ → ℝ) (θ : ℝ) (z : Phase n) : Phase n :=
+  (z.2, fun i ↦ -gradient U z.1 i-rescalingPsi (n:=n) Φ θ ((∑ j, z.2 j^2)/2)*z.2 i)
+def rescalingNoise (Φ : ℝ → ℝ) (θ : ℝ) (z : Phase n) : Phase n :=
+  (0, fun i ↦ Real.sqrt (2*θ*Φ ((∑ j, z.2 j^2)/2))*z.2 i)
+def originalRescalingPhi (γ K : ℝ) : ℝ := γ/(2*K)
+def rescalingAdmissible (Φ : ℝ → ℝ) : Prop :=
+  ContDiffOn ℝ ∞ Φ (Ioi 0) ∧ (∀ K, 0 < K → 0 < Φ K) ∧
+  (∃ C ε : ℝ, 0 < ε ∧ ∀ K, 0 < K → K < ε → |K*Φ K| ≤ C) ∧
+  ∃ C : ℝ, ∃ m : ℕ, ∀ K, 1 ≤ K → |Φ K| ≤ C*K^m
+theorem rescalingPsi_original (γ θ K : ℝ) (hK : K ≠ 0) :
+    rescalingPsi (n:=n) (originalRescalingPhi γ) θ K =
+      (1-((n:ℝ)-1)*θ/(2*K))*γ := by
   sorry
 ```
 
@@ -622,14 +38,13 @@ theorem pairwiseWeight_localStationary {N d : ℕ} (m : Fin N → ℝ) (α rc θ
 
 | 原文对象或结论 | 实际覆盖 |
 |---|---|
-| 本条数学成分 | 五子场、形式生成元、漂移分解；扩展权的局部驻定目标。 |
+| 本条数学成分 | 实际漂移扩散、Φ有效性和原始Φ对应Ψ的化简目标；没有完整乘性SDE解规格。 |
 | 对象、量词、前提及结论 | 见完整声明；补充资格在[EXTRA]列明 |
 
 ### 5. [EXTRA] 与覆盖缺口
 
-- 驻定式只为非碰撞、离开截断界面的局部光滑目标；全局保测需边界、半群等理论。
-- 没有以漂移分解恒等式替代驻定或遍历性证明；两者分别列状态。
-- 覆盖缺口：没有以漂移分解恒等式替代驻定或遍历性证明；两者分别列状态。
+- Φ在$`K\gt 0`$光滑正，$`K\Phi`$在0附近有界且多项式增长；原始Φ在$`K=0`$奇异，未声称全空间光滑扩散或遍历性。
+- 覆盖缺口：实际漂移扩散、Φ有效性和原始Φ对应Ψ的化简目标；没有完整乘性SDE解规格。
 
 ### 6. 审计结论（含网站复审结论）
 
@@ -639,28 +54,26 @@ theorem pairwiseWeight_localStationary {N d : ℕ} (m : Fin N → ℝ) (α rc θ
 修正版：未单列修正版则不推定分项PASS。
 当前：网站PASS（首轮声明未变）。
 原书疑点：本条未单列公式疑误。
-原页核对历史证据见blueprint/ch08/closeout31/PDF_VISUAL_CHECKS.json及blueprint/ch08/source_page_checks.json；原书PDF页416。本轮不虚称重新目视。
+原页核对历史证据见blueprint/ch08/closeout31/PDF_VISUAL_CHECKS.json及blueprint/ch08/source_page_checks.json；原书PDF页376。本轮不虚称重新目视。
 
 ### 7. 状态与证明位置
 
-- `MD.Ch08.pnhlA`：定义
-- `MD.Ch08.pnhlB`：定义
-- `MD.Ch08.pnhlC`：定义
-- `MD.Ch08.pnhlD`：定义
-- `MD.Ch08.pnhlO`：定义
-- `MD.Ch08.pnhlGenerator`：定义
-- `MD.Ch08.pnhlDrift_split`：已证
-- `MD.Ch08.pairwiseWeight_localStationary`：未证；缺大型理论
+- `MD.Ch08.rescalingPsi`：定义
+- `MD.Ch08.rescalingDrift`：定义
+- `MD.Ch08.rescalingNoise`：定义
+- `MD.Ch08.originalRescalingPhi`：定义
+- `MD.Ch08.rescalingAdmissible`：定义
+- `MD.Ch08.rescalingPsi_original`：未证；缺大型理论
 
 位置：Blueprint/Ch08.lean。Lean字节未改，复用已绑定的396声明编译和逐条公理证据；完整检查另见32号报告。
 
-## MD-8.9.4-PNHLSplittingAlgorithms
+## MD-8.4.4-RescalingStationary
 
-印刷页 396 / PDF页 417。
+印刷页 355 / PDF页 376。
 
 ### 1. 原文陈述
 
-> PNHL-S: $`A^{1/2}B^{1/2}C^{1/2}D^{1/2}OD^{1/2}C^{1/2}B^{1/2}A^{1/2}`$; PNHL-N: $`A^{1/2}B^{1/2}C^{1/2}D^{1/2}OD^{1/2}C^{1/2}A^{1/2}B^{1/2}`$.
+> With these definitions, the method preserves the canonical probability density $`\rho_\beta`$. The book does not prove ergodicity.
 
 对应原页全文逐字保留在原文JSON；摘要中的[EXTRA]与修正解释不替换原文。
 
@@ -671,69 +84,56 @@ theorem pairwiseWeight_localStationary {N d : ℕ} (m : Fin N → ℝ) (α rc θ
 ### 3. 完整当前Lean（原文与修正版独立列出）
 
 ```lean
-def pnhlAStep {N d : ℕ} (m : Fin N → ℝ) (h : ℝ) (z : PNHLState N d) : PNHLState N d :=
-  (((fun i ↦ z.1.1 i+(h/m i) • z.1.2 i),z.1.2),z.2)
-def pnhlBStep {N d : ℕ} (α rc h : ℝ) (z : PNHLState N d) : PNHLState N d :=
-  ((z.1.1,z.1.2+h • dpdConservative α rc z.1.1),z.2)
-def pnhlDStep {N d : ℕ} (m : Fin N → ℝ) (θ Q h : ℝ) (wD : ℝ → ℝ)
-    (z : PNHLState N d) : PNHLState N d :=
-  (z.1,z.2+h*pairwiseFeedback m θ Q wD z.1.1 z.1.2)
-def pnhlOStep {N d : ℕ} (θ Q γ h R : ℝ) (z : PNHLState N d) : PNHLState N d :=
-  (z.1,Real.exp (-γ*h)*z.2+Real.sqrt (θ/Q*(1-Real.exp (-2*γ*h)))*R)
-def pnhlPairCStep {N d : ℕ} (i j : Fin N) (m : Fin N → ℝ) (h : ℝ)
-    (wD : ℝ → ℝ) (z : PNHLState N d) : PNHLState N d :=
-  let mr := reducedMass8 (m i) (m j)
-  let e := pairDirection z.1.1 i j
-  let u := dot e (relativeVelocity m z.1.2 i j)
-  let du := u*(Real.exp (-z.2*wD (pairDistance z.1.1 i j)*h/mr)-1)
-  ((z.1.1,dpdPairMomentumStep i j e mr du z.1.2),z.2)
-def pnhlSComposition {E : Type*} (A B C D O : ℝ → E → E) (h : ℝ) : E → E :=
-  A (h/2) ∘ B (h/2) ∘ C (h/2) ∘ D (h/2) ∘ O h ∘ D (h/2) ∘ C (h/2) ∘ B (h/2) ∘ A (h/2)
-def pnhlNComposition {E : Type*} (A B C D O : ℝ → E → E) (h : ℝ) : E → E :=
-  A (h/2) ∘ B (h/2) ∘ C (h/2) ∘ D (h/2) ∘ O h ∘ D (h/2) ∘ C (h/2) ∘ A (h/2) ∘ B (h/2)
+theorem rescalingStationary (U : Vec n → ℝ) (Φ : ℝ → ℝ) (θ Z : ℝ)
+    (hU : ContDiff ℝ 2 U) (hΦ : rescalingAdmissible Φ) (hθ : 0 < θ) (hZ : 0 < Z)
+    (hρ : probabilityDensity volume (fun z : Phase n ↦
+      Real.exp (-(kineticTwice (fun _ ↦ 1) z.2/2+U z.1)/θ)/Z))
+    (f : Phase n → ℝ) (hf : ContDiff ℝ ∞ f) (hc : HasCompactSupport f)
+    (havoid : ∀ z ∈ tsupport f, z.2 ≠ 0) :
+    (∫ z, (fderiv ℝ f z (rescalingDrift U Φ θ z) +
+      fderiv ℝ (fun x ↦ fderiv ℝ f x (rescalingNoise Φ θ z)) z (rescalingNoise Φ θ z)/2) *
+      (Real.exp (-(kineticTwice (fun _ ↦ 1) z.2/2+U z.1)/θ)/Z)) = 0 := by
+  sorry
 ```
 
 ### 4. 对照表
 
 | 原文对象或结论 | 实际覆盖 |
 |---|---|
-| 本条数学成分 | A/B/D/O实际更新、单对C更新和S/N的原印外层组合；全C指数与误差理论列缺口。 |
+| 本条数学成分 | 闭包支撑tsupport避开零动量的光滑紧支撑测试函数弱驻定目标；零动量边界及半群不变性未覆盖。 |
 | 对象、量词、前提及结论 | 见完整声明；补充资格在[EXTRA]列明 |
 
 ### 5. [EXTRA] 与覆盖缺口
 
-- O需$`\theta,Q\gt 0`$、$`\gamma,h\ge0`$及R独立标准正态；A/B/D给实际子步。C仅给逐对精确更新，全C需有序逐对近似，未冒称精确全流。
-- 两组合保留原印因子顺序；不证明全方法弱阶、不变分布误差或非对称方法更优的经验结论。
+- [EXTRA] hU要求U为$`C^2`$；$`\theta,Z\gt 0`$且hρ完整要求正则概率密度归一与可积。Φ仅在$`K\gt 0`$上光滑、正，另有$`K\Phi`$在0附近有界及Φ无穷远至多多项式增长的原页条件。
+- [EXTRA] f为$`C^\infty`$紧支撑测试函数；当前havoid已对闭包支撑`tsupport f`量化，要求其中每点$`p\ne0`$。有限维紧性确保非空闭包支撑与$`p=0`$分离，K在该支撑上具有严格正下界。
+- 二阶项中rescalingNoise Φ θ z对内层变量x保持固定，得到Itô Hessian项的一半，不包含噪声方向的导数。
+- 结论仅为$`\int Lf\cdot\rho_\beta=0`$的局部弱驻定目标；未断言随机解存在、零动量边界控制、Markov半群不变性或遍历性。
+- 覆盖缺口：闭包支撑tsupport避开零动量的光滑紧支撑测试函数弱驻定目标；零动量边界及半群不变性未覆盖。
 
 ### 6. 审计结论（含网站复审结论）
 
-网站首轮：PASS。
-网站复审结论：本条未进入本轮复审；保留首轮PASS意见。
-原文版：见原网站逐项意见；不凭整组状态推定原印真值。
-修正版：未单列修正版则不推定分项PASS。
-当前：网站PASS（首轮声明未变）。
-原书疑点：本条未单列公式疑误。
-原页核对历史证据见blueprint/ch08/closeout31/PDF_VISUAL_CHECKS.json及blueprint/ch08/source_page_checks.json；原书PDF页417。本轮不虚称重新目视。
+网站首轮：FAIL。
+网站复审结论：PASS；审查rescalingPsi、Drift、Noise、Admissible及完整rescalingStationary类型：$`M=I`$、$`n=N_d`$、$`\theta=k_B T`$，Ψ及漂移/扩散系数符号与因子正确；单个噪声给出秩一扩散。二阶项冻结噪声为正确Itô项。$`C^2`$势、Φ在$`K\gt 0`$的光滑正性与增长条件、正θ,Z、概率归一、$`C^\infty`$紧支撑及tsupport避零前提齐全。结论仅为$`\int Lf\rho_\beta=0`$；紧闭包支撑避零已修复旧报告的问题，Φ在$`K=0`$任意的总化值不妨碍该限定范围。完整不变性和遍历性缺口已明确。sorry不影响本次签名判定，未编译或补证明。
+原文版：原书全文保留；当前有限平均/弱驻定资格已获网站复审PASS。
+修正版：当前声明网站复审PASS，旧FAIL已解决；范围仍按实际覆盖限定。
+当前：网站复审PASS（Lean未改）。
+原书疑点：[RESOLVED] 旧issues及extra_assumptions中“havoid只量化Function.support f/尚未实现tsupport”的描述已过期；当前完整Lean与依赖规格均明确使用tsupport f。；[COVERAGE_GAP] 零动量边界、全局随机过程及半群不变性尚未形式化；此项是明确披露的覆盖限制，不是当前远离边界的弱驻定声明错误。
+原页核对历史证据见blueprint/ch08/closeout31/PDF_VISUAL_CHECKS.json及blueprint/ch08/source_page_checks.json；原书PDF页376。本轮不虚称重新目视。
 
 ### 7. 状态与证明位置
 
-- `MD.Ch08.pnhlAStep`：定义
-- `MD.Ch08.pnhlBStep`：定义
-- `MD.Ch08.pnhlDStep`：定义
-- `MD.Ch08.pnhlOStep`：定义
-- `MD.Ch08.pnhlPairCStep`：定义
-- `MD.Ch08.pnhlSComposition`：定义
-- `MD.Ch08.pnhlNComposition`：定义
+- `MD.Ch08.rescalingStationary`：未证；缺大型理论
 
 位置：Blueprint/Ch08.lean。Lean字节未改，复用已绑定的396声明编译和逐条公理证据；完整检查另见32号报告。
 
-## MD-8.10-BerendsenRelaxation
+## MD-8.4.5-ThermostatEfficiency
 
-印刷页 396–397 / PDF页 417–418。
+印刷页 356–357 / PDF页 377–378。
 
 ### 1. 原文陈述
 
-> $`\dot T(t)=\gamma_T(T_{target}-T(t))`$, $`\gamma_T\gt 0`$. After Verlet, $`p\leftarrow\sqrt{1+\gamma_T h(N_d k_B T/\lVert p\rVert^2-1)}p`$.
+> efficiency = rate of convergence to equilibrium / rate of growth of perturbation of dynamics. Table 8.1 gives analytic lowest-order estimates; NHL has initially quadratic error.
 
 对应原页全文逐字保留在原文JSON；摘要中的[EXTRA]与修正解释不替换原文。
 
@@ -744,31 +144,622 @@ def pnhlNComposition {E : Type*} (A B C D O : ℝ → E → E) (h : ℝ) : E →
 ### 3. 完整当前Lean（原文与修正版独立列出）
 
 ```lean
-def berendsenTemperature (θ T0 γ t : ℝ) : ℝ := θ+(T0-θ)*Real.exp (-γ*t)
-theorem berendsenTemperature_derivative (θ T0 γ t : ℝ) :
-    HasDerivAt (berendsenTemperature θ T0 γ) (γ*(θ-berendsenTemperature θ T0 γ t)) t := by
-  convert (hasDerivAt_const t θ).add (((hasDerivAt_id t).const_mul (-γ)).exp.const_mul (T0-θ)) using 1
-  · ext x
-    dsimp [berendsenTemperature]
-  · dsimp [berendsenTemperature]
-    ring
-def berendsenRadicand (nd θ γ h E : ℝ) : ℝ := 1+γ*h*(nd*θ/E-1)
-def berendsenScale {n : ℕ} (θ γ h : ℝ) (p : Vec n) : Vec n :=
-  Real.sqrt (berendsenRadicand n θ γ h (dot p p)) • p
-def berendsenScaleQualification {n : ℕ} (θ γ h : ℝ) (p : Vec n) : Prop :=
-  0 < n ∧ 0 < θ ∧ 0 < γ ∧ 0 ≤ h ∧ 0 < dot p p ∧ 0 ≤ berendsenRadicand n θ γ h (dot p p)
-theorem dot_smul_same {n : ℕ} (c : ℝ) (p : Vec n) : dot (c • p) (c • p)=c^2*dot p p := by
-  simp only [dot,Pi.smul_apply,smul_eq_mul,Finset.mul_sum]
-  apply Finset.sum_congr rfl
-  intro i hi
-  ring
-theorem berendsenScale_energy {n : ℕ} (θ γ h : ℝ) (p : Vec n)
-    (hq : berendsenScaleQualification θ γ h p) :
-    dot (berendsenScale θ γ h p) (berendsenScale θ γ h p)=
-      (1-γ*h)*dot p p+γ*h*n*θ := by
-  rw [berendsenScale,dot_smul_same,Real.sq_sqrt hq.2.2.2.2.2]
-  dsimp [berendsenRadicand]
-  field_simp [ne_of_gt hq.2.2.2.2.1]
+def thermostatEfficiency (convergence perturbation : ℝ) : ℝ := convergence/perturbation
+def langevinErrorEstimate (γ t : ℝ) : ℝ := γ*t
+def rescalingRateEstimate (meanK2Phi θ : ℝ) (N : ℕ) : ℝ := 4*meanK2Phi/(θ*N)
+def rescalingErrorEstimate (meanKPhi : ℝ) (N : ℕ) (t : ℝ) : ℝ := 2*meanKPhi/(N:ℝ)*t
+def nhlRateEstimate (N : ℕ) (θ Q : ℝ) : ℝ := Real.sqrt ((N:ℝ)*θ/Q)
+def nhlErrorEstimate (θ Q t : ℝ) : ℝ := θ/(2*Q)*t^2
+
+def langevinRateEstimate (γ : ℝ) : ℝ := γ
+def langevinEfficiencyEstimate : ℝ := 1
+def originalRescalingRateEstimate (γVR : ℝ) : ℝ := γVR
+def originalRescalingErrorEstimate (N : ℕ) (γVR t : ℝ) : ℝ := γVR/(N:ℝ)*t
+def originalRescalingEfficiencyEstimate (N : ℕ) : ℝ := N
+def nhlCriticalEfficiencyEstimate (N : ℕ) : ℝ := 2*N
+def rescalingEfficiencyOrder (efficiency : ℕ → ℝ) : Prop :=
+  efficiency =O[atTop] (fun N : ℕ ↦ (N : ℝ))
+```
+
+### 4. 对照表
+
+| 原文对象或结论 | 实际覆盖 |
+|---|---|
+| 本条数学成分 | 效率比值、表8.1四行解析速率/低阶误差/效率估计及一般VR的$`O(N)`$含义；外引估计定理未证，经验曲线排除。 |
+| 对象、量词、前提及结论 | 见完整声明；补充资格在[EXTRA]列明 |
+
+### 5. [EXTRA] 与覆盖缺口
+
+- 表8.1解析估计作为公式定义保留；其外引渐近推导、谱隙与误差阶不是已证定理，列覆盖缺口。
+- $`\gamma\gt 0`$、$`\theta,Q\gt 0`$、$`N\gt 0`$用于物理解释；一般VR的$`O(N)`$给出确切渐近性质定义，没有声称任意Φ族满足它。
+- 覆盖缺口：$`\gamma\gt 0`$、$`\theta,Q\gt 0`$、$`N\gt 0`$用于物理解释；一般VR的$`O(N)`$给出确切渐近性质定义，没有声称任意Φ族满足它。
+
+### 6. 审计结论（含网站复审结论）
+
+网站首轮：PASS。
+网站复审结论：本条未进入本轮复审；保留首轮PASS意见。
+原文版：见原网站逐项意见；不凭整组状态推定原印真值。
+修正版：未单列修正版则不推定分项PASS。
+当前：网站PASS（首轮声明未变）。
+原书疑点：本条未单列公式疑误。
+原页核对历史证据见blueprint/ch08/closeout31/PDF_VISUAL_CHECKS.json及blueprint/ch08/source_page_checks.json；原书PDF页377–378。本轮不虚称重新目视。
+
+### 7. 状态与证明位置
+
+- `MD.Ch08.thermostatEfficiency`：定义
+- `MD.Ch08.langevinErrorEstimate`：定义
+- `MD.Ch08.rescalingRateEstimate`：定义
+- `MD.Ch08.rescalingErrorEstimate`：定义
+- `MD.Ch08.nhlRateEstimate`：定义
+- `MD.Ch08.nhlErrorEstimate`：定义
+- `MD.Ch08.langevinRateEstimate`：定义
+- `MD.Ch08.langevinEfficiencyEstimate`：定义
+- `MD.Ch08.originalRescalingRateEstimate`：定义
+- `MD.Ch08.originalRescalingErrorEstimate`：定义
+- `MD.Ch08.originalRescalingEfficiencyEstimate`：定义
+- `MD.Ch08.nhlCriticalEfficiencyEstimate`：定义
+- `MD.Ch08.rescalingEfficiencyOrder`：定义
+
+位置：Blueprint/Ch08.lean。Lean字节未改，复用已绑定的396声明编译和逐条公理证据；完整检查另见32号报告。
+
+## MD-8.5-SLS
+
+印刷页 357–358 / PDF页 378–379。
+
+### 1. 原文陈述
+
+> $`dq=\xi M^{-1}p\,dt`$, $`dp=-\gamma p\,dt+\sigma M^{1/2}dW`$, $`d\xi=-[(M^{-1}p)\cdot\nabla U/\mu+\gamma'\xi]dt+\sigma'dZ`$; $`\sigma=\sqrt{2k_B T\gamma}`$, $`\sigma'=\sqrt{2k_B T\gamma'/\mu}`$.
+
+对应原页全文逐字保留在原文JSON；摘要中的[EXTRA]与修正解释不替换原文。
+
+### 2. 原文证明
+
+> 对应原页推导逐字保存在statement_verbatim/original_page_text；排版以原页PDF为准。
+
+### 3. 完整当前Lean（原文与修正版独立列出）
+
+```lean
+def slsDrift (invm : Vec n) (U : Vec n → ℝ) (Q γ γb : ℝ) (z : Phase n × ℝ) : Phase n × ℝ :=
+  ((fun i ↦ z.2*invm i*z.1.2 i, fun i ↦ -γ*z.1.2 i),
+   -dot (fun i ↦ invm i*z.1.2 i) (gradient U z.1.1)/Q-γb*z.2)
+def slsNoise (invm : Vec n) (β Q γ γb : ℝ) (j : Fin (n+1)) : Phase n × ℝ :=
+  if hj : j.val < n then
+    ((0, Pi.single ⟨j.val,hj⟩ (Real.sqrt (2*γ/(β*invm ⟨j.val,hj⟩)))), 0)
+  else ((0,0), Real.sqrt (2*γb/(β*Q)))
+def isSLSSolution (invm : Vec n) (U : Vec n → ℝ) (β Q γ γb : ℝ)
+    (P : Measure Ω) (W : ℝ → Ω → Vec (n+1))
+    (X : ℝ → Ω → Phase n × ℝ) (x0 : Phase n × ℝ) : Prop :=
+  thermostatParameters invm β Q ∧ 0 < γ ∧ 0 < γb ∧
+  additiveSDE P (n+1) W X x0 (slsDrift invm U Q γ γb) (slsNoise invm β Q γ γb)
+def slsDeterministic (invm : Vec n) (U : Vec n → ℝ) (Q : ℝ) (z : Phase n × ℝ) : Phase n × ℝ :=
+  ((fun i ↦ z.2*invm i*z.1.2 i, 0), -dot (fun i ↦ invm i*z.1.2 i) (gradient U z.1.1)/Q)
+```
+
+### 4. 对照表
+
+| 原文对象或结论 | 实际覆盖 |
+|---|---|
+| 本条数学成分 | 完整SLS加性SDE积分解规格、噪声方向与确定性子场定义。 |
+| 对象、量词、前提及结论 | 见完整声明；补充资格在[EXTRA]列明 |
+
+### 5. [EXTRA] 与覆盖缺口
+
+- 全部n+1个Wiener坐标独立，Q、质量、温度及两摩擦参数正；总漂移和常噪声用实际积分方程解释。
+
+### 6. 审计结论（含网站复审结论）
+
+网站首轮：PASS。
+网站复审结论：本条未进入本轮复审；保留首轮PASS意见。
+原文版：见原网站逐项意见；不凭整组状态推定原印真值。
+修正版：未单列修正版则不推定分项PASS。
+当前：网站PASS（首轮声明未变）。
+原书疑点：本条未单列公式疑误。
+原页核对历史证据见blueprint/ch08/closeout31/PDF_VISUAL_CHECKS.json及blueprint/ch08/source_page_checks.json；原书PDF页378–379。本轮不虚称重新目视。
+
+### 7. 状态与证明位置
+
+- `MD.Ch08.slsDrift`：定义
+- `MD.Ch08.slsNoise`：定义
+- `MD.Ch08.isSLSSolution`：定义
+- `MD.Ch08.slsDeterministic`：定义
+
+位置：Blueprint/Ch08.lean。Lean字节未改，复用已绑定的396声明编译和逐条公理证据；完整检查另见32号报告。
+
+## MD-8.5-SLSBracketPrinted
+
+印刷页 358 / PDF页 379。
+
+### 1. 原文陈述
+
+> $`D=(\xi p,-p,-p\cdot\nabla U-\xi)`$, $`D'=[D,Y_{N_c+1}]=(p,0,1)`$, $`[D',Y_i]=e_i`$.
+
+对应原页全文逐字保留在原文JSON；摘要中的[EXTRA]与修正解释不替换原文。
+
+### 2. 原文证明
+
+> 对应原页推导逐字保存在statement_verbatim/original_page_text；排版以原页PDF为准。
+
+### 3. 完整当前Lean（原文与修正版独立列出）
+
+```lean
+def slsBathNoise : Phase n × ℝ → Phase n × ℝ := fun _ ↦ ((0,0),1)
+theorem slsBracketPrinted (U : Vec n → ℝ) (hU : ContDiff ℝ ∞ U) (z : Phase n × ℝ) :
+    VectorField.lieBracket ℝ (slsDrift (fun _ ↦ 1) U 1 1 1) slsBathNoise z = ((z.1.2,0),1) := by
+  sorry
+theorem slsBracket_corrected (U : Vec n → ℝ) (hU : ContDiff ℝ ∞ U) (z : Phase n × ℝ) :
+    VectorField.lieBracket ℝ (slsDrift (fun _ ↦ 1) U 1 1 1) slsBathNoise z = ((-z.1.2,0),1) := by
+  sorry
+```
+
+### 4. 对照表
+
+| 原文对象或结论 | 实际覆盖 |
+|---|---|
+| 本条数学成分 | 第一漂移/热浴括号的原印与符号修正目标；二重括号在Hörmander另条处理。 |
+| 对象、量词、前提及结论 | 见完整声明；补充资格在[EXTRA]列明 |
+
+### 5. [EXTRA] 与覆盖缺口
+
+- 只纠正第一括号；二次括号的整体符号不影响生成空间张成。
+
+### 6. 审计结论（含网站复审结论）
+
+网站首轮：NEEDS_HUMAN。
+网站复审结论：本条未进入本轮复审；保留首轮NEEDS_HUMAN意见。
+原文版：Printed忠实性PASS；括号首分量符号不一致。
+修正版：原送审$`-p`$首分量_corrected签名PASS。
+当前：原书疑误待导师；原送审正确版本分项保留。
+原书疑点：已目视核对原页PDF379：沿用Proposition8.2所用括号约定$`[D,Y]=DY\cdot D-DD\cdot Y`$，q分量应为$`-p`$；整体反号也不能同时保留热浴分量+1。；{"codes": ["ERRATUM_LIE_BRACKET_SIGN"], "detail": "slsBracketPrinted逐字对应原书$`(p,0,1)`$，字面忠实性PASS；数学上在标准Lie括号约定下不正确。按$`\mathrm{VectorField.lieBracket}\,V\,W=DW\cdot V-DV\cdot W`$，常向量Yξ给$`[D,Y_\xi]=-\partial_\xi D=(-p,0,1)`$，故_corrected签名正确。反向括号会整体变为$`(p,0,-1)`$，不能仅靠约定得到原书$`(p,0,1)`$。二次括号的整体符号不影响张成。", "suggested_fix": "保留Printed原书字面版并加[ERRATUM?]；实际计算引用_corrected，第一分量应为$`-p`$。"}
+原页核对历史证据见blueprint/ch08/closeout31/PDF_VISUAL_CHECKS.json及blueprint/ch08/source_page_checks.json；原书PDF页379。本轮不虚称重新目视。
+
+### 7. 状态与证明位置
+
+- `MD.Ch08.slsBathNoise`：定义
+- `MD.Ch08.slsBracketPrinted`：未证；原书疑误不证
+- `MD.Ch08.slsBracket_corrected`：未证；缺大型理论
+
+位置：Blueprint/Ch08.lean。Lean字节未改，复用已绑定的396声明编译和逐条公理证据；完整检查另见32号报告。
+
+## MD-8.5-SLSHormander
+
+印刷页 357–358 / PDF页 378–379。
+
+### 1. 原文陈述
+
+> All basis vectors are in the Lie algebra generated by the drift and the N_c+1 noise directions, so Hörmander holds.
+
+对应原页全文逐字保留在原文JSON；摘要中的[EXTRA]与修正解释不替换原文。
+
+### 2. 原文证明
+
+> 对应原页推导逐字保存在statement_verbatim/original_page_text；排版以原页PDF为准。
+
+### 3. 完整当前Lean（原文与修正版独立列出）
+
+```lean
+theorem slsHormander (U : Vec n → ℝ) (hU : ContDiff ℝ ∞ U) (z : Phase n × ℝ) :
+    textbookHormanderAt
+      (insert (slsDrift (fun _ ↦ 1) U 1 1 1)
+        (Set.range (fun j : Fin (n+1) ↦ fun _ : Phase n × ℝ ↦ slsNoise (fun _ ↦ 1) 2 1 1 1 j))) z := by
+  sorry
+```
+
+### 4. 对照表
+
+| 原文对象或结论 | 实际覆盖 |
+|---|---|
+| 本条数学成分 | 单位参数实际SLS场与噪声方向的点态Lie张成目标；不含几何遍历性。 |
+| 对象、量词、前提及结论 | 见完整声明；补充资格在[EXTRA]列明 |
+
+### 5. [EXTRA] 与覆盖缺口
+
+- 单位参数、常非零独立噪声；只陈述实际Lie张成，不将其直接称为几何遍历定理。
+- 覆盖缺口：单位参数实际SLS场与噪声方向的点态Lie张成目标；不含几何遍历性。
+
+### 6. 审计结论（含网站复审结论）
+
+网站首轮：PASS。
+网站复审结论：本条未进入本轮复审；保留首轮PASS意见。
+原文版：见原网站逐项意见；不凭整组状态推定原印真值。
+修正版：未单列修正版则不推定分项PASS。
+当前：网站PASS（首轮声明未变）。
+原书疑点：本条未单列公式疑误。
+原页核对历史证据见blueprint/ch08/closeout31/PDF_VISUAL_CHECKS.json及blueprint/ch08/source_page_checks.json；原书PDF页378–379。本轮不虚称重新目视。
+
+### 7. 状态与证明位置
+
+- `MD.Ch08.slsHormander`：未证；缺大型理论
+
+位置：Blueprint/Ch08.lean。Lean字节未改，复用已绑定的396声明编译和逐条公理证据；完整检查另见32号报告。
+
+## MD-8.5-SLSConservation
+
+印刷页 358 / PDF页 379。
+
+### 1. 原文陈述
+
+> The deterministic part preserves volume and $`U(q)+\mu\xi^2/2`$, and the full dynamics preserves the extended canonical measure.
+
+对应原页全文逐字保留在原文JSON；摘要中的[EXTRA]与修正解释不替换原文。
+
+### 2. 原文证明
+
+> 对应原页推导逐字保存在statement_verbatim/original_page_text；排版以原页PDF为准。
+
+### 3. 完整当前Lean（原文与修正版独立列出）
+
+```lean
+theorem slsDeterministic_stationary (invm : Vec n) (U : Vec n → ℝ) (β Q : ℝ)
+    (hp : thermostatParameters invm β Q) (hU : ContDiff ℝ 2 U) :
+    textbookLiouvilleStationary (slsDeterministic invm U Q) (nhWeight invm U β Q) := by
+  sorry
+theorem slsDeterministic_divergence (invm : Vec n) (U : Vec n → ℝ) (Q : ℝ)
+    (hU : ContDiff ℝ 2 U) (z : Phase n × ℝ) :
+    textbookDivergence (slsDeterministic invm U Q) z = 0 := by
+  sorry
+```
+
+### 4. 对照表
+
+| 原文对象或结论 | 实际覆盖 |
+|---|---|
+| 本条数学成分 | 确定性SLS子场的局部驻定及零散度目标；完整SDE概率不变、独立第一积分未另证。 |
+| 对象、量词、前提及结论 | 见完整声明；补充资格在[EXTRA]列明 |
+
+### 5. [EXTRA] 与覆盖缺口
+
+- 完整权重含p高斯项，确定性p固定；只保留驻定及零散度，完整SDE概率不变和离散迭代收敛列缺口。
+
+### 6. 审计结论（含网站复审结论）
+
+网站首轮：PASS。
+网站复审结论：本条未进入本轮复审；保留首轮PASS意见。
+原文版：见原网站逐项意见；不凭整组状态推定原印真值。
+修正版：未单列修正版则不推定分项PASS。
+当前：网站PASS（首轮声明未变）。
+原书疑点：本条未单列公式疑误。
+原页核对历史证据见blueprint/ch08/closeout31/PDF_VISUAL_CHECKS.json及blueprint/ch08/source_page_checks.json；原书PDF页379。本轮不虚称重新目视。
+
+### 7. 状态与证明位置
+
+- `MD.Ch08.slsDeterministic_stationary`：未证；缺大型理论
+- `MD.Ch08.slsDeterministic_divergence`：未证；缺大型理论
+
+位置：Blueprint/Ch08.lean。Lean字节未改，复用已绑定的396声明编译和逐条公理证据；完整检查另见32号报告。
+
+## MD-8.5-SLSLeapfrog
+
+印刷页 358–359 / PDF页 379–380。
+
+### 1. 原文陈述
+
+> $`q=q_0+\eta M^{-1}p`$; $`\dot\eta=\xi`$, $`\dot\xi=-\partial_\eta U(q_0+\eta M^{-1}p)`$. Leapfrog: $`\xi_{1/2}=\xi-h(M^{-1}p)\cdot\nabla U(q)/(2\mu)`$, $`q'=q+h\xi_{1/2}M^{-1}p`$, $`\xi'=\xi_{1/2}-h(M^{-1}p)\cdot\nabla U(q')/(2\mu)`$.
+
+对应原页全文逐字保留在原文JSON；摘要中的[EXTRA]与修正解释不替换原文。
+
+### 2. 原文证明
+
+> 对应原页推导逐字保存在statement_verbatim/original_page_text；排版以原页PDF为准。
+
+### 3. 完整当前Lean（原文与修正版独立列出）
+
+```lean
+def slsBathKick (invm : Vec n) (U : Vec n → ℝ) (Q h : ℝ) (z : Phase n × ℝ) : Phase n × ℝ :=
+  (z.1, z.2-h*dot (fun i ↦ invm i*z.1.2 i) (gradient U z.1.1)/Q)
+def slsDriftStep (invm : Vec n) (h : ℝ) (z : Phase n × ℝ) : Phase n × ℝ :=
+  ((fun i ↦ z.1.1 i+h*z.2*invm i*z.1.2 i,z.1.2),z.2)
+def slsLeapfrog (invm : Vec n) (U : Vec n → ℝ) (Q h : ℝ) : Phase n × ℝ → Phase n × ℝ :=
+  slsBathKick invm U Q (h/2) ∘ slsDriftStep invm h ∘ slsBathKick invm U Q (h/2)
+def slsCoordinateField (i : Fin n) (invm : Vec n) (U : Vec n → ℝ) (Q : ℝ)
+    (z : Phase n × ℝ) : Phase n × ℝ :=
+  ((Pi.single i (z.2*invm i*z.1.2 i),0), -invm i*z.1.2 i*gradient U z.1.1 i/Q)
+
+/-- 原印η约化方程，ξ导数未含μ⁻¹；保留原书字面式。 -/
+def slsReducedPrinted (invm : Vec n) (U : Vec n → ℝ) (q0 p : Vec n)
+    (z : ℝ × ℝ) : ℝ × ℝ :=
+  (z.2, -deriv (fun η : ℝ ↦ U (q0+η • (fun i ↦ invm i*p i))) z.1)
+
+/-- 修正版：恢复热浴质量因子1/Q，对应(8.36)的η方向导数。 -/
+def slsReduced_corrected (invm : Vec n) (U : Vec n → ℝ) (q0 p : Vec n)
+    (Q : ℝ) (z : ℝ × ℝ) : ℝ × ℝ :=
+  (z.2, -deriv (fun η : ℝ ↦ U (q0+η • (fun i ↦ invm i*p i))) z.1/Q)
+```
+
+### 4. 对照表
+
+| 原文对象或结论 | 实际覆盖 |
+|---|---|
+| 本条数学成分 | 原有半kick–drift–半kick与坐标场定义，另列原印η约化场和恢复1/Q的修正版；体积保持、误差阶及η变换推导未证明。 |
+| 对象、量词、前提及结论 | 见完整声明；补充资格在[EXTRA]列明 |
+
+### 5. [EXTRA] 与覆盖缺口
+
+- [ERRATUM?] 原页379的η约化式确实印为$`\dot\xi=-\partial_\eta U`$，漏写了同页(8.36)及下一页kick公式中的$`\mu^{-1}`$；Printed版逐字保留，`_corrected`版单独恢复$`1/Q`$。
+- 本条仅定义半kick–drift–半kick、逐坐标场及两种约化场；OU耦合、体积保持、二阶不变分布误差、精确求积与坐标变换定理均未形式化。
+- [EXTRA] 物理域与总化导数/除法的区别见context_notation；这些限制不是现有def的Lean参数前提。
+- [EXTRA] 物理解释另需$`Q=\mu\gt 0`$、各$`invm_i\gt 0`$及U可微；现有def不强制这些资格。
+- 覆盖缺口：原有半kick–drift–半kick与坐标场定义，另列原印η约化场和恢复1/Q的修正版；体积保持、误差阶及η变换推导未证明。
+- 覆盖缺口：本条仅定义半kick–drift–半kick、逐坐标场及两种约化场；OU耦合、体积保持、二阶不变分布误差、精确求积与坐标变换定理均未形式化。
+
+### 6. 审计结论（含网站复审结论）
+
+网站首轮：NEEDS_HUMAN。
+网站复审结论：NEEDS_HUMAN；六个def逐一审查均通过：slsBathKick、slsDriftStep、slsLeapfrog、slsCoordinateField对应原页算法，p始终固定；slsReducedPrinted忠实保留原印漏因子式，slsReduced_corrected恢复1/Q，符合(8.36)的方向导数。物理解释以$`Q\gt 0`$、正对角逆质量及相关可微性为域，def本身为全域总函数，无物理域或误差结论的量词断言。原印版忠实性PASS、修正版合理性PASS、算法定义PASS；条目总体NEEDS_HUMAN仅因原书$`\mu^{-1}`$遗漏待人工确认，不是这些Lean定义FAIL。
+原文版：Printed忠实性PASS；一般μ下约化式漏$`\mu^{-1}`$待导师。
+修正版：算法定义及恢复1/Q的_corrected网站PASS。
+当前：修正版/限定声明网站认可；原文疑误待导师（NEEDS_HUMAN）。
+原书疑点：[ERRATUM?][SOURCE_MISSING_MU_IN_REDUCTION] 原页η约化式缺$`\mu^{-1}`$，和(8.36)及两次kick不一致。原文及statement_latex保持不动，勘误须人工确认。；[DOMAIN_CLARIFICATION] $`Q\gt 0`$、正质量及可微性只是物理解释域说明，没有作为Lean def的前提；不把总函数误读为所有参数上的经典动力学定理。；已目视核对原页PDF379：η约化式确实漏$`\mu^{-1}`$，一般μ下应为$`\dot\xi=-\mu^{-1}\partial_\eta U`$；原印与Printed保留，_corrected恢复1/Q。
+32号本轮已目视核对原页；记录见blueprint/ch08/closeout32/PDF_VISUAL_CHECKS.json；原书PDF页379–380。
+
+### 7. 状态与证明位置
+
+- `MD.Ch08.slsBathKick`：定义
+- `MD.Ch08.slsDriftStep`：定义
+- `MD.Ch08.slsLeapfrog`：定义
+- `MD.Ch08.slsCoordinateField`：定义
+- `MD.Ch08.slsReducedPrinted`：定义
+- `MD.Ch08.slsReduced_corrected`：定义
+
+位置：Blueprint/Ch08.lean。Lean字节未改，复用已绑定的396声明编译和逐条公理证据；完整检查另见32号报告。
+
+## MD-8.5-SLSDoubleWell
+
+印刷页 359 / PDF页 380。
+
+### 1. 原文陈述
+
+> The one-dimensional example has $`U(q)=(q^2-1)^2`$.
+
+对应原页全文逐字保留在原文JSON；摘要中的[EXTRA]与修正解释不替换原文。
+
+### 2. 原文证明
+
+> 对应原页推导逐字保存在statement_verbatim/original_page_text；排版以原页PDF为准。
+
+### 3. 完整当前Lean（原文与修正版独立列出）
+
+```lean
+def slsDoubleWell (q : ℝ) : ℝ := (q^2-1)^2
+theorem slsDoubleWell_nonneg (q : ℝ) : 0 ≤ slsDoubleWell q := sq_nonneg _
+```
+
+### 4. 对照表
+
+| 原文对象或结论 | 实际覆盖 |
+|---|---|
+| 本条数学成分 | 一维双阱势定义与非负性。 |
+| 对象、量词、前提及结论 | 见完整声明；补充资格在[EXTRA]列明 |
+
+### 5. [EXTRA] 与覆盖缺口
+
+- 保留试验中的数学势函数；轨迹、直方图和采样优劣是经验观测，另列排除。
+
+### 6. 审计结论（含网站复审结论）
+
+网站首轮：PASS。
+网站复审结论：本条未进入本轮复审；保留首轮PASS意见。
+原文版：见原网站逐项意见；不凭整组状态推定原印真值。
+修正版：未单列修正版则不推定分项PASS。
+当前：网站PASS（首轮声明未变）。
+原书疑点：本条未单列公式疑误。
+原页核对历史证据见blueprint/ch08/closeout31/PDF_VISUAL_CHECKS.json及blueprint/ch08/source_page_checks.json；原书PDF页380。本轮不虚称重新目视。
+
+### 7. 状态与证明位置
+
+- `MD.Ch08.slsDoubleWell`：定义
+- `MD.Ch08.slsDoubleWell_nonneg`：已证
+
+位置：Blueprint/Ch08.lean。Lean字节未改，复用已绑定的396声明编译和逐条公理证据；完整检查另见32号报告。
+
+## MD-8.6-IsokineticField
+
+印刷页 361–362 / PDF页 382–383。
+
+### 1. 原文陈述
+
+> $`\dot q=M^{-1}p`$, $`\dot p=F(q)-[p^{\mathsf T}M^{-1}F(q)/(p^{\mathsf T}M^{-1}p)]p`$; $`K(p)=p^{\mathsf T}M^{-1}p`$ is constant.
+
+对应原页全文逐字保留在原文JSON；摘要中的[EXTRA]与修正解释不替换原文。
+
+### 2. 原文证明
+
+> 对应原页推导逐字保存在statement_verbatim/original_page_text；排版以原页PDF为准。
+
+### 3. 完整当前Lean（原文与修正版独立列出）
+
+```lean
+def isoMultiplier (invm p F : Vec n) : ℝ :=
+  (∑ i, invm i*p i*F i)/kineticTwice invm p
+def isoField (invm : Vec n) (F : Vec n → Vec n) (z : Phase n) : Phase n :=
+  (fun i ↦ invm i*z.2 i, fun i ↦ F z.1 i-isoMultiplier invm z.2 (F z.1)*z.2 i)
+theorem isoKinetic_balance (invm p F : Vec n) (hK : kineticTwice invm p ≠ 0) :
+    (∑ i, invm i*p i*(F i-isoMultiplier invm p F*p i)) = 0 := by
+  simp only [mul_sub, Finset.sum_sub_distrib]
+  have hsum : (∑ i, invm i*p i*(isoMultiplier invm p F*p i)) =
+      isoMultiplier invm p F*kineticTwice invm p := by
+    simp only [kineticTwice, Finset.mul_sum]
+    apply Finset.sum_congr rfl; intro i hi; ring
+  rw [hsum, isoMultiplier, div_mul_cancel₀ _ hK, sub_self]
+```
+
+### 4. 对照表
+
+| 原文对象或结论 | 实际覆盖 |
+|---|---|
+| 本条数学成分 | 无约束向量场与瞬时动能导数的代数消去；沿解的完整第一积分列缺口。 |
+| 对象、量词、前提及结论 | 见完整声明；补充资格在[EXTRA]列明 |
+
+### 5. [EXTRA] 与覆盖缺口
+
+- 正质量、$`K\gt 0`$作为物理有效域；本条实际证明瞬时动能平衡，不将之扩大为全局解存在性。
+
+### 6. 审计结论（含网站复审结论）
+
+网站首轮：PASS。
+网站复审结论：本条未进入本轮复审；保留首轮PASS意见。
+原文版：见原网站逐项意见；不凭整组状态推定原印真值。
+修正版：未单列修正版则不推定分项PASS。
+当前：网站PASS（首轮声明未变）。
+原书疑点：本条未单列公式疑误。
+原页核对历史证据见blueprint/ch08/closeout31/PDF_VISUAL_CHECKS.json及blueprint/ch08/source_page_checks.json；原书PDF页382–383。本轮不虚称重新目视。
+
+### 7. 状态与证明位置
+
+- `MD.Ch08.isoMultiplier`：定义
+- `MD.Ch08.isoField`：定义
+- `MD.Ch08.isoKinetic_balance`：已证
+
+位置：Blueprint/Ch08.lean。Lean字节未改，复用已绑定的396声明编译和逐条公理证据；完整检查另见32号报告。
+
+## MD-8.6-IsokineticProjector
+
+印刷页 362 / PDF页 383。
+
+### 1. 原文陈述
+
+> $`H=p(p^{\mathsf T}M^{-1}p)^{-1}p^{\mathsf T}M^{-1}`$; $`H^2=H`$, $`Hp=p`$.
+
+对应原页全文逐字保留在原文JSON；摘要中的[EXTRA]与修正解释不替换原文。
+
+### 2. 原文证明
+
+> 对应原页推导逐字保存在statement_verbatim/original_page_text；排版以原页PDF为准。
+
+### 3. 完整当前Lean（原文与修正版独立列出）
+
+```lean
+def isoProjection (invm p : Vec n) (v : Vec n) : Vec n :=
+  fun i ↦ p i*((∑ j, invm j*p j*v j)/kineticTwice invm p)
+theorem isoProjection_self (invm p : Vec n) (hK : kineticTwice invm p ≠ 0) :
+    isoProjection invm p p = p := by
+  have hs : (∑ j, invm j*p j*p j) = kineticTwice invm p := by
+    simp only [kineticTwice]; apply Finset.sum_congr rfl; intro i hi; ring
+  ext i; simp [isoProjection, hs, hK]
+theorem isoProjection_idempotent (invm p : Vec n) (hK : kineticTwice invm p ≠ 0)
+    (v : Vec n) : isoProjection invm p (isoProjection invm p v) = isoProjection invm p v := by
+  sorry
+```
+
+### 4. 对照表
+
+| 原文对象或结论 | 实际覆盖 |
+|---|---|
+| 本条数学成分 | 实际投影定义、固定p及幂等性目标；完整像空间刻画未覆盖。 |
+| 对象、量词、前提及结论 | 见完整声明；补充资格在[EXTRA]列明 |
+
+### 5. [EXTRA] 与覆盖缺口
+
+- 分母K非零；范围为span(p)的完整线性映射子空间等式列覆盖缺口。
+- 覆盖缺口：实际投影定义、固定p及幂等性目标；完整像空间刻画未覆盖。
+
+### 6. 审计结论（含网站复审结论）
+
+网站首轮：PASS。
+网站复审结论：本条未进入本轮复审；保留首轮PASS意见。
+原文版：见原网站逐项意见；不凭整组状态推定原印真值。
+修正版：未单列修正版则不推定分项PASS。
+当前：网站PASS（首轮声明未变）。
+原书疑点：本条未单列公式疑误。
+原页核对历史证据见blueprint/ch08/closeout31/PDF_VISUAL_CHECKS.json及blueprint/ch08/source_page_checks.json；原书PDF页383。本轮不虚称重新目视。
+
+### 7. 状态与证明位置
+
+- `MD.Ch08.isoProjection`：定义
+- `MD.Ch08.isoProjection_self`：已证
+- `MD.Ch08.isoProjection_idempotent`：未证；时间盒止
+
+位置：Blueprint/Ch08.lean。Lean字节未改，复用已绑定的396声明编译和逐条公理证据；完整检查另见32号报告。
+
+## MD-8.6-IsokineticDivergencePrinted
+
+印刷页 362–363 / PDF页 383–384。
+
+### 1. 原文陈述
+
+> $`\rho=e^{-w(q,p)}\Phi(K(p))`$; $`\operatorname{div}f_{iso}=(N_c-1)p^{\mathsf T}M^{-1}F/(p^{\mathsf T}M^{-1}p)`$, $`w=(N_c-1)U/K`$.
+
+对应原页全文逐字保留在原文JSON；摘要中的[EXTRA]与修正解释不替换原文。
+
+### 2. 原文证明
+
+> 对应原页推导逐字保存在statement_verbatim/original_page_text；排版以原页PDF为准。
+
+### 3. 完整当前Lean（原文与修正版独立列出）
+
+```lean
+def isoAnsatz (w : Phase n → ℝ) (Φ : ℝ → ℝ) (invm : Vec n) (z : Phase n) : ℝ :=
+  Real.exp (-w z)*Φ (kineticTwice invm z.2)
+theorem isoDivergencePrinted (invm : Vec n) (F : Vec n → Vec n)
+    (hF : ContDiff ℝ 1 F) (z : Phase n) (hK : kineticTwice invm z.2 ≠ 0) :
+    textbookDivergence (isoField invm F) z = ((n:ℝ)-1)*isoMultiplier invm z.2 (F z.1) := by
+  sorry
+theorem isoDivergence_corrected (invm : Vec n) (F : Vec n → Vec n)
+    (hF : ContDiff ℝ 1 F) (z : Phase n) (hK : kineticTwice invm z.2 ≠ 0) :
+    textbookDivergence (isoField invm F) z = -((n:ℝ)-1)*isoMultiplier invm z.2 (F z.1) := by
+  sorry
+```
+
+### 4. 对照表
+
+| 原文对象或结论 | 实际覆盖 |
+|---|---|
+| 本条数学成分 | 一般光滑力的原印/符号修正散度目标及权重ansatz；w方程和概率不变另列缺口。 |
+| 对象、量词、前提及结论 | 见完整声明；补充资格在[EXTRA]列明 |
+
+### 5. [EXTRA] 与覆盖缺口
+
+- Φ为正光滑非零函数时称权重；使用$`K\ne0`$域上的实际散度。
+- 已目视核对原页PDF383–384：散度与$`\nabla w\cdot f`$等式须同时改负号，$`w=(n-1)U/K`$的正号保留。
+
+### 6. 审计结论（含网站复审结论）
+
+网站首轮：NEEDS_HUMAN。
+网站复审结论：本条未进入本轮复审；保留首轮NEEDS_HUMAN意见。
+原文版：Printed忠实性PASS；原印散度正号有误。
+修正版：原送审负号_corrected签名PASS；w本身保留正号。
+当前：原书疑误待导师；原送审正确版本分项保留。
+原书疑点：已目视核对原页PDF383–384：$`\dot p=F-\lambda p`$的散度应为$`-(N_c-1)\lambda`$，所印正号与后续$`w=(N_c-1)U/K`$也冲突。；PDF383确实印正号$`\operatorname{div}f=(N_c-1)\lambda`$，PDF384随后仍用正号的$`\nabla w\cdot f`$等式并给$`w=(N_c-1)U/K`$；原文逐字内容应保留。；已目视核对原页PDF383–384：散度与$`\nabla w\cdot f`$等式须同时改负号，$`w=(n-1)U/K`$的正号保留。
+原页核对历史证据见blueprint/ch08/closeout31/PDF_VISUAL_CHECKS.json及blueprint/ch08/source_page_checks.json；原书PDF页383–384。本轮不虚称重新目视。
+
+### 7. 状态与证明位置
+
+- `MD.Ch08.isoAnsatz`：定义
+- `MD.Ch08.isoDivergencePrinted`：未证；原书疑误不证
+- `MD.Ch08.isoDivergence_corrected`：未证；缺大型理论
+
+位置：Blueprint/Ch08.lean。Lean字节未改，复用已绑定的396声明编译和逐条公理证据；完整检查另见32号报告。
+
+## MD-8.6-IsokineticGibbsShell
+
+印刷页 363 / PDF页 384。
+
+### 1. 原文陈述
+
+> $`\rho=Z^{-1}\exp(-(N_c-1)U/K)\delta[K-K_0]`$; $`K_0=\beta^{-1}(N_c-1)`$ gives the configurational Gibbs distribution.
+
+对应原页全文逐字保留在原文JSON；摘要中的[EXTRA]与修正解释不替换原文。
+
+### 2. 原文证明
+
+> 对应原页推导逐字保存在statement_verbatim/original_page_text；排版以原页PDF为准。
+
+### 3. 完整当前Lean（原文与修正版独立列出）
+
+```lean
+def isokineticShell (invm : Vec n) (K0 : ℝ) : Set (Phase n) := {z | kineticTwice invm z.2=K0}
+def isoShellWeight (U : Vec n → ℝ) (invm : Vec n) (z : Phase n) : ℝ :=
+  Real.exp (-((n:ℝ)-1)*U z.1/kineticTwice invm z.2)
+theorem isoShell_gibbsFactor (U : Vec n → ℝ) (invm : Vec n) (β : ℝ)
+    (hn : 1 < n) (hβ : 0 < β) (z : Phase n)
+    (hz : z ∈ isokineticShell invm (((n:ℝ)-1)/β)) :
+    isoShellWeight U invm z = Real.exp (-β*U z.1) := by
+  have hnR : (1 : ℝ) < (n : ℝ) := by exact_mod_cast hn
+  have hn' : (n:ℝ)-1 ≠ 0 := ne_of_gt (sub_pos.mpr hnR)
+  change kineticTwice invm z.2 = ((n:ℝ)-1)/β at hz
+  unfold isoShellWeight
+  rw [hz]
+  congr 1
+  field_simp [hn', ne_of_gt hβ]
   <;> ring
 ```
 
@@ -776,14 +767,13 @@ theorem berendsenScale_energy {n : ℕ} (θ γ h : ℝ) (p : Vec n)
 
 | 原文对象或结论 | 实际覆盖 |
 |---|---|
-| 本条数学成分 | Berendsen温度方程的显式解、动量缩放、有效域和单次能量恒等式。 |
+| 本条数学成分 | 动能壳与Gibbs因子的逐点关系；不声称完整曲面概率测度定理。 |
 | 对象、量词、前提及结论 | 见完整声明；补充资格在[EXTRA]列明 |
 
 ### 5. [EXTRA] 与覆盖缺口
 
-- 取单位粒子质量的Euclidean动量平方和；有效域显式要求非零动量及非负根号，避免将总化sqrt/division当作物理方法。
-- 只证明所印温度ODE的显式解及动量缩放能量恒等式；不声称温度控制必然正则采样。完整Verlet耦合的统计行为未证。
-- 覆盖缺口：只证明所印温度ODE的显式解及动量缩放能量恒等式；不声称温度控制必然正则采样。完整Verlet耦合的统计行为未证。
+- δ是曲面测度的广义记号，未把Dirac分布写成Lebesgue密度；本条只证明壳面上构型权重化简，曲面测度归一/边缘分布不变性列覆盖缺口。
+- 覆盖缺口：动能壳与Gibbs因子的逐点关系；不声称完整曲面概率测度定理。
 
 ### 6. 审计结论（含网站复审结论）
 
@@ -793,27 +783,23 @@ theorem berendsenScale_energy {n : ℕ} (θ γ h : ℝ) (p : Vec n)
 修正版：未单列修正版则不推定分项PASS。
 当前：网站PASS（首轮声明未变）。
 原书疑点：本条未单列公式疑误。
-原页核对历史证据见blueprint/ch08/closeout31/PDF_VISUAL_CHECKS.json及blueprint/ch08/source_page_checks.json；原书PDF页417–418。本轮不虚称重新目视。
+原页核对历史证据见blueprint/ch08/closeout31/PDF_VISUAL_CHECKS.json及blueprint/ch08/source_page_checks.json；原书PDF页384。本轮不虚称重新目视。
 
 ### 7. 状态与证明位置
 
-- `MD.Ch08.berendsenTemperature`：定义
-- `MD.Ch08.berendsenTemperature_derivative`：已证
-- `MD.Ch08.berendsenRadicand`：定义
-- `MD.Ch08.berendsenScale`：定义
-- `MD.Ch08.berendsenScaleQualification`：定义
-- `MD.Ch08.dot_smul_same`：已证
-- `MD.Ch08.berendsenScale_energy`：已证
+- `MD.Ch08.isokineticShell`：定义
+- `MD.Ch08.isoShellWeight`：定义
+- `MD.Ch08.isoShell_gibbsFactor`：已证
 
 位置：Blueprint/Ch08.lean。Lean字节未改，复用已绑定的396声明编译和逐条公理证据；完整检查另见32号报告。
 
-## MD-8.10-CanonicalTotalMomentumGaussian
+## MD-8.6.1-StochasticIsokinetic
 
-印刷页 397–398 / PDF页 418–419。
+印刷页 364–365 / PDF页 385–386。
 
 ### 1. 原文陈述
 
-> In Euclidean canonical equilibrium, total momenta are sums of independent centered normal particle momenta and hence are centered normal.
+> $`dq=p\,dt`$, $`dp=(F-\lambda p)dt`$, $`d\xi_1=(-\lambda\xi_1-\xi_2\xi_1)dt`$, $`d\xi_2=\mu_2^{-1}(\mu_1\xi_1^2-k_B T)dt-\gamma\xi_2\,dt+\sigma\,dW`$; $`p^2+\mu_1\xi_1^2/2=k_B T`$.
 
 对应原页全文逐字保留在原文JSON；摘要中的[EXTRA]与修正解释不替换原文。
 
@@ -824,28 +810,40 @@ theorem berendsenScale_energy {n : ℕ} (θ γ h : ℝ) (p : Vec n)
 ### 3. 完整当前Lean（原文与修正版独立列出）
 
 ```lean
-theorem totalMomentum_gaussian {N d : ℕ} (P : Measure Ω) [IsProbabilityMeasure P]
-    (p : Ω → ParticleConfig N d) (m : Fin N → ℝ) (θ : ℝ)
-    (hm : ∀ i, 0 < m i) (hθ : 0 < θ) (a : Fin d)
-    (hind : iIndepFun (fun i sample ↦ p sample i a) P)
-    (hlaw : ∀ i, HasLaw (fun sample ↦ p sample i a)
-      (gaussianReal 0 (Real.toNNReal (m i*θ))) P) :
-    HasLaw (fun sample ↦ totalMomentum (p sample) a)
-      (gaussianReal 0 (Real.toNNReal ((∑ i, m i)*θ))) P := by
-  sorry
+def sinConstraint (Q1 : ℝ) (z : Vec 4) : ℝ := z 1^2+Q1*z 2^2/2
+def sinMultiplier (Q1 : ℝ) (F : ℝ → ℝ) (z : Vec 4) : ℝ :=
+  (z 1*F (z 0)-Q1*z 2^2*z 3/2)/sinConstraint Q1 z
+def sinDrift (Q1 Q2 θ γ : ℝ) (F : ℝ → ℝ) (z : Vec 4) : Vec 4 :=
+  let lam := sinMultiplier Q1 F z
+  ![z 1, F (z 0)-lam*z 1, -lam*z 2-z 3*z 2, (Q1*z 2^2-θ)/Q2-γ*z 3]
+def isSINSolution (Q1 Q2 θ γ : ℝ) (F : ℝ → ℝ)
+    (P : Measure Ω) (W : ℝ → Ω → Vec 1) (X : ℝ → Ω → Vec 4) (x0 : Vec 4) : Prop :=
+  0 < Q1 ∧ 0 < Q2 ∧ 0 < θ ∧ 0 < γ ∧ sinConstraint Q1 x0=θ ∧
+  additiveSDE P 1 W X x0 (sinDrift Q1 Q2 θ γ F)
+    (fun _ ↦ ![0,0,0,Real.sqrt (2*γ*θ/Q2)])
+theorem sinConstraint_balance (Q1 Q2 θ γ : ℝ) (F : ℝ → ℝ) (z : Vec 4)
+    (hK : sinConstraint Q1 z ≠ 0) :
+    2*z 1*(sinDrift Q1 Q2 θ γ F z) 1+Q1*z 2*(sinDrift Q1 Q2 θ γ F z) 2=0 := by
+  have hden : 2*z 1^2+Q1*z 2^2 ≠ 0 := by
+    intro h
+    apply hK
+    dsimp [sinConstraint]
+    linarith
+  simp [sinDrift, sinMultiplier, sinConstraint]
+  field_simp [hden]
+  <;> ring
 ```
 
 ### 4. 对照表
 
 | 原文对象或结论 | 实际覆盖 |
 |---|---|
-| 本条数学成分 | 实际独立Gaussian动量假设下的一坐标总动量分布；非采样收敛定理。 |
+| 本条数学成分 | 实际SIN漂移、正参数Wiener积分解和瞬时约束平衡；约束沿全路径保持未另证。 |
 | 对象、量词、前提及结论 | 见完整声明；补充资格在[EXTRA]列明 |
 
 ### 5. [EXTRA] 与覆盖缺口
 
-- 结论明确以各粒子坐标的独立正则Gaussian分布为前提；不从“系统遍历”直接推出有限时刻分布。
-- 原页比较直方图和轨迹属于经验试验，未转为普适数学断言。
+- 热浴变量$`\xi_1,\xi_2\in\mathbb R`$，各质量、温度、摩擦正；随机噪声只在$`\xi_2`$；约束正值排除奇点。
 
 ### 6. 审计结论（含网站复审结论）
 
@@ -855,21 +853,25 @@ theorem totalMomentum_gaussian {N d : ℕ} (P : Measure Ω) [IsProbabilityMeasur
 修正版：未单列修正版则不推定分项PASS。
 当前：网站PASS（首轮声明未变）。
 原书疑点：本条未单列公式疑误。
-原页核对历史证据见blueprint/ch08/closeout31/PDF_VISUAL_CHECKS.json及blueprint/ch08/source_page_checks.json；原书PDF页418–419。本轮不虚称重新目视。
+原页核对历史证据见blueprint/ch08/closeout31/PDF_VISUAL_CHECKS.json及blueprint/ch08/source_page_checks.json；原书PDF页385–386。本轮不虚称重新目视。
 
 ### 7. 状态与证明位置
 
-- `MD.Ch08.totalMomentum_gaussian`：未证；缺大型理论
+- `MD.Ch08.sinConstraint`：定义
+- `MD.Ch08.sinMultiplier`：定义
+- `MD.Ch08.sinDrift`：定义
+- `MD.Ch08.isSINSolution`：定义
+- `MD.Ch08.sinConstraint_balance`：已证
 
 位置：Blueprint/Ch08.lean。Lean字节未改，复用已绑定的396声明编译和逐条公理证据；完整检查另见32号报告。
 
-## MD-8.10-NHLTotalMomentumSign
+## MD-8.6.1-SINWeightPrinted
 
-印刷页 398 / PDF页 419。
+印刷页 365 / PDF页 386。
 
 ### 1. 原文陈述
 
-> With central forces and an NHL thermostat, total momentum obeys $`\dot P=-\xi P`$, so each component keeps the sign of its initial value.
+> $`w=(U+\xi_2^2/2)/(p^2+\mu_1\xi_1^2/2)`$; integration over the isokinetic surface gives the Gibbs configurational density.
 
 对应原页全文逐字保留在原文JSON；摘要中的[EXTRA]与修正解释不替换原文。
 
@@ -880,24 +882,15 @@ theorem totalMomentum_gaussian {N d : ℕ} (P : Measure Ω) [IsProbabilityMeasur
 ### 3. 完整当前Lean（原文与修正版独立列出）
 
 ```lean
-def nhlMomentumFactor (ξ : ℝ → ℝ) (t : ℝ) : ℝ := Real.exp (-(∫ s in (0 : ℝ)..t, ξ s))
-theorem nhlMomentumFactor_pos (ξ : ℝ → ℝ) (t : ℝ) : 0 < nhlMomentumFactor ξ t := Real.exp_pos _
-theorem nhlMomentum_sign (ξ : ℝ → ℝ) (P0 : ℝ) (t : ℝ) :
-    (0 < nhlMomentumFactor ξ t*P0 ↔ 0 < P0) ∧
-    (nhlMomentumFactor ξ t*P0 < 0 ↔ P0 < 0) := by
-  constructor
-  · exact mul_pos_iff_of_pos_left (nhlMomentumFactor_pos ξ t)
-  · constructor
-    · intro h
-      by_contra hp
-      have hp' : 0 ≤ P0 := le_of_not_gt hp
-      have hn := mul_nonneg (le_of_lt (nhlMomentumFactor_pos ξ t)) hp'
-      linarith
-    · intro h
-      exact mul_neg_of_pos_of_neg (nhlMomentumFactor_pos ξ t) h
-theorem nhlTotalMomentum_odeSolution (ξ P : ℝ → ℝ) (hξ : Continuous ξ)
-    (hP : ∀ t, HasDerivAt P (-ξ t*P t) t) (t : ℝ) :
-    P t=nhlMomentumFactor ξ t*P 0 := by
+def sinWeightPrinted (U : ℝ → ℝ) (Q1 : ℝ) (z : Vec 4) : ℝ :=
+  Real.exp (-(U (z 0)+z 3^2/2)/sinConstraint Q1 z)
+def sinWeight_corrected (U : ℝ → ℝ) (Q1 Q2 : ℝ) (z : Vec 4) : ℝ :=
+  Real.exp (-(U (z 0)+Q2*z 3^2/2)/sinConstraint Q1 z)
+theorem sinWeight_stationary_corrected (U : ℝ → ℝ) (Q1 Q2 θ : ℝ)
+    (hU : ContDiff ℝ 2 U) (hQ1 : 0 < Q1) (hQ2 : 0 < Q2) (hθ : 0 < θ)
+    (z : Vec 4) (hz : sinConstraint Q1 z=θ) :
+    textbookDivergence
+      (fun x ↦ sinWeight_corrected U Q1 Q2 x • sinDrift Q1 Q2 θ 0 (fun q ↦ -deriv U q) x) z = 0 := by
   sorry
 ```
 
@@ -905,13 +898,76 @@ theorem nhlTotalMomentum_odeSolution (ξ P : ℝ → ℝ) (hξ : Continuous ξ)
 
 | 原文对象或结论 | 实际覆盖 |
 |---|---|
-| 本条数学成分 | 总动量标量ODE解目标、正指数因子及显式表达式的符号保持。 |
+| 本条数学成分 | 原印及补热浴质量的权重、正约束面局部驻定目标；曲面边缘分布及遍历性未覆盖。 |
 | 对象、量词、前提及结论 | 见完整声明；补充资格在[EXTRA]列明 |
 
 ### 5. [EXTRA] 与覆盖缺口
 
-- 只对连续ξ及实际标量ODE声明解公式，正指数乘子的符号结论已证；从NHL粒子SDE推出总动量ODE仍需成对力抵消及积分方程桥接。
-- 欧氏空间正负动量不变与特殊初值下遍历性的讨论不扩展为任意系统的遍历性反例。
+- 仅证明正约束面处的实际通量散度陈述；曲面概率测度、边缘分布和遍历性列缺口。
+- 覆盖缺口：原印及补热浴质量的权重、正约束面局部驻定目标；曲面边缘分布及遍历性未覆盖。
+
+### 6. 审计结论（含网站复审结论）
+
+网站首轮：NEEDS_HUMAN。
+网站复审结论：本条未进入本轮复审；保留首轮NEEDS_HUMAN意见。
+原文版：Printed忠实性PASS；原印二次项缺$`\mu_2`$。
+修正版：原送审补Q2的权重与壳面局部驻定签名PASS，非曲面测度不变性。
+当前：原书疑误待导师；原送审正确版本分项保留。
+原书疑点：已目视核对原页PDF386：$`\xi_2`$方程含$`\mu_2^{-1}`$，而w的$`\xi_2`$二次项缺$`\mu_2`$；一般$`\mu_2`$时应为$`\mu_2\xi_2^2/2`$。；PDF386确实印$`w=(U+\xi_2^2/2)/(p^2+\mu_1\xi_1^2/2)`$，未含$`\mu_2`$；statement_latex忠实，不能静默把原印式改成修正式。
+原页核对历史证据见blueprint/ch08/closeout31/PDF_VISUAL_CHECKS.json及blueprint/ch08/source_page_checks.json；原书PDF页386。本轮不虚称重新目视。
+
+### 7. 状态与证明位置
+
+- `MD.Ch08.sinWeightPrinted`：定义
+- `MD.Ch08.sinWeight_corrected`：定义
+- `MD.Ch08.sinWeight_stationary_corrected`：未证；缺大型理论
+
+位置：Blueprint/Ch08.lean。Lean字节未改，复用已绑定的396声明编译和逐条公理证据；完整检查另见32号报告。
+
+## MD-8.6.2-SINHarmonic
+
+印刷页 366 / PDF页 387。
+
+### 1. 原文陈述
+
+> For $`\mu_1=\mu_2=1`$, $`dq=p\,dt`$, $`dp=(-q-\lambda p)dt`$, $`d\xi_1=(-\lambda\xi_1-\xi_2\xi_1)dt`$, $`d\xi_2=(\xi_1^2-k_B T-\gamma\xi_2)dt+\sigma\,dW`$, $`\lambda=(-qp-\xi_2\xi_1^2/2)/(p^2+\xi_1^2/2)`$, $`\sigma=\sqrt{2\gamma k_B T}`$. (8.45)–(8.47).
+
+对应原页全文逐字保留在原文JSON；摘要中的[EXTRA]与修正解释不替换原文。
+
+### 2. 原文证明
+
+> 对应原页推导逐字保存在statement_verbatim/original_page_text；排版以原页PDF为准。
+
+### 3. 完整当前Lean（原文与修正版独立列出）
+
+```lean
+def sinHarmonicF (θ γ : ℝ) : Vec 4 → Vec 4 := sinDrift 1 1 θ γ (fun q ↦ -q)
+def sinHarmonicG (θ γ : ℝ) : Vec 4 := ![0,0,0,Real.sqrt (2*γ*θ)]
+def isSINHarmonicSolution (θ γ : ℝ) (P : Measure Ω) (W : ℝ → Ω → Vec 1)
+    (X : ℝ → Ω → Vec 4) (x0 : Vec 4) : Prop :=
+  isSINSolution 1 1 θ γ (fun q ↦ -q) P W X x0
+def sinExceptional (θ : ℝ) : Set (Vec 4) :=
+  {z | z 0=0 ∧ z 1=0 ∧ z 2^2=2*θ}
+def sinHalfCylinder (θ : ℝ) (positive : Bool) : Set (Vec 4) :=
+  {z | sinConstraint 1 z=θ ∧ (if positive then 0 < z 2 else z 2 < 0)}
+theorem sinHalfCylinder_disjoint (θ : ℝ) :
+    Disjoint (sinHalfCylinder θ true) (sinHalfCylinder θ false) := by
+  apply Set.disjoint_left.mpr
+  intro z hpos hneg
+  exact (not_lt_of_ge (le_of_lt hpos.2)) hneg.2
+```
+
+### 4. 对照表
+
+| 原文对象或结论 | 实际覆盖 |
+|---|---|
+| 本条数学成分 | 谐振SIN实际SDE、例外直线和半柱定义及半柱不交；不含全局遍历定理。 |
+| 对象、量词、前提及结论 | 见完整声明；补充资格在[EXTRA]列明 |
+
+### 5. [EXTRA] 与覆盖缺口
+
+- $`\theta=k_B T\gt 0`$、$`\gamma\gt 0`$、标量Wiener由isSINSolution给全；零$`\xi_1`$面不变和两个半柱的轨道符号保持需要ODE唯一性，列覆盖缺口。
+- 覆盖缺口：谐振SIN实际SDE、例外直线和半柱定义及半柱不交；不含全局遍历定理。
 
 ### 6. 审计结论（含网站复审结论）
 
@@ -921,14 +977,220 @@ theorem nhlTotalMomentum_odeSolution (ξ P : ℝ → ℝ) (hξ : Continuous ξ)
 修正版：未单列修正版则不推定分项PASS。
 当前：网站PASS（首轮声明未变）。
 原书疑点：本条未单列公式疑误。
-原页核对历史证据见blueprint/ch08/closeout31/PDF_VISUAL_CHECKS.json及blueprint/ch08/source_page_checks.json；原书PDF页419。本轮不虚称重新目视。
+原页核对历史证据见blueprint/ch08/closeout31/PDF_VISUAL_CHECKS.json及blueprint/ch08/source_page_checks.json；原书PDF页387。本轮不虚称重新目视。
 
 ### 7. 状态与证明位置
 
-- `MD.Ch08.nhlMomentumFactor`：定义
-- `MD.Ch08.nhlMomentumFactor_pos`：已证
-- `MD.Ch08.nhlMomentum_sign`：已证
-- `MD.Ch08.nhlTotalMomentum_odeSolution`：未证；缺大型理论
+- `MD.Ch08.sinHarmonicF`：定义
+- `MD.Ch08.sinHarmonicG`：定义
+- `MD.Ch08.isSINHarmonicSolution`：定义
+- `MD.Ch08.sinExceptional`：定义
+- `MD.Ch08.sinHalfCylinder`：定义
+- `MD.Ch08.sinHalfCylinder_disjoint`：已证
+
+位置：Blueprint/Ch08.lean。Lean字节未改，复用已绑定的396声明编译和逐条公理证据；完整检查另见32号报告。
+
+## MD-8.6.2-SINProjectedBracketsPrinted
+
+印刷页 367 / PDF页 388。
+
+### 1. 原文陈述
+
+> $`u_0=\Pi f`$, $`u_1=\Pi[f,g]`$, $`u_2=\Pi[f,[f,g]]`$, $`u_3=\Pi[f,[f,[f,g]]]`$. The displayed equations (8.48)–(8.53) give their components, with $`D=2p^2+\xi_1^2`$.
+
+对应原页全文逐字保留在原文JSON；摘要中的[EXTRA]与修正解释不替换原文。
+
+### 2. 原文证明
+
+> 对应原页推导逐字保存在statement_verbatim/original_page_text；排版以原页PDF为准。
+
+### 3. 完整当前Lean（原文与修正版独立列出）
+
+```lean
+def bracket4 (f g : Vec 4 → Vec 4) (z : Vec 4) : Vec 4 :=
+  fderiv ℝ g z (f z)-fderiv ℝ f z (g z)
+def sinBracket (θ γ : ℝ) : ℕ → Vec 4 → Vec 4
+  | 0 => sinHarmonicF θ γ
+  | 1 => bracket4 (sinHarmonicF θ γ) (fun _ ↦ sinHarmonicG θ γ)
+  | k+2 => bracket4 (sinHarmonicF θ γ) (sinBracket θ γ (k+1))
+def projectFirstThree (z : Vec 4) : Vec 3 := ![z 0,z 1,z 2]
+def sinD (z : Vec 4) : ℝ := 2*z 1^2+z 2^2
+def sinU0Printed (z : Vec 4) : Vec 3 :=
+  ![z 1,z 2^2*(-z 0+z 1*z 3)/sinD z,-2*z 2*z 1*(-z 0+z 1*z 3)/sinD z]
+def sinU1Printed (z : Vec 4) : Vec 3 := sinU0Printed z
+def sinU2Printed (σ : ℝ) (z : Vec 4) : Vec 3 :=
+  ![0,-σ*z 2^2*z 1/sinD z,2*σ*z 2*z 1^2/sinD z]
+def sinU1DerivativePrinted (σ : ℝ) (z : Vec 4) : Vec 3 :=
+  let d := fderiv ℝ (sinMultiplier 1 (fun q ↦ -q)) z (Pi.single 3 1)
+  ![0,σ*z 1*d,z 2*(1+d)]
+def sinProjected_corrected (θ γ : ℝ) (j : Fin 4) (z : Vec 4) : Vec 3 :=
+  projectFirstThree (sinBracket θ γ j z)
+def sinU2LongPrinted (σ γ : ℝ) (z : Vec 4) : Vec 3 :=
+  let a := (2*γ*z 1^3+γ*z 2^2*z 1-z 2^2*z 0)/(sinD z)^2
+  ![σ*z 2^2*z 1/sinD z,-σ*a,2*σ*z 2*z 1*a]
+theorem sinU2Long_at_p0 (σ γ : ℝ) (z : Vec 4) (hp : z 1=0) :
+    sinU2LongPrinted σ γ z = ![0,σ*z 2^2*z 0/(sinD z)^2,0] := by
+  ext i; fin_cases i <;> simp [sinU2LongPrinted,hp] <;> ring
+```
+
+### 4. 对照表
+
+| 原文对象或结论 | 实际覆盖 |
+|---|---|
+| 本条数学成分 | 原印(8.48)–(8.53)的主要分量与实际交换子定义，(8.49)导数写法保存在逐字原页；未把错标指标视为已证恒等式。 |
+| 对象、量词、前提及结论 | 见完整声明；补充资格在[EXTRA]列明 |
+
+### 5. [EXTRA] 与覆盖缺口
+
+- 总化分式只在$`\theta\gt 0`$的约束面$`D=2\theta\gt 0`$使用；实际交换子先在四维完整计算再投影。
+- 本条记录原印显式式和真实微分定义；显式式与真实二/三重交换子的等式尚未证明，列覆盖缺口。
+- 已目视核对原页PDF388：(8.49)–(8.53)及“any pair”/平行论据需导师核查；修正版仅以完整四维真实括号再投影为准，不把改下标当作长式校正。
+- 覆盖缺口：本条记录原印显式式和真实微分定义；显式式与真实二/三重交换子的等式尚未证明，列覆盖缺口。
+
+### 6. 审计结论（含网站复审结论）
+
+网站首轮：NEEDS_HUMAN。
+网站复审结论：本条未进入本轮复审；保留首轮NEEDS_HUMAN意见。
+原文版：Printed各表达式忠实性PASS；(8.49)–(8.53)疑误待导师。
+修正版：原送审完整四维真实括号再投影定义PASS，长式未声称等于真实括号。
+当前：原书疑误待导师；原送审正确版本分项保留。
+原书疑点：已目视核对原页PDF388：(8.50)的$`u_1`$公式实际重写$`u_0`$，(8.51)的$`u_2`$公式实际为首交换子；(8.49)第三分量似缺共同σ。原印与真实迭代交换子独立保留。；PDF388逐式核对：(8.48)为u0；(8.49)$`\xi_1`$分量前确无共同σ；(8.50)印u1却重复u0展开式；(8.51)印u2却是首交换子的投影。(8.52)的p分量确为$`-\sigma a`$而非$`-\sigma\xi_1^2a`$，故Lean忠实保留了原印式，不应替书改系数。；已目视核对原页PDF388：(8.49)–(8.53)及“any pair”/平行论据需导师核查；修正版仅以完整四维真实括号再投影为准，不把改下标当作长式校正。
+原页核对历史证据见blueprint/ch08/closeout31/PDF_VISUAL_CHECKS.json及blueprint/ch08/source_page_checks.json；原书PDF页388。本轮不虚称重新目视。
+
+### 7. 状态与证明位置
+
+- `MD.Ch08.bracket4`：定义
+- `MD.Ch08.sinBracket`：定义
+- `MD.Ch08.projectFirstThree`：定义
+- `MD.Ch08.sinD`：定义
+- `MD.Ch08.sinU0Printed`：定义
+- `MD.Ch08.sinU1Printed`：定义
+- `MD.Ch08.sinU2Printed`：定义
+- `MD.Ch08.sinU1DerivativePrinted`：定义
+- `MD.Ch08.sinProjected_corrected`：定义
+- `MD.Ch08.sinU2LongPrinted`：定义
+- `MD.Ch08.sinU2Long_at_p0`：已证
+
+位置：Blueprint/Ch08.lean。Lean字节未改，复用已绑定的396声明编译和逐条公理证据；完整检查另见32号报告。
+
+## MD-8.6.2-SINThirdBracketPrinted
+
+印刷页 368 / PDF页 389。
+
+### 1. 原文陈述
+
+> The third projected commutator is displayed in (8.54), with polynomial $`\eta`$ in (8.55); its $`p=0`$ specialization is printed as $`u_3=-2\sigma q\partial_q-\sigma q(-\gamma+\xi_2)\partial_p`$ in (8.56).
+
+对应原页全文逐字保留在原文JSON；摘要中的[EXTRA]与修正解释不替换原文。
+
+### 2. 原文证明
+
+> 对应原页推导逐字保存在statement_verbatim/original_page_text；排版以原页PDF为准。
+
+### 3. 完整当前Lean（原文与修正版独立列出）
+
+```lean
+def sinEtaPrinted (γ : ℝ) (z : Vec 4) : ℝ :=
+  4*z 1^5*γ^2-8*z 1^5*z 2^2-4*z 2^2*z 1^3+4*z 1^3*γ^2*z 2^2-4*z 1^3*z 2^4-
+  2*γ*z 2^2*z 1^2*z 0+4*z 1^2*z 0*z 3*z 2^2-4*z 2^2*z 0^2*z 1-
+  2*z 2^4*z 1+z 1*γ^2*z 2^4-z 0*γ*z 2^4+z 2^4*z 3*z 0
+def sinU3Printed (σ γ : ℝ) (z : Vec 4) : Vec 3 :=
+  ![σ*(2*γ*z 1^3-4*z 1^3*z 3+4*z 1^2*z 0+z 2^2*z 1*z 3+γ*z 2^2*z 1-2*z 2^2*z 0)/(sinD z)^2,
+    -σ*z 2^2*sinEtaPrinted γ z/(sinD z)^3,2*σ*z 2*z 1*sinEtaPrinted γ z/(sinD z)^3]
+def sinU3ZeroPrinted (σ γ : ℝ) (z : Vec 4) : Vec 3 :=
+  ![-2*σ*z 0,-σ*z 0*(-γ+z 3),0]
+def sinU3Zero_corrected (σ γ : ℝ) (z : Vec 4) : Vec 3 :=
+  ![-2*σ*z 0/z 2^2,-σ*z 0*(-γ+z 3),0]
+theorem sinU3Zero_specialize (σ γ : ℝ) (z : Vec 4) (hp : z 1=0) (hξ : z 2 ≠ 0) :
+    sinU3Printed σ γ z = sinU3Zero_corrected σ γ z := by
+  ext i; fin_cases i <;> simp [sinU3Printed,sinU3Zero_corrected,sinEtaPrinted,sinD,hp]
+    <;> field_simp [hξ] <;> ring
+```
+
+### 4. 对照表
+
+| 原文对象或结论 | 实际覆盖 |
+|---|---|
+| 本条数学成分 | 原印三重交换子候选及$`p=0`$内部代数核对；真实三重交换子等式列覆盖缺口。 |
+| 对象、量词、前提及结论 | 见完整声明；补充资格在[EXTRA]列明 |
+
+### 5. [EXTRA] 与覆盖缺口
+
+- $`\xi_1\ne0`$用于分式化简；此处只核对原印(8.54)与(8.56)内部的代数关系，不声称(8.54)已被确认为实际三重交换子。
+- `_corrected`只修正(8.54)在$`p=0`$的内部代数特化，不能据此声称Printed长式等于真实三重括号。
+- 覆盖缺口：$`\xi_1\ne0`$用于分式化简；此处只核对原印(8.54)与(8.56)内部的代数关系，不声称(8.54)已被确认为实际三重交换子。
+
+### 6. 审计结论（含网站复审结论）
+
+网站首轮：NEEDS_HUMAN。
+网站复审结论：本条未进入本轮复审；保留首轮NEEDS_HUMAN意见。
+原文版：Printed忠实性PASS；(8.54)/(8.56)内部不一致。
+修正版：原送审_corrected及specialize在内部代数特化意义下PASS，非真实三重括号校正。
+当前：原书疑误待导师；原送审正确版本分项保留。
+原书疑点：已目视核对原页PDF389：(8.54)q分量代$`p=0`$得到$`-2\sigma q/\xi_1^2`$，(8.56)遗漏$`\xi_1^2`$分母；原印多项式的其他系数仍待独立微分核对。；PDF389的(8.54)q分量分母为$`D^2`$，(8.55)的13项多项式逐项与sinEtaPrinted一致；(8.56)原印q分量为$`-2\sigma q`$，确无$`\xi_1^2`$分母。
+原页核对历史证据见blueprint/ch08/closeout31/PDF_VISUAL_CHECKS.json及blueprint/ch08/source_page_checks.json；原书PDF页389。本轮不虚称重新目视。
+
+### 7. 状态与证明位置
+
+- `MD.Ch08.sinEtaPrinted`：定义
+- `MD.Ch08.sinU3Printed`：定义
+- `MD.Ch08.sinU3ZeroPrinted`：定义
+- `MD.Ch08.sinU3Zero_corrected`：定义
+- `MD.Ch08.sinU3Zero_specialize`：已证
+
+位置：Blueprint/Ch08.lean。Lean字节未改，复用已绑定的396声明编译和逐条公理证据；完整检查另见32号报告。
+
+## MD-8.6.2-SINBracketRank
+
+印刷页 366–368 / PDF页 387–389。
+
+### 1. 原文陈述
+
+> For $`\theta\gt 0`$, $`\gamma\gt 0`$, on $`p^2+\xi_1^2/2=\theta`$ with $`\xi_1\ne0`$ and outside $`M_0`$, the fields $`f,g,[f,g],[f,[f,g]],[f,[f,[f,g]]]`$ span the three-dimensional tangent space of the isokinetic cylinder.
+
+对应原页全文逐字保留在原文JSON；摘要中的[EXTRA]与修正解释不替换原文。
+
+### 2. 原文证明
+
+> 对应原页推导逐字保存在statement_verbatim/original_page_text；排版以原页PDF为准。
+
+### 3. 完整当前Lean（原文与修正版独立列出）
+
+```lean
+theorem sinBracket_tangentSpan (θ γ : ℝ) (hθ : 0 < θ) (hγ : 0 < γ)
+    (z : Vec 4) (hz : sinConstraint 1 z=θ) (hξ : z 2 ≠ 0)
+    (hout : z ∉ sinExceptional θ) :
+    Submodule.span ℝ ({sinHarmonicG θ γ} ∪
+      Set.range (fun j : Fin 4 ↦ sinBracket θ γ j z)) =
+      LinearMap.ker (fderiv ℝ (sinConstraint 1) z).toLinearMap := by
+  sorry
+```
+
+### 4. 对照表
+
+| 原文对象或结论 | 实际覆盖 |
+|---|---|
+| 本条数学成分 | 例外直线外的有限括号张成目标；非完整遍历性定理。 |
+| 对象、量词、前提及结论 | 见完整声明；补充资格在[EXTRA]列明 |
+
+### 5. [EXTRA] 与覆盖缺口
+
+- θ,γ正，$`\xi_1\ne0`$且在正约束面；仅声明有限向量族张成实际切空间，Hörmander理论推出平滑密度或遍历性未覆盖。
+- 覆盖缺口：θ,γ正，$`\xi_1\ne0`$且在正约束面；仅声明有限向量族张成实际切空间，Hörmander理论推出平滑密度或遍历性未覆盖。
+
+### 6. 审计结论（含网站复审结论）
+
+网站首轮：PASS。
+网站复审结论：本条未进入本轮复审；保留首轮PASS意见。
+原文版：见原网站逐项意见；不凭整组状态推定原印真值。
+修正版：未单列修正版则不推定分项PASS。
+当前：网站PASS（首轮声明未变）。
+原书疑点：PDF387–389列出的五个场和M0吻合。原页先说明运动限制在$`\xi_1\gt 0`$或$`\xi_1\lt 0`$半空间；statement_latex应显式带上这一域，避免把“除M0外”误读为包含$`\xi_1=0`$的整个圆柱。
+原页核对历史证据见blueprint/ch08/closeout31/PDF_VISUAL_CHECKS.json及blueprint/ch08/source_page_checks.json；原书PDF页387–389。本轮不虚称重新目视。
+
+### 7. 状态与证明位置
+
+- `MD.Ch08.sinBracket_tangentSpan`：未证；缺大型理论
 
 位置：Blueprint/Ch08.lean。Lean字节未改，复用已绑定的396声明编译和逐条公理证据；完整检查另见32号报告。
 
