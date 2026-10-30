@@ -32,6 +32,7 @@ def fetch(sha,path):
     raise RuntimeError('No richText payload: '+path)
 
 def run(sha,stage):
+    sha=subprocess.check_output(['git','rev-parse',sha],cwd=ROOT).decode().strip()
     ledger=json.loads(read(OUT/'render_fix_changes.json'))
     paths=sorted({p for s in ledger['stages'] for p in s['files'] if p.endswith('.md')})
     results={}; rich_pages={}

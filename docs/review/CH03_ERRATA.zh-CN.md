@@ -474,7 +474,7 @@ $$
 > If $`h`$ is small, then for $`k`$ sufficiently small the quantity in brackets is less than one and the difference from the truncated approximation decreases in magnitude with increasing $`k`$. As soon as $`k`$ satisfies
 
 $$
-k+1>\frac1{Dh}
+k+1\gt \frac1{Dh}
 $$
 
 
@@ -488,7 +488,7 @@ $$
 > in which case,
 
 $$
-\|\mathcal G_h(\zeta)-\mathcal F_h^{(k)}(\zeta)\|<\widetilde C h\mathrm e^{-1/(\gamma h)},\qquad\gamma=\frac1{D\mathrm e}.
+\|\mathcal G_h(\zeta)-\mathcal F_h^{(k)}(\zeta)\|\lt \widetilde C h\mathrm e^{-1/(\gamma h)},\qquad\gamma=\frac1{D\mathrm e}.
 $$
 
 

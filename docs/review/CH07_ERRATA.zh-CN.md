@@ -670,7 +670,7 @@ $$
 > which is easily computed once the $`R_n`$ vector is evaluated in the step, and gives us a stability criterion
 
 $$
-\gamma h<4.\tag{7.46}
+\gamma h\lt 4.\tag{7.46}
 $$
 
 

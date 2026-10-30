@@ -23,7 +23,11 @@ def formulas(s, convert=False):
         if fence:result.append(line);continue
         if re.match(r'^\s*\$\$\s*$',body):
             count+=int(not display);display=not display;result.append(line);continue
-        if display:result.append(line);continue
+        if display:
+            if convert:
+                prefix=line[:len(line)-len(body)]
+                line=prefix+body.replace('<',r'\lt ').replace('>',r'\gt ')
+            result.append(line);continue
         i=0;new='';table=line.lstrip().startswith('|')
         while i<len(line):
             if line[i]=='$' and (i==0 or line[i-1]!='\\'):

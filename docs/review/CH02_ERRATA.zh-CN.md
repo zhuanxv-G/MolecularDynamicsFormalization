@@ -146,7 +146,7 @@ $$
 > The first assumption is that $`\mathscr G_h`$ is an $`O(h^{p+1})`$ approximation of $`\mathscr F_h`$ in the sense that there is a constant $`K\ge0`$ and a constant $`\Delta\gt 0`$ such that, for $`t\in[0,\tau]`$, we have
 
 $$
-\|\mathscr F_h(\boldsymbol z(t))-\mathscr G_h(\boldsymbol z(t))\|\le\bar K h^{p+1},\qquad h<\Delta.\tag{2.10}
+\|\mathscr F_h(\boldsymbol z(t))-\mathscr G_h(\boldsymbol z(t))\|\le\bar K h^{p+1},\qquad h\lt \Delta.\tag{2.10}
 $$
 
 
@@ -263,7 +263,7 @@ $$
 > This means if we know that $`\|\nabla I(\boldsymbol z)\|`$ remains bounded, say less than $`B`$, in an open domain containing the solution, we could conclude that the error in $`I`$-values computed along a numerical trajectory is of order $`h^p`$,
 
 $$
-|I(\boldsymbol z(t_n))-I(\boldsymbol z_n)|\le\frac{\bar K B}{2L}e^{nLh}h^p,\qquad h<\bar h,\tag{2.16}
+|I(\boldsymbol z(t_n))-I(\boldsymbol z_n)|\le\frac{\bar K B}{2L}e^{nLh}h^p,\qquad h\lt \bar h,\tag{2.16}
 $$
 
 

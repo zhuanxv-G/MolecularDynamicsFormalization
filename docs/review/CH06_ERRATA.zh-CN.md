@@ -124,7 +124,7 @@ $$
 > Proposition 6.1 Let $`H`$ be a Hamiltonian defined on the phase space $`\mathbb R^{2N_c}`$ and suppose $`G:\mathbb R^{2N_c}\to\mathbb R^{2N_c}`$ is a smooth ($`C^1`$) vector field with the following properties:
 
 $$
-0<|\operatorname{Av}_\beta(G\cdot\nabla H)|<\infty,\quad 0<\operatorname{Av}_\beta(\nabla\cdot G)<\infty,\quad |Ge^{-\beta H}|<\infty.
+0\lt |\operatorname{Av}_\beta(G\cdot\nabla H)|\lt \infty,\quad 0\lt \operatorname{Av}_\beta(\nabla\cdot G)\lt \infty,\quad |Ge^{-\beta H}|\lt \infty.
 $$
 
 
@@ -878,7 +878,7 @@ $$
 > (i) For some $`y\in\operatorname{int}(C)`$, we have that for any $`\delta\gt 0`$ there is a $`t_0\gt 0`$ such that
 
 $$
-\operatorname{Pr}(X(t_0)\in B_\delta(y)\mid X(0)=X_0)>0,\quad\forall X_0\in C.
+\operatorname{Pr}(X(t_0)\in B_\delta(y)\mid X(0)=X_0)\gt 0,\quad\forall X_0\in C.
 $$
 
 
@@ -982,7 +982,7 @@ $$
 > We also consider the potential energy to be smooth ($`C^\infty`$) with $`U(q)\to\infty`$ as $`|q|\to\infty`$. As we have a smooth potential on a bounded (position) domain, we have
 
 $$
-1<U_{\min}\le U(q)\le U_{\max}<\infty,\quad\forall q\in\mathcal Q,
+1\lt U_{\min}\le U(q)\le U_{\max}\lt \infty,\quad\forall q\in\mathcal Q,
 $$
 
 
@@ -1070,7 +1070,7 @@ $$
 > As $`H^l`$ grows faster than $`H^{l-1}`$, for any fixed $`l`$ we are able to find positive constants $`c`$ and $`d`$ such that
 
 $$
-l(l+N_c-1)H^{l-1}\le\tfrac l2H^l+c;\qquad 2lH^{l-1}U(q)<2lH^{l-1}U_{\max}\le\tfrac l2H^l+d.
+l(l+N_c-1)H^{l-1}\le\tfrac l2H^l+c;\qquad 2lH^{l-1}U(q)\lt 2lH^{l-1}U_{\max}\le\tfrac l2H^l+d.
 $$
 
 
@@ -1123,7 +1123,7 @@ $$
 > Lemma 6.1 For all $`t\gt 0`$ and all open $`C\subset D`$, we have that
 
 $$
-\Pr(X(t)\in C\mid X(0)=X_0)>0,\quad\forall X_0\in D,
+\Pr(X(t)\in C\mid X(0)=X_0)\gt 0,\quad\forall X_0\in D,
 $$
 
 
